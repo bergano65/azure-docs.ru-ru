@@ -1,25 +1,14 @@
 ---
-title: Общие сведения о коллекциях Reliable Collections в службах с отслеживанием состояния Azure Service Fabric | Документация Майкрософт
+title: Знакомство с надежными коллекциями
 description: Службы с отслеживанием состояния Service Fabric предоставляют надежные коллекции, которые позволяют создавать высокодоступные и масштабируемые облачные приложения с низкой задержкой.
-services: service-fabric
-documentationcenter: .net
-author: athinanthny
-manager: chackdan
-editor: masnider,rajak,zhol
-ms.assetid: 62857523-604b-434e-bd1c-2141ea4b00d1
-ms.service: service-fabric
-ms.devlang: dotnet
 ms.topic: conceptual
-ms.tgt_pltfrm: na
-ms.workload: required
 ms.date: 1/3/2019
-ms.author: atsenthi
-ms.openlocfilehash: a7b30003fd02f8ab2e367311cdb3f56c80dbb4b2
-ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
+ms.openlocfilehash: 48fa682f4c017f66911729e1f581f3aa91cdc28d
+ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68599265"
+ms.lasthandoff: 01/02/2020
+ms.locfileid: "75609729"
 ---
 # <a name="introduction-to-reliable-collections-in-azure-service-fabric-stateful-services"></a>Введение в надежные коллекции в службах с отслеживанием состояния Azure Service Fabric
 
@@ -37,7 +26,7 @@ ms.locfileid: "68599265"
 * реплицируемыми (изменения состояния реплицируются для обеспечения высокой доступности);
 * сохраняемыми (данные сохраняются на диск для защиты от крупномасштабных перебоев, например отключения питания в центре обработки данных);
 * Так как операции записи сохраняются и реплицируются, вы не можете создать временную ReliableDictionary, ReliableQueue или другую надежную коллекцию, которая только сохраняет данные в памяти.
-* работают асинхронно (интерфейсы API работают асинхронно, что позволяет избежать блокировки потоков при операциях ввода-вывода);
+* асинхронными (интерфейсы API работают асинхронно, что позволяет избежать блокировки потоков при операциях ввода-вывода);
 * транзакционными (интерфейсы API используют абстракцию транзакций, что позволяет легко управлять несколькими надежными коллекциями в службе).
 
 Коллекции Reliable Collections изначально гарантируют высокую целостность данных, благодаря чему вам будет легче анализировать состояние приложений.
@@ -47,16 +36,16 @@ ms.locfileid: "68599265"
 API надежных коллекций являются развитием API параллельных коллекций (находятся в пространстве имен **System.Collections.Concurrent** ):
 
 * работают асинхронно (возвращают задачи, потому что, в отличие от параллельных коллекций, операции реплицируются и сохраняются);
-* нет выходных параметров, вместо них используется `ConditionalValue<T>` для возвращения `bool` и значения; `ConditionalValue<T>` имеет сходство с `Nullable<T>`, но не требует, чтобы значение T было структурой.
+* Без параметров out: использует `ConditionalValue<T>`, чтобы вернуть `bool` и значение, а не выходные параметры. `ConditionalValue<T>` имеет сходство с `Nullable<T>`, но не требует, чтобы значение T было структурой.
 * являются транзакционными (используется объект транзакции, благодаря чему пользователь может группировать действия с несколькими надежными коллекциями в одну транзакцию).
 
 Сейчас пространство имен **Microsoft.ServiceFabric.Data.Collections** содержит три коллекции:
 
-* [надежный словарь](https://msdn.microsoft.com/library/azure/dn971511.aspx) (реплицируемая, транзакционная и асинхронная коллекция пар "ключ — значение"); как и в **ConcurrentDictionary**, ключ и значение могут быть любого типа);
-* [надежная очередь](https://msdn.microsoft.com/library/azure/dn971527.aspx) (реплицируемая, транзакционная и асинхронная очередь, функционирующая строго по методу FIFO); как и в **ConcurrentQueue**, значение может быть любого типа).
-* [надежная параллельная очередь](service-fabric-reliable-services-reliable-concurrent-queue.md) (реплицируемая, транзакционная и асинхронная упорядочивающая очередь для обеспечения высокой пропускной способности). Как и в **ConcurrentQueue**, значение может быть любого типа.
+* [надежный словарь](https://msdn.microsoft.com/library/azure/dn971511.aspx) (реплицируемая, транзакционная и асинхронная коллекция пар "ключ-значение"; как и в **ConcurrentDictionary**, ключ и значение могут быть любого типа);
+* [надежная очередь](https://msdn.microsoft.com/library/azure/dn971527.aspx) (реплицируемая, транзакционная и асинхронная очередь, функционирующая строго по методу FIFO; как и в **ConcurrentQueue**, значение может быть любого типа).
+* [Надежная параллельная очередь](service-fabric-reliable-services-reliable-concurrent-queue.md) — реплицируемая, транзакционная и асинхронная упорядочивающая очередь для обеспечения высокой пропускной способности. Как и в **ConcurrentQueue**, значение может быть любого типа.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Reliable Collections: руководства и рекомендации](service-fabric-reliable-services-reliable-collections-guidelines.md)
 * [Работа с надежными коллекциями](service-fabric-work-with-reliable-collections.md)
@@ -67,6 +56,6 @@ API надежных коллекций являются развитием API 
   * [Сериализация надежной коллекции](service-fabric-reliable-services-reliable-collections-serialization.md)
   * [Влияние сериализации данных на обновление приложений](service-fabric-application-upgrade-data-serialization.md)
   * [Конфигурация диспетчера надежных состояний](service-fabric-reliable-services-configuration.md)
-* Другие
+* Прочее
   * [Краткое руководство по надежным службам Reliable Services](service-fabric-reliable-services-quick-start.md)
   * [Справочник разработчика по надежным коллекциям](https://msdn.microsoft.com/library/azure/microsoft.servicefabric.data.collections.aspx)

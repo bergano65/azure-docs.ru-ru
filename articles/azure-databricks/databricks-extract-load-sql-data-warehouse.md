@@ -8,14 +8,14 @@ ms.service: azure-databricks
 ms.custom: mvc
 ms.topic: tutorial
 ms.date: 06/20/2019
-ms.openlocfilehash: 11e5aac559370c478b774f2a503bde590dfeedf4
-ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
+ms.openlocfilehash: e0805a9827474e4f52a5a10e019f7dedd1ab45fa
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74707456"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75411043"
 ---
-# <a name="tutorial-extract-transform-and-load-data-by-using-azure-databricks"></a>Руководство по Извлечение, преобразование и загрузка данных с помощью Azure Databricks
+# <a name="tutorial-extract-transform-and-load-data-by-using-azure-databricks"></a>Руководство. Извлечение, преобразование и загрузка данных с помощью Azure Databricks
 
 В этом руководстве рассматривается выполнение операций извлечения, преобразования и загрузки данных с помощью Azure Databricks. Мы извлечем данные из Azure Data Lake Storage 2-го поколения в Azure Databricks, выполним преобразование данных в Azure Databricks, а затем загрузим преобразованные данные в Хранилище данных SQL Azure.
 
@@ -43,7 +43,7 @@ ms.locfileid: "74707456"
 > Инструкции из этого руководство нельзя выполнять с **бесплатной пробной версией подписки**.
 > Если у вас есть бесплатная учетная запись, перейдите к профилю и измените подписку на подписку с **оплатой по мере использования**. Дополнительные сведения см. на странице [создания бесплатной учетной записи Azure](https://azure.microsoft.com/free/). Затем [удалите предельную сумму расходов](https://docs.microsoft.com/azure/billing/billing-spending-limit#why-you-might-want-to-remove-the-spending-limit) и [запросите увеличение квоты](https://docs.microsoft.com/azure/azure-supportability/resource-manager-core-quotas-request) на ЦП в своем регионе. При создании рабочей области Azure Databricks можно выбрать ценовую категорию **Пробная версия ("Премиум" — 14 дней бесплатно (DBU))** для предоставления рабочей области доступа к бесплатным DBU Azure Databricks уровня "Премиум" на 14 дней.
      
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Прежде чем начать работу с этим руководством, выполните следующие задачи:
 
@@ -55,7 +55,7 @@ ms.locfileid: "74707456"
 
 * Создайте учетную запись хранения Azure Data Lake Storage 2-го поколения. См. [Краткое руководство. Создание поддерживаемой учетной записи хранения Azure Data Lake Storage 2-го поколения](../storage/blobs/data-lake-storage-quickstart-create-account.md).
 
-* Создание субъекта-службы. Дополнительные сведения см. в статье [Azure Создание приложения Azure Active Directory и субъект-службы с доступом к ресурсам с помощью портала](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal).
+* Создание субъекта-службы. В разделе [Руководство. Создание приложения Azure Active Directory и субъект-службы с доступом к ресурсам с помощью портала](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal).
 
    Существует несколько конкретных действий, которые необходимо выполнить при изучении этой статьи.
 
@@ -65,7 +65,7 @@ ms.locfileid: "74707456"
 
    * При выполнении действий, описанных в разделе [Получение значений для входа](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal#get-values-for-signing-in) этой статьи, вставьте идентификатор клиента, идентификатор приложения и значения паролей в текстовый файл. Они вам скоро понадобятся.
 
-* Войдите на [портале Azure](https://portal.azure.com/).
+* Войдите на [портал Azure](https://portal.azure.com/).
 
 ## <a name="gather-the-information-that-you-need"></a>Сбор необходимых сведений
 
@@ -89,7 +89,7 @@ ms.locfileid: "74707456"
 
 В этом разделе вы создадите службу Azure Databricks с помощью портала Azure.
 
-1. Выберите команду **Создать ресурс** в меню на портале Azure.
+1. В меню портала Azure выберите **Создать ресурс**.
 
     ![Создание ресурса на портале Azure](./media/databricks-extract-load-sql-data-warehouse/azure-databricks-on-portal.png)
 
@@ -101,12 +101,12 @@ ms.locfileid: "74707456"
 
 2. В разделе **Служба Azure Databricks** укажите следующие значения, чтобы создать службу Databricks.
 
-    |Свойство  |ОПИСАНИЕ  |
+    |Свойство  |Description  |
     |---------|---------|
     |**Имя рабочей области**     | Укажите имя рабочей области Databricks.        |
     |**подписка**     | Выберите подписку Azure в раскрывающемся списке.        |
-    |**группа ресурсов**     | Укажите, следует ли создать новую группу ресурсов или использовать имеющуюся. Группа ресурсов — это контейнер, содержащий связанные ресурсы для решения Azure. Дополнительные сведения см. в [обзоре группы ресурсов Azure](../azure-resource-manager/resource-group-overview.md). |
-    |**Местоположение.**     | Выберите **Западная часть США 2**.  Другие доступные регионы см. в статье о [доступности служб Azure по регионам](https://azure.microsoft.com/regions/services/).      |
+    |**группа ресурсов**     | Укажите, следует ли создать новую группу ресурсов или использовать имеющуюся. Группа ресурсов — это контейнер, содержащий связанные ресурсы для решения Azure. Дополнительные сведения см. в [обзоре группы ресурсов Azure](../azure-resource-manager/management/overview.md). |
+    |**Местоположение**     | Выберите **Западная часть США 2**.  Другие доступные регионы см. в статье о [доступности служб Azure по регионам](https://azure.microsoft.com/regions/services/).      |
     |**Ценовая категория**     |  Выберите **Стандартная**.     |
 
 3. Создание учетной записи займет несколько минут. Чтобы отслеживать состояние операции, просмотрите индикатор выполнения вверху.
@@ -388,9 +388,9 @@ ms.locfileid: "74707456"
 
 Если не завершить работу кластера вручную, она завершится автоматически, если во время создания кластера вы установили флажок **Terminate after \_\_ minutes of inactivity** (Завершить через \_\_ минут бездействия). В этом случае работа кластера автоматически завершается, если он был неактивным в течение определенного времени.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-Из этого руководства вы узнали, как выполнить следующие задачи:
+В этом руководстве вы узнали, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 > * Создание службы Azure Databricks.

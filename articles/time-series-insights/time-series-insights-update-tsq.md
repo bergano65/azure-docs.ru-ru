@@ -1,6 +1,6 @@
 ---
 title: Запросы данных в предварительной версии — служба "аналитика временных рядов Azure" | Документация Майкрософт
-description: Сведения о запросах данных для предварительной версии службы "аналитика временных рядов Azure".
+description: Основные понятия запросов данных и общие сведения о REST API HTTP в предварительной версии службы "аналитика временных рядов Azure".
 author: deepakpalled
 ms.author: dpalled
 manager: cshankar
@@ -8,14 +8,14 @@ ms.workload: big-data
 ms.service: time-series-insights
 services: time-series-insights
 ms.topic: conceptual
-ms.date: 10/21/2019
+ms.date: 12/16/2019
 ms.custom: seodec18
-ms.openlocfilehash: f44aa5c0a412dc53f4b1a5f127887257a1b0b550
-ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
+ms.openlocfilehash: 53693c64ff03146619e17b276a1f817e69f5ed6e
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74006309"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75374584"
 ---
 # <a name="data-querying-in-azure-time-series-insights-preview"></a>Запросы данных в предварительной версии службы "аналитика временных рядов Azure"
 
@@ -39,8 +39,8 @@ ms.locfileid: "74006309"
 
 Доступны следующие программные интерфейсы среды:
 
-* [Получение API среды](/rest/api/time-series-insights/management/environments/get): Возвращает список сред, к которым вызывающему объекту разрешен доступ.
-* [Получить API доступности среды](/rest/api/time-series-insights/dataaccess(preview)/query/getavailability): Возвращает распределение количества событий по метке времени события `$ts`. Этот API позволяет определить наличие событий для метки времени, возвращая количество событий, если таковые существуют.
+* [Получить API окружений](/rest/api/time-series-insights/management/environments/get): Возвращает список сред, к которым вызывающему объекту разрешен доступ.
+* [Получить API доступности сред](/rest/api/time-series-insights/dataaccess(preview)/query/getavailability): Возвращает распределение количества событий по метке времени события `$ts`. Этот API позволяет определить наличие событий для метки времени, возвращая количество событий, если таковые существуют.
 * [Получение API схемы событий](/rest/api/time-series-insights/dataaccess(preview)/query/geteventschema): Возвращает метаданные схемы событий для заданного диапазона поиска. Этот API позволяет получить все метаданные и свойства, доступные в схеме для заданной области поиска.
 
 ## <a name="time-series-model-query-tsm-q-apis"></a>API запросов модели временных рядов (TSM-Q)
@@ -71,7 +71,7 @@ ms.locfileid: "74006309"
 
   API статистического вычисления рядов возвращает значение временных рядов для каждой переменной каждого интервала. Значения основаны на идентификаторе временного ряда и наборе предоставленных переменных. API статистического вычисления рядов обеспечивает сокращение за счет использования переменных, которые хранятся в модели временных рядов или встроены, для статистического вычисления или выборки данных.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте больше о [хранении и](./time-series-insights-update-storage-ingress.md) входе в предварительной версии службы "аналитика временных рядов Azure".
 - Прочтите статью анализ [данных о моделировании](./time-series-insights-update-tsm.md) временных рядов в предварительной версии.

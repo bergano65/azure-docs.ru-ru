@@ -2,19 +2,15 @@
 title: Дочерние модули Runbook в службе автоматизации Azure
 description: Описывает различные методы запуска Runbook в службе автоматизации Azure из другого Runbook и обмена информацией между ними.
 services: automation
-ms.service: automation
 ms.subservice: process-automation
-author: mgoedtel
-ms.author: magoedte
 ms.date: 01/17/2019
 ms.topic: conceptual
-manager: carmonm
-ms.openlocfilehash: e7341a8c270d16497430a70c2a1b21354a775787
-ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
+ms.openlocfilehash: a35ee69e6a167f4907294c88710d0484353d4cb2
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74850454"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75367015"
 ---
 # <a name="child-runbooks-in-azure-automation"></a>Дочерние модули Runbook в службе автоматизации Azure
 
@@ -114,7 +110,7 @@ Start-AzureRmAutomationRunbook `
 
 |  | Встроенный | Командлет |
 |:--- |:--- |:--- |
-| задание |Дочерние Runbook выполняются в том же задании, что и родительский. |Для дочернего Runbook создается отдельное задание. |
+| Задание |Дочерние Runbook выполняются в том же задании, что и родительский. |Для дочернего Runbook создается отдельное задание. |
 | Выполнение |Родительский Runbook ожидает завершения дочернего Runbook, прежде чем продолжить выполнение. |Родительский модуль Runbook продолжает работу сразу после запуска дочернего модуля Runbook *или* ожидает завершения дочернего задания. |
 | Выходные данные |Родительский Runbook может получить выходные данные непосредственно из дочернего Runbook. |Родительский модуль Runbook должен получить выходные данные из задания дочернего модуля Runbook *или* может получить выходные данные непосредственно из дочернего модуля Runbook. |
 | Параметры |Значения параметров дочернего Runbook указываются отдельно и могут иметь любой тип данных. |Значения для параметров дочернего Runbook должны быть объединены в одну хэш-таблицу. Эта хэш-таблица может содержать только простые, регулярные и объектные типы данных, использующие сериализацию JSON. |

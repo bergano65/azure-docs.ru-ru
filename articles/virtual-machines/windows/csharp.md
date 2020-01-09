@@ -14,23 +14,23 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: article
 ms.date: 07/17/2017
 ms.author: cynthn
-ms.openlocfilehash: fe838ade7a65161efaeb60b9e4d8de17a7080da1
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.openlocfilehash: bb0962991701dc780e50fec60982083b20d4ab0e
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74032784"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75358383"
 ---
 # <a name="create-and-manage-windows-vms-in-azure-using-c"></a>Развертывание виртуальной машины Azure с помощью C# #
 
-[Виртуальной машине Azure](overview.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) требуется несколько вспомогательных ресурсов Azure. В этой статье описывается создание, управление и удаление ресурсов виртуальной машины, с помощью C#. Вы узнаете, как выполнять такие задачи.
+[Виртуальной машине Azure](overview.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) требуется несколько вспомогательных ресурсов Azure. В этой статье описывается создание, управление и удаление ресурсов виртуальной машины, с помощью C#. Вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 > * Создание проекта Visual Studio
 > * Установка пакета
-> * Создание учетных данных.
+> * Создание учетных данных
 > * Создание ресурсов
-> * Выполнение задач управления
+> * Выполнение задач управления.
 > * Удаление ресурсов
 > * Выполнение приложения
 
@@ -53,7 +53,7 @@ ms.locfileid: "74032784"
     Install-Package Microsoft.Azure.Management.Fluent
     ```
 
-## <a name="create-credentials"></a>Создание учетных данных.
+## <a name="create-credentials"></a>Создание учетных данных
 
 Прежде чем выполнить этот шаг, убедитесь в наличии доступа к [субъекту-службе Active Directory](../../active-directory/develop/howto-create-service-principal-portal.md). Кроме того, необходимо записать идентификатор приложения, ключ проверки подлинности и идентификатор клиента, которые понадобятся позже.
 
@@ -111,7 +111,7 @@ ms.locfileid: "74032784"
 
 ### <a name="create-the-resource-group"></a>Создание группы ресурсов
 
-Все ресурсы должны содержаться в [группе ресурсов](../../azure-resource-manager/resource-group-overview.md).
+Все ресурсы должны содержаться в [группе ресурсов](../../azure-resource-manager/management/overview.md).
 
 Чтобы определить значения для приложения и создать группу ресурсов, добавьте следующий код в метод Main:
 
@@ -237,7 +237,7 @@ azure.VirtualMachines.Define("myVM")
     .Create();
 ```
 
-## <a name="perform-management-tasks"></a>Выполнение задач управления
+## <a name="perform-management-tasks"></a>Выполнение задач управления.
 
 В течение жизненного цикла виртуальной машины можно выполнять задачи управления, такие как запуск, остановка или удаление виртуальной машины. Кроме того, можно создавать код для автоматизации повторяющихся или сложных задач.
 
@@ -393,6 +393,6 @@ azure.ResourceGroups.DeleteByName(groupName);
 
 2. Прежде чем нажать клавишу **ВВОД** и начать удаление ресурсов, потратьте несколько минут и проверьте на портале Azure, созданы ли эти ресурсы. Щелкните состояние развертывания, чтобы просмотреть сведения о развертывании.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * Используйте преимущества шаблонов для создания виртуальной машины, ориентируясь на сведения в статье [Развертывание виртуальной машины Azure с помощью C# и шаблона Resource Manager](csharp-template.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
 * Дополнительные сведения об использовании [библиотек Azure для .NET](https://docs.microsoft.com/dotnet/azure/?view=azure-dotnet).

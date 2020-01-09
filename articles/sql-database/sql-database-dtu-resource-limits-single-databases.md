@@ -11,12 +11,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 03/20/2019
-ms.openlocfilehash: 75611dd36196c722254d694e9753deb982e2570d
-ms.sourcegitcommit: 36eb583994af0f25a04df29573ee44fbe13bd06e
+ms.openlocfilehash: a4c435b4874301fe6fb804085c5b265954cd4f5a
+ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74539335"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75637598"
 ---
 # <a name="resource-limits-for-single-databases-using-the-dtu-purchasing-model"></a>Ограничения ресурсов для отдельных баз данных с использованием модели приобретения DTU
 
@@ -33,7 +33,7 @@ ms.locfileid: "74539335"
 
 ### <a name="basic-service-tier"></a>Уровень службы Basic
 
-| **Объем вычислительных ресурсов** | **базовая;** |
+| **Объем вычислительных ресурсов** | **Основной** |
 | :--- | --: |
 | Максимальное количество DTU | 5 |
 | Включенный объем хранилища (ГБ) | 2 |
@@ -104,5 +104,5 @@ ms.locfileid: "74539335"
 - Сведения об ограничениях ресурсов Виртуальное ядро для эластичных пулов см. [в статье ограничения ресурсов для эластичных пулов с использованием модели приобретения Виртуальное ядро](sql-database-vcore-resource-limits-elastic-pools.md) .
 - Сведения об ограничениях ресурсов DTU для эластичных пулов см. [в статье ограничения ресурсов для эластичных пулов с использованием модели приобретения DTU](sql-database-dtu-resource-limits-elastic-pools.md) .
 - [Общие сведения об ограничениях ресурсов Управляемого экземпляра Базы данных SQL Azure](sql-database-managed-instance-resource-limits.md).
-- Сведения об общих ограничениях Azure см. в разделе [Подписка Azure, границы, квоты и ограничения службы](../azure-subscription-service-limits.md).
+- Сведения об общих ограничениях Azure см. в разделе [Подписка Azure, границы, квоты и ограничения службы](../azure-resource-manager/management/azure-subscription-service-limits.md).
 - Сведения об ограничениях на уровнях сервера и подписки см. в статье [Ограничения ресурсов для сервера Базы данных SQL Azure](sql-database-resource-limits-database-server.md).

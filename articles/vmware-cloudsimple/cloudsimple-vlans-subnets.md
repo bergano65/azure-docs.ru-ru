@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: 7af191893d6b3cf1c38e5ff44a7a8a04509347a8
-ms.sourcegitcommit: 0c906f8624ff1434eb3d3a8c5e9e358fcbc1d13b
+ms.openlocfilehash: 2451fbb69636624db354006df2a7925ef9e75459
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69543801"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75372743"
 ---
 # <a name="vlans-and-subnets-overview"></a>Общие сведения о виртуальных ЛС и подсетях
 
@@ -38,7 +38,7 @@ ms.locfileid: "69543801"
 * Минимальная vSphere/vSAN подсети префикс диапазона CIDR: **/24**
 * Максимальное число подсетей vSphere/vSAN. префикс диапазона CIDR: **/21**
 
-> [!IMPORTANT]
+> [!CAUTION]
 > IP-адреса в диапазоне CIDR vSphere/vSAN зарезервированы для использования в инфраструктуре частного облака.  Не используйте этот IP-адрес в этом диапазоне на любой виртуальной машине.
 
 ### <a name="vspherevsan-subnets-cidr-range-limits"></a>ограничения диапазона CIDR для подсетей vSphere/vSAN
@@ -68,7 +68,7 @@ ms.locfileid: "69543801"
 
 указанный диапазон CIDR подсетей vSphere/vSAN делится на несколько подсетей.  В следующей таблице приведен пример распределения для разрешенных префиксов.  В примере используется 192.168.0.0 в качестве диапазона CIDR.
 
-Пример
+Пример:
 
 | Указанные подсети vSphere/vSAN CIDR/prefix | 192.168.0.0/21 | 192.168.0.0/22 | 192.168.0.0/23 | 192.168.0.0/24 |
 |---------------------------------|----------------|----------------|----------------|----------------|
@@ -80,6 +80,6 @@ ms.locfileid: "69543801"
 | НСКС-T ребро Uplink1 | 192.168.7.224/28 | 192.168.3.224/28 | 192.168.1.224/28 | 192.168.0.224/28 |
 | НСКС-T ребро uplink2 | 192.168.7.240/28 | 192.168.3.240/28 | 192.168.1.240/28 | 192.168.0.240/28 |
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Создание виртуальных ЛС и подсетей и управление ими](create-vlan-subnet.md)

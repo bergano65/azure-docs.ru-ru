@@ -1,6 +1,6 @@
 ---
-title: 'Портал Azure: Георепликация'
-description: Настройка георепликации для отдельных баз данных или баз данных в пуле в Базе данных SQL Azure с помощью портала Azure и запуск отработки отказа
+title: Учебник. Георепликация & отработку отказа на портале
+description: Настройка георепликации для отдельной базы данных или в составе пула в базе данных SQL Azure с помощью портал Azure и инициации отработки отказа.
 services: sql-database
 ms.service: sql-database
 ms.subservice: high-availability
@@ -11,12 +11,12 @@ author: anosov1960
 ms.author: sashan
 ms.reviewer: mathoma, carlrab
 ms.date: 02/13/2019
-ms.openlocfilehash: 7ddaefb0f65db1cfc828e4baa844f6d8e01f9d2e
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.openlocfilehash: 601c537a51e29ae1f107127e1b83c07448eee9ab
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73808126"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75348881"
 ---
 # <a name="configure-active-geo-replication-for-azure-sql-database-in-the-azure-portal-and-initiate-failover"></a>Настройка активной георепликации для Базы данных SQL Azure с помощью портала Azure и запуск отработки отказа
 
@@ -24,7 +24,7 @@ ms.locfileid: "73808126"
 
 Сведения о группах автоматической отработки отказа с отдельными базами данных и базами данных в пуле см. в [этом разделе](sql-database-auto-failover-group.md#best-practices-of-using-failover-groups-with-single-databases-and-elastic-pools). Сведения о группах автоматической отработки отказа с управляемыми экземплярами см. в статье рекомендации по [использованию групп отработки отказа с управляемыми экземплярами](sql-database-auto-failover-group.md#best-practices-of-using-failover-groups-with-managed-instances).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Для настройки активной георепликации с помощью портала Azure необходим приведенный ниже ресурс.
 
@@ -69,7 +69,7 @@ ms.locfileid: "73808126"
 2. В колонке "База данных SQL" выберите **Все параметры** > **Георепликация**.
 3. В списке **Получатели** выберите базу данных, которая должна стать новым источником, и щелкните **Отработка отказа**.
 
-    ![Отработка отказа](./media/sql-database-geo-replication-failover-portal/secondaries.png)
+    ![отработка отказа](./media/sql-database-geo-replication-failover-portal/secondaries.png)
 4. Выберите **Да** , чтобы запустить отработку отказа.
 
 Команда немедленно переключит базу данных-получатель на роль базы данных-источника. Обычно этот процесс должен завершаться в течение 30 секунд или менее.

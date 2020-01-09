@@ -1,6 +1,6 @@
 ---
-title: Планирование переноса ресурсов IaaS из классической модели в модель Azure Resource Manager
-description: Планирование переноса ресурсов IaaS из классической модели в модель Azure Resource Manager
+title: Планирование перехода с классической модели на Azure Resource Manager
+description: Планирование переноса ресурсов IaaS из классической модели развертывания в модель Azure Resource Manager.
 services: virtual-machines-windows
 documentationcenter: ''
 author: singhkays
@@ -14,14 +14,14 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: article
 ms.date: 04/01/2017
 ms.author: kasing
-ms.openlocfilehash: 2c0f4924c41b36c306d4e6b9286105662744c4da
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.openlocfilehash: bebfcedcd2944e2c6b05c3203e67df7658dd751a
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74033228"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75460048"
 ---
-# <a name="planning-for-migration-of-iaas-resources-from-classic-to-azure-resource-manager"></a>Планирование переноса ресурсов IaaS из классической модели в модель Azure Resource Manager
+# <a name="planning-for-migration-of-iaas-resources-from-classic-to-azure-resource-manager"></a>Планирование переноса ресурсов IaaS из классической модели развертывания в модель Azure Resource Manager.
 Хотя Azure Resource Manager и предлагает множество разнообразных возможностей, чрезвычайно важно спланировать процесс переноса ресурсов, чтобы не столкнуться с какими-либо проблемами. Грамотное планирование позволит предотвратить возникновение ошибок при выполнении действий по переносу ресурсов.
 
 > [!NOTE]
@@ -44,7 +44,7 @@ ms.locfileid: "74033228"
 5. Поддерживают ли рабочие группы приложения и виртуальные машины в классической модели и модели Azure Resource Manager?
 6. Каким образом Azure Resource Manager изменяет процессы развертывания, администрирования, мониторинга виртуальной машины и отправки отчетов?  Нужно ли обновлять сценарии развертывания?
 7. Каков ваш план взаимодействия для оповещения заинтересованных лиц (пользователей, владельцев приложений и владельцев инфраструктур)?
-8. Учитывая сложность среды, предусмотрен ли какой-либо период обслуживания, в течение которого приложение недоступно для пользователей и его владельцев?  Если да, то как надолго?
+8. Учитывая сложность среды, предусмотрен ли какой-либо период обслуживания, в течение которого приложение недоступно для пользователей и его владельцев?  Если да, то как долго?
 9. Каков план обучения заинтересованных лиц работе с Azure Resource Manager?
 10. Что представляет собой план управления программой или проектом для переноса?
 11. Сколько времени занимает переход на Azure Resource Manager и планируемое внедрение связанных технологий?  Согласованы ли они друг с другом оптимальным образом?
@@ -122,24 +122,24 @@ ms.locfileid: "74033228"
     >
 
   - Сетевые интерфейсы
-  - Балансировщики нагрузки
+  - подсистемы балансировки нагрузки;
   - Общедоступные IP-адреса.
   - Статические общедоступные IP-адреса.
   - Ядра
-  - группы сетевой безопасности;
+  - Группы безопасности сети
   - таблицы маршрутов;
 
     Используйте команды ниже с помощью последней версии Azure PowerShell, чтобы проверить текущие квоты Azure Resource Manager.
     
      
 
-    **Вычисления** *(ядра, группы доступности)*
+    **Вычисление** *(ядра, наборы доступности)*
 
     ```powershell
     Get-AzVMUsage -Location <azure-region>
     ```
 
-    **Сети** *(виртуальные сети, статические общедоступные IP-адреса, общедоступные IP-адреса, группы безопасности сети, сетевые интерфейсы, подсистемы балансировки нагрузки, таблицы маршрутов)*
+    **Сеть** *(виртуальные сети, статические общедоступные IP-адреса, общедоступные адреса, группы безопасности сети, сетевые интерфейсы, подсистемы балансировки нагрузки, таблицы маршрутов)*
 
     ```powershell
     Get-AzUsage /subscriptions/<subscription-id>/providers/Microsoft.Network/locations/<azure-region> -ApiVersion 2016-03-30 | Format-Table
@@ -190,7 +190,7 @@ ms.locfileid: "74033228"
 
 ### <a name="technical-considerations-and-tradeoffs"></a>Технические вопросы и компромиссы
 
-Теперь, когда вы переместили ресурсы в Azure Resource Manager, максимально используйте возможности платформы.  Сведения о дополнительных преимуществах см. в [обзоре Azure Resource Manager](../../azure-resource-manager/resource-group-overview.md).
+Теперь, когда вы переместили ресурсы в Azure Resource Manager, максимально используйте возможности платформы.  Сведения о дополнительных преимуществах см. в [обзоре Azure Resource Manager](../../azure-resource-manager/management/overview.md).
 
 Необходимо учитывать следующее:
 
@@ -213,7 +213,7 @@ ms.locfileid: "74033228"
 Не забывайте об основной цели миграции из классической модели в модель Azure Resource Manager.  Каковы были первоначальные коммерческие соображения? Достигли ли вы этих целей?
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Обзор поддерживаемого платформой переноса ресурсов IaaS из классической модели в модель Azure Resource Manager](migration-classic-resource-manager-overview.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)
 * [Техническое руководство по поддерживаемому платформой переносу из классической модели в модель Azure Resource Manager](migration-classic-resource-manager-deep-dive.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)

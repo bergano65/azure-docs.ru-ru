@@ -1,19 +1,19 @@
 ---
 title: Подключение устройства и входные данные телеметрии — Azure Digital двойников | Документация Майкрософт
-description: Узнайте, как подключиться и подключить устройство в цифровом двойников Azure.
+description: Сведения о подключении, подключении и отправке данных телеметрии с устройства IoT в Azure Digital двойников.
 ms.author: alinast
 author: alinamstanciu
 manager: bertvanhoof
 ms.service: digital-twins
 services: digital-twins
 ms.topic: conceptual
-ms.date: 11/07/2019
-ms.openlocfilehash: 529baf6a3eedf1d7490e8138642e90928a209876
-ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
+ms.date: 01/03/2020
+ms.openlocfilehash: f9f0a74a6ca57f90ed8bd217d0d2f57e4bc16749
+ms.sourcegitcommit: 51ed913864f11e78a4a98599b55bbb036550d8a5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74010133"
+ms.lasthandoff: 01/04/2020
+ms.locfileid: "75660347"
 ---
 # <a name="device-connectivity-and-telemetry-ingress"></a>Возможность подключения устройств и входящие данные телеметрии
 
@@ -67,17 +67,17 @@ YOUR_MANAGEMENT_API_URL/devices?HardwareIds=YOUR_DEVICE_HARDWARE_ID&includes=Con
 
  Содержимое полезных данных **сообщения** может быть произвольными данными размером до 256 КБ. Существует ряд требований, ожидаемый для свойств типа [`Message.Properties`](https://docs.microsoft.com/dotnet/api/microsoft.azure.devices.client.message.properties?view=azure-dotnet). В таблице показаны обязательные и необязательные свойства, поддерживаемые системой.
 
-| Имя свойства | Значение | обязательные | ОПИСАНИЕ |
+| Имя свойства | Значение | Обязательно для заполнения | Description |
 |---|---|---|---|
-| **DigitalTwins-Telemetry** | 1.0 | Yes | Постоянное значение, которое идентифицирует сообщение в системе. |
-| **DigitalTwins-SensorHardwareId** | `string(72)` | Yes | Уникальный идентификатор датчика, отправляющего **сообщение**. Это значение должно соответствовать свойству **HardwareId** объекта, чтобы система могла его обработать. Пример: `00FF0643BE88-CO2`. |
-| **CreationTimeUtc** | `string` | Нет | Строка даты в формате [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601), идентифицирующая время выборки полезных данных. Пример: `2018-09-20T07:35:00.8587882-07:00`. |
-| **CorrelationId** | `string` | Нет | UUID, который может использоваться для трассировки событий в системе. Пример: `cec16751-ab27-405d-8fe6-c68e1412ce1f`.
+| **DigitalTwins-Telemetry** | 1.0 | Да | Постоянное значение, которое идентифицирует сообщение в системе. |
+| **DigitalTwins-SensorHardwareId** | `string(72)` | Да | Уникальный идентификатор датчика, отправляющего **сообщение**. Это значение должно соответствовать свойству **HardwareId** объекта, чтобы система могла его обработать. Например, `00FF0643BE88-CO2`. |
+| **CreationTimeUtc** | `string` | Нет | Строка даты в формате [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html), идентифицирующая время выборки полезных данных. Например, `2018-09-20T07:35:00.8587882-07:00`. |
+| **CorrelationId** | `string` | Нет | UUID, который может использоваться для трассировки событий в системе. Например, `cec16751-ab27-405d-8fe6-c68e1412ce1f`.
 
 ### <a name="send-your-message-to-digital-twins"></a>Отправка сообщения в Digital Twins
 
 Используйте вызов [SendEventAsync](https://docs.microsoft.com/dotnet/api/microsoft.azure.devices.client.deviceclient.sendeventasync?view=azure-dotnet) или [SendEventBatchAsync](https://docs.microsoft.com/dotnet/api/microsoft.azure.devices.client.deviceclient.sendeventbatchasync?view=azure-dotnet) свойства DeviceClient для отправки сообщения в Digital Twins.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о возможностях обработки данных Azure Digital Twins и определяемых пользователем функциях см. в статье [Обработка данных и определяемые пользователем функции](concepts-user-defined-functions.md).

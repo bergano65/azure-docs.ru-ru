@@ -1,17 +1,17 @@
 ---
 title: Добавление и вызов функций Azure из Azure Logic Apps
-description: Добавление и запуск функций Azure из приложений логики
+description: Вызывайте и запустите пользовательский код в функциях Azure из автоматизированных задач и рабочих процессов в Azure Logic Apps
 services: logic-apps
 ms.suite: integration
 ms.reviewer: klam, logicappspm
 ms.topic: article
 ms.date: 10/01/2019
-ms.openlocfilehash: 8e72cda1965280e0694493e533f49f71c746ebc6
-ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
+ms.openlocfilehash: 2525ca681d805a3b6f086335531a4beaeb9c4e51
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74792574"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75453470"
 ---
 # <a name="call-azure-functions-from-azure-logic-apps"></a>Вызов функций Azure из Azure Logic Apps
 

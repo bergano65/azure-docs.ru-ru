@@ -1,25 +1,16 @@
 ---
-title: Реализация функций в субъектах Azure Service Fabric | Документация Майкрософт
+title: Реализация функций в Azure Service Fabric Actors
 description: В статье описано, как написать собственную службу субъекта, которая реализует функции на уровне службы так же, как это делается при наследовании StatefulService.
-services: service-fabric
-documentationcenter: .net
 author: vturecek
-manager: chackdan
-editor: amanbha
-ms.assetid: 45839a7f-0536-46f1-ae2b-8ba3556407fb
-ms.service: service-fabric
-ms.devlang: dotnet
 ms.topic: conceptual
-ms.tgt_pltfrm: NA
-ms.workload: NA
 ms.date: 03/19/2018
 ms.author: vturecek
-ms.openlocfilehash: 57894770ad9d27430d5803c9a93ce6973355878a
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 9f5f9e00c374b16026f22d4efdee51ec94d2902a
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "62123252"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75426716"
 ---
 # <a name="implement-service-level-features-in-your-actor-service"></a>Реализация функций уровня службы в службе субъектов
 
@@ -156,7 +147,7 @@ public class Program
 
 ## <a name="actor-that-uses-a-remoting-v2-interface-compatible-stack"></a>Субъект, использующий стек удаленного взаимодействия версии 2 (с совместимым интерфейсом)
 
-Стек удаленного взаимодействия версии 2 (с совместимым интерфейсом, известный как V2_1) включает все возможности стека удаленного взаимодействия версии 2. Его интерфейс совместим со стеком удаленного взаимодействия версии 1, но не обладает обратной совместимостью с версиями 1 и (или) 2. Чтобы перейти с V1 на V2_1 без влияния на доступность службы, выполните действия, описанные в следующем разделе.
+Стек удаленного взаимодействия версии 2 (с совместимым интерфейсом, известный как V2_1) обладает всеми функциями стека удаленного взаимодействия версии 2. Его интерфейс совместим со стеком удаленного взаимодействия версии 1, но не обладает обратной совместимостью с версиями 1 и (или) 2. Чтобы перейти с V1 на V2_1 без влияния на доступность службы, выполните действия, описанные в следующем разделе.
 
 Чтобы использовать стек удаленного взаимодействия версии 2_1, требуется внести следующие изменения.
 
@@ -181,7 +172,7 @@ public class Program
 2. Обновите клиенты субъекта после завершения предыдущего обновления.
    Это гарантирует, что прокси-сервер субъекта будет использовать стек удаленного взаимодействия версии 2_1.
 
-3. Этот шаг не является обязательным. Измените приведенный выше атрибут, чтобы удалить прослушиватель версии 1.
+3. Это необязательный шаг. Измените приведенный выше атрибут, чтобы удалить прослушиватель версии 1.
 
     ```csharp
     [assembly:FabricTransportActorRemotingProvider(RemotingListenerVersion = RemotingListenerVersion.V2_1,RemotingClientVersion = RemotingClientVersion.V2_1)]
@@ -214,7 +205,7 @@ public class Program
 2. Обновите клиенты субъекта после завершения предыдущего обновления.
    Это гарантирует, что прокси-сервер субъекта будет использовать стек удаленного взаимодействия версии 2.
 
-3. Этот шаг не является обязательным. Измените приведенный выше атрибут, чтобы удалить прослушиватель версии 1.
+3. Это необязательный шаг. Измените приведенный выше атрибут, чтобы удалить прослушиватель версии 1.
 
     ```csharp
     [assembly:FabricTransportActorRemotingProvider(RemotingListenerVersion = RemotingListenerVersion.V2,RemotingClientVersion = RemotingClientVersion.V2)]

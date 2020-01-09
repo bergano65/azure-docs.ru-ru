@@ -1,18 +1,17 @@
 ---
-title: Подготавливает кэш Azure для Redis с помощью Azure Resource Manager
-description: Используйте шаблон Azure Resource Manager для развертывания кэша Redis для Azure.
-services: app-service
+title: Развертывание кэша Azure для Redis с помощью Azure Resource Manager
+description: Узнайте, как использовать шаблон Azure Resource Manager для развертывания ресурса кэша Azure для Redis. Для распространенных сценариев предусмотрены шаблоны.
 author: yegu-ms
+ms.author: yegu
 ms.service: cache
 ms.topic: conceptual
 ms.date: 01/23/2017
-ms.author: yegu
-ms.openlocfilehash: f215cb79adc02da857f7aa93d8933bd12c06818a
-ms.sourcegitcommit: 5a8c65d7420daee9667660d560be9d77fa93e9c9
+ms.openlocfilehash: 787edf662aa3a34e167db61b0a89dfc5c2944219
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74121782"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75412404"
 ---
 # <a name="create-an-azure-cache-for-redis-using-a-template"></a>Создание экземпляра кэша Redis для Azure с помощью шаблона
 
@@ -22,7 +21,7 @@ ms.locfileid: "74121782"
 
 В настоящее время параметры диагностики являются общими для всех кэшей в одном регионе подписки. Обновление одного кэша в регионе влияет на все кэши в нем.
 
-Дополнительные сведения о создании шаблонов см. в статье [Создание шаблонов Azure Resource Manager](../azure-resource-manager/resource-group-authoring-templates.md). Сведения о синтаксисе JSON и свойствах для типов ресурсов кэша см. в справочнике по [типам ресурсов Microsoft.Cache](/azure/templates/microsoft.cache/allversions).
+Дополнительные сведения о создании шаблонов см. в статье [Создание шаблонов Azure Resource Manager](../azure-resource-manager/templates/template-syntax.md). Сведения о синтаксисе JSON и свойствах для типов ресурсов кэша см. в справочнике по [типам ресурсов Microsoft.Cache](/azure/templates/microsoft.cache/allversions).
 
 См. [полный шаблон кэша Redis для Azure](https://github.com/Azure/azure-quickstart-templates/blob/master/101-redis-cache/azuredeploy.json).
 
@@ -44,7 +43,7 @@ ms.locfileid: "74121782"
 
 [![Развертывание в Azure](./media/cache-redis-cache-arm-provision/deploybutton.png)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-redis-cache%2Fazuredeploy.json)
 
-## <a name="parameters"></a>parameters
+## <a name="parameters"></a>Параметры
 С помощью диспетчера ресурсов Azure можно определить параметры значений, которые должны указываться на этапе развертывания шаблона. В шаблоне есть раздел "Параметры", содержащий все значения параметров.
 Для этих значений необходимо определить параметры, которые будут зависеть от развертываемого проекта либо от среды, в которой выполняется развертывание. Не определяйте параметры для значений, которые не меняются. Значение каждого параметра в шаблоне определяет развертываемые ресурсы. 
 
@@ -117,8 +116,6 @@ ms.locfileid: "74121782"
       ]
     }
 
-
-
 ## <a name="commands-to-run-deployment"></a>Команды для выполнения развертывания
 [!INCLUDE [app-service-deploy-commands](../../includes/app-service-deploy-commands.md)]
 
@@ -128,5 +125,3 @@ ms.locfileid: "74121782"
 
 ### <a name="azure-cli"></a>Интерфейс командной строки Azure
     azure group deployment create --template-uri https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-redis-cache/azuredeploy.json -g ExampleDeployGroup
-
-

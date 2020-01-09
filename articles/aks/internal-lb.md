@@ -7,19 +7,19 @@ ms.service: container-service
 ms.topic: article
 ms.date: 03/04/2019
 ms.author: mlearned
-ms.openlocfilehash: 5842003d43d4268d0f663e8a57e40562a480e252
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 6b4bbac5d8555a705b2311abcea8396c1151da90
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "67615150"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75430771"
 ---
 # <a name="use-an-internal-load-balancer-with-azure-kubernetes-service-aks"></a>Использование внутренней подсистемы балансировки нагрузки со Службой Azure Kubernetes (AKS)
 
 Чтобы ограничить доступ к приложениям в Службе Azure Kubernetes (AKS), можно создать и использовать внутреннюю подсистему балансировки нагрузки. Внутренняя подсистема балансировки нагрузки позволяет сделать службу Kubernetes доступной только для приложений, работающих в той же виртуальной сети, что и кластер Kubernetes. В этой статье описаны процессы создания и использования внутренней подсистемы балансировки нагрузки со Службой Azure Kubernetes (AKS).
 
 > [!NOTE]
-> Доступны два номера SKU Azure Load Balancer: ценовых категорий *Базовый* и *Стандартный*. По умолчанию используется *базовый* номер SKU, если манифест службы используется для создания балансировщика нагрузки в AKS. Дополнительные сведения см. в статье [Сравнение SKU в подсистеме балансировки нагрузки Azure][azure-lb-comparison].
+> Доступны два номера SKU Azure Load Balancer: ценовых категорий *Базовый* и *Стандартный*. По умолчанию при создании кластера AKS используется номер SKU "Стандартный".  При создании службы с типом "подсистема балансировки нагрузки" вы получаете тот же тип балансировки нагрузки, что и при подготовке кластера. Дополнительные сведения см. в статье [Сравнение SKU в подсистеме балансировки нагрузки Azure][azure-lb-comparison].
 
 ## <a name="before-you-begin"></a>Перед началом работы
 
@@ -65,7 +65,7 @@ NAME           TYPE           CLUSTER-IP    EXTERNAL-IP   PORT(S)        AGE
 internal-app   LoadBalancer   10.0.248.59   10.240.0.7    80:30555/TCP   2m
 ```
 
-## <a name="specify-an-ip-address"></a>Укажите IP-адрес
+## <a name="specify-an-ip-address"></a>Указание IP-адреса
 
 Если вы хотите использовать определенный IP-адрес для внутренней подсистемы балансировки нагрузки, добавьте в ее YAML-файл манифеста свойство *loadBalancerIP*. Указанный IP-адрес должен находиться в той же подсети, что и кластер AKS, и не должен быть назначен какому-либо ресурсу.
 
@@ -108,7 +108,7 @@ internal-app   LoadBalancer   10.1.15.188   10.0.0.35     80:31669/TCP   1m
 ```
 
 > [!NOTE]
-> Возможно, субъекту-службе для кластера AKS потребуется предоставить роль *участника сети* в группе ресурсов, где развернуты ресурсы виртуальной сети Azure. Просмотрите субъект-службу с помощью команды [AZ AKS][az-aks-show](Показать `az aks show --resource-group myResourceGroup --name myAKSCluster --query "servicePrincipalProfile.clientId"`), например. Чтобы создать назначение ролей, используйте команду [AZ Role назначение Create][az-role-assignment-create] .
+> Возможно, субъекту-службе для кластера AKS потребуется предоставить роль *участника сети* в группе ресурсов, где развернуты ресурсы виртуальной сети Azure. Просмотрите субъект-службу с помощью команды [AZ AKS][az-aks-show]View, например `az aks show --resource-group myResourceGroup --name myAKSCluster --query "servicePrincipalProfile.clientId"`. Чтобы создать назначение ролей, используйте команду [AZ Role назначение Create][az-role-assignment-create] .
 
 ## <a name="specify-a-different-subnet"></a>Назначение другой подсети
 
@@ -136,7 +136,7 @@ spec:
 
 Вы можете также напрямую удалить службу, как и любой ресурс Kubernetes, например `kubectl delete service internal-app`. При этом также будет удалена базовая подсистема балансировки нагрузки Azure.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о Kubernetes Services см. в [документации по службам Kubernetes][kubernetes-services].
 

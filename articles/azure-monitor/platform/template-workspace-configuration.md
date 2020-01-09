@@ -4,21 +4,21 @@ description: Шаблоны Azure Resource Manager вы можете приме�
 ms.service: azure-monitor
 ms.subservice: logs
 ms.topic: conceptual
-author: MGoedtel
-ms.author: magoedte
+author: bwren
+ms.author: bwren
 ms.date: 10/22/2019
-ms.openlocfilehash: 5410d6ef11c3f95bb4f02dbd914a1aacbd068a1b
-ms.sourcegitcommit: 98ce5583e376943aaa9773bf8efe0b324a55e58c
+ms.openlocfilehash: 4ec542609d8984d1d03c326854590c834840b33f
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73176381"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75363393"
 ---
 # <a name="manage-log-analytics-workspace-using-azure-resource-manager-templates"></a>Управление рабочей областью Log Analytics с помощью шаблонов Azure Resource Manager
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
-[Шаблоны Azure Resource Manager](../../azure-resource-manager/resource-group-authoring-templates.md) можно использовать для создания и настройки log Analytics рабочих областей в Azure Monitor. Примеры задач, которые можно выполнять с помощью шаблонов.
+[Шаблоны Azure Resource Manager](../../azure-resource-manager/templates/template-syntax.md) можно использовать для создания и настройки log Analytics рабочих областей в Azure Monitor. Примеры задач, которые можно выполнять с помощью шаблонов.
 
 * Создание рабочей области, включая настройку ценовой категории 
 * Добавление решения
@@ -41,7 +41,7 @@ ms.locfileid: "73176381"
 | Ресурс | Тип ресурса | Версия API |
 |:---|:---|:---|
 | Рабочая область   | workspaces    | 2017-03-15-preview |
-| служба поиска.      | savedSearches | 2015-03-20 |
+| Поиск      | savedSearches | 2015-03-20 |
 | Источник данных | datasources   | 2015-11-01-preview |
 | Решение    | solutions     | 2015-11-01-preview |
 

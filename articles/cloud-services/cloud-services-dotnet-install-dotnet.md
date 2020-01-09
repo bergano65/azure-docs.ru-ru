@@ -3,24 +3,24 @@ title: Установка .NET для ролей облачных служб Azu
 description: В этой статье описывается, как вручную установить платформу .NET Framework для веб-роли и рабочей роли облачной службы.
 services: cloud-services
 documentationcenter: .net
-author: georgewallace
+author: tgore03
 manager: carmonm
 ms.service: cloud-services
 ms.devlang: dotnet
 ms.topic: article
 ms.date: 06/22/2018
-ms.author: gwallace
-ms.openlocfilehash: 25151f154b9806646406639df3efd7616e53f6bf
-ms.sourcegitcommit: 4b647be06d677151eb9db7dccc2bd7a8379e5871
+ms.author: tagore
+ms.openlocfilehash: c950fbedde19e3b7708d3640487d413fcac7787f
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68359633"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75360996"
 ---
 # <a name="install-net-on-azure-cloud-services-roles"></a>Установка .NET для ролей облачных служб Azure
 В этой статье описывается установка версий платформы .NET Framework, которые не входят в состав гостевой ОС Azure. .NET в гостевой ОС можно использовать для настройки веб-ролей и рабочих ролей облачной службы.
 
-Например, можно установить .NET 4.6.2 в семействе версий 4 гостевых ОС, которые не входят в состав какого-либо из выпусков .NET 4.6. (Семейство версий 5 гостевых ОС поставляется с NET 4.6.) Самые актуальные сведения о выпусках гостевой ОС Azure см. в статье [Таблица совместимости выпусков гостевых ОС Azure и пакетов SDK](cloud-services-guestos-update-matrix.md). 
+Например, можно установить .NET 4.6.2 в семействе версий 4 гостевых ОС, которые не входят в состав какого-либо из выпусков .NET 4.6. (Семейство гостевых ОС версии 5 поставляется с .NET 4,6.) Последние сведения о выпусках гостевой ОС Azure см. в [статье новости о выпуске гостевой ОС Azure](cloud-services-guestos-update-matrix.md). 
 
 >[!IMPORTANT]
 >Пакет SDK 2.9 для Azure содержит ограничение на развертывание .NET 4.6 в семействе версий 4 гостевых ОС. Исправление ограничения доступно на сайте [документации Майкрософт](https://github.com/MicrosoftDocs/azure-cloud-services-files/tree/master/Azure%20Targets%20SDK%202.9).
@@ -234,3 +234,6 @@ ms.locfileid: "68359633"
 <!--Image references-->
 [1]: ./media/cloud-services-dotnet-install-dotnet/rolecontentwithinstallerfiles.png
 [2]: ./media/cloud-services-dotnet-install-dotnet/rolecontentwithallfiles.png
+
+
+

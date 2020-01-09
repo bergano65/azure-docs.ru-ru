@@ -2,19 +2,15 @@
 title: Пересылка данных задания службы автоматизации Azure в журналы Azure Monitor
 description: В этой статье показано, как отправить данные о состоянии задания и потоки заданий Runbook в журналы Azure Monitor для предоставления дополнительных сведений и управления.
 services: automation
-ms.service: automation
 ms.subservice: process-automation
-author: mgoedtel
-ms.author: magoedte
 ms.date: 02/05/2019
 ms.topic: conceptual
-manager: carmonm
-ms.openlocfilehash: d2433e8193026b8aaa3cbf29eb1411c7449a4953
-ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
+ms.openlocfilehash: beb69edc57b5a13db0f6d2e5e1536804f3472aff
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74849740"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75421914"
 ---
 # <a name="forward-job-status-and-job-streams-from-automation-to-azure-monitor-logs"></a>Пересылка состояния задания и потоков заданий из службы автоматизации в журналы Azure Monitor
 
@@ -89,19 +85,19 @@ Get-AzDiagnosticSetting -ResourceId $automationAccountId
 
 ### <a name="job-logs"></a>Журналы заданий
 
-| Свойство | Описание |
+| Свойство | Description |
 | --- | --- |
 | TimeGenerated |Дата и время выполнения задания Runbook. |
 | RunbookName_s |Имя Runbook. |
 | Caller_s |Сторона, инициировавшая операцию. Допустимые значения: электронный адрес или system для запланированных заданий. |
 | Tenant_g | GUID, идентифицирующий клиента для вызывающего объекта. |
 | JobId_g |GUID, представляющий собой идентификатор задания Runbook. |
-| ResultType |Состояние задания Runbook. Возможные значения:<br>Новое<br>— Создано<br>Started<br>- Остановлена<br>Приостановлено<br>Сбой<br>Завершено |
+| ResultType |Состояние задания Runbook. Возможны следующие значения:<br>Новое<br>— Создано<br>Started<br>- Остановлена<br>Приостановлено<br>Сбой<br>Завершено |
 | Категория | Классификация типа данных. Для службы автоматизации значением является JobLogs. |
 | OperationName | Указывает тип операции, выполняемой в Azure. Для службы автоматизации значением является Job. |
 | Ресурс | Имя учетной записи службы автоматизации |
 | SourceSystem | Как Azure Monitor журналы собирают данные. Всегда имеет значение *Azure* для системы диагностики Azure. |
-| ResultDescription |Описывает состояние результата задания Runbook. Возможные значения:<br>— Job is started;<br>— Job Failed;<br>- Job Completed. |
+| ResultDescription |Описывает состояние результата задания Runbook. Возможны следующие значения:<br>— Job is started;<br>— Job Failed;<br>- Job Completed. |
 | CorrelationId |GUID, представляющий собой идентификатор корреляции задания Runbook. |
 | ResourceId |Указывает идентификатор ресурса учетной записи службы автоматизации Azure для модуля Runbook. |
 | SubscriptionId | Идентификатор подписки Azure (GUID) для учетной записи службы автоматизации. |
@@ -111,15 +107,15 @@ Get-AzDiagnosticSetting -ResourceId $automationAccountId
 
 
 ### <a name="job-streams"></a>Потоки заданий
-| Свойство | Описание |
+| Свойство | Description |
 | --- | --- |
 | TimeGenerated |Дата и время выполнения задания Runbook. |
 | RunbookName_s |Имя Runbook. |
 | Caller_s |Сторона, инициировавшая операцию. Допустимые значения: электронный адрес или system для запланированных заданий. |
-| StreamType_s |Тип потока задания. Возможные значения:<br>ход выполнения<br>Выходные данные<br>Предупреждение<br>error<br>debug<br>- Verbose. |
+| StreamType_s |Тип потока задания. Возможны следующие значения:<br>ход выполнения<br>Выходные данные<br>Предупреждение<br>error<br>debug<br>- Verbose. |
 | Tenant_g | GUID, идентифицирующий клиента для вызывающего объекта. |
 | JobId_g |GUID, представляющий собой идентификатор задания Runbook. |
-| ResultType |Состояние задания Runbook. Возможные значения:<br>- In Progress |
+| ResultType |Состояние задания Runbook. Возможны следующие значения:<br>- In Progress |
 | Категория | Классификация типа данных. Для службы автоматизации значением является JobStreams. |
 | OperationName | Указывает тип операции, выполняемой в Azure. Для службы автоматизации значением является Job. |
 | Ресурс | Имя учетной записи службы автоматизации |
@@ -176,7 +172,7 @@ $automationAccountId = "[resource id of your automation account]"
 Remove-AzDiagnosticSetting -ResourceId $automationAccountId
 ```
 
-## <a name="summary"></a>Резюме
+## <a name="summary"></a>Сводка
 
 Отправляя состояние задания службы автоматизации и потоковые данные в журналы Azure Monitor, вы сможете получить более подробные сведения о состоянии заданий службы автоматизации, выполнив следующие действия.
 + настроить оповещения, уведомляющие вас о проблемах;

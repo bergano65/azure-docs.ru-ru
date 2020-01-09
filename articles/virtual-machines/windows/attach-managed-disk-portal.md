@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 10/08/2018
 ms.author: rogarana
 ms.subservice: disks
-ms.openlocfilehash: d98fdab6dcd0abb70967d1e17d138a860a31da5f
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.openlocfilehash: 0610b235d218c24c108e39aeb9bd3b2cf8c9c663
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74039315"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75463437"
 ---
 # <a name="attach-a-managed-data-disk-to-a-windows-vm-by-using-the-azure-portal"></a>Подключение управляемого диска данных к виртуальной машине Windows с помощью портала Azure
 
@@ -21,7 +21,7 @@ ms.locfileid: "74039315"
 
 ## <a name="add-a-data-disk"></a>Добавление диска данных
 
-1. На [портале Azure](https://portal.azure.com) в меню слева выберите **Виртуальные машины**.
+1. Перейдите к [портал Azure](https://portal.azure.com) , чтобы добавить диск данных. Найдите и выберите **виртуальные машины**.
 2. Выберите виртуальную машину из списка.
 3. На странице **Виртуальная машина** выберите **Диски**.
 4. На странице **Диски** выберите **Add data disk** (Добавить диск данных).
@@ -45,7 +45,7 @@ ms.locfileid: "74039315"
 9. Вы получите предупреждение о том, что при форматировании дисков будут стерты все данные. Нажмите кнопку **ОК**.
 10. После завершения форматирования щелкните **ОК**.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Вы также можете [подключить диск данных с помощью PowerShell](attach-disk-ps.md).
 - Если вашему приложению нужно использовать диск *D:* для хранения данных, вы можете [изменить букву временного диска Windows](change-drive-letter.md?toc=%2fazure%2fvirtual-machines%2fwindows%2fclassic%2ftoc.json).

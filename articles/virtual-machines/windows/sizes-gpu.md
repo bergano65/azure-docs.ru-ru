@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 06/11/2019
 ms.author: jonbeck
-ms.openlocfilehash: 5b2da3076f3970d2f11301b3ea412ce52c257111
-ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
+ms.openlocfilehash: 1f26ad56734dfec0dbf7fc8198b8a91a706a843b
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74075346"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75371077"
 ---
 # <a name="gpu-optimized-virtual-machine-sizes"></a>Размеры виртуальных машин, оптимизированных для GPU
 
@@ -29,9 +29,13 @@ ms.locfileid: "74075346"
 
 ## <a name="supported-operating-systems-and-drivers"></a>Поддерживаемые операционные системы и драйверы
 
-Чтобы воспользоваться преимуществами GPU виртуальных машин Azure серии N под управлением Windows, необходимо установить графические драйверы GPU NVIDIA. [Расширение драйвера GPU NVIDIA](../extensions/hpccompute-gpu-windows.md) устанавливает необходимые драйверы CUDA или GRID NVIDIA на виртуальную машину серии N. Для установки расширения и управления им можно использовать портал Azure или такие инструменты, как Azure PowerShell и шаблоны Azure Resource Manager. Сведения о поддерживаемых операционных системах и этапах развертывания см. в [документации по расширению драйвера GPU NVIDIA](../extensions/hpccompute-gpu-windows.md). Общие сведения о расширениях виртуальных машин см. в статье [Расширения и компоненты виртуальных машин Azure](../extensions/overview.md).
+Чтобы воспользоваться преимуществами возможностей GPU виртуальных машин Azure серии N под управлением Windows, необходимо установить драйверы NVIDIA или AMD GPU. 
+
+[Расширение драйвера GPU NVIDIA](../extensions/hpccompute-gpu-windows.md) устанавливает необходимые драйверы CUDA или GRID NVIDIA на виртуальную машину серии N. Для установки расширения и управления им можно использовать портал Azure или такие инструменты, как Azure PowerShell и шаблоны Azure Resource Manager. Сведения о поддерживаемых операционных системах и этапах развертывания см. в [документации по расширению драйвера GPU NVIDIA](../extensions/hpccompute-gpu-windows.md). Общие сведения о расширениях виртуальных машин см. в статье [Расширения и компоненты виртуальных машин Azure](../extensions/overview.md).
 
 Если вы решили установить драйверы GUP NVIDIA вручную, то сможете найти сведения о поддерживаемых операционных системах и действиях по установке и проверке в разделе [Установка драйвера GPU для виртуальных машин серии N под управлением Windows](n-series-driver-setup.md).
+
+Чтобы вручную установить драйверы AMD GPU, см. раздел [Установка драйвера GPU AMD серии N для Windows](n-series-amd-driver-setup.md) для поддерживаемых операционных систем, драйверов и шагов по установке и проверке.
 
 [!INCLUDE [virtual-machines-n-series-considerations](../../../includes/virtual-machines-n-series-considerations.md)]
 
@@ -43,6 +47,6 @@ ms.locfileid: "74075346"
 - [Оптимизированные для хранилища](sizes-storage.md)
 - [Предыдущие поколения](sizes-previous-gen.md)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Узнайте больше о том, как с помощью [единиц вычислений Azure (ACU)](acu.md) сравнить производительность вычислений для различных номеров SKU Azure.
 

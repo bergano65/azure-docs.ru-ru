@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: mrbullwinkle
 ms.author: mbullwin
 ms.date: 09/20/2019
-ms.openlocfilehash: 1719c917ee2a4c0a11e4a79953a8b67e946d5931
-ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
+ms.openlocfilehash: 5a47f5c2f9c9d4e22e8205853d85214997a2bea7
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74889130"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75406924"
 ---
 # <a name="eventcounters-introduction"></a>Введение в Евенткаунтерс
 
@@ -55,7 +55,7 @@ Application Insights поддерживает сбор `EventCounters` с его
 |`Microsoft.AspNetCore.Hosting` | `failed-requests` |
 
 > [!NOTE]
-> Счетчики категории Microsoft. AspNetCore. Hosting добавляются только в приложениях Asp.Net Core.
+> Счетчики категории Microsoft. AspNetCore. Hosting добавляются только в приложениях ASP.NET Core.
 
 ## <a name="customizing-counters-to-be-collected"></a>Настройка собираемых счетчиков
 
@@ -95,19 +95,19 @@ Application Insights поддерживает сбор `EventCounters` с его
 
 ## <a name="event-counters-in-metric-explorer"></a>Счетчики событий в обозревателе метрик
 
-Чтобы просмотреть метрики Евенткаунтер в [обозревателе метрик](https://docs.microsoft.com/azure/azure-monitor/platform/metrics-charts), выберите Application Insights ресурс и укажите метрики на основе журнала в качестве пространства имен метрик. Затем Евенткаунтер метрики отображаются в категории PerformanceCounter.
+Чтобы просмотреть метрики Евенткаунтер в [обозревателе метрик](https://docs.microsoft.com/azure/azure-monitor/platform/metrics-charts), выберите Application Insights ресурс и укажите метрики на основе журнала в качестве пространства имен метрик. Затем Евенткаунтер метрики отображаются в разделе настраиваемая Категория.
 
 > [!div class="mx-imgBorder"]
 > ![счетчики событий, о которых сообщается в Application Insights](./media/event-counters/metrics-explorer-counter-list.png)
 
 ## <a name="event-counters-in-analytics"></a>Счетчики событий в аналитике
 
-Отчеты счетчиков событий можно также искать и отображать в [аналитике](../../azure-monitor/app/analytics.md)в таблице **PerformanceCounters** .
+Кроме того, можно искать и отображать отчеты счетчиков событий в [аналитике](../../azure-monitor/app/analytics.md)в таблице **customMetrics** .
 
 Например, выполните следующий запрос, чтобы узнать, какие счетчики собираются и доступны для запроса:
 
 ```Kusto
-performanceCounters | summarize avg(value) by name
+customMetrics | summarize avg(value) by name
 ```
 
 > [!div class="mx-imgBorder"]
@@ -116,7 +116,7 @@ performanceCounters | summarize avg(value) by name
 Чтобы получить диаграмму определенного счетчика (например: `ThreadPool Completed Work Item Count`) за последний период, выполните следующий запрос.
 
 ```Kusto
-performanceCounters 
+customMetrics 
 | where name contains "System.Runtime|ThreadPool Completed Work Item Count"
 | where timestamp >= ago(1h)
 | summarize  avg(value) by cloud_RoleInstance, bin(timestamp, 1m)
@@ -125,7 +125,7 @@ performanceCounters
 > [!div class="mx-imgBorder"]
 > ![разговора одного счетчика в Application Insights](./media/event-counters/analytics-completeditems-counters.png)
 
-Как и другие данные телеметрии, данные **performanceCounters** также содержат столбец `cloud_RoleInstance`, который определяет экземпляр сервера, на котором выполняется приложение. Приведенный выше запрос показывает значение счетчика для каждого экземпляра и может использоваться для сравнения производительности различных экземпляров сервера.
+Как и другие данные телеметрии, **customMetrics** также содержит столбец `cloud_RoleInstance`, указывающий идентификатор экземпляра сервера узла, на котором работает приложение. Приведенный выше запрос показывает значение счетчика для каждого экземпляра и может использоваться для сравнения производительности различных экземпляров сервера.
 
 ## <a name="alerts"></a>Оповещения
 Как и другие метрики, вы можете [настроить оповещение](../../azure-monitor/app/alerts.md) о том, что счетчик событий выходит за пределы указанного предела. Откройте колонку "Оповещения" и щелкните "Добавить оповещение".
@@ -138,7 +138,7 @@ performanceCounters
 
 ### <a name="which-platforms-can-i-see-the-default-list-of-net-core-30-counters"></a>Какие платформы можно увидеть список счетчиков .NET Core 3,0 по умолчанию?
 
-Евенткаунтер не требует каких-либо специальных разрешений и поддерживается во всех платформах .NET Core 3,0. А именно:
+Евенткаунтер не требует каких-либо специальных разрешений и поддерживается во всех платформах .NET Core 3,0. В том числе:
 
 * **Операционная система**: Windows, Linux или macOS.
 * **Метод размещения**: в процессе или вне процесса.
@@ -150,6 +150,6 @@ performanceCounters
 
  [Расширение Application Insights](https://docs.microsoft.com/azure/azure-monitor/app/azure-web-apps) для ASP.NET Core пока не поддерживает эту функцию. Этот документ будет обновлен, если эта функция поддерживается.
 
-## <a name="next"></a>Дальнейшие действия
+## <a name="next"></a>Следующие шаги
 
 * [Отслеживание зависимостей](../../azure-monitor/app/asp-net-dependencies.md)

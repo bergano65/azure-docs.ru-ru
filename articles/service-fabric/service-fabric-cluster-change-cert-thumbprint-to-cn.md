@@ -1,24 +1,14 @@
 ---
-title: Обновление кластера Azure Service Fabric для использования общего имени сертификата | Документация Майкрософт
+title: Обновление кластера для использования общего имени сертификата
 description: Сведения о переключении кластера Service Fabric с использования отпечатков сертификатов на общее имя сертификата.
-services: service-fabric
-documentationcenter: .net
-author: athinanthny
-manager: chackdan
-ms.assetid: ''
-ms.service: service-fabric
-ms.devlang: dotnet
 ms.topic: conceptual
-ms.tgt_pltfrm: NA
-ms.workload: NA
 ms.date: 09/06/2019
-ms.author: atsenthi
-ms.openlocfilehash: a9e2a2c20a8de4bed3876f431566b293cbfa4ef5
-ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
+ms.openlocfilehash: 66c49ccb7b7633d0eff392b676bb381118eb64a2
+ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74109658"
+ms.lasthandoff: 01/02/2020
+ms.locfileid: "75610205"
 ---
 # <a name="change-cluster-from-certificate-thumbprint-to-common-name"></a>Переход с отпечатка на общее имя сертификата для кластера
 Два сертификата не могут иметь один и тот же отпечаток. Это затрудняет смену сертификатов кластера и управление им. Тем не менее несколько сертификатов могут иметь одно общее имя или тему.  Переключение развернутого кластера с использования отпечатков сертификата на использование общих имен сертификатов упрощает управление им. В этой статье описывается обновление выполняющегося кластера Service Fabric для использования общего имени сертификата вместо отпечатка сертификата.
@@ -201,9 +191,9 @@ New-AzResourceGroupDeployment -ResourceGroupName $groupname -Verbose `
     -TemplateParameterFile "C:\temp\cluster\parameters.json" -TemplateFile "C:\temp\cluster\template.json" 
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * Дополнительные сведения о безопасности кластеров см. в статье [Сценарии защиты кластера Service Fabric](service-fabric-cluster-security.md).
 * Дополнительные сведения о [выделении сертификата кластера](service-fabric-cluster-rollover-cert-cn.md).
-* [Добавление и удаление сертификатов для кластера Service Fabric в Azure](service-fabric-cluster-security-update-certs-azure.md).
+* [Обновление сертификатов кластера и управление ими](service-fabric-cluster-security-update-certs-azure.md)
 
 [image1]: ./media/service-fabric-cluster-change-cert-thumbprint-to-cn/PortalViewTemplates.png

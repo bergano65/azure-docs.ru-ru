@@ -1,25 +1,18 @@
 ---
-title: Service Fabric Azure Resource Manager снятие развертывания | Документация Майкрософт
+title: Service Fabric Azure Resource Manager снятие развертывания
 description: В этой статье представлен обзор распространенных ошибок, возникших при развертывании кластера Service Fabric с помощью Azure Resource Manager, и способы их устранения.
 services: service-fabric
 documentationcenter: .net
 author: peterpogorski
-manager: gamonroy
-editor: ''
-ms.assetid: 803c9c63-373a-4d6a-8ef2-ea97e16e88dd
-ms.service: service-fabric
-ms.devlang: dotnet
 ms.topic: conceptual
-ms.tgt_pltfrm: NA
-ms.workload: NA
 ms.date: 10/30/2019
 ms.author: pepogors
-ms.openlocfilehash: 3ea6f850685a695644cfc3073fc939a58901658c
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.openlocfilehash: fe5ff2a5eeb4b2c73165d1577702eb6af7079b61
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73828634"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75426740"
 ---
 # <a name="service-fabric-guardrails"></a>Service Fabric снятие 
 При развертывании кластера Service Fabric помещаются снятие, что приведет к сбою развертывания Azure Resource Manager в случае недопустимой конфигурации кластера. В следующих разделах приведены общие сведения о распространенных проблемах с конфигурацией кластера и действия, необходимые для устранения этих проблем. 
@@ -68,7 +61,7 @@ ms.locfileid: "73828634"
 * Устойчивость масштабируемого набора виртуальных машин соответствует текущему уровню устойчивости Service Fabric или целевому Service Fabricному типу узла уровня устойчивости 
 
 
-### <a name="mitigation"></a>Устранение
+### <a name="mitigation"></a>Меры по снижению риска
 Чтобы устранить несоответствие устойчивости, оно обозначается любым из указанных выше сообщений об ошибке:
 1. Обновите уровень устойчивости в разделе "расширение масштабируемого набора виртуальных машин" или "тип узла Service Fabric" шаблона Azure Resource Manager, чтобы убедиться, что значения совпадают.
 2. Повторно разверните шаблон Azure Resource Manager с обновленными значениями.

@@ -1,5 +1,5 @@
 ---
-title: Миграция из службы контроля доступа Azure AD в SAS
+title: Служебная шина Azure — миграция на авторизацию подписанного URL-доступа
 description: Сведения о миграции из службы контроля доступа Azure Active Directory в авторизацию подписанного URL.
 services: service-bus-messaging
 documentationcenter: ''
@@ -12,14 +12,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/22/2018
 ms.author: aschhab
-ms.openlocfilehash: ae0dd3827e17cc63b4b698eb8d88a08799c7278f
-ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
+ms.openlocfilehash: fe0acedeb65f010f9af2ea55cd37e6fe3046d989
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72790347"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75462160"
 ---
-# <a name="migrate-from-azure-active-directory-access-control-service-to-shared-access-signature-authorization"></a>Переход от службы контроля доступа Azure Active Directory к авторизации подписанного URL-адреса
+# <a name="service-bus---migrate-from-azure-active-directory-access-control-service-to-shared-access-signature-authorization"></a>Служебная шина — миграция из службы контроля доступа Azure Active Directory в авторизацию подписанного URL-доступа
 
 В приложениях служебной шины раньше было доступно две модели авторизации: модель токена [подписанного URL-адреса (SAS)](service-bus-sas.md), предоставляемая служебной шиной, и федеративная модель, где управление правилами выполняется внутри с помощью службы контроля доступа (ACS) [Azure Active Directory](/azure/active-directory/). Токены, полученные из службы ACS, передаются в служебную шину для авторизации доступа к необходимым компонентам.
 

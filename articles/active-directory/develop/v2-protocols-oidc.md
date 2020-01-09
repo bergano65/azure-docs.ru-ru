@@ -1,5 +1,5 @@
 ---
-title: Microsoft Identity Platform & протокол OpenID Connect Connect | Службы
+title: Протокол OpenID Connect Connect — платформа Microsoft Identity | Службы
 description: Создавайте веб-приложения, используя реализацию платформы идентификации Майкрософт протокола проверки подлинности OpenID Connect Connect.
 services: active-directory
 documentationcenter: ''
@@ -18,12 +18,12 @@ ms.author: ryanwi
 ms.reviewer: hirsin
 ms.custom: aaddev, identityplatformtop40
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bc3778f31cb5dd68d3f3f49ed3cddf574b1cc3bd
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.openlocfilehash: 270fda72378b61e6011d5bbf4ce43496df045c25
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74966747"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75423225"
 ---
 # <a name="microsoft-identity-platform-and-openid-connect-protocol"></a>Платформа Microsoft Identity и протокол OpenID Connect Connect
 
@@ -52,12 +52,12 @@ https://login.microsoftonline.com/{tenant}/v2.0/.well-known/openid-configuration
 
 `{tenant}` может принимать одно из четырех значений.
 
-| Value | Описание |
+| Значение | Description |
 | --- | --- |
 | `common` |Пользователи с личными учетная запись Майкрософт, а также с рабочей или учебной учетной записью Azure AD могут войти в приложение. |
 | `organizations` |Вход в приложение могут выполнять только пользователи с рабочими или учебными учетными записями Azure AD. |
 | `consumers` |Вход в приложение могут выполнять только пользователи с личной учетной записью Майкрософт. |
-| `8eaef023-2b34-4da1-9baa-8bc8c9d6a490` или `contoso.onmicrosoft.com` | Только пользователи из определенного клиента Azure AD (будь то участники в каталоге с рабочей или учебной учетной записью или гости в каталоге с личными учетная запись Майкрософт) могут войти в приложение. Можно использовать понятное доменное имя клиента Azure AD или идентификатор GUID клиента. Можно также использовать клиент-потребитель `9188040d-6c67-4c5b-b112-36a304b66dad`вместо клиента `consumers`.  |
+| `8eaef023-2b34-4da1-9baa-8bc8c9d6a490` либо `contoso.onmicrosoft.com` | Только пользователи из определенного клиента Azure AD (будь то участники в каталоге с рабочей или учебной учетной записью или гости в каталоге с личными учетная запись Майкрософт) могут войти в приложение. Можно использовать понятное доменное имя клиента Azure AD или идентификатор GUID клиента. Можно также использовать клиент-потребитель `9188040d-6c67-4c5b-b112-36a304b66dad`вместо клиента `consumers`.  |
 
 Метаданные — это простой документ JSON. В качестве примера ниже приведен фрагмент кода. Его содержимое полностью описано в [спецификации OpenID Connect](https://openid.net/specs/openid-connect-discovery-1_0.html#rfc.section.4.2).
 
@@ -110,7 +110,7 @@ client_id=6731de76-14a6-49ae-97bc-6eba6914391e
 > Чтобы выполнить этот запрос, щелкните приведенную ниже ссылку. После входа в систему в браузере будет выполнен переход по адресу `https://localhost/myapp/` с указанием маркера идентификации в адресной строке. Обратите внимание, что в этом запросе используется `response_mode=fragment` (исключительно в демонстрационных целях). Мы рекомендуем использовать `response_mode=form_post`.
 > <a href="https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=6731de76-14a6-49ae-97bc-6eba6914391e&response_type=id_token&redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F&scope=openid&response_mode=fragment&state=12345&nonce=678910" target="_blank">https://login.microsoftonline.com/common/oauth2/v2.0/authorize...</a>;
 
-| Параметр | Условие | Описание |
+| Параметр | Условие | Description |
 | --- | --- | --- |
 | `tenant` | Обязательно для заполнения | Значение `{tenant}` в пути запроса можно использовать для того, чтобы контролировать вход пользователей в приложение. Допустимые значения: `common`, `organizations`, `consumers`, а также идентификаторы клиента. Чтобы узнать больше, ознакомьтесь с [основами протокола](active-directory-v2-protocols.md#endpoints). |
 | `client_id` | Обязательно для заполнения | **Идентификатор приложения (клиента)** , который [портал Azure — регистрация приложений](https://go.microsoft.com/fwlink/?linkid=2083908) , назначенный приложению. |
@@ -140,7 +140,7 @@ Content-Type: application/x-www-form-urlencoded
 id_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Ik1uQ19WWmNB...&state=12345
 ```
 
-| Параметр | Описание |
+| Параметр | Description |
 | --- | --- |
 | `id_token` | Маркер идентификации, запрошенный приложением. Вы можете использовать параметр `id_token` для проверки личности пользователя и запуска сеанса пользователя. См. дополнительные сведения о маркерах идентификации и их содержимом в [справочнике по `id_tokens`](id-tokens.md). |
 | `state` | Если запрос содержит параметр `state`, то в ответе должно отображаться то же значение. Приложение должно проверить, совпадают ли значения параметра "state" в запросе и ответе. |
@@ -157,7 +157,7 @@ Content-Type: application/x-www-form-urlencoded
 error=access_denied&error_description=the+user+canceled+the+authentication
 ```
 
-| Параметр | Описание |
+| Параметр | Description |
 | --- | --- |
 | `error` | Строка кода ошибки, которую можно использовать для классификации типов возникших ошибок и реагирования на них. |
 | `error_description` | Конкретное сообщение об ошибке, с помощью которого можно определить первопричину возникновения ошибки аутентификации. |
@@ -166,7 +166,7 @@ error=access_denied&error_description=the+user+canceled+the+authentication
 
 В таблице ниже описаны коды ошибок, которые могут возвращаться в параметре `error` сообщения об ошибке.
 
-| Код ошибки | Описание | Действие клиента |
+| Код ошибки | Description | Действие клиента |
 | --- | --- | --- |
 | `invalid_request` | Ошибка протокола, например отсутствует обязательный параметр. |Исправьте запрос и отправьте его повторно. Это ошибка разработки, которая, как правило, обнаруживается во время первоначального тестирования. |
 | `unauthorized_client` | Клиентское приложение не может запросить код авторизации. |Обычно это происходит, когда клиентское приложение не зарегистрировано в Azure AD или не добавляется в клиент Azure AD пользователя. Приложение может отобразить для пользователя запрос с инструкцией по установке приложения и его добавлению в Azure AD. |
@@ -201,7 +201,7 @@ GET https://login.microsoftonline.com/common/oauth2/v2.0/logout?
 post_logout_redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F
 ```
 
-| Параметр | Условие | Описание |
+| Параметр | Условие | Description |
 | ----------------------- | ------------------------------- | ------------ |
 | `post_logout_redirect_uri` | Рекомендуется | URL-адрес, на который перенаправляется пользователь после успешного выхода. Если параметр не включен, пользователь показывает общее сообщение, созданное конечной точкой платформы Microsoft Identity. URL-адрес должен в точности соответствовать одному из универсальных кодов ресурсов (URI) перенаправления, зарегистрированных для приложения на портале регистрации приложений. |
 
@@ -253,7 +253,7 @@ Content-Type: application/x-www-form-urlencoded
 id_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Ik1uQ19WWmNB...&code=AwABAAAAvPM1KaPlrEqdFSBzjqfTGBCmLdgfSTLEMPGYuNHSUYBrq...&state=12345
 ```
 
-| Параметр | Описание |
+| Параметр | Description |
 | --- | --- |
 | `id_token` | Маркер идентификации, запрошенный приложением. Вы можете использовать маркер идентификации для проверки личности пользователя и запуска сеанса пользователя. См. дополнительные сведения о маркерах идентификации и их содержимом в [справочнике по `id_tokens`](id-tokens.md). |
 | `code` | Запрашиваемый приложением код авторизации. Приложение может использовать код авторизации для запроса маркера доступа для целевого ресурса. Код авторизации кратковременно исследуется. Как правило, он действует в течение 10 минут. |
@@ -271,7 +271,7 @@ Content-Type: application/x-www-form-urlencoded
 error=access_denied&error_description=the+user+canceled+the+authentication
 ```
 
-| Параметр | Описание |
+| Параметр | Description |
 | --- | --- |
 | `error` | Строка кода ошибки, которую можно использовать для классификации типов возникших ошибок и реагирования на них. |
 | `error_description` | Конкретное сообщение об ошибке, с помощью которого можно определить первопричину возникновения ошибки аутентификации. |

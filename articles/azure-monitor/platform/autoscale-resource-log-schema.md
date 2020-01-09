@@ -1,19 +1,15 @@
 ---
 title: Схема событий журнала автоматического масштабирования Azure
 description: Формат журналов для мониторинга и устранения неполадок действий автомасштабирования
-author: rboucher
-services: azure-monitor
-ms.service: azure-monitor
 ms.topic: conceptual
 ms.date: 11/14/2019
-ms.author: robb
 ms.subservice: autoscale
-ms.openlocfilehash: 8b99cec69b05fc0f78dcf813e67e6b65ba50d819
-ms.sourcegitcommit: 5cfe977783f02cd045023a1645ac42b8d82223bd
+ms.openlocfilehash: 3c32f15208a8e692054ee6c1f7effc6b7c89de3d
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2019
-ms.locfileid: "74152935"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75395948"
 ---
 # <a name="azure-monitor-autoscale-actions-resource-log-schema"></a>Схема журнала ресурсов действий автомасштабирования Azure Monitor
 
@@ -220,5 +216,5 @@ ms.locfileid: "74152935"
 }
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения об [автомасштабировании](autoscale-overview.md)

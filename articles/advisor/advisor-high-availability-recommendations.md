@@ -1,19 +1,14 @@
 ---
-title: Повышение уровня доступности приложения с использованием Помощника по Azure | Документация Майкрософт
+title: Повышение уровня доступности приложения с использованием Помощника по Azure
 description: Использование Azure Advisor для повышения уровня доступности развернутых служб Azure.
-services: advisor
-documentationcenter: NA
-author: saket-ms
-ms.author: sagupt
-ms.service: advisor
 ms.topic: article
 ms.date: 01/29/2019
-ms.openlocfilehash: dd1b898adf4c4cdff45e05427757d90d5f80bf25
-ms.sourcegitcommit: 5cfe977783f02cd045023a1645ac42b8d82223bd
+ms.openlocfilehash: 997681ed62fa9985e3122ece22565dbae0e65b53
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2019
-ms.locfileid: "74145345"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75443112"
 ---
 # <a name="improve-availability-of-your-application-with-azure-advisor"></a>Повышение уровня доступности приложения с использованием Помощника по Azure
 
@@ -103,11 +98,11 @@ Azure Cosmos DB контейнеры, настроенные с отложенн
 
 2.  На панели мониторинга Помощника выберите вкладку **Высокий уровень доступности**.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о рекомендациях Помощника см. в следующих разделах.
 * [Общие сведения об Azure Advisor](advisor-overview.md)
-* [Приступая к работе с Azure Advisor](advisor-get-started.md)
+* [Начало работы с Помощником по Azure](advisor-get-started.md)
 * [Рекомендации Azure Advisor по затратам](advisor-cost-recommendations.md)
 * [Рекомендации Azure Advisor по производительности](advisor-performance-recommendations.md)
 * [Рекомендации Azure Advisor по безопасности](advisor-security-recommendations.md)

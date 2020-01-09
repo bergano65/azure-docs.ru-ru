@@ -1,29 +1,18 @@
 ---
 title: Развертывание Service Fabric Azure с помощью FabricClient
 description: Используйте API-интерфейсы FabricClient для развертывания и удаления приложений в Service Fabric.
-services: service-fabric
-documentationcenter: .net
-author: athinanthny
-manager: chackdan
-editor: ''
-ms.assetid: b120ffbf-f1e3-4b26-a492-347c29f8f66b
-ms.service: service-fabric
-ms.devlang: dotnet
 ms.topic: conceptual
-ms.tgt_pltfrm: NA
-ms.workload: NA
 ms.date: 01/19/2018
-ms.author: atsenthi
-ms.openlocfilehash: cdb5ae4efbd4119422101eb8a05ce71e7b58d51f
-ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
+ms.openlocfilehash: 25b874d1be8ab50d8076ff8fe9423c8cc0187512
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74013290"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75376976"
 ---
 # <a name="deploy-and-remove-applications-using-fabricclient"></a>Развертывание и удаление приложений с помощью FabricClient
 > [!div class="op_single_selector"]
-> * [Диспетчер ресурсов](service-fabric-application-arm-resource.md)
+> * [Resource Manager](service-fabric-application-arm-resource.md)
 > * [PowerShell](service-fabric-deploy-remove-applications.md)
 > * [Интерфейс командной строки Service Fabric](service-fabric-application-lifecycle-sfctl.md)
 > * [API-интерфейсы FabricClient](service-fabric-deploy-remove-applications-fabricclient.md)
@@ -100,7 +89,7 @@ API [GetApplicationTypeListAsync](/dotnet/api/system.fabric.fabricclient.querycl
 ## <a name="unregister-an-application-type"></a>Отмена регистрации типа приложения
 Если определенная версия типа приложения больше не требуется, отмените ее регистрацию, используя API [Unregister-ServiceFabricApplicationType](/dotnet/api/system.fabric.fabricclient.applicationmanagementclient.unprovisionapplicationasync). Отмена регистрации неиспользуемых версий типов приложений помогает освободить пространство в хранилище, которое использует хранилище образов. Регистрация версии типа приложения может быть отменена, пока не будут созданы экземпляры приложений для этой версии типа приложения. Кроме того, тип приложения может не иметь ожидающих обновлений приложения, ссылающихся на эту версию типа приложения.
 
-## <a name="troubleshooting"></a>Устранение неполадок
+## <a name="troubleshooting"></a>Устранение неисправностей
 ### <a name="copy-servicefabricapplicationpackage-asks-for-an-imagestoreconnectionstring"></a>Команда Copy-ServiceFabricApplicationPackage запрашивает строку ImageStoreConnectionString
 В пакете разработки Service Fabric SDK уже предусмотрены все необходимые значения по умолчанию. Тем не менее, при необходимости значение ImageStoreConnectionString для всех команд должно совпадать со значением, используемым кластером Service Fabric. Значение ImageStoreConnectionString можно найти в манифесте кластера, используя команды [Get-ServiceFabricClusterManifest](/powershell/module/servicefabric/get-servicefabricclustermanifest?view=azureservicefabricps) и Get-ImageStoreConnectionStringFromClusterManifest.
 
@@ -150,7 +139,7 @@ Import-Module "$ENV:ProgramFiles\Microsoft SDKs\Service Fabric\Tools\PSModule\Se
 - [Выполните сжатие пакета](service-fabric-package-apps.md#compress-a-package) перед копированием в хранилище образов. Сжатие уменьшает количество файлов.
 - Задайте больше времени ожидания для метода [ProvisionApplicationAsync](/dotnet/api/system.fabric.fabricclient.applicationmanagementclient.provisionapplicationasync) с помощью параметра `timeout`.
 
-## <a name="code-example"></a>Примеры кода
+## <a name="code-example"></a>Пример кода
 В следующем примере пакет приложения копируется в хранилище образов и подготавливается к типу приложения. Затем в примере создается экземпляр приложения и создается экземпляр службы. Наконец, в примере удаляется экземпляр приложения, отменяется подготовка типа приложения и пакет приложения удаляется из хранилища образов.
 
 ```csharp
@@ -331,7 +320,7 @@ static void Main(string[] args)
 
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 [Обновление приложения Service Fabric](service-fabric-application-upgrade.md)
 
 [Общие сведения о работоспособности Service Fabric](service-fabric-health-introduction.md)

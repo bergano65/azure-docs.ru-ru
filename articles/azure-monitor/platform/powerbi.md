@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 05/01/2019
-ms.openlocfilehash: 62a010480dc83561a11c6ee99c76f35b29e808c1
-ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
+ms.openlocfilehash: 8c703cc2fd93900e13d39021992bc11247881b47
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72932113"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75394703"
 ---
 # <a name="import-azure-monitor-log-data-into-power-bi"></a>Импорт Azure Monitor данных журнала в Power BI
 
@@ -21,7 +21,7 @@ ms.locfileid: "72932113"
 
 [!INCLUDE [azure-monitor-log-analytics-rebrand](../../../includes/azure-monitor-log-analytics-rebrand.md)]
 
-## <a name="overview"></a>Краткое описание
+## <a name="overview"></a>Обзор
 Чтобы импортировать данные из [рабочей области log Analytics](manage-access.md) в Azure Monitor в Power BI, создайте набор данных в Power BI на основе запроса к [журналу](../log-query/log-query-overview.md) в Azure Monitor.  Запрос выполняется каждый раз при обновлении набора данных.  Затем можно создавать отчеты Power BI, которые используют данные из набора данных.  Чтобы создать набор данных в Power BI, нужно экспортировать запрос из Log Analytics в [язык Power Query (M)](https://docs.microsoft.com/powerquery-m/power-query-m-language-specification).  Потом этот импортированный запрос используется для создания запроса в Power BI Desktop, а затем публикуется в Power BI в качестве набора данных.  Ниже описаны подробности этого процесса.
 
 ![Из Log Analytics в Power BI](media/powerbi/overview.png)
@@ -80,5 +80,5 @@ Power BI Desktop — это классическое приложение, по�
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
-* Узнайте больше о [запросах поиска по журналам](../log-query/log-query-overview.md), чтобы создавать запросы, которые можно экспортировать в Power BI.
+* Узнайте больше о [запросах поиска по журналам](../log-query/log-query-overview.md) , чтобы создавать запросы, которые можно экспортировать в Power BI.
 * Дополнительные сведения о [Power BI](https://powerbi.microsoft.com) для построения визуализаций на основе экспорта журналов Azure Monitor.

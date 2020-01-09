@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: conceptual
 ms.date: 12/06/2018
 ms.author: mlearned
-ms.openlocfilehash: 46e44804ddbabd8bf5620ad9516f1ca2d5017bfa
-ms.sourcegitcommit: b12a25fc93559820cd9c925f9d0766d6a8963703
+ms.openlocfilehash: 4629e4e9cfd5c8f9861b692b2aec89057f83587c
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2019
-ms.locfileid: "69019307"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75442919"
 ---
 # <a name="best-practices-for-cluster-security-and-upgrades-in-azure-kubernetes-service-aks"></a>Рекомендации по безопасности и обновлениям кластера в службах Azure Kubernetes (AKS)
 
@@ -27,6 +27,8 @@ ms.locfileid: "69019307"
 > * обновить узлы и автоматически применить исправления безопасности.
 
 Вы также можете ознакомиться с рекомендациями по [управлению образами контейнеров][best-practices-container-image-management] и [безопасности Pod][best-practices-pod-security].
+
+Вы также можете использовать [интеграцию служб Azure Kubernetes Services с центром безопасности][security-center-aks] для обнаружения угроз и просмотра рекомендаций по защите кластеров AKS.
 
 ## <a name="secure-access-to-the-api-server-and-cluster-nodes"></a>Безопасный доступ к серверу API и узлам кластера
 
@@ -207,7 +209,7 @@ az aks upgrade --resource-group myResourceGroup --name myAKSCluster --kubernetes
 
 Дополнительные сведения об обработке перезапусков узла см. в статье [применение обновлений безопасности и ядра к узлам в AKS][aks-kured].
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Эта статья посвящена вопросам, связанным с безопасностью кластера AKS. Для реализации части этих рекомендаций требуются сведения, опубликованные в следующих статьях:
 
@@ -235,3 +237,4 @@ az aks upgrade --resource-group myResourceGroup --name myAKSCluster --kubernetes
 [best-practices-pod-security]: developer-best-practices-pod-security.md
 [pod-security-contexts]: developer-best-practices-pod-security.md#secure-pod-access-to-resources
 [aks-ssh]: ssh.md
+[security-center-aks]: /azure/security-center/azure-kubernetes-service-integration

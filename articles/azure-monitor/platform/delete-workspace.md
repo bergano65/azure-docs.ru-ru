@@ -4,15 +4,15 @@ description: Узнайте, как удалить рабочую область
 ms.service: azure-monitor
 ms.subservice: logs
 ms.topic: conceptual
-author: MGoedtel
-ms.author: magoedte
+author: bwren
+ms.author: bwren
 ms.date: 10/28/2019
-ms.openlocfilehash: b8fdefb5e8555e90b5c9065672f4593e5bf98e06
-ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
+ms.openlocfilehash: 2b54dd5161312a081d439b3e10d2cb4bf9014d52
+ms.sourcegitcommit: f0dfcdd6e9de64d5513adf3dd4fe62b26db15e8b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74326508"
+ms.lasthandoff: 12/26/2019
+ms.locfileid: "75496532"
 ---
 # <a name="delete-and-restore-azure-log-analytics-workspace"></a>Удаление и восстановление рабочей области Azure Log Analytics
 
@@ -20,12 +20,15 @@ ms.locfileid: "74326508"
 
 ## <a name="considerations-when-deleting-a-workspace"></a>Рекомендации по удалению рабочей области
 
-При удалении рабочей области Log Analytics выполняется операция обратимого удаления, позволяющая восстановить рабочую область, включая ее данные и подключенные агенты, в течение 14 дней, независимо от того, было ли удаление случайным или умышленно. После периода обратимого удаления Рабочая область и ее данные не могут быть восстановлены — данные помещаются в очередь для постоянного удаления в течение 30 дней, а имя рабочей области доступно и может использоваться для создания новой рабочей области.
+При удалении рабочей области Log Analytics выполняется операция обратимого удаления, позволяющая восстановить рабочую область, включая ее данные и подключенные агенты, в течение 14 дней, независимо от того, было ли удаление случайным или умышленно. После периода обратимого удаления ресурс рабочей области и его данные не могут быть восстановлены — данные помещаются в очередь для постоянного удаления и полностью очищаются в течение 30 дней. Имя рабочей области — "releaseed", и его можно использовать для создания новой рабочей области.
+
+> [!NOTE]
+> Невозможно отключить режим обратимого удаления. Вскоре будет добавлен параметр для переопределения обратимого удаления при использовании тега "Force" в операции удаления.
 
 При удалении рабочей области необходимо соблюдать осторожность, так как могут возникать важные данные и конфигурация, которые могут негативно повлиять на работу службы. Проверьте, какие агенты, решения и другие службы и источники Azure хранят свои данные в Log Analytics, например:
 
 * Решения для управления
-* службы автоматизации Azure
+* Автоматизация Azure
 * агенты, работающие на виртуальных машинах Windows и Linux;
 * агенты, работающие на компьютерах Windows и Linux в вашей среде;
 * System Center Operations Manager
@@ -41,14 +44,19 @@ ms.locfileid: "74326508"
 
 Рабочую область можно удалить с помощью [PowerShell](https://docs.microsoft.com/powershell/module/azurerm.operationalinsights/remove-azurermoperationalinsightsworkspace?view=azurermps-6.13.0), [REST API](https://docs.microsoft.com/rest/api/loganalytics/workspaces/delete)или в [портал Azure](https://portal.azure.com).
 
-### <a name="delete-workspace-in-azure-portal"></a>Удаление рабочей области в портал Azure
+### <a name="azure-portal"></a>Портал Azure
 
 1. Чтобы войти в систему, перейдите на [портал Azure](https://portal.azure.com). 
-2. На портале Azure щелкните **Все службы**. В списке ресурсов введите **Log Analytics**. Как только вы начнете вводить символы, список отфильтруется соответствующим образом. Выберите рабочие области **Log Analytics**.
+2. На портале Azure щелкните **Все службы**. В списке ресурсов введите **Log Analytics**. Как только вы начнете вводить символы, список отфильтруется соответствующим образом. Выберите **Рабочие области Log Analytics**.
 3. В списке рабочих областей Log Analytics выберите рабочую область и щелкните **Удалить** в верхней части средней области.
    ![Параметр "Удалить" в области свойств рабочей области](media/delete-workspace/log-analytics-delete-workspace.png)
 4. Когда отобразится окно с запросом подтверждения удаления рабочей области, щелкните **Да**.
    ![Подтверждение удаления рабочей области](media/delete-workspace/log-analytics-delete-workspace-confirm.png)
+
+### <a name="powershell"></a>PowerShell
+```PowerShell
+PS C:\>Remove-AzOperationalInsightsWorkspace -ResourceGroupName "ContosResourceGroup" -Name "MyWorkspace"
+```
 
 ## <a name="recover-workspace"></a>Восстановить рабочую область
 

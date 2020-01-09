@@ -9,14 +9,14 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 12/04/2019
+ms.date: 01/02/2020
 ms.author: banders
-ms.openlocfilehash: cc4b552143917f5a9ca66ad402cca79956186d08
-ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
+ms.openlocfilehash: 112bcf7f5cb33fec56cdc36c5fe8cfe92145705a
+ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74841275"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75644500"
 ---
 # <a name="understand-your-azure-enterprise-agreement-bill"></a>Общие сведения о счете по соглашению Azure Enterprise
 
@@ -105,13 +105,13 @@ ms.locfileid: "74841275"
 
 В следующей таблице перечислены условия и описания, представленные в счете и на странице **Usage Summary** (Сводка использования) на Enterprise Portal.
 
-|Термин в счете|Термин в сводке использования|ОПИСАНИЕ|
+|Термин в счете|Термин в сводке использования|Description|
 |---|---|---|
 |Total Extended Amount (Общая сумма превышения)|Total Usage (Общее использование)|Общая сумма расходов без учета налогов на использование за определенный период до применения кредита.|
 |Commitment Usage (Использование обязательств)|Commitment Usage (Использование обязательств)|Сумма кредита, примененного в течение того же периода.|
 |Total Sale (Сумма продаж)|Total Overage (Общий избыток)|Общая сумма затрат на использование, превышающее сумму кредита. Эта сумма не включает налог.|
-|Tax Amount (Сумма налогов)|Не применяется|Налог, который применяется к сумме продаж за определенный период.|
-|Total Amount (Общая сумма)|Не применяется|Сумма для оплаты после вычитания кредита и прибавления налога.|
+|Tax Amount (Сумма налогов)|Неприменимо|Налог, который применяется к сумме продаж за определенный период.|
+|Total Amount (Общая сумма)|Неприменимо|Сумма для оплаты после вычитания кредита и прибавления налога.|
 
 ### <a name="marketplace-invoice"></a>Счета в Marketplace
 
@@ -131,5 +131,5 @@ ms.locfileid: "74841275"
 
 Если у вас есть вопросы или вам нужна помощь, [создайте запрос в службу поддержки](https://go.microsoft.com/fwlink/?linkid=2083458).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - [Просмотр и скачивание сведений об использовании и расходах Azure](billing-download-azure-daily-usage.md)

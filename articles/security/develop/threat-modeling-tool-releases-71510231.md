@@ -1,26 +1,18 @@
 ---
-title: Выпуски Microsoft Threat Modeling Tool в Azure | Документация Майкрософт
+title: Microsoft Threat Modeling Tool выпуск 11/1/2018 — Azure
 description: Документирование заметок о выпуске средства моделирования угроз
-services: security
-documentationcenter: na
 author: jegeib
-manager: jegeib
-editor: jegeib
-ms.assetid: na
+ms.author: jegeib
 ms.service: security
 ms.subservice: security-develop
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 01/15/2019
-ms.author: jegeib
-ms.openlocfilehash: 2fb3756e153a52515e598bb31fea1e999144bb28
-ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
+ms.openlocfilehash: a84d31df491a9cf455a21b9640df36ed29c83cbb
+ms.sourcegitcommit: ec2eacbe5d3ac7878515092290722c41143f151d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68934755"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75552089"
 ---
 # <a name="threat-modeling-tool-update-release-71510231---1112018"></a>Threat Modeling Tool, выпуск обновления 7.1.51023.1 — 1.11.2018
 
@@ -32,12 +24,12 @@ ms.locfileid: "68934755"
 
 ## <a name="feature-changes"></a>Изменения функций
 
-- Отсутствуют
+- Нет
 
-## <a name="system-requirements"></a>Требования к системе
+## <a name="system-requirements"></a>Системные требования
 
 - Поддерживаемые операционные системы
-  - Microsoft Windows 10.
+  - Microsoft Windows 10
 - Требуемая версия .NET
   - 3\.5.2 .NET
 - Дополнительные требования
@@ -47,6 +39,6 @@ ms.locfileid: "68934755"
 
 - Документация по Threat Modeling Tool находится на сайте [docs.microsoft.com](threat-modeling-tool.md) и содержит информацию [об использовании средства](threat-modeling-tool-getting-started.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Скачайте последнюю версию [Microsoft Threat Modeling Tool](https://aka.ms/threatmodelingtool).

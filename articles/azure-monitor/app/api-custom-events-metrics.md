@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: mrbullwinkle
 ms.author: mbullwin
 ms.date: 03/27/2019
-ms.openlocfilehash: afe2ac60d7b945dd1bb3b8841ae0a7605865f29f
-ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
+ms.openlocfilehash: 2136ab9a6d0cef7ad5650c8414f9a17b78498abc
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74893388"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75432672"
 ---
 # <a name="application-insights-api-for-custom-events-and-metrics"></a>API Application Insights для пользовательских событий и метрик
 
@@ -22,7 +22,7 @@ ms.locfileid: "74893388"
 
 Этот основной API используется на всех платформах, за некоторыми исключениями, например `GetMetric` (только в .NET).
 
-| Метод | Область использования |
+| Метод | Используется для |
 | --- | --- |
 | [`TrackPageView`](#page-views) |Страницы, экраны, колонки или формы. |
 | [`TrackEvent`](#trackevent) |Действия пользователя и другие события. Используется для отслеживания поведения пользователя или мониторинга производительности. |
@@ -54,7 +54,7 @@ ms.locfileid: "74893388"
 
     *Java:* `import com.microsoft.applicationinsights.TelemetryClient;`
 
-    *Node.js:* `var applicationInsights = require("applicationinsights");`
+    *Node. js:* `var applicationInsights = require("applicationinsights");`
 
 ## <a name="get-a-telemetryclient-instance"></a>Получение экземпляра TelemetryClient
 
@@ -574,7 +574,7 @@ trackTrace(message: string, properties?: {[string]:string}, severityLevel?: Seve
 
 Зарегистрируйте событие диагностики, например вход в метод или выход из него.
 
- Параметр | Описание
+ Параметр | Description
 ---|---
 `message` | Диагностические данные Могут содержать не только имя.
 `properties` | Преобразование строки в строку: дополнительные данные, используемые для [фильтрации исключений](https://azure.microsoft.com/documentation/articles/app-insights-api-custom-events-metrics/#properties) на портале. Значение по умолчанию: empty.
@@ -656,7 +656,7 @@ finally {
 }
 ```
 
-*JavaScript*
+*Node.js*
 
 ```javascript
 var success = false;
@@ -1188,7 +1188,7 @@ telemetry.Context.Operation.Name = "MyOperationName";
 * [Базовый пакет SDK для ASP.NET](https://github.com/Microsoft/ApplicationInsights-aspnetcore)
 * [ASP.NET](https://github.com/Microsoft/ApplicationInsights-dotnet)
 * [Пакеты Windows Server](https://github.com/Microsoft/applicationInsights-dotnet-server)
-* [Пакет SDK для Java](https://github.com/Microsoft/ApplicationInsights-Java)
+* [пакет SDK для Java](https://github.com/Microsoft/ApplicationInsights-Java)
 * [Пакет SDK для Node.js](https://github.com/Microsoft/ApplicationInsights-Node.js)
 * [Пакет SDK для JavaScript](https://github.com/Microsoft/ApplicationInsights-JS)
 
@@ -1202,7 +1202,7 @@ telemetry.Context.Operation.Name = "MyOperationName";
 
     Да, [API доступа к данным](https://dev.applicationinsights.io/). К другим способам извлечения данных относятся [экспорт из Analytics в Power BI](../../azure-monitor/app/export-power-bi.md ) и [непрерывный экспорт](../../azure-monitor/app/export-telemetry.md).
 
-## <a name="next"></a>Дальнейшие действия
+## <a name="next"></a>Следующие шаги
 
 * [Поиск событий и журналов](../../azure-monitor/app/diagnostic-search.md)
 * [Устранение неполадок](../../azure-monitor/app/troubleshoot-faq.md)

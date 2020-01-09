@@ -6,12 +6,12 @@ ms.topic: troubleshooting
 ms.date: 4/11/2019
 ms.author: alkarche
 ms.reviewer: glenga
-ms.openlocfilehash: 4534e20a1156f1d3550d247dfd15d9dc538e9d80
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: acb1e942c1f342ce6fee7d8aeacafcc1d7b6fd91
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74226834"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75409532"
 ---
 # <a name="frequently-asked-questions-about-networking-in-azure-functions"></a>Часто задаваемые вопросы о сети в службе "функции Azure"
 
@@ -51,9 +51,7 @@ ms.locfileid: "74226834"
 
 Вы можете разрешить вызывать триггеры HTTP из виртуальной сети с помощью [конечных точек службы](./functions-networking-options.md#private-site-access). 
 
-Вы также можете активировать функцию из ресурса в виртуальной сети, развернув приложение-функцию в Среда службы приложений. Дополнительные сведения об использовании Среда службы приложений см. в статье [Создание и использование внутренней подсистемы балансировки нагрузки с среда службы приложений](../app-service/environment/create-ilb-ase.md).
-
-План обслуживания Premium и службы приложений поддерживают триггеры HTTP из виртуальной сети, но только среда службы приложений поддерживает все другие типы триггеров функций через виртуальную сеть.
+Вы также можете активировать функцию из всех других ресурсов в виртуальной сети, развернув приложение-функцию в плане Premium, в плане службы приложений или Среда службы приложений. Дополнительные сведения см. в разделе [триггеры виртуальной сети, не относящиеся к HTTP](./functions-networking-options.md#virtual-network-triggers-non-http) .
 
 ## <a name="how-can-i-deploy-my-function-app-in-a-virtual-network"></a>Как развернуть мое приложение-функцию в виртуальной сети?
 
@@ -61,7 +59,7 @@ ms.locfileid: "74226834"
 
 Сценарии, в которых необходим только односторонний доступ к ресурсам виртуальной сети или менее полные сетевые изоляции, см. в статье [Общие сведения о функциях сети](functions-networking-options.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о работе в сети и функциях: 
 

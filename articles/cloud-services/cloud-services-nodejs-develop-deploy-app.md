@@ -3,18 +3,18 @@ title: Руководство по началу работы с Node.js
 description: Сведения о создании простого веб-приложения Node.js и его развертывании в облачной службе Azure.
 services: cloud-services
 documentationcenter: nodejs
-author: georgewallace
+author: tgore03
 ms.service: cloud-services
 ms.devlang: nodejs
 ms.topic: conceptual
 ms.date: 08/17/2017
-ms.author: gwallace
-ms.openlocfilehash: 81ad3bce6c7e331fd67fba60b35de6b8a37c5da9
-ms.sourcegitcommit: 4b647be06d677151eb9db7dccc2bd7a8379e5871
+ms.author: tagore
+ms.openlocfilehash: 23fbb0b4c506b2f72000add9704618337b8b24cf
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68359527"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75386193"
 ---
 # <a name="build-and-deploy-a-nodejs-application-to-an-azure-cloud-service"></a>Построение и развертывание приложения Node.js в облачной службе Azure
 
@@ -31,7 +31,7 @@ ms.locfileid: "68359527"
 
 ![В окне браузера отображается веб-страница "Hello World"][A web browser displaying the Hello World web page]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 > [!NOTE]
 > В этом учебнике используется Azure PowerShell, для которого требуется операционная система Windows.
 
@@ -55,8 +55,8 @@ ms.locfileid: "68359527"
 
     Командлет создает следующие файлы:
 
-   * **ServiceConfiguration.Cloud.cscfg**, **ServiceConfiguration.Local.cscfg** и **ServiceDefinition.csdef**: связанные с Azure файлы,которые необходимы для публикации приложения. См. [общие сведения о создании размещенной службы для Azure].
-   * **deploymentSettings.json**: хранит локальные параметры, используемые командлетами развертывания Azure PowerShell.
+   * **ServiceConfiguration.Cloud.cscfg**, **ServiceConfiguration.Local.cscfg** и **ServiceDefinition.csdef** — специальные файлы Azure, необходимые для публикации приложения. См. [общие сведения о создании размещенной службы для Azure].
+   * **deploymentSettings.json**хранит локальные параметры, используемые командлетами развертывания Azure PowerShell.
 4. Введите следующую команду, чтобы добавить новую веб-роль:
 
        Add-AzureNodeWebRole
@@ -154,7 +154,7 @@ ms.locfileid: "68359527"
    > [!NOTE]
    > При удалении службы учетная запись хранения, созданная при первоначальной публикации службы, не удаляется. Оплата за использование хранилища будет насчитываться. Если хранилище не используется другими объектами, его можно удалить.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительную информацию см. в [Центр разработчика Node.js].
 
 <!-- URL List -->
@@ -177,3 +177,6 @@ ms.locfileid: "68359527"
 [A browser window displaying the hello world page; the URL indicates the page is hosted on Azure.]: ./media/cloud-services-nodejs-develop-deploy-app/node21.png
 [The status of the Stop-AzureService command]: ./media/cloud-services-nodejs-develop-deploy-app/node48.png
 [The status of the Remove-AzureService command]: ./media/cloud-services-nodejs-develop-deploy-app/node49.png
+
+
+

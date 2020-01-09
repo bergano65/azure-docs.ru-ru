@@ -9,18 +9,18 @@ ms.topic: conceptual
 author: xiaoharper
 ms.author: amlstudiodocs
 ms.date: 04/25/2019
-ms.openlocfilehash: c1f9a9248494344cd6577ca2bf743a4c80730cda
-ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
+ms.openlocfilehash: bc4eea53c026eef9dc8f390976442426e2ba1067
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73837996"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75427531"
 ---
 # <a name="powershell-modules-for-azure-machine-learning-studio-classic"></a>Модули PowerShell для Машинное обучение Azure Studio (классическая модель)
 
 С помощью модулей PowerShell можно программно управлять ресурсами и активами студии (классическими), такими как рабочие области, наборы данных и веб-службы.
 
-Вы можете взаимодействовать с классической версией ресурсов Studio с помощью трех модулей PowerShell:
+С помощью трех модулей PowerShell можно взаимодействовать с ресурсами студии (классические).
 
 * [Azure PowerShell Az](#az-rm) 2018 года выпуска содержит все функции AzureRM, а также различные имена командлетов.
 * [AzureRM](#az-rm) , выпущенная в 2016, заменена PowerShell AZ

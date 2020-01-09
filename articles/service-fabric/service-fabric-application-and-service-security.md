@@ -1,25 +1,14 @@
 ---
-title: Безопасность приложений Azure Service Fabric | Документация Майкрософт
+title: Дополнительные сведения о безопасности приложений Azure Service Fabric
 description: Общие сведения о безопасном выполнении приложений для микрослужб в Service Fabric. Узнайте, как выполнять службы и сценарий запуска с различными учетными записями безопасности, аутентифицировать и авторизовать пользователей, управлять секретами приложений, защищать подключения служб, использовать шлюз API и обеспечивать безопасных неактивных данных приложений.
-services: service-fabric
-documentationcenter: .net
-author: athinanthny
-manager: chackdan
-editor: ''
-ms.assetid: 4242a1eb-a237-459b-afbf-1e06cfa72732
-ms.service: service-fabric
-ms.devlang: dotnet
 ms.topic: conceptual
-ms.tgt_pltfrm: NA
-ms.workload: NA
 ms.date: 03/16/2018
-ms.author: atsenthi
-ms.openlocfilehash: 75a82a0915414d24ab9c58ea15d3fdc9c1922c63
-ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
+ms.openlocfilehash: 6c40bf66d1068310790d1440174eeb5b2a571154
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68600068"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75452252"
 ---
 # <a name="service-fabric-application-and-service-security"></a>Безопасность приложений и служб Service Fabric
 Архитектура микрослужб может обеспечить [множество преимуществ](service-fabric-overview-microservices.md). Тем не менее управление безопасностью микрослужб является непростой задачей и отличается от управления безопасностью традиционных неделимых приложений. 
@@ -28,7 +17,7 @@ ms.locfileid: "68600068"
 
 Эта статья не является руководством по безопасности микрослужбами, в Интернете представлено достаточно таких материалов. В ней описываются различные аспекты безопасности, реализуемые в Service Fabric.
 
-## <a name="authentication-and-authorization"></a>Аутентификация и авторизация
+## <a name="authentication-and-authorization"></a>Проверка подлинности и авторизация
 Часто возникает необходимость ограничить доступ к ресурсам и интерфейсам API службы, предоставив его определенным доверенным пользователям или клиентам. Аутентификация — это процесс надежной проверки подлинности пользователя.  Авторизация — это процесс, который позволяет предоставить интерфейсы API или службы некоторым из аутентифицированных пользователей.
 
 ### <a name="authentication"></a>Проверка подлинности
@@ -38,7 +27,7 @@ ms.locfileid: "68600068"
 
 Для ASP.NET Core основным механизмом [аутентификации пользователей](/dotnet/standard/microservices-architecture/secure-net-microservices-web-applications/) является система членства в ASP.NET Core Identity. В ASP.NET Core Identity в хранилище данных, настроенном разработчиком, хранятся сведения о пользователях (включая данные для входа, роли и утверждений). ASP.NET Core Identity поддерживает двухфакторную проверку подлинности.  Кроме того, поддерживаются внешние поставщики проверки подлинности, поэтому пользователи могут выполнять вход с помощью существующих процессов проверки подлинности от таких поставщиков, как Microsoft, Google, Facebook или Twitter.
 
-### <a name="authorization"></a>Authorization
+### <a name="authorization"></a>Авторизация
 После аутентификации службы должны предоставить пользователю доступ или определить, какие операции пользователь может выполнять. Этот процесс позволяет службе предоставить интерфейсы API некоторым из пользователей, прошедших аутентификацию, но не всем. Авторизация является самостоятельной и не зависит от аутентификации, которая позволяет установить подлинность пользователя. При использовании аутентификации возможно создание одного или нескольких удостоверений для текущего пользователя.
 
 [Авторизация ASP.NET Core](/dotnet/standard/microservices-architecture/secure-net-microservices-web-applications/authorization-net-microservices-web-applications) может выполняться на основе ролей пользователей или пользовательской политики, которая может включать в себя проверку утверждений или другие эвристические методы.
@@ -103,7 +92,7 @@ TO DO: Encrypt disks on Linux clusters?-->
 
 
 <!--Every topic should have next steps and links to the next logical set of content to keep the customer engaged-->
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * [Выполнение сценария настройки при запуске службы](service-fabric-run-script-at-service-startup.md)
 * [Указание ресурсов в манифесте службы](service-fabric-service-manifest-resources.md)
 * [Развертывание приложения](service-fabric-deploy-remove-applications.md)

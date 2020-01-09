@@ -3,17 +3,17 @@ title: Стандартные задачи запуска в облачной с
 description: Содержит некоторые примеры стандартных задач запуска, которые можно выполнить в веб-роли или рабочей роли облачной службы.
 services: cloud-services
 documentationcenter: ''
-author: georgewallace
+author: tgore03
 ms.service: cloud-services
 ms.topic: article
 ms.date: 07/18/2017
-ms.author: gwallace
-ms.openlocfilehash: 2eb299ad841444a3100eac207b225d5377959f85
-ms.sourcegitcommit: 4b647be06d677151eb9db7dccc2bd7a8379e5871
+ms.author: tagore
+ms.openlocfilehash: 5c6173971ac5272c2c2d769551fc9caf3dfa2573
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68358956"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75385802"
 ---
 # <a name="common-cloud-service-startup-tasks"></a>Стандартные задачи запуска в облачной службе
 В этой статье приведены некоторые примеры стандартных задач запуска, которые можно выполнить в облачной службе. С помощью задач запуска вы можете выполнять различные операции перед запуском роли. Это может быть установка компонента, регистрация компонентов COM, установка разделов реестра или запуск длительного процесса. 
@@ -25,7 +25,7 @@ ms.locfileid: "68358956"
 > 
 
 ## <a name="define-environment-variables-before-a-role-starts"></a>Определение переменных среды до запуска роли
-Если требуется определить переменные среды для конкретной задачи, можно использовать элемент [Environment] внутри элемента [Task].
+Если требуется определить переменные среды для конкретной задачи, можно использовать элемент [Среда] внутри элемента [Задача]
 
 ```xml
 <ServiceDefinition name="MyService" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceDefinition">
@@ -119,13 +119,13 @@ EXIT %ERRORLEVEL%
 ```
 
 ## <a name="add-firewall-rules"></a>Добавление правил брандмауэра
-Фактически в Azure есть два брандмауэра. Первый брандмауэр управляет подключениями между виртуальной машиной и внешним миром. Для управления им используется элемент [EndPoints] в файле [ServiceDefinition.csdef].
+Фактически в Azure есть два брандмауэра. Первый брандмауэр управляет подключениями между виртуальной машиной и внешним миром. Для управления им используется элемент [Конечные точки] в файле [ServiceDefinition.csdef].
 
 Второй брандмауэр управляет подключениями между виртуальной машиной и процессами в этой виртуальной машине. Им можно управлять с помощью программы командной строки `netsh advfirewall firewall`.
 
 Azure создает правила брандмауэра для процессов, запущенных в ваших ролях. Например, при запуске службы или программы Azure автоматически создает необходимые правила брандмауэра, чтобы служба могла взаимодействовать с Интернетом. Тем не менее если создать службу, которую запускает процесс извне роли (например, службу COM+ или запланированную задачу Windows), необходимо будет вручную создать правило брандмауэра, чтобы разрешить доступ к этой службе. Эти правила брандмауэра можно создавать с помощью задачи запуска.
 
-У задачи запуска, которая создает правило брандмауэра, должен быть [executionContext][Task] со значением **elevated**. Добавьте следующую задачу запуска в файл [ServiceDefinition.csdef] .
+У задачи запуска, которая создает правило брандмауэра, должен быть [executionContext][задача] со значением **elevated**. Добавьте следующую задачу запуска в файл [ServiceDefinition.csdef] .
 
 ```xml
 <ServiceDefinition name="MyService" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceDefinition">
@@ -300,7 +300,7 @@ string fileContent = System.IO.File.ReadAllText(System.IO.Path.Combine(localStor
 
 Эту возможность выполнять различные действия в эмуляторе вычислений и облаке можно получить, создав переменную среды в файле [ServiceDefinition.csdef]. Затем переменная проверяется в задаче запуска.
 
-Чтобы создать переменную среды, добавьте элемент [Variable]/[RoleInstanceValue] и создайте значение XPath `/RoleEnvironment/Deployment/@emulated`. При выполнении в эмуляторе вычислений переменная среды **%ComputeEmulatorRunning%** приобретает значение `true`, а при выполнении в облаке — `false`.
+Чтобы создать переменную среды, добавьте элемент [Переменная]/[RoleInstanceValue] и создайте значение XPath `/RoleEnvironment/Deployment/@emulated`. При выполнении в эмуляторе вычислений переменная среды **%ComputeEmulatorRunning%** приобретает значение `true`, а при выполнении в облаке — `false`.
 
 ```xml
 <ServiceDefinition name="MyService" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceDefinition">
@@ -466,12 +466,12 @@ EXIT %ERRORLEVEL%
 ### <a name="set-executioncontext-appropriately-for-startup-tasks"></a>Правильная настройка executionContext для задач запуска
 Задайте соответствующие привилегии для задачи запуска. Иногда задачи запуска должны выполняться с повышенными привилегиями, даже несмотря на то, что роль запускается с обычными привилегиями.
 
-С помощью программы командной строки [executionContext][Task] задает уровень привилегий задачи запуска. Использование `executionContext="limited"` означает, что задаче запуска назначен тот же уровень привилегий, что и роли. Использование `executionContext="elevated"` означает, что задаче запуска назначены привилегии администратора, разрешающие задаче запуска выполнять операции администрирования без предоставления привилегий администратора вашей роли.
+С помощью программы командной строки [executionContext][задача] задает уровень привилегий задачи запуска. Использование `executionContext="limited"` означает, что задаче запуска назначен тот же уровень привилегий, что и роли. Использование `executionContext="elevated"` означает, что задаче запуска назначены привилегии администратора, разрешающие задаче запуска выполнять операции администрирования без предоставления привилегий администратора вашей роли.
 
 Примером задачи запуска, которой требуются повышенные привилегии, может послужить задача запуска, которая использует **AppCmd.exe** для настройки IIS. **AppCmd.exe** требуется `executionContext="elevated"`.
 
 ### <a name="use-the-appropriate-tasktype"></a>Использование соответствующего taskType
-С помощью программы командной строки [TaskType][Task] определяет способ выполнения задачи запуска. Он имеет три значения: **simple**, **background** и **foreground**. Фоновые задачи (background) и задачи переднего плана (foreground) запускаются асинхронно, а затем по одной синхронно выполняются простые задачи (simple).
+С помощью программы командной строки [TaskType][задача] определяет способ выполнения задачи запуска. Он имеет три значения: **simple**, **background** и **foreground**. Фоновые задачи (background) и задачи переднего плана (foreground) запускаются асинхронно, а затем по одной синхронно выполняются простые задачи (simple).
 
 С помощью **простых** задач запуска можно задать порядок выполнения задач, упорядочив их список в файле ServiceDefinition.csdef. Если **простая** задача завершится с ненулевым кодом выхода, то процедура запуска остановится и роль не запустится.
 
@@ -493,7 +493,7 @@ EXIT %ERRORLEVEL%
 ### <a name="use-local-storage-to-store-files-that-must-be-accessed-in-the-role"></a>Используйте локальное хранилище для хранения файлов, которые должны использоваться в роли
 Если вы хотите во время выполнения задачи запуска скопировать или создать файл, который затем будет доступен вашей роли, этот файл необходимо поместить в локальное хранилище. См. [предыдущий раздел](#create-files-in-local-storage-from-a-startup-task).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Ознакомьтесь с [моделью и пакетом облачной службы](cloud-services-model-and-package.md)
 
 Узнайте, как работают [задачи](cloud-services-startup-tasks.md) .
@@ -501,14 +501,17 @@ EXIT %ERRORLEVEL%
 [Создайте и разверните](cloud-services-how-to-create-deploy-portal.md) свой пакет облачной службы.
 
 [ServiceDefinition.csdef]: cloud-services-model-and-package.md#csdef
-[Task]: https://msdn.microsoft.com/library/azure/gg557552.aspx#Task
+[Задача]: https://msdn.microsoft.com/library/azure/gg557552.aspx#Task
 [Startup]: https://msdn.microsoft.com/library/azure/gg557552.aspx#Startup
 [Runtime]: https://msdn.microsoft.com/library/azure/gg557552.aspx#Runtime
-[Environment]: https://msdn.microsoft.com/library/azure/gg557552.aspx#Environment
-[Variable]: https://msdn.microsoft.com/library/azure/gg557552.aspx#Variable
+[Среда]: https://msdn.microsoft.com/library/azure/gg557552.aspx#Environment
+[Переменная]: https://msdn.microsoft.com/library/azure/gg557552.aspx#Variable
 [RoleInstanceValue]: https://msdn.microsoft.com/library/azure/gg557552.aspx#RoleInstanceValue
 [RoleEnvironment]: https://msdn.microsoft.com/library/azure/microsoft.windowsazure.serviceruntime.roleenvironment.aspx
-[EndPoints]: https://msdn.microsoft.com/library/azure/gg557552.aspx#Endpoints
+[Конечные точки]: https://msdn.microsoft.com/library/azure/gg557552.aspx#Endpoints
 [LocalStorage]: https://msdn.microsoft.com/library/azure/gg557552.aspx#LocalStorage
 [LocalResources]: https://msdn.microsoft.com/library/azure/gg557552.aspx#LocalResources
 [RoleInstanceValue]: https://msdn.microsoft.com/library/azure/gg557552.aspx#RoleInstanceValue
+
+
+

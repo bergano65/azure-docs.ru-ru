@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: virtual-machines-linux
 ms.tgt_pltfrm: linux
 ms.subservice: disks
-ms.openlocfilehash: dcd2f5f00c00ce0f74c07bfb7ba8e81316d9a53e
-ms.sourcegitcommit: 12d902e78d6617f7e78c062bd9d47564b5ff2208
+ms.openlocfilehash: 8a7e5243428eb88a2757b675c7d66dbfb3c66a30
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2019
-ms.locfileid: "74456664"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75459982"
 ---
 # <a name="upload-a-vhd-to-azure-using-azure-powershell"></a>Отправка виртуального жесткого диска в Azure с помощью Azure PowerShell
 
@@ -23,11 +23,11 @@ ms.locfileid: "74456664"
 
 В настоящее время прямая отправка поддерживается для дисков уровня "Стандартный", "Стандартный SSD" и "Премиум", управляемых на SSD. Она пока не поддерживается для Ultra SSDs.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Технические условия
 
 - Скачайте последнюю [версию AzCopy V10](../../storage/common/storage-use-azcopy-v10.md#download-and-install-azcopy).
 - [Установите модуль Azure PowerShell](/powershell/azure/install-Az-ps).
-- Если вы собираетесь передать виртуальный жесткий диск из in-PEM: VHD, [подготовленный для Azure](prepare-for-upload-vhd-image.md), который хранится локально.
+- Если планируется передать виртуальный жесткий диск из локальной среды, VHD, который [был подготовлен для Azure](prepare-for-upload-vhd-image.md), хранится локально.
 - Или управляемый диск в Azure, если планируется выполнить действие копирования.
 
 ## <a name="create-an-empty-managed-disk"></a>Создание пустого управляемого диска
@@ -124,7 +124,7 @@ Revoke-AzDiskAccess -ResourceGroupName $sourceRG -DiskName $sourceDiskName
 Revoke-AzDiskAccess -ResourceGroupName $targetRG -DiskName $targetDiskName 
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 После успешной отправки виртуального жесткого диска на управляемый диск можно подключить его к виртуальной машине и начать использовать.
 

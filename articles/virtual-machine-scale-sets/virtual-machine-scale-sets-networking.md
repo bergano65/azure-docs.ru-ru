@@ -1,6 +1,6 @@
 ---
-title: Сеть для масштабируемых наборов виртуальных машин Azure | Документация Майкрософт
-description: Конфигурация свойств сети для масштабируемых наборов виртуальных машин Azure.
+title: Сеть для масштабируемых наборов виртуальных машин Azure
+description: Как настроить некоторые расширенные сетевые свойства для масштабируемых наборов виртуальных машин Azure.
 services: virtual-machine-scale-sets
 documentationcenter: ''
 author: mayanknayar
@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 07/17/2017
 ms.author: manayar
-ms.openlocfilehash: 5be64ad2b3141791d5612aba84324278ea812875
-ms.sourcegitcommit: 824e3d971490b0272e06f2b8b3fe98bbf7bfcb7f
+ms.openlocfilehash: 390da9179280a1ab8898d1ccea4df81e3b98805a
+ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72244848"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75647583"
 ---
 # <a name="networking-for-azure-virtual-machine-scale-sets"></a>Сеть для масштабируемых наборов виртуальных машин Azure
 
@@ -29,7 +29,7 @@ ms.locfileid: "72244848"
 Вы можете настроить все функции, описанные в этой статье, с помощью шаблонов Azure Resource Manager. Кроме того, будут добавлены примеры Azure CLI и PowerShell для выбранных компонентов.
 
 ## <a name="accelerated-networking"></a>Ускорение работы в сети
-Ускорение работы в сети Azure достигается за счет виртуализации ввода-вывода с единым корнем (SR-IOV) для виртуальной машины. Дополнительные сведения см. в разделах об ускорении работы в сети для виртуальных машин [Windows](../virtual-network/create-vm-accelerated-networking-powershell.md) или [Linux](../virtual-network/create-vm-accelerated-networking-cli.md). Чтобы использовать ускоренную сеть с масштабируемыми наборами, в настройках networkInterfaceConfigurations масштабируемого набора задайте для параметра enableAcceleratedNetworking значение **true**. Пример:
+Ускорение работы в сети Azure достигается за счет виртуализации ввода-вывода с единым корнем (SR-IOV) для виртуальной машины. Дополнительные сведения см. в разделах об ускорении работы в сети для виртуальных машин [Windows](../virtual-network/create-vm-accelerated-networking-powershell.md) или [Linux](../virtual-network/create-vm-accelerated-networking-cli.md). Чтобы использовать ускоренную сеть с масштабируемыми наборами, в настройках networkInterfaceConfigurations масштабируемого набора задайте для параметра enableAcceleratedNetworking значение **true**. Пример.
 ```json
 "networkProfile": {
     "networkInterfaceConfigurations": [
@@ -95,11 +95,11 @@ az vmss create \
 По умолчанию наборы масштабирования принимают определенные параметры DNS виртуальной сети и подсети, в которых они были созданы. Однако вы можете настроить параметры DNS непосредственно для набора масштабирования.
 
 ### <a name="creating-a-scale-set-with-configurable-dns-servers"></a>Создание масштабируемого набора с настраиваемыми DNS-серверами
-Чтобы создать масштабируемый набор с настраиваемой конфигурацией DNS с помощью Azure CLI, добавьте в команду **vmss create** аргумент **--dns-servers**, за которым следуют разделенные пробелами IP-адреса серверов. Пример:
+Чтобы создать масштабируемый набор с настраиваемой конфигурацией DNS с помощью Azure CLI, добавьте в команду **vmss create** аргумент **--dns-servers**, за которым следуют разделенные пробелами IP-адреса серверов. Пример.
 ```bash
 --dns-servers 10.0.0.6 10.0.0.5
 ```
-Чтобы настроить пользовательские DNS-серверы в шаблоне Azure, добавьте свойство dnsSettings в раздел networkInterfaceConfigurations набора масштабирования. Пример:
+Чтобы настроить пользовательские DNS-серверы в шаблоне Azure, добавьте свойство dnsSettings в раздел networkInterfaceConfigurations набора масштабирования. Пример.
 ```json
 "dnsSettings":{
     "dnsServers":["10.0.0.6", "10.0.0.5"]
@@ -109,7 +109,7 @@ az vmss create \
 ### <a name="creating-a-scale-set-with-configurable-virtual-machine-domain-names"></a>Создание масштабируемого набора с настраиваемыми именами доменов виртуальных машин
 Чтобы создать масштабируемый набор с настраиваемым DNS-именем для виртуальных машин с помощью CLI, добавьте в команду **virtual machine scale set create** аргумент **--vm-domain-name**, за которым следует строка, представляющая доменное имя.
 
-Чтобы настроить доменное имя в шаблоне Azure, добавьте свойство **dnsSettings** в раздел масштабируемого набора **networkInterfaceConfigurations**. Пример:
+Чтобы настроить доменное имя в шаблоне Azure, добавьте свойство **dnsSettings** в раздел масштабируемого набора **networkInterfaceConfigurations**. Пример.
 
 ```json
 "networkProfile": {
@@ -154,7 +154,7 @@ az vmss create \
 ### <a name="creating-a-scale-set-with-public-ip-per-virtual-machine"></a>Создание масштабируемого набора с общедоступным IP-адресом на виртуальную машину
 Чтобы создать масштабируемый набор, который назначает общедоступный IP-адрес каждой виртуальной машине с помощью CLI, добавьте параметр **--public-ip-per-vm** в команду **vmss create**. 
 
-Чтобы создать масштабируемый набор с помощью шаблона Azure версии API ресурса Microsoft.Compute/virtualMachineScaleSets должна быть по крайней мере **30-03-2017**. Добавьте свойство JSON **publicIpAddressConfiguration** в раздел ipConfigurations масштабируемого набора. Пример:
+Чтобы создать масштабируемый набор с помощью шаблона Azure версии API ресурса Microsoft.Compute/virtualMachineScaleSets должна быть по крайней мере **30-03-2017**. Добавьте свойство JSON **publicIpAddressConfiguration** в раздел ipConfigurations масштабируемого набора. Пример.
 
 ```json
 "publicIpAddressConfiguration": {
@@ -164,17 +164,17 @@ az vmss create \
     }
 }
 ```
-Пример шаблона: [201-vmss-public-ip-linux](https://github.com/Azure/azure-quickstart-templates/tree/master/201-vmss-public-ip-linux).
+Пример шаблона: [201-vmss-public-ip-linux](https://github.com/Azure/azure-quickstart-templates/tree/master/201-vmss-public-ip-linux)
 
 ### <a name="querying-the-public-ip-addresses-of-the-virtual-machines-in-a-scale-set"></a>Запрос общедоступных IP-адресов виртуальных машин в масштабируемом наборе
 Чтобы получить список общедоступных IP-адресов, назначенных виртуальным машинам в масштабируемом наборе, с помощью CLI, используйте команду **az vmss list-instance-public-ips**.
 
-Используйте команду _Get-AzPublicIpAddress_, чтобы вывести список общедоступных IP-адресов масштабируемого набора, используя PowerShell. Пример:
+Используйте команду _Get-AzPublicIpAddress_, чтобы вывести список общедоступных IP-адресов масштабируемого набора, используя PowerShell. Пример.
 ```powershell
 Get-AzPublicIpAddress -ResourceGroupName myrg -VirtualMachineScaleSetName myvmss
 ```
 
-Вы также можете запрашивать общедоступные IP-адреса, напрямую ссылаясь на идентификатор ресурса конфигурации общедоступного IP-адреса. Пример:
+Вы также можете запрашивать общедоступные IP-адреса, напрямую ссылаясь на идентификатор ресурса конфигурации общедоступного IP-адреса. Пример.
 ```powershell
 Get-AzPublicIpAddress -ResourceGroupName myrg -Name myvmsspip
 ```
@@ -238,7 +238,7 @@ GET https://management.azure.com/subscriptions/{your sub ID}/resourceGroups/{RG 
 ```
 
 ## <a name="multiple-ip-addresses-per-nic"></a>Несколько IP-адресов на сетевой адаптер
-У каждого сетевого адаптера, подключенного к виртуальной машине в масштабируемом наборе, может быть одна или несколько конфигураций IP-адресов. Каждая конфигурация получает один частный IP-адрес. Кроме того, каждой конфигурации также может быть присвоен один ресурс общедоступного IP-адреса. Чтобы узнать, сколько IP-адресов можно назначить сетевому адаптеру, а также сколько общедоступных IP-адресов можно использовать в подписке Azure, ознакомьтесь с [ограничениями Azure](../azure-subscription-service-limits.md?toc=%2fazure%2fvirtual-network%2ftoc.json#azure-resource-manager-virtual-networking-limits).
+У каждого сетевого адаптера, подключенного к виртуальной машине в масштабируемом наборе, может быть одна или несколько конфигураций IP-адресов. Каждая конфигурация получает один частный IP-адрес. Кроме того, каждой конфигурации также может быть присвоен один ресурс общедоступного IP-адреса. Чтобы узнать, сколько IP-адресов можно назначить сетевому адаптеру, а также сколько общедоступных IP-адресов можно использовать в подписке Azure, ознакомьтесь с [ограничениями Azure](../azure-resource-manager/management/azure-subscription-service-limits.md?toc=%2fazure%2fvirtual-network%2ftoc.json#azure-resource-manager-virtual-networking-limits).
 
 ## <a name="multiple-nics-per-virtual-machine"></a>Несколько сетевых адаптеров на виртуальную машину
 У вам может быть до 8 сетевых адаптеров на виртуальную машину в зависимости от размера машины. Узнать о максимальном количестве сетевых адаптеров на машину вы можете в статье [Размеры виртуальных машин Windows в Azure](../virtual-machines/windows/sizes.md). Все сетевые адаптеры, подключенные к экземпляру виртуальной машины, должны быть подключены к одной виртуальной сети. Сетевые адаптеры могут подключаться к разным подсетям, но все подсети должны быть частью одной и той же виртуальной сети.
@@ -323,7 +323,7 @@ GET https://management.azure.com/subscriptions/{your sub ID}/resourceGroups/{RG 
 
 Группы безопасности приложений можно также указать непосредственно для масштабируемого набора, добавив ссылку в раздел конфигурации IP-адреса для сетевого интерфейса свойств виртуальной машины в масштабируемом наборе.
 
-Пример: 
+Пример. 
 ```json
 "networkProfile": {
     "networkInterfaceConfigurations": [
@@ -401,5 +401,5 @@ az vmss show \
 
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о виртуальных сетях Azure см. в [этой статье](../virtual-network/virtual-networks-overview.md).

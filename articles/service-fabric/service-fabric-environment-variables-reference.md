@@ -1,29 +1,22 @@
 ---
-title: Переменные среды Azure Service Fabric | Документация Майкрософт
-description: Справочная документация по переменным среды Service Fabric.
-documentationcenter: .net
+title: Переменные среды Azure Service Fabric
+description: Сведения о переменных среды в Azure Service Fabric. Содержит ссылку на полный список переменных и их использование.
 author: mikkelhegn
-manager: msfussell
-editor: ''
-ms.service: service-fabric
-ms.devlang: dotNet
 ms.topic: reference
-ms.tgt_pltfrm: NA
-ms.workload: NA
 ms.date: 12/07/2017
 ms.author: mikhegn
-ms.openlocfilehash: 1c8400898dba59f312ba9d994ee711a5e241973a
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: b13522b1d9f2acd2aa3f7923c1b623fab696056d
+ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60946728"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75645690"
 ---
 # <a name="service-fabric-environment-variables"></a>Переменные среды Service Fabric
 
 В Service Fabric есть встроенные переменные среды, задаваемые для каждого экземпляра службы. Полный список этих переменных среды приведен ниже.
 
-| Переменная среды                         | Описание                                                            | Пример                                                              |
+| Переменная среды                         | Description                                                            | Пример                                                              |
 |----------------------------------------------|------------------------------------------------------------------------|----------------------------------------------------------------------|
 | Fabric_ApplicationName                       | Универсальный код ресурса (URI) структуры для приложения.                                 | fabric:/MyApplication                                                |
 | Fabric_CodePackageName                       | Имя пакета кода, которому принадлежит процесс.              | Код                                                                 |

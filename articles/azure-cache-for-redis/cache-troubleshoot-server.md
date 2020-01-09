@@ -1,17 +1,17 @@
 ---
 title: Устранение неполадок в кэше Azure для Redis неполадок на стороне сервера
-description: Сведения об устранении распространенных проблем на стороне сервера с кэшем Azure для Redis
+description: Узнайте, как устранять распространенные проблемы на стороне сервера в кэше Azure для Redis, такие как нехватка памяти, высокая загрузка ЦП, длительные команды или ограничения пропускной способности.
 author: yegu-ms
+ms.author: yegu
 ms.service: cache
 ms.topic: conceptual
 ms.date: 10/18/2019
-ms.author: yegu
-ms.openlocfilehash: 22cb4beb3411c617882972e1b91c5f538019fae4
-ms.sourcegitcommit: 5a8c65d7420daee9667660d560be9d77fa93e9c9
+ms.openlocfilehash: a68c27de304a0da6470745ee4abf69590d9bf78c
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74122572"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75433348"
 ---
 # <a name="troubleshoot-azure-cache-for-redis-server-side-issues"></a>Устранение неполадок в кэше Azure для Redis неполадок на стороне сервера
 
@@ -73,9 +73,9 @@ Redis предоставляет две статистики через кома
 - [Создавайте оповещения](cache-how-to-monitor.md#alerts) о метриках, таких как чтение кэша или запись в кэш, чтобы получать уведомления в начале возможных последствий.
 - [Масштабирование](cache-how-to-scale.md) до большего размера кэша с большей емкостью пропускной способности сети.
 
-## <a name="additional-information"></a>Дополнительная информация
+## <a name="additional-information"></a>Дополнительные сведения
 
-- [Устранение неполадок, связанных с кэшем Azure для Redis на стороне клиента](cache-troubleshoot-client.md)
+- [Устранение неполадок с Кэшем Azure для Redis на стороне клиента](cache-troubleshoot-client.md)
 - [Какое предложение и размер кэша Azure для Redis мне следует использовать?](cache-faq.md#what-azure-cache-for-redis-offering-and-size-should-i-use)
 - [Как измерить и протестировать производительность моего кэша?](cache-faq.md#how-can-i-benchmark-and-test-the-performance-of-my-cache)
 - [Как отслеживать кэш Redis для Azure?](cache-how-to-monitor.md)

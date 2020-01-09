@@ -1,5 +1,5 @@
 ---
-title: Управление доступом пользователей с помощью проверок доступа — Azure Active Directory | Документация Майкрософт
+title: Управление доступом пользователей с помощью проверок доступа в Azure AD
 description: Сведения об управлении доступом пользователей для членства в группе или работы с приложением при помощи проверки доступа Azure Active Directory
 services: active-directory
 documentationcenter: ''
@@ -16,12 +16,12 @@ ms.date: 06/21/2018
 ms.author: ajburnle
 ms.reviewer: mwahl
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 70b6d925772548e6703b57c265ebacf6b7f3f4c9
-ms.sourcegitcommit: a0b37e18b8823025e64427c26fae9fb7a3fe355a
+ms.openlocfilehash: 57956573dfe913828fb20db08397fac52528403d
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68499642"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75422434"
 ---
 # <a name="manage-user-access-with-azure-ad-access-reviews"></a>Управление пользовательским доступом с помощью проверок доступа Azure AD
 
@@ -30,7 +30,7 @@ ms.locfileid: "68499642"
 > [!NOTE]
 > Сведения о том, как проверить только доступ гостевых пользователей, исключив из процесса другие типы доступа, см. в статье об [управлении доступом гостевых пользователей при помощи проверки доступа](manage-guest-access-with-access-reviews.md). Если же необходимо проверить членство пользователя с административной ролью, например с ролью глобального администратора, см. статью [Запуск проверки доступа в управлении привилегированными пользователями Azure AD](../privileged-identity-management/pim-how-to-start-security-review.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 - Azure AD Premium P2
 
@@ -55,7 +55,7 @@ ms.locfileid: "68499642"
 7. После предоставления рецензентами входных данных остановите проверку доступа и примените изменения. Дополнительные сведения см. в разделе [Завершение проверки доступа групп или приложений](complete-access-review.md).
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Создание проверки доступа для групп или приложений](create-access-review.md)
 

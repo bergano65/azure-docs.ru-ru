@@ -1,25 +1,17 @@
 ---
-title: Выпуски Microsoft Threat Modeling Tool в Azure | Документация Майкрософт
+title: Microsoft Threat Modeling Tool выпуск 10/16/2019 — Azure
 description: Документирование заметок о выпуске средства моделирования угроз
-services: security
-documentationcenter: na
 author: jegeib
-manager: jegeib
-editor: jegeib
-ms.assetid: na
+ms.author: jegeib
 ms.service: security
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 10/16/2019
-ms.author: jegeib
-ms.openlocfilehash: ba18989b72f0c3f44099031a6949acc54ce41db0
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: 452b44653775a1bcb9456b62e1587b5ff2dff874
+ms.sourcegitcommit: ec2eacbe5d3ac7878515092290722c41143f151d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74233835"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75552055"
 ---
 # <a name="threat-modeling-tool-update-release-71610151---10162019"></a>Threat Modeling Tool, выпуск обновления 7.1.61015.1 от 16.10.2019
 
@@ -55,7 +47,7 @@ ms.locfileid: "74233835"
 
 Эта проблема находится в расследовании
 
-## <a name="system-requirements"></a>Требования к системе
+## <a name="system-requirements"></a>Системные требования
 
 - Поддерживаемые операционные системы
   - [Юбилейное обновление Microsoft Windows 10](https://blogs.windows.com/windowsexperience/2016/08/02/how-to-get-the-windows-10-anniversary-update/#HTkoK5Zdv0g2F2Zq.97) или более поздней версии
@@ -68,6 +60,6 @@ ms.locfileid: "74233835"
 
 - Документация по Threat Modeling Tool находится на сайте [docs.microsoft.com](https://docs.microsoft.com/azure/security/azure-security-threat-modeling-tool) и содержит информацию [об использовании средства](https://docs.microsoft.com/azure/security/azure-security-threat-modeling-tool-getting-started).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Скачайте последнюю версию [Microsoft Threat Modeling Tool](https://aka.ms/threatmodelingtool).

@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 11/12/2019
 ms.author: cherylmc
 Customer intent: As someone with a networking background, I want to create a route table using the portal.
-ms.openlocfilehash: 6b78b97004498fdacccdf9408d59158424ff6c07
-ms.sourcegitcommit: 85e7fccf814269c9816b540e4539645ddc153e6e
+ms.openlocfilehash: c0681024b60827cf589906041c264d912ab209bb
+ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74534135"
+ms.lasthandoff: 01/02/2020
+ms.locfileid: "75612366"
 ---
 # <a name="create-a-virtual-wan-hub-route-table-for-nvas-azure-portal"></a>Создание таблицы маршрутов виртуальных глобальных сетей для NVA: портал Azure
 
@@ -67,7 +67,7 @@ ms.locfileid: "74534135"
 
 Обновите концентратор, используя таблицу маршрутов концентратора. В рамках этого упражнения можно использовать следующие значения:
 
-* **Адресные пространства непрямой периферийной виртуальной сети:** (VNet1 и VNet2) 10.0.2.0/24 и 10.0.3.0/24
+* **Адресные пространства периферийной виртуальной сети:** (VNet1 и VNet2) 10.0.2.0/24 и 10.0.3.0/24
 * **Частный IP-адрес сетевого интерфейса DMZ NVA:** 10.0.4.5
 
 1. Перейдите к виртуальной глобальной сети.
@@ -83,7 +83,7 @@ ms.locfileid: "74534135"
 
  Для этого шага можно использовать следующие значения:
 
-| Имя виртуальной сети| Имя подключения|
+| Имя виртуальной сети| Имя соединения|
 | --- | --- |
 | VNet1 | testconnection1 |
 | VNet2 | testconnection2 |

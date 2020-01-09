@@ -1,24 +1,15 @@
 ---
-title: Настройка обратного прокси-сервера Azure Service Fabric | Документация Майкрософт
-description: Сведения об установке и настройке обратного прокси-сервера Service Fabric.
-services: service-fabric
-documentationcenter: na
-author: jimacoMS2
-manager: chackdan
-editor: ''
-ms.assetid: ''
-ms.service: service-fabric
+title: Azure Service Fabric настроить обратный прокси-сервер
+description: Узнайте, как настроить и настроить службу обратных прокси-серверов для приложения Azure Service Fabric.
 ms.topic: conceptual
-ms.tgt_pltfrm: na
-ms.workload: required
 ms.date: 11/13/2018
 ms.author: pepogors
-ms.openlocfilehash: a80eb1ba341a1b15da7ad59203a1d25284d03fd0
-ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
+ms.openlocfilehash: 131440036896d323cbf821d7a220328456e1db36
+ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72933897"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75645452"
 ---
 # <a name="set-up-and-configure-reverse-proxy-in-azure-service-fabric"></a>Установка и настройка обратного прокси-сервера в Azure Service Fabric
 Необязательный обратный прокси-сервер в службе Azure Service Fabric помогает микрослужбам, работающим в кластере Service Fabric, обнаруживать другие службы с конечными точками HTTP и обмениваться данными с этими службами. См. дополнительные сведения об [обратном прокси-сервере в Azure Service Fabric](service-fabric-reverseproxy.md). В этой статье показано, как установить и настроить обратный прокси-сервер в кластере. 
@@ -50,7 +41,7 @@ ms.locfileid: "72933897"
 
 Подготовив шаблон Resource Manager, вы можете включить обратный прокси-сервер:
 
-1. Определите порт обратного прокси-сервера в разделе [Parameters](../azure-resource-manager/resource-group-authoring-templates.md) шаблона.
+1. Определите порт обратного прокси-сервера в разделе [Parameters](../azure-resource-manager/templates/template-syntax.md) шаблона.
 
     ```json
     "SFReverseProxyPort": {
@@ -61,7 +52,7 @@ ms.locfileid: "72933897"
         }
     },
     ```
-2. Укажите порт для каждого типа узлов в [разделе типа ресурса](../azure-resource-manager/resource-group-authoring-templates.md) [**Microsoft.ServiceFabric/clusters**](https://docs.microsoft.com/azure/templates/microsoft.servicefabric/clusters).
+2. Укажите порт для каждого из объектов NodeType в [разделе Тип ресурса](../azure-resource-manager/templates/template-syntax.md) [**Microsoft. ServiceFabric/Clusters**](https://docs.microsoft.com/azure/templates/microsoft.servicefabric/clusters) .
 
     Порт идентифицируется по имени параметра reverseProxyEndpointPort.
 
@@ -83,7 +74,7 @@ ms.locfileid: "72933897"
         ...
     }
     ```
-3. Чтобы настроить SSL-сертификаты для порта обратного прокси-сервера, добавьте сертификат в свойство ***reverseProxyCertificate*** в [разделе типа ресурса](../resource-group-authoring-templates.md) **Microsoft.ServiceFabric/clusters**.
+3. Чтобы настроить SSL-сертификаты в порте для обратных посредников, добавьте сертификат в свойство ***reverseProxyCertificate*** в [разделе Тип ресурса](../resource-group-authoring-templates.md) **Microsoft. ServiceFabric/Clusters** .
 
     ```json
     {
@@ -107,7 +98,7 @@ ms.locfileid: "72933897"
     ```
 
 ### <a name="supporting-a-reverse-proxy-certificate-thats-different-from-the-cluster-certificate"></a>Поддержка сертификата обратного прокси-сервера, отличного от сертификата кластера
- Если сертификат обратного прокси-сервера отличается от сертификата, который защищает кластер, то указанный ранее сертификат необходимо установить на виртуальную машину и добавить в список управления доступом (ACL), чтобы предоставить Service Fabric к нему доступ. Для этого можно использовать [раздел типа ресурса](../resource-group-authoring-templates.md) [**Microsoft.Compute/virtualMachineScaleSets**](https://docs.microsoft.com/azure/templates/microsoft.compute/virtualmachinescalesets). Чтобы установить сертификат, добавьте его в osProfile. Раздел extension шаблона позволяет обновить сертификат в списке управления доступом.
+ Если сертификат обратного прокси-сервера отличается от сертификата, который защищает кластер, то указанный ранее сертификат необходимо установить на виртуальную машину и добавить в список управления доступом (ACL), чтобы предоставить Service Fabric к нему доступ. Это можно сделать в [разделе типа ресурсов](../resource-group-authoring-templates.md) [**Microsoft. COMPUTE/virtualMachineScaleSets**](https://docs.microsoft.com/azure/templates/microsoft.compute/virtualmachinescalesets) . Чтобы установить сертификат, добавьте его в osProfile. Раздел extension шаблона позволяет обновить сертификат в списке управления доступом.
 
   ```json
   {
@@ -261,7 +252,7 @@ ms.locfileid: "72933897"
 
 ### <a name="expose-the-reverse-proxy-via-resource-manager-templates"></a>Предоставление обратного прокси-сервера через шаблоны Resource Manager
 
-Приведенный ниже код JSON использует тот же шаблон, что и в разделе [Включение обратного прокси-сервера с помощью шаблонов Azure Resource Manager](#enable-reverse-proxy-via-azure-resource-manager-templates). Изучите этот раздел, если вам нужны сведения о создании шаблона Resource Manager или экспорте шаблона для существующего кластера.  Изменения следует вносить в [раздел типа ресурса](../resource-group-authoring-templates.md) [**Microsoft.Network/loadBalancers**](https://docs.microsoft.com/azure/templates/microsoft.network/loadbalancers).
+Приведенный ниже код JSON использует тот же шаблон, что и в разделе [Включение обратного прокси-сервера с помощью шаблонов Azure Resource Manager](#enable-reverse-proxy-via-azure-resource-manager-templates). Изучите этот раздел, если вам нужны сведения о создании шаблона Resource Manager или экспорте шаблона для существующего кластера.  Изменения вносятся в [раздел типа ресурсов](../resource-group-authoring-templates.md) [**Microsoft. Network/loadBalancers**](https://docs.microsoft.com/azure/templates/microsoft.network/loadbalancers) .
 
     ```json
     {

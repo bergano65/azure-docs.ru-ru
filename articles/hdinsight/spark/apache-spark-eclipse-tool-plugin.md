@@ -5,15 +5,15 @@ author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
-ms.custom: hdinsightactive
 ms.topic: conceptual
-ms.date: 11/30/2017
-ms.openlocfilehash: 6268256c9be26ef3e7e1061eef7cdb3b3f7d31db
-ms.sourcegitcommit: e50a39eb97a0b52ce35fd7b1cf16c7a9091d5a2a
+ms.custom: hdinsightactive
+ms.date: 12/13/2019
+ms.openlocfilehash: 6c82b8ce591bbacb6bf790c8b38635310b33263d
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74286942"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75435342"
 ---
 # <a name="use-azure-toolkit-for-eclipse-to-create-apache-spark-applications-for-an-hdinsight-cluster"></a>Создание приложений Apache Spark для кластера HDInsight с помощью Azure Toolkit for Eclipse
 
@@ -23,45 +23,57 @@ ms.locfileid: "74286942"
 * Для доступа к ресурсам кластера Azure HDInsight Spark.
 * Для разработки и локального запуска приложений Scala Spark.
 
-> [!IMPORTANT]  
-> Вы можете использовать этот инструмент, чтобы создавать и отправлять приложения только в кластер HDInsight Spark на Linux.
-
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Технические условия
 
 * Кластер Apache Spark в HDInsight. Инструкции см. в статье [Начало работы. Создание кластера Apache Spark в HDInsight на платформе Linux и выполнение интерактивных запросов с помощью SQL Spark](apache-spark-jupyter-spark-sql.md).
-* Комплект разработчика Oracle Java версии 8, который используется для среды выполнения интегрированной среды разработки Eclipse. Его можно скачать с [веб-сайта Oracle](https://aka.ms/azure-jdks).
-* Интегрированная среда разработки Eclipse. В этой статье используется Eclipse Neon. Его можно установить с [веб-сайта Eclipse](https://www.eclipse.org/downloads/).
 
-## <a name="install-hdinsight-tools-in-azure-toolkit-for-eclipse-and-the-scala-plug-in"></a>Установка средств HDInsight в наборе средств Azure для Eclipse и подключаемого модуля Scala
+* [Java Developer Kit (JDK) версии 8](https://aka.ms/azure-jdks).
+
+* [Интегрированная среда разработки Eclipse](https://www.eclipse.org/downloads/). В этой статье используется интегрированная среда разработки Eclipse для разработчиков Java.
+
+## <a name="install-required-plug-ins"></a>Установить необходимые подключаемые модули
 
 ### <a name="install-azure-toolkit-for-eclipse"></a>Установка набора средств Azure для Eclipse
 
-Средства HDInsight для Eclipse доступны в составе набора средств Azure для Eclipse. Инструкции по установке см. в статье [Установка набора средств Azure для Eclipse](https://docs.microsoft.com/java/azure/eclipse/azure-toolkit-for-eclipse-installation).
+Инструкции по установке см. в статье [Установка набора средств Azure для Eclipse](https://docs.microsoft.com/azure/java/eclipse/azure-toolkit-for-eclipse-installation).
 
 ### <a name="install-the-scala-plug-in"></a>Установка подключаемого модуля Scala
 
-Когда вы открываете Eclipse, средство HDInsight автоматически определяет, установлен ли подключаемый модуль Scala. Щелкните **ОК**, чтобы продолжить, и следуйте инструкциям по установке подключаемого модуля из Eclipse Marketplace.
+При открытии Eclipse средства HDInsight автоматически определяют, установлен ли подключаемый модуль Scala. Щелкните **ОК**, чтобы продолжить, и следуйте инструкциям по установке подключаемого модуля из Eclipse Marketplace. После завершения установки перезапустите интегрированную среду разработки.
 
 ![Автоматическая установка подключаемого модуля Scala](./media/apache-spark-eclipse-tool-plugin/auto-installation-scala1.png)
 
-Пользователь может [войти в подписку Azure](#sign-in-to-your-azure-subscription) или [связать кластер HDInsight](#link-a-cluster) с помощью имени пользователя и пароля Ambari или учетных данных присоединения к домену.
+### <a name="confirm-plug-ins"></a>Подтвердить подключаемые модули
 
-## <a name="sign-in-to-your-azure-subscription"></a>Войдите в свою подписку Azure.
+1. Перейдите к **справке** > **Eclipse Marketplace.** ..
 
-1. Запустите интегрированную среду разработки Eclipse и откройте Azure Explorer. В меню **Window** (Окно) выберите пункт **Show View** (Показать представление) и щелкните **Other** (Другие). В открывшемся диалоговом окне разверните **Azure** и щелкните **Azure Explorer**, а затем нажмите кнопку **ОК**.
+1. Откройте вкладку **Установленные**.
 
-   ![Apache Spark Еклиспсе Показать представление](./media/apache-spark-eclipse-tool-plugin/eclipse-view-explorer1.png)
+1. Вы должны увидеть как минимум:
+    * Azure Toolkit for Eclipse \<версии >.
+    * Scala IDE \<версии >.
 
-1. Щелкните правой кнопкой мыши узел **Azure**, а затем выберите **Sign In** (Войти).
-1. В диалоговом окне **Azure Sign In** (Вход в Azure) выберите режим аутентификации, нажмите кнопку **Sign in** (Войти) и введите свои учетные данные Azure.
+## <a name="sign-in-to-your-azure-subscription"></a>Войдите в подписку Azure.
 
-   ![Apache Spark Еклиспсе Azure Sign](./media/apache-spark-eclipse-tool-plugin/eclipse-view-explorer2.png)
+1. Запустите интегрированную среду разработки Eclipse.
 
-1. После входа в диалоговом окне **Select Subscriptions** (Выбор подписок) будут перечислены все подписки Azure, связанные с указанными учетными данными. Щелкните **Select** (Выбрать), чтобы закрыть диалоговое окно.
+1. Перейдите к **окну** >  **Показать представление** > **другое...**  > **войти..** .
+
+1. В диалоговом окне **Показать представление** перейдите в **Azure** > **Azure Explorer**и нажмите кнопку **Открыть**.
+
+   ![Apache Spark Показать представление Eclipse](./media/apache-spark-eclipse-tool-plugin/eclipse-view-explorer1.png)
+
+1. В **Azure Explorer**щелкните правой кнопкой мыши узел **Azure** и выберите **Вход**.
+
+1. В диалоговом окне **Вход в Azure** выберите метод проверки подлинности, нажмите кнопку **войти**и завершите процесс входа.
+
+   ![Apache Sparkная Eclipse подписывание Azure](./media/apache-spark-eclipse-tool-plugin/eclipse-view-explorer2.png)
+
+1. После входа в диалоговом окне " **подписки" будут** перечислены все подписки Azure, связанные с этими учетными данными. Нажмите кнопку " **выбрать** ", чтобы закрыть диалоговое окно.
 
    ![Диалоговое окно выбора подписок](./media/apache-spark-eclipse-tool-plugin/Select-Subscriptions.png)
 
-1. На вкладке **Azure Explorer** разверните **HDInsight**, чтобы просмотреть кластеры HDInsight Spark в своей подписке.
+1. В **Azure Explorer**перейдите в **Azure** >  **HDInsight** , чтобы просмотреть кластеры hdinsight Spark в вашей подписке.
 
    ![Кластеры HDInsight Spark в Azure Explorer3](./media/apache-spark-eclipse-tool-plugin/eclipse-view-explorer3.png)
 
@@ -73,11 +85,11 @@ ms.locfileid: "74286942"
 
 Можно связать обычный кластер с помощью управляемого имени пользователя Ambari. Аналогичным образом, присоединенный к домену кластер HDInsight можно связать с помощью домена и имени пользователя, например `user1@contoso.com`.
 
-1. Выберите **Link a cluster** (Связывание кластера) в **обозревателе Azure**.
+1. В **Azure Explorer**щелкните правой кнопкой мыши **HDInsight**и выберите **связать кластер**.
 
    ![Меню кластера ссылок Azure Explorer](./media/apache-spark-eclipse-tool-plugin/link-a-cluster-context-menu.png)
 
-1. Введите **имя кластера**, **имя пользователя** и **пароль**, затем нажмите кнопку "ОК", чтобы связать кластер. При необходимости введите учетную запись хранения, ключ к хранилищу данных, а затем выберите в представлении в виде дерева контейнер хранилища для обозревателя хранилищ.
+1. Введите **имя кластера**, **имя пользователя**и **пароль**, а затем нажмите кнопку **ОК**. При необходимости введите учетную запись хранения, ключ к хранилищу данных, а затем выберите в представлении в виде дерева контейнер хранилища для обозревателя хранилищ.
 
    ![Диалоговое окно "связать новый кластер HDInsight"](./media/apache-spark-eclipse-tool-plugin/link-cluster-dialog1.png)
 
@@ -86,9 +98,8 @@ ms.locfileid: "74286942"
    > ![учетных записей хранения Azure Explorer](./media/apache-spark-eclipse-tool-plugin/storage-explorer-in-Eclipse.png)
    >
    > Для пользователя с клавиатурой, когда текущий фокус находится на **ключе хранилища**, необходимо использовать **сочетание клавиш CTRL + TAB** , чтобы сосредоточиться на следующем поле в диалоговом окне.
-   
-   
-1. Если данные введены правильно, связанный кластер отобразится в узле **HDInsight** после нажатия кнопки "ОК". Теперь в этот связанный кластер можно отправить приложение.
+
+1. Связанный кластер можно увидеть в **HDInsight**. Теперь в этот связанный кластер можно отправить приложение.
 
    ![Связанный кластер HDi в Azure Explorer](./media/apache-spark-eclipse-tool-plugin/hdinsight-linked-cluster.png)
 
@@ -98,36 +109,34 @@ ms.locfileid: "74286942"
 
 ## <a name="set-up-a-spark-scala-project-for-an-hdinsight-spark-cluster"></a>Настройка проекта Spark Scala для кластера HDInsight Spark
 
-1. В рабочей области интегрированной среды разработки Eclipse выберите **File** (Файл) выберите **New** (Создать) и щелкните **Project** (Проект).
+1. В рабочей области IDE Eclipse выберите **файл** > **создать** > **проект..** ..
 
-1. В мастере "New Project" (Новый проект) разверните **HDInsight**, выберите **Spark on HDInsight (Scala)** (Spark в HDInsight (Scala)) и нажмите кнопку **Next** (Далее).
+1. В мастере **создания проектов** выберите **Hdinsight Project** > **Spark в HDInsight (Scala)** . Выберите **Далее**.
 
    ![Выбор проекта Spark в HDInsight (Scala)](./media/apache-spark-eclipse-tool-plugin/create-hdi-scala-app-2.png)
-
-1. Мастер создания проектов Scala автоматически определяет, установлен ли подключаемый модуль Scala. Щелкните **ОК**, чтобы продолжить скачивание подключаемого модуля Scala, а затем следуйте инструкциям, чтобы перезапустить Eclipse.
-
-   ![Установите флажок "отсутствует Scala подключаемого модуля"](./media/apache-spark-eclipse-tool-plugin/auto-installation-scala2.png)
 
 1. В диалоговом окне **New HDInsight Scala Project** (Новый проект Scala HDInsight) введите следующие значения, после чего нажмите кнопку **Next** (Далее).
    * Введите имя проекта.
    * Убедитесь, что в поле **JRE** параметр **Use an execution environment JRE** (Использовать среду выполнения JRE) имеет значение **JavaSE-1.7** или более позднюю версию.
-   * В области **библиотеки Spark** вы можете выбрать вариант **Use Maven to configure Spark SDK** (Использовать Maven для настройки пакета SDK для Spark).  Наше средство интегрирует правильную версию пакета SDK для Spark и пакета SDK для Scala. Вы также можете выбрать вариант **Add Spark SDK manually** (Добавить пакет SDK для Spark вручную), скачать этот пакет и добавить его вручную.
+   * В области **библиотеки Spark** вы можете выбрать вариант **Use Maven to configure Spark SDK** (Использовать Maven для настройки пакета SDK для Spark).  Наше средство интегрирует правильную версию пакета SDK для Spark и пакета SDK для Scala. Можно также выбрать параметр **Добавить пакет SDK для Spark вручную** , скачать и добавить пакет SDK для Spark вручную.
 
    ![Диалоговое окно нового проекта Scala HDInsight](./media/apache-spark-eclipse-tool-plugin/create-hdi-scala-app-3.png)
 
-1. В следующем диалоговом окне нажмите кнопку **Finish** (Готово).
+1. В следующем диалоговом окне просмотрите сведения и нажмите кнопку **Готово**.
 
 ## <a name="create-a-scala-application-for-an-hdinsight-spark-cluster"></a>Создание приложения Scala для кластера HDInsight Spark
 
-1. В интегрированной среде разработки Eclipse в обозревателе пакетов разверните созданный ранее проект, щелкните правой кнопкой мыши **src**, выберите **New** (Создать) и щелкните **Other** (Другое).
+1. В **обозревателе пакетов**разверните проект, созданный ранее. Щелкните правой кнопкой мыши элемент **src**и выберите **создать** > **другие...** .
 
-1. В диалоговом окне **Select a wizard** (Выбор мастера) разверните **Scala Wizards** (Мастера Scala), щелкните **Scala Object** (Объект Scala) и нажмите кнопку **Next** (Далее).
+1. В диалоговом окне **Выбор мастера** выберите **мастера Scala** > **объект Scala**. Выберите **Далее**.
 
    ![Выбор мастера Создание объекта Scala](./media/apache-spark-eclipse-tool-plugin/create-scala-project1.png)
-1. В диалоговом окне **Create New File** (Создание файла) введите имя объекта и нажмите кнопку **Finish** (Готово).
+
+1. В диалоговом окне **Create New File** (Создание файла) введите имя объекта и нажмите кнопку **Finish** (Готово). Откроется текстовый редактор.
 
    ![Мастер создания файлов — создать новый файл](./media/apache-spark-eclipse-tool-plugin/create-scala-project2.png)
-1. Вставьте следующий код в текстовый редактор.
+
+1. В текстовом редакторе Замените текущее содержимое следующим кодом:
 
     ```scala
     import org.apache.spark.SparkConf
@@ -138,26 +147,26 @@ ms.locfileid: "74286942"
         val conf = new SparkConf().setAppName("MyClusterApp")
         val sc = new SparkContext(conf)
 
-        val rdd = sc.textFile("wasb:///HdiSamples/HdiSamples/SensorSampleData/hvac/HVAC.csv")
+        val rdd = sc.textFile("wasbs:///HdiSamples/HdiSamples/SensorSampleData/hvac/HVAC.csv")
 
         //find the rows that have only one digit in the seventh column in the CSV
         val rdd1 =  rdd.filter(s => s.split(",")(6).length() == 1)
 
-        rdd1.saveAsTextFile("wasb:///HVACOut")
-        }        
+        rdd1.saveAsTextFile("wasbs:///HVACOut")
+        }
     }
     ```
 
 1. Запустите приложение в кластере HDInsight Spark.
 
-   a. В обозревателе пакетов щелкните имя проекта правой кнопкой мыши и выберите пункт **Submit Spark Application to HDInsight** (Отправить приложение Spark в HDInsight).
+   а. В обозревателе пакетов щелкните имя проекта правой кнопкой мыши и выберите пункт **Submit Spark Application to HDInsight** (Отправить приложение Spark в HDInsight).
 
    b. В диалоговом окне **Spark Submission** (Отправка в Spark) введите следующие значения и нажмите кнопку **Submit** (Отправить).
 
    * В поле **Cluster Name**(Имя кластера) выберите кластер HDInsight Spark, в котором вы хотите запустить приложение.
    * Выберите артефакт из проекта Eclipse или с жесткого диска. Значение по умолчанию зависит от элемента, который вы щелкнете правой кнопкой мыши в обозревателе пакетов.
    * В раскрывающемся списке **Main class name** (Имя класса main) в мастере отправки отображаются имена всех объектов из вашего проекта. Выберите или введите имя любого из объектов, который требуется запустить. Если вы выбрали артефакт с жесткого диска, необходимо ввести имя класса main вручную. 
-   * Так как для кода приложения в этом примере не требуются аргументы командной строки, справочные JAR или файлы, остальные текстовые поля можно не заполнять.
+   * Так как код приложения в этом примере не требует аргументов командной строки, ссылок на JAR или файлов, оставшиеся текстовые поля можно оставить пустыми.
 
      ![Диалоговое окно "Отправка Apache Spark"](./media/apache-spark-eclipse-tool-plugin/create-scala-project3.png)
 
@@ -171,7 +180,7 @@ ms.locfileid: "74286942"
 
 ### <a name="access-the-job-view"></a>Доступ к представлению задания
 
-1. В Azure Explorer разверните **HDInsight**, а затем выберите имя кластера Spark, после чего щелкните **Задания**.
+1. В **Azure Explorer**разверните **HDInsight**, затем имя кластера Spark, а затем выберите **задания**.
 
    ![Узел представления заданий Eclipse в Azure Explorer](./media/apache-spark-eclipse-tool-plugin/eclipse-job-view-node.png)
 
@@ -229,7 +238,7 @@ ms.locfileid: "74286942"
 
 Средства HDInsight в наборе средств Azure для Eclipse позволяют запускать приложения Spark Scala локально на рабочей станции. Как правило, такие приложения не требуют доступа к ресурсам кластера, таким как контейнер хранилища, и могут запускаться и тестироваться локально.
 
-### <a name="prerequisite"></a>Предварительные требования
+### <a name="prerequisite"></a>Необходимое условие
 
 При запуске локального приложения Spark Scala на компьютере с Windows может возникнуть исключение, описанное в [SPARK-2356](https://issues.apache.org/jira/browse/SPARK-2356). Это исключение возникает, так как в Windows отсутствует файл **WinUtils.exe**.
 
@@ -239,10 +248,9 @@ ms.locfileid: "74286942"
 
 1. Запустите Eclipse и создайте новый проект. В диалоговом окне **New Project** (Новый проект) установите параметры, как на снимке экрана ниже, а затем нажмите кнопку **Next** (Далее).
 
-   * В левой области выберите **HDInsight**.
-   * В правой области выберите **Spark on HDInsight Local Run Sample (Scala)** (Пример локального запуска Spark в HDInsight (Scala)).
+1. В мастере **создания проектов** выберите **Hdinsight Project** > **Spark в Hdinsight локальный запуск Sample (Scala)** . Выберите **Далее**.
 
-   ![Новый проект выбор диалогового окна мастера](./media/apache-spark-eclipse-tool-plugin/hdi-spark-app-local-run.png)
+   ![Создать проект выбор диалогового окна мастера](./media/apache-spark-eclipse-tool-plugin/hdi-spark-app-local-run.png)
 
 1. Чтобы предоставить сведения о проекте, выполните шаги 3–6, как описано в разделе [Настройка проекта Spark Scala для кластера HDInsight Spark](#set-up-a-spark-scala-project-for-an-hdinsight-spark-cluster).
 
@@ -250,7 +258,7 @@ ms.locfileid: "74286942"
 
    ![Расположение локального приложения Scala LogQuery](./media/apache-spark-eclipse-tool-plugin/local-scala-application.png)
 
-1. Щелкните правой кнопкой мыши приложение **LogQuery**, выберите пункт **Run As** (Запустить от имени) и щелкните **1 Scala Application** (1. Приложение Scala). На вкладке **Console** (Консоль) отобразятся выходные данные следующего вида.
+1. Щелкните правой кнопкой мыши **LogQuery. Scala** и выберите **запуск от имени** > **1 Scala приложение**. На вкладке **Console** (Консоль) отобразятся выходные данные следующего вида.
 
    ![Результат локального запуска приложения Spark](./media/apache-spark-eclipse-tool-plugin/hdi-spark-app-local-run-result.png)
 
@@ -266,7 +274,7 @@ ms.locfileid: "74286942"
 
     ![Кластеры HDInsight Spark в Azure Explorer роль читатель](./media/apache-spark-eclipse-tool-plugin/eclipse-view-explorer6.png)
 
-3. Щелкните правой кнопкой мыши кластер с разрешением роль только для чтения. Выберите **Link this cluster** (Связать этот кластер) из контекстного меню, чтобы связать кластер. Введите имя пользователя и пароль Ambari.
+3. Щелкните правой кнопкой мыши кластер с разрешением роли только для чтения. Выберите **Link this cluster** (Связать этот кластер) из контекстного меню, чтобы связать кластер. Введите имя пользователя и пароль Ambari.
 
     ![Ссылки на кластеры HDInsight Spark в Azure Explorer](./media/apache-spark-eclipse-tool-plugin/eclipse-view-explorer7.png)
 
@@ -291,7 +299,7 @@ ms.locfileid: "74286942"
 
    ![Отправка кластеров HDInsight Spark в Azure Explorer](./media/apache-spark-eclipse-tool-plugin/eclipse-view-explorer11.png)
 
-3. Выберите кластер с разрешением роль только для чтения для **имени кластера**. Отображается предупреждающее сообщение. Можно щелкнуть **связать этот кластер** с кластером.
+3. Выберите кластер с разрешениями роли только для чтения для **имени кластера**. Отображается предупреждающее сообщение. Можно щелкнуть **связать этот кластер** с кластером.
 
    ![Создание кластеров HDInsight Spark в Azure Explorer ссылка](./media/apache-spark-eclipse-tool-plugin/eclipse-view-explorer15.png)
 
@@ -309,7 +317,7 @@ ms.locfileid: "74286942"
 
 ## <a name="known-problems"></a>Известные проблемы
 
-Рекомендуем при связывании кластера указать учетные данные хранилища.
+При использовании **связывания кластера**рекомендуется предоставить учетные данные хранилища.
 
 ![Связывание кластера с Eclipse учетных данных хранилища](./media/apache-spark-eclipse-tool-plugin/link-cluster-with-storage-credential-eclipse.png)
 
@@ -319,14 +327,14 @@ ms.locfileid: "74286942"
 
 ![Ошибка получения Eclipse при занятости кластера Yarn](./media/apache-spark-eclipse-tool-plugin/eclipse-interactive-cluster-busy-submit.png "Ошибка получения Eclipse при занятости кластера Yarn")
 
-## <a name="seealso"></a>Дополнительные материалы
+## <a name="see-also"></a>См. также
 
 * [Обзор: Apache Spark в Azure HDInsight](apache-spark-overview.md)
 
 ### <a name="scenarios"></a>Сценарии
 
 * [Использование Apache Spark со средствами бизнес-аналитики. Выполнение интерактивного анализа данных с использованием Spark в HDInsight с помощью средств бизнес-аналитики](apache-spark-use-bi-tools.md)
-* [Использование Apache Spark с машинным обучением. Использование Spark в HDInsight для анализа температуры в здании на основе данных системы кондиционирования](apache-spark-ipython-notebook-machine-learning.md)
+* [Apache Spark и Машинное обучение. Анализ температуры в здании на основе данных системы кондиционирования с помощью Spark в HDInsight](apache-spark-ipython-notebook-machine-learning.md)
 * [Apache Spark и Машинное обучение. Прогнозирование результатов проверки пищевых продуктов с помощью Spark в HDInsight](apache-spark-machine-learning-mllib-ipython.md)
 * [Анализ журналов веб-сайтов с помощью Apache Spark в HDInsight](apache-spark-custom-library-website-log-analysis.md)
 
@@ -340,7 +348,7 @@ ms.locfileid: "74286942"
 * [Создание приложений Spark для кластера HDInsight с помощью набора средств Azure для IntelliJ](apache-spark-intellij-tool-plugin.md)
 * [Удаленная отладка приложений Spark в HDInsight через VPN с помощью Azure Toolkit for IntelliJ](../hdinsight-apache-spark-intellij-tool-plugin-debug-jobs-remotely.md)
 * [Удаленная или локальная отладка приложений Spark в кластере HDInsight с помощью Azure Toolkit for IntelliJ через SSH](../hdinsight-apache-spark-intellij-tool-debug-remotely-through-ssh.md)
-* [Использование записных книжек Apache Zeppelin с кластером Apache Spark в Azure HDInsight](apache-spark-zeppelin-notebook.md)
+* [Использование записных книжек Zeppelin с кластером Apache Spark в Azure HDInsight](apache-spark-zeppelin-notebook.md)
 * [Ядра для записной книжки Jupyter в кластерах Apache Spark в Azure HDInsight](apache-spark-jupyter-notebook-kernels.md)
 * [Использование внешних пакетов с записными книжками Jupyter](apache-spark-jupyter-notebook-use-external-packages.md)
 * [Установка записной книжки Jupyter на компьютере и ее подключение к кластеру Apache Spark в Azure HDInsight (предварительная версия)](apache-spark-jupyter-notebook-install-locally.md)

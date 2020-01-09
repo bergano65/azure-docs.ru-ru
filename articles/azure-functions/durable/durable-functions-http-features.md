@@ -5,12 +5,12 @@ author: cgillum
 ms.topic: conceptual
 ms.date: 09/04/2019
 ms.author: azfuncdf
-ms.openlocfilehash: 3fcb777969f7d29b0e8698156dbdd0724f16f0b5
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: 1c8f56810edb39db66cbb83750e5cff02e22662a
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74232871"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75433286"
 ---
 # <a name="http-features"></a>Функции HTTP
 
@@ -32,7 +32,8 @@ ms.locfileid: "74232871"
 * [Отправка внешнего события в оркестрации](durable-functions-http-api.md#raise-event)
 * [Очистка журнала оркестрации](durable-functions-http-api.md#purge-single-instance-history)
 * [Отправка события операции в сущность](durable-functions-http-api.md#signal-entity)
-* [Запрос состояния сущности](durable-functions-http-api.md#query-entity)
+* [Получение состояния сущности](durable-functions-http-api.md#get-entity)
+* [Запрос списка сущностей](durable-functions-http-api.md#list-entities)
 
 Полное описание всех встроенных API HTTP, предоставляемых расширением Устойчивые функции, см. в [статье API-интерфейсы HTTP](durable-functions-http-api.md) .
 
@@ -178,7 +179,7 @@ public static async Task RunOrchestrator(
 }
 ```
 
-В предыдущем примере параметр `tokenSource` настроен для получения маркеров Azure AD для [Azure Resource Manager](../../azure-resource-manager/resource-group-overview.md). Токены идентифицируются `https://management.core.windows.net`URI ресурса. В этом примере предполагается, что текущее приложение-функция выполняется локально или развернуто как приложение-функция с управляемым удостоверением. Предполагается, что локальным удостоверением или управляемым удостоверением предоставлено разрешение на управление виртуальными машинами в указанной группе ресурсов `myRG`.
+В предыдущем примере параметр `tokenSource` настроен для получения маркеров Azure AD для [Azure Resource Manager](../../azure-resource-manager/management/overview.md). Токены идентифицируются `https://management.core.windows.net`URI ресурса. В этом примере предполагается, что текущее приложение-функция выполняется локально или развернуто как приложение-функция с управляемым удостоверением. Предполагается, что локальным удостоверением или управляемым удостоверением предоставлено разрешение на управление виртуальными машинами в указанной группе ресурсов `myRG`.
 
 Во время выполнения настроенный источник токена автоматически возвращает маркер доступа OAuth 2,0. Затем источник добавляет маркер в качестве токена носителя в заголовок авторизации исходящего запроса. Эта модель является улучшением по сравнению с добавлением заголовков авторизации вручную в HTTP-запросы по следующим причинам.
 
@@ -240,7 +241,7 @@ public class MyDurableHttpMessageHandlerFactory : IDurableHttpMessageHandlerFact
 }
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Сведения о устойчивых сущностях](durable-functions-entities.md)

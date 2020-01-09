@@ -1,6 +1,6 @@
 ---
 title: Отправка и получение сообщений AS2 для B2B
-description: Обмен сообщениями AS2 для сценариев интеграции B2B Enterprise с помощью Azure Logic Apps
+description: Обмен сообщениями AS2 для сценариев интеграции B2B Enterprise с помощью Azure Logic Apps с Пакет интеграции Enterprise
 services: logic-apps
 ms.suite: integration
 author: divyaswarnkar
@@ -8,12 +8,12 @@ ms.author: divswa
 ms.reviewer: jonfan, estfan, logicappspm
 ms.topic: article
 ms.date: 08/22/2019
-ms.openlocfilehash: b2d7c8840da3bb44f9e220f2963dc4fee63176e2
-ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
+ms.openlocfilehash: 9f72edecc07c34a0f176e52f6b70644f9ceb16e0
+ms.sourcegitcommit: ff9688050000593146b509a5da18fbf64e24fbeb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74790716"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75666709"
 ---
 # <a name="exchange-as2-messages-for-b2b-enterprise-integration-in-azure-logic-apps-with-enterprise-integration-pack"></a>Обмен сообщениями AS2 для интеграции с предприятием B2B в Azure Logic Apps с помощью Пакета интеграции Enterprise
 
@@ -51,7 +51,7 @@ ms.locfileid: "74790716"
 
 ## <a name="prerequisites"></a>Технические условия
 
-* Подписка Azure. Если у вас еще нет подписки Azure, [зарегистрируйтесь для получения бесплатной учетной записи Azure](https://azure.microsoft.com/free/).
+* Подписка Azure. Если у вас еще нет подписки Azure, [получите бесплатную учетную запись Azure](https://azure.microsoft.com/free/).
 
 * Приложение логики, из которого вы хотите использовать соединитель AS2, и триггер, который запускает рабочий процесс приложения логики. Соединитель AS2 предоставляет только действия, а не триггеры. Если вы не работали с приложениями логики, см. руководства по [Azure Logic Apps](../logic-apps/logic-apps-overview.md) и [созданию первого приложения логики](../logic-apps/quickstart-create-first-logic-app-workflow.md).
 
@@ -81,7 +81,7 @@ ms.locfileid: "74790716"
 
 1. Теперь предоставьте сведения для этих свойств:
 
-   | Свойство | Описание |
+   | Свойство | Description |
    |----------|-------------|
    | **Сообщение для кодирования** | Полезные данные сообщения |
    | **AS2 из** | Идентификатор отправителя сообщения, указанный в соглашении AS2 |

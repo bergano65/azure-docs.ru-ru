@@ -2,25 +2,21 @@
 title: Рабочий процесс PowerShell для службы автоматизации Azure
 description: Данная статья предназначена для разработчиков, уже знакомых с PowerShell. В ней рассматриваются различия между PowerShell и рабочим процессом PowerShell, а также понятия, относящиеся к модулям Runbook службы автоматизации.
 services: automation
-ms.service: automation
 ms.subservice: process-automation
-author: mgoedtel
-ms.author: magoedte
 ms.date: 12/14/2018
 ms.topic: conceptual
-manager: carmonm
-ms.openlocfilehash: d656e97448bebe7019a63824b9de6e322b787a92
-ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
+ms.openlocfilehash: 6e4c8057322b6208ea3b447b264e2bde1344540c
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74850743"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75421558"
 ---
 # <a name="learning-key-windows-powershell-workflow-concepts-for-automation-runbooks"></a>Изучение основных понятий рабочего процесса Windows PowerShell для модулей Runbook службы автоматизации
 
 Модули Runbook в службе автоматизации Azure реализованы в виде рабочих процессов Windows PowerShell.  Рабочий процесс Windows PowerShell похож на сценарий Windows PowerShell, но имеет ряд существенных отличий, которые могут запутать нового пользователя.  Хотя эта статья предназначена помочь вам в написании модулей Runbook с помощью рабочего процесса PowerShell, мы рекомендуем использовать для этого PowerShell, если только вам не требуются контрольные точки.  Существует ряд различий в синтаксисе при разработке модулей runbook рабочего процесса PowerShell, и эти различия требуют немного больше усилий для написания эффективных рабочих процессов.
 
-Рабочий процесс представляет собой последовательность запрограммированных взаимосвязанных шагов для выполнения долгосрочных задач или требует координации шагов на множестве устройств или управляемых узлах. Преимущества рабочего процесса в сравнении с использованием обычного скрипта заключаются в возможности одновременного выполнения действия по отношению ко многим устройствам и в возможности автоматического восстановления при сбоях. Рабочий процесс Windows PowerShell представляет собой сценарий Windows PowerShell, использующий Windows Workflow Foundation. В то время как рабочий процесс прописан в синтаксисе Windows PowerShell и запускается Windows PowerShell, его обработка выполняется в Windows Workflow Foundation.
+Рабочий процесс — это последовательность связанных программируемых операций, в ходе которых выполняются длительные задачи или скоординированные действия на нескольких устройствах или управляемых узлах. Преимущества рабочего процесса в сравнении с использованием обычного скрипта заключаются в возможности одновременного выполнения действия по отношению ко многим устройствам и в возможности автоматического восстановления при сбоях. Рабочий процесс Windows PowerShell представляет собой сценарий Windows PowerShell, использующий Windows Workflow Foundation. В то время как рабочий процесс прописан в синтаксисе Windows PowerShell и запускается Windows PowerShell, его обработка выполняется в Windows Workflow Foundation.
 
 Дополнительные сведения по темам, рассмотренным в этой статье, см. на странице [Общие сведения о рабочем процессе Windows PowerShell](https://technet.microsoft.com/library/jj134242.aspx).
 
@@ -101,7 +97,7 @@ Workflow Stop-MyService
 }
 ```
 
-## <a name="inlinescript"></a>InlineScript
+## <a name="inlinescript"></a>InlineScript (Встроенный сценарий)
 
 Действие **InlineScript** пригодится, если вам нужно выполнить одну или несколько команд, используя не рабочий процесс, а традиционный сценарий PowerShell.  Пока команды в рабочем процессе отправляются в Windows Workflow Foundation для обработки, команды в блоке InlineScript обрабатываются при помощи Windows PowerShell.
 

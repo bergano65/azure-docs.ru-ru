@@ -8,12 +8,12 @@ author: reyang
 ms.author: reyang
 ms.date: 10/11/2019
 ms.reviewer: mbullwin
-ms.openlocfilehash: af16643ed877ca427a22428afec028264de7a5d8
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: 83b4e1e10af8e398f6671f6b2561485bfdb6b7f4
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74928979"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75432485"
 ---
 # <a name="set-up-azure-monitor-for-your-python-application-preview"></a>Настройка Azure Monitor для приложения Python (Предварительная версия)
 
@@ -26,7 +26,7 @@ Azure Monitor поддерживает распределенную трасси
 
 ## <a name="sign-in-to-the-azure-portal"></a>Вход на портал Azure
 
-Войдите на [портале Azure](https://portal.azure.com/).
+Войдите на [портал Azure](https://portal.azure.com/).
 
 ## <a name="create-an-application-insights-resource-in-azure-monitor"></a>Создание Application Insights ресурса в Azure Monitor
 
@@ -38,11 +38,11 @@ Azure Monitor поддерживает распределенную трасси
 
 1. Появится окно конфигурации. Используйте следующую таблицу для заполнения полей ввода.
 
-   | Параметр        | Value           | Описание  |
+   | Параметр        | Значение           | Description  |
    | ------------- |:-------------|:-----|
-   | **Имя**      | Глобальное уникальное значение | Имя, идентифицирующее отслеживаемое приложение |
+   | **Название**      | Глобальное уникальное значение | Имя, идентифицирующее отслеживаемое приложение |
    | **Группа ресурсов**     | myResourceGroup      | Имя новой группы ресурсов для размещения данных Application Insights |
-   | **Расположение** | Восточная часть США | Расположение рядом с вами или рядом с размещением приложения |
+   | **Местоположение** | Восточная часть США | Расположение рядом с вами или рядом с размещением приложения |
 
 1. Нажмите кнопку **Создать**.
 
@@ -353,7 +353,7 @@ python -m pip install opencensus-ext-azure
     logger.warning('action', {'key-1': 'value-1', 'key-2': 'value2'})
     ```
 
-7. Дополнительные сведения о том, как расширить журналы с помощью данных контекста трассировки, см. в разделе [Интеграция журналов](https://docs.microsoft.com/azure/azure-monitor/app/correlation#logs-correlation)опенценсус Python.
+7. Дополнительные сведения о том, как расширить журналы с помощью данных контекста трассировки, см. в разделе [Интеграция журналов](https://docs.microsoft.com/azure/azure-monitor/app/correlation#log-correlation)опенценсус Python.
 
 ## <a name="view-your-data-with-queries"></a>Просмотр данных с помощью запросов
 

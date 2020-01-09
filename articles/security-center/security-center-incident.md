@@ -8,12 +8,12 @@ ms.service: security-center
 ms.topic: conceptual
 ms.date: 09/09/2019
 ms.author: memildin
-ms.openlocfilehash: 2a22039b3499f1ba0f2d7acb2e86a1991d35a380
-ms.sourcegitcommit: 8a717170b04df64bd1ddd521e899ac7749627350
+ms.openlocfilehash: b2ab769fc2595af9fd1ea41f1ef492944cb5e7fa
+ms.sourcegitcommit: ff9688050000593146b509a5da18fbf64e24fbeb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71202119"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75665774"
 ---
 # <a name="manage-security-incidents-in-azure-security-center"></a>Управление инцидентами безопасности в центре безопасности Azure
 
@@ -40,7 +40,7 @@ ms.locfileid: "71202119"
    > [!NOTE]
    > Одно и то же предупреждение может существовать как часть инцидента, а также быть видимым как отдельное оповещение.
 
-    ![Подробности об оповещении](./media/security-center-incident/security-center-incident-alert.png)
+    ![Сведения об оповещении](./media/security-center-incident/security-center-incident-alert.png)
 
 1. Выполните действия по исправлению, заданные для каждого оповещения.
 
@@ -55,7 +55,7 @@ ms.locfileid: "71202119"
 В следующих разделах объясняется, как центр безопасности использует различные данные телеметрии, собираемые при интеграции с инфраструктурой Azure, чтобы применить дополнительные уровни защиты для ресурсов, развернутых в Azure:
 
 * [Предупреждения уровня службы](security-center-alerts-service-layer.md)
-* [Интеграция с продуктами безопасности Azure](security-center-alerts-integration.md)
+* [Обнаружение угроз для Azure WAF и Azure от атак DDoS Protection](security-center-alerts-integration.md)
 
 ## <a name="see-also"></a>См. также
 Этот документ содержит подробные сведения о функции инцидентов в центре безопасности Azure. Дополнительные сведения о Центре безопасности см. в следующих статьях:

@@ -56,6 +56,8 @@
           href: how-to-attach-detach-shared-image-gallery.md
         - name: Добавление пользователя в качестве владельца в лабораторию для аудитории
           href: how-to-add-user-lab-owner.md
+        - name: Параметры брандмауэра для Служб лабораторий Azure
+          href: how-to-configure-firewall-settings.md
     - name: Создание и настройка лаборатории для аудитории (инструктор)
       items:
         - name: Создание и администрирование лабораторий для аудитории

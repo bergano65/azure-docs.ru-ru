@@ -1,5 +1,6 @@
 ---
-title: Пример политик управления API Azure. Добавление заголовка, который содержит идентификатор корреляции | Документация Майкрософт
+title: Пример политики управления API — Добавление заголовка, содержащего идентификатор корреляции
+titleSuffix: Azure API Management
 description: Пример политик управления API Azure. Добавление заголовка с идентификатором корреляции во входящий запрос.
 services: api-management
 documentationcenter: ''
@@ -12,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 10/13/2017
 ms.author: apimpm
-ms.openlocfilehash: 9f091345a4eaf174c47959cad3cb4525fd926689
-ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
+ms.openlocfilehash: 79910aa60602a80cbe79c4ce9899f6ff73fbfde9
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70074215"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75422256"
 ---
 # <a name="add-a-header-containing-a-correlation-id"></a>Добавление заголовка, который содержит идентификатор корреляции
 
@@ -29,7 +30,7 @@ ms.locfileid: "70074215"
 
 [!code-xml[Main](../../../api-management-policy-samples/examples/Add correlation id to inbound request.policy.xml)]
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Подробнее о политиках службы управления API:
 

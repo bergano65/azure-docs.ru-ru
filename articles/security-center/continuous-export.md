@@ -8,12 +8,12 @@ ms.service: security-center
 ms.topic: conceptual
 ms.date: 11/04/2019
 ms.author: memildin
-ms.openlocfilehash: f994f4ec6d41fa0aab37e36d713eaefb22e85b28
-ms.sourcegitcommit: 57eb9acf6507d746289efa317a1a5210bd32ca2c
+ms.openlocfilehash: e12fc5d92cfc850e1d049bc11286c0c863e718b0
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2019
-ms.locfileid: "74665081"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75459184"
 ---
 # <a name="export-security-alerts-and-recommendations-preview"></a>Экспорт оповещений системы безопасности и рекомендаций (Предварительная версия)
 
@@ -41,7 +41,7 @@ ms.locfileid: "74665081"
 
 1. В области "цель экспорта" выберите место для сохранения данных. Данные можно сохранить в целевом объекте в другой подписке (например, в центральном экземпляре концентратора событий или в Центральной рабочей области Log Analytics).
 
-1. В нижней части страницы нажмите кнопку **Save**.
+1. Выберите команду **Сохранить**.
 
 ## <a name="continuous-export-through-azure-event-hubs"></a>Непрерывный экспорт через концентраторы событий Azure  
 
@@ -50,6 +50,8 @@ ms.locfileid: "74665081"
 
 > [!NOTE]
 > Если вы ранее экспортировали оповещения центра безопасности в SIEM с помощью журнала действий Azure, приведенная ниже процедура заменяет эту методологию.
+
+Чтобы просмотреть схемы событий экспортируемых типов данных, посетите страницу [схемы событий концентратора событий](https://aka.ms/ASCAutomationSchemas).
 
 ### <a name="to-integrate-with-a-siem"></a>Интеграция с SIEM 
 
@@ -66,13 +68,17 @@ ms.locfileid: "74665081"
 Кроме того, если вы хотите автоматически переместить постоянно экспортированные данные из настроенного концентратора событий в обозреватель данных Azure, используйте инструкции из статьи прием [данных из концентратора событий в azure обозреватель данных](https://docs.microsoft.com/azure/data-explorer/ingest-data-event-hub).
 
 
-## <a name="continuous-export-to-log-analytics-workspace"></a>Непрерывный экспорт в рабочую область Log Analytics
+## <a name="continuous-export-to-a-log-analytics-workspace"></a>Непрерывный экспорт в рабочую область Log Analytics
 
 Для экспорта в рабочую область Log Analytics необходимо, чтобы в рабочей области были включены решения Log Analytics уровня "бесплатный" или "Стандартный" центра безопасности. Если вы используете портал Azure, решение "бесплатный уровень центра безопасности" автоматически включается при включении непрерывного экспорта. Однако если вы настраиваете параметры непрерывного экспорта программным способом, необходимо вручную выбрать ценовую категорию "бесплатный" или "Стандартный" для требуемой рабочей области в **параметрах & параметров ценообразования**.  
 
-Оповещения и рекомендации по безопасности хранятся в таблицах *секуритялерт* и *секуритирекоммендатионс* соответственно. Имя Log Analyticsного решения, содержащего эти таблицы, зависит от того, на каком уровне находится уровень Free или Standard (см. раздел [цены](security-center-pricing.md)): Security or SecurityCenterFree.
+### <a name="log-analytics-tables-and-schemas"></a>Log Analytics таблиц и схем
+
+Оповещения и рекомендации по безопасности хранятся в таблицах *секуритялерт* и *секуритирекоммендатионс* соответственно. Имя Log Analyticsного решения, содержащего эти таблицы, зависит от того, на каком уровне находится уровень Free или Standard (см. раздел [цены](security-center-pricing.md)): безопасность ("безопасность и аудит") или SecurityCenterFree.
 
 ![Таблица * Секуритялерт * в Log Analytics](./media/continuous-export/log-analytics-securityalert-solution.png)
+
+Чтобы просмотреть схемы событий экспортируемых типов данных, посетите [log Analytics схемы таблицы](https://aka.ms/ASCAutomationSchemas).
 
 ###  <a name="view-exported-security-alerts-and-recommendations-in-azure-monitor"></a>Просмотр экспортированных оповещений системы безопасности и рекомендаций в Azure Monitor
 
@@ -86,7 +92,7 @@ Azure Monitor предоставляет унифицированный инте
 
     ![Страница оповещений Azure Monitor](./media/continuous-export/azure-monitor-alerts.png)
 
-1. На странице Создание правила настройте новое правило (так же, как [правило генерации оповещений журнала в Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-unified-log):
+1. На странице Создание правила настройте новое правило (так же, как [правило генерации оповещений журнала в Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-unified-log)):
 
     * В поле **ресурс**выберите рабочую область log Analytics, в которую были экспортированы оповещения и рекомендации по безопасности.
 
@@ -104,7 +110,7 @@ Azure Monitor предоставляет унифицированный инте
 [![скачивать данные оповещений в виде CSV-файла](media/continuous-export/download-alerts-csv.png)](media/continuous-export/download-alerts-csv.png#lightbox)
 
 > [!NOTE]
-> Эти отчеты содержат оповещения и рекомендации для ресурсов из выбранных в настоящее время подписок в фильтре "каталог и подписка" на портале Azure: ![фильтр для выбора](./media/continuous-export/filter-for-export-csv.png) Directory и подписка.
+> Эти отчеты содержат оповещения и рекомендации для ресурсов из выбранных в настоящее время подписок.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
@@ -115,3 +121,4 @@ Azure Monitor предоставляет унифицированный инте
 - [Документация по концентраторам событий Azure](https://docs.microsoft.com/azure/event-hubs/)
 - [Документация по Azure Sentinel](https://docs.microsoft.com/azure/sentinel/)
 - [Документация по Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/)
+- [Схемы автоматизации рабочих процессов и непрерывного экспорта типов данных](https://aka.ms/ASCAutomationSchemas)

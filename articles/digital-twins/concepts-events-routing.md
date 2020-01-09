@@ -7,17 +7,17 @@ manager: bertvanhoof
 ms.service: digital-twins
 services: digital-twins
 ms.topic: conceptual
-ms.date: 11/07/2019
-ms.openlocfilehash: f2479d9f3e278d23d62275b667f78d1fd70dd151
-ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
+ms.date: 01/03/2020
+ms.openlocfilehash: 094a3a838269921339dcd6c2c3b551720f394251
+ms.sourcegitcommit: 51ed913864f11e78a4a98599b55bbb036550d8a5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2019
-ms.locfileid: "73889690"
+ms.lasthandoff: 01/04/2020
+ms.locfileid: "75660330"
 ---
-# <a name="routing-events-and-messages"></a>Маршрутизация событий и сообщений
+# <a name="routing-iot-events-and-messages"></a>Маршрутизация событий Интернета вещей и сообщений
 
-Решения для Интернета вещей часто объединяют несколько эффективных служб, включая службу хранилища, аналитики и другие. В этой статье описывается, как подключить приложения Azure Digital Twins к службе аналитики Azure, ИИ и службам хранилища, чтобы предоставить им более глубокие сведения и функции.
+"Интернет вещей" решения часто Объединяйте несколько мощных служб, включающих хранилище, аналитику и многое другое. В этой статье описывается, как подключить приложения Azure Digital Twins к службе аналитики Azure, ИИ и службам хранилища, чтобы предоставить им более глубокие сведения и функции.
 
 ## <a name="route-types"></a>Типы маршрутов  
 
@@ -64,7 +64,7 @@ Digital Twins в настоящее время поддерживает след
 >[!NOTE]  
 >Дополнительные сведения о создании конечных точек и примеры использования схемы событий см. в статье, посвященной [конечным точкам и исходящему трафику](how-to-egress-endpoints.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Чтобы узнать об ограничениях общедоступной предварительной версии Azure Digital Twins, ознакомьтесь с [этой статьей](concepts-service-limits.md).
 

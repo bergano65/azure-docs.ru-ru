@@ -1,25 +1,16 @@
 ---
-title: Агрегация событий Azure Service Fabric c помощью Диагностики Microsoft Azure | Документация Майкрософт
+title: Агрегирование событий с помощью система диагностики Azure Windows
 description: Ознакомьтесь со сведениями об агрегации и сборе событий с использованием WAD для мониторинга и диагностики кластеров Azure Service Fabric.
-services: service-fabric
-documentationcenter: .net
 author: srrengar
-manager: chackdan
-editor: ''
-ms.assetid: ''
-ms.service: service-fabric
-ms.devlang: dotnet
 ms.topic: conceptual
-ms.tgt_pltfrm: NA
-ms.workload: NA
 ms.date: 04/03/2018
 ms.author: srrengar
-ms.openlocfilehash: 555a8a823526a51b045b4a0314ef7610bf728e5b
-ms.sourcegitcommit: 3486e2d4eb02d06475f26fbdc321e8f5090a7fac
+ms.openlocfilehash: 104fc212dc590c1366b8dd2cd276f70bdadee5db
+ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73242973"
+ms.lasthandoff: 01/02/2020
+ms.locfileid: "75614542"
 ---
 # <a name="event-aggregation-and-collection-using-windows-azure-diagnostics"></a>Агрегирование и сбор событий с помощью Диагностики Azure для Windows
 > [!div class="op_single_selector"]
@@ -38,7 +29,7 @@ ms.locfileid: "73242973"
 ## <a name="prerequisites"></a>Технические условия
 В этом руководстве используются инструменты, представленные ниже.
 
-* [Azure Resource Manager](../azure-resource-manager/resource-group-overview.md)
+* [Azure Resource Manager](../azure-resource-manager/management/overview.md)
 * [Azure PowerShell](/powershell/azure/overview)
 * [Шаблон Azure Resource Manager](../virtual-machines/windows/extensions-diagnostics-template.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)
 
@@ -347,7 +338,7 @@ Service Fabric настраивает несколько [стандартных
 
     ```
 
-2. Включите приемник в `DiagnosticMonitorConfiguration`, добавив следующую строку в `DiagnosticMonitorConfiguration` `WadCfg` (сразу перед объявлением `EtwProviders`):
+2. Включите приемник в `DiagnosticMonitorConfiguration`, добавив следующую строку в `DiagnosticMonitorConfiguration``WadCfg` (сразу перед объявлением `EtwProviders`):
 
     ```json
     "sinks": "applicationInsights"
@@ -368,7 +359,7 @@ Service Fabric настраивает несколько [стандартных
 >Сегодня не существует способа фильтрации или очистки событий, которые отправляются в таблицу. Если не реализовать метод удаления событий из таблицы, она продолжит расти. Сейчас есть пример службы очистки данных, выполняющийся в [примере модуля наблюдения](https://github.com/Azure-Samples/service-fabric-watchdog-service). Мы также советуем написать собственный пример, если у вас нет веских причин для хранения журналов дольше 30 или 90 дней.
 
 * [Узнайте, как собирать данные счетчиков производительности или журналы, используя расширения системы диагностики.](../virtual-machines/windows/extensions-diagnostics-template.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)
-* [Анализ событий и визуализация с помощью Application Insights](service-fabric-diagnostics-event-analysis-appinsights.md)
+* [Event Analysis and Visualization with Application Insights](service-fabric-diagnostics-event-analysis-appinsights.md) (Анализ событий и визуализация с помощью Application Insights)
 * [Анализ событий и визуализация с помощью журналов Azure Monitor](service-fabric-diagnostics-event-analysis-oms.md)
-* [Анализ событий и визуализация с помощью Application Insights](service-fabric-diagnostics-event-analysis-appinsights.md)
+* [Event Analysis and Visualization with Application Insights](service-fabric-diagnostics-event-analysis-appinsights.md) (Анализ событий и визуализация с помощью Application Insights)
 * [Анализ событий и визуализация с помощью журналов Azure Monitor](service-fabric-diagnostics-event-analysis-oms.md)

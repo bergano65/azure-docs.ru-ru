@@ -7,12 +7,12 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 11/19/2019
-ms.openlocfilehash: a8654f6c9c6c6d020872d2c89e0dd141db4e0451
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: 109ac20d8a3d3dc87b4a83165c0e6c24808c1340
+ms.sourcegitcommit: ce4a99b493f8cf2d2fd4e29d9ba92f5f942a754c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74215551"
+ms.lasthandoff: 12/28/2019
+ms.locfileid: "75529649"
 ---
 # <a name="safely-manage-python-environment-on-azure-hdinsight-using-script-action"></a>Безопасное управление средой Python в Azure HDInsight с помощью действия скрипта
 
@@ -22,9 +22,9 @@ ms.locfileid: "74215551"
 
 В HDInsight имеется две встроенные установки Python в кластере Spark, Anaconda Python 2,7 и Python 3,5. В некоторых случаях клиентам необходимо настроить среду Python, например установить внешние пакеты Python или другую версию Python. В этой статье мы покажем лучшую методику безопасного управления окружениями Python в кластере [Apache Spark](https://spark.apache.org/) в HDInsight.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Технические условия
 
-* Подписка Azure. Ознакомьтесь с [бесплатной пробной версией Azure](https://azure.microsoft.com/documentation/videos/get-azure-free-trial-for-testing-hadoop-in-hdinsight/).
+* Подписка Azure. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/documentation/videos/get-azure-free-trial-for-testing-hadoop-in-hdinsight/).
 
 * Кластер Apache Spark в HDInsight. Инструкции см. в статье [Начало работы. Создание кластера Apache Spark в HDInsight на платформе Linux и выполнение интерактивных запросов с помощью SQL Spark](apache-spark-jupyter-spark-sql.md).
 
@@ -43,17 +43,17 @@ ms.locfileid: "74215551"
 > [!IMPORTANT]
 > Компоненты, поставляемые с кластером HDInsight, полностью поддерживаются. Служба поддержки Майкрософт помогает выявлять и устранять проблемы, связанные с этими компонентами.
 >
-> Настраиваемые компоненты получают ограниченную коммерчески оправданную поддержку, способствующую дальнейшей диагностике проблемы. Служба поддержки Майкрософт может устранить проблему ИЛИ вас могут попросить обратиться к специалистам по технологиям с открытым исходным кодом, используя доступные каналы связи. Можно использовать ряд сайтов сообществ, например [форум MSDN по HDInsight](https://social.msdn.microsoft.com/Forums/azure/home?forum=hdinsight) или [https://stackoverflow.com](https://stackoverflow.com). Кроме того, для проектов Apache есть соответствующие сайты, например [Hadoop https://apache.org на сайте ](https://apache.org)[](https://hadoop.apache.org/).
+> Настраиваемые компоненты получают ограниченную коммерчески оправданную поддержку, способствующую дальнейшей диагностике проблемы. Служба поддержки Майкрософт может устранить проблему ИЛИ вас могут попросить обратиться к специалистам по технологиям с открытым исходным кодом, используя доступные каналы связи. Можно использовать ряд сайтов сообществ, например [форум MSDN по HDInsight](https://social.msdn.microsoft.com/Forums/azure/home?forum=hdinsight) или [https://stackoverflow.com](https://stackoverflow.com). Кроме того, в проектах Apache есть сайты проектов на [https://apache.org](https://apache.org), например [Hadoop](https://hadoop.apache.org/).
 
 ## <a name="understand-default-python-installation"></a>Общие сведения об установке Python по умолчанию
 
 Кластер HDInsight Spark создается с установкой Anaconda. В кластере есть две установки Python, Anaconda Python 2,7 и Python 3,5. В таблице ниже показаны параметры Python по умолчанию для Spark, Livy и Jupyter.
 
-| |Python 2,7|Python 3.5|
+| |Python 2.7;|Python 3.5|
 |----|----|----|
-|Путь|/уср/бин/анаконда/бин|/usr/bin/anaconda/envs/py35/bin|
-|Spark|Значение по умолчанию — 2,7|Недоступно|
-|Livy|Значение по умолчанию — 2,7|Недоступно|
+|путь|/уср/бин/анаконда/бин|/usr/bin/anaconda/envs/py35/bin|
+|Spark|Значение по умолчанию — 2,7|Н/Д|
+|Livy|Значение по умолчанию — 2,7|Н/Д|
 |Jupyter|Ядро PySpark|Ядро PySpark3|
 
 ## <a name="safely-install-external-python-packages"></a>Безопасная установка внешних пакетов Python
@@ -81,7 +81,7 @@ ms.locfileid: "74215551"
     sudo /usr/bin/anaconda/bin/conda install seaborn -n py35new --yes
     ```
 
-    Если вы не знакомы с именем виртуальной среды, вы можете SSH-подключение к узлу заголовка кластера и запустить `/usr/bin/anaconda/bin/conda info -e`, чтобы отобразить все виртуальные среды.
+    Если вы не знакомы с именем виртуальной среды, вы можете SSH-подключение к головному узлу кластера и запустить `/usr/bin/anaconda/bin/conda info -e`, чтобы отобразить все виртуальные среды.
 
 3. Измените настройки Spark и Livy и укажите на созданную виртуальную среду.
 
@@ -126,14 +126,14 @@ ms.locfileid: "74215551"
 
 Чтобы проверить версию Anaconda, можно установить SSH-подключение к узлу заголовка кластера и запустить `/usr/bin/anaconda/bin/conda --v`.
 
-## <a name="seealso"></a>Дополнительные материалы
+## <a name="seealso"></a> См. также
 
 * [Обзор: Apache Spark в Azure HDInsight](apache-spark-overview.md)
 
 ### <a name="scenarios"></a>Сценарии
 
 * [Использование Apache Spark со средствами бизнес-аналитики. Выполнение интерактивного анализа данных с использованием Spark в HDInsight с помощью средств бизнес-аналитики](apache-spark-use-bi-tools.md)
-* [Использование Apache Spark с машинным обучением. Использование Spark в HDInsight для анализа температуры в здании на основе данных системы кондиционирования](apache-spark-ipython-notebook-machine-learning.md)
+* [Apache Spark и Машинное обучение. Анализ температуры в здании на основе данных системы кондиционирования с помощью Spark в HDInsight](apache-spark-ipython-notebook-machine-learning.md)
 * [Apache Spark и Машинное обучение. Прогнозирование результатов проверки пищевых продуктов с помощью Spark в HDInsight](apache-spark-machine-learning-mllib-ipython.md)
 * [Анализ журналов веб-сайтов с помощью Apache Spark в HDInsight](apache-spark-custom-library-website-log-analysis.md)
 
@@ -147,7 +147,7 @@ ms.locfileid: "74215551"
 * [Использование внешних пакетов с записными книжками Jupyter в кластерах Apache Spark в HDInsight](apache-spark-jupyter-notebook-use-external-packages.md)
 * [Использование подключаемого модуля средств HDInsight для IntelliJ IDEA для создания и отправки приложений Spark Scala](apache-spark-intellij-tool-plugin.md)
 * [Удаленная отладка приложений Apache Spark с помощью подключаемого модуля средств HDInsight для IntelliJ IDEA](apache-spark-intellij-tool-plugin-debug-jobs-remotely.md)
-* [Использование записных книжек Apache Zeppelin с кластером Apache Spark в Azure HDInsight](apache-spark-zeppelin-notebook.md)
+* [Использование записных книжек Zeppelin с кластером Apache Spark в Azure HDInsight](apache-spark-zeppelin-notebook.md)
 * [Ядра для записной книжки Jupyter в кластерах Apache Spark в Azure HDInsight](apache-spark-jupyter-notebook-kernels.md)
 * [Установка записной книжки Jupyter на компьютере и ее подключение к кластеру Apache Spark в Azure HDInsight (предварительная версия)](apache-spark-jupyter-notebook-install-locally.md)
 

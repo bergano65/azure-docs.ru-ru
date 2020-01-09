@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 09/16/2019
 ms.author: sedusch
-ms.openlocfilehash: 549fd8f4cb770d472eefd1c504e42837fa8230dd
-ms.sourcegitcommit: f209d0dd13f533aadab8e15ac66389de802c581b
+ms.openlocfilehash: e7a61cc64ae72adfcbeb347ddd076065ccc3a321
+ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71066864"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75645860"
 ---
 # <a name="azure-virtual-machines-deployment-for-sap-netweaver"></a>Развертывание виртуальных машин Azure для SAP NetWeaver
 
@@ -77,8 +77,8 @@ ms.locfileid: "71066864"
 [azure-ps]:/powershell/azureps-cmdlets-docs
 [azure-quickstart-templates-github]:https://github.com/Azure/azure-quickstart-templates
 [azure-script-ps]:https://go.microsoft.com/fwlink/p/?LinkID=395017
-[azure-subscription-service-limits]:../../../azure-subscription-service-limits.md
-[azure-subscription-service-limits-subscription]:../../../azure-subscription-service-limits.md#subscription-limits
+[azure-resource-manager/management/azure-subscription-service-limits]:../../../azure-resource-manager/management/azure-subscription-service-limits.md
+[azure-resource-manager/management/azure-subscription-service-limits-subscription]:../../../azure-resource-manager/management/azure-subscription-service-limits.md#subscription-limits
 
 [dbms-guide]:dbms-guide.md (Развертывание СУБД виртуальных машин Azure для SAP)
 [dbms-guide-2.1]:dbms-guide.md#c7abf1f0-c927-4a7c-9c1d-c7b5b3b7212f (Кэширование для виртуальных машин и виртуальных жестких дисков)
@@ -234,7 +234,7 @@ ms.locfileid: "71066864"
 [planning-guide-storage-microsoft-azure-storage-and-data-disks]:planning-guide.md#a72afa26-4bf4-4a25-8cf7-855d6032157f (Хранилище. Служба хранилища Microsoft Azure и диски данных)
 
 [resource-group-authoring-templates]:../../../resource-group-authoring-templates.md
-[resource-group-overview]:../../../azure-resource-manager/resource-group-overview.md
+[resource-group-overview]:../../../azure-resource-manager/management/overview.md
 [resource-groups-networking]:../../../networking/network-overview.md
 [sap-pam]: https://support.sap.com/pam (Матрица доступности продуктов SAP)
 [sap-templates-2-tier-marketplace-image]:https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2Fsap-2-tier-marketplace-image%2Fazuredeploy.json
@@ -253,7 +253,7 @@ ms.locfileid: "71066864"
 [storage-powershell-guide-full-copy-vhd]:../../../storage/common/storage-powershell-guide-full.md#how-to-copy-blobs-from-one-storage-container-to-another
 [storage-premium-storage-preview-portal]:../../windows/disks-types.md
 [storage-redundancy]:../../../storage/common/storage-redundancy.md
-[storage-scalability-targets]:../../../storage/common/storage-scalability-targets.md
+[storage-scalability-targets]:../../../storage/common/scalability-targets-standard-accounts.md
 [storage-use-azcopy]:../../../storage/common/storage-use-azcopy.md
 [template-201-vm-from-specialized-vhd]:https://github.com/Azure/azure-quickstart-templates/tree/master/201-vm-from-specialized-vhd
 [templates-101-simple-windows-vm]:https://github.com/Azure/azure-quickstart-templates/tree/master/101-simple-windows-vm
@@ -315,7 +315,7 @@ ms.locfileid: "71066864"
 
 В этой статье описаны действия, необходимые для развертывания приложений SAP на виртуальных машинах Azure, а также приведены сведения о дополнительных вариантах развертывания и устранении неполадок. В этой статье содержатся сведения о [планировании и реализации SAP NetWeaver на виртуальных машинах Azure][planning-guide]. Она также дополняет документацию по установке SAP и примечания к SAP, которые являются основными ресурсами по установке и развертыванию ПО SAP.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Технические условия
 
 [!INCLUDE [updated-for-az](../../../../includes/updated-for-az.md)]
 
@@ -412,7 +412,7 @@ ms.locfileid: "71066864"
 
 Проще всего виртуальную машину можно создать с помощью образа из Azure Marketplace на портале Azure.
 
-1.  Перейдите на сайт <https://portal.azure.com/#create/hub>.  или щелкните **+ Создать** в меню портала Azure.
+1.  Перейдите к <https://portal.azure.com/#create/hub>.  или щелкните **+ Создать** в меню портала Azure.
 1.  Выберите **Вычисление**, а затем — тип развертываемой операционной системы. Например, Windows Server 2012 R2, SUSE Linux Enterprise Server 12 (SLES 12), Red Hat Enterprise Linux 7.2 (RHEL 7.2) или Oracle Linux 7.2. В представлении списка по умолчанию не отображаются все поддерживаемые операционные системы. Выберите **Показать все**, чтобы просмотреть полный список. Дополнительные сведения о поддерживаемых операционных системах для развертывания ПО SAP см. в примечании к SAP [1928533].
 1.  На следующей странице ознакомьтесь с условиями использования.
 1.  В раскрывающемся списке **Выберите модель развертывания** выберите **Resource Manager**.
@@ -427,16 +427,16 @@ ms.locfileid: "71066864"
    * **Подписка.** Выберите подписку, которую нужно использовать для подготовки новой виртуальной машины.
    * **Группа ресурсов.** Имя группы ресурсов для виртуальной машины. Вы можете ввести имя новой или имеющейся группы ресурсов.
    * **Расположение.** Расположение, где следует развернуть новую виртуальную машину. Если виртуальную машину требуется подключить к локальной сети, выберите расположение виртуальной сети, по которой Azure подключается к локальной сети. Дополнительные сведения см. в статье [Microsoft Azure сети][planning-guide-microsoft-azure-networking] на [виртуальных машинах Azure планирование и реализация SAP NetWeaver][planning-guide].
-1. **Размер**:
+1. **Size.**
 
      Список поддерживаемых типов виртуальных машин см. в примечании к SAP [1928533]. Выберите правильный тип виртуальной машины, если нужно использовать хранилище Azure класса Premium. Не все типы виртуальных машин поддерживают хранилище класса Premium. Дополнительные сведения см. в статье [хранилище: служба хранилища Microsoft Azure и диски данных][planning-guide-storage-microsoft-azure-storage-and-data-disks] и [хранилище Azure класса Premium][planning-guide-azure-premium-storage] на [виртуальных машинах Azure планирование и реализация SAP NetWeaver][planning-guide].
 
 1. **Параметры**:
-   * **Хранилище**
+   * **Память**
      * **Тип диска.** Выберите тип диска ОС. Если вы хотите использовать хранилище класса Premium для дисков данных, рекомендуется также использовать его для диска ОС.
      * **Использование управляемых дисков.** Если вы хотите использовать управляемые диски, выберите "Да". Дополнительные сведения об управляемых дисках см. в разделе " [управляемые диски][planning-guide-managed-disks] " раздела "планирование по планированию".
      * **Учетная запись хранения.** Создайте учетную запись хранения или выберите имеющуюся. Запуск приложений SAP поддерживают не все типы хранилищ. Дополнительные сведения о типах хранилищ см. в разделе [Структура хранилища виртуальной машины для развертывания реляционной СУБД](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/dbms_guide_general#65fa79d6-a85f-47ee-890b-22e794f51a64).
-   * **Сеть**
+   * **Network**
      * **Виртуальная сеть** и **подсеть**. Чтобы интегрировать виртуальную машину в интрасеть, выберите виртуальную сеть, подключенную к локальной сети.
      * **Общедоступный IP-адрес.** Выберите необходимый общедоступный IP-адрес или введите параметры, чтобы создать его. Общедоступный IP-адрес можно использовать для доступа к виртуальной машине через Интернет. Кроме того, создайте группу безопасности сети, используемую для доступа к виртуальной машине.
      * **Группа безопасности сети**. Дополнительные сведения см. в статье [Управление потоком сетевого трафика с помощью групп безопасности сети][virtual-networks-nsg].
@@ -555,7 +555,7 @@ ms.locfileid: "71066864"
 
 Самый простой способ создания новой виртуальной машины из образа управляемых дисков — с помощью портала Azure. Дополнительные сведения о создании образа управляемого диска см. в статье [Создание управляемого образа универсальной виртуальной машины в Azure](https://docs.microsoft.com/azure/virtual-machines/windows/capture-image-resource).
 
-1.  Перейдите на сайт <https://ms.portal.azure.com/#blade/HubsExtension/Resources/resourceType/Microsoft.Compute%2Fimages>. или щелкните **Образы** в меню портала Azure.
+1.  Перейдите к <https://ms.portal.azure.com/#blade/HubsExtension/Resources/resourceType/Microsoft.Compute%2Fimages>. или щелкните **Образы** в меню портала Azure.
 1.  Выберите образ управляемого диска, который нужно развернуть, и щелкните **Создать виртуальную машину**.
 
 Мастер поможет настроить необходимые параметры для создания виртуальной машины, а также все необходимые ресурсы, например сетевые интерфейсы или учетные записи хранения. Ниже приведены некоторые из этих параметров.
@@ -567,15 +567,15 @@ ms.locfileid: "71066864"
    * **Подписка.** Выберите подписку, которую нужно использовать для подготовки новой виртуальной машины.
    * **Группа ресурсов.** Имя группы ресурсов для виртуальной машины. Вы можете ввести имя новой или имеющейся группы ресурсов.
    * **Расположение.** Расположение, где следует развернуть новую виртуальную машину. Если виртуальную машину требуется подключить к локальной сети, выберите расположение виртуальной сети, по которой Azure подключается к локальной сети. Дополнительные сведения см. в статье [Microsoft Azure сети][planning-guide-microsoft-azure-networking] на [виртуальных машинах Azure планирование и реализация SAP NetWeaver][planning-guide].
-1. **Размер**:
+1. **Size.**
 
      Список поддерживаемых типов виртуальных машин см. в примечании к SAP [1928533]. Выберите правильный тип виртуальной машины, если нужно использовать хранилище Azure класса Premium. Не все типы виртуальных машин поддерживают хранилище класса Premium. Дополнительные сведения см. в статье [хранилище: служба хранилища Microsoft Azure и диски данных][planning-guide-storage-microsoft-azure-storage-and-data-disks] и [хранилище Azure класса Premium][planning-guide-azure-premium-storage] на [виртуальных машинах Azure планирование и реализация SAP NetWeaver][planning-guide].
 
 1. **Параметры**:
-   * **Хранилище**
+   * **Память**
      * **Тип диска.** Выберите тип диска ОС. Если вы хотите использовать хранилище класса Premium для дисков данных, рекомендуется также использовать его для диска ОС.
      * **Использование управляемых дисков.** Если вы хотите использовать управляемые диски, выберите "Да". Дополнительные сведения об управляемых дисках см. в разделе " [управляемые диски][planning-guide-managed-disks] " раздела "планирование по планированию".
-   * **Сеть**
+   * **Network**
      * **Виртуальная сеть** и **подсеть**. Чтобы интегрировать виртуальную машину в интрасеть, выберите виртуальную сеть, подключенную к локальной сети.
      * **Общедоступный IP-адрес.** Выберите необходимый общедоступный IP-адрес или введите параметры, чтобы создать его. Общедоступный IP-адрес можно использовать для доступа к виртуальной машине через Интернет. Кроме того, создайте группу безопасности сети, используемую для доступа к виртуальной машине.
      * **Группа безопасности сети**. Дополнительные сведения см. в статье [Управление потоком сетевого трафика с помощью групп безопасности сети][virtual-networks-nsg].
@@ -788,7 +788,7 @@ ms.locfileid: "71066864"
 ```powershell
 (Get-Module Az.Compute).Version
 ```
-Результат должен выглядеть следующим образом:
+Результат имеет следующий вид:
 
 ![Результат проверки версии командлетов Azure PowerShell][deployment-guide-figure-600]
 <a name="figure-6"></a>
@@ -818,7 +818,7 @@ ms.locfileid: "71066864"
 azure --version
 ```
 
-Результат должен выглядеть следующим образом:
+Результат имеет следующий вид:
 
 ![Результат проверки версии с помощью интерфейса командой строки Azure][deployment-guide-figure-760]
 <a name="0ad010e6-f9b5-4c21-9c09-bb2e5efb3fda"></a>
@@ -879,7 +879,7 @@ azure --version
 1. Выберите **Конфигурация компьютера** > **Административные шаблоны** > **Компоненты Windows** > **Internet Explorer**. Убедитесь, что параметр **Задать параметры прокси для компьютера (а не для пользователя)** отключен или не настроен.
 1. На **панели управления** выберите **Центр управления сетями и общим доступом** > **Свойства обозревателя**.
 1. На вкладке **Подключения** нажмите кнопку **Параметры сети**.
-1. Снимите флажок **Автоматическое определение параметров**.
+1. Снять флажок **Автоматическое определение параметров**.
 1. Установите флажок **Использовать прокси-сервер для локальной сети** и введите адрес и порт прокси.
 1. Нажмите кнопку **Advanced** (Дополнительно).
 1. В поле **Исключения** введите следующий IP-адрес: **168.63.129.16**. Нажмите кнопку **ОК**.
@@ -1081,7 +1081,7 @@ azure --version
 
 1. Проверьте выходные данные расширения Azure для SAP.
 
-   1\.  Выполнить `more /var/lib/AzureEnhancedMonitor/PerfCounters`
+   а.  Выполнить `more /var/lib/AzureEnhancedMonitor/PerfCounters`
 
    **Ожидаемый результат.** Возвращает список счетчиков производительности. Файл не должен быть пустым.
 
@@ -1089,7 +1089,7 @@ azure --version
 
    **Ожидаемый результат.** Возвращает одну строку, где для параметра error задано значение **none**, **3;config;Error;;0;0;none;0;1456416792;tst-servercs;** .
 
-   В. Выполнить `more /var/lib/AzureEnhancedMonitor/LatestErrorRecord`
+   c. Выполнить `more /var/lib/AzureEnhancedMonitor/LatestErrorRecord`
 
    **Ожидаемый результат.** Возвращает пустую строку или строка отсутствует.
 
@@ -1097,7 +1097,7 @@ azure --version
 
 1. Проверьте, установлен и запущен ли каталог waagent.
 
-   1\.  Выполнить `sudo ls -al /var/lib/waagent/`
+   а.  Выполнить `sudo ls -al /var/lib/waagent/`
 
      **Ожидаемый результат.** Должно отобразиться содержимое каталога waagent.
 
@@ -1107,7 +1107,7 @@ azure --version
 
 1. Убедитесь, что расширение Azure для SAP установлено и работает.
 
-   1\.  Выполнить `sudo sh -c 'ls -al /var/lib/waagent/Microsoft.OSTCExtensions.AzureEnhancedMonitorForLinux-*/'`
+   а.  Выполнить `sudo sh -c 'ls -al /var/lib/waagent/Microsoft.OSTCExtensions.AzureEnhancedMonitorForLinux-*/'`
 
    **Ожидаемый результат**: список содержимого расширения Azure для каталога SAP.
 
@@ -1117,11 +1117,11 @@ azure --version
 
 1. Установите агент SAP Host Agent, как описано в примечании к SAP [1031096], и проверьте выходные данные `saposcol`.
 
-   1\.  Выполнить `/usr/sap/hostctrl/exe/saposcol -d`
+   а.  Выполнить `/usr/sap/hostctrl/exe/saposcol -d`
 
    b.  Выполнить `dump ccm`
 
-   В.  Проверьте, задано ли для метрики **Virtualization_Configuration\Enhanced Monitoring Access** значение **true**.
+   c.  Проверьте, задано ли для метрики **Virtualization_Configuration\Enhanced Monitoring Access** значение **true**.
 
 Если сервер приложений ABAP SAP NetWeaver уже установлен, откройте транзакцию ST06 и проверьте, включен ли расширенный мониторинг.
 

@@ -1,30 +1,19 @@
 ---
 title: Развертывание Service Fabric Azure с помощью PowerShell
-description: Развертывание и удаление приложений в Service Fabric с помощью PowerShell.
-services: service-fabric
-documentationcenter: .net
-author: athinanthny
-manager: chackdan
-editor: ''
-ms.assetid: b120ffbf-f1e3-4b26-a492-347c29f8f66b
-ms.service: service-fabric
-ms.devlang: dotnet
+description: Узнайте, как удалять и развертывать приложения в Service Fabric Azure и как выполнять эти действия в PowerShell.
 ms.topic: conceptual
-ms.tgt_pltfrm: NA
-ms.workload: NA
 ms.date: 01/19/2018
-ms.author: atsenthi
-ms.openlocfilehash: 0080ba0807a4cb31fedeb132932e2e08137dd40b
-ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
+ms.openlocfilehash: e3fdd194f2949f1246e991968e02b3278f33f7db
+ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74013278"
+ms.lasthandoff: 01/02/2020
+ms.locfileid: "75614508"
 ---
 # <a name="deploy-and-remove-applications-using-powershell"></a>Развертывание и удаление приложений с помощью PowerShell
 
 > [!div class="op_single_selector"]
-> * [Диспетчер ресурсов](service-fabric-application-arm-resource.md)
+> * [Resource Manager](service-fabric-application-arm-resource.md)
 > * [PowerShell](service-fabric-deploy-remove-applications.md)
 > * [Интерфейс командной строки Service Fabric](service-fabric-application-lifecycle-sfctl.md)
 > * [API-интерфейсы FabricClient](service-fabric-deploy-remove-applications-fabricclient.md)
@@ -35,7 +24,7 @@ ms.locfileid: "74013278"
 
 1. Отправка пакета приложения в хранилище образов.
 2. Регистрация типа приложения с помощью относительного пути к хранилищу образов.
-3. Создание экземпляра приложения.
+3. Создайте экземпляр приложения.
 
 Если развернутое приложение больше не нужно, можно удалить экземпляр приложения и соответствующий тип приложения. Полное удаление приложения из кластера включает следующие действия:
 
@@ -49,7 +38,7 @@ ms.locfileid: "74013278"
 
 1. Отправьте файл `sfpkg` во внешнее хранилище. Внешним хранилищем может быть любое хранилище, предоставляющее конечную точку REST HTTP или HTTPS.
 2. Зарегистрируйте тип приложения, указав внешний URI скачивания и тип приложения.
-2. Создание экземпляра приложения.
+2. Создайте экземпляр приложения.
 
 Для очистки удалите экземпляры приложения и отмените регистрацию типа приложения. Так как пакет не был скопирован в хранилище образов, очистка во временном расположении не требуется. Подготовка во внешнем хранилище доступна начиная с версии Service Fabric 6.1.
 
@@ -60,7 +49,7 @@ ms.locfileid: "74013278"
 
 ## <a name="connect-to-the-cluster"></a>Подключение к кластеру
 
-Перед выполнением команд PowerShell, описанных в этой статье, нужно подключиться к кластеру Service Fabric с помощью команды [Connect-ServiceFabricCluster](/powershell/module/servicefabric/connect-servicefabriccluster?view=azureservicefabricps) . Чтобы подключиться к локальному кластеру разработки, выполните следующую команду:
+Перед выполнением команд PowerShell, описанных в этой статье, нужно подключиться к кластеру Service Fabric с помощью команды [Connect-ServiceFabricCluster](/powershell/module/servicefabric/connect-servicefabriccluster?view=azureservicefabricps). Чтобы подключиться к локальному кластеру разработки, выполните следующую команду:
 
 ```powershell
 Connect-ServiceFabricCluster
@@ -323,7 +312,7 @@ DefaultParameters      : { "Stateless1_InstanceCount" = "-1" }
 Unregister-ServiceFabricApplicationType MyApplicationType 1.0.0
 ```
 
-## <a name="troubleshooting"></a>Устранение неполадок
+## <a name="troubleshooting"></a>Устранение неисправностей
 
 ### <a name="copy-servicefabricapplicationpackage-asks-for-an-imagestoreconnectionstring"></a>Команда Copy-ServiceFabricApplicationPackage запрашивает строку ImageStoreConnectionString
 
@@ -401,7 +390,7 @@ Status                 : Available
 DefaultParameters      : { "Stateless1_InstanceCount" = "-1" }
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Создание пакета приложения](service-fabric-package-apps.md)
 

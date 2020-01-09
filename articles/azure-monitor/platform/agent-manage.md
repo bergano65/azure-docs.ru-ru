@@ -4,15 +4,15 @@ description: В этой статье описываются различные 
 ms.service: azure-monitor
 ms.subservice: logs
 ms.topic: conceptual
-author: MGoedtel
-ms.author: magoedte
+author: bwren
+ms.author: bwren
 ms.date: 06/14/2019
-ms.openlocfilehash: 8dec91a3987aed978bb088d1aeab48a6fd0f9fb4
-ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
+ms.openlocfilehash: 7e9725c2a33bd63b7ce6751f346da17eb68fe6f7
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72932787"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75364787"
 ---
 # <a name="managing-and-maintaining-the-log-analytics-agent-for-windows-and-linux"></a>Обслуживание агента Log Analytics для Windows и Linux и управление им
 
@@ -34,9 +34,9 @@ ms.locfileid: "72932787"
 
 Последнюю версию агента Windows можно скачать из рабочей области Log Analytics, выполнив следующие действия.
 
-1. Войдите на [портале Azure](https://portal.azure.com).
+1. Войдите на [портал Azure](https://portal.azure.com).
 
-2. На портале Azure щелкните **Все службы**. В списке ресурсов введите **Log Analytics**. Как только вы начнете вводить символы, список отфильтруется соответствующим образом. Выберите рабочие области **Log Analytics**.
+2. На портале Azure щелкните **Все службы**. В списке ресурсов введите **Log Analytics**. Как только вы начнете вводить символы, список отфильтруется соответствующим образом. Выберите **Рабочие области Log Analytics**.
 
 3. В списке рабочих областей Log Analytics выберите рабочую область.
 
@@ -58,7 +58,7 @@ ms.locfileid: "72932787"
 
 4. В диалоговом окне **установки Microsoft Monitoring Agent** нажмите кнопку **я принимаю** , чтобы принять условия лицензионного соглашения.
 
-5. В диалоговом окне " **установка Microsoft Monitoring Agent** " нажмите кнопку **Обновить**. На странице состояние отображается ход обновления.
+5. В диалоговом окне **Установка Microsoft Monitoring Agent** нажмите кнопку **Обновить**. На странице состояния отображается ход обновления.
 
 6. При **успешном завершении настройки Microsoft Monitoring Agent.** появится страница, нажмите кнопку **Готово**.
 
@@ -68,7 +68,7 @@ ms.locfileid: "72932787"
 
 2. Чтобы извлечь файлы установки агента из командной строки с повышенными привилегиями, запустите файл `MMASetup-<platform>.exe /c`. После этого вы сможете выбрать путь для извлечения файлов. Кроме того, путь можно указать, передав аргументы `MMASetup-<platform>.exe /c /t:<Full Path>`.
 
-3. Выполните следующую команду, где D:\ — Это расположение файла журнала обновления.
+3. Выполните следующую команду (D:\ является местонахождением файла журнала обновления).
 
     ```dos
     setup.exe /qn /l*v D:\logs\AgentUpgrade.log AcceptEndUserLicenseAgreement=1
@@ -99,7 +99,7 @@ ms.locfileid: "72932787"
 
 5. Чтобы добавить рабочую область, нажмите кнопку **Добавить**, а затем в диалоговом окне **Add a Log Analytics Workspace** (Добавление рабочей области Log Analytics) введите идентификатор и ключ (первичный) рабочей области. Если компьютер должен передавать данные в рабочую область Log Analytics в облаке Azure для государственных организаций, выберите "Azure для государственных организаций США" из раскрывающегося списка "Облако Azure".
 
-6. Нажмите кнопку **ОК** , чтобы сохранить изменения.
+6. Нажмите кнопку **ОК** , чтобы сохранить внесенные изменения.
 
 #### <a name="remove-a-workspace-using-powershell"></a>Удаление рабочей области с помощью PowerShell
 

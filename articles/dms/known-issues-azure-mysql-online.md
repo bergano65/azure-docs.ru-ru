@@ -1,6 +1,7 @@
 ---
-title: Статья об известных проблемах и ограничениях при сетевых миграциях в Базу данных Azure для MySQL | Документация Майкрософт
-description: Узнайте об известных проблемах и ограничениях при сетевых миграциях в Базу данных Azure для MySQL.
+title: 'Известные проблемы: оперативная миграция в базу данных Azure для MySQL'
+titleSuffix: Azure Database Migration Service
+description: Сведения об известных проблемах и ограничениях миграции при оперативной миграции в базу данных Azure для MySQL при использовании Azure Database Migration Service.
 services: database-migration
 author: HJToland3
 ms.author: jtoland
@@ -8,21 +9,24 @@ manager: craigg
 ms.reviewer: craigg
 ms.service: dms
 ms.workload: data-services
-ms.custom: mvc
+ms.custom:
+- seo-lt-2019
+- seo-dt-2019
 ms.topic: article
 ms.date: 11/08/2019
-ms.openlocfilehash: 39c1928f1d38276418b2e1a3e766c4b9d8a0d8d2
-ms.sourcegitcommit: bc193bc4df4b85d3f05538b5e7274df2138a4574
+ms.openlocfilehash: 905a14bd78d120e27ebc4d44ede86e9f0e3783cf
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2019
-ms.locfileid: "73902783"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75437840"
 ---
-# <a name="known-issuesmigration-limitations-with-online-migrations-to-azure-db-for-mysql"></a>Известные проблемы и ограничения при сетевых миграциях в Базу данных Azure для MySQL
+# <a name="online-migration-issues--limitations-to-azure-db-for-mysql-with-azure-database-migration-service"></a>Проблемы оперативной миграции & ограничения для базы данных Azure для MySQL с Azure Database Migration Service
 
 В следующих разделах описываются известные проблемы и ограничения, связанные с сетевыми миграциями из MySQL в Базу данных Azure для MySQL.
 
 ## <a name="online-migration-configuration"></a>Настройка сетевой миграции
+
 
 - На исходном сервере должна быть MySQL версии 5.6.35, 5.7.18 или более поздней.
 - База данных Azure для MySQL поддерживает:
@@ -121,7 +125,7 @@ ms.locfileid: "73902783"
 - Строка пароля, которая в начале и конце содержит открывающие и закрывающие фигурные скобки {  }, не поддерживается. Это ограничение применяется при подключении как к исходной базе данных MySQL, так и к целевой базе данных Azure для MySQL.
 - Следующие инструкции DDL не поддерживаются:
   - все инструкции DDL, обрабатывающие разделы;
-  - инструкция удаления таблицы;
+  - Удаление таблицы
   - Переименование таблицы
 - Использование инструкции *alter table <имя_таблицы> add column <имя_столбца>* для добавления столбцов в начало или в середину таблицы не поддерживается. Инструкция *alter table <имя_таблицы> add column <имя_столбца>* добавляет столбец в конец таблицы.
 - Индексы, созданные только для части данных столбца, не поддерживаются. Приведенная ниже инструкция представляет пример создания индекса, используя только часть данных столбца:

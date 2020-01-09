@@ -1,6 +1,6 @@
 ---
-title: Сведения о шаблонах масштабируемых наборов виртуальных машин | Документация Майкрософт
-description: Узнайте, как создать шаблон базового масштабируемого набора для масштабируемых наборов виртуальных машин
+title: Подробнее о шаблонах масштабируемых наборов виртуальных машин
+description: Узнайте, как создать шаблон базового масштабируемого набора для масштабируемых наборов виртуальных машин Azure с помощью нескольких простых шагов.
 services: virtual-machine-scale-sets
 documentationcenter: ''
 author: mayanknayar
@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/26/2019
 ms.author: manayar
-ms.openlocfilehash: 267c715de67df57abd30ac18966b8b3b8440810c
-ms.sourcegitcommit: aebe5a10fa828733bbfb95296d400f4bc579533c
+ms.openlocfilehash: e3d8ada67b0a592df9c2dba145626836f27da631
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70376105"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75459372"
 ---
 # <a name="learn-about-virtual-machine-scale-set-templates"></a>Подробнее о шаблонах масштабируемых наборов виртуальных машин
 [Шаблоны Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/template-deployment-overview#template-deployment-process) прекрасно подходят для развертывания группы связанных ресурсов. В этой серии руководств показано, как создать шаблон базового масштабируемого набора и как изменить этот шаблон в соответствии с различными сценариями. Все примеры взяты из этого [репозитория GitHub](https://github.com/gatneil/mvss).
@@ -131,7 +131,7 @@ ms.locfileid: "70376105"
 ```
 
 ### <a name="choose-type-of-updates"></a>Выбор типа обновления
-Кроме того, нужно указать способ обновления масштабируемого набора. В настоящее время существует три варианта `Manual`:, `Rolling` и. `Automatic` Дополнительные сведения о различиях между этими двумя способами см. в документации по [обновлению масштабируемого набора](./virtual-machine-scale-sets-upgrade-scale-set.md#how-to-bring-vms-up-to-date-with-the-latest-scale-set-model).
+Кроме того, нужно указать способ обновления масштабируемого набора. В настоящее время существует три варианта: `Manual`, `Rolling` и `Automatic`. Дополнительные сведения о различиях между этими двумя способами см. в документации по [обновлению масштабируемого набора](./virtual-machine-scale-sets-upgrade-scale-set.md#how-to-bring-vms-up-to-date-with-the-latest-scale-set-model).
 
 ```json
        "properties": {
@@ -204,6 +204,6 @@ ms.locfileid: "70376105"
 
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [!INCLUDE [mvss-next-steps-include](../../includes/mvss-next-steps.md)]

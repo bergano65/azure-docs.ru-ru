@@ -1,32 +1,23 @@
 ---
-title: 'Интерфейс командной строки Azure Service Fabric: sfctl mesh code-package-log | Документация Майкрософт'
-description: Описание команд sfctl mesh code-package-log интерфейса командной строки Service Fabric.
-services: service-fabric
-documentationcenter: na
+title: Azure Service Fabric CLI — код сетки sfctl — пакет — журнал
+description: Сведения о sfctl, интерфейсе командной строки Azure Service Fabric. Содержит список команд для получения журналов для указанного пакета кода.
 author: jeffj6123
-manager: chackdan
-editor: ''
-ms.assetid: ''
-ms.service: service-fabric
-ms.devlang: cli
 ms.topic: reference
-ms.tgt_pltfrm: na
-ms.workload: multiple
 ms.date: 9/17/2019
 ms.author: jejarry
-ms.openlocfilehash: d1f0e34389a48b79c049f26e8b04c870f0f1a9a7
-ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
+ms.openlocfilehash: 78edc9bb36b711f72300942bc9900b0fde7c51d2
+ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72901264"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75646149"
 ---
 # <a name="sfctl-mesh-code-package-log"></a>sfctl mesh code-package-log
 Сведения о команде получения журналов для контейнера указанного пакета кода для данной реплики службы.
 
 ## <a name="commands"></a>Команды
 
-|Команда|Описание|
+|Get-Help|Description|
 | --- | --- |
 | get | Получает журналы из контейнера. |
 
@@ -37,7 +28,7 @@ ms.locfileid: "72901264"
 
 ### <a name="arguments"></a>Аргументы
 
-|Аргумент|Описание|
+|Аргумент|Description|
 | --- | --- |
 | --app-name --application-name [обязательный аргумент] | Имя приложения. |
 | --code-package-name           [обязательный аргумент] | Имя пакета кода службы. |
@@ -47,13 +38,13 @@ ms.locfileid: "72901264"
 
 ### <a name="global-arguments"></a>Глобальные аргументы
 
-|Аргумент|Описание|
+|Аргумент|Description|
 | --- | --- |
-| --debug | Увеличение уровня детализации ведения журнала для отображения всех журналов отладки. |
+| --debug | Повышение уровня детализации журнала для включения всех журналов отладки. |
 | --help -h | Отображение этого справочного сообщения и выход. |
-| --output -o | Формат выходных данных.  Допустимые значения\: json, jsonc, table, tsv.  Значение по умолчанию\: json. |
-| --query | Строка запроса JMESPath. Дополнительные сведения см. на сайте http\://jmespath.org. |
-| --verbose | Повышение уровня детализации ведения журнала. Используйте параметр --debug, чтобы получить полные журналы отладки. |
+| --output -o | Формат вывода.  Допустимые значения\: json, jsonc, table, tsv.  Значение по умолчанию\: json. |
+| --query | Строка запроса JMESPath. Дополнительные сведения и примеры см. на веб-сайте http\://jmespath.org/. |
+| --verbose | Повышение уровня детализации журнала. Чтобы включить полные журналы отладки, используйте параметр --debug. |
 
 
 ## <a name="next-steps"></a>Дальнейшие действия

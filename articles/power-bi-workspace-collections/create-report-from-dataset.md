@@ -1,5 +1,5 @@
 ---
-title: Создание отчета из набора данных в коллекциях рабочих областей Power BI | Документация Майкрософт
+title: Создание отчета из набора данных — Power BI коллекции рабочих областей
 description: Отчеты коллекций рабочих областей Power BI теперь можно создавать из набора данных в собственном приложении.
 services: power-bi-workspace-collections
 ms.service: power-bi-embedded
@@ -8,12 +8,12 @@ ms.author: rkarlin
 ms.topic: article
 ms.workload: powerbi
 ms.date: 09/20/2017
-ms.openlocfilehash: 2034c62a17b71b92b43a7afd794c2c172288d58c
-ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
+ms.openlocfilehash: bcc6044d0f0f5270f81a619e4d1ad71ea35cc170
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67672447"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75427059"
 ---
 # <a name="create-a-new-report-from-a-dataset-in-power-bi-workspace-collections"></a>Создание отчета из набора данных в коллекциях рабочих областей Power BI
 

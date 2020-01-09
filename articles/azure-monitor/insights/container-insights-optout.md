@@ -1,18 +1,14 @@
 ---
 title: Как остановить мониторинг кластера Службы Azure Kubernetes | Документация Майкрософт
 description: В этой статье описывается, как остановить мониторинг кластера Azure AKS с помощью Azure Monitor для контейнеров.
-ms.service: azure-monitor
-ms.subservice: ''
 ms.topic: conceptual
-author: mgoedtel
-ms.author: magoedte
 ms.date: 08/19/2019
-ms.openlocfilehash: fe0155d6102dac12d5d4c01b78b1ddd45f9bee02
-ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
+ms.openlocfilehash: 9d4034f06cf85ee7803edba0898a5528818f1d97
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74382246"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75404105"
 ---
 # <a name="how-to-stop-monitoring-your-azure-kubernetes-service-aks-with-azure-monitor-for-containers"></a>Как остановить мониторинг кластера Службы Azure Kubernetes (AKS) с помощью Azure Monitor для контейнеров
 
@@ -166,7 +162,7 @@ ProvisioningState       : Succeeded
 ```
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если рабочая область была создана только для мониторинга кластера и больше не требуется, ее необходимо удалить вручную. Если вам неизвестно, как удалить рабочую область, прочитайте раздел [Удаление рабочей области Azure Log Analytics на портале Azure](../../log-analytics/log-analytics-manage-del-workspace.md). Не забывайте о том, что **идентификатор ресурса рабочей области** , скопированный ранее на шаге 4, вам понадобится. 
 

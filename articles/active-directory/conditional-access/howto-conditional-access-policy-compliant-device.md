@@ -5,18 +5,18 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: conditional-access
 ms.topic: conceptual
-ms.date: 12/03/2019
+ms.date: 12/12/2019
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb, rogoya
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 83a4323c2679bdf55709aeaed82134b7b4457fee
-ms.sourcegitcommit: 5aefc96fd34c141275af31874700edbb829436bb
+ms.openlocfilehash: 8a18f0b1f83ae02b06344c332cfdd1cc093f37fc
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74803705"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75424881"
 ---
 # <a name="conditional-access-require-compliant-devices"></a>Условный доступ: требовать соответствующие требованиям устройства
 
@@ -49,9 +49,15 @@ ms.locfileid: "74803705"
 1. Подтвердите параметры и установите для **параметра включить политику** значение **вкл**.
 1. Выберите **создать** , чтобы создать, чтобы включить политику.
 
+### <a name="known-behavior"></a>Известное поведение
+
+В Windows 7, iOS, Android, macOS и некоторых сторонних веб-браузерах Azure AD определяет устройство с помощью сертификата клиента, подготовленного при регистрации устройства в Azure AD. При первом входе пользователя в систему через браузер пользователю предлагается выбрать сертификат. Конечный пользователь должен выбрать этот сертификат, прежде чем он сможет продолжить работу с браузером.
+
 ## <a name="next-steps"></a>Дальнейшие действия
 
 [Общие политики условного доступа](concept-conditional-access-policy-common.md)
+
+[Определение влияния с использованием режима "только отчет с условным доступом"](howto-conditional-access-report-only.md)
 
 [Моделирование поведения входа с помощью средства What If условного доступа](troubleshoot-conditional-access-what-if.md)
 

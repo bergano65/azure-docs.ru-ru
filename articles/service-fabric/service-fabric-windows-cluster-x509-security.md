@@ -1,25 +1,16 @@
 ---
-title: Защита кластера Azure Service Fabric в Windows с использованием сертификатов | Документация Майкрософт
+title: Защита кластера в Windows с помощью сертификатов
 description: Безопасный обмен данными в автономном или частном кластере Azure Service Fabric, а также между клиентами и кластером.
-services: service-fabric
-documentationcenter: .net
 author: dkkapur
-manager: chackdan
-editor: ''
-ms.assetid: fe0ed74c-9af5-44e9-8d62-faf1849af68c
-ms.service: service-fabric
-ms.devlang: dotnet
 ms.topic: conceptual
-ms.tgt_pltfrm: na
-ms.workload: na
 ms.date: 10/15/2017
 ms.author: dekapur
-ms.openlocfilehash: ee2ce03fccc3e6556f9d261687edb050c8cfa1cc
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 5a18f957dfb7143f403d5ac30ea184023021f12c
+ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60628155"
+ms.lasthandoff: 01/02/2020
+ms.locfileid: "75613930"
 ---
 # <a name="secure-a-standalone-cluster-on-windows-by-using-x509-certificates"></a>Защита автономного кластера под управлением Windows с помощью сертификатов X.509
 В этой статье описано, как обезопасить обмен данными между разными узлами автономного кластера Windows. Кроме того, здесь рассматриваются способы аутентификации для клиентов, которые подключаются к кластеру при помощи сертификатов X.509. Аутентификация гарантирует, что только авторизованные пользователи могут получить доступ к кластеру и развернутым приложениям для выполнения задач управления. Безопасность на основе сертификатов необходимо включить в кластере при его создании.  
@@ -261,8 +252,8 @@ ms.locfileid: "60628155"
 
 Для кластеров, которые применяются для тестирования, можно использовать самозаверяющие сертификаты.
 
-## <a name="optional-create-a-self-signed-certificate"></a>Необязательно: Создание самозаверяющего сертификата
-Защищенный самозаверяющий сертификат создается при помощи сценария CertSetup.ps1, который находится в папке пакета SDK для Service Fabric в каталоге C:\Program Files\Microsoft SDKs\Service Fabric\ClusterSetup\Secure. Измените в этом файле имя сертификата по умолчанию. (Найдите значение CN=ServiceFabricDevClusterCert.) Выполните этот сценарий следующим образом: `.\CertSetup.ps1 -Install`.
+## <a name="optional-create-a-self-signed-certificate"></a>Создание самозаверяющего сертификата (необязательно)
+Защищенный самозаверяющий сертификат создается при помощи сценария CertSetup.ps1, который находится в папке пакета SDK для Service Fabric в каталоге C:\Program Files\Microsoft SDKs\Service Fabric\ClusterSetup\Secure. Измените в этом файле имя сертификата по умолчанию. (Найдите значение CN = ServiceFabricDevClusterCert.) Запустите этот скрипт как `.\CertSetup.ps1 -Install`.
 
 Теперь экспортируйте сертификат в PFX-файл, защищенный паролем. Сначала получите отпечаток сертификата. 
 1. В меню **Запуск** выберите **Управление сертификатами компьютеров**. 
@@ -347,7 +338,7 @@ ms.locfileid: "60628155"
 .\CreateServiceFabricCluster.ps1 -ClusterConfigFilePath .\ClusterConfig.X509.MultiMachine.json
 ```
 
-Обеспечив защиту автономного кластера под управлением Windows и настройки прошедших проверку подлинности клиентов, которые могут к нему подключаться, выполните инструкции по [подключению к кластеру с помощью PowerShell](service-fabric-connect-to-secure-cluster.md#connect-to-a-cluster-using-powershell). Пример:
+Обеспечив защиту автономного кластера под управлением Windows и настройки прошедших проверку подлинности клиентов, которые могут к нему подключаться, выполните инструкции по [подключению к кластеру с помощью PowerShell](service-fabric-connect-to-secure-cluster.md#connect-to-a-cluster-using-powershell). Пример.
 
 ```powershell
 $ConnectArgs = @{  ConnectionEndpoint = '10.7.0.5:19000';  X509Credential = $True;  StoreLocation = 'LocalMachine';  StoreName = "MY";  ServerCertThumbprint = "057b9544a6f2733e0c8d3a60013a58948213f551";  FindType = 'FindByThumbprint';  FindValue = "057b9544a6f2733e0c8d3a60013a58948213f551"   }

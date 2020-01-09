@@ -1,0 +1,656 @@
+---
+title: Функции шаблонов — числовые
+description: Описывает функции, используемые в шаблоне Azure Resource Manager для работы с числами.
+ms.topic: conceptual
+ms.date: 11/08/2017
+ms.openlocfilehash: 1a611277bb473d605c76d131a18f9ccb550fab29
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.translationtype: MT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75483951"
+---
+# <a name="numeric-functions-for-azure-resource-manager-templates"></a>Числовые функции для шаблонов Azure Resource Manager
+
+Диспетчер ресурсов предоставляет следующие функции для работы с целыми числами:
+
+* [добавление](#add)
+* [copyIndex](#copyindex)
+* [div](#div)
+* [float](#float)
+* [int](#int)
+* [max](#max)
+* [min](#min)
+* [mod (модуль)](#mod)
+* [mul](#mul)
+* [sub](#sub)
+
+<a id="add" />
+
+[!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
+
+## <a name="add"></a>add
+`add(operand1, operand2)`
+
+Возвращает сумму двух указанных целочисленных значений.
+
+### <a name="parameters"></a>Параметры
+
+| Параметр | Обязательно для заполнения | Тип | Description |
+|:--- |:--- |:--- |:--- | 
+|операнд1 |Да |int |Первое слагаемое. |
+|операнд2 |Да |int |Второе слагаемое. |
+
+### <a name="return-value"></a>Возвращаемое значение
+
+Целое число, содержащее сумму параметров.
+
+### <a name="example"></a>Пример
+
+В следующем [примере шаблона](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/functions/add.json) суммируются два параметра.
+
+```json
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "first": {
+            "type": "int",
+            "defaultValue": 5,
+            "metadata": {
+                "description": "First integer to add"
+            }
+        },
+        "second": {
+            "type": "int",
+            "defaultValue": 3,
+            "metadata": {
+                "description": "Second integer to add"
+            }
+        }
+    },
+    "resources": [
+    ],
+    "outputs": {
+        "addResult": {
+            "type": "int",
+            "value": "[add(parameters('first'), parameters('second'))]"
+        }
+    }
+}
+```
+
+Выходные данные из предыдущего примера со значениями по умолчанию:
+
+| Имя | Тип | Значение |
+| ---- | ---- | ----- |
+| addResult | Int | 8 |
+
+Развернуть этот пример шаблона с помощью Azure CLI можно так:
+
+```azurecli-interactive
+az group deployment create -g functionexamplegroup --template-uri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/add.json
+```
+
+Развернуть этот пример шаблона с помощью PowerShell можно так:
+
+```powershell
+New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateUri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/add.json 
+```
+
+<a id="copyindex" />
+
+## <a name="copyindex"></a>copyIndex
+`copyIndex(loopName, offset)`
+
+Возвращает индекс цикла итерации. 
+
+### <a name="parameters"></a>Параметры
+
+| Параметр | Обязательно для заполнения | Тип | Description |
+|:--- |:--- |:--- |:--- |
+| loopName | Нет | string | Имя цикла для получения итерации. |
+| offset |Нет |int |Число, добавляемое к отсчитываемому от нуля значению итерации. |
+
+### <a name="remarks"></a>Remarks
+
+Эта функция всегда используется с объектом **copy**. Если значение **offset** не указано, возвращается текущее значение итерации. Значение итерации начинается с нуля. Циклы итерации можно использовать при определении ресурсов или переменных.
+
+Свойство **loopName** позволяет указать, на какую итерацию ссылается copyIndex: ресурса или свойства. Если значение **loopName** не указано, используется текущая итерация типа ресурса. Укажите значение **loopName** при выполнении итерации по свойству. 
+ 
+Полное описание использования **copyIndex** см. в статье [Создание нескольких экземпляров ресурсов в Azure Resource Manager](create-multiple-instances.md).
+
+Пример использования **copyIndex** при определении переменной см. в разделе [Переменные](template-syntax.md#variables).
+
+### <a name="example"></a>Пример
+
+В следующем примере представлен цикл копирования, в котором значение индекса включается в имя. 
+
+```json
+"resources": [ 
+  { 
+    "name": "[concat('examplecopy-', copyIndex())]", 
+    "type": "Microsoft.Web/sites", 
+    "copy": { 
+      "name": "websitescopy", 
+      "count": "[parameters('count')]" 
+    }, 
+    ...
+  }
+]
+```
+
+### <a name="return-value"></a>Возвращаемое значение
+
+Целое число, представляющее текущей индекс итерации.
+
+<a id="div" />
+
+## <a name="div"></a>div
+`div(operand1, operand2)`
+
+Возвращает целую часть частного от деления двух указанных целочисленных значений.
+
+### <a name="parameters"></a>Параметры
+
+| Параметр | Обязательно для заполнения | Тип | Description |
+|:--- |:--- |:--- |:--- |
+| операнд1 |Да |int |Делимое. |
+| операнд2 |Да |int |Делитель. Не может иметь значение 0. |
+
+### <a name="return-value"></a>Возвращаемое значение
+
+Целое число, представляющее деление.
+
+### <a name="example"></a>Пример
+
+В следующем [примере шаблона](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/functions/div.json) один параметр делится на другой.
+
+```json
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "first": {
+            "type": "int",
+            "defaultValue": 8,
+            "metadata": {
+                "description": "Integer being divided"
+            }
+        },
+        "second": {
+            "type": "int",
+            "defaultValue": 3,
+            "metadata": {
+                "description": "Integer used to divide"
+            }
+        }
+    },
+    "resources": [
+    ],
+    "outputs": {
+        "divResult": {
+            "type": "int",
+            "value": "[div(parameters('first'), parameters('second'))]"
+        }
+    }
+}
+```
+
+Выходные данные из предыдущего примера со значениями по умолчанию:
+
+| Имя | Тип | Значение |
+| ---- | ---- | ----- |
+| divResult | Int | 2 |
+
+Развернуть этот пример шаблона с помощью Azure CLI можно так:
+
+```azurecli-interactive
+az group deployment create -g functionexamplegroup --template-uri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/div.json
+```
+
+Развернуть этот пример шаблона с помощью PowerShell можно так:
+
+```powershell
+New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateUri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/div.json 
+```
+
+<a id="float" />
+
+## <a name="float"></a>FLOAT
+`float(arg1)`
+
+Преобразует значение в число с плавающей запятой. Эта функция используется только при передаче пользовательских параметров в приложение, такое как приложение логики.
+
+### <a name="parameters"></a>Параметры
+
+| Параметр | Обязательно для заполнения | Тип | Description |
+|:--- |:--- |:--- |:--- |
+| arg1 |Да |строка или целое число |Значение, которое необходимо преобразовать в число с плавающей запятой. |
+
+### <a name="return-value"></a>Возвращаемое значение
+Число с плавающей запятой.
+
+### <a name="example"></a>Пример
+
+В следующем примере показано, как с помощью функции float передать параметры в приложение логики:
+
+```json
+{
+    "type": "Microsoft.Logic/workflows",
+    "properties": {
+        ...
+        "parameters": {
+            "custom1": {
+                "value": "[float('3.0')]"
+            },
+            "custom2": {
+                "value": "[float(3)]"
+            },
+```
+
+<a id="int" />
+
+## <a name="int"></a>int
+`int(valueToConvert)`
+
+Преобразует указанное значение в целое число.
+
+### <a name="parameters"></a>Параметры
+
+| Параметр | Обязательно для заполнения | Тип | Description |
+|:--- |:--- |:--- |:--- |
+| valueToConvert |Да |строка или целое число |Значение, которое необходимо преобразовать в целое число. |
+
+### <a name="return-value"></a>Возвращаемое значение
+
+Целое число преобразованного значения.
+
+### <a name="example"></a>Пример
+
+В следующем [примере шаблона](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/functions/int.json) указанное пользователем значение параметра преобразуется в целое число.
+
+```json
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "stringToConvert": { 
+            "type": "string",
+            "defaultValue": "4"
+        }
+    },
+    "resources": [
+    ],
+    "outputs": {
+        "intResult": {
+            "type": "int",
+            "value": "[int(parameters('stringToConvert'))]"
+        }
+    }
+}
+```
+
+Выходные данные из предыдущего примера со значениями по умолчанию:
+
+| Имя | Тип | Значение |
+| ---- | ---- | ----- |
+| intResult | Int | 4 |
+
+Развернуть этот пример шаблона с помощью Azure CLI можно так:
+
+```azurecli-interactive
+az group deployment create -g functionexamplegroup --template-uri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/int.json
+```
+
+Развернуть этот пример шаблона с помощью PowerShell можно так:
+
+```powershell
+New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateUri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/int.json
+```
+
+<a id="max" />
+
+## <a name="max"></a>max
+`max (arg1)`
+
+Возвращает максимальное значение из массива целых чисел или разделенный запятыми список целых чисел.
+
+### <a name="parameters"></a>Параметры
+
+| Параметр | Обязательно для заполнения | Тип | Description |
+|:--- |:--- |:--- |:--- |
+| arg1 |Да |массив целых чисел или разделенный запятыми список целых чисел |Коллекция, для которой необходимо получить максимальное значение. |
+
+### <a name="return-value"></a>Возвращаемое значение
+
+Целое число, представляющее максимальное значение из коллекции.
+
+### <a name="example"></a>Пример
+
+В следующем [примере шаблона](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/functions/max.json) показано, как использовать функцию max с массивом и списком целых чисел.
+
+```json
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "arrayToTest": {
+            "type": "array",
+            "defaultValue": [0,3,2,5,4]
+        }
+    },
+    "resources": [],
+    "outputs": {
+        "arrayOutput": {
+            "type": "int",
+            "value": "[max(parameters('arrayToTest'))]"
+        },
+        "intOutput": {
+            "type": "int",
+            "value": "[max(0,3,2,5,4)]"
+        }
+    }
+}
+```
+
+Выходные данные из предыдущего примера со значениями по умолчанию:
+
+| Имя | Тип | Значение |
+| ---- | ---- | ----- |
+| arrayOutput | Int | 5 |
+| intOutput | Int | 5 |
+
+Развернуть этот пример шаблона с помощью Azure CLI можно так:
+
+```azurecli-interactive
+az group deployment create -g functionexamplegroup --template-uri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/max.json
+```
+
+Развернуть этот пример шаблона с помощью PowerShell можно так:
+
+```powershell
+New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateUri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/max.json
+```
+
+<a id="min" />
+
+## <a name="min"></a>мин
+`min (arg1)`
+
+Возвращает минимальное значение из массива целых чисел или разделенный запятыми список целых чисел.
+
+### <a name="parameters"></a>Параметры
+
+| Параметр | Обязательно для заполнения | Тип | Description |
+|:--- |:--- |:--- |:--- |
+| arg1 |Да |массив целых чисел или разделенный запятыми список целых чисел |Коллекция, для которой необходимо получить минимальное значение. |
+
+### <a name="return-value"></a>Возвращаемое значение
+
+Целое число, представляющее минимальное значение из коллекции.
+
+### <a name="example"></a>Пример
+
+В следующем [примере шаблона](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/functions/min.json) показано, как использовать функцию min с массивом и списком целых чисел.
+
+```json
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "arrayToTest": {
+            "type": "array",
+            "defaultValue": [0,3,2,5,4]
+        }
+    },
+    "resources": [],
+    "outputs": {
+        "arrayOutput": {
+            "type": "int",
+            "value": "[min(parameters('arrayToTest'))]"
+        },
+        "intOutput": {
+            "type": "int",
+            "value": "[min(0,3,2,5,4)]"
+        }
+    }
+}
+```
+
+Выходные данные из предыдущего примера со значениями по умолчанию:
+
+| Имя | Тип | Значение |
+| ---- | ---- | ----- |
+| arrayOutput | Int | 0 |
+| intOutput | Int | 0 |
+
+Развернуть этот пример шаблона с помощью Azure CLI можно так:
+
+```azurecli-interactive
+az group deployment create -g functionexamplegroup --template-uri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/min.json
+```
+
+Развернуть этот пример шаблона с помощью PowerShell можно так:
+
+```powershell
+New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateUri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/min.json
+```
+
+<a id="mod" />
+
+## <a name="mod"></a>mod
+`mod(operand1, operand2)`
+
+Возвращает остаток от деления двух указанных целочисленных значений.
+
+### <a name="parameters"></a>Параметры
+
+| Параметр | Обязательно для заполнения | Тип | Description |
+|:--- |:--- |:--- |:--- |
+| операнд1 |Да |int |Делимое. |
+| операнд2 |Да |int |Делитель, не может быть равен 0. |
+
+### <a name="return-value"></a>Возвращаемое значение
+Целое число, представляющее остаток.
+
+### <a name="example"></a>Пример
+
+В следующем [примере шаблона](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/functions/mod.json) возвращается остаток от деления одного параметра на другой.
+
+```json
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "first": {
+            "type": "int",
+            "defaultValue": 7,
+            "metadata": {
+                "description": "Integer being divided"
+            }
+        },
+        "second": {
+            "type": "int",
+            "defaultValue": 3,
+            "metadata": {
+                "description": "Integer used to divide"
+            }
+        }
+    },
+    "resources": [
+    ],
+    "outputs": {
+        "modResult": {
+            "type": "int",
+            "value": "[mod(parameters('first'), parameters('second'))]"
+        }
+    }
+}
+```
+
+Выходные данные из предыдущего примера со значениями по умолчанию:
+
+| Имя | Тип | Значение |
+| ---- | ---- | ----- |
+| modResult | Int | 1 |
+
+Развернуть этот пример шаблона с помощью Azure CLI можно так:
+
+```azurecli-interactive
+az group deployment create -g functionexamplegroup --template-uri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/mod.json
+```
+
+Развернуть этот пример шаблона с помощью PowerShell можно так:
+
+```powershell
+New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateUri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/mod.json
+```
+
+<a id="mul" />
+
+## <a name="mul"></a>mul
+`mul(operand1, operand2)`
+
+Возвращает произведение двух указанных целочисленных значений.
+
+### <a name="parameters"></a>Параметры
+
+| Параметр | Обязательно для заполнения | Тип | Description |
+|:--- |:--- |:--- |:--- |
+| операнд1 |Да |int |Первый множитель. |
+| операнд2 |Да |int |Второй множитель. |
+
+### <a name="return-value"></a>Возвращаемое значение
+
+Целое число, представляющее произведение.
+
+### <a name="example"></a>Пример
+
+В следующем [примере шаблона](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/functions/mul.json) один параметр умножается на другой.
+
+```json
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "first": {
+            "type": "int",
+            "defaultValue": 5,
+            "metadata": {
+                "description": "First integer to multiply"
+            }
+        },
+        "second": {
+            "type": "int",
+            "defaultValue": 3,
+            "metadata": {
+                "description": "Second integer to multiply"
+            }
+        }
+    },
+    "resources": [
+    ],
+    "outputs": {
+        "mulResult": {
+            "type": "int",
+            "value": "[mul(parameters('first'), parameters('second'))]"
+        }
+    }
+}
+```
+
+Выходные данные из предыдущего примера со значениями по умолчанию:
+
+| Имя | Тип | Значение |
+| ---- | ---- | ----- |
+| mulResult | Int | 15 |
+
+Развернуть этот пример шаблона с помощью Azure CLI можно так:
+
+```azurecli-interactive
+az group deployment create -g functionexamplegroup --template-uri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/mul.json
+```
+
+Развернуть этот пример шаблона с помощью PowerShell можно так:
+
+```powershell
+New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateUri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/mul.json
+```
+
+<a id="sub" />
+
+## <a name="sub"></a>sub
+`sub(operand1, operand2)`
+
+Возвращает разность двух указанных целочисленных значений.
+
+### <a name="parameters"></a>Параметры
+
+| Параметр | Обязательно для заполнения | Тип | Description |
+|:--- |:--- |:--- |:--- |
+| операнд1 |Да |int |Уменьшаемое. |
+| операнд2 |Да |int |Вычитаемое. |
+
+### <a name="return-value"></a>Возвращаемое значение
+Целое число, представляющее разность.
+
+### <a name="example"></a>Пример
+
+В следующем [примере шаблона](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/functions/sub.json) один параметр вычитается из другого.
+
+```json
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "first": {
+            "type": "int",
+            "defaultValue": 7,
+            "metadata": {
+                "description": "Integer subtracted from"
+            }
+        },
+        "second": {
+            "type": "int",
+            "defaultValue": 3,
+            "metadata": {
+                "description": "Integer to subtract"
+            }
+        }
+    },
+    "resources": [
+    ],
+    "outputs": {
+        "subResult": {
+            "type": "int",
+            "value": "[sub(parameters('first'), parameters('second'))]"
+        }
+    }
+}
+```
+
+Выходные данные из предыдущего примера со значениями по умолчанию:
+
+| Имя | Тип | Значение |
+| ---- | ---- | ----- |
+| subResult | Int | 4 |
+
+Развернуть этот пример шаблона с помощью Azure CLI можно так:
+
+```azurecli-interactive
+az group deployment create -g functionexamplegroup --template-uri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/sub.json
+```
+
+Развернуть этот пример шаблона с помощью PowerShell можно так:
+
+```powershell
+New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateUri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/sub.json
+```
+
+## <a name="next-steps"></a>Дальнейшие действия
+* Описание разделов в шаблоне Azure Resource Manager см. в статье [Создание шаблонов Azure Resource Manager](template-syntax.md).
+* Инструкции по объединению нескольких шаблонов см. в статье [Использование связанных шаблонов в Azure Resource Manager](linked-templates.md).
+* Указания по выполнению заданного количества циклов итерации при создании типа ресурса см. в статье [Создание нескольких экземпляров ресурсов в Azure Resource Manager](create-multiple-instances.md).
+* Указания по развертыванию созданного шаблона см. в статье, посвященной [развертыванию приложения с помощью шаблона Azure Resource Manager](deploy-powershell.md).
+

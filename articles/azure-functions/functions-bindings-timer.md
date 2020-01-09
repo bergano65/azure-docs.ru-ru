@@ -7,12 +7,12 @@ ms.topic: reference
 ms.date: 09/08/2018
 ms.author: cshoe
 ms.custom: ''
-ms.openlocfilehash: de36f760fb637ad02446265927e7df7aa91b2abf
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: d5e78c3ab08e791a5f484e45d487c3a85dc95de7
+ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74928380"
+ms.lasthandoff: 01/02/2020
+ms.locfileid: "75613097"
 ---
 # <a name="timer-trigger-for-azure-functions"></a>Триггеры таймера для службы "Функции Azure" 
 
@@ -166,7 +166,9 @@ public void keepAlive(
 
 В [библиотеках классов C#](functions-dotnet-class-library.md) используйте [TimerTriggerAttribute](https://github.com/Azure/azure-webjobs-sdk-extensions/blob/master/src/WebJobs.Extensions/Extensions/Timers/TimerTriggerAttribute.cs).
 
-Конструктор атрибута принимает выражение CRON или `TimeSpan`. `TimeSpan` можно использовать, только если приложение-функция выполняется в рамках плана службы приложений. В приведенном ниже примере показано выражение CRON.
+Конструктор атрибута принимает выражение CRON или `TimeSpan`. `TimeSpan` можно использовать только в том случае, если приложение-функция выполняется в плане службы приложений. `TimeSpan` не поддерживается для функций использования или эластичных баз данных Premium.
+
+В приведенном ниже примере показано выражение CRON.
 
 ```csharp
 [FunctionName("TimerTriggerCSharp")]
@@ -213,7 +215,7 @@ public void keepAlive(
 
 В следующей таблице описываются свойства конфигурации привязки, которые задаются в файле *function.json* и атрибуте `TimerTrigger`.
 
-|свойство function.json | Свойство атрибута |Описание|
+|свойство function.json | Свойство атрибута |Description|
 |---------|---------|----------------------|
 |**type** | Н/Д | Этому свойству необходимо присвоить значение "timerTrigger". Это свойство задается автоматически при создании триггера на портале Azure.|
 |**direction** | Н/Д | Для этого свойства необходимо задать значение "in". Это свойство задается автоматически при создании триггера на портале Azure. |
@@ -302,7 +304,7 @@ public void keepAlive(
 
 Если используется `WEBSITE_TIME_ZONE`, настраивается изменение времени в соответствии с определенным часовым поясом, например с переходом на летнее время. 
 
-## <a name="timespan"></a>Интервал времени
+## <a name="timespan"></a>TimeSpan
 
  `TimeSpan` можно использовать только для приложения-функции, которая работает в плане службы приложений.
 

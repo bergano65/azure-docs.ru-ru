@@ -10,17 +10,17 @@ ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
 ms.workload: identity
-ms.date: 05/22/2019
+ms.date: 12/10/2019
 ms.author: ryanwi
 ms.reviewer: jmprieur, lenalepa, sureshja
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 73a5d30761b25f6233e298cac2602fb701a2987f
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: 1c4e820867e22d23135f9c50255902447e6063ac
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74917783"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75424471"
 ---
 # <a name="how-to-sign-in-any-azure-active-directory-user-using-the-multi-tenant-application-pattern"></a>Реализация входа любого пользователя Azure Active Directory с помощью шаблона мультитенантного приложения
 
@@ -38,7 +38,7 @@ ms.locfileid: "74917783"
 3. [Обновите код для обработки нескольких значений издателя.](#update-your-code-to-handle-multiple-issuer-values)
 4. [Изучите особенности получения согласия пользователя и администратора и внесите соответствующие изменения в код.](#understand-user-and-admin-consent)
 
-Давайте рассмотрим каждый из этих шагов подробнее. Вы также можете перейти непосредственно к [этому списку примеров с несколькими клиентами][AAD-Samples-MT].
+Давайте рассмотрим каждый из этих шагов подробнее. Вы также можете перейти непосредственно к [этому списку примеров с несколькими клиентами](https://docs.microsoft.com/samples/browse/?products=azure-active-directory).
 
 ## <a name="update-registration-to-be-multi-tenant"></a>Обновление регистрации с изменением ее на мультитенантную
 
@@ -175,9 +175,9 @@ ms.locfileid: "74917783"
 
 В этой статье было показано, как создать приложение, поддерживающее вход пользователя с любого клиента Azure AD. После включения единого входа между своим приложением и Azure AD вы также можете обновить приложение для доступа к API, которые предоставляются ресурсами Майкрософт, например Office 365. Это позволит вам предлагать своим пользователям персонализированные возможности при работе с приложением, например отображать контекстную информацию — такую, как изображение профиля или следующая встреча из календаря. Дополнительные сведения о вызовах API для Azure AD и служб Office 365, таких как Exchange, SharePoint, OneDrive, OneNote и др., см. [Microsoft Graph API][MSFT-Graph-overview].
 
-## <a name="related-content"></a>Связанная информация
+## <a name="related-content"></a>См. также
 
-* [Примеры приложений с несколькими клиентами][AAD-Samples-MT]
+* [Примеры приложений с несколькими клиентами](https://docs.microsoft.com/samples/browse/?products=azure-active-directory)
 * [Рекомендации по фирменной символике для приложений][AAD-App-Branding]
 * [Объекты приложения и объекты субъекта-службы][AAD-App-SP-Objects]
 * [Интеграция приложений с Azure Active Directory][AAD-Integrating-Apps]
@@ -196,7 +196,7 @@ ms.locfileid: "74917783"
 [AAD-Graph-Overview]: https://azure.microsoft.com/documentation/articles/active-directory-graph-api/
 [AAD-Graph-Perm-Scopes]: https://msdn.microsoft.com/library/azure/ad/graph/howto/azure-ad-graph-api-permission-scopes
 [AAD-Integrating-Apps]:quickstart-v1-integrate-apps-with-azure-ad.md
-[AAD-Samples-MT]: https://azure.microsoft.com/documentation/samples/?service=active-directory&term=multitenant
+[AAD-Samples-MT]: https://docs.microsoft.com/samples/browse/?products=azure-active-directory
 [AAD-Why-To-Integrate]: ./active-directory-how-to-integrate.md
 [AZURE-portal]: https://portal.azure.com
 [MSFT-Graph-overview]: https://developer.microsoft.com/graph/docs/overview/overview

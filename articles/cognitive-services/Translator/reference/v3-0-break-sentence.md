@@ -10,12 +10,12 @@ ms.subservice: translator-text
 ms.topic: reference
 ms.date: 02/01/2019
 ms.author: swmachan
-ms.openlocfilehash: b4eb083b0f98112274a5d00631af8662ff5c063a
-ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
+ms.openlocfilehash: c8ef1d4dacf500c459ae1ab9a534ed118ca9e05a
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73835890"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75446698"
 ---
 # <a name="translator-text-api-30-breaksentence"></a>API перевода текстов 3.0: BreakSentence
 
@@ -35,17 +35,17 @@ https://api.cognitive.microsofttranslator.com/breaksentence?api-version=3.0
 
 <table width="100%">
   <th width="20%">Параметр запроса</th>
-  <th>Description (Описание)</th>
+  <th>Description</th>
   <tr>
     <td>api-version</td>
-    <td>*Обязательный параметр запроса*.<br/>Версия API, запрошенная клиентом. Этот параметр должен содержать значение `3.0`.</td>
+    <td>*Обязательный параметр запроса*.<br/>Версия API, запрошенная клиентом. Необходимое значение: `3.0`.</td>
   </tr>
   <tr>
-    <td>язык</td>
+    <td>Язык</td>
     <td>*Необязательный параметр запроса*.<br/>Тег языка, определяющий язык входного текста. Если код не указан, будет применено автоматическое распознавание языка.</td>
   </tr>
   <tr>
-    <td>script</td>
+    <td>скрипт</td>
     <td>*Необязательный параметр запроса*.<br/>Тег набора символов, определяющий набор символов, используемый во входном тексте. Если набор символов не указан, предполагается заданный для языка набор символов по умолчанию.</td>
   </tr>
 </table> 
@@ -54,7 +54,7 @@ https://api.cognitive.microsofttranslator.com/breaksentence?api-version=3.0
 
 <table width="100%">
   <th width="20%">Заголовки</th>
-  <th>Description (Описание)</th>
+  <th>Description</th>
   <tr>
     <td>Заголовки проверки подлинности</td>
     <td><em>Обязательный заголовок запроса</em>.<br/>См. <a href="https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-reference#authentication">описание доступных способов аутентификации</a>.</td>
@@ -92,7 +92,7 @@ https://api.cognitive.microsofttranslator.com/breaksentence?api-version=3.0
 
 ## <a name="response-body"></a>Тело ответа
 
-Успешный ответ возвращается в формиате массива JSON с одним результатом для каждой строки входного массива. Объект результатов содержит следующие свойства.
+Успешный ответ возвращается в формате массива JSON с одним результатом для каждой строки входного массива. Объект результата содержит следующие свойства.
 
   * `sentLen` — массив целых чисел, представляющих значения длины предложений в текстовом элементе. Длина массива соответствует количеству предложений, а значения — длине каждого предложения. 
 
@@ -109,7 +109,7 @@ https://api.cognitive.microsofttranslator.com/breaksentence?api-version=3.0
 ```json
 [
   {
-    "sentenceLengths": [ 13, 11, 22 ]
+    "sentLen": [ 13, 11, 22 ]
     "detectedLanguage": {
       "language": "en",
       "score": 401
@@ -122,7 +122,7 @@ https://api.cognitive.microsofttranslator.com/breaksentence?api-version=3.0
 
 <table width="100%">
   <th width="20%">Заголовки</th>
-  <th>Description (Описание)</th>
+  <th>Description</th>
   <tr>
     <td>X-RequestId</td>
     <td>Сформированное службой значение для идентификации запроса. Оно используется для устранения неполадок.</td>
@@ -135,7 +135,7 @@ https://api.cognitive.microsofttranslator.com/breaksentence?api-version=3.0
 
 <table width="100%">
   <th width="20%">Код состояния</th>
-  <th>Description (Описание)</th>
+  <th>Description</th>
   <tr>
     <td>200</td>
     <td>Успешно.</td>
@@ -158,11 +158,11 @@ https://api.cognitive.microsofttranslator.com/breaksentence?api-version=3.0
   </tr>
   <tr>
     <td>500</td>
-    <td>Произошла непредвиденная ошибка. Если ошибка повторяется, сообщите о ней, указав следующие данные: дата и время сбоя, идентификатор запроса из заголовка ответа `X-RequestId` и идентификатор клиента из заголовка запроса `X-ClientTraceId`.</td>
+    <td>Произошла непредвиденная ошибка. Если ошибка сохраняется, передайте отчет о ней, включив следующие данные: дата и время сбоя, идентификатор запроса из заголовка ответа `X-RequestId` и идентификатор клиента из заголовка запроса `X-ClientTraceId`.</td>
   </tr>
   <tr>
     <td>503</td>
-    <td>Сервер временно недоступен. Повторите запрос. Если ошибка повторяется, сообщите о ней, указав следующие данные: дата и время сбоя, идентификатор запроса из заголовка ответа `X-RequestId` и идентификатор клиента из заголовка запроса `X-ClientTraceId`.</td>
+    <td>Сервер временно недоступен. Повторите запрос. Если ошибка сохраняется, передайте отчет о ней, включив следующие данные: дата и время сбоя, идентификатор запроса из заголовка ответа `X-RequestId` и идентификатор клиента из заголовка запроса `X-ClientTraceId`.</td>
   </tr>
 </table> 
 

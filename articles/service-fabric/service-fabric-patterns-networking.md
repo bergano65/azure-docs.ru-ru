@@ -1,25 +1,14 @@
 ---
-title: Схемы сетевых подключений для Azure Service Fabric | Документация Майкрософт
+title: Шаблоны сетей для Azure Service Fabric
 description: Описываются распространенные схемы сетевых подключений для Service Fabric, а также создание кластера с использованием сетевых компонентов Azure.
-services: service-fabric
-documentationcenter: .net
-author: athinanthny
-manager: chackdan
-editor: ''
-ms.assetid: ''
-ms.service: service-fabric
-ms.devlang: dotnet
 ms.topic: conceptual
-ms.tgt_pltfrm: NA
-ms.workload: NA
 ms.date: 01/19/2018
-ms.author: atsenthi
-ms.openlocfilehash: 638ee162b770f949eaf0a0fc34b745698364d019
-ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
+ms.openlocfilehash: 065c311fffe409b20e02a3fddf1e9e7e6a82a2a1
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72900093"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75466292"
 ---
 # <a name="service-fabric-networking-patterns"></a>Схемы сетевых подключений Service Fabric
 Кластер Azure Service Fabric можно интегрировать с другими сетевыми компонентами Azure. В этой статье показано, как создавать кластеры, использующие следующие компоненты:

@@ -1,32 +1,23 @@
 ---
-title: 'Интерфейс командной строки Azure Service Fabric: sfctl mesh deployment | Документация Майкрософт'
-description: Описание команд sfctl mesh deployment интерфейса командной строки Azure Service Fabric.
-services: service-fabric
-documentationcenter: na
+title: Azure Service Fabric CLI — развертывание сетки sfctl
+description: Сведения о sfctl, интерфейсе командной строки Azure Service Fabric. Содержит список команд для создания Service Fabricных ресурсов сетки.
 author: jeffj6123
-manager: chackdan
-editor: ''
-ms.assetid: ''
-ms.service: service-fabric
-ms.devlang: cli
 ms.topic: reference
-ms.tgt_pltfrm: na
-ms.workload: multiple
 ms.date: 9/17/2019
 ms.author: jejarry
-ms.openlocfilehash: dbecf8e96c6cb5d0d6d873309d848304fe33eaaa
-ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
+ms.openlocfilehash: 6512cce075906fc8708a39fa0747ec27be33e961
+ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72901250"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75645367"
 ---
 # <a name="sfctl-mesh-deployment"></a>sfctl mesh deployment
 Создание ресурсов службы "Сетка Service Fabric".
 
 ## <a name="commands"></a>Команды
 
-|Команда|Описание|
+|Get-Help|Description|
 | --- | --- |
 | create | Создает развертывание ресурсов Сетки Service Fabric. |
 
@@ -35,20 +26,20 @@ ms.locfileid: "72901250"
 
 ### <a name="arguments"></a>Аргументы
 
-|Аргумент|Описание|
+|Аргумент|Description|
 | --- | --- |
 | --input-yaml-files [обязательный] | Относительные и абсолютные пути к файлам всех файлов YAML или относительный или абсолютный путь к каталогу (с рекурсией), который содержит файлы YAML. |
 | --parameters | Относительный или абсолютный путь к YAML-файлу или объекту JSON, который содержит параметры, которые необходимо переопределить. |
 
 ### <a name="global-arguments"></a>Глобальные аргументы
 
-|Аргумент|Описание|
+|Аргумент|Description|
 | --- | --- |
-| --debug | Увеличение уровня детализации ведения журнала для отображения всех журналов отладки. |
+| --debug | Повышение уровня детализации журнала для включения всех журналов отладки. |
 | --help -h | Отображение этого справочного сообщения и выход. |
-| --output -o | Формат выходных данных.  Допустимые значения\: json, jsonc, table, tsv.  Значение по умолчанию\: json. |
-| --query | Строка запроса JMESPath. Дополнительные сведения см. на сайте http\://jmespath.org. |
-| --verbose | Повышение уровня детализации ведения журнала. Используйте параметр --debug, чтобы получить полные журналы отладки. |
+| --output -o | Формат вывода.  Допустимые значения\: json, jsonc, table, tsv.  Значение по умолчанию\: json. |
+| --query | Строка запроса JMESPath. Дополнительные сведения и примеры см. на веб-сайте http\://jmespath.org/. |
+| --verbose | Повышение уровня детализации журнала. Чтобы включить полные журналы отладки, используйте параметр --debug. |
 
 ### <a name="examples"></a>Примеры
 

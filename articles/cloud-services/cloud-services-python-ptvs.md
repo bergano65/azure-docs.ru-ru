@@ -1,26 +1,26 @@
 ---
 title: Начало работы с облачными службами Azure и Python | Документация Майкрософт
-description: Обзор использования Python Tools в Visual Studio для создания облачных служб Azure, включая веб-роли и рабочие роли.
+description: Обзор использования средств Python для Visual Studio для создания облачных служб Azure, в том числе веб-ролей и рабочих ролей.
 services: cloud-services
 documentationcenter: python
-author: georgewallace
+author: tgore03
 ms.service: cloud-services
 ms.devlang: python
 ms.topic: conceptual
 ms.date: 07/18/2017
-ms.author: gwallace
-ms.openlocfilehash: 981b1cc4a7adb98ba68ebf3a7673b7116479e704
-ms.sourcegitcommit: 13d5eb9657adf1c69cc8df12486470e66361224e
+ms.author: tagore
+ms.openlocfilehash: b832831a2483b11a7a3c1942dd79065e8be65bf9
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68359572"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75360724"
 ---
 # <a name="python-web-and-worker-roles-with-python-tools-for-visual-studio"></a>Использование веб-ролей и рабочих ролей Python с помощью средств Python для Visual Studio
 
 В этой статье представлен обзор способов использования веб-ролей и рабочих ролей Python с помощью [инструментов Python для Visual Studio][Python Tools for Visual Studio]. Узнайте, как с помощью Visual Studio создать и развернуть базовую облачную службу, которая использует Python.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 * [Visual Studio 2013, 2015 или 2017](https://www.visualstudio.com/)
 * [Инструменты Python для Visual Studio][Python Tools for Visual Studio] (PTVS).
 * [Azure SDK Tools для VS 2013][Azure SDK Tools for VS 2013] или  
@@ -31,7 +31,7 @@ ms.locfileid: "68359572"
 [!INCLUDE [create-account-and-websites-note](../../includes/create-account-and-websites-note.md)]
 
 ## <a name="what-are-python-web-and-worker-roles"></a>Что такое веб-роли и рабочие роли Python?
-Azure предоставляет три модели вычислений для запуска приложений: [Функция веб-приложений в службе приложений Azure][execution model-web sites], [виртуальные машины Azure][execution model-vms]и [облачные службы Azure][execution model-cloud services]. Все три модели поддерживают Python. Облачные службы, которые включают в себя веб-роли и рабочие роли, предоставляют *платформу как службу (PaaS)* . В рамках облачной службы веб-роль предоставляет выделенный веб-сервер IIS для размещения внешних веб-приложений, тогда как рабочая роль может выполнять асинхронные, долгосрочные или постоянные задачи, не зависящие от пользовательских действий и пользовательского ввода.
+Azure предоставляет три модели вычислений для запуска приложений: [функции веб-приложений в службе приложений Azure][execution model-web sites], [виртуальные машины Azure][execution model-vms]и [облачные службы Azure][execution model-cloud services]. Все три модели поддерживают Python. Облачные службы, которые включают в себя веб-роли и рабочие роли, предоставляют *платформу как службу (PaaS)* . В рамках облачной службы веб-роль предоставляет выделенный веб-сервер IIS для размещения внешних веб-приложений, тогда как рабочая роль может выполнять асинхронные, долгосрочные или постоянные задачи, не зависящие от пользовательских действий и пользовательского ввода.
 
 Дополнительные сведения см. в разделе [Информация об облачных службах].
 
@@ -307,7 +307,7 @@ if not exist "%DiagnosticStore%\LogFiles" mkdir "%DiagnosticStore%\LogFiles"
 
 ![Свойства запускаемого при включении проекта в решении](./media/cloud-services-python-ptvs/startup.png)
 
-## <a name="publish-to-azure"></a>Опубликовать в Azure
+## <a name="publish-to-azure"></a>Публикация в Azure
 Чтобы опубликовать, щелкните правой кнопкой мыши проект облачной службы в решении и выберите пункт **Опубликовать**.
 
 ![Вход для публикации в Microsoft Azure](./media/cloud-services-python-ptvs/publish-sign-in.png)
@@ -325,7 +325,7 @@ if not exist "%DiagnosticStore%\LogFiles" mkdir "%DiagnosticStore%\LogFiles"
 ### <a name="investigate-logs"></a>Изучение журналов
 После того как виртуальная машина в облачной службе запустится и установит Python, можно просмотреть журналы, чтобы найти сообщения о сбое. Эти журналы расположены в папке **C:\Resources\Directory\\{role}\LogFiles**. В файле **PrepPython.err.txt** содержится по крайней мере одна ошибка, которая возникает при попытке скрипта обнаружить, установлен ли язык Python. В файле **PipInstaller.err.txt** может быть сообщение о том, что существующая версия PIP устарела.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 С дополнительной информацией о работе с веб-ролями и рабочими ролями в средствах Python для Visual Studio можно ознакомиться в документации PTVS:
 
 * [Проекты для облачной службы][Cloud Service Projects]
@@ -335,8 +335,8 @@ if not exist "%DiagnosticStore%\LogFiles" mkdir "%DiagnosticStore%\LogFiles"
 * [Служба BLOB-объектов][Blob Service]
 * [Служба таблиц][Table Service]
 * [Служба очередей][Queue Service]
-* [Очереди служебной шины][Service Bus Queues]
-* [Разделы служебной шины][Service Bus Topics]
+* [Как использовать очереди служебной шины][Service Bus Queues]
+* [Как использовать разделы и подписки служебной шины][Service Bus Topics]
 
 <!--Link references-->
 
@@ -363,3 +363,6 @@ if not exist "%DiagnosticStore%\LogFiles" mkdir "%DiagnosticStore%\LogFiles"
 [Azure SDK Tools for VS 2017]: https://go.microsoft.com/fwlink/?LinkId=746483
 [Python 2.7 32-bit]: https://www.python.org/downloads/
 [Python 3.5 32-bit]: https://www.python.org/downloads/
+
+
+

@@ -11,15 +11,15 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 11/25/2019
+ms.date: 12/02/2019
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: 1a58d2170ec1107222f0e37e432063af23743e42
-ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
+ms.openlocfilehash: 12ecca5873ac7c2c3bfa30d4c73c7d8e268aabfb
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74710442"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75355721"
 ---
 # <a name="list-role-assignments-using-azure-rbac-and-azure-cli"></a>Вывод списка назначений ролей с помощью Azure RBAC и Azure CLI
 
@@ -37,7 +37,7 @@ ms.locfileid: "74710442"
 az role assignment list --assignee <assignee>
 ```
 
-По умолчанию будут отображаться только прямые назначения, ограниченные по подписке. Для просмотра назначений, ограниченных ресурсом или группой, используйте `--all` и для просмотра наследуемых назначений используйте `--include-inherited`.
+По умолчанию будут отображаться только назначения ролей для текущей подписки. Чтобы просмотреть назначения ролей для текущей подписки и ниже, добавьте параметр `--all`. Чтобы просмотреть наследуемые назначения ролей, добавьте параметр `--include-inherited`.
 
 В следующем примере перечисляются назначения ролей, назначенные непосредственно пользователю *патлонг\@contoso.com* :
 
@@ -110,6 +110,30 @@ az role assignment list --scope /providers/Microsoft.Management/managementGroups
 ```Example
 az role assignment list --scope /providers/Microsoft.Management/managementGroups/marketing-group --output json | jq '.[] | {"principalName":.principalName, "roleDefinitionName":.roleDefinitionName, "scope":.scope}'
 ```
+
+## <a name="list-role-assignments-for-a-managed-identity"></a>Вывод списка назначений ролей для управляемого удостоверения
+
+1. Возвращает идентификатор объекта назначенного системой или управляемого пользователем удостоверения. 
+
+    Чтобы получить идентификатор объекта для управляемого удостоверения, назначенного пользователем, можно использовать команду [AZ AD SP List](/cli/azure/ad/sp#az-ad-sp-list) или [AZ Identity List](/cli/azure/identity#az-identity-list).
+
+    ```azurecli
+    az ad sp list --display-name "<name>" --query [].objectId --output tsv
+    ```
+
+    Для получения идентификатора объекта управляемого удостоверения, назначенного системой, можно использовать команду [AZ AD SP List](/cli/azure/ad/sp#az-ad-sp-list).
+
+    ```azurecli
+    az ad sp list --display-name "<vmname>" --query [].objectId --output tsv
+    ```
+
+1. Чтобы получить список назначений ролей, используйте команду [AZ Role назначений](/cli/azure/role/assignment#az-role-assignment-list).
+
+    По умолчанию будут отображаться только назначения ролей для текущей подписки. Чтобы просмотреть назначения ролей для текущей подписки и ниже, добавьте параметр `--all`. Чтобы просмотреть наследуемые назначения ролей, добавьте параметр `--include-inherited`.
+
+    ```azurecli
+    az role assignment list --assignee <objectid>
+    ```
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

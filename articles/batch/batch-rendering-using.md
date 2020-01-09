@@ -1,24 +1,24 @@
 ---
-title: Возможности рендеринга — пакетная служба Azure
-description: Использование возможностей рендеринга пакетной службы Azure
+title: Использование возможностей подготовки к просмотру в пакетной службе Azure
+description: Как использовать возможности пакетной подготовки Azure. Попробуйте использовать приложение Batch Explorer, либо напрямую, либо вызываемое из подключаемого модуля клиентского приложения.
 services: batch
 ms.service: batch
 author: mscurrell
 ms.author: markscu
 ms.date: 08/02/2018
 ms.topic: conceptual
-ms.openlocfilehash: 2dff44f0b5b4b02c39c4c63f23ff64d55ca9d833
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: d181b9b2495ebd106bb068b78131fa90c2f6d62c
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60337619"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75449665"
 ---
 # <a name="using-azure-batch-rendering"></a>Использование службы рендеринга пакетной службы Azure
 
 Существует несколько способов использовать службу рендеринга пакетной службы Azure.
 
-* Интерфейсы API.
+* Интерфейсы API:
   * Напишите код на основе любого из API пакетной службы.  Разработчики могут интегрировать возможности пакетной службы Azure в существующие облачные и локальные приложения или рабочие процессы.
 * Средства командной строки.
   * Использование пакетной службы можно закодировать в скрипты [командной строки Azure](https://docs.microsoft.com/cli/azure/) или [PowerShell](https://docs.microsoft.com/powershell/azure/overview).
@@ -32,7 +32,7 @@ ms.locfileid: "60337619"
 
 Лучший способ изучить рендеринг пакетной службы Azure (и самый простой способ для тех пользователей, которые не являются разработчиками и экспертами по Azure) — использовать приложение Batch Explorer напрямую или через подключаемый модуль для клиентского приложения.
 
-## <a name="using-batch-explorer"></a>Использование Batch Explorer
+## <a name="using-batch-explorer"></a>Использование обозревателя пакетной службы
 
 Пошаговое руководство по рендерингу с помощью Batch Explorer см. в [этом руководстве](https://docs.microsoft.com/azure/batch/tutorial-rendering-batchexplorer-blender).
 
@@ -58,7 +58,7 @@ ms.locfileid: "60337619"
 
 Для некоторых клиентских приложений доступны подключаемые модули.  Эти подключаемые модули позволяют создавать пулы и задания непосредственно из приложения или через обозреватель пакетной службы.
 
-* [Blender](https://github.com/Azure/azure-batch-rendering/tree/master/plugins/blender)
+* [Blender](https://github.com/Azure/azure-batch-rendering/tree/master/plugins/blender).
 * [Autodesk 3ds Max](https://github.com/Azure/azure-batch-rendering/tree/master/plugins/3ds-max)
 * [Autodesk Maya](https://github.com/Azure/azure-batch-maya)
 

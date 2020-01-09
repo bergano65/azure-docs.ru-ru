@@ -1,32 +1,23 @@
 ---
-title: Мониторинг кластера Service Fabric в Azure | Документация Майкрософт
+title: Мониторинг кластера Service Fabric в Azure
 description: В этом учебнике вы узнаете, как выполнять мониторинг кластера, просматривая события Service Fabric, запрашивая API-интерфейсы EventStore, отслеживая счетчики производительности и просматривая отчеты о работоспособности.
-services: service-fabric
-documentationcenter: .net
 author: srrengar
-manager: chackdan
-editor: ''
-ms.assetid: ''
-ms.service: service-fabric
-ms.devlang: dotNet
 ms.topic: tutorial
-ms.tgt_pltfrm: NA
-ms.workload: NA
 ms.date: 07/22/2019
 ms.author: srrengar
 ms.custom: mvc
-ms.openlocfilehash: 63069dcdebf19c64d7bcde298fa234622a6d9a2b
-ms.sourcegitcommit: 04ec7b5fa7a92a4eb72fca6c6cb617be35d30d0c
+ms.openlocfilehash: ab58d622511e0d5793eb6df312bc3fd6dd15bfd6
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/22/2019
-ms.locfileid: "68385277"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75376636"
 ---
-# <a name="tutorial-monitor-a-service-fabric-cluster-in-azure"></a>Руководство по Мониторинг кластера Service Fabric в Azure
+# <a name="tutorial-monitor-a-service-fabric-cluster-in-azure"></a>Руководство. Мониторинг кластера Service Fabric в Azure
 
 Мониторинг и диагностика критически важны для разработки, тестирования и развертывания рабочих нагрузок в любой облачной среде. Этот учебник представляет собой вторую часть цикла. В нем показано, как отслеживать и диагностировать кластер Service Fabric с помощью событий, счетчиков производительности и отчетов о работоспособности.   Дополнительные сведения см. в обзоре о [мониторинге кластера](service-fabric-diagnostics-overview.md#platform-cluster-monitoring) и [мониторинге инфраструктуры](service-fabric-diagnostics-overview.md#infrastructure-performance-monitoring).
 
-Из этого руководства вы узнаете, как выполнять следующие задачи:
+В этом руководстве описано следующее.
 
 > [!div class="checklist"]
 > * Просмотр событий Service Fabric
@@ -45,12 +36,12 @@ ms.locfileid: "68385277"
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Перед началом работы с этим руководством выполните следующие действия:
 
 * Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-* Установите [Azure Powershell](https://docs.microsoft.com/powershell/azure/install-Az-ps) или [Azure CLI](/cli/azure/install-azure-cli).
+* Установите [Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-Az-ps) или [Azure CLI](/cli/azure/install-azure-cli).
 * Создайте защищенный [кластер Windows](service-fabric-tutorial-create-vnet-and-windows-cluster.md). 
 * Настройте [данные диагностики](service-fabric-tutorial-create-vnet-and-windows-cluster.md#configurediagnostics_anchor) для кластера.
 * Включите [службу ​EventStore](service-fabric-tutorial-create-vnet-and-windows-cluster.md#configureeventstore_anchor) в кластере.
@@ -482,9 +473,9 @@ Get-ServiceFabricNode | Get-ServiceFabricNodeHealth | select NodeName, Aggregate
 Get-ServiceFabricService -ApplicationName fabric:/System | Get-ServiceFabricServiceHealth | select ServiceName, AggregatedHealthState | ft -AutoSize
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-Из этого руководства вы узнали, как выполнить следующие задачи:
+В этом руководстве вы узнали, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 > * Просмотр событий Service Fabric

@@ -5,12 +5,12 @@ author: craigshoemaker
 ms.topic: conceptual
 ms.date: 11/29/2017
 ms.author: cshoe
-ms.openlocfilehash: a96cd537328a1a9edeeb03f81350ed5393806765
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: a0731a66af32b45215145c1d4f4404eb008cf897
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74927579"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75410044"
 ---
 # <a name="azure-functions-sendgrid-bindings"></a>Привязки SendGrid для Функций Azure
 
@@ -35,18 +35,11 @@ ms.locfileid: "74927579"
 
 ## <a name="example"></a>Пример
 
-Языковой пример см. в разделах:
-
-* [C#](#c-example)
-* [Сценарий C# (CSX)](#c-script-example)
-* [JavaScript](#javascript-example)
-* [Java](#java-example)
-
-### <a name="c-example"></a>Пример C#
+# <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
 В следующем примере показана [функция C#](functions-dotnet-class-library.md), которая использует триггер очереди служебной шины и выходную привязку SendGrid.
 
-#### <a name="synchronous-c-example"></a>Пример синхронного C#:
+### <a name="synchronous"></a>Синхронная
 
 ```cs
 [FunctionName("SendEmail")]
@@ -71,7 +64,8 @@ public class OutgoingEmail
     public string Body { get; set; }
 }
 ```
-#### <a name="asynchronous-c-example"></a>Пример асинхронного C#:
+
+### <a name="asynchronous"></a>Асинхронная
 
 ```cs
 [FunctionName("SendEmail")]
@@ -101,7 +95,7 @@ public class OutgoingEmail
 
 Вы можете не задавать свойство атрибута `ApiKey` при наличии ключа API в настройка приложения с именем AzureWebJobsSendGridApiKey.
 
-### <a name="c-script-example"></a>Пример сценария C#
+# <a name="c-scripttabcsharp-script"></a>[C#Индекса](#tab/csharp-script)
 
 В следующем примере показаны выходная привязка SendGrid в файле *function.json* и [функция сценария C#](functions-reference-csharp.md), которая использует эту привязку.
 
@@ -160,34 +154,7 @@ public class Message
 }
 ```
 
-### <a name="java-example"></a>Пример Java
-
-В следующем примере используется заметка `@SendGridOutput` из [библиотеки среды выполнения функций Java](/java/api/overview/azure/functions/runtime) для отправки сообщения электронной почты с помощью выходной привязки SendGrid.
-
-```java
-@FunctionName("SendEmail")
-    public HttpResponseMessage run(
-            @HttpTrigger(name = "req", methods = {HttpMethod.GET, HttpMethod.POST}, authLevel = AuthorizationLevel.FUNCTION) HttpRequestMessage<Optional<String>> request,
-            @SendGridOutput(
-                name = "email", dataType = "String", apiKey = "SendGridConnection", to = "test@example.com", from = "test@example.com",
-                subject= "Sending with SendGrid", text = "Hello from Azure Functions"
-                ) OutputBinding<String> email
-            )
-    {
-        String name = request.getBody().orElse("World");
-
-        final String emailBody = "{\"personalizations\":" +
-                                    "[{\"to\":[{\"email\":\"test@example.com\"}]," +
-                                    "\"subject\":\"Sending with SendGrid\"}]," +
-                                    "\"from\":{\"email\":\"test@example.com\"}," +
-                                    "\"content\":[{\"type\":\"text/plain\",\"value\": \"Hello" + name + "\"}]}";
-
-        email.setValue(emailBody);
-        return request.createResponseBuilder(HttpStatus.OK).body("Hello, " + name).build();
-    }
-```
-
-### <a name="javascript-example"></a>Пример JavaScript
+# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
 
 В следующем примере показаны выходная привязка SendGrid в файле *function.json* и [функция JavaScript](functions-reference-node.md), которая использует эту привязку.
 
@@ -214,10 +181,10 @@ public class Message
 Ниже показан код JavaScript.
 
 ```javascript
-module.exports = function (context, input) {    
+module.exports = function (context, input) {
     var message = {
          "personalizations": [ { "to": [ { "email": "sample@sample.com" } ] } ],
-        from: { email: "sender@contoso.com" },        
+        from: { email: "sender@contoso.com" },
         subject: "Azure news",
         content: [{
             type: 'text/plain',
@@ -229,7 +196,120 @@ module.exports = function (context, input) {
 };
 ```
 
-## <a name="attributes"></a>Атрибуты
+# <a name="pythontabpython"></a>[Python](#tab/python)
+
+В следующем примере показана функция, активируемая по HTTP, которая отправляет сообщение электронной почты с помощью привязки SendGrid. В конфигурации привязки можно указать значения по умолчанию. Например, адрес отправной *электронной почты* настраивается в *Function. JSON*. 
+
+```json
+{
+  "scriptFile": "__init__.py",
+  "bindings": [
+    {
+      "type": "httpTrigger",
+      "authLevel": "function",
+      "direction": "in",
+      "name": "req",
+      "methods": ["get", "post"]
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "$return"
+    },
+    {
+      "type": "sendGrid",
+      "name": "sendGridMessage",
+      "direction": "out",
+      "apiKey": "SendGrid_API_Key",
+      "from": "sender@contoso.com"
+    }
+  ]
+}
+```
+
+Следующая функция показывает, как можно указать пользовательские значения для необязательных свойств.
+
+```python
+import logging
+import json
+import azure.functions as func
+
+def main(req: func.HttpRequest, sendGridMessage: func.Out[str]) -> func.HttpResponse:
+
+    value = "Sent from Azure Functions"
+
+    message = {
+        "personalizations": [ {
+          "to": [{
+            "email": "user@contoso.com"
+            }]}],
+        "subject": "Azure Functions email with SendGrid",
+        "content": [{
+            "type": "text/plain",
+            "value": value }]}
+
+    sendGridMessage.set(json.dumps(message))
+
+    return func.HttpResponse(f"Sent")
+```
+
+# <a name="javatabjava"></a>[Java](#tab/java)
+
+В следующем примере используется заметка `@SendGridOutput` из [библиотеки среды выполнения функций Java](/java/api/overview/azure/functions/runtime) для отправки сообщения электронной почты с помощью выходной привязки SendGrid.
+
+```java
+package com.function;
+
+import java.util.*;
+import com.microsoft.azure.functions.annotation.*;
+import com.microsoft.azure.functions.*;
+
+public class HttpTriggerSendGrid {
+
+    @FunctionName("HttpTriggerSendGrid")
+    public HttpResponseMessage run(
+
+        @HttpTrigger(
+            name = "req",
+            methods = { HttpMethod.GET, HttpMethod.POST },
+            authLevel = AuthorizationLevel.FUNCTION)
+                HttpRequestMessage<Optional<String>> request,
+
+        @SendGridOutput(
+            name = "message",
+            dataType = "String",
+            apiKey = "SendGrid_API_Key",
+            to = "user@contoso.com",
+            from = "sender@contoso.com",
+            subject = "Azure Functions email with SendGrid",
+            text = "Sent from Azure Functions")
+                OutputBinding<String> message,
+
+        final ExecutionContext context) {
+
+        final String toAddress = "user@contoso.com";
+        final String value = "Sent from Azure Functions";
+
+        StringBuilder builder = new StringBuilder()
+            .append("{")
+            .append("\"personalizations\": [{ \"to\": [{ \"email\": \"%s\"}]}],")
+            .append("\"content\": [{\"type\": \"text/plain\", \"value\": \"%s\"}]")
+            .append("}");
+
+        final String body = String.format(builder.toString(), toAddress, value);
+
+        message.setValue(body);
+
+        return request.createResponseBuilder(HttpStatus.OK).body("Sent").build();
+    }
+}
+```
+
+---
+
+## <a name="attributes-and-annotations"></a>Атрибуты и заметки
+
+# <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
 В [библиотеках классов C#](functions-dotnet-class-library.md) используйте атрибут [SendGrid](https://github.com/Azure/azure-webjobs-sdk-extensions/blob/master/src/WebJobs.Extensions.SendGrid/SendGridAttribute.cs).
 
@@ -245,22 +325,42 @@ public static void Run(
 }
 ```
 
-Полный пример см. в разделе [Пример C#](#c-example).
+Полный пример см. в разделе [Пример C#](#example).
+
+# <a name="c-scripttabcsharp-script"></a>[C#Индекса](#tab/csharp-script)
+
+Атрибуты не поддерживаются C# сценарием.
+
+# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+
+Атрибуты не поддерживаются в JavaScript.
+
+# <a name="pythontabpython"></a>[Python](#tab/python)
+
+Атрибуты не поддерживаются в Python.
+
+# <a name="javatabjava"></a>[Java](#tab/java)
+
+Заметка [сендгридаутпут](https://github.com/Azure/azure-functions-java-library/blob/master/src/main/java/com/microsoft/azure/functions/annotation/SendGridOutput.java) позволяет декларативно настроить привязку SendGrid, предоставив значения конфигурации. Дополнительные сведения см. в разделах [примеры](#example) и [Конфигурация](#configuration) .
+
+---
 
 ## <a name="configuration"></a>Настройка
 
-В следующей таблице описываются свойства конфигурации привязки, которые задаются в файле *function.json* и атрибуте `SendGrid`.
+В следующей таблице перечислены свойства конфигурации привязки, доступные в файле *Function. JSON* , а также атрибут `SendGrid` или Аннотация.
 
-|свойство function.json | Свойство атрибута |Описание|
-|---------|---------|----------------------|
-|**type**|| Обязательное. Необходимо задать значение `sendGrid`.|
-|**direction**|| Обязательное. Необходимо задать значение `out`.|
-|**name**|| Обязательное. Имя переменной, из которой в коде функции можно получить запрос или текст запроса. Это значение равно ```$return``` при наличии только одного возвращаемого значения. |
-|**apiKey**|**ApiKey**| Имя параметра приложения, в котором содержится ваш ключ API. Если значение не задано, имя параметра приложения по умолчанию AzureWebJobsSendGridApiKey.|
-|**to**|**To**| Электронный адрес получателя. |
-|**from**|**from**| Электронный адрес отправителя. |
-|**subject**|**Тема**| Тема электронного сообщения. |
-|**text**|**текст**| Содержимое электронного сообщения. |
+| Свойство *Function. JSON* | Свойство атрибута или заметки | Description | Необязательно |
+|--------------------------|-------------------------------|-------------|----------|
+| type || Нужно задать значение `sendGrid`.| Нет |
+| direction || Нужно задать значение `out`.| Нет |
+| name || Имя переменной, используемое в коде функции для запроса или текста запроса. Это значение равно `$return` при наличии только одного возвращаемого значения. | Нет |
+| apiKey | ApiKey | Имя параметра приложения, в котором содержится ваш ключ API. Если параметр не задан, по умолчанию используется имя параметра приложения *AzureWebJobsSendGridApiKey*.| Нет |
+| значение| До | Адрес электронной почты получателя. | Да |
+| из| От | Адрес электронной почты отправителя. |  Да |
+| subject| Тема | Тема сообщения электронной почты. | Да |
+| text| Текст | Содержимое электронной почты. | Да |
+
+Необязательные свойства могут иметь значения по умолчанию, определенные в привязке, а также добавлять или переопределять программно.
 
 [!INCLUDE [app settings to local.settings.json](../../includes/functions-app-settings-local.md)]
 
@@ -271,7 +371,7 @@ public static void Run(
 В этом разделе описаны глобальные параметры конфигурации, доступные для этой привязки в версиях 2. x и более поздних. Пример файла host. JSON ниже содержит только параметры версии 2. x + для этой привязки. Дополнительные сведения о глобальных параметрах конфигурации в версиях 2. x и более поздних версий см. в [справочнике по Host. JSON для функций Azure](functions-host-json.md).
 
 > [!NOTE]
-> Сведения о файле host.json в Функциях Azure версии 1.x см. в [этой статье](functions-host-json-v1.md).
+> Чтобы получить дополнительные сведения о файле host.json в Функции 1.x, см. статью [host.json reference for Azure Functions 1.x](functions-host-json-v1.md)(Справочник по файлу host.json для службы "Функции Azure" версии 1.x.).
 
 ```json
 {
@@ -284,9 +384,9 @@ public static void Run(
 }
 ```  
 
-|Свойство  |значение по умолчанию | Описание |
+|Свойство  |По умолчанию | Description |
 |---------|---------|---------| 
-|from|Н/Д|Адрес электронной почты для всех функций.| 
+|из|Н/Д|Адрес электронной почты для всех функций.| 
 
 
 ## <a name="next-steps"></a>Дальнейшие действия

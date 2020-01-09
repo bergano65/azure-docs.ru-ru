@@ -1,6 +1,6 @@
 ---
-title: Перемещение приложений из служб BizTalk в Azure Logic Apps
-description: Переход со служб Azure BizTalk (MABS) на Azure Logic Apps.
+title: Перенос приложений из служб BizTalk в Azure Logic Apps
+description: Как переместить приложения и решения из службы BizTalk Microsoft Azure (MABS) в Azure Logic Apps
 services: logic-apps
 ms.suite: integration
 author: jonfancey
@@ -8,14 +8,14 @@ ms.author: jonfan
 ms.reviewer: estfan, logicappspm
 ms.topic: article
 ms.date: 05/30/2017
-ms.openlocfilehash: 97b498091451b0bf39741ed4340b8e02517c5447
-ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
+ms.openlocfilehash: 10c9a1d3723ed30bee5437c3ab7a41308e253bd8
+ms.sourcegitcommit: ff9688050000593146b509a5da18fbf64e24fbeb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74791878"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75666658"
 ---
-# <a name="migrate-from-biztalk-services-to-azure-logic-apps"></a>Переход со служб BizTalk на Azure Logic Apps
+# <a name="migrate-your-apps-and-solutions-from-biztalk-services-to-azure-logic-apps"></a>Перенос приложений и решений из служб BizTalk в Azure Logic Apps
 
 Службы Microsoft Azure BizTalk Services (MABS) находятся на этапе прекращения использования. Чтобы переместить решения интеграции MABS в службу [Azure Logic Apps](../logic-apps/logic-apps-overview.md), выполните инструкции в этой статье. 
 
@@ -32,7 +32,7 @@ ms.locfileid: "74791878"
 
 В следующей таблице представлено сопоставление возможностей служб BizTalk и Logic Apps.
 
-| Службы BizTalk   | приложения логики;            | Цель                      |
+| Службы BizTalk   | Приложения логики            | Цель                      |
 | ------------------ | --------------------- | ---------------------------- |
 | Соединитель          | Соединитель             | Отправка и получение данных   |
 | Мост             | Логическое приложение             | Обработчик конвейера           |

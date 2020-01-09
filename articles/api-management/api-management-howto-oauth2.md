@@ -1,5 +1,6 @@
 ---
-title: Авторизация учетных записей разработчиков с помощью протокола OAuth 2.0 в службе управления Azure API | Документация Майкрософт
+title: Авторизация учетных записей разработчиков с помощью OAuth 2,0 в управлении API
+titleSuffix: Azure API Management
 description: Сведения об авторизации пользователей с помощью OAuth 2.0 в службе управления API.
 services: api-management
 documentationcenter: ''
@@ -12,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 11/04/2019
 ms.author: apimpm
-ms.openlocfilehash: 99a49aa4627dc23d5f7531ac961d63e3e75ccff9
-ms.sourcegitcommit: 98ce5583e376943aaa9773bf8efe0b324a55e58c
+ms.openlocfilehash: 90c890925378c30ce5688d2713990b4b2cdd20c5
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73176630"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75430676"
 ---
 # <a name="how-to-authorize-developer-accounts-using-oauth-20-in-azure-api-management"></a>Авторизация учетных записей разработчиков с помощью протокола OAuth 2.0 в службе управления Azure API
 
@@ -35,7 +36,7 @@ ms.locfileid: "73176630"
 
 [!INCLUDE [premium-dev-standard-basic.md](../../includes/api-management-availability-premium-dev-standard-basic.md)]
 
-## <a name="step1"> </a>Настройка сервера авторизации OAuth 2.0 в управлении API
+## <a name="step1"> </a>Настройка сервера авторизации OAuth 2,0 в управлении API
 
 > [!NOTE]
 > Если экземпляр службы управления API еще не создан, см. раздел [Создание экземпляра службы управления API][Create an API Management service instance].
@@ -81,7 +82,7 @@ ms.locfileid: "73176630"
 
     После заполнения формы щелкните **Создать**, чтобы сохранить конфигурацию сервера авторизации OAuth 2.0 для службы API Management. Сохранив конфигурацию сервера, вы можете настроить интерфейсы API для ее использования, как описано в следующем разделе.
 
-## <a name="step2"> </a>Настройка API для авторизации пользователей по протоколу OAuth 2.0
+## <a name="step2"> </a>Настройка API для использования авторизации пользователя OAuth 2,0
 
 1. В меню **Управление API** слева щелкните **API**.
 

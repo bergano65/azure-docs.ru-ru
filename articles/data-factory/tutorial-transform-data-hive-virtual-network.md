@@ -10,12 +10,12 @@ manager: anandsub
 ms.topic: tutorial
 ms.custom: seo-dt-2019
 ms.date: 01/22/2018
-ms.openlocfilehash: f90933dea5421d68116d29df6b9429d298bb0d88
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: ab8df188027ada2119334e058ffc5a10cca23914
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74925085"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75439170"
 ---
 # <a name="transform-data-in-azure-virtual-network-using-hive-activity-in-azure-data-factory"></a>Преобразование данных в виртуальной сети Azure с помощью действия Hive в фабрике данных Azure
 
@@ -26,13 +26,13 @@ ms.locfileid: "74925085"
 > * Создали и настроили среду выполнения интеграции с самостоятельным размещением.
 > * Создали и развернули эти связанные службы.
 > * Создали и развернули конвейер, который содержит действие Hive.
-> * Осуществили запуск конвейера.
+> * Запуск конвейера.
 > * Мониторинг конвейера 
 > * Проверили выходные данные. 
 
 Если у вас еще нет подписки Azure, создайте [бесплатную](https://azure.microsoft.com/free/) учетную запись Azure, прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
@@ -174,10 +174,7 @@ ms.locfileid: "74925085"
     "properties": {
       "type": "AzureStorage",
       "typeProperties": {
-        "connectionString": {
-          "value": "DefaultEndpointsProtocol=https;AccountName=<storageAccountName>;AccountKey=<storageAccountKey>",
-          "type": "SecureString"
-        }
+        "connectionString": "DefaultEndpointsProtocol=https;AccountName=<storageAccountName>;AccountKey=<storageAccountKey>"
       },
       "connectVia": {
         "referenceName": "MySelfhostedIR",
@@ -280,8 +277,8 @@ ms.locfileid: "74925085"
 
 Обратите внимание на следующие моменты.
 
-- **scriptPath** указывает путь к скрипту Hive в учетной записи хранения Azure, используемой для MyStorageLinkedService. Путь следует вводить с учетом регистра.
-- **Выходные данные** выступают в качестве аргумента, используемого в скрипте Hive. Используйте формат `wasb://<Container>@<StorageAccount>.blob.core.windows.net/outputfolder/`, который должен указывать на существующую папку в службе хранилища Azure. Путь следует вводить с учетом регистра. 
+- **scriptPath** указывает путь к скрипту Hive в учетной записи хранения Azure, используемой для MyStorageLinkedService. Путь учитывает регистр.
+- **Выходные данные** выступают в качестве аргумента, используемого в скрипте Hive. Используйте формат `wasb://<Container>@<StorageAccount>.blob.core.windows.net/outputfolder/`, который должен указывать на существующую папку в службе хранилища Azure. Путь учитывает регистр. 
 
 Перейдите в папку, где были созданы файлы JSON, и выполните следующую команду, чтобы развернуть конвейер: 
 
@@ -393,7 +390,7 @@ Set-AzDataFactoryV2Pipeline -DataFactoryName $dataFactoryName -ResourceGroupName
    246 en-US SCH-i500 District Of Columbia
    ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 В этом руководстве вы выполнили следующие шаги: 
 
 > [!div class="checklist"]
@@ -401,7 +398,7 @@ Set-AzDataFactoryV2Pipeline -DataFactoryName $dataFactoryName -ResourceGroupName
 > * Создали и настроили среду выполнения интеграции с самостоятельным размещением.
 > * Создали и развернули эти связанные службы.
 > * Создали и развернули конвейер, который содержит действие Hive.
-> * Осуществили запуск конвейера.
+> * Запуск конвейера.
 > * Мониторинг конвейера 
 > * Проверили выходные данные. 
 

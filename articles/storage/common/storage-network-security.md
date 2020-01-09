@@ -9,12 +9,12 @@ ms.date: 03/21/2019
 ms.author: tamram
 ms.reviewer: santoshc
 ms.subservice: common
-ms.openlocfilehash: 71922a9da594de3402caf778b1e066da9d20505c
-ms.sourcegitcommit: 265f1d6f3f4703daa8d0fc8a85cbd8acf0a17d30
+ms.openlocfilehash: 28ab1eaa860c0d684182f5f1660daed2751a9c6e
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74672533"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75465081"
 ---
 # <a name="configure-azure-storage-firewalls-and-virtual-networks"></a>Настройка брандмауэров службы хранилища Azure и виртуальных сетей
 
@@ -60,7 +60,7 @@ ms.locfileid: "74672533"
 
 Вы можете управлять сетевыми правилами доступа по умолчанию для учетных записей хранения с помощью портала Azure, PowerShell или CLI версии 2.
 
-#### <a name="azure-portal"></a>портала Azure
+#### <a name="azure-portal"></a>Портал Azure
 
 1. Перейдите к учетной записи хранения, которую нужно защитить.
 
@@ -144,7 +144,7 @@ ms.locfileid: "74672533"
 
 Правилами виртуальной сети для учетных записей хранения можно управлять с помощью портала Azure, PowerShell или CLI версии 2.
 
-#### <a name="azure-portal"></a>портала Azure
+#### <a name="azure-portal"></a>Портал Azure
 
 1. Перейдите к учетной записи хранения, которую нужно защитить.
 
@@ -268,7 +268,7 @@ ms.locfileid: "74672533"
 
 Правилами IP-сети для учетных записей хранения можно управлять с помощью портала Azure, PowerShell или CLI версии 2.
 
-#### <a name="azure-portal"></a>портала Azure
+#### <a name="azure-portal"></a>Портал Azure
 
 1. Перейдите к учетной записи хранения, которую нужно защитить.
 
@@ -380,7 +380,7 @@ ms.locfileid: "74672533"
 | Синхронизация файлов Azure          | Microsoft.StorageSync      | Позволяет преобразовать локальный файловый сервер в кэш для файловых ресурсов Azure. Обеспечивается многосайтовая синхронизация, быстрое аварийное восстановление и резервное копирование на стороне облака. [Дополнительные сведения](../files/storage-sync-files-planning.md) |
 | Azure HDInsight          | Microsoft.HDInsight        | Подготавливает начальное содержимое файловой системы по умолчанию для нового кластера HDInsight. [Узнайте больше](/azure/hdinsight/hdinsight-hadoop-use-blob-storage). |
 | Azure Monitor            | Microsoft.Insights         | Позволяет записывать данные мониторинга в защищенную учетную запись. [Дополнительные сведения](/azure/monitoring-and-diagnostics/monitoring-roles-permissions-security). |
-| Сеть Azure         | Microsoft.Network.          | Хранение и анализ журналов сетевого трафика. [Узнайте больше](/azure/network-watcher/network-watcher-packet-capture-overview). |
+| Сети Azure         | Microsoft.Network.          | Хранение и анализ журналов сетевого трафика. [Узнайте больше](/azure/network-watcher/network-watcher-packet-capture-overview). |
 | Восстановление сайтов Azure      | Microsoft.SiteRecovery     | Включите репликацию для аварийного восстановления виртуальных машин IaaS Azure при использовании кэша, источника или целевых учетных записей хранения с поддержкой брандмауэра.  [Узнайте больше](https://docs.microsoft.com/azure/site-recovery/azure-to-azure-tutorial-enable-replication). |
 
 Параметр **Allow Trusted Microsoft Services...** также позволяет определенному экземпляру следующих служб получить доступ к учетной записи хранения, если [роль RBAC явно назначается](storage-auth-aad.md#assign-rbac-roles-for-access-rights) [управляемому удостоверению, назначенному системой](../../active-directory/managed-identities-azure-resources/overview.md) для этого экземпляра ресурса. В этом случае область доступа для экземпляра соответствует роли RBAC, назначенной управляемому удостоверению.
@@ -389,10 +389,10 @@ ms.locfileid: "74672533"
 | :----------------------------- | :------------------------------------- | :---------- |
 | Задачи Реестра контейнеров Azure | Microsoft.ContainerRegistry/registries | Задачи записи контроля доступа могут получать доступ к учетным записям хранения при создании образов контейнеров. |
 | Фабрика данных Azure             | Microsoft.DataFactory/factories;        | Разрешает доступ к учетным записям хранения через среду выполнения ADF. |
-| Azure Logic Apps               | Microsoft.Logic/workflows              | Позволяет приложениям логики получать доступ к учетным записям хранения. [Узнайте больше](/azure/logic-apps/create-managed-service-identity#authenticate-access-with-managed-identity.md). |
-| Служба "Машинное обучение Azure" | Microsoft.MachineLearningServices      | Полномочные Машинное обучение Azure рабочие области записывают выходные данные эксперимента, модели и журналы в хранилище BLOB-объектов. [Узнайте больше](/azure/machine-learning/service/how-to-enable-virtual-network#use-a-storage-account-for-your-workspace). | 
+| Azure Logic Apps               | Microsoft.Logic/workflows              | Позволяет приложениям логики получать доступ к учетным записям хранения. [Узнайте больше](../../logic-apps/create-managed-service-identity.md#authenticate-access-with-managed-identity). |
+| Машинное обучение Azure | Microsoft.MachineLearningServices      | Полномочные Машинное обучение Azure рабочие области записывают выходные данные эксперимента, модели и журналы в хранилище BLOB-объектов. [Узнайте больше](/azure/machine-learning/service/how-to-enable-virtual-network#use-a-storage-account-for-your-workspace). | 
 | Хранилище данных SQL Azure       | Microsoft.Sql                          | Позволяет импортировать и экспортировать данные из конкретных экземпляров базы данных SQL с помощью Polybase. [Узнайте больше](/azure/sql-database/sql-database-vnet-service-endpoint-rule-overview). |
-| Azure Stream Analytics         | Microsoft.StreamAnalytics             | Позволяет записывать данные из задания потоковой передачи в хранилище BLOB-объектов. Эта функция в настоящее время находится на стадии предварительной версии. [Узнайте больше](/azure/stream-analytics/blob-output-managed-identity.md). |
+| Azure Stream Analytics         | Microsoft.StreamAnalytics             | Позволяет записывать данные из задания потоковой передачи в хранилище BLOB-объектов. Эта функция в настоящее время находится на стадии предварительной версии. [Узнайте больше](/azure/stream-analytics/blob-output-managed-identity). |
 | Azure Synapse Analytics        | Microsoft. синапсе/рабочие области          | Обеспечивает доступ к данным в службе хранилища Azure из синапсе Analytics. |
 
 
@@ -404,7 +404,7 @@ ms.locfileid: "74672533"
 
 Исключениями из правил сети можно управлять с помощью портала Azure, PowerShell или Azure CLI v2.
 
-#### <a name="azure-portal"></a>портала Azure
+#### <a name="azure-portal"></a>Портал Azure
 
 1. Перейдите к учетной записи хранения, которую нужно защитить.
 

@@ -1,5 +1,5 @@
 ---
-title: Начало работы с HTTP-запросами гибридных подключений Azure Relay в .NET | Документация Майкрософт
+title: Azure Relay запросы гибридные подключения-HTTP в .NET
 description: 'Написание консольного приложения #C для HTTP-запросов гибридных подключений Azure Relay в .NET.'
 services: service-bus-relay
 documentationcenter: .net
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: dotnet
 ms.workload: na
 ms.date: 11/01/2018
 ms.author: spelluru
-ms.openlocfilehash: 37227b7d0ea1b3630a3c2ce991a61543e6a1503d
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 7c984876c4338b4f6802ba55752c8f612c390e94
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66428249"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75355167"
 ---
 # <a name="get-started-with-relay-hybrid-connections-http-requests-in-net"></a>Начало работы с HTTP-запросами гибридных подключений Azure Relay в .NET
 [!INCLUDE [relay-selector-hybrid-connections](../../includes/relay-selector-hybrid-connections.md)]
@@ -67,7 +67,7 @@ ms.locfileid: "66428249"
 1. Выполните клиентское приложение В окне клиента вы увидите `hello!`. Клиент отправил HTTP-запрос к серверу и получил ответ `hello!`. 
 3. Теперь, чтобы закрыть окна консоли, в обоих ее окнах нажмите клавишу **ВВОД**. 
 
-Поздравляем, вы создали законченное приложение гибридных подключений.
+Поздравляем, вы создали законченное приложение гибридные подключения!
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

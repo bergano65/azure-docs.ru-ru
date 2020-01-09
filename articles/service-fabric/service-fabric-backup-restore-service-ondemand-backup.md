@@ -1,25 +1,16 @@
 ---
-title: Резервное копирование по запросу в Azure Service Fabric | Документация Майкрософт
+title: Резервное копирование по запросу в Azure Service Fabric
 description: Использование функции резервного копирования и восстановления в Service Fabric для резервного копирования данных приложения по мере необходимости.
-services: service-fabric
-documentationcenter: .net
 author: aagup
-manager: chackdan
-editor: aagup
-ms.assetid: 02DA262A-EEF6-4F90-842E-FFC4A09003E5
-ms.service: service-fabric
-ms.devlang: dotnet
 ms.topic: conceptual
-ms.tgt_pltfrm: na
-ms.workload: na
 ms.date: 10/30/2018
 ms.author: aagup
-ms.openlocfilehash: 88698a7a0f78987dc96bf7f39831ec1a7560a359
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.openlocfilehash: d5eada62bec49fe771373671e9438d2786d6b165
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73815855"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75458423"
 ---
 # <a name="on-demand-backup-in-azure-service-fabric"></a>Резервное копирование по запросу в Azure Service Fabric
 
@@ -28,7 +19,7 @@ ms.locfileid: "73815855"
 Azure Service Fabric предоставляет функции для [периодического резервного копирования данных](service-fabric-backuprestoreservice-quickstart-azurecluster.md) и резервного копирования данных по мере необходимости. Резервное копирование по запросу предотвращает _потерю_/_повреждение данных_ из-за плановых изменений в основной службе или ее среде.
 
 Функции резервного копирования по запросу позволяют записать сведения о состоянии служб перед любой выполняющейся вручную операцией, которая относится к этой службе или к ее среде. Например, когда вы вносите изменения в двоичные файлы службы при ее обновлении или переходе на более раннюю версию. В этом случае резервное копирование по запросу защищает данные от повреждения из-за ошибок в коде приложения.
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 - Установите модуль Microsoft. ServiceFabric. PowerShell. http [в предварительной версии] для выполнения вызовов конфигурации.
 
@@ -109,7 +100,7 @@ $url = "https://mysfcluster.southcentralus.cloudapp.azure.com:19080/Partitions/9
 Invoke-WebRequest -Uri $url -Method Post -Body $body -ContentType 'application/json' -CertificateThumbprint '1b7ebe2174649c45474a4819dafae956712c31d3'
 ```
 
-Можно настроить отслеживание для [хода резервного копирования по запросу](https://docs.microsoft.com/rest/api/servicefabric/sfclient-api-getpartitionbackupprogress) с помощью API [GetBackupProgress](service-fabric-backup-restore-service-ondemand-backup.md#tracking-on-demand-backup-progress).
+Можно настроить отслеживание для [хода резервного копирования по запросу](service-fabric-backup-restore-service-ondemand-backup.md#tracking-on-demand-backup-progress) с помощью API [GetBackupProgress](https://docs.microsoft.com/rest/api/servicefabric/sfclient-api-getpartitionbackupprogress).
 
 ### <a name="using-service-fabric-explorer"></a>Использование Service Fabric Explorer
 Убедитесь, что в параметрах Service Fabric Explorer включен расширенный режим.

@@ -3,19 +3,15 @@ title: Составление конфигураций DSC в службе "На
 description: Сведения о составлении конфигураций с помощью составных ресурсов в службе "Настройка состояния службы автоматизации Azure" (DSC)
 keywords: powershell dsc, desired state configuration, powershell dsc для azure, составные ресурсы
 services: automation
-ms.service: automation
 ms.subservice: dsc
-author: mgoedtel
-ms.author: magoedte
 ms.date: 08/21/2018
 ms.topic: conceptual
-manager: carmonm
-ms.openlocfilehash: e9552adad1f15422eb60c34f2548324aeb03ee74
-ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
+ms.openlocfilehash: 2c6d9aa13c8c320dc46f6634f3a60e0c1730c710
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74849570"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75418732"
 ---
 # <a name="composing-dsc-configurations-in-azure-automation-state-configuration-dsc-using-composite-resources"></a>Составление конфигураций DSC в службе "Настройка состояния службы автоматизации Azure" с помощью составных ресурсов
 
@@ -28,7 +24,7 @@ ms.locfileid: "74849570"
 
 Прежде чем назначать конфигурацию, сформированную из составных ресурсов на портале Azure, ее необходимо создать. Это можно сделать с помощью средства **Составление конфигурации** на странице **Настройка состояния (DSC)** на вкладке **Конфигурации** или **Составленные конфигурации**.
 
-1. Войдите на [портале Azure](https://portal.azure.com).
+1. Войдите на [портал Azure](https://portal.azure.com).
 1. Слева щелкните **Все ресурсы**, а затем — имя учетной записи службы автоматизации.
 1. На странице **Учетная запись автоматизации** в разделе **Управление конфигурацией** выберите **Настройка состояния (DSC)** .
 1. На странице **Настройка состояния (DSC)** выберите вкладку **Конфигурации** или **Составленные конфигурации**, а затем в меню в верхней части страницы выберите пункт **Составление конфигурации**.

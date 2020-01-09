@@ -1,32 +1,23 @@
 ---
 title: Примеры манифеста приложения контейнера Service Fabric Azure
 description: Узнайте, как настроить параметры манифестов приложений и служб для многоконтейнерного приложения Service Fabric.
-services: service-fabric
-documentationcenter: na
 author: peterpogorski
-manager: chackdan
-editor: ''
-ms.assetid: ''
-ms.service: service-fabric
-ms.devlang: xml
 ms.topic: conceptual
-ms.tgt_pltfrm: na
-ms.workload: multiple
 ms.date: 06/08/2018
 ms.author: pepogors
-ms.openlocfilehash: 2d79f7dbf492b9473bcff147891df308674a8cf0
-ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
+ms.openlocfilehash: e4050dedeb48b19b6848a95fc904f7f37fb5b04a
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74013249"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75349391"
 ---
 # <a name="multi-container-application-and-service-manifest-examples"></a>Примеры манифестов многоконтейнерных приложений и служб
 Ниже приведены примеры манифестов приложений и служб для многоконтейнерного приложения Service Fabric. Цель этих примеров — показать, какие параметры являются доступными и как их использовать. Эти манифесты приложений и служб основаны на манифестах [контейнера Windows Server 2016](https://github.com/Azure-Samples/service-fabric-containers/tree/master/Windows).
 
 Показаны следующие функции:
 
-|Manifest|Функции|
+|Manifest|Возможности|
 |---|---|
 |[Манифест приложения](#application-manifest)| [Переопределение переменных среды](service-fabric-get-started-containers.md#configure-and-set-environment-variables), [настройка сопоставления порта контейнера с узлом](service-fabric-get-started-containers.md#configure-container-port-to-host-port-mapping-and-container-to-container-discovery), [настройка проверки подлинности в реестре контейнеров](service-fabric-get-started-containers.md#configure-container-repository-authentication), [управление ресурсами](service-fabric-resource-governance.md), [установка режима изоляции](service-fabric-get-started-containers.md#configure-isolation-mode), [указание образов контейнеров конкретной сборки ОС](service-fabric-get-started-containers.md#specify-os-build-specific-container-images)| 
 |[Манифест службы FrontEndService](#frontendservice-service-manifest)| [Настройка переменных среды](service-fabric-get-started-containers.md#configure-and-set-environment-variables), [настройка конечной точки](service-fabric-get-started-containers.md#configure-communication), передача команд в контейнер, [импорт сертификата в контейнер](service-fabric-securing-containers.md)| 
@@ -287,7 +278,7 @@ ms.locfileid: "74013249"
 Определяет политику управления ресурсами, которая применяется на уровне всего пакета службы. Дополнительные сведения см. в разделе [Элемент ServicePackageResourceGovernancePolicy](service-fabric-service-model-schema-elements.md#ServicePackageResourceGovernancePolicyElementServicePackageResourceGovernancePolicyTypeComplexTypeDefinedInServiceManifestImportPoliciesTypecomplexTypeDefinedInServicePackageTypecomplexType).
 
 ### <a name="resourcegovernancepolicy-element"></a>Элемент ResourceGovernancePolicy
-Указывает ограничения ресурсов для пакета кода. Дополнительные сведения см. в разделе [Элемент ResourceGovernancePolicy](service-fabric-service-model-schema-elements.md#ResourceGovernancePolicyElementResourceGovernancePolicyTypeComplexTypeDefinedInServiceManifestImportPoliciesTypecomplexTypeDefinedInDigestedCodePackageelementDefinedInDigestedEndpointelement).
+Указывает ограничения для ресурсов для пакета кода. Дополнительные сведения см. в разделе [Элемент ResourceGovernancePolicy](service-fabric-service-model-schema-elements.md#ResourceGovernancePolicyElementResourceGovernancePolicyTypeComplexTypeDefinedInServiceManifestImportPoliciesTypecomplexTypeDefinedInDigestedCodePackageelementDefinedInDigestedEndpointelement).
 
 ### <a name="containerhostpolicies-element"></a>Элемент ContainerHostPolicies
 Задает политики для активации узлов контейнеров. Дополнительные сведения см. в разделе [Элемент ContainerHostPolicies](service-fabric-service-model-schema-elements.md#ContainerHostPoliciesElementContainerHostPoliciesTypeComplexTypeDefinedInServiceManifestImportPoliciesTypecomplexTypeDefinedInDigestedCodePackageelement).
@@ -305,7 +296,7 @@ ms.locfileid: "74013249"
 Параметры драйвера, которые необходимо передать. Дополнительные сведения см. в разделе [Элемент DriverOption](service-fabric-service-model-schema-elements.md#DriverOptionElementDriverOptionTypeComplexTypeDefinedInContainerLoggingDriverTypecomplexTypeDefinedInContainerVolumeTypecomplexType).
 
 ### <a name="imageoverrides-element"></a>Элемент ImageOverrides
-Контейнеры Windows Server могут быть несовместимы с отдельными версиями операционной системы.  Можно указать несколько образов операционной системы для контейнера и пометить их с помощью тега версии сборки операционной системы. Получить версию сборки операционной системы можно, выполнив в командной строке Windows команду winver. Если используется базовая ОС сборки 16299 (версия Windows Server 1709), Service Fabric выбирает образ контейнера с отметкой Os="16299". Предполагается, что образ контейнера без отметки будет работать во всех версиях операционной системы и он имеет приоритет над образом, указанным в манифесте службы. Дополнительные сведения см. в разделе [Элемент ImageOverrides](service-fabric-service-model-schema-elements.md#ImageOverridesElementImageOverridesTypeComplexTypeDefinedInContainerHostPoliciesTypecomplexType).
+Контейнеры Windows Server могут быть несовместимы в разных версиях ОС.  Можно указать несколько образов операционной системы для контейнера и пометить их с помощью тега версии сборки операционной системы. Получить версию сборки операционной системы можно, выполнив в командной строке Windows команду winver. Если используется базовая ОС сборки 16299 (версия Windows Server 1709), Service Fabric выбирает образ контейнера с отметкой Os="16299". Предполагается, что образ контейнера без отметки будет работать во всех версиях операционной системы и он имеет приоритет над образом, указанным в манифесте службы. Дополнительные сведения см. в разделе [Элемент ImageOverrides](service-fabric-service-model-schema-elements.md#ImageOverridesElementImageOverridesTypeComplexTypeDefinedInContainerHostPoliciesTypecomplexType).
 
 ### <a name="image-element"></a>Элемент Image
 Образ контейнера, соответствующий номеру версии сборки ОС, которая будет запущена. Если атрибут Os не указан, предполагается, что образ контейнера работает во всех версиях операционной системы и он имеет приоритет над образом, указанным в манифесте службы. Дополнительные сведения см. в разделе [Элемент Image](service-fabric-service-model-schema-elements.md#ImageElementImageTypeComplexTypeDefinedInImageOverridesTypecomplexType).
@@ -354,7 +345,7 @@ ms.locfileid: "74013249"
 Репозиторий и образ по адресу https://hub.docker.com или в Реестре контейнеров Azure. Дополнительные сведения см. в разделе [Элемент ImageName](service-fabric-service-model-schema-elements.md#ImageNameElementxs:stringComplexTypeDefinedInContainerHostEntryPointTypecomplexType).
 
 ### <a name="environmentvariables-element"></a>Элемент EnvironmentVariables
-Передача переменных среды в контейнер или EXE-файл.  Дополнительные сведения см. в разделе [Элемент EnvironmentVariables](service-fabric-service-model-schema-elements.md#EnvironmentVariablesElementEnvironmentVariablesTypeComplexTypeDefinedInCodePackageTypecomplexType).
+Передает переменные среды в контейнер или EXE-файл.  Дополнительные сведения см. в разделе [Элемент EnvironmentVariables](service-fabric-service-model-schema-elements.md#EnvironmentVariablesElementEnvironmentVariablesTypeComplexTypeDefinedInCodePackageTypecomplexType).
 
 ### <a name="environmentvariable-element"></a>Элемент EnvironmentVariable
 Переменная среды. Дополнительные сведения см. в разделе [Элемент EnvironmentVariable](service-fabric-service-model-schema-elements.md#EnvironmentVariableElementEnvironmentVariableOverrideTypeComplexTypeDefinedInEnvironmentOverridesTypecomplexType).
@@ -398,10 +389,10 @@ ms.locfileid: "74013249"
 Репозиторий и образ по адресу https://hub.docker.com или в Реестре контейнеров Azure. Дополнительные сведения см. в разделе [Элемент ImageName](service-fabric-service-model-schema-elements.md#ImageNameElementxs:stringComplexTypeDefinedInContainerHostEntryPointTypecomplexType).
 
 ### <a name="commands-element"></a>Элемент Commands
-Передача в контейнер списка команд, разделенного запятыми. Дополнительные сведения см. в разделе [Элемент Commands](service-fabric-service-model-schema-elements.md#CommandsElementxs:stringComplexTypeDefinedInContainerHostEntryPointTypecomplexType).
+Передает разделенный запятыми список команд контейнеру. Дополнительные сведения см. в разделе [Элемент Commands](service-fabric-service-model-schema-elements.md#CommandsElementxs:stringComplexTypeDefinedInContainerHostEntryPointTypecomplexType).
 
 ### <a name="environmentvariables-element"></a>Элемент EnvironmentVariables
-Передача переменных среды в контейнер или EXE-файл.  Дополнительные сведения см. в разделе [Элемент EnvironmentVariables](service-fabric-service-model-schema-elements.md#EnvironmentVariablesElementEnvironmentVariablesTypeComplexTypeDefinedInCodePackageTypecomplexType).
+Передает переменные среды в контейнер или EXE-файл.  Дополнительные сведения см. в разделе [Элемент EnvironmentVariables](service-fabric-service-model-schema-elements.md#EnvironmentVariablesElementEnvironmentVariablesTypeComplexTypeDefinedInCodePackageTypecomplexType).
 
 ### <a name="environmentvariable-element"></a>Элемент EnvironmentVariable
 Переменная среды. Дополнительные сведения см. в разделе [Элемент EnvironmentVariable](service-fabric-service-model-schema-elements.md#EnvironmentVariableElementEnvironmentVariableOverrideTypeComplexTypeDefinedInEnvironmentOverridesTypecomplexType).

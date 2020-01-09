@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 11/11/2019
 ms.author: bwren
 ms.custom: subject-monitoring
-ms.openlocfilehash: 9a36b46d11657ef52051f8bf8df1e4944051da23
-ms.sourcegitcommit: 12d902e78d6617f7e78c062bd9d47564b5ff2208
+ms.openlocfilehash: c166811bbfd27691f9a01a944d304d06560b0232
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2019
-ms.locfileid: "74454277"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75445183"
 ---
 # <a name="monitoring-azure-cosmos-db"></a>Мониторинг Azure Cosmos DB
 При наличии критически важных приложений и бизнес-процессов, использующих ресурсы Azure, необходимо отслеживать эти ресурсы на предмет их доступности, производительности и работы. В этой статье описываются данные мониторинга, созданные в базах данных Azure Cosmos, а также использование функций Azure Monitor для анализа и оповещения об этих данных.
@@ -26,7 +26,7 @@ Azure Cosmos DB создает данные мониторинга с помощ
 - Общие сведения об Azure Monitor
 - Затраты, связанные с мониторингом
 - Данные мониторинга, собранные в Azure
-- Настройка сбора данных
+- Настройка коллекции данных
 - Стандартные средства в Azure для анализа и оповещения о данных мониторинга
 
 Следующие разделы посвящены описанию данных, собранных из Azure Cosmos DB, и предоставлены примеры настройки сбора данных и анализа этих данных с помощью средств Azure.
@@ -37,46 +37,15 @@ Azure Cosmos DB создает данные мониторинга с помощ
 ![Azure Monitor для Cosmos DB](media/monitor-cosmos-db/azure-monitor-cosmos-db.png)
 
 ## <a name="monitoring-data-collected-from-azure-cosmos-db"></a>Данные мониторинга, собранные из Azure Cosmos DB
+
 Azure Cosmos DB собирает данные мониторинга тех же типов, что и другие ресурсы Azure, которые описаны в разделе [мониторинг данных из ресурсов Azure](../azure-monitor/insights/monitor-azure-resource.md#monitoring-data). Подробный справочник по журналам и метрикам, созданным Azure Cosmos DB, см. в [справочнике по данным мониторинга Azure Cosmos DB](monitor-cosmos-db-reference.md) .
 
 Страница **Обзор** в портал Azure для каждой базы данных Azure Cosmos содержит краткий обзор использования базы данных, включая его запрос и почасовую оплату. Это полезная информация, но только небольшой объем доступных данных мониторинга. Некоторые из этих данных собираются автоматически и доступны для анализа сразу же после создания базы данных, при этом вы можете включить дополнительный сбор данных с некоторой конфигурацией.
 
 ![Страница "Обзор"](media/monitor-cosmos-db/overview-page.png)
 
-
-
-## <a name="diagnostic-settings"></a>Параметры диагностики
-Метрики платформы и журнал действий собираются автоматически, но необходимо создать параметр диагностики для сбора журналов ресурсов или пересылки их за пределы Azure Monitor. Подробный процесс создания параметров диагностики с помощью портал Azure, CLI или PowerShell см. в статье [Создание параметров диагностики для сбора журналов и метрик платформы в Azure](../azure-monitor/platform/diagnostic-settings.md) .
-
-При создании параметра диагностики необходимо указать, какие категории журналов должны быть собраны. Ниже перечислены категории для Azure Cosmos DB, а также образцы данных.
-
- * **DataPlaneRequests**. Выберите этот параметр, чтобы регистрировать запросы серверной части для всех API-интерфейсов, в том числе учетные записи SQL, Graph, MongoDB, Cassandra и API таблиц в Azure Cosmos DB. Ключевые свойства для заметок: Requestcharge, statusCode, clientIPaddress и partitionID.
-
-    ```
-    { "time": "2019-04-23T23:12:52.3814846Z", "resourceId": "/SUBSCRIPTIONS/<your_subscription_ID>/RESOURCEGROUPS/<your_resource_group>/PROVIDERS/MICROSOFT.DOCUMENTDB/DATABASEACCOUNTS/<your_database_account>", "category": "DataPlaneRequests", "operationName": "ReadFeed", "properties": {"activityId": "66a0c647-af38-4b8d-a92a-c48a805d6460","requestResourceType": "Database","requestResourceId": "","collectionRid": "","statusCode": "200","duration": "0","userAgent": "Microsoft.Azure.Documents.Common/2.2.0.0","clientIpAddress": "10.0.0.24","requestCharge": "1.000000","requestLength": "0","responseLength": "372","resourceTokenUserRid": "","region": "East US","partitionId": "062abe3e-de63-4aa5-b9de-4a77119c59f8","keyType": "PrimaryReadOnlyMasterKey","databaseName": "","collectionName": ""}}
-    ```
-
-* **MongoRequests**. Выберите этот параметр, чтобы регистрировать инициированные пользователем запросы от внешнего интерфейса для обслуживания запросов к API Azure Cosmos DB для MongoDB. Запросы MongoDB будут отображаться в MongoRequests, а также в DataPlaneRequests. Ключевые свойства для примечания: Requestcharge, код операции.
-
-    ```
-    { "time": "2019-04-10T15:10:46.7820998Z", "resourceId": "/SUBSCRIPTIONS/<your_subscription_ID>/RESOURCEGROUPS/<your_resource_group>/PROVIDERS/MICROSOFT.DOCUMENTDB/DATABASEACCOUNTS/<your_database_account>", "category": "MongoRequests", "operationName": "ping", "properties": {"activityId": "823cae64-0000-0000-0000-000000000000","opCode": "MongoOpCode_OP_QUERY","errorCode": "0","duration": "0","requestCharge": "0.000000","databaseName": "admin","collectionName": "$cmd","retryCount": "0"}}
-    ```
-
-* **Куерирунтиместатистикс**: Выберите этот параметр, чтобы регистрировать выполненный текст запроса. 
-
-    ```
-    { "time": "2019-04-14T19:08:11.6353239Z", "resourceId": "/SUBSCRIPTIONS/<your_subscription_ID>/RESOURCEGROUPS/<your_resource_group>/PROVIDERS/MICROSOFT.DOCUMENTDB/DATABASEACCOUNTS/<your_database_account>", "category": "QueryRuntimeStatistics", "properties": {"activityId": "278b0661-7452-4df3-b992-8aa0864142cf","databasename": "Tasks","collectionname": "Items","partitionkeyrangeid": "0","querytext": "{"query":"SELECT *\nFROM c\nWHERE (c.p1__10 != true)","parameters":[]}"}}
-    ```
-
-* **Партитионкэйстатистикс**: Выберите этот параметр, чтобы регистрировать статистику ключей секций. В настоящее время он представлен с размером хранилища (КБ) ключей разделов. Журнал создается для первых трех ключей разделов, которые занимают большую часть хранилища данных.
-
-    ```
-    { "time": "2019-10-11T02:33:24.2018744Z", "resourceId": "/SUBSCRIPTIONS/<your_subscription_ID>/RESOURCEGROUPS/<your_resource_group>/PROVIDERS/MICROSOFT.DOCUMENTDB/DATABASEACCOUNTS/<your_database_account>", "category": "PartitionKeyStatistics", "properties": {"subscriptionId": "<your_subscription_ID>","regionName": "West US 2","databaseName": "KustoQueryResults","collectionname": "CapacityMetrics","partitionkey": "["CapacityMetricsPartition.136"]","sizeKb": "2048270"}}
-    ```
-
-* **Запросы метрик**. Выберите этот параметр, чтобы получать данные метрик с Azure Cosmos DB на назначения в параметре диагностики. Это те же данные, собираемые автоматически в метриках Azure. Собирайте данные метрик с помощью журналов ресурсов для одновременного анализа обоих видов данных и отправки данных метрик за пределы Azure Monitor.
-
 ## <a name="analyzing-metric-data"></a>Анализ данных метрик
+
 Azure Cosmos DB предоставляет пользовательский интерфейс для работы с метриками. Дополнительные сведения об использовании этого интерфейса и анализе различных сценариев Azure Cosmos DB см. в статье [мониторинг и отладка Azure Cosmos DB метрик из Azure Monitor](cosmos-db-azure-monitor-metrics.md) .
 
 Вы можете анализировать метрики для Azure Cosmos DB с метриками из других служб Azure с помощью обозревателя метрик, открыв **метрики** из меню **Azure Monitor** . Дополнительные сведения об использовании этого средства см. в статье [Приступая к работе с Azure обозреватель метрик](../azure-monitor/platform/metrics-getting-started.md) . Все метрики для Azure Cosmos DB находятся в пространстве имен **Cosmos DB стандартных метриках**. При добавлении фильтра к диаграмме можно использовать следующие измерения со следующими метриками.
@@ -91,7 +60,7 @@ Azure Cosmos DB предоставляет пользовательский ин
 ## <a name="analyzing-log-data"></a>Анализ данных журнала
 Данные в журналах Azure Monitor хранятся в таблицах, в которых каждая таблица имеет собственный набор уникальных свойств. Azure Cosmos DB сохраняет данные в следующих таблицах.
 
-| таблица | ОПИСАНИЕ |
+| Таблицы | Description |
 |:---|:---|
 | AzureDiagnostics | Общая таблица, используемая несколькими службами для хранения журналов ресурсов. Журналы ресурсов из Azure Cosmos DB можно определить с помощью `MICROSOFT.DOCUMENTDB`.   |
 | AzureActivity    | Общая таблица, в которой хранятся все записи из журнала действий. 
@@ -211,7 +180,7 @@ Azure Cosmos DB предоставляет пользовательский ин
 
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Справочник по журналам и метрикам, созданным Azure Cosmos DB, см. в разделе [Azure Cosmos DB Справочник по данным мониторинга](monitor-cosmos-db-reference.md) .
 - Дополнительные сведения о мониторинге ресурсов Azure см. в статье [мониторинг ресурсов Azure с помощью Azure Monitor](../azure-monitor/insights/monitor-azure-resource.md) .

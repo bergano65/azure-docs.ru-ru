@@ -1,5 +1,5 @@
 ---
-title: Отправка push-уведомлений в определенные приложения Android с помощью Центров уведомлений Azure | Документация Майкрософт
+title: Отправка push-уведомлений в определенные приложения Android с помощью Центров уведомлений Azure
 description: Узнайте, как использовать службу "Центры уведомлений Azure" для отправки push-уведомлений определенным пользователям.
 documentationcenter: android
 services: notification-hubs
@@ -17,18 +17,18 @@ ms.date: 09/11/2019
 ms.author: sethm
 ms.reviewer: jowargo
 ms.lastreviewed: 09/11/2019
-ms.openlocfilehash: 5bd709236667dd43e623047ad995b0a7b981e9cb
-ms.sourcegitcommit: bb65043d5e49b8af94bba0e96c36796987f5a2be
+ms.openlocfilehash: c2d3789082130cbbc42021a0706249dd3966b9ef
+ms.sourcegitcommit: ce4a99b493f8cf2d2fd4e29d9ba92f5f942a754c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72387426"
+ms.lasthandoff: 12/28/2019
+ms.locfileid: "75531128"
 ---
-# <a name="tutorial-send-push-notifications-to-specific-android-apps-using-azure-notification-hubs"></a>Руководство по Отправка push-уведомлений в определенные приложения Android с помощью Центров уведомлений Azure
+# <a name="tutorial-send-push-notifications-to-specific-android-apps-using-azure-notification-hubs"></a>Руководство. Отправка push-уведомлений в определенные приложения Android с помощью Центров уведомлений Azure
 
 [!INCLUDE [notification-hubs-selector-aspnet-backend-notify-users](../../includes/notification-hubs-selector-aspnet-backend-notify-users.md)]
 
-В этом учебнике показано, как использовать концентраторы уведомлений Azure для отправки push-уведомлений пользователю определенного приложения на конкретном устройстве. Серверная часть ASP.NET WebAPI используется для проверки подлинности клиентов и создания уведомлений, как показано в разделе [Управление регистрацией из серверной части](notification-hubs-push-notification-registration-management.md#registration-management-from-a-backend). В этом руководстве используется центр уведомлений, который вы создали при работе со статьей [Руководство. Отправка push-уведомлений на устройства Android с помощью Центров уведомлений Azure и Firebase Cloud Messaging](notification-hubs-android-push-notification-google-fcm-get-started.md).
+В этом учебнике показано, как использовать концентраторы уведомлений Azure для отправки push-уведомлений пользователю определенного приложения на конкретном устройстве. Серверная часть ASP.NET WebAPI используется для проверки подлинности клиентов и создания уведомлений, как показано в разделе [Управление регистрацией из серверной части](notification-hubs-push-notification-registration-management.md#registration-management-from-a-backend). В этом руководстве используется центр уведомлений, который вы создали при работе со статьей [Руководство. отправке push-уведомлений на устройства Android с помощью Центров уведомлений Azure и Firebase Cloud Messaging](notification-hubs-android-push-notification-google-fcm-get-started.md).
 
 При работе с этим руководством вы выполните следующие задачи:
 
@@ -37,7 +37,7 @@ ms.locfileid: "72387426"
 > * Обновление приложения Android.
 > * Тестирование приложения
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Пройдите [руководство по Отправка push-уведомлений на устройства Android с помощью Центров уведомлений Azure и Firebase Cloud Messaging](notification-hubs-android-push-notification-google-fcm-get-started.md).
 
@@ -45,7 +45,7 @@ ms.locfileid: "72387426"
 
 ## <a name="create-the-android-project"></a>Создание проекта Android
 
-Следующим шагом является обновление приложения Android, созданного при работе со статьей [Руководство Отправка push-уведомлений на устройства Android с помощью Центров уведомлений Azure и Firebase Cloud Messaging](notification-hubs-android-push-notification-google-fcm-get-started.md).
+Следующим шагом является обновление приложения Android, созданного при работе со статьей [Руководство отправке push-уведомлений на устройства Android с помощью Центров уведомлений Azure и Firebase Cloud Messaging](notification-hubs-android-push-notification-google-fcm-get-started.md).
 
 1. Откройте файл `res/layout/activity_main.xml` и замените его содержимое приведенными ниже определениями содержимого.
 
@@ -493,7 +493,7 @@ ms.locfileid: "72387426"
 6. Введите сообщение для пользователя, получающего push-уведомление.
 7. Нажмите кнопку **Send Notification**(Отправить уведомление).  Каждое устройство с регистрацией, соответствующей тегу имени пользователя, получит push-уведомление.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом руководстве вы узнали, как отправлять push-уведомления определенным пользователям, с регистрацией которых связаны теги. Чтобы узнать, как отправлять push-уведомления на основе расположения, перейдите к следующему руководству:
 

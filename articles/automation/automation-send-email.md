@@ -2,33 +2,29 @@
 title: Отправка электронной почты из модуля Runbook службы автоматизации Azure
 description: Узнайте, как использовать SendGrid для отправки электронной почты из Runbook.
 services: automation
-ms.service: automation
 ms.subservice: process-automation
-author: mgoedtel
-ms.author: magoedte
 ms.date: 07/15/2019
 ms.topic: tutorial
-manager: carmonm
-ms.openlocfilehash: 8550635b581eb944719c39cc8c195859a2c9e868
-ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
+ms.openlocfilehash: 6acb68b7bbaa54db2e4143a42e43aede2caed35f
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74849621"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75420711"
 ---
-# <a name="tutorial-send-an-email-from-an-azure-automation-runbook"></a>Руководство по Отправка электронной почты из модуля Runbook службы автоматизации Azure
+# <a name="tutorial-send-an-email-from-an-azure-automation-runbook"></a>Руководство. Отправка электронной почты из модуля Runbook службы автоматизации Azure
 
 Сообщение электронной почты из модуля Runbook можно отправить с помощью [SendGrid](https://sendgrid.com/solutions), используя PowerShell. В этом руководстве показано, как создать повторно используемый модуль Runbook, который отправляет электронную почту с использованием ключа API, хранящегося в [хранилище ключей Azure](/azure/key-vault/).
 
-Из этого руководства вы узнаете, как выполнять следующие задачи:
+В этом руководстве описано следующее.
 
 > [!div class="checklist"]
 >
-> * создавать хранилище ключей Azure;
+> * Создание хранилища ключей Azure
 > * сохранять свой ключ API SendGrid в хранилище ключей;
 > * создавать модуль Runbook, который получает ключ API и отправляет электронную почту.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Ниже перечислены необходимые условия для выполнения инструкций из этого руководства.
 
@@ -168,7 +164,7 @@ $ResourceGroupName = "<your ResourceGroup name>"
 Remove-AzureRmKeyVault -VaultName $VaultName -ResourceGroupName $ResourceGroupName
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Сведения о проблемах, возникающих при создании или запуске модуля Runbook, см. в разделе [Troubleshoot errors with runbooks](./troubleshoot/runbooks.md) (Устранение ошибок с помощью модулей Runbook).
 * Чтобы обновить модули в своей учетной записи службы автоматизации, см. статью [How to update Azure PowerShell modules in Azure Automation](automation-update-azure-modules.md) (Как обновить модули Azure PowerShell в службе автоматизации Azure).

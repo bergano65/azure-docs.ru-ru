@@ -1,17 +1,17 @@
 ---
 title: Обработка типов содержимого
-description: Узнайте, как служба Logic Apps обрабатывает типы содержимого во время разработки и при выполнении
+description: Узнайте, как работать с различными типами содержимого в рабочих процессах во время разработки и во время выполнения в Azure Logic Apps
 services: logic-apps
 ms.suite: integration
 ms.reviewer: klam, logicappspm
 ms.topic: conceptual
 ms.date: 07/20/2018
-ms.openlocfilehash: 75d9285c4a838c2057c0f23841c3a2f465789c7c
-ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
+ms.openlocfilehash: ae0abe288edda2ce01311d8533b1f104409efce0
+ms.sourcegitcommit: ff9688050000593146b509a5da18fbf64e24fbeb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74791532"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75666879"
 ---
 # <a name="handle-content-types-in-azure-logic-apps"></a>Обработка типов содержимого в Azure Logic Apps
 

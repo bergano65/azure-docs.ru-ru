@@ -1,18 +1,14 @@
 ---
 title: Настройка кластеров OpenShift для Azure Red Hat с помощью Azure Monitor для контейнеров | Документация Майкрософт
 description: В этой статье описывается, как настроить Azure Monitor для контейнеров для мониторинга кластеров Kubernetes, размещенных в Azure Red Hat OpenShift.
-ms.service: azure-monitor
-ms.subservice: ''
 ms.topic: conceptual
-author: mgoedtel
-ms.author: magoedte
 ms.date: 11/21/2019
-ms.openlocfilehash: 07d84175325226af755712ec38ab93b901bbd361
-ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
+ms.openlocfilehash: 6922cb7b143989ba329df972a06825629c4c5020
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74707529"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75405574"
 ---
 # <a name="configure-azure-red-hat-openshift-clusters-with-azure-monitor-for-containers"></a>Настройка кластеров OpenShift для Azure Red Hat с помощью Azure Monitor для контейнеров
 
@@ -100,7 +96,7 @@ Azure Monitor для контейнеров поддерживает монит�
 
 4. Измените файл параметров JSON **невклустервисмониторингпарам. JSON** и обновите следующие значения:
 
-    - *location*
+    - *расположение*
     - *имя_кластера*
     - *Aadtenantid и*
     - *аадклиентид*
@@ -129,7 +125,7 @@ Azure Monitor для контейнеров поддерживает монит�
 
 ### <a name="from-the-azure-portal"></a>на портале Azure;
  
-1. Войдите на [портале Azure](https://portal.azure.com).
+1. Войдите на [портал Azure](https://portal.azure.com).
 
 2. В меню портал Azure или на домашней странице выберите **Azure Monitor**. В разделе **Аналитика** выберите **Контейнеры**. 
 

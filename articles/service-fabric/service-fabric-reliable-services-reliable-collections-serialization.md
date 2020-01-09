@@ -1,25 +1,14 @@
 ---
-title: Сериализация объектов надежной коллекции в Azure Service Fabric | Документация Майкрософт
-description: Сериализация объектов надежных коллекций в Azure Service Fabric
-services: service-fabric
-documentationcenter: .net
-author: athinanthny
-manager: chackdan
-editor: masnider,rajak
-ms.assetid: 9d35374c-2d75-4856-b776-e59284641956
-ms.service: service-fabric
-ms.devlang: dotnet
+title: Сериализация объектов надежной коллекции
+description: Сведения о сериализации объектов надежных коллекций Azure Service Fabric, включая стратегию по умолчанию и определение пользовательской сериализации.
 ms.topic: conceptual
-ms.tgt_pltfrm: na
-ms.workload: required
 ms.date: 5/8/2017
-ms.author: atsenthi
-ms.openlocfilehash: d5e7dfb84f6e8a8fbd029ccc0b15c17f68216c33
-ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
+ms.openlocfilehash: 666e1bb45a9c75ee143f15a0d871d6ae1408eca9
+ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68599307"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75639553"
 ---
 # <a name="reliable-collection-object-serialization-in-azure-service-fabric"></a>Сериализация объектов надежной коллекции в Azure Service Fabric
 Надежные коллекции реплицируют и сохраняют свои элементы, чтобы обеспечить надежность их работы в случае сбоев машин и отключения электроэнергии.
@@ -41,9 +30,9 @@ ms.locfileid: "68599307"
 - byte[]
 - char
 - string
-- decimal
+- Decimal
 - double
-- float
+- FLOAT
 - int
 - uint
 - long
@@ -55,7 +44,7 @@ ms.locfileid: "68599307"
 
 Настраиваемые сериализаторы обычно используются для повышения производительности или шифрования данных при передаче по сети и хранении на диске. Помимо прочего, настраиваемые сериализаторы часто являются более эффективными, чем универсальные сериализаторы, так как вам не нужно сериализовать информацию о типе. 
 
-[IReliableStateManager. TryAddStateSerializer\<T >](https://docs.microsoft.com/dotnet/api/microsoft.servicefabric.data.ireliablestatemanager.tryaddstateserializer) используется для регистрации пользовательского сериализатора для заданного типа T. Эта регистрация должна произойти при создании StatefulServiceBase, чтобы гарантировать, что до начала восстановления все надежные коллекции будут иметь доступ к соответствующему сериализатору для считывания их сохраненных данных.
+[IReliableStateManager. TryAddStateSerializer\<t >](https://docs.microsoft.com/dotnet/api/microsoft.servicefabric.data.ireliablestatemanager.tryaddstateserializer) используется для регистрации пользовательского сериализатора для заданного типа t. Эта регистрация должна произойти при создании StatefulServiceBase, чтобы гарантировать, что до начала восстановления все надежные коллекции будут иметь доступ к соответствующему сериализатору для считывания их сохраненных данных.
 
 ```csharp
 public StatefulBackendService(StatefulServiceContext context)
@@ -73,10 +62,10 @@ public StatefulBackendService(StatefulServiceContext context)
 
 ### <a name="how-to-implement-a-custom-serializer"></a>Реализация настраиваемого сериализатора
 
-Пользовательский сериализатор должен реализовывать интерфейс [\<IStateSerializer T >](https://docs.microsoft.com/dotnet/api/microsoft.servicefabric.data.istateserializer-1) .
+Пользовательский сериализатор должен реализовывать интерфейс [IStateSerializer\<t >](https://docs.microsoft.com/dotnet/api/microsoft.servicefabric.data.istateserializer-1) .
 
 > [!NOTE]
-> IStateSerializer\<T > включает в себя перегрузку для записи и чтения, которая принимает дополнительный T вызываемое базовое значение. Этот API предназначен для разностной сериализации. Сейчас функция разностной сериализации не предоставляется. Следовательно эти две перегрузки не вызываются, пока не будет предоставлена и разрешена разностная сериализация.
+> IStateSerializer\<T > содержит перегрузку для записи и чтения, которая принимает дополнительный T вызываемое базовое значение. Этот API предназначен для разностной сериализации. Сейчас функция разностной сериализации не предоставляется. Следовательно эти две перегрузки не вызываются, пока не будет предоставлена и разрешена разностная сериализация.
 
 Ниже приведен пример настраиваемого типа под названием OrderKey, который содержит четыре свойства.
 
@@ -148,7 +137,7 @@ public class OrderKeySerializer : IStateSerializer<OrderKey>
 Распространенный способ обеспечения поддержки всех версий — добавление сведений о размере в начале и добавление только необязательных свойств.
 Таким образом, каждая версия считает только то, что сможет, и перепрыгнет через оставшуюся часть потока.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
   * [Влияние сериализации данных на обновление приложений](service-fabric-application-upgrade-data-serialization.md)
   * [Справочник разработчика по надежным коллекциям](https://msdn.microsoft.com/library/azure/microsoft.servicefabric.data.collections.aspx)
   * [Руководство по обновлению приложений Service Fabric с помощью Visual Studio](service-fabric-application-upgrade-tutorial.md) поможет вам выполнить поэтапное обновление приложения с помощью Visual Studio.

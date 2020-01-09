@@ -1,25 +1,24 @@
 ---
 title: Общие сведения о функции управления окнами Azure Stream Analytics
 description: В этой статье описаны четыре функции управления окнами ("переворачивающееся", "прыгающее", "скользящее" и "сеансовое" окно), которые используются в заданиях Azure Stream Analytics.
-services: stream-analytics
 author: jseb225
 ms.author: jeanb
-ms.reviewer: jasonh
+ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 06/11/2019
-ms.openlocfilehash: 530ff8d09d6c580a31ae26929fafcec5bb5b471b
-ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
+ms.openlocfilehash: a0547243ddf114d5c9f7034f182a5e76d8c3e016
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2019
-ms.locfileid: "67621595"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75369428"
 ---
 # <a name="introduction-to-stream-analytics-windowing-functions"></a>Общие сведения о функциях управления окнами Stream Analytics
 
 При использовании потоковой передачи в реальном времени необходимо выполнять операции с теми данными, которые содержатся во временных окнах. В Stream Analytics имеется встроенная поддержка функций управления окнами. Это позволяет разработчикам выполнять сложные задания по обработке потоков с минимальными усилиями.
 
-Есть четыре типа временных окон: [**переворачивающиеся**](https://docs.microsoft.com/stream-analytics-query/tumbling-window-azure-stream-analytics), [**прыгающие**](https://docs.microsoft.com/stream-analytics-query/hopping-window-azure-stream-analytics), [**скользящие**](https://docs.microsoft.com/stream-analytics-query/sliding-window-azure-stream-analytics)окна и окна [**сеансов**](https://docs.microsoft.com/stream-analytics-query/session-window-azure-stream-analytics).  Функции управления окнами используются в предложении [**GROUP BY**](https://docs.microsoft.com/stream-analytics-query/group-by-azure-stream-analytics) в синтаксических конструкциях запросов в заданиях Stream Analytics. Можно также статистической обработки событий по несколько окон с помощью [ **Windows()** функция](https://docs.microsoft.com/stream-analytics-query/windows-azure-stream-analytics).
+Есть четыре типа временных окон: [**переворачивающиеся**](https://docs.microsoft.com/stream-analytics-query/tumbling-window-azure-stream-analytics), [**прыгающие**](https://docs.microsoft.com/stream-analytics-query/hopping-window-azure-stream-analytics), [**скользящие**](https://docs.microsoft.com/stream-analytics-query/sliding-window-azure-stream-analytics)окна и окна [**сеансов**](https://docs.microsoft.com/stream-analytics-query/session-window-azure-stream-analytics).  Функции управления окнами используются в предложении [**GROUP BY**](https://docs.microsoft.com/stream-analytics-query/group-by-azure-stream-analytics) в синтаксических конструкциях запросов в заданиях Stream Analytics. Можно также выполнять статистическую обработку событий в нескольких окнах с помощью [функции **Windows ()** ](https://docs.microsoft.com/stream-analytics-query/windows-azure-stream-analytics).
 
 Все операции [управления окнами](https://docs.microsoft.com/stream-analytics-query/windowing-azure-stream-analytics) выводят результаты в **конце** окна. Результатом для окна будет единичное событие, полученное на основе выбранной статистической функции. Метка времени для выходного события соответствует времени завершения окна, и все функции управления окнами выполняются с фиксированной длительностью. 
 
@@ -52,7 +51,7 @@ ms.locfileid: "67621595"
 Если указан ключ секции, то события группируются по ключу, и "сеансовое" окно применяется отдельно к каждой группе. Такое секционирование удобно в случаях, когда требуются разные "сеансовые" окна для различных пользователей или устройств.
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * [Введение в Azure Stream Analytics](stream-analytics-introduction.md)
 * [Приступая к работе с Azure Stream Analytics](stream-analytics-real-time-fraud-detection.md)
 * [Масштабирование заданий в службе Azure Stream Analytics](stream-analytics-scale-jobs.md)

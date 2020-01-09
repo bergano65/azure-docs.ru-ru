@@ -1,5 +1,5 @@
 ---
-title: Получение маркера для вызова веб-API в мобильных приложениях | Службы
+title: Получение маркера для вызова веб-API (мобильные приложения) | Службы
 titleSuffix: Microsoft identity platform
 description: Узнайте, как создать мобильное приложение, вызывающее веб-API (получение маркера для приложения).
 services: active-directory
@@ -17,12 +17,12 @@ ms.author: jmprieur
 ms.reviwer: brandwe
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1101a1923e094c22e9f6a82853f4dec4deb089a1
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: 5d584dc2eef27747627133511af3defe085068ab
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74919925"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75423829"
 ---
 # <a name="mobile-app-that-calls-web-apis---get-a-token"></a>Мобильное приложение, вызывающее веб-API — получение токена
 
@@ -45,7 +45,7 @@ let scopes = ["https://graph.microsoft.com/.default"]
 ```
 
 #### <a name="xamarin"></a>Xamarin
-```CSharp 
+```csharp 
 var scopes = new [] {"https://graph.microsoft.com/.default"};
 ```
 
@@ -200,7 +200,7 @@ MSAL для iOS и macOS поддерживает различные модиф�
 
 В следующем примере показан минимальный код для интерактивного получения маркера для чтения профиля пользователя с Microsoft Graph.
 
-```CSharp
+```csharp
 string[] scopes = new string[] {"user.read"};
 var app = PublicClientApplicationBuilder.Create(clientId).Build();
 var accounts = await app.GetAccountsAsync();
@@ -243,7 +243,7 @@ catch(MsalUiRequiredException)
 
 Этот модификатор используется в расширенном сценарии, где пользователь должен заранее согласиться с несколькими ресурсами (и вы не хотите использовать добавочное согласие, которое обычно используется с MSAL.NET/платформой Microsoft Identity Platform v 2.0). Дополнительные сведения см. в разделе [как получить согласие пользователя на получение нескольких ресурсов](scenario-desktop-production.md#how-to-have--the-user-consent-upfront-for-several-resources).
 
-```CSharp
+```csharp
 var result = await app.AcquireTokenInteractive(scopesForCustomerApi)
                      .WithExtraScopeToConsent(scopesForVendorApi)
                      .ExecuteAsync();

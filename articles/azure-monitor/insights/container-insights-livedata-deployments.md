@@ -1,19 +1,14 @@
 ---
 title: Просмотр Azure Monitor для развертываний контейнеров (Предварительная версия) | Документация Майкрософт
 description: В этой статье описывается представление развертываний Kubernetes в режиме реального времени без использования kubectl в Azure Monitor для контейнеров.
-services: azure-monitor
-documentationcenter: ''
-author: mgoedtel
-ms.service: azure-monitor
 ms.topic: conceptual
 ms.date: 10/15/2019
-ms.author: magoedte
-ms.openlocfilehash: c7135aec98936b5247b39ae659e21735168bd289
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 7d0344851e1db8c014a1bb16b228a0c2f76444d5
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73514385"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75404775"
 ---
 # <a name="how-to-view-deployments-preview-in-real-time"></a>Просмотр развертываний (Предварительная версия) в режиме реального времени
 
@@ -27,7 +22,7 @@ ms.locfileid: "73514385"
 
 Дополнительные сведения см. в документации по Kubernetes о [развертываниях](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/). 
 
-## <a name="how-it-works"></a>Принцип работы
+## <a name="how-it-works"></a>Принципы работы
 
 Функция интерактивных данных (Предварительная версия) напрямую обращается к API Kubernetes, а дополнительные сведения о модели проверки подлинности можно найти [здесь](https://kubernetes.io/docs/concepts/overview/kubernetes-api/). 
 

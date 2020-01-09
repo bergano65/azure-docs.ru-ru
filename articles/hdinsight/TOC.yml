@@ -82,22 +82,14 @@
               abstract: null
               achievement: null
               iconUrl: null
-              levels:
-                - null
-              roles:
-                - null
-              products:
-                - null
-              units:
-                - null
-                - name: Использование системы хранения данных кластера
-                  items:
-                    - name: Использование службы хранилища Azure
-                      href: hdinsight-hadoop-use-blob-storage.md
-                    - name: Использование Azure Data Lake Storage 2-го поколения
-                      href: hdinsight-hadoop-use-data-lake-storage-gen2.md
-                    - name: Использование Azure Data Lake Storage 1-го поколения
-                      href: hdinsight-hadoop-use-data-lake-store.md
+        - name: Использование системы хранения данных кластера
+          items:
+            - name: Использование службы хранилища Azure
+              href: hdinsight-hadoop-use-blob-storage.md
+            - name: Использование Azure Data Lake Storage 2-го поколения
+              href: hdinsight-hadoop-use-data-lake-storage-gen2.md
+            - name: Использование Azure Data Lake Storage 1-го поколения
+              href: hdinsight-hadoop-use-data-lake-store.md
         - name: Расширение кластеров
           items:
             - name: Установка приложений HDInsight

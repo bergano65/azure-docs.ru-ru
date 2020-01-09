@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.service: cost-management-billing
 manager: micflan
 ms.custom: ''
-ms.openlocfilehash: 91a71f914cff25dcdf4a85f3baafcfd9bc96b104
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: 63b778379dda39a795cccdcfa0c1443870d50365
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74218874"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75440982"
 ---
 # <a name="understand-and-work-with-scopes"></a>Общие сведения об областях и работа с ними
 
@@ -45,7 +45,7 @@ Azure поддерживает три области для управления
 
     Тип ресурса: [Microsoft. Resources/Subscriptions](/rest/api/resources/subscriptions)
 
-- [**Группы ресурсов**](../azure-resource-manager/resource-group-overview.md#resource-groups) — это логические группы связанных ресурсов для решения Azure, которые используют один жизненный цикл. Например, ресурсы, которые развертываются и удаляются вместе.
+- [**Группы ресурсов**](../azure-resource-manager/management/overview.md#resource-groups) — это логические группы связанных ресурсов для решения Azure, которые используют один жизненный цикл. Например, ресурсы, которые развертываются и удаляются вместе.
 
     Тип ресурса: [Microsoft. Resources/Subscriptions/resourceGroups](/rest/api/resources/resourcegroups)
 
@@ -234,7 +234,7 @@ Azure поддерживает три области для управления
 3. Скопируйте идентификатор группы управления из таблицы.
 4. Ваша область: `"/providers/Microsoft.Management/managementGroups/{id}"`
 
-### <a name="subscription"></a>подписку
+### <a name="subscription"></a>Subscription
 
 1. Откройте портал Azure и перейдите к пункту **подписки** в списке служб.
 2. Скопируйте идентификатор подписки из таблицы.
@@ -250,6 +250,6 @@ Azure поддерживает три области для управления
 
 В настоящее время Управление затратами поддерживается в [Azure](https://management.azure.com) для [государственных организаций и Azure](https://management.usgovcloudapi.net). Дополнительные сведения об Azure для государственных организаций см. в статье [глобальные и правительственные конечные точки API Azure](../azure-government/documentation-government-developer-guide.md#endpoint-mapping) _._
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - См. первое краткое руководство по [работе с Управлением затратами](quick-acm-cost-analysis.md).

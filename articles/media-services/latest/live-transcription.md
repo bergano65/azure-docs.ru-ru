@@ -13,12 +13,12 @@ ms.devlang: ne
 ms.topic: article
 ms.date: 11/19/2019
 ms.author: juliako
-ms.openlocfilehash: a85f9f8b9d98f77cf673778f031d8f47f132fbe1
-ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
+ms.openlocfilehash: 875d8f498fc8405a53d8fb60631c52ce09b30a62
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74327340"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75431929"
 ---
 # <a name="live-transcription-preview"></a>Динамическая транскрипция (Предварительная версия)
 
@@ -102,9 +102,9 @@ PUT https://management.azure.com/subscriptions/:subscriptionId/resourceGroups/:r
 
 * Эта функция доступна только в западной части США 2.
 * Приложения должны использовать API предварительной версии, описанные в спецификации [служб мультимедиа v3 OpenAPI спецификация спецификации](https://github.com/Azure/azure-rest-api-specs/blob/master/specification/mediaservices/resource-manager/Microsoft.Media/preview/2019-05-01-preview/streamingservice.json) .
-* Единственным поддерживаемым языком является английский.
+* Единственным поддерживаемым языком является английский (EN-US).
 * В отношении защиты содержимого поддерживается только шифрование с помощью алгоритма AES.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Общие сведения о службах мультимедиа](media-services-overview.md)

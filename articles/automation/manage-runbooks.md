@@ -2,19 +2,15 @@
 title: Управление модулями runbook в службе автоматизации Azure
 description: В этой статье описывается управление модулями Runbook в службе автоматизации Azure.
 services: automation
-ms.service: automation
 ms.subservice: process-automation
-author: mgoedtel
-ms.author: magoedte
 ms.date: 02/14/2019
 ms.topic: conceptual
-manager: carmonm
-ms.openlocfilehash: 42b973ce8a25abff60211afb34ef719d42366175
-ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
+ms.openlocfilehash: 42fbb224981123a7cb0f39f07c144b5d2ffbc587
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74850505"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75417881"
 ---
 # <a name="manage-runbooks-in-azure-automation"></a>Управление модулями runbook в службе автоматизации Azure
 
@@ -108,7 +104,7 @@ Import-AzureRMAutomationRunbook -Name $runbookName -Path $scriptPath `
 
 Перед запуском вновь созданного или импортированного модуля Runbook его необходимо опубликовать.  У каждого Runbook в службе автоматизации есть черновая и опубликованная версия. Запустить можно только опубликованную версию, а изменить — только черновую. Изменения, внесенные в черновик, не влияют на опубликованную версию. Если требуется черновая версия, ее можно опубликовать, перезаписав опубликованную версию черновой.
 
-### <a name="azure-portal"></a>портала Azure
+### <a name="azure-portal"></a>Портал Azure
 
 1. Откройте модуль Runbook на портале Azure.
 2. Нажмите кнопку **Edit** (Изменить).

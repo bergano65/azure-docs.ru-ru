@@ -1,25 +1,16 @@
 ---
-title: Разработка приложений Java Azure Service Fabric с помощью Visual Studio Code | Документация Майкрософт
+title: Разработка приложений Java с помощью Visual Studio Code
 description: В этой статье показано, как создавать, развертывать и отлаживать приложения Java Service Fabric с помощью редактора Visual Studio Code.
-services: service-fabric
-documentationcenter: .net
 author: peterpogorski
-manager: chackdan
-editor: ''
-ms.assetid: 96176149-69bb-4b06-a72e-ebbfea84454b
-ms.service: service-fabric
-ms.devlang: java
 ms.topic: article
-ms.tgt_pltfrm: NA
-ms.workload: NA
 ms.date: 06/29/2018
 ms.author: pepogors
-ms.openlocfilehash: 7f60371fb533526ef5bdb154d0c08dface9c0d1f
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 999dbb8c36c4e0413f287b2a73cf39ab4acd15f5
+ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60394005"
+ms.lasthandoff: 01/02/2020
+ms.locfileid: "75610052"
 ---
 # <a name="develop-java-service-fabric-applications-with-visual-studio-code"></a>Разработка приложений Java Service Fabric с помощью Visual Studio Code
 
@@ -52,7 +43,7 @@ git clone https://github.com/Azure-Samples/service-fabric-java-quickstart.git
 ## <a name="build-the-application"></a>создание приложения;
 
 1. Нажмите клавиши CTRL+SHIFT+P, чтобы открыть **палитру команд** в VS Code.
-2. Найдите и выберите команду **Service Fabric: Build Application** (Service Fabric: создать приложение). Выходные данные сборки передаются во встроенный терминал.
+2. Найдите и выберите команду **Service Fabric: Build Application (Создание приложения Service Fabric)** . Выходные данные сборки передаются во встроенный терминал.
 
    ![Команда сборки приложения в VS Code](./media/service-fabric-develop-java-applications-with-vs-code/sf-build-application.png)
 
@@ -62,7 +53,7 @@ git clone https://github.com/Azure-Samples/service-fabric-java-quickstart.git
 > [!IMPORTANT]
 > Развертывание приложений Java не поддерживается на компьютерах под управлением Windows.
 
-1. В **палитре команд** выберите команду **Service Fabric: Deploy Application (Localhost)** (Service Fabric: развернуть приложение (Localhost)). Выходные данные процесса установки отправляются в интегрированный терминал.
+1. В **Палитре команд** выберите **Service Fabric: развертывания приложения (Localhost)** . Выходные данные процесса установки отправляются в интегрированный терминал.
 
    ![Команда развертывания приложения в VS Code](./media/service-fabric-develop-java-applications-with-vs-code/sf-deploy-application.png)
 
@@ -74,7 +65,7 @@ git clone https://github.com/Azure-Samples/service-fabric-java-quickstart.git
 
    ![Приложение для голосования в браузере](./media/service-fabric-develop-java-applications-with-vs-code/voting-sample-in-browser.png)
 
-5. Чтобы удалить приложение из кластера, выберите **Service Fabric: Удалить приложение** команду **палитру команд**. Выходные данные процесса удаления отправляются в интегрированный терминал. Чтобы убедиться, что приложение было удалено из локального кластера можно использовать Service Fabric Explorer.
+5. Чтобы удалить приложение из кластера, выберите команду **Service Fabric: Remove Application** (Service Fabric: удалить приложение) на **палитре команд**. Выходные данные процесса удаления отправляются в интегрированный терминал. Чтобы убедиться, что приложение было удалено из локального кластера можно использовать Service Fabric Explorer.
 
 ## <a name="debug-the-application"></a>Отладка приложения
 При отладке приложения в VS Code оно должно выполняться в локальном кластере. Затем в код можно добавить контрольные точки.
@@ -105,7 +96,7 @@ git clone https://github.com/Azure-Samples/service-fabric-java-quickstart.git
 
    ![Конфигурация отладки для launch.json-файла](./media/service-fabric-develop-java-applications-with-vs-code/launch-json-java.png)
 
-4. Развертывание приложения в локальном кластере с помощью **Service Fabric: Развертывание приложения (Localhost)** команды. Убедитесь, что приложение выполняется в Service Fabric Explorer. Теперь приложение готово к отладке.
+4. Развертывание приложения в локальном кластере с помощью команды **Service Fabric: развертывание приложения (Localhost)** . Убедитесь, что приложение выполняется в Service Fabric Explorer. Теперь приложение готово к отладке.
 
 Чтобы задать точку останова, выполните следующее.
 
@@ -127,7 +118,7 @@ git clone https://github.com/Azure-Samples/service-fabric-java-quickstart.git
    
    ![Отключение отладчика](./media/service-fabric-develop-java-applications-with-vs-code/debug-bar-disconnect.png)
        
-5. После завершения отладки вы можете использовать команду **Service Fabric: Удалить приложение** команду, чтобы удалить приложения для голосования из локального кластера. 
+5. Закончив отладку, вы можете использовать команду **Service Fabric: Remove Application** (​​Service Fabric: удалить приложение) для удаления приложения для голосования из локального кластера. 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

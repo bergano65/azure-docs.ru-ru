@@ -8,15 +8,15 @@ ms.devlang: ''
 ms.topic: conceptual
 author: jovanpop-msft
 ms.author: jovanpop
-ms.reviewer: sstein, carlrab, bonova
-ms.date: 11/04/2019
+ms.reviewer: sstein, carlrab, bonova, danil
+ms.date: 12/30/2019
 ms.custom: seoapril2019
-ms.openlocfilehash: e517b6030aa1c9549e33c00425851afae90aac42
-ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
+ms.openlocfilehash: 7319bb680e449a27fbe6f48c831d87d9c7b5ba4f
+ms.sourcegitcommit: ec2eacbe5d3ac7878515092290722c41143f151d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74707648"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75552752"
 ---
 # <a name="managed-instance-t-sql-differences-limitations-and-known-issues"></a>Различия в T-SQL управляемого экземпляра, ограничения и известные проблемы
 
@@ -27,7 +27,7 @@ ms.locfileid: "74707648"
 Существуют некоторые ограничения PaaS, появившиеся в Управляемый экземпляр и некоторые изменения в поведении по сравнению с SQL Server. Различия делятся на следующие категории:<a name="Differences"></a>
 
 - [Доступность](#availability) включает различия в [Always on группах доступности](#always-on-availability-groups) и [резервных копиях](#backup).
-- [Безопасность](#security) включает в себя различия в [аудите](#auditing), [сертификатах](#certificates), [учетных данных](#credential), [поставщиках служб шифрования](#cryptographic-providers), [именах входа и пользователях](#logins-and-users), а также [ключе службы и главный ключ службы](#service-key-and-service-master-key).
+- [Безопасность](#security) включает в себя различия [в аудите](#auditing), [сертификатах](#certificates), [учетных данных](#credential), [поставщиках служб шифрования](#cryptographic-providers), [именах входа и пользователях](#logins-and-users), а также [ключе службы и главный ключ службы](#service-key-and-service-master-key).
 - [Конфигурация](#configuration) включает различия в [расширении буферного пула](#buffer-pool-extension), параметрах [сортировки](#collation), [уровнях совместимости](#compatibility-levels), [зеркальном отображении баз данных](#database-mirroring), [параметрах базы данных](#database-options), [Агент SQL Server](#sql-server-agent)и [параметрах таблиц](#tables).
 - К [функциональным возможностям](#functionalities) относятся [BULK INSERT/OPENROWSET](#bulk-insert--openrowset), [CLR](#clr), [DBCC](#dbcc), [распределенные транзакции](#distributed-transactions), [Расширенные события](#extended-events), [внешние библиотеки](#external-libraries), [FileStream и FileTable](#filestream-and-filetable), [Полнотекстовый семантический поиск](#full-text-semantic-search), [связанные серверы](#linked-servers), [polybase](#polybase), [репликация](#replication), [Восстановление](#restore-statement), [Service Broker](#service-broker), [хранимые процедуры, функции и триггеры](#stored-procedures-functions-and-triggers).
 - [Параметры среды](#Environment) , такие как виртуальных сетей и конфигурации подсети.
@@ -43,12 +43,12 @@ ms.locfileid: "74707648"
 [Высокий уровень доступности](sql-database-high-availability.md) встроен в управляемый экземпляр и не может управляться пользователями. Следующие инструкции не поддерживаются:
 
 - [CREATE ENDPOINT … FOR DATABASE_MIRRORING](/sql/t-sql/statements/create-endpoint-transact-sql);
-- [CREATE AVAILABILITY GROUP](/sql/t-sql/statements/create-availability-group-transact-sql);
-- [ALTER AVAILABILITY GROUP](/sql/t-sql/statements/alter-availability-group-transact-sql);
-- [DROP AVAILABILITY GROUP](/sql/t-sql/statements/drop-availability-group-transact-sql);
+- [CREATE AVAILABILITY GROUP](/sql/t-sql/statements/create-availability-group-transact-sql)
+- [ALTER AVAILABILITY GROUP](/sql/t-sql/statements/alter-availability-group-transact-sql)
+- [DROP AVAILABILITY GROUP](/sql/t-sql/statements/drop-availability-group-transact-sql)
 - Предложение [Set HADR](/sql/t-sql/statements/alter-database-transact-sql-set-hadr) инструкции [ALTER DATABASE](/sql/t-sql/statements/alter-database-transact-sql)
 
-### <a name="backup"></a>Backup
+### <a name="backup"></a>Архивация
 
 Управляемые экземпляры имеют автоматическое резервное копирование, поэтому пользователи могут создавать полные резервные копии базы данных `COPY_ONLY`. Разностные резервные копии, журналы и моментальные снимки файлов не поддерживаются.
 
@@ -65,7 +65,7 @@ ms.locfileid: "74707648"
 
 - С помощью управляемого экземпляра можно создать резервную копию базы данных экземпляра в резервной копии с количеством полос до 32, что достаточно для баз данных размером до 4 ТБ, если используется сжатие резервных копий.
 - Невозможно выполнить `BACKUP DATABASE ... WITH COPY_ONLY` в базе данных, зашифрованной с помощью прозрачное шифрование данных, управляемого службами (TDE). Управляемые службой TDE принудительное шифрование резервных копий с помощью внутреннего ключа TDE. Ключ не может быть экспортирован, поэтому восстановить резервную копию невозможно. Используйте автоматическое резервное копирование и восстановление на момент времени или используйте [управляемую клиентом (BYOK) TDE](transparent-data-encryption-azure-sql.md#customer-managed-transparent-data-encryption---bring-your-own-key) . Также можно отключить шифрование базы данных.
-- Максимальный размер полосы резервного копирования с помощью команды `BACKUP` в управляемом экземпляре составляет 195 ГБ, что является максимальным размером большого двоичного объекта. Увеличьте количество полосковых линий в команде резервного копирования, чтобы уменьшить размер отдельных полосковых линий и не превышать это ограничение.
+- Максимальный размер полосы резервного копирования с помощью команды `BACKUP` в управляемом экземпляре составляет 195 ГБ, что является максимальным размером большого двоичного объекта. Чтобы уменьшить размер отдельного чередующегося набора и соблюсти это ограничение, можно увеличить число чередующихся наборов в команде резервного копирования.
 
     > [!TIP]
     > Чтобы обойти это ограничение, при резервном копировании базы данных из SQL Server в локальной среде или на виртуальной машине можно выполнить следующие действия.
@@ -97,8 +97,8 @@ ms.locfileid: "74707648"
 
 Дополнительные сведения см. здесь: 
 
-- [CREATE SERVER AUDIT (Transact-SQL)](/sql/t-sql/statements/create-server-audit-transact-sql) 
-- [ALTER SERVER AUDIT (Transact-SQL)](/sql/t-sql/statements/alter-server-audit-transact-sql)
+- [CREATE SERVER AUDIT](/sql/t-sql/statements/create-server-audit-transact-sql) 
+- [ALTER SERVER AUDIT](/sql/t-sql/statements/alter-server-audit-transact-sql)
 - [Аудит](/sql/relational-databases/security/auditing/sql-server-audit-database-engine)
 
 ### <a name="certificates"></a>Сертификаты
@@ -191,7 +191,7 @@ WITH PRIVATE KEY (<private_key_options>)
 - [Расширение буферного пула](/sql/database-engine/configure-windows/buffer-pool-extension) не поддерживается.
 - `ALTER SERVER CONFIGURATION SET BUFFER POOL EXTENSION` не поддерживается. См. статью [ALTER SERVER CONFIGURATION (Transact-SQL)](/sql/t-sql/statements/alter-server-configuration-transact-sql).
 
-### <a name="collation"></a>Collation
+### <a name="collation"></a>Параметры сортировки
 
 Параметр сортировки экземпляра по умолчанию — `SQL_Latin1_General_CP1_CI_AS`. Этот параметр можно указать как параметр создания. См. статью [Параметры сортировки](/sql/t-sql/statements/collations).
 
@@ -272,16 +272,16 @@ WITH PRIVATE KEY (<private_key_options>)
 
 Дополнительные сведения см. в статье [Параметры инструкции ALTER DATABASE для файлов и файловых групп (Transact-SQL)](/sql/t-sql/statements/alter-database-transact-sql-file-and-filegroup-options).
 
-### <a name="sql-server-agent"></a>Агент SQL Server
+### <a name="sql-server-agent"></a>Агент SQL Server
 
-- Включение и отключение агент SQL Server в настоящее время не поддерживается в управляемом экземпляре. Агент SQL работает постоянно.
+- Включение и отключение агент SQL Server в настоящее время не поддерживается в управляемом экземпляре. Агент SQL работает всегда.
 - Параметры агент SQL Server доступны только для чтения. Процедура `sp_set_agent_properties` не поддерживается в управляемом экземпляре. 
 - Задания
   - Шаги задания T-SQL поддерживаются.
   - Поддерживаются следующие задания репликации:
     - Читатель журнала транзакций.
     - Моментальный снимок
-    - Распространитель.
+    - Распространитель
   - Поддерживаются шаги задания служб SSIS.
   - Другие типы шагов заданий в настоящее время не поддерживаются:
     - Шаг задания репликации слиянием не поддерживается. 
@@ -310,7 +310,7 @@ WITH PRIVATE KEY (<private_key_options>)
 
 Следующие типы таблиц не поддерживаются:
 
-- [ПОТОКА](/sql/relational-databases/blob/filestream-sql-server)
+- [FILESTREAM](/sql/relational-databases/blob/filestream-sql-server)
 - [ПРОВЕРОЧ](/sql/relational-databases/blob/filetables-sql-server)
 - [Внешняя таблица](/sql/t-sql/statements/create-external-table-transact-sql) (polybase)
 - [MEMORY_OPTIMIZED](/sql/relational-databases/in-memory-oltp/introduction-to-memory-optimized-tables) (не поддерживается только на уровне общего назначения)
@@ -327,7 +327,7 @@ WITH PRIVATE KEY (<private_key_options>)
 - `DATASOURCE` требуется в функции `OPENROWSET` при чтении содержимого файла из хранилища BLOB-объектов Azure. См. статью [OPENROWSET (Transact-SQL)](/sql/t-sql/functions/openrowset-transact-sql).
 - `OPENROWSET` можно использовать для чтения данных из других отдельных баз данных SQL Azure, управляемых экземпляров или экземпляров SQL Server. Другие источники, такие как базы данных Oracle или файлы Excel, не поддерживаются.
 
-### <a name="clr"></a>Среда CLR
+### <a name="clr"></a>CLR
 
 Управляемый экземпляр не может получить доступ к файловым ресурсам и папкам Windows, поэтому применяются следующие ограничения.
 
@@ -362,7 +362,7 @@ WITH PRIVATE KEY (<private_key_options>)
 
 В базах данных R и Python внешние библиотеки пока не поддерживаются. См. статью [Изучение служб машины SQL Server](/sql/advanced-analytics/r/sql-server-r-services).
 
-### <a name="filestream-and-filetable"></a>FILESTREAM и FileTable
+### <a name="filestream-and-filetable"></a>Filestream и FileTable
 
 - Данные FILESTREAM не поддерживаются.
 - База данных не может содержать файловые группы с `FILESTREAM` данными.
@@ -381,7 +381,7 @@ WITH PRIVATE KEY (<private_key_options>)
 
 [Семантический поиск](/sql/relational-databases/search/semantic-search-sql-server) не поддерживается.
 
-### <a name="linked-servers"></a>Связанные службы
+### <a name="linked-servers"></a>Связанные серверы
 
 Связанные службы в управляемых экземплярах поддерживают ограниченное число целевых объектов.
 
@@ -406,41 +406,12 @@ Operations
 - Поддерживаются типы моментальных снимков и двунаправленной репликации. Репликация слиянием, одноранговая репликация и обновляемые подписки не поддерживаются.
 - [Репликация транзакций](sql-database-managed-instance-transactional-replication.md) доступна для общедоступной предварительной версии управляемого экземпляра с некоторыми ограничениями:
     - Все типы участников репликации (издатель, распространитель, подписчик по запросу и подписчик push-уведомлений) можно разместить на управляемых экземплярах, но издатель и распространитель должны быть либо в облаке, либо в локальной среде.
-    - Управляемые экземпляры могут взаимодействовать с последними версиями SQL Server. Поддерживаемые версии см. [здесь](sql-database-managed-instance-transactional-replication.md#supportability-matrix-for-instance-databases-and-on-premises-systems).
+    - Управляемые экземпляры могут взаимодействовать с последними версиями SQL Server. Дополнительные сведения см. в [матрице поддерживаемых версий](sql-database-managed-instance-transactional-replication.md#supportability-matrix-for-instance-databases-and-on-premises-systems) .
     - Репликация транзакций имеет некоторые [Дополнительные требования к сети](sql-database-managed-instance-transactional-replication.md#requirements).
 
-Сведения о настройке репликации см. в [руководстве по репликации](replication-with-sql-database-managed-instance.md).
-
-
-Если репликация включена для базы данных в [группе отработки отказа](sql-database-auto-failover-group.md), администратор управляемого экземпляра должен очистить все публикации на старом первичном ресурсе и перенастроить их на новом первичном экземпляре после отработки отказа. В этом сценарии необходимы следующие действия.
-
-1. Останавливает все задания репликации, выполняющиеся в базе данных, если они есть.
-2. Удалите метаданные подписки из издателя, выполнив следующий скрипт в базе данных издателя:
-
-   ```sql
-   EXEC sp_dropsubscription @publication='<name of publication>', @article='all',@subscriber='<name of subscriber>'
-   ```             
- 
-1. Удаление метаданных подписки с подписчика. Выполните следующий скрипт в базе данных подписки на экземпляре подписчика:
-
-   ```sql
-   EXEC sp_subscription_cleanup
-      @publisher = N'<full DNS of publisher, e.g. example.ac2d23028af5.database.windows.net>', 
-      @publisher_db = N'<publisher database>', 
-      @publication = N'<name of publication>'; 
-   ```                
-
-1. Принудительно удалите все объекты репликации из издателя, выполнив следующий скрипт в опубликованной базе данных:
-
-   ```sql
-   EXEC sp_removedbreplication
-   ```
-
-1. Принудительно удалить старый распространитель из исходного основного экземпляра (при восстановлении размещения на старом первичном экземпляре, который использовался для создания распространителя). Выполните следующий скрипт в базе данных master в старом управляемом экземпляре распространителя:
-
-   ```sql
-   EXEC sp_dropdistributor 1,1
-   ```
+Дополнительные сведения о настройке репликации транзакций см. в следующих учебниках:
+- [Репликация между издателем и подписчиком MI](replication-with-sql-database-managed-instance.md)
+- [Репликация между издателем MI, распространителем MI и подписчиком SQL Server](sql-database-managed-instance-configure-replication-tutorial.md)
 
 ### <a name="restore-statement"></a>Инструкция RESTORE 
 
@@ -483,13 +454,13 @@ Operations
  > [!IMPORTANT]
  > Те же ограничения применяются ко встроенной операции восстановления на момент времени. Например, база данных общего назначения более 4 ТБ не может быть восстановлена в экземпляре критически важный для бизнеса. Критически важный для бизнеса базу данных с файлами в памяти OLTP или более 280 файлов нельзя восстановить в экземпляре общего назначения.
 
-### <a name="service-broker"></a>Компонент Service broker
+### <a name="service-broker"></a>Service Broker
 
 Компонент Service Broker между экземплярами не поддерживается:
 
-- `sys.routes`: в качестве необходимого компонента необходимо выбрать адрес из каталога sys. routes. Адрес должен быть ЛОКАЛЬным по отношению к каждому маршруту. См. статью [sys.routes (Transact-SQL)](/sql/relational-databases/system-catalog-views/sys-routes-transact-sql).
-- `CREATE ROUTE`: нельзя использовать `CREATE ROUTE` с `ADDRESS`, кроме `LOCAL`. См. статью [CREATE ROUTE (Transact-SQL)](/sql/t-sql/statements/create-route-transact-sql).
-- `ALTER ROUTE`: нельзя использовать `ALTER ROUTE` с `ADDRESS`, кроме `LOCAL`. См. статью [ALTER ROUTE (Transact-SQL)](/sql/t-sql/statements/alter-route-transact-sql). 
+- `sys.routes`: в качестве необходимого компонента необходимо выбрать адрес из каталога sys. routes. Адрес должен быть ЛОКАЛЬным по отношению к каждому маршруту. См. статью о [sys.routes](/sql/relational-databases/system-catalog-views/sys-routes-transact-sql).
+- `CREATE ROUTE`: нельзя использовать `CREATE ROUTE` с `ADDRESS`, кроме `LOCAL`. См. статью о [CREATE ROUTE](/sql/t-sql/statements/create-route-transact-sql).
+- `ALTER ROUTE`: нельзя использовать `ALTER ROUTE` с `ADDRESS`, кроме `LOCAL`. См. статью об [ALTER ROUTE](/sql/t-sql/statements/alter-route-transact-sql). 
 
 ### <a name="stored-procedures-functions-and-triggers"></a>Хранимые процедуры, функции и триггеры
 
@@ -535,11 +506,55 @@ Operations
 
 Максимальный размер файла `tempdb` не может превышать 24 ГБ на ядро на уровне общего назначения. Максимальный размер `tempdb` на уровне критически важный для бизнеса ограничивается размером хранилища экземпляра. `Tempdb` размер файла журнала ограничен 120 ГБ на уровне общего назначения. Некоторые запросы могут возвращать ошибку, если им требуется более 24 ГБ на ядро в `tempdb` или если они создают более 120 ГБ данных журнала.
 
+### <a name="msdb"></a>MSDB
+
+Следующие схемы MSDB в управляемом экземпляре должны принадлежать соответствующим заранее определенным ролям:
+
+- Общие роли
+  - Роли TargetServersRole
+- [Предопределенные роли базы данных](https://docs.microsoft.com/sql/ssms/agent/sql-server-agent-fixed-database-roles?view=sql-server-ver15)
+  - SQLAgentUserRole
+  - SQLAgentReaderRole
+  - SQLAgentOperatorRole
+- [DatabaseMail роли](https://docs.microsoft.com/sql/relational-databases/database-mail/database-mail-configuration-objects?view=sql-server-ver15#DBProfile):
+  - Член
+- [Роли служб Integration Services](https://docs.microsoft.com/sql/integration-services/security/integration-services-roles-ssis-service?view=sql-server-ver15):
+  - msdb
+  - db_ssisltduser
+  - db_ssisoperator
+  
+> [!IMPORTANT]
+> Изменение стандартных имен ролей, имен схем и владельцев схем клиентами влияет на нормальную работу службы. Любые изменения, внесенные в эти данные, будут возвращены к заранее заданным значениям, как только обнаруженные, или по следующему обновлению службы в последней версии, чтобы обеспечить нормальную работу службы.
+
 ### <a name="error-logs"></a>Журналы ошибок
 
 Управляемый экземпляр помещает подробные сведения в журналы ошибок. Существует множество внутренних системных событий, которые регистрируются в журнале ошибок. Используйте пользовательскую процедуру для чтения журналов ошибок, которые отфильтровывают некоторые ненужные записи. Дополнительные сведения см. в разделе [управляемый экземпляр — sp_readmierrorlog](https://blogs.msdn.microsoft.com/sqlcat/2018/05/04/azure-sql-db-managed-instance-sp_readmierrorlog/) или [расширение управляемого экземпляра (Предварительная версия)](/sql/azure-data-studio/azure-sql-managed-instance-extension#logs) для Azure Data Studio.
 
-## <a name="Issues"></a>Известные проблемы
+## <a name="Issues"></a> Известные проблемы
+
+### <a name="sql-agent-roles-need-explicit-execute-permissions-for-non-sysadmin-logins"></a>Ролям агента SQL требуются явные разрешения на выполнение для имен входа, отличных от sysadmin
+
+**Дата:** Dec 2019
+
+Если имена входа, отличные от системного администратора, добавляются к любой из [предопределенных ролей базы данных агента SQL Server](https://docs.microsoft.com/sql/ssms/agent/sql-server-agent-fixed-database-roles), существует проблема, в которой для работы этих имен входа должны быть предоставлены явные разрешения на выполнение. В случае возникновения этой проблемы появляется сообщение об ошибке "недопустимое разрешение на выполнение объекта < object_name будет показано > (Microsoft SQL Server, ошибка: 229)".
+
+**Решение**. После добавления имен входа в одну из предопределенных ролей базы данных агента SQL: SQLAgentUserRole, SQLAgentReaderRole или SQLAgentOperatorRole для каждого имени входа, добавленного в эти роли, выполняет приведенный ниже скрипт T-SQL для явного предоставления разрешений EXECUTE для перечисленных хранимых процедур.
+
+```tsql
+USE [master]
+GO
+CREATE USER [login_name] FOR LOGIN [login_name]
+GO
+GRANT EXECUTE ON master.dbo.xp_sqlagent_enum_jobs TO [login_name]
+GRANT EXECUTE ON master.dbo.xp_sqlagent_is_starting TO [login_name]
+GRANT EXECUTE ON master.dbo.xp_sqlagent_notify TO [login_name]
+```
+
+### <a name="sql-agent-jobs-can-be-interrupted-by-agent-process-restart"></a>Задания агента SQL Server могут быть прерваны с помощью перезапуска процесса агента
+
+**Дата:** Dec 2019
+
+Агент SQL создает новый сеанс при каждом запуске задания, постепенно увеличивая потребление памяти. Чтобы избежать попадания в пределы внутренней памяти, которая может блокировать выполнение запланированных заданий, процесс агента будет перезапущен после достижения порогового значения потребления памяти. Это может привести к прерыванию выполнения заданий, выполняемых в момент перезапуска.
 
 ### <a name="in-memory-oltp-memory-limits-are-not-applied"></a>Ограничения памяти выполняющейся в памяти OLTP не применяются
 

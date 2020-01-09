@@ -3,17 +3,17 @@ title: Мониторинг подключения устройств с пом�
 description: Отслеживайте сообщения с устройств и изменения двойников устройств с помощью интерфейса командной строки обозревателя IoT Central.
 author: viv-liu
 ms.author: viviali
-ms.date: 09/27/2019
+ms.date: 12/18/2019
 ms.topic: conceptual
 ms.service: iot-central
 services: iot-central
 manager: corywink
-ms.openlocfilehash: 2b1c4c64fc02df67f38e36194072efd5db3b8e38
-ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
+ms.openlocfilehash: 90cf83f86acb647b8194619bc1b572e5147cc0cf
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2019
-ms.locfileid: "73895700"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75434951"
 ---
 # <a name="monitor-device-connectivity-using-azure-cli-preview-features"></a>Мониторинг подключения устройств с помощью Azure CLI (Предварительная версия компонентов)
 
@@ -23,7 +23,7 @@ ms.locfileid: "73895700"
 
 [Дополнительные сведения см. в справочнике по расширениям Azure CLI.](https://docs.microsoft.com/cli/azure/ext/azure-cli-iot-ext/iot/central)
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Технические условия
 
 + Azure CLI установлен и имеет версию 2.0.7 или более позднюю. Проверьте версию Azure CLI, выполнив `az --version`. Узнайте, как устанавливать и обновлять [документы Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli)
 + Рабочая или учебная учетная запись в Azure, добавленная в качестве пользователя в IoT Centralое приложение.
@@ -74,6 +74,6 @@ az iot central app monitor-events --app-id <app-id> --properties all
 az iot central device-twin show --app-id <app-id> --device-id <device-id>
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы узнали, как использовать проводник IoT Central, предлагаем следующий шаг — изучение [управления устройствами IOT Central](howto-manage-devices.md).

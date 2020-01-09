@@ -1,25 +1,16 @@
 ---
-title: Дефрагментация метрик в кластере Azure Service Fabric | Документация Майкрософт
-description: Общие сведения об использовании дефрагментации или упаковки в качестве стратегии для метрик в кластере Service Fabric
-services: service-fabric
-documentationcenter: .net
+title: Дефрагментация метрик в Azure Service Fabric
+description: Сведения об использовании дефрагментации или упаковки в качестве стратегии метрик в Service Fabric. Эта методика полезна для очень больших служб.
 author: masnider
-manager: chackdan
-editor: ''
-ms.assetid: e5ebfae5-c8f7-4d6c-9173-3e22a9730552
-ms.service: service-fabric
-ms.devlang: dotnet
 ms.topic: conceptual
-ms.tgt_pltfrm: NA
-ms.workload: NA
 ms.date: 08/18/2017
 ms.author: masnider
-ms.openlocfilehash: 6e041e41372c72c6792c1fb4a1fbdc3bbe475b21
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: bba459be4408f4a4bc438bb33b0570a91e84f2cd
+ms.sourcegitcommit: 5925df3bcc362c8463b76af3f57c254148ac63e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60844411"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75563366"
 ---
 # <a name="defragmentation-of-metrics-and-load-in-service-fabric"></a>Дефрагментация метрик и нагрузки в Service Fabric
 По умолчанию диспетчер кластерных ресурсов Service Fabric использует для метрик нагрузки стратегию распределения нагрузки. Обеспечение равномерного использования узлов позволяет избежать перегруженных и недогруженных точек, которые приводят к состязанию за ресурсы и их нецелесообразной растрате. Распределение рабочих нагрузок в кластере — самый безопасный способ минимизировать риск сбоев, так как единичный сбой не сможет вывести из строя значительную часть рабочей нагрузки. 
@@ -42,7 +33,7 @@ ms.locfileid: "60844411"
 
 <center>
 
-![Сравнение методов балансировки и дефрагментации кластеров][Image1]
+![сравнения сбалансированных и дефрагментированных кластеров][Image1]
 </center>
 
 Обратите внимание на число перемещений, необходимых для размещения крупного объекта службы в сценарии с балансировкой. В дефрагментированном кластере большая рабочая нагрузка может быть размещена на узле 4 или 5 без ожидания перемещения каких-либо других служб.

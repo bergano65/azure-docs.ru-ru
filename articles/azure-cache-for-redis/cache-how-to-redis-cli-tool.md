@@ -1,17 +1,17 @@
 ---
 title: Как использовать Redis-CLI с кэшем Azure для Redis
-description: Сведения об использовании программы redis-cli с кэшем Redis для Azure.
+description: Узнайте, как использовать *клиент Redis-CLI. exe* в качестве средства командной строки для взаимодействия с кэшем Azure для Redis в качестве клиента.
 author: yegu-ms
+ms.author: yegu
 ms.service: cache
 ms.topic: conceptual
 ms.date: 03/22/2018
-ms.author: yegu
-ms.openlocfilehash: 510110a201e943b8ffce07fc7d0de1361264ae62
-ms.sourcegitcommit: 5a8c65d7420daee9667660d560be9d77fa93e9c9
+ms.openlocfilehash: a48e69f19db88c7823365964c2fe9c0629a078bc
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74122723"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75412674"
 ---
 # <a name="how-to-use-the-redis-command-line-tool-with-azure-cache-for-redis"></a>Использование программы командной строки Redis с кэшем Redis для Azure
 
@@ -50,7 +50,7 @@ ms.locfileid: "74122723"
 
     В меню "Log Window" (Окно журнала) выберите **Конфигурация** > **Изменить конфигурацию**, чтобы открыть текущий файл конфигурации.
 
-    В разделе *Определения службы* добавьте следующую запись для программы **redis cli.exe**. Вместо `yourcachename` вставьте фактическое имя кэша. 
+    В разделе **Определения службы** добавьте следующую запись для программы *redis cli.exe*. Вместо `yourcachename` вставьте фактическое имя кэша. 
 
     ```
     [redis-cli]
@@ -85,7 +85,7 @@ redis-cli.exe -h yourcachename.redis.cache.windows.net -p 6379 -a YourAccessKey
 
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте больше об использовании [консоли Redis](cache-configure.md#redis-console) для выполнения команд.
 

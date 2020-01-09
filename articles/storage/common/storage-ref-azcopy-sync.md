@@ -8,12 +8,12 @@ ms.date: 10/16/2019
 ms.author: normesta
 ms.subservice: common
 ms.reviewer: zezha-msft
-ms.openlocfilehash: 9bfe88c34c78d18f2f5aefb8ae6946b9786030ad
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.openlocfilehash: 6ecba85a859e902922dfa2b7563a3ceb96a9ef4d
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74023495"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75457458"
 ---
 # <a name="azcopy-sync"></a>azcopy sync
 
@@ -106,8 +106,9 @@ azcopy sync "/path/to/dir" "https://[account].blob.core.windows.net/[container]/
 
 ```azcopy
 azcopy sync "https://[account].blob.core.windows.net/[container]/[path/to/blob]?[SAS]" "https://[account].blob.core.windows.net/[container]/[path/to/blob]"
+```
 
-Sync a virtual directory:
+Синхронизация виртуального каталога:
 
 ```azcopy
 azcopy sync "https://[account].blob.core.windows.net/[container]/[path/to/virtual/dir]?[SAS]" "https://[account].blob.core.windows.net/[container]/[path/to/virtual/dir]" --recursive=true
@@ -138,6 +139,8 @@ azcopy sync "https://[account].file.core.windows.net/[share]/[path/to/dir]?[SAS]
 
 **--Exclude-Attributes** String (только для Windows) исключает файлы, атрибуты которых соответствуют списку атрибутов. Например: A; #D0 Cерверный
 
+**--Строка исключения-путь** исключает эти пути при копировании. Этот параметр не поддерживает подстановочные знаки (*). Проверяет префикс относительного пути (например: myFolder; myFolder/Субдирнаме/File. PDF). При использовании в сочетании с обходом учетной записи пути не включают имя контейнера.
+
 **--исключение-шаблон** строка исключает файлы, имя которых совпадает со списком шаблонов. Например: *. jpg;* . PDF; Ексактнаме
 
 **-h,--** Справка Справка по синхронизации
@@ -154,7 +157,7 @@ azcopy sync "https://[account].file.core.windows.net/[share]/[path/to/dir]?[SAS]
 
 ## <a name="options-inherited-from-parent-commands"></a>Параметры, унаследованные от родительских команд
 
-|Параметр|ОПИСАНИЕ|
+|Вариант|Description|
 |---|---|
 |--Cap-Мбит/с UInt32|Скорость передачи с прописными буквами в мегабит в секунду. Посекундная пропускная способность может немного отличаться от ограничения. Если этот параметр имеет значение 0 или пропущен, пропускная способность не ограничена.|
 |--строка выходного типа|Формат вывода команды. Среди вариантов: Text, JSON. Значение по умолчанию — "Text".|

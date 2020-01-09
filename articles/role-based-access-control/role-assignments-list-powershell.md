@@ -11,15 +11,15 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 11/25/2019
+ms.date: 12/02/2019
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: c30f1246dccbe14445b0f7db8584e37c0f4be6ab
-ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
+ms.openlocfilehash: f728338284c755116414a03cbc586915e1cc9325
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74710416"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75462215"
 ---
 # <a name="list-role-assignments-using-azure-rbac-and-azure-powershell"></a>Вывод списка назначений ролей с помощью Azure RBAC и Azure PowerShell
 
@@ -146,6 +146,22 @@ PS C:\> Get-AzRoleAssignment -Scope /providers/Microsoft.Management/managementGr
 ```azurepowershell
 Get-AzRoleAssignment -IncludeClassicAdministrators
 ```
+
+## <a name="list-role-assignments-for-a-managed-identity"></a>Вывод списка назначений ролей для управляемого удостоверения
+
+1. Возвращает идентификатор объекта назначенного системой или управляемого пользователем удостоверения. 
+
+    Чтобы получить идентификатор объекта для управляемого пользователем удостоверения, можно использовать [Get-азадсервицепринЦипал](/powershell/module/az.resources/get-azadserviceprincipal).
+
+    ```azurepowershell
+    Get-AzADServicePrincipal -DisplayNameBeginsWith "<name> or <vmname>"
+    ```
+
+1. Чтобы получить список назначений ролей, используйте [Get-азролеассигнмент](/powershell/module/az.resources/get-azroleassignment).
+
+    ```azurepowershell
+    Get-AzRoleAssignment -ObjectId <objectid>
+    ```
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

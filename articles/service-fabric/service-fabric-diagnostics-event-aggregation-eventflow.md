@@ -1,25 +1,16 @@
 ---
-title: Агрегирование событий Azure Service Fabric c помощью EventFlow | Документы Майкрософт
+title: Агрегирование событий Service Fabric Azure с помощью EventFlow
 description: Ознакомьтесь со сведениями об агрегировании и сборе событий с использованием EventFlow для мониторинга и диагностики кластеров Azure Service Fabric.
-services: service-fabric
-documentationcenter: .net
 author: srrengar
-manager: chackdan
-editor: ''
-ms.assetid: ''
-ms.service: service-fabric
-ms.devlang: dotnet
 ms.topic: conceptual
-ms.tgt_pltfrm: NA
-ms.workload: NA
 ms.date: 2/25/2019
 ms.author: srrengar
-ms.openlocfilehash: bdc6c9476529b986f425d56544fd4b1afd8a864e
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: cde24657cc8ed78b91e72df16d51df4077a6e030
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60393238"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75463093"
 ---
 # <a name="event-aggregation-and-collection-using-eventflow"></a>Агрегирование и сбор событий с помощью EventFlow
 
@@ -157,5 +148,5 @@ servicefabric:/<section-name>/<setting-name>
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * [Event Analysis and Visualization with Application Insights](service-fabric-diagnostics-event-analysis-appinsights.md) (Анализ событий и визуализация с помощью Application Insights)
-* [Анализ и визуализация с помощью Azure Monitor журналов событий](service-fabric-diagnostics-event-analysis-oms.md)
+* [Анализ событий и визуализация с помощью журналов Azure Monitor](service-fabric-diagnostics-event-analysis-oms.md)
 * [Документация по EventFlow](https://github.com/Azure/diagnostics-eventflow)

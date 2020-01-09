@@ -14,17 +14,17 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 12/06/2019
 ms.author: chmutali
-ms.openlocfilehash: c780ee973c1dabb15c37b2519eb8253d2371080a
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: 84ab5da993541012fd2199a30d03f5c69e88bf2c
+ms.sourcegitcommit: ce4a99b493f8cf2d2fd4e29d9ba92f5f942a754c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74932311"
+ms.lasthandoff: 12/28/2019
+ms.locfileid: "75530040"
 ---
 # <a name="tutorial-configure-attribute-writeback-from-azure-ad-to-sap-successfactors-preview"></a>Руководство. Настройка обратной записи атрибутов из Azure AD в SAP SuccessFactors (Предварительная версия)
 Цель этого руководства — продемонстрировать шаги, которые необходимо выполнить для обратной записи атрибутов из Azure AD в SuccessFactors Employee Central. Единственным атрибутом, который в настоящее время поддерживается для обратной записи, является атрибут email. 
 
-## <a name="overview"></a>Краткое описание
+## <a name="overview"></a>Обзор
 
 После настройки входящей интеграции подготовки с помощью [SuccessFactors в локальное приложение AD](sap-successfactors-inbound-provisioning-tutorial.md) или SuccessFactors в приложение подготовки [Azure AD](sap-successfactors-inbound-provisioning-cloud-only-tutorial.md) можно дополнительно настроить приложение обратной записи SuccessFactors для записи адреса электронной почты обратно в SuccessFactors. 
 
@@ -63,7 +63,7 @@ ms.locfileid: "74932311"
 * Прокрутите вниз в том же окне и выберите **Центральный API сотрудника**. Добавьте разрешения, как показано ниже, для чтения с помощью API ODATA и редактирования с помощью API ODATA. Выберите параметр изменить, если вы планируете использовать одну и ту же учетную запись для сценария SuccessFactors для обратной записи. 
   > [!div class="mx-imgBorder"]
   > ![разрешения на запись](./media/sap-successfactors-inbound-provisioning/odata-read-write-perm.png)
-* Нажмите кнопку **Готово**. Нажмите кнопку **Сохранить изменения**.
+* Нажмите кнопку **Готово**. Щелкните **Сохранить изменения**.
 
 ### <a name="create-a-permission-group-for-the-api-user"></a>Создание группы разрешений для пользователя API
 
@@ -92,7 +92,7 @@ ms.locfileid: "74932311"
 * Проверьте роль разрешений, предоставляемую группе разрешений. 
   > [!div class="mx-imgBorder"]
   > ![роли разрешений и сведений о группе](./media/sap-successfactors-inbound-provisioning/permission-role-group.png)
-* Нажмите кнопку **Сохранить изменения**.
+* Щелкните **Сохранить изменения**.
 
 ## <a name="configuring-successfactors-writeback"></a>Настройка обратной записи SuccessFactors
 
@@ -118,7 +118,7 @@ ms.locfileid: "74932311"
 
 6. После добавления приложения и отображения экрана сведений о приложений выберите **Подготовка**.
 
-7. Для параметра **Режим подготовки** **к работе** выберите значение **Автоматически**.
+7. Изменение режима **подготовки** на **Автоматический**
 
 8. В разделе **Учетные данные администратора** заполните поля следующим образом.
 
@@ -129,8 +129,8 @@ ms.locfileid: "74932311"
    * **URL-адрес клиента —** Введите имя конечной точки служб API OData SuccessFactors. Введите только имя узла сервера без HTTP или HTTPS. Это значение должно выглядеть следующим образом: **API-Server-Name.successfactors.com**.
 
    * **Адрес электронной почты для уведомлений** — введите адрес электронной почты и установите флажок "send email if failure occurs" (Отправлять по электронной почте в случае сбоя).
-         > [!NOTE]
-         > The Azure AD Provisioning Service sends email notification if the provisioning job goes into a [quarantine](https://docs.microsoft.com/azure/active-directory/manage-apps/user-provisioning#quarantine) state.
+    > [!NOTE]
+    > Служба подготовки Azure AD отправляет уведомление по электронной почте, если задание подготовки переходит в состояние [Карантин](/azure/active-directory/manage-apps/application-provisioning-quarantine-status).
 
    * Нажмите кнопку **Проверить подключение**. Если проверка подключения выполнена успешно, нажмите кнопку **Сохранить** в верхней части. В случае сбоя Проверьте правильность учетных данных и URL-адреса SuccessFactors.
     >[!div class="mx-imgBorder"]
@@ -170,7 +170,7 @@ ms.locfileid: "74932311"
 
 1. На вкладке **Подготовка** установите для параметра **Состояние подготовки** значение **Вкл**.
 
-2. В нижней части страницы нажмите кнопку **Save**.
+2. Выберите команду **Сохранить**.
 
 3. Эта операция начнет начальную синхронизацию, что может занять переменное количество часов в зависимости от количества пользователей в клиенте SuccessFactors. Можно проверить индикатор выполнения, чтобы отслеживать ход выполнения цикла синхронизации. 
 

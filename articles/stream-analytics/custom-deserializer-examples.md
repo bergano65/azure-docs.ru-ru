@@ -1,25 +1,24 @@
 ---
-title: Использование десериализаторов .NET для Azure Stream Analytics заданий
+title: Чтение входных данных в любом формате с помощью пользовательских десериализаторов .NET в Azure Stream Analytics
 description: В этой статье описывается формат сериализации и интерфейсы, определяющие пользовательские десериализаторы .NET для Azure Stream Analytics облачных и граничных заданий.
-services: stream-analytics
 author: mamccrea
 ms.author: mamccrea
 ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
-ms.date: 05/06/2019
-ms.openlocfilehash: f1452e56054948edffc6e9b3c98fa48d2589cb2a
-ms.sourcegitcommit: d47a30e54c5c9e65255f7ef3f7194a07931c27df
+ms.date: 12/30/2019
+ms.openlocfilehash: a64912921e5ce8c0dc76fbf2ae0be8fb34bacf1a
+ms.sourcegitcommit: ec2eacbe5d3ac7878515092290722c41143f151d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73024943"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75553024"
 ---
-# <a name="use-net-deserializers-for-azure-stream-analytics-jobs"></a>Использование десериализаторов .NET для Azure Stream Analytics заданий
+# <a name="read-input-in-any-format-using-net-custom-deserializers"></a>Чтение входных данных в любом формате с помощью пользовательских десериализаторов .NET
 
-Пользовательские десериализаторы .NET позволяют задаче Azure Stream Analytics считывать данные из форматов, которые выходят за рамки трех [встроенных форматов данных](stream-analytics-parsing-json.md). В этой статье описывается формат сериализации и интерфейсы, определяющие пользовательские десериализаторы .NET для Azure Stream Analytics облачных и граничных заданий. Также существуют примеры десериализаторов для буфера протокола и формата CSV.
+Пользовательские десериализаторы .NET позволяют задаче Azure Stream Analytics считывать данные из форматов, которые выходят за рамки трех [встроенных форматов данных](stream-analytics-parsing-json.md). В этой статье объясняется формат сериализации и интерфейсы, определяющие пользовательские десериализаторы .NET для Azure Stream Analytics облачных и граничных заданий. Также существуют примеры десериализаторов для буфера протокола и формата CSV.
 
-## <a name="custom-net-deserializer"></a>Пользовательский десериализатор .NET
+## <a name="net-custom-deserializer"></a>Пользовательский десериализатор .NET
 
 Следующие примеры кода являются интерфейсами, определяющими пользовательский десериализатор и реализующими `StreamDeserializer<T>`.
 
@@ -134,7 +133,7 @@ message MessageBodyProto {
     }
 ```
 
-### <a name="csv"></a>-
+### <a name="csv"></a>CSV
 
 Следующий фрагмент кода является простым десериализатором CSV, который также демонстрирует распространение ошибок.
 
@@ -226,12 +225,12 @@ namespace ExampleCustomCode.Serialization
 
 Эта функция доступна в следующих регионах:
 
-* Западная Центральная часть США (доступна)
-* Северная Европа (доступно)
-* Восточная часть США (доступно)
-* Западная часть США (развертывание вскоре)
-* Восточная часть США 2 (развертывание вскоре)
-* Западная Европа (развертывание вскоре)
+* Центрально-западная часть США
+* Северная Европа
+* Восточная часть США
+* Западная часть США
+* Восточная часть США 2
+* Западная Европа
 
 Вы можете [запросить поддержку](https://aka.ms/ccodereqregion) для дополнительных регионов.
 
@@ -239,11 +238,11 @@ namespace ExampleCustomCode.Serialization
 
 ### <a name="when-will-this-feature-be-available-in-all-azure-regions"></a>Когда эта функция будет доступна во всех регионах Azure?
 
-Эта функция доступна в 6 регионах (#region-support). Если вы заинтересованы в использовании этой функции в другом регионе, можно [Отправить запрос](https://aka.ms/ccodereqregion). Поддержка всех регионов Azure включена в план.
+Эта функция доступна в [6 регионах](https://docs.microsoft.com/azure/stream-analytics/custom-deserializer-examples#region-support). Если вы заинтересованы в использовании этой функции в другом регионе, можно [Отправить запрос](https://aka.ms/ccodereqregion). Поддержка всех регионов Azure включена в план.
 
 ### <a name="can-i-access-metadatapropertyvalue-from-my-inputs-similar-to-getmetadatapropertyvalue-function"></a>Можно ли получить доступ к Метадатапропертивалуе из входных данных, похожих на функцию Жетметадатапропертивалуе?
 
-Эта функция не поддерживается. Если вам нужна эта возможность, вы можете проголосовать за этот запрос на [UserVoice](https://feedback.azure.com/forums/270577-stream-analytics/suggestions/38779801-accessing-input-metadata-properties-in-custom-dese).
+Эта функциональность не поддерживается. Если вам нужна эта возможность, вы можете проголосовать за этот запрос на [UserVoice](https://feedback.azure.com/forums/270577-stream-analytics/suggestions/38779801-accessing-input-metadata-properties-in-custom-dese).
 
 ### <a name="can-i-share-my-deserializer-implementation-with-the-community-so-that-others-can-benefit"></a>Можно ли поделиться реализацией десериализатора с сообществом, чтобы другие пользователи могли воспользоваться преимуществами?
 

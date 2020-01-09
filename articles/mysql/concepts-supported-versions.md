@@ -5,13 +5,13 @@ author: ajlam
 ms.author: andrela
 ms.service: mysql
 ms.topic: conceptual
-ms.date: 12/09/2019
-ms.openlocfilehash: b4029d49eeba53e7a502a7ac68081bb5a2d549f8
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.date: 12/12/2019
+ms.openlocfilehash: 05d4ecd58f6febff75212f1ad88b60be4f23c2a7
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74971933"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75454338"
 ---
 # <a name="supported-azure-database-for-mysql-server-versions"></a>Поддерживаемые версии сервера базы данных Azure для MySQL
 
@@ -37,9 +37,6 @@ MySQL использует схему именования X.Y.Z. X являет
 Дополнительные сведения об улучшениях и исправлениях в этой версии см. в [заметках о выпуске](https://dev.mysql.com/doc/relnotes/mysql/5.7/en/news-5-7-27.html) MySQL.
 
 ## <a name="mysql-version-80"></a>MySQL версии 8,0
-
-> [!IMPORTANT]
-> В настоящее время MySQL 8,0 находится на этапе предварительной версии.
 
 Исправление ошибки: 8.0.15
 

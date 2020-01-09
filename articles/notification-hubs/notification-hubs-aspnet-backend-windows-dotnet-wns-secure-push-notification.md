@@ -1,5 +1,5 @@
 ---
-title: Безопасные push-уведомления для концентраторов уведомлений Azure
+title: Безопасное push-уведомление центра уведомлений Azure для Windows
 description: Узнайте, как отправлять безопасные push-уведомления в Azure. Примеры кода написаны на C# с использованием API .NET.
 documentationcenter: windows
 author: sethmanheim
@@ -16,12 +16,12 @@ ms.date: 01/04/2019
 ms.author: sethm
 ms.reviewer: jowargo
 ms.lastreviewed: 01/04/2019
-ms.openlocfilehash: 5d1cf2a74d4fe85bb85eb244da3e3757f36fba0a
-ms.sourcegitcommit: 7df70220062f1f09738f113f860fad7ab5736e88
+ms.openlocfilehash: db42cf7f886855af77073963e6f04ac088ca5612
+ms.sourcegitcommit: ce4a99b493f8cf2d2fd4e29d9ba92f5f942a754c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71212048"
+ms.lasthandoff: 12/28/2019
+ms.locfileid: "75530737"
 ---
 # <a name="securely-push-notifications-from-azure-notification-hubs"></a>Безопасная отправка push-уведомлений из Центров уведомлений Azure
 
@@ -159,7 +159,7 @@ ms.locfileid: "71212048"
     using Windows.UI.Notifications;
     using Windows.Data.Xml.Dom;
     ```
-11. В обозревателе решений в проекте **NotifyUserWindowsPhone (Windows Phone 8.1)** щелкните правой кнопкой мыши **Ссылки**, а затем щелкните **Добавить ссылку...** . В диалоговом окне "Диспетчер ссылок" установите флажок **PushBackgroundComponent**, а затем нажмите кнопку **ОК**.
+11. В обозреватель решений в проекте **проекте notifyuserwindowsphone (Windows Phone 8,1)** щелкните правой кнопкой мыши элемент **ссылки**и выберите команду **Добавить ссылку...** . В диалоговом окне Диспетчер ссылок установите флажок **PushBackgroundComponent**и нажмите кнопку **ОК**.
 12. В обозревателе решений дважды щелкните **Package.appxmanifest** в проекте **NotifyUserWindowsPhone (Windows Phone 8.1)** . В поле **Уведомления** установите для параметра **Всплывающие уведомления** значение **Да**.
 
     ![][3]

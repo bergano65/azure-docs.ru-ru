@@ -1,17 +1,17 @@
 ---
-title: Управление доступом на основе ролей в Azure Cosmos DB с интеграцией Azure Active Directory
+title: Управление доступом на основе ролей в Azure Cosmos DB
 description: Узнайте, как Azure Cosmos DB обеспечивает защиту базы данных с помощью интеграции с Active Directory (RBAC).
 author: markjbrown
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 10/31/2019
 ms.author: mjbrown
-ms.openlocfilehash: c7605bbc1824e2e859cc94296834daf4e4e0907b
-ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
+ms.openlocfilehash: 0c7332a42751b35b6ad8ec3f88afb7bc78cc85e3
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74072363"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75445099"
 ---
 # <a name="role-based-access-control-in-azure-cosmos-db"></a>Управление доступом на основе ролей в Azure Cosmos DB
 
@@ -63,7 +63,7 @@ Azure Cosmos DB предоставляет встроенные возможно
 }
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Что такое управление доступом на основе ролей (RBAC) для ресурсов Azure](../role-based-access-control/overview.md)
 - [Пользовательские роли для ресурсов Azure](../role-based-access-control/custom-roles.md)

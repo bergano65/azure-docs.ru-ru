@@ -1,31 +1,23 @@
 ---
-title: Руководство. Обновление приложения Сетки Azure Service Fabric | Документы Майкрософт
+title: Руководство по обновлению приложения сетки Service Fabric Azure
 description: Это руководство является четвертой частью цикла, в котором показано, как обновить приложение Сетки Azure Service Fabric непосредственно из Visual Studio.
-services: service-fabric-mesh
-documentationcenter: .net
 author: dkkapur
-manager: chakdan
-editor: ''
-ms.assetid: ''
-ms.service: service-fabric-mesh
 ms.topic: conceptual
-ms.tgt_pltfrm: NA
-ms.workload: NA
 ms.date: 11/29/2018
 ms.author: dekapur
 ms.custom: mvc, devcenter
-ms.openlocfilehash: 81f155d5708a2fca2fc1145feb20af12d2fd151e
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: 7cdb8868f760ef0f35ab90c06b411110f871738c
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73686195"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75351716"
 ---
 # <a name="tutorial-learn-how-to-upgrade-a-service-fabric-application-using-visual-studio"></a>Руководство. Узнайте, как обновить приложение Service Fabric с помощью Visual Studio
 
 Это руководство является четвертой частью цикла, в котором показано, как обновить приложение Сетки Azure Service Fabric непосредственно из Visual Studio. Обновления затронут как код, так и конфигурацию. Вы увидите, что действия по обновлению и публикации в Visual Studio одинаковы.
 
-Из этого руководства вы узнали, как выполнять такие задачи:
+Из этого руководства вы узнаете, как выполнить следующие задачи:
 > [!div class="checklist"]
 > * Обновление службы сетки Service Fabric с помощью Visual Studio
 
@@ -39,11 +31,11 @@ ms.locfileid: "73686195"
 
 [!INCLUDE [preview note](./includes/include-preview-note.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Перед началом работы с этим руководством выполните следующие действия:
 
-* Если вы еще не развернули приложение списка дел, следуйте инструкциям в разделе [Публикация веб-приложения Сетки Service Fabric](service-fabric-mesh-tutorial-deploy-service-fabric-mesh-app.md).
+* Если вы еще не развернули приложение списка дел, следуйте инструкциям в статье [Руководство. Развертывание приложения Сетки Service Fabric](service-fabric-mesh-tutorial-deploy-service-fabric-mesh-app.md).
 
 ## <a name="upgrade-a-service-fabric-mesh-service-by-using-visual-studio"></a>Обновление службы сетки Service Fabric с помощью Visual Studio
 
@@ -137,7 +129,7 @@ public static ToDoItem Load(string description, int index, bool completed)
 
 Используйте раскрывающийся список **целевой профиль** , чтобы выбрать файл Profile. YAML, который будет использоваться для этого развертывания. Мы обновляем приложение в облаке, чтобы мы выбрали **Cloud. YAML** в раскрывающемся списке, который будет использовать `WebFrontEnd_cpu` значение 1,0, определенное в этом файле.
 
-![Диалоговое окно публикации Сетки Service Fabric в Visual Studio](./media/service-fabric-mesh-tutorial-deploy-dotnetcore/visual-studio-publish-dialog.png)
+![Диалоговое окно публикации службы "Сетка Service Fabric" в Visual Studio](./media/service-fabric-mesh-tutorial-deploy-dotnetcore/visual-studio-publish-dialog.png)
 
 Выберите учетную запись Azure и подписку. Установите **Расположение** в расположение, которое использовалось при первоначальной публикации этого приложения в Azure. В этой статье используется **восточная часть США**.
 

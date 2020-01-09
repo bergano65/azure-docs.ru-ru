@@ -1,19 +1,18 @@
 ---
 title: Использование интерфейсов API RESTFUL для непрерывной интеграции и воспроизведения Azure Stream Analytics на IoT Edge
 description: Сведения о реализации конвейера непрерывной интеграции и развертывании для Azure Stream Analytics с использованием REST API.
-services: stream-analytics
 author: mamccrea
 ms.author: mamccrea
-ms.reviewer: jasonh
+ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 12/04/2018
-ms.openlocfilehash: a716991eaa84a6937c959885ff9c4ae5c18be35e
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.openlocfilehash: 78f2e06947c2b81ffe5e6cd8a88438db4dabf158
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73163635"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75426417"
 ---
 # <a name="implement-cicd-for-stream-analytics-on-iot-edge-using-apis"></a>Реализация CI/CD для Stream Analytics на IoT Edge с использованием API
 
@@ -145,7 +144,7 @@ curl -u { <username:password> } -H "Content-Type: application/json" -X { <method
 
 |Метод|Request URL (URL-адрес запроса)|
 |------|-----------|
-|ПУБЛИКАЦИЯ|https://management.azure.com/subscriptions/{**идентификатор_подписки**}/resourceGroups/{**имя_группы_ресурсов**}/providers/Microsoft.StreamAnalytics/streamingjobs/{**имя_задания**}/publishedgepackage?api-version=2017-04-01-preview|
+|POST|https://management.azure.com/subscriptions/{**идентификатор_подписки**}/resourceGroups/{**имя_группы_ресурсов**}/providers/Microsoft.StreamAnalytics/streamingjobs/{**имя_задания**}/publishedgepackage?api-version=2017-04-01-preview|
 
 Эта асинхронная операция возвращает состояние 202 до того, как задание будет успешно опубликовано. Заголовок ответа расположения содержит универсальный код ресурса (URI), который используется для получения состояния процесса. Во время выполнения процесса вызов универсального кода ресурса (URI) в заголовке расположения возвращает состояние 202. После того как процесс завершится, универсальный код ресурса (URI) возвращает состояние 200. 
 

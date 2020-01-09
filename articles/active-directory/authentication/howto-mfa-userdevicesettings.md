@@ -11,12 +11,12 @@ author: iainfoulds
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7a1e6dc3ed1c1f9af6f6b935cdd3a6ceaedbe7a4
-ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
+ms.openlocfilehash: 07845bb5b742b1bcfbb22d260457e9a8e16edab6
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74848261"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75425263"
 ---
 # <a name="manage-user-settings-with-azure-multi-factor-authentication-in-the-cloud"></a>Управление параметрами пользователей с помощью Многофакторной идентификации Azure в облаке
 
@@ -30,9 +30,9 @@ ms.locfileid: "74848261"
 
 Администратор, которому назначена роль администратора проверки подлинности, может потребовать от пользователей сбросить свой пароль, повторно зарегистрироваться для использования MFA или отозвать существующие сеансы MFA из своего объекта пользователя.
 
-![Управление методами проверки подлинности из портал Azure](./media/howto-mfa-userdevicesettings/manage-authentication-methods.png)
+![Управление методами проверки подлинности из портал Azure](./media/howto-mfa-userdevicesettings/manage-authentication-methods-in-azure.png)
 
-1. Войдите на [портале Azure](https://portal.azure.com).
+1. Войдите на [портал Azure](https://portal.azure.com).
 1. Слева выберите **Azure Active Directory** > **Пользователи** > **Все пользователи**.
 1. Выберите пользователя, для которого требуется выполнить действие, и выберите **методы проверки подлинности**.
    - **Сброс пароля** приведет к сбросу пароля пользователя и назначению временного пароля, который необходимо изменить при следующем входе.
@@ -45,7 +45,7 @@ ms.locfileid: "74848261"
 
 ### <a name="how-to-delete-users-existing-app-passwords"></a>Как удалить существующие пароли приложений пользователей
 
-1. Войдите на [портале Azure](https://portal.azure.com).
+1. Войдите на [портал Azure](https://portal.azure.com).
 2. Слева выберите **Azure Active Directory** > **Пользователи** > **Все пользователи**.
 3. Справа на панели инструментов выберите **Многофакторная идентификация**. Откроется страница Многофакторной идентификации.
 4. Установите флажок рядом с именем пользователя или пользователей, которыми требуется управлять. Список параметров быстрого шага отображается справа.

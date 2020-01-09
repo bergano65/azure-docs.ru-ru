@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: mbaldwin
 ms.date: 08/06/2019
 ms.custom: seodec18
-ms.openlocfilehash: 2e7646d2f84696d0b04183d8d06b96405909de87
-ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
+ms.openlocfilehash: ff4ccb4409bd9a41f390668cb94ef91b1b565421
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73750038"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75358818"
 ---
 # <a name="azure-disk-encryption-scenarios-on-linux-vms"></a>Сценарии шифрования дисков Azure на виртуальных машинах Linux
 
@@ -38,7 +38,7 @@ ms.locfileid: "73750038"
 
 Шифрование дисков Azure можно включить и управлять с помощью [Azure CLI](/cli/azure) и [Azure PowerShell](/powershell/azure/new-azureps-module-az). Для этого необходимо установить средства локально и подключиться к подписке Azure.
 
-### <a name="azure-cli"></a>Azure CLI
+### <a name="azure-cli"></a>Интерфейс командной строки Azure
 
 [Azure CLI 2.0](/cli/azure) — это интерфейс командной строки для управления ресурсами Azure. Этот интерфейс обеспечивает гибкие функции подачи запросов, выполнение длительных операций без блокировки и простое создание скриптов. Его можно установить локально, выполнив действия, описанные в разделе [установка Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest).
 
@@ -66,7 +66,7 @@ az account set --subscription "<subscription name or ID>"
 Дополнительные сведения можно найти в документации по [началу работы с Azure CLI 2.0](/cli/azure/get-started-with-azure-cli). 
 
 ### <a name="azure-powershell"></a>Azure PowerShell
-[Модуль Azure PowerShell AZ](/powershell/azure/new-azureps-module-az) предоставляет набор командлетов, использующих модель [Azure Resource Manager](../../azure-resource-manager/resource-group-overview.md) для управления ресурсами Azure. Его можно использовать в браузере с [Azure Cloud Shell](../../cloud-shell/overview.md)или установить на локальном компьютере, выполнив инструкции из статьи [Установка модуля Azure PowerShell](/powershell/azure/install-az-ps). 
+[Модуль Azure PowerShell AZ](/powershell/azure/new-azureps-module-az) предоставляет набор командлетов, использующих модель [Azure Resource Manager](../../azure-resource-manager/management/overview.md) для управления ресурсами Azure. Его можно использовать в браузере с [Azure Cloud Shell](../../cloud-shell/overview.md)или установить на локальном компьютере, выполнив инструкции из статьи [Установка модуля Azure PowerShell](/powershell/azure/install-az-ps). 
 
 Если вы уже установили его локально, убедитесь, что вы используете последнюю версию версии пакета SDK для Azure PowerShell для настройки шифрования дисков Azure. Скачайте последнюю версию [Azure PowerShell](https://github.com/Azure/azure-powershell/releases).
 
@@ -193,7 +193,7 @@ Get-command *diskencryption*
 
 В следующей таблице перечислены параметры шаблона Resource Manager для имеющихся или работающих виртуальных машин.
 
-| Параметр | Description (Описание) |
+| Параметр | Description |
 | --- | --- |
 | vmName | Имя виртуальной машины для выполнения операции шифрования. |
 | keyVaultName | Имя хранилища ключей, в которое должен быть отправлен ключ шифрования. Его можно получить с помощью командлета `(Get-AzKeyVault -ResourceGroupName <MyKeyVaultResourceGroupName>). Vaultname` или команды Azure CLI `az keyvault list --resource-group "MyKeyVaultResourceGroupName"`.|
@@ -399,9 +399,10 @@ New-AzVM -VM $VirtualMachine -ResourceGroupName "MyVirtualMachineResourceGroup"
 - динамические тома;
 - Временные диски ОС.
 - Шифрование общих и распределенных файловых систем, таких как (но не ограничено): DFS, GFS, ДРДБ и Цеффс.
+- Аварийный дамп ядра (кдумп).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - [Общие сведения о шифровании дисков Azure](disk-encryption-overview.md)
-- [Примеры сценариев шифрования дисков Azure](disk-encryption-sample-scripts.md)
-- [Устранение неполадок шифрования дисков Azure](disk-encryption-troubleshooting.md)
+- [Примеры скриптов шифрования дисков Azure](disk-encryption-sample-scripts.md)
+- [Устранение неполадок с шифрованием дисков Azure](disk-encryption-troubleshooting.md)

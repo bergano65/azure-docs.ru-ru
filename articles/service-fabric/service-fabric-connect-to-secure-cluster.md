@@ -1,27 +1,16 @@
 ---
-title: Безопасное подключение к кластеру Azure Service Fabric | Документация Майкрософт
+title: Безопасное подключение к кластеру Azure Service Fabric
 description: Сведения о способах проверки подлинности клиентского доступа к кластеру Service Fabric, а также об обеспечении безопасного обмена данными между клиентами и кластером.
-services: service-fabric
-documentationcenter: .net
-author: athinanthny
-manager: chackdan
-editor: ''
-ms.assetid: 759a539e-e5e6-4055-bff5-d38804656e10
-ms.service: service-fabric
-ms.devlang: dotnet
 ms.topic: conceptual
-ms.tgt_pltfrm: na
-ms.workload: na
 ms.date: 01/29/2019
-ms.author: atsenthi
-ms.openlocfilehash: c350b53b2d0b235c5e34431386205f090f37b482
-ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
+ms.openlocfilehash: 89d9f67ba1a202b3830df7a5b960c6ef01091bf2
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68599713"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75458270"
 ---
-# <a name="connect-to-a-secure-cluster"></a>Безопасное подключение к кластеру
+# <a name="connect-to-a-secure-cluster"></a>Подключение к защищенному кластеру
 
 Когда клиент подключается к узлу кластера Service Fabric, он может пройти проверку подлинности и установить безопасную связь на основе сертификатов или с помощью Azure Active Directory (AAD). Такая проверка подлинности гарантирует, что только авторизованные пользователи могут получить доступ к кластеру и развернутым приложениям для выполнения задач управления.  Конфигурацию обеспечения безопасности на основе сертификатов или AAD необходимо предварительно включить в кластере при его создании.  Дополнительные сведения о сценариях обеспечения безопасности кластеров см. в разделе [Безопасность кластера](service-fabric-cluster-security.md). Если безопасность в кластере обеспечивается сертификатами, то на компьютере, который подключается к нему, необходимо [настроить сертификат клиента](service-fabric-connect-to-secure-cluster.md#connectsecureclustersetupclientcert). 
 
@@ -41,7 +30,7 @@ openssl pkcs12 -in your-cert-file.pfx -out your-cert-file.pem -nodes -passin pas
 
 Если PFX-файл не защищен паролем, укажите -passin pass: в качестве последнего параметра.
 
-Чтобы указать сертификат клиента как PEM-файл, укажите путь к файлу в аргументе `--pem`. Пример:
+Чтобы указать сертификат клиента как PEM-файл, укажите путь к файлу в аргументе `--pem`. Пример.
 
 ```azurecli
 sfctl cluster select --endpoint https://testsecurecluster.com:19080 --pem ./client.pem
@@ -55,7 +44,7 @@ sfctl cluster select --endpoint https://testsecurecluster.com:19080 --pem ./clie
 sfctl cluster select --endpoint https://testsecurecluster.com:19080 --cert ./client.crt --key ./keyfile.key
 ```
 
-Иногда сертификаты, используемые для защиты тестового кластера и кластера для разработки не проходят проверку сертификата. Чтобы не выполнять проверку сертификата, укажите параметр `--no-verify`. Пример:
+Иногда сертификаты, используемые для защиты тестового кластера и кластера для разработки не проходят проверку сертификата. Чтобы не выполнять проверку сертификата, укажите параметр `--no-verify`. Пример.
 
 > [!WARNING]
 > При подключении к производственным кластерам Service Fabric не используйте параметр `no-verify`.
@@ -64,7 +53,7 @@ sfctl cluster select --endpoint https://testsecurecluster.com:19080 --cert ./cli
 sfctl cluster select --endpoint https://testsecurecluster.com:19080 --pem ./client.pem --no-verify
 ```
 
-Кроме того, вы можете указать пути к каталогам доверенных сертификатов ЦС или отдельных сертификатов. Чтобы указать эти пути, используйте аргумент `--ca`. Пример:
+Кроме того, вы можете указать пути к каталогам доверенных сертификатов ЦС или отдельных сертификатов. Чтобы указать эти пути, используйте аргумент `--ca`. Пример.
 
 ```azurecli
 sfctl cluster select --endpoint https://testsecurecluster.com:19080 --pem ./client.pem --ca ./trusted_ca
@@ -240,7 +229,7 @@ catch (Exception e)
 
 ### <a name="connect-to-a-secure-cluster-non-interactively-using-azure-active-directory"></a>Неинтерактивное подключение к защищенному кластеру с помощью Azure Active Directory
 
-Указанный ниже пример основан на Microsoft.IdentityModel.Clients.ActiveDirectory версии 2.19.208020213.
+Приведенный ниже пример основан на пространстве имен Microsoft.IdentityModel.Clients.ActiveDirectory версии 2.19.208020213.
 
 Дополнительные сведения о получении маркеров AAD см. в описании [Microsoft.IdentityModel.Clients.ActiveDirectory](https://msdn.microsoft.com/library/microsoft.identitymodel.clients.activedirectory.aspx).
 
@@ -371,7 +360,7 @@ static string GetAccessToken(AzureActiveDirectoryMetadata aad)
 
 Для обеспечения безопасности кластера следует использовать по крайней мере два сертификата: один для кластера и сервера, а второй для клиентского доступа.  Рекомендуется также использовать дополнительные сертификаты и сертификаты клиентского доступа.  Чтобы защитить обмен данными между клиентом и узлом кластера с помощью сертификатов, сначала необходимо получить и установить сертификат клиента. Его можно установить в личное хранилище на локальном компьютере или в личное хранилище текущего пользователя.  Отпечаток в сертификате сервера также нужен, чтобы клиент мог аутентифицировать кластер.
 
-* Действия для ОС Windows. Дважды щелкните PFX-файл и следуйте инструкциям на экране для установки сертификата в личном хранилище `Certificates - Current User\Personal\Certificates`. Кроме того, вы можете использовать команду PowerShell.
+* В Windows: дважды щелкните PFX-файл и следуйте инструкциям на экране для установки сертификата в личном хранилище, `Certificates - Current User\Personal\Certificates`. Кроме того, вы можете использовать команду PowerShell.
 
     ```powershell
     Import-PfxCertificate -Exportable -CertStoreLocation Cert:\CurrentUser\My `
@@ -387,9 +376,9 @@ static string GetAccessToken(AzureActiveDirectoryMetadata aad)
     -Password (ConvertTo-SecureString -String test -AsPlainText -Force)
     ```
 
-* Для компьютеров Mac. Дважды щелкните PFX-файл и следуйте инструкциям на экране, чтобы установить сертификат в цепочке ключей.
+* В Mac: дважды щелкните PFX-файл и следуйте инструкциям на экране, чтобы установить сертификат в цепочке ключей.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Обновление кластера Service Fabric](service-fabric-cluster-upgrade.md)
 * [Управление приложениями Service Fabric в Visual Studio](service-fabric-manage-application-in-visual-studio.md)

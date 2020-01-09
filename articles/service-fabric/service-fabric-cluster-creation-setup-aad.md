@@ -1,25 +1,14 @@
 ---
-title: Настройка Azure Active Directory для проверки подлинности клиента Service Fabric | Документация Майкрософт
+title: Настройка Azure Active Directory для проверки подлинности клиента
 description: Сведения о настройке Azure Active Directory (Azure AD) для проверки подлинности клиентов для кластеров Service Fabric.
-services: service-fabric
-documentationcenter: .net
-author: athinanthny
-manager: chackdan
-editor: chackdan
-ms.assetid: 15d0ab67-fc66-4108-8038-3584eeebabaa
-ms.service: service-fabric
-ms.devlang: dotnet
 ms.topic: conceptual
-ms.tgt_pltfrm: NA
-ms.workload: NA
 ms.date: 6/28/2019
-ms.author: atsenthi
-ms.openlocfilehash: 77814d04daca0ebb649ffa2e8ff46becddec4f0f
-ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
+ms.openlocfilehash: bbad991e955a31e3f3c53931889f630e521e1a8c
+ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72901503"
+ms.lasthandoff: 01/02/2020
+ms.locfileid: "75614695"
 ---
 # <a name="set-up-azure-active-directory-for-client-authentication"></a>Настройка Azure Active Directory для проверки подлинности клиента
 
@@ -31,6 +20,11 @@ ms.locfileid: "72901503"
 
 > [!NOTE]
 > В Linux перед созданием кластера необходимо выполнить следующие действия. В Windows вы также можете [настроить аутентификацию Azure AD для существующего кластера](https://github.com/Azure/Service-Fabric-Troubleshooting-Guides/blob/master/Security/Configure%20Azure%20Active%20Directory%20Authentication%20for%20Existing%20Cluster.md).
+
+> [!NOTE]
+> Это [известная ситуация](https://github.com/microsoft/service-fabric/issues/399) , из-за которой приложения и узлы в кластерах с поддержкой AAD на платформе Linux не могут быть просмотрены на портале Azure.
+
+
 
 ## <a name="prerequisites"></a>Технические условия
 В этой статье предполагается, что клиент уже создан. Если это не так, обратитесь к статье [Краткое руководство. Настройка среды разработки][active-directory-howto-tenant].
@@ -57,7 +51,7 @@ $Configobj = .\SetupApplications.ps1 -TenantId '0e3d2646-78b3-4711-b8be-74a381d9
 
 Чтобы узнать *TenantId*, можно выполнить команду PowerShell `Get-AzureSubscription`. После выполнения этой команды для каждой подписки отображается TenantId.
 
-Значение *ClusterName* используется в качестве префикса для приложений Azure AD, создаваемых сценарием. Точное совпадение с именем реального кластера не требуется. Оно предназначено только для упрощения сопоставления артефактов Azure AD с кластером Service Fabric, с которым они используются.
+Значение *ClusterName* используется в качестве префикса для приложений Azure AD, создаваемых скриптом. Точное совпадение с именем реального кластера не требуется. Оно предназначено только для упрощения сопоставления артефактов Azure AD с кластером Service Fabric, с которым они используются.
 
 *WebApplicationReplyUrl* является конечной точкой по умолчанию, которую Azure AD возвращает пользователям после завершения ими входа. Задайте эту конечную точку в качестве конечной точки Service Fabric Explorer кластера. Если вы создаете приложения Azure AD для представления существующего кластера, убедитесь, что этот URL-адрес соответствует конечной точке существующего кластера. Если вы создаете приложения для нового кластера, спланируйте конечную точку кластера и убедитесь, что не используете конечную точку существующего кластера. По умолчанию конечной точкой Service Fabric Explorer является:
 

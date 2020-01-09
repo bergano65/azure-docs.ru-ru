@@ -1,18 +1,14 @@
 ---
-title: Service Fabric Azure. Развертывание приложения Service Fabric Azure с управляемым удостоверением, назначенным системой | Документация Майкрософт
+title: Развертывание Service Fabric приложения с назначенным системой MI
 description: В этой статье показано, как назначить управляемое системой удостоверение для приложения Service Fabric Azure.
-services: service-fabric
-author: athinanthny
-ms.service: service-fabric
 ms.topic: article
 ms.date: 07/25/2019
-ms.author: atsenthi
-ms.openlocfilehash: cf971d71c2566d91bc5a2490d47521725c62b17d
-ms.sourcegitcommit: c2e7595a2966e84dc10afb9a22b74400c4b500ed
+ms.openlocfilehash: d5a14722363d642957904f9c7c699d3cf1d66c0f
+ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2019
-ms.locfileid: "71973426"
+ms.lasthandoff: 01/02/2020
+ms.locfileid: "75614831"
 ---
 # <a name="deploy-service-fabric-application-with-system-assigned-managed-identity-preview"></a>Развертывание Service Fabric приложения с управляемым удостоверением, назначенным системой (Предварительная версия)
 
@@ -78,7 +74,7 @@ ms.locfileid: "71973426"
 
     Этот элемент назначает службе удостоверение приложения. без этого назначения Служба не сможет получить доступ к удостоверениям приложения. В приведенном выше фрагменте удостоверение `SystemAssigned` (которое является зарезервированным ключевым словом) сопоставляется с определением службы под понятным именем `WebAdmin`.
 
-3. Обновите манифест службы, чтобы добавить элемент **ManagedIdentity** в раздел **Resources** с именем, соответствующим значению параметра `ServiceIdentityRef` из определения `IdentityBindingPolicy` в манифесте приложения:
+3. Обновите манифест службы, чтобы добавить элемент **ManagedIdentity** в раздел **Resources** с именем, совпадающим со значением параметра `ServiceIdentityRef` из определения `IdentityBindingPolicy` в манифесте приложения:
 
     **ServiceManifest. XML**
 
@@ -90,7 +86,7 @@ ms.locfileid: "71973426"
         </ManagedIdentities>
       </Resources>
     ```
-    Это эквивалентное сопоставление удостоверения со службой, как описано выше, но с точки зрения определения службы. Ссылка на удостоверение указывается по его понятному имени (`WebAdmin`), как объявлено в манифесте приложения.
+    Это эквивалентное сопоставление удостоверения со службой, как описано выше, но с точки зрения определения службы. На этот идентификатор можно ссылаться по его понятному имени (`WebAdmin`), как объявлено в манифесте приложения.
 
 ## <a name="next-steps"></a>Следующие шаги
 * Проверка [поддержки управляемого удостоверения](./concepts-managed-identity.md) в Azure Service Fabric

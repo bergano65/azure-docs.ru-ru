@@ -1,6 +1,6 @@
 ---
-title: Создание веб-приложения, которое входит в систему пользователей — платформа Microsoft Identity | Службы
-description: Узнайте, как создать веб-приложение, которое подписывает пользователей (вход)
+title: Создание веб-приложения, которое входит в систему и выполняет вход пользователей — платформа Microsoft Identity | Службы
+description: Узнайте, как создать веб-приложение, которое входит в систему и выполнит вход пользователей.
 services: active-directory
 documentationcenter: dev-center-name
 author: jmprieur
@@ -15,12 +15,12 @@ ms.date: 10/30/2019
 ms.author: jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c8d7d5737a8332416a225154709ab7d66e447764
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.openlocfilehash: 6bb32ae29c533b8ea27bf68e012040a17bb36355
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74961987"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75423488"
 ---
 # <a name="web-app-that-signs-in-users-sign-in-and-sign-out"></a>Веб-приложение, которое входит в систему пользователей: вход и выход
 
@@ -118,7 +118,7 @@ def index():
 
 В ASP.NET выход запускается из метода `SignOut()` на контроллере (например, [AccountController. CS # L16-L23](https://github.com/Azure-Samples/ms-identity-aspnet-webapp-openidconnect/blob/a2da310539aa613b77da1f9e1c17585311ab22b7/WebApp/Controllers/AccountController.cs#L16-L23)). Этот метод не является частью ASP.NET Framework (в отличие от того, что происходит в ASP.NET Core). При предложении URI перенаправления он отправляет запрос на вход OpenID Connect.
 
-```CSharp
+```csharp
 public void SignIn()
 {
     // Send an OpenID Connect sign-in request.
@@ -342,7 +342,7 @@ else
 - Очищает кэш.
 - Выполняет перенаправление на страницу, которую он хочет.
 
-```CSharp
+```csharp
 /// <summary>
 /// Send an OpenID Connect sign-out request.
 /// </summary>
@@ -396,7 +396,7 @@ URI, выполняемый после выхода, позволяет прил
 
 По промежуточного слоя ASP.NET Core OpenID Connect Connect позволяет приложению перехватывать вызовы конечной точки `logout` платформы Microsoft Identity, предоставляя событие OpenID Connect Connect с именем `OnRedirectToIdentityProviderForSignOut`. Пример подписки на это событие (очистки кэша маркеров) см. в разделе [Microsoft. Identity. Web/вебаппсервицеколлектионекстенсионс. CS # L151-L156](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/blob/faa94fd49c2da46b22d6694c4f5c5895795af26d/Microsoft.Identity.Web/WebAppServiceCollectionExtensions.cs#L151-L156).
 
-```CSharp
+```csharp
     // Handling the global sign-out
     options.Events.OnRedirectToIdentityProviderForSignOut = async context =>
     {
@@ -408,7 +408,7 @@ URI, выполняемый после выхода, позволяет прил
 
 В ASP.NET вы делегируем по промежуточного слоя, чтобы выполнить выход, очистив файл cookie сеанса:
 
-```CSharp
+```csharp
 public class AccountController : Controller
 {
  ...

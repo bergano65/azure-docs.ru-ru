@@ -1,5 +1,6 @@
 ---
-title: Использование портала для включения удаленный рабочий стол роли (облачные службы Azure)
+title: Включение удаленный рабочий стол для роли с помощью портала
+titleSuffix: Azure Cloud Services
 description: Настройка приложения в облачной службе Azure для удаленного подключения.
 services: cloud-services
 documentationcenter: ''
@@ -8,17 +9,17 @@ ms.service: cloud-services
 ms.topic: article
 ms.date: 11/28/2016
 ms.author: memccror
-ms.openlocfilehash: 50447beabefefcaa723a26ed4388354b9590c36e
-ms.sourcegitcommit: 8b44498b922f7d7d34e4de7189b3ad5a9ba1488b
+ms.openlocfilehash: d65f4b55be317234c10a0e90cfe413d9e38a6a90
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2019
-ms.locfileid: "72298446"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75360605"
 ---
 # <a name="enable-remote-desktop-connection-for-a-role-in-azure-cloud-services"></a>Включение подключения к удаленному рабочему столу для роли в облачных службах Azure
 
 > [!div class="op_single_selector"]
-> * [портал Azure](cloud-services-role-enable-remote-desktop-new-portal.md)
+> * [Портал Azure](cloud-services-role-enable-remote-desktop-new-portal.md)
 > * [PowerShell](cloud-services-role-enable-remote-desktop-powershell.md)
 > * [Visual Studio](cloud-services-role-enable-remote-desktop-visual-studio.md)
 

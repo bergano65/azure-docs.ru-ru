@@ -6,12 +6,12 @@ ms.topic: article
 ms.date: 09/18/2019
 ms.reviewer: dariac
 ms.custom: seodec18
-ms.openlocfilehash: bccf4fa0b17f261d41c0a80d9f75fe391f591bfb
-ms.sourcegitcommit: 265f1d6f3f4703daa8d0fc8a85cbd8acf0a17d30
+ms.openlocfilehash: 7bc637b5719da3c5f5e5607436aa7da0721f5a9e
+ms.sourcegitcommit: a100e3d8b0697768e15cbec11242e3f4b0e156d3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74671725"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75680936"
 ---
 # <a name="deploy-your-app-to-azure-app-service-using-ftps"></a>Развертывание приложения в службе приложений Azure с помощью FTP или FTPS
 
@@ -21,15 +21,21 @@ ms.locfileid: "74671725"
 
 ## <a name="open-ftp-dashboard"></a>Откройте панель мониторинга FTP
 
-На [портале Azure](https://portal.azure.com) откройте [страницу ресурсов](../azure-resource-manager/manage-resources-portal.md#manage-resources) приложения.
+1. В [портал Azure](https://portal.azure.com)найдите и выберите **службы приложений**.
 
-Чтобы открыть панель мониторинга FTP, выберите **Центр развертывания** > **FTP** > **Панель мониторинга**.
+    ![Выполните поиск по запросу службы приложений.](media/app-service-continuous-deployment/search-for-app-services.png)
 
-![Откройте панель мониторинга FTP](./media/app-service-deploy-ftp/open-dashboard.png)
+2. Выберите веб-приложение, которое требуется развернуть.
+
+    ![Выберите свое приложение.](media/app-service-continuous-deployment/select-your-app.png)
+
+3. Выберите **центр развертывания** > **панель мониторинга** > **FTP** .
+
+    ![Откройте панель мониторинга FTP](./media/app-service-deploy-ftp/open-dashboard.png)
 
 ## <a name="get-ftp-connection-information"></a>Получение информации о подключении по FTP
 
-На панели мониторинга FTP щелкните **Копировать**, чтобы скопировать учетные данные конечной точки и приложения FTPS.
+На панели мониторинга FTP выберите **Копировать** , чтобы скопировать конечную точку FTPS и учетные данные приложения.
 
 ![Сведения о копировании FTP](./media/app-service-deploy-ftp/ftp-dashboard.png)
 

@@ -4,15 +4,15 @@ description: Узнайте, как Log Analytics сохраняет вашу к
 ms.service: azure-monitor
 ms.subservice: logs
 ms.topic: conceptual
-author: MGoedtel
-ms.author: magoedte
+author: bwren
+ms.author: bwren
 ms.date: 03/04/2019
-ms.openlocfilehash: 3ff69928f4d6aa1692cdb1d4fd7e846b3a6b7a5c
-ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
+ms.openlocfilehash: 4ad762cc3a7388628b7385afb07b45819ef882b5
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72932536"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75363852"
 ---
 # <a name="log-analytics-data-security"></a>Защита данных Log Analytics
 В этом документе описываются функции Azure Log Analytics, компонента службы Azure Monitor, для дополнения информации о [центре управления безопасностью Azure](../../security/fundamentals/trust-center.md).  
@@ -32,7 +32,7 @@ ms.locfileid: "72932536"
 
 ## <a name="sending-data-securely-using-tls-12"></a>Безопасная отправка данных с помощью TLS 1.2 
 
-Чтобы обеспечить безопасность данных, передаваемых в передаче в Log Analytics, мы настоятельно рекомендуем настроить агент на использование протокола TLS как минимум версии 1.2. Более старые версии протоколов TLS/SSL оказались уязвимы. Хотя они все еще используются для обеспечения обратной совместимости, применять их **не рекомендуется**, так как представители отрасли стремятся как можно скорее отказаться от их поддержки. 
+Чтобы обеспечить безопасность данных, передаваемых в Log Analytics, настоятельно рекомендуем настроить для агента использование протокола TLS как минимум версии 1.2. Более старые версии протоколов TLS/SSL оказались уязвимы. Хотя они все еще используются для обеспечения обратной совместимости, применять их **не рекомендуется**, так как представители отрасли стремятся как можно скорее отказаться от их поддержки. 
 
 [Совет по стандартам безопасности PCI](https://www.pcisecuritystandards.org/) установил [крайний срок (30 июня 2018 года)](https://www.pcisecuritystandards.org/pdfs/PCI_SSC_Migrating_from_SSL_and_Early_TLS_Resource_Guide.pdf) для отказа от старых версий протоколов TLS и SSL и перехода на более безопасные протоколы. Как только Azure прекратит поддержку предыдущих версий, агенты, не поддерживающие протокол TLS версии минимум 1.2, не смогут отправлять данные в Log Analytics. 
 
@@ -67,7 +67,7 @@ ms.locfileid: "72932536"
 
 В следующей таблице показаны примеры типов данных:
 
-| **Тип данных** | **Поля** |
+| **Data type** | **Fields** |
 | --- | --- |
 | Оповещение |Alert Name, Alert Description, BaseManagedEntityId, Problem ID, IsMonitorAlert, RuleId, ResolutionState, Priority, Severity, Category, Owner, ResolvedBy, TimeRaised, TimeAdded, LastModified, LastModifiedBy, LastModifiedExceptRepeatCount, TimeResolved, TimeResolutionStateLastModified, TimeResolutionStateLastModifiedInDB, RepeatCount |
 | Настройка |CustomerID, AgentID, EntityID, ManagedTypeID, ManagedTypePropertyID, CurrentValue, ChangeDate |
@@ -117,7 +117,7 @@ ms.locfileid: "72932536"
 ## <a name="certifications-and-attestations"></a>Сертификации и аттестации
 Azure Log Analytics соответствует следующим требованиям:
 
-* [ISO/IEC 27001](https://www.iso.org/iso/home/standards/management-standards/iso27001.htm)
+* [ISO/IEC 27001](https://www.iso.org/iso/home/standards/management-standards/iso27001.htm);
 * [ISO/IEC 27018:2014](https://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=61498)
 * [ISO 22301](https://azure.microsoft.com/blog/iso22301/)
 * [Стандарт безопасности данных индустрии платежных карт (PCI DSS)](https://www.microsoft.com/en-us/TrustCenter/Compliance/PCI), разработанный Советом по стандартам безопасности индустрии платежных карт;
@@ -151,7 +151,7 @@ Azure Log Analytics соответствует следующим требова
 
 Каждый тип агента собирает данные для Log Analytics. Тип собираемых данных зависит от типов используемых решений. Сведения о сборе данных см. в статье [Добавление решений Log Analytics из коллекции решений](../../azure-monitor/insights/solutions.md). Кроме того, подробные сведения о сборе доступны для большинства решений. Решением является набор заранее определенных представлений, запросов поиска в журналах, правил сбора данных и логики обработки. Для импорта решения Log Analytics могут использовать только администраторы. После импорта решение перемещается на серверы управления Operations Manager (если они используются), а затем — на любые выбранные агенты. После этого агенты собирают данные.
 
-## <a name="2-send-data-from-agents"></a>2. Отправка данных из агентов
+## <a name="2-send-data-from-agents"></a>2. Отправка данных от агентов
 Все агенты регистрируются с помощью ключа регистрации. После этого между агентом и службой Log Analytics устанавливается безопасное подключение с помощью проверки подлинности на основе сертификата и SSL с портом 443. Для создания и обслуживания ключей в Log Analytics используется секретное хранилище. Закрытые ключи меняются каждые 90 дней, хранятся в Azure и управляются с помощью операций Azure согласно строгим рекомендациям соответствия нормативам и требованиям.
 
 В Operations Manager группа управления, зарегистрированная в рабочей области Log Analytics, устанавливает безопасное подключение HTTPS с сервером управления Operations Manager.

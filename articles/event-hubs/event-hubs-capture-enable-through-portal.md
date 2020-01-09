@@ -1,5 +1,5 @@
 ---
-title: Сбор событий потоковой передачи с помощью портала Azure — Центры событий Azure | Документация Майкрософт
+title: Концентраторы событий — запись потоковых событий с помощью портал Azure
 description: В этой статье объясняется, как на портале Azure включить сбор событий потоковой передачи из Центров событий Azure.
 services: event-hubs
 documentationcenter: ''
@@ -13,14 +13,14 @@ ms.tgt_pltfrm: na
 ms.custom: seodec18
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 02/06/2019
+ms.date: 12/20/2019
 ms.author: shvija
-ms.openlocfilehash: 18dea8e8e4cfcabec63e35dd302f6a5259721a8a
-ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
+ms.openlocfilehash: 267f7c47d101406463378ad12c295ace80aecb7f
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68320313"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75437238"
 ---
 # <a name="enable-capturing-of-events-streaming-through-azure-event-hubs"></a>Включение сбора событий, передающихся потоком из Центров событий Azure
 
@@ -68,7 +68,7 @@ ms.locfileid: "68320313"
 
 ![Настройка хранилища BLOB-объектов Azure][2]
 
-### <a name="azure-data-lake-store"></a>Хранилище озера данных Azure
+### <a name="azure-data-lake-store"></a>Azure Data Lake Store
 
 ![Настройка Azure Data Lake Storage][4]
 
@@ -77,7 +77,7 @@ ms.locfileid: "68320313"
 [3]: ./media/event-hubs-capture-enable-through-portal/event-hubs-capture3.png
 [4]: ./media/event-hubs-capture-enable-through-portal/event-hubs-capture4.png
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о записи концентраторов событий см. в [обзоре записи концентраторов событий][capture-overview].
 - Функцию "Сбор" в Центрах событий можно также настроить с помощью шаблонов Azure Resource Manager. См. дополнительные сведения [о включении записи с помощью шаблона Azure Resource Manager](event-hubs-resource-manager-namespace-event-hub-enable-capture.md).

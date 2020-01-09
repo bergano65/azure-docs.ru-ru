@@ -1,5 +1,6 @@
 ---
-title: Расширенная защита от угроз для службы хранилища Azure
+title: Настройка расширенной защиты от угроз
+titleSuffix: Azure Storage
 description: Настройте расширенную защиту от угроз для службы хранилища Azure, чтобы определить аномалии в действиях учетной записи и получить уведомления о потенциально опасных попытках доступа к вашей учетной записи.
 services: storage
 author: tamram
@@ -8,14 +9,14 @@ ms.topic: conceptual
 ms.date: 09/16/2019
 ms.author: tamram
 ms.reviewer: cbrooks
-ms.openlocfilehash: b9413807cda096adf1056c07e026373ea19359b9
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 8efbf2107104f31bcfc5e4e5669dbed1835a034b
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73495956"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75457410"
 ---
-# <a name="advanced-threat-protection-for-azure-storage"></a>Расширенная защита от угроз для службы хранилища Azure
+# <a name="configure-advanced-threat-protection-for-azure-storage"></a>Настройка расширенной защиты от угроз для службы хранилища Azure
 
 Расширенная защита от угроз для службы хранилища Azure предоставляет дополнительный уровень логики безопасности, который обнаруживает необычные и потенциально опасные попытки доступа или использования учетных записей хранения. Этот уровень защиты позволяет устранять угрозы без эксперта по безопасности или управления системами мониторинга безопасности.
 
@@ -48,13 +49,13 @@ ms.locfileid: "73495956"
 1. В главном меню щелкните **цены & параметры**.
 1. Щелкните подписку, для которой необходимо включить или отключить защиту от угроз для учетных записей хранения.
 
-    ![Выберите подписку.](./media/storage-advanced-threat-protection/storage-advanced-threat-protection-subscription.png)
+    ![Выбор подписки](./media/storage-advanced-threat-protection/storage-advanced-threat-protection-subscription.png)
 
 1. Щелкните **Ценовая категория**.
 1. В разделе **Выбор ценовой категории по типу ресурса** в строке **учетные записи хранения** щелкните **включено** или **отключено**.
 
     ![Включение ATP в центре безопасности](./media/storage-advanced-threat-protection/storage-advanced-threat-protection-pricing2.png)
-1. Щелкните **Сохранить**.
+1. Выберите команду **Сохранить**.
 
 ### <a name="templatetabtemplate"></a>[Шаблон](#tab/template)
 
@@ -78,7 +79,7 @@ ms.locfileid: "73495956"
 
     ![Страница "определения политик"](./media/storage-advanced-threat-protection/storage-atp-policy1.png)
 
-### <a name="rest-apitabrest-api"></a>[ИНТЕРФЕЙС REST API](#tab/rest-api)
+### <a name="rest-apitabrest-api"></a>[REST API](#tab/rest-api)
 
 Используйте команды API-интерфейса для создания, обновления или получения параметра Advanced Threat Protection для конкретной учетной записи хранения.
 

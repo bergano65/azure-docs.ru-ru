@@ -1,17 +1,14 @@
 ---
 title: Поддерживаемые типы ресурсов в службе работоспособности ресурсов Azure | Документация Майкрософт
 description: Поддерживаемые типы ресурсов в службе работоспособности ресурсов Azure
-author: stephbaron
-ms.author: stbaron
 ms.topic: conceptual
-ms.service: service-health
 ms.date: 01/29/2019
-ms.openlocfilehash: 1692e8acda88a51173eb0eabcd90c377b431a3c3
-ms.sourcegitcommit: 0f54f1b067f588d50f787fbfac50854a3a64fff7
+ms.openlocfilehash: f25dc32774cb040a2b9873c6811ff184373c5104
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68955032"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75465267"
 ---
 # <a name="resource-types-and-health-checks-in-azure-resource-health"></a>Типы ресурсов и проверки работоспособности в службе работоспособности ресурсов Azure
 Ниже приведен полный список проверок, выполняемых в системе работоспособности ресурсов для разных типов ресурсов.

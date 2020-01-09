@@ -6,13 +6,13 @@ ms.subservice: application-insights
 ms.topic: conceptual
 author: mrbullwinkle
 ms.author: mbullwin
-ms.date: 12/04/2019
-ms.openlocfilehash: 86a94cfdbd2c1755907bc13aa698fba92f5ce649
-ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
+ms.date: 12/11/2019
+ms.openlocfilehash: 62a66f180fd6e89329fe17a96115ecc4ca914107
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74850080"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75407230"
 ---
 # <a name="monitor-azure-app-service-performance"></a>Мониторинг производительности Службы приложений Azure
 
@@ -77,9 +77,9 @@ ms.locfileid: "74850080"
 
 # <a name="net-coretabnetcore"></a>[.NET Core](#tab/netcore)
 
-Поддерживаются следующие версии .NET Core: ASP.NET Core 2,0, ASP.NET Core 2,1, ASP.NET Core 2,2
+Поддерживаются следующие версии .NET Core: ASP.NET Core 2,0, ASP.NET Core 2,1, ASP.NET Core 2,2, ASP.NET Core 3,0
 
-Для мониторинга на основе платформы .NET Core, автономного развертывания и ASP.NET Core 3,0 в настоящее время **не поддерживаются** мониторинг с помощью агента или расширения. ([Инструментирование вручную](https://docs.microsoft.com/azure/azure-monitor/app/asp-net-core) с помощью кода будет работать во всех предыдущих сценариях.)
+Для мониторинга на основе .NET Core, автономного развертывания и приложений на основе Linux в настоящее время **не поддерживаются** мониторинг с помощью агентов и расширений. ([Инструментирование вручную](https://docs.microsoft.com/azure/azure-monitor/app/asp-net-core) с помощью кода будет работать во всех предыдущих сценариях.)
 
 1. На панели управления Azure **выберите Application Insights** для своей службы приложений.
 
@@ -92,7 +92,7 @@ ms.locfileid: "74850080"
 
      ![Инструментирование веб-приложения](./media/azure-web-apps/create-resource-01.png)
 
-2. Указав, какой ресурс следует использовать, можно выбрать способ, с помощью которого Application Insights собирает данные для каждой платформы приложения. .NET Core предлагает **рекомендуемую коллекцию** или **Отключить** для .net Core 2,0, 2,1 и 2,2.
+2. Указав, какой ресурс следует использовать, можно выбрать способ, с помощью которого Application Insights собирает данные для каждой платформы приложения. .NET Core предлагает **рекомендуемую коллекцию** или **Отключить** для .net Core 2,0, 2,1, 2,2 и 3,0.
 
     ![Выбор параметров для каждой платформы](./media/azure-web-apps/choose-options-new-net-core.png)
 
@@ -119,7 +119,7 @@ ms.locfileid: "74850080"
 * Выберите **параметры** >** **приложения параметры** **
    * В разделе Параметры приложения добавьте новое имя и **значение** **параметра приложения** :
 
-     Имя: `APPINSIGHTS_JAVASCRIPT_ENABLED`.
+     Имя: `APPINSIGHTS_JAVASCRIPT_ENABLED`
 
      Значение: `true`
 
@@ -168,10 +168,10 @@ ms.locfileid: "74850080"
 
 ### <a name="application-settings-definitions"></a>Определения параметров приложения
 
-|Имя параметра приложения |  Определение | Value |
+|Имя параметра приложения |  Определение | Значение |
 |-----------------|:------------|-------------:|
 |ApplicationInsightsAgent_EXTENSION_VERSION | Главное расширение, которое управляет мониторингом среды выполнения. | `~2` |
-|XDT_MicrosoftApplicationInsights_Mode |  В режиме по умолчанию для обеспечения оптимальной производительности включены только функции, обеспечивающие их работу. | При подключении к `default` или `recommended` точка подключения службы использует службу Microsoft Intune. |
+|XDT_MicrosoftApplicationInsights_Mode |  В режиме по умолчанию для обеспечения оптимальной производительности включены только функции, обеспечивающие их работу. | `default` или `recommended`. |
 |InstrumentationEngine_EXTENSION_VERSION | Определяет, будет ли включен модуль двоичной перезаписи `InstrumentationEngine`. Этот параметр оказывает влияние на производительность и влияет на время холодного запуска и запуска. | `~1` |
 |XDT_MicrosoftApplicationInsights_BaseExtensions | Определяет, будет ли записываться текст таблицы SQL & Azure вместе с вызовами зависимостей. Предупреждение о производительности. для этого параметра требуется `InstrumentationEngine`. | `~1` |
 
@@ -377,7 +377,7 @@ $app = Set-AzWebApp -AppSettings $newAppSettings -ResourceGroupName $app.Resourc
 
 В таблице ниже приведено более подробное описание этих значений, их основных причин и Рекомендуемые исправления.
 
-|Значение проблемы|Пояснение|Исправление
+|Значение проблемы|Объяснение|Fix
 |---- |----|---|
 | `AppAlreadyInstrumented:true` | Это значение указывает, что расширение обнаружило, что некоторые аспекты пакета SDK уже имеются в приложении и будут отключаться. Это может быть вызвано ссылками на `System.Diagnostics.DiagnosticSource`, `Microsoft.AspNet.TelemetryCorrelation`или `Microsoft.ApplicationInsights`  | Удалите ссылки. Некоторые из этих ссылок добавляются по умолчанию из определенных шаблонов Visual Studio, а более старые версии Visual Studio могут добавлять ссылки на `Microsoft.ApplicationInsights`.
 |`AppAlreadyInstrumented:true` | Если приложение предназначено для .NET Core 2,1 или 2,2, а ссылается на [Microsoft. AspNetCore. ALL](https://www.nuget.org/packages/Microsoft.AspNetCore.All) meta-Package, то оно переносится в Application Insights, а расширение будет отключаться. | Клиентам в .NET Core 2.1, 2.2 [рекомендуется](https://github.com/aspnet/Announcements/issues/287) использовать вместо него мета-пакет Microsoft. AspNetCore. app.|

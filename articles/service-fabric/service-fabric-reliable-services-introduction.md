@@ -1,27 +1,18 @@
 ---
-title: Общие сведения о модели программирования Service Fabric Reliable Services | Документация Майкрософт
+title: Общие сведения о модели программирования надежных служб
 description: Сведения о модели программирования надежных служб Service Fabric, позволяющие приступить к написанию собственных служб.
-services: Service-Fabric
-documentationcenter: .net
 author: masnider
-manager: chackdan
-editor: vturecek; mani-ramaswamy
-ms.assetid: 0c88a533-73f8-4ae1-a939-67d17456ac06
-ms.service: service-fabric
-ms.devlang: dotnet
 ms.topic: conceptual
-ms.tgt_pltfrm: NA
-ms.workload: NA
 ms.date: 3/9/2018
 ms.author: masnider
-ms.openlocfilehash: 1789c7489e58df09dccfde3e7ab106ef54b5c1ae
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 88c8e4411c0bec23790b4f4c52fc4a3d1570edc6
+ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60727018"
+ms.lasthandoff: 01/02/2020
+ms.locfileid: "75614253"
 ---
-# <a name="reliable-services-overview"></a>Обзор надежных служб
+# <a name="reliable-services-overview"></a>Обзор Reliable Services
 Платформа Azure Service Fabric упрощает написание надежных служб с отслеживанием и без отслеживания состояния и управление такими службами. В этой статье рассматриваются следующие вопросы.
 
 * Модель программирования надежных служб для служб с отслеживанием состояния и без него.

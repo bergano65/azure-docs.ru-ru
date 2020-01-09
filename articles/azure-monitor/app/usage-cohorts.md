@@ -8,12 +8,12 @@ author: NumberByColors
 ms.author: daviste
 ms.date: 04/10/2018
 ms.reviewer: mbullwin
-ms.openlocfilehash: d6762ac9253c838f715588451441aa9aa467f673
-ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
+ms.openlocfilehash: 27b57477712c61fc97ae31ac353647896cca18af
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72899499"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75406323"
 ---
 # <a name="application-insights-cohorts"></a>Когорты Application Insights
 
@@ -131,7 +131,7 @@ _Я определил когорту пользователей из опред
 * Версия с когортой покажет все события пользователей, которые отправили одно или больше событий из Соединенного Королевства в текущем временном диапазоне. Если выполнить разделение по стране или региону, скорее всего, отобразится множество стран и регионов.
 * В версии с фильтрами будут показаны только события из Соединенного Королевства. Но если выполнить разделение по стране или региону, отобразится только Соединенное Королевство.
 
-## <a name="learn-more"></a>Дополнительные сведения
+## <a name="learn-more"></a>Подробнее…
 
 * [Язык запросов Analytics](https://go.microsoft.com/fwlink/?linkid=856587)
 * [Анализ пользователей, сеансов и событий в Application Insights](usage-segmentation.md)

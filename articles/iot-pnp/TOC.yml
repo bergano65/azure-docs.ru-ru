@@ -71,8 +71,12 @@
       href: howto-develop-solution.md
 - name: Справочник
   items:
-    - name: REST
-      href: 'https://docs.microsoft.com/rest/api/iothub/digitaltwinmodel/createorupdatemodel'
+    - name: Digital Twins
+      href: 'https://docs.microsoft.com/rest/api/iothub/digitaltwinmodel/digitaltwin'
+    - name: Служба Digital Twins
+      href: 'https://docs.microsoft.com/rest/api/iothub/digitaltwinmodel/service'
+    - name: Репозиторий моделей Digital Twins
+      href: 'https://docs.microsoft.com/rest/api/iothub/digitaltwinmodelrepositoryservice/createorupdatemodel'
     - name: Создание маркера безопасности REST
       href: howto-generate-sas-token.md
 - name: Сопутствующие материалы

@@ -9,12 +9,12 @@ ms.custom: vs-azure
 ms.topic: conceptual
 ms.date: 08/07/2019
 ms.author: ghogen
-ms.openlocfilehash: 1df0ff3b6fea335dde5a3200f824adf14f924d9c
-ms.sourcegitcommit: 12d902e78d6617f7e78c062bd9d47564b5ff2208
+ms.openlocfilehash: 1c12cf4a7bd097c6d33d032065734b477920644b
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2019
-ms.locfileid: "74452363"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75456993"
 ---
 # <a name="add-key-vault-to-your-web-application-by-using-visual-studio-connected-services"></a>Добавление хранилища ключей в веб-приложение с помощью функции "Подключенные службы" в Visual Studio
 
@@ -22,7 +22,7 @@ ms.locfileid: "74452363"
 
 Подробные сведения об изменениях, вносимых функцией "Подключенные службы" в проект для поддержки Key Vault, можно получить из раздела [Что произошло с моим проектом ASP.NET при добавлении подключенной службы Key Vault в Visual Studio?](#how-your-aspnet-framework-project-is-modified) или [Что произошло с моим проектом ASP.NET Core при добавлении подключенной службы Key Vault в Visual Studio?](#how-your-aspnet-core-project-is-modified)
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Технические условия
 
 - **Подписка Azure**. Если у вас нет подписки, зарегистрируйтесь, чтобы получить [бесплатную учетную запись](https://azure.microsoft.com/pricing/free-trial/).
 - **Visual studio 2019 версии 16,3** или более поздней или **Visual studio 2017 версии 15,7** с установленной рабочей нагрузкой **веб-разработки** . [Скачайте это приложение](https://aka.ms/vsdownload?utm_source=mscom&utm_campaign=msdocs).
@@ -112,7 +112,7 @@ ms.locfileid: "74452363"
                 {
                     webBuilder.UseStartup<Startup>();
                 });
-        private static string GetKeyVaultEndpoint() => "https://WebApplication4-3-kv.vault.azure.net";
+        private static string GetKeyVaultEndpoint() => "https://<YourKeyVaultName>.vault.azure.net";
     ```
 
 1. Затем откройте один из файлов подкачки, например *index.cshtml.CS* , и напишите следующий код:
@@ -137,7 +137,7 @@ ms.locfileid: "74452363"
        }
        ```
 
-   1. Обновите метод `OnGet`. Обновите значение заполнителя, показанное здесь, на имя секрета, созданного в приведенных выше командах.
+   1. Внесите изменения в метод `OnGet`. Обновите значение заполнителя, показанное здесь, на имя секрета, созданного в приведенных выше командах.
 
        ```csharp
        public void OnGet()
@@ -182,7 +182,7 @@ ms.locfileid: "74452363"
 2. Выберите **Удалить группу ресурсов**.
 3. В поле **введите имя группы ресурсов:** введите имя группы ресурсов и выберите **Удалить**.
 
-## <a name="troubleshooting"></a>Устранение неполадок
+## <a name="troubleshooting"></a>Устранение неисправностей
 
 Если Key Vault работает на учетная запись Майкрософт, отличном от того, который вы выполнили в Visual Studio (например, Key Vault работает в вашей рабочей учетной записи, но Visual Studio использует вашу личную учетную запись), вы получаете сообщение об ошибке в файле Program.cs , Visual Studio не сможет получить доступ к Key Vault. Чтобы устранить эту проблему:
 
@@ -205,7 +205,7 @@ ms.locfileid: "74452363"
 
 Влияет на ссылки .NET на файл проекта и на ссылки на пакет NuGet.
 
-| введите | Справочные материалы |
+| Тип | Справочные материалы |
 | --- | --- |
 | NuGet | Microsoft.AspNetCore.AzureKeyVault.HostingStartup |
 
@@ -241,7 +241,7 @@ ms.locfileid: "74452363"
 
 Влияет на ссылки и `packages.config` в файле проекта .NET (ссылки NuGet).
 
-| введите | Справочные материалы |
+| Тип | Справочные материалы |
 | --- | --- |
 | .NET; NuGet | Microsoft.Azure.KeyVault |
 | .NET; NuGet | Microsoft.Azure.KeyVault.WebKey |
@@ -285,7 +285,7 @@ ms.locfileid: "74452363"
 - Создана группа ресурсов или использована существующая.
 - В указанной группе ресурсов создано хранилище ключей.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если вы пропустили этот учебник, ваши разрешения Key Vault настроены для работы с вашей собственной подпиской Azure, но это может быть нежелательно для рабочего сценария. Вы можете создать управляемое удостоверение для управления доступом к Key Vault для вашего приложения. См. раздел [предоставление Key Vault проверки подлинности с помощью управляемого удостоверения](/azure/key-vault/managed-identity).
 

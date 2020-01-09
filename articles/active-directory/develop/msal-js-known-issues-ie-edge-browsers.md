@@ -1,5 +1,5 @@
 ---
-title: Проблемы MSAL. js в Internet Explorer & Microsoft ребр | Службы
+title: Проблемы в Internet Explorer & Microsoft погранично (MSAL. js) | Службы
 titleSuffix: Microsoft identity platform
 description: Сведения об известных проблемах при использовании библиотеки проверки подлинности Майкрософт для JavaScript (MSAL. js) в Internet Explorer и браузерах Microsoft ребр.
 services: active-directory
@@ -14,19 +14,19 @@ ms.author: nacanuma
 ms.reviewer: saeeda
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fe9f8ff420698d5afe617973abc7874256efe260
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: a3a4e847bc0d297f3aa41551fbf56242ae1a566f
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74916389"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75424332"
 ---
-# <a name="known-issues-on-internet-explorer-and-microsoft-edge-browsers-with-msaljs"></a>Известные проблемы в Internet Explorer и обозревателях Microsoft ребр с MSAL. js
+# <a name="known-issues-on-internet-explorer-and-microsoft-edge-browsers-msaljs"></a>Известные проблемы в Internet Explorer и браузерах Microsoft ребр (MSAL. js)
 
 ## <a name="issues-due-to-security-zones"></a>Проблемы из-за зон безопасности
 У нас возникло несколько отчетов о проблемах с проверкой подлинности в IE и Microsoft погранично (так как обновление *обозревателя Microsoft ребра до 40.15063.0.0*). Мы отслеживаем их и осведомлены о команде Microsoft ребра. Хотя Microsoft ребр работает с решением проблемы, здесь приводится описание часто встречающихся проблем и возможных способов их реализации.
 
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
 Причина большинства этих проблем выглядит следующим образом. Хранилище сеанса и локальное хранилище разделены зонами безопасности в браузере Microsoft ребра. В этой конкретной версии Microsoft ребро, когда приложение перенаправляется между зонами, хранилище сеанса и локальное хранилище очищаются. В частности, хранилище сеанса удаляется при обычной навигации в браузере, а сеанс и локальное хранилище очищаются в режиме InPrivate браузера. MSAL. js сохраняет определенное состояние в хранилище сеанса и зависит от проверки этого состояния во время потоков проверки подлинности. При очистке хранилища сеанса это состояние теряется и поэтому приводит к нарушению работы.
 
 ### <a name="issues"></a>Проблемы

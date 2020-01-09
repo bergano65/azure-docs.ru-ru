@@ -1,27 +1,23 @@
 ---
-title: Настройка CLI для сетки Azure Service Fabric | Документация Майкрософт
+title: Настройка интерфейса командной строки Azure Service Fabric для сетки
 description: Интерфейс командной строки (CLI) вложенной службы "Сетка Service Fabric" требуется для развертывания и администрирования ресурсов локально в этой службе. Вот как его настроить.
-services: service-fabric-mesh
-keywords: ''
 author: dkkapur
 ms.author: dekapur
 ms.date: 11/28/2018
 ms.topic: conceptual
-ms.service: service-fabric-mesh
-manager: timlt
-ms.openlocfilehash: 5c9733a5fc5aec337a326fe39e78c3e5c0b8ca4f
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: 0fb65ceeabca9331130083f8ec5b3fe8acce13b8
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73686303"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75461886"
 ---
 # <a name="set-up-service-fabric-mesh-cli"></a>Настройка CLI для Сетки Service Fabric
 Интерфейс командной строки (CLI) вложенной службы "Сетка Service Fabric" требуется для развертывания и администрирования ресурсов локально в этой службе. Вот как его настроить.
 
 Существует три вида интерфейса командной строки, который может использоваться. Они перечислены в таблице, приведенной ниже.
 
-| Модуль CLI | Целевое окружение |  Description (Описание) | 
+| Модуль CLI | Целевое окружение |  Description | 
 |---|---|---|
 | az mesh | Служба "Сетка Azure Service Fabric" | Основной интерфейс командной строки для развертывания приложений и управления ресурсами в среде сетки Azure Service Fabric. 
 | sfctl | Локальные кластеры | Служба Service Fabric CLI позволяет развертывать и тестировать ресурсы Service Fabric для локальных кластеров.  
@@ -56,7 +52,7 @@ ms.locfileid: "73686303"
 
 * [Java](https://www.azul.com/downloads/zulu/)
 * [Maven](https://maven.apache.org/download.cgi)
-* [Git.](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+* [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 * Интерфейс командной строки Сетка Azure (az mesh) для Сетки Azure Service Fabric 
 * SFCTL (sfctl) для локальных кластеров 
 

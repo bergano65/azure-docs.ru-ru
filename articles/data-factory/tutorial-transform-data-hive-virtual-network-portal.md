@@ -10,12 +10,12 @@ manager: anandsub
 ms.topic: tutorial
 ms.custom: seo-dt-2019
 ms.date: 01/04/2018
-ms.openlocfilehash: d52aed98549478898cb3bd263d52eeae2a69ccfd
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: dd0de5415dc001f107221add7ea223450290b3f4
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74925551"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75439264"
 ---
 # <a name="transform-data-in-azure-virtual-network-using-hive-activity-in-azure-data-factory"></a>Преобразование данных в виртуальной сети Azure с помощью действия Hive в фабрике данных Azure
 
@@ -32,7 +32,7 @@ ms.locfileid: "74925551"
 
 Если у вас еще нет подписки Azure, создайте [бесплатную](https://azure.microsoft.com/free/) учетную запись Azure, прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
@@ -88,7 +88,7 @@ ms.locfileid: "74925551"
    - Выберите **Использовать существующую**и укажите существующую группу ресурсов в раскрывающемся списке. 
    - Выберите **Создать новую**и укажите имя группы ресурсов.   
          
-     Сведения о группах ресурсов см. в статье, где описывается [использование групп ресурсов для управления ресурсами Azure](../azure-resource-manager/resource-group-overview.md).  
+     Сведения о группах ресурсов см. в статье, где описывается [использование групп ресурсов для управления ресурсами Azure](../azure-resource-manager/management/overview.md).  
 4. Укажите **V2** при выборе **версии**.
 5. Укажите **расположение** фабрики данных. В списке отображаются только те расположения, в которых можно создать фабрики данных.
 6. Кроме того, установите флажок **Закрепить на панели мониторинга**.     
@@ -100,7 +100,7 @@ ms.locfileid: "74925551"
    
     ![Домашняя страница фабрики данных](./media/tutorial-transform-data-using-hive-in-vnet-portal/data-factory-home-page.png)
 10. Щелкните **Создание и мониторинг**, чтобы открыть на отдельной вкладке пользовательский интерфейс фабрики данных.
-11. На странице **начала работы** перейдите на вкладку **Изменить** на панели слева, как показано на следующем рисунке: 
+11. На странице **начала работы** откройте вкладку **Изменить** на панели слева, как показано на следующем рисунке: 
 
     ![Вкладка редактирования](./media/tutorial-transform-data-using-hive-in-vnet-portal/get-started-page.png)
 
@@ -200,8 +200,8 @@ ms.locfileid: "74925551"
 
 Обратите внимание на следующие моменты.
 
-- **scriptPath** указывает путь к скрипту Hive в учетной записи хранения Azure, используемой для MyStorageLinkedService. Путь следует вводить с учетом регистра.
-- **Выходные данные** выступают в качестве аргумента, используемого в скрипте Hive. Используйте формат `wasbs://<Container>@<StorageAccount>.blob.core.windows.net/outputfolder/`, который должен указывать на существующую папку в службе хранилища Azure. Путь следует вводить с учетом регистра. 
+- **scriptPath** указывает путь к скрипту Hive в учетной записи хранения Azure, используемой для MyStorageLinkedService. Путь учитывает регистр.
+- **Выходные данные** выступают в качестве аргумента, используемого в скрипте Hive. Используйте формат `wasbs://<Container>@<StorageAccount>.blob.core.windows.net/outputfolder/`, который должен указывать на существующую папку в службе хранилища Azure. Путь учитывает регистр. 
 
 1. В пользовательском интерфейсе фабрики данных щелкните знак **+** (плюс) на панели слева и выберите вариант **Конвейер**. 
 
@@ -226,7 +226,7 @@ ms.locfileid: "74925551"
         ![Параметры скрипта](./media/tutorial-transform-data-using-hive-in-vnet-portal/confirm-hive-script-settings.png)
     5. На вкладке **Script** (Скрипт) разверните раздел **Advanced** (Дополнительно). 
     6. Щелкните действие **Auto-fill from script** (Заполнить автоматически из скрипта) в области **Parameters** (Параметры). 
-    7. Введите значение для параметра **Output** (Вывод) в следующем формате: `wasbs://<Blob Container>@<StorageAccount>.blob.core.windows.net/outputfolder/`. Например, `wasbs://adftutorial@mystorageaccount.blob.core.windows.net/outputfolder/`.
+    7. Введите значение для параметра **Output** (Вывод) в следующем формате: `wasbs://<Blob Container>@<StorageAccount>.blob.core.windows.net/outputfolder/`. Например: `wasbs://adftutorial@mystorageaccount.blob.core.windows.net/outputfolder/`.
  
         ![Аргументы сценария](./media/tutorial-transform-data-using-hive-in-vnet-portal/script-arguments.png)
 1. Чтобы опубликовать артефакты в фабрике данных, щелкните **Опубликовать**.
@@ -258,7 +258,7 @@ ms.locfileid: "74925551"
 
     ![Выходной файл](./media/tutorial-transform-data-using-hive-in-vnet-portal/output-file.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 В этом руководстве вы выполнили следующие шаги: 
 
 > [!div class="checklist"]

@@ -16,12 +16,12 @@ ms.date: 07/16/2019
 ms.author: jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 219724186e3fa69fec35e89435af495b662c871d
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: 2082265b96388b4fbf860118efc3eefd4c5c67af
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74919755"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75423591"
 ---
 # <a name="web-api-that-calls-web-apis---code-configuration"></a>Веб-API, вызывающий веб-API — конфигурация кода
 
@@ -33,7 +33,7 @@ ms.locfileid: "74919755"
 
 На основе конфигурации кода для любых защищенных веб-API необходимо подписываться на проверку токена носителя, полученного при вызове API:
 
-```CSharp
+```csharp
 /// <summary>
 /// Protects the web API with Microsoft Identity Platform (a.k.k AAD v2.0)
 /// This supposes that the configuration files have a section named "AzureAD"
@@ -77,9 +77,9 @@ public static IServiceCollection AddProtectedApiCallsWebApis(this IServiceCollec
 
 Этот поток доступен только в конфиденциальном потоке клиента, поэтому защищенный веб-API предоставляет учетные данные клиента (секрет клиента или сертификат) [ConfidentialClientApplicationBuilder](https://docs.microsoft.com/dotnet/api/microsoft.identity.client.confidentialclientapplicationbuilder) через методы `WithClientSecret` или `WithCertificate`.
 
-![image](https://user-images.githubusercontent.com/13203188/55967244-3d8e1d00-5c7a-11e9-8285-a54b05597ec9.png)
+![изображение](https://user-images.githubusercontent.com/13203188/55967244-3d8e1d00-5c7a-11e9-8285-a54b05597ec9.png)
 
-```CSharp
+```csharp
 IConfidentialClientApplication app;
 
 #if !VariationWithCertificateCredentials
@@ -104,11 +104,11 @@ app = ConfidentialClientApplicationBuilder.Create(config.ClientId)
 
 `UserAssertion` создается на основе токена носителя, полученного веб-API от собственных клиентов. Существует [два конструктора](https://docs.microsoft.com/dotnet/api/microsoft.identity.client.clientcredential.-ctor?view=azure-dotnet), один из которых принимает маркер носителя JWT, и один, принимающий любой тип пользовательского утверждения (другой тип маркера безопасности, который затем указывается в дополнительном параметре с именем `assertionType`).
 
-![image](https://user-images.githubusercontent.com/13203188/37082180-afc4b708-21e3-11e8-8af8-a6dcbd2dfba8.png)
+![изображение](https://user-images.githubusercontent.com/13203188/37082180-afc4b708-21e3-11e8-8af8-a6dcbd2dfba8.png)
 
 На практике поток OBO часто используется для получения маркера для нисходящих API и сохранения его в кэше пользовательских маркеров MSAL.NET, чтобы другие части веб-API могли впоследствии вызывать [переопределения](https://docs.microsoft.com/dotnet/api/microsoft.identity.client.clientapplicationbase.acquiretokensilent?view=azure-dotnet) ``AcquireTokenOnSilent`` для вызова нижестоящих API. Этот вызов оказывает воздействие обновления токенов при необходимости.
 
-```CSharp
+```csharp
 private void AddAccountToCacheFromJwt(IEnumerable<string> scopes, JwtSecurityToken jwtToken, ClaimsPrincipal principal, HttpContext httpContext)
 {
     try

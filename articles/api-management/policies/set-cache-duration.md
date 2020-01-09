@@ -1,5 +1,6 @@
 ---
-title: 'Пример политики управления Azure API: установка длительности для кэширования ответа | Документация Майкрософт'
+title: Пример политики управления API. Настройка длительности кэша ответов
+titleSuffix: Azure API Management
 description: В примере политики управления API Azure показано, как задать длительность кэширования ответа при помощи значения maxAge в заголовке Cache-Control, который отправляется с сервера.
 services: api-management
 documentationcenter: ''
@@ -12,16 +13,16 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 10/13/2017
 ms.author: apimpm
-ms.openlocfilehash: 67d2f334e2088d96543fabd3b99cac71d95630eb
-ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
+ms.openlocfilehash: 3101c5695272e8fa6b577ad313897cbc1fa29629
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70071975"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75442398"
 ---
 # <a name="set-response-cache-duration"></a>Установка длительности для кэширования ответа
 
-В статье приведен пример политики управления API Azure, в котором показано, как задать длительность кэширования ответа при помощи значения maxAge в заголовке Cache-Control, который отправляется с сервера. См. дополнительные сведения о [создании и изменении кода политики](../set-edit-policies.md). Также для ознакомления доступны другие [примеры политик](../policy-samples.md).
+В статье приведен пример политики управления API Azure, в котором показано, как задать длительность кэширования ответа при помощи значения maxAge в заголовке Cache-Control, который отправляется с сервера. См. дополнительные сведения о [создании и изменении кода политик](../set-edit-policies.md). Также для ознакомления доступны другие [примеры политик](../policy-samples.md).
 
 ## <a name="policy"></a>Политика
 
@@ -29,7 +30,7 @@ ms.locfileid: "70071975"
 
 [!code-xml[Main](../../../api-management-policy-samples/examples/Set cache duration using response cache control header.policy.xml)]
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Подробнее о политиках службы управления API:
 

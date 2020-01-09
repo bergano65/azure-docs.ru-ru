@@ -1,5 +1,6 @@
 ---
-title: Авторизация учетных записей разработчиков с помощью Azure Active Directory B2C в службе управления API Azure | Документация Майкрософт
+title: Авторизация учетных записей разработчиков с помощью Azure Active Directory B2C
+titleSuffix: Azure API Management
 description: Сведения об авторизации пользователей с помощью Azure Active Directory B2C в службе управления API.
 services: api-management
 documentationcenter: API Management
@@ -12,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 11/04/2019
 ms.author: apimpm
-ms.openlocfilehash: d6e7c04cbd5a7f1ed509b27cf87ac3f692c28d9f
-ms.sourcegitcommit: 12d902e78d6617f7e78c062bd9d47564b5ff2208
+ms.openlocfilehash: 11dae2b6d771138503643c402ba4525df1f04a88
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2019
-ms.locfileid: "74454468"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75430751"
 ---
 # <a name="how-to-authorize-developer-accounts-by-using-azure-active-directory-b2c-in-azure-api-management"></a>Как авторизовать учетные записи разработчиков с помощью Azure Active Directory B2C в службе управления API Azure
 
@@ -113,13 +114,13 @@ Azure Active Directory B2C — это облачное решение, позв
    > [!NOTE]
    > Если Azure Active Directory B2C является единственным активным параметром на вкладке **Удостоверения** на портале издателя, вы будете сразу перенаправлены к политике регистрации.
 
-   ![Developer portal][api-management-howto-aad-b2c-dev-portal-b2c-options]
+   ![Портал разработчика][api-management-howto-aad-b2c-dev-portal-b2c-options]
 
    После завершения регистрации вы будете перенаправлены обратно на портал разработчика. Теперь вы вошли на портал разработчика вашего экземпляра службы управления API.
 
     ![Регистрация завершена][api-management-registration-complete]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 *  [Azure Active Directory B2C: регистрация и вход пользователей в приложения]
 *  [Azure Active Directory B2C: расширяемая инфраструктура политик]

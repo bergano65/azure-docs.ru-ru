@@ -7,12 +7,12 @@ ms.date: 11/14/2019
 ms.topic: conceptual
 ms.service: iot-dps
 services: iot-dps
-ms.openlocfilehash: b6b7d4614d3c63fe93e213fb830b85d0b7f9c474
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.openlocfilehash: 87ffca1957d4ec449753f1966ed05cf3948f5ca2
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74974876"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75453942"
 ---
 # <a name="how-to-use-custom-allocation-policies"></a>Как использовать пользовательские политики выделения
 
@@ -41,7 +41,10 @@ ms.locfileid: "74974876"
 
 ## <a name="prerequisites"></a>Технические условия
 
-* [Visual Studio 2015](https://visualstudio.microsoft.com/vs/) или более поздней версии с включенной рабочей нагрузкой [Разработка классических приложений на C++](https://www.visualstudio.com/vs/support/selecting-workloads-visual-studio-2017/).
+Следующие предварительные требования предназначены для среды разработки Windows. Для Linux или macOS см. соответствующий раздел статьи [Подготовка среды разработки](https://github.com/Azure/azure-iot-sdk-c/blob/master/doc/devbox_setup.md) в документации по пакету SDK.
+
+* [Visual Studio](https://visualstudio.microsoft.com/vs/) 2019 с включенной нагрузкой ["Разработка классических приложений с помощью C++"](https://docs.microsoft.com/cpp/?view=vs-2019#pivot=workloads) . Также поддерживаются Visual Studio 2015 и Visual Studio 2017.
+
 * Установите последнюю версию [Git](https://git-scm.com/download/).
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
@@ -96,7 +99,7 @@ ms.locfileid: "74974876"
 
 В этом разделе вы создадите функцию Azure, которая реализует пользовательскую политику распределения. Эта функция определяет, какой центр Интернета вещей должен быть зарегистрирован, в зависимости от того, содержит ли его идентификатор регистрации строку **-contoso-тстрсд-007** или **-contoso-хпсд-088**. Он также задает начальное состояние двойникаа устройства в зависимости от того, является ли устройство тостерным или теплоотводом.
 
-1. Войдите на [портале Azure](https://portal.azure.com). На домашней странице выберите **+ создать ресурс**.
+1. Войдите на [портал Azure](https://portal.azure.com). На домашней странице выберите **+ создать ресурс**.
 
 2. В поле *Поиск в Marketplace* введите "приложение-функция". В раскрывающемся списке выберите **приложение-функция**и нажмите кнопку **создать**.
 
@@ -369,7 +372,7 @@ ms.locfileid: "74974876"
     mainbuilding167-contoso-hpsd-088 : 6uejA9PfkQgmYylj8Zerp3kcbeVrGZ172YLa7VSnJzg=
     ```
 
-### <a name="windows-based-workstations"></a>Рабочие станции на основе Windows
+### <a name="windows-based-workstations"></a>Рабочие станции для Windows
 
 Если вы используете рабочую станцию под управлением Windows, вы можете создать ключ производного устройства с помощью PowerShell, как показано в следующем примере.
 
@@ -406,25 +409,28 @@ ms.locfileid: "74974876"
 
 1. Скачайте [систему сборки CMake](https://cmake.org/download/).
 
-    **Перед** установкой `CMake` важно установить на компьютер необходимые компоненты Visual Studio (Visual Studio и рабочую нагрузку "Разработка классических приложений на C++"). После установки компонентов и проверки загрузки установите систему сборки CMake.
+    **Перед** установкой `CMake` очень важно установить на компьютер необходимые компоненты Visual Studio (Visual Studio с рабочей нагрузкой "Разработка классических приложений на C++"). После установки компонентов и проверки загрузки установите систему сборки CMake.
 
-2. Откройте командную строку или оболочку Git Bash. Выполните следующую команду для клонирования репозитория GitHub пакета SDK Azure IoT для C:
+2. Найдите имя тега для [последнего выпуска](https://github.com/Azure/azure-iot-sdk-c/releases/latest) пакета SDK.
+
+3. Откройте командную строку или оболочку Git Bash. Выполните следующие команды, чтобы клонировать последний выпуск репозитория GitHub для [пакета SDK для Azure IOT C](https://github.com/Azure/azure-iot-sdk-c) . Используйте тег, найденный на предыдущем шаге, в качестве значения для параметра `-b`:
 
     ```cmd/sh
-    git clone https://github.com/Azure/azure-iot-sdk-c.git --recursive
+    git clone -b <release-tag> https://github.com/Azure/azure-iot-sdk-c.git
+    cd azure-iot-sdk-c
+    git submodule update --init
     ```
 
     Выполнение этой операции может занять несколько минут.
 
-3. Создайте подкаталог `cmake` в корневом каталоге репозитория Git и перейдите в эту папку. 
+4. Создайте подкаталог `cmake` в корневом каталоге репозитория Git и перейдите в эту папку. Выполните следующие команды из каталога `azure-iot-sdk-c`:
 
     ```cmd/sh
-    cd azure-iot-sdk-c
     mkdir cmake
     cd cmake
     ```
 
-4. Выполните приведенную ниже команду, чтобы создать версию пакета SDK для используемой клиентской платформы разработки. Эта команда также создает решение Visual Studio для имитированного устройства в каталоге `cmake`. 
+5. Выполните приведенную ниже команду, чтобы создать версию пакета SDK для используемой клиентской платформы разработки. Эта команда также создает решение Visual Studio для имитированного устройства в каталоге `cmake`. 
 
     ```cmd
     cmake -Dhsm_type_symm_key:BOOL=ON -Duse_prov_client:BOOL=ON  ..

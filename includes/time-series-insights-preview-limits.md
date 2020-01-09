@@ -1,26 +1,26 @@
 ---
-title: включение файла
-description: включение файла
+title: включить файл
+description: включить файл
 services: digital-twins
 ms.service: digital-twins
 ms.topic: include
-ms.date: 12/06/2019
+ms.date: 12/31/2019
 author: deepakpalled
 ms.author: dpalled
 manager: cshankar
 ms.custom: include file
-ms.openlocfilehash: be46a0dda24dc990e895a3e983c730337f9cf31d
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.openlocfilehash: 90e6e5c8d6d4f10e2d63f80b9c0840854424f5a7
+ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74981541"
+ms.lasthandoff: 01/02/2020
+ms.locfileid: "75616204"
 ---
 ### <a name="general-availability-and-preview-comparison"></a>Сравнение общей доступности и предварительной версии
 
 В следующей таблице приведены некоторые основные различия между общедоступной версией службы "аналитика временных рядов Azure" и экземплярами предварительной версии.
 
-| | Общая доступность | Preview (Предварительный просмотр) |
+| | Общая доступность | Предварительная версия |
 | --- | --- | ---|
 | Ролевое граждан первого класса | Ориентированные на события | С использованием временных рядов |
 | Семантическая причина | Нижний уровень (эталонные данные) | Высокий уровень (модели) |
@@ -49,6 +49,8 @@ ms.locfileid: "74981541"
 
 * Узнайте, как [Добавить источник концентратора событий](https://docs.microsoft.com/azure/time-series-insights/time-series-insights-how-to-add-an-event-source-eventhub).
 * Настройка [источника центра Интернета вещей](https://docs.microsoft.com/azure/time-series-insights/time-series-insights-how-to-add-an-event-source-iothub).
+
+По умолчанию в [средах предварительного просмотра поддерживаются скорости](https://docs.microsoft.com/azure/time-series-insights/time-series-insights-update-storage-ingress) приема данных до **1 МБ в секунду на каждую среду**. При необходимости клиенты могут масштабировать свои среды предварительной версии до **16 МБ/с** . Кроме того, существует ограничение в **0,5 МБ/с**для каждого раздела. 
 
 ### <a name="api-limits"></a>Ограничения API
 

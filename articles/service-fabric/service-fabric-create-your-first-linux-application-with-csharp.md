@@ -1,25 +1,14 @@
 ---
-title: Создание первого приложения Azure Service Fabric в Linux с использованием C# | Документация Майкрософт
+title: Создание первого приложения Azure Service Fabric в Linux с помощьюC#
 description: Сведения о том, как создать и развернуть приложение Service Fabric с использованием C# и .NET Core 2.0.
-services: service-fabric
-documentationcenter: csharp
-author: mani-ramaswamy
-manager: chackdan
-editor: ''
-ms.assetid: 5a96d21d-fa4a-4dc2-abe8-a830a3482fb1
-ms.service: service-fabric
-ms.devlang: csharp
 ms.topic: conceptual
-ms.tgt_pltfrm: NA
-ms.workload: NA
 ms.date: 04/11/2018
-ms.author: atsenthi
-ms.openlocfilehash: 8c34f50e8eb9d9793c146c38aca47691b04049c0
-ms.sourcegitcommit: aef6040b1321881a7eb21348b4fd5cd6a5a1e8d8
+ms.openlocfilehash: 202dde933b41a98c1c119f422d47cbdbb0be84ae
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72167301"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75458136"
 ---
 # <a name="create-your-first-azure-service-fabric-application"></a>Создание первого приложения Azure Service Fabric
 > [!div class="op_single_selector"]
@@ -30,7 +19,7 @@ ms.locfileid: "72167301"
 
 Service Fabric предоставляет пакеты SDK для создания служб в среде Linux с помощью .NET Core и Java. В этом руководстве показано, как создать приложение для Linux, а также службу C# с помощью .NET Core 2.0.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 Перед началом работы [настройте среду разработки Linux](service-fabric-get-started-linux.md). Если вы используете Mac OS X, вы можете [настроить универсальную среду Linux на виртуальной машине с помощью Vagrant](service-fabric-get-started-mac.md).
 
 Также необходимо установить [интерфейс командной строки Service Fabric](service-fabric-cli.md)
@@ -131,7 +120,7 @@ Service Fabric предоставляет средства формирован�
 1. Перейдите в корневой каталог существующего приложения.  Например, `cd ~/YeomanSamples/MyApplication`, если `MyApplication` является приложением, созданным с помощью Yeoman.
 2. Выполнить `yo azuresfcsharp:AddService`
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Azure Service Fabric command line](service-fabric-cli.md) (Интерфейс командной строки Azure Service Fabric)
 * [Сведения о вариантах поддержки Service Fabric](service-fabric-support.md)

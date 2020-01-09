@@ -17,16 +17,16 @@ ms.date: 08/30/2019
 ms.author: mathoma
 ms.reviewer: jroth
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 9aae386e21df6711fc4984a7abfd34f418399f76
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.openlocfilehash: 6ccc04ccdaf92764da8f45af1e5dda98af822587
+ms.sourcegitcommit: 2f8ff235b1456ccfd527e07d55149e0c0f0647cc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74034196"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75690843"
 ---
 # <a name="automate-management-tasks-on-azure-virtual-machines-by-using-the-sql-server-iaas-agent-extension"></a>Автоматизация задач управления на виртуальных машинах Azure с помощью расширения агента SQL Server IaaS
 > [!div class="op_single_selector"]
-> * [Диспетчер ресурсов](virtual-machines-windows-sql-server-agent-extension.md)
+> * [Resource Manager](virtual-machines-windows-sql-server-agent-extension.md)
 > * [Классический](../sqlclassic/virtual-machines-windows-classic-sql-server-agent-extension.md)
 
 Расширение агента IaaS для SQL Server (SqlIaasExtension) запускается на виртуальных машинах Azure для автоматизации задач администрирования. В этой статье представлен обзор служб, поддерживаемых расширением. В этой статье также приводятся инструкции по установке, состоянию и удалению расширения.
@@ -39,7 +39,7 @@ ms.locfileid: "74034196"
 ## <a name="supported-services"></a>Поддерживаемые службы
 Расширение агента IaaS для SQL Server поддерживает следующие задачи администрирования:
 
-| Функция администрирования | ОПИСАНИЕ |
+| Функция администрирования | Description |
 | --- | --- |
 | **Автоматическая архивация SQL Server** |Автоматизирует планирование резервного копирования для всех баз данных либо для экземпляра по умолчанию, либо [правильно установленного](virtual-machines-windows-sql-server-iaas-faq.md#administration) именованного экземпляра SQL Server на виртуальной машине. Дополнительные сведения см. [в статье Автоматическое резервное копирование для SQL Server на виртуальных машинах Azure (диспетчер ресурсов)](virtual-machines-windows-sql-automated-backup.md). |
 | **SQL Server автоматизированной установки исправлений** |Настраивает период обслуживания, во время которого можно установить на виртуальную машину важные обновления ОС Windows. Таким образом можно избежать установки обновлений в пиковые периоды рабочей нагрузки. Дополнительные сведения см. [в статье автоматическая установка исправлений для SQL Server на виртуальных машинах Azure (диспетчер ресурсов)](virtual-machines-windows-sql-automated-patching.md). |
@@ -50,27 +50,28 @@ ms.locfileid: "74034196"
 * На панели SQL Server виртуальной машины в портал Azure и Azure PowerShell для образов SQL Server в Azure Marketplace.
 * С помощью Azure PowerShell для установки расширения вручную. 
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Технические условия
 Ниже приведены требования к использованию расширения агента SQL Server IaaS на виртуальной машине.
 
 **Операционная система**.
 
-* Windows Server 2008 R2
+* Windows Server 2008 R2
 * Windows Server 2012
-* Windows Server 2012 R2
+* Windows Server 2012 R2
 * Windows Server 2016
 * Windows Server 2019 
 
 **Версия SQL Server**
 
 * SQL Server 2008 
-* SQL Server 2008 R2
-* SQL Server 2012
-* SQL Server 2014
+* SQL Server 2008 R2
+* SQL Server 2012
+* SQL Server 2014
 * SQL Server 2016
-* SQL Server 2017
+* SQL Server 2017
+* SQL Server 2019
 
-**Azure PowerShell**:
+**Azure PowerShell**
 
 * [Скачайте и настройте последние команды Azure PowerShell](/powershell/azure/overview)
 
@@ -132,7 +133,7 @@ ms.locfileid: "74034196"
     Remove-AzVMSqlServerExtension -ResourceGroupName "resourcegroupname" -VMName "vmname" -Name "SqlIaasExtension"
    ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Начните использовать одну из служб, которую поддерживает расширение. Дополнительные сведения см. в статьях, указанных в разделе " [Поддерживаемые службы](#supported-services) " этой статьи.
 
 Дополнительные сведения о запуске SQL Server на виртуальных машинах Azure см. в разделе [что такое SQL Server на виртуальных машинах Azure?](virtual-machines-windows-sql-server-iaas-overview.md).

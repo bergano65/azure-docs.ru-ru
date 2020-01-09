@@ -1,25 +1,14 @@
 ---
-title: 'Защита кластера Service Fabric: роли клиента | Документация Майкрософт'
+title: 'Безопасность кластера Service Fabric: роли клиента'
 description: В данной статье описываются две роли клиента и разрешения, предоставленные этим ролям.
-services: service-fabric
-documentationcenter: .net
-author: mani-ramaswamy
-manager: coreysa
-editor: ''
-ms.assetid: 7bc808d9-3609-46a1-ac12-b4f53bff98dd
-ms.service: service-fabric
-ms.devlang: dotnet
 ms.topic: conceptual
-ms.tgt_pltfrm: NA
-ms.workload: NA
 ms.date: 2/23/2018
-ms.author: atsenthi
-ms.openlocfilehash: 38656d286cae631cb5def0e0c8b171268e4cf428
-ms.sourcegitcommit: aef6040b1321881a7eb21348b4fd5cd6a5a1e8d8
+ms.openlocfilehash: abca19e686d39338fcaa2e0b0c8126913135170b
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72167262"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75451902"
 ---
 # <a name="role-based-access-control-for-service-fabric-clients"></a>Контроль доступа на основе ролей для клиентов Service Fabric
 Платформа Azure Service Fabric поддерживает два разных типа контроля доступа для клиентов, подключенных к кластеру Service Fabric: администраторский и пользовательский. Благодаря контролю доступа администратор кластера может ограничить доступ разных групп пользователей на выполнение определенных операций в кластере, повысив тем самым уровень безопасности кластера.  
@@ -52,9 +41,9 @@ ms.locfileid: "72167262"
 * **RecoverSystemPartitions**: восстановление секций системной службы.                             
 
 ### <a name="cluster-operations"></a>Операции с кластером
-* **Провисионфабрик**: Подготовка MSI и (или) манифеста кластера                             
+* **ProvisionFabric**: подготовка MSI и (или) манифеста кластера.                             
 * **UpgradeFabric**: запуск обновлений кластера.                             
-* **Унпровисионфабрик**: Отменяется инициализация MSI и (или) манифеста кластера                         
+* **UnprovisionFabric**: отмена подготовки MSI и (или) манифеста кластера.                         
 * **MoveNextFabricUpgradeDomain**: возобновление обновлений кластера с помощью явно указанного домена обновления.                             
 * **ReportFabricUpgradeHealth**: возобновление обновлений кластера с помощью текущего процесса обновления.                             
 * **StartInfrastructureTask**: запуск задач инфраструктуры.                             
@@ -102,7 +91,7 @@ ms.locfileid: "72167262"
 ## <a name="changing-default-settings-for-client-roles"></a>Изменение параметров по умолчанию для ролей клиента
 При необходимости в файле манифеста кластера клиенту можно предоставить возможность администрирования. Чтобы изменить значения по умолчанию, во время [создания кластера](service-fabric-cluster-creation-via-portal.md) перейдите к настройкам **Fabric Settings** (Параметры структуры), а затем укажите параметры, приведенные выше, в полях **Имя**, **Администратор**, **Пользователь** и **Значение**.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 [Защита кластера Service Fabric](service-fabric-cluster-security.md)
 
 [Настройка кластера Service Fabric на портале Azure](service-fabric-cluster-creation-via-portal.md)

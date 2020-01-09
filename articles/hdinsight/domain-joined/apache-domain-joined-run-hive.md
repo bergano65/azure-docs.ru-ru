@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 11/27/2019
-ms.openlocfilehash: 9005b2e01cdb17d6aa6c630ec8be3d702d5b138c
-ms.sourcegitcommit: 48b7a50fc2d19c7382916cb2f591507b1c784ee5
+ms.openlocfilehash: ff612c43a058fce02bd801e15632c27979f22d17
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74688114"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75435876"
 ---
 # <a name="configure-apache-hive-policies-in-hdinsight-with-enterprise-security-package"></a>Настройка политик Apache Hive в HDInsight с Корпоративным пакетом безопасности
 
@@ -40,11 +40,11 @@ ms.locfileid: "74688114"
 
 ## <a name="create-domain-users"></a>Создание пользователей домена
 
-Сведения о создании учетных записей hiveruser1 и hiveuser2 см. в разделе [Создание кластера HDInsight с Корпоративным пакетом безопасности](apache-domain-joined-configure-using-azure-adds.md#create-a-hdinsight-cluster-with-esp). В этой статье используются две учетные записи пользователей.
+Сведения о создании учетных записей hiveruser1 и hiveuser2 см. в разделе [Создание кластера HDInsight с Корпоративным пакетом безопасности](apache-domain-joined-configure-using-azure-adds.md#create-an-hdinsight-cluster-with-esp). В этой статье используются две учетные записи пользователей.
 
 ## <a name="create-ranger-policies"></a>Создание политик Ranger
 
-В этом разделе вы создадите две политики Ranger для доступа к таблице hivesampletable. Вам нужно будет предоставить разрешение select для разных наборов столбцов. Оба пользователя созданы при работе с разделом [Создание кластера HDInsight с Корпоративным пакетом безопасности](apache-domain-joined-configure-using-azure-adds.md#create-a-hdinsight-cluster-with-esp). В следующем разделе вы проверите две политики в Excel.
+В этом разделе вы создадите две политики Ranger для доступа к таблице hivesampletable. Вам нужно будет предоставить разрешение select для разных наборов столбцов. Оба пользователя созданы при работе с разделом [Создание кластера HDInsight с Корпоративным пакетом безопасности](apache-domain-joined-configure-using-azure-adds.md#create-an-hdinsight-cluster-with-esp). В следующем разделе вы проверите две политики в Excel.
 
 **Создание политик Ranger**
 
@@ -52,11 +52,11 @@ ms.locfileid: "74688114"
 2. Выберите **CLUSTERNAME_Hive**в разделе **Hive**. Отобразятся две предварительно настроенные политики.
 3. Выберите **Добавить новую политику**, а затем введите следующие значения:
 
-    |Свойство |Value |
+    |Свойство |Значение |
     |---|---|
     |Имя политики|Read-hivesampletable — все|
-    |База данных Hive|по умолчанию|
-    |таблица|hivesampletable|
+    |База данных Hive|значение по умолчанию|
+    |table|hivesampletable|
     |Столбец Hive|*|
     |Выберите пользователя|hiveuser1|
     |Разрешения|select|
@@ -70,11 +70,11 @@ ms.locfileid: "74688114"
 
 5. Повторите последние два шага, чтобы создать еще одну политику со следующими свойствами.
 
-    |Свойство |Value |
+    |Свойство |Значение |
     |---|---|
     |Имя политики|Read-hivesampletable-devicemake|
-    |База данных Hive|по умолчанию|
-    |таблица|hivesampletable|
+    |База данных Hive|значение по умолчанию|
+    |table|hivesampletable|
     |Столбец Hive|ClientID, devicemake|
     |Выберите пользователя|hiveuser2|
     |Разрешения|select|
@@ -83,16 +83,16 @@ ms.locfileid: "74688114"
 
 Инструкции см. в разделе [Создание источника данных Hive ODBC](../hadoop/apache-hadoop-connect-excel-hive-odbc-driver.md).  
 
- | Свойство  |Описание |
+ | Свойство  |Description |
  | --- | --- |
- | Имя источника данных | Присвойте имя источнику данных |
+ | Имя базы данных-источника | Присвойте имя источнику данных |
  | Хост | Введите CLUSTERNAME.azurehdinsight.net. Например, myHDICluster.azurehdinsight.net |
  | Port | Используйте **443**. (Этот порт был изменен с 563 на 443.) |
  | База данных | Используйте **значение по умолчанию**. |
  | Тип сервера Hive | Выберите **Hive Server 2**. |
  | Механизм | Выберите **Служба Azure HDInsight**. |
  | Путь HTTP | Оставьте пустым. |
- | Имя пользователя | Укажите hiveuser1@contoso158.onmicrosoft.com. Обновите доменное имя, если оно отличается. |
+ | Имя пользователя | Введите hiveuser1@contoso158.onmicrosoft.com. Обновите доменное имя, если оно отличается. |
  | Пароль | Введите пароль для hiveuser1. |
 
 Щелкните **Проверка** перед сохранением источника данных.
@@ -115,7 +115,7 @@ ms.locfileid: "74688114"
 
 1. Выберите **hivesampletable**и нажмите кнопку **Далее**.
 
-1. Выберите **Готово**.
+1. Нажмите кнопку **Готово**.
 
 1. В диалоговом окне **Импорт данных** можно изменить или указать запрос. Для этого выберите **Свойства**. Это может занять несколько секунд.
 
@@ -150,7 +150,7 @@ ms.locfileid: "74688114"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* Описание настройки кластера HDInsight с корпоративным пакетом безопасности см. в разделе [Настройка кластеров HDInsight с корпоративным пакетом безопасности](apache-domain-joined-configure.md).
+* Описание настройки кластера HDInsight с Корпоративным пакетом безопасности см. в статье [Настройка кластера HDInsight с Корпоративным пакетом безопасности с помощью доменных служб Azure Active Directory](apache-domain-joined-configure.md).
 * Сведения об управлении кластером HDInsight с помощью ESP см. в статье [Управление кластерами HDInsight с помощью Корпоративного пакета безопасности](apache-domain-joined-manage.md).
 * Сведения о выполнении запросов Hive с помощью SSH в кластерах HDInsight с ESP см. в разделе [Проверка подлинности при использовании присоединенного к домену кластера HDInsight](../hdinsight-hadoop-linux-use-ssh-unix.md#domainjoined).
 * Сведения о подключении к Hive с помощью Hive JDBC см. в статье [Отправка запросов в Apache Hive с помощью драйвера JDBC в HDInsight](../hadoop/apache-hadoop-connect-hive-jdbc-driver.md).

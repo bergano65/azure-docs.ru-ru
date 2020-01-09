@@ -6,18 +6,18 @@ ms.suite: integration
 ms.reviewer: klam, logicappspm
 ms.topic: conceptual
 ms.date: 07/31/2019
-ms.openlocfilehash: de646c790fc21ef17bf78789e0531503f2f32052
-ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
+ms.openlocfilehash: 2d09484fcb5211003aeec0ec10bfc9892b4e6f31
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74790787"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75456538"
 ---
 # <a name="move-logic-app-resources-to-other-azure-subscriptions-resource-groups-or-regions"></a>Перемещение ресурсов приложения логики в другие подписки Azure, группы ресурсов или регионы
 
 Чтобы переместить приложение логики или связанные ресурсы в другую подписку Azure, группу ресурсов или регион, можно выполнить различные способы выполнения таких задач, как портал Azure, Azure PowerShell, Azure CLI и REST API. Прежде чем перемещать ресурсы, ознакомьтесь со следующими соображениями. 
 
-* Вы можете перемещать только [определенные типы ресурсов приложения логики](../azure-resource-manager/move-support-resources.md#microsoftlogic) между группами ресурсов или подписками Azure.
+* Вы можете перемещать только [определенные типы ресурсов приложения логики](../azure-resource-manager/management/move-support-resources.md#microsoftlogic) между группами ресурсов или подписками Azure.
 
 * Проверьте [ограничения](../logic-apps/logic-apps-limits-and-config.md) на количество ресурсов приложения логики, которые можно использовать в подписке Azure и в каждом регионе Azure. Эти ограничения влияют на то, можно ли перемещать определенные типы ресурсов, когда регион остается неизменным для всех подписок или групп ресурсов. Например, у вас может быть только одна учетная запись интеграции уровня Free для каждого региона Azure в каждой подписке Azure.
 
@@ -53,7 +53,7 @@ ms.locfileid: "74790787"
 
 Чтобы переместить ресурс, например приложение логики или учетную запись интеграции, в другую группу ресурсов Azure, можно использовать портал Azure, Azure PowerShell, Azure CLI или REST API. Эти действия охватывают портал Azure, которые можно использовать, когда регион ресурса остается неизменным. Другие шаги и общие сведения о подготовке см. в статье [Перемещение ресурсов в новую группу ресурсов или подписку](../azure-resource-manager/resource-group-move-resources.md).
 
-Перед фактическим перемещением ресурсов между группами можно проверить, можно ли успешно переместить ресурс в другую группу. Дополнительные сведения см. [в разделе Проверка перемещения](../azure-resource-manager/resource-group-move-resources.md#validate-move).
+Перед фактическим перемещением ресурсов между группами можно проверить, можно ли успешно переместить ресурс в другую группу. Дополнительные сведения см. [в разделе Проверка перемещения](../azure-resource-manager/management/move-resource-group-and-subscription.md#validate-move).
 
 1. В [портал Azure](https://portal.azure.com)найдите и выберите ресурс приложения логики, который требуется переместить.
 

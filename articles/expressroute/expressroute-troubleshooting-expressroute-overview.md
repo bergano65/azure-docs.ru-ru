@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 10/31/2019
 ms.author: rambala
 ms.custom: seodec18
-ms.openlocfilehash: 833e7788a5b17b12ad883f705d56f660c2f1d832
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.openlocfilehash: 69c32370b1f7f7cabb642ab140d69dcec57fb4aa
+ms.sourcegitcommit: ec2eacbe5d3ac7878515092290722c41143f151d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74033789"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75551987"
 ---
 # <a name="verifying-expressroute-connectivity"></a>Проверка подключения ExpressRoute
 Изучив сведения в этой статье, вы узнаете, как проверить и устранить неполадки с подключением ExpressRoute. ExpressRoute расширяет локальную сеть в облако Майкрософт по частному подключению, которое обычно упрощается поставщиком услуг подключения. Подключение ExpressRoute обычно включает три отдельные зоны сети, как показано ниже.
@@ -23,7 +23,7 @@ ms.locfileid: "74033789"
 -   центр обработки данных Майкрософт.
 
 > [!NOTE]
-> В модели прямого подключения ExpressRoute (предлагается с пропускной способностью 10/100 Гбит/с) кусомтерс может напрямую подключаться к порту маршрутизаторов Microsoft Enterprise (MSEE). Таким образом, в модели прямого подключения есть только зоны клиента и сети Microsoft.
+> В модели прямого подключения ExpressRoute (предлагается с пропускной способностью 10/100 Гбит/с) клиенты могут напрямую подключаться к порту маршрутизаторов Microsoft Enterprise (MSEE). Таким образом, в модели прямого подключения есть только зоны клиента и сети Microsoft.
 >
 
 
@@ -288,7 +288,7 @@ ms.locfileid: "74033789"
     Get-AzExpressRouteCircuitRouteTable : The BGP Peering AzurePublicPeering with Service Key ********************* is not found.
     StatusCode: 400
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Дополнительные сведения доступны в следующих источниках:
 
 - [Служба технической поддержки Майкрософт][Support]

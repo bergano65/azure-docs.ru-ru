@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: storage
 ms.subservice: blobs
 ms.reviewer: sadodd
-ms.openlocfilehash: 19a65e688d66738db0b6e4dcca383c6e4abed262
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.openlocfilehash: b26e54c7130469eee87a9237f4847f46cb3b7698
+ms.sourcegitcommit: 2f8ff235b1456ccfd527e07d55149e0c0f0647cc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74974413"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75691045"
 ---
 # <a name="change-feed-support-in-azure-blob-storage-preview"></a>Поддержка канала изменений в хранилище BLOB-объектов Azure (Предварительная версия)
 
@@ -55,7 +55,7 @@ ms.locfileid: "74974413"
 > [!IMPORTANT]
 > Веб-канал изменений находится в общедоступной предварительной версии и доступен в регионах **westcentralus** и **westus2** . См. раздел " [условия](#conditions) " этой статьи. Чтобы зарегистрироваться в предварительной версии, ознакомьтесь с разделом [регистрация подписки](#register) в этой статье. Необходимо зарегистрировать подписку перед включением веб-канала изменений в учетных записях хранения.
 
-### <a name="portaltabazure-portal"></a>[Microsoft Azure](#tab/azure-portal)
+### <a name="portaltabazure-portal"></a>[Портал](#tab/azure-portal)
 
 Включите веб-канал изменений в учетной записи хранения с помощью портал Azure:
 
@@ -96,7 +96,7 @@ ms.locfileid: "74974413"
 5. Включите веб-канал изменений для учетной записи хранения.
 
    ```powershell
-   Update-AzStorageBlobServiceProperty -ResourceGroupName -StorageAccountName -EnableChangeFeed $true
+   Update-AzStorageBlobServiceProperty -EnableChangeFeed $true
    ```
 
 ### <a name="templatetabtemplate"></a>[Шаблон](#tab/template)
@@ -317,7 +317,7 @@ az provider register --namespace 'Microsoft.Storage'
 - В настоящее время невозможно увидеть контейнер **$blobchangefeed** при вызове API ListContainers, и контейнер не отображается в портал Azure или обозреватель службы хранилища
 - В учетных записях хранения, которые ранее инициировали [отработку отказа учетной записи](../common/storage-disaster-recovery-guidance.md) , могут возникнуть проблемы с файлом журнала. Все последующие отработки отказа учетной записи также могут повлиять на файл журнала во время предварительной версии.
 
-## <a name="faq"></a>Вопросы и ответы
+## <a name="faq"></a>Часто задаваемые вопросы
 
 ### <a name="what-is-the-difference-between-change-feed-and-storage-analytics-logging"></a>В чем разница между веб-каналом изменений и ведением журнала Аналитика Службы хранилища?
 Журналы аналитики содержат записи всех операций чтения, записи, списка и удаления с успешными и неудачными запросами во всех операциях. Журналы аналитики лучше подходят, и их порядок не гарантируется.

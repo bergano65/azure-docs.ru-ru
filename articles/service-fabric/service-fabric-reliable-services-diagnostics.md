@@ -1,25 +1,16 @@
 ---
-title: Диагностика надежных служб с отслеживанием состояния Azure Service Fabric | Документация Майкрософт
+title: Диагностика Reliable Services с отслеживанием состояния Service Fabric Azure
 description: Диагностические функции для надежных служб с отслеживанием состояния в Azure Service Fabric
-services: service-fabric
-documentationcenter: .net
 author: dkkapur
-manager: chackdan
-editor: ''
-ms.assetid: ae0e8f99-69ab-4d45-896d-1fa80ed45659
-ms.service: service-fabric
-ms.devlang: dotnet
 ms.topic: conceptual
-ms.tgt_pltfrm: NA
-ms.workload: NA
 ms.date: 8/24/2018
 ms.author: dekapur
-ms.openlocfilehash: 50e3368aa8808307fa479a290eaf10ca3f22289d
-ms.sourcegitcommit: 3486e2d4eb02d06475f26fbdc321e8f5090a7fac
+ms.openlocfilehash: 37162287e130b05dc41453c579b3a628ac878fca
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73242873"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75462917"
 ---
 # <a name="diagnostic-functionality-for-stateful-reliable-services"></a>Диагностические функции для надежных служб с отслеживанием состояния
 Класс StatefulServiceBase служб Reliable Services с отслеживанием состояния Azure Service Fabric генерирует события [EventSource](https://msdn.microsoft.com/library/system.diagnostics.tracing.eventsource.aspx), которые можно использовать для отладки. Они позволяют исследовать работу среды выполнения и помогают устранять неполадки.
@@ -30,11 +21,11 @@ ms.locfileid: "73242873"
 Для сбора и просмотра событий EventSource вы можете использовать такие средства и технологии, как [PerfView](https://www.microsoft.com/download/details.aspx?id=28567), [система диагностики Azure](../cloud-services/cloud-services-dotnet-diagnostics.md) и [библиотека Microsoft TraceEvent](https://www.nuget.org/packages/Microsoft.Diagnostics.Tracing.TraceEvent).
 
 ## <a name="events"></a>Мероприятия
-| Имя события | Идентификатор события | уровень | Описание события |
+| Имя события | Идентификатор события | Уровень | Описание события |
 | --- | --- | --- | --- |
-| StatefulRunAsyncInvocation |1 |Информация |Генерируется, когда запускается задача RunAsync службы. |
-| StatefulRunAsyncCancellation |2 |Информация |Генерируется, когда отменяется задача RunAsync службы. |
-| StatefulRunAsyncCompletion |3 |Информация |Генерируется, когда завершается задача RunAsync службы. |
+| StatefulRunAsyncInvocation |1 |Informational |Генерируется, когда запускается задача RunAsync службы. |
+| StatefulRunAsyncCancellation |2 |Informational |Генерируется, когда отменяется задача RunAsync службы. |
+| StatefulRunAsyncCompletion |3 |Informational |Генерируется, когда завершается задача RunAsync службы. |
 | StatefulRunAsyncSlowCancellation |4 |Предупреждение |Генерируется, когда отмена задачи RunAsync службы выполняется слишком долго. |
 | StatefulRunAsyncFailure |5 |Ошибка |Генерируется, когда задача RunAsync службы вызывает исключение. |
 
@@ -50,7 +41,7 @@ ms.locfileid: "73242873"
 ## <a name="performance-counters"></a>Счетчики производительности
 Среда выполнения служб Reliable Services определяет указанные ниже категории счетчиков производительности.
 
-| Категория | Описание |
+| Категория | Description |
 | --- | --- |
 | Репликатор транзакций Service Fabric |Счетчики для репликатора транзакций Azure Service Fabric |
 | Service Fabric TStore |Счетчики для Azure Service Fabric TStore |
@@ -104,7 +95,7 @@ Service Fabric TStore — это компонент, который исполь
 
 Среда выполнения Reliable Services выдает следующие события в категории `Service Fabric Transactional Replicator`.
 
- Имя счетчика | Описание |
+ Имя счетчика | Description |
 | --- | --- |
 | Операций начала транзакций/с | Число новых транзакций записи, создаваемых в секунду.|
 | Операций транзакций/с | Число операций добавления, обновления и удаления, выполненных для надежных коллекций, в секунду.|
@@ -117,7 +108,7 @@ Service Fabric TStore — это компонент, который исполь
 
 Среда выполнения Reliable Services выдает следующие события в категории `Service Fabric TStore`.
 
- Имя счетчика | Описание |
+ Имя счетчика | Description |
 | --- | --- |
 | Число элементов | Число элементов в хранилище.|
 | Размер диска | Общий размер в байтах, занимаемый на диске файлами контрольных точек хранилища.|

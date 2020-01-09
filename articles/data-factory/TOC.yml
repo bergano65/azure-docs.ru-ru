@@ -84,6 +84,8 @@
       items:
         - name: Преобразование данных с помощью сопоставления потоков данных
           href: tutorial-data-flow.md
+        - name: Видеоматериалы по потоку данных для сопоставления
+          href: data-flow-tutorials.md
         - name: Подготовка данных с помощью первичной обработки потоков данных
           href: wrangling-data-flow-tutorial.md
     - name: Внешние преобразования

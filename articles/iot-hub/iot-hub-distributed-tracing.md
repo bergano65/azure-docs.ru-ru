@@ -8,12 +8,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 02/06/2019
 ms.author: jlian
-ms.openlocfilehash: 835a359d3b5781ad814e423e4a69e8d60379c97b
-ms.sourcegitcommit: 44c2a964fb8521f9961928f6f7457ae3ed362694
+ms.openlocfilehash: 4cd4cffdb0357b1cd73b1613e52c2a6c1a60f71e
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73953155"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75457051"
 ---
 # <a name="trace-azure-iot-device-to-cloud-messages-with-distributed-tracing-preview"></a>Трассировка отправляемых с устройства в облако сообщений Интернета вещей Azure с помощью функции распределенной трассировки (предварительная версия)
 
@@ -30,7 +30,7 @@ ms.locfileid: "73953155"
 
 В этой статье используется [пакет SDK для устройств Azure IoT для C](iot-hub-device-sdk-c-intro.md) с функцией распределенной трассировки. Реализация поддержки функции распределенной трассировки все еще выполняется для других пакетов SDK.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Технические условия
 
 - Предварительная версия функции распределенной трассировки сейчас поддерживается только в Центрах Интернета вещей, созданных в следующих регионах:
 
@@ -88,22 +88,23 @@ ms.locfileid: "73953155"
 
 ### <a name="clone-the-source-code-and-initialize"></a>Клонирование исходного кода и инициализация
 
-1. Установите [рабочую нагрузку "Разработка классических приложений на C++"](https://docs.microsoft.com/cpp/build/vscpp-step-0-installation?view=vs-2017) для Visual Studio 2015 или 2017.
+1. Установите [рабочую нагрузку "Разработка C++классических приложений с помощью"](https://docs.microsoft.com/cpp/build/vscpp-step-0-installation?view=vs-2019) для Visual Studio 2019. Также поддерживаются Visual Studio 2017 и 2015.
 
 1. Установка [CMake](https://cmake.org/). Убедитесь, что это средство расположено в каталоге по вашему пути (`PATH`). Для этого в окне командной строки введите `cmake -version`.
 
-1. Откройте командную строку или оболочку Git Bash. Выполните следующую команду для клонирования репозитория GitHub [пакета SDK для устройства C Интернета вещей Azure](https://github.com/Azure/azure-iot-sdk-c):
+1. Откройте командную строку или оболочку Git Bash. Выполните следующие команды, чтобы клонировать последний выпуск репозитория GitHub [SDK для Azure IOT C](https://github.com/Azure/azure-iot-sdk-c) :
 
     ```cmd
-    git clone https://github.com/Azure/azure-iot-sdk-c.git --recursive -b public-preview
+    git clone -b public-preview https://github.com/Azure/azure-iot-sdk-c.git
+    cd azure-iot-sdk-c
+    git submodule update --init
     ```
 
     Выполнение этой операции может занять несколько минут.
 
-1. Создайте подкаталог `cmake` в корневом каталоге репозитория Git и перейдите в эту папку.
+1. Создайте подкаталог `cmake` в корневом каталоге репозитория Git и перейдите в эту папку. Выполните следующие команды из каталога `azure-iot-sdk-c`:
 
     ```cmd
-    cd azure-iot-sdk-c    
     mkdir cmake
     cd cmake
     cmake ..
@@ -240,10 +241,10 @@ ms.locfileid: "73953155"
 }
 ```
 
-| Имя элемента | обязательные | введите | ОПИСАНИЕ |
+| Имя элемента | Обязательно для заполнения | Тип | Description |
 |-----------------|----------|---------|-----------------------------------------------------|
-| `sampling_mode` | Yes | Целое число, | Для включения и отключения выборки в настоящее время поддерживается два режима. `1` — включен, а `2` — отключен. |
-| `sampling_rate` | Yes | Целое число, | Это значение является процентной долей. Разрешены только значения в диапазоне от `0` до `100` включительно.  |
+| `sampling_mode` | Да | Целое число | Для включения и отключения выборки в настоящее время поддерживается два режима. `1` — включен, а `2` — отключен. |
+| `sampling_rate` | Да | Целое число | Это значение является процентной долей. Разрешены только значения в диапазоне от `0` до `100` включительно.  |
 
 ## <a name="query-and-visualize"></a>Отправка запросов и визуализация
 
@@ -263,11 +264,11 @@ AzureDiagnostics
 
 Примеры журналов, как показано службой Log Analytics:
 
-| TimeGenerated | OperationName | Категория | уровень | CorrelationId | DurationMs | свойства |
+| TimeGenerated | OperationName | Категория | Уровень | CorrelationId | DurationMs | Свойства |
 |--------------------------|---------------|--------------------|---------------|---------------------------------------------------------|------------|------------------------------------------------------------------------------------------------------------------------------------------|
-| 2018-02-22T03:28:28.633Z | DiagnosticIoTHubD2C | DistributedTracing | Информация | 00-8cd869a412459a25f5b4f31311223344-0144d2590aacd909-01 |  | {"deviceId":"AZ3166","messageSize":"96","callerLocalTimeUtc":"2018-02-22T03:27:28.633Z","calleeLocalTimeUtc":"2018-02-22T03:27:28.687Z"} |
-| 2018-02-22T03:28:38.633Z | DiagnosticIoTHubIngress | DistributedTracing | Информация | 00-8cd869a412459a25f5b4f31311223344-349810a9bbd28730-01 | 20 | {"isRoutingEnabled":"false","parentSpanId":"0144d2590aacd909"} |
-| 2018-02-22T03:28:48.633Z | DiagnosticIoTHubEgress | DistributedTracing | Информация | 00-8cd869a412459a25f5b4f31311223344-349810a9bbd28730-01 | 23 | {"endpointType":"EventHub","endpointName":"myEventHub", "parentSpanId":"0144d2590aacd909"} |
+| 2018-02-22T03:28:28.633Z | DiagnosticIoTHubD2C | DistributedTracing | Informational | 00-8cd869a412459a25f5b4f31311223344-0144d2590aacd909-01 |  | {"deviceId":"AZ3166","messageSize":"96","callerLocalTimeUtc":"2018-02-22T03:27:28.633Z","calleeLocalTimeUtc":"2018-02-22T03:27:28.687Z"} |
+| 2018-02-22T03:28:38.633Z | DiagnosticIoTHubIngress | DistributedTracing | Informational | 00-8cd869a412459a25f5b4f31311223344-349810a9bbd28730-01 | 20 | {"isRoutingEnabled":"false","parentSpanId":"0144d2590aacd909"} |
+| 2018-02-22T03:28:48.633Z | DiagnosticIoTHubEgress | DistributedTracing | Informational | 00-8cd869a412459a25f5b4f31311223344-349810a9bbd28730-01 | 23 | {"endpointType":"EventHub","endpointName":"myEventHub", "parentSpanId":"0144d2590aacd909"} |
 
 Сведения о различных типах журналов см. в разделе [о журналах диагностики Центра Интернета вещей Azure](iot-hub-monitor-resource-health.md#distributed-tracing-preview).
 
@@ -316,7 +317,7 @@ AzureDiagnostics
 - Возможность переноса из облака на двойник устройства недоступна на [уровне "Базовый" Центра Интернета вещей](iot-hub-scaling.md#basic-and-standard-tiers). Тем не менее, Центр Интернета вещей все равно будет регистрироваться в Azure Monitor, если видит правильно составленный заголовок контекста трассировки.
 - Чтобы обеспечить эффективность операции, Центр Интернета вещей применит регулирование на основе частоты регистрации, которая может возникнуть как часть распределенной трассировки.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения об общем шаблоне распределенной трассировки в микрослужбах см. в [этой статье](https://microservices.io/patterns/observability/distributed-tracing.html).
 - Чтобы настроить конфигурацию для применения параметров распределенной трассировки на большое количество устройств, ознакомьтесь со статьей [Настройка и мониторинг устройств Центра Интернета вещей с помощью портала Azure](iot-hub-auto-device-config.md).

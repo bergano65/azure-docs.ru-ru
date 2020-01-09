@@ -1,25 +1,16 @@
 ---
-title: Рекомендации по инфраструктуре как коду Azure Service Fabric | Документация Майкрософт
-description: Рекомендации по управлению Service Fabric по модели "инфраструктура как код".
-services: service-fabric
-documentationcenter: .net
+title: Инфраструктура Service Fabric Azure как рекомендации по коду
+description: Рекомендации и соображения по проектированию для управления Service Fabric Azure в качестве инфраструктуры как кода.
 author: peterpogorski
-manager: chackdan
-editor: ''
-ms.assetid: 19ca51e8-69b9-4952-b4b5-4bf04cded217
-ms.service: service-fabric
-ms.devlang: dotNet
 ms.topic: conceptual
-ms.tgt_pltfrm: NA
-ms.workload: NA
 ms.date: 01/23/2019
 ms.author: pepogors
-ms.openlocfilehash: 83439a913989875c5e26ee51901f10558e5debd5
-ms.sourcegitcommit: 0f54f1b067f588d50f787fbfac50854a3a64fff7
+ms.openlocfilehash: 1c044d5fd973d3c577088a887f2fac413d2ab79d
+ms.sourcegitcommit: ec2eacbe5d3ac7878515092290722c41143f151d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68955617"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75551834"
 ---
 # <a name="infrastructure-as-code"></a>Инфраструктура как код
 
@@ -100,7 +91,7 @@ microservices_sfpkg.close()
 ```
 
 ## <a name="azure-virtual-machine-operating-system-automatic-upgrade-configuration"></a>Конфигурация автоматического обновления операционной системы виртуальной машины Azure 
-Обновление виртуальных машин — это операция, инициированная пользователем, поэтому рекомендуется использовать [масштабируемый набор виртуальных машин автоматическое обновление операционной системы](https://docs.microsoft.com/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-automatic-upgrade) для Azure Service Fabric кластеры управления обновлениями узла. Приложение для управления исправлениями — это альтернативное решение, которое предназначено для размещения за пределами Azure, хотя ВЕХ можно использовать в Azure, и при этом издержки на размещение ВЕХ в Azure являются распространенной причиной для автоматического обновления операционной системы виртуальной машины. Over ВЕХ. Ниже приведены свойства шаблона "вычисление масштабируемого набора виртуальных машин" диспетчер ресурсов для включения автоматического обновления ОС.
+Обновление виртуальных машин — это операция, инициированная пользователем, поэтому рекомендуется использовать [масштабируемый набор виртуальных машин автоматическое обновление операционной системы](https://docs.microsoft.com/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-automatic-upgrade) для Azure Service Fabric кластеры управления обновлениями узла. Приложение для управления исправлениями — это альтернативное решение, которое предназначено для размещения за пределами Azure, хотя ВЕХ можно использовать в Azure, и издержки на размещение ВЕХ в Azure являются распространенной причиной для автоматического обновления операционной системы виртуальной машины через ВЕХ. Ниже приведены свойства шаблона "вычисление масштабируемого набора виртуальных машин" диспетчер ресурсов для включения автоматического обновления ОС.
 
 ```json
 "upgradePolicy": {
@@ -113,7 +104,7 @@ microservices_sfpkg.close()
 ```
 При использовании автоматических обновлений ОС с Service Fabric новый образ ОС помещается в один домен обновления за раз, чтобы обеспечить высокий уровень доступности служб, работающих в Service Fabric. Для использования автоматических обновлений ОС в Service Fabric ваш кластер должен быть настроен на использование уровня надежности Silver или выше.
 
-Убедитесь, что для следующего раздела реестра установлено значение false, чтобы предотвратить запуск несогласованных обновлений на компьютерах размещения Windows: HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU.
+Убедитесь, что для следующего раздела реестра задано значение false, чтобы предотвратить запуск несогласованных обновлений на компьютерах узла Windows: HKEY_LOCAL_MACHINE \Софтваре\полиЦиес\микрософт\виндовс\виндовсупдате\ау.
 
 Ниже приведены свойства шаблона "вычисленный масштабируемый набор виртуальных машин" диспетчер ресурсов, чтобы задать для раздела реестра WindowsUpdate значение false:
 ```json
@@ -140,8 +131,8 @@ Register-ServiceFabricClusterPackage -Code -CodePackagePath "ServiceFabric.msi"
 Start-ServiceFabricClusterUpgrade -Code -CodePackageVersion <"msi_code_version">
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-* Создание кластера на основе виртуальных машин или компьютеров под управлением Windows Server: [Создание изолированного кластера под управлением Windows Server](service-fabric-tutorial-create-vnet-and-windows-cluster.md)
-* Создание кластера на основе виртуальных машин или компьютеров под управлением Linux: [Создание кластера Service Fabric в Azure с помощью портала Azure](service-fabric-tutorial-create-vnet-and-linux-cluster.md)
+* Создание кластера на основе виртуальных машин или компьютеров под управлением Windows Server: [Создание кластера Azure Service Fabric в локальной или облачной средах](service-fabric-tutorial-create-vnet-and-windows-cluster.md)
+* Создание кластера на основе виртуальных машин или компьютеров под управлением Linux: [Создание кластера Linux](service-fabric-tutorial-create-vnet-and-linux-cluster.md).
 * [Сведения о вариантах поддержки Service Fabric](service-fabric-support.md)

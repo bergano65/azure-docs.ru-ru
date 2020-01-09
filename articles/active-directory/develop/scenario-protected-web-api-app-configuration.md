@@ -17,12 +17,12 @@ ms.date: 05/07/2019
 ms.author: jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7f78fa35096b7e17d3736190bfa49619c2c81520
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.openlocfilehash: 76d5aabc30d0375185130b9781caeaf4d5457455
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74965404"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75423724"
 ---
 # <a name="protected-web-api-code-configuration"></a>Защищенный веб-API: конфигурация кода
 
@@ -43,7 +43,7 @@ ms.locfileid: "74965404"
 
 Ниже приведен пример C# кода, в котором показан клиент, вызывающий API после получения маркера с помощью библиотеки проверки подлинности Майкрософт для .net (MSAL.NET):
 
-```CSharp
+```csharp
 var scopes = new[] {$"api://.../access_as_user}";
 var result = await app.AcquireToken(scopes)
                       .ExecuteAsync();
@@ -96,19 +96,19 @@ HttpResponseMessage response = await _httpClient.GetAsync(apiUri);
 
 В ASP.NET Core это по промежуточного слоя инициализируется в файле Startup.cs:
 
-```CSharp
+```csharp
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 ```
 
 По промежуточного слоя добавляется в веб-API с помощью следующей инструкции:
 
-```CSharp
+```csharp
  services.AddAzureAdBearer(options => Configuration.Bind("AzureAd", options));
 ```
 
  В настоящее время шаблоны ASP.NET Core создают веб-API Azure Active Directory (Azure AD), которые входят в вашу организацию или в любую организацию, а не в личные учетные записи. Но вы можете легко изменить их, чтобы использовать конечную точку платформы идентификации Майкрософт, добавив следующий код в файл Startup.cs:
 
-```CSharp
+```csharp
 services.Configure<JwtBearerOptions>(AzureADDefaults.JwtBearerAuthenticationScheme, options =>
 {
     // This is a Microsoft identity platform web API.
@@ -148,7 +148,7 @@ services.Configure<JwtBearerOptions>(AzureADDefaults.JwtBearerAuthenticationSche
 
 В этой таблице описаны проверяющие элементы управления.
 
-| Управления | Описание |
+| Управления | Description |
 |---------|---------|
 | `ValidateAudience` | Гарантирует, что маркер предназначен для приложения, которое проверяет маркер (для меня). |
 | `ValidateIssuer` | Гарантирует, что маркер был выдан доверенной службой STS (от доверенного лица). |

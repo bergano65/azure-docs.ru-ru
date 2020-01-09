@@ -12,14 +12,14 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 11/17/2019
+ms.date: 12/30/2019
 ms.author: rkarlin
-ms.openlocfilehash: fb8f4de3b3b24d1eba372600c817627771ef0ef6
-ms.sourcegitcommit: 28688c6ec606ddb7ae97f4d0ac0ec8e0cd622889
+ms.openlocfilehash: 6f099a0eb6501b6576c4560e0b397d3105bb15f0
+ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2019
-ms.locfileid: "74158875"
+ms.lasthandoff: 01/02/2020
+ms.locfileid: "75610715"
 ---
 # <a name="connect-data-from-azure-advanced-threat-protection-atp"></a>Подключение данных из Azure Advanced Threat protection (ATP)
 
@@ -29,7 +29,7 @@ ms.locfileid: "74158875"
 
 Вы можете выполнить потоковую передачу журналов из [Azure Advanced Threat protection](https://docs.microsoft.com/azure-advanced-threat-protection/what-is-atp) в метку Azure одним щелчком мыши.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Технические условия
 
 - Пользователь с разрешениями глобального администратора или администратора безопасности
 - Вы должны быть предварительной версией клиента Azure ATP и включить интеграцию между Azure ATP и Microsoft Cloud App Security. Дополнительные сведения см. в статье [Интеграция с расширенной защитой Azure](https://docs.microsoft.com/cloud-app-security/aatp-integration).
@@ -46,15 +46,15 @@ ms.locfileid: "74158875"
 
 1. Вы можете выбрать, будут ли оповещения из Azure ATP автоматически создавать инциденты в Azure Sentinel автоматически. В разделе **Создать инциденты** выберите **Разрешить**, чтобы включить правило аналитики по умолчанию, которое автоматически создает инциденты на основе оповещений, созданных в подключенной службе безопасности. Затем это правило можно изменить в разделе **Аналитика**, а затем **Активные правила**.
 
-1. Щелкните **Подключить**.
+1. Нажмите кнопку **Соединить**.
 
 1. Чтобы использовать соответствующую схему в Log Analytics для оповещений Azure ATP, выполните поиск по запросу **секуритялерт**.
 
 > [!NOTE]
 > Если размер оповещений превышает 30 КБ, то Azure Sentinel прекращает отображать поле сущности в предупреждениях.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 В этом документе вы узнали, как подключить Azure Advanced Threat protection к Azure Sentinel. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
-- Узнайте, как [получить представление о данных и потенциальных угрозах](quickstart-get-visibility.md).
-- Приступая [к обнаружению угроз с помощью Azure Sentinel](tutorial-detect-threats-built-in.md).
+- Узнайте, как [отслеживать свои данные и потенциальные угрозы](quickstart-get-visibility.md).
+- Узнайте, как приступить к [обнаружению угроз с помощью Azure Sentinel](tutorial-detect-threats-built-in.md).
 

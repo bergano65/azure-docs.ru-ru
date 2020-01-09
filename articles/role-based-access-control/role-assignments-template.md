@@ -13,16 +13,16 @@ ms.workload: identity
 ms.date: 11/25/2019
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: a183dc3b318cb9d740fe91bf553dc9f0c7ec99c4
-ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
+ms.openlocfilehash: ad6c63ee15bc97ddd0ca6432f0b0f7b25a859804
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74707803"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75462193"
 ---
 # <a name="add-role-assignments-using-azure-rbac-and-azure-resource-manager-templates"></a>Добавление назначений ролей с помощью Azure RBAC и шаблонов Azure Resource Manager
 
-[!INCLUDE [Azure RBAC definition grant access](../../includes/role-based-access-control-definition-grant.md)] в дополнение к использованию Azure PowerShell или Azure CLI можно назначать роли с помощью [шаблонов Azure Resource Manager](../azure-resource-manager/resource-group-authoring-templates.md). Шаблоны могут быть полезны для согласованного и многократного развертывания ресурсов. В этой статье описывается назначение ролей с помощью шаблонов.
+[!INCLUDE [Azure RBAC definition grant access](../../includes/role-based-access-control-definition-grant.md)] в дополнение к использованию Azure PowerShell или Azure CLI можно назначать роли с помощью [шаблонов Azure Resource Manager](../azure-resource-manager/templates/template-syntax.md). Шаблоны могут быть полезны для согласованного и многократного развертывания ресурсов. В этой статье описывается назначение ролей с помощью шаблонов.
 
 ## <a name="get-object-ids"></a>Получение идентификаторов объектов
 
@@ -362,6 +362,6 @@ az group deployment create --resource-group ExampleGroup2 --template-file rbac-t
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - [Краткое руководство по созданию и развертыванию шаблонов Azure Resource Manager с помощью портала Azure](../azure-resource-manager/resource-manager-quickstart-create-templates-use-the-portal.md)
-- [Описание структуры и синтаксиса шаблонов Azure Resource Manager](../azure-resource-manager/resource-group-authoring-templates.md)
+- [Описание структуры и синтаксиса шаблонов Azure Resource Manager](../azure-resource-manager/templates/template-syntax.md)
 - [Создание групп ресурсов и ресурсов на уровне подписки](../azure-resource-manager/deploy-to-subscription.md)
-- [шаблонов быстрого запуска Azure](https://azure.microsoft.com/resources/templates/?term=rbac)
+- [Шаблоны быстрого запуска Azure](https://azure.microsoft.com/resources/templates/?term=rbac)

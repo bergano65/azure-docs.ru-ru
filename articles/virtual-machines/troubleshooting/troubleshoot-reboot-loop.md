@@ -12,12 +12,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 10/15/2018
 ms.author: genli
-ms.openlocfilehash: d8a1d64ac8e65fd52730ee1750c0b0b1949b3512
-ms.sourcegitcommit: c79aa93d87d4db04ecc4e3eb68a75b349448cd17
+ms.openlocfilehash: 3fd0a8bf6bacfec5e2be6dfa52ca51e46c7025f7
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71088464"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75443585"
 ---
 # <a name="windows-reboot-loop-on-an-azure-vm"></a>Цикл перезагрузки Windows на виртуальной машине Azure
 В этой статье описан цикл перезагрузки, который может возникнуть на виртуальной машине Windows в Microsoft Azure.
@@ -28,7 +28,7 @@ ms.locfileid: "71088464"
 
 ![Начальный экран 1](./media/troubleshoot-reboot-loop/start-screen-1.png)
 
-## <a name="cause"></a>Причина:
+## <a name="cause"></a>Причина
 
 Цикл перезагрузки возникает из-за перечисленных ниже причин.
 
@@ -40,7 +40,7 @@ ms.locfileid: "71088464"
 
 В операционную систему были внесены некоторые изменения. Как правило, они связаны с установкой обновления, установкой приложения или новой политикой. Для получения дополнительных сведений необходимо проверить следующие журналы:
 
-- Журналы событий
+- журналы событий;
 - CBS.logWindows;
 - Update.log.
 
@@ -86,7 +86,7 @@ ms.locfileid: "71088464"
     - `HKEY_LOCAL_MACHINE\BROKENSYSTEM\ControlSet00x\Services\AzureWLBackupInquirySvc\ErrorControl`
     - `HKEY_LOCAL_MACHINE\BROKENSYSTEM\ControlSet00x\Services\AzureWLBackupPluginSvc\ErrorControl`
 
-13. Выберите раздел **BROKENSYSTEM**, а затем в меню выберите **Файл** > **Загрузить куст**.
+13. Выберите ключ **BROKENSYSTEM** , а затем в меню выберите **файл** > **Выгрузить куст Hive** .
 
 14. Отключите диск операционной системы от виртуальной машины для устранения неполадок.
 

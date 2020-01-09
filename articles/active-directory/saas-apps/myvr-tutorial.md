@@ -1,5 +1,5 @@
 ---
-title: Руководство по интеграции единого входа Azure Active Directory с MyVR | Документация Майкрософт
+title: Руководство. интеграции единого входа Azure Active Directory с MyVR | Документация Майкрософт
 description: Из этой статьи вы узнаете, как настроить единый вход между Azure Active Directory и MyVR.
 services: active-directory
 documentationCenter: na
@@ -16,14 +16,14 @@ ms.topic: tutorial
 ms.date: 10/31/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a0bb55832443a9f4ac71122d92292c18346a9f48
-ms.sourcegitcommit: a22cb7e641c6187315f0c6de9eb3734895d31b9d
+ms.openlocfilehash: 3f0c699f2a3d043e0e5a9c2fd463de289b016cdd
+ms.sourcegitcommit: ce4a99b493f8cf2d2fd4e29d9ba92f5f942a754c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74081900"
+ms.lasthandoff: 12/28/2019
+ms.locfileid: "75530125"
 ---
-# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-myvr"></a>Руководство по интеграции единого входа Azure Active Directory с MyVR
+# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-myvr"></a>Руководство. интеграции единого входа Azure Active Directory с MyVR
 
 В этом руководстве описано, как интегрировать MyVR с Azure Active Directory (Azure AD). Интеграция MyVR с Azure AD обеспечивает следующие возможности:
 
@@ -33,11 +33,11 @@ ms.locfileid: "74081900"
 
 Чтобы узнать больше об интеграции приложений SaaS с Azure AD, прочитайте статью [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы приступить к работе, потребуется следующее:
 
-* подписка Azure AD Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
+* подписка Azure AD; Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
 * подписка MyVR с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -87,7 +87,7 @@ ms.locfileid: "74081900"
 
    ![Правка базовой конфигурации SAML](common/edit-urls.png)
 
-1. В разделе  **Базовая конфигурация SAML** приложение предварительно настроено в режиме, инициированном **поставщиком удостоверений** , и для приложения заданы требуемые URL-адреса в Azure. Пользователь должен сохранить конфигурацию, нажав кнопку **Сохранить** .
+1. В разделе **Базовая конфигурация SAML** приложение предварительно настроено в режиме инициированном **IDP** и ему заданы требуемые URL-адреса в Azure. Пользователь должен сохранить конфигурацию, нажав кнопку **Сохранить**.
 
 1. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
@@ -99,7 +99,7 @@ ms.locfileid: "74081900"
 
 1. В дополнение к описанному выше приложение SAML ожидает несколько дополнительных атрибутов в ответе SAML, как показано ниже. Эти атрибуты также заранее заполнены, но вы можете изменить их в соответствии со своими требованиями.
 
-   | ИМЯ | Атрибут источника|
+   | Имя | Атрибут источника|
    | ---------------| --------------- |
    | employeeid | user.employeeid |
 

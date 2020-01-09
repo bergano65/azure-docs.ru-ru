@@ -1,5 +1,5 @@
 ---
-title: Использование Java для файлов & ACL в Azure Data Lake Storage 2-го поколения (Предварительная версия)
+title: Azure Data Lake Storage 2-го поколения пакета SDK для Java для файлов & ACL (Предварительная версия)
 description: Используйте библиотеки службы хранилища Azure для Java для управления каталогами и списками управления доступом к файлам и каталогам (ACL) в учетных записях хранения с включенным иерархическое пространством имен (HNS).
 author: normesta
 ms.service: storage
@@ -8,14 +8,14 @@ ms.author: normesta
 ms.topic: conceptual
 ms.subservice: data-lake-storage-gen2
 ms.reviewer: prishet
-ms.openlocfilehash: 0a57e87cc408d111893cbb2beaf4fc5afee2eca2
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: 5a08a1f104e1820755f231ae6d1248ccc21ce330
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74930780"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75431841"
 ---
-# <a name="use-java-for-files--acls-in-azure-data-lake-storage-gen2-preview"></a>Использование Java для файлов & ACL в Azure Data Lake Storage 2-го поколения (Предварительная версия)
+# <a name="use-java-to-manage-directories-files-and-acls-in-azure-data-lake-storage-gen2-preview"></a>Использование Java для управления каталогами, файлами и списками ACL в Azure Data Lake Storage 2-го поколения (Предварительная версия)
 
 В этой статье показано, как использовать Java для создания каталогов, файлов и разрешений в учетных записях хранения с включенным иерархическое пространством имен (HNS) и управления ими. 
 
@@ -88,7 +88,7 @@ static public DataLakeFileSystemClient CreateFileSystem
 }
 ```
 
-## <a name="create-a-directory"></a>создать каталог;
+## <a name="create-a-directory"></a>Создание каталога
 
 Создайте ссылку на каталог, вызвав метод **даталакефилесистемклиент. createDirectory** .
 
@@ -312,7 +312,7 @@ static public void ListFilesInDirectory(DataLakeFileSystemClient fileSystemClien
 }
 ```
 
-## <a name="see-also"></a>Дополнительные материалы
+## <a name="see-also"></a>См. также
 
 * [Справочная документация по API](https://azuresdkdocs.blob.core.windows.net/$web/java/azure-storage-file-datalake/12.0.0-preview.6/index.html)
 * [Пакет (Maven)](https://search.maven.org/artifact/com.azure/azure-storage-file-datalake/12.0.0-preview.6/jar)

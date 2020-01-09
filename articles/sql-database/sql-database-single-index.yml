@@ -2,7 +2,6 @@
 documentType: LandingData
 title: Подключение к базе данных SQL Azure и Отдельная база данных
 metadata:
-  document_id: 36d89c48-3646-380e-34a0-ae3ac62e2641
   title: Документация по отдельным базам данных
   meta.description: Learn how to use Azure SQL databases.
   services: sql-database
@@ -127,4 +126,4 @@ sections:
         className: spaced noBullet
         items:
           - html: <a href="/azure/sql-database/sql-database-powershell-samples">Azure PowerShell</a>
-          - html: <a href="/azure/sql-database/sql-database-cli-samples">Интерфейс командной строки Azure</a>
+          - html: <a href="/azure/sql-database/sql-database-cli-samples">Azure CLI</a>

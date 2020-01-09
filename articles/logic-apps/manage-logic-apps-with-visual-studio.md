@@ -1,22 +1,22 @@
 ---
-title: Управление приложениями логики с помощью Visual Studio
-description: Управление приложениями логики и другими ресурсами Azure с помощью Visual Studio с Cloud Explorer
+title: Изменение и Управление приложениями логики с помощью Visual Studio с Cloud Explorer
+description: Редактирование, обновление, управление, добавление в систему управления версиями и развертывание приложений логики с помощью Visual Studio с Cloud Explorer
 services: logic-apps
 ms.suite: integration
 ms.reviewer: klam, logicappspm
 ms.topic: article
 ms.custom: mvc
 ms.date: 10/29/2019
-ms.openlocfilehash: 29b1235ee319567e103267b9054b8c6b244e1ca7
-ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
+ms.openlocfilehash: ed48082c52a5b4f79fd2030303dbe2bb7bedafe6
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74790835"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75456583"
 ---
 # <a name="manage-logic-apps-with-visual-studio"></a>Управление приложениями логики в Visual Studio
 
-Несмотря на то, что вы можете создавать, изменять, администрировать и развертывать приложения логики в [портал Azure](https://portal.azure.com), можно также использовать Visual Studio, если вы хотите добавить приложения логики в систему управления версиями, опубликовать разные версии и создать шаблоны [Azure Resource Manager](../azure-resource-manager/resource-group-overview.md) для различных сред развертывания. С помощью Visual Studio Cloud Explorer вы можете найти приложения логики и другие ресурсы Azure и управлять ими. Например, вы можете открывать, загружать, редактировать, запускать, просматривать журнал запусков, а также отключать и включать приложения логики, которые уже развернуты на портале Azure. Если вы ранее не работали с Azure Logic Apps в Visual Studio, [узнайте о создании приложений логики с помощью Visual Studio](../logic-apps/quickstart-create-logic-apps-with-visual-studio.md).
+Несмотря на то, что вы можете создавать, изменять, администрировать и развертывать приложения логики в [портал Azure](https://portal.azure.com), можно также использовать Visual Studio, если вы хотите добавить приложения логики в систему управления версиями, опубликовать разные версии и создать шаблоны [Azure Resource Manager](../azure-resource-manager/management/overview.md) для различных сред развертывания. С помощью Visual Studio Cloud Explorer вы можете найти приложения логики и другие ресурсы Azure и управлять ими. Например, вы можете открывать, загружать, редактировать, запускать, просматривать журнал запусков, а также отключать и включать приложения логики, которые уже развернуты на портале Azure. Если вы ранее не работали с Azure Logic Apps в Visual Studio, [узнайте о создании приложений логики с помощью Visual Studio](../logic-apps/quickstart-create-logic-apps-with-visual-studio.md).
 
 > [!IMPORTANT]
 > Развертывание или публикация приложения логики из Visual Studio перезаписывает версию этого приложения на портале Azure. Поэтому, если вы вносите изменения на портале Azure, которые нужно сохранить, [обновите приложение логики в Visual Studio](#refresh) с портала Azure перед следующим развертыванием или публикацией из Visual Studio.
@@ -47,7 +47,7 @@ ms.locfileid: "74790835"
 
     * [Visual Studio 2017](https://aka.ms/download-azure-logic-apps-tools-visual-studio-2017)
 
-    * [Visual Studio 2015](https://aka.ms/download-azure-logic-apps-tools-visual-studio-2015)
+    * [Visual Studio 2015](https://aka.ms/download-azure-logic-apps-tools-visual-studio-2015)
 
     Вы можете скачать и установить средства Azure Logic Apps напрямую из Visual Studio Marketplace или узнать, [как установить это расширение из Visual Studio](https://docs.microsoft.com/visualstudio/ide/finding-and-using-visual-studio-extensions). После завершения установки перезагрузите Visual Studio.
 
@@ -61,7 +61,7 @@ ms.locfileid: "74790835"
 
 В Visual Studio с помощью Cloud Explorer можно найти все приложения логики, которые связаны с подпиской Azure и развернуты на портале Azure.
 
-1. Откройте Visual Studio. В меню **Представление** выберите **Cloud Explorer**.
+1. Запустите Visual Studio. В меню **Представление** выберите **Cloud Explorer**.
 
 1. В Cloud Explorer выберите **Управление учетными записями**. Выберите подписку Azure, связанную с приложениями логики, и нажмите кнопку **Применить**. Пример.
 
@@ -96,7 +96,7 @@ ms.locfileid: "74790835"
 
 ## <a name="download-from-azure"></a>Скачивание из Azure
 
-Вы можете загрузить приложения логики с [портала Azure](https://portal.azure.com) и сохранить их в виде шаблонов [Azure Resource Manager](../azure-resource-manager/resource-group-overview.md). Затем вы можете локально изменить шаблоны в Visual Studio и настроить приложения логики для разных сред развертывания.  При загрузке приложений логики автоматически *параметризуются* их определения внутри [шаблонов Resource Manager](../azure-resource-manager/template-deployment-overview.md), которые также используют формат JSON.
+Вы можете загрузить приложения логики с [портала Azure](https://portal.azure.com) и сохранить их в виде шаблонов [Azure Resource Manager](../azure-resource-manager/management/overview.md). Затем вы можете локально изменить шаблоны в Visual Studio и настроить приложения логики для разных сред развертывания.  При загрузке приложений логики автоматически *параметризуются* их определения внутри [шаблонов Resource Manager](../azure-resource-manager/template-deployment-overview.md), которые также используют формат JSON.
 
 1. В Visual Studio откройте Cloud Explorer. Найдите и выберите приложение логики, которое необходимо скачать из Azure.
 

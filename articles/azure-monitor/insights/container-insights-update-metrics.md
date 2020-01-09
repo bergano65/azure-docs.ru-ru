@@ -1,18 +1,14 @@
 ---
 title: Обновление Azure Monitor для контейнеров с метриками | Документация Майкрософт
 description: В этой статье описывается, как обновить Azure Monitor для контейнеров, чтобы включить функцию настраиваемых метрик, которая поддерживает Просмотр сводных метрик и оповещений о них.
-ms.service: azure-monitor
-ms.subservice: ''
 ms.topic: conceptual
-author: mgoedtel
-ms.author: magoedte
 ms.date: 11/11/2019
-ms.openlocfilehash: 5a43d7e23c9d6550e8985599786ff968050f19c1
-ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
+ms.openlocfilehash: 0a2674df4a05d856b35dd51dbb33af0f407db29f
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74707487"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75403222"
 ---
 # <a name="how-to-update-azure-monitor-for-containers-to-enable-metrics"></a>Обновление Azure Monitor для контейнеров для включения метрик
 
@@ -24,7 +20,7 @@ Azure Monitor для контейнеров — это поддержка сбо
 
 В составе этой функции включены следующие метрики:
 
-| Пространство имен метрик | Метрика | Описание |
+| Пространство имен метрик | Метрика | Description |
 |------------------|--------|-------------|
 | Аналитика. контейнеры и узлы | Кпуусажемилликорес, Кпуусажеперцентаже, Меморирссбитес, Меморирссперцентаже, Мемориворкингсетбитес, memoryWorkingSetPercentage, nodesCount | Это метрики *узла* , включая *узел* в качестве измерения, и они также включают в себя<br> имя узла в качестве значения для измерения *узла* . |
 | Аналитика. контейнеры и модули | подкаунт | Это метрики *Pod* , которые включают в себя следующие измерения: ControllerName, Kubernetes Namespace, Name и Phase. |

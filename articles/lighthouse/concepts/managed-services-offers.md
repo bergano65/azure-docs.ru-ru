@@ -1,14 +1,14 @@
 ---
 title: Предложения управляемых служб в Azure Marketplace
 description: Предложения управляемых служб позволяют поставщикам услуг продавать предложения по управлению ресурсами клиентам в Azure Marketplace.
-ms.date: 09/19/2019
+ms.date: 12/16/2019
 ms.topic: conceptual
-ms.openlocfilehash: f7dcaa34b1fb471823acd74a7d9b05e42dd44161
-ms.sourcegitcommit: 95931aa19a9a2f208dedc9733b22c4cdff38addc
+ms.openlocfilehash: 1b4f0d7457a74afe710a48f429cfe47535a9b122
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74464001"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75453586"
 ---
 # <a name="managed-services-offers-in-azure-marketplace"></a>Предложения управляемых служб в Azure Marketplace
 
@@ -22,21 +22,22 @@ ms.locfileid: "74464001"
 
 ## <a name="public-and-private-offers"></a>Общедоступные и частные предложения
 
-Каждое предложение управляемых служб включает в себя один или несколько планов. Эти планы могут быть как частными, так и общедоступными.
+Каждое предложение управляемых служб включает в себя один или несколько планов. Планы могут быть либо частными, либо общедоступными. 
 
-Чтобы ограничить предложение конкретными клиентами, можно опубликовать частный план. Когда это будет сделано, план может быть приобретен только для определенных] предоставленных вами кодов подписки. Дополнительные сведения см. в разделе [Private offers](https://docs.microsoft.com/azure/marketplace/private-offers) (Частные предложения).
+Чтобы ограничить предложение конкретными клиентами, можно опубликовать частный план. Когда это будет сделано, план может быть приобретен только для определенных] предоставленных вами кодов подписки. Дополнительные сведения см. в разделе [Private offers](../../marketplace/private-offers.md) (Частные предложения).
 
 Общедоступные планы позволяют продвигать службы новым клиентам. Обычно они более уместны, когда требуется только ограниченный доступ к арендатору клиента. После установления связи с клиентами, если они решат предоставить организации дополнительный доступ, можете осуществить его, опубликовав новый частный план только для этого клиента, или [подключив клиента к делегированному управлению ресурсами Azure](../how-to/onboard-customer.md).
 
-Учитывайте, что после опубликования плана как общедоступного, его нельзя будет изменить на частный. Также нельзя будет ограничить доступность общедоступного плана для определенных клиентов или даже для определенного количества клиентов, хотя вы сможете при желании полностью прекратить продажу плана.
-
 При необходимости в одно и то же предложение можно включить как общественные, так и частные планы.
+
+> [!IMPORTANT]
+> После публикации плана как общедоступного вы не сможете изменить его на частный. Чтобы контролировать, какие клиенты могут принимать ваши предложения и делегировать ресурсы, используйте частный план. С помощью общедоступного плана вы не сможете ограничить доступность определенными клиентами или даже определенным числом клиентов (хотя вы можете не допустить продажи плана полностью, если вы решили это сделать). В настоящее время нет механизма отклонять или удалять делегирования, когда клиент принимает предложение, хотя вы всегда можете обратиться к клиенту и попросить его [Удалить доступ](../how-to/view-manage-service-providers.md#add-or-remove-service-provider-offers).
 
 ## <a name="publish-managed-service-offers"></a>Публикация предложений управляемых служб
 
-Чтобы узнать, как опубликовать предложение управляемых служб, см. раздел [Publish a managed services offer to Azure Marketplace](../how-to/publish-managed-services-offers.md) (Публикация предложений управляемых служб в Azure Marketplace). Общие сведения о публикации в Azure Marketplace с помощью портала Cloud Partner см. раздел [Azure Marketplace and AppSource publishing guide](https://docs.microsoft.com/azure/marketplace/marketplace-publishers-guide) (Руководство по публикации в Azure Marketplace и AppSource) и [Manage Azure and AppSource Marketplace offers](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal/manage-offers/cpp-manage-offers) (Управление предложениями Azure и AppSource Marketplace).
+Чтобы узнать, как опубликовать предложение управляемых служб, см. раздел [Publish a managed services offer to Azure Marketplace](../how-to/publish-managed-services-offers.md) (Публикация предложений управляемых служб в Azure Marketplace). Общие сведения о публикации в Azure Marketplace с помощью портала Cloud Partner см. раздел [Azure Marketplace and AppSource publishing guide](../../marketplace/marketplace-publishers-guide.md) (Руководство по публикации в Azure Marketplace и AppSource) и [Manage Azure and AppSource Marketplace offers](../../marketplace/cloud-partner-portal/manage-offers/cpp-manage-offers.md) (Управление предложениями Azure и AppSource Marketplace).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о [делегированном управлении ресурсами Azure](azure-delegated-resource-management.md) и [интерфейсах управления для различных клиентов](cross-tenant-management-experience.md).
 - [Publish a managed services offer](../how-to/publish-managed-services-offers.md) (Публикация предложения управляемых служб) в Azure Marketplace.

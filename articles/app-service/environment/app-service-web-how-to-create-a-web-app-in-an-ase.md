@@ -7,12 +7,12 @@ ms.topic: article
 ms.date: 07/11/2017
 ms.author: ccompy
 ms.custom: seodec18
-ms.openlocfilehash: 8fb121999176e43f07283e970d7336a7c569eaca
-ms.sourcegitcommit: 48b7a50fc2d19c7382916cb2f591507b1c784ee5
+ms.openlocfilehash: 5c947617f0c27708e72f9bff92e2b0041473cd92
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74688713"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75422066"
 ---
 # <a name="create-a-web-app-in-an-app-service-environment-v1"></a>Создание веб-приложения в среде служб приложений версии 1
 
@@ -20,7 +20,7 @@ ms.locfileid: "74688713"
 > Эта статья посвящена среде службы приложений версии 1.  Имеется более новая версия среды службы приложений, которая проще в использовании и которая работает на более мощной инфраструктуре. Чтобы узнать больше о новой версии, начните с изучения статьи [Введение в среду службы приложения](intro.md).
 > 
 
-## <a name="overview"></a>Краткое описание
+## <a name="overview"></a>Обзор
 В этом руководстве показано, как создавать веб-приложения и планы обслуживания службы приложений в [среде службы приложений версии 1](app-service-app-service-environment-intro.md) (ASE). 
 
 > [!NOTE]
@@ -104,5 +104,5 @@ ms.locfileid: "74688713"
 [HowtoCreateASE]: app-service-web-how-to-create-an-app-service-environment.md
 [HowtoScale]: app-service-web-scale-a-web-app-in-an-app-service-environment.md
 [HowtoConfigureASE]: app-service-web-configure-an-app-service-environment.md
-[ResourceGroups]: ../../azure-resource-manager/resource-group-overview.md
+[ResourceGroups]: ../../azure-resource-manager/management/overview.md
 [AzurePowershell]: https://azure.microsoft.com/documentation/articles/powershell-install-configure/

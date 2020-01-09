@@ -1,25 +1,21 @@
 ---
-title: Подключение Azure Information Protection данных к Azure Sentinel | Документация Майкрософт
+title: Подключение Azure Information Protection к Azure Sentinel
 description: Узнайте, как подключить данные Azure Information Protection в Azure Sentinel.
 services: sentinel
-documentationcenter: na
 author: cabailey
 manager: rkarlin
 ms.assetid: bfa2eca4-abdc-49ce-b11a-0ee229770cdd
 ms.service: azure-sentinel
 ms.subservice: azure-sentinel
-ms.devlang: na
 ms.topic: conceptual
-ms.tgt_pltfrm: na
-ms.workload: na
 ms.date: 09/24/2019
 ms.author: cabailey
-ms.openlocfilehash: a2760b53dbb9776501cb5e58c681045743471166
-ms.sourcegitcommit: 55f7fc8fe5f6d874d5e886cb014e2070f49f3b94
+ms.openlocfilehash: ef97ad601436faf44b0f49bd48d78c4c9420c7c8
+ms.sourcegitcommit: 5925df3bcc362c8463b76af3f57c254148ac63e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71261822"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75563689"
 ---
 # <a name="connect-data-from-azure-information-protection"></a>Подключение данных из Azure Information Protection
 
@@ -29,7 +25,7 @@ ms.locfileid: "71261822"
 
 Вы можете выполнить потоковую передачу данных журнала из [Azure Information Protection](https://azure.microsoft.com/services/information-protection/) в Azure Sentinel, настроив соединитель Azure Information Protection данных. Azure Information Protection помогает контролировать и защищать конфиденциальные данные независимо от того, хранятся ли они в облаке или в локальной среде.
 
-Если служба [Central Reporting для Azure Information Protection](https://docs.microsoft.com/azure/information-protection/reports-aip) уже настроена таким образом, чтобы данные журнала из этой службы хранились в той же log Analytics рабочей области, что и в настоящее время выбрано для Azure Sentinel, можно пропустить настройку Этот соединитель данных. Данные журнала из Azure Information Protection уже доступны для Azure Sentinel.
+Если служба [Central Reporting для Azure Information Protection](https://docs.microsoft.com/azure/information-protection/reports-aip) уже настроена таким образом, чтобы данные журнала из этой службы хранились в той же log Analytics рабочей области, что и в настоящее время выбрано для Azure Sentinel, можно пропустить настройку этого соединителя данных. Данные журнала из Azure Information Protection уже доступны для Azure Sentinel.
 
 Однако если данные журнала из Azure Information Protection будут находиться в другой рабочей области Log Analytics, отличной от выбранной для Azure Sentinel, выполните одно из следующих действий.
 
@@ -39,14 +35,14 @@ ms.locfileid: "71261822"
     
     При изменении рабочей области новые данные отчетов для Azure Information Protection будут храниться в рабочей области, используемой для Sentinel Azure, а исторические данные недоступны для Azure Sentinel. Кроме того, если предыдущая рабочая область настроена для пользовательских запросов, предупреждений или интерфейсов API, их необходимо перенастроить для рабочей области "Sentinel" Azure, если вы хотите использовать их для Azure Information Protection. Для клиентов и служб, использующих Azure Information Protection, перенастройка не требуется.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 - Одна из следующих ролей администратора Azure AD для клиента: 
     - Администратор Azure Information Protection
-    - Администратор безопасности
-    - Администратор соответствия требованиям
+    - администратор безопасности;
+    - администратор соответствия требованиям.
     - Администратор данных соответствия требованиям
-    - Глобальный администратор
+    - Глобальный администратор.
     
     > [!NOTE]
     > Нельзя использовать роль администратора Azure Information Protection, если клиент находится на [единой платформе меток](/information-protection/faqs#how-can-i-determine-if-my-tenant-is-on-the-unified-labeling-platform).
@@ -73,8 +69,8 @@ ms.locfileid: "71261822"
     
     Чтобы использовать соответствующую схему в Azure Monitor для этих данных отчетов, выполните поиск по запросу **информатионпротектионевентс**. Сведения об этих функциях событий см. в разделе [Справочник по понятным схемам функций событий](https://docs.microsoft.com/azure/information-protection/reports-aip#friendly-schema-reference-for-event-functions) статьи Azure Information Protection.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом документе вы узнали, как подключить Azure Information Protection к Azure Sentinel. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
-- Узнайте, как [получить представление о данных и потенциальных угрозах](quickstart-get-visibility.md).
-- Приступая [к обнаружению угроз с помощью Azure Sentinel](tutorial-detect-threats-built-in.md).
+- Узнайте, как [отслеживать свои данные и потенциальные угрозы](quickstart-get-visibility.md).
+- Узнайте, как приступить к [обнаружению угроз с помощью Azure Sentinel](tutorial-detect-threats-built-in.md).

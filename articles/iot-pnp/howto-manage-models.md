@@ -6,14 +6,14 @@ manager: philmea
 ms.service: iot-pnp
 services: iot-pnp
 ms.topic: conceptual
-ms.date: 06/12/2019
+ms.date: 12/26/2019
 ms.author: philmea
-ms.openlocfilehash: 4320a975f74d000bd492d291f5e610f591536b0d
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.openlocfilehash: 7e71c940d0c083642954114cf4fa1617b93335b9
+ms.sourcegitcommit: ce4a99b493f8cf2d2fd4e29d9ba92f5f942a754c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74979110"
+ms.lasthandoff: 12/28/2019
+ms.locfileid: "75531266"
 ---
 # <a name="manage-models-in-the-repository"></a>Управление моделями в репозитории
 
@@ -37,9 +37,9 @@ ms.locfileid: "74979110"
 На [портале сертификации Azure для IOT](https://preview.catalog.azureiotsolutions.com)можно выполнить следующие задачи.
 
 - [Завершите процесс сертификации для вашего устройства IOT](./tutorial-certification-test.md).
-- Найдите Plug and Playные модели возможностей устройств IoT. Эти модели можно использовать для [быстрого создания готовых устройств IOT и их интеграции с решениями](./quickstart-connect-pnp-device-solution.md).
+- Найдите Plug and Playные модели возможностей устройств IoT. Эти модели можно использовать для [быстрого создания готовых устройств IOT и их интеграции с решениями](./quickstart-connect-pnp-device-solution-node.md).
 
-## <a name="azure-cli"></a>Azure CLI
+## <a name="azure-cli"></a>Интерфейс командной строки Azure
 
 Azure CLI предоставляет команды для управления моделями возможностей устройств и интерфейсами в центрах Интернета вещей Plug and Play Public и в репозиториях модели компании. Дополнительные сведения см. в разделе [Установка и использование расширения Интернета вещей Azure для Azure CLI](./howto-install-pnp-cli.md) .
 

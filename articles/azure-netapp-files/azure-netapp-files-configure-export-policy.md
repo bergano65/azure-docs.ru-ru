@@ -1,25 +1,19 @@
 ---
-title: Настройка политики экспорта для тома NFS с помощью Azure NetApp Files | Документация Майкрософт
+title: Настройка политики экспорта для тома NFS — Azure NetApp Files
 description: Описание настройки политики экспорта для управления доступом к тому NFS с помощью Azure NetApp Files
 services: azure-netapp-files
-documentationcenter: ''
 author: b-juche
-manager: ''
-editor: ''
-ms.assetid: ''
+ms.author: b-juche
 ms.service: azure-netapp-files
 ms.workload: storage
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 10/18/2019
-ms.author: b-juche
-ms.openlocfilehash: d323bd0b9684cfe4930d8c779a6728fcfd3836fb
-ms.sourcegitcommit: 9a4296c56beca63430fcc8f92e453b2ab068cc62
+ms.openlocfilehash: b96fca3a5627a1c6c96c8db5c1c209a51c5e102a
+ms.sourcegitcommit: ec2eacbe5d3ac7878515092290722c41143f151d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/20/2019
-ms.locfileid: "72674929"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75551564"
 ---
 # <a name="configure-export-policy-for-an-nfs-volume"></a>Настройка политики экспорта для тома NFS
 
@@ -39,16 +33,16 @@ ms.locfileid: "72674929"
         * IPv4-адрес, например `10.1.12.24` 
         * IPv4-адрес и маска подсети, выраженная количеством бит, например `10.1.12.10/4`
 
-    * **Access**  
+    * **Доступ**  
         Выберите одно из следующих типов доступа.  
         * Нет доступа 
         * Чтение и запись
-        * Только чтение
+        * Только для чтения
 
     ![Экспортировать политику](../media/azure-netapp-files/azure-netapp-files-export-policy.png) 
 
 
-## <a name="next-steps"></a>Дополнительная информация 
+## <a name="next-steps"></a>Дальнейшие действия 
 * [Управление томами](azure-netapp-files-manage-volumes.md)
 * [Подключение и отключение тома для виртуальных машин](azure-netapp-files-mount-unmount-volumes-for-virtual-machines.md)
 * [Управление моментальными снимками](azure-netapp-files-manage-snapshots.md)

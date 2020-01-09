@@ -15,12 +15,12 @@ ms.workload: identity
 ms.date: 02/20/2018
 ms.author: markvi
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 09c1e31664b94dd814b33b630dfa4f8e24d4600f
-ms.sourcegitcommit: a678f00c020f50efa9178392cd0f1ac34a86b767
+ms.openlocfilehash: e5f006832fd1f1386adaf89b0045272a70db2df3
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74547188"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75429945"
 ---
 # <a name="configure-managed-identities-for-azure-resources-on-an-azure-virtual-machine-scale-using-a-template"></a>Настройка управляемых удостоверений для ресурсов Azure на масштабируемом виртуальном компьютере Azure с помощью шаблона
 
@@ -47,12 +47,12 @@ ms.locfileid: "74547188"
 
 ## <a name="azure-resource-manager-templates"></a>Шаблоны Azure Resource Manager
 
-Так же как портал Azure и сценарии, шаблоны [Azure Resource Manager](../../azure-resource-manager/resource-group-overview.md) предоставляют возможность развертывать новые или измененные ресурсы, определенные в группе ресурсов Azure. Доступно несколько способов редактирования и развертывания шаблона, локально и на портале, в том числе:
+Так же как портал Azure и сценарии, шаблоны [Azure Resource Manager](../../azure-resource-manager/management/overview.md) предоставляют возможность развертывать новые или измененные ресурсы, определенные в группе ресурсов Azure. Доступно несколько способов редактирования и развертывания шаблона, локально и на портале, в том числе:
 
-   - С помощью [настраиваемого шаблона из Azure Marketplace](../../azure-resource-manager/resource-group-template-deploy-portal.md#deploy-resources-from-custom-template), который позволяет создать шаблон с нуля или основывать его на существующем [шаблоне общего или краткого шаблона](https://azure.microsoft.com/documentation/templates/).
-   - Наследование от имеющейся группы ресурсов путем экспорта шаблона из [исходного развертывания](../../azure-resource-manager/manage-resource-groups-portal.md#export-resource-groups-to-templates) или от [текущего состояния развертывания](../../azure-resource-manager/manage-resource-groups-portal.md#export-resource-groups-to-templates).
+   - С помощью [настраиваемого шаблона из Azure Marketplace](../../azure-resource-manager/templates/deploy-portal.md#deploy-resources-from-custom-template), который позволяет создать шаблон с нуля или основывать его на существующем [шаблоне общего или краткого шаблона](https://azure.microsoft.com/documentation/templates/).
+   - Наследование от имеющейся группы ресурсов путем экспорта шаблона из [исходного развертывания](../../azure-resource-manager/templates/export-template-portal.md) или от [текущего состояния развертывания](../../azure-resource-manager/templates/export-template-portal.md).
    - Использование локального [редактора JSON (например, VS Code)](../../azure-resource-manager/resource-manager-create-first-template.md), а затем передача и развертывание с помощью PowerShell или интерфейса командной строки.
-   - Использование [проекта группы ресурсов Azure](../../azure-resource-manager/vs-azure-tools-resource-groups-deployment-projects-create-deploy.md) Visual Studio для создания и развертывания шаблона.  
+   - Использование [проекта группы ресурсов Azure](../../azure-resource-manager/templates/create-visual-studio-deployment-project.md) Visual Studio для создания и развертывания шаблона.  
 
 Независимо оттого, какой вариант выбран, во время первоначального развертывания и повторного развертывания в шаблоне используется одинаковый синтаксис. Включение управляемых удостоверений для ресурсов Azure на новой или существующей виртуальной машине выполняется таким же образом. Коме того, по умолчанию Azure Resource Manager выполняет [добавочное обновление](../../azure-resource-manager/deployment-modes.md) для развертываний.
 
@@ -72,7 +72,7 @@ ms.locfileid: "74547188"
    ```
 
 > [!NOTE]
-> Вы можете при необходимости подготавливать управляемые удостоверения для расширения масштабируемого набора виртуальных машин Azure Resources, указав его в элементе `extensionProfile` шаблона. Этот шаг необязателен, так как для получения маркеров можно также использовать конечную точку Службы метаданных экземпляров Azure (IMDS).  Дополнительные сведения см. [в статье миграция из расширения виртуальной машины в Azure IMDS для проверки подлинности](howto-migrate-vm-extension.md).
+> Вы можете при необходимости подготавливать управляемые удостоверения для расширения масштабируемого набора виртуальных машин Azure Resources, указав его в элементе `extensionProfile` шаблона. Этот шаг необязателен, так как для получения токенов можно также использовать конечную точку службы метаданных экземпляров Azure (IMDS).  Дополнительные сведения см. [в статье миграция из расширения виртуальной машины в Azure IMDS для проверки подлинности](howto-migrate-vm-extension.md).
 
 
 4. Когда все будет готово, необходимо добавить следующие разделы в раздел ресурсов шаблона, который должен выглядеть следующим образом.
@@ -196,7 +196,7 @@ ms.locfileid: "74547188"
    }
    ``` 
 > [!NOTE]
-> Вы можете при необходимости подготавливать управляемые удостоверения для расширения масштабируемого набора виртуальных машин Azure Resources, указав его в элементе `extensionProfile` шаблона. Этот шаг необязателен, так как для получения маркеров можно также использовать конечную точку Службы метаданных экземпляров Azure (IMDS).  Дополнительные сведения см. [в статье миграция из расширения виртуальной машины в Azure IMDS для проверки подлинности](howto-migrate-vm-extension.md).
+> Вы можете при необходимости подготавливать управляемые удостоверения для расширения масштабируемого набора виртуальных машин Azure Resources, указав его в элементе `extensionProfile` шаблона. Этот шаг необязателен, так как для получения токенов можно также использовать конечную точку службы метаданных экземпляров Azure (IMDS).  Дополнительные сведения см. [в статье миграция из расширения виртуальной машины в Azure IMDS для проверки подлинности](howto-migrate-vm-extension.md).
 
 3. По завершении шаблон должен выглядеть следующим образом.
    

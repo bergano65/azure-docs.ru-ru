@@ -1,18 +1,14 @@
 ---
 title: Запрос журналов из Azure Monitor для контейнеров | Документация Майкрософт
 description: Azure Monitor для контейнеров собирает метрики и данные журнала. в этой статье описываются записи и примеры запросов.
-ms.service: azure-monitor
-ms.subservice: ''
 ms.topic: conceptual
-author: mgoedtel
-ms.author: magoedte
 ms.date: 10/15/2019
-ms.openlocfilehash: 787e9e6d0ae86568e1af74b4d67fb716841a02df
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: dcd1656673e549b583de26bca897d0055f389d0a
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73477098"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75404536"
 ---
 # <a name="how-to-query-logs-from-azure-monitor-for-containers"></a>Запрос журналов из Azure Monitor для контейнеров
 
@@ -30,9 +26,9 @@ Azure Monitor для контейнеров собирает метрики пр
 | Список узлов контейнеров | `ContainerNodeInventory`| TimeGenerated, Computer, ClassName_s, DockerVersion_s, OperatingSystem_s, Volume_s, Network_s, NodeRole_s, OrchestratorType_s, InstanceID_g, SourceSystem|
 | Список модулей pod в кластере Kubernetes | `KubePodInventory` | TimeGenerated, Computer, ClusterId, Контаинеркреатионтиместамп, Подуид, Подкреатионтиместамп, Контаинеррестарткаунт, Подрестарткаунт, PodStartTime, ContainerStartTime, ServiceName, ControllerKind, ControllerName, ContainerStatus,  Контаинерстатусреасон, ContainerID, ContainerName, Name, Подлабел, Namespace, Подстатус, имя_кластера, модуля, Sourcesystem имеет значение |
 | Список узлов кластера Kubernetes | `KubeNodeInventory` | TimeGenerated, Computer, ClusterName, ClusterId, LastTransitionTimeReady, Labels, Status, KubeletVersion, KubeProxyVersion, CreationTimeStamp, SourceSystem | 
-| События Kubernetes | `KubeEvents` | TimeGenerated, Computer, ClusterId_s, FirstSeen_t, LastSeen_t, Count_d, ObjectKind_s, Namespace_s, Name_s, Reason_s, Type_s, TimeGenerated_s, SourceComponent_s, ClusterName_s, Message,  SourceSystem | 
+| События Kubernetes. | `KubeEvents` | TimeGenerated, Computer, ClusterId_s, FirstSeen_t, LastSeen_t, Count_d, ObjectKind_s, Namespace_s, Name_s, Reason_s, Type_s, TimeGenerated_s, SourceComponent_s, ClusterName_s, Message,  SourceSystem | 
 | Службы в кластере Kubernetes | `KubeServices` | TimeGenerated, ServiceName_s, Namespace_s, SelectorLabels_s, ClusterId_s, ClusterName_s, ClusterIP_s, ServiceType_s, SourceSystem | 
-| Метрики производительности для узлов кластера Kubernetes | Perf &#124; where ObjectName == "K8SNode" | Computer, ObjectName, CounterName &#40;Кпуаллокатаблебитес, Меморяллокатаблебитес, КпукапаЦитинанокорес, МеморикапаЦитибитес, MemoryRssBytes, CpuUsageNanoCores, MemoryWorkingsetBytes, restartTimeEpoch&#41;, CounterValue, TimeGenerated, Каунтерпас, Sourcesystem имеет значение | 
+| Метрики производительности для узлов кластера Kubernetes | Perf &#124; where ObjectName == "K8SNode" | Computer, ObjectName, CounterName &#40;Кпуаллокатаблебитес, Меморяллокатаблебитес, КпукапаЦитинанокорес, МеморикапаЦитибитес, MemoryRssBytes, CpuUsageNanoCores, MemoryWorkingsetBytes, restartTimeEpoch&#41;, CounterValue, timegenerated, CounterPath, sourcesystem имеет значение | 
 | Метрики производительности контейнеров кластера Kubernetes | Perf &#124; where ObjectName == “K8SContainer” | CounterName &#40; Кпурекуестнанокорес, Меморирекуестбитес, Кпулимитнанокорес, Мемориворкингсетбитес, RestartTimeEpoch, CpuUsageNanoCores, memoryRssBytes&#41;, CounterValue, timegenerated, CounterPath, sourcesystem имеет значение | 
 | Пользовательские метрики |`InsightsMetrics` | Компьютер, имя, пространство имен, источник, Sourcesystem имеет значение, теги<sup>1</sup>, timegenerated, тип, ва, _ResourceId | 
 
@@ -56,7 +52,7 @@ Azure Monitor для контейнеров собирает метрики пр
 
 При создании запросов часто бывает полезно начать с одного-двух примеров, внося затем в них изменения в соответствии со своими требованиями. Можно поэкспериментировать с приведенными ниже примерами запросов, чтобы научиться создавать более сложные запросы.
 
-| Запрос | Description (Описание) | 
+| Запрос | Description | 
 |-------|-------------|
 | ContainerInventory<br> &#124; project Computer, Name, Image, ImageTag, ContainerState, CreatedTime, StartedTime, FinishedTime<br> &#124; render table | Вывод всех сведений о жизненном цикле контейнера| 
 | KubeEvents_CL<br> &#124; where not(isempty(Namespace_s))<br> &#124; sort by TimeGenerated desc<br> &#124; render table | События Kubernetes|

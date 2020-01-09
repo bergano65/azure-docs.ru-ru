@@ -2,19 +2,19 @@
 title: Реагирование на события модуля хранилища BLOB-объектов — Служба "Сетка событий Azure" IoT Edge | Документация Майкрософт
 description: Реагирование на события модуля хранилища BLOB-объектов
 author: arduppal
-manager: mchad
+manager: brymat
 ms.author: arduppal
 ms.reviewer: spelluru
-ms.date: 10/02/2019
+ms.date: 12/13/2019
 ms.topic: article
 ms.service: event-grid
 services: event-grid
-ms.openlocfilehash: a074abf494e155e0dc088d0db6af7eba0b3cf3c2
-ms.sourcegitcommit: b45ee7acf4f26ef2c09300ff2dba2eaa90e09bc7
+ms.openlocfilehash: 2f52d72a1f2e3c3d1f3495c4b7f6f633db30778e
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73100238"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75437288"
 ---
 # <a name="tutorial-react-to-blob-storage-events-on-iot-edge-preview"></a>Учебник. реагирование на события хранилища BLOB-объектов на IoT Edge (Предварительная версия)
 В этой статье показано, как развернуть хранилище BLOB-объектов Azure в модуле IoT, который будет служить издателем службы "Сетка событий" для отправки событий при создании большого двоичного объекта и удалении большого двоичного объекта в службе "Сетка событий".  
@@ -24,7 +24,7 @@ ms.locfileid: "73100238"
 > [!WARNING]
 > Хранилище BLOB-объектов Azure в IoT Edge интеграция с сеткой событий находится на этапе предварительной версии
 
-Для работы с этим руководством вам потребуется:
+Для выполнения шагов, описанных в данном учебнике, потребуется следующее.
 
 * **Подписка Azure** . Создайте [бесплатную учетную запись](https://azure.microsoft.com/free) , если она еще не создана. 
 * **Центр Интернета вещей Azure и устройство IOT Edge** . выполните действия, описанные в кратком руководстве для устройств [Linux](../../iot-edge/quickstart-linux.md) или [Windows](../../iot-edge/quickstart.md) , если у вас его еще нет.
@@ -63,8 +63,8 @@ ms.locfileid: "73100238"
         {
           "Env": [
            "inbound:serverAuth:tlsPolicy=enabled",
-            "inbound:clientAuth:clientCert:enabled=false",
-            "outbound:webhook:httpsOnly=false"
+           "inbound:clientAuth:clientCert:enabled=false",
+           "outbound:webhook:httpsOnly=false"
           ],
           "HostConfig": {
             "PortBindings": {
@@ -77,11 +77,12 @@ ms.locfileid: "73100238"
           }
         }
     ```    
+
  1. Нажмите кнопку **Сохранить**
  1. Перейдите к следующему разделу, чтобы добавить модуль "функции Azure"
 
     >[!IMPORTANT]
-    > В этом руководстве вы развернете модуль сетки событий, чтобы разрешить запросы HTTP/HTTPs, проверка подлинности клиента отключена и разрешение подписчиков HTTP. Для рабочих нагрузок рекомендуется включить проверку подлинности клиента только по протоколам HTTPs и подписчикам. Дополнительные сведения о безопасной настройке модуля сетки событий см. в разделе [безопасность и проверка подлинности](security-authentication.md).
+    > В этом руководстве вы узнаете, как развернуть модуль "Сетка событий", чтобы разрешить запросы HTTP/HTTPs, отключить проверку подлинности клиента и разрешить подписчики HTTP. Для рабочих нагрузок рекомендуется включить проверку подлинности клиента только по протоколам HTTPs и подписчикам. Дополнительные сведения о безопасной настройке модуля сетки событий см. в разделе [безопасность и проверка подлинности](security-authentication.md).
     
 
 ## <a name="deploy-azure-function-iot-edge-module"></a>Развертывание модуля IoT Edge функции Azure
@@ -118,9 +119,6 @@ ms.locfileid: "73100238"
 1. Нажмите кнопку **Сохранить**
 1. Перейдите к следующему разделу, чтобы добавить модуль хранилища BLOB-объектов Azure.
 
-> [!NOTE]
-> Модуль хранилища BLOB-объектов публикует события с помощью HTTP. Убедитесь, что модуль "Сетка событий" разрешает запросы HTTP и HTTPS со следующей конфигурацией: `inbound:serverAuth:tlsPolicy=enabled`.
-
 ## <a name="deploy-azure-blob-storage-module"></a>Развертывание модуля хранилища BLOB-объектов Azure
 
 В этом разделе показано, как развернуть модуль хранилища BLOB-объектов Azure, который будет действовать как издатель службы "Сетка событий", который создает и удаляет события.
@@ -132,7 +130,7 @@ ms.locfileid: "73100238"
 3. Укажите параметры имя, образ и контейнер для создания контейнера:
 
    * **Имя**: азуреблобсторажеониотедже
-   * **URI изображения**: MCR.Microsoft.com/Azure-Blob-Storage:1.2.2-Preview
+   * **URI изображения**: MCR.Microsoft.com/Azure-Blob-Storage:Latest
    * **Параметры создания контейнера.**
 
 ```json
@@ -152,10 +150,16 @@ ms.locfileid: "73100238"
          }
        }
 ```
+> [!IMPORTANT]
+> - Модуль хранилища BLOB-объектов может публиковать события с помощью HTTPS и HTTP. 
+> - Если вы включили проверку подлинности на основе клиента для EventGrid, обновите значение EVENTGRID_ENDPOINT, чтобы разрешить HTTPS следующим образом: `EVENTGRID_ENDPOINT=https://<event grid module name>:4438` 
+> - И добавьте другую переменную среды `AllowUnknownCertificateAuthority=true` к приведенному выше формату JSON. При взаимодействии с EventGrid по протоколу HTTPS **алловункновнцертификатеаусорити** позволяет модулю хранилища доверять самозаверяющим сертификатам EventGrid Server.
+
+
 
 4. Обновите в скопированном JSON-файле следующие сведения:
 
-   - Замените `<your storage account name>` запоминаемым именем. Длина имени учетной записи должна составлять от 3 до 24 символов, а строчные буквы и цифры. Без пробелов.
+   - Замените `<your storage account name>` запоминаемым именем. Длина имени учетной записи должна составлять от 3 до 24 символов, а строчные буквы и цифры. Нельзя использовать пробелы.
 
    - Замените `<your storage account key>` на 64-байтовый ключ Base64. Вы можете создать ключ с помощью таких средств, как [GeneratePlus](https://generate.plus/en/base64?gp_base64_base[length]=64). Вы будете использовать эти учетные данные для доступа к хранилищу BLOB-объектов из других модулей.
 
@@ -194,7 +198,7 @@ ms.locfileid: "73100238"
     curl -k -H "Content-Type: application/json" -X GET -g https://<your-edge-device-public-ip-here>:4438/topics/MicrosoftStorage?api-version=2019-01-01-preview
     ```
 
-    Пример выходных данных:
+    Образец вывода:
 
     ```json
         [
@@ -209,6 +213,10 @@ ms.locfileid: "73100238"
           }
         ]
     ```
+
+    > [!IMPORTANT]
+    > - Для потока HTTPS, если проверка подлинности клиента включена через ключ SAS, указанный ранее ключ SAS следует добавить в качестве заголовка. Следовательно, запрос с фигурой будет следующим: `curl -k -H "Content-Type: application/json" -H "aeg-sas-key: <your SAS key>" -X GET -g https://<your-edge-device-public-ip-here>:4438/topics/MicrosoftStorage?api-version=2019-01-01-preview`
+    > - Для потока HTTPS, если проверка подлинности клиента включена через сертификат, запрос на фигуру будет следующим: `curl -k -H "Content-Type: application/json" --cert <certificate file> --key <certificate private key file> -X GET -g https://<your-edge-device-public-ip-here>:4438/topics/MicrosoftStorage?api-version=2019-01-01-preview`
 
 2. Подписчики могут регистрироваться для событий, опубликованных в разделе. Чтобы получить любое событие, необходимо создать подписку на сетку событий для **микрософтстораже** .
     1. Создайте блобсубскриптион. JSON со следующим содержимым. Дополнительные сведения о полезных данных см. в [документации по API](api.md) .
@@ -235,13 +243,18 @@ ms.locfileid: "73100238"
     curl -k -H "Content-Type: application/json" -X PUT -g -d @blobsubscription.json https://<your-edge-device-public-ip-here>:4438/topics/MicrosoftStorage/eventSubscriptions/sampleSubscription5?api-version=2019-01-01-preview
     ```
 
+    > [!IMPORTANT]
+    > - Для потока HTTPS, если проверка подлинности клиента включена через ключ SAS, указанный ранее ключ SAS следует добавить в качестве заголовка. Следовательно, запрос с фигурой будет следующим: `curl -k -H "Content-Type: application/json" -H "aeg-sas-key: <your SAS key>" -X PUT -g -d @blobsubscription.json https://<your-edge-device-public-ip-here>:4438/topics/MicrosoftStorage/eventSubscriptions/sampleSubscription5?api-version=2019-01-01-preview` 
+    > - Для потока HTTPS, если проверка подлинности клиента включена через сертификат, запрос на фигуру будет следующим:`curl -k -H "Content-Type: application/json" --cert <certificate file> --key <certificate private key file> -X PUT -g -d @blobsubscription.json https://<your-edge-device-public-ip-here>:4438/topics/MicrosoftStorage/eventSubscriptions/sampleSubscription5?api-version=2019-01-01-preview`
+
+
     3. Выполните следующую команду, чтобы проверить, успешно ли создана подписка. Должен возвращаться код состояния HTTP, 200 ОК.
 
     ```sh
     curl -k -H "Content-Type: application/json" -X GET -g https://<your-edge-device-public-ip-here>:4438/topics/MicrosoftStorage/eventSubscriptions/sampleSubscription5?api-version=2019-01-01-preview
     ```
 
-    Пример выходных данных:
+    Образец вывода:
 
     ```json
         {
@@ -260,6 +273,10 @@ ms.locfileid: "73100238"
         }
     ```
 
+    > [!IMPORTANT]
+    > - Для потока HTTPS, если проверка подлинности клиента включена через ключ SAS, указанный ранее ключ SAS следует добавить в качестве заголовка. Следовательно, запрос с фигурой будет следующим: `curl -k -H "Content-Type: application/json" -H "aeg-sas-key: <your SAS key>" -X GET -g https://<your-edge-device-public-ip-here>:4438/topics/MicrosoftStorage/eventSubscriptions/sampleSubscription5?api-version=2019-01-01-preview`
+    > - Для потока HTTPS, если проверка подлинности клиента включена через сертификат, запрос на фигуру будет следующим: `curl -k -H "Content-Type: application/json" --cert <certificate file> --key <certificate private key file> -X GET -g https://<your-edge-device-public-ip-here>:4438/topics/MicrosoftStorage/eventSubscriptions/sampleSubscription5?api-version=2019-01-01-preview`
+
 2. Скачайте [Обозреватель службы хранилища Azure](https://azure.microsoft.com/features/storage-explorer/) и [подключите его к локальному хранилищу](../../iot-edge/how-to-store-data-blob.md#connect-to-your-local-storage-with-azure-storage-explorer)
 
 ## <a name="verify-event-delivery"></a>Проверка доставки событий
@@ -269,7 +286,7 @@ ms.locfileid: "73100238"
 1. Отправьте файлы как блочные BLOB-объекты в локальное хранилище из Обозреватель службы хранилища Azure, и модуль будет автоматически публиковать события создания. 
 2. Просмотрите журналы подписчика для создания события. Выполните действия для [проверки доставки событий](pub-sub-events-webhook-local.md#verify-event-delivery) .
 
-    Пример выходных данных:
+    Вывод образца:
 
     ```json
             Received event data [
@@ -300,7 +317,7 @@ ms.locfileid: "73100238"
 1. Удалите BLOB-объекты из локального хранилища с помощью Обозреватель службы хранилища Azure, и модуль будет автоматически публиковать события удаления. 
 2. Просмотрите журналы подписчика для события удаления. Выполните действия для [проверки доставки событий](pub-sub-events-webhook-local.md#verify-event-delivery) .
 
-    Пример выходных данных:
+    Вывод образца:
     
     ```json
             Received event data [
@@ -332,29 +349,29 @@ ms.locfileid: "73100238"
 
 Ниже приведен список поддерживаемых свойств событий, их типов и описаний. 
 
-| Свойство | Тип | Описание |
+| Свойство | Тип | Description |
 | -------- | ---- | ----------- |
 | Раздел | string | Полный путь к ресурсу для источника событий. Это поле защищено от записи. Это значение предоставляет служба "Сетка событий". |
 | subject | string | Определенный издателем путь к субъекту событий. |
 | eventType | string | Один из зарегистрированных типов событий для этого источника событий. |
 | eventTime | string | Время создания события с учетом времени поставщика в формате UTC. |
-| id | string | Уникальный идентификатор события. |
-| data | object | Данные события хранилища BLOB-объектов. |
+| идентификатор | string | Уникальный идентификатор события. |
+| . | object | Данные события хранилища BLOB-объектов. |
 | dataVersion | string | Версия схемы для объекта данных. Версию схемы определяет издатель. |
 | metadataVersion | string | Версия схемы для метаданных события. Служба "Сетка событий" определяет схему свойств верхнего уровня. Это значение предоставляет служба "Сетка событий". |
 
 Объект данных имеет следующие свойства:
 
-| Свойство | Тип | Описание |
+| Свойство | Тип | Description |
 | -------- | ---- | ----------- |
-| api | string | Операция, вызвавшая событие. Может принимать одно из следующих значений: <ul><li>BlobCreated — допустимые значения: `PutBlob` и `PutBlockList`</li><li>BlobDeleted — допустимые значения: `DeleteBlob`, `DeleteAfterUpload` и `AutoDelete`. <p>Событие `DeleteAfterUpload` создается при автоматическом удалении большого двоичного объекта, так как требуемое свойство Делетеафтеруплоад имеет значение true. </p><p>`AutoDelete` событие создается при автоматическом удалении большого двоичного объекта из-за истечения срока действия требуемого значения свойства Делетеафтерминутес.</p></li></ul>|
+| api | string | Операция, вызвавшая событие. Может иметь одно из следующих значений. <ul><li>BlobCreated — допустимые значения: `PutBlob` и `PutBlockList`</li><li>BlobDeleted — допустимые значения: `DeleteBlob`, `DeleteAfterUpload` и `AutoDelete`. <p>Событие `DeleteAfterUpload` создается при автоматическом удалении большого двоичного объекта, так как требуемое свойство Делетеафтеруплоад имеет значение true. </p><p>`AutoDelete` событие создается при автоматическом удалении большого двоичного объекта из-за истечения срока действия требуемого значения свойства Делетеафтерминутес.</p></li></ul>|
 | clientRequestId | string | предоставленный клиентом идентификатор запроса для операции API хранилища. Этот идентификатор можно использовать для сопоставления с журналами диагностики службы хранилища Azure с помощью поля "Client-Request-ID" в журналах и может быть предоставлено в запросах клиента с помощью заголовка "x-MS-Client-Request-ID". Дополнительные сведения см. в разделе [Формат журнала](/rest/api/storageservices/storage-analytics-log-format). |
 | requestId | string | Создаваемый службой идентификатор запроса для операции API хранилища. Может использоваться для корреляции журналов диагностики службы хранилища Azure с помощью поля request-id-header в журналах. Возвращается при инициации вызова API в заголовке x-ms-request-id. Ознакомьтесь со статьей [Storage Analytics Log Format](https://docs.microsoft.com/rest/api/storageservices/storage-analytics-log-format) (Формат журналов Аналитики Службы хранилища). |
 | eTag | string | Значение, которое позволяет выполнять операции условно. |
 | сontentType | string | Тип содержимого, указанный для BLOB-объекта. |
-| contentLength | целое число | Размер большого двоичного объекта в байтах. |
+| contentLength | integer | Размер большого двоичного объекта в байтах. |
 | blobType | string | Тип большого двоичного объекта. Допустимые значения: BlockBlob или PageBlob. |
-| URL-адрес | string | Путь к BLOB-объекту. <br>Если клиент использует REST API больших двоичных объектов, URL-адрес имеет следующую структуру: *\<storage-Account-name \>. blob.core.windows.net/\<container-name \> / \<file-name \>* . <br>Если клиент использует Data Lake Storage REST API, URL-адрес имеет следующую структуру: *\<storage-Account-name \>. dfs.core.windows.net/\<file-System-name \> / \<file-name \>* . |
+| url | string | Путь к BLOB-объекту. <br>Если клиент использует REST API больших двоичных объектов, URL-адрес имеет следующую структуру: *\<Storage-Account-name\>. blob.core.windows.net/\<-name\>/\<имя файла* \>. <br>Если клиент использует Data Lake Storage REST API, URL-адрес имеет следующую структуру: *\<Storage-Account-name\>. dfs.core.windows.net/\<File-System-name\>/\<File-name\>* . |
 
 
 ## <a name="next-steps"></a>Дальнейшие действия

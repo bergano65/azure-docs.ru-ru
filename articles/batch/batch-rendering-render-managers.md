@@ -1,18 +1,18 @@
 ---
 title: Поддержка диспетчера рендеринга — пакетная служба Azure
-description: Использование Azure для рендеринга с использованием интеграции диспетчера рендеринга в пакетную службу Azure
+description: Использование интеграции диспетчера подготовки пакетов Azure. Узнайте о встроенной поддержке или надстройках для популярных диспетчеров рендеринга.
 services: batch
 ms.service: batch
 author: mscurrell
 ms.author: markscu
 ms.date: 08/02/2018
 ms.topic: conceptual
-ms.openlocfilehash: eb3ce47e5ffed697392065a1faacbbfaec19f4d1
-ms.sourcegitcommit: 909ca340773b7b6db87d3fb60d1978136d2a96b0
+ms.openlocfilehash: 246907b16534d1a91833cab633a1973c97429f47
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70983673"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75449680"
 ---
 # <a name="using-azure-batch-with-render-farm-managers"></a>Использование пакетной службы Azure с диспетчерами фермы рендеринга
 
@@ -26,7 +26,7 @@ Azure предоставляет встроенную поддержку или 
 * [Royal Render](https://www.royalrender.de/);
 * [Thinkbox Deadline](https://deadline.thinkboxsoftware.com/).
 
-## <a name="azure-render-hub"></a>Центр подготовки отчетов Azure
+## <a name="azure-render-hub"></a>Центр рендеринга Azure
 
 Центр подготовки отчетов Azure упрощает создание и Управление фермами визуализации Azure.  В концентраторе отрисовки имеется собственная поддержка Пипелинефкс Кубе и крайнего срока 10.  Дополнительные сведения и подробные инструкции см. [в репозитории GitHub](https://github.com/Azure/azure-render-hub).
 
@@ -46,6 +46,6 @@ Azure предоставляет встроенную поддержку или 
 
 Центр подготовки отчетов Azure поддерживает популярные диспетчеры рендеринга, включая крайний срок.  Инструкции по развертыванию и использованию концентратора визуализации см. [в репозитории GitHub](https://github.com/Azure/azure-render-hub).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Попробуйте настроить интеграцию пакетной службы Azure с используемым диспетчером рендеринга, применяя соответствующий подключаемый модуль и инструкции на сайте GitHub, если потребуется.

@@ -6,30 +6,30 @@ keywords: средства анализа и обработки данных, в
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: data-science-vm
-author: gvashishtha
-ms.author: gopalv
+author: lobrien
+ms.author: laobri
 ms.topic: conceptual
-ms.date: 10/3/2019
-ms.openlocfilehash: 76a550e95de24bf65b9b6097dd332e535da5b1c4
-ms.sourcegitcommit: 1d0b37e2e32aad35cc012ba36200389e65b75c21
+ms.date: 12/12/2019
+ms.openlocfilehash: bc1f40760c1602d81da042bf6909e44a540d35de
+ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72330714"
+ms.lasthandoff: 01/02/2020
+ms.locfileid: "75612161"
 ---
 # <a name="development-tools-on-the-azure-data-science-virtual-machine"></a>Средства разработки на виртуальной машине Azure для обработки и анализа данных
 
 Виртуальная машина для обработки и анализа данных (DSVM) объединяет несколько популярных средств в высокопроизводительную интегрированную среду разработки (IDE). Ниже приведены некоторые средства, предоставляемые на виртуальной машине для обработки и анализа данных.
 
-## <a name="visual-studio-community-2017"></a>Visual Studio Community 2017
+## <a name="visual-studio-community-edition"></a>выпуск Visual Studio Community;
 
 |    |           |
 | ------------- | ------------- |
 | Что это такое?   | Среда IDE общего назначения      |
-| Поддерживаемые версии DSVM      | Windows      |
+| Поддерживаемые версии DSVM      | Windows: Visual Studio 2017, Windows 2019 (Предварительная версия): Visual Studio 2019      |
 | Распространенные способы применения      | Разработка программного обеспечения    |
 | Как она настраивается и устанавливается на DSVM?      | Рабочая нагрузка обработки и анализа данных (средства Python и R), рабочая нагрузка Azure (Hadoop, Data Lake), средства Node.js и SQL Server, [Машинное обучение Azure для Visual Studio Code](https://github.com/Microsoft/vs-tools-for-ai)    |
-| Использование и запуск      | Ярлык рабочего стола (`C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\devenv.exe`). Графически откройте Visual Studio с помощью значка рабочего стола или меню " **Пуск** ". Откройте окно поиска программ (кнопки Windows + S) и введите **Visual Studio**. Здесь можно создавать проекты на разных языках, например C#, Python, R и Node.js.   |
+| Использование и запуск      | Ярлык рабочего стола (`C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\devenv.exe`). Графически откройте Visual Studio с помощью значка рабочего стола или меню " **Пуск** ". Откройте окно поиска программ (кнопки Windows + S) и введите **Visual Studio**. Здесь можно создавать проекты на разных языках, например C#, Python, R и Node.js.   |
 | Связанные средства на DSVM      |     Visual Studio Code, RStudio, Juno  |
 
 > [!NOTE]
@@ -42,10 +42,10 @@ ms.locfileid: "72330714"
 | Что это такое?   | Среда IDE общего назначения      |
 | Поддерживаемые версии DSVM      | Windows, Linux     |
 | Распространенные способы применения      | Редактор кода и интеграция Git   |
-| Использование и запуск      | Ярлык рабочего стола (`C:\Program Files (x86)\Microsoft VS Code\Code.exe`) в Windows, ярлык рабочего стола или терминал (`code`) в Linux    |
-| Связанные средства на DSVM      |     Visual Studio 2017, RStudio, Juno  |
+| Использование и запуск      | Ярлык рабочего стола (`C:\Program Files (x86)\Microsoft VS Code\Code.exe`) в Windows, ярлыки рабочего стола или терминала (`code`) в Linux    |
+| Связанные средства на DSVM      |     Visual Studio, RStudio, Juno  |
 
-## <a name="rstudio--desktop"></a>RStudio Desktop 
+## <a name="rstudio-desktop"></a>RStudio Desktop
 
 |    |           |
 | ------------- | ------------- |
@@ -53,9 +53,9 @@ ms.locfileid: "72330714"
 | Поддерживаемые версии DSVM      | Windows, Linux      |
 | Распространенные способы применения      |  Разработка на языке R     |
 | Использование и запуск      | Ярлык рабочего стола (`C:\Program Files\RStudio\bin\rstudio.exe`) в Windows, ярлык на рабочем столе (`/usr/bin/rstudio`) в Linux      |
-| Связанные средства на DSVM      |   Visual Studio 2017, Visual Studio Code, Juno      |
+| Связанные средства на DSVM      |   Visual Studio, Visual Studio Code, Juno      |
 
-## <a name="rstudio--server"></a>RStudio Server 
+## <a name="rstudio-server"></a>RStudio Server
 
 |    |           |
 | ------------- | ------------- |
@@ -63,8 +63,8 @@ ms.locfileid: "72330714"
 | Что это такое?   | Интегрированная веб-среда разработки для R    |
 | Поддерживаемые версии DSVM      | Linux      |
 | Распространенные способы применения      |  Разработка на языке R     |
-| Использование и запуск      | Включите службу с помощью _systemctl Enable Rstudio-Server_, а затем запустите службу с помощью _systemctl Start Rstudio-Server_. Затем войдите на сервер RStudio по адресу http: \//a-VM-IP: 8787.       |
-| Связанные средства на DSVM      |   Visual Studio 2017, Visual Studio Code, RStudio Desktop      |
+| Использование и запуск      | Включите службу с помощью _systemctl Enable Rstudio-Server_, а затем запустите службу с помощью _systemctl Start Rstudio-Server_. Затем войдите на сервер RStudio по адресу http:\//йоур-ВМ-ИП: 8787.       |
+| Связанные средства на DSVM      |   Visual Studio, Visual Studio Code, RStudio Desktop      |
 
 ## <a name="juno"></a>Juno 
 
@@ -74,27 +74,14 @@ ms.locfileid: "72330714"
 | Поддерживаемые версии DSVM      | Windows, Linux      |
 | Распространенные способы применения      |  Разработка на языке Julia     |
 | Использование и запуск      | Ярлык рабочего стола (`C:\JuliaPro-0.5.1.1\Juno.bat`) в Windows, ярлык на рабочем столе (`/opt/JuliaPro-VERSION/Juno`) в Linux      |
-| Связанные средства на DSVM      |   Visual Studio 2017, Visual Studio Code, RStudio      |
+| Связанные средства на DSVM      |   Visual Studio, Visual Studio Code, RStudio      |
 
 ## <a name="pycharm"></a>PyCharm
 
 |    |           |
 | ------------- | ------------- |
 | Что это такое?   | Интегрированная среда разработки клиента для языка Python    |
-| Поддерживаемые версии DSVM      | Linux      |
+| Поддерживаемые версии DSVM      | Windows 2019 (Предварительная версия), Linux      |
 | Распространенные способы применения      |  Разработка на Python     |
-| Использование и запуск      | Ярлык рабочего стола (`/usr/bin/pycharm`) в Linux      |
-| Связанные средства на DSVM      |   Visual Studio 2017, Visual Studio Code, RStudio      |
-
-
-
-## <a name="power-bi-desktop"></a>Power BI Desktop 
-
-|    |           |
-| ------------- | ------------- |
-| Что это такое?   | Интерактивная визуализация данных и средство бизнес-аналитики    |
-| Поддерживаемые версии DSVM      | Windows  |
-| Распространенные способы применения      |  Визуализация данных и создание панелей мониторинга   |
-| Использование и запуск      | Ярлык рабочего стола (`C:\Program Files\Microsoft Power BI Desktop\bin\PBIDesktop.exe`)      |
-| Связанные средства на DSVM      |   Visual Studio 2017, Visual Studio Code, Juno      |
-
+| Использование и запуск      | Ярлык рабочего стола (`C:\Program Files\tk`) в Windows. Ярлык рабочего стола (`/usr/bin/pycharm`) в Linux      |
+| Связанные средства на DSVM      |   Visual Studio, Visual Studio Code, RStudio      |

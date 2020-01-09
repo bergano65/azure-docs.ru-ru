@@ -1,18 +1,18 @@
 ---
-title: 'Хранилище Azure класса Premium: проектирование производительности на виртуальных машинах Windows '
-description: Разработка высокопроизводительных приложений с использованием хранилища Azure класса «Премиум». Хранилище Premium обеспечивает поддержку дисков с высокой производительностью и малой задержкой для интенсивных рабочих нагрузок ввода-вывода на виртуальных машинах Azure.
+title: 'Хранилище Azure класса Premium: проектирование производительности на виртуальных машинах Linux | Документация Майкрософт'
+description: Разработка высокопроизводительных приложений с помощью управляемых дисков SSD Azure класса Premium. Хранилище Premium обеспечивает поддержку дисков с высокой производительностью и малой задержкой для интенсивных рабочих нагрузок ввода-вывода на виртуальных машинах Azure.
 author: roygara
 ms.service: virtual-machines-linux
 ms.topic: conceptual
 ms.date: 06/27/2017
 ms.author: rogarana
 ms.subservice: disks
-ms.openlocfilehash: 56836b81ad63c3a2170606dc64988aab8dc7f47f
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.openlocfilehash: 9940ee4cfce9721ac65f2b3cf1469e180adfa098
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74035284"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75458692"
 ---
 # <a name="azure-premium-storage-design-for-high-performance"></a>Хранилище Azure класса "Премиум": разработка, обеспечивающая повышенную производительность
 [!INCLUDE [virtual-machines-common-premium-storage-introduction](../../../includes/virtual-machines-common-premium-storage-introduction.md)]
@@ -24,7 +24,7 @@ ms.locfileid: "74035284"
 >
 > Если виртуальная машина поддерживает ускоренную сеть, необходимо включить эту функцию. Если она не включена, ее можно включить на уже развернутых виртуальных машинах под управлением [Windows](../../virtual-network/create-vm-accelerated-networking-powershell.md#enable-accelerated-networking-on-existing-vms) и [Linux](../../virtual-network/create-vm-accelerated-networking-cli.md#enable-accelerated-networking-on-existing-vms).
 
-Прежде чем начать, если вы не знакомы с хранилищем класса Premium, сначала прочитайте поле [Выбор типа диска Azure для виртуальных машин IaaS](disks-types.md) , а также [целевые показатели масштабируемости и производительности службы хранилища Azure для учетных записей хранения](../../storage/common/storage-scalability-targets.md).
+Прежде чем начать, если вы не знакомы с хранилищем класса Premium, сначала прочитайте поле [Выбор типа диска Azure для виртуальных машин IaaS](disks-types.md) и [целевых показателей масштабируемости для учетных записей хранилища BLOB-объектов класса Premium](../../storage/blobs/scalability-targets-premium-page-blobs.md).
 
 
 [!INCLUDE [virtual-machines-common-premium-storage-performance.md](../../../includes/virtual-machines-common-premium-storage-performance.md)]

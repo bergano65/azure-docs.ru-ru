@@ -1,8 +1,7 @@
 ### YamlMime:YamlDocument
 documentType: LandingData
-title: Функции
+title: Компоненты
 metadata:
-  document_id: 36d89c48-3646-380e-34a0-ae3ac62e2641
   title: Возможности Базы данных SQL Azure
   meta.description: Learn about the features in Azure SQL Database.
   services: sql-database
@@ -38,7 +37,7 @@ sections:
           - title: Автоматизация заданий
             href: /azure/sql-database/sql-database-job-automation-overview
             html: <p>Планирование повторяющихся задач с помощью агента SQL и заданий обработки эластичных БД.</p>
-          - title: Временные таблицы
+          - title: Темпоральные таблицы
             href: /azure/sql-database/sql-database-temporal-tables
             html: <p>Отслеживание и анализ полного журнала изменений в данных.</p>
   - title: Дополнительные ресурсы

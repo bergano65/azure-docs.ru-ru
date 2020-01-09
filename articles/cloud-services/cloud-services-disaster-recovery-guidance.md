@@ -1,5 +1,6 @@
 ---
-title: Что делать, если прерывание работы службы Azure влияет на облачные службы Azure | Документация Майкрософт
+title: Обработка прерываний служб Azure, влияющих на облачные службы Azure
+titleSuffix: Azure Cloud Services
 description: Узнайте, что делать, если прерывание работы службы Azure влияет на облачные службы Azure.
 services: cloud-services
 documentationcenter: ''
@@ -9,12 +10,12 @@ ms.workload: cloud-services
 ms.topic: article
 ms.date: 04/04/2017
 ms.author: memccror
-ms.openlocfilehash: a014c3d5ada2024609e9262d8943090ac7b205c6
-ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
+ms.openlocfilehash: f65b61d7265268b33d2c9a113503cc1b5a87db8e
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2019
-ms.locfileid: "73888330"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75361217"
 ---
 # <a name="what-to-do-in-the-event-of-an-azure-service-disruption-that-impacts-azure-cloud-services"></a>Что делать, если прерывание работы службы Azure влияет на облачные службы Azure
 Корпорация Майкрософт прилагает все усилия для того, чтобы наши службы всегда были доступны. Иногда по независящим от нас обстоятельствам происходят незапланированные нарушения работы служб.
@@ -52,7 +53,7 @@ ms.locfileid: "73888330"
 ## <a name="option-3-wait-for-recovery"></a>Вариант 3. Ожидание восстановления
 В этом случае вам не нужно ничего делать. Однако служба будет недоступна до восстановления региона. Текущее состояние службы можно просмотреть на [панели мониторинга работоспособности служб Azure](https://azure.microsoft.com/status/).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Чтобы больше узнать о том, как реализовать стратегию обеспечения аварийного восстановления и высокого уровня доступности, ознакомьтесь с разделом [Аварийное восстановление и высокий уровень доступности для приложений на платформе Azure](../resiliency/resiliency-disaster-recovery-high-availability-azure-applications.md).
 
 Возможности облачной платформы подробно описаны в [техническом руководстве по обеспечению непрерывности бизнес-процессов Azure](/azure/architecture/checklist/resiliency-per-service).

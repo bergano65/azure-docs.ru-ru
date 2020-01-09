@@ -17,12 +17,12 @@ ms.date: 04/19/2019
 ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2fbd658d610fba27bdaed2af4bc27ed40a138fac
-ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
+ms.openlocfilehash: 05002c1b11ef31b61fb4036f09dc8edcdafca767
+ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74008031"
+ms.lasthandoff: 01/02/2020
+ms.locfileid: "75608386"
 ---
 # <a name="integrate-azure-active-directory-logs-with-arcsight-using-azure-monitor"></a>Интеграция журналов Azure Active Directory с ArcSight с помощью Azure Monitor
 
@@ -30,13 +30,13 @@ ms.locfileid: "74008031"
 
 В этой статье вы узнаете, как перенаправлять журналы Azure AD в ArcSight с помощью Azure Monitor. 
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Технические условия
 
 Для использования этой функции необходимо иметь следующее.
 * Концентратор событий Azure, содержащий журналы действий Azure AD. Узнайте, как [настроить потоковую передачу журналов действий в концентратор событий](quickstart-azure-monitor-stream-logs-to-event-hub.md). 
 * Настроенный экземпляр ArcSight Syslog NG Daemon SmartConnector (SmartConnector) или ArcSight Load Balancer. Если события отправляются в ArcSight Load Balancer, то он отправляет их в SmartConnector.
 
-Скачайте и откройте [руководство по настройке ArcSight SmartConnector для концентратора событий Azure Monitor](https://community.microfocus.com/dcvta86296/attachments/dcvta86296/connector-documentation/1232/8/Microsoft%20Azure%20Monitor%20Event%20Hub.pdf). Это руководство содержит шаги, необходимые для установки и настройки ArcSight SmartConnector для Azure Monitor. 
+Скачайте и откройте [руководство по настройке ArcSight SmartConnector для концентратора событий Azure Monitor](https://community.microfocus.com/t5/ArcSight-Connectors/SmartConnector-for-Microsoft-Azure-Monitor-Event-Hub/ta-p/1671292). Это руководство содержит шаги, необходимые для установки и настройки ArcSight SmartConnector для Azure Monitor. 
 
 ## <a name="integrate-azure-ad-logs-with-arcsight"></a>Интеграция журналов Azure AD в ArcSight
 
@@ -47,7 +47,7 @@ ms.locfileid: "74008031"
 
 2. Выполните действия, описанные в разделе **Развертывание соединителя** руководства по настройке, чтобы развернуть соединитель. В этом разделе рассматриваются способы скачивания и извлечения соединителя, настройки свойств приложения и запуска скрипта развертывания из извлеченной папки. 
 
-3. Следуйте инструкциям в разделе **Проверка развертывания в Azure**, чтобы убедиться, что соединитель настроен и работает правильно. Проверьте следующее.
+3. Следуйте инструкциям в разделе **Проверка развертывания в Azure**, чтобы убедиться, что соединитель настроен и работает правильно. Проверьте выполнение следующих условий.
     * Необходимые функции Azure созданы в подписке Azure.
     * Журналы Azure AD в потоковом режиме передаются в правильное местоположение. 
     * Параметры приложения из развертывания сохраняются в параметрах приложения в приложениях-функциях Azure. 
@@ -57,6 +57,6 @@ ms.locfileid: "74008031"
 
 5. В руководстве по настройке также объясняется, как настроить свойства соединителя в Azure, а также обновить и удалить соединитель. Кроме того, имеется раздел о производительности, в котором говорится о переходе к [плану потребления Azure](https://azure.microsoft.com/pricing/details/functions) и настройке ArcSight Load Balancer, если объем нагрузки событий больше, чем тот, с которым может справиться Syslog NG Daemon SmartConnector.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-[Руководство по настройке ArcSight SmartConnector для концентратора событий Azure Monitor](https://community.microfocus.com/dcvta86296/attachments/dcvta86296/connector-documentation/1232/8/Microsoft%20Azure%20Monitor%20Event%20Hub.pdf)
+[Руководство по настройке ArcSight SmartConnector для концентратора событий Azure Monitor](https://community.microfocus.com/t5/ArcSight-Connectors/SmartConnector-for-Microsoft-Azure-Monitor-Event-Hub/ta-p/1671292)

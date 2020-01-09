@@ -5,15 +5,15 @@ author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
-ms.custom: hdinsightactive,seodec18
 ms.topic: conceptual
-ms.date: 04/16/2019
-ms.openlocfilehash: c948d07bed99f1286e27d645fde7b96fdc699c02
-ms.sourcegitcommit: 9dec0358e5da3ceb0d0e9e234615456c850550f6
+ms.custom: hdinsightactive,seodec18
+ms.date: 12/24/2019
+ms.openlocfilehash: 3e9b23ce450e45dfedcee8b20e09b1c2b52b6e68
+ms.sourcegitcommit: f0dfcdd6e9de64d5513adf3dd4fe62b26db15e8b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2019
-ms.locfileid: "72311690"
+ms.lasthandoff: 12/26/2019
+ms.locfileid: "75495785"
 ---
 # <a name="build-java-applications-for-apache-hbase"></a>Создание приложений Java для Apache HBase
 
@@ -21,7 +21,7 @@ ms.locfileid: "72311690"
 
 В этом руководстве для создания и сборки проекта используется [Apache Maven](https://maven.apache.org/). Maven — это инструмент для управления и повышения обозримости проектов программного обеспечения, позволяющий создавать ПО, документацию и отчеты для проектов Java.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 * Кластер Apache HBase в HDInsight. См. статью [Начало работы с Apache HBase](./apache-hbase-tutorial-get-started-linux.md).
 
@@ -31,11 +31,12 @@ ms.locfileid: "72311690"
 
 * Клиент SSH. Дополнительные сведения см. в руководстве по [подключению к HDInsight (Apache Hadoop) с помощью SSH](../hdinsight-hadoop-linux-use-ssh-unix.md).
 
-* При использовании PowerShell потребуется [модуль AZ](https://docs.microsoft.com/powershell/azure/overview).
+* При использовании PowerShell вам потребуется [модуль AZ](https://docs.microsoft.com/powershell/azure/overview).
 
 * Текстовый редактор. В этой статье используется Блокнот Microsoft Notepad.
 
 ## <a name="test-environment"></a>Тестовая среда
+
 Среда, используемая для этой статьи, была компьютер под Windows 10.  Команды были выполнены в командной строке, а различные файлы были изменены с помощью блокнота. Измените соответствующим образом для своей среды.
 
 В командной строке введите приведенные ниже команды, чтобы создать рабочую среду.
@@ -58,11 +59,11 @@ cd C:\HDI
 
     Эта команда создает каталог с именем `hbaseapp` в текущем расположении, содержащий базовый проект Maven. Вторая команда изменяет рабочий каталог на `hbaseapp`. Третья команда создает новый каталог, `conf`, который будет использоваться позже. Каталог `hbaseapp` содержит следующие элементы:
 
-    * `pom.xml`.  это модель объекта проекта (](https://maven.apache.org/guides/introduction/introduction-to-the-pom.html)POM), которая содержит информацию и подробности конфигурации, учитывающиеся при сборке проекта.
-    * `src\main\java\com\microsoft\examples`. содержит код приложения;
-    * `src\test\java\com\microsoft\examples`. содержит тесты для приложения.
+    * `pom.xml`: объектная модель проекта ([POM](https://maven.apache.org/guides/introduction/introduction-to-the-pom.html)) содержит информацию и сведения о конфигурации, используемые для сборки проекта.
+    * `src\main\java\com\microsoft\examples` содержит код приложения;
+    * `src\test\java\com\microsoft\examples` содержит тесты для приложения.
 
-2. Удалите созданный код примера. Удалите созданные файлы тестов и приложений `AppTest.java` и `App.java`, введя приведенные ниже команды.
+2. Удалите созданный код примера. Удалите созданные файлы тестов и приложений `AppTest.java`и `App.java`, введя приведенные ниже команды.
 
     ```cmd
     DEL src\main\java\com\microsoft\examples\App.java
@@ -79,12 +80,12 @@ notepad pom.xml
 
 ### <a name="add-dependencies"></a>Добавление зависимостей
 
-В `pom.xml` добавьте следующий текст в раздел `<dependencies>`:
+В `pom.xml`добавьте следующий текст в раздел `<dependencies>`.
 
 ```xml
 <dependency>
     <groupId>org.apache.hbase</groupId>
-    <artifactId>hbase-client</artifactId>
+    <artifactId>hbase-shaded-client</artifactId>
     <version>1.1.2</version>
 </dependency>
 <dependency>
@@ -128,7 +129,7 @@ notepad pom.xml
     <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.8.0</version>
+                <version>3.8.1</version>
         <configuration>
             <source>1.8</source>
             <target>1.8</target>
@@ -168,7 +169,7 @@ maven-shade-plugin также создает так называемый uber ja
 
 ### <a name="download-the-hbase-sitexml"></a>Скачивание файла hbase-site.xml
 
-Для копирования конфигурации HBase из кластера HBase в каталог `conf` используйте следующую команду. Замените `CLUSTERNAME` именем своего кластера HDInsight, а затем введите команду:
+Для копирования конфигурации HBase из кластера HBase в каталог `conf` используйте следующую команду. Замените `CLUSTERNAME` именем кластера HDInsight, а затем введите команду:
 
 ```cmd
 scp sshuser@CLUSTERNAME-ssh.azurehdinsight.net:/etc/hbase/conf/hbase-site.xml ./conf/hbase-site.xml
@@ -341,7 +342,7 @@ public class SearchByEmail {
 }
 ```
 
-Класс `SearchByEmail` можно использовать для запроса строк по адресу электронной почты. При использовании класса можно задавать либо строку, либо регулярное выражение, так как используется фильтр регулярных выражений.
+Класс `SearchByEmail` может использоваться для запроса строк по адресу электронной почты. При использовании класса можно задавать либо строку, либо регулярное выражение, так как используется фильтр регулярных выражений.
 
 ### <a name="implement-a-deletetable-class"></a>Реализация класса DeleteTable
 
@@ -396,19 +397,19 @@ public class DeleteTable {
 
 В следующих действиях используется команда `scp` для копирования JAR-файла в головной узел Apache HBase в кластере HDInsight. С помощью команды `ssh` выполняется подключение к кластеру; пример запускается непосредственно на головном узле.
 
-1. Отправьте JAR-файл в кластер. Замените `CLUSTERNAME` именем своего кластера HDInsight, а затем введите следующую команду:
+1. Отправьте JAR-файл в кластер. Замените `CLUSTERNAME` именем кластера HDInsight, а затем введите следующую команду:
 
     ```cmd
     scp ./target/hbaseapp-1.0-SNAPSHOT.jar sshuser@CLUSTERNAME-ssh.azurehdinsight.net:hbaseapp-1.0-SNAPSHOT.jar
     ```
 
-2. Подключитесь к кластеру HBase. Замените `CLUSTERNAME` именем своего кластера HDInsight, а затем введите следующую команду:
+2. Подключитесь к кластеру HBase. Замените `CLUSTERNAME` именем кластера HDInsight, а затем введите следующую команду:
 
     ```cmd
     ssh sshuser@CLUSTERNAME-ssh.azurehdinsight.net
     ```
 
- 3. Чтобы создать таблицу HBase с помощью приложения Java, используйте следующую команду в открытом SSH-подключении:
+3. Чтобы создать таблицу HBase с помощью приложения Java, используйте следующую команду в открытом SSH-подключении:
 
     ```bash
     yarn jar hbaseapp-1.0-SNAPSHOT.jar com.microsoft.examples.CreateTable
@@ -702,6 +703,6 @@ public class DeleteTable {
 
 Используйте параметр `-showErr` для просмотра стандартной ошибки (STDERR), выдаваемой при выполнении задания.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Узнайте, как использовать SQLLine с Apache HBase.](apache-hbase-query-with-phoenix.md)

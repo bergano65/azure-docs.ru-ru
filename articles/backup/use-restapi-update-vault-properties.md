@@ -4,12 +4,12 @@ description: Из этой статьи вы узнаете, как обнови
 ms.topic: conceptual
 ms.date: 12/06/2019
 ms.assetid: 9aafa5a0-1e57-4644-bf79-97124db27aa2
-ms.openlocfilehash: cbd958dd71d2d62f7b4c7e8d66ab7e56dc679a51
-ms.sourcegitcommit: d614a9fc1cc044ff8ba898297aad638858504efa
+ms.openlocfilehash: 3739f95e3962def9ab669970c48b2d1c546fdc0e
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74998749"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75390539"
 ---
 # <a name="update-azure-recovery-services-vault-configurations-using-rest-api"></a>Обновление конфигураций хранилища служб восстановления Azure с помощью REST API
 
@@ -43,7 +43,7 @@ GET https://management.azure.com/Subscriptions/00000000-0000-0000-0000-000000000
 
 Успешный ответ для операции GET показан ниже:
 
-|Name  |Тип  |Описание  |
+|Имя  |Тип  |Description  |
 |---------|---------|---------|
 |200 ОК     |   [баккупресаурцеваултконфиг](https://docs.microsoft.com/rest/api/backup/backupresourcevaultconfigs/get#backupresourcevaultconfigresource)      | ОК        |
 
@@ -83,16 +83,16 @@ PATCH https://management.azure.com/Subscriptions/00000000-0000-0000-0000-0000000
 
 Дополнительные сведения см. [в документации по REST API](https://docs.microsoft.com/rest/api/backup/backupresourcevaultconfigs/update#request-body)
 
-|Name  |Обязательно для заполнения  |Тип  |Описание  |
+|Имя  |Обязательно для заполнения  |Тип  |Description  |
 |---------|---------|---------|---------|
-|eTag     |         |   Строка      |  Необязательный eTag       |
-|location     |  true       |Строка         |   Расположение ресурса      |
+|eTag     |         |   String      |  Необязательный eTag       |
+|location     |  true       |String         |   Расположение ресурса      |
 |properties     |         | [VaultProperties](https://docs.microsoft.com/rest/api/recoveryservices/vaults/createorupdate#vaultproperties)        |  Свойства хранилища       |
 |tags     |         | Объекты        |     Теги ресурсов    |
 
 #### <a name="example-request-body"></a>Примеры текста запроса
 
-Следующий пример используется для обновления нерабочем с обратимым удалением на "Disabled".
+Следующий пример используется для обновления состояния обратимого удаления на "Disabled".
 
 ```json
 {
@@ -107,7 +107,7 @@ PATCH https://management.azure.com/Subscriptions/00000000-0000-0000-0000-0000000
 
 Успешный ответ для операции PATCH показан ниже:
 
-|Name  |Тип  |Описание  |
+|Имя  |Тип  |Description  |
 |---------|---------|---------|
 |200 ОК     |   [баккупресаурцеваултконфиг](https://docs.microsoft.com/rest/api/backup/backupresourcevaultconfigs/get#backupresourcevaultconfigresource)      | ОК        |
 

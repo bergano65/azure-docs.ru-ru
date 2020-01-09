@@ -12,12 +12,12 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 10/24/2019
-ms.openlocfilehash: 8fa4f3b7dfbebb65b1ae60791027eb5fd31a24fb
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: 9c9064778f29e9f53f48d8be2f127fe51e936af4
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74931044"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75444219"
 ---
 # <a name="copy-data-to-and-from-sql-server-by-using-azure-data-factory"></a>Копирование данных в SQL Server и из них с помощью фабрики данных Azure
 
@@ -63,12 +63,12 @@ ms.locfileid: "74931044"
 
 Для связанной службы SQL Server поддерживаются следующие свойства:
 
-| Свойство | Описание | Обязательно для заполнения |
+| Свойство | Description | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| Тип | Для свойства type необходимо задать значение **SqlServer**. | ДА |
-| connectionString |Укажите сведения о **ConnectionString** , необходимые для подключения к SQL Server базе данных с помощью проверки подлинности SQL или Windows. Ознакомьтесь с приведенными ниже примерами.<br/>Пометьте это поле как **SecureString** , чтобы безопасно хранить его в фабрике данных Azure. Вы также можете добавить пароль в Azure Key Vault. Если это проверка подлинности SQL, вытяните конфигурацию `password` из строки подключения. Дополнительные сведения см. в примере JSON, который следует за таблицей, и [Храните учетные данные в Azure Key Vault](store-credentials-in-key-vault.md). |ДА |
+| type | Для свойства type необходимо задать значение **SqlServer**. | Да |
+| connectionString |Укажите сведения о **ConnectionString** , необходимые для подключения к SQL Server базе данных с помощью проверки подлинности SQL или Windows. Ознакомьтесь с приведенными ниже примерами.<br/>Вы также можете добавить пароль в Azure Key Vault. Если это проверка подлинности SQL, вытяните конфигурацию `password` из строки подключения. Дополнительные сведения см. в примере JSON, который следует за таблицей, и [Храните учетные данные в Azure Key Vault](store-credentials-in-key-vault.md). |Да |
 | userName |При использовании проверки подлинности Windows укажите имя пользователя. Например, **domainname\\username**. |Нет |
-| пароль |Укажите пароль для учетной записи пользователя, указанной для имени пользователя. Пометьте это поле как **SecureString** , чтобы безопасно хранить его в фабрике данных Azure. Или можно [сослаться на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). |Нет |
+| password |Укажите пароль для учетной записи пользователя, указанной для имени пользователя. Пометьте это поле как **SecureString** , чтобы безопасно хранить его в фабрике данных Azure. Или можно [сослаться на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). |Нет |
 | connectVia | Это [среда выполнения интеграции](concepts-integration-runtime.md) для подключения к хранилищу данных. Дополнительные сведения см. в разделе " [Предварительные требования](#prerequisites) ". Если значение не указано, используется среда выполнения интеграции Azure по умолчанию. |Нет |
 
 >[!TIP]
@@ -82,10 +82,7 @@ ms.locfileid: "74931044"
     "properties": {
         "type": "SqlServer",
         "typeProperties": {
-            "connectionString": {
-                "type": "SecureString",
-                "value": "Data Source=<servername>\\<instance name if using named instance>;Initial Catalog=<databasename>;Integrated Security=False;User ID=<username>;Password=<password>;"
-            }
+            "connectionString": "Data Source=<servername>\\<instance name if using named instance>;Initial Catalog=<databasename>;Integrated Security=False;User ID=<username>;Password=<password>;"
         },
         "connectVia": {
             "referenceName": "<name of Integration Runtime>",
@@ -103,10 +100,7 @@ ms.locfileid: "74931044"
     "properties": {
         "type": "SqlServer",
         "typeProperties": {
-            "connectionString": {
-                "type": "SecureString",
-                "value": "Data Source=<servername>\\<instance name if using named instance>;Initial Catalog=<databasename>;Integrated Security=False;User ID=<username>;"
-            },
+            "connectionString": "Data Source=<servername>\\<instance name if using named instance>;Initial Catalog=<databasename>;Integrated Security=False;User ID=<username>;",
             "password": { 
                 "type": "AzureKeyVaultSecret", 
                 "store": { 
@@ -132,10 +126,7 @@ ms.locfileid: "74931044"
     "properties": {
         "type": "SqlServer",
         "typeProperties": {
-            "connectionString": {
-                "type": "SecureString",
-                "value": "Data Source=<servername>\\<instance name if using named instance>;Initial Catalog=<databasename>;Integrated Security=True;"
-            },
+            "connectionString": "Data Source=<servername>\\<instance name if using named instance>;Initial Catalog=<databasename>;Integrated Security=True;",
             "userName": "<domain\\username>",
             "password": {
                 "type": "SecureString",
@@ -156,11 +147,11 @@ ms.locfileid: "74931044"
 
 Чтобы скопировать данные из SQL Server базу данных и в нее, поддерживаются следующие свойства:
 
-| Свойство | Описание | Обязательно для заполнения |
+| Свойство | Description | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| Тип | Свойство type для набора данных должно иметь значение **SqlServerTable**. | ДА |
-| schema | Имя схемы. |"Нет" для источника, "Да" для приемника  |
-| таблица | Имя таблицы или представления. |"Нет" для источника, "Да" для приемника  |
+| type | Свойство type для набора данных должно иметь значение **SqlServerTable**. | Да |
+| схема | Имя схемы. |"Нет" для источника, "Да" для приемника  |
+| table | Имя таблицы или представления. |"Нет" для источника, "Да" для приемника  |
 | tableName | Имя таблицы или представления со схемой. Это свойство поддерживается для обеспечения обратной совместимости. Для новой рабочей нагрузки используйте `schema` и `table`. | "Нет" для источника, "Да" для приемника |
 
 **Пример**
@@ -192,9 +183,9 @@ ms.locfileid: "74931044"
 
 Чтобы скопировать данные из SQL Server, задайте тип источника **SqlSource** в действии копирования. В разделе source для действия копирования поддерживаются следующие свойства.
 
-| Свойство | Описание | Обязательно для заполнения |
+| Свойство | Description | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| Тип | Свойство type для источника действия копирования должно иметь значение **SqlSource**. | ДА |
+| type | Свойство type для источника действия копирования должно иметь значение **SqlSource**. | Да |
 | sqlReaderQuery |Используйте пользовательский SQL-запрос для чтения данных. Например, `select * from MyTable`. |Нет |
 | sqlReaderStoredProcedureName |Это свойство содержит имя хранимой процедуры, которая считывает данные из исходной таблицы. Последней инструкцией SQL должна быть инструкция SELECT в хранимой процедуре. |Нет |
 | storedProcedureParameters |Это параметры для хранимой процедуры.<br/>Допустимые значения: пары имен или значений. Имена и регистр параметров должны совпадать с именами и регистром параметров хранимой процедуры. |Нет |
@@ -298,9 +289,9 @@ GO
 
 Чтобы скопировать данные в базу данных SQL Server, установите тип приемника **SqlSink** в действии копирования. В разделе sink для действия копирования поддерживаются следующие свойства.
 
-| Свойство | Описание | Обязательно для заполнения |
+| Свойство | Description | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| Тип | Свойство type для приемника действия копирования должно иметь значение **SqlSink**. | ДА |
+| type | Свойство type для приемника действия копирования должно иметь значение **SqlSink**. | Да |
 | writeBatchSize |Число строк, вставляемых в таблицу SQL для *каждого пакета*.<br/>Допустимые значения: целое число (количество строк). По умолчанию фабрика данных Azure динамически определяет соответствующий размер пакета в зависимости от размера строки. |Нет |
 | writeBatchTimeout |Это свойство определяет время ожидания при выполнении операции пакетной вставки, по истечении которого она считается не выполненной.<br/>Допустимые значения — для интервала времени. Например, "00:30:00" в течение 30 минут. Если значение не указано, время ожидания по умолчанию равно "02:00:00". |Нет |
 | preCopyScript |Это свойство задает SQL-запрос для выполнения действия копирования перед записью данных в SQL Server. Он вызывается однократно при каждом запуске копирования. Это свойство можно использовать для очистки предварительно загруженных данных. |Нет |
@@ -499,25 +490,25 @@ END
 
 При копировании данных из и в SQL Server следующие сопоставления используются из SQL Server типов данных в промежуточные типы данных фабрики данных Azure. Дополнительные сведения о том, как действие копирования сопоставляет исходную схему и типы данных для приемника, см. в статье [Сопоставление схем в действии копирования](copy-activity-schema-and-type-mapping.md).
 
-| Типы данных SQL Server | Промежуточный тип данных Фабрики данных Azure |
+| Тип данных SQL Server | Промежуточный тип данных Фабрики данных Azure |
 |:--- |:--- |
-| bigint |Int64 |
+| BIGINT |Int64 |
 | binary |Byte[] |
-| bit |Логический |
+| bit |Логическое |
 | char |String, Char[] |
-| date |Дата и время |
-| DateTime |Дата и время |
+| Дата |Дата и время |
+| Datetime |Дата и время |
 | datetime2 |Дата и время |
 | Datetimeoffset |DateTimeOffset |
 | Decimal |Decimal |
 | FILESTREAM attribute (varbinary(max)) |Byte[] |
-| Float |DOUBLE |
-| image |Byte[] |
+| Float |Double |
+| изображение |Byte[] |
 | int |Int32 |
 | money |Decimal |
 | nchar |String, Char[] |
 | ntext |String, Char[] |
-| numeric |Decimal |
+| NUMERIC |Decimal |
 | nvarchar |String, Char[] |
 | real |Отдельная |
 | rowversion |Byte[] |
@@ -525,14 +516,14 @@ END
 | smallint |Int16 |
 | smallmoney |Decimal |
 | sql_variant |Объекты |
-| текст |String, Char[] |
-| time |Интервал времени |
-| Timestamp |Byte[] |
+| text |String, Char[] |
+| time |TimeSpan |
+| TIMESTAMP |Byte[] |
 | tinyint |Int16 |
-| uniqueidentifier |GUID |
+| UNIQUEIDENTIFIER |GUID |
 | varbinary |Byte[] |
 | varchar |String, Char[] |
-| Xml |xml |
+| Xml |Xml |
 
 >[!NOTE]
 > В настоящее время для типов данных, которые сопоставляются с промежуточными типом Decimal, Фабрика данных Azure поддерживает точность до 28. Если для ваших данных требуется точность больше 28, попробуйте преобразовать их в строковые данные в SQL-запросе.

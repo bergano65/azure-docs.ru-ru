@@ -2,18 +2,18 @@
 title: Создание кластеров Apache Hadoop с помощью REST API Azure в Azure
 description: Узнайте, как создавать кластеры HDInsight, отправив шаблоны Azure Resource Manager в Azure REST API.
 author: hrasheed-msft
+ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
-ms.custom: hdinsightactive
 ms.topic: conceptual
-ms.date: 05/02/2018
-ms.author: hrasheed
-ms.openlocfilehash: 963dc71097a1ac53df77f3ab9c804b53597adeb5
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.custom: hdinsightactive
+ms.date: 12/10/2019
+ms.openlocfilehash: e2d63626ec548f0107d7af935af32e90d6972849
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73151998"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75435526"
 ---
 # <a name="create-apache-hadoop-clusters-using-the-azure-rest-api"></a>Создание кластеров Apache Hadoop с помощью REST API Azure
 
@@ -343,16 +343,15 @@ curl -X "GET" "https://management.azure.com/subscriptions/$SUBSCRIPTIONID/resour
 
 ## <a name="troubleshoot"></a>Устранение неполадок
 
-Если при создании кластеров HDInsight возникли проблемы, см. раздел [Создание кластеров](hdinsight-hadoop-create-linux-clusters-portal.md).
+Если при создании кластеров HDInsight возникли проблемы, см. раздел [Создание кластеров](./hdinsight-hadoop-customize-cluster-linux.md#access-control).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Теперь, когда вы успешно создали кластер HDInsight, обратитесь к следующим статьям, чтобы научиться работать с кластером.
+Теперь, когда вы успешно создали кластер HDInsight, используйте следующую информацию, чтобы узнать, как работать с кластером.
 
 ### <a name="apache-hadoop-clusters"></a>Кластеры Apache Hadoop
 
 * [Использование Hive и HiveQL с Hadoop в HDInsight для анализа примера файла Apache log4j](hadoop/hdinsight-use-hive.md)
-* [Использование Pig с Hadoop в HDInsight](hadoop/hdinsight-use-pig.md)
 * [Использование MapReduce с HDInsight](hadoop/hdinsight-use-mapreduce.md)
 
 ### <a name="apache-hbase-clusters"></a>Кластеры Apache HBase

@@ -11,16 +11,16 @@ ms.topic: article
 ms.date: 11/04/2017
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
-ms.openlocfilehash: 59f8b8b253fc914e5723a9c41475ec78bc3f376e
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 4b95fb8d5a0c05d2d66744a91f4200d58a71470d
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61429354"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75427360"
 ---
 # <a name="move-data-from-an-on-premises-sql-server-to-sql-azure-with-azure-data-factory"></a>Перенос данных из локального SQL Server в SQL Azure с фабрикой данных Azure
 
-В этой статье демонстрируется, как перенести данные из базы данных локального SQL Server в базу данных SQL Azure через хранилище BLOB-объектов Azure с помощью фабрики данных Azure (ADF).
+В этой статье показано, как переместить данные из локальной базы данных SQL Server в базу данных SQL Azure через хранилище BLOB-объектов Azure с помощью фабрики данных Azure (ADF). Этот метод является поддерживаемым традиционным подходом, который обладает преимуществами реплицированной копии промежуточного копирования, хотя [мы рекомендуем ознакомиться со страницей переноса для получения последних вариантов](https://datamigration.microsoft.com/scenario/sql-to-azuresqldb?step=1).
 
 Таблица, обобщающая различные варианты перемещения данных в базу данных SQL Azure, содержится в статье [Перемещение данных в базу данных SQL Azure для машинного обучения Azure](move-sql-azure.md).
 
@@ -43,7 +43,7 @@ ADF позволяет выполнять планирование и отсле
 * копирование данных из учетной записи хранилища больших двоичных объектов Azure в базу данных SQL Azure.
 
 > [!NOTE]
-> Показанные здесь шаги были взяты из более подробного учебника, предоставленного группой разработчиков ADF: [Копирование данных из локальной базы данных SQL Server в хранилище BLOB-объектов Azure](https://docs.microsoft.com/azure/data-factory/tutorial-hybrid-copy-portal/). Ссылки на соответствующие разделы этой статьи предоставляются по мере необходимости.
+> Приведенные здесь шаги были адаптированы от более подробного руководства, предоставленного группой ADF. [скопируйте данные из локальной базы данных SQL Server в хранилище BLOB-объектов Azure](https://docs.microsoft.com/azure/data-factory/tutorial-hybrid-copy-portal/) ссылки на соответствующие разделы этого раздела предоставляются при необходимости.
 >
 >
 
@@ -51,8 +51,8 @@ ADF позволяет выполнять планирование и отсле
 Для выполнения действий, описанных в этом учебнике, вам необходимо следующее.
 
 * **Подписка Azure**. Если у вас нет подписки, вы можете зарегистрироваться для получения [бесплатной пробной версии](https://azure.microsoft.com/pricing/free-trial/).
-* **Azure storage account**. Учетная запись хранения Azure используется в этом учебнике для хранения данных. Если у вас ее нет, см. раздел [Создание учетной записи хранения](../../storage/common/storage-quickstart-create-account.md). После создания учетной записи хранения необходимо получить ключ, используемый для доступа к хранилищу. Ознакомьтесь с разделом [Управление ключами доступа к хранилищу](../../storage/common/storage-account-manage.md#access-keys).
-* Доступ к **базе данных SQL Azure**. Если необходимо настроить базу данных SQL Azure, раздел [Приступая к работе с базой данных SQL Microsoft Azure](../../sql-database/sql-database-get-started.md) предоставляет сведения о том, как подготовить новый экземпляр базы данных SQL Azure.
+* **Azure storage account**. Учетная запись хранения Azure используется в этом учебнике для хранения данных. Если у вас ее нет, см. раздел [Создание учетной записи хранения](../../storage/common/storage-quickstart-create-account.md). После создания учетной записи хранения необходимо получить ключ, используемый для доступа к хранилищу. См. [раздел Управление ключами доступа учетной записи хранения](../../storage/common/storage-account-keys-manage.md).
+* Доступ к **базе данных SQL Azure**. Если необходимо настроить базу данных SQL Azure, раздел [Начало работы with база данных SQL Microsoft Azure](../../sql-database/sql-database-get-started.md) предоставляет сведения о том, как подготавливать новый экземпляр базы данных SQL Azure.
 * Установленная и настроенная локальная среда **Azure PowerShell**. Инструкции см. в статье [Приступая к работе с командлетами Azure PowerShell](/powershell/azure/overview).
 
 > [!NOTE]
@@ -71,7 +71,7 @@ ADF позволяет выполнять планирование и отсле
 ## <a name="install-and-configure-azure-data-factory-integration-runtime"></a>Установка и настройка фабрики данных Azure Integration Runtime
 Integration Runtime — это управляемая клиентом инфраструктура среды выполнения интеграции, которую фабрика данных Azure использует для обеспечения интеграции данных в разных сетевых средах. Эта среда выполнения раньше называлась "Шлюз управления данными".
 
-Чтобы настроить [следуйте инструкциям по созданию конвейера](https://docs.microsoft.com/azure/data-factory/tutorial-hybrid-copy-portal#create-a-pipeline)
+Чтобы настроить, [следуйте инструкциям по созданию конвейера](https://docs.microsoft.com/azure/data-factory/tutorial-hybrid-copy-portal#create-a-pipeline) .
 
 ## <a name="adflinkedservices"></a>Создание связанных служб для подключения к ресурсам данных
 Информация, необходимая фабрике данных для подключения к внешним ресурсам, определяется связанными службами. В этом сценарии есть три ресурса, для которых требуются связанные службы.

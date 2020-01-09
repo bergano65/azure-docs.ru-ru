@@ -7,18 +7,18 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: tutorial
 ms.date: 09/04/2019
-ms.openlocfilehash: cb99b747cb5de01c616c4cab0ac6c14823f7d4db
-ms.sourcegitcommit: 38251963cf3b8c9373929e071b50fd9049942b37
+ms.openlocfilehash: a0205d57fa68585b1a91b99b19e008eb92e73c0d
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73044630"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75435856"
 ---
-# <a name="tutorial-configure-apache-kafka-policies-in-hdinsight-with-enterprise-security-package-preview"></a>Руководство по Настройка политик Apache Kafka в HDInsight с Корпоративным пакетом безопасности (предварительная версия)
+# <a name="tutorial-configure-apache-kafka-policies-in-hdinsight-with-enterprise-security-package-preview"></a>Руководство. Настройка политик Apache Kafka в HDInsight с Корпоративным пакетом безопасности (предварительная версия)
 
 Сведения о настройке политик Apache Ranger для кластеров Apache Kafka с Корпоративным пакетом безопасности (ESP). Кластеры ESP подключены к домену, благодаря чему пользователи могут проходить аутентификацию с учетными данными домена. В этом руководстве вы создадите две политики Ranger для ограничения доступа к разделам `sales` и `marketingspend`.
 
-Из этого руководства вы узнаете, как выполнять следующие задачи:
+В этом руководстве описано следующее.
 
 > [!div class="checklist"]
 > * Создание пользователей домена
@@ -93,7 +93,7 @@ ms.locfileid: "73044630"
    ssh DOMAINADMIN@CLUSTERNAME-ssh.azurehdinsight.net
    ```
 
-   Замените `DOMAINADMIN` пользователем с правами администратора для вашего кластера, настроенного во время [создания кластера](./apache-domain-joined-configure-using-azure-adds.md#create-a-hdinsight-cluster-with-esp), и замените `CLUSTERNAME` именем вашего кластера. При появлении запроса введите пароль для учетной записи администратора. Дополнительные сведения об использовании `SSH` с HDInsight см. в статье [Подключение к HDInsight (Hadoop) с помощью SSH](../../hdinsight/hdinsight-hadoop-linux-use-ssh-unix.md).
+   Замените `DOMAINADMIN` пользователем с правами администратора для вашего кластера, настроенного во время [создания кластера](./apache-domain-joined-configure-using-azure-adds.md#create-an-hdinsight-cluster-with-esp), и замените `CLUSTERNAME` именем вашего кластера. При появлении запроса введите пароль для учетной записи администратора. Дополнительные сведения об использовании `SSH` с HDInsight см. в статье [Подключение к HDInsight (Hadoop) с помощью SSH](../../hdinsight/hdinsight-hadoop-linux-use-ssh-unix.md).
 
 2. Чтобы сохранить имя кластера в переменной и установить служебную программу синтаксического анализа JSON (`jq`), используйте следующие команды. При появлении запроса введите имя кластера Kafka.
 
@@ -131,7 +131,7 @@ ms.locfileid: "73044630"
    ssh sales_user1@CLUSTERNAME-ssh.azurehdinsight.net
    ```
 
-2. Выполните следующую команду.
+2. Выполните следующую команду:
 
    ```bash
    export KAFKA_OPTS="-Djava.security.auth.login.config=/usr/hdp/current/kafka-broker/config/kafka_client_jaas.conf"
@@ -189,13 +189,13 @@ ms.locfileid: "73044630"
 
 Если вы не собираетесь использовать это приложение в дальнейшем, удалите созданный кластер Kafka, сделав следующее:
 
-1. Войдите на [портале Azure](https://portal.azure.com/).
+1. Войдите на [портал Azure](https://portal.azure.com/).
 1. В поле **Поиск** в верхней части страницы введите **HDInsight**.
 1. Выберите **Кластеры HDInsight** в разделе **Службы**.
 1. В списке кластеров HDInsight, который отобразится, щелкните **...** рядом с кластером, созданным при работе с этим руководством. 
-1. Нажмите кнопку **Delete**(Удалить). Щелкните **Да**.
+1. Щелкните **Удалить**. Нажмите кнопку **Да**.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Создание собственных ключей для Apache Kafka](../kafka/apache-kafka-byok.md)

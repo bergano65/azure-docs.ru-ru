@@ -8,12 +8,12 @@ ms.service: security-center
 ms.topic: conceptual
 ms.date: 11/04/2019
 ms.author: memildin
-ms.openlocfilehash: 1abfd8af7e0ef18d4e7bcf05b4726c5d0bcb0a84
-ms.sourcegitcommit: 5cfe977783f02cd045023a1645ac42b8d82223bd
+ms.openlocfilehash: 57351ccf0c6155a1a3532ec9e6481a724e3219aa
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2019
-ms.locfileid: "74151691"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75462444"
 ---
 # <a name="workflow-automation-preview"></a>Автоматизация рабочих процессов (Предварительная версия)
 
@@ -87,8 +87,11 @@ ms.locfileid: "74151691"
 
 [![запускать приложение логики вручную](media/workflow-automation/manually-trigger-logic-app.png)](media/workflow-automation/manually-trigger-logic-app.png#lightbox)
 
+## <a name="data-types-schemas"></a>Схемы типов данных
 
-## <a name="next-steps"></a>Дополнительная информация
+Чтобы просмотреть схемы необработанных событий предупреждений системы безопасности или событий рекомендаций, переданных в экземпляр приложения логики, посетите страницу [схемы типов данных автоматизации рабочих процессов](https://aka.ms/ASCAutomationSchemas). Это может быть полезно в тех случаях, когда не используются встроенные соединители приложений логики центра безопасности, упомянутые выше, но вместо них используется универсальный соединитель HTTP приложения логики. Вы можете использовать схему JSON события, чтобы вручную проанализировать его по своему усмотрению.
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой статье вы узнали о создании Logic Apps, запуске их вручную в центре безопасности и автоматизации их выполнения. 
 
@@ -98,3 +101,4 @@ ms.locfileid: "74151691"
 - [Оповещения безопасности в Центре безопасности Azure](security-center-alerts-overview.md)
 - [О Azure Logic Apps](https://docs.microsoft.com/azure/logic-apps/logic-apps-overview)
 - [Соединители приложений логики](https://docs.microsoft.com/connectors/)
+- [Схемы типов данных автоматизации рабочих процессов](https://aka.ms/ASCAutomationSchemas)

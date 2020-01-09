@@ -16,12 +16,12 @@ ms.workload: infrastructure-services
 ms.date: 05/05/2017
 ms.author: rclaus
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 75d4c4e38069cb192917f275245d87bb4c63d502
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: ff01bd0d6586cf75dcfdb7277c34120c6ec22894
+ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70078150"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75647498"
 ---
 # <a name="create-an-sap-netweaver-multi-sid-configuration"></a>Создание конфигурации с несколькими идентификаторами безопасности SAP NetWeaver
 
@@ -33,7 +33,7 @@ ms.locfileid: "70078150"
 [sap-ha-guide-figure-6004]:./media/virtual-machines-shared-sap-high-availability-guide/6004-sap-multi-sid-dns.png
 [sap-ha-guide-figure-6005]:./media/virtual-machines-shared-sap-high-availability-guide/6005-sap-multi-sid-azure-portal.png
 [sap-ha-guide-figure-6006]:./media/virtual-machines-shared-sap-high-availability-guide/6006-sap-multi-sid-sios-replication.png
-[networking-limits-azure-resource-manager]:../../../azure-subscription-service-limits.md#azure-resource-manager-virtual-networking-limits
+[networking-limits-azure-resource-manager]:../../../azure-resource-manager/management/azure-subscription-service-limits.md#azure-resource-manager-virtual-networking-limits
 [sap-ha-guide-9.1.1]:sap-high-availability-guide.md#a97ad604-9094-44fe-a364-f89cb39bf097 
 [sap-ha-guide-8.8]:sap-high-availability-guide.md#f19bd997-154d-4583-a46e-7f5a69d0153c
 [sap-ha-guide-8.12.3.3]:sap-high-availability-guide.md#d9c1fc8e-8710-4dff-bec2-1f535db7b006 
@@ -55,7 +55,7 @@ ms.locfileid: "70078150"
 
 [!INCLUDE [updated-for-az](../../../../includes/updated-for-az.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 Вы уже настроили кластер WSFC, который используется для одного экземпляра SAP ASCS/SCS, как описано в статье [о высоком уровне доступности SAP NetWeaver на виртуальных машинах Windows][sap-ha-guide] , как показано на этой схеме.
 
 ![Высокодоступный экземпляр SAP ASCS/SCS][sap-ha-guide-figure-6001]
@@ -72,7 +72,7 @@ ms.locfileid: "70078150"
 >Максимальное количество экземпляров SAP ASCS/SCS в одном кластере WSFC равно максимальному количеству частных внешних IP-адресов на одну внутреннюю подсистему балансировки нагрузки Azure.
 >
 
-Дополнительные сведения об ограничениях подсистемы балансировки нагрузки см. в пункте "Частный внешний IP-адрес на подсистему балансировки нагрузки" раздела [Ограничения сети — Azure Resource Manager][networking-limits-azure-resource-manager].
+Дополнительные сведения об ограничениях подсистемы балансировки нагрузки см. в разделе ограничения сети "частный интерфейсный IP-адрес на подсистеме балансировки нагрузки" [: Azure Resource Manager][networking-limits-azure-resource-manager].
 
 Общая картина с двумя системами SAP высокого уровня доступности будет выглядеть следующим образом:
 
@@ -121,7 +121,7 @@ ms.locfileid: "70078150"
 
 ![Список диспетчера DNS с выделенной определенной записью DNS для нового виртуального имени и TCP/IP-адреса кластера SAP ASCS/SCS][sap-ha-guide-figure-6004]
 
-Процедура создания записи DNS также подробно описана в главном разделе, посвященном обеспечению [высокого уровня доступности SAP NetWeaver на виртуальных машинах Windows][sap-ha-guide-9.1.1].
+Процедура создания записи DNS также подробно описана в главном разделе, [посвященном обеспечению высокого уровня доступности SAP NetWeaver на виртуальных машинах Windows][sap-ha-guide-9.1.1].
 
 > [!NOTE]
 > Новый IP-адрес, назначаемый имени виртуального узла дополнительного экземпляра ASCS/SCS, должен совпадать с новым IP-адресом, который назначен подсистеме Azure Load Balancer для SAP.
@@ -219,7 +219,7 @@ Write-Host "Successfully added new IP '$ILBIP' to the internal load balancer '$I
 
 Для каждого дополнительного экземпляра SAP ASCS/SCS необходимо добавить новый общий диск кластера. Для общего диска кластера WSFC Windows Server 2012 R2 сейчас используется программное решение SIOS DataKeeper.
 
-Выполните следующие действия:
+Выполните следующие действия.
 1. Добавьте дополнительный диск (или несколько дисков одного размера, которые необходимо чередовать) к каждому узлу кластера и отформатируйте их.
 2. Настройте репликацию хранилища с помощью SIOS DataKeeper.
 
@@ -237,7 +237,7 @@ Write-Host "Successfully added new IP '$ILBIP' to the internal load balancer '$I
 
 ## <a name="install-the-second-sap-sid2-netweaver-system"></a>Установка второй системы SAP SID2 NetWeaver
 
-Полный процесс установки второй системы SAP SID2 описывается в главном разделе, посвященном обеспечению [высокого уровня доступности SAP NetWeaver на виртуальных машинах Windows][sap-ha-guide-9].
+Полный процесс установки второй системы SAP SID2 описывается в главном разделе, [посвященном обеспечению высокого уровня доступности SAP NetWeaver на виртуальных машинах Windows][sap-ha-guide-9].
 
 Основные действия:
 
@@ -267,8 +267,8 @@ Write-Host "Successfully added new IP '$ILBIP' to the internal load balancer '$I
 
 10. [Протестируйте отработку отказа экземпляра SAP ASCS/SCS и репликацию SIOS][sap-ha-guide-10].
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-- [Ограничения сети — Azure Resource Manager][networking-limits-azure-resource-manager]
+- [Ограничения сети: Azure Resource Manager][networking-limits-azure-resource-manager]
 - [Несколько виртуальных IP-адресов для Azure Load Balancer][load-balancer-multivip-overview]
 - [Рекомендации по обеспечению высокого уровня доступности SAP NetWeaver на виртуальных машинах Windows][sap-ha-guide]

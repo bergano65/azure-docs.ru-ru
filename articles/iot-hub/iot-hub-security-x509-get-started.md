@@ -8,18 +8,18 @@ ms.service: iot-hub
 services: iot-hub
 ms.topic: conceptual
 ms.date: 08/20/2019
-ms.openlocfilehash: 32219eeaee7980b685ac3453c6af3beff716abe2
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.openlocfilehash: 968241eff1bcab449f9a4def7a394a508461ec95
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73824086"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75457024"
 ---
 # <a name="set-up-x509-security-in-your-azure-iot-hub"></a>Настройка сертификата безопасности X.509 в Центре Интернета вещей Azure
 
 В этом руководстве описаны действия, необходимые для защиты центра Интернета вещей Azure с помощью *проверки подлинности на основе сертификата X. 509*. В целях иллюстрации мы используем инструмент с открытым кодом OpenSSL для локального создания сертификатов на компьютере Windows. Мы рекомендуем использовать это руководство только для тестирования. Для рабочей среды следует приобрести сертификаты в *корневом центре сертификации (ЦС)* .
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Для работы с этим руководством вам потребуется подготовить следующие ресурсы:
 
@@ -83,7 +83,7 @@ ms.locfileid: "73824086"
 
 Далее мы рассмотрим, как создать приложение C#, чтобы смоделировать устройство X.509, зарегистрированное для вашего Центра Интернета вещей. Мы отправим значения температуры и влажности с виртуального устройства в ваш центр. В этом учебнике будет создано только приложение устройства. Создание приложения службы Центра Интернета вещей, которое будет отправлять ответы на события, отправленные этим виртуальным устройством, останется в качестве упражнения для читателей. В примере приложения C# предполагается, что вы выполнили процедуру, описанную в статье [Managing test CA certificates for samples and tutorials](https://github.com/Azure/azure-iot-sdk-c/blob/master/tools/CACertificates/CACertificateOverview.md).
 
-1. Откройте Visual Studio, выберите **создать новый проект**, а затем выберите шаблон проекта **консольное приложение (.NET Framework)** . Щелкните **Далее**.
+1. Откройте Visual Studio, выберите **создать новый проект**, а затем выберите шаблон проекта **консольное приложение (.NET Framework)** . Выберите **Далее**.
 
 1. В окне **Настройка нового проекта**назовите проект *SimulateX509Device*, а затем выберите **создать**.
 
@@ -91,7 +91,7 @@ ms.locfileid: "73824086"
 
 1. В обозреватель решений щелкните правой кнопкой мыши проект **SimulateX509Device** , а затем выберите пункт **Управление пакетами NuGet**.
 
-1. В **диспетчере пакетов NuGet**нажмите кнопку **Обзор** и найдите и выберите **Microsoft. Azure. Devices. Client**. Щелкните **Установить**.
+1. В **диспетчере пакетов NuGet**нажмите кнопку **Обзор** и найдите и выберите **Microsoft. Azure. Devices. Client**. Выберите пункт **Установить**.
 
    ![Добавление пакета NuGet SDK для устройств в Visual Studio](./media/iot-hub-security-x509-get-started/device-sdk-nuget.png)
 
@@ -99,7 +99,7 @@ ms.locfileid: "73824086"
 
 1. Добавьте следующие инструкции `using` в начало файла **Program.cs** :
 
-    ```CSharp
+    ```csharp
         using Microsoft.Azure.Devices.Client;
         using Microsoft.Azure.Devices.Shared;
         using System.Security.Cryptography.X509Certificates;
@@ -107,7 +107,7 @@ ms.locfileid: "73824086"
 
 1. Добавьте в класс **Program** следующие поля:
 
-    ```CSharp
+    ```csharp
         private static int MESSAGE_COUNT = 5;
         private const int TEMPERATURE_THRESHOLD = 30;
         private static String deviceId = "<your-device-id>";
@@ -120,7 +120,7 @@ ms.locfileid: "73824086"
 
 1. Добавьте следующую функцию, чтобы создать случайные числа для значений температуры и влажности и отправить их в центр.
 
-    ```CSharp
+    ```csharp
     static async Task SendEvent(DeviceClient deviceClient)
     {
         string dataBuffer;
@@ -142,7 +142,7 @@ ms.locfileid: "73824086"
 
 1. Наконец, добавьте следующие строки кода в функцию **Main** , заменив заполнители _Device-ID_, My _-IOT-Hub-Name_и _Absolute-path-to-for-Device-PFX_ , в соответствии с требованиями программы установки.
 
-    ```CSharp
+    ```csharp
     try
     {
         var cert = new X509Certificate2(@"<absolute-path-to-your-device-pfx-file>", "1234");

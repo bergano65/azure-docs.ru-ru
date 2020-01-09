@@ -13,12 +13,12 @@ ms.author: ajburnle
 ms.reviewer: jeffsta
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d071ff071c13637b15479d86a699d0b368119196
-ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
+ms.openlocfilehash: 2df52969ea79e5d1af132aa82c2ec1ceedb92b82
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73742597"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75422897"
 ---
 # <a name="assign-administrator-and-non-administrator-roles-to-users-with-azure-active-directory"></a>Назначение ролей администратора и других ролей пользователям с помощью Azure Active Directory
 Если пользователю в вашей организации требуется разрешение на управление ресурсами Azure Active Directory (Azure AD), необходимо назначить пользователю соответствующую роль в Azure AD в зависимости от действий, которые пользователю нужно выполнять.
@@ -31,17 +31,24 @@ ms.locfileid: "73742597"
 Вы также можете назначать роли с помощью управления привилегированными пользователями (PIM). Более подробные сведения о том, как использовать PIM, см. в разделе [Управление привилегированными пользователями](https://docs.microsoft.com/azure/active-directory/privileged-identity-management).
 
 ### <a name="to-assign-a-role-to-a-user"></a>Назначение роли пользователю
-1. Войдите на [портал Azure](https://portal.azure.com/) с учетной записью глобального администратора каталога.
+1. Перейдите к [портал Azure](https://portal.azure.com/) и войдите в систему, используя учетную запись глобального администратора для каталога. 
 
-2. Выберите **Azure Active Directory**, нажмите **Пользователи**, а затем найдите и выберите пользователя, которому необходимо назначить роль. Например, _Alain Charon_.
+2. Найдите и выберите **Azure Active Directory**.
+
+      ![портал Azure Поиск Azure Active Directory](media/active-directory-users-assign-role-azure-portal/search-azure-active-directory.png)
+
+
+3. Выберите **Пользователи**.
+
+4. Найдите и выберите пользователя, который получает назначение роли. Например, _Alain Charon_.
 
       ![Страница "все пользователи" — Выбор пользователя](media/active-directory-users-assign-role-azure-portal/directory-role-select-user.png)
 
-3. На странице **(Alain Чарон-Profile** выберите **назначенные роли**.
+5. На странице **(Alain Чарон-Profile** выберите **назначенные роли**.
 
     Откроется страница **Ален Чарон — роль каталога**.
 
-4. Выберите **добавить назначение**, выберите роль для назначения (Alain (например, _Администратор приложения_), а затем нажмите **кнопку Выбрать**.
+6. Выберите **добавить назначение**, выберите роль для назначения (Alain (например, _Администратор приложения_), а затем нажмите **кнопку Выбрать**.
 
     ![Страница "назначенные роли" — Отображение выбранной роли](media/active-directory-users-assign-role-azure-portal/directory-role-select-role.png)
 
@@ -61,7 +68,7 @@ ms.locfileid: "73742597"
     Назначение роли удалено, она больше не отображается на странице **Ален Чарон — роль каталога**.
 
 ## <a name="next-steps"></a>Дальнейшие действия
-- [Добавить или удалить пользователя](add-users-azure-active-directory.md)
+- [Добавление или удаление пользователей](add-users-azure-active-directory.md)
 
 - [Добавление или изменение данных профиля](active-directory-users-profile-azure-portal.md)
 

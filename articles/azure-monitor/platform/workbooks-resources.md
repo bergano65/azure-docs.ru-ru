@@ -10,12 +10,12 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 10/23/2019
 ms.author: mbullwin
-ms.openlocfilehash: adc9855d30a3b286cfbc3489ec639ab8b460e314
-ms.sourcegitcommit: 9405aad7e39efbd8fef6d0a3c8988c6bf8de94eb
+ms.openlocfilehash: 02456d6e690c2ef96b578a00f8e71ae2515ec089
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74872814"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75363121"
 ---
 # <a name="workbook-resource-parameters"></a>Параметры ресурса книги
 
@@ -101,7 +101,7 @@ ms.locfileid: "74872814"
 > Этот подход можно использовать для привязки ресурсов к другим элементам управления, таким как метрики.
 
 ## <a name="resource-parameter-options"></a>Параметры параметра resource
-| Параметр | Пояснение | Пример |
+| Параметр | Объяснение | Пример |
 | ------------- |:-------------|:-------------|
 | `{Applications}` | Выбранный идентификатор ресурса | _/Subscriptions/< >/resourceGroups/< Resource-Group >/providers/< типа ресурсов >/акмеаусентикатион_ |
 | `{Applications:label}` | Метка выбранного ресурса | `acmefrontend` |

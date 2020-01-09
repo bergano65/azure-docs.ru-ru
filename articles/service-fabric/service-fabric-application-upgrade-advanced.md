@@ -1,25 +1,14 @@
 ---
-title: Дополнительные разделы об обновлении приложений | Документация Майкрософт
+title: Разделы, посвященные расширенному обновлению приложений
 description: В этой статье рассматриваются некоторые дополнительные темы, относящиеся к обновлению приложения Service Fabric.
-services: service-fabric
-documentationcenter: .net
-author: mani-ramaswamy
-manager: chackdan
-editor: ''
-ms.assetid: e29585ff-e96f-46f4-a07f-6682bbe63281
-ms.service: service-fabric
-ms.devlang: dotnet
 ms.topic: conceptual
-ms.tgt_pltfrm: NA
-ms.workload: NA
 ms.date: 2/23/2018
-ms.author: atsenthi
-ms.openlocfilehash: c37ee8177ba31ac8a5da90fef175a6fbd63a6d75
-ms.sourcegitcommit: aef6040b1321881a7eb21348b4fd5cd6a5a1e8d8
+ms.openlocfilehash: bd95d651e02cb61bcbe7a108db92afce8b5484bd
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72167589"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75457530"
 ---
 # <a name="service-fabric-application-upgrade-advanced-topics"></a>Обновление приложений Service Fabric: дополнительные разделы
 ## <a name="adding-or-removing-service-types-during-an-application-upgrade"></a>Добавление или удаление типов служб во время обновления приложения
@@ -132,7 +121,7 @@ ApplicationParameters  : { "ImportantParameter" = "2"; "NewParameter" = "testAft
 
 Во время отката все еще можно изменить значение *UpgradeReplicaSetCheckTimeout*. Режим также можно изменить в любое время с помощью командлета [Update-ServiceFabricApplicationUpgrade](https://docs.microsoft.com/powershell/module/servicefabric/update-servicefabricapplicationupgrade?view=azureservicefabricps).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 [Руководство по обновлению приложений Service Fabric с помощью Visual Studio](service-fabric-application-upgrade-tutorial.md) поможет вам выполнить поэтапное обновление приложения с помощью Visual Studio.
 
 [Обновление приложения с помощью PowerShell](service-fabric-application-upgrade-tutorial-powershell.md) поможет вам выполнить обновление приложения с помощью PowerShell.

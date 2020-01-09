@@ -1,21 +1,14 @@
 ---
-title: Общие сведения об Azure Advisor | Документация Майкрософт
+title: Общие сведения об Azure Advisor
 description: Использование Azure Advisor для оптимизации развернутых служб Azure.
-services: advisor
-documentationcenter: NA
-author: sagupt
-ms.service: advisor
 ms.topic: article
-ms.tgt_pltfrm: NA
-ms.workload: NA
 ms.date: 02/01/2019
-ms.author: sagupt
-ms.openlocfilehash: 1a1ed13697d838041d1ac98b966695e24c06edbe
-ms.sourcegitcommit: 5cfe977783f02cd045023a1645ac42b8d82223bd
+ms.openlocfilehash: 600bda282d46f86979d0366719826c3a6c1323e0
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2019
-ms.locfileid: "74145370"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75443095"
 ---
 # <a name="introduction-to-azure-advisor"></a>Общие сведения об Azure Advisor
 
@@ -51,12 +44,12 @@ ms.locfileid: "74145370"
 
 ## <a name="frequently-asked-questions"></a>Часто задаваемые вопросы
 
-### <a name="how-do-i-access-advisor"></a>Как воспользоваться Advisor?
+### <a name="how-do-i-access-advisor"></a>Как открыть Помощник?
 Воспользоваться Advisor можно с помощью [портала Azure](https://aka.ms/azureadvisordashboard). Войдите на [портал](https://portal.azure.com), в меню навигации найдите **Помощник** или выполните поиск в меню **Все службы**.
 
 Рекомендации Помощника можно также просмотреть через интерфейс ресурса виртуальной машины. Выберите виртуальную машину и прокрутите меню до рекомендаций Advisor. 
 
-### <a name="what-permissions-do-i-need-to-access-advisor"></a>Какие разрешения требуются для использования Advisor?
+### <a name="what-permissions-do-i-need-to-access-advisor"></a>Какие разрешения необходимы для доступа к Помощнику?
  
 Рекомендации Помощника могут просматривать *владельцы*, *участники* или *читатели* подписки.
 
@@ -70,11 +63,11 @@ ms.locfileid: "74145370"
 
 Чтобы отложить или закрыть рекомендацию, щелкните ссылку **Отложить**. Можно указать период времени, на который откладывается рекомендация, или выбрать значение **Никогда**, чтобы закрыть ее.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы узнать больше о рекомендациях Помощника, ознакомьтесь с приведенными ниже материалами.
 
-* [Приступая к работе с Azure Advisor](advisor-get-started.md)
+* [Начало работы с Помощником по Azure](advisor-get-started.md)
 * [Рекомендации Azure Advisor по высокой доступности](advisor-high-availability-recommendations.md)
 * [Рекомендации Azure Advisor по безопасности](advisor-security-recommendations.md)
 * [Рекомендации Azure Advisor по производительности](advisor-performance-recommendations.md)

@@ -2,17 +2,17 @@
 title: Что такое модель и пакет облачной службы | Документация Майкрософт
 description: Описание модели (CSDEF-файл, CSCFG-файл) и пакета облачной службы (CSPKG-файл) в Azure
 services: cloud-services
-author: georgewallace
+author: tgore03
 ms.service: cloud-services
 ms.topic: article
 ms.date: 07/05/2017
-ms.author: gwallace
-ms.openlocfilehash: 47d031e339b3677e0bf6ddcbad9456041c53c6e2
-ms.sourcegitcommit: 4b647be06d677151eb9db7dccc2bd7a8379e5871
+ms.author: tagore
+ms.openlocfilehash: 0d04236861287074087cc125d7b0d44dc65eccbf
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68359559"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75360707"
 ---
 # <a name="what-is-the-cloud-service-model-and-how-do-i-package-it"></a>Что такое модель облачных служб и как создать ее пакет?
 Облачная служба создается из трех компонентов: определения службы *(CSDEF-файл)* , конфигурации службы *(CSCFG-файл)* и пакета службы *(CSPKG-файл)* . Файлы **ServiceDefinition.csdef** и **ServiceConfig.cscfg** являются XML-файлами, которые описывают структуру облачной службы и ее конфигурацию. В совокупности это называется моделью. **ServicePackage.cspkg** — это ZIP-файл, который создается на основе файла **ServiceDefinition.csdef** и который, помимо прочего, содержит все необходимые зависимости в двоичном формате. Azure создает облачную службу из двух файлов: **ServicePackage.cspkg** и **ServiceConfig.cscfg**.
@@ -97,7 +97,7 @@ ms.locfileid: "68359559"
 **ConfigurationSettings**  
 Содержит определения параметров для функций конкретной роли.
 
-**Certificates**  
+**Сертификаты**  
 Содержит определения для сертификатов, которые необходимы для роли. В предыдущем примере кода показан сертификат, используемый для настройки Azure Connect.
 
 **LocalResources**  
@@ -142,7 +142,7 @@ ms.locfileid: "68359559"
 **ConfigurationSettings**  
 Настраивает параметры для запущенных экземпляров роли. Имена элементов `<Setting>` должны соответствовать определениям параметров в файле определения службы.
 
-**Certificates**  
+**Сертификаты**  
 Настраивает сертификаты, используемые службой. В предыдущем примере кода показано, как определить сертификат для модуля RemoteAccess. Значение атрибута *thumbprint* должно быть присвоено отпечатку сертификата, который будет использоваться.
 
 <p/>
@@ -270,7 +270,7 @@ cspack [DirectoryName]\[ServiceDefinition]
 | \[PhysicalPath\] |Физические каталоги содержимого для каждого виртуального пути, заданного в узле «Сайт» определения службы. |
 | \[RoleAssemblyName\] |Имя двоичного файла для роли. |
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Я создаю пакет облачной службы и я хочу выполнить следующие действия.
 
 * [Настройка удаленного рабочего стола для экземпляра облачной службы][remotedesktop]
@@ -289,3 +289,6 @@ cspack [DirectoryName]\[ServiceDefinition]
 [vs_deploy]: ../vs-azure-tools-cloud-service-publish-set-up-required-services-in-visual-studio.md
 [vs_reconfigure]: ../vs-azure-tools-configure-roles-for-cloud-service.md
 [vs_create]: ../vs-azure-tools-azure-project-create.md
+
+
+

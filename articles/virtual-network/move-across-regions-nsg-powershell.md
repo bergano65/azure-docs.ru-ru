@@ -6,12 +6,12 @@ ms.service: virtual-network
 ms.topic: article
 ms.date: 08/31/2019
 ms.author: allensu
-ms.openlocfilehash: 1be4882af781f884313fbc7b8e2f04f843b60068
-ms.sourcegitcommit: 0fab4c4f2940e4c7b2ac5a93fcc52d2d5f7ff367
+ms.openlocfilehash: 0cbd8f61cb1b4cb8eae6b30625fb3039ff75adde
+ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71038957"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75641474"
 ---
 # <a name="move-azure-network-security-group-nsg-to-another-region-using-azure-powershell"></a>Перемещение группы безопасности сети Azure (NSG) в другой регион с помощью Azure PowerShell
 
@@ -20,7 +20,7 @@ ms.locfileid: "71038957"
 Группы безопасности Azure нельзя перемещать из одного региона в другой. Однако можно использовать шаблон Azure Resource Manager для экспорта существующих правил конфигурации и безопасности NSG.  Затем можно разместить ресурс в другом регионе, экспортировав NSG в шаблон, изменив параметры в соответствии с регионом назначения, а затем развернув шаблон в новом регионе.  Дополнительные сведения о диспетчер ресурсов и шаблонах см. [в разделе Экспорт групп ресурсов в шаблоны](https://docs.microsoft.com/azure/azure-resource-manager/manage-resource-groups-powershell#export-resource-groups-to-templates).
 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 - Убедитесь, что группа безопасности сети Azure находится в регионе Azure, из которого вы хотите переместиться.
 
@@ -32,7 +32,7 @@ ms.locfileid: "71038957"
 
 - Убедитесь, что ваша подписка Azure позволяет создать группы безопасности сети в используемом целевом регионе. Свяжитесь со службой поддержки, чтобы включить необходимые квоты.
 
-- Убедитесь, что у вашей подписки достаточно ресурсов для поддержки добавления группы безопасности сети для этого процесса.  Ознакомьтесь со статьей [Подписка Azure, границы, квоты и ограничения службы](https://docs.microsoft.com/azure/azure-subscription-service-limits#networking-limits).
+- Убедитесь, что у вашей подписки достаточно ресурсов для поддержки добавления группы безопасности сети для этого процесса.  Ознакомьтесь со статьей [Подписка Azure, границы, квоты и ограничения службы](https://docs.microsoft.com/azure/azure-resource-manager/management/azure-subscription-service-limits#networking-limits).
 
 
 ## <a name="prepare-and-move"></a>Подготовка и перемещение
@@ -61,7 +61,7 @@ ms.locfileid: "71038957"
    Export-AzResourceGroup -ResourceGroupName <source-resource-group-name> -Resource $sourceNSGID -IncludeParameterDefaultValue
    ```
 
-4. Скачанный файл будет называться именем группы ресурсов, из которой был экспортирован ресурс.  Выберите файл, который был экспортирован из команды с именем  **\<Resource-Group-name >. JSON** , и откройте ее в любом редакторе:
+4. Скачанный файл будет называться именем группы ресурсов, из которой был экспортирован ресурс.  Выберите файл, который был экспортирован из команды с именем **\<Resource-Group-name >. JSON** , и откройте ее в любом редакторе:
    
    ```azurepowershell
    notepad <source-resource-group-name>.json
@@ -106,9 +106,9 @@ ms.locfileid: "71038957"
     Get-AzLocation | format-table
     
     ```
-8. Кроме того, можно изменить другие параметры в  **\<Resource-Group-name >. JSON** , если вы выбираете и являются необязательными в зависимости от ваших требований:
+8. Кроме того, можно изменить другие параметры в **\<Resource-Group-name >. JSON** , если выбрать, и они необязательны в зависимости от требований:
 
-    * **Правила безопасности** . правила, которые развертываются в целевом NSG, можно изменить, добавив или удалив правила в  **\<разделе securityRules файла resource-Group-name >. JSON** .
+    * **Правила безопасности** . правила, которые развертываются в целевом NSG, можно изменить, добавив или удалив правила в\<разделе **securityRules** файла **resource-Group-name >. JSON** :
 
         ```json
            "resources": [
@@ -144,7 +144,7 @@ ms.locfileid: "71038957"
             
         ```
 
-        Чтобы завершить добавление или удаление правил в целевом NSG, необходимо также изменить типы настраиваемых правил в конце  **\<файла resource-Group-name >. JSON** в следующем формате:
+        Чтобы завершить добавление или удаление правил в целевом NSG, необходимо также изменить типы настраиваемых правил в конце файла **\<Resource-Group-name >. JSON** в следующем формате:
 
         ```json
            {
@@ -171,7 +171,7 @@ ms.locfileid: "71038957"
             }
         ```
 
-9. Сохраните файл Resource- **Group-name >. JSON. \<**
+9. Сохраните файл **\<Resource-Group-name >. JSON** .
 
 10. Создайте группу ресурсов в целевом регионе для развертывания целевого NSG с помощью [New-азресаурцеграуп](https://docs.microsoft.com/powershell/module/az.resources/new-azresourcegroup?view=azps-2.6.0):
     
@@ -179,7 +179,7 @@ ms.locfileid: "71038957"
     New-AzResourceGroup -Name <target-resource-group-name> -location <target-region>
     ```
     
-11. Разверните измененный  **\<файл Resource-Group-name >. JSON** в группе ресурсов, созданной на предыдущем шаге, с помощью команды [New-азресаурцеграупдеплоймент](https://docs.microsoft.com/powershell/module/az.resources/new-azresourcegroupdeployment?view=azps-2.6.0).
+11. Разверните измененный файл **\<Resource-Group-name >. JSON** в группе ресурсов, созданной на предыдущем шаге, с помощью команды [New-азресаурцеграупдеплоймент](https://docs.microsoft.com/powershell/module/az.resources/new-azresourcegroupdeployment?view=azps-2.6.0):
 
     ```azurepowershell-interactive
 
@@ -201,7 +201,7 @@ ms.locfileid: "71038957"
 
     ```
 
-## <a name="discard"></a>Отменить 
+## <a name="discard"></a>Игнорировать 
 
 Если после развертывания вы хотите начать или отклонить NSG в целевом объекте, удалите группу ресурсов, созданную в целевом объекте, и перемещенный NSG будет удален.  Чтобы удалить группу ресурсов, используйте команду [Remove-азресаурцеграуп](https://docs.microsoft.com/powershell/module/az.resources/remove-azresourcegroup?view=azps-2.6.0):
 
@@ -227,7 +227,7 @@ Remove-AzNetworkSecurityGroup -Name <source-nsg-name> -ResourceGroupName <source
 
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом руководстве вы переместили группу безопасности сети Azure из одного региона в другой и очистили исходные ресурсы.  Дополнительные сведения о перемещении ресурсов между регионами и аварийным восстановлением в Azure см. по следующим ссылке:
 

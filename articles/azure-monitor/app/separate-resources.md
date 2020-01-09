@@ -1,5 +1,5 @@
 ---
-title: Отделение телеметрии стадий разработки, тестирования и выпуска в Azure Application Insights | Документация Майкрософт
+title: Отделение телеметрии в Azure Application Insights
 description: Отправка телеметрии к различным ресурсам для меток разработки, тестирования и эксплуатации.
 ms.service: azure-monitor
 ms.subservice: application-insights
@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: mrbullwinkle
 ms.author: mbullwin
 ms.date: 05/15/2017
-ms.openlocfilehash: c4d029de782ae408b83c265322a865db7b166c1e
-ms.sourcegitcommit: a10074461cf112a00fec7e14ba700435173cd3ef
+ms.openlocfilehash: c58a54dd4916b5687d46cbf4b816bd656113f9ff
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73928301"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75406409"
 ---
 # <a name="separating-telemetry-from-development-test-and-production"></a>Отделение телеметрии стадий разработки, тестирования и эксплуатации
 
@@ -71,7 +71,7 @@ IKey также используется на веб-страницах ваше
 
 Перейдите по адресу [portal.azure.com](https://portal.azure.com)и добавьте новый ресурс Application Insights.
 
-![Нажмите «Создать» и «Application Insights»](./media/separate-resources/01-new.png)
+![Нажмите "Создать" и "Application Insights"](./media/separate-resources/01-new.png)
 
 * **Тип приложения** определяет содержимое колонки «Обзор» и свойства, доступные в [обозревателе метрик](../../azure-monitor/app/metrics-explorer.md)Microsoft Azure. Если тип вашего приложения не отображается, выберите тип веб-ресурса для веб-страниц.
 * **Группа ресурсов** — удобный способ для управления свойствами наподобие [контроля доступа](../../azure-monitor/app/resources-roles-access-control.md). Для разработки, тестирования и эксплуатации можно использовать отдельные группы ресурсов.
@@ -151,7 +151,7 @@ IKey также используется на веб-страницах ваше
 Если используется Azure DevOps, можно настроить [добавление маркера заметки](../../azure-monitor/app/annotations.md) к диаграммам при выпуске новой версии. На следующем рисунке показано, как появляется этот маркер.
 
 ![Снимок экрана, где показана диаграмма с примером заметки о новом выпуске](media/separate-resources/release-annotation.png)
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Monitor multi-component applications with Application Insights (preview)](../../azure-monitor/app/app-map.md) (Мониторинг приложений с несколькими компонентами с помощью Application Insights (предварительная версия))
 * [Добавление свойств: ITelemetryInitializer](../../azure-monitor/app/api-filtering-sampling.md#add-properties)

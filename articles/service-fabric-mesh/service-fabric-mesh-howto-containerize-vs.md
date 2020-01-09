@@ -1,20 +1,16 @@
 ---
-title: Контейнеризация существующего приложения .NET для сетки Service Fabric | Документация Майкрософт
+title: Контейнеризация существующего приложения .NET для сетки Service Fabric
 description: Добавление Service Fabric поддержки оркестрации контейнера сети в проекты ASP.NET и консоли, использующие полную версию .NET Framework.
-services: service-fabric-mesh
-keywords: контейнеризация сетки service fabric
 author: dkkapur
 ms.author: dekapur
 ms.date: 11/08/2018
 ms.topic: conceptual
-ms.service: service-fabric-mesh
-manager: chakdan
-ms.openlocfilehash: 070d07316c0ff06a45e76936e75cb5345548e78f
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: d67ea5bb7df5910ec87e69adf3c414c303bf0182
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73686282"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75462047"
 ---
 # <a name="containerize-an-existing-net-app-for-service-fabric-mesh"></a>Контейнеризация существующего приложения .NET для сетки Service Fabric
 
@@ -25,7 +21,7 @@ ms.locfileid: "73686282"
 > [!NOTE]
 > Проекты .NET **Core** сейчас не поддерживаются.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 * Если у вас еще нет Azure подписки до начала работы, можно [создать бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 

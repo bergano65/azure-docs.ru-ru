@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 02/25/2019
 ms.author: cherylmc
 ms.custom: seodec18
-ms.openlocfilehash: 89c7e398e24fb48c1829dbaa2811f440c5485a60
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.openlocfilehash: f3044a2701b0f1cd0e5f9ab3ab60c1d60cfb8f45
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74038107"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75436815"
 ---
 # <a name="configure-a-site-to-site-vpn-over-expressroute-microsoft-peering"></a>Настройка VPN типа "сеть — сеть" через пиринговый канал Майкрософт ExpressRoute
 
@@ -91,7 +91,7 @@ VPN-туннели через пиринговый канал Майкрософ
 show ip bgp vpnv4 vrf 10 summary
 ```
 
-В следующих частичных выходных данных показано, что префиксы 68 были получены от соседа \*.243.229.34 с ASN 12076 (MSEE):
+В следующих частичных выходных данных показано, что префиксы 68 были получены от соседа \*. 243.229.34 с ASN 12076 (MSEE):
 
 ```
 ...
@@ -130,7 +130,7 @@ Get-AzBgpServiceCommunity
 
 ### <a name="about-the-azure-resource-manager-template-examples"></a>Сведения о примерах шаблона Azure Resource Manager
 
-В примерах VPN-шлюз и завершение туннелирования IPsec настраиваются с помощью шаблона Azure Resource Manager. Если вы впервые используете шаблоны Resource Manager или еще не ознакомились с основами работы с ними, см. статью [Understand the structure and syntax of Azure Resource Manager templates](../azure-resource-manager/resource-group-authoring-templates.md) (Описание структуры и синтаксиса шаблонов Azure Resource Manager). Шаблон в этом разделе создает среду Azure (виртуальную сеть) "с нуля". Однако если у вас есть виртуальная сеть, вы можете ссылаться на нее в шаблоне. Если вы не знакомы с конфигурациями VPN-шлюза "сеть — сеть" IPsec/IKE, см. статью [Создание виртуальной сети с VPN-подключением типа "сеть — сеть" с помощью PowerShell](../vpn-gateway/vpn-gateway-create-site-to-site-rm-powershell.md).
+В примерах VPN-шлюз и завершение туннелирования IPsec настраиваются с помощью шаблона Azure Resource Manager. Если вы впервые используете шаблоны Resource Manager или еще не ознакомились с основами работы с ними, см. статью [Understand the structure and syntax of Azure Resource Manager templates](../azure-resource-manager/templates/template-syntax.md) (Описание структуры и синтаксиса шаблонов Azure Resource Manager). Шаблон в этом разделе создает среду Azure (виртуальную сеть) "с нуля". Однако если у вас есть виртуальная сеть, вы можете ссылаться на нее в шаблоне. Если вы не знакомы с конфигурациями VPN-шлюза "сеть — сеть" IPsec/IKE, см. статью [Создание виртуальной сети с VPN-подключением типа "сеть — сеть" с помощью PowerShell](../vpn-gateway/vpn-gateway-create-site-to-site-rm-powershell.md).
 
 >[!NOTE]
 >Чтобы создать эту конфигурацию, вам не нужно использовать шаблоны Azure Resource Manager. Ее можно создать с помощью портала Azure или PowerShell.
@@ -707,7 +707,7 @@ RPKI validation codes: V valid, I invalid, N Not found
 Total number of prefixes 2
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Настройка решения "Монитор производительности сети" для ExpressRoute](how-to-npm.md)
 

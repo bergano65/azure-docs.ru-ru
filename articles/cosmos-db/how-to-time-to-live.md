@@ -1,17 +1,17 @@
 ---
-title: Сведения о настройке срока жизни и управлении им в Azure Cosmos DB
+title: Настройка срока жизни в Azure Cosmos DB и управление им
 description: Узнайте, как настроить срок жизни для контейнера и элемента в Azure Cosmos DB, а затем управлять им.
 author: markjbrown
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 12/02/2019
 ms.author: mjbrown
-ms.openlocfilehash: 51022956ad32059771b8d56f0ae177fb5165b450
-ms.sourcegitcommit: 9405aad7e39efbd8fef6d0a3c8988c6bf8de94eb
+ms.openlocfilehash: 55f94257b604a87460caa279fc0995f1434ac92c
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74873613"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75441780"
 ---
 # <a name="configure-time-to-live-in-azure-cosmos-db"></a>Настройка срока жизни в Azure Cosmos DB
 
@@ -21,7 +21,7 @@ ms.locfileid: "74873613"
 
 Следуйте инструкциям ниже, чтобы включить в контейнере неограниченный срок жизни. Включите этот параметр, чтобы срок жизни можно было переопределить на уровне элемента. Вы также можете задать значение срока жизни, введя ненулевое значение, обозначающее период в секундах.
 
-1. Войдите на [портале Azure](https://portal.azure.com/).
+1. Войдите на [портал Azure](https://portal.azure.com/).
 
 2. Создайте новую учетную запись Azure Cosmos или выберите имеющуюся.
 
@@ -133,7 +133,7 @@ async function createcontainerWithTTL(db: Database, containerDefinition: Contain
 
 Следуйте инструкциям ниже, чтобы включить в элементе срок жизни.
 
-1. Войдите на [портале Azure](https://portal.azure.com/).
+1. Войдите на [портал Azure](https://portal.azure.com/).
 
 2. Создайте новую учетную запись Azure Cosmos или выберите имеющуюся.
 

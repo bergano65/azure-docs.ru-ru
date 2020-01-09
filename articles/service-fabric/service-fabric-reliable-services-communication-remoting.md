@@ -1,25 +1,16 @@
 ---
-title: Удаленное взаимодействие в Service Fabric с помощью C# | Документация Майкрософт
+title: Удаленное взаимодействие служб с C# помощью в Service Fabric
 description: Удаленное взаимодействие Service Fabric позволяет осуществлять обмен данными между службами и клиентами и службами C# с помощью удаленного вызова процедур.
-services: service-fabric
-documentationcenter: .net
 author: vturecek
-manager: chackdan
-editor: BharatNarasimman
-ms.assetid: abfaf430-fea0-4974-afba-cfc9f9f2354b
-ms.service: service-fabric
-ms.devlang: dotnet
 ms.topic: conceptual
-ms.tgt_pltfrm: na
-ms.workload: required
 ms.date: 09/20/2017
 ms.author: vturecek
-ms.openlocfilehash: 1654a7be8c3aba4efa6fcf96024ea987e2957e73
-ms.sourcegitcommit: 42748f80351b336b7a5b6335786096da49febf6a
+ms.openlocfilehash: 0d59275f25931a11b2d551a2e9eb019838e4c1b3
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72173459"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75433886"
 ---
 # <a name="service-remoting-in-c-with-reliable-services"></a>Удаленное взаимодействие в Reliable Services с помощью C#
 
@@ -202,7 +193,7 @@ string message = await helloWorldClient.HelloWorldAsync();
 1. Обновите службу версии 1 до версии 2 с помощью указанного атрибута.
 Такое изменение гарантирует, что служба будет ожидать передачу данных от прослушивателей версии 1 и 2.
 
-    1\. Добавьте в манифест службы ресурс конечной точки с именем ServiceEndpointV2.
+    а. Добавьте в манифест службы ресурс конечной точки с именем ServiceEndpointV2.
       ```xml
       <Resources>
         <Endpoints>
@@ -211,7 +202,7 @@ string message = await helloWorldClient.HelloWorldAsync();
       </Resources>
       ```
 
-    2\. Используйте приведенный ниже метод расширения, чтобы создать прослушиватель удаленного взаимодействия.
+    b. Используйте приведенный ниже метод расширения, чтобы создать прослушиватель удаленного взаимодействия.
 
     ```csharp
     protected override IEnumerable<ServiceInstanceListener> CreateServiceInstanceListeners()
@@ -220,7 +211,7 @@ string message = await helloWorldClient.HelloWorldAsync();
     }
     ```
 
-    В. Добавьте атрибут сборки в интерфейсы удаленного взаимодействия, чтобы использовать прослушиватели версий 1 и 2 и клиент версии 2.
+    c. Добавьте атрибут сборки в интерфейсы удаленного взаимодействия, чтобы использовать прослушиватели версий 1 и 2 и клиент версии 2.
     ```csharp
     [assembly: FabricTransportServiceRemotingProvider(RemotingListenerVersion = RemotingListenerVersion.V2|RemotingListenerVersion.V1, RemotingClientVersion = RemotingClientVersion.V2)]
 
@@ -229,7 +220,7 @@ string message = await helloWorldClient.HelloWorldAsync();
 Этот шаг гарантирует, что клиент будет использовать стек версии 2.
 Никаких изменений в проект или службу клиента вносить не требуется. Достаточно выполнить сборку проектов клиента с обновленной сборкой интерфейса.
 
-3. Этот шаг не является обязательным. Используйте атрибут прослушивателя версии 2 и обновите службу версии 2.
+3. Это необязательный шаг. Используйте атрибут прослушивателя версии 2 и обновите службу версии 2.
 Этот шаг гарантирует, что служба будет ожидать передачу данных только от прослушивателя версии 2.
 
     ```csharp
@@ -329,7 +320,7 @@ string message = await helloWorldClient.HelloWorldAsync();
 1. Обновите службу версии 1 до версии 2_1 с помощью указанного ниже атрибута.
 Это изменение гарантирует, что служба будет ожидать передачи данных от прослушивателей версии 1 и 2_1.
 
-    1\. Добавьте в манифест службы ресурс конечной точки с именем ServiceEndpointV2_1.
+    а. Добавьте в манифест службы ресурс конечной точки с именем ServiceEndpointV2_1.
       ```xml
       <Resources>
         <Endpoints>
@@ -338,7 +329,7 @@ string message = await helloWorldClient.HelloWorldAsync();
       </Resources>
       ```
 
-    2\. Используйте приведенный ниже метод расширения, чтобы создать прослушиватель удаленного взаимодействия.
+    b. Используйте приведенный ниже метод расширения, чтобы создать прослушиватель удаленного взаимодействия.
 
     ```csharp
     protected override IEnumerable<ServiceInstanceListener> CreateServiceInstanceListeners()
@@ -347,7 +338,7 @@ string message = await helloWorldClient.HelloWorldAsync();
     }
     ```
 
-    В. Добавьте атрибут сборки в интерфейсы удаленного взаимодействия, чтобы использовать прослушиватель версии 1 и 2_1 и клиент версии 2_1.
+    c. Добавьте атрибут сборки в интерфейсы удаленного взаимодействия, чтобы использовать прослушиватель версии 1 и 2_1 и клиент версии 2_1.
     ```csharp
    [assembly: FabricTransportServiceRemotingProvider(RemotingListenerVersion = RemotingListenerVersion.V2_1 | RemotingListenerVersion.V1, RemotingClientVersion = RemotingClientVersion.V2_1)]
 
@@ -356,7 +347,7 @@ string message = await helloWorldClient.HelloWorldAsync();
 Это гарантирует, что клиент будет использовать стек версии 2_1.
 Никаких изменений в проект или службу клиента вносить не требуется. Достаточно выполнить сборку проектов клиента с обновленной сборкой интерфейса.
 
-3. Этот шаг не является обязательным. Удалите из атрибута прослушивателя версии 1 и обновите службу версии 2.
+3. Это необязательный шаг. Удалите из атрибута прослушивателя версии 1 и обновите службу версии 2.
 Этот шаг гарантирует, что служба будет ожидать передачу данных только от прослушивателя версии 2.
 
     ```csharp
@@ -556,7 +547,7 @@ string message = await helloWorldClient.HelloWorldAsync();
       });
       ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Веб-API с OWIN в модели Reliable Services](service-fabric-reliable-services-communication-webapi.md)
 * [WCF-based communication stack for Reliable Services](service-fabric-reliable-services-communication-wcf.md) (Стек взаимодействия для Reliable Services на основе WCF)

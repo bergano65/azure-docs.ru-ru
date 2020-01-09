@@ -2,19 +2,15 @@
 title: Коллекции модулей Runbook и других модулей для службы автоматизации Azure
 description: Вы можете устанавливать и использовать в своей среде службы автоматизации Azure модули Runbook и другие модули, созданные корпорацией Майкрософт и сообществом.  В этой статье описаны способы доступа к этим ресурсам и процесс добавления ваших модулей Runbook в коллекцию.
 services: automation
-ms.service: automation
 ms.subservice: process-automation
-author: mgoedtel
-ms.author: magoedte
 ms.date: 03/20/2019
 ms.topic: conceptual
-manager: carmonm
-ms.openlocfilehash: 94910d0f42ad6b208cac54dd2826cbd2d917504b
-ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
+ms.openlocfilehash: 52a0ab0a31600c1548283c7d899b17e497811b5a
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74850726"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75421482"
 ---
 # <a name="runbook-and-module-galleries-for-azure-automation"></a>Коллекции модулей Runbook и других модулей для службы автоматизации Azure
 

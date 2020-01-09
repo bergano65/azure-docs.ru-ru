@@ -1,23 +1,23 @@
 ---
 title: Пакет REST SDK для Phoenix Query Server — Azure HDInsight
 description: Установка и использование пакета REST SDK для Phoenix Query Server в Azure HDInsight.
-ms.service: hdinsight
 author: ashishthaps
 ms.author: ashishth
 ms.reviewer: jasonh
-ms.custom: hdinsightactive
+ms.service: hdinsight
 ms.topic: conceptual
-ms.date: 12/04/2017
-ms.openlocfilehash: c9e9258fb7ace93d0866463563d328456cbd1daa
-ms.sourcegitcommit: 9dec0358e5da3ceb0d0e9e234615456c850550f6
+ms.custom: hdinsightactive
+ms.date: 01/01/2020
+ms.openlocfilehash: 84c2bad1004029fe61dcfc19321957a170284587
+ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2019
-ms.locfileid: "72311682"
+ms.lasthandoff: 01/02/2020
+ms.locfileid: "75612263"
 ---
 # <a name="apache-phoenix-query-server-rest-sdk"></a>Пакет REST SDK для Apache Phoenix Query Server
 
-[Apache Phoenix](https://phoenix.apache.org/) представляет собой реляционную базу данных на основе [Apache HBase](apache-hbase-overview.md) с открытым кодом и высоким уровнем параллелизма. Phoenix позволяет выполнять SQL-подобные запросы к HBase с помощью средств SSH, например [SQLLine](apache-hbase-query-with-phoenix.md). Также Phoenix предоставляет HTTP-сервер, именуемый Phoenix Query Server (PQS), — тонкий клиент, который поддерживает два механизма транспортировки для связи с клиентами: JSON и буферы протокола. Буферы протокола — механизм по умолчанию, предоставляющий более эффективную связь, чем JSON.
+[Apache Phoenix](https://phoenix.apache.org/) представляет собой реляционную базу данных на основе [Apache HBase](apache-hbase-overview.md) с открытым кодом и высоким уровнем параллелизма. Phoenix позволяет выполнять SQL-подобные запросы к HBase с помощью средств SSH, например [SQLLine](apache-hbase-query-with-phoenix.md). Также Phoenix предоставляет HTTP-сервер, именуемый Phoenix Query Server (PQS), — тонкий клиент, который поддерживает два механизма транспортировки для связи с клиентами: JSON и буферы протокола. Буферы протокола — механизм по умолчанию, предоставляющий более эффективную связь, чем JSON.
 
 В этой статье описывается использование пакета PQS REST SDK для создания таблиц, построчного и массового выполнения операции upsert, а также выбора данных с помощью инструкций SQL. В примерах используется [драйвер Microsoft .NET для Apache Phoenix Query Server](https://www.nuget.org/packages/Microsoft.Phoenix.Client). Этот пакет SDK основан на API-интерфейсах [Apache Calcite Avatica](https://calcite.apache.org/avatica/), где монопольно используются буферы протокола для формата сериализации.
 
@@ -71,18 +71,18 @@ await client.ConnectionSyncRequestAsync(connId, connProperties, options);
 
 Ниже приведены некоторые важные свойства.
 
-| Свойство | Описание |
+| Свойство | Description |
 | -- | -- |
 | AutoCommit | Логическое значение, обозначающее, включено ли свойство `autoCommit` для транзакций Phoenix. |
 | ReadOnly | Логическое значение, обозначающее, является ли подключение доступным только для чтения. |
 | TransactionIsolation | Целое число, указывающее уровень изоляции транзакций в соответствии со спецификацией JDBC (см. следующую таблицу).|
 | Каталог | Имя каталога, который следует использовать при получении свойств подключения. |
-| Схема | Имя схемы, которую следует использовать при получении свойств подключения. |
+| схема | Имя схемы, которую следует использовать при получении свойств подключения. |
 | IsDirty | Логическое значение, указывающее, были ли изменены свойства. |
 
 Возможные значения `TransactionIsolation`:
 
-| Значение изоляции | Описание |
+| Значение изоляции | Description |
 | -- | -- |
 | 0 | Транзакции не поддерживаются. |
 | 1 | Могут возникать операции чтения "грязных" данных, а также неповторяемые и фантомные операции чтения. |
@@ -94,7 +94,7 @@ await client.ConnectionSyncRequestAsync(connId, connProperties, options);
 
 В HBase, как и в любой другой реляционной СУБД, данные хранятся в таблицах. Phoenix использует стандартные запросы SQL для создания новых таблиц при определении первичного ключа и типов столбцов.
 
-В этом и всех последующих примерах используется экземпляр объекта `PhoenixClient`, описанный в разделе [Создание экземпляра объекта PhoenixClient](#instantiate-new-phoenixclient-object).
+В этом примере и всех последующих примерах используется созданный объект `PhoenixClient`, как определено в [экземпляре нового объекта PhoenixClient](#instantiate-new-phoenixclient-object).
 
 ```csharp
 string connId = Guid.NewGuid().ToString();
@@ -170,7 +170,7 @@ finally
 var states = new List<string> { "AL", "AK", "AS", "AZ", "AR", "CA", "CO", "CT", "DE", "DC", "FM", "FL", "GA", "GU", "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MH", "MD", "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ", "NM", "NY", "NC", "ND", "MP", "OH", "OK", "OR", "PW", "PA", "PR", "RI", "SC", "SD", "TN", "TX", "UT", "VT", "VI", "VA", "WA", "WV", "WI", "WY" };
 ```
 
-Значение столбца `StateProvince` таблицы будет использоваться в последующей операции выбора.
+Значение столбца `StateProvince` таблицы будет использоваться в более поздней операции выбора.
 
 ```csharp
 string connId = Guid.NewGuid().ToString();
@@ -277,7 +277,7 @@ finally
 }
 ```
 
-Структура выполнения инструкции insert аналогична созданию новой таблицы. Обратите внимание, что в конце блока `try` транзакция фиксируется явным образом. В этом примере транзакция insert повторяется 300 раз. В следующем примере показан более эффективный процесс пакетной вставки.
+Структура выполнения инструкции insert аналогична созданию новой таблицы. В конце блока `try` транзакция зафиксирована явным образом. В этом примере транзакция insert повторяется 300 раз. В следующем примере показан более эффективный процесс пакетной вставки.
 
 ## <a name="batch-insert-data"></a>Пакетная вставка данных
 
@@ -537,7 +537,7 @@ MH: 6
 FM: 5
 ```
 
-## <a name="next-steps"></a>Следующие шаги 
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Apache Phoenix в HDInsight](../hdinsight-phoenix-in-hdinsight.md)
 * [Использование пакета REST SDK для Apache HBase](apache-hbase-rest-sdk.md)

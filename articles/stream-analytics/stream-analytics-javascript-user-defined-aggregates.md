@@ -1,20 +1,18 @@
 ---
 title: Определяемые пользователем вычисления JavaScript в Azure Stream Analytics
 description: В этой статье описывается, как выполнять расширенные запросы с помощью определяемых пользователем вычислений JavaScript в Azure Stream Analytics.
-services: stream-analytics
 author: rodrigoamicrosoft
 ms.author: rodrigoa
-manager: kfile
 ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 10/28/2017
-ms.openlocfilehash: 6c590ae62e080a6681e49c87264089f9a5f4ce2f
-ms.sourcegitcommit: bafb70af41ad1326adf3b7f8db50493e20a64926
+ms.openlocfilehash: d9b37810146f66806be9b8ce7a38f8dac31facb9
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68489537"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75426094"
 ---
 # <a name="azure-stream-analytics-javascript-user-defined-aggregates"></a>Azure Stream Analytics определяемые пользователем статистические функции JavaScript
  
@@ -175,7 +173,7 @@ function main() {
 
 ## <a name="calling-javascript-uda-in-asa-query"></a>Вызов пользовательского статистического выражения JavaScript в запросе ASA
 
-На портале Azure откройте задание, измените запрос и вызовите функцию TWA() с обязательным префиксом "uda". Пример:
+На портале Azure откройте задание, измените запрос и вызовите функцию TWA() с обязательным префиксом "uda". Пример.
 
 ```SQL
 WITH value AS
@@ -229,7 +227,7 @@ GROUP BY TumblingWindow(minute, 5)
 
 Дополнительную помощь и поддержку вы можете получить на нашем [форуме Azure Stream Analytics](https://social.msdn.microsoft.com/Forums/azure/home?forum=AzureStreamAnalytics).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Введение в Azure Stream Analytics](stream-analytics-introduction.md)
 * [Приступая к работе с Azure Stream Analytics](stream-analytics-real-time-fraud-detection.md)

@@ -1,17 +1,17 @@
 ---
-title: Развертывание из локального репозитория Git
+title: развертывание из локального репозитория Git
 description: Узнайте, как включить локальное развертывание репозитория Git в службе приложений Azure. Один из самых простых способов развертывания кода с локального компьютера.
 ms.assetid: ac50a623-c4b8-4dfd-96b2-a09420770063
 ms.topic: article
 ms.date: 06/18/2019
 ms.reviewer: dariac
 ms.custom: seodec18
-ms.openlocfilehash: 91d5827a08a600c19c24ac0a96a5f4e3e98e22f2
-ms.sourcegitcommit: 265f1d6f3f4703daa8d0fc8a85cbd8acf0a17d30
+ms.openlocfilehash: 2ae8b71a7d48949cd82765112752192aba54521f
+ms.sourcegitcommit: a100e3d8b0697768e15cbec11242e3f4b0e156d3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74671764"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75680959"
 ---
 # <a name="local-git-deployment-to-azure-app-service"></a>Развертывание локального репозитория Git в службе приложений Azure
 
@@ -97,7 +97,9 @@ az webapp deployment list-publishing-credentials --name <app-name> --resource-gr
 
 Чтобы включить локальное развертывание Git для приложения с Azure Pipelines (Предварительная версия):
 
-1. Перейдите на страницу приложения службы приложений Azure в [портал Azure](https://portal.azure.com)и выберите **центр развертывания** в меню слева.
+1. В [портал Azure](https://portal.azure.com)найдите и выберите **службы приложений**. 
+
+1. Выберите приложение службы приложений Azure и щелкните **центр развертывания** в меню слева.
    
 1. На странице **центр развертывания** выберите **локальный Git**, а затем нажмите кнопку **продолжить**. 
    
@@ -140,13 +142,13 @@ az webapp deployment list-publishing-credentials --name <app-name> --resource-gr
 
 При использовании Git для публикации в приложении службы приложений в Azure могут отобразиться следующие распространенные сообщения об ошибках:
 
-|Сообщение|Причина:|Разрешение
+|Сообщение|Причина|Разрешение
 ---|---|---|
 |`Unable to access '[siteURL]': Failed to connect to [scmAddress]`|Приложение не работает.|запуск приложения на портале Azure. Развертывание Git недоступно, если веб-приложение остановлено.|
 |`Couldn't resolve host 'hostname'`|Неверные сведения об адресе удаленного ресурса "Azure".|Используйте команду `git remote -v`, чтобы вывести список всех удаленных, а также связанный URL-адрес. Проверьте правильность URL-адреса удаленного репозитория "azure". При необходимости удалите и повторно создайте этот удаленный репозиторий, используя правильный URL-адрес.|
 |`No refs in common and none specified; doing nothing. Perhaps you should specify a branch such as 'master'.`|Вы не указали ветвь во время `git push`или не установили значение `push.default` в `.gitconfig`.|Снова запустите `git push`, указав главную ветвь: `git push azure master`.|
 |`src refspec [branchname] does not match any.`|Предпринята попытка принудительной отправки в ветвь, отличную от главной, в удаленной службе Azure.|Снова запустите `git push`, указав главную ветвь: `git push azure master`.|
-|`RPC failed; result=22, HTTP code = 5xx.`|эта ошибка может возникнуть при попытке отправить большой репозиторий Git по протоколу HTTPS.|Измените конфигурацию Git на локальном компьютере, чтобы увеличить `postBuffer`. Например, `git config --global http.postBuffer 524288000`.|
+|`RPC failed; result=22, HTTP code = 5xx.`|эта ошибка может возникнуть при попытке отправить большой репозиторий Git по протоколу HTTPS.|Измените конфигурацию Git на локальном компьютере, чтобы увеличить `postBuffer`. Например: `git config --global http.postBuffer 524288000`.|
 |`Error - Changes committed to remote repository but your web app not updated.`|Вы развернули приложение Node. js с файлом _Package. JSON_ , который указывает дополнительные необходимые модули.|Проверьте `npm ERR!` сообщения об ошибках до этой ошибки, чтобы получить дополнительные сведения о контексте сбоя. Ниже приведены известные причины этой ошибки, а также соответствующие сообщения `npm ERR!`.<br /><br />**Неправильный формат файла Package. JSON**: `npm ERR! Couldn't read dependencies.`<br /><br />**Собственный модуль не имеет двоичного распространения для Windows**:<br />`npm ERR! \cmd "/c" "node-gyp rebuild"\ failed with 1` <br />или <br />`npm ERR! [modulename@version] preinstall: \make || gmake\ `|
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы

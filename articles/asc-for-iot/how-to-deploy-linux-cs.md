@@ -15,14 +15,14 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 07/27/2019
 ms.author: mlottner
-ms.openlocfilehash: 0d77a1be2a3469282dabb646b02c43e350313ce5
-ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
+ms.openlocfilehash: b675198756ff7bc0791d49fee3649717e3e4da7f
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68596299"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75367422"
 ---
-# <a name="deploy-azure-security-center-for-iot-c-based-security-agent-for-linux"></a>Развертывание центра безопасности Azure для агента C# безопасности на основе IOT для Linux
+# <a name="deploy-azure-security-center-for-iot-c-based-security-agent-for-linux"></a>Развертывание агента безопасности Центра безопасности Azure для Интернета вещей на основе C# для Linux
 
 
 В этом руководство объясняется, как установить и развернуть центр безопасности Azure для C#агента безопасности на основе Интернета вещей на платформе Linux.
@@ -30,11 +30,11 @@ ms.locfileid: "68596299"
 Из этого руководства вы узнаете, как выполнить следующие задачи: 
 > [!div class="checklist"]
 > * Установка
-> * Проверить развертывание
-> * Удаление агента.
+> * Проверка развертывания
+> * Удаление агента
 > * Устранение неполадок 
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Сведения о других платформах и разновидностях агентов см. в разделе Выбор подходящего [агента безопасности](how-to-deploy-agent.md).
 
@@ -52,13 +52,13 @@ ms.locfileid: "68596299"
 
 1. Добавьте права на выполнение к **скрипту InstallSecurityAgent**, выполнив следующую команду `chmod +x InstallSecurityAgent.sh`. 
 
-1. Затем выполните приведенную ниже команду: 
+1. Затем выполните следующую команду с **правами root**: 
 
    ```
    ./InstallSecurityAgent.sh -i -aui <authentication identity>  -aum <authentication method> -f <file path> -hn <host name>  -di <device id> -cl <certificate location kind>
    ```
    
-   Дополнительные сведения о параметрах проверки подлинности см. [в разделе Настройка проверки](concept-security-agent-authentication-methods.md)подлинности.
+   Дополнительные сведения о параметрах проверки подлинности см. [в разделе Настройка проверки подлинности](concept-security-agent-authentication-methods.md).
 
 Сценарий выполняет следующие действия:
 
@@ -82,7 +82,7 @@ ms.locfileid: "68596299"
 > [!NOTE]
 > Удаление не приводит к удалению всех ранее отсутствующих необходимых компонентов, которые были установлены во время установки.
 
-## <a name="troubleshooting"></a>Устранение неполадок  
+## <a name="troubleshooting"></a>Устранение неисправностей  
 
 1. Проверьте состояние развертывания, выполнив следующую команду:
 
@@ -120,7 +120,7 @@ ms.locfileid: "68596299"
 
        Измените путь к расположению файла в соответствии с именем, выбранным для значения **logFilePath** на шаге 2. 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Ознакомьтесь с [обзором](overview.md) центра безопасности Azure для службы IOT
 - Узнайте больше о центре безопасности Azure для [архитектуры](architecture.md) IOT

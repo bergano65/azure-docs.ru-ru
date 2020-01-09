@@ -8,18 +8,18 @@ services: iot-dps
 ms.topic: conceptual
 ms.date: 04/09/2019
 ms.author: wesmc
-ms.openlocfilehash: f36a48e0cedc309deda8416face5549a54eb8c73
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.openlocfilehash: 2a7e0932d226b1533c039b8529c2c11de06cf525
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74975131"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75453806"
 ---
 # <a name="control-access-to-azure-iot-hub-device-provisioning-service"></a>Управление доступом к службе подготовки устройств Центра Интернета вещей Azure
 
 В этой статье описаны возможности защиты службы "Подготовка устройств Интернета вещей". Служба подготовки использует *разрешения* для предоставления доступа к каждой из конечных точек. Разрешения ограничивают доступ к экземпляру службы на основе функций.
 
-Содержание статьи
+В этой статье рассматриваются следующие вопросы:
 
 * Различные разрешения, которые можно предоставить серверному приложению для доступа к службе подготовки.
 * Процесс аутентификации и маркеры, используемые для проверки разрешений.
@@ -39,7 +39,7 @@ ms.locfileid: "74975131"
 > [!NOTE]
 > Дополнительные сведения см. в статье о [разрешениях](#device-provisioning-service-permissions).
 
-## <a name="authentication"></a>Authentication
+## <a name="authentication"></a>Проверка подлинности
 
 Служба подготовки устройств Центра Интернета вещей Azure предоставляет доступ к конечным точкам, проверяя токен на соответствие политикам общего доступа. Учетные данные безопасности, например симметричные ключи, никогда не отправляются по сети.
 
@@ -75,11 +75,11 @@ SharedAccessSignature sr =
 
 Это ожидаемые значения:
 
-| Value | Описание |
+| Значение | Description |
 | --- | --- |
 | {signature} |Строка подписи HMAC-SHA256 формата `{URL-encoded-resourceURI} + "\n" + expiry`. **Важно!** Ключ шифруется в кодировке base64 и используется для вычислений HMAC-SHA256.|
 | {expiry} |Строки в формате UTF8, отображающие количество секунд с начала эры 00:00:00 (в формате UTC) 1 января 1970 г. |
-| {URL-encoded-resourceURI} | Строчное URL-кодирование строчного URL ресурса. Начинающийся с имени узла службы подготовки устройств Интернета вещей (без протокола) префикс URI (по сегменту) для конечных точек, доступ к которым можно получить с помощью этого маркера. Пример: `mydps.azure-devices-provisioning.net`. |
+| {URL-encoded-resourceURI} | Строчное URL-кодирование строчного URL ресурса. Начинающийся с имени узла службы подготовки устройств Интернета вещей (без протокола) префикс URI (по сегменту) для конечных точек, доступ к которым можно получить с помощью этого маркера. Например, `mydps.azure-devices-provisioning.net`. |
 | {policyName} |Имя политики общего доступа, к которой относится этот маркер. |
 
 **Обратите внимание**, что префикс универсального кода ресурса (URI) вычисляется по сегменту, а не по символу. Например, `/a/b` — это префикс для `/a/b/c`, а не для `/a/bc`.
@@ -141,7 +141,7 @@ def generate_sas_token(uri, key, policy_name, expiry=3600):
 
 Ниже приведены функции службы, предоставляемые в конечных точках.
 
-| Конечная точка | Функции |
+| Конечная точка | Функциональность |
 | --- | --- |
 | `{your-service}.azure-devices-provisioning.net/enrollments` |Предоставляет операции регистрации устройства в службе подготовки устройств. |
 | `{your-service}.azure-devices-provisioning.net/enrollmentGroups` |Предоставляет операции для управления группами регистрации устройств. |
@@ -177,7 +177,7 @@ var token = generateSasToken(endpoint, policyKey, policyName, 60);
 
 В следующей таблице указаны разрешения, с помощью которых можно управлять доступом к службе подготовки устройств Интернета вещей.
 
-| Разрешение | Заметки |
+| Разрешение | Примечания |
 | --- | --- |
 | **ServiceConfig** |Предоставляет доступ для изменения конфигурации службы. <br/>Это разрешение используется серверными облачными службами. |
 | **EnrollmentRead** |Предоставляет доступ на чтение к регистрации устройств и группам регистрации. <br/>Это разрешение используется серверными облачными службами. |
@@ -190,5 +190,5 @@ var token = generateSasToken(endpoint, policyKey, policyName, 60);
 [img-add-shared-access-policy]: ./media/how-to-control-access/how-to-add-shared-access-policy.PNG
 [lnk-sdks]: ../iot-hub/iot-hub-devguide-sdks.md
 [lnk-management-portal]: https://portal.azure.com
-[lnk-azure-resource-manager]: ../azure-resource-manager/resource-group-overview.md
+[lnk-azure-resource-manager]: ../azure-resource-manager/management/overview.md
 [lnk-resource-provider-apis]: https://docs.microsoft.com/rest/api/iot-dps/

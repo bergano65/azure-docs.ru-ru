@@ -1,20 +1,20 @@
 ---
 title: Подключить к Box
-description: Создавайте файлы и управляйте ими с помощью интерфейсов REST API Box и Azure Logic Apps.
+description: Автоматизация задач и рабочих процессов, позволяющих создавать файлы и управлять ими в Box с помощью Azure Logic Apps
 services: logic-apps
 ms.suite: integration
 ms.reviewer: klam, logicappspm
 ms.topic: conceptual
 ms.date: 11/07/2016
 tags: connectors
-ms.openlocfilehash: 38e061e918d445de07961af1789891f44c59090a
-ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
+ms.openlocfilehash: c7f97ff33742eb545cbfbd7521ba135584851e5e
+ms.sourcegitcommit: ff9688050000593146b509a5da18fbf64e24fbeb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74789864"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75666777"
 ---
-# <a name="create-and-manage-files-in-box-with-azure-logic-apps"></a>Создание файлов в Box и управление ими с помощью Azure Logic Apps
+# <a name="create-and-manage-files-in-box-by-using-azure-logic-apps"></a>Создание файлов и управление ими в Box с помощью Azure Logic Apps
 
 В этой статье показано, как вы можете создавать файлы в Box и управлять ими изнутри приложения логики с помощью соединителя Box. Таким образом можно создавать приложения логики, которые автоматизируют задачи и рабочие процессы по управлению файлами, а также позволяют:
 

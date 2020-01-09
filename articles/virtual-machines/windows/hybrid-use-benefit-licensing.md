@@ -13,18 +13,18 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 4/22/2018
 ms.author: xujing
-ms.openlocfilehash: 40697925d399962399da499e0469198a0e997f66
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.openlocfilehash: d6e3d4d059e464795c712af1226d8202d00bfd74
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74038627"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75461158"
 ---
 # <a name="azure-hybrid-benefit-for-windows-server"></a>Преимущество гибридного использования Azure для Windows Server
 Благодаря преимуществам гибридного использования Azure для Windows Server, клиенты, участвующие в программе Software Assurance, могут использовать локальные лицензии Windows Server для запуска виртуальных машин Windows в Azure с меньшими затратами. С помощью Преимущества гибридного использования Azure также можно развертывать новые виртуальные машины с ОС Windows. В этой статье описывается, как выполнить развертывание новых виртуальных машин с помощью преимуществ гибридного использования Azure для Windows Server, а также как обновить существующие запущенные виртуальные машины. Дополнительные сведения о лицензировании преимуществ гибридного использования Azure для Windows Server и экономии денежных средств см. [на этой странице](https://azure.microsoft.com/pricing/hybrid-use-benefit/).
 
 > [!Important]
-> В каждой лицензии, рассчитанной на использование 2 процессоров, или каждом наборе лицензий, рассчитанном на предоставление 16 ядер, может предусматриваться либо два экземпляра по 8 ядер, либо один экземпляр на 16 ядер. Преимущество гибридного использования Azure для лицензий на выпуск Standard можно использовать только один раз: либо локально, либо в среде Azure. Преимущества для выпуска Datacenter можно использовать и локально, и в среде Azure.
+> В каждой лицензии, рассчитанной на использование 2 процессоров, или каждом наборе лицензий, рассчитанном на предоставление 16 ядер, может предусматриваться либо два экземпляра по 8 ядер, либо один экземпляр на 16 ядер. Программу преимуществ гибридного использования с лицензией на выпуск Standard можно использовать только один раз: локально или в среде Azure. Лицензию на выпуск Datacenter Edition можно использовать и локально, и в среде Azure.
 >
 
 > [!Important]
@@ -64,7 +64,7 @@ New-AzVm `
     -LicenseType "Windows_Server"
 ```
 
-### <a name="cli"></a>CLI
+### <a name="cli"></a>Интерфейс командной строки
 ```azurecli
 az vm create \
     --resource-group myResourceGroup \
@@ -73,7 +73,7 @@ az vm create \
     --license-type Windows_Server
 ```
 
-### <a name="template"></a>шаблона
+### <a name="template"></a>Шаблон
 В шаблонах Resource Manager нужно указывать дополнительный параметр `licenseType`. Дополнительные сведения см. в статье [Создание шаблонов Azure Resource Manager](../../resource-group-authoring-templates.md).
 ```json
 "properties": {
@@ -110,7 +110,7 @@ az vm create \
     Update-AzVM -ResourceGroupName rg-name -VM $vm
     ```
     
-### <a name="cli"></a>CLI
+### <a name="cli"></a>Интерфейс командной строки
 - Преобразование существующих виртуальных машин Windows Server в виртуальные машины с поддержкой Преимущества гибридного использования Azure для Windows Server
 
     ```azurecli
@@ -143,7 +143,7 @@ Location                 : westus
 LicenseType              :
 ```
 
-### <a name="cli"></a>CLI
+### <a name="cli"></a>Интерфейс командной строки
 ```azurecli
 az vm get-instance-view -g MyResourceGroup -n MyVM --query "[?licenseType=='Windows_Server']" -o table
 ```
@@ -164,7 +164,7 @@ $vms = Get-AzVM
 $vms | ?{$_.LicenseType -like "Windows_Server"} | select ResourceGroupName, Name, LicenseType
 ```
 
-### <a name="cli"></a>CLI
+### <a name="cli"></a>Интерфейс командной строки
 ```azurecli
 az vm list --query "[?licenseType=='Windows_Server']" -o table
 ```
@@ -195,10 +195,10 @@ az vm list --query "[?licenseType=='Windows_Server']" -o table
 ```
 Сведения о дополнительных возможностях изменения масштабируемого набора см. в статье [Изменение масштабируемого набора виртуальных машин](../../virtual-machine-scale-sets/virtual-machine-scale-sets-upgrade-scale-set.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - Прочитайте больше о том, [как экономить при использовании программы "Преимущество гибридного использования Azure"](https://azure.microsoft.com/pricing/hybrid-use-benefit/).
 - Ознакомьтесь с [часто задаваемыми вопросами о Преимуществе гибридного использования Azure](https://azure.microsoft.com/pricing/hybrid-use-benefit/faq/).
 - См. дополнительные сведения о [программе "Преимущество гибридного использования Azure" для Windows Server](https://docs.microsoft.com/windows-server/get-started/azure-hybrid-benefit).
 - Узнайте больше о том, как [программа "Преимущество гибридного использования Azure" для Windows Server и Azure Site Recovery делает перенос приложений в Azure еще более экономичным](https://azure.microsoft.com/blog/hybrid-use-benefit-migration-with-asr/).
 - Узнайте больше о том, как [развернуть Windows 10 в Azure с правами на мультитенантное размещение](https://docs.microsoft.com/azure/virtual-machines/windows/windows-desktop-multitenant-hosting-deployment).
-- Узнайте больше об [использовании шаблонов Resource Manager](../../azure-resource-manager/resource-group-overview.md).
+- Узнайте больше об [использовании шаблонов Resource Manager](../../azure-resource-manager/management/overview.md).

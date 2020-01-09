@@ -1,33 +1,35 @@
 ---
 title: Использование Azure CLI для создания SAS для делегирования пользователя для контейнера или большого двоичного объекта
 titleSuffix: Azure Storage
-description: Узнайте, как создать SAS делегирования пользователя (Предварительная версия) с учетными данными Azure Active Directory с помощью Azure CLI.
+description: Узнайте, как создать SAS для делегирования пользователей с учетными данными Azure Active Directory с помощью Azure CLI.
 services: storage
 author: tamram
 ms.service: storage
 ms.topic: conceptual
-ms.date: 12/04/2019
+ms.date: 12/18/2019
 ms.author: tamram
 ms.reviewer: cbrooks
 ms.subservice: blobs
-ms.openlocfilehash: 85f49799472c92770cc8a503a5a1be0b496387f7
-ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
+ms.openlocfilehash: e1a81b25042501a166cee122279d21e3702cd419
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74892555"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75371995"
 ---
-# <a name="create-a-user-delegation-sas-for-a-container-or-blob-with-the-azure-cli-preview"></a>Создание SAS для делегирования пользователя для контейнера или большого двоичного объекта с Azure CLI (Предварительная версия)
+# <a name="create-a-user-delegation-sas-for-a-container-or-blob-with-the-azure-cli"></a>Создание SAS делегирования пользователя для контейнера или большого двоичного объекта с помощью Azure CLI
 
 [!INCLUDE [storage-auth-sas-intro-include](../../../includes/storage-auth-sas-intro-include.md)]
 
-В этой статье показано, как использовать учетные данные Azure Active Directory (Azure AD) для создания SAS делегирования пользователя для контейнера или большого двоичного объекта с Azure CLI (Предварительная версия).
+В этой статье показано, как использовать учетные данные Azure Active Directory (Azure AD) для создания SAS делегирования пользователя для контейнера или большого двоичного объекта с Azure CLI.
 
 [!INCLUDE [storage-auth-user-delegation-include](../../../includes/storage-auth-user-delegation-include.md)]
 
 ## <a name="install-the-latest-version-of-the-azure-cli"></a>Установите последнюю версию Azure CLI
 
 Чтобы использовать Azure CLI для защиты SAS с помощью учетных данных Azure AD, сначала убедитесь, что установлена последняя версия Azure CLI. Дополнительные сведения об установке Azure CLI см. в разделе [установка Azure CLI](/cli/azure/install-azure-cli).
+
+Чтобы создать SAS для делегирования пользователей с помощью Azure CLI, убедитесь, что установлена версия 2.0.78 или более поздняя. Чтобы проверить установленную версию, используйте команду `az --version`.
 
 ## <a name="sign-in-with-azure-ad-credentials"></a>Вход с использованием учетных данных Azure AD
 

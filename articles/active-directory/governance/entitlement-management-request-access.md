@@ -1,5 +1,5 @@
 ---
-title: Запрос доступа к пакету Access в управлении назначением Azure AD — Azure Active Directory
+title: Запрос пакета Access — управление назначениями Azure AD
 description: Узнайте, как использовать портал "мой доступ" для запроса доступа к пакету Access в Azure Active Directory управлении назначением.
 services: active-directory
 documentationCenter: ''
@@ -16,12 +16,12 @@ ms.date: 10/26/2019
 ms.author: ajburnle
 ms.reviewer: mamkumar
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 81697293be235c12ca009c76a9fd9d3975e232fc
-ms.sourcegitcommit: 428fded8754fa58f20908487a81e2f278f75b5d0
+ms.openlocfilehash: 5a49c69b0f96add61501d9e2c5fc00ba564eba2a
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2019
-ms.locfileid: "74554107"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75422546"
 ---
 # <a name="request-access-to-an-access-package-in-azure-ad-entitlement-management"></a>Запрос доступа к пакету Access в управлении назначением Azure AD
 

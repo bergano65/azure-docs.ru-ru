@@ -16,12 +16,13 @@ ms.date: 07/11/2017
 ms.author: mimart
 ms.reviewer: asteen
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5a2955a418aa0ce43c030afc588a2840bbb9b50f
-ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
+ROBOTS: NOINDEX
+ms.openlocfilehash: 8aa8265733128ed3b2ad5ddf16dcebb122b0f054
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74275829"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75443423"
 ---
 # <a name="how-to-configure-user-provisioning-to-an-azure-ad-gallery-application"></a>Как настроить подготовку пользователей для приложения из коллекции Azure AD
 
@@ -52,6 +53,6 @@ ms.locfileid: "74275829"
 
 При настройке подготовки важно просмотреть и настроить сопоставления атрибутов и рабочие процессы, которые определяют, какие свойства пользователя (или группы) передаются из Azure AD в приложение. Сюда входит настройка "соответствующего свойства", которое используется для уникальной идентификации и сопоставления пользователей и групп между двумя системами. Дополнительные сведения о сопоставлении атрибутов см. в описании ссылки в *следующих шагах* .
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 [Настройка сопоставлений атрибутов для подготовки пользователей для приложений SaaS в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-customizing-attribute-mappings)
 

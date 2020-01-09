@@ -3,20 +3,16 @@ title: Получение данных об установленном на ко
 description: Использование данных инвентаризации для определения установленного программного обеспечения на компьютерах в вашей среде.
 services: automation
 keywords: данные инвентаризации, автоматизация, отслеживание
-author: jennyhunter-msft
-ms.author: jehunte
 ms.date: 04/11/2018
 ms.topic: tutorial
-ms.service: automation
 ms.subservice: change-inventory-management
 ms.custom: mvc
-manager: carmonm
-ms.openlocfilehash: 47313781756e460a8c30638661489874481b88a0
-ms.sourcegitcommit: f811238c0d732deb1f0892fe7a20a26c993bc4fc
+ms.openlocfilehash: 136521799dbc928a03c339ecc1cef6fdd3d029b2
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2019
-ms.locfileid: "67476824"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75420564"
 ---
 # <a name="discover-what-software-is-installed-on-your-azure-and-non-azure-machines"></a>Получение данных об установленном программном обеспечении на виртуальных машинах Azure и других компьютерах
 
@@ -31,7 +27,7 @@ ms.locfileid: "67476824"
 > * просмотреть установленное программное обеспечение;
 > * поиск установленного программного обеспечения в журналах инвентаризации.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Для работы с этим учебником необходимы указанные ниже компоненты.
 
@@ -131,7 +127,7 @@ ConfigurationData
 | summarize by Publisher, SoftwareName
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из этого руководства вы узнали, как использовать решение для инвентаризации программного обеспечения и как выполнить следующие действия:
 

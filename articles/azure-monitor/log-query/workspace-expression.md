@@ -1,18 +1,17 @@
 ---
 title: Выражение workspace() в запросе журнала Azure Monitor | Документация Майкрософт
 description: Выражение workspace используется в запросе журнала Azure Monitor для получения данных из определенной рабочей области в той же или другой группе ресурсов или в другой подписке.
-ms.service: azure-monitor
 ms.subservice: logs
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 09/10/2018
-ms.openlocfilehash: f26b9534fbf95cc301ae782d47ab7030988fa469
-ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
+ms.openlocfilehash: 255888acf5da6149b6a964b23ed038b99715481c
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72932853"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75364957"
 ---
 # <a name="workspace-expression-in-azure-monitor-log-query"></a>Выражение workspace() в запросе журнала Azure Monitor
 
@@ -27,15 +26,15 @@ ms.locfileid: "72932853"
 
 - *Идентификатор*: определяет рабочую область с помощью одного из форматов в следующей таблице.
 
-| Идентификатор | Описание | Пример
+| Идентификатор | Description | Пример
 |:---|:---|:---|
 | Имя ресурса | Понятное имя рабочей области (имя компонента). | workspace("contosoretail") |
 | Полное имя | Полное имя рабочей области в формате: subscriptionName/resourceGroup/componentName. | workspace('Contoso/ContosoResource/ContosoWorkspace') |
-| ИД | Идентификатор GUID рабочей области. | workspace("b438b3f6-912a-46d5-9db1-b42069242ab4") |
+| ID | Идентификатор GUID рабочей области. | workspace("b438b3f6-912a-46d5-9db1-b42069242ab4") |
 | Идентификатор ресурса Azure | Идентификатор ресурса Azure | workspace("/subscriptions/e4227-645-44e-9c67-3b84b5982/resourcegroups/ContosoAzureHQ/providers/Microsoft.OperationalInsights/workspaces/contosoretail") |
 
 
-## <a name="notes"></a>Заметки
+## <a name="notes"></a>Примечания
 
 * У вас должен быть доступ на чтение к рабочей области.
 * Связанное выражение — `app`. Оно позволяет выполнять запросы к приложениям Application Insights.

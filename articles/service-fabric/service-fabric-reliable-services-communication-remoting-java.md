@@ -1,24 +1,16 @@
 ---
-title: Удаленное взаимодействие службы в Azure Service Fabric с помощью Java | Документы Майкрософт
+title: Удаленное взаимодействие служб с помощью Java в Azure Service Fabric
 description: Удаленное взаимодействие Service Fabric позволяет осуществлять обмен данными между службами и клиентами и службами Java с помощью удаленного вызова процедур.
-services: service-fabric
-documentationcenter: java
 author: PavanKunapareddyMSFT
-manager: chackdan
-ms.assetid: ''
-ms.service: service-fabric
-ms.devlang: java
 ms.topic: conceptual
-ms.tgt_pltfrm: na
-ms.workload: required
 ms.date: 06/30/2017
 ms.author: pakunapa
-ms.openlocfilehash: 51c8c689bd3fe3e8967bab77e776ad02f9cb59f1
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: eef63d7a2c8a4b15938dfbffd7db5f9d1b22d426
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "62123641"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75426638"
 ---
 # <a name="service-remoting-in-java-with-reliable-services"></a>Удаленное взаимодействие службы в Java с Reliable Services
 > [!div class="op_single_selector"]

@@ -7,12 +7,12 @@ ms.reviewer: gabilehner
 ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 11/07/2019
-ms.openlocfilehash: dd2c29632d70da64251c5e1736a9cb7d82f5d0dc
-ms.sourcegitcommit: 3d4917ed58603ab59d1902c5d8388b954147fe50
+ms.openlocfilehash: 495f53bc97835c4940f7b36d23349b768a7a637f
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74667350"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75440963"
 ---
 # <a name="use-follower-database-to-attach-databases-in-azure-data-explorer"></a>Использование базы данных следующих служб для присоединения баз данных в Azure обозреватель данных
 
@@ -127,7 +127,7 @@ poller = kusto_management_client.attached_database_configurations.create_or_upda
 
 ### <a name="attach-a-database-using-an-azure-resource-manager-template"></a>Присоединение базы данных с помощью шаблона Azure Resource Manager
 
-В этом разделе вы узнаете, как присоединить базу данных с помощью [шаблона Azure Resource Manager](../azure-resource-manager/resource-group-overview.md). 
+В этом разделе вы узнаете, как присоединить базу данных с помощью [шаблона Azure Resource Manager](../azure-resource-manager/management/overview.md). 
 
 ```json
 {
@@ -222,7 +222,7 @@ poller = kusto_management_client.attached_database_configurations.create_or_upda
 |Имя базы данных     |      Имя базы данных, которая будет следовать. Если вы хотите следовать всем базам данных лидера, используйте "*".   |
 |Идентификатор ресурса кластера лидера    |   Идентификатор ресурса для кластера лидера.      |
 |Тип изменения участников по умолчанию    |   Тип изменения субъекта по умолчанию. Может быть `Union`, `Replace` или `None`. Дополнительные сведения об изменении типа субъекта по умолчанию см. в разделе [команда управления типа изменения основного сервера](/azure/kusto/management/cluster-follower?branch=master#alter-follower-database-principals-modification-kind).      |
-|Location   |   Расположение всех ресурсов. Лидер и след должны находиться в одном расположении.       |
+|Расположение   |   Расположение всех ресурсов. Лидер и след должны находиться в одном расположении.       |
  
 ### <a name="verify-that-the-database-was-successfully-attached"></a>Проверка успешного присоединения базы данных
 
@@ -376,8 +376,8 @@ poller = kusto_management_client.clusters.detach_follower_databases(resource_gro
 
 |**Вид** |**Описание**  |
 |---------|---------|
-|**Наборов**     |   Присоединенные участники базы данных всегда включают в себя исходные субъекты базы данных, а также дополнительные новые участники, добавленные в базу данных следующих.      |
-|**Замените**   |    Нет наследования субъектов от исходной базы данных. Для присоединенной базы данных необходимо создать новые субъекты.     |
+|**Union**     |   Присоединенные участники базы данных всегда включают в себя исходные субъекты базы данных, а также дополнительные новые участники, добавленные в базу данных следующих.      |
+|**Заменить**   |    Нет наследования субъектов от исходной базы данных. Для присоединенной базы данных необходимо создать новые субъекты.     |
 |**None**   |   Присоединенные участники базы данных включают только субъекты исходной базы данных без дополнительных субъектов.      |
 
 Дополнительные сведения об использовании команд управления для настройки полномочных участников см. в разделе [Управление командами для управления кластером последующих действий](/azure/kusto/management/cluster-follower).

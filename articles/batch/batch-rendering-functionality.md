@@ -1,18 +1,18 @@
 ---
 title: Возможности рендеринга — пакетная служба Azure
-description: Определенные возможности рендеринга в пакетной службе Azure
+description: Стандартные возможности пакетной службы Azure используются для выполнения подготовки к просмотру рабочих нагрузок и приложений. Пакетная функция включает в себя определенные функции для поддержки рабочих нагрузок подготовки к просмотру.
 services: batch
 ms.service: batch
 author: mscurrell
 ms.author: markscu
 ms.date: 08/02/2018
 ms.topic: conceptual
-ms.openlocfilehash: b5eaaa6d41b9dae97a2d6219ffa44fb75ed67e61
-ms.sourcegitcommit: 7f6d986a60eff2c170172bd8bcb834302bb41f71
+ms.openlocfilehash: 697e2640b7215e0bbb9202c672f936535831eb99
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71350047"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75449725"
 ---
 # <a name="azure-batch-rendering-capabilities"></a>Возможности рендеринга в пакетной службе Azure
 
@@ -30,10 +30,10 @@ ms.locfileid: "71350047"
 
 Пример конфигурации пула см. в [руководстве по отрисовке с использованием Azure CLI](https://docs.microsoft.com/azure/batch/tutorial-rendering-cli).  Портал Azure и Batch Explorer предоставляют средства графического пользовательского интерфейса для выбора образа виртуальной машины для рендеринга при создании пула.  В случае использования API пакетной службы при создании пула укажите следующие значения свойств для [ImageReference](https://docs.microsoft.com/rest/api/batchservice/pool/add#imagereference):
 
-| Издатель | Предложение | Номер SKU | Version |
+| Издатель | Предложение | SKU | Версия |
 |---------|---------|---------|--------|
-| пакет (1) | rendering-centos73 | rendering | latest |
-| пакет (1) | rendering-windows2016 | rendering | latest |
+| пакетная_служба | rendering-centos73 | rendering | latest |
+| пакетная_служба | rendering-windows2016 | rendering | latest |
 
 Если на виртуальных машинах пула необходимы дополнительные приложения, то доступны другие варианты:
 
@@ -90,7 +90,7 @@ ms.locfileid: "71350047"
 Для заданий и задач не требуется специальная поддержка для рендеринга.  Основной элемент конфигурации — это командная строка задачи, которая должна ссылаться на нужное приложение.
 При использовании образов виртуальных машин, включенных в Azure Marketplace, рекомендуется указать путь и исполняемый файл приложения с помощью переменных среды.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Примеры с применением рендеринга пакетной службы вы найдете в следующих руководствах:
 

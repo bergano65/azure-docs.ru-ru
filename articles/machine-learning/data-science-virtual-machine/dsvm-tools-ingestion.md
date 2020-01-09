@@ -6,16 +6,16 @@ keywords: средства анализа и обработки данных, в
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: data-science-vm
-author: gvashishtha
-ms.author: gopalv
+author: lobrien
+ms.author: laobri
 ms.topic: conceptual
-ms.date: 10/11/2019
-ms.openlocfilehash: 72a881a2ab508caa2274f3b9299157921cb8ceff
-ms.sourcegitcommit: 1d0b37e2e32aad35cc012ba36200389e65b75c21
+ms.date: 12/12/2019
+ms.openlocfilehash: d86858f8d7f09628457b718ca3c481934d720081
+ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72330679"
+ms.lasthandoff: 01/02/2020
+ms.locfileid: "75612635"
 ---
 # <a name="data-science-virtual-machine-data-ingestion-tools"></a>Средства приема данных виртуальных машин для обработки и анализа данных
 
@@ -30,18 +30,18 @@ ms.locfileid: "72330679"
 | Что это такое?   | Средство для копирования данных из хранилища BLOB-объектов Azure в Azure Data Lake Store. Оно также может копировать данные между двумя учетными записями Azure Data Lake Store.      |
 | Поддерживаемые версии DSVM      | Windows      |
 | Распространенные способы применения      | Импорт нескольких больших двоичных объектов из хранилища BLOB-объектов Azure в Azure Data Lake Store.      |
-|  Запуск и использование    |   Откройте командную строку и введите `adlcopy` для получения справки.    |
+|  Запуск и использование    |   Откройте командную строку и введите `adlcopy`, чтобы получить справку.    |
 | Ссылки на примеры      | [С помощью AdlCopy](https://docs.microsoft.com/azure/data-lake-store/data-lake-store-copy-data-azure-storage-blob)      |
 | Связанные средства на DSVM      | AzCopy, Azure CLI     |
 
-## <a name="azure-cli"></a>Azure CLI
+## <a name="azure-cli"></a>Интерфейс командной строки Azure
 
 |    |           |
 | ------------- | ------------- |
 | Что это такое?   | Средство управления для Azure. Он также содержит команды для перемещения данных из платформ данных Azure, таких как хранилище BLOB-объектов Azure и Azure Data Lake Store.     |
 | Поддерживаемые версии DSVM      | Windows, Linux     |
 | Распространенные способы применения      | Импорт и экспорт данных в службу хранилища Azure и Azure Data Lake Store и обратно.      |
-|  Запуск и использование    |   Откройте командную строку и введите `az` для получения справки.    |
+|  Запуск и использование    |   Откройте командную строку и введите `az`, чтобы получить справку.    |
 | Ссылки на примеры      | [Использование Azure CLI](https://docs.microsoft.com/cli/azure)     |
 | Связанные средства на DSVM      | AzCopy, AdlCopy      |
 
@@ -53,7 +53,7 @@ ms.locfileid: "72330679"
 | Что это такое?   | Средство для копирования данных в локальные файлы, хранилище BLOB-объектов Azure, файлы и таблицы и обратно.      |
 | Поддерживаемые версии DSVM      | Windows      |
 | Распространенные способы применения      | Копирование файлов в хранилище BLOB-объектов Azure и копирование больших двоичных объектов между учетными записями.      |
-|  Запуск и использование    |   Откройте командную строку и введите `azcopy` для получения справки.    |
+|  Запуск и использование    |   Откройте командную строку и введите `azcopy`, чтобы получить справку.    |
 | Ссылки на примеры      | [AzCopy в Windows](https://docs.microsoft.com/azure/storage/common/storage-use-azcopy)      |
 | Связанные средства на DSVM      | AdlCopy     |
 
@@ -77,7 +77,7 @@ ms.locfileid: "72330679"
 | Поддерживаемые версии DSVM      | Windows      |
 | Распространенные способы применения      | Импорт и экспорт данных из DSVM.    |
 |  Запуск и использование    | Выполните поиск строки "Обозреватель службы хранилища Azure" в меню "Пуск". |
-| Ссылки на примеры      | [Azure Storage Explorer;](vm-do-ten-things.md#access-azure-data-and-analytics-services)      |
+| Ссылки на примеры      | [Обозреватель службы хранилища Azure](vm-do-ten-things.md#access-azure-data-and-analytics-services)      |
 
 
 ## <a name="bcp"></a>bcp
@@ -87,8 +87,8 @@ ms.locfileid: "72330679"
 | Что это такое?   | Средство SQL Server для копирования данных между SQL Server и файлом данных.      |
 | Поддерживаемые версии DSVM      | Windows      |
 | Распространенные способы применения      | Импорт CSV-файла в таблицу SQL Server и экспорт таблицы SQL Server в файл.      |
-|  Запуск и использование    |   Откройте командную строку и введите `bcp` для получения справки.    |
-| Ссылки на примеры      | [Программа bcp](https://docs.microsoft.com/sql/tools/bcp-utility)      |
+|  Запуск и использование    |   Откройте командную строку и введите `bcp`, чтобы получить справку.    |
+| Ссылки на примеры      | [bcp, программа](https://docs.microsoft.com/sql/tools/bcp-utility)      |
 | Связанные средства на DSVM      | SQL Server, SQLCMD      |
 
 ## <a name="blobfuse"></a>blobfuse
@@ -100,4 +100,4 @@ ms.locfileid: "72330679"
 | Распространенные способы применения      | Чтение и запись больших двоичных объектов в контейнере.      |
 |  Как использовать и запускать его?    |   В окне терминала запустите _blobfuse_.    |
 | Ссылки на примеры      | [blobfuse в GitHub](https://github.com/Azure/azure-storage-fuse)      |
-| Связанные средства на DSVM      | Azure CLI      |
+| Связанные средства на DSVM      | Интерфейс командной строки Azure      |

@@ -15,21 +15,21 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/16/2017
 ms.author: monicar
-ms.openlocfilehash: 9a93786759941def4cf8677509b1b2565cac5090
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: f5e0344cb1da86661ae87b5e45bd93dd181e7bb0
+ms.sourcegitcommit: 51ed913864f11e78a4a98599b55bbb036550d8a5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60325431"
+ms.lasthandoff: 01/04/2020
+ms.locfileid: "75659565"
 ---
-# <a name="microsoft-azure-glossary-a-dictionary-of-cloud-terminology-on-the-azure-platform"></a>Словарь терминов Microsoft Azure: словарь терминов, связанных с облаком на платформе Azure.
+# <a name="microsoft-azure-glossary-a-dictionary-of-cloud-terminology-on-the-azure-platform"></a>Словарь терминов Microsoft Azure: словарь терминов, связанных с облаком на платформе Azure
 
-Словарь терминов Microsoft Azure — это краткий словарь терминов, связанных с облаком на платформе Azure. См. также:
+Словарь терминов Microsoft Azure — это краткий словарь терминов, связанных с облаком на платформе Azure. См. также
 
-* [Microsoft Azure и Amazon Web Services](https://azure.microsoft.com/campaigns/azure-vs-aws/mapping/) -определения служб Azure и их аналогов в AWS.<!-- I propose to link to https://azure.microsoft.com/services/ instead of this -->
+* [Microsoft Azure и Amazon Web Services](https://azure.microsoft.com/campaigns/azure-vs-aws/mapping/) определения служб Azure и их аналогов AWS.<!-- I propose to link to https://azure.microsoft.com/services/ instead of this -->
 * [Термины облачных вычислений](https://azure.microsoft.com/overview/cloud-computing-dictionary/) — общие термины облачной индустрии.
 
-## <a name="account"></a>учетная запись
+## <a name="account"></a>account
 Учетная запись, используемая для доступа к подписке Azure и управления ей. Зачастую она называется учетной записью Azure, хотя учетной записью может быть любая из следующих: существующая рабочая, учебная или личная учетная запись Майкрософт либо имя пользователя и пароль Office 365. Можно также создать учетную запись для управления подпиской Azure во время регистрации в [бесплатной пробной версии](https://azure.microsoft.com).  
 См. разделы [Регистрация для получения подписки Azure с помощью учетной записи Office 365](billing/billing-use-existing-office-365-account-azure-subscription.md) и [Учетные записи для входа](active-directory/fundamentals/active-directory-how-subscriptions-associated-directory.md).
 
@@ -69,13 +69,13 @@ ms.locfileid: "60325431"
 См. статью [Активная георепликация для Базы данных SQL Azure](sql-database/sql-database-geo-replication-overview.md).
 <!-- The meaning of "geo" in this term seems to be different than the meaning provided in the "geo" entry -->
 
-## <a name="image"></a>image
-Файл с конфигурацией операционной системы и приложения, который можно использовать для создания любого количества виртуальных машин. В Azure можно использовать два типа образов: образ виртуальной машины и образ ОС. Образ виртуальной машины включает операционную систему и все диски, присоединенные к виртуальной машине на момент создания образа. Образ ОС содержит только общие сведения об операционной системе и не включает конфигурации дисков данных.  
+## <a name="image"></a>изображение
+Файл с конфигурацией операционной системы и приложения, который можно использовать для создания любого количества виртуальных машин. В Azure можно использовать два типа образов — образ виртуальной машины и образ ОС. Образ виртуальной машины включает операционную систему и все диски, присоединенные к виртуальной машине на момент создания образа. Образ ОС содержит только общие сведения об операционной системе и не включает конфигурации дисков данных.  
 См. статью [Просмотр и выбор образов виртуальных машин Windows в Azure с помощью оболочки PowerShell или интерфейса командной строки](virtual-machines/windows/cli-ps-findimage.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
 
 ## <a name="limits"></a>ограничения
 Количество доступных для создания ресурсов или максимально возможный уровень работоспособности. Ограничения обычно связаны с подписками, службами и предложениями.  
-См. статью [Подписка Azure, границы, квоты и ограничения службы](azure-subscription-service-limits.md).
+См. статью [Подписка Azure, границы, квоты и ограничения службы](azure-resource-manager/management/azure-subscription-service-limits.md).
 
 ## <a name="load-balancer"></a>подсистема балансировки нагрузки
 Ресурс, который распределяет входящий трафик между компьютерами в сети. В Azure подсистема балансировки нагрузки направляет трафик на виртуальные машины, определенные в наборе подсистемы балансировки нагрузки. [Балансировщик нагрузки](load-balancer/load-balancer-overview.md) может быть внутренним или с выходом в Интернет.  
@@ -90,11 +90,11 @@ ms.locfileid: "60325431"
 ## <a name="portal"></a>портал
 Безопасный веб-портал, используемый для развертывания служб Azure и управления ими.
 
-## <a name="region"></a>область
+## <a name="region"></a>region
 Область геообъекта, не пересекающая национальные границы и содержащая один или несколько центров обработки данных. Цены, региональные службы и типы предложений применяются на уровне регионов. Обычно регионы объединяются в пары, даже если находятся в нескольких сотнях километров друг от друга. Пары регионов можно использовать как механизм для аварийного восстановления и сценариев высокой доступности. Также называется *расположением*.  
 См. статью [Регионы Azure](best-practices-availability-paired-regions.md).
 
-## <a name="resource"></a>resource
+## <a name="resource"></a>ресурс
 Элемент, который является частью решения Azure. Каждая служба Azure позволяет развертывать различные типы ресурсов, такие как базы данных или виртуальные машины.   
 См. статью [Общие сведения о диспетчере ресурсов Azure](azure-resource-manager/resource-group-overview.md).
 
@@ -110,9 +110,9 @@ JSON-файл, который декларативно определяет од
 Служба, которая предоставляет ресурсы для развертывания и управления посредством диспетчера ресурсов. Каждый поставщик ресурсов предоставляет операции REST API для работы с развернутыми ресурсами. Доступ к поставщикам ресурсов можно получить через портал Azure, Azure PowerShell и несколько пакетов SDK для программирования.  
 См. статью [Общие сведения о диспетчере ресурсов Azure](azure-resource-manager/resource-group-overview.md).
 
-## <a name="role"></a>role
+## <a name="role"></a>роль
 Средства для управления доступом, которые можно назначать пользователям, группам и службам. Роли могут выполнять такие действия, как создание, управление и чтение ресурсов Azure.  
-См. раздел [RBAC: встроенные роли](role-based-access-control/built-in-roles.md).
+См. статью [RBAC: встроенные роли](role-based-access-control/built-in-roles.md).
 
 ## <a name="sla"></a>соглашение об уровне обслуживания (SLA)
 Соглашение, в котором описываются обязательства корпорации Майкрософт в отношении доступности и подключения. В каждой службе Azure есть отдельный SLA.  
@@ -147,7 +147,7 @@ JSON-файл, который декларативно определяет од
 См. статью [Обзор расширений и компонентов виртуальной машины под управлением Windows](virtual-machines/windows/extensions-features.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) или [Обзор расширений и компонентов виртуальных машин под управлением Linux](virtual-machines/linux/extensions-features.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 
 ## <a name="vnet"></a>виртуальная сеть
-Сеть, обеспечивающая соединение между ресурсами Azure и изолированная от всех клиентов Azure. [VPN-шлюза Azure](vpn-gateway/vpn-gateway-about-vpngateways.md) позволяет устанавливать подключения между виртуальными сетями, а также между виртуальной сетью и локальной сетью. Вы можете полностью контролировать блоки IP-адресов, параметры DNS, политики безопасности и таблицы маршрутизации в виртуальной сети.  
+Сеть, обеспечивающая соединение между ресурсами Azure и изолированная от всех клиентов Azure. [VPN-шлюз Azure](vpn-gateway/vpn-gateway-about-vpngateways.md) позволяет устанавливать подключения между виртуальными сетями и между виртуальной сетью и локальной сетью. Вы можете полностью контролировать блоки IP-адресов, параметры DNS, политики безопасности и таблицы маршрутизации в виртуальной сети.  
 См. статью [Виртуальная сеть Azure](virtual-network/virtual-networks-overview.md).  
 
 ## <a name="web-app"></a>Веб-приложение
@@ -155,7 +155,7 @@ JSON-файл, который декларативно определяет од
 
 ## <a name="see-also"></a>См. также
 
-* [Приступая к работе с Azure](https://azure.microsoft.com/get-started/)
+* [Начало работы с Azure](https://azure.microsoft.com/get-started/)
 * [Центр облачных ресурсов](https://azure.microsoft.com/resources/)  
 * [Azure для бизнес-приложений](https://azure.microsoft.com/overview/business-apps-on-azure/)
 * [Azure в вашем центре обработки данных](https://azure.microsoft.com/overview/business-apps-on-azure/)

@@ -1,6 +1,6 @@
 ---
-title: Создание и использование файлов ресурсов в пакетной службе Azure | Документация Майкрософт
-description: Узнайте, как создавать файлы ресурсов пакетной службы Azure из различных источников входных данных.
+title: Создание и использование файлов ресурсов в пакетной службе Azure
+description: Узнайте, как создавать файлы ресурсов пакетной службы из различных источников входных данных. В этой статье описаны некоторые распространенные методы создания и размещения их на виртуальной машине.
 services: batch
 author: laurenhughes
 manager: gwallace
@@ -8,12 +8,12 @@ ms.service: batch
 ms.topic: article
 ms.date: 03/14/2019
 ms.author: lahugh
-ms.openlocfilehash: 9c55b22d1cb85fb645087cf48b54f9d5ac12d58f
-ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
+ms.openlocfilehash: e890bce378327fe5b1f4068d6719e6b905404f3c
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68322185"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75390053"
 ---
 # <a name="creating-and-using-resource-files"></a>Создание и использование файлов ресурсов
 
@@ -32,9 +32,9 @@ ms.locfileid: "68322185"
 
 Параметры для создания файла ресурсов.
 
-- [URL-адрес контейнера хранилища](#storage-container-url): Создает файл ресурсов из любого контейнера хранилища в Azure.
-- [Имя контейнера хранилища](#storage-container-name): Создает файл ресурсов из имени контейнера в учетной записи хранения Azure, связанной с пакетной службой.
-- [Конечная веб-точка](#web-endpoint): Создает файл ресурсов из любого допустимого URL-адреса HTTP.
+- [URL-адрес контейнера хранилища](#storage-container-url): создает файл ресурсов из любого контейнера хранилища в Azure.
+- [Имя контейнера хранилища](#storage-container-name): создает файл ресурсов из имени контейнера в учетной записи хранения Azure, связанной с пакетной службой.
+- [Конечная веб-точка](#web-endpoint): создает файл ресурсов по любому действительному URL-адресу http.
 
 ### <a name="storage-container-url"></a>URL-адрес контейнера хранилища
 
@@ -53,9 +53,9 @@ SharedAccessBlobPolicy sasConstraints = new SharedAccessBlobPolicy
 ```
 
 > [!NOTE]
-> Для доступа к `Read` контейнеру необходимы разрешения и `List` , тогда как для `Read` доступа к BLOB-объектам требуется только разрешение.
+> Для доступа к контейнеру необходимо иметь разрешения `Read` и `List`, в то время как для доступа к BLOB-объектам требуется только `Read` разрешение.
 
-После настройки разрешений создайте маркер SAS и отформатируйте URL-адрес SAS для доступа к контейнеру хранилища. Используя отформатированный URL-адрес SAS для контейнера хранилища, создайте файл ресурсов [`FromStorageContainerUrl`](https://docs.microsoft.com/dotnet/api/microsoft.azure.batch.resourcefile.fromstoragecontainerurl?view=azure-dotnet)с помощью.
+После настройки разрешений создайте маркер SAS и отформатируйте URL-адрес SAS для доступа к контейнеру хранилища. Используя отформатированный URL-адрес SAS для контейнера хранилища, создайте файл ресурсов с [`FromStorageContainerUrl`](https://docs.microsoft.com/dotnet/api/microsoft.azure.batch.resourcefile.fromstoragecontainerurl?view=azure-dotnet).
 
 ```csharp
 CloudBlobContainer container = blobClient.GetContainerReference(containerName);
@@ -106,7 +106,7 @@ ResourceFile inputFile = ResourceFile.FromUrl("https://github.com/foo/file.txt",
 
 Если не удается сократить количество файлов, необходимых задаче, можно оптимизировать задачу, создав отдельный файл ресурсов, который ссылается на контейнер хранилища файлов ресурсов. Для этого вставьте файлы ресурсов в контейнер службы хранилища Azure и используйте различные режимы "контейнера" файлов ресурсов. Используйте параметры префикса BLOB-объектов, чтобы указать коллекции файлов, которые будут скачаны для задач.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Сведения о [пакетах приложений](batch-application-packages.md) в качестве альтернативы файлам ресурсов.
 - Дополнительные сведения об использовании контейнеров для файлов ресурсов см. в разделе [рабочие нагрузки контейнера](batch-docker-container-workloads.md).

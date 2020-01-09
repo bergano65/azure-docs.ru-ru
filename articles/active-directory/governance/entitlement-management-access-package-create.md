@@ -1,5 +1,5 @@
 ---
-title: Создание нового пакета Access в управлении назначением Azure AD — Azure Active Directory
+title: Создание нового пакета Access в управлении назначением Azure AD
 description: Узнайте, как создать новый пакет доступа к ресурсам, который вы хотите использовать в Azure Active Directory управлении назначением.
 services: active-directory
 documentationCenter: ''
@@ -16,12 +16,12 @@ ms.date: 10/15/2019
 ms.author: ajburnle
 ms.reviewer: ''
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 71aa999809ba3d3e32d38162dfaba869d9716031
-ms.sourcegitcommit: c62a68ed80289d0daada860b837c31625b0fa0f0
+ms.openlocfilehash: 68d34046a16787ca1c6790880592fb30667ff2dc
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73602718"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75422695"
 ---
 # <a name="create-a-new-access-package-in-azure-ad-entitlement-management"></a>Создание нового пакета Access в управлении назначением Azure AD
 

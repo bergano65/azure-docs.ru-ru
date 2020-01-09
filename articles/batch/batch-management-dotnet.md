@@ -15,17 +15,17 @@ ms.workload: big-compute
 ms.date: 04/24/2017
 ms.author: lahugh
 ms.custom: seodec18
-ms.openlocfilehash: f7554993e2e3d8d2f6bce71db57a746a4392ce1a
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: 32133fc5c01544250075ece2458babe2f0b6a62a
+ms.sourcegitcommit: 51ed913864f11e78a4a98599b55bbb036550d8a5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70095076"
+ms.lasthandoff: 01/04/2020
+ms.locfileid: "75660704"
 ---
 # <a name="manage-batch-accounts-and-quotas-with-the-batch-management-client-library-for-net"></a>Управление учетными записями и квотами пакетной службы с помощью клиентской библиотеки .NET для управления пакетной службой
 
 > [!div class="op_single_selector"]
-> * [портал Azure](batch-account-create-portal.md)
+> * [Портал Azure](batch-account-create-portal.md)
 > * [Библиотека .NET для управления пакетной службой](batch-management-dotnet.md)
 > 
 > 
@@ -45,7 +45,7 @@ ms.locfileid: "70095076"
 ## <a name="create-and-delete-batch-accounts"></a>Создание и удаление учетных записей пакетной службы
 Как упоминалось выше, одной из основных функций API управления пакетной службой является возможность создания и удаления учетных записей пакетной службы в определенном регионе Azure. Для этого используйте [BatchManagementClient. Account. CreateAsync][net_create] и [DeleteAsync][net_delete]или их синхронные аналоги.
 
-В следующем фрагменте кода создается учетная запись, выполняется получение созданной учетной записи из пакетной службы, а затем она удаляется. В этом фрагменте кода и других, приведенных `batchManagementClient` в этой статье, является полностью инициализированным экземпляром [BatchManagementClient][net_mgmt_client].
+В следующем фрагменте кода создается учетная запись, выполняется получение созданной учетной записи из пакетной службы, а затем она удаляется. В этом фрагменте кода и других в этой статье `batchManagementClient` является полностью инициализированным экземпляром [BatchManagementClient][net_mgmt_client].
 
 ```csharp
 // Create a new Batch account
@@ -95,7 +95,7 @@ BatchAccountRegenerateKeyResponse newKeys =
 > 
 
 ## <a name="check-azure-subscription-and-batch-account-quotas"></a>Проверка подписки Azure и квот учетной записи пакетной службы
-Подписки Azure и отдельные службы Azure, такие как пакетная служба, имеют стандартные квоты для ограничения количества определенных в них сущностей. Квоты по умолчанию для подписок Azure см. в статье [Подписка Azure, границы, квоты и ограничения службы](../azure-subscription-service-limits.md). Квоты пакетной службы по умолчанию см. в статье [Квоты и ограничения пакетной службы Azure](batch-quota-limit.md). С помощью библиотеки .NET для управления пакетной службой можно проверять эти квоты в приложениях. Это позволяет принимать решения о выделении ресурсов перед добавлением учетных записей или вычислительных ресурсов, таких как пулы и вычислительные узлы.
+Подписки Azure и отдельные службы Azure, такие как пакетная служба, имеют стандартные квоты для ограничения количества определенных в них сущностей. Квоты по умолчанию для подписок Azure см. в статье [Подписка Azure, границы, квоты и ограничения службы](../azure-resource-manager/management/azure-subscription-service-limits.md). Квоты пакетной службы по умолчанию см. в статье [Квоты и ограничения пакетной службы Azure](batch-quota-limit.md). С помощью библиотеки .NET для управления пакетной службой можно проверять эти квоты в приложениях. Это позволяет принимать решения о выделении ресурсов перед добавлением учетных записей или вычислительных ресурсов, таких как пулы и вычислительные узлы.
 
 ### <a name="check-an-azure-subscription-for-batch-account-quotas"></a>Определение квот для учетной записи пакетной службы в подписке Azure
 Прежде чем создавать учетную запись пакетной службы в определенном регионе, вы можете проверить данные подписки Azure, чтобы узнать о возможности создания учетной записи в этом регионе.
@@ -124,7 +124,7 @@ Console.WriteLine("Accounts in {0}: {1}", region, accountsInRegion);
 Console.WriteLine("You can create {0} accounts in the {1} region.", quotaResponse.AccountQuota - accountsInRegion, region);
 ```
 
-В приведенном выше `creds` фрагменте является экземпляром [TokenCloudCredentials][azure_tokencreds]. Пример создания этого объекта см. в примере кода [AccountManagement][acct_mgmt_sample] на сайте GitHub.
+В приведенном выше фрагменте `creds` является экземпляром [TokenCloudCredentials][azure_tokencreds]. Пример создания этого объекта см. в примере кода [AccountManagement][acct_mgmt_sample] на сайте GitHub.
 
 ### <a name="check-a-batch-account-for-compute-resource-quotas"></a>Определение квоты вычислительных ресурсов для учетной записи пакетной службы
 Прежде чем увеличивать количество вычислительных ресурсов в решении пакетной службы, убедитесь, что выделяемые ресурсы не превысят квоты для учетной записи. В следующем фрагменте кода мы выводим сведения о квотах для учетной записи пакетной службы с именем `mybatchaccount`. В своем приложении с помощью этих сведений можно определить, способна ли учетная запись обрабатывать дополнительные ресурсы, которые вы хотите создать.
@@ -198,7 +198,7 @@ Console.WriteLine("Active job and job schedule quota: {0}", account.Properties.A
 [resman_api]: https://msdn.microsoft.com/library/azure/mt418626.aspx
 [resman_client]: https://msdn.microsoft.com/library/azure/microsoft.azure.management.resources.resourcemanagementclient.aspx
 [resman_subclient]: https://msdn.microsoft.com/library/azure/microsoft.azure.subscriptions.subscriptionclient.aspx
-[resman_overview]: ../azure-resource-manager/resource-group-overview.md
+[resman_overview]: ../azure-resource-manager/management/overview.md
 
 [1]: ./media/batch-management-dotnet/portal-01.png
 [2]: ./media/batch-management-dotnet/portal-02.png

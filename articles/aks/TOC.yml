@@ -21,18 +21,27 @@
       items:
         - name: С помощью Draft
           href: kubernetes-draft.md
-        - name: Использование Visual Studio Code и Azure Dev Spaces
-          href: ../dev-spaces/quickstart-netcore.md
-          maintainContext: true
-        - name: Использование Visual Studio и Azure Dev Spaces
-          href: ../dev-spaces/quickstart-netcore-visualstudio.md
-          maintainContext: true
-        - name: Использование CLI и Azure Dev Spaces
-          href: ../dev-spaces/quickstart-cli.md
-          maintainContext: true
-        - name: Использование Azure Dev Spaces для групп разработчиков
-          href: ../dev-spaces/quickstart-team-development.md
-          maintainContext: true
+        - name: Azure Dev Spaces
+          expanded: true
+          items:
+            - name: Использование Azure Dev Spaces для групп разработчиков
+              href: ../dev-spaces/quickstart-team-development.md
+              maintainContext: true
+            - name: "Использование Visual Studio\_Code"
+              href: ../dev-spaces/quickstart-netcore.md
+              maintainContext: true
+            - name: Использование Visual Studio
+              href: ../dev-spaces/quickstart-netcore-visualstudio.md
+              maintainContext: true
+            - name: Использование CLI
+              href: ../dev-spaces/quickstart-cli.md
+              maintainContext: true
+            - name: Использование Azure Dev Spaces с Java
+              href: ../dev-spaces/quickstart-java.md
+              maintainContext: true
+            - name: Использование Azure Dev Spaces с Node.js
+              href: ../dev-spaces/quickstart-nodejs.md
+              maintainContext: true
 - name: Учебники
   items:
     - name: 1. Подготовка приложения для AKS

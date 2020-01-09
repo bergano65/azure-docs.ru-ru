@@ -12,12 +12,12 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 12/24/2018
-ms.openlocfilehash: 4c72bd37a636ec31c13737705c22aaa895b9ad72
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: 3c077e2c04cae94d2e1a2a84ccd7d09c7a0829b4
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74928216"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75439720"
 ---
 # <a name="delta-copy-from-a-database-with-a-control-table"></a>Разностное копирование из базы данных с помощью управляющей таблицы
 
@@ -38,10 +38,13 @@ ms.locfileid: "74928216"
 - **Копировать** копирует только изменения из базы данных источника в целевое хранилище. Запрос, определяющий изменения в базе данных-источнике, аналогичен "SELECT * FROM Data_Source_Table, где TIMESTAMP_Column >" последняя большая Подложка "и TIMESTAMP_Column < =" текущий верхний предел ".
 - **SqlServerStoredProcedure** записывает текущее значение высокой подложки во внешнюю таблицу управления для разностного копирования в следующий раз.
 
-Шаблон определяет пять параметров.
+Шаблон определяет следующие параметры:
 - *Data_Source_Table_Name* — это таблица в базе данных-источнике, из которой необходимо загрузить данные.
 - *Data_Source_WaterMarkColumn* — имя столбца в исходной таблице, который используется для обнаружения новых или обновленных строк. Этот столбец обычно имеет тип *DateTime*, *int*или аналогичный.
-- *Data_Destination_Folder_Path* или *Data_Destination_Table_Name* — место, куда копируются данные в целевом хранилище.
+- *Data_Destination_Container* — это корневой путь места, куда копируются данные в целевом хранилище.
+- *Data_Destination_Directory* — это путь к каталогу в корне места, куда копируются данные в целевом хранилище.
+- *Data_Destination_Table_Name* — место, куда копируются данные в целевом хранилище (применяется, если в качестве назначения данных выбрано "Azure синапсе Analytics (ранее SQL DW)").
+- *Data_Destination_Folder_Path* — место, куда копируются данные в целевом хранилище (применимо, если в качестве назначения данных выбрано "файловая система" или "Azure Data Lake Storage 1-го поколения").
 - *Control_Table_Table_Name* — это внешняя таблица элементов управления, в которой хранится значение верхнего предела.
 - *Control_Table_Column_Name* — это столбец во внешней таблице элементов управления, в котором хранится значение верхнего предела.
 
@@ -100,20 +103,18 @@ ms.locfileid: "74928216"
     ![Создание подключения к хранилищу данных контрольной таблицы](media/solution-template-delta-copy-with-control-table/DeltaCopyfromDB_with_ControlTable6.png)
 
 7. Выберите **Использовать этот шаблон**.
-
-     ![Использование шаблона](media/solution-template-delta-copy-with-control-table/DeltaCopyfromDB_with_ControlTable7.png)
     
 8. Вы увидите доступный конвейер, как показано в следующем примере:
+  
+    ![Проверка конвейера](media/solution-template-delta-copy-with-control-table/DeltaCopyfromDB_with_ControlTable8.png)
 
-     ![Проверка конвейера](media/solution-template-delta-copy-with-control-table/DeltaCopyfromDB_with_ControlTable8.png)
+9. Выберите **хранимая процедура**. В качестве **имени хранимой процедуры**выберите **[dbo]. [ update_watermark]** . Выберите **параметр импорта**, а затем выберите **добавить динамическое содержимое**.  
 
-9. Выберите **хранимая процедура**. В качестве **имени хранимой процедуры**выберите **[update_watermark]** . Выберите **параметр импорта**, а затем выберите **добавить динамическое содержимое**.  
-
-     ![Задание действия хранимой процедуры](media/solution-template-delta-copy-with-control-table/DeltaCopyfromDB_with_ControlTable9.png) 
+    ![Задание действия хранимой процедуры](media/solution-template-delta-copy-with-control-table/DeltaCopyfromDB_with_ControlTable9.png)  
 
 10. Запишите содержимое **\@{Activity (' лукупкуррентватермарк '). Output. firstRow. невватермарквалуе}** и нажмите кнопку **Готово**.  
 
-     ![Запись содержимого для параметров хранимой процедуры](media/solution-template-delta-copy-with-control-table/DeltaCopyfromDB_with_ControlTable10.png)      
+    ![Запись содержимого для параметров хранимой процедуры](media/solution-template-delta-copy-with-control-table/DeltaCopyfromDB_with_ControlTable10.png)       
      
 11. Выберите **Отладка**, введите **Параметры**и нажмите кнопку **Готово**.
 
@@ -132,13 +133,12 @@ ms.locfileid: "74928216"
             INSERT INTO data_source_table
             VALUES (11, 'newdata','9/11/2017 9:01:00 AM')
     ```
-14. Чтобы снова запустить конвейер, выберите **Отладка**, введите **Параметры**и нажмите кнопку **Готово**.
 
-    ![Выберите * * Отладка * *](media/solution-template-delta-copy-with-control-table/DeltaCopyfromDB_with_ControlTable11.png)
+14. Чтобы снова запустить конвейер, выберите **Отладка**, введите **Параметры**и нажмите кнопку **Готово**.
 
     Вы увидите, что в назначение были скопированы только новые строки.
 
-15. Используемых Если в качестве назначения данных выбрано хранилище данных SQL, необходимо также предоставить подключение к хранилищу BLOB-объектов Azure для промежуточного хранения, которое требуется для polybase хранилища данных SQL. Убедитесь, что контейнер уже создан в хранилище BLOB-объектов.
+15. Используемых Если вы выбрали Azure синапсе Analytics (ранее SQL DW) в качестве назначения данных, необходимо также предоставить подключение к хранилищу BLOB-объектов Azure для промежуточного хранения, которое требуется для polybase хранилища данных SQL. Шаблон создаст путь к контейнеру. После выполнения конвейера проверьте, создан ли контейнер в хранилище BLOB-объектов.
     
     ![Настройка PolyBase](media/solution-template-delta-copy-with-control-table/DeltaCopyfromDB_with_ControlTable15.png)
     

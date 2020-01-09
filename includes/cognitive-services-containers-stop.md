@@ -5,10 +5,10 @@ ms.date: 06/25/2019
 ms.service: cognitive-services
 ms.topic: include
 ms.openlocfilehash: a642160fc7e94979a91687b07c26fafeb786bbb4
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.sourcegitcommit: ce4a99b493f8cf2d2fd4e29d9ba92f5f942a754c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
+ms.lasthandoff: 12/28/2019
 ms.locfileid: "67704165"
 ---
-Чтобы завершить работу контейнера, в среде командной строки, где выполняется контейнер, выберите <kbd>Ctrl + C</kbd>.
+Чтобы завершить работу контейнера, в среде командной строки, в которой выполняется контейнер, нажмите <kbd>клавиши CTRL + C</kbd>.

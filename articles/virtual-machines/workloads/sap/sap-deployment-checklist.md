@@ -15,12 +15,12 @@ ms.workload: infrastructure
 ms.date: 11/08/2019
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 097429e9c761d447a7164c813a6c84d3f07f0ab6
-ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
+ms.openlocfilehash: ddba2b70bc9d9e01518cdc0f373fc31224e9c932
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2019
-ms.locfileid: "73891417"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75425936"
 ---
 # <a name="sap-workloads-on-azure-planning-and-deployment-checklist"></a>Рабочие нагрузки SAP в Azure: контрольный список для планирования и развертывания
 
@@ -77,7 +77,7 @@ ms.locfileid: "73891417"
     - Соглашения об именовании для виртуальных машин и других компонентов инфраструктуры и (или) логических имен.
 5.  Контракт Microsoft поддержка Premier. Найдите свой менеджер по технической поддержке Майкрософт (TAM). Требования поддержки SAP см. в разделе [Примечание о поддержке sap #2015553](https://launchpad.support.sap.com/#/notes/2015553).
 6.  Число подписок Azure и квоты ядра для подписок. [Откройте запросы в службу поддержки, чтобы увеличить квоты подписки Azure](https://docs.microsoft.com/azure/azure-supportability/resource-manager-core-quotas-request) по мере необходимости.
-7.  План уменьшения и переноса данных для переноса данных SAP в Azure. Для систем SAP NetWeaver SAP содержит рекомендации по ограничению объема больших объемов данных. См. [руководство SAP](https://help.sap.com/http.svc/rc/2eb2fba8f8b1421c9a37a8d7233da545/7.0/en-US/Data_Management_Guide_Version_70E.PDF) об управлении данными в системах SAP ERP. Некоторые материалы также относятся к системам NetWeaver и S/4HANA в целом.
+7.  План уменьшения и переноса данных для переноса данных SAP в Azure. Для систем SAP NetWeaver SAP содержит рекомендации по ограничению объема больших объемов данных. См. [руководство SAP](https://wiki.scn.sap.com/wiki/download/attachments/247399467/DVM_%20Guide_7.2.pdf?version=1&modificationDate=1549365516000&api=v2) об управлении данными в системах SAP ERP. Некоторые материалы также относятся к системам NetWeaver и S/4HANA в целом.
 8.  Автоматический подход к развертыванию. Целью автоматизации развертываний инфраструктуры в Azure является детерминированное развертывание и получение детерминированных результатов. Многие клиенты используют PowerShell или сценарии на основе CLI. Но существуют различные технологии с открытым кодом, которые можно использовать для развертывания инфраструктуры Azure для SAP и даже для установки программного обеспечения SAP. Примеры можно найти на сайте GitHub:
     - [Автоматическое развертывание SAP в облаке Azure](https://github.com/Azure/sap-hana)
     - [Установка SAP HANA](https://github.com/AzureCAT-GSI/SAP-HANA-ARM)
@@ -111,7 +111,7 @@ ms.locfileid: "73891417"
         - Для различных типов СУБД ознакомьтесь с [общей документацией по связанной с SAP СУБД](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/dbms_guide_general) и документацией, относящейся к СУБД, на которую указывает универсальный документ.
         - Дополнительные сведения о SAP HANA см. [в статье конфигурации и операции SAP HANA инфраструктуры в Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-vm-operations).
         - Никогда не подключайте диски данных Azure к виртуальной машине Linux Azure через идентификатор устройства. Вместо этого используйте универсальный уникальный идентификатор (UUID). Будьте внимательны, например, при использовании графических средств для подключения дисков данных Azure. Дважды проверьте записи в/etc/fstab, чтобы убедиться, что для подключения дисков используется UUID. Дополнительные сведения можно найти в [этой статье](https://docs.microsoft.com/azure/virtual-machines/linux/attach-disk-portal#connect-to-the-linux-vm-to-mount-the-new-disk).
-   3. Сети.
+   3. Сеть.
         - Протестируйте и оцените инфраструктуру виртуальной сети и распределение приложений SAP в различных виртуальных сетях Azure.
         -  Оцените подход к архитектуре виртуальной сети hub-and-лучевой или метод микросегментации в одной виртуальной сети Azure. Базовая оценка:
                1. Стоимость обмена данными между [одноранговыми виртуальными сетями Azure](https://docs.microsoft.com/azure/virtual-network/virtual-network-peering-overview). Сведения о затратах см. в статье [цены на виртуальную сеть](https://azure.microsoft.com/pricing/details/virtual-network/).
@@ -255,7 +255,7 @@ ms.locfileid: "73891417"
         - Запись на диск в кбит/с на отдельный диск
         - Запись на диск в секунду, на отдельный диск
         - Запись на диск в микросекундах/чтение, на отдельный диск
-    - Сети.
+    - Сеть.
         - Сетевых пакетов в секунду
         - Исходящих сетевых пакетов в секунду
         - Сетевая КБ в секунду
@@ -276,10 +276,10 @@ ms.locfileid: "73891417"
 3. Оптимизируйте время, когда можно завершить работу систем.  
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 См. следующие статьи:
 
 - [SAP NetWeaver на виртуальных машинах Windows. Руководство по планированию и внедрению](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/planning-guide)
-- [Развертывание Виртуальных машин Azure для SAP NetWeaver](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/deployment-guide)
+- [Развертывание виртуальных машин Azure для SAP NetWeaver](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/deployment-guide)
 - [Рекомендации по развертыванию СУБД для рабочих нагрузок SAP на виртуальных машинах Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/dbms_guide_general)
 

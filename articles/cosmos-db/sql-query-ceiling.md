@@ -1,18 +1,18 @@
 ---
 title: Azure Cosmos DB языка запросов
-description: Узнайте о том, как функция CEILING SQL System в Azure Cosmos DB возвращает основное значение тангенса дуги y/x, выраженное в радианах.
+description: Узнайте о том, как функция CEILING SQL System в Azure Cosmos DB возвращает наименьшее целочисленное значение, большее или равное указанному числовому выражению.
 author: ginamr
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 09/13/2019
 ms.author: girobins
 ms.custom: query-reference
-ms.openlocfilehash: 18462b152b698e7c6bc4c6c1e59511b4bacaa611
-ms.sourcegitcommit: 9405aad7e39efbd8fef6d0a3c8988c6bf8de94eb
+ms.openlocfilehash: 2da7820a6c9f1f90585b4deb605bb99c7580b0e5
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74873443"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75444800"
 ---
 # <a name="ceiling-azure-cosmos-db"></a>CEILING (Azure Cosmos DB)
  Возвращает наименьшее целочисленное значение, которое больше или равно указанному числовому выражению.  
@@ -28,7 +28,7 @@ CEILING (<numeric_expr>)
 *numeric_expr*  
    Числовое выражение.  
   
-## <a name="return-types"></a>Возвращаемые типы
+## <a name="return-types"></a>Типы возвращаемых данных
   
   Возвращает числовое выражение.  
   

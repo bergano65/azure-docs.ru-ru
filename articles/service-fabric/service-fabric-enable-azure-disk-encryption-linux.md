@@ -1,24 +1,14 @@
 ---
-title: Включение шифрования дисков для кластеров Azure Service Fabric Linux | Документация Майкрософт
+title: Включение шифрования дисков для кластеров Linux
 description: В этой статье описывается, как включить шифрование дисков для узлов кластера Azure Service Fabric в Linux с помощью Azure Resource Manager и Azure Key Vault.
-services: service-fabric
-documentationcenter: .net
-author: athinanthny
-manager: navya
-ms.assetid: 15d0ab67-fc66-4108-8038-3584eeebabaa
-ms.service: service-fabric
-ms.devlang: dotnet
 ms.topic: article
-ms.tgt_pltfrm: NA
-ms.workload: NA
 ms.date: 03/22/2019
-ms.author: atsenthi
-ms.openlocfilehash: 5bcfad63df69010851dde66b0c8935e63a509455
-ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
+ms.openlocfilehash: d990cfdee9a497135c67d99431807a85f8105b3b
+ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68599590"
+ms.lasthandoff: 01/02/2020
+ms.locfileid: "75609899"
 ---
 # <a name="enable-disk-encryption-for-azure-service-fabric-cluster-nodes-in-linux"></a>Включение шифрования дисков для узлов кластера Azure Service Fabric в Linux 
 > [!div class="op_single_selector"]
@@ -39,11 +29,11 @@ ms.locfileid: "68599590"
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
  **Самостоятельная регистрация**
 
-Для предварительного просмотра шифрования дисков в масштабируемом наборе виртуальных машин требуется самостоятельная регистрация. Выполните следующие действия.
+Для предварительного просмотра шифрования дисков в масштабируемом наборе виртуальных машин требуется самостоятельная регистрация. Выполните указанные ниже действия.
 
 1. Выполните следующую команду: 
     ```powershell
@@ -65,7 +55,7 @@ ms.locfileid: "68599590"
 3. Установите последнюю версию [пакета SDK для Azure из Azure PowerShell](https://github.com/Azure/azure-powershell/releases) выпуска. Ниже приведены командлеты для шифрования дисков Azure масштабируемого набора виртуальных машин, позволяющие включить ([настроить](/powershell/module/az.compute/set-azvmssdiskencryptionextension)) шифрование, получить ([получить](/powershell/module/az.compute/get-azvmssvmdiskencryption)) состояние шифрования и удалить ([Отключить](/powershell/module/az.compute/disable-azvmssdiskencryption)) шифрование в экземпляре масштабируемого набора.
 
 
-| Command | Version |  Source  |
+| Get-Help | Версия |  Источник  |
 | ------------- |-------------| ------------|
 | Get-Азвмссдискенкриптионстатус   | 1.0.0 или более поздняя версия | Az.Compute |
 | Get-Азвмссвмдискенкриптионстатус   | 1.0.0 или более поздняя версия | Az.Compute |
@@ -187,7 +177,7 @@ az sf cluster create --resource-group $resourceGroupName --location $resourceGro
 
 
 ### <a name="deploy-application-to-a-service-fabric-cluster-in-linux"></a>Развертывание приложения в кластере Service Fabric в Linux
-Чтобы развернуть приложение в кластере, следуйте указаниям в [кратком руководстве по: Разверните контейнеры Linux в](service-fabric-quickstart-containers-linux.md)Service Fabric.
+Чтобы развернуть приложение в кластере, следуйте инструкциям в кратком руководстве по [развертыванию контейнеров Linux в Service Fabric](service-fabric-quickstart-containers-linux.md).
 
 
 ### <a name="enable-disk-encryption-for-the-virtual-machine-scale-sets-created-previously"></a>Включение шифрования дисков для масштабируемых наборов виртуальных машин, созданных ранее
@@ -246,5 +236,5 @@ az vmss encryption disable -g <resourceGroupName> -n <VMSS name>
 ```
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 На этом этапе у вас должен быть защищенный кластер, и вы узнаете, как включить и отключить шифрование дисков для Service Fabric узлов кластера и масштабируемых наборов виртуальных машин. Аналогичные рекомендации по Service Fabric узлов кластера в Linux см. в разделе [Шифрование дисков для Windows](service-fabric-enable-azure-disk-encryption-windows.md). 

@@ -1,25 +1,16 @@
 ---
-title: Восстановление резервной копии в Azure Service Fabric | Документация Майкрософт
+title: Восстановление резервной копии в Azure Service Fabric
 description: Использование функций периодического резервного копирования и восстановления в Service Fabric для восстановления данных приложения из резервной копии.
-services: service-fabric
-documentationcenter: .net
 author: aagup
-manager: chackdan
-editor: aagup
-ms.assetid: 802F55B6-6575-4AE1-8A8E-C9B03512FF88
-ms.service: service-fabric
-ms.devlang: dotnet
 ms.topic: conceptual
-ms.tgt_pltfrm: na
-ms.workload: na
 ms.date: 10/30/2018
 ms.author: aagup
-ms.openlocfilehash: ff705eabde111b5ebac1e2d714e3ece221c36e90
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.openlocfilehash: 1737102ee652cc2263bd0a908c1336bc93a6757b
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73819331"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75377911"
 ---
 # <a name="restoring-backup-in-azure-service-fabric"></a>Восстановление резервной копии в Azure Service Fabric
 
@@ -32,7 +23,7 @@ ms.locfileid: "73819331"
 - **Случай потери данных**: случайное удаление или повреждение службы. Например, администратор ошибочно удаляет службу.
 - **Повреждение данных**: ошибки в службе приводят к повреждению данных. Например, повреждение данных может произойти, когда после обновления кода служба записывает содержащие ошибки данные в надежную коллекцию. В этом случае может потребоваться восстановить код и данные до предыдущего состояния.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 - Чтобы активировать восстановление, для кластера должна быть включена _служба анализа сбоев (FAS)_ .
 - _Служба резервного копирования и восстановления (BRS)_ создает резервную копию.
@@ -326,7 +317,7 @@ $restoreResponse | Format-List
 
 ## <a name="automatic-restore"></a>Автоматическое восстановление
 
-Для секций надежной службы с отслеживанием состояния и Reliable Actors в кластере Service Fabric можно настроить _автоматическое восстановление_. В политике резервного копирования для параметра `AutoRestore` задайте значение _true_. Если для секции включено _автоматическое восстановление_, то при обнаружении потери данных ее данные автоматически восстанавливаются из последней резервной копии. Дополнительные сведения можно найти в разделе
+Для секций надежной службы с отслеживанием состояния и Reliable Actors в кластере Service Fabric можно настроить _автоматическое восстановление_. В политике резервного копирования для параметра `AutoRestore` задайте значение _true_. Если для секции включено _автоматическое восстановление_, то при обнаружении потери данных ее данные автоматически восстанавливаются из последней резервной копии. Дополнительные сведения см. здесь:
 
 - [Включение автоматического восстановления в политике резервного копирования](service-fabric-backuprestoreservice-configure-periodic-backup.md#auto-restore-on-data-loss)
 - [Справочник по RestorePartition API](https://docs.microsoft.com/rest/api/servicefabric/sfclient-api-restorepartition)

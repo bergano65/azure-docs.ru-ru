@@ -4,16 +4,16 @@ description: Как настроить каналы телеметрии в Azur
 ms.service: azure-monitor
 ms.subservice: application-insights
 ms.topic: conceptual
-author: cijothomas
-ms.author: cithomas
+author: mrbullwinkle
+ms.author: mbullwin
 ms.date: 05/14/2019
 ms.reviewer: mbullwin
-ms.openlocfilehash: cef8a06fb7e4cfb713d6531f23df9ae9c5836b68
-ms.sourcegitcommit: 4821b7b644d251593e211b150fcafa430c1accf0
+ms.openlocfilehash: cef35ae5cb2b66385332a3b1f9ebe177ea26a3e4
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74173611"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75406364"
 ---
 # <a name="telemetry-channels-in-application-insights"></a>Каналы телеметрии в Application Insights
 
@@ -128,7 +128,7 @@ TelemetryConfiguration.Active.TelemetryChannel = serverTelemetryChannel;
 
 1. `MaxTransmissionBufferCapacity`: максимальный объем памяти в байтах, используемый каналом для передачи данных в буфер памяти. При достижении этой емкости новые элементы хранятся непосредственно на локальном диске. Значение по умолчанию — 5 МБ. Если задать более высокое значение, это приводит к меньшему использованию дискового пространства, но помните, что элементы в памяти будут потеряны при сбое приложения.
 
-1. `MaxTransmissionSenderCapacity`: максимальное число экземпляров `Transmission`, которые будут отправлены в Application Insights в одно и то же время. Значение по умолчанию — 10. Для этого параметра можно задать большее значение, что рекомендуется при создании огромного объема данных телеметрии. Большое количество томов обычно происходит во время нагрузочного тестирования или при отключении выборки.
+1. `MaxTransmissionSenderCapacity`: максимальное число экземпляров `Transmission`, которые будут отправлены в Application Insights в одно и то же время. Значение по умолчанию — 10. Для этого параметра можно задать большее значение, что рекомендуется при создании огромного объема данных телеметрии. Большое количество томов обычно происходит во время нагрузочного тестирования или при отключении выборки.
 
 1. `StorageFolder`: папка, используемая каналом для хранения элементов на диске по мере необходимости. В Windows используется либо% LOCALAPPDATA%, либо% TEMP%, если никакой другой путь не указан явным образом. В средах, отличных от Windows, необходимо указать допустимое расположение или данные телеметрии, которые не будут храниться на локальном диске.
 
@@ -146,7 +146,7 @@ TelemetryConfiguration.Active.TelemetryChannel = serverTelemetryChannel;
 
 1. При сбое приложения элементы в памяти теряются.
 
-1. Данные телеметрии теряются в течение продолжительных периодов сетевых проблем. Данные телеметрии сохраняются на локальном диске во время простоя сети или при возникновении проблем с серверной части Application Insights. Однако элементы старше 24 часов отбрасываются.
+1. Данные телеметрии теряются в течение продолжительных периодов сетевых проблем. Данные телеметрии сохраняются на локальном диске во время простоя сети или при возникновении проблем с серверной части Application Insights. Однако элементы, возраст которых превышает 48 часов, отбрасываются.
 
 1. Места хранения телеметрии в Windows по умолчанию:% LOCALAPPDATA% или% TEMP%. Эти расположения обычно являются локальными для компьютера. Если приложение переносится физически из одного расположения в другое, все данные телеметрии, хранящиеся в исходном расположении, теряются.
 
@@ -168,7 +168,7 @@ TelemetryConfiguration.Active.TelemetryChannel = serverTelemetryChannel;
 ## <a name="open-source-sdk"></a>Пакет SDK с открытым исходным кодом
 Как и каждый пакет SDK для Application Insights, каналы являются открытым кодом. Прочтите и отучите код или сообщите о проблемах в [официальном репозитории GitHub](https://github.com/Microsoft/ApplicationInsights-dotnet).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Выборка](../../azure-monitor/app/sampling.md)
 * [Устранение неполадок пакета SDK](../../azure-monitor/app/asp-net-troubleshoot-no-data.md)

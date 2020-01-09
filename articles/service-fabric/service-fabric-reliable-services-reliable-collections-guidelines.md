@@ -1,25 +1,14 @@
 ---
-title: Инструкции и рекомендации для надежных коллекций в Azure Service Fabric | Документация Майкрософт
-description: Правила и рекомендации по использованию надежных коллекций Service Fabric
-services: service-fabric
-documentationcenter: .net
-author: athinanthny
-manager: chackdan
-editor: masnider,rajak,zhol
-ms.assetid: 62857523-604b-434e-bd1c-2141ea4b00d1
-ms.service: service-fabric
-ms.devlang: dotnet
+title: Рекомендации для надежных коллекций
+description: Рекомендации и рекомендации по использованию Service Fabric надежных коллекций в приложении Service Fabric Azure.
 ms.topic: conceptual
-ms.tgt_pltfrm: na
-ms.workload: required
 ms.date: 12/10/2017
-ms.author: atsenthi
-ms.openlocfilehash: dc7d60cb846aa16f2facd41f5b6b7ce52bcc8f41
-ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
+ms.openlocfilehash: 37c734205877f9e0cb98ef2834462691e8e483d9
+ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68599335"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75645486"
 ---
 # <a name="guidelines-and-recommendations-for-reliable-collections-in-azure-service-fabric"></a>Инструкции и рекомендации для надежных коллекций в Azure Service Fabric
 В этом разделе приведены инструкции по использованию надежных коллекций и диспетчера надежных состояний. Цель этого руководства — помочь пользователям избежать распространенных ошибок.
@@ -32,7 +21,7 @@ ms.locfileid: "68599335"
 * Не используйте транзакцию после того, как она была зафиксирована, прервана или удалена.
 * Не используйте перечисление за пределами области транзакции, в которой оно было создано.
 * Не создавайте транзакцию в операторе `using` другой транзакции, так как это может привести к возникновению взаимоблокировки.
-* Не создавайте надежное состояние `IReliableStateManager.GetOrAddAsync` с помощью и используйте надежное состояние в той же транзакции. Это приводит к возникновению исключения InvalidOperationException.
+* Не создавайте надежное состояние с `IReliableStateManager.GetOrAddAsync` и используйте надежное состояние в той же транзакции. Это приводит к возникновению исключения InvalidOperationException.
 * Убедитесь, что реализация `IComparable<TKey>` правильна. Система использует соответствующую зависимость `IComparable<TKey>` для слияния контрольных точек и строк.
 * Используете блокировку изменения при чтении элемента с целью обновить его, чтобы предотвратить взаимоблокировки определенного класса.
 * Рекомендуем использовать менее 1000 надежных коллекций на раздел. Лучше использовать большее количество элементов в надежных коллекциях, чем большее количество надежных коллекций с меньшим количеством элементов.
@@ -52,7 +41,7 @@ ms.locfileid: "68599335"
   Чтение из базы данных-источника всегда стабильно и не может вызывать ложное увеличение номера версии.
 * Вы несете ответственность за обеспечение безопасности и конфиденциальности данных, сохраненных приложением в надежной коллекции. К этим данным применяются средства защиты, предоставляемые, к примеру, службой управления хранилищем. Для защиты неактивных данных можно использовать шифрование диска операционной системы.  
 
-### <a name="next-steps"></a>Следующие шаги
+### <a name="next-steps"></a>Дальнейшие действия
 * [Работа с надежными коллекциями](service-fabric-work-with-reliable-collections.md)
 * [Транзакции и блокировки](service-fabric-reliable-services-reliable-collections-transactions-locks.md)
 * Управление данными
@@ -60,6 +49,6 @@ ms.locfileid: "68599335"
   * [Уведомления](service-fabric-reliable-services-notifications.md)
   * [Влияние сериализации данных на обновление приложений](service-fabric-application-upgrade-data-serialization.md)
   * [Конфигурация диспетчера надежных состояний](service-fabric-reliable-services-configuration.md)
-* Другие
+* Прочее
   * [Краткое руководство по надежным службам Reliable Services](service-fabric-reliable-services-quick-start.md)
   * [Справочник разработчика по надежным коллекциям](https://msdn.microsoft.com/library/azure/microsoft.servicefabric.data.collections.aspx)

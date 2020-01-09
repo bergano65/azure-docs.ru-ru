@@ -1,39 +1,30 @@
 ---
-title: Развертывание приложения Node.js, использующего MongoDB, в Azure Service Fabric | Документация Майкрософт
+title: Развертывание приложения Node. js, использующего MongoDB
 description: Пошаговое руководство по упаковке нескольких пользовательских приложений для развертывания в кластере Service Fabric в Azure
-services: service-fabric
-documentationcenter: .net
 author: mikkelhegn
-manager: chackdan
-editor: ''
-ms.assetid: b76bb756-c1ba-49f9-9666-e9807cf8f92f
-ms.service: service-fabric
-ms.devlang: dotnet
 ms.topic: conceptual
-ms.tgt_pltfrm: NA
-ms.workload: NA
 ms.date: 02/23/2018
 ms.author: mikhegn
-ms.openlocfilehash: 677a9d02493bf5fac1bfcbe8c40ce9efe2040be9
-ms.sourcegitcommit: 084630bb22ae4cf037794923a1ef602d84831c57
+ms.openlocfilehash: 4538efc8a2426fc20dd20d1a85edaf6f76bfc649
+ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67537747"
+ms.lasthandoff: 01/02/2020
+ms.locfileid: "75614474"
 ---
-# <a name="deploy-multiple-guest-executables"></a>Развертывание нескольких пользовательских приложений
+# <a name="deploy-multiple-guest-executables"></a>Развертывание нескольких гостевых приложений
 В этой статье показано, как упаковать и развернуть несколько гостевых исполняемых файлов в Azure Service Fabric. Чтобы выполнить сборку и развертывание отдельного пакета Service Fabric вручную, ознакомьтесь с [развертыванием гостевого исполняемого файла в Service Fabric](service-fabric-deploy-existing-app.md).
 
 Хотя в этом пошаговом руководстве показано, как развернуть приложение с клиентом Node.js и MongoDB в качестве хранилища данных, эти действия можно применить к любому приложению, которое зависит от другого приложения.   
 
-Visual Studio можно использовать для создания пакета приложения, содержащего несколько гостевых исполняемых файлов. Ознакомьтесь с разделом [Упаковка имеющегося приложения с использованием Visual Studio](service-fabric-deploy-existing-app.md). После добавления первого гостевого исполняемого файла щелкните правой кнопкой мыши проект приложения и выберите **Добавить > Новая служба Service Fabric**, чтобы добавить в решение проект второго гостевого исполняемого файла. Примечание. Если связать источник с проектом Visual Studio, при построении решения Visual Studio следует убедиться, что в пакете приложения отображаются последние изменения в источнике. 
+Visual Studio можно использовать для создания пакета приложения, содержащего несколько гостевых исполняемых файлов. Ознакомьтесь с разделом [Упаковка имеющегося приложения с использованием Visual Studio](service-fabric-deploy-existing-app.md). После добавления первого гостевого исполняемого файла щелкните правой кнопкой мыши проект приложения и выберите **Добавить > Новая служба Service Fabric**, чтобы добавить в решение проект второго гостевого исполняемого файла. Примечание. Если связать источник с проектом Visual Studio, то при выполнении сборки решения Visual Studio следует убедиться, что в пакете приложения отображаются последние изменения в источнике. 
 
 ## <a name="samples"></a>Примеры
 * [Пример для упаковки и развертывания гостевого исполняемого файла](https://github.com/Azure-Samples/service-fabric-dotnet-getting-started)
 * [Пример двух гостевых исполняемых файлов (C# и Node.js), которые взаимодействуют через службу именования с помощью REST](https://github.com/Azure-Samples/service-fabric-containers)
 
 ## <a name="manually-package-the-multiple-guest-executable-application"></a>Упаковка нескольких гостевых исполняемых файлов вручную
-В качестве альтернативы можно вручную можно упаковать гостевой исполняемый файл. Дополнительные сведения см. в разделе [упаковка и развертывание существующего исполняемого файла вручную](service-fabric-deploy-existing-app.md#manually-package-and-deploy-an-existing-executable).
+В качестве альтернативы можно вручную можно упаковать гостевой исполняемый файл. Дополнительные сведения см. [в разделе Упаковка и развертывание существующего исполняемого файла вручную](service-fabric-deploy-existing-app.md#manually-package-and-deploy-an-existing-executable).
 
 ### <a name="packaging-the-nodejs-application"></a>Упаковка приложения Node.js
 В этой статье предполагается, что Node.js не установлен на узлах в кластере Service Fabric. Следовательно, необходимо добавить Node.exe в корневой каталог приложения узла перед упаковкой. Структура каталогов приложения Node.js (использующего веб-платформу Express и подсистему шаблонов Jade) должна быть аналогична приведенной ниже.
@@ -204,7 +195,7 @@ Register-ServiceFabricApplicationType -ApplicationPathInImageStore 'NodeAppType'
 New-ServiceFabricApplication -ApplicationName 'fabric:/NodeApp' -ApplicationTypeName 'NodeAppType' -ApplicationTypeVersion 1.0  
 ```
 
-После приложение успешно опубликовано в локальном кластере, можно получить доступ к приложению Node.js через порт, который мы ввели в манифесте службы приложения Node.js, например http:\//localhost:3000.
+После успешной публикации приложения в локальном кластере можно получить доступ к приложению Node. js на порте, который мы указали в манифесте службы приложения Node. js, например http:\//ЛОКАЛХОСТ: 3000.
 
 Из этого учебника вы узнали, как легко упаковать два существующих приложения в одно приложение Service Fabric. Кроме того, вы узнали, как развернуть его в Service Fabric, так чтобы воспользоваться преимуществами некоторых функций Service Fabric, таких как высокая доступность и система контроля работоспособности.
 

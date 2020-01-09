@@ -8,12 +8,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 08/06/2019
 ms.author: laevenso
-ms.openlocfilehash: f0975d0a60081b66d3d5a513954deb0c4fa1b978
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: cfd69ebf6408acaa2938271ba87f36768416de80
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68851552"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75442947"
 ---
 # <a name="http-application-routing"></a>Маршрутизация приложений HTTP
 
@@ -28,12 +28,12 @@ ms.locfileid: "68851552"
 
 Надстройка развертывает два компонента: контроллер входящего трафика [Kubernetes][ingress] и контроллер [внешнего DNS][external-dns] .
 
-- **Контроллер входящего трафика**. Доступ к контроллеру входящего трафика в Интернете предоставляется с помощью службы Azure Kubernetes типа LoadBalancer. Входной контроллер отслеживает и реализует Kubernetes входящие [ресурсы][ingress-resource], которые создают маршруты к конечным точкам приложения.
-- **Контроллер внешних DNS**. Отслеживает ресурсы входящего трафика службы Azure Kubernetes и создает DNS-записи A в зоне DNS определенного кластера.
+- **Контроллер входящего трафика**. Доступ к контроллеру входящего трафика в Интернете предоставляется с помощью Службы Azure Kubernetes типа LoadBalancer. Входной контроллер отслеживает и реализует Kubernetes входящие [ресурсы][ingress-resource], которые создают маршруты к конечным точкам приложения.
+- **Контроллер внешних DNS**. Отслеживает ресурсы входящего трафика Службы Azure Kubernetes и создает записи A DNS в зоне DNS с определенным кластером.
 
-## <a name="deploy-http-routing-cli"></a>Развертывание маршрутизации HTTP-трафика CLI
+## <a name="deploy-http-routing-cli"></a>Развертывание маршрутизации HTTP-трафика: CLI
 
-Надстройку для маршрутизации приложений HTTP можно активировать с помощью Azure CLI при развертывании кластера AKS. Для этого используйте команду [AZ AKS Create][az-aks-create] с `--enable-addons` аргументом.
+Надстройку для маршрутизации приложений HTTP можно активировать с помощью Azure CLI при развертывании кластера AKS. Для этого используйте команду [AZ AKS Create][az-aks-create] с аргументом `--enable-addons`.
 
 ```azurecli
 az aks create --resource-group myResourceGroup --name myAKSCluster --enable-addons http_application_routing
@@ -51,14 +51,15 @@ az aks enable-addons --resource-group myResourceGroup --name myAKSCluster --addo
 После развертывания или обновления кластера используйте команду [AZ AKS показывать][az-aks-show] , чтобы получить имя зоны DNS. Оно потребуется, чтобы развертывать приложения в кластер службы AKS.
 
 ```azurecli
-$ az aks show --resource-group myResourceGroup --name myAKSCluster --query addonProfiles.httpApplicationRouting.config.HTTPApplicationRoutingZoneName -o table
-
-Result
------------------------------------------------------
-9f9c1fe7-21a1-416d-99cd-3543bb92e4c3.eastus.aksapp.io
+az aks show --resource-group myResourceGroup --name myAKSCluster --query addonProfiles.httpapplicationrouting.config.HTTPApplicationRoutingZoneName -o table
 ```
 
-## <a name="deploy-http-routing-portal"></a>Развертывание маршрутизации HTTP-трафика Портал
+Результат
+
+9f9c1fe7-21a1-416d-99cd-3543bb92e4c3.eastus.aksapp.io
+
+
+## <a name="deploy-http-routing-portal"></a>Развертывание маршрутизации HTTP-трафика: портал
 
 При развертывании кластера службы AKS надстройку для маршрутизации приложений HTTP можно активировать на портале Azure.
 
@@ -273,7 +274,7 @@ service "party-clippy" deleted
 ingress "party-clippy" deleted
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Сведения об установке контроллера входящего трафика HTTPS в AKS см. в статье входящий трафик [HTTPS в службе Kubernetes Azure (AKS)][ingress-https].
 

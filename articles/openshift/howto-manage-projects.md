@@ -8,12 +8,12 @@ ms.author: b-majude
 ms.date: 07/19/2019
 ms.topic: conceptual
 ms.service: container-service
-ms.openlocfilehash: 5028ce3c71538e67b50a15abb6076871d5af7050
-ms.sourcegitcommit: a6888fba33fc20cc6a850e436f8f1d300d03771f
+ms.openlocfilehash: d88be50468f55a848b43613e1f7851621202052d
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69559612"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75378234"
 ---
 # <a name="manage-projects-templates-image-streams-in-an-azure-red-hat-openshift-cluster"></a>Управление проектами, шаблонами, потоками изображений в кластере Azure Red Hat OpenShift 
 
@@ -21,15 +21,15 @@ ms.locfileid: "69559612"
 
 ## <a name="self-provisioning-projects"></a>Самостоятельная подготовка проектов
 
-Вы можете позволить разработчикам создавать собственные проекты. Конечная точка API отвечает за подготовку проекта в соответствии с шаблоном, который называется Project-Request. Веб-консоль и `oc new-project` команда используют эту конечную точку, когда разработчик создает новый проект.
+Вы можете позволить разработчикам создавать собственные проекты. Конечная точка API отвечает за подготовку проекта в соответствии с шаблоном, который называется Project-Request. Веб-консоль и команда `oc new-project` используют эту конечную точку, когда разработчик создает новый проект.
 
 При отправке запроса проекта API заменяет следующие параметры в шаблоне:
 
-| Параметр               | Описание                                    |
+| Параметр               | Description                                    |
 | ----------------------- | ---------------------------------------------- |
-| PROJECT_NAME            | Имя проекта. Обязательный.             |
-| PROJECT_DISPLAYNAME     | Отображаемое имя проекта. Может быть пустым. |
-| PROJECT_DESCRIPTION     | Описание проекта. Может быть пустым.  |
+| PROJECT_NAME            | Имя проекта. Обязательный элемент.             |
+| PROJECT_DISPLAYNAME     | Отображаемое имя проекта. Значение может быть пустым. |
+| PROJECT_DESCRIPTION     | Описание проекта. Значение может быть пустым.  |
 | PROJECT_ADMIN_USER      | Имя пользователя для администрирования.       |
 | PROJECT_REQUESTING_USER | Имя пользователя запрашивающего пользователя.           |
 
@@ -37,7 +37,7 @@ ms.locfileid: "69559612"
 
 ## <a name="modify-the-template-for-a-new-project"></a>Изменение шаблона для нового проекта 
 
-1. Войдите в систему как пользователь с `customer-admin` правами доступа.
+1. Войдите в систему как пользователь с правами `customer-admin`.
 
 2. Измените шаблон запроса проекта по умолчанию.
 
@@ -45,7 +45,7 @@ ms.locfileid: "69559612"
    oc edit template project-request -n openshift
    ```
 
-3. Удалите шаблон проекта по умолчанию из процесса обновления Azure Red Hat OpenShift (АТО), добавив следующую аннотацию:`openshift.io/reconcile-protect: "true"`
+3. Удалите шаблон проекта по умолчанию из процесса обновления Azure Red Hat OpenShift (АТО), добавив следующую аннотацию: `openshift.io/reconcile-protect: "true"`
 
    ```
    ...
@@ -61,12 +61,12 @@ ms.locfileid: "69559612"
 
 Вы можете предотвратить самостоятельную подготовку новых проектов для группы пользователей, прошедших проверку подлинности.
 
-1. Войдите в систему как пользователь с `customer-admin` правами доступа.
+1. Войдите в систему как пользователь с правами `customer-admin`.
 
 2. Измените привязку роли кластера самоподготовки.
 
    ```
-   oc edit clusterrolebinding self-provisioners
+   oc edit clusterrolebinding.rbac.authorization.k8s.io self-provisioners
    ```
 
 3. Удалите роль из процесса обновления АТО, добавив следующую аннотацию: `openshift.io/reconcile-protect: "true"`.
@@ -79,10 +79,10 @@ ms.locfileid: "69559612"
    ...
    ```
 
-4. Измените привязку роли кластера, чтобы `system:authenticated:oauth` предотвратить создание проектов:
+4. Измените привязку роли кластера, чтобы предотвратить `system:authenticated:oauth` создания проектов:
 
    ```
-   apiVersion: authorization.openshift.io/v1
+   apiVersion: rbac.authorization.k8s.io/v1
    groupNames:
    - osa-customer-admins
    kind: ClusterRoleBinding
@@ -101,18 +101,18 @@ ms.locfileid: "69559612"
 
 ## <a name="manage-default-templates-and-imagestreams"></a>Управление шаблонами по умолчанию и Имажестреамс
 
-В Azure Red Hat OpenShift можно отключить обновления для всех шаблонов по умолчанию и потоков изображений внутри `openshift` пространства имен.
-Чтобы отключить обновления для всех `Templates` и `ImageStreams` в `openshift` пространстве имен, выполните следующие действия.
+В Azure Red Hat OpenShift можно отключить обновления для любых шаблонов по умолчанию и потоков изображений в `openshift` пространстве имен.
+Чтобы отключить обновления для всех `Templates` и `ImageStreams` в пространстве имен `openshift`:
 
-1. Войдите в систему как пользователь с `customer-admin` правами доступа.
+1. Войдите в систему как пользователь с правами `customer-admin`.
 
-2. Изменить `openshift` пространство имен:
+2. Изменить `openshift`ое пространство имен:
 
    ```
    oc edit namespace openshift
    ```
 
-3. Удалите `openshift` пространство имен из процесса обновления АТО, добавив следующую аннотацию:`openshift.io/reconcile-protect: "true"`
+3. Удалите `openshift` пространство имен из процесса обновления АТО, добавив следующую аннотацию: `openshift.io/reconcile-protect: "true"`
 
    ```
    ...
@@ -122,9 +122,9 @@ ms.locfileid: "69559612"
    ...
    ```
 
-   Любой отдельный объект в `openshift` пространстве имен можно удалить из процесса обновления, добавив к нему заметку. `openshift.io/reconcile-protect: "true"`
+   Любой отдельный объект в пространстве имен `openshift` можно удалить из процесса обновления, добавив в него заметку `openshift.io/reconcile-protect: "true"`.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Воспользуйтесь руководством.
 > [!div class="nextstepaction"]

@@ -1,25 +1,14 @@
 ---
-title: Создание кластера Service Fabric на портале Azure | Документы Майкрософт
+title: Создание кластера Service Fabric в портал Azure
 description: Узнайте, как настроить защищенный кластер Service Fabric в Azure с помощью портала Azure и Azure Key Vault.
-services: service-fabric
-documentationcenter: .net
-author: athinanthny
-manager: chackdan
-editor: vturecek
-ms.assetid: 426c3d13-127a-49eb-a54c-6bde7c87a83b
-ms.service: service-fabric
-ms.devlang: dotnet
 ms.topic: conceptual
-ms.tgt_pltfrm: NA
-ms.workload: NA
 ms.date: 09/06/2018
-ms.author: atsenthi
-ms.openlocfilehash: ca050e19ed37e2895507507338ebf4b4217851b6
-ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
+ms.openlocfilehash: 0f384da75f09390e9b0988722b974e7e16d13e63
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72934057"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75452302"
 ---
 # <a name="create-a-service-fabric-cluster-in-azure-using-the-azure-portal"></a>Создание кластера Service Fabric в Azure с помощью портала Azure
 > [!div class="op_single_selector"]
@@ -79,7 +68,7 @@ ms.locfileid: "72934057"
 
 ### <a name="search-for-the-service-fabric-cluster-resource"></a>Поиск кластерных ресурсов Service Fabric
 
-Войдите на [портале Azure][azure-portal].
+Войдите на [портал Azure][azure-portal].
 Чтобы добавить новый шаблон ресурсов, щелкните **Создать ресурс**. Найдите шаблон "Кластер Service Fabric" в **Marketplace** в разделе **Все**.
 Выберите в списке **Кластер Service Fabric** .
 
@@ -184,7 +173,7 @@ ms.locfileid: "72934057"
 
 Для завершения создания кластера щелкните **Создать**. При необходимости можно скачать шаблон.
 
-![Резюме]
+![Сводка]
 
 Ход создания кластера будет отображаться в области уведомлений. (Щелкните значок колокольчика рядом со строкой состояния в правом верхнем углу экрана.) Если вы щелкнули **закрепить в начальной панели** при создании кластера, вы увидите, что **Service Fabric кластер** будет закреплен на **начальной** доске. Этот процесс может занять некоторое время. 
 

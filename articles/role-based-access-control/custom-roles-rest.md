@@ -1,5 +1,5 @@
 ---
-title: Создание пользовательских или обновленных ролей для ресурсов Azure с помощью REST API Azure | Документация Майкрософт
+title: Создание или обновление пользовательских ролей для ресурсов Azure с помощью REST API Azure | Документация Майкрософт
 description: Узнайте, как перечислять, создавать, обновлять и удалять пользовательские роли с помощью управления доступом на основе ролей (RBAC) для ресурсов Azure, используя REST API.
 services: active-directory
 documentationcenter: na
@@ -15,12 +15,12 @@ ms.topic: conceptual
 ms.date: 04/18/2019
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: 2e5dcd7593ba0992337396bc7c05cc30351644dc
-ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
+ms.openlocfilehash: 474de8934ec7e27df601fe80809566a801e6af61
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74702983"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75452940"
 ---
 # <a name="create-or-update-custom-roles-for-azure-resources-using-the-rest-api"></a>Создание или обновление пользовательских ролей для ресурсов Azure с помощью REST API
 
@@ -38,7 +38,7 @@ ms.locfileid: "74702983"
 
 1. Замените *{Filter}* типом роли.
 
-    | Фильтр | Описание |
+    | Фильтр | Description |
     | --- | --- |
     | `$filter=type%20eq%20'CustomRole'` | Фильтр, основанный на типе Кустомроле |
 
@@ -57,12 +57,12 @@ ms.locfileid: "74702983"
     | Область действия | Тип |
     | --- | --- |
     | `subscriptions/{subscriptionId}` | Subscription |
-    | `subscriptions/{subscriptionId}/resourceGroups/myresourcegroup1` | группа ресурсов. |
+    | `subscriptions/{subscriptionId}/resourceGroups/myresourcegroup1` | Группа ресурсов |
     | `subscriptions/{subscriptionId}/resourceGroups/myresourcegroup1/ providers/Microsoft.Web/sites/mysite1` | Ресурс |
 
 1. Замените *{Filter}* типом роли.
 
-    | Фильтр | Описание |
+    | Фильтр | Description |
     | --- | --- |
     | `$filter=type%20eq%20'CustomRole'` | Фильтр, основанный на типе Кустомроле |
 
@@ -81,12 +81,12 @@ ms.locfileid: "74702983"
     | Область действия | Тип |
     | --- | --- |
     | `subscriptions/{subscriptionId}` | Subscription |
-    | `subscriptions/{subscriptionId}/resourceGroups/myresourcegroup1` | группа ресурсов. |
+    | `subscriptions/{subscriptionId}/resourceGroups/myresourcegroup1` | Группа ресурсов |
     | `subscriptions/{subscriptionId}/resourceGroups/myresourcegroup1/ providers/Microsoft.Web/sites/mysite1` | Ресурс |
 
 1. Замените *{Filter}* отображаемым именем роли.
 
-    | Фильтр | Описание |
+    | Фильтр | Description |
     | --- | --- |
     | `$filter=roleName%20eq%20'{roleDisplayName}'` | Используйте точное отображаемое имя роли в формате URL-адреса. Например, `$filter=roleName%20eq%20'Virtual%20Machine%20Contributor'` |
 
@@ -107,7 +107,7 @@ ms.locfileid: "74702983"
     | Область действия | Тип |
     | --- | --- |
     | `subscriptions/{subscriptionId}` | Subscription |
-    | `subscriptions/{subscriptionId}/resourceGroups/myresourcegroup1` | группа ресурсов. |
+    | `subscriptions/{subscriptionId}/resourceGroups/myresourcegroup1` | Группа ресурсов |
     | `subscriptions/{subscriptionId}/resourceGroups/myresourcegroup1/ providers/Microsoft.Web/sites/mysite1` | Ресурс |
 
 1. Замените *{roleDefinitionId}* на идентификатор GUID определения роли.
@@ -155,7 +155,7 @@ ms.locfileid: "74702983"
     | Область действия | Тип |
     | --- | --- |
     | `subscriptions/{subscriptionId}` | Subscription |
-    | `subscriptions/{subscriptionId}/resourceGroups/myresourcegroup1` | группа ресурсов. |
+    | `subscriptions/{subscriptionId}/resourceGroups/myresourcegroup1` | Группа ресурсов |
     | `subscriptions/{subscriptionId}/resourceGroups/myresourcegroup1/ providers/Microsoft.Web/sites/mysite1` | Ресурс |
 
 1. Замените *{role-definition-id}* на идентификатор GUID пользовательской роли.
@@ -220,7 +220,7 @@ ms.locfileid: "74702983"
     | Область действия | Тип |
     | --- | --- |
     | `subscriptions/{subscriptionId}` | Subscription |
-    | `subscriptions/{subscriptionId}/resourceGroups/myresourcegroup1` | группа ресурсов. |
+    | `subscriptions/{subscriptionId}/resourceGroups/myresourcegroup1` | Группа ресурсов |
     | `subscriptions/{subscriptionId}/resourceGroups/myresourcegroup1/ providers/Microsoft.Web/sites/mysite1` | Ресурс |
 
 1. Замените *{role-definition-id}* на идентификатор GUID пользовательской роли.
@@ -304,7 +304,7 @@ ms.locfileid: "74702983"
     | Область действия | Тип |
     | --- | --- |
     | `subscriptions/{subscriptionId}` | Subscription |
-    | `subscriptions/{subscriptionId}/resourceGroups/myresourcegroup1` | группа ресурсов. |
+    | `subscriptions/{subscriptionId}/resourceGroups/myresourcegroup1` | Группа ресурсов |
     | `subscriptions/{subscriptionId}/resourceGroups/myresourcegroup1/ providers/Microsoft.Web/sites/mysite1` | Ресурс |
 
 1. Замените *{role-definition-id}* на идентификатор GUID пользовательской роли.

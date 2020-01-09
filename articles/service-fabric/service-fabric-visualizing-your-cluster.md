@@ -1,27 +1,18 @@
 ---
-title: Визуализация кластера с помощью Azure Service Fabric Explorer | Документация Майкрософт
+title: Визуализация кластера с помощью Azure Service Fabric Explorer
 description: Service Fabric Explorer — это приложение для изучения облачных приложений и узлов в кластере Microsoft Azure Service Fabric и управления ими.
-services: service-fabric
-documentationcenter: .net
 author: mikkelhegn
-manager: msfussell
-editor: ''
-ms.assetid: c875b993-b4eb-494b-94b5-e02f5eddbd6a
-ms.service: service-fabric
-ms.devlang: dotnet
 ms.topic: conceptual
-ms.tgt_pltfrm: na
-ms.workload: na
 ms.date: 01/24/2019
 ms.author: mikhegn
-ms.openlocfilehash: 9b873b5a68979b8225c44c32e0b9494408e35ac1
-ms.sourcegitcommit: a10074461cf112a00fec7e14ba700435173cd3ef
+ms.openlocfilehash: 80e3d990b6e8026c57ffff0048d0447a95529564
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73927181"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75464116"
 ---
-# <a name="visualize-your-cluster-with-service-fabric-explorer"></a>Визуализация кластера с помощью Service Fabric Explorer
+# <a name="visualize-your-cluster-with-service-fabric-explorer"></a>Визуализация кластера с использованием Service Fabric Explorer
 
 Service Fabric Explorer (SFX) — это инструмент с открытым кодом, предназначенный для проверки кластеров Azure Service Fabric и управления ими. Service Fabric Explorer — это классическое приложение для Windows, macOS и Linux.
 
@@ -36,7 +27,7 @@ Service Fabric Explorer (SFX) — это инструмент с открыты�
   - https://aka.ms/sfx-linux-x86
   - https://aka.ms/sfx-linux-x64
 
-- macOS
+- MacOS
   - https://aka.ms/sfx-macos
 
 > [!NOTE]
@@ -128,7 +119,7 @@ EventStore — это функция, предлагаемая этой пла�
 
 ![Схема кластера в обозревателе Service Fabric][sfx-imagestore]
 
-## <a name="backup-and-restore"></a>Архивация и восстановление
+## <a name="backup-and-restore"></a>Резервное копирование и восстановление
 Service Fabric Explorer предлагает возможность взаимодействия с [резервным копированием и восстановлением](./service-fabric-reliable-services-backup-restore.md). Для просмотра функций резервного копирования и восстановления в SFX необходимо включить расширенный режим.
 
 ![Включить расширенный режим][0]
@@ -142,7 +133,7 @@ Service Fabric Explorer предлагает возможность взаимо
 * Активация и отслеживание восстановления для секции.
 
 Дополнительные сведения о службе резервного копирования и восстановления см. в [справочнике по REST API](https://docs.microsoft.com/rest/api/servicefabric/sfclient-index-backuprestore).
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * [Управление приложениями Service Fabric в Visual Studio](service-fabric-manage-application-in-visual-studio.md)
 * [Развертывание приложений Service Fabric с помощью PowerShell](service-fabric-deploy-remove-applications.md)
 

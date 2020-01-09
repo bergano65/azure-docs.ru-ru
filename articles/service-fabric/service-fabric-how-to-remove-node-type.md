@@ -1,25 +1,14 @@
 ---
-title: Удаление типа узла в Azure Service Fabric | Документация Майкрософт
+title: Удаление типа узла в Service Fabric Azure
 description: Узнайте, как удалить тип узла из кластера Service Fabric, работающего в Azure.
-services: service-fabric
-documentationcenter: .net
-author: athinanthny
-manager: chakdan
-editor: vturecek
-ms.assetid: ''
-ms.service: service-fabric
-ms.devlang: dotnet
 ms.topic: conceptual
-ms.tgt_pltfrm: NA
-ms.workload: NA
 ms.date: 02/14/2019
-ms.author: atsenthi
-ms.openlocfilehash: 44f25adf4168f4339a31e9270c2b23a8466a8889
-ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
+ms.openlocfilehash: f3dc3210fdb436038174bb8d9347424f14d3faa3
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68599488"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75464506"
 ---
 # <a name="remove-a-service-fabric-node-type"></a>Удаление типа узла Service Fabric
 В этой статье описывается, как масштабировать кластер Azure Service Fabric путем удаления существующего типа узла из кластера. Кластер Service Fabric — это подключенный к сети набор виртуальных машин или физических компьютеров, в котором вы развертываете микрослужбы и управляете ими. Компьютер или виртуальная машина, которая входит в состав кластера. Масштабируемые наборы виртуальных машин относятся к вычислительным ресурсам Azure. Их можно использовать для развертывания коллекции виртуальных машин и управления ею как набором. Каждый тип узла, определенный в кластере Azure, [настроен как отдельный масштабируемый набор](service-fabric-cluster-nodetypes.md). Затем каждым типом узла можно управлять отдельно. После создания кластера Service Fabric вы можете масштабировать кластер по горизонтали, удалив тип узла (масштабируемый набор виртуальных машин) и все его узлы.  Кластер можно масштабировать в любое время, даже когда в нем выполняются рабочие нагрузки.  Вместе с кластером автоматически масштабируются ваши приложения.
@@ -80,7 +69,7 @@ Foreach($node in $nodes)
 }
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - Дополнительные сведения о [характеристиках устойчивости](https://docs.microsoft.com/azure/service-fabric/service-fabric-cluster-capacity#the-durability-characteristics-of-the-cluster) кластера.
 - Дополнительные сведения о [типах узлов и масштабируемых наборах виртуальных машин](service-fabric-cluster-nodetypes.md).
 - Дополнительные сведения о [масштабировании кластеров Service Fabric](service-fabric-cluster-scaling.md).

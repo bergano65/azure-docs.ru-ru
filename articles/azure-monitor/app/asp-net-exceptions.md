@@ -1,5 +1,5 @@
 ---
-title: Диагностика ошибок и исключений в веб-приложениях с помощью Application Insights | Документация Майкрософт
+title: Диагностика сбоев и исключений с помощью Azure Application Insights
 description: Регистрируйте исключения приложений ASP.NET и телеметрию запросов.
 ms.service: azure-monitor
 ms.subservice: application-insights
@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: mrbullwinkle
 ms.author: mbullwin
 ms.date: 07/11/2019
-ms.openlocfilehash: 90f03baa35d0bf2b63ec480a23db30409df3845f
-ms.sourcegitcommit: 1bd2207c69a0c45076848a094292735faa012d22
+ms.openlocfilehash: f89149de9b1173a659176f686053e8dc564ab85c
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72677748"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75432654"
 ---
 # <a name="diagnose-exceptions-in-your-web-apps-with-application-insights"></a>Диагностика исключений в веб-приложениях с помощью Application Insights
 Об исключениях активного веб-приложения сообщает [Application Insights](../../azure-monitor/app/app-insights-overview.md). Вы можете сопоставлять неудачно завершенные запросы с исключениями и другими событиями на клиенте и сервере, чтобы быстро выявлять причины неполадок.
@@ -257,7 +257,7 @@ public class GoodController : ApiController
     ...
 ```
 
-[Пример](https://github.com/AppInsightsSamples/Mvc2UnhandledExceptions)
+[Образец](https://github.com/AppInsightsSamples/Mvc2UnhandledExceptions)
 
 #### <a name="mvc-3"></a>MVC 3
 Зарегистрируйте `AiHandleErrorAttribute` в качестве глобального фильтра в Global.asax.cs:
@@ -272,7 +272,7 @@ public class GoodController : ApiController
      ...
 ```
 
-[Пример](https://github.com/AppInsightsSamples/Mvc3UnhandledExceptionTelemetry)
+[Образец](https://github.com/AppInsightsSamples/Mvc3UnhandledExceptionTelemetry)
 
 #### <a name="mvc-4-mvc5"></a>MVC 4, MVC5
 Зарегистрируйте AiHandleErrorAttribute в качестве глобального фильтра в FilterConfig.cs:
@@ -288,7 +288,7 @@ public class GoodController : ApiController
     }
 ```
 
-[Пример](https://github.com/AppInsightsSamples/Mvc5UnhandledExceptionTelemetry)
+[Образец](https://github.com/AppInsightsSamples/Mvc5UnhandledExceptionTelemetry)
 
 ## <a name="web-api"></a>Веб-API
 Начиная с версии веб-пакета SDK 2.6 (бета-версии 3 и более поздних версий) для службы Application Insights в службе выполняется сбор необработанных исключений, автоматически созданных в методах контроллеров для WebAPI 2+. Если ранее для отслеживания таких исключений вы добавляли настраиваемый обработчик (как указано в приведенных ниже примерах), можете удалить его, чтобы избежать двойного отслеживания исключений.
@@ -356,7 +356,7 @@ public class GoodController : ApiController
     }
 ```
 
-[Пример](https://github.com/AppInsightsSamples/WebApi_1.x_UnhandledExceptions)
+[Образец](https://github.com/AppInsightsSamples/WebApi_1.x_UnhandledExceptions)
 
 #### <a name="web-api-2x"></a>Web API 2.x
 Добавьте реализацию IExceptionLogger:
@@ -411,7 +411,7 @@ public class GoodController : ApiController
      }
 ```
 
-[Пример](https://github.com/AppInsightsSamples/WebApi_2.x_UnhandledExceptions)
+[Образец](https://github.com/AppInsightsSamples/WebApi_2.x_UnhandledExceptions)
 
 В качестве альтернативы можно выполнить следующее.
 
@@ -481,7 +481,7 @@ Add the attribute to the service implementations:
          ...
 ```
 
-[Пример](https://github.com/AppInsightsSamples/WCFUnhandledExceptions)
+[Образец](https://github.com/AppInsightsSamples/WCFUnhandledExceptions)
 
 ## <a name="exception-performance-counters"></a>Счетчики производительности исключений
 Если на сервере [установлен агент Application Insights](../../azure-monitor/app/monitor-performance-live-website-now.md), то можно получить диаграмму частоты исключений, вычисленной платформой .NET. Она включает как обработанные, так и необработанные исключения .NET.

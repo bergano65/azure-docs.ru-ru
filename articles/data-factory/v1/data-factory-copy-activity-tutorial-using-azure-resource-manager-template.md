@@ -1,5 +1,5 @@
 ---
-title: 'Руководство по Создание конвейера с помощью шаблона Resource Manager '
+title: 'Руководство. Создание конвейера с помощью шаблона Resource Manager '
 description: Работая с этим руководством, вы создадите конвейер фабрики данных Azure с помощью шаблона Azure Resource Manager. Этот конвейер копирует данные из хранилища BLOB-объектов Azure в базу данных SQL Azure.
 services: data-factory
 documentationcenter: ''
@@ -13,14 +13,14 @@ ms.topic: tutorial
 ms.date: 01/22/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: a4f1c2d128e41e13a6e57732e8f97ff4c250d0a1
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: dd559a8dd0bd59b50f4a3fa663f57874d948bf71
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73682908"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75438853"
 ---
-# <a name="tutorial-use-azure-resource-manager-template-to-create-a-data-factory-pipeline-to-copy-data"></a>Руководство по Создание конвейера фабрики данных для копирования данных с использованием шаблона Azure Resource Manager 
+# <a name="tutorial-use-azure-resource-manager-template-to-create-a-data-factory-pipeline-to-copy-data"></a>Руководство. Создание конвейера фабрики данных для копирования данных с использованием шаблона Azure Resource Manager 
 > [!div class="op_single_selector"]
 > * [Обзор и предварительные требования](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md)
 > * [Мастер копирования](data-factory-copy-data-wizard-tutorial.md)
@@ -43,18 +43,18 @@ ms.locfileid: "73682908"
 > [!NOTE] 
 > В этом руководстве конвейер данных копирует данные из исходного хранилища данных в целевое. Инструкции по преобразованию данных с помощью Фабрики данных Azure см. в [руководстве по созданию конвейера для преобразования данных с использованием кластера Hadoop](data-factory-build-your-first-pipeline.md). 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
 * Прочтите [обзор руководства](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md) и выполните **предварительные требования**.
 * Чтобы установить последнюю версию Azure PowerShell на локальном компьютере, следуйте инструкциям в статье [Установка и настройка Azure PowerShell](/powershell/azure/overview) . В этом руководстве PowerShell используется для развертывания сущностей фабрики данных. 
-* Сведения о шаблонах Azure Resource Manager см. в [этой статье](../../azure-resource-manager/resource-group-authoring-templates.md) (необязательно).
+* Сведения о шаблонах Azure Resource Manager см. в [этой статье](../../azure-resource-manager/templates/template-syntax.md) (необязательно).
 
 ## <a name="in-this-tutorial"></a>В этом учебнике рассматриваются следующие темы:
 В этом руководстве вы создадите фабрику данных со следующими сущностями.
 
-| Сущность | ОПИСАНИЕ |
+| Сущность | Description |
 | --- | --- |
 | Связанная служба хранения Azure |Связывает учетную запись хранения Azure с фабрикой данных. Служба хранилища Azure — источник данных, а база данных SQL Azure — приемник данных для действия копирования, рассматриваемого в руководстве. Эта сущность указывает учетную запись хранения, содержащую входные данные для действия копирования. |
 | Связанная служба "База данных SQL Azure" |Связывает базу данных SQL Azure с фабрикой данных. Эта сущность указывает базу данных SQL Azure, содержащую выходные данные для действия копирования. |
@@ -436,7 +436,7 @@ ms.locfileid: "73682908"
 Для connectionString используются параметры sqlServerName, databaseName, sqlServerUserName и sqlServerPassword, значения которых передаются с помощью файла конфигурации. В определении также используются переменные azureSqlLinkedServiceName dataFactoryName из шаблона.
 
 #### <a name="azure-blob-dataset"></a>Набор данных большого двоичного объекта Azure
-Связанная служба хранилища Azure указывает строку подключения, которую фабрика данных использует во время выполнения, чтобы подключиться к учетной записи хранения Azure. В определении набора данных большого двоичного объекта Azure укажите имена контейнера больших двоичных объектов, папки и файла, содержащего входные данные. Подробные сведения о свойствах JSON, которые используются для определения набора данных большого двоичного объекта Azure, см. в разделе [Свойства типа "Набор данных большого двоичного объекта Azure"](data-factory-azure-blob-connector.md#dataset-properties). 
+Связанная служба хранилища Azure указывает строку подключения, которую фабрика данных использует во время выполнения, чтобы подключиться к учетной записи хранения Azure. В определении набора данных большого двоичного объекта Azure укажите имена контейнера больших двоичных объектов, папки и файла, содержащего входные данные. Подробные сведения о свойствах JSON, которые используюся для определения набора данных большого двоичного объекта Azure, см. в разделе [Свойства типа "Набор данных большого двоичного объекта Azure"](data-factory-azure-blob-connector.md#dataset-properties). 
 
 ```json
 {
@@ -574,7 +574,7 @@ ms.locfileid: "73682908"
 ## <a name="reuse-the-template"></a>Повторное использование шаблона
 В этом руководстве описывается создание шаблона для определения сущностей фабрики данных, а также шаблона, передающего значения для параметров. Конвейер копирует данные из учетной записи хранения Azure в базу данных SQL Azure, указанную с помощью параметров. Чтобы использовать один шаблон для развертывания сущностей фабрики данных в разных средах, нужно создать файл параметров для каждой среды и использовать его при развертывании в определенной среде.     
 
-Пример:  
+Пример  
 
 ```PowerShell
 New-AzResourceGroupDeployment -Name MyARMDeployment -ResourceGroupName ADFTutorialResourceGroup -TemplateFile ADFCopyTutorialARM.json -TemplateParameterFile ADFCopyTutorialARM-Parameters-Dev.json
@@ -590,7 +590,7 @@ New-AzResourceGroupDeployment -Name MyARMDeployment -ResourceGroupName ADFTutori
 
 Шаблон можно снова использовать для выполнения повторяющихся задач. Например, вам нужно создать несколько фабрик данных с одним или несколькими конвейерами, которые реализуют одинаковую логику, но при этом каждая фабрика данных использует разные учетные записи хранения и базы данных SQL. В этом сценарии для создания фабрик данных используется один шаблон в той же среде (разработки, тестирования или рабочей) с различными файлами параметров.   
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 В этом руководстве в ходе операции копирования вы использовали хранилище BLOB-объектов Azure как исходное хранилище данных, а базу данных SQL Azure — как целевое хранилище данных. В следующей таблице приведен список хранилищ данных, которые поддерживаются в качестве источников и целевых расположений для действия копирования. 
 
 [!INCLUDE [data-factory-supported-data-stores](../../../includes/data-factory-supported-data-stores.md)]

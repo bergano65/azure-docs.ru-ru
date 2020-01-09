@@ -3,26 +3,26 @@ title: Создание и тестирование устройства IoT Plu
 description: Информация для разработчиков устройств об использовании VS Code для создания и тестирования новой модели возможностей устройства, созданной для устройств с предварительной версией IoT Plug and Play.
 author: dominicbetts
 ms.author: dobett
-ms.date: 07/10/2019
+ms.date: 12/30/2019
 ms.topic: tutorial
 ms.custom: mvc
 ms.service: iot-pnp
 services: iot-pnp
 manager: philmea
-ms.openlocfilehash: b7b9cd1040accda4d39af4d0a18940b56a45f929
-ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
+ms.openlocfilehash: 209c63207653e98967a5a66e36c0cae53b7e044f
+ms.sourcegitcommit: ec2eacbe5d3ac7878515092290722c41143f151d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73569887"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75550338"
 ---
-# <a name="tutorial-create-and-test-a-device-capability-model-using-visual-studio-code"></a>Руководство по созданию и тестированию модели возможностей устройства с помощью Visual Studio Code
+# <a name="tutorial-create-and-test-a-device-capability-model-using-visual-studio-code"></a>Руководство. созданию и тестированию модели возможностей устройства с помощью Visual Studio Code
 
 В этом учебнике вы узнаете, как разработчик устройств может использовать Visual Studio Code для создания _модели возможностей устройства_. Эта модель поможет вам создать каркас кода для выполнения на устройстве, которое подключается к облачному экземпляру Центра Интернета вещей Azure.
 
 В разделе этого руководства, посвященном созданию каркаса кода, предполагается работа с ОС Windows.
 
-Из этого руководства вы узнаете, как выполнять следующие задачи:
+В этом руководстве описано следующее.
 
 > [!div class="checklist"]
 > * создание модели возможностей устройства;
@@ -30,7 +30,7 @@ ms.locfileid: "73569887"
 > * реализация заглушек в созданном коде;
 > * выполнение кода для проверки взаимодействия с центром Интернета вещей.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Для работы с моделью возможностей устройства в этом учебнике вам потребуется следующее.
 
@@ -39,11 +39,11 @@ ms.locfileid: "73569887"
 
     1. В VS Code выберите вкладку **Расширения**.
     1. Выполните поиск **Azure IoT Tools**.
-    1. Щелкните **Установить**.
+    1. Выберите пункт **Установить**.
 
 Для создания кода на языке C для этого учебника в среде ОС Windows вам потребуется следующее.
 
-* [Средства сборки для Visual Studio](https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=BuildTools&rel=16) с рабочими нагрузками **средств сборки C++** и **компонентов диспетчера пакетов NuGet**. Допускается также [Visual Studio (Community, Professional или Enterprise)](https://visualstudio.microsoft.com/downloads/) 2019, 2017 или 2015 с теми же рабочими нагрузками.
+* [Средства сборки для Visual Studio](https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=BuildTools&rel=16) с рабочими нагрузками **средств сборки C++** и **компонентов диспетчера пакетов NuGet**. Допускается также [Visual Studio 2019, Visual Studio 2017 или Visual Studio 2015 (выпуски Community, Professional или Enterprise)](https://visualstudio.microsoft.com/downloads/) с теми же рабочими нагрузками.
 * [Git](https://git-scm.com/download)
 * [CMake](https://cmake.org/download/).
 
@@ -307,9 +307,9 @@ ms.locfileid: "73569887"
 
 1. Выберите способ подключения **Via IoT Hub device connection string** (Через строку подключения к устройству Центра Интернета вещей).
 
-1. Выберите **Проект CMake в Windows** в качестве шаблона проекта.
+1. Выберите **CMake Project on Windows** в качестве шаблона проекта.
 
-1. Выберите **Через Vcpkg** как способ включения пакета SDK для устройства.
+1. Выберите **Via Vcpkg** (С помощью Vcpkg) в качестве способа добавления пакета SDK для устройств.
 
 VS Code создаст каркас кода на языке C и сохранит полученные файлы в папке **sensorbox_app** в папке **modelcode**. Затем VS Code откроет новое окно с созданным кодом.
 
@@ -362,7 +362,7 @@ VS Code создаст каркас кода на языке C и сохрани
 
 1. Примените обозреватель Интернета вещей Azure для взаимодействия с устройством IoT Plug and Play, которое подключено к вашему центру Интернета вещей. Дополнительные сведения см. в статье [об установке и настройке обозревателя Интернета вещей Azure](./howto-install-iot-explorer.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Итак, вы создали устройство IoT Plug and Play, готовое к сертификации. Теперь мы предлагаем перейти к следующему руководству:
 

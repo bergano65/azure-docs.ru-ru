@@ -1,6 +1,7 @@
 ---
-title: Статья об известных проблемах и ограничениях при сетевых миграциях в Базу данных SQL Azure | Документация Майкрософт
-description: Узнайте об известных проблемах и ограничениях при сетевых миграциях в Базу данных SQL Azure.
+title: 'Известные проблемы: оперативная миграция в базу данных SQL'
+titleSuffix: Azure Database Migration Service
+description: Сведения об известных проблемах и ограничениях миграции при оперативной миграции в базу данных SQL Azure с помощью Azure Database Migration Service.
 services: database-migration
 author: HJToland3
 ms.author: jtoland
@@ -8,22 +9,22 @@ manager: craigg
 ms.reviewer: craigg
 ms.service: dms
 ms.workload: data-services
-ms.custom: mvc
+ms.custom: seo-lt-2019
 ms.topic: article
 ms.date: 07/27/2019
-ms.openlocfilehash: 7cd8b7c2accae097c971aec4b92cf38ed5d3af08
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: bf747b6deb4b3c25df74364143ac48c59eb48ae1
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68561507"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75437829"
 ---
 # <a name="known-issuesmigration-limitations-with-online-migrations-to-azure-sql-database"></a>Известные проблемы и ограничения миграции при оперативной миграции в базу данных SQL Azure
 
 В следующих разделах описываются известные проблемы и ограничения, связанные с сетевыми миграциями из SQL Server в Базу данных SQL Azure.
 
 > [!IMPORTANT]
-> Миграция типов данных SQL_variant с помощью оперативной миграции SQL Server в базу данных SQL Azure не поддерживается.
+> Миграция SQL Server в базу данных SQL Azure в сети, перенос SQL_variant типов данных не поддерживается.
 
 ### <a name="migration-of-temporal-tables-not-supported"></a>Перемещение темпоральных таблиц не поддерживается
 
@@ -37,7 +38,7 @@ ms.locfileid: "68561507"
 
  ![Примеры ошибок темпоральной таблицы](media/known-issues-azure-sql-online/dms-temporal-tables-errors.png)
 
-**Возможное решение**
+**Обходное решение**
 
 Выполните следующие действия.
 
@@ -51,7 +52,7 @@ ms.locfileid: "68561507"
 
 3. Перезапустите действие миграции.
 
-**Ресурсы**
+**ресурсы**
 
 Дополнительные сведения см. в статье [Темпоральные таблицы](https://docs.microsoft.com/sql/relational-databases/tables/temporal-tables?view=sql-server-2017).
 
@@ -63,7 +64,7 @@ ms.locfileid: "68561507"
 
 ![Пример ошибок hierarchyid](media/known-issues-azure-sql-online/dms-hierarchyid-errors.png)
 
-**Возможное решение**
+**Обходное решение**
 
 Выполните следующие действия.
 
@@ -79,7 +80,7 @@ ms.locfileid: "68561507"
 
 ### <a name="migration-failures-with-various-integrity-violations-with-active-triggers-in-the-schema-during-full-data-load-or-incremental-data-sync"></a>Сбои миграции с различными нарушениями целостности при активных триггерах в схеме во время операции полной загрузки данных или добавочной синхронизации данных
 
-**Возможное решение**
+**Обходное решение**
 
 Выполните следующие действия.
 
@@ -103,9 +104,9 @@ ms.locfileid: "68561507"
 SELECT max(DATALENGTH(ColumnName)) as LEN from TableName
 ```
 
-**Возможное решение**
+**Обходное решение**
 
-Если у вас есть столбец LOB, размер которого превышает 32 КБ, обратитесь к группе разработчиков по адресу запросите [миграцию базы данных Azure](mailto:AskAzureDatabaseMigrations@service.microsoft.com).
+Если у вас есть столбец LOB, размер которого превышает 32 КБ, обратитесь к группе разработчиков по адресу [запросите миграцию базы данных Azure](mailto:AskAzureDatabaseMigrations@service.microsoft.com).
 
 ### <a name="issues-with-timestamp-columns"></a>Проблемы со столбцами меток времени
 
@@ -113,7 +114,7 @@ SELECT max(DATALENGTH(ColumnName)) as LEN from TableName
 
 Azure Database Migration Service не выполняет миграцию исходного значения timestamp; Вместо этого Azure Database Migration Service создает новое значение timestamp в целевой таблице.
 
-**Возможное решение**
+**Обходное решение**
 
 Если требуется Azure Database Migration Service для переноса точного значения метки времени, хранящегося в исходной таблице, обратитесь к группе инженеров, [запросив миграцию базы данных Azure](mailto:AskAzureDatabaseMigrations@service.microsoft.com).
 
@@ -125,7 +126,7 @@ Azure Database Migration Service не выполняет миграцию исх
 
 ![пример ошибок перемещения данных: нет сведений](media/known-issues-azure-sql-online/dms-data-migration-errors-no-details.png)
 
-**Возможное решение**
+**Обходное решение**
 
 Чтобы получить сведения о конкретных сбоях, выполните следующие действия.
 
@@ -143,7 +144,7 @@ Azure Database Migration Service не выполняет миграцию исх
 
      “** encountered a fatal error”, "errorEvents":<Table>.<Column> is of type 'GEOGRAPHY', which is not supported by 'Full Load' under 'Full LOB' support mode."
 
-**Возможное решение**
+**Обходное решение**
 
 Хотя Azure Database Migration Service поддерживает тип данных geography для автономных миграций в базу данных SQL Azure, для оперативной миграции тип данных geography не поддерживается. Попробуйте использовать альтернативные методы для изменения типа данных в источнике на поддерживаемый тип перед использованием Azure Database Migration Service для оперативной миграции этой базы данных.
 
@@ -155,6 +156,6 @@ Azure Database Migration Service не выполняет миграцию исх
 
     Migration settings validation error: The edition of the server [Business Intelligence Edition (64-bit)] does not match the supported edition(s) [Enterprise,Standard,Developer].
 
-**Возможное решение**
+**Обходное решение**
 
 Поддержка оперативной миграции в базу данных SQL Azure с помощью Azure Database Migration Service распространяется только на выпуски Enterprise, Standard и Developer. Убедитесь, что вы используете поддерживаемый выпуск, прежде чем начать процесс миграции.

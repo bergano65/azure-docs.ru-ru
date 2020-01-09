@@ -1,5 +1,5 @@
 ---
-title: Использование Azure .NET для файлов & ACL в Azure Data Lake Storage 2-го поколения (Предварительная версия)
+title: Azure Data Lake Storage 2-го поколения пакета SDK для .NET для файлов & ACL (Предварительная версия)
 description: Используйте клиентскую библиотеку службы хранилища Azure для управления каталогами и списками управления доступом к файлам и каталогам (ACL) в учетных записях хранения с включенным иерархическое пространством имен (HNS).
 author: normesta
 ms.service: storage
@@ -8,14 +8,14 @@ ms.author: normesta
 ms.topic: article
 ms.subservice: data-lake-storage-gen2
 ms.reviewer: prishet
-ms.openlocfilehash: a756518688b5b1f8b854165de69d3444b772eabc
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: 7921b42475d92070884a4298f66411813c995452
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74931223"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75443770"
 ---
-# <a name="use-net-for-files--acls-in-azure-data-lake-storage-gen2-preview"></a>Использование .NET для файлов & ACL в Azure Data Lake Storage 2-го поколения (Предварительная версия)
+# <a name="use-net-to-manage-directories-files-and-acls-in-azure-data-lake-storage-gen2-preview"></a>Использование .NET для управления каталогами, файлами и списками ACL в Azure Data Lake Storage 2-го поколения (Предварительная версия)
 
 В этой статье показано, как использовать .NET для создания каталогов, файлов и разрешений в учетных записях хранения с включенным иерархическое пространством имен (HNS) и управления ими. 
 
@@ -79,7 +79,7 @@ public async Task<DataLakeFileSystemClient> CreateFileSystem
 }
 ```
 
-## <a name="create-a-directory"></a>создать каталог;
+## <a name="create-a-directory"></a>Создание каталога
 
 Создайте ссылку на каталог, вызвав метод **филесистемклиент. креатедиректорясинк** .
 
@@ -288,7 +288,7 @@ public async Task ListFilesInDirectory(DataLakeFileSystemClient fileSystemClient
 }
 ```
 
-## <a name="see-also"></a>Дополнительные материалы
+## <a name="see-also"></a>См. также
 
 * [Справочная документация по API](https://azuresdkdocs.blob.core.windows.net/$web/dotnet/Azure.Storage.Files.DataLake/12.0.0-preview.6/api/index.html)
 * [Пакет (NuGet)](https://www.nuget.org/packages/Azure.Storage.Files.DataLake/12.0.0-preview.6)

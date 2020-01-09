@@ -1,18 +1,18 @@
 ---
-title: Типы функций в Устойчивые функции расширении функций Azure
+title: Типы функций в Azure Устойчивые функции
 description: Сведения о типах функций и ролей, которые поддерживают обмен данными между функциями в Устойчивые функции оркестрации в функциях Azure.
 author: cgillum
 ms.topic: conceptual
 ms.date: 08/22/2019
 ms.author: azfuncdf
-ms.openlocfilehash: 7a485f31ed7e112745cf3b45bbfe348e6a2e0fd3
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: 35ef9d8731e169e890f5985ce01215fec5d6e3de
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74232770"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75433268"
 ---
-# <a name="durable-functions-types-and-features-azure-functions"></a>Типы и функции Устойчивые функции (функции Azure)
+# <a name="durable-functions-types-and-features"></a>Типы и функции Устойчивые функции
 
 Устойчивые функции — это расширение [Функций Azure](../functions-overview.md). Устойчивые функции можно использовать для согласования состояния выполнения функций. Устойчивое приложение-функция — это решение, которое состоит из различных функций Azure. Функции могут играть различные роли в устойчивой функции оркестрации. 
 
@@ -59,7 +59,7 @@ ms.locfileid: "74232770"
 
 Помимо активации функций Orchestrator или Entity, для взаимодействия с запущенными оркестрации и сущностями можно использовать *устойчивую клиентскую* привязку. Например, оркестрации могут запрашиваться, завершаться и получать события. Дополнительные сведения об управлении согласованиями и сущностями см. в статье [Управление экземплярами](durable-functions-instance-management.md) .
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы приступить к работе, создайте свою первую устойчивую функцию в [C#](durable-functions-create-first-csharp.md) или [JavaScript](quickstart-js-vscode.md).
 

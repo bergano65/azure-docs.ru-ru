@@ -1,32 +1,23 @@
 ---
-title: 'Интерфейс командной строки Azure Service Fabric : sfctl mesh service-replica | Документация Майкрософт'
-description: Описание команд sfctl mesh service-replica интерфейса командной строки Service Fabric.
-services: service-fabric
-documentationcenter: na
+title: Azure Service Fabric CLI — служба сетки sfctl — реплика
+description: Сведения о sfctl, интерфейсе командной строки Azure Service Fabric. Содержит список команд для получения сведений о репликах для ресурсов приложения.
 author: jeffj6123
-manager: chackdan
-editor: ''
-ms.assetid: ''
-ms.service: service-fabric
-ms.devlang: cli
 ms.topic: reference
-ms.tgt_pltfrm: na
-ms.workload: multiple
 ms.date: 9/17/2019
 ms.author: jejarry
-ms.openlocfilehash: e8eaa5fd7c9eeeff3f70a949b04d0fbf5f6c388f
-ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
+ms.openlocfilehash: 219a691dd1b74ec2214c156018e6e3f62366f523
+ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72901174"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75645333"
 ---
 # <a name="sfctl-mesh-service-replica"></a>sfctl mesh service-replica
 Получение сведений о репликах и списка реплик данной службы в ресурсе приложения.
 
 ## <a name="commands"></a>Команды
 
-|Команда|Описание|
+|Get-Help|Description|
 | --- | --- |
 | list | Выводит список всех реплик службы. |
 | показать | Получает заданную реплику службы приложения. |
@@ -38,20 +29,20 @@ ms.locfileid: "72901174"
 
 ### <a name="arguments"></a>Аргументы
 
-|Аргумент|Описание|
+|Аргумент|Description|
 | --- | --- |
 | --app-name --application-name [обязательный аргумент] | Имя приложения. |
 | --service-name                [обязательный аргумент] | Имя службы. |
 
 ### <a name="global-arguments"></a>Глобальные аргументы
 
-|Аргумент|Описание|
+|Аргумент|Description|
 | --- | --- |
-| --debug | Увеличение уровня детализации ведения журнала для отображения всех журналов отладки. |
+| --debug | Повышение уровня детализации журнала для включения всех журналов отладки. |
 | --help -h | Отображение этого справочного сообщения и выход. |
-| --output -o | Формат выходных данных.  Допустимые значения\: json, jsonc, table, tsv.  Значение по умолчанию\: json. |
-| --query | Строка запроса JMESPath. Дополнительные сведения см. на сайте http\://jmespath.org. |
-| --verbose | Повышение уровня детализации ведения журнала. Используйте параметр --debug, чтобы получить полные журналы отладки. |
+| --output -o | Формат вывода.  Допустимые значения\: json, jsonc, table, tsv.  Значение по умолчанию\: json. |
+| --query | Строка запроса JMESPath. Дополнительные сведения и примеры см. на веб-сайте http\://jmespath.org/. |
+| --verbose | Повышение уровня детализации журнала. Чтобы включить полные журналы отладки, используйте параметр --debug. |
 
 ## <a name="sfctl-mesh-service-replica-show"></a>sfctl mesh service-replica show
 Получает заданную реплику службы приложения.
@@ -60,7 +51,7 @@ ms.locfileid: "72901174"
 
 ### <a name="arguments"></a>Аргументы
 
-|Аргумент|Описание|
+|Аргумент|Description|
 | --- | --- |
 | --app-name --application-name [обязательный аргумент] | Имя приложения. |
 | --name -n                     [обязательный аргумент] | Имя реплики службы. |
@@ -68,13 +59,13 @@ ms.locfileid: "72901174"
 
 ### <a name="global-arguments"></a>Глобальные аргументы
 
-|Аргумент|Описание|
+|Аргумент|Description|
 | --- | --- |
-| --debug | Увеличение уровня детализации ведения журнала для отображения всех журналов отладки. |
+| --debug | Повышение уровня детализации журнала для включения всех журналов отладки. |
 | --help -h | Отображение этого справочного сообщения и выход. |
-| --output -o | Формат выходных данных.  Допустимые значения\: json, jsonc, table, tsv.  Значение по умолчанию\: json. |
-| --query | Строка запроса JMESPath. Дополнительные сведения см. на сайте http\://jmespath.org. |
-| --verbose | Повышение уровня детализации ведения журнала. Используйте параметр --debug, чтобы получить полные журналы отладки. |
+| --output -o | Формат вывода.  Допустимые значения\: json, jsonc, table, tsv.  Значение по умолчанию\: json. |
+| --query | Строка запроса JMESPath. Дополнительные сведения и примеры см. на веб-сайте http\://jmespath.org/. |
+| --verbose | Повышение уровня детализации журнала. Чтобы включить полные журналы отладки, используйте параметр --debug. |
 
 
 ## <a name="next-steps"></a>Дальнейшие действия

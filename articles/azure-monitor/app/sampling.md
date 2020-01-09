@@ -8,12 +8,12 @@ author: mrbullwinkle
 ms.author: mbullwin
 ms.date: 03/14/2019
 ms.reviewer: vitalyg
-ms.openlocfilehash: 4b0dca1215cfecea5c9943bd27ee8a5c1de45311
-ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
+ms.openlocfilehash: d88df0c7e17d297162a1921021b89f02077c2ac7
+ms.sourcegitcommit: 5925df3bcc362c8463b76af3f57c254148ac63e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74893371"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75560391"
 ---
 # <a name="sampling-in-application-insights"></a>Выборка в Application Insights
 
@@ -361,7 +361,7 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env, Telemetr
 
 Задайте частоту выборки на странице "Usage and estimated costs" (Данные об использовании и предполагаемые расходы).
 
-![В колонке общих сведений о приложении щелкните "Параметры", "Квота", "Выборки", выберите частоту выборки и щелкните "Обновить".](./media/sampling/04.png)
+![В колонке общих сведений о приложении щелкните "Параметры", "Квота", "Выборки", выберите частоту выборки и щелкните "Обновить".](./media/sampling/data-sampling.png)
 
 Как и в других типах выборки, алгоритм сохраняет связанные элементы телеметрии. Например, при проверке телеметрии в поиске это позволит найти запрос, связанный с определенным исключением. Правильно сохраняются счетчики метрик, например частота запросов и частота исключений.
 
@@ -543,7 +543,7 @@ union requests,dependencies,pageViews,browserTimings,exceptions,traces
         {
             if(somecondition)
             {
-                ((ISupportSampling)item).SamplingPercentage = 100;
+                ((ISupportSampling)telemetry).SamplingPercentage = 100;
             }
         }
       }

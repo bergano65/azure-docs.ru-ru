@@ -1,27 +1,16 @@
 ---
-title: Отладка приложений Azure Service Fabric в Linux | Документация Майкрософт
+title: Отладка приложений Service Fabric Azure в Linux
 description: Сведения о мониторинге и диагностике служб Service Fabric на локальном компьютере разработчика под управлением Linux.
-services: service-fabric
-documentationcenter: .net
-author: mani-ramaswamy
-manager: chackdan
-editor: ''
-ms.assetid: 4eebe937-ab42-4429-93db-f35c26424321
-ms.service: service-fabric
-ms.devlang: dotnet
 ms.topic: conceptual
-ms.tgt_pltfrm: NA
-ms.workload: NA
 ms.date: 2/23/2018
-ms.author: atsenthi
-ms.openlocfilehash: 017b359f4c6da438f5179813fa3ed1ad2c536834
-ms.sourcegitcommit: aef6040b1321881a7eb21348b4fd5cd6a5a1e8d8
+ms.openlocfilehash: d8b5ec2f2190586f5eced5eee112b190a82504c3
+ms.sourcegitcommit: ce4a99b493f8cf2d2fd4e29d9ba92f5f942a754c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72168861"
+ms.lasthandoff: 12/28/2019
+ms.locfileid: "75526300"
 ---
-# <a name="monitor-and-diagnose-services-in-a-local-machine-development-setup"></a>Мониторинг и диагностика состояния служб в локальной среде разработки
+# <a name="monitor-and-diagnose-services-in-a-local-linux-machine-development-setup"></a>Мониторинг и диагностика служб в локальной настройке разработки машин Linux
 
 
 > [!div class="op_single_selector"]
@@ -141,6 +130,6 @@ public static TextWriter Out = Console.Out;
 
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Код трассировки, добавленный в приложение, также можно использовать для диагностики приложения в кластере Azure. Ознакомьтесь с этими статьями, в которых рассматриваются различные варианты инструментов и описывается, как их настроить.
 * [Сбор журналов с помощью системы диагностики Azure](service-fabric-diagnostics-how-to-setup-lad.md)

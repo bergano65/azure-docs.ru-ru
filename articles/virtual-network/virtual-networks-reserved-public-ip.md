@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 10/12/2018
 ms.author: genli
-ms.openlocfilehash: 675e7a7b557a3f19ea4d8d4960316c3859cbb9c1
-ms.sourcegitcommit: ca359c0c2dd7a0229f73ba11a690e3384d198f40
+ms.openlocfilehash: c1de86c1d12109853bb5d6d1aac4143caab9199f
+ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71058473"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75638227"
 ---
 # <a name="reserved-ip-addresses-classic-deployment"></a>Зарезервированные IP-адреса (классическая модель)
 
@@ -28,7 +28,7 @@ ms.locfileid: "71058473"
 Чтобы предотвратить изменение IP-адресов, можно зарезервировать IP-адрес. Зарезервированные IP-адреса можно использовать только в качестве виртуального IP-адреса (VIP). В этом случае IP-адрес облачной службы будет сохраняться даже при отключении или остановке (высвобождении) ресурсов. Кроме того, можно преобразовать существующие динамические IP-адреса, используемые в качестве виртуального IP-адреса, в зарезервированный IP-адрес.
 
 > [!IMPORTANT]
-> В Azure предлагаются две модели развертывания для создания ресурсов и работы с ними:  [модель развертывания с помощью Resource Manager и классическая модель](../azure-resource-manager/resource-manager-deployment-model.md). В этой статье рассматривается использование классической модели развертывания. Для большинства новых развертываний Майкрософт рекомендует использовать модель диспетчера ресурсов. Сведения о том, как зарезервировать статический общедоступный IP-адрес, используя модель развертывания с помощью Resource Manager, см. [здесь](virtual-network-ip-addresses-overview-arm.md).
+> В Azure предлагаются две модели развертывания для создания ресурсов и работы с ними: [модель Resource Manager и классическая модель](../azure-resource-manager/resource-manager-deployment-model.md). В этой статье рассматривается использование классической модели развертывания. Для большинства новых развертываний Майкрософт рекомендует использовать модель диспетчера ресурсов. Сведения о том, как зарезервировать статический общедоступный IP-адрес, используя модель развертывания с помощью Resource Manager, см. [здесь](virtual-network-ip-addresses-overview-arm.md).
 
 Дополнительные сведения об IP-адресах в Azure см. в [этой статье](virtual-network-ip-addresses-overview-classic.md).
 
@@ -41,7 +41,7 @@ ms.locfileid: "71058473"
 - Можно ли использовать зарезервированный IP-адрес для всех служб Azure?
     Нет. Зарезервированные IP-адреса можно использовать только для виртуальных машин и экземпляров ролей облачных служб, представляемых через виртуальный IP-адрес.
 - Сколько зарезервированных IP-адресов можно установить?
-    Дополнительные сведения см. в статье об [ограничениях в Azure](../azure-subscription-service-limits.md#networking-limits).
+    Дополнительные сведения см. в статье об [ограничениях в Azure](../azure-resource-manager/management/azure-subscription-service-limits.md#networking-limits).
 - Взимается ли плата за зарезервированные IP-адреса?
     Иногда. Сведения о ценах на зарезервированные IP-адреса см. на [этой странице](https://go.microsoft.com/fwlink/?LinkID=398482).
 - Как зарезервировать IP-адрес?
@@ -250,8 +250,8 @@ azure network reserved-ip associate MyReservedIP TestService asmtest8942
       </NetworkConfiguration>
     </ServiceConfiguration>
 ```
-## <a name="next-steps"></a>Следующие шаги
-* Общие сведения об IP-адресах в классической модели развертывания см. в [этой статье](virtual-network-ip-addresses-overview-classic.md).
+## <a name="next-steps"></a>Дальнейшие действия
+* Общие сведения об IP-адресах в классической модели развертывания см. в статье [IP-адреса в Azure (классическая модель развертывания)](virtual-network-ip-addresses-overview-classic.md).
 * Ознакомьтесь с информацией о [зарезервированных частных IP-адресах](virtual-networks-reserved-private-ip.md).
 * Ознакомьтесь с информацией об [общедоступных IP-адресах уровня экземпляра (ILPIP)](virtual-networks-instance-level-public-ip.md).
 

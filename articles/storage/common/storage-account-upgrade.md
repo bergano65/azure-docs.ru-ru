@@ -8,12 +8,12 @@ ms.service: storage
 ms.topic: how-to
 ms.date: 12/04/2019
 ms.author: tamram
-ms.openlocfilehash: 7c7b0a0bb79f3f00d7a8dff64ec1b7143241a1f8
-ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
+ms.openlocfilehash: e7228556659a7a4a9f01ea31f61e75b5e870d50c
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74892232"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75457431"
 ---
 # <a name="upgrade-to-a-general-purpose-v2-storage-account"></a>Обновление до учетной записи хранения общего назначения версии 2
 
@@ -24,9 +24,9 @@ ms.locfileid: "74892232"
 > [!IMPORTANT]
 > Обновление общего назначения версии v1 или учетной записи хранилища BLOB-объектов до общего назначения v2 является постоянным и не может быть отменено.
 
-# <a name="portaltabazure-portal"></a>[Microsoft Azure](#tab/azure-portal)
+# <a name="portaltabazure-portal"></a>[Портал](#tab/azure-portal)
 
-1. Войдите на [портале Azure](https://portal.azure.com).
+1. Войдите на [портал Azure](https://portal.azure.com).
 2. Войдите в свою учетную запись хранения.
 3. В разделе **Параметры** щелкните **Конфигурация**.
 4. В разделе **Тип учетной записи** щелкните **Обновить**.
@@ -46,7 +46,7 @@ ms.locfileid: "74892232"
 ```powershell
 Set-AzStorageAccount -ResourceGroupName <resource-group> -AccountName <storage-account> -UpgradeToStorageV2 -AccessTier <Hot/Cool>
 ```
-# <a name="azure-clitabazure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-clitabazure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 Чтобы обновить учетную запись общего назначения версии 1 до версии 2 с помощью Azure CLI, сначала установите последнюю версию Azure CLI. Сведения об установке Azure CLI см. [здесь](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
 
@@ -167,5 +167,4 @@ az storage account update -g <resource-group> -n <storage-account> --set kind=St
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Создайте учетную запись хранения](storage-quickstart-create-account.md)
-* [Управление учетными записями хранения Azure](storage-account-manage.md)
+* [создать учетную запись хранения;](storage-quickstart-create-account.md)

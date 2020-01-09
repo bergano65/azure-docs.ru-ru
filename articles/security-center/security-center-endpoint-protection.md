@@ -11,18 +11,18 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 08/08/2019
+ms.date: 12/29/2019
 ms.author: memildin
-ms.openlocfilehash: 140361b7ba3a6a618d4c416447525f8a73690b81
-ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
+ms.openlocfilehash: 899f4cba31afed812fa1643b925a38812308042e
+ms.sourcegitcommit: ec2eacbe5d3ac7878515092290722c41143f151d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73748427"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75552939"
 ---
 # <a name="endpoint-protection-assessment-and-recommendations-in-azure-security-center"></a>Оценка и рекомендации по защите конечных точек в центре безопасности Azure
 
-Центр безопасности Azure предоставляет средства оценки работоспособности [поддерживаемых](https://docs.microsoft.com/azure/security-center/security-center-os-coverage) версий решений для защиты конечных точек. В этой статье описываются сценарии, ведущие к центру безопасности для создания следующих двух рекомендаций.
+Центр безопасности Azure предоставляет средства оценки работоспособности [поддерживаемых](security-center-services.md#supported-endpoint-protection-solutions-) версий решений для защиты конечных точек. В этой статье описываются сценарии, ведущие к центру безопасности для создания следующих двух рекомендаций.
 
 * **Установка решений для защиты конечных точек на виртуальной машине**
 * **Устранение проблем работоспособности Endpoint Protection на ваших компьютерах**
@@ -55,7 +55,7 @@ ms.locfileid: "73748427"
 
 ## <a name="microsoft-system-center-endpoint-protection"></a>Microsoft System Center Endpoint Protection
 
-* Центр безопасности рекомендует **"установить решения Endpoint Protection на виртуальной машине"** при импорте **сцепмпмодуле ("$env:P рограмфилес\микрософт Security Client\MpProvider\MpProvider.PSD1")** и выполнении  **Get-Мпроткомпутерстатус** Results WITH **амсервицеенаблед = false**
+* Центр безопасности рекомендует **"установить решения Endpoint Protection на виртуальной машине"** при импорте **сцепмпмодуле ("$env:P рограмфилес\микрософт Security Client\MpProvider\MpProvider.PSD1")** и выполнении **Get-мпроткомпутерстатус** Results WITH **амсервицеенаблед = false** .
 
 * Центр безопасности рекомендует **«разрешать проблемы работоспособности Endpoint Protection на ваших компьютерах»** при запуске **Get-мпроткомпутерстатус** и выполнении любого из следующих условий.
 
@@ -85,20 +85,20 @@ ms.locfileid: "73748427"
     * **HKLM: \ Софтваре\трендмикро\дип агент безопасности** существует
     * **HKLM: \ Софтваре\трендмикро\дип безопасности ажент\инсталлатионфолдер** существует
     * Файл **dsa_query. cmd** находится в папке установки
-    * Выполнение **dsa_query. cmd** с **компонентом Component. am. mode: обнаружен агент Micro-глубокой безопасности на основе тенденций**
+    * Выполнение **dsa_query. cmd** в **режиме Component. am. mode: обнаружен агент Micro-глубокой безопасности на основе тенденций**
 
 ## <a name="symantec-endpoint-protection"></a>Symantec Endpoint Protection
 Центр безопасности рекомендует **«установить решения Endpoint Protection на виртуальной машине»** , если не выполнены какие либо из следующих проверок:
 
 * **HKLM: \ Софтваре\симантек\симантек конечная точка Протектион\куррентверсион\продуктнаме = "Symantec Endpoint Protection"**
 
-* **HKLM: \ Софтваре\симантек\симантек конечная точка Протектион\куррентверсион\публик-опстате\асруннингстатус = 1**
+* **HKLM:\Software\Symantec\Symantec Endpoint Protection\CurrentVersion\public-opstate\ASRunningStatus = 1**
 
 или
 
-* **HKLM: \ Software\Wow6432Node\Symantec\Symantec конечная точка Протектион\куррентверсион\продуктнаме = "Symantec Endpoint Protection"**
+* **HKLM:\Software\Wow6432Node\Symantec\Symantec Endpoint Protection\CurrentVersion\PRODUCTNAME = "Symantec Endpoint Protection"**
 
-* **HKLM: \ Software\Wow6432Node\Symantec\Symantec конечная точка Протектион\куррентверсион\публик-опстате\асруннингстатус = 1**
+* **HKLM:\Software\Wow6432Node\Symantec\Symantec Endpoint Protection\CurrentVersion\public-opstate\ASRunningStatus = 1**
 
 Центр безопасности рекомендует **«разрешать проблемы работоспособности Endpoint Protection на ваших компьютерах»** , если не выполнены какие либо из следующих проверок:
 
@@ -123,7 +123,7 @@ ms.locfileid: "73748427"
 
 Центр безопасности рекомендует **«установить решения Endpoint Protection на виртуальной машине»** , если не выполнены какие либо из следующих проверок:
 
-* **HKLM: \ софтваре\мкафи\ендпоинт\ав\продуктверсион** существует
+* **HKLM:\SOFTWARE\McAfee\Endpoint\AV\ProductVersion** exists
 
 * **HKLM: \ Софтваре\мкафи\авсолутион\мкшиелдглобал\глобал\енаблеоас = 1**
 

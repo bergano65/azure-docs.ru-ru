@@ -1,5 +1,5 @@
 ---
-title: Переключение между режимами просмотра и правки отчетов в коллекциях рабочих областей Power BI | Документация Майкрософт
+title: Переключение между режимами просмотра и редактирования для отчетов
 description: Узнайте, как переключаться между режимами просмотра и правки отчетов в коллекциях рабочих областей Power BI.
 services: power-bi-workspace-collections
 ms.service: power-bi-embedded
@@ -8,19 +8,19 @@ ms.author: rkarlin
 ms.topic: article
 ms.workload: powerbi
 ms.date: 09/20/2017
-ms.openlocfilehash: 327f2fdcd4d1bc9e71e3aabb3541c6fd30f02811
-ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
+ms.openlocfilehash: b2696560b5d5013fe337b51ec61cbfac9e512610
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67672369"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75357670"
 ---
 # <a name="toggle-between-view-and-edit-mode-for-reports-in-power-bi-workspace-collections"></a>Переключение между режимами просмотра и правки отчетов в коллекциях рабочих областей Power BI
 
 Узнайте, как переключаться между режимами просмотра и правки отчетов в коллекциях рабочих областей Power BI.
 
 > [!IMPORTANT]
-> Использовать службу "Коллекции рабочих областей Power BI" не рекомендуется. Она будет доступна до июня 2018 года или до даты, указанной в контракте. Мы советуем организовать перенос приложения в Power BI Embedded, чтобы избежать прерываний в его работе. Сведения о том, как перенести данные из коллекций рабочих областей Power BI в Power BI Embedded, см. в [этой статье](https://powerbi.microsoft.com/documentation/powerbi-developer-migrate-from-powerbi-embedded/).
+> Использовать службу "Коллекции рабочих областей Power BI" не рекомендуется. Она будет доступна до июня 2018 года или до даты, указанной в договоре. Мы советуем организовать перенос приложения в Power BI Embedded, чтобы избежать прерываний в его работе. Сведения о том, как перенести данные из коллекций рабочих областей Power BI в Power BI Embedded, см. в [этой статье](https://powerbi.microsoft.com/documentation/powerbi-developer-migrate-from-powerbi-embedded/).
 
 ## <a name="creating-an-access-token"></a>Создание маркера доступа
 

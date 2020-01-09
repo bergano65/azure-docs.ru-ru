@@ -1,5 +1,5 @@
 ---
-title: Как и зачем добавлять приложения в Azure AD
+title: Добавление приложений в Azure AD
 titleSuffix: Microsoft identity platform
 description: Что означает добавление приложения в Azure AD и каким образом это осуществляется?
 services: active-directory
@@ -15,12 +15,12 @@ ms.author: ryanwi
 ms.custom: aaddev
 ms.reviewer: lenalepa, sureshja
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f031389dc37fbf48f8a69db8c42419eed9605373
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: 9f4814026de5ba92d6470c503f8d316c0ceba0da
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74918344"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75424750"
 ---
 # <a name="how-and-why-applications-are-added-to-azure-ad"></a>Как и почему приложения добавляются в Azure AD
 
@@ -106,7 +106,7 @@ ms.locfileid: "74918344"
   * утверждает правила преобразования.
   * Сопоставление атрибутов (подготовка пользователей)
 * Более подробные сведения об объектах субъекта-службы и приложений см. в справочной документации по Azure AD Graph REST API.
-  * [Приложения](/previous-versions/azure/ad/graph/api/entity-and-complex-type-reference#application-entity)
+  * [Приложение](/previous-versions/azure/ad/graph/api/entity-and-complex-type-reference#application-entity)
   * [Субъект-служба](/previous-versions/azure/ad/graph/api/entity-and-complex-type-reference#serviceprincipal-entity)
 
 ## <a name="why-do-applications-integrate-with-azure-ad"></a>Зачем интегрировать приложения с Azure AD?

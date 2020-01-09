@@ -1,19 +1,19 @@
 ---
-title: включение файла
-description: включение файла
+title: включить файл
+description: включить файл
 services: cosmos-db
-author: rimman
+author: SnehaGunda
+ms.author: sngun
 ms.service: cosmos-db
 ms.topic: include
 ms.date: 12/26/2018
-ms.author: rimman
 ms.custom: include file
-ms.openlocfilehash: 33f08f22c3f09539dbe44098e3747f0ed7a8fe8c
-ms.sourcegitcommit: 040abc24f031ac9d4d44dbdd832e5d99b34a8c61
+ms.openlocfilehash: 0acc989f558c5de4e8f52ba2c77f2842f8d5d70c
+ms.sourcegitcommit: 02160a2c64a5b8cb2fb661a087db5c2b4815ec04
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69541536"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75752300"
 ---
 1. В новом окне войдите на [портал Azure](https://portal.azure.com/).
 2. В меню слева щелкните **Создать ресурс**, **Базы данных**, а затем в разделе **Azure Cosmos DB** выберите **Создать**.
@@ -22,7 +22,7 @@ ms.locfileid: "69541536"
 
 3. На странице **создания учетной записи Azure Cosmos DB** введите параметры для новой учетной записи Azure Cosmos DB. 
  
-    Параметр|Значение|ОПИСАНИЕ
+    Параметр|Значение|Description
     ---|---|---
     Subscription|Ваша подписка|Вы подписку Azure, которую нужно использовать для этой учетной записи Azure Cosmos DB. 
     Группа ресурсов|Создание<br><br>Введите уникальное имя, указанное в идентификаторе.|Выберите **Создать**. Затем введите новое имя группы ресурсов для учетной записи. Для удобства используйте то же имя, которое присвоено идентификатору. 

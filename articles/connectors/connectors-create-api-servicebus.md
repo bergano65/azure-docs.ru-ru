@@ -1,18 +1,18 @@
 ---
 title: Обмен сообщениями с помощью служебной шины Azure
-description: Отправка и получение сообщений с помощью служебной шины Azure в Azure Logic Apps
+description: Создание автоматизированных задач и рабочих процессов, отправляющих и получающих сообщения с помощью служебной шины Azure в Azure Logic Apps
 services: logic-apps
 ms.suite: integration
 ms.reviewer: klam, logicappspm
 ms.topic: conceptual
 ms.date: 09/19/2019
 tags: connectors
-ms.openlocfilehash: c83e2bc0411c9bec3c3a5fa35dcc6565ed7f44f9
-ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
+ms.openlocfilehash: 26609bc95bf6fd49ded23d8f117911a02577405a
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74789412"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75445896"
 ---
 # <a name="exchange-messages-in-the-cloud-by-using-azure-logic-apps-and-azure-service-bus"></a>Обмен сообщениями в облаке с помощью Azure Logic Apps и служебной шины Azure
 
@@ -45,7 +45,7 @@ ms.locfileid: "74789412"
 
 Убедитесь, что у приложения логики есть разрешения для доступа к пространству имен служебной шины.
 
-1. Войдите на [портале Azure](https://portal.azure.com).
+1. Войдите на [портал Azure](https://portal.azure.com).
 
 1. Перейдите к *пространству имен* служебной шины. На странице пространства имен в разделе **Параметры** выберите **Политики общего доступа**. В разделе **Утверждения** убедитесь, что у вас есть разрешения на **управление** для этого пространства имен.
 

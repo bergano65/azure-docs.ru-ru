@@ -3,12 +3,12 @@ title: Публикации устойчивых функций в службе 
 description: Узнайте, как настроить автоматическую публикацию в службе "Сетка событий Azure" для устойчивых функций.
 ms.topic: conceptual
 ms.date: 03/14/2019
-ms.openlocfilehash: f0fbb46320b896008b6a1343357f016a9f57b0fe
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: 5d1960f0e8d249ac77f3c64e18b332a3d55d5180
+ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74231446"
+ms.lasthandoff: 01/02/2020
+ms.locfileid: "75613131"
 ---
 # <a name="durable-functions-publishing-to-azure-event-grid-preview"></a>Публикации устойчивых функций в службе "Сетка событий Azure" (предварительная версия)
 
@@ -24,7 +24,7 @@ ms.locfileid: "74231446"
 
 [!INCLUDE [v1-note](../../../includes/functions-durable-v1-tutorial-note.md)]
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Технические условия
 
 * Установите [Microsoft. Azure. веб-jobs. Extensions. DurableTask](https://www.nuget.org/packages/Microsoft.Azure.WebJobs.Extensions.DurableTask) в проекте устойчивые функции.
 * Установите [эмулятор хранения Azure](../../storage/common/storage-use-emulator.md).
@@ -86,7 +86,7 @@ az eventgrid topic key list --name <topic_name> -g eventResourceGroup --query "k
 
 Возможные свойства конфигурации службы "Сетка событий Azure" можно найти в [документации Host. JSON](../functions-host-json.md#durabletask). После настройки файла `host.json` приложение функции отправляет события жизненного цикла в сетку событий. Это работает при запуске приложения функции как локально, так и в Azure. ' ' '
 
-Установите параметр приложения для ключа раздела в приложении-функции и `local.setting.json`. Следующий код JSON является примером `local.settings.json` для локальной отладки. Замените `<topic_key>` на ключ раздела.  
+Установите параметр приложения для ключа раздела в приложении-функции и `local.settings.json`. Следующий код JSON является примером `local.settings.json` для локальной отладки. Замените `<topic_key>` на ключ раздела.  
 
 ```json
 {
@@ -279,7 +279,7 @@ namespace LifeCycleEventSpike
 
 Чтобы выполнить тестирование локально, используйте [ngrok](../functions-bindings-event-grid.md#local-testing-with-ngrok).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Управление экземплярами в устойчивых функциях (Функции Azure)](durable-functions-instance-management.md)

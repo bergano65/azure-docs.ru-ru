@@ -1,26 +1,18 @@
 ---
-title: Средство моделирования угроз Microsoft Azure | Документация Майкрософт
-description: Главная страница средства моделирования угроз Майкрософт, содержащая сведения о начале работы с помощью средства, в том числе процесс моделирования угроз
-services: security
-documentationcenter: na
+title: Обзор Microsoft Threat Modeling Tool — Azure
+description: Обзор Microsoft Threat Modeling Tool, содержащий сведения о начале работы с инструментом, включая процесс моделирования угроз.
 author: jegeib
-manager: jegeib
-editor: jegeib
-ms.assetid: na
+ms.author: jegeib
 ms.service: security
 ms.subservice: security-develop
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 02/16/2017
-ms.author: jegeib
-ms.openlocfilehash: 47ae7661874bec211935315679e6e2c79e6d59ef
-ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
+ms.openlocfilehash: 0d800102b6f6ff77944a2b625d3bcecef69c1ee9
+ms.sourcegitcommit: ec2eacbe5d3ac7878515092290722c41143f151d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68727825"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75548748"
 ---
 # <a name="microsoft-threat-modeling-tool"></a>Средство моделирования угроз Microsoft
 
@@ -41,11 +33,11 @@ ms.locfileid: "68727825"
 * **Спроектированное для разработчиков с упором на защиту программного обеспечения** — разные подходы по работе с активами или злоумышленниками. Мы всегда ставим во главу угла программное обеспечение. Мы опираемся на действия, знакомые всем разработчикам и архитекторам: рисование изображений при проектировании архитектуры программного обеспечения.
 * **Фокус на анализе архитектуры** — термин "моделирование угроз" может означать как требования, так и методику анализа архитектуры. В некоторых случаях он обозначает сложную комбинацию этих двух компонентов. Подход к моделированию угроз Microsoft SDL — это метод с фокусом на анализ архитектуры.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В таблице ниже перечислены важные ссылки, которые помогут вам приступить к работе со средством моделирования угроз:
 
-| Шаг  | Описание                                                                                   |
+| Шаг  | Description                                                                                   |
 | ----- | --------------------------------------------------------------------------------------------- |
 | **1** | [Скачивание средства моделирования угроз](https://aka.ms/threatmodelingtool)                                |
 | **2** | [Руководство по началу работы](threat-modeling-tool-getting-started.md)    |
@@ -57,7 +49,7 @@ ms.locfileid: "68727825"
 
 Ниже приведены несколько старых статей, которые по-прежнему актуальны к моделированию угроз:
 
-* [Статьи о важности моделирования угроз](https://msdn.microsoft.com/magazine/dd347831.aspx)
+* [Статьи о важности моделирования угроз](https://docs.microsoft.com/archive/msdn-magazine/2009/january/security-briefs-getting-started-with-the-sdl-threat-modeling-tool)
 * [Курс обучения по защищенным информационным системам](https://www.microsoft.com/download/details.aspx?id=16420)
 
 Ознакомьтесь с ресурсами, предоставленными разработчиками средства моделирования угроз:

@@ -2,17 +2,17 @@
 title: Отключение сетевых политик для частных конечных точек в Azure
 description: Узнайте, как отключить политики сети для частных конечных точек.
 services: private-link
-author: asudbring
+author: malopMSFT
 ms.service: private-link
 ms.topic: article
 ms.date: 09/16/2019
 ms.author: allensu
-ms.openlocfilehash: ef9dafd97b3d9889714a321ad00d98a87c3665d6
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: b5ab62e7ab57d32a11a45713519633034deb6a5b
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74224811"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75453022"
 ---
 # <a name="disable-network-policies-for-private-endpoints"></a>Отключение сетевых политик для частных конечных точек
 
@@ -69,6 +69,6 @@ az network vnet subnet update \
           } 
 } 
 ```
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - Дополнительные сведения о [частной конечной точке Azure](private-endpoint-overview.md)
  

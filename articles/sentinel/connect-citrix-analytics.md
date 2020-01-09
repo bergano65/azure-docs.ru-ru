@@ -12,16 +12,16 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 11/04/2019
+ms.date: 12/30/2019
 ms.author: cabailey
-ms.openlocfilehash: 36a0c36de7b3f6c6aa4932770e6264bc14c2790f
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: b4a720702cdadf641665c4c8dc3754edd1c42361
+ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73518090"
+ms.lasthandoff: 01/02/2020
+ms.locfileid: "75610630"
 ---
-# <a name="connect-citrix-analytics-security"></a>Подключение Citrix Analytics (безопасность) 
+# <a name="connect-citrix-analytics-security"></a>Подключение Citrix Analytics (модуль безопасности) 
 
 Служба Citrix Analytics (безопасность) с помощью Azure Sentinel помогает экспортировать данные, проанализированные на рискованные события из Citrix Analytics (безопасность), в метку Azure. Вы можете создавать настраиваемые панели мониторинга, анализировать данные из других источников вместе с ними из Citrix Analytics (Security) и создавать настраиваемые рабочие процессы с помощью Logic Apps для мониторинга и устранения событий безопасности. 
 
@@ -44,6 +44,8 @@ ms.locfileid: "73518090"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 В этом документе вы узнали, как подключить Citrix Analytics (Security) к Azure Sentinel. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
-- Узнайте, как [получить представление о данных и потенциальных угрозах](quickstart-get-visibility.md).
-- Приступая [к обнаружению угроз с помощью Azure Sentinel](tutorial-detect-threats-built-in.md).
+- Узнайте, как [отслеживать свои данные и потенциальные угрозы](quickstart-get-visibility.md).
+- Узнайте, как приступить к [обнаружению угроз с помощью Azure Sentinel](tutorial-detect-threats-built-in.md).
+- [Используйте книги](tutorial-monitor-your-data.md) для отслеживания данных.
+
 

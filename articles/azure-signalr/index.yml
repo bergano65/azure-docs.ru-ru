@@ -2,7 +2,6 @@
 documentType: LandingData
 title: Сервисная документация по Azure SignalR
 metadata:
-  document_id: 44409b3f-ab8c-053d-cdf4-5d7e823a275f
   title: "Документация\_— Служба Azure SignalR"
   description: Без труда создавайте и масштабируйте веб-приложения в реальном времени в бессерверном или серверном режиме. Создано на основе WebSocket с поддержкой широкого ряда языков и платформ.
   services: azure-signalr
@@ -68,7 +67,7 @@ sections:
         items:
           - html: '<a href="https://github.com/aspnet/AzureSignalR-samples">Примеры кода для Azure SignalR</a>'
           - html: <a href="/azure/azure-signalr/signalr-cli-samples">Azure CLI</a>
-  - title: Справочные материалы
+  - title: Справочник
     items:
       - type: list
         style: cards

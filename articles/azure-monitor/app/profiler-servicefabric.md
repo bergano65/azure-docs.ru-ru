@@ -1,5 +1,5 @@
 ---
-title: Профилирование запущенных приложений Azure Service Fabric с помощью Application Insights | Документация Майкрософт
+title: Профилирование Live Service Fabric приложений Azure с помощью Application Insights
 description: Включение Profiler для приложения Service Fabric
 ms.service: azure-monitor
 ms.subservice: application-insights
@@ -8,18 +8,18 @@ author: cweining
 ms.author: cweining
 ms.date: 08/06/2018
 ms.reviewer: mbullwin
-ms.openlocfilehash: a7a64be3c73ea82c6bf3d905772f3278f9bda5df
-ms.sourcegitcommit: 8e271271cd8c1434b4254862ef96f52a5a9567fb
+ms.openlocfilehash: 162a8c3f90b7adab356ebb07c80b8de283fd818d
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72818479"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75432406"
 ---
 # <a name="profile-live-azure-service-fabric-applications-with-application-insights"></a>Профилирование запущенных приложений Azure Service Fabric с помощью Application Insights
 
 Вы можете развернуть Application Insights Profiler для следующих служб:
 * [Служба приложений Azure](profiler.md?toc=/azure/azure-monitor/toc.json)
-* [Oблачныe службы Azure](profiler-cloudservice.md?toc=/azure/azure-monitor/toc.json)
+* [Oблачныe службы Azure2}
 * [Виртуальные машины Azure](profiler-vm.md?toc=/azure/azure-monitor/toc.json)
 
 ## <a name="set-up-the-environment-deployment-definition"></a>Настройка определения развертывания среды

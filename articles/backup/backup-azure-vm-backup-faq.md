@@ -4,18 +4,18 @@ description: В этой статье вы найдете ответы на ча
 ms.reviewer: sogup
 ms.topic: conceptual
 ms.date: 09/17/2019
-ms.openlocfilehash: 30036d6cf241e1ac840b2be67ca78fbda6c60061
-ms.sourcegitcommit: 4821b7b644d251593e211b150fcafa430c1accf0
+ms.openlocfilehash: b8e259c6212e9a1e81b6b0c8825287f3025f9068
+ms.sourcegitcommit: a100e3d8b0697768e15cbec11242e3f4b0e156d3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74172561"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75680534"
 ---
 # <a name="frequently-asked-questions-back-up-azure-vms"></a>Часто задаваемые вопросы. Резервное копирование виртуальных машин Azure
 
 В этой статье содержатся ответы на часто задаваемые вопросы о резервном копировании виртуальных машин Azure со службой [Azure Backup](backup-introduction-to-azure-backup.md) .
 
-## <a name="backup"></a>Azure Backup
+## <a name="backup"></a>Архивация
 
 ### <a name="which-vm-images-can-be-enabled-for-backup-when-i-create-them"></a>Какие образы виртуальных машин можно включить для резервного копирования при их создании?
 
@@ -23,7 +23,7 @@ ms.locfileid: "74172561"
 
 ### <a name="is-the-backup-cost-included-in-the-vm-cost"></a>Стоимость резервного копирования включена в стоимость виртуальной машины?
 
-Нет Затраты на резервное копирование отделены от затрат на виртуальную машину. Дополнительные сведения о [ценах на Azure Backup](https://azure.microsoft.com/pricing/details/backup/).
+Нет. Затраты на резервное копирование отделены от затрат на виртуальную машину. Дополнительные сведения о [ценах на Azure Backup](https://azure.microsoft.com/pricing/details/backup/).
 
 ### <a name="which-permissions-are-required-to-enable-backup-for-a-vm"></a>Какие разрешения требуются для включения резервного копирования виртуальной машины?
 
@@ -43,7 +43,7 @@ ms.locfileid: "74172561"
 
 ### <a name="does-an-on-demand-backup-job-use-the-same-retention-schedule-as-scheduled-backups"></a>Применяется ли к заданию резервного копирования по запросу то же расписание сохранения, что и к плановым заданиям резервного копирования?
 
-Нет Укажите диапазон хранения для задания резервного копирования по запросу. По умолчанию задание будет храниться в течение 30 дней после активации на портале.
+Нет. Укажите диапазон хранения для задания резервного копирования по запросу. По умолчанию задание будет храниться в течение 30 дней после активации на портале.
 
 ### <a name="i-recently-enabled-azure-disk-encryption-on-some-vms-will-my-backups-continue-to-work"></a>Недавно на некоторых виртуальных машинах было включено шифрование дисков Azure. Будет ли после этого работать резервное копирование?
 
@@ -111,16 +111,9 @@ ms.locfileid: "74172561"
 
 Да, можно использовать резервные копии, созданные до преобразования дисков из неуправляемых в управляемые.
 
-- По умолчанию задание восстановления виртуальной машины создает неуправляемую виртуальную машину.
-- Но вы можете восстановить диски и использовать их для создания управляемой виртуальной машины.
-
 ### <a name="how-do-i-restore-a-vm-to-a-restore-point-before-the-vm-was-migrated-to-managed-disks"></a>Как восстановить виртуальную машину до точки восстановления до переноса виртуальной машины на управляемые диски?
 
-По умолчанию в задании восстановления виртуальной машины создается виртуальная машина с неуправляемыми дисками. Чтобы создать виртуальную машину с управляемыми дисками:
-
-1. [Восстановите неуправляемые диски](tutorial-restore-disk.md#restore-a-vm-disk).
-2. [Преобразуйте восстановленные диски в управляемые](tutorial-restore-disk.md#convert-the-restored-disk-to-a-managed-disk).
-3. [Создайте виртуальную машину с управляемыми дисками](tutorial-restore-disk.md#create-a-vm-from-the-restored-disk).
+Процесс восстановления остается прежним. Если точка восстановления находится на момент времени, когда виртуальная машина содержит неуправляемые диски, [диски можно восстановить как неуправляемые](tutorial-restore-disk.md#unmanaged-disks-restore). Если виртуальная машина применяет управляемые диски, можно [восстановить диски как управляемые диски](tutorial-restore-disk.md#managed-disk-restore). Затем можно [создать виртуальную машину на основе этих дисков](tutorial-restore-disk.md#create-a-vm-from-the-restored-disk).
 
 [Узнайте больше](backup-azure-vms-automation.md#restore-an-azure-vm) о том, как сделать это в PowerShell.
 

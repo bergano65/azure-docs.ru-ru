@@ -7,12 +7,12 @@ ms.date: 06/19/2019
 ms.topic: article
 ms.service: azure-supportability
 ms.assetid: ce37c848-ddd9-46ab-978e-6a1445728a3b
-ms.openlocfilehash: 5cadd0479a6ddc97cc7ee7d9b5aee1bbffba02bb
-ms.sourcegitcommit: 5a8c65d7420daee9667660d560be9d77fa93e9c9
+ms.openlocfilehash: c4351afe7781f4340dfd943828d65e94efbdc0a7
+ms.sourcegitcommit: 51ed913864f11e78a4a98599b55bbb036550d8a5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74120968"
+ms.lasthandoff: 01/04/2020
+ms.locfileid: "75659310"
 ---
 # <a name="networking-limit-increase"></a>Увеличение лимита сети
 
@@ -27,7 +27,7 @@ ms.locfileid: "74120968"
 
 Следуйте приведенным ниже инструкциям, чтобы создать запрос на поддержку через колонку "Справка и поддержка" Azure, доступную в портал Azure. 
 
-1. В https://portal.azure.comвыберите **Справка и поддержка**.
+1. В https://portal.azure.com выберите **Справка и поддержка**.
 
     ![Справка и поддержка](./media/resource-manager-core-quotas-request/helpsupport.png)
  
@@ -70,7 +70,7 @@ ms.locfileid: "74120968"
 
 2. Выберите подписку, которая требует увеличенную квоту.
 
-    ![Выберите подписку.](./media/resource-manager-core-quotas-request/select-subscription.png)
+    ![Выбор подписки](./media/resource-manager-core-quotas-request/select-subscription.png)
 
 3. Выберите **Использование и квоты**.
 
@@ -84,4 +84,4 @@ ms.locfileid: "74120968"
 
 ## <a name="about-networking-limits"></a>Ограничения сети
 
-Дополнительные сведения об ограничениях сети см. в [разделе "сети](../azure-subscription-service-limits.md#networking-limits) " страницы "ограничения" или "ограничения сети".
+Дополнительные сведения об ограничениях сети см. в [разделе "сети](../azure-resource-manager/management/azure-subscription-service-limits.md#networking-limits) " страницы "ограничения" или "ограничения сети".

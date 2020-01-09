@@ -34,6 +34,8 @@
       href: spring-cloud-tutorial-bind-redis.md
     - name: Привязка приложения к Azure MySQL
       href: spring-cloud-tutorial-bind-mysql.md
+    - name: Развертывание приложений в Azure Spring Cloud с помощью Jenkins и Azure CLI
+      href: /azure/jenkins/tutorial-jenkins-deploy-cli-spring-cloud-service
 - name: Основные понятия
   items:
     - name: Основные сведения о квотах и ограничениях Azure Spring Cloud
@@ -42,11 +44,11 @@
       href: spring-cloud-concept-metrics.md
     - name: Планирование аварийного восстановления
       href: disaster-recovery.md
-- name: Руководства
+- name: Практические руководства
   items:
     - name: 'Как запустить, приостановить или удалить приложение Azure Spring Cloud'
       href: spring-cloud-howto-start-stop-delete.md
-    - name: Как настроить промежуточную среду
+    - name: Настройка промежуточной среды
       href: spring-cloud-howto-staging-environment.md
     - name: Поддержка регистрации служб
       href: spring-cloud-service-registration.md
@@ -56,7 +58,7 @@
       href: spring-cloud-howto-cicd.md
     - name: Использование постоянного хранилища в Azure Spring Cloud
       href: spring-cloud-howto-persistent-storage.md
-- name: Справочные материалы
+- name: Справочник
   items:
     - name: "Подключаемый модуль Azure\_CLI"
       href: spring-cloud-cli-reference.md

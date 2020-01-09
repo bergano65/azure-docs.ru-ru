@@ -8,12 +8,12 @@ services: iot-hub
 ms.devlang: csharp
 ms.topic: conceptual
 ms.date: 08/08/2017
-ms.openlocfilehash: 7d5e38e2ecfa2406ff0f58f73d828aa45d84c512
-ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
+ms.openlocfilehash: c4cb230c9f0b56e3ff9d81e0d85134a7f192e6e9
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2019
-ms.locfileid: "73890484"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75429177"
 ---
 # <a name="create-an-iot-hub-using-the-resource-provider-rest-api-net"></a>Создание Центра Интернета вещей с помощью REST API поставщика ресурсов (.NET)
 
@@ -23,7 +23,7 @@ ms.locfileid: "73890484"
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-Для работы с этим руководством требуется:
+Для работы с этим учебником требуется:
 
 * приведенному.
 
@@ -170,19 +170,19 @@ ms.locfileid: "73890484"
 > [!NOTE]
 > В этом примере приложения добавляется стандартный Центр Интернета вещей S1, который подлежит оплате. По завершении можно удалить центр Интернета вещей с помощью [портал Azure](https://portal.azure.com/) или с помощью командлета PowerShell **Remove-азресаурце** .
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 После развертывания Центра Интернета вещей с использованием REST API вам могут понадобиться дополнительные сведения:
 
 * Узнайте о возможностях [поставщика ресурсов центра Интернета вещей REST API](https://docs.microsoft.com/rest/api/iothub/iothubresource).
 
-* Дополнительные сведения о возможностях Azure Resource Manager см. в статье [Azure Resource Manager обзор](../azure-resource-manager/resource-group-overview.md) .
+* Дополнительные сведения о возможностях Azure Resource Manager см. в статье [Azure Resource Manager обзор](../azure-resource-manager/management/overview.md) .
 
 Дополнительные сведения о разработке для Центра Интернета вещей см. в следующих статьях:
 
 * [Пакет SDK для устройств Azure IoT для C](iot-hub-device-sdk-c-intro.md)
 
-* [Пакеты SDK для Azure IoT](iot-hub-devguide-sdks.md)
+* [Пакеты SDK для Центра Интернета вещей Azure](iot-hub-devguide-sdks.md)
 
 Для дальнейшего изучения возможностей Центра Интернета вещей см. следующие статьи:
 

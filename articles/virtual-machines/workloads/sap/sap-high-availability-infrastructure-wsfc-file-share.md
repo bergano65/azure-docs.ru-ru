@@ -16,12 +16,12 @@ ms.workload: infrastructure-services
 ms.date: 05/05/2017
 ms.author: rclaus
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: f9b7ac97cb190073966f9be450e9f9e04014fbd7
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: cc2295f6151b3cde81c27c8ed1116013e1a3f9a9
+ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70078052"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75647549"
 ---
 # <a name="prepare-azure-infrastructure-for-sap-high-availability-by-using-a-windows-failover-cluster-and-file-share-for-sap-ascsscs-instances"></a>Подготовка высокодоступной инфраструктуры Azure для SAP с помощью отказоустойчивого кластера Windows и файлового ресурса для экземпляров SAP ASCS/SCS
 
@@ -39,8 +39,8 @@ ms.locfileid: "70078052"
 
 [sap-installation-guides]:http://service.sap.com/instguides
 
-[azure-subscription-service-limits]:../../../azure-subscription-service-limits.md
-[azure-subscription-service-limits-subscription]:../../../azure-subscription-service-limits.md
+[azure-resource-manager/management/azure-subscription-service-limits]:../../../azure-resource-manager/management/azure-subscription-service-limits.md
+[azure-resource-manager/management/azure-subscription-service-limits-subscription]:../../../azure-resource-manager/management/azure-subscription-service-limits.md
 
 [dbms-guide]:../../virtual-machines-windows-sap-dbms-guide.md
 
@@ -203,17 +203,17 @@ ms.locfileid: "70078052"
 [sap-templates-3-tier-multisid-apps-marketplace-image]:https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2Fsap-3-tier-marketplace-image-multi-sid-apps%2Fazuredeploy.json
 [sap-templates-3-tier-multisid-apps-marketplace-image-md]:https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2Fsap-3-tier-marketplace-image-multi-sid-apps-md%2Fazuredeploy.json
 
-[virtual-machines-azure-resource-manager-architecture-benefits-arm]:../../../azure-resource-manager/resource-group-overview.md#the-benefits-of-using-resource-manager
+[virtual-machines-azure-resource-manager-architecture-benefits-arm]:../../../azure-resource-manager/management/overview.md#the-benefits-of-using-resource-manager
 
 [virtual-machines-manage-availability]:../../virtual-machines-windows-manage-availability.md
 
 В этой статье документе описываются шаги по подготовке инфраструктуры Azure, необходимые для установки и настройки высокодоступных систем SAP в отказоустойчивом кластере Windows (WSFC) с использованием масштабируемого файлового ресурса для кластеризации экземпляров SAP ASCS/SCS.
 
-## <a name="prerequisite"></a>Предварительное требование
+## <a name="prerequisite"></a>Необходимое условие
 
 Прежде чем начать установку, ознакомьтесь со следующей статьей:
 
-* [Руководство по архитектуре: Кластеризация экземпляров SAP ASCS/SCS в отказоустойчивом кластере Windows с помощью файлового ресурса][sap-high-availability-guide-wsfc-file-share]
+* [Руководство по архитектуре. кластеризация экземпляров SAP ASCS/SCS в отказоустойчивом кластере Windows с помощью файлового ресурса][sap-high-availability-guide-wsfc-file-share]
 
 
 ## <a name="host-names-and-ip-addresses"></a>Имена узлов и IP-адреса
@@ -243,7 +243,7 @@ ms.locfileid: "70078052"
 | Имя сети кластера | sofs-cl | 10.0.6.13 | Н/Д |
 | Имя глобального узла SAP | sapglobal | Используйте IP-адреса всех узлов кластера | Н/Д |
 
-**Таблица 3**. Кластер масштабируемый файловый сервер
+**Таблица 3**. Кластер масштабируемых файловых серверов
 
 
 ## <a name="deploy-vms-for-an-sap-ascsscs-cluster-a-database-management-system-dbms-cluster-and-sap-application-server-instances"></a>Развертывание виртуальных машин для кластера SAP ASCS/SCS, кластера системы управления базами данных (СУБД) и экземпляров сервера приложений SAP
@@ -322,9 +322,9 @@ Add-ClusterScaleOutFileServerRole -Name $SAPGlobalHostName
 
 Рекомендуется использовать службу "Управляемые диски".
 
-![Рис. 1. Экран пользовательского интерфейса для шаблона масштабируемый файловый сервер диспетчер ресурсов с управляемыми дисками][sap-ha-guide-figure-8010]
+![Рисунок 1. Экран пользовательского интерфейса для шаблона Resource Manager для масштабируемого файлового сервера с управляемыми дисками][sap-ha-guide-figure-8010]
 
-_**Рис. 1**. Экран пользовательского интерфейса для шаблона масштабируемый файловый сервер диспетчер ресурсов с управляемыми дисками_
+_**Рисунок 1**. Экран пользовательского интерфейса для шаблона Resource Manager для масштабируемого файлового сервера с управляемыми дисками_
 
 В шаблоне выполните следующее.
 1. В поле **Vm Count** (Число виртуальных машин) введите минимальное число, равное **2**.
@@ -336,9 +336,9 @@ _**Рис. 1**. Экран пользовательского интерфейс
 
 Шаблон Azure Resource Manager для развертывания масштабируемый файловый сервер с Локальные дисковые пространства и неуправляемыми дисками Azure доступен на сайте [GitHub][arm-sofs-s2d-non-managed-disks].
 
-![Рис. 2. Экран пользовательского интерфейса для шаблона масштабируемый файловый сервер Azure Resource Manager без управляемых дисков][sap-ha-guide-figure-8011]
+![Рисунок 2. Экран пользовательского интерфейса для шаблона Resource Manager для масштабируемого файлового сервера без управляемых дисков][sap-ha-guide-figure-8011]
 
-_**Рис. 2**. Экран пользовательского интерфейса для шаблона масштабируемый файловый сервер Azure Resource Manager без управляемых дисков_
+_**Рисунок 2**. Экран пользовательского интерфейса для шаблона Resource Manager для масштабируемого файлового сервера без управляемых дисков_
 
 В поле **Тип учетной записи хранения** выберите **Хранилище класса "Премиум"** . Все прочие параметры совпадают с параметрами управляемых дисков.
 
@@ -352,6 +352,6 @@ _**Рис. 2**. Экран пользовательского интерфейс
 
 Эти параметры были протестированы у клиентов, они обеспечивают удачный компромисс. Они достаточно устойчивы, но они также обеспечивают достаточную отработку отказа в реальных условиях возникновения ошибок или сбоя виртуальной машины.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Установка высокого уровня доступности SAP NetWeaver в отказоустойчивом кластере Windows и в общей папке для экземпляров SAP ASCS/SCS][sap-high-availability-installation-wsfc-file-share]

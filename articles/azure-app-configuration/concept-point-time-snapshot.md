@@ -1,23 +1,18 @@
 ---
-title: Моментальный снимок на определенный момент времени в службе "Конфигурация приложений Azure" | Документация Майкрософт
+title: Моментальный снимок точки конфигурации приложения Azure
 description: Общие сведения о функционировании моментального снимка на определенный момент времени в службе "Конфигурация приложений Azure"
 services: azure-app-configuration
-documentationcenter: ''
 author: yegu-ms
-manager: balans
-editor: ''
-ms.service: azure-app-configuration
-ms.devlang: na
-ms.topic: overview
-ms.workload: tbd
-ms.date: 02/24/2019
 ms.author: yegu
-ms.openlocfilehash: fdbe4846700c690261dbc734063f4420478666a8
-ms.sourcegitcommit: dbde4aed5a3188d6b4244ff7220f2f75fce65ada
-ms.translationtype: HT
+ms.service: azure-app-configuration
+ms.topic: conceptual
+ms.date: 02/24/2019
+ms.openlocfilehash: 4db52ce1897aa5a2b809cb7044b9764baffd0767
+ms.sourcegitcommit: f0dfcdd6e9de64d5513adf3dd4fe62b26db15e8b
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74185212"
+ms.lasthandoff: 12/26/2019
+ms.locfileid: "75495262"
 ---
 # <a name="point-in-time-snapshot"></a>Моментальный снимок на определенный момент времени
 
@@ -25,14 +20,16 @@ ms.locfileid: "74185212"
 
 ## <a name="key-value-retrieval"></a>Получение пары "ключ — значение"
 
-Для получения прошлой пары "ключ — значение" укажите время, когда был создан моментальный снимок этой пары, в заголовке HTTP вызова REST API. Например:
+Для получения прошлой пары "ключ — значение" укажите время, когда был создан моментальный снимок этой пары, в заголовке HTTP вызова REST API. Пример.
 
-        GET /kv HTTP/1.1
-        Accept-Datetime: Sat, 1 Jan 2019 02:10:00 GMT
+```rest
+GET /kv HTTP/1.1
+Accept-Datetime: Sat, 1 Jan 2019 02:10:00 GMT
+```
 
 Сейчас в службе "Конфигурация приложений" сохраняется журнал изменений за 7 дней.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Создание веб-приложения ASP.NET Core](./quickstart-aspnet-core-app.md)  

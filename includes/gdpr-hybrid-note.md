@@ -1,6 +1,6 @@
 ---
-title: включение файла
-description: включение файла
+title: включить файл
+description: включить файл
 services: active-directory
 author: eross-msft
 ms.service: active-directory
@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 05/01/2018
 ms.author: lizross
 ms.custom: include file
-ms.openlocfilehash: 236ba117fd324a75ecc20ea7f94e110d75e3ee63
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.openlocfilehash: 968ebe89de65de5fa49e56a90a1bc92109a16861
+ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67185103"
+ms.lasthandoff: 01/02/2020
+ms.locfileid: "75613773"
 ---
 >[!Note]
->Если вас интересует просмотр или удаление персональных данных, изучите руководство корпорации Майкрософт [Запросы субъектов данных, определенные в GDPR, в отношении Windows](https://docs.microsoft.com/microsoft-365/compliance/gdpr-dsr-windows). Если вам нужны общие сведения о GDPR, изучите [раздел о GDPR на портале Service Trust Portal](https://servicetrust.microsoft.com/ViewPage/GDPRGetStarted).
+>Если вы хотите просмотреть или удалить персональные данные, ознакомьтесь с правилами Майкрософт на сайте [Запросы субъектов данных, определенные в GDPR, в отношении Windows](https://docs.microsoft.com/microsoft-365/compliance/gdpr-data-subject-requests). Если вам требуются общие сведения о GDPR, см. [раздел, посвященный GDPR, на портале Service Trust Portal](https://servicetrust.microsoft.com/ViewPage/GDPRGetStarted).

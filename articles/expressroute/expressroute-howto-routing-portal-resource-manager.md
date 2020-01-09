@@ -5,34 +5,34 @@ services: expressroute
 author: mialdrid
 ms.service: expressroute
 ms.topic: conceptual
-ms.date: 06/28/2019
+ms.date: 02/13/2019
 ms.author: mialdrid
-ms.openlocfilehash: 5fb728cccd77d0cefd10c124cb7215dc3b880fe3
-ms.sourcegitcommit: a22cb7e641c6187315f0c6de9eb3734895d31b9d
+ms.openlocfilehash: 18d2db18e9880028c60b4b545c3628f4a9cb4703
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74083524"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75436955"
 ---
 # <a name="create-and-modify-peering-for-an-expressroute-circuit"></a>Создание и изменение пиринга для канала ExpressRoute
 
 Эта статья поможет вам создать конфигурацию маршрутизации для канала ExpressRoute Azure Resource Manager (ARM) и управлять ею с помощью портал Azure. Вы также сможете проверить состояние, обновить, удалить и отозвать пиринги для канала ExpressRoute. Если вы хотите использовать для работы с каналом другой метод, выберите подходящую статью из списка ниже.
 
 > [!div class="op_single_selector"]
-> * [портал Azure](expressroute-howto-routing-portal-resource-manager.md)
+> * [Портал Azure](expressroute-howto-routing-portal-resource-manager.md)
 > * [PowerShell](expressroute-howto-routing-arm.md)
-> * [Интерфейс командной строки Azure](howto-routing-cli.md)
+> * [Azure CLI](howto-routing-cli.md)
+> * [Общедоступный пиринг](about-public-peering.md)
 > * [Видео — частный пиринг](https://azure.microsoft.com/documentation/videos/azure-expressroute-how-to-set-up-azure-private-peering-for-your-expressroute-circuit)
-> * [Видео — общедоступный пиринг](https://azure.microsoft.com/documentation/videos/azure-expressroute-how-to-set-up-azure-public-peering-for-your-expressroute-circuit)
 > * [Видео — пиринг Майкрософт](https://azure.microsoft.com/documentation/videos/azure-expressroute-how-to-set-up-microsoft-peering-for-your-expressroute-circuit)
 > * [PowerShell (классическая модель)](expressroute-howto-routing-classic.md)
 > 
 
-Вы можете настроить частный пиринг Azure и пиринга Майкрософт для канала ExpressRoute (общедоступный пиринг Azure является устаревшим для новых каналов). Пиринги можно настраивать в любом порядке, главное, выполнять их конфигурацию по очереди. Дополнительные сведения о доменах маршрутизации и пиринге см. в статье [о каналах и пирингах](expressroute-circuit-peerings.md).
+Вы можете настроить частный пиринг и пиринг Майкрософт для канала ExpressRoute (общедоступный пиринг Azure является устаревшим для новых каналов). Пиринг можно настроить в любом порядке. главное, выполнять их конфигурацию по очереди. Дополнительную информацию о доменах маршрутизации и пиринге см. в статье [Каналы ExpressRoute и домены маршрутизации](expressroute-circuit-peerings.md). Сведения об общедоступном пиринга см. в статье [общедоступный пиринг ExpressRoute](about-public-peering.md).
 
 ## <a name="configuration-prerequisites"></a>Предварительные требования для настройки
 
-* Прежде чем приступить к настройке, обязательно изучите [предварительные требования](expressroute-prerequisites.md), [требования к маршрутизации](expressroute-routing.md) и [рабочие процессы](expressroute-workflows.md).
+* Прежде чем приступать к настройке, обязательно изучите [предварительные требования](expressroute-prerequisites.md), [требования к маршрутизации](expressroute-routing.md) и [рабочие процессы](expressroute-workflows.md).
 * Вам потребуется активный канал ExpressRoute. Приступая к работе, [создайте канал ExpressRoute](expressroute-howto-circuit-portal-resource-manager.md) ; он должен быть затем включен на стороне поставщика услуг подключения. Для настройки пиринга (-ов) канал ExpressRoute должен быть подготовлен и включен. 
 * Если вы планируете использовать общий ключ или хэш MD5, обязательно используйте его на обеих сторонах туннеля и Ограничьте число цифр, состоящего из буквенно-цифровых символов, до 25. Специальные символы не поддерживаются. 
 
@@ -100,7 +100,7 @@ ms.locfileid: "74083524"
 
 Чтобы просмотреть свойства пиринга Майкрософт, выберите строку для пиринга.
 
-[![Просмотр свойств пиринга Майкрософт](./media/expressroute-howto-routing-portal-resource-manager/view-peering-m.png "Свойства")](./media/expressroute-howto-routing-portal-resource-manager/view-peering-m-lightbox.png#lightbox)
+[![Просмотр свойств пиринга Майкрософт](./media/expressroute-howto-routing-portal-resource-manager/view-peering-m.png "Просмотреть свойства")](./media/expressroute-howto-routing-portal-resource-manager/view-peering-m-lightbox.png#lightbox)
 ### <a name="updatemsft"></a>Обновление конфигурации пиринга Майкрософт
 
 Можно выбрать строку для пиринга, которую требуется изменить, а затем изменить свойства пиринга и сохранить изменения.
@@ -121,7 +121,7 @@ ms.locfileid: "74083524"
 
 1. Настройте канал ExpressRoute. Прежде чем продолжить, убедитесь, что канал полностью подготовлен поставщиком услуг подключения. 
 
-   Если поставщик услуг подключения оказывает услуги третьего уровня, он может включить для вас частный пиринг Azure. В этом случае вам не потребуется выполнять инструкции, перечисленные в следующих разделах. Однако если поставщик услуг подключения не управляет маршрутизацией за вас, то после создания канала перейдите к следующим шагам.
+   Если поставщик услуг подключения предоставляет управляемые службы уровня 3, он может включить для вас частный пиринг Azure. В этом случае вам не потребуется выполнять инструкции, перечисленные в следующих разделах. Однако если поставщик услуг подключения не управляет маршрутизацией за вас, то после создания канала перейдите к следующим шагам.
 
    **Состояние поставщика канала: не подготовлено**
 
@@ -172,27 +172,8 @@ ms.locfileid: "74083524"
 
 ![Удаление частного пиринга](./media/expressroute-howto-routing-portal-resource-manager/delete-p.png)
 
-## <a name="public"></a>Общедоступный пиринг Azure
 
-Этот раздел поможет создать, получить, обновить и (или) удалить конфигурацию общедоступного пиринга Azure для канала ExpressRoute.
-
-> [!Note]
-> Общедоступный пиринг Azure устарел для новых каналов. Дополнительные сведения см. в разделе [пиринг ExpressRoute](expressroute-circuit-peerings.md).
->
-
-### <a name="getpublic"></a>Просмотр сведений об общедоступном пиринге Azure
-
-Просмотрите свойства общедоступного пиринга Azure, выбрав пиринг.
-
-### <a name="updatepublic"></a>Обновление конфигурации общедоступного пиринга Azure
-
-Выберите строку для пиринга, а затем измените свойства пиринга.
-
-### <a name="deletepublic"></a>Удаление общедоступного пиринга Azure
-
-Удалите конфигурацию пиринга, щелкнув значок Удалить.
-
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Следующий шаг — [связывание виртуальной сети с каналом ExpressRoute](expressroute-howto-linkvnet-portal-resource-manager.md).
 * Дополнительную информацию о рабочих процессах ExpressRoute см. в статье [Процедуры ExpressRoute для подготовки каналов и состояний каналов](expressroute-workflows.md).

@@ -14,12 +14,12 @@ ms.topic: article
 ms.date: 10/08/2018
 ms.author: rogarana
 ms.subservice: disks
-ms.openlocfilehash: b564e20ca8aa5acd7fbd4ea69ac2b1cd72e66d5e
-ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
+ms.openlocfilehash: bc74a3eea1f99de6080788d6f3fddcac823092dc
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74075335"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75370907"
 ---
 # <a name="create-a-snapshot"></a>Создание моментального снимка
 
@@ -29,11 +29,12 @@ ms.locfileid: "74075335"
 
 ## <a name="use-the-azure-portal"></a>Использование портала Azure 
 
-1. Войдите на [портале Azure](https://portal.azure.com).
-2. В меню слева выберите **Создать ресурс**, а затем найдите и выберите **моментальный снимок**.
+Чтобы создать моментальный снимок, выполните следующие действия. 
+1.  На [портал Azure](https://portal.azure.com)выберите **создать ресурс**.
+2. Найдите и выберите **snapshot (моментальный снимок**).
 3. В окне **Моментальный снимок** нажмите кнопку **Создать**. Откроется окно **Создание моментального снимка**.
 4. Заполните поле **Имя** для моментального снимка.
-5. Введите имя новой [группы ресурсов](../../azure-resource-manager/resource-group-overview.md#resource-groups) или выберите имеющуюся. 
+5. Введите имя новой [группы ресурсов](../../azure-resource-manager/management/overview.md#resource-groups) или выберите имеющуюся. 
 6. Выберите **расположение** центра обработки данных Azure.  
 7. В поле **Исходный диск** выберите управляемый диск, моментальный снимок которого необходимо создать.
 8. Выберите **тип учетной записи**, которая будет использоваться для хранения моментального снимка. Выберите **Standard_HDD**, если вам не нужно хранить моментальный снимок на высокопроизводительном диске.
@@ -41,7 +42,7 @@ ms.locfileid: "74075335"
 
 ## <a name="use-powershell"></a>Использование PowerShell
 
-Ниже показано, как скопировать диск VHD, создать конфигурацию моментального снимка и собственно моментальный снимок диска с помощью командлета [New-AzSnapshot](https://docs.microsoft.com/powershell/module/az.compute/new-azsnapshot). 
+В следующих шагах показано, как скопировать диск виртуального жесткого диска и создать конфигурацию моментального снимка. Затем можно создать моментальный снимок диска с помощью командлета [New-азснапшот](https://docs.microsoft.com/powershell/module/az.compute/new-azsnapshot) . 
 
  
 
@@ -84,6 +85,6 @@ ms.locfileid: "74075335"
    ```
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Создайте виртуальную машину из моментального снимка, преобразовав его в управляемый диск, а затем подключив этот диск как диск ОС. Дополнительные сведения см. в статье [Создание виртуальной машины из моментального снимка с помощью PowerShell](./../scripts/virtual-machines-windows-powershell-sample-create-vm-from-snapshot.md?toc=%2fpowershell%2fmodule%2ftoc.json).

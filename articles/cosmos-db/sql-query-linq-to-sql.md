@@ -6,12 +6,12 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 12/02/2019
 ms.author: tisande
-ms.openlocfilehash: d8dd6392cf22852a10c1dc2600edcbc647f3c510
-ms.sourcegitcommit: 9405aad7e39efbd8fef6d0a3c8988c6bf8de94eb
+ms.openlocfilehash: d43f95b91df7d0c9c442339de51936200f4688e2
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74871165"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75441253"
 ---
 # <a name="linq-to-sql-translation"></a>Трансляция из LINQ в SQL
 
@@ -64,7 +64,7 @@ ms.locfileid: "74871165"
 - **OrderBy** и **OrderByDescending**: преобразование для упорядочивания с ASC или DESC.
 - Операторы для агрегирования **Count**, **Sum**, **Min**, **Max**, **Average** и их асинхронные эквиваленты **CountAsync**, **SumAsync**, **MinAsync**, **MaxAsync** и **AverageAsync**.
 - **CompareTo**: выполняет преобразование в сравнение диапазонов. Обычно используется для строк, так как они не сравнимы в .NET.
-- **Take**: переводит в начало SQL для ограничения результатов запроса.
+- **Пропустить** и **выполнить**: преобразуется в смещение SQL и ограничивает ограничение результатов запроса и выполнение разбиения на страницы.
 - **Математические функции**: поддерживает преобразование из .NET `Abs`, `Acos`, `Asin`, `Atan`, `Ceiling`, `Cos`, `Exp`, `Floor`, `Log`, `Log10`, `Pow`, `Round`и `Sign`эквивалентным встроенным функциям SQL.
 - **Строковые функции**: поддерживает преобразование из .NET `Concat`, `Contains`, `Count`, `EndsWith`,`IndexOf`, `Replace`, `Reverse`, `StartsWith`, `SubString`, `ToLower`, `ToUpper`, `TrimEnd`и `TrimStart` эквивалентным встроенным функциям SQL.
 - **Функции массивов**: поддерживает преобразование из .NET `Concat`, `Contains`и `Count` к эквивалентным встроенным функциям SQL.

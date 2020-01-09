@@ -4,15 +4,15 @@ description: В этой статье приведены подробные св
 ms.service: azure-monitor
 ms.subservice: logs
 ms.topic: conceptual
-author: MGoedtel
-ms.author: magoedte
+author: bwren
+ms.author: bwren
 ms.date: 05/04/2017
-ms.openlocfilehash: 60f09035f4aabcbd6348fb5608b812ca4b001b45
-ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
+ms.openlocfilehash: 75fd0453534e3a656bb1d8e2940b716dadfdf869
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72932454"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75395838"
 ---
 # <a name="collect-performance-counters-for-linux-applications-in-azure-monitor"></a>Сбор данных счетчиков производительности приложений Linux в Azure Monitor 
 [!INCLUDE [log-analytics-agent-note](../../../includes/log-analytics-agent-note.md)]
@@ -42,11 +42,11 @@ ms.locfileid: "72932454"
 
 Параметры файла проверки подлинности описаны в следующей таблице.
 
-| Свойство | Описание |
+| Свойство | Description |
 |:--|:--|
 | Port | Представляет текущий порт, который прослушивает экземпляр MySQL. Порт 0 означает, что для экземпляра по умолчанию используются следующие свойства. |
 | адрес привязки;| Текущий адрес привязки MySQL. |
-| Имя пользователя| Пользователь MySQL, который используется мониторинга экземпляра сервера MySQL. |
+| username| Пользователь MySQL, который используется мониторинга экземпляра сервера MySQL. |
 | пароль в кодировке Base64.| Пароль пользователя, который используется для мониторинга MySQL, в кодировке Base64. |
 | Автоматическое обновление| Указывает, нужно ли повторно выполнять поиск изменений в файле my.cnf и перезаписывать файл проверки подлинности OMI MySQL при обновлении поставщика OMI MySQL. |
 
@@ -55,7 +55,7 @@ ms.locfileid: "72932454"
 
 В следующей таблице приведены примеры параметров экземпляра 
 
-| Описание | Файлы |
+| Description | Файлы |
 |:--|:--|
 | Экземпляр по умолчанию и экземпляр с портом 3308. | `0=127.0.0.1, myuser, cnBwdA==`<br>`3308=, ,`<br>`AutoUpdate=true` |
 | Экземпляр по умолчанию и экземпляр с портом 3308 и другими именем пользователя и паролем. | `0=127.0.0.1, myuser, cnBwdA==`<br>`3308=127.0.1.1, myuser2,cGluaGVhZA==`<br>`AutoUpdate=true` |
@@ -71,7 +71,7 @@ ms.locfileid: "72932454"
 
 В следующей таблице приведены сведения о синтаксисе mycimprovauth.
 
-| Операция | Пример | Описание
+| Операция | Пример | Description
 |:--|:--|:--|
 | autoupdate *false or true* | mycimprovauth autoupdate false | Устанавливает, следует ли автоматически обновлять файл проверки подлинности при перезапуске или обновлении. |
 | default *bind-address username password* | mycimprovauth default 127.0.0.1 root pwd | Задает экземпляр по умолчанию в файле проверки подлинности OMI MySQL.<br>Пароль в поле пароля следует вводить в формате обычного текста, так как в файле проверки подлинности OMI MySQL он будет зашифрован в кодировке Base 64. |
@@ -110,7 +110,7 @@ ms.locfileid: "72932454"
 
 Настроив в агенте Log Analytics для Linux отправку данных в Azure Monitor, вам необходимо настроить счетчики производительности, с которых будут собираться данные.  Для счетчиков, описанных в следующей таблице, используйте процедуру, описанную в статье [Источники данных о производительности Windows и Linux в Log Analytics](data-sources-performance-counters.md).
 
-| Имя объекта | Имя счетчика |
+| Имени объекта | Имя счетчика |
 |:--|:--|
 | База данных MySQL | Дисковое пространство в байтах |
 | База данных MySQL | Таблицы |
@@ -146,7 +146,7 @@ sudo /opt/microsoft/apache-cimprov/bin/apache_config.sh -u
 
 Настроив в агенте Log Analytics для Linux отправку данных в Azure Monitor, вам необходимо настроить счетчики производительности, с которых будут собираться данные.  Для счетчиков, описанных в следующей таблице, используйте процедуру, описанную в статье [Источники данных о производительности Windows и Linux в Log Analytics](data-sources-performance-counters.md).
 
-| Имя объекта | Имя счетчика |
+| Имени объекта | Имя счетчика |
 |:--|:--|
 | HTTP-сервер Apache | Занятые рабочие роли |
 | HTTP-сервер Apache | Бездействующие рабочие роли |

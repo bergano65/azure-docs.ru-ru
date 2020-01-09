@@ -1,5 +1,5 @@
 ---
-title: Начало работы с HTTP-запросами гибридных подключений Azure Relay в Node | Документация Майкрософт
+title: Azure Relay гибридные подключения-запросов HTTP в узле
 description: Создание консольного приложения Node.js для HTTP-запросов гибридных подключений Azure Relay в Node.
 services: service-bus-relay
 documentationcenter: node
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: node
 ms.workload: na
 ms.date: 11/01/2018
 ms.author: clemensv
-ms.openlocfilehash: e54a096bd27efddaa9eafb8619e787178550a6e0
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: d71386b86bf7133bb73ddce2e65c3b88743009ad
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60553953"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75462021"
 ---
 # <a name="get-started-with-relay-hybrid-connections-http-requests-in-node"></a>Начало работы с HTTP-запросами гибридных подключений Azure Relay в Node
 

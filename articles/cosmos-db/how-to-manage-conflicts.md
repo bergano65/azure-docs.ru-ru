@@ -1,17 +1,17 @@
 ---
-title: Сведения об управлении конфликтами между регионами в Azure Cosmos DB
+title: Управление конфликтами между регионами в Azure Cosmos DB
 description: Узнайте, как управлять конфликтами в Azure Cosmos DB путем создания последней или пользовательской политики разрешения конфликтов.
 author: markjbrown
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 12/03/2019
 ms.author: mjbrown
-ms.openlocfilehash: 9aab8f9bd202728f8882377f8249f6ebb99f3362
-ms.sourcegitcommit: 9405aad7e39efbd8fef6d0a3c8988c6bf8de94eb
+ms.openlocfilehash: 6d364f1a9974d6d638bb0f824e88ed3866644c15
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74873698"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75441794"
 ---
 # <a name="manage-conflict-resolution-policies-in-azure-cosmos-db"></a>Управление политиками разрешения конфликтов в Azure Cosmos DB
 
@@ -426,7 +426,7 @@ while conflict:
 
 Узнайте больше о следующих понятиях Azure Cosmos DB.
 
-- [Azure Cosmos DB global distribution - under the hood](global-dist-under-the-hood.md) (Глобальное распределение Azure Cosmos DB(взгляд изнутри))
+- [Глобальное распределение (взгляд изнутри)](global-dist-under-the-hood.md)
 - [Настройка нескольких источников в приложениях в Azure Cosmos DB](how-to-multi-master.md)
 - [Настройка клиентов для поддержки нескольких веб-сайтов](how-to-manage-database-account.md#configure-multiple-write-regions)
 - [Добавление и удаление регионов из учетной записи Azure Cosmos DB](how-to-manage-database-account.md#addremove-regions-from-your-database-account)

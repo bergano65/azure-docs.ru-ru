@@ -1,5 +1,5 @@
 ---
-title: Автоматизация процессов Azure Application Insights с помощью Logic Apps.
+title: Автоматизация процессов Application Insights Azure с помощью Logic Apps
 description: Узнайте, как можно быстро автоматизировать повторяющиеся процессы, добавив соединитель Application Insights в приложение логики.
 ms.service: azure-monitor
 ms.subservice: application-insights
@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: mrbullwinkle
 ms.author: mbullwin
 ms.date: 03/11/2019
-ms.openlocfilehash: 8211598071d0835a32f9e25cfcf4e34576702770
-ms.sourcegitcommit: 1bd2207c69a0c45076848a094292735faa012d22
+ms.openlocfilehash: 95a3577d352b6bc4b56d36b5b79658571a6be1ff
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72677602"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75407518"
 ---
 # <a name="automate-application-insights-processes-by-using-logic-apps"></a>Автоматизация процессов Application Insights с помощью Logic Apps
 
@@ -27,7 +27,7 @@ ms.locfileid: "72677602"
 В этом руководстве вы узнаете, как создать приложение логики, использующее алгоритм автоматической кластеризации Analytics, для группирования атрибутов в данных для веб-приложения. Отправка результатов по электронной почте — это лишь один из примеров того, как можно совместно использовать Logic Apps и Application Insights Analytics. 
 
 ### <a name="step-1-create-a-logic-app"></a>Шаг 1. Создание приложения логики
-1. Войдите на [портале Azure](https://portal.azure.com).
+1. Войдите на [портал Azure](https://portal.azure.com).
 1. Щелкните **Создать ресурс**, выберите **Интернет и мобильные устройства**, а затем — **Logic App**.
 
     ![Окно создания приложения логики](./media/automate-with-logic-apps/1createlogicapp.png)
@@ -96,13 +96,13 @@ ms.locfileid: "72677602"
 
 1. В окне **Отправка сообщения электронной почты** выполните следующие действия:
 
-   а) Введите адрес электронной почты получателя.
+   а. Введите адрес электронной почты получателя.
 
-   б) Введите тему сообщения.
+   b. Введите тему сообщения.
 
-   в) Щелкните в любом месте в поле **Текст**, затем в открывшемся справа меню динамического содержимого выберите **Текст**.
+   c. Щелкните в любом месте в поле **Текст**, затем в открывшемся справа меню динамического содержимого выберите **Текст**.
     
-   г) Щелкните раскрывающийся список **Добавить новый параметр** и выберите вложения, а — HTML.
+   d. Щелкните раскрывающийся список **Добавить новый параметр** и выберите вложения, а — HTML.
 
       ![Конфигурация Office 365 Outlook](./media/automate-with-logic-apps/10emailbody.png)
 
@@ -110,11 +110,11 @@ ms.locfileid: "72677602"
 
 1. В меню динамического содержимого выполните следующее.
 
-    а) Выберите **Имя вложения**.
+    а. Выберите **Имя вложения**.
 
-    б) Выберите **Содержимое вложения**.
+    b. Выберите **Содержимое вложения**.
     
-    в) В поле **Является HTML** выберите значение **Да**.
+    c. В поле **Является HTML** выберите значение **Да**.
 
       ![Экран настройки электронного сообщения Office 365](./media/automate-with-logic-apps/12emailattachment.png)
 

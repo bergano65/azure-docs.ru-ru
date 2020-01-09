@@ -10,12 +10,12 @@ ms.date: 12/04/2019
 ms.author: tamram
 ms.reviewer: cbrooks
 ms.subservice: common
-ms.openlocfilehash: 57d30803f20d17ee31c3d42d9a26e04c1b0832b6
-ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
+ms.openlocfilehash: 1413035c879198cf333aeeb5d8fe993162939172
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74892023"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75460579"
 ---
 # <a name="use-powershell-to-assign-an-rbac-role-for-access-to-blob-and-queue-data"></a>Назначение роли RBAC доступа к данным большого двоичного объекта и очереди с помощью PowerShell
 
@@ -57,7 +57,7 @@ Storage Queue Data Reader                 Allows for read access to Azure Storag
 
 ## <a name="assign-an-rbac-role-to-a-security-principal"></a>Назначение роли RBAC субъекту безопасности
 
-Чтобы назначить роль RBAC субъекту безопасности, используйте команду [New-азролеассигнмент](/powershell/module/az.resources/new-azroleassignment) . Формат команды может различаться в зависимости от области назначения. В следующих примерах показано, как назначить роль пользователю в различных областях, но можно использовать ту же команду, чтобы назначить роль любому субъекту безопасности.
+Чтобы назначить роль RBAC субъекту безопасности, используйте команду [New-азролеассигнмент](/powershell/module/az.resources/new-azroleassignment) . Формат команды может различаться в зависимости от области назначения. Чтобы выполнить команду, необходимо, чтобы владелец или роль участника были назначены в соответствующей области. В следующих примерах показано, как назначить роль пользователю в различных областях, но можно использовать ту же команду, чтобы назначить роль любому субъекту безопасности.
 
 ### <a name="container-scope"></a>Область контейнера
 

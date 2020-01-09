@@ -7,12 +7,12 @@ ms.date: 04/10/2019
 ms.topic: conceptual
 ms.service: iot-dps
 services: iot-dps
-ms.openlocfilehash: 5703db90307f679ff4728386dc24647437f9f9ba
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.openlocfilehash: e0dec0a67ed33186797ccec8066aaad89ceb8dcb
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74974978"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75434741"
 ---
 # <a name="how-to-provision-for-multitenancy"></a>Подготовка к мультитенантности 
 
@@ -38,7 +38,7 @@ ms.locfileid: "74974978"
 
 ## <a name="prerequisites"></a>Технические условия
 
-* Выполните процедуру, описанную в кратком руководстве по [настройке службы подготовки устройств Центра Интернета вещей на портале Azure](./quick-setup-auto-provision.md).
+* Выполните процедуру, описанную в кратком руководстве по [настройке Службы подготовки устройств к добавлению в Центр Интернета вещей на портале Azure](./quick-setup-auto-provision.md).
 
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
@@ -89,7 +89,7 @@ ms.locfileid: "74974978"
 
 2. Выберите вкладку **Управление регистрациями**, а затем нажмите кнопку **Добавить группу регистрации** в верхней части страницы. 
 
-3. В разделе **Добавление группы регистрации** введите следующие сведения ниже, а затем нажмите кнопку **Сохранить**.
+3. В разделе **Добавление группы регистрации** введите приведенные ниже сведения, а затем нажмите кнопку **Сохранить**.
 
     **Имя группы**: введите **contoso-us-devices**.
 
@@ -191,20 +191,21 @@ ms.locfileid: "74974978"
 
 В этом разделе мы клонируем пакет SDK для языка C Azure IoT на каждой виртуальной машине. Пакет SDK содержит пример, который будет имитировать подготовку устройства клиента из каждого региона.
 
-
-1. Для каждой виртуальной машины установите **Cmake**, **g++** , **gcc** и [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) с помощью следующих команд:
+1. Для каждой виртуальной машины установите **CMAK**, **g + +** , **GCC**и [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) с помощью следующих команд:
 
     ```bash
     sudo apt-get update
     sudo apt-get install cmake build-essential libssl-dev libcurl4-openssl-dev uuid-dev git-all
     ```
 
+1. Найдите имя тега для [последнего выпуска](https://github.com/Azure/azure-iot-sdk-c/releases/latest) пакета SDK.
 
-1. Клонируйте [пакет SDK для языка C Azure IoT](https://github.com/Azure/azure-iot-sdk-c) на обе виртуальные машины.
+1. Клонируйте [пакет SDK для языка C Azure IoT](https://github.com/Azure/azure-iot-sdk-c) на обе виртуальные машины.  Используйте тег, найденный на предыдущем шаге, в качестве значения для параметра `-b`:
 
     ```bash
-    cd ~/
-    git clone https://github.com/Azure/azure-iot-sdk-c.git --recursive
+    git clone -b <release-tag> https://github.com/Azure/azure-iot-sdk-c.git
+    cd azure-iot-sdk-c
+    git submodule update --init
     ```
 
     Выполнение этой операции может занять несколько минут.
@@ -250,7 +251,7 @@ ms.locfileid: "74974978"
 
 Чтобы создать ключ устройства, используйте главный ключ группы для вычисления [HMAC-SHA256](https://wikipedia.org/wiki/HMAC) на основе уникального идентификатора регистрации для устройства и преобразования результата в формат Base64.
 
-Не включайте главный ключ группы в код устройства.
+Не добавляйте главный ключ группы в код устройства.
 
 Используйте пример оболочки Bash для создания производного ключа устройства для каждого устройства с помощью **openssl**.
 

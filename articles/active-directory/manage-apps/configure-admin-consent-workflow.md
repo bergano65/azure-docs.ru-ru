@@ -12,12 +12,12 @@ ms.date: 10/29/2019
 ms.author: mimart
 ms.reviewer: luleon
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b9e1af654f0e82017bab4db5eb529b7d65b44714
-ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
+ms.openlocfilehash: 83b3f0d97daf0b4ac17f74981119b380d1776d97
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74786441"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75430203"
 ---
 # <a name="configure-the-admin-consent-workflow-preview"></a>Настройка рабочего процесса согласия администратора (Предварительная версия)
 
@@ -127,7 +127,7 @@ ms.locfileid: "74786441"
 |Рецензенты, утверждающие запрос согласия администратора       |Проверки доступа           |UserManagement           |Утверждение всех запросов в бизнес-потоке          |Контекст приложения            |В настоящее время не удается найти контекст пользователя или идентификатор приложения, которому было предоставлено согласие администратора.           |
 |Рецензенты, запрещающие запрос согласия администратора       |Проверки доступа           |UserManagement           |Утверждение всех запросов в бизнес-потоке          |Контекст приложения            | В настоящее время не удается найти пользовательский контекст субъекта, который отклонил запрос согласия администратора.          |
 
-## <a name="faq"></a>Вопросы и ответы 
+## <a name="faq"></a>Часто задаваемые вопросы 
 
 **Я включил этот рабочий процесс, но при тестировании функциональности не вижу нового запроса "требуется утверждение", позволяющего запросить доступ?**
 
@@ -153,8 +153,10 @@ ms.locfileid: "74786441"
 
 Дополнительные сведения о предоставлении согласия для приложений см. в статье [Платформа предоставления согласия Azure Active Directory](../develop/consent-framework.md).
 
-[Согласие и интеграция приложений с Azure Active Directory](../develop/quickstart-v1-integrate-apps-with-azure-ad.md)
+[Настройка согласия конечных пользователей для приложений](configure-user-consent.md)
 
-[Согласие и разрешения для конвергированных приложений в Azure AD версии 2.0](../develop/active-directory-v2-scopes.md)
+[Предоставление согласия администратора на уровне клиента для приложения](grant-admin-consent.md)
 
-[StackOverflow в AzureAD](https://stackoverflow.com/questions/tagged/azure-active-directory)
+[Разрешения и согласие на платформе Microsoft Identity](../develop/active-directory-v2-scopes.md)
+
+[Azure AD на StackOverflow](https://stackoverflow.com/questions/tagged/azure-active-directory)

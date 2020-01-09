@@ -16,12 +16,12 @@ ms.date: 10/30/2019
 ms.author: jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b0fd50f730c604ba1359218cf5268bd20e570d3c
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.openlocfilehash: 7afad7bdc0cd0fb957104e4963eaade96fa2d840
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74962650"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75423937"
 ---
 # <a name="daemon-app-that-calls-web-apis---code-configuration"></a>Управляющее приложение, вызывающее веб-API — конфигурация кода
 
@@ -31,11 +31,11 @@ ms.locfileid: "74962650"
 
 Библиотеки Майкрософт, поддерживающие управляющие приложения:
 
-  Библиотека MSAL | Описание
+  Библиотека MSAL | Description
   ------------ | ----------
   ![MSAL.NET](media/sample-v2-code/logo_NET.png) <br/> MSAL.NET  | Для создания управляющего приложения поддерживаются платформы .NET Framework и платформы .NET Core (не UWP, Xamarin. iOS и Xamarin. Android, так как эти платформы используются для создания общедоступных клиентских приложений).
-  ![Python](media/sample-v2-code/logo_python.png) <br/> MSAL Python | Выполняется разработка — в общедоступной предварительной версии
-  ![Java:](media/sample-v2-code/logo_java.png) <br/> MSAL Java | Выполняется разработка — в общедоступной предварительной версии
+  ![Python](media/sample-v2-code/logo_python.png) <br/> MSAL Python | Поддержка управляющих приложений в Python
+  ![Java](media/sample-v2-code/logo_java.png) <br/> MSAL Java | Поддержка управляющих приложений на Java
 
 ## <a name="configuration-of-the-authority"></a>Настройка центра
 
@@ -136,7 +136,7 @@ public class TestData {
 В MSAL.NET конфиденциальное клиентское приложение представлено интерфейсом `IConfidentialClientApplication`.
 Использование пространства имен MSAL.NET в исходном коде
 
-```CSharp
+```csharp
 using Microsoft.Identity.Client;
 IConfidentialClientApplication app;
 ```
@@ -164,7 +164,7 @@ import com.microsoft.aad.msal4j.IAuthenticationResult;
 
 # <a name="nettabdotnet"></a>[.NET](#tab/dotnet)
 
-```CSharp
+```csharp
 app = ConfidentialClientApplicationBuilder.Create(config.ClientId)
            .WithClientSecret(config.ClientSecret)
            .WithAuthority(new Uri(config.Authority))
@@ -204,7 +204,7 @@ ConfidentialClientApplication app = ConfidentialClientApplication.builder(
 
 # <a name="nettabdotnet"></a>[.NET](#tab/dotnet)
 
-```CSharp
+```csharp
 X509Certificate2 certificate = ReadCertificate(config.CertificateName);
 app = ConfidentialClientApplicationBuilder.Create(config.ClientId)
     .WithCertificate(certificate)
@@ -271,7 +271,7 @@ MSAL.NET имеет два метода для предоставления по
 
 При использовании `WithClientAssertion`необходимо предоставить подписанный JWT. Этот расширенный сценарий подробно описан в [утверждениях клиента](msal-net-client-assertions.md) .
 
-```CSharp
+```csharp
 string signedClientAssertion = ComputeAssertion();
 app = ConfidentialClientApplicationBuilder.Create(config.ClientId)
                                           .WithClientAssertion(signedClientAssertion)
@@ -281,7 +281,7 @@ app = ConfidentialClientApplicationBuilder.Create(config.ClientId)
 При использовании `WithClientClaims`MSAL.NET вычислит собой подписанное утверждение, содержащее утверждения, ожидаемые Azure AD, а также дополнительные клиентские утверждения, которые требуется отправить.
 Ниже приведен фрагмент кода для этого:
 
-```CSharp
+```csharp
 string ipAddress = "192.168.1.2";
 var claims = new Dictionary<string, string> { { "client_ip", ipAddress } };
 X509Certificate2 certificate = ReadCertificate(config.CertificateName);

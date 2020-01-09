@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.topic: article
 ms.date: 08/02/2017
 ms.author: akjosh
-ms.openlocfilehash: 2215136c02d9cf967e0184af7588ce8d48362009
-ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
+ms.openlocfilehash: 02180af0b388a8f10e0689bc4ea176ee60974666
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74072935"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75359014"
 ---
 # <a name="how-to-update-the-azure-linux-agent-on-a-vm"></a>Как обновить агент Azure Linux на виртуальной машине
 
@@ -349,7 +349,7 @@ sudo sed -i 's/# AutoUpdate.Enabled=n/AutoUpdate.Enabled=y/g' /etc/waagent.conf
 sudo systemctl restart waagent.service
 ```
 
-## <a name="oracle-6-and-7"></a>Oracle 6 и 7
+## <a name="oracle-linux-6-and-oracle-linux-7"></a>Oracle Linux 6 и Oracle Linux 7
 
 При работе с Oracle Linux убедитесь, что включен репозиторий `Addons` . Откройте для редактирования файл `/etc/yum.repos.d/public-yum-ol6.repo` (Oracle Linux 6) или `/etc/yum.repos.d/public-yum-ol7.repo` (Oracle Linux) и замените в нем строку `enabled=0` на строку `enabled=1` в разделе **[ol6_addons]** или **[ol7_addons]** .
 

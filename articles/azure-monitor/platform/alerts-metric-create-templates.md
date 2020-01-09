@@ -8,23 +8,23 @@ ms.topic: conceptual
 ms.date: 12/5/2019
 ms.author: harelbr
 ms.subservice: alerts
-ms.openlocfilehash: 496e8673e1cbf31f4c71db00b7eaf1c0618e509f
-ms.sourcegitcommit: 9405aad7e39efbd8fef6d0a3c8988c6bf8de94eb
+ms.openlocfilehash: 7b2751957bf341b37527697f92931bacfb425c09
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74872950"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75397336"
 ---
 # <a name="create-a-metric-alert-with-a-resource-manager-template"></a>Создание оповещения о метриках с помощью шаблона Resource Manager
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
-В этой статье показано, как можно использовать [шаблон Azure Resource Manager](../../azure-resource-manager/resource-group-authoring-templates.md) для настройки [новых оповещений метрик](../../azure-monitor/platform/alerts-metric-near-real-time.md) в Azure Monitor. Шаблоны Resource Manager позволяют программно настроить оповещения согласованным и воспроизводимым образом в разных средах. Сейчас в [этом наборе типов ресурсов](../../azure-monitor/platform/alerts-metric-near-real-time.md#metrics-and-dimensions-supported) доступны новые оповещения метрик.
+В этой статье показано, как можно использовать [шаблон Azure Resource Manager](../../azure-resource-manager/templates/template-syntax.md) для настройки [новых оповещений метрик](../../azure-monitor/platform/alerts-metric-near-real-time.md) в Azure Monitor. Шаблоны Resource Manager позволяют программно настроить оповещения согласованным и воспроизводимым образом в разных средах. Сейчас в [этом наборе типов ресурсов](../../azure-monitor/platform/alerts-metric-near-real-time.md#metrics-and-dimensions-supported) доступны новые оповещения метрик.
 
 > [!IMPORTANT]
 > Шаблон ресурса для создания оповещений метрик для типа ресурса: Azure Log Analytics Workspace (т. е.) `Microsoft.OperationalInsights/workspaces`, требует дополнительных действий. См. дополнительные сведения о [шаблоне ресурсов для создания оповещения метрик для журналов](../../azure-monitor/platform/alerts-metric-logs.md#resource-template-for-metric-alerts-for-logs).
 
-Основные этапы:
+Основными шагами являются следующие:
 
 1. Используйте один из приведенных ниже шаблонов в виде JSON-файла, описывающего создание оповещения.
 2. Измените и используйте соответствующий файл параметров как JSON, чтобы настроить оповещение.
@@ -3552,6 +3552,11 @@ az group deployment create \
 ```
 
 Вы можете задать значения для параметров с помощью командной строки или файла параметров. Ниже приведен пример файла параметров.
+
+
+> [!NOTE]
+>
+> `&amp`; — Это ссылка на HTML-сущность для &. Параметры URL-адреса все еще разделяются одной &, но если вы упомянули URL-адрес в формате HTML, его необходимо закодировать. Таким образом, если в значении параметра Пингурл имеется значение "&", необходимо поэкранировать его с помощью "`&amp`;".
 
 Сохраните приведенный ниже код JSON в формате аваилабилитялерт. parameters. JSON и при необходимости измените его.
 

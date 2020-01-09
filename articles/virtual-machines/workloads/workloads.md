@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.devlang: azurecli
 ms.date: 09/20/2019
 ms.author: cynthn
-ms.openlocfilehash: 11d503e7dd15f148208da65d551f9c6ae71a7e7f
-ms.sourcegitcommit: 3f22ae300425fb30be47992c7e46f0abc2e68478
+ms.openlocfilehash: a08a8c6afd4670bea1c3775466d23135016bf08c
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71265570"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75373270"
 ---
 # <a name="workloads-on-azure-virtual-machines"></a>Рабочие нагрузки на виртуальных машинах Azure
 
@@ -27,8 +27,9 @@ ms.locfileid: "71265570"
 
 - [Высокопроизводительные вычислительные системы](./hpc/overview.md) в Azure используют виртуальные машины, оптимизированные для ЦП или GPU, для решения сложных проблем с большим объемом вычислений.
 - [SAP](./sap/get-started.md) в Azure может выполнять критически важные рабочие нагрузки и сценарии SAP на масштабируемой и совместимой платформе, проверенной на предприятии.
-- [Oracle](./oracle/oracle-considerations.md) поддерживает выполнение Oracle DB 12,1 Standard и Enterprise Edition в Azure в образах виртуальных машин на основе Oracle Linux. 
-- [Повторное размещение больших ЭВМ](./mainframe-rehosting/overview.md) 
+- [Oracle](./oracle/oracle-considerations.md) поддерживает выполнение Oracle DB 12,1 Standard и Enterprise Edition в Azure в образах виртуальных машин на основе Oracle Linux.
+- [Red Hat](./redhat/redhat-overview.md) в Azure поддерживается с помощью различных предложений образов Red Hat Enterprise Linux и инфраструктуры обновления Red Hat для доставки обновлений по запросу.
+- [Повторное размещение больших ЭВМ](./mainframe-rehosting/overview.md)
 
 
 

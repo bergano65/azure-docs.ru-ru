@@ -1,25 +1,16 @@
 ---
-title: Безопасное взаимодействие служб на основе WCF в Azure Service Fabric | Документация Майкрософт
+title: Безопасная связь служб на основе WCF
 description: Узнайте, как защитить взаимодействие на основе WCF для служб Reliable Services, запущенных в кластере Azure Service Fabric.
-services: service-fabric
-documentationcenter: .net
 author: suchiagicha
-manager: chackdan
-editor: vturecek
-ms.assetid: fc129c1a-fbe4-4339-83ae-0e69a41654e0
-ms.service: service-fabric
-ms.devlang: dotnet
 ms.topic: conceptual
-ms.tgt_pltfrm: na
-ms.workload: required
 ms.date: 04/20/2017
 ms.author: pepogors
-ms.openlocfilehash: 31a7a3a42436f3a818fcf48f2af5ca395fa02386
-ms.sourcegitcommit: aef6040b1321881a7eb21348b4fd5cd6a5a1e8d8
+ms.openlocfilehash: ca5eafa4612503a13f80b7f238e4827979c0358b
+ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72170421"
+ms.lasthandoff: 01/02/2020
+ms.locfileid: "75614168"
 ---
 # <a name="secure-wcf-based-communications-for-a-service"></a>Безопасное взаимодействие на основе WCF для служб
 Безопасность — один из самых важных аспектов взаимодействия. Платформа приложений Reliable Services предоставляет несколько готовых стеков взаимодействия и средств, которыми можно воспользоваться для повышения безопасности. В этой статье объясняется, как повысить безопасность при использовании удаленного взаимодействия со службой.

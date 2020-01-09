@@ -1,20 +1,19 @@
 ---
 title: Политики обработки ошибок вывода в Azure Stream Analytics
 description: Узнайте о том, какие политики обработки ошибок вывода доступны в Azure Stream Analytics.
-services: stream-analytics
 author: mamccrea
 ms.author: mamccrea
-ms.reviewer: jasonh
+ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 12/04/2018
 ms.custom: seodec18
-ms.openlocfilehash: b31530966d2c5ca9a3f82f3e74ba349e66053a83
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 22112272bb302769e5969cf6995d486438deb41f
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61478936"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75431611"
 ---
 # <a name="azure-stream-analytics-output-error-policy"></a>Политика обработки ошибок вывода в Azure Stream Analytics
 В этой статье описываются политики обработки ошибок вывода, которые могут быть настроены в Azure Stream Analytics.
@@ -27,7 +26,7 @@ ms.locfileid: "61478936"
 ## <a name="retry"></a>Повторить попытку
 Когда происходит ошибка, Azure Stream Analytics бесконечно повторяет попытку записи события, пока запись не будет выполнена. Время ожидания для повторных попыток не задано. В конечном итоге обработку всех последующих событий блокирует событие, которое Azure Stream Analytics безуспешно пытается записать. Это политика обработки ошибок вывода по умолчанию.
 
-## <a name="drop"></a>Удаление
+## <a name="drop"></a>Drop
 Azure Stream Analytics будет удалять все выходные события, вызывающее ошибку преобразования данных. Восстановить удаленные события для повторной обработки позже невозможно.
 
 

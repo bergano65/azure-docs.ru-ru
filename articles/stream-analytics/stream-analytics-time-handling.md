@@ -1,18 +1,18 @@
 ---
 title: Рассмотрение времени в Azure Stream Analytics
 description: Узнайте, как работает обработка времени в Azure Stream Analytics, например, как выбрать лучшее время запуска, как обрабатывать последние и ранние события, а также метрики обработки времени.
-author: jasonwhowell
-ms.author: zhongc
+author: mamccrea
+ms.author: mamccrea
 ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 03/05/2018
-ms.openlocfilehash: ae53663f78b684d41c36607760e30db9e48a6434
-ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
+ms.openlocfilehash: 367b7c2e1ce1c8b3c0dbc02003218b76096b409d
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72901420"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75354649"
 ---
 # <a name="understand-time-handling-in-azure-stream-analytics"></a>Рассмотрение времени в Azure Stream Analytics
 
@@ -128,7 +128,7 @@ Stream Analytics предоставляет пользователям два в
 
 Вы можете наблюдать последствия использования интервалов для событий, полученных в неправильном порядке, с помощью [метрик задания Stream Analytics](stream-analytics-monitoring.md). Ниже приведены соответствующие метрики.
 
-|Метрика  | Описание  |
+|Метрика  | Description  |
 |---------|---------|
 | **События, поступающие не по порядку** | Указывает количество событий, полученных в неактуальное время, которые были отклонены или получили откорректированную метку времени. Эта метрика напрямую зависит от настройки параметра **События, поступающие не по порядку** на странице **Упорядочение событий** для задания на портале Azure. |
 | **Поздние входные события** | Указывает число событий, поступающих позднее из источника. Эта метрика включает отклоненные события или события с откорректированной меткой времени. Эта метрика напрямую зависит от настройки параметра **События, поступающие с опозданием** на странице **Упорядочение событий** для задания на портале Azure. |

@@ -8,12 +8,12 @@ ms.service: azure-databricks
 ms.workload: big-data
 ms.topic: conceptual
 ms.date: 03/13/2019
-ms.openlocfilehash: b9a5dbd8e24659493bbbefd50c3e234dca3dbdd9
-ms.sourcegitcommit: 2d3740e2670ff193f3e031c1e22dcd9e072d3ad9
+ms.openlocfilehash: 800b51c8f900d2ea99900ea147b33010452348f5
+ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/16/2019
-ms.locfileid: "74129343"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75639877"
 ---
 # <a name="regional-disaster-recovery-for-azure-databricks-clusters"></a>Региональное аварийное восстановление кластеров Azure Databricks
 
@@ -21,7 +21,7 @@ ms.locfileid: "74129343"
 
 ## <a name="azure-databricks-architecture"></a>Архитектура Azure Databricks
 
-На высоком уровне при создании рабочей области Azure Databricks с помощью портала Azure [управляемое устройство](../managed-applications/overview.md) развертывается как ресурс Azure в вашей подписке, в выбранном регионе Azure (например, "Западная часть США"). Это устройство развертывается в [виртуальной сети Azure](../virtual-network/virtual-networks-overview.md) с [группой безопасности сети](../virtual-network/manage-network-security-group.md) и учетной записью службы хранилища Azure, доступной в вашей подписке. Виртуальная сеть обеспечивает защиту на уровне периметра для рабочей области Databricks и защищается с помощью группы безопасности сети. В этой рабочей области можно создавать кластеры Databricks, указывая тип виртуальной машины работника и драйвера, а также версию среды выполнения Databricks. Сохраненные данные доступны в вашей учетной записи хранения, которая может быть хранилищем BLOB-объектов Azure или Azure Data Lake Storage. После создания кластера можно выполнять задания через записные книжки, интерфейсы REST API, а также конечные точки ODBC и JDBC, присоединяя их к определенному кластеру.
+На высоком уровне при создании рабочей области Azure Databricks с помощью портала Azure [управляемое устройство](../azure-resource-manager/managed-applications/overview.md) развертывается как ресурс Azure в вашей подписке, в выбранном регионе Azure (например, "Западная часть США"). Это устройство развертывается в [виртуальной сети Azure](../virtual-network/virtual-networks-overview.md) с [группой безопасности сети](../virtual-network/manage-network-security-group.md) и учетной записью службы хранилища Azure, доступной в вашей подписке. Виртуальная сеть обеспечивает защиту на уровне периметра для рабочей области Databricks и защищается с помощью группы безопасности сети. В этой рабочей области можно создавать кластеры Databricks, указывая тип виртуальной машины работника и драйвера, а также версию среды выполнения Databricks. Сохраненные данные доступны в вашей учетной записи хранения, которая может быть хранилищем BLOB-объектов Azure или Azure Data Lake Storage. После создания кластера можно выполнять задания через записные книжки, интерфейсы REST API, а также конечные точки ODBC и JDBC, присоединяя их к определенному кластеру.
 
 Плоскость управления Databricks контролирует и отслеживает среду рабочей области Databricks. Все операции управления, например создание кластера, инициируются с плоскости управления. Все метаданные, например запланированные задания, хранятся в Базе данных Azure с георепликацией для обеспечения отказоустойчивости.
 
@@ -90,7 +90,7 @@ ms.locfileid: "74129343"
    > [!NOTE]
    > На этом этапе не копируются библиотеки, так как базовый API не поддерживает их.
 
-   Скопируйте и сохраните приведенный ниже скрипт python в файл и запустите его в командной строке Databricks. Пример: `python scriptname.py`.
+   Скопируйте и сохраните приведенный ниже скрипт python в файл и запустите его в командной строке Databricks. Например, `python scriptname.py`.
 
    ```python
    from subprocess import call, check_output
@@ -133,7 +133,7 @@ ms.locfileid: "74129343"
 
    Приведенный ниже скрипт выводит таблицу соответствия старых идентификаторов кластеров новым. Ее можно использовать позже для переноса заданий (настроенных на использование имеющихся кластеров).
 
-   Скопируйте и сохраните приведенный ниже скрипт python в файл и запустите его в командной строке Databricks. Пример: `python scriptname.py`.
+   Скопируйте и сохраните приведенный ниже скрипт python в файл и запустите его в командной строке Databricks. Например, `python scriptname.py`.
 
    ```python
    from subprocess import call, check_output
@@ -310,6 +310,6 @@ ms.locfileid: "74129343"
 
 Если вы используете другие службы Azure, обязательно реализуйте рекомендации по аварийному восстановлению для этих служб. Например, если вы решили использовать внешний экземпляр хранилище метаданных Hive, следует рассмотреть возможность аварийного восстановления для [SQL Server Azure](../sql-database/sql-database-disaster-recovery.md), [Azure HDInsight](../hdinsight/hdinsight-high-availability-linux.md)и (или) [базы данных Azure для MySQL](../mysql/concepts-business-continuity.md). Общие сведения об аварийном восстановлении см. в статье [Аварийное восстановление для приложений Azure](https://docs.microsoft.com/azure/architecture/resiliency/disaster-recovery-azure-applications).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения см. в [документации по Azure Databricks](index.yml).

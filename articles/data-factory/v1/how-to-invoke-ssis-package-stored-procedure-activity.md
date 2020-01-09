@@ -13,12 +13,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 01/19/2018
 ms.author: jingwang
-ms.openlocfilehash: d9d0ef37c247107a902b1083e77541711f18e7b2
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: ea86c4670a8eb6dc5e2133ed01045e8aada0f707
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74927916"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75438786"
 ---
 # <a name="invoke-an-ssis-package-using-stored-procedure-activity-in-azure-data-factory"></a>Вызов пакета SSIS с помощью действия хранимой процедуры в фабрике данных Azure
 В этой статье описывается, как вызвать пакет SSIS из конвейера фабрики данных Azure, используя действие хранимой процедуры. 
@@ -28,7 +28,7 @@ ms.locfileid: "74927916"
 
 ## <a name="prerequisites"></a>Технические условия
 
-### <a name="azure-sql-database"></a>Базы данных SQL Azure 
+### <a name="azure-sql-database"></a>База данных SQL Azure 
 В этих пошаговых инструкциях используется база данных SQL Azure, в которой размещен каталог SSIS. Вы также можете использовать Управляемый экземпляр Базы данных SQL.
 
 ### <a name="create-an-azure-ssis-integration-runtime"></a>Создание среды выполнения интеграции Azure SSIS.
@@ -44,7 +44,7 @@ ms.locfileid: "74927916"
 ### <a name="create-a-data-factory"></a>Создание фабрики данных
 В следующей процедуре представлены шаги для создания фабрики данных. Вы создадите конвейер с действием хранимой процедуры в фабрике данных. Действие хранимой процедуры выполняет хранимую процедуру в базе данных SSISDB для запуска вашего пакета SSIS.
 
-1. Определите переменную для имени группы ресурсов, которую в дальнейшем можно будет использовать в командах PowerShell. Скопируйте текст следующей команды в PowerShell, укажите имя [группы ресурсов Azure](../../azure-resource-manager/resource-group-overview.md) в двойных кавычках, а затем выполните команду. Например, `"adfrg"`. 
+1. Определите переменную для имени группы ресурсов, которую в дальнейшем можно будет использовать в командах PowerShell. Скопируйте текст следующей команды в PowerShell, укажите имя [группы ресурсов Azure](../../azure-resource-manager/management/overview.md) в двойных кавычках, а затем выполните команду. Например: `"adfrg"`. 
    
      ```powershell
     $resourceGroupName = "ADFTutorialResourceGroup";
@@ -174,7 +174,7 @@ ms.locfileid: "74927916"
     $DFPipeLine = New-AzDataFactoryPipeline -DataFactoryName $DataFactory.DataFactoryName -ResourceGroupName $ResGrp.ResourceGroupName -Name "RunSSISPackagePipeline" -DefinitionFile ".\RunSSISPackagePipeline.json"
     ```
 
-### <a name="monitor-the-pipeline-run"></a>Мониторинг конвейера.
+### <a name="monitor-the-pipeline-run"></a>Мониторинг конвейера
 
 1. Выполните команду **Get-аздатафакторислице** , чтобы получить сведения обо всех срезах выходного набора данных * *, который является выходной таблицей конвейера.
 

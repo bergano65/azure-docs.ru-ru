@@ -1,28 +1,19 @@
 ---
-title: 'Диспетчер кластерных ресурсов Service Fabric: стоимость перемещения | Документация Майкрософт'
-description: Общие сведения о стоимости перемещения служб Service Fabric.
-services: service-fabric
-documentationcenter: .net
+title: 'Диспетчер ресурсов кластера Service Fabric: затраты на перемещение'
+description: Узнайте о затратах на перемещение для служб Service Fabric и о том, как ее можно указать в соответствии с любой архитектурой, включая динамическую конфигурацию.
 author: masnider
-manager: chackdan
-editor: ''
-ms.assetid: f022f258-7bc0-4db4-aa85-8c6c8344da32
-ms.service: service-fabric
-ms.devlang: dotnet
 ms.topic: conceptual
-ms.tgt_pltfrm: NA
-ms.workload: NA
 ms.date: 08/18/2017
 ms.author: masnider
-ms.openlocfilehash: 80845fca8d163a4ebe9257f19825624acef3a815
-ms.sourcegitcommit: 3486e2d4eb02d06475f26fbdc321e8f5090a7fac
+ms.openlocfilehash: af3e01d0d5a605c052be24eed8e14ee3449e2c79
+ms.sourcegitcommit: 5925df3bcc362c8463b76af3f57c254148ac63e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73243015"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75563349"
 ---
 # <a name="service-movement-cost"></a>Затраты на перемещение служб
-Фактором, который диспетчер кластерных ресурсов Service Fabric принимает во внимание при попытке определить, какие изменения вносить в кластер, являются общие затраты на эти изменения. Понятие "затраты" соотносится со степенью улучшения кластера. Затраты учитываются при перемещении служб для балансировки, дефрагментации и выполнения других требований. Цель — выполнить требования с наименьшим вмешательством или затратами. 
+Фактором, который диспетчер кластерных ресурсов Service Fabric принимает во внимание при попытке определить, какие изменения вносить в кластер, являются общие затраты на эти изменения. Понятие "затраты" соотносится со степенью улучшения кластера. Затраты учитываются при перемещении служб для балансировки, дефрагментации и выполнения других требований. Цель — выполнить требования с наименьшим вмешательством или затратами.
 
 Как минимум перемещение служб требует затрат процессорного времени и пропускной способности сети. Для служб с отслеживанием состояния требуется копировать их состояние, что приводит к использованию дополнительных ресурсов памяти и дисков. Сведение к минимуму затрат на решения, получаемые диспетчером кластерных ресурсов Azure Service Fabric, гарантирует, что ресурсы кластера не будут использоваться без необходимости. Однако при этом не хотелось бы игнорировать решения, которые могли бы значительно улучшить выделение ресурсов кластера.
 
@@ -33,7 +24,7 @@ ms.locfileid: "73243015"
 ## <a name="setting-move-costs"></a>Настройка затрат на перемещение 
 Можно задать затраты на перемещение по умолчанию для службы при ее создании.
 
-PowerShell:
+PowerShell.
 
 ```posh
 New-ServiceFabricService -ApplicationName $applicationName -ServiceName $serviceName -ServiceTypeName $serviceTypeName –Stateful -MinReplicaSetSize 3 -TargetReplicaSetSize 3 -PartitionSchemeSingleton -DefaultMoveCost Medium
@@ -51,7 +42,7 @@ await fabricClient.ServiceManager.CreateServiceAsync(serviceDescription);
 
 Можно также динамически указать или обновить затраты на перемещение для службы после ее создания. 
 
-PowerShell: 
+PowerShell. 
 
 ```posh
 Update-ServiceFabricService -Stateful -ServiceName "fabric:/AppName/ServiceName" -DefaultMoveCost High
@@ -111,7 +102,7 @@ ClusterManifest.xml:
         </Section>
 ```
 
-Для автономных развернутых служб используется ClusterConfig.json, а для размещенных в Azure кластеров — Template.json:
+Для автономных развертываний используется ClusterConfig.json, а для размещенных в Azure кластеров — Template.json.
 
 ```json
 "fabricSettings": [

@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: rboucher
 ms.author: robb
 ms.date: 03/19/2018
-ms.openlocfilehash: 68c90f6c763fe7cd634aee886c5c8c6b8153253e
-ms.sourcegitcommit: ae461c90cada1231f496bf442ee0c4dcdb6396bc
+ms.openlocfilehash: 4ce1272c38bcb066f9e88ca739561ccd7696c989
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72551832"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75363512"
 ---
 # <a name="azure-monitoring-rest-api-walkthrough"></a>Пошаговое руководство по REST API Azure Monitor
 
@@ -97,7 +97,7 @@ $authHeader = @{
 
 **Метод**: GET
 
-**URI запроса**: https: \/ \/management. Azure.com/Subscriptions/ *{SubscriptionId}* /resourceGroups/ *{resourceGroupName}* /providers/ *{resourceProviderNamespace}* / *{ResourceType}* / *{resourceName}* /providers/Microsoft.Insights/metricDefinitions? API-Version = *{apiVersion}*
+**URI запроса**: https:\/\/Management.Azure.com/Subscriptions/ *{SubscriptionId}* /resourceGroups/ *{resourceGroupName}* /providers/ *{resourceProviderNamespace}* / *{ResourceType}* / *{resourceName}* /providers/Microsoft.Insights/metricDefinitions? API-Version = *{apiVersion}*
 
 Например, запрос на получение определений метрик для учетной записи хранения Azure будет выглядеть следующим образом:
 
@@ -241,7 +241,7 @@ Invoke-RestMethod -Uri $request `
 
 **Метод**: GET
 
-**URI запроса**: HTTPS \://Management.Azure.com/Subscriptions/ *{Subscription-ID}* /resourceGroups/ *{имя ресурса-группы*}/providers/ *{ресурс-поставщик-пространство имен}* / *{Resource-Type}* / *{Resource-Name}* /providers/Microsoft.Insights/Metrics? metricnames = *{метрика}* & TimeSpan = *{starttime/EndTime}* & $Filter = *{Filter}* & resultType = метаданные & API-Version = *{ apiVersion}*
+**URI запроса**: HTTPS\://Management.Azure.com/Subscriptions/ *{Subscription-ID}* /resourceGroups/ *{Resource-Group-Name}* /providers/ *{ресурс-поставщик-пространство имен* }/ *{ресурс-тип}* / *{Resource-Name}* /providers/Microsoft.Insights/Metrics? metricnames = *{Метрика}* & TimeSpan = *{StartTime/EndTime}* & $Filter = *{Filter}* & resultType = метаданные & API-Version = *{ apiVersion}*
 
 Например, чтобы получить список значений измерений, которые были созданы для параметра "API Name dimension" (Измерение имени API) метрики "Транзакции", где измерение GeoType = "Primary" в течение указанного интервала времени, используйте следующий запрос:
 
@@ -393,7 +393,7 @@ Invoke-RestMethod -Uri $request `
 
 **Метод**: GET
 
-**URI запроса**: https: \/ \/management. Azure.com/Subscriptions/ *{SubscriptionId}* /resourceGroups/ *{resourceGroupName}* /providers/ *{resourceProviderNamespace}* / *{ResourceType}* / *{resourceName}* /providers/Microsoft.Insights/metricDefinitions? API-Version = *{apiVersion}*
+**URI запроса**: https:\/\/Management.Azure.com/Subscriptions/ *{SubscriptionId}* /resourceGroups/ *{resourceGroupName}* /providers/ *{resourceProviderNamespace}* / *{ResourceType}* / *{resourceName}* /providers/Microsoft.Insights/metricDefinitions? API-Version = *{apiVersion}*
 
 Например, чтобы получить определения метрик для приложения логики Azure, запрос будет выглядеть следующим образом:
 
@@ -620,7 +620,7 @@ armclient GET /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups
 
 ![Azure Resource Explorer](./media/rest-api-walkthrough/azure_resource_explorer.png)
 
-### <a name="azure-portal"></a>портала Azure
+### <a name="azure-portal"></a>Портал Azure
 
 Идентификатор ресурса можно также получить на портале Azure. Для этого перейдите к нужному ресурсу и выберите "Свойства". Идентификатор ресурса отображается в разделе "Свойства", как показано на следующем снимке экрана:
 
@@ -654,7 +654,7 @@ PlanId         :
 Version        : 08586982649483762729
 ```
 
-### <a name="azure-cli"></a>Azure CLI
+### <a name="azure-cli"></a>Интерфейс командной строки Azure
 
 Чтобы получить идентификатор ресурса для учетной записи хранения Azure с помощью Azure CLI, выполните команду `az storage account show`, как показано в следующем примере:
 

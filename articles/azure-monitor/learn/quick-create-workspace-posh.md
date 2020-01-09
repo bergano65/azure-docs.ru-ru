@@ -4,15 +4,15 @@ description: Узнайте, как создать рабочую область
 ms.service: azure-monitor
 ms.subservice: logs
 ms.topic: conceptual
-author: mgoedtel
-ms.author: magoedte
+author: bwren
+ms.author: bwren
 ms.date: 03/12/2019
-ms.openlocfilehash: d9ac472c320767919301f5de634fd5158e824726
-ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
+ms.openlocfilehash: 303f255057b414bc06cd7ae803fe368c2acc1a1a
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72900527"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75399446"
 ---
 # <a name="create-a-log-analytics-workspace-with-azure-powershell"></a>Создание рабочей области Log Analytics с помощью Azure PowerShell
 

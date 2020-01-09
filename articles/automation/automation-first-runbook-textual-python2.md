@@ -2,19 +2,15 @@
 title: Создание графического модуля Python в службе автоматизации Azure
 description: Руководство, в котором описывается создание, тестирование и публикация простого модуля Runbook Python.
 services: automation
-ms.service: automation
 ms.subservice: process-automation
-author: mgoedtel
-ms.author: magoedte
 ms.date: 03/19/2019
 ms.topic: conceptual
-manager: carmonm
-ms.openlocfilehash: 54b008939b3d083769756b9ac3c3c9e3f7aebea5
-ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
+ms.openlocfilehash: b17a0403a3b2a3ff8c3586ed26a4b833db54922d
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74850284"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75365943"
 ---
 # <a name="my-first-python-runbook"></a>Мой первый модуль Runbook Python
 
@@ -24,7 +20,7 @@ ms.locfileid: "74850284"
 > - [Рабочий процесс PowerShell](automation-first-runbook-textual.md)
 > - [Python](automation-first-runbook-textual-python2.md)
 
-В этом руководстве описана процедура создания [модуля Runbook Python](automation-runbook-types.md#python-runbooks) в службе автоматизации Azure. Для начала вы протестируете и опубликуете простой модуль runbook. Затем мы изменим модуль runbook, настроив его для фактического управления ресурсами Azure (в нашем примере это запуск виртуальной машины Azure). Затем вы сделаете этот модуль runbook еще надежнее, добавив параметры.
+В этом руководстве описана процедура создания [модуля Runbook Python](automation-runbook-types.md#python-runbooks) в службе автоматизации Azure. Для начала вы протестируете и опубликуете простой модуль runbook. Затем мы изменим модуль runbook, настроив его для фактического управления ресурсами Azure (в нашем примере это запуск виртуальной машины Azure). Затем вы сделаете этот модуль runbook еще надежнее, добавив параметры runbook.
 
 > [!NOTE]
 > Использование веб-перехватчика для запуска Runbook Python не поддерживается.
@@ -79,7 +75,7 @@ print("Hello World!")
 В нашем случае опубликованной версии не существует, так как модуль runbook создан только что.
 
 1. Щелкните **Опубликовать**, чтобы опубликовать модуль Runbook, а затем нажмите кнопку **Да** в появившемся запросе.
-1. Если сейчас прокурить экран влево, чтобы просмотреть runbook на панели **Модули Runbook**, для параметра **Состояние создания** отобразится значение **Опубликовано**.
+1. Если сейчас прокрутить экран влево, чтобы просмотреть runbook на панели **Модули Runbook**, для параметра **Состояние создания** отобразится значение **Опубликовано**.
 1. Прокрутите экран вправо до области **MyFirstRunbook-Python**.
    Параметры в верхней части экрана позволяют запустить модуль Runbook, просмотреть модуль Runbook или запланировать его запуск в течение некоторого времени в будущем.
 2. Вам нужно запустить модуль runbook, поэтому щелкните **Запустить**, а затем, когда откроется колонка "Запуск Runbook", нажмите кнопку **ОК**.

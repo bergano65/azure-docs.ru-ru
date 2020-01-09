@@ -5,18 +5,18 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: conditional-access
 ms.topic: conceptual
-ms.date: 12/03/2019
+ms.date: 12/12/2019
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb, rogoya
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: cc0d22e2e6478c265ba9219ae4df5d5ddb34d481
-ms.sourcegitcommit: 5aefc96fd34c141275af31874700edbb829436bb
+ms.openlocfilehash: 52faa2b6167606a46bf189d514a1eb314b443783
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74803892"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75424939"
 ---
 # <a name="conditional-access-require-mfa-for-all-users"></a>Условный доступ: требовать MFA для всех пользователей
 
@@ -57,8 +57,24 @@ ms.locfileid: "74803892"
 1. Подтвердите параметры и установите для **параметра включить политику** значение **вкл**.
 1. Выберите **создать** , чтобы создать, чтобы включить политику.
 
+### <a name="named-locations"></a>Именованные расположения
+
+Организации могут включать в свои политики условного доступа известные сетевые расположения, известные как **именованные расположения** . Эти именованные расположения могут включать в себя доверенные сети IPv4, такие как адреса основного офиса. Дополнительные сведения о настройке именованных расположений см. в статье [что такое условие расположения в Azure Active Directory условном доступе?](location-condition.md)
+
+В приведенном выше примере политики Организация может не требовать многофакторной проверки подлинности при доступе к облачному приложению из корпоративной сети. В этом случае они могут добавить в политику следующую конфигурацию:
+
+1. В разделе **назначения**выберите **условия** > **расположения**.
+   1. Настройте **Да**.
+   1. Включите **любое расположение**.
+   1. Исключите **все надежные расположения**.
+   1. Нажмите кнопку **Готово**.
+1. Нажмите кнопку **Готово**.
+1. **Сохраните** изменения политики.
+
 ## <a name="next-steps"></a>Дальнейшие действия
 
 [Общие политики условного доступа](concept-conditional-access-policy-common.md)
+
+[Определение влияния с использованием режима "только отчет с условным доступом"](howto-conditional-access-report-only.md)
 
 [Моделирование поведения входа с помощью средства What If условного доступа](troubleshoot-conditional-access-what-if.md)

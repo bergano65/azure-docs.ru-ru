@@ -1,5 +1,5 @@
 ---
-title: Руководством по миграции ADAL в MSAL для Python | Службы
+title: Инструкции по миграции для Python ADAL в MSAL | Службы
 description: Узнайте, как перенести приложение Python для библиотеки проверки подлинности Azure Active Directory (ADAL) в библиотеку проверки подлинности Майкрософт (MSAL) для Python.
 services: active-directory
 titleSuffix: Microsoft identity platform
@@ -15,12 +15,12 @@ ms.author: rayluo
 ms.reviewer: rayluo, nacanuma, twhitney
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 72a4af690a1433f6a185ab17f06748d67927edea
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: 110c719eaf68e8be618e5c865f1ac7a2cf917719
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74917239"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75424402"
 ---
 # <a name="adal-to-msal-migration-guide-for-python"></a>Руководством по миграции ADAL в MSAL для Python
 
@@ -30,7 +30,7 @@ ms.locfileid: "74917239"
 
 ADAL работает с конечной точкой Azure Active Directory (Azure AD) v 1.0. Библиотека проверки подлинности Microsoft (MSAL) работает с платформой идентификации Майкрософт, которая ранее называлась конечной точкой Azure Active Directory v 2.0. Платформа Microsoft Identity отличается от Azure AD версии 1.0 тем, что:
 
-Поддерживает:
+Поддерживаются следующие возможности:
   - пользователи с рабочими и учебными учетными записями (учетные записи, подготовленные в Azure AD);
   - пользователи с личными учетными записями (например, Outlook.com или Hotmail.com);
   - клиенты, которые используют собственные адреса электронной почты или удостоверения социальных сетей (например, LinkedIn, Facebook, Google) через предложение Azure AD B2C.

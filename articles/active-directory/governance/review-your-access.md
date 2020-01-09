@@ -1,5 +1,5 @@
 ---
-title: Просмотр доступа к группам или приложениям в проверках доступа — Azure Active Directory | Документация Майкрософт
+title: Просмотр доступа к группам & приложений в проверках доступа — Azure AD
 description: Узнайте, как просмотреть собственный доступ к группам или приложениям в Azure Active Directory проверках доступа.
 services: active-directory
 author: msaburnley
@@ -15,12 +15,12 @@ ms.date: 05/21/2019
 ms.author: ajburnle
 ms.reviewer: mwahl
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: df8b03d513e2d78083031fbc9a3f6dbc1b7d15d9
-ms.sourcegitcommit: 7868d1c40f6feb1abcafbffcddca952438a3472d
+ms.openlocfilehash: 0d75d7ffe28fa126ee5e359cba19e66e3c0f36e2
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71958571"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75422402"
 ---
 # <a name="review-access-for-yourself-to-groups-or-applications-in-azure-ad-access-reviews"></a>Просмотр доступа к группам или приложениям в проверках доступа Azure AD
 
@@ -70,7 +70,7 @@ Azure Active Directory (Azure AD) упрощает управление дост
 
     ![Завершенная проверка доступа с вопросом, нужен ли вам по-прежнему доступ к группе](./media/review-your-access/perform-access-review-submit.png)
 
-1. Нажмите кнопку **Submit**(Отправить).
+1. Щелкните **Отправить**.
 
     Выбор будет отправлен, и вы вернетесь на портал MyApps.
 
@@ -79,6 +79,6 @@ Azure Active Directory (Azure AD) упрощает управление дост
     > [!NOTE]
     > Если вы указали, что вам больше не нужен доступ, вы не удалите их немедленно. Вы удаляете после завершения проверки или после того, как администратор останавливает проверку.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Выполнение проверки доступа для групп или приложений](complete-access-review.md)

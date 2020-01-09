@@ -14,18 +14,26 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 09/20/2019
 ms.author: tarcher
-ms.openlocfilehash: efba440448ac912b7656eeab017eef947ab25e95
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.openlocfilehash: 02b6ddf723e47e4608e631aef96f8a12d5f68698
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74034685"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75369071"
 ---
 # <a name="install-and-configure-terraform-to-provision-azure-resources"></a>Установка и настройка terraform для инициализации ресурсов Azure
  
 Terraform предоставляет простой способ определить, просмотреть и развернуть облачную инфраструктуру, используя [простой настраиваемый язык шаблонов](https://www.terraform.io/docs/configuration/syntax.html). В этой статье описываются шаги, необходимые для подготовки ресурсов Azure с помощью Terraform.
 
 Дополнительные сведения об использовании Terraform с Azure см. в [центре документации по Terraform](/azure/terraform).
+> [!NOTE]
+> Чтобы получить поддержку terraform, свяжитесь с terraform напрямую, используя один из своих каналов сообщества:
+>
+>   • [Раздел terraform](https://discuss.hashicorp.com/c/terraform-core) на портале сообщества содержит вопросы, варианты использования и полезные шаблоны.
+>
+>   • Для вопросов, связанных с поставщиками, посетите раздел [поставщиков terraform](https://discuss.hashicorp.com/c/terraform-providers) на портале сообщества.
+
+
 
 [!INCLUDE [cloud-shell-try-it.md](../../../includes/cloud-shell-try-it.md)]
 
@@ -145,7 +153,7 @@ azurerm_resource_group.rg: Creating...
 azurerm_resource_group.rg: Creation complete after 1s
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой статье вы установили Terraform или использовали Cloud Shell, чтобы настроить учетные данные Azure и начать создание ресурсов в подписке Azure. Чтобы создать полное развертывание Terraform в Azure, перейдите к следующей статье:
 

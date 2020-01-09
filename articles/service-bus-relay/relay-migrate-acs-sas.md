@@ -1,5 +1,5 @@
 ---
-title: Переход от авторизации с использованием службы контроля доступа Azure Active Directory к авторизации с помощью подписанного URL-адреса | Документация Майкрософт
+title: Azure Relay — миграция на авторизацию подписанного URL-доступа
 description: Перенос приложений из службы контроля доступа в SAS
 services: service-bus-relay
 documentationcenter: ''
@@ -11,16 +11,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 12/20/2017
+ms.date: 12/19/2019
 ms.author: spelluru
-ms.openlocfilehash: 7f71b6884413309e6806658f25313c22e074a71b
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 8aec2483f39f698a62be60f6da6018f8981df423
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64686397"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75355034"
 ---
-# <a name="migrate-from-azure-active-directory-access-control-service-to-shared-access-signature-authorization"></a>Переход от службы контроля доступа Azure Active Directory к авторизации подписанного URL-адреса
+# <a name="azure-relay---migrate-from-azure-active-directory-access-control-service-to-shared-access-signature-authorization"></a>Azure Relay-миграция из службы контроля доступа Azure Active Directory в авторизацию подписанного URL-доступа
 
 В приложениях ретранслятора Azure исторически доступно две различные модели авторизации: модель токена [подписанного URL-адреса (SAS)](../service-bus-messaging/service-bus-sas.md), предоставляемая службой ретрансляции, и федеративная модель, где управление правилами выполняется внутри с помощью службы контроля доступа (ACS) [Azure Active Directory](/azure/active-directory/). Токены, полученные из службы ACS, передаются в службу ретранслятора для авторизации доступа к необходимым компонентам.
 

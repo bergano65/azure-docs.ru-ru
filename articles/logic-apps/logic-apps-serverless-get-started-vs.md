@@ -6,12 +6,12 @@ ms.suite: integration
 ms.reviewer: klam, logicappspm
 ms.topic: article
 ms.date: 06/20/2019
-ms.openlocfilehash: 4ed2ad2d2ff92e9320a7b9c773c4d6e5857fb905
-ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
+ms.openlocfilehash: a3fcff9f895fba3574bbce976087295018ab51c0
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74792964"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75428743"
 ---
 # <a name="build-your-first-serverless-app-by-using-azure-logic-apps-and-azure-functions-in-visual-studio"></a>Создание первого бессерверного приложения с помощью Azure Logic Apps и функций Azure в Visual Studio
 
@@ -42,7 +42,7 @@ ms.locfileid: "74792964"
 
     * [Visual Studio 2017](https://aka.ms/download-azure-logic-apps-tools-visual-studio-2017)
 
-    * [Visual Studio 2015](https://aka.ms/download-azure-logic-apps-tools-visual-studio-2015)
+    * [Visual Studio 2015](https://aka.ms/download-azure-logic-apps-tools-visual-studio-2015)
   
     Вы можете скачать и установить средства Azure Logic Apps напрямую из Visual Studio Marketplace или узнать, [как установить это расширение из Visual Studio](https://docs.microsoft.com/visualstudio/ide/finding-and-using-visual-studio-extensions). 
     После завершения установки перезагрузите Visual Studio.
@@ -56,7 +56,7 @@ ms.locfileid: "74792964"
 
 ## <a name="create-a-resource-group-project"></a>Создание проекта группы ресурсов
 
-Чтобы начать работу, создайте для бессерверного приложения [проект группы ресурсов Azure](../azure-resource-manager/vs-azure-tools-resource-groups-deployment-projects-create-deploy.md). В Azure вы создаете ресурсы в *группе ресурсов*, которая является логической коллекцией, используемой для Организации и развертывания ресурсов для всего приложения в виде одного ресурса. Группа ресурсов для бессерверного приложения в Azure содержит ресурсы для Azure Logic Apps и службы "Функции Azure". Узнайте больше о [группах ресурсов Azure и ресурсах](../azure-resource-manager/resource-group-overview.md).
+Чтобы начать работу, создайте для бессерверного приложения [проект группы ресурсов Azure](../azure-resource-manager/vs-azure-tools-resource-groups-deployment-projects-create-deploy.md). В Azure вы создаете ресурсы в *группе ресурсов*, которая является логической коллекцией, используемой для Организации и развертывания ресурсов для всего приложения в виде одного ресурса. Группа ресурсов для бессерверного приложения в Azure содержит ресурсы для Azure Logic Apps и службы "Функции Azure". Узнайте больше о [группах ресурсов Azure и ресурсах](../azure-resource-manager/management/overview.md).
 
 1. Запустите Visual Studio и выполните вход с помощью учетной записи Azure.
 

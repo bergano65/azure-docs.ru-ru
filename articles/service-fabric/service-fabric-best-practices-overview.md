@@ -1,35 +1,26 @@
 ---
-title: Рекомендации по приложению и кластеру Azure Service Fabric | Документация Майкрософт
-description: Рекомендации по управлению кластерами и приложениями Service Fabric.
-services: service-fabric
-documentationcenter: .net
+title: Рекомендации по приложению и кластеру Azure Service Fabric
+description: Рекомендации и вопросы проектирования для управления кластерами, приложениями и службами с помощью Azure Service Fabric.
 author: peterpogorski
-manager: chackdan
-editor: ''
-ms.assetid: 19ca51e8-69b9-4952-b4b5-4bf04cded217
-ms.service: service-fabric
-ms.devlang: dotNet
 ms.topic: conceptual
-ms.tgt_pltfrm: NA
-ms.workload: NA
 ms.date: 06/18/2019
 ms.author: pepogors
-ms.openlocfilehash: 5fdbd3f15b11e4c3975ca29627d5984382bcf049
-ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
+ms.openlocfilehash: 46601fd91fccb5bd0866bd999cc7643c37c6d582
+ms.sourcegitcommit: ec2eacbe5d3ac7878515092290722c41143f151d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67206800"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75551783"
 ---
 # <a name="azure-service-fabric-application-and-cluster-best-practices"></a>Рекомендации по приложению и кластеру Azure Service Fabric
 
-В этой статье ссылки на лучшие решения по управлению приложениями Azure Service Fabric и кластерами. Мы настоятельно рекомендуем реализовать эти методы для обеспечения надежности рабочей среды. Используйте один из [шаблоны кластера Service Fabric](https://github.com/Azure-Samples/service-fabric-cluster-templates) приступить к проектированию решения производства или обновить существующий шаблон для включения этих рекомендаций.
+В этой статье приведены ссылки на рекомендации по управлению приложениями и кластерами Azure Service Fabric. Мы настоятельно рекомендуем реализовать эти методы для оптимизации надежности рабочей среды. Используйте один из [шаблонов кластера Service Fabric](https://github.com/Azure-Samples/service-fabric-cluster-templates) , чтобы начать разработку рабочего решения, или обновите существующий шаблон, чтобы включить эти рекомендации.
 
 ## <a name="security"></a>Безопасность
 
 * [Рекомендации по безопасности](service-fabric-best-practices-security.md)
 
-## <a name="networking"></a>Сеть
+## <a name="networking"></a>Работа в сети
 
 * [Рекомендации по работе в сети](service-fabric-best-practices-networking.md)
 
@@ -42,21 +33,21 @@ ms.locfileid: "67206800"
 
 * [Рекомендации по реализации инфраструктуры как кода](service-fabric-best-practices-infrastructure-as-code.md)
 
-## <a name="monitoring-and-diagnostics"></a>Мониторинг и диагностика.
+## <a name="monitoring-and-diagnostics"></a>Мониторинг и диагностика
 
 * [Рекомендации по мониторингу и диагностике кластеров](service-fabric-best-practices-monitoring.md)
 
 ## <a name="application-design"></a>Проектирование приложений
 
-* [Рекомендации по разработке приложения](service-fabric-best-practices-applications.md)
+* [Рекомендации по проектированию приложений](service-fabric-best-practices-applications.md)
 
 ## <a name="checklist"></a>Контрольный список
 
-После реализации рекомендации, предлагаемые в предыдущих разделах, убедитесь, что Вы интегрировали все рекомендации в контрольном списке готовности рабочей:
-* [Контрольный список для готовности рабочей среде Azure Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-production-readiness-checklist)
+После реализации рекомендаций, предлагаемых в предыдущих разделах, убедитесь, что вы реализовали все рекомендации в контрольном списке готовности к производству:
+* [Контрольный список готовности к производству Azure Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-production-readiness-checklist)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* Создание кластера на основе виртуальных машин или компьютеров под управлением Windows Server: [Создание изолированного кластера под управлением Windows Server](service-fabric-cluster-creation-for-windows-server.md)
-* Создание кластера на основе виртуальных машин или компьютеров под управлением Linux: [Создание кластера Service Fabric в Azure с помощью портала Azure](service-fabric-cluster-creation-via-portal.md)
-* Устранение неполадок Service Fabric: [Руководства по устранению неполадок](https://github.com/Azure/Service-Fabric-Troubleshooting-Guides)
+* Создание кластера на основе виртуальных машин или компьютеров под управлением Windows Server: [Создание кластера Azure Service Fabric в локальной или облачной средах](service-fabric-cluster-creation-for-windows-server.md)
+* Создание кластера на основе виртуальных машин или компьютеров под управлением Linux: [Создание кластера Linux](service-fabric-cluster-creation-via-portal.md).
+* Устранение неполадок Service Fabric: [руководства по устранению неполадок](https://github.com/Azure/Service-Fabric-Troubleshooting-Guides)

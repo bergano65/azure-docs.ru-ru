@@ -1,25 +1,16 @@
 ---
-title: Перенос из пакета SDK для Java в Maven — обновление старых приложений Java в Azure Service Fabric для использования Maven | Документация Майкрософт
+title: Миграция из пакета SDK для Java в Maven
 description: Обновите старые приложения Java, которые используют пакет SDK для Java Service Fabric, чтобы получить зависимости Java в Service Fabric из Maven. По завершении этой настройки ваши старые приложения Java смогут выполнять сборку.
-services: service-fabric
-documentationcenter: java
 author: rapatchi
-manager: chackdan
-editor: ''
-ms.assetid: bf84458f-4b87-4de1-9844-19909e368deb
-ms.service: service-fabric
-ms.devlang: java
 ms.topic: conceptual
-ms.tgt_pltfrm: NA
-ms.workload: NA
 ms.date: 08/23/2017
 ms.author: rapatchi
-ms.openlocfilehash: dbd85b3647a60ce873c1a55b851bd47ece103282
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: b5e126ebdf3b89470472391c59d378c7a6d39b86
+ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60718400"
+ms.lasthandoff: 01/02/2020
+ms.locfileid: "75609814"
 ---
 # <a name="update-your-previous-java-service-fabric-application-to-fetch-java-libraries-from-maven"></a>Обновление старого приложения Java в Service Fabric для получения библиотек Java из Maven
 Мы недавно разместили двоичные файлы Java Service Fabric из пакета SDK для Java Service Fabric в Maven. Теперь вы можете использовать **mavencentral** для получения последних зависимостей Service Fabric Java. С помощью этого краткого руководства вы обновите существующие приложения Java, созданные ранее для использования с пакетом SDK для Java Service Fabric. Чтобы обеспечить совместимость со сборкой Maven, будет использован шаблон Yeoman или Eclipse.
@@ -89,7 +80,7 @@ ms.locfileid: "60718400"
   ```
 
 ### <a name="others"></a>Прочее
-#### <a name="transport"></a>Транспортировка
+#### <a name="transport"></a>Транспорт
 
 Поддержка транспортного уровня для приложения Java в Service Fabric. Вам не нужно явно добавлять эту зависимость в приложения Reliable Actors или Reliable Services, если ваша программа не находится на транспортном уровне.
 
@@ -167,7 +158,7 @@ task copyDeps <<{
     }
 }
 ```
-Теперь для получения зависимостей из Maven **обновленный** файл ``build.gradle`` будет содержать следующие части:
+Теперь, чтобы получить зависимости от Maven, **обновленный** ``build.gradle`` будет иметь соответствующие части следующим образом.
 ```
 repositories {
         mavenCentral()
@@ -241,7 +232,7 @@ dependencies {
 .
 .
 ```
-Теперь для получения зависимостей из Maven **обновленный** файл ``build.gradle`` будет содержать следующие части:
+Теперь, чтобы получить зависимости от Maven, **обновленный** ``build.gradle`` будет иметь соответствующие части следующим образом.
 ```
 repositories {
     mavenCentral()
@@ -313,7 +304,7 @@ task copyDeps<< {
     }
 }
 ```
-Теперь для получения зависимостей из Maven **обновленный** файл ``build.gradle`` будет содержать следующие части:
+Теперь, чтобы получить зависимости от Maven, **обновленный** ``build.gradle`` будет иметь соответствующие части следующим образом.
 ```
 repositories {
     mavenCentral()
@@ -413,7 +404,7 @@ task copyDeps<< {
         }
 }
 ```
-Теперь для получения зависимостей из Maven **обновленный** файл ``build.gradle`` будет содержать следующие части:
+Теперь, чтобы получить зависимости от Maven, **обновленный** ``build.gradle`` будет иметь соответствующие части следующим образом.
 ```
 repositories {
     mavenCentral()

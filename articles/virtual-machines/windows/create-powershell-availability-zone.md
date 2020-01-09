@@ -15,12 +15,12 @@ ms.workload: infrastructure
 ms.date: 03/27/2018
 ms.author: cynthn
 ms.custom: ''
-ms.openlocfilehash: aacb8c951de1fb29dc08bdb6ef0b68b23966f326
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.openlocfilehash: 5cecc6e43dfeda3838ae52fdd0c028a7739ff227
+ms.sourcegitcommit: f0dfcdd6e9de64d5513adf3dd4fe62b26db15e8b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74033870"
+ms.lasthandoff: 12/26/2019
+ms.locfileid: "75497946"
 ---
 # <a name="create-a-windows-virtual-machine-in-an-availability-zone-with-powershell"></a>Создание виртуальной машины Windows в зоне доступности с помощью PowerShell
 
@@ -30,7 +30,7 @@ ms.locfileid: "74033870"
 
  
 
-## <a name="sign-in-to-azure"></a>Вход в Azure
+## <a name="sign-in-to-azure"></a>Войдите в Azure
 
 Войдите в подписку Azure с помощью команды `Connect-AzAccount` и следуйте инструкциям на экране.
 
@@ -89,7 +89,7 @@ $vnet = New-AzVirtualNetwork -ResourceGroupName myResourceGroup -Location eastus
 
 # Create a public IP address in an availability zone and specify a DNS name
 $pip = New-AzPublicIpAddress -ResourceGroupName myResourceGroup -Location eastus2 -Zone 2 `
-    -AllocationMethod Static -IdleTimeoutInMinutes 4 -Name "mypublicdns$(Get-Random)"
+    -AllocationMethod Static -IdleTimeoutInMinutes 4 -Name "mypublicdns$(Get-Random)" -Sku Standard
 ```
 
 ### <a name="create-a-network-security-group-and-a-network-security-group-rule"></a>Создайте группу безопасности сети и правило группы безопасности сети. 
@@ -175,6 +175,6 @@ Tags               : {}
 ```
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из этой статье вы узнали, как создать виртуальную машину в зоне доступности. Дополнительные сведения о [доступности](availability.md) для виртуальных машин Azure.

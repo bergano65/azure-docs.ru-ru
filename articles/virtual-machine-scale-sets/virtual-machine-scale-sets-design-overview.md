@@ -1,6 +1,6 @@
 ---
-title: Рекомендации по проектированию для масштабируемых наборов виртуальных машин Azure | Документация Майкрософт
-description: Узнайте о рекомендациях по проектированию для масштабируемых наборов виртуальных машин Azure
+title: Рекомендации по проектированию для масштабируемых наборов виртуальных машин Azure
+description: Узнайте о вопросах проектирования для масштабируемых наборов виртуальных машин Azure. Сравните функции масштабируемых наборов с функциями виртуальных машин.
 keywords: Виртуальная машина Linux, наборы масштабирования виртуальных машин
 services: virtual-machine-scale-sets
 documentationcenter: ''
@@ -16,12 +16,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/01/2017
 ms.author: manayar
-ms.openlocfilehash: 67bbad7e73f33d73d4c3f1d4f7e5599d2ef914e3
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 4238e96465a1fd7ad3e73c62134437cd819fba8a
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60618478"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75359449"
 ---
 # <a name="design-considerations-for-scale-sets"></a>Рекомендации по проектированию масштабируемых наборов
 В этой статье рассматриваются вопросы проектирования масштабируемых наборов виртуальных машин. Сведения о том, что такое масштабируемые наборы виртуальных машин, см. в статье [Обзор масштабируемых наборов виртуальных машин](virtual-machine-scale-sets-overview.md).

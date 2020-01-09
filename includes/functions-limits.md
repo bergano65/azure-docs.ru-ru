@@ -4,19 +4,19 @@ ms.service: cost-management-billing
 ms.topic: include
 ms.date: 05/09/2019
 ms.author: glenga
-ms.openlocfilehash: eb61bf5734d0aea1534735b23a2b95b52000f5ad
-ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
+ms.openlocfilehash: 8946da455b4a395814d4cb5a833932c2e3d56f0a
+ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74322906"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75658531"
 ---
-| Resource (Ресурс) | [План потребления](../articles/azure-functions/functions-scale.md#consumption-plan) | [План Premium](../articles/azure-functions/functions-scale.md#premium-plan) | [План службы приложений](../articles/azure-functions/functions-scale.md#app-service-plan)<sup>1</sup> |
+| Ресурс | [План потребления](../articles/azure-functions/functions-scale.md#consumption-plan) | [План Premium](../articles/azure-functions/functions-scale.md#premium-plan) | [План службы приложений](../articles/azure-functions/functions-scale.md#app-service-plan)<sup>1</sup> |
 | --- | --- | --- | --- |
-| Масштабирование | Управляемые событиями | Управляемые событиями | [Ручная или автомасштабирование](../articles/app-service/manage-scale-up.md) | 
+| Масштабирование | Управление на основе событий | Управление на основе событий | [Ручная или автомасштабирование](../articles/app-service/manage-scale-up.md) | 
 | Максимальное число экземпляров | 200 | 100 | 10-20 |
 |[Длительность ожидания](../articles/azure-functions/functions-scale.md#timeout) по умолчанию (мин.) |5 | 30 |30<sup>2</sup> |
-|Максимальная [Длительность истечения времени ожидания](../articles/azure-functions/functions-scale.md#timeout) (мин.) |10 | 60 | без привязки<sup>3</sup> |
+|Макс. [Длительность ожидания](../articles/azure-functions/functions-scale.md#timeout) (мин.) |10 | 60 | без привязки<sup>3</sup> |
 | Максимальное число исходящих подключений (на экземпляр) | 600 активна (всего 1200) | unbounded | unbounded |
 | Максимальный размер запроса (МБ)<sup>4</sup> | 100 | 100 | 100 |
 | Максимальная длина строки запроса<sup>4</sup> | 4096 | 4096 | 4096 |
@@ -25,11 +25,11 @@ ms.locfileid: "74322906"
 | Максимальный объем памяти (ГБ на экземпляр) | 1.5 | 3,5-14 | 1,75-14 |
 | Приложения функций на план |100 |100 |без привязки<sup>5</sup> |
 | [Планы службы приложений](../articles/app-service/overview-hosting-plans.md) | 100. США за [регион](https://azure.microsoft.com/global-infrastructure/regions/) |100 шт. на одну группу ресурсов |100 шт. на одну группу ресурсов |
-| Хранилище<sup>6</sup> |1 GB |250 ГБ |50-1000 ГБ |
+| Хранилище<sup>6</sup> |1 ГБ |250 ГБ |50-1000 ГБ |
 | Количество личных доменов на одно приложение</a> |500<sup>7</sup> |500 |500 |
 | личных доменов [Поддержка SSL](../articles/app-service/configure-ssl-bindings.md) |включена неограниченное подключение SNI SSL | неограниченные протоколы SNI SSL и 1 SSL на основе IP подключений |неограниченные протоколы SNI SSL и 1 SSL на основе IP подключений | 
 
-<sup>1</sup> для определенных ограничений для различных параметров плана службы приложений см. раздел [ограничения плана службы приложений](../articles/azure-subscription-service-limits.md#app-service-limits).  
+<sup>1</sup> для определенных ограничений для различных параметров плана службы приложений см. раздел [ограничения плана службы приложений](../articles/azure-resource-manager/management/azure-subscription-service-limits.md#app-service-limits).  
 <sup>2</sup> по умолчанию время ожидания для выполнения функций 1. x в плане службы приложений не ограничено.  
 <sup>3</sup> требует, чтобы план службы приложений был установлен в [Always on](../articles/azure-functions/functions-scale.md#always-on). Оплата по стандартным [тарифам](https://azure.microsoft.com/pricing/details/app-service/).  
 <sup>4</sup> эти ограничения [задаются в узле](https://github.com/Azure/azure-functions-host/blob/dev/src/WebJobs.Script.WebHost/web.config).  

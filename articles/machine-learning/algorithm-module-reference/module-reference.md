@@ -8,13 +8,13 @@ ms.subservice: core
 ms.topic: reference
 author: peterclu
 ms.author: peterlu
-ms.date: 11/11/2019
-ms.openlocfilehash: 21577936f2487313683ac763b0c6c661c6c1f958
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.date: 12/17/2019
+ms.openlocfilehash: df2e73138cec6c684d612543280871eb2d49b207
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74039334"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75456359"
 ---
 # <a name="algorithm--module-reference-for-azure-machine-learning-designer"></a>Ссылка на модуль & алгоритма для конструктора Машинное обучение Azure
 
@@ -25,28 +25,28 @@ ms.locfileid: "74039334"
 > [!TIP]
 > В любом конвейере в конструкторе можно получить сведения о конкретном модуле. Выберите модуль, а затем щелкните ссылку **more help** (дополнительная помощь) в области **Quick Help** (Экспресс-справка).
 
-## <a name="modules"></a>модули
+## <a name="modules"></a>Модули
 
 Модули организованы по функциональным возможностям:
 
-| Функции | ОПИСАНИЕ | модуль |
-| --- |--- | ---- |
-| Входные и выходные данные | Перемещение данных из облачных источников в конвейер. Запишите результаты или промежуточные данные в службу хранилища Azure, базу данных SQL или Hive, во время выполнения конвейера или используйте облачное хранилище для обмена данными между конвейерами.  | [Импорт данных](import-data.md) <br/> [Ввод данных вручную](enter-data-manually.md) <br/>[Экспорт данных](export-data.md) |
-| Преобразование данных. | Операции с данными, которые являются уникальными для машинного обучения, такие как нормализация или группирования данных, уменьшение размерности и преобразование данных в различные форматы файлов.| [Добавить столбцы](add-columns.md) <br/> [Добавить строки](add-rows.md) <br/> [Очистить отсутствующие данные](clean-missing-data.md) <br/> [Преобразовать в CSV-файл](convert-to-csv.md) <br/> [Преобразовать в набор данных](convert-to-dataset.md) <br/> [Изменить метаданные](edit-metadata.md) <br/> [Объединение данных](join-data.md) <br/> [Нормализация данных](normalize-data.md) <br/> [Удалить дублирующиеся строки](remove-duplicate-rows.md) <br/> [Преобразование "Выбор столбцов"](select-columns-transform.md) <br/> [Выбор столбцов в наборе данных](select-columns-in-dataset.md) |
-| выборки | Разбейте данные на один или несколько подмножеств подмножеств для обучения и тестирования моделей машинного обучения.  | [Перекрестная проверка модели](cross-validate-model.md) <br/> [Секционирование и выборка](partition-and-sample.md) <br/> [смоте](smote.md) <br/> [Split Data](split-data.md) (Разделение данных); |
+| Функциональность | Description | Модуль |
+| --- |--- | --- |
+|  | **Подготовка данных**: | |
+| Входные и выходные данные | Перемещение данных из облачных источников в конвейер. Запишите результаты или промежуточные данные в службу хранилища Azure, базу данных SQL или Hive, во время выполнения конвейера или используйте облачное хранилище для обмена данными между конвейерами.  | [Ввод данных вручную](enter-data-manually.md) <br/> [Экспорт данных](export-data.md) <br/> [Импорт данных](import-data.md) |
+| Преобразование данных | Операции с данными, которые являются уникальными для машинного обучения, такие как нормализация или группирования данных, уменьшение размерности и преобразование данных в различные форматы файлов.| [Добавить столбцы](add-columns.md) <br/> [Добавление строк](add-rows.md) <br/> [Применить математическую операцию](apply-math-operation.md) <br/> [Применить преобразование SQL](apply-sql-transformation.md) <br/> [Очистить отсутствующие данные](clean-missing-data.md) <br/> [Отсеченные значения](clip-values.md) <br/> [Преобразовать в CSV-файл](convert-to-csv.md) <br/> [Преобразовать в набор данных](convert-to-dataset.md) <br/> [Изменить метаданные](edit-metadata.md) <br/> [Объединение данных](join-data.md) <br/> [Нормализация данных](normalize-data.md) <br/> [Секционирование и выборка](partition-and-sample.md)  <br/> [Удалить дублирующиеся строки](remove-duplicate-rows.md) <br/> [смоте](smote.md) <br/> [Преобразование "Выбор столбцов"](select-columns-transform.md) <br/> [Выбор столбцов в наборе данных](select-columns-in-dataset.md) <br/> [Split Data](split-data.md) (Разделение данных); |
 | Выбор компонентов | Выберите подмножество важных, полезных функций, используемых при построении аналитической модели. | [Выбор компонентов на основе фильтра](filter-based-feature-selection.md) <br/> [Важность функции перестановки](permutation-feature-importance.md) |
-| Python и R | Напишите код и внедрите его в модуль, чтобы интегрировать Python и R с вашим конвейером. | [Создание модели Python](create-python-model.md) <br/> [Выполнение скрипта Python](execute-python-script.md)   <br/>  [Выполнить сценарий R](execute-r-script.md)
-| Текстовая аналитика | Предоставляют специализированные вычислительные средства для работы с структурированным и неструктурированным текстом. | [Извлечь из текста N функций для грамматики.](extract-n-gram-features-from-text.md) <br/> [Хэширование компонентов](feature-hashing.md) <br/> [Предварительная обработка текста](preprocess-text.md) |
+| Статистические функции | Предоставляют широкий спектр статистических методов, связанных с обработкой и анализом данных. | [Суммировать данные](summarize-data.md)|
 |  | **Алгоритмы машинного обучения**: | |
-| Классификация | Прогнозирование класса.  Выберите один из двоичных (двух классов) или многоклассовых алгоритмов.| [Лес решений в многоклассовых решениях](multiclass-decision-forest.md) <br/> [Многоклассическое дерево принятия решений](multiclass-boosted-decision-tree.md) <br/> [Логистическая регрессия в многоклассовой](multiclass-logistic-regression.md)  <br/> [Многоклассовая нейронная сеть](multiclass-neural-network.md) <br/> [Сравнение нескольких классов](one-vs-all-multiclass.md) <br/>  [Логистическая регрессия двух классов](two-class-logistic-regression.md)  <br/>[Среднее перцептрона, основанное на двух классах](two-class-averaged-perceptron.md) <br/> [Two-Class Boosted Decision Tree](two-class-boosted-decision-tree.md) (Двухклассовое увеличивающееся дерево принятия решений);  <br/> [Лес решений с двумя классами](two-class-decision-forest.md)  <br/> [Нейронная сеть с двумя классами](two-class-neural-network.md) <br/> [Векторный компьютер поддержки двух классов](two-class-support-vector-machine.md) | 
-| кластеризация; | Группирование данных.| [Кластеризация K-средних](k-means-clustering.md)
-| регрессия; | Прогнозирование значения. | [Регрессия повышенного дерева принятия решений](boosted-decision-tree-regression.md) <br/> [Регрессия леса принятия решений](decision-forest-regression.md) <br/> [Линейная регрессия](linear-regression.md)  <br/> [Регрессия нейронной сети](neural-network-regression.md)  <br/> |
-| Recommender | Модели рекомендаций сборки. | [Ознакомление с рекомендацией](evaluate-recommender.md) <br/> [SVD рекомендации по оценке](score-svd-recommender.md) <br/> [Совет по обучению SVD](train-SVD-recommender.md) |
+| Регрессия | Прогнозирование значения. | [Регрессия повышенного дерева принятия решений](boosted-decision-tree-regression.md) <br/> [Регрессия леса принятия решений](decision-forest-regression.md) <br/> [Линейная регрессия](linear-regression.md)  <br/> [Регрессия нейронной сети](neural-network-regression.md)  <br/> |
+| Кластеризация | Группирование данных.| [Кластеризация K-средних](k-means-clustering.md)
+| Классификация | Прогнозирование класса.  Выберите один из двоичных (двух классов) или многоклассовых алгоритмов.| [Многоклассическое дерево принятия решений](multiclass-boosted-decision-tree.md) <br/> [Лес решений в многоклассовых решениях](multiclass-decision-forest.md) <br/> [Логистическая регрессия в многоклассовой](multiclass-logistic-regression.md)  <br/> [Многоклассовая нейронная сеть](multiclass-neural-network.md) <br/> [Сравнение нескольких классов](one-vs-all-multiclass.md) <br/> [Среднее перцептрона, основанное на двух классах](two-class-averaged-perceptron.md) <br/>  [Two-Class Boosted Decision Tree](two-class-boosted-decision-tree.md) (Двухклассовое увеличивающееся дерево принятия решений);  <br/> [Лес решений с двумя классами](two-class-decision-forest.md) <br/>  [Логистическая регрессия двух классов](two-class-logistic-regression.md) <br/> [Нейронная сеть с двумя классами](two-class-neural-network.md) <br/> [Векторный компьютер поддержки двух классов](two-class-support-vector-machine.md) | 
 |  | **Создание и вычисление моделей**: | |
-| Обучение   | Выполнение данных с помощью алгоритма. | [Train Model](train-model.md) (Обучение модели);  <br/> [Обучение модели кластеризации](train-clustering-model.md) <br/>  [Настройка параметров модели](tune-model-hyperparameters.md) |
-| Evaluate Model (Анализ модели). | Измерьте точность обученной модели. |  [Вычисление модели](evaluate-model.md) |
-| Оценка | Получите прогнозы на основе только что обученной модели. | [Применить преобразование](apply-transformation.md)<br/>[Назначение данных кластерам](assign-data-to-clusters.md) <br/>[Модель оценки](score-model.md) |
-| Статистические функции | Предоставляют широкий спектр статистических методов, связанных с обработкой и анализом данных. | [Применить математическую операцию](apply-math-operation.md) <br/> [Суммировать данные](summarize-data.md)|
+| Обучение модели | Выполнение данных с помощью алгоритма. |  [Обучение модели кластеризации](train-clustering-model.md) <br/> [Train Model](train-model.md) (Обучение модели);  <br/> [Настройка параметров модели](tune-model-hyperparameters.md) |
+| Оценка и вычисление модели | Измерьте точность обученной модели. | [Применить преобразование](apply-transformation.md) <br/> [Назначение данных кластерам](assign-data-to-clusters.md) <br/> [Перекрестная проверка модели](cross-validate-model.md) <br/> [Вычисление модели](evaluate-model.md) <br/> [Модель оценки](score-model.md) |
+| Язык Python | Напишите код и внедрите его в модуль, чтобы интегрировать Python с вашим конвейером. | [Создание модели Python](create-python-model.md) <br/> [Выполнение скрипта Python](execute-python-script.md) |
+| Язык R | Напишите код и внедрите его в модуль, чтобы интегрировать R с вашим конвейером. | [Выполнить сценарий R](execute-r-script.md) |
+| Анализ текста | Предоставляют специализированные вычислительные средства для работы с структурированным и неструктурированным текстом. | [Извлечь из текста N функций для грамматики.](extract-n-gram-features-from-text.md) <br/> [Хэширование компонентов](feature-hashing.md) <br/> [Предварительная обработка текста](preprocess-text.md) |
+| Рекомендация | Модели рекомендаций сборки. | [Ознакомление с рекомендацией](evaluate-recommender.md) <br/> [SVD рекомендации по оценке](score-svd-recommender.md) <br/> [Совет по обучению SVD](train-SVD-recommender.md) |
 
 ## <a name="error-messages"></a>Сообщения об ошибках
 

@@ -4,26 +4,27 @@ description: Используйте концентраторы событий и
 ms.service: azure-monitor
 ms.subservice: logs
 ms.topic: conceptual
-author: MGoedtel
-ms.author: magoedte
+author: bwren
+ms.author: bwren
 ms.date: 02/06/2019
-ms.openlocfilehash: e202885c695e4d8cdadaf8640d7ed01b05b70ad9
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: e3b368f8a59d201f70bfad05125ed59b4b8551c5
+ms.sourcegitcommit: ce4a99b493f8cf2d2fd4e29d9ba92f5f942a754c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74931833"
+ms.lasthandoff: 12/28/2019
+ms.locfileid: "75530006"
 ---
-# <a name="collect-azure-activity-logs-into-azure-monitor-across-azure-active-directory-tenants"></a>Собирайте журналы действий Azure в Azure Monitor между клиентами Azure Active Directory
+# <a name="collect-azure-activity-logs-into-azure-monitor-across-azure-active-directory-tenants-legacy"></a>Получение журналов действий Azure в Azure Monitor между клиентами Azure Active Directory (устаревшие)
 
-> [!WARNING]
-> Теперь можно выполнить сбор журнала действий в Log Analytics рабочую область, используя параметр диагностики, аналогичный сбору журналов ресурсов. См. статью [Получение и анализ журналов действий Azure в log Analytics рабочей области в Azure Monitor](diagnostic-settings-subscription.md).
+> [!NOTE]
+> В этой статье описывается устаревший метод настройки журнала действий Azure для клиентов Azure, которые будут собраны в Log Analytics рабочей области.  Теперь можно выполнить сбор журнала действий в Log Analytics рабочую область, используя параметр диагностики, аналогичный сбору журналов ресурсов. См. статью [Получение и анализ журналов действий Azure в log Analytics рабочей области в Azure Monitor](activity-log-collect.md).
+
 
 В этой статье описывается метод сбора журналов действий Azure в Log Analytics рабочей области в Azure Monitor использование соединителя сборщика данных Azure Log Analytics для Logic Apps. Следуйте приведенной здесь процедуре, когда вам нужно отправить журналы в рабочее пространство другого арендатора Azure Active Directory. Например, если вы являетесь поставщиком управляемых служб, вы можете собирать журналы действий из подписки клиента и хранить их в рабочей области Log Analytics в своей собственной подписке.
 
 Если Рабочая область Log Analytics находится в той же подписке Azure или в другой подписке, но в той же Azure Active Directory, выполните действия, описанные в разделе [Получение и анализ журналов действий Azure в log Analytics рабочей области в Azure Monitor](activity-log-collect.md) , чтобы получить журналы действий Azure.
 
-## <a name="overview"></a>Краткое описание
+## <a name="overview"></a>Обзор
 
 Стратегия, используемая в этом сценарии, заключается в том, чтобы журнал действий Azure отправлял события в [концентратор событий](../../event-hubs/event-hubs-about.md), в котором [приложение логики](../../logic-apps/logic-apps-overview.md) отправляет их в рабочую область Log Analytics. 
 
@@ -55,7 +56,7 @@ ms.locfileid: "74931833"
 
    ![Новый концентратор событий в Marketplace](media/collect-activity-logs-subscriptions/marketplace-new-event-hub.png)
 
-3. В диалоговом окне **создания пространства имен** введите новое пространство имен или выберите существующее. Система немедленно проверит, доступно ли это имя.
+3. В диалоговом окне **создания пространства имен** введите новое пространство имен или выберите существующее. Система немедленно проверяет, доступно ли оно.
 
    ![изображение диалогового окна создания концентратора событий](media/collect-activity-logs-subscriptions/create-event-hub1.png)
 
@@ -124,13 +125,13 @@ ms.locfileid: "74931833"
 
     ![Создание приложения логики](media/collect-activity-logs-subscriptions/create-logic-app.png)
 
-   |Параметр | Описание  |
+   |Параметр | Description  |
    |:---|:---|
-   | Name           | Уникальное имя для приложения логики. |
+   | Имя           | Уникальное имя для приложения логики. |
    | Subscription   | Выберите подписку Azure, в которой будет размещаться приложение логики. |
    | Группа ресурсов | Выберите для приложения логики существующую группу ресурсов или создайте новую. |
-   | Location       | Выберите регион центра обработки данных для развертывания приложения логики. |
-   | Анализ журналов  | Выберите, если требуется регистрировать состояние каждого запуска приложения логики в Log Analytics рабочей области.  |
+   | Расположение       | Выберите регион центра обработки данных для развертывания приложения логики. |
+   | Log Analytics  | Выберите, если требуется регистрировать состояние каждого запуска приложения логики в Log Analytics рабочей области.  |
 
     
 3. Нажмите кнопку **Создать**. При отображении уведомления **Развертывание прошло успешно** щелкните **Перейти к ресурсу**, чтобы открыть приложение логики.
@@ -291,7 +292,7 @@ ms.locfileid: "74931833"
 
    ![Добавление действия отправки данных Log Analytics в приложениях логики](media/collect-activity-logs-subscriptions/logic-apps-send-data-to-log-analytics-connector.png)
 
-3. Введите имя подключения и вставьте **идентификатор рабочей области** и **ключ рабочей области** для рабочей области Log Analytics.  Щелкните **Create**(Создать).
+3. Введите имя подключения и вставьте **идентификатор рабочей области** и **ключ рабочей области** для рабочей области Log Analytics.  Нажмите кнопку **Создать**.
 
    ![Добавление подключения Log Analytics в приложениях логики](media/collect-activity-logs-subscriptions/logic-apps-log-analytics-add-connection.png)
 
@@ -299,7 +300,7 @@ ms.locfileid: "74931833"
 
     ![Настройка действия отправки данных](media/collect-activity-logs-subscriptions/logic-apps-send-data-to-log-analytics-configuration.png)
 
-   |Параметр        | Value           | Описание  |
+   |Параметр        | Значение           | Description  |
    |---------------|---------------------------|--------------|
    |Текст запроса JSON  | **Выходные данные** действия **Compose** | Извлекает записи из текста сообщения действия Compose. |
    | Имя пользовательского журнала | AzureActivity | Имя настраиваемой таблицы журнала, создаваемой в Log Analytics рабочей области для хранения импортированных данных. |

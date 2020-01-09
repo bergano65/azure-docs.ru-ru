@@ -5,18 +5,18 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: conditional-access
 ms.topic: conceptual
-ms.date: 12/03/2019
+ms.date: 12/20/2019
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb, rogoya
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a5b4627080879c9e7d2635b950bb7f31b7d23581
-ms.sourcegitcommit: 5aefc96fd34c141275af31874700edbb829436bb
+ms.openlocfilehash: c40993df8033b9dbc49c81e8db2f9f01c6de37d9
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74803637"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75424920"
 ---
 # <a name="conditional-access-block-legacy-authentication"></a>Условный доступ: блокировать проверку подлинности прежних версий
 
@@ -34,9 +34,11 @@ ms.locfileid: "74803637"
    1. В разделе **включить**выберите **все пользователи**.
    1. В разделе **исключить**выберите **Пользователи и группы** и выберите учетные записи, которые должны поддерживать использование устаревшей проверки подлинности. 
    1. Нажмите кнопку **Готово**.
+1. В разделе **облачные приложения или действия** выберите **все облачные приложения**.
+   1. Нажмите кнопку **Готово**.
 1. В области **условия** > **клиентские приложения (Предварительная версия)** задайте для параметра **настроить** значение **Да**.
    1. Установите флажки только для **мобильных приложений и настольных клиентов** > **других клиентах**.
-   2. Нажмите кнопку **Готово**.
+   1. Нажмите кнопку **Готово**.
 1. В разделе **элементы управления доступом** > **предоставить**выберите **блокировать доступ**.
    1. Щелкните **Выбрать**.
 1. Подтвердите параметры и установите для **параметра включить политику** значение **вкл**.
@@ -45,5 +47,7 @@ ms.locfileid: "74803637"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 [Общие политики условного доступа](concept-conditional-access-policy-common.md)
+
+[Определение влияния с использованием режима "только отчет с условным доступом"](howto-conditional-access-report-only.md)
 
 [Моделирование поведения входа с помощью средства What If условного доступа](troubleshoot-conditional-access-what-if.md)

@@ -8,16 +8,18 @@
     - name: Новые возможности Azure Active Directory
       href: whats-new.md
 - name: Краткие руководства
+  expanded: true
   items:
     - name: Доступ к порталу и создание клиента
       href: active-directory-access-create-new-tenant.md
     - name: Просмотр групп и их участников
       href: active-directory-groups-view-azure-portal.md
 - name: Основные понятия
+  expanded: true
   items:
     - name: Оценка безопасности удостоверений
       href: identity-secure-score.md
-    - name: Безопасность
+    - name: безопасность
       items:
         - name: Включение MFA
           href: concept-fundamentals-mfa-get-started.md
@@ -37,6 +39,8 @@
       href: active-directory-deployment-checklist-p2.md
     - name: Хранилище данных удостоверений для ЕС
       href: active-directory-data-storage-eu.md
+    - name: Хранилище данных удостоверений для Австралии
+      href: active-directory-data-storage-australia.md
     - name: "Новые возможности Microsoft\_365 для государственных организаций"
       href: whats-new-microsoft-365-government.md
     - name: Справочник по операциям Azure AD
@@ -51,7 +55,7 @@
           href: active-directory-ops-guide-govern.md
         - name: Операции
           href: active-directory-ops-guide-ops.md
-- name: Руководства
+- name: Практические руководства
   expanded: true
   items:
     - name: План
@@ -97,6 +101,7 @@
         - name: Восстановление удаленного пользователя
           href: active-directory-users-restore.md
 - name: Ресурсы
+  expanded: true
   items:
     - name: Получение поддержки для Azure Active Directory
       href: active-directory-troubleshooting-support-howto.md

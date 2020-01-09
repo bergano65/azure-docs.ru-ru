@@ -4,15 +4,15 @@ description: Из этой статьи вы узнаете, как выполн
 ms.service: azure-monitor
 ms.subservice: logs
 ms.topic: conceptual
-author: mgoedtel
-ms.author: magoedte
+author: bwren
+ms.author: bwren
 ms.date: 06/05/2019
-ms.openlocfilehash: e74c81956ab0590b8b7237d3ecf60ae242a43b73
-ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
+ms.openlocfilehash: 0eaaf1157bf49068958bc07d17a23fc31dd99de0
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72894491"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75365501"
 ---
 # <a name="perform-cross-resource-log-queries-in-azure-monitor"></a>Выполнение запросов журнала между ресурсами в Azure Monitor  
 
@@ -24,7 +24,7 @@ ms.locfileid: "72894491"
 
 * Число Application Insightsных ресурсов и Log Analytics рабочих областей, которые можно включить в один запрос, ограничено 100.
 * Запрос перекрестных ресурсов не поддерживается в конструкторе представлений. Вы можете создать запрос в Log Analytics и закрепить его на панели мониторинга Azure для [визуализации запроса журнала](../learn/tutorial-logs-dashboards.md). 
-* Запрос перекрестных ресурсов в оповещениях журнала поддерживается в новом [API счедуледкуерирулес](https://docs.microsoft.com/rest/api/monitor/scheduledqueryrules). По умолчанию Azure Monitor использует [устаревшие API оповещения Log Analytics](../platform/api-alerts.md) для создания любого нового правила генерации оповещений на портале Azure, пока вы не переключаетесь с [устаревших API оповещений журнала](../platform/alerts-log-api-switch.md#process-of-switching-from-legacy-log-alerts-api). После переключения новый API используется по умолчанию для новых правил генерации оповещений на портале Azure и позволяет создавать правила генерации оповещений журнала запроса между разными ресурсами. Вы можете создавать правила генерации оповещений журнала запросов между ресурсами без выполнения переключателя с помощью [шаблона Azure Resource Manager для API счедуледкуерирулес](../platform/alerts-log.md#log-alert-with-cross-resource-query-using-azure-resource-template) , но это правило является управляемым, хотя [счедуледкуерирулес API](https://docs.microsoft.com/rest/api/monitor/scheduledqueryrules) и не из портал Azure .
+* Запрос перекрестных ресурсов в оповещениях журнала поддерживается в новом [API счедуледкуерирулес](https://docs.microsoft.com/rest/api/monitor/scheduledqueryrules). По умолчанию Azure Monitor использует [устаревшие API оповещения Log Analytics](../platform/api-alerts.md) для создания любого нового правила генерации оповещений на портале Azure, пока вы не переключаетесь с [устаревших API оповещений журнала](../platform/alerts-log-api-switch.md#process-of-switching-from-legacy-log-alerts-api). После переключения новый API используется по умолчанию для новых правил генерации оповещений на портале Azure и позволяет создавать правила генерации оповещений журнала запроса между разными ресурсами. Правила генерации оповещений журнала запросов между ресурсами можно создавать без выполнения переключателя с помощью [шаблона Azure Resource Manager для API счедуледкуерирулес](../platform/alerts-log.md#log-alert-with-cross-resource-query-using-azure-resource-template) , но это правило может управляться несмотря на то, что [счедуледкуерирулес API](https://docs.microsoft.com/rest/api/monitor/scheduledqueryrules) , а не от портал Azure.
 
 
 ## <a name="querying-across-log-analytics-workspaces-and-from-application-insights"></a>Выполнение запросов в рабочих областях Log Analytics и запрос данных из приложения Application Insights

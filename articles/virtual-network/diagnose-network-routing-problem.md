@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 05/30/2018
 ms.author: kumud
-ms.openlocfilehash: 465d44ea823c99afbb4f25541d64770c114ba7e2
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 13d74fbb4a7c133ca2365fd2cbfce4b3d2bea72e
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64730508"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75350606"
 ---
 # <a name="diagnose-a-virtual-machine-routing-problem"></a>Диагностика проблем с маршрутизацией виртуальной машины
 
@@ -30,19 +30,15 @@ ms.locfileid: "64730508"
 
 При попытке подключиться к виртуальной машине происходит сбой. Чтобы определить, почему не удается подключиться к виртуальной машине, вы можете просмотреть действующие маршруты для сетевого интерфейса с помощью [портала](#diagnose-using-azure-portal) Azure, [PowerShell](#diagnose-using-powershell) или [Azure CLI](#diagnose-using-azure-cli).
 
-Чтобы выполнить приведенные ниже инструкции, требуется виртуальная машина, для которой будут просматриваться действующие маршруты. Если у вас ее нет, разверните виртуальную машину [Linux](../virtual-machines/linux/quick-create-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json) или [Windows](../virtual-machines/windows/quick-create-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json) для выполнения задач, описанных в этой статье. Примеры в этой статье относятся к виртуальной машине *myVM* с сетевым интерфейсом *myVMVMNic*. Виртуальная машина и сетевой интерфейс находятся в группе ресурсов *myResourceGroup* в регионе *Восточная часть США*. Измените значения в инструкциях, чтобы они соответствовали значениям для виртуальной машины, проблема с которой диагностируется.
+Чтобы выполнить приведенные ниже инструкции, требуется виртуальная машина, для которой будут просматриваться действующие маршруты. Если у вас ее нет, разверните виртуальную машину [Linux](../virtual-machines/linux/quick-create-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json) или [Windows](../virtual-machines/windows/quick-create-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json) для выполнения задач, описанных в этой статье. Примеры в этой статье относятся к виртуальной машине с именем *myVM* и сетевому интерфейсу с именем *myVMNic1*. Виртуальная машина и сетевой интерфейс находятся в группе ресурсов *myResourceGroup* в регионе *Восточная часть США*. Измените значения в инструкциях, чтобы они соответствовали значениям для виртуальной машины, проблема с которой диагностируется.
 
 ## <a name="diagnose-using-azure-portal"></a>Диагностика с помощью портала Azure
 
 1. Войдите на [портал Azure](https://portal.azure.com) с помощью учетной записи Azure, которая предоставляет необходимые [разрешения](virtual-network-network-interface.md#permissions).
 2. В верхней части окна портала Azure введите в поле поиска имя запущенной виртуальной машины. Когда в результатах поиска появится имя виртуальной машины, щелкните его.
-3. Выберите **Диагностика и решение проблем**, а затем в разделе **Рекомендуемые действия** щелкните **фактические маршруты** в пункте 7, как показано на следующем рисунке.
-
-    ![Просмотр действующих маршрутов](./media/diagnose-network-routing-problem/view-effective-routes.png)
-
-4. Отобразятся действующие маршруты для сетевого интерфейса **myVMVMNic**, как показано ниже.
-
-     ![Просмотр действующих маршрутов](./media/diagnose-network-routing-problem/effective-routes.png)
+3. В разделе **Параметры** слева выберите **сеть**и перейдите к ресурсу сетевого интерфейса, выбрав его имя.
+     ![Просмотр сетевых интерфейсов](./media/diagnose-network-routing-problem/view-nics.png)
+4. Слева выберите **действующие маршруты**. Действующие маршруты для сетевого интерфейса с именем **myVMNic1** показаны на следующем рисунке: ![Просмотр эффективных маршрутов](./media/diagnose-network-routing-problem/view-effective-routes.png)
 
     Если к виртуальной машине подключено несколько сетевых интерфейсов, можно просмотреть действующие маршруты для любого из них, выбрав соответствующий сетевой интерфейс. Так как сетевые интерфейсы могут находиться в разных подсетях, у них могут быть разные действующие маршруты.
 
@@ -56,13 +52,13 @@ ms.locfileid: "64730508"
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-Вы можете выполнить приведенные ниже команды в [Azure Cloud Shell](https://shell.azure.com/powershell) или с помощью PowerShell на своем компьютере. Azure Cloud Shell — это бесплатная интерактивная оболочка. Она включает предварительно установленные общие инструменты Azure и настроена для использования с вашей учетной записью. Если вы запустите PowerShell на компьютере, требуется модуль Azure PowerShell версии 1.0.0 или более поздней версии. Выполните `Get-Module -ListAvailable Az` на компьютере, чтобы получить сведения об установленной версии. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-Az-ps). Если PowerShell работает локально, необходимо также выполнить `Connect-AzAccount`, чтобы войти в Azure с учетной записью, предоставляющей [необходимые разрешения](virtual-network-network-interface.md#permissions).
+Вы можете выполнить приведенные ниже команды в [Azure Cloud Shell](https://shell.azure.com/powershell) или с помощью PowerShell на своем компьютере. Azure Cloud Shell — это бесплатная интерактивная оболочка. Она включает предварительно установленные общие инструменты Azure и настроена для использования с вашей учетной записью. При запуске PowerShell с компьютера необходим модуль Azure PowerShell версии 1.0.0 или более поздней. Выполните `Get-Module -ListAvailable Az` на компьютере, чтобы получить сведения об установленной версии. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-Az-ps). Если PowerShell работает локально, необходимо также выполнить `Connect-AzAccount`, чтобы войти в Azure с учетной записью, предоставляющей [необходимые разрешения](virtual-network-network-interface.md#permissions).
 
-Получить действующие маршруты для сетевого интерфейса с помощью [Get-AzEffectiveRouteTable](/powershell/module/az.network/get-azeffectiveroutetable). В следующем примере извлекаются действующие маршруты для сетевого интерфейса *myVMVMNic*, который находится в группе ресурсов *myResourceGroup*.
+Получите действующие маршруты для сетевого интерфейса с помощью [Get-азеффективераутетабле](/powershell/module/az.network/get-azeffectiveroutetable). В следующем примере выполняется получение эффективных маршрутов для сетевого интерфейса с именем *myVMNic1*, которые находятся в группе ресурсов с именем *myResourceGroup*:
 
 ```azurepowershell-interactive
 Get-AzEffectiveRouteTable `
-  -NetworkInterfaceName myVMVMNic `
+  -NetworkInterfaceName myVMNic1 `
   -ResourceGroupName myResourceGroup `
   | Format-Table
 ```
@@ -82,20 +78,20 @@ $VM.NetworkProfile
 ```powershell
 NetworkInterfaces
 -----------------
-{/subscriptions/<ID>/resourceGroups/myResourceGroup/providers/Microsoft.Network/networkInterfaces/myVMVMNic
+{/subscriptions/<ID>/resourceGroups/myResourceGroup/providers/Microsoft.Network/networkInterfaces/myVMNic1
 ```
 
-В предыдущих выходных данных имя сетевого интерфейса было *myVMVMNic*.
+В предыдущих выходных данных имя сетевого интерфейса — *myVMNic1*.
 
 ## <a name="diagnose-using-azure-cli"></a>Диагностика с помощью Azure CLI
 
 Вы можете выполнить приведенные ниже команды в [Azure Cloud Shell](https://shell.azure.com/bash) или с помощью интерфейса командной строки на своем компьютере. Для этой статьи требуется Azure CLI 2.0.32 или более поздней версии. Выполните командлет `az --version`, чтобы узнать установленную версию. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](/cli/azure/install-azure-cli). Если Azure CLI работает локально, необходимо также выполнить `az login` и войти в Azure с учетной записью, предоставляющей [необходимые разрешения](virtual-network-network-interface.md#permissions).
 
-Получите действующие маршруты для сетевого интерфейса с помощью команды [az network nic show-effective-route-table](/cli/azure/network/nic#az-network-nic-show-effective-route-table). В следующем примере извлекаются действующие маршруты для сетевого интерфейса *myVMVMNic*, который находится в группе ресурсов *myResourceGroup*.
+Получите действующие маршруты для сетевого интерфейса с помощью команды [az network nic show-effective-route-table](/cli/azure/network/nic#az-network-nic-show-effective-route-table). Следующий пример возвращает действующие маршруты для сетевого интерфейса с именем *myVMNic1* , который находится в группе ресурсов с именем *myResourceGroup*:
 
 ```azurecli-interactive
 az network nic show-effective-route-table \
-  --name myVMVMNic \
+  --name myVMNic1 \
   --resource-group myResourceGroup
 ```
 

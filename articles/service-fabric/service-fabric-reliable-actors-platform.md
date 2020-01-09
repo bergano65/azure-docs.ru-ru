@@ -1,27 +1,18 @@
 ---
-title: Reliable Actors в Service Fabric | Документация Майкрософт
+title: Reliable Actors в Service Fabric
 description: В этой статье описывается структура субъектов Reliable Actors в службах Reliable Services и работа с функциями платформы Service Fabric.
-services: service-fabric
-documentationcenter: .net
 author: vturecek
-manager: chackdan
-editor: amanbha
-ms.assetid: 45839a7f-0536-46f1-ae2b-8ba3556407fb
-ms.service: service-fabric
-ms.devlang: dotnet
 ms.topic: conceptual
-ms.tgt_pltfrm: NA
-ms.workload: NA
 ms.date: 3/9/2018
 ms.author: vturecek
-ms.openlocfilehash: bc7569c9f230abb7677a8df9fc0cc0268e57296f
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 92c717fa2c82dd147acd3c28333e37ccf8dd2e89
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60725929"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75349233"
 ---
-# <a name="how-reliable-actors-use-the-service-fabric-platform"></a>Использование платформы Service Fabric надежными субъектами
+# <a name="how-reliable-actors-use-the-service-fabric-platform"></a>Использование платформы Service Fabric в Reliable Actors
 В этой статье объясняется, как работают субъекты Reliable Actors на платформе Azure Service Fabric. Субъекты Reliable Actors выполняются в среде, размещенной в реализации службы Reliable Services с отслеживанием состояния под названием *служба субъектов*. Служба субъектов содержит все компоненты, необходимые для управления жизненным циклом и диспетчеризации относящихся к субъектам сообщений:
 
 * Среда выполнения субъектов управляет жизненным циклом и сбором мусора, а также обеспечивает однопоточный доступ.

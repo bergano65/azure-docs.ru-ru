@@ -14,12 +14,12 @@ ms.author: jmprieur
 ms.reviewer: saeeda
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 38f28f153eff11e2b4d705b874609a95a9def8d4
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: 9aa2bf2bb2e77f5e543b53b583ddeeacd46de243
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74915670"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75424195"
 ---
 # <a name="migrating-applications-to-msalnet"></a>Перенос приложений на MSAL.NET
 
@@ -119,9 +119,9 @@ MSAL.NET и конечная точка версии 2.0 пока поддер�
 
 Следующие предоставляемые разрешения поддерживаются в ADAL.NET и MSAL.NET для классических и мобильных приложений.
 
-Предоставление доступа | ADAL.NET | MSAL.NET
+Предоставить | ADAL.NET | MSAL.NET
 ----- |----- | -----
-Интерактивный режим | [Интерактивная аутентификация](https://github.com/AzureAD/azure-activedirectory-library-for-dotnet/wiki/Acquiring-tokens-interactively---Public-client-application-flows) | [Получение маркеров в интерактивном режиме через MSAL.NET](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/wiki/Acquiring-tokens-interactively)
+Интерактивно | [Интерактивная аутентификация](https://github.com/AzureAD/azure-activedirectory-library-for-dotnet/wiki/Acquiring-tokens-interactively---Public-client-application-flows) | [Получение маркеров в интерактивном режиме через MSAL.NET](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/wiki/Acquiring-tokens-interactively)
 Встроенная проверка подлинности Windows | [Встроенная аутентификация Windows (Kerberos)](https://github.com/AzureAD/azure-activedirectory-library-for-dotnet/wiki/AcquireTokenSilentAsync-using-Integrated-authentication-on-Windows-(Kerberos)) | [Встроенная аутентификация Windows](msal-authentication-flows.md#integrated-windows-authentication)
 Имя пользователя и пароль | [Получение маркеров с использованием имени пользователя и пароля](https://github.com/AzureAD/azure-activedirectory-library-for-dotnet/wiki/Acquiring-tokens-with-username-and-password)| [Аутентификация по имени пользователя и паролю](msal-authentication-flows.md#usernamepassword)
 Поток кода устройства | [Профиль устройства для устройств без веб-браузеров](https://github.com/AzureAD/azure-activedirectory-library-for-dotnet/wiki/Device-profile-for-devices-without-web-browsers) | [Поток кода на устройстве](msal-authentication-flows.md#device-code)
@@ -130,7 +130,7 @@ MSAL.NET и конечная точка версии 2.0 пока поддер�
 
 Следующие предоставляемые разрешения поддерживаются в ADAL.NET и MSAL.NET для веб-приложений, веб-API и управляющих программ.
 
-Тип приложения | Предоставление доступа | ADAL.NET | MSAL.NET
+Тип приложения | Предоставить | ADAL.NET | MSAL.NET
 ----- | ----- | ----- | -----
 Веб-приложение, веб-API, управляющая программа | Учетные данные клиента | [Потоки учетных данных клиента в ADAL.NET](https://github.com/AzureAD/azure-activedirectory-library-for-dotnet/wiki/Client-credential-flows) | [Потоки учетных данных клиента в MSAL.NET](msal-authentication-flows.md#client-credentials)
 Веб-API | От имени | [Вызовы между службами от имени пользователя через ADAL.NET](https://github.com/AzureAD/azure-activedirectory-library-for-dotnet/wiki/Service-to-service-calls-on-behalf-of-the-user) | [Вызов от имени через MSAL.NET](msal-authentication-flows.md#on-behalf-of)
@@ -223,7 +223,7 @@ MSAL.NET не предоставляет маркеры обновления в 
 
 К счастью, у MSAL.NET теперь есть API, позволяющий перенести предыдущие маркеры обновления (полученные с помощью ADAL) в `IConfidentialClientApplication`:
 
-```CSharp
+```csharp
 /// <summary>
 /// Acquires an access token from an existing refresh token and stores it and the refresh token into 
 /// the application user token cache, where it will be available for further AcquireTokenSilent calls.

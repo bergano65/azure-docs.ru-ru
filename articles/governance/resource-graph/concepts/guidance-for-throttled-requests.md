@@ -1,14 +1,14 @@
 ---
 title: Руководство по регулируемым запросам
-description: Узнайте, как выполнять пакетную обработку, разбивать на страницы и выполнять запросы параллельно, чтобы избежать запросов, регулируемых графом ресурсов Azure.
-ms.date: 11/21/2019
+description: Узнайте, как группировать, разбивать на страницы и выполнять запросы параллельно, чтобы избежать запросов, регулируемых графом ресурсов Azure.
+ms.date: 12/02/2019
 ms.topic: conceptual
-ms.openlocfilehash: 4405cce567a75f83823cc2d441b2a59985c196ad
-ms.sourcegitcommit: 8a2949267c913b0e332ff8675bcdfc049029b64b
+ms.openlocfilehash: fbd4bec715b187bcc643fe32b8452b0e062e7713
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74304665"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75436080"
 ---
 # <a name="guidance-for-throttled-requests-in-azure-resource-graph"></a>Руководство по регулируемым запросам в графе ресурсов Azure
 
@@ -17,7 +17,7 @@ ms.locfileid: "74304665"
 В этой статье рассматриваются четыре области и шаблоны, связанные с созданием запросов в графе ресурсов Azure.
 
 - Общие сведения о заголовках регулирования
-- Пакетная обработка запросов
+- Группирование запросов
 - Сдвиг запросов
 - Влияние разбивки на страницы
 
@@ -37,9 +37,9 @@ ms.locfileid: "74304665"
 
 Пример использования заголовков для отработки _запросов к_ запросам см. в примере в [Query параллельно](#query-in-parallel).
 
-## <a name="batching-queries"></a>Пакетная обработка запросов
+## <a name="grouping-queries"></a>Группирование запросов
 
-Пакетная обработка запросов подпиской, группой ресурсов или отдельным ресурсом более эффективна, чем параллелизации запросов. Затраты на квоту более крупного запроса часто меньше, чем квота на множество небольших и целевых запросов. Размер пакета рекомендуется меньше _300_.
+Группировка запросов по подписке, группе ресурсов или отдельному ресурсу более эффективна, чем параллелизации запросов. Затраты на квоту более крупного запроса часто меньше, чем квота на множество небольших и целевых запросов. Размер группы рекомендуется меньше _300_.
 
 - Пример плохо оптимизированного подхода
 
@@ -62,19 +62,19 @@ ms.locfileid: "74304665"
   }
   ```
 
-- Пример #1 оптимизированного пакетного подхода
+- Пример #1 оптимизированного подхода группирования
 
   ```csharp
   // RECOMMENDED
   var header = /* your request header */
   var subscriptionIds = /* A big list of subscriptionIds */
 
-  const int batchSize = 100;
-  for (var i = 0; i <= subscriptionIds.Count / batchSize; ++i)
+  const int groupSize = 100;
+  for (var i = 0; i <= subscriptionIds.Count / groupSize; ++i)
   {
-      var currSubscriptionBatch = subscriptionIds.Skip(i * batchSize).Take(batchSize).ToList();
+      var currSubscriptionGroup = subscriptionIds.Skip(i * groupSize).Take(groupSize).ToList();
       var userQueryRequest = new QueryRequest(
-          subscriptions: currSubscriptionBatch,
+          subscriptions: currSubscriptionGroup,
           query: "Resources | project name, type");
 
       var azureOperationResponse = await this.resourceGraphClient
@@ -85,21 +85,25 @@ ms.locfileid: "74304665"
   }
   ```
 
-- Пример #2 оптимизированного пакетного подхода
+- Пример #2 оптимизированного подхода группирования для получения нескольких ресурсов в одном запросе
+
+  ```kusto
+  Resources | where id in~ ({resourceIdGroup}) | project name, type
+  ```
 
   ```csharp
   // RECOMMENDED
   var header = /* your request header */
   var resourceIds = /* A big list of resourceIds */
 
-  const int batchSize = 100;
-  for (var i = 0; i <= resourceIds.Count / batchSize; ++i)
+  const int groupSize = 100;
+  for (var i = 0; i <= resourceIds.Count / groupSize; ++i)
   {
-      var resourceIdBatch = string.Join(",",
-          resourceIds.Skip(i * batchSize).Take(batchSize).Select(id => string.Format("'{0}'", id)));
+      var resourceIdGroup = string.Join(",",
+          resourceIds.Skip(i * groupSize).Take(groupSize).Select(id => string.Format("'{0}'", id)));
       var userQueryRequest = new QueryRequest(
           subscriptions: subscriptionList,
-          query: $"Resources | where id in~ ({resourceIds}) | project name, type");
+          query: $"Resources | where id in~ ({resourceIdGroup}) | project name, type");
 
       var azureOperationResponse = await this.resourceGraphClient
           .ResourcesWithHttpMessagesAsync(userQueryRequest, header)
@@ -149,12 +153,12 @@ while (/* Need to query more? */)
 
 ### <a name="query-in-parallel"></a>Запрос в параллельном режиме
 
-Несмотря на то, что для параллелизации рекомендуется использовать пакетную обработку, бывают случаи, когда запросы не могут быть просто пакетированы. В таких случаях может потребоваться выполнить запрос к графу ресурсов Azure, отправив несколько запросов параллельно. Ниже приведен пример _того, как выполнять_ откладывание на основе заголовков регулирования в таких сценариях:
+Несмотря на то, что группировка рекомендуется по сравнению с параллелизмом, бывают случаи, когда нельзя легко сгруппировать запросы. В таких случаях может потребоваться выполнить запрос к графу ресурсов Azure, отправив несколько запросов параллельно. Ниже приведен пример _того, как выполнять_ откладывание на основе заголовков регулирования в таких сценариях:
 
 ```csharp
-IEnumerable<IEnumerable<string>> queryBatches = /* Batches of queries  */
-// Run batches in parallel.
-await Task.WhenAll(queryBatches.Select(ExecuteQueries)).ConfigureAwait(false);
+IEnumerable<IEnumerable<string>> queryGroup = /* Groups of queries  */
+// Run groups in parallel.
+await Task.WhenAll(queryGroup.Select(ExecuteQueries)).ConfigureAwait(false);
 
 async Task ExecuteQueries(IEnumerable<string> queries)
 {
@@ -181,7 +185,7 @@ async Task ExecuteQueries(IEnumerable<string> queries)
 }
 ```
 
-## <a name="pagination"></a>Разбиение на страницы
+## <a name="pagination"></a>Разбивка на страницы
 
 Так как граф ресурсов Azure возвращает не более 1000 записей в одном ответе на запрос, может потребоваться выполнить [разбиение](./work-with-data.md#paging-results) запросов на страницы, чтобы получить полный набор данных, который вы ищете. Однако некоторые клиенты графа ресурсов Azure выполняют разбиение на страницы иначе, чем другие.
 
@@ -233,7 +237,7 @@ async Task ExecuteQueries(IEnumerable<string> queries)
 - Какие типы ресурсов вас интересуют?
 - Что такое шаблон запроса? X запросов на Y секунд и т. д.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - См. язык, используемый в [начальных запросах](../samples/starter.md).
 - См. Дополнительные сведения о расширенном использовании в [расширенных запросах](../samples/advanced.md).

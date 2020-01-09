@@ -1,31 +1,22 @@
 ---
-title: 'Интерфейс командной строки Azure Service Fabric : -sfctl mesh | Документация Майкрософт'
-description: Описание команд sfctl mesh интерфейса командной строки Service Fabric.
-services: service-fabric
-documentationcenter: na
+title: Azure Service Fabric CLI — сетка sfctl
+description: Сведения о sfctl, интерфейсе командной строки Azure Service Fabric. Содержит список команд для управления Service Fabric приложений сетки.
 author: jeffj6123
-manager: chackdan
-editor: ''
-ms.assetid: ''
-ms.service: service-fabric
-ms.devlang: cli
 ms.topic: reference
-ms.tgt_pltfrm: na
-ms.workload: multiple
 ms.date: 9/17/2019
 ms.author: jejarry
-ms.openlocfilehash: a97cf0a9dd9eccea2db60d73308338350102cb8c
-ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
+ms.openlocfilehash: 608efba614f17932b3bfb7852c16ffbeaca02457
+ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72901115"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75646081"
 ---
 # <a name="sfctl-mesh"></a>sfctl mesh
 Управление приложениями в службе "Сетка Service Fabric" и их удаление.
 
 ## <a name="subgroups"></a>Подгруппы
-|Подгруппа|Описание|
+|Подгруппа|Description|
 | --- | --- |
 | [app](service-fabric-sfctl-mesh-app.md) | Получение и удаление ресурсов приложения. |
 | [code-package-log](service-fabric-sfctl-mesh-code-package-log.md) | Сведения о команде получения журналов для контейнера указанного пакета кода для данной реплики службы. |

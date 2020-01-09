@@ -1,5 +1,6 @@
 ---
-title: Функции стиля карт в службе Azure Maps | Документация Майкрософт
+title: Задание стиля схемы в Azure Maps с помощью пакет SDK для Android
+titleSuffix: Azure Maps
 description: Сведения о функциях, связанных с Azure Maps стилем для пакет SDK для Android.
 author: walsehgal
 ms.author: v-musehg
@@ -8,19 +9,19 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: philmea
-ms.openlocfilehash: 5bcc73c63e7c9d804d01df98551aa51b81d98d07
-ms.sourcegitcommit: adc1072b3858b84b2d6e4b639ee803b1dda5336a
+ms.openlocfilehash: 1a898508e5c99f6cb8be46605c156106b47c08f3
+ms.sourcegitcommit: ce4a99b493f8cf2d2fd4e29d9ba92f5f942a754c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70844851"
+ms.lasthandoff: 12/28/2019
+ms.locfileid: "75528102"
 ---
 # <a name="set-map-style-using-azure-maps-android-sdk"></a>Задание стиля схемы с помощью Azure Maps пакет SDK для Android
 
 В этой статье показано два способа установки стилей карт с помощью пакет SDK для Android Azure Maps. Azure Maps имеет шесть различных стилей карт для выбора. Дополнительные сведения о поддерживаемых стилях карт см. [в разделе Поддерживаемые стили карт в Azure Maps](./supported-map-styles.md).
 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы завершить процесс, описанный в этой статье, необходимо установить [Azure Maps пакет SDK для Android](https://docs.microsoft.com/azure/azure-maps/how-to-use-android-map-control-library) , чтобы загрузить карту.
 
@@ -51,15 +52,15 @@ ms.locfileid: "70844851"
 </FrameLayout>
 ```
 
-Приведенный выше атрибутустанавливаетстильотображения`mapcontrol_style` grayscale_dark. 
+Приведенный выше атрибут `mapcontrol_style` устанавливает стиль отображения **grayscale_dark**. 
 
 <center>
 
-![Style-grayscale_dark](./media/set-android-map-styles/grayscale-dark.png)</center>
+grayscale_dark стиля ![](./media/set-android-map-styles/grayscale-dark.png)</center>
 
 ## <a name="set-map-style-in-the-activity-class"></a>Задание стиля схемы в классе действия
 
-Стиль схемы можно задать в классе действия. Скопируйте следующий фрагмент кода в метод `MainActivity.java` **OnCreate ()** класса. При этом для стиля схемы будет задано значение **satellite_road_labels**.
+Стиль схемы можно задать в классе действия. Скопируйте следующий фрагмент кода в метод **OnCreate ()** класса `MainActivity.java`. Будет задан стиль отображения **satellite_road_labels**.
 
 ```Java
 mapControl.onReady(map -> {
@@ -73,4 +74,4 @@ mapControl.onReady(map -> {
 
 <center>
 
-![Style-Спутниковое-Road-Labels](./media/set-android-map-styles/satellite-road-labels.png)</center>
+стиль ![-"вспомогательные метки"](./media/set-android-map-styles/satellite-road-labels.png)</center>

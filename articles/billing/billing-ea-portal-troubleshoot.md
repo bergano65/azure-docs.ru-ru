@@ -4,16 +4,16 @@ description: В этой статье описываются некоторые 
 keywords: ''
 author: bandersmsft
 ms.author: banders
-ms.date: 12/04/2019
+ms.date: 01/02/2020
 ms.topic: troubleshooting
 ms.service: cost-management-billing
 manager: boalcsva
-ms.openlocfilehash: ff8408a098049d860a614900bdeea80da1bd95e4
-ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
+ms.openlocfilehash: f48aaee34dd35f065fd7e2d065316674b72db7c5
+ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74841393"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75644432"
 ---
 # <a name="troubleshoot-azure-ea-portal-access"></a>Устранение неполадок с доступом к порталу Azure EA
 
@@ -135,7 +135,7 @@ ms.locfileid: "74841393"
 - URL-адрес страницы, на которой отображается ошибка.  
 - Дата, время и часовой пояс возникновения ошибки.
 - Файл журнала также будет полезным. Ниже приведены действия по записи трассировки сети.
-  1. Откройте браузер Internet Explorer.
+  1. Откройте обозреватель Internet Explorer.
   1. Нажмите клавишу F12. После этого откроется поле в нижней части IE.
   1. Выберите вкладку **Сеть**.
   1. Нажмите кнопку **запуска сбора сетевого трафика**.
@@ -164,6 +164,6 @@ ms.locfileid: "74841393"
 
 Если у вас есть рабочая или учебная учетная запись в другом клиенте, измените уровень авторизации на странице "Сведения о регистрации" на "Межклиентская рабочая или учебная учетная запись", после чего вы сможете добавить учетную запись.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Администраторам, которые будут использовать портал Azure EA, следует изучить [сведения об администрировании на портале Azure EA](billing-ea-portal-administration.md), где описаны типичные задачи администрирования.

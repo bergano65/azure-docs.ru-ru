@@ -2,19 +2,15 @@
 title: Настройка требуемого состояния серверов и управление смещением с помощью службы автоматизации Azure
 description: Руководство по управлению настройками сервера с помощью службы "Настройка состояния службы автоматизации Azure"
 services: automation
-ms.service: automation
 ms.subservice: dsc
-author: mgoedtel
-ms.author: magoedte
-manager: carmonm
 ms.topic: conceptual
 ms.date: 08/08/2018
-ms.openlocfilehash: 0339796f028a0cc0b19533be06127544db396f92
-ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
+ms.openlocfilehash: 9e2f04f59a56be6c516eb90de45fdf7327673086
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74850097"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75416592"
 ---
 # <a name="configure-servers-to-a-desired-state-and-manage-drift"></a>Настройка требуемого состояния серверов и управление смещением
 
@@ -24,12 +20,12 @@ ms.locfileid: "74850097"
 > - Подключение виртуальной машины для управления с помощью DSC службы автоматизации Azure.
 > - Передача конфигурации в службу автоматизации Azure.
 > - Компиляция конфигурации в конфигурации узла
-> - Назначение конфигурации узла управляемому узлу
+> - Назначение конфигурации узла управляемому узлу.
 > - Проверка состояния соответствия управляемого узла
 
 ## <a name="prerequisites"></a>Технические условия
 
-Для работы с этим учебником требуется:
+Для выполнения этого руководства потребуется следующее:
 
 - Учетная запись службы автоматизации Azure. Указания по созданию учетной записи запуска от имени пользователя для службы автоматизации Azure см. в статье [Проверка подлинности модулей Runbook в Azure с помощью учетной записи запуска от имени](automation-sec-configure-azure-runas-account.md).
 - Виртуальная машина Azure Resource Manager (неклассическая) под управлением Windows Server 2008 R2 или более поздней версии. Инструкции по созданию виртуальной машины см. в статье [Создание первой виртуальной машины Windows на портале Azure](../virtual-machines/virtual-machines-windows-hero-tutorial.md).
@@ -118,7 +114,7 @@ Register-AzureRmAutomationDscNode -ResourceGroupName 'MyResourceGroup' -Automati
 
 Дополнительные сведения о настройках конфигурации DSC см. в статье [Настройка локального диспетчера конфигураций](/powershell/scripting/dsc/managing-nodes/metaConfig).
 
-## <a name="assign-a-node-configuration-to-a-managed-node"></a>Назначение конфигурации узла управляемому узлу
+## <a name="assign-a-node-configuration-to-a-managed-node"></a>Назначение конфигурации узла управляемому узлу.
 
 Теперь можно назначить конфигурации скомпилированного узла для виртуальной машины, которую необходимо настроить.
 
@@ -170,7 +166,7 @@ $reports[0]
 > Это не влияет на конфигурацию, которая в настоящее время применяется к узлу.
 > Чтобы удалить текущую конфигурацию, используйте [PowerShell](https://docs.microsoft.com/powershell/module/psdesiredstateconfiguration/remove-dscconfigurationdocument?view=powershell-5.1) или удалите локальный файл конфигурации (это единственный вариант для узлов Linux).
 
-### <a name="azure-portal"></a>портала Azure
+### <a name="azure-portal"></a>Портал Azure
 
 Из службы автоматизации Azure щелкните **Конфигурация состояния (DSC)** в содержании.
 Затем щелкните **узлы** , чтобы просмотреть список узлов, зарегистрированных в службе.

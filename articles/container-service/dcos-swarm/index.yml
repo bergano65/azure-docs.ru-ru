@@ -2,7 +2,6 @@
 documentType: LandingData
 title: Документация по Службе контейнеров Azure с DC/OS и Swarm
 metadata:
-  document_id: null
   title: Документация по Службе контейнеров Azure с DC/OS и Swarm. Руководства и справочник по API | Документация Майкрософт
   meta.description: 'Azure Container Service allows you to quickly deploy a production ready DC/OS or Docker Swarm cluster. Learn how to use Azure Container Service with these quickstarts, tutorials, and samples.'
   services: container-service
@@ -13,7 +12,7 @@ metadata:
   ms.date: 07-21-2017
   ms.author: gwallace
 abstract:
-  description: 'Служба контейнеров Azure позволяет быстро развертывать готовые к работе кластеры DC/OS или Docker Swarm. Узнайте, как использовать службы контейнеров Azure с помощью наших шаблонов быстрого запуска, руководств и примеров.'
+  description: 'Служба контейнеров Azure позволяет быстро развертывать готовые к работе кластеры DC/OS или Docker Swarm. Узнайте, как использовать Службу контейнеров Azure с помощью наших кратких руководств, учебников и примеров.'
 sections:
   - title: Пятиминутные руководства по началу работы
     items:
@@ -48,7 +47,7 @@ sections:
         className: spaced noBullet
         items:
           - html: <a href="/azure/container-service/cli-samples">Azure CLI</a>
-  - title: Справочные материалы
+  - title: Справочник
     items:
       - type: list
         style: cards

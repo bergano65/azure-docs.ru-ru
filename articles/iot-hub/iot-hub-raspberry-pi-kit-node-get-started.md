@@ -10,12 +10,12 @@ ms.devlang: nodejs
 ms.topic: conceptual
 ms.date: 07/17/2019
 ms.author: wesmc
-ms.openlocfilehash: 28897ca6f80632210032b7f800404fc921143adf
-ms.sourcegitcommit: 44c2a964fb8521f9961928f6f7457ae3ed362694
+ms.openlocfilehash: 5780477be71988653e89379ae17e9009337bbc0f
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73954542"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75457097"
 ---
 # <a name="connect-raspberry-pi-to-azure-iot-hub-nodejs"></a>Подключение Raspberry Pi к Центру Интернета вещей Azure (Node.js)
 
@@ -27,7 +27,7 @@ ms.locfileid: "73954542"
 
 ## <a name="what-you-do"></a>Что нужно сделать
 
-* Создайте центр IoT.
+* Создайте Центр Интернета вещей.
 
 * Зарегистрируем устройство для Pi в Центре Интернета вещей.
 
@@ -51,7 +51,7 @@ ms.locfileid: "73954542"
 
 * Плата Raspberry Pi 2 или Raspberry Pi 3.
 
-* Подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) , прежде чем начинать работу.
+* Подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 * Монитор, USB-клавиатура и мышь, подключенные к Pi.
 
@@ -78,7 +78,7 @@ ms.locfileid: "73954542"
 > [!NOTE]
 > Если у вас нет дополнительных элементов, можно использовать имитацию датчиков.
 
-## <a name="create-an-iot-hub"></a>Создание центра IoT
+## <a name="create-an-iot-hub"></a>Создание Центра Интернета вещей
 
 [!INCLUDE [iot-hub-include-create-hub](../../includes/iot-hub-include-create-hub.md)]
 
@@ -94,23 +94,23 @@ ms.locfileid: "73954542"
 
 1. Скачайте ОС Raspbian.
 
-   a. [Raspbian бустер с рабочим столом](https://www.raspberrypi.org/downloads/raspbian/) (ZIP-файл).
+   а. [Raspbian бустер с рабочим столом](https://www.raspberrypi.org/downloads/raspbian/) (ZIP-файл).
 
-   Б. Извлеките образ ОС Raspbian в папку на компьютере.
+   b. Извлеките образ ОС Raspbian в папку на компьютере.
 
 2. Установите ОС Raspbian на карту microSD.
 
-   a. [Скачайте и установите служебную программу Etcher для записи данных на карты SD](https://etcher.io/).
+   а. [Скачайте и установите служебную программу Etcher для записи данных на карты SD](https://etcher.io/).
 
-   Б. Запустите Etcher и выберите образ Raspbian, извлеченный на шаге 1.
+   b. Запустите Etcher и выберите образ Raspbian, извлеченный на шаге 1.
 
    c. Выберите устройство для чтения карт microSD. В программе Etcher уже может быть выбрано правильное устройство для чтения.
 
    d. Щелкните Flash (Переключиться), чтобы установить ОС Raspbian на карту microSD.
 
-   д. По завершении установки удалите карту microSD из компьютера. Удалять карту microSD напрямую безопасно, так как программа Etcher автоматически извлекает или отключает карту microSD после завершения.
+   д) По завершении установки удалите карту microSD из компьютера. Удалять карту microSD напрямую безопасно, так как программа Etcher автоматически извлекает или отключает карту microSD после завершения.
 
-   f. Вставьте карту microSD в устройство Pi.
+   е) Вставьте карту microSD в устройство Pi.
 
 ### <a name="enable-ssh-and-i2c"></a>Включение SSH и I2C
 
@@ -148,7 +148,7 @@ ms.locfileid: "73954542"
 | LED VDD (вывод 18F)        | GPIO 24 (вывод 18)       | Белый кабель   |
 | LED GND (вывод 17F)        | GND (вывод 20)           | Черный кабель   |
 
-Щелкните, чтобы просмотреть [схему соответствия выводов Raspberry Pi 2 и 3](https://developer.microsoft.com/windows/iot/docs/pinmappingsrpi) для справки.
+Щелкните, чтобы просмотреть [схему соответствия выводов Raspberry Pi 2 и 3](/windows/iot-core/learn-about-hardware/pinmappings/pinmappingsrpi) для справки.
 
 После успешного подключения датчика BME280 к Raspberry Pi схема должна выглядеть так, как на изображении ниже.
 
@@ -171,9 +171,9 @@ ms.locfileid: "73954542"
 
    **Пользователи Windows**
 
-   a. Скачайте и установите [PuTTY](https://www.putty.org/) для Windows.
+   а. Скачайте и установите [PuTTY](https://www.putty.org/) для Windows.
 
-   Б. Скопируйте IP-адрес устройства Pi в разделе с именем узла (или IP-адресом) и выберите SSH как тип подключения.
+   b. Скопируйте IP-адрес устройства Pi и вставьте его в поле для имени узла (или для IP-адреса), а затем выберите тип подключения SSH.
 
    ![PuTTy](./media/iot-hub-raspberry-pi-kit-node-get-started/7-putty-windows.png)
 
@@ -217,7 +217,7 @@ ms.locfileid: "73954542"
 
 ### <a name="configure-the-sample-application"></a>Настройка примера приложения
 
-1. Откройте файл конфигурации, выполнив следующие команды:
+1. Откройте файл конфигурации, выполнив следующую команду:
 
    ```bash
    nano config.json
@@ -254,7 +254,7 @@ ms.locfileid: "73954542"
 
 Чтобы узнать больше о способах обработки данных, отправляемых устройством, перейдите к следующему разделу.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Вы запустили пример приложения, чтобы собрать данные датчика и отправить их в Центр Интернета вещей.
 

@@ -1,31 +1,23 @@
 ---
-title: Примеры манифеста приложения надежных служб Azure Service Fabric
+title: Примеры манифеста приложения надежных служб
 description: Узнайте, как настроить параметры манифестов приложений и служб для приложения Service Fabric Reliable Services.
-services: service-fabric
-documentationcenter: na
 author: peterpogorski
-manager: chackdan
-editor: ''
-ms.assetid: ''
-ms.service: service-fabric
 ms.topic: conceptual
-ms.tgt_pltfrm: na
-ms.workload: multiple
 ms.date: 06/11/2018
 ms.author: pepogors
-ms.openlocfilehash: 9cc79610b6dc9f9d2869a41e0b483168087368cc
-ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
+ms.openlocfilehash: d5a03629a134a0b2c7d6ee95dba9ea3ad06e99ba
+ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74013231"
+ms.lasthandoff: 01/02/2020
+ms.locfileid: "75609831"
 ---
 # <a name="reliable-services-application-and-service-manifest-examples"></a>Примеры манифестов приложений Reliable Services и служб
 Ниже приведены примеры манифестов приложений и служб для приложения Service Fabric с внешним веб-интерфейсном ASP.NET Core и серверной частью с отслеживанием состояния. Цель этих примеров — показать, какие параметры являются доступными и как их использовать. Эти манифесты приложений и служб основаны на манифестах [в кратком руководстве по Service Fabric для .NET](https://github.com/Azure-Samples/service-fabric-dotnet-quickstart/).
 
 Показаны следующие функции:
 
-|Manifest|Функции|
+|Manifest|Возможности|
 |---|---|
 |[Манифест приложения](#application-manifest)| [Управление ресурсами](service-fabric-resource-governance.md), [запуск службы с использованием учетной записи локального администратора](service-fabric-application-runas-security.md), [применение политики по умолчанию для всех пакетов кода службы](service-fabric-application-runas-security.md#apply-a-default-policy-to-all-service-code-packages), [создание субъектов пользователей и групп](service-fabric-application-runas-security.md), совместное использование пакета данных экземплярами служб, [переопределение конечных точек службы](service-fabric-service-manifest-resources.md#overriding-endpoints-in-servicemanifestxml)| 
 |Манифест службы FrontEndService| [Выполнение сценария при запуске службы](service-fabric-run-script-at-service-startup.md), [определение конечной точки HTTPS](service-fabric-tutorial-dotnet-app-enable-https-endpoint.md#define-an-https-endpoint-in-the-service-manifest) | 

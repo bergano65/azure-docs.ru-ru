@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: mrbullwinkle
 ms.author: mbullwin
 ms.date: 02/14/2019
-ms.openlocfilehash: cdc534325fd693dd34f2dc25c9953cd40ca96163
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.openlocfilehash: 28eb7e490890b46a4025a6cf62e13b364bd7b6dd
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73162311"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75432344"
 ---
 # <a name="resources-roles-and-access-control-in-application-insights"></a>Ресурсы, роли и контроль доступа в Application Insights
 
@@ -108,7 +108,7 @@ ms.locfileid: "73162311"
 Если в каталоге нет необходимого пользователя, вы можете пригласить любого пользователя с учетной записью Майкрософт
 (если он использует такие службы, как Outlook.com, OneDrive, Windows Phone или XBox Live, значит, у него есть учетная запись Майкрософт).
 
-## <a name="related-content"></a>Связанная информация
+## <a name="related-content"></a>См. также
 
 * [Управление доступом на основе ролей в Azure](../../role-based-access-control/role-assignments-portal.md)
 
@@ -141,6 +141,6 @@ $resourceGroup = "RGNAME"
 <!--Link references-->
 
 [account]: https://account.microsoft.com
-[group]: ../../azure-resource-manager/resource-group-overview.md
+[group]: ../../azure-resource-manager/management/overview.md
 [portal]: https://portal.azure.com/
 [start]: ../../azure-monitor/app/app-insights-overview.md

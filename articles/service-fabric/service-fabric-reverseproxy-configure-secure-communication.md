@@ -1,24 +1,16 @@
 ---
-title: Защищенное взаимодействие с обратным прокси-сервером Azure Service Fabric | Документы Майкрософт
-description: Настройка обратного прокси-сервера для обеспечения безопасного сквозного взаимодействия.
-services: service-fabric
-documentationcenter: .net
+title: Безопасный обмен данными с обратным прокси-сервером Azure Service Fabric
+description: Настройте обратный прокси-сервер, чтобы обеспечить безопасное сквозное взаимодействие в приложении Service Fabric Azure.
 author: kavyako
-manager: vipulm
-ms.assetid: ''
-ms.service: service-fabric
-ms.devlang: dotnet
 ms.topic: conceptual
-ms.tgt_pltfrm: na
-ms.workload: required
 ms.date: 08/10/2017
 ms.author: kavyako
-ms.openlocfilehash: e915e689f09ba7f5c92958ebf8531aa67eef4493
-ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
+ms.openlocfilehash: 4cfeaf34a39231ffa91ea970a61f66632bae40c7
+ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72933958"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75639400"
 ---
 # <a name="connect-to-a-secure-service-with-the-reverse-proxy"></a>Подключение к защищенной службе с помощью обратного прокси-сервера
 
@@ -30,7 +22,7 @@ ms.locfileid: "72933958"
 ## <a name="secure-connection-establishment-between-the-reverse-proxy-and-services"></a>Установление безопасного подключения между обратным прокси-сервером и службами 
 
 ### <a name="reverse-proxy-authenticating-to-services"></a>Обратный прокси-сервер проходит аутентификацию в службах
-Обратный прокси-сервер идентифицирует себя в службах с помощью своего сертификата. Для кластеров Azure сертификат указывается с помощью свойства ***ReverseProxyCertificate*** ресурса [**Microsoft.ServiceFabric/clusters**](https://docs.microsoft.com/azure/templates/microsoft.servicefabric/clusters) в [разделе типов ресурсов](../azure-resource-manager/resource-group-authoring-templates.md) шаблона Resource Manager. Для автономных кластеров сертификат указывается с помощью свойства ***ReverseProxyCertificate*** или ***ReverseProxyCertificateCommonNames*** в разделе **Security** файла ClusterConfig.json. Дополнительные сведения см. в разделе [Enable reverse proxy on standalone clusters](service-fabric-reverseproxy-setup.md#enable-reverse-proxy-on-standalone-clusters) (Включение обратного прокси-сервера в автономных кластерах). 
+Обратный прокси-сервер идентифицирует себя в службах с помощью своего сертификата. Для кластеров Azure сертификат указывается с помощью свойства ***reverseProxyCertificate*** в [разделе типа ресурса](../azure-resource-manager/templates/template-syntax.md) [**Microsoft. ServiceFabric/Clusters**](https://docs.microsoft.com/azure/templates/microsoft.servicefabric/clusters) шаблона диспетчер ресурсов. Для автономных кластеров сертификат указывается с помощью свойства ***ReverseProxyCertificate*** или ***ReverseProxyCertificateCommonNames*** в разделе **Security** файла ClusterConfig.json. Дополнительные сведения см. в разделе [Enable reverse proxy on standalone clusters](service-fabric-reverseproxy-setup.md#enable-reverse-proxy-on-standalone-clusters) (Включение обратного прокси-сервера в автономных кластерах). 
 
 Службы могут реализовать логику для проверки сертификата, представленного обратным прокси-сервером. Службы могут указывать сведения о принятом сертификате клиента как параметры конфигурации в пакете конфигурации. Их можно считывать во время выполнения и использовать для проверки сертификата, представленного обратным прокси-сервером. Сведения о добавлении параметров конфигурации см. в статье [Управление параметрами приложения](service-fabric-manage-multiple-environment-app-configuration.md). 
 

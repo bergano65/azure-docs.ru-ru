@@ -1,19 +1,14 @@
 ---
-title: Повышение производительности приложений Azure с использованием Помощника по Azure | Документация Майкрософт
+title: Повышение производительности приложений Azure с использованием Помощника по Azure
 description: Используйте Помощник для оптимизации производительности развернутых служб Azure.
-services: advisor
-documentationcenter: NA
-author: saket-ms
-ms.service: advisor
 ms.topic: article
 ms.date: 01/29/2019
-ms.author: sagupt
-ms.openlocfilehash: 82c77568a2c62a0e02bf00c164f4600e221376da
-ms.sourcegitcommit: dbde4aed5a3188d6b4244ff7220f2f75fce65ada
+ms.openlocfilehash: 405ec395feeb33b8511b9b915151b2ed9503c371
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74183119"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75443061"
 ---
 # <a name="improve-performance-of-azure-applications-with-azure-advisor"></a>Повышение производительности приложений Azure с использованием Помощника по Azure
 
@@ -116,12 +111,12 @@ Advisor обнаружит Azure Cosmos DB учетные записи, имею
 
 2.  На панели мониторинга Помощника выберите вкладку **Производительность**.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы узнать больше о рекомендациях Помощника, ознакомьтесь с приведенными ниже материалами.
 
 * [Общие сведения об Azure Advisor](advisor-overview.md)
-* [Приступая к работе с Azure Advisor](advisor-get-started.md)
+* [Начало работы с Помощником по Azure](advisor-get-started.md)
 * [Рекомендации Azure Advisor по затратам](advisor-cost-recommendations.md)
 * [Рекомендации Azure Advisor по высокой доступности](advisor-high-availability-recommendations.md)
 * [Рекомендации Azure Advisor по безопасности](advisor-security-recommendations.md)

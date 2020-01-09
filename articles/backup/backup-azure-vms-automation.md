@@ -3,12 +3,12 @@ title: Резервное копирование и восстановление
 description: В этой статье описывается, как выполнять резервное копирование и восстановление виртуальных машин Azure с использованием Azure Backup с помощью PowerShell.
 ms.topic: conceptual
 ms.date: 09/11/2019
-ms.openlocfilehash: 7afa791c4a98ca5e40c0ee3983ba8650268c00ee
-ms.sourcegitcommit: 4821b7b644d251593e211b150fcafa430c1accf0
+ms.openlocfilehash: 733a06a84aa170f1361ea74d126ec9752586fce2
+ms.sourcegitcommit: ce4a99b493f8cf2d2fd4e29d9ba92f5f942a754c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74172548"
+ms.lasthandoff: 12/28/2019
+ms.locfileid: "75528000"
 ---
 # <a name="back-up-and-restore-azure-vms-with-powershell"></a>Резервное копирование и восстановление виртуальных машин Azure с помощью PowerShell
 
@@ -35,7 +35,7 @@ ms.locfileid: "74172548"
 
 ![Иерархия объектов служб восстановления](./media/backup-azure-vms-arm-automation/recovery-services-object-hierarchy.png)
 
-Ознакомьтесь со **справочником по командлету** [AZ. RecoveryServices](https://docs.microsoft.com/powershell/module/Az.RecoveryServices/?view=azps-1.4.0) в библиотеке Azure.
+Ознакомьтесь со [справочником по командлету](https://docs.microsoft.com/powershell/module/Az.RecoveryServices/?view=azps-1.4.0) **AZ. RecoveryServices** в библиотеке Azure.
 
 ## <a name="set-up-and-register"></a>Настройка и регистрация
 
@@ -128,7 +128,7 @@ SubscriptionId    : 1234-567f-8910-abc
 Properties        : Microsoft.Azure.Commands.RecoveryServices.ARSVaultProperties
 ```
 
-## <a name="back-up-azure-vms"></a>Резервное копирование виртуальных машин Azure
+## <a name="back-up-azure-vms"></a>Резервное копирование ВМ Azure
 
 Используйте хранилище служб восстановления для защиты виртуальной машины. Прежде чем применить защиту, задайте контекст хранилища (тип данных, защиту которых обеспечивает хранилище) и проверьте политику защиты. Политика защиты — это график выполнения заданий резервного копирования и срок хранения каждого моментального снимка резервной копии.
 
@@ -149,7 +149,7 @@ $targetVault = Get-AzRecoveryServicesVault -ResourceGroupName "Contoso-docs-rg" 
 $targetVault.ID
 ```
 
-Или
+или
 
 ```powershell
 $targetVaultID = Get-AzRecoveryServicesVault -ResourceGroupName "Contoso-docs-rg" -Name "testvault" | select -ExpandProperty ID
@@ -369,7 +369,7 @@ TestVM           ConfigureBackup      Completed            3/18/2019 8:00:21 PM 
 
 ### <a name="stop-protection"></a>Остановить защиту
 
-#### <a name="retain-data"></a>Хранить данные
+#### <a name="retain-data"></a>Сохранение данных
 
 Если пользователь желает отключить защиту, он может использовать командлет [Disable-азрековерисервицесбаккуппротектион](https://docs.microsoft.com/powershell/module/az.recoveryservices/Disable-AzRecoveryServicesBackupProtection?view=azps-1.5.0) PS. Это приведет к отмене запланированных резервных копий, но данные будут сохранены до тех пор, пока не будет храниться неограниченное время.
 
@@ -378,7 +378,7 @@ $bkpItem = Get-AzRecoveryServicesBackupItem -BackupManagementType AzureVM -Workl
 Disable-AzRecoveryServicesBackupProtection -Item $bkpItem -VaultId $targetVault.ID
 ````
 
-#### <a name="delete-backup-data"></a>Удаление данных резервных копий
+#### <a name="delete-backup-data"></a>удаление резервных копий;
 
 Чтобы полностью удалить сохраненные резервные копии данных в хранилище, просто добавьте флаг "-Ремоверековерипоинтс" или переключитесь в [команду "Disable"](#retain-data).
 
@@ -513,25 +513,45 @@ $details = Get-AzRecoveryServicesBackupJobDetails -Job $restorejob -VaultId $tar
 После восстановления дисков создайте и настройте виртуальную машину с диска, выполнив описанные ниже действия.
 
 > [!NOTE]
-> При создании зашифрованных виртуальных машин с помощью восстановленных дисков у роли Azure должно быть разрешение на выполнение действия **Microsoft.KeyVault/vaults/deploy/action**. Если у роли нет этого разрешения, создайте пользовательскую роль с этим действием. Дополнительные сведения см. в разделе [Пользовательские роли в Azure RBAC](../role-based-access-control/custom-roles.md).
 >
->
+> 1. Требуется модуль Азуреаз 3.0.0 или более поздней версии. <br>
+> 2. При создании зашифрованных виртуальных машин с помощью восстановленных дисков у роли Azure должно быть разрешение на выполнение действия **Microsoft.KeyVault/vaults/deploy/action**. Если у роли нет этого разрешения, создайте пользовательскую роль с этим действием. Дополнительные сведения см. в разделе [Пользовательские роли в Azure RBAC](../role-based-access-control/custom-roles.md). <br>
+> 3. После восстановления дисков можно получить шаблон развертывания, который можно использовать непосредственно для создания виртуальной машины. Для создания управляемых или неуправляемых и зашифрованных или незашифрованных виртуальных машин больше не используются разные командлеты PS.<br>
+> <br>
 
-> [!NOTE]
-> После восстановления дисков можно получить шаблон развертывания, который можно использовать непосредственно для создания виртуальной машины. Для создания управляемых или неуправляемых и зашифрованных или незашифрованных виртуальных машин больше не используются разные командлеты PS.
+### <a name="create-a-vm-using-the-deployment-template"></a>Создание виртуальной машины с помощью шаблона развертывания
 
 Результирующая информация о задании предоставляет универсальный код ресурса (URI) шаблона, который можно запрашивать и развертывать.
 
 ```powershell
    $properties = $details.properties
+   $storageAccountName = $properties["Target Storage Account Name"]
+   $containerName = $properties["Config Blob Container Name"]
    $templateBlobURI = $properties["Template Blob Uri"]
 ```
 
-Чтобы создать виртуальную машину, просто разверните шаблон, как описано [здесь](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-template-deploy).
+Этот шаблон недоступен напрямую, так как он находится под учетной записью хранения клиента и заданным контейнером. Для доступа к этому шаблону требуется полный URL-адрес (вместе с временным маркером SAS).
+
+1. Сначала извлеките имя шаблона из Темплатеблобури. Этот формат упоминается ниже. Для извлечения окончательного имени шаблона из этого URL-адреса можно использовать операцию разбиения в PowerShell.
+
+```http
+https://<storageAccountName.blob.core.windows.net>/<containerName>/<templateName>
+```
+
+2. Затем можно создать полный URL-адрес, как описано [здесь](https://docs.microsoft.com/azure/azure-resource-manager/templates/secure-template-with-sas-token?tabs=azure-powershell#provide-sas-token-during-deployment).
 
 ```powershell
-New-AzResourceGroupDeployment -Name ExampleDeployment ResourceGroupName ExampleResourceGroup -TemplateUri $templateBlobURI -storageAccountType Standard_GRS
+Set-AzCurrentStorageAccount -Name $storageAccountName -ResourceGroupName <StorageAccount RG name>
+$templateBlobFullURI = New-AzStorageBlobSASToken -Container $containerName -Blob <templateName> -Permission r -FullUri
 ```
+
+3. Разверните шаблон, чтобы создать новую виртуальную машину, как описано [здесь](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-template-deploy).
+
+```powershell
+New-AzResourceGroupDeployment -Name ExampleDeployment ResourceGroupName ExampleResourceGroup -TemplateUri $templateBlobFullURI -storageAccountType Standard_GRS
+```
+
+### <a name="create-a-vm-using-the-config-file"></a>Создание виртуальной машины с помощью файла конфигурации
 
 В следующем разделе перечислены шаги, необходимые для создания виртуальной машины с помощью файла VMConfig.
 
@@ -564,20 +584,20 @@ New-AzResourceGroupDeployment -Name ExampleDeployment ResourceGroupName ExampleR
 
 4. Подключите диск операционной системы и диски данных. Здесь приводятся примеры для различных конфигураций управляемых и зашифрованных виртуальных машин. Используйте пример, подходящий для вашей конфигурации виртуальных машин.
 
-   * Используйте следующий пример для **неуправляемой виртуальной машины без шифрования**.
+* Используйте следующий пример для **неуправляемой виртуальной машины без шифрования**.
 
-       ```powershell
+```powershell
        Set-AzVMOSDisk -VM $vm -Name "osdisk" -VhdUri $obj.'properties.StorageProfile'.osDisk.vhd.Uri -CreateOption "Attach"
        $vm.StorageProfile.OsDisk.OsType = $obj.'properties.StorageProfile'.OsDisk.OsType
        foreach($dd in $obj.'properties.StorageProfile'.DataDisks)
        {
         $vm = Add-AzVMDataDisk -VM $vm -Name "datadisk1" -VhdUri $dd.vhd.Uri -DiskSizeInGB 127 -Lun $dd.Lun -CreateOption "Attach"
        }
-       ```
+```
 
-   * **Для неуправляемых зашифрованных виртуальных машин с Azure AD (зашифрованных только с помощью BEK)** необходимо восстановить секрет в хранилище ключей до подключения дисков. Дополнительные сведения см. в статье [Восстановление ключа и секрета в хранилище ключей для зашифрованных виртуальных машин с помощью службы Azure Backup](backup-azure-restore-key-secret.md). В следующем примере показано, как подключить диски операционной системы и диски данных к зашифрованной виртуальной машине. При указании диска операционной системы указывайте соответствующий тип операционной системы.
+* **Для неуправляемых зашифрованных виртуальных машин с Azure AD (зашифрованных только с помощью BEK)** необходимо восстановить секрет в хранилище ключей до подключения дисков. Дополнительные сведения см. в статье [Восстановление ключа и секрета в хранилище ключей для зашифрованных виртуальных машин с помощью службы Azure Backup](backup-azure-restore-key-secret.md). В следующем примере показано, как подключить диски операционной системы и диски данных к зашифрованной виртуальной машине. При указании диска операционной системы указывайте соответствующий тип операционной системы.
 
-      ```powershell
+```powershell
       $dekUrl = "https://ContosoKeyVault.vault.azure.net:443/secrets/ContosoSecret007/xx000000xx0849999f3xx30000003163"
       $dekUrl = "/subscriptions/abcdedf007-4xyz-1a2b-0000-12a2b345675c/resourceGroups/ContosoRG108/providers/Microsoft.KeyVault/vaults/ContosoKeyVault"
       Set-AzVMOSDisk -VM $vm -Name "osdisk" -VhdUri $obj.'properties.storageProfile'.osDisk.vhd.uri -DiskEncryptionKeyUrl $dekUrl -DiskEncryptionKeyVaultId $keyVaultId -CreateOption "Attach" -Windows/Linux
@@ -586,11 +606,11 @@ New-AzResourceGroupDeployment -Name ExampleDeployment ResourceGroupName ExampleR
       {
        $vm = Add-AzVMDataDisk -VM $vm -Name "datadisk1" -VhdUri $dd.vhd.Uri -DiskSizeInGB 127 -Lun $dd.Lun -CreateOption "Attach"
       }
-      ```
+```
 
-   * **Для неуправляемых зашифрованных виртуальных машин с Azure AD (зашифрованных с помощью BEK и KEK)** необходимо восстановить ключ и секрет в хранилище ключей до подключения дисков. Дополнительные сведения см. в статье [Восстановление ключа и секрета в хранилище ключей для зашифрованных виртуальных машин с помощью службы Azure Backup](backup-azure-restore-key-secret.md). В следующем примере показано, как подключить диски операционной системы и диски данных к зашифрованной виртуальной машине.
+* **Для неуправляемых зашифрованных виртуальных машин с Azure AD (зашифрованных с помощью BEK и KEK)** необходимо восстановить ключ и секрет в хранилище ключей до подключения дисков. Дополнительные сведения см. в статье [Восстановление ключа и секрета в хранилище ключей для зашифрованных виртуальных машин с помощью службы Azure Backup](backup-azure-restore-key-secret.md). В следующем примере показано, как подключить диски операционной системы и диски данных к зашифрованной виртуальной машине.
 
-      ```powershell
+```powershell
       $dekUrl = "https://ContosoKeyVault.vault.azure.net:443/secrets/ContosoSecret007/xx000000xx0849999f3xx30000003163"
       $kekUrl = "https://ContosoKeyVault.vault.azure.net:443/keys/ContosoKey007/x9xxx00000x0000x9b9949999xx0x006"
       $keyVaultId = "/subscriptions/abcdedf007-4xyz-1a2b-0000-12a2b345675c/resourceGroups/ContosoRG108/providers/Microsoft.KeyVault/vaults/ContosoKeyVault"
@@ -600,13 +620,13 @@ New-AzResourceGroupDeployment -Name ExampleDeployment ResourceGroupName ExampleR
      {
      $vm = Add-AzVMDataDisk -VM $vm -Name "datadisk1" -VhdUri $dd.vhd.Uri -DiskSizeInGB 127 -Lun $dd.Lun -CreateOption "Attach"
      }
-      ```
+```
 
-   * **Для неуправляемых зашифрованных виртуальных машин без Azure AD (зашифрованных только с помощью BEK)** , если в исходном **хранилище ключей недоступны секреты**, восстановите секреты в хранилище ключей, выполнив действия, описанные в статье [Восстановление ключа и секрета в хранилище ключей для зашифрованных виртуальных машин с помощью службы Azure Backup](backup-azure-restore-key-secret.md). Затем выполните следующие скрипты, чтобы задать сведения о шифровании для большого двоичного объекта с восстановленной операционной системой (этот шаг необязателен для больших двоичных объектов данных). $dekurl можно извлечь из восстановленного хранилища ключей.<br>
+* **Для неуправляемых зашифрованных виртуальных машин без Azure AD (зашифрованных только с помощью BEK)** , если в исходном **хранилище ключей недоступны секреты**, восстановите секреты в хранилище ключей, выполнив действия, описанные в статье [Восстановление ключа и секрета в хранилище ключей для зашифрованных виртуальных машин с помощью службы Azure Backup](backup-azure-restore-key-secret.md). Затем выполните следующие скрипты, чтобы задать сведения о шифровании для большого двоичного объекта с восстановленной операционной системой (этот шаг необязателен для больших двоичных объектов данных). $dekurl можно извлечь из восстановленного хранилища ключей.
 
-   Приведенный ниже скрипт нужно выполнять только в том случае, если секреты недоступны в исходном хранилище ключей.
+Приведенный ниже скрипт нужно выполнять только в том случае, если секреты недоступны в исходном хранилище ключей.
 
-      ```powershell
+```powershell
       $dekUrl = "https://ContosoKeyVault.vault.azure.net/secrets/ContosoSecret007/xx000000xx0849999f3xx30000003163"
       $keyVaultId = "/subscriptions/abcdedf007-4xyz-1a2b-0000-12a2b345675c/resourceGroups/ContosoRG108/providers/Microsoft.KeyVault/vaults/ContosoKeyVault"
       $encSetting = "{""encryptionEnabled"":true,""encryptionSettings"":[{""diskEncryptionKey"":{""sourceVault"":{""id"":""$keyVaultId""},""secretUrl"":""$dekUrl""}}]}"
@@ -614,26 +634,26 @@ New-AzResourceGroupDeployment -Name ExampleDeployment ResourceGroupName ExampleR
       $osBlob = Get-AzStorageBlob -Container $containerName -Blob $osBlobName
       $osBlob.ICloudBlob.Metadata["DiskEncryptionSettings"] = $encSetting
       $osBlob.ICloudBlob.SetMetadata()
-      ```
+```
 
-    После того как **секреты станут доступны** и будут установлены сведения о шифровании для большого двоичного объекта операционной системы, подключите диски, используя скрипт, приведенный ниже.<br>
+После того как **секреты станут доступны** и будут установлены сведения о шифровании для большого двоичного объекта операционной системы, подключите диски, используя скрипт, приведенный ниже.
 
-    Если в исходном хранилище ключей секреты уже доступны, то приведенный выше скрипт выполнять не нужно.
+Если в исходном хранилище ключей секреты уже доступны, то приведенный выше скрипт выполнять не нужно.
 
-      ```powershell
+```powershell
       Set-AzVMOSDisk -VM $vm -Name "osdisk" -VhdUri $obj.'properties.StorageProfile'.osDisk.vhd.Uri -CreateOption "Attach"
       $vm.StorageProfile.OsDisk.OsType = $obj.'properties.StorageProfile'.OsDisk.OsType
       foreach($dd in $obj.'properties.StorageProfile'.DataDisks)
       {
       $vm = Add-AzVMDataDisk -VM $vm -Name "datadisk1" -VhdUri $dd.vhd.Uri -DiskSizeInGB 127 -Lun $dd.Lun -CreateOption "Attach"
       }
-      ```
+```
 
-   * **Для неуправляемых зашифрованных виртуальных машин без Azure AD (зашифрованных с помощью BEK и KEK)** , если в исходном **хранилище ключей недоступны ключи и секреты**, восстановите ключи и секреты в хранилище ключей, выполнив действия, описанные в статье [Восстановление ключа и секрета в хранилище ключей для зашифрованных виртуальных машин с помощью службы Azure Backup](backup-azure-restore-key-secret.md). Затем выполните следующие скрипты, чтобы задать сведения о шифровании для большого двоичного объекта с восстановленной операционной системой (этот шаг необязателен для больших двоичных объектов данных). $dekurl и $kekurl можно извлечь из восстановленного хранилища ключей.
+* **Для неуправляемых зашифрованных виртуальных машин без Azure AD (зашифрованных с помощью BEK и KEK)** , если в исходном **хранилище ключей недоступны ключи и секреты**, восстановите ключи и секреты в хранилище ключей, выполнив действия, описанные в статье [Восстановление ключа и секрета в хранилище ключей для зашифрованных виртуальных машин с помощью службы Azure Backup](backup-azure-restore-key-secret.md). Затем выполните следующие скрипты, чтобы задать сведения о шифровании для большого двоичного объекта с восстановленной операционной системой (этот шаг необязателен для больших двоичных объектов данных). $dekurl и $kekurl можно извлечь из восстановленного хранилища ключей.
 
-   Приведенный ниже скрипт нужно выполнять только в том случае, если в исходном хранилище ключей недоступны ключ и секрет.
+Приведенный ниже скрипт нужно выполнять только в том случае, если в исходном хранилище ключей недоступны ключ и секрет.
 
-    ```powershell
+```powershell
       $dekUrl = "https://ContosoKeyVault.vault.azure.net/secrets/ContosoSecret007/xx000000xx0849999f3xx30000003163"
       $kekUrl = "https://ContosoKeyVault.vault.azure.net/keys/ContosoKey007/x9xxx00000x0000x9b9949999xx0x006"
       $keyVaultId = "/subscriptions/abcdedf007-4xyz-1a2b-0000-12a2b345675c/resourceGroups/ContosoRG108/providers/Microsoft.KeyVault/vaults/ContosoKeyVault"
@@ -642,56 +662,73 @@ New-AzResourceGroupDeployment -Name ExampleDeployment ResourceGroupName ExampleR
       $osBlob = Get-AzStorageBlob -Container $containerName -Blob $osBlobName
       $osBlob.ICloudBlob.Metadata["DiskEncryptionSettings"] = $encSetting
       $osBlob.ICloudBlob.SetMetadata()
-      ```
+```
 
-   После того **как ключи или секреты станут доступны** и будут установлены сведения о шифровании для большого двоичного объекта операционной системы, подключите диски, используя скрипт, приведенный ниже.
+После того **как ключи или секреты станут доступны** и будут установлены сведения о шифровании для большого двоичного объекта операционной системы, подключите диски, используя скрипт, приведенный ниже.
 
-    Если в исходном хранилище ключей уже доступны ключи и секреты, то приведенный выше скрипт выполнять не нужно.
+Если в исходном хранилище ключей уже доступны ключи и секреты, то приведенный выше скрипт выполнять не нужно.
 
-    ```powershell
+```powershell
       Set-AzVMOSDisk -VM $vm -Name "osdisk" -VhdUri $obj.'properties.StorageProfile'.osDisk.vhd.Uri -CreateOption "Attach"
       $vm.StorageProfile.OsDisk.OsType = $obj.'properties.StorageProfile'.OsDisk.OsType
       foreach($dd in $obj.'properties.StorageProfile'.DataDisks)
       {
       $vm = Add-AzVMDataDisk -VM $vm -Name "datadisk1" -VhdUri $dd.vhd.Uri -DiskSizeInGB 127 -Lun $dd.Lun -CreateOption "Attach"
       }
-      ```
+```
 
-   * **Управляемые и незашифрованные виртуальные машины**. Для управляемых незашифрованных виртуальных машин подключите восстановленные управляемые диски. Более подробные сведения см. в статье [Подключение диска данных к виртуальной машине Windows с помощью PowerShell](../virtual-machines/windows/attach-disk-ps.md).
+* **Управляемые и незашифрованные виртуальные машины**. Для управляемых незашифрованных виртуальных машин подключите восстановленные управляемые диски. Более подробные сведения см. в статье [Подключение диска данных к виртуальной машине Windows с помощью PowerShell](../virtual-machines/windows/attach-disk-ps.md).
 
-   * **Для управляемых зашифрованных виртуальных машин с Azure AD (зашифрованных только с помощью BEK)** подключите восстановленные управляемые диски. Более подробные сведения см. в статье [Подключение диска данных к виртуальной машине Windows с помощью PowerShell](../virtual-machines/windows/attach-disk-ps.md).
+* **Для управляемых зашифрованных виртуальных машин с Azure AD (зашифрованных только с помощью BEK)** подключите восстановленные управляемые диски. Более подробные сведения см. в статье [Подключение диска данных к виртуальной машине Windows с помощью PowerShell](../virtual-machines/windows/attach-disk-ps.md).
 
-   * **Для управляемых зашифрованных виртуальных машин с Azure AD (зашифрованных с помощью BEK и KEK)** подключите восстановленные управляемые диски. Более подробные сведения см. в статье [Подключение диска данных к виртуальной машине Windows с помощью PowerShell](../virtual-machines/windows/attach-disk-ps.md).
+* **Для управляемых зашифрованных виртуальных машин с Azure AD (зашифрованных с помощью BEK и KEK)** подключите восстановленные управляемые диски. Более подробные сведения см. в статье [Подключение диска данных к виртуальной машине Windows с помощью PowerShell](../virtual-machines/windows/attach-disk-ps.md).
 
-   * **Управляемые и зашифрованные виртуальные машины без Azure AD (только для BEK)** . для управляемых зашифрованных виртуальных машин без Azure AD (с шифрованием только с помощью BEK), если исходный **keyVault/секрет недоступен** , восстановите секреты в хранилище ключей, используя процедуру, описанную в разделе [Восстановление незашифрованной виртуальной машины из Azure Backup точки восстановления](backup-azure-restore-key-secret.md). Затем выполните следующие скрипты, чтобы задать сведения о шифровании для восстановленного диска операционной системы (этот шаг не является обязательным для диска данных). $dekurl можно извлечь из восстановленного хранилища ключей.
+* **Управляемые и зашифрованные виртуальные машины без Azure AD (только для BEK)** . для управляемых зашифрованных виртуальных машин без Azure AD (с шифрованием только с помощью BEK), если исходный **keyVault/секрет недоступен** , восстановите секреты в хранилище ключей, используя процедуру, описанную в разделе [Восстановление незашифрованной виртуальной машины из Azure Backup точки восстановления](backup-azure-restore-key-secret.md). Затем выполните следующие скрипты, чтобы задать сведения о шифровании для восстановленного диска операционной системы (этот шаг не является обязательным для диска данных). $dekurl можно извлечь из восстановленного хранилища ключей.
 
-     Приведенный ниже скрипт нужно выполнять только в том случае, если секреты недоступны в исходном хранилище ключей.  
+Приведенный ниже скрипт нужно выполнять только в том случае, если секреты недоступны в исходном хранилище ключей.  
 
-     ```powershell
-      $dekUrl = "https://ContosoKeyVault.vault.azure.net/secrets/ContosoSecret007/xx000000xx0849999f3xx30000003163"
-      $keyVaultId = "/subscriptions/abcdedf007-4xyz-1a2b-0000-12a2b345675c/resourceGroups/ContosoRG108/providers/Microsoft.KeyVault/vaults/ContosoKeyVault"
-      $diskupdateconfig = New-AzDiskUpdateConfig -EncryptionSettingsEnabled $true
-      $diskupdateconfig = Set-AzDiskUpdateDiskEncryptionKey -DiskUpdate $diskupdateconfig -SecretUrl $dekUrl -SourceVaultId $keyVaultId  
-      Update-AzDisk -ResourceGroupName "testvault" -DiskName $obj.'properties.StorageProfile'.osDisk.name -DiskUpdate $diskupdateconfig
-      ```
+```powershell
+$dekUrl = "https://ContosoKeyVault.vault.azure.net/secrets/ContosoSecret007/xx000000xx0849999f3xx30000003163"
+$keyVaultId = "/subscriptions/abcdedf007-4xyz-1a2b-0000-12a2b345675c/resourceGroups/ContosoRG108/providers/Microsoft.KeyVault/vaults/ContosoKeyVault"
+$diskupdateconfig = New-AzDiskUpdateConfig -EncryptionSettingsEnabled $true
+$encryptionSettingsElement = New-Object Microsoft.Azure.Management.Compute.Models.EncryptionSettingsElement
+$encryptionSettingsElement.DiskEncryptionKey = New-Object Microsoft.Azure.Management.Compute.Models.KeyVaultAndSecretReference
+$encryptionSettingsElement.DiskEncryptionKey.SourceVault = New-Object Microsoft.Azure.Management.Compute.Models.SourceVault
+$encryptionSettingsElement.DiskEncryptionKey.SourceVault.Id = $keyVaultId
+$encryptionSettingsElement.DiskEncryptionKey.SecretUrl = $dekUrl
+$diskupdateconfig.EncryptionSettingsCollection.EncryptionSettings = New-Object System.Collections.Generic.List[Microsoft.Azure.Management.Compute.Models.EncryptionSettingsElement]
+$diskupdateconfig.EncryptionSettingsCollection.EncryptionSettings.Add($encryptionSettingsElement)
+$diskupdateconfig.EncryptionSettingsCollection.EncryptionSettingsVersion = "1.1"
+Update-AzDisk -ResourceGroupName "testvault" -DiskName $obj.'properties.StorageProfile'.osDisk.name -DiskUpdate $diskupdateconfig
+```
 
-     После того как секреты станут доступны и на диске ОС будут установлены сведения о шифровании, выполните действия для подключения восстановленных управляемых дисков, приведенные в статье [Подключение диска данных к виртуальной машине Windows с помощью PowerShell](../virtual-machines/windows/attach-disk-ps.md).
+После того как секреты станут доступны и на диске ОС будут установлены сведения о шифровании, выполните действия для подключения восстановленных управляемых дисков, приведенные в статье [Подключение диска данных к виртуальной машине Windows с помощью PowerShell](../virtual-machines/windows/attach-disk-ps.md).
 
-   * **Управляемые и зашифрованные виртуальные машины без Azure AD (BEK и KEK)** — для управляемых зашифрованных виртуальных машин без Azure AD (зашифрованных с помощью BEK & KEK). Если источник **keyVault/ключ/секрет недоступен** , восстановите ключ и секреты в хранилище ключей, используя процедуру, описанную в разделе [Восстановление незашифрованной виртуальной машины из Azure Backup точки восстановления](backup-azure-restore-key-secret.md). Затем выполните следующие скрипты, чтобы задать сведения о шифровании для восстановленного диска операционной системы (этот шаг не является обязательным для диска данных). $dekurl и $kekurl можно извлечь из восстановленного хранилища ключей.
+* **Управляемые и зашифрованные виртуальные машины без Azure AD (BEK и KEK)** — для управляемых зашифрованных виртуальных машин без Azure AD (зашифрованных с помощью BEK & KEK). Если источник **keyVault/ключ/секрет недоступен** , восстановите ключ и секреты в хранилище ключей, используя процедуру, описанную в разделе [Восстановление незашифрованной виртуальной машины из Azure Backup точки восстановления](backup-azure-restore-key-secret.md). Затем выполните следующие скрипты, чтобы задать сведения о шифровании восстановленного диска ОС (этот шаг не требуется для дисков данных). $dekurl и $kekurl можно извлечь из восстановленного хранилища ключей.
 
-   Приведенный ниже скрипт нужно выполнять только в том случае, если в исходном хранилище ключей недоступны ключ и секрет.
+Приведенный ниже скрипт нужно выполнять только в том случае, если в исходном хранилище ключей недоступны ключ и секрет.
 
-   ```powershell
-     $dekUrl = "https://ContosoKeyVault.vault.azure.net/secrets/ContosoSecret007/xx000000xx0849999f3xx30000003163"
-     $kekUrl = "https://ContosoKeyVault.vault.azure.net/keys/ContosoKey007/x9xxx00000x0000x9b9949999xx0x006"
-     $keyVaultId = "/subscriptions/abcdedf007-4xyz-1a2b-0000-12a2b345675c/resourceGroups/ContosoRG108/providers/Microsoft.KeyVault/vaults/ContosoKeyVault"
-     $diskupdateconfig = New-AzDiskUpdateConfig -EncryptionSettingsEnabled $true
-     $diskupdateconfig = Set-AzDiskUpdateDiskEncryptionKey -DiskUpdate $diskupdateconfig -SecretUrl $dekUrl -SourceVaultId $keyVaultId  
-     $diskupdateconfig = Set-AzDiskUpdateKeyEncryptionKey -DiskUpdate $diskupdateconfig -KeyUrl $kekUrl -SourceVaultId $keyVaultId  
-     Update-AzDisk -ResourceGroupName "testvault" -DiskName $obj.'properties.StorageProfile'.osDisk.name -DiskUpdate $diskupdateconfig
-    ```
+```powershell
+$dekUrl = "https://ContosoKeyVault.vault.azure.net/secrets/ContosoSecret007/xx000000xx0849999f3xx30000003163"
+$kekUrl = "https://ContosoKeyVault.vault.azure.net/keys/ContosoKey007/x9xxx00000x0000x9b9949999xx0x006"
+$keyVaultId = "/subscriptions/abcdedf007-4xyz-1a2b-0000-12a2b345675c/resourceGroups/ContosoRG108/providers/Microsoft.KeyVault/vaults/ContosoKeyVault"
+$diskupdateconfig = New-AzDiskUpdateConfig -EncryptionSettingsEnabled $true
+$encryptionSettingsElement = New-Object Microsoft.Azure.Management.Compute.Models.EncryptionSettingsElement
+$encryptionSettingsElement.DiskEncryptionKey = New-Object Microsoft.Azure.Management.Compute.Models.KeyVaultAndSecretReference
+$encryptionSettingsElement.DiskEncryptionKey.SourceVault = New-Object Microsoft.Azure.Management.Compute.Models.SourceVault
+$encryptionSettingsElement.DiskEncryptionKey.SourceVault.Id = $keyVaultId
+$encryptionSettingsElement.DiskEncryptionKey.SecretUrl = $dekUrl
+$encryptionSettingsElement.KeyEncryptionKey = New-Object Microsoft.Azure.Management.Compute.Models.KeyVaultAndKeyReference
+$encryptionSettingsElement.KeyEncryptionKey.SourceVault = New-Object Microsoft.Azure.Management.Compute.Models.SourceVault
+$encryptionSettingsElement.KeyEncryptionKey.SourceVault.Id = $keyVaultId
+$encryptionSettingsElement.KeyEncryptionKey.KeyUrl = $kekUrl
+$diskupdateconfig.EncryptionSettingsCollection.EncryptionSettings = New-Object System.Collections.Generic.List[Microsoft.Azure.Management.Compute.Models.EncryptionSettingsElement]
+$diskupdateconfig.EncryptionSettingsCollection.EncryptionSettings.Add($encryptionSettingsElement)
+$diskupdateconfig.EncryptionSettingsCollection.EncryptionSettingsVersion = "1.1"
+Update-AzDisk -ResourceGroupName "testvault" -DiskName $obj.'properties.StorageProfile'.osDisk.name -DiskUpdate $diskupdateconfig
+```
 
-    После того как секреты станут доступны и на диске ОС будут установлены сведения о шифровании, выполните действия для подключения восстановленных управляемых дисков, приведенные в статье [Подключение диска данных к виртуальной машине Windows c помощью PowerShell](../virtual-machines/windows/attach-disk-ps.md).
+После того как секреты станут доступны и на диске ОС будут установлены сведения о шифровании, выполните действия для подключения восстановленных управляемых дисков, приведенные в статье [Подключение диска данных к виртуальной машине Windows c помощью PowerShell](../virtual-machines/windows/attach-disk-ps.md).
 
 5. Задайте параметры сети.
 
@@ -720,13 +757,13 @@ New-AzResourceGroupDeployment -Name ExampleDeployment ResourceGroupName ExampleR
      **Виртуальные машины, использующие только BEK**
 
       ```powershell  
-      Set-AzVMDiskEncryptionExtension -ResourceGroupName $RG -VMName $vm -AadClientID $aadClientID -AadClientSecret $aadClientSecret -DiskEncryptionKeyVaultUrl $dekUrl -DiskEncryptionKeyVaultId $keyVaultId -VolumeType Data
+      Set-AzVMDiskEncryptionExtension -ResourceGroupName $RG -VMName $vm.Name -AadClientID $aadClientID -AadClientSecret $aadClientSecret -DiskEncryptionKeyVaultUrl $dekUrl -DiskEncryptionKeyVaultId $keyVaultId -VolumeType Data
       ```
 
      **Виртуальные машины, использующие BEK и KEK**
 
       ```powershell  
-      Set-AzVMDiskEncryptionExtension -ResourceGroupName $RG -VMName $vm -AadClientID $aadClientID -AadClientSecret $aadClientSecret -DiskEncryptionKeyVaultUrl $dekUrl -DiskEncryptionKeyVaultId $keyVaultId  -KeyEncryptionKeyUrl $kekUrl -KeyEncryptionKeyVaultId $keyVaultId -VolumeType Data
+      Set-AzVMDiskEncryptionExtension -ResourceGroupName $RG -VMName $vm.Name -AadClientID $aadClientID -AadClientSecret $aadClientSecret -DiskEncryptionKeyVaultUrl $dekUrl -DiskEncryptionKeyVaultId $keyVaultId  -KeyEncryptionKeyUrl $kekUrl -KeyEncryptionKeyVaultId $keyVaultId -VolumeType Data
       ```
 
    * **Для виртуальных машин без Azure AD** используйте следующую команду, чтобы вручную включить шифрование для дисков данных.
@@ -736,13 +773,13 @@ New-AzResourceGroupDeployment -Name ExampleDeployment ResourceGroupName ExampleR
      **Виртуальные машины, использующие только BEK**
 
       ```powershell  
-      Set-AzVMDiskEncryptionExtension -ResourceGroupName $RG -VMName $vm -DiskEncryptionKeyVaultUrl $dekUrl -DiskEncryptionKeyVaultId $keyVaultId -SkipVmBackup -VolumeType "All"
+      Set-AzVMDiskEncryptionExtension -ResourceGroupName $RG -VMName $vm.Name -DiskEncryptionKeyVaultUrl $dekUrl -DiskEncryptionKeyVaultId $keyVaultId -SkipVmBackup -VolumeType "All"
       ```
 
       **Виртуальные машины, использующие BEK и KEK**
 
       ```powershell  
-      Set-AzVMDiskEncryptionExtension -ResourceGroupName $RG -VMName $vm -DiskEncryptionKeyVaultUrl $dekUrl -DiskEncryptionKeyVaultId $keyVaultId -KeyEncryptionKeyUrl $kekUrl -KeyEncryptionKeyVaultId $keyVaultId -SkipVmBackup -VolumeType "All"
+      Set-AzVMDiskEncryptionExtension -ResourceGroupName $RG -VMName $vm.Name -DiskEncryptionKeyVaultUrl $dekUrl -DiskEncryptionKeyVaultId $keyVaultId -KeyEncryptionKeyUrl $kekUrl -KeyEncryptionKeyVaultId $keyVaultId -SkipVmBackup -VolumeType "All"
       ```
 
 > [!NOTE]
@@ -756,7 +793,7 @@ New-AzResourceGroupDeployment -Name ExampleDeployment ResourceGroupName ExampleR
 
 * Выбор виртуальной машины.
 * Выбор точки восстановления
-* Подключение дисков точки восстановления.
+* Подключение дисков точки восстановления
 * Копирование необходимых файлов.
 * Отключение диска.
 
@@ -798,7 +835,7 @@ ContainerType               : AzureVM
 BackupManagementType        : AzureVM
 ```
 
-### <a name="mount-the-disks-of-recovery-point"></a>Подключение дисков точки восстановления.
+### <a name="mount-the-disks-of-recovery-point"></a>Подключение дисков точки восстановления
 
 Используйте командлет [Get-азрековерисервицесбаккупрпмаунтскрипт](https://docs.microsoft.com/powershell/module/az.recoveryservices/get-azrecoveryservicesbackuprpmountscript) , чтобы получить скрипт для подключения всех дисков точки восстановления.
 
@@ -829,6 +866,6 @@ Windows e3632984e51f496 V2VM_wus2_8287309959960546283_451516692429_cbd6061f7fc54
 Disable-AzRecoveryServicesBackupRPMountScript -RecoveryPoint $rp[0] -VaultId $targetVault.ID
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если вы предпочитаете использовать PowerShell для взаимодействия с ресурсами Azure, см. статью [Развертывание резервного копирования в Azure для Windows Server или клиента Windows и управление им с помощью PowerShell](backup-client-automation.md). Сведения об управлении резервными копиями DPM см. в статье [Развертывание службы архивации для DPM и управление ею](backup-dpm-automation.md).

@@ -8,23 +8,23 @@ ms.topic: conceptual
 ms.date: 04/24/2019
 ms.author: cherylmc
 ms.custom: seodec18
-ms.openlocfilehash: 1683b57aa50cff00d26cc3400b8ab7a903a2c8e0
-ms.sourcegitcommit: a22cb7e641c6187315f0c6de9eb3734895d31b9d
+ms.openlocfilehash: dbda73e022ebaad283641ce2f54a5962aeb4cb60
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74083247"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75436829"
 ---
 # <a name="create-and-modify-peering-for-an-expressroute-circuit-using-cli"></a>Создание и изменение пиринга для канала ExpressRoute с помощью интерфейса командной строки
 
 В этой статье объясняется, как создать конфигурацию и пиринг для канала ExpressRoute и управлять ими в модели развертывания с помощью Resource Manager, используя интерфейс командной строки (CLI). Вы также сможете проверить состояние, обновить, удалить и отозвать пиринги для канала ExpressRoute. Если вы хотите использовать для работы с каналом другой метод, выберите подходящую статью из списка ниже.
 
 > [!div class="op_single_selector"]
-> * [портал Azure](expressroute-howto-routing-portal-resource-manager.md)
+> * [Портал Azure](expressroute-howto-routing-portal-resource-manager.md)
 > * [PowerShell](expressroute-howto-routing-arm.md)
-> * [Интерфейс командной строки Azure](howto-routing-cli.md)
+> * [Azure CLI](howto-routing-cli.md)
+> * [Общедоступный пиринг](about-public-peering.md)
 > * [Видео — частный пиринг](https://azure.microsoft.com/documentation/videos/azure-expressroute-how-to-set-up-azure-private-peering-for-your-expressroute-circuit)
-> * [Видео — общедоступный пиринг](https://azure.microsoft.com/documentation/videos/azure-expressroute-how-to-set-up-azure-public-peering-for-your-expressroute-circuit)
 > * [Видео — пиринг Майкрософт](https://azure.microsoft.com/documentation/videos/azure-expressroute-how-to-set-up-microsoft-peering-for-your-expressroute-circuit)
 > * [PowerShell (классическая модель)](expressroute-howto-routing-classic.md)
 > 
@@ -37,7 +37,7 @@ ms.locfileid: "74083247"
 
 Эти инструкции распространяются только на каналы от поставщиков, предоставляющих услуги подключения второго уровня. Если ваш поставщик услуг подключения предлагает услуги третьего уровня (обычно это IPVPN, например MPLS), то он возьмет на себя настройку маршрутизации и управление ею.
 
-Для каждого канала ExpressRoute можно настроить один, два или все три пиринга (частный пиринг Azure, общедоступный пиринг Azure и пиринг Microsoft). Пиринги можно настраивать в любом порядке, главное, выполнять их конфигурацию по очереди. Дополнительную информацию о доменах маршрутизации и пиринге см. в статье [Каналы ExpressRoute и домены маршрутизации](expressroute-circuit-peerings.md).
+Вы можете настроить частный пиринг и пиринг Майкрософт для канала ExpressRoute (общедоступный пиринг Azure является устаревшим для новых каналов). Пиринг можно настроить в любом порядке. главное, выполнять их конфигурацию по очереди. Дополнительную информацию о доменах маршрутизации и пиринге см. в статье [Каналы ExpressRoute и домены маршрутизации](expressroute-circuit-peerings.md). Сведения об общедоступном пиринга см. в статье [общедоступный пиринг ExpressRoute](about-public-peering.md).
 
 ## <a name="msft"></a>Пиринг Майкрософт
 
@@ -204,7 +204,7 @@ az network express-route peering delete -g ExpressRouteResourceGroup --circuit-n
    ```azurecli-interactive
    az account set --subscription "<subscription ID>"
    ```
-2. Создайте канал ExpressRoute. Выполните инструкции по созданию [канала ExpressRoute](howto-circuit-cli.md). Поставщик услуг подключения должен подготовить его. Если поставщик услуг подключения оказывает услуги третьего уровня, он может включить для вас частный пиринг Azure. В этом случае инструкции в следующих разделах выполнять не нужно. Если же поставщик услуг подключения не берет на себя управление маршрутизацией, выполните приведенные ниже инструкции для настройки конфигурации после создания канала.
+2. Создайте канал ExpressRoute. Выполните инструкции по созданию [канала ExpressRoute](howto-circuit-cli.md). Поставщик услуг подключения должен подготовить его. Если поставщик услуг подключения предоставляет управляемые службы уровня 3, он может включить для вас частный пиринг Azure. В этом случае инструкции в следующих разделах выполнять не нужно. Если же поставщик услуг подключения не берет на себя управление маршрутизацией, выполните приведенные ниже инструкции для настройки конфигурации после создания канала.
 
 3. Убедитесь, что канал ExpressRoute подготовлен и включен. Используйте следующий пример:
 
@@ -325,141 +325,8 @@ az network express-route peering update --vlan-id 500 -g ExpressRouteResourceGro
 az network express-route peering delete -g ExpressRouteResourceGroup --circuit-name MyCircuit --name AzurePrivatePeering
 ```
 
-## <a name="public"></a>Общедоступный пиринг Azure
 
-Этот раздел поможет создать, получить, обновить и (или) удалить конфигурацию общедоступного пиринга Azure для канала ExpressRoute.
-
-> [!Note]
-> Общедоступный пиринг Azure устарел для новых каналов. Дополнительные сведения см. в разделе [пиринг ExpressRoute](expressroute-circuit-peerings.md).
->
-
-### <a name="to-create-azure-public-peering"></a>Создание общедоступного пиринга Azure
-
-1. Установите последнюю версию Azure CLI. Используйте последнюю версию интерфейса командной строки (CLI) Azure.* Прежде чем начинать настройку, изучите [предварительные условия](expressroute-prerequisites.md) и [рабочие процессы](expressroute-workflows.md).
-
-   ```azurecli-interactive
-   az login
-   ```
-
-   Выберите подписку, для которой будете создавать канал ExpressRoute.
-
-   ```azurecli-interactive
-   az account set --subscription "<subscription ID>"
-   ```
-2. Создайте канал ExpressRoute.  Выполните инструкции по созданию [канала ExpressRoute](howto-circuit-cli.md). Поставщик услуг подключения должен подготовить его. Если поставщик услуг подключения оказывает услуги третьего уровня, он может включить для вас общедоступный пиринг Azure. В этом случае инструкции в следующих разделах выполнять не нужно. Если же поставщик услуг подключения не берет на себя управление маршрутизацией, выполните приведенные ниже инструкции для настройки конфигурации после создания канала.
-
-3. Убедитесь, что канал ExpressRoute подготовлен и включен. Используйте следующий пример:
-
-   ```azurecli-interactive
-   az network express-route list
-   ```
-
-   Ответ будет выглядеть примерно так:
-
-   ```azurecli
-   "allowClassicOperations": false,
-   "authorizations": [],
-   "circuitProvisioningState": "Enabled",
-   "etag": "W/\"1262c492-ffef-4a63-95a8-a6002736b8c4\"",
-   "gatewayManagerEtag": null,
-   "id": "/subscriptions/81ab786c-56eb-4a4d-bb5f-f60329772466/resourceGroups/ExpressRouteResourceGroup/providers/Microsoft.Network/expressRouteCircuits/MyCircuit",
-   "location": "westus",
-   "name": "MyCircuit",
-   "peerings": [],
-   "provisioningState": "Succeeded",
-   "resourceGroup": "ExpressRouteResourceGroup",
-   "serviceKey": "1d05cf70-1db5-419f-ad86-1ca62c3c125b",
-   "serviceProviderNotes": null,
-   "serviceProviderProperties": {
-    "bandwidthInMbps": 200,
-    "peeringLocation": "Silicon Valley",
-    "serviceProviderName": "Equinix"
-   },
-   "serviceProviderProvisioningState": "Provisioned",
-   "sku": {
-    "family": "UnlimitedData",
-    "name": "Standard_MeteredData",
-    "tier": "Standard"
-   },
-   "tags": null,
-   "type": "Microsoft.Network/expressRouteCircuits]
-   ```
-
-4. Настройте для канала общедоступный пиринг Azure. Прежде чем продолжить, убедитесь, что у вас есть следующие сведения:
-
-   * Подсеть /30 для основной ссылки. Это должен быть допустимый префикс общедоступного адреса IPv4.
-   * Подсеть /30 для дополнительной ссылки. Это должен быть допустимый префикс общедоступного адреса IPv4.
-   * Действительный идентификатор виртуальной локальной сети для установки пиринга. Идентификатор не должен использоваться ни одним другим пирингом в канале.
-   * Номер AS для пиринга. Можно использовать 2-байтовые и 4-байтовые номера AS.
-   * **Необязательно.** Хэш MD5, если вы решите его использовать.
-
-   Чтобы настроить для канала общедоступный пиринг Azure, выполните код из следующего примера:
-
-   ```azurecli-interactive
-   az network express-route peering create --circuit-name MyCircuit --peer-asn 100 --primary-peer-subnet 12.0.0.0/30 -g ExpressRouteResourceGroup --secondary-peer-subnet 12.0.0.4/30 --vlan-id 200 --peering-type AzurePublicPeering
-   ```
-
-   Если вы решили использовать MD5-хэш, используйте следующий пример:
-
-   ```azurecli-interactive
-   az network express-route peering create --circuit-name MyCircuit --peer-asn 100 --primary-peer-subnet 12.0.0.0/30 -g ExpressRouteResourceGroup --secondary-peer-subnet 12.0.0.4/30 --vlan-id 200 --peering-type AzurePublicPeering --SharedKey "A1B2C3D4"
-   ```
-
-   > [!IMPORTANT]
-   > Номер AS должен быть указан в качестве ASN пиринга, а не ASN клиента.
-
-### <a name="getpublic"></a>Просмотр сведений об общедоступном пиринге Azure
-
-Для получения сведений о конфигурации можно использовать следующий пример:
-
-```azurecli
-az network express-route peering show -g ExpressRouteResourceGroup --circuit-name MyCircuit --name AzurePublicPeering
-```
-
-Вы должны увидеть результат, аналогичный приведенному ниже.
-
-```azurecli
-{
-  "azureAsn": 12076,
-  "etag": "W/\"2e97be83-a684-4f29-bf3c-96191e270666\"",
-  "gatewayManagerEtag": "18",
-  "id": "/subscriptions/9a0c2943-e0c2-4608-876c-e0ddffd1211b/resourceGroups/ExpressRouteResourceGroup/providers/Microsoft.Network/expressRouteCircuits/MyCircuit/peerings/AzurePublicPeering",
-  "lastModifiedBy": "Customer",
-  "microsoftPeeringConfig": null,
-  "name": "AzurePublicPeering",
-  "peerAsn": 7671,
-  "peeringType": "AzurePublicPeering",
-  "primaryAzurePort": "",
-  "primaryPeerAddressPrefix": "",
-  "provisioningState": "Succeeded",
-  "resourceGroup": "ExpressRouteResourceGroup",
-  "routeFilter": null,
-  "secondaryAzurePort": "",
-  "secondaryPeerAddressPrefix": "",
-  "sharedKey": null,
-  "state": "Enabled",
-  "stats": null,
-  "vlanId": 100
-}
-```
-
-### <a name="updatepublic"></a>Обновление конфигурации общедоступного пиринга Azure
-
-С помощью следующего примера можно обновить любую часть конфигурации. В приведенном ниже примере значение идентификатора виртуальной локальной сети для канала изменяется с 200 на 600.
-
-```azurecli-interactive
-az network express-route peering update --vlan-id 600 -g ExpressRouteResourceGroup --circuit-name MyCircuit --name AzurePublicPeering
-```
-
-### <a name="deletepublic"></a>Удаление общедоступного пиринга Azure
-
-Для удаления конфигурации пиринга выполните следующий пример кода:
-
-```azurecli-interactive
-az network express-route peering delete -g ExpressRouteResourceGroup --circuit-name MyCircuit --name AzurePublicPeering
-```
-
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Следующий шаг — [связывание виртуальной сети с каналом ExpressRoute](howto-linkvnet-cli.md).
 

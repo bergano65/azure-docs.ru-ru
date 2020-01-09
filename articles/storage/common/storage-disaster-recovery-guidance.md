@@ -10,12 +10,12 @@ ms.date: 12/04/2019
 ms.author: tamram
 ms.reviewer: cbrooks
 ms.subservice: common
-ms.openlocfilehash: 7bbad4adce88b8b669c5c5739bfa45b079f321d0
-ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
+ms.openlocfilehash: 2e0ae05ff8c32a70991769171cb29b229c2b0be1
+ms.sourcegitcommit: ce4a99b493f8cf2d2fd4e29d9ba92f5f942a754c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74895352"
+ms.lasthandoff: 12/28/2019
+ms.locfileid: "75526368"
 ---
 # <a name="disaster-recovery-and-account-failover-preview"></a>Аварийное восстановление и переключение учетных записей (Предварительная версия)
 
@@ -146,7 +146,7 @@ Register-AzProviderFeature -FeatureName CustomerControlledFailover -ProviderName
 Get-AzProviderFeature -FeatureName CustomerControlledFailover -ProviderNamespace Microsoft.Storage
 ```
 
-### <a name="additional-considerations"></a>Дополнительные замечания 
+### <a name="additional-considerations"></a>Дополнительные сведения 
 
 Изучите дополнительные рекомендации в этом разделе, чтобы понять влияние принудительной отработки отказа на приложения и службы в период действия предварительной версии.
 
@@ -177,7 +177,8 @@ Get-AzProviderFeature -FeatureName CustomerControlledFailover -ProviderNamespace
 - Служба синхронизации файлов Azure не поддерживает отработку отказа учетной записи хранения. Не следует применять отработку отказа для учетных записей хранения, которые содержат файловые ресурсы Azure, используемые в качестве облачных конечных точек в службе синхронизации файлов Azure. Это приведет к прекращению синхронизации или даже к непредвиденной потере данных, если некоторые файлы недавно стали многоуровневыми.  
 - Невозможно выполнить отработку отказа для учетной записи хранения, которая содержит архивированные большие двоичные объекты. Размещайте архивированные большие двоичные объекты в отдельной учетной записи хранения, для которой не требуется отработка отказа.
 - Невозможно выполнить отработку отказа для учетной записи хранения, которая содержит блочные BLOB-объекты уровня "Премиум". Учетные записи хранения, которые поддерживают блочные BLOB-объекты уровня "Премиум", сейчас не поддерживают географическую избыточность.
-- После завершения отработки отказа следующие компоненты будут перестанут работать, если изначально включено: [подписки на события](https://docs.microsoft.com/azure/storage/blobs/storage-blob-event-overview), [политики жизненного цикла](https://docs.microsoft.com/azure/storage/blobs/storage-lifecycle-management-concepts), [ведение журнала аналитика службы хранилища](https://docs.microsoft.com/rest/api/storageservices/about-storage-analytics-logging).
+- Не удается выполнить отработку отказа учетной записи хранения, содержащей все контейнеры с включенной [политикой неизменности вирусов](../blobs/storage-blob-immutable-storage.md) . Разблокированная или заблокированная блокировка по времени или политики юридических удержаний предотвращает отработку отказа для обеспечения соответствия.
+- После завершения отработки отказа следующие функции могут перестанут работать, если изначально включено: [подписки на события](../blobs/storage-blob-event-overview.md), [веб-канал изменений](../blobs/storage-blob-change-feed.md), [политики жизненного цикла](../blobs/storage-lifecycle-management-concepts.md)и [ведение журнала аналитика службы хранилища](storage-analytics-logging.md).
 
 ## <a name="copying-data-as-an-alternative-to-failover"></a>Копирование данных вместо отработки отказа
 
@@ -187,7 +188,7 @@ Get-AzProviderFeature -FeatureName CustomerControlledFailover -ProviderNamespace
 
 В экстренных ситуациях, когда значительная авария приводит к неработоспособности целого региона, корпорация Майкрософт может инициировать отработку отказа между регионами. В этом случае вам не нужно предпринимать какие-либо действия. До завершения отработки отказа под управлением корпорации Майкрософт вы не получите доступ на запись к учетной записи хранения. Приложения смогут считывать данные из дополнительного региона, если для учетной записи хранения настроен режим RA-GRS. 
 
-## <a name="see-also"></a>Дополнительные материалы
+## <a name="see-also"></a>См. также
 
 * [Initiate a storage account failover (preview)](storage-initiate-account-failover.md) (Запуск отработки отказа учетной записи (предварительная версия))
 * [Проектирование высокодоступных приложений с использованием RA-GRS](storage-designing-ha-apps-with-ragrs.md)

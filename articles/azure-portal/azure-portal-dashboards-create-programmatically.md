@@ -1,10 +1,10 @@
 ---
 title: Создание панелей мониторинга Azure программными средствами | Документация Майкрософт
-description: В этой статье описывается создание панелей мониторинга Azure программными средствами.
+description: Панель мониторинга можно использовать в портал Azure в качестве шаблона для программного создания панелей мониторинга Azure. Включает Справочник по JSON.
 services: azure-portal
 documentationcenter: ''
 author: adamabmsft
-manager: dougeby
+manager: mtillman
 editor: tysonn
 ms.service: azure-portal
 ms.devlang: NA
@@ -12,13 +12,13 @@ ms.topic: conceptual
 ms.tgt_pltfrm: NA
 ms.workload: na
 ms.date: 09/01/2017
-ms.author: kfollis
-ms.openlocfilehash: b24a0397a1365479907fedc6348caa54508dbbb0
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.author: mblythe
+ms.openlocfilehash: 498e0255cfa289f7d8ccb93040980c362cf510a0
+ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60552238"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75640352"
 ---
 # <a name="programmatically-create-azure-dashboards"></a>Создание панелей мониторинга Azure программными средствами
 

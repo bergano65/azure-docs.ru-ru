@@ -8,12 +8,12 @@ author: mrbullwinkle
 ms.author: mbullwin
 ms.date: 09/19/2017
 ms.custom: mvc
-ms.openlocfilehash: 70ecc5dc95aced3eb901f24910339eb059ba0c17
-ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
+ms.openlocfilehash: d56b81dbe8c78b9b48f122d79f4567d0b0f42e27
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72900468"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75398533"
 ---
 # <a name="find-and-diagnose-run-time-exceptions-with-azure-application-insights"></a>Поиск и диагностика исключений во время выполнения с помощью Azure Application Insights
 
@@ -28,7 +28,7 @@ Azure Application Insights собирает данные телеметрии и
 > * Создание рабочего элемента для исправления ошибочного кода.
 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Для работы с этим руководством:
 
@@ -109,7 +109,7 @@ Application Insights собирает сведения об ошибках в в
 
     ![Создать рабочий элемент](media/tutorial-runtime-exceptions/new-work-item.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Теперь, когда вы узнали, как определить исключения времени выполнения, перейдите к следующему руководству, чтобы научиться определять и диагностировать проблемы с производительностью.
 
 > [!div class="nextstepaction"]

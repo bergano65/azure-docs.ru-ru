@@ -7,12 +7,12 @@ ms.service: dns
 ms.topic: article
 ms.date: 9/24/2019
 ms.author: rohink
-ms.openlocfilehash: c5675dea2676122d96276b7cdb90b4c3c5340c7a
-ms.sourcegitcommit: 4d177e6d273bba8af03a00e8bb9fe51a447196d0
+ms.openlocfilehash: 9181ef93dfedbc28b297bef48a0bc37ba6d69798
+ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71961177"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75646767"
 ---
 # <a name="what-is-a-virtual-network-link"></a>Что такое связь виртуальной сети?
 
@@ -33,9 +33,9 @@ ms.locfileid: "71961177"
 
 ## <a name="limits"></a>Ограничения
 
-Чтобы понять, сколько сетей регистрации и разрешения можно связать с частными зонами DNS, см. [Azure DNS ограничения](https://docs.microsoft.com/azure/azure-subscription-service-limits#azure-dns-limits) .
+Чтобы понять, сколько сетей регистрации и разрешения можно связать с частными зонами DNS, см. [Azure DNS ограничения](https://docs.microsoft.com/azure/azure-resource-manager/management/azure-subscription-service-limits#azure-dns-limits) .
 
-## <a name="other-considerations"></a>Дополнительные рекомендации
+## <a name="other-considerations"></a>Другие замечания
 
 * Виртуальные сети, развернутые с помощью классической модели развертывания, не поддерживаются.
 
@@ -47,7 +47,7 @@ ms.locfileid: "71961177"
 
 * При удалении виртуальной сети все ссылки на виртуальные сети и автоматически зарегистрированные записи DNS, связанные с ним в разных частных зонах DNS, автоматически удаляются.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Узнайте, как связать виртуальную сеть с частной зоной DNS с помощью [портал Azure](https://docs.microsoft.com/azure/dns/private-dns-getstarted-portal#link-the-virtual-network)
 

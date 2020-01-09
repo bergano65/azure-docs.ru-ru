@@ -1,5 +1,5 @@
 ---
-title: Устранение неполадок управления назначениями Azure AD — Azure Active Directory
+title: Устранение неполадок управления назначениями в Azure AD
 description: Узнайте о некоторых элементах, которые следует проверить, чтобы помочь в устранении неполадок Azure Active Directory управления назначением.
 services: active-directory
 documentationCenter: ''
@@ -16,12 +16,12 @@ ms.date: 10/26/2019
 ms.author: ajburnle
 ms.reviewer: markwahl-msft
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0f7e5e6168e8b365a04040f595f30e68e4e82f0a
-ms.sourcegitcommit: 98ce5583e376943aaa9773bf8efe0b324a55e58c
+ms.openlocfilehash: e291a032c1aac45ebc783126e69b524e1d0af95b
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73173330"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75422492"
 ---
 # <a name="troubleshoot-azure-ad-entitlement-management"></a>Устранение неполадок управления назначениями Azure AD
 
@@ -57,7 +57,7 @@ ms.locfileid: "73173330"
 
 * Если новый внешний пользователь, который ранее не входил в каталог, получает пакет Access, включая сайт SharePoint Online, его пакет доступа будет отображаться как не полностью доставленный, пока учетная запись не будет подготовлена в SharePoint Online. Дополнительные сведения о параметрах общего доступа см. [в статье Просмотр параметров внешнего общего доступа в SharePoint Online](entitlement-management-external-users.md#review-your-sharepoint-online-external-sharing-settings).
 
-## <a name="requests"></a>Requests (Запросы)
+## <a name="requests"></a>Запросы
 
 * Когда пользователь хочет запросить доступ к пакету Access, убедитесь, что он использует **ссылку на портал доступа** для пакета Access. Дополнительные сведения см. [в разделе Совместное использование ссылки для запроса пакета Access](entitlement-management-access-package-settings.md).
 

@@ -4,15 +4,15 @@ description: Пакет решения "Состояние репликации 
 ms.service: azure-monitor
 ms.subservice: logs
 ms.topic: conceptual
-author: MGoedtel
-ms.author: magoedte
+author: bwren
+ms.author: bwren
 ms.date: 01/24/2018
-ms.openlocfilehash: 04112042c871f5268c64bda374f040f1bba92969
-ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
+ms.openlocfilehash: 31e6d0c8b374bd494ae8fda36f4f38aabb1ac96b
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72931352"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75406093"
 ---
 # <a name="monitor-active-directory-replication-status-with-azure-monitor"></a>Мониторинг состояния репликации Active Directory с помощью Azure Monitor
 
@@ -20,12 +20,19 @@ ms.locfileid: "72931352"
 
 Active Directory является ключевым компонентом в корпоративной ИТ-среде. Чтобы обеспечить высокий уровень доступности и высокую производительность, каждый контроллер домена использует собственную копию базы данных Active Directory. Контроллеры домена реплицируют данные между собой, чтобы распространять изменения на предприятии. Сбои этого процесса репликации могут вызывать различные проблемы на предприятии.
 
-Пакет решения "Состояние репликации AD" регулярно отслеживает среду Active Directory на наличие ошибок репликации.
+Решение Состояние репликации AD регулярно отслеживает Active Directory среду для любых сбоев репликации.
 
 [!INCLUDE [azure-monitor-log-analytics-rebrand](../../../includes/azure-monitor-log-analytics-rebrand-solution.md)]
 
 ## <a name="installing-and-configuring-the-solution"></a>Установка и настройка решения
 Для установки и настройки решений используйте указанные ниже данные.
+
+### <a name="prerequisites"></a>Технические условия
+
+* Для решения Состояние репликации AD требуется поддерживаемая версия .NET Framework 4.6.2 или более поздней версии на каждом компьютере, где установлен агент Log Analytics для Windows (также называемый Microsoft Monitoring Agent (MMA)).  Агент используется System Center 2016-Operations Manager, Operations Manager 2012 R2 и Azure Monitor.
+* Решение поддерживает контроллеры домена под управлением Windows Server 2008 и 2008 R2, Windows Server 2012 и 2012 R2, а также Windows Server 2016.
+* Рабочая область Log Analytics для добавления решения проверки работоспособности Active Directory в Azure Marketplace на портале Azure. Дополнительная настройка не требуется.
+
 
 ### <a name="install-agents-on-domain-controllers"></a>Установка агентов на контроллерах домена
 Агенты необходимо установить на контроллерах домена, являющихся членами домена, который будет оцениваться. Или установите агенты на рядовых серверах и настройте их таким образом, чтобы данные репликации AD отправлялись в Azure Monitor. Дополнительные сведения см. в статье о [подключении компьютеров Windows к Azure Monitor](../../azure-monitor/platform/agent-windows.md). Если контроллер домена уже является частью существующей среды System Center Operations Manager, которую вы хотите подключить к Azure Monitor, см. статью о [подключении Operations Manager к Azure Monitor](../../azure-monitor/platform/om-agents.md).

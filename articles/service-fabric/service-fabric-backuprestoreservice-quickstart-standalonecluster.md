@@ -1,27 +1,18 @@
 ---
 title: Периодическое резервное копирование и восстановление в автономной Service Fabric Azure
-description: Использование возможности периодического резервного копирования и восстановления Service Fabric для включения периодического резервного копирования данных приложения.
-services: service-fabric
-documentationcenter: .net
+description: Использование функции периодического резервного копирования и восстановления Service Fabric для включения периодического резервного копирования данных приложения.
 author: hrushib
-manager: chackdan
-editor: hrushib
-ms.assetid: FAADBCAB-F0CF-4CBC-B663-4A6DCCB4DEE1
-ms.service: service-fabric
-ms.devlang: dotnet
 ms.topic: conceptual
-ms.tgt_pltfrm: na
-ms.workload: na
 ms.date: 5/24/2019
 ms.author: hrushib
-ms.openlocfilehash: feec830a81b9afe572e05bb6be21ad39edd7af04
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: 938cbbde9f53c52350ef64715f6c61c4aa961057
+ms.sourcegitcommit: ce4a99b493f8cf2d2fd4e29d9ba92f5f942a754c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74232464"
+ms.lasthandoff: 12/28/2019
+ms.locfileid: "75526249"
 ---
-# <a name="periodic-backup-and-restore-in-azure-service-fabric"></a>Периодическое резервное копирование и восстановление в Azure Service Fabric
+# <a name="periodic-backup-and-restore-in-a-standalone-service-fabric"></a>Периодическое резервное копирование и восстановление в автономной Service Fabric
 > [!div class="op_single_selector"]
 > * [Кластеры в Azure](service-fabric-backuprestoreservice-quickstart-azurecluster.md) 
 > * [Изолированные кластеры](service-fabric-backuprestoreservice-quickstart-standalonecluster.md)
@@ -45,7 +36,7 @@ Service Fabric предоставляет встроенный API для вып
 Service Fabric предоставляет набор API для использования функций, связанных с возможностью периодического резервного копирования и восстановления.
 
 - Планирование периодического резервного копирования надежных служб с отслеживанием состояния и Reliable Actors с поддержкой передачи резервных копий во внешние места хранения. Поддерживаемые места хранения
-    - Хранилище Azure
+    - Служба хранилища Azure
     - Файловый ресурс (в локальной среде)
 - Перечисление резервных копий.
 - Активация нерегламентированного резервного копирования секции
@@ -53,7 +44,7 @@ Service Fabric предоставляет набор API для использо
 - Временная остановка резервного копирования.
 - Управление хранением резервных копий (предстоящих).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Технические условия
 * Service Fabric кластер с структурой версии 6,4 или более поздней. См. дополнительные сведения о [скачивании требуемого пакета](service-fabric-cluster-creation-for-windows-server.md).
 * Сертификат X.509 для шифрования секретов, необходимых для подключения к хранилищу резервных копий. Ознакомьтесь со [статьей](service-fabric-windows-cluster-x509-security.md) о том, как получить или создать самозаверяющий сертификат X.509.
 
@@ -295,7 +286,7 @@ FailureError            :
 - Командлеты PowerShell Service Fabric находятся в режиме предварительного просмотра.
 - Отсутствие поддержки кластеров Service Fabric в Linux.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - [Основные сведения о настройке периодического резервного копирования](./service-fabric-backuprestoreservice-configure-periodic-backup.md)
 - [Backup restore REST API reference](https://docs.microsoft.com/rest/api/servicefabric/sfclient-index-backuprestore) (Справочник по REST API службы резервного копирования и восстановления)
 

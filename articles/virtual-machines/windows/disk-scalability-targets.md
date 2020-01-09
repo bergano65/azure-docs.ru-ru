@@ -1,5 +1,5 @@
 ---
-title: Целевые показатели масштабируемости и производительности для дисков виртуальных машин в Windows — Microsoft Azure
+title: Целевые показатели масштабируемости и производительности для дисков ВМ под управлением Windows
 description: Сведения о целевых показателях производительности и масштабируемости для дисков, подключенных к виртуальным машинам под управлением Windows.
 author: roygara
 ms.author: rogarana
@@ -7,12 +7,12 @@ ms.date: 11/15/2017
 ms.topic: conceptual
 ms.service: virtual-machines-windows
 ms.subservice: disks
-ms.openlocfilehash: c525ec4becbfda305343a3c7244d5975d60604a3
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.openlocfilehash: dee3da6b6aa38a60ed1109009ba5a292a131ce97
+ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74039757"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75645163"
 ---
 # <a name="scalability-and-performance-targets-for-vm-disks-on-windows"></a>Целевые показатели масштабируемости и производительности для дисков ВМ под управлением Windows
 
@@ -33,4 +33,4 @@ ms.locfileid: "74039757"
 
 ## <a name="see-also"></a>См. также
 
-[Подписка Azure, границы, квоты и ограничения службы](https://docs.microsoft.com/azure/azure-subscription-service-limits)
+[Подписка Azure, границы, квоты и ограничения службы](https://docs.microsoft.com/azure/azure-resource-manager/management/azure-subscription-service-limits)

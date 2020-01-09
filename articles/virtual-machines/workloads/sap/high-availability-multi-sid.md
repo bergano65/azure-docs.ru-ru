@@ -16,12 +16,12 @@ ms.workload: infrastructure-services
 ms.date: 12/09/2016
 ms.author: goraco
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 12498be63a688a67b2e8d09151ffe0a78d166072
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: 2726e9e5de53607d6bb766bf1506d6a09d714701
+ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70101090"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75647600"
 ---
 # <a name="create-an-sap-netweaver-multi-sid-configuration"></a>Создание конфигурации с несколькими идентификаторами безопасности SAP NetWeaver
 
@@ -77,8 +77,8 @@ ms.locfileid: "70101090"
 [azure-ps]:/powershell/azureps-cmdlets-docs
 [azure-quickstart-templates-github]:https://github.com/Azure/azure-quickstart-templates
 [azure-script-ps]:https://go.microsoft.com/fwlink/p/?LinkID=395017
-[azure-subscription-service-limits]:../../../azure-subscription-service-limits.md
-[azure-subscription-service-limits-subscription]:../../../azure-subscription-service-limits.md
+[azure-resource-manager/management/azure-subscription-service-limits]:../../../azure-resource-manager/management/azure-subscription-service-limits.md
+[azure-resource-manager/management/azure-subscription-service-limits-subscription]:../../../azure-resource-manager/management/azure-subscription-service-limits.md
 
 [dbms-guide]:../../virtual-machines-windows-sap-dbms-guide.md
 [dbms-guide-2.1]:../../virtual-machines-windows-sap-dbms-guide.md#c7abf1f0-c927-4a7c-9c1d-c7b5b3b7212f
@@ -365,9 +365,9 @@ ms.locfileid: "70101090"
 
 [powershell-install-configure]:https://docs.microsoft.com/powershell/azureps-cmdlets-docs
 [resource-group-authoring-templates]:../../../resource-group-authoring-templates.md
-[resource-group-overview]:../../../azure-resource-manager/resource-group-overview.md
+[resource-group-overview]:../../../azure-resource-manager/management/overview.md
 [resource-groups-networking]:../../../networking/networking-overview.md
-[networking-limits-azure-resource-manager]:../../../azure-subscription-service-limits.md#azure-resource-manager-virtual-networking-limits
+[networking-limits-azure-resource-manager]:../../../azure-resource-manager/management/azure-subscription-service-limits.md#azure-resource-manager-virtual-networking-limits
 [sap-pam]:https://support.sap.com/pam 
 [sap-templates-2-tier-marketplace-image]:https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2Fsap-2-tier-marketplace-image%2Fazuredeploy.json
 [sap-templates-2-tier-os-disk]:https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2Fsap-2-tier-user-disk%2Fazuredeploy.json
@@ -380,15 +380,15 @@ ms.locfileid: "70101090"
 [storage-powershell-guide-full-copy-vhd]:../../../storage/common/storage-powershell-guide-full.md#how-to-copy-blobs-from-one-storage-container-to-another
 [storage-premium-storage-preview-portal]:../../windows/disks-types.md
 [storage-redundancy]:../../../storage/common/storage-redundancy.md
-[storage-scalability-targets]:../../../storage/common/storage-scalability-targets.md
+[storage-scalability-targets]:../../../storage/common/scalability-targets-standard-accounts.md
 [storage-use-azcopy]:../../../storage/common/storage-use-azcopy.md
 [template-201-vm-from-specialized-vhd]:https://github.com/Azure/azure-quickstart-templates/tree/master/201-vm-from-specialized-vhd
 [templates-101-simple-windows-vm]:https://github.com/Azure/azure-quickstart-templates/tree/master/101-simple-windows-vm
 [templates-101-vm-from-user-image]:https://github.com/Azure/azure-quickstart-templates/tree/master/101-vm-from-user-image
 [virtual-machines-linux-attach-disk-portal]:../../linux/attach-disk-portal.md
 [virtual-machines-windows-attach-disk-portal]:../../virtual-machines-windows-attach-disk-portal.md
-[virtual-machines-azure-resource-manager-architecture]:../../../azure-resource-manager/resource-group-overview.md
-[virtual-machines-azure-resource-manager-architecture-benefits-arm]:../../../azure-resource-manager/resource-group-overview.md#the-benefits-of-using-resource-manager
+[virtual-machines-azure-resource-manager-architecture]:../../../azure-resource-manager/management/overview.md
+[virtual-machines-azure-resource-manager-architecture-benefits-arm]:../../../azure-resource-manager/management/overview.md#the-benefits-of-using-resource-manager
 [virtual-machines-Az-versus-azuresm]:virtual-machines-windows-compare-deployment-models.md
 [virtual-machines-windows-classic-configure-oracle-data-guard]:../../virtual-machines-windows-classic-configure-oracle-data-guard.md
 [virtual-machines-linux-cli-deploy-templates]:../../linux/cli-deploy-templates.md 
@@ -455,7 +455,7 @@ ms.locfileid: "70101090"
 
 [!INCLUDE [updated-for-az](../../../../includes/updated-for-az.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 Вы уже настроили кластер WSFC, который используется для одного экземпляра SAP ASCS/SCS, как описано в статье [о высоком уровне доступности SAP NetWeaver на виртуальных машинах Windows][sap-ha-guide] , как показано на этой схеме.
 
 ![Высокодоступный экземпляр SAP ASCS/SCS][sap-ha-guide-figure-6001]
@@ -472,7 +472,7 @@ ms.locfileid: "70101090"
 >Максимальное количество экземпляров SAP ASCS/SCS в одном кластере WSFC равно максимальному количеству частных внешних IP-адресов на одну внутреннюю подсистему балансировки нагрузки Azure.
 >
 
-Дополнительные сведения об ограничениях подсистемы балансировки нагрузки см. в пункте "Частный внешний IP-адрес на подсистему балансировки нагрузки" раздела [Ограничения сети — Azure Resource Manager][networking-limits-azure-resource-manager].
+Дополнительные сведения об ограничениях подсистемы балансировки нагрузки см. в разделе ограничения сети "частный интерфейсный IP-адрес на подсистеме балансировки нагрузки" [: Azure Resource Manager][networking-limits-azure-resource-manager].
 
 Общая картина с двумя системами SAP высокого уровня доступности будет выглядеть следующим образом:
 
@@ -521,7 +521,7 @@ ms.locfileid: "70101090"
 
 ![Список диспетчера DNS с выделенной определенной записью DNS для нового виртуального имени и TCP/IP-адреса кластера SAP ASCS/SCS][sap-ha-guide-figure-6004]
 
-Процедура создания записи DNS также подробно описана в главном разделе, посвященном обеспечению [высокого уровня доступности SAP NetWeaver на виртуальных машинах Windows][sap-ha-guide-9.1.1].
+Процедура создания записи DNS также подробно описана в главном разделе, [посвященном обеспечению высокого уровня доступности SAP NetWeaver на виртуальных машинах Windows][sap-ha-guide-9.1.1].
 
 > [!NOTE]
 > Новый IP-адрес, назначаемый имени виртуального узла дополнительного экземпляра ASCS/SCS, должен совпадать с новым IP-адресом, который назначен подсистеме Azure Load Balancer для SAP.
@@ -619,7 +619,7 @@ Write-Host "Successfully added new IP '$ILBIP' to the internal load balancer '$I
 
 Для каждого дополнительного экземпляра SAP ASCS/SCS необходимо добавить новый общий диск кластера. Для общего диска кластера WSFC Windows Server 2012 R2 сейчас используется программное решение SIOS DataKeeper.
 
-Выполните следующие действия:
+Выполните следующие действия.
 1. Добавьте дополнительный диск (или несколько дисков одного размера, которые необходимо чередовать) к каждому узлу кластера и отформатируйте их.
 2. Настройте репликацию хранилища с помощью SIOS DataKeeper.
 
@@ -637,7 +637,7 @@ Write-Host "Successfully added new IP '$ILBIP' to the internal load balancer '$I
 
 ## <a name="install-the-second-sap-sid2-netweaver-system"></a>Установка второй системы SAP SID2 NetWeaver
 
-Полный процесс установки второй системы SAP SID2 описывается в главном разделе, посвященном обеспечению [высокого уровня доступности SAP NetWeaver на виртуальных машинах Windows][sap-ha-guide-9].
+Полный процесс установки второй системы SAP SID2 описывается в главном разделе, [посвященном обеспечению высокого уровня доступности SAP NetWeaver на виртуальных машинах Windows][sap-ha-guide-9].
 
 Основные действия:
 
@@ -667,8 +667,8 @@ Write-Host "Successfully added new IP '$ILBIP' to the internal load balancer '$I
 
 10. [Протестируйте отработку отказа экземпляра SAP ASCS/SCS и репликацию SIOS][sap-ha-guide-10].
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-- [Ограничения сети — Azure Resource Manager][networking-limits-azure-resource-manager]
+- [Ограничения сети: Azure Resource Manager][networking-limits-azure-resource-manager]
 - [Несколько виртуальных IP-адресов для Azure Load Balancer][load-balancer-multivip-overview]
 - [Рекомендации по обеспечению высокого уровня доступности SAP NetWeaver на виртуальных машинах Windows][sap-ha-guide]

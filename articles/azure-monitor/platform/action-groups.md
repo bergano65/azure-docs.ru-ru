@@ -2,18 +2,16 @@
 title: Создание групп действий и управление ими на портале Azure
 description: Узнайте, как создавать группы действий и управлять ими на портале Azure.
 author: dkamstra
-services: azure-monitor
-ms.service: azure-monitor
 ms.topic: conceptual
 ms.date: 8/19/2019
 ms.author: dukek
 ms.subservice: alerts
-ms.openlocfilehash: 6b3d1ff76d4f7611da8e08dd4ce42293c805978e
-ms.sourcegitcommit: 4c831e768bb43e232de9738b363063590faa0472
+ms.openlocfilehash: a954898a334ead15d8ffdf6dab6e6a309bd57089
+ms.sourcegitcommit: 51ed913864f11e78a4a98599b55bbb036550d8a5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74423852"
+ms.lasthandoff: 01/04/2020
+ms.locfileid: "75659837"
 ---
 # <a name="create-and-manage-action-groups-in-the-azure-portal"></a>Создание групп действий и управление ими на портале Azure
 Группа действий — это коллекция параметров уведомлений, которые определены владельцем подписки Azure. Оповещения служб Azure Monitor и "Работоспособность служб" используют группы действий для уведомления пользователей о том, что оповещение активировано. Для разных оповещений может использоваться как одна группа действий, так разные. Это зависит от требований пользователя. В подписке можно настроить до 2000 групп действий.
@@ -72,17 +70,17 @@ ms.locfileid: "74423852"
 ## <a name="action-specific-information"></a>Сведения о конкретных действиях
 
 > [!NOTE]
-> См. раздел [ограничения службы подписки для наблюдения](https://docs.microsoft.com/azure/azure-subscription-service-limits#azure-monitor-limits) за числовыми ограничениями для каждого из указанных ниже элементов.  
+> См. раздел [ограничения службы подписки для наблюдения](https://docs.microsoft.com/azure/azure-resource-manager/management/azure-subscription-service-limits#azure-monitor-limits) за числовыми ограничениями для каждого из указанных ниже элементов.  
 
-### <a name="automation-runbook"></a>Модуль Runbook службы автоматизации
-Ограничения на полезные данные Runbook см. в разделе [ограничения службы подписки Azure](../../azure-subscription-service-limits.md) .
+### <a name="automation-runbook"></a>Runbook автоматизации
+Ограничения на полезные данные Runbook см. в разделе [ограничения службы подписки Azure](../../azure-resource-manager/management/azure-subscription-service-limits.md) .
 
 У вас может быть ограниченное количество действий Runbook в группе действий. 
 
 ### <a name="azure-app-push-notifications"></a>Push-уведомления для приложений Azure
 У вас может быть ограниченное количество действий в приложении Azure в группе действий.
 
-### <a name="email"></a>Email
+### <a name="email"></a>Эл. почта
 Электронная почта будет отправляться на следующие адреса (правильно настройте фильтрацию электронной почты):
 - azure-noreply@microsoft.com
 - azureemail-noreply@microsoft.com
@@ -90,12 +88,12 @@ ms.locfileid: "74423852"
 
 У вас может быть ограниченное количество действий электронной почты в группе действий. См. статью [сведения о ограничении скорости](./../../azure-monitor/platform/alerts-rate-limiting.md) .
 
-### <a name="email-azure-resource-manager-role"></a>Роль Azure Resource Manager электронной почты
+### <a name="email-azure-resource-manager-role"></a>Отправить роль Azure Resource Manager по эл. почте
 Отправьте сообщение электронной почты членам роли подписки.
 
 У вас может быть ограниченное количество действий электронной почты в группе действий. См. статью [сведения о ограничении скорости](./../../azure-monitor/platform/alerts-rate-limiting.md) .
 
-### <a name="function"></a>Функция
+### <a name="function"></a>Компонент
 Функциональные ключи для приложений-функций, настроенных как действия, считываются через API функций, который в настоящее время требует приложений-функций версии 2, чтобы настроить параметр приложения "Азуревебжобссекретсторажетипе" на "Files". Дополнительные сведения см. [в разделе изменения в управлении ключами в функциях версии 2]( https://aka.ms/funcsecrets).
 
 У вас может быть ограниченное число действий функций в группе действий.
@@ -105,7 +103,7 @@ ms.locfileid: "74423852"
 
 У вас может быть ограниченное количество действий ITSM в группе действий. 
 
-### <a name="logic-app"></a>приложение логики;
+### <a name="logic-app"></a>Логическое приложение
 У вас может быть ограниченное количество действий приложения логики в группе действий.
 
 ### <a name="secure-webhook"></a>Безопасный веб-перехватчик
@@ -113,7 +111,7 @@ ms.locfileid: "74423852"
 
 Действие веб-перехватчика группы действий позволяет воспользоваться преимуществами Azure Active Directory для защиты подключения между группой действий и защищенным веб-API (конечной точкой перехватчика). Ниже описан общий рабочий процесс для использования этой функции. Общие сведения о приложениях и субъектах-службах Azure AD см. в [статье Обзор платформы Microsoft Identity Platform (v 2.0)](https://docs.microsoft.com/azure/active-directory/develop/v2-overview).
 
-1. Создайте приложение Azure AD для защищенного веб-API. См. https://docs.microsoft.com/azure/active-directory/develop/scenario-protected-web-api-overview.
+1. Создайте приложение Azure AD для защищенного веб-API. Перейдите на страницу https://docs.microsoft.com/azure/active-directory/develop/scenario-protected-web-api-overview.
     - Настройте защищенный API, который будет вызываться приложением демона.
     
 1. Включите группы действий для использования приложения Azure AD.
@@ -204,12 +202,12 @@ Write-Host $myApp.AppRoles
 
 У вас может быть ограниченное количество действий SMS в группе действий.  
 
-### <a name="voice"></a>Голосовая связь
+### <a name="voice"></a>Голос
 См. статью [сведения о ограничении скорости](./../../azure-monitor/platform/alerts-rate-limiting.md) .
 
 В группе действий может быть ограниченное количество голосовых действий.
 
-### <a name="webhook"></a>Webhook
+### <a name="webhook"></a>webhook
 Повторные попытки веб-перехватчиков выполняются с помощью следующих правил. Повторный вызов веб-перехватчика выполняется не более двух раз, когда возвращаются следующие коды состояния HTTP: 408, 429, 503, 504 или конечная точка HTTP не отвечает. Первый повторный вызов происходит через 10 секунд, второй — через 100 секунд. После двух сбоев группа действий не будет вызывать конечную точку в течение 30 минут. 
 
 Исходные диапазоны IP-адресов
@@ -235,7 +233,7 @@ Write-Host $myApp.AppRoles
 
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * Дополнительные сведения о поведении SMS-оповещений в группе действий см. в [этой статье](../../azure-monitor/platform/alerts-sms-behavior.md).  
 * Узнайте о [схеме веб-перехватчика для оповещений журнала действий](../../azure-monitor/platform/activity-log-alerts-webhook.md).  
 * Дополнительные сведения о соединителе ITSM см. в статье [Централизованное управление рабочими элементами ITSM с помощью соединителя управления ИТ-службами (предварительная версия)](../../azure-monitor/platform/itsmc-overview.md).

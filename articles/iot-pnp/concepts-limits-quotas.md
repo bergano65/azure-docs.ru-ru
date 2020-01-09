@@ -3,16 +3,16 @@ title: Ограничения и квоты Plug and Play предварител
 description: Ознакомьтесь с ограничениями, квотами и регулированием, которые применяются при использовании предварительной версии IoT Plug and Play.
 author: miagdp
 ms.author: miag
-ms.date: 08/01/2019
+ms.date: 12/26/2019
 ms.topic: conceptual
 ms.service: iot-pnp
 services: iot-pnp
-ms.openlocfilehash: 2df8a8820422a22b0512e24c4b052377cb0e61e0
-ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
+ms.openlocfilehash: 48ecaaba6d956efd9da75d0582fa06d231cb3f80
+ms.sourcegitcommit: ce4a99b493f8cf2d2fd4e29d9ba92f5f942a754c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69879569"
+ms.lasthandoff: 12/28/2019
+ms.locfileid: "75531383"
 ---
 # <a name="iot-plug-and-play-preview-limits-quotas-and-throttles"></a>Ограничения предварительной версии, квоты и регулирования для Интернета вещей Plug and Play
 
@@ -57,6 +57,6 @@ ms.locfileid: "69879569"
 
 Библиотека средства синтаксического анализа соответствует ограничениям, которые применяются к [языку определения Digital двойника](https://github.com/Azure/IoTPlugandPlay/tree/master/DTDL).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Предлагаемый следующий шаг — Узнайте, как [подключиться к устройству Plug and Play IOT и взаимодействовать с ним](./howto-develop-solution.md).

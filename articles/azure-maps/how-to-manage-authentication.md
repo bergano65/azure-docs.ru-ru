@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: timlt
-ms.openlocfilehash: 057bd18c50d7074e8a88b8273bec766a306a3776
-ms.sourcegitcommit: 8cf199fbb3d7f36478a54700740eb2e9edb823e8
+ms.openlocfilehash: b44b48b504fc080971a2797b89026e14be5cdd17
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74484361"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75432987"
 ---
 # <a name="manage-authentication-in-azure-maps"></a>Управление аутентификацией в Azure Maps
 
@@ -21,11 +21,11 @@ ms.locfileid: "74484361"
 
 ## <a name="view-authentication-details"></a>Просмотр сведений об аутентификации
 
+После создания учетной записи Azure Maps создаются первичный и вторичный ключи. При вызове Azure Maps с использованием [проверки подлинности с общим ключом](https://docs.microsoft.com/azure/azure-maps/azure-maps-authentication#shared-key-authentication)рекомендуется использовать первичный ключ в качестве ключа подписки. Вторичный ключ можно использовать в таких сценариях, как изменение ключевых изменений. Дополнительные сведения см. в статье [Проверка подлинности с помощью Azure Maps](https://aka.ms/amauth).
+
 Сведения о проверке подлинности можно просмотреть на портал Azure. Перейдите к своей учетной записи и выберите **Проверка подлинности** в меню **Параметры** .
 
 ![Подробные сведения о проверке подлинности](./media/how-to-manage-authentication/how-to-view-auth.png)
-
- Дополнительные сведения см. в статье [Проверка подлинности с помощью Azure Maps](https://aka.ms/amauth).
 
 
 ## <a name="set-up-azure-ad-app-registration"></a>Настройка регистрации приложений Azure AD
@@ -91,17 +91,17 @@ RBAC обеспечивает детализированный контроль 
 
 * Если приложение использует проверку подлинности на основе маркеров пользователя с помощью веб-пакета SDK Azure Maps, необходимо настроить HTML-страницу, указав идентификатор клиента Azure Maps и идентификатор приложения Azure AD.
 
-* Если приложение использует проверку подлинности сервера или приложения, необходимо запросить маркер из конечной точки маркера Azure AD, `https://login.microsoftonline.com` с ИДЕНТИФИКАТОРом ресурса Azure AD `https://atlas.microsoft.com/`, ИДЕНТИФИКАТОРом клиента Azure Maps, ИДЕНТИФИКАТОРом приложения Azure AD и паролем регистрации приложения Azure AD. Certificate.
+* Если приложение использует проверку подлинности сервера или приложения, необходимо запросить маркер из конечной точки маркера Azure AD, `https://login.microsoftonline.com` с ИДЕНТИФИКАТОРом ресурса Azure AD `https://atlas.microsoft.com/`, ИДЕНТИФИКАТОРом Azure Maps клиента, ИДЕНТИФИКАТОРом приложения Azure AD, паролем регистрации приложения Azure AD или сертификатом.
 
 | Среда Azure   | Конечная точка маркера Azure AD | Идентификатор ресурса Azure |
 | --------------------|-------------------------|-------------------|
 | Azure Public        | https://login.microsoftonline.com | https://atlas.microsoft.com/ |
-| Azure Government    | https://login.microsoftonline.us  | https://atlas.microsoft.com/ | 
+| Azure для государственных организаций    | https://login.microsoftonline.us  | https://atlas.microsoft.com/ | 
 
 Дополнительные сведения о запросе маркеров доступа из Azure AD для пользователей и субъектов-служб см. в статье [сценарии проверки подлинности в Azure AD](https://docs.microsoft.com/azure/active-directory/develop/authentication-scenarios).
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об аутентификации Azure AD и веб-пакете SDK Azure Maps см. в статье [Использование библиотеки Map Control в службе Azure Maps](https://docs.microsoft.com/azure/azure-maps/how-to-use-map-control).
 

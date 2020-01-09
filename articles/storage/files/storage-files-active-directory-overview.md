@@ -1,17 +1,17 @@
 ---
-title: Общие сведения о проверке подлинности Azure Active Directory по протоколу SMB для службы файлов Azure в службе хранилища Azure
+title: 'Обзор: авторизация доменных служб Azure AD в службе файлов Azure'
 description: Служба файлов Azure поддерживает проверку подлинности на основе удостоверений через SMB (блок сообщений сервера) через доменные службы Azure Active Directory (Azure AD). В результате присоединенные к домену виртуальные машины Windows будут иметь доступ к файловым ресурсам Azure с помощью учетных данных Azure AD.
 author: roygara
 ms.service: storage
 ms.topic: article
 ms.date: 08/07/2019
 ms.author: rogarana
-ms.openlocfilehash: 6cdee8f1ad59962822e9e0394547c395c13e4bd8
-ms.sourcegitcommit: e42c778d38fd623f2ff8850bb6b1718cdb37309f
+ms.openlocfilehash: 93db726a2cac14109e542972ce851943b290962f
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69611773"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75460286"
 ---
 # <a name="overview-of-azure-files-azure-active-directory-domain-service-azure-ad-ds-authentication-support-for-smb-access"></a>Обзор поддержки проверки подлинности в службе "службы файлов Azure" Azure Active Directory (Azure AD DS) для доступа по протоколу SMB
 [!INCLUDE [storage-files-aad-auth-include](../../../includes/storage-files-aad-auth-include.md)]
@@ -49,7 +49,7 @@ ms.locfileid: "69611773"
 -   **Резервное копирование списков управления доступом вместе с данными**  
     Файлы Azure можно использовать для резервного копирования существующих локальных файловых ресурсов. Файлы Azure сохраняют ваши списки управления доступом вместе с данными во время резервного копирования файлового ресурса в файлы Azure по протоколу SMB.
 
-## <a name="how-it-works"></a>Как это работает
+## <a name="how-it-works"></a>Принципы работы
 Файлы Azure используют доменные службы Azure AD для поддержки проверки подлинности Kerberos с учетными данными Azure AD виртуальных машин, присоединенных к домену. Прежде чем использовать Azure AD с файлами Azure, необходимо включить доменные службы Azure AD и присоединить домен из виртуальных машин, с которых вы планируете получать доступ к данным файлов. Виртуальная машина, присоединенная к домену, должна находиться в той же виртуальной сети (VNET), что и доменные службы Azure AD. 
 
 Когда удостоверение, связанное с приложением, работающим на виртуальной машине, пытается получить доступ к данным в файлах Azure, запрос отправляется в доменные службы Azure AD для проверки подлинности удостоверения. Если проверка подлинности выполнена, доменные службы Azure AD возвращают токен Kerberos. Приложение отправляет запрос, который включает в себя токен Kerberos, и файлы Azure используют этот токен для авторизации запроса. Служба файлов Azure получает только токен и не сохраняет учетные данные Azure AD.
@@ -80,10 +80,10 @@ ms.locfileid: "69611773"
 ### <a name="preserve-directory-and-file-acls-for-data-import-to-azure-file-shares"></a>Сохранение списков управления доступом к каталогам и файлам для импорта данных в файловые ресурсы Azure
 Служба файлов Azure теперь поддерживает сохранение ACL каталога или файлов при копировании данных в файловые ресурсы Azure. Списки управления доступом можно скопировать в каталог или файл в службу файлов Azure. Например, можно использовать [robocopy](https://docs.microsoft.com/windows-server/administration/windows-commands/robocopy) с флагом `/copy:s` для копирования данных и списков управления доступом в файловый ресурс Azure. Сохранение ACL включено по умолчанию, и вам не нужно явно включать функцию проверки подлинности службы домена Azure AD в учетной записи хранения. 
 
-## <a name="pricing"></a>Цены
+## <a name="pricing"></a>Стоимость
 Включить проверку подлинности Azure AD по протоколу SMB для учетной записи хранения можно бесплатно. Дополнительные сведения о ценах см. в разделах [Цены на файлы Azure](https://azure.microsoft.com/pricing/details/storage/files/) и [Цены на доменные службы Azure AD](https://azure.microsoft.com/pricing/details/active-directory-ds/).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о файлах Azure и проверке подлинности Azure AD по протоколу SMB см. в следующих ресурсах:
 
 - [Общие сведения о службе файлов Azure](storage-files-introduction.md)

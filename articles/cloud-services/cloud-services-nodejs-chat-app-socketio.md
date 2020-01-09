@@ -3,18 +3,18 @@ title: Использование приложения Node.js с Socket.IO в A
 description: Узнайте, как использовать socket.io в приложении Node.js, размещенном в Azure.
 services: cloud-services
 documentationcenter: nodejs
-author: georgewallace
+author: tgore03
 ms.service: cloud-services
 ms.devlang: nodejs
 ms.topic: article
 ms.date: 08/17/2017
-ms.author: gwallace
-ms.openlocfilehash: bbeaacd4c7028905e279dd5dc421414f4eafae54
-ms.sourcegitcommit: f176e5bb926476ec8f9e2a2829bda48d510fbed7
+ms.author: tagore
+ms.openlocfilehash: 0b515c630d8a3539cdab1df64b1925e9fcaf206e
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70306761"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75360775"
 ---
 # <a name="build-a-nodejs-chat-application-with-socketio-on-an-azure-cloud-service"></a>Создание приложения чата Node.js с помощью Socket.IO в облачной службе Azure
 
@@ -24,7 +24,7 @@ Socket.IO обеспечивает связь в режиме реального
 
 ![Окно браузера со службой, размещенной в Azure][completed-app]  
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 Убедитесь, что следующие продукты и версии установлены для успешного завершения примера, описанного в этой статье.
 
 * установить [Visual Studio](https://www.visualstudio.com/en-us/downloads/download-visual-studio-vs.aspx);
@@ -104,7 +104,7 @@ Socket.IO обеспечивает связь в режиме реального
        PS C:\node\chatapp\WorkerRole1> Start-AzureEmulator -Launch
    
    > [!NOTE]
-   > Если возникли проблемы с запуском эмулятора, например: Start-AzureEmulator: Произошла непредвиденная ошибка.  Сведения. Обнаружена непредвиденная ошибка: коммуникационный объект System. ServiceModel. Channels. ServiceChannel нельзя использовать для связи, так как он находится в состоянии Faulted.
+   > С запуском эмулятора может возникнуть проблема, например во время выполнения команды Start-AzureEmulator произошла непредвиденная ошибка.  Подробные сведения: произошла непредвиденная ошибка. Коммуникационный объект System.ServiceModel.Channels.ServiceChannel нельзя использовать для связи, так как он находится в состоянии Faulted.
    > 
    > Переустановите Азуреаусорингтулс v 2.7.1 и Азурекомпутимулатор v 2,7. Убедитесь, что версия соответствует.
 
@@ -116,7 +116,7 @@ Socket.IO обеспечивает связь в режиме реального
 4. После проверки приложения остановите эмулятор, выполнив следующую команду:
    
        PS C:\node\chatapp\WorkerRole1> Stop-AzureEmulator
-5. Чтобы развернуть приложение в Azure, воспользуйтесь командлетом **Publish-AzureServiceProject** . Пример:
+5. Чтобы развернуть приложение в Azure, воспользуйтесь командлетом **Publish-AzureServiceProject** . Пример.
    
        PS C:\node\chatapp\WorkerRole1> Publish-AzureServiceProject -ServiceName mychatapp -Location "East US" -Launch
    
@@ -141,7 +141,7 @@ Socket.IO обеспечивает связь в режиме реального
 > 
 > 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 В этом учебнике было рассмотрено создание базового приложения для разговора, размещаемого в облачной службе Azure. Сведения о размещении этого приложения на веб-сайте Azure см. в статье [Создание приложения для разговора на Node. js с Socket.IO на веб-сайте Azure][chatwebsite].
 
 Дополнительные сведения см. также в [центре по разработке для Node.js](https://docs.microsoft.com/azure/javascript/).
@@ -166,5 +166,8 @@ Socket.IO обеспечивает связь в режиме реального
 [chat-contents]: ./media/cloud-services-nodejs-chat-app-socketio/socketio-5.png
 [The-output-of-the-npm-install-command]: ./media/cloud-services-nodejs-chat-app-socketio/socketio-7.png
 [The output of the Publish-AzureService command]: ./media/cloud-services-nodejs-chat-app-socketio/socketio-9.png
+
+
+
 
 

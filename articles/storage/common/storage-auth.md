@@ -1,22 +1,23 @@
 ---
-title: Авторизации доступа к службе хранилища Azure | Документация Майкрософт
-description: Узнайте о различных способах авторизации доступа к службе хранилища Azure, включая Azure Active Directory, проверку подлинности с общим ключом или подписи общего доступа.
+title: Авторизация операций с данными
+titleSuffix: Azure Storage
+description: Узнайте о различных способах авторизации доступа к службе хранилища Azure, в том числе Azure Active Directory, авторизации общего ключа или подписанных URL-адресах (SAS).
 services: storage
 author: tamram
 ms.service: storage
 ms.topic: conceptual
-ms.date: 03/21/2019
+ms.date: 12/12/2019
 ms.author: tamram
 ms.reviewer: cbrooks
 ms.subservice: common
-ms.openlocfilehash: b7669f9ec804a8fd2801474a845af7e029ee5235
-ms.sourcegitcommit: 57eb9acf6507d746289efa317a1a5210bd32ca2c
+ms.openlocfilehash: 783e8666e2602f9251d81e976a27fbce099defa2
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2019
-ms.locfileid: "74664052"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75460537"
 ---
-# <a name="authorizing-access-to-azure-storage"></a>Авторизация доступа к службе хранилища Azure
+# <a name="authorizing-access-to-data-in-azure-storage"></a>Авторизация доступа к данным в службе хранилища Azure
 
 Каждый раз, когда вы получаете доступ к данным в учетной записи хранения, ваш клиент делает запрос по протоколу HTTP/HTTPS в службе хранилища Azure. Каждый запрос к безопасному ресурсу должен быть авторизирован, чтобы служба обеспечивала клиенту разрешение на доступ к данным.
 
@@ -24,19 +25,19 @@ ms.locfileid: "74664052"
 
 |  |Общий ключ (ключ учетной записи хранения)  |Подписанный URL-адрес (SAS)  |Azure Active Directory (Azure AD)  |Анонимный открытый доступ на чтение  |
 |---------|---------|---------|---------|---------|
-|Большие двоичные объекты Azure     |[Поддерживаются](https://docs.microsoft.com/rest/api/storageservices/authenticate-with-shared-key/)         |[Поддерживаются](storage-sas-overview.md)         |[Поддерживаются](storage-auth-aad.md)         |[Поддерживаются](../blobs/storage-manage-access-to-resources.md)         |
-|Службы файлов Azure (SMB)     |[Поддерживаются](https://docs.microsoft.com/rest/api/storageservices/authenticate-with-shared-key/)         |Не поддерживается         |[Поддерживается, только с доменными службами AAD](../files/storage-files-active-directory-overview.md)         |Не поддерживается         |
-|Службы файлов Azure (остальные)     |[Поддерживаются](https://docs.microsoft.com/rest/api/storageservices/authenticate-with-shared-key/)         |[Поддерживаются](storage-sas-overview.md)         |Не поддерживается         |Не поддерживается         |
-|Очереди Azure     |[Поддерживаются](https://docs.microsoft.com/rest/api/storageservices/authenticate-with-shared-key/)         |[Поддерживаются](storage-sas-overview.md)         |[Поддерживаются](storage-auth-aad.md)         |Не поддерживается         |
-|Таблицы Azure     |[Поддерживаются](https://docs.microsoft.com/rest/api/storageservices/authenticate-with-shared-key/)         |[Поддерживаются](storage-sas-overview.md)         |Не поддерживается         |Не поддерживается         |
+|Большие двоичные объекты Azure     |[Поддерживаются](/rest/api/storageservices/authorize-with-shared-key/)         |[Поддерживаются](storage-sas-overview.md)         |[Поддерживаются](storage-auth-aad.md)         |[Поддерживаются](../blobs/storage-manage-access-to-resources.md)         |
+|Службы файлов Azure (SMB)     |[Поддерживаются](/rest/api/storageservices/authorize-with-shared-key/)         |Не поддерживается         |[Поддерживается, только с доменными службами AAD](../files/storage-files-active-directory-overview.md)         |Не поддерживается         |
+|Службы файлов Azure (остальные)     |[Поддерживаются](/rest/api/storageservices/authorize-with-shared-key/)         |[Поддерживаются](storage-sas-overview.md)         |Не поддерживается         |Не поддерживается         |
+|Очереди Azure     |[Поддерживаются](/rest/api/storageservices/authorize-with-shared-key/)         |[Поддерживаются](storage-sas-overview.md)         |[Поддерживаются](storage-auth-aad.md)         |Не поддерживается         |
+|Таблицы Azure     |[Поддерживаются](/rest/api/storageservices/authorize-with-shared-key/)         |[Поддерживаются](storage-sas-overview.md)         |Не поддерживается         |Не поддерживается         |
 
 Каждый вариант авторизации кратко описан ниже.
 
-- **Интеграция Azure Active Directory (Azure AD)** для больших двоичных объектов и очередей. Azure AD обеспечивает управление доступом на основе ролей (RBAC) для точной настройки управления доступом клиента к ресурсам в учетной записи хранения. Дополнительные сведения об интеграции Azure AD для больших двоичных объектов и очередей см. в статье [Проверка подлинности запросов в службе хранилища Azure с помощью Azure Active Directory](storage-auth-aad.md).
+- **Интеграция Azure Active Directory (Azure AD)** для больших двоичных объектов и очередей. Azure AD обеспечивает управление доступом на основе ролей (RBAC) для точной настройки управления доступом клиента к ресурсам в учетной записи хранения. Дополнительные сведения об интеграции Azure AD с большими двоичными объектами и очередями см. в статье [авторизация доступа к BLOB-объектам и очередям Azure с помощью Azure Active Directory](storage-auth-aad.md).
 
-- **Интеграция доменных служб Azure AD (DS)** для файлов. Служба файлов Azure поддерживает проверку подлинности на основе удостоверений через протокол SMB с помощью Azure AD DS. Это обеспечивает RBAC для точного управления доступом клиента к ресурсам в учетной записи хранения. Дополнительные сведения об интеграции Azure AD для файлов, использующих доменные службы, см. в статье [Обзор поддержки проверки подлинности службы файлов azure Azure Active Directory доменных служб (AAD DS) для доступа к SMB (Предварительная версия)](../files/storage-files-active-directory-overview.md).
+- **Интеграция доменных служб Azure AD (DS)** для файлов. Служба файлов Azure поддерживает авторизацию на основе удостоверений через протокол SMB с помощью Azure AD DS. RBAC можно использовать для точного управления доступом клиента к ресурсам службы файлов Azure в учетной записи хранения. Дополнительные сведения об интеграции Azure AD для файлов, использующих доменные службы, см. в статье [Обзор поддержки проверки подлинности службы файлов azure Azure Active Directory доменных служб (AAD DS) для доступа к SMB (Предварительная версия)](../files/storage-files-active-directory-overview.md).
 
-- **Авторизация с помощью общего ключа** для больших двоичных объектов, файлов, очередей и таблиц. Клиент, использующий общий ключ, передает заголовок с каждым запросом, подписанным с использованием ключа доступа к учетной записи хранения. Дополнительные сведения см. в статье [Авторизация с помощью общего ключа](/rest/api/storageservices/authenticate-with-shared-key/).
+- **Авторизация с помощью общего ключа** для больших двоичных объектов, файлов, очередей и таблиц. Клиент, использующий общий ключ, передает заголовок с каждым запросом, подписанным с использованием ключа доступа к учетной записи хранения. Дополнительные сведения см. в статье [Авторизация с помощью общего ключа](/rest/api/storageservices/authorize-with-shared-key/).
 - **Подписи коллективного доступа** для больших двоичных объектов, файлов, очередей и таблиц. Подписанный URL-адрес (SAS) обеспечивает ограниченный доступ к ресурсам в учетной записи хранения. Добавление ограничений для интервала времени, во время которого подпись действительна, или для предоставленных разрешений, обеспечивает гибкость в управлении доступом. Дополнительные сведения см. в статье [Использование подписанных URL-адресов (SAS)](storage-sas-overview.md).
 - **Анонимный общий доступ на чтение** к контейнерам и большим двоичным объектам. Авторизация не требуется. Дополнительные сведения см. в статье [Управление анонимным доступом на чтение к контейнерам и большим двоичным объектам](../blobs/storage-manage-access-to-resources.md).  
 
@@ -44,5 +45,6 @@ ms.locfileid: "74664052"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Документация Azure Active Directory](/azure/active-directory/)
-- [Развитие платформы идентификации Майкрософт](/azure/active-directory/develop/about-microsoft-identity-platform)
+- [Авторизация доступа к BLOB-объектам и очередям Azure с помощью Azure Active Directory](storage-auth-aad.md)
+- [Авторизация с помощью общего ключа](/rest/api/storageservices/authorize-with-shared-key/)
+- [Предоставление ограниченного доступа к ресурсам службы хранилища Azure с помощью подписанных URL-адресов (SAS)](storage-sas-overview.md)

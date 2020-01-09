@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: article
 ms.date: 03/30/2017
 ms.author: kasing
-ms.openlocfilehash: f87e7795416431305141de24497e9760eb03641e
-ms.sourcegitcommit: 8cf199fbb3d7f36478a54700740eb2e9edb823e8
+ms.openlocfilehash: 4ee5f06a7256a2092cfed923cf40c6b74254c4a1
+ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74484376"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75647566"
 ---
 # <a name="migrate-iaas-resources-from-classic-to-azure-resource-manager-by-using-powershell"></a>Перенос ресурсов IaaS из классической модели в Azure Resource Manager с помощью PowerShell
 Ниже последовательно описано, как использовать команды Azure PowerShell для переноса ресурсов IaaS из классической модели развертывания в модель развертывания с помощью Azure Resource Manager.
@@ -33,7 +33,7 @@ ms.locfileid: "74484376"
 <br>
 Ниже приведена блок-схема для указания порядка, в котором необходимо выполнить шаги в процессе миграции.
 
-![Снимок экрана с последовательностью операций переноса](media/migration-classic-resource-manager/migration-flow.png)
+![Screenshot that shows the migration steps](media/migration-classic-resource-manager/migration-flow.png)
 
  
 
@@ -58,7 +58,7 @@ ms.locfileid: "74484376"
 ## <a name="step-3-ensure-that-youre-an-administrator-for-the-subscription"></a>Шаг 3. Убедитесь, что вы являетесь администратором подписки.
 Чтобы выполнить эту миграцию, необходимо добавить учетную запись соадминистратора для подписки в [портал Azure](https://portal.azure.com).
 
-1. Войдите на [портале Azure](https://portal.azure.com).
+1. Войдите на [портал Azure](https://portal.azure.com).
 2. В меню **концентратора** выберите пункт **Подписка**. Если вы не видите этот пункт, щелкните **Все службы**.
 3. Найдите соответствующую запись подписки и посмотрите на поле **Моя роль** . Для соадминистратора это значение должно быть _администратором учетной записи_.
 
@@ -125,7 +125,7 @@ ms.locfileid: "74484376"
 <br>
 
 ## <a name="step-5-have-enough-resource-manager-vm-vcpus"></a>Шаг 5. достаточно диспетчер ресурсов виртуальной машины виртуальных ЦП
-Убедитесь, что у вас достаточно Azure Resource Manager виртуальной машины виртуальных ЦП в регионе Azure текущего развертывания или виртуальной сети. Чтобы проверить текущее количество виртуальных ЦП в Azure Resource Manager, используйте приведенную ниже команду PowerShell. Чтобы узнать больше о квотах на виртуальные ЦП, см. соответствующий раздел статьи [Подписка Azure, границы, квоты и ограничения службы](../../azure-subscription-service-limits.md#limits-and-azure-resource-manager).
+Убедитесь, что у вас достаточно Azure Resource Manager виртуальной машины виртуальных ЦП в регионе Azure текущего развертывания или виртуальной сети. Чтобы проверить текущее количество виртуальных ЦП в Azure Resource Manager, используйте приведенную ниже команду PowerShell. Чтобы узнать больше о квотах на виртуальные ЦП, см. соответствующий раздел статьи [Подписка Azure, границы, квоты и ограничения службы](../../azure-resource-manager/management/azure-subscription-service-limits.md#limits-and-azure-resource-manager).
 
 В этом примере проверяется доступность в регионе **Западная часть США**. Замените регион в примере своим собственным значением.
 
@@ -342,7 +342,7 @@ Get-AzVMUsage -Location "West US"
         Move-AzureStorageAccount -Commit -StorageAccountName $storageAccountName
     ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * [Обзор поддерживаемого платформой переноса ресурсов IaaS из классической модели в модель Azure Resource Manager](migration-classic-resource-manager-overview.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)
 * [Техническое руководство по поддерживаемому платформой переносу из классической модели в модель Azure Resource Manager](migration-classic-resource-manager-deep-dive.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)
 * [Planning for migration of IaaS resources from classic to Azure Resource Manager](migration-classic-resource-manager-plan.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) (Планирование переноса ресурсов IaaS из классической модели в модель Azure Resource Manager)

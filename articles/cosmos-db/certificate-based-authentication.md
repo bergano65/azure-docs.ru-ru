@@ -1,5 +1,5 @@
 ---
-title: Azure Active Directory проверки подлинности на основе сертификатов с помощью Azure Cosmos DB
+title: Проверка подлинности на основе сертификатов с помощью Azure Cosmos DB и Active Directory
 description: Узнайте, как настроить удостоверение Azure AD для проверки подлинности на основе сертификата для доступа к ключам из Azure Cosmos DB.
 author: voellm
 ms.service: cosmos-db
@@ -7,18 +7,18 @@ ms.topic: conceptual
 ms.date: 06/11/2019
 ms.author: tvoellm
 ms.reviewer: sngun
-ms.openlocfilehash: 5ce8bfb593b1973e76b90223de9261134ec71dd4
-ms.sourcegitcommit: 8cf199fbb3d7f36478a54700740eb2e9edb823e8
+ms.openlocfilehash: 9e9dd529edea23b27de2e3841079244558d6689a
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74483238"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75442100"
 ---
 # <a name="certificate-based-authentication-for-an-azure-ad-identity-to-access-keys-from-an-azure-cosmos-db-account"></a>Проверка подлинности на основе сертификата для удостоверения Azure AD для доступа к ключам из учетной записи Azure Cosmos DB
 
 Проверка подлинности на основе сертификатов обеспечивает проверку подлинности клиентского приложения с помощью Azure Active Directory (Azure AD) с сертификатом клиента. Проверку подлинности на основе сертификатов можно выполнять на компьютере, где требуется удостоверение, например локальный компьютер или виртуальная машина в Azure. После этого приложение сможет считывать ключи Azure Cosmos DB без ключей непосредственно в приложении. В этой статье описывается, как создать пример приложения Azure AD, настроить его для проверки подлинности на основе сертификата, войти в Azure с помощью нового удостоверения приложения, а затем получить ключи из учетной записи Azure Cosmos. В этой статье для настройки удостоверений используется Azure PowerShell и предоставляется C# пример приложения, которое проверяет подлинность ключей и обращается к ключам из учетной записи Azure Cosmos.  
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Технические условия
 
 * Установите [последнюю версию](/powershell/azure/install-az-ps) Azure PowerShell.
 
@@ -79,7 +79,7 @@ ms.locfileid: "74483238"
 Connect-AzureAD 
 ```
 
-## <a name="create-a-self-signed-certificate"></a>создать самозаверяющий сертификат;
+## <a name="create-a-self-signed-certificate"></a>Создание самозаверяющего сертификата
 
 Откройте другой экземпляр интегрированной среды сценариев Windows PowerShell и выполните следующие команды, чтобы создать самозаверяющий сертификат и прочитать ключ, связанный с сертификатом:
 
@@ -242,7 +242,7 @@ namespace TodoListDaemonWithCert
 Как и в предыдущем разделе, журнал действий учетной записи Azure Cosmos можно просмотреть, чтобы убедиться, что событие запроса GET Keys инициировано приложением "sampleApp". 
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Защита ключей Azure Cosmos с помощью Azure Key Vault](access-secrets-from-keyvault.md)
 

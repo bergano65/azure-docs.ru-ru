@@ -10,18 +10,18 @@ ms.date: 12/18/2018
 author: djpmsft
 ms.author: daperlov
 manager: anandsub
-ms.openlocfilehash: 0d8418d846d26d4104718df6d0fc66d264ef4a54
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: acc7284eb607d20ca1d62b478d802be56048bc6c
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74918837"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75440097"
 ---
 # <a name="parameterize-linked-services-in-azure-data-factory"></a>Параметризация связанных служб в Фабрике данных Azure
 
 Теперь можно параметризовать связанную службу и передавать динамические значения во время выполнения. Например, если вы хотите подключиться к разным базам данных на одном сервере Базы данных SQL Azure, можно параметризовать имя базы данных в определении связанной службы. Это позволит вам не создавать связанную службу для каждой базы данных на сервере Базы данных SQL Azure. Например, можно параметризовать другие свойства в определении связанной службы, например *Имя пользователя*.
 
-Для параметризации связанных служб можно использовать пользовательский интерфейс Фабрики данных на портале Azure или интерфейс программирования.
+Пользовательский интерфейс фабрики данных можно использовать в портал Azure или в программном интерфейсе для параметризации связанных служб.
 
 > [!TIP]
 > Мы рекомендуем не параметризировать пароли или секреты. Вместо этого храните все строки подключения в Azure Key Vault и параметризируйте *Имя секрета*.
@@ -33,11 +33,11 @@ ms.locfileid: "74918837"
 ## <a name="supported-data-stores"></a>Поддерживаемые хранилища данных
 
 В настоящее время в пользовательском интерфейсе Фабрики данных на портале Azure связанной службы параметризация поддерживается для следующих хранилищ данных. Для всех других хранилищ данных можно параметризовать связанную службу, выбрав значок **Код** на вкладке **Подключения**, а также использовать редактор JSON.
-- Базы данных SQL Azure
+- База данных SQL Azure
 - Хранилище данных SQL Azure
-- SQL Server
+- SQL Server
 - Oracle
-- База данных Cosmos
+- Cosmos DB
 - Amazon Redshift
 - MySQL
 - База данных Azure для MySQL
@@ -56,10 +56,7 @@ ms.locfileid: "74918837"
     "properties": {
         "type": "AzureSqlDatabase",
         "typeProperties": {
-            "connectionString": {
-                "value": "Server=tcp:myserver.database.windows.net,1433;Database=@{linkedService().DBName};User ID=user;Password=fake;Trusted_Connection=False;Encrypt=True;Connection Timeout=30",
-                "type": "SecureString"
-            }
+            "connectionString": "Server=tcp:myserver.database.windows.net,1433;Database=@{linkedService().DBName};User ID=user;Password=fake;Trusted_Connection=False;Encrypt=True;Connection Timeout=30"
         },
         "connectVia": null,
         "parameters": {

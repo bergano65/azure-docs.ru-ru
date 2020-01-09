@@ -1,25 +1,14 @@
 ---
 title: Обновление кластера Azure Service Fabric
 description: Узнайте, как обновлять версию или конфигурацию кластера Azure Service Fabric.  В этой статье описывается настройка режима обновления кластера, обновление сертификатов, добавление портов приложений, применение исправлений для ОС и то, чего можно ожидать при выполнении обновления
-services: service-fabric
-documentationcenter: .net
-author: athinanthny
-manager: chackdan
-editor: ''
-ms.assetid: 15190ace-31ed-491f-a54b-b5ff61e718db
-ms.service: service-fabric
-ms.devlang: dotnet
 ms.topic: conceptual
-ms.tgt_pltfrm: na
-ms.workload: na
 ms.date: 11/12/2018
-ms.author: atsenthi
-ms.openlocfilehash: 161c720fbcc9370aaf273b241e88a7184f47371b
-ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
+ms.openlocfilehash: 156693a9c9a3950c16a620a2a43b1f36718c4133
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74013323"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75434023"
 ---
 # <a name="upgrading-and-updating-an-azure-service-fabric-cluster"></a>Обновление кластера Azure Service Fabric
 
@@ -99,10 +88,10 @@ Service Fabric использует [сертификаты сервера X.509
 В кластере можно настроить множество разных параметров конфигурации, например, уровень надежности кластера и свойства узла. Дополнительные сведения см. в статье [Настройка параметров кластера Service Fabric](service-fabric-cluster-fabric-settings.md).
 
 ## <a name="patch-the-os-in-the-cluster-nodes"></a>Применение исправлений для операционной системы на узлах кластера
-Приложение для управления исправлениями — это приложение Service Fabric, которое позволяет автоматизировать установку исправлений операционной системы в кластере Service Fabric и избежать простоев. [Приложение для управления исправлениями для Windows](service-fabric-patch-orchestration-application.md) можно развернуть в кластере, чтобы установить исправления контролируемым образом без простоев служб.
+Приложение для управления исправлениями — это приложение Service Fabric, которое позволяет автоматизировать установку исправлений операционной системы в кластере Service Fabric и избегать простоев. [Приложение для управления исправлениями для Windows](service-fabric-patch-orchestration-application.md) можно развернуть в кластере, чтобы установить исправления контролируемым образом без простоев служб.
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * Узнайте, как настроить некоторые [параметры Service Fabric для кластера](service-fabric-cluster-fabric-settings.md)
 * Ознакомьтесь с концепцией [масштабирования кластера](service-fabric-cluster-scale-up-down.md)
 * Узнайте об [обновлениях приложений](service-fabric-application-upgrade.md)

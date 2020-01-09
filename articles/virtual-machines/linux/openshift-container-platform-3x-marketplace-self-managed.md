@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 10/14/2019
 ms.author: haroldw
-ms.openlocfilehash: 20a17e52064c5beb09ce4db5815ddd6faf7cbcba
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.openlocfilehash: 235efd746562ea4bd52b9cb57da0d8165d60de02
+ms.sourcegitcommit: 5925df3bcc362c8463b76af3f57c254148ac63e3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74035518"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75561326"
 ---
 # <a name="configure-prerequisites"></a>Настройка необходимых компонентов
 
@@ -28,7 +28,7 @@ ms.locfileid: "74035518"
  
 ## <a name="deploy-using-the-marketplace-offer"></a>Развертывание с помощью предложения Marketplace
 
-Самый простой способ развертывания самостоятельно управляемого кластера OpenShift контейнеров 3,11 в Azure — использовать [предложение Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/redhat.openshift-container-platform?tab=Overview).
+Самый простой способ развертывания самостоятельно управляемого кластера OpenShift контейнеров 3,11 в Azure — использовать [предложение Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/osatesting.open-shift-azure-proxy).
 
 Этот параметр является простейшим, но он также имеет ограниченные возможности настройки. Предложение Marketplace развертывает платформу OpenShift Container 3.11.82 и включает следующие параметры конфигурации:
 
@@ -67,9 +67,9 @@ ms.locfileid: "74035518"
 |-----------------------|-----------------|
 | Имя пользователя администратора виртуальной машины | Пользователь с правами администратора, который будет создан на всех экземплярах виртуальных машин |
 | Открытый ключ SSH для пользователя с правами администратора | Открытый ключ SSH, используемый для входа на виртуальную машину, не должен иметь парольную фразу |
-| подписку | Подписка Azure для развертывания кластера |
-| resource group | Создайте новую группу ресурсов или выберите существующую пустую группу ресурсов для ресурсов кластера. |
-| Место проведения | Регион Azure для развертывания кластера |
+| Subscription | Подписка Azure для развертывания кластера |
+| Группа ресурсов | Создайте новую группу ресурсов или выберите существующую пустую группу ресурсов для ресурсов кластера. |
+| Расположение | Регион Azure для развертывания кластера |
 
    ![Колонка основы предложения](media/openshift-marketplace-self-managed/ocp-basics.png)  
 <br>
@@ -203,7 +203,7 @@ $ ssh clusteradmin@bastiondns4hawllzaavu6g.eastus.cloudapp.azure.com
 az group delete --name openshiftrg
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Задачи, выполняемые после развертывания](./openshift-container-platform-3x-post-deployment.md)
 - [Устранение неполадок с развертыванием OpenShift в Azure](./openshift-container-platform-3x-troubleshooting.md)

@@ -6,12 +6,12 @@ ms.topic: article
 ms.date: 10/30/2019
 ms.author: mahender
 ms.reviewer: yevbronsh
-ms.openlocfilehash: 6fa8e560dc50859fc0501dde8109ddc7cbd596b8
-ms.sourcegitcommit: 48b7a50fc2d19c7382916cb2f591507b1c784ee5
+ms.openlocfilehash: f341f5bbf7221664301ca53eea1edd6af7544950
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74688621"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75422016"
 ---
 # <a name="how-to-use-managed-identities-for-app-service-and-azure-functions"></a>Использование управляемых удостоверений в Службе приложений и Функциях Azure
 
@@ -38,9 +38,9 @@ ms.locfileid: "74688621"
 
 3. Выберите **удостоверение**.
 
-4. На вкладке **Назначено системой** для параметра **Состояние** установите значение **Вкл**. В нижней части страницы нажмите кнопку **Save**.
+4. На вкладке **Назначено системой** для параметра **Состояние** установите значение **Вкл**. Выберите команду **Сохранить**.
 
-    ![Управляемое удостоверение в Службе приложений](media/app-service-managed-service-identity/msi-blade-system.png)
+    ![Управляемое удостоверение в Службе приложений](media/app-service-managed-service-identity/system-assigned-managed-identity-in-azure-portal.png)
 
 ### <a name="using-the-azure-cli"></a>Использование Azure CLI
 
@@ -167,9 +167,9 @@ ms.locfileid: "74688621"
 
 5. На вкладке **Назначенные пользователи** нажмите кнопку **Добавить**.
 
-6. Найдите созданное ранее удостоверение и выберите его. Щелкните **Добавить**.
+6. Найдите созданное ранее удостоверение и выберите его. Нажмите кнопку **Добавить**.
 
-    ![Управляемое удостоверение в Службе приложений](media/app-service-managed-service-identity/msi-blade-user.png)
+    ![Управляемое удостоверение в Службе приложений](media/app-service-managed-service-identity/user-assigned-managed-identity-in-azure-portal.png)
 
 ### <a name="using-an-azure-resource-manager-template"></a>Использование шаблона Azure Resource Manager
 
@@ -251,9 +251,9 @@ ms.locfileid: "74688621"
 
 **MSI_ENDPOINT** — это локальный URL-адрес, из которого приложение может запрашивать маркеры. Чтобы получить маркер для ресурса, отправьте запрос HTTP GET к этой конечной точке, задав следующие параметры:
 
-> |Имя параметра|В|Описание|
+> |Имя параметра|В|Description|
 > |-----|-----|-----|
-> |resource|Запрос|Универсальный код ресурса (URI) AAD, для которого нужно получить маркер. Это может быть URI одной из [служб Azure, которая поддерживает аутентификацию Azure AD,](../active-directory/managed-identities-azure-resources/services-support-managed-identities.md#azure-services-that-support-azure-ad-authentication) или любой другой URI ресурса.|
+> |ресурс|Запрос|Универсальный код ресурса (URI) AAD, для которого нужно получить маркер. Это может быть URI одной из [служб Azure, которая поддерживает аутентификацию Azure AD,](../active-directory/managed-identities-azure-resources/services-support-managed-identities.md#azure-services-that-support-azure-ad-authentication) или любой другой URI ресурса.|
 > |api-version|Запрос|Версия API маркеров, которая будет использоваться. Сейчас поддерживается только одна версия: 2017-09-01.|
 > |secret|Заголовок|Значение переменной среды MSI_SECRET. Заголовок, который используется при устранении атак с подделкой серверных запросов (SSRF).|
 > |clientid|Запрос|(Необязательно, если для пользователя не назначено) Идентификатор используемого пользователем удостоверения. Если этот параметр опущен, используется назначаемое системой удостоверение.|
@@ -263,11 +263,11 @@ ms.locfileid: "74688621"
 
 Успешный ответ 200 — OK включает текст JSON со следующими свойствами:
 
-> |Имя свойства|Описание|
+> |Имя свойства|Description|
 > |-------------|----------|
 > |access_token|Запрашиваемый маркер доступа. Вызывающая веб-служба может использовать этот маркер для проверки подлинности принимающей веб-службы.|
 > |expires_on|Время истечения срока действия маркера доступа. Дата представляется как количество секунд с 1970-01-01T0:0:0Z в формате UTC до истечения срока действия. Это значение используется для определения времени существования кэшированных маркеров.|
-> |resource|URI идентификатора приложения принимающей вызов веб-службы.|
+> |ресурс|URI идентификатора приложения принимающей вызов веб-службы.|
 > |token_type|Указывает значение типа маркера. Единственный тип, поддерживаемый Azure AD — носитель. Дополнительные сведения о маркерах носителей см. в спецификации [OAuth 2.0 Authorization Framework: Bearer Token Usage (RFC 6750)](https://www.rfc-editor.org/rfc/rfc6750.txt) (OAuth2.0 Authorization Framework: использование маркера носителя (RFC 6750)).|
 
 Этот ответ совпадает с [ответом для запроса маркера взаимного доступа между службами AAD](../active-directory/develop/v1-oauth2-client-creds-grant-flow.md#service-to-service-access-token-response).

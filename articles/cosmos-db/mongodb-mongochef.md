@@ -1,5 +1,5 @@
 ---
-title: Подключение к API Azure Cosmos DB для MongoDB с помощью Studio 3T
+title: Подключение к API Azure Cosmos DB для MongoDB с помощью Studio 3T
 description: Узнайте, как подключиться к API Azure Cosmos DB для MongoDB с помощью 3T Studio.
 ms.service: cosmos-db
 ms.subservice: cosmosdb-mongo
@@ -8,12 +8,12 @@ ms.date: 11/01/2019
 author: sivethe
 ms.author: sivethe
 ms.custom: seodec18
-ms.openlocfilehash: c9be9893d28439fdcff9f33f0303a816bd94c7b8
-ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
+ms.openlocfilehash: 533917e4cc39a1f4885a1604c11480fe09870c61
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73584425"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75441613"
 ---
 # <a name="connect-to-an-azure-cosmos-account-using-studio-3t"></a>Подключение к учетной записи Azure Cosmos с помощью 3T Studio
 
@@ -116,4 +116,4 @@ ms.locfileid: "73584425"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте, как [использовать Robo 3T](mongodb-robomongo.md) с API Azure Cosmos DB для MongoDB.
-- Ознакомьтесь с [примерами](mongodb-samples.md) MongoDB с API Azure Cosmos DB для MongoDB.
+- Ознакомьтесь с [примерами](mongodb-samples.md) MongoDB с API Azure Cosmos DB для MongoDB.

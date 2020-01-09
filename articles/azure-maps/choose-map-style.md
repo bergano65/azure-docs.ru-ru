@@ -1,5 +1,6 @@
 ---
-title: Функции стиля карт в службе Azure Maps | Документация Майкрософт
+title: Выбор стиля карты в службе Azure Maps
+titleSuffix: Azure Maps
 description: Сведения о функциях стиля в службе Azure Maps.
 author: walsehgal
 ms.author: v-musehg
@@ -8,12 +9,12 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: timlt
-ms.openlocfilehash: eb667c398be0bd51e05a6b65d416d5bce54e4386
-ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
+ms.openlocfilehash: e1d3d1b5904eded9f35c5ba628bea6426e7afaf0
+ms.sourcegitcommit: ce4a99b493f8cf2d2fd4e29d9ba92f5f942a754c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68881969"
+ms.lasthandoff: 12/28/2019
+ms.locfileid: "75531553"
 ---
 # <a name="choose-a-map-style-in-azure-maps"></a>Выбор стиля карты в службе Azure Maps
 
@@ -21,7 +22,7 @@ ms.locfileid: "68881969"
 
 ## <a name="set-style-on-map-load"></a>Задание стилей при загрузке карты
 
-В следующем коде `style` параметру Map присваивается `grayscale_dark` значение on Initialization.
+В следующем коде параметр `style` на карте имеет значение `grayscale_dark` при инициализации.
 
 <br/>
 
@@ -47,14 +48,14 @@ ms.locfileid: "68881969"
 </iframe>
 
 > [!TIP]
-> По умолчанию элемент управления Выбор стиля перечисляет все стили, доступные при использовании ценовой категории S0 Azure Maps по умолчанию. Если требуется сократить число стилей в этом списке, передайте массив стилей, которые должны отображаться в списке, в `mapStyle` параметр выбора стиля. Если вы используете S1 и хотите отобразить все доступные стили, задайте `mapStyles` для `"all"`параметра Выбор стиля значение.
+> По умолчанию элемент управления Выбор стиля перечисляет все стили, доступные при использовании ценовой категории S0 Azure Maps по умолчанию. Если вы хотите сократить число стилей в этом списке, передайте массив стилей, которые должны отображаться в списке, в параметр `mapStyle` выбора стиля. Если вы используете S1 и хотите отобразить все доступные стили, задайте для параметра `mapStyles` в средстве выбора стилей значение `"all"`.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о классах и методах, используемых в этой статье.
 
 > [!div class="nextstepaction"]
-> класс [Map](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest);
+> [Схема](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest)
 
 Добавление элементов управления в карты:
 

@@ -1,25 +1,16 @@
 ---
-title: Обзор мониторинга и диагностики Azure Service Fabric | Документы Майкрософт
+title: Обзор мониторинга и диагностики Azure Service Fabric
 description: Сведения о функциях мониторинга и диагностики для кластеров, приложений и служб Azure Service Fabric.
-services: service-fabric
-documentationcenter: .net
 author: srrengar
-manager: chackdan
-editor: ''
-ms.assetid: ''
-ms.service: service-fabric
-ms.devlang: dotnet
 ms.topic: conceptual
-ms.tgt_pltfrm: NA
-ms.workload: NA
 ms.date: 1/17/2019
 ms.author: srrengar
-ms.openlocfilehash: a6c32058c68adbfd11a4cede6332b42076bea015
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: ef77810adfab213845c7824740effc3416d85407
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60952089"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75349700"
 ---
 # <a name="monitoring-and-diagnostics-for-azure-service-fabric"></a>Мониторинг и диагностика для Azure Service Fabric
 
@@ -50,11 +41,11 @@ Service Fabric предоставляет широкий набор готовы
 
 ![EventStore](media/service-fabric-diagnostics-overview/eventstore.png)
 
-Предоставляемые данные диагностики имеют форму исчерпывающего набора событий. Эти [события Service Fabric](service-fabric-diagnostics-events.md) иллюстрируют действия, выполняемые платформой с узлами, приложениями, службами, разделами и другими объектами. В последнем сценарии, при выходе узла из строя платформа издает событие `NodeDown`, и вы немедленно получаете уведомление от выбранного вами инструмента мониторинга. Также во время отработки отказа часто издаются события `ApplicationUpgradeRollbackStarted` и `PartitionReconfigured`. **Эти события доступны как для кластеров Windows, так и для кластеров Linux.**
+Предоставляемые данные диагностики имеют форму исчерпывающего набора событий. Эти [Service Fabric события](service-fabric-diagnostics-events.md) иллюстрируют действия, выполняемые платформой в различных сущностях, таких как узлы, приложения, службы, секции и т. д. В последнем описанном выше случае, если узел был остановлен, платформа выдавала событие `NodeDown` и вы можете немедленно получить уведомления от выбранного средства мониторинга. Также во время отработки отказа часто издаются события `ApplicationUpgradeRollbackStarted` и `PartitionReconfigured`. **Эти события доступны как для кластеров Windows, так и для кластеров Linux.**
 
-События отправляются по стандартным каналам как в Windows, так и в Linux и могут считываться любым средством мониторинга, которое их поддерживает. Решение Azure Monitor — журналы Azure Monitor. Вы можете подробнее изучить наш [интеграции журналов Azure Monitor](service-fabric-diagnostics-event-analysis-oms.md) включающее пользовательской рабочей панели мониторинга для кластера и некоторые примеры запросов, из которых вы можете создавать оповещения. Узнайте больше о [создании событий и журналов на уровне платформы](service-fabric-diagnostics-event-generation-infra.md).
+События отправляются по стандартным каналам как в Windows, так и в Linux и могут считываться любым средством мониторинга, которое их поддерживает. Azure Monitor решение Azure Monitor журналы. Вы можете узнать больше о нашей [интеграции журналов Azure Monitor](service-fabric-diagnostics-event-analysis-oms.md) , которая включает настраиваемую рабочую панель мониторинга для кластера и некоторые примеры запросов, из которых можно создавать оповещения. Узнайте больше о [создании событий и журналов на уровне платформы](service-fabric-diagnostics-event-generation-infra.md).
 
-### <a name="health-monitoring"></a>Мониторинг работоспособности
+### <a name="health-monitoring"></a>Наблюдение за работоспособностью системы
 Платформа Service Fabric включает модель работоспособности, которая обеспечивает расширяемую отчетность о состоянии работоспособности сущностей в кластере. Каждый узел, приложение, служба, секция, реплика или экземпляр имеют постоянно обновляемое состояние работоспособности, которое может иметь значение "ОК", "Предупреждение" или "Ошибка". Думайте о событиях Service Fabric как о командах, выполняемых кластером с различными объектами, а о работоспособности как о характеристике каждого объекта. Событие также издается при каждом изменении работоспособности объекта. Таким образом, вы можете настроить запросы и оповещения для событий работоспособности в выбранном вами инструменте мониторинга, как и любое другое событие. 
 
 Кроме того, мы разрешаем пользователям переопределять работоспособность объектов. Если после обновления ваше приложение не проходит проверочные тесты, вы можете написать об этом в Service Fabric Health, используя API работоспособности, и Service Fabric автоматически откатит обновление! Чтобы узнать больше о модели работоспособности, прочитайте [этот обзор](service-fabric-health-introduction.md).
@@ -75,20 +66,20 @@ Service Fabric предоставляет широкий набор готовы
 
 Service Fabric также предоставляет набор счетчиков производительности для моделей программирования Reliable Services и субъектов. Если вы используете одну из этих моделей, эти счетчики производительности помогут гарантировать правильное развертывание и свертывание субъектов или достаточно быструю обработку запросов к надежным службам. Дополнительные сведения см. в разделе [Счетчики производительности](service-fabric-reliable-serviceremoting-diagnostics.md#performance-counters) статьи "Диагностика и мониторинг производительности в модели Reliable Service Remoting" и разделе [Счетчики производительности](service-fabric-reliable-actors-diagnostics.md#performance-counters) статьи "Диагностика и мониторинг производительности в Reliable Actors". 
 
-Azure Monitor для сбора этих решается журналы Azure Monitor так же, как мониторинг на уровне платформы. Следует использовать [агент Log Analytics](service-fabric-diagnostics-oms-agent.md) собирать соответствующие счетчики производительности, и просматривать их в журналах Azure Monitor.
+Azure Monitorным решением для их получения являются Azure Monitor журналы, такие как мониторинг на уровне платформы. Необходимо использовать [агент log Analytics](service-fabric-diagnostics-oms-agent.md) для получения соответствующих счетчиков производительности и их просмотра в журналах Azure Monitor.
 
 ## <a name="recommended-setup"></a>Рекомендуемые настройки
 Теперь, когда мы рассмотрели каждую область мониторинга и примеры сценариев, перечислим инструменты мониторинга Azure с настройками, необходимыми для мониторинга всех указанных выше областей. 
 
 * Мониторинг приложений с помощью [Application Insights](service-fabric-tutorial-monitoring-aspnet.md)
-* Мониторинг кластера с [агент диагностики](service-fabric-diagnostics-event-aggregation-wad.md) и [журналы Azure Monitor](service-fabric-diagnostics-oms-setup.md)
-* Мониторинг инфраструктуры с [журналы Azure Monitor](service-fabric-diagnostics-oms-agent.md)
+* Мониторинг кластера с помощью [агентов диагностики](service-fabric-diagnostics-event-aggregation-wad.md) и [журналов Azure Monitor](service-fabric-diagnostics-oms-setup.md)
+* Мониторинг инфраструктуры с помощью [журналов Azure Monitor](service-fabric-diagnostics-oms-agent.md)
 
 Для автоматизации развертывания всех необходимых ресурсов и агентов также можно использовать и изменять расположенный [здесь](service-fabric-diagnostics-oms-setup.md#deploy-azure-monitor-logs-with-azure-resource-manager) шаблон ARM. 
 
 ## <a name="other-logging-solutions"></a>Другие решения для ведения журнала
 
-Несмотря на то, что оба рекомендуемые решения, [журналы Azure Monitor](service-fabric-diagnostics-event-analysis-oms.md) и [Application Insights](service-fabric-diagnostics-event-analysis-appinsights.md) есть встроенная интеграция с Service Fabric, многие события записываются через поставщиков трассировки событий Windows и являются Расширяемая с другими решениями для ведения журнала. Стоит также обратить внимание на [Elastic Stack](https://www.elastic.co/products) (особенно если кластер будет выполняться в автономной среде), [Dynatrace](https://www.dynatrace.com/) или любую другую платформу по вашему выбору. [Здесь](service-fabric-diagnostics-partners.md) есть список интегрированных партнерских решений.
+Несмотря на то, что эти два решения рекомендуются, [Azure Monitor журналы](service-fabric-diagnostics-event-analysis-oms.md) и [Application Insights](service-fabric-diagnostics-event-analysis-appinsights.md) имеют встроенную интеграцию с Service Fabric, многие события записываются с помощью поставщиков ETW и расширяются с помощью других решений для ведения журналов. Стоит также обратить внимание на [Elastic Stack](https://www.elastic.co/products) (особенно если кластер будет выполняться в автономной среде), [Dynatrace](https://www.dynatrace.com/) или любую другую платформу по вашему выбору. [Здесь](service-fabric-diagnostics-partners.md) есть список интегрированных партнерских решений.
 
 Основные моменты, на которые следует обратить внимание при выборе платформы: удобство пользовательского интерфейса, возможности запроса данных, доступные визуализации и панели мониторинга, а также наличие дополнительных инструментов для улучшения мониторинга. 
 
@@ -97,8 +88,8 @@ Azure Monitor для сбора этих решается журналы Azure M
 * Сведения по инструментальному контролю приложений см. в статье [Ведение журналов на уровне приложений и служб](service-fabric-diagnostics-event-generation-app.md).
 * Выполните процедуру настройки Application Insights для приложения, следуя указаниям в разделе [Руководство. Мониторинг и диагностика приложения ASP.NET Core в Service Fabric](service-fabric-tutorial-monitoring-aspnet.md).
 * Дополнительные сведения о мониторинге платформы и событиях, предоставляемых Service Fabric, см. в статье [Мониторинг кластера и платформы](service-fabric-diagnostics-event-generation-infra.md).
-* Настройка интеграции журналов Azure Monitor с помощью Service Fabric в [настроить журналы Azure Monitor для кластера](service-fabric-diagnostics-oms-setup.md)
-* Узнайте, как настроить журналы Azure Monitor для наблюдения за контейнерами- [наблюдения и диагностики для Windows контейнеры в Azure Service Fabric](service-fabric-tutorial-monitoring-wincontainers.md).
+* Настройка интеграции журналов Azure Monitor с Service Fabric в [настройке журналов Azure Monitor для кластера](service-fabric-diagnostics-oms-setup.md)
+* Узнайте, как настроить журналы Azure Monitor для мониторинга контейнеров — [мониторинг и диагностика контейнеров Windows в Service Fabric Azure](service-fabric-tutorial-monitoring-wincontainers.md).
 * Примеры проблем и решений диагностики с помощью Service Fabric см. в описании [диагностики типичных сценариев](service-fabric-diagnostics-common-scenarios.md).
 * Ознакомьтесь с другими продуктами диагностики, которые интегрируются с Service Fabric, в списке [партнерских решений диагностики Service Fabric](service-fabric-diagnostics-partners.md).
 * Ознакомьтесь с общими рекомендациями по мониторингу ресурсов Azure в статье [Мониторинг и диагностика](https://docs.microsoft.com/azure/architecture/best-practices/monitoring). 

@@ -4,12 +4,12 @@ description: Узнайте, как создавать функции Azure по
 ms.date: 09/27/2019
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: 7bf079f84978539735f3bbf5bb13b18130871fb1
-ms.sourcegitcommit: 8cf199fbb3d7f36478a54700740eb2e9edb823e8
+ms.openlocfilehash: 5a7fbecca2dc7585ff7110d53deccbbbbf23087c
+ms.sourcegitcommit: ec2eacbe5d3ac7878515092290722c41143f151d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74484393"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75551494"
 ---
 # <a name="create-a-function-on-linux-using-a-custom-image"></a>Создание функции на Linux с помощью пользовательского образа
 
@@ -19,7 +19,7 @@ ms.locfileid: "74484393"
 
 Из этого руководства вы узнаете, как с помощью Azure Functions Core Tools создать функцию в пользовательском образе Linux. Вы публикуете этот образ в приложении-функции Azure, которое было создано с помощью Azure CLI. Позже вы обновите функцию для подключения к Хранилищу очередей Azure. Вы также включите.  
 
-Из этого руководства вы узнаете, как выполнять следующие задачи:
+В этом руководстве описано следующее.
 
 > [!div class="checklist"]
 > * Создание приложения-функции и Dockerfile с помощью Core Tools.
@@ -35,7 +35,7 @@ ms.locfileid: "74484393"
 
 Описанные далее действия можно выполнять на компьютерах с Mac, Windows или Linux. 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Перед выполнением этого примера вам понадобится следующее:
 
@@ -175,8 +175,7 @@ storageConnectionString=$(az storage account show-connection-string \
 
 az functionapp config appsettings set --name <app_name> \
 --resource-group myResourceGroup \
---settings AzureWebJobsDashboard=$storageConnectionString \
-AzureWebJobsStorage=$storageConnectionString
+--settings AzureWebJobsStorage=$storageConnectionString
 ```
 
 > [!NOTE]
@@ -190,12 +189,12 @@ AzureWebJobsStorage=$storageConnectionString
 
 <!-- we should replace this with a CLI or API-based approach, when we get something better than REST -->
 
-Для созданной функции, активируемой с помощью HTTP, требуется [ключ функции](functions-bindings-http-webhook.md#authorization-keys) при вызове конечной точки. В настоящее время проще всего получить URL-адрес функции, включая ключ, на [портал Azure]. 
+Для созданной функции, активируемой с помощью HTTP, требуется [ключ функции](functions-bindings-http-webhook.md#authorization-keys) при вызове конечной точки. В настоящее время проще всего получить URL-адрес функции, включая ключ, на [Портал Azure]. 
 
 > [!TIP]
 > Вы также можете получить ключи функций с помощью [API-интерфейсов управления ключами](https://github.com/Azure/azure-functions-host/wiki/Key-management-API), которые требуют предоставления [маркера носителя для проверки подлинности](/cli/azure/account#az-account-get-access-token).
 
-Найдите новое приложение-функцию на [портал Azure], введя его имя в поле **Поиск** в верхней части страницы и выбрав ресурс **Служба приложений**.
+Найдите новое приложение-функцию на [Портал Azure], введя его имя в поле **Поиск** в верхней части страницы и выбрав ресурс **Служба приложений**.
 
 Выберите функцию **MyHttpTrigger** и последовательно щелкните **</> Получить URL-адрес функции** > **по умолчанию (ключ функции)**  > **Копировать**.
 
@@ -366,7 +365,7 @@ docker push <docker-id>/mydockerimage:v1.0.0
 
 [!INCLUDE [functions-cleanup-resources](../../includes/functions-cleanup-resources.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда пользовательский контейнер успешно развернут в приложении-функции в Azure, ознакомьтесь со следующими статьями:
 
@@ -374,4 +373,4 @@ docker push <docker-id>/mydockerimage:v1.0.0
 + [Azure Functions scale and hosting](functions-scale.md) (Масштабирование и размещение Функций Azure)
 + [Azure Functions on Kubernetes with KEDA](functions-kubernetes-keda.md) (Функции Azure на базе Kubernetes с KEDA)
 
-[портал Azure]: https://portal.azure.com
+[Портал Azure]: https://portal.azure.com

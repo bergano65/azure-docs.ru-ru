@@ -1,25 +1,14 @@
 ---
-title: Упаковка существующего исполняемого файла в Azure Service Fabric | Документация Майкрософт
+title: Упаковка существующего исполняемого файла в Azure Service Fabric
 description: Узнайте, как упаковать существующее приложение в качестве гостевого исполняемого файла для его развертывания в кластере Service Fabric.
-services: service-fabric
-documentationcenter: .net
-author: athinanthny
-manager: chackdan
-editor: ''
-ms.assetid: d799c1c6-75eb-4b8a-9f94-bf4f3dadf4c3
-ms.service: service-fabric
-ms.devlang: dotnet
 ms.topic: conceptual
-ms.tgt_pltfrm: NA
-ms.workload: na
 ms.date: 03/15/2018
-ms.author: atsenthi
-ms.openlocfilehash: bd6984db67a8a7b9c38988558ada51e12d337f52
-ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
+ms.openlocfilehash: 3d7aab28a32effa2caf7b04b830d72e5e3dfda56
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74013259"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75457835"
 ---
 # <a name="deploy-an-existing-executable-to-service-fabric"></a>Развертывание существующего исполняемого файла вручную
 В Azure Service Fabric можно запустить как службу приложение любого типа, в том числе приложения Node.js, Java или C++. В Service Fabric такие типы служб называются гостевыми исполняемыми файлами.
@@ -29,8 +18,8 @@ ms.locfileid: "74013259"
 ## <a name="benefits-of-running-a-guest-executable-in-service-fabric"></a>Преимущества запуска гостевого исполняемого файла в Service Fabric
 Запуск гостевого исполняемого файла в кластере Service Fabric имеет несколько преимуществ.
 
-* обеспечение высокой доступности; Приложения, работающие в среде Service Fabric, отличаются высоким уровнем доступности. Service Fabric обеспечивает выполнение экземпляров приложения.
-* Наблюдение за работоспособностью системы. Service Fabric наблюдает за работоспособностью приложений и в случае сбоя предоставляет диагностические данные.   
+* Высокий уровень доступности. Приложения, работающие в среде Service Fabric, отличаются высоким уровнем доступности. Service Fabric обеспечивает выполнение экземпляров приложения.
+* Мониторинг исправности. Service Fabric наблюдает за работоспособностью приложений и в случае сбоя предоставляет диагностические данные.   
 * Управление жизненным циклом приложений. Service Fabric не только обновляет приложения без ущерба для работы пользователей, но и автоматически откатывает приложение к предыдущей версии, если во время обновления возникло событие ухудшения работоспособности.    
 * Плотность. В одном кластере могут работать несколько приложений, что позволяет отказаться от использования отдельного оборудования для каждого приложения.
 * Возможность обнаружения: с помощью REST можно вызвать службу именования Service Fabric для поиска других служб в кластере. 
@@ -73,7 +62,7 @@ ms.locfileid: "74013259"
 >
 >
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 В приведенных ниже статьях описаны связанные сведения и задачи.
 * [Развертывание гостевого исполняемого файла](service-fabric-deploy-existing-app.md)
 * [Развертывание нескольких пользовательских приложений](service-fabric-deploy-multiple-apps.md)

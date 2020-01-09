@@ -1,25 +1,15 @@
 ---
-title: Распространенные вопросы о Microsoft Azure Service Fabric | Документация Майкрософт
-description: Часто задаваемые вопросы о Service Fabric и ответы на них
-services: service-fabric
-documentationcenter: .net
-author: chackdan
-manager: chackdan
-editor: ''
-ms.assetid: 5a179703-ff0c-4b8e-98cd-377253295d12
-ms.service: service-fabric
-ms.devlang: dotnet
+title: Распространенные вопросы о Microsoft Azure Service Fabric
+description: Часто задаваемые вопросы о Service Fabric, включая возможности, варианты использования и распространенные сценарии.
 ms.topic: troubleshooting
-ms.tgt_pltfrm: na
-ms.workload: na
 ms.date: 08/18/2017
 ms.author: pepogors
-ms.openlocfilehash: dd514bb7c600c99518983855dae1d3b7fb8a1efb
-ms.sourcegitcommit: 8cf199fbb3d7f36478a54700740eb2e9edb823e8
+ms.openlocfilehash: 7638a360821e73b7485014c8e6f006e91bbea551
+ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74481650"
+ms.lasthandoff: 01/02/2020
+ms.locfileid: "75614644"
 ---
 # <a name="commonly-asked-service-fabric-questions"></a>Распространенные вопросы о Service Fabric
 
@@ -107,7 +97,7 @@ ms.locfileid: "74481650"
 Да.  Дополнительные сведения см. [в статье Создание кластера с подключенными дисками данных](../virtual-machine-scale-sets/virtual-machine-scale-sets-attached-disks.md#create-a-service-fabric-cluster-with-attached-data-disks) и [Шифрование дисков Azure для масштабируемых наборов виртуальных машин](../virtual-machine-scale-sets/disk-encryption-overview.md).
 
 ### <a name="can-i-use-low-priority-vms-in-a-cluster-node-type-virtual-machine-scale-set"></a>Можно ли использовать низкоприоритетные виртуальные машины с типом узла кластера (масштабируемый набор виртуальных машин)?
-Нет Низкоприоритетные виртуальные машины не поддерживаются. 
+Нет. Низкоприоритетные виртуальные машины не поддерживаются. 
 
 ### <a name="what-are-the-directories-and-processes-that-i-need-to-exclude-when-running-an-anti-virus-program-in-my-cluster"></a>Какие каталоги и процессы необходимо исключить при запуске антивирусной программы в кластере?
 
@@ -135,8 +125,8 @@ ms.locfileid: "74481650"
 ### <a name="how-can-my-application-authenticate-to-keyvault-to-get-secrets"></a>Как приложение может выполнить аутентификацию в хранилище ключей и получить секреты?
 Ниже приведены средства для того, чтобы ваше приложение получило учетные данные для аутентификации в KeyVault:
 
-О. Во время задания сборки и упаковки вы можете внедрить сертификат в пакет данных приложения Service Fabric и использовать его для аутентификации в KeyVault.
-B. Для узлов с поддержкой MSI масштабируемого набора виртуальных машин можно разработать простой SetupEntryPoint PowerShell для приложения SF, чтобы получить [маркер доступа из конечной точки MSI](https://docs.microsoft.com/azure/active-directory/managed-service-identity/how-to-use-vm-token), а затем [извлечь свои секреты из KeyVault](/powershell/module/azurerm.keyvault/get-azurekeyvaultsecret).
+A. Во время задания сборки и упаковки вы можете внедрить сертификат в пакет данных приложения Service Fabric и использовать его для аутентификации в KeyVault.
+Б. Для узлов с поддержкой MSI масштабируемого набора виртуальных машин можно разработать простой SetupEntryPoint PowerShell для приложения SF, чтобы получить [маркер доступа из конечной точки MSI](https://docs.microsoft.com/azure/active-directory/managed-service-identity/how-to-use-vm-token), а затем [извлечь свои секреты из KeyVault](/powershell/module/azurerm.keyvault/get-azurekeyvaultsecret).
 
 ## <a name="application-design"></a>Проектирование приложений
 
@@ -191,6 +181,6 @@ Reliable Services обычно состоит из нескольких разд
 
 После объявления о начале их реализации см. дополнительные сведения в [блоге Service Fabric](https://blogs.msdn.microsoft.com/azureservicefabric/).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Сведения о [базовых Service Fabric основных понятиях](service-fabric-technical-overview.md) и рекомендациях по [управлению](service-fabric-best-practices-overview.md) Fabric] (Service-Fabric-Technical-Overview.md [) и рекомендации](service-fabric-best-practices-overview.md)

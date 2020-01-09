@@ -13,12 +13,12 @@ author: swinarko
 ms.author: sawinark
 ms.reviewer: douglasl
 manager: anandsub
-ms.openlocfilehash: 8d7d4c8d7e01c6a4bfa644b84f03f8a2ea5bfd06
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: 5263af2708ee30566e90cdf59ef69f52f76a9d32
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74928853"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75440320"
 ---
 # <a name="how-to-start-and-stop-azure-ssis-integration-runtime-on-a-schedule"></a>Запуск и остановка Azure-SSIS Integration Runtime по расписанию
 В этой статье описан процесс планирования запуска и остановки Azure-SSIS Integration Runtime (IR) с использованием Фабрики данных Azure (ADF). Azure-SSIS IR представляет собой вычислительный ресурс ADF, предназначенный для выполнения пакетов SQL Server Integration Services (SSIS). Выполнение Azure-SSIS IR сопряжено с определенными затратами. Поэтому среду выполнения интеграции обычно запускают только на тот период, когда требуется выполнение пакетов SSIS в Azure, а затем останавливают. С помощью пользовательского интерфейса (приложения) ADF или Azure PowerShell вы можете [запустить или остановить среду выполнения интеграции вручную](manage-azure-ssis-integration-runtime.md)).
@@ -64,12 +64,12 @@ ms.locfileid: "74928853"
    - Выберите **Использовать существующую**и укажите существующую группу ресурсов в раскрывающемся списке. 
    - Выберите **Создать новую**и укажите имя новой группы ресурсов.   
          
-   Дополнительные сведения см. в статье [об использовании групп ресурсов для управления ресурсами Azure](../azure-resource-manager/resource-group-overview.md).
+   Дополнительные сведения см. в статье [об использовании групп ресурсов для управления ресурсами Azure](../azure-resource-manager/management/overview.md).
    
 6. Для параметра **Версия** укажите значение **V2**.
 7. Для параметра **Расположение** выберите из раскрывающегося списка одно из расположений, в которых поддерживается создание ADF.
 8. Кроме того, установите флажок **Закрепить на панели мониторинга**.     
-9. Щелкните **Create**(Создать).
+9. Нажмите кнопку **Создать**.
 10. На панели мониторинга Azure вы увидите следующую плитку с состоянием " **развертывание фабрики данных**". 
 
     ![Элемент Deploying data factory (Развертывание фабрики данных)](media/tutorial-create-azure-ssis-runtime-portal/deploying-data-factory.png)
@@ -114,7 +114,7 @@ ms.locfileid: "74928853"
     1. В поле **Роль** выберите **Участник**. 
     2. В поле **Назначение доступа к** выберите **Пользователь, группа или субъект-служба Azure AD**. 
     3. В поле **Выберите** найдите имя нужной ADF и выберите его. 
-    4. В нижней части страницы нажмите кнопку **Save**.
+    4. Выберите команду **Сохранить**.
     
    ![Назначение роли управляемому удостоверению ADF](./media/how-to-schedule-azure-ssis-integration-runtime/adf-managed-identity-role-assignment.png)
 
@@ -133,7 +133,7 @@ ms.locfileid: "74928853"
     1. В поле **Имя сервера** введите значение **&lt;имя_сервера_Базы_данных_SQL_Azure&gt;.database.windows.net**.
     2. Выберите **Параметры >>** .
     3. В поле **Подключение к базе данных** выберите **SSISDB**.
-    4. Нажмите кнопку **Подключиться**. 
+    4. Выберите **Подключиться**. 
     5. Разверните **Каталоги служб Integration Services** -> **SSISDB** -> Ваша папка -> **Проекты** -> Ваш проект SSIS -> **Пакеты**. 
     6. Щелкните правой кнопкой мыши пакет SSIS и выберите **Отчеты** -> **Стандартные отчеты** -> **Все выполнения**. 
     7. Убедитесь, что конвейер выполнен. 
@@ -160,7 +160,7 @@ ms.locfileid: "74928853"
     4. В поле **Повторение** укажите периодичность активации триггера. В следующем примере выбран вариант **Ежедневно**. 
     5. В поле **Конец** выберите вариант **Нет конца** или введите дату окончания и время, выбрав вариант **Дата**. 
     6. Выберите **Активировано**, чтобы запустить триггер сразу после публикации этих параметров ADF. 
-    7. Щелкните **Далее**.
+    7. Выберите **Далее**.
 
    !["Триггер" > "Создать/изменить"](./media/how-to-schedule-azure-ssis-integration-runtime/new-trigger-window.png)
     
@@ -386,7 +386,7 @@ ms.locfileid: "74928853"
 
 См. документацию SSIS в следующих статьях: 
 
-- [Deploy, run, and monitor an SSIS package on Azure](/sql/integration-services/lift-shift/ssis-azure-deploy-run-monitor-tutorial) (Развертывание, запуск и отслеживание пакета SSIS в Azure)   
+- [Развертывание, запуск и отслеживание пакета служб SSIS в Azure](/sql/integration-services/lift-shift/ssis-azure-deploy-run-monitor-tutorial)   
 - [Connect to the SSISDB Catalog database on Azure](/sql/integration-services/lift-shift/ssis-azure-connect-to-catalog-database) (Подключение к базе данных каталога SSISDB в Azure)
 - [Schedule the execution of an SSIS package on Azure](/sql/integration-services/lift-shift/ssis-azure-schedule-packages) (Планирование выполнения пакета SSIS в Azure)
 - [Connect to on-premises data sources with Windows Authentication](/sql/integration-services/lift-shift/ssis-azure-connect-with-windows-auth) (Подключение к локальным источникам данных с помощью аутентификации Windows)

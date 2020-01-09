@@ -7,12 +7,12 @@ ms.service: expressroute
 ms.topic: article
 ms.date: 04/03/2019
 ms.author: rambala
-ms.openlocfilehash: e503dc2b4ae8773ebfedc7a9b73bc5ea93dd9d5a
-ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
+ms.openlocfilehash: 48ec26cc98310dfeb61aa17018c940b431cfbcee
+ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74076748"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75644262"
 ---
 # <a name="cross-network-connectivity"></a>Возможность подключения нескольких сетей
 
@@ -86,7 +86,7 @@ Fabrikam Inc. получает Contoso Ltd. После слияния компа
 
 В следующей таблице показаны маршруты, известные виртуальной машине подписки contoso. Обратите внимание на записи *шлюза виртуальной сети* таблицы. Виртуальная машина видит маршруты для локальных сетей.
 
-[![Двенадцать]][12]
+[![12]][12]
 
 В следующей таблице показаны маршруты, известные для виртуальной машины подписки Fabrikam. Обратите внимание на записи *шлюза виртуальной сети* таблицы. Виртуальная машина видит маршруты для локальных сетей.
 
@@ -102,7 +102,7 @@ ExpressRoute Global Reach обеспечивает подключение меж
 
 На следующем рисунке показана сетевая архитектура после настройки Global Reach.
 
-[![открыт]][14]
+[![14]][14]
 
 В следующей таблице показана таблица маршрутов частного пиринга ExpressRoute компании Contoso Ltd. После настройки Global Reach. Проверьте, что таблица маршрутов имеет маршруты, принадлежащие обеим локальным сетям. 
 
@@ -112,7 +112,7 @@ ExpressRoute Global Reach обеспечивает подключение меж
 
 [![глубин]][16]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные вопросы по виртуальной сети и пирингу виртуальных сетей см. в разделе [часто ЗАдаваемые вопросы о виртуальном сетевом][VNet-FAQ]уровне. Дополнительные вопросы об ExpressRoute и подключении к виртуальной сети см. в разделе [вопросы и ответы по expressroute][ER-FAQ] .
 
@@ -142,7 +142,7 @@ Global Reach размещается в стране или регионе по �
 [Global Reach]: https://docs.microsoft.com/azure/expressroute/expressroute-global-reach
 [Configure VNet peering]: https://docs.microsoft.com/azure/virtual-network/create-peering-different-subscriptions
 [Configure Global Reach]: https://docs.microsoft.com/azure/expressroute/expressroute-howto-set-global-reach
-[Subscription limits]: https://docs.microsoft.com/azure/azure-subscription-service-limits#networking-limits
+[Subscription limits]: https://docs.microsoft.com/azure/azure-resource-manager/management/azure-subscription-service-limits#networking-limits
 [Connect-ER-VNet]: https://docs.microsoft.com/azure/expressroute/expressroute-howto-linkvnet-portal-resource-manager
 [ER-FAQ]: https://docs.microsoft.com/azure/expressroute/expressroute-faqs
 [VNet-FAQ]: https://docs.microsoft.com/azure/virtual-network/virtual-networks-faq

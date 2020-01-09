@@ -16,12 +16,12 @@ ms.workload: billing
 ms.date: 10/01/2019
 ms.author: banders
 ms.custom: seodec18
-ms.openlocfilehash: a8e189e8070de0fccf9428e26337e1091ba7f7b4
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: 34fcaef5416fe976c051317c0273d245f1ff8358
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74225626"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75449123"
 ---
 # <a name="use-azure-billing-apis-to-programmatically-get-insight-into-your-azure-usage"></a>Использование API выставления счетов Azure для программного получения ценных сведений об использовании Azure
 Используйте API выставления счетов Azure для извлечения данных об использовании и ресурсах в предпочитаемые средства анализа данных. API использования ресурсов и RateCard в Azure позволяют точно прогнозировать расходы и управлять ими. Интерфейсы API реализованы в виде поставщика ресурсов и относятся к семейству API, предоставляемых Azure Resource Manager.  
@@ -63,7 +63,7 @@ ms.locfileid: "74225626"
   * Вы также можете определить, предоставляет ли другое предложение Azure более выгодный тариф на ресурс Azure.
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * Вы можете ознакомиться с примерами кода в GitHub:
   * [Пример кода API счетов](https://go.microsoft.com/fwlink/?linkid=845124)
 
@@ -71,4 +71,4 @@ ms.locfileid: "74225626"
 
   * [Пример кода API RateCard](https://github.com/Azure-Samples/billing-dotnet-ratecard-api)
 
-* Дополнительные сведения о Azure Resource Manager см. в статье [Обзор Azure Resource Manager](../azure-resource-manager/resource-group-overview.md).
+* Дополнительные сведения о Azure Resource Manager см. в статье [Обзор Azure Resource Manager](../azure-resource-manager/management/overview.md).

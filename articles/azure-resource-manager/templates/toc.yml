@@ -10,10 +10,6 @@
       href: quickstart-create-templates-use-the-portal.md
     - name: Создание шаблонов — VS Code
       href: quickstart-create-templates-use-visual-studio-code.md
-    - name: Создание шаблонов — Visual Studio
-      href: create-visual-studio-deployment-project.md
-    - name: "Создание шаблонов\_— IntelliJ IDEA"
-      href: create-templates-use-intellij.md
 - name: Учебники
   items:
     - name: Для новичков
@@ -101,8 +97,9 @@
   items:
     - name: Создание шаблонов
       items:
-        - name: Использование VS Code
-          href: use-vs-code-to-create-template.md
+        - name: Структура файла шаблона
+          displayName: 'parameters,variables,resources,outputs,condition'
+          href: template-syntax.md
         - name: Написание выражений шаблонов
           href: template-expressions.md
         - name: Параметры
@@ -134,6 +131,14 @@
           href: deploy-to-subscription.md
         - name: Ресурсы уровня группы управления
           href: deploy-to-management-group.md
+    - name: Использование средств разработки
+      items:
+        - name: VS Code
+          href: use-vs-code-to-create-template.md
+        - name: Visual Studio
+          href: create-visual-studio-deployment-project.md
+        - name: IntelliJ IDEA
+          href: create-templates-use-intellij.md
     - name: Развертывание шаблонов
       items:
         - name: "Развертывание\_— портал"
@@ -206,9 +211,6 @@
           href: ../../virtual-machines/windows/troubleshoot-deploy-vm.md
 - name: Справочник
   items:
-    - name: Структура файла шаблона
-      displayName: 'parameters,variables,resources,outputs,condition'
-      href: template-syntax.md
     - name: Справочник по шаблонам
       href: /azure/templates/
     - name: Функции шаблонов

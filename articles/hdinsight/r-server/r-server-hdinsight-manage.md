@@ -8,22 +8,22 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 06/19/2019
-ms.openlocfilehash: e0ce8b97df6f2d6e95255d3f4dfc9f76fa08a594
-ms.sourcegitcommit: fad368d47a83dadc85523d86126941c1250b14e2
+ms.openlocfilehash: b2c16c27c0dfc0c30a99c52544cc4d2278eadfc7
+ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71123557"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75647736"
 ---
 # <a name="manage-ml-services-cluster-on-azure-hdinsight"></a>Управление кластером служб машинного обучения в Azure HDInsight
 
 Из этой статьи вы узнаете, как управлять существующим кластером служб ML в Azure HDInsight для выполнения таких задач, как добавление нескольких параллельных пользователей, удаленное подключение к кластеру служб машинного обучения, изменение контекста вычислений и т. д.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 * Кластер служб машинного обучения в HDInsight. Ознакомьтесь со статьей [Create Linux-based clusters in HDInsight by using the Azure portal](../hdinsight-hadoop-create-linux-clusters-portal.md) (Создание кластеров под управлением Linux в HDInsight с помощью портала Azure) и выберите **Службы машинного обучения ML Services** для параметра **Тип кластера**.
 
-* Клиент Secure Shell (SSH): Клиент SSH используется для удаленного подключения к кластеру HDInsight и выполнения команд непосредственно в кластере. Дополнительные сведения см. в статье [Подключение к HDInsight (Hadoop) с помощью SSH](../hdinsight-hadoop-linux-use-ssh-unix.md).
+* Клиент Secure Shell (SSH). клиент SSH используется для удаленного подключения к кластеру HDInsight и выполнения команд непосредственно в кластере. Дополнительные сведения см. в статье [Подключение к HDInsight (Hadoop) с помощью SSH](../hdinsight-hadoop-linux-use-ssh-unix.md).
 
 ## <a name="enable-multiple-concurrent-users"></a>Включение нескольких параллельных подключений пользователей
 
@@ -48,11 +48,11 @@ ms.locfileid: "71123557"
 2. добавить нескольких пользователей Linux на граничный узел;
 3. использовать версию RStudio Community с помощью созданного пользователя.
 
-### <a name="step-1-use-the-created-ssh-user-to-sign-in-to-the-edge-node"></a>Шаг 1. Вход на граничный узел с помощью созданного пользователя SSH
+### <a name="step-1-use-the-created-ssh-user-to-sign-in-to-the-edge-node"></a>Шаг 1. Вход на граничный узел с помощью созданного пользователя SSH
 
 Чтобы получить доступ к граничному узлу, следуйте инструкциям по [подключению к HDInsight (Apache Hadoop) с помощью SSH](../hdinsight-hadoop-linux-use-ssh-unix.md). Адрес граничного узла кластера служб машинного обучения в HDInsight: `CLUSTERNAME-ed-ssh.azurehdinsight.net`.
 
-### <a name="step-2-add-more-linux-users-in-edge-node"></a>Шаг 2. добавить нескольких пользователей Linux на граничный узел;
+### <a name="step-2-add-more-linux-users-in-edge-node"></a>Шаг 2. Добавление дополнительных пользователей Linux на граничный узел
 
 Чтобы добавить пользователя на граничный узел, выполните эти команды:
 
@@ -68,9 +68,9 @@ ms.locfileid: "71123557"
 
 При появлении запроса на ввод текущего пароля Kerberos нажмите клавишу **ВВОД**, чтобы игнорировать его. Параметр `-m` в команде `useradd` указывает, что система создаст домашнюю папку пользователя, которая обязательна для версии RStudio Community.
 
-### <a name="step-3-use-rstudio-community-version-with-the-user-created"></a>Шаг 3. использовать версию RStudio Community с помощью созданного пользователя.
+### <a name="step-3-use-rstudio-community-version-with-the-user-created"></a>Шаг 3. Использование версии RStudio Community с помощью созданного пользователя
 
-Войдите в RStudio из https://CLUSTERNAME.azurehdinsight.net/rstudio/. Если вы впервые входите в систему после создания кластера, сначала введите учетные данные администратора кластера, а затем созданные учетные данные пользователя SSH. Если это уже не первый вход, достаточно ввести учетные данные нового пользователя SSH.
+Войдите в RStudio из `https://CLUSTERNAME.azurehdinsight.net/rstudio/`. Если вы впервые входите в систему после создания кластера, сначала введите учетные данные администратора кластера, а затем созданные учетные данные пользователя SSH. Если это уже не первый вход, достаточно ввести учетные данные нового пользователя SSH.
 
 Вы также можете войти параллельно с помощью исходных учетных данных (по умолчанию — *sshuser*) в другом окне браузера.
 
@@ -78,7 +78,7 @@ ms.locfileid: "71123557"
 
 ## <a name="connect-remotely-to-microsoft-ml-services"></a>Удаленное подключение к серверу или клиенту служб машинного обучения Microsoft
 
-Вы можете получить доступ к контексту вычислений Spark в HDInsight из удаленного экземпляра ML Client, запущенного на персональном компьютере. Для этого укажите на ПК параметры dfsShareDir, shareDir, sshUsername, sshHostname, sshSwitches и sshProfileScript, определяя контекст вычислений RxSpark. Пример:
+Вы можете получить доступ к контексту вычислений Spark в HDInsight из удаленного экземпляра ML Client, запущенного на персональном компьютере. Для этого укажите на ноутбуке параметры dfsShareDir, shareDir, sshUsername, sshHostname, sshSwitches и sshProfileScript, определяя контекст вычислений RxSpark.
 
     myNameNode <- "default"
     myPort <- 0
@@ -196,7 +196,7 @@ ms.locfileid: "71123557"
 
    * Установите флажок только для параметра **Рабочая роль**.
 
-   * **Параметры.** Устанавливаемые пакеты R. Например: `bitops stringr arules`
+   * **Параметры**: устанавливаемые пакеты R. Например `bitops stringr arules`.
 
    * Установите флажок **Persist this script action** (Сохранить это действие скрипта).  
 
@@ -209,7 +209,7 @@ ms.locfileid: "71123557"
 
 4. Нажмите кнопку **Создать**, чтобы выполнить скрипт. После завершения выполнения пакеты R будут доступны на всех рабочих узлах.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Ввод в эксплуатацию кластера R Server в Azure HDInsight](r-server-operationalize.md)
 * [Варианты контекста вычислений для R Server в HDInsight](r-server-compute-contexts.md)

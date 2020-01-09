@@ -12,12 +12,12 @@ ms.date: 01/24/2019
 ms.author: lizross
 ms.reviewer: olhaun
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bcd69fab269e39a8c78a56c08854262ca839d60f
-ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
+ms.openlocfilehash: d1d781ee16cd1c78f03b58288bf75e036e38cf00
+ms.sourcegitcommit: a100e3d8b0697768e15cbec11242e3f4b0e156d3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74267145"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75681231"
 ---
 # <a name="add-your-work-or-school-account-to-the-microsoft-authenticator-app"></a>Добавление рабочей или учебной учетной записи в приложение Microsoft Authenticator
 
@@ -28,7 +28,7 @@ ms.locfileid: "74267145"
 
 ## <a name="add-your-work-or-school-account"></a>Добавление рабочей или учебной учетной записи
 
-1. Перейдите на страницу [Дополнительная проверка безопасности](https://aka.ms/mfasetup) на компьютере.
+1. Перейдите на страницу [Дополнительная проверка безопасности](https://account.activedirectory.windowsazure.com/proofup.aspx?proofup=1) на компьютере.
 
     >[!Note]
     >Если страница **Дополнительная проверка безопасности** не появилась, возможно, ваш администратор отключил отображение сведений для защиты (предварительный просмотр). В таком случае необходимо следовать инструкциям из статьи [Настройка использования приложения проверки подлинности в сведениях для защиты (предварительная версия)](security-info-setup-auth-app.md). Если это не так, необходимо обратиться за помощью к службе технической поддержки организации. Дополнительные сведения о безопасности см. в разделе [Обзор сведений о безопасности (Предварительная версия)](user-help-security-info-overview.md).
@@ -53,7 +53,7 @@ ms.locfileid: "74267145"
 
     ![Окно с учетными записями](./media/user-help-auth-app-download-install/auth-app-accounts.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Добавив учетные записи в приложение, вы можете использовать их для входа с помощью приложения Authenticator на мобильном устройстве. Дополнительные сведения см. в статье [Вход с использованием телефона вместо ввода пароля](user-help-auth-app-sign-in.md).
 

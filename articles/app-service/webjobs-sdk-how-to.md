@@ -6,12 +6,12 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 02/18/2019
 ms.author: glenga
-ms.openlocfilehash: 8e29c632ff3920c77a757fe45475a12c212cf579
-ms.sourcegitcommit: 48b7a50fc2d19c7382916cb2f591507b1c784ee5
+ms.openlocfilehash: 2d9de5e7294fdca7514989ba009e9dee8985a084
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74684006"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75421967"
 ---
 # <a name="how-to-use-the-azure-webjobs-sdk-for-event-driven-background-processing"></a>Использование пакета SDK WebJobs Azure для фоновой обработки на основе событий
 
@@ -84,7 +84,7 @@ static void Main(string[] args)
 Версия 3. *x* использует стандартные ASP.NET Core API. Вызовите метод [`UseEnvironment`](/dotnet/api/microsoft.extensions.hosting.hostinghostbuilderextensions.useenvironment) для экземпляра [`HostBuilder`](/dotnet/api/microsoft.extensions.hosting.hostbuilder) . Передайте строку с именем `development`, как показано в следующем примере:
 
 ```cs
-static void Main()
+static async Task Main()
 {
     var builder = new HostBuilder();
     builder.UseEnvironment("development");
@@ -95,7 +95,7 @@ static void Main()
     var host = builder.Build();
     using (host)
     {
-        host.Run();
+        await host.RunAsync();
     }
 }
 ```
@@ -144,7 +144,7 @@ static void Main(string[] args)
 }
 ```
 
-## <a name="triggers"></a>триггеры;
+## <a name="triggers"></a>Триггеры
 
 Функции должны быть открытыми методами и должны иметь один атрибут триггера или атрибут [`NoAutomaticTrigger`](#manual-triggers) .
 
@@ -236,7 +236,7 @@ static void Main(string[] args)
 В версии 3. *x*, привязки к хранилищу включены в пакет `Microsoft.Azure.WebJobs.Extensions.Storage`. Вызовите метод расширения `AddAzureStorage` в методе `ConfigureWebJobs`, как показано ниже:
 
 ```cs
-static void Main()
+static async Task Main()
 {
     var builder = new HostBuilder();
     builder.ConfigureWebJobs(b =>
@@ -247,7 +247,7 @@ static void Main()
     var host = builder.Build();
     using (host)
     {
-        host.Run();
+        await host.RunAsync();
     }
 }
 ```
@@ -255,7 +255,7 @@ static void Main()
 Чтобы использовать другие типы триггеров и привязок, установите пакет NuGet, который их содержит, и вызовите метод расширения `Add<binding>`, реализованный в расширении. Например, если вы хотите использовать привязку Azure Cosmos DB, установите `Microsoft.Azure.WebJobs.Extensions.CosmosDB` и вызовите `AddCosmosDB`следующим образом:
 
 ```cs
-static void Main()
+static async Task Main()
 {
     var builder = new HostBuilder();
     builder.ConfigureWebJobs(b =>
@@ -266,7 +266,7 @@ static void Main()
     var host = builder.Build();
     using (host)
     {
-        host.Run();
+        await host.RunAsync();
     }
 }
 ```
@@ -318,7 +318,7 @@ public class Functions
 Вызовите метод расширения `AddExecutionContextBinding` в методе `ConfigureWebJobs`, как показано ниже:
 
 ```cs
-static void Main()
+static async Task Main()
 {
     var builder = new HostBuilder();
     builder.ConfigureWebJobs(b =>
@@ -329,7 +329,7 @@ static void Main()
     var host = builder.Build();
     using (host)
     {
-        host.Run();
+        await host.RunAsync();
     }
 }
 ```
@@ -373,7 +373,7 @@ class Program
 В этом примере показано, как настроить триггер Azure Cosmos DB.
 
 ```cs
-static void Main()
+static async Task Main()
 {
     var builder = new HostBuilder();
     builder.ConfigureWebJobs(b =>
@@ -390,8 +390,7 @@ static void Main()
     var host = builder.Build();
     using (host)
     {
-
-        host.Run();
+        await host.RunAsync();
     }
 }
 ```
@@ -403,7 +402,7 @@ static void Main()
 В этом примере показано, как настроить триггер концентраторов событий.
 
 ```cs
-static void Main()
+static async Task Main()
 {
     var builder = new HostBuilder();
     builder.ConfigureWebJobs(b =>
@@ -419,8 +418,7 @@ static void Main()
     var host = builder.Build();
     using (host)
     {
-
-        host.Run();
+        await host.RunAsync();
     }
 }
 ```
@@ -434,7 +432,7 @@ static void Main()
 #### <a name="version-3x"></a>Версия 3. *x*
 
 ```cs
-static void Main()
+static async Task Main()
 {
     var builder = new HostBuilder();
     builder.ConfigureWebJobs(b =>
@@ -450,8 +448,7 @@ static void Main()
     var host = builder.Build();
     using (host)
     {
-
-        host.Run();
+        await host.RunAsync();
     }
 }
 ```
@@ -480,7 +477,7 @@ static void Main(string[] args)
 В этом примере показано, как настроить выходную привязку SendGrid:
 
 ```cs
-static void Main()
+static async Task Main()
 {
     var builder = new HostBuilder();
     builder.ConfigureWebJobs(b =>
@@ -495,8 +492,7 @@ static void Main()
     var host = builder.Build();
     using (host)
     {
-
-        host.Run();
+        await host.RunAsync();
     }
 }
 ```
@@ -508,7 +504,7 @@ static void Main()
 В этом примере показано, как настроить триггер служебной шины.
 
 ```cs
-static void Main()
+static async Task Main()
 {
     var builder = new HostBuilder();
     builder.ConfigureWebJobs(b =>
@@ -523,8 +519,7 @@ static void Main()
     var host = builder.Build();
     using (host)
     {
-
-        host.Run();
+        await host.RunAsync();
     }
 }
 ```
@@ -538,7 +533,7 @@ static void Main()
 #### <a name="version-3x"></a>Версия 3. *x*
 
 ```cs
-static void Main()
+static async Task Main()
 {
     var builder = new HostBuilder();
     builder.ConfigureWebJobs(b =>
@@ -549,8 +544,7 @@ static void Main()
     var host = builder.Build();
     using (host)
     {
-
-        host.Run();
+        await host.RunAsync();
     }
 }
 ```
@@ -749,9 +743,9 @@ public static async Task ProcessImage([BlobTrigger("images")] Stream image)
 
 У некоторых триггеров есть встроенная поддержка для управления параллелизмом:
 
-* **QueueTrigger**. Задайте для параметра `JobHostConfiguration.Queues.BatchSize` значение `1`.
-* **ServiceBusTrigger**. Задайте для параметра `ServiceBusConfiguration.MessageOptions.MaxConcurrentCalls` значение `1`.
-* **Филетригжер**. Задайте для параметра `FileProcessor.MaxDegreeOfParallelism` значение `1`.
+* **QueueTrigger**. Присвойте параметру `JobHostConfiguration.Queues.BatchSize` значение `1`.
+* **ServiceBusTrigger**. Присвойте параметру `ServiceBusConfiguration.MessageOptions.MaxConcurrentCalls` значение `1`.
+* **Филетригжер**. Присвойте параметру `FileProcessor.MaxDegreeOfParallelism` значение `1`.
 
 Эти параметры можно использовать для обеспечения отдельного выполнения функции в одном экземпляре. Чтобы обеспечить выполнение только одного экземпляра функции при масштабировании веб-приложения до нескольких экземпляров, примените одноэлементную блокировку на уровне прослушивателя для функции (`[Singleton(Mode = SingletonMode.Listener)]`). Блокировка прослушивателя запрашивается при запуске JobHost. Если все три горизонтально масштабированные экземпляры запускаются одновременно, блокировки требует только один из экземпляров, а запускается только один прослушиватель.
 
@@ -805,7 +799,7 @@ public static void RemoveItem([QueueTrigger("remove-item")] string message)
 
 Информацию о том, как обрабатывать маркеры отмены, см. в документации по решению "Функции Azure" в разделе [Токены отмены](../azure-functions/functions-dotnet-class-library.md#cancellation-tokens).
 
-## <a name="multiple-instances"></a>Выполнение на нескольких экземплярах
+## <a name="multiple-instances"></a>Несколько экземпляров
 
 Если ваше веб-приложение работает в нескольких экземплярах, на каждом экземпляре запускается непрерывный WebJob, который прослушивает триггеры и вызывает функции. Различные привязки триггера предназначены для эффективной совместной работы в экземплярах, чтобы масштабирование до большего количества экземпляров позволяло обрабатывать большую нагрузку.
 
@@ -924,7 +918,7 @@ internal class CustomTelemetryInitializer : ITelemetryInitializer
 Вызовите [`ConfigureServices`] в конструкторе, чтобы добавить пользовательский [`ITelemetryInitializer`] в конвейер.
 
 ```cs
-static void Main()
+static async Task Main()
 {
     var builder = new HostBuilder();
     builder.ConfigureWebJobs(b =>
@@ -951,8 +945,7 @@ static void Main()
     var host = builder.Build();
     using (host)
     {
-
-        host.Run();
+        await host.RunAsync();
     }
 }
 ```
@@ -1000,7 +993,7 @@ config.LoggerFactory = new LoggerFactory()
     .AddApplicationInsights(clientFactory);
 ```
 
-## <a id="nextsteps"></a>Дальнейшие действия
+## <a id="nextsteps"></a> Дальнейшие действия
 
 В этой статье приведены фрагменты кода, демонстрирующие способы решения распространенных сценариев работы с пакетом SDK для веб-заданий. Полные примеры см. на странице с примерами [azure-webjobs-sdk-samples](https://github.com/Azure/azure-webjobs-sdk/tree/dev/sample/SampleHost).
 

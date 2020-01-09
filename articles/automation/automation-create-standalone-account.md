@@ -2,19 +2,15 @@
 title: Создание автономной учетной записи службы автоматизации Azure
 description: В этой статье приводятся пошаговые инструкции по созданию и тестированию, а также пример проверки подлинности с помощью субъекта безопасности в службе автоматизации Azure.
 services: automation
-ms.service: automation
 ms.subservice: process-automation
-author: mgoedtel
-ms.author: magoedte
 ms.date: 01/15/2019
 ms.topic: conceptual
-manager: carmonm
-ms.openlocfilehash: 0dcfcfe5bc6e59eeb4ccb7272ed3f68edc9c4172
-ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
+ms.openlocfilehash: 22efb5e94049b975780c6f6ea69aa94a71cc9992
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74850403"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75366657"
 ---
 # <a name="create-a-standalone-azure-automation-account"></a>Создание автономной учетной записи службы автоматизации Azure
 
@@ -88,7 +84,7 @@ ms.locfileid: "74850403"
 
 После создания учетной записи службы автоматизации автоматически создаются несколько ресурсов. После создания эти модули Runbook можно безопасно удалить, если вы не хотите их хранить. Чтобы выполнить аутентификацию для вашей учетной записи в модуле runbook, можно использовать учетные записи запуска от имени. Вы можете не удалять их, если не собираетесь создавать новую учетную запись или если они еще могут потребоваться. В следующей таблице перечислены ресурсы для учетной записи запуска от имени.
 
-| Ресурс | Описание |
+| Ресурс | Description |
 | --- | --- |
 | Модуль Runbook AzureAutomationTutorial |Пример графического модуля Runbook, который демонстрирует, как выполнить проверку подлинности с помощью учетной записи запуска от имени. Он получает доступ ко всем ресурсам Resource Manager. |
 | Модуль Runbook AzureAutomationTutorialScript |Пример модуля Runbook PowerShell, который демонстрирует, как выполнить проверку подлинности с помощью учетной записи запуска от имени. Он получает доступ ко всем ресурсам Resource Manager. |

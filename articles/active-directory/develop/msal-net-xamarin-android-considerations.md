@@ -3,7 +3,7 @@ title: Замечания по Xamarin Android (MSAL.NET) | Службы
 titleSuffix: Microsoft identity platform
 description: Ознакомьтесь с конкретными соображениями при использовании Xamarin Android с библиотекой проверки подлинности Майкрософт для .NET (MSAL.NET).
 services: active-directory
-author: TylerMSFT
+author: jmprieur
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: develop
@@ -14,12 +14,12 @@ ms.author: twhitney
 ms.reviewer: saeeda
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6cb28b8465bf74351c5c6efe9d80dcc01137be5d
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: 678b581e09fe1eac49e4f2bf07eabbbc944c8d4e
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74915515"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75424155"
 ---
 # <a name="xamarin-android-specific-considerations-with-msalnet"></a>Вопросы, связанные с Xamarin Android, с MSAL.NET
 В этой статье рассматриваются конкретные рекомендации при использовании Xamarin Android с библиотекой проверки подлинности Майкрософт для .NET (MSAL.NET).
@@ -35,7 +35,7 @@ var authResult = AcquireTokenInteractive(scopes)
 ```
 Его также можно задать на уровне Публикклиентаппликатион (в MSAL 4.2 +) с помощью обратного вызова.
 
-```CSharp
+```csharp
 // Requires MSAL.NET 4.2 or above
 var pca = PublicClientApplicationBuilder
   .Create("<your-client-id-here>")
@@ -45,7 +45,7 @@ var pca = PublicClientApplicationBuilder
 
 Рекомендуется использовать Куррентактивитиплугин [здесь](https://github.com/jamesmontemagno/CurrentActivityPlugin).  Затем код Публикклиентаппликатион Builder будет выглядеть следующим образом:
 
-```CSharp
+```csharp
 // Requires MSAL.NET 4.2 or above
 var pca = PublicClientApplicationBuilder
   .Create("<your-client-id-here>")
@@ -82,6 +82,23 @@ protected override void OnActivityResult(int requestCode,
          </intent-filter>
 </activity>
 ```
+
+Вы также можете [создать действие в коде](https://docs.microsoft.com/xamarin/android/platform/android-manifest#the-basics) и не изменять `AndroidManifest.xml`вручную. Для этого необходимо создать класс с атрибутом `Activity` и `IntentFilter`. Класс, представляющий те же значения приведенного выше XML-кода:
+
+```csharp
+  [Activity]
+  [IntentFilter(new[] { Intent.ActionView },
+        Categories = new[] { Intent.CategoryBrowsable, Intent.CategoryDefault },
+        DataHost = "auth",
+        DataScheme = "msal{client_id}")]
+  public class MsalActivity : BrowserTabActivity
+  {
+  }
+```
+
+### <a name="xamarinforms-43x-manifest"></a>Манифест Ксамаринформс 4.3. X
+
+Код, созданный Ксамаринформс 4.3. x, задает атрибут `package` для `com.companyname.{appName}` в `AndroidManifest.xml`. Если вы используете `DataScheme` как `msal{client_id}`, может потребоваться изменить значение так, чтобы оно совпадало с `MainActivity.cs` пространством имен.
 
 ## <a name="use-the-embedded-web-view-optional"></a>Использовать внедренное веб-представление (необязательно)
 
@@ -125,6 +142,6 @@ var authResult = AcquireTokenInteractive(scopes)
 
 Дополнительные сведения и примеры приведены в абзаце с описанием для [Android](https://github.com/azure-samples/active-directory-xamarin-native-v2#android-specific-considerations) , приведенным в следующем примере файла readme.md:
 
-| Пример | платформа | Описание |
+| Пример | Платформа | Description |
 | ------ | -------- | ----------- |
 |[https://github.com/Azure-Samples/active-directory-xamarin-native-v2](https://github.com/azure-samples/active-directory-xamarin-native-v2) | Xamarin iOS, Android, UWP; | Простое приложение Xamarin Forms, в котором показано, как использовать MSAL для проверки подлинности MSA и Azure AD через конечную точку добавьте версии 2.0 и доступа к Microsoft Graph с полученным маркером. <br>![Топология](media/msal-net-xamarin-android-considerations/topology.png) |

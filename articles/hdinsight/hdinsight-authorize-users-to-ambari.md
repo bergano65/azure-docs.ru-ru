@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 11/27/2019
-ms.openlocfilehash: cbdf4a4c9e7f3816a0a5b280c81bfa60b65d9769
-ms.sourcegitcommit: 48b7a50fc2d19c7382916cb2f591507b1c784ee5
+ms.openlocfilehash: 3bb58334e96bf5378fb78b70125f9c7994a7c2fc
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74688055"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75435644"
 ---
 # <a name="authorize-users-for-apache-ambari-views"></a>Предоставление пользователям доступа к представлениям Apache Ambari
 
@@ -179,9 +179,9 @@ curl -k -u $user:$userPassword -H "X-Requested-By: ambari" \
 
 3. Прокрутите страницу "Views" (Представления) вниз. В разделе *Permissions* (Разрешения) доступно два параметра для предоставления разрешений на представление пользователям домена:
 
-**Grant permission to these users** ![Grant permission to these users](./media/hdinsight-authorize-users-to-ambari/hdi-add-user-to-view.png) (Предоставить разрешение данным пользователям)
+**Предоставьте этим пользователям разрешение на** предоставление этих пользователей ![предоставить разрешение этим пользователям](./media/hdinsight-authorize-users-to-ambari/hdi-add-user-to-view.png)
 
-**Grant permission to these groups** ![Grant permission to these groups](./media/hdinsight-authorize-users-to-ambari/add-group-to-view-permission.png) (Предоставить разрешение данным группам)
+**Предоставьте разрешения на доступ к этим группам** ![предоставьте разрешения для этих групп](./media/hdinsight-authorize-users-to-ambari/add-group-to-view-permission.png)
 
 1. Чтобы добавить пользователя, нажмите кнопку **Add User** (Добавить пользователя).
 
@@ -240,7 +240,7 @@ curl -k -u $user:$userPassword -H "X-Requested-By: ambari" \
 
 ![Представление блокировки ролей Apache Ambari](./media/hdinsight-authorize-users-to-ambari/ambari-roles-block-view.png)
 
-### <a name="list-view"></a>Представление "List" (Список)
+### <a name="list-view"></a>Режим списка
 
 Представление "List" (Список) предоставляет возможности быстрого редактирования в двух категориях: "Users" (Пользователи) и "Groups" (Группы).
 
@@ -248,7 +248,7 @@ curl -k -u $user:$userPassword -H "X-Requested-By: ambari" \
 
     ![Представление списка ролей Apache Ambari — пользователи](./media/hdinsight-authorize-users-to-ambari/roles-list-view-users.png)
 
-* Категория "Groups" (Группы) представления "List" (Список) содержит все группы, а также роли, назначенные каждой группе. В нашем примере список групп синхронизирован с группами Azure AD, указанными в свойстве **Access user group** (Группа доступа пользователей) параметров домена кластера. См. [Создание кластера HDInsight с корпоративным пакетом безопасности](./domain-joined/apache-domain-joined-configure-using-azure-adds.md#create-a-hdinsight-cluster-with-esp).
+* Категория "Groups" (Группы) представления "List" (Список) содержит все группы, а также роли, назначенные каждой группе. В нашем примере список групп синхронизирован с группами Azure AD, указанными в свойстве **Access user group** (Группа доступа пользователей) параметров домена кластера. См. [Создание кластера HDInsight с корпоративным пакетом безопасности](./domain-joined/apache-domain-joined-configure-using-azure-adds.md#create-an-hdinsight-cluster-with-esp).
 
     ![Представление списка ролей Apache Ambari — группы](./media/hdinsight-authorize-users-to-ambari/roles-list-view-groups.png)
 

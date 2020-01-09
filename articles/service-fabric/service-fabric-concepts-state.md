@@ -1,25 +1,16 @@
 ---
-title: Управление состоянием в службах Azure Service Fabric | Документы Майкрософт
-description: Сведения о том, как определять состояния службы и управлять ими в службах Service Fabric.
-services: service-fabric
-documentationcenter: .net
+title: Управление состоянием в службах Service Fabric Azure
+description: Сведения о состоянии в Service Fabric Azure, включая определение состояния службы и управление ей в службах Service Fabric.
 author: masnider
-manager: chackdan
-editor: ''
-ms.assetid: f5e618a5-3ea3-4404-94af-122278f91652
-ms.service: service-fabric
-ms.devlang: dotnet
 ms.topic: conceptual
-ms.tgt_pltfrm: NA
-ms.workload: NA
 ms.date: 08/18/2017
 ms.author: masnider
-ms.openlocfilehash: e3ab36def2d210bd763f3ce2dc5df155e37e2dba
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 9acd3031d1071d1822791b333976aaf76161600f
+ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60870899"
+ms.lasthandoff: 01/02/2020
+ms.locfileid: "75614576"
 ---
 # <a name="service-state"></a>Состояние службы
 **Состояние службы** — это данные в памяти или на диске, необходимые службе для функционирования. Например, к ним относятся структуры данных и переменные-члены, которые считываются и записываются работающей службой. В зависимости от архитектуры службы она может также включать в себя файлы и другие ресурсы, которые хранятся на диске. Например, это могут быть файлы, которые база данных будет использовать для хранения данных и журналов транзакций.

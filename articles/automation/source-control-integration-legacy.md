@@ -2,19 +2,15 @@
 title: Интеграция системы управления версиями со службой автоматизации Azure — старая версия
 description: В этой статье описывается интеграция системы управления версиями с GitHub в службе автоматизации Azure.
 services: automation
-ms.service: automation
 ms.subservice: process-automation
-author: mgoedtel
-ms.author: magoedte
 ms.date: 12/04/2019
 ms.topic: conceptual
-manager: carmonm
-ms.openlocfilehash: 74d4cb80fbac41294b57bf13f23c2c63babb71ef
-ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
+ms.openlocfilehash: 651b97dabfd3cce858ea1f905a39c10bd7d81c41
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74849451"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75417437"
 ---
 # <a name="source-control-integration-in-azure-automation---legacy"></a>Интеграция системы управления версиями со службой автоматизации Azure — старая версия
 
@@ -62,15 +58,15 @@ ms.locfileid: "74849451"
 
    * Переменная **Microsoft.Azure.Automation.SourceControl.Connection** содержит значения строки подключения, как показано ниже.  
 
-     | **Параметр** | **Значение** |
+     | **Параметр** | **Value** |
      |:--- |:--- |
      | `Name`  |Microsoft.Azure.Automation.SourceControl.Connection |
-     | `Type`  |Строка |
+     | `Type`  |String |
      | `Value` |{"Branch":\<*имя ветви*>,"RunbookFolderPath":\<*путь к папке с модулями Runbook*>,"ProviderType":\<*для GitHub значение равно 1*>,"Repository":\<*имя репозитория*>,"Username":\<*имя пользователя GitHub*>} |
 
    * Переменная **Microsoft.Azure.Automation.SourceControl.OAuthToken**содержит надежно зашифрованное значение OAuthToken.  
 
-     |**Параметр**            |**Значение** |
+     |**Параметр**            |**Value** |
      |:---|:---|
      | `Name`  | Microsoft.Azure.Automation.SourceControl.OAuthToken |
      | `Type`  | Unknown(Encrypted) |

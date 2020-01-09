@@ -15,21 +15,21 @@ ms.tgt_pltfrm: ''
 ms.workload: infrastructure
 ms.date: 04/22/2019
 ms.author: kumud
-ms.openlocfilehash: c553e3f2de963abb4a3c23a4114eecfa33d0aa61
-ms.sourcegitcommit: 4cdd4b65ddbd3261967cdcd6bc4adf46b4b49b01
+ms.openlocfilehash: 675c222bfbacf8207c7b3f906452251bedd64a66
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66735329"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75350174"
 ---
 # <a name="azure-resource-manager-template-samples-for-virtual-network"></a>Примеры шаблонов Azure Resource Manager для виртуальной сети
 
-В следующей таблице представлены ссылки на примеры шаблонов Azure Resource Manager. Шаблон можно развернуть с помощью [портала Azure](../azure-resource-manager/resource-group-template-deploy-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json), [Azure CLI](../azure-resource-manager/resource-group-template-deploy-cli.md?toc=%2fazure%2fvirtual-network%2ftoc.json) или [Azure PowerShell](../azure-resource-manager/resource-group-template-deploy.md?toc=%2fazure%2fvirtual-network%2ftoc.json). См. дополнительные сведения о [создании шаблонов ](../azure-resource-manager/resource-manager-create-first-template.md?toc=%2fazure%2fvirtual-network%2ftoc.json), а также [структуре и синтаксисе шаблонов Azure Resource Manager](../azure-resource-manager/resource-group-authoring-templates.md?toc=%2fazure%2fvirtual-network%2ftoc.json).
+В следующей таблице представлены ссылки на примеры шаблонов Azure Resource Manager. Шаблон можно развернуть с помощью [портала Azure](../azure-resource-manager/resource-group-template-deploy-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json), [Azure CLI](../azure-resource-manager/resource-group-template-deploy-cli.md?toc=%2fazure%2fvirtual-network%2ftoc.json) или [Azure PowerShell](../azure-resource-manager/resource-group-template-deploy.md?toc=%2fazure%2fvirtual-network%2ftoc.json). См. дополнительные сведения о [создании шаблонов ](../azure-resource-manager/resource-manager-create-first-template.md?toc=%2fazure%2fvirtual-network%2ftoc.json), а также [структуре и синтаксисе шаблонов Azure Resource Manager](../azure-resource-manager/templates/template-syntax.md?toc=%2fazure%2fvirtual-network%2ftoc.json).
 
 Синтаксис JSON и используемые в шаблонах свойства см. в статье о [типах ресурсов Microsoft.Network](/azure/templates/microsoft.network/allversions).
 
 
-| Задача | ОПИСАНИЕ |
+| Задача | Description |
 |----|----|
 |[Создание виртуальной сети с двумя подсетями](https://github.com/Azure/azure-quickstart-templates/tree/master/101-vnet-two-subnets)| Создание виртуальной сети с двумя подсетями.|
 |[Маршрутизация трафика через виртуальный сетевой модуль](https://github.com/Azure/azure-quickstart-templates/tree/master/201-userdefined-routes-appliance)| Создание виртуальной сети с тремя подсетями. Развертывание виртуальной машины в каждой подсети. Создание таблицы маршрутов, содержащей маршруты для направления трафика из одной подсети в другую через виртуальную машину в третьей подсети. Связывание таблицы маршрутов и одной из подсетей.|

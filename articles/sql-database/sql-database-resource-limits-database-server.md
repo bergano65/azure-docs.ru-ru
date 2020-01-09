@@ -11,12 +11,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: sashan,moslake,josack
 ms.date: 11/19/2019
-ms.openlocfilehash: 40b277f0b1bfb3501bb246e555d46db5e1ee9f95
-ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
+ms.openlocfilehash: da8c194b7911d2eeda8e0c903cb7412186aacfcb
+ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74279306"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75638261"
 ---
 # <a name="sql-database-resource-limits-and-resource-governance"></a>Ограничения ресурсов базы данных SQL и управление ресурсами
 
@@ -27,7 +27,7 @@ ms.locfileid: "74279306"
 
 ## <a name="maximum-resource-limits"></a>Максимальное ограничение ресурсов
 
-| Resource (Ресурс) | Ограничение |
+| Ресурс | Ограничение |
 | :--- | :--- |
 | Баз данных на сервер | 5000 |
 | Количество серверов по умолчанию на одну подписку в любом регионе | 20 |
@@ -46,7 +46,7 @@ ms.locfileid: "74279306"
 > - Увеличение задержки при выполнении запросов к базе данных master.  Сюда входят представления статистических данных использования ресурсов, такие как sys.resource_stats.
 > - Увеличение задержки при управлении и отображении для точек наблюдения портала, включая перечисление баз данных на сервере.
 
-### <a name="storage-size"></a>Размер хранилища
+### <a name="storage-size"></a>Объем памяти
 
 Размеры хранилища ресурсов для отдельных баз данных см. в разделе [ограничения ресурсов на основе DTU](sql-database-dtu-resource-limits-single-databases.md) или ограничения на [ресурсы на основе виртуальное ядро](sql-database-vcore-resource-limits-single-databases.md) для ограничения размера хранилища на ценовую категорию.
 
@@ -60,7 +60,7 @@ ms.locfileid: "74279306"
 - Увеличение объема вычислительных ресурсов базы данных или эластичного пула для предоставления базе данных дополнительных вычислительных ресурсов. См. разделы [Масштабирование ресурсов отдельной базы данных](sql-database-single-database-scale.md) и [Масштабирование ресурсов эластичного пула](sql-database-elastic-pool-scale.md).
 - Оптимизация запросов для уменьшения использования ресурсов каждым запросом. Дополнительные сведения см. в разделе [Настройка запросов и указания на них](sql-database-performance-guidance.md#query-tuning-and-hinting).
 
-### <a name="storage"></a>Служба хранилища
+### <a name="storage"></a>Хранилище
 
 Когда используемое пространство базы данных достигает максимального размера, операции вставки и обновления, увеличивающие размер данных, завершаются сбоем и клиенты получают [сообщение об ошибке](troubleshoot-connectivity-issues-microsoft-azure-sql-database.md). Инструкции SELECT и DELETE продолжают выполняться.
 
@@ -79,7 +79,7 @@ ms.locfileid: "74279306"
 - Повышение уровня служб или объема вычислительных ресурсов базы данных или эластичного пула. См. разделы [Масштабирование ресурсов отдельной базы данных](sql-database-single-database-scale.md) и [Масштабирование ресурсов эластичного пула](sql-database-elastic-pool-scale.md).
 - Оптимизация запросов для сокращения использования ресурсов, необходимых каждому запросу, если причиной повышенного использования рабочих ролей является состязание за вычислительные ресурсы. Дополнительные сведения см. в разделе [Настройка запросов и указания на них](sql-database-performance-guidance.md#query-tuning-and-hinting).
 
-## <a name="resource-governance"></a>управление ресурсами;
+## <a name="resource-governance"></a>Управление ресурсами
 
 Чтобы применить ограничения ресурсов, база данных SQL Azure использует реализацию управления ресурсами, основанную на SQL Server [Resource Governor](https://docs.microsoft.com/sql/relational-databases/resource-governor/resource-governor), измененных и расширенных для запуска службы SQL Server базы данных в Azure. На каждом экземпляре SQL Server в службе существует несколько [пулов ресурсов](https://docs.microsoft.com/sql/relational-databases/resource-governor/resource-governor-resource-pool) и [групп рабочей нагрузки](https://docs.microsoft.com/sql/relational-databases/resource-governor/resource-governor-workload-group)с ограничениями ресурсов, заданными на уровнях пула и группы, чтобы обеспечить [сбалансированную базу данных как услугу](https://azure.microsoft.com/blog/resource-governance-in-azure-sql-database/). Рабочая нагрузка пользователя и внутренние рабочие нагрузки классифицируются в отдельные пулы ресурсов и группы рабочей нагрузки. Рабочая нагрузка пользователя на первичную и доступную для чтения вторичные реплики, включая геореплики, классифицируется в `SloSharedPool1` пул ресурсов и `UserPrimaryGroup.DBId[N]` группу рабочей нагрузки, где `N` означает значение идентификатора базы данных. Кроме того, для различных внутренних рабочих нагрузок существует несколько пулов ресурсов и групп рабочей нагрузки.
 
@@ -99,7 +99,9 @@ ms.locfileid: "74279306"
 
 Для баз данных уровня "базовый", "Стандартный" и "общего назначения", которые используют файлы данных в службе хранилища Azure, значение `primary_group_max_io` может быть недостижимо, если база данных не содержит достаточно файлов данных для накопления числа операций ввода-вывода в секунду или если данные не распределяются равномерно по файлам, или если уровень производительности базовых больших двоичных объектов ограничивает число операций ввода/вывода, заданное в Аналогичным образом, при небольшом объеме операций ввода-вывода журнала, создаваемом частыми фиксациями транзакций, значение `primary_max_log_rate` может быть недостижимо рабочей нагрузкой в связи с ограничением в секунду для хранилища больших двоичных объектов Azure.
 
-Значения использования ресурсов, такие как `avg_data_io_percent` и `avg_log_write_percent`, сообщаемые в представлениях [sys. dm_db_resource_stats](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-db-resource-stats-azure-sql-database), [sys. resource_stats](https://docs.microsoft.com/sql/relational-databases/system-catalog-views/sys-resource-stats-azure-sql-database)и [sys. elastic_pool_resource_stats](https://docs.microsoft.com/sql/relational-databases/system-catalog-views/sys-elastic-pool-resource-stats-azure-sql-database) , рассчитываются в процентах максимальных ограничений управления ресурсами. Таким образом, если другие факторы, кроме управления ресурсами, ограничивают количество операций ввода-вывода и пропускную способность, то при увеличении рабочей нагрузки можно просматривать операции ввода-вывода и задержки при увеличении и задержке, даже если отчет об использовании ресурсов остается ниже 100%. Чтобы просмотреть и записать операции ввода-вывода, пропускную способность и задержку для каждого файла базы данных, используйте функцию [sys. dm_io_virtual_file_stats ()](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-io-virtual-file-stats-transact-sql) . Эта функция выдает все операции ввода-вывода для базы данных, включая фоновые операции ввода-вывода, которые не учитывают `avg_data_io_percent`, но используют операций ввода-вывода и пропускную способность базового хранилища и могут повлиять на наблюдаемую задержку хранилища.
+Значения использования ресурсов, такие как `avg_data_io_percent` и `avg_log_write_percent`, сообщаемые в представлениях [sys. dm_db_resource_stats](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-db-resource-stats-azure-sql-database), [sys. resource_stats](https://docs.microsoft.com/sql/relational-databases/system-catalog-views/sys-resource-stats-azure-sql-database)и [sys. elastic_pool_resource_stats](https://docs.microsoft.com/sql/relational-databases/system-catalog-views/sys-elastic-pool-resource-stats-azure-sql-database) , рассчитываются в процентах максимальных ограничений управления ресурсами. Таким образом, если другие факторы, кроме управления ресурсами, ограничивают количество операций ввода-вывода и пропускную способность, то при увеличении рабочей нагрузки можно просматривать операции ввода-вывода и задержки при увеличении и задержке, даже если отчет об использовании ресурсов остается ниже 100%. 
+
+Чтобы просмотреть и записать операции ввода-вывода, пропускную способность и задержку для каждого файла базы данных, используйте функцию [sys. dm_io_virtual_file_stats ()](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-io-virtual-file-stats-transact-sql) . Эта функция выдает все операции ввода-вывода для базы данных, включая фоновые операции ввода-вывода, которые не учитывают `avg_data_io_percent`, но используют операций ввода-вывода и пропускную способность базового хранилища и могут повлиять на наблюдаемую задержку хранилища. Функция также предоставляет дополнительную задержку, которая может появиться при управлении ресурсами ввода-вывода для операций чтения и записи, в столбцах `io_stall_queued_read_ms` и `io_stall_queued_write_ms` соответственно.
 
 ### <a name="transaction-log-rate-governance"></a>Управление частотой ведения журнала транзакций
 
@@ -130,8 +132,8 @@ ms.locfileid: "74279306"
 - Если загружаемые данные являются временными, например промежуточные данные в процессе ETL, их можно загрузить в базу данных tempdb (с минимальным протоколированием). 
 - Для аналитических сценариев загрузите в таблицу, охваченную кластеризованным индексом columnstore. Это сокращает необходимую частоту ведения журнала из-за сжатия. Этот метод увеличивает загрузку ЦП и применяется только к наборам данных, которые используют преимущества кластеризованных индексов columnstore. 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-- Сведения об общих ограничениях Azure см. в разделе [Подписка Azure, границы, квоты и ограничения службы](../azure-subscription-service-limits.md).
+- Сведения об общих ограничениях Azure см. в разделе [Подписка Azure, границы, квоты и ограничения службы](../azure-resource-manager/management/azure-subscription-service-limits.md).
 - Сведения о DTU и eDTU см. в разделе [Общие сведения об обычных единицах передачи данных (DTU) и единицах передачи данных в эластичной базе данных (eDTU)](sql-database-purchase-models.md#dtu-based-purchasing-model).
 - Сведения об ограничениях на размер базы данных tempdb см. в [этом разделе](https://docs.microsoft.com/sql/relational-databases/databases/tempdb-database#tempdb-database-in-sql-database).

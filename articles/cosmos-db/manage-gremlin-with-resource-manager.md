@@ -1,17 +1,17 @@
 ---
-title: Шаблоны Azure Resource Manager для Azure Cosmos DB API Gremlin
+title: Шаблоны диспетчер ресурсов для Azure Cosmos DB API Gremlin
 description: Используйте шаблоны Azure Resource Manager для создания и настройки Azure Cosmos DB Gremlin API.
 author: TheovanKraay
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 11/12/2019
 ms.author: thvankra
-ms.openlocfilehash: c5ddea40c384496f2790ae4ab7c88888f1e9120a
-ms.sourcegitcommit: 39da2d9675c3a2ac54ddc164da4568cf341ddecf
+ms.openlocfilehash: 857af7ecd9ff3d7b3c771d048a802c6d3c1e5e4f
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73960600"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75441643"
 ---
 # <a name="manage-azure-cosmos-db-gremlin-api-resources-using-azure-resource-manager-templates"></a>Управление ресурсами Azure Cosmos DB Gremlin API с помощью шаблонов Azure Resource Manager
 
@@ -53,7 +53,7 @@ az cosmosdb show --resource-group $resourceGroupName --name accountName --output
 
 Команда `az cosmosdb show` отображает созданную учетную запись Azure Cosmos после ее подготовки. Если вы решили использовать локально установленную версию Azure CLI вместо использования Cloud Shell, см. статью [Azure CLI](/cli/azure/) .
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Ниже приведены некоторые дополнительные ресурсы.
 

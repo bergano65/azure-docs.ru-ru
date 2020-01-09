@@ -15,28 +15,28 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/22/2017
 ms.author: kumud
-ms.openlocfilehash: 636a422cd46dc6b6274766b92753f04195a829a0
-ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
+ms.openlocfilehash: a45896e796011edd97fb1fd63fc3bda4a669927c
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74277935"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75360078"
 ---
 # <a name="configuring-network-security-group-flow-logs-using-rest-api"></a>Настройка журналов потоков для групп безопасности сети с помощью REST API
 
 > [!div class="op_single_selector"]
-> - [портал Azure](network-watcher-nsg-flow-logging-portal.md)
+> - [Портал Azure](network-watcher-nsg-flow-logging-portal.md)
 > - [PowerShell](network-watcher-nsg-flow-logging-powershell.md)
-> - [Интерфейс командной строки Azure](network-watcher-nsg-flow-logging-cli.md)
-> - [ИНТЕРФЕЙС REST API](network-watcher-nsg-flow-logging-rest.md)
+> - [Azure CLI](network-watcher-nsg-flow-logging-cli.md)
+> - [REST API](network-watcher-nsg-flow-logging-rest.md)
 
-Журналы потоков для групп безопасности сети — это компонент Наблюдателя за сетями, который позволяет просматривать сведения о входящем и исходящем IP-трафике через группу безопасности сети. Эти журналы потоков записываются в формате JSON. В них отображаются входящие и исходящие потоки по каждому правилу, сетевая карта, с которой связан поток, сведения о 5 кортежах потока (исходный и конечный IP-адреса, исходный и конечный порты, протокол), а также сведения о состоянии трафика (разрешен или запрещен).
+Журналы потоков для групп безопасности сети — это компонент Наблюдателя за сетями, который позволяет просматривать сведения о входящем и исходящем IP-трафике через группу безопасности сети. Эти журналы потоков записываются в формате JSON. В них отображаются входящие и исходящие потоки по каждому правилу, сетевая карта, с которой связан поток, сведения о 5 кортежах потока (IP-адрес источника и места назначения, порт источника и места назначения, протокол), а также сведения о состоянии трафика (разрешен или запрещен).
 
 ## <a name="before-you-begin"></a>Перед началом работы
 
-Чтобы вызвать REST API при помощи PowerShell, потребуется ARMClient. Пакет ARMClient можно скачать на сайте [Chocolatey](https://chocolatey.org/packages/ARMClient).
+Чтобы вызвать REST API при помощи командлетов PowerShell, вам потребуется ARMClient. Пакет ARMClient можно скачать на сайте [Chocolatey](https://chocolatey.org/packages/ARMClient).
 
-В этом сценарии предполагается, что вы создали Наблюдатель за сетями в соответствии с инструкциями в статье [Create an Azure Network Watcher instance](network-watcher-create.md) (Наблюдатель за сетями: создание экземпляра службы).
+В этом сценарии предполагается, что вы создали Наблюдатель за сетями в соответствии с инструкциями в статье [Create a Network Watcher](network-watcher-create.md) (Создание Наблюдателя за сетями).
 
 > [!Important]
 > При вызовах REST API в URI запроса следует указать имя группы ресурсов, в которой содержится Наблюдатель за сетями, а не диагностируемые ресурсы.
@@ -218,10 +218,7 @@ armclient post "https://management.azure.com/subscriptions/${subscriptionId}/Res
 https://{storageAccountName}.blob.core.windows.net/insights-logs-networksecuritygroupflowevent/resourceId=/SUBSCRIPTIONS/{subscriptionID}/RESOURCEGROUPS/{resourceGroupName}/PROVIDERS/MICROSOFT.NETWORK/NETWORKSECURITYGROUPS/{nsgName}/y={year}/m={month}/d={day}/h={hour}/m=00/macAddress={macAddress}/PT1H.json
 ```
 
-> [!IMPORTANT]
-> Сейчас [журналы потоков группы безопасности сети(NSG)](network-watcher-nsg-flow-logging-overview.md) для Наблюдателя за сетями не удаляются автоматически из хранилища BLOB-объектов в соответствии с параметрами политики хранения. Если у вас есть ненулевая политика хранения, мы рекомендуем периодически удалять BLOB-объекты хранилища, срок хранения которых истек, чтобы избежать затрат. См. сведения о том, как [удалить BLOB-объекты хранилища, связанные с журналом потоков NSG](network-watcher-delete-nsg-flow-log-blobs.md).
-
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте, как [визуализировать сведения журналов потоков группы безопасности сети с помощью PowerBI](network-watcher-visualize-nsg-flow-logs-power-bi.md).
 

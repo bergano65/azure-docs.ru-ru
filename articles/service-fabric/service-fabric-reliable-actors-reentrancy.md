@@ -1,25 +1,16 @@
 ---
-title: Повторный вход субъектов Azure Service Fabric | Документация Майкрософт
-description: Общие сведения о повторном входе Reliable Actors Service Fabric.
-services: service-fabric
-documentationcenter: .net
+title: Повторный вход в Azure Service Fabric субъекты
+description: Общие сведения о повторном входе для Service Fabric Reliable Actors, способе логически избежать блокировки на основе контекста вызова.
 author: vturecek
-manager: chackdan
-editor: amanbha
-ms.assetid: be23464a-0eea-4eca-ae5a-2e1b650d365e
-ms.service: service-fabric
-ms.devlang: dotnet
 ms.topic: conceptual
-ms.tgt_pltfrm: NA
-ms.workload: NA
 ms.date: 11/02/2017
 ms.author: vturecek
-ms.openlocfilehash: 46682787bac2d60d188384a4078ca2fa1f46ae7a
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 46ce91e607341e2fbdc0b6a3018e74cb24e76839
+ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60725420"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75645537"
 ---
 # <a name="reliable-actors-reentrancy"></a>Повторный вход надежных субъектов
 Среда выполнения Reliable Actors по умолчанию разрешает повторный вход на основе логического контекста вызова. Это позволяет субъектам выполнять повторный вход, если они находятся в той же цепочке контекста вызова. Например, субъект A отправляет сообщение субъекту B, который отправляет сообщение субъекту C. В ходе обработки сообщения, если субъект C осуществит вызов субъекта A, сообщение будет означать повторный вход, поэтому будет разрешено. Любые другие сообщения, являющиеся частью другого контекста вызова, будут заблокированы на субъекте A до тех пор, пока он не завершит обработку.

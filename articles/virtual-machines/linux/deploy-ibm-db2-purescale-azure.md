@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.topic: article
 ms.date: 11/09/2018
 ms.author: edprice
-ms.openlocfilehash: 8eb8075454dc3a49e9525d566c34c64bab8be5a0
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: fe6e581963753cac33092285fee0c8d16959bde8
+ms.sourcegitcommit: ce4a99b493f8cf2d2fd4e29d9ba92f5f942a754c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70083450"
+ms.lasthandoff: 12/28/2019
+ms.locfileid: "75530108"
 ---
 # <a name="deploy-ibm-db2-purescale-on-azure"></a>Развертывание IBM DB2 pureScale в Azure
 
@@ -27,7 +27,7 @@ ms.locfileid: "70083450"
 
 Чтобы выполнить шаги, используемые для миграции, воспользуйтесь скриптами установки в репозитории [DB2onAzure](https://aka.ms/db2onazure) на сайте GitHub. Эти скрипты основаны на архитектуре для обычной рабочей нагрузки OLTP среднего размера.
 
-## <a name="get-started"></a>Начало работы
+## <a name="get-started"></a>Начать
 
 Чтобы развернуть эту архитектуру, скачайте и запустите скрипт deploy.sh, доступный в репозитории [DB2onAzure](https://aka.ms/db2onazure) на сайте GitHub.
 
@@ -42,31 +42,33 @@ ms.locfileid: "70083450"
 
 -   настройка группы ресурсов, виртуальной сети и подсети в Azure для установки;
 
--   настройка групп безопасности сети и SSH для среды;
+-   Настраивает группы безопасности сети и SSH для среды.
 
--   настройка сетевых адаптеров на виртуальных машинах GlusterFS и DB2 pureScale;
+-   Настраивает несколько сетевых карт как для общего хранилища, так и для виртуальных машин Пурескале DB2.
 
--   создание виртуальных машин в хранилище GlusterFS;
+-   Создает виртуальные машины общего хранилища. Если вы используете Локальные дисковые пространства или другое решение для хранения данных, см. раздел [Общие сведения о Локальные дисковые пространства](/windows-server/storage/storage-spaces/storage-spaces-direct-overview).
 
 -   создание виртуальной машины jumpbox;
 
--   создание виртуальной машины DB2 pureScale;
+-   Создает виртуальные машины DB2 Пурескале.
 
--   создание следящей виртуальной машины, связь с которой проверят DB2 pureScale;
+-   Создает виртуальную машину-свидетель, которую Пурескале с помощью DB2. Пропустите эту часть развертывания, если для вашей версии DB2 Пурескале не требуется следящий сервер.
 
--   создание виртуальной машины Windows для тестирования (без установки чего-либо).
+-   Создает виртуальную машину Windows для использования при тестировании, но не устанавливает что-либо на нее.
 
-После этого скрипты развертывания создают виртуальную сеть хранения данных iSCSI (vSAN) для подключения к общему хранилищу в Azure. В этом примере iSCSI подключается к GlusterFS. Это решение также дает возможность установить цели iSCSI как один узел Windows. Сеть iSCSI предоставляет интерфейс общего блочного хранилища по TCP/IP, что позволяет процедуре установки DB2 pureScale использовать интерфейс устройства для подключения к общему хранилищу. Основные сведения о GlusterFS см. в статье [об архитектуре и типах томов](https://docs.gluster.org/en/latest/Quick-Start-Guide/Architecture/) на сайте Gluster Docs.
+После этого скрипты развертывания создают виртуальную сеть хранения данных iSCSI (vSAN) для подключения к общему хранилищу в Azure. В этом примере iSCSI подключается к общему кластеру хранилища. В исходном решении клиента было использовано Глустерфс. Однако IBM больше не поддерживает такой подход. Чтобы поддерживать поддержку от IBM, необходимо использовать поддерживаемую iSCSI-совместимую файловую систему. Корпорация Майкрософт предлагает Локальные дисковые пространства (S2D) в качестве варианта.
+
+Это решение также дает возможность установить цели iSCSI как один узел Windows. Сеть iSCSI предоставляет интерфейс общего блочного хранилища по TCP/IP, что позволяет процедуре установки DB2 pureScale использовать интерфейс устройства для подключения к общему хранилищу.
 
 Скрипты развертывания выполняют следующие общие действия:
 
-1.  Настройка кластера общего хранилища в Azure с помощью GlusterFS. При этом используется по крайней мере два узла Linux. Сведения о настройке см. в разделе [Настройка хранилища Red Hat Gluster в Microsoft Azure](https://access.redhat.com/documentation/en-us/red_hat_gluster_storage/3.1/html/deployment_guide_for_public_cloud/chap-documentation-deployment_guide_for_public_cloud-azure-setting_up_rhgs_azure) в документации по Red Hat Gluster.
+1.  Настройка кластера общего хранилища в Azure. При этом используется по крайней мере два узла Linux.
 
-2.  Настройка интерфейса iSCSI Direct на целевых серверах Linux для GlusterFS. Сведения о настройке см. в разделе [iSCSI GlusterFS](https://docs.gluster.org/en/latest/Administrator%20Guide/GlusterFS%20iSCSI/) в руководстве администратора GlusterFS.
+2.  Настройте прямой интерфейс iSCSI на целевых серверах Linux для кластера общих хранилищ.
 
-3.  Настройка инициатора iSCSI на виртуальных машинах Linux. Инициатор обратится к кластеру GlusterFS с помощью целевого объекта iSCSI. Сведения о настройке см. в статье [How To Configure An iSCSI Target And Initiator In Linux](https://www.rootusers.com/how-to-configure-an-iscsi-target-and-initiator-in-linux/) (Настройка цели и инициатора iSCSI в Linux) документации по RootUsers.
+3.  Настройка инициатора iSCSI на виртуальных машинах Linux. Инициатор будет получать доступ к общему кластеру хранилища с помощью цели iSCSI. Сведения о настройке см. в статье [How To Configure An iSCSI Target And Initiator In Linux](https://www.rootusers.com/how-to-configure-an-iscsi-target-and-initiator-in-linux/) (Настройка цели и инициатора iSCSI в Linux) документации по RootUsers.
 
-4.  Установка GlusterFS в качестве уровня хранилища для интерфейса iSCSI.
+4.  Установите общий уровень хранилища для интерфейса iSCSI.
 
 После создания устройства iSCSI с помощью скрипта остается установить DB2 pureScale. Когда устанавливается DB2 pureScale, [IBM Spectrum Scale](https://www.ibm.com/support/knowledgecenter/SSEPGG_11.1.0/com.ibm.db2.luw.qb.server.doc/doc/t0057167.html) (прежнее название — GPFS) компилируется и устанавливается в кластере GlusterFS. Эта кластерная файловая система позволяет DB2 pureScale обеспечить совместное использование данных на виртуальных машинах с подсистемой DB2 pureScale. Дополнительные сведения см. в документации по [IBM Spectrum Scale](https://www.ibm.com/support/knowledgecenter/en/STXKQY_4.2.0/ibmspectrumscale42_welcome.html) на сайте IBM.
 
@@ -81,13 +83,13 @@ ms.locfileid: "70083450"
 |---------------------------|----------------------------------------------|-------------------------------------------------------------------------------------------------------|
 | Добро пожаловать!                   |                                              | "New Install" (Новая установка)                                                                                           |
 | "Choose a Product" (Выбор продукта)          |                                              | "DB2 Version 11.1.3.3. Server Editions with Db2 pureScale" (Db2 версии 11.1.3.3, серверные выпуски с Db2 pureScale)                                              |
-| Конфигурация             | Каталог                                    | /data1/opt/ibm/db2/V11.1                                                                              |
+| Настройка             | Каталог                                    | /data1/opt/ibm/db2/V11.1                                                                              |
 |                           | "Select the installation type" (Выбор типа установки)                 | "Typical" (Стандартный)                                                                                               |
-|                           | "I agree to the IBM terms" (Я принимаю условия IBM)                     | Флажок установлен                                                                                               |
+|                           | "I agree to the IBM terms" (Я принимаю условия IBM)                     | Отмечено                                                                                               |
 | "Instance Owner" (Владелец экземпляра)            | "Existing User For Instance, User name" (Существующий пользователь экземпляра, имя пользователя)        | DB2sdin1                                                                                              |
 | "Fenced User" (Изолированный пользователь)               | "Existing User, User name" (Существующий пользователь, имя пользователя)                     | DB2sdfe1                                                                                              |
 | "Cluster File System" (Файловая система кластера)       | "Shared disk partition device path" (Путь к устройству с общим разделом диска)            | /dev/dm-2                                                                                             |
-|                           | Точка подключения                                  | /DB2sd\_1804a                                                                                         |
+|                           | "Mount point" (Точка подключения)                                  | /DB2sd\_1804a                                                                                         |
 |                           | "Shared disk for data" (Общий диск для данных)                         | /dev/dm-1                                                                                             |
 |                           | "Mount point (Data)" (Точка подключения, данные)                           | /DB2fs/datafs1                                                                                        |
 |                           | "Shared disk for log" (Общий диск для журнала)                          | /dev/dm-0                                                                                             |
@@ -139,9 +141,7 @@ ms.locfileid: "70083450"
 
 Дополнительные сведения об этих и других известных проблемах см. в файле kb.md в репозитории [DB2onAzure](https://aka.ms/DB2onAzure).
 
-## <a name="next-steps"></a>Следующие шаги
-
--   [iSCSI GlusterFS](https://docs.gluster.org/en/latest/Administrator%20Guide/GlusterFS%20iSCSI/)
+## <a name="next-steps"></a>Дальнейшие действия
 
 -   [Creating required users for a Db2 pureScale Feature installation](https://www.ibm.com/support/knowledgecenter/en/SSEPGG_11.1.0/com.ibm.db2.luw.qb.server.doc/doc/t0055374.html?pos=2) (Создание обязательных пользователей для установки Db2 pureScale Feature)
 
@@ -151,6 +151,6 @@ ms.locfileid: "70083450"
 
 -   [IBM Data Studio](https://www.ibm.com/developerworks/downloads/im/data/index.html/)
 
--   [Альянс по модернизации платформы: IBM DB2 на Azure](https://www.platformmodernization.org/pages/ibmdb2azure.aspx)
+-   [Platform модернизации Alliance: IBM DB2 в Azure](https://www.platformmodernization.org/pages/ibmdb2azure.aspx)
 
 -   [Виртуальный центр обработки данных Azure: руководство по миграции методом lift-and-shift](https://azure.microsoft.com/resources/azure-virtual-datacenter-lift-and-shift-guide/)

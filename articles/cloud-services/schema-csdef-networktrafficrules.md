@@ -1,5 +1,5 @@
 ---
-title: Схема NetworkTrafficRules определения облачных служб Azure | Документация Майкрософт
+title: Схема DEF. NetworkTrafficRules для облачных служб Azure | Документация Майкрософт
 ms.custom: ''
 ms.date: 04/14/2015
 services: cloud-services
@@ -10,20 +10,19 @@ ms.tgt_pltfrm: ''
 ms.topic: reference
 ms.assetid: 351b369f-365e-46c1-82ce-03fc3655cc88
 caps.latest.revision: 17
-author: georgewallace
-ms.author: gwallace
-manager: gwallace
-ms.openlocfilehash: e99b9f0f601841fe6ff32eba0a43bfafd652e941
-ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
+author: tgore03
+ms.author: tagore
+ms.openlocfilehash: e6d156810b9fdee69ddac122eec06db7267ddf36
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2019
-ms.locfileid: "68945948"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75449044"
 ---
 # <a name="azure-cloud-services-definition-networktrafficrules-schema"></a>Схема NetworkTrafficRules определения облачных служб Azure
 Узел `NetworkTrafficRules` — это необязательный элемент в файле определения службы, который указывает, как роли взаимодействуют друг с другом. Он ограничивает множество ролей, которые могут обращаться ко внутренним конечным точкам определенной роли. `NetworkTrafficRules` не является отдельным элементом. Он объединяется с двумя или более ролями в файле определения службы.
 
-Расширение по умолчанию для файла определения службы — .csdef.
+По умолчанию определения службы хранятся в файле с расширением .csdef.
 
 > [!NOTE]
 >  Узел `NetworkTrafficRules` доступен только при использовании пакета Azure SDK версии 1.3 или выше.
@@ -76,10 +75,10 @@ ms.locfileid: "68945948"
 ##  <a name="RoleEndpoint"></a> Элемент RoleEndpoint
 Элемент `RoleEndpoint` описывает конечную точку в роли, с которой можно обмениваться данными. Можно указать несколько элементов `RoleEndpoint`, если в роли существует несколько конечных точек.
 
-| Атрибут      | Type     | Описание |
+| attribute      | Тип     | Description |
 | -------------- | -------- | ----------- |
-| `endpointName` | `string` | Обязательный. Имя конечной точки, к которой разрешается трафик.|
-| `roleName`     | `string` | Обязательный. Имя веб-роли, с которой разрешается обмен данными.|
+| `endpointName` | `string` | Обязательный элемент. Имя конечной точки, к которой разрешается трафик.|
+| `roleName`     | `string` | Обязательный элемент. Имя веб-роли, с которой разрешается обмен данными.|
 
 ## <a name="allowalltraffic-element"></a>Элемент AllowAllTraffic
 Элемент `AllowAllTraffic` — это правило, которое разрешает всем ролям обмениваться данными с конечными точками, определенными в узле `Destinations`.
@@ -87,16 +86,20 @@ ms.locfileid: "68945948"
 ##  <a name="WhenSource"></a> Элемент WhenSource
 Элемент `WhenSource` описывает коллекцию ролей, которые могут обмениваться данными с конечными точками, определенными в узле `Destinations`.
 
-| Атрибут | Тип     | Описание |
+| attribute | Тип     | Description |
 | --------- | -------- | ----------- |
-| `matches` | `string` | Обязательный. Указывает правило, применяемое при разрешении обмена данными. Сейчас единственное допустимое значение — `AnyRule`.|
+| `matches` | `string` | Обязательный элемент. Указывает правило, применяемое при разрешении обмена данными. Сейчас единственное допустимое значение — `AnyRule`.|
   
 ##  <a name="FromRole"></a> Элемент FromRole
 Элемент `FromRole` указывает роли, которые могут обмениваться данными с конечными точками, определенными в узле `Destinations`. Можно указать несколько элементов `FromRole`, если существует несколько ролей, которые могут обмениваться данными с конечными точками.
 
-| Атрибут  | Type     | Описание |
+| attribute  | Тип     | Description |
 | ---------- | -------- | ----------- |
-| `roleName` | `string` | Обязательный. Имя роли, из которой разрешается обмен данными.|
+| `roleName` | `string` | Обязательный элемент. Имя роли, из которой разрешается обмен данными.|
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также:
 [Схема определения облачных служб (классических)](schema-csdef-file.md).
+
+
+
+

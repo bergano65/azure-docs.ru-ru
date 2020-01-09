@@ -1,6 +1,6 @@
 ---
-title: Разработка и отладка модулей в Visual Studio — Azure IoT Edge | Документация Майкрософт
-description: Использование Visual Studio 2019 для разработки и отладки модулей для Azure IoT Edge
+title: Разработка и отладка модулей в Visual Studio — Azure IoT Edge
+description: Используйте Visual Studio с инструментами Azure IoT для разработки модуля C или C# IOT EDGE и отправки его из центра Интернета вещей на устройство IOT, настроенное манифестом развертывания.
 services: iot-edge
 author: shizn
 manager: philmea
@@ -8,12 +8,12 @@ ms.author: xshi
 ms.date: 07/22/2019
 ms.topic: conceptual
 ms.service: iot-edge
-ms.openlocfilehash: 9cec4c436c6e8ea08e37ec0ddd8a9a01e493447c
-ms.sourcegitcommit: c31dbf646682c0f9d731f8df8cfd43d36a041f85
+ms.openlocfilehash: a94bc4825f70b9858260feaadaeded6c76ba46e2
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2019
-ms.locfileid: "74561696"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75457251"
 ---
 # <a name="use-visual-studio-2019-to-develop-and-debug-modules-for-azure-iot-edge"></a>Использование Visual Studio 2019 для разработки и отладки модулей для Azure IoT Edge
 
@@ -67,7 +67,7 @@ ms.locfileid: "74561696"
   > [!TIP]
   > Вместо облачного реестра можно использовать локальный реестр Docker для создания прототипов и тестирования.
 
-- Для тестирования модуля на устройстве потребуется действующий Центр Интернета вещей по крайней мере с одним устройством IoT Edge. Чтобы использовать компьютер в качестве устройства IoT Edge, выполните инструкции в кратком руководстве для [Linux](quickstart-linux.md) или [Windows](quickstart.md). Если вы запустили управляющую программу IoT Edge на компьютере разработки, может потребоваться остановить EdgeHub и EdgeAgent, прежде чем запустить разработку в Visual Studio.
+- Для тестирования модуля на устройстве потребуется действующий центр Интернета вещей по крайней мере с одним устройством IoT Edge. Чтобы использовать компьютер в качестве устройства IoT Edge, выполните инструкции в кратком руководстве для [Linux](quickstart-linux.md) или [Windows](quickstart.md). Если вы запустили управляющую программу IoT Edge на компьютере разработки, может потребоваться остановить EdgeHub и EdgeAgent, прежде чем запустить разработку в Visual Studio.
 
 ### <a name="check-your-tools-version"></a>Проверка версии инструментов
 
@@ -235,7 +235,7 @@ ms.locfileid: "74561696"
 
 1. Нажмите кнопку обновить, чтобы просмотреть новые модули, работающие с модулем **симулатедтемпературесенсор** , а также **$edgeAgent** и **$edgeHub**.
 
-## <a name="view-generated-data"></a>Просмотр сформированных данных.
+## <a name="view-generated-data"></a>Просмотр сформированных данных
 
 1. Чтобы отслеживать сообщение D2C для конкретного устройства, выберите его в списке, а затем щелкните **начать мониторинг встроенной конечной точки события** в окне **действий** .
 

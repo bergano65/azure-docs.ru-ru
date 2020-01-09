@@ -4,15 +4,15 @@ description: Диагностику Azure можно использовать д
 ms.service: azure-monitor
 ms.subservice: diagnostic-extension
 ms.topic: conceptual
-author: rboucher
-ms.author: robb
+author: bwren
+ms.author: bwren
 ms.date: 02/13/2019
-ms.openlocfilehash: d1721411b57fc3542af48fc5f48eca7e4a2d06c8
-ms.sourcegitcommit: ae461c90cada1231f496bf442ee0c4dcdb6396bc
+ms.openlocfilehash: 1bdefc6b61e4e5cc5b8648880c5fdd8662af1bc1
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72552149"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75395367"
 ---
 # <a name="what-is-azure-diagnostics-extension"></a>Расширение Диагностики Azure
 Расширение диагностики Azure — это агент, который позволяет выполнять сбор диагностических данных о развернутом приложении. Можно использовать модуль диагностики из различных источников. Сейчас поддерживаются веб-роль и рабочая роль облачной службы Azure (классические), виртуальные машины, масштабируемые наборы виртуальных машин и Service Fabric. Для других служб Azure предусмотрены другие методы диагностики. Ознакомьтесь с [общими сведениями о мониторинге в Azure](../../azure-monitor/overview.md).
@@ -23,7 +23,7 @@ ms.locfileid: "72552149"
 ## <a name="data-you-can-collect"></a>Собираемые данные
 Расширение системы диагностики Azure может собирать следующие типы данных:
 
-| источник данных | Описание |
+| Источник данных | Description |
 | --- | --- |
 | Метрики счетчиков производительности |Системные и пользовательские счетчики производительности |
 | Журналы приложений |Сообщения трассировки, записанные вашим приложением |
@@ -70,7 +70,7 @@ ms.locfileid: "72552149"
 
 * [Использование Диагностики Azure с Application Insights для облачных служб Azure](../../azure-monitor/app/cloudservices.md)
 * [Трассировка потока в приложении облачных служб с помощью системы диагностики Azure](../../cloud-services/cloud-services-dotnet-diagnostics-trace-flow.md)
-* [Использование PowerShell для настройки диагностики в облачных службах](../../virtual-machines/extensions/diagnostics-windows.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)
+* [Включение системы диагностики Azure на виртуальной машине под управлением Windows с помощью PowerShell](../../virtual-machines/extensions/diagnostics-windows.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)
 
 ## <a name="virtual-machines"></a>Виртуальные машины
 * Если используется Visual Studio, см. статью [Отладка облачной службы или виртуальной машины Azure в Visual Studio](/visualstudio/azure/vs-azure-tools-debug-cloud-services-virtual-machines). В остальных случаях см. следующие статьи:
@@ -82,7 +82,7 @@ ms.locfileid: "72552149"
 * [Создание виртуальной машины Windows с мониторингом и диагностикой с использованием шаблона Azure Resource Manager](../../virtual-machines/extensions/diagnostics-template.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)
 
 ## <a name="service-fabric"></a>Service Fabric
-Начните со статьи [Мониторинг приложения Service Fabric](../../service-fabric/service-fabric-diagnostics-how-to-monitor-and-diagnose-services-locally.md). В дереве навигации слева от нее вы найдете ссылки на множество других статей по диагностике Service Fabric.
+Начните со статьи [Мониторинг и диагностика состояния служб в локальной среде разработки](../../service-fabric/service-fabric-diagnostics-how-to-monitor-and-diagnose-services-locally.md). В дереве навигации слева от нее вы найдете ссылки на множество других статей по диагностике Service Fabric.
 
 ## <a name="general-articles"></a>Общие статьи
 * Узнайте, как [использовать счетчики производительности в Диагностике Azure](../../cloud-services/diagnostics-performance-counters.md).

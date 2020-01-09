@@ -1,5 +1,5 @@
 ---
-title: Удаление учетных записей из кэша при входе — платформа Microsoft Identity | Службы
+title: Удаление учетных записей из кэша маркеров при выходе — платформа Microsoft Identity | Службы
 description: Узнайте, как удалить учетную запись из кэша маркеров при выходе
 services: active-directory
 documentationcenter: dev-center-name
@@ -15,12 +15,12 @@ ms.date: 09/30/2019
 ms.author: jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 375382b1245186197657c5067e3c5b4ec2b15655
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.openlocfilehash: 5472b424f7d2b44b62e6e4495afaf7bdfbbc8439
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74961664"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75423510"
 ---
 # <a name="remove-accounts-from-the-cache-on-global-sign-out"></a>Удаление учетных записей из кэша при глобальном выходе
 
@@ -38,7 +38,7 @@ ms.locfileid: "74961664"
 
 **URL-адрес выхода** , зарегистрированный для приложения, позволяет реализовать единый выход. Конечная точка `logout` платформы Microsoft Identity будет вызывать **URL-адрес выхода** , зарегистрированный в приложении. Этот вызов происходит, если выход был инициирован из веб-приложения или из другого веб-приложения или браузера. Дополнительные сведения см. в разделе [единый выход](v2-protocols-oidc.md#single-sign-out).
 
-```CSharp
+```csharp
 public static class WebAppServiceCollectionExtensions
 {
  public static IServiceCollection AddMsal(this IServiceCollection services, IConfiguration configuration, IEnumerable<string> initialScopes, string configSectionName = "AzureAd")

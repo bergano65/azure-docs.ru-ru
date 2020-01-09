@@ -7,12 +7,12 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 10/31/2019
-ms.openlocfilehash: e29041942157e720cce3414f7b6e6904667c1894
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: 86b9230dbdca82c5599c1839fd64bd3df4725051
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73665477"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75435574"
 ---
 # <a name="add-additional-storage-accounts-to-hdinsight"></a>Добавление дополнительных учетных записей хранения в HDInsight
 
@@ -21,16 +21,16 @@ ms.locfileid: "73665477"
 > [!IMPORTANT]  
 > Сведения в этом документе посвящены добавлению дополнительных учетных записей хранения в кластер после его создания. Сведения о добавлении учетных записей хранения во время создания кластера см. в статье о [настройке кластеров HDInsight с использованием Apache Hadoop, Apache Spark, Apache Kafka и других платформ](hdinsight-hadoop-provision-linux-clusters.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 * Кластер Hadoop в HDInsight. Ознакомьтесь со статьей [Краткое руководство. Использование Apache Hadoop и Apache Hive в Azure HDInsight с шаблоном Resource Manager](./hadoop/apache-hadoop-linux-tutorial-get-started.md).
-* Имя и ключ учетной записи хранения. См. раздел [Управление параметрами учетной записи хранения в портал Azure](../storage/common/storage-account-manage.md).
+* Имя и ключ учетной записи хранения. См. [раздел Управление ключами доступа учетной записи хранения](../storage/common/storage-account-keys-manage.md).
 * [Правильное имя кластера с учетом регистра](hdinsight-hadoop-manage-ambari-rest-api.md#identify-correctly-cased-cluster-name).
 * При использовании PowerShell вам потребуется модуль AZ.  См. [обзор Azure PowerShell](https://docs.microsoft.com/powershell/azure/overview).
 * Если вы еще не установили Azure CLI, см. раздел [интерфейс командной строки Azure (CLI)](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest).
-* Если вы используете bash или командную строку Windows, вам также потребуется **JQ**, обработчик JSON командной строки.  Дополнительные сведения см. на странице [https://stedolan.github.io/jq/](https://stedolan.github.io/jq/). Для bash в системе Ubuntu в Windows 10 см. раздел [подсистема Windows для установки Linux для Windows 10](https://docs.microsoft.com/windows/wsl/install-win10).
+* Если вы используете bash или командную строку Windows, вам также потребуется **JQ**, обработчик JSON командной строки.  См. раздел [https://stedolan.github.io/jq/](https://stedolan.github.io/jq/). Для bash в системе Ubuntu в Windows 10 см. раздел [подсистема Windows для установки Linux для Windows 10](https://docs.microsoft.com/windows/wsl/install-win10).
 
-## <a name="how-it-works"></a>Принцип работы
+## <a name="how-it-works"></a>Принципы работы
 
 Этот скрипт принимает следующие параметры.
 
@@ -86,7 +86,7 @@ Submit-AzHDInsightScriptAction `
     -Parameters $parameters
 ```
 
-### <a name="azure-cli"></a>Azure CLI
+### <a name="azure-cli"></a>Интерфейс командной строки Azure
 
 С помощью команды [AZ hdinsight Script — действие Execute](https://docs.microsoft.com/cli/azure/hdinsight/script-action?view=azure-cli-latest#az-hdinsight-script-action-execute).  Замените `CLUSTERNAME`, `RESOURCEGROUP`, `ACCOUNTNAME`и `ACCOUNTKEY` соответствующими значениями.
 
@@ -108,7 +108,7 @@ az hdinsight script-action execute ^
 
 ### <a name="storage-firewall"></a>Брандмауэр хранилища
 
-Если вы решили защитить учетную запись хранения с ограничениями **брандмауэра и виртуальной сети** в **выбранных сетях**, обязательно включите исключение **Разрешить доверенные службы Майкрософт...** , чтобы HDInsight могла получить доступ к хранилищу. учетной записи.
+Если вы решили защитить учетную запись хранения с ограничениями **брандмауэра и виртуальной сети** в **выбранных сетях**, обязательно включите исключение **Разрешить доверенные службы Майкрософт...** , чтобы HDInsight могла получить доступ к вашей учетной записи хранения.
 
 ### <a name="storage-accounts-not-displayed-in-azure-portal-or-tools"></a>Учетные записи хранения не отображаются на портале Azure или в Azure Tools
 
@@ -160,7 +160,7 @@ curl --silent -u admin:$password -G "https://$clusterName.azurehdinsight.net/api
 | jq ".items[].configurations[].properties[$ACCOUNTNAME] | select(. != null)"
 ```
 
-### <a name="cmd"></a>cmd.
+### <a name="cmd"></a>cmd
 
 Замените `CLUSTERNAME` правильным именем кластера с учетом регистра в обоих скриптах. Сначала укажите используемую версию конфигурации службы, введя следующую команду:
 

@@ -1,25 +1,16 @@
 ---
-title: Azure Service Fabric. Мониторинг производительности с помощью расширения Диагностики Microsoft Azure | Документация Майкрософт
+title: Мониторинг производительности с помощью система диагностики Azure Windows
 description: Использование Диагностики Azure для Windows для сбора данных счетчиков производительности для кластеров Azure Service Fabric.
-services: service-fabric
-documentationcenter: .net
 author: srrengar
-manager: chackdan
-editor: ''
-ms.assetid: ''
-ms.service: service-fabric
-ms.devlang: dotnet
 ms.topic: conceptual
-ms.tgt_pltfrm: NA
-ms.workload: NA
 ms.date: 11/21/2018
 ms.author: srrengar
-ms.openlocfilehash: e29c32c27e7f6c62eb2c6a9cbe2e4d3f1294f038
-ms.sourcegitcommit: 116bc6a75e501b7bba85e750b336f2af4ad29f5a
+ms.openlocfilehash: 0819ca02d088aeb9ada5de1269467f70242bbcca
+ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/20/2019
-ms.locfileid: "71155163"
+ms.lasthandoff: 01/02/2020
+ms.locfileid: "75609916"
 ---
 # <a name="performance-monitoring-with-the-windows-azure-diagnostics-extension"></a>Мониторинг производительности с помощью расширения для Диагностики Azure для Windows
 
@@ -200,7 +191,7 @@ ms.locfileid: "71155163"
 
 1. По завершении обновления (оно занимает 15–45 минут в зависимости от ряда факторов, в частности от размера группы ресурсов и того, первый ли раз выполняется развертывание) система диагностики Microsoft Azure должна собирать данные счетчиков производительности и отправлять их в таблицу с именем WADPerformanceCountersTable в учетной записи хранения, связанной с вашим кластером. Просматривайте данные счетчиков производительности в Application Insights, [добавив приемник AI в шаблон Resource Manager](service-fabric-diagnostics-event-aggregation-wad.md#add-the-application-insights-sink-to-the-resource-manager-template).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Собирайте данные дополнительных счетчиков производительности для кластера. Список счетчиков, данные которых следует собирать, см. в статье [Метрики производительности](service-fabric-diagnostics-event-generation-perf.md).
 * [Используйте мониторинг и систему диагностики с виртуальной машиной Windows и шаблонами Azure Resource Manager](../virtual-machines/windows/extensions-diagnostics-template.md), чтобы внести изменения в раздел `WadCfg`, включая настройку дополнительных учетных записей хранения для отправки данных диагностики.
-* Посетите [Построитель WadCfg](https://azure.github.io/azure-diagnostics-tools/config-builder/) , чтобы создать шаблон с нуля и убедиться в правильности синтаксиса. (https://azure.github.io/azure-diagnostics-tools/config-builder/) чтобы создать шаблон с нуля и убедиться в правильности синтаксиса.
+* Посетите [Построитель WadCfg](https://azure.github.io/azure-diagnostics-tools/config-builder/) , чтобы создать шаблон с нуля и убедиться в правильности синтаксиса. (https://azure.github.io/azure-diagnostics-tools/config-builder/), чтобы создать шаблон с нуля и убедиться в правильности синтаксиса.

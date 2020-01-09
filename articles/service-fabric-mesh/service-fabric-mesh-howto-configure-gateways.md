@@ -1,25 +1,17 @@
 ---
-title: Настройка шлюза для маршрутизации запросов | Документация Майкрософт
+title: Настройка шлюза для маршрутизации запросов
 description: Сведения о настройке шлюза, который обрабатывает входящий трафик для приложений, работающих на платформе "Сетка Service Fabric"
-services: service-fabric-mesh
-documentationcenter: .net
 author: dkkapur
-manager: chakdan
-editor: ''
-ms.assetid: ''
-ms.service: service-fabric-mesh
 ms.topic: conceptual
-ms.tgt_pltfrm: NA
-ms.workload: NA
 ms.date: 11/28/2018
 ms.author: dekapur
 ms.custom: mvc, devcenter
-ms.openlocfilehash: b4fc6f91ee2429205974b9cb7ceb05b7cff53f15
-ms.sourcegitcommit: 18061d0ea18ce2c2ac10652685323c6728fe8d5f
+ms.openlocfilehash: ec408403d4baa0f211c6bfe867a15c96513693cb
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69034210"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75461954"
 ---
 # <a name="configure-a-gateway-resource-to-route-requests"></a>Настройка шлюза для маршрутизации запросов
 
@@ -227,8 +219,8 @@ ms.locfileid: "69034210"
 ```
 
 Для этого шлюза настраивается приложение Linux "meshAppLinux", содержащее по меньшей мере две службы, helloWorldService и counterService, которые прослушивают порт 80. В зависимости от структуры URL-адреса входящего запроса этот шлюз перенаправит запрос к одной из этих служб. 
-* "\<IPAddress >: 80/helloWorld/\<Request\>" приведет к тому, что запрос будет направлен в "хелловорлдлистенер" в helloWorldService. 
-* "\<IPAddress >: 80/Counter/\<Request\>" приведет к тому, что запрос будет направлен в "каунтерлистенер" в каунтерсервице. 
+* "\<IPAddress >: 80/helloWorld/\<запрос\>" приведет к тому, что запрос будет направлен в "Хелловорлдлистенер" в helloWorldService. 
+* "\<IPAddress >: 80/Counter/\<запрос\>" приведет к тому, что запрос будет направлен в "Каунтерлистенер" в Каунтерсервице. 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Разверните [пример для входящих данных](https://github.com/Azure-Samples/service-fabric-mesh/tree/2018-09-01-preview/templates/ingress), чтобы увидеть шлюзы в действии.

@@ -4,15 +4,16 @@ description: Узнайте, как создать рабочую область
 ms.service: azure-monitor
 ms.subservice: logs
 ms.topic: conceptual
-author: mgoedtel
-ms.author: magoedte
+author: bwren
+ms.author: bwren
 ms.date: 03/12/2019
-ms.openlocfilehash: 6dd4486d52cc5c2fb568241ebaefad454e50cb2c
-ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
-ms.translationtype: HT
+ms.openlocfilehash: 0ab8019a8537d4080afdb457459f09cd156ff4ed
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-6ms.lasthandoff: 10/24/2019
+ms.lasthandoff: 10/24/2019
 ms.locfileid: "72894892"
+
 ---
 # <a name="create-a-log-analytics-workspace-in-the-azure-portal"></a>Создание рабочей области Log Analytics на портале Azure
 Используйте меню **Рабочие области Log Analytics**, чтобы создать рабочую область Log Analytics с помощью портала Azure. Рабочая область Log Analytics — это уникальная среда для данных журналов Azure Monitor. Каждая рабочая область имеет свои репозиторий данных и конфигурации, при этом источники данных и решения настроены для хранения данных в определенной рабочей области. Вам понадобится рабочая область Log Analytics, если вы собираете данные из следующих источников:
@@ -34,7 +35,8 @@ ms.locfileid: "72894892"
 Войдите на портал Azure по адресу [https://portal.azure.com](https://portal.azure.com). 
 
 ## <a name="create-a-workspace"></a>Создание рабочего пространства
-1. На портале Azure щелкните **Все службы**. В списке ресурсов введите **Log Analytics**. Как только вы начнете вводить символы, список отфильтруется соответствующим образом. Выберите рабочие области **Log Analytics**.
+1. На портале Azure щелкните **Все службы**. В списке ресурсов введите **Log Analytics**. Как только вы начнете вводить символы, список отфильтруется соответствующим образом. Выберите **Рабочие области Log Analytics**.
+
 
     ![портал Azure](media/quick-create-workspace/azure-portal-01.png)
   
@@ -44,6 +46,7 @@ ms.locfileid: "72894892"
    * Выберите в раскрывающемся списке **Подписку**, с которой нужно связать рабочую область, если выбранная по умолчанию не подходит.
    * Для **Группы ресурсов** выберите существующую и уже настроенную группу ресурсов или создайте новую.  
    * Выберите доступное **Расположение**.  Дополнительные сведения см. в разделе какие [Регионы log Analytics доступны в](https://azure.microsoft.com/regions/services/) и выполните поиск Azure Monitor в поле "Поиска по полю продукта** .  
+
 
    * При создании рабочей области в новой подписке, созданной после 2 апреля 2018 г., будет автоматически использоваться тарифный план *За ГБ*, и выбор ценовой категории будет недоступен.  При создании рабочей области в существующей подписке, созданной до 2 апреля, или в подписке, которая была привязана к существующей регистрации Соглашения Enterprise (EA), выберите нужную ценовую категорию.  Дополнительные сведения о конкретной ценовой категории см. в статье [Цены на Log Analytics](https://azure.microsoft.com/pricing/details/log-analytics/).
 

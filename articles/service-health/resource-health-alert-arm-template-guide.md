@@ -1,17 +1,14 @@
 ---
-title: Настройка оповещений о работоспособности ресурсов Azure с помощью шаблонов Resource Manager | Документация Майкрософт
+title: Создание оповещений о работоспособности ресурсов Azure — шаблоны диспетчер ресурсов
 description: Создание оповещений, которые уведомляют о том, когда ресурсы Azure стали недоступны, программными средствами.
-author: stephbaron
-ms.author: stbaron
 ms.topic: conceptual
-ms.service: service-health
 ms.date: 9/4/2018
-ms.openlocfilehash: 10a940e43b2ab4dff1b7c90aa7d6d274ddef82d9
-ms.sourcegitcommit: d47a30e54c5c9e65255f7ef3f7194a07931c27df
+ms.openlocfilehash: 34367c89666fd486f233136ce7968c7f3bf61912
+ms.sourcegitcommit: ec2eacbe5d3ac7878515092290722c41143f151d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73023910"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75551724"
 ---
 # <a name="configure-resource-health-alerts-using-resource-manager-templates"></a>Настройка оповещений о работоспособности ресурсов с помощью шаблонов Resource Manager
 
@@ -31,7 +28,7 @@ ms.locfileid: "73023910"
 1. Необходимо установить [модуль Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-Az-ps)
 2. [Создать или повторно использовать группу действий](../azure-monitor/platform/action-groups.md), настроенную на уведомление.
 
-## <a name="instructions"></a>Указания
+## <a name="instructions"></a>Instructions
 1. С помощью PowerShell войдите в Azure с помощью учетной записи и выберите нужную подписку.
 
         Login-AzAccount

@@ -1,26 +1,16 @@
 ---
-title: Управление приложениями Azure Servic Fabric в Visual Studio | Документация Майкрософт
+title: Управление приложениями в Visual Studio
 description: Используйте Visual Studio для создания, разработки, упаковки, развертывания и отладки приложений и служб Azure Service Fabric.
-services: service-fabric
-documentationcenter: .net
 author: mikkelhegn
-manager: chackdan
-editor: ''
-ms.assetid: c317cb7e-7eae-466e-ba41-6aa2518be5cf
-ms.service: service-fabric
-ms.devlang: dotnet
 ms.topic: conceptual
-ms.tgt_pltfrm: na
-ms.custom: vs-azure
-ms.workload: azure-vs
 ms.date: 03/26/2018
 ms.author: mikhegn
-ms.openlocfilehash: 4744858869e10094389be58ddd3960cb8cc2773a
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: d6734f5da0fb7e5c9052b26b55b2d90b068bdbbf
+ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60720099"
+ms.lasthandoff: 01/02/2020
+ms.locfileid: "75614338"
 ---
 # <a name="use-visual-studio-to-simplify-writing-and-managing-your-service-fabric-applications"></a>Использование Visual Studio для упрощения создания приложениями Service Fabric и управления ими
 Вы можете управлять приложениями и службами Azure Service Fabric с помощью Visual Studio. Настроив [свою среду разработки](service-fabric-get-started.md), вы сможете использовать Visual Studio для создания приложений Service Fabric, добавления служб, создания пакетов, регистрации и развертывания приложений в кластере локальной разработки.

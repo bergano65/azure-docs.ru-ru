@@ -1,5 +1,5 @@
 ---
-title: Добавление Azure AD с помощью Подключенные службы
+title: Использование подключенной службы Active Directory (Visual Studio)
 description: Добавление Azure Active Directory с помощью диалогового окна "Добавление подключенных служб" в Visual Studio
 author: ghogen
 manager: jillfra
@@ -12,14 +12,14 @@ ms.topic: conceptual
 ms.date: 03/12/2018
 ms.author: ghogen
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2bbbf002110d997d18c49fb03ad599342cdf618d
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.openlocfilehash: 435ec76a6a7ffe81c1be2752d69b79c1fb8d0bd2
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74964205"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75423187"
 ---
-# <a name="adding-an-azure-active-directory-by-using-connected-services-in-visual-studio"></a>Добавление Azure Active Directory с помощью подключенных служб в Visual Studio
+# <a name="add-an-azure-active-directory-by-using-connected-services-in-visual-studio"></a>Добавление Azure Active Directory с помощью Подключенные службы в Visual Studio
 
 Azure Active Directory (Azure AD) позволяет обеспечить единый вход для веб-приложений ASP.NET MVC или проверку подлинности Active Directory в службах веб-API. Благодаря аутентификации Azure AD пользователи смогут подключаться к вашим веб-приложениям, используя свои учетные записи Azure Active Directory. В число преимуществ проверки подлинности Azure AD с веб-API входит усиленная защита данных при использовании API из веб-приложения. С Azure AD вам не придется управлять отдельной системой проверки подлинности с отдельным управлением пользователями и учетными записями.
 
@@ -67,12 +67,12 @@ Azure Active Directory (Azure AD) позволяет обеспечить еди
 
 ## <a name="how-your-project-is-modified"></a>Какие изменения произойдут в проекте
 
-Когда вы добавляете подключенную службу с помощью мастера, Visual Studio добавляет в проект Azure Active Directory и соответствующие ссылки. В файлы конфигурации и файлы кода в проекте вносятся изменения, обеспечивающие поддержку Azure AD. Конкретные изменения, производимые Visual Studio, зависят от типа вашего проекта. Чтобы получить подробные сведения, ознакомьтесь со следующими статьями.
+Когда вы добавляете подключенную службу с помощью мастера, Visual Studio добавляет в проект Azure Active Directory и соответствующие ссылки. В файлы конфигурации и файлы кода в проекте вносятся изменения, обеспечивающие поддержку Azure AD. Конкретные изменения, производимые Visual Studio, зависят от типа вашего проекта. Подробные сведения см. в следующих разделах:
 
 - [Что произошло с моим проектом .NET MVC?](vs-active-directory-dotnet-what-happened.md)
 - [Что произошло с моим проектом веб-API?](vs-active-directory-webapi-what-happened.md)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Сценарии аутентификации в Azure Active Directory](authentication-scenarios.md).
+- [Сценарии аутентификации в Azure Active Directory](authentication-scenarios.md)
 - [Добавление возможности входа в веб-приложение ASP.NET с помощью учетной записи Майкрософт](quickstart-v1-aspnet-webapp.md)

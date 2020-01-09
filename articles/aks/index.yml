@@ -2,7 +2,6 @@
 documentType: LandingData
 title: Служба Azure Kubernetes (AKS)
 metadata:
-  document_id: null
   title: "Документация по службе Azure Kubernetes (AKS). Руководства и справочник по API\_| Документация Майкрософт"
   meta.description: 'AKS allows you to quickly deploy a production ready Kubernetes cluster in Azure. Learn how to use AKS with these quickstarts, tutorials, and samples.'
   services: container-service
@@ -88,8 +87,8 @@ sections:
               src: /learn/achievements/build-and-store-container-images.svg
               href: /learn/modules/build-and-store-container-images/
       - type: paragraph
-        text: <a href="/learn/browse/?products=azure-container-registry%2Cazure-container-instances">Другие интерактивные руководства</a>
-  - title: Справочные материалы
+        text: <a href="/learn/browse/?products=azure-container-registry%2Cazure-container-instances">Дополнительные интерактивные руководства…</a>
+  - title: Справочник
     items:
       - type: list
         style: cards

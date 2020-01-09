@@ -1,31 +1,22 @@
 ---
-title: Настройка сертификата шифрования и шифрование секретов в кластерах Linux на платформе Azure Service Fabric | Документация Майкрософт
+title: Настройка сертификата шифрования в кластерах Linux
 description: Узнайте, как настроить сертификат шифрования и шифровать секреты в кластерах Linux.
-services: service-fabric
-documentationcenter: .net
 author: shsha
-manager: ''
-editor: ''
-ms.assetid: 94a67e45-7094-4fbd-9c88-51f4fc3c523a
-ms.service: service-fabric
-ms.devlang: dotnet
 ms.topic: conceptual
-ms.tgt_pltfrm: NA
-ms.workload: NA
 ms.date: 01/04/2019
 ms.author: shsha
-ms.openlocfilehash: 9589d6ea69a2293d592a9e63f2b726f1a620bb9e
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 350718e4ce890fcbfaa7f2b10cc4c47dfac4da90
+ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "62126993"
+ms.lasthandoff: 01/02/2020
+ms.locfileid: "75614712"
 ---
 # <a name="set-up-an-encryption-certificate-and-encrypt-secrets-on-linux-clusters"></a>Настройка сертификата шифрования и шифрование секретов в кластерах Linux
-В этой статье описывается, как настроить сертификат шифрования и использовать его для шифрования секретов в кластерах Linux. Инструкции для кластеров Windows приведены в разделе [Настройка сертификата шифрования и шифрование секретов в кластерах Windows][secret-management-windows-specific-link].
+В этой статье описывается, как настроить сертификат шифрования и использовать его для шифрования секретов в кластерах Linux. Сведения о кластерах Windows см. [в разделе Настройка сертификата шифрования и шифрование секретов в кластерах Windows][secret-management-windows-specific-link].
 
 ## <a name="obtain-a-data-encipherment-certificate"></a>Получение сертификата шифрования данных
-Сертификат шифрования данных используются исключительно для шифрования и расшифровки [параметров][parameters-link] в файле Settings.xml службы и [переменных среды][environment-variables-link] в ее файле ServiceManifest.xml. Он не применяется для аутентификации или подписывания зашифрованного текста. Сертификат должен отвечать приведенным ниже требованиям.
+Сертификат о шифровании данных используется исключительно для шифрования и расшифровки [параметров][parameters-link] в параметрах. XML и [переменные среды][environment-variables-link] в службе ServiceManifest. XML. Он не применяется для аутентификации или подписывания зашифрованного текста. Сертификат должен отвечать приведенным ниже требованиям.
 
 * Сертификат должен содержать закрытый ключ.
 * Использование ключа сертификата должно включать шифрование данных (10) и не должно включать аутентификацию сервера или клиента.
@@ -54,7 +45,7 @@ user@linux:$ cat encrypted.txt | base64 -d | openssl smime -decrypt -inform der 
 ```
 
 ## <a name="next-steps"></a>Дальнейшие действия
-Узнайте, как [указать зашифрованные секреты в приложении][secret-management-specify-encrypted-secrets-link].
+Узнайте, как [указать зашифрованные секреты в приложении.][secret-management-specify-encrypted-secrets-link]
 
 <!-- Links -->
 [parameters-link]:service-fabric-how-to-parameterize-configuration-files.md

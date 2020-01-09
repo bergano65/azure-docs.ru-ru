@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 11/07/2018
 ms.author: mlearned
 ms.custom: mvc
-ms.openlocfilehash: 0c243d216e00adf49a6425e5b7be0d38caeef043
-ms.sourcegitcommit: a10074461cf112a00fec7e14ba700435173cd3ef
+ms.openlocfilehash: 8070e209910425f9baa0ae81aca349a067c70f76
+ms.sourcegitcommit: 51ed913864f11e78a4a98599b55bbb036550d8a5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73929051"
+ms.lasthandoff: 01/04/2020
+ms.locfileid: "75658548"
 ---
 # <a name="migrate-to-azure-kubernetes-service-aks"></a>Миграция в службу Kubernetes Azure (AKS)
 
@@ -79,7 +79,7 @@ az aks create \
 При миграции кластеров могут быть присоединены внешние службы Azure. Для этого не требуется отдых ресурсов, но для поддержания функциональности им потребуется обновить подключения с предыдущих на новые кластеры.
 
 * Реестр контейнеров Azure
-* Log Analytics;
+* Log Analytics
 * Application Insights
 * Диспетчер трафика
 * Учетная запись хранения
@@ -91,7 +91,7 @@ az aks create \
 
 Может потребоваться запросить увеличение [квоты сети](https://docs.microsoft.com/azure/azure-supportability/networking-quota-requests) , чтобы не допустить исчерпания IP-адресов. Дополнительные сведения см. в разделе [сети и диапазоны IP-адресов для AKS](https://docs.microsoft.com/azure/aks/configure-kubenet) .
 
-Дополнительные сведения см. в статье [Подписка Azure и ограничения службы](https://docs.microsoft.com/azure/azure-subscription-service-limits). Чтобы проверить текущие квоты, в портал Azure перейдите в [колонку подписки](https://portal.azure.com/#blade/Microsoft_Azure_Billing/SubscriptionsBlade), выберите свою подписку и щелкните **использование + квоты**.
+Дополнительные сведения см. в статье [Подписка Azure и ограничения службы](https://docs.microsoft.com/azure/azure-resource-manager/management/azure-subscription-service-limits). Чтобы проверить текущие квоты, в портал Azure перейдите в [колонку подписки](https://portal.azure.com/#blade/Microsoft_Azure_Billing/SubscriptionsBlade), выберите свою подписку и щелкните **использование + квоты**.
 
 ## <a name="high-availability-and-business-continuity"></a>Высокий уровень доступности и непрерывность бизнес-процессов
 

@@ -6,24 +6,24 @@ ms.author: stevenry
 ms.date: 12/17/2018
 ms.topic: conceptual
 manager: gwallace
-description: Быстрая разработка Kubernetes с использованием контейнеров и микрослужб в Azure
+description: Узнайте, как настроить непрерывную интеграцию и непрерывное развертывание с помощью Azure DevOps с Azure Dev Spaces
 keywords: Docker, Kubernetes, Azure, AKS, Azure Container Service, containers
-ms.openlocfilehash: 525e18cba48756e725cbc7d837c2352b0fec74fe
-ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
+ms.openlocfilehash: 66ff2080ad44098757a5d9360fd3307e65f7431a
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74280023"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75438447"
 ---
 # <a name="use-cicd-with-azure-dev-spaces"></a>Использование CI/CD в Azure Dev Spaces
 
 Из этой статьи вы узнаете, как настроить непрерывную интеграцию и непрерывное развертывание (CI/CD) для Службы Azure Kubernetes (AKS) с поддержкой Azure Dev Spaces. CI/CD для AKS позволяет автоматически развертывать обновления приложений при каждой отправке зафиксированного кода в исходный репозиторий. Благодаря CI/CD и поддержке Dev Spaces кластер сохраняет актуальность базовых показателей приложения, чтобы разработчики могли работать с ними.
 
-![Пример диаграммы CI/CD](../media/common/ci-cd-simple.png)
+![Пример схемы CI/CD](../media/common/ci-cd-simple.png)
 
 В этой статье описывается использование Azure DevOps, но те же принципы применяются и к другим системам непрерывной интеграции и непрерывного развертывания, таким как Jenkins, TeamCity и т. д.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Технические условия
 * [Кластер Службы Azure Kubernetes (AKS) с поддержкой Azure Dev Spaces](../get-started-netcore.md).
 * [Установленный интерфейс командной строки Azure Dev Spaces](upgrade-tools.md).
 * [Организация Azure DevOps с проектом](https://docs.microsoft.com/azure/devops/user-guide/sign-up-invite-teammates?view=vsts).
@@ -41,7 +41,7 @@ ms.locfileid: "74280023"
 azds space select -n dev
 ```
 
-При появлении запроса на выбор родительской среды выберите _\<none\>_ .
+При появлении запроса на выбор родительского пространства выберите _\<none\>_ .
 
 После создания пространства разработки необходимо определить суффикс узла. Используйте команду `azds show-context`, чтобы отобразить суффикс узла Azure Dev Spaces входящего контроллера.
 
@@ -77,7 +77,7 @@ MyAKS  MyResourceGroup  dev       fedcba098.eus.azds.io
 1. Выберите этот параметр, чтобы создать **Новый** конвейер сборки.
 1. Выберите **GitHub** в качестве источника, Авторизуйте учетную запись GitHub, если это необходимо, и выберите ветвь _azds_updates_ из разветвленной версии репозитория примера приложения для _разработки пространств_ .
 1. Выберите **конфигурацию в качестве кода**или **YAML**в качестве шаблона.
-1. Теперь появится страница конфигурации для конвейера сборки. Как упоминалось выше, перейдите к указанному для конкретного языка пути к **файлу YAML** с помощью кнопки **...** . Пример: `samples/dotnetcore/getting-started/azure-pipelines.dotnet.yml`.
+1. Теперь появится страница конфигурации для конвейера сборки. Как упоминалось выше, перейдите к указанному для конкретного языка пути к **файлу YAML** с помощью кнопки **...** . Например, `samples/dotnetcore/getting-started/azure-pipelines.dotnet.yml`.
 1. Перейдите на вкладку **переменные** .
 1. Вручную добавьте _dockerId_ в качестве переменной, которая является именем пользователя вашей [учетной записи администратора для Реестра контейнеров Azure](../../container-registry/container-registry-authentication.md#admin-account) (см. предварительные требования в начале статьи).
 1. Вручную добавьте _dockerPassword_ в качестве переменной, которая является паролем вашей [учетной записи администратора для Реестра контейнеров Azure](../../container-registry/container-registry-authentication.md#admin-account). Не забудьте указать _dockerPassword_ в качестве секрета (щелкнув значок замка) в целях безопасности.
@@ -183,7 +183,7 @@ http://dev.webfrontend.fedcba098.eus.azds.io  Available
 >
 > После этого может потребоваться удалить все объекты pod в пространстве имен `prod`, чтобы их можно было воссоздать без инструментирования Dev Spaces.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Сведения о коллективной разработке с помощью Azure Dev Spaces](../team-development-netcore.md)

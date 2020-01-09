@@ -1,5 +1,5 @@
 ---
-title: Использование проверок доступа для управления пользователями, исключенными из политик условного доступа — Azure Active Directory | Документация Майкрософт
+title: Управление пользователями, исключенными из политик условного доступа — Azure AD
 description: Узнайте, как использовать проверки доступа Azure Active Directory (Azure AD) для управления пользователями, которые были исключены из политик условного доступа.
 services: active-directory
 documentationcenter: ''
@@ -16,12 +16,12 @@ ms.date: 09/25/2018
 ms.author: ajburnle
 ms.reviewer: mwahl
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 246503fec6436bf49dcd5fb89c2dc0ed345a43ca
-ms.sourcegitcommit: a0b37e18b8823025e64427c26fae9fb7a3fe355a
+ms.openlocfilehash: d1d7bce940f2b614c239e8b5e5719d96da10a6c0
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68499911"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75422711"
 ---
 # <a name="use-azure-ad-access-reviews-to-manage-users-excluded-from-conditional-access-policies"></a>Использование проверок доступа Azure AD для управления пользователями, исключенными из политик условного доступа
 
@@ -97,7 +97,7 @@ ms.locfileid: "68499911"
 
 Рассмотрим два примера использования проверок доступа для управления исключениями в политиках условного доступа.
 
-## <a name="example-1-access-review-for-users-accessing-from-blocked-countriesregions"></a>Пример 1 Проверка доступа для пользователей, обращающихся к заблокированным странам или регионам
+## <a name="example-1-access-review-for-users-accessing-from-blocked-countriesregions"></a>Пример 1. Проверка доступа для пользователей, обращающихся к заблокированным странам или регионам
 
 Предположим, что у вас есть политика условного доступа, которая блокирует доступ из определенных стран или регионов. В этой политике также настроена группа исключений. Для членов этой группы мы рекомендуем применить следующую проверку доступа.
 
@@ -118,7 +118,7 @@ ms.locfileid: "68499911"
 
     ![Создайте панель проверки доступа, например 1](./media/conditional-access-exclusion/create-access-review-1.png)
 
-## <a name="example-2-access-review-for-users-accessing-with-legacy-authentication"></a>Пример 2 Проверка доступа для пользователей, использующих устаревшие методы аутентификации
+## <a name="example-2-access-review-for-users-accessing-with-legacy-authentication"></a>Пример 2. Проверка доступа для пользователей, использующих устаревшие методы проверки подлинности
 
 Предположим, у вас есть политика условного доступа, которая блокирует доступ для пользователей, использующих устаревшую проверку подлинности и более старые версии клиентов. В этой политике также настроена группа исключений. Для членов этой группы мы рекомендуем применить следующую проверку доступа.
 
@@ -156,7 +156,7 @@ ms.locfileid: "68499911"
 
 Вы как ИТ-администратор должны знать, что иногда невозможно избежать создания групп исключений для политик. Но проверки доступа AAD существенно упростят обслуживание таких групп, регулярную проверку руководителями компании или самими пользователями, а также аудит изменений.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Создание проверки доступа для групп или приложений](create-access-review.md)
 - [Что представляет собой условный доступ в Azure Active Directory?](../conditional-access/overview.md)

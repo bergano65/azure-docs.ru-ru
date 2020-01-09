@@ -1,23 +1,17 @@
 ---
-title: Хранилище службы "Конфигурация приложений Azure" для ключей и значений | Документация Майкрософт
-description: Общие сведения о хранении данных конфигурации в службе "Конфигурация приложений Azure"
-services: azure-app-configuration
-documentationcenter: ''
+title: Ключ конфигурации приложения Azure — хранилище значений
+description: Общие сведения о том, как данные конфигурации хранятся в конфигурации приложения Azure.
 author: yegu-ms
-manager: maiye
-editor: ''
-ms.service: azure-app-configuration
-ms.devlang: na
-ms.topic: overview
-ms.workload: tbd
-ms.date: 04/19/2019
 ms.author: yegu
-ms.openlocfilehash: 054de294c9edb0fe5b75da4ac7fd54ce987123de
-ms.sourcegitcommit: dbde4aed5a3188d6b4244ff7220f2f75fce65ada
-ms.translationtype: HT
+ms.service: azure-app-configuration
+ms.topic: conceptual
+ms.date: 04/19/2019
+ms.openlocfilehash: 11e019e276944e0c3f50d604420046979b5f3fbb
+ms.sourcegitcommit: f0dfcdd6e9de64d5513adf3dd4fe62b26db15e8b
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74185223"
+ms.lasthandoff: 12/26/2019
+ms.locfileid: "75495270"
 ---
 # <a name="keys-and-values"></a>Ключи и значения
 
@@ -102,7 +96,7 @@ ms.locfileid: "74185223"
 
 В хранилище Конфигурации приложений все данные конфигурации, в том числе все ключи и значения, шифруются при хранении и передаче. Конфигурацию приложений не является заменой Azure Key Vault. Не храните секреты приложения в этой службе.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Моментальный снимок на определенный момент времени](./concept-point-time-snapshot.md)  
 * [Управление функциями](./concept-feature-management.md)  

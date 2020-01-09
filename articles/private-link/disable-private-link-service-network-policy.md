@@ -2,17 +2,17 @@
 title: 'Отключение сетевых политик для IP-адреса источника службы частной связи Azure '
 description: Узнайте, как отключить политики сети для частной связи Azure
 services: private-link
-author: asudbring
+author: malopMSFT
 ms.service: private-link
 ms.topic: article
 ms.date: 09/16/2019
 ms.author: allensu
-ms.openlocfilehash: 22dbb12de0793db8aac12f610ff94380542d426a
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: 4c6bd64d141341e0b7fa5641e04320a95d7951bb
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74228105"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75453008"
 ---
 # <a name="disable-network-policies-for-private-link-service-source-ip"></a>Отключить политики сети для исходного IP-адреса службы частной связи
 
@@ -70,6 +70,6 @@ az network vnet subnet update \
 } 
  
 ```
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - Дополнительные сведения о [частной конечной точке Azure](private-endpoint-overview.md)
  

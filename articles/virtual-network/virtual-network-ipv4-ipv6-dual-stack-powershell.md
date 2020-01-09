@@ -11,14 +11,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 07/08/2019
+ms.date: 12/17/2019
 ms.author: kumud
-ms.openlocfilehash: 0b7f7a9198664693819143c306eeb1a020d22b7c
-ms.sourcegitcommit: dbde4aed5a3188d6b4244ff7220f2f75fce65ada
+ms.openlocfilehash: 003d677dcdead5792f932ecfe6350df63184cee2
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74185484"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75368341"
 ---
 # <a name="deploy-an-ipv6-dual-stack-application-using-basic-load-balancer---powershell-preview"></a>Развертывание приложения с двумя стеками для IPv6 с помощью базового Load Balancer PowerShell (Предварительная версия)
 
@@ -33,7 +33,7 @@ ms.locfileid: "74185484"
 
 Если вы решили установить и использовать PowerShell локально, для работы с этой статьей требуется модуль Azure PowerShell версии 6.9.0 или более поздней. Выполните командлет `Get-Module -ListAvailable Az`, чтобы узнать установленную версию. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-Az-ps). Если модуль PowerShell запущен локально, необходимо также выполнить командлет `Connect-AzAccount`, чтобы создать подключение к Azure.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Технические условия
 Перед развертыванием приложения с двойным стеком в Azure необходимо настроить подписку для этой предварительной версии, используя следующие Azure PowerShell:
 
 Зарегистрируйтесь следующим образом:
@@ -129,7 +129,11 @@ $backendPoolv4 = New-AzLoadBalancerBackendAddressPoolConfig `
 $backendPoolv6 = New-AzLoadBalancerBackendAddressPoolConfig `
 -Name "dsLbBackEndPool_v6"
 ```
-
+### <a name="create-a-health-probe"></a>Создание пробы работоспособности
+Используйте [Add-азлоадбаланцерпробеконфиг](/powershell/module/az.network/add-azloadbalancerprobeconfig) , чтобы создать пробу работоспособности для мониторинга работоспособности виртуальных машин.
+```azurepowershell
+$probe = New-AzLoadBalancerProbeConfig -Name MyProbe -Protocol tcp -Port 3389 -IntervalInSeconds 15 -ProbeCount 2
+```
 ### <a name="create-a-load-balancer-rule"></a>Создание правила балансировщика нагрузки
 
 Правило балансировщика нагрузки позволяет определить распределение трафика между виртуальными машинами. Вы определяете конфигурацию внешнего IP-адреса для входящего трафика и пул внутренних IP-адресов для приема трафика, а также требуемый порт источника и назначения. Чтобы убедиться в том, что трафик получает только работоспособные виртуальные машины, можно дополнительно определить проверку работоспособности. Базовая подсистема балансировки нагрузки использует проверку IPv4 для оценки работоспособности конечных точек IPv4 и IPv6 на виртуальных машинах. В стандартную подсистему балансировки нагрузки входит поддержка явной проверки работоспособности IPv6.
@@ -143,7 +147,8 @@ $lbrule_v4 = New-AzLoadBalancerRuleConfig `
   -BackendAddressPool $backendPoolv4 `
   -Protocol Tcp `
   -FrontendPort 80 `
-  -BackendPort 80
+  -BackendPort 80 `
+  -probe $probe
 
 $lbrule_v6 = New-AzLoadBalancerRuleConfig `
   -Name "dsLBrule_v6" `
@@ -151,7 +156,8 @@ $lbrule_v6 = New-AzLoadBalancerRuleConfig `
   -BackendAddressPool $backendPoolv6 `
   -Protocol Tcp `
   -FrontendPort 80 `
-  -BackendPort 80
+  -BackendPort 80 `
+  -probe $probe
 ```
 
 ### <a name="create-load-balancer"></a>Создание подсистемы балансировки нагрузки
@@ -172,7 +178,7 @@ $lb = New-AzLoadBalancer `
 
 ## <a name="create-network-resources"></a>Создание сетевых ресурсов
 Перед развертыванием некоторых виртуальных машин и проверки балансировщика необходимо создать вспомогательные сетевые ресурсы — группы доступности, группу безопасности сети, виртуальную сеть и виртуальные сетевые карты. 
-### <a name="create-an-availability-set"></a>"Создать группу доступности"
+### <a name="create-an-availability-set"></a>Создание группы доступности
 Чтобы улучшить высокую доступность приложения, поместите виртуальные машины в группу доступности.
 
 Создайте группу доступности с помощью командлета [New-AzAvailabilitySet](/powershell/module/az.compute/new-azavailabilityset). В следующем примере создается группа доступности *myAvailabilitySet*.
@@ -236,7 +242,7 @@ $nsg = New-AzNetworkSecurityGroup `
 -Name "dsNSG1"  `
 -SecurityRules $rule1,$rule2
 ```
-### <a name="create-a-virtual-network"></a>Создать виртуальную сеть
+### <a name="create-a-virtual-network"></a>Создание виртуальной сети
 
 Создайте виртуальную сеть с помощью командлета [New-AzVirtualNetwork](/powershell/module/az.network/new-azvirtualnetwork). В следующем примере создаются виртуальная сеть *myVnet* и подсеть *mySubnet*.
 
@@ -378,6 +384,6 @@ foreach ($NIC in $NICsInRG) {
 Remove-AzResourceGroup -Name dsRG1
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой статье вы создали базовую Load Balancer с двойной интерфейсной IP-конфигурацией (IPv4 и IPv6). Вы также создали две виртуальные машины, которые включали сетевые карты с двумя IP-конфигурациями (IPV4 + IPv6), которые были добавлены в пул внутренних подсистем подсистемы балансировки нагрузки. Дополнительные сведения о поддержке IPv6 в виртуальных сетях Azure см. в статье [что такое IPv6 для виртуальной сети Azure?](ipv6-overview.md)

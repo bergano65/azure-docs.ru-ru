@@ -10,12 +10,12 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 10/23/2019
 ms.author: mbullwin
-ms.openlocfilehash: bcc60c0f934111f779e3fdedc399881acb16f208
-ms.sourcegitcommit: 9405aad7e39efbd8fef6d0a3c8988c6bf8de94eb
+ms.openlocfilehash: f3f8f377ac8e65d375f8f78c803db5427fd31007
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74872797"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75394487"
 ---
 # <a name="azure-monitor-workbook-visualizations"></a>Azure Monitor визуализации книг
 
@@ -60,7 +60,7 @@ Azure Monitor книги поддерживают ряд различных ст
 
 #### <a name="log-chart-parameters"></a>Параметры диаграммы журнала
 
-| Параметр | Пояснение | Пример |
+| Параметр | Объяснение | Пример |
 | ------------- |:-------------|:-------------|
 | `Query Type` | Тип используемого запроса | Журнал, граф ресурсов Azure и т. д. |
 | `Resource Type` | Целевой тип ресурса | Application Insights, Log Analytics или Azure — First |
@@ -83,7 +83,7 @@ Azure Monitor книги поддерживают ряд различных ст
 
 #### <a name="metric-chart-parameters"></a>Параметры диаграммы метрик
 
-| Параметр | Пояснение | Пример |
+| Параметр | Объяснение | Пример |
 | ------------- |:-------------|:-------------|
 | `Resource Type` | Целевой тип ресурса | Хранилище или виртуальная машина. |
 | `Resources` | Набор ресурсов для получения значения метрик из | MyStorage1 |
@@ -190,7 +190,7 @@ Azure Monitor книги поддерживают ряд различных ст
 
 ### <a name="tree-settings"></a>Параметры дерева
 
-| Параметр | Пояснение |
+| Параметр | Объяснение |
 |:------------- |:-------------|
 | `Id Field` | Уникальный идентификатор каждой строки в сетке |
 | `Parent Id Field` | Идентификатор родителя текущей строки |

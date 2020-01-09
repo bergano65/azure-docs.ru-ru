@@ -2,22 +2,22 @@
 title: Использование MapReduce и Curl с Apache Hadoop в HDInsight — Azure
 description: Узнайте, как удаленно запускать задания MapReduce с помощью Curl при использовании Apache Hadoop в HDInsight.
 author: hrasheed-msft
+ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
-ms.custom: hdinsightactive
 ms.topic: conceptual
+ms.custom: hdinsightactive
 ms.date: 02/27/2018
-ms.author: hrasheed
-ms.openlocfilehash: e4968310459097fc6a00f7c453846fe61726c3d5
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 274d8dc80d9318aa3ddf4a904a5b623319ea01f4
+ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64716117"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75645010"
 ---
 # <a name="run-mapreduce-jobs-with-apache-hadoop-on-hdinsight-using-rest"></a>Запуск заданий MapReduce в среде Apache Hadoop, размещенной в HDInsight, с помощью REST
 
-Узнайте, как использовать Apache Hive REST WebHCat API выполнять задания MapReduce в кластере HDInsight Apache hadoop. Curl используется для демонстрации возможностей взаимодействия с HDInsight с помощью необработанных HTTP-запросов для выполнения заданий MapReduce, их мониторинга и получения их результатов.
+Узнайте, как использовать Apache Hive WebHCat REST API для выполнения заданий MapReduce на Apache Hadoop кластере HDInsight. Curl используется для демонстрации возможностей взаимодействия с HDInsight с помощью необработанных HTTP-запросов для выполнения заданий MapReduce, их мониторинга и получения их результатов.
 
 > [!NOTE]  
 > Если вы уже знакомы с использованием серверов Hadoop на платформе Linux, но не знакомы с HDInsight, ознакомьтесь с документом [Сведения об использовании HDInsight в Linux](../hdinsight-hadoop-linux-information.md).
@@ -77,7 +77,7 @@ ms.locfileid: "64716117"
    * **-u**: имя пользователя и пароль, используемые для аутентификации запроса.
    * **-G**: указывает, что это запрос GET.
 
-   Начало URI **https://CLUSTERNAME.azurehdinsight.net/templeton/v1** одинаковое для всех запросов.
+   Начало URI, `https://CLUSTERNAME.azurehdinsight.net/templeton/v1`, одинаково для всех запросов.
 
 4. Чтобы отправить задание MapReduce, используйте следующую команду:
 
@@ -106,7 +106,7 @@ ms.locfileid: "64716117"
     Конец универсального кода ресурса (/mapreduce/jar) сообщает WebHCat, что этот запрос запускает задание MapReduce из класса в JAR-файле. Ниже приведены параметры, используемые в этой команде:
 
    * **-d**: `-G` не используется, поэтому в запросе по умолчанию используется метод POST. `-d` задает значения данных, отправляемые в запросе.
-     * **user.name**. пользователь, выполняющий команду.
+     * **user.name**— пользователь, выполняющий команду.
      * **jar**: расположение JAR-файла, содержащего класс для запуска.
      * **class**: класс, содержащий логику MapReduce.
      * **arg**: аргументы, передаваемые в задание MapReduce. В данном случае это входной текстовый файл и каталог, который используется для вывода.
@@ -142,7 +142,7 @@ ms.locfileid: "64716117"
 
 Вы можете вывести список этих файлов и скачать их с помощью [интерфейса командной строки Azure](https://docs.microsoft.com/cli/azure/install-azure-cli). Дополнительные сведения о работе с большими двоичными объектами с помощью интерфейса командной строки Azure CLI см. в документе [Использование Azure CLI со службой хранилища Microsoft Azure](../../storage/common/storage-azure-cli.md#create-and-manage-blobs).
 
-## <a id="nextsteps"></a>Дальнейшие действия
+## <a id="nextsteps"></a>Следующие шаги
 
 Общая информация о заданиях MapReduce в HDInsight:
 

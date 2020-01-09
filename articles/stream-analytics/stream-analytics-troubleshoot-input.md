@@ -1,7 +1,6 @@
 ---
 title: Устранение неполадок с входными подключениями для Azure Stream Analytics
 description: В этой статье описаны методы устранения неполадок с входными подключениями в заданиях Azure Stream Analytics.
-services: stream-analytics
 author: sidram
 ms.author: sidram
 ms.reviewer: mamccrea
@@ -9,12 +8,12 @@ ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 12/07/2018
 ms.custom: seodec18
-ms.openlocfilehash: 8357a53ee065812922b5df53fbdef7c14e5f0ff7
-ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
+ms.openlocfilehash: 20a161ffc82cb8f74cfcac838856434f83c4e258
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2019
-ms.locfileid: "67621027"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75354287"
 ---
 # <a name="troubleshoot-input-connections"></a>Устранение неполадок с входными подключениями
 
@@ -136,7 +135,7 @@ FROM data
 
 Создайте отдельные группы потребителей для запросов, в которых три или более наборов входных данных подключены к одной группе потребителей Центров событий. Для этого нужно создать дополнительные наборы входных данных Stream Analytics.
 
-## <a name="get-help"></a>Получение справки
+## <a name="get-help"></a>Справка
 
 За дополнительной помощью обращайтесь на наш [форум Azure Stream Analytics](https://social.msdn.microsoft.com/Forums/azure/home?forum=AzureStreamAnalytics).
 

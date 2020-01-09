@@ -1,5 +1,5 @@
 ---
-title: API, пакет SDK и ресурсы обработчика канала изменений в .NET для Azure Cosmos DB
+title: Azure Cosmos DB API обработчика веб-канала изменений .NET, заметки о выпуске пакета SDK
 description: Сведения об API и пакете SDK для обработчика канала изменений, включая даты выхода, даты прекращения, а также изменения, внесенные в каждую версию пакета SDK для обработчика канала изменений в .NET.
 author: ealsur
 ms.service: cosmos-db
@@ -8,12 +8,12 @@ ms.devlang: dotnet
 ms.topic: reference
 ms.date: 01/30/2019
 ms.author: maquaran
-ms.openlocfilehash: bd727e9c68a34c8e182a6726b257a6bf37178837
-ms.sourcegitcommit: 8a2949267c913b0e332ff8675bcdfc049029b64b
+ms.openlocfilehash: 9252e3e41d0c639231a2abe20202499c6b3ee32a
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74306771"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75444858"
 ---
 # <a name="net-change-feed-processor-sdk-download-and-release-notes"></a>Пакет SDK для обработчика канала изменений в .NET: скачивание и заметки о выпуске
 
@@ -36,7 +36,7 @@ ms.locfileid: "74306771"
 |---|---|
 |**Скачивание пакета SDK**|[NuGet](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB.ChangeFeedProcessor/)|
 |**Документация по API**|[Справочная документация по изменению API библиотеки обработчика веб-каналов](/dotnet/api/microsoft.azure.documents.changefeedprocessor?view=azure-dotnet)|
-|**Приступая к работе**|[Начало работы с пакетом SDK для обработчика канала изменений в .NET](change-feed.md)|
+|**Начало работы**|[Начало работы с пакетом SDK для обработчика канала изменений в .NET](change-feed.md)|
 |**Текущая поддерживаемая платформа**| [Microsoft .NET Framework 4.5](https://www.microsoft.com/download/details.aspx?id=30653)</br> [Microsoft .NET Core](https://www.microsoft.com/net/download/core) |
 
 > [!NOTE]
@@ -191,14 +191,14 @@ ms.locfileid: "74306771"
 | [2.2.2](#2.2.2) |31 октября 2018 г. |--- |
 | [2.2.1](#2.2.1) |24 октября 2018 г. |--- |
 | [1.3.3](#1.3.3) |8 мая 2018 г. |--- |
-| [1.3.2](#1.3.2) |18 апреля 2018 г. |--- |
-| [1.3.1](#1.3.1) |13 марта 2018 г. |--- |
-| [1.2.0](#1.2.0) |31 октября 2017 г. |--- |
+| [1.3.2](#1.3.2) |18 апреля 2018 г. |--- |
+| [1.3.1](#1.3.1) |13 марта 2018 г. |--- |
+| [1.2.0](#1.2.0) |31 октября 2017 г. |--- |
 | [1.1.1](#1.1.1) |29 августа 2017 г. |--- |
 | [1.1.0](#1.1.0) |13 августа 2017 г. |--- |
 | [1.0.0](#1.0.0) |7 июля 2017 г. |--- |
 
-## <a name="faq"></a>часто задаваемые вопросы
+## <a name="faq"></a>Часто задаваемые вопросы
 
 [!INCLUDE [cosmos-db-sdk-faq](../../includes/cosmos-db-sdk-faq.md)]
 

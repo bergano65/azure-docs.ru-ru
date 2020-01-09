@@ -11,12 +11,12 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/22/2018
-ms.openlocfilehash: 90084864f9a93117a0f94dc1d36e6119e88ee335
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: bb77182489e08795e5eb482740eed6c67d2f1627
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73682931"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75438948"
 ---
 # <a name="tutorial-build-your-first-pipeline-to-transform-data-using-hadoop-cluster"></a>Учебник. Создание первого конвейера для преобразования данных с помощью кластера Hadoop
 > [!div class="op_single_selector"]
@@ -24,7 +24,7 @@ ms.locfileid: "73682931"
 > * [Visual Studio](data-factory-build-your-first-pipeline-using-vs.md)
 > * [PowerShell](data-factory-build-your-first-pipeline-using-powershell.md)
 > * [Шаблон Resource Manager](data-factory-build-your-first-pipeline-using-arm.md)
-> * [ИНТЕРФЕЙС REST API](data-factory-build-your-first-pipeline-using-rest-api.md)
+> * [REST API](data-factory-build-your-first-pipeline-using-rest-api.md)
 
 
 > [!NOTE]
@@ -76,11 +76,11 @@ adfgetstarted/partitioneddata/year=2016/month=3/000000_0
 
 В примерах строк выше первая из них (содержащая дату 2016-01-01) записывается в файл 000000_0 в папке month=1. Аналогичным образом вторая строка записывается в файл в папке month=2, а третья — в файл в папке month=3.  
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 Для работы с этим учебником необходимо следующее:
 
 1. **Подписка Azure**. Если ее нет, можно за пару минут создать бесплатную пробную учетную запись. Сведения о том, как получить такую учетную запись, см. на странице [бесплатного ознакомительного периода](https://azure.microsoft.com/pricing/free-trial/).
-2. **Служба хранилища Azure**. В данном учебнике предполагается, что для хранения данных используется учетная запись хранения Azure. Если у вас ее нет, см. раздел [Создание учетной записи хранения](../../storage/common/storage-quickstart-create-account.md). После создания учетной записи хранения запишите **ее имя** и **ключ доступа**. См. разделы о [просмотре, копировании и повторном создании ключей доступа к хранилищу](../../storage/common/storage-account-manage.md#access-keys).
+2. **Служба хранилища Azure**. В данном учебнике предполагается, что для хранения данных используется учетная запись хранения Azure. Если у вас ее нет, см. раздел [Создание учетной записи хранения](../../storage/common/storage-quickstart-create-account.md). После создания учетной записи хранения запишите **ее имя** и **ключ доступа**. Сведения о том, как получить ключи доступа к учетной записи хранения, см. в статье [Управление ключами доступа учетной записи хранения](../../storage/common/storage-account-keys-manage.md).
 3. Скачайте и просмотрите файл запроса Hive (**HQL**) по адресу: [https://adftutorialfiles.blob.core.windows.net/hivetutorial/partitionweblogs.hql](https://adftutorialfiles.blob.core.windows.net/hivetutorial/partitionweblogs.hql). Этот запрос преобразовывает входные данные в выходные. 
 4. Скачайте и просмотрите файл примера входных данных (**input.log**) по адресу: [https://adftutorialfiles.blob.core.windows.net/hivetutorial/input.log](https://adftutorialfiles.blob.core.windows.net/hivetutorial/input.log).
 5. Создайте контейнер больших двоичных объектов с именем **adfgetstarted** в хранилище BLOB-объектов Azure. 
@@ -92,12 +92,12 @@ adfgetstarted/partitioneddata/year=2016/month=3/000000_0
 - [Visual Studio](data-factory-build-your-first-pipeline-using-vs.md)
 - [PowerShell](data-factory-build-your-first-pipeline-using-powershell.md)
 - [Шаблон Resource Manager](data-factory-build-your-first-pipeline-using-arm.md)
-- [ИНТЕРФЕЙС REST API](data-factory-build-your-first-pipeline-using-rest-api.md)
+- [REST API](data-factory-build-your-first-pipeline-using-rest-api.md)
 
 Visual Studio предоставляет графический интерфейс для создания фабрик данных. PowerShell, шаблон Resource Manager и интерфейс REST API, в свою очередь, дают возможность сделать это с помощью средств создания сценариев и программирования.
 
 > [!NOTE]
-> В этом руководстве конвейер данных преобразовывает входные данные в выходные. Он не копирует данные из исходного хранилища данных в целевое. Инструкции по копированию данных из хранилища BLOB-объектов Azure в базу данных SQL с помощью фабрики данных Azure см. в [этой статье](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md).
+> Описанный в этом руководстве конвейер данных преобразовывает входные данные в выходные. Он не копирует данные из исходного хранилища данных в целевое. Инструкции по копированию данных из хранилища BLOB-объектов Azure в базу данных SQL с помощью фабрики данных Azure см. в [этой статье](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md).
 > 
 > Можно объединить в цепочку два действия (выполнить одно действие вслед за другим), настроив выходной набор данных одного действия как входной набор данных другого действия. Подробные сведения см. в статье [Планирование и исполнение с использованием фабрики данных](data-factory-scheduling-and-execution.md). 
 

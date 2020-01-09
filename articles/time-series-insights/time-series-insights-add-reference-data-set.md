@@ -11,12 +11,12 @@ ms.workload: big-data
 ms.topic: conceptual
 ms.date: 12/03/2019
 ms.custom: seodec18
-ms.openlocfilehash: d1bbfb43c6e2319706f5eeac15fa1d60791b62b9
-ms.sourcegitcommit: 5aefc96fd34c141275af31874700edbb829436bb
+ms.openlocfilehash: a810076c8836acccf83733df02fbd0a29a8eba9b
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74807258"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75460305"
 ---
 # <a name="create-a-reference-data-set-for-your-time-series-insights-environment-using-the-azure-portal"></a>Создание эталонного набора данных для среды Аналитики временных рядов с помощью портала Azure
 
@@ -34,7 +34,7 @@ ms.locfileid: "74807258"
 
 ## <a name="add-a-reference-data-set"></a>Добавление эталонного набора данных
 
-1. Войдите на [портале Azure](https://portal.azure.com).
+1. Войдите на [портал Azure](https://portal.azure.com).
 
 1. Нахождение существующей среды службы "аналитика временных рядов Azure". На портале Azure щелкните **Все ресурсы** в меню слева. Выберите среду Time Series Insights.
 
@@ -68,9 +68,9 @@ ms.locfileid: "74807258"
 
    Если при анализе значений данных произойдет ошибка, она отобразится красным цветом в нижней части страницы, например таким образом: `CSV parsing error, no rows extracted`.
 
-1. После успешного анализа данных появится сетка данных с отображением столбцов и строк с данными.  Просмотрите сетку данных, чтобы убедиться, что все правильно.
+1. После успешного анализа данных появится сетка данных с отображением столбцов и строк с данными. Просмотрите сетку данных, чтобы убедиться, что все правильно.
 
-   [![добавить ссылочные данные](media/add-reference-data-set/review-displayed-data-grid.png)](media/add-reference-data-set/review-displayed-data-grid.png#lightbox)
+   [![проверить эталонные данные](media/add-reference-data-set/review-displayed-data-grid.png)](media/add-reference-data-set/review-displayed-data-grid.png#lightbox)
 
 1. Просмотрите каждый столбец, чтобы увидеть предполагаемый тип данных, и при необходимости измените этот тип.  Выберите символ типа данных в заголовке столбца: **#** для двойных (числовых данных), **T|F** для данных с логическими значениями или **Abc** для строки.
 

@@ -1,20 +1,21 @@
 ---
-title: Трассировка потока в приложении облачных служб с использованием системы диагностики Azure | Документация Майкрософт
+title: Трассировка потока в приложении облачных служб с помощью система диагностики Azure
+titleSuffix: Azure Cloud Services
 description: Добавление сообщений трассировки в приложения Azure для отладки, измерения производительности, мониторинга, анализа трафика и выполнения других задач.
 services: cloud-services
 documentationcenter: .net
-author: georgewallace
+author: tgore03
 ms.service: cloud-services
 ms.devlang: dotnet
 ms.topic: article
 ms.date: 02/20/2016
-ms.author: gwallace
-ms.openlocfilehash: b8d195fba934ceae98af383b96a8c0d9a9b88c5f
-ms.sourcegitcommit: ec2b75b1fc667c4e893686dbd8e119e7c757333a
+ms.author: tagore
+ms.openlocfilehash: 47a33ba27dd6d2df626d93695c421303bace6a0b
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72808091"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75386516"
 ---
 # <a name="trace-the-flow-of-a-cloud-services-application-with-azure-diagnostics"></a>Трассировка потока в приложении облачных служб с помощью системы диагностики Azure
 Трассировка — это мониторинг выполнения запущенного приложения. Сведения об ошибках и выполнении приложений можно записывать в журналы, текстовые файлы или на устройства для последующего анализа с помощью классов [System.Diagnostics.Trace](/dotnet/api/system.diagnostics.trace), [System.Diagnostics.Debug](/dotnet/api/system.diagnostics.debug) и [System.Diagnostics.TraceSource](/dotnet/api/system.diagnostics.tracesource). Дополнительные сведения о трассировке см. в статье [Tracing and Instrumenting Applications](/dotnet/framework/debug-trace-profile/tracing-and-instrumenting-applications) (Трассировка и инструментирование приложений).
@@ -71,4 +72,7 @@ ms.locfileid: "72808091"
     ```
 3. Добавьте трассировочные операторы, чтобы записывать сведения о состоянии приложения. Вывод оператора трассировки можно форматировать разными способами. Дополнительные сведения об этом см. в статье [How to: Add Trace Statements to Application Code](/dotnet/framework/debug-trace-profile/how-to-add-trace-statements-to-application-code) (Добавление трассировочных операторов в код приложения).
 4. Сохраните исходный файл.
+
+
+
 

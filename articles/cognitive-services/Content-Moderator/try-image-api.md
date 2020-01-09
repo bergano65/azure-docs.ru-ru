@@ -10,16 +10,16 @@ ms.subservice: content-moderator
 ms.topic: conceptual
 ms.date: 01/10/2019
 ms.author: pafarley
-ms.openlocfilehash: ce8ea76cfc1f3f30418b66cd21de43d244da6764
-ms.sourcegitcommit: 38251963cf3b8c9373929e071b50fd9049942b37
+ms.openlocfilehash: 714621fdcc307ee8b29567fc0d95ca41d31aa9e5
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73043964"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75448263"
 ---
 # <a name="moderate-images-from-the-api-console"></a>Модерация изображений с помощью консоли API
 
-Используйте [API модерации изображений](https://westus.dev.cognitive.microsoft.com/docs/services/57cf753a3f9b070c105bd2c1/operations/57cf753a3f9b070868a1f66c) в Azure Content Moderator для запуска рабочих процессов модерации "поиск и проверка" для графического содержимого. Задание модерации проверяет содержимое на наличие ненормативной лексики и сравнивает его с пользовательскими и общими "списками запрещенных".
+Используйте [API модерации изображений](https://westus.dev.cognitive.microsoft.com/docs/services/57cf753a3f9b070c105bd2c1/operations/57cf753a3f9b070868a1f66c) в Azure Content Moderator для запуска рабочих процессов модерации "поиск и проверка" для графического содержимого. Задание по созадаче просматривает содержимое на ненормативную лексику и сравнивает его с настраиваемыми и общими адресов.
 
 ## <a name="use-the-api-console"></a>Использование консоли API
 Прежде чем можно будет опробовать API в веб-консоли, необходимо получить ключ подписки. Он указан на вкладке **Settings** (Параметры) в поле **Ocp-Apim-Subscription-Key**. Дополнительные сведения см. в этом [обзоре](overview.md).
@@ -54,7 +54,7 @@ ms.locfileid: "73043964"
 
    ![Оценка вероятности и определение выполнения условия в консоли "Image - Evaluate" (Изображение — оценка)](images/try-image-api-3.PNG)
 
-## <a name="face-detection"></a>Определение лиц
+## <a name="face-detection"></a>Обнаружение лиц
 
 API модерации изображений можно использовать для определения лиц на изображении. Это может быть удобно для соблюдения конфиденциальности, например, чтобы предотвратить публикацию чьего-либо лица на платформе. 
 

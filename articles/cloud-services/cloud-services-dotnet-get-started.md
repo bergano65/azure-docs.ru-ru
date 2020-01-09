@@ -3,19 +3,19 @@ title: Начало работы с облачными службами Azure и
 description: 'Узнайте, как можно создать многоуровневое приложение с помощью ASP.NET MVC и Azure. Такое приложение выполняется в облачной службе и обладает веб-ролью и рабочей ролью. В его работе используются: Entity Framework, база данных SQL, очереди и BLOB-объекты службы хранилища Azure.'
 services: cloud-services, storage
 documentationcenter: .net
-author: georgewallace
+author: tgore03
 manager: carmonm
 ms.service: cloud-services
 ms.devlang: dotnet
 ms.topic: conceptual
 ms.date: 05/15/2017
-ms.author: gwallace
-ms.openlocfilehash: 3f2c60be29d679d0b0d30b6bf471f083c66ba93f
-ms.sourcegitcommit: 3073581d81253558f89ef560ffdf71db7e0b592b
+ms.author: tagore
+ms.openlocfilehash: f5ebb8874b7e277d15ef89aa419c4d26560a6e76
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68827657"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75386737"
 ---
 # <a name="get-started-with-azure-cloud-services-and-aspnet"></a>Начало работы с облачными службами Azure и ASP.NET
 
@@ -31,7 +31,7 @@ ms.locfileid: "68827657"
 
 Приложение использует [рабочий шаблон на основе очередей](https://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/queue-centric-work-pattern) для разгрузки процессора от задач создания эскизов в фоновом режиме.
 
-## <a name="alternative-architecture-app-service-and-webjobs"></a>Альтернативная архитектура: Служба приложений и веб-задания
+## <a name="alternative-architecture-app-service-and-webjobs"></a>Альтернативная архитектура: служба приложений и веб-задания
 Это руководство описывает, как запускать фоновые и интерфейсные компоненты в облачной службе Azure. Альтернативой является запуск интерфейсной части в [Службе приложений Azure](/azure/app-service/) и использование функции [Веб-задания](https://go.microsoft.com/fwlink/?LinkId=390226) для серверной части. Руководство по веб-заданиям см. в статье [Создание веб-задания .NET в службе приложений Azure](https://github.com/Azure/azure-webjobs-sdk/wiki). Сведения о том, как выбрать службы, см. в статье о [сравнении Службы приложений, облачных служб и виртуальных машин Azure](/azure/architecture/guide/technology-choices/compute-decision-tree).
 
 ## <a name="what-youll-learn"></a>Что вы узнаете
@@ -42,7 +42,7 @@ ms.locfileid: "68827657"
 * Как отправлять файлы и хранить их в службе BLOB-объектов Azure.
 * Как использовать службу очередей Azure для связи между уровнями.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 В руководстве предполагается, что вы понимаете [базовые концепции облачной службы Azure](cloud-services-choose-me.md), такие как термины *веб-роль* и *рабочая роль*.  Кроме того, предполагается, что вы знаете, как работать с проектами [ASP.NET MVC](https://www.asp.net/mvc/tutorials/mvc-5/introduction/getting-started) или [веб-форм](https://www.asp.net/web-forms/tutorials/aspnet-45/getting-started-with-aspnet-45-web-forms/introduction-and-overview) в Visual Studio. Пример приложения использует MVC, но многое в руководство также применимо к веб-формам.
 
 Вы можете запускать приложение локально без подписки Azure, но она понадобится для развертывания приложения в облаке. Если у вас нет учетной записи, можно [активировать преимущества для подписчиков MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A55E3C668) или [подписаться на бесплатную пробную версию](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A55E3C668).
@@ -50,8 +50,8 @@ ms.locfileid: "68827657"
 Инструкции учебника работают со следующими продуктами:
 
 * Visual Studio 2013
-* Visual Studio 2015
-* Visual Studio 2017
+* Visual Studio 2015
+* Visual Studio 2017
 * Visual Studio 2019
 
 Если у вас нет ни одного из этих продуктов, Visual Studio может быть установлен автоматически при установке пакета SDK для Azure.
@@ -69,7 +69,7 @@ ms.locfileid: "68827657"
 
 ## <a name="download-and-run-the-completed-solution"></a>Загрузка и запуск готового решения
 1. Загрузите и распакуйте [готовое решение](https://code.msdn.microsoft.com/Simple-Azure-Cloud-Service-e01df2e4).
-2. Запустите Visual Studio.
+2. Запустите среду Visual Studio.
 3. В меню **Файл** выберите **Открыть проект**, перейдите к папке, куда вы скачали решение, а затем откройте файл решения.
 4. Чтобы построить решение, нажмите CTRL+SHIFT+B.
 
@@ -164,7 +164,7 @@ ms.locfileid: "68827657"
 2. В поле ввода **Имя** введите префикс URL-адреса.
 
     Этот префикс в сочетании с текстом, который отображается под полем, будет уникальным URL-адресом для вашей учетной записи хранения. Если введенный префикс уже использован где-либо, придется выбрать другой.
-3. Задайте *классическую* **модель развертывания**.
+3. Задайте *классическую***модель развертывания**.
 
 4. В раскрывающемся списке **Репликация** установите значение **Locally redundant storage** (Локально избыточное хранилище).
 
@@ -229,7 +229,7 @@ ms.locfileid: "68827657"
 1. В **обозревателе решений** щелкните правой кнопкой мыши пункт **ContosoAdsWeb** в области **Роли** проекта **ContosoAdsCloudService**, а затем выберите **Свойства**.
 
     ![Свойства роли](./media/cloud-services-dotnet-get-started/roleproperties.png)
-2. Перейдите на вкладку **Параметры** . В раскрывающемся списке **Конфигурация службы** выберите значение **Облако**.
+2. Перейдите на вкладку **Параметры** . В раскрывающемся списке **Конфигурация службы** выберите **облако**.
 
     ![Конфигурация облака](./media/cloud-services-dotnet-get-started/sccloud.png)
 3. Выберите запись **StorageConnectionString**, и вы увидите кнопку с многоточием ( **...** ) в правом конце строки. Нажмите эту кнопку с многоточием, чтобы открыть диалоговое окно **Создание строки подключения учетной записи хранения** .
@@ -361,7 +361,7 @@ ms.locfileid: "68827657"
 
     Сборка используется внутренней службой для преобразования изображений в эскизы.
 
-### <a name="configure-connection-strings"></a>Настройте строки подключения
+### <a name="configure-connection-strings"></a>Настройка строк подключения
 В этом разделе настройте хранилище Azure и строки подключения SQL для локального тестирования. Инструкции по развертыванию ранее в этом руководстве объясняют, как установить строки подключения в случае, когда приложение работает в облаке.
 
 1. В проекте ContosoAdsWeb откройте файл приложения Web.config и вставьте следующий элемент `connectionStrings` после элемента `configSections`:
@@ -387,9 +387,9 @@ ms.locfileid: "68827657"
 7. Следуйте этой же процедуре для добавления строки подключения хранилища в свойства роли ContosoAdsWorker.
 8. Там же в окне свойств **ContosoAdsWorker [роль]** добавьте другую строку подключения:
 
-   * имя: ContosoAdsDbConnectionString.
-   * Тип: Строковое
-   * Значение: вставьте ту же строку подключения, которая была использована для проекта веб-роли. (Этот пример предназначен для Visual Studio 2013. Не забудьте изменить источник данных при копировании этого примера для Visual Studio 2015 или более поздней версии.)
+   * Имя: ContosoAdsDbConnectionString
+   * Тип: строка
+   * Значение. Вставьте ту же строку подключения, которая была использована для проекта веб-роли. (Этот пример предназначен для Visual Studio 2013. Не забудьте изменить источник данных при копировании этого примера для Visual Studio 2015 или более поздней версии.)
 
        ```
        Data Source=(localdb)\v11.0; Initial Catalog=ContosoAds; Integrated Security=True; MultipleActiveResultSets=True;
@@ -398,7 +398,7 @@ ms.locfileid: "68827657"
 ### <a name="add-code-files"></a>Добавьте файлы кода
 В этом разделе скопируйте файлы кода из скачанного решения в новое решение. Следующие разделы покажут и объяснят важные части этого кода.
 
-Чтобы добавить файлы в проект или папку, щелкните правой кнопкой мыши проект или папку и щелкните **Добавить** - **Существующий элемент**. Выберите необходимые файлы и щелкните **Добавить**. При запросе о том, заменять ли существующие файлы, щелкните **Да**.
+Чтобы добавить файлы в проект или папку, щелкните правой кнопкой мыши проект или папку и нажмите **Добавить** - **Существующий элемент**. Выберите необходимые файлы и щелкните **Добавить**. При запросе о том, заменять ли существующие файлы, щелкните **Да**.
 
 1. В проекте ContosoAdsCommon удалите файл *Class1.cs* и добавьте на его место файлы *Ad.cs* и *ContosoAdscontext.cs* из скачанного проекта.
 2. В проекте ContosoAdsCommon добавьте следующие файлы из загруженного проекта.
@@ -738,7 +738,7 @@ private void ProcessQueueMessage(CloudQueueMessage msg)
 >
 >
 
-## <a name="troubleshooting"></a>Устранение неполадок
+## <a name="troubleshooting"></a>Устранение неисправностей
 У вас что-то не работает, когда вы выполняете инструкции из этого руководства? Вот несколько общих ошибок и способы их устранения.
 
 ### <a name="serviceruntimeroleenvironmentexception"></a>ServiceRuntime.RoleEnvironmentException
@@ -758,7 +758,7 @@ private void ProcessQueueMessage(CloudQueueMessage msg)
 
 Для запуска приложения с полным эмулятором следует открыть Visual Studio с правами администратора.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Приложение Contoso Ads намеренно сделано простым для руководства по началу работы. Например, оно не реализует [вставку зависимостей](https://www.asp.net/mvc/tutorials/hands-on-labs/aspnet-mvc-4-dependency-injection) или [репозиторий и блок рабочих шаблонов](https://www.asp.net/mvc/tutorials/getting-started-with-ef-using-mvc/advanced-entity-framework-scenarios-for-an-mvc-web-application#repo), не использует [интерфейс для журналов](https://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/monitoring-and-telemetry#log), не использует [EF Code First Migrations](https://www.asp.net/mvc/tutorials/getting-started-with-ef-using-mvc/migrations-and-deployment-with-the-entity-framework-in-an-asp-net-mvc-application) для управления изменениями модели данных или [EF Connection Resiliency](https://www.asp.net/mvc/tutorials/getting-started-with-ef-using-mvc/connection-resiliency-and-command-interception-with-the-entity-framework-in-an-asp-net-mvc-application) для управления кратковременными ошибками сети и т. д.
 
 Есть несколько примеров приложений облачной службы, которые демонстрируют более жизненные примеры кодирования — от менее сложных к более сложным:
@@ -772,7 +772,10 @@ private void ProcessQueueMessage(CloudQueueMessage msg)
 
 Для получения дополнительных сведений см. следующие ресурсы:
 
-* [Облачные службы Azure. Часть 1: введение](https://justazure.com/microsoft-azure-cloud-services-part-1-introduction/)
+* [Облачные службы Azure, часть 1: Введение](https://justazure.com/microsoft-azure-cloud-services-part-1-introduction/)
 * [Управление облачными службами](cloud-services-how-to-manage-portal.md)
 * [Хранилище Azure](https://docs.microsoft.com/azure/storage/)
 * [Как выбрать поставщика облачных служб](https://azure.microsoft.com/overview/choosing-a-cloud-service-provider/)
+
+
+
