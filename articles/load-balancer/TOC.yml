@@ -35,7 +35,7 @@
     - name: Балансировка интернет-трафика на виртуальных машинах
       href: tutorial-load-balancer-standard-manage-portal.md
     - name: Балансировка внутреннего трафика на виртуальных машинах
-      href: tutorial-load-balancer-basic-internal-portal.md
+      href: tutorial-load-balancer-standard-internal-portal.md
     - name: Распределение нагрузки виртуальных машин в пределах зон доступности
       href: tutorial-load-balancer-standard-public-zone-redundant-portal.md
     - name: Балансировка нагрузки виртуальных машин в пределах определенной зоны доступности
