@@ -5,15 +5,15 @@ author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
-ms.custom: hdinsightactive
 ms.topic: conceptual
-ms.date: 04/24/2019
-ms.openlocfilehash: 3923abd10fc3a64773d561b1f375f9e2f00a7e56
-ms.sourcegitcommit: 38251963cf3b8c9373929e071b50fd9049942b37
+ms.custom: hdinsightactive
+ms.date: 01/03/2020
+ms.openlocfilehash: 33110e9f1d45fcd11e5f4cad1b589ab929a9472d
+ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73044564"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75767642"
 ---
 # <a name="generate-movie-recommendations-using-apache-mahout-with-apache-hadoop-in-hdinsight-ssh"></a>Создание рекомендаций по фильмам с помощью Apache Mahout с Apache Hadoop в HDInsight (SSH)
 
@@ -25,15 +25,13 @@ Mahout — это библиотека [машинного обучения](htt
 
 ## <a name="prerequisites"></a>Технические условия
 
-* Кластер Apache Hadoop в HDInsight. Ознакомьтесь со статьей [Краткое руководство. Использование Apache Hadoop и Apache Hive в Azure HDInsight с шаблоном Resource Manager](./apache-hadoop-linux-tutorial-get-started.md).
-
-* Клиент SSH. Дополнительные сведения см. в руководстве по [подключению к HDInsight (Apache Hadoop) с помощью SSH](../hdinsight-hadoop-linux-use-ssh-unix.md).
+Кластер Apache Hadoop в HDInsight. Ознакомьтесь со статьей [Краткое руководство. Использование Apache Hadoop и Apache Hive в Azure HDInsight с шаблоном Resource Manager](./apache-hadoop-linux-tutorial-get-started.md).
 
 ## <a name="apache-mahout-versioning"></a>Управление версиями Apache Mahout
 
 Дополнительные сведения о версии Mahout, входящей в состав кластера HDInsight, см. в статье [Что представляют собой компоненты и версии Apache Hadoop, доступные в HDInsight?](../hdinsight-component-versioning.md)
 
-## <a name="recommendations"></a>Общие сведения о рекомендациях
+## <a name="understanding-recommendations"></a>Основные сведения о рекомендациях
 
 Одной из функций, предоставляемой Mahout, является подсистема рекомендаций. Она принимает данные в формате `userID`, `itemId` и `prefValue` (предпочтения для элемента). Затем Mahout может провести анализ совместной встречаемости, чтобы определить: *пользователи с предпочтениями к одному элементу также имеют их и к определенным другим элементам*. После этого Mahout определяет пользователей со сходными предпочтениями элементов, что можно использовать для создания рекомендаций.
 
@@ -43,7 +41,7 @@ Mahout — это библиотека [машинного обучения](htt
 
 * **Совместная встречаемость**: Бобу и Алисе также нравятся фильмы *Призрачная угроза*, *Атака клонов* и *Месть ситхов*. Mahout определяет, что пользователям, которым нравятся предыдущие три фильма, также нравятся и эти три.
 
-* **Рекомендации на основе подобия:** так как Джо понравились первые три фильма, Mahout будет отбирать фильмы, которые нравились другим пользователям со схожими предпочтениями, но которые Джо еще не смотрел (по положительным отзывам и рейтингу). В этом случае Mahout рекомендует посмотреть фильмы *Призрачная угроза*, *Атака клонов* и *Месть ситхов*.
+* **Рекомендации по подобию**: так как Джо понравилась первыми тремя фильмами, Mahout просматривает фильмы о том, что другие пользователи с похожими предпочтениями, но Джо не наблюдал (понравилось). В этом случае Mahout рекомендует посмотреть фильмы *Призрачная угроза*, *Атака клонов* и *Месть ситхов*.
 
 ### <a name="understanding-the-data"></a>Основные сведения о данных
 
@@ -51,7 +49,7 @@ Mahout — это библиотека [машинного обучения](htt
 
 Вы увидите два файла, `moviedb.txt` и `user-ratings.txt`. Файл `user-ratings.txt` используется во время анализа. `moviedb.txt` используется для предоставления понятного описания при просмотре результатов.
 
-Данные, содержащиеся в файле user-ratings.txt, имеют структуру `userID`, `movieID`, `userRating` и `timestamp`, благодаря чему можно понять, насколько высоко каждый пользователь оценил фильм. Вот пример данных:
+Данные, содержащиеся в `user-ratings.txt`, имеют структуру `userID`, `movieID`, `userRating`и `timestamp`, которая указывает, насколько высоко каждый пользователь оценивает фильм. Вот пример данных:
 
     196    242    3    881250949
     186    302    3    891717742
@@ -61,11 +59,17 @@ Mahout — это библиотека [машинного обучения](htt
 
 ## <a name="run-the-analysis"></a>Выполнение анализа
 
-Чтобы запустить задание рекомендации, выполните из SSH-подключения к кластеру следующую команду:
+1. Используйте [команду SSH](../hdinsight-hadoop-linux-use-ssh-unix.md) для подключения к кластеру. Измените приведенную ниже команду, заменив ИМЯ_КЛАСТЕРА именем кластера, а затем введите следующую команду:
 
-```bash
-mahout recommenditembased -s SIMILARITY_COOCCURRENCE -i /HdiSamples/HdiSamples/MahoutMovieData/user-ratings.txt -o /example/data/mahoutout --tempDir /temp/mahouttemp
-```
+    ```cmd
+    ssh sshuser@CLUSTERNAME-ssh.azurehdinsight.net
+    ```
+
+1. Чтобы запустить задание рекомендации, выполните следующую команду:
+
+    ```bash
+    mahout recommenditembased -s SIMILARITY_COOCCURRENCE -i /HdiSamples/HdiSamples/MahoutMovieData/user-ratings.txt -o /example/data/mahoutout --tempDir /temp/mahouttemp
+    ```
 
 > [!NOTE]  
 > Выполнение задания может занять несколько минут; может выполняться несколько заданий MapReduce.
@@ -80,10 +84,12 @@ mahout recommenditembased -s SIMILARITY_COOCCURRENCE -i /HdiSamples/HdiSamples/M
 
     Результат выглядит следующим образом.
 
-        1    [234:5.0,347:5.0,237:5.0,47:5.0,282:5.0,275:5.0,88:5.0,515:5.0,514:5.0,121:5.0]
-        2    [282:5.0,210:5.0,237:5.0,234:5.0,347:5.0,121:5.0,258:5.0,515:5.0,462:5.0,79:5.0]
-        3    [284:5.0,285:4.828125,508:4.7543354,845:4.75,319:4.705128,124:4.7045455,150:4.6938777,311:4.6769233,248:4.65625,272:4.649266]
-        4    [690:5.0,12:5.0,234:5.0,275:5.0,121:5.0,255:5.0,237:5.0,895:5.0,282:5.0,117:5.0]
+    ```output
+    1    [234:5.0,347:5.0,237:5.0,47:5.0,282:5.0,275:5.0,88:5.0,515:5.0,514:5.0,121:5.0]
+    2    [282:5.0,210:5.0,237:5.0,234:5.0,347:5.0,121:5.0,258:5.0,515:5.0,462:5.0,79:5.0]
+    3    [284:5.0,285:4.828125,508:4.7543354,845:4.75,319:4.705128,124:4.7045455,150:4.6938777,311:4.6769233,248:4.65625,272:4.649266]
+    4    [690:5.0,12:5.0,234:5.0,275:5.0,121:5.0,255:5.0,237:5.0,895:5.0,282:5.0,117:5.0]
+    ```
 
     Первый столбец — `userID`. Значения, хранящиеся в скобках «[» и «]», — это `movieId`:`recommendationScore`.
 
@@ -174,11 +180,21 @@ mahout recommenditembased -s SIMILARITY_COOCCURRENCE -i /HdiSamples/HdiSamples/M
 
      Результат этой команды аналогичен следующему:
 
-       Seven Years in Tibet (1997), score=5.0   Indiana Jones and the Last Crusade (1989), score=5.0   Jaws (1975), score=5.0   Sense and Sensibility (1995), score=5.0   Independence Day (ID4) (1996), score=5.0   My Best Friend's Wedding (1997), score=5.0   Jerry Maguire (1996), score=5.0   Scream 2 (1997), score=5.0   Time to Kill, A (1996), score=5.0
+        ```output
+        Seven Years in Tibet (1997), score=5.0
+        Indiana Jones and the Last Crusade (1989), score=5.0
+        Jaws (1975), score=5.0
+        Sense and Sensibility (1995), score=5.0
+        Independence Day (ID4) (1996), score=5.0
+        My Best Friend's Wedding (1997), score=5.0
+        Jerry Maguire (1996), score=5.0
+        Scream 2 (1997), score=5.0
+        Time to Kill, A (1996), score=5.0
+        ```
 
 ## <a name="delete-temporary-data"></a>Удаление временных данных
 
-Задания Mahout не удаляют временные данные, созданные во время выполнения задания. В примере задания указан параметр `--tempDir` , чтобы выделить временные файлы в отдельный каталог для простоты последующего их удаления. Чтобы удалить временные файлы, используйте следующую команду:
+Задания Mahout не удаляют временные данные, созданные при обработке задания. В примере задания указан параметр `--tempDir` , чтобы выделить временные файлы в отдельный каталог для простоты последующего их удаления. Чтобы удалить временные файлы, используйте следующую команду:
 
 ```bash
 hdfs dfs -rm -f -r /temp/mahouttemp
@@ -189,11 +205,9 @@ hdfs dfs -rm -f -r /temp/mahouttemp
 >
 > `hdfs dfs -rm -f -r /example/data/mahoutout`
 
-
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Теперь, когда вы узнали, как использовать Mahout, откройте для себя другие способы работы с данными в HDInsight:
+Теперь, когда вы узнали, как использовать Mahout, Узнайте о других способах работы с данными в HDInsight:
 
 * [Обзор Apache Hive и HiveQL в Azure HDInsight](hdinsight-use-hive.md)
-* [Использование Apache Pig с Apache Hadoop в HDInsight](hdinsight-use-pig.md)
 * [Использование MapReduce с HDInsight](hdinsight-use-mapreduce.md)

@@ -9,19 +9,19 @@ ms.service: key-vault
 ms.topic: conceptual
 ms.date: 07/17/2019
 ms.author: cawa
-ms.openlocfilehash: d5662fa3cae8ba0cec0fd76965597ccac7c83889
-ms.sourcegitcommit: 36e9cbd767b3f12d3524fadc2b50b281458122dc
+ms.openlocfilehash: 8a85dd3d3d80a8c3988c7653eb74f403fdc54cd4
+ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69639485"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75772505"
 ---
 # <a name="securely-save-secret-application-settings-for-a-web-application"></a>Безопасное хранение секретных параметров веб-приложения
 
 ## <a name="overview"></a>Обзор
 В этой статье объясняется, как безопасно хранить секретные параметры конфигурации приложений Azure.
 
-Как правило, все параметры конфигурации веб-приложения хранятся в файлах конфигурации, например Web.config. При этом секретные параметры, например учетные данные облачной службы, регистрируются в общедоступных системах управления версиями наподобие GitHub. В свою очередь безопасность может оказаться под угрозой, так как для ее обеспечения требуются дополнительные расходы на изменение исходного кода и перенастройку параметров разработки.
+Обычно все параметры конфигурации веб-приложения сохраняются в файлах конфигурации, таких как Web. config. На этом практическом занятии выполняется проверка секретных параметров, таких как облачные учетные данные, в общедоступных системах управления версиями, например GitHub. В свою очередь безопасность может оказаться под угрозой, так как для ее обеспечения требуются дополнительные расходы на изменение исходного кода и перенастройку параметров разработки.
 
 Чтобы обеспечить безопасность процесса разработки, создаются библиотеки инструментов и платформы для безопасного сохранения параметров секрета приложения с минимальным или без изменения исходного кода.
 
@@ -42,6 +42,7 @@ ms.locfileid: "69639485"
     ![Создание хранилища Azure Key Vault](./media/vs-secure-secret-appsettings/create-keyvault.PNG)
 
 2. Предоставьте членам своей команды доступ к хранилищу Key Vault. Если у вас большая команда разработчиков, можно создать [группу Azure Active Directory](../active-directory/active-directory-groups-create-azure-portal.md) и предоставить этой группе безопасности доступ к хранилищу Key Vault. В разделе *Операции управления секретами* в раскрывающемся списке *Разрешения секретов* щелкните *Получить* и выберите *Список*.
+Если веб-приложение уже создано, предоставьте веб-приложению доступ к Key Vault, чтобы он мог получить доступ к хранилищу ключей без сохранения конфигурации секрета в параметрах или файлах приложения. Найдите веб-приложение по его имени и добавьте его таким же образом, как вы предоставляете пользователям доступ.
 
     ![Добавление политики доступа к хранилищу Key Vault](./media/vs-secure-secret-appsettings/add-keyvault-access-policy.png)
 
@@ -49,35 +50,39 @@ ms.locfileid: "69639485"
 
     ![Добавление секрета Key Vault](./media/vs-secure-secret-appsettings/add-keyvault-secret.png)
 
-    > [!NOTE] 
+    > [!NOTE]
     > До Visual Studio 2017 V 15.6 мы использовали, чтобы рекомендовать установить расширение проверки подлинности служб Azure для Visual Studio. Но теперь она устарела, так как функциональные возможности интегрированы в Visual Studio. Поэтому, если вы используете более раннюю версию Visual Studio 2017, мы рекомендуем вам обновить по крайней мере VS 2017 15,6 или выше, чтобы использовать эту функцию в собственном режиме и получить доступ к хранилищу ключей с помощью самой учетной записи входа Visual Studio.
     >
- 
+
 4. Добавьте в проект следующие пакеты NuGet:
 
     ```
+    Microsoft.Azure.KeyVault
     Microsoft.Azure.Services.AppAuthentication
+    Microsoft.Extensions.Configuration.AzureKeyVault
     ```
 5. Добавьте следующий код в файл Program.cs:
 
     ```csharp
-    public static IWebHost BuildWebHost(string[] args) =>
-        WebHost.CreateDefaultBuilder(args)
-            .ConfigureAppConfiguration((ctx, builder) =>
-            {
-                var keyVaultEndpoint = GetKeyVaultEndpoint();
-                if (!string.IsNullOrEmpty(keyVaultEndpoint))
+    public static IHostBuilder CreateHostBuilder(string[] args) =>
+             Host.CreateDefaultBuilder(args)
+                .ConfigureAppConfiguration((ctx, builder) =>
                 {
-                    var azureServiceTokenProvider = new AzureServiceTokenProvider();
-                    var keyVaultClient = new KeyVaultClient(
-                        new KeyVaultClient.AuthenticationCallback(
-                            azureServiceTokenProvider.KeyVaultTokenCallback));
-                            builder.AddAzureKeyVault(
-                            keyVaultEndpoint, keyVaultClient, new DefaultKeyVaultSecretManager());
-                        }
-                    })
-                    .UseStartup<Startup>()
-                    .Build();
+                    var keyVaultEndpoint = GetKeyVaultEndpoint();
+                    if (!string.IsNullOrEmpty(keyVaultEndpoint))
+                    {
+                        var azureServiceTokenProvider = new AzureServiceTokenProvider();
+                        var keyVaultClient = new KeyVaultClient(
+                            new KeyVaultClient.AuthenticationCallback(
+                                azureServiceTokenProvider.KeyVaultTokenCallback));
+                        builder.AddAzureKeyVault(
+                        keyVaultEndpoint, keyVaultClient, new DefaultKeyVaultSecretManager());
+                    }
+                })
+                .ConfigureWebHostDefaults(webBuilder =>
+                {
+                    webBuilder.UseStartup<Startup>();
+                });
 
         private static string GetKeyVaultEndpoint() => Environment.GetEnvironmentVariable("KEYVAULT_ENDPOINT");
     ```
@@ -145,7 +150,7 @@ ms.locfileid: "69639485"
    Microsoft.Configuration.ConfigurationBuilders.UserSecrets
    ```
 
-2. Определите построитель конфигурации Key Vault в файле Web.config. Поместите этот раздел перед разделом *appSettings*. Замените имя Key Vault на *vaultName*, если ваше хранилище размещено в общедоступном облаке Azure, или укажите полный универсальный код ресурса (URI), если вы используете независимое облако.
+2. Определите Key Vault Configuration Builder в файле Web. config. Добавьте этот раздел перед разделом *appSettings* . Замените имя Key Vault на *vaultName*, если ваше хранилище размещено в общедоступном облаке Azure, или укажите полный универсальный код ресурса (URI), если вы используете независимое облако.
 
     ```xml
     <configSections>

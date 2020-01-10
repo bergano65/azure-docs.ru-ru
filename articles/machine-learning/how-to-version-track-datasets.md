@@ -11,12 +11,12 @@ author: sihhu
 ms.reviewer: nibaccam
 ms.date: 11/04/2019
 ms.custom: ''
-ms.openlocfilehash: f70c826d839be1de82f3f21cf615f261a2193358
-ms.sourcegitcommit: ce4a99b493f8cf2d2fd4e29d9ba92f5f942a754c
+ms.openlocfilehash: 4c8f3e7e47f9c8f924faf513d984d5474c105038
+ms.sourcegitcommit: f53cd24ca41e878b411d7787bd8aa911da4bc4ec
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/28/2019
-ms.locfileid: "75536438"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75834797"
 ---
 # <a name="version-and-track-datasets-in-experiments"></a>Версии и отслеживание наборов данных в экспериментах
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -169,9 +169,9 @@ input_dataset = inputs[0]['dataset']
 input_dataset.to_path()
 ```
 
-Вы также можете найти `input_datasets` из экспериментов с помощью [машинное обучение Azure Studio (классическая модель)](https://ml.azure.com/). 
+Вы также можете найти `input_datasets` из экспериментов с помощью [машинное обучение Azure Studio](https://ml.azure.com/). 
 
-На следующем рисунке показано, где найти входной набор данных эксперимента в Машинное обучение Azure Studio (классическая модель). В этом примере перейдите в область **эксперименты** и откройте вкладку **свойства** для конкретного запуска эксперимента, `keras-mnist`.
+На следующем рисунке показано, где найти входной набор данных эксперимента в Машинное обучение Azure Studio. В этом примере перейдите в область **эксперименты** и откройте вкладку **свойства** для конкретного запуска эксперимента, `keras-mnist`.
 
 ![Входные наборы данных](./media/how-to-version-track-datasets/input-datasets.png)
 
@@ -183,7 +183,7 @@ model = run.register_model(model_name='keras-mlp-mnist',
                            datasets =[('training data',train_dataset)])
 ```
 
-После регистрации можно просмотреть список моделей, зарегистрированных в наборе данных, с помощью Python или [машинное обучение Azure Studio (классическая модель)](https://ml.azure.com/). Следующее представление находится на панели **наборы данных** в разделе **активы**. Выберите набор данных и перейдите на вкладку **модели** для списка моделей, зарегистрированных в наборе данных. 
+После регистрации можно просмотреть список моделей, зарегистрированных в наборе данных, с помощью Python или [машинное обучение Azure Studio](https://ml.azure.com/). Следующее представление находится на панели **наборы данных** в разделе **активы**. Выберите набор данных и перейдите на вкладку **модели** для списка моделей, зарегистрированных в наборе данных. 
 
 ![Модели входных наборов данных](./media/how-to-version-track-datasets/dataset-models.png)
 

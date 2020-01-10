@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.reviewer: sgilley
 ms.date: 11/08/2019
 ms.custom: seodec18
-ms.openlocfilehash: 3205f853088245461e854562999164f9813f3bd5
-ms.sourcegitcommit: ce4a99b493f8cf2d2fd4e29d9ba92f5f942a754c
+ms.openlocfilehash: f8f7d16c9fa5141add5c661c0e05cc93da436614
+ms.sourcegitcommit: f53cd24ca41e878b411d7787bd8aa911da4bc4ec
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/28/2019
-ms.locfileid: "75536633"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75834897"
 ---
 # <a name="train-models-with-azure-machine-learning-using-estimator"></a>Обучение моделей с помощью оценщика Машинного обучения Azure
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -158,3 +158,4 @@ model = run.register_model(model_name='sklearn-sample')
 * [Обучение моделей TensorFlow](how-to-train-tensorflow.md)
 * [Настройка гиперпараметров](how-to-tune-hyperparameters.md)
 * [Развертывание обученной модели](how-to-deploy-and-where.md)
+* [Создание сред для обучения и развертывания и управление ими](how-to-use-environments.md)

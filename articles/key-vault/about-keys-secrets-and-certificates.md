@@ -9,12 +9,12 @@ ms.service: key-vault
 ms.topic: conceptual
 ms.date: 09/04/2019
 ms.author: mbaldwin
-ms.openlocfilehash: 3024d77c02f623f8b8dc1a8956e692c208c8c9e5
-ms.sourcegitcommit: be8e2e0a3eb2ad49ed5b996461d4bff7cba8a837
+ms.openlocfilehash: 6a107936d290609fec73d46a93a277c3bdcce354
+ms.sourcegitcommit: f53cd24ca41e878b411d7787bd8aa911da4bc4ec
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72799397"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75832920"
 ---
 # <a name="about-keys-secrets-and-certificates"></a>Сведения о ключах, секретах и сертификатах
 
@@ -125,7 +125,7 @@ Key Vault поддерживает ключи RSA таких размеров: 2
 #### <a name="wrapkeyunwrapkey-encryptdecrypt"></a>WRAPKEY/UNWRAPKEY, ENCRYPT/DECRYPT
 
 -   **RSA1_5** — это шифрование ключа RSAES-PKCS1-V1_5 [RFC3447].  
--   **RSA-OAEP** — алгоритм RSAES, использующий оптимальное асимметричное шифрование с дополнением (OAEP) [RFC3447], с параметрами по умолчанию, указанными в RFC 3447 в разделе A.2.1. Эти параметры используют хэш-функцию SHA-1 и функцию генерирования масок MGF1 с SHA-1.  
+-   **RSA-OAEP** — алгоритм RSAES, использующий оптимальное асимметричное шифрование с дополнением (OAEP) [RFC3447], с параметрами по умолчанию, указанными в RFC 3447 в разделе A.2.1. В этих параметрах по умолчанию используется хэш-функция SHA-1 и функция генерации маски MGF1 с помощью SHA-1.  
 
 #### <a name="signverify"></a>SIGN/VERIFY
 
@@ -376,7 +376,7 @@ Key Vault также поддерживает поле contentType для сек
 
 Объект сертификата Key Vault содержит конфигурацию, используемую для обмена данными с выбранным поставщиком издателей сертификатов для заказа сертификатов x509.  
 
--   Key Vault сотрудничает со следующими поставщиками издателей для SSL-сертификатов.
+-   Key Vault партнеров со следующими поставщиками поставщиков сертификатов для TLS/SSL-сертификатов
 
 |**Имя поставщика**|**Расположения**|
 |----------|--------|
@@ -389,7 +389,7 @@ Key Vault также поддерживает поле contentType для сек
 
     -   Администратор организации должен подключить свою компанию (например, Contoso) хотя бы к одному поставщику ЦС.  
 
-2. Администратор создает учетные данные инициатора запроса, чтобы зарегистрировать (и обновить) SSL-сертификаты в Key Vault.  
+2. Администратор создает учетные данные запросившего для Key Vault регистрации (и продления) сертификатов TLS/SSL.  
 
     -   Предоставляет конфигурацию, используемую для создания объекта издателя поставщика в хранилище ключей.  
 
@@ -473,7 +473,7 @@ Key Vault может управлять ключами учетных запис
 
 Дополнительные сведения о работе с сертификатами см. в статье [Azure Key Vault REST API reference](/rest/api/keyvault) (Справочник по REST API для Azure Key Vault). Сведения об установке разрешений см. в статьях [Vaults — Create Or Update](/rest/api/keyvault/vaults/createorupdate) (Хранилища. Создание или обновление) и [Vaults — Update Access Policy](/rest/api/keyvault/vaults/updateaccesspolicy) (Хранилища. Обновление политики доступа).
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также:
 
 - [Аутентификация, запросы и ответы](authentication-requests-and-responses.md)
 - [Руководство разработчика Azure Key Vault](/azure/key-vault/key-vault-developers-guide)

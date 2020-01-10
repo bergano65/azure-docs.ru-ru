@@ -11,18 +11,18 @@ ms.date: 03/27/2019
 ms.author: mabasile
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 882067f25030c6594526914fb8d111639b205949
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: 32e7251c7c47e7ccc03e313b939c917557a31417
+ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73685629"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75772216"
 ---
 # <a name="sql-data-warehouse-business-intelligence-partners"></a>Партнеры по бизнес-аналитике хранилища данных SQL
 Для создания собственного комплексного решение для хранилища данных можно воспользоваться одним из широкого спектра ведущих профессиональных средств.  В этой статье рассматриваются партнерские компании Майкрософт с официальными решениями бизнес-аналитики, поддерживающими хранилище данных SQL Azure.
 
 ## <a name="our-business-intelligence-partners"></a>Наши партнеры по бизнес-аналитике
-| Партнер | Description (Описание) | Ссылка на веб-сайт или продукт |
+| Partner | Description | Ссылка на веб-сайт или продукт |
 | ------- | ----------- | -------------------- |
 | ![Birst][1] |**Birst**<br>Birst подключает всю организацию через сеть выполняться виртуализированных экземпляров бизнес-аналитики в верхней части общей аналитической структуры.|[Страница продукта][birst_website]<br>[Azure Marketplace][birst_marketplace]<br> |
 | ![ClearStory Data][2] |**Данные Клеарстори (непрерывная бизнес-аналитика)**<br>ClearStory Data обеспечивает быстрый анализ разнообразных данных из хранилища данных SQL. Встроенная платформа ClearStory на базе Spark и приложение для анализа ускоряют доступ к данным и упорядочивание разных наборов данных. Средство обеспечивает быструю совместную работу для бизнес-пользователей, которые смогут проводить более точный анализ. |[Страница продукта][clearstory_website]<br> |
@@ -41,7 +41,7 @@ ms.locfileid: "73685629"
 
 <!--https://img.youtube.com/vi/0b8sPW2UHrU/0.jpg-->
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Дополнительные сведения о некоторых других партнерах см. в разделе [партнеры по интеграции данных][di_partners] и [партнеры по управление данными][dm_partners].
 
 <!--Image references-->
@@ -87,7 +87,7 @@ ms.locfileid: "73685629"
 
 [birst_marketplace]:https://azure.microsoft.com/marketplace/partners/birst/birst/
 [dundas_bi_marketplace]:https://azure.microsoft.com/marketplace/partners/dundas/dundas-bi/ 
-[looker_marketplace]:https://azure.microsoft.com/marketplace/partners/looker/looker-analytics-platform-326/
+[looker_marketplace]:https://azuremarketplace.microsoft.com/marketplace/apps/looker.looker-analytics-platform-6_20
 [qlik_marketplace]:https://azure.microsoft.com/marketplace/partners/qliktech-international-ab/qlikview/
 [tableau_marketplace]:https://azure.microsoft.com/marketplace/partners/tableau/tableau-server/
 [targit_marketplace]:https://azure.microsoft.com/marketplace/partners/targit/targit-decision-suite/ 

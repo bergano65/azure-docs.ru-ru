@@ -1,5 +1,5 @@
 ---
-title: Устранение неполадок с платформой Desired State Configuration (DSC) в службе автоматизации Azure
+title: Устранение неполадок настройки требуемого состояния службы автоматизации Azure (DSC)
 description: В этой статье приводятся сведения об устранении неполадок с платформой Desired State Configuration (DSC).
 services: automation
 ms.service: automation
@@ -9,14 +9,14 @@ ms.author: magoedte
 ms.date: 04/16/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 3d358ac1fb766804b35d969f4d06bc6c07e62661
-ms.sourcegitcommit: 5b9287976617f51d7ff9f8693c30f468b47c2141
+ms.openlocfilehash: 3c3c9950aab9a5a422ebc9e858daded2888fd82e
+ms.sourcegitcommit: f53cd24ca41e878b411d7787bd8aa911da4bc4ec
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2019
-ms.locfileid: "74951468"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75834258"
 ---
-# <a name="troubleshoot-desired-state-configuration-dsc"></a>Устранение неполадок с платформой Desired State Configuration (DSC)
+# <a name="troubleshoot-issues-with-azure-automation-desired-state-configuration-dsc"></a>Устранение неполадок с конфигурацией требуемого состояния службы автоматизации Azure (DSC)
 
 В этой статье приводятся сведения об устранении неполадок с платформой Desired State Configuration (DSC).
 
@@ -55,7 +55,7 @@ ms.locfileid: "74951468"
 An error occurred while deleting the DSC configuration '<name>'.  Error-details: The argument configurationName with the value <name> is not valid.  Valid configuration names can contain only letters,  numbers, and underscores.  The name must start with a letter.  The length of the name must be between 1 and 64 characters.
 ```
 
-#### <a name="cause"></a>Причина:
+#### <a name="cause"></a>Причина
 
 Эта ошибка является временной проблемой, которая планируется разрешить.
 
@@ -82,7 +82,7 @@ ps://<location>-agentservice-prod-1.azure-automation.net/accounts/00000000-0000-
     + PSComputerName        : <computerName>
 ```
 
-#### <a name="cause"></a>Причина:
+#### <a name="cause"></a>Причина
 
 Эта ошибка обычно вызвана брандмауэром, компьютером, который находится за прокси-сервером, или другими сетевыми ошибками.
 
@@ -104,7 +104,7 @@ The attempt to send status report to the server https://{your automation account
 VM has reported a failure when processing extension 'Microsoft.Powershell.DSC / Registration of the Dsc Agent with the server failed.
 ```
 
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
 
 Эта проблема вызвана неверным или просроченным сертификатом.  Дополнительные сведения см. в статье [истечение срока действия сертификата и](../automation-dsc-onboarding.md#certificate-expiration-and-re-registration)повторная регистрация.
 
@@ -162,7 +162,7 @@ If (($certs.Count) -gt 0)
 The attempt to get the action from server https://<url>//accounts/<account-id>/Nodes(AgentId=<agent-id>)/GetDscAction failed because a valid configuration <guid> cannot be found.
 ```
 
-#### <a name="cause"></a>Причина:
+#### <a name="cause"></a>Причина
 
 Эта ошибка обычно возникает из-за того, что узлу назначается имя конфигурации (например, ABC) вместо имени конфигурации узла (например, ABC.WebServer).
 
@@ -184,7 +184,7 @@ The attempt to get the action from server https://<url>//accounts/<account-id>/N
 Compilation completed successfully, but no node configuration.mofs were generated.
 ```
 
-#### <a name="cause"></a>Причина:
+#### <a name="cause"></a>Причина
 
 Если выражение, указанное в конфигурации DSC рядом с ключевым словом **Node**, возвращает результат `$null`, конфигурация узла не создается.
 
@@ -205,7 +205,7 @@ Compilation completed successfully, but no node configuration.mofs were generate
 No instance found with given property values
 ```
 
-#### <a name="cause"></a>Причина:
+#### <a name="cause"></a>Причина
 
 Вы обновили версию WMF, что привело к повреждению WMI.
 
@@ -223,7 +223,7 @@ No instance found with given property values
 System.InvalidOperationException error processing property 'Credential' of type <some resource name>: Converting and storing an encrypted password as plaintext is allowed only if PSDscAllowPlainTextPassword is set to true.
 ```
 
-#### <a name="cause"></a>Причина:
+#### <a name="cause"></a>Причина
 
 Вы использовали учетные данные в конфигурации, но не предоставили правильно **ConfigurationData** , чтобы установить **PSDscAllowPlainTextPassword** в значение true для каждой конфигурации узла.
 
@@ -241,7 +241,7 @@ System.InvalidOperationException error processing property 'Credential' of type 
 VM has reported a failure when processing extension 'Microsoft.Powershell.DSC'. Error message: \"DSC COnfiguration 'RegistrationMetaConfigV2' completed with error(s). Following are the first few: Registration of the Dsc Agent with the server <url> failed. The underlying error is: The attempt to register Dsc Agent with Agent Id <ID> with the server <url> return unexpected response code BadRequest. .\".
 ```
 
-#### <a name="cause"></a>Причина:
+#### <a name="cause"></a>Причина
 
 Эта ошибка обычно возникает, когда узлу назначено имя конфигурации узла, которое не существует в службе.
 
@@ -260,7 +260,7 @@ VM has reported a failure when processing extension 'Microsoft.Powershell.DSC'. 
 One or more errors occurred.
 ```
 
-#### <a name="cause"></a>Причина:
+#### <a name="cause"></a>Причина
 
 Эта ошибка возникает при попытке зарегистрировать узел, который находится в отдельной подписке, отличной от учетной записи службы автоматизации.
 
@@ -270,7 +270,7 @@ One or more errors occurred.
 
 Выполните следующие действия, чтобы зарегистрировать узел.
 
-* Физические или [виртуальные машины Windows в локальной среде или в облаке, отличном от Azure/AWS](../automation-dsc-onboarding.md#physicalvirtual-windows-machines-on-premises-or-in-a-cloud-other-than-azureaws).
+* Физические или [виртуальные машины Windows в локальной среде или в облаке, отличном от Azure/AWS](../automation-dsc-onboarding.md#physicalvirtual-windows-machines-on-premises-or-in-a-cloud-other-than-azure-including-aws-ec2-instances).
 * [Виртуальные машины Linux — физические или виртуальных машин Linux — локально или в облаке, отличном от Azure](../automation-dsc-onboarding.md#physicalvirtual-linux-machines-on-premises-or-in-a-cloud-other-than-azure).
 
 ### <a name="agent-has-a-problem"></a>Сценарий: сообщение об ошибке-"сбой подготовки"
@@ -283,7 +283,7 @@ One or more errors occurred.
 Provisioning has failed
 ```
 
-#### <a name="cause"></a>Причина:
+#### <a name="cause"></a>Причина
 
 Это сообщение появляется при наличии проблем с подключением между узлом и Azure.
 
@@ -303,7 +303,7 @@ Provisioning has failed
 This event indicates that failure happens when LCM is processing the configuration. ErrorId is 1. ErrorDetail is The SendConfigurationApply function did not succeed.. ResourceId is [resource]name and SourceInfo is ::nnn::n::resource. ErrorMessage is A general error occurred, not covered by a more specific error code..
 ```
 
-#### <a name="cause"></a>Причина:
+#### <a name="cause"></a>Причина
 
 Клиенты обнаружили, что если `/tmp` расположение имеет значение `noexec`, текущая версия DSC не сможет применить конфигурации.
 
@@ -319,7 +319,7 @@ This event indicates that failure happens when LCM is processing the configurati
 
 Например, если один скрипт конфигурации используется для создания конфигураций на основе данных узла, передаваемых в виде хэш-таблицы с помощью командлетов, а данные узла включают сервер с именем "Server" и "1server".
 
-#### <a name="cause"></a>Причина:
+#### <a name="cause"></a>Причина
 
 Известная ошибка службы компиляции.
 

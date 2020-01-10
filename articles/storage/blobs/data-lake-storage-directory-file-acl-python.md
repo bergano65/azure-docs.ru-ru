@@ -8,12 +8,12 @@ ms.author: normesta
 ms.topic: article
 ms.subservice: data-lake-storage-gen2
 ms.reviewer: prishet
-ms.openlocfilehash: e07bb6aa9d1fe22baaebb7bc7239ce03a728c6b9
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: dbfee5d897d54d68ea6471f0001793a905c95e62
+ms.sourcegitcommit: f53cd24ca41e878b411d7787bd8aa911da4bc4ec
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75431812"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75835071"
 ---
 # <a name="use-python-to-manage-directories-files-and-acls-in-azure-data-lake-storage-gen2-preview"></a>Использование Python для управления каталогами, файлами и списками ACL в Azure Data Lake Storage 2-го поколения (Предварительная версия)
 
@@ -140,6 +140,9 @@ def delete_directory():
 
 Получите список управления доступом (ACL) каталога, вызвав метод **даталакедиректориклиент. get_access_control** и ЗАДАВ список ACL, вызвав метод **даталакедиректориклиент. set_access_control** .
 
+> [!NOTE]
+> Если приложение разрешает доступ с помощью Azure Active Directory (Azure AD), убедитесь, что участнику безопасности, используемому приложением для авторизации доступа, назначена [роль владельца данных BLOB-объекта хранилища](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#storage-blob-data-owner). Дополнительные сведения о применении разрешений ACL и их влиянии на их изменение см. в разделе [Контроль доступа в Azure Data Lake Storage 2-го поколения](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-access-control).
+
 В этом примере получается и задается список ACL для каталога с именем `my-directory`. Строка `rwxr-xrw-` предоставляет владельцам разрешения на чтение, запись и выполнение, предоставляет группе-владельцу только разрешения на чтение и выполнение, а также предоставляет всем остальным разрешение на чтение и запись.
 
 ```python
@@ -195,6 +198,9 @@ def upload_file_to_directory():
 ## <a name="manage-file-permissions"></a>Управление разрешениями для файлов
 
 Получите список управления доступом (ACL) файла, вызвав метод **даталакефилеклиент. get_access_control** и ЗАДАВ список ACL, вызвав метод **даталакефилеклиент. set_access_control** .
+
+> [!NOTE]
+> Если приложение разрешает доступ с помощью Azure Active Directory (Azure AD), убедитесь, что участнику безопасности, используемому приложением для авторизации доступа, назначена [роль владельца данных BLOB-объекта хранилища](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#storage-blob-data-owner). Дополнительные сведения о применении разрешений ACL и их влиянии на их изменение см. в разделе [Контроль доступа в Azure Data Lake Storage 2-го поколения](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-access-control).
 
 В этом примере получается и задается список управления доступом для файла с именем `my-file.txt`. Строка `rwxr-xrw-` предоставляет владельцам разрешения на чтение, запись и выполнение, предоставляет группе-владельцу только разрешения на чтение и выполнение, а также предоставляет всем остальным разрешение на чтение и запись.
 

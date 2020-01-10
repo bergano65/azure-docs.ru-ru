@@ -1,5 +1,5 @@
 ---
-title: Устранение ошибок при подключении управления обновлениями, отслеживания изменений и инвентаризации
+title: Устранение неполадок при адаптации решений для управления службой автоматизации Azure
 description: Сведения о том, как устранить ошибки подключения с помощью решений управления обновлениями, отслеживания изменений и инвентаризации
 services: automation
 author: mgoedtel
@@ -8,14 +8,14 @@ ms.date: 05/22/2019
 ms.topic: conceptual
 ms.service: automation
 manager: carmonm
-ms.openlocfilehash: 0371c59ae63389bc3f7f0132260b0d98f496086c
-ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
+ms.openlocfilehash: 737b963074a2bec851882bddd78ad0b89f48d1d9
+ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74849315"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75769903"
 ---
-# <a name="troubleshoot-errors-when-onboarding-solutions"></a>Устранение неполадок при подключении решения
+# <a name="troubleshoot-errors-when-onboarding-update-management-change-tracking-and-inventory"></a>Устранение ошибок при адаптации Управление обновлениями, Отслеживание изменений и инвентаризации
 
 Ошибки могут возникнуть при подключении таких решений, как отслеживание изменений или управление обновлениями и инвентаризация. В этой статье описываются различные ошибки, которые могут возникнуть, и пути их решения.
 
@@ -27,7 +27,7 @@ ms.locfileid: "74849315"
 
 Узел зарегистрирован в службе автоматизации Azure, а затем изменяется имя операционной системы.  Отчеты с узла продолжают отображаться с исходным именем.
 
-#### <a name="cause"></a>Причина:
+#### <a name="cause"></a>Причина
 
 При переименовании зарегистрированных узлов имя узла в службе автоматизации Azure не обновляется.
 
@@ -42,7 +42,7 @@ ms.locfileid: "74849315"
 
 Клиенты сообщили, что при подключении через прокси-решение, которое завершает трафик HTTPS, а затем повторно шифрует трафик с помощью нового сертификата, служба не разрешает подключение.
 
-#### <a name="cause"></a>Причина:
+#### <a name="cause"></a>Причина
 
 Служба автоматизации Azure не поддерживает повторное подписание сертификатов, используемых для шифрования трафика.
 
@@ -66,7 +66,7 @@ The solution cannot be enabled due to missing permissions for the virtual machin
 The solution cannot be enabled on this VM because the permission to read the workspace is missing
 ```
 
-#### <a name="cause"></a>Причина:
+#### <a name="cause"></a>Причина
 
 Эта ошибка вызвана неверными или отсутствующими разрешениями для виртуальной машины, рабочей области или пользователя.
 
@@ -84,7 +84,7 @@ The solution cannot be enabled on this VM because the permission to read the wor
 Failed to configure automation account for diagnostic logging
 ```
 
-#### <a name="cause"></a>Причина:
+#### <a name="cause"></a>Причина
 
 Эта ошибка может возникать, если ценовая категория не соответствует модели выставления счетов подписки. Дополнительные сведения см. [в разделе Мониторинг использования и оценка затрат в Azure Monitor](https://aka.ms/PricingTierWarning).
 
@@ -98,7 +98,7 @@ Failed to configure automation account for diagnostic logging
 
 Этот код ошибки означает, что сохраненный запрос на поиск группы компьютеров, который используется в этом решении, имеет неправильный формат. 
 
-#### <a name="cause"></a>Причина:
+#### <a name="cause"></a>Причина
 
 Возможно, вы неудачно изменили запрос или автоматическое изменение внесено системой.
 
@@ -112,7 +112,7 @@ Failed to configure automation account for diagnostic logging
 
 Этот код ошибки означает, что развертывание завершилось неудачей из-за нарушения одной или нескольких политик.
 
-#### <a name="cause"></a>Причина: 
+#### <a name="cause"></a>Причина 
 
 Политика находится в таком месте, из которого выполнение операции невозможно.
 
@@ -138,9 +138,9 @@ Failed to configure automation account for diagnostic logging
 The link cannot be updated or deleted because it is linked to Update Management and/or ChangeTracking Solutions.
 ```
 
-#### <a name="cause"></a>Причина:
+#### <a name="cause"></a>Причина
 
-Эта ошибка возникает, когда в рабочей области Log Analytics все еще есть решения, которые зависят от учетной записи службы автоматизации и аналитики рабочей области журнала.
+Эта ошибка возникает, когда в рабочей области Log Analytics все еще есть решения, зависящие от учетной записи службы автоматизации и связанной с Log Analytics рабочей областью.
 
 ### <a name="resolution"></a>Разрешение
 
@@ -184,7 +184,7 @@ Please verify the VM has a running VM agent, and can establish outbound connecti
 'Manifest download error from https://<endpoint>/<endpointId>/Microsoft.EnterpriseCloud.Monitoring_MicrosoftMonitoringAgent_australiaeast_manifest.xml. Error: UnknownError. An exception occurred during a WebClient request.
 ```
 
-#### <a name="cause"></a>Причина:
+#### <a name="cause"></a>Причина
 
 Возможные причины возникновения этой ошибки перечислены ниже.
 
@@ -216,7 +216,7 @@ The Microsoft Monitoring Agent failed to install on this machine. Please try to 
 'Install failed for plugin (name: Microsoft.EnterpriseCloud.Monitoring.MicrosoftMonitoringAgent, version 1.0.11081.2) with exception Command C:\Packages\Plugins\Microsoft.EnterpriseCloud.Monitoring.MicrosoftMonitoringAgent\1.0.11081.2\MMAExtensionInstall.exe of Microsoft.EnterpriseCloud.Monitoring.MicrosoftMonitoringAgent has exited with Exit code: 1601'
 ```
 
-#### <a name="cause"></a>Причина:
+#### <a name="cause"></a>Причина
 
 Возможные причины возникновения этой ошибки перечислены ниже.
 
@@ -239,7 +239,7 @@ The Microsoft Monitoring Agent failed to install on this machine. Please try to 
 Install failed for plugin (name: Microsoft.EnterpriseCloud.Monitoring.MicrosoftMonitoringAgent, version 1.0.11081.4) with exception Command C:\Packages\Plugins\Microsoft.EnterpriseCloud.Monitoring.MicrosoftMonitoringAgent\1.0.11081.4\MMAExtensionInstall.exe of Microsoft.EnterpriseCloud.Monitoring.MicrosoftMonitoringAgent has exited with Exit code: 15614
 ```
 
-#### <a name="cause"></a>Причина:
+#### <a name="cause"></a>Причина
 
 Эта ошибка возникает из-за высокой нагрузки во время установки виртуальной машины.
 

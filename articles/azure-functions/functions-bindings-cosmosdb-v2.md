@@ -5,12 +5,12 @@ author: craigshoemaker
 ms.topic: reference
 ms.date: 11/21/2017
 ms.author: cshoe
-ms.openlocfilehash: 0ad569977194441b026c2c987ecad544ce40cfa1
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: 2e08c1c0fbd0962adee44af949be280701915a1e
+ms.sourcegitcommit: f53cd24ca41e878b411d7787bd8aa911da4bc4ec
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74227360"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75834068"
 ---
 # <a name="azure-cosmos-db-bindings-for-azure-functions-2x"></a>Привязки Azure Cosmos DB для службы "Функции Azure" версии 2.х
 
@@ -46,12 +46,12 @@ ms.locfileid: "74227360"
 Языковой пример см. в разделах:
 
 * [C#](#trigger---c-example)
-* [Сценарий C# (CSX)](#trigger---c-script-example)
+* [Скрипт C# (CSX)](#trigger---c-script-example)
 * [Java](#trigger---java-example)
 * [JavaScript](#trigger---javascript-example)
 * [Python](#trigger---python-example)
 
-Пропустить примеры триггеров
+[Пропустить примеры триггеров](#trigger---c-attributes)
 
 ### <a name="trigger---c-example"></a>Пример C# в триггере
 
@@ -87,11 +87,11 @@ namespace CosmosDBSamplesV2
 }
 ```
 
-Пропустить примеры триггеров
+[Пропустить примеры триггеров](#trigger---c-attributes)
 
 ### <a name="trigger---c-script-example"></a>Пример скрипта C# в триггере
 
-В следующем примере показаны привязка триггера Cosmos DB в файле *function.json* и [функция сценария C#](functions-reference-csharp.md), которая использует эту привязку. При изменении записей в Cosmos DB функция записывает сообщения в журнале.
+В следующем примере показаны привязка триггера Cosmos DB в файле *function.json* и [функция сценария C#](functions-reference-csharp.md), которая использует эту привязку. Функция записывает сообщения журнала при добавлении или изменении записей Cosmos DB.
 
 Данные привязки в файле *function.json*:
 
@@ -125,11 +125,11 @@ namespace CosmosDBSamplesV2
     }
 ```
 
-Пропустить примеры триггеров
+[Пропустить примеры триггеров](#trigger---c-attributes)
 
 ### <a name="trigger---javascript-example"></a>Пример JavaScript в триггере
 
-В следующем примере показаны привязка триггера Cosmos DB в файле *function.json* и [функция JavaScript](functions-reference-node.md), которая использует эту привязку. При изменении записей в Cosmos DB функция записывает сообщения в журнале.
+В следующем примере показаны привязка триггера Cosmos DB в файле *function.json* и [функция JavaScript](functions-reference-node.md), которая использует эту привязку. Функция записывает сообщения журнала при добавлении или изменении записей Cosmos DB.
 
 Данные привязки в файле *function.json*:
 
@@ -156,9 +156,11 @@ namespace CosmosDBSamplesV2
     }
 ```
 
+[Пропустить примеры триггеров](#trigger---c-attributes)
+
 ### <a name="trigger---java-example"></a>Пример Java в триггере
 
-В следующем примере показаны привязка триггера Cosmos DB в файле *function.json* и [функция Java](functions-reference-java.md), которая использует эту привязку. Эта функция используется при вставке или обновлении в указанной базе данных и коллекции.
+В следующем примере показаны привязка триггера Cosmos DB в файле *function.json* и [функция Java](functions-reference-java.md), которая использует эту привязку. Функция вызывается при наличии вставок или обновлений в указанной базе данных и коллекции.
 
 ```json
 {
@@ -193,11 +195,12 @@ namespace CosmosDBSamplesV2
 В [библиотеке среды выполнения функций Java](/java/api/overview/azure/functions/runtime) используйте заметку `@CosmosDBTrigger` для параметров, значения которых будут поступать из Cosmos DB.  Эту аннотацию можно использовать с собственными типами Java, POJO или значениями, допускающими значение null, с помощью необязательного\<T >.
 
 
-Пропустить примеры триггеров
+[Пропустить примеры триггеров](#trigger---c-attributes)
+
 
 ### <a name="trigger---python-example"></a>Пример Python: триггер
 
-В следующем примере показаны привязка триггера Cosmos DB в файле *function.json* и [функция Python](functions-reference-python.md), которая использует эту привязку. При изменении записей в Cosmos DB функция записывает сообщения в журнале.
+В следующем примере показаны привязка триггера Cosmos DB в файле *function.json* и [функция Python](functions-reference-python.md), которая использует эту привязку. Функция записывает сообщения журнала при добавлении или изменении записей Cosmos DB.
 
 Данные привязки в файле *function.json*:
 
@@ -250,7 +253,7 @@ namespace CosmosDBSamplesV2
 
 В следующей таблице описываются свойства конфигурации привязки, которые задаются в файле *function.json* и атрибуте `CosmosDBTrigger`.
 
-|свойство function.json | Свойство атрибута |ОПИСАНИЕ|
+|свойство function.json | Свойство атрибута |Description|
 |---------|---------|----------------------|
 |**type** || Нужно задать значение `cosmosDBTrigger`. |
 |**direction** || Нужно задать значение `in`. Этот параметр задается автоматически при создании триггера на портале Azure. |
@@ -258,10 +261,10 @@ namespace CosmosDBSamplesV2
 |**connectionStringSetting**|**ConnectionStringSetting** | Имя параметра приложения, содержащего строку подключения, используемую для подключения к отслеживаемой учетной записи Azure Cosmos DB. |
 |**databaseName**|**DatabaseName**  | Имя базы данных Azure Cosmos DB с отслеживаемой коллекцией. |
 |**collectionName** |**CollectionName** | Имя отслеживаемой коллекции. |
-|**leaseConnectionStringSetting** | **LeaseConnectionStringSetting** | (Необязательно.) Имя параметра приложения, содержащее строку подключения для службы, содержащей коллекцию аренды. Если значение не задано, используется значение `connectionStringSetting`. Этот параметр задается автоматически при создании привязки на портале. Строка подключения для коллекции аренд должна иметь разрешения на запись.|
+|**leaseConnectionStringSetting** | **LeaseConnectionStringSetting** | Используемых Имя параметра приложения, содержащего строку подключения к учетной записи Azure Cosmos DB, в которой содержится сбор аренд. Если значение не задано, используется значение `connectionStringSetting`. Этот параметр задается автоматически при создании привязки на портале. Строка подключения для коллекции аренд должна иметь разрешения на запись.|
 |**leaseDatabaseName** |**LeaseDatabaseName** | (Необязательно.) Имя базы данных, в которой содержится коллекция, используемая для хранения аренд. Если значение не задано, используется значение параметра `databaseName`. Этот параметр задается автоматически при создании привязки на портале. |
 |**leaseCollectionName** | **LeaseCollectionName** | (Необязательно.) Имя коллекции, используемой для хранения аренд. Если значение не задано, используется значение `leases`. |
-|**createLeaseCollectionIfNotExists** | **CreateLeaseCollectionIfNotExists** | (Необязательно.) Если задано значение `true`, коллекция аренд создается автоматически, если она не создана. По умолчанию используется значение `false`. |
+|**createLeaseCollectionIfNotExists** | **CreateLeaseCollectionIfNotExists** | (Необязательно.) Если задано значение `true`, коллекция аренд создается автоматически, если она не создана. Значение по умолчанию — `false`. |
 |**leasesCollectionThroughput**| **LeasesCollectionThroughput**| (Необязательно.) Определяет количество единиц запросов для назначения при создании коллекции аренд. Этот параметр используется, только если для `createLeaseCollectionIfNotExists` задано значение `true`. Этот параметр задается автоматически при создании привязки с помощью портала.
 |**leaseCollectionPrefix**| **LeaseCollectionPrefix**| (Дополнительно) Если параметр задан, то он добавляет префикс к созданной аренде в коллекции аренды для этой функции, позволяя двум разным функциям Azure совместно эффективно использовать коллекцию аренд с помощью различных префиксов.
 |**feedPollDelay**| **FeedPollDelay**| (Дополнительно) Если параметр задан, то он определяет задержку между опросами секции на наличие новых изменений в веб-канале, после того как все текущие изменения будут утеряны (в миллисекундах). По умолчанию это 5000 (5 секунд).
@@ -296,7 +299,7 @@ namespace CosmosDBSamplesV2
 См. примеры (для разных языков), в которых для считывания одного документа указывается значение идентификатора:
 
 * [C#](#input---c-examples)
-* [Сценарий C# (CSX)](#input---c-script-examples)
+* [Скрипт C# (CSX)](#input---c-script-examples)
 * [F#](#input---f-examples)
 * [Java](#input---java-examples)
 * [JavaScript](#input---javascript-examples)
@@ -306,7 +309,7 @@ namespace CosmosDBSamplesV2
 
 ### <a name="input---c-examples"></a>Примеры входных данных C#
 
-В этом разделе содержатся следующие примеры:
+Этот раздел содержит следующие примеры.
 
 * [Триггер очереди, поисковый идентификатор из JSON](#queue-trigger-look-up-id-from-json-c)
 * [Триггер HTTP, поисковый идентификатор из строки запроса](#http-trigger-look-up-id-from-query-string-c)
@@ -333,7 +336,7 @@ namespace CosmosDBSamplesV2
 
 #### <a name="queue-trigger-look-up-id-from-json-c"></a>Триггер очереди, поисковый идентификатор из JSON (C#)
 
-В следующем примере показана [функция C#](functions-dotnet-class-library.md), которая получает один документ. Функция активируется сообщением из очереди, который содержит объект JSON. Триггер очереди анализирует JSON в объект с именем `ToDoItemLookup`, который содержит идентификатор и значение ключа секции для поиска. Этот идентификатор и значение ключа секции используются для получения `ToDoItem` документа из указанной базы данных и коллекции.
+В следующем примере показана [функция C#](functions-dotnet-class-library.md), которая получает один документ. Функция активируется сообщением из очереди, который содержит объект JSON. Триггер очереди анализирует JSON в объект типа `ToDoItemLookup`, который содержит идентификатор и значение ключа секции для поиска. Этот идентификатор и значение ключа секции используются для получения `ToDoItem` документа из указанной базы данных и коллекции.
 
 ```cs
 namespace CosmosDBSamplesV2
@@ -637,7 +640,7 @@ namespace CosmosDBSamplesV2
 
 ### <a name="input---c-script-examples"></a>Примеры входных данных скрипта C#
 
-В этом разделе содержатся следующие примеры:
+Этот раздел содержит следующие примеры.
 
 * [Триггер очереди, поисковый идентификатор из строки](#queue-trigger-look-up-id-from-string-c-script)
 * [Триггер очереди, получение нескольких документов, используется SqlQuery](#queue-trigger-get-multiple-docs-using-sqlquery-c-script)
@@ -1115,7 +1118,7 @@ module.exports = function (context, req, toDoItem) {
 
 #### <a name="http-trigger-look-up-id-from-route-data-javascript"></a>Триггер HTTP, поисковый идентификатор из данных маршрута (JavaScript)
 
-В следующем примере показана [функция JavaScript](functions-reference-node.md), которая получает один документ. Функция активируется HTTP-запросом, который использует строку запроса для указания идентификатора и значения ключа секции для поиска. Этот идентификатор и значение ключа секции используются для получения `ToDoItem` документа из указанной базы данных и коллекции.
+В следующем примере показана [функция JavaScript](functions-reference-node.md), которая получает один документ. Функция активируется HTTP-запросом, который использует данные маршрута для указания идентификатора и значения ключа секции для поиска. Этот идентификатор и значение ключа секции используются для получения `ToDoItem` документа из указанной базы данных и коллекции.
 
 Ниже показан файл *function.json*.
 
@@ -1328,7 +1331,7 @@ def main(req: func.HttpRequest, todoitems: func.DocumentList) -> str:
 
 #### <a name="http-trigger-look-up-id-from-route-data-python"></a>Триггер HTTP, поисковый идентификатор из данных маршрута (Python)
 
-В следующем примере показана [функция Python](functions-reference-python.md), которая получает один документ. Функция активируется HTTP-запросом, который использует строку запроса для указания идентификатора и значения ключа секции для поиска. Этот идентификатор и значение ключа секции используются для получения `ToDoItem` документа из указанной базы данных и коллекции.
+В следующем примере показана [функция Python](functions-reference-python.md), которая получает один документ. Функция активируется HTTP-запросом, который использует данные маршрута для указания идентификатора и значения ключа секции для поиска. Этот идентификатор и значение ключа секции используются для получения `ToDoItem` документа из указанной базы данных и коллекции.
 
 Ниже показан файл *function.json*.
 
@@ -1470,7 +1473,7 @@ def main(queuemsg: func.QueueMessage, documents: func.DocumentList):
 
 ### <a name="input---java-examples"></a>Примеры входных данных Java
 
-В этом разделе содержатся следующие примеры:
+Этот раздел содержит следующие примеры.
 
 * [Триггер HTTP, поисковый идентификатор из строки запроса — строковый параметр](#http-trigger-look-up-id-from-query-string---string-parameter-java)
 * [Триггер HTTP, поисковый идентификатор из строки запроса — параметр POJO](#http-trigger-look-up-id-from-query-string---pojo-parameter-java)
@@ -1732,14 +1735,14 @@ public class DocsFromRouteSqlQuery {
 
 В следующей таблице описываются свойства конфигурации привязки, которые задаются в файле *function.json* и атрибуте `CosmosDB`.
 
-|свойство function.json | Свойство атрибута |ОПИСАНИЕ|
+|свойство function.json | Свойство атрибута |Description|
 |---------|---------|----------------------|
 |**type**     || Нужно задать значение `cosmosDB`.        |
 |**direction**     || Нужно задать значение `in`.         |
 |**name**     || Имя параметра привязки, представляющего документ в функции.  |
 |**databaseName** |**DatabaseName** |База данных, содержащая документ.        |
 |**collectionName** |**CollectionName** | Имя коллекции, содержащей документ. |
-|**id**    | **Id** | Идентификатор документа, который нужно получить. Это свойство поддерживает [выражения привязок](./functions-bindings-expressions-patterns.md). Не задавайте свойства **id** или **sqlQuery** одновременно. Если не задать ни одного из них, извлекается вся коллекция. |
+|**идентификатор**    | **Id** | Идентификатор документа, который нужно получить. Это свойство поддерживает [выражения привязок](./functions-bindings-expressions-patterns.md). Не задавайте свойства **id** или **sqlQuery** одновременно. Если не задать ни одного из них, извлекается вся коллекция. |
 |**sqlQuery**  |**SqlQuery**  | SQL-запрос к Azure Cosmos DB, используемый для извлечения нескольких документов. Свойство поддерживает привязки времени выполнения, как показано в примере: `SELECT * FROM c where c.departmentId = {departmentId}`. Не задавайте свойства **id** или **sqlQuery** одновременно. Если не задать ни одного из них, извлекается вся коллекция.|
 |**connectionStringSetting**     |**ConnectionStringSetting**|Имя параметра приложения, содержащего строку подключения к Azure Cosmos DB.        |
 |**partitionKey**|**PartitionKey**|Задает значение ключа секции для поиска. Может включать параметры привязки. Он необходим для уточняющих запросов в [секционированных](../cosmos-db/partition-data.md#logical-partitions) коллекциях.|
@@ -1761,7 +1764,7 @@ public class DocsFromRouteSqlQuery {
 Языковой пример см. в разделах:
 
 * [C#](#output---c-examples)
-* [Сценарий C# (CSX)](#output---c-script-examples)
+* [Скрипт C# (CSX)](#output---c-script-examples)
 * [F#](#output---f-examples)
 * [Java](#output---java-examples)
 * [JavaScript](#output---javascript-examples)
@@ -1773,7 +1776,7 @@ public class DocsFromRouteSqlQuery {
 
 ### <a name="output---c-examples"></a>Примеры выходных данных C#
 
-В этом разделе содержатся следующие примеры:
+Этот раздел содержит следующие примеры.
 
 * Триггер очереди, запись одного документа
 * Триггер очереди, запись документов при помощи IAsyncCollector
@@ -1867,7 +1870,7 @@ namespace CosmosDBSamplesV2
 
 ### <a name="output---c-script-examples"></a>Примеры выходных данных скрипта C#
 
-В этом разделе содержатся следующие примеры:
+Этот раздел содержит следующие примеры.
 
 * Триггер очереди, запись одного документа
 * Триггер очереди, запись документов при помощи IAsyncCollector
@@ -2100,14 +2103,6 @@ public static async Task Run(ToDoItem[] toDoItemsIn, IAsyncCollector<ToDoItem> t
     open FSharp.Interop.Dynamic
     open Newtonsoft.Json
     open Microsoft.Extensions.Logging
-
-    type Employee = {
-      id: string
-      name: string
-      employeeId: string
-      address: string
-    }
-
     let Run(myQueueItem: string, employeeDocument: byref<obj>, log: ILogger) =
       log.LogInformation(sprintf "F# Queue trigger function processed: %s" myQueueItem)
       let employee = JObject.Parse(myQueueItem)
@@ -2202,7 +2197,7 @@ public String cosmosDbQueryById(
 
 #### <a name="http-trigger-save-one-document-to-database-via-outputbinding-java"></a>Триггер HTTP, сохранение одного документа в базе данных через OutputBinding (Java)
 
-В следующем примере показана функция Java, которая записывает документ в CosmosDB с помощью выходного параметра ```OutputBinding<T>```. Обратите внимание, что в этом случае аннотацию ```outputItem``` необходимо добавить к параметру ```@CosmosDBOutput```, а не к подписи функции. ```OutputBinding<T>``` позволяет использовать привязку для записи документа в CosmosDB в вашей функции, а также позволяет возвращать вызывающему объекту другое значение, например JSON или XML-документ.
+В следующем примере показана функция Java, которая записывает документ в CosmosDB с помощью выходного параметра ```OutputBinding<T>```. Обратите внимание, что в этом случае аннотацию ```@CosmosDBOutput``` необходимо добавить к параметру ```outputItem```, а не к подписи функции. ```OutputBinding<T>``` позволяет использовать привязку для записи документа в CosmosDB в вашей функции, а также позволяет возвращать вызывающему объекту другое значение, например JSON или XML-документ.
 
 ```java
     @FunctionName("WriteOneDocOutputBinding")
@@ -2246,7 +2241,7 @@ public String cosmosDbQueryById(
 
 #### <a name="http-trigger-save-multiple-documents-to-database-via-outputbinding-java"></a>Триггер HTTP, сохранение нескольких документов в базе данных через OutputBinding (Java)
 
-В следующем примере показана функция Java, которая записывает несколько документов в CosmosDB с помощью выходного параметра ```OutputBinding<T>```. Обратите внимание, что в этом случае аннотацию ```outputItem``` необходимо добавить к параметру ```@CosmosDBOutput```, а не к подписи функции. Выходной параметр ```outputItem``` содержит список объектов ```ToDoItem``` в качестве типа параметра шаблона. ```OutputBinding<T>``` позволяет использовать привязку для записи документов в CosmosDB в вашей функции, а также позволяет возвращать вызывающему объекту другое значение, например JSON или XML-документ.
+В следующем примере показана функция Java, которая записывает несколько документов в CosmosDB с помощью выходного параметра ```OutputBinding<T>```. Обратите внимание, что в этом случае аннотацию ```@CosmosDBOutput``` необходимо добавить к параметру ```outputItem```, а не к подписи функции. Выходной параметр ```outputItem``` содержит список объектов ```ToDoItem``` в качестве типа параметра шаблона. ```OutputBinding<T>``` позволяет использовать привязку для записи документов в CosmosDB в вашей функции, а также позволяет возвращать вызывающему объекту другое значение, например JSON или XML-документ.
 
 ```java
     @FunctionName("WriteMultipleDocsOutputBinding")
@@ -2369,7 +2364,7 @@ def main(req: func.HttpRequest, doc: func.Out[func.Document]) -> func.HttpRespon
 
 В следующей таблице описываются свойства конфигурации привязки, которые задаются в файле *function.json* и атрибуте `CosmosDB`.
 
-|свойство function.json | Свойство атрибута |ОПИСАНИЕ|
+|свойство function.json | Свойство атрибута |Description|
 |---------|---------|----------------------|
 |**type**     || Нужно задать значение `cosmosDB`.        |
 |**direction**     || Нужно задать значение `out`.         |
@@ -2390,17 +2385,17 @@ def main(req: func.HttpRequest, doc: func.Out[func.Document]) -> func.HttpRespon
 > [!Note]
 > Если указать идентификатор существующего документа, он перезаписывается новым выходным документом.
 
-## <a name="exceptions-and-return-codes"></a>Коды возврата и исключений
+## <a name="exceptions-and-return-codes"></a>Исключения и коды возврата
 
 | Привязка | Справочные материалы |
 |---|---|
-| Cosmos DB | [Коды ошибок Cosmos DB](https://docs.microsoft.com/rest/api/cosmos-db/http-status-codes-for-cosmosdb) |
+| Cosmos DB; | [Коды ошибок Cosmos DB](https://docs.microsoft.com/rest/api/cosmos-db/http-status-codes-for-cosmosdb) |
 
 <a name="host-json"></a>
 
 ## <a name="hostjson-settings"></a>Параметры файла host.json
 
-В этом разделе описываются глобальные параметры конфигурации, доступные для этой привязки в версии 2.x. Дополнительные сведения о глобальных параметрах конфигурации в версии 2.x см. в статье [Справочник по файлу host.json для Функций Azure](functions-host-json.md).
+В этом разделе описываются глобальные параметры конфигурации, доступные для этой привязки в версии 2.x. Дополнительные сведения о глобальных настройках конфигурации в версии 2.x смотрите в статье [Справочник по файлу host.json для Функций Azure](functions-host-json.md).
 
 ```json
 {
@@ -2417,13 +2412,13 @@ def main(req: func.HttpRequest, doc: func.Out[func.Document]) -> func.HttpRespon
 }
 ```
 
-|Свойство  |значение по умолчанию | ОПИСАНИЕ |
+|Свойство  |По умолчанию | Description |
 |---------|---------|---------|
-|GatewayMode|gateway|Режим подключения, используемый функцией при подключении к службе Azure Cosmos DB. Возможные значения: `Direct` и `Gateway`.|
+|GatewayMode|Шлюз|Режим подключения, используемый функцией при подключении к службе Azure Cosmos DB. Возможные значения: `Direct` и `Gateway`.|
 |Протокол|Https|Протокол подключения, используемый функцией при подключении к службе Azure Cosmos DB.  [Описание обоих режимов](../cosmos-db/performance-tips.md#networking)|
-|leasePrefix|Недоступно|Префикс аренды для использования во всех функциях приложения.|
+|leasePrefix|Н/Д|Префикс аренды для использования во всех функциях приложения.|
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Azure Cosmos DB: обработка данных бессерверных баз данных с помощью службы "Функции Azure"](../cosmos-db/serverless-computing-database.md)
 * [Основные понятия триггеров и привязок в Функциях Azure](functions-triggers-bindings.md)

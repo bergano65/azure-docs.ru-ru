@@ -9,14 +9,14 @@ ms.reviewer: douglasl
 ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
-ms.date: 10/24/2019
+ms.date: 01/09/2020
 ms.author: jingwang
-ms.openlocfilehash: 5fd13531e438b8bcda8e3720758e338c964f77af
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: fd5843ecfd6585fb9c95168c6e55049fe0e27abb
+ms.sourcegitcommit: 8b37091efe8c575467e56ece4d3f805ea2707a64
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75444252"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75830315"
 ---
 # <a name="copy-data-from-and-to-oracle-by-using-azure-data-factory"></a>Копирование данных из Oracle и обратно с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Выберите используемую версию службы "Фабрика данных":"]
@@ -69,7 +69,7 @@ ms.locfileid: "75444252"
 | Свойство | Description | Обязательно для заполнения |
 |:--- |:--- |:--- |
 | type | Для свойства type необходимо задать значение **Oracle**. | Да |
-| connectionString | Указывает сведения, необходимые для подключения к экземпляру базы данных Oracle. <br/>Можно также добавить пароль в Azure Key Vault и извлечь конфигурацию `password` из строки подключения. Ознакомьтесь со следующими примерами и [Храните учетные данные в Azure Key Vault](store-credentials-in-key-vault.md) с дополнительными сведениями. <br><br>**Поддерживаемые типы подключений**: вы можете использовать **ИД безопасности Oracle** или **имя службы Oracle** для идентификации базы данных.<br>— Если вы используете идентификатор безопасности, используйте этот код для подключения: `Host=<host>;Port=<port>;Sid=<sid>;User Id=<username>;Password=<password>;`<br>— Если вы используете имя службы, используйте этот код: `Host=<host>;Port=<port>;ServiceName=<servicename>;User Id=<username>;Password=<password>;` | Да |
+| connectionString | Указывает сведения, необходимые для подключения к экземпляру базы данных Oracle. <br/>Можно также добавить пароль в Azure Key Vault и извлечь конфигурацию `password` из строки подключения. Ознакомьтесь со следующими примерами и [Храните учетные данные в Azure Key Vault](store-credentials-in-key-vault.md) с дополнительными сведениями. <br><br>**Поддерживаемые типы подключений**: вы можете использовать **ИД безопасности Oracle** или **имя службы Oracle** для идентификации базы данных.<br>— Если вы используете идентификатор безопасности, используйте этот код для подключения: `Host=<host>;Port=<port>;Sid=<sid>;User Id=<username>;Password=<password>;`<br>— Если вы используете имя службы, используйте этот код: `Host=<host>;Port=<port>;ServiceName=<servicename>;User Id=<username>;Password=<password>;`<br>Дополнительные параметры подключения Oracle Native позволяют добавить запись в [TNSNAMES. Файл ORA](http://www.orafaq.com/wiki/Tnsnames.ora) на сервере Oracle и в связанной службе ADF Oracle, выберите использовать имя службы Oracle тип соединения и настройте соответствующее имя службы. | Да |
 | connectVia | [Среда выполнения интеграции](concepts-integration-runtime.md), используемая для подключения к хранилищу данных. Дополнительные сведения см. в разделе " [Предварительные требования](#prerequisites) ". Если не указано другое, по умолчанию используется интегрированная Azure Integration Runtime. |Нет |
 
 >[!TIP]

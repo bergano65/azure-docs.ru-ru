@@ -4,13 +4,13 @@ services: azure-dev-spaces
 ms.date: 07/24/2019
 ms.topic: conceptual
 description: Узнайте, как установить Azure Dev Spaces в кластере AKS и установить клиентские средства.
-keywords: Docker, Kubernetes, Azure, служба контейнеров Azure, служба Azure Kubernetes, контейнеры, Helm, сетка службы, сетка службы маршрутизации, kubectl, k8s
-ms.openlocfilehash: 2649b36c96313d4a7d878a1c72c3b175ad0f4d30
-ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
+keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, service mesh, service mesh routing, kubectl, k8s
+ms.openlocfilehash: 0fd4cce9d25922bea50963c4e87e110759673bbc
+ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74325777"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75770634"
 ---
 # <a name="install-azure-dev-spaces-on-aks-and-the-client-side-tooling"></a>Установка Azure Dev Spaces в AKS и клиентские средства на стороне клиента
 
@@ -58,7 +58,7 @@ Managed Kubernetes cluster 'myAKSCluster' in resource group 'myResourceGroup' is
 * [Кластер AKS][create-aks-portal] в [поддерживаемом регионе][supported-regions].
 
 Чтобы установить Azure Dev Spaces с помощью портал Azure, выполните следующие действия.
-1. Войдите на [портале Azure][az-portal].
+1. Войдите на [портал Azure][az-portal].
 1. Перейдите к кластеру AKS.
 1. Щелкните *пространства разработки*.
 1. Под надписью *Enable Dev Spaces* (Включить Dev Spaces) нажмите *Да* и щелкните *Сохранить*.
@@ -76,7 +76,7 @@ Managed Kubernetes cluster 'myAKSCluster' in resource group 'myResourceGroup' is
 * В Visual Studio 2017 установите рабочую нагрузку веб-разработки и [средства Visual Studio для Kubernetes][visual-studio-k8s-tools].
 * Скачайте и установите интерфейс командной строки [Windows][cli-win], [Mac][cli-mac]или [Linux][cli-linux] .
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте, как в Azure Dev Spaces можно разрабатывать более сложные приложения в нескольких контейнерах и как упростить совместную разработку, используя разные версии и ветви кода в разных средах.
 
@@ -86,7 +86,7 @@ Managed Kubernetes cluster 'myAKSCluster' in resource group 'myResourceGroup' is
 [create-aks-cli]: ../../aks/kubernetes-walkthrough.md#create-a-resource-group
 [create-aks-portal]: ../../aks/kubernetes-walkthrough-portal.md#create-an-aks-cluster
 [install-cli]: /cli/azure/install-azure-cli?view=azure-cli-latest
-[supported-regions]: ../about.md#supported-regions-and-configurations
+[supported-regions]: https://azure.microsoft.com/global-infrastructure/services/?products=kubernetes-service
 [team-development-qs]: ../quickstart-team-development.md
 
 [az-portal]: https://portal.azure.com

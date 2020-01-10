@@ -11,12 +11,12 @@ author: iainfoulds
 manager: daveba
 ms.reviewer: rogoya
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 30006d0dcccdd1b160289c72769340d141198d3c
-ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
+ms.openlocfilehash: bfd49a4429dc0d7f5db07a577016c21de8fc58d8
+ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74847598"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75762881"
 ---
 # <a name="azure-active-directory-smart-lockout"></a>Смарт-блокировка Azure Active Directory
 
@@ -67,9 +67,9 @@ ms.locfileid: "74847598"
 
 Чтобы проверить или изменить значения смарт-блокировки для организации, выполните следующие действия.
 
-1. Войдите на [портале Azure](https://portal.azure.com).
-1. Найдите и выберите *Azure Active Directory*. Выберите **методы проверки Подлинности** > **защиту паролем**.
-1. В зависимости от того, сколько попыток неудачного входа разрешено до первой блокировки учетной записи, установите **пороговое значение блокировки**. По умолчанию задано значение 10.
+1. Войдите на [портал Azure](https://portal.azure.com).
+1. Найдите и выберите *Azure Active Directory*. Выберите **безопасность** > **методы проверки подлинности** > **Защита паролем**.
+1. В зависимости от того, сколько попыток неудачного входа разрешено до первой блокировки учетной записи, установите **пороговое значение блокировки**. Значение по умолчанию равно 10.
 1. Чтобы указать время для каждой блокировки (в секундах), установите параметр **Длительность блокировки в секундах**. Значение по умолчанию — 60 секунд (одна минута).
 
 > [!NOTE]

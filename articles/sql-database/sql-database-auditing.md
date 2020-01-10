@@ -9,12 +9,12 @@ author: barmichal
 ms.author: mibar
 ms.reviewer: vanto
 ms.date: 08/22/2019
-ms.openlocfilehash: 450f40c8ba49028d99143d7cf2b2995eb354f8fd
-ms.sourcegitcommit: ec2eacbe5d3ac7878515092290722c41143f151d
+ms.openlocfilehash: 70cbc761c7e334ed9b13e3cd7d915102917ff149
+ms.sourcegitcommit: 5b073caafebaf80dc1774b66483136ac342f7808
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75551630"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75780204"
 ---
 # <a name="get-started-with-sql-database-auditing"></a>Начало работы с аудитом базы данных SQL
 
@@ -241,6 +241,8 @@ ms.locfileid: "75551630"
     Можно настроить аудит для различных типов действий и групп действий с помощью PowerShell, как описано в разделе [Управление аудитом базы данных SQL с помощью Azure PowerShell](#subheading-7).
 
 - Если используется проверка подлинности AAD, неудачные попытки входа *не* отображаются в журнале аудита SQL. Чтобы просмотреть записи аудита для неудачных попыток входа, посетите [портал Azure Active Directory]( ../active-directory/reports-monitoring/reference-sign-ins-error-codes.md), который регистрирует сведения об этих событиях.
+
+- Аудит базы данных SQL Azure оптимизирован для обеспечения доступности & производительности. Во время очень высокой активности база данных SQL Azure позволяет выполнять операции и не записывать некоторые события аудита.
 
 
 ## <a id="subheading-7"></a>Управление SQL Serverом Azure и аудитом базы данных с помощью Azure PowerShell

@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 07/23/2019
 ms.author: mlottner
-ms.openlocfilehash: 18031400155b92f243877ae8c8d7a56e1d5295a0
-ms.sourcegitcommit: f3f4ec75b74124c2b4e827c29b49ae6b94adbbb7
+ms.openlocfilehash: d70f2f3ec87c8673013bcf7b6f70ebcbb8d06f08
+ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70933644"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75770022"
 ---
 # <a name="select-and-deploy-a-security-agent-on-your-iot-device"></a>Выбор и развертывание агента безопасности на устройстве IoT
 
@@ -29,7 +29,7 @@ ms.locfileid: "70933644"
 
 Агенты разрабатываются в виде проектов с открытым исходным кодом и доступны в двух разновидностях: <br> [C](https://aka.ms/iot-security-github-c), и [C#](https://aka.ms/iot-security-github-cs).
 
-В этой статье раскрываются следующие темы: 
+Вы узнаете, как выполнять следующие задачи: 
 > [!div class="checklist"]
 > * Сравнение разновидностей агента безопасности
 > * Обнаружение поддерживаемых платформ агентов
@@ -44,11 +44,11 @@ ms.locfileid: "70933644"
 |     | Агент безопасности на основе C | C#агент безопасности на основе |
 | --- | ----------- | --------- |
 | Открытый исходный код | Доступно в рамках [лицензии MIT](https://en.wikipedia.org/wiki/MIT_License) в [GitHub](https://aka.ms/iot-security-github-cs) | Доступно в рамках [лицензии MIT](https://en.wikipedia.org/wiki/MIT_License) в [GitHub](https://aka.ms/iot-security-github-c) |
-| Язык разработки    | В | C# |
+| Язык разработки    | C | C# |
 | Поддерживаемые платформы Windows | Нет | Да |
-| Предварительные требования для Windows | --- | [ИНТЕРФЕЙСА](https://docs.microsoft.com/windows/desktop/wmisdk/) |
+| Предварительные требования для Windows | --- | [WMI](https://docs.microsoft.com/windows/desktop/wmisdk/) |
 | Поддерживаемые платформы Linux? | Да, x64 и x86 | Да, только x64 |
-| Предварительные требования для Linux | libunwind8, libcurl3, UUID — среда выполнения, аудит, аудиспд — подключаемые модули | libunwind8, libcurl3, UUID-Runtime, audited, аудиспд-plugins, sudo, netstat, iptables |
+| Предварительные условия (и необходимые компоненты) для Linux | libunwind8, libcurl3, UUID — среда выполнения, аудит, аудиспд — подключаемые модули | libunwind8, libcurl3, UUID-Runtime, audited, аудиспд-plugins, sudo, netstat, iptables |
 | Место на диске | 10,5 МБ | 90 МБ |
 | Объем памяти (в среднем) | 5,5 МБ | 33 МБ |
 | [Проверка подлинности](concept-security-agent-authentication-methods.md) в центре Интернета вещей | Да | Да |
@@ -59,7 +59,7 @@ ms.locfileid: "70933644"
 
 ## <a name="security-agent-installation-guidelines"></a>Рекомендации по установке агента безопасности
 
-Для **Windows**: Сценарий Install Секуритяжент. ps1 должен быть выполнен из окна администратора PowerShell. 
+Для **Windows**: сценарий Install секуритяжент. ps1 должен быть выполнен из окна администратора PowerShell. 
 
 Для **Linux**: InstallSecurityAgent.sh должен быть запущен от имени суперпользователя. Рекомендуется выполнить префикс "Sudo" для команды установки.
 
@@ -90,17 +90,17 @@ ms.locfileid: "70933644"
 
 |Центр безопасности Azure для агента IoT |Операционная система |Архитектура |
 |--------------|------------|--------------|
-|В|Ubuntu 16.04 |   x64|
-|В|Ubuntu 18.04 |   x64|
-|В|Debian 9 |   x64, x86|
+|C|Ubuntu 16.04 |   x64|
+|C|Ubuntu 18.04 |   x64, ARMv7|
+|C|Debian 9 |   x64, x86|
 |C#|Ubuntu 16.04    |x64|
-|C#|Ubuntu 18.04    |x64|
+|C#|Ubuntu 18.04    |x64, ARMv7|
 |C#|Debian 9    |x64|
-|C#|Windows Server 2016|    X64|
+|C#|Windows Server 2016|    X64|
 |C#|Windows 10 IoT базовая, сборка 17763    |x64|
 |
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы узнать больше о параметрах конфигурации, перейдите к руководству по настройке агента. 
 > [!div class="nextstepaction"]

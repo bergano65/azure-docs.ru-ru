@@ -1,5 +1,6 @@
 ---
-title: Руководство по Выполнение сетевого переноса Oracle в Базу данных Azure для PostgreSQL с помощью Azure Database Migration Service | Документация Майкрософт
+title: Руководство. Миграция Oracle Online в базу данных Azure для PostgreSQL
+titleSuffix: Azure Database Migration Service
 description: Из этой статьи вы узнаете, как выполнить сетевой перенос из Oracle в локальной среде или на виртуальной машине в Базу данных Azure для PostgreSQL с помощью Azure Database Migration Service.
 services: dms
 author: HJToland3
@@ -8,21 +9,21 @@ manager: craigg
 ms.reviewer: craigg
 ms.service: dms
 ms.workload: data-services
-ms.custom: mvc, tutorial
+ms.custom: seo-lt-2019
 ms.topic: article
-ms.date: 09/10/2019
-ms.openlocfilehash: 1ac5e4dd28f7565f546c700a4bbb0076fd793bb7
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
-ms.translationtype: HT
+ms.date: 01/08/2020
+ms.openlocfilehash: 45b0c012ec8b8d70c1fad99db40f38fb92daf8a0
+ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73163428"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75770651"
 ---
-# <a name="tutorial-migrate-oracle-to-azure-database-for-postgresql-online-using-dms-preview"></a>Руководство по Сетевой перенос Oracle в Базу данных Azure для PostgreSQL с помощью DMS (предварительная версия)
+# <a name="tutorial-migrate-oracle-to-azure-database-for-postgresql-online-using-dms-preview"></a>Руководство. Миграция Oracle в базу данных Azure для PostgreSQL через Интернет с помощью DMS (Предварительная версия)
 
 Службу Azure Database Migration Service можно использовать для переноса баз данных Oracle из локальной среды или виртуальных машин в [Базу данных Azure для PostgreSQL](https://docs.microsoft.com/azure/postgresql/) с минимальным временем простоя. Другими словами, миграцию можно завершить с минимальным временем простоя для приложения. В этом руководстве выполняется перенос примера базы данных **отдела кадров** из экземпляра Oracle 11g, размещенного в локальной среде или на виртуальной машине, в Базу данных Azure для PostgreSQL с помощью операции сетевого переноса в Azure Database Migration Service.
 
-Из этого руководства вы узнаете, как выполнять следующие задачи:
+В этом руководстве описано следующее.
 > [!div class="checklist"]
 >
 > * оценка мероприятий по миграции с помощью средства ora2pg;
@@ -42,7 +43,7 @@ ms.locfileid: "73163428"
 
 В этой статье описывается выполнение сетевого переноса из Oracle в Базу данных Azure для PostgreSQL.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Для работы с этим руководством вам потребуется следующее:
 
@@ -51,21 +52,22 @@ ms.locfileid: "73163428"
 * Скачайте и установите ora2pg для ОС [Windows](https://github.com/Microsoft/DataMigrationTeam/blob/master/Whitepapers/Steps%20to%20Install%20ora2pg%20on%20Windows.pdf) или [Linux](https://github.com/Microsoft/DataMigrationTeam/blob/master/Whitepapers/Steps%20to%20Install%20ora2pg%20on%20Linux.pdf).
 * [Создайте экземпляр в Базе данных Azure для PostgreSQL](https://docs.microsoft.com/azure/postgresql/quickstart-create-server-database-portal).
 * Подключитесь к этому экземпляру и создайте базу данных, следуя инструкциям из этого [документа](https://docs.microsoft.com/azure/postgresql/tutorial-design-database-using-azure-portal).
-* Создайте виртуальную сеть Azure для Azure Database Migration Service с помощью модели развертывания Azure Resource Manager, которая обеспечивает подключение "сеть — сеть" к локальным исходным серверам с помощью [ExpressRoute](https://docs.microsoft.com/azure/expressroute/expressroute-introduction) или [VPN](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-about-vpngateways). Дополнительные сведения о создании виртуальной сети приведены в [документации по виртуальным сетям](https://docs.microsoft.com/azure/virtual-network/). В частности, уделите внимание кратким руководствам с пошаговыми инструкциями.
+* Создайте виртуальная сеть Microsoft Azure для Azure Database Migration Service с помощью модели развертывания Azure Resource Manager, которая обеспечивает подключение типа "сеть — сеть" к локальным исходным серверам с помощью [ExpressRoute](https://docs.microsoft.com/azure/expressroute/expressroute-introduction) или [VPN](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-about-vpngateways). Дополнительные сведения о создании виртуальной сети см. в [документации по виртуальной сети](https://docs.microsoft.com/azure/virtual-network/), особенно в кратком руководстве, где приведены пошаговые инструкции.
 
   > [!NOTE]
-  > Если вы используете ExpressRoute с пиринговой связью с сетью корпорации Майкрософт, во время настройки виртуальной сети добавьте в подсеть, в которой будет подготовлена служба, следующие [конечные точки](https://docs.microsoft.com/azure/virtual-network/virtual-network-service-endpoints-overview):
+  > При установке виртуальной сети с помощью ExpressRoute с пирингом сети в корпорацию Майкрософт добавьте следующие [конечные точки](https://docs.microsoft.com/azure/virtual-network/virtual-network-service-endpoints-overview) службы в подсеть, в которой будет подготовлена служба:
+  >
   > * целевую конечную точку базы данных (например, конечная точка SQL, конечная точка Cosmos DB и т. д.);
   > * конечную точку службы хранилища;
   > * конечную точку служебной шины.
   >
   > Такая конфигурация вызвана тем, что у Azure Database Migration Service нет подключения к Интернету.
 
-* Убедитесь, что правила группы безопасности сети для виртуальной сети не блокируют следующие входящие порты для Azure Database Migration Service: 443, 53, 9354, 445, 12000. Дополнительные сведения о фильтрации трафика, предназначенного для виртуальной сети Azure, с помощью NSG см. в статье [Plan virtual networks](https://docs.microsoft.com/azure/virtual-network/virtual-network-vnet-plan-design-arm) (Планирование виртуальных сетей).
+* Убедитесь, что правила группы безопасности сети виртуальной сети (NSG) не блокируют следующие порты входящего трафика для Azure Database Migration Service: 443, 53, 9354, 445, 12000. Дополнительные сведения о фильтрации трафика NSG в виртуальной сети см. в статье [Фильтрация сетевого трафика с помощью групп безопасности сети](https://docs.microsoft.com/azure/virtual-network/virtual-network-vnet-plan-design-arm).
 * Настройте [брандмауэр Windows для доступа к ядру СУБД](https://docs.microsoft.com/sql/database-engine/configure-windows/configure-a-windows-firewall-for-database-engine-access).
 * Откройте брандмауэр Windows, чтобы предоставить Azure Database Migration Service доступ к исходному серверу Oracle. По умолчанию это TCP-порт 1521.
 * Если перед исходными базами данных развернуто устройство брандмауэра, вам может понадобиться добавить правила брандмауэра, чтобы позволить службе Azure Database Migration Service обращаться к исходным базам данных для выполнения миграции.
-* Создайте [правило брандмауэра](https://docs.microsoft.com/azure/sql-database/sql-database-firewall-configure) на уровне сервера для Базы данных Azure для PostgreSQL, чтобы предоставить службе Azure Database Migration Service доступ к целевым базам данных. Задайте диапазон подсети в виртуальной сети, которая используется для Azure Database Migration Service.
+* Создайте [правило брандмауэра](https://docs.microsoft.com/azure/sql-database/sql-database-firewall-configure) на уровне сервера для Базы данных Azure для PostgreSQL, чтобы предоставить службе Azure Database Migration Service доступ к целевым базам данных. Укажите диапазон подсети виртуальной сети, используемый для Azure Database Migration Service.
 * Разрешите доступ к исходным базам данных Oracle.
 
   > [!NOTE]
@@ -172,7 +174,7 @@ ms.locfileid: "73163428"
 
 Большинство клиентов тратят немало времени на изучение отчета об оценке и планирование мероприятий по миграции в автоматическом и ручном режиме.
 
-Чтобы настроить и запустить ora2pg для подготовки отчета об оценке, воспользуйтесь разделом **Premigration: Assessment** (Перед миграцией: оценка) в [учебнике по переносу Oracle в Базу данных Azure для PostgreSQL](https://github.com/Microsoft/DataMigrationTeam/blob/master/Whitepapers/Oracle%20to%20Azure%20PostgreSQL%20Migration%20Cookbook.pdf). Пример создаваемого ora2pg отчета об оценке можно получить [здесь](http://ora2pg.darold.net/report.html).
+Сведения о настройке и запуске ora2pg для создания отчета об оценке см. в разделе Предварительная **Миграция: Оценка** [Oracle в базу данных Azure для PostgreSQL Cookbook](https://github.com/Microsoft/DataMigrationTeam/blob/master/Whitepapers/Oracle%20to%20Azure%20PostgreSQL%20Migration%20Cookbook.pdf). Пример создаваемого ora2pg отчета об оценке можно получить [здесь](https://ora2pg.darold.net/report.html).
 
 ## <a name="export-the-oracle-schema"></a>Экспорт схемы Oracle
 
@@ -184,13 +186,13 @@ ms.locfileid: "73163428"
 psql -f [FILENAME] -h [AzurePostgreConnection] -p 5432 -U [AzurePostgreUser] -d database 
 ```
 
-Например:
+Пример.
 
 ```
 psql -f %namespace%\schema\sequences\sequence.sql -h server1-server.postgres.database.azure.com -p 5432 -U username@server1-server -d database
 ```
 
-Чтобы настроить и запустить ora2pg для преобразования схемы, воспользуйтесь разделом **Migration: Schema and data** (Миграция: схема и данные) в [учебнике по переносу Oracle в Базу данных Azure для PostgreSQL](https://github.com/Microsoft/DataMigrationTeam/blob/master/Whitepapers/Oracle%20to%20Azure%20PostgreSQL%20Migration%20Cookbook.pdf).
+Сведения о настройке и запуске ora2pg для преобразования схемы см. в разделе **Migration: schema and Data** статьи [Oracle to Azure Database for PostgreSQL Cookbook](https://github.com/Microsoft/DataMigrationTeam/blob/master/Whitepapers/Oracle%20to%20Azure%20PostgreSQL%20Migration%20Cookbook.pdf).
 
 ## <a name="set-up-the-schema-in-azure-database-for-postgresql"></a>Настройка схемы в Базе данных Azure для PostgreSQL
 
@@ -204,7 +206,7 @@ Azure Database Migration Service также может создать схему
 > [!IMPORTANT]
 > Azure Database Migration Service создает только схему таблицы; другие объекты базы данных, такие как хранимые процедуры, пакеты, индексы и т. д., не создаются.
 
-Удалите внешний ключ в целевой базе данных, чтобы выполнить полную загрузку данных. В разделе **Перенос примера схемы** [этой статьи](https://docs.microsoft.com/azure/dms/tutorial-postgresql-azure-postgresql-online) приводится скрипт, который можно использовать для удаления внешнего ключа. Примените Azure Database Migration Service для запуска полной загрузки и синхронизации.
+Удалите внешний ключ в целевой базе данных, чтобы выполнить полную загрузку данных. В разделе **Перенос примера схемы**[этой статьи](https://docs.microsoft.com/azure/dms/tutorial-postgresql-azure-postgresql-online) приводится скрипт, который можно использовать для удаления внешнего ключа. Примените Azure Database Migration Service для запуска полной загрузки и синхронизации.
 
 ### <a name="when-the-postgresql-table-schema-already-exists"></a>Если схема таблицы PostgreSQL уже существует
 
@@ -229,7 +231,7 @@ Azure Database Migration Service также может создать схему
 > [!IMPORTANT]
 > Azure Database Migration Service требует, чтобы все таблицы создавались одинаково, используя Azure Database Migration Service или такое средство, как ora2pg, но не оба.
 
-Чтобы начать работу:
+Чтобы приступить к работе, сделайте следующее:
 
 1. Создайте схему в целевой базе данных в соответствии с требованиями приложения. По умолчанию имена схемы и столбцов таблицы PostgreSQL написаны в нижнем регистре. С другой стороны, названия схемы и столбцов таблицы Oracle по умолчанию записаны в верхнем регистре.
 2. На шаге выбора схем укажите целевую базу данных и целевую схему.
@@ -237,15 +239,15 @@ Azure Database Migration Service также может создать схему
 
     Если имя схемы в источнике Oracle совпадает с именем в Базе данных Azure для PostgreSQL, то Azure Database Migration Service *создает схему таблицы, используя тот же регистр, что и в целевом объекте*.
 
-    Например:
+    Пример.
 
     | Исходная схема Oracle | Целевая PostgreSQL Database.Schema | schema.table.column, созданная DMS |
     | ------------- | ------------- | ------------- |
-    | HR | targetHR.public | public.countries.country_id |
-    | HR | targetHR.trgthr | trgthr.countries.country_id |
-    | HR | targetHR.TARGETHR | "TARGETHR"."COUNTRIES"."COUNTRY_ID" |
-    | HR | targetHR.HR | "HR"."COUNTRIES"."COUNTRY_ID" |
-    | HR | targetHR.Hr | *Невозможно сопоставить смешанные регистры |
+    | Управление персоналом | targetHR.public | public.countries.country_id |
+    | Управление персоналом | targetHR.trgthr | trgthr.countries.country_id |
+    | Управление персоналом | targetHR.TARGETHR | "TARGETHR"."COUNTRIES"."COUNTRY_ID" |
+    | Управление персоналом | targetHR.HR | "HR"."COUNTRIES"."COUNTRY_ID" |
+    | Управление персоналом | targetHR.Hr | *Невозможно сопоставить смешанные регистры |
 
     *Чтобы создать схему со смешанными регистрами и имена таблиц в целевом PostgreSQL, свяжитесь с нами по адресу [dmsfeedback@microsoft.com](mailto:dmsfeedback@microsoft.com). Мы можем предоставить скрипт для настройки схемы таблицы со смешанными регистрами в целевой базе данных PostgreSQL.
 
@@ -275,11 +277,11 @@ Azure Database Migration Service также может создать схему
   
 3. На экране **Создание службы миграции** укажите имя службы, подписку и новую или существующую группу ресурсов.
 
-4. Создайте виртуальную сеть или выберите имеющуюся.
+4. Выберите существующую виртуальную сеть или создайте новую.
 
-    Виртуальная сеть предоставляет для Azure Database Migration Service доступ к исходному экземпляру Oracle и целевому экземпляру Базы данных Azure для PostgreSQL.
+    Виртуальная сеть предоставляет Azure Database Migration Service с доступом к исходному Oracle и целевому экземпляру базы данных Azure для PostgreSQL.
 
-    Дополнительные сведения о создании виртуальной сети на портале Azure см. в статье [Краткое руководство. Создание виртуальной сети с помощью портала Azure](https://aka.ms/DMSVnet).
+    Дополнительные сведения о создании виртуальной сети в портал Azure см. в статье [Создание виртуальной сети с помощью портал Azure](https://aka.ms/DMSVnet).
 
 5. Выберите ценовую категорию.
 
@@ -320,7 +322,7 @@ Azure Database Migration Service также может создать схему
 
 ## <a name="upload-oracle-oci-driver"></a>Загрузка драйвера Oracle OCI
 
-1. Выберите **Сохранить**, а затем на экране **Установка драйвера OCI** войдите в учетную запись Oracle и загрузите драйвер **instantclient-basiclite-windows.x64-12.2.0.1.0.zip**(размер: 37 128 586 байт; контрольная сумма SHA1: 865082268), который можно найти [здесь](https://www.oracle.com/technetwork/topics/winx64soft-089540.html#ic_winx64_inst).
+1. Выберите **сохранить**, а затем на экране **Установка драйвера OCI** Войдите в учетную запись Oracle и скачайте драйвер **инстантклиент-басиклите-Виндовс. x64-12.2.0.1.0. zip** (37 128 586 байт) (контрольная сумма SHA1:865082268) [отсюда.](https://www.oracle.com/technetwork/topics/winx64soft-089540.html#ic_winx64_inst)
 2. Поместите драйвер в общую папку.
 
    Убедитесь, что общий доступ к этой папке предоставляется от имени пользователя с минимальным доступом только для чтения. Azure Database Migration Service обращается к этой папке и считывает драйвер OCI для загрузки в Azure, олицетворяя пользователя с указанным именем.
@@ -381,7 +383,7 @@ Azure Database Migration Service также может создать схему
  > [!NOTE]
  > Так как PostgreSQL по умолчанию хранит schema.table.column в нижнем регистре, преобразуйте имена из верхнего в нижний регистр с помощью скрипта из раздела **Настройка схемы в Базе данных Azure для PostgreSQL** выше в этой статье.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Сведения об известных проблемах, ограничениях при выполнении сетевой миграции в Базу данных Azure для PostgreSQL см. в [этой](known-issues-azure-postgresql-online.md) статье.
 * См. дополнительные сведения о [службе Azure Database Migration Service](https://docs.microsoft.com/azure/dms/dms-overview).

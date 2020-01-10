@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: troubleshooting
 ms.date: 09/18/2019
 ms.author: v-miegge
-ms.openlocfilehash: 50c0a670eb492aef01c3499bc2c8605917f4c7b8
-ms.sourcegitcommit: c4700ac4ddbb0ecc2f10a6119a4631b13c6f946a
+ms.openlocfilehash: 176b0634fe2c7ee2f47162e439c4ea16bde77a8a
+ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2019
-ms.locfileid: "72965472"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75772624"
 ---
 # <a name="troubleshoot-azure-virtual-machine-performance-on-linux-or-windows"></a>Устранение неполадок производительности виртуальных машин Azure в Linux или Windows
 
@@ -30,7 +30,7 @@ ms.locfileid: "72965472"
 
 ### <a name="azure-iaas-virtual-machine-monitoring"></a>Мониторинг виртуальных машин IAAS Azure
 
-Для мониторинга гостевой виртуальной машины используйте наблюдение за виртуальными машинами Azure, которое предупреждает вас о некоторых условиях высокого уровня ресурсов. Чтобы проверить, включена ли диагностика виртуальной машины, ознакомьтесь с [обзором журналов ресурсов Azure](https://docs.microsoft.com/azure/azure-monitor/platform/resource-logs-overview#collecting-resource-logs). Если вы видите следующее, скорее всего, диагностика не включена.
+Для мониторинга гостевой виртуальной машины используйте наблюдение за виртуальными машинами Azure, которое предупреждает вас о некоторых условиях высокого уровня ресурсов. Чтобы проверить, включена ли диагностика виртуальной машины, ознакомьтесь с [обзором журналов ресурсов Azure](https://docs.microsoft.com/azure/azure-monitor/learn/tutorial-resource-logs). Если вы видите следующее, скорее всего, диагностика не включена.
 
 ![Мониторинг не включен](media/troubleshoot-performance-virtual-machine-linux-windows/1-virtual-machines-monitoring-not-enabled.png)
  
@@ -210,13 +210,13 @@ AverageE2ELatency представляет задержку клиента. Пр
 
 * [Целевые показатели масштабируемости и производительности для дисков виртуальных машин в Windows](https://docs.microsoft.com/azure/virtual-machines/windows/disk-scalability-targets).
 
-#### <a name="references"></a>Справочники
+#### <a name="references"></a>Ссылки
 
-* [Целевые показатели масштабируемости для дисков виртуальных машин](https://azure.microsoft.com/documentation/articles/storage-scalability-targets/#scalability-targets-for-virtual-machine-disks)
+* [Целевые показатели масштабируемости и производительности для учетных записей хранилища BLOB-объектов класса Premium](../../storage/blobs/scalability-targets-premium-page-blobs.md)
 
 Пропускная способность учетной записи хранения измеряется метриками учетной записи хранения: TotalIngress и TotalEgress. У вас есть разные пороговые значения для пропускной способности в зависимости от типа избыточности и регионов.
 
-* [Целевые показатели масштабируемости для больших двоичных объектов, очередей, таблиц и файлов](https://azure.microsoft.com/documentation/articles/storage-scalability-targets/#scalability-targets-for-blobs-queues-tables-and-files)
+* [Целевые показатели масштабируемости и производительности для учетных записей хранения уровня "Стандартный"](../../storage/common/scalability-targets-standard-account.md)
 
 Проверьте TotalIngress и TotalEgress в соответствии с ограничениями входящего и исходящего трафика для типа и региона учетной записи хранения.
 

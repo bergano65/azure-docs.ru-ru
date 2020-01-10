@@ -10,12 +10,12 @@ ms.author: jimgries
 author: greazer
 ms.date: 09/20/2019
 ms.custom: seodec18
-ms.openlocfilehash: d5843937233309e1b37f0127d364066a8a747e21
-ms.sourcegitcommit: ce4a99b493f8cf2d2fd4e29d9ba92f5f942a754c
+ms.openlocfilehash: 59002d0f17fc7213d8db0fad01b1f984542adbd5
+ms.sourcegitcommit: f53cd24ca41e878b411d7787bd8aa911da4bc4ec
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/28/2019
-ms.locfileid: "75538245"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75834811"
 ---
 # <a name="get-started-with-azure-machine-learning-for-visual-studio-code"></a>Приступая к работе с Azure Machine Learning for Visual Studio Code
 
@@ -332,5 +332,7 @@ ms.locfileid: "75538245"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* Пошаговое руководство по обучению Машинное обучение Azure за пределами Visual Studio Code см. в разделе [учебник. Обучение моделей с помощью машинное обучение Azure](tutorial-train-models-with-aml.md).
-* Пошаговое руководство по локальному изменению, выполнению и отладке кода см. в [руководстве по использованию Hello World](https://code.visualstudio.com/docs/Python/Python-tutorial).
+* Пошаговое руководство по обучению Машинное обучение Azure за пределами Visual Studio Code см. в разделе [учебник. Обучение моделей с помощью машинное обучение Azure](tutorial-train-models-with-aml.md)
+* Пошаговое руководство по локальному изменению, выполнению и отладке кода см. в [руководстве по использованию Hello World](https://code.visualstudio.com/docs/Python/Python-tutorial) .
+* Дополнительные сведения о настройке среды Python см. в статье [создание сред для обучения и развертывания и управление ими](how-to-use-environments.md) .
+

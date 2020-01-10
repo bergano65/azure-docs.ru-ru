@@ -9,12 +9,12 @@ ms.author: magoedte
 ms.topic: conceptual
 ms.date: 12/10/2019
 manager: carmonm
-ms.openlocfilehash: 9ebe38b54c042a0c945200bc3d88076b16c2e6f9
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: c5876dd293a97414ff4f48dbb8645e64226a6ba8
+ms.sourcegitcommit: f53cd24ca41e878b411d7787bd8aa911da4bc4ec
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75366385"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75834107"
 ---
 # <a name="onboarding-machines-for-management-by-azure-automation-state-configuration"></a>Подключение компьютеров для управления с помощью службы "Настройка состояния службы автоматизации Azure"
 
@@ -31,8 +31,7 @@ ms.locfileid: "75366385"
 
 - Виртуальные машины Azure
 - Виртуальные машины Azure (классические).
-- Экземпляры EC2 Amazon Web Services (AWS).
-- физические или виртуальные машины под управлением Windows, расположенные локально или в облачной службе, отличной от Azure или AWS;
+- Физические или виртуальные машины Windows в локальной среде или в облаке, отличном от Azure (включая экземпляры AWS EC2).
 - Физические или виртуальные машины под управлением Linux, расположенные локально, в Azure или облачной службе, отличной от Azure.
 
 Кроме того, если вы не готовы управлять конфигурацией компьютера из облака, служба "Настройка состояния службы автоматизации Azure" может также использоваться как конечная точка только для отчетности.
@@ -82,11 +81,7 @@ ms.locfileid: "75366385"
 Примеры приведены в [расширении настройки требуемого состояния с помощью шаблонов Azure Resource Manager](https://docs.microsoft.com/azure/virtual-machines/extensions/dsc-template).
 Чтобы найти ключ регистрации и URL-адрес регистрации для использования в качестве параметров в шаблоне, см. следующий раздел о [**безопасной регистрации**](#secure-registration) .
 
-## <a name="amazon-web-services-aws-virtual-machines"></a>виртуальные машины Amazon Web Services (AWS);
-
-Вы можете легко подключить виртуальные машины Amazon Web Services для управления конфигурацией с помощью "Настройка состояния службы автоматизации Azure", используя набор инструментов DSC AWS. Дополнительные сведения об этом наборе инструментов см. [здесь](https://blogs.msdn.microsoft.com/powershell/2016/04/20/aws-dsc-toolkit/).
-
-## <a name="physicalvirtual-windows-machines-on-premises-or-in-a-cloud-other-than-azureaws"></a>физические или виртуальные машины под управлением Windows, расположенные локально или в облачной службе, отличной от Azure или AWS;
+## <a name="physicalvirtual-windows-machines-on-premises-or-in-a-cloud-other-than-azure-including-aws-ec2-instances"></a>Физические или виртуальные машины Windows в локальной среде или в облаке, отличном от Azure (включая экземпляры AWS EC2).
 
 Серверы Windows, работающие локально или в других облачных средах, также можно подключить к конфигурации состояния службы автоматизации Azure, если они имеют [исходящий доступ к Azure](automation-dsc-overview.md#network-planning):
 

@@ -7,12 +7,12 @@ ms.service: application-gateway
 ms.topic: article
 ms.date: 11/16/2019
 ms.author: amsriva
-ms.openlocfilehash: 6b3d52f1f6bd0390ab6ccafa80b2979cb0e498fd
-ms.sourcegitcommit: 2d3740e2670ff193f3e031c1e22dcd9e072d3ad9
+ms.openlocfilehash: fe70bd5994d835bdc2651a64d35c988ea38b8511
+ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/16/2019
-ms.locfileid: "74130405"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75770039"
 ---
 # <a name="application-gateway-ssl-policy-overview"></a>Общие сведения о политике SSL шлюза приложений
 
@@ -28,27 +28,27 @@ ms.locfileid: "74130405"
 
 |Свойство  |Значение  |
 |---|---|
-|имя     | AppGwSslPolicy20150501        |
+|Имя     | AppGwSslPolicy20150501        |
 |MinProtocolVersion     | TLSv1_0        |
-|значение по умолчанию| True (если не указана стандартная политика) |
+|По умолчанию| True (если не указана стандартная политика) |
 |CipherSuites     |TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384<br>TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256<br>TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384<br>TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256<br>TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA<br>TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA<br>TLS_DHE_RSA_WITH_AES_256_GCM_SHA384<br>TLS_DHE_RSA_WITH_AES_128_GCM_SHA256<br>TLS_DHE_RSA_WITH_AES_256_CBC_SHA<br>TLS_DHE_RSA_WITH_AES_128_CBC_SHA<br>TLS_RSA_WITH_AES_256_GCM_SHA384<br>TLS_RSA_WITH_AES_128_GCM_SHA256<br>TLS_RSA_WITH_AES_256_CBC_SHA256<br>TLS_RSA_WITH_AES_128_CBC_SHA256<br>TLS_RSA_WITH_AES_256_CBC_SHA<br>TLS_RSA_WITH_AES_128_CBC_SHA<br>TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384<br>TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256<br>TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384<br>TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256<br>TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA<br>TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA<br>TLS_DHE_DSS_WITH_AES_256_CBC_SHA256<br>TLS_DHE_DSS_WITH_AES_128_CBC_SHA256<br>TLS_DHE_DSS_WITH_AES_256_CBC_SHA<br>TLS_DHE_DSS_WITH_AES_128_CBC_SHA<br>TLS_RSA_WITH_3DES_EDE_CBC_SHA<br>TLS_DHE_DSS_WITH_3DES_EDE_CBC_SHA |
   
 ### <a name="appgwsslpolicy20170401"></a>AppGwSslPolicy20170401
   
 |Свойство  |Значение  |
 |   ---      |  ---       |
-|имя     | AppGwSslPolicy20170401        |
+|Имя     | AppGwSslPolicy20170401        |
 |MinProtocolVersion     | TLSv1_1        |
-|значение по умолчанию| Ложь |
+|По умолчанию| Нет |
 |CipherSuites     |TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256<br>TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384<br>TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA<br>TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA<br>TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256<br>TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384<br>TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384<br>TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256<br>TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA<br>TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA<br>TLS_RSA_WITH_AES_256_GCM_SHA384<br>TLS_RSA_WITH_AES_128_GCM_SHA256<br>TLS_RSA_WITH_AES_256_CBC_SHA256<br>TLS_RSA_WITH_AES_128_CBC_SHA256<br>TLS_RSA_WITH_AES_256_CBC_SHA<br>TLS_RSA_WITH_AES_128_CBC_SHA |
   
 ### <a name="appgwsslpolicy20170401s"></a>AppGwSslPolicy20170401S
 
 |Свойство  |Значение  |
 |---|---|
-|имя     | AppGwSslPolicy20170401S        |
+|Имя     | AppGwSslPolicy20170401S        |
 |MinProtocolVersion     | TLSv1_2        |
-|значение по умолчанию| Ложь |
+|По умолчанию| Нет |
 |CipherSuites     |TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256 <br>    TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384 <br>    TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA <br>TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA <br>TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256<br>TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384<br>TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384<br>TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256<br>TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA<br>TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA<br>TLS_RSA_WITH_AES_256_GCM_SHA384<br>TLS_RSA_WITH_AES_128_GCM_SHA256<br>TLS_RSA_WITH_AES_256_CBC_SHA256<br>TLS_RSA_WITH_AES_128_CBC_SHA256<br>TLS_RSA_WITH_AES_256_CBC_SHA<br>TLS_RSA_WITH_AES_128_CBC_SHA<br> |
 
 ## <a name="custom-ssl-policy"></a>Пользовательская политика SSL
@@ -98,6 +98,17 @@ ms.locfileid: "74130405"
 > [!NOTE]
 > Используемые для соединения наборы шифров SSL также основываются на типе используемого сертификата. В подключениях клиента к шлюзу приложений используемые комплекты шифров основываются на типе сертификатов сервера в прослушивателе шлюза приложений. В шлюзе приложений к подключениям к серверному пулу используемые комплекты шифров основываются на типе сертификатов сервера на серверах серверного пула.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="known-issue"></a>Известная проблема
+В настоящее время шлюз приложений версии 2 не поддерживает следующие шифры:
+- ДХЕ-RSA-AES128-GCM-SHA256
+- ДХЕ-RSA-AES128-SHA
+- ДХЕ-RSA-AES256-GCM-SHA384
+- ДХЕ-RSA-AES256-SHA
+- ДХЕ-DSS-AES128-SHA256
+- ДХЕ-DSS-AES128-SHA
+- ДХЕ-DSS-AES256-SHA256
+- ДХЕ-DSS-AES256-SHA
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о настройке политики SSL см. в статье [Настройка версий политики SSL и комплектов шифров на шлюзе приложений](application-gateway-configure-ssl-policy-powershell.md).

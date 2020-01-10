@@ -9,12 +9,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 11/20/2019
-ms.openlocfilehash: f688f0ddfb62e988ddebada1f612aa842afa5181
-ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
+ms.openlocfilehash: d9daefaec33c435ae9f8eceec370c83de4535f8b
+ms.sourcegitcommit: 8b37091efe8c575467e56ece4d3f805ea2707a64
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75644602"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75830383"
 ---
 # <a name="azure-hdinsight-frequently-asked-questions"></a>Azure HDInsight: часто задаваемые вопросы
 
@@ -84,23 +84,9 @@ ms.locfileid: "75644602"
 
 - Скрипты во время или после создания. Скрипты вызываются с помощью [действия сценария](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-customize-cluster-linux). это параметр конфигурации, который можно использовать из портал Azure, командлетов Hdinsight Windows PowerShell или пакета SDK для hdinsight .NET. Этот параметр конфигурации можно использовать из портал Azure, из командлетов HDInsight Windows PowerShell или пакета SDK для HDInsight .NET.
 
-- `sudo` или другие методы после инициализации кластера.
-  
 - [Платформа приложений HDInsight](https://azure.microsoft.com/services/hdinsight/partner-ecosystem/) для установки приложений экосистемы.
 
-Однако служба поддержки Майкрософт команды могут предоставлять поддержку только в следующих ситуациях:
-
-- Проблемы или ошибки, возникающие при загрузке скрипта. Ошибки, возникающие во время выполнения пользовательских скриптов, не поддерживаются в запросах в службу поддержки.
-
-- Дополнительные приложения, которые являются частью процесса создания кластера. 
-
 Список поддерживаемых компонентов см [. в статье что такое Apache Hadoop компоненты и версии, доступные в HDInsight?](https://docs.microsoft.com/azure/hdinsight/hdinsight-component-versioning#apache-hadoop-components-available-with-different-hdinsight-versions)
-
-В зависимости от типа кластера поддержка отдельных компонентов также может варьироваться. Например, Spark не поддерживается в кластере Kafka и наоборот.
-
-Для приложений и служб, не входящих в процесс создания кластера, обратитесь за поддержкой к поставщику или поставщику услуг. Также можно использовать множество сайтов поддержки сообщества. Примерами могут быть [форумы MSDN для HDInsight](https://social.msdn.microsoft.com/Forums/azure/home?forum=hdinsight) и [Stack overflow](https://stackoverflow.com/). Для проектов Apache также имеются соответствующие сайты, указанные на [веб-сайте Apache](https://apache.org/). Например, [Hadoop](https://hadoop.apache.org/). 
-
-Дополнительные сведения о поддержке Azure см. в статье [часто задаваемые вопросы о поддержке Azure](https://azure.microsoft.com/support/faq/).
 
 ### <a name="can-i-upgrade-the-individual-components-that-are-pre-installed-on-the-cluster"></a>Можно ли обновить отдельные компоненты, предварительно установленные в кластере?
 

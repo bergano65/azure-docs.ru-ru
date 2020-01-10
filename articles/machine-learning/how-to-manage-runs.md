@@ -10,18 +10,18 @@ ms.author: roastala
 author: rastala
 manager: cgronlun
 ms.reviewer: nibaccam
-ms.date: 11/04/2019
-ms.openlocfilehash: 1a82b6592782973920f4381129e9659eaebca033
-ms.sourcegitcommit: ce4a99b493f8cf2d2fd4e29d9ba92f5f942a754c
+ms.date: 01/09/2020
+ms.openlocfilehash: cd9cada24ba5e7d2a2001d4ef0efef2a157b0fd6
+ms.sourcegitcommit: f53cd24ca41e878b411d7787bd8aa911da4bc4ec
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/28/2019
-ms.locfileid: "75537192"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75834723"
 ---
 # <a name="start-monitor-and-cancel-training-runs-in-python"></a>Запуск, отслеживание и отмена обучающих запусков в Python
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
 
-[Пакет SDK для машинное обучение Azure для Python](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py) и [машинное обучение CLI](reference-azure-machine-learning-cli.md) предоставляет различные методы мониторинга, Организации и управления запусками для обучения и экспериментирования.
+[Пакет SDK машинное обучение Azure для Python](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py), [Машинное обучение CLI](reference-azure-machine-learning-cli.md)и [машинное обучение Azure Studio](https://ml.azure.com) предоставляют различные методы для мониторинга, Организации и управления запусками для обучения и экспериментирования.
 
 В этой статье приведены примеры следующих задач.
 
@@ -105,6 +105,16 @@ notebook_run.log(name="message", value="Hello from run!")
 
     Дополнительные сведения см. в разделе [AZ ML Run Submit-Script](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/run?view=azure-cli-latest#ext-azure-cli-ml-az-ml-run-submit-script).
 
+### <a name="using-azure-machine-learning-studio"></a>Использование Машинное обучение Azure Studio
+
+Чтобы запустить отправку конвейера в конструкторе (Предварительная версия), выполните следующие действия.
+
+1. Задайте целевой объект вычислений по умолчанию для конвейера.
+
+1. Выберите **выполнить** в верхней части холста конвейера.
+
+1. Выберите эксперимент, чтобы сгруппировать запуски конвейера.
+
 ## <a name="monitor-the-status-of-a-run"></a>Наблюдение за состоянием запуска
 
 ### <a name="using-the-sdk"></a>Использование пакета SDK
@@ -160,6 +170,22 @@ print(notebook_run.get_status())
 
     Дополнительные сведения см. в разделе [AZ ML Run показ](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/run?view=azure-cli-latest#ext-azure-cli-ml-az-ml-run-show).
 
+
+### <a name="using-azure-machine-learning-studio"></a>Использование Машинное обучение Azure Studio
+
+Для просмотра числа активных запусков для эксперимента в студии.
+
+1. Перейдите к разделу **эксперименты** ... 
+
+1. Выберите эксперимент.
+
+    На странице эксперимента можно увидеть количество активных целевых объектов вычислений и длительность каждого запуска. 
+
+1. Выберите конкретный номер запуска.
+
+1. На вкладке **журналы** можно найти журналы диагностики и ошибок для выполнения конвейера.
+
+
 ## <a name="cancel-or-fail-runs"></a>Отмена или неудача выполнения
 
 Если вы заметили ошибку или если выполнение занимает слишком много времени, можно отменить запуск.
@@ -194,6 +220,17 @@ az ml run cancel -r runid -w workspace_name -e experiment_name
 ```
 
 Дополнительные сведения см. в статье [AZ ML Run отмена](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/run?view=azure-cli-latest#ext-azure-cli-ml-az-ml-run-cancel).
+
+### <a name="using-azure-machine-learning-studio"></a>Использование Машинное обучение Azure Studio
+
+Чтобы отменить запуск в студии, выполните следующие действия.
+
+1. Перейдите к выполняющемуся конвейеру в разделе **эксперименты** или **конвейеры** . 
+
+1. Выберите номер выполнения конвейера, который нужно отменить.
+
+1. На панели инструментов нажмите **кнопку Отмена** .
+
 
 ## <a name="create-child-runs"></a>Создание дочерних запусков
 
@@ -331,6 +368,12 @@ az ml run list --experiment-name experiment [?properties.author=='azureml-user' 
 ```
 
 Дополнительные сведения о запросах Azure CLI результатов см. в разделе [запрос Azure CLI команды Output](https://docs.microsoft.com/cli/azure/query-azure-cli?view=azure-cli-latest).
+
+### <a name="using-azure-machine-learning-studio"></a>Использование Машинное обучение Azure Studio
+
+1. Перейдите в раздел **конвейеры** .
+
+1. Используйте панель поиска для фильтрации конвейеров с помощью тегов, описаний, имен экспериментов и имени отправителя.
 
 ## <a name="example-notebooks"></a>Примеры записных книжек
 

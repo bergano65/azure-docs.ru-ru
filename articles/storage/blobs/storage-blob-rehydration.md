@@ -9,12 +9,12 @@ ms.service: storage
 ms.subservice: blobs
 ms.topic: conceptual
 ms.reviewer: hux
-ms.openlocfilehash: d6370509b49ae464b53525e7320676b04912bd12
-ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
+ms.openlocfilehash: 1c06c1d0403e526e1ed58a193cfe9b57bb9fe561
+ms.sourcegitcommit: 5b073caafebaf80dc1774b66483136ac342f7808
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74113708"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75780251"
 ---
 # <a name="rehydrate-blob-data-from-the-archive-tier"></a>Восстановление данных большого двоичного объекта из уровня архива
 
@@ -48,7 +48,69 @@ ms.locfileid: "74113708"
 > [!NOTE]
 > Дополнительные сведения о ценах на блочные BLOB-объекты и восстановление данных см. в разделе [цены на хранилище Azure](https://azure.microsoft.com/pricing/details/storage/blobs/). Дополнительные сведения о расходах на передачу исходящих данных см. в разделе [сведения о ценах на передачу данных](https://azure.microsoft.com/pricing/details/data-transfers/).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="quickstart-scenarios"></a>Сценарии быстрого запуска
+
+### <a name="rehydrate-an-archive-blob-to-an-online-tier"></a>Восстановление архивного большого двоичного объекта на уровне сети
+# <a name="portaltabazure-portal"></a>[Портал](#tab/azure-portal)
+1. Войдите на [портал Azure](https://portal.azure.com).
+
+1. В портал Azure найдите и выберите **все ресурсы**.
+
+1. Затем выберите учетную запись хранения.
+
+1. Выберите контейнер, а затем выберите свой BLOB-объект.
+
+1. В **свойствах большого двоичного объекта**выберите **изменить уровень**.
+
+1. Выберите уровень **горячего** или **холодного** доступа. 
+
+1. Выберите уровень приоритета " **стандартный** " или " **высокий**".
+
+1. Щелкните **сохранить** внизу.
+
+![Изменение уровня учетной записи хранения](media/storage-tiers/blob-access-tier.png)
+
+# <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
+Следующий сценарий PowerShell можно использовать для изменения уровня большого двоичного объекта архива. Переменная `$rgName` должна быть инициализирована с именем группы ресурсов. Переменная `$accountName` должна быть инициализирована с помощью имени учетной записи хранения. Переменная `$containerName` должна быть инициализирована с помощью имени контейнера. Переменная `$blobName` должна быть инициализирована с помощью имени большого двоичного объекта. 
+```powershell
+#Initialize the following with your resource group, storage account, container, and blob names
+$rgName = ""
+$accountName = ""
+$containerName = ""
+$blobName == ""
+
+#Select the storage account and get the context
+$storageAccount =Get-AzStorageAccount -ResourceGroupName $rgName -Name $accountName
+$ctx = $storageAccount.Context
+
+#Select the blob from a container
+$blobs = Get-AzStorageBlob -Container $containerName -Blob $blobName -Context $context
+
+#Change the blob’s access tier to Hot using Standard priority rehydrate
+$blob.ICloudBlob.SetStandardBlobTier("Hot", “Standard”)
+```
+---
+
+### <a name="copy-an-archive-blob-to-a-new-blob-with-an-online-tier"></a>Копирование архивного большого двоичного объекта в новый большой двоичный объект на уровне сети
+Следующий сценарий PowerShell можно использовать для копирования большого двоичного объекта архива в новый большой двоичный объект в той же учетной записи хранения. Переменная `$rgName` должна быть инициализирована с именем группы ресурсов. Переменная `$accountName` должна быть инициализирована с помощью имени учетной записи хранения. Переменные `$srcContainerName` и `$destContainerName` должны быть инициализированы именами контейнеров. Переменные `$srcBlobName` и `$destBlobName` должны быть инициализированы с помощью имен больших двоичных объектов. 
+```powershell
+#Initialize the following with your resource group, storage account, container, and blob names
+$rgName = ""
+$accountName = ""
+$srcContainerName = ""
+$destContainerName = ""
+$srcBlobName == ""
+$destBlobName == ""
+
+#Select the storage account and get the context
+$storageAccount =Get-AzStorageAccount -ResourceGroupName $rgName -Name $accountName
+$ctx = $storageAccount.Context
+
+#Copy source blob to a new destination blob with access tier hot using standard rehydrate priority
+Start-AzStorageBlobCopy -SrcContainer $srcContainerName -SrcBlob $srcBlobName -DestContainer $destContainerName -DestBlob $destBlobName -StandardBlobTier Hot -RehydratePriority Standard -Context $ctx
+```
+
+## <a name="next-steps"></a>Следующие шаги
 
 * [Дополнительные сведения о уровнях хранилища BLOB-объектов](storage-blob-storage-tiers.md)
 * [Цены на горячий, холодный и архивный уровни в учетных записях хранилища BLOB-объектов и учетных записях GPv2 по регионам](https://azure.microsoft.com/pricing/details/storage/)
