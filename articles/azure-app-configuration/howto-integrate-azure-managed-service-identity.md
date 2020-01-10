@@ -1,45 +1,38 @@
 ---
-title: Интеграция с управляемыми удостоверениями Azure | Документация Майкрософт
+title: интеграции с управляемыми удостоверениями Azure
 description: Узнайте, как использовать управляемые удостоверения Azure для проверки подлинности с помощью и получения доступа к конфигурации приложений Azure.
-services: azure-app-configuration
-documentationcenter: ''
-author: yegu-ms
-manager: balans
-editor: ''
-ms.assetid: ''
 ms.service: azure-app-configuration
-ms.workload: tbd
-ms.devlang: na
+author: lisaguthrie
 ms.topic: conceptual
-ms.date: 02/24/2019
-ms.author: yegu
-ms.openlocfilehash: b0c6e39aebe7864ab132805b78aa7be2d61c5160
-ms.sourcegitcommit: dbde4aed5a3188d6b4244ff7220f2f75fce65ada
+ms.date: 12/29/2019
+ms.author: lcozzens
+ms.openlocfilehash: 7461f378a4f95a43971f5893fe70739511e942ff
+ms.sourcegitcommit: c32050b936e0ac9db136b05d4d696e92fefdf068
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74185140"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75732007"
 ---
 # <a name="integrate-with-azure-managed-identities"></a>Интеграция с управляемыми удостоверениями Azure
 
-[Управляемые удостоверения](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview) Azure Active Directory помогают упростить управление секретами для вашего облачного приложения. С помощью управляемого удостоверения можно настроить код для использования субъекта-службы, который был создан для службы Azure, на которой она выполняется. Вы используете управляемое удостоверение, а не отдельные учетные данные, хранящиеся в Azure Key Vault, или локальную строку подключения. 
+[Управляемые удостоверения](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview) Azure Active Directory помогают упростить управление секретами для вашего облачного приложения. Используя управляемое удостоверение, код может использовать субъект-службу, созданный для службы Azure, на которой он работает. Вы используете управляемое удостоверение, а не отдельные учетные данные, хранящиеся в Azure Key Vault, или локальную строку подключения. 
 
-В конфигурации приложений Azure, а также в клиентских библиотеках .NET Core, .NET Framework и Java предусмотрена встроенная поддержка управляемых удостоверений. Хотя это и не обязательно, управляемое удостоверение устраняет необходимость в маркере доступа, содержащем секреты. Код может получить доступ к хранилищу конфигураций приложений, используя только конечную точку службы. Этот URL-адрес можно внедрить непосредственно в код, не беспокоясь о раскрытии любых секретов.
+В конфигурации приложений Azure, а также в клиентских библиотеках .NET Core, .NET Framework и Java есть встроенная поддержка идентификации. Хотя это и не обязательно, управляемое удостоверение устраняет необходимость в маркере доступа, содержащем секреты. Код может получить доступ к хранилищу конфигураций приложений, используя только конечную точку службы. Этот URL-адрес можно внедрить непосредственно в код, не беспокоясь о раскрытии любых секретов.
 
 В этом руководстве показано, как можно воспользоваться преимуществами управляемого удостоверения для доступа к конфигурации приложения. При этом в качестве основы используется код веб-приложения, представленный в кратких руководствах. Прежде чем продолжить, ознакомьтесь со статьей [Краткое руководство. Создание приложения ASP.NET Core с помощью службы "Конфигурация приложений Azure"](./quickstart-aspnet-core-app.md).
 
-Кроме того, в этом руководстве описывается, как можно использовать управляемое удостоверение в сочетании со ссылками на Key Vault конфигурации приложения. Это позволяет легко получить доступ к секретам, хранящимся в Key Vault, а также значениях конфигурации в конфигурации приложения. Если вы хотите изучить эту возможность, то сначала [используйте Key Vault ссылки с ASP.NET Core](./use-key-vault-references-dotnet-core.md) .
+В этом учебнике также показано, как можно использовать управляемое удостоверение в сочетании со ссылками на Key Vault конфигурации приложения. С одним управляемым удостоверением можно легко получить доступ к секретам из Key Vault и значений конфигурации из конфигурации приложения. Если вы хотите изучить эту возможность, то сначала [используйте Key Vault ссылки с ASP.NET Core](./use-key-vault-references-dotnet-core.md) .
 
 Вы можете выполнять шаги в этом учебнике с помощью любого редактора кода. [Visual Studio Code](https://code.visualstudio.com/) является отличным вариантом, который доступен на платформах Windows, macOS и Linux.
 
-Из этого руководства вы узнаете, как выполнять следующие задачи:
+В этом руководстве описано следующее.
 
 > [!div class="checklist"]
 > * предоставление доступа к службе "Конфигурация приложений" с помощью управляемого удостоверения;
 > * настройка приложения на использование управляемого удостоверения при подключении к службе "Конфигурация приложений".
 > * При необходимости настройте приложение для использования управляемого удостоверения при подключении к Key Vault через конфигурацию приложения Key Vault ссылке.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Технические условия
 
 Для работы с этим руководством требуется:
 
@@ -50,15 +43,15 @@ ms.locfileid: "74185140"
 
 ## <a name="add-a-managed-identity"></a>Добавление управляемого удостоверения
 
-Чтобы настроить управляемое удостоверение на портале, сначала необходимо создать обычное приложение, а затем активировать соответствующую функцию.
+Чтобы настроить управляемое удостоверение на портале, сначала необходимо создать приложение, а затем включить эту функцию.
 
 1. Создайте экземпляр служб приложений в [портал Azure](https://portal.azure.com) , как обычно. Перейдите к нему на портале.
 
-2. Прокрутите вниз до группы **параметров** в левой панели и выберите **Удостоверение**.
+1. Прокрутите вниз до группы **параметров** в левой панели и выберите **Удостоверение**.
 
-3. На вкладке **Назначено системой** для параметра **Состояние** установите значение **Вкл.** и выберите **Сохранить**.
+1. На вкладке **Назначено системой** для параметра **Состояние** установите значение **Вкл.** и выберите **Сохранить**.
 
-4. Ответьте **Да** при появлении запроса на включение управляемого удостоверения, назначенного системой.
+1. Ответьте **Да** при появлении запроса на включение управляемого удостоверения, назначенного системой.
 
     ![Настройка управляемого удостоверения в службе приложений](./media/set-managed-identity-app-service.png)
 
@@ -70,7 +63,7 @@ ms.locfileid: "74185140"
 
 1. На вкладке **Проверить доступ** щелкните **Добавить** в пользовательском интерфейсе карточки **Добавить назначение роли**.
 
-1. В поле **Роль** выберите **Участник**. В поле **Назначение доступа к** задайте значение **Служба приложений** (в разделе **Управляемое удостоверение, назначаемое системой**).
+1. В разделе **роль**выберите **модуль чтения данных конфигурации приложения**. В поле **Назначение доступа к** задайте значение **Служба приложений** (в разделе **Управляемое удостоверение, назначаемое системой**).
 
 1. В поле **Подписка** выберите подписку Azure. Выберите ресурс Службы приложений для своего приложения.
 
@@ -80,9 +73,15 @@ ms.locfileid: "74185140"
 
 1. Необязательно. Если вы хотите предоставить доступ к Key Vault, следуйте указаниям в [подKey Vault аутентификации с помощью управляемого удостоверения](https://docs.microsoft.com/azure/key-vault/managed-identity).
 
-## <a name="use-a-managed-identity"></a>Администрирование управляемого удостоверения
+## <a name="use-a-managed-identity"></a>Использование управляемого удостоверения
 
-1. Найдите URL-адрес хранилища конфигурации приложения, перейдя на экран настройки в портал Azure, а затем перейдя на вкладку **ключи доступа** .
+1. Добавьте ссылку на пакет *Azure. Identity* :
+
+    ```cli
+    dotnet add package Azure.Identity --version 1.1.0
+    ```
+
+1. Найдите конечную точку в хранилище конфигураций приложения. Этот URL-адрес указан на вкладке " **ключи доступа** " для магазина в портал Azure.
 
 1. Откройте *appsettings.json* и добавьте следующий скрипт. Замените *\<service_endpoint >* , включая квадратные скобки, URL-адресом хранилища конфигурации приложения. 
 
@@ -92,21 +91,19 @@ ms.locfileid: "74185140"
     }
     ```
 
-1. Если вы хотите получить доступ только к значениям, хранящимся непосредственно в конфигурации приложения, откройте *Program.CS*и обновите метод `CreateWebHostBuilder`, заменив метод `config.AddAzureAppConfiguration()`.
+1. Откройте *Program.CS*и добавьте ссылку на пространства имен `Azure.Identity` и `Microsoft.Azure.Services.AppAuthentication`:
 
-    ```csharp
-    public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
-        WebHost.CreateDefaultBuilder(args)
-            .ConfigureAppConfiguration((hostingContext, config) =>
-            {
-                var settings = config.Build();
-                config.AddAzureAppConfiguration(options =>
-                    options.ConnectWithManagedIdentity(settings["AppConfig:Endpoint"]));
-            })
-            .UseStartup<Startup>();
+    ```csharp-interactive
+    using Azure.Identity;
+    using Microsoft.Azure.Services.AppAuthentication;
     ```
 
-1. Если вы хотите использовать значения конфигурации приложения, а также ссылки Key Vault, откройте *Program.CS*и обновите метод `CreateWebHostBuilder`, как показано ниже. При этом создается новый `KeyVaultClient` с помощью `AzureServiceTokenProvider` и передает эту ссылку вызову метода `UseAzureKeyVault`.
+1. Если вы хотите получить доступ только к значениям, хранящимся непосредственно в конфигурации приложения, обновите метод `CreateWebHostBuilder`, заменив метод `config.AddAzureAppConfiguration()`.
+
+    > [!IMPORTANT]
+    > `CreateHostBuilder` заменяет `CreateWebHostBuilder` в .NET Core 3.0.  Выберите правильный синтаксис в зависимости от среды.
+
+    ### <a name="net-core-2xtabcore2x"></a>[.NET Core 2.x](#tab/core2x).
 
     ```csharp
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
@@ -114,30 +111,78 @@ ms.locfileid: "74185140"
                 .ConfigureAppConfiguration((hostingContext, config) =>
                 {
                     var settings = config.Build();
-                    AzureServiceTokenProvider azureServiceTokenProvider = new AzureServiceTokenProvider();
-                    KeyVaultClient kvClient = new KeyVaultClient(new KeyVaultClient.AuthenticationCallback(azureServiceTokenProvider.KeyVaultTokenCallback));
-                    
-                    config.AddAzureAppConfiguration(options => options.ConnectWithManagedIdentity(settings["AppConfig:Endpoint"])).UseAzureKeyVault(kvClient));
+                    config.AddAzureAppConfiguration(options =>
+                        options.Connect(new Uri(settings["AppConfig:Endpoint"]), new ManagedIdentityCredential()));
                 })
                 .UseStartup<Startup>();
     ```
+
+    ### <a name="net-core-3xtabcore3x"></a>[.NET Core 3. x](#tab/core3x)
+
+    ```csharp
+        public static IHostBuilder CreateHostBuilder(string[] args) =>
+            Host.CreateDefaultBuilder(args)
+            .ConfigureWebHostDefaults(webBuilder =>
+            webBuilder.ConfigureAppConfiguration((hostingContext, config) =>
+            {
+                var settings = config.Build();
+                    config.AddAzureAppConfiguration(options =>
+                        options.Connect(new Uri(settings["AppConfig:Endpoint"]), new ManagedIdentityCredential()));
+                })
+                .UseStartup<Startup>());
+    ```
+    ---
+
+1. Чтобы использовать значения конфигурации приложения и ссылки Key Vault, обновите *Program.CS* , как показано ниже. Этот код создает новый `KeyVaultClient` с помощью `AzureServiceTokenProvider` и передает эту ссылку вызову метода `UseAzureKeyVault`.
+
+    ### <a name="net-core-2xtabcore2x"></a>[.NET Core 2.x](#tab/core2x).
+
+    ```csharp
+            public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
+                WebHost.CreateDefaultBuilder(args)
+                    .ConfigureAppConfiguration((hostingContext, config) =>
+                    {
+                        var settings = config.Build();
+                        AzureServiceTokenProvider azureServiceTokenProvider = new AzureServiceTokenProvider();
+                        KeyVaultClient kvClient = new KeyVaultClient(new KeyVaultClient.AuthenticationCallback(azureServiceTokenProvider.KeyVaultTokenCallback));
+                        
+                        config.AddAzureAppConfiguration(options => options.Connect(new Uri(settings["AppConfig:Endpoint"]), new ManagedIdentityCredential()).UseAzureKeyVault(kvClient));
+                    })
+                    .UseStartup<Startup>();
+    ```
+
+    ### <a name="net-core-3xtabcore3x"></a>[.NET Core 3. x](#tab/core3x)
+
+    ```csharp
+        public static IHostBuilder CreateHostBuilder(string[] args) =>
+            Host.CreateDefaultBuilder(args)
+            .ConfigureWebHostDefaults(webBuilder =>
+            webBuilder.ConfigureAppConfiguration((hostingContext, config) =>
+            {
+                var settings = config.Build();
+                        AzureServiceTokenProvider azureServiceTokenProvider = new AzureServiceTokenProvider();
+                        KeyVaultClient kvClient = new KeyVaultClient(new KeyVaultClient.AuthenticationCallback(azureServiceTokenProvider.KeyVaultTokenCallback));
+                        
+                        config.AddAzureAppConfiguration(options => options.Connect(new Uri(settings["AppConfig:Endpoint"]), new ManagedIdentityCredential()).UseAzureKeyVault(kvClient));
+                    })
+                    .UseStartup<Startup>());
+    ```
+    ---
 
     Теперь доступ к Key Vault ссылкам можно получить так же, как и к любому другому ключу конфигурации приложения. Поставщик конфигурации будет использовать `KeyVaultClient`, настроенный для проверки подлинности в Key Vault и получения значения.
 
 [!INCLUDE [Prepare repository](../../includes/app-service-deploy-prepare-repo.md)]
 
-[!INCLUDE [cloud-shell-try-it](../../includes/cloud-shell-try-it.md)]
-
 ## <a name="deploy-from-local-git"></a>Развертывание из локального репозитория Git
 
-Включить локальное развертывание Git для вашего приложения с сервера сборки Kudu проще всего с помощью Azure Cloud Shell.
+Самый простой способ включить локальное развертывание Git для приложения с сервером сборки KUDU — использовать [Azure Cloud Shell](https://shell.azure.com).
 
 ### <a name="configure-a-deployment-user"></a>Настойка пользователя развертывания
 
 [!INCLUDE [Configure a deployment user](../../includes/configure-deployment-user-no-h.md)]
 
 ### <a name="enable-local-git-with-kudu"></a>Включить локальный Git с помощью Kudu
-Если у вас нет локального репозитория Git для приложения, необходимо его инициализировать. Для этого выполните следующие команды в каталоге проекта приложения:
+Если у вас нет локального репозитория Git для приложения, необходимо его инициализировать. Чтобы инициализировать локальный репозиторий Git, выполните следующие команды в каталоге проекта приложения:
 
 ```cmd
 git init
@@ -151,33 +196,17 @@ git commit -m "Initial version"
 az webapp deployment source config-local-git --name <app_name> --resource-group <group_name>
 ```
 
-Чтобы вместо этого создать приложение с поддержкой Git, выполните команду [`az webapp create`](/cli/azure/webapp?view=azure-cli-latest#az-webapp-create) в Cloud Shell с параметром `--deployment-local-git`.
-
-```azurecli-interactive
-az webapp create --name <app_name> --resource-group <group_name> --plan <plan_name> --deployment-local-git
-```
-
-Команда `az webapp create` предоставляет примерно следующие выходные данные:
+Эта команда дает примерно следующий результат:
 
 ```json
-Local git is configured with url of 'https://<username>@<app_name>.scm.azurewebsites.net/<app_name>.git'
 {
-  "availabilityState": "Normal",
-  "clientAffinityEnabled": true,
-  "clientCertEnabled": false,
-  "cloningInfo": null,
-  "containerSize": 0,
-  "dailyMemoryTimeQuota": 0,
-  "defaultHostName": "<app_name>.azurewebsites.net",
-  "deploymentLocalGitUrl": "https://<username>@<app_name>.scm.azurewebsites.net/<app_name>.git",
-  "enabled": true,
-  < JSON data removed for brevity. >
+  "url": "https://<username>@<app_name>.scm.azurewebsites.net/<app_name>.git"
 }
 ```
 
 ### <a name="deploy-your-project"></a>Развертывание проекта
 
-Вернитесь к _окну терминала (в локальном расположении)_ и добавьте удаленное приложение Azure в локальный репозиторий Git. Замените _\<url>_ URL-адресом удаленного репозитория Git, полученным на шаге [Включение использования репозитория Git для приложения](#enable-local-git-with-kudu).
+В _окне терминала на локальном_компьютере добавьте удаленное хранилище Azure в локальный репозиторий Git. Замените _URL-адрес\<_ URL-адресом удаленного репозитория Git, полученным на странице [Включение локального репозитория Git с KUDU](#enable-local-git-with-kudu).
 
 ```bash
 git remote add azure <url>
@@ -203,7 +232,9 @@ http://<app_name>.azurewebsites.net
 
 ## <a name="use-managed-identity-in-other-languages"></a>Использование управляемого удостоверения с другими языками
 
-Поставщики службы "Конфигурация приложений" для платформы .NET Framework и Java Spring также имеют встроенную поддержку управляемых удостоверений. В таких случаях при настройке поставщика следует использовать конечную точку URL-адреса хранилища конфигурации приложения вместо полной строки подключения. Например, для консольного приложения .NET Framework, созданного по инструкциям из краткого руководства, нужно указать следующие параметры в файле *App.config*:
+Поставщики службы "Конфигурация приложений" для платформы .NET Framework и Java Spring также имеют встроенную поддержку управляемых удостоверений. При настройке одного из этих поставщиков можно использовать конечную точку URL-адреса вашего хранилища вместо полной строки подключения. 
+
+Например, можно обновить консольное приложение .NET Framework, созданное в кратком руководстве, чтобы указать следующие параметры в файле *app. config* :
 
 ```xml
     <configSections>
@@ -227,7 +258,7 @@ http://<app_name>.azurewebsites.net
 
 [!INCLUDE [azure-app-configuration-cleanup](../../includes/azure-app-configuration-cleanup.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 В этом руководстве вы добавили управляемое удостоверение Azure для упрощения доступа к конфигурации приложения и улучшения управления учетными данными для приложения. Чтобы узнать больше об использовании службы "Конфигурация приложений", перейдите к примерам скриптов Azure CLI.
 
 > [!div class="nextstepaction"]

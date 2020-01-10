@@ -7,16 +7,18 @@ ms.topic: conceptual
 ms.date: 09/13/2019
 ms.author: girobins
 ms.custom: query-reference
-ms.openlocfilehash: 8f7cd864d90b8ab17a180a00a7a6d4bb683da9be
-ms.sourcegitcommit: 9405aad7e39efbd8fef6d0a3c8988c6bf8de94eb
+ms.openlocfilehash: 35efbb8d4d97ab52abb20487d15a80985946c499
+ms.sourcegitcommit: c32050b936e0ac9db136b05d4d696e92fefdf068
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74873307"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75732609"
 ---
 # <a name="lower-azure-cosmos-db"></a>НИЖЕ (Azure Cosmos DB)
  Возвращает строковое выражение после преобразования символов верхнего регистра в нижний.  
-  
+
+Нижняя системная функция не использует индекс. Если планируется регулярное сравнение без учета регистра, то более низкая системная функция может потреблять значительное количество единиц запросов. В этом случае вместо использования нижней системной функции для нормализации данных каждый раз при сравнении можно нормализовать регистр при вставке. Затем запрос, например SELECT * FROM c, где ниже (c. Name) = ' Bob ', просто превращается в SELECT * FROM c, где c.name = ' Bob '.
+
 ## <a name="syntax"></a>Синтаксис
   
 ```sql
@@ -28,7 +30,7 @@ LOWER(<str_expr>)
 *str_expr*  
    Является строковым выражением.  
   
-## <a name="return-types"></a>Возвращаемые типы
+## <a name="return-types"></a>Типы возвращаемых данных
   
   Возвращает строковое выражение.  
   

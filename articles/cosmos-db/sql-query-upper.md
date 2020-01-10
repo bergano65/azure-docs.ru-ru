@@ -7,16 +7,18 @@ ms.topic: conceptual
 ms.date: 09/13/2019
 ms.author: girobins
 ms.custom: query-reference
-ms.openlocfilehash: 6b0f025948803a23c5b3c8bb6415c0e111b946b2
-ms.sourcegitcommit: 7f6d986a60eff2c170172bd8bcb834302bb41f71
+ms.openlocfilehash: 9809a138a5e28eb069d545d39cfda815c915bd78
+ms.sourcegitcommit: c32050b936e0ac9db136b05d4d696e92fefdf068
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71349041"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75728894"
 ---
 # <a name="upper-azure-cosmos-db"></a>UPPER (Azure Cosmos DB)
  Возвращает строковое выражение после преобразования символов нижнего регистра в верхний.  
-  
+
+Верхняя системная функция не использует индекс. Если планируется регулярное сравнение без учета регистра, то верхняя системная функция может потреблять значительное количество единиц запросов. В этом случае вместо использования верхней системной функции для нормализации данных каждый раз при сравнении можно нормализовать регистр при вставке. Затем запрос, например SELECT * FROM c, где UPPER (c. Name) = "BOB", просто превращается в SELECT * FROM c, где c.name = ' BOB '.
+
 ## <a name="syntax"></a>Синтаксис
   
 ```sql
@@ -28,13 +30,13 @@ UPPER(<str_expr>)
 *str_expr*  
    Является строковым выражением.  
   
-## <a name="return-types"></a>Возвращаемые типы
+## <a name="return-types"></a>Типы возвращаемых данных
   
   Возвращает строковое выражение.  
   
 ## <a name="examples"></a>Примеры
   
-  В следующем примере показано использование `UPPER` в запросе  
+  В следующем примере показано, как использовать `UPPER` в запросе.  
   
 ```sql
 SELECT UPPER("Abc") AS upper  
@@ -46,7 +48,7 @@ SELECT UPPER("Abc") AS upper
 [{"upper": "ABC"}]  
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Строковые функции Azure Cosmos DB](sql-query-string-functions.md)
 - [Системные функции Azure Cosmos DB](sql-query-system-functions.md)

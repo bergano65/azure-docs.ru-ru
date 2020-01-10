@@ -8,12 +8,12 @@ ms.author: normesta
 ms.reviewer: dineshm
 ms.date: 05/29/2019
 ms.subservice: blobs
-ms.openlocfilehash: 8de36ea9f7bb77443b22e038172ee69bb8435b29
-ms.sourcegitcommit: 9dec0358e5da3ceb0d0e9e234615456c850550f6
+ms.openlocfilehash: 8dc5599e681d9aee84f884cd4990163a2481d386
+ms.sourcegitcommit: f2149861c41eba7558649807bd662669574e9ce3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2019
-ms.locfileid: "72311221"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75708168"
 ---
 # <a name="static-website-hosting-in-azure-storage"></a>Размещение статических веб-сайтов в службе хранилища Azure
 
@@ -39,10 +39,10 @@ ms.locfileid: "72311221"
 Вы можете использовать любое из этих средств для отправки содержимого в контейнер **$Web** :
 
 > [!div class="checklist"]
-> * [Интерфейс командной строки Azure](storage-blob-static-website-how-to.md#cli)
+> * [Azure CLI](storage-blob-static-website-how-to.md#cli)
 > * [Overview of Azure PowerShell](storage-blob-static-website-how-to.md#powershell) (Общие сведения об Azure PowerShell)
 > * [AzCopy](../common/storage-use-azcopy-v10.md)
-> * [Azure Storage Explorer;](https://azure.microsoft.com/features/storage-explorer/)
+> * [Обозреватель службы хранилища Azure](https://azure.microsoft.com/features/storage-explorer/)
 > * [Azure Pipelines](https://azure.microsoft.com/services/devops/pipelines/)
 > * [Расширение Visual Studio Code](/azure/javascript/tutorial-vscode-static-website-node-01)
 
@@ -52,8 +52,8 @@ ms.locfileid: "72311221"
 
 |Средство| Руководство |
 |----|----|
-|**портал Azure** | [Поиск URL-адреса веб-сайта с помощью портал Azure](storage-blob-static-website-how-to.md#portal-find-url) |
-|**Интерфейс командной строки Azure** | [Поиск URL-адреса веб-сайта с помощью Azure CLI](storage-blob-static-website-how-to.md#cli-find-url) |
+|**Портал Azure** | [Поиск URL-адреса веб-сайта с помощью портал Azure](storage-blob-static-website-how-to.md#portal-find-url) |
+|**Azure CLI** | [Поиск URL-адреса веб-сайта с помощью Azure CLI](storage-blob-static-website-how-to.md#cli-find-url) |
 |**Overview of Azure PowerShell** (Общие сведения об Azure PowerShell) | [Поиск URL-адреса веб-сайта с помощью PowerShell](storage-blob-static-website-how-to.md#powershell-find-url) |
 
 URL-адрес сайта содержит региональный код. Например, URL-адрес `https://contosoblobaccount.z22.web.core.windows.net/` содержит региональные `z22`кода.
@@ -63,6 +63,9 @@ URL-адрес сайта содержит региональный код. На
 Документ индекса, указанный при включении размещения статических веб-сайтов, отображается, когда пользователи открывают сайт и не указывают конкретный файл (например, `https://contosoblobaccount.z22.web.core.windows.net`).  
 
 Если сервер возвращает ошибку 404 и при включении веб-сайта не был указан документ об ошибке, то пользователю возвращается страница 404 по умолчанию.
+
+> [!NOTE]
+> [CORS](https://docs.microsoft.com/rest/api/storageservices/cross-origin-resource-sharing--cors--support-for-the-azure-storage-services) не поддерживается на статическом веб-сайте.
 
 ## <a name="impact-of-the-setting-the-public-access-level-of-the-web-container"></a>Влияние параметра на общий уровень доступа веб-контейнера
 
@@ -89,13 +92,13 @@ URL-адрес сайта содержит региональный код. На
 >
 > Использование пользовательских доменов по протоколу HTTPS требует использования Azure CDN в настоящее время.
 
-## <a name="custom-domain-names"></a>Имена пользовательских доменов
+## <a name="custom-domain-names"></a>Имена личных доменов
 
 Статический веб-сайт можно сделать доступным через личный домен. Дополнительные сведения см. в статье [Настройка пользовательского доменного имени для учетной записи хранения Azure](storage-custom-domain-name.md).
 
 Подробный обзор размещения домена в Azure см. в разделе [Размещение домена в Azure DNS](../../dns/dns-delegate-domain-azure-dns.md).
 
-## <a name="pricing"></a>Цены
+## <a name="pricing"></a>Стоимость
 
 Можно включить бесплатное размещение статических веб-сайтов. Вы оплачиваете только хранилище BLOB-объектов, которое использует ваш сайт, и затраты на эксплуатацию. Дополнительные сведения о ценах на хранилище BLOB-объектов Azure см. на [странице цен](https://azure.microsoft.com/pricing/details/storage/blobs/).
 
@@ -105,12 +108,12 @@ URL-адрес сайта содержит региональный код. На
 
 Сведения о включении метрик на статических страницах веб-сайта см. в разделе [Включение метрик на статических страницах веб-сайта](storage-blob-static-website-how-to.md#metrics).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Размещение статического веб-сайта в службе хранилища Azure](storage-blob-static-website-how-to.md)
 * [Использование Azure CDN для доступа к BLOB-объектам с пользовательскими доменами по протоколу HTTPS](storage-https-custom-domain-cdn.md)
 * [Настройка имени личного домена для конечной точки хранилища BLOB-объектов](storage-custom-domain-name.md)
 * [Функции Azure](/azure/azure-functions/functions-overview)
-* [службы приложений Azure](/azure/app-service/overview)
+* [Служба приложений Azure](/azure/app-service/overview)
 * [Создание первого бессерверного веб-приложения](https://docs.microsoft.com/azure/functions/tutorial-static-website-serverless-api-with-database)
 * [Руководство. Размещение домена в Azure DNS](../../dns/dns-delegate-domain-azure-dns.md)

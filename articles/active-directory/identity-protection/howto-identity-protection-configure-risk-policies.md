@@ -5,24 +5,24 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: identity-protection
 ms.topic: conceptual
-ms.date: 10/18/2019
+ms.date: 01/06/2020
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahandle
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 37091b2551d68e241c7179949c3eb1db9a381de6
-ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
+ms.openlocfilehash: 4ffa08f7ebf013d42d6da0589ce0f1ccc97289de
+ms.sourcegitcommit: f2149861c41eba7558649807bd662669574e9ce3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74382177"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75707011"
 ---
 # <a name="how-to-configure-and-enable-risk-policies"></a>Как настроить и включить политики риска
 
 Как было сказано в предыдущей статье, [политики защиты идентификации](concept-identity-protection-policies.md) включают две политики риска, которые можно включить в нашем каталоге. 
 
-- Sign-in risk policy
+- Политика риска входа
 - Политика риска пользователя
 
 ![Страница "Общие сведения о безопасности" для включения политик риска для пользователей и входа](./media/howto-identity-protection-configure-risk-policies/identity-protection-security-overview.png)
@@ -31,7 +31,7 @@ ms.locfileid: "74382177"
 
 > [!VIDEO https://www.youtube.com/embed/zEsbbik-BTE]
 
-## <a name="prerequisites"></a>предварительным требованиям 
+## <a name="prerequisites"></a>Технические условия 
 
 Если организация хочет разрешить пользователям самостоятельно устранять неполадки, пользователи должны быть зарегистрированы для самостоятельного сброса пароля и многофакторной идентификации Azure. Мы рекомендуем [включить общий способ регистрации сведений о безопасности](../authentication/howto-registration-mfa-sspr-combined.md) для достижения оптимальной производительности. Предоставление пользователям возможности самостоятельного восстановления повышает эффективность работы, не требуя вмешательства администратора. Администраторы по-прежнему могут просматривать эти события и исследовать их после фактического. 
 
@@ -46,6 +46,8 @@ ms.locfileid: "74382177"
 ## <a name="exclusions"></a>Исключения
 
 Все политики позволяют исключить пользователей, например [учетные записи администратора для аварийного доступа или прерывания](../users-groups-roles/directory-emergency-access.md). Организации могут определить необходимость исключения других учетных записей из конкретных политик в зависимости от способа использования учетных записей. Все исключения следует регулярно проверять, чтобы узнать, применимы ли они к прежнему.
+
+Настроенные доверенные [Сетевые расположения](../conditional-access/location-condition.md) используются защитой идентификации в некоторых определениях рисков для сокращения числа ложных срабатываний.
 
 ## <a name="enable-policies"></a>Включить политики
 
@@ -72,7 +74,7 @@ ms.locfileid: "74382177"
    1. **Принудительное применение политики** ** - **
    1. **Сохранить**
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Включение политики регистрации многофакторной идентификации Azure](howto-identity-protection-configure-mfa-policy.md)
 

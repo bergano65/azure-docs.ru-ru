@@ -10,13 +10,13 @@ ms.topic: conceptual
 author: GithubMirek
 ms.author: mireks
 ms.reviewer: vanto, carlrab
-ms.date: 11/06/2019
-ms.openlocfilehash: 76ca8a5d781c22279ccad633cc7c5bc98d645df8
-ms.sourcegitcommit: 375b70d5f12fffbe7b6422512de445bad380fe1e
+ms.date: 01/07/2020
+ms.openlocfilehash: dc2661bbc443201d6a2da4b5efb7ecdc2caad444
+ms.sourcegitcommit: c32050b936e0ac9db136b05d4d696e92fefdf068
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74901369"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75732575"
 ---
 # <a name="configure-and-manage-azure-active-directory-authentication-with-sql"></a>Настройка и администрирование аутентификации Azure Active Directory с помощью SQL
 
@@ -190,7 +190,7 @@ ms.locfileid: "74901369"
 
 Командлеты, используемые для инициализации и управления администратором Azure AD для управляемого экземпляра SQL:
 
-| Имя командлета | Описание |
+| Имя командлета | Description |
 | --- | --- |
 | [Set-Азсклинстанцеактиведиректорядминистратор](/powershell/module/az.sql/set-azsqlinstanceactivedirectoryadministrator) |Подготовка администратора Azure AD для управляемого экземпляра SQL в текущей подписке. (Должно быть из текущей подписки)|
 | [Remove-Азсклинстанцеактиведиректорядминистратор](/powershell/module/az.sql/remove-azsqlinstanceactivedirectoryadministrator) |Удаляет администратора Azure AD для управляемого экземпляра SQL в текущей подписке. |
@@ -214,11 +214,11 @@ Set-AzSqlInstanceActiveDirectoryAdministrator -ResourceGroupName "ResourceGroup0
 Remove-AzSqlInstanceActiveDirectoryAdministrator -ResourceGroupName "ResourceGroup01" -InstanceName "ManagedInstanceName01" -Confirm -PassThru
 ```
 
-# <a name="azure-clitabazure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-clitabazure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 Вы также можете подготавливать экземпляр администратора Azure AD для управляемого экземпляра SQL, вызвав следующие команды интерфейса командной строки:
 
-| Команда | Описание |
+| Get-Help | Description |
 | --- | --- |
 |[AZ SQL MI AD — создание администратора](/cli/azure/sql/mi/ad-admin#az-sql-mi-ad-admin-create) | Подготавливает администратора Azure Active Directory для управляемого экземпляра SQL. (Должно быть из текущей подписки) |
 |[AZ SQL MI AD — администратор удаление](/cli/azure/sql/mi/ad-admin#az-sql-mi-ad-admin-delete) | Удаляет Azure Active Directory администратора для управляемого экземпляра SQL. |
@@ -236,7 +236,7 @@ Remove-AzSqlInstanceActiveDirectoryAdministrator -ResourceGroupName "ResourceGro
 
 Ниже описаны две процедуры по подготовке администратора Azure Active Directory для сервера Azure SQL Server на портале Azure или с помощью PowerShell.
 
-### <a name="azure-portal"></a>портала Azure
+### <a name="azure-portal"></a>Портал Azure
 
 1. В правом верхнем углу [портала Azure](https://portal.azure.com/) щелкните имя подключения, чтобы открыть список доступных каталогов Active Directory. Выберите нужный экземпляр Active Directory в качестве Azure AD по умолчанию. На этом шаге связанный с подпиской каталог Active Directory связывается с Azure SQL Server, чтобы одна и та же подписка использовалась для Azure AD и SQL Server. (На сервере Azure SQL Server может размещаться база данных SQL Azure или хранилище данных SQL Azure.)
 
@@ -281,13 +281,13 @@ Remove-AzSqlInstanceActiveDirectoryAdministrator -ResourceGroupName "ResourceGro
 
 Командлеты, используемые для инициализации и управления администратором Azure AD для базы данных SQL Azure и хранилища данных SQL Azure:
 
-| Имя командлета | Описание |
+| Имя командлета | Description |
 | --- | --- |
 | [Set-AzSqlServerActiveDirectoryAdministrator](/powershell/module/az.sql/set-azsqlserveractivedirectoryadministrator) |Выполняет подготовку учетной записи администратора Azure Active Directory для сервера Azure SQL Server или хранилища данных SQL Azure. (Должно быть из текущей подписки) |
 | [Remove-AzSqlServerActiveDirectoryAdministrator](/powershell/module/az.sql/remove-azsqlserveractivedirectoryadministrator) |Удаляет учетную запись администратора Azure Active Directory для сервера Azure SQL Server или хранилища данных SQL Azure. |
 | [Get-Азсклсерверактиведиректорядминистратор](/powershell/module/az.sql/get-azsqlserveractivedirectoryadministrator) |Возвращает сведения о текущем администраторе Azure Active Directory, настроенном для сервера Azure SQL Server или хранилища данных SQL Azure. |
 
-Чтобы просмотреть дополнительные сведения о каждой из этих команд, используйте команду PowerShell Get-Help. Пример: `get-help Set-AzSqlServerActiveDirectoryAdministrator`.
+Чтобы просмотреть дополнительные сведения о каждой из этих команд, используйте команду PowerShell Get-Help. Например, `get-help Set-AzSqlServerActiveDirectoryAdministrator`.
 
 Приведенный ниже скрипт выполняет подготовку группы администраторов Azure AD с именем **DBA_Group** (идентификатор объекта `40b79501-b343-44ed-9ce7-da4c8cc7353f`) для сервера **demo_server** в группе ресурсов с именем **Group-23**.
 
@@ -322,11 +322,11 @@ Get-AzSqlServerActiveDirectoryAdministrator -ResourceGroupName "Group-23" -Serve
 Remove-AzSqlServerActiveDirectoryAdministrator -ResourceGroupName "Group-23" -ServerName "demo_server"
 ```
 
-# <a name="azure-clitabazure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-clitabazure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 Вы можете подготавливать администратора Azure AD, вызвав следующие команды интерфейса командной строки:
 
-| Команда | Описание |
+| Get-Help | Description |
 | --- | --- |
 |[az sql server ad-admin create](/cli/azure/sql/server/ad-admin#az-sql-server-ad-admin-create) | Выполняет подготовку учетной записи администратора Azure Active Directory для сервера Azure SQL Server или хранилища данных SQL Azure. (Должно быть из текущей подписки) |
 |[az sql server ad-admin delete](/cli/azure/sql/server/ad-admin#az-sql-server-ad-admin-delete) | Удаляет учетную запись администратора Azure Active Directory для сервера Azure SQL Server или хранилища данных SQL Azure. |
@@ -345,14 +345,17 @@ Remove-AzSqlServerActiveDirectoryAdministrator -ResourceGroupName "Group-23" -Se
 Приложения или пользователи подключаются к Базе данных SQL Azure или хранилищу данных SQL, используя удостоверения Azure AD, с клиентских компьютеров. На эти компьютеры необходимо установить указанное ниже программное обеспечение.
 
 - .NET Framework 4.6 или более поздней версии с [https://msdn.microsoft.com/library/5a4x27ek.aspx](https://msdn.microsoft.com/library/5a4x27ek.aspx).
-- Библиотека аутентификации Azure Active Directory для SQL Server (*ADALSQL.DLL*) доступна на нескольких языках (версии x86 и amd64) в центре загрузки в [библиотеке аутентификации Microsoft Active Directory для Microsoft SQL Server](https://www.microsoft.com/download/details.aspx?id=48742).
+- Библиотека проверки подлинности Azure Active Directory для SQL Server (*ADAL. DLL*). Ниже приведены ссылки для загрузки для установки последнего драйвера SSMS, ODBC и OLE DB, содержащего *ADAL. Библиотека DLL* .
+    1. [Среда SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms)
+    1. [Драйвер ODBC 17 для SQL Server](https://www.microsoft.com/download/details.aspx?id=56567)
+    1. [OLE DB драйвер 18 для SQL Server](https://www.microsoft.com/download/details.aspx?id=56730)
 
 Вы можете выполнить эти требования, сделав следующее:
 
-- Установка [SQL Server 2016 Management Studio](https://msdn.microsoft.com/library/mt238290.aspx) или [SQL Server Data Tools для Visual Studio 2015](https://msdn.microsoft.com/library/mt204009.aspx) соответствует требованиям .NET Framework 4.6.
-- SSMS устанавливает *ADALSQL.DLL*версии x86.
-- SSDT устанавливает *ADALSQL.DLL*версии amd64.
-- Последняя версия Visual Studio со страницы [скачивания Visual Studio](https://www.visualstudio.com/downloads/download-visual-studio-vs) соответствует требованиям .NET Framework 4.6, но не устанавливает необходимую версию amd64 *ADALSQL.DLL*.
+- Установка последней версии [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms) или [SQL Server Data Tools](/sql/ssdt/download-sql-server-data-tools-ssdt) соответствует требованиям .NET Framework 4,6.
+    - SSMS устанавливает версию x86 для версии *ADAL. Библиотека DLL*.
+    - SSDT устанавливает версию AMD64 библиотеки *ADAL. Библиотека DLL*.
+    - Последняя версия Visual Studio из [файлов для загрузки Visual Studio](https://www.visualstudio.com/downloads/download-visual-studio-vs) соответствует требованиям .NET Framework 4,6, но не устанавливает требуемую версию файлов *ADAL. Библиотека DLL*.
 
 ## <a name="create-contained-database-users-in-your-database-mapped-to-azure-ad-identities"></a>Создание пользователей автономной базы данных в базе данных, сопоставленной с удостоверениями Azure AD
 
@@ -513,9 +516,13 @@ conn.Open();
 > `sqlcmd` с командой `-G` не работает с удостоверениями системы и требует входа субъекта-пользователя.
 
 ```cmd
-sqlcmd -S Target_DB_or_DW.testsrv.database.windows.net  -G  
+sqlcmd -S Target_DB_or_DW.testsrv.database.windows.net -G  
 sqlcmd -S Target_DB_or_DW.testsrv.database.windows.net -U bob@contoso.com -P MyAADPassword -G -l 30
 ```
+
+## <a name="troubleshooting-azure-ad-authentication"></a>Устранение неполадок аутентификация Azure AD
+
+Рекомендации по устранению неполадок, связанных с аутентификация Azure AD, можно найти в следующем блоге: <https://techcommunity.microsoft.com/t5/azure-sql-database/troubleshooting-problems-related-to-azure-ad-authentication-with/ba-p/1062991>
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

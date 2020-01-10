@@ -5,12 +5,12 @@ author: sajayantony
 ms.topic: article
 ms.date: 07/02/2019
 ms.author: sajaya
-ms.openlocfilehash: 1f2c79b47df4cf44b6fa3981bac4a5a3bf61c4df
-ms.sourcegitcommit: 12d902e78d6617f7e78c062bd9d47564b5ff2208
+ms.openlocfilehash: 74863823f3e8ef32565e01981d3a742d696a8165
+ms.sourcegitcommit: f2149861c41eba7558649807bd662669574e9ce3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2019
-ms.locfileid: "74456393"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75708314"
 ---
 # <a name="frequently-asked-questions-about-azure-container-registry"></a>Часто задаваемые вопросы о Реестре контейнеров Azure
 
@@ -32,7 +32,7 @@ ms.locfileid: "74456393"
 
 ### <a name="is-there-security-vulnerability-scanning-for-images-in-acr"></a>Есть ли проверка уязвимости системы безопасности на наличие образов в записи контроля доступа?
 
-Да. См. документацию по [Twistlock](https://www.twistlock.com/2016/11/07/twistlock-supports-azure-container-registry/) и [голубому цвету](https://blog.aquasec.com/image-vulnerability-scanning-in-azure-container-registry).
+Да. См. документацию из [центра безопасности Azure](https://docs.microsoft.com/azure/security-center/azure-container-registry-integration), [Twistlock](https://www.twistlock.com/2016/11/07/twistlock-supports-azure-container-registry/) и [голубого](https://blog.aquasec.com/image-vulnerability-scanning-in-azure-container-registry).
 
 ### <a name="how-do-i-configure-kubernetes-with-azure-container-registry"></a>Разделы справки настроить Kubernetes с помощью реестра контейнеров Azure?
 
@@ -101,7 +101,7 @@ az role assignment create --role "Reader" --assignee user@contoso.com --scope /s
 - [Почему использование квоты реестра не уменьшается после удаления образов?](#why-does-the-registry-quota-usage-not-reduce-after-deleting-images)
 - [Разделы справки проверить изменения квоты хранилища?](#how-do-i-validate-storage-quota-changes)
 - [Разделы справки выполнить проверку подлинности с помощью реестра при запуске CLI в контейнере?](#how-do-i-authenticate-with-my-registry-when-running-the-cli-in-a-container)
-- [Реестр контейнеров Azure предлагает конфигурацию только TLS v 1.2 и включение TLS v 1.2?](#does-azure-container-registry-offer-tls-v12-only-configuration-and-how-to-enable-tls-v12)
+- [Как включить TLS 1,2?](#how-to-enable-tls-12)
 - [Поддерживает ли реестр контейнеров Azure отношение доверия с содержимым?](#does-azure-container-registry-support-content-trust)
 - [Разделы справки предоставить доступ к образам или Push-уведомлениям без разрешения на управление ресурсом реестра?](#how-do-i-grant-access-to-pull-or-push-images-without-permission-to-manage-the-registry-resource)
 - [Разделы справки включить автоматическое помещение образа в карантин для реестра](#how-do-i-enable-automatic-image-quarantine-for-a-registry)
@@ -181,9 +181,12 @@ apk --update add docker
 az acr login -n MyRegistry
 ```
 
-### <a name="does-azure-container-registry-offer-tls-v12-only-configuration-and-how-to-enable-tls-v12"></a>Реестр контейнеров Azure предлагает конфигурацию только TLS v 1.2 и включение TLS v 1.2?
+### <a name="how-to-enable-tls-12"></a>Как включить TLS 1,2?
 
-Да. Включите TLS с помощью любого последнего клиента DOCKER (версия 18.03.0 и выше). 
+Включите TLS 1,2 с помощью любого последнего клиента DOCKER (версия 18.03.0 и выше). 
+
+> [!IMPORTANT]
+> Начиная с 13 января 2020 г. Реестр контейнеров Azure требует, чтобы все безопасные подключения серверов и приложений использовали TLS 1,2. Поддержка TLS 1,0 и 1,1 будет прекращена.
 
 ### <a name="does-azure-container-registry-support-content-trust"></a>Поддерживает ли Реестр контейнеров Azure функцию доверия к содержимому?
 
@@ -305,7 +308,7 @@ unauthorized: authentication required
 ```
 
 Чтобы устранить эту ошибку, сделайте следующее:
-1. Добавьте параметр `--signature-verification=false` в файл конфигурации управляющей программы DOCKER `/etc/sysconfig/docker`. Например,
+1. Добавьте параметр `--signature-verification=false` в файл конфигурации управляющей программы DOCKER `/etc/sysconfig/docker`. Пример.
 
   ```
   OPTIONS='--selinux-enabled --log-driver=journald --live-restore --signature-verification=false'
@@ -357,10 +360,10 @@ sudo service docker restart
 
 ### <a name="new-user-permissions-may-not-be-effective-immediately-after-updating"></a>Новые разрешения пользователя могут не действовать сразу после обновления
 
-При предоставлении новых разрешений (новых ролей) субъекту-службе изменение может не вступить в силу немедленно. Существует две возможные причины.
+При предоставлении новых разрешений (новых ролей) субъекту-службе изменение может не вступить в силу немедленно. Существуют две возможные причины этой ошибки.
 
 * Задержка назначения роли Azure Active Directory. Обычно это происходит быстро, но может занять несколько минут из-за задержки распространения.
-* Задержка разрешений на сервере маркеров записи контроля доступа. Это может занять до 10 минут. Чтобы устранить эту проблемы, можно `docker logout` и снова выполнить проверку подлинности с тем же пользователем через 1 минуту:
+* Задержка разрешений на сервере маркеров записи контроля доступа. Этот процесс может занять больше 10 минут. Чтобы устранить эту проблемы, можно `docker logout` и снова выполнить проверку подлинности с тем же пользователем через 1 минуту:
 
   ```bash
   docker logout myregistry.azurecr.io
@@ -421,20 +424,20 @@ curl $redirect_url
 * Отсутствие подключения к сети
 * Брандмауэр
 * Блокирование рекламы
-* Ошибки DNS
+* Создается предупреждающее оповещение.
 
 Обратитесь к администратору сети или проверьте конфигурацию сети и подключение. Попробуйте запустить `az acr check-health -n yourRegistry` с помощью Azure CLI, чтобы проверить, может ли ваша среда подключаться к реестру контейнеров. Кроме того, в браузере можно попытаться использовать режиме инкогнито или частный сеанс, чтобы избежать устаревших кэшей браузера или файлов cookie.
 
 ### <a name="why-does-my-pull-or-push-request-fail-with-disallowed-operation"></a>Почему запрос на вытягивание или принудительную отправку завершился с неразрешенной операцией?
 
-Ниже приведены некоторые сенариос, в которых могут быть запрещены операции.
-* Классические реестры больше не поддерживаются. Обновите до поддерживаемых [SKU](https://aka.ms/acr/skus) с помощью команды [AZ контроля доступа Update](https://docs.microsoft.com/cli/azure/acr?view=azure-cli-latest#az-acr-update) или портала Azure.
+Ниже приведены некоторые сценарии, в которых операции могут быть запрещены.
+* Классические реестры больше не поддерживаются. Обновите до поддерживаемых [SKU](https://aka.ms/acr/skus) с помощью команды [AZ контроля доступа Update](https://docs.microsoft.com/cli/azure/acr?view=azure-cli-latest#az-acr-update) или портал Azure.
 * Образ или репозиторий могут быть заблокированы, поэтому их нельзя удалить или обновить. Для просмотра текущих атрибутов можно использовать команду [AZ запись контроля](https://docs.microsoft.com/azure/container-registry/container-registry-image-lock) доступа.
 * Некоторые операции запрещены, если образ находится в карантине. Дополнительные сведения о помещении в [Карантин](https://github.com/Azure/acr/tree/master/docs/preview/quarantine).
 
 ### <a name="how-do-i-collect-http-traces-on-windows"></a>Разделы справки собирайте трассировки HTTP в Windows?
 
-#### <a name="prerequisites"></a>предварительным требованиям
+#### <a name="prerequisites"></a>Технические условия
 
 - Включение расшифровки HTTPS в Fiddler: <https://docs.telerik.com/fiddler/Configure-Fiddler/Tasks/DecryptHTTPS>
 - Включение DOCKER для использования прокси-сервера через пользовательский интерфейс docker: <https://docs.docker.com/docker-for-windows/#proxies>
@@ -488,10 +491,10 @@ az acr task list-runs -r $myregistry --run-status Running --query '[].runId' -o 
 
 | Служба Git | Исходный контекст | Сборка вручную | Автоматическая сборка с помощью триггера Commit |
 |---|---|---|---|
-| GitHub | https://github.com/user/myapp-repo.git#mybranch:myfolder | Yes | Yes |
-| Azure Repos | https://dev.azure.com/user/myproject/_git/myapp-repo#mybranch:myfolder | Yes | Yes |
-| GitLab | https://gitlab.com/user/myapp-repo.git#mybranch:myfolder | Yes | Нет |
-| Bitbucket; | https://user@bitbucket.org/user/mayapp-repo.git#mybranch:myfolder | Yes | Нет |
+| GitHub | https://github.com/user/myapp-repo.git#mybranch:myfolder | Да | Да |
+| Azure Repos | https://dev.azure.com/user/myproject/_git/myapp-repo#mybranch:myfolder | Да | Да |
+| GitLab | https://gitlab.com/user/myapp-repo.git#mybranch:myfolder | Да | Нет |
+| Bitbucket; | https://user@bitbucket.org/user/mayapp-repo.git#mybranch:myfolder | Да | Нет |
 
 ## <a name="run-error-message-troubleshooting"></a>Выполнение устранения неполадок с сообщением об ошибке
 
@@ -504,6 +507,6 @@ az acr task list-runs -r $myregistry --run-status Running --query '[].runId' -o 
 - [ЦирклеЦи](https://github.com/Azure/acr/blob/master/docs/integration/CircleCI.md)
 - [Действия GitHub](https://github.com/Azure/acr/blob/master/docs/integration/github-actions/github-actions.md)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Дополнительные сведения](container-registry-intro.md) о реестре контейнеров Azure.

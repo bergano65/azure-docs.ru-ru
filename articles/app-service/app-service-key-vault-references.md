@@ -6,17 +6,14 @@ ms.topic: article
 ms.date: 10/09/2019
 ms.author: mahender
 ms.custom: seodec18
-ms.openlocfilehash: f0d3d36d3489557f0a07e9400c59debb2dca7073
-ms.sourcegitcommit: 265f1d6f3f4703daa8d0fc8a85cbd8acf0a17d30
+ms.openlocfilehash: 7fdb7c980a278e2dcd4b64a4b70de50721d0b72a
+ms.sourcegitcommit: c32050b936e0ac9db136b05d4d696e92fefdf068
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74671473"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75728758"
 ---
 # <a name="use-key-vault-references-for-app-service-and-azure-functions"></a>Использование Key Vault ссылок для службы приложений и функций Azure
-
-> [!NOTE] 
-> Ссылки на Key Vault в настоящее время недоступны в планах потребления Linux.
 
 В этой статье показано, как работать с секретами из Azure Key Vault в приложении Службы приложений или Функций Azure без каких-либо изменений кода. Служба [Azure Key Vault](../key-vault/key-vault-overview.md) обеспечивает централизованное управление секретами и полный контроль над политиками доступа и журналами аудита.
 
@@ -41,7 +38,7 @@ ms.locfileid: "74671473"
 Ссылка на Key Vault имеет вид `@Microsoft.KeyVault({referenceString})`, где `{referenceString}` заменяется одним из следующих значений.
 
 > [!div class="mx-tdBreakAll"]
-> | Строка ссылки                                                            | Описание                                                                                                                                                                                 |
+> | Строка ссылки                                                            | Description                                                                                                                                                                                 |
 > |-----------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 > | SecretUri=_secretUri_                                                       | Здесь **SecretUri** является полным URI плоскости данных секрета в Key Vault, включая версию, например: https://myvault.vault.azure.net/secrets/mysecret/ec96f02080254f109c51a1f14cdb1931.  |
 > | VaultName=_vaultName_;SecretName=_secretName_;SecretVersion=_secretVersion_ | Здесь **VaultName** — имя ресурса Key Vault. **SecretName** — имя целевого секрета. **SecretVersion** — используемая версия секрета. |

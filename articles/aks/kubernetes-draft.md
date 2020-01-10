@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 06/20/2019
 ms.author: zarhoads
-ms.openlocfilehash: 9338f0e26595c1ab25ab51578880daf8c0c5bbc4
-ms.sourcegitcommit: 265f1d6f3f4703daa8d0fc8a85cbd8acf0a17d30
+ms.openlocfilehash: a9b942c4726c770f1ea0d35c924395cdff40e1c7
+ms.sourcegitcommit: c32050b936e0ac9db136b05d4d696e92fefdf068
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74672449"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75732024"
 ---
 # <a name="quickstart-develop-on-azure-kubernetes-service-aks-with-draft"></a>Краткое руководство. Разработка в службе Azure Kubernetes Service (AKS) с черновиком
 
@@ -26,7 +26,7 @@ ms.locfileid: "74672449"
 * Подписка Azure. Если у вас нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free).
 * [Установленный Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest).
 * DOCKER установлен и настроен. Docker предоставляет пакеты, которые позволяют настроить Docker в системе [Mac][docker-for-mac], [Windows][docker-for-windows] или [Linux][docker-for-linux].
-* [Helm установлен](https://github.com/helm/helm#install).
+* [Установлен Helm v2][helm-install].
 * [Установленный черновик][draft-documentation].
 
 ## <a name="create-an-azure-kubernetes-service-cluster"></a>Создание кластера Службы Azure Kubernetes
@@ -332,6 +332,7 @@ az group delete --name MyResourceGroup --yes --no-wait
 [example-java-hello-l7]: https://github.com/Azure/draft/blob/master/examples/example-java/src/main/java/helloworld/Hello.java#L7
 [kubectl]: https://kubernetes.io/docs/user-guide/kubectl/
 [kubernetes-service-loadbalancer]: https://kubernetes.io/docs/concepts/services-networking/service/#type-loadbalancer
-[helm-init]: https://docs.helm.sh/helm/#helm-init
+[helm-init]: https://v2.helm.sh/docs/helm/#helm-init
+[helm-install]: https://v2.helm.sh/docs/using_helm/#installing-helm
 [sp-delete]: kubernetes-service-principal.md#additional-considerations
-[tiller-rbac]: https://docs.helm.sh/using_helm/#tiller-namespaces-and-rbac
+[tiller-rbac]: https://v2.helm.sh/docs/using_helm/#tiller-namespaces-and-rbac

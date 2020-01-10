@@ -10,12 +10,12 @@ ms.subservice: text-analytics
 ms.topic: conceptual
 ms.date: 11/04/2019
 ms.author: aahi
-ms.openlocfilehash: 6ef23c03f01cd8e83d4327f358eaf12209659ce8
-ms.sourcegitcommit: e50a39eb97a0b52ce35fd7b1cf16c7a9091d5a2a
+ms.openlocfilehash: 6fa7d6a93a56cc531df238a8580207ef7a89d5d0
+ms.sourcegitcommit: c32050b936e0ac9db136b05d4d696e92fefdf068
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74286457"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75732626"
 ---
 # <a name="whats-new-in-the-text-analytics-api"></a>Новые возможности в API "Анализ текста"
 
@@ -26,7 +26,7 @@ API анализа текста обновляется на постоянной
 Следующая версия средства распознавания имен сущностей (NER) теперь доступна для общедоступной предварительной версии и обеспечивает Расширенное обнаружение и классификацию сущностей, найденных в тексте. Служба предоставляет:
 
 * Распознавание следующих новых типов сущностей:
-    * номер телефона.
+    * Номер телефона
     * IP-адрес
 
 * [Новая конечная точка](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-0-Preview-1/operations/EntitiesRecognitionPii) для распознавания типов сущностей личных сведений (только на английском языке)
@@ -35,7 +35,7 @@ API анализа текста обновляется на постоянной
 Связывание сущностей поддерживает английский и испанский языки. Языковая поддержка NER зависит от типа сущности. 
 
 > [!div class="nextstepaction"]
-> [Дополнительные сведения о распознавании имен сущностей v3](how-tos/text-analytics-how-to-entity-linking.md#named-entity-recognition-v3-public-preview)
+> [Дополнительные сведения о распознавании имен сущностей v3](how-tos/text-analytics-how-to-entity-linking.md#named-entity-recognition-versions-and-features)
 
 ## <a name="sentiment-analysis-v3-public-preview---october-2019"></a>Анализ тональности v3 (общедоступная Предварительная версия) — Октябрь 2019
 
@@ -44,10 +44,10 @@ API анализа текста обновляется на постоянной
 * Автоматическая маркировка для различных тональности в тексте.
 * Тональности анализ и вывод на уровне документа и предложения. 
 
-Он поддерживает английский (`en`), японский (`ja`), Китайская упрощенная (`zh-Hans`), Китайская традиционная (`zh-Hant`), французский (`fr`), итальянский (`it`), Испанский (`es`), Нидерландский (`nl`), португальский (`pt`) и немецкий (`de`), доступны в следующих регионах: `Australia East`, `Central Canada`, `Central US`, `East Asia`, `East US`, `East US 2`, `North Europe`и `Southeast Asia`.`South Central US``UK South``West Europe``West US 2` 
+Он поддерживает английский (`en`), японский (`ja`), Китайская упрощенная (`zh-Hans`), Китайская традиционная (`zh-Hant`), французский (`fr`), итальянский (`it`), Испанский (`es`), Нидерландский (`nl`), португальский (`pt`) и немецкий (`de`), доступны в следующих регионах: `Australia East`, `Central Canada`, `Central US`, `East Asia`, `East US`, `East US 2`, `North Europe`и `Southeast Asia`. 
 
 > [!div class="nextstepaction"]
-> [Дополнительные сведения о анализ тональности v3](how-tos/text-analytics-how-to-sentiment-analysis.md#sentiment-analysis-v3-public-preview)
+> [Дополнительные сведения о анализ тональности v3](how-tos/text-analytics-how-to-sentiment-analysis.md#sentiment-analysis-versions-and-features)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
