@@ -2,17 +2,17 @@
 title: Памятка по конфигурации XPath для роли облачных служб | Документация Майкрософт
 description: Различные параметры XPath можно использовать в конфигурации роли облачной службы, чтобы предоставить их в качестве переменных среды.
 services: cloud-services
-author: georgewallace
+author: tgore03
 ms.service: cloud-services
 ms.topic: article
 ms.date: 04/19/2017
-ms.author: gwallace
-ms.openlocfilehash: cd2bdc4fc4b2a135907851ca4d3034430618e0cd
-ms.sourcegitcommit: 4b647be06d677151eb9db7dccc2bd7a8379e5871
+ms.author: tagore
+ms.openlocfilehash: 380b0be4e4e4b19d16cb611b0b472294339f2199
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68359001"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75386091"
 ---
 # <a name="expose-role-configuration-settings-as-an-environment-variable-with-xpath"></a>Предоставление параметров конфигурации ролей как переменной среды с помощью XPath
 В файле определения службы рабочей роли или веб-роли облачной службы можно предоставить значения конфигурации среды выполнения как переменные среды. Поддерживаются следующие значения XPath (которые соответствуют значениям API).
@@ -22,7 +22,7 @@ ms.locfileid: "68359001"
 ## <a name="app-running-in-emulator"></a>Приложение, запущенное в эмуляторе
 Указывает, что приложение выполняется в эмуляторе.
 
-| Type | Пример |
+| Тип | Пример |
 | --- | --- |
 | XPath |xpath="/RoleEnvironment/Deployment/@emulated" |
 | Код |var x = RoleEnvironment.IsEmulated; |
@@ -46,7 +46,7 @@ ms.locfileid: "68359001"
 ## <a name="update-domain"></a>Обновление домена
 Получает домен обновления для экземпляра.
 
-| Type | Пример |
+| Тип | Пример |
 | --- | --- |
 | XPath |xpath="/RoleEnvironment/CurrentInstance/@updateDomain" |
 | Код |var ud = RoleEnvironment.CurrentRoleInstance.UpdateDomain; |
@@ -62,7 +62,7 @@ ms.locfileid: "68359001"
 ## <a name="role-name"></a>Имя роли
 Получает имя роли для экземпляров.
 
-| Type | Пример |
+| Тип | Пример |
 | --- | --- |
 | XPath |xpath="/RoleEnvironment/CurrentInstance/@roleName" |
 | Код |var rname = RoleEnvironment.CurrentRoleInstance.Role.Name; |
@@ -70,7 +70,7 @@ ms.locfileid: "68359001"
 ## <a name="config-setting"></a>Параметр конфигурации
 Получает значение указанного параметра конфигурации.
 
-| Type | Пример |
+| Тип | Пример |
 | --- | --- |
 | XPath |xpath="/RoleEnvironment/CurrentInstance/ConfigurationSettings/ConfigurationSetting[@name='Setting1']/@value" |
 | Код |var setting = RoleEnvironment.GetConfigurationSettingValue("Setting1"); |
@@ -86,7 +86,7 @@ ms.locfileid: "68359001"
 ## <a name="local-storage-size"></a>Размер локального хранилища
 Получает размер локального хранилища для экземпляра.
 
-| Type | Пример |
+| Тип | Пример |
 | --- | --- |
 | XPath |xpath="/RoleEnvironment/CurrentInstance/LocalResources/LocalResource[@name='LocalStore1']/@sizeInMB" |
 | Код |var localResourceSizeInMB = RoleEnvironment.GetLocalResource("LocalStore1").MaximumSizeInMegabytes; |
@@ -155,10 +155,13 @@ ms.locfileid: "68359001"
 </WorkerRole>
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Узнайте больше о файле [ServiceConfiguration.cscfg](cloud-services-model-and-package.md#serviceconfigurationcscfg) .
 
 Создайте пакет [ServicePackage.cspkg](cloud-services-model-and-package.md#servicepackagecspkg) .
 
 Включите [удаленный рабочий стол](cloud-services-role-enable-remote-desktop-new-portal.md) для роли.
+
+
+
 
