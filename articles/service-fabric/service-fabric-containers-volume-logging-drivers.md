@@ -1,31 +1,24 @@
 ---
-title: Service Fabric драйвер тома файлов Azure (GA) | Документация Майкрософт
+title: Драйвер тома файлов Azure для Service Fabric
 description: Service Fabric поддерживает использование службы файлов Azure для резервного копирования томов в контейнере.
-services: service-fabric
-author: athinanthny
-manager: chackdan
-ms.assetid: ab49c4b9-74a8-4907-b75b-8d2ee84c6d90
-ms.service: service-fabric
 ms.topic: conceptual
 ms.date: 6/10/2018
-ms.author: atsenthi
-ms.openlocfilehash: 1287df567c60b7ad851c94a8ba787270255d0f35
-ms.sourcegitcommit: 4c831e768bb43e232de9738b363063590faa0472
+ms.openlocfilehash: 514a0cb12359d58e38ebc30ae12cdb277757f2b2
+ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74422780"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75750046"
 ---
-# <a name="service-fabric-azure-files-volume-driver"></a>Драйвер тома Service Fabric файлов Azure
-Подключаемый модуль тома файлов Azure, [подключаемый модуль томов DOCKER](https://docs.docker.com/engine/extend/plugins_volume/) , который предоставляет тома на основе [файлов Azure](/azure/storage/files/storage-files-introduction) для контейнеров DOCKER, теперь является **общедоступным**.
+# <a name="azure-files-volume-driver-for-service-fabric"></a>Драйвер тома файлов Azure для Service Fabric
 
-Этот подключаемый модуль тома Docker упакован в виде приложения Service Fabric, которое можно развернуть в кластерах Service Fabric. Он позволяет предоставить тома службы "Файлы Azure" для других контейнерных приложений Service Fabric, развернутых в кластере.
+Драйвер тома файлов Azure — это [подключаемый модуль томов DOCKER](https://docs.docker.com/engine/extend/plugins_volume/) , который предоставляет тома на основе [файлов Azure](/azure/storage/files/storage-files-introduction) для контейнеров DOCKER. Он упаковывается как Service Fabricое приложение, которое можно развернуть в кластере Service Fabric, чтобы предоставить тома для других приложений-контейнеров Service Fabric в кластере.
 
 > [!NOTE]
-> Версия подключаемого модуля тома файлов Azure версии 6.5.661.9590 — общедоступная версия. 
+> Выпущена версия 6.5.661.9590 подключаемого модуля тома файлов Azure для общедоступной версии.
 >
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Технические условия
 * Версия подключаемого модуля тома службы файлов Azure для Windows работает только в операционных системах [Windows Server версии 1709](/windows-server/get-started/whats-new-in-windows-server-1709), [Windows 10 версии 1709](https://docs.microsoft.com/windows/whats-new/whats-new-windows-10-version-1709) или более поздних версий.
 
 * Версия подключаемого модуля тома службы файлов Azure для Linux работает во всех версиях операционной системы, поддерживаемых Service Fabric.
@@ -61,7 +54,6 @@ ms.locfileid: "74422780"
   }
 ]
 ```
-
 
 ## <a name="deploy-a-sample-application-using-service-fabric-azure-files-volume-driver"></a>Развертывание примера приложения с помощью Service Fabric драйвер тома файлов Azure
 
@@ -247,6 +239,6 @@ docker plugin install --alias azure --grant-all-permissions docker4x/cloudstor:1
 
 Если задан драйвер ведения журналов Docker, необходимо развернуть агенты (или контейнеры) для обработки журналов в кластере. Чтобы указать параметры драйвера ведения журналов можно использовать тег **DriverOption**.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * Примеры контейнеров, включая драйвер тома, приведены в разделе [Примеры контейнеров Service Fabric](https://github.com/Azure-Samples/service-fabric-containers).
 * Развертывание контейнеров в кластере Service Fabric описывается в разделе [Развертывание контейнера в Service Fabric](service-fabric-deploy-container.md).

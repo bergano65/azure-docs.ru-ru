@@ -11,12 +11,12 @@ author: aamalvea
 ms.author: aamalvea
 ms.reviewer: jrasnik, carlrab
 ms.date: 11/02/2018
-ms.openlocfilehash: ec625f203e9282d070e6c1b3b3d712be7ab789cf
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.openlocfilehash: c2b889d4013abb60c9ad7bb4bcdc4e6546cfa37c
+ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73810387"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75745955"
 ---
 # <a name="create-alerts-for-azure-sql-database-and-data-warehouse-using-azure-portal"></a>Создание оповещений для Базы данных SQL Azure и хранилища данных с помощью портала Azure
 
@@ -39,7 +39,7 @@ ms.locfileid: "73810387"
 
 Для настройки правил генерации оповещений и получении сведений о них можно использовать:
 
-* [портал Azure](../monitoring-and-diagnostics/insights-alerts-portal.md)
+* [Портал Azure](../monitoring-and-diagnostics/insights-alerts-portal.md)
 * [PowerShell](../azure-monitor/platform/alerts-classic-portal.md)
 * [интерфейс командной строки (CLI)](../azure-monitor/platform/alerts-classic-portal.md)
 * [Azure Monitor REST API](https://msdn.microsoft.com/library/azure/dn931945.aspx)
@@ -76,47 +76,47 @@ ms.locfileid: "73810387"
 
 | Тип ресурса | Имя метрики | Понятное имя | Тип статистической обработки | Минимальный интервал времени для оповещений|
 | --- | --- | --- | --- | --- |
-| База данных SQL | cpu_percent | Процент использования ЦП | Средняя | 5 мин |
-| База данных SQL | physical_data_read_percent | Процент операций ввода/вывода данных | Средняя | 5 мин |
-| База данных SQL | log_write_percent | Log IO percentage | Средняя | 5 мин |
-| База данных SQL | dtu_consumption_percent | Процент использования DTU | Средняя | 5 мин |
-| База данных SQL | storage | Total database size | Максимальная | 30 минут |
-| База данных SQL | connection_successful | Успешные подключения | Всего | 10 минут |
-| База данных SQL | connection_failed | Неудачные подключения | Всего | 10 минут |
-| База данных SQL | blocked_by_firewall | Заблокировано брандмауэром | Всего | 10 минут |
-| База данных SQL | deadlock | Взаимоблокировки | Всего | 10 минут |
+| База данных SQL | cpu_percent | Процент использования ЦП | Среднее | 5 мин |
+| База данных SQL | physical_data_read_percent | Процент операций ввода/вывода данных | Среднее | 5 мин |
+| База данных SQL | log_write_percent | Log IO percentage | Среднее | 5 мин |
+| База данных SQL | dtu_consumption_percent | Процент использования DTU | Среднее | 5 мин |
+| База данных SQL | хранилище | Total database size | Максимальная | 30 минут |
+| База данных SQL | connection_successful | Успешные подключения | Итого | 10 минут. |
+| База данных SQL | connection_failed | Неудачные подключения | Итого | 10 минут. |
+| База данных SQL | blocked_by_firewall | Заблокировано брандмауэром | Итого | 10 минут. |
+| База данных SQL | взаимоблокировка | Взаимоблокировки | Итого | 10 минут. |
 | База данных SQL | storage_percent | Размер базы данных в процентах | Максимальная | 30 минут |
-| База данных SQL | xtp_storage_percent | In-Memory OLTP storage percent (Preview) | Средняя | 5 мин |
-| База данных SQL | workers_percent | Workers percentage | Средняя | 5 мин |
-| База данных SQL | sessions_percent | Sessions percent | Средняя | 5 мин |
-| База данных SQL | dtu_limit | DTU limit | Средняя | 5 мин |
-| База данных SQL | dtu_used | DTU used | Средняя | 5 мин |
+| База данных SQL | xtp_storage_percent | In-Memory OLTP storage percent (Preview) | Среднее | 5 мин |
+| База данных SQL | workers_percent | Workers percentage | Среднее | 5 мин |
+| База данных SQL | sessions_percent | Sessions percent | Среднее | 5 мин |
+| База данных SQL | dtu_limit | DTU limit | Среднее | 5 мин |
+| База данных SQL | dtu_used | DTU used | Среднее | 5 мин |
 ||||||
-| Эластичный пул | cpu_percent | Процент использования ЦП | Средняя | 10 минут |
-| Эластичный пул | physical_data_read_percent | Процент операций ввода/вывода данных | Средняя | 10 минут |
-| Эластичный пул | log_write_percent | Log IO percentage | Средняя | 10 минут |
-| Эластичный пул | dtu_consumption_percent | Процент использования DTU | Средняя | 10 минут |
-| Эластичный пул | storage_percent | Storage percentage | Средняя | 10 минут |
-| Эластичный пул | workers_percent | Workers percentage | Средняя | 10 минут |
-| Эластичный пул | eDTU_limit | eDTU limit | Средняя | 10 минут |
-| Эластичный пул | storage_limit | Storage limit | Средняя | 10 минут |
-| Эластичный пул | eDTU_used | eDTU used | Средняя | 10 минут |
-| Эластичный пул | storage_used | Storage used | Средняя | 10 минут |
+| Эластичный пул | cpu_percent | Процент использования ЦП | Среднее | 10 минут. |
+| Эластичный пул | physical_data_read_percent | Процент операций ввода/вывода данных | Среднее | 10 минут. |
+| Эластичный пул | log_write_percent | Log IO percentage | Среднее | 10 минут. |
+| Эластичный пул | dtu_consumption_percent | Процент использования DTU | Среднее | 10 минут. |
+| Эластичный пул | storage_percent | Storage percentage | Среднее | 10 минут. |
+| Эластичный пул | workers_percent | Workers percentage | Среднее | 10 минут. |
+| Эластичный пул | eDTU_limit | eDTU limit | Среднее | 10 минут. |
+| Эластичный пул | storage_limit | Storage limit | Среднее | 10 минут. |
+| Эластичный пул | eDTU_used | eDTU used | Среднее | 10 минут. |
+| Эластичный пул | storage_used | Используемое хранилище | Среднее | 10 минут. |
 ||||||               
-| Хранилище данных SQL | cpu_percent | Процент использования ЦП | Средняя | 10 минут |
-| Хранилище данных SQL | physical_data_read_percent | Процент операций ввода/вывода данных | Средняя | 10 минут |
-| Хранилище данных SQL | connection_successful | Успешные подключения | Всего | 10 минут |
-| Хранилище данных SQL | connection_failed | Неудачные подключения | Всего | 10 минут |
-| Хранилище данных SQL | blocked_by_firewall | Заблокировано брандмауэром | Всего | 10 минут |
-| Хранилище данных SQL | service_level_objective | Уровень служб базы данных | Всего | 10 минут |
-| Хранилище данных SQL | dwu_limit | Лимит DWU. | Максимальная | 10 минут |
-| Хранилище данных SQL | dwu_consumption_percent | DWU percentage | Средняя | 10 минут |
-| Хранилище данных SQL | dwu_used | DWU used | Средняя | 10 минут |
+| Хранилище данных SQL | cpu_percent | Процент использования ЦП | Среднее | 10 минут. |
+| Хранилище данных SQL | physical_data_read_percent | Процент операций ввода/вывода данных | Среднее | 10 минут. |
+| Хранилище данных SQL | connection_successful | Успешные подключения | Итого | 10 минут. |
+| Хранилище данных SQL | connection_failed | Неудачные подключения | Итого | 10 минут. |
+| Хранилище данных SQL | blocked_by_firewall | Заблокировано брандмауэром | Итого | 10 минут. |
+| Хранилище данных SQL | service_level_objective | Уровень служб базы данных | Итого | 10 минут. |
+| Хранилище данных SQL | dwu_limit | Лимит DWU. | Максимальная | 10 минут. |
+| Хранилище данных SQL | dwu_consumption_percent | DWU percentage | Среднее | 10 минут. |
+| Хранилище данных SQL | dwu_used | DWU used | Среднее | 10 минут. |
 ||||||
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 * [Ознакомьтесь с общими сведениями о мониторинге Azure](../monitoring-and-diagnostics/monitoring-overview.md) , включая типы информации, которую можно собирать и отслеживать.
 * Узнайте больше о [настройке веб-перехватчиков webhook в оповещениях](../azure-monitor/platform/alerts-webhooks.md).
-* Ознакомьтесь с [обзором журналов диагностики](../azure-monitor/platform/resource-logs-overview.md) , чтобы собирать подробные метрики о службе с высокой частотой.
+* Ознакомьтесь с [обзором журналов диагностики](../azure-monitor/platform/platform-logs-overview.md) , чтобы собирать подробные метрики о службе с высокой частотой.
 * Прочитайте [обзор сбора метрики](../monitoring-and-diagnostics/insights-how-to-customize-monitoring.md) и узнайте, как можно обеспечить, чтобы служба была доступна и отвечала на запросы.

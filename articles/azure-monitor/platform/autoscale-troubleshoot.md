@@ -1,19 +1,15 @@
 ---
 title: Устранение неполадок автоматического масштабирования Azure
 description: Отслеживание проблем с автомасштабированием Azure, используемых в Service Fabric, виртуальных машинах, веб-приложениях и облачных службах.
-author: rboucher
-services: azure-monitor
-ms.service: azure-monitor
 ms.topic: conceptual
 ms.date: 11/4/2019
-ms.author: robb
 ms.subservice: autoscale
-ms.openlocfilehash: 410c182075d0aa288ad05195958c396f1a357ff1
-ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
+ms.openlocfilehash: 9780cf88070110c4efc13c477d65307aa3985fe5
+ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74893575"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75751333"
 ---
 # <a name="troubleshooting-azure-autoscale"></a>Устранение неполадок автоматического масштабирования Azure
  
@@ -101,7 +97,7 @@ Azure Monitor Автомасштабирование позволяет полу
 
 ## <a name="autoscale-resource-logs"></a>Автоматическое масштабирование журналов ресурсов
 
-Как и любой другой ресурс Azure, служба автомасштабирования предоставляет [журналы ресурсов](resource-logs-overview.md). Существует две категории журналов.
+Как и любой другой ресурс Azure, служба автомасштабирования предоставляет [журналы ресурсов](platform-logs-overview.md). Существует две категории журналов.
 
 - **Вычисления автомасштабирования** . модуль автомасштабирования записывает записи журнала для каждой оценки отдельных условий при каждом выполнении проверки.  Запись содержит подробные сведения об наблюдаемых значениях метрик, правилах, которые были оценены, а также значение, если вычисление привело к действию масштабирования.
 

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 08/02/2018
 ms.author: rogirdh
-ms.openlocfilehash: 91150251140379c15d4ab3711ded571c9ad2c024
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: ace19f17f5d7a5e920808b76258459c0eba62890
+ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70101653"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75750530"
 ---
 # <a name="set-up-oracle-asm-on-an-azure-linux-virtual-machine"></a>Настройка Oracle ASM в виртуальной машине Linux в Azure  
 
@@ -33,13 +33,11 @@ ms.locfileid: "70101653"
 > * Создание базы данных Oracle под управлением ASM.
 
 
-[!INCLUDE [cloud-shell-try-it.md](../../../../includes/cloud-shell-try-it.md)]
-
 Если вы решили установить и использовать интерфейс командной строки локально, для работы с этим руководством вам понадобится Azure CLI 2.0.4 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0]( /cli/azure/install-azure-cli). 
 
 ## <a name="prepare-the-environment"></a>Подготовка среды
 
-### <a name="create-a-resource-group"></a>Создать группу ресурсов
+### <a name="create-a-resource-group"></a>Создание группы ресурсов
 
 Чтобы создать группу ресурсов, используйте команду [az group create](/cli/azure/group). Группа ресурсов Azure является логическим контейнером, в котором происходит развертывание ресурсов Azure и управление ими. В этом примере создается группа ресурсов с именем *myResourceGroup* в регионе *eastus*.
 
@@ -47,7 +45,7 @@ ms.locfileid: "70101653"
 az group create --name myResourceGroup --location eastus
 ```
 
-### <a name="create-a-vm"></a>Создание виртуальной машины
+### <a name="create-a-vm"></a>Создание ВМ
 
 Чтобы создать виртуальную машину на основе образа базы данных Oracle и настроить ее для использования Oracle ASM, выполните команду [az vm create](/cli/azure/vm). 
 
@@ -211,7 +209,7 @@ ssh <publicIpAddress>
    fdisk /dev/sdc
    ```
    
-   В соответствии с указанными выше сведениями выходные данные команды fdisk должны выглядеть следующим образом:
+   Используя указанные выше ответы, выходные данные команды `fdisk` должны выглядеть следующим образом:
 
    ```bash
    Device contains not a valid DOS partition table, or Sun, SGI or OSF disklabel
@@ -247,7 +245,7 @@ ssh <publicIpAddress>
    Syncing disks.
    ```
 
-4. Повторите предыдущую команду fdisk для `/dev/sdd`, `/dev/sde` и `/dev/sdf`.
+4. Повторите предыдущую `fdisk` команду для `/dev/sdd`, `/dev/sde`и `/dev/sdf`.
 
 5. Проверьте конфигурацию диска:
 
@@ -428,7 +426,7 @@ ssh <publicIpAddress>
    > Ключ должен содержать строку `ssh-rsa`. Кроме того, содержимое ключа должно быть одной строкой текста.
    >  
 
-6. В клиентской системе запустите PuTTY. В области **Категория** выберите **Подключение** > **SSH** > **Проверка подлинности**. В поле **Private key file for authentication** (Файл закрытого ключа для проверки подлинности) выберите созданный ранее ключ.
+6. В клиентской системе запустите PuTTY. В области **Категория** выберите **подключение** > **SSH** > **AUTH**. В поле **файл закрытого ключа для проверки подлинности** перейдите к разделу, созданному ранее.
 
    ![Снимок экрана параметров аутентификации SSH](./media/oracle-asm/setprivatekey.png)
 
@@ -460,14 +458,14 @@ ssh <publicIpAddress>
 
    ![Снимок экрана со страницей выбора варианта установки в установщике](./media/oracle-asm/install01.png)
 
-3. На странице **выбора языка продукта** выберите **английский** или другой нужный язык.  Щелкните `next`.
+3. На странице **выбора языка продукта** выберите **английский** или другой нужный язык.  Нажмите кнопку `next`.
 
 4. На странице **Create ASM Disk Group** (Создание группы дисков ASM) сделайте следующее:
    - Введите имя группы дисков.
    - В разделе **Redundancy** (Избыточность) выберите **External** (Внешняя).
    - В списке **Allocation Unit Size** (Размер единицы распределения) выберите значение **4**.
    - В разделе **Add Disks** (Добавление дисков) выберите **ORCLASMSP**.
-   - Щелкните `next`.
+   - Нажмите кнопку `next`.
 
 5. На странице **указания пароля ASM** установите переключатель **Use same passwords for these accounts** (Использовать одинаковые пароли для этих учетных записей) и введите пароль.
 
@@ -539,7 +537,7 @@ ssh <publicIpAddress>
 
 6. Нажмите кнопку **Выйти**, чтобы закрыть ASM Configuration Assistant.
 
-   ![Снимок экрана со страницей Configure ASM: Disk Groups (Настройка ASM: группы дисков)](./media/oracle-asm/asm05.png)
+   ![Снимок экрана с диалоговым окном "Configure ASM: Disk Groups" (Настройка ASM: группы дисков) с кнопкой "Выйти"](./media/oracle-asm/asm05.png)
 
 ## <a name="create-the-database"></a>Создание базы данных
 
@@ -580,10 +578,10 @@ ssh <publicIpAddress>
 az group delete --name myResourceGroup
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-[Учебник. Реализация Oracle Data Guard на виртуальной машине Azure под управлением Linux](configure-oracle-dataguard.md)
+[Реализация Oracle Data Guard на виртуальной машине Azure под управлением Linux](configure-oracle-dataguard.md)
 
-[Учебник. Реализация Oracle Golden Gate на виртуальной машине Azure под управлением Linux](Configure-oracle-golden-gate.md)
+[Реализация Oracle Golden Gate на виртуальной машине Azure под управлением Linux](Configure-oracle-golden-gate.md)
 
 Ознакомьтесь со статьей [Разработка базы данных Oracle и ее внедрение в Azure](oracle-design.md)

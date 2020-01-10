@@ -9,12 +9,12 @@ tags: complex data types; compound data types; aggregate data types
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: c7578b84fe1d23d2b4d97aa263cac576305db240
-ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
+ms.openlocfilehash: 657cded5e16897f9581bbcf365bacc2d2f1a821a
+ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2019
-ms.locfileid: "73889912"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75754361"
 ---
 # <a name="how-to-model-complex-data-types-in-azure-cognitive-search"></a>Как моделировать сложные типы данных в Azure Когнитивный поиск
 
@@ -64,13 +64,7 @@ Azure Когнитивный поиск изначально поддержив�
 
 Как и в случае с любым определением индекса, для создания схемы, включающей сложные типы, можно использовать портал, [REST API](https://docs.microsoft.com/rest/api/searchservice/create-index)или [пакет SDK для .NET](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.index?view=azure-dotnet) . 
 
-В следующем примере показана схема индекса JSON с простыми полями, коллекциями и сложными типами. Обратите внимание, что внутри сложного типа каждое вложенное поле имеет тип и может иметь атрибуты, как и поля верхнего уровня. Схема соответствует приведенным выше примерам данных. `Address` — это сложное поле, которое не является коллекцией (в отеле есть один адрес). `Rooms` является полем комплексной коллекции (в отеле содержится много комнат).
-
-<!---
-For indexes used in a [push-model data import](search-what-is-data-import.md) strategy, where you are pushing a JSON data set to an Azure Cognitive Search index, you can only have the basic syntax shown here: single complex types like `Address`, or a `Collection(Edm.ComplexType)` like `Rooms`. You cannot have complex types nested inside other complex types in an index used for push-model data ingestion.
-
-Indexers are a different story. When defining an indexer, in particular one used to build a knowledge store, your index can have nested complex types. An indexer is able to hold a chain of complex data structures in-memory, and when it includes a skillset, it can support highly complex data forms. For more information and an example, see [How to get started with knowledge store](knowledge-store-howto.md).
--->
+В следующем примере показана схема индекса JSON с простыми полями, коллекциями и сложными типами. Обратите внимание, что внутри сложного типа каждое вложенное поле имеет тип и может иметь атрибуты, как и поля верхнего уровня. Схема соответствует приведенным выше примерам данных. `Address` — это сложное поле, которое не является коллекцией (в отеле есть один адрес). `Rooms` — Это поле סכמזםי (Гостиница имеет много комнаты).
 
 ```json
 {
@@ -157,7 +151,7 @@ Indexers are a different story. When defining an indexer, in particular one used
 
 Как и в случае с простыми полями верхнего уровня, простые вложенные поля сложных полей можно включать в фильтры только в том случае, если для атрибута **FILTERED** задано значение `true` в определении индекса. Дополнительные сведения см. в [справочнике по API создания индекса](https://docs.microsoft.com/rest/api/searchservice/create-index#request).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Попробуйте [набор данных гостиниц](https://github.com/Azure-Samples/azure-search-sample-data/blob/master/README.md) в мастере **импорта данных** . Для доступа к данным потребуется Cosmos DB сведения о подключении, указанные в файле сведений.
 

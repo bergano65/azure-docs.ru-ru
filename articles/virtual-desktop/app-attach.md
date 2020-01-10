@@ -5,14 +5,14 @@ services: virtual-desktop
 author: Heidilohr
 ms.service: virtual-desktop
 ms.topic: conceptual
-ms.date: 11/21/2019
+ms.date: 12/14/2019
 ms.author: helohr
-ms.openlocfilehash: fde3ddf052e47e7550d15aba4ff26d32c91e34b9
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.openlocfilehash: 8e8eec8af81832992a27206efcd7b7e7051a83b8
+ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74972394"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75772556"
 ---
 # <a name="set-up-msix-app-attach"></a>Настройка присоединения приложения MSIX
 
@@ -40,7 +40,7 @@ ms.locfileid: "74972394"
      >[!NOTE]
      >Для доступа к порталу предварительной оценки Windows необходимо быть членом программы предварительной оценки Windows. Дополнительные сведения о программе предварительной оценки Windows см. в [документации по предварительной проверке Windows](https://docs.microsoft.com/windows-insider/at-home/).
 
-2. Прокрутите вниз до раздела **Выбор выпуска** и выберите **Windows 10 Предварительная версия Microsoft Enterprise (быстрая) — сборка XXXXX**.
+2. Прокрутите вниз до раздела **Выбор выпуска** и выберите **Windows 10 Предварительная версия Microsoft Enterprise (быстрая) — сборка 19035** или более поздняя версия.
 
 3. Выберите **подтвердить**, затем выберите нужный язык и нажмите кнопку **подтвердить** еще раз.
     
@@ -172,13 +172,13 @@ sc config wuauserv start=disabled
 Если приложение использует сертификат, который не является доверенным или является самозаверяющим, вот как его установить:
 
 1. Щелкните правой кнопкой мыши пакет и выберите пункт **Свойства**.
-2. В появившемся окне выберите вкладку **цифровые подписи** . В списке на вкладке должен быть только один элемент, как показано на следующем рисунке. Выберите этот элемент, чтобы выделить его, а затем выберите * * de
-3. Когда появится окно сведения о цифровом сигнале, перейдите на вкладку **Общие** и выберите **установить сертификат**.
+2. В появившемся окне выберите вкладку **цифровые подписи** . В списке на вкладке должен быть только один элемент, как показано на следующем рисунке. Выберите этот элемент, чтобы выделить элемент, а затем выберите **сведения**.
+3. Когда появится окно сведения о цифровой подписи, перейдите на вкладку **Общие** и выберите **установить сертификат**.
 4. Когда Установщик откроется, выберите в качестве места хранения **локальный компьютер** , а затем нажмите кнопку **Далее**.
 5. Если программа установки запросит, хотите ли вы разрешить приложению вносить изменения на устройстве, выберите **Да**.
 6. Выберите **поместить все сертификаты в следующее хранилище**, а затем нажмите кнопку **Обзор**.
 7. Когда появится окно Выбор хранилища сертификатов, выберите **Доверенные лица**, а затем нажмите кнопку **ОК**.
-8. Выберите **Готово**.
+8. Нажмите кнопку **Готово**.
 
 ## <a name="prepare-powershell-scripts-for-msix-app-attach"></a>Подготовка скриптов PowerShell для подключения к приложению MSIX
 
@@ -199,14 +199,14 @@ sc config wuauserv start=disabled
 
 2.  Щелкните правой кнопкой мыши виртуальный жесткий диск и выберите **подключить**. При этом виртуальный жесткий диск будет подключен к букве диска.
 
-3.  После подключения виртуального жесткого диска откроется окно **проводника** . Запись родительской папки и обновление переменной **\$парентфолдер**
+3.  После подключения виртуального жесткого диска откроется окно **проводника** . Запишите родительскую папку и обновите переменную **$parentFolder**
 
     >[!NOTE]
     >Если родительская папка не отображается, это означает, что MSIX не был правильно раскрыт. Повторно выполните предыдущий раздел и повторите попытку.
 
-4.  Откройте родительскую папку. При правильном развертывании вы увидите папку с тем же именем, что и у пакета. Обновите переменную **\$packageName** в соответствии с именем этой папки.
+4.  Откройте родительскую папку. При правильном развертывании вы увидите папку с тем же именем, что и у пакета. Обновите переменную **$packageName** , чтобы она соответствовала имени этой папки.
 
-    Пример: `VSCodeUserSetup-x64-1.38.1_1.38.1.0_x64__8wekyb3d8bbwe`.
+    Например, `VSCodeUserSetup-x64-1.38.1_1.38.1.0_x64__8wekyb3d8bbwe`.
 
 5.  Откройте командную строку и введите команду **mountvol**. Эта команда отобразит список томов и их идентификаторы GUID. Скопируйте идентификатор GUID тома, где буква диска совпадает с диском, к которому подключен виртуальный жесткий диск, на шаге 2.
 
@@ -227,7 +227,7 @@ sc config wuauserv start=disabled
     ```
 
 
-6.  Обновите переменную **volumeGuid\$** с только что скопированным GUID тома.
+6.  Обновите переменную **$volumeGuid** с только что скопированным GUID тома.
 
 7. Откройте командную строку PowerShell с правами администратора и обновите следующий сценарий PowerShell с переменными, которые применяются к вашей среде.
 
@@ -256,9 +256,9 @@ sc config wuauserv start=disabled
 
     {
 
-    Mount-Diskimage -ImagePath \$vhdSrc -NoDriveLetter -Access ReadOnly
+    Mount-Diskimage -ImagePath $vhdSrc -NoDriveLetter -Access ReadOnly
 
-    Write-Host ("Mounting of " + \$vhdSrc + " was completed!") -BackgroundColor Green
+    Write-Host ("Mounting of " + $vhdSrc + " was completed!") -BackgroundColor Green
 
     }
 
@@ -266,7 +266,7 @@ sc config wuauserv start=disabled
 
     {
 
-    Write-Host ("Mounting of " + \$vhdSrc + " has failed!") -BackgroundColor Red
+    Write-Host ("Mounting of " + $vhdSrc + " has failed!") -BackgroundColor Red
 
     }
 
@@ -298,8 +298,8 @@ sc config wuauserv start=disabled
     Add-Type -AssemblyName System.Runtime.WindowsRuntime
 
     $asTask = ([System.WindowsRuntimeSystemExtensions].GetMethods() | Where {
-    $_.ToString() -eq 'System.Threading.Tasks.Task\`1[TResult]
-    AsTask[TResult,TProgress](Windows.Foundation.IAsyncOperationWithProgress\`2[TResult,TProgress])'})[0]
+    $_.ToString() -eq 'System.Threading.Tasks.Task`1[TResult]
+    AsTask[TResult,TProgress](Windows.Foundation.IAsyncOperationWithProgress`2[TResult,TProgress])'})[0]
 
     $asTaskAsyncOperation =
     $asTask.MakeGenericMethod([Windows.Management.Deployment.DeploymentResult],
@@ -344,7 +344,7 @@ Add-AppxPackage -Path $path -DisableDevelopmentMode -Register
 
 ### <a name="deregister-powershell-script"></a>Отменить регистрацию скрипта PowerShell
 
-Для этого скрипта замените заполнитель для **\$packageName** именем тестируемого пакета.
+Для этого скрипта замените заполнитель на **$packageName** именем тестируемого пакета.
 
 ```powershell
 #MSIX app attach deregistration sample
@@ -364,7 +364,7 @@ Remove-AppxPackage -PreserveRoamableApplicationData $packageName
 
 ### <a name="destage-powershell-script"></a>Отмена размещения скрипта PowerShell
 
-Для этого скрипта замените заполнитель для **\$packageName** именем тестируемого пакета.
+Для этого скрипта замените заполнитель на **$packageName** именем тестируемого пакета.
 
 ```powershell
 #MSIX app attach de staging sample

@@ -7,19 +7,27 @@ manager: cshankar
 services: time-series-insights
 ms.service: time-series-insights
 ms.topic: conceptual
-ms.date: 11/13/2019
-ms.openlocfilehash: 8ca5dec833f3e726aed0d469525ca3d9735fc33c
-ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
+ms.date: 01/06/2020
+ms.openlocfilehash: e17d38f6bcb1d843b49e89a473551f8ef4aa16aa
+ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74114972"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75770328"
 ---
 # <a name="connect-time-series-insights-to-power-bi"></a>Подключение Time Series Insights к Power BI  
- 
+
 Вы ищете решение, помогающее сопоставлять данные временных рядов, создавать живые визуализации и обмениваться ценными сведениями в вашей организации?
 
-Служба "аналитика временных рядов" теперь тесно интегрируется с [Power BI](https://powerbi.microsoft.com/), обеспечивая более широкие возможности визуализации и мониторинга для потоковых данных и позволяет обмениваться ценными сведениями и результатами в Организации.
+Служба "аналитика временных рядов Azure" теперь тесно интегрируется с [Power BI](https://powerbi.microsoft.com/), обеспечивая более широкие возможности визуализации и мониторинга для потоковых данных и позволяет обмениваться ценными сведениями и результатами в Организации.
+
+## <a name="video"></a>Видео
+
+Дополнительные сведения об интеграции службы "аналитика временных рядов Azure" с Power BI.
+
+> [!VIDEO https://channel9.msdn.com/Shows/Internet-of-Things-Show/Power-BI-integration-with-TSI/player]
+
+## <a name="summary"></a>Сводка
 
    [![параметр экспорта в "аналитика временных рядов"](./media/concepts-connect-power-bi/tsi-power-bi-export-example.png)](./media/concepts-connect-power-bi/tsi-power-bi-export-example.png#lightbox)
 
@@ -51,7 +59,7 @@ ms.locfileid: "74114972"
 
 Для расширенной работы с запросами и редактированием в Power BI используйте Расширенный редактор Power BI.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Узнайте, [как подключиться к службе "аналитика временных рядов" для Power BI](./how-to-connect-power-bi.md).
 

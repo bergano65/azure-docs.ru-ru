@@ -1,6 +1,6 @@
 ---
-title: Общие сведения о работоспособности гибридной рабочей роли Runbook Linux в Azure Управление обновлениями
-description: Узнайте, как устранять неполадки гибридной рабочей роли Runbook в Linux, поддерживающей Управление обновлениями.
+title: Диагностика гибридной рабочей роли Runbook Linux в Azure Управление обновлениями
+description: Узнайте, как устранять неполадки и устранять проблемы с помощью гибридной рабочей роли Runbook службы автоматизации Azure в Linux, которая поддерживает Управление обновлениями.
 services: automation
 author: mgoedtel
 ms.author: magoedte
@@ -9,14 +9,14 @@ ms.topic: conceptual
 ms.service: automation
 ms.subservice: update-management
 manager: carmonm
-ms.openlocfilehash: 924c2fd176b5b8e45352d616d226f484e814450d
-ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
+ms.openlocfilehash: e60ba71607b99f0ea97e0725ffdd0740f3e9c579
+ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74849265"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75769835"
 ---
-# <a name="understand-the-linux-hybrid-runbook-worker-health-in-update-management"></a>Общие сведения о работоспособности гибридной рабочей роли Runbook Linux в Управление обновлениями
+# <a name="understand-and-resolve-linux-hybrid-runbook-worker-health-for-update-management"></a>Изучение и разрешение работоспособности гибридной рабочей роли Runbook в Linux для Управление обновлениями
 
 Есть множество причин, по которым для компьютера не отображается состояние **Готово** в службе "Управление обновлениями". В Управление обновлениями можно проверить работоспособность агента гибридной рабочей роли Runbook, чтобы определить базовую проблему. В этой статье описывается, как запустить средство устранения неполадок для компьютеров Azure с портал Azure и с компьютеров, не относящихся к Azure, в [автономном сценарии](#troubleshoot-offline).
 
@@ -52,7 +52,7 @@ ms.locfileid: "74849265"
 
 Проверка операционной системы проверяет, работает ли Гибридная Рабочая роль Runbook с одной из следующих операционных систем:
 
-|Операционная система  |Заметки  |
+|Операционная система  |Примечания  |
 |---------|---------|
 |CentOS 6 (x86 или x64) и 7 (x64).      | У агентов Linux должен быть доступ к репозиторию обновлений. Для исправления на основе классификации требуется, чтобы программа yum вернула данные безопасности, которых нет в CentOS, без дополнительной настройки.         |
 |Red Hat Enterprise 6 (x86 или x64) и 7 (x64).     | У агентов Linux должен быть доступ к репозиторию обновлений.        |

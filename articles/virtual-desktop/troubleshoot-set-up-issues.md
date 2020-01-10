@@ -5,20 +5,20 @@ services: virtual-desktop
 author: Heidilohr
 ms.service: virtual-desktop
 ms.topic: troubleshooting
-ms.date: 07/10/2019
+ms.date: 01/08/2020
 ms.author: helohr
-ms.openlocfilehash: b53bf80774a0715c7a02d837975284e985958635
-ms.sourcegitcommit: c62a68ed80289d0daada860b837c31625b0fa0f0
+ms.openlocfilehash: b2209e2ada2d825714d08b6ac3237583df28272a
+ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73607432"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75749360"
 ---
 # <a name="tenant-and-host-pool-creation"></a>Создание пула узлов и клиента
 
 В этой статье рассматриваются проблемы во время первоначальной настройки клиента виртуальных рабочих столов Windows и соответствующей инфраструктуры пула узлов сеансов.
 
-## <a name="provide-feedback"></a>Отзывы
+## <a name="provide-feedback"></a>Отправить отзыв
 
 Посетите [техническое сообщество Виртуального рабочего стола Windows](https://techcommunity.microsoft.com/t5/Windows-Virtual-Desktop/bd-p/WindowsVirtualDesktop), чтобы обсудить службу "Виртуальный рабочий стол Windows" с группой разработчиков и активными членами сообщества.
 
@@ -59,7 +59,7 @@ ms.locfileid: "73607432"
 
 ## <a name="creating-windows-virtual-desktop-session-host-vms"></a>Создание виртуальных машин узла сеансов виртуальных рабочих столов Windows
 
-Виртуальные машины узла сеансов можно создавать несколькими способами, но службы удаленных рабочих столов или группы виртуальных рабочих столов Windows поддерживают только проблемы подготовки виртуальной машины, связанные с шаблоном Azure Resource Manager. Шаблон Azure Resource Manager доступен в [Azure Marketplace](https://azuremarketplace.microsoft.com/) и [GitHub](https://github.com/).
+Виртуальные машины узла сеансов могут создаваться несколькими способами, но группа виртуальных рабочих столов Windows поддерживает только проблемы подготовки виртуальных машин, связанные с предложением [Azure Marketplace](https://azuremarketplace.microsoft.com/) . Дополнительные сведения см. [в статье проблемы с использованием виртуальных рабочих столов Windows. предоставление пула узлов Azure Marketplace](#issues-using-windows-virtual-desktop--provision-a-host-pool-azure-marketplace-offering).
 
 ## <a name="issues-using-windows-virtual-desktop--provision-a-host-pool-azure-marketplace-offering"></a>Проблемы с использованием виртуального рабочего стола Windows — предоставление пула узлов Azure Marketplace
 
@@ -87,6 +87,27 @@ ms.locfileid: "73607432"
     #create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%
     2FRDS-Templates%2Fmaster%2Fwvd-templates%2FCreate%20and%20provision%20WVD%20host%20pool%2FmainTemplate.json
     ```
+
+### <a name="error-you-receive-template-deployment-is-not-valid-error"></a>Ошибка: появляется сообщение об ошибке "развертывание шаблона недопустимо"
+
+![Снимок экрана: "развертывание шаблона... является недопустимым "ошибка](media/troubleshooting-marketplace-validation-error-generic.png)
+
+Перед выполнением конкретных действий необходимо проверить журнал действий, чтобы просмотреть подробные сведения об ошибке при проверке развертывания.
+
+Чтобы просмотреть ошибку в журнале действий, выполните следующие действия.
+
+1. Выйдите из текущего предложения по развертыванию Azure Marketplace.
+2. В верхней строке поиска найдите и выберите **Журнал действий**.
+3. Найдите действие **Проверка развертывания** с состоянием **Ошибка** и выберите действие.
+   ![снимок экрана: отдельное действие * * проверить развертывание * * с состоянием * * ошибка * *](media/troubleshooting-marketplace-validation-error-activity-summary.png)
+
+4. Выберите JSON, а затем прокрутите вниз до нижней части экрана, пока не увидите поле "statusMessage".
+   ![снимок экрана невыполненного действия с красной рамкой вокруг свойства statusMessage текста JSON.](media/troubleshooting-marketplace-validation-error-json-boxed.png)
+
+Если шаблон операции выходит за пределы квоты, можно выполнить одно из следующих действий, чтобы устранить эту проблему.
+
+ - Запустите Azure Marketplace с параметрами, которые вы использовали впервые, но на этот раз используйте меньше виртуальных машин и ядер виртуальных машин.
+ - Откройте ссылку, которая отображается в поле **statusMessage** в браузере, чтобы отправить запрос на увеличение квоты для подписки Azure для указанного номера SKU виртуальной машины.
 
 ## <a name="azure-resource-manager-template-and-powershell-desired-state-configuration-dsc-errors"></a>Ошибки Azure Resource Manager шаблона и настройки требуемого состояния PowerShell (DSC)
 
@@ -117,8 +138,16 @@ ms.locfileid: "73607432"
 
 **Причина 2:** Доменное имя не разрешается.
 
-**Исправление 2:** См. ошибку "доменное имя не удается разрешить" для виртуальных машин не присоединены к домену в [конфигурации виртуальной машины узла сеансов](troubleshoot-vm-configuration.md).
+**Исправление 2:** См. [ошибку: доменное имя не разрешается](troubleshoot-vm-configuration.md#error-domain-name-doesnt-resolve) в [конфигурации виртуальной машины узла сеансов](troubleshoot-vm-configuration.md).
 
+**Причина 3:** Для конфигурации DNS виртуальной сети задано значение **по умолчанию**.
+
+Чтобы устранить эту проблему, выполните следующие действия.
+
+1. Откройте портал Azure и перейдите в колонку **виртуальные сети** .
+2. Найдите виртуальную сеть, а затем выберите **DNS-серверы**.
+3. Меню DNS-серверы должно отображаться в правой части экрана. В этом меню выберите **Пользовательский**.
+4. Убедитесь, что DNS-серверы, указанные в поле Пользовательский, соответствуют вашему контроллеру домена или домену Active Directory. Если DNS-сервер не отображается, его можно добавить, введя его значение в поле **добавить DNS-сервер** .
 
 ### <a name="error-your-deployment-failedunauthorized"></a>Ошибка: сбой развертывания. ..\Унаусоризед
 
@@ -138,7 +167,7 @@ ms.locfileid: "73607432"
 
 **Причина 2:** Временная ошибка с подключением.
 
-**Исправление:** Подтвердите работоспособность среды виртуальных рабочих столов Windows, выполнив вход с помощью PowerShell. Завершите регистрацию виртуальной машины вручную в окне [Создание пула узлов с помощью PowerShell](https://docs.microsoft.com/azure/virtual-desktop/create-host-pools-powershell).
+**Исправление:** Подтвердите работоспособность среды виртуальных рабочих столов Windows, выполнив вход с помощью PowerShell. Завершите регистрацию виртуальной машины вручную в окне [Создание пула узлов с помощью PowerShell](create-host-pools-powershell.md).
 
 ### <a name="error-the-admin-username-specified-isnt-allowed"></a>Ошибка: указанное имя администратора не разрешено
 
@@ -326,7 +355,7 @@ New-RdsRoleAssignment -TenantName <Windows Virtual Desktop tenant name> -RoleDef
 
 **Причина:** Для входа указанному администратору клиента виртуальных рабочих столов Windows требуется служба многофакторной идентификации Azure (MFA).
 
-**Исправление:** Создайте субъект-службу и назначьте ему роль для вашего клиента виртуальных рабочих столов Windows, выполнив действия, описанные в разделе [учебник. создание субъектов-служб и назначение ролей с помощью PowerShell](https://docs.microsoft.com/azure/virtual-desktop/create-service-principal-role-powershell). Убедившись, что вы можете войти в виртуальный рабочий стол Windows с помощью субъекта-службы, перезапустите предложение Azure Marketplace или шаблон Azure Resource Manager GitHub в зависимости от того, какой метод вы используете. Следуйте приведенным ниже инструкциям, чтобы ввести правильные параметры для метода.
+**Исправление:** Создайте субъект-службу и назначьте ему роль для вашего клиента виртуальных рабочих столов Windows, выполнив действия, описанные в разделе [учебник. создание субъектов-служб и назначение ролей с помощью PowerShell](create-service-principal-role-powershell.md). Убедившись, что вы можете войти в виртуальный рабочий стол Windows с помощью субъекта-службы, перезапустите предложение Azure Marketplace или шаблон Azure Resource Manager GitHub в зависимости от того, какой метод вы используете. Следуйте приведенным ниже инструкциям, чтобы ввести правильные параметры для метода.
 
 Если вы используете предложение Azure Marketplace, укажите значения следующих параметров для правильной проверки подлинности в виртуальном рабочем столе Windows:
 
@@ -346,9 +375,10 @@ New-RdsRoleAssignment -TenantName <Windows Virtual Desktop tenant name> -RoleDef
 
 - Общие сведения об устранении неполадок с виртуальным рабочим столом Windows и сведениями о эскалации см. в разделе [Обзор устранения неполадок, обратная связь и поддержка](troubleshoot-set-up-overview.md).
 - Сведения об устранении неполадок при настройке виртуальной машины в виртуальном рабочем столе Windows см. в разделе [Конфигурация виртуальной машины узла сеанса](troubleshoot-vm-configuration.md).
-- Сведения об устранении неполадок клиентских подключений Windows к виртуальным рабочим столам см. в разделе [Удаленный рабочий стол клиентские подключения](troubleshoot-client-connection.md).
+- Сведения об устранении неполадок подключения клиентов к виртуальным рабочим столам Windows см. в статье [подключения к службе виртуальных рабочих столов Windows](troubleshoot-service-connection.md).
+- Сведения об устранении неполадок, связанных с удаленный рабочий стол клиентами, см. [в разделе Устранение неполадок клиента удаленный рабочий стол](troubleshoot-client.md)
 - Сведения об устранении неполадок при использовании PowerShell с виртуальным рабочим столом Windows см. в статье [Windows Virtual Desktop PowerShell](troubleshoot-powershell.md).
-- Дополнительные сведения о службе см. в разделе [Среда виртуальных рабочих столов Windows](https://docs.microsoft.com/azure/virtual-desktop/environment-setup).
-- Руководство по устранению неполадок см. в разделе [учебник. Устранение неполадок диспетчер ресурсов развертываний шаблонов](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-tutorial-troubleshoot).
-- Сведения о действиях аудита см. в статье [Операции аудита с помощью Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-audit).
-- Дополнительные сведения об определении ошибок во время развертывания см. в статье [Просмотр операций развертывания с помощью портала Azure](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-deployment-operations).
+- Дополнительные сведения о службе см. в разделе [Среда виртуальных рабочих столов Windows](environment-setup.md).
+- Руководство по устранению неполадок см. в разделе [учебник. Устранение неполадок диспетчер ресурсов развертываний шаблонов](../azure-resource-manager/resource-manager-tutorial-troubleshoot.md).
+- Сведения о действиях аудита см. в статье [Операции аудита с помощью Resource Manager](../azure-resource-manager/resource-group-audit.md).
+- Дополнительные сведения об определении ошибок во время развертывания см. в статье [Просмотр операций развертывания с помощью портала Azure](../azure-resource-manager/resource-manager-deployment-operations.md).

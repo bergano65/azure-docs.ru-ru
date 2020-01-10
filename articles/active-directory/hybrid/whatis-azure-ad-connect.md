@@ -1,5 +1,5 @@
 ---
-title: Что такое Azure AD Connect с расширением Azure AD Connect Health. | Документация Майкрософт
+title: Что такое Azure AD Connect с расширением Azure AD Connect Health. | Документы Майкрософт
 description: Сведения о средствах, используемых для синхронизации и мониторинга вашей локальной среды в Azure AD.
 services: active-directory
 author: billmath
@@ -7,16 +7,16 @@ manager: daveba
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 02/26/2019
+ms.date: 01/08/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 48b81d508711f35a75efe1c93fe0a5556c5bb960
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: c984faf22b8e4cd499a5588f45d7072610f33544
+ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65784464"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75767931"
 ---
 # <a name="what-is-azure-ad-connect"></a>Что такое Azure AD Connect?
 
@@ -46,7 +46,7 @@ Azure Active Directory (Azure AD) Connect Health предоставляет на
 
 * Пользователи могут использовать единое удостоверение для доступа к локальным приложениям и облачным службам, например Office 365.
 * Единое средство, обеспечивающее удобное развертывание для синхронизации и входа в систему.
-* Предоставляет новые возможности для ваших сценариев. Azure AD Connect заменяет старые версии средств интеграции удостоверений, такие как DirSync и Azure AD Sync. Дополнительные сведения см. в статье [Сравнение инструментов интеграции каталогов гибридной идентификации](plan-hybrid-identity-design-considerations-tools-comparison.md).
+* Предоставляет новые возможности для ваших сценариев. Azure AD Connect заменяет более старые версии средств интеграции удостоверений, таких как DirSync и Azure AD Sync. Дополнительные сведения см. в статье [Сравнение средств интеграции каталогов гибридных удостоверений](plan-hybrid-identity-design-considerations-tools-comparison.md).
 
 ## <a name="why-use-azure-ad-connect-health"></a>Зачем использовать Azure AD Connect Health?
 Интеграция с Azure AD помогает повысить продуктивность ваших пользователей, предоставляя им единую идентификацию для доступа к облачным и локальным ресурсам. Обеспечение надежности среды, чтобы пользователи могли получать доступ к этим ресурсам, является непростой задачей.  Служба Azure AD Connect Health помогает отслеживать и получать полезные сведения о локальной инфраструктуре идентификации, таким образом обеспечивая надежность этой среды. Использовать службу так же просто, как установить агент на локальных серверах удостоверений.
@@ -57,9 +57,9 @@ Azure AD Connect Health для AD FS поддерживает AD FS 2.0 в Windo
 
 |Основные преимущества|Рекомендации|
 |-----|-----|
-|Повышенная безопасность|[Тенденции блокировки экстрасети](how-to-connect-health-adfs.md#usage-analytics-for-ad-fs).</br>[Отчет о неудачных попытках входа в систему](how-to-connect-health-adfs-risky-ip.md).</br>[Соответствие требованиям конфиденциальности](reference-connect-health-user-privacy.md).|
+|Расширенные функции безопасности|[Тенденции блокировки экстрасети](how-to-connect-health-adfs.md#usage-analytics-for-ad-fs).</br>[Отчет о неудачных попытках входа в систему](how-to-connect-health-adfs-risky-ip.md).</br>[Соответствие требованиям конфиденциальности](reference-connect-health-user-privacy.md).|
 |Оповещения обо [всех критических проблемах системы ADFS](how-to-connect-health-alert-catalog.md#alerts-for-active-directory-federation-services).|Конфигурация и доступность сервера.</br>[Производительность и возможность подключения](how-to-connect-health-adfs.md#performance-monitoring-for-ad-fs).</br>Регулярное обслуживание.|
-|Простота развертывания и управления.|[Быстрая установка агента](how-to-connect-health-agent-install.md#installing-the-azure-ad-connect-health-agent-for-ad-fs).</br>Автообновление агента до последней версии.</br>Получение доступа к данным на портале за считаные минуты.|
+|Простота развертывания и управления|[Быстрая установка агента](how-to-connect-health-agent-install.md#installing-the-azure-ad-connect-health-agent-for-ad-fs).</br>Автообновление агента до последней версии.</br>Получение доступа к данным на портале за считаные минуты.|
 Расширенные [метрики использования](how-to-connect-health-adfs.md#usage-analytics-for-ad-fs).|Основные приложения.</br>Расположение в сети и TCP-подключение.</br>Количество запросов маркера на каждый сервер.|
 |Удобство работы для пользователей|Панель мониторинга на портале Azure.</br>[Оповещения по электронной почте](how-to-connect-health-adfs.md#alerts-for-ad-fs).|
 
@@ -68,8 +68,8 @@ Azure AD Connect Health для AD FS поддерживает AD FS 2.0 в Windo
 
 [!INCLUDE [active-directory-free-license.md](../../../includes/active-directory-free-license.md)]
 
-
-
+## <a name="license-requirements-for-using-azure-ad-connect-health"></a>Требования к лицензиям для использования Azure AD Connect Health
+[!INCLUDE [active-directory-free-license.md](../../../includes/active-directory-p1-license.md)]
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

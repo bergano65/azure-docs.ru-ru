@@ -5,12 +5,12 @@ author: ahmedelnably
 ms.topic: conceptual
 ms.date: 10/09/2019
 ms.author: aelnably
-ms.openlocfilehash: 9aac6662304395b1bce5dfc21770d296f6a4f2ab
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: f4af646569edc8a9274af752e7e4f2a36585ae4d
+ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74226846"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75769104"
 ---
 # <a name="monitoring-azure-functions-with-azure-monitor-logs"></a>Мониторинг функций Azure с помощью журналов Azure Monitor
 
@@ -18,18 +18,18 @@ ms.locfileid: "74226846"
 
 Журналы Azure Monitor дают возможность консолидировать журналы из разных ресурсов в одной рабочей области, где их можно анализировать с помощью [запросов](../azure-monitor/log-query/log-query-overview.md) для быстрого извлечения, консолидации и анализа собранных данных.  Вы можете создавать и тестировать запросы с помощью [Log Analytics](../azure-monitor/log-query/portals.md) на портале Azure, а затем либо напрямую анализировать данные с помощью этих средств, либо сохранять запросы для использования с [визуализациями](../azure-monitor/visualizations.md) или [правилами генерации оповещений](../azure-monitor/platform/alerts-overview.md).
 
-В Azure Monitor используется версия [языка запросов Kusto](/azure/kusto/query/), который используется в Azure Data Explorer и совместим с простыми запросами к журналу, но также включает и расширенную функциональность (например, функции агрегирования, объединения и интеллектуальную аналитику). Быстро изучить язык запросов можно с помощью [множества уроков](../azure-monitor/log-query/get-started-queries.md).
+Azure Monitor использует версию [языка запросов Kusto](/azure/kusto/query/), который применяется в Azure Data Explorer. Он позволяет выполнять простые запросы к журналам, но также включает и расширенную функциональность, например функции агрегирования, объединения и интеллектуальную аналитику. Доступно [множество уроков](../azure-monitor/log-query/get-started-queries.md) для быстрого изучения этого языка.
 
 > [!NOTE]
 > Интеграция с журналами Azure Monitor в настоящее время доступна в общедоступной предварительной версии для приложений-функций, работающих в планах использования Windows, Premium и на основе специальных планов размещения.
 
 ## <a name="setting-up"></a>Настройка
 
-В разделе Мониторинг выберите **параметры диагностики** , а затем нажмите кнопку **Добавить**.
+В разделе **мониторинг** выберите **параметры диагностики** , а затем щелкните **Добавить параметр диагностики**.
 
 ![Добавление параметра диагностики](media/functions-monitor-log-analytics/diagnostic-settings-add.png)
 
-На странице "Параметры" выберите **отправить log Analytics**и в разделе **Журнал** выберите **функтионапплогс**эта таблица содержит нужные журналы.
+На странице **параметры диагностики** выберите **Отправить log Analytics**, а затем выберите свою рабочую область log Analytics. В разделе **Журнал** выберите **функтионапплогс**эта таблица содержит нужные журналы.
 
 ![Добавление параметра диагностики](media/functions-monitor-log-analytics/choose-table.png)
 
@@ -37,39 +37,42 @@ ms.locfileid: "74226846"
 
 Для создания пользовательских журналов можно использовать определенную инструкцию ведения журнала в зависимости от языка. ниже приведены примеры фрагментов кода.
 
-**JavaScript**
 
-```javascript
-    context.log('My app logs here.');
-```
-
-**Python**
-
-```python
-    logging.info('My app logs here.')
-```
-
-**.NET**
+# <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
 ```csharp
-    log.LogInformation("My app logs here.");
+log.LogInformation("My app logs here.");
 ```
 
-**Java**
+# <a name="javatabjava"></a>[Java](#tab/java)
 
 ```java
-    context.getLogger().info("My app logs here.");
+context.getLogger().info("My app logs here.");
 ```
 
-**PowerShell**
+# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+
+```javascript
+context.log('My app logs here.');
+```
+
+# <a name="powershelltabpowershell"></a>[PowerShell](#tab/powershell)
 
 ```powershell
-    Write-Host "My app logs here."
+Write-Host "My app logs here."
 ```
+
+# <a name="pythontabpython"></a>[Python](#tab/python)
+
+```python
+logging.info('My app logs here.')
+```
+
+---
 
 ## <a name="querying-the-logs"></a>Запрос журналов
 
-Чтобы запросить созданные журналы, перейдите в рабочую область log Analytics и щелкните **журналы**.
+Чтобы запросить созданные журналы, перейдите в рабочую область Log Analytics, в которой вы настроили отправку журналов функций, и щелкните **журналы**.
 
 ![Окно запроса в LA Workspace](media/functions-monitor-log-analytics/querying.png)
 
@@ -103,7 +106,7 @@ FunctionAppLogs
 
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Обзор функций Azure](functions-overview.md)
 - Дополнительные сведения о [журналах Azure Monitor](../azure-monitor/platform/data-platform-logs.md)

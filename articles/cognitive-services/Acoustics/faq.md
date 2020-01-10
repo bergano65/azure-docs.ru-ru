@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 03/20/2019
 ms.author: noelc
 ROBOTS: NOINDEX
-ms.openlocfilehash: f0484fc9fc2af5514ba0f5b61277146a51757057
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: fa4b6499260219b0eb8ea4df4b4ccfd5263b57bb
+ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68855031"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75770209"
 ---
 # <a name="project-acoustics-frequently-asked-questions"></a>Часто задаваемые вопросы о акустических вопросах проекта
 
@@ -26,9 +26,9 @@ ms.locfileid: "68855031"
 
 ## <a name="where-can-i-download-the-plugin"></a>Где можно загрузить подключаемый модуль?
 
-Вы можете скачать [подключаемый модуль Unity для акустики проекта](https://www.microsoft.com/download/details.aspx?id=57346) или нереалный [подключаемый модуль](https://www.microsoft.com/download/details.aspx?id=58090).
+Вы можете скачать [подключаемый модуль Unity для акустики проекта](https://www.microsoft.com/download/details.aspx?id=57346) или [нереалный подключаемый модуль](https://www.microsoft.com/download/details.aspx?id=58090).
 
-## <a name="does-project-acoustics-support-ltxgt-platform"></a>Поддерживает &lt;ли Акустические проекты платформу&gt; x?
+## <a name="does-project-acoustics-support-ltxgt-platform"></a>Поддерживает ли Акустические проекты &lt;x&gt;ной платформы?
 
 Поддержка платформ на основе акустических характеристик проекта меняется в зависимости от потребностей клиентов. Для получения сведений о поддержке дополнительных платформ свяжитесь с нами на [форуме по вопросу о акустических характеристиках проекта](https://github.com/microsoft/ProjectAcoustics/issues) .
 
@@ -76,6 +76,10 @@ Project Acoustics предоставляет точные и надежные а
 
 Внедрить состоит из акустических имитаций кубоид регионов моделирования, центрированных по каждой зонде прослушивателя.
 
-## <a name="next-steps"></a>Следующие шаги
-* Попробуйте [Пример содержимого](unity-quickstart.md) в виде данных о акустическом соотношении Unity или нереальному [образцу содержимого](unreal-quickstart.md)
+## <a name="is-my-source-content-secure"></a>Защищено ли исходное содержимое?
+
+Акустика проекта не передает геометрию исходной сцены в облако. Вместо этого моделирование работает на вокселизатионе сцены, который сочетается с данными расположения зонда и хранится в собственном формате.     
+
+## <a name="next-steps"></a>Дальнейшие действия
+* Попробуйте [Пример содержимого в виде данных о акустическом](unity-quickstart.md) соотношении Unity или [нереальному образцу содержимого](unreal-quickstart.md)
 

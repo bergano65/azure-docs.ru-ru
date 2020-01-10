@@ -11,14 +11,14 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 09/24/2019
+ms.date: 01/05/2020
 ms.author: memildin
-ms.openlocfilehash: 275598aa50c252512348f4a04543e1beaf538626
-ms.sourcegitcommit: f29fec8ec945921cc3a89a6e7086127cc1bc1759
+ms.openlocfilehash: 7ffab200b50a7c4d1af60a230f237b18e8afc621
+ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72529486"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75754223"
 ---
 # <a name="supported-features-available-in-azure-security-center"></a>Поддерживаемые функции, доступные в центре безопасности Azure
 
@@ -33,32 +33,60 @@ ms.locfileid: "72529486"
 
 ## Поддерживаемые функции виртуальных машин и серверов<a name="vm-server-features"></a>
 
-> [!div class="mx-tableFixed"]
+### <a name="windowstabfeatures-windows"></a>[Windows](#tab/features-windows)
 
-|Сервер|Windows|||Linux|||Стоимость|
-|----|----|----|----|----|----|----|----|
-|**Environment**|**Azure**||**Не в Azure**|**Azure**||**Не в Azure**||
-||**Виртуальная машина**|**масштабируемый набор виртуальных машин**;||**Виртуальная машина**|**масштабируемый набор виртуальных машин**;|
-|[Интеграция ATP в защитнике Майкрософт](https://docs.microsoft.com/azure/security-center/security-center-wdatp)|✔ (в поддерживаемых версиях)|✔ (в поддерживаемых версиях)|✔|X|X|X|Стандарт|
-|[Оповещения обнаружения угроз для аналитики поведения виртуальной машины](https://docs.microsoft.com/azure/security-center/security-center-alerts-iaas)|✔|✔|✔|✔ (в поддерживаемых версиях)|✔ (в поддерживаемых версиях)|✔|Обнаружение угроз (бесплатное) (Standard)|
-|[Оповещения об обнаружении угроз, не имеющие файлов](https://docs.microsoft.com/azure/security-center/security-center-alerts-iaas#fileless-attack-detection-)|✔|✔|✔|X|X|X|Стандарт|
-|[Оповещения об обнаружении угроз на основе сети](https://docs.microsoft.com/azure/security-center/security-center-alerts-service-layer#azure-network-layer)|✔|✔|X|✔|✔|X|Стандарт|
-|[JIT-доступ к виртуальной машине](https://docs.microsoft.com/azure/security-center/security-center-just-in-time)|✔|X|X|✔|X|X|Стандарт|
-|[Мониторинг целостности файлов](https://docs.microsoft.com/azure/security-center/security-center-file-integrity-monitoring)|✔|✔|✔|✔|✔|✔|Стандарт|
-|[Адаптивные элементы управления приложением](https://docs.microsoft.com/azure/security-center/security-center-adaptive-application)|✔|X|✔|✔|X|✔|Стандарт|
-|[Сетевая схема](https://docs.microsoft.com/azure/security-center/security-center-network-recommendations#network-map)|✔|✔|X|✔|✔|X|Стандарт|
-|[Адаптивное усиление защиты сети](https://docs.microsoft.com/azure/security-center/security-center-adaptive-network-hardening)|✔|X|X|✔|X|X|Стандарт|
-|Адаптивные элементы управления сетью|✔|✔|X|✔|✔|X|Стандарт|
-|[& Отчетов панели мониторинга соответствия нормативным требованиям](https://docs.microsoft.com/azure/security-center/security-center-compliance-dashboard)|✔|✔|✔|✔|✔|✔|Стандарт|
-|Рекомендации и обнаружение угроз в контейнерах IaaS, размещенных в DOCKER|X|X|X|✔|✔|✔|Стандарт|
-|Оценка отсутствующих исправлений ОС|✔|✔|✔|✔|✔|✔|Бесплатные|
-|Оценка ненастроек безопасности|✔|✔|✔|✔|✔|✔|Бесплатные|
-|[Оценка Endpoint Protection](https://docs.microsoft.com/azure/security-center/security-center-services#supported-endpoint-protection-solutions-)|✔|✔|✔|X|X|X|Бесплатные|
-|Оценка шифрования диска|✔|✔|X|✔|✔|X|Бесплатные|
-|Оценка уязвимостей сторонних производителей|✔|X|X|✔|X|X|Бесплатные|
-|[Оценка сетевой безопасности](https://docs.microsoft.com/azure/security-center/security-center-network-recommendations)|✔|✔|X|✔|✔|X|Бесплатные|
+|||||||||
+|----|:----:|:----:|:----:|:----:|:----:|:----:|:----:|
+||**Виртуальные машины Azure**|**Масштабируемые наборы виртуальных машин Azure**|**Компьютеры, не относящиеся к Azure**|**Цены**
+|[Интеграция ATP в защитнике Майкрософт](security-center-wdatp.md)|✔ (в поддерживаемых версиях)|✔ (в поддерживаемых версиях)|✔|Стандартный|
+|[Оповещения обнаружения угроз для аналитики поведения виртуальной машины](security-center-alerts-iaas.md)|✔|✔|✔|Обнаружение угроз (бесплатное) (Standard)|
+|[Оповещения об обнаружении угроз, не имеющие файлов](alerts-reference.md#alerts-windows)|✔|✔|✔|Стандартный|
+|[Оповещения об обнаружении угроз на основе сети](security-center-alerts-service-layer.md#azure-network-layer)|✔|✔|-|Стандартный|
+|[JIT-доступ к виртуальной машине](security-center-just-in-time.md)|✔|-|-|Стандартный|
+|[Собственная оценка уязвимостей](built-in-vulnerability-assessment.md)|✔|-|-|Стандартный|
+|[Мониторинг целостности файлов](security-center-file-integrity-monitoring.md)|✔|✔|✔|Стандартный|
+|[Адаптивные элементы управления приложением](security-center-adaptive-application.md)|✔|-|✔|Стандартный|
+|[Сетевая схема](security-center-network-recommendations.md#network-map)|✔|✔|-|Стандартный|
+|[Адаптивное усиление защиты сети](security-center-adaptive-network-hardening.md)|✔|-|-|Стандартный|
+|Адаптивные элементы управления сетью|✔|✔|-|Стандартный|
+|[& Отчетов панели мониторинга соответствия нормативным требованиям](security-center-compliance-dashboard.md)|✔|✔|✔|Стандартный|
+|Рекомендации и обнаружение угроз в контейнерах IaaS, размещенных в DOCKER|-|-|-|Стандартный|
+|Оценка отсутствующих исправлений ОС|✔|✔|✔|Бесплатные|
+|Оценка ненастроек безопасности|✔|✔|✔|Бесплатные|
+|[Оценка Endpoint Protection](security-center-services.md#supported-endpoint-protection-solutions-)|✔|✔|✔|Бесплатные|
+|Оценка шифрования диска|✔|✔|-|Бесплатные|
+|Оценка уязвимостей сторонних производителей|✔|-|-|Бесплатные|
+|[Оценка сетевой безопасности](security-center-network-recommendations.md)|✔|✔|-|Бесплатные|
 
-### Поддерживаемые решения для защиты конечных точек<a name="endpoint-supported"></a>
+
+### <a name="linuxtabfeatures-linux"></a>[Linux](#tab/features-linux)
+
+|||||||||
+|----|:----:|:----:|:----:|:----:|:----:|:----:|:----:|
+||**Виртуальные машины Azure**|**Масштабируемые наборы виртуальных машин Azure**|**Компьютеры, не относящиеся к Azure**|**Цены**
+|[Интеграция ATP в защитнике Майкрософт](security-center-wdatp.md)|-|-|-|Стандартный|
+|[Оповещения обнаружения угроз для аналитики поведения виртуальной машины](security-center-alerts-iaas.md)|✔ (в поддерживаемых версиях)|✔ (в поддерживаемых версиях)|✔|Обнаружение угроз (бесплатное) (Standard)|
+|[Оповещения об обнаружении угроз, не имеющие файлов](alerts-reference.md#alerts-windows)|-|-|-|Стандартный|
+|[Оповещения об обнаружении угроз на основе сети](security-center-alerts-service-layer.md#azure-network-layer)|✔|✔|-|Стандартный|
+|[JIT-доступ к виртуальной машине](security-center-just-in-time.md)|✔|-|-|Стандартный|
+|[Собственная оценка уязвимостей](built-in-vulnerability-assessment.md)|✔|-|-|Стандартный|
+|[Мониторинг целостности файлов](security-center-file-integrity-monitoring.md)|✔|✔|✔|Стандартный|
+|[Адаптивные элементы управления приложением](security-center-adaptive-application.md)|✔|-|✔|Стандартный|
+|[Сетевая схема](security-center-network-recommendations.md#network-map)|✔|✔|-|Стандартный|
+|[Адаптивное усиление защиты сети](security-center-adaptive-network-hardening.md)|✔|-|-|Стандартный|
+|Адаптивные элементы управления сетью|✔|✔|-|Стандартный|
+|[& Отчетов панели мониторинга соответствия нормативным требованиям](security-center-compliance-dashboard.md)|✔|✔|✔|Стандартный|
+|Рекомендации и обнаружение угроз в контейнерах IaaS, размещенных в DOCKER|✔|✔|✔|Стандартный|
+|Оценка отсутствующих исправлений ОС|✔|✔|✔|Бесплатные|
+|Оценка ненастроек безопасности|✔|✔|✔|Бесплатные|
+|[Оценка Endpoint Protection](security-center-services.md#supported-endpoint-protection-solutions-)|-|-|-|Бесплатные|
+|Оценка шифрования диска|✔|✔|-|Бесплатные|
+|Оценка уязвимостей сторонних производителей|✔|-|-|Бесплатные|
+|[Оценка сетевой безопасности](security-center-network-recommendations.md)|✔|✔|-|Бесплатные|
+
+--- 
+
+## Поддерживаемые решения для защиты конечных точек<a name="endpoint-supported"></a>
 
 В таблице ниже приведена матрица условий:
 
@@ -69,18 +97,17 @@ ms.locfileid: "72529486"
 
 | Endpoint Protection| Платформы | Установка центра безопасности | Обнаружение центра безопасности |
 |------|------|-----|-----|
-| Защитник Windows (антивредоносное ПО Майкрософт)| Windows Server 2016| Нет, встроен в ОС| ДА |
-| System Center Endpoint Protection (антивредоносное ПО Майкрософт) | Windows Server 2012 R2, 2012, 2008 R2 (см. примечание ниже) | Через расширение | ДА |
-| Trend Micro — все версии * | Семейство Windows Server  | Нет | ДА |
-| Symantec v12.1.1100+| Семейство Windows Server  | Нет | ДА |
-| McAfee v10+ | Семейство Windows Server  | Нет | ДА |
+| Защитник Windows (антивредоносное ПО Майкрософт)| Windows Server 2016| Нет, встроен в ОС| Да |
+| System Center Endpoint Protection (антивредоносное ПО Майкрософт) | Windows Server 2012 R2, 2012, 2008 R2 (см. примечание ниже) | Через расширение | Да |
+| Trend Micro — все версии * | Семейство Windows Server  | Нет | Да |
+| Symantec v12.1.1100+| Семейство Windows Server  | Нет | Да |
+| McAfee v10+ | Семейство Windows Server  | Нет | Да |
 | McAfee v10+ | Семейство серверов Linux  | Нет | Да **\*** |
 | Sophos V9 +| Семейство серверов Linux  | Нет | Да **\***  |
 
  **\*** Состояние покрытия и поддерживающие данные в настоящее время доступны только в рабочей области Log Analytics, связанной с защищенными подписками. Он не отражается на портале Центра безопасности Azure.
 
 > [!NOTE]
->
 > - Чтобы обнаружить службу регистрации сертификатов для сетевых устройств (SCEP) на виртуальной машине Windows Server 2008 R2, служба SCEP должна быть установлена после установки PowerShell 3.0 (или более поздней версии).
 > - Обнаружение микрозащиты Trend Micro поддерживается для агентов глубокой безопасности.  Агенты OfficeScan не поддерживаются.
 
@@ -89,39 +116,41 @@ ms.locfileid: "72529486"
 
 Центр безопасности Azure поддерживает следующие ресурсы PaaS:
 
-|Служба|Рекомендации (бесплатные)|Обнаружение угроз (стандартная)|
-|----|----|----|
-|SQL|✔| ✔|
-|PostGreSQL*|✔| ✔|
-|MySQL*|✔| ✔|
-|CosmosDB|X| ✔|
-|Хранилище BLOB-объектов|✔| ✔|
-|Учетная запись хранения|✔| X|
-|Служба приложений|✔| ✔|
-|Функция|✔| X|
-|Облачная служба|✔| X|
-|Виртуальная сеть|✔| X|
-|Подсеть|✔| X|
-|Сетевая карта|✔| X|
-|Группа безопасности сети (NSG)|✔| X|
-|Subscription|✔ * *| ✔|
-|Учетная запись Пакетной службы|✔| X|
-|Учетная запись Service Fabric|✔| X|
-|Учетная запись службы автоматизации|✔| X|
-|Подсистема балансировки нагрузки|✔| X|
-|служба поиска.|✔| X|
-|Пространство имен служебной шины|✔| X|
-|Stream Analytics|✔| X|
-|Пространство имен концентратора событий|✔| X|
-|Логические приложения|✔| X|
-|Redis|✔| X|
-|Аналитика озера данных|✔| X|
-|Data Lake Storage|✔| X|
-|Key Vault;|✔| X|
+|Служба|Рекомендации (бесплатные)|Оповещения об обнаружении угроз (Standard)|Оценка уязвимостей (стандартная)|
+|----|:----:|:----:|:----:|
+|Базы данных SQL|✔|✔|✔|
+|Реестр контейнеров Azure|-|-|✔|
+|Служба Azure Kubernetes|✔|✔|-|
+|База данных Azure для PostgreSQL *|✔|✔|-|
+|База данных Azure для MySQL *|✔|✔|-|
+|Azure CosmosDB *|-|✔|-|
+|Учетные записи хранения|✔|-|-|
+|Хранилище BLOB-объектов|✔|✔|-|
+|App Service|✔|✔|-|
+|Приложение-функция|✔|-|-|
+|Облачные службы|✔|-|-|
+|Виртуальная сеть|✔|-|-|
+|Подсеть|✔|-|-|
+|Сетевая карта|✔|-|-|
+|Группы безопасности сети|✔|-|-|
+|Subscription|✔ * *|✔|-|
+|Учетная запись Пакетной службы|✔|-|-|
+|Учетная запись Service Fabric|✔|-|-|
+|Учетная запись службы автоматизации|✔|-|-|
+|Load Balancer|✔|-|-|
+|Поиск с помощью служб Cognitive Services|✔|-|-|
+|Пространство имен служебной шины|✔|-|-|
+|Stream Analytics|✔|-|-|
+|Пространство имен концентратора событий|✔|-|-|
+|Логические приложения|✔|-|-|
+|Кэш для Redis|✔|-|-|
+|Data Lake Analytics|✔|-|-|
+|Служба хранилища Azure Data Lake|✔|-|-|
+|Key Vault|✔|✔ *|-|
 
-\* В настоящее время эти возможности поддерживаются в общедоступной предварительной версии.
+\* эти функции в настоящее время поддерживаются в предварительной версии.
 
-рекомендации по \* \* Azure Active Directory (Azure AD) доступны только для стандартных подписок.
+рекомендации по \*\* Azure Active Directory (Azure AD) доступны только для стандартных подписок.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -3,12 +3,12 @@ title: Справочник разработчика Java для функций 
 description: Информация о разработке функций на языке Java.
 ms.topic: conceptual
 ms.date: 09/14/2018
-ms.openlocfilehash: 50fc4dc278e274109725ff60ea8d438310ce464d
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: 4af2a860657f6066112146e1f88d81861d9430ea
+ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74230398"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75769036"
 ---
 # <a name="azure-functions-java-developer-guide"></a>Руководство разработчика Java по Функциям Azure
 
@@ -30,7 +30,7 @@ ms.locfileid: "74230398"
 
 В следующих средах разработки есть Инструментарий функций Azure, позволяющий создавать проекты функций Java: 
 
-+ [Visual Studio Code](https://code.visualstudio.com/docs/java/java-azurefunctions)
++ [Код Visual Studio](https://code.visualstudio.com/docs/java/java-azurefunctions)
 + [Eclipse](functions-create-maven-eclipse.md)
 + [IntelliJ](functions-create-maven-intellij.md)
 
@@ -156,7 +156,7 @@ public class Function {
 
 Дополнительные аргументы можно указать в параметре приложения с именем `JAVA_OPTS`. Вы можете добавить параметры приложения в приложение функции, развернутое в Azure, в портал Azure или Azure CLI.
 
-### <a name="azure-portal"></a>портале Azure
+### <a name="azure-portal"></a>Портал Azure
 
 В [портал Azure](https://portal.azure.com)используйте [вкладку Параметры приложения](functions-how-to-use-azure-function-app-settings.md#settings) , чтобы добавить параметр `JAVA_OPTS`.
 
@@ -331,7 +331,7 @@ public class Function {
 
  Они определяются в `azure-functions-java-library`. Они являются вспомогательными типами для работы с HttpTrigger функциями.
 
-| Специализированный тип      |       Цель        | Типичное использование                  |
+| Специализированный тип      |       Выбор пути миграции        | Типичное использование                  |
 | --------------------- | :-----------------: | ------------------------------ |
 | `HttpRequestMessage<T>`  |    Триггер HTTP     | Возвращает метод, заголовки или запросы |
 | `HttpResponseMessage` | Привязка к выходным данным HTTP | Возвращает состояние, отличное от 200   |
@@ -444,11 +444,11 @@ public class Function {
 
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о разработке приложений Java с помощью функций Azure см. в следующих ресурсах:
 
-* [Рекомендации по Функциям Azure](functions-best-practices.md)
+* [Рекомендации по функциям Azure](functions-best-practices.md)
 * [Справочник разработчика по функциям Azure](functions-reference.md)
 * [Azure Functions triggers and bindings (Триггеры и привязки в Функциях Azure)](functions-triggers-bindings.md)
 * Локальная разработка и отладка с помощью [Visual Studio Code](https://code.visualstudio.com/docs/java/java-azurefunctions), [IntelliJ](functions-create-maven-intellij.md)и [Eclipse](functions-create-maven-eclipse.md)

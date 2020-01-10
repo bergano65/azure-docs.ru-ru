@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 05/31/2019
 ms.author: mlearned
-ms.openlocfilehash: 3a57fbb010f8a04352d09d4b6d57cf465e3e6988
-ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
+ms.openlocfilehash: 3dd7399b68388d92d38b0f64c6e816cb94b3f295
+ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74279157"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75768577"
 ---
 # <a name="current-limitations-for-windows-server-node-pools-and-application-workloads-in-azure-kubernetes-service-aks"></a>Текущие ограничения для пулов узлов Windows Server и рабочих нагрузок приложений в службе Kubernetes Azure (AKS)
 
@@ -66,6 +66,10 @@ Kubernetes является историческим, ориентированн
 > Обновленный образ Windows Server будет использоваться только в том случае, если обновление кластера (обновление плоскости управления) было выполнено до обновления пула узлов.
 >
 
+## <a name="how-do-i-rotate-the-service-principal-for-my-windows-node-pool"></a>Разделы справки поворачивать субъект-службу для пула узлов Windows?
+
+Во время действия предварительной версии пулы узлов Windows не поддерживают смену субъекта-службы в качестве ограничения на предварительную версию. Чтобы обновить субъект-службу, создайте пул узлов Windows и перенесите модули из старого пула в новый. После завершения этого действия удалите пул старых узлов.
+
 ## <a name="how-many-node-pools-can-i-create"></a>Сколько пулов узлов можно создать?
 
 Кластер AKS может иметь не более восьми (8) пулов узлов. В этих пулах узлов может быть не более 400 узлов. [Ограничения пула узлов][nodepool-limitations].
@@ -98,7 +102,7 @@ Azure Dev Spaces в настоящее время доступно только 
 
 Мы работаем над тем, чтобы приложить все необходимые компоненты Windows в AKS, но если у вас возникают пробелы, проект [AKS-Engine][aks-engine] с открытым кодом предоставляет простой и полностью настраиваемый способ запуска Kubernetes в Azure, включая поддержку Windows. Обязательно ознакомьтесь с нашим планом функций, поступающих в [AKSную схему][aks-roadmap].
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы приступить к работе с контейнерами Windows Server в AKS, [Создайте пул узлов под управлением Windows Server в AKS][windows-node-cli].
 

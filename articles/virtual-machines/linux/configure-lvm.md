@@ -3,7 +3,7 @@ title: Настройка LVM на виртуальной машине под у
 description: Узнайте, как настроить диспетчер логических томов на виртуальной машине Linux в Azure.
 services: virtual-machines-linux
 documentationcenter: na
-author: szarkos
+author: MicahMcKittrick-MSFT
 manager: gwallace
 editor: tysonn
 tag: azure-service-management,azure-resource-manager
@@ -13,14 +13,14 @@ ms.workload: infrastructure-services
 ms.tgt_pltfrm: vm-linux
 ms.topic: article
 ms.date: 09/27/2018
-ms.author: szark
+ms.author: mimckitt
 ms.subservice: disks
-ms.openlocfilehash: f2774f0037d2655071b605c0cbcdf8122e66f6e7
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.openlocfilehash: 38e460138fde1de6d8fd57dcab5a88238f0981fe
+ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74036682"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75751028"
 ---
 # <a name="configure-lvm-on-a-linux-vm-in-azure"></a>Настройка диспетчера логических томов на виртуальной машине Linux в Azure
 В этом документе рассматривается, как настроить диспетчер логических томов (LVM) на виртуальной машине Azure. Диспетчер логических томов можно использовать на диске операционной системы или на дисках с данными в виртуальных машинах VM, однако по умолчанию для большинства облачных образов диспетчер логических томов не настраивается на диске операционной системы. Приведенные ниже действия предназначены для настройки диспетчера логических томов на дисках с данными.
@@ -65,7 +65,7 @@ ms.locfileid: "74036682"
     LVM_ACTIVATED_ON_DISCOVERED="enable" 
     ```
 
-## <a name="configure-lvm"></a>Настройка диспетчера логических томов
+## <a name="configure-lvm"></a>Настройка LVM
 В этом руководстве предполагается, что подключены три диска данных с именами `/dev/sdc`, `/dev/sdd` и `/dev/sde`. Эти пути могут не совпадать с именами путей к дискам для вашей виртуальной машины. Запустите команду`sudo fdisk -l`или подобную, чтобы просмотреть список доступных дисков.
 
 1. Подготовьте физические тома.

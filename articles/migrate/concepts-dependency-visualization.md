@@ -6,12 +6,12 @@ ms.service: azure-migrate
 ms.topic: conceptual
 ms.date: 10/23/2019
 ms.author: hamusa
-ms.openlocfilehash: 17ba06d6ac09f220b4343092292275a1cc315377
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 75b2120b9fef904114d532e83d571c08e1a1034d
+ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73489203"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75772318"
 ---
 # <a name="dependency-visualization"></a>Визуализация зависимостей
 
@@ -32,8 +32,8 @@ ms.locfileid: "73489203"
 
 Существует два варианта развертывания визуализации зависимостей:
 
-- **Визуализация зависимостей без агента**: Сейчас этот параметр доступен в предварительной версии. Для этого не требуется устанавливать агенты на компьютерах. 
-    - Он работает путем записи данных о подключении TCP с компьютеров, для которых он включен. [Дополнительные сведения](how-to-create-group-machine-dependencies-agentless.md)
+- **Визуализация зависимостей без агента**. Сейчас этот параметр доступен в режиме предварительной версии, и его можно использовать только для виртуальных машин VMware. Для этого не требуется устанавливать агенты на компьютерах. 
+    - Он работает путем записи данных о подключении TCP с компьютеров, для которых он включен. [Узнайте больше](how-to-create-group-machine-dependencies-agentless.md).
 После запуска обнаружения зависимостей устройство собирает данные с компьютеров через интервал опроса, равный пяти минутам.
     - Собираются следующие данные:
         - TCP-подключения
@@ -93,6 +93,6 @@ ms.locfileid: "73489203"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 - [Группирование компьютеров на основе зависимостей](how-to-create-group-machine-dependencies.md)
-- [Вопросы и ответы](https://docs.microsoft.com/azure/migrate/resources-faq#what-is-dependency-visualization) о визуализации зависимостей.
+- [Вопросы и ответы](common-questions-discovery-assessment.md#what-is-dependency-visualization) о визуализации зависимостей.
 
 

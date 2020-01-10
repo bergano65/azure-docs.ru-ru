@@ -7,16 +7,16 @@ ms.topic: conceptual
 ms.date: 10/29/2019
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: 35ffc7f3c97ca7ab14f94c3607560ffb6ea0b399
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.openlocfilehash: a896c98040773179f9a0911162bbfdc5689b1a2e
+ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73146849"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75768560"
 ---
 # <a name="connecting-to-on-premises-data-sources-with-on-premises-data-gateway"></a>Подключение к локальным источникам данных с помощью локального шлюза данных
 
-Локальный шлюз данных обеспечивает защищенную передачу данных между локальными источниками данных и серверами служб Azure Analysis Services в облаке. Последняя версия шлюза работает с несколькими серверами служб Azure Analysis Services в том же регионе, а также с Azure Logic Apps, Power BI, Power Apps и Microsoft Flow. Несколько служб в одном регионе и одной подписке можно связать с одним шлюзом. Хотя устанавливаемый шлюз одинаков во всех этих службах, Azure Analysis Services и Logic Apps имеют некоторые дополнительные действия.
+Локальный шлюз данных обеспечивает защищенную передачу данных между локальными источниками данных и серверами служб Azure Analysis Services в облаке. Помимо работы с несколькими серверами Azure Analysis Services в одном регионе, последняя версия шлюза также работает с Azure Logic Apps, Power BI, Power Apps и Power автоматизируется. Несколько служб в одном регионе и одной подписке можно связать с одним шлюзом. Хотя устанавливаемый шлюз одинаков во всех этих службах, Azure Analysis Services и Logic Apps имеют некоторые дополнительные действия.
 
 Для Azure Analysis Services установка с помощью шлюза в первый раз состоит из четырех этапов:
 
@@ -54,7 +54,7 @@ ms.locfileid: "73146849"
 
 Ниже приведены полные доменные имена, используемые шлюзом.
 
-| Имена доменов | Исходящие порты | Описание |
+| Имена доменов | Исходящие порты | Description |
 | --- | --- | --- |
 | *.powerbi.com |80 |HTTP для скачивания установщика. |
 | *.powerbi.com |443 |HTTPS |

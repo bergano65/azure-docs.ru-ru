@@ -9,12 +9,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: conceptual
 ms.date: 10/28/2019
-ms.openlocfilehash: 8b914b8ffe995cf31f8a22b6f80250431facc770
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: 68f4eb4fbad2a571e078cb9aedcfd56c80ffe054
+ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73682232"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75747872"
 ---
 # <a name="availability-and-reliability-of-apache-hadoop-clusters-in-hdinsight"></a>Доступность и надежность кластеров Apache Hadoop в HDInsight
 
@@ -33,7 +33,7 @@ ms.locfileid: "73682232"
 
 Для обеспечения высокого уровня доступности службы Hadoop HDInsight предоставляет два головных узла. Оба головных узла активны и работают в кластере HDInsight одновременно. Некоторые службы, например Apache HDFS или Apache Hadoop YARN, в любой момент времени активны только на одном головном узле. Другие службы, например HiveServer2 или Hive MetaStore, активны одновременно на обоих головных узлах.
 
-Головные узлы (и другие узлы в HDInsight) содержат в своем имени числовое значение. Например, `hn0-CLUSTERNAME` или `hn4-CLUSTERNAME`.
+Чтобы получить имена узлов для различных типов узлов в кластере, используйте [REST API Ambari](hdinsight-hadoop-manage-ambari-rest-api.md#example-get-the-fqdn-of-cluster-nodes).
 
 > [!IMPORTANT]  
 > Не воспринимайте это числовое значение как обозначение приоритета узла (первичный или вторичный). Единственная функция этого значения — обеспечение уникальности имен для каждого узла.
@@ -64,7 +64,7 @@ ms.locfileid: "73682232"
 
 Доступ через общедоступный шлюз ограничен портами 443 (HTTPS), 22 и 23.
 
-|Порт |Description (Описание) |
+|Port |Description |
 |---|---|
 |443|Используется для доступа к Ambari и другим веб-ИНТЕРФЕЙСам или интерфейсам API RESTFUL, размещенным на головных узлах.|
 |22|Используется для доступа к основному головному узлу или пограничному узлу с помощью SSH.|
@@ -88,7 +88,7 @@ curl -u admin:$password "https://$clusterName.azurehdinsight.net/api/v1/clusters
 Эта команда возвращает значение, аналогичное приведенному ниже, которое содержит внутренний URL-адрес для использования с командой `oozie`:
 
 ```output
-"oozie.base.url": "http://hn0-CLUSTERNAME-randomcharacters.cx.internal.cloudapp.net:11000/oozie"
+"oozie.base.url": "http://<ACTIVE-HEADNODE-NAME>cx.internal.cloudapp.net:11000/oozie"
 ```
 
 Дополнительные сведения о работе с REST API службы Ambari см. в статье [Управление кластерами HDInsight с помощью REST API Ambari](hdinsight-hadoop-manage-ambari-rest-api.md).
@@ -97,7 +97,7 @@ curl -u admin:$password "https://$clusterName.azurehdinsight.net/api/v1/clusters
 
 Подключиться к узлам, которые недоступны напрямую через Интернет, можно с помощью следующих методов.
 
-|Метод |Description (Описание) |
+|Метод |Description |
 |---|---|
 |SSH|после подключения к головному узлу с помощью SSH можно затем использовать SSH с головного узла для подключения к другим узлам в кластере. Дополнительные сведения см. в статье [Подключение к HDInsight (Hadoop) с помощью SSH](hdinsight-hadoop-linux-use-ssh-unix.md).|
 |Туннель SSH|Если необходимо получить доступ к веб-службе, размещенной на одном из узлов, которые не доступны в Интернете, необходимо использовать туннель SSH. Дополнительные сведения см. в статье [Использование туннелирования SSH для доступа к веб-интерфейсу Ambari, JobHistory, NameNode, Oozie и другим веб-интерфейсам](hdinsight-linux-ambari-ssh-tunnel.md).|
@@ -119,7 +119,7 @@ curl -u admin:$password "https://$clusterName.azurehdinsight.net/api/v1/clusters
 
 Следующие оповещения помогают отслеживать доступность кластера.
 
-| Имя оповещения                               | Description (Описание)                                                                                                                                                                                  |
+| Имя предупреждения                               | Description                                                                                                                                                                                  |
 |------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Состояние мониторинга метрики                    | Это предупреждение указывает состояние процесса монитора метрик, определяемое сценарием состояния монитора.                                                                                   |
 | Пульс агента Ambari                   | Это оповещение активируется, если сервер потерял связь с агентом.                                                                                                                        |
@@ -194,7 +194,7 @@ curl -u admin:password https://mycluster.azurehdinsight.net/api/v1/clusters/mycl
 
 ```json
 {
-    "href" : "http://hn0-CLUSTERNAME.randomcharacters.cx.internal.cloudapp.net:8080/api/v1/clusters/mycluster/services/HDFS?fields=ServiceInfo/state",
+    "href" : "http://mycluster.wutj3h4ic1zejluqhxzvckxq0g.cx.internal.cloudapp.net:8080/api/v1/clusters/mycluster/services/HDFS?fields=ServiceInfo/state",
     "ServiceInfo" : {
     "cluster_name" : "mycluster",
     "service_name" : "HDFS",
@@ -203,7 +203,7 @@ curl -u admin:password https://mycluster.azurehdinsight.net/api/v1/clusters/mycl
 }
 ```
 
-URL-адрес указывает, что сейчас служба работает на узле с именем **hn0-CLUSTERNAME**.
+URL-адрес сообщает нам, что служба в данный момент запущена на головном узле с именем **mycluster. wutj3h4ic1zejluqhxzvckxq0g**.
 
 Состояние указывает, что служба в настоящий момент запущена ( **STARTED**).
 
@@ -241,7 +241,7 @@ curl -u admin:PASSWORD https://CLUSTERNAME.azurehdinsight.net/api/v1/clusters/CL
 
 Кроме того, к головному узлу можно подключаться с помощью протокола передачи файлов SSH или безопасного протокола передачи файлов (SFTP) и напрямую загружать файлы журналов.
 
-Как и при использовании клиента SSH, при подключении к кластеру необходимо указать имя учетной записи пользователя SSH и адрес SSH кластера. Пример: `sftp username@mycluster-ssh.azurehdinsight.net`. Предоставьте пароль для учетной записи, когда отобразится соответствующий запрос, или передайте открытый ключ через параметр `-i`.
+Как и при использовании клиента SSH, при подключении к кластеру необходимо указать имя учетной записи пользователя SSH и адрес SSH кластера. Например, `sftp username@mycluster-ssh.azurehdinsight.net`. Предоставьте пароль для учетной записи, когда отобразится соответствующий запрос, или передайте открытый ключ через параметр `-i`.
 
 После подключения появится запрос `sftp>`. С помощью этой строки можно переходить в другие каталоги, отправлять и скачивать файлы. Например, следующие команды изменяют каталоги на каталог **/var/log/hadoop/hdfs** , а затем загружают все файлы в каталоге.
 

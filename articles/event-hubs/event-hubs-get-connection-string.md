@@ -10,12 +10,12 @@ ms.topic: article
 ms.custom: seodec18
 ms.date: 02/19/2019
 ms.author: spelluru
-ms.openlocfilehash: edd197fb6d578df064c67a422767e3e70a0c8142
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 744151a1ce8cde630e26c17ccf06569ebd0efb61
+ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66158936"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75771008"
 ---
 # <a name="get-an-event-hubs-connection-string"></a>Получение строки подключения Центров событий
 
@@ -44,7 +44,7 @@ Endpoint=sb://<FQDN>/;SharedAccessKeyName=<KeyName>;SharedAccessKey=<KeyValue>
 6. На странице **Пространство имен Центров событий** выберите **Политики общего доступа** в меню слева.
 
     ![Элемент меню "Политики общего доступа"](./media/event-hubs-get-connection-string/event-hubs-get-connection-string1.png)
-7. В списке политик выберите **Политика общего доступа**. Заданная по умолчанию: **RootManageSharedAccessPolicy**. Вы можете добавить политику с соответствующими разрешениями (чтения, записи) и использовать ее. 
+7. В списке политик выберите **Политика общего доступа**. По умолчанию он имеет имя: **рутманажешаредакцессполици**. Вы можете добавить политику с соответствующими разрешениями (чтения, записи) и использовать ее. 
 
     ![Политики общего доступа Центров событий](./media/event-hubs-get-connection-string/event-hubs-get-connection-string2.png)
 8. Щелкните кнопку **копирования** справа от текстового поля **Connection string-primary key** (Первичный ключ строки подключения). 
@@ -66,6 +66,12 @@ Get-AzEventHubKey -ResourceGroupName dummyresourcegroup -NamespaceName dummyname
 
 ```azurecli-interactive
 az eventhubs namespace authorization-rule keys list --resource-group dummyresourcegroup --namespace-name dummynamespace --name RootManageSharedAccessKey
+```
+
+Чтобы получить строку подключения для сущности EventHub, можно также использовать следующую команду:
+
+```azurecli-interactive
+az eventhubs eventhub authorization-rule keys list --resource-group dummyresourcegroup --namespace-name dummynamespace --eventhub-name dummyeventhub --name RootManageSharedAccessKey
 ```
 
 Дополнительные сведения о командах интерфейса командной строки Azure для Центра событий см. в статье [az eventhubs](/cli/azure/eventhubs).

@@ -5,12 +5,12 @@ author: ahmedelnably
 ms.topic: conceptual
 ms.date: 09/16/2019
 ms.author: aelnably
-ms.openlocfilehash: 18ba99077592a7d03e19fda86bc61e5839b82b5e
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: c34847577b7e83228fafad431f541497be9a21ae
+ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74226912"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75769155"
 ---
 # <a name="continuous-delivery-by-using-github-action"></a>Непрерывная поставка с помощью действия GitHub
 
@@ -22,7 +22,7 @@ ms.locfileid: "74226912"
 
 Для рабочего процесса функций Azure файл содержит три раздела: 
 
-| Раздел | Задачи |
+| Section | Задачи |
 | ------- | ----- |
 | **Аутентификация** | <ol><li>Определите субъект-службу.</li><li>Скачивание профиля публикации.</li><li>Создайте секрет GitHub.</li></ol>|
 | **Сборка** | <ol><li>Настройте среду.</li><li>Создайте приложение-функцию.</li></ol> |
@@ -46,7 +46,7 @@ az ad sp create-for-rbac --name "myApp" --role contributor --scopes /subscriptio
 
 ## <a name="download-the-publishing-profile"></a>Скачивание профиля публикации
 
-Вы можете скачать профиль публикации functionapp, перейдя на страницу **обзора** приложения и выбрав **получить профиль публикации**.
+Вы можете скачать профиль публикации приложения-функции, перейдя на страницу **обзора** приложения и выбрав **получить профиль публикации**.
 
    ![Загрузить профиль публикации](media/functions-how-to-github-actions/get-publish-profile.png)
 
@@ -54,28 +54,24 @@ az ad sp create-for-rbac --name "myApp" --role contributor --scopes /subscriptio
 
 ## <a name="configure-the-github-secret"></a>Настройка секрета GitHub
 
-1. В [GitHub](https://github.com)найдите репозиторий, выберите **параметры** > **секреты** > **Добавить новый секрет**.
+1. В [GitHub](https://github.com)перейдите к репозиторию, выберите **параметры** > **секреты** > **Добавить новый секрет**.
 
    ![Добавить секрет](media/functions-how-to-github-actions/add-secret.png)
 
-1. Используйте `AZURE_CREDENTIALS` для параметра **имя** и скопированный результат команды в поле **значение**, если затем выберите **Добавить секрет**. Если используется профиль публикации, используйте `SCM_CREDENTIALS` для **имени** и содержимого файла в поле **значение**.
+1. Добавьте новый секрет.
+
+   * Если вы используете субъект-службу, созданный с помощью Azure CLI, используйте `AZURE_CREDENTIALS` для **имени**. Затем вставьте скопированный выходной объект JSON в поле **значение**и выберите **Добавить секрет**.
+   * Если вы используете профиль публикации, используйте `SCM_CREDENTIALS` для **имени**. Затем используйте содержимое файла профиля публикации в поле **значение**и выберите **Добавить секрет**.
 
 Теперь GitHub может проходить проверку подлинности в приложении функции в Azure.
 
 ## <a name="set-up-the-environment"></a>Настройка среды 
 
-Настройка среды может быть выполнена с помощью одного из действий программы установки публикации.
+Настройка среды выполняется с помощью действия по настройке публикации для конкретного языка.
 
-|Язык | Действие установки |
-|---------|---------|
-|**.NET**     | `actions/setup-dotnet` |
-|**Java**    | `actions/setup-java` |
-|**JavaScript**     | `actions/setup-node` |
-|**Python**   | `actions/setup-python` |
+# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
 
-В следующих примерах показана часть рабочего процесса, которая настраивает среду для различных поддерживаемых языков:
-
-**JavaScript**
+В следующем примере показана часть рабочего процесса, которая использует действие `actions/setup-node` для настройки среды.
 
 ```yaml
     - name: 'Login via Azure CLI'
@@ -88,7 +84,9 @@ az ad sp create-for-rbac --name "myApp" --role contributor --scopes /subscriptio
         node-version: '10.x'
 ```
 
-**Python**
+# <a name="pythontabpython"></a>[Python](#tab/python)
+
+В следующем примере показана часть рабочего процесса, которая использует действие `actions/setup-python` для настройки среды.
 
 ```yaml
     - name: 'Login via Azure CLI'
@@ -101,7 +99,9 @@ az ad sp create-for-rbac --name "myApp" --role contributor --scopes /subscriptio
         python-version: 3.6
 ```
 
-**.NET**
+# <a name="ctabcsharp"></a>[C#](#tab/csharp)
+
+В следующем примере показана часть рабочего процесса, которая использует действие `actions/setup-dotnet` для настройки среды.
 
 ```yaml
     - name: 'Login via Azure CLI'
@@ -114,7 +114,9 @@ az ad sp create-for-rbac --name "myApp" --role contributor --scopes /subscriptio
         dotnet-version: '2.2.300'
 ```
 
-**Java**
+# <a name="javatabjava"></a>[Java](#tab/java)
+
+В следующем примере показана часть рабочего процесса, которая использует действие `actions/setup-java` для настройки среды.
 
 ```yaml
     - name: 'Login via Azure CLI'
@@ -128,14 +130,15 @@ az ad sp create-for-rbac --name "myApp" --role contributor --scopes /subscriptio
         # Please change the Java version to match the version in pom.xml <maven.compiler.source>
         java-version: '1.8.x'
 ```
+---
 
 ## <a name="build-the-function-app"></a>Создание приложения функции
 
 Это зависит от языка и языков, поддерживаемых функциями Azure. Этот раздел должен быть стандартным этапом сборки каждого языка.
 
-В следующих примерах показана часть рабочего процесса, который строит приложение-функцию на различных поддерживаемых языках.
+В следующем примере показана часть рабочего процесса, который создает приложение-функцию, которое зависит от языка:
 
-**JavaScript**
+# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
 
 ```yaml
     - name: 'Run npm'
@@ -150,7 +153,7 @@ az ad sp create-for-rbac --name "myApp" --role contributor --scopes /subscriptio
         popd
 ```
 
-**Python**
+# <a name="pythontabpython"></a>[Python](#tab/python)
 
 ```yaml
     - name: 'Run pip'
@@ -164,7 +167,7 @@ az ad sp create-for-rbac --name "myApp" --role contributor --scopes /subscriptio
         popd
 ```
 
-**.NET**
+# <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
 ```yaml
     - name: 'Run dotnet build'
@@ -177,7 +180,7 @@ az ad sp create-for-rbac --name "myApp" --role contributor --scopes /subscriptio
         popd
 ```
 
-**Java**
+# <a name="javatabjava"></a>[Java](#tab/java)
 
 ```yaml
     - name: 'Run mvn'
@@ -190,12 +193,13 @@ az ad sp create-for-rbac --name "myApp" --role contributor --scopes /subscriptio
         mvn azure-functions:package
         popd
 ```
+---
 
 ## <a name="deploy-the-function-app"></a>Развертывание приложения-функции
 
 Чтобы развернуть код в приложении-функции, необходимо использовать действие `Azure/functions-action`. Это действие имеет два параметра:
 
-|Параметр |Пояснение  |
+|Параметр |Объяснение  |
 |---------|---------|
 |**_имя приложения_** | Заполнен Имя приложения функции. |
 |_**имя слота**_ | Используемых Имя [слота развертывания](functions-deployment-slots.md) , в который требуется выполнить развертывание. Слот уже должен быть определен в приложении функции. |
@@ -211,7 +215,7 @@ az ad sp create-for-rbac --name "myApp" --role contributor --scopes /subscriptio
         app-name: PLEASE_REPLACE_THIS_WITH_YOUR_FUNCTION_APP_NAME
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы просмотреть полный рабочий процесс. YAML, ознакомьтесь с одним из файлов в [репозитории примеров рабочих процессов Azure GitHub](https://aka.ms/functions-actions-samples) , которые имеют `functionapp` в имени. Эти примеры можно использовать в качестве отправной точки для рабочего процесса.
 

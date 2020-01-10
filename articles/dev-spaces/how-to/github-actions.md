@@ -3,21 +3,21 @@ title: Действия GitHub & службы Azure Kubernetes
 services: azure-dev-spaces
 ms.date: 11/04/2019
 ms.topic: conceptual
-description: Изучите и протестируйте изменения из запроса на вытягивание непосредственно в службе Azure Kubernetes, используя действия GitHub и Azure Dev Spaces.
+description: Проверка и проверка изменений в запросе на вытягивание непосредственно в службе Kubernetes Azure с помощью действий GitHub и Azure Dev Spaces
 keywords: DOCKER, Kubernetes, Azure, AKS, служба Kubernetes Azure, контейнеры, действия GitHub, Helm, сеть службы, маршрутизация в сети службы, kubectl, K8S
 manager: gwallace
-ms.openlocfilehash: e20efc6b109eeef234dcd621374d25b812cdc0ce
-ms.sourcegitcommit: 8cf199fbb3d7f36478a54700740eb2e9edb823e8
+ms.openlocfilehash: 7d96726e829154847744d9aec07a9cb0938f75de
+ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74483938"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75771127"
 ---
 # <a name="github-actions--azure-kubernetes-service-preview"></a>Действия GitHub & службы Azure Kubernetes (Предварительная версия)
 
 Azure Dev Spaces предоставляет рабочий процесс с помощью действий GitHub, позволяющих проверять изменения из запроса на вытягивание непосредственно в AKS перед слиянием запроса на включение внесенных изменений в основную ветвь репозитория. Наличие работающего приложения для просмотра изменений запроса на вытягивание может повысить уверенность как разработчика, так и членов группы. Это работающее приложение также может помочь членам группы, таким как, менеджеры по продуктам и проектировщикам, стать частью процесса проверки на ранних стадиях разработки.
 
-В этом руководстве вы узнаете как:
+Из этого руководства вы узнаете, как выполнить следующие задачи:
 
 * настройка Azure Dev Spaces в управляемом кластере Kubernetes в Azure;
 * развертывание большого приложения с несколькими микрослужбами в пространстве разработки;
@@ -27,11 +27,11 @@ Azure Dev Spaces предоставляет рабочий процесс с п�
 > [!IMPORTANT]
 > Эта функция в настоящее время находится на стадии предварительной версии. Предварительные версии предоставляются при условии, что вы принимаете [дополнительные условия использования](https://azure.microsoft.com/support/legal/preview-supplemental-terms/). Некоторые аспекты этой функции могут быть изменены до выхода общедоступной версии.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Технические условия
 
 * Подписка Azure. Если у вас нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free).
 * [Установленный Azure CLI][azure-cli-installed].
-* [Helm 2,13-2,16 установлен][helm-installed].
+* [Установлен Helm 3][helm-installed].
 * Учетная запись GitHub с [включенными действиями GitHub][github-actions-beta-signup].
 * [Пример приложения для Azure dev Spacesного использования велосипеда](https://github.com/Azure/dev-spaces/tree/master/samples/BikeSharingApp/README.md) , работающего в кластере AKS.
 
@@ -50,7 +50,7 @@ az acr create --resource-group MyResourceGroup --name <acrName> --sku Basic
 
 ## <a name="create-a-service-principal-for-authentication"></a>Создание субъекта-службы для проверки подлинности
 
-Для создания субъекта-службы используйте команду [AZ AD SP Create-для – RBAC][az-ad-sp-create-for-rbac] . Например,
+Для создания субъекта-службы используйте команду [AZ AD SP Create-для – RBAC][az-ad-sp-create-for-rbac] . Пример.
 
 ```cmd
 az ad sp create-for-rbac --sdk-auth --skip-assignment
@@ -162,7 +162,7 @@ git push origin bike-images
 az group delete --name MyResourceGroup --yes --no-wait
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте, как в Azure Dev Spaces можно разрабатывать более сложные приложения в нескольких контейнерах и как упростить совместную разработку, используя разные версии и ветви кода в разных средах.
 
@@ -180,9 +180,8 @@ az group delete --name MyResourceGroup --yes --no-wait
 [github-actions-beta-signup]: https://github.com/features/actions
 [github-action-yaml]: https://github.com/Azure/dev-spaces/blob/master/.github/workflows/bikes.yml
 [github-action-bikesharing-yaml]: https://github.com/Azure/dev-spaces/blob/master/.github/workflows/bikesharing.yml
-[helm-installed]: https://v2.helm.sh/docs/using_helm/#installing-helm
-[tiller-rbac]: https://helm.sh/docs/using_helm/#role-based-access-control
-[supported-regions]: ../about.md#supported-regions-and-configurations
+[helm-installed]: https://helm.sh/docs/intro/install/
+[supported-regions]: https://azure.microsoft.com/global-infrastructure/services/?products=kubernetes-service
 [sp-acr]: ../../container-registry/container-registry-auth-service-principal.md
 [sp-aks]: ../../aks/kubernetes-service-principal.md
 [team-quickstart]: ../quickstart-team-development.md

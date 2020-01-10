@@ -13,19 +13,19 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/25/2017
 ms.author: allensu
-ms.openlocfilehash: 547402fd2cca94f47a9ff0db3131d359bafd967a
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: b2c94e51e25fd34b7332e6653a9c2f2d5bb53139
+ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74225386"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75754232"
 ---
 # <a name="create-an-internal-load-balancer-by-using-the-azure-powershell-module"></a>Создание внутренней подсистемы балансировки нагрузки с помощью модуля Azure PowerShell
 
 > [!div class="op_single_selector"]
-> * [портал Azure](../load-balancer/load-balancer-get-started-ilb-arm-portal.md)
+> * [Портал Azure](../load-balancer/load-balancer-get-started-ilb-arm-portal.md)
 > * [PowerShell](../load-balancer/load-balancer-get-started-ilb-arm-ps.md)
-> * [Интерфейс командной строки Azure](../load-balancer/load-balancer-get-started-ilb-arm-cli.md)
+> * [Azure CLI](../load-balancer/load-balancer-get-started-ilb-arm-cli.md)
 > * [Шаблон](../load-balancer/load-balancer-get-started-ilb-arm-template.md)
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
@@ -48,7 +48,7 @@ ms.locfileid: "74225386"
 * Конфигурация проверки: проверки состояния работоспособности для виртуальных машин.
 * Правила NAT для входящих подключений: правила порта для прямого доступа к виртуальным машинам.
 
-Дополнительные сведения о компонентах подсистемы балансировки нагрузки см. в статье [Использование поддержки Azure Resource Manager с Azure Load Balancer](load-balancer-arm.md).
+Дополнительные сведения о компонентах подсистемы балансировки нагрузки см. в разделе [Azure Load Balancer Components](load-balancer-overview.md#load-balancer-components).
 
 Далее описана настройка балансировщика нагрузки для двух виртуальных машин.
 
@@ -90,7 +90,7 @@ Select-AzSubscription -Subscriptionid "GUID of subscription"
 New-AzResourceGroup -Name NRP-RG -location "West US"
 ```
 
-В диспетчере ресурсов Azure для всех групп ресурсов должно быть указано расположение. Оно используется в качестве расположения по умолчанию для ресурсов в этой группе ресурсов. Всегда используйте одну группу ресурсов для всех команд, связанных с созданием подсистемы балансировки нагрузки.
+Диспетчер ресурсов Azure требует, чтобы все группы ресурсов указывали расположение. Оно используется в качестве расположения по умолчанию для ресурсов в этой группе ресурсов. Всегда используйте одну группу ресурсов для всех команд, связанных с созданием подсистемы балансировки нагрузки.
 
 В этом примере мы создали группу ресурсов с именем **NRP RG** с расположением "Западная часть США".
 
@@ -328,7 +328,7 @@ Remove-AzLoadBalancer -Name NRP-LB -ResourceGroupName NRP-RG
 > [!NOTE]
 > Используйте дополнительный параметр **-Force**, чтобы избежать запроса подтверждения удаления.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Настройка режима распределения для подсистемы балансировки нагрузки](load-balancer-distribution-mode.md)
 * [Настройка параметров времени ожидания простоя TCP для подсистемы балансировки нагрузки](load-balancer-tcp-idle-timeout.md)

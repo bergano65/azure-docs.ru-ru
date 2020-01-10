@@ -1,6 +1,6 @@
 ---
-title: включение файла
-description: включение файла
+title: включить файл
+description: включить файл
 services: functions
 author: nzthiago
 ms.service: azure-functions
@@ -8,18 +8,18 @@ ms.topic: include
 ms.date: 02/21/2018
 ms.author: nzthiago
 ms.custom: include file
-ms.openlocfilehash: fded43bb655cefda508b82eca94522730ab6da00
-ms.sourcegitcommit: b5ff5abd7a82eaf3a1df883c4247e11cdfe38c19
+ms.openlocfilehash: 3501ff3f92ae045019df2766bbcf7fc2c3fec5b0
+ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2019
-ms.locfileid: "74941737"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75768930"
 ---
 ## <a name="timeout"></a>Длительность ожидания приложения-функции 
 
-Длительность времени ожидания для приложения-функции определяется свойством Функтионтимеаут в файле проекта [Host. JSON](../articles/azure-functions/functions-host-json.md#functiontimeout) . В следующей таблице показаны значения по умолчанию и максимальное значение в минутах для обоих планов и в обеих версиях среды выполнения:
+Длительность времени ожидания для приложения-функции определяется свойством `functionTimeout` в файле проекта [Host. JSON](../articles/azure-functions/functions-host-json.md#functiontimeout) . В следующей таблице показаны значения по умолчанию и максимальное значение в минутах для обоих планов и различных версий среды выполнения.
 
-| План | Версия среды выполнения | значение по умолчанию | Максимальная |
+| План | Версия среды выполнения | По умолчанию | Максимальная |
 |------|---------|---------|---------|
 | Потребление | 1.x | 5 | 10 |
 | Потребление | 2.x | 5 | 10 |

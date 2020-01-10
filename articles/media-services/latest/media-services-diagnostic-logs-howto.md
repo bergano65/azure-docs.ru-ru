@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/08/2019
 ms.author: juliako
-ms.openlocfilehash: e00da689820778a8cc7c5ce95184d4d8c79c70f2
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.openlocfilehash: bf83c87c71c8e05dc74d7754c82c76489de1bd85
+ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74977715"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75750897"
 ---
 # <a name="monitor-media-services-diagnostic-logs"></a>Мониторинг журналов диагностики служб мультимедиа
 
@@ -49,7 +49,7 @@ ms.locfileid: "74977715"
 
    ![Раздел параметров диагностики](media/media-services-diagnostic-logs/logs02.png)
 1. Задайте для ползунка **Хранение (в днях)** значение 30. Этот ползунок задает количество дней хранения данных мониторинга в учетной записи хранения. Azure Monitor автоматически удаляет данные, которые хранятся дольше заданного количества дней. Нулевое значение для периода хранения означает, что данные будут храниться неограниченно долго.
-1. В нижней части страницы нажмите кнопку **Save**.
+1. Выберите команду **Сохранить**.
 
 Данные мониторинга из ресурса теперь поступают в учетную запись хранения.
 
@@ -176,13 +176,13 @@ az monitor diagnostic-settings create --name amsv3diagnostic \
 
 ## <a name="additional-notes"></a>Дополнительные замечания
 
-* Widevine — это служба, предоставляемая Google Inc. и подпадает под условия обслуживания и политики конфиденциальности Google, Inc.
+* Widevine — это служба, которая предоставляется компанией Google Inc. и подпадает под условия предоставления услуг и политику конфиденциальности Google Inc.
 
-## <a name="see-also"></a>Дополнительные материалы
+## <a name="see-also"></a>См. также
 
 * [Метрики Azure Monitor](../../azure-monitor/platform/data-platform.md)
-* [Журналы диагностики Azure Monitor](../../azure-monitor/platform/resource-logs-overview.md)
-* [Как получить и использовать данные журнала из ресурсов Azure](../../azure-monitor/platform/resource-logs-overview.md)
+* [Журналы диагностики Azure Monitor](../../azure-monitor/platform/platform-logs-overview.md)
+* [Как получить и использовать данные журнала из ресурсов Azure](../../azure-monitor/platform/platform-logs-overview.md)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -1,19 +1,19 @@
 ---
 title: Перестроение индекса поиска
 titleSuffix: Azure Cognitive Search
-description: Добавьте новые элементы, обновите существующие элементы или документы или удалите устаревшие документы при полной пересборке или частичном добавочном индексировании, чтобы обновить индекс Когнитивный поиск Azure.
+description: Добавьте новые элементы, обновите существующие элементы или документы или удалите устаревшие документы при полной пересборке или частичной индексации, чтобы обновить индекс Когнитивный поиск Azure.
 manager: nitinme
 author: HeidiSteen
 ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: b14c153f52e0427e289afeccdfd22d6510e4ace1
-ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
+ms.openlocfilehash: 18cfa3c6fde399ea61e09c5788c72ce20e5570e8
+ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74112963"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75754391"
 ---
 # <a name="how-to-rebuild-an-index-in-azure-cognitive-search"></a>Как перестроить индекс в Azure Когнитивный поиск
 
@@ -25,7 +25,7 @@ ms.locfileid: "74112963"
 
 ## <a name="rebuild-conditions"></a>Условия перестроения
 
-| Условие | ОПИСАНИЕ |
+| Условие | Description |
 |-----------|-------------|
 | Изменение определения поля | Если вы меняете имя поля, тип данных или определенные [атрибуты индекса](https://docs.microsoft.com/rest/api/searchservice/create-index) (с возможностью поиска, фильтрации, сортировки или поддержкой аспектов), требуется полная перестройка. |
 | Присвоение полю анализатора | [Анализаторы](search-analyzers.md) определяются в индексе, а затем присваиваются полям. Вы можете добавить новое определение анализатора в индекс в любое время, но *присвоить* анализатор можно только при создании поля. Это касается обоих свойств: **analyzer** и **indexAnalyzer**. Свойство **searchAnalyzer** является исключением (его можно присвоить уже существующему полю). |

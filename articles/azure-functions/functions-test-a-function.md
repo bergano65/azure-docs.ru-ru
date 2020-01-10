@@ -5,18 +5,18 @@ author: craigshoemaker
 ms.topic: conceptual
 ms.date: 03/25/2019
 ms.author: cshoe
-ms.openlocfilehash: c60cd631e703f929eaae56138a2acd3687121924
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: a37fd886e1bc70226b2e54750540dfcb79ee5973
+ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74226579"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75768883"
 ---
 # <a name="strategies-for-testing-your-code-in-azure-functions"></a>Методика тестирования кода с помощью Функций Azure
 
 В этой статье показано, как создавать автоматические тесты для Функций Azure. 
 
-Рекомендуется провести тестирование всего кода, однако наилучший результат можно получить благодаря созданию программы-оболочки для логики функции и создания тестов за ее пределами. Абстрагирование логики ограничивает строки кода функции и позволяет функции нести единоличную ответственность за вызов других классов или модулей. Тем не менее в этой статье показано, как создавать автоматические тесты для HTTP и активируемую по таймеру функцию.
+Рекомендуется провести тестирование всего кода, однако наилучший результат можно получить благодаря созданию программы-оболочки для логики функции и создания тестов за ее пределами. Абстрагирование логики ограничивает строки кода функции и позволяет функции нести единоличную ответственность за вызов других классов или модулей. В этой статье, однако, показано, как создавать автоматические тесты для функций, запускаемых по протоколу HTTP и по таймеру.
 
 Следующее содержимое разделяется на два различных раздела, что означает, что они предназначены для разных языков и сред. Можно научиться компилировать тесты в:
 
@@ -30,7 +30,7 @@ ms.locfileid: "74226579"
 
 ![Тестирование Функций Azure с помощью C# в Visual Studio](./media/functions-test-a-function/azure-functions-test-visual-studio-xunit.png)
 
-### <a name="setup"></a>Setup
+### <a name="setup"></a>Настройка
 
 Чтобы настроить среду, создайте функцию и протестируйте приложение. Описанные ниже действия помогут создать приложения и функции, необходимые для поддержки тестов.
 
@@ -38,8 +38,8 @@ ms.locfileid: "74226579"
 2. [Создайте функцию HTTP на основе шаблона](./functions-create-first-azure-function.md) и назовите ее *HttpTrigger*.
 3. [Создайте функцию таймера на основе шаблона](./functions-create-scheduled-function.md) и назовите ее *TimerTrigger*.
 4. [Создайте приложение тестирования xUnit](https://xunit.github.io/docs/getting-started-dotnet-core) в Visual Studio, нажав **Файл > Создать > Проект > Visual C# > .NET Core > Тестовый проект xUnit**, и назовите его *Functions.Test*. 
-5. Использование NuGet для добавления ссылок из тестового приложения [Microsoft. AspNetCore. MVC](https://www.nuget.org/packages/Microsoft.AspNetCore.Mvc/)
-6. [Создайте ссылку на приложение *Функции* ](https://docs.microsoft.com/visualstudio/ide/managing-references-in-a-project?view=vs-2017) из приложения *Functions.Test*.
+5. Использование NuGet для добавления ссылки из тестового приложения в [Microsoft. AspNetCore. MVC](https://www.nuget.org/packages/Microsoft.AspNetCore.Mvc/)
+6. [Создайте ссылку на приложение *Функции*](https://docs.microsoft.com/visualstudio/ide/managing-references-in-a-project?view=vs-2017) из приложения *Functions.Test*.
 
 ### <a name="create-test-classes"></a>Создание тестовых классов
 
@@ -47,7 +47,7 @@ ms.locfileid: "74226579"
 
 Каждая функция принимает экземпляр [ILogger](https://docs.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger) для обработки ведения журнала сообщений. Некоторые тесты либо не ведут журнал сообщений, либо для них не имеет значения, как это происходит. Другие тесты должны оценивать сообщения, записанные в журнал, чтобы определить, проходит ли тест.
 
-Класс `ListLogger` предназначен для реализации интерфейса `ILogger` и хранения внутреннего списка сообщений для оценки во время теста.
+Класс `ListLogger` реализует интерфейс `ILogger` и содержит внутренний список сообщений для оценки во время теста.
 
 **Щелкните правой кнопкой мыши** приложение *functions. Test* и выберите **Добавить > класс**, назовите его **NullScope.CS** и введите следующий код:
 
@@ -265,7 +265,7 @@ namespace Functions.Tests
 
 ![Тестирование Функций Azure с помощью JavaScript в VS Code](./media/functions-test-a-function/azure-functions-test-vs-code-jest.png)
 
-### <a name="setup"></a>Setup
+### <a name="setup"></a>Настройка
 
 Для настройки среды инициализируйте новое приложение Node.js в пустой папке, запустив `npm init`.
 
@@ -370,7 +370,7 @@ npm test
 
 Затем в тесте установите точку останова и нажмите клавишу **F5**.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы узнали, как записывать автоматизированные тесты для функций, изучите следующие ресурсы.
 - [Запуск функции, не активируемой HTTP-запросом, вручную](./functions-manually-run-non-http.md)

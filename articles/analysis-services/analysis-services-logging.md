@@ -7,16 +7,16 @@ ms.topic: conceptual
 ms.date: 10/31/2019
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: b8ae2c529bebebae4ebc2d7b0b8a7e420fe9bcc7
-ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
+ms.openlocfilehash: 05ba1d97d4eba92f492289375f85425f8920510b
+ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73572778"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75749747"
 ---
 # <a name="setup-diagnostic-logging"></a>Настройка журнала ведения диагностики
 
-Важной частью любого решения Analysis Services является мониторинг работы серверов. С помощью [журналов диагностики ресурсов Azure](../azure-monitor/platform/resource-logs-overview.md) вы можете отслеживать и отправлять журналы в [службу хранилища Azure](https://azure.microsoft.com/services/storage/), выполнять их потоковую передачу в [Центры событий Azure](https://azure.microsoft.com/services/event-hubs/) и экспортировать их в [Журналы Azure Monitor](../azure-monitor/azure-monitor-log-hub.md).
+Важной частью любого решения Analysis Services является мониторинг работы серверов. С помощью [журналов диагностики ресурсов Azure](../azure-monitor/platform/platform-logs-overview.md) вы можете отслеживать и отправлять журналы в [службу хранилища Azure](https://azure.microsoft.com/services/storage/), выполнять их потоковую передачу в [Центры событий Azure](https://azure.microsoft.com/services/event-hubs/) и экспортировать их в [Журналы Azure Monitor](../azure-monitor/azure-monitor-log-hub.md).
 
 ![Процесс ведения журнала диагностики в хранилище, Центрах событий и журналах Azure Monitor](./media/analysis-services-logging/aas-logging-overview.png)
 
@@ -26,13 +26,13 @@ ms.locfileid: "73572778"
 
 Можно выбрать категории **Подсистема**, **Служба** и **Метрики**.
 
-### <a name="engine"></a>Двигатель
+### <a name="engine"></a>Подсистема
 
 При выборе категории **Подсистема** в журнале регистрируется все события [xEvent](https://docs.microsoft.com/analysis-services/instances/monitor-analysis-services-with-sql-server-extended-events). Невозможно будет выбрать отдельные события. 
 
 |Категории событий xEvent |Имя события  |
 |---------|---------|
-|Аудит безопасности    |   Audit Login      |
+|Аудит безопасности    |   Аудит входа в систему      |
 |Аудит безопасности    |   Audit Logout      |
 |Аудит безопасности    |   Audit Server Starts And Stops      |
 |Отчеты о ходе выполнения     |   Progress Report Begin      |
@@ -43,9 +43,9 @@ ms.locfileid: "73572778"
 |Команды     |  Command Begin       |
 |Команды     |  Command End       |
 |Ошибки и предупреждения     |   Ошибка      |
-|Поиск     |   Discover End      |
+|Обнаружение     |   Discover End      |
 |Уведомление     |    Уведомление     |
-|Сеанс     |  Session Initialize       |
+|Session     |  Session Initialize       |
 |Блокировки    |  Deadlock       |
 |Обработка запросов     |   VertiPaq SE Query Begin      |
 |Обработка запросов     |   VertiPaq SE Query End      |
@@ -53,7 +53,7 @@ ms.locfileid: "73572778"
 |Обработка запросов     |   Direct Query Begin      |
 |Обработка запросов     |  Direct Query End       |
 
-### <a name="service"></a>служба
+### <a name="service"></a>Служба
 
 |Имя операции  |Когда выполняется  |
 |---------|---------|
@@ -88,7 +88,7 @@ ms.locfileid: "73572778"
     * **Служба**. Выберите этот параметр, чтоб вести журнал событий уровня службы. Если выполняется архивация в учетную запись хранения, можно выбрать период удержания для журналов диагностики. По окончании периода хранения журналы удаляются автоматически.
     * **Метрики**. Выберите этот параметр, чтобы хранить подробные данные в разделе [Метрики](analysis-services-monitor.md#server-metrics). Если выполняется архивация в учетную запись хранения, можно выбрать период удержания для журналов диагностики. По окончании периода хранения журналы удаляются автоматически.
 
-3. Щелкните **Сохранить**.
+3. Выберите команду **Сохранить**.
 
     Если отобразится сообщение об ошибке Failed to update diagnostics for \<workspace name>. The subscription \<subscription id> is not registered to use Microsoft.Insights (Не удалось обновить данные диагностики для <имя_рабочей_области>. Подписку <идентификатор_подписки> не зарегистрировано для использования Microsoft.Insights), следуйте инструкциям статьи [Устранение неполадок Диагностики Azure](https://docs.microsoft.com/azure/log-analytics/log-analytics-azure-storage), чтобы зарегистрировать учетную запись, а затем повторите процедуру.
 
@@ -164,7 +164,7 @@ ms.locfileid: "73572778"
 
 #### <a name="example-1"></a>Пример 1
 
-Следующий запрос возвращает длительность каждого события конца запроса для базы данных и сервера модели. При горизонтальном масштабировании результаты разбиваются репликой, поскольку номер реплики включается в ServerName_s. Группирование по RootActivityId_g сокращает количество строк, извлеченное из REST API система диагностики Azure, и помогает оставаться в пределах ограничений, как описано в разделе [log Analytics Limits Rate](https://dev.loganalytics.io/documentation/Using-the-API/Limits).
+Следующий запрос возвращает длительность каждого события конца запроса для базы данных и сервера модели. При горизонтальном масштабировании результаты разбиваются репликой, поскольку номер реплики включается в ServerName_s. Группирование по RootActivityId_g сокращает количество строк, извлеченное из система диагностики Azure REST API и обеспечивает соблюдение ограничений, как описано в разделе [ограничения скорости log Analytics](https://dev.loganalytics.io/documentation/Using-the-API/Limits).
 
 ```Kusto
 let window = AzureDiagnostics
@@ -215,7 +215,7 @@ window
 
 В этом кратком руководстве вы создаете учетную запись хранения в тех же подписке и группе ресурсов, что и сервер Analysis Services. Затем с помощью Set-Аздиагностиксеттинг включите ведение журнала диагностики, отправив выходные данные в новую учетную запись хранения.
 
-### <a name="prerequisites"></a>Предварительные требования
+### <a name="prerequisites"></a>Технические условия
 Для работы с этим руководством вам потребуются следующие ресурсы:
 
 * Существующий сервер Azure Analysis Services. Инструкции по созданию ресурса сервера см. в разделе [Создание сервера Azure Analysis Services на портале Azure](analysis-services-create-server.md) или [Создание сервера Azure Analysis Services с помощью PowerShell](analysis-services-create-powershell.md).
@@ -326,6 +326,6 @@ Set-AzDiagnosticSetting -ResourceId $account.ResourceId`
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Узнайте больше о [журнал ведения диагностики ресурсов Azure](../azure-monitor/platform/resource-logs-overview.md).
+Узнайте больше о [журнал ведения диагностики ресурсов Azure](../azure-monitor/platform/platform-logs-overview.md).
 
 См. раздел [Set-аздиагностиксеттинг](https://docs.microsoft.com/powershell/module/az.monitor/set-azdiagnosticsetting) в справке PowerShell.

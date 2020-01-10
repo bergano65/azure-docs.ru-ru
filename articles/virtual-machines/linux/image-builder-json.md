@@ -7,12 +7,12 @@ ms.date: 07/31/2019
 ms.topic: article
 ms.service: virtual-machines-linux
 manager: gwallace
-ms.openlocfilehash: 13392644ebe5e163e946deceeec5fcab8f5085cc
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.openlocfilehash: 4a411603ca5c3c79da0d596396d8fde80b568af2
+ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73159715"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75763085"
 ---
 # <a name="preview-create-an-azure-image-builder-template"></a>Предварительная версия: Создание шаблона Azure Image Builder 
 
@@ -28,7 +28,7 @@ ms.locfileid: "73159715"
     "tags": {
         "<name": "<value>",
         "<name>": "<value>"
-             }
+             },
     "identity":{},           
     "dependsOn": [], 
     "properties": { 
@@ -51,7 +51,7 @@ ms.locfileid: "73159715"
     "apiVersion": "2019-05-01-preview",
 ```
 
-## <a name="location"></a>Location
+## <a name="location"></a>Расположение
 
 Расположение — это регион, в котором будет создан пользовательский образ. Для предварительной версии построителя образов поддерживаются следующие регионы:
 
@@ -136,8 +136,8 @@ ms.locfileid: "73159715"
  
 ### <a name="platformimage-source"></a>Источник Платформимаже 
 Построитель образов Azure поддерживает следующие образы Azure Marketplace:
-* Ubuntu 18.04
-* Ubuntu 16.04.
+* Ubuntu 18.04
+* Ubuntu 16.04
 * RHEL 7,6
 * CentOS 7,6
 * Windows 2016
@@ -275,7 +275,8 @@ az vm image list -l westus -f UbuntuServer -p Canonical --output table –-all
 
 ```json 
      "customize": [ 
-            "type{ ": "WindowsRestart", 
+         {
+            "type": "WindowsRestart", 
             "restartCommand": "shutdown /r /f /t 0 /c", 
             "restartCheckCommand": "echo Azure-Image-Builder-Restarted-the-VM  > buildArtifacts/azureImageBuilderRestart.txt",
             "restartTimeout": "5m"
@@ -317,7 +318,7 @@ az vm image list -l westus -f UbuntuServer -p Canonical --output table –-all
 - **тип** — PowerShell.
 - **скриптури** -URI в расположение файла сценария PowerShell. 
 - **встроенные** встроенные команды для выполнения, разделенные запятыми.
-- **valid_exit_codes** — необязательный, допустимый код, который можно вернуть из команды script/Inline, это не позволит сообщить о сбое команды script/Inline.
+- **valid_exit_codes** — необязательные, допустимые коды, которые могут быть возвращены из команды script/Inline, это не позволит сообщить о сбое команды script/Inline.
 
 ### <a name="file-customizer"></a>Настройка файлов
 

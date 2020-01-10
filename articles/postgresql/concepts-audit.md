@@ -6,12 +6,12 @@ ms.author: raagyema
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 10/14/2019
-ms.openlocfilehash: 4a41e5eda3ca2bd92d78a81d73c1ad4c859e25a3
-ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
+ms.openlocfilehash: c0ce1648d7b5f7c25044ed8f66eafcca7b0009f4
+ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74764565"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75747339"
 ---
 # <a name="audit-logging-in-azure-database-for-postgresql---single-server"></a>Ведение журнала аудита в базе данных Azure для PostgreSQL — один сервер
 
@@ -21,9 +21,9 @@ ms.locfileid: "74764565"
 > Пгаудит находится на этапе предварительной версии в базе данных Azure для PostgreSQL.
 > Расширение можно включить только для общего назначения и оптимизированных для памяти серверов.
 
-Если вы хотите, чтобы журналы уровня ресурсов Azure для таких операций, как вычисление и масштабирование хранилища, см. в [журнале действий Azure](../azure-monitor/platform/activity-logs-overview.md).
+Если вы хотите, чтобы журналы уровня ресурсов Azure для таких операций, как вычисление и масштабирование хранилища, см. в [журнале действий Azure](../azure-monitor/platform/platform-logs-overview.md).
 
-## <a name="usage-considerations"></a>Рекомендации по использованию
+## <a name="usage-considerations"></a>Особенности использования
 По умолчанию выписки из журналов pgAudit создаются вместе с регулярными выписками с использованием стандартного средства ведения журнала Postgres. В Базе данных Azure для PostgreSQL эти файлы журнала можно скачать на портале Azure или с помощью интерфейса командной строки. Максимальный объем хранилища для коллекции файлов составляет 1 ГБ, а каждый файл доступен не более семи дней (по умолчанию — три дня). Эта служба является краткосрочным хранилищем.
 
 Кроме того, можно настроить все журналы для передачи в службу журналов диагностики Azure Monitor. Если включить ведение журнала диагностики Azure Monitor, журналы автоматически отправляются (в формате JSON) в службу хранилища Azure, концентраторы событий и (или) Azure Monitor журналы в зависимости от вашего выбора.

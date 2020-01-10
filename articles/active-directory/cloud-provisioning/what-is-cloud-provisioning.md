@@ -1,5 +1,5 @@
 ---
-title: Что такое Azure AD Connect подготовки облака. | Документация Майкрософт
+title: Что такое Azure AD Connect подготовки облака. | Документы Майкрософт
 description: Описывает Azure AD Connect подготовки облака.
 services: active-directory
 author: billmath
@@ -11,12 +11,12 @@ ms.date: 12/05/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 10c778025c3def384f621cb5311d0d71ccb457d7
-ms.sourcegitcommit: 5b9287976617f51d7ff9f8693c30f468b47c2141
+ms.openlocfilehash: 4ef73abdd6bfdadd0078c30ad1b0145cdae41722
+ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2019
-ms.locfileid: "74951128"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75767609"
 ---
 # <a name="what-is-azure-ad-connect-cloud-provisioning"></a>Что такое подготовка облака Azure AD Connect?
 Azure AD Connect подготовка облачных облаков — это новый агент Майкрософт, предназначенный для удовлетворения и выполнения целей гибридной идентификации для синхронизации пользователей, групп и контактов с Azure AD.  Его можно использовать вместе с Azure AD Connect Sync и предоставляет следующие преимущества:
@@ -33,7 +33,7 @@ Azure AD Connect подготовка облачных облаков — это
 
 В следующей таблице приведено сравнение Azure AD Connect и Azure AD Connect подготовки облака.
 
-| Компонент | Синхронизация Azure Active Directory Connect| Azure Active Directory Connect подготовки облака |
+| Функция | Синхронизация Azure Active Directory Connect| Azure Active Directory Connect подготовки облака |
 |:--- |:---:|:---:|
 |Подключение к одному локальному лесу AD|● |● |
 | Подключение к нескольким локальным лесам AD |● |● |
@@ -61,8 +61,9 @@ Azure AD Connect подготовка облачных облаков — это
 | Поддержка обратной записи (пароли, устройства, группы) |● | |
 | Поддержка доменных служб Azure AD|● | |
 | Гибридная конфигурация Exchange |● | |
+| Поддержка более 50 000 объектов на домен AD |● | |
 
 ## <a name="next-steps"></a>Дальнейшие действия 
 
-- [Что такое подготовка?](what-is-provisioning.md)
-- [Установка подготовки облака](how-to-install.md)
+- [Что собой представляет подготовка?](what-is-provisioning.md)
+- [Установка средства подготовки облака](how-to-install.md)

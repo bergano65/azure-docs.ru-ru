@@ -1,5 +1,6 @@
 ---
-title: Руководство по Использование Azure Database Migration Service для автономной миграции из SQL Server в отдельную базу данных или базу данных в пуле в Базе данных SQL Azure | Документация Майкрософт
+title: Руководство. Миграция SQL Server в автономный режим в отдельную базу данных SQL
+titleSuffix: Azure Database Migration Service
 description: Узнайте, как выполнять миграцию с локального SQL Server в отдельную базу данных или базу данных в пуле в автономной Базе данных SQL Azure с помощью Azure Database Migration Service.
 services: dms
 author: HJToland3
@@ -8,21 +9,21 @@ manager: craigg
 ms.reviewer: craigg
 ms.service: dms
 ms.workload: data-services
-ms.custom: mvc, tutorial
+ms.custom: seo-lt-2019
 ms.topic: article
-ms.date: 11/05/2019
-ms.openlocfilehash: 46d5754d046284ae42da91c2eb08bfe709e7e372
-ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
-ms.translationtype: HT
+ms.date: 01/08/2020
+ms.openlocfilehash: 75dacf053de595ae25f3b58ef33577e2723319f0
+ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73582353"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75750753"
 ---
-# <a name="tutorial-migrate-sql-server-to-a-single-database-or-pooled-database-in-azure-sql-database-offline-using-dms"></a>Руководство по Автономная миграция из SQL Server в отдельную базу данных или базу данных в пуле в Базе данных SQL Azure с помощью DMS
+# <a name="tutorial-migrate-sql-server-to-a-single-database-or-pooled-database-in-azure-sql-database-offline-using-dms"></a>Руководство. Миграция SQL Server в отдельную базу данных или базу данных в составе пула в базе данных SQL Azure в автономном режиме с помощью DMS
 
 Azure Database Migration Service можно использовать для переноса баз данных из локального экземпляра SQL Server в [Базу данных SQL Azure](https://docs.microsoft.com/azure/sql-database/). В этом руководстве выполняется перенос базы данных **Adventureworks2012**, восстановленной в локальном экземпляре SQL Server 2016 (или более поздней версии), в отдельную базу данных или базу данных в пуле в Базе данных SQL Azure с помощью Azure Database Migration Service.
 
-Из этого руководства вы узнаете, как выполнять следующие задачи:
+В этом руководстве описано следующее.
 > [!div class="checklist"]
 >
 > - получение доступа к локальной базе данных с помощью помощника по миграции данных;
@@ -37,7 +38,7 @@ Azure Database Migration Service можно использовать для пе
 
 В этой статье описывается автономный перенос данных из SQL Server в отдельную базу данных или базу данных в пуле в Базе данных SQL Azure. [Перенос данных из SQL Server в Базу данных SQL Azure с помощью DMS в онлайн-режиме](tutorial-sql-server-azure-sql-online.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Для работы с этим руководством вам потребуется следующее:
 
@@ -49,10 +50,11 @@ Azure Database Migration Service можно использовать для пе
     > Если вы используете SQL Server Integration Services (SSIS) и вам нужно перенести базу данных каталога для проектов и пакетов служб SSIS (SSISDB) из SQL Server в Базу данных SQL Azure, создание и администрирование целевой базы данных SSISDB будет происходить автоматически от вашего имени, когда вы подготовите к работе SSIS в Фабрике данных Azure (ADF). Дополнительные сведения о миграции пакетов SSIS см. в статье [Перенос пакетов SQL Server Integration Services в Azure](https://docs.microsoft.com/azure/dms/how-to-migrate-ssis-packages).
   
 - Скачайте и установите [Помощник по миграции данных](https://www.microsoft.com/download/details.aspx?id=53595) версии 3.3 или более поздней.
-- Создайте виртуальную сеть Azure для Azure Database Migration Service с помощью модели развертывания Azure Resource Manager, которая обеспечивает подключение "сеть — сеть" к локальным исходным серверам с помощью [ExpressRoute](https://docs.microsoft.com/azure/expressroute/expressroute-introduction) или [VPN](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-about-vpngateways). Дополнительные сведения о создании виртуальной сети приведены в [документации по виртуальным сетям](https://docs.microsoft.com/azure/virtual-network/). В частности, уделите внимание кратким руководствам с пошаговыми инструкциями.
+- Создайте виртуальная сеть Microsoft Azure для Azure Database Migration Service с помощью модели развертывания Azure Resource Manager, которая обеспечивает подключение типа "сеть — сеть" к локальным исходным серверам с помощью [ExpressRoute](https://docs.microsoft.com/azure/expressroute/expressroute-introduction) или [VPN](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-about-vpngateways). Дополнительные сведения о создании виртуальной сети см. в [документации по виртуальной сети](https://docs.microsoft.com/azure/virtual-network/), особенно в кратком руководстве, где приведены пошаговые инструкции.
 
     > [!NOTE]
-    > Если вы используете ExpressRoute с пиринговой связью с сетью корпорации Майкрософт, во время настройки виртуальной сети добавьте в подсеть, в которой будет подготовлена служба, следующие [конечные точки](https://docs.microsoft.com/azure/virtual-network/virtual-network-service-endpoints-overview):
+    > При установке виртуальной сети с помощью ExpressRoute с пирингом сети в корпорацию Майкрософт добавьте следующие [конечные точки](https://docs.microsoft.com/azure/virtual-network/virtual-network-service-endpoints-overview) службы в подсеть, в которой будет подготовлена служба:
+    >
     > - целевую конечную точку базы данных (например, конечная точка SQL, конечная точка Cosmos DB и т. д.);
     > - конечную точку службы хранилища;
     > - конечную точку служебной шины.
@@ -61,12 +63,12 @@ Azure Database Migration Service можно использовать для пе
     >
     >Если у вас нет подключения типа "сеть — сеть" между локальной сетью и Azure, или если пропускная способность подключения "сеть — сеть" ограничена, рекомендуется использовать Azure Database Migration Service в гибридном режиме (Предварительная версия). Гибридный режим использует локальный рабочий процесс миграции вместе с экземпляром Azure Database Migration Service, который работает в облаке. Сведения о создании экземпляра Azure Database Migration Service в гибридном режиме см. в статье [Создание экземпляра Azure Database Migration Service в гибридном режиме с помощью портала Azure](https://aka.ms/dms-hybrid-create).
 
-- Убедитесь, что правила группы безопасности сети для виртуальной сети не блокируют следующие входящие порты для Azure Database Migration Service: 443, 53, 9354, 445, 12000. Дополнительные сведения о фильтрации трафика, предназначенного для виртуальной сети Azure, с помощью NSG см. в статье [Plan virtual networks](https://docs.microsoft.com/azure/virtual-network/virtual-networks-nsg) (Планирование виртуальных сетей).
+- Убедитесь, что правила группы безопасности сети виртуальной сети не блокируют следующие порты входящих подключений для Azure Database Migration Service: 443, 53, 9354, 445, 12000. Дополнительные сведения о фильтрации трафика в виртуальной сети Azure NSG см. в статье [Фильтрация сетевого трафика с помощью групп безопасности сети](https://docs.microsoft.com/azure/virtual-network/virtual-networks-nsg).
 - Настройте [брандмауэр Windows для доступа к ядру СУБД](https://docs.microsoft.com/sql/database-engine/configure-windows/configure-a-windows-firewall-for-database-engine-access).
 - Откройте брандмауэр Windows, чтобы предоставить Azure Database Migration Service доступ к исходному серверу SQL Server. По умолчанию это TCP-порт 1433.
 - Если вы запустили несколько именованных экземпляров SQL Server, использующих динамические порты, вы можете включить службу обозревателя SQL и разрешить доступ к UDP-порту 1434 через брандмауэры. Это позволит службе Azure Database Migration Service подключиться к именованному экземпляру на исходном сервере.
 - Если перед исходными базами данных развернуто устройство брандмауэра, вам может понадобиться добавить правила брандмауэра, чтобы позволить службе Azure Database Migration Service обращаться к исходным базам данных для выполнения миграции.
-- Создайте [правило брандмауэра](https://docs.microsoft.com/azure/sql-database/sql-database-firewall-configure) для IP-адресов на уровне сервера для сервера Базы данных SQL Azure, чтобы предоставить службе Azure Database Migration Service доступ к целевым базам данных. Задайте диапазон подсети в виртуальной сети, которая используется для Azure Database Migration Service.
+- Создайте [правило брандмауэра](https://docs.microsoft.com/azure/sql-database/sql-database-firewall-configure) для IP-адресов на уровне сервера для сервера Базы данных SQL Azure, чтобы предоставить службе Azure Database Migration Service доступ к целевым базам данных. Укажите диапазон подсети виртуальной сети, используемый для Azure Database Migration Service.
 - Убедитесь, что учетные данные, используемые для подключения к исходному экземпляру SQL Server, имеют разрешения [CONTROL SERVER](https://docs.microsoft.com/sql/t-sql/statements/grant-server-permissions-transact-sql).
 - Убедитесь, что учетные данные, используемые для подключения к целевому экземпляру Базы данных SQL Azure, имеют разрешения CONTROL DATABASE в целевых базах данных SQL Azure.
 
@@ -147,7 +149,7 @@ Azure Database Migration Service можно использовать для пе
 
 ## <a name="register-the-microsoftdatamigration-resource-provider"></a>Регистрация поставщика ресурсов Microsoft.DataMigration
 
-1. Войдите на портал Azure, щелкните **Все службы** и выберите **Подписки**.
+1. Войдите на портал Azure. Выполните поиск по запросу **Подписки** и выберите этот пункт.
 
    ![Отображение подписок на портале](media/tutorial-sql-server-to-azure-sql/portal-select-subscription1.png)
 
@@ -155,13 +157,13 @@ Azure Database Migration Service можно использовать для пе
 
     ![Отображение поставщиков ресурсов](media/tutorial-sql-server-to-azure-sql/portal-select-resource-provider.png)
 
-3. В поле поиска введите migration, а затем справа от **Microsoft.DataMigration** щелкните **Зарегистрировать**.
+3. Найдите миграцию и выберите **зарегистрировать** для **Microsoft. Migration**.
 
     ![Регистрация поставщика ресурсов](media/tutorial-sql-server-to-azure-sql/portal-register-resource-provider.png)    
 
 ## <a name="create-an-instance"></a>Создание экземпляра
 
-1. На портале Azure выберите **+Создать ресурс**, введите в поле поиска "Azure Database Migration Service", а затем в раскрывающемся списке выберите **Azure Database Migration Service**.
+1. В меню портал Azure или на **домашней** странице выберите **создать ресурс**. Найдите и выберите **Azure Database Migration Service**.
 
     ![Azure Marketplace](media/tutorial-sql-server-to-azure-sql/portal-marketplace.png)
 
@@ -173,11 +175,11 @@ Azure Database Migration Service можно использовать для пе
 
 4. Выберите расположение, в котором нужно создать экземпляр Azure Database Migration Service.
 
-5. Создайте виртуальную сеть или выберите имеющуюся.
+5. Выберите существующую виртуальную сеть или создайте новую.
 
-    Виртуальная сеть предоставляет Azure Database Migration Service доступ к исходному экземпляру SQL Server и конечному экземпляру Базы данных SQL Azure.
+    Виртуальная сеть предоставляет Azure Database Migration Service с доступом к исходным SQL Server и целевому экземпляру базы данных SQL Azure.
 
-    Дополнительные сведения о создании виртуальной сети на портале Azure см. в статье [Краткое руководство. Создание виртуальной сети с помощью портала Azure](https://aka.ms/DMSVnet).
+    Дополнительные сведения о создании виртуальной сети в портал Azure см. в статье [Создание виртуальной сети с помощью портал Azure](https://aka.ms/DMSVnet).
 
 6. Выберите ценовую категорию.
 
@@ -191,15 +193,16 @@ Azure Database Migration Service можно использовать для пе
 
 После создания службы найдите ее на портале Azure, откройте и создайте проект миграции.
 
-1. На портале Azure щелкните **Все службы**, выполните поиск по запросу "Azure Database Migration Service" и выберите **Azure Database Migration Services** (Службы Azure Database Migration Service).
+1. В меню портал Azure выберите **все службы**. Найдите и выберите **Azure Database Migration Services**.
 
      ![Поиск всех экземпляров Azure Database Migration Service](media/tutorial-sql-server-to-azure-sql/dms-search.png)
 
-2. На экране **Azure Database Migration Services** найдите имя созданного экземпляра Azure Database Migration Service и выберите его.
+2. На экране **Azure Database Migration Services** выберите созданный экземпляр Azure Database Migration Service.
 
-    ![Поиск экземпляра службы Azure Database Migration Service](media/tutorial-sql-server-to-azure-sql/dms-instance-search.png)
+3. Выберите **Новый проект миграции**.
 
-3. Выберите **+ Новый проект миграции**.
+     ![Поиск экземпляра службы Azure Database Migration Service](media/tutorial-sql-server-to-azure-sql/dms-instance-search.png)
+
 4. На экране **Новый проект миграции** задайте имя для проекта, в текстовом поле **Тип исходного сервера** выберите **SQL Server**, в текстовом поле **Тип целевого сервера** выберите **База данных SQL Azure**, а затем для параметра **Выберите тип действия** выберите значение **Автономная миграция данных**.
 
     ![Создание проекта Database Migration Service](media/tutorial-sql-server-to-azure-sql/dms-create-project2.png)
@@ -238,7 +241,7 @@ Azure Database Migration Service можно использовать для пе
 
 3. На экране **Выбрать таблицы** выберите **Сохранить**, разверните список таблиц и просмотрите список затронутых полей.
 
-    Обратите внимание на то, что служба Azure Database Migration Service автоматически выбирает все пустые исходные таблицы, имеющиеся в целевом экземпляре Базы данных SQL Azure. Чтобы повторно перенести таблицы, уже содержащие данные, необходимо явным образом выбрать их в этой колонке.
+    Azure Database Migration Service автоматически выбирает все пустые исходные таблицы, существующие в целевом экземпляре базы данных SQL Azure. Чтобы повторно перенести таблицы, уже содержащие данные, необходимо явным образом выбрать их в этой колонке.
 
     ![Выбор таблиц](media/tutorial-sql-server-to-azure-sql/dms-configure-setting-activity2.png)
 

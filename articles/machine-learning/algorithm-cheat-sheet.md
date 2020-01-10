@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: FrancescaLazzeri
 ms.author: lazzeri
 ms.date: 11/04/2019
-ms.openlocfilehash: 10714e155bebdd7acc5d7febb345c17fa81bab13
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: b43f2f351345f05c3eb56a84fb1a0eadb4826707
+ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73516296"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75771518"
 ---
 # <a name="machine-learning-algorithm-cheat-sheet-for-azure-machine-learning-designer"></a>Лист Машинное обучение алгоритм Памятка по для конструктора Машинное обучение Azure
 
@@ -28,7 +28,7 @@ ms.locfileid: "73516296"
 
 ![Таблица Машинное обучение алгоритма Памятка по: Узнайте, как выбрать алгоритм Машинное обучение.](./media/algorithm-cheat-sheet/machine-learning-algorithm-cheat-sheet.svg)
 
-Скачайте и распечатайте памятку по алгоритмам машинного обучения в формате в формате А3 (27,94 x 43,18 см), чтобы вы всегда могли обратиться к ней при выборе алгоритма.
+Скачайте и распечатайте памятку по алгоритмам машинного обучения размером 27,94 x 43,18 см (примерно A3), чтобы вы всегда могли обратиться к ней при выборе алгоритма.
 
 ## <a name="how-to-use-the-machine-learning-algorithm-cheat-sheet"></a>Использование листа Машинное обучение Algorithm Памятка по
 
@@ -56,10 +56,10 @@ ms.locfileid: "73516296"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Сведения о студии в машинное обучение Azure и портал Azure](service/overview-what-is-azure-ml.md).
+* [Сведения о студии в машинное обучение Azure и портал Azure](overview-what-is-azure-ml.md).
 
 * Список алгоритмов и модулей см. в [справочнике по алгоритмам и модулям](algorithm-module-reference/module-reference.md).
 
-* [Учебник. Создание модели прогнозирования в конструкторе машинное обучение Azure](service/ui-tutorial-automobile-price-train-score.md).
+* [Учебник. Создание модели прогнозирования в конструкторе машинное обучение Azure](tutorial-designer-automobile-price-train-score.md).
 
-* [Узнайте о глубоком обучении и машинном обучении](service/concept-deep-learning-vs-machine-learning.md).
+* [Узнайте о глубоком обучении и машинном обучении](concept-deep-learning-vs-machine-learning.md).

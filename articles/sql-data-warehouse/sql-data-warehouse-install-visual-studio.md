@@ -1,5 +1,5 @@
 ---
-title: Установка Visual Studio 2019
+title: Установка Visual Studio 2019.
 description: Установка Visual Studio и SQL Server Data Tools (SSDT) для хранилища данных SQL Azure.
 services: sql-data-warehouse
 ms.custom: seo-lt-2019
@@ -9,15 +9,15 @@ manager: craigg
 ms.service: sql-data-warehouse
 ms.topic: conceptual
 ms.subservice: development
-ms.date: 11/06/2019
+ms.date: 01/07/2020
 ms.author: kevin
 ms.reviewer: igorstan
-ms.openlocfilehash: 758c9b323e78e7e86312555f5fabdcc9c4c28330
-ms.sourcegitcommit: 5a8c65d7420daee9667660d560be9d77fa93e9c9
+ms.openlocfilehash: b2b7b2413a187c446aace4eb1e416dea1b4258d3
+ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74123732"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75750663"
 ---
 # <a name="getting-started-with-visual-studio-2019-for-sql-data-warehouse"></a>Начало работы с Visual Studio 2019 для хранилища данных SQL
 Visual Studio **2019** SQL Server Data Tools (SSDT) — это единый инструмент, позволяющий выполнять следующие действия:
@@ -29,8 +29,8 @@ Visual Studio **2019** SQL Server Data Tools (SSDT) — это единый ин
 - Интегрируйте проект базы данных с системами управления версиями, такими как Git, с Azure Repos
 - Настройка конвейеров непрерывной интеграции и развертывания с помощью серверов автоматизации, таких как Azure DevOps
 
-## <a name="install-visual-studio-2019"></a>Установка Visual Studio 2019
-См. статью [Загрузка Visual Studio 2019][] для загрузки и установки visual Studio **16,3 и более поздних версий**. Во время установки выберите рабочую нагрузку "хранение и обработка данных". Автономная установка SSDT больше не требуется в Visual Studio 2019.
+## <a name="install-visual-studio-2019"></a>Установка Visual Studio 2019.
+См. статью [Скачивание Visual Studio 2019][] для загрузки и установки visual Studio **16,3 и более поздних версий**. Во время установки выберите рабочую нагрузку "хранение и обработка данных". Автономная установка SSDT больше не требуется в Visual Studio 2019.
 
 ## <a name="unsupported-features-in-ssdt"></a>Неподдерживаемые функции в SSDT
 
@@ -45,8 +45,9 @@ Visual Studio **2019** SQL Server Data Tools (SSDT) — это единый ин
 - [Динамическое маскирование данных](https://docs.microsoft.com/sql/relational-databases/security/dynamic-data-masking?toc=%2Fazure%2Fsql-data-warehouse%2Ftoc.json&view=sql-server-2017#defining-a-dynamic-data-mask)
   - Отправьте запрос в службу поддержки или Проголосуйте [здесь](https://feedback.azure.com/forums/307516-sql-data-warehouse/suggestions/39040048-ssdt-support-dynamic-data-masking) , чтобы получить поддерживаемую функцию. 
 - [Predict](https://docs.microsoft.com/sql/t-sql/queries/predict-transact-sql?view=sql-server-ver15&viewFallbackFrom=azure-sqldw-latest) , функция 
+- [Таблицы с ограничениями](https://docs.microsoft.com/azure/sql-data-warehouse/sql-data-warehouse-table-constraints#table-constraints) не поддерживаются. Для этих объектов таблицы задайте для действия сборки значение "нет".
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда у вас установлена последняя версия SSDT, вы можете [Подключиться][connect] к хранилищу данных SQL.
 
@@ -58,7 +59,7 @@ Visual Studio **2019** SQL Server Data Tools (SSDT) — это единый ин
 [connect]: ./sql-data-warehouse-query-visual-studio.md
 
 <!--Other-->
-[Загрузка Visual Studio 2019]: https://visualstudio.microsoft.com/downloads/
+[Скачивание Visual Studio 2019]: https://visualstudio.microsoft.com/downloads/
 [Installing Visual Studio]: https://msdn.microsoft.com/library/e2h7fzkw.aspx
 [SSDT Download]: https://msdn.microsoft.com/library/mt204009.aspx
 [UserVoice]: https://feedback.azure.com/forums/307516-sql-data-warehouse/suggestions/13313247-database-project-from-visual-studio-to-support-azu

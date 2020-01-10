@@ -4,12 +4,12 @@ description: Узнайте о концепциях и методах Функц
 ms.assetid: d8efe41a-bef8-4167-ba97-f3e016fcd39e
 ms.topic: conceptual
 ms.date: 10/12/2017
-ms.openlocfilehash: 3ccfc28dc332d2ff90ec09256a43a9143e37c03b
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.openlocfilehash: 7dd7ef3c4833fb9ffa3781f06faba4f40cd40cfb
+ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74974229"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75769019"
 ---
 # <a name="azure-functions-developers-guide"></a>Руководство для разработчиков по Функциям Azure
 Некоторые из Функций Azure имеют ряд общих технических особенностей и компонентов вне зависимости от используемого языка или привязки. Прежде чем приступать к детальному изучению особенностей, характерных для определенного языка или привязки, ознакомьтесь с этими общими сведениями.
@@ -42,7 +42,7 @@ ms.locfileid: "74974229"
 
 | Свойство | Значения и типы | Комментарии |
 | --- | --- | --- |
-| `type` |string |Тип привязки. Пример: `queueTrigger`. |
+| `type` |string |Тип привязки. Например, `queueTrigger`. |
 | `direction` |"in", "out" |Указывает, служит ли привязка для получения данных в функции или для отправки их из функции. |
 | `name` |string |Имя, используемое для связанных данных в функции. Для C# это имя аргумента, а для JavaScript — ключ в списке ключей и значений. |
 
@@ -98,8 +98,8 @@ ms.locfileid: "74974229"
 ## <a name="next-steps"></a>Дальнейшие действия
 Для получения дополнительных сведений см. следующие ресурсы:
 
-* [Триггеры и привязки в функциях Azure](functions-triggers-bindings.md)
+* [Azure Functions triggers and bindings (Триггеры и привязки в Функциях Azure)](functions-triggers-bindings.md)
 * [Как программировать и тестировать функции Azure в локальной среде](./functions-develop-local.md)
 * [Best Practices for Azure Functions](functions-best-practices.md) (Рекомендации по Функциям Azure)
 * [Справочник разработчика C# по функциям Azure](functions-dotnet-class-library.md)
-* [Справочник разработчика NodeJS по функциям Azure](functions-reference-node.md)
+* [Справочник разработчика по функциям Azure Node. js](functions-reference-node.md)

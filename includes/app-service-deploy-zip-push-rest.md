@@ -4,12 +4,12 @@ ms.service: app-service
 ms.topic: include
 ms.date: 08/12/2019
 ms.author: cephalin
-ms.openlocfilehash: 4f3236c0a167a2b6f7586c6cb5fea8e30f55a86c
-ms.sourcegitcommit: 0f54f1b067f588d50f787fbfac50854a3a64fff7
+ms.openlocfilehash: 92e39f128e90ba83a919388e217f0edc86f81770
+ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68954079"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75769678"
 ---
 ## <a name="rest"></a>Развертывание ZIP-файла с помощью с REST API 
 
@@ -19,7 +19,7 @@ ms.locfileid: "68954079"
 
 ### <a name="with-curl"></a>Использование cURL
 
-В примере ниже для развертывания ZIP-файла используется средство cURL. Замените заполнители `<username>`, `<password>`, `<zip_file_path>` и `<app_name>`. Когда в cURL появится запрос, введите пароль.
+В примере ниже для развертывания ZIP-файла используется средство cURL. Замените заполнители `<deployment_user>`, `<zip_file_path>` и `<app_name>`. Когда в cURL появится запрос, введите пароль.
 
 ```bash
 curl -X POST -u <deployment_user> --data-binary @"<zip_file_path>" https://<app_name>.scm.azurewebsites.net/api/zipdeploy
@@ -41,7 +41,7 @@ Publish-AzWebapp -ResourceGroupName <group-name> -Name <app-name> -ArchivePath <
 
 Этот запрос позволяет активировать принудительное развертывание из отправленного ZIP-файла. 
 
-Чтобы просмотреть текущие и прошлые развертывания, выполните следующие команды. Опять же, замените `<deployment-user>`заполнители, `<app-name>` `<deployment-password>`и.
+Чтобы просмотреть текущие и прошлые развертывания, выполните следующие команды. Опять же, замените заполнители `<deployment-user>`, `<deployment-password>`и `<app-name>`.
 
 ```bash
 $username = "<deployment-user>"

@@ -1,25 +1,15 @@
 ---
-title: 'Azure Service Fabric: различия между версиями для Linux и Windows | Документация Майкрософт'
+title: Различия в Azure Service Fabric между Linux и Windows
 description: Различия между Azure Service Fabric для Linux и Azure Service Fabric для Windows.
-services: service-fabric
-documentationcenter: .net
-author: mani-ramaswamy
-manager: chackdan
-editor: ''
-ms.assetid: d552c8cd-67d1-45e8-91dc-871853f44fc6
-ms.service: service-fabric
-ms.devlang: dotNet
 ms.topic: conceptual
-ms.tgt_pltfrm: NA
-ms.workload: NA
 ms.date: 2/23/2018
-ms.author: atsenthi
-ms.openlocfilehash: 0010108a7f3f9341d28c0b2f146c2e2f421ce47d
-ms.sourcegitcommit: aef6040b1321881a7eb21348b4fd5cd6a5a1e8d8
+ms.custom: sfrev
+ms.openlocfilehash: c064291491110b17c172a561afbd1e65d6c08d06
+ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72170582"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75748533"
 ---
 # <a name="differences-between-service-fabric-on-linux-and-windows"></a>Различия между Service Fabric для Linux и для Windows
 
@@ -88,9 +78,8 @@ ms.locfileid: "72170582"
 * Stop-ServiceFabricRepairTask
 * Update-ServiceFabricRepairTaskHealthPolicy
 
+## <a name="next-steps"></a>Дальнейшие действия
 
-
-## <a name="next-steps"></a>Следующие шаги
 * [Подготовка среды разработки в Linux](service-fabric-get-started-linux.md)
 * [Настройка среды разработки для Mac OS X](service-fabric-get-started-mac.md)
 * [Создание первого приложения Azure Service Fabric](service-fabric-create-your-first-linux-application-with-java.md)

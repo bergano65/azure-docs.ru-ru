@@ -8,19 +8,19 @@ ms.topic: conceptual
 ms.date: 05/20/2019
 ms.author: bwren
 ms.subservice: logs
-ms.openlocfilehash: ff8956d942aa54500a08cac4ebd94127b14b0bd4
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: b71f5590f120e15bd4ea027bcf6132795dac3cb6
+ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74931763"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75750571"
 ---
 # <a name="export-azure-activity-log-to-storage-or-azure-event-hubs"></a>Экспорт журнала действий Azure в хранилище или концентраторы событий Azure
 
 > [!WARNING]
 > Теперь можно выполнить сбор журнала действий в Log Analytics рабочую область, используя параметр диагностики, аналогичный сбору журналов ресурсов. См. статью [Получение и анализ журналов действий Azure в log Analytics рабочей области в Azure Monitor](diagnostic-settings-subscription.md).
 
-[Журнал действий Azure](activity-logs-overview.md) позволяет получить представление о событиях уровня подписки, произошедших в подписке Azure. Помимо просмотра журнала действий в портал Azure или его копирования в Log Analytics рабочую область, где его можно проанализировать с помощью других данных, собранных Azure Monitor, можно создать профиль журнала для архивации журнала действий в учетную запись хранения Azure или потоковой передачи в  Концентратор событий.
+[Журнал действий Azure](platform-logs-overview.md) позволяет получить представление о событиях уровня подписки, произошедших в подписке Azure. Помимо просмотра журнала действий в портал Azure или его копирования в Log Analytics рабочую область, где его можно проанализировать с помощью других данных, собранных Azure Monitor, можно создать профиль журнала для архивации журнала действий в учетную запись хранения Azure или потоковой передачи в  Концентратор событий.
 
 ## <a name="archive-activity-log"></a>Архивировать журнал действий
 Архивация журнала действий в учетную запись хранения полезна, если вы хотите хранить данные журнала дольше 90 дней (с полным контролем над политикой хранения) для аудита, статического анализа или резервного копирования. Если вам нужно хранить события только в течение 90 дней или меньше, вам не нужно настраивать архивацию для учетной записи хранения, так как события журнала действий сохраняются на платформе Azure в течение 90 дней.
@@ -111,13 +111,13 @@ ms.locfileid: "74931763"
     Add-AzLogProfile -Name my_log_profile -StorageAccountId /subscriptions/s1/resourceGroups/myrg1/providers/Microsoft.Storage/storageAccounts/my_storage -serviceBusRuleId /subscriptions/s1/resourceGroups/Default-ServiceBus-EastUS/providers/Microsoft.ServiceBus/namespaces/mytestSB/authorizationrules/RootManageSharedAccessKey -Location global,westus,eastus -RetentionInDays 90 -Category Write,Delete,Action
     ```
 
-    | Свойство | Обязательно для заполнения | Описание |
+    | Свойство | Обязательно для заполнения | Description |
     | --- | --- | --- |
-    | Name |ДА |Имя профиля журнала. |
+    | Имя |Да |Имя профиля журнала. |
     | StorageAccountId |Нет |Идентификатор ресурса учетной записи хранения, в которой должен быть сохранен журнал действий. |
     | serviceBusRuleId |Нет |Идентификатор правила служебной шины для пространства имен служебной шины, в котором вы сможете создать концентраторы событий. Это строка с форматом: `{service bus resource ID}/authorizationrules/{key name}`. |
-    | Location |ДА |Разделенный запятыми список регионов, для которых будут собираться события журнала действий. |
-    | RetentionInDays |ДА |Число дней, в течение которых события должны храниться в учетной записи хранения в диапазоне от 1 до 365. Нулевое значение означает, что журналы хранятся неограниченно долго. |
+    | Расположение |Да |Разделенный запятыми список регионов, для которых будут собираться события журнала действий. |
+    | RetentionInDays |Да |Число дней, в течение которых события должны храниться в учетной записи хранения в диапазоне от 1 до 365. Нулевое значение означает, что журналы хранятся неограниченно долго. |
     | Категория |Нет |Разделенный запятыми список категорий событий, которые будут собираться. Возможные значения: _Write_, _Delete_и _Action_. |
 
 ### <a name="example-script"></a>Пример сценария
@@ -154,99 +154,14 @@ ms.locfileid: "74931763"
    az monitor log-profiles create --name "default" --location null --locations "global" "eastus" "westus" --categories "Delete" "Write" "Action"  --enabled false --days 0 --service-bus-rule-id "/subscriptions/<YOUR SUBSCRIPTION ID>/resourceGroups/<RESOURCE GROUP NAME>/providers/Microsoft.EventHub/namespaces/<EVENT HUB NAME SPACE>/authorizationrules/RootManageSharedAccessKey"
    ```
 
-    | Свойство | Обязательно для заполнения | Описание |
+    | Свойство | Обязательно для заполнения | Description |
     | --- | --- | --- |
-    | name |ДА |Имя профиля журнала. |
-    | storage-account-id |ДА |Идентификатор ресурса для учетной записи хранения, в которую будут сохранены журналы действий. |
-    | Расположения |ДА |Разделенный пробелами список регионов, для которых будут собираться события журнала действий. Вы можете просмотреть список всех регионов для своей подписки с помощью `az account list-locations --query [].name`. |
-    | days |ДА |Число дней, в течение которых должны храниться события, от 1 до 365. Нулевое значение означает, что журналы будут храниться неограниченно долго, то есть всегда.  Если значение равно нулю, то параметру Enabled должно быть присвоено значение false. |
-    |включено | ДА |Значение True или False.  Позволяет включить или отключить политику хранения.  Если установлено значение True, параметр дней должен иметь значение больше 0.
-    | Категории |ДА |Разделенный пробелами список категорий событий, которые будут собираться. Возможные значения: Write, Delete или Action. |
-
-
-
-## <a name="activity-log-schema"></a>Схема журнала действий
-Независимо от того, отправлены ли в службу хранилища Azure или концентратор событий, данные журнала действий будут записаны в JSON в следующем формате.
-
-
-> Формат данных журнала действий, записываемых в учетную запись хранения, изменился на строки JSON в 2018 ноября. 1. Дополнительные сведения об этом изменении формата см. в разделе [Подготовка к изменению формата для Azure Monitor журналов ресурсов, архивных в учетной записи хранения](diagnostic-logs-append-blobs.md) .
-
-``` JSON
-{
-    "records": [
-        {
-            "time": "2015-01-21T22:14:26.9792776Z",
-            "resourceId": "/subscriptions/s1/resourceGroups/MSSupportGroup/providers/microsoft.support/supporttickets/115012112305841",
-            "operationName": "microsoft.support/supporttickets/write",
-            "category": "Write",
-            "resultType": "Success",
-            "resultSignature": "Succeeded.Created",
-            "durationMs": 2826,
-            "callerIpAddress": "111.111.111.11",
-            "correlationId": "c776f9f4-36e5-4e0e-809b-c9b3c3fb62a8",
-            "identity": {
-                "authorization": {
-                    "scope": "/subscriptions/s1/resourceGroups/MSSupportGroup/providers/microsoft.support/supporttickets/115012112305841",
-                    "action": "microsoft.support/supporttickets/write",
-                    "evidence": {
-                        "role": "Subscription Admin"
-                    }
-                },
-                "claims": {
-                    "aud": "https://management.core.windows.net/",
-                    "iss": "https://sts.windows.net/72f988bf-86f1-41af-91ab-2d7cd011db47/",
-                    "iat": "1421876371",
-                    "nbf": "1421876371",
-                    "exp": "1421880271",
-                    "ver": "1.0",
-                    "http://schemas.microsoft.com/identity/claims/tenantid": "1e8d8218-c5e7-4578-9acc-9abbd5d23315 ",
-                    "http://schemas.microsoft.com/claims/authnmethodsreferences": "pwd",
-                    "http://schemas.microsoft.com/identity/claims/objectidentifier": "2468adf0-8211-44e3-95xq-85137af64708",
-                    "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/upn": "admin@contoso.com",
-                    "puid": "20030000801A118C",
-                    "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier": "9vckmEGF7zDKk1YzIY8k0t1_EAPaXoeHyPRn6f413zM",
-                    "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname": "John",
-                    "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname": "Smith",
-                    "name": "John Smith",
-                    "groups": "cacfe77c-e058-4712-83qw-f9b08849fd60,7f71d11d-4c41-4b23-99d2-d32ce7aa621c,31522864-0578-4ea0-9gdc-e66cc564d18c",
-                    "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name": " admin@contoso.com",
-                    "appid": "c44b4083-3bq0-49c1-b47d-974e53cbdf3c",
-                    "appidacr": "2",
-                    "http://schemas.microsoft.com/identity/claims/scope": "user_impersonation",
-                    "http://schemas.microsoft.com/claims/authnclassreference": "1"
-                }
-            },
-            "level": "Information",
-            "location": "global",
-            "properties": {
-                "statusCode": "Created",
-                "serviceRequestId": "50d5cddb-8ca0-47ad-9b80-6cde2207f97c"
-            }
-        }
-    ]
-}
-```
-Элементы в этом JSON описаны в следующей таблице.
-
-| Имя элемента | Описание |
-| --- | --- |
-| time |Метка времени, когда служба Azure создала событие при обработке соответствующего этому событию запроса. |
-| ResourceId |Идентификатор ресурса для затронутого ресурса. |
-| operationName |Имя операции. |
-| category |Категория действия, например "Запись", "Чтение", "Действие" |
-| resultType |Тип результата, например "Успешно", "Ошибка", "Запуск" |
-| resultSignature |Зависит от типа ресурса. |
-| durationMs |Время выполнения операции в миллисекундах |
-| callerIpAddress |IP-адрес пользователя, который выполнил операцию, утверждение имени субъекта-службы или имени участника-пользователя в зависимости от доступности. |
-| correlationId |Обычно GUID в строковом формате. События, которые совместно используют идентификатор correlationId, принадлежат к одному общему действию. |
-| удостоверение |Большой двоичный объект JSON, описывающий авторизацию и утверждения. |
-| authorization |BLOB-объект со свойствами RBAC события. Обычно включает следующие свойства: action, role и scope. |
-| level |Уровень события. Одно из следующих значений: _критическая_, _Ошибка_, _предупреждение_, _информационное_и _подробное_ . |
-| location |Регион, к которому принадлежит расположение (или глобальное местоположение). |
-| properties |Набор пар `<Key, Value>` (например, Dictionary) c подробным описанием события. |
-
-> [!NOTE]
-> Свойства и использование этих свойств могут различаться в зависимости от ресурса.
+    | name |Да |Имя профиля журнала. |
+    | storage-account-id |Да |Идентификатор ресурса для учетной записи хранения, в которую будут сохранены журналы действий. |
+    | Расположения |Да |Разделенный пробелами список регионов, для которых будут собираться события журнала действий. Вы можете просмотреть список всех регионов для своей подписки с помощью `az account list-locations --query [].name`. |
+    | days |Да |Число дней, в течение которых должны храниться события, от 1 до 365. Нулевое значение означает, что журналы будут храниться неограниченно долго, то есть всегда.  Если значение равно нулю, то параметру Enabled должно быть присвоено значение false. |
+    |Включено | Да |Значение True или False.  Позволяет включить или отключить политику хранения.  Если установлено значение True, параметр дней должен иметь значение больше 0.
+    | Категории |Да |Разделенный пробелами список категорий событий, которые будут собираться. Возможные значения: Write, Delete или Action. |
 
 
 

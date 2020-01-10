@@ -1,6 +1,6 @@
 ---
 title: Настройка приложений Java для Linux
-description: Узнайте, как настроить предварительно созданный контейнер Java для приложения. В этой статье приведены наиболее распространенные задачи настройки.
+description: Узнайте, как настроить предварительно созданный контейнер Java для приложения. В этой статье показаны наиболее распространенные задачи настройки.
 keywords: служба приложений Azure, веб-приложение, Linux, OSS, Java, Java EE, JEE, Java
 author: bmitchell287
 manager: barbkess
@@ -10,12 +10,12 @@ ms.date: 11/22/2019
 ms.author: brendm
 ms.reviewer: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: 571d4cd395cd0cec0982fedf267a88143fd73872
-ms.sourcegitcommit: 5aefc96fd34c141275af31874700edbb829436bb
+ms.openlocfilehash: 9c95772c8f10d7170a06d1d6793545a60fc8dd7c
+ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74805745"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75750744"
 ---
 # <a name="configure-a-linux-java-app-for-azure-app-service"></a>Настройка приложения Java для Linux для службы приложений Azure
 
@@ -238,24 +238,37 @@ public int getServerPort()
 
 ### <a name="using-the-java-key-store"></a>Использование хранилища ключей Java
 
-По умолчанию все общедоступные или частные сертификаты, [Отправленные в службу приложений Linux](../configure-ssl-certificate.md) , будут загружены в хранилище ключей Java при запуске контейнера. Это означает, что отправленные сертификаты будут доступны в контексте подключения при создании исходящих TLS подключений. После отправки сертификата необходимо перезапустить службу приложений, чтобы она загрузилась в хранилище ключей Java.
+По умолчанию все общедоступные или частные сертификаты, [Отправленные в службу приложений Linux](../configure-ssl-certificate.md) , будут загружены в соответствующие хранилища ключей Java при запуске контейнера. После отправки сертификата необходимо перезапустить службу приложений, чтобы она загрузилась в хранилище ключей Java. Общедоступные сертификаты загружаются в хранилище ключей на `$JAVA_HOME/jre/lib/security/cacerts`, а частные сертификаты хранятся в `$JAVA_HOME/lib/security/client.jks`.
 
-Вы можете взаимодействовать или отлаживать инструмент для работы с ключами Java, [открыв SSH-подключение](app-service-linux-ssh-support.md) к службе приложений и выполнив команду `keytool`. Список команд см. в [документации по основным средствам](https://docs.oracle.com/javase/8/docs/technotes/tools/unix/keytool.html) . Сертификаты хранятся в расположении файлов хранилища ключей Java по умолчанию, `$JAVA_HOME/jre/lib/security/cacerts`.
-
-Для шифрования подключения JDBC может потребоваться дополнительная настройка. Обратитесь к документации по выбранному драйверу JDBC.
+Для шифрования подключения JDBC с сертификатами в хранилище ключей Java может потребоваться дополнительная настройка. Обратитесь к документации по выбранному драйверу JDBC.
 
 - [PostgreSQL](https://jdbc.postgresql.org/documentation/head/ssl-client.html)
 - [SQL Server](https://docs.microsoft.com/sql/connect/jdbc/connecting-with-ssl-encryption?view=sql-server-ver15)
 - [MySQL](https://dev.mysql.com/doc/connector-j/5.1/en/connector-j-reference-using-ssl.html)
 - [MongoDB](https://mongodb.github.io/mongo-java-driver/3.4/driver/tutorials/ssl/)
-- [Cassandra](https://docs.datastax.com/developer/java-driver/4.3/)
+- [Cassandra](https://docs.datastax.com/en/developer/java-driver/4.3/)
 
+#### <a name="initializing-the-java-key-store"></a>Инициализация хранилища ключей Java
 
-#### <a name="manually-initialize-and-load-the-key-store"></a>Инициализация и загрузка хранилища ключей вручную
+Чтобы инициализировать объект `import java.security.KeyStore`, загрузите файл хранилища ключей с паролем. Пароль по умолчанию для обоих хранилищ ключей — "чанжеит".
 
-Вы можете инициализировать хранилище ключей и добавить сертификаты вручную. Создайте параметр приложения `SKIP_JAVA_KEYSTORE_LOAD`со значением `1`, чтобы отключить автоматическую загрузку сертификатов в хранилище ключей службой приложений. Все открытые сертификаты, отправленные в службу приложений через портал Azure, хранятся в `/var/ssl/certs/`. Частные сертификаты хранятся в разделе `/var/ssl/private/`.
+```java
+KeyStore keyStore = KeyStore.getInstance("jks");
+keyStore.load(
+    new FileInputStream(System.getenv("JAVA_HOME")+"/lib/security/cacets"),
+    "changeit".toCharArray());
 
-Дополнительные сведения об API хранилища ключей см. в [официальной документации](https://docs.oracle.com/javase/8/docs/api/java/security/KeyStore.html).
+KeyStore keyStore = KeyStore.getInstance("pkcs12");
+keyStore.load(
+    new FileInputStream(System.getenv("JAVA_HOME")+"/lib/security/client.jks"),
+    "changeit".toCharArray());
+```
+
+#### <a name="manually-load-the-key-store"></a>Загрузка хранилища ключей вручную
+
+Сертификаты можно загрузить вручную в хранилище ключей. Создайте параметр приложения `SKIP_JAVA_KEYSTORE_LOAD`со значением `1`, чтобы отключить автоматическую загрузку сертификатов в хранилище ключей службой приложений. Все открытые сертификаты, отправленные в службу приложений через портал Azure, хранятся в `/var/ssl/certs/`. Частные сертификаты хранятся в разделе `/var/ssl/private/`.
+
+Вы можете взаимодействовать или отлаживать инструмент для работы с ключами Java, [открыв SSH-подключение](app-service-linux-ssh-support.md) к службе приложений и выполнив команду `keytool`. Список команд см. в [документации по основным средствам](https://docs.oracle.com/javase/8/docs/technotes/tools/unix/keytool.html) . Дополнительные сведения об API хранилища ключей см. в [официальной документации](https://docs.oracle.com/javase/8/docs/api/java/security/KeyStore.html).
 
 ## <a name="configure-apm-platforms"></a>Настройка платформ APM
 
@@ -294,7 +307,7 @@ public int getServerPort()
 
 По умолчанию служба приложений ждет, что приложение JAR будет называться *app. jar*. Если оно имеет это имя, оно будет запущено автоматически. Для пользователей Maven можно задать имя JAR, включив `<finalName>app</finalName>` в раздел `<build>` файла *POM. XML*. [Вы можете сделать то же самое в Gradle](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.bundling.Jar.html#org.gradle.api.tasks.bundling.Jar:archiveFileName) , задав свойство `archiveFileName`.
 
-Если вы хотите использовать другое имя для JAR-файла, необходимо также указать [команду запуска](app-service-linux-faq.md#built-in-images) , которая ВЫПОЛНЯЕТ файл JAR. Пример: `java -jar my-jar-app.jar`. Можно задать значение для команды запуска на портале, в разделе Конфигурация > Общие параметры или с параметром приложения с именем `STARTUP_COMMAND`.
+Если вы хотите использовать другое имя для JAR-файла, необходимо также указать [команду запуска](app-service-linux-faq.md#built-in-images) , которая ВЫПОЛНЯЕТ файл JAR. Например, `java -jar my-jar-app.jar`. Можно задать значение для команды запуска на портале, в разделе Конфигурация > Общие параметры или с параметром приложения с именем `STARTUP_COMMAND`.
 
 ### <a name="server-port"></a>Порт сервера
 
@@ -317,7 +330,7 @@ public int getServerPort()
 |------------|-----------------------------------------------|------------------------------------------------------------------------------------------|
 | PostgreSQL | `org.postgresql.Driver`                        | [Загрузить](https://jdbc.postgresql.org/download.html)                                    |
 | MySQL      | `com.mysql.jdbc.Driver`                        | [Скачать](https://dev.mysql.com/downloads/connector/j/) (выберите "Platform Independent" (Независимо от платформы)) |
-| SQL Server | `com.microsoft.sqlserver.jdbc.SQLServerDriver` | [Загрузить](https://docs.microsoft.com/sql/connect/jdbc/download-microsoft-jdbc-driver-for-sql-server?view=sql-server-2017#available-downloads-of-jdbc-driver-for-sql-server)                                                           |
+| SQL Server | `com.microsoft.sqlserver.jdbc.SQLServerDriver` | [Загрузить](https://docs.microsoft.com/sql/connect/jdbc/download-microsoft-jdbc-driver-for-sql-server?view=sql-server-2017#available-downloads-of-jdbc-driver-for-sql-server)                                                           |
 
 Чтобы настроить Tomcat для использования Java Database Connectivity (JDBC) или API сохраняемости Java (JPA), сначала настройте переменную среды `CATALINA_OPTS`, которая считывается в Tomcat при запуске. Задайте эти значения с помощью параметра приложения в [подключаемом модуле Maven для службы приложений](https://github.com/Microsoft/azure-maven-plugins/blob/develop/azure-webapp-maven-plugin/README.md):
 
@@ -373,7 +386,7 @@ public int getServerPort()
 apk add --update libxslt
 
 # Usage: xsltproc --output output.xml style.xsl input.xml
-xsltproc --output /usr/local/tomcat/conf/server.xml /home/tomcat/conf/transform.xsl /home/tomcat/conf/server.xml
+xsltproc --output /home/tomcat/conf/server.xml /home/tomcat/conf/transform.xsl /usr/local/tomcat/conf/server.xml
 ```
 
 Ниже приведен пример XSL-файла. В примере XSL-файла в Tomcat Server. XML добавляется новый узел соединителя.
@@ -485,7 +498,7 @@ xsltproc --output /usr/local/tomcat/conf/server.xml /home/tomcat/conf/transfo
 
 Служба приложений Azure в Linux позволяет разработчикам Java создавать, развертывать и масштабировать приложения Java Enterprise (Java EE) в полностью управляемой службе на основе Linux.  Базовая среда выполнения Java Enterprise — это сервер приложений [вилдфли](https://wildfly.org/) с открытым исходным кодом.
 
-Этот раздел содержит следующие подразделы:
+В этом разделе содержатся следующие подразделы:
 
 - [Масштабирование с помощью службы приложений](#scale-with-app-service)
 - [Настройка конфигурации сервера приложений](#customize-application-server-configuration)
@@ -663,7 +676,7 @@ xsltproc --output /usr/local/tomcat/conf/server.xml /home/tomcat/conf/transfo
 
 При следующем перезапуске службы приложений будет запущен сценарий запуска и выполнены необходимые действия по настройке. Чтобы убедиться, что эта конфигурация выполняется правильно, вы можете получить доступ к службе приложений с помощью SSH, а затем запустить сценарий запуска самостоятельно из командной строки bash. Также можно изучить журналы службы приложений. Дополнительные сведения об этих параметрах см. в разделе [ведение журналов и отладка приложений](#logging-and-debugging-apps).
 
-Далее необходимо обновить конфигурацию Вилдфли для приложения и повторно развернуть его. Выполните следующие действия.
+Далее необходимо обновить конфигурацию Вилдфли для приложения и повторно развернуть его. Выполните указанные ниже действия.
 
 1. Откройте файл *src/Main/Resources/META-INF/сохраняемость. XML* для своего приложения и найдите элемент `<jta-data-source>`. Замените его содержимое, как показано ниже:
 
@@ -709,7 +722,7 @@ xsltproc --output /usr/local/tomcat/conf/server.xml /home/tomcat/conf/transfo
 
 1. Откройте терминал Bash и выполните следующие команды, чтобы сохранить сведения о ресурсах Azure в переменных среды. Замените заполнители (включая угловые скобки) указанными значениями.
 
-    | Переменная            | Value                                                                      |
+    | Переменная            | Значение                                                                      |
     |---------------------|----------------------------------------------------------------------------|
     | RESOURCEGROUP_NAME  | Имя группы ресурсов, содержащей экземпляр службы приложений.       |
     | WEBAPP_NAME         | Имя экземпляра службы приложений.                                     |
@@ -993,7 +1006,7 @@ Bean, управляемые сообщениями, теперь настрое
 
 1. Откройте терминал Bash и используйте `<variable>=<value>`, чтобы задать каждую из следующих переменных среды.
 
-    | Переменная                 | Value                                                                      |
+    | Переменная                 | Значение                                                                      |
     |--------------------------|----------------------------------------------------------------------------|
     | RESOURCEGROUP_NAME       | Имя группы ресурсов, содержащей экземпляр службы приложений.       |
     | WEBAPP_NAME              | Имя экземпляра службы приложений.                                     |
@@ -1130,7 +1143,7 @@ Bean, управляемые сообщениями, теперь настрое
 
 Каждый квартал в поддерживаемые пакеты JDK автоматически вносятся исправления. Это происходит в январе, апреле, июле и октябре.
 
-### <a name="security-updates"></a>обновления для системы безопасности;
+### <a name="security-updates"></a>Обновления для системы безопасности
 
 Исправления для устранения серьезных уязвимостей в системе безопасности будут выпускаться по мере выпуска компанией Azul Systems. "Серьезными" считаются уязвимости с базовым индексом не меньше 9.0 в [NIST Common Vulnerability Scoring System версии 2](https://nvd.nist.gov/cvss.cfm).
 

@@ -1,6 +1,6 @@
 ---
 title: Устранение неполадок c общими ресурсами службы автоматизации Azure
-description: Узнайте, как устранять неполадки c общими ресурсами службы автоматизации Azure
+description: Узнайте, как устранять неполадки и устранять проблемы с общими ресурсами службы автоматизации Azure, поддерживающими модули Runbook.
 services: automation
 author: mgoedtel
 ms.author: magoedte
@@ -8,12 +8,12 @@ ms.date: 03/12/2019
 ms.topic: conceptual
 ms.service: automation
 manager: carmonm
-ms.openlocfilehash: 9313b042433489307a2bd2822a96d1e0e127362b
-ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
+ms.openlocfilehash: 4cea558b11d7ee7bbe838cecbd061cd487b536d2
+ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74849298"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75769869"
 ---
 # <a name="troubleshoot-errors-with-shared-resources"></a>Устранение неполадок c общими ресурсами
 
@@ -27,7 +27,7 @@ ms.locfileid: "74849298"
 
 При импорте или обновлении модуля в службе автоматизации Azure обнаружилось, что модуль застопорился в состоянии **Импорт**.
 
-#### <a name="cause"></a>Причина:
+#### <a name="cause"></a>Причина
 
 Импорт модулей PowerShell — это сложный многоэтапный процесс. При этом существует вероятность, что модуль не будет импортирован правильно. В таком случае импортируемый модуль может застопориться в переходном состоянии. Дополнительные сведения об этом процессе см. в статье [Importing a PowerShell Module](/powershell/scripting/developer/module/importing-a-powershell-module#the-importing-process) (Импорт модуля PowerShell).
 
@@ -49,7 +49,7 @@ Remove-AzureRmAutomationModule -Name ModuleName -ResourceGroupName ExampleResour
 Azure modules are being updated
 ```
 
-#### <a name="cause"></a>Причина:
+#### <a name="cause"></a>Причина
 
 Существует известная ошибка при обновлении модулей AzureRM в учетной записи службы автоматизации, которая находится в группе ресурсов с числовым именем, начинающимся с 0.
 
@@ -63,7 +63,7 @@ Azure modules are being updated
 
 Модулю не удается осуществить импорт, либо импорт выполнен успешно, но командлеты не извлекаются.
 
-#### <a name="cause"></a>Причина:
+#### <a name="cause"></a>Причина
 
 Ниже приведены наиболее распространенные причины, из-за которых модуль не может успешно завершить импорт в службу автоматизации Azure.
 
@@ -86,7 +86,7 @@ Azure modules are being updated
 
 Процесс обновления приостанавливается при использовании runbook [Update-AzureModule.ps1](https://github.com/azureautomation/runbooks/blob/master/Utility/ARM/Update-AzureModule.ps1) для обновления модулей Azure.
 
-#### <a name="cause"></a>Причина:
+#### <a name="cause"></a>Причина
 
 Значение по умолчанию для определения количества одновременно обновляемых модулей — 10 при использовании сценария `Update-AzureModule.ps1`. Процесс обновления подвержен ошибкам, если одновременно обновляются слишком много модулей.
 
@@ -128,7 +128,7 @@ Azure modules are being updated
 You do not have permissions to create…
 ```
 
-#### <a name="cause"></a>Причина:
+#### <a name="cause"></a>Причина
 
 У вас нет разрешений, необходимых для создания или обновления учетной записи запуска от имени, или ресурс заблокирован на уровне группы ресурсов.
 
@@ -148,7 +148,7 @@ You do not have permissions to create…
 Unable to find an entry point named 'GetPerAdapterInfo' in DLL 'iplpapi.dll'
 ```
 
-#### <a name="cause"></a>Причина:
+#### <a name="cause"></a>Причина
 
 Скорее всего, эта ошибка вызвана неправильно настроенной [учетной записью запуска от имени](../manage-runas-account.md).
 

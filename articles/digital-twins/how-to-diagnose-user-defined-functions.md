@@ -9,12 +9,12 @@ services: digital-twins
 ms.topic: conceptual
 ms.date: 11/22/2019
 ms.custom: seodec18
-ms.openlocfilehash: d362512ac6d06577a5c46bb0c6dab461f07ae709
-ms.sourcegitcommit: 12d902e78d6617f7e78c062bd9d47564b5ff2208
+ms.openlocfilehash: f963885f60116bf23087fceb6a92d18e71ac7f24
+ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2019
-ms.locfileid: "74457022"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75745337"
 ---
 # <a name="how-to-debug-user-defined-functions-in-azure-digital-twins"></a>Сведения о том, как выполнять отладку пользовательских функций в Azure Digital Twins
 
@@ -35,7 +35,7 @@ Azure Digital Twins поддерживает надежные механизмы
 
 * Сведения о настройке ведения журнала в Azure Digital двойников см. [в статье Настройка мониторинга и ведения журнала](./how-to-configure-monitoring.md).
 * Дополнительные сведения о мощных параметрах журналов, включенных в Azure Monitor, см. в обзоре [Azure Monitor](../azure-monitor/overview.md) .
-* Просмотрите статью [сбор и использование данных журналов из ресурсов Azure](../azure-monitor/platform/resource-logs-overview.md) для настройки параметров журналов диагностики в службе Digital двойников с помощью портал Azure, Azure CLI или PowerShell.
+* Просмотрите статью [сбор и использование данных журналов из ресурсов Azure](../azure-monitor/platform/platform-logs-overview.md) для настройки параметров журналов диагностики в службе Digital двойников с помощью портал Azure, Azure CLI или PowerShell.
 
 После настройки вы сможете выбрать все категории журналов, метрики и использовать мощные Azure Monitor рабочие области log Analytics для поддержки отладки.
 
@@ -212,8 +212,8 @@ function process(telemetry, executionContext) {
 
 1. **Нет прав**. Если у пользовательской функции нет назначения роли или достаточных разрешений для доступа к некоторым метаданным топологии, такая операция завершится ошибкой.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о включении [журналов и мониторинга](./how-to-configure-monitoring.md) для Azure Digital Twins.
 
-- Дополнительные сведения о параметрах ведения журнала Azure см. в статье [Обзор журнала действий Azure](../azure-monitor/platform/activity-logs-overview.md) .
+- Дополнительные сведения о параметрах ведения журнала Azure см. в статье [Обзор журнала действий Azure](../azure-monitor/platform/platform-logs-overview.md) .

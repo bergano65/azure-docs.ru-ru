@@ -14,18 +14,18 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/08/2019
 ms.author: juliako
-ms.openlocfilehash: 38fcda40a208da3f3f5aef5b13778ca38092d8f8
-ms.sourcegitcommit: dbde4aed5a3188d6b4244ff7220f2f75fce65ada
+ms.openlocfilehash: 16897ad095afcacff04d53b0956a972c36a25893
+ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74186118"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75750807"
 ---
 # <a name="monitor-media-services-metrics-and-diagnostic-logs-via-azure-monitor"></a>Мониторинг метрик и журналов диагностики служб мультимедиа с помощью Azure Monitor
 
 [Azure Monitor](../../azure-monitor/overview.md) позволяет отслеживать метрики и журналы диагностики, которые помогут понять, как работают приложения. Все данные, собранные Azure Monitor, помещаются в один из двух фундаментальных типов: метрики и журналы. Вы можете отслеживать журналы диагностики служб мультимедиа и создавать оповещения и уведомления для собранных метрик и журналов. Данные метрик можно визуализировать и анализировать с помощью [обозревателя метрик](../../azure-monitor/platform/metrics-getting-started.md). Вы можете отправить журналы в службу [хранилища Azure](https://azure.microsoft.com/services/storage/), выполнить их потоковую передачу в [концентраторы событий Azure](https://azure.microsoft.com/services/event-hubs/), экспортировать их в [log Analytics](https://azure.microsoft.com/services/log-analytics/)или использовать сторонние службы.
 
-Подробные сведения см. в разделе [метрики Azure Monitor](../../azure-monitor/platform/data-platform.md) и [Azure Monitor журналов диагностики](../../azure-monitor/platform/resource-logs-overview.md).
+Подробные сведения см. в разделе [метрики Azure Monitor](../../azure-monitor/platform/data-platform.md) и [Azure Monitor журналов диагностики](../../azure-monitor/platform/platform-logs-overview.md).
 
 В этом разделе обсуждаются поддерживаемые [метрики служб мультимедиа](#media-services-metrics) и [журналы диагностики служб мультимедиа](#media-services-diagnostic-logs).
 
@@ -42,7 +42,7 @@ ms.locfileid: "74186118"
 
 Вы можете отслеживать следующие метрики учетной записи.
 
-|Имя метрики|Отображаемое имя|ОПИСАНИЕ|
+|Имя метрики|Отображаемое имя|Description|
 |---|---|---|
 |ассеткаунт|Число ресурсов|Активы в вашей учетной записи.|
 |ассеткуота|Квота ресурса|Квота ресурса в вашей учетной записи.|
@@ -60,9 +60,9 @@ ms.locfileid: "74186118"
 
 Поддерживаются следующие метрики [конечных точек потоковой передачи](https://docs.microsoft.com/rest/api/media/streamingendpoints) служб мультимедиа:
 
-|Имя метрики|Отображаемое имя|ОПИСАНИЕ|
+|Имя метрики|Отображаемое имя|Description|
 |---|---|---|
-|Requests (Запросы)|Requests (Запросы)|Предоставляет общее число HTTP-запросов, обслуживаемых конечной точкой потоковой передачи.|
+|Запросы|Запросы|Предоставляет общее число HTTP-запросов, обслуживаемых конечной точкой потоковой передачи.|
 |Исходящие|Исходящие|Общее число байтов исходящего трафика. Например, байты, переходящие в потоковую точку потоковой передачи.|
 |SuccessE2ELatency|Успешное завершение до окончания задержки|Период времени, в течение которого конечная точка потоковой передачи получает запрос на момент отправки последнего байта ответа.|
 
@@ -84,7 +84,7 @@ ms.locfileid: "74186118"
 
 ## <a name="media-services-diagnostic-logs"></a>Журналы диагностики служб мультимедиа
 
-Журналы диагностики предоставляют обширные и часто встречающиеся данные о работе ресурсов Azure. Дополнительные сведения см. в статье получение [и использование данных журнала из ресурсов Azure](../../azure-monitor/platform/resource-logs-overview.md).
+Журналы диагностики предоставляют обширные и часто встречающиеся данные о работе ресурсов Azure. Дополнительные сведения см. в статье получение [и использование данных журнала из ресурсов Azure](../../azure-monitor/platform/platform-logs-overview.md).
 
 Службы мультимедиа поддерживают следующие журналы диагностики:
 
@@ -92,7 +92,7 @@ ms.locfileid: "74186118"
 
 ### <a name="key-delivery"></a>Доставка ключей
 
-|имя|ОПИСАНИЕ|
+|Имя|Description|
 |---|---|
 |Запрос службы доставки ключей|Журналы, отображающие сведения о запросе службы доставки ключей. Дополнительные сведения см. в разделе [схемы](media-services-diagnostic-logs-schema.md).|
 
@@ -109,9 +109,9 @@ ms.locfileid: "74186118"
 
 См. раздел [мониторинг журналов диагностики службы мультимедиа](media-services-diagnostic-logs-howto.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-* [Как получить и использовать данные журнала из ресурсов Azure](../../azure-monitor/platform/resource-logs-overview.md)
+* [Как получить и использовать данные журнала из ресурсов Azure](../../azure-monitor/platform/platform-logs-overview.md)
 * [Создание и просмотр оповещений метрик, а также управление ими с помощью Azure Monitor](../../azure-monitor/platform/alerts-metric.md)
 * [Мониторинг метрик служб мультимедиа](media-services-metrics-howto.md)
 * [Мониторинг журналов диагностики службы мультимедиа](media-services-diagnostic-logs-howto.md)

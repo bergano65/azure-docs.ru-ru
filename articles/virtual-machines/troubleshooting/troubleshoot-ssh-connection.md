@@ -6,26 +6,23 @@ services: virtual-machines-linux
 documentationcenter: ''
 author: genlin
 manager: dcscontentpm
-editor: ''
 tags: top-support-issue,azure-service-management,azure-resource-manager
-ms.assetid: dcb82e19-29b2-47bb-99f2-900d4cfb5bbb
 ms.service: virtual-machines-linux
 ms.workload: infrastructure-services
 ms.tgt_pltfrm: vm-linux
 ms.topic: troubleshooting
 ms.date: 05/30/2017
 ms.author: genli
-ms.openlocfilehash: 006dbbe1b7472982a894691d019eb88ef2041dac
-ms.sourcegitcommit: c79aa93d87d4db04ecc4e3eb68a75b349448cd17
+ms.openlocfilehash: f0a79fb0f90a633095343c162ccdc80ebc48f1d4
+ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71088266"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75747668"
 ---
 # <a name="troubleshoot-ssh-connections-to-an-azure-linux-vm-that-fails-errors-out-or-is-refused"></a>Устранение неполадок с SSH-подключением к виртуальной машине Azure Linux: сбой, ошибка или отклонение
 В этой статье вы узнаете, как найти и исправить проблемы, возникающие из-за ошибок Secure Shell (SSH), сбоев SSH-соединения или отказа SSH при попытке подключения к виртуальной машине Linux. Для устранения неполадок и решения проблем с подключением можно воспользоваться порталом Azure, Azure CLI или расширением для доступа к виртуальной машине для Linux.
 
-[!INCLUDE [learn-about-deployment-models](../../../includes/learn-about-deployment-models-both-include.md)]
 
 Если в любой момент при изучении этой статьи вам потребуется дополнительная помощь, вы можете обратиться к экспертам по Azure на [форумах MSDN Azure и Stack Overflow](https://azure.microsoft.com/support/forums/). Кроме того, можно зарегистрировать обращение в службу поддержки Azure. Перейдите на [сайт поддержки Azure](https://azure.microsoft.com/support/options/) и щелкните **Получить поддержку**. Дополнительные сведения об использовании службы поддержки Azure см. в статье [Часто задаваемые вопросы о поддержке Microsoft Azure](https://azure.microsoft.com/support/faq/).
 
@@ -127,7 +124,7 @@ az vm user update --resource-group myResourceGroup --name myVM \
 ```
 
 ## <a name="use-the-vmaccess-extension"></a>Использование расширения VMAccess
-Расширение для доступа к виртуальной машине для Linux выполняет чтение в JSON-файле. При этом сбрасывается SSHD и ключ SSH или добавляется пользователь. Azure CLI по-прежнему используется для вызова расширения VMAccess, но при необходимости JSON-файлы можно использовать повторно в нескольких виртуальных машинах. Такой подход позволяет создать репозиторий JSON-файлов, которые можно впоследствии вызывать для заданных сценариев.
+Расширение доступа к виртуальной машине для Linux считывает файл JSON, который определяет действия для выполнения. Эти действия включают сброс SSHD, сброс ключа SSH или Добавление пользователя. Azure CLI по-прежнему используется для вызова расширения VMAccess, но при необходимости JSON-файлы можно использовать повторно в нескольких виртуальных машинах. Такой подход позволяет создать репозиторий JSON-файлов, которые можно впоследствии вызывать для заданных сценариев.
 
 ### <a name="reset-sshd"></a>Сброс SSHD
 Создайте файл `settings.json` со следующим содержимым:
@@ -206,12 +203,12 @@ azure vm reset-access --resource-group myResourceGroup --name myVM \
 ## <a name="a-idrestart-vm-restart-a-vm"></a><a id="restart-vm" />Перезапуск виртуальной машины
 Если вы сбросили учетные данные пользователя и конфигурацию SSH или столкнулись с ошибкой при этом, попробуйте перезапустить виртуальную машину, чтобы устранить неполадки с базовыми вычислительными ресурсами.
 
-### <a name="azure-portal"></a>портала Azure
+### <a name="azure-portal"></a>Портал Azure
 Чтобы перезапустить виртуальную машину с помощью портала Azure, выберите виртуальную машину и щелкните **Перезапуск**, как показано в следующем примере:
 
 ![Перезапуск виртуальной машины на портале Azure](./media/troubleshoot-ssh-connection/restart-vm-using-portal.png)
 
-### <a name="azure-cli"></a>Инфраструктура CLI Azure
+### <a name="azure-cli"></a>Интерфейс командной строки Azure
 В следующем примере используется команда [az vm restart](/cli/azure/vm), чтобы перезапустить виртуальную машину `myVM` в группе ресурсов `myResourceGroup`. Используйте свои значения следующим образом:
 
 ```azurecli
@@ -233,12 +230,12 @@ azure vm restart --resource-group myResourceGroup --name myVM
 >
 >
 
-### <a name="azure-portal"></a>портала Azure
+### <a name="azure-portal"></a>Портал Azure
 Чтобы повторно развернуть виртуальную машину с помощью портала Azure, выберите виртуальную машину и прокрутите вниз до раздела **Поддержка и устранение неполадок**. Щелкните **Повторно развернуть**, как показано в следующем примере.
 
 ![Повторное развертывание виртуальной машины на портале Azure](./media/troubleshoot-ssh-connection/redeploy-vm-using-portal.png)
 
-### <a name="azure-cli"></a>Инфраструктура CLI Azure
+### <a name="azure-cli"></a>Интерфейс командной строки Azure
 В следующем примере используется команда [az vm restart](/cli/azure/vm), чтобы повторно развернуть виртуальную машину `myVM` в группе ресурсов `myResourceGroup`. Используйте свои значения следующим образом:
 
 ```azurecli
@@ -258,7 +255,7 @@ azure vm redeploy --resource-group myResourceGroup --name myVM
 * Выполните сброс удаленного доступа на [портале Azure](https://portal.azure.com). На портале Azure выберите свою виртуальную машину и щелкните **Reset Remote...** (Удаленный сброс...).
 * Перезапустите виртуальную машину. На [портале Azure](https://portal.azure.com) выберите свою виртуальную машину и щелкните **Перезапуск**.
 
-* Повторно разверните виртуальную машину на новом узле Azure. Сведения о повторном развертывании виртуальной машины на новом узле Azure см. [здесь](../windows/redeploy-to-new-node.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
+* Повторно разверните виртуальную машину на новом узле Azure. Сведения о [повторном развертывании виртуальной машины на новом узле Azure см](../windows/redeploy-to-new-node.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
 
     Обратите внимание, что после этой операции будут потеряны данные на временном диске, а также изменятся динамические IP-адреса, связанные с виртуальной машиной.
 * Следуйте указаниям в статье о [сбросе пароля или ключа SSH в виртуальных машинах Linux](../linux/classic/reset-access-classic.md), чтобы сделать следующее:

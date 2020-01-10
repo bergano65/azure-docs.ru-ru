@@ -6,12 +6,12 @@ ms.topic: reference
 ms.date: 09/05/2019
 ms.author: cshoe
 ms.reviewer: jehollan
-ms.openlocfilehash: dbd6762906bc189cad74d78dcd8f28b0cfeba183
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: 4c6ccf9dce0fc119bd666871489a42a3ef734f81
+ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74226992"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75769206"
 ---
 # <a name="use-dependency-injection-in-net-azure-functions"></a>Использование внедрения зависимостей в функциях Azure .NET
 
@@ -21,7 +21,7 @@ ms.locfileid: "74226992"
 
 - Поддержка внедрения зависимостей начинается с функций Azure 2. x.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Технические условия
 
 Прежде чем можно будет использовать внедрение зависимостей, необходимо установить следующие пакеты NuGet:
 
@@ -114,7 +114,7 @@ namespace MyNamespace
 }
 ```
 
-## <a name="service-lifetimes"></a>Время существования службы
+## <a name="service-lifetimes"></a>Время существования служб
 
 Приложения функций Azure предоставляют те же времена жизни службы, что и [внедрение зависимостей ASP.NET](https://docs.microsoft.com/aspnet/core/fundamentals/dependency-injection#service-lifetimes). Для приложения-функции различные времена жизни службы ведут себя следующим образом:
 
@@ -136,10 +136,10 @@ namespace MyNamespace
 
 Узел функции регистрирует множество служб. Следующие службы являются надежными для использования в качестве зависимости в приложении:
 
-|Тип службы|Срок действия|ОПИСАНИЕ|
+|Тип службы|Срок действия|Description|
 |--|--|--|
-|`Microsoft.Extensions.Configuration.IConfiguration`|Единый|Конфигурация среды выполнения|
-|`Microsoft.Azure.WebJobs.Host.Executors.IHostIdProvider`|Единый|Отвечает за предоставление идентификатора экземпляра узла|
+|`Microsoft.Extensions.Configuration.IConfiguration`|Одноэлементный|Конфигурация среды выполнения|
+|`Microsoft.Azure.WebJobs.Host.Executors.IHostIdProvider`|Одноэлементный|Отвечает за предоставление идентификатора экземпляра узла|
 
 Если существуют другие службы, от которых требуется зависимость, [Создайте вопрос и предложите их на GitHub](https://github.com/azure/azure-functions-host).
 
@@ -196,7 +196,7 @@ public class HttpTrigger
 > [!WARNING]
 > Старайтесь не пытаться считывать значения из таких файлов, как *Local. Settings. JSON* или *appSettings. { Environment}. JSON* в плане потребления. Значения, считанные из этих файлов, связанных с триггерами, недоступны при масштабировании приложения, так как инфраструктура размещения не имеет доступа к сведениям о конфигурации.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Для получения дополнительных сведений см. следующие ресурсы:
 

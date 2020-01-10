@@ -16,12 +16,12 @@ ms.date: 05/08/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2d54ef06fd63a1064962aea6099a2289d04ff658
-ms.sourcegitcommit: 95931aa19a9a2f208dedc9733b22c4cdff38addc
+ms.openlocfilehash: f250d4593c8dac8007590245e1b774b95d8fa786
+ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74462015"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75767948"
 ---
 # <a name="prerequisites-for-azure-ad-connect"></a>Необходимые условия для Azure AD Connect
 В этой статье описаны необходимые условия и требования к оборудованию для Azure AD Connect.
@@ -57,11 +57,7 @@ ms.locfileid: "74462015"
 >[!IMPORTANT]
 >Установка Azure AD Connect на Small Business Server, Server Essentials или Server Core не поддерживается.
 
-* Azure AD Connect необходимо установить на сервер под управлением Windows Server 2008 R2 или более поздней версии. Этот сервер должен быть присоединен к домену и может быть контроллером домена или рядовым сервером.
-* При установке Azure AD Connect на сервер Windows Server 2008 R2 обязательно примените последние обновления из Центра обновления Windows. Установка на сервер без обновлений невозможна.
-* Если планируется использовать функцию **синхронизации паролей**, то сервер Azure AD Connect должен работать под управлением Windows Server 2008 R2 с пакетом обновления 1 (SP1) или более поздней версии.
-* Если вы планируете использовать **групповую управляемую учетную запись службы**, то сервер Azure AD Connect должен работать под управлением Windows Server 2012 или более поздней версии.
-* На сервере Azure AD Connect должна быть установлена платформа [.NET Framework 4.5.1](#component-prerequisites) или более поздней версии и среда [Microsoft PowerShell 3.0](#component-prerequisites) или более поздней версии.
+* Azure AD Connect должны быть установлены на Windows Server 2012 или более поздней версии. Этот сервер должен быть присоединен к домену и может быть контроллером домена или рядовым сервером.
 * Azure AD Connect сервер не должен включать групповая политика записи PowerShell, если для управления конфигурацией ADFS используется мастер Azure AD Connect. Вы можете включить транскрипцию PowerShell, если используете мастер Azure AD Connect для управления конфигурацией синхронизации.
 * При развертывании служб федерации Active Directory (AD FS) серверы, на которых будут установлены службы AD FS или прокси-служба веб-приложения, должны работать под управлением Windows Server 2012 R2 или более поздней версии. [удаленное управление Windows](#windows-remote-management) .
 * При развертывании служб федерации Active Directory необходимы [SSL-сертификаты](#ssl-certificate-requirements).
@@ -71,7 +67,7 @@ ms.locfileid: "74462015"
 
 * Разверните Azure AD Connect на присоединенном к домену сервере и ограничьте административный доступ к администраторам домена или другим жестко управляемым группам безопасности.
 
-Дополнительные сведения см. в следующих статьях: 
+Дополнительные сведения см. на следующих ресурсах: 
 
 * [Защита групп администраторов](https://docs.microsoft.com/windows-server/identity/ad-ds/plan/security-best-practices/appendix-g--securing-administrators-groups-in-active-directory)
 
@@ -84,8 +80,8 @@ ms.locfileid: "74462015"
 ### <a name="sql-server-used-by-azure-ad-connect"></a>SQL Server, используемый Azure AD Connect
 * Azure AD Connect требуется база данных SQL Server для хранения учетных данных. По умолчанию устанавливается SQL Server 2012 Express LocalDB (облегченная версия SQL Server Express). Размер экземпляра SQL Server Express может достигать 10 ГБ, позволяя управлять примерно 100 000 объектов. Если вам нужно управлять более значительным числом объектов каталога, в мастере установки укажите другую установку SQL Server. Тип установки SQL Server может повлиять на [производительность Azure AD Connect](https://docs.microsoft.com/azure/active-directory/hybrid/plan-connect-performance-factors#sql-database-factors).
 * Если используется другая установка SQL Server, то применяются следующие требования.
-  * Azure AD Connect поддерживает все версии Microsoft SQL Server от 2008 R2 (с последним пакетом обновления) до SQL Server 2019. База данных SQL Microsoft Azure в качестве базы данных **не поддерживается**.
-  * Необходимо использовать параметры сортировки SQL без учета регистра. Их можно определить по суффиксу \_CI_ в имени. Параметры сортировки с учетом регистра, имена которых содержат суффикс **CS_,** не поддерживаются\_.
+  * Azure AD Connect поддерживает все версии Microsoft SQL Server от 2012 (с последним пакетом обновления) до SQL Server 2019. База данных SQL Microsoft Azure в качестве базы данных **не поддерживается**.
+  * Необходимо использовать параметры сортировки SQL без учета регистра. Их можно определить по суффиксу \_CI_ в имени. Параметры сортировки с учетом регистра, имена которых содержат суффикс \_CS_, **не поддерживаются**.
   * На один экземпляр SQL может приходиться только один модуль синхронизации. Совместное использование экземпляра SQL модулями FIM/MIM Sync, DirSync и Azure AD Sync **не поддерживается**.
 
 ### <a name="accounts"></a>Учетные записи
@@ -93,7 +89,7 @@ ms.locfileid: "74462015"
 * Учетная запись администратора предприятия для локальной службы Active Directory при использовании экспресс-параметров или обновлении с DirSync.
 * [Учетные записи в Active Directory](reference-connect-accounts-permissions.md) при использовании пути установки с пользовательскими параметрами или учетная запись администратора предприятия для локальной службы Active Directory.
 
-### <a name="connectivity"></a>Соединение
+### <a name="connectivity"></a>Подключение
 * Для серверов Azure AD Connect требуется разрешение DNS как для интрасети, так и для Интернета. DNS-сервер должен иметь возможность разрешения имен как для локальной службы Active Directory, так и для конечных точек Azure AD.
 * Если в вашей интрасети есть брандмауэры и вам необходимо открыть порты между серверами Azure AD Connect и контроллерами доменов, то дополнительные сведения см. в статье [Порты и протоколы, необходимые для гибридной идентификации](reference-connect-ports.md).
 * Если прокси-сервер или брандмауэр ограничивает доступные URL-адреса, то на нем необходимо открыть URL-адреса, указанные в разделе [URL-адреса и диапазоны IP-адресов Office 365](https://support.office.com/article/Office-365-URLs-and-IP-address-ranges-8548a211-3fe7-47cb-abb1-355ea5aa88a2).
@@ -133,17 +129,17 @@ ms.locfileid: "74462015"
 Дополнительную информацию об [элементе defaultProxy](https://msdn.microsoft.com/library/kd3cf2ex.aspx) вы можете найти на сайте MSDN.  
 В случае проблем с подключением изучите статью [Устранение неполадок подключения в Azure AD Connect](tshoot-connect-connectivity.md).
 
-### <a name="other"></a>Другие
+### <a name="other"></a>Прочее
 * Необязательно: тестовая учетная запись пользователя для проверки синхронизации.
 
 ## <a name="component-prerequisites"></a>Предварительные требования к компонентам
 ### <a name="powershell-and-net-framework"></a>PowerShell и .NET Framework
 Работа Azure AD Connect основана на Microsoft PowerShell и .NET Framework 4.5.1. На сервере должна быть установлена эта или более поздняя версия. В зависимости от установленной версии Windows Server выполните следующие действия.
 
-* Windows Server 2012R2
+* Windows Server 2012 R2;
   * Microsoft PowerShell устанавливается по умолчанию. Никаких действий не требуется.
   * Платформа .NET Framework 4.5.1 и более поздних версий распространяется через Центр обновления Windows. Убедитесь, что установлены последние обновления для Windows Server в панели управления.
-* Windows Server 2008 R2 и Windows Server 2012
+* Windows Server 2012
   * Последняя версия Microsoft PowerShell доступна в составе платформы **Windows Management Framework 4.0**, которую можно скачать из [центра загрузки Майкрософт](https://www.microsoft.com/downloads).
   * .NET Framework 4.5.1 и более поздние версии платформы доступны в [центре загрузки Майкрософт](https://www.microsoft.com/downloads).
 
@@ -151,81 +147,75 @@ ms.locfileid: "74462015"
 ### <a name="enable-tls-12-for-azure-ad-connect"></a>Включение протокола TLS 1.2 для Azure AD Connect
 До версии 1.1.614.0 Azure AD Connect по умолчанию использует TLS 1.0 для шифрования связи между сервером модуля синхронизации и Azure AD. Это можно изменить, настроив приложения .NET на использование TLS 1,2 по умолчанию на сервере. Дополнительные сведения о протоколе TLS 1.2 см. в статье [Советы по безопасности (Microsoft) (2960358)](https://technet.microsoft.com/security/advisory/2960358).
 
-1. Протокол TLS 1,2 не может быть включен до Windows Server 2008 R2 или более ранней версии. Убедитесь, что для вашей операционной системы установлено исправление .NET 4.5.1, см. [рекомендации по безопасности Microsoft 2960358](https://technet.microsoft.com/security/advisory/2960358). Это исправление или его более поздняя версия может быть уже установлена на вашем сервере.
-2. Если вы используете Windows Server 2008 R2, убедитесь, что протокол TLS 1.2 включен. На сервере с Windows Server 2012 или более поздней версии протокол TLS 1.2 должен быть уже включен.
+1.  Убедитесь, что для вашей операционной системы установлено исправление .NET 4.5.1, см. [рекомендации по безопасности Microsoft 2960358](https://technet.microsoft.com/security/advisory/2960358). Это исправление или его более поздняя версия может быть уже установлена на вашем сервере.
     ```
-    [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2]
-    [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2\Client] "DisabledByDefault"=dword:00000000 "Enabled"=dword:00000001
-    [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2\Server] "DisabledByDefault"=dword:00000000 "Enabled"=dword:00000001
+2. For all operating systems, set this registry key and restart the server.
     ```
-3. Для любой операционной системы задайте этот ключ реестра и перезагрузите сервер.
+    HKEY_LOCAL_MACHINE \Софтваре\микрософт\.NETFramework\v4.0.30319 "SchUseStrongCrypto" = DWORD: 00000001
     ```
-    HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\.NETFramework\v4.0.30319
-    "SchUseStrongCrypto"=dword:00000001
-    ```
-4. Если вы также хотите включить протокол TLS 1.2 между сервером с модулем синхронизации и удаленным экземпляром SQL Server, установите версии, необходимые для [поддержки протокола TLS 1.2 для Microsoft SQL Server](https://support.microsoft.com/kb/3135244).
+4. If you also want to enable TLS 1.2 between the sync engine server and a remote SQL Server, then make sure you have the required versions installed for [TLS 1.2 support for Microsoft SQL Server](https://support.microsoft.com/kb/3135244).
 
-## <a name="prerequisites-for-federation-installation-and-configuration"></a>Предварительные требования для установки и настройки федерации
-### <a name="windows-remote-management"></a>удаленное управление Windows
-При использовании средства Azure AD Connect для развертывания служб федерации Active Directory или прокси-сервера веб-приложения ознакомьтесь с приведенными ниже требованиями.
+## Prerequisites for federation installation and configuration
+### Windows Remote Management
+When using Azure AD Connect to deploy Active Directory Federation Services or the Web Application Proxy, check these requirements:
 
-* Если целевой сервер входит в домен, убедитесь, что включено удаленное управление Windows.
-  * В командном окне PSH с повышенными привилегиями выполните команду `Enable-PSRemoting –force`
-* Если целевой сервер — это не входящий в домен WAP-компьютер, существует несколько дополнительных требований.
-  * На целевом компьютере (WAP):
-    * с помощью оснастки «Службы» убедитесь, что служба WinRM (Windows Remote Management/WS-Management) запущена;
-    * В командном окне PSH с повышенными привилегиями выполните команду `Enable-PSRemoting –force`
-  * На компьютере, где запущен мастер (если целевой компьютер не присоединен к домену или присоединен к ненадежному домену), выполните следующие действия.
-    * В командном окне PSH с повышенными привилегиями выполните команду `Set-Item WSMan:\localhost\Client\TrustedHosts –Value <DMZServerFQDN> -Force –Concatenate`
-    * В диспетчере серверов:
-      * Добавьте узел DMZ WAP в пул компьютеров (Диспетчер серверов -> Управление -> Добавление серверов -> DNS (вкладка)).
-      * В диспетчере серверов на вкладке «Все серверы» щелкните правой кнопкой мыши WAP-сервер и выберите параметр «Управлять как», введите локальные учетные данные (не домена) для WAP-компьютера.
-      * Чтобы проверить возможность удаленного подключения из PSH, в диспетчере серверов на вкладке «Все сервера» щелкните правой кнопкой мыши WAP-сервер и выберите Windows PowerShell. Должен открыться удаленный сеанс PSH для проверки возможности создания удаленных сеансов PowerShell.
+* If the target server is domain joined, then ensure that Windows Remote Managed is enabled
+  * In an elevated PSH command window, use command `Enable-PSRemoting –force`
+* If the target server is a non-domain joined WAP machine, then there are a couple of additional requirements
+  * On the target machine (WAP machine):
+    * Ensure the winrm (Windows Remote Management / WS-Management) service is running via the Services snap-in
+    * In an elevated PSH command window, use command `Enable-PSRemoting –force`
+  * On the machine on which the wizard is running (if the target machine is non-domain joined or untrusted domain):
+    * In an elevated PSH command window, use the command `Set-Item WSMan:\localhost\Client\TrustedHosts –Value <DMZServerFQDN> -Force –Concatenate`
+    * In Server Manager:
+      * add DMZ WAP host to machine pool (server manager -> Manage -> Add Servers...use DNS tab)
+      * Server Manager All Servers tab: right click WAP server and choose Manage As..., enter local (not domain) creds for the WAP machine
+      * To validate remote PSH connectivity, in the Server Manager All Servers tab: right click WAP server and choose Windows PowerShell. A remote PSH session should open to ensure remote PowerShell sessions can be established.
 
-### <a name="ssl-certificate-requirements"></a>Требования к сертификатам SSL
-* Настоятельно рекомендуем использовать один и тот же SSL-сертификат на всех узлах фермы AD FS, а также на всех прокси-серверах веб-приложений.
-* Это должен быть сертификат X509.
-* На серверах федерации в тестовой лабораторной среде можно использовать самозаверяющий сертификат. Однако для рабочей среды рекомендуется получить сертификат из общедоступного центра сертификации.
-  * Если вы не используете общедоступный доверенный сертификат, убедитесь, что сертификат, установленный на каждом прокси- сервере веб-приложений, является доверенным (на локальном сервере и на всех серверах федерации).
-* Идентификатор сертификата должен совпадать с именем службы федерации (например sts.contoso.com).
-  * Идентификатор является расширением альтернативного имени субъекта (SAN) типа dNSName. При отсутствии записей SAN имя субъекта указывается как обычное имя.  
-  * В сертификате может быть несколько записей SAN, если одна из них соответствует имени службы федерации.
-  * Если вы планируете использовать присоединение Workplace Join, то необходимо дополнительное имя SAN со значением **enterpriseregistration.** , за которым следует суффикс имени участника-пользователя (UPN) вашей организации, например **enterpriseregistration.contoso.com**.
-* Сертификаты на основе ключей CryptoAPI следующего поколения (CNG) и поставщики хранилища ключей не поддерживаются. Это означает, что необходимо использовать сертификаты, выданные CSP (поставщиком служб шифрования), а не KSP (поставщиком хранилища ключей).
-* Поддерживаются групповые сертификаты.
+### SSL Certificate Requirements
+* It’s strongly recommended to use the same SSL certificate across all nodes of your AD FS farm and all Web Application proxy servers.
+* The certificate must be an X509 certificate.
+* You can use a self-signed certificate on federation servers in a test lab environment. However, for a production environment, we recommend that you obtain the certificate from a public CA.
+  * If using a certificate that is not publicly trusted, ensure that the certificate installed on each Web Application Proxy server is trusted on both the local server and on all federation servers
+* The identity of the certificate must match the federation service name (for example, sts.contoso.com).
+  * The identity is either a subject alternative name (SAN) extension of type dNSName or, if there are no SAN entries, the subject name specified as a common name.  
+  * Multiple SAN entries can be present in the certificate, provided one of them matches the federation service name.
+  * If you are planning to use Workplace Join, an additional SAN is required with the value **enterpriseregistration.** followed by the User Principal Name (UPN) suffix of your organization, for example, **enterpriseregistration.contoso.com**.
+* Certificates based on CryptoAPI next generation (CNG) keys and key storage providers are not supported. This means you must use a certificate based on a CSP (cryptographic service provider) and not a KSP (key storage provider).
+* Wild-card certificates are supported.
 
-### <a name="name-resolution-for-federation-servers"></a>Разрешение имен для серверов федерации
-* Настройте записи DNS для имени службы федерации AD FS (например, sts.contoso.com) для интрасети (внутренний DNS-сервер) и экстрасети (общедоступный DNS-сервер вашего регистратора доменных имен). Для записи DNS интрасети обязательно используйте записи A, а не записи CNAME. Это необходимо для правильной работы проверки подлинности Windows на компьютере, добавленном в домен.
-* Если вы развертываете несколько серверов AD FS или прокси-сервер веб-приложения, убедитесь, что вы настроили балансировщик нагрузки и на него указывают записи DNS для имени службы федерации AD FS (например, sts.contoso.com).
-* Чтобы встроенная проверка подлинности Windows работала с приложениями браузера в вашей интрасети, использующими Internet Explorer, необходимо, чтобы имя службы федерации AD FS (например, sts.contoso.com) было добавлено в зону интрасети IE. Имя службы можно указать в групповой политике и развернуть на всех компьютерах, присоединенных к домену.
+### Name resolution for federation servers
+* Set up DNS records for the AD FS federation service name (for example sts.contoso.com) for both the intranet (your internal DNS server) and the extranet (public DNS through your domain registrar). For the intranet DNS record, ensure that you use A records and not CNAME records. This is required for windows authentication to work correctly from your domain joined machine.
+* If you are deploying more than one AD FS server or Web Application Proxy server, then ensure that you have configured your load balancer and that the DNS records for the AD FS federation service name (for example sts.contoso.com) point to the load balancer.
+* For windows integrated authentication to work for browser applications using Internet Explorer in your intranet, ensure that the AD FS federation service name (for example sts.contoso.com) is added to the intranet zone in IE. This can be controlled via group policy and deployed to all your domain joined computers.
 
-## <a name="azure-ad-connect-supporting-components"></a>Вспомогательные компоненты Azure AD Connect
-Ниже приведен перечень компонентов, которые Azure AD Connect установит на сервере, где установлен Azure AD Connect. Этот список предназначен для базовой установки Express. Если на странице "Установить службы синхронизации" вы выбрали другой выпуск SQL Server, то SQL Express LocalDB не устанавливается локально.
+## Azure AD Connect supporting components
+The following is a list of components that Azure AD Connect installs on the server where Azure AD Connect is installed. This list is for a basic Express installation. If you choose to use a different SQL Server on the Install synchronization services page, then SQL Express LocalDB is not installed locally.
 
-* Azure AD Connect Health,
-* Программы командной строки Microsoft SQL Server 2012
+* Azure AD Connect Health
+* Microsoft SQL Server 2012 Command Line Utilities
 * Microsoft SQL Server 2012 Express LocalDB
 * Microsoft SQL Server 2012 Native Client
-* Распространяемый пакет Microsoft Visual C++ 2013
+* Microsoft Visual C++ 2013 Redistribution Package
 
-## <a name="hardware-requirements-for-azure-ad-connect"></a>Требования к оборудованию для Azure AD Connect
-В следующей таблице содержатся минимальные требования к компьютеру синхронизации с Azure AD Connect.
+## Hardware requirements for Azure AD Connect
+The table below shows the minimum requirements for the Azure AD Connect sync computer.
 
-| Количество объектов в Active Directory | ЦП | Память | Размер жесткого диска |
+| Number of objects in Active Directory | CPU | Memory | Hard drive size |
 | --- | --- | --- | --- |
-| Менее 10 000 |1,6 ГГц |4 ГБ |70 ГБ |
-| 10 000–50 000 |1,6 ГГц |4 ГБ |70 ГБ |
-| 50 000–100 000 |1,6 ГГц |16 ГБ |100 ГБ |
-| При наличии 100 000 объектов или более необходима полная версия SQL Server | | | |
-| 100 000–300 000 |1,6 ГГц |32 ГБ |300 ГБ |
-| 300 000–600 000 |1,6 ГГц |32 ГБ |450 ГБ |
-| Более 600 000 |1,6 ГГц |32 ГБ |500 ГБ |
+| Fewer than 10,000 |1.6 GHz |4 GB |70 GB |
+| 10,000–50,000 |1.6 GHz |4 GB |70 GB |
+| 50,000–100,000 |1.6 GHz |16 GB |100 GB |
+| For 100,000 or more objects the full version of SQL Server is required | | | |
+| 100,000–300,000 |1.6 GHz |32 GB |300 GB |
+| 300,000–600,000 |1.6 GHz |32 GB |450 GB |
+| More than 600,000 |1.6 GHz |32 GB |500 GB |
 
-Ниже приведены минимальные требования к компьютерам, на которых выполняются AD FS или прокси-серверы.
+The minimum requirements for computers running AD FS or Web Application Proxy Servers is the following:
 
-* процессор: двухъядерный с тактовой частотой 1,6 ГГц или выше;
-* память: 2 ГБ или более;
-* виртуальная машина Azure: конфигурация A2 или выше.
+* CPU: Dual core 1.6 GHz or higher
+* MEMORY: 2 GB or higher
+* Azure VM: A2 configuration or higher
 
-## <a name="next-steps"></a>Дополнительная информация
-Узнайте больше об [интеграции локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md).
+## Next steps
+Learn more about [Integrating your on-premises identities with Azure Active Directory](whatis-hybrid-identity.md).

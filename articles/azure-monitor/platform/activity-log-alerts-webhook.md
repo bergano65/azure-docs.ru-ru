@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: rboucher
 ms.author: robb
 ms.date: 03/31/2017
-ms.openlocfilehash: a79bf07c91ef80509355a10c1401d1ab94cc5118
-ms.sourcegitcommit: ae461c90cada1231f496bf442ee0c4dcdb6396bc
+ms.openlocfilehash: eb43db7a67063622f6a6125178267573cd209471
+ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72552749"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75748801"
 ---
 # <a name="webhooks-for-azure-activity-log-alerts"></a>Веб-перехватчики для оповещений журнала действий Azure
 В определении группы действий можно настроить конечные точки веб-перехватчика для получения уведомлений об оповещениях журнала действий. С помощью веб-перехватчика можно направлять эти уведомления в другие системы для последующей обработки или выполнения настраиваемых действий. В этой статье показано, как выглядят полезные данные HTTP POST для webhook.
@@ -31,7 +31,7 @@ ms.locfileid: "72552749"
 ## <a name="payload-schema"></a>Схема полезных данных
 Полезные данные JSON, содержащихся в операции POST, могут быть различны в зависимости от поля data.context.activityLog.eventSource.
 
-### <a name="common"></a>Common
+### <a name="common"></a>Распространенные
 
 ```json
 {
@@ -131,7 +131,7 @@ ms.locfileid: "72552749"
 }
 ```
 
-### <a name="recommendation"></a>Рекомендации
+### <a name="recommendation"></a>Рекомендация
 
 ```json
 {
@@ -257,23 +257,23 @@ ms.locfileid: "72552749"
 }
 ```
 
-| Имя элемента | Описание |
+| Имя элемента | Description |
 | --- | --- |
 | status |Используется для оповещений на основе метрик. Всегда имеет значение activated для оповещений журнала действий. |
-| context |Контекст события. |
+| контекст |Контекст события. |
 | resourceProviderName |Поставщик ресурсов для затронутого ресурса. |
 | conditionType |Всегда имеет значение Event. |
 | name |Имя правила генерации оповещений. |
-| id |Идентификатор ресурса для оповещения. |
-| Description (Описание) |Описание оповещения, которое задается при его создании. |
+| идентификатор |Идентификатор ресурса для оповещения. |
+| description |Описание оповещения, которое задается при его создании. |
 | subscriptionId |Идентификатор подписки Azure. |
-| Timestamp |Время создания события службой Azure, которая обработала запрос. |
-| ResourceId |Идентификатор ресурса для затронутого ресурса. |
+| TIMESTAMP |Время создания события службой Azure, которая обработала запрос. |
+| resourceId |Идентификатор ресурса для затронутого ресурса. |
 | имя_группы_ресурсов |Имя группы ресурсов для затронутого ресурса. |
 | properties |Набор пар `<Key, Value>` (например, `Dictionary<String, String>`), содержащий сведения о событии. |
 | event |Элемент, содержащий метаданные о событии. |
-| authorization |Свойства управления доступом на основе ролей для события. Обычно к ним относятся action, role и scope. |
-| category |Категория события. Поддерживаются следующие значения: Administrative, Alert, Security, ServiceHealth, Recommendation. |
+| авторизация |Свойства управления доступом на основе ролей для события. Обычно к ним относятся action, role и scope. |
+| категория |Категория события. Поддерживаются следующие значения: Administrative, Alert, Security, ServiceHealth, Recommendation. |
 | caller |Адрес электронной почты пользователя, который выполнил операцию, утверждение имени субъекта-службы или имени участника-пользователя в зависимости от доступности. Может иметь значение NULL для определенных системных вызовов. |
 | correlationId |Обычно GUID в строковом формате. События с correlationId относятся к одному крупному действию и обычно совместно используют correlationId. |
 | eventDescription |Статическое описание события в текстовом виде. |
@@ -287,10 +287,10 @@ ms.locfileid: "72552749"
 | status |Строка. Состояние операции. Обычные значения: Started, In Progress, Succeeded, Failed, Active, Resolved. |
 | subStatus |Обычно содержит код состояния HTTP для соответствующего вызова REST. Может также включать другие строки, описывающие подсостояние. Обычные значения подсостояния: OK (код состояния HTTP: 200), Created (код состояния HTTP: 201), Accepted (код состояния HTTP: 202), No Content (код состояния HTTP: 204), Bad Request (код состояния HTTP: 400), Not Found (код состояния HTTP: 404), Conflict (код состояния HTTP: 409), Internal Server Error (код состояния HTTP: 500), Service Unavailable (код состояния HTTP: 503), Gateway Timeout (код состояния HTTP: 504). |
 
-Сведения о схеме для остальных оповещений журнала действий см. в статье [Мониторинг действий подписки с помощью журнала действий Azure](../../azure-monitor/platform/activity-logs-overview.md).
+Сведения о схеме для остальных оповещений журнала действий см. в статье [Мониторинг действий подписки с помощью журнала действий Azure](../../azure-monitor/platform/platform-logs-overview.md).
 
 ## <a name="next-steps"></a>Дальнейшие действия
-* [Мониторинг действий подписки с помощью журнала действий Azure](../../azure-monitor/platform/activity-logs-overview.md).
+* [Мониторинг действий подписки с помощью журнала действий Azure](../../azure-monitor/platform/platform-logs-overview.md).
 * [Using Azure Automation to take action on Azure Alerts](https://go.microsoft.com/fwlink/?LinkId=627081) (Использование службы автоматизации Azure для выполнения действий по уведомлениям Azure).
 * [Logic app that sends a text message when an alert fires](https://github.com/Azure/azure-quickstart-templates/tree/master/201-alert-to-text-message-with-logic-app) (Приложение логики, которое отправляет текстовое сообщение при возникновении предупреждения). Это пример для оповещений на основе метрик, но его можно изменить для работы с оповещениями журнала действий.
 * [Logic app that posts a message to a slack channel when an alert fires](https://github.com/Azure/azure-quickstart-templates/tree/master/201-alert-to-slack-with-logic-app) (Приложение логики, которое отправляет сообщение в канал Slack при возникновении предупреждения). Это пример для оповещений на основе метрик, но его можно изменить для работы с оповещениями журнала действий.

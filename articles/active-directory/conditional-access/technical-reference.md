@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: spunukol
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5a3518dfcad3678dc298ba8529e731d48ec1d195
-ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
+ms.openlocfilehash: 78f148f435edee16805cc8b0ae78652a17826727
+ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72893462"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75768154"
 ---
 # <a name="azure-active-directory-conditional-access-settings-reference"></a>Справочник по параметрам условного доступа Azure Active Directory
 
@@ -29,8 +29,6 @@ ms.locfileid: "72893462"
 - условие клиентских приложений;
 - требование утвержденных клиентских приложений.
 
-Если это не та информация, которую вы ищете, оставьте комментарий в конце этой статьи.
-
 ## <a name="cloud-apps-assignments"></a>Назначения облачных приложений
 
 С помощью политик условного доступа вы управляете доступом пользователей к [облачным приложениям](conditions.md#cloud-apps-and-actions). При настройке политики условного доступа необходимо выбрать хотя бы одно облачное приложение. 
@@ -41,9 +39,10 @@ ms.locfileid: "72893462"
 
 Политику условного доступа можно назначить следующим облачным приложениям от Майкрософт:
 
+- Office 365 (Предварительная версия)
 - Службы Azure Analysis Services
 - Azure DevOps
-- База данных SQL Azure и хранилище данных — [Дополнительные сведения](https://docs.microsoft.com/azure/sql-database/sql-database-conditional-access)
+- Azure SQL Database хранилище данных — [Дополнительные сведения](https://docs.microsoft.com/azure/sql-database/sql-database-conditional-access)
 - Dynamics CRM Online
 - Аналитика Microsoft Application Insights
 - Microsoft Azure Information Protection — дополнительные [сведения](https://docs.microsoft.com/azure/information-protection/faqs#i-see-azure-information-protection-is-listed-as-an-available-cloud-app-for-conditional-accesshow-does-this-work)
@@ -56,7 +55,7 @@ ms.locfileid: "72893462"
 - Microsoft Forms
 - Microsoft Intune
 - Регистрация в Microsoft Intune
-- Планировщик (Майкрософт);
+- Планировщик (Майкрософт)
 - Microsoft PowerApps
 - Microsoft Search в Bing
 - Microsoft StaffHub
@@ -65,7 +64,7 @@ ms.locfileid: "72893462"
 - Office 365 Exchange Online
 - Office 365 SharePoint Online
 - Office 365 Yammer
-- Office delve
+- Office Delve
 - Office Sway
 - Outlook Groups
 - Служба Power BI
@@ -73,6 +72,22 @@ ms.locfileid: "72893462"
 - Skype для бизнеса Online
 - Виртуальная частная сеть (VPN)
 - ATP в Защитнике Windows
+
+### <a name="office-365-preview"></a>Office 365 (Предварительная версия)
+
+Office 365 предоставляет облачные службы для повышения производительности и совместной работы, такие как Exchange, SharePoint и Microsoft Teams. Облачные службы Office 365 тесно интегрированы для обеспечения беспрепятственного и совместного взаимодействия. Приложение Office 365 (Предварительная версия) позволяет одновременно ориентироваться на эти службы. Мы советуем использовать новое приложение Office 365 (Предварительная версия), а не нацеливание на отдельные облачные приложения, такие как Office 365 Exchange Online и Office 365 SharePoint Online, чтобы избежать проблем, которые могут возникнуть из-за несоответствия политик и зависимостей служб.
+
+Ключевые приложения, которые входят в клиентское приложение Office 365 (Предварительная версия):
+
+- Office 365 Exchange Online
+- Office 365 SharePoint Online
+- Microsoft Teams
+- Office 365 Yammer
+- Портал Office
+- Microsoft Forms
+- Microsoft Power автоматизиру
+- Планировщик (Майкрософт)
+- Microsoft PowerApps
 
 ### <a name="other-applications"></a>Другие приложения
 
@@ -142,8 +157,8 @@ ms.locfileid: "72893462"
 
 |    |    |
 | --- | --- |
-| Путь | HKEY_LOCAL_MACHINE\Software\Policies\Google\Chrome\ExtensionInstallForcelist |
-| Name | 1 |
+| путь | HKEY_LOCAL_MACHINE\Software\Policies\Google\Chrome\ExtensionInstallForcelist |
+| Имя | 1 |
 | Тип | REG_SZ (String) |
 | Данные | ппнбнпеолгкикжегкбкбжмхлидеопижи, HTTPS\://clients2.google.com/service/update2/crx |
 
@@ -151,8 +166,8 @@ ms.locfileid: "72893462"
 
 |    |    |
 | --- | --- |
-| Путь | HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\AutoSelectCertificateForUrls |
-| Name | 1 |
+| путь | HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\AutoSelectCertificateForUrls |
+| Имя | 1 |
 | Тип | REG_SZ (String) |
 | Данные | {"pattern":"https://device.login.microsoftonline.com","filter":{"ISSUER":{"CN":"MS-Organization-Access"}}} |
 
@@ -166,12 +181,12 @@ ms.locfileid: "72893462"
 
 Этот параметр влияет на попытки доступа, предпринимаемые из следующих мобильных приложений и классических клиентов.
 
-| Клиентские приложения | Целевая служба | платформа |
+| Клиентские приложения | Целевая служба | Платформа |
 | --- | --- | --- |
 | Приложение Dynamics CRM | Dynamics CRM | Windows 10, Windows 8.1, iOS и Android |
 | Приложения Почта, Календарь и Люди, Outlook 2016, Outlook 2013 (с современной аутентификацией)| Office 365 Exchange Online | Windows 10 |
 | MFA и политика расположения для приложений Политики на основе устройств не поддерживаются.| Все службы приложения "Мои приложения"| Android и iOS |
-| Microsoft Teams Services — контролируют все службы, которые поддерживают Microsoft Teams, и все их клиентские приложения: для Windows Desktop, iOS, Android, WP, а также веб-клиент. | Microsoft Teams | Windows 10, Windows 8.1, Windows 7, iOS, Android и macOS |
+| Microsoft Teams Services — контролируют все службы, которые поддерживают Microsoft Teams, и все их клиентские приложения: для Windows Desktop, iOS, Android, WP, а также веб-клиент. | Microsoft Teams | Windows 10, Windows 8.1, Windows 7, iOS, Android и macOS |
 | Приложения Office 2016, Office 2013 (с современной проверкой подлинности), клиент синхронизации OneDrive (см. [заметки](https://support.office.com/en-US/article/Azure-Active-Directory-conditional-access-with-the-OneDrive-sync-client-on-Windows-028d73d7-4b86-4ee0-8fb7-9a209434b04e)) | Office 365 SharePoint Online | Windows 8.1, Windows 7 |
 | Приложения Office 2016, универсальные приложения Office, Office 2013 (с современной проверкой подлинности), клиент синхронизации OneDrive (см. [заметки](https://support.office.com/en-US/article/Azure-Active-Directory-conditional-access-with-the-OneDrive-sync-client-on-Windows-028d73d7-4b86-4ee0-8fb7-9a209434b04e)); поддержка групп Office и SharePoint ожидается в будущем | Office 365 SharePoint Online | Windows 10 |
 | Office 2016 (только Word, Excel, PowerPoint, OneNote). Поддержку OneDrive для бизнеса планируется реализовать в будущем.| Office 365 SharePoint Online| MacOS|
@@ -182,7 +197,7 @@ ms.locfileid: "72893462"
 | Outlook 2016 (Office для macOS) | Office 365 Exchange Online | MacOS |
 | Outlook 2016, Outlook 2013 (с современной проверкой подлинности), Skype для бизнеса (с современной проверкой подлинности) | Office 365 Exchange Online | Windows 8.1, Windows 7 |
 | Приложение Outlook Mobile | Office 365 Exchange Online | Android, iOS |
-| Приложение Power BI | служба Power BI | Windows 10, Windows 8.1, Windows 7, Android и iOS |
+| Приложение Power BI | Служба Power BI | Windows 10, Windows 8.1, Windows 7, Android и iOS |
 | Skype для бизнеса | Office 365 Exchange Online| Android, iOS |
 | Приложение Visual Studio Team Services | Visual Studio Team Services | Windows 10, Windows 8.1, Windows 7, iOS и Android |
 
@@ -202,7 +217,7 @@ ms.locfileid: "72893462"
 
 Этот параметр применяется к следующим клиентским приложениям.
 
-- Microsoft Azure Information Protection
+- Microsoft Azure Information Protection.
 - Microsoft Bookings
 - Microsoft Кортана
 - Microsoft Dynamics 365
@@ -216,7 +231,7 @@ ms.locfileid: "72893462"
 - Microsoft OneDrive
 - Microsoft OneNote
 - Microsoft Outlook
-- Планировщик (Майкрософт);
+- Планировщик (Майкрософт)
 - Microsoft PowerApps
 - Microsoft Power BI
 - Microsoft PowerPoint
@@ -230,11 +245,12 @@ ms.locfileid: "72893462"
 - Microsoft Word
 - Microsoft Yammer
 
-**Примечания**
+**Замечания**
 
 - Утвержденные клиентских приложения поддерживают функцию управления мобильными приложениями Intune.
 - Функция **Требовать утвержденное клиентское приложение**:
    - поддерживает только iOS и Android для [условия платформы устройства](#device-platform-condition);
+- Условный доступ не может рассматривать Microsoft ребро в режиме InPrivate в утвержденном клиентском приложении.
 
 ## <a name="app-protection-policy-requirement"></a>Требование политики защиты приложений 
 
@@ -247,9 +263,9 @@ ms.locfileid: "72893462"
 - Microsoft Кортана
 - Microsoft OneDrive
 - Microsoft Outlook
-- Планировщик (Майкрософт);
+- Планировщик (Майкрософт)
 
-**Примечания**
+**Замечания**
 
 - Приложения для политики защиты приложений поддерживают функцию управления мобильными приложениями Intune с защитой политики.
 - Требования к **политике защиты приложений** :

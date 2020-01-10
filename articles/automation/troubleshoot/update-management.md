@@ -1,6 +1,6 @@
 ---
-title: Устранение неполадок c помощью управления обновлениями
-description: Узнайте, как устранять неполадки с Управление обновлениями.
+title: Устранение ошибок в Azure Управление обновлениями
+description: Узнайте, как устранять неполадки в решении Управление обновлениями в Azure и устранять проблемы.
 services: automation
 author: mgoedtel
 ms.author: magoedte
@@ -8,12 +8,12 @@ ms.date: 05/31/2019
 ms.topic: conceptual
 ms.service: automation
 manager: carmonm
-ms.openlocfilehash: a42b05239ae1ddf8909e288486694bf57595b195
-ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
+ms.openlocfilehash: f60ec802af0c88ee8cb3809bf27feef89e11570a
+ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74849247"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75769801"
 ---
 # <a name="troubleshooting-issues-with-update-management"></a>Устранение неполадок c помощью управления обновлениями
 
@@ -37,7 +37,7 @@ ms.locfileid: "74849247"
 
 * У вас есть компьютеры, которые **не оцениваются** в соответствии с **требованиями**. Однако вы видите данные пульса в журналах Azure Monitor для гибридной рабочей роли Runbook, но не для Управление обновлениями.
 
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
 
 Эта проблема может быть вызвана проблемами локальной конфигурации или неправильно настроенной конфигурацией области.
 
@@ -82,7 +82,7 @@ ms.locfileid: "74849247"
 Error details: Unable to register Automation Resource Provider for subscriptions:
 ```
 
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
 
 Поставщик ресурсов службы автоматизации не зарегистрирован в подписке.
 
@@ -106,7 +106,7 @@ Error details: Unable to register Automation Resource Provider for subscriptions
 The components for the 'Update Management' solution have been enabled, and now this virtual machine is being configured. Please be patient, as this can sometimes take up to 15 minutes.
 ```
 
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
 
 Эта ошибка может возникать по следующим причинам.
 
@@ -118,7 +118,7 @@ The components for the 'Update Management' solution have been enabled, and now t
 1. Перейдите к разделу [планирование сети](../automation-hybrid-runbook-worker.md#network-planning) , чтобы узнать, какие адреса и порты должны быть разрешены для работы Управление обновлениями.
 2. Если вы используете клонированное изображение:
    1. В рабочей области Log Analytics Удалите виртуальную машину из сохраненного поиска для конфигурации области `MicrosoftDefaultScopeConfig-Updates`, если она отображается. Сохраненные поисковые запросы хранятся на вкладке **Общие** рабочей области.
-   2. Запустите `Remove-Item -Path "HKLM:\software\microsoft\hybridrunbookworker" -Recurse -Force`.
+   2. Выполните `Remove-Item -Path "HKLM:\software\microsoft\hybridrunbookworker" -Recurse -Force`.
    3. Выполните `Restart-Service HealthService`, чтобы перезапустить `HealthService`. При этом создается ключ и создается новый UUID.
    4. Если такой подход не работает, сначала запустите Sysprep на образе, а затем установите MMA.
 
@@ -132,7 +132,7 @@ The components for the 'Update Management' solution have been enabled, and now t
 The client has permission to perform action 'Microsoft.Compute/virtualMachines/write' on scope '/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/resourceGroupName/providers/Microsoft.Automation/automationAccounts/automationAccountName/softwareUpdateConfigurations/updateDeploymentName', however the current tenant '00000000-0000-0000-0000-000000000000' is not authorized to access linked subscription '00000000-0000-0000-0000-000000000000'.
 ```
 
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
 
 Эта ошибка возникает при создании развертывания обновлений с виртуальными машинами Azure в другом клиенте, который входит в развертывание обновлений.
 
@@ -157,7 +157,7 @@ New-AzureRmAutomationSoftwareUpdateConfiguration  -ResourceGroupName $rg -Automa
 
 Несмотря на то, что параметр **управления перезагрузкой** имеет значение **никогда не**перезагружаться, компьютеры по-прежнему перезапускаются после установки обновлений.
 
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
 
 Центр обновления Windows могут быть изменены несколькими разделами реестра, с помощью которых можно изменить поведение при перезагрузке.
 
@@ -175,7 +175,7 @@ New-AzureRmAutomationSoftwareUpdateConfiguration  -ResourceGroupName $rg -Automa
 Failed to start the runbook. Check the parameters passed. RunbookName Patch-MicrosoftOMSComputer. Exception You have requested to create a runbook job on a hybrid worker group that does not exist.
 ```
 
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
 
 Ошибка может быть вызвана одной из следующих причин:
 
@@ -204,7 +204,7 @@ Failed to start the runbook. Check the parameters passed. RunbookName Patch-Micr
 
 При регистрации компьютера Windows в Управление обновлениями вы увидите обновления, установленные без развертывания.
 
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
 
 В Windows обновления устанавливаются автоматически, как только они станут доступны. Такое поведение может вызвать путаницу, если вы не запланировали развертывание обновления на компьютере.
 
@@ -226,7 +226,7 @@ Failed to start the runbook. Check the parameters passed. RunbookName Patch-Micr
 Unable to Register Machine for Patch Management, Registration Failed with Exception System.InvalidOperationException: {"Message":"Machine is already registered to a different account."}
 ```
 
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
 
 Компьютер уже подключен к другой рабочей области для Управление обновлениями.
 
@@ -253,9 +253,13 @@ Unable to Register Machine for Patch Management, Registration Failed with Except
 The certificate presented by the service <wsid>.oms.opinsights.azure.com was not issued by a certificate authority used for Microsoft services. Contact your network administrator to see if they are running a proxy that intercepts TLS/SSL communication.
 ```
 
-### <a name="cause"></a>Причина:
+```error
+Access is denied. (Exception form HRESULT: 0x80070005(E_ACCESSDENIED))
+```
 
-Прокси-сервер, шлюз или брандмауэр могут блокировать сетевую связь.
+### <a name="cause"></a>Причина
+
+Прокси-сервер, шлюз или брандмауэр могут блокировать сетевую связь. 
 
 ### <a name="resolution"></a>Разрешение
 
@@ -271,7 +275,7 @@ The certificate presented by the service <wsid>.oms.opinsights.azure.com was not
 Unable to Register Machine for Patch Management, Registration Failed with Exception AgentService.HybridRegistration. PowerShell.Certificates.CertificateCreationException: Failed to create a self-signed certificate. ---> System.UnauthorizedAccessException: Access is denied.
 ```
 
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
 
 Гибридной рабочей роли Runbook не удалось создать самозаверяющий сертификат.
 
@@ -299,7 +303,7 @@ Unable to Register Machine for Patch Management, Registration Failed with Except
 * У вас есть компьютеры, не имеющие оценки.
 * На портале отобразится код ошибки HRESULT.
 
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
 
 Агент обновления (агент Центр обновления Windows в Windows; Диспетчер пакетов для дистрибутива Linux) настроен неправильно. Управление обновлениями полагается на агент обновления компьютера, чтобы предоставить необходимые обновления, состояние исправления и результаты развернутых исправлений. Без этих сведений Управление обновлениями не может правильно сообщить о необходимых или установленных исправлениях.
 
@@ -325,9 +329,10 @@ Unable to Register Machine for Patch Management, Registration Failed with Except
 |`0x8024402C`     | Если вы используете сервер WSUS, убедитесь, что параметры реестра для `WUServer` и `WUStatusServer` в разделе реестра `HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate` укажите правильный сервер WSUS.        |
 |`0x80072EE2`|Возникла неполадка с сетевым подключением или возникла неполадка при взаимодействии с настроенным сервером WSUS. Проверьте параметры WSUS и убедитесь, что служба доступна с клиента.|
 |`The service cannot be started, either because it is disabled or because it has no enabled devices associated with it. (Exception from HRESULT: 0x80070422)`     | Убедитесь, что служба Центр обновления Windows (wuauserv) запущена и не отключена.        |
+|`0x80070005`| Ошибка отказа в доступе может быть вызвана одной из следующих причин:<br> Зараженный компьютер<br> Неправильно настроены параметры Центр обновления Windows<br> Ошибка разрешения файла в папке%Виндир%\софтваредистрибутион<br> Недостаточно места на системном диске (C:).
 |Другое универсальное исключение     | Выполните поиск в Интернете, чтобы получить возможные решения, и поработайте с локальной ИТ-поддержкой.         |
 
-Просмотр файла windowsupdate. log также может помочь определить возможные причины. Дополнительные сведения о чтении журнала см. в разделе [чтение файла windowsupdate. log](https://support.microsoft.com/en-ca/help/902093/how-to-read-the-windowsupdate-log-file).
+Просмотр файла%Виндир%\виндовсупдате.лог также может помочь определить возможные причины. Дополнительные сведения о чтении журнала см. в разделе [чтение файла windowsupdate. log](https://support.microsoft.com/en-ca/help/902093/how-to-read-the-windowsupdate-log-file).
 
 Кроме того, можно загрузить и запустить [средство устранения неполадок центр обновления Windows](https://support.microsoft.com/help/4027322/windows-update-troubleshooter) , чтобы проверить наличие проблем с центр обновления Windows на компьютере.
 
@@ -340,7 +345,7 @@ Unable to Register Machine for Patch Management, Registration Failed with Except
 
 Запуск обновления начинается, но во время выполнения возникают ошибки.
 
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
 
 Возможные причины:
 

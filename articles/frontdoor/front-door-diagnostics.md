@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/18/2018
 ms.author: sharadag
-ms.openlocfilehash: 229706ff91b776363d3e9de080e02cee5edf9c77
-ms.sourcegitcommit: 5f0f1accf4b03629fcb5a371d9355a99d54c5a7e
+ms.openlocfilehash: e379e67fb733c968a755afd245d079239f559c89
+ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2019
-ms.locfileid: "71677898"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75751405"
 ---
 # <a name="monitoring-metrics-and-logs-in-azure-front-door-service"></a>Мониторинг метрик и журналов в службе "Передняя дверца" Azure
 
@@ -25,20 +25,20 @@ ms.locfileid: "71677898"
 - **Метрики**. В настоящее время Передняя дверца Azure содержит семь метрик для просмотра счетчиков производительности.
 - **Журналы**. Журналы действий и диагностики позволяют сохранять и использовать данные о производительности, доступе и других данных в ресурсе для мониторинга.
 
-### <a name="metrics"></a>metrics
+### <a name="metrics"></a>Метрики
 
 Метрики — это функция для некоторых ресурсов Azure, позволяющая просматривать счетчики производительности на портале. Ниже перечислены доступные метрики передней дверцы.
 
-| Метрика | Отображаемое имя метрики | Единица измерения | Размеры | Описание |
+| Метрика | Отображаемое имя метрики | Единица | Измерения | Description |
 | --- | --- | --- | --- | --- |
-| RequestCount | Число запросов | Count | HttpStatus</br>HttpStatusGroup</br>ClientRegion</br>ClientCountry | Число клиентских запросов, обслуженных службой Front Door.  |
-| RequestSize | Размер запроса | Байт | HttpStatus</br>HttpStatusGroup</br>ClientRegion</br>ClientCountry | Число байт, отправленных в качестве запросов от клиентов в службу Front Door. |
-| ResponseSize | Размер ответа | Байт | HttpStatus</br>HttpStatusGroup</br>ClientRegion</br>ClientCountry | Число байт, отправленных клиентам в качестве ответов из службы Front Door. |
-| TotalLatency | Total Latency (Общая задержка) | мс | HttpStatus</br>HttpStatusGroup</br>ClientRegion</br>ClientCountry | Время, вычисленное на основе запроса клиента, полученного с помощью передней дверцы, до тех пор, пока клиент не подтвердил последний байт ответа от передней дверцы. |
-| BackendRequestCount | Число запросов к серверному компоненту | Count | HttpStatus</br>HttpStatusGroup</br>Сервер | Число запросов, отправленных из службы Front Door к серверным частям. |
-| BackendRequestLatency | Backend Request Latency (Задержка запросов к серверным частям) | мс | Сервер | Время с момента отправки запроса службой Front Door к серверной части до получения Front Door последнего байта ответа от серверной части. |
-| BackendHealthPercentage | Работоспособность серверного компонента (в процентах) | Percent | Сервер</br>BackendPool | Процент успешных проб работоспособности от службы Front Door к серверным частям. |
-| WebApplicationFirewallRequestCount | Web Application Firewall Request Count (Число запросов к брандмауэру веб-приложения) | Count | PolicyName</br>RuleName</br>Action | Количество клиентских запросов, обрабатываемых механизмом безопасности на прикладном уровне службы Front Door. |
+| RequestCount | Число запросов | Количество | HttpStatus</br>HttpStatusGroup</br>ClientRegion</br>ClientCountry | Число клиентских запросов, обслуженных службой Front Door.  |
+| RequestSize | Размер запроса | Байты | HttpStatus</br>HttpStatusGroup</br>ClientRegion</br>ClientCountry | Число байт, отправленных в качестве запросов от клиентов в службу Front Door. |
+| ResponseSize | Размер ответа | Байты | HttpStatus</br>HttpStatusGroup</br>ClientRegion</br>ClientCountry | Число байт, отправленных клиентам в качестве ответов из службы Front Door. |
+| TotalLatency | Total Latency (Общая задержка) | Миллисекунды | HttpStatus</br>HttpStatusGroup</br>ClientRegion</br>ClientCountry | Время, вычисленное на основе запроса клиента, полученного с помощью передней дверцы, до тех пор, пока клиент не подтвердил последний байт ответа от передней дверцы. |
+| BackendRequestCount | Число запросов к серверному компоненту | Количество | HttpStatus</br>HttpStatusGroup</br>Серверная часть | Число запросов, отправленных из службы Front Door к серверным частям. |
+| BackendRequestLatency | Backend Request Latency (Задержка запросов к серверным частям) | Миллисекунды | Серверная часть | Время с момента отправки запроса службой Front Door к серверной части до получения Front Door последнего байта ответа от серверной части. |
+| BackendHealthPercentage | Работоспособность серверного компонента (в процентах) | Процент | Серверная часть</br>BackendPool | Процент успешных проб работоспособности от службы Front Door к серверным частям. |
+| WebApplicationFirewallRequestCount | Web Application Firewall Request Count (Число запросов к брандмауэру веб-приложения) | Количество | PolicyName</br>RuleName</br>Действия | Количество клиентских запросов, обрабатываемых механизмом безопасности на прикладном уровне службы Front Door. |
 
 ## <a name="activity-log"></a>Журналы действий
 
@@ -59,7 +59,7 @@ ms.locfileid: "71677898"
 ## <a name="diagnostic-logging"></a>Журналы диагностики
 Журналы диагностики содержат подробные сведения об операциях и ошибках, которые важны для аудита и устранения неполадок. Журналы диагностики отличаются от журналов действий.
 
-Журналы действий предоставляют подробные сведения об операциях, выполняемых в ресурсах Azure. Журналы диагностики позволяют получить представление об операциях, которые выполнял ваш ресурс. Дополнительные сведения см. в разделе [Azure Monitor журналов диагностики](../azure-monitor/platform/resource-logs-overview.md).
+Журналы действий предоставляют подробные сведения об операциях, выполняемых в ресурсах Azure. Журналы диагностики позволяют получить представление об операциях, которые выполнял ваш ресурс. Дополнительные сведения см. в разделе [Azure Monitor журналов диагностики](../azure-monitor/platform/platform-logs-overview.md).
 
 ![Журналы диагностики](./media/front-door-diagnostics/diagnostic-log.png)
 
@@ -73,9 +73,9 @@ ms.locfileid: "71677898"
 
 Служба "Передняя дверь" в настоящее время предоставляет журналы диагностики (в пакетном режиме каждый час). Журналы диагностики предоставляют отдельные запросы API с каждой записью, имеющей следующую схему:
 
-| Свойство  | Описание |
+| Свойство  | Description |
 | ------------- | ------------- |
-| clientIp | IP-адрес отправившего запрос клиента. |
+| ClientIp | IP-адрес отправившего запрос клиента. |
 | клиентпорт | IP-порт клиента, который сделал запрос. |
 | HttpMethod | Метод HTTP, используемый для запроса. |
 | HttpStatusCode | Код состояния HTTP, возвращенный прокси-сервером. |
@@ -90,7 +90,7 @@ ms.locfileid: "71677898"
 | UserAgent | Тип браузера, который использовался клиентом |
 | траккингреференце | Уникальная строка ссылки, определяющая запрос, обслуживаемый передней дверцей, который также отправляется клиенту в виде заголовка X-Azure-ref. Требуется для поиска сведений в журналах доступа для конкретного запроса. |
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Создание профиля передней дверцы](quickstart-create-front-door.md)
 - [Принцип работы передней дверцы](front-door-routing-architecture.md)

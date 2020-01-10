@@ -13,18 +13,18 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/20/2019
 ms.author: juliako
-ms.openlocfilehash: 5e416087df6c27eff42db487e90ff908d7d49df8
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.openlocfilehash: 37baed076ca074c1d558af36649e90959a0034c9
+ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74977698"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75750872"
 ---
 # <a name="diagnostic-logs-schemas"></a>Схемы для журналов диагностики
 
 [Azure Monitor](../../azure-monitor/overview.md) позволяет отслеживать метрики и журналы диагностики, которые помогут понять, как работают приложения. Вы можете отслеживать журналы диагностики служб мультимедиа и создавать оповещения и уведомления для собранных метрик и журналов. Вы можете отправить журналы в службу [хранилища Azure](https://azure.microsoft.com/services/storage/), выполнить их потоковую передачу в [концентраторы событий Azure](https://azure.microsoft.com/services/event-hubs/)и экспортировать их в [log Analytics](https://azure.microsoft.com/services/log-analytics/)или использовать сторонние службы.
 
-Подробные сведения см. в разделе [метрики Azure Monitor](../../azure-monitor/platform/data-platform.md) и [Azure Monitor журналов диагностики](../../azure-monitor/platform/resource-logs-overview.md).
+Подробные сведения см. в разделе [метрики Azure Monitor](../../azure-monitor/platform/data-platform.md) и [Azure Monitor журналов диагностики](../../azure-monitor/platform/platform-logs-overview.md).
 
 В этой статье описываются схемы журналов диагностики служб мультимедиа.
 
@@ -34,16 +34,16 @@ ms.locfileid: "74977698"
 
 ## <a name="key-delivery-log-schema"></a>Схема журнала доставки ключей
 
-### <a name="properties"></a>properties
+### <a name="properties"></a>Свойства
 
 Эти свойства относятся к схеме журнала доставки ключей.
 
-|Name|Описание|
+|Имя|Description|
 |---|---|
 |keyId|ИДЕНТИФИКАТОР запрошенного ключа.|
 |keyType|Может принимать одно из следующих значений: "Clear" (без шифрования), "FairPlay", "PlayReady" или "Widevine".|
 |policyName|Azure Resource Manager имя политики.|
-|tokenType|Тип маркера.|
+|tokenType|Тип токена.|
 |statusMessage|Сообщение о состоянии.|
 
 ### <a name="examples"></a>Примеры
@@ -110,7 +110,7 @@ ms.locfileid: "74977698"
 
 ## <a name="additional-notes"></a>Дополнительные замечания
 
-* Widevine — это служба, предоставляемая Google Inc. и подпадает под условия обслуживания и политики конфиденциальности Google, Inc.
+* Widevine — это служба, которая предоставляется компанией Google Inc. и подпадает под условия предоставления услуг и политику конфиденциальности Google Inc.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

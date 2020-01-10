@@ -5,12 +5,12 @@ ms.date: 03/04/2019
 ms.topic: conceptual
 description: Описание процессов, Azure Dev Spaces и их настройки в файле конфигурации аздс. YAML
 keywords: аздс. YAML, Azure Dev Spaces, пространства разработки, Docker, Kubernetes, Azure, AKS, служба Azure Kubernetes, контейнеры
-ms.openlocfilehash: 9efae0e9d6bc53e08dce604fa79aa29e158ecabd
-ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
+ms.openlocfilehash: e96541b0008dca9cbaeda92152f835c188036971
+ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74280138"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75771144"
 ---
 # <a name="how-azure-dev-spaces-works-and-is-configured"></a>Как работает Azure Dev Spaces и настроена
 
@@ -128,7 +128,7 @@ azds prep --public
 
 Команда `prep` выполнит просмотр файлов в проекте и попытается создать диаграмму Dockerfile и Helm для запуска приложения в Kubernetes. В настоящее время команда `prep` создаст диаграмму Dockerfile и Helm со следующими языками:
 
-* Java:
+* Java
 * Node.js
 * .NET Core
 
@@ -415,14 +415,14 @@ ingress:
 
 Производное пространство разработки также будет Intelligent маршрутизировать запросы между собственными приложениями и приложениями, которые совместно используются от его родителя. Маршрутизация работает, пытаясь направить запрос к приложению в производном пространстве разработки и вернуться к общему приложению из родительского пространства разработки. Маршрутизация вернется к общему приложению в области «бабушке», если приложение не находится в родительском пространстве.
 
-Например,
+Пример.
 * Пространство разработки *по умолчанию* имеет приложения *Service* a и *serviceB* .
 * *Azureuser* пространства разработки является производным от *значения по умолчанию*.
 * Обновленная версия *Service* a развертывается в *azureuser*.
 
 При использовании *azureuser*все запросы к *Service* a будут направляться в обновленную версию в *azureuser*. Запрос к *serviceB* сначала попытается направляться в *azureuser* версию *serviceB*. Так как она не существует, она будет направляться в версию *serviceB* *по умолчанию* . При удалении версии *azureuser* *Service* a все запросы к *Service* a будут возвращаться к использованию версии *Service*a *по умолчанию* .
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы приступить к работе с Azure Dev Spaces, ознакомьтесь со следующими краткими руководствами:
 
@@ -440,4 +440,4 @@ ingress:
 
 
 
-[supported-regions]: about.md#supported-regions-and-configurations
+[supported-regions]: https://azure.microsoft.com/global-infrastructure/services/?products=kubernetes-service

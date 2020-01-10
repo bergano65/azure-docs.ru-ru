@@ -1,5 +1,6 @@
 ---
-title: Руководство по Перенос в управляемый экземпляр Базы данных SQL Azure с помощью DMS | Документация Майкрософт
+title: Руководство. Миграция SQL Server в управляемый экземпляр SQL
+titleSuffix: Azure Database Migration Service
 description: Узнайте, как выполнять миграцию из локального экземпляра SQL Server в управляемый экземпляр Базы данных SQL Azure с помощью Azure Database Migration Service.
 services: dms
 author: HJToland3
@@ -8,23 +9,23 @@ manager: craigg
 ms.reviewer: craigg
 ms.service: dms
 ms.workload: data-services
-ms.custom: mvc, tutorial
+ms.custom: seo-lt-2019
 ms.topic: article
-ms.date: 11/08/2019
-ms.openlocfilehash: ca6f94664ad07b15c9c0c6dada6d6824e97527d9
-ms.sourcegitcommit: bc193bc4df4b85d3f05538b5e7274df2138a4574
-ms.translationtype: HT
+ms.date: 01/08/2020
+ms.openlocfilehash: d8e5b531684e175e5b9423bbc302bbe0b3d36058
+ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2019
-ms.locfileid: "73903136"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75745285"
 ---
-# <a name="tutorial-migrate-sql-server-to-an-azure-sql-database-managed-instance-offline-using-dms"></a>Руководство по Перенос баз данных SQL Server в управляемый экземпляр Базы данных SQL Azure с помощью DMS в автономном режиме
+# <a name="tutorial-migrate-sql-server-to-an-azure-sql-database-managed-instance-offline-using-dms"></a>Руководство. Миграция SQL Server в управляемый экземпляр базы данных SQL Azure в автономном режиме с помощью DMS
 
 Azure Database Migration Service можно использовать для переноса баз данных из локального экземпляра SQL Server в [Управляемый экземпляр Базы данных SQL Azure](../sql-database/sql-database-managed-instance.md). Сведения о дополнительных методах, которые могут потребовать некоторых действий вручную, см. в статье [Перенос экземпляра SQL Server в управляемый экземпляр Базы данных SQL Azure](../sql-database/sql-database-managed-instance-migrate.md).
 
 В этом руководстве выполняется миграция базы данных **Adventureworks2012** из локального экземпляра SQL Server в Управляемый экземпляр Базы данных SQL Azure с помощью Azure Database Migration Service.
 
-Из этого руководства вы узнаете, как выполнять следующие задачи:
+В этом руководстве описано следующее.
 > [!div class="checklist"]
 >
 > - создание экземпляра Azure Database Migration Service;
@@ -40,37 +41,46 @@ Azure Database Migration Service можно использовать для пе
 
 В этой статье описывается перенос данных из SQL Server в управляемый экземпляр Базы данных SQL Azure вне сети. Чтобы получить сведения о миграции в подключенном режиме, ознакомьтесь с [руководством по переносу баз данных из SQL Server в Управляемый экземпляр Базы данных SQL Azure по сети с помощью службы DMS](tutorial-sql-server-managed-instance-online.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Для работы с этим руководством вам потребуется следующее:
 
-- Создайте виртуальную сеть Azure для Azure Database Migration Service с помощью модели развертывания Azure Resource Manager, которая обеспечивает подключение "сеть — сеть" к локальным исходным серверам с помощью [ExpressRoute](https://docs.microsoft.com/azure/expressroute/expressroute-introduction) или [VPN](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-about-vpngateways). [Изучите сетевые топологии для переноса в управляемый экземпляр Базы данных Azure SQL с помощью Azure Database Migration Service](https://aka.ms/dmsnetworkformi). Дополнительные сведения о создании виртуальной сети приведены в [документации по виртуальным сетям](https://docs.microsoft.com/azure/virtual-network/). В частности, уделите внимание кратким руководствам с пошаговыми инструкциями.
+- Создайте виртуальная сеть Microsoft Azure для Azure Database Migration Service с помощью модели развертывания Azure Resource Manager, которая обеспечивает подключение типа "сеть — сеть" к локальным исходным серверам с помощью [ExpressRoute](https://docs.microsoft.com/azure/expressroute/expressroute-introduction) или [VPN](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-about-vpngateways). [Изучите сетевые топологии для переноса в управляемый экземпляр Базы данных Azure SQL с помощью Azure Database Migration Service](https://aka.ms/dmsnetworkformi). Дополнительные сведения о создании виртуальной сети см. в [документации по виртуальной сети](https://docs.microsoft.com/azure/virtual-network/), особенно в кратком руководстве, где приведены пошаговые инструкции.
 
     > [!NOTE]
-    > Если вы используете ExpressRoute с пиринговой связью с сетью корпорации Майкрософт, во время настройки виртуальной сети добавьте в подсеть, в которой будет подготовлена служба, следующие [конечные точки](https://docs.microsoft.com/azure/virtual-network/virtual-network-service-endpoints-overview):
+    > При установке виртуальной сети с помощью ExpressRoute с пирингом сети в корпорацию Майкрософт добавьте следующие [конечные точки](https://docs.microsoft.com/azure/virtual-network/virtual-network-service-endpoints-overview) службы в подсеть, в которой будет подготовлена служба:
     > - целевую конечную точку базы данных (например, конечная точка SQL, конечная точка Cosmos DB и т. д.);
     > - конечную точку службы хранилища;
     > - конечную точку служебной шины.
     >
     > Такая конфигурация вызвана тем, что у Azure Database Migration Service нет подключения к Интернету.
 
-- Убедитесь, что правила группы безопасности сети для виртуальной сети не блокируют следующие входящие порты для Azure Database Migration Service: 443, 53, 9354, 445, 12000. Дополнительные сведения о фильтрации трафика, предназначенного для виртуальной сети Azure, с помощью NSG см. в статье [Plan virtual networks](https://docs.microsoft.com/azure/virtual-network/virtual-networks-nsg) (Планирование виртуальных сетей).
+- Убедитесь, что правила группы безопасности сети виртуальной сети не блокируют следующие порты входящих подключений для Azure Database Migration Service: 443, 53, 9354, 445, 12000. Дополнительные сведения о фильтрации трафика NSG в виртуальной сети см. в статье [Фильтрация сетевого трафика с помощью групп безопасности сети](https://docs.microsoft.com/azure/virtual-network/virtual-networks-nsg).
 - Настройте [брандмауэр Windows для доступа к ядру исходной СУБД](https://docs.microsoft.com/sql/database-engine/configure-windows/configure-a-windows-firewall-for-database-engine-access).
 - Откройте брандмауэр Windows, чтобы предоставить Azure Database Migration Service доступ к исходному серверу SQL Server. По умолчанию это TCP-порт 1433.
 - Если вы запустили несколько именованных экземпляров SQL Server, использующих динамические порты, вы можете включить службу обозревателя SQL и разрешить доступ к UDP-порту 1434 через брандмауэры. Это позволит службе Azure Database Migration Service подключиться к именованному экземпляру на исходном сервере.
 - Если перед исходными базами данных используется брандмауэр, его правила должны разрешать службе Azure Database Migration Service доступ к исходным базам данных для миграции и файлам SMB через порт 445.
 - Создайте управляемый экземпляр Базы данных SQL Azure на портале Azure, следуя инструкциям из [этой статьи](https://aka.ms/sqldbmi).
 - Убедитесь, что для подключения к исходному серверу SQL Server и целевому управляемому экземпляру используются имена, входящие в серверную роль sysadmin.
+
+    >[!NOTE]
+    >По умолчанию Azure Database Migration Service поддерживает только миграцию имен входа SQL. Однако можно включить возможность миграции имен входа Windows следующим образом:
+    >
+    >- Убедитесь, что у управляемого экземпляра базы данных SQL есть доступ на чтение AAD, который можно настроить с помощью портал Azure пользователем с ролью " **администратор компании**" или " **глобальный администратор**".
+    >- Настройка экземпляра Azure Database Migration Service для включения миграции имени входа пользователя или группы Windows, которая настраивается с помощью портал Azure, на странице Конфигурация. После включения этого параметра перезапустите службу, чтобы изменения вступили в силу.
+    >
+    > После перезапуска службы в списке имен входа, доступном для миграции, отобразятся имена входа пользователей Windows или группы. Для всех переносимых имен входа пользователей или групп Windows вам будет предложено указать соответствующее доменное имя. Учетные записи пользователей службы (учетная запись с правами администратора) и виртуальные учетные записи пользователей (имя учетной записи с помощью службы NT domain name) не поддерживаются.
+
 - Создайте общую сетевую папку, которую Azure Database Migration Service сможет использовать для резервного копирования базы данных-источника.
 - Предоставьте учетной записи службы, от имени которой выполняется исходный экземпляр SQL Server, права на запись в эту созданную сетевую папку, а учетной записи компьютера для исходного сервера — права на чтение и запись для этой папки.
-- Запишите имя пользователя и пароль учетной записи Windows, которой предоставлены полные права доступа к этой сетевой папке. Служба Azure Database Migration Service олицетворяет пользователя с этими учетными данными, чтобы отправить файлы резервных копий в контейнер службы хранилища Azure для операции восстановления.
+- Запишите имя пользователя и пароль учетной записи Windows, которой предоставлены полные права доступа к этой сетевой папке. Azure Database Migration Service олицетворяет учетные данные пользователя, чтобы передать файлы резервных копий в контейнер службы хранилища Azure для операции восстановления.
 - Создайте контейнер больших двоичных объектов и получите его URI SAS, следуя инструкциям, приведенным в разделе [Получение SAS для контейнера больших двоичных объектов](https://docs.microsoft.com/azure/vs-azure-tools-storage-explorer-blobs#get-the-sas-for-a-blob-container), и не забудьте установить все разрешения (чтение, запись, удаление, перечисление) в окне политик при создании URI SAS. Это позволяет Azure Database Migration Service обращаться к контейнеру учетной записи хранения для отправки файлов резервных копий, которые используются для переноса баз данных в Управляемый экземпляр Базы данных SQL Azure.
 
 ## <a name="register-the-microsoftdatamigration-resource-provider"></a>Регистрация поставщика ресурсов Microsoft.DataMigration
 
 1. Войдите на портал Azure, щелкните **Все службы** и выберите **Подписки**.
 
-    ![Отображение подписок на портале](media/tutorial-sql-server-to-managed-instance/portal-select-subscriptions.png)        
+    ![Отображение подписок на портале](media/tutorial-sql-server-to-managed-instance/portal-select-subscriptions.png)
 
 2. Выберите подписку, в которой нужно создать экземпляр Azure Database Migration Service, а затем щелкните **Поставщики ресурсов**.
 
@@ -84,7 +94,7 @@ Azure Database Migration Service можно использовать для пе
 
 1. На портале Azure выберите + **Создать ресурс**, введите в поле поиска **Azure Database Migration Service**, а затем в раскрывающемся списке выберите **Azure Database Migration Service**.
 
-     ![Azure Marketplace](media/tutorial-sql-server-to-managed-instance/portal-marketplace.png)
+    ![Azure Marketplace](media/tutorial-sql-server-to-managed-instance/portal-marketplace.png)
 
 2. На экране **Azure Database Migration Service** выберите **Создать**.
 
@@ -94,11 +104,11 @@ Azure Database Migration Service можно использовать для пе
 
 4. Выберите расположение, в котором хотите создать экземпляр DMS.
 
-5. Создайте виртуальную сеть или выберите имеющуюся.
+5. Выберите существующую виртуальную сеть или создайте ее.
 
-    Виртуальная сеть предоставляет Azure Database Migration Service доступ к исходному экземпляру SQL Server и конечному управляемому экземпляру Базы данных SQL Azure.
+    Виртуальная сеть предоставляет Azure Database Migration Service с доступом к исходному SQL Server и целевому управляемому экземпляру базы данных SQL Azure.
 
-    Дополнительные сведения о создании виртуальной сети на портале Azure см. в статье [Создание виртуальной сети с помощью портала Azure](https://aka.ms/DMSVnet).
+    Дополнительные сведения о создании виртуальной сети в портал Azure см. в статье [Создание виртуальной сети с помощью портал Azure](https://aka.ms/DMSVnet).
 
     Подробные сведения см. в статье [Сетевые топологии для переноса Управляемого экземпляра Базы данных Azure SQL с помощью Azure Database Migration Service](https://aka.ms/dmsnetworkformi).
 
@@ -158,7 +168,7 @@ Azure Database Migration Service можно использовать для пе
 
     Если Управляемый экземпляр Базы данных SQL еще не подготовлен, щелкните [эту ссылку](https://docs.microsoft.com/azure/sql-database/sql-database-managed-instance-get-started), чтобы подготовить его. Вы можете продолжить создание проекта, а затем, когда управляемый экземпляр Базы данных SQL Azure будет готов, вернуться к этому проекту, чтобы выполнить миграцию.
 
-     ![Выбор цели](media/tutorial-sql-server-to-managed-instance/dms-target-details2.png)
+    ![Выбор цели](media/tutorial-sql-server-to-managed-instance/dms-target-details2.png)
 
 2. Щелкните **Сохранить**.
 
@@ -175,7 +185,7 @@ Azure Database Migration Service можно использовать для пе
 1. Выберите имена для входа, которые хотите перенести, на экране **Select logins** (Выбор имени входа).
 
     >[!NOTE]
-    >В этом выпуске поддерживается только перенос имен для входа SQL.
+    >По умолчанию Azure Database Migration Service поддерживает только миграцию имен входа SQL. Сведения о включении поддержки миграции имен входа Windows см. в разделе " **Предварительные требования** " этого руководства.
 
     ![Выберите имена для входа](media/tutorial-sql-server-to-managed-instance/select-logins.png)
 
@@ -189,9 +199,9 @@ Azure Database Migration Service можно использовать для пе
     |--------|---------|
     |**Выбор исходного архива** | Выберите вариант **I will provide latest backup files** (Я предоставлю файлы последних резервных копий), если у вас есть файлы полных резервных копий, которые DMS может использовать для переноса базы данных. Выберите вариант **I will let Azure Database Migration Service create backup files** (Я разрешу Azure Database Migration Service создавать файлы резервных копий), если нужно, чтобы служба DMS сначала создала полную резервную копию базы данных-источника и использовала ее для миграции. |
     |**Общая сетевая папка** | Локальная сетевая папка SMB, в которую Azure Database Migration Service может поместить резервные копии базы данных-источника. Учетная запись службы, в которой выполняется исходный экземпляр SQL Server, должна иметь права записи для этой сетевой папки. Укажите полное доменное имя или IP-адрес сервера и сетевую папку, например "\\\servername.domainname.com\backupfolder" или "\\\IP address\backupfolder".|
-    |**Имя пользователя** | Убедитесь, что пользователь Windows имеет полное право доступа к указанной ранее сетевой папке. Служба Azure Database Migration Service будет олицетворять пользователя с этими учетными данными, чтобы отправить файлы резервных копий в контейнер службы хранилища Azure для операции восстановления. В случае выбора для миграции баз данных с поддержкой TDE указанный ранее пользователь Windows должен иметь встроенную учетную запись администратора, а режим [Контроль учетных записей](https://docs.microsoft.com/windows/security/identity-protection/user-account-control/user-account-control-overview) должен быть отключен для Azure Database Migration Service, чтобы отправлять и удалять файлы сертификатов. |
+    |**User name** | Убедитесь, что пользователь Windows имеет полное право доступа к указанной ранее сетевой папке. Azure Database Migration Service выполнит олицетворение учетных данных пользователя, чтобы отправить файлы резервных копий в контейнер службы хранилища Azure для операции восстановления. В случае выбора для миграции баз данных с поддержкой TDE указанный ранее пользователь Windows должен иметь встроенную учетную запись администратора, а режим [Контроль учетных записей](https://docs.microsoft.com/windows/security/identity-protection/user-account-control/user-account-control-overview) должен быть отключен для Azure Database Migration Service, чтобы отправлять и удалять файлы сертификатов. |
     |**Пароль** | Пароль для пользователя |
-    |**Параметры учетной записи хранения** | Код URI SAS, который позволяет Azure Database Migration Service обращаться к контейнеру учетной записи хранения для отправки файлов резервных копий, используемых для переноса базы данных в Управляемый экземпляр Базы данных SQL Azure. [Получение SAS для контейнера больших двоичных объектов](https://docs.microsoft.com/azure/vs-azure-tools-storage-explorer-blobs#get-the-sas-for-a-blob-container).|
+    |**Параметры учетной записи хранения** | URI SAS, который предоставляет Azure Database Migration Service с доступом к контейнеру учетной записи хранения, в который служба загружает файлы резервных копий и используется для переноса баз данных в управляемый экземпляр базы данных SQL Azure. [Получение SAS для контейнера больших двоичных объектов](https://docs.microsoft.com/azure/vs-azure-tools-storage-explorer-blobs#get-the-sas-for-a-blob-container).|
     |**Параметры TDE** | Чтобы перенести базы данных-источники с активированным прозрачным шифрованием данных (TDE), необходимо иметь права на запись в целевой управляемый экземпляр Базы данных SQL Azure.  В раскрывающемся меню выберите подписку, в которой подготовлен управляемый экземпляр Базы данных SQL Azure.  В раскрывающемся меню выберите целевой **Управляемый экземпляр Базы данных SQL Azure**. |
 
     ![Настройка параметров миграции](media/tutorial-sql-server-to-managed-instance/dms-configure-migration-settings3.png)
@@ -230,7 +240,7 @@ Azure Database Migration Service можно использовать для пе
 
 3. Проверьте конечную базу данных в конечной среде управляемого экземпляра Базы данных SQL Azure.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о переносе базы данных в управляемый экземпляр с помощью команды T-SQL RESTORE см. в [этой статье](../sql-database/sql-database-managed-instance-restore-from-backup-tutorial.md).
 - Сведения об управляемом экземпляре см. в статье [Использование расширенной защиты данных Базы данных SQL с виртуальными сетями и почти полной совместимостью](../sql-database/sql-database-managed-instance.md).

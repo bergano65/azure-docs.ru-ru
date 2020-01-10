@@ -8,19 +8,19 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 05/01/2019
 ms.author: hrasheed
-ms.openlocfilehash: 5dd698b28a01ed251492cf34e9da2dda4d0c2580
-ms.sourcegitcommit: 3486e2d4eb02d06475f26fbdc321e8f5090a7fac
+ms.openlocfilehash: 180b7c203755553c343e0f7fc65c93092b330124
+ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73241994"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75751323"
 ---
 # <a name="set-up-secure-sockets-layer-ssl-encryption-and-authentication-for-apache-kafka-in-azure-hdinsight"></a>Настройка шифрования и проверки подлинности SSL (SSL) для Apache Kafka в Azure HDInsight
 
 В этой статье показано, как настроить SSL-шифрование между клиентами Apache Kafka и брокерами Apache Kafka. Здесь также показано, как настроить проверку подлинности клиентов (иногда это называется двусторонним протоколом SSL).
 
 > [!Important]
-> Для приложений Kafka можно использовать два клиента: клиент Java и клиент консоли. Только клиент Java `ProducerConsumer.java` может использовать SSL как для создания, так и для использования. Клиент производителя консоли `console-producer.sh` не работает с SSL.
+> Для приложений Kafka можно использовать два клиента: клиент Java и клиент консоли. Только клиент Java `ProducerConsumer.java` может использовать SSL для создания и использования. Клиентский `console-producer.sh` производителя консоли не работает с SSL.
 
 ## <a name="apache-kafka-broker-setup"></a>Установка компонента Service Broker Apache Kafka
 
@@ -49,7 +49,7 @@ ms.locfileid: "73241994"
 Используйте следующие подробные инструкции для завершения установки компонента Service Broker.
 
 > [!Important]
-> В следующих фрагментах кода Внкс является сокращением для одного из трех рабочих узлов и должно быть заменено `wn0`, `wn1` или `wn2` соответственно. `WorkerNode0_Name` и `HeadNode0_Name` должны быть заменены именами соответствующих компьютеров, например `wn0-abcxyz` или `hn0-abcxyz`.
+> В следующих фрагментах кода Внкс является сокращением для одного из трех рабочих узлов и должно быть заменено `wn0`, `wn1` или `wn2` соответствующим образом. `WorkerNode0_Name` и `HeadNode0_Name` должны быть заменены именами соответствующих компьютеров.
 
 1. Выполните начальную настройку на головном узле 0, который для HDInsight будет заполнять роль центра сертификации (ЦС).
 
@@ -157,10 +157,10 @@ ms.locfileid: "73241994"
 
 Чтобы завершить настройку клиента, выполните следующие действия.
 
-1. Войдите на клиентский компьютер (HN1).
+1. Войдите на клиентский компьютер (резервный головной узел).
 1. Создайте хранилище ключей Java и получите подписанный сертификат для брокера. Затем скопируйте сертификат на виртуальную машину, где запущен центр сертификации.
-1. Переключитесь на компьютер CA (hn0), чтобы подписать сертификат клиента.
-1. Войдите на клиентский компьютер (hn1) и перейдите к папке `~/ssl`. Скопируйте подписанный сертификат на клиентский компьютер.
+1. Чтобы подписать сертификат клиента, переключитесь на компьютер ЦС (активный головной узел).
+1. Перейдите на клиентский компьютер (резервный головной узел) и перейдите в папку `~/ssl`. Скопируйте подписанный сертификат на клиентский компьютер.
 
 ```bash
 cd ssl
@@ -174,11 +174,11 @@ keytool -keystore kafka.client.keystore.jks -certreq -file client-cert-sign-requ
 # Copy the cert to the CA
 scp client-cert-sign-request3 sshuser@HeadNode0_Name:~/tmp1/client-cert-sign-request
 
-# Switch to the CA machine (hn0) to sign the client certificate.
+# Switch to the CA machine (active head node) to sign the client certificate.
 cd ssl
 openssl x509 -req -CA ca-cert -CAkey ca-key -in /tmp1/client-cert-sign-request -out /tmp1/client-cert-signed -days 365 -CAcreateserial -passin pass:MyServerPassword123
 
-# Return to the client machine (hn1), navigate to ~/ssl folder and copy signed cert from the CA (hn0) to client machine
+# Return to the client machine (standby head node), navigate to ~/ssl folder and copy signed cert from the CA (active head node) to client machine
 scp -i ~/kafka-security.pem sshuser@HeadNode0_Name:/tmp1/client-cert-signed
 
 # Import CA cert to trust store

@@ -1,6 +1,6 @@
 ---
-title: Общие сведения о работоспособности гибридной рабочей роли Runbook Windows в Azure Управление обновлениями
-description: Узнайте, как устранять неполадки гибридной рабочей роли Runbook в Windows, которая поддерживает Управление обновлениями.
+title: Диагностика гибридной рабочей роли Runbook Windows в Azure Управление обновлениями
+description: Узнайте, как устранять неполадки и устранять проблемы с гибридной рабочей ролью Runbook службы автоматизации Azure в Windows, которая поддерживает Управление обновлениями.
 services: automation
 author: mgoedtel
 ms.author: magoedte
@@ -9,14 +9,14 @@ ms.topic: conceptual
 ms.service: automation
 ms.subservice: update-management
 manager: carmonm
-ms.openlocfilehash: 284376759e9e2da1f42bd04eea6e564c9690d4a9
-ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
+ms.openlocfilehash: bfc2c4a660afa4341a676fc79ab447c8cb86d5e1
+ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74850131"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75769818"
 ---
-# <a name="understand-the-windows-hybrid-runbook-worker-health-in-update-management"></a>Общие сведения о работоспособности гибридной рабочей роли Runbook Windows в Управление обновлениями
+# <a name="understand-and-resolve-windows-hybrid-runbook-worker-health-in-update-management"></a>Изучение и разрешение работоспособности гибридной рабочей роли Runbook Windows в Управление обновлениями
 
 Есть множество причин, по которым для компьютера не отображается состояние **Готово** в службе "Управление обновлениями". В Управление обновлениями можно проверить работоспособность агента гибридной рабочей роли Runbook, чтобы определить базовую проблему. В этой статье описывается, как запустить средство устранения неполадок для компьютеров Azure с портал Azure и с компьютеров, не относящихся к Azure, в [автономном сценарии](#troubleshoot-offline).
 
@@ -52,7 +52,7 @@ ms.locfileid: "74850131"
 
 Проверка операционной системы проверяет, работает ли Гибридная Рабочая роль Runbook с одной из следующих операционных систем:
 
-|Операционная система  |Заметки  |
+|Операционная система  |Примечания  |
 |---------|---------|
 |Windows Server 2008 R2 RTM, Windows Server 2008 | Поддерживает только оценки обновлений.         |
 |Windows Server 2008 R2 с пакетом обновления 1 и более поздней версии |Требуется .NET Framework 4,6 или более поздней версии. ([Скачать .NET Framework](/dotnet/framework/install/guide-for-developers))<br/> Требуется Windows PowerShell 5,1.  ([Скачать Windows Management Framework 5.1](https://www.microsoft.com/download/details.aspx?id=54616))        |

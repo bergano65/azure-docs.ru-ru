@@ -4,12 +4,12 @@ description: Узнайте, как разрабатывать и тестиро
 ms.custom: vs-azure
 ms.topic: conceptual
 ms.date: 08/21/2019
-ms.openlocfilehash: 04074579b3eb34175a6d29897bbd38b95ae3a596
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: 571519b996948a9fc4ac98e18e510fcee1dbef9b
+ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74230655"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75769781"
 ---
 # <a name="develop-azure-functions-using-visual-studio"></a>Разработка Функций Azure с помощью Visual Studio  
 
@@ -27,7 +27,7 @@ Visual Studio предоставляет следующие преимущест
 
 Если не указано иное, процедуры и примеры приведены для Visual Studio 2019. 
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Технические условия
 
 Средства функций Azure входят в рабочую нагрузку разработки Azure Visual Studio, начиная с Visual Studio 2017. Убедитесь, что в установку Visual Studio включена рабочая нагрузка **разработки Azure** .
 
@@ -63,7 +63,7 @@ Visual Studio предоставляет следующие преимущест
 1. Когда обновление завершится, нажмите кнопку **Закрыть** и перезапустите Visual Studio.
 
 > [!NOTE]  
-В Visual Studio 2019 и более поздних версиях расширение "средства функций Azure" обновляется как часть Visual Studio.  
+> В Visual Studio 2019 и более поздних версиях расширение "средства функций Azure" обновляется как часть Visual Studio.  
 
 ## <a name="create-an-azure-functions-project"></a>Создание проекта Функций Azure
 
@@ -207,7 +207,7 @@ For an example of how to test a queue triggered function, see the [queue trigger
 
 ![](./media/functions-develop-vs/functions-vstools-app-settings2.png)
 
-**Локальный** — значение параметра в файле local.settings.json, а **Удаленный** — текущий параметр в приложении-функции в Azure.  Чтобы создать параметр приложения, выберите **Добавьте параметр**. Используйте ссылку **Вставка локального значения**, чтобы скопировать значение параметра в поле **Удаленный**. Когда вы нажмете кнопку **ОК**, ожидающие изменения запишутся в файл с локальными параметрами и приложение-функцию.
+**Локальный** — значение параметра в файле local.settings.json, а **Удаленный** — текущий параметр в приложении-функции в Azure.  Выберите **Добавить параметр** , чтобы создать новый параметр приложения. Используйте ссылку **Вставка локального значения**, чтобы скопировать значение параметра в поле **Удаленный**. Когда вы нажмете кнопку **ОК**, ожидающие изменения запишутся в файл с локальными параметрами и приложение-функцию.
 
 > [!NOTE]
 > По умолчанию файл Local. Settings. JSON не возвращается в систему управления версиями. Это означает, что при клонировании проекта локальных функций из системы управления версиями проект не содержит файл Local. Settings. JSON. В этом случае необходимо вручную создать файл Local. Settings. JSON в корневом каталоге проекта, чтобы диалоговое окно **параметров приложения** работала правильно. 
@@ -228,7 +228,7 @@ For an example of how to test a queue triggered function, see the [queue trigger
 
 Дополнительные сведения см. в статье [Мониторинг Функций Azure](functions-monitoring.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об основных инструментах Функций Azure см. в статье [Как программировать и тестировать функции Azure в локальной среде](functions-run-local.md).
 

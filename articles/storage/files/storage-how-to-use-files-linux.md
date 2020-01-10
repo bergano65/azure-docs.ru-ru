@@ -7,15 +7,15 @@ ms.topic: conceptual
 ms.date: 10/19/2019
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: 3d8d7c6d3c4e752480310c122bcb7db237b3022b
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: 0ef9609cded29c94260d027212abbf0c62f8653c
+ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74209415"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75772114"
 ---
-# <a name="use-azure-files-with-linux"></a>Использование файлов Azure в Linux
-[Файлы Azure](storage-files-introduction.md) — это простая в использовании облачная файловая система от Майкрософт. Файловые ресурсы Azure можно подключить в дистрибутивах Linux с помощью [SMB-клиента в ядре](https://wiki.samba.org/index.php/LinuxCIFS). В этой статье описаны два способа подключения файлового ресурса Azure: по запросу с помощью команды `mount` и при загрузке путем создания записи в `/etc/fstab`.
+# <a name="use-azure-files-with-linux"></a>Использование Файлов Azure в Linux
+[Файлы Azure](storage-files-introduction.md) — это простая в использовании облачная файловая система от Майкрософт. Файловые ресурсы Azure можно подключить в дистрибутивах Linux с помощью [SMB-клиента в ядре](https://wiki.samba.org/index.php/LinuxCIFS). В этой статье описаны два способа подключения файлового ресурса Azure: по запросу с помощью команды `mount` и при загрузке путем создания записи в `/etc/fstab`.
 
 Рекомендуемый способ подключения файлового ресурса Azure в Linux — использование SMB 3,0. По умолчанию для файлов Azure требуется шифрование при передаче, которое поддерживается только SMB 3,0. Служба файлов Azure также поддерживает протокол SMB 2,1, который не поддерживает шифрование при передаче, но вы не можете подключать файловые ресурсы Azure с SMB 2,1 из другого региона или локальной среды Azure по соображениям безопасности. Если приложению специально не требуется SMB 2,1, есть небольшая причина использовать его, так как большинство популярных, недавно выпущенных дистрибутивов Linux, поддерживают SMB 3,0:  
 
@@ -34,7 +34,7 @@ ms.locfileid: "74209415"
 uname -r
 ```
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Технические условия
 <a id="smb-client-reqs"></a>
 
 * <a id="install-cifs-utils"></a>**Убедитесь, что пакет CIFS-utils установлен.**  
@@ -80,7 +80,7 @@ uname -r
         --name $storageAccountName \
         --query "primaryEndpoints.file" | tr -d '"')
     smbPath=$(echo $httpEndpoint | cut -c7-$(expr length $httpEndpoint))
-    fileHost=$(echo $fileHost | tr -d "/")
+    fileHost=$(echo $smbPath | tr -d "/")
 
     nc -zvw3 $fileHost 445
     ```
@@ -199,21 +199,21 @@ uname -r
 
 Начиная с Linux ядра 4,18, модуль ядра SMB, именуемый `cifs` по старым причинам, предоставляет новый параметр модуля (часто называемый *ParM* различными внешними документацией), именуемый `disable_legacy_dialects`. Несмотря на то, что впервые появились в ядре Linux 4,18, некоторые поставщики отменяли это изменение на более старые ядра, которые они поддерживают. Для удобства в следующей таблице подробно описывается доступность этого параметра модуля в распространенных дистрибутивах Linux.
 
-| Дистрибутив | Можно отключить SMB 1 |
+| Дистрибуция | Можно отключить SMB 1 |
 |--------------|-------------------|
 | Ubuntu 14.04 — 16.04 | Нет |
-| Ubuntu 18.04 | Yes |
-| Ubuntu 19.04 + | Yes |
+| Ubuntu 18.04 | Да |
+| Ubuntu 19.04 + | Да |
 | Debian 8-9 | Нет |
-| Debian 10 + | Yes |
-| Fedora 29 + | Yes |
-| CentOS 7 | Нет | 
-| CentOS 8 + | Yes |
+| Debian 10 + | Да |
+| Fedora 29 + | Да |
+| CentOS 7 | Нет | 
+| CentOS 8 + | Да |
 | Red Hat Enterprise Linux 6. x-7. x | Нет |
-| Red Hat Enterprise Linux 8 + | Yes |
+| Red Hat Enterprise Linux 8 + | Да |
 | openSUSE LEAP 15,0 | Нет |
-| openSUSE LEAP 15.1 + | Yes |
-| openSUSE Тумблевид | Yes |
+| openSUSE LEAP 15.1 + | Да |
+| openSUSE Тумблевид | Да |
 | SUSE Linux Enterprise 11. x-12. x | Нет |
 | SUSE Linux Enterprise 15 | Нет |
 | SUSE Linux Enterprise 15,1 | Нет |
@@ -273,12 +273,12 @@ sudo modprobe cifs
 cat /sys/module/cifs/parameters/disable_legacy_dialects
 ```
 
-## <a name="feedback"></a>Отзыв
+## <a name="feedback"></a>Обратная связь
 Пользователи Linux, нам очень интересно ваше мнение!
 
 Файлы Azure для группы пользователей Linux включают форум, на котором можно поделиться своим мнением и опытом адаптации хранилища файлов в Linux. Чтобы вступить в группу пользователей, отправьте электронное письмо в группу [Пользователи файлов Azure в Linux](mailto:azurefileslinuxusers@microsoft.com).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о службе файлов Azure см. по следующим ссылкам.
 
 * [Планирование развертывания службы файлов Azure](storage-files-planning.md)

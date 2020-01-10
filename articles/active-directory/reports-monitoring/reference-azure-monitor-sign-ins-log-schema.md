@@ -17,12 +17,12 @@ ms.date: 04/18/2019
 ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 98157009b5a005d1d1f9efbe2f59bac1302cdb01
-ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
+ms.openlocfilehash: 5525f2f8ab4ef83ba9c3aeeff945bc9d875600d5
+ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74014312"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75748667"
 ---
 # <a name="interpret-the-azure-ad-sign-in-logs-schema-in-azure-monitor"></a>Анализ схемы журналов входа в Azure AD в Azure Monitor
 
@@ -143,7 +143,7 @@ ms.locfileid: "74014312"
 
 ## <a name="field-descriptions"></a>Описания полей
 
-| Имя поля | ОПИСАНИЕ |
+| Имя поля | Description |
 |------------|-------------|
 | Время | Дата и время в формате UTC. |
 | ResourceId | Это значение не сопоставлено, и его можно игнорировать.  |
@@ -163,11 +163,11 @@ ms.locfileid: "74014312"
 | CallerIpAddress | IP-адрес отправившего запрос клиента. | 
 | CorrelationId | Необязательный код GUID, который передал клиент. Это значение может помочь найти связь между операциями на стороне клиента и операциями на стороне сервера. Кроме того, оно может пригодиться при отслеживании журналов, в которые записываются данные о многих службах. |
 | Удостоверение | Удостоверение из маркера, предоставленное при выполнении запроса. Это может быть учетная запись пользователя, системная учетная запись или субъект-служба. |
-| уровень | Предоставляет тип сообщения. Для операций аудита это поле всегда имеет значение *Informational*. |
-| Место проведения | Содержит сведения о местонахождении, в котором выполнялась операция входа. |
-| свойства | Список всех свойств, связанных с входом. Дополнительные сведения см. в статье [Справочник по API Microsoft Graph](https://developer.microsoft.com/graph/docs/api-reference/beta/resources/signin). Для удобства чтения в этой схеме используются имена атрибутов, отображаемые в ресурсе входа.
+| Уровень | Предоставляет тип сообщения. Для операций аудита это поле всегда имеет значение *Informational*. |
+| Расположение | Содержит сведения о местонахождении, в котором выполнялась операция входа. |
+| Свойства | Список всех свойств, связанных с входом. Дополнительные сведения см. в статье [Справочник по API Microsoft Graph](https://developer.microsoft.com/graph/docs/api-reference/beta/resources/signin). Для удобства чтения в этой схеме используются имена атрибутов, отображаемые в ресурсе входа.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Interpret the Azure AD audit logs schema in Azure Monitor (preview)](reference-azure-monitor-audit-log-schema.md) (Интерпретация схемы журналов аудита Azure Active Directory в Azure Monitor (предварительная версия))
-* [Дополнительные сведения о журналах диагностики Azure](../../azure-monitor/platform/resource-logs-overview.md).
+* [Дополнительные сведения о журналах диагностики Azure](../../azure-monitor/platform/platform-logs-overview.md).

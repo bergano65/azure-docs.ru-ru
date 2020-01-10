@@ -7,13 +7,13 @@ author: brjohnstmsft
 ms.author: brjohnst
 ms.service: cognitive-search
 ms.topic: conceptual
-ms.date: 11/04/2019
-ms.openlocfilehash: 24e16942410c72640628bd4120d05a85e68de993
-ms.sourcegitcommit: bc7725874a1502aa4c069fc1804f1f249f4fa5f7
+ms.date: 01/04/2020
+ms.openlocfilehash: ee8e11670d5b3e0f0edd57e3f87566faa60d4bc4
+ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73720023"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75754413"
 ---
 # <a name="azure-cognitive-search-service-rest-api-version-2019-05-06-preview"></a>API-интерфейс службы Когнитивный поиск Azure для других версий — Предварительная версия 2019-05-06
 
@@ -25,11 +25,11 @@ ms.locfileid: "73720023"
 
 ## <a name="new-in-2019-05-06-preview"></a>Новое в 2019-05-06-Preview
 
-+ [Добавочное индексирование](cognitive-search-incremental-indexing-conceptual.md) — это новый режим для индексирования, который добавляет состояние и кэширование в набор навыков, позволяя использовать существующие выходные данные при отсутствии изменений в источниках данных, индексаторах и наборах навыков. Эта функция применима только к дополнениям, в которых определен функциональный набор навыков.
++ [Добавочное дополнение (Предварительная версия)](cognitive-search-incremental-indexing-conceptual.md) добавляет кэширование в конвейер обогащения, что позволяет повторно использовать существующие выходные данные, если целевые изменения, такие как обновление набора навыков или другого объекта, не изменяют содержимое. Кэширование применяется только к обогащенным документам, созданным набором навыков.
 
-+ [Cosmos DB индексатор](search-howto-index-cosmosdb.md) поддерживает API MongoDB, Gremlin api и API Cassandra.
++ [Cosmos DB индексатор](search-howto-index-cosmosdb.md) поддерживает API MongoDB (Предварительная версия), API Gremlin (Предварительная версия) и API Cassandra (Предварительная версия).
 
-+ [Индексатор Azure Data Lake Storage 2-го поколения](search-howto-index-azure-data-lake-storage.md) может индексировать содержимое и метаданные из Data Lake Storage 2-го поколения.
++ [Индексатор Azure Data Lake Storage 2-го поколения (Предварительная версия)](search-howto-index-azure-data-lake-storage.md) может индексировать содержимое и метаданные из Data Lake Storage 2-го поколения.
 
 + [Извлечение документов (Предварительная версия)](cognitive-search-skill-document-extraction.md) — это восприятный навык, используемый во время индексирования, который позволяет извлекать содержимое файла из набора навыков. Ранее перед выполнением набора навыков произошло взлом документов. С добавлением этого навыка можно также выполнить эту операцию в рамках выполнения набора навыков.
 

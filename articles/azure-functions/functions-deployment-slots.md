@@ -5,16 +5,16 @@ author: craigshoemaker
 ms.topic: reference
 ms.date: 08/12/2019
 ms.author: cshoe
-ms.openlocfilehash: a59b62e19ac1e470dcdaaf0281dde9904a70b583
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: 0e8c93ea6d5c2b525ccbea2af900f100afcc3d93
+ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74230668"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75769223"
 ---
 # <a name="azure-functions-deployment-slots"></a>Слоты развертывания функций Azure
 
-Слоты развертывания функций Azure позволяют приложению-функции запускать различные экземпляры, называемые "слотами". Слоты — это разные среды, предоставляемые через общедоступную конечную точку. Один экземпляр приложения всегда сопоставляется с рабочим слотом, и вы можете поменять экземпляры, назначенные слоту, по запросу. Приложения-функции, выполняемые в плане службы приложений, могут иметь несколько слотов, в то время как в условиях использования допускается только один слот.
+Слоты развертывания функций Azure позволяют приложению-функции запускать различные экземпляры, называемые "слотами". Слоты — это разные среды, предоставляемые через общедоступную конечную точку. Один экземпляр приложения всегда сопоставляется с рабочим слотом, и вы можете поменять экземпляры, назначенные слоту, по запросу. Приложения-функции, выполняемые в плане службы приложений, могут иметь несколько слотов, в то время как в рамках плана потребления допускается только один слот.
 
 Ниже показано, как зависят функции подкачки слотов:
 
@@ -72,12 +72,12 @@ ms.locfileid: "74230668"
 - В разделе *функции платформы > общие параметры*щелкните **Конфигурация** .
 - Щелкните имя параметра, которое вы хотите прикрепить к текущему слоту.
 - Установите флажок **параметр слота развертывания** .
-- Нажмите кнопку **ОК**
+- Нажмите кнопку **ОК**.
 - После того, как колонка настройки исчезнет, нажмите кнопку **сохранить** , чтобы сохранить изменения.
 
 ![Параметр слота развертывания](./media/functions-deployment-slots/azure-functions-deployment-slots-deployment-setting.png)
 
-## <a name="deployment"></a>Развертывание
+## <a name="deployment"></a>Развертывание.
 
 При создании слота слоты пусты. Для развертывания приложения в слот можно использовать любую из [поддерживаемых технологий развертывания](./functions-deployment-technologies.md) .
 
@@ -132,10 +132,10 @@ ms.locfileid: "74230668"
 - [создание](https://docs.microsoft.com/cli/azure/functionapp/deployment/slot?view=azure-cli-latest#az-functionapp-deployment-slot-create)
 - [delete](https://docs.microsoft.com/cli/azure/functionapp/deployment/slot?view=azure-cli-latest#az-functionapp-deployment-slot-delete)
 - [list](https://docs.microsoft.com/cli/azure/functionapp/deployment/slot?view=azure-cli-latest#az-functionapp-deployment-slot-list)
-- [позиции](https://docs.microsoft.com/cli/azure/functionapp/deployment/slot?view=azure-cli-latest#az-functionapp-deployment-slot-swap)
+- [swap](https://docs.microsoft.com/cli/azure/functionapp/deployment/slot?view=azure-cli-latest#az-functionapp-deployment-slot-swap)
 - [Автоматическая замена](https://docs.microsoft.com/cli/azure/functionapp/deployment/slot?view=azure-cli-latest#az-functionapp-deployment-slot-auto-swap)
 
-## <a name="change-app-service-plan"></a>Изменение плана службы приложений
+## <a name="change-app-service-plan"></a>Изменить план служб приложений
 
 С помощью приложения-функции, которое выполняется в рамках плана службы приложений, можно изменить базовый план службы приложений для слота.
 
@@ -154,7 +154,7 @@ ms.locfileid: "74230668"
 
 1. Выберите новый план службы приложений или создайте новый план.
 
-1. Нажмите кнопку **ОК**
+1. Нажмите кнопку **ОК**.
 
     ![Изменение плана службы приложений](./media/functions-deployment-slots/azure-functions-deployment-slots-change-app-service-select.png)
 
@@ -183,6 +183,6 @@ ms.locfileid: "74230668"
 | Linux Premium             | Общедоступная версия  |
 | Выделенные Linux           | Общедоступная версия |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Технологии развертывания в функциях Azure](./functions-deployment-technologies.md)

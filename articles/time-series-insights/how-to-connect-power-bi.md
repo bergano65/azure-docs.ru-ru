@@ -7,13 +7,13 @@ manager: cshankar
 services: time-series-insights
 ms.service: time-series-insights
 ms.topic: conceptual
-ms.date: 11/12/2019
-ms.openlocfilehash: 8a464a8a635e0531eba2f9cc6fbceeb9edcea8bb
-ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
+ms.date: 01/07/2020
+ms.openlocfilehash: 1f6b753052b882b75884503f8c05f34b8cead821
+ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74705973"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75749382"
 ---
 # <a name="visualize-data-from-time-series-insights-in-power-bi"></a>Визуализация данных из анализа временных рядов в Power BI
 
@@ -41,8 +41,8 @@ ms.locfileid: "74705973"
 
 Чтобы подключить среду "аналитика временных рядов" к Power BI, выполните следующие действия.
 
-1. Открыть обозреватель аналитики временных рядов                      
-1. Экспорт данных в виде запроса или необработанных данных                       
+1. Открыть обозреватель аналитики временных рядов
+1. Экспорт данных в виде запроса или необработанных данных
 1. Открыть Power BI Desktop
 1. Загрузка из пользовательского запроса
 
@@ -51,13 +51,14 @@ ms.locfileid: "74705973"
 Чтобы приступить к работе, сделайте следующее:
 
 1. Откройте обозреватель предварительного просмотра "аналитика временных рядов" и проучите данные.
-1. После создания представления, с которым вы удовлетворены, перейдите в раскрывающееся меню **More Actions (дополнительные действия** ) и щелкните **подключиться к Power BI**. 
+1. После создания представления, с которым вы удовлетворены, перейдите в раскрывающееся меню **More Actions (дополнительные действия** ) и щелкните **подключиться к Power BI**.
 
     [экспорт обозревателя предварительной версии аналитики временных рядов ![](media/how-to-connect-power-bi/time-series-insights-export-option.png)](media/how-to-connect-power-bi/time-series-insights-export-option.png#lightbox)
 
 1. Задайте параметры на этой вкладке:
 
-   1. Укажите относительный интервал времени для просмотра. Если вы довольны существующим представлением, оставьте его в качестве **существующего времени**. 
+   1. Укажите относительный интервал времени для просмотра. Если вы довольны существующим представлением, оставьте его в качестве **существующего времени**.
+   
    1. Выберите между **агрегированными** и **необработанными событиями**. 
    
        > [!NOTE]
@@ -70,7 +71,7 @@ ms.locfileid: "74705973"
 
    1. Если вы не настроили экземпляр "аналитика временных рядов" для " **горячего" хранилища**, вы получите предупреждение.
 
-       [Подключение ![](media/how-to-connect-power-bi/connect-to-power-bi-warning.png)](media/how-to-connect-power-bi/connect-to-power-bi-warning.png#lightbox)
+       [предупреждение о горячем хранении ![](media/how-to-connect-power-bi/connect-to-power-bi-warning.png)](media/how-to-connect-power-bi/connect-to-power-bi-warning.png#lightbox)
 
        > [!TIP]
        > Вы можете настроить существующий экземпляр для **горячего хранения** в портал Azure.

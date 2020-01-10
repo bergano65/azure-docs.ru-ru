@@ -1,6 +1,6 @@
 ---
-title: включение файла
-description: включение файла
+title: включить файл
+description: включить файл
 services: vpn-gateway
 author: cherylmc
 ms.service: vpn-gateway
@@ -8,14 +8,22 @@ ms.topic: include
 ms.date: 08/14/2019
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: 93f6bc8533218af7f0e6dcd1c5f7be6fe8c00e29
-ms.sourcegitcommit: e0e6663a2d6672a9d916d64d14d63633934d2952
+ms.openlocfilehash: f322803d3484b4ec2d5449e19d67d75b35d6d92f
+ms.sourcegitcommit: c32050b936e0ac9db136b05d4d696e92fefdf068
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "69520875"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75751985"
 ---
 [!INCLUDE [P2S FAQ All](vpn-gateway-faq-p2s-all-include.md)]
+
+### <a name="what-should-i-do-if-im-getting-a-certificate-mismatch-when-connecting-using-certificate-authentication"></a>Что делать, если при подключении с использованием проверки подлинности сертификата возникло несоответствие сертификата?
+
+Снимите флажок **"проверять удостоверение сервера путем проверки сертификата"** или **Добавьте полное доменное имя сервера вместе с сертификатом** при создании профиля вручную. Это можно сделать, запустив **Rasphone** из командной строки и выбрав профиль из раскрывающегося списка.
+
+Обход проверки удостоверения сервера не рекомендуется в целом, но при использовании проверки подлинности сертификата Azure для проверки сервера в протоколе туннелирования VPN (IKEv2/SSTP) и протокола EAP используется один и тот же сертификат. Так как сертификат сервера и полное доменное имя уже проверены протоколом туннелирования VPN, он становится избыточным для повторной проверки в EAP.
+
+![точка-сеть](./media/vpn-gateway-faq-p2s-all-include/servercert.png "Сертификат сервера")
 
 ### <a name="can-i-use-my-own-internal-pki-root-ca-to-generate-certificates-for-point-to-site-connectivity"></a>Можно ли использовать собственный внутренний корневой ЦС PKI для создания сертификатов для подключения "точка — сеть"?
 

@@ -7,12 +7,12 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 11/22/2019
-ms.openlocfilehash: 15d44f95cccf15fd0f7615655f5bbac1b0c35127
-ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
+ms.openlocfilehash: 2d26cbce3398b9a44530553fbff0413c631b7579
+ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74706058"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75744769"
 ---
 # <a name="scale-azure-hdinsight-clusters"></a>Масштабирование кластеров Azure HDInsight
 
@@ -29,12 +29,12 @@ HDInsight обеспечивает гибкость, предоставляя в
 
 Корпорация Майкрософт предоставляет следующие служебные программы для масштабирования кластеров:
 
-|Программой | Описание|
+|Служебная программа | Description|
 |---|---|
 |[PowerShell AZ](https://docs.microsoft.com/powershell/azure)|[Set-аздинсигхтклустерсизе](https://docs.microsoft.com/powershell/module/az.hdinsight/set-azhdinsightclustersize) -имя_кластера \<имя кластера >-Таржетинстанцекаунт \<newSize >|
 |[AzureRM PowerShell](https://docs.microsoft.com/powershell/azure/azurerm) |[Set-азурермхдинсигхтклустерсизе](https://docs.microsoft.com/powershell/module/azurerm.hdinsight/set-azurermhdinsightclustersize) -имя_кластера \<имя кластера >-Таржетинстанцекаунт \<newSize >|
-|[Azure CLI](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest)| [AZ hdinsight изменение размера](https://docs.microsoft.com/cli/azure/hdinsight?view=azure-cli-latest#az-hdinsight-resize) — группа ресурсов \<группа ресурсов >--Name \<имя кластера >--target-instance-Count \<newSize >|
-|[Azure CLI](hdinsight-administer-use-command-line.md)|Размер кластера Azure hdinsight \<имя_кластера > \<целевое число экземпляров > |
+|[Azure CLI](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest)| [AZ hdinsight изменение размера](https://docs.microsoft.com/cli/azure/hdinsight?view=azure-cli-latest#az-hdinsight-resize) — группа ресурсов \<группа ресурсов >--Name \<имя кластера >--target-instance-Count \<newSize >|
+|[Azure CLI](hdinsight-administer-use-command-line.md)|Размер кластера Azure hdinsight \<имя_кластера > \<целевое число экземпляров > |
 |[Портал Azure](https://portal.azure.com)|Откройте панель кластера HDInsight, выберите **Размер кластера** в меню слева, затем на панели размер кластера введите число рабочих узлов и нажмите кнопку Сохранить.|  
 
 ![Параметр масштабирования кластера портал Azure](./media/hdinsight-scaling-best-practices/scale-cluster-blade1.png)
@@ -147,10 +147,10 @@ org.apache.hadoop.hdfs.server.namenode.SafeModeException: Cannot create director
 ```
 
 ```
-org.apache.http.conn.HttpHostConnectException: Connect to hn0-clustername.servername.internal.cloudapp.net:10001 [hn0-clustername.servername. internal.cloudapp.net/1.1.1.1] failed: Connection refused
+org.apache.http.conn.HttpHostConnectException: Connect to active-headnode-name.servername.internal.cloudapp.net:10001 [active-headnode-name.servername. internal.cloudapp.net/1.1.1.1] failed: Connection refused
 ```
 
-Вы можете изучить журналы узла имени в папке `/var/log/hadoop/hdfs/` примерно в то же время, когда было выполнено масштабирование кластера, чтобы проследить, когда был активирован безопасный режим. Файлам журнала присвоено имя `Hadoop-hdfs-namenode-hn0-clustername.*`.
+Вы можете изучить журналы узла имени в папке `/var/log/hadoop/hdfs/` примерно в то же время, когда было выполнено масштабирование кластера, чтобы проследить, когда был активирован безопасный режим. Файлам журнала присвоено имя `Hadoop-hdfs-namenode-<active-headnode-name>.*`.
 
 Основной причиной ошибок выше является зависимость Hive от временных файлов в HDFS во время выполнения запросов. Когда HDFS переходит в безопасный режим, Hive не может выполнять запросы, так как не удается произвести запись в HDFS. Временные файлы в HDFS расположены на локальном диске, подключенном к виртуальным машинам с отдельным рабочим узлом, и реплицируются на другие рабочие узлы с минимальным количеством реплик — три.
 
@@ -194,7 +194,7 @@ org.apache.http.conn.HttpHostConnectException: Connect to hn0-clustername.server
     Ниже приведен пример выходных данных при наличии файлов:
 
     ```output
-    sshuser@hn0-scalin:~$ hadoop fs -ls -R hdfs://mycluster/tmp/hive/hive
+    sshuser@scalin:~$ hadoop fs -ls -R hdfs://mycluster/tmp/hive/hive
     drwx------   - hive hdfs          0 2017-07-06 13:40 hdfs://mycluster/tmp/hive/hive/4f3f4253-e6d0-42ac-88bc-90f0ea03602c
     drwx------   - hive hdfs          0 2017-07-06 13:40 hdfs://mycluster/tmp/hive/hive/4f3f4253-e6d0-42ac-88bc-90f0ea03602c/_tmp_space.db
     -rw-r--r--   3 hive hdfs         27 2017-07-06 13:40 hdfs://mycluster/tmp/hive/hive/4f3f4253-e6d0-42ac-88bc-90f0ea03602c/inuse.info
@@ -246,4 +246,4 @@ hdfs dfsadmin -D 'fs.default.name=hdfs://mycluster/' -safemode leave
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * [Автоматическое масштабирование кластеров Azure HDInsight](hdinsight-autoscale-clusters.md)
-* [Общие сведения об Azure HDInsight и стеке технологий Hadoop и Spark](hadoop/apache-hadoop-introduction.md)
+* [Введение в Azure HDInsight](hadoop/apache-hadoop-introduction.md)

@@ -8,16 +8,16 @@ author: harelbr
 ms.author: harelbr
 ms.date: 06/26/2019
 ms.reviewer: mbullwin
-ms.openlocfilehash: 74014a91684749eec7c4086a88785f2024694677
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: bc66a286bee193b377731a549129446bba431cb3
+ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74929076"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75749041"
 ---
 # <a name="manage-application-insights-smart-detection-rules-using-azure-resource-manager-templates"></a>Управление правилами интеллектуального обнаружения Application Insights с помощью шаблонов Azure Resource Manager
 
-Для настройки правил интеллектуального обнаружения и управления ими в Application Insights можно использовать [шаблоны Azure Resource Manager](../../azure-resource-manager/resource-group-authoring-templates.md).
+Для настройки правил интеллектуального обнаружения и управления ими в Application Insights можно использовать [шаблоны Azure Resource Manager](../../azure-resource-manager/templates/template-syntax.md).
 Этот метод можно использовать при развертывании новых ресурсов Application Insights с помощью средств автоматизации Azure Resource Manager или для изменения параметров имеющихся ресурсов.
 
 ## <a name="smart-detection-rule-configuration"></a>Настройка правила интеллектуального обнаружения
@@ -133,9 +133,12 @@ ms.locfileid: "74929076"
 
 ```
 
-### <a name="failure-anomalies-v2-non-classic-alert-rule"></a>Правило генерации оповещений о сбоях версии 2 (не классическая)
+### <a name="failure-anomalies-alert-rule"></a>Правило генерации оповещений об аномалиях сбоев
 
-В этом шаблоне Azure Resource Manager показано, как настроить правило генерации оповещений об ошибке ошибки v2 с уровнем серьезности 2. Эта новая версия правила оповещения "аномалии ошибок" входит в состав новой платформы оповещений Azure и заменяет классическую версию, которая будет снята с учета в рамках процесса прекращения использования [классических предупреждений](https://azure.microsoft.com/updates/classic-alerting-monitoring-retirement/).
+Этот шаблон Azure Resource Manager демонстрирует настройку правила генерации оповещений об ошибках с уровнем серьезности 2. Эта новая версия правила оповещения "аномалии ошибок" входит в состав новой платформы оповещений Azure и заменяет классическую версию, которая будет снята с учета в рамках процесса прекращения использования [классических предупреждений](https://azure.microsoft.com/updates/classic-alerting-monitoring-retirement/).
+
+> [!NOTE]
+> Аномалии сбоев — это глобальная служба, поэтому расположение правила создается в глобальном расположении.
 
 ```json
 {
@@ -166,7 +169,7 @@ ms.locfileid: "74929076"
 ```
 
 > [!NOTE]
-> Этот шаблон Azure Resource Manager уникален для правила генерации оповещений об аномалиях сбоя версии 2 и отличается от других правил интеллектуального обнаружения, описанных в этой статье.   
+> Этот шаблон Azure Resource Manager уникален для правила генерации оповещений об аномалиях сбоя и отличается от других правил интеллектуального обнаружения, описанных в этой статье.
 
 ## <a name="smart-detection-rule-names"></a>Имена правил интеллектуального обнаружения
 

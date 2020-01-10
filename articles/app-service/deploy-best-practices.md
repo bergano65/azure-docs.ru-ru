@@ -7,14 +7,14 @@ ms.assetid: bb51e565-e462-4c60-929a-2ff90121f41d
 ms.topic: article
 ms.date: 07/31/2019
 ms.author: jafreebe
-ms.openlocfilehash: d3959b9a86ccc2d42cbf7bd188ce86bf4b7a2e63
-ms.sourcegitcommit: 265f1d6f3f4703daa8d0fc8a85cbd8acf0a17d30
+ms.openlocfilehash: 14946a05f021a9b155fd9a9621f73bde980970fa
+ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74670084"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75750467"
 ---
-# <a name="deployment-best-practices"></a>Рекомендации по развертыванию
+# <a name="deployment-best-practices"></a>Практические рекомендации по развертыванию
 
 Каждая группа разработчиков имеет уникальные требования, которые могут усложнить реализацию эффективного конвейера развертывания в любой облачной службе. В этой статье представлены три основных компонента развертывания в службе приложений: источники развертывания, конвейеры сборки и механизмы развертывания. В этой статье также рассматриваются некоторые рекомендации и советы по конкретным стекам языков.
 
@@ -39,7 +39,7 @@ ms.locfileid: "74670084"
 
 ## <a name="language-specific-considerations"></a>Рекомендации для конкретного языка
 
-### <a name="java"></a>Java:
+### <a name="java"></a>Java
 
 Используйте KUDU [зипдеплой/](deploy-zip.md) API для развертывания JAR-приложений, а также [WARDEPLOY/](deploy-zip.md#deploy-war-file) for War Apps. Если вы используете Jenkins, эти API можно использовать непосредственно на этапе развертывания. Дополнительные сведения см. в [этой статье](../jenkins/execute-cli-jenkins-pipeline.md).
 
@@ -66,3 +66,12 @@ ms.locfileid: "74670084"
 ### <a name="high-cpu-or-memory"></a>Высокая загрузка ЦП или памяти
 
 Если ваш план службы приложений использует более 90% доступного процессора или памяти, то при обработке развертывания может возникнуть проблема с базовой виртуальной машиной. В этом случае можно временно увеличить число экземпляров для выполнения развертывания. После завершения развертывания можно вернуть число экземпляров к его предыдущему значению.
+
+Дополнительные сведения о рекомендуемых методиках см. в статье [Диагностика службы приложений](https://docs.microsoft.com/azure/app-service/overview-diagnostics) .
+
+- Перейдите к веб-приложению в [портал Azure](https://portal.azure.com).
+- В области навигации слева щелкните **Диагностика и устранение проблем** , после чего откроется окно Диагностика службы приложений.
+- Выберите элемент Главная страница **с рекомендациями** .
+- Щелкните **рекомендации по обеспечению доступности & производительности** или **рекомендациям по оптимальной конфигурации** , чтобы просмотреть текущее состояние приложения в соответствии с рекомендациями.
+
+Эту ссылку также можно использовать для непосредственного открытия диагностики службы приложений для ресурса: `https://ms.portal.azure.com/?websitesextension_ext=asd.featurePath%3Ddetectors%2FParentAvailabilityAndPerformance#@microsoft.onmicrosoft.com/resource/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName}/troubleshoot`.

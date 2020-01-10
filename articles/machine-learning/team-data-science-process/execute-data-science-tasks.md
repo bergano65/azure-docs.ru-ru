@@ -10,12 +10,12 @@ ms.topic: article
 ms.date: 11/28/2017
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
-ms.openlocfilehash: a6b463c4a1d0e640cc6c2a380ee978fcafa2877e
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: 16fb47879daae6bfbf0929e842a3a6227d1524a9
+ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73670335"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75772284"
 ---
 # <a name="execute-data-science-tasks-exploration-modeling-and-deployment"></a>Выполнение задач обработки и анализа данных: изучение, моделирование и развертывание
 
@@ -23,14 +23,14 @@ ms.locfileid: "73670335"
 
 - [Машинное обучение Azure](../index.yml)
 - [SQL Server со службами машинного обучения](https://docs.microsoft.com/sql/advanced-analytics/r/r-services)
-- [Сервер машинного обучения Майкрософт](https://docs.microsoft.com/machine-learning-server/what-is-machine-learning-server)
+- [Microsoft Machine Learning Server](https://docs.microsoft.com/machine-learning-server/what-is-machine-learning-server)
 
 
 ## 1. <a name='DataQualityReportUtility-1'></a> исследование 
 
 Специалист по обработке и анализу данных может выполнять изучение данных и создание отчетов различными способами: с помощью библиотек и пакетов, доступных для Python (например, matplotlib), или с помощью R (например, ggplot или lattice). Специалисты по обработке и анализу данных могут настроить такой код в соответствии с потребностями изучения данных для конкретных сценариев. Требования к работе со структурированными и неструктурированными данными (например, текстом и изображениями) отличаются. 
 
-Такие продукты, как Машинное обучение Azure, также обеспечивают [расширенную подготовку данных](../service/how-to-transform-data.md) для структурирование и исследования данных, включая создание компонентов. Пользователь должен выбрать инструменты, библиотеки и пакеты, которые лучше всего подходят для выполнения его задач. 
+Такие продукты, как Машинное обучение Azure, также обеспечивают [расширенную подготовку данных](../how-to-create-register-datasets.md) для структурирование и исследования данных, включая создание компонентов. Пользователь должен выбрать инструменты, библиотеки и пакеты, которые лучше всего подходят для выполнения его задач. 
 
 Конечный результат этого этапа — это отчет об изучении данных. Он должен дать достаточно полное представление о данных, используемых для моделирования, и предоставить оценку пригодности данных для перехода к шагу моделирования. Служебные программы для командного процесса обработки и анализа данных (TDSP), рассматриваемые в следующих разделах и предназначенные для полуавтоматического изучения, моделирования и создания отчетов, также позволяют получить стандартизированные отчеты об изучении данных и моделировании. 
 
@@ -76,19 +76,19 @@ ms.locfileid: "73670335"
 1. [Служба "Машинное обучение Azure" — служба управления моделями](../index.yml)
 2. [ModelDB из MIT](https://mitdbg.github.io/modeldb/) 
 3. [SQL Server как система управления моделями](https://blogs.technet.microsoft.com/dataplatforminsider/2016/10/17/sql-server-as-a-machine-learning-model-management-system/)
-4. [Сервер машинного обучения Майкрософт](https://docs.microsoft.com/sql/advanced-analytics/r/r-server-standalone)
+4. [Microsoft Machine Learning Server](https://docs.microsoft.com/sql/advanced-analytics/r/r-server-standalone)
 
 ## 3. <a name='Deployment-3'></a> развертывание
 
-Развертывание в рабочей среде позволяет использовать модель для выполнения активной роли в организации. Прогнозы, полученные от развернутой модели можно использовать для принятия бизнес-решений.
+Развертывание в рабочей среде позволяет использовать модель как важный элемент в работе организации. Прогнозы, полученные от развернутой модели можно использовать для принятия бизнес-решений.
 
 ### <a name="production-platforms"></a>Рабочие платформы
 Поместить модели в рабочую среду можно с использованием разных подходов и платформ. Вот некоторые из них:
 
 
-- [Развертывание модели в службе "Машинное обучение Azure"](../service/how-to-deploy-and-where.md)
+- [Развертывание модели в службе "Машинное обучение Azure"](../how-to-deploy-and-where.md)
 - [Развертывание модели на сервере SQL Server](https://docs.microsoft.com/sql/advanced-analytics/tutorials/sqldev-py6-operationalize-the-model)
-- [Сервер машинного обучения Майкрософт](https://docs.microsoft.com/sql/advanced-analytics/r/r-server-standalone)
+- [Microsoft Machine Learning Server](https://docs.microsoft.com/sql/advanced-analytics/r/r-server-standalone)
 
 > [!NOTE]
 > Перед развертыванием необходимо убедиться, что показатели задержки модели достаточно малы для использования в рабочей среде.

@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: timlt
-ms.openlocfilehash: 2871a4a0efaa40d20148ede7f0402a0dd874126c
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: a5697989696d0d375e52baeb9f7332e7013d16bf
+ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65957311"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75768849"
 ---
 # <a name="manage-your-azure-maps-account"></a>Управление учетной записью Azure Maps
 
@@ -21,9 +21,9 @@ ms.locfileid: "65957311"
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-## <a name="create-a-new-account"></a>Создание учетной записи
+## <a name="create-a-new-account"></a>Создание новой учетной записи
 
-1. Войдите на [портале Azure](https://portal.azure.com).
+1. Войдите на [портал Azure](https://portal.azure.com).
 
 2. Выберите **Создать ресурс** в верхнем левом углу окна портала Azure.
 
@@ -43,7 +43,7 @@ ms.locfileid: "65957311"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Настройка проверки подлинности с помощью службы карт Azure:
+Настройте проверку подлинности с помощью Azure Maps и Узнайте, как получить ключ подписки Azure Maps.
 > [!div class="nextstepaction"]
 > [Управление проверкой подлинности](how-to-manage-authentication.md)
 

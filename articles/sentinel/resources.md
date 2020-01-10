@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 12/02/2019
 ms.author: rkarlin
-ms.openlocfilehash: fe0eb6c2305dd01d8ff3df5be7056cbeae92fff2
-ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
+ms.openlocfilehash: 98c76b2be6a5cc801f9e7b31357cbeb158a966fe
+ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74762723"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75771297"
 ---
 # <a name="useful-resources-for-working-with-azure-sentinel"></a>Полезные ресурсы для работы с Azure Sentinel
 
@@ -32,7 +32,7 @@ ms.locfileid: "74762723"
 
 
 ## <a name="auditing-and-reporting"></a>Аудит и создание отчетов
-Журналы аудита для Azure Sentinel хранятся в [журналах действий Azure](../azure-monitor/platform/activity-logs-overview.md).
+Журналы аудита для Azure Sentinel хранятся в [журналах действий Azure](../azure-monitor/platform/platform-logs-overview.md).
 
 Можно проводить аудит следующих поддерживаемых операций.
 
@@ -44,8 +44,6 @@ ms.locfileid: "74762723"
 |Удалить рабочий процесс    |Microsoft.Logic/workflows|
 |Создать сохраненный поиск    |Microsoft. OperationalInsights/workspaces/Саведсеарчес|
 |Удалить сохраненный поиск    |Microsoft. OperationalInsights/workspaces/Саведсеарчес|
-|Задать панель мониторинга  |Microsoft. портал/панели мониторинга|
-|Удалить панель мониторинга   |Microsoft. портал/панели мониторинга|
 |Обновление правил генерации оповещений |Microsoft. Секуритинсигхтс/alertRules|
 |Удаление правил генерации оповещений |Microsoft. Секуритинсигхтс/alertRules|
 |Обновление действий ответа для правила генерации оповещений |Microsoft. Секуритинсигхтс/alertRules|
@@ -57,7 +55,7 @@ ms.locfileid: "74762723"
 |Создание комментариев к вариантам   |Microsoft. Секуритинсигхтс/cases|
 |Обновление соединителей данных |Microsoft. Секуритинсигхтс/Connects|
 |Удаление соединителей данных |Microsoft. Секуритинсигхтс/Connects|
-|Параметры обновления    |Microsoft. Секуритинсигхтс/параметры|
+|Обновить параметры    |Microsoft. Секуритинсигхтс/параметры|
 
 ### <a name="view-audit-and-reporting-data-in-azure-sentinel"></a>Просмотр данных аудита и отчетов в Azure Sentinel
 

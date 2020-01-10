@@ -11,12 +11,12 @@ author: bonova
 ms.author: bonova
 ms.reviewer: sstein, carlrab
 ms.date: 09/05/2019
-ms.openlocfilehash: 13c58ddf5f51e5b63d2dbe425b3ec795e21dabb8
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.openlocfilehash: 5a45b9e3ba59a91f580ce0f2dc180adf5d20c87d
+ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73810352"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75754059"
 ---
 # <a name="azure-sql-database-instance-pools-preview-how-to-guide"></a>Руководство по пулам экземпляров баз данных SQL Azure (Предварительная версия)
 
@@ -26,7 +26,7 @@ ms.locfileid: "73810352"
 
 В следующей таблице показаны доступные операции, связанные с пулами экземпляров и их доступности в портал Azure и PowerShell.
 
-|Команда|Портал Azure|PowerShell|
+|Get-Help|Портал Azure|PowerShell|
 |:---|:---|:---|
 |Создание пула экземпляров|Нет|Да|
 |Обновление пула экземпляров (ограниченное число свойств)|Нет |Да |
@@ -41,7 +41,7 @@ ms.locfileid: "73810352"
 
 Доступные [команды PowerShell](https://docs.microsoft.com/powershell/module/az.sql/)
 
-|Командлет |Description (Описание) |
+|Командлет |Description |
 |:---|:---|
 |[New-Азсклинстанцепул](/powershell/module/az.sql/new-azsqlinstancepool/) | Создает пул экземпляров базы данных SQL Azure. |
 |[Get-Азсклинстанцепул](/powershell/module/az.sql/get-azsqlinstancepool/) | Возвращает сведения о пуле экземпляров SQL Azure. |
@@ -92,11 +92,17 @@ ms.locfileid: "73810352"
 
 - В общедоступной предварительной версии доступны только общего назначения и го поколения.
 - Имя пула может содержать только строчные буквы, цифры и дефис и не может начинаться с дефиса.
-- Чтобы получить идентификатор подсети, используйте `Get-AzVirtualNetworkSubnetConfig -Name "miPoolSubnet" -VirtualNetwork $virtualNetwork`.
 - Если вы хотите использовать АХБ (Преимущество гибридного использования Azure), он применяется на уровне пула экземпляров. Вы можете задать тип лицензии во время создания пула или обновить его в любое время после создания.
 
 > [!IMPORTANT]
 > Развертывание пула экземпляров — это длительная операция, которая занимает примерно 4,5 часов.
+
+Чтобы получить параметры сети, сделайте следующее:
+
+```powershell
+$virtualNetwork = Get-AzVirtualNetwork -Name "miPoolVirtualNetwork" -ResourceGroupName "myResourceGroup"
+$subnet = Get-AzVirtualNetworkSubnetConfig -Name "miPoolSubnet" -VirtualNetwork $virtualNetwork
+```
 
 Чтобы создать пул экземпляров, выполните следующие действия.
 
@@ -104,7 +110,7 @@ ms.locfileid: "73810352"
 $instancePool = New-AzSqlInstancePool `
   -ResourceGroupName "myResourceGroup" `
   -Name "mi-pool-name" `
-  -SubnetId "/subscriptions/subscriptionID/resourceGroups/myResourceGroup/providers/Microsoft.Network/virtualNetworks/miPoolVirtualNetwork/subnets/miPoolSubnet" `
+  -SubnetId $subnet.Id `
   -LicenseType "LicenseIncluded" `
   -VCore 80 `
   -Edition "GeneralPurpose" `

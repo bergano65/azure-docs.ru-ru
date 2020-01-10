@@ -5,12 +5,12 @@ ms.assetid: ffbc6064-edf6-474d-971c-695598fd08bf
 ms.topic: article
 ms.date: 08/08/2019
 ms.custom: seodec18
-ms.openlocfilehash: f9158a4094b7d2ec148c2cae85decb3ad959b7c3
-ms.sourcegitcommit: 265f1d6f3f4703daa8d0fc8a85cbd8acf0a17d30
+ms.openlocfilehash: 12e16cc7e17ae217a334fe25d71672ab2cafa5a8
+ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74671922"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75768441"
 ---
 # <a name="configure-your-app-service-app-to-use-microsoft-account-login"></a>Настройка приложения службы приложений для использования входа в учетную запись Майкрософт
 
@@ -18,11 +18,11 @@ ms.locfileid: "74671922"
 
 В этом разделе показано, как настроить службу приложений Azure для использования учетной записи Майкрософт в качестве поставщика проверки подлинности. 
 
-## <a name="register-microsoft-account"> </a>Регистрация приложения с использованием учетной записи Майкрософт
+## <a name="register-microsoft-account"> </a>Регистрация приложения с помощью учетной записи Майкрософт
 
 1. Перейдите к [**Регистрация приложений**](https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade) в портал Azure. При необходимости выполните вход с помощью учетная запись Майкрософт.
 1. Выберите **Новая регистрация**, а затем введите имя приложения.
-1. В списке **URI перенаправления**выберите **веб**и введите `https://<app-domain-name>/.auth/login/microsoftaccount/callback supply the endpoint for your application`. Замените *\<app-domain-name >* именем домена приложения.  Пример: `https://contoso.azurewebsites.net/.auth/login/microsoftaccount/callback`. Не забудьте использовать схему HTTPS в URL-адресе.
+1. В списке **URI перенаправления**выберите **веб**и введите `https://<app-domain-name>/.auth/login/microsoftaccount/callback`. Замените *\<app-domain-name >* именем домена приложения.  Например, `https://contoso.azurewebsites.net/.auth/login/microsoftaccount/callback`. Не забудьте использовать схему HTTPS в URL-адресе.
 
 1. Выберите **Зарегистрировать**.
 1. Скопируйте **идентификатор приложения (клиента)** . Он понадобится вам позднее.
@@ -30,9 +30,9 @@ ms.locfileid: "74671922"
 1. Скопируйте значение, которое отображается на странице **сертификаты & секреты** . После выхода из этой страницы она не будет отображаться снова.
 
     > [!IMPORTANT]
-    > Пароль — это важный элемент обеспечения безопасности. Не сообщайте пароль никому и не раскрывайте его в клиентском приложении.
+    > Значение секрета клиента (пароль) — это важные учетные данные безопасности. Не сообщайте пароль никому и не раскрывайте его в клиентском приложении.
 
-## <a name="secrets"> </a>Добавление данных учетной записи Майкрософт в приложение службы приложений
+## <a name="secrets"> </a>Добавление сведений об учетной записи Майкрософт в приложение службы приложений
 
 1. Перейдите к приложению в [портал Azure].
 1. Выберите **параметры** > **Проверка подлинности и авторизация**и убедитесь, что **Проверка подлинности службы приложений** **включена.**
