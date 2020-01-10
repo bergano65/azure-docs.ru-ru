@@ -1,5 +1,5 @@
 ---
-title: Защита аутентификации RADIUS VPN-шлюза Azure с использованием NPS-сервера для обеспечения Многофакторной идентификации | Документация Майкрософт
+title: Интеграция NPS с проверкой подлинности RADIUS VPN-шлюза для MFA
 description: Описывается интеграция аутентификации RADIUS шлюза Azure с NPS-сервером для обеспечения Многофакторной идентификации.
 services: vpn-gateway
 documentationcenter: na
@@ -15,18 +15,18 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/16/2019
 ms.author: genli
-ms.openlocfilehash: ab152cca1d809d92803a3e50ea83da1cbcd8243c
-ms.sourcegitcommit: 4821b7b644d251593e211b150fcafa430c1accf0
+ms.openlocfilehash: 941b6ac86941824351f83592998e8735e3eb8ee5
+ms.sourcegitcommit: 5b073caafebaf80dc1774b66483136ac342f7808
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74174620"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75780374"
 ---
 # <a name="integrate-azure-vpn-gateway-radius-authentication-with-nps-server-for-multi-factor-authentication"></a>Интеграция аутентификации RADIUS шлюза Azure с NPS-сервером для обеспечения Многофакторной идентификации 
 
 В статье описано, как интегрировать сервер политики сети (NPS-сервер) с аутентификацией RADIUS VPN-шлюза Azure, чтобы обеспечить Многофакторную идентификацию (MFA) для VPN-подключений типа "точка — сеть". 
 
-## <a name="prerequisite"></a>Предварительные требования
+## <a name="prerequisite"></a>Необходимое условие
 
 Для использования MFA пользователи должны быть добавлены в службу Azure Active Directory (Azure AD), которая должна синхронизироваться с локальной или облачной средой. Кроме того, пользователь должен выполнить процесс автоматической регистрации для использования MFA.  Дополнительные сведения см. в разделе [Настройка учетной записи для двухфакторной проверки подлинности](../active-directory/user-help/multi-factor-authentication-end-user-first-time.md).
 
@@ -79,7 +79,7 @@ ms.locfileid: "74174620"
 
       ![Рисунок: параметры подключения типа "точка — сеть"](./media/vpn-gateway-radiuis-mfa-nsp/configure-p2s.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Многофакторная идентификация Azure](../active-directory/authentication/multi-factor-authentication.md)
 - [Интеграция имеющейся инфраструктуры NPS со службой Многофакторной идентификации Azure](../active-directory/authentication/howto-mfa-nps-extension.md)

@@ -1,26 +1,18 @@
 ---
-title: Конфигурации партнерских VPN-устройств для подключения к VPN-шлюзам Azure | Документация Майкрософт
+title: Конфигурации партнерских VPN-устройств для подключения к VPN-шлюзам Azure
 description: В этой статье содержится обзор конфигураций партнерских VPN-устройств, позволяющих подключаться к VPN-шлюзам Azure.
 services: vpn-gateway
-documentationcenter: na
 author: yushwang
-manager: rossort
-editor: ''
-tags: ''
-ms.assetid: a8bfc955-de49-4172-95ac-5257e262d7ea
 ms.service: vpn-gateway
-ms.devlang: na
 ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: infrastructure-services
 ms.date: 06/20/2017
 ms.author: yushwang
-ms.openlocfilehash: 7d3a32b5f2b2742a36716bac9747f20c47c98858
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 733add5aa86ebd7faaaab78bb301ba9469433fdd
+ms.sourcegitcommit: 5b073caafebaf80dc1774b66483136ac342f7808
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66150177"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75778028"
 ---
 # <a name="overview-of-partner-vpn-device-configurations"></a>Обзор конфигураций партнерских VPN-устройств
 В этой статье содержится обзор процесса настройки локальных VPN-устройств для подключения к VPN-шлюзам Azure. Для демонстрации подключения к различным конфигурациям локальных VPN-устройств с помощью одинаковых параметров используются примеры виртуальной сети Azure и настройки VPN-шлюза.
@@ -40,7 +32,7 @@ ms.locfileid: "66150177"
 ### <a name="connection-parameters"></a>Параметры подключения
 В этом разделе перечислены параметры для примеров, описанных в предыдущих разделах.
 
-| **Параметр**                | **Значение**                    |
+| **Параметр**                | **Value**                    |
 | ---                          | ---                          |
 | Префиксы адресов виртуальной сети        | 10.11.0.0/16;<br>10.12.0.0/16 |
 | IP-адрес VPN-шлюза Azure         | IP-адрес VPN-шлюза Azure         |

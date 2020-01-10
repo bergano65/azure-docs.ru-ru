@@ -1,0 +1,74 @@
+### YamlMime:Landing
+title: Документация по интернет-пирингу
+summary: Узнайте об интернет-пиринге с Майкрософт.
+metadata:
+  title: Документация по интернет-пирингу
+  titleSuffix: Azure
+  description: Узнайте о пиринге с Майкрософт.
+  services: internet-peering
+  ms.service: internet-peering
+  ms.topic: landing-page
+  author: prmitiki
+  ms.author: prmitiki
+  ms.date: 11/27/2019
+  ms.openlocfilehash: 83549a56b3fb81c66827d1e9f87718467fb1098a
+  ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 01/09/2020
+  ms.locfileid: "75773525"
+landingContent:
+- title: Сведения об интернет-пиринге
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Сведения об интернет-пиринге
+      url: overview.md
+    - text: 'Сравнение: интернет-пиринг и Служба пиринга'
+      url: overview-peering-service.md
+  - linkListType: concept
+    links:
+    - text: Политика пиринга
+      url: policy.md
+    - text: Предварительные требования для настройки пиринга с Майкрософт
+      url: prerequisites.md
+    - text: Часто задаваемые вопросы об интернет-пиринге
+      url: faqs.md
+- title: Начало работы
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Связывание однорангового узла ASN с подпиской Azure с помощью портала
+      url: howto-subscription-association-portal.md
+- title: Пиринг через точку обмена
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Пошаговое руководство по пирингу через точку обмена
+      url: walkthrough-exchange-all.md
+    - text: Создание или изменение пиринга через точку обмена с помощью портала
+      url: howto-exchange-portal.md
+    - text: Преобразование устаревшего пиринга через точку обмена в ресурс Azure с помощью портала
+      url: howto-legacy-exchange-portal.md
+- title: Прямой пиринг
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Пошаговое руководство по прямому пирингу
+      url: walkthrough-direct-all.md
+    - text: Создание или изменение прямого пиринга с помощью портала
+      url: howto-direct-portal.md
+    - text: Преобразование устаревшего прямого пиринга в ресурс Azure с помощью портала
+      url: howto-legacy-direct-portal.md
+- title: Служба пиринга
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Часто задаваемые вопросы о Службе пиринга
+      url: service-faqs.md
+  - linkListType: how-to-guide
+    links:
+    - text: Пошаговое руководство по Службе пиринга для партнеров
+      url: walkthrough-peering-service-all.md
+    - text: Включение прямого пиринга в Службе пиринга с помощью портала
+      url: howto-peering-service-portal.md

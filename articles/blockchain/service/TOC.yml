@@ -49,6 +49,8 @@
       href: manage-consortium-powershell.md
     - name: Использование Logic Apps
       href: ethereum-logic-app.md
+    - name: Мониторинг службы "Блокчейн Azure"
+      href: monitor-azure-blockchain-service.md
 - name: Диспетчер данных блокчейна
   items:
     - name: Общие сведения о Диспетчере данных

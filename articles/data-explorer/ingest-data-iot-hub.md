@@ -1,23 +1,23 @@
 ---
 title: Прием данных из центра Интернета вещей в Azure обозреватель данных
 description: Из этой статьи вы узнаете, как принимать (загружать) данные в Azure обозреватель данных из центра Интернета вещей.
-author: oflipman
-ms.author: oflipman
-ms.reviewer: orspodek
+author: orspod
+ms.author: orspodek
+ms.reviewer: tzgitlin
 ms.service: data-explorer
 ms.topic: conceptual
-ms.date: 08/27/2019
-ms.openlocfilehash: cbad0e5409dfaa25eda040e3c7409b49728a4169
-ms.sourcegitcommit: 3d4917ed58603ab59d1902c5d8388b954147fe50
+ms.date: 01/08/2020
+ms.openlocfilehash: 1052ef799949550ddaf492b8aa5b77ab9526d092
+ms.sourcegitcommit: 5b073caafebaf80dc1774b66483136ac342f7808
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74667424"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75780289"
 ---
 # <a name="ingest-data-from-iot-hub-into-azure-data-explorer-preview"></a>Прием данных из центра Интернета вещей в обозреватель данных Azure (Предварительная версия)
 
 > [!div class="op_single_selector"]
-> * [Microsoft Azure](ingest-data-iot-hub.md)
+> * [Портал](ingest-data-iot-hub.md)
 > * [C#](data-connection-iot-hub-csharp.md)
 > * [Python](data-connection-iot-hub-python.md)
 > * [Шаблон Azure Resource Manager](data-connection-iot-hub-resource-manager.md)
@@ -103,6 +103,8 @@ ms.locfileid: "74667424"
     > [!NOTE]
     > * Выберите **My data includes routing info** (Мои данные содержат сведения о маршрутизации) для использования динамической маршрутизации, при которой данные содержат необходимые сведения о маршрутизации, как показано в комментариях [примера приложения](https://github.com/Azure-Samples/event-hubs-dotnet-ingest). Если заданы свойства статической и динамической маршрутизации, то свойство динамической маршрутизации переопределяет свойство статической. 
     > * Принимаются только события, помещенные в очередь после создания подключения к данным.
+
+[!INCLUDE [data-explorer-container-system-properties](../../includes/data-explorer-container-system-properties.md)]
 
 ## <a name="generate-sample-data-for-testing"></a>Создание демонстрационных данных для тестирования
 

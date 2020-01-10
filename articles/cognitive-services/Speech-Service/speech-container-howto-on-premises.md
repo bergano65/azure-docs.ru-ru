@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 11/04/2019
 ms.author: dapine
-ms.openlocfilehash: b7f8b98e8241b4502c86cce8c893beb315767d55
-ms.sourcegitcommit: 6c01e4f82e19f9e423c3aaeaf801a29a517e97a0
+ms.openlocfilehash: 7874a6b274939c233dd1c4e6d146df2a9a409e65
+ms.sourcegitcommit: f53cd24ca41e878b411d7787bd8aa911da4bc4ec
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74816509"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75833988"
 ---
 # <a name="use-speech-service-containers-with-kubernetes-and-helm"></a>Использование контейнеров речевых служб с Kubernetes и Helm
 
@@ -48,20 +48,20 @@ ms.locfileid: "74816509"
 
 ### <a name="sharing-docker-credentials-with-the-kubernetes-cluster"></a>Предоставление учетных данных DOCKER в кластере Kubernetes
 
-Чтобы разрешить кластеру Kubernetes `docker pull` настроенные образы из реестра `mcr.microsoft.com` контейнеров, необходимо переносить учетные данные DOCKER в кластер. Выполните приведенную ниже команду [`kubectl create`][kubectl-create] , чтобы создать *секрет DOCKER-Registry* на основе учетных данных, указанных в предварительных требованиях для доступа к реестру контейнеров.
+Чтобы разрешить кластеру Kubernetes `docker pull` настроенные образы из реестра `containerpreview.azurecr.io` контейнеров, необходимо переносить учетные данные DOCKER в кластер. Выполните приведенную ниже команду [`kubectl create`][kubectl-create] , чтобы создать *секрет DOCKER-Registry* на основе учетных данных, указанных в предварительных требованиях для доступа к реестру контейнеров.
 
 В выбранном интерфейсе командной строки выполните следующую команду. Не забудьте заменить `<username>`, `<password>`и `<email-address>` учетными данными реестра контейнеров.
 
 ```console
 kubectl create secret docker-registry mcr \
-    --docker-server=mcr.microsoft.com \
+    --docker-server=containerpreview.azurecr.io \
     --docker-username=<username> \
     --docker-password=<password> \
     --docker-email=<email-address>
 ```
 
 > [!NOTE]
-> Если у вас уже есть доступ к реестру контейнеров `mcr.microsoft.com`, можно создать секрет Kubernetes, используя вместо него общий флаг. Рассмотрим следующую команду, которая выполняется для JSON конфигурации DOCKER.
+> Если у вас уже есть доступ к реестру контейнеров `containerpreview.azurecr.io`, можно создать секрет Kubernetes, используя вместо него общий флаг. Рассмотрим следующую команду, которая выполняется для JSON конфигурации DOCKER.
 > ```console
 >  kubectl create secret generic mcr \
 >      --from-file=.dockerconfigjson=~/.docker/config.json \
@@ -106,8 +106,8 @@ speechToText:
   numberOfConcurrentRequest: 3
   optimizeForAudioFile: true
   image:
-    registry: mcr.microsoft.com
-    repository: azure-cognitive-services/speech-to-text
+    registry: containerpreview.azurecr.io
+    repository: microsoft/cognitive-services-speech-to-text
     tag: latest
     pullSecrets:
       - mcr # Or an existing secret
@@ -122,8 +122,8 @@ textToSpeech:
   numberOfConcurrentRequest: 3
   optimizeForTurboMode: true
   image:
-    registry: mcr.microsoft.com
-    repository: azure-cognitive-services/text-to-speech
+    registry: containerpreview.azurecr.io
+    repository: microsoft/cognitive-services-text-to-speech
     tag: latest
     pullSecrets:
       - mcr # Or an existing secret
@@ -138,21 +138,20 @@ textToSpeech:
 
 ### <a name="the-kubernetes-package-helm-chart"></a>Пакет Kubernetes (диаграмма Helm)
 
-*Диаграмма Helm* содержит конфигурацию, из которой образы DOCKER нужно извлечь из реестра контейнеров `mcr.microsoft.com`.
+*Диаграмма Helm* содержит конфигурацию, из которой образы DOCKER нужно извлечь из реестра контейнеров `containerpreview.azurecr.io`.
 
 > [Helm диаграмма][helm-charts] — это коллекция файлов, описывающих связанный набор ресурсов Kubernetes. Отдельную диаграмму можно использовать для развертывания чего-либо простого, такого как memcached Pod или что-то сложного, подобно полному стеку веб-приложений с серверами HTTP, базами данных, кэшами и т. д.
 
-Предоставленные *диаграммы Helm* извлекают образы DOCKER из службы распознавания речи, преобразования текста в речь и преобразования речи в текст из реестра контейнеров `mcr.microsoft.com`.
+Предоставленные *диаграммы Helm* извлекают образы DOCKER из службы распознавания речи, преобразования текста в речь и преобразования речи в текст из реестра контейнеров `containerpreview.azurecr.io`.
 
 ## <a name="install-the-helm-chart-on-the-kubernetes-cluster"></a>Установка диаграммы Helm в кластере Kubernetes
 
 Чтобы установить *диаграмму Helm* , необходимо выполнить команду [`helm install`][helm-install-cmd] , заменив `<config-values.yaml>` соответствующим аргументом путь и имя файла. Приведенная ниже диаграмма `microsoft/cognitive-services-speech-onpremise` Helm доступна в [центре Helm Майкрософт][ms-helm-hub-speech-chart].
 
 ```console
-helm install microsoft/cognitive-services-speech-onpremise \
+helm install onprem-speech microsoft/cognitive-services-speech-onpremise \
     --version 0.1.1 \
-    --values <config-values.yaml> \
-    --name onprem-speech
+    --values <config-values.yaml> 
 ```
 
 Ниже приведен пример выходных данных, которые можно ожидать при успешном выполнении установки.

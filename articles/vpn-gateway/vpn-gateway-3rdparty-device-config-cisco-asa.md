@@ -1,5 +1,5 @@
 ---
-title: Пример конфигурации для подключения устройства Cisco ASA к VPN-шлюзам Azure | Документация Майкрософт
+title: Пример конфигурации для подключения устройств Cisco ASA к VPN-шлюзам Azure
 description: В этой статье приведен пример конфигурации для подключения устройства Cisco ASA к VPN-шлюзам Azure.
 services: vpn-gateway
 author: yushwang
@@ -7,14 +7,14 @@ ms.service: vpn-gateway
 ms.topic: article
 ms.date: 10/19/2018
 ms.author: yushwang
-ms.openlocfilehash: e575fac61a1c5d9351391d39d200b87e34ff26cd
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 96e5c26ea7b5f1baa33fd8830491ee3aa1e60221
+ms.sourcegitcommit: 5b073caafebaf80dc1774b66483136ac342f7808
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60648759"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75778088"
 ---
-# <a name="sample-configuration-cisco-asa-device-ikev2no-bgp"></a>Образец конфигурации: Устройство Cisco ASA (IKEv2, без BGP)
+# <a name="sample-configuration-cisco-asa-device-ikev2no-bgp"></a>Пример конфигурации. Устройство Cisco ASA (IKEv2/без BGP)
 В этой статье представлен пример конфигурации для подключения устройств адаптивной безопасности (ASA) Cisco к VPN-шлюзам Azure. Этот пример применим к устройствам Cisco ASA, работающим под управлением IKEv2 без протокола BGP. 
 
 ## <a name="device-at-a-glance"></a>Краткий обзор устройства
@@ -53,10 +53,10 @@ ms.locfileid: "60648759"
 ### <a name="virtual-network-and-vpn-gateway-information"></a>Сведения о виртуальной сети и VPN-шлюзе
 В этом разделе перечислены параметры для примера.
 
-| **Параметр**                | **Значение**                    |
+| **Параметр**                | **Value**                    |
 | ---                          | ---                          |
 | Префиксы адресов виртуальной сети        | 10.11.0.0/16;<br>10.12.0.0/16 |
-| IP-адрес VPN-шлюза Azure         | Azure_Gateway_Public_IP      |
+| IP-адрес VPN-шлюза Azure         | Azure_Gateway_Public_IP;      |
 | Префиксы адресов в локальной среде | 10.51.0.0/16<br>10.52.0.0/16 |
 | IP-адрес VPN-устройства в локальной среде    | OnPrem_Device_Public_IP;     |
 | *ASN для BGP виртуальной сети                | 65010                        |
@@ -70,7 +70,7 @@ ms.locfileid: "60648759"
 ### <a name="ipsecike-policy-and-parameters"></a>Политика и параметры IPsec/IKE
 Следующая таблица содержит список алгоритмов и параметров IPsec/IKE, используемых в этом примере. По спецификации VPN-устройства проверьте алгоритмы, которые поддерживаются моделями VPN-устройства и версиями встроенного ПО.
 
-| **IPsec/IKEv2**  | **Значение**                            |
+| **IPsec/IKEv2**  | **Value**                            |
 | ---              | ---                                  |
 | Шифрование IKEv2 | AES256                               |
 | Проверка целостности IKEv2  | SHA384                               |

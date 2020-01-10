@@ -1,10 +1,10 @@
-- name: Тестирование безопасности Azure
+- name: Тесты производительности системы безопасности Azure
   href: index.yml
 - name: Введение
   href: introduction.md
 - name: Средства управления безопасностью
   items:
-    - name: Обзор
+    - name: Обзор элементов управления безопасностью Azure
       href: overview.md
     - name: Безопасность сети
       href: security-control-network-security.md

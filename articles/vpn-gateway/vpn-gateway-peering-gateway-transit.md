@@ -1,26 +1,20 @@
 ---
-title: Настройка транзита VPN-шлюзов для пиринга между виртуальными сетями с использованием Azure Resource Manager | Документация Майкрософт
+title: Настройка транзита VPN-шлюзов для пиринга между виртуальными сетями
 description: Настройка транзита VPN-шлюзов для пиринга между виртуальными сетями.
 services: vpn-gateway
-documentationcenter: na
+titleSuffix: Azure VPN Gateway
 author: yushwang
-manager: rossort
-editor: ''
-tags: azure-resource-manager
-ms.assetid: 0683c664-9c03-40a4-b198-a6529bf1ce8b
 ms.service: vpn-gateway
-ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
-ms.workload: infrastructure-services
 ms.date: 03/25/2018
 ms.author: yushwang
-ms.openlocfilehash: d5e62bf1838c8f07068208019d28d7273c28bd63
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 4c3d2352467a1ed8e7979acac403908303ba3bc4
+ms.sourcegitcommit: f53cd24ca41e878b411d7787bd8aa911da4bc4ec
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60457413"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75834548"
 ---
 # <a name="configure-vpn-gateway-transit-for-virtual-network-peering"></a>Настройка транзита VPN-шлюзов для пиринга между виртуальными сетями
 
@@ -54,15 +48,15 @@ ms.locfileid: "60457413"
 2. [Создание пиринга между виртуальными сетями с одинаковой моделью развертывания](../virtual-network/tutorial-connect-virtual-networks-portal.md)
 3. [Создание пиринга между виртуальными сетями с разными моделями развертывания](../virtual-network/create-peering-different-deployment-models.md)
 
-## <a name="permissions"></a>Разрешения
+## <a name="permissions"></a>Permissions
 
 У учетных записей, используемых для создания пиринга между виртуальными сетями, должны быть необходимые роли или разрешения. В приведенном ниже примере при создании пиринга между двумя виртуальными сетями Hub-RM и Spoke-Classic вашей учетной записи должны быть назначены следующие роли или разрешения для каждой виртуальной сети.
     
 |Виртуальная сеть|Модель развертывания|Роль|Разрешения|
 |---|---|---|---|
-|Hub-RM|Resource Manager|[Участник сети](../role-based-access-control/built-in-roles.md?toc=%2fazure%2fvirtual-network%2ftoc.json#network-contributor)|Microsoft.Network/virtualNetworks/virtualNetworkPeerings/write|
+|Hub-RM|Диспетчер ресурсов|[Участник сети](../role-based-access-control/built-in-roles.md?toc=%2fazure%2fvirtual-network%2ftoc.json#network-contributor)|Microsoft.Network/virtualNetworks/virtualNetworkPeerings/write|
 | |Классический|[Участник классической сети](../role-based-access-control/built-in-roles.md?toc=%2fazure%2fvirtual-network%2ftoc.json#classic-network-contributor)|Н/Д|
-|Spoke-Classic|Resource Manager|[Участник сети](../role-based-access-control/built-in-roles.md?toc=%2fazure%2fvirtual-network%2ftoc.json#network-contributor)|Microsoft.Network/virtualNetworks/peer|
+|Spoke-Classic|Диспетчер ресурсов|[Участник сети](../role-based-access-control/built-in-roles.md?toc=%2fazure%2fvirtual-network%2ftoc.json#network-contributor)|Microsoft.Network/virtualNetworks/peer|
 ||Классический|[Участник классической сети](../role-based-access-control/built-in-roles.md?toc=%2fazure%2fvirtual-network%2ftoc.json#classic-network-contributor)|Microsoft.ClassicNetwork/virtualNetworks/peer|
 
 Подробнее о [встроенных ролях](../role-based-access-control/built-in-roles.md?toc=%2fazure%2fvirtual-network%2ftoc.json#network-contributor) и присвоении разрешений, определенных для [настраиваемых ролей](../active-directory/role-based-access-control-custom-roles.md?toc=%2fazure%2fvirtual-network%2ftoc.json) (только для Resource Manager).

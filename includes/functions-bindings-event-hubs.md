@@ -4,12 +4,12 @@ ms.service: azure-functions
 ms.topic: include
 ms.date: 03/05/2019
 ms.author: cshoe
-ms.openlocfilehash: 27333f272ca5000fd3b09b305712875c065f6bc7
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: 2ab07e55606533390f6f3d2da3caf3ceee981e14
+ms.sourcegitcommit: f53cd24ca41e878b411d7787bd8aa911da4bc4ec
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74924438"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75840635"
 ---
 ## <a name="trigger"></a>Триггер
 
@@ -41,7 +41,7 @@ ms.locfileid: "74924438"
 Языковой пример см. в разделах:
 
 * [C#](#trigger---c-example)
-* [Сценарий C# (CSX)](#trigger---c-script-example)
+* [Скрипт C# (CSX)](#trigger---c-script-example)
 * [F#](#trigger---f-example)
 * [Java](#trigger---java-example)
 * [JavaScript](#trigger---javascript-example)
@@ -337,7 +337,7 @@ def main(event: func.EventHubEvent):
 
 ### <a name="trigger---java-example"></a>Пример Java в триггере
 
-В следующем примере показаны привязка триггера концентратора событий в файле *function.json* и [функция Java](../articles/azure-functions/functions-reference-java.md), которая использует эту привязку. Эта функция записывает в журнал текст сообщений триггера концентратора событий.
+В следующем примере показана привязка триггера концентратора событий в файле *Function. JSON* и [функция Java](../articles/azure-functions/functions-reference-java.md) , которая использует эту привязку. Эта функция записывает в журнал текст сообщений триггера концентратора событий.
 
 ```json
 {
@@ -383,17 +383,16 @@ public static void Run([EventHubTrigger("samples-workitems", Connection = "Event
 
 В следующей таблице описываются свойства конфигурации привязки, которые задаются в файле *function.json* и атрибуте `EventHubTrigger`.
 
-|свойство function.json | Свойство атрибута |Описание|
+|свойство function.json | Свойство атрибута |Description|
 |---------|---------|----------------------|
 |**type** | Н/Д | Нужно задать значение `eventHubTrigger`. Это свойство задается автоматически при создании триггера на портале Azure.|
 |**direction** | Н/Д | Нужно задать значение `in`. Это свойство задается автоматически при создании триггера на портале Azure. |
 |**name** | Н/Д | Имя переменной, представляющей элемент события в коде функции. |
-|**path** |**EventHubName** | Только служба "Функции" версии 1.x. Имя концентратора событий. Если имя концентратора событий указано также в строке подключения, такое значение переопределяет это свойство во время выполнения. |
-|**eventHubName** |**EventHubName** | Функции 2. x и более поздних версий. Имя концентратора событий. Если имя концентратора событий указано также в строке подключения, такое значение переопределяет это свойство во время выполнения. |
+|**путь** |**EventHubName** | Только служба "Функции" версии 1.x. Имя концентратора событий. Если имя концентратора событий указано также в строке подключения, такое значение переопределяет это свойство во время выполнения. |
+|**eventHubName** |**EventHubName** | Функции 2. x и более поздних версий. Имя концентратора событий. Если имя концентратора событий указано также в строке подключения, такое значение переопределяет это свойство во время выполнения. Можно ссылаться через параметры приложения% eventHubName% |
 |**consumerGroup** |**ConsumerGroup** | Необязательное свойство, которое используется для задания [группы потребителей](../articles/event-hubs/event-hubs-features.md#event-consumers), используемой для подписки на события в концентраторе. Если аргумент опущен, используется группа потребителей `$Default`. |
-|**кратность** | Н/Д | Для JavaScript. Задайте значение `many`, чтобы включить пакетную обработку.  Если опустить это значение или задать `one`, функции будет передано одно сообщение. |
-|**подключение** |**Connection** | Имя параметра приложения, содержащего строку подключения к пространству имен концентратора событий. Скопируйте эту строку подключения, нажав кнопку **Сведения о подключении** для [пространства имен](../articles/event-hubs/event-hubs-create.md#create-an-event-hubs-namespace), а не сам концентратор событий. Для активации триггера эта строка подключения должна обладать, по крайней мере, правами на чтение.|
-|**path**|**EventHubName**|Имя концентратора событий. Ссылаться на него можно с помощью параметров приложения `%eventHubName%`.|
+|**кратность** | Н/Д | Для JavaScript. Задайте значение `many`, чтобы включить пакетную обработку.  Если параметр опущен или задано значение `one`, в функцию передается одно сообщение. |
+|**connection** |**Соединение** | Имя параметра приложения, содержащего строку подключения к пространству имен концентратора событий. Скопируйте эту строку подключения, нажав кнопку **Сведения о подключении** для [пространства имен](../articles/event-hubs/event-hubs-create.md#create-an-event-hubs-namespace), а не сам концентратор событий. Для активации триггера эта строка подключения должна обладать, по крайней мере, правами на чтение.|
 
 [!INCLUDE [app settings to local.settings.json](../articles/azure-functions/../../includes/functions-app-settings-local.md)]
 
@@ -401,7 +400,7 @@ public static void Run([EventHubTrigger("samples-workitems", Connection = "Event
 
 Триггер Центров событий предоставляет несколько [свойств метаданных](../articles/azure-functions/./functions-bindings-expressions-patterns.md). Эти свойства можно использовать как часть выражений привязки в других привязках или как параметры в коде. Эти свойства относятся к классу [EventData](https://docs.microsoft.com/dotnet/api/microsoft.servicebus.messaging.eventdata).
 
-|Свойство|Тип|Описание|
+|Свойство|Тип|Description|
 |--------|----|-----------|
 |`PartitionContext`|[PartitionContext](https://docs.microsoft.com/dotnet/api/microsoft.servicebus.messaging.partitioncontext)|Экземпляр `PartitionContext`.|
 |`EnqueuedTimeUtc`|`DateTime`|Время попадания в очередь в формате UTC.|
@@ -430,7 +429,7 @@ public static void Run([EventHubTrigger("samples-workitems", Connection = "Event
 Языковой пример см. в разделах:
 
 * [C#](#output---c-example)
-* [Сценарий C# (CSX)](#output---c-script-example)
+* [Скрипт C# (CSX)](#output---c-script-example)
 * [F#](#output---f-example)
 * [Java](#output---java-example)
 * [JavaScript](#output---javascript-example)
@@ -640,13 +639,13 @@ def main(timer: func.TimerRequest) -> str:
 
 ### <a name="output---java-example"></a>Пример выходных данных Java
 
-В следующем примере показана функция Java, которая записывает в концентратор событий сообщение, содержащее текущее время.
+В следующем примере показана функция Java, которая записывает сообщение, содержащее текущее время, в концентратор событий.
 
 ```java
 @FunctionName("sendTime")
 @EventHubOutput(name = "event", eventHubName = "samples-workitems", connection = "AzureEventHubConnection")
 public String sendTime(
-   @TimerTrigger(name = "sendTimeTrigger", schedule = "0 *&#47;5 * * * *") String timerInfo)  {
+   @TimerTrigger(name = "sendTimeTrigger", schedule = "0 */5 * * * *") String timerInfo)  {
      return LocalDateTime.now().toString();
  }
 ```
@@ -674,14 +673,14 @@ public static string Run([TimerTrigger("0 */5 * * * *")] TimerInfo myTimer, ILog
 
 В следующей таблице описываются свойства конфигурации привязки, которые задаются в файле *function.json* и атрибуте `EventHub`.
 
-|свойство function.json | Свойство атрибута |Описание|
+|свойство function.json | Свойство атрибута |Description|
 |---------|---------|----------------------|
 |**type** | Н/Д | Для этого свойства необходимо задать значение "eventHub" |
 |**direction** | Н/Д | Для этого свойства необходимо задать значение out. Этот параметр задается автоматически при создании привязки на портале Azure. |
 |**name** | Н/Д | Имя переменной, используемое в коде функции, которая представляет событие. |
-|**path** |**EventHubName** | Только служба "Функции" версии 1.x. Имя концентратора событий. Если имя концентратора событий указано также в строке подключения, такое значение переопределяет это свойство во время выполнения. |
+|**путь** |**EventHubName** | Только служба "Функции" версии 1.x. Имя концентратора событий. Если имя концентратора событий указано также в строке подключения, такое значение переопределяет это свойство во время выполнения. |
 |**eventHubName** |**EventHubName** | Функции 2. x и более поздних версий. Имя концентратора событий. Если имя концентратора событий указано также в строке подключения, такое значение переопределяет это свойство во время выполнения. |
-|**подключение** |**Connection** | Имя параметра приложения, содержащего строку подключения к пространству имен концентратора событий. Скопируйте эту строку подключения, нажав кнопку **Сведения о подключении** для *пространства имен*, а не сам концентратор событий. Чтобы отправлять сообщения в поток событий, эта строка подключения должна иметь разрешения на отправку.|
+|**connection** |**Соединение** | Имя параметра приложения, содержащего строку подключения к пространству имен концентратора событий. Скопируйте эту строку подключения, нажав кнопку **Сведения о подключении** для *пространства имен*, а не сам концентратор событий. Чтобы отправлять сообщения в поток событий, эта строка подключения должна иметь разрешения на отправку.|
 
 [!INCLUDE [app settings to local.settings.json](../articles/azure-functions/../../includes/functions-app-settings-local.md)]
 
@@ -704,7 +703,7 @@ public static string Run([TimerTrigger("0 */5 * * * *")] TimerInfo myTimer, ILog
 В этом разделе описаны глобальные параметры конфигурации, доступные для этой привязки в версиях 2. x и более поздних. Пример файла host. JSON ниже содержит только параметры версии 2. x + для этой привязки. Дополнительные сведения о глобальных параметрах конфигурации в версиях 2. x и более поздних версий см. в [справочнике по Host. JSON для функций Azure](../articles/azure-functions/functions-host-json.md).
 
 > [!NOTE]
-> Сведения о файле host.json в Функциях Azure версии 1.x см. в [этой статье](../articles/azure-functions/functions-host-json-v1.md).
+> Чтобы получить дополнительные сведения о файле host.json в Функции 1.x, см. статью [host.json reference for Azure Functions 1.x](../articles/azure-functions/functions-host-json-v1.md)(Справочник по файлу host.json для службы "Функции Azure" версии 1.x.).
 
 ```json
 {
@@ -721,7 +720,7 @@ public static string Run([TimerTrigger("0 */5 * * * *")] TimerInfo myTimer, ILog
 }  
 ```
 
-|Свойство  |значение по умолчанию | Описание |
+|Свойство  |По умолчанию | Description |
 |---------|---------|---------|
 |maxBatchSize|64|Максимальное число событий, получаемых в цикле получения.|
 |prefetchCount|Н/Д|Значение PrefetchCount по умолчанию, которое будет использоваться базовым узлом EventProcessorHost.|

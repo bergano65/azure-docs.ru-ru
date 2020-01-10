@@ -7,13 +7,13 @@ author: HeidiSteen
 ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
-ms.date: 11/04/2019
-ms.openlocfilehash: b1df328f151a4085ec0aadd1b880048f81483a51
-ms.sourcegitcommit: 375b70d5f12fffbe7b6422512de445bad380fe1e
-ms.translationtype: MT
+ms.date: 01/07/2020
+ms.openlocfilehash: 0ce2884a2382c7dff2bdb90bd92934609675f314
+ms.sourcegitcommit: f53cd24ca41e878b411d7787bd8aa911da4bc4ec
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74901325"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75834388"
 ---
 # <a name="whats-new-in-azure-cognitive-search"></a>Новые возможности Azure Когнитивный поиск
 
@@ -29,13 +29,19 @@ ms.locfileid: "74901325"
 
 ## <a name="feature-announcements"></a>Объявления о функциях
 
-### <a name="december-2019"></a>Декабрь 2019 г.
+### <a name="january-2020"></a>Январь 2020 г.
+
++ [Ключи шифрования, управляемые клиентом](search-security-manage-encryption-keys.md) , теперь общедоступны. Если вы используете функцию RESTFUL, доступ к этой функции можно получить с помощью `api-version=2019-05-06`. Для управляемого кода правильный пакет по-прежнему является [пакетом SDK для .NET версии 8,0-Preview](search-dotnet-sdk-migration-version-9.md) , хотя эта функция находится в предварительной версии. 
+
++ *Доступ к ограниченному IP-адресу и закрытой конечной точке (Предварительная версия)* в конечной точке службы поиска теперь доступен в **API-Version = 2019 – 10 01-Preview**. Вы можете настроить безопасную конечную точку с помощью новых свойств **ипруле** и **нетворкрулесет** в REST API управления [созданием или обновлением](https://docs.microsoft.com/rest/api/searchmanagement/services/createorupdate) . Дополнительные сведения о версиях API и региональных доступности см. [в разделе использование REST API управления](https://docs.microsoft.com/rest/api/searchmanagement/search-howto-management-rest-api).
+
+### <a name="december-2019"></a>Декабрь 2019 г.
 
 + [Создание приложения (Предварительная версия)](search-create-app-portal.md) — это новый мастер на портале, который создает загружаемый HTML-файл. Файл включает внедренный скрипт, который отображает рабочее веб-приложение типа localhost, привязанное к индексу в службе поиска. Страницы настраиваются в мастере и могут содержать панель поиска, область результатов, навигацию по боковой панели и поддержку запросов typeahead. Можно изменить HTML в автономном режиме, чтобы расширить или настроить рабочий процесс или внешний вид.
 
 ### <a name="november-2019---ignite-conference"></a>Ноябрь 2019-Ignite Конференция
 
-+ [Добавочное индексирование (Предварительная версия)](cognitive-search-incremental-indexing-conceptual.md) позволяет выбрать, какие шаги следует обработать при внесении изменений в конвейер обогащения. Добавочное индексирование полезно при наличии ранее проанализированного содержимого. Выходные данные дорогостоящего анализа хранятся, а затем используются в качестве базиса для дополнительного индексирования или дополнения.
++ [Добавочное дополнение (Предварительная версия)](cognitive-search-incremental-indexing-conceptual.md) добавляет кэширование и статефуллнесс в конвейер обогащения, чтобы можно было работать с определенными шагами или этапами без потери уже обработанного содержимого. Ранее при любом изменении конвейера обогащения требовалось полное перестроение. При добавочном дополнении сохраняются выходные данные дорогостоящего анализа, особенно анализ изображений.
 
 <!-- 
 + Custom Entity Lookup is a cognitive skill used during indexing that allows you to provide a list of custom entities (such as part numbers, diseases, or names of locations you care about) that should be found within the text. It supports fuzzy matching, case-insensitive matching, and entity synonyms. -->

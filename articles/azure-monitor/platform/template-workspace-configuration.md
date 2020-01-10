@@ -6,13 +6,13 @@ ms.subservice: logs
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
-ms.date: 10/22/2019
-ms.openlocfilehash: 4ec542609d8984d1d03c326854590c834840b33f
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.date: 01/09/2020
+ms.openlocfilehash: 9ba4fe318db86760e0dbc326730d03ad09203a88
+ms.sourcegitcommit: f53cd24ca41e878b411d7787bd8aa911da4bc4ec
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75363393"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75834211"
 ---
 # <a name="manage-log-analytics-workspace-using-azure-resource-manager-templates"></a>Управление рабочей областью Log Analytics с помощью шаблонов Azure Resource Manager
 
@@ -20,7 +20,7 @@ ms.locfileid: "75363393"
 
 [Шаблоны Azure Resource Manager](../../azure-resource-manager/templates/template-syntax.md) можно использовать для создания и настройки log Analytics рабочих областей в Azure Monitor. Примеры задач, которые можно выполнять с помощью шаблонов.
 
-* Создание рабочей области, включая настройку ценовой категории 
+* Создание рабочей области, включая настройку ценовой категории и резервирования емкости
 * Добавление решения
 * Создание сохраненных поисковых запросов
 * Создание группы компьютеров
@@ -47,7 +47,19 @@ ms.locfileid: "75363393"
 
 ## <a name="create-a-log-analytics-workspace"></a>Создание рабочей области Log Analytics
 
-В следующем примере создается рабочая область с использованием шаблона на локальном компьютере. Шаблон JSON настроен так, что требуется только имя и расположение новой рабочей области (с использованием значений по умолчанию для других параметров рабочей области, таких как ценовая категория и период удержания).  
+В следующем примере создается рабочая область с помощью шаблона на локальном компьютере. Шаблон JSON настроен так, что требуется только имя и расположение новой рабочей области. Он использует значения, заданные для других параметров рабочей области, таких как [режим управления доступом](design-logs-deployment.md#access-control-mode), ценовая категория, срок хранения и уровень резервирования емкости.
+
+Для резервирования емкости необходимо определить выбранное резервирование емкости для приема данных, указав номер SKU `CapacityReservation` и значение в ГБ для свойства `capacityReservationLevel`. В следующем списке приведены поддерживаемые значения и поведение при его настройке.
+
+- После установки лимита резервирования нельзя изменить номер SKU в течение 31 дня.
+
+- После установки значения резервирования его можно увеличить только в течение 31 дня.
+
+- Значение `capacityReservationLevel` можно задать только в кратных 100 с максимальным значением 50000.
+
+- При увеличении уровня резервирования таймер сбрасывается, и его нельзя изменить в течение еще 31 дня после этого обновления.  
+
+- Если изменить любое другое свойство для рабочей области, но сохранили лимит резервирования на том же уровне, таймер не сбрасывается. 
 
 ### <a name="create-and-deploy-template"></a>Создание и развертывание шаблона
 
@@ -64,6 +76,21 @@ ms.locfileid: "75363393"
               "description": "Specifies the name of the workspace."
             }
         },
+      "pricingTier": {
+      "type": "string",
+      "allowedValues": [
+        "pergb2018",
+        "Free",
+        "Standalone",
+        "PerNode",
+        "Standard",
+        "Premium"
+      ],
+      "defaultValue": "pergb2018",
+      "metadata": {
+        "description": "Pricing tier: PerGB2018 or legacy tiers (Free, Standalone, PerNode, Standard or Premium) which are not available to all customers."
+           }
+       },
         "location": {
             "type": "String",
             "allowedValues": [
@@ -101,11 +128,18 @@ ms.locfileid: "75363393"
         {
             "type": "Microsoft.OperationalInsights/workspaces",
             "name": "[parameters('workspaceName')]",
-            "apiVersion": "2015-11-01-preview",
+            "apiVersion": "2017-03-15-preview",
             "location": "[parameters('location')]",
             "properties": {
+                "sku": { 
+                    "name": "CapacityReservation",
+                    "capacityReservationLevel": 100
+                },
+                "retentionInDays": 120,
                 "features": {
-                    "searchVersion": 1
+                    "searchVersion": 1,
+                    "legacy": 0,
+                    "enableLogAccessUsingOnlyResourcePermissions": true
                 }
             }
           }
@@ -168,9 +202,9 @@ ms.locfileid: "75363393"
         "Standard",
         "Premium"
       ],
-      "defaultValue": "PerGB2018",
+      "defaultValue": "pergb2018",
       "metadata": {
-        "description": "Pricing tier: PerGB2018 or legacy tiers (Free, Standalone, PerNode, Standard or Premium) which are not available to all customers."
+        "description": "Pricing tier: pergb2018 or legacy tiers (Free, Standalone, PerNode, Standard or Premium) which are not available to all customers."
       }
     },
     "dataRetention": {
@@ -257,7 +291,7 @@ ms.locfileid: "75363393"
   },
   "resources": [
     {
-      "apiVersion": "2015-11-01-preview",
+      "apiVersion": "2017-03-15-preview",
       "type": "Microsoft.OperationalInsights/workspaces",
       "name": "[parameters('workspaceName')]",
       "location": "[parameters('location')]",
@@ -267,7 +301,9 @@ ms.locfileid: "75363393"
           "immediatePurgeDataOn30Days": "[parameters('immediatePurgeDataOn30Days')]"
         },
         "sku": {
-          "name": "[parameters('pricingTier')]"
+          "name": "[parameters('pricingTier')]",
+          "name": "CapacityReservation",
+          "capacityReservationLevel": 100
         }
       },
       "resources": [

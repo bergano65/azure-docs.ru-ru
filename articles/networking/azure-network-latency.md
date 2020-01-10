@@ -5,14 +5,14 @@ services: networking
 author: nayak-mahesh
 ms.service: virtual-network
 ms.topic: article
-ms.date: 12/04/2019
+ms.date: 01/08/2020
 ms.author: mnayak
-ms.openlocfilehash: 3947df81b67d5aefc1b628b6ddaf8275152a4cd3
-ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
+ms.openlocfilehash: 91b528cc6900a3ec91ff7189f58f941226b8acd5
+ms.sourcegitcommit: 5b073caafebaf80dc1774b66483136ac342f7808
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74893097"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75779728"
 ---
 # <a name="azure-network-round-trip-latency-statistics"></a>Статистика задержки приема-передачи для сети Azure
 
@@ -22,17 +22,11 @@ Azure постоянно отслеживает задержку (скорост
 
 Измерения задержки собираются от агентов ThousandEyes, размещенных в облачных регионах Azure по всему миру, которые постоянно отправляют проверки сети между собой через 1-минутные интервалы. Статистика месячной задержки определяется усреднением собранных выборок за месяц.
 
-## <a name="november-2019-latency-figures"></a>Показатели задержки 2019 ноября
+## <a name="december-2019-latency-figures"></a>Декабрь 2019. цифры задержки
 
-**Ноябрьское обновление:** Добавлено 3 региона.
+Ниже приведено ежемесячное среднее время приема-передачи между регионами Azure за последние 30 дней (заканчивается 31 декабря 2019). [ThousandEyes](https://thousandeyes.com)поддерживают следующие измерения.
 
-* Восточная Норвегия
-* Западная Норвегия
-* Австралия
-
-Ниже приведено ежемесячное среднее время приема-передачи между регионами Azure за последние 30 дней (до 30 ноября 2019). [ThousandEyes](https://thousandeyes.com)поддерживают следующие измерения.
-
-![Статистика задержки между регионами Azure](media/azure-network-latency/latency-nov-2019.png)
+[![статистики задержки между регионами Azure](media/azure-network-latency/december.jpg)](media/azure-network-latency/december.jpg#lightbox)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

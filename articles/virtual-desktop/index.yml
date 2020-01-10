@@ -5,7 +5,7 @@ metadata:
   title: "Документация по Виртуальному рабочему столу Windows\_| Документация Майкрософт"
   description: "Виртуальный рабочий стол Windows для Azure\_— это виртуализированный облачный многопользовательский интерфейс для Windows\_10 Корпоративная."
   author: Heidilohr
-  manager: daveba
+  manager: lizross
   ms.service: virtual-desktop
   services: virtual-desktop
   ms.topic: landing-page
@@ -33,7 +33,7 @@ sections:
           - html: <a href="/azure/virtual-desktop/create-host-pools-azure-marketplace">Создание пула узлов с помощью Azure Marketplace</a>
           - html: <a href="/azure/virtual-desktop/manage-app-groups">Управление группами приложений для Виртуального рабочего стола Windows</a>
           - html: <a href="/azure/virtual-desktop/create-service-principal-role-powershell">Создание субъектов-служб и назначений ролей с помощью PowerShell</a>
-  - title: Справочные материалы
+  - title: Справочник
     items:
       - type: list
         style: unordered

@@ -1,5 +1,5 @@
 ---
-title: Создание VPN-шлюза на основе маршрутов — Azure CLI | Документация Майкрософт
+title: 'Создание VPN-шлюза Azure на основе маршрутов: CLI'
 description: Краткое руководство по созданию VPN-шлюза с использованием интерфейса CLI
 services: vpn-gateway
 author: cherylmc
@@ -7,12 +7,12 @@ ms.service: vpn-gateway
 ms.topic: article
 ms.date: 10/04/2018
 ms.author: cherylmc
-ms.openlocfilehash: f5f62a6bfa1baa205e0496dd901f1f1eef660079
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 1f0cc1d63f8560399d1d71c8d010c37bd2c5e387
+ms.sourcegitcommit: 5b073caafebaf80dc1774b66483136ac342f7808
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60391248"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75778759"
 ---
 # <a name="create-a-route-based-vpn-gateway-using-cli"></a>Создание VPN-шлюза на основе маршрута с помощью CLI
 
@@ -180,7 +180,7 @@ az group delete --name TestRG1 --yes
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Создав шлюз, можно создать подключение между вашей и другой виртуальной сетью. Или же можно создать подключение между виртуальной сетью и локальным расположением.
+Создав шлюз, можно создать подключение между вашей и другой виртуальной сетью. Также можно создать подключение между виртуальной сетью и локальным расположением.
 
 > [!div class="nextstepaction"]
 > [Создание подключения "сеть — сеть"](vpn-gateway-create-site-to-site-rm-powershell.md)<br><br>

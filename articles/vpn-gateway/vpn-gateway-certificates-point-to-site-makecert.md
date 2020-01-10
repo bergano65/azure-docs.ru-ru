@@ -1,19 +1,18 @@
 ---
-title: 'Создание и экспорт сертификатов для подключений "точка — сеть" — MakeCert: Azure | Документация Майкрософт'
+title: 'VPN-шлюз Azure: создание & экспорт сертификатов для P2S: MakeCert'
 description: Создание самозаверяющего корневого сертификата, экспорт открытого ключа и создание сертификатов клиента с помощью MakeCert.
 services: vpn-gateway
-documentationcenter: na
 author: cherylmc
 ms.service: vpn-gateway
 ms.topic: article
 ms.date: 09/05/2018
 ms.author: cherylmc
-ms.openlocfilehash: 973c0aa3bd187e963f15adbe34955d6bc9fa612d
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: ad2ab31e6771efc54238d5747863fa2a9bb2f356
+ms.sourcegitcommit: f53cd24ca41e878b411d7787bd8aa911da4bc4ec
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60768112"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75833973"
 ---
 # <a name="generate-and-export-certificates-for-point-to-site-connections-using-makecert"></a>Создание и экспорт сертификатов для подключений типа "точка — сеть" с помощью MakeCert
 
@@ -28,7 +27,7 @@ ms.locfileid: "60768112"
 Ниже приведены инструкции по созданию самозаверяющего сертификата с помощью MakeCert. Они не зависят от модели развертывания. Они подходят как для модели с использованием диспетчера ресурсов, так и для классической модели.
 
 1. Скачайте и установите [MakeCert](https://msdn.microsoft.com/library/windows/desktop/aa386968(v=vs.85).aspx).
-2. После установки обычно можно найти служебную программу makecert.exe этот путь: 'C:\Program Files (x86)\Windows Kits\10\bin\<arch>'. Однако возможно, что она была установлена в другое место. Откройте командную строку от имени администратора и перейдите в расположение служебной программы MakeCert. Вы можете использовать следующий пример, чтобы указать правильное расположение:
+2. После установки служебную программу makecert.exe обычно можно найти по такому пути: C:\Program Files (x86)\Windows Kits\10\bin\<arch>. Однако возможно, что она была установлена в другое место. Откройте командную строку от имени администратора и перейдите в расположение служебной программы MakeCert. Вы можете использовать следующий пример, чтобы указать правильное расположение:
 
    ```cmd
    cd C:\Program Files (x86)\Windows Kits\10\bin\x64

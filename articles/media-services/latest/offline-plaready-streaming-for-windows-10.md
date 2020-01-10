@@ -1,5 +1,5 @@
 ---
-title: Настройка учетной записи для автономной потоковой передачи содержимого, защищенного с помощью PlayReady, в Azure
+title: Автономная потоковая передача PlayReady с помощью служб мультимедиа v3 — Azure
 description: В этой статье показано, как настроить учетную запись Служб мультимедиа Azure для автономной потоковой передачи содержимого с технологией PlayReady для Windows 10.
 services: media-services
 keywords: DASH, DRM, режим автономной работы Widevine, ExoPlayer, Android
@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/01/2019
 ms.author: willzhan
-ms.openlocfilehash: 0798cffdca8d5876373c35f3f5fd657551586d43
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.openlocfilehash: 15a3e2f7fee6d130b1913ec4f74069a09d5aec53
+ms.sourcegitcommit: 5b073caafebaf80dc1774b66483136ac342f7808
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74974059"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75779793"
 ---
-# <a name="offline-playready-streaming-for-windows-10"></a>Потоковая передача содержимого с технологией PlayReady для Windows 10 (автономный режим)
+# <a name="offline-playready-streaming-for-windows-10-with-media-services-v3"></a>Автономная потоковая передача PlayReady для Windows 10 с помощью служб мультимедиа v3
 
 Службы мультимедиа Azure поддерживают автономное скачивание и воспроизведение содержимого с защитой DRM. В этой статье рассматривается автономная поддержка Служб мультимедиа Azure для клиентов Windows 10 с PlayReady. Вы можете прочесть о поддержке автономного режима для устройств iOS с FairPlay и Android с Widevine в следующих статьях:
 
@@ -31,7 +31,7 @@ ms.locfileid: "74974059"
 > [!NOTE]
 > В автономной системе DRM оплачивается только один запрос на лицензию при скачивании содержимого. Плата за любые ошибки не взимается.
 
-## <a name="overview"></a>Краткое описание
+## <a name="overview"></a>Обзор
 
 В этом разделе приведены некоторые сведения о воспроизведении в автономном режиме, а именно почему:
 
@@ -124,7 +124,7 @@ private async void LoadUri_Click(object sender, RoutedEventArgs e)
 
 ## <a name="additional-notes"></a>Дополнительные замечания
 
-* Widevine — это служба, предоставляемая Google Inc. и подпадает под условия обслуживания и политики конфиденциальности Google, Inc.
+* Widevine — это служба, которая предоставляется компанией Google Inc. и подпадает под условия предоставления услуг и политику конфиденциальности Google Inc.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

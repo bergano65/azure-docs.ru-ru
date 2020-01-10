@@ -11,12 +11,12 @@ ms.date: 08/22/2019
 ms.author: marsma
 ms.subservice: B2C
 ms.custom: fasttrack-edit
-ms.openlocfilehash: 8aedb57f6fee68c4d11a123033d34bb58314eb8f
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 355bd75f865e821fa19fba0715cf5eca90a9a2d3
+ms.sourcegitcommit: 8b37091efe8c575467e56ece4d3f805ea2707a64
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75367626"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75829567"
 ---
 # <a name="web-sign-in-with-openid-connect-in-azure-active-directory-b2c"></a>Вход в веб-приложения с помощью OpenID Connect в Azure Active Directory B2C
 
@@ -24,7 +24,7 @@ OpenID Connect — это протокол проверки подлинност
 
 [OpenID Connect](https://openid.net/specs/openid-connect-core-1_0.html) расширяет возможности протокола *авторизации* OAuth 2.0 и позволяет использовать его в качестве протокола *проверки подлинности*, Этот протокол проверки подлинности позволяет выполнять единый вход. В нем представлено понятие *маркера идентификации*, которое позволяет клиенту проверить подлинность пользователя и получить основные сведения о профиле пользователя.
 
-Так как он расширяет OAuth 2,0, он также позволяет приложениям безопасно получать *маркеры доступа*. обеспечивая возможность доступа к ресурсам, защищенным [сервером авторизации](active-directory-b2c-reference-protocols.md). OpenID Connect Connect рекомендуется использовать, если вы создаете веб-приложение, размещенное на сервере и доступ к которому осуществляется через браузер. Если вы хотите добавить управление удостоверениями в мобильные или классические приложения с помощью Azure AD B2C, следует использовать [OAuth 2,0](active-directory-b2c-reference-oauth-code.md) , а не OpenID Connect Connect. Дополнительные сведения об маркерах см. в разделе [Общие сведения о токенах в Azure Active Directory B2C](active-directory-b2c-reference-tokens.md)
+Так как он расширяет OAuth 2,0, он также позволяет приложениям безопасно получать *маркеры доступа*. обеспечивая возможность доступа к ресурсам, защищенным [сервером авторизации](active-directory-b2c-reference-protocols.md). OpenID Connect Connect рекомендуется использовать, если вы создаете веб-приложение, размещенное на сервере и доступ к которому осуществляется через браузер. Дополнительные сведения об маркерах см. в разделе [Общие сведения о токенах в Azure Active Directory B2C](active-directory-b2c-reference-tokens.md)
 
 В Azure AD B2C стандартный протокол OpenID Connect выходит за рамки простой проверки подлинности и авторизации. В нем представлен [параметр потока пользователя](active-directory-b2c-reference-policies.md), который позволяет использовать OpenID Connect Connect для добавления в приложение пользовательских интерфейсов, таких как регистрация, вход и управление профилями.
 

@@ -1,5 +1,5 @@
 ---
-title: Отправка файлов в учетную запись служб мультимедиа Azure с помощью REST | Документация Майкрософт
+title: Передача файлов в учетную запись служб мультимедиа Azure v3 с помощью функции "ОСТАВШАЯся" | Документация Майкрософт
 description: Узнайте, как включить мультимедийное содержимое в службы мультимедиа, создав и отправив ресурс.
 services: media-services
 documentationcenter: ''
@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 02/10/2019
 ms.author: juliako
-ms.openlocfilehash: 78c07330558241c889f284bcaf7302ce1327b5b8
-ms.sourcegitcommit: 88ae4396fec7ea56011f896a7c7c79af867c90a1
+ms.openlocfilehash: a9fd38b857f513ff67ae2fbe4ccd0c6c9540967e
+ms.sourcegitcommit: 5b073caafebaf80dc1774b66483136ac342f7808
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70389803"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75779167"
 ---
 # <a name="upload-files-into-a-media-services-account-using-rest"></a>Передача файлов в учетную запись служб мультимедиа с помощью REST
 
@@ -26,7 +26,7 @@ ms.locfileid: "70389803"
 
 В этой статье показано, как передать локальный файл с помощью функции RESTFUL.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы выполнить действия, описанные в этом разделе, необходимо сделать следующее:
 
@@ -53,7 +53,7 @@ ms.locfileid: "70389803"
 1. Выберите **Ресурсы** -> **Список URL-адресов ресурса**.
 2. Нажмите кнопку **Отправить**.
 
-    ![Отправить файл](./media/upload-files/postman-create-sas-locator.png)
+    ![Отправка файла](./media/upload-files/postman-create-sas-locator.png)
 
 Вы увидите **Ответ** с информацией о URL-адресах ресурса. Скопируйте первый URL-адрес и используйте его для отправки файла.
 
@@ -61,6 +61,6 @@ ms.locfileid: "70389803"
 
 Используйте API-интерфейсы или пакеты SDK службы хранилища Azure (например, [REST API хранилища](../../storage/common/storage-rest-api-auth.md) или [пакет SDK для .NET](../../storage/blobs/storage-quickstart-blobs-dotnet.md)).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-[Учебник. Кодирование удаленного файла на основе URL-адреса и потоковой передачи видео с помощью REST](stream-files-tutorial-with-rest.md)
+[Учебник. кодирование удаленного файла на основе URL-адреса и поток видео — остальное](stream-files-tutorial-with-rest.md)

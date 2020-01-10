@@ -1,26 +1,19 @@
 ---
-title: 'Удаление шлюза виртуальной сети. PowerShell: Классическая модель Azure | Документация Майкрософт'
+title: 'Удаление шлюза виртуальной сети: классический класс Azure'
 description: Удаление шлюза виртуальной сети с помощью PowerShell в классической модели развертывания.
+titleSuffix: Azure VPN Gateway
 services: vpn-gateway
-documentationcenter: na
 author: cherylmc
-manager: timlt
-editor: ''
-tags: azure-service-management
-ms.assetid: ''
 ms.service: vpn-gateway
-ms.devlang: na
 ms.topic: conceptual
-ms.tgt_pltfrm: na
-ms.workload: infrastructure-services
 ms.date: 05/11/2017
 ms.author: cherylmc
-ms.openlocfilehash: ca014e4f5fbc4a5695dbc5fedc85826c71a2a906
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
-ms.translationtype: MT
+ms.openlocfilehash: 0ff8e42cecb705e57ce85c92e84a0ad9b78929a5
+ms.sourcegitcommit: 5b073caafebaf80dc1774b66483136ac342f7808
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60863986"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75778504"
 ---
 # <a name="delete-a-virtual-network-gateway-using-powershell-classic"></a>Удаление шлюза виртуальной сети с помощью PowerShell (классическая модель)
 
@@ -34,11 +27,11 @@ ms.locfileid: "60863986"
 
 ## <a name="connect"></a>Шаг 1. Подключение к Azure
 
-### <a name="1-install-the-latest-powershell-cmdlets"></a>1. Установите последнюю версию командлетов Azure PowerShell.
+### <a name="1-install-the-latest-powershell-cmdlets"></a>1. Установите последние командлеты PowerShell.
 
 Скачайте и установите последнюю версию командлетов PowerShell для управления службами Azure. Подробнее: [Установка и настройка Azure PowerShell](/powershell/azure/overview).
 
-### <a name="2-connect-to-your-azure-account"></a>2. Подключитесь к своей учетной записи Azure. 
+### <a name="2-connect-to-your-azure-account"></a>2. Подключитесь к учетной записи Azure. 
 
 Откройте консоль PowerShell с повышенными правами и подключитесь к своей учетной записи. Для подключения используйте следующий пример кода:
 
@@ -56,7 +49,7 @@ Add-AzureAccount
 Get-AzureVNetConfig -ExportToFile C:\AzureNet\NetworkConfig.xml
 ```
 
-Откройте файл в текстовом редакторе и просмотрите имя для классической виртуальной сети. При создании виртуальной сети на портале Azure полное имя, которое используется Azure, не отображается на портале. Например, если виртуальной сеть отображается на портале Azure с именем ClassicVNet1, то в файле конфигурации сети она может иметь гораздо более длинное имя. Это имя будет иметь следующий вид: «Группа ClassicRG1 ClassicVNet1.» Имена виртуальных сетей перечислены как **VirtualNetworkSite name =** . При выполнении командлетов PowerShell используйте имена из файла конфигурации сети.
+Откройте файл в текстовом редакторе и просмотрите имя для классической виртуальной сети. При создании виртуальной сети на портале Azure полное имя, которое используется Azure, не отображается на портале. Например, если виртуальной сеть отображается на портале Azure с именем ClassicVNet1, то в файле конфигурации сети она может иметь гораздо более длинное имя. Это имя может выглядеть примерно следующим образом: Group ClassicRG1 ClassicVNet1. Имена виртуальных сетей перечислены как **VirtualNetworkSite name =** . При выполнении командлетов PowerShell используйте имена из файла конфигурации сети.
 
 ## <a name="delete"></a>Шаг 3. Удаление шлюза виртуальной сети
 

@@ -1,5 +1,5 @@
 ---
-title: Обзор сообщества служб мультимедиа Azure | Документация Майкрософт
+title: Обзор сообщества служб мультимедиа Azure v3 | Документация Майкрософт
 description: На этой странице сообщества служб мультимедиа Azure обсуждаются различные способы задать вопросы, отправить отзыв и получить обновления о службах мультимедиа.
 services: media-services
 documentationcenter: ''
@@ -13,14 +13,14 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 10/17/2019
 ms.author: juliako
-ms.openlocfilehash: f241ac3e1369e32a1f2a4b9ac80492094105ff8c
-ms.sourcegitcommit: b4f201a633775fee96c7e13e176946f6e0e5dd85
+ms.openlocfilehash: 2bfa50068c5a61e8d6807da895dd5bf932ef05ba
+ms.sourcegitcommit: 5b073caafebaf80dc1774b66483136ac342f7808
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72598348"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75780357"
 ---
-# <a name="azure-media-services-community"></a>Сообщество служб мультимедиа Azure  
+# <a name="azure-media-services-v3-community"></a>Сообщество служб мультимедиа Azure v3  
 
 На этой странице сообщества служб мультимедиа Azure обсуждаются различные способы задать вопросы, отправить отзыв и получить обновления о службах мультимедиа.
 

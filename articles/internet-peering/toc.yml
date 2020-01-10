@@ -1,0 +1,86 @@
+- name: Документация по интернет-пирингу
+  href: index.yml
+- name: Обзор
+  items:
+    - name: Сведения об интернет-пиринге
+      href: overview.md
+    - name: 'Сравнение: интернет-пиринг и Служба пиринга'
+      href: overview-peering-service.md
+- name: Основные понятия
+  items:
+    - name: Политика пиринга
+      href: policy.md
+- name: Практические руководства
+  items:
+    - name: Предварительные требования для настройки пиринга с Майкрософт
+      href: prerequisites.md
+    - name: Пошаговое руководство по прямому пирингу
+      href: walkthrough-direct-all.md
+    - name: Пошаговое руководство по пирингу через точку обмена
+      href: walkthrough-exchange-all.md
+    - name: Пошаговое руководство по Службе пиринга для партнеров
+      href: walkthrough-peering-service-all.md
+    - name: Связывание однорангового узла ASN с подпиской Azure
+      items:
+        - name: Портал
+          href: howto-subscription-association-portal.md
+        - name: Azure PowerShell
+          href: howto-subscription-association-powershell.md
+    - name: Включение прямого пиринга в Службе пиринга
+      items:
+        - name: Портал
+          href: howto-peering-service-portal.md
+        - name: Azure PowerShell
+          href: howto-peering-service-powershell.md
+    - name: Создание или изменение прямого пиринга
+      items:
+        - name: Портал
+          href: howto-direct-portal.md
+        - name: Azure PowerShell
+          href: howto-direct-powershell.md
+    - name: Преобразование устаревшего прямого пиринга в ресурс Azure
+      items:
+        - name: Портал
+          href: howto-legacy-direct-portal.md
+        - name: Azure PowerShell
+          href: howto-legacy-direct-powershell.md
+    - name: Создание или изменение пиринга через точку обмена
+      items:
+        - name: Портал
+          href: howto-exchange-portal.md
+        - name: Azure PowerShell
+          href: howto-exchange-powershell.md
+    - name: Преобразование устаревшего пиринга через точку обмена в ресурс Azure
+      items:
+        - name: Портал
+          href: howto-legacy-exchange-portal.md
+        - name: Azure PowerShell
+          href: howto-legacy-exchange-powershell.md
+- name: Справочник
+  items:
+    - name: Azure CLI
+      href: 'https://docs.microsoft.com/cli/azure/network'
+    - name: Azure PowerShell
+      href: 'https://docs.microsoft.com/powershell/module/az.network'
+    - name: Java
+      href: 'https://docs.microsoft.com/java/api/'
+    - name: Node.js
+      href: 'https://docs.microsoft.com/javascript/azure#azure-sdk'
+    - name: Python
+      href: 'https://azure.microsoft.com/develop/python/'
+    - name: Шаблон Resource Manager
+      href: 'https://docs.microsoft.com/azure/templates/microsoft.network/allversions'
+- name: Ресурсы
+  items:
+    - name: Развитие навыков с помощью Microsoft Learn
+      href: 'https://docs.microsoft.com/learn/browse/'
+    - name: Стратегия развития Azure
+      href: 'https://azure.microsoft.com/roadmap/?category=networking'
+    - name: Блог о сетях
+      href: 'https://azure.microsoft.com/blog/topics/networking'
+    - name: Отзыв о работе сети
+      href: 'https://feedback.azure.com/forums/217313-networking?category_id=77469'
+    - name: Часто задаваемые вопросы об интернет-пиринге
+      href: faqs.md
+    - name: Часто задаваемые вопросы о Службе пиринга
+      href: service-faqs.md

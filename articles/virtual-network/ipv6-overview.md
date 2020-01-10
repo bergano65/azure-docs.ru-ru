@@ -12,12 +12,12 @@ ms.topic: article
 ms.workload: infrastructure-services
 ms.date: 12/19/2019
 ms.author: kumud
-ms.openlocfilehash: a44f99b5a7f25a7350e6a63cf85c6b2287647162
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
-ms.translationtype: HT
+ms.openlocfilehash: 9214886f468a4a052328a99289845361a059b650
+ms.sourcegitcommit: 5b073caafebaf80dc1774b66483136ac342f7808
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75373253"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75780085"
 ---
 # <a name="what-is-ipv6-for-azure-virtual-network-preview"></a>Что такое IPv6 для виртуальной сети Azure? (предварительная версия)
 
@@ -75,7 +75,7 @@ IPv6 для виртуальной сети Azure — это базовый на
 ## <a name="limitations"></a>Ограничения
 Текущая версия IPv6 для виртуальной сети Azure имеет следующие ограничения.
 - IPv6 для виртуальной сети Azure (Предварительная версия) доступен во всех глобальных регионах Azure, но только в глобальной службе Azure, еще не в облаке государственных организаций.
-- Выпуски Express Route и VPN-шлюзы нельзя использовать в виртуальной сети с включенным протоколом IPv6 либо напрямую, либо с помощью "UseRemoteGateway". 
+- Виртуальные частные шлюзы ExpressRoute и VPN нельзя использовать в виртуальной сети с включенным протоколом IPv6 либо напрямую, либо с помощью "UseRemoteGateway". 
 - Платформа Azure (AKS и т. д.) не поддерживает обмен данными по протоколу IPv6 для контейнеров.  
 
 ## <a name="pricing"></a>Стоимость

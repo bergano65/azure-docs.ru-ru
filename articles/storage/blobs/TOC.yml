@@ -48,9 +48,9 @@
                 - name: JavaScript (пакет SDK версии 12 для Node.js)
                   href: storage-quickstart-blobs-nodejs.md
                 - name: JavaScript (пакет SDK версии 10 для Node.js)
-                  href: storage-quickstart-blobs-nodejs-v10.md
+                  href: storage-quickstart-blobs-nodejs-legacy.md
                 - name: JavaScript (пакет SDK версии 10 для браузера)
-                  href: storage-quickstart-blobs-javascript-client-libraries-v10.md
+                  href: storage-quickstart-blobs-javascript-client-libraries-legacy.md
             - name: Go
               href: storage-quickstart-blobs-go.md
             - name: PHP
@@ -424,12 +424,6 @@
                   href: /java/azure/spring-framework/configure-spring-boot-starter-java-app-with-azure-storage
             - name: Xamarin
               href: storage-xamarin-blob-storage.md
-            - name: Предыдущие версии пакета SDK
-              items:
-                - name: "JavaScript (Node.js) (пакет SDK Службы хранилища версии\_2)"
-                  href: storage-quickstart-blobs-nodejs-legacy.md
-                - name: "JavaScript (для браузера) (пакет SDK Службы хранилища версии\_2)"
-                  href: storage-quickstart-blobs-javascript-client-libraries.md
         - name: Управление большими двоичными объектами
           items:
             - name: Azure CLI

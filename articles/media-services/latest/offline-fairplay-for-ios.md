@@ -1,5 +1,5 @@
 ---
-title: Защита содержимого HLS в Azure с помощью Apple FairPlay в автономном режиме | Документация Майкрософт
+title: Автономная потоковая передача FairPlay для iOS с помощью служб мультимедиа Azure v3
 description: В этом разделе приводятся общие сведения и показывается, как использовать службы мультимедиа Azure для динамического шифрования содержимого HTTP Live Streaming (HLS) с использованием Apple FairPlay в автономном режиме.
 services: media-services
 keywords: HLS, DRM, потоковая передача FairPlay (FPS), Offline, iOS 10
@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/08/2019
 ms.author: willzhan
-ms.openlocfilehash: 83fa8c9c6d98728d48ff4ed8993963cdbd522724
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.openlocfilehash: c0d87de25cae44f17789dfaf7b1ec805138c351c
+ms.sourcegitcommit: 5b073caafebaf80dc1774b66483136ac342f7808
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74974127"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75779932"
 ---
 # <a name="offline-fairplay-streaming-for-ios"></a>Потоковая передача FairPlay в автономном режиме для iOS 
 
@@ -29,7 +29,7 @@ ms.locfileid: "74974127"
 - Microsoft PlayReady
 - Google Widevine
     
-    Widevine — это служба, предоставляемая Google Inc. и подпадает под условия обслуживания и политики конфиденциальности Google, Inc.
+    Widevine — это служба, которая предоставляется компанией Google Inc. и подпадает под условия предоставления услуг и политику конфиденциальности Google Inc.
 - Apple FairPlay
 - Шифрование AES-128
 
@@ -63,7 +63,7 @@ ms.locfileid: "74974127"
 
     Вам потребуется изменить код в репозитории сценариев для [шифрования с помощью DRM при использовании .NET](https://github.com/Azure-Samples/media-services-v3-dotnet-tutorials/tree/master/AMSV3Tutorials/EncryptWithDRM) для добавления конфигураций FairPlay.  
 
-## <a name="configure-content-protection-in-azure-media-services"></a>Конфигурация защиты содержимого в Службах мультимедиа Azure
+## <a name="configure-content-protection-in-azure-media-services"></a>Настройка защиты содержимого в Службах мультимедиа Azure
 
 В методе [GetOrCreateContentKeyPolicyAsync](https://github.com/Azure-Samples/media-services-v3-dotnet-tutorials/blob/master/AMSV3Tutorials/EncryptWithDRM/Program.cs#L189) выполните следующие действия.
 
@@ -85,7 +85,7 @@ options.Add(
     });
 ```
 
-## <a name="enable-offline-mode"></a>Включите автономный режим.
+## <a name="enable-offline-mode"></a>Включение автономного режима
 
 Для включения автономного режима создайте пользовательскую политику StreamingPolicy и используйте ее имя при создании StreamingLocator в [CreateStreamingLocatorAsync](https://github.com/Azure-Samples/media-services-v3-dotnet-tutorials/blob/master/AMSV3Tutorials/EncryptWithDRM/Program.cs#L563).
  
@@ -201,7 +201,7 @@ func requestApplicationCertificate() throws -> Data {
 Вы можете найти образцы на этом [демо-сайте](https://aka.ms/poc#22) вместе с соответствующим сертификатом приложения, размещенным в веб-приложении Azure.
 При использовании 3-й или 4-й версии примера пакета SDK сервера FPS, если главный плейлист содержит альтернативный аудио-поток, в автономном режиме воспроизводится только аудио. Таким образом, вам нужно убрать альтернативный аудиопоток. Другими словами, второй и третий образцы, перечисленные ранее, работают в интерактивном и автономном режимах. В первом примере звук будет воспроизводиться только в автономном режиме, в то время как интерактивная потоковая передача работает правильно.
 
-## <a name="faq"></a>Вопросы и ответы
+## <a name="faq"></a>Часто задаваемые вопросы
 
 Следующие ответы на часто задаваемые вопросы помогут устранить неполадки:
 

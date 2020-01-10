@@ -108,6 +108,9 @@
     - name: Служба автоматизации
       tocHref: /azure/automation/
       topicHref: /azure/automation/
+    - name: Интернет-пиринг
+      tocHref: /azure/internet-peering/
+      topicHref: /azure/internet-peering/
     - name: Блокчейн
       tocHref: /azure/blockchain/
       topicHref: /azure/blockchain/

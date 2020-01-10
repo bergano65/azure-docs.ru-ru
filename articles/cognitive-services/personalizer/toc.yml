@@ -66,6 +66,8 @@
     - name: Создание и настройка Персонализатора
       href: how-to-settings.md
       displayName: 'azure, portal, settings, evaluation, offline, policy, export, model, configure'
+    - name: Управление политикой обучения
+      href: how-to-learning-policy.md
     - name: Анализ
       items:
         - name: Автономная оценка

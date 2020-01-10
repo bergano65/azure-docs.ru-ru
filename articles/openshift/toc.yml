@@ -4,7 +4,7 @@
   items:
     - name: Сведения об Azure Red Hat OpenShift
       href: intro-openshift.md
-- name: Руководства
+- name: Учебники
   items:
     - name: Создание кластера Azure Red Hat OpenShift и управление им
       items:
@@ -22,7 +22,7 @@
           href: cluster-administration-cluster-admin-role.md
         - name: "2.\_Управление ограничениями контекста безопасности"
           href: cluster-administration-security-context-constraints.md
-- name: Руководства
+- name: Практические руководства
   expanded: true
   items:
     - name: Настройка среды разработки Azure Red Hat OpenShift
@@ -37,7 +37,17 @@
       href: howto-deploy-prometheus.md
     - name: Управление проектами в кластере Azure Red Hat OpenShift
       href: howto-manage-projects.md
-- name: Справочные материалы
+    - name: Мониторинг и ведение журнала
+      items:
+        - name: Azure Monitor для контейнеров (предварительная версия)
+          items:
+            - name: Настройка Azure Monitor для контейнеров
+              href: ../azure-monitor/insights/container-insights-azure-redhat-setup.md
+              maintainContext: true
+            - name: Отключение Azure Monitor для контейнеров
+              href: ../azure-monitor/insights/container-insights-optout-openshift.md
+              maintainContext: true
+- name: Справочник
   items:
     - name: Интерфейс командной строки Azure Red Hat OpenShift
       href: /cli/azure/openshift
@@ -51,7 +61,7 @@
       href: troubleshoot.md
     - name: Поддерживаемые ресурсы
       href: supported-resources.md
-    - name: Доступ по регионам
+    - name: Доступность по регионам
       href: 'https://azure.microsoft.com/regions/services/'
     - name: Документация по Red Hat OpenShift
       href: 'https://docs.openshift.com/aro/welcome/index.html'

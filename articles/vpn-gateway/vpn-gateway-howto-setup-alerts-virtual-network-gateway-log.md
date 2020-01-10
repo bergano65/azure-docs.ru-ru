@@ -1,5 +1,5 @@
 ---
-title: Настройка оповещений о событиях журнала диагностики из VPN-шлюза Azure
+title: 'VPN-шлюз Azure: Настройка оповещений для событий журнала диагностики'
 description: Действия по настройке оповещений для событий журнала диагностики VPN-шлюза
 services: vpn-gateway
 author: anzaman
@@ -7,12 +7,12 @@ ms.service: vpn-gateway
 ms.topic: conceptual
 ms.date: 06/12/2019
 ms.author: alzam
-ms.openlocfilehash: d914c020553bace7ea5ab8898ac4093fea30e6c9
-ms.sourcegitcommit: f176e5bb926476ec8f9e2a2829bda48d510fbed7
+ms.openlocfilehash: e2d0227f7481f75c1b0a4e3fe9d0fa3134a7261c
+ms.sourcegitcommit: 5b073caafebaf80dc1774b66483136ac342f7808
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70306993"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75778606"
 ---
 # <a name="set-up-alerts-on-diagnostic-log-events-from-vpn-gateway"></a>Настройка оповещений о событиях журнала диагностики из VPN-шлюза
 
@@ -20,7 +20,7 @@ ms.locfileid: "70306993"
 
 В Azure доступны следующие журналы:
 
-|***Name*** | ***Описание*** |
+|***Название*** | ***Описание*** |
 |---        | ---               |
 |GatewayDiagnosticLog | Содержит журналы диагностики для событий настройки шлюза, основные изменения и события обслуживания. |
 |TunnelDiagnosticLog | Содержит события изменения состояния туннеля. События подключения и отключения туннеля имеют обобщенную причину изменения состояния, если применимо |
@@ -35,17 +35,17 @@ ms.locfileid: "70306993"
 
 1. В портал Azure найдите **log Analytics** в разделе **все службы** и выберите **log Analytics рабочие области**.
 
-   ![Параметры для перехода в log Analytics рабочие области](./media/vpn-gateway-howto-setup-alerts-virtual-network-gateway-log/log-alert0.png "Создание")
+   ![Параметры для перехода в Log Analytics рабочие области](./media/vpn-gateway-howto-setup-alerts-virtual-network-gateway-log/log-alert0.png "Create")
 
 2. На странице **log Analytics** выберите **создать** .
 
-   ![Страница log Analytics с кнопкой "создать"](./media/vpn-gateway-howto-setup-alerts-virtual-network-gateway-log/log-alert1.png  "Выберите")
+   ![Страница Log Analytics с кнопкой "создать"](./media/vpn-gateway-howto-setup-alerts-virtual-network-gateway-log/log-alert1.png  "Выберите")
 
 3. Выберите **создать** и введите сведения.
 
-   ![Сведения о создании рабочей области log Analytics](./media/vpn-gateway-howto-setup-alerts-virtual-network-gateway-log/log-alert2.png  "Выберите")
+   ![Сведения о создании рабочей области Log Analytics](./media/vpn-gateway-howto-setup-alerts-virtual-network-gateway-log/log-alert2.png  "Выберите")
 
-4. Найдите VPN-шлюз в колонке **мониторинг** > **параметров диагностики** .
+4. Найдите VPN-шлюз в колонке **монитор** **параметры диагностики** > .
 
    ![Варианты поиска VPN-шлюза в параметрах диагностики](./media/vpn-gateway-howto-setup-alerts-virtual-network-gateway-log/log-alert3.png  "Выберите")
 
@@ -95,6 +95,6 @@ ms.locfileid: "70306993"
 
     ![Параметры для создания правила](./media/vpn-gateway-howto-setup-alerts-virtual-network-gateway-log/log-alert11.png  "Выберите")
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Сведения о настройке оповещений в метриках туннеля см. в разделе [Настройка оповещений в метриках VPN-шлюза](vpn-gateway-howto-setup-alerts-virtual-network-gateway-metric.md).

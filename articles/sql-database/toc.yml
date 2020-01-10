@@ -504,6 +504,8 @@
           href: sql-database-security-tutorial.md
         - name: Потоковая передача данных с помощью Stream Analytics
           href: sql-database-stream-analytics.md
+        - name: Перенос базы данных SQLite в бессерверную Базу данных SQL Azure
+          href: tutorial-sqlite-db-to-azure-sql-serverless-offline.md
     - name: Основные понятия
       items:
         - name: Ресурсы отдельной базы данных

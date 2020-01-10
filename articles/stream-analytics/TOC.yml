@@ -61,6 +61,16 @@
           href: stream-analytics-sql-output-perf.md
         - name: Пользовательские шаблоны пути к BLOB-объекту
           href: stream-analytics-custom-path-patterns-blob-storage-output.md
+    - name: Оптимизация задания Stream Analytics
+      items:
+        - name: Обзор и настройка единиц потоковой передачи
+          href: stream-analytics-streaming-unit-consumption.md
+        - name: Повышение производительности запросов
+          href: stream-analytics-parallelization.md
+        - name: Повторное секционирование входных данных
+          href: repartition.md
+        - name: Повышение пропускной способности для задания
+          href: stream-analytics-scale-jobs.md
     - name: Состояния задания
       href: job-states.md
     - name: Оконные функции
@@ -148,20 +158,6 @@
           href: stream-analytics-monitor-jobs.md
         - name: Мониторинг заданий в Visual Studio
           href: stream-analytics-monitor-jobs-use-vs.md
-    - name: Масштабирование
-      items:
-        - name: Масштабирование с помощью единиц потоковой передачи
-          href: stream-analytics-streaming-unit-consumption.md
-        - name: Масштабирование с помощью параллелизации
-          items:
-            - name: Параллелизация запросов
-              href: stream-analytics-parallelization.md
-            - name: Повышение пропускной способности
-              href: stream-analytics-scale-jobs.md
-        - name: Масштабирование с помощью функций Машинного обучения
-          href: stream-analytics-scale-with-machine-learning-functions.md
-        - name: Масштабирование с помощью повторного секционирования
-          href: repartition.md
     - name: Автоматизация
       items:
         - name: Использование пакета SDK для .NET
@@ -218,6 +214,8 @@
           href: stream-analytics-how-to-configure-azure-machine-learning-endpoints-in-stream-analytics.md
     - name: Отладка с использованием схемы заданий
       href: stream-analytics-job-diagram-with-metrics.md
+    - name: Масштабирование с помощью функций Машинного обучения
+      href: stream-analytics-scale-with-machine-learning-functions.md
 - name: Язык запросов Stream Analytics
   items:
     - name: Встроенные функции

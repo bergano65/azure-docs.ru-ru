@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 09/03/2019
 ms.author: damaerte
-ms.openlocfilehash: 2edb50910614b47aca5a4d8f7f02c2e3bc69b643
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 513c3da8031774f5f111ee357b5a3c43e1d09d95
+ms.sourcegitcommit: f53cd24ca41e878b411d7787bd8aa911da4bc4ec
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75449003"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75832472"
 ---
 # <a name="overview-of-azure-cloud-shell"></a>Обзор Azure Cloud Shell
 Azure Cloud Shell — это интерактивная, аутентифицированная, доступная в браузере оболочка для управления ресурсами Azure.
@@ -40,11 +40,14 @@ Cloud Shell предоставляет доступ к браузерному и
 Используйте Cloud Shell для работы из локального компьютера с неограниченными возможностями, которые может обеспечить только облако.
 
 ### <a name="choice-of-preferred-shell-experience"></a>Выбор предпочтительной оболочки
-Пользователи могут выбрать Bash или PowerShell из раскрывающегося списка оболочек.
+Пользователи могут выбрать между bash или PowerShell.
+1. Выберите **Cloud Shell**.
 
-![Bash в Cloud Shell](media/overview/overview-bash-pic.png)
+    ![Значок Cloud Shell](media/overview/overview-cloudshell-icon.png)
 
-![PowerShell в Cloud Shell](media/overview/overview-ps-pic.png)
+2. Выберите **Bash** или **PowerShell**.
+
+    ![Выберите bash или PowerShell](media/overview/overview-choices.png)
 
 ### <a name="authenticated-and-configured-azure-workstation"></a>Настроенная и аутентифицированная рабочая станция Azure
 Службой Cloud Shell управляет Майкрософт, поэтому в ней присутствуют популярные программы командной строки и реализована поддержка различных языков. Кроме того, Cloud Shell автоматически безопасно проходит проверку подлинности, тем самым обеспечивая мгновенный доступ к ресурсам с помощью Azure CLI или командлетов Azure PowerShell.

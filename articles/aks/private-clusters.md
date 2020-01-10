@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 12/10/2019
 ms.author: mlearned
-ms.openlocfilehash: 8af0f998df2a92e51078a2e23806cca07ff08ca3
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 6152becb8debd0700ddab6190284514c6d6cf69d
+ms.sourcegitcommit: 8b37091efe8c575467e56ece4d3f805ea2707a64
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75480090"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75830060"
 ---
 # <a name="public-preview---private-azure-kubernetes-service-cluster"></a>Общедоступная Предварительная версия — частный кластер службы Kubernetes Azure
 
@@ -81,16 +81,16 @@ az aks create -n <private-cluster-name> -g <private-cluster-resource-group> --lo
 #### <a name="advanced-networking"></a>Расширенные сетевые подключения  
 
 ```azurecli-interactive
-az aks create \ 
-    --resource-group <private-cluster-resource-group>\ 
-    --name <private-cluster-name> \ 
-    --load-balancer-sku standard
-    --enable-private-cluster 
-    --network-plugin azure \ 
-    --vnet-subnet-id <subnet-id> \ 
-    --docker-bridge-address 172.17.0.1/16 \ 
-    --dns-service-ip 10.2.0.10 \ 
-    --service-cidr 10.2.0.0/24 \ 
+az aks create \
+    --resource-group <private-cluster-resource-group> \
+    --name <private-cluster-name> \
+    --load-balancer-sku standard \
+    --enable-private-cluster \
+    --network-plugin azure \
+    --vnet-subnet-id <subnet-id> \
+    --docker-bridge-address 172.17.0.1/16 \
+    --dns-service-ip 10.2.0.10 \
+    --service-cidr 10.2.0.0/24 
 ```
 Где--Enable-частный-Cluster является обязательным флагом для частного кластера 
 
@@ -108,6 +108,11 @@ az aks create \
     * Щелкните зону Частная зона DNS 
     * в левой области выберите ссылку на виртуальную сеть.
     * Создайте новую ссылку, чтобы добавить виртуальную сеть виртуальной машины в зону Частная зона DNS *(это займет несколько минут, чтобы ссылка зоны DNS стала доступной)* .
+    * Вернитесь к группе ресурсов MC_ * на портале.
+    * Выберите виртуальную сеть на правой панели. Имя виртуальной сети будет иметь вид AKS-vnet-*.
+    * Выбор пиринга в левой области
+    * Щелкните Добавить и добавьте виртуальную сеть виртуальной машины и создайте пиринг.
+    * Перейдите в виртуальную сеть, где находится виртуальная машина, а затем щелкните "пиринга" и выберите виртуальную сеть AKS и создайте пиринг. Если диапазоны адресов в виртуальной сети AKS и виртуальная сеть виртуальной машины конфликтуют, пиринг завершится сбоем. Дополнительные сведения об пиринге виртуальных сетей см. в этом [документе][virtual-network-peering] .
 * Подключение SSH к виртуальной машине
 * Установка средства Kubectl и выполнение команд Kubectl
 
@@ -132,3 +137,5 @@ az aks create \
 [az-extension-add]: /cli/azure/extension#az-extension-add
 [az-extension-update]: /cli/azure/extension#az-extension-update
 [private-link-service]: https://docs.microsoft.com/azure/private-link/private-link-service-overview
+[virtual-network-peering]: ../virtual-network/virtual-network-peering-overview.md
+

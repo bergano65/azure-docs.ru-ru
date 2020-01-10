@@ -12,39 +12,23 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 08/01/2019
 ms.author: cynthn
-ms.openlocfilehash: 92dca6f4f41ff426aebcb8e580653afaa71afff8
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.openlocfilehash: ae7c6f2d5f05b3d4ed3744be57112a62606cf622
+ms.sourcegitcommit: f53cd24ca41e878b411d7787bd8aa911da4bc4ec
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74033370"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75833833"
 ---
-# <a name="preview-deploy-vms-to-dedicated-hosts-using-the-azure-powershell"></a>Предварительная версия: развертывание виртуальных машин на выделенных узлах с помощью Azure PowerShell
+# <a name="deploy-vms-to-dedicated-hosts-using-the-azure-powershell"></a>Развертывание виртуальных машин на выделенных узлах с помощью Azure PowerShell
 
 В этой статье рассказывается, как создать [выделенный узел](dedicated-hosts.md) Azure для размещения виртуальных машин. 
 
-Убедитесь, что установлен Azure PowerShell версии 2.4.2 или более поздней, и вы вошли в учетную запись Azure в с помощью `Connect-AzAccount`. Чтобы установить версию 2.4.2, откройте командную строку PowerShell и введите следующую команду:
+Убедитесь, что установлен Azure PowerShell версии 2.8.0 или более поздней, и вы вошли в учетную запись Azure в с помощью `Connect-AzAccount`. 
 
-```powershell
-Install-Module -Name Az.Compute -Repository PSGallery -RequiredVersion 2.4.2-preview -AllowPrerelease
-```
+## <a name="limitations"></a>Ограничения
 
-Для включения функции предварительного просмотра модуля в PowerShell потребуется по меньшей мере версия 1.6.0 модуля PowerShellGet. Последние версии PowerShell Core автоматически встроены в, но для более ранних версий PowerShell можно выполнить следующую команду для обновления до последней версии:
-
-```powershell
-Install-Module -Name PowerShellGet -Repository PSGallery -Force
-```
-
-
-> [!IMPORTANT]
-> Выделенные узлы Azure в настоящее время находятся в общедоступной предварительной версии.
-> Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для использования рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
->
-> **Известные ограничения предварительной версии**
-> - Масштабируемые наборы виртуальных машин в настоящее время не поддерживаются на выделенных узлах.
-> - Начальный выпуск предварительной версии поддерживает следующую серию виртуальных машин: DSv3 и ESv3. 
-
-
+- Масштабируемые наборы виртуальных машин в настоящее время не поддерживаются на выделенных узлах.
+- Поддерживаются следующие серии виртуальных машин: DSv3 и ESv3. 
 
 ## <a name="create-a-host-group"></a>Создание группы узлов
 
@@ -90,7 +74,7 @@ $dHost = New-AzHost `
    -PlatformFaultDomain 1
 ```
 
-## <a name="create-a-vm"></a>Создание виртуальной машины
+## <a name="create-a-vm"></a>Создание ВМ
 
 Создайте виртуальную машину на выделенном узле. 
 
@@ -215,7 +199,7 @@ Remove-AzResourceGroup -Name $rgName
 ```
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Здесь](https://github.com/Azure/azure-quickstart-templates/blob/master/201-vm-dedicated-hosts/README.md)приведен пример шаблона, который использует зоны и домены сбоя для максимальной устойчивости в регионе.
 

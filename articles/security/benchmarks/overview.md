@@ -8,14 +8,14 @@ ms.topic: conceptual
 ms.date: 12/16/2019
 ms.author: mbaldwin
 ms.custom: security-baselines
-ms.openlocfilehash: 12f463428e5e11fb11fc117aa9ffa2c606f17e26
-ms.sourcegitcommit: 541e6139c535d38b9b4d4c5e3bfa7eef02446fdc
+ms.openlocfilehash: 6140d64d7af6f5ccd4864e4cbc5c313cdae3acaf
+ms.sourcegitcommit: f53cd24ca41e878b411d7787bd8aa911da4bc4ec
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75667451"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75835022"
 ---
-# <a name="overview"></a>Обзор
+# <a name="overview-of-azure-security-controls"></a>Общие сведения об элементах управления безопасностью в Azure
 
 В тестовом проходе системы безопасности Azure содержатся рекомендации, которые помогут повысить безопасность приложений и данных в Azure.   
 

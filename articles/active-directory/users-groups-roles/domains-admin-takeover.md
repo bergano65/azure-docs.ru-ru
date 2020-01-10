@@ -14,12 +14,12 @@ ms.author: curtand
 ms.reviewer: elkuzmen
 ms.custom: it-pro;seo-update-azuread-jan
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7a0697e151c50b9722fef908eeb2c7498503b8c0
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.openlocfilehash: 09012d93a1f9fd24427cb8b3937b3a36cf75d9e4
+ms.sourcegitcommit: f53cd24ca41e878b411d7787bd8aa911da4bc4ec
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74027368"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75834182"
 ---
 # <a name="take-over-an-unmanaged-directory-as-administrator-in-azure-active-directory"></a>Смена неуправляемого каталога от имени администратора в Azure Active Directory
 
@@ -56,7 +56,7 @@ ms.locfileid: "74027368"
 
 ### <a name="adding-the-domain-name-to-a-managed-tenant-in-azure-ad"></a>Добавление доменного имени в управляемый клиент в Azure AD
 
-1. Откройте [центр администрирования Microsoft 365](https://admin.microsoft.com).
+1. Откройте [Центр администрирования Microsoft 365](https://admin.microsoft.com).
 2. Выберите вкладку **Пользователи** и создайте новую учетную запись пользователя с таким именем, как *User\@fourthcoffeexyz.onmicrosoft.com* , которая не использует имя личного домена. 
 3. Убедитесь, что у этой новой учетной записи пользователя есть права глобального администратора для клиента Azure AD.
 4. Откройте вкладку **домены** в центре администрирования Microsoft 365, выберите имя домена и нажмите кнопку **Удалить**. 
@@ -80,14 +80,14 @@ ms.locfileid: "74027368"
 
 Когда выполняется проверка принадлежности доменного имени, Azure AD удаляет доменное имя из неуправляемого клиента и перемещает его в существующий клиент. При внешней смене администратором неуправляемого каталога требуется выполнить тот же процесс проверки DNS с помощью записи TXT, как и при внутренней смене администратором. Разница заключается в том, что с доменным именем также переносятся следующие компоненты:
 
-- Users
+- Пользователи
 - Подписки
 - Назначения лицензий
 
 ### <a name="support-for-external-admin-takeover"></a>Поддержка внешней смены администратором
 Внешняя смена администратором поддерживается следующими веб-службами:
 
-- управление правами Azure;
+- Управление правами Azure
 - Exchange Online
 
 Поддерживаемые планы обслуживания:
@@ -95,7 +95,7 @@ ms.locfileid: "74027368"
 - PowerApps (бесплатная версия);
 - PowerFlow (бесплатная версия);
 - RMS для частных лиц;
-- Microsoft Stream;
+- Microsoft Stream
 - Dynamics 365 (бесплатная пробная версия).
 
 Внешний администратор перенаправление не поддерживается для всех служб, в которых есть планы обслуживания, включающие SharePoint, OneDrive или Skype для бизнеса. Например, с помощью бесплатной подписки Office. 
@@ -113,7 +113,7 @@ ms.locfileid: "74027368"
 ### <a name="azure-ad-powershell-cmdlets-for-the-forcetakeover-option"></a>Командлеты Azure AD PowerShell для параметра ForceTakeover
 Вы можете видеть эти командлеты, используемые в [примере PowerShell](#powershell-example).
 
-Командлет | Использование
+командлет | Использование
 ------- | -------
 `connect-msolservice` | При появлении запроса выполните вход в управляемый клиент.
 `get-msoldomain` | Показывает доменные имена, связанные с текущим клиентом.
@@ -130,45 +130,45 @@ ms.locfileid: "74027368"
 
 1. Подключитесь к Azure AD, используя учетные данные, использованные в ответ на предложение самообслуживания:
    ```powershell
-    Install-Module -Name MSOnline
-    $msolcred = get-credential
+   Install-Module -Name MSOnline
+   $msolcred = get-credential
     
-    connect-msolservice -credential $msolcred
+   connect-msolservice -credential $msolcred
    ```
 2. Получение списка доменов:
   
    ```powershell
-    Get-MsolDomain
+   Get-MsolDomain
    ```
 3. Выполните командлет Get-MsolDomainVerificationDns для создания запроса защиты:
    ```powershell
-    Get-MsolDomainVerificationDns –DomainName *your_domain_name* –Mode DnsTxtRecord
-  
-    For example:
-  
-    Get-MsolDomainVerificationDns –DomainName contoso.com –Mode DnsTxtRecord
+   Get-MsolDomainVerificationDns –DomainName *your_domain_name* –Mode DnsTxtRecord
+   ```
+    Пример.
+   ```
+   Get-MsolDomainVerificationDns –DomainName contoso.com –Mode DnsTxtRecord
    ```
 
-4. Скопируйте значение (запрос защиты), которое возвращает эта команда. Например,
+4. Скопируйте значение (запрос защиты), которое возвращает эта команда. Пример.
    ```powershell
-    MS=32DD01B82C05D27151EA9AE93C5890787F0E65D9
+   MS=32DD01B82C05D27151EA9AE93C5890787F0E65D9
    ```
 5. В пространстве общедоступных имен DNS создайте DNS-запись TXT, содержащую значение, скопированное на предыдущем шаге. Имя для данной записи — это имя родительского домена, поэтому при создании этой записи ресурса с помощью роли DNS из Windows Server оставьте поле "Имя записи" пустым и просто вставьте это значение в текстовое поле.
 6. Выполните командлет Confirm-MsolDomain, чтобы подтвердить запрос защиты:
   
    ```powershell
-    Confirm-MsolEmailVerifiedDomain -DomainName *your_domain_name*
+   Confirm-MsolDomain –DomainName *your_domain_name* –ForceTakeover Force
    ```
   
-   Например,
+   Пример.
   
    ```powershell
-    Confirm-MsolEmailVerifiedDomain -DomainName contoso.com
+   Confirm-MsolDomain –DomainName contoso.com –ForceTakeover Force
    ```
 
 Успешный запрос защиты возвращает строки без ошибок.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Добавление имени личного домена в Azure Active Directory](../fundamentals/add-custom-domain.md)
 * [Как установить и настроить Azure PowerShell](/powershell/azure/overview)

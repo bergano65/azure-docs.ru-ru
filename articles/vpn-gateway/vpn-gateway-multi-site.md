@@ -1,33 +1,26 @@
 ---
-title: 'Подключение виртуальной сети к нескольким сайтам с помощью VPN-шлюза и PowerShell: Классический | Документация Майкрософт'
+title: 'Подключение виртуальной сети к нескольким сайтам с помощью VPN-шлюза: классическая модель'
 description: Подключение нескольких локальных сайтов к классической виртуальной сети с использованием VPN-шлюза
 services: vpn-gateway
-documentationcenter: na
+titleSuffix: Azure VPN Gateway
 author: yushwang
-manager: rossort
-editor: ''
-tags: azure-service-management
-ms.assetid: b043df6e-f1e8-4a4d-8467-c06079e2c093
 ms.service: vpn-gateway
-ms.devlang: na
 ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: infrastructure-services
 ms.date: 02/14/2018
 ms.author: yushwang
-ms.openlocfilehash: 77f8b7094c96e507eef1d360a26240627bc0e350
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 23ca87a597f37c301ac3777decfe7949c06cc5b2
+ms.sourcegitcommit: 5b073caafebaf80dc1774b66483136ac342f7808
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60836098"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75779660"
 ---
 # <a name="add-a-site-to-site-connection-to-a-vnet-with-an-existing-vpn-gateway-connection-classic"></a>Добавление подключения типа "сеть-сеть" к виртуальной сети с помощью существующего подключения VPN-шлюза (классическая модель)
 
 [!INCLUDE [deployment models](../../includes/vpn-gateway-classic-deployment-model-include.md)]
 
 > [!div class="op_single_selector"]
-> * [портал Azure](vpn-gateway-howto-multi-site-to-site-resource-manager-portal.md)
+> * [Портал Azure](vpn-gateway-howto-multi-site-to-site-resource-manager-portal.md)
 > * [PowerShell (классическая модель)](vpn-gateway-multi-site.md)
 >
 >
@@ -48,7 +41,7 @@ ms.locfileid: "60836098"
 
 Если к вашей виртуальной сети уже подключен статический шлюз, вы можете изменить его тип на динамический, не перестраивая виртуальную сеть, чтобы обеспечить многосайтовое подключение. Прежде чем менять тип маршрутизации, убедитесь, что локальный VPN-шлюз поддерживает конфигурации VPN на основе маршрутов.
 
-![Схема многосайтового подключения](./media/vpn-gateway-multi-site/multisite.png "Многосайтовое подключение")
+![схема с несколькими сайтами](./media/vpn-gateway-multi-site/multisite.png "несколько сайтов")
 
 ## <a name="points-to-consider"></a>Что необходимо учесть
 
@@ -67,7 +60,7 @@ ms.locfileid: "60836098"
 * Диапазоны IP-адресов, которые вы хотите использовать для виртуальной сети (если она еще не создана).
 * Диапазоны IP-адресов для каждого сайта локальной сети, к которым вы будете подключаться. Понадобится убедиться, что диапазоны IP-адресов сайтов локальной сети, к которым требуется подключиться, не перекрываются. В противном случае портал или REST API отклонит передаваемую конфигурацию.<br>Например, если два сайта локальной сети содержат диапазон IP-адресов 10.2.3.0/24 и имеется пакет с адресом назначения 10.2.3.3, Azure не сможет определить сайт, на который требуется отправить пакет, так как диапазоны адресов перекрываются. Для предотвращения проблем с маршрутизацией Azure не позволит передать файл конфигурации с перекрывающимися диапазонами адресов.
 
-## <a name="1-create-a-site-to-site-vpn"></a>1. Создание подключения VPN типа "сеть — сеть"
+## <a name="1-create-a-site-to-site-vpn"></a>1. Создание VPN типа "сеть — сеть"
 Это отлично, если у вас уже есть подключение VPN типа "сеть — сеть" со шлюзом с динамической маршрутизацией. Можно перейти к [экспорту параметров конфигурации виртуальной сети](#export). Если нет, выполните следующее:
 
 ### <a name="if-you-already-have-a-site-to-site-virtual-network-but-it-has-a-static-policy-based-routing-gateway"></a>Если у вас уже есть виртуальная сеть типа "сеть — сеть", но со шлюзом со статической маршрутизацией (на основе политики)
@@ -75,17 +68,17 @@ ms.locfileid: "60836098"
 2. Настройте новый шлюз и создайте VPN-туннель. Инструкции см. в разделе [Указание SKU и типа VPN](vpn-gateway-howto-site-to-site-classic-portal.md#sku). Убедитесь, что для типа маршрутизации задано значение "Динамический".
 
 ### <a name="if-you-dont-have-a-site-to-site-virtual-network"></a>Если у вас нет виртуальной сети типа "сеть — сеть"
-1. Создание виртуальной сети сайт-сайт с помощью следующей процедуры: [Создание виртуальной сети с подключением типа сеть — сеть VPN](vpn-gateway-site-to-site-create.md).  
+1. Создайте виртуальную сеть с VPN-подключением типа "сеть — сеть" с помощью указаний в [этой статье](vpn-gateway-site-to-site-create.md).  
 2. Настройте шлюз с динамической маршрутизацией с помощью следующей процедуры: [Настройка VPN-шлюза](vpn-gateway-configure-vpn-gateway-mp.md). Не забудьте выбрать **динамическую маршрутизацию** в качестве типа шлюза.
 
-## <a name="export"></a>2. Экспорт файла конфигурации сети
+## <a name="export"></a>2. Экспортируйте файл конфигурации сети.
 Экспортируйте файл конфигурации сети Azure, выполнив приведенную ниже команду. При необходимости можно изменить расположение файла для экспорта.
 
 ```powershell
 Get-AzureVNetConfig -ExportToFile C:\AzureNet\NetworkConfig.xml
 ```
 
-## <a name="3-open-the-network-configuration-file"></a>3. Открытие файла конфигурации сети
+## <a name="3-open-the-network-configuration-file"></a>3. Откройте файл конфигурации сети.
 Откройте файл конфигурации сети, скачанный на последнем шаге. Используйте любой редактор XML. Файл должен выглядеть следующим образом:
 
         <NetworkConfiguration xmlns:xsd="https://www.w3.org/2001/XMLSchema" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/ServiceHosting/2011/07/NetworkConfiguration">
@@ -160,10 +153,10 @@ Get-AzureVNetConfig -ExportToFile C:\AzureNet\NetworkConfig.xml
 ## <a name="5-import-the-network-configuration-file"></a>5. Импорт файла конфигурации сети
 Импортируйте файл конфигурации сети. После импорта этого файла с изменениями будут добавлены новые туннели. Туннели будут использовать динамический шлюз, который был создан ранее. Для импорта файла можно использовать PowerShell.
 
-## <a name="6-download-keys"></a>6. Скачивание ключей
+## <a name="6-download-keys"></a>6. скачивание ключей
 После добавления новых туннелей используйте командлет PowerShell "Get-AzureVNetGatewayKey", чтобы получить общие ключи IPsec/IKE для каждого туннеля.
 
-Пример:
+Пример.
 
 ```powershell
 Get-AzureVNetGatewayKey –VNetName "VNet1" –LocalNetworkSiteName "Site1"

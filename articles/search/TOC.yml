@@ -93,7 +93,7 @@
       href: knowledge-store-concept-intro.md
     - name: Проекции
       href: knowledge-store-projection-overview.md
-    - name: Добавочное индексирование
+    - name: Добавочное обогащение данных
       href: cognitive-search-incremental-indexing-conceptual.md
 - name: Практические руководства
   items:
@@ -237,9 +237,9 @@
               href: cognitive-search-concept-annotations-syntax.md
             - name: Сопоставление с полями индекса
               href: cognitive-search-output-field-mapping.md
-            - name: Извлечение информации из изображений и ее обработка
+            - name: Извлечение информации из изображений
               href: cognitive-search-concept-image-scenarios.md
-            - name: Настройка добавочного индексирования
+            - name: Обогащение кэша (добавочное)
               href: search-howto-incremental-index.md
         - name: Пользовательские навыки
           items:
@@ -330,7 +330,11 @@
     - name: REST (управление)
       href: /rest/api/searchmanagement
     - name: REST (предварительная версия)
-      href: search-api-preview.md
+      items:
+        - name: API версии 2019-05-06-Preview
+          href: search-api-preview.md
+        - name: API ResetSkills
+          href: preview-api-resetskills.md
     - name: Шаблон Resource Manager
       href: /azure/templates/microsoft.search/searchservices
     - name: Справочник по языку OData

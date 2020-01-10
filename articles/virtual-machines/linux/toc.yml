@@ -41,11 +41,11 @@
       href: tutorial-monitor.md
     - name: "13.\_Управление безопасностью виртуальных машин"
       href: tutorial-azure-security.md
-    - name: "14.\_Развертывание Jenkins"
+    - name: "14a.\_Сборка с помощью Jenkins"
       href: tutorial-jenkins-github-docker-cicd.md
-    - name: "15a.\_Развертывание с использованием Azure Pipelines"
+    - name: "14b.\_Развертывание с использованием Azure Pipelines (классическая версия)"
       href: tutorial-build-deploy-jenkins.md
-    - name: "15b.\_CI/CD с использованием Azure Pipelines"
+    - name: "15.\_CI/CD с использованием Azure Pipelines (YAML)"
       href: tutorial-build-deploy-azure-pipelines.md
     - name: "16а.\_Создание стека LAMP"
       href: tutorial-lamp-stack.md

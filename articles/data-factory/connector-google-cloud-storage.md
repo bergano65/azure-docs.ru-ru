@@ -10,12 +10,12 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 12/10/2019
 ms.author: jingwang
-ms.openlocfilehash: 338575158b91e90112548af5be0dcef68d521852
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: c5beaddc92b3c8bf00f8ea7d121b01b53ee25ee7
+ms.sourcegitcommit: 8b37091efe8c575467e56ece4d3f805ea2707a64
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75444309"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75830468"
 ---
 # <a name="copy-data-from-google-cloud-storage-using-azure-data-factory"></a>Копирование данных из Google Cloud Storage с помощью Фабрики данных Azure
 
@@ -145,7 +145,7 @@ ms.locfileid: "75444309"
 
 | Свойство                 | Description                                                  | Обязательно для заполнения                                                    |
 | ------------------------ | ------------------------------------------------------------ | ----------------------------------------------------------- |
-| type                     | Свойство Type в разделе `storeSettings` должно иметь значение **AmazonS3ReadSetting**. | Да                                                         |
+| type                     | Свойство Type в разделе `storeSettings` должно иметь значение **AmazonS3ReadSettings**. | Да                                                         |
 | recursive                | Указывает, следует ли читать данные рекурсивно из вложенных папок или только из указанной папки. Обратите внимание, что если для свойства recursive задано значение true, а приемником является файловое хранилище, пустые папки и вложенные папки не создаются в приемнике. Допустимые значения: **true** (по умолчанию) и **false**. | Нет                                                          |
 | prefix                   | Префикс для ключа объекта S3 в заданном контейнере, настроенном в наборе данных для фильтрации исходных объектов. Выбираются объекты, ключи которых начинаются с этого префикса. Применяется только в том случае, если не указаны свойства `wildcardFolderPath` и `wildcardFileName`. |                                                             |
 | вилдкардфолдерпас       | Путь к папке с подстановочными знаками в заданном контейнере, настроенном в наборе данных для фильтрации исходных папок. <br>Допустимые подстановочные знаки: `*` (соответствует нулю или большему количеству знаков) и `?` (соответствует нулю или одному знаку). Для экранирования используйте `^`, если фактическое имя папки содержит подстановочный знак или escape-символ. <br>Дополнительные примеры приведены в разделе [Примеры фильтров папок и файлов](#folder-and-file-filter-examples). | Нет                                                          |
@@ -177,11 +177,11 @@ ms.locfileid: "75444309"
             "source": {
                 "type": "DelimitedTextSource",
                 "formatSettings":{
-                    "type": "DelimitedTextReadSetting",
+                    "type": "DelimitedTextReadSettings",
                     "skipLineCount": 10
                 },
                 "storeSettings":{
-                    "type": "AmazonS3ReadSetting",
+                    "type": "AmazonS3ReadSettings",
                     "recursive": true,
                     "wildcardFolderPath": "myfolder*A",
                     "wildcardFileName": "*.csv"

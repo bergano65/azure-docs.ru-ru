@@ -1,26 +1,18 @@
 ---
-title: Устранение неполадок конфигураций и подключений VPN-шлюза | Документация Майкрософт
+title: 'VPN-шлюз Azure: Устранение неполадок конфигураций и подключений'
 description: Эта статья содержит ссылки на статьи об устранении неполадок конфигурации VPN-шлюза, неполадок подключения и проверке пропускной способности.
 services: vpn-gateway
-documentationcenter: na
 author: cherylmc
-manager: timlt
-editor: ''
-tags: azure-resource-manager,azure-service-management
-ms.assetid: ''
 ms.service: vpn-gateway
-ms.devlang: na
 ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: infrastructure-services
 ms.date: 01/31/2018
 ms.author: cherylmc
-ms.openlocfilehash: 263c1010ec6cf5f6140c4dc9323dd9bd149b2368
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: d73bc8e9c39c14a254e8f7bae1d7b1a96a6c3225
+ms.sourcegitcommit: 5b073caafebaf80dc1774b66483136ac342f7808
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64727282"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75780170"
 ---
 # <a name="troubleshoot-vpn-gateway"></a>Устранение неполадок VPN-шлюза
 
@@ -32,9 +24,9 @@ ms.locfileid: "64727282"
 
 * [Параметры VPN-устройств и устройств брандмауэра](vpn-gateway-third-party-settings.md)<br>В этой статье описывается несколько предлагаемых решений для сторонних VPN-устройств или устройств брандмауэра, используемых с VPN-шлюзом. Техническая поддержка сторонних устройств VPN или брандмауэра предоставляется поставщиком устройства.
 
-* [Подключения типа "точка — сеть"](vpn-gateway-troubleshoot-vpn-point-to-site-connection-problems.md)<br>В этой статье перечисляются распространенные проблемы подключения типа "точка — сеть", которые могут возникнуть. Кроме того, здесь рассматриваются возможные причины этих проблем и способы их устранения.
+* [Подключения "точка — сеть"](vpn-gateway-troubleshoot-vpn-point-to-site-connection-problems.md)<br>В этой статье перечисляются распространенные проблемы подключения типа "точка — сеть", которые могут возникнуть. Кроме того, здесь рассматриваются возможные причины этих проблем и способы их устранения.
 
-* [Подключения типа "сеть — сеть"](vpn-gateway-troubleshoot-site-to-site-cannot-connect.md)<br>После настройки подключения VPN типа "сеть — сеть" между локальной сетью и виртуальной сетью Azure VPN-подключение внезапно завершается сбоем и его невозможно восстановить. В этой статье приведены действия по устранению этой проблемы.
+* [Подключения "сеть — сеть"](vpn-gateway-troubleshoot-site-to-site-cannot-connect.md)<br>После настройки подключения VPN типа "сеть — сеть" между локальной сетью и виртуальной сетью Azure VPN-подключение внезапно завершается сбоем и его невозможно восстановить. В этой статье приведены действия по устранению этой проблемы.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

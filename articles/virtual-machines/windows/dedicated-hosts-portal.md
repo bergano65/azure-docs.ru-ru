@@ -12,20 +12,20 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 07/26/2019
 ms.author: cynthn
-ms.openlocfilehash: 7abfa00b01f2e5e32b2486d69f36ac62f844c5ad
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.openlocfilehash: aa19c343e003bf1cd55e3d12b18e595113a7189e
+ms.sourcegitcommit: f53cd24ca41e878b411d7787bd8aa911da4bc4ec
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74033836"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75833945"
 ---
-# <a name="preview-deploy-vms-to-dedicated-hosts-using-the-portal"></a>Предварительная версия: развертывание виртуальных машин на выделенных узлах с помощью портала
+# <a name="deploy-vms-to-dedicated-hosts-using-the-portal"></a>Развертывание виртуальных машин на выделенных узлах с помощью портала
 
 В этой статье рассказывается, как создать [выделенный узел](dedicated-hosts.md) Azure для размещения виртуальных машин. 
 
 [!INCLUDE [virtual-machines-common-dedicated-hosts-portal](../../../includes/virtual-machines-common-dedicated-hosts-portal.md)]
 
-## <a name="create-a-vm"></a>Создание виртуальной машины
+## <a name="create-a-vm"></a>Создание ВМ
 
 1. Выберите **Создать ресурс** в верхнем левом углу окна портала Azure.
 1. На странице **Создать** в разделе **Популярные**выберите **Windows Server 2016 Datacenter**.
@@ -41,7 +41,7 @@ ms.locfileid: "74033836"
 1. Когда появится сообщение о том, что проверка прошла успешно, выберите **создать**.
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения см. в разделе Общие сведения о [выделенных узлах](dedicated-hosts.md) . 
 

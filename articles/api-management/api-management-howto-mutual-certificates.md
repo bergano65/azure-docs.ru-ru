@@ -11,14 +11,14 @@ ms.service: api-management
 ms.workload: mobile
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.date: 06/20/2018
+ms.date: 01/08/2020
 ms.author: apimpm
-ms.openlocfilehash: 70c1e22fc7f1fb1cda3fd4af1c2d3aa2cd257201
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 39a1e224173dc021cf49b535957eb4b49f4c91ee
+ms.sourcegitcommit: f53cd24ca41e878b411d7787bd8aa911da4bc4ec
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75442653"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75834336"
 ---
 # <a name="how-to-secure-back-end-services-using-client-certificate-authentication-in-azure-api-management"></a>Защита фоновых служб посредством проверки подлинности с помощью сертификата клиента в службе Azure API Management
 
@@ -30,9 +30,12 @@ ms.locfileid: "75442653"
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-В этом руководстве описано, как настроить для экземпляра службы API Management проверку подлинности с помощью сертификата клиента при доступе из API к фоновой службе. Перед выполнением действий, описанных в этой статье, необходимо настроить серверную службу для проверки подлинности с использованием сертификата клиента ([для настройки проверки подлинности на основе сертификата на веб-сайтах Azure см. эту статью][to configure certificate authentication in Azure WebSites refer to this article]). Вам потребуется доступ к сертификату и паролю, чтобы передать их в службу управления API.
+В этом руководстве описано, как настроить для экземпляра службы API Management проверку подлинности с помощью сертификата клиента при доступе из API к фоновой службе. Перед выполнением действий, описанных в этой статье, необходимо настроить серверную службу для проверки подлинности с использованием сертификата клиента ([для настройки проверки подлинности сертификата в службе приложений Azure см. эту статью][to configure certificate authentication in Azure WebSites refer to this article]). Вам потребуется доступ к сертификату и паролю, чтобы передать их в службу управления API.
 
 ## <a name="step1"> </a>Отправка сертификата
+
+> [!NOTE]
+> Вместо отправленного сертификата можно использовать сертификат, хранящийся в службе [Azure Key Vault](https://azure.microsoft.com/services/key-vault/) , как показано в этом [примере](https://github.com/galiniliev/api-management-policy-snippets/blob/galin/AkvCert/examples/Look%20up%20Key%20Vault%20certificate%20using%20Managed%20Service%20Identity%20and%20call%20backend.policy.xml).
 
 ![Добавление сертификатов клиента](media/api-management-howto-mutual-certificates/apim-client-cert-new.png)
 
@@ -40,9 +43,9 @@ ms.locfileid: "75442653"
 
 1. На портале Azure перейдите к экземпляру службы управления API Azure.
 2. В меню выберите **Сертификаты** .
-3. Щелкните **+ Добавить**.  
-    ![Добавление сертификатов клиента](media/api-management-howto-mutual-certificates/apim-client-cert-add.png)  
-4. Выберите сертификат и укажите его идентификатор и пароль.  
+3. Щелкните **+ Добавить**.
+    ![Добавление сертификатов клиента](media/api-management-howto-mutual-certificates/apim-client-cert-add.png)
+4. Выберите сертификат и укажите его идентификатор и пароль.
 5. Нажмите кнопку **Создать**.
 
 > [!NOTE]
@@ -65,14 +68,14 @@ ms.locfileid: "75442653"
 
 ## <a name="step2"> </a>Настройка API для использования сертификата клиента для проверки подлинности шлюза
 
-1. Щелкните **Интерфейсы API** в меню **Управление API** слева и перейдите к API.  
+1. Щелкните **Интерфейсы API** в меню **Управление API** слева и перейдите к API.
     ![Включение сертификатов клиента](media/api-management-howto-mutual-certificates/apim-client-cert-enable.png)
 
-2. На вкладке **Конструктор** щелкните значок карандаша в разделе **Внутренняя служба**. 
-3. Измените значение параметра **Учетные данные шлюза** на **Сертификат клиента** и выберите свой сертификат в раскрывающемся списке.  
+2. На вкладке **Конструктор** щелкните значок карандаша в разделе **Внутренняя служба**.
+3. Измените значение параметра **Учетные данные шлюза** на **Сертификат клиента** и выберите свой сертификат в раскрывающемся списке.
     ![Включение сертификатов клиента](media/api-management-howto-mutual-certificates/apim-client-cert-enable-select.png)
 
-4. Выберите команду **Сохранить**. 
+4. Выберите команду **Сохранить**.
 
 > [!WARNING]
 > Изменение вступает в силу немедленно, и для проверки подлинности на фоновом сервере при вызове операций этого API теперь будет использоваться сертификат.

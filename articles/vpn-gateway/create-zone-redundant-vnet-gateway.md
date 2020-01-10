@@ -1,19 +1,19 @@
 ---
-title: Создание избыточного между зонами шлюза виртуальной сети в Зонах доступности Azure | Документация Майкрософт
+title: Создание избыточного между зонами шлюза виртуальной сети в Зонах доступности Azure
 description: Развертывание VPN-шлюза и шлюзов ExpressRoute в Зонах доступности Azure
 services: vpn-gateway
+titleSuffix: Azure VPN Gateway
 author: cherylmc
-Customer intent: As someone with a basic network background, I want to understand how to create zone-redundant gateways.
 ms.service: vpn-gateway
 ms.topic: article
 ms.date: 04/26/2019
 ms.author: cherylmc
-ms.openlocfilehash: 209c4deec2863de21362ab69a7f1d372921ac147
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 250ced13696d6ec34e7c434b26a2917a3c55e91d
+ms.sourcegitcommit: f53cd24ca41e878b411d7787bd8aa911da4bc4ec
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64575561"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75834636"
 ---
 # <a name="create-a-zone-redundant-virtual-network-gateway-in-azure-availability-zones"></a>Создание избыточного между зонами шлюза виртуальной сети в Зонах доступности Azure
 
@@ -39,7 +39,7 @@ Get-Module Az -ListAvailable | Select-Object -Property Name,Version,Path
 
 [!INCLUDE [PowerShell login](../../includes/vpn-gateway-ps-login-include.md)]
 
-## <a name="variables"></a>1. Объявление переменных
+## <a name="variables"></a>1. Объявите переменные
 
 Ниже перечислены значения, применяемые для выполняемых в примере действий. Кроме того, на шагах в некоторых примерах используются объявленные переменные. Если вы следуете эти шагам в собственной среде, необходимо заменить эти значения собственными. При указании расположения проверьте, поддерживается ли задаваемый регион. Дополнительные сведения см. в разделе [Часто задаваемые вопросы](#faq).
 
@@ -59,7 +59,7 @@ $GwIP1       = "VNet1GWIP"
 $GwIPConf1   = "gwipconf1"
 ```
 
-## <a name="configure"></a>2. Создание виртуальной сети
+## <a name="configure"></a>2. Создайте виртуальную сеть.
 
 Создайте группу ресурсов.
 
@@ -91,7 +91,7 @@ Add-AzVirtualNetworkSubnetConfig -Name 'GatewaySubnet' -AddressPrefix 10.1.255.0
 ```azurepowershell-interactive
 $getvnet | Set-AzVirtualNetwork
 ```
-## <a name="publicip"></a>4. Запрос общедоступного IP-адреса
+## <a name="publicip"></a>4. запрос общедоступного IP-адреса
  
 На этом шаге выберите инструкции, которые применяются к создаваемому шлюзу. Выбор зон для развертывания шлюзов зависит от зон, указанных для общедоступных IP-адресов.
 
@@ -154,7 +154,7 @@ New-AzVirtualNetworkGateway -ResourceGroup $RG1 -Location $Location1 -Name $Gw1 
 
 ### <a name="what-regions-are-available-for-me-to-use-the-new-skus"></a>В каких регионах доступны новые номера SKU?
 
-См. в разделе [зон доступности](../availability-zones/az-overview.md#services-support-by-region) обновленный список доступных регионов.
+Последний список доступных регионов см. в [зоны доступности](../availability-zones/az-overview.md#services-support-by-region) .
 
 ### <a name="can-i-changemigrateupgrade-my-existing-virtual-network-gateways-to-zone-redundant-or-zonal-gateways"></a>Можно ли обновить существующие шлюзы виртуальной сети до шлюзов, избыточных между зонами, или зональных шлюзов?
 

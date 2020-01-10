@@ -29,84 +29,98 @@
       href: data-flow-create.md
 - name: Учебники
   items:
-    - name: Копирование данных в облаке
+    - name: Копирование и прием данных
       items:
-        - name: Средство копирования данных
-          href: tutorial-copy-data-tool.md
-        - name: Пользовательский интерфейс
-          href: tutorial-copy-data-portal.md
-        - name: .NET
-          href: tutorial-copy-data-dot-net.md
-    - name: Копирование локальных данных в облако
-      items:
-        - name: Средство копирования данных
-          href: tutorial-hybrid-copy-data-tool.md
-        - name: Пользовательский интерфейс
-          href: tutorial-hybrid-copy-portal.md
-        - name: Azure PowerShell
-          href: tutorial-hybrid-copy-powershell.md
-    - name: Копирование данных в пакетном режиме
-      items:
-        - name: Пользовательский интерфейс
-          href: tutorial-bulk-copy-portal.md
-        - name: Azure PowerShell
-          href: tutorial-bulk-copy.md
-    - name: Копирование данных с приращением
-      href: tutorial-incremental-copy-overview.md
-      items:
-        - name: 1. Копирование из одной таблицы
-          items:
-            - name: Пользовательский интерфейс
-              href: tutorial-incremental-copy-portal.md
-            - name: Azure PowerShell
-              href: tutorial-incremental-copy-powershell.md
-        - name: 2. Копирование из нескольких таблиц
-          items:
-            - name: Пользовательский интерфейс
-              href: tutorial-incremental-copy-multiple-tables-portal.md
-            - name: Azure PowerShell
-              href: tutorial-incremental-copy-multiple-tables-powershell.md
-        - name: 3. Использование функции отслеживания изменений
-          items:
-            - name: Пользовательский интерфейс
-              href: tutorial-incremental-copy-change-tracking-feature-portal.md
-            - name: Azure PowerShell
-              href: tutorial-incremental-copy-change-tracking-feature-powershell.md
-        - name: "4.\_Копирование новых файлов с использованием параметра LastModifiedDate"
+        - name: Из хранилища BLOB-объектов Azure в Базу данных SQL Azure
           items:
             - name: Средство копирования данных
+              href: tutorial-copy-data-tool.md
+            - name: Пользовательский интерфейс
+              href: tutorial-copy-data-portal.md
+            - name: .NET
+              href: tutorial-copy-data-dot-net.md
+        - name: Из локальной базы данных SQL Server в хранилище BLOB-объектов Azure
+          items:
+            - name: Средство копирования данных
+              href: tutorial-hybrid-copy-data-tool.md
+            - name: Пользовательский интерфейс
+              href: tutorial-hybrid-copy-portal.md
+            - name: Azure PowerShell
+              href: tutorial-hybrid-copy-powershell.md
+        - name: "Из Amazon Web Services\_S3 в Azure Data Lake Storage"
+          items:
+            - name: Azure Data Lake Storage 2-го поколения
+              href: load-azure-data-lake-storage-gen2.md
+            - name: Хранилище Azure Data Lake Storage 1-го поколения
+              href: load-azure-data-lake-store.md
+        - name: Из Azure Data Lake Storage 1-го поколения в Azure Data Lake Storage 2-го поколения
+          href: load-azure-data-lake-storage-gen2-from-gen1.md
+        - name: Из Базы данных SQL Azure в Azure Synapse Analytics
+          href: load-azure-sql-data-warehouse.md
+        - name: "Из SAP\_BW в Azure Data Lake Storage 2-го поколения"
+          href: load-sap-bw-data.md
+        - name: "Из Office\_365 в хранилище BLOB-объектов Azure"
+          href: load-office-365-data.md
+        - name: Несколько таблиц в рамках групповой операции
+          items:
+            - name: Пользовательский интерфейс
+              href: tutorial-bulk-copy-portal.md
+            - name: Azure PowerShell
+              href: tutorial-bulk-copy.md
+        - name: Пошаговая загрузка данных
+          href: tutorial-incremental-copy-overview.md
+          items:
+            - name: Из одной таблицы Базы данных SQL Azure
+              items:
+                - name: Пользовательский интерфейс
+                  href: tutorial-incremental-copy-portal.md
+                - name: Azure PowerShell
+                  href: tutorial-incremental-copy-powershell.md
+            - name: "Из нескольких локальных таблиц SQL\_Server"
+              items:
+                - name: Пользовательский интерфейс
+                  href: tutorial-incremental-copy-multiple-tables-portal.md
+                - name: Azure PowerShell
+                  href: tutorial-incremental-copy-multiple-tables-powershell.md
+            - name: "Использование сведений об отслеживании изменений в SQL\_Server"
+              items:
+                - name: Пользовательский интерфейс
+                  href: tutorial-incremental-copy-change-tracking-feature-portal.md
+                - name: Azure PowerShell
+                  href: tutorial-incremental-copy-change-tracking-feature-powershell.md
+            - name: Новые файлы по дате последнего изменения
               href: tutorial-incremental-copy-lastmodified-copy-data-tool.md
-        - name: "5.\_Копирование новых файлов на основе имен файлов, секционированных по времени"
-          items:
-            - name: Средство копирования данных
+            - name: 'Новые файлы на основе имен файлов, секционированных по времени'
               href: tutorial-incremental-copy-partitioned-file-name-copy-data-tool.md
-    - name: Преобразование и подготовка данных с помощью потоков данных
+    - name: Преобразование данных
       items:
         - name: Преобразование данных с помощью сопоставления потоков данных
-          href: tutorial-data-flow.md
-        - name: Видеоматериалы по потоку данных для сопоставления
-          href: data-flow-tutorials.md
+          items:
+            - name: Преобразование данных с помощью сопоставления потоков данных
+              href: tutorial-data-flow.md
+            - name: Видеоматериалы по потоку данных для сопоставления
+              href: data-flow-tutorials.md
         - name: Подготовка данных с помощью первичной обработки потоков данных
           href: wrangling-data-flow-tutorial.md
-    - name: Внешние преобразования
-      items:
-        - name: HDInsight Spark
+        - name: Использование внешних служб
           items:
-            - name: Пользовательский интерфейс
-              href: tutorial-transform-data-spark-portal.md
-            - name: Azure PowerShell
-              href: tutorial-transform-data-spark-powershell.md
-        - name: Записная книжка Databricks
-          items:
-            - name: Пользовательский интерфейс
-              href: transform-data-using-databricks-notebook.md
-    - name: Преобразование Hive в виртуальной сети
-      items:
-        - name: Пользовательский интерфейс
-          href: tutorial-transform-data-hive-virtual-network-portal.md
-        - name: Azure PowerShell
-          href: tutorial-transform-data-hive-virtual-network.md
-    - name: Добавление ветвления и цепочек действий
+            - name: HDInsight Spark
+              items:
+                - name: Пользовательский интерфейс
+                  href: tutorial-transform-data-spark-portal.md
+                - name: Azure PowerShell
+                  href: tutorial-transform-data-spark-powershell.md
+            - name: Записная книжка Databricks
+              items:
+                - name: Пользовательский интерфейс
+                  href: transform-data-using-databricks-notebook.md
+            - name: Преобразование Hive в виртуальной сети
+              items:
+                - name: Пользовательский интерфейс
+                  href: tutorial-transform-data-hive-virtual-network-portal.md
+                - name: Azure PowerShell
+                  href: tutorial-transform-data-hive-virtual-network.md
+    - name: Поток управления
       items:
         - name: Пользовательский интерфейс
           href: tutorial-control-flow-portal.md
@@ -118,19 +132,6 @@
           href: tutorial-deploy-ssis-packages-azure.md
         - name: Azure PowerShell
           href: tutorial-deploy-ssis-packages-azure-powershell.md
-    - name: Загрузка Data Lake Storage 2-го поколения
-      href: load-azure-data-lake-storage-gen2.md
-      items:
-        - name: Копирование из Data Lake Storage 1-го поколения
-          href: load-azure-data-lake-storage-gen2-from-gen1.md
-    - name: "Загрузка Synapse Analytics (прежнее название\_— Хранилище данных SQL)"
-      href: load-azure-sql-data-warehouse.md
-    - name: Загрузка Data Lake Storage 1-го поколения
-      href: load-azure-data-lake-store.md
-    - name: Загрузка данных SAP BW
-      href: load-sap-bw-data.md
-    - name: "Загрузка данных из Office\_365"
-      href: load-office-365-data.md
 - name: Примеры
   items:
     - name: Примеры кода
@@ -518,12 +519,14 @@
           href: control-flow-expression-language-functions.md
         - name: Системные переменные
           href: control-flow-system-variables.md
-        - name: Параметры потока данных
+        - name: Параметризация потоков данных для сопоставления
           href: parameters-data-flow.md
     - name: безопасность
       items:
         - name: Вопросы безопасности при перемещении данных
           href: data-movement-security-considerations.md
+        - name: IP-адреса Azure Integration Runtime
+          href: azure-integration-runtime-ip-addresses.md
         - name: Хранение учетных данных в Azure Key Vault
           href: store-credentials-in-key-vault.md
         - name: Использование секретов Azure Key Vault в действиях конвейера
@@ -616,20 +619,20 @@
           href: solution-template-move-files.md
         - name: Преобразование данных с помощью Databricks
           href: solution-template-databricks-notebook.md
-    - name: Руководство по устранению неполадок
+    - name: Руководства по устранению неполадок
       items:
-        - name: Устранение неполадок с действиями
+        - name: Действия
           href: data-factory-troubleshoot-guide.md
-        - name: Устранение неполадок соединителя
+        - name: Соединители
           href: connector-troubleshoot-guide.md
-        - name: Устранение неполадок с управлением Azure-SSIS IR
-          href: ssis-integration-runtime-management-troubleshoot.md
-        - name: Устранение неполадок в локальной среде IR
-          href: self-hosted-integration-runtime-troubleshoot-guide.md
-        - name: "Устранение неполадок с выполнением пакетов в Azure-SSIS\_IR"
-          href: ssis-integration-runtime-ssis-activity-faq.md
-        - name: Устранение неполадок с Потоком данных
+        - name: Потоки данных
           href: data-flow-troubleshoot-guide.md
+        - name: Локальные среды выполнения интеграции
+          href: self-hosted-integration-runtime-troubleshoot-guide.md
+        - name: Среда выполнения интеграции Azure SSIS
+          href: ssis-integration-runtime-management-troubleshoot.md
+        - name: "Выполнение пакетов в Azure-SSIS\_IR"
+          href: ssis-integration-runtime-ssis-activity-faq.md
 - name: Сценарии
   items:
     - name: Перенос данных для озера данных и EDW

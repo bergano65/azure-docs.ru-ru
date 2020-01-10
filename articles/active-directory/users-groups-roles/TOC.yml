@@ -16,7 +16,7 @@
       href: groups-quickstart-expiration.md
     - name: Настройка политики именования групп
       href: groups-quickstart-naming-policy.md
-- name: Руководства
+- name: Учебники
   items:
     - name: Создание динамически заполняемой группы
       href: groups-dynamic-tutorial.md
@@ -31,7 +31,9 @@
       href: /azure/role-based-access-control/rbac-and-directory-admin-roles?context=azure/active-directory/users-groups-roles/context/ugr-context
     - name: Принципы лицензирования на основе групп
       href: /azure/active-directory/fundamentals/active-directory-licensing-whatis-azure-portal?context=azure/active-directory/users-groups-roles/context/ugr-context
-- name: Инструкции
+    - name: Управление доступом с помощью групп
+      href: /azure/active-directory/fundamentals/active-directory-manage-groups?context=azure/active-directory/users-groups-roles/context/ugr-context
+- name: Практические руководства
   expanded: true
   items:
     - name: Управление пользователями
@@ -80,8 +82,6 @@
           href: /azure/active-directory/connect/active-directory-aadconnect?context=azure/active-directory/users-groups-roles/context/ugr-context
     - name: Управление группами
       items:
-        - name: Управление доступом с помощью групп
-          href: /azure/active-directory/fundamentals/active-directory-manage-groups?context=azure/active-directory/users-groups-roles/context/ugr-context
         - name: Списки групп и элементов поиска (предварительная версия)
           href: groups-members-owners-search.md
         - name: Создание группы (портал Azure)
@@ -122,9 +122,7 @@
           items:
             - name: Создание динамической группы
               href: groups-create-rule.md
-            - name: Обновление правила членства
-              href: groups-update-rule.md
-            - name: Правила динамических групп и синтаксис
+            - name: Синтаксис правил динамических групп
               href: groups-dynamic-membership.md
             - name: Изменение типа членства в группе
               href: groups-change-type.md
@@ -192,7 +190,7 @@
           href: linkedin-integration.md
         - name: Общий доступ к данным LinkedIn
           href: linkedin-user-consent.md
-    - name: Устранение неполадок
+    - name: Диагностика
       items:
         - name: "Получение поддержки для Azure\_AD"
           href: /azure/active-directory/fundamentals/active-directory-troubleshooting-support-howto?context=azure/active-directory/users-groups-roles/context/ugr-context
@@ -200,7 +198,7 @@
           href: groups-troubleshooting.md
         - name: Устранение неполадок с лицензированием группы
           href: licensing-groups-resolve-problems.md
-- name: Справочные материалы
+- name: Справочник
   items:
     - name: API Graph
       href: 'https://developer.microsoft.com/graph/docs/api-reference/v1.0/resources/azure_ad_overview'

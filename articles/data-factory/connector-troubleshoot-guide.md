@@ -5,49 +5,48 @@ services: data-factory
 author: linda33wj
 ms.service: data-factory
 ms.topic: troubleshooting
-ms.date: 11/26/2019
+ms.date: 01/09/2020
 ms.author: jingwang
 ms.reviewer: craigg
-ms.openlocfilehash: 218031830a7516dfd539e1c0b9b665807822f38d
-ms.sourcegitcommit: 85e7fccf814269c9816b540e4539645ddc153e6e
+ms.openlocfilehash: 9f3a13a097d7cce87aead4ec2d76ce7cbbb1a206
+ms.sourcegitcommit: 5b073caafebaf80dc1774b66483136ac342f7808
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74533151"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75778232"
 ---
 # <a name="troubleshoot-azure-data-factory-connectors"></a>Устранение неполадок соединителей фабрики данных Azure
 
 В этой статье рассматриваются распространенные способы устранения неполадок соединителей в фабрике данных Azure.
+  
 
-## <a name="azure-data-lake-storage"></a>Служба хранилища Azure Data Lake
+## <a name="azure-blob-storage"></a>Хранилище BLOB-объектов Azure
 
-### <a name="error-message-the-remote-server-returned-an-error-403-forbidden"></a>Сообщение об ошибке: удаленный сервер вернул ошибку: (403) запрещено
+### <a name="error-code--azurebloboperationfailed"></a>Код ошибки: Азуреблобоператионфаилед
 
-- **Симптомы**. сбой действия копирования со следующей ошибкой: 
+- **Сообщение**: `Blob operation Failed. ContainerName: %containerName;, path: %path;.`
 
-    ```
-    Message: The remote server returned an error: (403) Forbidden.. 
-    Response details: {"RemoteException":{"exception":"AccessControlException""message":"CREATE failed with error 0x83090aa2 (Forbidden. ACL verification failed. Either the resource does not exist or the user is not authorized to perform the requested operation.)....
-    ```
+- **Причина**: ошибка при обращении к операции хранилища BLOB-объектов.
 
-- **Причина**: одна из возможных причин заключается в том, что используемый субъект-служба или управляемое удостоверение не имеет разрешения на доступ к определенной папке или файлу.
+- **Рекомендация**: Проверьте сведения об ошибке в подробностях. См. справочный документ по BLOB-объектам: https://docs.microsoft.com/rest/api/storageservices/blob-service-error-codes. Обратитесь в службу хранилища, если вам нужна помощь.
 
-- **Решение**. Предоставьте соответствующие разрешения для всех папок и вложенных папок, которые необходимо скопировать. Обратитесь к [этому документу](connector-azure-data-lake-store.md#linked-service-properties).
 
-### <a name="error-message-failed-to-get-access-token-by-using-service-principal-adal-error-service_unavailable"></a>Сообщение об ошибке: не удалось получить маркер доступа с помощью субъекта-службы. Ошибка ADAL: service_unavailable
+### <a name="error-code--azureblobservicenotreturnexpecteddatalength"></a>Код ошибки: Азуреблобсервиценотретурнекспектеддаталенгс
 
-- **Симптомы**. сбой действия копирования со следующей ошибкой:
+- **Сообщение**: `Error occurred when trying to fetch the blob '%name;'. This could be a transient issue and you may rerun the job. If it fails again continuously, contact customer support.`
 
-    ```
-    Failed to get access token by using service principal. 
-    ADAL Error: service_unavailable, The remote server returned an error: (503) Server Unavailable.
-    ```
 
-- **Причина**: когда сервер маркеров службы (STS), принадлежащий Azure Active Directory, недоступен, т. е. слишком занят для обработки запросов, он ВОЗВРАЩАЕТ ошибку HTTP 503. 
+### <a name="error-code--azureblobnotsupportmultiplefilesintosingleblob"></a>Код ошибки: Азуреблобнотсуппортмултиплефилесинтосинглеблоб
 
-- **Решение**. повторно выполните действие копирования через несколько минут.
+- **Сообщение**: `Transferring multiple files into a single Blob is not supported. Currently only single file source is supported.`
 
-## <a name="azure-cosmos-db"></a>Azure Cosmos DB;
+
+### <a name="error-code--azurestorageoperationfailedconcurrentwrite"></a>Код ошибки: Азуресторажеоператионфаиледконкуррентврите
+
+- **Сообщение**: `Error occurred when trying to upload a file. It's possible because you have multiple concurrent copy activities runs writing to the same file '%name;'. Check your ADF configuration.`
+
+
+## <a name="azure-cosmos-db"></a>Azure Cosmos DB
 
 ### <a name="error-message-request-size-is-too-large"></a>Сообщение об ошибке: слишком большой размер запроса
 
@@ -72,7 +71,7 @@ ms.locfileid: "74533151"
 
     - Если в качестве поведения записи используется **Upsert** , а для контейнера задан другой уникальный ключ, то эта ошибка означает, что исходные данные содержат строки или объекты с разными идентификаторами, но одно значение для определенного уникального ключа.
 
-- **Решение:** 
+- **Решение**. 
 
     - Для cause1 задайте **Upsert** в качестве поведения записи.
     - Для причины 2 Убедитесь, что каждый документ имеет разное значение для определенного уникального ключа.
@@ -119,54 +118,81 @@ ms.locfileid: "74533151"
 - **Причина**. Существует два способа представления UUID в BSON-Ууидстардард и ууидлегаци. По умолчанию Ууидлегаци используется для чтения данных. Если данные UUID в MongoDB имеют значение Ууидстандард, появится сообщение об ошибке.
 
 - **Решение**. в строке подключения MongoDB добавьте параметр "**ууидрепресентатион = Standard**". Дополнительные сведения см. в разделе [строка подключения MongoDB](connector-mongodb.md#linked-service-properties).
+            
 
-## <a name="sftp"></a>SFTP
+## <a name="azure-data-lake-storage-gen2"></a>Azure Data Lake Storage Gen2
 
-### <a name="error-message-invalid-sftp-credential-provided-for-sshpublickey-authentication-type"></a>Сообщение об ошибке: для типа проверки подлинности "SshPublicKey" указаны недопустимые учетные данные SFTP
+### <a name="error-code--adlsgen2operationfailed"></a>Код ошибки: AdlsGen2OperationFailed
 
-- **Симптомы**. вы используете проверку подлинности `SshPublicKey` и нажмем следующую ошибку:
+- **Сообщение**: `ADLS Gen2 operation failed for: %adlsGen2Message;.%exceptionData;.`
+
+- **Причина**: ADLS 2-го поколения выдает ошибку, указывающую на сбой операции.
+
+- **Рекомендация**: проверьте подробное сообщение об ошибке, созданное ADLS 2-го поколения. Если это вызвано временным сбоем, повторите попытку. Если вам нужна дополнительная помощь, обратитесь в службу поддержки хранилища Azure и укажите идентификатор запроса в сообщении об ошибке.
+
+- **Причина**: Если сообщение об ошибке содержит "запрещено", возможно, субъект-служба или управляемое удостоверение, которые вы используете, не имеют достаточных разрешений для доступа к ADLS 2-го поколения.
+
+- **Рекомендация**: см. справочный документ: https://docs.microsoft.com/azure/data-factory/connector-azure-data-lake-storage#service-principal-authentication.
+
+- **Причина**: Если сообщение об ошибке содержит "InternalServerError", то ошибка возвращается ADLS 2-го поколения.
+
+- **Рекомендация**. это может быть вызвано временной ошибкой, повторите попытку. Если проблема будет повторяться, обратитесь в службу поддержки хранилища Azure и укажите идентификатор запроса в сообщении об ошибке.
+
+
+### <a name="error-code--adlsgen2invalidurl"></a>Код ошибки: AdlsGen2InvalidUrl
+
+- **Сообщение**: `Invalid url '%url;' provided, expecting http[s]://<accountname>.dfs.core.windows.net.`
+
+
+### <a name="error-code--adlsgen2invalidfolderpath"></a>Код ошибки: AdlsGen2InvalidFolderPath
+
+- **Сообщение**: `The folder path is not specified. Cannot locate the file '%name;' under the ADLS Gen2 account directly. Please specify the folder path instead.`
+
+
+### <a name="error-code--adlsgen2operationfailedconcurrentwrite"></a>Код ошибки: AdlsGen2OperationFailedConcurrentWrite
+
+- **Сообщение**: `Error occurred when trying to upload a file. It's possible because you have multiple concurrent copy activities runs writing to the same file '%name;'. Check your ADF configuration.`
+
+
+### <a name="error-code--adlsgen2timeouterror"></a>Код ошибки: AdlsGen2TimeoutError
+
+- **Сообщение**: `Request to ADLS Gen2 account '%account;' met timeout error. It is mostly caused by the poor network between the Self-hosted IR machine and the ADLS Gen2 account. Check the network to resolve such error.`
+
+
+## <a name="azure-data-lake-storage-gen1"></a>Azure Data Lake Storage Gen1
+
+### <a name="error-message-the-remote-server-returned-an-error-403-forbidden"></a>Сообщение об ошибке: удаленный сервер вернул ошибку: (403) запрещено
+
+- **Симптомы**. сбой действия копирования со следующей ошибкой: 
 
     ```
-    Invalid Sftp credential provided for 'SshPublicKey' authentication type
+    Message: The remote server returned an error: (403) Forbidden.. 
+    Response details: {"RemoteException":{"exception":"AccessControlException""message":"CREATE failed with error 0x83090aa2 (Forbidden. ACL verification failed. Either the resource does not exist or the user is not authorized to perform the requested operation.)....
     ```
 
-- **Причина**. возможны три причины:
+- **Причина**: одна из возможных причин заключается в том, что используемый субъект-служба или управляемое удостоверение не имеет разрешения на доступ к определенной папке или файлу.
 
-    1. Если вы используете пользовательский интерфейс создания ADF для создания связанной службы SFTP, эта ошибка означает, что закрытый ключ, который вы решили использовать, имеет неправильный формат. Вы можете использовать формат PKCS # 8 закрытого ключа SSH, а Обратите внимание, что ADF поддерживает только традиционный формат ключей SSH. В частности, разница между форматом PKCS # 8 и традиционным форматом ключа — это содержимое ключа PKCS # 8, начинающееся с " *-----Begin encrypted закрытый ключ-----* ", а традиционный формат ключа начинается с " *-----Begin RSA закрытый ключ-----* ".
-    2. Если вы используете Azure Key Vault для хранения содержимого закрытого ключа или используете программный способ для создания связанной службы SFTP, эта ошибка означает, что содержимое закрытого ключа неверно, возможно, это не в кодировке Base64.
-    3. Недопустимое содержимое учетных данных или закрытого ключа.
+- **Решение**. Предоставьте соответствующие разрешения для всех папок и вложенных папок, которые необходимо скопировать. Обратитесь к [этому документу](connector-azure-data-lake-store.md#linked-service-properties).
 
-- **Решение:** 
+### <a name="error-message-failed-to-get-access-token-by-using-service-principal-adal-error-service_unavailable"></a>Сообщение об ошибке: не удалось получить маркер доступа с помощью субъекта-службы. Ошибка ADAL: service_unavailable
 
-    - Чтобы вызвать #1, выполните следующие команды, чтобы преобразовать ключ в традиционный формат ключа, а затем используйте его в пользовательском интерфейсе создания ADF.
+- **Симптомы**. сбой действия копирования со следующей ошибкой:
 
-        ```
-        # Decrypt the pkcs8 key and convert the format to traditional key format
-        openssl pkcs8 -in pkcs8_format_key_file -out traditional_format_key_file
+    ```
+    Failed to get access token by using service principal. 
+    ADAL Error: service_unavailable, The remote server returned an error: (503) Server Unavailable.
+    ```
 
-        chmod 600 traditional_format_key_file
+- **Причина**: когда сервер маркеров службы (STS), принадлежащий Azure Active Directory, недоступен, т. е. слишком занят для обработки запросов, он ВОЗВРАЩАЕТ ошибку HTTP 503. 
 
-        # Re-encrypte the key file using passphrase
-        ssh-keygen -f traditional_format_key_file -p
-        ```
+- **Решение**. повторно выполните действие копирования через несколько минут.
+                  
 
-    - Для #2 создания такой строки клиент может использовать следующие два способа:
-    - Использование стороннего средства преобразования Base64. Вставьте содержимое закрытого ключа в такие средства, как [кодирование и декодирование Base64](https://www.base64encode.org/), закодировать его в строку формата Base64, затем вставить эту строку в хранилище ключей или использовать это значение для создания связанной службы SFTP программным способом.
-    - Использование C# кода:
-
-        ```c#
-        byte[] keyContentBytes = File.ReadAllBytes(privateKeyPath);
-        string keyContent = Convert.ToBase64String(keyContentBytes, Base64FormattingOptions.None);
-        ```
-
-    - Чтобы выполнить #3, проверьте правильность файла ключа или пароля с помощью других средств для проверки правильности доступа к серверу SFTP.
-  
-
-## <a name="azure-sql-data-warehouse--azure-sql-database--sql-server"></a>Хранилище данных SQL Azure \ SQL Server базы данных SQL Azure
+## <a name="azure-sql-data-warehouseazure-sql-databasesql-server"></a>Хранилище данных SQL Azure, база данных SQL Azure или SQL Server
 
 ### <a name="error-code--sqlfailedtoconnect"></a>Код ошибки: Склфаиледтоконнект
 
-- **Сообщение**: `Cannot connect to SQL database: '%server;', Database: '%database;', User: '%user;'. Please check the linked service configuration is correct, and make sure the SQL database firewall allows the integration runtime to access.`
+- **Сообщение**: `Cannot connect to SQL Database: '%server;', Database: '%database;', User: '%user;'. Check the linked service configuration is correct, and make sure the SQL Database firewall allows the integration runtime to access.`
 
 - **Причина**: Если сообщение об ошибке содержит "SqlException", то база данных SQL выдает ошибку, указывающую на сбой некоторой конкретной операции.
 
@@ -183,7 +209,8 @@ ms.locfileid: "74533151"
 
 - **Причина**: Если сообщение об ошибке содержит "SqlException", то база данных SQL выдает ошибку, указывающую на сбой некоторой конкретной операции.
 
-- **Рекомендация**: выполните поиск по коду ошибки SQL в этом справочном документе для получения дополнительных сведений: https://docs.microsoft.com/sql/relational-databases/errors-events/database-engine-events-and-errors. Если вам нужна дополнительная помощь, обратитесь в службу поддержки SQL Azure.
+- **Рекомендация**: Если ошибка SQL непонятна, попробуйте изменить базу данных на последний уровень совместимости "150". Он может вызвать ошибки SQL последней версии. Дополнительные сведения см. в документе: https://docs.microsoft.com/sql/t-sql/statements/alter-database-transact-sql-compatibility-level?view=sql-server-ver15#backwardCompat.
+        Для устранения неполадок, связанных с SQL, выполните поиск по коду ошибки SQL в этом справочном документе, чтобы получить дополнительные сведения: https://docs.microsoft.com/sql/relational-databases/errors-events/database-engine-events-and-errors. Если вам нужна дополнительная помощь, обратитесь в службу поддержки SQL Azure.
 
 - **Причина**: Если сообщение об ошибке содержит "пдвманажедтонативеинтеропексцептион", обычно это вызвано несоответствием размеров столбцов источника и приемника.
 
@@ -214,7 +241,7 @@ ms.locfileid: "74533151"
 
 ### <a name="error-code--sqlautocreatetabletypemapfailed"></a>Код ошибки: Склаутокреатетаблетипемапфаилед
 
-- **Сообщение**: `Type '%dataType;' in source side cannot be mapped to a type that supported by sink side(colunm name:'%colunmName;') in auto-create table.`
+- **Сообщение**: `Type '%dataType;' in source side cannot be mapped to a type that supported by sink side(column name:'%columnName;') in autocreate table.`
 
 - **Причина**: таблица автоматического создания не может соответствовать требованиям к источнику.
 
@@ -223,15 +250,15 @@ ms.locfileid: "74533151"
 
 ### <a name="error-code--sqldatatypenotsupported"></a>Код ошибки: Склдататипенотсуппортед
 
-- **Сообщение**: `A database operation failed. Please check the SQL errors.`
+- **Сообщение**: `A database operation failed. Check the SQL errors.`
 
 - **Причина**: Если неполадка возникает в ИСТОЧНИКе SQL, а ошибка связана с переполнением SqlDateTime, значение данных превышает диапазон типов логики (1/1/1753 12:00:00 AM-12/31/9999 11:59:59 РМ).
 
-- **Рекомендация**: приведите тип к строке в исходном SQL-запросе или в сопоставлении столбцов действия копирования измените тип столбца на "String".
+- **Рекомендация**: приведение типа к строке в исходном SQL-запросе или в сопоставлении столбцов действия копирования измените тип столбца на "String".
 
 - **Причина**: Если неполадка возникает в ПРИЕМНИКе SQL, а ошибка связана с переполнением SqlDateTime, значение данных превышает допустимый диапазон в таблице приемника.
 
-- **Рекомендация**: обновите соответствующий тип столбца до типа "datetime2" в таблице приемника.
+- **Рекомендация**: обновление соответствующего типа столбца до типа "datetime2" в таблице приемника.
 
 
 ### <a name="error-code--sqlinvaliddbstoredprocedure"></a>Код ошибки: Склинвалиддбсторедпроцедуре
@@ -249,7 +276,7 @@ ms.locfileid: "74533151"
 
 - **Причина**: указан недопустимый SQL-запрос. Это может быть вызвано тем, что запрос не возвращает никаких данных.
 
-- **Рекомендация**: Проверьте запрос SQL средствами SQL. Убедитесь, что запрос может возвращать данные.
+- **Рекомендация**: Проверка SQL запроса средствами SQL. Убедитесь, что запрос может возвращать данные.
 
 
 ### <a name="error-code--sqlinvalidcolumnname"></a>Код ошибки: Склинвалидколумннаме
@@ -261,27 +288,36 @@ ms.locfileid: "74533151"
 - **Рекомендация**: Проверьте столбец в запросе, "Structure" в наборе данных и "сопоставления" в действии.
 
 
+### <a name="error-code--sqlcolumnnamemismatchbycasesensitive"></a>Код ошибки: Склколумннамемисматчбикасесенситиве
+
+- **Сообщение**: `Column '%column;' in DataSet '%dataSetName;' cannot be found in physical SQL Database. Column matching is case-sensitive. Column '%columnInTable;' appears similar. Check the DataSet(s) configuration to proceed further.`
+
+
 ### <a name="error-code--sqlbatchwritetimeout"></a>Код ошибки: Склбатчвритетимеаут
 
-- **Сообщение**: `Timeout in SQL write opertaion.`
+- **Сообщение**: `Timeouts in SQL write operation.`
 
 - **Причина**: может быть временным сбоем базы данных SQL.
 
-- **Рекомендация**. Если проблема воспроизводится, обратитесь в службу поддержки SQL Azure.
+- **Рекомендация**: повторите попытку. Если проблема воспроизводится, обратитесь в службу поддержки SQL Azure.
 
 
-### <a name="error-code--sqlbatchwriterollbackfailed"></a>Код ошибки: Склбатчвритероллбаккфаилед
+### <a name="error-code--sqlbatchwritetransactionfailed"></a>Код ошибки: Склбатчвритетрансактионфаилед
 
-- **Сообщение**: `Timeout in SQL write operation and rollback also fail.`
+- **Сообщение**: `SQL transaction commits failed`
 
-- **Причина**: может быть временным сбоем базы данных SQL.
+- **Причина**: Если сведения об исключении постоянно сообщают о превышении времени ожидания транзакций, задержка сети между средой выполнения интеграции и базой данных выше порогового значения по умолчанию — 30 секунд.
 
-- **Рекомендация**: повторите попытку, чтобы обновить строку подключения связанной службы с большим значением времени ожидания соединения.
+- **Рекомендация**: обновление строки подключения к связанной службе SQL с помощью значения "время ожидания подключения" равно 120 или выше и повторное выполнение действия.
+
+- **Причина**. Если сведения об исключении не сообщают о нарушении соединения SqlConnection, это может привести к неустранимому сбою сети или к проблемам с базой данных SQL.
+
+- **Рекомендация**: Повторите действие и проверьте метрики на стороне базы данных SQL.
 
 
 ### <a name="error-code--sqlbulkcopyinvalidcolumnlength"></a>Код ошибки: Склбулккопинвалидколумнленгс
 
-- **Сообщение**: `SQL Bulk Copy failed due to received an invalid column length from the bcp client.`
+- **Сообщение**: `SQL Bulk Copy failed due to receive an invalid column length from the bcp client.`
 
 - **Причина**: не удалось выполнить групповое копирование SQL из-за получения недопустимой длины столбца от клиента bcp.
 
@@ -290,11 +326,17 @@ ms.locfileid: "74533151"
 
 ### <a name="error-code--sqlconnectionisclosed"></a>Код ошибки: Склконнектионисклосед
 
-- **Сообщение**: `The connection is closed by SQL database.`
+- **Сообщение**: `The connection is closed by SQL Database.`
 
-- **Причина**: соединение SQL закрывается базой данных SQL при высоком параллельном выполнении и разрыве соединения с сервером.
+- **Причина**: соединение SQL закрывается базой данных SQL при высоком параллельном выполнении и разрыве соединения сервера.
 
-- **Рекомендация**: удаленный сервер закрывает подключение SQL. Попробуйте еще раз. Если проблема повторится, обратитесь в службу поддержки SQL Azure.
+- **Рекомендация**: удаленный сервер закрыл подключение SQL. Попробуйте еще раз. Если проблема воспроизводится, обратитесь в службу поддержки SQL Azure.
+
+
+### <a name="error-code--sqlcreatetablefailedunsupportedtype"></a>Код ошибки: Склкреатетаблефаиледунсуппортедтипе
+
+- **Сообщение**: `Type '%type;' in source side cannot be mapped to a type that supported by sink side(column name:'%name;') in autocreate table.`
+
 
 ### <a name="error-message-conversion-failed-when-converting-from-a-character-string-to-uniqueidentifier"></a>Сообщение об ошибке: не удалось выполнить преобразование из строки символов в uniqueidentifier
 
@@ -373,35 +415,257 @@ ms.locfileid: "74533151"
 - **Решение**. Выполните тот же запрос в SSMS и проверьте, отображается ли тот же результат. Если да, отправьте запрос в службу поддержки для Хранилища данных SQL Azure и укажите имя сервера и базы данных Хранилища данных SQL, чтобы устранить неполадки.
             
 
-## <a name="azure-blob-storage"></a>Хранилище BLOB-объектов Azure
+## <a name="delimited-text-format"></a>Текстовый формат с разделителями
 
-### <a name="error-code--azurebloboperationfailed"></a>Код ошибки: Азуреблобоператионфаилед
+### <a name="error-code--delimitedtextcolumnnamenotallownull"></a>Код ошибки: Делимитедтекстколумннаменоталловнулл
 
-- **Сообщение**: `Blob operation Failed. ContainerName: %containerName;, path: %path;.`
+- **Сообщение**: `The name of column index %index; is empty. Make sure column name is properly specified in the header row.`
 
-- **Причина**: ошибка при обращении к операции хранилища BLOB-объектов.
+- **Причина**: при задании "firstRowAsHeader" в действии первая строка будет использоваться в качестве имени столбца. Эта ошибка означает, что первая строка содержит пустое значение. Например: "Column a, Столбецb".
 
-- **Рекомендация**: просмотрите сведения об ошибке в подробностях. См. справочный документ по BLOB-объектам: https://docs.microsoft.com/rest/api/storageservices/blob-service-error-codes. Обратитесь в службу хранилища, если вам нужна помощь.
+- **Рекомендация**: Проверьте первую строку и исправьте значение, если пустое значение.
+
+
+### <a name="error-code--delimitedtextmorecolumnsthandefined"></a>Код ошибки: Делимитедтекстмореколумнссандефинед
+
+- **Сообщение**: `Error found when processing '%function;' source '%name;' with row number %rowCount;: found more columns than expected column count: %columnCount;.`
+
+- **Причина**: количество столбцов в проблемной строке велико, чем число столбцов в первой строке. Это может быть вызвано проблемой с данными или неправильными параметрами символов-разделителей столбцов или кавычек.
+
+- **Рекомендация**: получите сообщение о количестве строк в сообщении об ошибке, проверьте столбец строки и исправьте данные.
+
+- **Причина**: Если ожидаемое число столбцов равно "1" в сообщении об ошибке, возможно, указано неправильное сжатие или параметры форматирования, что привело к неправильному анализу файлов в ADF.
+
+- **Рекомендация**: Проверьте параметры формата, чтобы убедиться, что они соответствуют исходным файлам.
+
+- **Причина**: Если источником является папка, то файлы в указанной папке могут иметь разные схемы.
+
+- **Рекомендация**: Убедитесь, что файлы в указанной папке имеют идентичную схему.
+
+
+### <a name="error-code--delimitedtextincorrectrowdelimiter"></a>Код ошибки: Делимитедтекстинкорректровделимитер
+
+- **Сообщение**: `The specified row delimiter %rowDelimiter; is incorrect. Cannot detect a row after parse %size; MB data.`
+
+
+### <a name="error-code--delimitedtexttoolargecolumncount"></a>Код ошибки: Делимитедтексттуларжеколумнкаунт
+
+- **Сообщение**: `Column count reaches limitation when deserializing csv file. Maximum size is '%size;'. Check the column delimiter and row delimiter provided. (Column delimiter: '%columnDelimiter;', Row delimiter: '%rowDelimiter;')`
+
+
+### <a name="error-code--delimitedtextinvalidsettings"></a>Код ошибки: Делимитедтекстинвалидсеттингс
+
+- **Сообщение**: `%settingIssues;`
 
 
 
-## <a name="azure-data-lake-gen2"></a>Azure Data Lake Gen2
+## <a name="dynamics-365common-data-servicedynamics-crm"></a>Dynamics 365/Common Data Service/Dynamics CRM
 
-### <a name="error-code--adlsgen2operationfailed"></a>Код ошибки: AdlsGen2OperationFailed
+### <a name="error-code--dynamicscreateserviceclienterror"></a>Код ошибки: Динамикскреатесервицеклиентеррор
 
-- **Сообщение**: `ADLS Gen2 operation failed for: %adlsGen2Message;.%exceptionData;.`
+- **Сообщение**: `This is a transient issue on dynamics server side. Try to rerun the pipeline.`
 
-- **Причина**: ADLS 2-го поколения выдает ошибку, указывающую на сбой операции.
+- **Причина**: это временная проблема на стороне Dynamics Server.
 
-- **Рекомендация**: проверьте подробное сообщение об ошибке, созданное ADLS 2-го поколения. Если это вызвано временным сбоем, повторите попытку. Если вам нужна дополнительная помощь, обратитесь в службу поддержки хранилища Azure и укажите идентификатор запроса в сообщении об ошибке.
+- **Рекомендация**: перезапустите конвейер. Если не удается устранить ошибку, попробуйте уменьшить параллелизм. Если все еще не удается, обратитесь в службу поддержки Dynamics.
 
-- **Причина**: Если сообщение об ошибке содержит "запрещено", возможно, субъект-служба или управляемое удостоверение, которые вы используете, не имеют достаточных разрешений для доступа к ADLS 2-го поколения.
 
-- **Рекомендация**: см. справочный документ: https://docs.microsoft.com/azure/data-factory/connector-azure-data-lake-storage#service-principal-authentication.
 
-- **Причина**: Если сообщение об ошибке содержит "InternalServerError", то ошибка возвращается ADLS 2-го поколения.
+## <a name="json-format"></a>Формат JSON
 
-- **Рекомендация**. это может быть вызвано временной ошибкой, повторите попытку. Если проблема будет повторяться, обратитесь в службу поддержки хранилища Azure и укажите идентификатор запроса в сообщении об ошибке.
+### <a name="error-code--jsoninvalidarraypathdefinition"></a>Код ошибки: Жсонинвалидаррайпасдефинитион
+
+- **Сообщение**: `Error occurred when deserializing source JSON data. Check whether the JsonPath in JsonNodeReference and JsonPathDefintion is valid.`
+
+
+### <a name="error-code--jsonemptyjobjectdata"></a>Код ошибки: Жсонемптижобжектдата
+
+- **Сообщение**: `The specified row delimiter %rowDelimiter; is incorrect. Cannot detect a row after parse %size; MB data.`
+
+
+### <a name="error-code--jsonnullvalueinpathdefinition"></a>Код ошибки: Жсоннуллвалуеинпасдефинитион
+
+- **Сообщение**: `Null JSONPath detected in JsonPathDefinition.`
+
+
+### <a name="error-code--jsonunsupportedhierarchicalcomplexvalue"></a>Код ошибки: Жсонунсуппортедхиерарчикалкомплексвалуе
+
+- **Сообщение**: `The retrieved type of data %data; with value %value; is not supported yet. Please either remove the targeted column '%name;' or enable skip incompatible row to skip the issue rows.`
+
+
+### <a name="error-code--jsonconflictpartitiondiscoveryschema"></a>Код ошибки: Жсонконфликтпартитиондисковерисчема
+
+- **Сообщение**: `Conflicting partition column names detected.'%schema;', '%partitionDiscoverySchema;'`
+
+
+### <a name="error-code--jsoninvaliddataformat"></a>Код ошибки: Жсонинвалиддатаформат
+
+- **Сообщение**: `Error occurred when deserializing source JSON file '%fileName;'. Check if the data is in valid JSON object format.`
+
+
+### <a name="error-code--jsoninvaliddatamixedarrayandobject"></a>Код ошибки: Жсонинвалиддатамикседаррайандобжект
+
+- **Сообщение**: `Error occurred when deserializing source JSON file '%fileName;'. The JSON format doesn't allow mixed arrays and objects.`
+
+
+
+## <a name="parquet-format"></a>Формат Parquet
+
+### <a name="error-code--parquetjavainvocationexception"></a>Код ошибки: Паркуетжаваинвокатионексцептион
+
+- **Сообщение**: `An error occurred when invoking java, message: %javaException;.`
+
+- **Причина**: Если сообщение об ошибке содержит "Java. lang. OutOfMemory", "пространство кучи Java" и "даублекапаЦити", обычно это является проблемой управления памятью в старой версии среды выполнения интеграции.
+
+- **Рекомендация**. Если используется локально размещенный Integration Runtime и версия более ранняя, чем 3.20.7159.1, рекомендуется обновить до последней версии.
+
+- **Причина**: Если сообщение об ошибке содержит "Java. lang. OutOfMemory", то среда выполнения интеграции не имеет достаточно ресурсов для обработки файлов.
+
+- **Рекомендация**: Ограничьте количество одновременных запусков в среде выполнения интеграции. Для Integration Runtime с локальным размещением увеличьте масштаб до мощной машины с объемом памяти, равным или превышающим 8 ГБ.
+
+- **Причина**: Если сообщение об ошибке содержит "нуллпоинтерреференце", возможно, это временная ошибка.
+
+- **Рекомендация**: повторите попытку. Если проблема не исчезнет, обратитесь в службу поддержки.
+
+
+### <a name="error-code--parquetinvalidfile"></a>Код ошибки: Паркуетинвалидфиле
+
+- **Сообщение**: `File is not a valid parquet file.`
+
+- **Причина**: ошибка в файле Parquet.
+
+- **Рекомендация**: Убедитесь, что входные данные являются допустимым файлом Parquet.
+
+
+### <a name="error-code--parquetnotsupportedtype"></a>Код ошибки: Паркуетнотсуппортедтипе
+
+- **Сообщение**: `Unsupported Parquet type. PrimitiveType: %primitiveType; OriginalType: %originalType;.`
+
+- **Причина**: формат Parquet не поддерживается в фабрике данных Azure.
+
+- **Рекомендация**: дважды проверьте исходные данные. Обратитесь к документу: https://docs.microsoft.com/azure/data-factory/supported-file-formats-and-compression-codecs.
+
+
+### <a name="error-code--parquetmisseddecimalprecisionscale"></a>Код ошибки: ПаркуетмисседдеЦималпреЦисионскале
+
+- **Сообщение**: `Decimal Precision or Scale information is not found in schema for column: %column;.`
+
+- **Причина**: Попробуйте проанализировать точность и масштаб числа, но такие сведения не предоставляются.
+
+- **Рекомендация**: "источник" не возвращает правильную точность и масштаб. Проверьте точность и масштаб столбца проблемы.
+
+
+### <a name="error-code--parquetinvaliddecimalprecisionscale"></a>Код ошибки: ПаркуетинвалиддеЦималпреЦисионскале
+
+- **Сообщение**: `Invalid Decimal Precision or Scale. Precision: %precision; Scale: %scale;.`
+
+- **Причина**: недопустимая схема.
+
+- **Рекомендация**: проверьте точность и масштаб столбца проблемы.
+
+
+### <a name="error-code--parquetcolumnnotfound"></a>Код ошибки: Паркуетколумннотфаунд
+
+- **Сообщение**: `Column %column; does not exist in Parquet file.`
+
+- **Причина**: исходная схема не соответствует схеме приемника.
+
+- **Рекомендация**: Проверьте се'маппингс "в" действии ". Убедитесь, что исходный столбец может быть сопоставлен с нужным столбцом приемника.
+
+
+### <a name="error-code--parquetinvaliddataformat"></a>Код ошибки: Паркуетинвалиддатаформат
+
+- **Сообщение**: `Incorrect format of %srcValue; for converting to %dstType;.`
+
+- **Причина**: данные не могут быть преобразованы в тип, указанный в сопоставлениях. источник
+
+- **Рекомендация**: дважды проверьте исходные данные или укажите правильный тип данных для этого столбца в сопоставлении столбцов действия копирования. Обратитесь к документу: https://docs.microsoft.com/azure/data-factory/supported-file-formats-and-compression-codecs.
+
+
+### <a name="error-code--parquetdatacountnotmatchcolumncount"></a>Код ошибки: Паркуетдатакаунтнотматчколумнкаунт
+
+- **Сообщение**: `The data count in a row '%sourceColumnCount;' does not match the column count '%sinkColumnCount;' in given schema.`
+
+- **Причина**: несоответствие количества столбцов в исходном столбце и приемника
+
+- **Рекомендация**: число двойной проверки исходного столбца совпадает с числом столбцов приемника в "Mapping".
+
+
+### <a name="error-code--parquetdatatypenotmatchcolumntype"></a>Код ошибки: Паркуетдататипенотматчколумнтипе
+
+- **Сообщение**: тип данных% srcType; не соответствует заданному типу столбца% Дсттипе; в столбце "% columnIndex;".
+
+- **Причина**: данные из источника не могут быть преобразованы в типизированные, определенные в приемнике
+
+- **Рекомендация**: укажите правильный тип в сопоставлении. Sink.
+
+
+### <a name="error-code--parquetbridgeinvaliddata"></a>Код ошибки: Паркуетбриджеинвалиддата
+
+- **Сообщение**: `%message;`
+
+- **Причина**: значение данных превышает ограничение
+
+- **Рекомендация**: повторите попытку. Если проблему не удается устранить, свяжитесь с нами.
+
+
+### <a name="error-code--parquetunsupportedinterpretation"></a>Код ошибки: Паркуетунсуппортединтерпретатион
+
+- **Сообщение**: `The given interpretation '%interpretation;' of parquet format is not supported.`
+
+- **Причина**: неподдерживаемый сценарий
+
+- **Рекомендация**: "паркуетинтерпретфор" не должен быть "sparkSql".
+
+
+### <a name="error-code--parquetunsupportfilelevelcompressionoption"></a>Код ошибки: Паркуетунсуппортфилелевелкомпрессионоптион
+
+- **Сообщение**: `File level compression is not supported for Parquet.`
+
+- **Причина**: неподдерживаемый сценарий
+
+- **Рекомендация**: удалите "компрессионтипе" в полезных данных.
+
+
+
+## <a name="general-copy-activity-error"></a>Общая ошибка действия копирования
+
+### <a name="error-code--jrenotfound"></a>Код ошибки: Жренотфаунд
+
+- **Сообщение**: `Java Runtime Environment cannot be found on the Self-hosted Integration Runtime machine. It is required for parsing or writing to Parquet/ORC files. Make sure Java Runtime Environment has been installed on the Self-hosted Integration Runtime machine.`
+
+- **Причина**: локальной среде выполнения интеграции не удается найти среду выполнения Java. Для чтения определенного источника требуется среда выполнения Java.
+
+- **Рекомендация**: Проверьте среду выполнения интеграции, справочный документ: https://docs.microsoft.com/azure/data-factory/format-parquet#using-self-hosted-integration-runtime
+
+
+### <a name="error-code--wildcardpathsinknotsupported"></a>Код ошибки: Вилдкардпассинкнотсуппортед
+
+- **Сообщение**: `Wildcard in path is not supported in sink dataset. Fix the path: '%setting;'.`
+
+- **Причина**: в наборе данных приемника не поддерживается подстановочный знак.
+
+- **Рекомендация**: Проверьте набор данных приемника и исправьте путь без подстановочного значения.
+
+
+### <a name="error-code--mappinginvalidpropertywithemptyvalue"></a>Код ошибки: Маппингинвалидпропертивисемптивалуе
+
+- **Сообщение**: `One or more '%sourceOrSink;' in copy activity mapping doesn't point to any data. Choose one of the three properties 'name', 'path' and 'ordinal' to reference columns/fields.`
+
+
+### <a name="error-code--mappinginvalidpropertywithnamepathandordinal"></a>Код ошибки: Маппингинвалидпропертивиснамепасандординал
+
+- **Сообщение**: `Mixed properties are used to reference '%sourceOrSink;' columns/fields in copy activity mapping. Please only choose one of the three properties 'name', 'path' and 'ordinal'. The problematic mapping setting is 'name': '%name;', 'path': '%path;','ordinal': '%ordinal;'.`
+
+
+### <a name="error-code--mappingduplicatedordinal"></a>Код ошибки: Маппингдупликатедординал
+
+- **Сообщение**: `Copy activity 'mappings' has duplicated ordinal value "%Ordinal;". Fix the setting in 'mappings'.`
+
+
+### <a name="error-code--mappinginvalidordinalforsinkcolumn"></a>Код ошибки: Маппингинвалидординалфорсинкколумн
+
+- **Сообщение**: `Invalid 'ordinal' property for sink column under 'mappings' property. Ordinal: %Ordinal;.`
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
