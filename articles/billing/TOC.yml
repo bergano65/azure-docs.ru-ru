@@ -232,7 +232,7 @@
     - name: Просмотр стоимости Enterprise отключен
       href: billing-enterprise-mgmt-grp-troubleshoot-cost-view.md
     - name: Обращение в службу поддержки
-      href: ../azure-supportability/how-to-create-azure-support-request.md
+      href: ../azure-portal/supportability/how-to-create-azure-support-request.md
 - name: Примеры
   items:
     - name: REST API
