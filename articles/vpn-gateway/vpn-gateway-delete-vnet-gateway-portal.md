@@ -2,23 +2,22 @@
 title: 'VPN-шлюз Azure: Удаление шлюза: портал'
 description: Удаление шлюза виртуальной сети с помощью портала Azure в модели развертывания диспетчера ресурсов.
 services: vpn-gateway
-documentationcenter: na
 author: cherylmc
 ms.service: vpn-gateway
 ms.date: 10/23/2018
 ms.author: cherylmc
 ms.topic: conceptual
-ms.openlocfilehash: e8c7a9c7b6d38c5fee4f57f65dd61a71f9723c07
-ms.sourcegitcommit: 5cfe977783f02cd045023a1645ac42b8d82223bd
+ms.openlocfilehash: fba213be2de3b747d3ba962674a03c0bc7df3ed5
+ms.sourcegitcommit: 12a26f6682bfd1e264268b5d866547358728cd9a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2019
-ms.locfileid: "74146342"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75863671"
 ---
 # <a name="delete-a-virtual-network-gateway-using-the-portal"></a>Удаление шлюза виртуальной сети с помощью портала
 
 > [!div class="op_single_selector"]
-> * [портал Azure](vpn-gateway-delete-vnet-gateway-portal.md)
+> * [Портал Azure](vpn-gateway-delete-vnet-gateway-portal.md)
 > * [PowerShell](vpn-gateway-delete-vnet-gateway-powershell.md)
 > * [PowerShell (классическая модель)](vpn-gateway-delete-vnet-gateway-classic-powershell.md)
 
@@ -61,5 +60,5 @@ ms.locfileid: "74146342"
 Если не требуется сохранить какие-либо ресурсы из группы ресурсов и вы просто хотите начать все заново, то вы можете удалить всю группу ресурсов. Это быстрый способ удалить все сразу. Приведенные ниже инструкции относятся только к модели развертывания с помощью Resource Manager.
 
 1. В области **Все ресурсы** найдите группу ресурсов и щелкните ее, чтобы открыть колонку.
-2. Нажмите кнопку **Delete**(Удалить). В колонке "Удаление" просмотрите задействованные ресурсы. Убедитесь, что вы хотите удалить все эти ресурсы. Если это не так, следуйте инструкциям в разделе "Удаление VPN-шлюза" в начале этой статьи.
+2. Щелкните **Удалить**. В колонке "Удаление" просмотрите задействованные ресурсы. Убедитесь, что вы хотите удалить все эти ресурсы. Если это не так, следуйте инструкциям в разделе "Удаление VPN-шлюза" в начале этой статьи.
 3. Чтобы продолжить, введите имя группы ресурсов, которую требуется удалить, а затем щелкните **Удалить**.

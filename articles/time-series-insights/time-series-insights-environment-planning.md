@@ -11,12 +11,12 @@ ms.workload: big-data
 ms.topic: conceptual
 ms.date: 11/22/2019
 ms.custom: seodec18
-ms.openlocfilehash: 13bff4abcb308e4d5ea55f360d979e3e67d313c4
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 39665e0361747e0f75fa6c92f244317b995ce6a8
+ms.sourcegitcommit: 12a26f6682bfd1e264268b5d866547358728cd9a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75452865"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75863382"
 ---
 # <a name="plan-your-azure-time-series-insights-ga-environment"></a>Планирование общедоступной среды службы "аналитика временных рядов Azure"
 
@@ -32,7 +32,7 @@ ms.locfileid: "75452865"
 
 Чтобы приступить к работе со службой "аналитика временных рядов Azure", лучше всего знать, сколько данных вы планируете отправить в минуту, а также сколько времени нужно хранить данные.  
 
-Дополнительные сведения о емкости и сроках хранения для двух предложений Аналитики временных рядов см. в описании [цен на Аналитику временных рядов](https://azure.microsoft.com/pricing/details/time-series-insights/).
+Дополнительные сведения о емкости и хранении для номеров SKU временных рядов аналитики см. в статье [цены на аналитику временных рядов](https://azure.microsoft.com/pricing/details/time-series-insights/).
 
 Чтобы лучше спланировать среду "аналитика временных рядов" для долгосрочного успеха, рассмотрите следующие атрибуты:
 
@@ -71,7 +71,7 @@ ms.locfileid: "75452865"
    [Настройка хранения ![](media/data-retention/1-configure-data-retention.png)](media/data-retention/1-configure-data-retention.png#lightbox)
 
 > [!TIP]
-> Дополнительные сведения о реализации соответствующей политики хранения данных см. в разделе [Настройка хранения](./time-series-insights-how-to-configure-retention.md).
+> Дополнительные сведения о реализации соответствующей политики хранения данных см. в статье [Настройка хранения](./time-series-insights-how-to-configure-retention.md).
 
 ## <a name="ingress-capacity"></a>Объем входящих данных
 
@@ -103,7 +103,7 @@ ms.locfileid: "75452865"
 
 ### <a name="mitigate-throttling-and-latency"></a>Устранение регулирования и задержек
 
-Сведения о том, как предотвратить задержки и регулирование, вы найдете в [этой статье](time-series-insights-environment-mitigate-latency.md).
+Сведения о том, как предотвратить регулирование и задержку, см. в статье [снижение задержки и регулирование](time-series-insights-environment-mitigate-latency.md).
 
 ## <a name="shape-your-events"></a>Формирование ваших событий
 

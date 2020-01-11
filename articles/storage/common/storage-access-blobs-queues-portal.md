@@ -6,16 +6,16 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: how-to
-ms.date: 03/19/2019
+ms.date: 01/10/2020
 ms.author: tamram
 ms.reviewer: cbrooks
 ms.subservice: common
-ms.openlocfilehash: 89816e3640c0afad6290e77faa3904c691df4318
-ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
+ms.openlocfilehash: 602be49ef0c60274f1cd016c4f8e870cf033ec7b
+ms.sourcegitcommit: 12a26f6682bfd1e264268b5d866547358728cd9a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74892403"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75866894"
 ---
 # <a name="use-the-azure-portal-to-access-blob-or-queue-data"></a>Использование портал Azure для доступа к данным BLOB-объектов или очередей
 
@@ -57,8 +57,10 @@ ms.locfileid: "74892403"
     
 Пользовательские роли могут поддерживать различные сочетания тех же разрешений, которые предоставляются встроенными ролями. Дополнительные сведения о создании настраиваемых ролей RBAC см. в статьях [пользовательские роли для ресурсов Azure](../../role-based-access-control/custom-roles.md) и [Определение ролей для ресурсов Azure](../../role-based-access-control/role-definitions.md).
 
-> [!NOTE]
-> Вывод списка очередей с ролью администратора классической подписки не поддерживается. Чтобы получить список очередей, пользователю должны быть назначены роль **читателя** Azure Resource Manager, роль **чтения данных очереди хранилища** или роль **участника данных очереди хранилища** .
+Вывод списка очередей с ролью администратора классической подписки не поддерживается. Чтобы получить список очередей, пользователю должны быть назначены роль **читателя** Azure Resource Manager, роль **чтения данных очереди хранилища** или роль **участника данных очереди хранилища** .
+
+> [!IMPORTANT]
+> Предварительная версия Обозреватель службы хранилища в портал Azure не поддерживает использование учетных данных Azure AD для просмотра и изменения данных BLOB-объектов или очередей. Обозреватель службы хранилища в портал Azure всегда использует ключи учетной записи для доступа к данным. Чтобы использовать Обозреватель службы хранилища в портал Azure, необходимо назначить роль, включающую **Microsoft. Storage/storageAccounts/listkeys/Action**.
 
 ## <a name="navigate-to-blobs-or-queues-in-the-portal"></a>Переход к BLOB-объектам или очередям на портале
 

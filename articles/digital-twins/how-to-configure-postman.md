@@ -8,12 +8,12 @@ ms.service: digital-twins
 services: digital-twins
 ms.topic: conceptual
 ms.date: 11/13/2019
-ms.openlocfilehash: 784e31b823c65c0b908dc07582805e7a69d19563
-ms.sourcegitcommit: 8a2949267c913b0e332ff8675bcdfc049029b64b
+ms.openlocfilehash: d87112697bfa3aa7bb6b4c8f14420598ccd914cb
+ms.sourcegitcommit: 12a26f6682bfd1e264268b5d866547358728cd9a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74304846"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75864321"
 ---
 # <a name="how-to-configure-postman-for-azure-digital-twins"></a>Настройка Postman для Azure Digital Twins
 
@@ -86,7 +86,7 @@ ms.locfileid: "74304846"
     https://login.microsoftonline.com/YOUR_AZURE_TENANT.onmicrosoft.com/oauth2/authorize?resource=0b07f429-9f4b-4714-9392-cc5e8e80c8b0
     ```
 
-    | имя  | Заменить на | Пример |
+    | Имя  | Заменить на | Пример |
     |---------|---------|---------|
     | YOUR_AZURE_TENANT | Имя вашего клиента или название организации | `microsoft` |
 
@@ -97,8 +97,8 @@ ms.locfileid: "74304846"
     | Тип предоставления разрешения | `Implicit` |
     | URL-адрес обратного вызова | `https://www.getpostman.com/oauth2/callback` |
     | URL-адрес аутентификации | Используйте **URL-адрес авторизации** из **шага 2** . |
-    | идентификатор клиента | Используйте **идентификатор приложения** для Azure Active Directoryного приложения, созданного или повторно используемого из предыдущего раздела. |
-    | Область | Не указывайте |
+    | Идентификатор клиента | Используйте **идентификатор приложения** для Azure Active Directoryного приложения, созданного или повторно используемого из предыдущего раздела. |
+    | Область действия | Не указывайте |
     | Состояние | Не указывайте |
     | Аутентификация клиента | `Send as Basic Auth header` |
 
@@ -130,9 +130,9 @@ ms.locfileid: "74304846"
    > * Необходимо указать эти заголовки для каждой части.
    > * Вы должны выбрать `multipart/mixed` или другой подходящий **Content-Type** для всего запроса.
 
-1. Наконец, выберите **Отправить** , чтобы отправить многокомпонентный запрос HTTP POST. Код состояния `200` или `201` указывает на Успешный запрос. Также появится соответствующее ответное сообщение.
+1. Наконец, выберите **Отправить** , чтобы отправить многокомпонентный запрос HTTP POST. Код состояния `200` или `201` указывает на Успешный запрос. В интерфейсе клиента появится соответствующее ответное сообщение.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Сведения об API управления Digital Twins и их использовании см. в статье [How to use Azure Digital Twins management APIs](how-to-navigate-apis.md) (Как использовать API управления Azure Digital Twins).
 

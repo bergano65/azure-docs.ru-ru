@@ -3,20 +3,20 @@ title: Аналитика в Хранилище данных SQL Azure с пом
 description: Примеры, демонстрирующие использование хранилища данных SQL для прогнозной аналитики.
 services: machine-learning
 author: marktab
-manager: cgronlun
-editor: cgronlun
+manager: marktab
+editor: marktab
 ms.service: machine-learning
 ms.subservice: team-data-science-process
 ms.topic: article
-ms.date: 09/04/2017
+ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
-ms.openlocfilehash: c545e73e51ea33db1ced546bf47465197b3fb8e4
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 4c8be715391f71e281ca41cc68428a2d29d78783
+ms.sourcegitcommit: 12a26f6682bfd1e264268b5d866547358728cd9a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60589134"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75864134"
 ---
 # <a name="sql-data-warehouse-data-science-walkthroughs-using-t-sql-and-python-on-azure"></a>Пошаговые руководства обработки и анализа данных хранилища данных SQL с помощью T-SQL и Python в Azure
 
@@ -27,11 +27,11 @@ ms.locfileid: "60589134"
 
 ## <a name="predict-taxi-tips-using-t-sql-and-ipython-notebooks-with-sql-data-warehouse"></a>Прогноз чаевых за такси с помощью записных книжек T-SQL и IPython и хранилища данных SQL
 
-В пошаговом руководстве [Процесс обработки и анализа данных группы на практике: использование хранилища данных SQL](sqldw-walkthrough.md) показано создание и развертывание модели машинного обучения с использованием хранилища данных SQL для общедоступного набора данных о поездках и тарифах в такси Нью-Йорка.
+В [пошаговом руководстве использование хранилища данных SQL](sqldw-walkthrough.md) показано, как создавать и развертывать классификации машинного обучения и модели регрессии с помощью хранилища данных SQL (SQL DW).  Данные представляют собой общедоступный Нью такси и набор данных FARE.
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 Описание ключевых компонентов, составляющих процесс обработки и анализа данных группы, см. в статье [Жизненный цикл процесса обработки и анализа данных группы](overview.md).
 
-Описание жизненного цикла процесса обработки и анализа данных группы, который можно использовать для структурирования проектов по обработке и анализу данных, см. в статье [Жизненный цикл процесса обработки и анализа данных группы](lifecycle.md). Этот жизненный цикл представляет стандартные этапы выполнения проектов, от самого начала и до завершения. 
+Обсуждение жизненного цикла процесса обработки и анализа данных группы см. в разделе [жизненный цикл процесса обработки и анализа данных группы](lifecycle.md). Этот жизненный цикл описывает шаги от начала до конца, которые обычно следуют при выполнении проектов. 

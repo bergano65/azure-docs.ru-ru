@@ -8,12 +8,12 @@ ms.topic: conceptual
 description: Используйте частный репозиторий Helm в пространстве разработки Azure.
 keywords: DOCKER, Kubernetes, Azure, AKS, служба контейнеров Azure, контейнеры, Helm
 manager: gwallace
-ms.openlocfilehash: f212df74ab8102391e4170ccef6b0c3b1129b046
-ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
+ms.openlocfilehash: dddec69dc019f286c714a09e6f1a7e47240d5572
+ms.sourcegitcommit: 12a26f6682bfd1e264268b5d866547358728cd9a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74279922"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75867286"
 ---
 # <a name="use-a-private-helm-repository-in-azure-dev-spaces"></a>Используйте частный репозиторий Helm в Azure Dev Spaces
 
@@ -35,6 +35,9 @@ helm repo update
 ```cmd
 azds prep --public
 ```
+
+> [!TIP]
+> Команда `prep` пытается создать [диаграмму Dockerfile и Helm](../how-dev-spaces-works.md#prepare-your-code) для проекта. Azure Dev Spaces использует эти файлы для сборки и выполнения кода, но эти файлы можно изменить, если нужно изменить способ построения и запуска проекта.
 
 Создайте файл [требований. YAML][helm-requirements] с диаграммой в каталоге диаграммы приложения. Например, если приложение называется *APP1*, необходимо создать *Charts/APP1/требования. YAML*.
 
@@ -72,7 +75,7 @@ Service 'app1' port 80 (http) is available at http://localhost:54256
 ...
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте больше о [Helm и принципах его работы][helm].
 

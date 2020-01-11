@@ -3,20 +3,20 @@ title: Аналитика в Azure HDInsight Hadoop с помощью Hive — 
 description: Примеры процесса обработки и анализа данных группы, которые объясняют, как использовать Hive в Azure HDInsight Hadoop для прогнозной аналитики.
 services: machine-learning
 author: marktab
-manager: cgronlun
-editor: cgronlun
+manager: marktab
+editor: marktab
 ms.service: machine-learning
 ms.subservice: team-data-science-process
 ms.topic: article
-ms.date: 09/04/2017
+ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
-ms.openlocfilehash: d3c3278a058162632a6ba7ea9731e5f233190700
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: f72ea6ed5f0eec076d181ef56c99c4f1308a7741
+ms.sourcegitcommit: 12a26f6682bfd1e264268b5d866547358728cd9a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60804670"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75864168"
 ---
 # <a name="hdinsight-hadoop-data-science-walkthroughs-using-hive-on-azure"></a>Пошаговое руководство по обработке и анализу данных HDInsight Hadoop с использованием Hive в Azure 
 
@@ -36,7 +36,7 @@ ms.locfileid: "60804670"
 
 ## <a name="predict-advertisement-clicks-using-hive-with-hdinsight-hadoop"></a>Прогнозирование переходов по рекламным объявлениям с помощью Hive с HDInsight Hadoop
 
-В пошаговом руководстве [Процесс обработки и анализа данных группы на практике: использование кластера Azure HDInsight Hadoop с набором данных объемом 1 ТБ](hive-criteo-walkthrough.md) используется общедоступный набор данных переходов [Criteo](https://labs.criteo.com/downloads/download-terabyte-click-logs/), чтобы спрогнозировать, будут ли оставлены чаевые, и определить диапазон ожидаемых сумм. Сценарий реализуется с помощью Hive с [кластером Azure HDInsight Hadoop](https://azure.microsoft.com/services/hdinsight/) и используется для хранения, изучения, проектирования признаков и сокращения выборки данных. В сценарии применяется машинное обучение Azure для создания, обучения и оценки модели двоичной классификации, прогнозирующей, щелкнет ли пользователь рекламное объявление. В конце пошагового руководства показано, как опубликовать одну из этих моделей в качестве веб-службы.
+[Использование кластеров Azure HDInsight Hadoop в пошаговом руководстве по набору данных объемом 1 ТБ](hive-criteo-walkthrough.md) использует общедоступный [Criteoный](https://labs.criteo.com/downloads/download-terabyte-click-logs/) набор данных, чтобы спрогнозировать, оплачивается ли Совет и ожидаемые суммы. Сценарий реализуется с помощью Hive с [кластером Azure HDInsight Hadoop](https://azure.microsoft.com/services/hdinsight/) и используется для хранения, изучения, проектирования признаков и сокращения выборки данных. В сценарии применяется машинное обучение Azure для создания, обучения и оценки модели двоичной классификации, прогнозирующей, щелкнет ли пользователь рекламное объявление. В конце пошагового руководства показано, как опубликовать одну из этих моделей в качестве веб-службы.
 
 
 ## <a name="next-steps"></a>Дальнейшие действия

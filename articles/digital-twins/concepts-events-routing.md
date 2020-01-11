@@ -8,12 +8,12 @@ ms.service: digital-twins
 services: digital-twins
 ms.topic: conceptual
 ms.date: 01/03/2020
-ms.openlocfilehash: 094a3a838269921339dcd6c2c3b551720f394251
-ms.sourcegitcommit: 51ed913864f11e78a4a98599b55bbb036550d8a5
+ms.openlocfilehash: 65b760eaf28d907fab3654ed92f960be7556b0d6
+ms.sourcegitcommit: 12a26f6682bfd1e264268b5d866547358728cd9a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2020
-ms.locfileid: "75660330"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75862362"
 ---
 # <a name="routing-iot-events-and-messages"></a>Маршрутизация событий Интернета вещей и сообщений
 
@@ -53,7 +53,7 @@ Digital Twins в настоящее время поддерживает след
 
 > [!IMPORTANT]  
 > Не все типы **EndpointTypes** поддерживают все типы **EventTypes**.
-> Ознакомьтесь со следующей таблицей, чтобы узнать, какие типы **EventTypes** поддерживаются для каждого типа **EndpointType**.
+> Ознакомьтесь со следующей таблицей для **евенттипес** , которые допускаются для каждого **EndpointType**.
 
 |             | DeviceMessages | TopologyOperation | SpaceChange | SensorChange | UdfCustom |
 | ----------- | -------------- | ----------------- | ----------- | ------------ | --------- |
@@ -62,10 +62,10 @@ Digital Twins в настоящее время поддерживает след
 | Сетка событий|               |         X         |     X       |      X       |   X       |
 
 >[!NOTE]  
->Дополнительные сведения о создании конечных точек и примеры использования схемы событий см. в статье, посвященной [конечным точкам и исходящему трафику](how-to-egress-endpoints.md).
+>Дополнительные сведения о создании конечных точек и примеры схемы событий, исходящих [и конечных точек](how-to-egress-endpoints.md)см. в этой статье.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Чтобы узнать об ограничениях общедоступной предварительной версии Azure Digital Twins, ознакомьтесь с [этой статьей](concepts-service-limits.md).
+- Дополнительные сведения об ограничениях на предварительную версию Azure Digital двойников см. в статье [ограничения общедоступной предварительной версии служб](concepts-service-limits.md).
 
-- Ознакомиться с примером Azure Digital Twins на практике можно в статье [Краткое руководство. Поиск свободных помещений с помощью Azure Digital Twins](quickstart-view-occupancy-dotnet.md).
+- Чтобы испытать пример цифрового двойников для Azure, ознакомьтесь с [кратким руководством по поиску доступных помещений](quickstart-view-occupancy-dotnet.md).

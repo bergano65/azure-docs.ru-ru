@@ -2,13 +2,14 @@
 title: Общие вопросы о службе Azure Site Recovery
 description: В этой статье рассматриваются популярные общие вопросы о Azure Site Recovery.
 ms.topic: conceptual
-ms.date: 11/14/2019
-ms.openlocfilehash: f64b885e82d2f790d7d146e16bb6ccb44e207465
-ms.sourcegitcommit: f0dfcdd6e9de64d5513adf3dd4fe62b26db15e8b
+ms.date: 1/10/2020
+ms.author: raynew
+ms.openlocfilehash: 44abe9eafa9aef9e027778470d3f0483f99b0d32
+ms.sourcegitcommit: 12a26f6682bfd1e264268b5d866547358728cd9a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/26/2019
-ms.locfileid: "75497536"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75863569"
 ---
 # <a name="general-questions-about-azure-site-recovery"></a>Общие вопросы о Azure Site Recovery
 
@@ -101,7 +102,8 @@ Site Recovery имеет сертификаты ISO 27001:2013, 27018, HIPAA, DP
 ### <a name="does-site-recovery-encrypt-replication"></a>Выполняет ли служба Site Recovery шифрование репликации?
 При репликации виртуальных машин и физических серверов между локальными сайтами поддерживается шифрование в процессе передачи. При репликации виртуальных машин и физических серверов в Azure поддерживается как шифрование при передаче, так и [шифрование на месте (в Azure)](https://docs.microsoft.com/azure/storage/storage-service-encryption).
 
-
+### <a name="how-can-i-enforce-tls-12-on-all-on-premises-azure-site-recovery-components"></a>Как применить TLS 1,2 ко всем локальным Azure Site Recoveryным компонентам?
+Агенты мобильности, установленные на реплицированных элементах, обмениваются данными с сервером обработки только в TLS 1,2. Однако обмен данными между сервером конфигурации и Azure и сервером обработки с Azure может осуществляться на TLS 1,1 или 1,0. Следуйте [указаниям](https://support.microsoft.com/en-us/help/3140245/update-to-enable-tls-1-1-and-tls-1-2-as-default-secure-protocols-in-wi) по применению TLS 1,2 на всех серверах конфигурации и серверах обработки, настроенных вами.
 
 
 ## <a name="disaster-recovery"></a>Аварийное восстановление

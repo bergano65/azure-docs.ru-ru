@@ -11,12 +11,12 @@ author: swinarko
 ms.author: sawinark
 ms.reviewer: douglasl
 manager: mflasko
-ms.openlocfilehash: a4b0debc712504e8cb3c6d61372bd3a82c7932bb
-ms.sourcegitcommit: f0dfcdd6e9de64d5513adf3dd4fe62b26db15e8b
+ms.openlocfilehash: b068eeeada842f2439f6135bfa8567a6c9709d12
+ms.sourcegitcommit: 12a26f6682bfd1e264268b5d866547358728cd9a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/26/2019
-ms.locfileid: "75497033"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75862821"
 ---
 # <a name="join-an-azure-ssis-integration-runtime-to-a-virtual-network"></a>Присоединение среды выполнения интеграции Azure SSIS к виртуальной сети
 
@@ -30,10 +30,20 @@ ms.locfileid: "75497033"
 
 - Необходимо подключиться к хранилищам данных и ресурсам, настроенным с помощью правил брандмауэра IP-адресов из пакетов служб SSIS, которые выполняются на Azure-SSIS IR.
 
-Фабрика данных позволяет присоединить Azure-SSIS IR к виртуальной сети, созданной с помощью классической модели развертывания или модели развертывания Azure Resource Manager. 
+Фабрика данных позволяет присоединить Azure-SSIS IR к виртуальной сети, созданной с помощью классической модели развертывания или модели развертывания Azure Resource Manager.
 
 > [!IMPORTANT]
 > Классическая виртуальная сеть является устаревшей, поэтому вместо нее следует использовать виртуальную сеть Azure Resource Manager.  Если вы уже используете классическую виртуальную сеть, переключайтесь в Azure Resource Managerную виртуальную сеть как можно скорее.
+
+В учебнике [Настройка среды выполнения интеграции Azure-SQL Server Integration Services (SSIS) (IR) для приподключения к виртуальной сети](tutorial-deploy-ssis-virtual-network.md) показаны минимальные действия, выполняемые с помощью портал Azure. Эта статья раскрывает учебник и описывает все необязательные задачи:
+
+- Если вы используете виртуальную сеть (классическая модель).
+- Если вы предместит собственные общедоступные IP-адреса для Azure-SSIS IR.
+- Если используется собственный сервер системы доменных имен (DNS).
+- Если в подсети используется группа безопасности сети (NSG).
+- При использовании Azure ExpressRoute или определяемого пользователем маршрута (UDR).
+- При использовании настраиваемого Azure-SSIS IR.
+- Если вы используете подготовку Azure PowerShell.
 
 ## <a name="access-to-on-premises-data-stores"></a>Доступ к локальным хранилищам данных
 
@@ -319,7 +329,7 @@ ms.locfileid: "75497033"
 
    ![Список фабрик данных](media/join-azure-ssis-integration-runtime-virtual-network/data-factories-list.png)
 
-1. Выберите фабрику данных с Azure-SSIS IR в списке. После этого откроется домашняя страница фабрики данных. Выберите плитку **Author & Deploy** (Создать и развернуть). На отдельной вкладке откроется пользовательский интерфейс фабрики данных. 
+1. Выберите фабрику данных с Azure-SSIS IR в списке. После этого откроется домашняя страница фабрики данных. Выберите плитку " **автор & монитор** ". На отдельной вкладке откроется пользовательский интерфейс фабрики данных. 
 
    ![Домашняя страница фабрики данных](media/join-azure-ssis-integration-runtime-virtual-network/data-factory-home-page.png)
 

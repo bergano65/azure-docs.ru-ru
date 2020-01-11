@@ -8,12 +8,12 @@ services: time-series-insights
 ms.service: time-series-insights
 ms.topic: conceptual
 ms.date: 01/07/2020
-ms.openlocfilehash: 1f6b753052b882b75884503f8c05f34b8cead821
-ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
+ms.openlocfilehash: 22053bdc3a9836b76aa92303234a095cac6448ef
+ms.sourcegitcommit: 12a26f6682bfd1e264268b5d866547358728cd9a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75749382"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75863848"
 ---
 # <a name="visualize-data-from-time-series-insights-in-power-bi"></a>Визуализация данных из анализа временных рядов в Power BI
 
@@ -51,7 +51,7 @@ ms.locfileid: "75749382"
 Чтобы приступить к работе, сделайте следующее:
 
 1. Откройте обозреватель предварительного просмотра "аналитика временных рядов" и проучите данные.
-1. После создания представления, с которым вы удовлетворены, перейдите в раскрывающееся меню **More Actions (дополнительные действия** ) и щелкните **подключиться к Power BI**.
+1. После создания представления, с которым вы удовлетворены, перейдите в раскрывающееся меню **More Actions (дополнительные действия** ) и выберите **подключиться к Power BI**.
 
     [экспорт обозревателя предварительной версии аналитики временных рядов ![](media/how-to-connect-power-bi/time-series-insights-export-option.png)](media/how-to-connect-power-bi/time-series-insights-export-option.png#lightbox)
 
@@ -118,7 +118,7 @@ ms.locfileid: "75749382"
 
     [![создать график](media/how-to-connect-power-bi/power-bi-line-chart.png)](media/how-to-connect-power-bi/power-bi-line-chart.png#lightbox)
 
-1.  Чтобы добавить еще одну диаграмму на холст, щелкните в любом месте холста за пределами линейного графика и повторите эту процедуру.
+1.  Чтобы добавить на холст другую диаграмму, выберите в любом месте холста за пределами линейного графика и повторите эту процедуру.
 
     [![создать дополнительные диаграммы для совместного использования](media/how-to-connect-power-bi/power-bi-additional-charts.png)](media/how-to-connect-power-bi/power-bi-additional-charts.png#lightbox)
 
@@ -138,7 +138,7 @@ ms.locfileid: "75749382"
 1. При необходимости измените полезные данные JSON.
 1. Нажмите кнопку **Готово** , а затем **закройте & применить** в **окне редактора Power Query**.
 
-Вы должны увидеть, что нужные изменения применены.  
+Теперь интерфейс будет отражать примененные необходимые изменения.  
 
 ## <a name="next-steps"></a>Следующие шаги
 
@@ -146,4 +146,4 @@ ms.locfileid: "75749382"
 
 * Дополнительные сведения о [Power BI Desktop](https://docs.microsoft.com/power-bi/desktop-query-overview).
 
-* См. раздел [Time Series Insights Explorer обозревателя "аналитика](https://docs.microsoft.com/azure/time-series-insights/time-series-quickstart) временных рядов", [Обозреватель предварительной версии "аналитика временных рядов](https://docs.microsoft.com/azure/time-series-insights/time-series-insights-update-quickstart)".
+* Ознакомьтесь со сведениями в обозревателе " [аналитика временных рядов](https://docs.microsoft.com/azure/time-series-insights/time-series-quickstart) " — "Глобальный обозреватель" и " [аналитика временных рядов Insights](https://docs.microsoft.com/azure/time-series-insights/time-series-insights-update-quickstart)".

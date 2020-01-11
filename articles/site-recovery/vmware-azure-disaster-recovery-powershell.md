@@ -4,21 +4,21 @@ description: Сведения о том, как настроить реплик�
 author: sujayt
 manager: rochakm
 ms.service: site-recovery
-ms.date: 06/30/2019
+ms.date: 01/10/2020
 ms.topic: conceptual
 ms.author: sutalasi
-ms.openlocfilehash: 9546ae590918cdf6f3a6a95b9a68e9208054dcee
-ms.sourcegitcommit: 44c2a964fb8521f9961928f6f7457ae3ed362694
+ms.openlocfilehash: d2dfaab3d01ea29b0f9ecba1e9d748415bed2edc
+ms.sourcegitcommit: 12a26f6682bfd1e264268b5d866547358728cd9a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73953934"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75861291"
 ---
 # <a name="set-up-disaster-recovery-of-vmware-vms-to-azure-with-powershell"></a>Настройка аварийного восстановления виртуальных машин VMware в Azure с помощью PowerShell
 
 В этой статье описывается репликация и отработка отказа виртуальных машин VMware в Azure с помощью Azure PowerShell.
 
-Вы узнаете, как выполнять такие задачи.
+Вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 > - Создание служб восстановления и указание контекста хранилища.
@@ -31,12 +31,12 @@ ms.locfileid: "73953934"
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Технические условия
 
-Перед началом работы:
+Перед началом:
 
 - Вам должны быть понятны [архитектура и компоненты сценария](vmware-azure-architecture.md).
-- Ознакомьтесь с [требованиями поддержки ](site-recovery-support-matrix-to-azure.md) для всех компонентов.
+- [Ознакомьтесь](site-recovery-support-matrix-to-azure.md) с требованиями поддержки для всех компонентов.
 - У вас есть модуль Azure PowerShell `Az`. Если вам необходимо установить или обновить Azure PowerShell, ознакомьтесь с этим [руководством по установке и настройке Azure PowerShell](/powershell/azure/install-az-ps).
 
 ## <a name="log-into-azure"></a>Вход на портал Azure
@@ -118,7 +118,7 @@ Select-AzSubscription -SubscriptionName "ASR Test Subscription"
    VMwareDRToAzurePs VMwareDRToAzurePs Microsoft.RecoveryServices vaults
    ```
 
-В качестве альтернативы командлету Set-ASRVaultContext можно также использовать командлет Import-Азрековерисервицесасрваултсеттингсфиле для задания контекста хранилища. Укажите путь, по которому файл ключа регистрации хранилища будет располагаться в качестве параметра-Path командлета Import-Азрековерисервицесасрваултсеттингсфиле. Например,
+В качестве альтернативы командлету Set-ASRVaultContext можно также использовать командлет Import-Азрековерисервицесасрваултсеттингсфиле для задания контекста хранилища. Укажите путь, по которому файл ключа регистрации хранилища будет располагаться в качестве параметра-Path командлета Import-Азрековерисервицесасрваултсеттингсфиле. Пример.
 
    ```azurepowershell
    Get-AzRecoveryServicesVaultSettingsFile -SiteRecovery -Vault $Vault -Path "C:\Work\"
@@ -342,7 +342,7 @@ $ReplicationStdStorageAccount= New-AzStorageAccount -ResourceGroupName "VMwareDR
 * Защищаемый элемент, который требуется реплицировать.
 * Учетная запись хранения для репликации виртуальной машины (только в том случае, если выполняется репликация в учетную запись хранения). 
 * Хранилище журналов требуется для защиты виртуальных машин в учетной записи хранения класса Premium или на управляемом диске.
-* Сервер обработки для репликации. Список доступных серверов обработки должен быть получен и сохранен в переменных ***$ProcessServers[0]*** *(ScaleOut-ProcessServer)* и ***$ProcessServers[1]*** *(ConfigurationServer)* .
+* Сервер обработки для репликации. Список доступных серверов обработки получен и сохранен в переменных ***$ProcessServers [0]***  *(scaleing-ProcessServer)* и ***$ProcessServers [1]*** *(ConfigurationServer)* .
 * Учетная запись, используемая для принудительной установки программного обеспечения Mobility Service на компьютерах. Список доступных учетных записей должен быть получен и сохранен в переменной ***$AccountHandles***.
 * Сопоставление контейнера защиты для политики репликации, используемой для репликации.
 * Группа ресурсов, в которой должны создаваться виртуальные машины при отработке отказа.
@@ -351,11 +351,11 @@ $ReplicationStdStorageAccount= New-AzStorageAccount -ResourceGroupName "VMwareDR
 Теперь реплицируйте следующие виртуальные машины, используя параметры, заданные в этой таблице.
 
 
-|Виртуальная машина.  |Сервер обработки        |Учетная запись хранения              |Учетная запись хранения журналов  |Политика           |Учетная запись для установки службы Mobility Service|Целевая группа ресурсов  | Целевая виртуальная сеть  |Целевая подсеть  |
+|Виртуальная машина  |Сервер обработки        |Учетная запись хранения              |Учетная запись хранения журналов  |Политика           |Учетная запись для установки службы Mobility Service|Целевая группа ресурсов  | Целевая виртуальная сеть  |Целевая подсеть  |
 |-----------------|----------------------|-----------------------------|---------------------|-----------------|-----------------------------------------|-----------------------|-------------------------|---------------|
-|CentOSVM1       |ConfigurationServer   |Недоступно| logstorageaccount1                 |ReplicationPolicy|LinuxAccount                             |VMwareDRToAzurePs      |ASR-vnet                 |Subnet-1       |
+|CentOSVM1       |ConfigurationServer   |Н/Д| logstorageaccount1                 |ReplicationPolicy|LinuxAccount                             |VMwareDRToAzurePs      |ASR-vnet                 |Subnet-1       |
 |Win2K12VM1       |ScaleOut-ProcessServer|premiumstorageaccount1       |logstorageaccount1   |ReplicationPolicy|WindowsAccount                           |VMwareDRToAzurePs      |ASR-vnet                 |Subnet-1       |   
-|CentOSVM2       |ConfigurationServer   |replicationstdstorageaccount1| Недоступно                 |ReplicationPolicy|LinuxAccount                             |VMwareDRToAzurePs      |ASR-vnet                 |Subnet-1       |   
+|CentOSVM2       |ConfigurationServer   |replicationstdstorageaccount1| Н/Д                 |ReplicationPolicy|LinuxAccount                             |VMwareDRToAzurePs      |ASR-vnet                 |Subnet-1       |   
 
 
 ```azurepowershell
@@ -372,9 +372,13 @@ $PolicyMap  = Get-AzRecoveryServicesAsrProtectionContainerMapping -ProtectionCon
 #Get the protectable item corresponding to the virtual machine CentOSVM1
 $VM1 = Get-AzRecoveryServicesAsrProtectableItem -ProtectionContainer $ProtectionContainer -FriendlyName "CentOSVM1"
 
-# Enable replication for virtual machine CentOSVM1 using the Az.RecoveryServices module 2.0.0
+# Enable replication for virtual machine CentOSVM1 using the Az.RecoveryServices module 2.0.0 onwards to replicate to managed disks
 # The name specified for the replicated item needs to be unique within the protection container. Using a random GUID to ensure uniqueness
 $Job_EnableReplication1 = New-AzRecoveryServicesAsrReplicationProtectedItem -VMwareToAzure -ProtectableItem $VM1 -Name (New-Guid).Guid -ProtectionContainerMapping $PolicyMap -ProcessServer $ProcessServers[1] -Account $AccountHandles[2] -RecoveryResourceGroupId $ResourceGroup.ResourceId -logStorageAccountId $LogStorageAccount.Id -RecoveryAzureNetworkId $RecoveryVnet.Id -RecoveryAzureSubnetName "Subnet-1"
+
+# Alternatively, if the virtual machine CentOSVM1 has CMK enabled disks, enable replication using Az module 3.3.0 onwards as below
+# $diskID is the Disk Encryption Set ID to be used for all replica managed disks and target managed disks in the target region
+$Job_EnableReplication1 = New-AzRecoveryServicesAsrReplicationProtectedItem -VMwareToAzure -ProtectableItem $VM1 -Name (New-Guid).Guid -ProtectionContainerMapping $PolicyMap -ProcessServer $ProcessServers[1] -Account $AccountHandles[2] -RecoveryResourceGroupId $ResourceGroup.ResourceId -logStorageAccountId -DiskEncryptionSetId $diskId $LogStorageAccount.Id -RecoveryAzureNetworkId $RecoveryVnet.Id -RecoveryAzureSubnetName "Subnet-1"
 
 #Get the protectable item corresponding to the virtual machine Win2K12VM1
 $VM2 = Get-AzRecoveryServicesAsrProtectableItem -ProtectionContainer $ProtectionContainer -FriendlyName "Win2K12VM1"
@@ -492,5 +496,5 @@ Errors           : {}
 
 2. После успешной отработки отказа можно зафиксировать эту операцию и настроить обратную репликацию из Azure в локальное расположение VMware.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Узнайте, как автоматизировать дополнительные задачи с помощью [справочника по Azure Site Recovery PowerShell](https://docs.microsoft.com/powershell/module/Az.RecoveryServices).

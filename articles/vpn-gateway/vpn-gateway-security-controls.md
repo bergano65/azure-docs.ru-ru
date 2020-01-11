@@ -4,16 +4,16 @@ description: Контрольный список средств управлен
 services: sql-database
 author: msmbaldwin
 manager: rkarlin
-ms.service: load-balancer
+ms.service: vpn-gateway
 ms.topic: conceptual
 ms.date: 09/06/2019
 ms.author: mbaldwin
-ms.openlocfilehash: 1babb892063da6d460ea2bc4c567da954731956f
-ms.sourcegitcommit: 7c5a2a3068e5330b77f3c6738d6de1e03d3c3b7d
+ms.openlocfilehash: 2c32f46ca85007608b5e17f2bf77b0a8f0fb8397
+ms.sourcegitcommit: 12a26f6682bfd1e264268b5d866547358728cd9a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70886392"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75862753"
 ---
 # <a name="security-controls-for-azure-vpn-gateway"></a>Средства управления безопасностью для VPN-шлюза Azure
 
@@ -21,9 +21,9 @@ ms.locfileid: "70886392"
 
 [!INCLUDE [Security controls Header](../../includes/security-controls-header.md)]
 
-## <a name="network"></a>Network
+## <a name="network"></a>Сеть
 
-| Управление безопасностью | Да или нет | Примечания |
+| Управление безопасностью | Да/нет | Примечания |
 |---|---|--|
 | Поддержка конечных точек службы| Н/Д | |
 | Поддержка внедрения виртуальной сети| Н/Д | |
@@ -32,24 +32,24 @@ ms.locfileid: "70886392"
 
 ## <a name="monitoring--logging"></a>Мониторинг & ведения журнала
 
-| Управление безопасностью | Да или нет | Примечания|
+| Управление безопасностью | Да/нет | Примечания|
 |---|---|--|
 | Поддержка мониторинга Azure (log Analytics, App Insights и т. д.)| Да | См. раздел [Azure Monitor журналов диагностики/оповещений](vpn-gateway-howto-setup-alerts-virtual-network-gateway-log.md) & [Azure Monitor метрики/оповещение](vpn-gateway-howto-setup-alerts-virtual-network-gateway-metric.md).  |
 | Ведение журнала и аудит в плоскости управления и управления| Да | Azure Resource Manager журнал действий. |
 | Ведение журнала и аудит в плоскости данных | Да | [Azure Monitor журналы диагностики](../azure-resource-manager/resource-group-audit.md) для ведения журнала и аудита VPN-подключений. |
 
-## <a name="identity"></a>идентификации
+## <a name="identity"></a>Удостоверение
 
-| Управление безопасностью | Да или нет | Примечания|
+| Управление безопасностью | Да/нет | Примечания|
 |---|---|--|
 | Проверка подлинности| Да | [Azure Active Directory](../active-directory/fundamentals/active-directory-whatis.md) для управления службой и настройки VPN-шлюза Azure. |
-| Authorization| Да | Поддержка авторизации через [RBAC](../role-based-access-control/overview.md). |
+| Авторизация| Да | Поддержка авторизации через [RBAC](../role-based-access-control/overview.md). |
 
 ## <a name="data-protection"></a>Защита данных
 
-| Управление безопасностью | Да или нет | Примечания |
+| Управление безопасностью | Да/нет | Примечания |
 |---|---|--|
-| Шифрование неактивных на стороне сервера: Ключи, управляемые корпорацией Майкрософт | Н/Д | VPN-шлюз, транзитный данные клиента, не хранит данные клиента |
+| Шифрование неактивных на стороне сервера: ключи, управляемые корпорацией Майкрософт | Н/Д | VPN-шлюз, транзитный данные клиента, не хранит данные клиента |
 | Шифрование при передаче (например, шифрование ExpressRoute, Шифрование виртуальной сети и шифрование виртуальной сети)| Да | VPN-шлюз шифрует клиентские пакеты между VPN-шлюзами Azure и локальными VPN-устройствами (S2S) или VPN-клиентами (P2S). VPN-шлюзы также поддерживают шифрование между виртуальными сетями. |
 | Шифрование неактивных на стороне сервера: ключи, управляемые клиентом (BYOK) | Нет | Указанные клиентом общие ключи шифруются при хранении; но еще не интегрирована с CMK. |
 | Шифрование на уровне столбцов (службы данных Azure)| Н/Д | |
@@ -57,10 +57,10 @@ ms.locfileid: "70886392"
 
 ## <a name="configuration-management"></a>Управление конфигурацией
 
-| Управление безопасностью | Да или нет | Примечания|
+| Управление безопасностью | Да/нет | Примечания|
 |---|---|--|
 | Поддержка управления конфигурацией (управление версиями конфигураций и т. д.)| Да | Для операций управления состояние конфигурации VPN-шлюза Azure можно экспортировать как шаблон Azure Resource Manager и с течением времени с управлением версиями. | 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о [встроенных средствах управления безопасностью в службах Azure](../security/fundamentals/security-controls.md).

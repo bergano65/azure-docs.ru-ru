@@ -2,25 +2,17 @@
 title: 'VPN-шлюз: изменение параметров IP-адреса шлюза: портал Azure'
 description: Из этой статьи вы узнаете, как изменять префиксы IP-адресов для шлюза локальной сети с помощью портала Azure.
 services: vpn-gateway
-documentationcenter: na
 author: cherylmc
-manager: timlt
-editor: ''
-tags: azure-resource-manager
-ms.assetid: ''
 ms.service: vpn-gateway
-ms.devlang: na
 ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: infrastructure-services
 ms.date: 06/19/2017
 ms.author: cherylmc
-ms.openlocfilehash: 3a59f618536d44e838bf840264e70b0b2a43cced
-ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
+ms.openlocfilehash: fdb98242cede36f818604a7a5d713f5f7c75daad
+ms.sourcegitcommit: 12a26f6682bfd1e264268b5d866547358728cd9a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74014908"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75864032"
 ---
 # <a name="modify-local-network-gateway-settings-using-the-azure-portal"></a>Изменение параметров шлюза локальной сети с помощью портала Azure
 
@@ -29,9 +21,9 @@ ms.locfileid: "74014908"
 Прежде чем удалить подключение, можно скачать конфигурацию для подключения устройств, чтобы получить определенный ключ PSK. Таким образом, не потребуется переопределять его на другой стороне.
 
 > [!div class="op_single_selector"]
-> * [портал Azure](vpn-gateway-modify-local-network-gateway-portal.md)
+> * [Портал Azure](vpn-gateway-modify-local-network-gateway-portal.md)
 > * [PowerShell](vpn-gateway-modify-local-network-gateway.md)
-> * [Интерфейс командной строки Azure](vpn-gateway-modify-local-network-gateway-cli.md)
+> * [Azure CLI](vpn-gateway-modify-local-network-gateway-cli.md)
 >
 >
 
@@ -48,6 +40,6 @@ ms.locfileid: "74014908"
 
 [!INCLUDE [modify gateway IP](../../includes/vpn-gateway-modify-lng-gateway-ip-portal-include.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Проверьте подключение шлюза. См. статью [Проверка подключения шлюза](vpn-gateway-verify-connection-resource-manager.md).

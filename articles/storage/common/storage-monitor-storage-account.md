@@ -4,16 +4,16 @@ description: Выполнение мониторинга учетной запи
 author: normesta
 ms.service: storage
 ms.topic: conceptual
-ms.date: 07/31/2018
+ms.date: 01/09/2020
 ms.author: normesta
 ms.reviewer: fryu
 ms.subservice: common
-ms.openlocfilehash: 143574ff02960fcd0fd33ccaed5a80a9bb4f3147
-ms.sourcegitcommit: 7df70220062f1f09738f113f860fad7ab5736e88
+ms.openlocfilehash: e9ef700e45acc55f476d72883107b0c5c958fa7f
+ms.sourcegitcommit: 12a26f6682bfd1e264268b5d866547358728cd9a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71211858"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75862838"
 ---
 # <a name="monitor-a-storage-account-in-the-azure-portal"></a>Мониторинг учетной записи хранения на портале Azure
 
@@ -53,7 +53,7 @@ ms.locfileid: "71211858"
 Можно отключить сбор метрик и ведение журнала, задав для параметра **Состояние** значение **Откл**.
 
 > [!NOTE]
-> Служба хранилища Azure использует [хранилище таблиц](storage-introduction.md#table-storage) для хранения метрик вашей учетной записи хранения и хранит метрики в таблицах, расположенных в вашей учетной записи. Дополнительные сведения можно найти в разделе [Как хранятся метрики](storage-analytics-metrics.md#how-metrics-are-stored).
+> Служба хранилища Azure использует [хранилище таблиц](storage-introduction.md#table-storage) для хранения метрик вашей учетной записи хранения и хранит метрики в таблицах, расположенных в вашей учетной записи. Дополнительные сведения см. в разделе [Как хранятся метрики](storage-analytics-metrics.md#how-metrics-are-stored).
 >
 
 ## <a name="customize-metrics-charts"></a>Настройка диаграмм метрик
@@ -129,19 +129,19 @@ ms.locfileid: "71211858"
 >
 
 1. На [портале Azure](https://portal.azure.com) выберите **Учетные записи хранения**, а затем щелкните имя учетной записи хранения, чтобы открыть ее колонку.
-1. В колонке меню в разделе **Мониторинг** щелкните **Диагностика**.
+1. Выберите **параметры диагностики (классическая модель)** в разделе **мониторинг (классический)** в колонке меню.
 
     ![Пункт меню "Диагностика" в разделе "Мониторинг" на портале Azure](./media/storage-monitor-storage-account/storage-enable-metrics-00.png)
 
 1. Убедитесь, что параметр **Состояние** имеет значение **Вкл.** , и выберите **службы**, для которых нужно включить ведение журнала.
 
     ![Настройка ведения журнала на портале Azure](./media/storage-monitor-storage-account/enable-diagnostics.png)
-1. Нажмите кнопку **Сохранить**.
+1. Выберите команду **Сохранить**.
 
 Журналы диагностики сохраняются в контейнере BLOB-объектов с именем *$logs* в вашей учетной записи хранения. Можно просмотреть данные журнала с помощью обозревателя хранилищ, например [Microsoft Storage Explorer](https://storageexplorer.com), или программно, с помощью клиентской библиотеки службы хранилища или PowerShell.
 
 Сведения о доступе к контейнеру $logs см. в разделе [ведение журнала аналитики хранилища](storage-analytics-logging.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения о [метриках, ведении журнала и выставлении счетов](storage-analytics.md) для аналитики службы хранилища.

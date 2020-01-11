@@ -1,25 +1,19 @@
 ---
-title: Устранение проблемы периодических разрывов подключений VPN типа "сеть — сеть" Azure | Документация Майкрософт
+title: Временное устранение неполадок при подключении VPN типа "сеть — сеть" Azure
 description: Сведения об устранении регулярных разрывов подключений VPN типа "сеть — сеть".
 services: vpn-gateway
-documentationcenter: na
+titleSuffix: Azure VPN Gateway
 author: chadmath
-manager: dcscontentpm
-editor: ''
-tags: ''
 ms.service: vpn-gateway
-ms.devlang: na
 ms.topic: troubleshooting
-ms.tgt_pltfrm: na
-ms.workload: infrastructure-services
 ms.date: 10/30/2018
 ms.author: genli
-ms.openlocfilehash: 394062257f09bb0b8cfa6875795b88d35404f87c
-ms.sourcegitcommit: ca359c0c2dd7a0229f73ba11a690e3384d198f40
+ms.openlocfilehash: 82054099a5a496e99c49135ab98ee1163af19784
+ms.sourcegitcommit: 12a26f6682bfd1e264268b5d866547358728cd9a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71058837"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75862566"
 ---
 # <a name="troubleshooting-azure-site-to-site-vpn-disconnects-intermittently"></a>Устранение проблемы периодических разрывов подключений VPN типа "сеть — сеть" Azure
 
@@ -70,7 +64,7 @@ ms.locfileid: "71058837"
 
 Функция **полной безопасности пересылки** (PFS) может вызвать проблемы отключения. Если для VPN-устройства включена функция **полной безопасности пересылки** (PFS), отключите эту функцию. Затем [обновите политику IPsec шлюза виртуальной сети](vpn-gateway-ipsecikepolicy-rm-powershell.md#managepolicy).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Создание подключения типа "сеть — сеть" на портале Azure](vpn-gateway-howto-site-to-site-resource-manager-portal.md)
 - [Настройка политики IPsec/IKE для VPN-подключений типа "сеть — сеть" или "виртуальная сеть — виртуальная сеть"](vpn-gateway-ipsecikepolicy-rm-powershell.md)

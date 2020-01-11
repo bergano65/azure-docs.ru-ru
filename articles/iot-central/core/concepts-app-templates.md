@@ -7,12 +7,12 @@ ms.date: 10/25/2019
 ms.topic: conceptual
 ms.service: iot-central
 services: iot-central
-ms.openlocfilehash: 85d882cff968c9b68ece104e850a7f16c33947b2
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 12c624c6798ca48cad9312cafaf3425091a82a71
+ms.sourcegitcommit: 12a26f6682bfd1e264268b5d866547358728cd9a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75435103"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75867456"
 ---
 # <a name="what-are-application-templates"></a>Что представляют собой шаблоны приложений?
 
@@ -42,6 +42,7 @@ ms.locfileid: "75435103"
 - Розничный > Digital Distribution Center
 - Аналитика розничных > в магазине — мониторинг условий
 - Аналитика розничных > в магазине — извлечение
+- Центр розничной > Micro-выполнения
 - Управление интеллектуальным складом розничной торговли >
 - Интеллектуальный мониторинг энергопотребления энергии >
 - Мониторинг > солнечных панелей Energy

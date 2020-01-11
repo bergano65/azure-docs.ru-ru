@@ -11,13 +11,13 @@ ms.service: dms
 ms.workload: data-services
 ms.custom: seo-lt-2019
 ms.topic: article
-ms.date: 01/08/2020
-ms.openlocfilehash: 88bc90a50fb9579e29b8b31b4be23052275b2b28
-ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
+ms.date: 01/10/2020
+ms.openlocfilehash: e9a24daeeab906419416a3a10fda901c91d9fb33
+ms.sourcegitcommit: 12a26f6682bfd1e264268b5d866547358728cd9a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75746848"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75863229"
 ---
 # <a name="tutorial-migrate-sql-server-to-an-azure-sql-database-managed-instance-online-using-dms"></a>Руководство. Миграция SQL Server в управляемый экземпляр базы данных SQL Azure в сети с помощью DMS
 
@@ -44,7 +44,7 @@ Azure Database Migration Service можно использовать для пе
 > Чтобы процесс миграции был выполнен без проблем, корпорация Майкрософт рекомендует создать экземпляр Azure Database Migration Service в том же регионе Azure, в котором размещена целевая база данных. Перемещение данных между регионами и географическими областями может замедлить процесс миграции и привести к ошибкам.
 
 > [!IMPORTANT]
-> Важно уменьшить продолжительность процесса оперативной миграции, чтобы свести к сведению снижение риска, вызванного переконфигурацией экземпляра или плановым обслуживанием. В случае такого события процесс миграции начнется с самого начала. В случае планового обслуживания существует льготный период в 36 часов до перезапуска процесса миграции.
+> Сократите продолжительность процесса оперативной миграции настолько, насколько это возможно, чтобы свести к сведению риск перенастройки экземпляра или планового обслуживания. В случае такого события процесс миграции начнется с самого начала. В случае планового обслуживания существует льготный период в 36 часов до перезапуска процесса миграции.
 
 [!INCLUDE [online-offline](../../includes/database-migration-service-offline-online.md)]
 
@@ -70,7 +70,7 @@ Azure Database Migration Service можно использовать для пе
     > [!IMPORTANT]
     > В отношении учетной записи хранения, используемой в процессе миграции, необходимо:
     > * разрешить всем сетям доступ к учетной записи хранения;
-    > * Настройка списков управления доступом для виртуальной сети. Дополнительные сведения см. в статье [Configure Azure Storage firewalls and virtual networks](https://docs.microsoft.com/azure/storage/common/storage-network-security) (Настройка брандмауэров службы хранилища Azure и виртуальных сетей).
+    > * Включите [Делегирование подсети](https://docs.microsoft.com/azure/virtual-network/manage-subnet-delegation) в подсети MI и обновите правила брандмауэра для учетной записи хранения, чтобы разрешить эту подсеть.
 
 * Убедитесь, что правила группы безопасности сети виртуальной сети не блокируют следующие порты входящих подключений для Azure Database Migration Service: 443, 53, 9354, 445, 12000. Дополнительные сведения о фильтрации трафика NSG в виртуальной сети см. в статье [Фильтрация сетевого трафика с помощью групп безопасности сети](https://docs.microsoft.com/azure/virtual-network/virtual-networks-nsg).
 * Настройте [брандмауэр Windows для доступа к ядру исходной СУБД](https://docs.microsoft.com/sql/database-engine/configure-windows/configure-a-windows-firewall-for-database-engine-access).
@@ -208,7 +208,7 @@ Azure Database Migration Service можно использовать для пе
 
     | | |
     |--------|---------|
-    |**SMB Network location share** (Общая сетевая папка SMB) | Локальная сетевая папка SMB или общая папка Azure, содержащая файлы резервных копий базы данных и файлы резервных копий журнала транзакций, которые могут использоваться службой Azure Database Migration Service для миграции. Учетная запись службы, в которой выполняется исходный экземпляр SQL Server, должна иметь права записи и чтения для этой сетевой папки. Укажите полное доменное имя или IP-адрес сервера и сетевую папку, например "\\\servername.domainname.com\backupfolder" или "\\\IP address\backupfolder".|
+    |**SMB Network location share** (Общая сетевая папка SMB) | Локальная сетевая папка SMB или общая папка Azure, содержащая файлы резервных копий базы данных и файлы резервных копий журнала транзакций, которые могут использоваться службой Azure Database Migration Service для миграции. Учетная запись службы, в которой выполняется исходный экземпляр SQL Server, должна иметь права записи и чтения для этой сетевой папки. Укажите полное доменное имя или IP-адрес сервера и сетевую папку, например "\\\servername.domainname.com\backupfolder" или "\\\IP address\backupfolder". Для повышения производительности рекомендуется использовать отдельную папку для каждой переносимой базы данных. Путь к общей папке на уровне базы данных можно указать с помощью параметра **Дополнительные параметры** . |
     |**User name** | Убедитесь, что пользователь Windows имеет полное право доступа к указанной ранее сетевой папке. Azure Database Migration Service выполнит олицетворение учетных данных пользователя, чтобы отправить файлы резервных копий в контейнер службы хранилища Azure для операции восстановления. При использовании файлового ресурса Azure следует использовать имя учетной записи хранения, предварительно указав в качестве имени пользователя AZURE\. |
     |**Пароль** | Пароль для пользователя Если используется общая папка Azure, в качестве пароля следует указать ключ учетной записи хранения. |
     |**Subscription of the Azure Storage Account** (Подписка учетной записи хранения Azure) | Выберите подписку, которая содержит учетную запись хранения Azure. |
@@ -216,10 +216,11 @@ Azure Database Migration Service можно использовать для пе
 
     ![Настройка параметров миграции](media/tutorial-sql-server-to-managed-instance-online/dms-configure-migration-settings4.png)
 
+    > [!NOTE]
+    > Если Azure Database Migration Service отображается ошибка "системная ошибка 53" или "системная ошибка 57", причина может быть вызвана невозможностью Azure Database Migration Service доступа к файловому ресурсу Azure. При возникновении таких ошибок [предоставьте доступ к хранилищу учетной записи из виртуальной сети](https://docs.microsoft.com/azure/storage/common/storage-network-security?toc=%2fazure%2fvirtual-network%2ftoc.json#grant-access-from-a-virtual-network).
 
-> [!NOTE]
-  > Возможной причиной появления в Azure Database Migration Service ошибок "системная ошибка 53" или "системная ошибка 57" может быть невозможность доступа Azure Database Migration Service к общей папке Azure. При возникновении таких ошибок [предоставьте доступ к хранилищу учетной записи из виртуальной сети](https://docs.microsoft.com/azure/storage/common/storage-network-security?toc=%2fazure%2fvirtual-network%2ftoc.json#grant-access-from-a-virtual-network).
-
+    > [!IMPORTANT]
+    > Если функция проверки замыкания на себя включена и исходная SQL Server и общая папка находятся на одном и том же компьютере, источник не сможет получить доступ к файлам, Сурса с помощью полного доменного имени. Чтобы устранить эту проблему, отключите функцию проверки замыкания на себя с помощью приведенных [здесь](https://support.microsoft.com/help/926642/error-message-when-you-try-to-access-a-server-locally-by-using-its-fqd)инструкций.
 
 2. Щелкните **Сохранить**.
 

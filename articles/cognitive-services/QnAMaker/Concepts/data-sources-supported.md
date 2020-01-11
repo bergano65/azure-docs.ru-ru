@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: conceptual
-ms.date: 09/25/2019
+ms.date: 01/09/2020
 ms.author: diberry
-ms.openlocfilehash: 7f51021df2234438eb81a29887a714b0f09d0998
-ms.sourcegitcommit: 5925df3bcc362c8463b76af3f57c254148ac63e3
+ms.openlocfilehash: 2978ffa68814d176ea1caf485e7e4f1ba72f2597
+ms.sourcegitcommit: 12a26f6682bfd1e264268b5d866547358728cd9a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75563196"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75867576"
 ---
 # <a name="data-sources-for-qna-maker-content"></a>Источники данных для содержимого QnA Maker
 
@@ -188,35 +188,7 @@ Answer2
 
 Если вы добавляете или изменяете содержимое непосредственно в своей базе знаний, используйте **Форматирование Markdown** для создания форматированного текста или изменения содержимого формата Markdown, которое уже находится в ответе. QnA Maker поддерживает большую часть формата Markdown, чтобы обеспечить широкие возможности работы с текстом в содержимом. Однако клиентское приложение, например Bot чата, может не поддерживать одинаковый набор форматов Markdown. Важно протестировать отображение ответов клиентского приложения.
 
-Ниже приведен список форматов Markdown, которые можно использовать в QnA Maker.
-
-|Цель|Формат|Пример разметки|Отрисовка<br>как отображается в чате чата|
-|--|--|--|--|
-Новая строка из двух предложений.|`\n\n`|`How can I create a bot with \n\n QnA Maker?`|![форматировать новую строку между двумя предложениями](../media/qnamaker-concepts-datasources/format-newline.png)|
-|Заголовки от H1 до H6, количество `#` указывает, какой заголовок. 1 `#` является H1.|`\n# text \n## text \n### text \n####text \n#####text` |`## Creating a bot \n ...text.... \n### Important news\n ...text... \n### Related Information\n ....text...`<br><br>`\n# my h1 \n## my h2\n### my h3 \n#### my h4 \n##### my h5`|![формат с заголовками Markdown](../media/qnamaker-concepts-datasources/format-headers.png)<br>![формат с заголовками Markdown от H1 до H5](../media/qnamaker-concepts-datasources/format-h1-h5.png)|
-|Курсив |`*text*`|`How do I create a bot with *QnA Maker*?`|![форматировать курсивом](../media/qnamaker-concepts-datasources/format-italics.png)|
-|Строка (полужирный)|`**text**`|`How do I create a bot with **QnA Maker**?`|![формат с усиленной маркировкой для полужирного шрифта](../media/qnamaker-concepts-datasources/format-strong.png)|
-|URL-адрес для ссылки|`[text](https://www.my.com)`|`How do I create a bot with [QnA Maker](https://www.qnamaker.ai)?`|![формат URL-адреса (гиперссылка)](../media/qnamaker-concepts-datasources/format-url.png)|
-|\* URL-адрес для общедоступного образа|`![text](https://www.my.com/image.png)`|`How can I create a bot with ![QnAMaker](https://review.docs.microsoft.com/azure/cognitive-services/qnamaker/media/qnamaker-how-to-key-management/qnamaker-resource-list.png)`|![формат URL-адреса общедоступного образа ](../media/qnamaker-concepts-datasources/format-image-url.png)|
-|Зачеркнутый|`~~text~~`|`some ~~questoins~~ questions need to be asked`|![формат для зачеркивания](../media/qnamaker-concepts-datasources/format-strikethrough.png)|
-|Полужирный и курсив|`***text***`|`How can I create a ***QnA Maker*** bot?`|![формат для полужирного шрифта и курсива](../media/qnamaker-concepts-datasources/format-bold-italics.png)|
-|Полужирный URL-адрес для ссылки|`[**text**](https://www.my.com)`|`How do I create a bot with [**QnA Maker**](https://www.qnamaker.ai)?`|![формат для URL-адреса полужирного шрифта](../media/qnamaker-concepts-datasources/format-bold-url.png)|
-|URL-адрес курсивов для ссылки|`[*text*](https://www.my.com)`|`How do I create a bot with [*QnA Maker*](https://www.qnamaker.ai)?`|![формат URL-адреса курсивов](../media/qnamaker-concepts-datasources/format-url-italics.png)|
-|Escape-символы Markdown|`\*text\*`|`How do I create a bot with \*QnA Maker\*?`|![формат URL-адреса курсивов](../media/qnamaker-concepts-datasources/format-escape-markdown-symbols.png)|
-|упорядоченный список|`\n 1. item1 \n 1. item2`|`This is an ordered list: \n 1. List item 1 \n 1. List item 2`<br>В предыдущем примере используется автоматическая нумерация, встроенная в Markdown.<br>`This is an ordered list: \n 1. List item 1 \n 2. List item 2`<br>В предыдущем примере используется явная нумерация.|![формат упорядоченного списка](../media/qnamaker-concepts-datasources/format-ordered-list.png)|
-|Неупорядоченный список|`\n * item1 \n * item2`<br>или<br>`\n - item1 \n - item2`|`This is an ordered list: \n * List item 1 \n * List item 2`|![формат неупорядоченного списка](../media/qnamaker-concepts-datasources/format-unordered-list.png)|
-|Вложенные списки|`\n * Parent1 \n\t * Child1 \n\t * Child2 \n * Parent2`<br><br>`\n * Parent1 \n\t 1. Child1 \n\t * Child2 \n 1. Parent2`<br><br>Упорядоченные и неупорядоченные списки можно вкладывать вместе. Вкладка `\t`указывает уровень отступа дочернего элемента.|`This is an unordered list: \n * List item 1 \n\t * Child1 \n\t * Child2 \n * List item 2`<br><br>`This is an ordered nested list: \n 1. Parent1 \n\t 1. Child1 \n\t 1. Child2 \n 1. Parent2`|![формат вложенного неупорядоченного списка](../media/qnamaker-concepts-datasources/format-nested-unordered-list.png)<br>![формат вложенного упорядоченного списка](../media/qnamaker-concepts-datasources/format-nested-ordered-list.png)|
-
-\* QnA Maker не обрабатывает образ каким бы то ни было образом. Это роль клиентского приложения для отрисовки образа.
-
-Если требуется добавить содержимое с помощью API обновления или замены базы знаний, а содержимое или файл содержит теги HTML, можно сохранить HTML в файле, убедившись, что открытие и закрытие тегов преобразуются в закодированном формате.
-
-| Сохранить HTML  | Представление в запросе API  | Представление в КБ |
-|-----------|---------|-------------------------|
-| Да | \&lt; br\&gt; | &gt; &lt;br |
-| Да | \&lt; H3\&gt; Header\&lt;/H3\&gt; | &lt;заголовок&gt;H3&lt;/H3&gt; |
-
-Кроме того, CR LF (\r\n) преобразуется в значение \n в КИЛОБАЙТах. LF (\n) сохраняется как есть. Если вы хотите экранировать любую escape-последовательность, например \t или \n, можно использовать обратную косую черту, например: "\\\\r\\\\n" и "\\\\t"
+Дополнительные сведения см. в примерах Markdown, приведенных в [справочнике по QnA Maker Markdown](../reference-markdown-format.md) .
 
 ## <a name="editing-your-knowledge-base-locally"></a>Локальное изменение базы знаний
 

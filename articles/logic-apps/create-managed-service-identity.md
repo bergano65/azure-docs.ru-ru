@@ -6,12 +6,12 @@ ms.suite: integration
 ms.reviewer: klam, logicappspm
 ms.topic: article
 ms.date: 10/21/2019
-ms.openlocfilehash: 49c925cfe61084d8fedfdf953d469db4bd2c10b1
-ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
+ms.openlocfilehash: 714faa43f34de965055ceba80de08972dd4192ac
+ms.sourcegitcommit: 12a26f6682bfd1e264268b5d866547358728cd9a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74792678"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75861206"
 ---
 # <a name="authenticate-access-to-azure-resources-by-using-managed-identities-in-azure-logic-apps"></a>Проверка подлинности доступа к ресурсам Azure с помощью управляемых удостоверений в Azure Logic Apps
 
@@ -42,8 +42,6 @@ ms.locfileid: "74792678"
 
 * [Портал Azure](#azure-portal-system-logic-app)
 * [Шаблоны диспетчера ресурсов Azure](#template-system-logic-app)
-* [Azure PowerShell](../active-directory/managed-identities-azure-resources/howto-assign-access-powershell.md)
-* [Azure CLI](../active-directory/managed-identities-azure-resources/howto-assign-access-cli.md)
 
 <a name="azure-portal-system-logic-app"></a>
 
@@ -59,7 +57,7 @@ ms.locfileid: "74792678"
 
    ![Идентификатор объекта для назначенного системой удостоверения](./media/create-managed-service-identity/object-id.png)
 
-   | Свойство | Value | Описание |
+   | Свойство | Значение | Description |
    |----------|-------|-------------|
    | **Идентификатор объекта** | <*identity-resource-ID*> | Глобальный уникальный идентификатор (GUID), представляющий назначенное системой удостоверение для приложения логики в клиенте Azure AD. |
    ||||
@@ -105,7 +103,7 @@ ms.locfileid: "74792678"
 }
 ```
 
-| Свойство (JSON) | Value | Описание |
+| Property (JSON) | Значение | Description |
 |-----------------|-------|-------------|
 | `principalId` | <*ИД субъекта*> | Глобальный уникальный идентификатор (GUID) объекта субъекта-службы для управляемого удостоверения, представляющего ваше приложение логики в клиенте Azure AD. Этот идентификатор GUID иногда отображается как "идентификатор объекта" или `objectID`. |
 | `tenantId` | <*ИД клиента Azure AD*> | Глобальный уникальный идентификатор (GUID), представляющий клиент Azure AD, в который теперь входит приложение логики. В клиенте Azure AD субъект-служба имеет то же имя, что и экземпляр приложения логики. |
@@ -115,7 +113,17 @@ ms.locfileid: "74792678"
 
 ## <a name="give-identity-access-to-resources"></a>Предоставление удостоверениям доступа к ресурсам
 
-После настройки управляемого удостоверения для приложения логики можно [предоставить этому удостоверению доступ к другим ресурсам Azure](../active-directory/managed-identities-azure-resources/howto-assign-access-portal.md). Затем это удостоверение можно использовать для проверки подлинности.
+Прежде чем использовать управляемое удостоверение, назначенное системой для приложения логики для проверки подлинности, предоставьте этому удостоверению доступ к ресурсу Azure, где вы планируете использовать удостоверение. Чтобы выполнить эту задачу, назначьте удостоверение соответствующей роли в целевом ресурсе Azure. Ниже приведены параметры, которые можно использовать.
+
+* [Портал Azure](#azure-portal-assign-access)
+* [Шаблон Azure Resource Manager](../role-based-access-control/role-assignments-template.md)
+* Azure PowerShell ([New-азролеассигнмент](https://docs.microsoft.com/powershell/module/az.resources/new-azroleassignment)). Дополнительные сведения см. в статье [Добавление назначения ролей с помощью Azure RBAC и Azure PowerShell](../role-based-access-control/role-assignments-powershell.md).
+* Azure CLI ([AZ Role назначение роли](https://docs.microsoft.com/cli/azure/role/assignment?view=azure-cli-latest#az-role-assignment-create)). Дополнительные сведения см. в статье [Добавление назначения ролей с помощью Azure RBAC и Azure CLI](../role-based-access-control/role-assignments-cli.md).
+* [Azure REST API](../role-based-access-control/role-assignments-rest.md)
+
+<a name="azure-portal-assign-access"></a>
+
+### <a name="assign-access-in-the-azure-portal"></a>Назначение доступа в портал Azure
 
 1. В [портал Azure](https://portal.azure.com)перейдите к ресурсу Azure, в котором вы хотите, чтобы управляемое удостоверение имело доступ.
 
@@ -165,13 +173,13 @@ ms.locfileid: "74792678"
 
    Например, триггер или действие HTTP могут использовать назначенное системой удостоверение, включенное для приложения логики. Как правило, триггер или действие HTTP используют эти свойства для указания ресурса или сущности, к которым требуется получить доступ.
 
-   | Свойство | Обязательно для заполнения | Описание |
+   | Свойство | Обязательно для заполнения | Description |
    |----------|----------|-------------|
-   | **Метод** | ДА | Метод HTTP, используемый операцией, которую необходимо выполнить |
-   | **URI** | ДА | URL-адрес конечной точки для доступа к целевому ресурсу или сущности Azure. Синтаксис URI обычно включает [идентификатор ресурса](../active-directory/managed-identities-azure-resources/services-support-managed-identities.md#azure-services-that-support-azure-ad-authentication) для ресурса или службы Azure. |
+   | **Метод** | Да | Метод HTTP, используемый операцией, которую необходимо выполнить |
+   | **URI** | Да | URL-адрес конечной точки для доступа к целевому ресурсу или сущности Azure. Синтаксис URI обычно включает [идентификатор ресурса](../active-directory/managed-identities-azure-resources/services-support-managed-identities.md#azure-services-that-support-azure-ad-authentication) для ресурса или службы Azure. |
    | **Заголовки** | Нет | Любые значения заголовка, которые требуется включить в исходящий запрос, например тип содержимого |
    | **Запросы** | Нет | Любые параметры запроса, которые требуется включить в запрос, например параметр для определенной операции или версия API для операции, которую требуется выполнить. |
-   | **Authentication** (Аутентификация) | ДА | Тип проверки подлинности, используемый для проверки подлинности доступа к целевому ресурсу или сущности |
+   | **Аутентификация** | Да | Тип проверки подлинности, используемый для проверки подлинности доступа к целевому ресурсу или сущности |
    ||||
 
    В качестве конкретного примера предположим, что вы хотите выполнить [операцию создания BLOB-объекта моментального снимка](https://docs.microsoft.com/rest/api/storageservices/snapshot-blob) в большом двоичном объекте в учетной записи хранения Azure, где вы ранее настроили доступ к удостоверению. Однако [соединитель хранилища BLOB-объектов Azure](https://docs.microsoft.com/connectors/azureblob/) в настоящее время не поддерживает эту операцию. Вместо этого эту операцию можно выполнить с помощью [действия HTTP](../logic-apps/logic-apps-workflow-actions-triggers.md#http-action) или другой [службы Blob-объектов REST API операции](https://docs.microsoft.com/rest/api/storageservices/operations-on-blobs).
@@ -181,13 +189,13 @@ ms.locfileid: "74792678"
 
    Чтобы запустить [операцию создания BLOB-объекта моментальных снимков](https://docs.microsoft.com/rest/api/storageservices/snapshot-blob), в действии HTTP указываются следующие свойства:
 
-   | Свойство | Обязательно для заполнения | Пример значения | Описание |
+   | Свойство | Обязательно для заполнения | Пример значения | Description |
    |----------|----------|---------------|-------------|
-   | **Метод** | ДА | `PUT`| Метод HTTP, используемый операцией BLOB-объекта моментального снимка |
-   | **URI** | ДА | `https://{storage-account-name}.blob.core.windows.net/{blob-container-name}/{folder-name-if-any}/{blob-file-name-with-extension}` | Идентификатор ресурса для файла хранилища BLOB-объектов Azure в глобальной (общедоступной) среде Azure, которая использует этот синтаксис. |
+   | **Метод** | Да | `PUT`| Метод HTTP, используемый операцией BLOB-объекта моментального снимка |
+   | **URI** | Да | `https://{storage-account-name}.blob.core.windows.net/{blob-container-name}/{folder-name-if-any}/{blob-file-name-with-extension}` | Идентификатор ресурса для файла хранилища BLOB-объектов Azure в глобальной (общедоступной) среде Azure, которая использует этот синтаксис. |
    | **Заголовки** | Да, для службы хранилища Azure | `x-ms-blob-type` = `BlockBlob` <p>`x-ms-version` = `2019-02-02` | Значения заголовков `x-ms-blob-type` и `x-ms-version`, необходимые для операций службы хранилища Azure. <p><p>**Важно**. в исходящем триггере HTTP и запросах действий для службы хранилища Azure для заголовка требуется свойство `x-ms-version` и версия API для операции, которую требуется выполнить. <p>Дополнительные сведения см. в следующих статьях: <p><p>- [заголовков запроса — BLOB-объект моментальных снимков](https://docs.microsoft.com/rest/api/storageservices/snapshot-blob#request) <br>- [Управление версиями для служб хранилища Azure](https://docs.microsoft.com/rest/api/storageservices/versioning-for-the-azure-storage-services#specifying-service-versions-in-requests) |
    | **Запросы** | Да, для этой операции | `comp` = `snapshot` | Имя параметра запроса и значение для операции моментального снимка большого двоичного объекта. |
-   | **Authentication** (Аутентификация) | ДА | `Managed Identity` | Тип проверки подлинности, используемый для проверки подлинности доступа к большому двоичному объекту Azure |
+   | **Аутентификация** | Да | `Managed Identity` | Тип проверки подлинности, используемый для проверки подлинности доступа к большому двоичному объекту Azure |
    |||||
 
    Ниже приведен пример действия HTTP, в котором показаны все эти значения свойств.
@@ -228,7 +236,7 @@ ms.locfileid: "74792678"
 * [Портал Azure](#azure-portal-disable)
 * [Шаблоны диспетчера ресурсов Azure](#template-disable)
 * [Azure PowerShell](https://docs.microsoft.com/powershell/module/az.resources/remove-azroleassignment)
-* [Azure CLI](https://docs.microsoft.com/cli/azure/role/assignment?view=azure-cli-latest#az-role-assignment-delete)
+* [Azure CLI](https://docs.microsoft.com/cli/azure/role/assignment?view=azure-cli-latest#az-role-assignment-delete)
 
 Если вы удалите приложение логики, Azure автоматически удалит управляемое удостоверение из Azure AD.
 

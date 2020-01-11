@@ -8,12 +8,12 @@ ms.subservice: edge
 ms.topic: article
 ms.date: 09/26/2019
 ms.author: alkohli
-ms.openlocfilehash: 365507f482217bd804bbd5017d4dbbaf8c187ad2
-ms.sourcegitcommit: e9936171586b8d04b67457789ae7d530ec8deebe
+ms.openlocfilehash: 9e1a7f7cd2643aae61e60d77ad74f4a08266a977
+ms.sourcegitcommit: 12a26f6682bfd1e264268b5d866547358728cd9a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71326884"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75863603"
 ---
 # <a name="azure-data-box-edge-technical-specifications"></a>Технические спецификации Azure Data Box Edge
 
@@ -35,7 +35,7 @@ ms.locfileid: "71326884"
 
 | Спецификация           | Значение                  |
 |-------------------------|----------------------------|
-| ППВМ   | Intel Арриа 10 <br> Доступные модели глубокой нейронной сети (DNN) те же, что и в [облачных экземплярах FPGA](https://docs.microsoft.com/azure/machine-learning/service/how-to-deploy-fpga-web-service#whats-supported-on-azure).| 
+| ППВМ   | Intel Арриа 10 <br> Доступные модели глубокой нейронной сети (DNN) те же, что и в [облачных экземплярах FPGA](https://docs.microsoft.com/azure/machine-learning/how-to-deploy-fpga-web-service#whats-supported-on-azure).| 
 
 
 ## <a name="power-supply-unit-specifications"></a>Спецификации блока питания
@@ -44,7 +44,7 @@ ms.locfileid: "71326884"
 
 | Спецификация           | 750 ВТ                  |
 |-------------------------|----------------------------|
-| Максимальная выходная мощность    | 750 ВТ                     |
+| Максимальная выходная мощность    | 750 Вт                     |
 | Частота               | 50/60 Гц                   |
 | Выбор диапазона напряжения | Автоматический диапазон: 100-240 V AC |
 | «Горячая» замена           | Да                        |
@@ -64,7 +64,7 @@ The following table lists the typical power consumption data (actual values may 
 |    Общая емкость                          |    12,8 ТБ            |
 |    Общая доступная емкость*                  |    ~ 12,5 ТБ            |
 
-**Место для внутреннего использования зарезервировано.*
+**место зарезервировано для внутреннего использования.*
 
 ## <a name="enclosure-dimensions-and-weight-specifications"></a>Спецификации веса и размеров корпуса
 
@@ -76,7 +76,7 @@ The following table lists the typical power consumption data (actual values may 
 
 |     Корпус     |     Миллиметры     |     Дюймы     |
 |-------------------|---------------------|----------------|
-|    Высота         |    44,45            |    1,75 "          |
+|    Высота:         |    44,45            |    1,75 "          |
 |    Ширина          |    434,1           |    17,09 "          |
 |    Длина          |    740,4           |    29,15 "          |
 
@@ -84,7 +84,7 @@ The following table lists the typical power consumption data (actual values may 
 
 |     Пакет     |     Миллиметры     |     Дюймы     |
 |-------------------|---------------------|----------------|
-|    Высота         |    311,2            |    12,25"          |
+|    Высота:         |    311,2            |    12,25"          |
 |    Ширина          |    642,8          |    25,31"          |
 |    Длина          |   1051,1          |    41,38"          |
 
@@ -105,7 +105,7 @@ The following table lists the typical power consumption data (actual values may 
 
 |     Корпус         |     Диапазон температуры окружающей среды     |     Относительная влажность окружающей среды     |     Максимальная температура точки росы     |
 |-----------------------|--------------------------------------|--------------------------------------|---------------------------|
-|    Рабочие        |    10 °C — 35 °C (50 ° F-86 ° F)         |    10%-80% без конденсации.         |    29° C (84° F)            |
+|    Операционный        |    10 °C — 35 °C (50 ° F-86 ° F)         |    10%-80% без конденсации.         |    29° C (84° F)            |
 |    Выключенное состояние    |    от-40 °C до 65 °C (-40 ° F-149 ° F)     |    5%-95% без конденсации.          |    33 °C (91 °F)            |
 
 ### <a name="airflow-altitude-shock-vibration-orientation-safety-and-emc"></a>Воздушный поток, высота над уровнем моря, ударопрочность, чувствительность к вибрации, ориентация, безопасность и электромагнитная совместимость
@@ -135,6 +135,6 @@ The following table lists the typical power consumption data (actual values may 
 |    от 40 °C до 45 °C (104 ° F до 113 ° F)           |    Максимальная температура уменьшается на 1 °C/125 м (1 ° F/228 футов) выше 950 м (3 117 футов).    |
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Руководство. Подготовка к развертыванию Azure Data Box Edge (предварительная версия)](data-box-edge-deploy-prep.md)

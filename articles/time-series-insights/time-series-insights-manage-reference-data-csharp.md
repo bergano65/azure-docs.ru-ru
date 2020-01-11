@@ -11,12 +11,12 @@ ms.workload: big-data
 ms.topic: conceptual
 ms.date: 10/03/2019
 ms.custom: seodec18
-ms.openlocfilehash: ebc616d07c24a02b71010e315f288543dfd92b74
-ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
+ms.openlocfilehash: 964a3865fcb646a52822286e809703d507304ca6
+ms.sourcegitcommit: 12a26f6682bfd1e264268b5d866547358728cd9a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74705953"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75861886"
 ---
 # <a name="manage-ga-reference-data-for-an-azure-time-series-insights-environment-by-using-c"></a>Управление эталонными данными на основе общедоступной версии для среды службы "аналитика временных рядов Azure" с помощьюC#
 
@@ -30,7 +30,7 @@ ms.locfileid: "74705953"
 
 1. Настройте маркер доступа для приложения. Маркер доступа получен через API Azure Active Directory. Этот маркер должен передаваться в заголовке `Authorization` каждого запроса API запроса.
 
-   Сведения о том, как настроить неинтерактивные приложения, см. в статье [Проверка подлинности и авторизация для API Azure Time Series Insights](time-series-insights-authentication-and-authorization.md).
+   Сведения о настройке неинтерактивных приложений см. в статье [Проверка подлинности и авторизация](time-series-insights-authentication-and-authorization.md).
 
 1. Измените пример кода, заменив константы, указанные в **#DUMMY#** в начале кода.
 

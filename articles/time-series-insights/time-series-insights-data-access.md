@@ -11,12 +11,12 @@ ms.workload: big-data
 ms.topic: conceptual
 ms.date: 11/20/2019
 ms.custom: seodec18
-ms.openlocfilehash: b79ca1d93baf1941d5de8db0c314f9cd21e51056
-ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
+ms.openlocfilehash: c7a70d8209c5c349fc082d939a24deac23fa954d
+ms.sourcegitcommit: 12a26f6682bfd1e264268b5d866547358728cd9a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74328071"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75863433"
 ---
 # <a name="grant-data-access-to-an-environment"></a>Предоставление доступа к данным в среде
 
@@ -27,7 +27,7 @@ ms.locfileid: "74328071"
 
 ## <a name="sign-in-to-time-series-insights"></a>Вход в службу "аналитика временных рядов"
 
-1. Войдите на [портале Azure](https://portal.azure.com/).
+1. Войдите на [портал Azure](https://portal.azure.com/).
 1. Найдите среду "Аналитика временных рядов". Введите `Time Series` в поле **Поиск**. Выберите **Среда временных рядов** в результатах поиска.
 1. Выберите среду Time Series Insights в списке.
 
@@ -113,7 +113,7 @@ ms.locfileid: "74328071"
 
 1. Теперь гостевой компьютер может получить доступ к общей среде, используя URL-адрес среды, предоставленный администратором. Они могут ввести этот URL-адрес в свой браузер для немедленного доступа.
 
-1. Гостевой пользователь увидит клиента администратора, щелкнув значок профиля в правом верхнем углу обозревателя временных рядов.
+1. Клиент администратора будет отображаться для гостевого пользователя после выбора значка профиля в правом верхнем углу обозревателя временных рядов.
 
     [![выбранного аватара в insights.azure.com](media/data-access/data-access-select-tenant-and-instance.png)](media/data-access/data-access-select-tenant-and-instance.png#lightbox)
 
@@ -124,7 +124,7 @@ ms.locfileid: "74328071"
 
     [![гостевой пользователь выбирает клиент Azure из раскрывающегося списка](media/data-access/data-access-all-capabilities.png)](media/data-access/data-access-all-capabilities.png#lightbox)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Узнайте о том, [как добавить источник событий концентратора событий Azure](./time-series-insights-how-to-add-an-event-source-eventhub.md) в среду "Аналитика временных рядов".
 

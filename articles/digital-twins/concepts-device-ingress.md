@@ -8,12 +8,12 @@ ms.service: digital-twins
 services: digital-twins
 ms.topic: conceptual
 ms.date: 01/03/2020
-ms.openlocfilehash: f9f0a74a6ca57f90ed8bd217d0d2f57e4bc16749
-ms.sourcegitcommit: 51ed913864f11e78a4a98599b55bbb036550d8a5
+ms.openlocfilehash: 5c2c519ece9806b92c3e455d5f550bc2abfc9f3b
+ms.sourcegitcommit: 12a26f6682bfd1e264268b5d866547358728cd9a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2020
-ms.locfileid: "75660347"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75862481"
 ---
 # <a name="device-connectivity-and-telemetry-ingress"></a>Возможность подключения устройств и входящие данные телеметрии
 
@@ -21,7 +21,7 @@ ms.locfileid: "75660347"
 
 Чтобы начать работу, создайте ресурс Центра Интернета вещей Azure в корне пространственного графа. Ресурсы Центра Интернета вещей позволяют всем устройствам в корневом пространстве отправлять сообщения. Создав Центр Интернета вещей, зарегистрируйте устройства с помощью датчиков в пределах экземпляра Digital Twins. Устройства могут отправлять данные в службу Digital Twins через [пакет SDK для устройств Azure IoT](https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-sdks).
 
-Пошаговые инструкции по подключению устройств см. в статье [Руководство по развертыванию Azure Digital Twins и настройке пространственного графа](tutorial-facilities-setup.md). Вкратце можно выделить следующие шаги:
+Пошаговое руководство по подключению устройств см. в [руководстве по развертыванию и настройке цифровых двойников](tutorial-facilities-setup.md). Вкратце можно выделить следующие шаги:
 
 - Развертывание экземпляра Digital Twins с [портала Azure](https://portal.azure.com).
 - Создание пространств в графе.

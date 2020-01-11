@@ -10,12 +10,12 @@ services: time-series-insights
 ms.topic: conceptual
 ms.date: 12/20/2019
 ms.custom: seodec18
-ms.openlocfilehash: 7d588e11525e5087f8667da4602797e5299c76f0
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 1f560a7aa746ce7c6262dcaddf74c9d573332fa6
+ms.sourcegitcommit: 12a26f6682bfd1e264268b5d866547358728cd9a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75374752"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75861393"
 ---
 # <a name="time-series-model-in-azure-time-series-insights-preview"></a>Модель временных рядов в предварительной версии службы "аналитика временных рядов Azure"
 
@@ -129,7 +129,7 @@ ms.locfileid: "75374752"
 ```
 
 > [!TIP]
-> API экземпляра службы "аналитика временных рядов" и поддержку создания, чтения, обновления и удаления (CRUD) см. в статье о [запросах данных](time-series-insights-update-tsq.md#time-series-model-query-tsm-q-apis) и [документации по API экземпляра](https://docs.microsoft.com/rest/api/time-series-insights/preview-model#instances-api).
+> Для API экземпляра службы "аналитика временных рядов" и создания, чтения, обновления и удаления (CRUD) ознакомьтесь со статьей создание [запросов к данным](time-series-insights-update-tsq.md#time-series-model-query-tsm-q-apis) и [Документация по API экземпляра](https://docs.microsoft.com/rest/api/time-series-insights/preview-model#instances-api).
 
 ## <a name="time-series-model-hierarchies"></a>Иерархии моделей временных рядов
 
@@ -231,7 +231,7 @@ ms.locfileid: "75374752"
 [пример типа модели временных рядов ![](media/v2-update-tsm/time-series-model-types.png)](media/v2-update-tsm/time-series-model-types.png#lightbox)
 
 > [!TIP]
-> API экземпляра службы "аналитика временных рядов" и поддержка CRUD см. в статье о [запросах данных](time-series-insights-update-tsq.md#time-series-model-query-tsm-q-apis) и [документации по API типа](https://docs.microsoft.com/rest/api/time-series-insights/preview-model#types-api).
+> Для API экземпляра службы "аналитика временных рядов" и поддержки CRUD ознакомьтесь со статьей о [запросах данных](time-series-insights-update-tsq.md#time-series-model-query-tsm-q-apis) и [документацией по API типа](https://docs.microsoft.com/rest/api/time-series-insights/preview-model#types-api).
 
 ### <a name="type-properties"></a>Свойства типа
 
@@ -391,7 +391,7 @@ ms.locfileid: "75374752"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- См. [Data storage and ingress in Azure Time Series Insights Preview](./time-series-insights-update-storage-ingress.md) (Хранилище данных и входящий трафик в службе "Аналитика временных рядов Azure (предварительная версия)").
+- Чтение [хранилища и входных данных службы "аналитика временных рядов Azure](./time-series-insights-update-storage-ingress.md)".
 
 - Сведения об общих операциях с моделями временных рядов при [моделировании данных в предварительной версии службы "аналитика временных рядов Azure](./time-series-insights-update-how-to-tsm.md) "
 

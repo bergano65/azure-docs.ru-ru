@@ -1,24 +1,24 @@
 ---
 title: Аналитика на SQL Server с использованием R, Python и T-SQL — Процесс обработки и анализа данных группы
-description: Примеры использования R, Python и T-SQL для выполнения прогнозной аналитики в SQL Server.
+description: Примеры использования R, Python и T-SQL в SQL Server для прогнозной аналитики.
 services: machine-learning
 author: marktab
-manager: cgronlun
-editor: cgronlun
+manager: marktab
+editor: marktab
 ms.service: machine-learning
 ms.subservice: team-data-science-process
 ms.topic: article
-ms.date: 09/04/2017
+ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
-ms.openlocfilehash: 342db6cc7c6c9f50345d7e72b7d68d5f116c87f9
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 880ee0a4a1eb396312ea9692b7586d724d6fd410
+ms.sourcegitcommit: 12a26f6682bfd1e264268b5d866547358728cd9a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60589086"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75864100"
 ---
-# <a name="sql-server-data-science-walkthroughs-using-r-python-and-t-sql"></a>Пошаговые руководства по обработке и анализу данных в SQL Server с помощью T-SQL, R и Python
+# <a name="sql-server-data-science-walkthroughs-using-r-python-and-t-sql"></a>SQL Server пошаговые руководства по обработке и анализу данных с помощью R, Python и T-SQL
 
 В этих пошаговых руководствах для выполнения прогнозной аналитики используются SQL Server, службы R для SQL Server и службы Python для SQL Server. Код R и Python развертывается в хранимых процедурах. Они предусматривают выполнение инструкций, описанных в процессе обработки и анализа данных группы. Процесс обработки и анализа данных группы представлен в статье [Жизненный цикл процесса обработки и анализа данных группы](overview.md). 
 
@@ -27,12 +27,12 @@ ms.locfileid: "60589086"
 
 ## <a name="predict-taxi-tips-using-python-and-sql-queries-with-sql-server"></a>Прогнозирование чаевых за поездку в такси с помощью запросов Python и SQL с SQL Server 
 
-В пошаговом руководстве [Процесс обработки и анализа данных группы на практике: использование SQL Server](sql-walkthrough.md) показано создание и развертывание моделей машинного обучения для классификации и регрессии с использованием SQL Server для общедоступного набора данных о поездках и тарифах в такси Нью-Йорка.
+Пошаговое руководство по [использованию SQL Server](sql-walkthrough.md) демонстрирует создание и развертывание моделей машинного обучения и модели регрессии.  Данные представляют собой общедоступный Нью такси и набор данных FARE.
 
 
 ## <a name="predict-taxi-tips-using-microsoft-r-with-sql-server"></a>Прогнозирование чаевых за поездку в такси с помощью Microsoft R с SQL Server 
 
-Руководство [End-to-end data science walkthrough for R and SQL Server](https://msdn.microsoft.com/library/mt612857.aspx) (Комплексное пошаговое руководство по обработке и анализу данных с использованием R и SQL Server) позволяет специалистам по обработке и анализу данных использовать сочетание кода R, данных SQL Server и настраиваемых функций SQL для создания и развертывания модели R на сервере SQL Server. Пошаговое руководство предназначено для ознакомления разработчиков R со службами R Services (в базе данных).
+В пошаговом руководстве по [использованию SQL Server R Services](https://msdn.microsoft.com/library/mt612857.aspx) показано, как создать и развернуть модель R для SQL Server. Пошаговое руководство предназначено для ознакомления разработчиков R со службами R Services (в базе данных).
 
 
 ## <a name="predict-taxi-tips-using-r-from-t-sql-or-stored-procedures-with-sql-server"></a>Прогнозирование чаевых за поездку в такси с помощью R из T-SQL или хранимых процедур с SQL Server

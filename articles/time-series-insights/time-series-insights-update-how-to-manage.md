@@ -10,12 +10,12 @@ services: time-series-insights
 ms.topic: conceptual
 ms.date: 12/19/2019
 ms.custom: seodec18
-ms.openlocfilehash: 1f75e7112a8fc90c6c49ede7cd0ac726401fc1a9
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: b70604c62ae21f9c433b3cd7d9e59f4ccebb61bd
+ms.sourcegitcommit: 12a26f6682bfd1e264268b5d866547358728cd9a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75452680"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75861733"
 ---
 # <a name="provision-and-manage-azure-time-series-insights-preview"></a>Подготовка к работе службы "Аналитика временных рядов Azure" (предварительная версия) и управление ею
 
@@ -86,7 +86,7 @@ ms.locfileid: "75452680"
 
 ## <a name="manage-the-environment"></a>Управление средой
 
-Вы можете управлять своей средой службы "Аналитика временных рядов Azure" (предварительная версия) с помощью портала Azure. При управлении с помощью портал Azure вы видите несколько ключевых различий между средой предварительного просмотра службы "аналитика временных рядов Azure PAYG" и общедоступными средами S1 и S2:
+Вы можете управлять своей средой службы "Аналитика временных рядов Azure" (предварительная версия) с помощью портала Azure. Существует несколько ключевых различий между средой предварительного просмотра службы "аналитика временных рядов Azure PAYG" и общедоступными средами S1 или S2 при управлении средой с помощью портал Azure:
 
 * В колонке **обзор** портал Azure Preview имеются следующие изменения.
 

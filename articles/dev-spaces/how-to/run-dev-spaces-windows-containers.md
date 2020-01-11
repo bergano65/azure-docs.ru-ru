@@ -5,12 +5,12 @@ ms.date: 07/25/2019
 ms.topic: conceptual
 description: Узнайте, как запускать Azure Dev Spaces в существующем кластере с контейнерами Windows
 keywords: Azure Dev Spaces, пространства разработки, Docker, Kubernetes, Azure, AKS, служба Kubernetes Azure, контейнеры, контейнеры Windows
-ms.openlocfilehash: 7410c0e38b84979f0977973b2d6ccf588e2b1230
-ms.sourcegitcommit: 8cf199fbb3d7f36478a54700740eb2e9edb823e8
+ms.openlocfilehash: 855b877653d4cf60c8165af3094fe0e68ca5e6dd
+ms.sourcegitcommit: 12a26f6682bfd1e264268b5d866547358728cd9a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74484004"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75867293"
 ---
 # <a name="interact-with-windows-containers-using-azure-dev-spaces"></a>Взаимодействие с контейнерами Windows с помощью Azure Dev Spaces
 
@@ -26,7 +26,7 @@ ms.locfileid: "74484004"
 az aks get-credentials --resource-group myResourceGroup --name myAKSCluster
 ```
 
-Проверьте подключение к кластеру, выполнив команду [kubectl get][kubectl-get], чтобы просмотреть список узлов кластера.
+Чтобы проверить подключение к кластеру, используйте команду [kubectl get][kubectl-get] для получения списка узлов кластера.
 
 ```azurecli-interactive
 kubectl get nodes
@@ -146,7 +146,12 @@ azds prep --public
 azds up
 ```
 
-Команда `azds prep --public` создает диаграмму Helm и файлы dockerfile для приложения. Команда `azds up` запускает службу в пространстве имен.
+Команда `azds prep --public` создает диаграмму Helm и файлы dockerfile для приложения.
+
+> [!TIP]
+> [Диаграмма Dockerfile и Helm](../how-dev-spaces-works.md#prepare-your-code) для проекта используется Azure dev Spaces для сборки и выполнения кода, но эти файлы можно изменить, если необходимо изменить способ построения и запуска проекта.
+
+Команда `azds up` запускает службу в пространстве имен.
 
 ```console
 $ azds up
@@ -168,7 +173,7 @@ Service 'webfrontend' port 80 (http) is available via port forwarding at http://
 
 ![Пример приложения, в котором отображается версия Windows из mywebapi](../media/run-dev-spaces-windows-containers/sample-app.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте, как в Azure Dev Spaces можно разрабатывать более сложные приложения в нескольких контейнерах и как упростить совместную разработку, используя разные версии и ветви кода в разных средах.
 

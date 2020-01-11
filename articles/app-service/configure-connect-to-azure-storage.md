@@ -5,12 +5,12 @@ author: msangapu-msft
 ms.topic: article
 ms.date: 7/01/2019
 ms.author: msangapu
-ms.openlocfilehash: ad70bbe36369c03225079d1194043e6ceb109c6f
-ms.sourcegitcommit: 265f1d6f3f4703daa8d0fc8a85cbd8acf0a17d30
+ms.openlocfilehash: c5543470f790d00158297cb7c3f0c06c5fc05e14
+ms.sourcegitcommit: 12a26f6682bfd1e264268b5d866547358728cd9a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74671009"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75866985"
 ---
 # <a name="configure-azure-files-in-a-windows-container-on-app-service"></a>Настройка файлов Azure в контейнере Windows в службе приложений
 
@@ -31,6 +31,15 @@ ms.locfileid: "74671009"
 > Служба "файлы Azure" не является хранилищем по умолчанию и оплачивается отдельно, но не входит в состав веб-приложения. Не поддерживает использование конфигурации брандмауэра из-за ограничений инфраструктуры.
 >
 
+## <a name="limitations"></a>Ограничения
+
+- Служба хранилища Azure в контейнерах Windows находится **на этапе предварительной версии** и **не поддерживается** в **рабочих сценариях**.
+- Служба хранилища Azure в контейнерах Windows поддерживает подключение **контейнеров файлов Azure** (только для чтения и записи).
+- В настоящее время служба хранилища Azure в контейнерах Windows **не поддерживается** для использования собственных сценариев работы с кодом в планах службы приложений Windows.
+- Служба хранилища Azure в контейнерах Windows **не поддерживает** использование конфигурации **брандмауэра хранилища** из-за ограничений инфраструктуры.
+- Служба хранилища Azure в контейнерах Windows позволяет указать **до пяти** точек подключения для каждого приложения.
+- Плата за хранилище Azure взимается отдельно и **не включается** в веб-приложение. Дополнительные сведения о [ценах на службу хранилища Azure](https://azure.microsoft.com/pricing/details/storage).
+
 ## <a name="link-storage-to-your-web-app-preview"></a>Связывание хранилища с веб-приложением (предварительная версия)
 
  Чтобы подключить файловый ресурс Azure к каталогу в приложении службы приложений, используйте команду [`az webapp config storage-account add`](https://docs.microsoft.com/cli/azure/webapp/config/storage-account?view=azure-cli-latest#az-webapp-config-storage-account-add) . Тип хранилища должен быть AzureFiles.
@@ -48,7 +57,6 @@ az webapp config storage-account add --resource-group <group_name> --name <app_n
 ```azurecli
 az webapp config storage-account list --resource-group <resource_group> --name <app_name>
 ```
-
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

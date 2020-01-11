@@ -6,14 +6,14 @@ author: sujayt
 manager: rochakm
 ms.service: site-recovery
 ms.topic: article
-ms.date: 11/27/2018
+ms.date: 1/10/2020
 ms.author: sutalasi
-ms.openlocfilehash: 2fc66514bdf33611f9e6266d35a2d537fe3b9261
-ms.sourcegitcommit: a22cb7e641c6187315f0c6de9eb3734895d31b9d
+ms.openlocfilehash: d2f25774f89182004e23605bf4c37d1e1d739df7
+ms.sourcegitcommit: 12a26f6682bfd1e264268b5d866547358728cd9a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74084906"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75867037"
 ---
 # <a name="set-up-disaster-recovery-of-hyper-v-vms-to-a-secondary-site-by-using-powershell-resource-manager"></a>Настройка аварийного восстановления виртуальных машин Hyper-V на дополнительный сайт с помощью PowerShell (Resource Manager)
 
@@ -21,15 +21,15 @@ ms.locfileid: "74084906"
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Технические условия
 
 - Ознакомьтесь с [архитектурой и компонентами сценария](hyper-v-vmm-architecture.md).
-- Ознакомьтесь с [требованиями поддержки ](site-recovery-support-matrix-to-sec-site.md) для всех компонентов.
+- [Ознакомьтесь](site-recovery-support-matrix-to-sec-site.md) с требованиями поддержки для всех компонентов.
 - Убедитесь, что серверы Virtual Machine Manager и узлы Hyper-V соответствуют [требованиям поддержки](site-recovery-support-matrix-to-sec-site.md).
 - Убедитесь, что виртуальные машины, которые следует реплицировать, соответствуют [требованиям поддержки реплицируемых машин](site-recovery-support-matrix-to-sec-site.md).
 
 
-## <a name="prepare-for-network-mapping"></a>Выполнить подготовку к сетевому сопоставлению
+## <a name="prepare-for-network-mapping"></a>Подготовка к сопоставлению сети
 
 [Сопоставление сетей](hyper-v-vmm-network-mapping.md) происходит между локальными сетями виртуальных машин Virtual Machine Manager в исходном и целевом облаках. Это предоставляет следующие возможности:
 
@@ -195,6 +195,14 @@ ms.locfileid: "74084906"
 
           $jobResult = Set-AzSiteRecoveryProtectionEntity -ProtectionEntity $protectionentity -Protection Enable -Policy $policy
 
+> [!NOTE]
+> Если вы хотите выполнить репликацию на управляемые диски с поддержкой CMK в Azure, выполните следующие действия с помощью команды AZ PowerShell 3.3.0/назад:
+>
+> 1. Включение отработки отказа на управляемые диски путем обновления свойств виртуальной машины
+> 2. Используйте командлет Get-AsrReplicationProtectedItem, чтобы получить идентификатор диска для каждого диска защищенного элемента.
+> 3. Создайте объект Dictionary с помощью командлета New-Object "System. Collections. Generic. Dictionary" "2 [System. String; System. String]", который будет содержать сопоставление идентификатора диска с набором шифрования диска. Эти наборы шифрования дисков должны быть предварительно созданы в целевом регионе.
+> 4. Обновите свойства виртуальной машины с помощью командлета Set-AsrReplicationProtectedItem, передав объект Dictionary в параметре-Дискидтодискенкриптионсетмап.
+
 ## <a name="run-a-test-failover"></a>Запуск тестовой отработки отказа
 
 Чтобы протестировать развертывание, запустите тестовую отработку отказа для одной виртуальной машины. Также можно создать план восстановления, который содержит несколько виртуальных машин, и запустить для него тестовую отработку отказа. Тестовая обработка отказа имитирует механизм отработки отказа и восстановления в изолированной сети.
@@ -276,6 +284,6 @@ ms.locfileid: "74084906"
 
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Узнайте больше](/powershell/module/az.recoveryservices) об использовании командлетов PowerShell Resource Manager для службы Site Recovery.

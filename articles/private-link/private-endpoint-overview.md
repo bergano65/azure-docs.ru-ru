@@ -5,14 +5,14 @@ services: private-link
 author: malopMSFT
 ms.service: private-link
 ms.topic: conceptual
-ms.date: 09/16/2019
+ms.date: 01/09/2020
 ms.author: allensu
-ms.openlocfilehash: 673b74515ba03bc71e60a68b21b9330f9e62d424
-ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
+ms.openlocfilehash: 38f424287788537cc5711bab8da60b5798a84b3a
+ms.sourcegitcommit: 12a26f6682bfd1e264268b5d866547358728cd9a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75647396"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75867684"
 ---
 # <a name="what-is-azure-private-endpoint"></a>Что такое частная конечная точка Azure?
 
@@ -58,6 +58,9 @@ ms.locfileid: "75647396"
 |**Хранилище Azure**  | Microsoft.Storage/storageAccounts    |  Большой двоичный объект (BLOB-объект, blob_secondary)<BR> Таблица (таблица, table_secondary)<BR> Очередь (очередь, queue_secondary)<BR> Файл (файл, file_secondary)<BR> Интернет (веб, web_secondary)        |
 |**Azure Data Lake Storage 2-го поколения**  | Microsoft.Storage/storageAccounts    |  Большой двоичный объект (BLOB-объект, blob_secondary)       |
 |**Azure Cosmos DB** | Microsoft. Азурекосмосдб/databaseAccounts | SQL, MongoDB, Cassandra, Gremlin, Table|
+|**База данных Azure для PostgreSQL — один сервер** | Microsoft.DBforPostgreSQL/servers   | постгресклсервер |
+|**База данных Azure для MySQL** | Microsoft.DBforMySQL/servers    | mysqlServer |
+|**База данных Azure для MariaDB** | Microsoft.DBforMariaDB/servers    | мариадбсервер |
  
 ## <a name="network-security-of-private-endpoints"></a>Сетевая безопасность частных конечных точек 
 При использовании частных конечных точек для служб Azure трафик защищен с помощью определенного ресурса частной ссылки. Платформа выполняет контроль доступа для проверки сетевых подключений, достигнутых только указанным ресурсом частной ссылки. Для доступа к дополнительным ресурсам в одной службе Azure требуются дополнительные частные конечные точки. 
@@ -112,6 +115,9 @@ ms.locfileid: "75647396"
 |Azure Cosmos DB (Microsoft. Азурекосмосдб/databaseAccounts)|Cassandra|privatelink.cassandra.cosmos.azure.com|
 |Azure Cosmos DB (Microsoft. Азурекосмосдб/databaseAccounts)|Gremlin |privatelink.gremlin.cosmos.azure.com|
 |Azure Cosmos DB (Microsoft. Азурекосмосдб/databaseAccounts)|Таблицы|privatelink.table.cosmos.azure.com|
+|База данных Azure для PostgreSQL — один сервер (Microsoft. Дбфорпостгрескл/Servers)|постгресклсервер|privatelink.postgres.database.azure.com|
+|База данных Azure для MySQL (Microsoft. Дбформискл/Servers)|mysqlServer|privatelink.mysql.database.azure.com|
+|База данных Azure для MariaDB (Microsoft. Дбформариадб/Servers)|мариадбсервер|privatelink.mariadb.database.azure.com|
  
 Azure создаст каноническое имя DNS-записи (CNAME) на общедоступном DNS-сервере, чтобы перенаправить разрешение в предлагаемые доменные имена. Вы сможете переопределить разрешение с помощью частного IP-адреса закрытых конечных точек. 
  
@@ -136,3 +142,9 @@ Azure создаст каноническое имя DNS-записи (CNAME) н
 - [Создание частной конечной точки для учетной записи хранения, используя портал ](create-private-endpoint-storage-portal.md)
 - [Создание частной конечной точки для учетной записи Azure Cosmos с помощью портала](../cosmos-db/how-to-configure-private-endpoints.md)
 - [Create your own Private Link service using Azure PowerShel](create-private-link-service-powershell.md) (Создание собственного Приватного канала с помощью Azure PowerShell)
+- [Создание собственной частной ссылки для базы данных Azure для PostgreSQL-Single Server с помощью портала](../postgresql/howto-configure-privatelink-portal.md)
+- [Создание собственной частной ссылки для базы данных Azure для PostgreSQL-Single Server с помощью интерфейса командной строки](../postgresql/howto-configure-privatelink-cli.md)
+- [Создание собственной частной ссылки для базы данных Azure для MySQL с помощью портала](../mysql/howto-configure-privatelink-portal.md)
+- [Создание собственной частной ссылки для базы данных Azure для MySQL с помощью интерфейса командной строки](../mysql/howto-configure-privatelink-cli.md)
+- [Создание собственной частной ссылки для базы данных Azure для MariaDB с помощью портала](../mariadb/howto-configure-privatelink-portal.md)
+- [Создание собственной частной ссылки для базы данных Azure для MariaDB с помощью интерфейса командной строки](../mariadb/howto-configure-privatelink-cli.md)

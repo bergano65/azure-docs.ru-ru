@@ -5,14 +5,14 @@ author: sujayt
 manager: rochakm
 ms.service: site-recovery
 ms.topic: article
-ms.date: 06/18/2019
+ms.date: 01/10/2020
 ms.author: sutalasi
-ms.openlocfilehash: 73f5f64a64ab28cdb4b57d0904911f62c2020cf0
-ms.sourcegitcommit: a22cb7e641c6187315f0c6de9eb3734895d31b9d
+ms.openlocfilehash: 548fa8181c4841d8f57de485c0a4e714b5e9321a
+ms.sourcegitcommit: 12a26f6682bfd1e264268b5d866547358728cd9a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74082678"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75863916"
 ---
 # <a name="set-up-disaster-recovery-to-azure-for-hyper-v-vms-using-powershell-and-azure-resource-manager"></a>Настройка аварийного восстановления виртуальных машин Hyper-V в Azure с помощью PowerShell и Azure Resource Manager
 
@@ -37,8 +37,8 @@ Azure PowerShell предоставляет командлеты для упра
 ## <a name="before-you-start"></a>Перед началом работы
 Убедитесь, что выполнены следующие предварительные требования.
 
-* Учетная запись [Microsoft Azure](https://azure.microsoft.com/) . Вы можете начать с [бесплатной пробной версии](https://azure.microsoft.com/pricing/free-trial/). Также вы можете ознакомиться с [расценками на использование менеджера Azure Site Recovery](https://azure.microsoft.com/pricing/details/site-recovery/).
-* Azure PowerShell. Сведения об этом выпуске и его установке см. в разделе [install Azure PowerShell](/powershell/azure/install-az-ps).
+* Учетная запись [Microsoft Azure](https://azure.microsoft.com/) . Начните с [бесплатной пробной версии](https://azure.microsoft.com/pricing/free-trial/). Также вы можете ознакомиться с [расценками на использование менеджера Azure Site Recovery](https://azure.microsoft.com/pricing/details/site-recovery/).
+* Установите Azure PowerShell. Сведения об этом выпуске и его установке см. в разделе [install Azure PowerShell](/powershell/azure/install-az-ps).
 
 К тому же конкретный пример, описанный в этой статье, требует следующих компонентов:
 
@@ -188,7 +188,13 @@ Azure PowerShell предоставляет командлеты для упра
 
         Succeeded
 
-
+> [!NOTE]
+> Если вы хотите выполнить репликацию на управляемые диски с поддержкой CMK в Azure, выполните следующие действия с помощью команды AZ PowerShell 3.3.0/назад:
+>
+> 1. Включение отработки отказа на управляемые диски путем обновления свойств виртуальной машины
+> 2. Используйте командлет Get-AsrReplicationProtectedItem, чтобы получить идентификатор диска для каждого диска защищенного элемента.
+> 3. Создайте объект Dictionary с помощью командлета New-Object "System. Collections. Generic. Dictionary" "2 [System. String; System. String]", который будет содержать сопоставление идентификатора диска с набором шифрования диска. Эти наборы шифрования дисков должны быть предварительно созданы в целевом регионе.
+> 4. Обновите свойства виртуальной машины с помощью командлета Set-AsrReplicationProtectedItem, передав объект Dictionary в параметре-Дискидтодискенкриптионсетмап.
 
 ## <a name="step-8-run-a-test-failover"></a>Шаг 8. Запуск тестовой отработки отказа
 1. Запустите тестовую отработку отказа, выполнив следующую команду:
@@ -203,5 +209,5 @@ Azure PowerShell предоставляет командлеты для упра
 
         $TFjob = Start-AsrTestFailoverCleanupJob -ReplicationProtectedItem $rpi -Comment "TFO done"
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 [Узнайте больше](https://docs.microsoft.com/powershell/module/az.recoveryservices) об использовании командлетов PowerShell инструмента Azure Resource Manager для службы Azure Site Recovery.

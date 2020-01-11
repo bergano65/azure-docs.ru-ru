@@ -9,12 +9,12 @@ services: digital-twins
 ms.topic: conceptual
 ms.date: 11/22/2019
 ms.custom: seodec18
-ms.openlocfilehash: 66be29b6d16e422eebd381cddb83ce94adf9f76e
-ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
+ms.openlocfilehash: 38f5af3cb2006e4b029f8979a213c0af10f1ed8a
+ms.sourcegitcommit: 12a26f6682bfd1e264268b5d866547358728cd9a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75745448"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75863586"
 ---
 # <a name="how-to-configure-monitoring-in-azure-digital-twins"></a>Настройка мониторинга в Azure Digital Twins
 
@@ -97,7 +97,7 @@ Azure Monitor включает в себя мощную службу log Analyti
 Полный запрос журнала предоставляется через [журналы Azure Monitor](../azure-monitor/log-query/log-query-overview.md). Чтобы настроить эти мощные функции:
 
 1. Найдите **Log Analytics** на портале Azure.
-1. Вы увидите доступные экземпляры **рабочей области log Analytics** . Выберите один из них и щелкните **Журналы**, чтобы создать запрос.
+1. Отобразятся доступные экземпляры **рабочей области log Analytics** . Выберите один из них и щелкните **Журналы**, чтобы создать запрос.
 
     [![log Analytics](media/how-to-configure-monitoring/log-analytics.png)](media/how-to-configure-monitoring/log-analytics.png#lightbox)
 
@@ -109,7 +109,7 @@ Azure Monitor включает в себя мощную службу log Analyti
 
    [![управления журналами](media/how-to-configure-monitoring/log-analytics-management.png)](media/how-to-configure-monitoring/log-analytics-management.png#lightbox)
 
-Дополнительные сведения о мощных операциях с запросами см. в статье [о начале работы с запросами](../azure-monitor/log-query/get-started-queries.md).
+Дополнительные сведения о мощных операциях запросов см. [в статье Приступая к работе с запросами](../azure-monitor/log-query/get-started-queries.md).
 
 > [!NOTE]
 > При первой отправке событий в **log Analytics рабочую область** может возникать 5-минутная задержка.
@@ -123,7 +123,7 @@ Azure Monitor включает в себя мощную службу log Analyti
 
 ## <a name="other-options"></a>Другие варианты
 
-Azure Digital Twins также поддерживает ведение журналов для отдельных приложений и аудит безопасности. Подробный обзор всех вариантов ведения журналов Azure, доступных для экземпляра Azure Digital Twins, вы найдете в статье [Аудит журналов Azure](../security/fundamentals/log-audit.md).
+Azure Digital Twins также поддерживает ведение журналов для отдельных приложений и аудит безопасности. Подробный обзор всех параметров ведения журнала Azure, доступных для вашего экземпляра Azure Digital двойников, см. в статье о [аудите журналов Azure](../security/fundamentals/log-audit.md) .
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

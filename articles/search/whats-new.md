@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 01/07/2020
-ms.openlocfilehash: 0ce2884a2382c7dff2bdb90bd92934609675f314
-ms.sourcegitcommit: f53cd24ca41e878b411d7787bd8aa911da4bc4ec
-ms.translationtype: HT
+ms.openlocfilehash: 2627e4be20d80251e3753e46624c58a0c6244aba
+ms.sourcegitcommit: 12a26f6682bfd1e264268b5d866547358728cd9a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 01/10/2020
-ms.locfileid: "75834388"
+ms.locfileid: "75863093"
 ---
 # <a name="whats-new-in-azure-cognitive-search"></a>Новые возможности Azure Когнитивный поиск
 
@@ -38,6 +38,8 @@ ms.locfileid: "75834388"
 ### <a name="december-2019"></a>Декабрь 2019 г.
 
 + [Создание приложения (Предварительная версия)](search-create-app-portal.md) — это новый мастер на портале, который создает загружаемый HTML-файл. Файл включает внедренный скрипт, который отображает рабочее веб-приложение типа localhost, привязанное к индексу в службе поиска. Страницы настраиваются в мастере и могут содержать панель поиска, область результатов, навигацию по боковой панели и поддержку запросов typeahead. Можно изменить HTML в автономном режиме, чтобы расширить или настроить рабочий процесс или внешний вид.
+
++ [Создание частной конечной точки для безопасных подключений (Предварительная версия)](service-create-private-endpoint.md) объясняет, как настроить частную ссылку для безопасных подключений к службе поиска. Эта предварительная версия функции доступна по запросу и использует [частную связь Azure](../private-link/private-link-overview.md) и [виртуальную сеть Azure](../virtual-network/virtual-networks-overview.md) в качестве части решения.
 
 ### <a name="november-2019---ignite-conference"></a>Ноябрь 2019-Ignite Конференция
 

@@ -1,25 +1,18 @@
 ---
-title: Устранение проблемы подключения VPN типа "сеть — сеть" Azure | Документация Майкрософт
+title: 'Устранение неполадок VPN-подключения "сеть — сеть" Azure, которое не может подключить titleSuffix: VPN-шлюз Azure'
 description: Узнайте, как устранить проблемы подключения VPN типа "сеть — сеть", которое внезапно завершается сбоем и его невозможно восстановить.
 services: vpn-gateway
-documentationcenter: na
 author: chadmath
-manager: dcscontentpm
-editor: ''
-tags: ''
 ms.service: vpn-gateway
-ms.devlang: na
 ms.topic: troubleshooting
-ms.tgt_pltfrm: na
-ms.workload: infrastructure-services
 ms.date: 09/16/2019
 ms.author: genli
-ms.openlocfilehash: e196c4b512de3fac97347e4c252b697ed6818227
-ms.sourcegitcommit: ca359c0c2dd7a0229f73ba11a690e3384d198f40
+ms.openlocfilehash: 4e827c5f6eedc819bc3635cb09a28f65df51312c
+ms.sourcegitcommit: 12a26f6682bfd1e264268b5d866547358728cd9a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71058876"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75862583"
 ---
 # <a name="troubleshooting-an-azure-site-to-site-vpn-connection-cannot-connect-and-stops-working"></a>Устранение проблемы подключения VPN типа "сеть — сеть" Azure
 
@@ -53,7 +46,7 @@ ms.locfileid: "71058876"
 
 Чтобы просмотреть общий ключ для подключения VPN Azure, используйте один из методов ниже.
 
-**портал Azure**
+**Портал Azure**
 
 1. Перейдите к созданному вами подключению типа "сеть — сеть" через VPN-шлюз Azure.
 
@@ -93,7 +86,7 @@ ms.locfileid: "71058876"
 -   Адресные пространства виртуальной сети между виртуальной сетью Azure и локальными определениями должны полностью совпадать.
 -   Подсети между **шлюзом локальной сети** и локальными определениями должны полностью совпадать для локальной сети.
 
-### <a name="step-7-verify-the-azure-gateway-health-probe"></a>Шаг 7. Проверка работоспособности шлюза Azure
+### <a name="step-7-verify-the-azure-gateway-health-probe"></a>Шаг 7. Проверка работоспособности шлюза Azure
 
 1. Перейдя по указанному URL-адресу, вы откроете проверку работоспособности.
 
@@ -107,11 +100,11 @@ ms.locfileid: "71058876"
     <string xmlns="http://schemas.microsoft.com/2003/10/Serialization/">Primary Instance: GatewayTenantWorker_IN_1 GatewayTenantVersion: 14.7.24.6</string>
     ```
 
-### <a name="step-8-check-whether-the-on-premises-vpn-device-has-the-perfect-forward-secrecy-feature-enabled"></a>Шаг 8. Проверка, включена ли для локального VPN-устройства функция полной безопасности пересылки
+### <a name="step-8-check-whether-the-on-premises-vpn-device-has-the-perfect-forward-secrecy-feature-enabled"></a>Шаг 8. Проверка, включена ли для локального VPN-устройства функция полной безопасности пересылки
 
 Функция полной безопасности пересылки может вызвать проблемы отключения. Если для VPN-устройства включена функция полной безопасности пересылки, отключите эту функцию. Затем обновите политику IPsec VPN-шлюза.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 -   [Создание подключения типа "сеть — сеть" на портале Azure](vpn-gateway-howto-site-to-site-resource-manager-portal.md)
 -   [Настройка политики IPsec/IKE для VPN-подключений типа "сеть — сеть" или "виртуальная сеть — виртуальная сеть"](vpn-gateway-ipsecikepolicy-rm-powershell.md)

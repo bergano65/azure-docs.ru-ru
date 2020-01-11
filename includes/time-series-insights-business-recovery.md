@@ -5,12 +5,12 @@ author: deepakpalled
 ms.author: dpalled
 manager: cshankar
 ms.date: 12/06/2019
-ms.openlocfilehash: 8d0c1edd2766d5fa46603d241c4f769fe5777cd1
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.openlocfilehash: dec7f022a73c5eb47c99b2d2d38e1a3258bcf14e
+ms.sourcegitcommit: 12a26f6682bfd1e264268b5d866547358728cd9a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74981356"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75861474"
 ---
 ## <a name="business-disaster-recovery"></a>Непрерывность бизнес-процессов и аварийное восстановление
 
@@ -42,7 +42,7 @@ ms.locfileid: "74981356"
 
 Интеграция службы "аналитика временных рядов" с другими службами предоставляет дополнительные возможности аварийного восстановления. Например, данные телеметрии, отправляемые в концентратор событий, могут быть сохранены в резервной копии базы данных хранилища BLOB-объектов Azure.
 
-### <a name="time-series-insights"></a>Аналитика временных рядов
+### <a name="time-series-insights"></a>Time Series Insights
 
 Существует несколько способов сохранения данных, приложений и служб Службы "аналитика временных рядов", даже если они нарушат работу. 
 
@@ -55,7 +55,7 @@ ms.locfileid: "74981356"
 
 Чтобы создать дубликат среды, сделайте следующее:
 
-1. Создайте среду во втором регионе. Дополнительные сведения см. [в разделе Создание новой среды "аналитика временных рядов" в портал Azure](https://docs.microsoft.com/azure/time-series-insights/time-series-insights-get-started).
+1. Создайте среду во втором регионе. Дополнительные сведения см. в статье о [создании новой среды "аналитика временных рядов" в портал Azure](https://docs.microsoft.com/azure/time-series-insights/time-series-insights-get-started).
 1. Создайте для вашего источника событий вторую выделенную группу потребителей.
 1. Подключите этот источник событий к новой среде. Убедитесь, что назначена вторая выделенная группа потребителей.
 1. Ознакомьтесь с документацией по службе "аналитика временных рядов Azure [" и по](https://docs.microsoft.com/azure/time-series-insights/time-series-insights-how-to-add-an-event-source-iothub) [концентраторам событий](https://docs.microsoft.com/azure/time-series-insights/time-series-insights-data-access) .
@@ -71,5 +71,5 @@ ms.locfileid: "74981356"
 > * Также может возникать задержка.
 > * При перенаправлении операций может произойти Посекундный пик обработки сообщений.
 > 
-> Дополнительные сведения см. в статье [Отслеживание и уменьшение регулирования для сокращения задержек в службе "Аналитика временных рядов Azure"](https://docs.microsoft.com/azure/time-series-insights/time-series-insights-environment-mitigate-latency).
+> Дополнительные сведения см. [в статье Устранение проблем с задержкой в аналитике временных рядов](https://docs.microsoft.com/azure/time-series-insights/time-series-insights-environment-mitigate-latency).
 

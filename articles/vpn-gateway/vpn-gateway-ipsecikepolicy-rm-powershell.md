@@ -3,25 +3,17 @@ title: Политика IPsec/IKE для подключений типа "Вир
 titleSuffix: Azure VPN Gateway
 description: Настройка политики IPsec/IKE для подключений типа "сеть — сеть" или "виртуальная сеть — виртуальная сеть" с VPN-шлюзами Azure с помощью Azure Resource Manager и PowerShell.
 services: vpn-gateway
-documentationcenter: na
 author: yushwang
-manager: rossort
-editor: ''
-tags: azure-resource-manager
-ms.assetid: 238cd9b3-f1ce-4341-b18e-7390935604fa
 ms.service: vpn-gateway
-ms.devlang: na
 ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: infrastructure-services
 ms.date: 02/14/2018
 ms.author: yushwang
-ms.openlocfilehash: b0dabf0ee3370abab3d0f9d6f1bf26dd622862cf
-ms.sourcegitcommit: 5cfe977783f02cd045023a1645ac42b8d82223bd
+ms.openlocfilehash: ed7b12b24e6129d6cf609f4345203abc783e9f62
+ms.sourcegitcommit: 12a26f6682bfd1e264268b5d866547358728cd9a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2019
-ms.locfileid: "74151778"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75864066"
 ---
 # <a name="configure-ipsecike-policy-for-s2s-vpn-or-vnet-to-vnet-connections"></a>Настройка политики IPsec/IKE для VPN-подключений типа "сеть — сеть" или "виртуальная сеть — виртуальная сеть"
 
@@ -64,7 +56,7 @@ ms.locfileid: "74151778"
 
 В таблице ниже перечислены поддерживаемые алгоритмы шифрования и уровни стойкости ключей, которые могут настроить клиенты.
 
-| **IPsec/IKEv2**  | **Варианты**    |
+| **IPsec/IKEv2**  | **Параметры**    |
 | ---  | --- 
 | Шифрование IKEv2 | AES256, AES192, AES128, DES3, DES  
 | Проверка целостности IKEv2  | SHA384, SHA256, SHA1, MD5  |
@@ -408,7 +400,7 @@ Set-AzVirtualNetworkGatewayConnection -VirtualNetworkGatewayConnection $connecti
 
 Вы снова можете использовать тот же скрипт, чтобы проверить, удалена ли политика из подключения.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о селекторах трафика на основе политик см. в статье [Подключение VPN-шлюзов Azure к нескольким локальным VPN-устройствам на основе политики с помощью PowerShell](vpn-gateway-connect-multiple-policybased-rm-ps.md).
 

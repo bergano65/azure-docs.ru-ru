@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: conceptual
 ms.date: 04/25/2019
 ms.author: mlearned
-ms.openlocfilehash: ded3fc97c4cdf041fdf50d7b4aa9a9b2fbdf1c84
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: 1b0d3dec3925518922c5f668560889edd6f5de0b
+ms.sourcegitcommit: 12a26f6682bfd1e264268b5d866547358728cd9a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74913492"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75867169"
 ---
 # <a name="service-principals-with-azure-kubernetes-service-aks"></a>Субъекты-службы со службой Azure Kubernetes
 
@@ -91,7 +91,7 @@ az role assignment create --assignee <appId> --scope <resourceScope> --role Cont
 
 В следующих разделах описываются распространенные делегирования, которые вам могут потребоваться.
 
-### <a name="azure-container-registry"></a>реестр контейнеров Azure;
+### <a name="azure-container-registry"></a>Реестр контейнеров Azure
 
 Если вы используете реестр контейнеров Azure (запись контроля доступа) в качестве хранилища образов контейнеров, вам необходимо предоставить разрешения на чтение и извлечение образов для субъекта-службы в кластере AKS. В настоящее время рекомендуемой конфигурацией является использование команды [AZ AKS Create][az-aks-create] или [AZ AKS Update][az-aks-update] для интеграции с реестром и назначения соответствующей роли для субъекта-службы. Подробные инструкции см. в статье [Аутентификация в реестре контейнеров Azure из службы Kubernetes Azure][aks-to-acr].
 
@@ -108,7 +108,7 @@ az role assignment create --assignee <appId> --scope <resourceScope> --role Cont
   - *Microsoft.Network/publicIPAddresses/write*
 - Или назначьте встроенную роль " [участник сети][rbac-network-contributor] " в подсети в виртуальной сети.
 
-### <a name="storage"></a>Storage
+### <a name="storage"></a>Хранилище
 
 Вам может потребоваться доступ к существующим дисковым ресурсам в другой группе ресурсов. Назначьте одно разрешение из следующего набора разрешений роли:
 
@@ -121,7 +121,7 @@ az role assignment create --assignee <appId> --scope <resourceScope> --role Cont
 
 Если вы используете интеграцию Virtual Kubelet и AKS и решили запустить службу "Экземпляры контейнеров Azure" (ACI) в группе ресурсов, отличной от группы для кластера AKS, предоставьте субъекту-службе AKS разрешения *Участник* на доступ к группе ресурсов ACI.
 
-## <a name="additional-considerations"></a>Дополнительные замечания
+## <a name="additional-considerations"></a>Дополнительные сведения
 
 При использовании AKS и субъект-служб Azure AD учитывайте приведенные ниже аспекты.
 
@@ -131,6 +131,8 @@ az role assignment create --assignee <appId> --scope <resourceScope> --role Cont
 - При указании **идентификатора клиента** субъект-службы используйте значение `appId`.
 - На виртуальных машинах узла агента в кластере Kubernetes учетные данные субъекта-службы хранятся в файле `/etc/kubernetes/azure.json`
 - При использовании команды [AZ AKS Create][az-aks-create] для автоматического создания субъекта-службы учетные данные субъекта-службы записываются в файл `~/.azure/aksServicePrincipal.json` на компьютере, используемом для выполнения команды.
+- Если вы не передаете субъект-службу в дополнительные команды интерфейса командной строки AKS, используется субъект-служба по умолчанию, расположенный по адресу `~/.azure/aksServicePrincipal.json`.  
+- При необходимости можно также удалить файл АкссервицепринЦипал. JSON, и AKS создаст новый субъект-службу.
 - При удалении кластера AKS, созданного с помощью команды [AZ AKS Create][az-aks-create], автоматически созданный субъект-служба не удаляется.
     - Чтобы удалить субъект-службу, выполните запрос к кластеру *сервицепринЦипалпрофиле. ClientID* и удалите его с помощью команды [AZ AD App Delete][az-ad-app-delete]. Замените имена группы ресурсов и кластера собственными значениями.
 

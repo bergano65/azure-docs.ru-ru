@@ -8,12 +8,12 @@ ms.service: digital-twins
 services: digital-twins
 ms.topic: conceptual
 ms.date: 11/19/2019
-ms.openlocfilehash: f5c0f6d9f6f7f35722f3df5f35dc1da945f21b9a
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: 5d2fe5a00d131af54862551991cf984d8576b57e
+ms.sourcegitcommit: 12a26f6682bfd1e264268b5d866547358728cd9a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74229041"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75860951"
 ---
 # <a name="azure-digital-twins-security-best-practices"></a>Рекомендации по обеспечению безопасности Azure Digital Twins
 
@@ -29,7 +29,7 @@ Azure Digital Twins также использует другие функции 
 > [!TIP]
 > Использование [центра безопасности Azure для Интернета вещей](https://docs.microsoft.com/azure/asc-for-iot/) для обнаружения угроз и уязвимостей безопасности IOT.
 
-## <a name="iot-security-best-practices"></a>Рекомендации по обеспечению безопасности Интернета вещей
+## <a name="iot-security-best-practices"></a>Рекомендации по обеспечению безопасности IoT
 
 Далее представлены некоторые ключевые методы защиты устройств Интернета вещей.
 
@@ -46,7 +46,7 @@ Azure Digital Twins также использует другие функции 
 > [!div class="checklist"]
 > * Шифруйте сохраненные, хранящиеся или постоянные данные.
 > * Требуйте периодической смены или обновления паролей или ключей.
-> * Тщательно ограничивайте доступ и разрешения с помощью ролей. См. раздел [Рекомендации по управлению доступом на основе ролей](#role-based-access-control-best-practices), приведенный ниже.
+> * Тщательно ограничивайте доступ и разрешения с помощью ролей. Ознакомьтесь с рекомендациями по [управлению доступом на основе ролей](#role-based-access-control-best-practices) ниже.
 > * Рассмотрим разделенную топологию сети, чтобы устройства в каждой сети были изолированы от других.
 > * Используйте эффективную систему шифрования Требовать длинные пароли, использовать безопасные протоколы и [многофакторную проверку подлинности](https://docs.microsoft.com/azure/active-directory/authentication/concept-mfa-howitworks).
 
@@ -56,7 +56,7 @@ Azure Digital Twins также использует другие функции 
 > Ознакомьтесь с [рекомендациями по обеспечению безопасности Azure IOT](../iot-fundamentals/iot-security-best-practices.md) , чтобы начать комплексную стратегию безопасности IOT.
 
 > [!NOTE]
-> Дополнительные сведения об обработке и мониторинге событий см. в разделе [Маршрутизация событий и сообщений](./concepts-events-routing.md).
+> Дополнительные сведения об обработке событий и мониторинге см. в статье [Маршрутизация событий и сообщений с помощью Azure Digital двойников](./concepts-events-routing.md).
 
 ## <a name="azure-active-directory-best-practices"></a>Рекомендации по использованию Azure Active Directory
 
@@ -74,7 +74,7 @@ Azure Digital двойников использует [Azure Active Directory](h
 
 [!INCLUDE [digital-twins-rbac-best-practices](../../includes/digital-twins-rbac-best-practices.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Рекомендации по Интернету вещей Azure см. в [этой статье](../iot-fundamentals/iot-security-best-practices.md).
 
