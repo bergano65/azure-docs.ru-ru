@@ -7,24 +7,24 @@ author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.date: 09/11/2019
-ms.openlocfilehash: 9f7d3fb5363a5eb2d79287bc9a9398bfdcbc4aec
-ms.sourcegitcommit: c79aa93d87d4db04ecc4e3eb68a75b349448cd17
+ms.openlocfilehash: ae5cfcfcd394aab644b35ac66aafa213dc49dd42
+ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71087820"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75895385"
 ---
 # <a name="apache-ambari-heartbeat-issues-in-azure-hdinsight"></a>Проблемы пульса Apache Ambari в Azure HDInsight
 
 В этой статье описываются действия по устранению неполадок и возможные способы решения проблем при взаимодействии с кластерами Azure HDInsight.
 
-## <a name="scenario-high-cpu-utilization"></a>Сценарий. Высокая загрузка ЦП
+## <a name="scenario-high-cpu-utilization"></a>Сценарий: высокая загрузка ЦП
 
-### <a name="issue"></a>Проблемы
+### <a name="issue"></a>Проблема
 
 Агент Ambari использует высокую загрузку ЦП, что приводит к предупреждениям пользовательского интерфейса Ambari, который для некоторых узлов теряет пульс агента Ambari. Предупреждение о потере пульса обычно является временным. 
 
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
 
 Из-за различных ошибок ambari-Agent в редких случаях ambari-Agent может иметь высокий уровень использования ЦП (близко к 100).
 
@@ -57,13 +57,13 @@ ms.locfileid: "71087820"
 
 ---
 
-## <a name="scenario-ambari-agent-not-started"></a>Сценарий. Агент Ambari не запущен
+## <a name="scenario-ambari-agent-not-started"></a>Сценарий: агент Ambari не запущен
 
-### <a name="issue"></a>Проблемы
+### <a name="issue"></a>Проблема
 
 Агент Ambari не начал работу, что приводит к предупреждениям из пользовательского интерфейса Ambari, который для некоторых узлов теряет пульс агента Ambari.
 
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
 
 Предупреждения вызваны тем, что агент Ambari не работает.
 
@@ -81,16 +81,16 @@ ms.locfileid: "71087820"
     ps -ef | grep failover
     ```
 
-    Если службы контроллера отработки отказа не запущены, вероятно, это связано с тем, что служба hdinsight-Agent не может запустить контроллер отработки отказа. Проверьте журнал hdinsight-Agent из `/var/log/hdinsight-agent/hdinsight-agent.out` файла.
+    Если службы контроллера отработки отказа не запущены, вероятно, это связано с тем, что служба hdinsight-Agent не может запустить контроллер отработки отказа. Проверьте журнал hdinsight-Agent в файле `/var/log/hdinsight-agent/hdinsight-agent.out`.
 
 ---
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если вы не видите своего варианта проблемы или вам не удается ее устранить, дополнительные сведения можно получить, посетив один из следующих каналов.
 
 * Получите ответы от экспертов Azure через [службу поддержки сообщества Azure](https://azure.microsoft.com/support/community/).
 
-* Подключайтесь с помощью [@AzureSupport](https://twitter.com/azuresupport) официальной учетной записи Microsoft Azure для улучшения качества работы клиентов, подключив сообщество Azure к нужным ресурсам: ответы, поддержка и эксперты.
+* Подключайтесь с [@AzureSupport](https://twitter.com/azuresupport) — официальная учетная запись Microsoft Azure для улучшения качества обслуживания клиентов путем подключения сообщества Azure к нужным ресурсам: ответы, поддержка и эксперты.
 
-* Если вам нужна дополнительная помощь, можно отправить запрос в службу поддержки из [портал Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade/). Выберите пункт **Поддержка** в строке меню или откройте центр **справки и поддержки** . Дополнительные сведения см. [в](https://docs.microsoft.com/azure/azure-supportability/how-to-create-azure-support-request)этой службе. Доступ к управлению подписками и поддержкой выставления счетов включен в вашу подписку Microsoft Azure, а техническая поддержка предоставляется через один из [планов поддержки Azure](https://azure.microsoft.com/support/plans/).
+* Если вам нужна дополнительная помощь, можно отправить запрос в службу поддержки из [портал Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade/). Выберите пункт **Поддержка** в строке меню или откройте центр **справки и поддержки** . Дополнительные сведения см. [в](https://docs.microsoft.com/azure/azure-portal/supportability/how-to-create-azure-support-request)этой службе. Доступ к управлению подписками и поддержкой выставления счетов включен в вашу подписку Microsoft Azure, а техническая поддержка предоставляется через один из [планов поддержки Azure](https://azure.microsoft.com/support/plans/).

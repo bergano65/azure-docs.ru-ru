@@ -7,12 +7,12 @@ author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.date: 08/21/2019
-ms.openlocfilehash: 82280532fa91923bd08d8ff3164dc841282c392c
-ms.sourcegitcommit: 3486e2d4eb02d06475f26fbdc321e8f5090a7fac
+ms.openlocfilehash: e389c05a6de85287bc86eff510e137f470837e56
+ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73241167"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75894325"
 ---
 # <a name="apache-spark-job-run-slowly-when-the-azure-storage-container-contains-many-files-in-azure-hdinsight"></a>Apache Spark задание медленно выполняется, если контейнер службы хранилища Azure содержит много файлов в Azure HDInsight
 
@@ -22,7 +22,7 @@ ms.locfileid: "73241167"
 
 При запуске кластера HDInsight задание Apache Spark, которое выполняет запись в контейнер службы хранилища Azure, замедлит работу при наличии большого количества файлов и вложенных папок. Например, при записи в новый контейнер может потребоваться 20 секунд, а при записи в контейнер с 200 000 деятелей-файлами — 2 минуты.
 
-## <a name="cause"></a>Причина:
+## <a name="cause"></a>Причина
 
 Это известная проблема Spark. Медленная работа поступает из `ListBlob` и `GetBlobProperties` операций во время выполнения задания Spark.
 
@@ -46,4 +46,4 @@ ms.locfileid: "73241167"
 
 * Подключайтесь с [@AzureSupport](https://twitter.com/azuresupport) — официальная учетная запись Microsoft Azure для улучшения качества обслуживания клиентов путем подключения сообщества Azure к нужным ресурсам: ответы, поддержка и эксперты.
 
-* Если вам нужна дополнительная помощь, можно отправить запрос в службу поддержки из [портал Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade/). Выберите пункт **Поддержка** в строке меню или откройте центр **справки и поддержки** . Дополнительные сведения см. [в](https://docs.microsoft.com/azure/azure-supportability/how-to-create-azure-support-request)этой службе. Доступ к управлению подписками и поддержкой выставления счетов включен в вашу подписку Microsoft Azure, а техническая поддержка предоставляется через один из [планов поддержки Azure](https://azure.microsoft.com/support/plans/).
+* Если вам нужна дополнительная помощь, можно отправить запрос в службу поддержки из [портал Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade/). Выберите пункт **Поддержка** в строке меню или откройте центр **справки и поддержки** . Дополнительные сведения см. [в](https://docs.microsoft.com/azure/azure-portal/supportability/how-to-create-azure-support-request)этой службе. Доступ к управлению подписками и поддержкой выставления счетов включен в вашу подписку Microsoft Azure, а техническая поддержка предоставляется через один из [планов поддержки Azure](https://azure.microsoft.com/support/plans/).

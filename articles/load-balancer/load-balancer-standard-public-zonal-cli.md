@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/26/2018
 ms.author: allensu
-ms.openlocfilehash: b9c3a88df6801566bc927cfc18fda0adfa05a5ae
-ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
+ms.openlocfilehash: 7bd420d08645e22db3ec0e9b1a68188a483378bf
+ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74076028"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75896042"
 ---
 #  <a name="create-a-standard-load-balancer-with-zonal-public-ip-address-frontend-using-azure-cli"></a>Создание Load Balancer (цен. категория "Стандартный") с общедоступным IP-адресом зональные с помощью Azure CLI
 
@@ -26,7 +26,7 @@ ms.locfileid: "74076028"
 
 Дополнительные сведения о том, как работают зоны доступности с Load Balancer уровня "Стандартный", см. в статье [Azure Load Balancer уровня "Стандартный" и зоны доступности](load-balancer-standard-availability-zones.md).
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) , прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
  
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
@@ -34,7 +34,7 @@ ms.locfileid: "74076028"
 Если вы планируете установить CLI и использовать его локально, обязательно установите последнюю версию [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest) и войдите в учетную запись Azure с помощью команды [az login](https://docs.microsoft.com/cli/azure/reference-index?view=azure-cli-latest).
 
 > [!NOTE]
->  Поддержка зон доступности реализована для некоторых ресурсов, регионов и семейств размеров виртуальных машин Azure. Дополнительные сведения о начале работы и о том, какие ресурсы, регионы и семейства размеров виртуальных машин Azure поддерживаются для зон доступности, см. в разделе [Обзор зон доступности](https://docs.microsoft.com/azure/availability-zones/az-overview). Чтобы получить поддержку, обратитесь на форум [StackOverflow](https://stackoverflow.com/questions/tagged/azure-availability-zones) или [создайте запрос в службу поддержки Azure](../azure-supportability/how-to-create-azure-support-request.md?toc=%2fazure%2fvirtual-network%2ftoc.json).  
+>  Поддержка зон доступности реализована для некоторых ресурсов, регионов и семейств размеров виртуальных машин Azure. Дополнительные сведения о начале работы и о том, какие ресурсы, регионы и семейства размеров виртуальных машин Azure поддерживаются для зон доступности, см. в разделе [Обзор зон доступности](https://docs.microsoft.com/azure/availability-zones/az-overview). Чтобы получить поддержку, обратитесь на форум [StackOverflow](https://stackoverflow.com/questions/tagged/azure-availability-zones) или [создайте запрос в службу поддержки Azure](../azure-portal/supportability/how-to-create-azure-support-request.md?toc=%2fazure%2fvirtual-network%2ftoc.json).  
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
@@ -95,7 +95,7 @@ az network lb probe create \
 ```
 
 ## <a name="create-load-balancer-rule-for-port-80"></a>Создание правила подсистемы балансировки нагрузки для порта 80
-Правило подсистемы балансировки нагрузки определяет интерфейсную конфигурацию IP-адресов для входящего трафика и внутренний пул IP-адресов для приема трафика, а также порты источника и назначения. С помощью команды *az network lb rule create* создайте правило подсистемы балансировки нагрузки с именем [myLoadBalancerRuleWeb](/cli/azure/network/lb/rule#az-network-lb-rule-create) для прослушивания порта 80, используемого внешним пулом *myFrontEndPool*, и отправки трафика с балансировкой нагрузки внутреннему пулу адресов *myBackEndPool*, который также использует порт 80.
+Правило подсистемы балансировки нагрузки определяет интерфейсную конфигурацию IP-адресов для входящего трафика и внутренний пул IP-адресов для приема трафика, а также порты источника и назначения. С помощью команды [az network lb rule create](/cli/azure/network/lb/rule#az-network-lb-rule-create) создайте правило подсистемы балансировки нагрузки с именем *myLoadBalancerRuleWeb* для прослушивания порта 80, используемого внешним пулом *myFrontEndPool*, и отправки трафика с балансировкой нагрузки внутреннему пулу адресов *myBackEndPool*, который также использует порт 80.
 
 ```azurecli-interactive
 az network lb rule create \
@@ -113,9 +113,9 @@ az network lb rule create \
 ## <a name="configure-virtual-network"></a>Настройка виртуальной сети
 Прежде чем развертывать виртуальные машины и тестировать подсистему балансировки нагрузки, создайте вспомогательные ресурсы виртуальной сети.
 
-### <a name="create-a-virtual-network"></a>Создать виртуальную сеть
+### <a name="create-a-virtual-network"></a>Создание виртуальной сети
 
-С помощью команды *az network vnet create* в группе ресурсов myResourceGroup создайте виртуальную сеть с именем *myVnet*, содержащую подсеть [mySubnet](/cli/azure/network/vnet#az-network-vnet-create).
+С помощью команды [az network vnet create](/cli/azure/network/vnet#az-network-vnet-create) в группе ресурсов myResourceGroup создайте виртуальную сеть с именем *myVnet*, содержащую подсеть *mySubnet*.
 
 
 ```azurecli-interactive
@@ -249,7 +249,7 @@ done
 
 Чтобы увидеть, как подсистема балансировки нагрузки распределяет трафик на виртуальные машины в зоне 1, на которых выполняется приложение, принудительно обновите веб-браузер.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - Узнайте больше об [Azure Load Balancer уровня "Стандартный"](./load-balancer-standard-overview.md).
 
 

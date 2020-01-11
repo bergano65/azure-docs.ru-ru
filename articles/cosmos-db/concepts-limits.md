@@ -6,12 +6,12 @@ ms.author: arramac
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 08/05/2019
-ms.openlocfilehash: 8d2873dd2fd36ed1193aed457a04baae94a043a2
-ms.sourcegitcommit: 5b9287976617f51d7ff9f8693c30f468b47c2141
+ms.openlocfilehash: d6b66c4a4924f8455b58b930621d6a7b93901a2a
+ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2019
-ms.locfileid: "74951825"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75887620"
 ---
 # <a name="azure-cosmos-db-service-quotas"></a>Квоты служб Azure Cosmos DB
 
@@ -23,8 +23,8 @@ ms.locfileid: "74951825"
 
 | Ресурс | Ограничение по умолчанию |
 | --- | --- |
-| Максимальное число записей на контейнер ([выделенный режим подготовки пропускной способности](databases-containers-items.md#azure-cosmos-containers)) | 1 000 000 по умолчанию. Вы можете увеличить его, выполнив [запрос в службу поддержки Azure](https://docs.microsoft.com/azure/azure-supportability/how-to-create-azure-support-request) . |
-| Максимальное число получателей в базе данных ([подготовленный режим с общей пропускной способностью](databases-containers-items.md#azure-cosmos-containers)) | 1 000 000 по умолчанию. Вы можете увеличить его, выполнив [запрос в службу поддержки Azure](https://docs.microsoft.com/azure/azure-supportability/how-to-create-azure-support-request) . |
+| Максимальное число записей на контейнер ([выделенный режим подготовки пропускной способности](databases-containers-items.md#azure-cosmos-containers)) | 1 000 000 по умолчанию. Вы можете увеличить его, выполнив [запрос в службу поддержки Azure](https://docs.microsoft.com/azure/azure-portal/supportability/how-to-create-azure-support-request) . |
+| Максимальное число получателей в базе данных ([подготовленный режим с общей пропускной способностью](databases-containers-items.md#azure-cosmos-containers)) | 1 000 000 по умолчанию. Вы можете увеличить его, выполнив [запрос в службу поддержки Azure](https://docs.microsoft.com/azure/azure-portal/supportability/how-to-create-azure-support-request) . |
 | Максимальное число получателей/с (логический) ключа секции | 10 000 |
 | Максимальный объем хранилища для всех элементов на (логический) ключ секции| 10 ГБ |
 | Максимальное число уникальных (логических) ключей разделов | Неограниченная |
@@ -64,8 +64,8 @@ Cosmos DB поддерживает Эластичное масштабирова
 
 | Ресурс | Ограничение по умолчанию |
 | --- | --- |
-| Максимальное число учетных записей базы данных на подписку | 50 по умолчанию. Вы можете увеличить его, выполнив [запрос в службу поддержки Azure](https://docs.microsoft.com/azure/azure-supportability/how-to-create-azure-support-request) .|
-| Максимальное число региональных отработки отказа | по умолчанию 1/час. Вы можете увеличить его, выполнив [запрос в службу поддержки Azure](https://docs.microsoft.com/azure/azure-supportability/how-to-create-azure-support-request) .|
+| Максимальное число учетных записей базы данных на подписку | 50 по умолчанию. Вы можете увеличить его, выполнив [запрос в службу поддержки Azure](https://docs.microsoft.com/azure/azure-portal/supportability/how-to-create-azure-support-request) .|
+| Максимальное число региональных отработки отказа | по умолчанию 1/час. Вы можете увеличить его, выполнив [запрос в службу поддержки Azure](https://docs.microsoft.com/azure/azure-portal/supportability/how-to-create-azure-support-request) .|
 
 > [!NOTE]
 > Региональные отработки отказа применяются только к учетным записям записи в одном регионе. Учетные записи для записи в нескольких регионах не зависят от ограничений на изменение региона записи.
@@ -132,7 +132,7 @@ Cosmos DB использует HMAC для авторизации. Можно и
 | --- | --- |
 | Максимальное время окончания срока действия основного маркера | 15 мин.  |
 | Минимальное время окончания срока действия маркера ресурса | 10 мин  |
-| Максимальное время окончания срока действия маркера ресурса | по умолчанию используется 24 h. Вы можете увеличить его, выполнив [запрос в службу поддержки Azure](https://docs.microsoft.com/azure/azure-supportability/how-to-create-azure-support-request) .|
+| Максимальное время окончания срока действия маркера ресурса | по умолчанию используется 24 h. Вы можете увеличить его, выполнив [запрос в службу поддержки Azure](https://docs.microsoft.com/azure/azure-portal/supportability/how-to-create-azure-support-request) .|
 | Максимальная асимметрия часов для авторизации токена| 15 мин. |
 
 Cosmos DB поддерживает выполнение триггеров во время записи. Служба поддерживает максимум один предварительный триггер и один после триггера на операцию записи. 

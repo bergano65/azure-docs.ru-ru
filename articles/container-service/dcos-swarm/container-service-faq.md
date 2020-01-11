@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 03/28/2017
 ms.author: mlearned
 ms.custom: H1Hack27Feb201
-ms.openlocfilehash: 0165ace1d373d267658c78e020356816fb9cc02f
-ms.sourcegitcommit: e50a39eb97a0b52ce35fd7b1cf16c7a9091d5a2a
+ms.openlocfilehash: 317862b694b93de44422ac3c28575c732ffc5be5
+ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74286470"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75887926"
 ---
 # <a name="deprecated-container-service-frequently-asked-questions"></a>Часто задаваемые вопросы о службе контейнеров (не рекомендуется)
 
@@ -64,7 +64,7 @@ ms.locfileid: "74286470"
 Можно создать кластер с 1, 3 или 5 основными узлами. Можно выбрать до 100 узлов агентов.
 
 > [!IMPORTANT]
-> Для больших кластеров и в зависимости от размера виртуальных машин, выбранных для узлов, может потребоваться увеличить квоту на число ядер в подписке. Чтобы увеличить квоту, [отправьте запрос в службу поддержки](../../azure-supportability/how-to-create-azure-support-request.md). Это бесплатная услуга. Если вы используете [бесплатную учетную запись Azure](https://azure.microsoft.com/free/), вам доступно ограниченное количество вычислительных ядер Azure.
+> Для больших кластеров и в зависимости от размера виртуальных машин, выбранных для узлов, может потребоваться увеличить квоту на число ядер в подписке. Чтобы увеличить квоту, [отправьте запрос в службу поддержки](../../azure-portal/supportability/how-to-create-azure-support-request.md). Это бесплатная услуга. Если вы используете [бесплатную учетную запись Azure](https://azure.microsoft.com/free/), вам доступно ограниченное количество вычислительных ядер Azure.
 > 
 
 ### <a name="how-do-i-increase-the-number-of-masters-after-a-cluster-is-created"></a>Как увеличить количество главных узлов после создания кластера? 
@@ -104,7 +104,7 @@ DNSnamePrefix.AzureRegion.cloudapp.azure.net
 
 4. На странице **Сводка** в разделе **Выходные данные** доступно несколько ссылок на кластеры. **SSHMaster0** предоставляет строку SSH-подключения к первому главному узлу в кластере службы контейнеров. 
 
-Как уже отмечалось, для поиска полного доменного имени главного узла можно также использовать средства Azure. Установите SSH-подключение к главному узлу, используя его полное доменное имя и имя пользователя, указанное при создании кластера. Например,
+Как уже отмечалось, для поиска полного доменного имени главного узла можно также использовать средства Azure. Установите SSH-подключение к главному узлу, используя его полное доменное имя и имя пользователя, указанное при создании кластера. Пример.
 
 ```bash
 ssh userName@masterFQDN –A –p 22 
@@ -112,17 +112,17 @@ ssh userName@masterFQDN –A –p 22 
 
 Дополнительные сведения см. в статье [Подключение к кластеру службы контейнеров Azure](../../container-service/kubernetes/container-service-connect.md).
 
-### <a name="my-dns-name-resolution-isnt-working-on-windows-what-should-i-do"></a>В Windows не работает разрешение имени DNS. Что делать?
+### <a name="my-dns-name-resolution-isnt-working-on-windows-what-should-i-do"></a>В Windows не работает разрешение имени DNS. Что мне делать?
 
 В Windows есть некоторые известные проблемы с DNS, исправления которых по-прежнему находятся в активном состоянии. Убедитесь, что вы используете наиболее обновленную версию ядра ACS и Windows (с установленными [KB4074588](https://www.catalog.update.microsoft.com/Search.aspx?q=KB4074588) и [KB4089848](https://www.catalog.update.microsoft.com/Search.aspx?q=KB4089848) ), чтобы среда могла использовать преимущества. В противном случае см. инструкции по устранению проблем в следующей таблице:
 
-| Симптом DNS | Возможное решение  |
+| Симптом DNS | Обходной путь  |
 |-------------|-------------|
 |Если контейнер рабочей нагрузки нестабилен и аварийно завершает работу, пространство имен очищается | Повторно разверните все затронутые службы |
 | Доступ к виртуальному IP-адресу службы отсутствует | Настройте [DaemonSet](https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/), чтобы одна обычная (непривилегированная) группа pod всегда находилась в рабочем состоянии |
 |Если узел, в котором работает контейнер, становится недоступным, запросы DNS могут завершаться ошибкой, что приведет к наличию отрицательной записи кэша | Выполните следующую команду внутри затронутых контейнеров: <ul><li> `New-ItemProperty -Path 'HKLM:\SYSTEM\CurrentControlSet\Services\Dnscache\Parameters' -Name MaxCacheTtl -Value 0 -Type DWord`</li><li>`New-ItemProperty -Path 'HKLM:\SYSTEM\CurrentControlSet\Services\Dnscache\Parameters' -Name MaxNegativeCacheTtl -Value 0 -Type DWord`</li><li>`Restart-Service dnscache` </li></ul><br> Если проблема все еще не решена, попробуйте полностью отключить кэширование DNS: <ul><li>`Set-Service dnscache -StartupType disabled`</li><li>`Stop-Service dnscache`</li></ul> |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Узнайте больше о [Службе контейнеров Azure](../../container-service/kubernetes/container-service-intro-kubernetes.md).
 * Разверните кластер службы контейнеров с помощью [портала](../../container-service/dcos-swarm/container-service-deployment.md) или [Azure CLI](../../container-service/dcos-swarm/container-service-create-acs-cluster-cli.md).

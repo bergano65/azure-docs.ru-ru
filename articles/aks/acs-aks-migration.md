@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 11/07/2018
 ms.author: mlearned
 ms.custom: mvc
-ms.openlocfilehash: 8070e209910425f9baa0ae81aca349a067c70f76
-ms.sourcegitcommit: 51ed913864f11e78a4a98599b55bbb036550d8a5
+ms.openlocfilehash: 68c50d3455c0ed240fa62532818a0b07b39ec772
+ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2020
-ms.locfileid: "75658548"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75889527"
 ---
 # <a name="migrate-to-azure-kubernetes-service-aks"></a>Миграция в службу Kubernetes Azure (AKS)
 
@@ -87,9 +87,9 @@ az aks create \
 
 ## <a name="ensure-valid-quotas"></a>Обеспечение допустимых квот
 
-Так как дополнительные виртуальные машины будут развернуты в рамках подписки во время миграции, следует убедиться, что квоты и ограничения достаточны для этих ресурсов. Может потребоваться запросить увеличение [квоты виртуальных ЦП](https://docs.microsoft.com/azure/azure-supportability/per-vm-quota-requests).
+Так как дополнительные виртуальные машины будут развернуты в рамках подписки во время миграции, следует убедиться, что квоты и ограничения достаточны для этих ресурсов. Может потребоваться запросить увеличение [квоты виртуальных ЦП](https://docs.microsoft.com/azure/azure-portal/supportability/per-vm-quota-requests).
 
-Может потребоваться запросить увеличение [квоты сети](https://docs.microsoft.com/azure/azure-supportability/networking-quota-requests) , чтобы не допустить исчерпания IP-адресов. Дополнительные сведения см. в разделе [сети и диапазоны IP-адресов для AKS](https://docs.microsoft.com/azure/aks/configure-kubenet) .
+Может потребоваться запросить увеличение [квоты сети](https://docs.microsoft.com/azure/azure-portal/supportability/networking-quota-requests) , чтобы не допустить исчерпания IP-адресов. Дополнительные сведения см. в разделе [сети и диапазоны IP-адресов для AKS](https://docs.microsoft.com/azure/aks/configure-kubenet) .
 
 Дополнительные сведения см. в статье [Подписка Azure и ограничения службы](https://docs.microsoft.com/azure/azure-resource-manager/management/azure-subscription-service-limits). Чтобы проверить текущие квоты, в портал Azure перейдите в [колонку подписки](https://portal.azure.com/#blade/Microsoft_Azure_Billing/SubscriptionsBlade), выберите свою подписку и щелкните **использование + квоты**.
 

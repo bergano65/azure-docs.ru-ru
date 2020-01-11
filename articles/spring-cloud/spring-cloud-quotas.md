@@ -6,12 +6,12 @@ ms.service: spring-cloud
 ms.topic: conceptual
 ms.date: 11/04/2019
 ms.author: jeconnoc
-ms.openlocfilehash: 0518b13ea228b4834a095a9bf126b131e70a5f45
-ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
+ms.openlocfilehash: a5352b371c5754672e668e53eb5e4211de9c46cc
+ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74851559"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75891493"
 ---
 # <a name="quotas-and-service-plans-for-azure-spring-cloud"></a>Квоты и планы обслуживания для Azure Веснного облака
 
@@ -36,4 +36,4 @@ ms.locfileid: "74851559"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Вы можете повысить лимит нескольких ограничений и квот. Если ресурс требует увеличения, [Создайте запрос в службу поддержки](https://docs.microsoft.com/azure/azure-supportability/how-to-create-azure-support-request).
+Вы можете повысить лимит нескольких ограничений и квот. Если ресурс требует увеличения, [Создайте запрос в службу поддержки](https://docs.microsoft.com/azure/azure-portal/supportability/how-to-create-azure-support-request).

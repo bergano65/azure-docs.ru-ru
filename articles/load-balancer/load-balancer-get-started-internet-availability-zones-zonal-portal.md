@@ -14,21 +14,21 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/26/2018
 ms.author: allensu
-ms.openlocfilehash: 82a773b279780bc4eb784fa107d6b15bd0ff2672
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: 7395da5bc1bf3829cf652374a9a0bb60b4621042
+ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74225342"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75894521"
 ---
 #  <a name="create-a-standard-load-balancer-with-zonal-frontend-using-azure-portal"></a>Создание экземпляра Load Balancer (цен. категория "Стандартный") с зональным интерфейсным сервером с помощью портала Azure
 
 В этой статье приведены действия по созданию общедоступного экземпляра [Load Balancer (цен. категория "Стандартный")](https://aka.ms/azureloadbalancerstandard) в конфигурации с зональным внешним интерфейсом с IP-адресом. Чтобы понять, как работают зоны доступности с Load Balancer уровня "Стандартный", ознакомьтесь со статьей [Azure Load Balancer уровня "Стандартный" и зоны доступности](load-balancer-standard-availability-zones.md). 
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) , прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 > [!NOTE]
-> Поддержка зон доступности реализована для некоторых ресурсов, регионов и семейств размеров виртуальных машин Azure. Дополнительные сведения о начале работы и о том, какие ресурсы, регионы и семейства размеров виртуальных машин Azure поддерживаются для зон доступности, см. в разделе [Обзор зон доступности](https://docs.microsoft.com/azure/availability-zones/az-overview). Чтобы получить поддержку, обратитесь на форум [StackOverflow](https://stackoverflow.com/questions/tagged/azure-availability-zones) или [создайте запрос в службу поддержки Azure](../azure-supportability/how-to-create-azure-support-request.md?toc=%2fazure%2fvirtual-network%2ftoc.json).  
+> Поддержка зон доступности реализована для некоторых ресурсов, регионов и семейств размеров виртуальных машин Azure. Дополнительные сведения о начале работы и о том, какие ресурсы, регионы и семейства размеров виртуальных машин Azure поддерживаются для зон доступности, см. в разделе [Обзор зон доступности](https://docs.microsoft.com/azure/availability-zones/az-overview). Чтобы получить поддержку, обратитесь на форум [StackOverflow](https://stackoverflow.com/questions/tagged/azure-availability-zones) или [создайте запрос в службу поддержки Azure](../azure-portal/supportability/how-to-create-azure-support-request.md?toc=%2fazure%2fvirtual-network%2ftoc.json).  
 
 ## <a name="log-in-to-azure"></a>Вход в Azure 
 
@@ -47,12 +47,12 @@ ms.locfileid: "74225342"
 > Общедоступный IP-адрес, созданный на этом шаге, имеет номер SKU категории "Стандартный" по умолчанию.
 
 1. В разделе **Группа ресурсов** щелкните **Создать**, а затем введите имя группы ресурсов — **myResourceGroupZLB**.
-1. В разделе **Расположение** выберите **Западная Европа** и нажмите кнопку **ОК**. После этого подсистема балансировки нагрузки начнет развертывание, для завершения которого может потребоваться несколько минут.
+1. В разделе **Расположение** выберите **Западная Европа** и нажмите кнопку **ОК**. После этого подсистема балансировки нагрузки начнет развертывание. Этот процесс может занять несколько минут.
 
     ![Создание избыточного между зонами экземпляра Load Balancer (цен. категория "Стандартный") с помощью портала Azure](./media/load-balancer-get-started-internet-availability-zones-zonal-portal/load-balancer-zonal-frontend.png)
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - Дополнительные сведения см. в статье [Azure Load Balancer уровня "Стандартный" и зоны доступности](load-balancer-standard-availability-zones.md).
 
 

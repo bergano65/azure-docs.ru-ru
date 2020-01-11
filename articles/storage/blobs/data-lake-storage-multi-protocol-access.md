@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 11/01/2019
 ms.author: normesta
 ms.reviewer: stewu
-ms.openlocfilehash: aebd7b58a2107ac109a03d3ce12f27d65ba0ab90
-ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
+ms.openlocfilehash: f34c5d5069a158579864320d0fbf965de8936d9c
+ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74769818"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75896109"
 ---
 # <a name="multi-protocol-access-on-azure-data-lake-storage"></a>Доступ с несколькими протоколами на Azure Data Lake Storage
 
@@ -52,13 +52,13 @@ API-интерфейсы больших двоичных объектов и API
 |Пакеты SDK для BLOB-объектов |Общедоступная версия|
 |[PowerShell (BLOB-объект)](https://docs.microsoft.com/azure/storage/blobs/storage-quickstart-blobs-powershell) |Общедоступная версия|
 |[Интерфейс командной строки (BLOB)](https://docs.microsoft.com/azure/storage/blobs/storage-quickstart-blobs-cli) |Общедоступная версия|
-|Пакеты SDK для BLOB-объектов с семантикой файловой системы ([.net](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-directory-file-acl-dotnet) &vert; [Python](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-directory-file-acl-python) &vert; [Java](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-directory-file-acl-java))|Preview (Предварительный просмотр)|
-|[PowerShell с семантикой файловой системы](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-directory-file-acl-powershell)|Preview (Предварительный просмотр)|
-|[Интерфейс командной строки с семантикой файловой системы](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-directory-file-acl-cli)|Preview (Предварительный просмотр)|
-|[Журналы диагностики](../common/storage-analytics-logging.md)| Preview (Предварительный просмотр)|
-|[Политики управления жизненным циклом](storage-lifecycle-management-concepts.md)| Preview (Предварительный просмотр)|
-|[Уведомления через службу "Сетка событий Azure"](data-lake-storage-events.md)|Preview (Предварительный просмотр)|
-|[Архивный уровень доступа](storage-blob-storage-tiers.md)| Preview (Предварительный просмотр)|
+|[Уведомления через службу "Сетка событий Azure"](data-lake-storage-events.md)|Общедоступная версия|
+|Пакеты SDK для BLOB-объектов с семантикой файловой системы ([.net](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-directory-file-acl-dotnet) &vert; [Python](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-directory-file-acl-python) &vert; [Java](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-directory-file-acl-java))|Предварительная версия|
+|[PowerShell с семантикой файловой системы](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-directory-file-acl-powershell)|Предварительная версия|
+|[Интерфейс командной строки с семантикой файловой системы](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-directory-file-acl-cli)|Предварительная версия|
+|[Журналы диагностики](../common/storage-analytics-logging.md)| Предварительная версия|
+|[Политики управления жизненным циклом](storage-lifecycle-management-concepts.md)| Предварительная версия|
+|[Архивный уровень доступа](storage-blob-storage-tiers.md)| Предварительная версия|
 |[blobfuse](storage-how-to-mount-container-linux.md)|Еще не поддерживается|
 |[Неизменяемое хранилище](storage-blob-immutable-storage.md)|Еще не поддерживается|
 |[Моментальные снимки](storage-blob-snapshots.md)|Еще не поддерживается|
@@ -83,7 +83,7 @@ API-интерфейсы больших двоичных объектов и API
 |[Azure Stream Analytics](https://docs.microsoft.com/azure/stream-analytics/stream-analytics-quick-create-portal)|Общедоступная версия|
 |[Центр Интернета вещей](https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-messages-d2c)|Общедоступная версия|
 |[Приложения логики](https://azure.microsoft.com/services/logic-apps/)|Общедоступная версия|
-|[Когнитивный поиск Azure](https://docs.microsoft.com/azure/search/search-howto-index-azure-data-lake-storage)|Preview (Предварительный просмотр)|
+|[Когнитивный поиск Azure](https://docs.microsoft.com/azure/search/search-howto-index-azure-data-lake-storage)|Предварительная версия|
 
 Полный список поддержки для Data Lake Storage 2-го поколения в службе экосистемы Azure см. в статье [интеграция Azure Data Lake Storage со службами Azure](data-lake-storage-integrate-with-azure-services.md).
 

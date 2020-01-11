@@ -7,12 +7,12 @@ author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.date: 08/05/2019
-ms.openlocfilehash: 5b8d031af9dbe6019d71e2a1caa3d3f25d4024ea
-ms.sourcegitcommit: 38251963cf3b8c9373929e071b50fd9049942b37
+ms.openlocfilehash: f857ee47f5dd8018d2e26aab47252533b0b17617
+ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73044465"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75887110"
 ---
 # <a name="cluster-creation-fails-with-invalidnetworkconfigurationerrorcode-in-azure-hdinsight"></a>Сбой создания кластера с InvalidNetworkConfigurationErrorCode в Azure HDInsight
 
@@ -26,7 +26,7 @@ ms.locfileid: "73044465"
 
 Описание ошибки содержит "сбой разрешения имени узла".
 
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
 
 Эта ошибка указывает на проблему с пользовательской конфигурацией DNS. DNS-серверы в виртуальной сети могут пересылать запросы DNS в рекурсивные арбитры конфликтов Azure для разрешения имен узлов в этой виртуальной сети (Дополнительные сведения см. [в разделе разрешение имен в виртуальных сетях](../../virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances.md) ). Доступ к рекурсивным разрешителям Azure предоставляется через виртуальный IP-адрес 168.63.129.16. Этот IP-адрес доступен только на виртуальных машинах Azure. Поэтому он не будет работать при использовании локального DNS-сервера или если DNS-сервер является виртуальной машиной Azure, которая не является частью виртуальной сети кластера.
 
@@ -52,7 +52,7 @@ ms.locfileid: "73044465"
 
 Описание ошибки содержит сообщение "не удалось подключиться к учетной записи хранения Azure" или "не удалось подключиться к Azure SQL".
 
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
 
 Служба хранилища Azure и SQL не имеют фиксированных IP-адресов, поэтому для доступа к этим службам необходимо разрешить исходящие подключения ко всем IP-адресам. Точные действия по устранению зависят от того, настроена ли группа безопасности сети (NSG) или определяемые пользователем правила (UDR). Дополнительные сведения об этих конфигурациях см. в разделе [Управление сетевым трафиком с помощью HDInsight с группами безопасности сети и определяемыми пользователем маршрутами](../hdinsight-plan-virtual-network-deployment.md#hdinsight-ip) .
 
@@ -78,4 +78,4 @@ ms.locfileid: "73044465"
 
 * Подключайтесь с [@AzureSupport](https://twitter.com/azuresupport) — официальная учетная запись Microsoft Azure для улучшения качества обслуживания клиентов путем подключения сообщества Azure к нужным ресурсам: ответы, поддержка и эксперты.
 
-* Если вам нужна дополнительная помощь, можно отправить запрос в службу поддержки из [портал Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade/). Выберите пункт **Поддержка** в строке меню или откройте центр **справки и поддержки** . Дополнительные сведения см. [в](https://docs.microsoft.com/azure/azure-supportability/how-to-create-azure-support-request)этой службе. Доступ к управлению подписками и поддержкой выставления счетов включен в вашу подписку Microsoft Azure, а техническая поддержка предоставляется через один из [планов поддержки Azure](https://azure.microsoft.com/support/plans/).
+* Если вам нужна дополнительная помощь, можно отправить запрос в службу поддержки из [портал Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade/). Выберите пункт **Поддержка** в строке меню или откройте центр **справки и поддержки** . Дополнительные сведения см. [в](https://docs.microsoft.com/azure/azure-portal/supportability/how-to-create-azure-support-request)этой службе. Доступ к управлению подписками и поддержкой выставления счетов включен в вашу подписку Microsoft Azure, а техническая поддержка предоставляется через один из [планов поддержки Azure](https://azure.microsoft.com/support/plans/).

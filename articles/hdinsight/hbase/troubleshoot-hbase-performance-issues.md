@@ -7,12 +7,12 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: troubleshooting
 ms.date: 09/24/2019
-ms.openlocfilehash: 0466b08e551a5fa9da37afe2e5ad175ef28c804e
-ms.sourcegitcommit: f29fec8ec945921cc3a89a6e7086127cc1bc1759
+ms.openlocfilehash: 93698fadcecf190dd8bbc24a9d03978899d3c5e9
+ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72529567"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75887161"
 ---
 # <a name="troubleshoot-apache-hbase-performance-issues-on-azure-hdinsight"></a>Устранение проблем с производительностью Apache HBase в Azure HDInsight
 
@@ -75,7 +75,7 @@ ms.locfileid: "72529567"
 
 - Увеличьте число потоков, выделенных для сжатия, от значения по умолчанию от **1** до **4**. Этот параметр важен, если мы наблюдаем частые небольшие сжатия.
 
-- Старайтесь не блокировать `memstore`, так как это ограничение хранилища. Чтобы предоставить этот буфер, увеличьте значение параметра `Hbase.hstore.blockingStoreFiles` равным **100**.
+- Избегайте блокировки `memstore` Flush из-за ограничения хранилища. Чтобы предоставить этот буфер, увеличьте значение параметра `Hbase.hstore.blockingStoreFiles` равным **100**.
 
 - Для управления сбросами используйте следующие параметры.
 
@@ -106,7 +106,7 @@ ms.locfileid: "72529567"
    - Таймауты RPC включают время ожидания RPC для HBase, время ожидания клиентского сканера HBase и время ожидания запроса в Phoenix. 
    - Убедитесь, что для параметра `hbase.client.scanner.caching` задано одинаковое значение на стороне сервера и на стороне клиента. Если они не совпадают, этот параметр приводит к ошибкам клиента, связанным с `OutOfOrderScannerException`. Для этого параметра следует задать низкое значение для больших просмотров. Это значение устанавливается равным **100**.
 
-## <a name="other-considerations"></a>Дополнительные рекомендации
+## <a name="other-considerations"></a>Другие замечания
 
 Ниже приведены дополнительные параметры, которые следует учесть при настройке.
 
@@ -124,4 +124,4 @@ ms.locfileid: "72529567"
 
 - Подключитесь с [@AzureSupport](https://twitter.com/azuresupport). Это официальная учетная запись Microsoft Azure для улучшения качества взаимодействия с клиентами. Он подключает сообщество Azure к нужным ресурсам: ответы, поддержка и эксперты.
 
-- Если вам нужна дополнительная помощь, можно отправить запрос в службу поддержки из [портал Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade/). Выберите пункт **Поддержка** в строке меню или откройте центр **справки и поддержки** . Для получения более подробных сведений см. статью [о создании запроса на поддержку Azure](https://docs.microsoft.com/azure/azure-supportability/how-to-create-azure-support-request). Ваша Подписка Microsoft Azure включает доступ к управлению подписками и поддержке выставления счетов, а техническая поддержка предоставляется через один из [планов поддержки Azure](https://azure.microsoft.com/support/plans/).
+- Если вам нужна дополнительная помощь, можно отправить запрос в службу поддержки из [портал Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade/). Выберите пункт **Поддержка** в строке меню или откройте центр **справки и поддержки** . Для получения более подробных сведений см. статью [о создании запроса на поддержку Azure](https://docs.microsoft.com/azure/azure-portal/supportability/how-to-create-azure-support-request). Ваша Подписка Microsoft Azure включает доступ к управлению подписками и поддержке выставления счетов, а техническая поддержка предоставляется через один из [планов поддержки Azure](https://azure.microsoft.com/support/plans/).

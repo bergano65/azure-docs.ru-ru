@@ -8,12 +8,12 @@ ms.reviewer: jasonh
 ms.topic: troubleshooting
 ms.date: 08/22/2019
 ms.custom: seodec18
-ms.openlocfilehash: 8931f9b09836d30f95e25cee245932475c3cf64c
-ms.sourcegitcommit: 71db032bd5680c9287a7867b923bf6471ba8f6be
+ms.openlocfilehash: 80bca2dab1d07d9b99e75e283068bff99335fa18
+ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/16/2019
-ms.locfileid: "71018394"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75894290"
 ---
 # <a name="troubleshoot-apache-spark-by-using-azure-hdinsight"></a>Устранение неполадок в Apache Spark с помощью Azure HDInsight
 
@@ -21,11 +21,11 @@ ms.locfileid: "71018394"
 
 ## <a name="how-do-i-configure-an-apache-spark-application-by-using-apache-ambari-on-clusters"></a>Как настроить приложение Apache Spark с помощью Apache Ambari в кластерах?
 
-Можно настроить значения конфигурации Spark, чтобы избежать исключения Apache Spark приложения `OutofMemoryError` . Следующие шаги демонстрируют значения конфигурации Spark по умолчанию в Azure HDInsight.
+Можно настроить значения конфигурации Spark, чтобы избежать Apache Spark приложения `OutofMemoryError` исключением. Следующие шаги демонстрируют значения конфигурации Spark по умолчанию в Azure HDInsight.
 
-1. Войдите в Ambari `https://CLUSTERNAME.azurehdidnsight.net` с учетными данными кластера. На начальном экране отображается панель мониторинга обзора. Между HDInsight 3,6 и 4,0 существуют небольшие косметические различия.
+1. Войдите в Ambari по адресу `https://CLUSTERNAME.azurehdidnsight.net` с учетными данными кластера. На начальном экране отображается панель мониторинга обзора. Между HDInsight 3,6 и 4,0 существуют небольшие косметические различия.
 
-1. Перейдите к **Spark2** > **configs**.
+1. Перейдите в раздел **Spark2** > **configs**.
 
     ![Выбор вкладки "Конфигурации"](./media/apache-troubleshoot-spark/apache-spark-ambari-config2.png)
 
@@ -97,11 +97,11 @@ curl -k --user 'username:password' -v -H 'Content-Type: application/json' -X POS
 spark-submit --master yarn-cluster --class com.microsoft.spark.application --num-executors 4 --executor-memory 4g --executor-cores 2 --driver-memory 8g --driver-cores 4 /home/user/spark/sparkapplication.jar
 ```
 
-### <a name="additional-reading"></a>Дополнительные материалы для чтения
+### <a name="additional-reading"></a>Дополнительные материалы
 
 [Отправка заданий Apache Spark в кластерах HDInsight](https://web.archive.org/web/20190112152841/https://blogs.msdn.microsoft.com/azuredatalake/2017/01/06/spark-job-submission-on-hdinsight-101/)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если вы не видите своего варианта проблемы или вам не удается ее устранить, дополнительные сведения можно получить, посетив один из следующих каналов.
 
@@ -111,6 +111,6 @@ spark-submit --master yarn-cluster --class com.microsoft.spark.application --num
 
 * Получите ответы от экспертов Azure через [службу поддержки сообщества Azure](https://azure.microsoft.com/support/community/).
 
-* Подключение с [@AzureSupport](https://twitter.com/azuresupport) — официальная учетная запись Microsoft Azure для улучшения качества обслуживания клиентов. Подключение сообщества Azure к нужным ресурсам: ответы, поддержка и эксперты.
+* Подключайтесь с [@AzureSupport](https://twitter.com/azuresupport) — официальная учетная запись Microsoft Azure для улучшения качества взаимодействия с клиентами. Подключение сообщества Azure к нужным ресурсам: ответы, поддержка и эксперты.
 
-* Если вам нужна дополнительная помощь, можно отправить запрос в службу поддержки из [портал Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade/). Выберите пункт **Поддержка** в строке меню или откройте центр **справки и поддержки** . Для получения более подробных сведений см. статью [о создании запроса на поддержку Azure](https://docs.microsoft.com/azure/azure-supportability/how-to-create-azure-support-request). Доступ к управлению подписками и поддержкой выставления счетов включен в вашу подписку Microsoft Azure, а техническая поддержка предоставляется через один из [планов поддержки Azure](https://azure.microsoft.com/support/plans/).
+* Если вам нужна дополнительная помощь, можно отправить запрос в службу поддержки из [портал Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade/). Выберите пункт **Поддержка** в строке меню или откройте центр **справки и поддержки** . Для получения более подробных сведений см. статью [о создании запроса на поддержку Azure](https://docs.microsoft.com/azure/azure-portal/supportability/how-to-create-azure-support-request). Доступ к управлению подписками и поддержкой выставления счетов включен в вашу подписку Microsoft Azure, а техническая поддержка предоставляется через один из [планов поддержки Azure](https://azure.microsoft.com/support/plans/).

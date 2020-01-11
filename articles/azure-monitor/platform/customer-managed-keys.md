@@ -7,16 +7,16 @@ ms.topic: conceptual
 author: yossi-y
 ms.author: yossiy
 ms.date: 01/07/2020
-ms.openlocfilehash: 7a3749f61e6e656f750059ee76881a2e3f3b7912
-ms.sourcegitcommit: 12a26f6682bfd1e264268b5d866547358728cd9a
+ms.openlocfilehash: d6419e86e1a541638a7053654bfcd7945aa41ae7
+ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75865042"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75891071"
 ---
 # <a name="azure-monitor-customer-managed-key-configuration"></a>Azure Monitor конфигурация ключа, управляемого клиентом 
 
-В этой статье содержатся общие сведения и инструкции по настройке ключей, управляемых клиентом (CMK), Log Analytics рабочих областей и компонентов Application Insights. После настройки все данные, отправленные в рабочие области, шифруются с помощью ключа Azure Key Vault.
+В этой статье содержатся общие сведения и инструкции по настройке ключей, управляемых клиентом (CMK), для рабочих областей Log Analytics и компонентов Application Insights. После настройки все данные, отправленные в рабочие области, шифруются с помощью ключа Azure Key Vault.
 
 Перед настройкой рекомендуется ознакомиться [с ограничениями и ограничениями,](#Limitations and constraints) приведенными ниже.
 
@@ -185,7 +185,7 @@ https://management.azure.com/subscriptions/{subscription-id}/resourceGroups/{res
 
 Обновите Key Vault и добавьте политику доступа с разрешениями "получить", "ключ переноса ключа" и "разносить ключ" для идентификатора ресурса *кластера* или имени ресурса *кластера* . Эти разрешения будут распространяться на подAzure Monitorное хранилище.
 
-![предоставление Key Vault разрешений](media/customer-managed-keys/grant-key-vault-permissions-8bit.png)
+![Предоставление Key Vault разрешений](media/customer-managed-keys/grant-key-vault-permissions-8bit.png)
 
 Разрешение *Get* необходимо для проверки того, что Key Vault настроена как восстанавливаемая для защиты ключа и доступа к данным Azure Monitor.
 

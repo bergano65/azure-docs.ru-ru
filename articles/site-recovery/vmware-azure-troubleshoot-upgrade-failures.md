@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: troubleshooting
 ms.date: 11/10/2019
 ms.author: raynew
-ms.openlocfilehash: 0e6631d36f8b8153c34f787f8941b45b7522aceb
-ms.sourcegitcommit: a22cb7e641c6187315f0c6de9eb3734895d31b9d
+ms.openlocfilehash: b59f933fedd5f1d3ed3f7972b1a1fe653df31be2
+ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74083922"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75893897"
 ---
 # <a name="troubleshoot-microsoft-azure-site-recovery-provider-upgrade-failures"></a>Устранение неполадок с обновлением поставщика службы Microsoft Azure Site Recovery
 
@@ -27,7 +27,7 @@ Upgrade is not supported as a higher version of the software is already installe
 Чтобы обновить поставщика службы, выполните следующие действия:
 
 1. Скачайте средство унифицированной установки Microsoft Azure Site Recovery:
-   1. В разделе "Ссылки на поддерживаемые накопительные пакеты обновления" статьи [Обновления службы в Azure Site Recovery](service-updates-how-to.md##links-to-currently-supported-update-rollups) выберите поставщика, который вы обновляете.
+   1. В разделе "Ссылки на поддерживаемые накопительные пакеты обновления" статьи [Обновления службы в Azure Site Recovery](service-updates-how-to.md#links-to-currently-supported-update-rollups) выберите поставщика, который вы обновляете.
    2. На открывшейся странице перейдите в раздел **Update information** (Сведения об обновлении) и скачайте накопительный пакет обновлений для средства унифицированной установки Microsoft Azure Site Recovery.
 
 2. Откройте командную строку и перейдите к папке, куда вы скачали пакет. Извлеките файлы средства установки из скачанного пакета с помощью такой команды: MicrosoftAzureSiteRecoveryUnifiedSetup.exe /q /x:&lt;путь к папке для извлеченных файлов&gt;.
@@ -51,7 +51,7 @@ Upgrade is not supported as a higher version of the software is already installe
 1. Запустите редактор реестра (regedit.exe) и откройте ветвь HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\InMage Systems\Installed Products\10.
 1. Проверьте значение ключа `Build_Version`. Если установлено значение последней версии, измените версию на более старую. Например, если последняя версия — 9.22.\* и ключ `Build_Version` имеет это значение, измените версию на 9.21.\*.
 1. Скачайте последнюю версию средства унифицированной установки Microsoft Azure Site Recovery:
-   1. В разделе "Ссылки на поддерживаемые накопительные пакеты обновления" статьи [Обновления службы в Azure Site Recovery](service-updates-how-to.md##links-to-currently-supported-update-rollups) выберите поставщика, который вы обновляете.
+   1. В разделе "Ссылки на поддерживаемые накопительные пакеты обновления" статьи [Обновления службы в Azure Site Recovery](service-updates-how-to.md#links-to-currently-supported-update-rollups) выберите поставщика, который вы обновляете.
    2. На открывшейся странице перейдите в раздел **Update information** (Сведения об обновлении) и скачайте накопительный пакет обновлений для средства унифицированной установки Microsoft Azure Site Recovery.
 1. Откройте командную строку, перейдите в папку со скачанным пакетом и извлеките файлы средства установки из скачанного пакета с помощью такой команды: MicrosoftAzureSiteRecoveryUnifiedSetup.exe /q /x:&lt;путь к папке для извлеченных файлов&gt;.
 

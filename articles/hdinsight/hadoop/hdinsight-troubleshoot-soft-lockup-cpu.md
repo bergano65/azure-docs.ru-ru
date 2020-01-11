@@ -7,12 +7,12 @@ author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.date: 08/05/2019
-ms.openlocfilehash: 1d357566a7b2478fff77ed4d88af4ee8a9535050
-ms.sourcegitcommit: 38251963cf3b8c9373929e071b50fd9049942b37
+ms.openlocfilehash: 701e314ad2a3762b1e8ca022ce18d9435ce2db37
+ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73044736"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75894107"
 ---
 # <a name="scenario-watchdog-bug-soft-lockup---cpu-error-from-an-azure-hdinsight-cluster"></a>Сценарий: ошибка "устройство наблюдения: ошибка: кратковременная блокировка — ЦП" из кластера Azure HDInsight
 
@@ -22,7 +22,7 @@ ms.locfileid: "73044736"
 
 В системных журналах ядра содержится сообщение об ошибке: `watchdog: BUG: soft lockup - CPU`.
 
-## <a name="cause"></a>Причина:
+## <a name="cause"></a>Причина
 
 [Ошибка](https://bugzilla.kernel.org/show_bug.cgi?id=199437) в ядре Linux вызывает мягкую зависание ЦП.
 
@@ -36,10 +36,10 @@ ms.locfileid: "73044736"
 
 1. Выберите **отправить новый** и введите входные данные, как показано ниже.
 
-    | Свойство | Value |
+    | Свойство | Значение |
     | --- | --- |
     | Тип скрипта | — Пользовательский |
-    | Name |Исправление проблемы с мягкой блокировкой ядра |
+    | Имя |Исправление проблемы с мягкой блокировкой ядра |
     | URI bash-скрипта |`https://raw.githubusercontent.com/hdinsight/hdinsight.github.io/master/ClusterCRUD/KernelSoftLockFix/scripts/KernelSoftLockIssue_FixAndReboot.sh` |
     | Типы узлов |Worker, Zookeeper |
     | Параметры |Н/Д |
@@ -62,4 +62,4 @@ ms.locfileid: "73044736"
 
 * Подключайтесь с [@AzureSupport](https://twitter.com/azuresupport) — официальная учетная запись Microsoft Azure для улучшения качества обслуживания клиентов путем подключения сообщества Azure к нужным ресурсам: ответы, поддержка и эксперты.
 
-* Если вам нужна дополнительная помощь, можно отправить запрос в службу поддержки из [портал Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade/). Выберите пункт **Поддержка** в строке меню или откройте центр **справки и поддержки** . Дополнительные сведения см. [в](https://docs.microsoft.com/azure/azure-supportability/how-to-create-azure-support-request)этой службе. Доступ к управлению подписками и поддержкой выставления счетов включен в вашу подписку Microsoft Azure, а техническая поддержка предоставляется через один из [планов поддержки Azure](https://azure.microsoft.com/support/plans/).
+* Если вам нужна дополнительная помощь, можно отправить запрос в службу поддержки из [портал Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade/). Выберите пункт **Поддержка** в строке меню или откройте центр **справки и поддержки** . Дополнительные сведения см. [в](https://docs.microsoft.com/azure/azure-portal/supportability/how-to-create-azure-support-request)этой службе. Доступ к управлению подписками и поддержкой выставления счетов включен в вашу подписку Microsoft Azure, а техническая поддержка предоставляется через один из [планов поддержки Azure](https://azure.microsoft.com/support/plans/).

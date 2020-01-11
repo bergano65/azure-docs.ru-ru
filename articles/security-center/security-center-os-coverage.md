@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 08/29/2019
 ms.author: memildin
-ms.openlocfilehash: 42bd6037bcc94a83e649433e9ea0425fbdf11cd2
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 0ecbb4399e038355a328055590da1c34170f3852
+ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75353322"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75894623"
 ---
 # <a name="supported-platforms"></a>Поддерживаемые платформы 
 
@@ -48,7 +48,7 @@ ms.locfileid: "75353322"
 |Windows Server 2012 R2|✔|✔|
 |Windows Server 2008 R2|✔|✔|
 
-Дополнительные сведения о поддерживаемых функциях для операционных систем Windows, перечисленных выше, см. в разделе [Поддерживаемые функции виртуальных машин и серверов](security-center-services.md##vm-server-features).
+Дополнительные сведения о поддерживаемых функциях для операционных систем Windows, перечисленных выше, см. в разделе [Поддерживаемые функции виртуальных машин и серверов](security-center-services.md#vm-server-features).
 
 ### Операционные системы Linux<a name="os-linux"></a>
 
@@ -72,7 +72,7 @@ ms.locfileid: "75353322"
 > [!NOTE]
 > Так как список поддерживаемых операционных систем Linux постоянно меняется, если вы предпочитаете, щелкните [здесь](https://github.com/microsoft/OMS-Agent-for-Linux#supported-linux-operating-systems) , чтобы просмотреть самый актуальный список поддерживаемых версий, на тот случай, если были внесены изменения с момента последней публикации этого раздела.
 
-Дополнительные сведения о поддерживаемых функциях для операционных систем Linux, перечисленных выше, см. в разделе [Поддерживаемые функции виртуальных машин и серверов](security-center-services.md##vm-server-features).
+Дополнительные сведения о поддерживаемых функциях для операционных систем Linux, перечисленных выше, см. в разделе [Поддерживаемые функции виртуальных машин и серверов](security-center-services.md#vm-server-features).
 
 ### Управляемые службы виртуальных машин<a name="virtual-machine"></a>
 

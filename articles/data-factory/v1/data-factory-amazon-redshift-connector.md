@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.date: 01/22/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: 3c9e10df9f2be2a07bc7b7af0e01905d5b278d35
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: c2e2394bbcee5294bfb752a0af2969457ffff0ee
+ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74924879"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75894207"
 ---
 # <a name="move-data-from-amazon-redshift-using-azure-data-factory"></a>Перемещение данных из Amazon Redshift с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Выберите используемую версию службы "Фабрика данных":"]
@@ -59,14 +59,14 @@ ms.locfileid: "74924879"
 
 В таблице ниже приведены описания элементов JSON, которые относятся к связанной службе Amazon Redshift.
 
-| Свойство | Описание | Обязательно для заполнения |
+| Свойство | Description | Обязательно для заполнения |
 | --- | --- | --- |
-| **type** |Этому свойству необходимо задать значение **AmazonRedshift**. |ДА |
-| **server** |IP-адрес или имя узла сервера Amazon Redshift. |ДА |
+| **type** |Этому свойству необходимо задать значение **AmazonRedshift**. |Да |
+| **server** |IP-адрес или имя узла сервера Amazon Redshift. |Да |
 | **port** |Номер TCP-порта, используемого сервером Amazon Redshift для прослушивания клиентских подключений. |Нет (значение по умолчанию — 5439) |
-| **database** |Имя базы данных Amazon Redshift. |ДА |
-| **username** |Имя пользователя, имеющего доступ к базе данных. |ДА |
-| **password** |Пароль для учетной записи пользователя. |ДА |
+| **database** |Имя базы данных Amazon Redshift. |Да |
+| **username** |Имя пользователя, имеющего доступ к базе данных. |Да |
+| **password** |Пароль для учетной записи пользователя. |Да |
 
 ## <a name="dataset-properties"></a>Свойства набора данных
 
@@ -74,7 +74,7 @@ ms.locfileid: "74924879"
 
 Раздел **typeProperties** во всех типах наборов данных разный. Он содержит сведения о расположении данных в хранилище. Раздел **typeProperties** набора данных типа **RelationalTable** (который включает в себя набор данных Amazon Redshift) содержит следующие свойства:
 
-| Свойство | Описание | Обязательно для заполнения |
+| Свойство | Description | Обязательно для заполнения |
 | --- | --- | --- |
 | **tableName** |Имя таблицы в базе данных Amazon Redshift, на которое ссылается связанная служба. |Нет (если указано свойство **query** действия копирования типа **RelationalSource**). |
 
@@ -84,7 +84,7 @@ ms.locfileid: "74924879"
 
 Если действие копирования относится к типу **AmazonRedshiftSource**, в разделе **typeProperties** для него доступны следующие свойства:
 
-| Свойство | Описание | Обязательно для заполнения |
+| Свойство | Description | Обязательно для заполнения |
 | --- | --- | --- |
 | **query** | Используйте пользовательский запрос для чтения данных. |Нет (если для свойства **tableName** задано значение dataset). |
 | **redshiftUnloadSettings** | Содержит группу свойств при использовании команды Redshift **UNLOAD**. | Нет |
@@ -93,7 +93,7 @@ ms.locfileid: "74924879"
 
 Кроме того, можно использовать тип **RelationalSource** (включающий Amazon Redshift) со следующим свойством в разделе **typeProperties**. Обратите внимание, что этот тип источника не поддерживает Redshift команду **UNLOAD**.
 
-| Свойство | Описание | Обязательно для заполнения |
+| Свойство | Description | Обязательно для заполнения |
 | --- | --- | --- |
 | **query** |Используйте пользовательский запрос для чтения данных. | Нет (если для свойства **tableName** задано значение dataset). |
 
@@ -146,7 +146,7 @@ ms.locfileid: "74924879"
 * Связанная служба типа [AzureStorage](data-factory-azure-blob-connector.md#linked-service-properties).
 * Входной [набор данных](data-factory-create-datasets.md) типа [RelationalTable](#dataset-properties).
 * Выходной [набор данных](data-factory-create-datasets.md) типа [AzureBlob](data-factory-azure-blob-connector.md#dataset-properties)
-* [Конвейер](data-factory-create-pipelines.md) с действием копирования, в котором используются свойства [RelationalSource](#copy-activity-properties) и [BlobSink](data-factory-azure-blob-connector.md##copy-activity-properties).
+* [Конвейер](data-factory-create-pipelines.md) с действием копирования, в котором используются свойства [RelationalSource](#copy-activity-properties) и [BlobSink](data-factory-azure-blob-connector.md#copy-activity-properties).
 
 В примере данные из результата запроса к Amazon Redshift каждый час копируются в большой двоичный объект Azure. Используемые в этом примере свойства JSON описаны в разделах, следующих за определениями сущностей.
 
@@ -331,16 +331,16 @@ ms.locfileid: "74924879"
 | --- | --- |
 | SMALLINT |Int16 |
 | INTEGER |Int32 |
-| BIGINT |Int64 |
+| bigint |Int64 |
 | DECIMAL |Decimal |
-| REAL |Отдельная |
-| DOUBLE PRECISION |DOUBLE |
-| BOOLEAN |Строка |
-| CHAR |Строка |
-| VARCHAR |Строка |
+| real |Отдельная |
+| DOUBLE PRECISION |Double |
+| BOOLEAN |String |
+| CHAR |String |
+| VARCHAR |String |
 | DATE |Дата и время |
-| TIMESTAMP |Дата и время |
-| TEXT |Строка |
+| timestamp |Дата и время |
+| TEXT |String |
 
 ## <a name="map-source-to-sink-columns"></a>Сопоставление столбцов источника и приемника
 Сведения о сопоставлении столбцов в наборе данных, используемом в качестве источника, со столбцами в приемнике см. в статье [Сопоставление столбцов исходного набора данных со столбцами целевого набора данных](data-factory-map-columns.md).

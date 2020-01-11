@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.service: cost-management-billing
 manager: micflan
 ms.custom: ''
-ms.openlocfilehash: 63b778379dda39a795cccdcfa0c1443870d50365
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 653e57a69e1c7ff8dbeadb14cda6e415ff3a9ee9
+ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75440982"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75887569"
 ---
 # <a name="understand-and-work-with-scopes"></a>Общие сведения об областях и работа с ними
 
@@ -110,7 +110,7 @@ Azure поддерживает три области для управления
 
 Отдельные администраторы учетных записей подписки Azure могут просматривать и управлять данными о выставлении счетов, например счета и платежи, из [центр управления учетной записью Azure](https://account.azure.com/subscriptions). Однако они не могут просматривать данные о затратах или управлять ресурсами в портал Azure. Чтобы предоставить доступ администратору учетной записи, используйте роли управления затратами, упомянутые выше.
 
-В отличие от EA, индивидуальные администраторы учетных записей подписки Azure могут просматривать свои счета в портал Azure. Не забывайте, что роли участников "читатель управления затратами" и "Управление затратами" не предоставляют доступ к счетам. Дополнительные сведения см. [в разделе как предоставить доступ к счетам](../billing/billing-manage-access.md##give-read-only-access-to-billing).
+В отличие от EA, индивидуальные администраторы учетных записей подписки Azure могут просматривать свои счета в портал Azure. Не забывайте, что роли участников "читатель управления затратами" и "Управление затратами" не предоставляют доступ к счетам. Дополнительные сведения см. [в разделе как предоставить доступ к счетам](../billing/billing-manage-access.md#give-read-only-access-to-billing).
 
 ## <a name="microsoft-customer-agreement-scopes"></a>Области соглашения клиента Майкрософт
 

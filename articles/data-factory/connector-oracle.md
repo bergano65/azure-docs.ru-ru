@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/09/2020
 ms.author: jingwang
-ms.openlocfilehash: fd5843ecfd6585fb9c95168c6e55049fe0e27abb
-ms.sourcegitcommit: 8b37091efe8c575467e56ece4d3f805ea2707a64
+ms.openlocfilehash: 736cf03b58ec09b291c91857177a32c7dad89c6a
+ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75830315"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75892046"
 ---
 # <a name="copy-data-from-and-to-oracle-by-using-azure-data-factory"></a>Копирование данных из Oracle и обратно с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Выберите используемую версию службы "Фабрика данных":"]
@@ -379,4 +379,4 @@ ms.locfileid: "75830315"
 Чтобы получить сведения о свойствах, проверьте [действие поиска](control-flow-lookup-activity.md).
 
 ## <a name="next-steps"></a>Дальнейшие действия
-В таблице [Поддерживаемые хранилища данных и форматы](copy-activity-overview.md##supported-data-stores-and-formats) приведен список хранилищ данных, которые поддерживаются в качестве источников и приемников для действия копирования в фабрике данных.
+В таблице [Поддерживаемые хранилища данных и форматы](copy-activity-overview.md#supported-data-stores-and-formats) приведен список хранилищ данных, которые поддерживаются в качестве источников и приемников для действия копирования в фабрике данных.

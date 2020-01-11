@@ -10,12 +10,12 @@ ms.workload: infrastructure-services
 ms.topic: article
 ms.date: 10/23/2019
 ms.author: cynthn
-ms.openlocfilehash: d2c8e599e44e48517920862e1fcf83e1a5e24910
-ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
+ms.openlocfilehash: b57c13d4a5c671595a3e82ac7858c027456107f2
+ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75647634"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75894073"
 ---
 # <a name="preview-azure-spot-vms-for-virtual-machine-scale-sets"></a>Предварительная версия: виртуальные машины Azure для масштабируемых наборов виртуальных машин 
 
@@ -156,7 +156,7 @@ $vmssConfig = New-AzVmssConfig `
 
 **Вопрос.** Можно ли запросить дополнительную квоту для точки?
 
-Ответ **.** Да, вы сможете отправить запрос на увеличение квоты для точечных виртуальных машин с помощью [стандартного процесса запроса квоты](https://docs.microsoft.com/azure/azure-supportability/per-vm-quota-requests).
+Ответ **.** Да, вы сможете отправить запрос на увеличение квоты для точечных виртуальных машин с помощью [стандартного процесса запроса квоты](https://docs.microsoft.com/azure/azure-portal/supportability/per-vm-quota-requests).
 
 
 **Вопрос.** Можно ли преобразовать существующие масштабируемые наборы в наборы смесевых красок?

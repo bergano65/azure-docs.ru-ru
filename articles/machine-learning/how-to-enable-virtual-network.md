@@ -9,13 +9,13 @@ ms.topic: conceptual
 ms.reviewer: larryfr
 ms.author: aashishb
 author: aashishb
-ms.date: 11/13/2019
-ms.openlocfilehash: 548b74dbaf36fa0a0b5f999d1de61a0c05241c61
-ms.sourcegitcommit: 2f8ff235b1456ccfd527e07d55149e0c0f0647cc
+ms.date: 01/03/2020
+ms.openlocfilehash: 333d7faacfb5965e74eae69f07ff974a8fff8f25
+ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75690821"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75894015"
 ---
 # <a name="secure-azure-ml-experimentation-and-inference-jobs-within-an-azure-virtual-network"></a>Защита заданий экспериментирования и вывода машинного обучения Azure в виртуальной сети Azure
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -89,6 +89,7 @@ ms.locfileid: "75690821"
 * Строки подключения к хранилищам данных
 
 Чтобы использовать Машинное обучение Azure возможности экспериментов с Azure Key Vault за виртуальной сетью, выполните следующие действия.
+
 1. Перейдите в хранилище ключей, связанное с рабочей областью.
 
    [![хранилище ключей, связанное с рабочей областью Машинное обучение Azure](./media/how-to-enable-virtual-network/workspace-key-vault.png)](./media/how-to-enable-virtual-network/workspace-key-vault.png#lightbox)
@@ -162,7 +163,7 @@ ms.locfileid: "75690821"
 
 - Запрет исходящего подключения к Интернету с помощью правил NSG.
 
-- Ограничить исходящий трафик следующими:
+- Ограничить исходящий трафик следующими элементами:
    - Служба хранилища Azure с помощью __тега службы__ __Storage. Region_Name__ (например, Storage. EastUS);
    - Реестр контейнеров Azure с помощью __тега службы__ __азуреконтаинеррегистри. Region_Name__ (например, азуреконтаинеррегистри. EastUS).
    - Машинное обучение Azure с помощью __тега службы__ __азуремачинелеарнинг__
@@ -393,6 +394,82 @@ aks_target = ComputeTarget.create(workspace=ws,
 
 После завершения процесса создания можно выполнить вывод или оценку модели в кластере AKS за пределами виртуальной сети. Дополнительные сведения см. в статье [о развертывании в Службе Azure Kubernetes](how-to-deploy-and-where.md).
 
+### <a name="use-private-ips-with-azure-kubernetes-service"></a>Использование частных IP-адресов со службой Kubernetes Azure
+
+По умолчанию для развертываний AKS назначается общедоступный IP-адрес. При использовании AKS внутри виртуальной сети можно использовать вместо него частный IP-адрес. Частные IP-адреса доступны только из виртуальной сети или из Объединенных сетей.
+
+Частный IP-адрес включается путем настройки AKS для использования _внутренней подсистемы балансировки нагрузки_. 
+
+> [!IMPORTANT]
+> Вы не можете включить частный IP-адрес при создании кластера службы Kubernetes Azure. Он должен быть включен в качестве обновления существующего кластера.
+
+В следующем фрагменте кода показано, как **создать новый кластер AKS**, а затем обновить его для использования частного IP-или внутреннего балансировщика нагрузки:
+
+```python
+import azureml.core
+from azureml.core.compute.aks import AksUpdateConfiguration
+from azureml.core.compute import AksCompute, ComputeTarget
+
+# Verify that cluster does not exist already
+try:
+    aks_target = AksCompute(workspace=ws, name=aks_cluster_name)
+    print("Found existing aks cluster")
+
+except:
+    print("Creating new aks cluster")
+
+    # Create AKS configuration
+    prov_config = AksCompute.provisioning_configuration(location = "eastus2")
+    # Set info for existing virtual network to create the cluster in
+    prov_config.vnet_resourcegroup_name = "myvnetresourcegroup"
+    prov_config.vnet_name = "myvnetname"
+    prov_config.service_cidr = "10.0.0.0/16"
+    prov_config.dns_service_ip = "10.0.0.10"
+    prov_config.subnet_name = "default"
+    prov_config.docker_bridge_cidr = "172.17.0.1/16"
+
+    # Create compute target
+    aks_target = ComputeTarget.create(workspace = ws, name = “myaks”, provisioning_configuration = prov_config)
+    # Wait for the operation to complete
+    aks_target.wait_for_completion(show_output = True)
+    
+    # Update AKS configuration to use an internal load balancer
+    update_config = AksUpdateConfiguration(None, "InternalLoadBalancer", "default")
+    aks_target.update(update_config)
+    # Wait for the operation to complete
+    aks_target.wait_for_completion(show_output = True)
+```
+
+__Azure CLI__
+
+```azurecli-interactive
+az rest --method put --uri https://management.azure.com"/subscriptions/<subscription-id>/resourcegroups/<resource-group>/providers/Microsoft.ContainerService/managedClusters/<aks-resource-id>?api-version=2018-11-19 --body @body.json
+```
+
+Содержимое файла `body.json`, на которое ссылается команда, аналогично следующему документу JSON:
+
+```json
+{ 
+    "location": “<region>”, 
+    "properties": { 
+        "resourceId": "/subscriptions/<subscription-id>/resourcegroups/<resource-group>/providers/Microsoft.ContainerService/managedClusters/<aks-resource-id>", 
+        "computeType": "AKS", 
+        "provisioningState": "Succeeded", 
+        "properties": { 
+            "loadBalancerType": "InternalLoadBalancer", 
+            "agentCount": <agent-count>, 
+            "agentVmSize": "vm-size", 
+            "clusterFqdn": "<cluster-fqdn>" 
+        } 
+    } 
+} 
+```
+
+> [!NOTE]
+> В настоящее время подсистема балансировки нагрузки не может быть настроена при выполнении операции __присоединения__ к существующему кластеру. Необходимо сначала подключить кластер, а затем выполнить операцию обновления, чтобы изменить подсистему балансировки нагрузки.
+
+Дополнительные сведения об использовании внутренней подсистемы балансировки нагрузки с AKS см. в статье [использование внутренней подсистемы балансировки нагрузки со службой Kubernetes Azure](/azure/aks/internal-lb).
+
 ## <a name="use-azure-firewall"></a>Использование брандмауэра Azure
 
 При использовании брандмауэра Azure необходимо настроить сетевое правило, разрешающее входящий и исходящий трафик из следующих адресов:
@@ -414,4 +491,3 @@ aks_target = ComputeTarget.create(workspace=ws,
 * [Настройка сред обучения](how-to-set-up-training-targets.md)
 * [Где следует развертывать модели](how-to-deploy-and-where.md)
 * [Безопасное развертывание моделей с помощью SSL](how-to-secure-web-service.md)
-

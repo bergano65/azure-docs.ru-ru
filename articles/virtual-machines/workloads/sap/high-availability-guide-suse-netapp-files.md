@@ -13,14 +13,14 @@ ms.service: virtual-machines-windows
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
-ms.date: 11/07/2019
+ms.date: 01/10/2020
 ms.author: radeltch
-ms.openlocfilehash: e8205497262c2c7a500769f32a473d628974220c
-ms.sourcegitcommit: 5cfe977783f02cd045023a1645ac42b8d82223bd
+ms.openlocfilehash: c2d6e3e42c581c255f207af4a5008e2d09c50a7d
+ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2019
-ms.locfileid: "74151801"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75887127"
 ---
 # <a name="high-availability-for-sap-netweaver-on-azure-vms-on-suse-linux-enterprise-server-with-azure-netapp-files-for-sap-applications"></a>Высокий уровень доступности SAP NetWeaver на виртуальных машинах Azure на SUSE Linux Enterprise Server с Azure NetApp Files для приложений SAP
 
@@ -178,6 +178,7 @@ SAP NetWeaver требует общее хранилище для каталог
 - Выбранная виртуальная сеть должна иметь подсеть, делегированную Azure NetApp Files.
 - Azure NetApp Files предлагает [политику экспорта](https://docs.microsoft.com/azure/azure-netapp-files/azure-netapp-files-configure-export-policy). Вы можете управлять разрешенными клиентами, типом доступа (чтение & запись, доступ только для чтения и т. д.). 
 - Azure NetApp Filesная функция еще не поддерживает зоны. В настоящее время Azure NetApp Files функция не развернута во всех зонах доступности в регионе Azure. Учитывайте возможные последствия задержки в некоторых регионах Azure. 
+- Azure NetApp Files тома можно развернуть в виде томов NFSv3 или Нфсв 4.1. Оба протокола поддерживаются на уровне приложений SAP (ASCS/ERS, серверы приложений SAP). 
 
 ## <a name="deploy-linux-vms-manually-via-azure-portal"></a>Развертывание виртуальных машин Linux вручную с помощью портал Azure
 
@@ -201,6 +202,42 @@ SAP NetWeaver требует общее хранилище для каталог
 1. Создать виртуальную машину 4  
    Используйте по меньшей мере SLES4SAP 12 SP3. в этом примере используется образ SLES4SAP 12 SP3.  
    Выберите группу доступности, созданную ранее для PAS или КОНСУЛЬТАНТов  
+
+## <a name="disable-id-mapping-if-using-nfsv41"></a>Отключить сопоставление ИДЕНТИФИКАТОРов (при использовании Нфсв 4.1)
+
+Инструкции в этом разделе применимы только при использовании Azure NetApp Filesных томов с протоколом Нфсв 4.1. Выполните настройку на всех виртуальных машинах, где будут подключены Azure NetApp Files тома Нфсв 4.1.  
+
+1. Проверьте параметр домена NFS. Убедитесь, что домен настроен в качестве домена Azure NetApp Files по умолчанию, т. е. **`defaultv4iddomain.com`** и для сопоставления установлено значение **никто**.  
+
+    > [!IMPORTANT]
+    > Не забудьте задать домен NFS в `/etc/idmapd.conf` виртуальной машины в соответствии с конфигурацией домена по умолчанию на Azure NetApp Files: **`defaultv4iddomain.com`** . В случае несоответствия между конфигурацией домена на клиенте NFS (например, виртуальной машиной) и NFS-сервером, т. е. конфигурацией Azure NetApp, разрешения для файлов на томах NetApp в Azure, подключенных к виртуальным машинам, будут отображаться как `nobody`.  
+
+    <pre><code>
+    sudo cat /etc/idmapd.conf
+    # Example
+    [General]
+    Verbosity = 0
+    Pipefs-Directory = /var/lib/nfs/rpc_pipefs
+    Domain = <b>defaultv4iddomain.com</b>
+    [Mapping]
+    Nobody-User = <b>nobody</b>
+    Nobody-Group = <b>nobody</b>
+    </code></pre>
+
+4. **[A]** проверьте `nfs4_disable_idmapping`. Для него должно быть задано значение **Y**. Чтобы создать структуру каталогов, в которой находится `nfs4_disable_idmapping`, выполните команду mount. Вы не сможете вручную создать каталог в/СИС/модулес, так как доступ зарезервирован для ядра или драйверов.  
+
+    <pre><code>
+    # Check nfs4_disable_idmapping 
+    cat /sys/module/nfs/parameters/nfs4_disable_idmapping
+    # If you need to set nfs4_disable_idmapping to Y
+    mkdir /mnt/tmp
+    mount 10.1.0.4:/sapmnt/<b>qas</b> /mnt/tmp
+    umount  /mnt/tmp
+    echo "Y" > /sys/module/nfs/parameters/nfs4_disable_idmapping
+    # Make the configuration permanent
+    echo "options nfs nfs4_disable_idmapping=Y" >> /etc/modprobe.d/nfs.conf
+    </code></pre>
+
 
 ## <a name="setting-up-ascs"></a>Настройка (A)SCS
 
@@ -284,11 +321,11 @@ SAP NetWeaver требует общее хранилище для каталог
       1. Дополнительные порты для ASCS ERS
          * Повторите описанные выше шаги в разделе "d" для портов 33**01**, 5**01**13, 5**01**14, 5**01**16 и TCP для ASCS ERS
 
-> [!Note]
-> Если виртуальные машины без общедоступных IP-адресов помещаются во внутренний пул внутреннего (без общедоступного IP-адреса) стандартного балансировщика нагрузки Azure, то исходящее подключение к Интернету будет отсутствовать, если не выполнить дополнительную настройку, чтобы разрешить маршрутизацию в общедоступные конечные точки. Дополнительные сведения о том, как добиться исходящего подключения, см. в статье подключение к общедоступной [конечной точке для виртуальных машин с помощью Load Balancer (цен. Категория "Стандартный") Azure в сценариях высокого уровня доступности SAP](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/high-availability-guide-standard-load-balancer-outbound-connections).  
+      > [!Note]
+      > Если виртуальные машины без общедоступных IP-адресов помещаются во внутренний пул внутреннего (без общедоступного IP-адреса) стандартного балансировщика нагрузки Azure, то исходящее подключение к Интернету будет отсутствовать, если не выполнить дополнительную настройку, чтобы разрешить маршрутизацию в общедоступные конечные точки. Дополнительные сведения о том, как добиться исходящего подключения, см. в статье подключение к общедоступной [конечной точке для виртуальных машин с помощью Load Balancer (цен. Категория "Стандартный") Azure в сценариях высокого уровня доступности SAP](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/high-availability-guide-standard-load-balancer-outbound-connections).  
 
-> [!IMPORTANT]
-> Не включайте метки времени TCP на виртуальных машинах Azure, размещенных за Azure Load Balancer. Включение отметок времени TCP приведет к сбою пробы работоспособности. Установите параметр **net. IPv4. tcp_timestamps** в значение **0**. Дополнительные сведения см. в разделе [Load Balancer проверки работоспособности](https://docs.microsoft.com/azure/load-balancer/load-balancer-custom-probe-overview).
+      > [!IMPORTANT]
+      > Не включайте метки времени TCP на виртуальных машинах Azure, размещенных за Azure Load Balancer. Включение отметок времени TCP приведет к сбою пробы работоспособности. Установите параметр **net. IPv4. tcp_timestamps** в значение **0**. Дополнительные сведения см. в разделе [Load Balancer проверки работоспособности](https://docs.microsoft.com/azure/load-balancer/load-balancer-custom-probe-overview).
 
 ### <a name="create-pacemaker-cluster"></a>Создание кластера Pacemaker
 
@@ -310,19 +347,19 @@ SAP NetWeaver требует общее хранилище для каталог
 
    <pre><code>sudo zypper info sap-suse-cluster-connector
    
-      Information for package sap-suse-cluster-connector:
-   ---------------------------------------------------
-   Repository     : SLE-12-SP3-SAP-Updates
-   Name           : sap-suse-cluster-connector
-   Version        : 3.1.0-8.1
-   Arch           : noarch
-   Vendor         : SUSE LLC &lt;https://www.suse.com/&gt;
-   Support Level  : Level 3
-   Installed Size : 45.6 KiB
-   Installed      : Yes
-   Status         : up-to-date
-   Source package : sap-suse-cluster-connector-3.1.0-8.1.src
-   Summary        : SUSE High Availability Setup for SAP Products
+    # Information for package sap-suse-cluster-connector:
+    # ---------------------------------------------------
+    # Repository     : SLE-12-SP3-SAP-Updates
+    # Name           : sap-suse-cluster-connector
+    # Version        : 3.1.0-8.1
+    # Arch           : noarch
+    # Vendor         : SUSE LLC &lt;https://www.suse.com/&gt;
+    # Support Level  : Level 3
+    # Installed Size : 45.6 KiB
+    # Installed      : Yes
+    # Status         : up-to-date
+    # Source package : sap-suse-cluster-connector-3.1.0-8.1.src
+    # Summary        : SUSE High Availability Setup for SAP Products
    </code></pre>
 
 2. **[A]** Обновите агенты ресурсов SAP.  
@@ -383,7 +420,7 @@ SAP NetWeaver требует общее хранилище для каталог
    sudo chattr +i /usr/sap/<b>QAS</b>/ERS<b>01</b>
    </code></pre>
 
-2. **[A]** Настройте autofs.
+2. **[A]** настройте `autofs`
 
    <pre><code>
    sudo vi /etc/auto.master
@@ -391,7 +428,7 @@ SAP NetWeaver требует общее хранилище для каталог
    /- /etc/auto.direct
    </code></pre>
 
-   Создайте файл со следующим текстом:
+   При использовании NFSv3 создайте файл с:
 
    <pre><code>
    sudo vi /etc/auto.direct
@@ -401,8 +438,18 @@ SAP NetWeaver требует общее хранилище для каталог
    /usr/sap/<b>QAS</b>/SYS -nfsvers=3,nobind,sync 10.1.0.5:/usrsap<b>qas</b>sys
    </code></pre>
    
+   При использовании Нфсв 4.1 Создайте файл с:
+
+   <pre><code>
+   sudo vi /etc/auto.direct
+   # Add the following lines to the file, save and exit
+   /sapmnt/<b>QAS</b> -nfsvers=4.1,nobind,sync,sec=sys 10.1.0.4:/sapmnt<b>qas</b>
+   /usr/sap/trans -nfsvers=4.1,nobind,sync,sec=sys 10.1.0.4:/trans
+   /usr/sap/<b>QAS</b>/SYS -nfsvers=4.1,nobind,sync,sec=sys 10.1.0.5:/usrsap<b>qas</b>sys
+   </code></pre>
+   
    > [!NOTE]
-   > При подключении томов обязательно установите соответствие версии протокола NFS Azure NetApp Files томов. В этом примере Azure NetApp Files тома были созданы как тома NFSv3.  
+   > При подключении томов обязательно установите соответствие версии протокола NFS Azure NetApp Files томов. Если Azure NetApp Files тома создаются как тома NFSv3, используйте соответствующую конфигурацию NFSv3. Если Azure NetApp Files тома созданы как тома Нфсв 4.1, следуйте инструкциям по отключению сопоставления ИДЕНТИФИКАТОРов и обязательно используйте соответствующую конфигурацию Нфсв 4.1. В этом примере Azure NetApp Files тома были созданы как тома NFSv3.  
    
    Перезапустите `autofs`, чтобы подключить новые общие папки
     <pre><code>
@@ -429,7 +476,6 @@ SAP NetWeaver требует общее хранилище для каталог
    <pre><code>sudo service waagent restart
    </code></pre>
 
-
 ### <a name="installing-sap-netweaver-ascsers"></a>Установка SAP NetWeaver ASCS/ERS
 
 1. **[1]** Создайте виртуальный IP-адрес и проверку работоспособности для экземпляра ASCS.
@@ -439,8 +485,14 @@ SAP NetWeaver требует общее хранилище для каталог
    > Для существующих кластеров Pacemaker рекомендуется заменить неткат на Сокат, следуя инструкциям в разделе [усиление подсистемы балансировки нагрузки Azure](https://www.suse.com/support/kb/doc/?id=7024128). Обратите внимание, что изменение потребует краткого времени простоя.  
 
    <pre><code>sudo crm node standby <b>anftstsapcl2</b>
-   
+   # If using NFSv3
    sudo crm configure primitive fs_<b>QAS</b>_ASCS Filesystem device='<b>10.1.0.4</b>:/usrsap<b>qas</b>' directory='/usr/sap/<b>QAS</b>/ASCS<b>00</b>' fstype='nfs' \
+     op start timeout=60s interval=0 \
+     op stop timeout=60s interval=0 \
+     op monitor interval=20s timeout=40s
+   
+   # If using NFSv4.1
+   sudo crm configure primitive fs_<b>QAS</b>_ASCS Filesystem device='<b>10.1.0.4</b>:/usrsap<b>qas</b>' directory='/usr/sap/<b>QAS</b>/ASCS<b>00</b>' fstype='nfs' options='sec=sys,vers=4.1' \
      op start timeout=60s interval=0 \
      op stop timeout=60s interval=0 \
      op monitor interval=20s timeout=40s
@@ -494,8 +546,14 @@ SAP NetWeaver требует общее хранилище для каталог
    <pre><code>
    sudo crm node online <b>anftstsapcl2</b>
    sudo crm node standby <b>anftstsapcl1</b>
-   
+   # If using NFSv3
    sudo crm configure primitive fs_<b>QAS</b>_ERS Filesystem device='<b>10.1.0.4</b>:/usrsap<b>qas</b>ers' directory='/usr/sap/<b>QAS</b>/ERS<b>01</b>' fstype='nfs' \
+     op start timeout=60s interval=0 \
+     op stop timeout=60s interval=0 \
+     op monitor interval=20s timeout=40s
+   
+   # If using NFSv4.1
+   sudo crm configure primitive fs_<b>QAS</b>_ERS Filesystem device='<b>10.1.0.4</b>:/usrsap<b>qas</b>ers' directory='/usr/sap/<b>QAS</b>/ERS<b>01</b>' fstype='nfs' options='sec=sys,vers=4.1'\
      op start timeout=60s interval=0 \
      op stop timeout=60s interval=0 \
      op monitor interval=20s timeout=40s
@@ -608,7 +666,7 @@ SAP NetWeaver требует общее хранилище для каталог
    sudo usermod -aG haclient <b>qas</b>adm
    </code></pre>
 
-8. **[1]** Добавьте службы SAP ASCS и ERS в файл sapservice.
+8. **[1]** добавьте службы SAP ASCS и ERS в файл `sapservice`
 
    Добавьте запись службы ASCS во второй узел и скопируйте запись службы ERS в первый узел.
 
@@ -759,7 +817,7 @@ SAP NetWeaver требует общее хранилище для каталог
    sudo chattr +i /usr/sap/<b>QAS</b>/D<b>03</b>
    </code></pre>
 
-1. **[P]** Настройка AUTOFS в PAS
+1. **[P]** Настройка `autofs` в PAS
 
    <pre><code>sudo vi /etc/auto.master
    
@@ -767,7 +825,7 @@ SAP NetWeaver требует общее хранилище для каталог
    /- /etc/auto.direct
    </code></pre>
 
-   Создайте файл со следующим текстом:
+   При использовании NFSv3 создайте новый файл с:
 
    <pre><code>
    sudo vi /etc/auto.direct
@@ -777,6 +835,16 @@ SAP NetWeaver требует общее хранилище для каталог
    /usr/sap/<b>QAS</b>/D<b>02</b> -nfsvers=3,nobind,sync <b>10.1.0.5</b>:/usrsap<b>qas</b>pas
    </code></pre>
 
+   При использовании Нфсв 4.1 Создайте новый файл с:
+
+   <pre><code>
+   sudo vi /etc/auto.direct
+   # Add the following lines to the file, save and exit
+   /sapmnt/<b>QAS</b> -nfsvers=4.1,nobind,sync,sec=sys <b>10.1.0.4</b>:/sapmnt<b>qas</b>
+   /usr/sap/trans -nfsvers=4.1,nobind,sync,sec=sys <b>10.1.0.4</b>:/trans
+   /usr/sap/<b>QAS</b>/D<b>02</b> -nfsvers=4.1,nobind,sync,sec=sys <b>10.1.0.5</b>:/usrsap<b>qas</b>pas
+   </code></pre>
+
    Перезапустите `autofs`, чтобы подключить новые общие папки
 
    <pre><code>
@@ -784,7 +852,7 @@ SAP NetWeaver требует общее хранилище для каталог
    sudo service autofs restart
    </code></pre>
 
-1. **[P]** Настройка AUTOFS для консультантов
+1. **[P]** Настройка `autofs` для консультантов
 
    <pre><code>sudo vi /etc/auto.master
    
@@ -792,7 +860,7 @@ SAP NetWeaver требует общее хранилище для каталог
    /- /etc/auto.direct
    </code></pre>
 
-   Создайте файл со следующим текстом:
+   При использовании NFSv3 создайте новый файл с:
 
    <pre><code>
    sudo vi /etc/auto.direct
@@ -800,6 +868,16 @@ SAP NetWeaver требует общее хранилище для каталог
    /sapmnt/<b>QAS</b> -nfsvers=3,nobind,sync <b>10.1.0.4</b>:/sapmnt<b>qas</b>
    /usr/sap/trans -nfsvers=3,nobind,sync <b>10.1.0.4</b>:/trans
    /usr/sap/<b>QAS</b>/D<b>03</b> -nfsvers=3,nobind,sync <b>10.1.0.4</b>:/usrsap<b>qas</b>aas
+   </code></pre>
+
+   При использовании Нфсв 4.1 Создайте новый файл с:
+
+   <pre><code>
+   sudo vi /etc/auto.direct
+   # Add the following lines to the file, save and exit
+   /sapmnt/<b>QAS</b> -nfsvers=4.1,nobind,sync,sec=sys <b>10.1.0.4</b>:/sapmnt<b>qas</b>
+   /usr/sap/trans -nfsvers=4.1,nobind,sync,sec=sys <b>10.1.0.4</b>:/trans
+   /usr/sap/<b>QAS</b>/D<b>03</b> -nfsvers=4.1,nobind,sync,sec=sys <b>10.1.0.4</b>:/usrsap<b>qas</b>aas
    </code></pre>
 
    Перезапустите `autofs`, чтобы подключить новые общие папки
@@ -1184,7 +1262,7 @@ SAP NetWeaver требует общее хранилище для каталог
    <pre><code>anftstsapcl2:~ # pgrep ms.sapQAS | xargs kill -9
    </code></pre>
 
-   Если вы завершите работу сервера сообщений только раз, его перезапустит служба запуска. Если вы завершите работу сервера достаточно много раз, Pacemaker в конечном итоге переместит экземпляр ASCS на другой узел. Выполните следующие команды от имени привилегированного пользователя для очистки состояния ресурсов экземпляра ERS и ASCS после теста.
+   Если сервер сообщений будет уничтожен только один раз, он перезапускается `sapstart`. Если вы завершите работу сервера достаточно много раз, Pacemaker в конечном итоге переместит экземпляр ASCS на другой узел. Выполните следующие команды от имени привилегированного пользователя для очистки состояния ресурсов экземпляра ERS и ASCS после теста.
 
    <pre><code>
    anftstsapcl2:~ # crm resource cleanup rsc_sap_QAS_ASCS00
@@ -1340,7 +1418,7 @@ SAP NetWeaver требует общее хранилище для каталог
         rsc_sap_QAS_ERS01  (ocf::heartbeat:SAPInstance):   Started anftstsapcl1
    </code></pre>
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Планирование и реализация виртуальных машин Azure для SAP][planning-guide]
 * [Развертывание виртуальных машин Azure для SAP][deployment-guide]

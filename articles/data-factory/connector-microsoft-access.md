@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 08/27/2019
-ms.openlocfilehash: 9a5783bfd035c5db06c4e1b0e36a17ca14cc0632
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: d6110065e28b8f179cd1d113107fb3508e1c3e44
+ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75440584"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75892545"
 ---
 # <a name="copy-data-from-and-to-microsoft-access-data-stores-using-azure-data-factory"></a>Копирование данных из хранилищ данных Microsoft Access и обратно с помощью фабрики данных Azure
 
@@ -164,4 +164,4 @@ ms.locfileid: "75440584"
 Чтобы получить сведения о свойствах, проверьте [действие поиска](control-flow-lookup-activity.md).
 
 ## <a name="next-steps"></a>Дальнейшие действия
-В таблице [Поддерживаемые хранилища данных](copy-activity-overview.md##supported-data-stores-and-formats) приведен список хранилищ данных, которые поддерживаются в качестве источников и приемников для действия копирования в фабрике данных Azure.
+В таблице [Поддерживаемые хранилища данных](copy-activity-overview.md#supported-data-stores-and-formats) приведен список хранилищ данных, которые поддерживаются в качестве источников и приемников для действия копирования в фабрике данных Azure.

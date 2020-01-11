@@ -12,12 +12,12 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 08/01/2019
-ms.openlocfilehash: 2a2debf9b1cbc669d2402b1797097b97e94139fc
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: 4acad5e2de55211b6c4492513f331c36286ed852
+ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74929481"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75892780"
 ---
 # <a name="copy-data-from-dynamics-ax-by-using-azure-data-factory"></a>Копирование данных из Dynamics AX с помощью фабрики данных Azure
 
@@ -59,14 +59,14 @@ ms.locfileid: "74929481"
 
 Для связанной службы Dynamics AX поддерживаются следующие свойства:
 
-| Свойство | Описание | Обязательно для заполнения |
+| Свойство | Description | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| Тип | Для свойства**type** необходимо задать значение **DynamicsAX**. |ДА |
-| URL-адрес | Конечная точка OData экземпляра Dynamics AX (или Dynamics 365 Finance and Operations). |ДА |
-| servicePrincipalId | Укажите идентификатора клиента приложения. | ДА |
-| servicePrincipalKey | Укажите ключ приложения. Пометьте это поле как **SecureString**, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | ДА |
-| tenant | Укажите сведения о клиенте (доменное имя или идентификатор клиента), в котором находится приложение. Его можно получить, наведя указатель мыши на правый верхний угол страницы портала Azure. | ДА |
-| aadResourceId | Укажите ресурс AAD, для которого запрашивается авторизация. Например, если Dynamics имеет URL-адрес `https://sampledynamics.sandbox.operations.dynamics.com/data/`, то обычно соответствующий ресурс AAD имеет адрес `https://sampledynamics.sandbox.operations.dynamics.com`. | ДА |
+| type | Для свойства**type** необходимо задать значение **DynamicsAX**. |Да |
+| url | Конечная точка OData экземпляра Dynamics AX (или Dynamics 365 Finance and Operations). |Да |
+| servicePrincipalId | Укажите идентификатора клиента приложения. | Да |
+| servicePrincipalKey | Укажите ключ приложения. Пометьте это поле как **SecureString**, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | Да |
+| tenant | Укажите сведения о клиенте (доменное имя или идентификатор клиента), в котором находится приложение. Его можно получить, наведя указатель мыши на правый верхний угол страницы портала Azure. | Да |
+| aadResourceId | Укажите ресурс AAD, для которого запрашивается авторизация. Например, если Dynamics имеет URL-адрес `https://sampledynamics.sandbox.operations.dynamics.com/data/`, то обычно соответствующий ресурс AAD имеет адрес `https://sampledynamics.sandbox.operations.dynamics.com`. | Да |
 | connectVia | [Среда выполнения интеграции](concepts-integration-runtime.md), используемая для подключения к хранилищу данных. Вы можете выбрать среду выполнения интеграции Azure или локальную среду IR (если хранилище данных расположено в частной сети). Если не указано другое, по умолчанию используется интегрированная Azure Integration Runtime. |Нет |
 
 **Пример**
@@ -103,10 +103,10 @@ ms.locfileid: "74929481"
 
 Чтобы скопировать данные из Dynamics, установите для свойства **type** набора данных значение **DynamicsAXResource**. Поддерживаются следующие свойства:
 
-| Свойство | Описание | Обязательно для заполнения |
+| Свойство | Description | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| Тип | Свойство **type** набора данных должно быть со значением **DynamicsAXResource**. | ДА |
-| path | Путь к сущности OData Dynamics AX. | ДА |
+| type | Свойство **type** набора данных должно быть со значением **DynamicsAXResource**. | Да |
+| path | Путь к сущности OData Dynamics AX. | Да |
 
 **Пример**
 
@@ -137,9 +137,9 @@ ms.locfileid: "74929481"
 
 Чтобы копировать данные из Dynamics AX, установите для типа **источника** в действии копирования значение **DynamicsAXSource**. В разделе **source** действия копирования поддерживаются следующие свойства:
 
-| Свойство | Описание | Обязательно для заполнения |
+| Свойство | Description | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| Тип | Свойство **type** источника действия копирования должно быть со значением **DynamicsAXSource**. | ДА |
+| type | Свойство **type** источника действия копирования должно быть со значением **DynamicsAXSource**. | Да |
 | query | Параметры запроса OData для фильтрации данных. Пример: `"?$select=Name,Description&$top=5"`.<br/><br/>**Примечание.** Соединитель копирует данные из объединенного URL-адреса: `[URL specified in linked service]/[path specified in dataset][query specified in copy activity source]`. Дополнительные сведения см. в статье о [компонентах URL-адреса OData](https://www.odata.org/documentation/odata-version-3-0/url-conventions/). | Нет |
 
 **Пример**
@@ -181,4 +181,4 @@ ms.locfileid: "74929481"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-В разделе [Поддерживаемые хранилища данных и форматы](copy-activity-overview.md##supported-data-stores-and-formats) приведен список хранилищ данных, которые поддерживаются в качестве источников и приемников для действия копирования в Фабрике данных Azure.
+В разделе [Поддерживаемые хранилища данных и форматы](copy-activity-overview.md#supported-data-stores-and-formats) приведен список хранилищ данных, которые поддерживаются в качестве источников и приемников для действия копирования в Фабрике данных Azure.

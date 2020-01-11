@@ -11,12 +11,12 @@ ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 10/03/2019
 ms.author: diberry
-ms.openlocfilehash: a5fcccc18a453101bd1166f2c85b0c3cdc747c3a
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 254fec23ef34b936405439e0334e24e594a24dc4
+ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73464963"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75890236"
 ---
 # <a name="entities-per-culture-in-your-luis-model"></a>Сущности для языков и региональных параметров в модели LUIS
 
@@ -46,9 +46,9 @@ ms.locfileid: "73464963"
 
 |Предварительно созданная сущность|```zh-CN``` |
 ------|:------:|
-[Age](luis-reference-prebuilt-age.md):<br>year<br>month<br>week<br>day   |    V2, V3   |
+[Age](luis-reference-prebuilt-age.md):<br>год<br>month<br>week<br>day   |    V2, V3   |
 [Currency (денежная единица)](luis-reference-prebuilt-currency.md):<br>доллар<br>дробная единица (например, пенни)  |    V2, V3   |
-[DatetimeV2](luis-reference-prebuilt-datetimev2.md):<br>дата<br>daterange<br>time<br>timerange   |    V2, V3   | 
+[DatetimeV2](luis-reference-prebuilt-datetimev2.md):<br>Дата<br>daterange<br>time<br>timerange   |    V2, V3   | 
 [Dimension](luis-reference-prebuilt-dimension.md):<br>том<br>площадь<br>вес<br>информация (например, бит/байт)<br>длина (например, метр)<br>скорость (например, миль в час)  |    V2, V3   | 
 [Электронная почта](luis-reference-prebuilt-email.md)   |    V2, V3   | 
 [GeographyV2](luis-reference-prebuilt-geographyV2.md)   |    -   | 
@@ -68,7 +68,7 @@ ms.locfileid: "73464963"
 
 |Предварительно созданная сущность|```nl-NL``` |
 ------|:------:|
-[Age](luis-reference-prebuilt-age.md):<br>year<br>month<br>week<br>day   |    V2, V3   |
+[Age](luis-reference-prebuilt-age.md):<br>год<br>month<br>week<br>day   |    V2, V3   |
 [Currency (денежная единица)](luis-reference-prebuilt-currency.md):<br>доллар<br>дробная единица (например, пенни)  |    V2, V3   |
 [DateTime](luis-reference-prebuilt-deprecated.md)   |    -   | 
 [Dimension](luis-reference-prebuilt-dimension.md):<br>том<br>площадь<br>вес<br>информация (например, бит/байт)<br>длина (например, метр)<br>скорость (например, миль в час)  |    V2, V3   | 
@@ -90,9 +90,9 @@ ms.locfileid: "73464963"
 
 |Предварительно созданная сущность|```en-US``` |
 ------|:------:|
-[Age](luis-reference-prebuilt-age.md):<br>year<br>month<br>week<br>day   |    V2, V3   |
+[Age](luis-reference-prebuilt-age.md):<br>год<br>month<br>week<br>day   |    V2, V3   |
 [Currency (денежная единица)](luis-reference-prebuilt-currency.md):<br>доллар<br>дробная единица (например, пенни)  |    V2, V3   |
-[DatetimeV2](luis-reference-prebuilt-datetimev2.md):<br>дата<br>daterange<br>time<br>timerange   |    V2, V3   | 
+[DatetimeV2](luis-reference-prebuilt-datetimev2.md):<br>Дата<br>daterange<br>time<br>timerange   |    V2, V3   | 
 [Dimension](luis-reference-prebuilt-dimension.md):<br>том<br>площадь<br>вес<br>информация (например, бит/байт)<br>длина (например, метр)<br>скорость (например, миль в час)  |    V2, V3   | 
 [Электронная почта](luis-reference-prebuilt-email.md)   |    V2, V3   | 
 [GeographyV2](luis-reference-prebuilt-geographyV2.md)   |    V2, V3   | 
@@ -112,9 +112,9 @@ ms.locfileid: "73464963"
 
 |Предварительно созданная сущность|```fr-FR``` |
 ------|:------:|
-[Age](luis-reference-prebuilt-age.md):<br>year<br>month<br>week<br>day   |    V2, V3   |
+[Age](luis-reference-prebuilt-age.md):<br>год<br>month<br>week<br>day   |    V2, V3   |
 [Currency (денежная единица)](luis-reference-prebuilt-currency.md):<br>доллар<br>дробная единица (например, пенни)  |    V2, V3   |
-[DatetimeV2](luis-reference-prebuilt-datetimev2.md):<br>дата<br>daterange<br>time<br>timerange   |    V2, V3   | 
+[DatetimeV2](luis-reference-prebuilt-datetimev2.md):<br>Дата<br>daterange<br>time<br>timerange   |    V2, V3   | 
 [Dimension](luis-reference-prebuilt-dimension.md):<br>том<br>площадь<br>вес<br>информация (например, бит/байт)<br>длина (например, метр)<br>скорость (например, миль в час)  |    V2, V3   | 
 [Электронная почта](luis-reference-prebuilt-email.md)   |    V2, V3   | 
 [GeographyV2](luis-reference-prebuilt-geographyV2.md)   |    -   | 
@@ -134,9 +134,9 @@ ms.locfileid: "73464963"
 
 |Предварительно созданная сущность|```fr-CA``` |
 ------|:------:|
-[Age](luis-reference-prebuilt-age.md):<br>year<br>month<br>week<br>day   |    V2, V3   |
+[Age](luis-reference-prebuilt-age.md):<br>год<br>month<br>week<br>day   |    V2, V3   |
 [Currency (денежная единица)](luis-reference-prebuilt-currency.md):<br>доллар<br>дробная единица (например, пенни)  |    V2, V3   |
-[DatetimeV2](luis-reference-prebuilt-datetimev2.md):<br>дата<br>daterange<br>time<br>timerange   |    V2, V3   | 
+[DatetimeV2](luis-reference-prebuilt-datetimev2.md):<br>Дата<br>daterange<br>time<br>timerange   |    V2, V3   | 
 [Dimension](luis-reference-prebuilt-dimension.md):<br>том<br>площадь<br>вес<br>информация (например, бит/байт)<br>длина (например, метр)<br>скорость (например, миль в час)  |    V2, V3   | 
 [Электронная почта](luis-reference-prebuilt-email.md)   |    V2, V3   | 
 [GeographyV2](luis-reference-prebuilt-geographyV2.md)   |    -   | 
@@ -156,9 +156,9 @@ ms.locfileid: "73464963"
 
 |Предварительно созданная сущность|```de-DE``` |
 ------|:------:|
-[Age](luis-reference-prebuilt-age.md):<br>year<br>month<br>week<br>day   |    V2, V3   |
+[Age](luis-reference-prebuilt-age.md):<br>год<br>month<br>week<br>day   |    V2, V3   |
 [Currency (денежная единица)](luis-reference-prebuilt-currency.md):<br>доллар<br>дробная единица (например, пенни)  |    V2, V3   |
-[DatetimeV2](luis-reference-prebuilt-datetimev2.md):<br>дата<br>daterange<br>time<br>timerange   |    V2, V3   | 
+[DatetimeV2](luis-reference-prebuilt-datetimev2.md):<br>Дата<br>daterange<br>time<br>timerange   |    V2, V3   | 
 [Dimension](luis-reference-prebuilt-dimension.md):<br>том<br>площадь<br>вес<br>информация (например, бит/байт)<br>длина (например, метр)<br>скорость (например, миль в час)  |    V2, V3   | 
 [Электронная почта](luis-reference-prebuilt-email.md)   |    V2, V3   | 
 [GeographyV2](luis-reference-prebuilt-geographyV2.md)   |    -   | 
@@ -180,7 +180,7 @@ ms.locfileid: "73464963"
 
 |Предварительно созданная сущность|```it-IT``` |
 ------|:------:|
-[Age](luis-reference-prebuilt-age.md):<br>year<br>month<br>week<br>day   |    V2, V3   |
+[Age](luis-reference-prebuilt-age.md):<br>год<br>month<br>week<br>day   |    V2, V3   |
 [Currency (денежная единица)](luis-reference-prebuilt-currency.md):<br>доллар<br>дробная единица (например, пенни)  |    V2, V3   |
 [DateTime](luis-reference-prebuilt-deprecated.md)   |    -   | 
 [Dimension](luis-reference-prebuilt-dimension.md):<br>том<br>площадь<br>вес<br>информация (например, бит/байт)<br>длина (например, метр)<br>скорость (например, миль в час)  |    V2, V3   | 
@@ -202,7 +202,7 @@ ms.locfileid: "73464963"
 
 |Предварительно созданная сущность|```ja-JP``` |
 ------|:------:|
-[Age](luis-reference-prebuilt-age.md):<br>year<br>month<br>week<br>day   |    V2,-   |
+[Age](luis-reference-prebuilt-age.md):<br>год<br>month<br>week<br>day   |    V2,-   |
 [Currency (денежная единица)](luis-reference-prebuilt-currency.md):<br>доллар<br>дробная единица (например, пенни)  |    V2,-   |
 [DateTime](luis-reference-prebuilt-deprecated.md)   |    -   | 
 [Dimension](luis-reference-prebuilt-dimension.md):<br>том<br>площадь<br>вес<br>информация (например, бит/байт)<br>длина (например, метр)<br>скорость (например, миль в час)  |    V2,-   | 
@@ -224,7 +224,7 @@ ms.locfileid: "73464963"
 
 |Предварительно созданная сущность|```ko-KR``` |
 ------|:------:|
-[Age](luis-reference-prebuilt-age.md):<br>year<br>month<br>week<br>day   |    -   |
+[Age](luis-reference-prebuilt-age.md):<br>год<br>month<br>week<br>day   |    -   |
 [Currency (денежная единица)](luis-reference-prebuilt-currency.md):<br>доллар<br>дробная единица (например, пенни)  |    -   |
 [DateTime](luis-reference-prebuilt-deprecated.md)   |    -   | 
 [Dimension](luis-reference-prebuilt-dimension.md):<br>том<br>площадь<br>вес<br>информация (например, бит/байт)<br>длина (например, метр)<br>скорость (например, миль в час)  |    -   | 
@@ -246,9 +246,9 @@ ms.locfileid: "73464963"
 
 |Предварительно созданная сущность|```pt-BR``` |
 ------|:------:|
-[Age](luis-reference-prebuilt-age.md):<br>year<br>month<br>week<br>day   |    V2, V3   |
+[Age](luis-reference-prebuilt-age.md):<br>год<br>month<br>week<br>day   |    V2, V3   |
 [Currency (денежная единица)](luis-reference-prebuilt-currency.md):<br>доллар<br>дробная единица (например, пенни)  |    V2, V3   |
-[DatetimeV2](luis-reference-prebuilt-datetimev2.md):<br>дата<br>daterange<br>time<br>timerange   |    V2, V3   | 
+[DatetimeV2](luis-reference-prebuilt-datetimev2.md):<br>Дата<br>daterange<br>time<br>timerange   |    V2, V3   | 
 [Dimension](luis-reference-prebuilt-dimension.md):<br>том<br>площадь<br>вес<br>информация (например, бит/байт)<br>длина (например, метр)<br>скорость (например, миль в час)  |    V2, V3   | 
 [Электронная почта](luis-reference-prebuilt-email.md)   |    V2, V3   | 
 [GeographyV2](luis-reference-prebuilt-geographyV2.md)   |    -   | 
@@ -268,9 +268,9 @@ ms.locfileid: "73464963"
 
 |Предварительно созданная сущность|```es-ES``` |
 ------|:------:|
-[Age](luis-reference-prebuilt-age.md):<br>year<br>month<br>week<br>day   |    V2, V3   |
+[Age](luis-reference-prebuilt-age.md):<br>год<br>month<br>week<br>day   |    V2, V3   |
 [Currency (денежная единица)](luis-reference-prebuilt-currency.md):<br>доллар<br>дробная единица (например, пенни)  |    V2, V3   |
-[DatetimeV2](luis-reference-prebuilt-datetimev2.md):<br>дата<br>daterange<br>time<br>timerange   |    V2, V3   | 
+[DatetimeV2](luis-reference-prebuilt-datetimev2.md):<br>Дата<br>daterange<br>time<br>timerange   |    V2, V3   | 
 [Dimension](luis-reference-prebuilt-dimension.md):<br>том<br>площадь<br>вес<br>информация (например, бит/байт)<br>длина (например, метр)<br>скорость (например, миль в час)  |    V2, V3   | 
 [Электронная почта](luis-reference-prebuilt-email.md)   |    V2, V3   | 
 [GeographyV2](luis-reference-prebuilt-geographyV2.md)   |    -   | 
@@ -290,9 +290,9 @@ ms.locfileid: "73464963"
 
 |Предварительно созданная сущность|```es-MX``` |
 ------|:------:|
-[Age](luis-reference-prebuilt-age.md):<br>year<br>month<br>week<br>day   |    -   |
+[Age](luis-reference-prebuilt-age.md):<br>год<br>month<br>week<br>day   |    -   |
 [Currency (денежная единица)](luis-reference-prebuilt-currency.md):<br>доллар<br>дробная единица (например, пенни)  |    -   |
-[DatetimeV2](luis-reference-prebuilt-datetimev2.md):<br>дата<br>daterange<br>time<br>timerange   |    -   | 
+[DatetimeV2](luis-reference-prebuilt-datetimev2.md):<br>Дата<br>daterange<br>time<br>timerange   |    -   | 
 [Dimension](luis-reference-prebuilt-dimension.md):<br>том<br>площадь<br>вес<br>информация (например, бит/байт)<br>длина (например, метр)<br>скорость (например, миль в час)  |    -   | 
 [Электронная почта](luis-reference-prebuilt-email.md)   |    V2, V3   | 
 [GeographyV2](luis-reference-prebuilt-geographyV2.md)   |    -   | 
@@ -342,7 +342,7 @@ KeyPhrase is not available.
 ## <a name="contribute-to-prebuilt-entity-cultures"></a>Участие в создании предварительно созданных сущностей для языков и региональных параметров
 Предварительно созданные сущности разрабатываются в проекте с открытым кодом Recognizers-Text. Приглашаем к [участию](https://github.com/Microsoft/Recognizers-Text) в проекте. Этот проект содержит примеры единиц валюты для различных языков и региональных параметров. 
 
-GeographyV2 и PersonName не включаются в проект Recognizers-Text. Чтобы устранить проблемы с этими предварительно созданными сущностями, отправьте [запрос в службу поддержки](../../azure-supportability/how-to-create-azure-support-request.md). 
+GeographyV2 и PersonName не включаются в проект Recognizers-Text. Чтобы устранить проблемы с этими предварительно созданными сущностями, отправьте [запрос в службу поддержки](../../azure-portal/supportability/how-to-create-azure-support-request.md). 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

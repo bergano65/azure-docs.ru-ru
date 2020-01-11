@@ -10,12 +10,12 @@ ms.reviewer: jmartens
 author: cartacioS
 ms.author: sacartac
 ms.date: 11/04/2019
-ms.openlocfilehash: c4177e4310be3e03b64c260d88239de71f70c17a
-ms.sourcegitcommit: 02160a2c64a5b8cb2fb661a087db5c2b4815ec04
+ms.openlocfilehash: 778b369e08ff6b0c6e4075c5a8d3d2a234bde70e
+ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75720146"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75894888"
 ---
 # <a name="what-is-automated-machine-learning"></a>Что такое автоматическое машинное обучение?
 
@@ -95,7 +95,7 @@ ms.locfileid: "75720146"
 
 ### <a name="advanced-preprocessing-optional-featurization"></a>Расширенная Предварительная обработка: необязательный Добавление признаков
 
-Также доступны дополнительные расширенные предварительные действия и добавление признаков, такие как отсутствующие значения добавления отсутствующих, Encoding и Transforms. [Узнайте больше о том, что входит в добавление признаков](how-to-create-portal-experiments.md#preprocess). Включить этот параметр с помощью:
+Также доступны дополнительные расширенные предварительные действия и добавление признаков, такие как снятие данных, кодировка и преобразования. [Узнайте больше о том, что входит в добавление признаков](how-to-create-portal-experiments.md#preprocess). Включить этот параметр с помощью:
 
 + Машинное обучение Azure Studio: выбор параметра **View Добавление признаков Settings (просмотреть параметры** ) в разделе **Run Configuration (выполнение конфигурации** ) [с этими шагами](how-to-create-portal-experiments.md).
 

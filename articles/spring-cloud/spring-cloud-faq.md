@@ -6,12 +6,12 @@ ms.service: spring-cloud
 ms.topic: conceptual
 ms.date: 10/07/2019
 ms.author: jeconnoc
-ms.openlocfilehash: 6835132192040b4b943b156fb78ae1547522be0c
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: 12786f59db9644fd54e812687d27443c250aec05
+ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74229251"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75891845"
 ---
 # <a name="azure-spring-cloud-faq"></a>Вопросы и ответы по Azure весн Cloud
 
@@ -29,7 +29,7 @@ Azure Веснного облака расширяет возможности д
 
 Azure Spring Cloud предлагает один план обслуживания на время действия предварительной версии.  Пружинное развертывание в облаке содержит 16 виртуальных ЦП ядер и 32 ГБ памяти.  Верхняя граница каждого экземпляра микрослужбы в развертывании — 4 ядра виртуальных ЦП с 8 ГБ памяти.
 
-Resource (Ресурс) | Сумма
+Ресурс | Объем
 ------- | -------
 Экземпляры приложения на приложение Spring | 20
 Всего экземпляров приложений на экземпляр службы Azure Spring Cloud | 500
@@ -63,7 +63,7 @@ Azure Spring Cloud предоставляет полное управление 
 
 ### <a name="how-can-i-provide-feedback-and-report-issues"></a>Как можно отправить отзыв и сообщить о проблемах?
 
-Если вы столкнулись с проблемами с облаком Azure весны, создайте [запрос в службу поддержки Azure](https://docs.microsoft.com/azure/azure-supportability/how-to-create-azure-support-request). Чтобы отправить запрос на функцию или оставить отзыв, перейдите в службу [отзывов Azure](https://feedback.azure.com/forums/34192--general-feedback).
+Если вы столкнулись с проблемами с облаком Azure весны, создайте [запрос в службу поддержки Azure](https://docs.microsoft.com/azure/azure-portal/supportability/how-to-create-azure-support-request). Чтобы отправить запрос на функцию или оставить отзыв, перейдите в службу [отзывов Azure](https://feedback.azure.com/forums/34192--general-feedback).
 
 ## <a name="development"></a>Разработка
 
@@ -93,14 +93,14 @@ Azure Веснного облака поддерживает экспорт жу
 
 Да.
 
-## <a name="deployment"></a>Развертывание
+## <a name="deployment"></a>Развертывание.
 
 ### <a name="does-azure-spring-cloud-support-blue-green-deployment"></a>Поддерживает ли Azure Веснное облако развертывание со синим зеленым цветом?
 Да. Дополнительные сведения см. в разделе [Настройка промежуточной среды](spring-cloud-howto-staging-environment.md).
 
 ### <a name="can-i-access-kubernetes-to-manipulate-my-application-containers"></a>Можно ли получить доступ к Kubernetes для управления контейнерами приложений?
 
-Нет  Azure Spring Cloud абстрагирует разработчика от базовой архитектуры, позволяя сосредоточиться на коде приложения и бизнес-логике.
+Нет.  Azure Spring Cloud абстрагирует разработчика от базовой архитектуры, позволяя сосредоточиться на коде приложения и бизнес-логике.
 
 ### <a name="does-azure-spring-cloud-support-building-containers-from-source"></a>Поддерживает ли Azure Spring Cloud создание контейнеров из источника?
 
@@ -108,7 +108,7 @@ Azure Веснного облака поддерживает экспорт жу
 
 ### <a name="does-azure-spring-cloud-support-autoscaling-in-app-instances"></a>Поддерживает ли Azure Spring Cloud автоматическое масштабирование в экземплярах приложений?
 
-Нет
+Нет.
 
 ### <a name="what-are-the-best-practices-for-migrating-existing-spring-cloud-microservices-to-azure-spring-cloud"></a>Каковы рекомендации по переносу существующих микрослужб с высокой задолженностью в облако Azure весны?
 
@@ -121,6 +121,6 @@ Azure Веснного облака поддерживает экспорт жу
 
 После миграции Отслеживайте метрики ЦП и ОЗУ и сетевой трафик, чтобы убедиться, что экземпляры приложения масштабируются соответствующим образом.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если у вас возникнут другие вопросы, см. [руководство по устранению неполадок в облаке Azure весны](spring-cloud-troubleshoot.md).

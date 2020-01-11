@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 11/20/2019
-ms.openlocfilehash: 33cc4537a8339b9329a3be059c0e86a1ffe69941
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 9b13920252b3a5626fd192c6e899154efd31a3de
+ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75440808"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75893244"
 ---
 # <a name="copy-data-to-or-from-azure-cosmos-dbs-api-for-mongodb-by-using-azure-data-factory"></a>Копирование данных в API службы Azure Cosmos DB для MongoDB или из него с помощью Фабрики данных Azure
 
@@ -237,4 +237,4 @@ ms.locfileid: "75440808"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-В таблице [Поддерживаемые хранилища данных](copy-activity-overview.md##supported-data-stores-and-formats) приведен список хранилищ данных, которые поддерживаются в качестве источников и приемников для действия копирования в Фабрике данных Azure.
+В таблице [Поддерживаемые хранилища данных](copy-activity-overview.md#supported-data-stores-and-formats) приведен список хранилищ данных, которые поддерживаются в качестве источников и приемников для действия копирования в Фабрике данных Azure.

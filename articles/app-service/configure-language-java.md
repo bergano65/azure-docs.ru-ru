@@ -1,6 +1,6 @@
 ---
 title: Настройка приложений Java для Windows
-description: Узнайте, как настроить приложения Java для запуска в экземплярах виртуальных машин Windows в службе приложений Azure. В этой статье приведены наиболее распространенные задачи настройки.
+description: Узнайте, как настроить приложения Java для запуска в экземплярах виртуальных машин Windows в службе приложений Azure. В этой статье показаны наиболее распространенные задачи настройки.
 keywords: служба приложений Azure, веб-приложение, Windows, OSS, Java
 author: jasonfreeberg
 ms.devlang: java
@@ -9,12 +9,12 @@ ms.date: 04/12/2019
 ms.author: jafreebe
 ms.reviewer: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: dec5d1c7c7664bf72d92e5aca4333ba64db26d02
-ms.sourcegitcommit: 265f1d6f3f4703daa8d0fc8a85cbd8acf0a17d30
+ms.openlocfilehash: 9ee989a079366a470d086a8b931685a6c1dbc757
+ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74671908"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75889356"
 ---
 # <a name="configure-a-windows-java-app-for-azure-app-service"></a>Настройка приложения Windows Java для службы приложений Azure
 
@@ -213,7 +213,7 @@ public int getServerPort()
 |------------|-----------------------------------------------|------------------------------------------------------------------------------------------|
 | PostgreSQL | `org.postgresql.Driver`                        | [Загрузить](https://jdbc.postgresql.org/download.html)                                    |
 | MySQL      | `com.mysql.jdbc.Driver`                        | [Скачать](https://dev.mysql.com/downloads/connector/j/) (выберите "Platform Independent" (Независимо от платформы)) |
-| SQL Server | `com.microsoft.sqlserver.jdbc.SQLServerDriver` | [Загрузить](https://docs.microsoft.com/sql/connect/jdbc/download-microsoft-jdbc-driver-for-sql-server?view=sql-server-2017#available-downloads-of-jdbc-driver-for-sql-server)                                                           |
+| SQL Server | `com.microsoft.sqlserver.jdbc.SQLServerDriver` | [Загрузить](https://docs.microsoft.com/sql/connect/jdbc/download-microsoft-jdbc-driver-for-sql-server?view=sql-server-2017#available-downloads-of-jdbc-driver-for-sql-server)                                                           |
 
 Чтобы настроить Tomcat для использования Java Database Connectivity (JDBC) или API сохраняемости Java (JPA), сначала настройте переменную среды `CATALINA_OPTS`, которая считывается в Tomcat при запуске. Задайте эти значения с помощью параметра приложения в [подключаемом модуле Maven для службы приложений](https://github.com/Microsoft/azure-maven-plugins/blob/develop/azure-webapp-maven-plugin/README.md):
 
@@ -297,7 +297,7 @@ Azure поддерживает пакет Java Development Kit (JDK) [Zulu](http
 
 Каждый квартал в поддерживаемые пакеты JDK автоматически вносятся исправления. Это происходит в январе, апреле, июле и октябре. Дополнительные сведения об Java в Azure см. в [этом документе поддержки](https://docs.microsoft.com/azure/java/jdk/).
 
-### <a name="security-updates"></a>обновления для системы безопасности;
+### <a name="security-updates"></a>Обновления для системы безопасности
 
 Исправления для устранения серьезных уязвимостей в системе безопасности будут выпускаться по мере выпуска компанией Azul Systems. "Серьезными" считаются уязвимости с базовым индексом не меньше 9.0 в [NIST Common Vulnerability Scoring System версии 2](https://nvd.nist.gov/cvss.cfm).
 
@@ -315,7 +315,7 @@ Azure поддерживает пакет Java Development Kit (JDK) [Zulu](http
 
 ### <a name="runtime-support"></a>Поддержка времени выполнения
 
-Разработчики могут [сообщить о проблеме](/azure/azure-supportability/how-to-create-azure-support-request) с Azul Zulu JDK в службу поддержки Azure при наличии [соответствующего плана поддержки](https://azure.microsoft.com/support/plans/).
+Разработчики могут [сообщить о проблеме](/azure/azure-portal/supportability/how-to-create-azure-support-request) с Azul Zulu JDK в службу поддержки Azure при наличии [соответствующего плана поддержки](https://azure.microsoft.com/support/plans/).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

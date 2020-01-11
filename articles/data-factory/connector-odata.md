@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 09/04/2019
 ms.author: jingwang
-ms.openlocfilehash: e70cd6d7745b2754bdda6992c587c5c72643869b
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: 0cc9328fa08f7e9125ecb41576c67f95382bc1bf
+ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74912509"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75892375"
 ---
 # <a name="copy-data-from-an-odata-source-by-using-azure-data-factory"></a>Копирование данных из источника OData с помощью Фабрики данных Azure
 
@@ -54,13 +54,13 @@ ms.locfileid: "74912509"
 
 Для связанной службы OData поддерживаются следующие свойства.
 
-| Свойство | Описание | Обязательно для заполнения |
+| Свойство | Description | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| Тип | Для свойства **type** необходимо задать значение **OData**. |ДА |
-| URL-адрес | Корневой URL-адрес службы OData. |ДА |
-| authenticationType | Тип проверки подлинности, используемый для подключения к источнику OData. Допустимые значения: **Anonymous**, **Basic**, **Windows**, **AadServicePrincipal** и **ManagedServiceIdentity**. OAuth на основе пользователя не поддерживается. | ДА |
+| type | Для свойства **type** необходимо задать значение **OData**. |Да |
+| url | Корневой URL-адрес службы OData. |Да |
+| authenticationType | Тип проверки подлинности, используемый для подключения к источнику OData. Допустимые значения: **Anonymous**, **Basic**, **Windows**, **AadServicePrincipal** и **ManagedServiceIdentity**. OAuth на основе пользователя не поддерживается. | Да |
 | userName | Укажите **имя пользователя**, если вы используете проверку подлинности типа "Обычная" или "Windows". | Нет |
-| пароль | Введите **пароль** для учетной записи пользователя, указанной для **имени пользователя**. Пометьте это поле как **SecureString**, чтобы безопасно хранить его в фабрике данных. Вы можете также [указать секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | Нет |
+| password | Введите **пароль** для учетной записи пользователя, указанной для **имени пользователя**. Пометьте это поле как **SecureString**, чтобы безопасно хранить его в фабрике данных. Вы можете также [указать секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | Нет |
 | servicePrincipalId | Укажите идентификатор клиента приложения Azure Active Directory. | Нет |
 | aadServicePrincipalCredentialType | Укажите тип учетных данных для использования при аутентификации субъекта-службы. Допустимые значения: `ServicePrincipalKey` или `ServicePrincipalCert`. | Нет |
 | servicePrincipalKey | Укажите ключ приложения Azure Active Directory. Пометьте это поле как **SecureString**, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | Нет |
@@ -203,10 +203,10 @@ ms.locfileid: "74912509"
 
 Чтобы скопировать данные из OData, установите свойство **type** набора данных **ODataResource**. Поддерживаются следующие свойства:
 
-| Свойство | Описание | Обязательно для заполнения |
+| Свойство | Description | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| Тип | Свойство **type** для набора данных должно иметь значение **ODataResource**. | ДА |
-| path | Путь к ресурсу OData. | ДА |
+| type | Свойство **type** для набора данных должно иметь значение **ODataResource**. | Да |
+| path | Путь к ресурсу OData. | Да |
 
 **Пример**
 
@@ -239,9 +239,9 @@ ms.locfileid: "74912509"
 
 Чтобы скопировать данные из OData, в разделе **источник** действия копирования поддерживаются следующие свойства.
 
-| Свойство | Описание | Обязательно для заполнения |
+| Свойство | Description | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| Тип | Свойство **Type** источника действия копирования должно иметь значение **одатасаурце**. | ДА |
+| type | Свойство **Type** источника действия копирования должно иметь значение **одатасаурце**. | Да |
 | query | Параметры запроса OData для фильтрации данных. Пример: `"$select=Name,Description&$top=5"`.<br/><br/>**Примечание.** Соединитель OData копирует данные из объединенного URL-адреса: `[URL specified in linked service]/[path specified in dataset]?[query specified in copy activity source]`. Дополнительные сведения см. в статье о [компонентах URL-адреса OData](https://www.odata.org/documentation/odata-version-3-0/url-conventions/). | Нет |
 
 **Пример**
@@ -289,15 +289,15 @@ ms.locfileid: "74912509"
 | Edm.Byte | Byte[] |
 | Edm.DateTime | Дата и время |
 | Edm.Decimal | Decimal |
-| Edm.Double | DOUBLE |
+| Edm.Double | Double |
 | Edm.Single | Отдельная |
 | Edm.Guid | GUID |
 | Edm.Int16 | Int16 |
 | Edm.Int32 | Int32 |
 | Edm.Int64 | Int64 |
 | Edm.SByte | Int16 |
-| Edm.String | Строка |
-| Edm.Time | Интервал времени |
+| Edm.String | String |
+| Edm.Time | TimeSpan |
 | Edm.DateTimeOffset | DateTimeOffset |
 
 > [!NOTE]
@@ -310,4 +310,4 @@ ms.locfileid: "74912509"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-В разделе [Поддерживаемые хранилища данных и форматы](copy-activity-overview.md##supported-data-stores-and-formats) приведен список хранилищ данных, которые поддерживаются в качестве источников и приемников для действия копирования в Фабрике данных Azure.
+В разделе [Поддерживаемые хранилища данных и форматы](copy-activity-overview.md#supported-data-stores-and-formats) приведен список хранилищ данных, которые поддерживаются в качестве источников и приемников для действия копирования в Фабрике данных Azure.

@@ -5,14 +5,14 @@ services: vpn-gateway
 author: cherylmc
 ms.service: vpn-gateway
 ms.topic: conceptual
-ms.date: 11/04/2019
+ms.date: 01/10/2020
 ms.author: cherylmc
-ms.openlocfilehash: c72b85bc978191744c55afb73973caa6d3b45db6
-ms.sourcegitcommit: 5cfe977783f02cd045023a1645ac42b8d82223bd
+ms.openlocfilehash: 9ecea0576f7cec4e70d6e223b5412a8d8057b2ab
+ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2019
-ms.locfileid: "74150942"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75894744"
 ---
 # <a name="about-vpn-gateway-configuration-settings"></a>Сведения о параметрах конфигурации VPN-шлюза
 
@@ -39,7 +39,7 @@ VPN-шлюз — это разновидность шлюза виртуаль�
 * Vpn
 * ExpressRoute
 
-Для VPN-шлюза требуется `-GatewayType` *Vpn*.
+VPN-шлюзу требуется `-GatewayType` *VPN*.
 
 Пример:
 
@@ -55,7 +55,7 @@ New-AzVirtualNetworkGateway -Name vnetgw1 -ResourceGroupName testrg `
 
 ### <a name="configure-a-gateway-sku"></a>Настройка номера SKU для шлюза
 
-#### <a name="azure-portal"></a>портале Azure
+#### <a name="azure-portal"></a>Портал Azure
 
 Если для создания шлюза виртуальной сети Resource Manager используется портал Azure, выбрать SKU шлюза можно в раскрывающемся списке. Представленные параметры соответствуют выбранным типу шлюза и типу VPN.
 
@@ -169,12 +169,12 @@ New-AzLocalNetworkGateway -Name LocalSite -ResourceGroupName testrg `
 
 Дополнительные технические материалы и специальные требования к синтаксису, действующие при использовании интерфейсов REST API, командлетов PowerShell или Azure CLI для настройки конфигураций VPN-шлюзов, доступны на приведенных ниже страницах.
 
-| **Классический** | **Диспетчер ресурсов** |
+| **Классический** | **Resource Manager** |
 | --- | --- |
 | [PowerShell](/powershell/module/az.network/#networking) |[PowerShell](/powershell/module/az.network#vpn) |
-| [ИНТЕРФЕЙС REST API](https://msdn.microsoft.com/library/jj154113) |[ИНТЕРФЕЙС REST API](/rest/api/network/virtualnetworkgateways) |
-| Не поддерживается | [Интерфейс командной строки Azure](/cli/azure/network/vnet-gateway)|
+| [REST API](https://msdn.microsoft.com/library/jj154113) |[REST API](/rest/api/network/virtualnetworkgateways) |
+| Не поддерживается | [Azure CLI](/cli/azure/network/vnet-gateway)|
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о доступных конфигурациях подключений см. в статье [Основные сведения о VPN-шлюзах Azure](vpn-gateway-about-vpngateways.md).

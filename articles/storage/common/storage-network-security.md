@@ -9,12 +9,12 @@ ms.date: 03/21/2019
 ms.author: tamram
 ms.reviewer: santoshc
 ms.subservice: common
-ms.openlocfilehash: 28ab1eaa860c0d684182f5f1660daed2751a9c6e
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: b9a5e388ce6749023cff223de2376d1360ca7574
+ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75465081"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75895696"
 ---
 # <a name="configure-azure-storage-firewalls-and-virtual-networks"></a>Настройка брандмауэров службы хранилища Azure и виртуальных сетей
 
@@ -379,6 +379,7 @@ ms.locfileid: "75465081"
 | Центры событий Azure         | Microsoft.EventHub         | Архивация данных с помощью функции "Сбор" в Центрах событий. [Подробнее](/azure/event-hubs/event-hubs-capture-overview) |
 | Синхронизация файлов Azure          | Microsoft.StorageSync      | Позволяет преобразовать локальный файловый сервер в кэш для файловых ресурсов Azure. Обеспечивается многосайтовая синхронизация, быстрое аварийное восстановление и резервное копирование на стороне облака. [Дополнительные сведения](../files/storage-sync-files-planning.md) |
 | Azure HDInsight          | Microsoft.HDInsight        | Подготавливает начальное содержимое файловой системы по умолчанию для нового кластера HDInsight. [Узнайте больше](/azure/hdinsight/hdinsight-hadoop-use-blob-storage). |
+| Экспорт импорта Azure      | Microsoft.ImportExport     | Позволяет импортировать данные в Azure и экспортировать данные из Azure с помощью службы импорта и экспорта. [Узнайте больше](/azure/storage/common/storage-import-export-service).  |
 | Azure Monitor            | Microsoft.Insights         | Позволяет записывать данные мониторинга в защищенную учетную запись. [Дополнительные сведения](/azure/monitoring-and-diagnostics/monitoring-roles-permissions-security). |
 | Сети Azure         | Microsoft.Network.          | Хранение и анализ журналов сетевого трафика. [Узнайте больше](/azure/network-watcher/network-watcher-packet-capture-overview). |
 | Восстановление сайтов Azure      | Microsoft.SiteRecovery     | Включите репликацию для аварийного восстановления виртуальных машин IaaS Azure при использовании кэша, источника или целевых учетных записей хранения с поддержкой брандмауэра.  [Узнайте больше](https://docs.microsoft.com/azure/site-recovery/azure-to-azure-tutorial-enable-replication). |

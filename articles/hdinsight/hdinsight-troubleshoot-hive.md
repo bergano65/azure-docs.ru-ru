@@ -8,12 +8,12 @@ ms.author: hrasheed
 ms.reviewer: jasonh
 ms.topic: troubleshooting
 ms.date: 08/15/2019
-ms.openlocfilehash: 9169bd9a63666238e9d6b97d86bf1e9e10312c1b
-ms.sourcegitcommit: 8ef0a2ddaece5e7b2ac678a73b605b2073b76e88
+ms.openlocfilehash: 02247adb9852a72b386feb2ef0924b0f1b3d6277
+ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71076511"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75895236"
 ---
 # <a name="troubleshoot-apache-hive-by-using-azure-hdinsight"></a>Устранение неполадок в Apache Hive с помощью Azure HDInsight
 
@@ -39,9 +39,9 @@ ms.locfileid: "71076511"
     hive -f alltables.sql
     ```
 
-Код в разделе "Способы устранения" предполагает, что пути к данным в новом кластере являются такими же, как и в старом кластере. Если пути к данным различаются, можно вручную изменить созданный `alltables.sql` файл, чтобы отразить любые изменения.
+Код в разделе "Способы устранения" предполагает, что пути к данным в новом кластере являются такими же, как и в старом кластере. Если пути к данным отличаются, можно вручную изменить созданный файл `alltables.sql`, чтобы отразить любые изменения.
 
-### <a name="additional-reading"></a>Дополнительные материалы для чтения
+### <a name="additional-reading"></a>Дополнительные материалы
 
 - [Подключение к HDInsight (Hadoop) с помощью SSH](hdinsight-hadoop-linux-use-ssh-unix.md)
 
@@ -69,7 +69,7 @@ ms.locfileid: "71076511"
    /var/log/hive/hiveserver2.log
    ```
 
-### <a name="additional-reading"></a>Дополнительные материалы для чтения
+### <a name="additional-reading"></a>Дополнительные материалы
 
 - [Подключение к HDInsight (Hadoop) с помощью SSH](hdinsight-hadoop-linux-use-ssh-unix.md)
 
@@ -77,7 +77,7 @@ ms.locfileid: "71076511"
 
 ### <a name="resolution-steps"></a>Способы устранения
 
-1. Укажите пару "ключ-значение" конфигурации при запуске оболочки Hive. Дополнительные сведения см. в разделе [Дополнительные материалы](#additional-reading-end).
+1. Укажите пару "ключ-значение" конфигурации при запуске оболочки Hive. Подробные сведения см. в разделе [Дополнительные материалы](#additional-reading-end).
 
    ```apache
    hive -hiveconf a=b
@@ -95,7 +95,7 @@ ms.locfileid: "71076511"
    hive -hiveconf hive.root.logger=ALL,console
    ```
 
-### <a name="additional-reading"></a>Дополнительные материалы для чтения
+### <a name="additional-reading"></a>Дополнительные материалы
 
 - [Свойства конфигурации Hive](https://cwiki.apache.org/confluence/display/Hive/Configuration+Properties)
 
@@ -120,19 +120,19 @@ ms.locfileid: "71076511"
    Необходимо задать пример программы в качестве первого аргумента.
 
    Допустимые имена программы:
-    - **ContainerReuseAnalyzer**: печать сведений о повторном использовании контейнера в DAG;
-    - **CriticalPath**: поиск критического пути DAG;
-    - **LocalityAnalyzer**: печать сведений о местоположении в DAG;
-    - **ShuffleTimeAnalyzer**: анализ сведений о смещении времени в DAG;
-    - **SkewAnalyzer**: анализ сведений о неравномерном распределении данных в DAG;
-    - **SlowNodeAnalyzer**: печать сведений об узле в DAG;
-    - **SlowTaskIdentifier**: печать сведений о медленных задачах в DAG;
-    - **SlowestVertexAnalyzer**: печать сведений о медленных вершинах в DAG;
-    - **SpillAnalyzer**: печать сведений о перемещении в DAG;
-    - **TaskConcurrencyAnalyzer**: печать сведений о параллельных задачах в DAG;
-    - **VertexLevelCriticalPathAnalyzer**: поиск критического пути на уровне вершины в DAG.
+    - **ContainerReuseAnalyzer** — печать сведений о повторном использовании контейнера в DAG;
+    - **CriticalPath** — поиск критического пути DAG;
+    - **LocalityAnalyzer** — печать сведений о местоположении в DAG;
+    - **ShuffleTimeAnalyzer** — анализ сведений о смещении времени в DAG;
+    - **SkewAnalyzer** — анализ сведений о неравномерном распределении данных в DAG;
+    - **SlowNodeAnalyzer** — печать сведений об узле в DAG;
+    - **SlowTaskIdentifier** — печать сведений о медленных задачах в DAG;
+    - **SlowestVertexAnalyzer** — печать сведений о медленных вершинах в DAG;
+    - **SpillAnalyzer** — печать сведений о перемещении в DAG;
+    - **TaskConcurrencyAnalyzer** — печать сведений о параллельных задачах в DAG;
+    - **VertexLevelCriticalPathAnalyzer** — поиск критического пути на уровне вершины в DAG.
 
-### <a name="additional-reading"></a>Дополнительные материалы для чтения
+### <a name="additional-reading"></a>Дополнительные материалы
 
 - [Подключение к HDInsight (Hadoop) с помощью SSH](hdinsight-hadoop-linux-use-ssh-unix.md)
 
@@ -161,12 +161,12 @@ ms.locfileid: "71076511"
 
 [Подключение к HDInsight (Hadoop) с помощью SSH](hdinsight-hadoop-linux-use-ssh-unix.md)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если вы не видите своего варианта проблемы или вам не удается ее устранить, дополнительные сведения можно получить, посетив один из следующих каналов.
 
 - Получите ответы от экспертов Azure через [службу поддержки сообщества Azure](https://azure.microsoft.com/support/community/).
 
-- Подключение с [@AzureSupport](https://twitter.com/azuresupport) — официальная учетная запись Microsoft Azure для улучшения качества обслуживания клиентов. Подключение сообщества Azure к нужным ресурсам: ответы, поддержка и эксперты.
+- Подключайтесь с [@AzureSupport](https://twitter.com/azuresupport) — официальная учетная запись Microsoft Azure для улучшения качества взаимодействия с клиентами. Подключение сообщества Azure к нужным ресурсам: ответы, поддержка и эксперты.
 
-- Если вам нужна дополнительная помощь, можно отправить запрос в службу поддержки из [портал Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade/). Выберите пункт **Поддержка** в строке меню или откройте центр **справки и поддержки** . Для получения более подробных сведений см. статью [о создании запроса на поддержку Azure](https://docs.microsoft.com/azure/azure-supportability/how-to-create-azure-support-request). Доступ к управлению подписками и поддержкой выставления счетов включен в вашу подписку Microsoft Azure, а техническая поддержка предоставляется через один из [планов поддержки Azure](https://azure.microsoft.com/support/plans/).
+- Если вам нужна дополнительная помощь, можно отправить запрос в службу поддержки из [портал Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade/). Выберите пункт **Поддержка** в строке меню или откройте центр **справки и поддержки** . Для получения более подробных сведений см. статью [о создании запроса на поддержку Azure](https://docs.microsoft.com/azure/azure-portal/supportability/how-to-create-azure-support-request). Доступ к управлению подписками и поддержкой выставления счетов включен в вашу подписку Microsoft Azure, а техническая поддержка предоставляется через один из [планов поддержки Azure](https://azure.microsoft.com/support/plans/).

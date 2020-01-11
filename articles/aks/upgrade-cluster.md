@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 05/31/2019
 ms.author: mlearned
-ms.openlocfilehash: 7113fd7f17fd7695e25489931d7a6cbf35e334ec
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: e1ef87471c81fbf0d242837bd94fdc17f686387f
+ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75442816"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75889400"
 ---
 # <a name="upgrade-an-azure-kubernetes-service-aks-cluster"></a>Обновление кластера службы Azure Kubernetes (AKS)
 
@@ -25,7 +25,7 @@ ms.locfileid: "75442816"
 Для работы с этой статьей требуется Azure CLI версии 2.0.65 или более поздней. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0][azure-cli-install].
 
 > [!WARNING]
-> Обновление кластера AKS активирует Cordon и сток узлов. При наличии свободной квоты вычислений обновление может завершиться ошибкой.  Дополнительные сведения см. в разделе [увеличение квот](https://docs.microsoft.com/azure/azure-supportability/resource-manager-core-quotas-request?branch=pr-en-us-83289) .
+> Обновление кластера AKS активирует Cordon и сток узлов. При наличии свободной квоты вычислений обновление может завершиться ошибкой.  Дополнительные сведения см. в разделе [увеличение квот](https://docs.microsoft.com/azure/azure-portal/supportability/resource-manager-core-quotas-request?branch=pr-en-us-83289) .
 > Если вы используете собственное развертывание автомасштабирования кластера, отключите его (вы можете масштабировать его до нулевых реплик) во время обновления, так как это может помешать процессу обновления. Управляемый Автомасштабирование автоматически обрабатывает это. 
 
 ## <a name="check-for-available-aks-cluster-upgrades"></a>Проверка доступных обновлений кластера AKS

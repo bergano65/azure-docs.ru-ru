@@ -15,12 +15,12 @@ ms.workload: infrastructure
 ms.date: 11/08/2019
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: ddba2b70bc9d9e01518cdc0f373fc31224e9c932
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: b3a424c142fbfcbfe5e4c1802f3ba61da655f77f
+ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75425936"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75896033"
 ---
 # <a name="sap-workloads-on-azure-planning-and-deployment-checklist"></a>Рабочие нагрузки SAP в Azure: контрольный список для планирования и развертывания
 
@@ -76,7 +76,7 @@ ms.locfileid: "75425936"
     - [Стратегия тегирования](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags#tags-and-billing).
     - Соглашения об именовании для виртуальных машин и других компонентов инфраструктуры и (или) логических имен.
 5.  Контракт Microsoft поддержка Premier. Найдите свой менеджер по технической поддержке Майкрософт (TAM). Требования поддержки SAP см. в разделе [Примечание о поддержке sap #2015553](https://launchpad.support.sap.com/#/notes/2015553).
-6.  Число подписок Azure и квоты ядра для подписок. [Откройте запросы в службу поддержки, чтобы увеличить квоты подписки Azure](https://docs.microsoft.com/azure/azure-supportability/resource-manager-core-quotas-request) по мере необходимости.
+6.  Число подписок Azure и квоты ядра для подписок. [Откройте запросы в службу поддержки, чтобы увеличить квоты подписки Azure](https://docs.microsoft.com/azure/azure-portal/supportability/resource-manager-core-quotas-request) по мере необходимости.
 7.  План уменьшения и переноса данных для переноса данных SAP в Azure. Для систем SAP NetWeaver SAP содержит рекомендации по ограничению объема больших объемов данных. См. [руководство SAP](https://wiki.scn.sap.com/wiki/download/attachments/247399467/DVM_%20Guide_7.2.pdf?version=1&modificationDate=1549365516000&api=v2) об управлении данными в системах SAP ERP. Некоторые материалы также относятся к системам NetWeaver и S/4HANA в целом.
 8.  Автоматический подход к развертыванию. Целью автоматизации развертываний инфраструктуры в Azure является детерминированное развертывание и получение детерминированных результатов. Многие клиенты используют PowerShell или сценарии на основе CLI. Но существуют различные технологии с открытым кодом, которые можно использовать для развертывания инфраструктуры Azure для SAP и даже для установки программного обеспечения SAP. Примеры можно найти на сайте GitHub:
     - [Автоматическое развертывание SAP в облаке Azure](https://github.com/Azure/sap-hana)

@@ -10,12 +10,12 @@ ms.topic: troubleshooting
 ms.service: cost-management-billing
 manager: benshy
 ms.custom: ''
-ms.openlocfilehash: 82c9a13c50f9d9786f405032d6339c8323d9cf68
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: 2ea1d33f6302a04a7844e4504d30bac897599e69
+ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74229896"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75887552"
 ---
 # <a name="create-a-support-request-for-cloudyn"></a>Создание запроса в группу поддержки для Cloudyn
 
@@ -23,7 +23,7 @@ ms.locfileid: "74229896"
 
 ## <a name="open-a-support-ticket"></a>Открытие запроса в службу поддержки
 
-1. Войдите на портал Azure (https://portal.azure.com)).
+1. Войдите на портал Azure (https://portal.azure.com) ).
 2. В верхней панели навигации щелкните **Справка**.
 3. В меню**Справка** щелкните **Справка и поддержка**.
 4. В меню "Справка и поддержка" в разделе "Поддержка" щелкните **Новый запрос на поддержку**.
@@ -41,11 +41,11 @@ ms.locfileid: "74229896"
 
 Если вы хотите создать запрос в службу поддержки о выставлении счетов для Управления затратами, из списка **Тип проблемы** выберите **Управление затратами Azure**.
 
-Чтобы проверить состояние зарегистрированного инцидента, воспользуйтесь инструкциями из раздела [Все запросы на поддержку](../azure-supportability/how-to-create-azure-support-request.md#all-support-requests).
+Чтобы проверить состояние зарегистрированного инцидента, воспользуйтесь инструкциями из раздела [Все запросы на поддержку](../azure-portal/supportability/how-to-create-azure-support-request.md#all-support-requests).
 
 Если вы старый пользователь Cloudyn без учетной записи Azure, отправьте запрос в службу поддержки на странице https://support.microsoft.com/oas/default.aspx?prid=16451.
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о Cloudyn см. в руководстве для Cloudyn [Просмотр сведений об использовании и затратах](tutorial-review-usage.md).

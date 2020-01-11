@@ -11,12 +11,12 @@ author: iainfoulds
 manager: daveba
 ms.reviewer: jsimmons
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 481e1762e805f162aa515dd4d12cc7b6b2e95d71
-ms.sourcegitcommit: 5925df3bcc362c8463b76af3f57c254148ac63e3
+ms.openlocfilehash: f61ab87a3eb1bd4b81a8e67a182a4cb6a09aa069
+ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75560262"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75888961"
 ---
 # <a name="deploy-azure-ad-password-protection"></a>Развертывание защиты паролем Azure AD
 
@@ -34,7 +34,7 @@ ms.locfileid: "75560262"
 
 Кроме того, более надежная проверка пароля может повлиять на существующую Active Directory автоматизации развертывания контроллера домена. Во время оценки периода аудита рекомендуется выполнять по крайней мере одно повышение роли контроллера домена и одно понижение контроллера домена, чтобы помочь устранить эти проблемы заранее.  Дополнительные сведения см. здесь:
 
-* [Программе Ntdsutil. exe не удается задать пароль режима восстановления слабых служб каталогов](howto-password-ban-bad-on-premises-troubleshoot.md##ntdsutilexe-fails-to-set-a-weak-dsrm-password)
+* [Программе Ntdsutil. exe не удается задать пароль режима восстановления слабых служб каталогов](howto-password-ban-bad-on-premises-troubleshoot.md#ntdsutilexe-fails-to-set-a-weak-dsrm-password)
 * [Сбой повышения реплики контроллера домена из-за ненадежного режима восстановления служб каталогов](howto-password-ban-bad-on-premises-troubleshoot.md#domain-controller-replica-promotion-fails-because-of-a-weak-dsrm-password)
 * [Сбой понижения роли контроллера домена из-за ненадежного пароля локального администратора](howto-password-ban-bad-on-premises-troubleshoot.md#domain-controller-demotion-fails-due-to-a-weak-local-administrator-password)
 

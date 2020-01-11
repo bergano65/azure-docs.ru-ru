@@ -8,12 +8,12 @@ ms.service: cosmos-db
 ms.subservice: cosmosdb-cassandra
 ms.topic: conceptual
 ms.date: 09/24/2018
-ms.openlocfilehash: f728baedf9e325f224ce52e64325064f553d2671
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: bef4ee14cb4a7d64d80dc5776d8ecea0f831881a
+ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60893708"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75887638"
 ---
 # <a name="access-azure-cosmos-db-cassandra-api-from-spark-on-yarn-with-hdinsight"></a>Доступ к API Cassandra для Azure Cosmos DB из Spark в YARN с HDInsight
 
@@ -29,7 +29,7 @@ ms.locfileid: "60893708"
 
 * [Просмотр примеров кода для работы с API Cassandra](cassandra-spark-generic.md#next-steps)
 
-* [Использование при необходимости cqlsh для проверки](cassandra-spark-generic.md##connecting-to-azure-cosmos-db-cassandra-api-from-spark)
+* [Использование при необходимости cqlsh для проверки](cassandra-spark-generic.md#connecting-to-azure-cosmos-db-cassandra-api-from-spark)
 
 * **Настройка API Cassandra в Spark2**. Для инициализации соединителя Spark для Cassandra как части контекста Spark необходимы сведения о подключении Cassandra. При запуске Jupyter Notebook сеанс и контекст Spark уже инициализированы. Не рекомендуется останавливать запуск и повторно инициализировать контекст Spark, если только он не выполнен с использованием наборов конфигурации, заданных для запуска Jupyter Notebook по умолчанию для HDInsight. Одним из способов обхода является добавление сведений об экземпляре Cassandra непосредственно в конфигурацию службы Ambari, Spark2. Это требуется выполнить один раз для каждого кластера, на котором нужно перезапустить службу Spark2.
  

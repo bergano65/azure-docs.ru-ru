@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 08/06/2019
 ms.author: jingwang
-ms.openlocfilehash: 36788f513a44f910e1d8b3f04be654996f23216a
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: cb4b81f7c5e219c520078ecf34eba3f5e98da684
+ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75444261"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75892574"
 ---
 # <a name="copy-data-from-and-to-ibm-informix-data-stores-using-azure-data-factory"></a>Копирование данных из и в хранилища данных IBM Informix с помощью фабрики данных Azure
 
@@ -162,4 +162,4 @@ ms.locfileid: "75444261"
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
-В таблице [Поддерживаемые хранилища данных](copy-activity-overview.md##supported-data-stores-and-formats) приведен список хранилищ данных, которые поддерживаются в качестве источников и приемников для действия копирования в фабрике данных Azure.
+В таблице [Поддерживаемые хранилища данных](copy-activity-overview.md#supported-data-stores-and-formats) приведен список хранилищ данных, которые поддерживаются в качестве источников и приемников для действия копирования в фабрике данных Azure.

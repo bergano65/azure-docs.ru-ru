@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: peterclu
 ms.author: amlstudiodocs
 ms.date: 01/18/2019
-ms.openlocfilehash: af181291ca9dd748b587266c97f32fa3fb64242e
-ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
+ms.openlocfilehash: ee4ef451888638c0ba33d7938c88b836b28f3fe5
+ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73838605"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75894628"
 ---
 # <a name="get-support-and-training-for-azure-machine-learning-studio-classic"></a>Техническая поддержка и обучение для Машинное обучение Azure Studio (классическая модель)
 
@@ -35,7 +35,7 @@ ms.locfileid: "73838605"
 
 Ознакомьтесь со следующими ресурсами поддержки:
 
-+ **Техническая поддержка для клиентов Azure**: [Отправка запросов на поддержку и управление ими](https://docs.microsoft.com/azure/azure-supportability/how-to-create-azure-support-request) с помощью портал Azure.
++ **Техническая поддержка для клиентов Azure**: [Отправка запросов на поддержку и управление ими](https://docs.microsoft.com/azure/azure-portal/supportability/how-to-create-azure-support-request) с помощью портал Azure.
 
 + **Форум пользователей**: задавайте вопросы, ответьте на вопросы и подключайтесь к другим пользователям на [форуме поддержки машинное обучение Azure Studio (классическая модель) на сайте MSDN](https://aka.ms/aml-forum-studio).
 

@@ -11,34 +11,28 @@ ms.author: clauren
 ms.reviewer: jmartens
 ms.date: 10/25/2019
 ms.custom: seodec18
-ms.openlocfilehash: f9361f1ca998d32a998794a7e95220ee5c7ac623
-ms.sourcegitcommit: f53cd24ca41e878b411d7787bd8aa911da4bc4ec
+ms.openlocfilehash: bf86826d77c690b60c7b091d6250a85fffd21fc0
+ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75834768"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75896331"
 ---
 # <a name="troubleshooting-azure-machine-learning-azure-kubernetes-service-and-azure-container-instances-deployment"></a>Устранение неполадок Машинное обучение Azure службы Azure Kubernetes и развертывания экземпляров контейнеров Azure
 
 Узнайте, как обойти или устранить распространенные ошибки развертывания DOCKER с помощью службы "экземпляры контейнеров Azure" (ACI) и Azure Kubernetes Service (AKS), используя Машинное обучение Azure.
 
-При развертывании модели в Машинное обучение Azure система выполняет ряд задач. Ниже перечислены задачи развертывания.
+При развертывании модели в Машинное обучение Azure система выполняет ряд задач.
+
+Рекомендуемый и наиболее актуальный подход к развертыванию модели заключается в использовании API [модели. deploy ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.model%28class%29?view=azure-ml-py#deploy-workspace--name--models--inference-config-none--deployment-config-none--deployment-target-none--overwrite-false-) с использованием объекта [среды](https://docs.microsoft.com/azure/machine-learning/service/how-to-use-environments) в качестве входного параметра. В этом случае наша служба будет создавать базовый образ DOCKER на этапе развертывания и подключать необходимые модели в одном вызове. Основные задачи развертывания:
 
 1. Регистрация модели в реестре моделей рабочей области.
 
-2. Создание образа Docker, включая:
-    1. загрузку зарегистрированной модели из реестра; 
-    2. создание файла dockerfile в среде Python на основе зависимостей, указываемых в yaml-файле среды;
-    3. добавление файлов модели и скрипта оценки, которые содержатся в файле dockerfile;
-    4. создание нового образа Docker с помощью файла dockerfile;
-    5. регистрацию образа Docker с помощью реестра контейнеров Azure, связанного с рабочей областью.
+2. Определить конфигурацию вывода:
+    1. Создайте объект [среды](https://docs.microsoft.com/azure/machine-learning/service/how-to-use-environments) на основе зависимостей, указанных в файле YAML среды, или используйте одну из наших приобретенных сред.
+    2. Создайте конфигурацию вывода (объект Инференцеконфиг) на основе среды и скрипта оценки.
 
-    > [!IMPORTANT]
-    > В зависимости от кода создание изображений происходит автоматически без ввода.
-
-3. Развертывание образа Docker в службу "Экземпляр контейнера Azure" (ACI) или службу Azure Kubernetes (AKS).
-
-4. Запуск новых контейнеров в ACI или AKS. 
+3. Разверните модель в службе "экземпляр контейнера Azure" (ACI) или в службе Kubernetes Azure (AKS).
 
 Дополнительные сведения об этом процессе см. во введении в [Управление моделями](concept-model-management-and-deployment.md).
 
@@ -56,11 +50,14 @@ ms.locfileid: "75834768"
 
 Если возникнут какие-либо проблемы, прежде всего следует разбить задачу развертывания (описанную ранее) на отдельные шаги, чтобы установить причину проблемы.
 
-Разбиение развертывания на задачи полезно, если вы используете API [WebService. deploy ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice%28class%29?view=azure-ml-py#deploy-workspace--name--model-paths--image-config--deployment-config-none--deployment-target-none--overwrite-false-) или [WebService. deploy_from_model ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice%28class%29?view=azure-ml-py#deploy-from-model-workspace--name--models--image-config--deployment-config-none--deployment-target-none--overwrite-false-) , так как обе эти функции выполняют вышеупомянутые действия как одно действие. Обычно эти интерфейсы API удобны, но это позволяет разбиваться на действия при устранении неполадок, заменяя их приведенными ниже вызовами API.
+При условии, что вы используете новый или рекомендуемый метод развертывания через API [модели. deploy ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.model%28class%29?view=azure-ml-py#deploy-workspace--name--models--inference-config-none--deployment-config-none--deployment-target-none--overwrite-false-) с объектом [среды](https://docs.microsoft.com/azure/machine-learning/service/how-to-use-environments) в качестве входного параметра, код можно разделить на три основных этапа:
 
 1. Регистрация модели. Ниже приведен пример кода.
 
     ```python
+    from azureml.core.model import Model
+
+
     # register a model out of a run record
     model = best_run.register_model(model_name='my_best_model', model_path='outputs/my_model.pkl')
 
@@ -68,99 +65,35 @@ ms.locfileid: "75834768"
     model = Model.register(model_path='my_model.pkl', model_name='my_best_model', workspace=ws)
     ```
 
-2. Создание образа. Ниже приведен пример кода.
+2. Определите конфигурацию определения для развертывания:
 
     ```python
-    # configure the image
-    image_config = ContainerImage.image_configuration(runtime="python",
-                                                      entry_script="score.py",
-                                                      conda_file="myenv.yml")
+    from azureml.core.model import InferenceConfig
+    from azureml.core.environment import Environment
 
-    # create the image
-    image = Image.create(name='myimg', models=[model], image_config=image_config, workspace=ws)
 
-    # wait for image creation to finish
-    image.wait_for_creation(show_output=True)
+    # create inference configuration based on the requirements defined in the YAML
+    myenv = Environment.from_conda_specification(name="myenv", file_path="myenv.yml")
+    inference_config = InferenceConfig(entry_script="score.py", environment=myenv)
     ```
 
-3. Развертывание образа в качестве службы. Ниже приведен пример кода.
+3. Разверните модель, используя конфигурацию вывода, созданную на предыдущем шаге.
 
     ```python
-    # configure an ACI-based deployment
-    aci_config = AciWebservice.deploy_configuration(cpu_cores=1, memory_gb=1)
+    from azureml.core.webservice import AciWebservice
 
-    aci_service = Webservice.deploy_from_image(deployment_config=aci_config, 
-                                               image=image, 
-                                               name='mysvc', 
-                                               workspace=ws)
-    aci_service.wait_for_deployment(show_output=True)    
+
+    # deploy the model
+    aci_config = AciWebservice.deploy_configuration(cpu_cores=1, memory_gb=1)
+    aci_service = Model.deploy(workspace=ws,
+                           name='my-service',
+                           models=[model],
+                           inference_config=inference_config,
+                           deployment_config=aci_config)
+    aci_service.wait_for_deployment(show_output=True)
     ```
 
 После разбиения процесса развертывания на отдельные задачи можно взглянуть на самые распространенные ошибки.
-
-## <a name="image-building-fails"></a>Сбой создания образа
-
-Если образ DOCKER не может быть построен, вызов [Image. wait_for_creation ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.image.image(class)?view=azure-ml-py#wait-for-creation-show-output-false-) или [Service. wait_for_deployment ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice(class)?view=azure-ml-py#wait-for-deployment-show-output-false-) завершается с некоторыми сообщениями об ошибках, которые могут предложить некоторые подсказки. Более подробную информацию об ошибках также можно найти в журнале сборки образа. Ниже приведен пример кода, в котором отображено обнаружение кода URI журнала сборки образа.
-
-```python
-# if you already have the image object handy
-print(image.image_build_log_uri)
-
-# if you only know the name of the image (note there might be multiple images with the same name but different version number)
-print(ws.images['myimg'].image_build_log_uri)
-
-# list logs for all images in the workspace
-for name, img in ws.images.items():
-    print(img.name, img.version, img.image_build_log_uri)
-```
-
-Код URI журнала образа — это URL-адрес SAS, указывающий на файл журнала, сохраненный в хранилище BLOB-объектов Azure. Просто скопируйте код URI и вставьте его в окно браузера, и вы сможете загрузить и просмотреть файл журнала.
-
-### <a name="azure-key-vault-access-policy-and-azure-resource-manager-templates"></a>Политики доступа Azure Key Vault и шаблоны Azure Resource Manager
-
-Сборка образа может также завершиться сбоем из-за проблемы с политикой доступа на Azure Key Vault. Такая ситуация может возникнуть при использовании шаблона Azure Resource Manager для создания рабочей области и связанных ресурсов (включая Azure Key Vault) несколько раз. Например, использование шаблона несколько раз с теми же параметрами, что и часть конвейера непрерывной интеграции и развертывания.
-
-Большинство операций создания ресурсов через шаблоны идемпотентными, но Key Vault удаляет политики доступа каждый раз при использовании шаблона. Очистка политик доступа нарушает доступ к Key Vault для любой существующей рабочей области, которая ее использует. Это состояние приводит к ошибкам при попытке создания новых образов. Ниже приведены примеры ошибок, которые можно получить.
-
-__Портал__.
-```text
-Create image "myimage": An internal server error occurred. Please try again. If the problem persists, contact support.
-```
-
-__Пакет SDK__:
-```python
-image = ContainerImage.create(name = "myimage", models = [model], image_config = image_config, workspace = ws)
-Creating image
-Traceback (most recent call last):
-  File "C:\Python37\lib\site-packages\azureml\core\image\image.py", line 341, in create
-    resp.raise_for_status()
-  File "C:\Python37\lib\site-packages\requests\models.py", line 940, in raise_for_status
-    raise HTTPError(http_error_msg, response=self)
-requests.exceptions.HTTPError: 500 Server Error: Internal Server Error for url: https://eastus.modelmanagement.azureml.net/api/subscriptions/<subscription-id>/resourceGroups/<resource-group>/providers/Microsoft.MachineLearningServices/workspaces/<workspace-name>/images?api-version=2018-11-19
-
-Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-  File "C:\Python37\lib\site-packages\azureml\core\image\image.py", line 346, in create
-    'Content: {}'.format(resp.status_code, resp.headers, resp.content))
-azureml.exceptions._azureml_exception.WebserviceException: Received bad response from Model Management Service:
-Response Code: 500
-Headers: {'Date': 'Tue, 26 Feb 2019 17:47:53 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'api-supported-versions': '2018-03-01-preview, 2018-11-19', 'x-ms-client-request-id': '3cdcf791f1214b9cbac93076ebfb5167', 'x-ms-client-session-id': '', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains; preload'}
-Content: b'{"code":"InternalServerError","statusCode":500,"message":"An internal server error occurred. Please try again. If the problem persists, contact support"}'
-```
-
-__CLI__:
-```text
-ERROR: {'Azure-cli-ml Version': None, 'Error': WebserviceException('Received bad response from Model Management Service:\nResponse Code: 500\nHeaders: {\'Date\': \'Tue, 26 Feb 2019 17:34:05
-GMT\', \'Content-Type\': \'application/json\', \'Transfer-Encoding\': \'chunked\', \'Connection\': \'keep-alive\', \'api-supported-versions\': \'2018-03-01-preview, 2018-11-19\', \'x-ms-client-request-id\':
-\'bc89430916164412abe3d82acb1d1109\', \'x-ms-client-session-id\': \'\', \'Strict-Transport-Security\': \'max-age=15724800; includeSubDomains; preload\'}\nContent:
-b\'{"code":"InternalServerError","statusCode":500,"message":"An internal server error occurred. Please try again. If the problem persists, contact support"}\'',)}
-```
-
-Чтобы избежать этой проблемы, рекомендуется использовать один из следующих подходов.
-
-* Не развертывайте шаблон более одного раза для одних и тех же параметров. Или удалите существующие ресурсы перед использованием шаблона для их повторного создания.
-* Изучите политики доступа Key Vault, а затем используйте эти политики, чтобы задать свойство `accessPolicies` шаблона.
-* Убедитесь, что Key Vault ресурс уже существует. Если это так, не создавайте его повторно с помощью шаблона. Например, добавьте параметр, который позволяет отключить создание Key Vault ресурса, если он уже существует.
 
 ## <a name="debug-locally"></a>Отладка в локальной среде
 
@@ -169,17 +102,17 @@ b\'{"code":"InternalServerError","statusCode":500,"message":"An internal server 
 > [!WARNING]
 > Локальные развертывания веб-служб не поддерживаются в рабочих сценариях.
 
-Чтобы выполнить развертывание локально, измените код, чтобы использовать `LocalWebservice.deploy_configuration()` для создания конфигурации развертывания. Затем используйте `Model.deploy()` для развертывания службы. В следующем примере выполняется развертывание модели (содержащейся в переменной `model`) в качестве локальной веб-службы:
+Чтобы выполнить развертывание локально, измените код, чтобы использовать `LocalWebservice.deploy_configuration()` для создания конфигурации развертывания. Затем используйте `Model.deploy()` для развертывания службы. В следующем примере модель, которая содержится в переменной модели, развертывается в качестве локальной веб-службы:
 
 ```python
-from azureml.core.model import InferenceConfig, Model
 from azureml.core.environment import Environment
+from azureml.core.model import InferenceConfig, Model
 from azureml.core.webservice import LocalWebservice
+
 
 # Create inference configuration based on the environment definition and the entry script
 myenv = Environment.from_conda_specification(name="env", file_path="myenv.yml")
 inference_config = InferenceConfig(entry_script="score.py", environment=myenv)
-
 # Create a local deployment, using port 8890 for the web service endpoint
 deployment_config = LocalWebservice.deploy_configuration(port=8890)
 # Deploy the service
@@ -329,13 +262,12 @@ def run(input_data):
 
 Дополнительные сведения о настройке `autoscale_target_utilization`, `autoscale_max_replicas`и `autoscale_min_replicas` для см. в справочнике по модулю [аксвебсервице](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice.akswebservice?view=azure-ml-py) .
 
-
 ## <a name="advanced-debugging"></a>Усовершенствованная отладка
 
 В некоторых случаях может потребоваться интерактивная отладка кода Python, содержащегося в развертывании модели. Например, если сценарий записи завершается ошибкой и причина не может быть определена дополнительным ведением журнала. С помощью Visual Studio Code и Инструменты Python для Visual Studio (PTVSD) можно присоединяться к коду, выполняющемуся в контейнере DOCKER.
 
 > [!IMPORTANT]
-> Этот метод отладки не работает при использовании `Model.deploy()` и `LocalWebservice.deploy_configuration` для локального развертывания модели. Вместо этого необходимо создать образ с помощью класса [контаинеримаже](https://docs.microsoft.com/python/api/azureml-core/azureml.core.image.containerimage?view=azure-ml-py) . 
+> Этот метод отладки не работает при использовании `Model.deploy()` и `LocalWebservice.deploy_configuration` для локального развертывания модели. Вместо этого необходимо создать образ с помощью метода [model. Package ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.model.model?view=azure-ml-py#package-workspace--models--inference-config-none--generate-dockerfile-false-) .
 
 Для локальных развертываний веб-служб требуется работающая установка DOCKER в локальной системе. Дополнительные сведения об использовании DOCKER см. в [документации по DOCKER](https://docs.docker.com/).
 
@@ -384,13 +316,14 @@ def run(input_data):
 
     ```python
     from azureml.core.conda_dependencies import CondaDependencies 
-    
+
+
     # Usually a good idea to choose specific version numbers
     # so training is made on same packages as scoring
     myenv = CondaDependencies.create(conda_packages=['numpy==1.15.4',            
                                 'scikit-learn==0.19.1', 'pandas==0.23.4'],
-                                 pip_packages = ['azureml-defaults==1.0.17', 'ptvsd'])
-    
+                                 pip_packages = ['azureml-defaults==1.0.45', 'ptvsd'])
+
     with open("myenv.yml","w") as f:
         f.write(myenv.serialize_to_string())
     ```
@@ -406,70 +339,33 @@ def run(input_data):
     print("Debugger attached...")
     ```
 
-1. Во время отладки может потребоваться внести изменения в файлы в образе без его повторного создания. Чтобы установить текстовый редактор (VIM) в образе DOCKER, создайте новый текстовый файл с именем `Dockerfile.steps` и используйте в качестве содержимого файла следующее:
-
-    ```text
-    RUN apt-get update && apt-get -y install vim
-    ```
-
-    Текстовый редактор позволяет изменять файлы в образе DOCKER для тестирования изменений без создания нового образа.
-
-1. Чтобы создать образ, использующий файл `Dockerfile.steps`, используйте параметр `docker_file` при создании образа. В следующем примере показано, как это сделать:
+1. Создайте образ на основе определения среды и затяните образ в локальный реестр. Во время отладки может потребоваться внести изменения в файлы в образе без его повторного создания. Чтобы установить текстовый редактор (VIM) в образе DOCKER, используйте свойства `Environment.docker.base_image` и `Environment.docker.base_dockerfile`.
 
     > [!NOTE]
     > В этом примере предполагается, что `ws` указывает на рабочую область Машинное обучение Azure и `model` является развертываемой моделью. Файл `myenv.yml` содержит зависимости conda, созданные на шаге 1.
 
     ```python
-    from azureml.core.image import Image, ContainerImage
-    image_config = ContainerImage.image_configuration(runtime= "python",
-                                 execution_script="score.py",
-                                 conda_file="myenv.yml",
-                                 docker_file="Dockerfile.steps")
+    from azureml.core.conda_dependencies import CondaDependencies
+    from azureml.core.model import InferenceConfig
+    from azureml.core.environment import Environment
 
-    image = Image.create(name = "myimage",
-                     models = [model],
-                     image_config = image_config, 
-                     workspace = ws)
-    # Print the location of the image in the repository
-    print(image.image_location)
+
+    myenv = Environment.from_conda_specification(name="env", file_path="myenv.yml")
+    myenv.docker.base_image = NONE
+    myenv.docker.base_dockerfile = "FROM mcr.microsoft.com/azureml/base:intelmpi2018.3-ubuntu16.04\nRUN apt-get update && apt-get install vim -y"
+    inference_config = InferenceConfig(entry_script="score.py", environment=myenv)
+    package = Model.package(ws, [model], inference_config)
+    package.wait_for_creation(show_output=True)  # Or show_output=False to hide the Docker build logs.
+    package.pull()
     ```
 
-После создания образа в реестре отображается расположение образа. Расположение аналогично приведенному ниже тексту.
+    После создания и загрузки образа путь к образу (включая репозиторий, имя и тег, который в этом случае является также его дайджестом) отображается в сообщении, аналогичном следующему:
 
-```text
-myregistry.azurecr.io/myimage:1
-```
-
-В этом текстовом примере имя реестра — `myregistry` и образ называется `myimage`. Версия образа — `1`.
-
-### <a name="download-the-image"></a>Загрузка образа
-
-1. Откройте командную строку, терминал или другую оболочку и выполните следующую команду [Azure CLI](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest) для проверки подлинности в подписке Azure, содержащей рабочую область машинное обучение Azure:
-
-    ```azurecli
-    az login
+    ```text
+    Status: Downloaded newer image for myregistry.azurecr.io/package@sha256:<image-digest>
     ```
 
-1. Чтобы пройти проверку подлинности в реестре контейнеров Azure (запись контроля доступа), который содержит образ, используйте следующую команду. Замените `myregistry`, возвращенный при регистрации образа:
-
-    ```azurecli
-    az acr login --name myregistry
-    ```
-
-1. Чтобы скачать образ на локальный DOCKER, используйте следующую команду. Замените `myimagepath` расположением, возвращенным при регистрации образа:
-
-    ```bash
-    docker pull myimagepath
-    ```
-
-    Путь к образу должен быть похож на `myregistry.azurecr.io/myimage:1`. Где `myregistry` — это ваш реестр, `myimage` является вашим образом, а `1` — версией образа.
-
-    > [!TIP]
-    > Проверка подлинности из предыдущего шага не ограничена последними. Если вы ожидаете достаточно долго между командой проверки подлинности и командой Pull, вы получите ошибку проверки подлинности. В этом случае следует повторно пройти проверку подлинности.
-
-    Время, необходимое для завершения загрузки, зависит от скорости подключения к Интернету. Во время процесса отображается состояние загрузки. После завершения загрузки можно использовать команду `docker images`, чтобы убедиться, что она загружена.
-
-1. Чтобы упростить работу с изображением, используйте следующую команду, чтобы добавить тег. Замените `myimagepath` значением Location из шага 2.
+1. Чтобы упростить работу с изображением, используйте следующую команду, чтобы добавить тег. Замените `myimagepath` значением Location из предыдущего шага.
 
     ```bash
     docker tag myimagepath debug:1

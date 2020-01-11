@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 06/19/2017
 ms.author: alkohli
-ms.openlocfilehash: 5e461f340e1c58f64c6d645a1e47cfd811bc4de5
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: ce49dcaa06288ba9e7a4d232338c727064d59685
+ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60505996"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75894845"
 ---
 # <a name="manage-your-storsimple-device-controllers"></a>Управление контроллерами устройства StorSimple
 
@@ -47,7 +47,7 @@ ms.locfileid: "60505996"
 
 > [!IMPORTANT]
 > * **Работающий контроллер никогда нельзя удалять физически, так как это приведет к потере избыточности и повысит риск простоя.**
-> * Следующая процедура относится только к физическому устройству StorSimple. Сведения о том, как запускать, останавливать и перезапускать облачное устройство StorSimple, см. в статье [Развертывание и администрирование облачного устройства StorSimple в Azure (обновление 3 и более поздние версии)](storsimple-8000-cloud-appliance-u2.md##work-with-the-storsimple-cloud-appliance).
+> * Следующая процедура относится только к физическому устройству StorSimple. Сведения о том, как запускать, останавливать и перезапускать облачное устройство StorSimple, см. в статье [Развертывание и администрирование облачного устройства StorSimple в Azure (обновление 3 и более поздние версии)](storsimple-8000-cloud-appliance-u2.md#work-with-the-storsimple-cloud-appliance).
 
 Перезапустить или выключить отдельный контроллер устройства можно через портал Azure службы диспетчера устройств StorSimple или Windows PowerShell для StorSimple.
 

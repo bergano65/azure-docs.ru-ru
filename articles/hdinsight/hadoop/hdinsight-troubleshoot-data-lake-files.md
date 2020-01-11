@@ -7,18 +7,18 @@ author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.date: 08/13/2019
-ms.openlocfilehash: 7b511ab0c3093747d6e713754c04533e5f25b6ad
-ms.sourcegitcommit: c79aa93d87d4db04ecc4e3eb68a75b349448cd17
+ms.openlocfilehash: 21269f7d5a9ec832a49a613351702dd24be156af
+ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71087399"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75894165"
 ---
 # <a name="unable-to-access-data-lake-storage-files-in-azure-hdinsight"></a>Не удается получить доступ к файлам Data Lakeного хранилища в Azure HDInsight
 
 В этой статье описываются действия по устранению неполадок и возможные способы решения проблем при взаимодействии с кластерами Azure HDInsight.
 
-## <a name="issue-acl-verification-failed"></a>Проблема Сбой проверки ACL
+## <a name="issue-acl-verification-failed"></a>Ошибка: сбой проверки ACL
 
 Появится сообщение об ошибке следующего вида:
 
@@ -26,13 +26,13 @@ ms.locfileid: "71087399"
 LISTSTATUS failed with error 0x83090aa2 (Forbidden. ACL verification failed. Either the resource does not exist or the user is not authorized to perform the requested operation.).
 ```
 
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
 
 Возможно, пользователь отменил разрешения субъекта-службы (Service Principal, SP) для файлов и папок.
 
 ### <a name="resolution"></a>Разрешение
 
-1. Убедитесь, что у пакета обновления есть разрешения "x" для обхода по пути. Дополнительные сведения см. в разделе [разрешения](https://hdinsight.github.io/ClusterCRUD/ADLS/adls-create-permission-setup.html). Пример команды DFS для проверки доступа к файлам и папкам в Data Lake учетной записи хранения:
+1. Убедитесь, что у пакета обновления есть разрешения "x" для обхода по пути. Дополнительные сведения см. в разделе [Разрешения](https://hdinsight.github.io/ClusterCRUD/ADLS/adls-create-permission-setup.html). Пример команды DFS для проверки доступа к файлам и папкам в Data Lake учетной записи хранения:
 
     ```
     hdfs dfs -ls /<path to check access>
@@ -42,7 +42,7 @@ LISTSTATUS failed with error 0x83090aa2 (Forbidden. ACL verification failed. Eit
 
 ---
 
-## <a name="issue-service-principal-certificate-expiry"></a>Проблема Срок действия сертификата субъекта-службы
+## <a name="issue-service-principal-certificate-expiry"></a>Ошибка: истекает срок действия сертификата субъекта-службы
 
 Появится сообщение об ошибке следующего вида:
 
@@ -50,7 +50,7 @@ LISTSTATUS failed with error 0x83090aa2 (Forbidden. ACL verification failed. Eit
 Token Refresh failed - Received invalid http response: 500
 ```
 
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
 
 Возможно, истек срок действия сертификата, предоставленного для доступа субъекта-службы.
 
@@ -66,7 +66,7 @@ Token Refresh failed - Received invalid http response: 500
     {"stderr": "-ls: Token Refresh failed - Received invalid http response: 500, text = Response{protocol=http/1.1, code=500, message=Internal Server Error, url=http://gw0-abccluster.24ajrd4341lebfgq5unsrzq0ue.fx.internal.cloudapp.net:909/api/oauthtoken}}...
     ```
 
-1. Получите один из URL-адресов `core-site.xml property`из  -  `fs.azure.datalake.token.provider.service.urls`.
+1. Получите один из URL-адресов из `core-site.xml property` - `fs.azure.datalake.token.provider.service.urls`.
 
 1. Выполните следующую команду, чтобы получить токен OAuth.
 
@@ -165,12 +165,12 @@ Invoke-AzureRmResourceAction `
 
 После замены параметров фактическими значениями выполните команду PowerShell.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если вы не видите своего варианта проблемы или вам не удается ее устранить, дополнительные сведения можно получить, посетив один из следующих каналов.
 
 * Получите ответы от экспертов Azure через [службу поддержки сообщества Azure](https://azure.microsoft.com/support/community/).
 
-* Подключение с [@AzureSupport](https://twitter.com/azuresupport) — официальная учетная запись Microsoft Azure для улучшения качества обслуживания клиентов. Подключение сообщества Azure к нужным ресурсам: ответы, поддержка и эксперты.
+* Подключайтесь с [@AzureSupport](https://twitter.com/azuresupport) — официальная учетная запись Microsoft Azure для улучшения качества взаимодействия с клиентами. Подключение сообщества Azure к нужным ресурсам: ответы, поддержка и эксперты.
 
-* Если вам нужна дополнительная помощь, можно отправить запрос в службу поддержки из [портал Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade/). Выберите пункт **Поддержка** в строке меню или откройте центр **справки и поддержки** . Для получения более подробных сведений см. статью [о создании запроса на поддержку Azure](https://docs.microsoft.com/azure/azure-supportability/how-to-create-azure-support-request). Доступ к управлению подписками и поддержкой выставления счетов включен в вашу подписку Microsoft Azure, а техническая поддержка предоставляется через один из [планов поддержки Azure](https://azure.microsoft.com/support/plans/).
+* Если вам нужна дополнительная помощь, можно отправить запрос в службу поддержки из [портал Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade/). Выберите пункт **Поддержка** в строке меню или откройте центр **справки и поддержки** . Для получения более подробных сведений см. статью [о создании запроса на поддержку Azure](https://docs.microsoft.com/azure/azure-portal/supportability/how-to-create-azure-support-request). Доступ к управлению подписками и поддержкой выставления счетов включен в вашу подписку Microsoft Azure, а техническая поддержка предоставляется через один из [планов поддержки Azure](https://azure.microsoft.com/support/plans/).
