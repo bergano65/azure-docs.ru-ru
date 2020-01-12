@@ -3,12 +3,12 @@ title: Справочник разработчика Python. Функции Azur
 description: Сведения о разработке функций на языке Python
 ms.topic: article
 ms.date: 12/13/2019
-ms.openlocfilehash: adea5603c997380dde6731b53bc99ba7443e310b
-ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
+ms.openlocfilehash: 374770c50300b9ca37253b3323a02c3371bfa521
+ms.sourcegitcommit: 3eb0cc8091c8e4ae4d537051c3265b92427537fe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75769011"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75903239"
 ---
 # <a name="azure-functions-python-developer-guide"></a>Справочник разработчика Python. Функции Azure
 
@@ -382,7 +382,7 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
 
 ## <a name="python-version"></a>Версия Python 
 
-В настоящее время функции Azure поддерживают как Python 3.6. x, так и 3.7. x (официальное распространение CPython). При локальном запуске среда выполнения использует доступную версию Python. Чтобы запросить конкретную версию Python при создании приложения-функции в Azure, используйте параметр `--runtime-version` команды [`az functionapp create`](/cli/azure/functionapp#az-functionapp-create) .  
+В настоящее время функции Azure поддерживают как Python 3.6. x, так и 3.7. x (официальное распространение CPython). При локальном запуске среда выполнения использует доступную версию Python. Чтобы запросить конкретную версию Python при создании приложения-функции в Azure, используйте параметр `--runtime-version` команды [`az functionapp create`](/cli/azure/functionapp#az-functionapp-create) . Изменение версии разрешено только при создании приложение-функция.  
 
 ## <a name="package-management"></a>Управление пакетами
 

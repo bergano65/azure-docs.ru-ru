@@ -1,6 +1,6 @@
 ---
-title: включение файла
-description: включение файла
+title: включить файл
+description: включить файл
 services: expressroute
 author: cherylmc
 ms.service: expressroute
@@ -8,14 +8,14 @@ ms.topic: include
 ms.date: 07/25/2019
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: 45d34297bf37a6e46bc57e95ff49def49051e32e
-ms.sourcegitcommit: cd70273f0845cd39b435bd5978ca0df4ac4d7b2c
+ms.openlocfilehash: 1fc63dc53d61a8b2e26f97cc09a359b3f2c7665c
+ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "67622120"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75901573"
 ---
-| Resource | По умолчанию/максимальное ограничение |
+| Ресурс | По умолчанию/максимальное ограничение |
 | --- | --- |
 | Каналы ExpressRoute для каждой подписки |10 |
 | Цепи ExpressRoute на регион на подписку с Azure Resource Manager |10 |
@@ -42,4 +42,7 @@ ms.locfileid: "67622120"
 | 40 Гбит/с * |10 |100 |
 | 100 Гбит/с * |10 |100 |
 
-**100 Гбит/с ExpressRoute только Direct*
+**100 Гбит/с ExpressRoute, только Direct*
+
+> [!NOTE]
+> Число подключений Global Reach ограничивается предельным числом подключений виртуальной сети на канал ExpressRoute. Например, канал уровня "10 Гбит/с" допускает 5 Global Reach подключений и 95 подключений к шлюзам ExpressRoute или 95 Global Reach подключений и 5 подключений к шлюзам ExpressRoute или любое другое сочетание до ограничения в 100 подключений. для канала.

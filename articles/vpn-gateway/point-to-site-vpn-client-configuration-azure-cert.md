@@ -6,14 +6,14 @@ services: vpn-gateway
 author: cherylmc
 ms.service: vpn-gateway
 ms.topic: article
-ms.date: 09/12/2019
+ms.date: 01/10/2020
 ms.author: cherylmc
-ms.openlocfilehash: ad6e912f976095ae7d8fd5276b0f1365566c181a
-ms.sourcegitcommit: 5cfe977783f02cd045023a1645ac42b8d82223bd
+ms.openlocfilehash: 4df22108591fe3f80078bce050081c4953443847
+ms.sourcegitcommit: 3eb0cc8091c8e4ae4d537051c3265b92427537fe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2019
-ms.locfileid: "74143794"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75902996"
 ---
 # <a name="create-and-install-vpn-client-configuration-files-for-native-azure-certificate-authentication-p2s-configurations"></a>Создание и установка файлов конфигурации VPN-клиента для настройки подключений типа "точка — сеть" с использованием собственной аутентификации Azure на основе сертификата
 
@@ -104,10 +104,10 @@ ms.locfileid: "74143794"
    ![Параметры аутентификации](./media/point-to-site-vpn-client-configuration-azure-cert/authsettings.png)
 6. Щелкните **Select…** (Выбрать), чтобы выбрать сертификат клиента, который будет использоваться для аутентификации. Это сертификат, установленный на шаге 2.
 
-   ![на основе сертификата.](./media/point-to-site-vpn-client-configuration-azure-cert/certificate.png)
+   ![сертификат](./media/point-to-site-vpn-client-configuration-azure-cert/certificate.png)
 7. В окне **Choose An Identity** (Выбор удостоверения) отобразится список доступных сертификатов. Выберите нужный сертификат, а затем щелкните **Continue** (Продолжить).
 
-   ![identity](./media/point-to-site-vpn-client-configuration-azure-cert/identity.png)
+   ![удостоверение](./media/point-to-site-vpn-client-configuration-azure-cert/identity.png)
 8. В поле **Local ID** (Локальный идентификатор) укажите имя сертификата (из шага 6). В нашем примере это ikev2Client.com. Щелкните **Apply** (Применить), чтобы сохранить изменения.
 
    ![apply](./media/point-to-site-vpn-client-configuration-azure-cert/applyconnect.png)
@@ -164,7 +164,7 @@ ms.locfileid: "74143794"
 
 [!INCLUDE [strongSwan certificates](../../includes/vpn-gateway-strongswan-certificates-include.md)]
 
-### <a name="install-and-configure"></a>Установка и настройка
+### <a name="install-and-configure"></a>Установка и настройка.
 
 1. Загрузите пакет VPN-клиента с портала Azure.
 2. Извлеките файл.
@@ -200,7 +200,7 @@ ms.locfileid: "74143794"
    # ipsec up azure
    ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Вернитесь к статье, чтобы [завершить настройку подключения типа "точка — сеть"](vpn-gateway-howto-point-to-site-rm-ps.md).
 

@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 11/26/2019
 ms.author: tamram
 ms.subservice: blobs
-ms.openlocfilehash: 79d7454722900eb1d9d6280e35313ef2f4a5cd54
-ms.sourcegitcommit: 428fded8754fa58f20908487a81e2f278f75b5d0
+ms.openlocfilehash: 68b144a838f0c6e65f3e399f610644315d109fde
+ms.sourcegitcommit: 3eb0cc8091c8e4ae4d537051c3265b92427537fe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2019
-ms.locfileid: "74555682"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75903476"
 ---
 # <a name="set-and-manage-immutability-policies-for-blob-storage"></a>Настройка политик неизменности для хранилища BLOB-объектов и управление ими
 
@@ -23,7 +23,7 @@ ms.locfileid: "74555682"
 
 ## <a name="set-retention-policies-and-legal-holds"></a>Настройка политик хранения и юридических удержаний
 
-### <a name="portaltabazure-portal"></a>[Microsoft Azure](#tab/azure-portal)
+### <a name="portaltabazure-portal"></a>[Портал](#tab/azure-portal)
 
 1. Создайте новый контейнер или выберите существующий контейнер для хранения BLOB-объектов, которые должны храниться в неизменяемом состоянии. Контейнер должен быть в учетной записи общего назначения версии 2 или хранилища BLOB-объектов.
 
@@ -57,9 +57,9 @@ ms.locfileid: "74555682"
 
     ![Поле "Имя тега" под полем "Тип политики"](media/storage-blob-immutability-policies-manage/portal-image-set-legal-hold-tags.png)
 
-9. Чтобы очистить юридическую силу, просто удалите примененный тег "идентификатор юридического удержания".
+9. Чтобы очистить юридическое удержание, удалите примененный тег "идентификатор юридического удержания".
 
-### <a name="azure-clitabazure-cli"></a>[Azure CLI](#tab/azure-cli)
+### <a name="azure-clitabazure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 Эта возможность доступна в следующих группах команд: `az storage container immutability-policy` и `az storage container legal-hold`. Запустите в них `-h`, чтобы просмотреть команды.
 
@@ -73,7 +73,7 @@ ms.locfileid: "74555682"
 2. Удалите все предыдущие версии Azure PowerShell.
 3. Установка Azure PowerShell: `Install-Module Az –Repository PSGallery –AllowClobber`.
 
-Пример сценария PowerShell ниже приводится для справки. Он создает учетную запись хранения и контейнер. Далее в нем показано, как задавать и снимать юридические удержания, создавать и блокировать политику хранения на основе времени (известную как неизменяемая политика), а также продлевать интервал хранения.
+Пример сценария PowerShell ниже приводится для справки. Он создает учетную запись хранения и контейнер. Затем вы узнаете, как задать и очистить юридические удержания, создать и заблокировать политику хранения на основе времени (также известную как политика неизменности) и продлить интервал хранения.
 
 Сначала создайте учетную запись хранения Azure:
 
@@ -165,6 +165,20 @@ Remove-AzRmStorageContainerImmutabilityPolicy -ImmutabilityPolicy $policy
 ```
 
 ---
+
+## <a name="enabling-allow-protected-append-blobs-writes"></a>Включение разрешения "разрешить защищенные добавочные большие двоичные объекты"
+
+В настоящее время можно получить доступ к параметру `allowProtectedAppendWrites` для политик хранения на основе времени с помощью этой [ссылки на портал](https://aka.ms/immutableappendblobs). 
+
+> [!IMPORTANT] 
+>  Параметр Разрешить защищенные добавочные большие двоичные объекты записи в настоящее время доступен и виден только в следующих регионах:
+> - Восточная часть США
+> - Центрально-южная часть США
+> - Западная часть США 2
+>
+> Дополнительные сведения см. в разделе [разрешение записи BLOB-объектов с защищенным добавлением](storage-blob-immutable-storage.md#allow-protected-append-blobs-writes).
+
+![Разрешить дополнительные операции записи после добавления](media/storage-blob-immutability-policies-manage/immutable-allow-additional-append-writes.png)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

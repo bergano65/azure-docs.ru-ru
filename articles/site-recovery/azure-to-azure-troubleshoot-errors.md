@@ -1,18 +1,18 @@
 ---
 title: Устранение неполадок репликации виртуальных машин Azure в Azure Site Recovery
 description: Устранение ошибок при репликации виртуальных машин Azure для аварийного восстановления.
-author: asgang
+author: rochakm
 manager: rochakm
 ms.service: site-recovery
 ms.topic: article
 ms.date: 04/08/2019
-ms.author: asgangal
-ms.openlocfilehash: efa05f5769bcd174992a7a91a522c5f30ce6e448
-ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
+ms.author: rochakm
+ms.openlocfilehash: 3f97975f09d846cd3277bb8a53a4ad922f1b5b69
+ms.sourcegitcommit: 3eb0cc8091c8e4ae4d537051c3265b92427537fe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 01/11/2020
-ms.locfileid: "75895011"
+ms.locfileid: "75902554"
 ---
 # <a name="troubleshoot-azure-to-azure-vm-replication-errors"></a>Устранение ошибок репликации виртуальных машин Azure в Azure
 
@@ -66,7 +66,7 @@ ms.locfileid: "75895011"
 
 Следуйте инструкциям, предоставленным распространителем версии операционной системы Linux, чтобы получить последние Доверенные корневые сертификаты и последний список отзыва сертификатов на виртуальной машине.
 
-Так как SuSE Linux использует символьные ссылки (или *символических ссылок*) для ведения списка сертификатов, выполните следующие действия.
+Так как SUSE Linux использует символьные ссылки (или *символических ссылок*) для ведения списка сертификатов, выполните следующие действия.
 
 1. Войдите как привилегированный пользователь.
 
