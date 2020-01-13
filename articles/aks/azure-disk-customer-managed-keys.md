@@ -5,14 +5,14 @@ services: container-service
 author: mlearned
 ms.service: container-service
 ms.topic: article
-ms.date: 01/09/2020
+ms.date: 01/12/2020
 ms.author: mlearned
-ms.openlocfilehash: 3efb7a6005d862b15beec0f979b67a701a26ba74
-ms.sourcegitcommit: 3eb0cc8091c8e4ae4d537051c3265b92427537fe
+ms.openlocfilehash: 96e7c401578ca8311bfe0e6b5477a9d8cab1a24e
+ms.sourcegitcommit: e9776e6574c0819296f28b43c9647aa749d1f5a6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75903968"
+ms.lasthandoff: 01/13/2020
+ms.locfileid: "75912728"
 ---
 # <a name="bring-your-own-keys-byok-with-azure-disks-in-azure-kubernetes-service-aks"></a>Перенесите собственные ключи (BYOK) с помощью дисков Azure в службе Kubernetes Azure (AKS)
 
@@ -61,7 +61,7 @@ az account list-locations
 az group create -l myAzureRegionName -n myResourceGroup
 
 # Create an Azure Key Vault resource in a supported Azure region
-az keyvault create -n myKeyVaultName -g myResourceGroup-l myAzureRegionName  --enable-purge-protection true --enable-soft-delete true
+az keyvault create -n myKeyVaultName -g myResourceGroup -l myAzureRegionName  --enable-purge-protection true --enable-soft-delete true
 ```
 
 ## <a name="create-an-instance-of-a-diskencryptionset"></a>Создание экземпляра Дискенкриптионсет
@@ -76,7 +76,7 @@ keyVaultId=$(az keyvault show --name myKeyVaultName --query [id] -o tsv)
 keyVaultKeyUrl=$(az keyvault key show --vault-name myKeyVaultName  --name myKeyName  --query [key.kid] -o tsv)
 
 # Create a DiskEncryptionSet
-az disk-encryption-set create -n myDiskEncryptionSetName  -l myAzureRegionName  -g myResourceGroup--source-vault $keyVaultId --key-url $keyVaultKeyUrl 
+az disk-encryption-set create -n myDiskEncryptionSetName  -l myAzureRegionName  -g myResourceGroup --source-vault $keyVaultId --key-url $keyVaultKeyUrl 
 ```
 
 ## <a name="grant-the-diskencryptionset-resource-access-to-the-key-vault"></a>Предоставление ресурсу Дискенкриптионсет доступа к хранилищу ключей
@@ -85,10 +85,10 @@ az disk-encryption-set create -n myDiskEncryptionSetName  -l myAzureRegionName  
 
 ```azurecli-interactive
 # Retrieve the DiskEncryptionSet value and set a variable
-desIdentity=$(az disk-encryption-set show -n myDiskEncryptionSetName  -g myResourceGroup--query [identity.principalId] -o tsv)
+desIdentity=$(az disk-encryption-set show -n myDiskEncryptionSetName  -g myResourceGroup --query [identity.principalId] -o tsv)
 
 # Update security policy settings
-az keyvault set-policy -n myKeyVaultName -g myResourceGroup--object-id $desIdentity --key-permissions wrapkey unwrapkey get
+az keyvault set-policy -n myKeyVaultName -g myResourceGroup --object-id $desIdentity --key-permissions wrapkey unwrapkey get
 
 # Assign the reader role
 az role assignment create --assignee $desIdentity --role Reader --scope $keyVaultId
@@ -96,35 +96,26 @@ az role assignment create --assignee $desIdentity --role Reader --scope $keyVaul
 
 ## <a name="create-a-new-aks-cluster-and-encrypt-the-os-disk-with-a-customer-manged-key"></a>Создание нового кластера AKS и шифрование диска операционной системы с помощью управляемого клиентом ключа
 
-Создайте новую группу ресурсов и кластер AKS, а затем используйте ключ для шифрования диска операционной системы.
+Создайте новую группу ресурсов и кластер AKS, а затем используйте ключ для шифрования диска операционной системы. Управляемый клиентом ключ поддерживается только в версиях kubernetes более 1,17
 
 ```azurecli-interactive
 # Retrieve the DiskEncryptionSet value and set a variable
-diskEncryptionSetId=$(az resource show -n $diskEncryptionSetName -g ssecmktesting --resource-type "Microsoft.Compute/diskEncryptionSets" --query [id] -o tsv)
+diskEncryptionSetId=$(az resource show -n diskEncryptionSetName -g myResourceGroup --resource-type "Microsoft.Compute/diskEncryptionSets" --query [id] -o tsv)
 
 # Create a resource group for the AKS cluster
 az group create -n myResourceGroup-l myAzureRegionName
 
 # Create the AKS cluster
-az aks create -n myAKSCluster -g myResourceGroup --node-osdisk-diskencryptionsetid diskEncryptionId
+az aks create -n myAKSCluster -g myResourceGroup --node-osdisk-diskencryptionset-id $diskEncryptionSetId --kubernetes-version 1.17.0
 ```
 
-## <a name="add-a-node-pool-to-an-existing-aks-cluster-and-encrypt-the-os-disk-with-a-customer-managed-key"></a>Добавление пула узлов в существующий кластер AKS и шифрование диска ОС с помощью управляемого клиентом ключа
-
-По умолчанию новые нодепулс не используют зашифрованные диски.  Вы можете добавить новый пул узлов в существующий кластер и зашифровать диск операционной системы с помощью собственного ключа, выполнив следующую команду.
-
-```azurecli-interactive
-# Add a nodepool to an existing cluster with BYOK encryption
-nodepool add –-cluster-name myAKSCluster -n myNodePoolName -g myResourceGroup --node-osdisk-diskencryptionsetid diskEncryptionId  
-```
+При добавлении новых пулов узлов в кластер, созданный выше, для шифрования диска ОС используется управляемый клиентом ключ, указанный во время создания.
 
 ## <a name="encrypt-your-aks-cluster-data-disk-with-a-customer-managed-key"></a>Шифрование диска данных кластера AKS с помощью управляемого клиентом ключа
 
 Вы также можете зашифровать диски данных AKS с помощью собственных ключей.  Замените myResourceGroup и Мидискенкриптионсетнаме на реальные значения и примените YAML.
 
-### <a name="deploy-the-sample-image-from-acr-to-aks"></a>Развертывание примера образа из записи контроля доступа в AKS
-
-Убедитесь, что у вас есть правильные учетные данные AKS
+Убедитесь, что у вас есть правильные учетные данные AKS. Субъекту-службе потребуется доступ участника к группе ресурсов, в которой имеется дискенкриптионсет. В противном случае возникнет ошибка, предлагающая, что у субъекта-службы нет разрешений.
 
 Создайте файл с именем **byok-Azure-Disk. YAML** , содержащий следующие сведения.  Замените myResourceGroup и Мидискенкрптионсетнаме своими значениями.
 

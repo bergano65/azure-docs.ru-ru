@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.author: rogarana
 ms.service: virtual-machines-windows
 ms.subservice: disks
-ms.openlocfilehash: 0955e4082056963b075544aad2c66be9c0f8c8d9
-ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
+ms.openlocfilehash: 84bb33f724622ba994c81b1d09c99b6399fd36ac
+ms.sourcegitcommit: e9776e6574c0819296f28b43c9647aa749d1f5a6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75893820"
+ms.lasthandoff: 01/13/2020
+ms.locfileid: "75913122"
 ---
 # <a name="server-side-encryption-of-azure-managed-disks"></a>Шифрование на стороне сервера для управляемых дисков Azure
 
@@ -68,13 +68,14 @@ ms.locfileid: "75893820"
 
 Сейчас у нас также есть следующие ограничения.
 
-- **Доступно только в западной центральной части США, юго-центральном регионе США, Восточной и Восточном США 2, восточной части США 2, в центральном Канаде и Северной Европе.**
+- Доступно как общедоступное предложение в восточной части США, Западная часть США 2 и Юго-Центральный регион США.
+- Доступно в виде общедоступной предварительной версии в западной центральной части США, Восточной территории США 2, центральной части Канады и Северной Европе.
 - Диски, созданные на основе пользовательских образов, зашифрованных с помощью шифрования на стороне сервера и ключей, управляемых клиентом, должны быть зашифрованы с помощью тех же самых управляемых клиентом ключей и должны находиться в одной подписке.
 - Моментальные снимки, созданные на основе дисков, зашифрованных с помощью шифрования на стороне сервера и ключей, управляемых клиентом, должны быть зашифрованы с помощью тех же управляемых клиентом ключей.
 - Пользовательские образы, зашифрованные с помощью шифрования на стороне сервера и управляемых клиентом ключей, нельзя использовать в коллекции общих образов.
 - Все ресурсы, связанные с ключами, управляемыми клиентом (хранилища ключей Azure, наборы шифрования дисков, виртуальные машины, диски и моментальные снимки), должны находиться в одной подписке и регионе.
 - Диски, моментальные снимки и образы, зашифрованные с помощью управляемых клиентом ключей, не могут переместиться в другую подписку.
-- Если вы используете портал Azure для создания набора шифрования дисков, использовать моментальные снимки сейчас нельзя.
+- Если вы используете портал Azure для создания набора шифрования диска, использовать моментальные снимки сейчас нельзя.
 - Поддерживаются только [«мягкие» и «жесткие» ключи RSA](../../key-vault/about-keys-secrets-and-certificates.md#keys-and-key-types) размером 2080, а другие ключи и размеры отсутствуют.
 
 ### <a name="powershell"></a>PowerShell
@@ -180,6 +181,50 @@ $vm = Add-AzVMDataDisk -VM $vm -Name $diskName -CreateOption Empty -DiskSizeInGB
 
 Update-AzVM -ResourceGroupName $rgName -VM $vm
 
+```
+
+#### <a name="create-a-virtual-machine-scale-set-using-a-marketplace-image-encrypting-the-os-and-data-disks-with-customer-managed-keys"></a>Создание масштабируемого набора виртуальных машин с помощью образа Marketplace, шифрование дисков операционной системы и данных с помощью управляемых клиентом ключей
+
+```PowerShell
+$VMLocalAdminUser = "yourLocalAdminUser"
+$VMLocalAdminSecurePassword = ConvertTo-SecureString Password@123 -AsPlainText -Force
+$LocationName = "westcentralus"
+$ResourceGroupName = "yourResourceGroupName"
+$ComputerNamePrefix = "yourComputerNamePrefix"
+$VMScaleSetName = "yourVMSSName"
+$VMSize = "Standard_DS3_v2"
+$diskEncryptionSetName="yourDiskEncryptionSetName"
+    
+$NetworkName = "yourVNETName"
+$SubnetName = "yourSubnetName"
+$SubnetAddressPrefix = "10.0.0.0/24"
+$VnetAddressPrefix = "10.0.0.0/16"
+    
+$SingleSubnet = New-AzVirtualNetworkSubnetConfig -Name $SubnetName -AddressPrefix $SubnetAddressPrefix
+
+$Vnet = New-AzVirtualNetwork -Name $NetworkName -ResourceGroupName $ResourceGroupName -Location $LocationName -AddressPrefix $VnetAddressPrefix -Subnet $SingleSubnet
+
+$ipConfig = New-AzVmssIpConfig -Name "myIPConfig" -SubnetId $Vnet.Subnets[0].Id 
+
+$VMSS = New-AzVmssConfig -Location $LocationName -SkuCapacity 2 -SkuName $VMSize -UpgradePolicyMode 'Automatic'
+
+$VMSS = Add-AzVmssNetworkInterfaceConfiguration -Name "myVMSSNetworkConfig" -VirtualMachineScaleSet $VMSS -Primary $true -IpConfiguration $ipConfig
+
+$diskEncryptionSet=Get-AzDiskEncryptionSet -ResourceGroupName $ResourceGroupName -Name $diskEncryptionSetName
+
+# Enable encryption at rest with customer managed keys for OS disk by setting DiskEncryptionSetId property 
+
+$VMSS = Set-AzVmssStorageProfile $VMSS -OsDiskCreateOption "FromImage" -DiskEncryptionSetId $diskEncryptionSet.Id -ImageReferenceOffer 'WindowsServer' -ImageReferenceSku '2012-R2-Datacenter' -ImageReferenceVersion latest -ImageReferencePublisher 'MicrosoftWindowsServer'
+
+$VMSS = Set-AzVmssOsProfile $VMSS -ComputerNamePrefix $ComputerNamePrefix -AdminUsername $VMLocalAdminUser -AdminPassword $VMLocalAdminSecurePassword
+
+# Add a data disk encrypted at rest with customer managed keys by setting DiskEncryptionSetId property 
+
+$VMSS = Add-AzVmssDataDisk -VirtualMachineScaleSet $VMSS -CreateOption Empty -Lun 1 -DiskSizeGB 128 -StorageAccountType Premium_LRS -DiskEncryptionSetId $diskEncryptionSet.Id
+
+$Credential = New-Object System.Management.Automation.PSCredential ($VMLocalAdminUser, $VMLocalAdminSecurePassword);
+
+New-AzVmss -VirtualMachineScaleSet $VMSS -ResourceGroupName $ResourceGroupName -VMScaleSetName $VMScaleSetName
 ```
 
 > [!IMPORTANT]

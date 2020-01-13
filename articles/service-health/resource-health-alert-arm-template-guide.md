@@ -3,12 +3,12 @@ title: Создание оповещений о работоспособност
 description: Создание оповещений, которые уведомляют о том, когда ресурсы Azure стали недоступны, программными средствами.
 ms.topic: conceptual
 ms.date: 9/4/2018
-ms.openlocfilehash: 34367c89666fd486f233136ce7968c7f3bf61912
-ms.sourcegitcommit: ec2eacbe5d3ac7878515092290722c41143f151d
+ms.openlocfilehash: c14e3c327d83e75b08f3b52b59970557ec87f5b5
+ms.sourcegitcommit: e9776e6574c0819296f28b43c9647aa749d1f5a6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75551724"
+ms.lasthandoff: 01/13/2020
+ms.locfileid: "75912832"
 ---
 # <a name="configure-resource-health-alerts-using-resource-manager-templates"></a>Настройка оповещений о работоспособности ресурсов с помощью шаблонов Resource Manager
 
@@ -16,8 +16,6 @@ ms.locfileid: "75551724"
 
 Служба "Работоспособность ресурсов Azure" позволяет получать сведения о текущем и прошлых состояниях работоспособности ресурсов Azure. Оповещения службы "Работоспособность ресурсов Azure" помогают практически в реальном времени сообщить вам об изменении состояния работоспособности этих ресурсов. Используя программные средства, клиенты могут создать и настроить оповещения службы "Работоспособность ресурсов" в пакетном режиме.
 
-> [!NOTE]
-> Работоспособность ресурсов оповещения в настоящее время доступны в предварительной версии.
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 

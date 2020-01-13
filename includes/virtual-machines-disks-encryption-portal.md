@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 01/10/2020
 ms.author: rogarana
 ms.custom: include file
-ms.openlocfilehash: 165a115f35810c1bfe463a571affb2e44ed74205
-ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
+ms.openlocfilehash: a799339f2780c2bc372c39120a6e20b34d907326
+ms.sourcegitcommit: e9776e6574c0819296f28b43c9647aa749d1f5a6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75893700"
+ms.lasthandoff: 01/13/2020
+ms.locfileid: "75912757"
 ---
 ### <a name="portal"></a>Портал
 
@@ -24,37 +24,37 @@ ms.locfileid: "75893700"
 1. Войдите в [портал Azure](https://portal.azure.com/) и выполните поиск по запросу Key Vault
 1. Найдите и выберите **хранилища ключей**.
 
-![ССЕ-Кэй-Ваулт-портал-СЕАРЧ. png](media/virtual-machines-disk-encryption-portal/sse-key-vault-portal-search.png)
+    [![ССЕ-Кэй-Ваулт-портал-СЕАРЧ. png](media/virtual-machines-disk-encryption-portal/sse-key-vault-portal-search.png)](media/virtual-machines-disk-encryption-portal/sse-key-vault-portal-search-expanded.png#lightbox)
 
-> [!IMPORTANT]
-> Для успешности развертывания хранилище ключей Azure, набор шифрования диска, виртуальная машина, диски и моментальные снимки должны находиться в одном регионе и подписке.
+    > [!IMPORTANT]
+    > Для успешности развертывания хранилище ключей Azure, набор шифрования диска, виртуальная машина, диски и моментальные снимки должны находиться в одном регионе и подписке.
 
 1. Выберите **+ Добавить** , чтобы создать новый Key Vault.
 1. Создание новой группы ресурсов
 1. Введите имя хранилища ключей, выберите регион и выберите ценовую категорию.
 1. Выберите **Проверка + создать**, проверьте выбранные параметры и нажмите кнопку **создать**.
 
-![ССЕ-креате-а-Кэй-Ваулт. png](media/virtual-machines-disk-encryption-portal/sse-create-a-key-vault.png)
+    ![ССЕ-креате-а-Кэй-Ваулт. png](media/virtual-machines-disk-encryption-portal/sse-create-a-key-vault.png)
 
 1. Когда хранилище ключей завершит развертывание, выберите его.
 1. В разделе **Параметры**выберите **ключи** .
 1. Выбор **создания/импорта**
 
-![ССЕ-Кэй-Ваулт-женерате-Сеттингс. png](media/virtual-machines-disk-encryption-portal/sse-key-vault-generate-settings.png)
+    ![ССЕ-Кэй-Ваулт-женерате-Сеттингс. png](media/virtual-machines-disk-encryption-portal/sse-key-vault-generate-settings.png)
 
-1. Для параметра **тип ключа** выберите **RSA** , а для параметра **размер ключа RSA** — значение **2080**.
+1. Оставьте для параметра **тип ключа** значение **RSA** , а для параметра **размер ключа RSA** — значение **2080**.
 1. Заполните остальные выбранные параметры и нажмите кнопку **создать**.
 
-![ССЕ-креате-а-Кэй-женерате. png](media/virtual-machines-disk-encryption-portal/sse-create-a-key-generate.png)
+    ![ССЕ-креате-а-Кэй-женерате. png](media/virtual-machines-disk-encryption-portal/sse-create-a-key-generate.png)
 
 #### <a name="setting-up-your-disk-encryption-set"></a>Настройка набора шифрования дисков
 
-Чтобы создать и настроить наборы шифрования дисков, необходимо использовать следующую ссылку: https://aka.ms/diskencryptionsets. Создание набора шифрования дисков еще не доступно в общедоступной портал Azure.
+Чтобы создать и настроить наборы шифрования дисков, необходимо использовать следующую ссылку: https://aka.ms/diskencryptionsets. Создание набора шифрования дисков еще не доступно в глобальном портал Azure.
 
 1. Откройте [ссылку наборы шифрования дисков](https://aka.ms/diskencryptionsets).
 1. Щелкните **+Добавить**.
 
-![ССЕ-креате-диск-енкриптион-Сет. png](media/virtual-machines-disk-encryption-portal/sse-create-disk-encryption-set.png)
+    ![ССЕ-креате-диск-енкриптион-Сет. png](media/virtual-machines-disk-encryption-portal/sse-create-disk-encryption-set.png)
 
 1. Выберите группу ресурсов, укажите имя набора шифрования и выберите тот же регион, что и для хранилища ключей.
 1. Выберите **хранилище ключей и ключ**.
@@ -62,13 +62,13 @@ ms.locfileid: "75893700"
 1. Нажмите кнопку **Выбрать**.
 1. Выберите **проверить и создать** , а затем **создать**.
 
-![ССЕ-диск-ЕНК-Сет-бладе-Кэй. png](media/virtual-machines-disk-encryption-portal/sse-disk-enc-set-blade-key.png)
+    ![ССЕ-диск-ЕНК-Сет-бладе-Кэй. png](media/virtual-machines-disk-encryption-portal/sse-disk-enc-set-blade-key.png)
 
 1. Откройте набор шифрования дисков после завершения создания и выберите оповещение, которое появится.
 
-![ССЕ-диск-ЕНК-Алерт-фикс. png](media/virtual-machines-disk-encryption-portal/sse-disk-enc-alert-fix.png)
+    ![ССЕ-диск-ЕНК-Алерт-фикс. png](media/virtual-machines-disk-encryption-portal/sse-disk-enc-alert-fix.png)
 
-Два уведомления должны быть установлены и выполнены. Это позволит использовать набор с вашим хранилищем ключей.
+Два уведомления должны быть установлены и выполнены. Это позволит использовать шифрование дисков, установленное в хранилище ключей.
 
 ![диск-ЕНК-нотификатион-сукцесс. png](media/virtual-machines-disk-encryption-portal/disk-enc-notification-success.png)
 
@@ -81,10 +81,10 @@ ms.locfileid: "75893700"
 1. На вкладке " **основные** " выберите тот же регион, что и для набора шифрования диска, и Azure Key Vault.
 1. Заполните остальные значения на вкладке " **основные** ", как вам нравится.
 
-![ССЕ-креате-а-ВМ-регион. png](media/virtual-machines-disk-encryption-portal/sse-create-a-vm-region.png)
+    ![ССЕ-креате-а-ВМ-регион. png](media/virtual-machines-disk-encryption-portal/sse-create-a-vm-region.png)
 
-1. На вкладке **диски** выберите **Шифрование неактивных с помощью ключа, управляемого клиентом**.
+1. На вкладке **диски** выберите **Шифрование неактивных ключей с помощью управляемого клиентом ключа**.
 1. Выберите набор шифрования дисков в раскрывающемся списке **набор шифрования дисков** .
 1. Сделайте оставшиеся варианты выбора нужным образом.
 
-![ССЕ-креате-ВМ-Селект-КМК-енкриптион-Сет. png](media/virtual-machines-disk-encryption-portal/sse-create-vm-select-cmk-encryption-set.png)
+    ![ССЕ-креате-ВМ-Селект-КМК-енкриптион-Сет. png](media/virtual-machines-disk-encryption-portal/sse-create-vm-select-cmk-encryption-set.png)
