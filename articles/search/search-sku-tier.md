@@ -7,13 +7,13 @@ author: HeidiSteen
 ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
-ms.date: 11/04/2019
-ms.openlocfilehash: d691759f1075a08ad13ec1199eb8af7fd634f5a1
-ms.sourcegitcommit: 85e7fccf814269c9816b540e4539645ddc153e6e
+ms.date: 12/17/2019
+ms.openlocfilehash: 772f6f51fb98b3a9adbd1efe6571842c667e8e8e
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74534479"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75427029"
 ---
 # <a name="choose-a-pricing-tier-for-azure-cognitive-search"></a>Выберите ценовую категорию для Azure Когнитивный поиск
 
@@ -26,8 +26,6 @@ ms.locfileid: "74534479"
 > [!NOTE] 
 > Исключением для четности функций являются [индексаторы](search-indexer-overview.md), недоступные на S3 HD.
 >
-
-<!-- For Basic tier and up, you can [adjust replica and partition resources](search-capacity-planning.md) to increase or decrease scale. You could start with one or two of each and then temporarily raise your computational power for a heavy indexing workload. The ability to tune resource levels within a tier adds flexibility, but also slightly complicates your analysis. You might have to experiment to see whether a lower tier with more resources/replicas offers better value and performance than a higher tier with fewer resources. To learn more about when and why you would adjust capacity, see [Performance and optimization considerations](search-performance-optimization.md). -->
 
 ## <a name="available-tiers"></a>Доступные уровни
 
@@ -124,35 +122,6 @@ SU — это произведение *реплик* и *секций* , исп
 > [!NOTE]
 > Все уровни Standard и оптимизированные для хранилища поддерживают [гибкие сочетания реплик и секций](search-capacity-planning.md#chart) , что позволяет [оптимизировать систему для ускорения или хранения](search-performance-optimization.md) , изменяя баланс. Уровень "базовый" предлагает до трех реплик для обеспечения высокой доступности, но имеет только один раздел. Бесплатные уровни не предоставляют выделенные ресурсы: вычислительные ресурсы совместно используются несколькими подписчиками.
 
-<!-- ## Consumption patterns
-
-On the low and high ends, Basic and S3 HD are for important but atypical consumption patterns. Basic is for small production workloads. It offers SLAs, dedicated resources, and high availability, but it provides modest storage, topping out at 2 GB total. This tier was engineered for customers that consistently underutilize available capacity. At the high end, S3 HD is for workloads typical of ISVs, partners, [multitenant solutions](search-modeling-multitenant-saas-applications.md), or any configuration that calls for a large number of small indexes. It's often clear when Basic or S3 HD is the right tier. If you want confirmation, you can post to [StackOverflow](https://stackoverflow.com/questions/tagged/azure-search) or [contact Azure support](https://azure.microsoft.com/support/options/) for guidance.
-
-The more commonly used standard tiers, S1 through S3, make up a progression of increasing levels of capacity. There are inflection points on partition size and limits on numbers of indexes, indexers, and corollary resources:
-
-|  | S1 | S2 | S3 |  |  |  |  |
-|--|----|----|----|--|--|--|--|
-| Partition size|  25 GB | 100 GB | 200 GB |  |  |  |  |
-| Index and indexer limits| 50 | 200 | 200 |  |  |  |  |
-
-S1 is a common choice for customers that need dedicated resources and multiple partitions. S1 offers partitions of 25 GB and up to 12 partitions, providing a per-service limit of 300 GB if you maximize partitions over replicas. (See [Allocate partitions and replicas](search-capacity-planning.md#chart) for more balanced allocations.)
-
-The portal and pricing pages put the focus on partition size and storage, but, for each tier, all compute capabilities (disk capacity, speed, CPUs) generally increase linearly with price. An S2 replica is faster than S1, and S3 is faster than S2. S3 tiers break from the linear compute-pricing pattern with disproportionately faster I/O. If you expect I/O to be the bottleneck, keep in mind that you can get much more IOPS with S3 than you can get with lower tiers.
-
-S3 and S3 HD are backed by identical high-capacity infrastructure, but they reach their maximum limits in different ways. S3 targets a smaller number of very large indexes, so its maximum limit is resource-bound (2.4 TB for each service). S3 HD targets a large number of very small indexes. At 1,000 indexes, S3 HD reaches its limits in the form of index constraints. If you're an S3 HD customer and you need more than 1,000 indexes, contact Microsoft Support for information about how to proceed.
-
-> [!NOTE]
-> Document limits were a consideration at one time, but they're no longer applicable for new services. For information about conditions in which document limits still apply, see [Document limits](search-limits-quotas-capacity.md#document-limits).
->
-
-Storage Optimized tiers, L1 and L2, are ideal for applications with large data requirements but a relatively low number of end users, when minimizing query latency isn't the top priority.  
-
-|  | L1 | L2 |  |  |  |  |  |
-|--|----|----|--|--|--|--|--|
-| Partition size|  1 TB | 2 TB |  |  |  |  |  |
-| Index and indexer limits| 10 | 10 |  |  |  |  |  |
-
-L2 offers twice the overall storage capacity of L1.  Choose your tier based on the maximum amount of data that you think your index needs. The L1 tier partitions scale up in 1-TB increments to a maximum of 12 TB. The L2 partitions increase by 2 TBs per partition up to a maximum of 24 TB. -->
 
 ### <a name="evaluating-capacity"></a>Оценка емкости
 
@@ -160,7 +129,9 @@ L2 offers twice the overall storage capacity of L1.  Choose your tier based on t
 
 Бизнес-требования обычно определяют необходимое количество индексов. Например, может потребоваться глобальный индекс для большого репозитория документов. Или может потребоваться несколько индексов на основе региона, приложения или бизнес-нишу.
 
-Чтобы определить размер индекса, необходимо [создать его](search-create-index-portal.md). Структура данных в Когнитивный поиск Azure — это, в первую очередь, [обратную структуру индекса](https://en.wikipedia.org/wiki/Inverted_index) , которая имеет различные характеристики, чем исходные данные. Для инвертированного индекса размер и сложность определяются по содержимому, а не к объему данных, которые вы передаете в него. Большой источник данных с высокой избыточностью может привести к тому, что индекс будет меньше, чем меньший набор данных, содержащий сильно изменяемое содержимое. Поэтому редко бывает возможно определить размер индекса на основе размера исходного набора данных.
+Чтобы определить размер индекса, необходимо [создать его](search-create-index-portal.md). Его размер будет основан на импортированных данных и конфигурации индекса, например о включении предложений, фильтрации и сортировки. Дополнительные сведения о влиянии конфигурации на размер см. в разделе [Создание базового индекса ](search-what-is-an-index.md).
+
+Для полнотекстового поиска Первичная структура данных является [инвертированной](https://en.wikipedia.org/wiki/Inverted_index) структурой индекса, которая имеет различные характеристики, чем исходные данные. Для инвертированного индекса размер и сложность определяются по содержимому, а не к объему данных, которые вы передаете в него. Большой источник данных с высокой избыточностью может привести к тому, что индекс будет меньше, чем меньший набор данных, содержащий сильно изменяемое содержимое. Поэтому редко бывает возможно определить размер индекса на основе размера исходного набора данных.
 
 > [!NOTE] 
 > Несмотря на то, что оценка будущих потребностей для индексов и хранилища может показаться предоставляяй, она стоит делать. Если емкость уровня оказывается слишком низкой, необходимо создать новую службу на более высоком уровне, а затем [перезагрузить индексы](search-howto-reindex.md). Обновление службы на месте с одного SKU на другой не выполняется.
@@ -172,7 +143,7 @@ L2 offers twice the overall storage capacity of L1.  Choose your tier based on t
 
 + [Создайте бесплатную службу](search-create-service-portal.md).
 + Подготовьте небольшой репрезентативный набор данных.
-+ [Создайте исходный индекс на портале](search-create-index-portal.md) и запишите его размер. Функции и атрибуты оказывают влияние на хранилище. Например, добавление предложений (typeahead) увеличит требования к хранилищу. Используя тот же набор данных, вы можете попытаться создать несколько версий индекса с различными атрибутами для каждого поля, чтобы увидеть, как требования к хранилищу различны. Дополнительные сведения см. [в разделе "влияние на хранилище" раздела Создание базового индекса](search-what-is-an-index.md#storage-implications).
++ [Создайте исходный индекс на портале](search-create-index-portal.md) и запишите его размер. Функции и атрибуты оказывают влияние на хранилище. Например, добавление предложений (typeahead) увеличит требования к хранилищу. Используя тот же набор данных, вы можете попытаться создать несколько версий индекса с различными атрибутами для каждого поля, чтобы увидеть, как требования к хранилищу различны. Дополнительные сведения см. [в разделе "влияние на хранилище" раздела Создание базового индекса](search-what-is-an-index.md#index-size).
 
 Выполнив приблизительную оценку, вы можете вдвое воздействовать на бюджет для двух индексов (разработки и рабочей среды), а затем выбрать свой уровень соответствующим образом.
 
@@ -216,7 +187,7 @@ L2 offers twice the overall storage capacity of L1.  Choose your tier based on t
 
 + Разрешить метрикам создавать запросы и собирать данные по шаблонам использования (запросы в рабочее время, индексирование в часы наименьшей нагрузки). Используйте эти данные для информирования решений о подготовке службы. Хотя это непрактично для почасовой или ежедневной ритмичности, можно динамически корректировать секции и ресурсы, чтобы учесть запланированные изменения в томах запросов. Вы также можете обеспечить незапланированные, но устойчивые изменения, если уровни достаточно долго, чтобы гарантировать выполнение действий.
 
-+ Помните, что единственным недостатком недоподготовки является то, что вам может потребоваться разорвать службу, если фактические требования больше ваших прогнозов. Чтобы избежать прерывания работы служб, необходимо создать новую службу на более высоком уровне и запустить ее параллельно, пока все приложения и запросы не будут нацелены на новую конечную точку.
++ Помните, что единственным недостатком недоподготовки является то, что вам может потребоваться разорвать службу, если фактические требования больше ваших прогнозов. Чтобы избежать прерывания работы служб, создайте новую службу на более высоком уровне и запустите ее параллельно, пока все приложения и запросы не будут нацелены на новую конечную точку.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

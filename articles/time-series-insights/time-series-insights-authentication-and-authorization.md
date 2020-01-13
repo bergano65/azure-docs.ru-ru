@@ -10,18 +10,23 @@ ms.reviewer: v-mamcge, jasonh, kfile
 ms.devlang: csharp
 ms.workload: big-data
 ms.topic: conceptual
-ms.date: 11/14/2019
+ms.date: 12/09/2019
 ms.custom: seodec18
-ms.openlocfilehash: d47f846f77d3552288dfea43b417d8c60856f41a
-ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
-ms.translationtype: MT
+ms.openlocfilehash: b54034dc8828fb8a96f488197e517ef07ed55ab5
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74327890"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75460434"
 ---
 # <a name="authentication-and-authorization-for-azure-time-series-insights-api"></a>Проверка подлинности и авторизация для API Azure Time Series Insights
 
 В этом документе описывается регистрация приложения в Azure Active Directory с помощью новой колонки Azure Active Directory. Приложения, зарегистрированные в Azure Active Directory позволяют пользователям проходить проверку подлинности и иметь право использовать API анализа временных рядов Azure, связанный с средой "аналитика временных рядов".
+
+> [!IMPORTANT]
+> Служба "аналитика временных рядов Azure" поддерживает обе следующие библиотеки проверки подлинности:
+> * Более свежая [Библиотека проверки подлинности Майкрософт (MSAL)](https://docs.microsoft.com/azure/active-directory/develop/msal-overview)
+> * [Библиотека проверки Подлинности Azure Active Directory (ADAL)](https://docs.microsoft.com/azure/active-directory/develop/active-directory-authentication-libraries)
 
 ## <a name="service-principal"></a>Субъект-служба
 
@@ -76,81 +81,90 @@ ms.locfileid: "74327890"
 
 ### <a name="client-app-initialization"></a>Инициализация клиентского приложения
 
-1. Используйте **идентификатор приложения** и **секрет клиента** (ключ приложения) из раздела регистрации приложения Azure Active Directory, чтобы получить маркер от имени приложения.
+* Разработчики могут использовать [библиотеку проверки подлинности Майкрософт (MSAL)](https://docs.microsoft.com/azure/active-directory/develop/msal-overview) или [библиотеку проверки подлинности (ADAL) Azure Active Directory](https://docs.microsoft.com/azure/active-directory/develop/active-directory-authentication-libraries) для проверки подлинности с помощью службы "аналитика временных рядов Azure".
 
-    В C#следующий код может получить маркер от имени приложения. Полный пример см. в статье [Запрос данных из среды Azure Time Series Insights с помощью C##](time-series-insights-query-data-csharp.md).
+* Например, для проверки подлинности с помощью ADAL:
 
-    ```csharp
-    // Enter your Active Directory tenant domain name
-    var tenant = "YOUR_AD_TENANT.onmicrosoft.com";
-    var authenticationContext = new AuthenticationContext(
-        $"https://login.microsoftonline.com/{tenant}",
-        TokenCache.DefaultShared);
+   1. Используйте **идентификатор приложения** и **секрет клиента** (ключ приложения) из раздела регистрации приложения Azure Active Directory, чтобы получить маркер от имени приложения.
 
-    AuthenticationResult token = await authenticationContext.AcquireTokenAsync(
-        // Set the resource URI to the Azure Time Series Insights API
-        resource: "https://api.timeseries.azure.com/",
-        clientCredential: new ClientCredential(
-            // Application ID of application registered in Azure Active Directory
-            clientId: "YOUR_APPLICATION_ID",
-            // Application key of the application that's registered in Azure Active Directory
-            clientSecret: "YOUR_CLIENT_APPLICATION_KEY"));
+   1. В C#следующий код может получить маркер от имени приложения. Полный пример см. в статье [Запрос данных из среды Azure Time Series Insights с помощью C##](time-series-insights-query-data-csharp.md).
 
-    string accessToken = token.AccessToken;
-    ```
+        [!code-csharp[csharpquery-example](~/samples-tsi/csharp-tsi-ga-sample/Program.cs?range=170-199)]
 
-1. Затем маркер безопасности можно передать в заголовок `Authorization`, когда приложение вызывает API Time Series Insights.
+   1. Затем маркер безопасности можно передать в заголовок `Authorization`, когда приложение вызывает API Time Series Insights.
+
+* Кроме того, разработчики могут использовать проверку подлинности с помощью MSAL. Дополнительные сведения см. в статье [Миграция в MSAL](https://docs.microsoft.com/azure/active-directory/develop/msal-net-migration) . 
 
 ## <a name="common-headers-and-parameters"></a>Общие заголовки и параметры
 
 В этом разделе описаны распространенные заголовки HTTP-запросов и параметры, используемые для выполнения запросов к интерфейсам API "аналитика временных рядов". Требования к конкретному API подробно описаны в [справочной документации "аналитика временных рядов" REST API](https://docs.microsoft.com/rest/api/time-series-insights/).
 
+> [!TIP]
+> Ознакомьтесь со [справочником по REST API Azure](https://docs.microsoft.com/rest/api/azure/) , чтобы узнать больше о том, как использовать интерфейсы API, выполнять HTTP-запросы и обрабатывать HTTP-ответы.
+
 ### <a name="authentication"></a>Проверка подлинности
 
 Для выполнения запросов с проверкой подлинности к [API-интерфейсам "аналитика временных рядов](https://docs.microsoft.com/rest/api/time-series-insights/)" необходимо передать допустимый токен носителя OAuth 2,0 в [заголовок авторизации](/rest/api/apimanagement/2019-01-01/authorizationserver/createorupdate) с помощью клиента произвольного выбора (POST, JavaScript C#). 
-
-> [!IMPORTANT]
-> Маркер должен быть полностью выдан ресурсу `https://api.timeseries.azure.com/` (также известной как "аудитория" маркера).
-> * После этого ваша [Публикация](https://www.getpostman.com/) **аусурл** будет соответствовать следующим требованиям: `https://login.microsoftonline.com/microsoft.onmicrosoft.com/oauth2/authorize?resource=https://api.timeseries.azure.com/`
 
 > [!TIP]
 > Ознакомьтесь с [примером визуализации клиентского пакета SDK](https://tsiclientsample.azurewebsites.net/) для службы "аналитика временных рядов Azure", чтобы узнать, как программным способом проверить подлинность с помощью API службы "аналитика временных рядов", используя [клиентский пакет SDK для JavaScript](https://github.com/microsoft/tsiclient/blob/master/docs/API.md) , а также диаграммы и графики.
 
 ### <a name="http-headers"></a>HTTP-заголовки
 
-Обязательные заголовки запроса:
+Обязательные заголовки запроса описаны ниже.
 
-- `Authorization` для проверки подлинности и авторизации, в заголовке авторизации должен быть передан допустимый токен носителя OAuth 2,0. Маркер должен быть полностью выдан ресурсу `https://api.timeseries.azure.com/` (также известной как "аудитория" маркера).
+| Заголовок требуемого запроса | Description |
+| --- | --- |
+| Авторизация | Для проверки подлинности с помощью Time Series Insights в заголовке **авторизации** должен быть передан допустимый токен носителя OAuth 2,0. | 
 
-Необязательные заголовки запроса:
+> [!IMPORTANT]
+> Маркер должен быть полностью выдан ресурсу `https://api.timeseries.azure.com/` (также известной как "аудитория" маркера).
+> * Таким [](https://www.getpostman.com/) образом, **аусурл** будет: `https://login.microsoftonline.com/microsoft.onmicrosoft.com/oauth2/authorize?resource=https://api.timeseries.azure.com/`
+> * `https://api.timeseries.azure.com/` является допустимым, но `https://api.timeseries.azure.com` не является.
 
-- поддерживается `application/json` только для `Content-type`.
-- `x-ms-client-request-id` — идентификатор запроса клиента. Служба записывает это значение. Позволяет службе выполнять трассировку операций между службами.
-- `x-ms-client-session-id` — идентификатор сеанса клиента. Служба записывает это значение. Позволяет службе выполнять трассировку группы связанных операций между службами.
-- `x-ms-client-application-name` — имя приложения, создавшего этот запрос. Служба записывает это значение.
+Дополнительные заголовки запроса описаны ниже.
 
-Заголовки ответа:
+| Дополнительный заголовок запроса. | Description |
+| --- | --- |
+| Content-type | поддерживается только `application/json`. |
+| x-ms-client-request-id | Идентификатор запроса клиента. Служба записывает это значение. Позволяет службе выполнять трассировку операций между службами. |
+| x-MS-Client-Session-ID | Идентификатор сеанса клиента. Служба записывает это значение. Позволяет службе выполнять трассировку группы связанных операций между службами. |
+| x-MS-Client-Application-Name | Имя приложения, создавшего этот запрос. Служба записывает это значение. |
 
-- поддерживается `application/json` только для `Content-type`.
-- Идентификатор запроса, созданный сервером `x-ms-request-id`. Можно использовать для обращения в корпорацию Майкрософт, чтобы исследовать запрос.
+Необязательные, но Рекомендуемые заголовки ответа описаны ниже.
+
+| Заголовок ответа | Description |
+| --- | --- |
+| Content-type | Поддерживается только `application/json`. |
+| x-ms-request-id | Идентификатор запроса, сформированный сервером. Можно использовать для обращения в корпорацию Майкрософт, чтобы исследовать запрос. |
+| x-MS-Property-не найдено-поведение | Необязательный заголовок ответа API. Возможные значения: `ThrowError` (по умолчанию) или `UseNull`. |
 
 ### <a name="http-parameters"></a>Параметры HTTP
 
-Обязательные параметры строки запроса URL-адреса:
+> [!TIP]
+> Дополнительные сведения о обязательных и необязательных запросах см. в [справочной документации](https://docs.microsoft.com/rest/api/time-series-insights/).
 
-- `api-version=2016-12-12`
-- `api-version=2018-11-01-preview`
+Требуемые параметры строки запроса URL-адреса зависят от версии API.
 
-Необязательные параметры строки запроса URL-адреса:
+| Выпуск | Возможные значения версии API |
+| --- |  --- |
+| Общая доступность | `api-version=2016-12-12`|
+| Предварительная версия | `api-version=2018-11-01-preview` |
+| Предварительная версия | `api-version=2018-08-15-preview` |
 
-- `timeout=<timeout>` — время ожидания на стороне сервера для выполнения запроса. Применяется только к [событиям "получить среду](https://docs.microsoft.com/rest/api/time-series-insights/ga-query-api#get-environment-events-api) " и " [получить агрегаты среды](https://docs.microsoft.com/rest/api/time-series-insights/ga-query-api#get-environment-aggregates-api) ". Значение времени ожидания должно быть в формате длительности ISO 8601, например `"PT20S"` и должно находиться в диапазоне `1-30 s`. Значение по умолчанию — `30 s`.
+Необязательные параметры строки запроса URL-адреса включают установку времени ожидания для времени выполнения HTTP-запроса.
 
-## <a name="next-steps"></a>Дополнительная информация
+| Необязательный параметр запроса | Description | Версия |
+| --- |  --- | --- |
+| `timeout=<timeout>` | Время ожидания на стороне сервера для выполнения HTTP-запроса. Применяется только к [событиям "получить среду](https://docs.microsoft.com/rest/api/time-series-insights/ga-query-api#get-environment-events-api) " и " [получить агрегаты среды](https://docs.microsoft.com/rest/api/time-series-insights/ga-query-api#get-environment-aggregates-api) ". Значение времени ожидания должно быть в формате длительности ISO 8601, например `"PT20S"` и должно находиться в диапазоне `1-30 s`. Значение по умолчанию: `30 s`. | Общая доступность |
+| `storeType=<storeType>` | Для сред предварительного просмотра с включенным горячим сохранением запрос можно выполнить либо на `WarmStore`, либо в `ColdStore`. Этот параметр в запросе определяет, в каком хранилище должен выполняться запрос. Если этот параметр не определен, запрос будет выполнен в холодном хранилище. Чтобы запросить горячий магазин, **storeType** необходимо установить в значение `WarmStore`. Если этот параметр не определен, запрос будет выполнен для холодного хранилища. | Предварительная версия |
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Пример кода, который вызывает API-интерфейс "аналитика временных рядов", см. в разделе [запрос данных с помощью C# ](./time-series-insights-query-data-csharp.md).
 
 - Примеры кода API для аналитики временных рядов см. в статье [Предварительный просмотр данных запросов C#с помощью ](./time-series-insights-update-query-data-csharp.md).
 
-- Справочные сведения об API см. в статье об [API запросов к службе "Аналитика временных рядов Azure"](https://docs.microsoft.com/rest/api/time-series-insights/ga-query-api).
+- Справочные сведения об API см. в [справочной документации по API запросов](https://docs.microsoft.com/rest/api/time-series-insights/ga-query-api) .
 
 - Узнайте, как [создать субъект-службу](../active-directory/develop/howto-create-service-principal-portal.md).

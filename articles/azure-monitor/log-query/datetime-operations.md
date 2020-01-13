@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 08/16/2018
-ms.openlocfilehash: 6ff095d674a11d95ed4fd2d008c3e664dd595fef
-ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
+ms.openlocfilehash: d659be5b817317e7cec5726718f154825674349e
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72894215"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75365348"
 ---
 # <a name="working-with-date-time-values-in-azure-monitor-log-queries"></a>Работа со значениями даты и времени в запросах журнала Azure Monitor
 
@@ -33,8 +33,8 @@ ms.locfileid: "72894215"
 |:---|:---|
 |d           | day          |
 |ч           | ч.         |
-|мин           | минута       |
-|с           | секунда       |
+|мин           | minute       |
+|с           | second       |
 |ms          | миллисекунда  |
 |микросекунда | микросекунда  |
 |галочка        | наносекунда   |
@@ -128,7 +128,7 @@ Event
 
 Вы получите следующие результаты:
 
-|Timestamp|count_|
+|TIMESTAMP|count_|
 |--|--|
 |2018-07-28T00:00:00.000|7,136|
 |2018-07-29T00:00:00.000|12,315|
@@ -147,13 +147,13 @@ Event
 
 ## <a name="related-functions"></a>Связанные функции
 
-| Категория | Функция |
+| Категория | Компонент |
 |:---|:---|
-| Преобразование типов данных | [todatetime](/azure/kusto/query/todatetimefunction)  [totimespan](/azure/kusto/query/totimespanfunction)  |
+| Преобразование типов данных | [ToDateTime](/azure/kusto/query/todatetimefunction)  [тотимеспан](/azure/kusto/query/totimespanfunction)  |
 | Округление значения до размера ячейки | [bin](/azure/kusto/query/binfunction) |
-| Получение конкретной даты или времени | [ago](/azure/kusto/query/agofunction) [now](/azure/kusto/query/nowfunction)   |
-| Получение части значения | [datetime_part](/azure/kusto/query/datetime-partfunction) [getmonth](/azure/kusto/query/getmonthfunction) [monthofyear](/azure/kusto/query/monthofyearfunction) [getyear](/azure/kusto/query/getyearfunction) [dayofmonth](/azure/kusto/query/dayofmonthfunction) [dayofweek](/azure/kusto/query/dayofweekfunction) [dayofyear](/azure/kusto/query/dayofyearfunction) [weekofyear](/azure/kusto/query/weekofyearfunction) |
-| Получение значения относительной даты  | [endofday](/azure/kusto/query/endofdayfunction) [endofweek](/azure/kusto/query/endofweekfunction) [endofmonth](/azure/kusto/query/endofmonthfunction) [endofyear](/azure/kusto/query/endofyearfunction) [startofday](/azure/kusto/query/startofdayfunction) [startofweek](/azure/kusto/query/startofweekfunction) [startofmonth](/azure/kusto/query/startofmonthfunction) [startofyear](/azure/kusto/query/startofyearfunction) |
+| Получение конкретной даты или времени | [назад](/azure/kusto/query/agofunction) [](/azure/kusto/query/nowfunction)   |
+| Получение части значения | [datetime_part](/azure/kusto/query/datetime-partfunction) [](/azure/kusto/query/getmonthfunction) [монсофеар](/azure/kusto/query/monthofyearfunction) [г](/azure/kusto/query/getyearfunction) . в [DayOfMonth](/azure/kusto/query/dayofmonthfunction) [DayOfWeek](/azure/kusto/query/dayofweekfunction) [DayOfYear](/azure/kusto/query/dayofyearfunction) [WeekOfYear](/azure/kusto/query/weekofyearfunction) |
+| Получение значения относительной даты  | [ендофдай](/azure/kusto/query/endofdayfunction) [ендофвик](/azure/kusto/query/endofweekfunction) [EndOfMonth](/azure/kusto/query/endofmonthfunction) [endofyear](/azure/kusto/query/endofyearfunction) [стартофдай](/azure/kusto/query/startofdayfunction) [startofweek](/azure/kusto/query/startofweekfunction) [StartOfMonth](/azure/kusto/query/startofmonthfunction) [startofyear](/azure/kusto/query/startofyearfunction) |
 
 ## <a name="next-steps"></a>Дальнейшие действия
 Ознакомьтесь с другими статьями по использованию [языка запросов Kusto](/azure/kusto/query/) с данными журналов Azure Monitor.
@@ -163,5 +163,5 @@ Event
 - [Расширенные статистические функции в запросах Azure Log Analytics](advanced-aggregations.md)
 - [Работа с JSON и структурами данных в запросах Log Analytics](json-data-structures.md)
 - [Составление расширенных запросов](advanced-query-writing.md)
-- [Соединения](joins.md)
+- [Joins](joins.md)
 - [Создание графиков](charts.md)
