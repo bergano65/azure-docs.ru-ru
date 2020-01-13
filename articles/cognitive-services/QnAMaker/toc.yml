@@ -147,6 +147,8 @@
       href: troubleshooting.md
     - name: Форматы файлов
       items:
+        - name: Справочник по Markdown
+          href: reference-markdown-format.md
         - name: Пакетное тестирование TSV
           href: reference-tsv-format-batch-testing.md
     - name: Справочник по REST API

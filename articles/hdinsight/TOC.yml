@@ -848,6 +848,8 @@
           href: ./hdinsight-management-ip-addresses.md
         - name: Теги службы для Брандмауэра Azure
           href: ./hdinsight-service-tags.md
+        - name: Шифрование управляемых клиентом ключей
+          href: ./disk-encryption.md
     - name: Практическое руководство
       items:
         - name: Управление учетными данными с помощью брокера удостоверений

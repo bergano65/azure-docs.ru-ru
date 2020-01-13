@@ -337,6 +337,8 @@
               href: sql-database-design-first-database-csharp.md
         - name: Загрузка и перемещение данных
           items:
+            - name: Импорт или экспорт на виртуальной машине Azure
+              href: import-export-from-vm.md
             - name: Импорт базы данных из BACPAC-файла
               href: sql-database-import.md
             - name: Экспорт базы данных в BACPAC-файл

@@ -184,7 +184,7 @@
           items:
             - name: Оптимизированные для GPU
               href: sizes-gpu.md
-            - name: Настройка драйверов GPU
+            - name: Настройка драйверов NVIDIA для GPU
               href: n-series-driver-setup.md
             - name: Настройка драйверов GPU AMD
               href: n-series-amd-driver-setup.md

@@ -16,9 +16,7 @@
       href: manage-app-groups.md
     - name: 5. Создание пула узлов для проверки обновлений службы
       href: create-validation-host-pool.md
-    - name: 6. Развертывание средства управления
-      href: manage-resources-using-ui.md
-    - name: 7. Настройка оповещений служб
+    - name: 6. Настройка оповещений служб
       href: set-up-service-alerts.md
 - name: Практическое руководство
   items:
@@ -70,6 +68,12 @@
       href: set-up-scaling-script.md
     - name: Настройка веб-канала
       href: customize-feed-for-virtual-desktop-users.md
+    - name: Развертывание средства управления
+      items:
+        - name: Шаблон Azure Resource Manager
+          href: manage-resources-using-ui.md
+        - name: PowerShell
+          href: manage-resources-using-ui-powershell.md
     - name: Использование функций диагностики службы
       items:
         - name: Развертывание средства диагностики

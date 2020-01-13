@@ -177,6 +177,8 @@
               href: azure-to-azure-how-to-enable-replication.md
             - name: Включение репликации из Azure в Azure для зашифрованных виртуальных машин
               href: azure-to-azure-how-to-enable-replication-ade-vms.md
+            - name: Включение репликации из Azure в Azure для виртуальных машин с дисками с поддержкой CMK
+              href: azure-to-azure-how-to-enable-replication-cmk-disks.md
             - name: Включение репликации из Azure в Azure для виртуальных машин с S2D
               href: azure-to-azure-how-to-enable-replication-s2d-vms.md
             - name: Включение репликации для добавленного диска

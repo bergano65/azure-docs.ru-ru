@@ -36,11 +36,13 @@
       href: architecture-smart-inventory-management-pnp.md
     - name: Архитектура решения для аналитики магазина
       href: store-analytics-architecture.md
-    - name: Возможность подключения
+    - name: Архитектура шаблона приложения для микроцентра исполнения заказов
+      href: architecture-micro-fulfillment-center-pnp.md
+    - name: Соединение
       href: ../preview/overview-iot-central-get-connected.md?toc=/azure/iot-central/retail/toc.json&bc=/azure/iot-central/retail/breadcrumb/toc.json
     - name: Что представляют собой шаблоны приложений?
       href: ../core/concepts-app-templates.md?toc=/azure/iot-central/retail/toc.json&bc=/azure/iot-central/retail/breadcrumb/toc.json
-- name: Руководства
+- name: Практические руководства
   items:
     - name: Подключение устройств
       items:
@@ -80,7 +82,7 @@
           href: ../preview/howto-administer.md?toc=/azure/iot-central/retail/toc.json&bc=/azure/iot-central/retail/breadcrumb/toc.json
         - name: Экспорт приложения
           href: ../preview/howto-use-app-templates.md?toc=/azure/iot-central/retail/toc.json&bc=/azure/iot-central/retail/breadcrumb/toc.json
-        - name: Управление пользователями и ролями
+        - name: управление пользователями и ролями;
           href: ../preview/howto-manage-users-roles.md?toc=/azure/iot-central/retail/toc.json&bc=/azure/iot-central/retail/breadcrumb/toc.json
         - name: Управление счетом
           href: ../preview/howto-view-bill.md?toc=/azure/iot-central/retail/toc.json&bc=/azure/iot-central/retail/breadcrumb/toc.json

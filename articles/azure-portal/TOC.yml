@@ -32,6 +32,30 @@
       href: azure-portal-export-delete-settings.md
     - name: Серия видеоинструкций по работе с порталом Azure
       href: azure-portal-video-series.md
+    - name: Создание запросов на поддержку и управление ими
+      items:
+        - name: Создание запроса на поддержку Azure
+          href: supportability/how-to-create-azure-support-request.md
+        - name: Отправка файлов для обращения в службу поддержки
+          href: supportability/how-to-use-file-uploader.md
+        - name: Запрос на увеличение квоты
+          items:
+            - name: Увеличение лимита виртуальных ЦП
+              items:
+                - name: Модель развертывания диспетчера ресурсов
+                  items:
+                    - name: Увеличение лимита виртуальных ЦП для серии виртуальных машин
+                      href: supportability/per-vm-quota-requests.md
+                    - name: Общее региональное увеличение лимита виртуальных ЦП
+                      href: supportability/regional-quota-requests.md
+                    - name: Увеличение квоты на точечные виртуальные машины
+                      href: supportability/low-priority-quota.md
+                - name: Классическая модель развертывания
+                  href: supportability/classic-deployment-model-quota-increase-requests.md
+            - name: Увеличение лимита сети
+              href: supportability/networking-quota-requests.md
+        - name: Устранение неполадок c доступом подписки к региону или номеру SKU
+          href: supportability/sku-series-unavailable.md
 - name: Справочник
   items:
     - name: сочетания клавиш
