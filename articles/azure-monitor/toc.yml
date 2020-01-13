@@ -91,6 +91,8 @@
       items:
         - name: Данные журнала
           href: platform/data-security.md
+        - name: 'Ключи, управляемые клиентом'
+          href: platform/customer-managed-keys.md
         - name: Обработка персональных данных
           href: platform/personal-data-mgmt.md
         - name: Сбор и хранение данных приложений
