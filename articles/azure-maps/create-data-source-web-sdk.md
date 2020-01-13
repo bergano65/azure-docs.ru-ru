@@ -1,6 +1,6 @@
 ---
-title: Создание источника данных в Azure Maps | Документация Майкрософт
-description: Создание источника данных и его использование с Azure Maps веб-пакетом SDK.
+title: Создание источника данных для схемы | Карты Microsoft Azure
+description: В этой статье вы узнаете, как создать источник данных и добавить его в карту с помощью веб-пакета SDK для карт Microsoft Azure.
 author: rbrundritt
 ms.author: richbrun
 ms.date: 08/08/2019
@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: cpendle
 ms.custom: codepen
-ms.openlocfilehash: b83a66296d54a179a56e37de199ec900ae23a1db
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 74b45d3f7fa7d0e13b8767d4a887d8a22cad3a30
+ms.sourcegitcommit: f9601bbccddfccddb6f577d6febf7b2b12988911
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75433016"
+ms.lasthandoff: 01/12/2020
+ms.locfileid: "75911716"
 ---
 # <a name="create-a-data-source"></a>Создание источника данных
 

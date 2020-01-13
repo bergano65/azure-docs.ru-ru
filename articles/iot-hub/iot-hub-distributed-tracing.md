@@ -8,12 +8,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 02/06/2019
 ms.author: jlian
-ms.openlocfilehash: 4cd4cffdb0357b1cd73b1613e52c2a6c1a60f71e
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: fc861126cd723bbb0f7c43d5d2db4eed1503605a
+ms.sourcegitcommit: f9601bbccddfccddb6f577d6febf7b2b12988911
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75457051"
+ms.lasthandoff: 01/12/2020
+ms.locfileid: "75911896"
 ---
 # <a name="trace-azure-iot-device-to-cloud-messages-with-distributed-tracing-preview"></a>Трассировка отправляемых с устройства в облако сообщений Интернета вещей Azure с помощью функции распределенной трассировки (предварительная версия)
 
@@ -208,15 +208,15 @@ ms.locfileid: "75457051"
 
 1. (Необязательно) Измените частоту выборки и понаблюдайте за изменением частоты, с которой сообщения включают параметр `tracestate` в свойства приложения.
 
-### <a name="update-using-azure-iot-hub-toolkit-for-vs-code"></a>Обновление с использованием набора средств Центра Интернета вещей Azure для VS Code
+### <a name="update-using-azure-iot-hub-for-vs-code"></a>Обновление с помощью центра Интернета вещей Azure для VS Code
 
-1. Установите VS Code, а затем перейдите на [эту страницу](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-tools) и установите последнюю версию набора средств Центра Интернета вещей Azure для VS Code.
+1. Установите VS Code, а затем установите последнюю версию центра Интернета вещей Azure для VS Code [отсюда](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-tools).
 
 1. Откройте VS Code и [настройте строку подключения к Центру Интернета вещей](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-toolkit#user-content-prerequisites).
 
 1. Разверните устройство и найдите узел **Distributed Tracing Setting (Preview)** (Параметр распределенной трассировки (предварительная версия)). Ниже щелкните подузел **Update Distributed Tracing Setting (Preview)** (Обновление параметра распределенной трассировки (предварительная версия)).
 
-    ![Включение распределенной трассировки в наборе средств Центра Интернета вещей Azure](./media/iot-hub-distributed-tracing/update-distributed-tracing-setting-1.png)
+    ![Включение распределенной трассировки в расширении центра Интернета вещей Azure](./media/iot-hub-distributed-tracing/update-distributed-tracing-setting-1.png)
 
 1. Во всплывающем окне выберите **Включить**, а затем нажмите клавишу ВВОД, чтобы подтвердить выборку с частотой 100.
 

@@ -1,6 +1,6 @@
 ---
-title: Добавление всплывающего окна с помощью службы "Карты Azure" | Документация Майкрософт
-description: Добавление всплывающего окна в веб-пакет SDK Azure Maps.
+title: Добавление всплывающего окна в точку на карте | Карты Microsoft Azure
+description: В этой статье вы узнаете, как добавить всплывающее окно в точку с помощью веб-пакета SDK Microsoft Azure Maps.
 author: jingjing-z
 ms.author: jinzh
 ms.date: 07/29/2019
@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: ''
 ms.custom: codepen
-ms.openlocfilehash: cde6c745034d0963bd372e36e6e5a046113c202b
-ms.sourcegitcommit: 62bd5acd62418518d5991b73a16dca61d7430634
+ms.openlocfilehash: 79bafb331cb7ad38ea7cad9e510b22886b647764
+ms.sourcegitcommit: f9601bbccddfccddb6f577d6febf7b2b12988911
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68976551"
+ms.lasthandoff: 01/12/2020
+ms.locfileid: "75911150"
 ---
 # <a name="add-a-popup-to-the-map"></a>Добавление всплывающего окна на карту
 
@@ -22,7 +22,7 @@ ms.locfileid: "68976551"
 
 ## <a name="understand-the-code"></a>Изучение кода
 
-Следующий код добавляет функцию Point, которая имеет `name` свойства и `description` , в карту с помощью слоя символов. Экземпляр [класса Popup](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.popup?view=azure-iot-typescript-latest) создан, но не отображается. События мыши добавляются на слой символов для активации открытия и закрытия всплывающего окна при наведении указателя мыши на маркер символа. При наведении указателя мыши `position` свойство всплывающего окна обновляется с указанием позиции маркера, `content` а параметр обновляется с помощью HTML-кода, который заключает в `name` оболочку свойства `description` и функции точки, на которую наведен указатель мыши. Затем всплывающее окно отображается на карте с помощью его `open` функции.
+Следующий код добавляет функцию Point, которая содержит `name` и `description` свойства, на карту с помощью слоя символов. Экземпляр [класса Popup](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.popup?view=azure-iot-typescript-latest) создан, но не отображается. События мыши добавляются на слой символов для активации открытия и закрытия всплывающего окна при наведении указателя мыши на маркер символа. При наведении указателя мыши свойство `position` всплывающего окна обновляется с указанием позиции маркера, а параметр `content` обновляется с помощью HTML-кода, который заключает в оболочку свойства `name` и `description` указателя мыши. Затем всплывающее окно отображается на карте с помощью функции `open`.
 
 ```javascript
 //Define an HTML template for a custom popup content laypout.
@@ -94,12 +94,12 @@ map.events.add('mouseleave', symbolLayer, function (){
 
 ## <a name="customizing-a-popup"></a>Настройка всплывающего окна
 
-По умолчанию всплывающее окно имеет белый фон, стрелку указателя внизу и кнопку Закрыть в правом верхнем углу. В следующем примере цвет фона изменяется на черный с помощью `fillColor` параметра всплывающего окна. Кнопка Закрыть удаляется путем присвоения `shoCloseButton` параметру значения false. В HTML-содержимом всплывающего окна используется заполнение 10 пикселей от краев всплывающего окна, а текст становится белым, поэтому он хорошо отображается на черном фоне.  
+По умолчанию всплывающее окно имеет белый фон, стрелку указателя внизу и кнопку Закрыть в правом верхнем углу. В следующем примере цвет фона изменяется на черный с помощью параметра `fillColor` всплывающего окна. Кнопка Закрыть удаляется путем присвоения параметру `shoCloseButton` значения false. В HTML-содержимом всплывающего окна используется заполнение 10 пикселей от краев всплывающего окна, а текст становится белым, поэтому он хорошо отображается на черном фоне.  
 
 <br/>
 
 <iframe height="500" style="width: 100%;" scrolling="no" title="Настраиваемое всплывающее окно" src="//codepen.io/azuremaps/embed/ymKgdg/?height=500&theme-id=0&default-tab=js,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
-См. <a href='https://codepen.io/azuremaps/pen/ymKgdg/'>всплывающее окно</a> , настроенное<a href='https://codepen.io/azuremaps'>@azuremaps</a>пером, Azure Maps () на <a href='https://codepen.io'>CodePen</a>.
+См. <a href='https://codepen.io/azuremaps/pen/ymKgdg/'>всплывающее окно, настроенное</a> пером, Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) на <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
 ## <a name="popup-events"></a>События всплывающего окна
@@ -109,10 +109,10 @@ map.events.add('mouseleave', symbolLayer, function (){
 <br/>
 
 <iframe height="500" style="width: 100%;" scrolling="no" title="События всплывающего окна" src="//codepen.io/azuremaps/embed/BXrpvB/?height=500&theme-id=0&default-tab=js,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
-См. <a href='https://codepen.io/azuremaps/pen/BXrpvB/'>события всплывающего окна</a> пера по<a href='https://codepen.io/azuremaps'>@azuremaps</a>Azure Maps () в <a href='https://codepen.io'>CodePen</a>.
+Просмотрите <a href='https://codepen.io/azuremaps/pen/BXrpvB/'>события всплывающего окна</a> пера по Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) в <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о классах и методах, которые используются в этой статье:
 

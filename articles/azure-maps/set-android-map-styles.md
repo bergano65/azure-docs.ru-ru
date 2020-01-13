@@ -1,7 +1,6 @@
 ---
-title: Задание стиля схемы в Azure Maps с помощью пакет SDK для Android
-titleSuffix: Azure Maps
-description: Сведения о функциях, связанных с Azure Maps стилем для пакет SDK для Android.
+title: Задание стиля схемы с помощью Azure Maps пакет SDK для Android | Карты Microsoft Azure
+description: В этой статье вы узнаете о функциях, связанных со стилем Microsoft Azure Maps для пакет SDK для Android.
 author: walsehgal
 ms.author: v-musehg
 ms.date: 04/26/2019
@@ -9,12 +8,12 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: philmea
-ms.openlocfilehash: 1a898508e5c99f6cb8be46605c156106b47c08f3
-ms.sourcegitcommit: ce4a99b493f8cf2d2fd4e29d9ba92f5f942a754c
+ms.openlocfilehash: fe0aa662234166249433634ccb45d1931d176319
+ms.sourcegitcommit: f9601bbccddfccddb6f577d6febf7b2b12988911
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/28/2019
-ms.locfileid: "75528102"
+ms.lasthandoff: 01/12/2020
+ms.locfileid: "75910488"
 ---
 # <a name="set-map-style-using-azure-maps-android-sdk"></a>Задание стиля схемы с помощью Azure Maps пакет SDK для Android
 

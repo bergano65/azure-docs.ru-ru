@@ -1,6 +1,6 @@
 ---
-title: Создание доступного приложения с помощью Azure Maps | Документация Майкрософт
-description: Сведения о создании доступного приложения с помощью Azure Maps
+title: Создание доступного приложения для карт с помощью Azure Maps | Карты Microsoft Azure
+description: В этой статье вы узнаете, как создать приложение с функциями специальных возможностей с помощью карт Microsoft Azure.
 services: azure-maps
 author: rbrundritt
 ms.author: richbrun
@@ -8,12 +8,12 @@ ms.date: 12/10/2019
 ms.topic: conceptual
 ms.service: azure-maps
 manager: cpendleton
-ms.openlocfilehash: 4d997bcb5bbbb66a06bea998577f8163910afce8
-ms.sourcegitcommit: 5925df3bcc362c8463b76af3f57c254148ac63e3
+ms.openlocfilehash: 739322feb8e844a197f2943f4ff050cacc0f2274
+ms.sourcegitcommit: f9601bbccddfccddb6f577d6febf7b2b12988911
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75561309"
+ms.lasthandoff: 01/12/2020
+ms.locfileid: "75911295"
 ---
 # <a name="building-an-accessible-application"></a>Создание доступного приложения
 

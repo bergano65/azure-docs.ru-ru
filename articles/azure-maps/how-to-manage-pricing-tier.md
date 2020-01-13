@@ -1,6 +1,6 @@
 ---
-title: Управление ценовой категорией для учетной записи Azure Maps | Документация Майкрософт
-description: Вы можете управлять учетной записью Azure Maps и ее ценовыми категориями с помощью портала Azure.
+title: Управление ценовой категорией учетной записи Azure Maps | Карты Microsoft Azure
+description: Вы можете использовать портал Azure для управления учетной записью Microsoft Azure Maps и ценовой категорией.
 author: walsehgal
 ms.author: v-musehg
 ms.date: 02/12/2019
@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: timlt
-ms.openlocfilehash: 43f5c6ea42464a83d070775fae8c5befe35bf60d
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 8cba1e56b96f24764af00f04f399d0cdbe54be24
+ms.sourcegitcommit: f9601bbccddfccddb6f577d6febf7b2b12988911
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60794173"
+ms.lasthandoff: 01/12/2020
+ms.locfileid: "75911489"
 ---
 # <a name="manage-the-pricing-tier-of-your-azure-maps-account"></a>Управление ценовой категорией для учетной записи Azure Maps
 

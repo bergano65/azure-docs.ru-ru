@@ -9,12 +9,12 @@ ms.author: deli
 ms.reviewer: klam, LADocs
 ms.topic: article
 ms.date: 09/23/2019
-ms.openlocfilehash: 3d748e1625f27be27b7f403fbab3e213b16c4dd6
-ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
+ms.openlocfilehash: c5de7b7bf30726dbfbf165799280ad892eca628a
+ms.sourcegitcommit: f9601bbccddfccddb6f577d6febf7b2b12988911
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2019
-ms.locfileid: "73890178"
+ms.lasthandoff: 01/12/2020
+ms.locfileid: "75911992"
 ---
 # <a name="migrate-azure-scheduler-jobs-to-azure-logic-apps"></a>Перемещение заданий из планировщика Azure в Azure Logic Apps
 
@@ -33,7 +33,7 @@ ms.locfileid: "73890178"
 
 Дополнительные сведения см. в статьях [что такое Azure Logic Apps?](../logic-apps/logic-apps-overview.md) или попробуйте создать первое приложение логики в этом кратком руководстве: [Создание первого приложения логики](../logic-apps/quickstart-create-first-logic-app-workflow.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Технические условия
 
 * Подписка Azure. Если у вас еще нет подписки Azure, [зарегистрируйтесь для получения бесплатной учетной записи Azure](https://azure.microsoft.com/free/).
 
@@ -191,9 +191,9 @@ ms.locfileid: "73890178"
 
 1. По завершении нажмите кнопку **Готово**.
 
-Дополнительные сведения об обработке исключений см. в разделе [Перехват и обработка ошибок с помощью свойства RunAfter](../logic-apps/logic-apps-exception-handling.md#catch-and-handle-failures-with-the-runafter-property).
+Дополнительные сведения об обработке исключений см. в разделе [Перехват и обработка ошибок с помощью свойства RunAfter](../logic-apps/logic-apps-exception-handling.md#control-run-after-behavior).
 
-## <a name="faq"></a>часто задаваемые вопросы
+## <a name="faq"></a>Часто задаваемые вопросы
 
 <a name="retire-date"></a>
 
@@ -212,7 +212,7 @@ ms.locfileid: "73890178"
 **В**. Где я могу получить поддержку, чтобы перенести свои задания планировщика? <br>
 **О**. Ниже приведены некоторые способы получения поддержки. 
 
-**портал Azure**
+**Портал Azure**
 
 Если ваша подписка Azure имеет платный план поддержки, вы можете создать запрос в службу технической поддержки на портале Azure. В противном случае вы можете выбрать другой вариант поддержки.
 
@@ -223,7 +223,7 @@ ms.locfileid: "73890178"
    | Свойство | Значение |
    |---------|-------|
    | **Тип проблемы** | **Технические требования** |
-   | **Подписка** | <*ваша_подписка_Azure*> |
+   | **подписка** | <*ваша_подписка_Azure*> |
    | **Служба** | В разделе **Мониторинг и управление** выберите **Планировщик**. Если вы не можете найти **планировщик**, сначала выберите **все службы** . |
    ||| 
 
@@ -234,7 +234,7 @@ ms.locfileid: "73890178"
 * [Форум Azure Logic Apps](https://social.msdn.microsoft.com/Forums/en-US/home?forum=azurelogicapps)
 * [Stack Overflow](https://stackoverflow.com/questions/tagged/azure-scheduler)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Создание регулярно выполняющихся рабочих процессов и задач с помощью Azure Logic Apps](../connectors/connectors-native-recurrence.md)
 * [Проверка трафика при помощи приложения логики, которое выполняется по расписанию](../logic-apps/tutorial-build-schedule-recurring-logic-app-workflow.md)

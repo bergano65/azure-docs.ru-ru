@@ -1,6 +1,6 @@
 ---
-title: Начало работы с элементом управления картой Android в Azure Maps | Документация Майкрософт
-description: Элемент управления картой Android в Azure Maps.
+title: Начало работы с элементом управления картой Android | Карты Microsoft Azure
+description: В этой статье вы узнаете, как начать работу с элементом управления карты Android с помощью Microsoft Azure карт пакет SDK для Android.
 author: walsehgal
 ms.author: v-musehg
 ms.date: 04/26/2019
@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: timlt
 ms.custom: mvc
-ms.openlocfilehash: cb79b24a37758307657c1245622fa980123cc5c9
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: bb9dc16eabbd6065e05d26258c1421aa7a46dbd7
+ms.sourcegitcommit: f9601bbccddfccddb6f577d6febf7b2b12988911
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75432933"
+ms.lasthandoff: 01/12/2020
+ms.locfileid: "75911398"
 ---
 # <a name="getting-started-with-azure-maps-android-sdk"></a>Приступая к работе с Azure Maps пакет SDK для Android
 
@@ -43,7 +43,7 @@ Azure Maps пакет SDK для Android — это библиотека век�
 
 Дополнительные сведения об установке Android Studio и создании нового проекта см. в [документации по Android Studio](https://developer.android.com/studio/intro/) .
 
-![Создание проекта](./media/how-to-use-android-map-control-library/form-factor-android.png)
+![Создание проекта в Android Studio ](./media/how-to-use-android-map-control-library/form-factor-android.png)
 
 ## <a name="set-up-a-virtual-device"></a>Настройка виртуального устройства
 
@@ -217,7 +217,7 @@ Android Studio позволяет настроить виртуальное ус
 
 <center>
 
-![](./media/how-to-use-android-map-control-library/android-map.png)</center> Map для Android
+![Azure Maps в приложении Android](./media/how-to-use-android-map-control-library/android-map.png)</center>
 
 ## <a name="localizing-the-map"></a>Локализация схемы
 
@@ -263,7 +263,7 @@ mapControl.onReady(map -> {
 
 <center>
 
-![изображение схемы, показывающее метки на французском](./media/how-to-use-android-map-control-library/android-localization.png)
+![Azure Maps, изображение на карте, отображающее метки на французском](./media/how-to-use-android-map-control-library/android-localization.png)
 </center>
 
 Полный список поддерживаемых языков и региональных представлений приведен [здесь](supported-languages.md).

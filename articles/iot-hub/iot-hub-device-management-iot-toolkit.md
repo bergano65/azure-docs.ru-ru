@@ -7,22 +7,22 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 01/04/2019
 ms.author: junhan
-ms.openlocfilehash: 03997bb6999af9ebaad36cc95f7834e3b9ed4569
-ms.sourcegitcommit: 44c2a964fb8521f9961928f6f7457ae3ed362694
+ms.openlocfilehash: 9d4d82472664900c96b77b31740573d0463465b8
+ms.sourcegitcommit: f9601bbccddfccddb6f577d6febf7b2b12988911
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73953196"
+ms.lasthandoff: 01/12/2020
+ms.locfileid: "75911911"
 ---
 # <a name="use-azure-iot-tools-for-visual-studio-code-for-azure-iot-hub-device-management"></a>Управление устройствами Центра Интернета вещей Azure с помощью средств Интернета вещей Azure для Visual Studio Code
 
-![Сквозная схема](media/iot-hub-get-started-e2e-diagram/2.png)
+![Комплексная схема](media/iot-hub-get-started-e2e-diagram/2.png)
 
 [Средства Интернета вещей Azure](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-tools) — это полезное расширение Visual Studio Code, которое упрощает управление Центром Интернета вещей и разработку приложений Интернета вещей. В нем предусмотрены возможности управления, с помощью которых можно выполнять различные задачи.
 
 [!INCLUDE [iot-hub-basic](../../includes/iot-hub-basic-whole.md)]
 
-| Возможность управления          | Задача.                    |
+| Возможность управления          | Задача                    |
 |----------------------------|--------------------------------|
 | Прямые методы             | Выполнение на устройстве таких действий, как запуск и остановка отправки сообщений или перезагрузка устройства.                                        |
 | Чтение двойников устройств           | Получение зарегистрированного состояния устройства, например данных о том, что сейчас на устройстве мигает индикатор.                                    |
@@ -47,10 +47,10 @@ ms.locfileid: "73953196"
 
 * Активная подписка Azure.
 * Центр Интернета вещей Azure в подписке;
-* [Visual Studio Code](https://code.visualstudio.com/)
+* [Код Visual Studio](https://code.visualstudio.com/)
 * [Средства Azure IOT для VS Code](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-tools) или [открыть эту ссылку в Visual Studio Code](vscode:extension/vsciot-vscode.azure-iot-tools).
 
-## <a name="sign-in-to-access-your-iot-hub"></a>Войдите в систему для получения доступа к Центру Интернета вещей
+## <a name="sign-in-to-access-your-iot-hub"></a>Вход в систему для получения доступа к Центру Интернета вещей
 
 1. В представлении VS Code **Проводник** разверните раздел **Azure IoT Hub Devices** (Устройства Центра Интернета вещей Azure) в нижнем левом углу.
 
@@ -71,7 +71,7 @@ ms.locfileid: "73953196"
 
 2. В поле ввода введите имя метода и полезные данные.
 
-3. Результаты отобразятся в представлении **Выходные данные** > **Azure IoT Hub Toolkit** (Набор средств Центра Интернета вещей Azure).
+3. Результаты будут показаны в **выходных данных** > представлении **центра Интернета вещей Azure** .
 
 ## <a name="read-device-twin"></a>Чтение двойников устройств
 
@@ -87,7 +87,7 @@ ms.locfileid: "73953196"
 
 3. Выберите **Update Device Twin** (Обновить двойник устройства), чтобы обновить его.
 
-## <a name="send-cloud-to-device-messages"></a>Отправка сообщений из облака на устройство
+## <a name="send-cloud-to-device-messages"></a>Отправка сообщений между устройством и облаком
 
 Чтобы отправить сообщение из Центра Интернета вещей на устройство, выполните следующие действия.
  
@@ -95,9 +95,9 @@ ms.locfileid: "73953196"
 
 2. Введите сообщение в поле ввода.
 
-3. Результаты отобразятся в представлении **Выходные данные** > **Azure IoT Hub Toolkit** (Набор средств Центра Интернета вещей Azure).
+3. Результаты будут показаны в **выходных данных** > представлении **центра Интернета вещей Azure** .
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Вы узнали, как использовать расширение средств Интернета вещей Azure для Visual Studio Code с различными параметрами управления.
 

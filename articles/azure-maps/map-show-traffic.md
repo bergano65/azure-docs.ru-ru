@@ -1,6 +1,6 @@
 ---
-title: Отображение данных дорожного движения с помощью службы "Карты Azure" | Документация Майкрософт
-description: Сведения о том, как отображать данные трафика в веб-пакете SDK Azure Maps.
+title: Отображение трафика на карте | Карты Microsoft Azure
+description: В этой статье вы узнаете, как отображать данные трафика на карте с помощью веб-пакета SDK для карт Microsoft Azure.
 author: jingjing-z
 ms.author: jinzh
 ms.date: 07/29/2019
@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: ''
 ms.custom: codepen
-ms.openlocfilehash: b765f6f35cecfdd3183b4432954fcfb2548de046
-ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
+ms.openlocfilehash: 8370b71bfa980dbd099ade59a3a19633dfd5dc72
+ms.sourcegitcommit: f9601bbccddfccddb6f577d6febf7b2b12988911
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69874863"
+ms.lasthandoff: 01/12/2020
+ms.locfileid: "75910896"
 ---
 # <a name="show-traffic-on-the-map"></a>Отображение данных дорожного движения на карте
 
@@ -22,9 +22,9 @@ ms.locfileid: "69874863"
 
 - Данные об инцидентах — это данные на основе точек и строк, такие как создание, замыкание в командировки и всякое.
 - Данные потока — предоставляет метрики потока трафика на дорогих. Данные потока трафика часто используются для цвета дорог в зависимости от того, какой объем трафика замедляет работу потока относительно предельной скорости или какой-либо другой метрики. Данные потока трафика в Azure Maps имеют три различные метрики измерения:
-    - `relative`— относительно скорости произвольного потока пути.
-    - `absolute`— Это абсолютная скорость всех транспортных средств в дороге.
-    - `relative-delay`— Отображает области, которые выполняются медленнее среднего ожидаемой задержки.
+    - `relative` — относительно скорости произвольного потока пути.
+    - `absolute` — это абсолютная скорость всех автомобилей в дороге.
+    - `relative-delay` — отображает области, которые выполняются медленнее среднего ожидаемой задержки.
 
 В следующем коде показано, как отобразить данные трафика на карте.
 
@@ -50,15 +50,15 @@ map.setTraffic({
 <br/>
 
 <iframe height="700" style="width: 100%;" scrolling="no" title="Параметры оверлея трафика" src="//codepen.io/azuremaps/embed/RwbPqRY/?height=700&theme-id=0&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true">
-См. раздел <a href='https://codepen.io/azuremaps/pen/RwbPqRY/'>Параметры наложения</a> перьевого трафика<a href='https://codepen.io/azuremaps'>@azuremaps</a>с помощью Azure Maps () в <a href='https://codepen.io'>CodePen</a>.
+Дополнительные сведения см. в разделе <a href='https://codepen.io/azuremaps/pen/RwbPqRY/'>Параметры наложения</a> перьевого трафика Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) в <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о классах и методах, которые используются в этой статье:
 
 > [!div class="nextstepaction"]
-> класс [Map](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map);
+> [Схема](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map)
 
 > [!div class="nextstepaction"]
 > [траффикоптионс](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.trafficoptions)

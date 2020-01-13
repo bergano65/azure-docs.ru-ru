@@ -8,12 +8,12 @@ ms.service: internet-peering
 ms.topic: article
 ms.date: 11/27/2019
 ms.author: prmitiki
-ms.openlocfilehash: e7239fdedafedc96a382de6c3c2f90b5da4df00c
-ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
+ms.openlocfilehash: 77cc4732e017d95cbae19578cf26b1111b08fdde
+ms.sourcegitcommit: f9601bbccddfccddb6f577d6febf7b2b12988911
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75774254"
+ms.lasthandoff: 01/12/2020
+ms.locfileid: "75908984"
 ---
 # <a name="associate-peer-asn-to-azure-subscription-using-powershell"></a>Связывание однорангового ASN с подпиской Azure с помощью PowerShell
 
@@ -29,7 +29,24 @@ ms.locfileid: "75774254"
 ### <a name="sign-in-to-your-azure-account-and-select-your-subscription"></a>Войдите в учетную запись Azure и выберите подписку.
 [!INCLUDE [Account](./includes/account-powershell.md)]
 
+### <a name="register-for-peering-resource-provider"></a>Регистрация для поставщика ресурсов пиринга
+Зарегистрируйтесь для использования поставщика ресурсов пиринга в подписке с помощью приведенной ниже команды. Если вы не выполните эту процедуру, ресурсы Azure, необходимые для настройки пиринга, недоступны.
+
+```powershell
+Register-AzResourceProvider -ProviderNamespace Microsoft.Peering
+```
+
+Проверить состояние регистрации можно с помощью следующих команд:
+```powershell
+Get-AzResourceProvider -ProviderNamespace Microsoft.Peering
+```
+
+> [!IMPORTANT]
+> Перед продолжением дождитесь, пока *RegistrationState* зарегистрируется "Registered". Выполнение команды может занять от 5 до 30 минут.
+
 ### <a name="update-the-peer-information-associated-with-this-subscription"></a>Обновление сведений о одноранговом узле, связанных с этой подпиской
+
+Ниже приведен пример обновления сведений об одноранговом узле.
 
 ```powershell
 New-AzPeerAsn `

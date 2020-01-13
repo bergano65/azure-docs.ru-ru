@@ -1,6 +1,6 @@
 ---
-title: Использование модуля "службы"-Azure Maps | Документация Майкрософт
-description: Узнайте, как использовать модуль служб Azure Maps Services.
+title: Использование модуля Azure Maps Services | Карты Microsoft Azure
+description: В этой статье вы узнаете, как использовать службы Microsoft Azure Maps для служб RESTFUL с помощью модуля Azure Maps Services.
 author: rbrundritt
 ms.author: richbrun
 ms.date: 03/25/2019
@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: cpendleton
-ms.openlocfilehash: 24777c0b14bc6bb16a5f9c5c8213a9f3d524833e
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 6bfbbb38d164dcb179541084de3ffeb89f44668d
+ms.sourcegitcommit: f9601bbccddfccddb6f577d6febf7b2b12988911
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75408673"
+ms.lasthandoff: 01/12/2020
+ms.locfileid: "75911314"
 ---
 # <a name="use-the-azure-maps-services-module"></a>Использование модуля Azure Maps Services
 

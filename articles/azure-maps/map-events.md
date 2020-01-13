@@ -1,6 +1,6 @@
 ---
-title: Обработку событий с помощью Azure Maps | Документация Майкрософт
-description: Как создать интерактивную карту веб-пакета SDK с помощью событий Map
+title: Обработчики событий Map | Карты Microsoft Azure
+description: Из этой статьи вы узнаете, как выполнить сопоставление интерактивного веб-пакета SDK с событиями карты с помощью веб-пакета SDK для карт Microsoft Azure.
 author: jingjing-z
 ms.author: jinzh
 ms.date: 09/10/2019
@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: ''
 ms.custom: codepen
-ms.openlocfilehash: 99ef5aa0ee8fa542b0aa807cc536ebfbee369e10
-ms.sourcegitcommit: 8cf199fbb3d7f36478a54700740eb2e9edb823e8
+ms.openlocfilehash: 742cb76f491e76db6dc9ec415c6718066b46f137
+ms.sourcegitcommit: f9601bbccddfccddb6f577d6febf7b2b12988911
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74484289"
+ms.lasthandoff: 01/12/2020
+ms.locfileid: "75911082"
 ---
 # <a name="interact-with-the-map"></a>Взаимодействие с картой
 
@@ -49,7 +49,7 @@ ms.locfileid: "74484289"
 
 В следующей таблице перечислены все поддерживаемые события класса Map.
 
-| Событие               | ОПИСАНИЕ |
+| Мероприятие               | Description |
 |---------------------|-------------|
 | `boxzoomend`        | Возникает при завершении диалога "масштаб Box".|
 | `boxzoomstart`      | Возникает при запуске диалогового окна "Масштаб".|
@@ -109,7 +109,7 @@ ms.locfileid: "74484289"
 | `zoomstart`         | Срабатывает непосредственно перед тем, как на карте начинается переход с одного уровня масштаба на другой в результате взаимодействия с пользователем или методов.|
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Полные примеры кода см. в следующих статьях:
 

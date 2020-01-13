@@ -1,6 +1,6 @@
 ---
-title: Добавление мозаичного слоя в карты Android в Azure Maps | Документация Майкрософт
-description: Добавление мозаичного слоя в карту с помощью Azure Maps пакет SDK для Android
+title: Добавление мозаичного слоя в карты Android | Карты Microsoft Azure
+description: Из этой статьи вы узнаете, как визуализировать мозаичный слой на карте с помощью Microsoft Azure карт пакет SDK для Android.
 author: walsehgal
 ms.author: v-musehg
 ms.date: 04/26/2019
@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: philmea
-ms.openlocfilehash: 5d5f50a38db95f6e62bdd8c51aefd5957041e682
-ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
+ms.openlocfilehash: e54eeaa6dafd60e5fc481f2f4b45929edda77c44
+ms.sourcegitcommit: f9601bbccddfccddb6f577d6febf7b2b12988911
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68886615"
+ms.lasthandoff: 01/12/2020
+ms.locfileid: "75911516"
 ---
 # <a name="add-a-tile-layer-to-a-map-using-the-azure-maps-android-sdk"></a>Добавление мозаичного слоя в карту с помощью Azure Maps пакет SDK для Android
 
@@ -37,7 +37,7 @@ URL-адрес фрагмента, передаваемый в слой фраг
 * `{bbox-epsg-3857}` — строка ограничивающего прямоугольника в формате `{west},{south},{east},{north}` в системе пространственных ссылок 3857 EPSG.
 * `{subdomain}` — заполнитель, вместо которого будут добавлены значения поддомена, если они указаны.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы завершить процесс, описанный в этой статье, необходимо установить [Azure Maps пакет SDK для Android](https://docs.microsoft.com/azure/azure-maps/how-to-use-android-map-control-library) , чтобы загрузить карту.
 
@@ -71,7 +71,7 @@ URL-адрес фрагмента, передаваемый в слой фраг
     </FrameLayout>
     ```
 
-2. Скопируйте приведенный ниже фрагмент кода в `MainActivity.java` метод **OnCreate ()** класса.
+2. Скопируйте приведенный ниже фрагмент кода в метод **OnCreate ()** класса `MainActivity.java`.
 
     ```Java
     mapControl.onReady(map -> {
@@ -84,9 +84,9 @@ URL-адрес фрагмента, передаваемый в слой фраг
     });
     ```
     
-    Приведенный выше фрагмент кода сначала получает экземпляр элемента управления Map Azure Maps с помощью метода обратного вызова onreading **()** . Затем он создает `TileLayer` объект и передает отформатированный URL-адрес `tileUrl` элемента XYZ в параметр. Непрозрачность слоя имеет значение `0.8` , а поскольку плитки из используемой службы мозаики — 256 пикселей, эти сведения передаются `tileSize` в параметр. Затем мозаичный слой передается в Диспетчер слоев Maps.
+    Приведенный выше фрагмент кода сначала получает экземпляр элемента управления Map Azure Maps с помощью метода обратного вызова **Onreading ()** . Затем он создает объект `TileLayer` и передает форматированный URL-адрес элемента **XYZ** в параметр `tileUrl`. Непрозрачность слоя задается как `0.8`, а поскольку плитки из используемой службы мозаики — 256 пикселей, эти сведения передаются в параметр `tileSize`. Затем мозаичный слой передается в Диспетчер слоев Maps.
 
-    После добавления приведенного выше `MainActivity.java` фрагмента кода он должен выглядеть следующим образом:
+    После добавления приведенного выше фрагмента кода `MainActivity.java` должен выглядеть следующим образом:
     
     ```Java
     package com.example.myapplication;
@@ -172,9 +172,9 @@ URL-адрес фрагмента, передаваемый в слой фраг
 
 <center>
 
-![Линия с картой Android](./media/how-to-add-tile-layer-android-map/xyz-tile-layer-android.png)</center>
+![](./media/how-to-add-tile-layer-android-map/xyz-tile-layer-android.png)</center> линии карт Android
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о способах установки стилей карт см. в следующей статье.
 

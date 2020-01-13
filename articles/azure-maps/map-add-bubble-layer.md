@@ -1,6 +1,6 @@
 ---
-title: Добавление слоя пузырьков в Azure Maps | Документация Майкрософт
-description: Добавление пузырькового слоя в веб-пакет SDK Azure Maps.
+title: Добавление пузырькового слоя в карту | Карты Microsoft Azure
+description: В этой статье вы узнаете, как добавить пузырьковый слой на карту с помощью веб-пакета SDK Microsoft Azure Maps.
 author: rbrundritt
 ms.author: richbrun
 ms.date: 07/29/2019
@@ -9,19 +9,19 @@ ms.service: azure-maps
 services: azure-maps
 manager: ''
 ms.custom: codepen
-ms.openlocfilehash: 5cc5dbdc89f629c09d47ef683b7ff7fff61d2f49
-ms.sourcegitcommit: 62bd5acd62418518d5991b73a16dca61d7430634
+ms.openlocfilehash: 0088cced84da08828d02d3a0f83846babf286b71
+ms.sourcegitcommit: f9601bbccddfccddb6f577d6febf7b2b12988911
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68976576"
+ms.lasthandoff: 01/12/2020
+ms.locfileid: "75911282"
 ---
 # <a name="add-a-bubble-layer-to-a-map"></a>Добавление слоя пузырьков на карту
 
 В этой статье показано, как можно визуализировать данные точек из источника данных в виде пузырькового слоя на карте. Слои пузырьков преобразовывают точки в круги на карте с помощью фиксированного значения радиуса в пикселях. 
 
 > [!TIP]
-> Слои пузырьков по умолчанию отображают координаты всех геометрических объектов в источнике данных. Чтобы ограничить слой таким образом, чтобы он отображал только возможности геометрических точек `filter` , задайте для `['==', ['geometry-type'], 'Point']` свойства слоя значение `['any', ['==', ['geometry-type'], 'Point'], ['==', ['geometry-type'], 'MultiPoint']]` или, если требуется включить компоненты MultiPoint.
+> Слои пузырьков по умолчанию отображают координаты всех геометрических объектов в источнике данных. Чтобы ограничить слой таким образом, чтобы он отображал только возможности геометрических точек, задайте для свойства `filter` слоя значение `['==', ['geometry-type'], 'Point']` или `['any', ['==', ['geometry-type'], 'Point'], ['==', ['geometry-type'], 'MultiPoint']]`, если требуется также включить компоненты MultiPoint.
 
 ## <a name="add-a-bubble-layer"></a>Добавление слоя пузырьков
 
@@ -62,7 +62,7 @@ map.layers.add(new atlas.layer.BubbleLayer(dataSource, null, {
 
 ## <a name="show-labels-with-a-bubble-layer"></a>Отображение меток с помощью слоя пузырьков
 
-В следующем коде показано, как использовать пузырьковый слой для отрисовки точки на карте и слоя символов для отрисовки метки. Чтобы скрыть значок слоя символов, задайте `image` для `'none'`свойства параметров значка значение.
+В следующем коде показано, как использовать пузырьковый слой для отрисовки точки на карте и слоя символов для отрисовки метки. Чтобы скрыть значок слоя символов, задайте для свойства `image` параметров значка значение `'none'`.
 
 <br/>
 
@@ -78,7 +78,7 @@ map.layers.add(new atlas.layer.BubbleLayer(dataSource, null, {
 <iframe height='700' scrolling='no' title='Параметры слоя пузырьков' src='//codepen.io/azuremaps/embed/eQxbGm/?height=700&theme-id=0&default-tab=result' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>Просмотрите фрагмент кода <a href='https://codepen.io/azuremaps/pen/eQxbGm/'>Параметры слоя пузырьков</a> от Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) в <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о классах и методах, которые используются в этой статье:
 

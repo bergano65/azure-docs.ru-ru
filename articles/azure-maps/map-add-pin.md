@@ -1,6 +1,6 @@
 ---
-title: Добавление слоя символов в Azure Maps | Документация Майкрософт
-description: Добавление символов в веб-пакет SDK для Azure Maps.
+title: Добавление слоя символов к карте | Карты Microsoft Azure
+description: В этой статье вы узнаете, как использовать слой символов для настройки и добавления символов на карте с помощью веб-пакета SDK для карт Microsoft Azure.
 author: rbrundritt
 ms.author: richbrun
 ms.date: 07/29/2019
@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: ''
 ms.custom: codepen
-ms.openlocfilehash: fff73801d20333a6df5e7952d02ed664c17fe40b
-ms.sourcegitcommit: 8cf199fbb3d7f36478a54700740eb2e9edb823e8
+ms.openlocfilehash: 744d5ecd3aab02071f7c3aaff7dd760fc14a2a62
+ms.sourcegitcommit: f9601bbccddfccddb6f577d6febf7b2b12988911
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74480613"
+ms.lasthandoff: 01/12/2020
+ms.locfileid: "75911161"
 ---
 # <a name="add-a-symbol-layer-to-a-map"></a>Добавление слоя символов на карту
 
@@ -91,7 +91,7 @@ dataSource.add(new atlas.data.Point([0, 0]));
 > [!TIP]
 > Если требуется отобразить текст только на уровне символов, значок можно скрыть, задав для свойства `image` параметров значка значение `'none'`.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о классах и методах, которые используются в этой статье:
 
@@ -113,7 +113,7 @@ dataSource.add(new atlas.data.Point([0, 0]));
 > [Создание источника данных](create-data-source-web-sdk.md)
 
 > [!div class="nextstepaction"]
-> [Добавление контекстного меню](map-add-popup.md)
+> [Добавление всплывающего окна](map-add-popup.md)
 
 > [!div class="nextstepaction"]
 > [Использование стилистических выражений на основе данных](data-driven-style-expressions-web-sdk.md)

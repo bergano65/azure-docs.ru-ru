@@ -1,6 +1,6 @@
 ---
-title: Как просмотреть сведения об использовании API Azure Maps | Документация Майкрософт
-description: Узнайте, как просмотреть метрики для вызовов API Azure Maps на портале.
+title: Просмотр Azure Maps метрик использования API | Карты Microsoft Azure
+description: В этой статье вы узнаете, как просмотреть метрики для вызовов API карт Microsoft Azure в портал Azure.
 author: walsehgal
 ms.author: v-musehg
 ms.date: 08/06/2018
@@ -8,14 +8,14 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: timlt
-ms.openlocfilehash: 716f9fbc02905a8981771c2fd9dd2be0baeb8196
-ms.sourcegitcommit: aa66898338a8f8c2eb7c952a8629e6d5c99d1468
+ms.openlocfilehash: 7ba50f63fb015a8696904df3decd13c811625459
+ms.sourcegitcommit: f9601bbccddfccddb6f577d6febf7b2b12988911
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67460193"
+ms.lasthandoff: 01/12/2020
+ms.locfileid: "75911339"
 ---
-# <a name="view-azure-maps-api-usage"></a>Просмотр сведения об использовании API Azure Maps
+# <a name="view-azure-maps-api-usage-metrics"></a>Просмотр метрик использования API Azure Maps
 
 В этой статье описано, как просмотреть метрики использования API для учетной записи Azure Maps на [портале](https://portal.azure.com). Метрики отображаются в удобном графическом формате вдоль шкалы настраиваемой продолжительности времени.
 
@@ -23,7 +23,7 @@ ms.locfileid: "67460193"
 
 На странице **обзора** своей учетной записи Maps вы можете увидеть некоторые общие метрики. В настоящее время за выбранный промежуток времени отображаются следующие метрики: *Всего запросов*, *Всего ошибок* и *Доступность*.
 
-![Обзор метрик в Azure Maps](media/how-to-view-api-usage/portal-overview.png)
+![Общие сведения о метриках использования Azure Maps](media/how-to-view-api-usage/portal-overview.png)
 
 Перейдите к следующему разделу, если вам нужно настроить эти графики для конкретного анализа.
 
@@ -40,19 +40,19 @@ ms.locfileid: "67460193"
    1. **Доступность**, который показывает *среднюю* доступность API за период времени;
    2. **Использование**, который показывает показатели *использования* для учетной записи.
 
-      ![Панель метрик в Azure Maps](media/how-to-view-api-usage/portal-metrics.png)
+      ![Панель метрик использования Azure Maps](media/how-to-view-api-usage/portal-metrics.png)
 
 5. Затем можно выбрать *диапазон времени*, щелкнув **За последние 24 часа (Автоматически)** . По умолчанию диапазон времени установлен в 24 часа. После нажатия вы увидите все доступные для выбора диапазоны времени. Вы можете выбрать *степень детализации времени*, а также отображение времени в *местном часовом поясе* или в формате *GMT* в том же раскрывающемся списке. Нажмите кнопку **Применить**.
 
-    ![Диапазон времени метрик в Azure Maps](media/how-to-view-api-usage/time-range.png)
+    ![Диапазон времени метрик Azure Maps](media/how-to-view-api-usage/time-range.png)
 
 6. После добавления метрики вы можете **добавить фильтр** по свойствам, относящимся к этой метрике, а затем выбрать значение свойства, для которого вы хотите увидеть график.
 
-    ![Фильтр метрик в Azure Maps](media/how-to-view-api-usage/filter.png)
+    ![Фильтр метрик использования Azure Maps](media/how-to-view-api-usage/filter.png)
 
 7. Вы также можете **применить разделение** для своей метрики на основе выбранного свойства метрики. Это позволяет разделить график на несколько графиков, по одному для каждого значения этого свойства. На следующем рисунке цвет каждого графика соответствует значению свойства, показанному в нижней части графика.
 
-    ![Разделение метрик в Azure Maps](media/how-to-view-api-usage/splitting.png)
+    ![Разделение метрик использования Azure Maps](media/how-to-view-api-usage/splitting.png)
 
 8. Вы также можете просмотреть несколько метрик на одном графике, просто нажав кнопку **Добавить метрику** сверху.
 
@@ -60,10 +60,10 @@ ms.locfileid: "67460193"
 
 Дополнительные сведения об API Azure Maps, для которых вы хотите отслеживать использование:
 > [!div class="nextstepaction"] 
-> [Практическое руководство SDK Web Azure Maps](how-to-use-map-control.md)
+> [Руководство по Azure Maps веб-SDK](how-to-use-map-control.md)
 
 > [!div class="nextstepaction"] 
-> [Практическое руководство Azure Maps пакета SDK для Android](how-to-use-android-map-control-library.md)
+> [Azure Maps пакет SDK для Android](how-to-use-android-map-control-library.md)
 
 > [!div class="nextstepaction"]
 > [Документация по REST API Azure Maps](https://docs.microsoft.com/rest/api/maps)

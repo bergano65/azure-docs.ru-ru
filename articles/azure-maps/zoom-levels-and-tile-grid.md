@@ -1,6 +1,6 @@
 ---
-title: Уровни масштаба и параметры сетки в службе "Карты Azure" | Документация Майкрософт
-description: Узнайте об уровнях масштаба и параметрах сетки в службе "Карты Azure"
+title: Уровни масштаба и сетка плиток | Карты Microsoft Azure
+description: В этой статье вы узнаете об уровнях масштабирования и сетке плиток в Microsoft Azure Maps.
 author: jingjing-z
 ms.author: jinzh
 ms.date: 05/07/2018
@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: ''
-ms.openlocfilehash: 68fbb9b8cd65e24d0fea0c571e5cf01b53560ba7
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 09d6e357b87b59e8010e38693806da5f26f5b679
+ms.sourcegitcommit: f9601bbccddfccddb6f577d6febf7b2b12988911
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75407572"
+ms.lasthandoff: 01/12/2020
+ms.locfileid: "75910772"
 ---
 # <a name="zoom-levels-and-tile-grid"></a>Уровни увеличения и сетка фрагментов
 
@@ -26,7 +26,7 @@ ms.locfileid: "75407572"
 
 <center>
 
-Плитка ![мира](./media/zoom-levels-and-tile-grid/world0.png)</center>
+Плитка ![карты мира](./media/zoom-levels-and-tile-grid/world0.png)</center>
 
 На первом уровне масштаба карта мира отображается в 2 фрагментах: квадрат 2 x 2.
 

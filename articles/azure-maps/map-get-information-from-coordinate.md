@@ -1,6 +1,6 @@
 ---
-title: Отображение сведений о координатах в службе "Карты Azure" | Документация Майкрософт
-description: Как отобразить сведения об адресе на карте, когда пользователь выбирает координаты
+title: Отображение сведений об координатах на карте | Карты Microsoft Azure
+description: Сведения о том, как отображать сведения об адресе на карте, когда пользователь выбирает координату.
 author: jingjing-z
 ms.author: jinzh
 ms.date: 07/29/2019
@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: ''
 ms.custom: codepen
-ms.openlocfilehash: df0966569a753d5000414451a2b69f1e69449b2c
-ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
+ms.openlocfilehash: 5450ada04a1af44a3fff0402b30540e899cc4dd5
+ms.sourcegitcommit: f9601bbccddfccddb6f577d6febf7b2b12988911
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68638662"
+ms.lasthandoff: 01/12/2020
+ms.locfileid: "75911040"
 ---
 # <a name="get-information-from-a-coordinate"></a>Получение сведений из координат
 
@@ -29,11 +29,11 @@ ms.locfileid: "68638662"
 
 В приведенном выше коде первый блок кода конструирует объект Map и устанавливает механизм проверки подлинности для использования маркера доступа. См. инструкции по [созданию карты](./map-create.md).
 
-Второй блок кода создает `TokenCredential` для проверки подлинности HTTP-запросов, Azure Maps с маркером доступа. Затем он передает `TokenCredential` в `atlas.service.MapsURL.newPipeline()` и создает экземпляр [конвейера](https://docs.microsoft.com/javascript/api/azure-maps-rest/atlas.service.pipeline?view=azure-maps-typescript-latest) . `searchURL` представляет собой URL-адрес к операциям [поиска](https://docs.microsoft.com/rest/api/maps/search) службы Azure Maps.
+Во втором блоке кода создается `TokenCredential` для проверки подлинности HTTP-запросов к Azure Maps с маркером доступа. Затем он передает `TokenCredential` `atlas.service.MapsURL.newPipeline()` и создает экземпляр [конвейера](https://docs.microsoft.com/javascript/api/azure-maps-rest/atlas.service.pipeline?view=azure-maps-typescript-latest) . `searchURL` представляет собой URL-адрес к операциям [поиска](https://docs.microsoft.com/rest/api/maps/search) службы Azure Maps.
 
 Третий блок кода обновляет стиль курсора мыши на указатель и создает объект [Popup](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.popup?view=azure-iot-typescript-latest#open) . См. инструкции по [добавлению всплывающего окна на карту](./map-add-popup.md).
 
-Четвертый блок кода добавляет [прослушиватель событий](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest#events)щелчка мыши. При запуске создается поисковый запрос с координатами нажатой точки. Затем он использует метод [жетсеарчаддрессреверсе](https://docs.microsoft.com/javascript/api/azure-maps-rest/atlas.service.searchurl?view=azure-iot-typescript-latest#searchaddressreverse-aborter--geojson-position--searchaddressreverseoptions-) модуля службы, чтобы запросить [обратный API адреса поиска Get](https://docs.microsoft.com/rest/api/maps/search/getsearchaddressreverse) для адреса координат. После этого коллекция функций геоjson из ответа извлекается с помощью `geojson.getFeatures()` метода.
+Четвертый блок кода добавляет [прослушиватель событий](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest#events)щелчка мыши. При запуске создается поисковый запрос с координатами нажатой точки. Затем он использует метод [жетсеарчаддрессреверсе](https://docs.microsoft.com/javascript/api/azure-maps-rest/atlas.service.searchurl?view=azure-iot-typescript-latest#searchaddressreverse-aborter--geojson-position--searchaddressreverseoptions-) модуля службы, чтобы запросить [обратный API адреса поиска Get](https://docs.microsoft.com/rest/api/maps/search/getsearchaddressreverse) для адреса координат. После этого извлекается коллекция функций геоjson из ответа с помощью метода `geojson.getFeatures()`.
 
 Пятый блок кода настраивает HTML-содержимое всплывающего окна для вывода адреса отклика для нажатой координаты.
 
@@ -54,12 +54,12 @@ ms.locfileid: "68638662"
 
 Изменение курсора, объект всплывающего окна и событие щелчка создаются в [прослушивателе событий загрузки](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest#events) карты. Так карта будет полностью загружаться до получения информации о координатах.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о классах и методах, которые используются в этой статье:
 
 > [!div class="nextstepaction"]
-> класс [Map](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest);
+> [Схема](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest)
 
 > [!div class="nextstepaction"]
 > [Popup](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.popup?view=azure-iot-typescript-latest)

@@ -7,12 +7,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 01/04/2019
 ms.author: junhan
-ms.openlocfilehash: 3fe4dfae2e86d549056805e87c0fd3927697fe24
-ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
+ms.openlocfilehash: 668087ae596688e86b7b84a16bc5c0fd0f9fcef6
+ms.sourcegitcommit: f9601bbccddfccddb6f577d6febf7b2b12988911
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2019
-ms.locfileid: "73890568"
+ms.lasthandoff: 01/12/2020
+ms.locfileid: "75912249"
 ---
 # <a name="create-an-iot-hub-using-the-azure-iot-tools-for-visual-studio-code"></a>Создание Центра Интернета вещей с помощью средств Интернета вещей Azure для Visual Studio Code
 
@@ -24,13 +24,13 @@ ms.locfileid: "73890568"
 
 Для работы с этой статьей необходимо следующее:
 
-- Подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) , прежде чем начинать работу.
+- Подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-- [Visual Studio Code](https://code.visualstudio.com/)
+- [Код Visual Studio](https://code.visualstudio.com/)
 
 - [Средства Azure IoT](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-tools) для Visual Studio Code.
 
-## <a name="create-an-iot-hub"></a>Создание центра IoT
+## <a name="create-an-iot-hub"></a>Создание Центра Интернета вещей
 
 1. Откройте в Visual Studio Code представление **Explorer**.
 
@@ -56,7 +56,7 @@ ms.locfileid: "73890568"
 
 11. Подождите несколько минут, пока Центр Интернета вещей не будет создан.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Вы развернули Центр Интернета вещей с помощью средств Интернета вещей Azure для Visual Studio Code. Чтобы продолжить изучение, ознакомьтесь со следующими статьями:
 
@@ -64,4 +64,4 @@ ms.locfileid: "73890568"
 
 * [Управление устройствами Интернета вещей Azure с помощью расширения "Набор средств Центра Интернета вещей Azure" для Visual Studio Code](iot-hub-device-management-iot-toolkit.md)
 
-* [Вики-страница, посвященная набору средств Интернета вещей Azure](https://github.com/microsoft/vscode-azure-iot-toolkit/wiki)
+* [См. страницу центра Интернета вещей Azure для VS Code вики-странице](https://github.com/microsoft/vscode-azure-iot-toolkit/wiki).

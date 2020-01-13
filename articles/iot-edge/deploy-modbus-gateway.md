@@ -8,12 +8,12 @@ services: iot-edge
 ms.topic: conceptual
 ms.date: 11/19/2019
 ms.author: kgremban
-ms.openlocfilehash: 8a9f0008f1a1ea1a57f3c0e7e17b8cf3ae5e959c
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: d4d9d2ff899a169ee81544761fe87fed3cca06c4
+ms.sourcegitcommit: f9601bbccddfccddb6f577d6febf7b2b12988911
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75434544"
+ms.lasthandoff: 01/12/2020
+ms.locfileid: "75912314"
 ---
 # <a name="connect-modbus-tcp-devices-through-an-iot-edge-device-gateway"></a>Подключение устройств Modbus TCP через шлюз устройств IoT Edge
 
@@ -71,7 +71,7 @@ ms.locfileid: "75434544"
 iotedge logs modbus
 ```
 
-Данные телеметрии, которые передает устройство, можно также просматривать, используя [расширение "Набор средств Центра Интернета вещей Azure" для Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-toolkit) (ранее называлось расширением "Набор средств для Интернета вещей Azure").
+Вы также можете просмотреть данные телеметрии, которые устройство отправляет, используя [расширение центра Интернета вещей Azure для Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-toolkit) (ранее — расширение Azure IOT Toolkit).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

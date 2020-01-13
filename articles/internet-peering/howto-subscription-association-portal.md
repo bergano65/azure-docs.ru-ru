@@ -8,12 +8,12 @@ ms.service: internet-peering
 ms.topic: article
 ms.date: 11/27/2019
 ms.author: prmitiki
-ms.openlocfilehash: d3737be5a3186774f230aef9d932464a27a764f4
-ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
+ms.openlocfilehash: cee548aff49cd5e4a57eed994b8ade2d157c6313
+ms.sourcegitcommit: f9601bbccddfccddb6f577d6febf7b2b12988911
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75775645"
+ms.lasthandoff: 01/12/2020
+ms.locfileid: "75912155"
 ---
 # <a name="associate-peer-asn-to-azure-subscription-using-the-portal"></a>Связывание однорангового ASN с подпиской Azure с помощью портала
 
@@ -25,6 +25,34 @@ ms.locfileid: "75775645"
 
 ### <a name="sign-in-to-the-portal"></a>Вход на портал
 [!INCLUDE [Account](./includes/account-portal.md)]
+
+### <a name="register-for-peering-resource-provider"></a>Регистрация для поставщика ресурсов пиринга
+Зарегистрируйтесь в поставщике ресурсов пиринга в подписке, выполнив приведенные ниже действия. Если вы не выполните эту процедуру, ресурсы Azure, необходимые для настройки пиринга, недоступны.
+
+1. Щелкните **подписки** в левом верхнем углу портала. Если вы не видите его, щелкните **больше служб** и найдите его.
+
+    > [!div class="mx-imgBorder"]
+    > ![открытые подписки](./media/rp-subscriptions-open.png)
+
+1. Щелкните подписку, которую вы хотите использовать для пиринга.
+
+    > [!div class="mx-imgBorder"]
+    > ![запустить](./media/rp-subscriptions-launch.png) подписки
+
+1. После открытия подписки щелкните **поставщики ресурсов**в левой части экрана. Затем в области справа найдите *пиринг* в окне поиска или используйте полосу прокрутки, чтобы найти **Microsoft. пиринг** и просмотреть **состояние**. Если состояние ***зарегистрировано***, пропустите приведенные ниже шаги и перейдите к разделу **CREATE PeerAsn**. Если выбрано состояние ***зарегистрировано***, выберите **Microsoft. пиринг** и щелкните **зарегистрировать**.
+
+    > [!div class="mx-imgBorder"]
+    > ](./media/rp-register-start.png) начала регистрации ![
+
+1. Обратите внимание, что состояние изменяется на ***Регистрация***.
+
+    > [!div class="mx-imgBorder"]
+    > ![выполняется регистрация](./media/rp-register-progress.png)
+
+1. Дождитесь задержки или подождите, пока завершится регистрация. Затем щелкните **Обновить** и убедитесь, что состояние ***зарегистрировано***.
+
+    > [!div class="mx-imgBorder"]
+    > Регистрация ![завершена](./media/rp-register-completed.png)
 
 ### <a name="create-peerasn"></a>Создание PeerAsn
 Вы можете создать новый ресурс PeerAsn для сопоставления номера автономной системы (ASN) с подпиской Azure. Можно связать несколько ASN с подпиской, создав **PeerAsn** для каждого ASN, который необходимо связать.

@@ -1,6 +1,6 @@
 ---
-title: Добавление слоя фрагментов карты в Azure Maps | Документация Майкрософт
-description: Добавление мозаичного слоя в веб-пакет SDK Azure Maps.
+title: Добавление мозаичного слоя в карту | Карты Microsoft Azure
+description: Из этой статьи вы узнаете, как наложение мозаичного слоя на карте с помощью веб-пакета SDK Microsoft Azure Maps. Мозаичные слои позволяют визуализировать изображения на карте.
 author: rbrundritt
 ms.author: richbrun
 ms.date: 07/29/2019
@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: ''
 ms.custom: codepen
-ms.openlocfilehash: 3f047ec1aced55038384cbe29bd3a4b8a948dce9
-ms.sourcegitcommit: 62bd5acd62418518d5991b73a16dca61d7430634
+ms.openlocfilehash: 83e8f6d684d6d39102fd682653cd19816a9f7b10
+ms.sourcegitcommit: f9601bbccddfccddb6f577d6febf7b2b12988911
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68976454"
+ms.lasthandoff: 01/12/2020
+ms.locfileid: "75911091"
 ---
 # <a name="add-a-tile-layer-to-a-map"></a>Добавление слоя фрагментов на карту
 
@@ -40,7 +40,7 @@ URL-адрес фрагмента, передаваемый в слой фраг
 
 ## <a name="add-a-tile-layer"></a>Добавление слоя фрагментов
 
- В этом примере показано, как создать слой фрагментов, который указывает на набор фрагментов, использующих систему фрагментов с x, y и увеличением. Источником этого слоя фрагментов является наложение радара погоды из [лаборатории окружающей среды Университета штата Айова](https://mesonet.agron.iastate.edu/ogc/). При просмотре лепестковых данных пользователи в идеале смогут ясно видеть метки городов по мере перехода на карту, что можно сделать, вставив мозаичный слой под `labels` слоем.
+ В этом примере показано, как создать слой фрагментов, который указывает на набор фрагментов, использующих систему фрагментов с x, y и увеличением. Источником этого слоя фрагментов является наложение радара погоды из [лаборатории окружающей среды Университета штата Айова](https://mesonet.agron.iastate.edu/ogc/). При просмотре лепестковых данных пользователи в идеале смогут ясно видеть метки городов по мере перехода на карту, что можно сделать, вставив мозаичный слой под `labels`ным слоем.
 
 ```javascript
 //Create a tile layer and add it to the map below the label layer.
@@ -68,7 +68,7 @@ map.layers.add(new atlas.layer.TileLayer({
 <iframe height='700' scrolling='no' title='Параметры слоя фрагментов' src='//codepen.io/azuremaps/embed/xQeRWX/?height=700&theme-id=0&default-tab=result' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>Просмотрите фрагмент кода <a href='https://codepen.io/azuremaps/pen/xQeRWX/'>Параметры слоя фрагментов</a> Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) в <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о классах и методах, которые используются в этой статье:
 

@@ -1,23 +1,23 @@
 ---
 title: Создание кластера и базы данных Azure Data Explorer с помощью C#
 description: Сведения о создании кластера и базы данных Azure Data Explorer с использованием C#
-author: oflipman
-ms.author: oflipman
+author: lucygoldbergmicrosoft
+ms.author: lugoldbe
 ms.reviewer: orspodek
 ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 06/03/2019
-ms.openlocfilehash: 1260b7754f80a3d008084f632d299c684162628e
-ms.sourcegitcommit: 3d4917ed58603ab59d1902c5d8388b954147fe50
+ms.openlocfilehash: 7dc032d52a8cb3c5c54cf57c7ae7bf697796b5cc
+ms.sourcegitcommit: f9601bbccddfccddb6f577d6febf7b2b12988911
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74667879"
+ms.lasthandoff: 01/12/2020
+ms.locfileid: "75910604"
 ---
 # <a name="create-an-azure-data-explorer-cluster-and-database-by-using-c"></a>Создание кластера и базы данных Azure Data Explorer с помощью C#
 
 > [!div class="op_single_selector"]
-> * [Microsoft Azure](create-cluster-database-portal.md)
+> * [Портал](create-cluster-database-portal.md)
 > * [CLI](create-cluster-database-cli.md)
 > * [PowerShell](create-cluster-database-powershell.md)
 > * [C#](create-cluster-database-csharp.md)
@@ -28,7 +28,7 @@ Azure Data Explorer — это быстрая и полностью управ�
 
 ## <a name="prerequisites"></a>Технические условия
 
-* Если вы еще не установили Visual Studio 2019, вы можете скачать и использовать **бесплатный** [выпуск Visual Studio 2019 Community Edition](https://www.visualstudio.com/downloads/). При установке Visual Studio необходимо включить возможность **разработки для Azure**.
+* Если вы не установили Visual Studio 2019, вы можете скачать и использовать **бесплатную** [версию Visual Studio 2019 Community Edition](https://www.visualstudio.com/downloads/). При установке Visual Studio необходимо включить возможность **разработки для Azure**.
 * Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/) Azure, прежде чем начинать работу.
 
 ## <a name="install-c-nuget"></a>Установка C# NuGet
@@ -36,7 +36,7 @@ Azure Data Explorer — это быстрая и полностью управ�
 * Установите [пакет NuGet для Azure Data Explorer (Kusto)](https://www.nuget.org/packages/Microsoft.Azure.Management.Kusto/).
 * Установите [пакет NuGet Microsoft.IdentityModel.Clients.ActiveDirectory](https://www.nuget.org/packages/Microsoft.IdentityModel.Clients.ActiveDirectory/) для проверки подлинности.
 
-## <a name="authentication"></a>Authentication
+## <a name="authentication"></a>Проверка подлинности
 Для выполнения примеров в этой статье нам потребуется приложение Azure AD и субъект-служба, которые могут получать доступ к ресурсам. Установите флажок [создать приложение Azure AD](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal) , чтобы создать бесплатное приложение Azure AD и назначить роль в области действия подписки. В нем также показано, как получить `Directory (tenant) ID`, `Application ID`и `Client Secret`.
 
 ## <a name="create-the-azure-data-explorer-cluster"></a>Создание кластера Azure Data Explorer
@@ -74,8 +74,8 @@ Azure Data Explorer — это быстрая и полностью управ�
    |---|---|---|
    | clusterName | *mykustocluster* | Необходимое имя кластера.|
    | skuName | *Standard_D13_v2* | Номер SKU, который будет использоваться для кластера. |
-   | Уровень | *Стандартный* | Уровень SKU. |
-   | ресурсов | *number* | Число экземпляров кластера. |
+   | Уровень | *Standard Edition* | Уровень SKU. |
+   | Емкость | *number* | Число экземпляров кластера. |
    | имя_группы_ресурсов | *testrg* | Имя группы ресурсов, в которой будет создан кластер. |
 
     > [!NOTE]

@@ -1,6 +1,6 @@
 ---
-title: Реагирование на события Azure Maps с помощью Сетки событий | Документация Майкрософт
-description: Узнайте, как реагировать на события Azure Maps c помощью Сетки событий.
+title: Реагирование на отображение событий с помощью сетки событий | Карты Microsoft Azure
+description: В этой статье вы узнаете, как реагировать на события Microsoft Azure Maps с помощью сетки событий.
 author: walsehgal
 ms.author: v-musehg
 ms.date: 02/08/2019
@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: timlt
 ms.custom: mvc
-ms.openlocfilehash: a70011b934398ac4e7f74bb67013e93bb5e86e4e
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 9a946d189706c9c789ab884670d13b0b3e7fcb0c
+ms.sourcegitcommit: f9601bbccddfccddb6f577d6febf7b2b12988911
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60799154"
+ms.lasthandoff: 01/12/2020
+ms.locfileid: "75911814"
 ---
 # <a name="react-to-azure-maps-events-by-using-event-grid"></a>Реагирование на события Azure Maps c помощью Сетки событий 
 
@@ -30,7 +30,7 @@ Azure Maps интегрируется с Сеткой событий Azure, чт
 
 Сетка событий использует [подписки на события](https://docs.microsoft.com/azure/event-grid/concepts#event-subscriptions) для маршрутизации сообщений о событиях подписчикам. Учетная запись Azure Maps выводит следующие типы событий. 
 
-| Тип события | Описание |
+| Тип события | Description |
 | ---------- | ----------- |
 | Microsoft.Maps.GeofenceEntered | Создается, когда полученные координаты переходят из заданной геозоны наружу. |
 | Microsoft.Maps.GeofenceExited | Создается, когда полученные координаты переходят из заданной геозоны наружу |

@@ -1,6 +1,6 @@
 ---
-title: Добавление панели инструментов рисования в Azure Maps | Документация Майкрософт
-description: Добавление панели инструментов рисования в карту с помощью веб-пакета SDK Azure Maps
+title: Добавление панели инструментов рисования в карту | Карты Microsoft Azure
+description: В этой статье вы узнаете, как добавить панель инструментов рисования на карту с помощью веб-пакета SDK Microsoft Azure Maps.
 author: rbrundritt
 ms.author: richbrun
 ms.date: 12/05/2019
@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: cpendle
-ms.openlocfilehash: 63848ecf92daecf28f6e0046e87da15355aa35c1
-ms.sourcegitcommit: 5925df3bcc362c8463b76af3f57c254148ac63e3
+ms.openlocfilehash: fd235f3f39d67f86c8387add79ca0dbf17dc5906
+ms.sourcegitcommit: f9601bbccddfccddb6f577d6febf7b2b12988911
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75561836"
+ms.lasthandoff: 01/12/2020
+ms.locfileid: "75911666"
 ---
 # <a name="drawing-tool-events"></a>События инструмента рисования
 

@@ -1,6 +1,6 @@
 ---
-title: Покрытие для маршрутизации в службе "Карты Azure" | Документация Майкрософт
-description: Сведения о покрытии для маршрутизации в службе "Карты Azure"
+title: Покрытие маршрутизации | Карты Microsoft Azure
+description: В этой статье вы узнаете о регионах с покрытием маршрутизации для Microsoft Azureных карт.
 author: jingjing-z
 ms.author: jinzh
 ms.date: 04/04/2019
@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: ''
-ms.openlocfilehash: 4ca837d871dc439cadd1ca5b69bf9c7a5d12fddc
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: f6e16ed6646340a5c623ecd027e8b0fe323bf7f9
+ms.sourcegitcommit: f9601bbccddfccddb6f577d6febf7b2b12988911
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75408352"
+ms.lasthandoff: 01/12/2020
+ms.locfileid: "75910612"
 ---
 # <a name="azure-maps-routing-coverage"></a>Покрытие для маршрутизации в службе "Карты Azure"
 

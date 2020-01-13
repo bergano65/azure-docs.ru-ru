@@ -1,6 +1,6 @@
 ---
-title: Добавить слой линии в Azure Maps | Документация Майкрософт
-description: Добавление слоя линии в веб-пакет SDK Azure Maps.
+title: Добавление слоя линии к карте | Карты Microsoft Azure
+description: В этой статье вы узнаете, как добавить слой линии в карту с помощью веб-пакета SDK для карт Microsoft Azure.
 author: rbrundritt
 ms.author: richbrun
 ms.date: 08/08/2019
@@ -9,19 +9,19 @@ ms.service: azure-maps
 services: azure-maps
 manager: ''
 ms.custom: codepen
-ms.openlocfilehash: f07e36d82c9044a212cda8173df9fe0a9544393a
-ms.sourcegitcommit: 62bd5acd62418518d5991b73a16dca61d7430634
+ms.openlocfilehash: 5b59bdc06d455c7bd0ec9cf889f5cfa382948467
+ms.sourcegitcommit: f9601bbccddfccddb6f577d6febf7b2b12988911
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68977330"
+ms.lasthandoff: 01/12/2020
+ms.locfileid: "75911188"
 ---
 # <a name="add-a-line-layer-to-the-map"></a>Добавление слоя линии к сопоставлению
 
-Слой линий можно использовать для отображения `LineString` и `MultiLineString` компонентов в качестве путей или маршрутов на карте. Слой линий также можно использовать для отображения структуры `Polygon` и `MultiPolygon` функций. Источник данных подключен к слою линии для предоставления данных для подготовки к просмотру. 
+Слой линий можно использовать для отображения `LineString` и `MultiLineString` компонентов в виде путей или маршрутов на карте. Слой линий также можно использовать для отображения структуры `Polygon` и `MultiPolygon`ных функций. Источник данных подключен к слою линии для предоставления данных для подготовки к просмотру. 
 
 > [!TIP]
-> По умолчанию линии слоев отображают координаты многоугольников, а также линии в источнике данных. Чтобы ограничить слой таким образом, чтобы он отображал только компоненты LineString, задайте `filter` для `['==', ['geometry-type'], 'LineString']` свойства слоя значение или `['any', ['==', ['geometry-type'], 'LineString'], ['==', ['geometry-type'], 'MultiLineString']]` , если требуется включить также функции MultiLineString.
+> По умолчанию линии слоев отображают координаты многоугольников, а также линии в источнике данных. Чтобы ограничить слой таким образом, чтобы он отображал только компоненты LineString, задайте для свойства `filter` слоя значение `['==', ['geometry-type'], 'LineString']` или `['any', ['==', ['geometry-type'], 'LineString'], ['==', ['geometry-type'], 'MultiLineString']]`, если требуется также включить функции MultiLineString.
 
 В следующем коде показано, как создать строку, добавить ее в источник данных и подготовить к просмотру с помощью класса [линелайер](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.layer.linelayer?view=azure-iot-typescript-latest) .
 
@@ -56,7 +56,7 @@ map.layers.add(new atlas.layer.LineLayer(dataSource, null, {
 <br/>
 
 <iframe height="500" style="width: 100%;" scrolling="no" title="Показывать стрелку и линию" src="//codepen.io/azuremaps/embed/drBJwX/?height=500&theme-id=0&default-tab=js,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
-См. <a href='https://codepen.io/azuremaps/pen/drBJwX/'>стрелку показ пера и</a> построчно Azure Maps<a href='https://codepen.io/azuremaps'>@azuremaps</a>() на <a href='https://codepen.io'>CodePen</a>.
+См. <a href='https://codepen.io/azuremaps/pen/drBJwX/'>стрелку показ пера и построчно</a> Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) на <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
 > [!TIP]
@@ -66,24 +66,24 @@ map.layers.add(new atlas.layer.LineLayer(dataSource, null, {
 
 ## <a name="add-a-stroke-gradient-to-a-line"></a>Добавление градиента обводки в линию
 
-Помимо возможности применить к линии один цвет обводки, можно также заполнить линию градиентом цветов, чтобы отобразить переход от одного сегмента линии к другому. Например, градиенты линий можно использовать для представления изменений по времени и расстоянию, а также по различным температурам в подключенной строке объектов. Чтобы применить эту функцию к строке, источник данных должен иметь `lineMetrics` параметр со значением true, а затем выражение цвета градиента может быть передано `strokeColor` в параметр строки. Выражение градиента обводки должно ссылаться `['line-progress']` на выражение данных, которое предоставляет вычисленные метрики строк для выражения.
+Помимо возможности применить к линии один цвет обводки, можно также заполнить линию градиентом цветов, чтобы отобразить переход от одного сегмента линии к другому. Например, градиенты линий можно использовать для представления изменений по времени и расстоянию, а также по различным температурам в подключенной строке объектов. Чтобы применить эту функцию к строке, источник данных должен иметь параметр `lineMetrics` со значением true, а затем выражение цвета градиента может быть передано в параметр `strokeColor` линии. Выражение градиента обводки должно ссылаться на `['line-progress']` выражение данных, которое предоставляет вычисляемые показатели строк выражению.
 
 <br/>
 
 <iframe height="500" style="width: 100%;" scrolling="no" title="Линия с градиентом обводки" src="//codepen.io/azuremaps/embed/wZwWJZ/?height=500&theme-id=0&default-tab=js,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
-См. <a href='https://codepen.io/azuremaps/pen/wZwWJZ/'>линию пера с градиентом обводки</a> Azure Maps<a href='https://codepen.io/azuremaps'>@azuremaps</a>() на <a href='https://codepen.io'>CodePen</a>.
+См. <a href='https://codepen.io/azuremaps/pen/wZwWJZ/'>линию пера с градиентом обводки</a> Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) на <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
 ## <a name="customize-a-line-layer"></a>Настройка слоя линий
 
-Слой линий имеет несколько параметров стиля, которые можно опробовать с помощью определенного средства.
+Слой линий имеет несколько параметров стиля, которые можно опробовать с помощью представленного ниже средства.
 
 <br/>
 
 <iframe height='700' scrolling='no' title='Параметры слоя линий' src='//codepen.io/azuremaps/embed/GwLrgb/?height=700&theme-id=0&default-tab=result' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>Просмотрите фрагмент кода с <a href='https://codepen.io/azuremaps/pen/GwLrgb/'>параметрами слоя линий</a> службы Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) на сайте <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о классах и методах, которые используются в этой статье:
 

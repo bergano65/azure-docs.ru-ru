@@ -1,6 +1,6 @@
 ---
-title: Добавление маркера HTML в Azure Maps | Документация Майкрософт
-description: Добавление маркера HTML в Azure Maps веб-пакет SDK.
+title: Добавление HTML-маркера к сопоставлению | Карты Microsoft Azure
+description: В этой статье вы узнаете, как добавить маркер HTML к карте с помощью веб-пакета SDK Microsoft Azure Maps.
 author: jingjing-z
 ms.author: jinzh
 ms.date: 07/29/2019
@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: ''
 ms.custom: codepen
-ms.openlocfilehash: ff18b8646a3845d029e9826c0895b9d3eb16bdde
-ms.sourcegitcommit: 62bd5acd62418518d5991b73a16dca61d7430634
+ms.openlocfilehash: 5a15b3b9e51772d8c7e5312968fecb180069e2a7
+ms.sourcegitcommit: f9601bbccddfccddb6f577d6febf7b2b12988911
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68976208"
+ms.lasthandoff: 01/12/2020
+ms.locfileid: "75911252"
 ---
 # <a name="add-html-markers-to-the-map"></a>Добавление маркеров HTML на карту
 
@@ -28,9 +28,9 @@ ms.locfileid: "68976208"
 
 ## <a name="add-an-html-marker"></a>Добавление маркера HTML
 
-Класс [хтмлмаркер](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.htmlmarker?view=azure-iot-typescript-latest) имеет стиль по умолчанию. Маркер можно настроить, задав параметры цвета и текста маркера. Стилем по умолчанию для класса маркеров HTML является шаблон SVG, который имеет `{color}` заполнитель и `{text}` . Задайте свойства цвета и текста в параметрах маркера HTML для быстрой настройки. 
+Класс [хтмлмаркер](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.htmlmarker?view=azure-iot-typescript-latest) имеет стиль по умолчанию. Маркер можно настроить, задав параметры цвета и текста маркера. Стилем по умолчанию для класса маркеров HTML является шаблон SVG, имеющий `{color}` и `{text}` заполнитель. Задайте свойства цвета и текста в параметрах маркера HTML для быстрой настройки. 
 
-Следующий код создает HTML-маркер и присваивает свойству Color значение «Доджерблуе», а свойству Text — значение «10». К маркеру и `click` событию применяется всплывающее окно, которое позволяет переключать видимость всплывающего окна.
+Следующий код создает HTML-маркер и присваивает свойству Color значение «Доджерблуе», а свойству Text — значение «10». К маркеру прикрепляется всплывающее окно, а для переключения видимости всплывающего окна используется событие `click`.
 
 ```javascript
 //Create a HTML marker and add it to the map.
@@ -77,12 +77,12 @@ map.events.add('click',marker, () => {
 
 <br/>
 
-<iframe height='500' scrolling='no' title='Источник данных HTML' src='//codepen.io/azuremaps/embed/qJVgMx/?height=500&theme-id=0&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>Посмотрите фрагмент кода <a href='https://codepen.io/azuremaps/pen/qJVgMx/'>Источник данных HTML</a> <a href='https://codepen.io/azuremaps'>от Azure Maps (@azuremaps</a>) в <a href='https://codepen.io'>CodePen</a>.
+<iframe height='500' scrolling='no' title='Источник данных HTML' src='//codepen.io/azuremaps/embed/qJVgMx/?height=500&theme-id=0&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>Посмотрите фрагмент кода <a href='https://codepen.io/azuremaps/pen/qJVgMx/'>Источник данных HTML</a><a href='https://codepen.io/azuremaps'>от Azure Maps (@azuremaps</a>) в <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
 ## <a name="draggable-html-markers"></a>Перетаскиваемые маркеры HTML
 
-В этом примере показано, как сделать перетаскиваемый маркер HTML. Маркеры HTML поддерживают `drag`события `dragstart`, и `dragend` .
+В этом примере показано, как сделать перетаскиваемый маркер HTML. Маркеры HTML поддерживают `drag`, `dragstart`и события `dragend`.
 
 <br/>
 
@@ -98,7 +98,7 @@ map.events.add('click',marker, () => {
 <iframe height='500' scrolling='no' title='Добавление событий мыши к маркерам HTML' src='//codepen.io/azuremaps/embed/RqOKRz/?height=500&theme-id=0&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>Просмотрите фрагмент кода <a href='https://codepen.io/azuremaps/pen/RqOKRz/'>Добавление событий мыши к маркерам HTML</a> службы Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) в <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о классах и методах, которые используются в этой статье:
 

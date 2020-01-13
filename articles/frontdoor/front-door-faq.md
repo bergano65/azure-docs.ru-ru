@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/08/2019
 ms.author: sharadag
-ms.openlocfilehash: 39051014e5e474264a44983fb366bc08f02c31e0
-ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
+ms.openlocfilehash: dd315277e6e8f29a103760d605a7da4603190c20
+ms.sourcegitcommit: f9601bbccddfccddb6f577d6febf7b2b12988911
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75639860"
+ms.lasthandoff: 01/12/2020
+ms.locfileid: "75908870"
 ---
 # <a name="frequently-asked-questions-for-azure-front-door-service"></a>Часто задаваемые вопросы о службе "Передняя дверь" Azure
 
@@ -99,7 +99,7 @@ ms.locfileid: "75639860"
     > Внутреннее IP-пространство серверной двери может измениться позже, однако мы будем уверенным в том, что до этого произойдет интеграция с [диапазонами IP-адресов и тегами служб Azure](https://www.microsoft.com/download/details.aspx?id=56519). Мы рекомендуем подписываться на [диапазоны IP-адресов и теги службы Azure](https://www.microsoft.com/download/details.aspx?id=56519) для любых изменений или обновлений.
 
 -   Фильтрация по значениям для входящего заголовка "**X-forwardd-Host**", отправленного передней дверцей. Единственными допустимыми значениями заголовка должны быть все узлы переднего плана, как определено в конфигурации передней дверцы. На самом деле, только имена узлов, от которых вы хотите принимать трафик, в этой конкретной серверной части.
-    - Пример. Предположим, что у конфигурации передней дверцы есть следующие интерфейсные узлы: _`contoso.azurefd.net`_ (A), _`www.contoso.com`_ (B), _ (C) и _`notifications.contoso.com`_ (D). Предположим, что у вас есть две конечные оси X и Y. 
+    - Пример. Предположим, что у конфигурации передней дверцы есть следующие интерфейсные узлы: _`contoso.azurefd.net`_ (A), _`www.contoso.com`_ (B), _`api.contoso.com`_ (C) и _`notifications.contoso.com`_ (D). Предположим, что у вас есть две конечные оси X и Y. 
     - Серверная часть X должна принимать трафик только от имен узлов A и B. Серверная часть Y может принимать трафик от A, C и D.
     - Таким образом, в серверной части X следует принимать только трафик с заголовком "**X-forwardd-Host**", равным _`contoso.azurefd.net`_ или _`www.contoso.com`_ . Для всех остальных компонентов Серверная часть X должна отклонять трафик.
     - Аналогично, в серверной части Y следует принимать только трафик с заголовком «**X-forwardd-Host**», имеющим значение _`contoso.azurefd.net`_ , _`api.contoso.com`_ или _`notifications.contoso.com`_ . Все остальное, серверная часть Y должна отклонять трафик.

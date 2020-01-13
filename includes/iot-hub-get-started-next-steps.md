@@ -1,6 +1,6 @@
 ---
-title: включение файла
-description: включение файла
+title: включить файл
+description: включить файл
 services: iot-hub
 author: robinsh
 ms.service: iot-hub
@@ -8,24 +8,24 @@ ms.topic: include
 ms.date: 02/14/2019
 ms.author: robinsh
 ms.custom: include file
-ms.openlocfilehash: fc4b613eb9e77acef4568ef93b7606fb43568f82
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: c8bf7f3a423b97f6cd84f0b575d00d60776c598c
+ms.sourcegitcommit: f9601bbccddfccddb6f577d6febf7b2b12988911
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66476018"
+ms.lasthandoff: 01/12/2020
+ms.locfileid: "75911934"
 ---
 Чтобы продолжить знакомство с Центром Интернета вещей Azure и изучить расширенные сценарии Центра Интернета вещей, см. следующие ресурсы:
 
-- [Управление обменом сообщениями между устройством и облаком с помощью расширения Azure IoT Hub Toolkit для Visual Studio Code](../articles/iot-hub/iot-hub-vscode-iot-toolkit-cloud-device-messaging.md)
+- [Управление обменом сообщениями между облачными устройствами с помощью расширения центра Интернета вещей Azure для Visual Studio Code](../articles/iot-hub/iot-hub-vscode-iot-toolkit-cloud-device-messaging.md)
 
-- [Управление устройствами с помощью расширения Azure IoT Hub Toolkit для Visual Studio Code](../articles/iot-hub/iot-hub-device-management-iot-toolkit.md)
+- [Управление устройствами с помощью расширения центра Интернета вещей Azure для Visual Studio Code](../articles/iot-hub/iot-hub-device-management-iot-toolkit.md)
 
 - [Руководство. Настройка маршрутизации сообщений с использованием Центра Интернета вещей](../articles/iot-hub/tutorial-routing.md)
 
 - [Визуализация данных, поступающих от датчиков в реальном времени, из Центра Интернета вещей с помощью Power BI](../articles/iot-hub/iot-hub-live-data-visualization-in-power-bi.md)
 
-- [Визуализация данных датчиков в реальном времени из центра Интернета вещей с помощью веб-приложения](../articles/iot-hub/iot-hub-live-data-visualization-in-web-apps.md)
+- [Использование веб-приложения для визуализации данных датчика в реальном времени из центра Интернета вещей](../articles/iot-hub/iot-hub-live-data-visualization-in-web-apps.md)
 
 - [Прогнозирование погоды в машинном обучении Azure с помощью данных от датчиков Центра Интернета вещей](../articles/iot-hub/iot-hub-weather-forecast-machine-learning.md)
 

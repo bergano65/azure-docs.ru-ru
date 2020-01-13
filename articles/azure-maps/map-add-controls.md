@@ -1,6 +1,6 @@
 ---
-title: Добавление элементов управления в Azure Maps | Документация Майкрософт
-description: Сведения о том, как добавить элементы управления масштабом, наклоном, поворотом и средство выбора стиля на карту в службе Azure Maps.
+title: Добавление элементов управления в карту | Карты Microsoft Azure
+description: Добавление элемента управления "Масштаб", элемента управления "высота", элемента управления "поворот" и выбора стиля на карту в Microsoft Azure Maps.
 author: walsehgal
 ms.author: v-musehg
 ms.date: 07/29/2019
@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: timlt
-ms.openlocfilehash: 7267f77ed3d296ac586dcfd0f525b94d5e6eb7a0
-ms.sourcegitcommit: 62bd5acd62418518d5991b73a16dca61d7430634
+ms.openlocfilehash: 6652ca30d9f38eb6184fce5f1ff5428d29c271a6
+ms.sourcegitcommit: f9601bbccddfccddb6f577d6febf7b2b12988911
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68976219"
+ms.lasthandoff: 01/12/2020
+ms.locfileid: "75911273"
 ---
 # <a name="add-controls-to-a-map"></a>Добавление элементов управления на карту
 
@@ -91,12 +91,12 @@ map.controls.add(new atlas.control.Compass(), {
 <br/>
 
 <iframe height="700" style="width: 100%;" scrolling="no" title="Параметры элемента управления навигацией" src="//codepen.io/azuremaps/embed/LwBZMx/?height=700&theme-id=0&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true">
-См. раздел <a href='https://codepen.io/azuremaps/pen/LwBZMx/'>Параметры навигации</a> по управлению пером<a href='https://codepen.io/azuremaps'>@azuremaps</a>с помощью Azure Maps () в <a href='https://codepen.io'>CodePen</a>.
+См. раздел <a href='https://codepen.io/azuremaps/pen/LwBZMx/'>Параметры навигации по управлению</a> пером Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) на <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
-Если необходимо создать настраиваемые элементы управления навигацией, создайте класс, который расширяется из `atlas.Control` класса, или Создайте HTML-элемент и поместите его над элементом div Map. Этот элемент управления пользовательского интерфейса вызывает функцию `setCamera` Maps для перемещения карты. 
+Если необходимо создать настраиваемые элементы управления навигацией, создайте класс, который расширяется из класса `atlas.Control` или Создайте HTML-элемент и поместите его над элементом div Map. Этот элемент управления пользовательского интерфейса вызывает функцию Maps `setCamera` для перемещения карты. 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о классах и методах, которые используются в этой статье:
 

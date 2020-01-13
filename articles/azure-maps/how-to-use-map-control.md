@@ -1,6 +1,6 @@
 ---
-title: Начало работы с элементом управления Web Map в Azure Maps | Документация Майкрософт
-description: Узнайте, как использовать библиотеку JavaScript Azure Maps Map Control Client на стороне клиента.
+title: Начало работы с элементом управления веб-карт | Карты Microsoft Azure
+description: Узнайте, как использовать клиентскую библиотеку JavaScript с картой Microsoft Azure Maps для отображения карт и встроенных функций Azure Maps в веб-приложения или мобильное приложение.
 author: walsehgal
 ms.author: v-musehg
 ms.date: 10/08/2018
@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: timlt
-ms.openlocfilehash: d70d0e1107a6ee1b53b178d8912c1b808472b142
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: d50b97ad47f4b09ae4fec363e7d0a2c7f6b841df
+ms.sourcegitcommit: f9601bbccddfccddb6f577d6febf7b2b12988911
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75432913"
+ms.lasthandoff: 01/12/2020
+ms.locfileid: "75911353"
 ---
 # <a name="use-the-azure-maps-map-control"></a>Использование элемента управления картой Azure Maps
 
