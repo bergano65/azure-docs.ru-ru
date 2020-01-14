@@ -1,32 +1,32 @@
 ---
 title: Краткое руководство. Распознавание речи из файлов, находящихся в хранилище BLOB-объектов, в службе "Речь" с помощью Java
 titleSuffix: Azure Cognitive Services
-description: ПОДЛЕЖИТ УТОЧНЕНИЮ
+description: TBD
 services: cognitive-services
 author: erhopf
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
-ms.topic: quickstart
+ms.topic: include
 ms.date: 10/28/2019
 ms.author: erhopf
 zone_pivot_groups: programming-languages-set-two
-ms.openlocfilehash: d4a436540460240ebd97c39d3406b2886586a6df
-ms.sourcegitcommit: 5aefc96fd34c141275af31874700edbb829436bb
+ms.openlocfilehash: e110c87835cdf517bdd54adda0ef6d9168a44d52
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74828816"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75469871"
 ---
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Перед началом работы нужно сделать следующее:
 
 > [!div class="checklist"]
-> * [Создать ресурс службы "Речь" Azure](../../../../get-started.md).
+> * [Создать ресурс службы "Речь" Azure.](../../../../get-started.md)
 > * [Отправить исходный файл в большой двоичный объект Azure](https://docs.microsoft.com/azure/storage/blobs/storage-quickstart-blobs-portal).
-> * [Настроить среду разработки](../../../../quickstarts/setup-platform.md?tabs=dotnet).
-> * [Создать пустой пример проекта](../../../../quickstarts/create-project.md?tabs=dotnet).
+> * [Настроить среду разработки.](../../../../quickstarts/setup-platform.md?tabs=dotnet)
+> * [Создать пустой пример проекта.](../../../../quickstarts/create-project.md?tabs=dotnet)
 
 ## <a name="open-your-project-in-eclipse"></a>Открытие проекта с помощью Eclipse
 
@@ -40,7 +40,7 @@ ms.locfileid: "74828816"
 
 Откройте файл pom.xml и добавьте следующую ссылку: [!code-xml[](~/samples-cognitive-services-speech-sdk/quickstart/java/jre/from-blob/pom.xml?range=19-25)]
 
-## <a name="start-with-some-boilerplate-code"></a>Использование стандартного кода
+## <a name="start-with-some-boilerplate-code"></a>Добавление стандартного кода
 
 Добавим код, который выступает в качестве основы для нашего проекта.
 
@@ -87,6 +87,6 @@ ms.locfileid: "74828816"
 
 Теперь можно приступать к созданию приложения и проверке распознавания речи, используя службу "Речь".
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [!INCLUDE [footer](./footer.md)]

@@ -1,5 +1,5 @@
 ---
-title: Условия в файле использования и расходов Azure для Клиентского соглашения Майкрософт
+title: Термины в файле об использовании и расходах в Azure для Клиентского соглашения Майкрософт
 description: Узнайте, как интерпретировать разделы, посвященные использованию и расходам CSV для вашего профиля выставления счетов.
 author: bandersmsft
 manager: jureid
@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/01/2019
 ms.author: banders
-ms.openlocfilehash: b46c635b28d693cb0d6ab9e643a8a1ee9e55fc64
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: f619d11c3df29a629b8b4da7b440376d6e9aedbd
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74226081"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75388896"
 ---
 # <a name="terms-in-the-azure-usage-and-charges-file-for-a-microsoft-customer-agreement"></a>Условия в файле использования и расходов Azure для Клиентского соглашения Майкрософт
 
@@ -34,14 +34,14 @@ CSV-файл Azure с данными об использовании и расх
 
 | CSV-файл использования EA в Azure | CSV-файл использования и расходов Azure для Клиентского соглашения Майкрософт |
 | --- | --- |
-| Дата | date |
-| Месяц| date |
-| День | date |
-| Год | date |
+| Дата | Дата |
+| Месяц| Дата |
+| День | Дата |
+| Год | Дата |
 | Продукт | product |
 | Значение MeterId | Значение meterID |
 | MeterCategory | meterCategory |
-| meterSubCategory | meterSubCategory |
+| MeterSubCategory | meterSubCategory |
 | MeterRegion | meterRegion |
 | MeterName | meterName |
 | ConsumedQuantity | quantity |
@@ -65,7 +65,7 @@ CSV-файл Azure с данными об использовании и расх
 
 Следующие условия отображаются в файле использования и расходов Azure.
 
-Термин | ОПИСАНИЕ
+Термин | Description
 --- | ---
 invoiceId | Уникальный идентификатор документа, указанный в PDF-счете
 previousInvoiceId | Ссылка на исходный счет, если этот элемент строки является возвратом денег
@@ -80,7 +80,7 @@ billingPeriodStartDate | Начальная дата расчетного пер
 billingPeriodEndDate | Дата окончания расчетного периода, для которого создается счет
 servicePeriodStartDate | Дата начала периода оценки, в которой определены и заблокированы цены для использованной или приобретенной службы
 servicePeriodEndDate | Дата окончания периода оценки, в которой определены и заблокированы цены для использованной или приобретенной службы
-date | Для расходов на использование Azure и Marketplace, это дата оценки. Для одноразовых покупок (резервирование, Marketplace) или фиксированных повторяющихся расходов (предложения поддержки) это дата покупки.
+Дата | Для расходов на использование Azure и Marketplace, это дата оценки. Для одноразовых покупок (резервирование, Marketplace) или фиксированных повторяющихся расходов (предложения поддержки) это дата покупки.
 serviceFamily | Семейство служб, к которому принадлежит служба
 productOrderId | Уникальный идентификатор заказа продукта
 productOrderName | Уникальное имя заказа продукта
@@ -125,7 +125,7 @@ tags | Теги, присваиваемые ресурсу
 
 Если у вас есть вопросы или вам нужна помощь, [создайте запрос в службу поддержки](https://go.microsoft.com/fwlink/?linkid=2083458).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Просмотр и скачивание счета Microsoft Azure](billing-download-azure-invoice.md)
 - [Скачивание или просмотр счета на оплату и данных о ежедневном использовании в Azure](billing-download-azure-daily-usage.md)

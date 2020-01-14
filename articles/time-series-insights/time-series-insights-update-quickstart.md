@@ -1,6 +1,6 @@
 ---
 title: Краткое руководство. Изучение демонстрационной среды службы "Аналитика временных рядов Azure" (предварительная версия) | Документация Майкрософт
-description: В этом руководстве приведены сведения о демонстрационных средах службы "Аналитика временных рядов Azure" (предварительная версия).
+description: Общие сведения об основных функциях демонстрационной среды службы "Аналитика временных рядов Azure" (предварительная версия).
 ms.service: time-series-insights
 services: time-series-insights
 author: deepakpalled
@@ -9,13 +9,13 @@ manager: cshankar
 ms.topic: quickstart
 ms.workload: big-data
 ms.custom: mvc seodec18
-ms.date: 10/24/2019
-ms.openlocfilehash: 61d13831ff0d8810cfdce35f86a0402cb1679ad1
-ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
+ms.date: 12/20/2019
+ms.openlocfilehash: b97c8c51bc63fb0c1ff0070714e7393d11ea0dbf
+ms.sourcegitcommit: f0dfcdd6e9de64d5513adf3dd4fe62b26db15e8b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74014756"
+ms.lasthandoff: 12/26/2019
+ms.locfileid: "75497474"
 ---
 # <a name="quickstart-explore-the-azure-time-series-insights-preview-demo-environment"></a>Краткое руководство. Общие сведения о демонстрационной среде службы "Аналитика временных рядов Azure" (предварительная версия)
 
@@ -43,33 +43,33 @@ ms.locfileid: "74014756"
    1. Выберите диапазон просмотра с **20:00 01.01.17 до 20:00 10.03.17 (UTC)** .
    1. Чтобы выбрать датчик, выберите **Contoso Plant 1** > **W7** > **Generator System** (Система генерации)  > **GeneratorSpeed** (Скорость генератора). Просмотрите значения на экране.
 
-      [![W7 на Contoso Plant 1](media/v2-update-quickstart/quickstart-one.png)](media/v2-update-quickstart/quickstart-one.png#lightbox)
+      [![W7 на Contoso Plant 1](media/v2-update-quickstart/quick-start-generator-speed.png)](media/v2-update-quickstart/quick-start-generator-speed.png#lightbox)
 
 1. Недавно Contoso обнаружила пожар на ветроэлектрической установке **W7**. Мнения о причине пожара расходятся. В Аналитике временных рядов можно увидеть, что датчик оповещения о пожаре сработал во время пожара.
 
    1. Выберите диапазон просмотра с **20:00 09.03.17 до 20:00 10.03.17 (UTC)** .
    1. Выберите **Safety System** (Система безопасности)  > **FireAlert** (Оповещение о пожаре).
 
-      [![Contoso обнаружила пожар на ветрогенераторе W7](media/v2-update-quickstart/quickstart-two.png)](media/v2-update-quickstart/quickstart-two.png#lightbox)
+      [![Contoso обнаружила пожар на ветрогенераторе W7](media/v2-update-quickstart/quick-start-fire-alert.png)](media/v2-update-quickstart/quick-start-fire-alert.png#lightbox)
 
 1. Просмотрите другие события во время пожара, чтобы понять, что именно произошло. Сразу перед пожаром резко возросли показатели давления масла и активные предупреждения.
 
    1. Выберите **Pitch System** (Система управления дифферентом)  > **HydraulicOilPressure** (Давление турбинного масла).
    1. Выберите **Pitch System** (Система управления дифферентом)  > **ActiveWarning** (Активное предупреждение).
 
-      [![Просмотрите другие события, которые случились в тоже время](media/v2-update-quickstart/quickstart-three.png)](media/v2-update-quickstart/quickstart-three.png#lightbox)
+      [![Просмотрите другие события, которые случились в тоже время](media/v2-update-quickstart/quick-start-active-warning.png)](media/v2-update-quickstart/quick-start-active-warning.png#lightbox)
 
 1. Прямо перед пожаром резко возросли показатели давления масла и активные предупреждения. Разверните отображаемый временной ряд, чтобы увидеть другие признаки, свидетельствовавшие о приближающемся пожаре. Показания обоих датчиков колебались со временем. Устойчивые колебания показаний — это тревожный признак.
 
     * Выберите диапазон просмотра с **20:00 24.02.17 до 20:00 10.03.17 (UTC)** .
 
-      [![Датчики давления масла и активные аварийные датчики также выдавали пиковые значения](media/v2-update-quickstart/quickstart-four.png)](media/v2-update-quickstart/quickstart-four.png#lightbox)
+      [![Датчики давления масла и активные аварийные датчики также выдавали пиковые значения](media/v2-update-quickstart/quick-start-view-range.png)](media/v2-update-quickstart/quick-start-view-range.png#lightbox)
 
 1. Анализ исторических данных двухлетней давности выявляет еще один пожар с такими же колебаниями датчика.
 
     * Выберите диапазон просмотра с **1.01.16 до 31.12.17** (все данные).
 
-      [![Ищите исторические закономерности](media/v2-update-quickstart/quickstart-five.png)](media/v2-update-quickstart/quickstart-five.png#lightbox)
+      [![Ищите исторические закономерности](media/v2-update-quickstart/quick-start-expand-view-range.png)](media/v2-update-quickstart/quick-start-expand-view-range.png#lightbox)
 
 Благодаря Аналитике временных рядов и телеметрии датчиков мы обнаружили долгосрочную тенденцию, скрытую в исторических данных. С помощью этих новых аналитических сведений мы можем выполнить следующее.
 
@@ -84,7 +84,7 @@ ms.locfileid: "74014756"
     1. Выберите диапазон просмотра с **20:00 01.06.17 до 20:00 01.07.17 (UTC)** .
     1. Выберите датчик **Contoso Plant 1** > **W6** > **Safety System** (Система безопасности)  > **VoltageActuatorSwitchWarning** (Предупреждение о переключателе напряжения).
 
-       [![Изменение диапазона просмотра и выбор W6](media/v2-update-quickstart/quickstart-six.png)](media/v2-update-quickstart/quickstart-six.png#lightbox)
+       [![Изменение диапазона просмотра и выбор W6](media/v2-update-quickstart/quick-start-voltage-switch-warning.png)](media/v2-update-quickstart/quick-start-voltage-switch-warning.png#lightbox)
 
 1. Предупреждение означает проблему с напряжением, которое подает генератор. Общая мощность генератора находится в пределах нормальных параметров для текущего временного интервала. Увеличив интервал, можно увидеть другую закономерность: появляется спад.
 
@@ -92,20 +92,20 @@ ms.locfileid: "74014756"
     1. Выберите **Generator System** (Система генерации)  > **ActivePower** (Активная мощность).
     1. Измените значение интервала на **3d** (3 дня).
 
-       [![Изменение значения интервала на "3d" (3 дня)](media/v2-update-quickstart/quickstart-seven.png)](media/v2-update-quickstart/quickstart-seven.png#lightbox)
+       [![Изменение значения интервала на "3d" (3 дня)](media/v2-update-quickstart/quick-start-interval-change.png)](media/v2-update-quickstart/quick-start-interval-change.png#lightbox)
 
 1. Расширяя диапазон времени, мы можем определить момент, когда проблема исчезла, или определить, что она сохранилась.
 
     * Расширьте интервал времени до 60 дней.
 
-      [![Расширьте интервал времени до 60 дней](media/v2-update-quickstart/quickstart-eight.png)](media/v2-update-quickstart/quickstart-eight.png#lightbox)
+      [![Расширьте интервал времени до 60 дней](media/v2-update-quickstart/quick-start-expand-interval-range.png)](media/v2-update-quickstart/quick-start-expand-interval-range.png#lightbox)
 
 1. Чтобы получить более полный контекст, можно давить точки данных других датчиков. Чем больше датчиков мы видим, тем полнее наше понимание проблемы. Давайте разместим маркер, чтобы просмотреть фактические значения. 
 
     1. Выберите **Generator System** (Система генерации), а затем выберите три датчика: **GridVoltagePhase1** (Сеточное напряжение, фаза 1), **GridVoltagePhase2** (Сеточное напряжение, фаза 2) и **GridVoltagePhase3** (Сеточное напряжение, фаза 3).
     1. Разместите маркер на последней точке данных в видимой области.
 
-       [![Размещение маркера](media/v2-update-quickstart/quickstart-nine.png)](media/v2-update-quickstart/quickstart-nine.png#lightbox)
+       [![Размещение маркера](media/v2-update-quickstart/quick-start-drop-marker.png)](media/v2-update-quickstart/quick-start-drop-marker.png#lightbox)
 
     Два датчика напряжения работают примерно одинаково и в пределах нормальных параметров. Вероятно, виновником является датчик **GridVoltagePhase3**.
 
@@ -113,7 +113,7 @@ ms.locfileid: "74014756"
 
     * Обновите изображение, чтобы наложить значения всех датчиков **Generator System** (Система генерации) на одну и ту же шкалу диаграммы.
 
-      [![Обновление изображения для отображения всего содержимого](media/v2-update-quickstart/quickstart-ten.png)](media/v2-update-quickstart/quickstart-ten.png#lightbox)
+      [![Обновление изображения для отображения всего содержимого](media/v2-update-quickstart/quick-start-generator-system.png)](media/v2-update-quickstart/quick-start-generator-system.png#lightbox)
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
@@ -122,7 +122,7 @@ ms.locfileid: "74014756"
 1. На [портале Azure](https://portal.azure.com) в меню слева щелкните **Все ресурсы** и найдите группу ресурсов Аналитики временных рядов Azure.
 1. Удалите всю группу ресурсов (и все содержащиеся в ней ресурсы), выбрав **Удалить**, или каждый ресурс по отдельности.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь вы готовы создать собственную среду службы "Аналитика временных рядов" (предварительная версия). Начните с этого:
 

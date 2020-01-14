@@ -5,12 +5,12 @@ author: rloutlaw
 ms.topic: quickstart
 ms.date: 08/10/2018
 ms.custom: mvc, devcenter, seo-java-july2019, seo-java-august2019, seo-java-september2019
-ms.openlocfilehash: cb43f558a5c983a8a4cc3823b278b75cb8cde78d
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: ef81ff1d3d42e3c9e2ba5d4187f5b5805d35d900
+ms.sourcegitcommit: 5925df3bcc362c8463b76af3f57c254148ac63e3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74230746"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75562040"
 ---
 # <a name="quickstart-use-java-and-maven-to-create-and-publish-a-function-to-azure"></a>Краткое руководство. Создание и публикация функции в Azure с помощью Java и Maven
 
@@ -21,13 +21,13 @@ ms.locfileid: "74230746"
 > You can also create a Kotlin-based Azure Functions project by using the azure-functions-kotlin-archetype instead. Visit the [GitHub repository](https://github.com/microsoft/azure-maven-archetypes/tree/develop/azure-functions-kotlin-archetype) for more information.
 -->
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Для разработки функций с помощью Java, должны быть установлены следующие компоненты:
 
 - [Java Developer Kit (JDK)](https://aka.ms/azure-jdks) версии 8.
 - [Apache Maven](https://maven.apache.org) 3.0 или более поздней версии.
-- [Интерфейс командной строки Azure]
+- [Azure CLI]
 - [Azure Functions Core Tools](./functions-run-local.md#v2) 2.6.666 или более поздней версии.
 - Подписка Azure.
 
@@ -68,21 +68,24 @@ mvn archetype:generate ^
 
 Maven запрашивает значения, которые позволят завершить создание проекта развертывания. Предоставьте следующие значения в ответ на соответствующие запросы:
 
-| Значение | ОПИСАНИЕ |
+| Значение | Description |
 | ----- | ----------- |
 | **groupId** | Это значение уникально идентифицирует проект среди всех остальных. Оно должно соответствовать [правилам именования пакетов](https://docs.oracle.com/javase/specs/jls/se6/html/packages.html#7.7) для Java. В примерах, приведенных в этом кратком руководстве, используется `com.fabrikam.functions`. |
 | **artifactId** | Это значение содержит имя JAR-файла, без номера версии. В примерах, приведенных в этом кратком руководстве, используется `fabrikam-functions`. |
 | **version** | Выберите значение по умолчанию `1.0-SNAPSHOT`. |
 | **package** | Это значение определяет пакет Java для создаваемого кода функции. Используйте значение по умолчанию. В примерах, приведенных в этом кратком руководстве, используется `com.fabrikam.functions`. |
 | **appName** | Глобально уникальное имя для нового приложения-функции в Azure. Сохраните значение по умолчанию, которое составляется из значения _artifactId_ и случайного числа. Запишите это значение, так как оно потребуется позднее. |
-| **appRegion** | Выберите ближайший [регион](https://azure.microsoft.com/regions/) или регион рядом с другими службами, к которому получают доступ ваши функции. Значение по умолчанию — `westus`. Чтобы получить список всех регионов, выполните такую команду [Интерфейс командной строки Azure]:<br/>`az account list-locations --query '[].{Name:name}' -o tsv` |
-| **resourceGroup** | Имя для новой [группы ресурсов](../azure-resource-manager/resource-group-overview.md), в которой создается приложение-функция. Укажите значение `myResourceGroup`, которое используется в примерах, приведенных в этом кратком руководстве. Имя группы ресурсов должно быть уникальным в пределах подписки Azure.|
+| **appRegion** | Выберите ближайший [регион](https://azure.microsoft.com/regions/) или регион рядом с другими службами, к которому получают доступ ваши функции. Значение по умолчанию — `westus`. Чтобы получить список всех регионов, выполните такую команду [Azure CLI]:<br/>`az account list-locations --query '[].{Name:name}' -o tsv` |
+| **resourceGroup** | Имя для новой [группы ресурсов](../azure-resource-manager/management/overview.md), в которой создается приложение-функция. Укажите значение `myResourceGroup`, которое используется в примерах, приведенных в этом кратком руководстве. Имя группы ресурсов должно быть уникальным в пределах подписки Azure.|
 
 Введите `Y` или нажмите клавишу ВВОД для подтверждения.
 
 Maven создаст файлы проекта в новой папке с именем _artifactId_, то есть `fabrikam-functions` в нашем примере. 
 
 Откройте в текстовом редакторе новый файл Function.java из папки *src/main/java* и изучите созданный код. Этот код содержит [активируемую по HTTP-запросу](functions-bindings-http-webhook.md) функцию, которая возвращает текст запроса. 
+
+> [!div class="nextstepaction"]
+> [У меня есть проблема](https://www.research.net/r/javae2e?tutorial=functions-maven-quickstart&step=generate-project)
 
 ## <a name="run-the-function-locally"></a>Локальное выполнение функции
 
@@ -119,6 +122,9 @@ Hello AzureFunctions!
 ```
 [Ключ функции](functions-bindings-http-webhook.md#authorization-keys) при локальном выполнении не требуется. Используйте `Ctrl+C` в терминале, чтобы остановить код функции.
 
+> [!div class="nextstepaction"]
+> [У меня есть проблема](https://www.research.net/r/javae2e?tutorial=functions-maven-quickstart&step=local-run)
+
 ## <a name="deploy-the-function-to-azure"></a>Развертывание функции для Azure
 
 Приложение-функция и связанные ресурсы создаются в Azure при первом развертывании приложения-функции. Перед развертыванием выполните команду [az login](/cli/azure/authenticate-azure-cli) в Azure CLI, чтобы войти в подписку Azure. 
@@ -145,7 +151,10 @@ mvn azure-functions:deploy
 
 Развертывание также упаковывает файлы проекта и развертывает их в новом приложении-функции [из ZIP-файла](functions-deployment-technologies.md#zip-deploy) с включенным режимом выполнения из пакета.
 
-После завершения развертывания вы увидите URL-адрес, который можно использовать для доступа к конечным точкам приложения-функции. Так как опубликованный нами триггер HTTP использует `authLevel = AuthorizationLevel.FUNCTION`, вам нужно получить ключ функции для вызова конечной точки функции по протоколу HTTP. Ключ функции проще всего получить на [портал Azure].
+После завершения развертывания вы увидите URL-адрес, который можно использовать для доступа к конечным точкам приложения-функции. Так как опубликованный нами триггер HTTP использует `authLevel = AuthorizationLevel.FUNCTION`, вам нужно получить ключ функции для вызова конечной точки функции по протоколу HTTP. Ключ функции проще всего получить на [Портал Azure].
+
+> [!div class="nextstepaction"]
+> [У меня есть проблема](https://www.research.net/r/javae2e?tutorial=functions-maven-quickstart&step=deploy)
 
 ## <a name="get-the-http-trigger-url"></a>Получение URL-адреса триггера HTTP
 
@@ -177,7 +186,10 @@ curl -w "\n" https://fabrikam-functions-20190929094703749.azurewebsites.net/api/
 Hello AzureFunctions!
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+> [!div class="nextstepaction"]
+> [У меня есть проблема](https://www.research.net/r/javae2e?tutorial=functions-maven-quickstart&step=verify-deployment)
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 Итак, вы создали проект с функцией Java, активируемой по HTTP-запросу, запустили ее на своем локальном компьютере и развернули в Azure. Теперь расширьте свою функцию путем...
 
@@ -185,5 +197,5 @@ Hello AzureFunctions!
 > [Добавления выходной привязки очереди службы хранилища Azure](functions-add-output-binding-storage-queue-java.md)
 
 
-[Интерфейс командной строки Azure]: /cli/azure
-[портал Azure]: https://portal.azure.com
+[Azure CLI]: /cli/azure
+[Портал Azure]: https://portal.azure.com

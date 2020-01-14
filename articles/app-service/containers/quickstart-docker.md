@@ -5,18 +5,18 @@ author: msangapu-msft
 ms.author: msangapu
 ms.date: 08/28/2019
 ms.topic: quickstart
-ms.openlocfilehash: 14ea5444d3d8827919405a4d5aa8a176746c2e72
-ms.sourcegitcommit: 48b7a50fc2d19c7382916cb2f591507b1c784ee5
+ms.openlocfilehash: 62e6b007e89fc6be726d3d971ca838770db9cb6e
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74688961"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75422152"
 ---
 # <a name="deploy-a-custom-linux-container-to-azure-app-service"></a>Развертывание пользовательского контейнера Linux в Службе приложений Azure
 
 Служба приложений в Linux предоставляет предопределенные стеки приложений на платформе Linux с поддержкой определенных языков (например, .NET, PHP, Node.js и т. д.). Вы также можете использовать пользовательский образ Docker для запуска веб-приложения в стеке приложений, который еще не определен в Azure. В этом кратком руководстве показано, как развернуть образ из [Реестра контейнеров Azure](/azure/container-registry) (ACR) в Службе приложений.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * [учетная запись Azure](https://azure.microsoft.com/free/?utm_source=campaign&utm_campaign=vscode-tutorial-docker-extension&mktingSource=vscode-tutorial-docker-extension);
 * [Docker](https://www.docker.com/community-edition)
@@ -26,7 +26,7 @@ ms.locfileid: "74688961"
 
 ## <a name="create-an-image"></a>Создание образа
 
-Для выполнения заданий этого краткого руководства вам потребуется подходящий образ веб-приложения, хранящийся в [Реестре контейнеров Azure](/azure/container-registry). Следуйте инструкциям в статье [Краткое руководство. Создание частного реестра контейнеров с помощью портала Azure](/azure/container-registry/container-registry-get-started-portal), но вместо образа `hello-world` используйте `mcr.microsoft.com/azuredocs/go`.
+Для выполнения заданий этого краткого руководства вам потребуется подходящий образ веб-приложения, хранящийся в [Реестре контейнеров Azure](/azure/container-registry). Следуйте инструкциям в статье [Краткое руководство. Создание частного реестра контейнеров с помощью портала Azure](/azure/container-registry/container-registry-get-started-portal), но вместо образа `hello-world` используйте `mcr.microsoft.com/azuredocs/go`. Для справки см. [пример Dockerfile из репозитория примеров Azure](https://github.com/Azure-Samples/go-docs-hello-world).
 
 > [!IMPORTANT]
 > Не забудьте установить для параметра **Администратор** значение **Включить** при создании реестра контейнеров. Его также можно установить из раздела **Ключи доступа** на странице реестра на портале Azure. Этот параметр необходим для доступа к Службе приложений.
@@ -74,7 +74,7 @@ docker --version
 > [!div class="nextstepaction"]
 > [У меня есть проблема](https://www.research.net/r/PWZWZ52?tutorial=quickstart-docker&step=deploy-app)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Поздравляем, вы успешно завершили работу с этим руководством!
 

@@ -1,27 +1,27 @@
 ---
-title: Краткое руководство. Создание приложения Python, в котором используется кэш Azure для Redis
+title: Краткое руководство. Создание приложения Python, использующем Кэш Azure для Redis
 description: Из этого краткого руководства вы узнаете, как создать приложение Python, в котором используется Кэш Azure для Redis.
 author: yegu-ms
+ms.author: yegu
 ms.service: cache
 ms.devlang: python
 ms.topic: quickstart
-ms.date: 11/05/2019
-ms.author: yegu
 ms.custom:
 - mvc
 - seo-python-october2019
-ms.openlocfilehash: 1ac1767d1ac3f6333d73a1e1c66ff7250942d266
-ms.sourcegitcommit: 5a8c65d7420daee9667660d560be9d77fa93e9c9
+ms.date: 11/05/2019
+ms.openlocfilehash: 7b05f12ad3fd3a0f56605d708bbbf06df7e341ed
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74122667"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75433465"
 ---
 # <a name="quickstart-create-a-python-app-that-uses-azure-cache-for-redis"></a>Краткое руководство. Создание приложения Python, в котором используется кэш Azure для Redis
 
 Из этой статьи вы узнаете, как реализовать кэш Azure для Redis в приложении Python для обеспечения доступа к защищенному выделенному кэшу, к которому может обращаться любое приложение в Azure.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 - Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/).
 - [Python версии 2 или 3](https://www.python.org/downloads/)
@@ -104,7 +104,7 @@ for c in result:
    
    ![Удаление группы ресурсов для Кэша Azure для Redis](./media/cache-python-get-started/delete-your-resource-group-for-azure-cache-for-redis.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Создание простого веб-приложения ASP.NET, в котором используется кэш Redis для Azure](./cache-web-app-howto.md)

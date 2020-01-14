@@ -1,19 +1,19 @@
 ---
-title: 'Конфигурация кластера Microsoft Azure FXT Edge Filer: добавление узлов'
+title: Руководство. Добавление узлов в кластер Azure FXT Edge Filer
 description: Добавление узлов в кэш хранилища Azure FXT Edge Filer
 author: ekpgh
+ms.author: rohogue
 ms.service: fxt-edge-filer
 ms.topic: tutorial
 ms.date: 06/20/2019
-ms.author: rohogue
-ms.openlocfilehash: 85ab9aaa3e184af7aa71a31eb3d8de1a20639c2a
-ms.sourcegitcommit: 1c2659ab26619658799442a6e7604f3c66307a89
+ms.openlocfilehash: 6251fe8f88b7db25e3c09898540e07754d72fb0d
+ms.sourcegitcommit: ec2eacbe5d3ac7878515092290722c41143f151d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72254926"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75551953"
 ---
-# <a name="tutorial-add-cluster-nodes"></a>Руководство по Добавление узлов кластера 
+# <a name="tutorial-add-cluster-nodes-to-an-azure-fxt-edge-filer-cluster"></a>Руководство. Добавление узлов кластера в Azure FXT Edge Filer
 
 Новый кластер Azure FXT Edge Filer создается только с одним узлом. Необходимо добавить по крайней мере еще два узла и включить высокий уровень доступности, прежде чем выполнять другие настройки. 
 
@@ -108,7 +108,7 @@ ms.locfileid: "72254926"
 ![Таблица панели мониторинга с сообщением "HA is now fully configured" (Функция высокого уровня доступности теперь полностью настроена)](media/fxt-cluster-config/ha-configured-alert.png)
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 После добавления всех узлов в кластер продолжите установку, настроив долговременное хранилище кластера.
 

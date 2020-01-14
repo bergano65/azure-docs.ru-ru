@@ -1,6 +1,6 @@
 ---
-title: Руководство по Предоставление локальной службы WCF на базе REST для внешнего клиента с помощью Ретранслятора WCF Azure
-description: Руководство по Создание клиентского приложения и приложения службы с помощью ретранслятора WCF.
+title: Предоставление локальной службы WCF REST для клиентов с помощью Azure Relay
+description: Руководство. Создание клиентского приложения и приложения службы с помощью ретранслятора WCF.
 services: service-bus-relay
 documentationcenter: na
 author: spelluru
@@ -14,14 +14,14 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/05/2019
 ms.author: spelluru
-ms.openlocfilehash: e2dd0448dfed55450a6319936f49831e5d6d77f3
-ms.sourcegitcommit: bc7725874a1502aa4c069fc1804f1f249f4fa5f7
+ms.openlocfilehash: ee090ca0d7bbdad70147b85644952143c086d336
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73718844"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75452294"
 ---
-# <a name="tutorial-expose-an-on-premises-wcf-rest-service-to-external-client-by-using-azure-wcf-relay"></a>Руководство по Предоставление локальной службы WCF на базе REST для внешнего клиента с помощью Ретранслятора WCF Azure
+# <a name="tutorial-expose-an-on-premises-wcf-rest-service-to-external-client-by-using-azure-wcf-relay"></a>Руководство. Предоставление локальной службы WCF на базе REST для внешнего клиента с помощью Ретранслятора WCF Azure
 
 В этом руководстве описывается создание клиентского приложения Ретранслятора WCF и службы ретрансляции WCF с помощью ретранслятора Azure. Аналогичное руководство по [обмену сообщениями в служебной шине](../service-bus-messaging/service-bus-messaging-overview.md) представлено в статье [Начало работы с очередями служебной шины](../service-bus-messaging/service-bus-dotnet-get-started-with-queues.md).
 
@@ -43,7 +43,7 @@ ms.locfileid: "73718844"
 > * Реализация клиента WCF.
 > * Запуск приложений.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Для работы с данным руководством вам потребуется:
 
@@ -776,7 +776,7 @@ namespace Microsoft.ServiceBus.Samples
 
 1. Вы можете отправить еще несколько текстовых сообщений от клиента к службе. Закончив, нажмите клавишу ВВОД в окнах консоли клиента и службы, чтобы завершить работу обоих приложений.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Перейдите к следующему руководству:
 

@@ -6,12 +6,12 @@ ms.service: hpc-cache
 ms.topic: tutorial
 ms.date: 11/11/2019
 ms.author: rohogue
-ms.openlocfilehash: 07aba1b1536635e414fc5fab4ece148683909188
-ms.sourcegitcommit: 4821b7b644d251593e211b150fcafa430c1accf0
+ms.openlocfilehash: 793a80e7019e72c1cb3087da02d5642639cb8d5e
+ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74168594"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75647162"
 ---
 # <a name="create-an-azure-hpc-cache"></a>Создание Azure HPC Cache
 
@@ -36,7 +36,7 @@ ms.locfileid: "74168594"
 
 На странице **Кэш** необходимо задать емкость кэша. Этот набор значений определяет, какой объем данных может хранить кэш и как быстро он может обслуживать клиентские запросы.
 
-По истечении периода общедоступной предварительной версии емкость также повлияет на стоимость кэша.
+Емкость также влияет на стоимость кэша.
 
 Выберите емкость, задав следующие два значения:
 
@@ -68,7 +68,7 @@ Azure HPC Cache определяет, какие файлы необходимо
 
 ![снимок экрана: экземпляр Azure HPC Cache на портале Azure](media/hpc-cache-new-overview.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 После того как кэш появится в списке **Ресурсы**, определите целевые объекты хранилища, чтобы предоставить кэшу доступ к источникам данных.
 

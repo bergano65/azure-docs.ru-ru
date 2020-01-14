@@ -1,28 +1,17 @@
 ---
-title: Руководство по созданию инфраструктуры для кластера Service Fabric на виртуальных машинах Azure — Azure Service Fabric | Документация Майкрософт
+title: Создание инфраструктуры для кластера на виртуальных машинах Azure
 description: В этом руководстве содержатся сведения о настройке инфраструктуры виртуальных машин Azure для запуска кластера Service Fabric.
-services: service-fabric
-documentationcenter: .net
-author: jpconnock
-manager: jpconnock
-editor: ''
-ms.assetid: ''
-ms.service: service-fabric
-ms.devlang: dotNet
 ms.topic: tutorial
-ms.tgt_pltfrm: NA
-ms.workload: NA
 ms.date: 07/22/2019
-ms.author: jeconnoc
 ms.custom: mvc
-ms.openlocfilehash: b24b4d95827dbd398c0eba43dcbad9fbfeb51469
-ms.sourcegitcommit: 4821b7b644d251593e211b150fcafa430c1accf0
+ms.openlocfilehash: 93a7e2507ab3a467ef83924479872694cae2dd5b
+ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74166275"
+ms.lasthandoff: 01/02/2020
+ms.locfileid: "75614015"
 ---
-# <a name="tutorial-create-azure-vm-infrastructure-to-host-a-service-fabric-cluster"></a>Руководство по созданию инфраструктуры виртуальных машин Azure для размещения кластера Service Fabric
+# <a name="tutorial-create-azure-vm-infrastructure-to-host-a-service-fabric-cluster"></a>Руководство. созданию инфраструктуры виртуальных машин Azure для размещения кластера Service Fabric
 
 Изолированные кластеры Service Fabric предоставляют возможность выбрать собственную среду и создать кластер в рамках подхода "любая ОС, любое облако", который применяется на платформе Service Fabric. Из этой серии руководств вы узнаете, как создать изолированный кластер, размещенный в виртуальной машине Azure, и установить в нем приложение.
 
@@ -36,7 +25,7 @@ ms.locfileid: "74166275"
 > * Вход на один из экземпляров.
 > * Подготовка экземпляра для Service Fabric.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Для работы с этим руководством вам потребуется подписка Azure.  Если у вас еще нет учетной записи, создайте ее, перейдя в [портал Azure](https://portal.azure.com).
 
@@ -129,7 +118,7 @@ ms.locfileid: "74166275"
 
    Теперь экземпляры правильно подготовлены для Service Fabric.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В первой части цикла вы узнали, как запустить три экземпляра виртуальных машин Azure и настроить их для установки Service Fabric:
 

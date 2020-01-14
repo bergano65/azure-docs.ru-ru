@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство по Azure. Создание кластера Центров событий ценовой категории "Выделенный" с помощью портала Azure
+title: Создание кластера Центров событий ценовой категории "Выделенный" с помощью портала Azure
 description: В этом кратком руководстве описано, как создать кластер Центров событий Azure с помощью портала Azure.
 services: event-hubs
 documentationcenter: ''
@@ -8,14 +8,14 @@ manager: ''
 ms.service: event-hubs
 ms.topic: quickstart
 ms.custom: mvc
-ms.date: 11/05/2019
+ms.date: 12/20/2019
 ms.author: xurui
-ms.openlocfilehash: bde6844962561232e4af51f2b4e803d49bf5398e
-ms.sourcegitcommit: bc7725874a1502aa4c069fc1804f1f249f4fa5f7
+ms.openlocfilehash: dbe34b95652d972a9e75f4ab8f2c208061359ae9
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73720642"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75437214"
 ---
 # <a name="quickstart-create-a-dedicated-event-hubs-cluster-using-azure-portal"></a>Краткое руководство. Создание выделенного кластера Центров событий с помощью портала Azure 
 Кластеры Центров событий предоставляют однотенантные развертывания для удовлетворения самых высоких требований к потоковой передаче. Для этого предложения предусмотрено Соглашение об уровне обслуживания на уровне 99,99 %, доступное только для ценовой категории "Выделенный". [Кластер Центров событий](event-hubs-dedicated-overview.md) может принимать миллионы событий в секунду с гарантированной емкостью и задержкой менее секунды. Пространства имен и концентраторы событий, созданные в кластере, используют все возможности предложения ценовой категории "Стандартный" и даже больше, но без ограничения объема входящих данных. Кроме того, ценовая категория "Выделенный" предоставляет популярную возможность ["Сбор" в Центрах событий](event-hubs-capture-overview.md) без дополнительных затрат, что позволит вам автоматически в пакетном резжиме обрабатывать и передавать потоки данных в [хранилище BLOB-объектов Azure](../storage/blobs/storage-blobs-introduction.md) или [Azure Data Lake Storage 1-го поколения](../data-lake-store/data-lake-store-overview.md).
@@ -26,7 +26,7 @@ ms.locfileid: "73720642"
 > Эта возможность самообслуживания сейчас доступна в предварительной версии на [портале Azure](https://aka.ms/eventhubsclusterquickstart). Если у вас есть вопросы по предложению ценовой категории "Выделенный", обратитесь к [группе разработчиков Центров событий](mailto:askeventhubs@microsoft.com).
 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 В рамках этого краткого руководства вам потребуются:
 
 - Учетная запись Azure. Если у вас еще нет подписки Azure, [приобретите учетную запись](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go/), прежде чем начинать работу. Эта функция не поддерживается для бесплатной учетной записи Azure. 
@@ -103,7 +103,7 @@ ms.locfileid: "73720642"
     ![Страница удаления кластера](./media/event-hubs-dedicated-cluster-create-portal/delete-cluster-page.png)
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 В этой статье описано, как создать кластер Центров событий. Пошаговые инструкции по отправке и получению событий через концентраторы событий и сбору событий в хранилище Azure или Azure Data Lake Store см. в следующих руководствах:
 
 - [Send and receive events on .NET Core](event-hubs-dotnet-standard-getstarted-send.md) (Отправка и получение событий в .NET Core)

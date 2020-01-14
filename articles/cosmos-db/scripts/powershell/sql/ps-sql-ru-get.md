@@ -1,5 +1,5 @@
 ---
-title: Скрипт Azure PowerShell — оценка подготовленной пропускной способности (ЕЗ/с) Azure Cosmos DB для API SQL (Core)
+title: Скрипт PowerShell для оценки подготовленной пропускной способности (ЕЗ/с) для API SQL (Core) Azure Cosmos DB
 description: Скрипт Azure PowerShell — оценка подготовленной пропускной способности (ЕЗ/с) Azure Cosmos DB для API SQL (Core)
 author: markjbrown
 ms.service: cosmos-db
@@ -7,12 +7,12 @@ ms.subservice: cosmosdb-sql
 ms.topic: sample
 ms.date: 07/03/2019
 ms.author: mjbrown
-ms.openlocfilehash: c7d7f295589d4e3b152016c2b55cfe07355d1cb0
-ms.sourcegitcommit: 83df2aed7cafb493b36d93b1699d24f36c1daa45
+ms.openlocfilehash: 9b4450e18aa2666806faf2c0baed8af2285e69dc
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2019
-ms.locfileid: "71178763"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75441332"
 ---
 # <a name="get-the-provisioned-throughput-rus-for-a-database-or-container-for-azure-cosmos-db---sql-core-api"></a>Оценка подготовленной пропускной способности (ЕЗ/с) для базы данных или контейнера в Azure Cosmos DB — API SQL (Core)
 
@@ -36,7 +36,7 @@ Remove-AzResourceGroup -ResourceGroupName "myResourceGroup"
 
 Этот скрипт использует следующие команды. Для каждой команды в таблице приведены ссылки на соответствующую документацию.
 
-| Команда | Примечания |
+| Get-Help | Примечания |
 |---|---|
 |**Ресурсы Azure**| |
 | [New-AzResource](https://docs.microsoft.com/powershell/module/az.resources/new-azresource) | Создает ресурс. |
@@ -44,7 +44,7 @@ Remove-AzResourceGroup -ResourceGroupName "myResourceGroup"
 | [Remove-AzResourceGroup](https://docs.microsoft.com/powershell/module/az.resources/remove-azresourcegroup) | Удаляет группу ресурсов со всеми вложенными ресурсами. |
 |||
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о Azure PowerShell см. в [документации по Azure PowerShell](https://docs.microsoft.com/powershell/).
 

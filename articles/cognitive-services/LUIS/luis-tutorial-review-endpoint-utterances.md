@@ -1,7 +1,7 @@
 ---
-title: Руководство по Проверка речевых фрагментов конечной точки — LUIS
+title: Руководство. Проверка речевых фрагментов конечной точки — LUIS
 titleSuffix: Azure Cognitive Services
-description: Повышение точности прогнозирования приложения путем проверки или корректировки высказываний, полученных через неизвестную для LUIS конечную точку HTTP интеллектуальной службы распознавания речи. Некоторые высказывания могут быть проверены на наличие намерений, а другие — на наличие сущностей.
+description: Из этого руководства вы узнаете, как повысить точность прогнозирования в приложении, проверяя или корректируя речевые фрагменты, полученные через неизвестную для LUIS конечную точку HTTP службы распознавания речи. Некоторые высказывания могут быть проверены на наличие намерений, а другие — на наличие сущностей.
 services: cognitive-services
 author: diberry
 manager: nitinme
@@ -9,16 +9,16 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: tutorial
-ms.date: 12/05/2019
+ms.date: 12/17/2019
 ms.author: diberry
-ms.openlocfilehash: 0a4d2a3345ce4f69d4492d1a782b778b1ee3bf4c
-ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
+ms.openlocfilehash: 3cecf334189989574e82772205c7d32298240867
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74895674"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75447823"
 ---
-# <a name="tutorial-fix-unsure-predictions-by-reviewing-endpoint-utterances"></a>Руководство по Исправление неточных прогнозов с помощью проверки высказываний конечной точки
+# <a name="tutorial-fix-unsure-predictions-by-reviewing-endpoint-utterances"></a>Руководство. Исправление неточных прогнозов с помощью проверки высказываний конечной точки
 Из этого учебника вы узнаете, как повысить точность прогнозирования приложения, проверяя или корректируя речевые фрагменты, полученные через неизвестную для LUIS конечную точку HTTP интеллектуальной службы распознавания речи. Речевые фрагменты конечных точек необходимо проверять в рамках планового обслуживания LUIS.
 
 Этот процесс проверки позволяет обучить LUIS для использования вашего домена приложений. В LUIS выбираются те речевые фрагменты, которые отображаются в списке проверки. Этот список:
@@ -28,8 +28,6 @@ ms.locfileid: "74895674"
 * должен периодически проверяться.
 
 Проверив фрагменты речи конечной точки, вы подтверждаете или исправляете прогнозируемое намерение фрагмента речи.
-
-[!INCLUDE [Uses preview portal](includes/uses-portal-preview.md)]
 
 **В этом руководстве рассмотрено, как выполнять следующие задачи.**
 
@@ -46,7 +44,7 @@ ms.locfileid: "74895674"
 
 Чтобы импортировать приложение, сделайте следующее:
 
-1.  Загрузите и сохраните [JSON-файл приложения](https://github.com/Azure-Samples/cognitive-services-language-understanding/blob/master/documentation-samples/tutorials/custom-domain-sentiment-HumanResources.json).
+1.  Загрузите и сохраните [JSON-файл приложения](https://github.com/Azure-Samples/cognitive-services-language-understanding/blob/master/documentation-samples/tutorials/custom-domain-sentiment-HumanResources.json?raw=true).
 
 1. В [предварительной версии портала LUIS](https://preview.luis-ai) импортируйте JSON-файл в новое приложение.
 
@@ -95,7 +93,7 @@ ms.locfileid: "74895674"
 
     Этот фрагмент речи, `I'm looking for a job with Natural Language Processing`, неправильно соотнесен с намерением.
 
-1.  Чтобы сопоставить этот фрагмент речи, в строке фрагмента выберите правильное **сопоставленное намерение** `GetJobInformation`. Добавьте измененный речевой фрагмент в приложение, установив флажок.
+1.  Чтобы сопоставить этот фрагмент речи, в строке фрагмента выберите правильное **сопоставленное намерение**`GetJobInformation`. Добавьте измененный речевой фрагмент в приложение, установив флажок.
 
     > [!div class="mx-imgBorder"]
     > ![Снимок экрана с кнопкой Review endpoint utterances (Просмотреть речевые фрагменты конечной точки) на панели навигации слева](./media/luis-tutorial-review-endpoint-utterances/select-correct-aligned-intent-for-endpoint-utterance.png)
@@ -232,7 +230,7 @@ ms.locfileid: "74895674"
 
 [!INCLUDE [LUIS How to clean up resources](../../../includes/cognitive-services-luis-tutorial-how-to-clean-up-resources.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из этого руководства вы узнали, как просматривать высказывания, отправленные неизвестной для LUIS конечной точке. После того как эти высказывания будут проверены и перенесены в правильные намерения в качестве примеров высказываний, точность прогнозов LUIS увеличится.
 

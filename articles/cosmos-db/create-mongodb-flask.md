@@ -1,5 +1,5 @@
 ---
-title: Создание веб-приложения Flask с использованием API Azure Cosmos DB для MongoDB и пакета SDK для Python
+title: Создание веб-приложения Python Flask с использованием API Azure Cosmos DB для MongoDB
 description: В этой статье представлен пример кода Python Flask, который можно использовать для подключения и выполнения запросов c помощью API Azure Cosmos DB для MongoDB.
 author: markjbrown
 ms.author: mjbrown
@@ -8,12 +8,12 @@ ms.subservice: cosmosdb-mongo
 ms.devlang: python
 ms.topic: quickstart
 ms.date: 12/26/2018
-ms.openlocfilehash: 2bd8fa81d0825e604c42c54c0f789b7939206804
-ms.sourcegitcommit: 8074f482fcd1f61442b3b8101f153adb52cf35c9
+ms.openlocfilehash: 8e58d0bdaaa5e4fb4564a68b46de7887ec28336d
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72756939"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75445494"
 ---
 # <a name="quickstart-build-a-python-app-using-azure-cosmos-dbs-api-for-mongodb"></a>Краткое руководство. Создание приложения Python с использованием API Azure Cosmos DB для MongoDB
 
@@ -30,7 +30,7 @@ Azure Cosmos DB — это глобально распределенная мн
 
 В этом кратком руководстве используется следующий [пример Flask](https://github.com/Azure-Samples/CosmosDB-Flask-Mongo-Sample) и демонстрируется, как создать простое приложение Flask с помощью [эмулятора Azure Cosmos DB](local-emulator.md) и API Azure Cosmos DB для MongoDB.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 - Скачайте [эмулятор Azure Cosmos DB](local-emulator.md). Сейчас эмулятор поддерживается только для Windows. В примере показано, как использовать образец с рабочим ключом от Azure, и это можно сделать на любой платформе.
 
@@ -72,7 +72,7 @@ Azure Cosmos DB — это глобально распределенная мн
 
 ## <a name="review-the-code"></a>Просмотр кода
 
-Этот шаг не является обязательным. Если вы хотите узнать, как создать в коде ресурсы базы данных, изучите приведенные ниже фрагменты кода. Или вы можете сразу перейти к [запуску приложения](#run-the-web-app). 
+Это необязательный шаг. Если вы хотите узнать, как создать в коде ресурсы базы данных, изучите приведенные ниже фрагменты кода. Или вы можете сразу перейти к [запуску приложения](#run-the-web-app). 
 
 Следующие фрагменты кода взяты из файла app.py. В них используется строка подключения для локального эмулятора Azure Cosmos DB. Как показано ниже, пароль необходимо разделить, чтобы адаптироваться к косым чертам, которые невозможно проанализировать иным образом.
 
@@ -90,7 +90,7 @@ Azure Cosmos DB — это глобально распределенная мн
     todos = db.todo #Select the collection
     ```
 
-* Создание приложения
+* Создайте приложение
 
     ```Python
     app = Flask(__name__)
@@ -161,7 +161,7 @@ Azure Cosmos DB — это глобально распределенная мн
 
 [!INCLUDE [cosmosdb-delete-resource-group](../../includes/cosmos-db-delete-resource-group.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом кратком руководстве вы узнали, как создать учетную запись Cosmos и запустить приложение Flask. Теперь вы можете импортировать дополнительные данные в базу данных Cosmos. 
 

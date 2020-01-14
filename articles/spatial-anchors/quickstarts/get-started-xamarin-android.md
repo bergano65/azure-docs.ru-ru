@@ -8,12 +8,12 @@ ms.author: crtreasu
 ms.date: 07/22/2019
 ms.topic: quickstart
 ms.service: azure-spatial-anchors
-ms.openlocfilehash: 2976104c72179fede3b39816663ac8196d7539ec
-ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
+ms.openlocfilehash: 94906d645ec38a24d54536ee8aa93e7418c8dc35
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74277005"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75465177"
 ---
 # <a name="quickstart-create-a-xamarin-android-app-with-azure-spatial-anchors"></a>Краткое руководство. Создание приложения Android в Xamarin с помощью Пространственных привязок Azure
 
@@ -22,22 +22,24 @@ ms.locfileid: "74277005"
 Вы узнаете, как:
 
 > [!div class="checklist"]
-> * создавать учетную запись в службе "Пространственные привязки";
+> * создать учетную запись в службе "Пространственные привязки";
 > * настроить идентификатор и ключ учетной записи в службе "Пространственные привязки";
 > * развертывать и запускать на устройстве Android.
 
 [!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 В рамках этого краткого руководства вам потребуются:
 - Компьютер с ОС Windows или MacOS:
   - При использовании Windows:
     - Актуальная версия <a href="https://www.visualstudio.com/downloads/" target="_blank">Visual Studio 2019 16.2+</a>.
-    - <a href="https://git-scm.com/download/win" target="_blank">Git для Windows</a>
+    - <a href="https://git-scm.com/download/win" target="_blank">Git для Windows</a>.
+    - <a href="https://git-lfs.github.com/">Git LFS</a>.
   - При использовании macOS:
-    - Актуальная версия <a href="https://docs.microsoft.com/visualstudio/mac/installation?view=vsmac-2019" target="_blank">Visual Studio для Mac 8.1+</a>.
-    - <a href="https://git-scm.com/download/mac" target="_blank">Git для macOS</a>
+    - последней версией <a href="https://docs.microsoft.com/visualstudio/mac/installation?view=vsmac-2019" target="_blank">Visual Studio для Mac 8.1+</a>;
+    - <a href="https://git-scm.com/download/mac" target="_blank">Git для macOS</a>.
+    - <a href="https://git-lfs.github.com/">Git LFS</a>.
 - На выбранной вами платформе установлена и запущена последняя версия Xamarin.Android. Руководство по установке Xamarin.Android см. в руководствах по [ установке Xamarin.Android](https://docs.microsoft.com/xamarin/android/get-started/installation/index).
 - Устройство Android с включенным <a href="https://developer.android.com/studio/debug/dev-options" target="_blank">режимом разработчика</a> и поддержкой <a href="https://developers.google.com/ar/discover/supported-devices" target="_blank">ARCore</a>.
   - Для взаимодействия компьютера с устройством Android могут потребоваться дополнительные драйверы устройств. Дополнительные сведения см. [здесь](https://developer.android.com/studio/run/device.html).
@@ -53,9 +55,9 @@ ms.locfileid: "74277005"
 
 ## <a name="configure-account-identifier-and-key"></a>Настройка идентификатора и ключа учетной записи
 
-Следующим шагом является настройка приложения для использования идентификатора вашей учетной записи и ключа учетной записи. Вы скопировали их в текстовый редактор, когда выполняли [настройку ресурсов Пространственных привязок](#create-a-spatial-anchors-resource).
+Следующим шагом является настройка приложения для использования идентификатора вашей учетной записи и ключа учетной записи. Вы скопировали их в текстовый редактор, когда выполняли [настройку ресурсов пространственных привязок](#create-a-spatial-anchors-resource).
 
-Откройте `Xamarin/SampleXamarin.Common/AccountDetails.cs`.
+Откройте среду `Xamarin/SampleXamarin.Common/AccountDetails.cs`.
 
 Найдите поле `SpatialAnchorsAccountKey` и замените `Set me` ключом учетной записи.
 

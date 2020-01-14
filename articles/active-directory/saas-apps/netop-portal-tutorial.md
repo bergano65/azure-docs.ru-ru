@@ -1,5 +1,5 @@
 ---
-title: Руководство по интеграции единого входа Azure Active Directory с Netop Portal | Документация Майкрософт
+title: Руководство. интеграции единого входа Azure Active Directory с Netop Portal | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в приложении Netop Portal.
 services: active-directory
 documentationCenter: na
@@ -16,14 +16,14 @@ ms.topic: tutorial
 ms.date: 10/18/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 715e9b4f3baace39cfe8bebe011ae284fc4c6b2b
-ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
+ms.openlocfilehash: c2e456114d186e548cede656da8e8d227efa09aa
+ms.sourcegitcommit: ec2eacbe5d3ac7878515092290722c41143f151d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74893269"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75550151"
 ---
-# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-netop-portal"></a>Руководство по интеграции единого входа Azure Active Directory с Netop Portal
+# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-netop-portal"></a>Руководство. интеграции единого входа Azure Active Directory с Netop Portal
 
 В этом учебнике показано, как интегрировать Netop Portal с Azure Active Directory (Azure AD). Интеграция Netop Portal с Azure AD обеспечивает следующие возможности:
 
@@ -33,11 +33,11 @@ ms.locfileid: "74893269"
 
 Чтобы узнать больше об интеграции приложений SaaS с Azure AD, прочитайте статью [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы приступить к работе, потребуется следующее:
 
-* подписка Azure AD Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
+* подписка Azure AD; Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
 * Подписка Netop Portal с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -84,7 +84,7 @@ ms.locfileid: "74893269"
 
    ![Правка базовой конфигурации SAML](common/edit-urls.png)
 
-1. В разделе  **Базовая конфигурация SAML** приложение предварительно настроено в режиме, инициированном **поставщиком удостоверений** , и для приложения заданы требуемые URL-адреса в Azure. Пользователь должен сохранить конфигурацию, нажав кнопку **Сохранить** .
+1. В разделе **Базовая конфигурация SAML** приложение предварительно настроено в режиме, инициированном **поставщиком удостоверений**, и ему заданы требуемые URL-адреса в Azure. Пользователь должен сохранить конфигурацию, нажав кнопку **Сохранить**.
 
 1. Приложение Netop Portal ожидает утверждения SAML в определенном формате, для которого требуется добавить настраиваемые сопоставления атрибутов в конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию.
 
@@ -92,7 +92,7 @@ ms.locfileid: "74893269"
 
 1. В дополнение к описанному выше приложение Netop Portal ожидает несколько дополнительных атрибутов в ответе SAML, как показано ниже. Эти атрибуты также заранее заполнены, но вы можете изменить их в соответствии со своими требованиями.
 
-    | ИМЯ |  Исходный атрибут|
+    | Имя |  Исходный атрибут|
     | ---------------| --------- |
     | NRC-ACCOUNT-ID | "adfs-demo" |
     | NRC-EMAIL | user.userprincipalname |
@@ -146,7 +146,7 @@ ms.locfileid: "74893269"
 
 ### <a name="create-netop-portal-test-user"></a>Создание тестового пользователя Netop Portal
 
-В этом разделе показано, как в приложении Netop Portal создать пользователя Britta Simon. Чтобы добавить пользователей на платформу Netop Portal, обратитесь в  [службу технической поддержки Netop Portal](mailto:casemanager@netop.com). Перед использованием единого входа необходимо создать и активировать пользователей.
+В этом разделе показано, как в приложении Netop Portal создать пользователя Britta Simon. Чтобы добавить пользователей на платформу Netop Portal, обратитесь в [службу технической поддержки Netop Portal](mailto:casemanager@netop.com). Перед использованием единого входа необходимо создать и активировать пользователей.
 
 ## <a name="test-sso"></a>Проверка единого входа 
 

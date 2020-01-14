@@ -1,6 +1,5 @@
 ---
-title: Создание приложения Angular с помощью API MongoB на Node.Js (часть 1)
-titleSuffix: Azure Cosmos DB
+title: Создание приложения на Node.js с помощью Angular и API Azure Cosmos DB для MongoDB (часть 1)
 description: Узнайте, как создать в Azure Cosmos DB приложение MongoDB с помощью Angular и Node и тех же API-интерфейсов, которые используются для MongoDB в этой серии руководств с видео.
 author: johnpapa
 ms.service: cosmos-db
@@ -11,16 +10,16 @@ ms.date: 12/26/2018
 ms.author: jopapa
 ms.custom: seodec18
 ms.reviewer: sngun
-ms.openlocfilehash: ec88b8e78c2d73ffa4badbc8ceaa468b4e5169e0
-ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
+ms.openlocfilehash: d2e7ce959edffdb2e8c929c81837e0ac3fc3da9e
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54044354"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75444689"
 ---
 # <a name="create-an-angular-app-with-azure-cosmos-dbs-api-for-mongodb"></a>Создание приложения Angular с помощью API Azure Cosmos DB для MongoDB
 
-Из этого руководства в нескольких частях вы узнаете, как создать новое приложение, написанное на Node.js с использованием Express и Angular, а затем подключить его к учетной записи Cosmos[, настроенной с помощью API Cosmos DB для MongoDB](mongodb-introduction.md).
+Из этого руководства в нескольких частях вы узнаете, как создать новое приложение, написанное на Node.js с использованием Express и Angular, а затем подключить его к [учетной записи Cosmos, настроенной с помощью API Cosmos DB для MongoDB](mongodb-introduction.md).
 
 Azure Cosmos DB — это глобально распределенная многомодельная служба базы данных Майкрософт. Она позволяет быстро создавать и запрашивать документы, пары "ключ — значение" и базы данных графов, используя преимущества глобального распределения и горизонтального масштабирования Cosmos DB. 
 
@@ -43,7 +42,7 @@ Azure Cosmos DB — это глобально распределенная мн
 
 В этом руководстве изложены пошаговые инструкции по созданию приложения. Готовое приложение можно скачать из [репозитория angular-cosmosdb](https://github.com/Azure-Samples/angular-cosmosdb) на GitHub.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой части руководства мы выполнили следующую задачу:
 
@@ -53,4 +52,4 @@ Azure Cosmos DB — это глобально распределенная мн
 Теперь можно приступить к следующей части руководства, чтобы создать приложение Node.js Express.
 
 > [!div class="nextstepaction"]
-> [Создание приложения Node.js Express с помощью Angular CLI](tutorial-develop-mongodb-nodejs-part2.md)
+> [создание приложения Node.js Express с помощью Angular CLI](tutorial-develop-mongodb-nodejs-part2.md);

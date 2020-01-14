@@ -1,6 +1,6 @@
 ---
-title: включение файла
-description: включение файла
+title: включить файл
+description: включить файл
 services: machine-learning
 author: nibaccam
 ms.service: machine-learning
@@ -9,11 +9,11 @@ manager: cgronlund
 ms.custom: include file
 ms.topic: include
 ms.date: 11/04/2019
-ms.openlocfilehash: 4985e8aa89c58673edd9ed468a54adb0b132887f
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: bfe67acf1e1bb84c7700615155ba82db1ccd114d
+ms.sourcegitcommit: ce4a99b493f8cf2d2fd4e29d9ba92f5f942a754c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73475972"
+ms.lasthandoff: 12/28/2019
+ms.locfileid: "75527065"
 ---
-**Применимо к:** ![да](media/aml-applies-to-skus/yes.png)Базовый выпуск ![да](media/aml-applies-to-skus/yes.png)Корпоративный выпуск &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; ([Обновление до выпуска "Корпоративный"](../articles/machine-learning/service/how-to-manage-workspace.md#upgrade))
+**Применимо к:** ![да](media/aml-applies-to-skus/yes.png)Базовый выпуск ![да](media/aml-applies-to-skus/yes.png)Корпоративный выпуск &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; ([Обновление до выпуска "Корпоративный"](../articles/machine-learning/how-to-manage-workspace.md#upgrade))

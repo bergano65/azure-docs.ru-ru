@@ -1,32 +1,22 @@
 ---
-title: Мониторинг и диагностика контейнеров Windows в Service Fabric в Azure | Документы Майкрософт
+title: Мониторинг и диагностика состояния контейнеров Windows
 description: В этом руководстве вы настроите журналы Azure Monitor для мониторинга и диагностики контейнеров Windows в Azure Service Fabric.
-services: service-fabric
-documentationcenter: .net
-author: athinanthny
-manager: chackdan
-editor: ''
-ms.assetid: ''
-ms.service: service-fabric
-ms.devlang: dotNet
 ms.topic: tutorial
-ms.tgt_pltfrm: NA
-ms.workload: NA
 ms.date: 07/22/2019
 ms.author: dekapur
 ms.custom: mvc
-ms.openlocfilehash: b98917e6f3c0ff6570251751a9958b202908ee3e
-ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
+ms.openlocfilehash: eeb279892f987ed1f26ced97ab267e8140ccb20e
+ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72933909"
+ms.lasthandoff: 01/02/2020
+ms.locfileid: "75614066"
 ---
-# <a name="tutorial-monitor-windows-containers-on-service-fabric-using-azure-monitor-logs"></a>Руководство по Мониторинг контейнеров Windows в Service Fabric с помощью журналов Azure Monitor
+# <a name="tutorial-monitor-windows-containers-on-service-fabric-using-azure-monitor-logs"></a>Руководство. Мониторинг контейнеров Windows в Service Fabric с помощью журналов Azure Monitor
 
 Это третья часть руководства, в которой описывается настройка журналов Azure Monitor для мониторинга контейнеров Windows, управляемых в Service Fabric.
 
-Из этого руководства вы узнаете, как выполнять следующие задачи:
+В этом руководстве описано следующее.
 
 > [!div class="checklist"]
 > * настройка журналов Azure Monitor для кластера Service Fabric;
@@ -35,7 +25,7 @@ ms.locfileid: "72933909"
 
 [!INCLUDE [azure-monitor-log-analytics-rebrand](../../includes/azure-monitor-log-analytics-rebrand.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Для работы с этим руководством вам потребуется:
 
@@ -231,9 +221,9 @@ ms.locfileid: "72933909"
 
 ![Счетчики производительности 2](./media/service-fabric-tutorial-monitoring-wincontainers/perf-counters2.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-Из этого руководства вы узнали, как выполнить следующие задачи:
+В этом руководстве вы узнали, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 > * настройка журналов Azure Monitor для кластера Service Fabric;

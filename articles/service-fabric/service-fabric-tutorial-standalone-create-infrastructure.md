@@ -1,28 +1,19 @@
 ---
-title: Руководство по созданию инфраструктуры для кластера Service Fabric в AWS — Azure Service Fabric | Документация Майкрософт
+title: Создание инфраструктуры для кластера в AWS
 description: В этом руководстве содержатся сведения о настройке инфраструктуры AWS для запуска кластера Service Fabric.
-services: service-fabric
-documentationcenter: .net
 author: dkkapur
-manager: chackdan
-editor: ''
-ms.assetid: ''
-ms.service: service-fabric
-ms.devlang: dotNet
 ms.topic: tutorial
-ms.tgt_pltfrm: NA
-ms.workload: NA
 ms.date: 05/11/2018
 ms.author: dekapur
 ms.custom: mvc
-ms.openlocfilehash: 69508628356a5f33073311e4d062d66875509192
-ms.sourcegitcommit: 375b70d5f12fffbe7b6422512de445bad380fe1e
+ms.openlocfilehash: b6348d9fdcd4133a4fa69aac3ccf5494e904094e
+ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "73177823"
+ms.lasthandoff: 01/02/2020
+ms.locfileid: "75613981"
 ---
-# <a name="tutorial-create-aws-infrastructure-to-host-a-service-fabric-cluster"></a>Руководство по созданию инфраструктуры AWS для размещения кластера Service Fabric
+# <a name="tutorial-create-aws-infrastructure-to-host-a-service-fabric-cluster"></a>Руководство. созданию инфраструктуры AWS для размещения кластера Service Fabric
 
 Изолированные кластеры Service Fabric предоставляют возможность выбрать собственную среду и создать кластер в рамках подхода "любая ОС, любое облако", который применяется на платформе Service Fabric. Из этой серии руководств вы узнаете, как создать изолированный кластер, размещенный в AWS, и установить в нем приложение.
 
@@ -36,7 +27,7 @@ ms.locfileid: "73177823"
 > * Вход на один из экземпляров.
 > * Подготовка экземпляра для Service Fabric.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Для работы с этим руководством необходима учетная запись AWS.  Если у вас еще нет учетной записи, создайте ее, перейдя в [консоль AWS](https://aws.amazon.com/).
 
@@ -76,7 +67,7 @@ New-NetFirewallRule -DisplayName "Service Fabric Ports" -Direction Inbound -Acti
 
 Наконец, выберите **Launch Instances** (Запустить экземпляры), а затем — **View Instances** (Просмотреть экземпляры).  У вас есть основа для созданного кластера Service Fabric, и теперь вам нужно добавить несколько окончательных конфигураций для самих экземпляров, чтобы подготовить их для настройки Service Fabric.
 
-## <a name="modify-the-security-group"></a>Изменение группы безопасности
+## <a name="modify-the-security-group"></a>Изменение группы безопасности.
 
 Для службы Service Fabric между узлами кластера необходимо открыть несколько портов. Чтобы открыть эти порты в инфраструктуре AWS, выберите один из созданных вами экземпляров. Затем выберите имя группы безопасности, например **launch-wizard-1**. Теперь щелкните вкладку **Inbound** (Входящие).
 
@@ -144,7 +135,7 @@ netsh advfirewall firewall set rule group="File and Printer Sharing" new enable=
 New-NetFirewallRule -DisplayName "Service Fabric Ports" -Direction Inbound -Action Allow -RemoteAddress LocalSubnet -Protocol TCP -LocalPort 135, 137-139, 445
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В первой части цикла вы узнали, как запустить три экземпляра EC2 и настроить их для установки Service Fabric:
 

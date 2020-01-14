@@ -1,6 +1,6 @@
 ---
-title: Пример скрипта Azure CLI для добавления приложения в пакетную службу | Документация Майкрософт
-description: Пример скрипта Azure CLI для добавления приложения в пакетную службу
+title: Пример скрипта Azure CLI для добавления приложения в пакетную службу
+description: В этом примере скрипта показано, как добавить приложение для использования в пуле или задаче пакетной службы Azure.
 services: batch
 documentationcenter: ''
 author: laurenhughes
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: multiple
 ms.workload: na
 ms.date: 01/29/2018
 ms.author: lahugh
-ms.openlocfilehash: ba7f64910e033751df7d158a6fddf36371f2933f
-ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
+ms.openlocfilehash: 9c580fa7ed4834ca516d373b3c7bb47f4cfd1b38
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68322242"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75390467"
 ---
 # <a name="cli-example-add-an-application-to-an-azure-batch-account"></a>Пример использования CLI. Добавление приложения в учетную запись пакетной службы Azure
 
@@ -46,7 +46,7 @@ az group delete --name myResourceGroup
 Этот скрипт использует следующие команды.
 Для каждой команды в таблице приведены ссылки на соответствующую документацию.
 
-| Команда | Примечания |
+| Get-Help | Примечания |
 |---|---|
 | [az group create](/cli/azure/group#az-group-create) | Создает группу ресурсов, в которой хранятся все ресурсы. |
 | [az storage account create](/cli/azure/storage/account#az-storage-account-create) | Создание учетной записи хранения. |
@@ -57,6 +57,6 @@ az group delete --name myResourceGroup
 | [az batch application set](/cli/azure/batch/application#az-batch-application-set) | Обновляет свойства приложения.  |
 | [az group delete](/cli/azure/group#az-group-delete) | Удаляет группу ресурсов со всеми вложенными ресурсами. |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об Azure CLI см. в [документации по Azure CLI](https://docs.microsoft.com/cli/azure).

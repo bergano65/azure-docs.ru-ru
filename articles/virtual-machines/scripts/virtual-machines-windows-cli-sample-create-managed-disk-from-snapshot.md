@@ -1,5 +1,5 @@
 ---
-title: Пример сценария Azure CLI. Создание управляемого диска на основе моментального снимка
+title: Пример для CLI. Создание управляемого диска на основе моментального снимка
 description: Пример сценария Azure CLI. Создание управляемого диска на основе моментального снимка
 services: virtual-machines-windows
 documentationcenter: storage
@@ -16,12 +16,12 @@ ms.workload: infrastructure
 ms.date: 05/19/2017
 ms.author: ramankum
 ms.custom: mvc
-ms.openlocfilehash: 5060dc81196acec65001910751498fbd8513936e
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.openlocfilehash: 2d415a12ceaf2cda0172d806d5a621b1297a74be
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74039979"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75375860"
 ---
 # <a name="create-a-managed-disk-from-a-snapshot-with-cli"></a>Создание управляемого диска на основе моментального снимка с помощью интерфейса командной строки
 
@@ -39,12 +39,12 @@ ms.locfileid: "74039979"
 
 Этот сценарий использует приведенные ниже команды для создания управляемого диска на основе моментального снимка. Для каждой команды в таблице приведены ссылки на соответствующую документацию.
 
-| Команда | Примечания |
+| Get-Help | Примечания |
 |---|---|
 | [az snapshot show](https://docs.microsoft.com/cli/azure/snapshot) | Получает все свойства моментального снимка, используя имя и свойства группы ресурсов моментального снимка. Свойство идентификатора используется для создания управляемого диска.  |
 | [az disk create](https://docs.microsoft.com/cli/azure/disk) | Создает управляемый диск с помощью идентификатора управляемого моментального снимка. |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об Azure CLI см. в [документации по Azure CLI](https://docs.microsoft.com/cli/azure).
 

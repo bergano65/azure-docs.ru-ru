@@ -1,28 +1,17 @@
 ---
-title: Развертывание приложения-контейнера с помощью CI/CD в кластере Azure Service Fabric
+title: Развертывание приложения-контейнера с помощью CI/CD
 description: В этом руководстве представлены общие сведения о том, как настроить непрерывные интеграцию и развертывание для приложения-контейнера Azure Service Fabric с помощью Visual Studio Azure DevOps.
-services: service-fabric
-documentationcenter: .net
-author: athinanthny
-manager: chackdan
-editor: ''
-ms.assetid: ''
-ms.service: service-fabric
-ms.devlang: dotNet
 ms.topic: tutorial
-ms.tgt_pltfrm: NA
-ms.workload: NA
 ms.date: 08/29/2018
-ms.author: atsenthi
 ms.custom: mvc
-ms.openlocfilehash: a2dc6aeb7dc2a62c543a58c322c23c9661c6940a
-ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
+ms.openlocfilehash: 9cf619eddd07bbe55cd7aea5f27051a7d0415c24
+ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73832739"
+ms.lasthandoff: 01/02/2020
+ms.locfileid: "75614138"
 ---
-# <a name="tutorial-deploy-a-container-application-with-cicd-to-a-service-fabric-cluster"></a>Руководство по Развертывание приложения-контейнера с помощью CI/CD в кластере Service Fabric
+# <a name="tutorial-deploy-a-container-application-with-cicd-to-a-service-fabric-cluster"></a>Руководство. Развертывание приложения-контейнера с помощью CI/CD в кластере Service Fabric
 
 Это второе руководство из цикла. В нем описано, как настроить непрерывные интеграцию и развертывание для приложения-контейнера Azure Service Fabric с помощью Visual Studio Azure DevOps.  Вам потребуется существующее приложение Service Fabric. В качестве примера используется приложение, созданное в руководстве [по развертыванию приложения .NET из контейнера Windows в Azure Service Fabric](service-fabric-host-app-in-a-container.md).
 
@@ -34,7 +23,7 @@ ms.locfileid: "73832739"
 > * Создание определения выпуска в Visual Studio Team Explorer
 > * Автоматическое развертывание и обновление приложения
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Перед началом работы с этим руководством выполните следующие действия:
 
@@ -94,7 +83,7 @@ ms.locfileid: "73832739"
 
 Щелкните **Tag images** (Добавление тегов к образам).
 
-Для параметра **Тип реестра контейнеров** выберите **Реестр контейнеров Azure**. Выберите **подписку Azure**, затем щелкните **Авторизовать**. Выберите **Реестр контейнеров Azure**.
+Для параметра **Тип реестра контейнеров** выберите значение **Реестр контейнеров Azure**. Выберите **подписку Azure**, затем щелкните **Авторизовать**. Выберите **Реестр контейнеров Azure**.
 
 ![Выбор команды Docker для добавления тегов к образам][select-tag-images]
 
@@ -185,7 +174,7 @@ ms.locfileid: "73832739"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Из этого руководства вы узнали, как выполнить следующие задачи:
+В этом руководстве вы узнали, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 > * Добавление проекта в систему управления версиями

@@ -1,7 +1,7 @@
 ---
-title: Руководство по Руководство по составным сущностям — LUIS
+title: Руководство. Руководство по составным сущностям — LUIS
 titleSuffix: Azure Cognitive Services
-description: Добавление составной сущности для объединения извлеченных данных различных типов в содержащую сущность. Клиентское приложение может легко извлекать связанные данные разных типов путем их объединения.
+description: В этом руководстве описывается добавление составной сущности для объединения извлеченных данных различных типов в содержащую сущность. Клиентское приложение может легко извлекать связанные данные разных типов путем их объединения.
 services: cognitive-services
 author: diberry
 manager: nitinme
@@ -9,16 +9,16 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: tutorial
-ms.date: 12/05/2019
+ms.date: 12/17/2019
 ms.author: diberry
-ms.openlocfilehash: 0e72563f366330f841d1a61ed67956b6314c769a
-ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
+ms.openlocfilehash: f2b2c3f52610cd9fae0845b15aebf032a088000b
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74893197"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75447950"
 ---
-# <a name="tutorial-group-and-extract-related-data"></a>Руководство по Группирование и извлечение связанных данных
+# <a name="tutorial-group-and-extract-related-data"></a>Руководство. Группирование и извлечение связанных данных
 В этом руководстве описывается добавление составной сущности для объединения извлеченных данных различных типов в содержащую сущность. Клиентское приложение может легко извлекать связанные данные разных типов путем их объединения.
 
 Целью сущности является группировка связанных сущностей в сущность родительской категории. До создания составной сущности информация существует в виде отдельных сущностей.
@@ -27,9 +27,7 @@ ms.locfileid: "74893197"
 
 * данные связаны между собой;
 * для них используются различные типы сущностей;
-* они должны быть сгруппированы и обработаны клиентским приложением в качестве единицы информации.
-
-[!INCLUDE [Only valid with current portal](includes/old-portal-only.md)]
+* Должны быть сгруппированы и обработаны клиентским приложением в качестве единицы информации.
 
 **В этом руководстве рассмотрено, как выполнять следующие задачи.**
 
@@ -44,11 +42,12 @@ ms.locfileid: "74893197"
 
 [!INCLUDE [LUIS Free account](../../../includes/cognitive-services-luis-free-key-short.md)]
 
-## <a name="import-example-app"></a>Импорт примера приложения
+## <a name="import-example-app"></a>Импортировать пример приложения
 
-1.  Скачайте и сохраните [JSON-файл приложения](https://github.com/Azure-Samples/cognitive-services-language-understanding/blob/master/documentation-samples/tutorials/build-app/tutorial_list.json) из учебника по сущностям списка.
+1.  Скачайте и сохраните [JSON-файл приложения](
+https://github.com/Azure-Samples/cognitive-services-language-understanding/blob/master/documentation-samples/tutorials/build-app/tutorial_list.json?raw=true) из учебника по сущностям списка.
 
-2. Импортируйте JSON-файл в новое приложение.
+2. Импортируйте JSON-файл в новое приложение на [портале LUIS](https://www.luis.ai).
 
 3. Из раздела **Управление** на вкладке **Версии** скопируйте версию и назовите ее `composite`. Клонирование — это отличный способ поэкспериментировать с различными функциями LUIS без влияния на исходную версию. Так как имя версии используется в маршруте URL-адреса, оно не может содержать символы, которые недопустимы в URL-адресе.
 
@@ -63,7 +62,7 @@ ms.locfileid: "74893197"
 |Примеры высказываний|
 |--|
 |Перевести Джона Смита в бухгалтерию.|
-|Перевести Джил Джонс в отдел исследований.|
+|Перевести Джил Джонс в отдел научных исследований и разработки.|
 
 Запрос на перевод должен включать названия отдела и имя сотрудника.
 
@@ -107,7 +106,7 @@ LUIS предоставляет несколько предварительно 
 
 1. Убедитесь, что все высказывания в намерении помечены составной сущностью.
 
-## <a name="train-the-app-so-the-changes-to-the-intent-can-be-tested"></a>Обучите приложение для проверки изменений намерения
+## <a name="train-the-app-so-the-changes-to-the-intent-can-be-tested"></a>Обучение приложения для проверки изменений намерения
 
 [!INCLUDE [LUIS How to Train steps](../../../includes/cognitive-services-luis-tutorial-how-to-train.md)]
 
@@ -191,16 +190,16 @@ LUIS предоставляет несколько предварительно 
 
 [!INCLUDE [LUIS How to clean up resources](../../../includes/cognitive-services-luis-tutorial-how-to-clean-up-resources.md)]
 
-## <a name="related-information"></a>Связанные сведения
+## <a name="related-information"></a>Дополнительные сведения
 
 * [Учебник по сущности списка](luis-quickstart-intents-only.md)
 * Сведения о понятии [составной сущности](luis-concept-entity-types.md)
-* [Обучение](luis-how-to-train.md)
+* [Обучение активной версии приложения LUIS](luis-how-to-train.md)
 * [Как опубликовать предложение](luis-how-to-publish-app.md)
 * [Тестирование приложения LUIS на портале LUIS](luis-interactive-test.md)
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из этого руководства вы узнали, как создать составную сущность, предназначенную для инкапсуляции существующих сущностей. Это позволяет клиентскому приложению находить группы связанных данных разных типов и продолжать разговор. Клиентское приложение для приложения по управлению персоналом может спросить о дате и времени начала и завершения перемещения. Также оно может спросить о других логистических аспектах, например о номере телефона.
 

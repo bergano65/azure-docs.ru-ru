@@ -1,28 +1,19 @@
 ---
-title: Руководство по установке изолированного клиента Service Fabric в Azure Service Fabric | Документация Майкрософт
+title: Установка изолированного клиента Service Fabric
 description: В этом руководстве показано, как установить изолированный клиент Service Fabric в кластере, созданном в предыдущем руководстве.
-services: service-fabric
-documentationcenter: .net
 author: dkkapur
-manager: chackdan
-editor: ''
-ms.assetid: ''
-ms.service: service-fabric
-ms.devlang: dotNet
 ms.topic: tutorial
-ms.tgt_pltfrm: NA
-ms.workload: NA
 ms.date: 07/22/2019
 ms.author: dekapur
 ms.custom: mvc
-ms.openlocfilehash: 82358f4d5548464f1304d77a846d71863ed9efa1
-ms.sourcegitcommit: 04ec7b5fa7a92a4eb72fca6c6cb617be35d30d0c
+ms.openlocfilehash: bbaf7dfc546c739dfb858be7ef8372eccf60111b
+ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/22/2019
-ms.locfileid: "68385002"
+ms.lasthandoff: 01/02/2020
+ms.locfileid: "75613947"
 ---
-# <a name="tutorial-install-and-create-service-fabric-cluster"></a>Руководство по установке и созданию кластера Service Fabric
+# <a name="tutorial-install-and-create-service-fabric-cluster"></a>Руководство. установке и созданию кластера Service Fabric
 
 Изолированные кластеры Service Fabric предоставляют возможность выбрать собственную среду и создать кластер в рамках подхода "любая ОС, любое облако", который применяется на платформе Service Fabric. Из этой серии учебников вы узнаете, как создать изолированный кластер, размещенный в AWS или Azure, и установить в нем приложение.
 
@@ -108,7 +99,7 @@ NoDomainController         : True
 Passed                     : True
 ```
 
-## <a name="create-the-cluster"></a>Создание кластера
+## <a name="create-the-cluster"></a>Создайте кластер.
 
 После успешной проверки конфигурации кластера выполните скрипт *CreateServiceFabricCluster.ps1*, чтобы развернуть кластер Service Fabric на виртуальные машины в файле конфигурации.
 
@@ -135,7 +126,7 @@ Your cluster is successfully created! You can connect and manage your cluster us
 
 Вы можете добавить узлы в изолированный кластер Service Fabric или удалить их из него в соответствии с изменениями потребностей компании. Подробные инструкции статье [Добавление узлов в автономный кластер Service Fabric или удаление узлов из него](service-fabric-cluster-windows-server-add-remove-nodes.md) .
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из второй части в серии вы узнали не только о передаче больших объемов случайных данных в учетную запись хранения в параллельном режиме, но и о том, как выполнять такие задачи:
 

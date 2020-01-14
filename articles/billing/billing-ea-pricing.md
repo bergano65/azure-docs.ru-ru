@@ -9,15 +9,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 10/01/2019
+ms.date: 09/30/2019
 ms.author: banders
 ms.custom: seodec18
-ms.openlocfilehash: b32c1be93e2fb16da9ce9ebb65b664017e70cac6
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: 60e366466e399bbde78b026e0b401cd6bd1edbee
+ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74223945"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75644398"
 ---
 # <a name="view-and-download-your-organizations-azure-pricing"></a>Просмотр и скачивание сведений о ценах для вашей организации
 
@@ -36,7 +36,7 @@ ms.locfileid: "74223945"
 
    ![Снимок экрана с пунктом "Использование+расходы" в разделе "Выставление счетов"](./media/billing-ea-pricing/ea-pricing-usage-charges-nav.png)
 
-1. Выберите ![Снимок экрана с поиском на портале Azure](./media/billing-ea-pricing/download-icon.png) **Скачать** для месяца.
+1. Выберите ![Снимок экрана с поиском на портале Azure](./media/billing-ea-pricing/download-icon.png) **Скачать** возле месяца.
 
 1. В разделе **Прейскурант** выберите **Скачать CSV-файл**.
 
@@ -91,7 +91,7 @@ ms.locfileid: "74223945"
 ## <a name="check-your-billing-account-type"></a>Проверка типа учетной записи выставления счетов
 [!INCLUDE [billing-check-account-type](../../includes/billing-check-account-type.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если вы являетесь клиентом с соглашением Enterprise, см. следующие сведения:
 
@@ -106,4 +106,4 @@ ms.locfileid: "74223945"
 - [Просмотр и скачивание счета Microsoft Azure](billing-download-azure-invoice.md)
 - [Скачивание или просмотр счета на оплату и данных о ежедневном использовании в Azure](billing-download-azure-daily-usage.md)
 - [View and download tax documents for your billing profile](billing-mca-download-tax-document.md) (Просмотр и скачивание налоговых документов для профиля выставления счетов)
-- [Общие сведения об оплате счета для профиля выставления счетов](billing-mca-understand-your-bill.md)
+- [Общие сведения о расходах, включенных в счет клиентского соглашения Майкрософт](billing-mca-understand-your-bill.md)

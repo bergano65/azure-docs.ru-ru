@@ -1,5 +1,5 @@
 ---
-title: Как использовать Хранилище таблиц Azure и API таблиц Azure Cosmos DB с Ruby
+title: Использование API таблиц Azure Cosmos DB и Хранилища таблиц Azure с Ruby
 description: Хранение структурированных данных в облаке с помощью хранилища таблиц Azure или API таблиц Azure Cosmos DB.
 ms.service: cosmos-db
 ms.subservice: cosmosdb-table
@@ -9,12 +9,12 @@ ms.date: 04/05/2018
 author: wmengmsft
 ms.author: wmeng
 ms.reviewer: sngun
-ms.openlocfilehash: 3603455674485a505a7dbc969554a881947940ae
-ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
+ms.openlocfilehash: 0a2649db7639338b7b2714181b8caf670306f987
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54036262"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75441160"
 ---
 # <a name="how-to-use-azure-table-storage-and-the-azure-cosmos-db-table-api-with-ruby"></a>Как использовать Хранилище таблиц Azure и API таблиц Azure Cosmos DB с Ruby
 [!INCLUDE [storage-selector-table-include](../../includes/storage-selector-table-include.md)]
@@ -71,7 +71,7 @@ table_client = Azure::Storage::Table::TableService.new(client: common_client)
 ```
 
 ## <a name="create-a-table"></a>Создание таблицы
-Объект **Azure::Storage::Table::TableService** позволяет работать с таблицами и сущностями. Чтобы создать таблицу, используйте метод **create_table()**. В следующем примере создается таблица или выводится ошибка, если она возникла.
+Объект **Azure::Storage::Table::TableService** позволяет работать с таблицами и сущностями. Чтобы создать таблицу, используйте метод **create_table()** . В следующем примере создается таблица или выводится ошибка, если она возникла.
 
 ```ruby
 azure_table_service = Azure::Storage::Table::TableService.new
@@ -99,7 +99,7 @@ azure_table_service.insert_entity("testtable", entity)
 * **insert_or_merge_entity():** обновляет имеющуюся сущность путем ее замены. Если сущность не существует, будет вставлена новая сущность.
 * **insert_or_replace_entity():** обновляет сущность посредством объединения новых значений свойств с имеющейся сущностью. Если сущность не существует, будет вставлена новая сущность.
 
-В следующем примере показано обновление сущности с помощью метода **update_entity()**.
+В следующем примере показано обновление сущности с помощью метода **update_entity()** .
 
 ```ruby
 entity = { "content" => "test entity with updated content",
@@ -107,7 +107,7 @@ entity = { "content" => "test entity with updated content",
 azure_table_service.update_entity("testtable", entity)
 ```
 
-Если сущность, которая обновляется, не существует, при использовании метода **update_entity()** или **merge_entity()** операция завершится ошибкой. Поэтому, если вы хотите сохранить сущность независимо от того, существует она или нет, используйте метод **insert_or_replace_entity()** или **insert_or_merge_entity()**.
+Если сущность, которая обновляется, не существует, при использовании метода **update_entity()** или **merge_entity()** операция завершится ошибкой. Поэтому, если вы хотите сохранить сущность независимо от того, существует она или нет, используйте метод **insert_or_replace_entity()** или **insert_or_merge_entity()** .
 
 ## <a name="work-with-groups-of-entities"></a>Работа с группами сущностей
 Иногда имеет смысл отправлять совместно несколько операций в пакете для атомарной обработки сервером. Для этого сначала требуется создать объект **Batch**, а затем использовать метод **execute_batch()** для **TableService**. В следующем примере показана отправка двух сущностей с RowKey 2 и 3 в пакете. Обратите внимание, что пример работает только для сущностей с одинаковым значением PartitionKey.
@@ -123,7 +123,7 @@ results = azure_table_service.execute_batch(batch)
 ```
 
 ## <a name="query-for-an-entity"></a>Запрос сущности
-Чтобы отправить запрос к сущности в таблице, используйте метод **get_entity()**: передайте имя таблицы, **PartitionKey** и **RowKey**.
+Чтобы отправить запрос к сущности в таблице, используйте метод **get_entity()** : передайте имя таблицы, **PartitionKey** и **RowKey**.
 
 ```ruby
 result = azure_table_service.get_entity("testtable", "test-partition-key",
@@ -131,7 +131,7 @@ result = azure_table_service.get_entity("testtable", "test-partition-key",
 ```
 
 ## <a name="query-a-set-of-entities"></a>Запрос набора сущностей
-Чтобы отправить запрос к набору сущностей в таблице, создайте хэш-объект запроса и используйте метод **query_entities()**. В следующем примере показано, как получить все сущности с одним значением **PartitionKey**:
+Чтобы отправить запрос к набору сущностей в таблице, создайте хэш-объект запроса и используйте метод **query_entities()** . В следующем примере показано, как получить все сущности с одним значением **PartitionKey**:
 
 ```ruby
 query = { :filter => "PartitionKey eq 'test-partition-key'" }
@@ -153,7 +153,7 @@ result, token = azure_table_service.query_entities("testtable", query)
 ```
 
 ## <a name="delete-an-entity"></a>Удаление сущности
-Чтобы удалить сущность, используйте метод **delete_entity()**. Передайте имя таблицы, содержащей сущность, а также свойства PartitionKey и RowKey сущности.
+Чтобы удалить сущность, используйте метод **delete_entity()** . Передайте имя таблицы, содержащей сущность, а также свойства PartitionKey и RowKey сущности.
 
 ```ruby
 azure_table_service.delete_entity("testtable", "test-partition-key", "1")
@@ -166,7 +166,7 @@ azure_table_service.delete_entity("testtable", "test-partition-key", "1")
 azure_table_service.delete_table("testtable")
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Обозреватель хранилищ Microsoft Azure](../vs-azure-tools-storage-manage-with-storage-explorer.md) — это бесплатное автономное приложение от корпорации Майкрософт, позволяющее визуализировать данные из службы хранилища Azure на платформе Windows, macOS и Linux.
 * [Центр разработчиков для Ruby](https://azure.microsoft.com/develop/ruby/)

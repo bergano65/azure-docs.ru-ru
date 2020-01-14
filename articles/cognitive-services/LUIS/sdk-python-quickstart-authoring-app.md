@@ -1,7 +1,7 @@
 ---
 title: Краткое руководство. Клиентская библиотека для разработки Распознавания речи (LUIS) для Python
 titleSuffix: Azure Cognitive Services
-description: Начните работу с клиентской библиотекой LUIS для Python. Выполните приведенные здесь действия, чтобы установить пакет и протестировать пример кода для выполнения базовых задач.
+description: В этом кратком руководстве описано, как приступить к работе с клиентской библиотекой LUIS для Python. Выполните приведенные здесь действия, чтобы установить пакет и протестировать пример кода для выполнения базовых задач.
 services: cognitive-services
 author: diberry
 manager: nitinme
@@ -10,12 +10,12 @@ ms.subservice: language-understanding
 ms.topic: quickstart
 ms.date: 11/22/2019
 ms.author: diberry
-ms.openlocfilehash: 97bb86dc702802fd071015364cf205c4f1bb11d5
-ms.sourcegitcommit: 4c831e768bb43e232de9738b363063590faa0472
+ms.openlocfilehash: 398220306fad4dc3459446fa5f77371ac669dd7f
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74422713"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75381500"
 ---
 # <a name="quickstart-language-understanding-luis-authoring-client-library-for-python"></a>Краткое руководство. Клиентская библиотека для разработки Распознавания речи (LUIS) для Python
 
@@ -30,7 +30,7 @@ ms.locfileid: "74422713"
 
 [Справочная документация](https://docs.microsoft.com/python/api/azure-cognitiveservices-language-luis/index?view=azure-python) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/cognitiveservices/azure-cognitiveservices-language-luis/azure/cognitiveservices/language/luis) | [Пакет для разработки (Pypi)](https://pypi.org/project/azure-cognitiveservices-language-luis/) | [Образцы кода](https://github.com/Azure-Samples/cognitive-services-quickstart-code/blob/master/python/LUIS/application_quickstart.py)
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * Учетная запись портала Распознавания речи (LUIS): [Создайте бесплатно](https://www.luis.ai).
 * [Python 3.x](https://www.python.org/)
@@ -46,7 +46,7 @@ ms.locfileid: "74422713"
 Используя ключ и регион для ключа, создайте две переменные среды для проверки подлинности:
 
 * `LUIS_AUTHORING_KEY` — ключ ресурса для проверки подлинности запросов.
-* `LUIS_REGION` — регион, связанный с ключом. Пример: `westus`.
+* `LUIS_REGION` — регион, связанный с ключом. Например, `westus`.
 
 Используйте инструкции для своей операционной системы.
 
@@ -197,9 +197,9 @@ python quickstart-file.py
 Если вы хотите очистить и удалить подписку Cognitive Services, вы можете удалить ресурс или группу ресурсов. При этом удаляются все ресурсы, связанные с ней.
 
 * [Портал](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account#clean-up-resources)
-* [Интерфейс командной строки Azure](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account-cli#clean-up-resources) 
+* [Azure CLI](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account-cli#clean-up-resources) 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 >[Создание приложения LUIS для определения намерений пользователя](luis-quickstart-intents-only.md)

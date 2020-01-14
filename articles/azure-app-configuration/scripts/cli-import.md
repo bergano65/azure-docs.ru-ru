@@ -1,5 +1,6 @@
 ---
-title: Пример скрипта Azure CLI. Импорт в хранилище службы "Конфигурация приложений Azure" | Документация Майкрософт
+title: Пример скрипта Azure CLI. Импорт в хранилище службы "Конфигурация приложений"
+titleSuffix: Azure App Configuration
 description: Информация и примеры скриптов для импорта данных в хранилище конфигураций приложения Azure
 services: azure-app-configuration
 documentationcenter: ''
@@ -14,12 +15,12 @@ ms.workload: azure-app-configuration
 ms.date: 02/24/2019
 ms.author: yegu
 ms.custom: mvc
-ms.openlocfilehash: 6399039a68279a5b734fb3d7cb5bfad60e2c35e1
-ms.sourcegitcommit: dbde4aed5a3188d6b4244ff7220f2f75fce65ada
+ms.openlocfilehash: 28c04859f23b3a560166aa62ac903e1204fc5d97
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74185009"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75413292"
 ---
 # <a name="import-to-an-azure-app-configuration-store"></a>Импорт в хранилище конфигураций приложения Azure
 
@@ -50,11 +51,11 @@ az appconfig kv import --name myTestAppConfigStore --source file --path ~/Import
 
 В этом скрипте используются следующие команды для импорта в хранилище службы "Конфигурация приложений". Для каждой команды в таблице приведены ссылки на соответствующую документацию.
 
-| Команда | Примечания |
+| Get-Help | Примечания |
 |---|---|
 | [az appconfig kv import](/cli/azure/ext/appconfig/appconfig/kv#ext-appconfig-az-appconfig-kv-import) | Импортирует данные в ресурс хранилища службы "Конфигурация приложений". |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об Azure CLI см. в [документации по Azure CLI](/cli/azure).
 

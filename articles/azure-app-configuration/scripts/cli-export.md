@@ -1,5 +1,6 @@
 ---
-title: Пример скрипта Azure CLI. Экспорт из хранилища конфигураций для приложения Azure | Документация Майкрософт
+title: Пример скрипта Azure CLI. Экспорт из хранилища конфигураций приложения в Azure
+titleSuffix: Azure App Configuration
 description: Информация и примеры скриптов для экспорта данных их хранилища конфигураций приложения Azure
 services: azure-app-configuration
 documentationcenter: ''
@@ -14,12 +15,12 @@ ms.workload: azure-app-configuration
 ms.date: 02/24/2019
 ms.author: yegu
 ms.custom: mvc
-ms.openlocfilehash: 7969300e9865c943c0f3759277bd26529c0c5464
-ms.sourcegitcommit: dbde4aed5a3188d6b4244ff7220f2f75fce65ada
+ms.openlocfilehash: 28066fcea50180189cff7f9af790908c52a4a261
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74184887"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75433600"
 ---
 # <a name="export-from-an-azure-app-configuration-store"></a>Экспорт из хранилища конфигураций для приложения Azure
 
@@ -50,11 +51,11 @@ az appconfig kv export --name myTestAppConfigStore --file ~/Export.json
 
 В этом скрипте используются следующие команды для экспорта из хранилища Конфигурации приложений. Для каждой команды в таблице приведены ссылки на соответствующую документацию.
 
-| Команда | Примечания |
+| Get-Help | Примечания |
 |---|---|
 | [az appconfig kv export](/cli/azure/ext/appconfig/appconfig/kv#ext-appconfig-az-appconfig-kv-export) | Экспортирует данные из ресурса хранилища Конфигурации приложений. |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об Azure CLI см. в [документации по Azure CLI](/cli/azure).
 

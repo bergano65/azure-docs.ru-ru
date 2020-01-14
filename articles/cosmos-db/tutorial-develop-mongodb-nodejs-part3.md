@@ -1,6 +1,5 @@
 ---
-title: Создание приложения Angular с помощью API Azure Cosmos DB для MongoDB. Создание пользовательского интерфейса с помощью Angular
-titleSuffix: Azure Cosmos DB
+title: Создание пользовательского интерфейса для приложения Angular с помощью API Azure Cosmos DB для MongoDB (часть 3)
 description: Часть 3 серии руководств по созданию в Azure Cosmos DB приложения MongoDB с помощью Angular, Node и тех же API, которые используются для MongoDB.
 author: johnpapa
 ms.service: cosmos-db
@@ -11,12 +10,12 @@ ms.date: 12/26/2018
 ms.author: jopapa
 ms.custom: seodec18
 ms.reviewer: sngun
-ms.openlocfilehash: 286ccfe84f511ffccdc8919b2e717cd21f124c2b
-ms.sourcegitcommit: 33091f0ecf6d79d434fa90e76d11af48fd7ed16d
+ms.openlocfilehash: c9467aef1dd7d28b41c2e05b5f157a158d7377ab
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54158709"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75444743"
 ---
 # <a name="create-an-angular-app-with-azure-cosmos-dbs-api-for-mongodb---build-the-ui-with-angular"></a>Создание приложения Angular с помощью API Azure Cosmos DB для MongoDB. Создание пользовательского интерфейса с помощью Angular
 
@@ -26,14 +25,14 @@ ms.locfileid: "54158709"
 
 > [!div class="checklist"]
 > * создание пользовательского интерфейса Angular;
-> * использование каскадных таблиц стилей для оформления;
+> * Использование каскадных таблиц стилей для оформления
 > * локальное тестирование приложения.
 
 ## <a name="video-walkthrough"></a>Видеоруководство
 
 > [!VIDEO https://www.youtube.com/embed/MnxHuqcJVoM]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Перед переходом к этой части руководства убедитесь, что выполнены все задачи из [части 2](tutorial-develop-mongodb-nodejs-part2.md).
 
@@ -487,13 +486,13 @@ ms.locfileid: "54158709"
 
     Теперь давайте запустим приложение.
 
-2. В Visual Studio Code нажмите кнопку **Отладка** слева ![значок отладки в Visual Studio Code](./media/tutorial-develop-mongodb-nodejs-part2/debug-button.png), а затем — кнопку **Начать отладку** ![значок начала отладки в Visual Studio Code](./media/tutorial-develop-mongodb-nodejs-part3/start-debugging-button.png).
+2. В Visual Studio Code нажмите кнопку **Отладка** слева ![значок отладки в Visual Studio Code](./media/tutorial-develop-mongodb-nodejs-part2/debug-button.png), а затем — кнопку **Начать отладку**![значок начала отладки в Visual Studio Code](./media/tutorial-develop-mongodb-nodejs-part3/start-debugging-button.png).
 
 3. Теперь откройте браузер и перейдите по адресу **localhost:3000**. Как видите, приложение выполняется локально.
 
      ![Приложение Hero, которое выполняется в локальной среде](./media/tutorial-develop-mongodb-nodejs-part3/azure-cosmos-db-mongodb-mean-app.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой части руководства мы выполнили следующую задачу:
 
@@ -504,4 +503,4 @@ ms.locfileid: "54158709"
 Теперь можно приступить к следующей части руководства, чтобы создать учетную запись Azure Cosmos DB.
 
 > [!div class="nextstepaction"]
-> [Создание учетной записи Azure Cosmos DB с помощью Azure CLI](tutorial-develop-mongodb-nodejs-part4.md)
+> [создание учетной записи Azure Cosmos DB с помощью Azure CLI](tutorial-develop-mongodb-nodejs-part4.md);

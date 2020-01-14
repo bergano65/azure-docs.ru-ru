@@ -4,22 +4,22 @@ description: Общие сведения о службе "Блокчейн Azure
 ms.date: 11/21/2019
 ms.topic: overview
 ms.reviewer: janders
-ms.openlocfilehash: 02cc955822987e3be6f5a2184fc49e5510b29626
-ms.sourcegitcommit: 12d902e78d6617f7e78c062bd9d47564b5ff2208
+ms.openlocfilehash: 55e1be191b21c7c66b013f70d83fe6c046488e05
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2019
-ms.locfileid: "74455917"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75387383"
 ---
 # <a name="what-is-azure-blockchain-service"></a>Что собой представляет служба "Блокчейн Azure"?
 
 Служба "Блокчейн Azure" — это полностью управляемая финансовая служба, которая позволяет пользователям расширять и использовать сети блокчейна в Azure. Обеспечивая унифицированный контроль для управления как инфраструктурой, так и сетями блокчейна, служба "Блокчейн Azure" предоставляет:
 
 * простое развертывание и использование сети;
-* встроенные возможности управления консорциумом;
+* Встроенные возможности управления консорциумом
 * разработка смарт-контрактов с помощью привычных средств разработки.
 
-Служба "Блокчейн Azure" предназначена для поддержки нескольких финансовых протоколов. В настоящее время она поддерживает протокол Ethereum [Quorum](https://www.jpmorgan.com/Quorum), используя механизм консенсуса [IBFT](https://github.com/jpmorganchase/quorum/wiki/Quorum-Consensus).
+Служба "Блокчейн Azure" предназначена для поддержки нескольких финансовых протоколов. В настоящее время она поддерживает протокол Ethereum [Quorum](https://www.goquorum.com/), используя механизм консенсуса [IBFT](https://github.com/jpmorganchase/quorum/wiki/Quorum-Consensus).
 
 Эти возможности почти не требуют администрирования и предоставляются без дополнительной оплаты. Вы можете сосредоточиться на разработке приложений и бизнес-логики, не тратя время и ресурсы на управление виртуальными машинами и инфраструктурой. Кроме того, вы можете продолжить разработку приложения, используя инструменты и платформу с открытым кодом по вашему выбору, чтобы предоставлять решения, не изучая ничего нового.
 
@@ -67,12 +67,19 @@ ms.locfileid: "74455917"
 
 ## <a name="support-and-feedback"></a>Поддержка и обратная связь
 
-Вам нужна помощь или у вас есть предложение?
+Посещайте [блог, посвященный Блокчейну Azure](https://azure.microsoft.com/blog/topics/blockchain/), чтобы оставаться в курсе предложений услуг для блокчейна и просматривать информацию, предоставляемую группой разработчиков Блокчейна Azure.
 
-* Посетите [блог по Блокчейну Azure](https://azure.microsoft.com/blog/topics/blockchain/), сайт [Microsoft Tech Community](https://techcommunity.microsoft.com/t5/Blockchain/bd-p/AzureBlockchain) и [форум по Блокчейну Azure](https://social.msdn.microsoft.com/Forums/home?forum=azureblockchain).
-* Чтобы отправить отзыв или отправить запрос на новые возможности, создайте запись через [UserVoice](https://feedback.azure.com/forums/921130-azure-blockchain-service).
+Чтобы отправить отзыв о продукте или запросить новые функции, опубликуйте обращение на [форуме обратной связи по Блокчейну Azure](https://aka.ms/blockchainuservoice).
 
-## <a name="next-steps"></a>Дополнительная информация
+### <a name="community-support"></a>Поддержка сообщества
+
+Получите возможность проконсультироваться с инженерами Майкрософт и специалистами из сообщества Блокчейна Azure.
+
+* [Форум MSDN по Блокчейну Azure](https://social.msdn.microsoft.com/Forums/home?forum=azureblockchain)
+* [Техническое сообщество Майкрософт](https://techcommunity.microsoft.com/t5/Blockchain/bd-p/AzureBlockchain)
+* [Stack Overflow](https://stackoverflow.com/questions/tagged/AzureBlockchainService)
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы приступить к работе, воспользуйтесь кратким руководством или найдите дополнительные сведения в этих ресурсах.
 * [Создайте элемент блокчейна, используя портал Azure](create-member.md) или [Azure CLI](create-member-cli.md).

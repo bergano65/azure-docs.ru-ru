@@ -8,15 +8,15 @@ ms.service: active-directory
 ms.subservice: app-mgmt
 ms.topic: overview
 ms.workload: identity
-ms.date: 10/29/2019
+ms.date: 12/18/2019
 ms.author: mimart
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 21b89704bdd2836057db8f7a78244205efb9cc90
-ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
+ms.openlocfilehash: 0e97b95e290ef74ffd98a3396ffe4705270132b2
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2019
-ms.locfileid: "73896192"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75433763"
 ---
 # <a name="secure-hybrid-access-secure-legacy-apps-with-app-delivery-controllers-and-networks"></a>Защищенный гибридный доступ. Защита устаревших приложений с помощью контроллеров и сетей доставки приложений
 
@@ -28,5 +28,7 @@ ms.locfileid: "73896192"
 
 Приведенные ниже поставщики предлагают готовые решения и подробные рекомендации по интеграции с Azure AD.
 
+* [Доступ к корпоративному приложению Akamai (EAA)](../saas-apps/akamai-tutorial.md)
+* [Контроллер доставки приложений Citrix (ADC)](../saas-apps/citrix-netscaler-tutorial.md)
 * [F5 Big-IP APM](https://aka.ms/f5-hybridaccessguide)
 * [Zscaler Private Access (ZPA)](https://aka.ms/zscaler-hybridaccessguide)

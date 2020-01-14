@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство по созданию масштабируемого набора виртуальных машин Windows с помощью шаблона Azure | Документация Майкрософт
+title: Краткое руководство. Создание масштабируемого набора виртуальных машин Windows с помощью шаблона Azure
 description: Узнайте, как быстро создать масштабируемый набор виртуальных машин Windows с помощью шаблона Azure Resource Manager, который позволяет развернуть пример приложения и настроить правила автоматического масштабирования.
 services: virtual-machine-scale-sets
 documentationcenter: ''
@@ -16,12 +16,12 @@ ms.topic: quickstart
 ms.custom: mvc
 ms.date: 03/27/2018
 ms.author: cynthn
-ms.openlocfilehash: bfbe3d6aac6e97f3568c3c0ce3643bb215726a0b
-ms.sourcegitcommit: aebe5a10fa828733bbfb95296d400f4bc579533c
+ms.openlocfilehash: f3dd2fd092e49a0e526856f1e55211ec1837cfa4
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70376181"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75351098"
 ---
 # <a name="quickstart-create-a-windows-virtual-machine-scale-set-with-an-azure-template"></a>Краткое руководство. Создание масштабируемого набора виртуальных машин Windows с помощью шаблона Azure
 
@@ -41,13 +41,13 @@ ms.locfileid: "70376181"
 
 | Свойство                     | Описание свойства                                  | Пример значения в шаблоне                    |
 |------------------------------|----------------------------------------------------------|-------------------------------------------|
-| Тип                         | Создаваемый тип ресурса Azure                            | Microsoft.Compute/virtualMachineScaleSets; |
+| type                         | Создаваемый тип ресурса Azure                            | Microsoft.Compute/virtualMachineScaleSets; |
 | name                         | Имя масштабируемого набора                                       | myScaleSet                                |
 | location                     | Расположение для создания масштабируемого набора                     | Восточная часть США                                   |
 | sku.name                     | Размер виртуальной машины для каждого экземпляра в масштабируемом наборе                  | Standard_A1                               |
 | sku.capacity                 | Количество экземпляров виртуальных машин, которое требуется изначально создать           | 2                                         |
-| upgradePolicy.mode           | Режим обновления экземпляра виртуальной машины при внесении изменений              | Автоматический                                 |
-| imageReference               | Платформа или пользовательский образ, используемые для экземпляров виртуальных машин. | Microsoft Windows Server 2016 Datacenter  |
+| upgradePolicy.mode           | Режим обновления экземпляра виртуальной машины при внесении изменений              | Автоматически                                 |
+| imageReference               | Платформа или пользовательский образ, используемые для экземпляров виртуальных машин | Microsoft Windows Server 2016 Datacenter  |
 | osProfile.computerNamePrefix | Префикс имени для каждого экземпляра виртуальной машины                     | myvmss                                    |
 | osProfile.adminUsername      | Имя пользователя для каждого экземпляра виртуальной машины                        | azureuser                                 |
 | osProfile.adminPassword      | Пароль для каждого экземпляра виртуальной машины                        | P@ssw0rd!                                 |
@@ -136,7 +136,7 @@ ms.locfileid: "70376181"
 ```
 
 ## <a name="deploy-the-template"></a>Развертывание шаблона
-Шаблон [приложения ASP.NET MVC в Windows](https://github.com/Azure/azure-quickstart-templates/tree/master/201-vmss-windows-webapp-dsc-autoscale) можно развернуть с помощью кнопки **Развертывание в Azure**. После ее нажатия откроется портал Azure, загрузится весь шаблон и будет предложено ввести некоторые параметры, такие как имя масштабируемого набора, число экземпляров и учетные данные администратора.
+Шаблон [приложения ASP.NET MVC в Windows](https://github.com/Azure/azure-quickstart-templates/tree/master/201-vmss-windows-webapp-dsc-autoscale) можно развернуть с помощью кнопки **Развертывание в Azure**. После ее нажатия откроется портал Azure, загрузится весь шаблон и появится диалог для ввода параметров, таких как имя масштабируемого набора, число экземпляров и учетные данные администратора.
 
 [![Развертывание шаблона в Azure](media/virtual-machine-scale-sets-create-template/deploy-button.png)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F201-vmss-windows-webapp-dsc-autoscale%2Fazuredeploy.json)
 
@@ -181,7 +181,7 @@ Remove-AzResourceGroup -Name "myResourceGroup" -Force -AsJob
 ```
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 С помощью этого краткого руководства вы создали масштабируемый набор Windows с помощью шаблона Azure, а также установили простое приложение ASP.NET на экземплярах виртуальных машин с помощью расширения PowerShell DSC. Чтобы получить дополнительные сведения, продолжите роботу с руководством по созданию масштабируемых наборов виртуальных машин Azure и управлению ими.
 
 > [!div class="nextstepaction"]

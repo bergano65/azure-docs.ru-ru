@@ -1,26 +1,16 @@
 ---
-title: Создание приложения-контейнера Linux в Service Fabric в Azure | Документы Майкрософт
+title: Создание приложения-контейнера Linux в Service Fabric в Azure
 description: В этом руководстве вы создадите образ Docker с приложением, отправите образ в реестр контейнеров и развернете контейнер в кластер Service Fabric.
-services: service-fabric
-documentationcenter: linux
-author: athinanthny
-manager: chackdan
-editor: ''
-ms.assetid: ''
-ms.service: service-fabric
-ms.devlang: python
 ms.topic: quickstart
-ms.tgt_pltfrm: NA
-ms.workload: NA
 ms.date: 07/22/2019
 ms.author: suhuruli
 ms.custom: mvc
-ms.openlocfilehash: 0f6e24d2790f78ab0ec7292640fda3ab30e03a03
-ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
+ms.openlocfilehash: eb0a83d0110002cc32998af4083d06cf6e86e16a
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68599400"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75372692"
 ---
 # <a name="quickstart-deploy-linux-containers-to-service-fabric"></a>Краткое руководство. Развертывание контейнеров Linux в Service Fabric
 
@@ -30,7 +20,7 @@ Azure Service Fabric — это платформа распределенных 
 
 ![Веб-страница приложения для голосования][quickstartpic]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Для работы с этим кратким руководством сделайте следующее:
 
@@ -87,7 +77,7 @@ az sf cluster create --resource-group $ResourceGroupName --location $Location --
 ```
 
 > [!Note]
-> Служба веб-интерфейса ожидает передачи данных через порт 80 для входящего трафика. По умолчанию порт 80 открыт в виртуальных машинах кластера и в балансировщике нагрузки Azure.
+> Служба веб-интерфейса ожидает передачи данных через порт 80 для входящего трафика. По умолчанию порт 80 открыт в виртуальных машинах кластера и в подсистеме балансировки нагрузки Azure.
 >
 
 ## <a name="configure-your-environment"></a>Настройка среды
@@ -188,12 +178,12 @@ ResourceGroupName="containertestcluster"
 az group delete --name $ResourceGroupName
 ```
 
-По завершении работы с кластером можно удалить сертификат из хранилища сертификатов. Например:
-- Действия для ОС Windows. Используйте [оснастку MMC для сертификатов](https://docs.microsoft.com/dotnet/framework/wcf/feature-details/how-to-view-certificates-with-the-mmc-snap-in). При добавлении оснастки не забудьте выбрать **свою учетную запись пользователя**. Перейдите в папку `Certificates - Current User\Personal\Certificates` и удалите сертификат.
+По завершении работы с кластером можно удалить сертификат из хранилища сертификатов. Пример:
+- В Windows: Используйте [оснастку MMC для сертификатов](https://docs.microsoft.com/dotnet/framework/wcf/feature-details/how-to-view-certificates-with-the-mmc-snap-in). При добавлении оснастки не забудьте выбрать **свою учетную запись пользователя**. Перейдите в папку `Certificates - Current User\Personal\Certificates` и удалите сертификат.
 - Для компьютеров Mac. Используйте приложение цепочки ключей.
-- Для Ubuntu. Выполните шаги, которые вы использовали для просмотра сертификатов, и удалите сертификат.
+- В Ubuntu: Выполните шаги, которые вы использовали для просмотра сертификатов, и удалите сертификат.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из этого краткого руководства вы узнали, как развернуть приложение-контейнер Linux в кластере Service Fabric в Azure, выполнить отработку отказа для приложения и масштабировать приложение в кластере. Дополнительные сведения о работе с контейнерами Linux в Service Fabric см. в руководстве для приложений-контейнеров Linux.
 

@@ -1,34 +1,23 @@
 ---
-title: Создание кластера Service Fabric под управлением Windows в Azure | Документация Майкрософт
+title: Создание кластера Service Fabric под управлением Windows в Azure
 description: Из этого руководства вы узнаете, как развернуть кластер Service Fabric на платформе Windows в виртуальной сети и группе безопасности сети Azure с помощью PowerShell.
-services: service-fabric
-documentationcenter: .net
-author: athinanthny
-manager: chackdan
-editor: ''
-ms.assetid: ''
-ms.service: service-fabric
-ms.devlang: dotNet
 ms.topic: tutorial
-ms.tgt_pltfrm: NA
-ms.workload: NA
 ms.date: 07/22/2019
-ms.author: atsenthi
 ms.custom: mvc
-ms.openlocfilehash: 28571584fbd82b245e85e2ebe5b1d282ab5ae979
-ms.sourcegitcommit: 98ce5583e376943aaa9773bf8efe0b324a55e58c
+ms.openlocfilehash: 086379e788966b300f988e06ec42c94b880b8281
+ms.sourcegitcommit: ec2eacbe5d3ac7878515092290722c41143f151d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73177987"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75551732"
 ---
-# <a name="tutorial-deploy-a-service-fabric-cluster-running-windows-into-an-azure-virtual-network"></a>Руководство по развертыванию кластера Service Fabric на платформе Windows в виртуальной сети Azure
+# <a name="tutorial-deploy-a-service-fabric-cluster-running-windows-into-an-azure-virtual-network"></a>Руководство. развертыванию кластера Service Fabric на платформе Windows в виртуальной сети Azure
 
 Это руководство представляет первую часть цикла. Вы узнаете, как развернуть в Azure кластер Service Fabric на платформе Windows в [виртуальной сети Azure](../virtual-network/virtual-networks-overview.md) и [группе безопасности сети](../virtual-network/virtual-networks-nsg.md) с помощью шаблона и PowerShell. Выполнив инструкции из этого учебника, вы получите кластер в облаке, в котором можно разворачивать приложения. Создание кластера Linux с помощью Azure CLI описывается в статье о [создании защищенного кластера Linux в Azure](service-fabric-tutorial-create-vnet-and-linux-cluster.md).
 
 В этом руководстве описывается рабочий сценарий. Если вы хотите создать небольшой кластер для тестирования, ознакомьтесь с [этой статьей](./scripts/service-fabric-powershell-create-secure-cluster-cert.md).
 
-Из этого руководства вы узнаете, как выполнять следующие задачи:
+В этом руководстве описано следующее.
 
 > [!div class="checklist"]
 > * создание виртуальной сети в Azure с помощью PowerShell;
@@ -53,7 +42,7 @@ ms.locfileid: "73177987"
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Перед началом работы с этим руководством выполните следующие действия:
 
@@ -112,6 +101,7 @@ ms.locfileid: "73177987"
 
 * ClientConnectionEndpoint (протокол TCP): 19000;
 * HttpGatewayEndpoint (HTTP/TCP): 19080;
+* SMB: 445
 * Межузловая передача сообщений: 1025, 1026, 1027;
 * Диапазон временных портов: от 49152 до 65534 (требуется минимум 256 портов);
 * Порты для использования в приложениях: 80 и 443
@@ -177,12 +167,12 @@ ms.locfileid: "73177987"
 
 В этой статье предполагается, что клиент уже создан. Если это не так, обратитесь к статье [Краткое руководство. Настройка среды разработки](../active-directory/develop/quickstart-create-new-tenant.md).
 
-Чтобы упростить некоторые шаги по настройке Azure AD с кластером Service Fabric, мы создали набор скриптов для Windows PowerShell. [Скачайте сценарии](https://github.com/robotechredmond/Azure-PowerShell-Snippets/tree/master/MicrosoftAzureServiceFabric-AADHelpers/AADTool) на компьютер.
+Чтобы упростить некоторые шаги по настройке Azure AD с кластером Service Fabric, мы создали набор скриптов для Windows PowerShell. [Скачайте сценарии](https://github.com/Azure-Samples/service-fabric-aad-helpers) на компьютер.
 
 ### <a name="create-azure-ad-applications-and-assign-users-to-roles"></a>Создание приложения Azure AD и назначение ролей пользователям
 Создайте два приложения Azure AD для управления доступом к кластеру: одно веб-приложение и одно собственное приложение. Создав приложения, представляющие кластер, назначьте пользователям [роли, поддерживаемые Service Fabric](service-fabric-cluster-security-roles.md): с правами только на чтение и администратора.
 
-Запустите `SetupApplications.ps1` и укажите идентификатор клиента, имя кластера и URL-адрес ответа веб-приложения в качестве параметров. Укажите имена пользователей и пароли для пользователей. Например:
+Запустите `SetupApplications.ps1` и укажите идентификатор клиента, имя кластера и URL-адрес ответа веб-приложения в качестве параметров. Укажите имена пользователей и пароли для пользователей. Пример:
 
 ```powershell
 $Configobj = .\SetupApplications.ps1 -TenantId '<MyTenantID>' -ClusterName 'mysfcluster123' -WebApplicationReplyUrl 'https://mysfcluster123.eastus.cloudapp.azure.com:19080/Explorer/index.html' -AddResourceAccess
@@ -195,7 +185,7 @@ $Configobj = .\SetupApplications.ps1 -TenantId '<MyTenantID>' -ClusterName 'mysf
 
 *TenantId* или идентификатор каталога вы можете найти на [портале Azure](https://portal.azure.com). Выберите **Azure Active Directory** > **Свойства** и скопируйте значение **идентификатора каталога**.
 
-Значение *ClusterName* используется в качестве префикса для приложений Azure AD, создаваемых сценарием. Оно не должно совпадать с именем реального кластера. Оно нужно только для удобства сопоставления артефактов AAD с кластером Service Fabric.
+Значение *ClusterName* используется в качестве префикса для приложений Azure AD, создаваемых скриптом. Оно не должно совпадать с именем реального кластера. Оно нужно только для удобства сопоставления артефактов AAD с кластером Service Fabric.
 
 *WebApplicationReplyUrl* является конечной точкой по умолчанию, которую Azure AD возвращает пользователям после завершения ими входа. Эту конечную точку следует назначить конечной точкой Service Fabric Explorer для кластера, по умолчанию это:
 
@@ -259,7 +249,7 @@ https://&lt;cluster_domain&gt;:19080/Explorer
 }
 ```
 
-Добавьте значения параметров в файл параметров [azuredeploy.parameters.json][parameters]. Например:
+Добавьте значения параметров в файл параметров [azuredeploy.parameters.json][parameters]. Пример:
 
 ```json
 "aadTenantId": {
@@ -715,7 +705,7 @@ Get-ServiceFabricClusterHealth
 
 Кластер, который вы только что создали, используется в других статьях этого цикла учебников. Если вы не собираетесь немедленно приступить к следующей статье, то можете [удалить кластер](service-fabric-cluster-delete.md), чтобы за него не взималась плата.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Перейдите к следующему учебнику, который посвящен масштабированию кластера.
 

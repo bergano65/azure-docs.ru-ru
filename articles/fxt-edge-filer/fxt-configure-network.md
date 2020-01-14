@@ -1,19 +1,19 @@
 ---
-title: Настройка параметров сети для кластера Microsoft Azure FXT Edge Filer
+title: Руководство. Настройка сети в кластере Azure FXT Edge Filer
 description: Настройка параметров сети после создания кластера Azure FXT Edge Filer
 author: ekpgh
+ms.author: rohogue
 ms.service: fxt-edge-filer
 ms.topic: tutorial
 ms.date: 06/20/2019
-ms.author: rohogue
-ms.openlocfilehash: d250e566d884760244ee25e4c43d30fbe5323a7c
-ms.sourcegitcommit: 1c2659ab26619658799442a6e7604f3c66307a89
+ms.openlocfilehash: a40ff50dcb0934cbf1ea5222675bd75948ac1d03
+ms.sourcegitcommit: ec2eacbe5d3ac7878515092290722c41143f151d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72254893"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75551069"
 ---
-# <a name="tutorial-configure-the-clusters-network-settings"></a>Руководство по настройке параметров сети кластера 
+# <a name="tutorial-configure-the-clusters-network-settings"></a>Руководство. настройке параметров сети кластера
 
 Прежде чем использовать созданный кластер Azure FXT Edge Filer, необходимо проверить и настроить несколько параметров сети для рабочего процесса. 
 
@@ -146,7 +146,7 @@ update add 12.0.0.10.in-addr.arpa. 86400 PTR vs1-client-IP-12.example.com
 
 Ознакомьтесь с [параметрами DNS](<https://azure.github.io/Avere/legacy/ops_guide/4_7/html/gui_admin_network.html#gui-dns>) в руководстве по настройке кластера для получения дополнительных сведений.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Это последний шаг базовой конфигурации для кластера Azure FXT Edge Filer. 
 

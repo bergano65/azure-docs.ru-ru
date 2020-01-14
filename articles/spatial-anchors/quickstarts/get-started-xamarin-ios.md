@@ -8,12 +8,12 @@ ms.author: crtreasu
 ms.date: 07/22/2019
 ms.topic: quickstart
 ms.service: azure-spatial-anchors
-ms.openlocfilehash: d2e1612804c78e3436b776cdffea7e19bc2925fe
-ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
+ms.openlocfilehash: c5e217a33c8b461a438e2d0209fe6733850634e6
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74277000"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75465152"
 ---
 # <a name="quickstart-create-a-xamarin-ios-app-with-azure-spatial-anchors"></a>Краткое руководство. Создание приложение для iOS с Xamarin с помощью Пространственных привязок Azure
 
@@ -22,19 +22,20 @@ ms.locfileid: "74277000"
 Вы узнаете, как:
 
 > [!div class="checklist"]
-> * создавать учетную запись в службе "Пространственные привязки";
+> * создать учетную запись в службе "Пространственные привязки";
 > * настроить идентификатор и ключ учетной записи в службе "Пространственные привязки";
-> * выполнять развертывание и запуск на устройстве iOS.
+> * выполнить развертывание и запуск на устройстве iOS.
 
 [!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 В рамках этого краткого руководства вам потребуются:
 - Mac под управлением macOS High Sierra (10.13) или более поздней версии с:
   - последней версией Xcode и iOS SDK, установленной из [App Store](https://itunes.apple.com/us/app/xcode/id497799835?mt=12);
   - последней версией <a href="https://docs.microsoft.com/visualstudio/mac/installation?view=vsmac-2019" target="_blank">Visual Studio для Mac 8.1+</a>;
   - <a href="https://git-scm.com/download/mac" target="_blank">Git для macOS</a>.
+  - <a href="https://git-lfs.github.com/">Git LFS</a>.
 
 [!INCLUDE [Create Spatial Anchors resource](../../../includes/spatial-anchors-get-started-create-resource.md)]
 
@@ -46,9 +47,9 @@ ms.locfileid: "74277000"
 
 ## <a name="configure-account-identifier-and-key"></a>Настройка идентификатора и ключа учетной записи
 
-Следующим шагом является настройка приложения для использования идентификатора вашей учетной записи и ключа учетной записи. Вы скопировали их в текстовый редактор, когда выполняли [настройку ресурсов Пространственных привязок](#create-a-spatial-anchors-resource).
+Следующим шагом является настройка приложения для использования идентификатора вашей учетной записи и ключа учетной записи. Вы скопировали их в текстовый редактор, когда выполняли [настройку ресурсов пространственных привязок](#create-a-spatial-anchors-resource).
 
-Откройте `Xamarin/SampleXamarin.Common/AccountDetails.cs`.
+Откройте среду `Xamarin/SampleXamarin.Common/AccountDetails.cs`.
 
 Найдите поле `SpatialAnchorsAccountKey` и замените `Set me` ключом учетной записи.
 

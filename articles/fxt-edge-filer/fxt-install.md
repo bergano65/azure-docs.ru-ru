@@ -1,20 +1,19 @@
 ---
-title: Руководство по установке физического устройства Azure FXT Edge Filer | Документация Майкрософт
+title: Руководство. Установка физического устройства Azure FXT Edge Filer
 description: Как распаковать, установить в стойку и подключить компонент физического устройства кэша гибридного хранилища Microsoft Azure FXT Edge Filer
-services: ''
 author: ekpgh
+ms.author: rohogue
 ms.service: fxt-edge-filer
 ms.topic: tutorial
 ms.date: 07/01/2019
-ms.author: rohogue
-ms.openlocfilehash: 0f3c7b01ee9d4a62ec0d563af55f2086894081be
-ms.sourcegitcommit: 1c2659ab26619658799442a6e7604f3c66307a89
+ms.openlocfilehash: 7c77e25d0dcabc49f2e6672645c6bc41e8662ec8
+ms.sourcegitcommit: ec2eacbe5d3ac7878515092290722c41143f151d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72256046"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75551035"
 ---
-# <a name="tutorial-install-azure-fxt-edge-filer"></a>Руководство по установке Azure FXT Edge Filer 
+# <a name="tutorial-install-azure-fxt-edge-filer"></a>Руководство. установке Azure FXT Edge Filer 
 
 В этом руководстве описано, как установить аппаратный узел для кэша гибридного хранилища Azure FXT Edge Filer. Чтобы создать кластер Azure FXT Edge Filer, необходимо установить как минимум три аппаратных узла.
 
@@ -27,7 +26,7 @@ ms.locfileid: "72256046"
 > [!div class="checklist"]
 > * распаковка устройства;
 > * установка устройства в стойку;
-> * установка передней панели (необязательно).
+> * Установка передней панели (необязательно)
 
 ## <a name="installation-prerequisites"></a>Предварительные требования для установки 
 
@@ -220,7 +219,7 @@ ms.locfileid: "72256046"
    
    ![Схема с изображением кнопки извлечения слева от передней панели и способа ее снятия с левой стороны](media/fxt-install/remove-bezel-edited-600.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 После распаковки и установки устройства Azure FXT Edge Filer в стойку подключите сетевые кабели и источник питания переменного тока.
 

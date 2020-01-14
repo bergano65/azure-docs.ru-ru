@@ -1,5 +1,5 @@
 ---
-title: Руководство по интеграции единого входа Azure Active Directory с Workday | Документация Майкрософт
+title: Руководство. интеграции единого входа Azure Active Directory с Workday | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Workday.
 services: active-directory
 documentationCenter: na
@@ -13,17 +13,17 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 08/20/2019
+ms.date: 11/20/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9fe63ba810724216b1b356896b621f1e5b021bbf
-ms.sourcegitcommit: e0e6663a2d6672a9d916d64d14d63633934d2952
+ms.openlocfilehash: d2bf769169b579cb0a06a48b3a5998efb89eb8fb
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "69891975"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75443328"
 ---
-# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-workday"></a>Руководство по интеграции единого входа Azure Active Directory с Workday
+# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-workday"></a>Руководство. интеграции единого входа Azure Active Directory с Workday
 
 В этом руководстве описано, как интегрировать Workday с Azure Active Directory (Azure AD). Интеграция Workday с Azure AD обеспечивает следующие возможности.
 
@@ -33,11 +33,11 @@ ms.locfileid: "69891975"
 
 Чтобы узнать больше об интеграции приложений SaaS с Azure AD, прочитайте статью [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы приступить к работе, потребуется следующее:
 
-* подписка Azure AD Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
+* подписка Azure AD; Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
 * подписка Workday с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -80,7 +80,7 @@ ms.locfileid: "69891975"
 
 1. На странице **Базовая конфигурация SAML** введите значения для следующих полей.
 
-    a. В текстовое поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://impl.workday.com/<tenant>/login-saml2.flex`.
+    а. В текстовое поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://impl.workday.com/<tenant>/login-saml2.flex`.
 
     b. В текстовом поле **Идентификатор** введите URL-адрес в формате `http://www.workday.com`.
 
@@ -107,7 +107,7 @@ ms.locfileid: "69891975"
 
     ![image](./media/workday-tutorial/signing-option.png)
 
-    a. Для параметра **Вариант подписывания** выберите значение **Ответ знака SAML и утверждение**.
+    а. Для параметра **Вариант подписывания** выберите значение **Ответ знака SAML и утверждение**.
 
     b. Нажмите кнопку **Сохранить**
 
@@ -157,7 +157,7 @@ ms.locfileid: "69891975"
 
     ![URL-адреса перенаправления](./media/workday-tutorial/IC7829581.png "URL-адреса перенаправления")
 
-    a. Нажмите кнопку **Добавить строку**.
+    а. Нажмите кнопку **Добавить строку**.
 
     b. В текстовые поля **Login Redirect URL** (URL-адрес перенаправления входа), **Timeout Redirect URL** (URL-адрес перенаправления при превышении времени ожидания) и **Mobile Redirect URL** (URL-адрес перенаправления для мобильных устройств) вставьте значение **URL-адрес входа**, скопированное из раздела **Настройка Workday** на портале Azure.
 
@@ -167,14 +167,14 @@ ms.locfileid: "69891975"
 
    > [!NOTE]
    > Значение атрибута "Среда" привязано к значению URL-адреса клиента.  
-   > Если URL-адрес имени домена клиента Workday начинается с impl (например: *https:\//impl.workday.com/\<клиент\>/login-saml2.flex*), атрибуту **Environment** должно быть присвоено значение Implementation.  
+   > Если URL-адрес имени домена клиента Workday начинается с impl (например, *https://www.myworkday.com/"tenant"/login-saml2.htmld*), атрибуту **Environment** нужно присвоить значение Implementation.  
    > Если имя домена начинается с другого значения, следует обратиться к [группе поддержки клиентов Workday](https://www.workday.com/en-us/partners-services/services/support.html), чтобы получить соответствующее значение атрибута **Environment**.
 
 4. В разделе **Настройка SAML** выполните следующие действия.
 
     ![Настройка SAML](./media/workday-tutorial/IC782926.png "Настройка SAML")
 
-    a.  Установите флажок **Включить проверку подлинности SAML**.
+    а.  Установите флажок **Включить проверку подлинности SAML**.
 
     b.  Нажмите кнопку **Добавить строку**.
 
@@ -182,7 +182,7 @@ ms.locfileid: "69891975"
 
     ![Поставщики удостоверений SAML](./media/workday-tutorial/IC7829271.png "Поставщики удостоверений SAML")
 
-    a. В текстовом поле **Имя поставщика удостоверений** введите имя поставщика (например, *SPInitiatedSSO*).
+    а. В текстовом поле **Имя поставщика удостоверений** введите имя поставщика (например, *SPInitiatedSSO*).
 
     b. На портале Azure в разделе **Настройка Workday** скопируйте значение **Идентификатор Azure AD** и вставьте его в текстовое поле **Issuer** (Издатель).
 
@@ -192,9 +192,9 @@ ms.locfileid: "69891975"
 
     d. На портале Azure в разделе **Настройка Workday** скопируйте значение **URL-адрес входа** и вставьте его в текстовое поле **IdP SSO Service URL** (URL-адрес службы единого входа поставщика удостоверений).
 
-    д. В текстовом поле **Used for Environments** (Используется для сред) выберите имя среды.
+    д) В текстовом поле **Used for Environments** (Используется для сред) выберите имя среды.
 
-    Е. Щелкните **Identity Provider Public Key Certificate** (Сертификат открытого ключа поставщика удостоверений), а затем нажмите кнопку **Создать**.
+    е) Щелкните **Identity Provider Public Key Certificate** (Сертификат открытого ключа поставщика удостоверений), а затем нажмите кнопку **Создать**.
 
     ![Создание](./media/workday-tutorial/IC782928.png "Создание")
 
@@ -206,7 +206,7 @@ ms.locfileid: "69891975"
 
     ![View x509 Public Key](./media/workday-tutorial/IC782930.png "View x509 Public Key")
 
-    a. В текстовом поле **Name** (Имя) введите имя сертификата (например, *PPE\_SP*).
+    а. В текстовом поле **Name** (Имя) введите имя сертификата (например, *PPE\_SP*).
 
     b. В текстовом поле **Действителен с** введите начальную дату действия сертификата.
 
@@ -219,25 +219,25 @@ ms.locfileid: "69891975"
 
     d.  Откройте сертификат в кодировке Base-64 в блокноте и скопируйте его содержимое.
 
-    д.  Вставьте содержимое буфера обмена в текстовое поле **Сертификат** .
+    д)  Вставьте содержимое буфера обмена в текстовое поле **Сертификат** .
 
-    Е.  Последовательно выберите **ОК**.
+    е)  Нажмите кнопку **ОК**.
 
 7. Выполните следующие действия:
 
     ![Настройка единого входа](./media/workday-tutorial/WorkdaySSOConfiguratio.png "Настройка единого входа")
 
-    a.  В текстовом поле **Service Provider ID** (Идентификатор поставщика службы) введите **http://www.workday.com** .
+    а.  В текстовом поле **Service Provider ID** (Идентификатор поставщика службы) введите **http://www.workday.com** .
 
     b. Выберите параметр **Не отклонять запрос проверки подлинности, инициированный поставщиком услуг**.
 
     c. Для параметра **Authentication Request Signature Method** (Метод подписи запроса аутентификации) выберите значение **SHA256**.
 
-    ![Метод подписи запроса проверки подлинности](./media/workday-tutorial/WorkdaySSOConfiguration.png "Метод подписи запроса проверки подлинности") 
+    ![Метод подписи запроса проверки подлинности](./media/workday-tutorial/WorkdaySSOConfiguration.png "Метод подписи запроса проверки подлинности")
 
-    d. Последовательно выберите **ОК**.
+    d. Нажмите кнопку **ОК**.
 
-    ![ОК;](./media/workday-tutorial/IC782933.png "ОК")
+    ![OK](./media/workday-tutorial/IC782933.png "OK")
 
     > [!NOTE]
     > Убедитесь, что единый вход установлен правильно. Если вы включите неправильные установки единого входа, то не сможете войти в приложение со своими учетными данными и вас заблокируют. В таком случае Workday предоставляет резервную копию url входа, с помощью которой пользователи могут войти, используя обычные имя пользователя и пароль, в таком формате:[Ваш URL Workday]/login.flex?redirect=n

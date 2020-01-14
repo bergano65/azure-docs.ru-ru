@@ -1,28 +1,19 @@
 ---
-title: Мониторинг и диагностика служб ASP.NET Core в Service Fabric в Azure | Документы Майкрософт
+title: Мониторинг и диагностика состояния служб ASP.NET Core
 description: Из этого руководства вы узнаете, как настроить мониторинг и диагностику приложения ASP.NET Core в Azure Service Fabric.
-services: service-fabric
-documentationcenter: .net
 author: dkkapur
-manager: chackdan
-editor: ''
-ms.assetid: ''
-ms.service: service-fabric
-ms.devlang: dotNet
 ms.topic: tutorial
-ms.tgt_pltfrm: NA
-ms.workload: NA
 ms.date: 07/10/2019
 ms.author: dekapur
 ms.custom: mvc
-ms.openlocfilehash: 1f18aef12978b3df1ba1fd654ea4a0e9548a4b46
-ms.sourcegitcommit: 920ad23613a9504212aac2bfbd24a7c3de15d549
+ms.openlocfilehash: b226c37c36da033862377860be4c413229651fb6
+ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68228082"
+ms.lasthandoff: 01/02/2020
+ms.locfileid: "75614049"
 ---
-# <a name="tutorial-monitor-and-diagnose-an-aspnet-core-application-on-service-fabric-using-application-insights"></a>Руководство по Мониторинг и диагностика приложения ASP.NET Core в Service Fabric с помощью Application Insights
+# <a name="tutorial-monitor-and-diagnose-an-aspnet-core-application-on-service-fabric-using-application-insights"></a>Руководство. Мониторинг и диагностика приложения ASP.NET Core в Service Fabric с помощью Application Insights
 
 Это руководство представляет собой пятую часть цикла. В нем описывается настройка мониторинга и диагностики приложения ASP.NET Core, запущенного в кластере Service Fabric, с помощью Application Insights. Мы будем собирать данные телеметрии из приложения, разработанного в первой части цикла, [Создание приложения .NET Service Fabric](service-fabric-tutorial-create-dotnet-app.md).
 
@@ -41,7 +32,7 @@ ms.locfileid: "68228082"
 > * [Настройка CI/CD с помощью Azure Pipelines](service-fabric-tutorial-deploy-app-with-cicd-vsts.md)
 > * Настройка мониторинга и диагностики приложения
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Перед началом работы с этим руководством выполните следующие действия:
 
@@ -266,7 +257,7 @@ public async Task<IActionResult> Delete(string name)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Из этого руководства вы узнали, как выполнить следующие задачи:
+В этом руководстве вы узнали, как выполнять следующие задачи:
 > [!div class="checklist"]
 > * настройка Application Insights для приложения;
 > * сбор данных телеметрии ответов для трассировки связи по протоколу HTTP между службами;

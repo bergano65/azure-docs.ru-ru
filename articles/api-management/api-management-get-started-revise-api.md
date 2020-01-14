@@ -1,5 +1,6 @@
 ---
-title: Безопасное внесение некритических изменений с помощью редакций в службе управления API Azure | Документация Майкрософт
+title: Использование редакций для безопасного внесения некритических изменений в службе "Управление API"
+titleSuffix: Azure API Management
 description: Следуйте инструкциям этого руководства, чтобы научиться вносить некритические изменения с помощью редакций в службе управления API.
 services: api-management
 documentationcenter: ''
@@ -13,17 +14,17 @@ ms.custom: mvc
 ms.topic: tutorial
 ms.date: 11/04/2019
 ms.author: apimpm
-ms.openlocfilehash: 811591a3340f07b08b3a954ccd475e926b73a9cf
-ms.sourcegitcommit: 98ce5583e376943aaa9773bf8efe0b324a55e58c
+ms.openlocfilehash: c91d42f3445bb2ffc02366e6cb9ae49ec2db1be4
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73176777"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75442747"
 ---
 # <a name="use-revisions-to-make-non-breaking-changes-safely"></a>Безопасное внесение некритических изменений с помощью редакций
 Когда готовый к работе API начинают использовать разработчики, следует осторожно вносить изменения в этот API, чтобы не нарушить работу вызывающих его сторон. Полезно также сообщать разработчикам о внесенных изменениях. Для этого можно использовать **редакции** в службе управления API Azure. Дополнительные сведения см. в статьях [Versions & revisions](https://blogs.msdn.microsoft.com/apimanagement/2017/09/14/versions-revisions/) (Версии и редакции) и [API Versioning with Azure API Management](https://blogs.msdn.microsoft.com/apimanagement/2017/09/13/api-versioning-with-azure-api-management/) (Управление версиями API с помощью службы управления API Azure).
 
-Из этого руководства вы узнаете, как выполнять следующие задачи:
+В этом руководстве описано следующее.
 
 > [!div class="checklist"]
 > * Добавление новой редакции
@@ -33,10 +34,10 @@ ms.locfileid: "73176777"
 
 ![Журнал изменений на портале разработчика](media/api-management-getstarted-revise-api/azure_portal.PNG)
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 + Ознакомьтесь с [терминологией службы управления API в Azure](api-management-terminology.md).
-+ Выполните инструкции из краткого руководства — [Создание экземпляра службы управления API Azure](get-started-create-service-instance.md).
++ Выполните инструкции из краткого руководства [Создание экземпляра службы управления API Azure](get-started-create-service-instance.md).
 + Также выполните инструкции из руководства [Импорт и публикация первого API](import-and-publish.md).
 
 ## <a name="add-a-new-revision"></a>Добавление новой редакции
@@ -95,9 +96,9 @@ ms.locfileid: "73176777"
 5. Щелкните **Журнал изменений** рядом с именем API.
 6. Обратите внимание на запись журнала изменений в этом списке.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-Из этого руководства вы узнали, как выполнить следующие задачи:
+В этом руководстве вы узнали, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 > * Добавление новой редакции

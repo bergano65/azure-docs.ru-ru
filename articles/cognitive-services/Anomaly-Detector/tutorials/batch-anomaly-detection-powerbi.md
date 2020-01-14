@@ -1,23 +1,23 @@
 ---
-title: Визуализация аномалий c помощью пакетного обнаружения и Power BI
+title: Руководство. визуализации аномалий c помощью пакетного обнаружения и Power BI
 titleSuffix: Azure Cognitive Services
-description: Сведения о визуализации аномалий в данных временных рядов с помощью API Детектора аномалий и Power BI.
+description: Узнайте, как использовать API "Детектор аномалий" и Power BI для визуализации аномалий в данных временных рядов.
 services: cognitive-services
 author: aahill
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: anomaly-detector
 ms.topic: tutorial
-ms.date: 10/01/2019
+ms.date: 12/19/2019
 ms.author: aahi
-ms.openlocfilehash: fa78e737cd863d19e294c5001dfd27b07760521f
-ms.sourcegitcommit: 15e3bfbde9d0d7ad00b5d186867ec933c60cebe6
+ms.openlocfilehash: 1d1f71ed56138f2c799c7410508c0bc4899e7887
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71840866"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75448854"
 ---
-# <a name="tutorial-visualize-anomalies-using-batch-detection-and-power-bi"></a>Руководство по визуализации аномалий c помощью пакетного обнаружения и Power BI
+# <a name="tutorial-visualize-anomalies-using-batch-detection-and-power-bi"></a>Руководство. визуализации аномалий c помощью пакетного обнаружения и Power BI
 
 В этом учебнике показано, как найти аномалии в наборе данных временных рядов в пакетном режиме. В Power BI Desktop в файле Excel подготовьте данные для API Детектора аномалий и визуализируйте статистические аномалии в нем.
 
@@ -28,7 +28,7 @@ ms.locfileid: "71840866"
 > * Интеграция Power BI Desktop с API Детектора аномалий для пакетного обнаружения аномалий.
 > * Визуализация аномалий, которые находятся в данных, включая ожидаемые и видимые значения, а также границы обнаружения аномалий.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * [Microsoft Power BI Desktop](https://powerbi.microsoft.com/get-started/) предоставляется бесплатно.
 * Файл Excel (XLSX) содержит точки данных временных рядов. Пример данных для этого краткого руководства можно найти на сайте [GitHub](https://go.microsoft.com/fwlink/?linkid=2090962).
@@ -172,7 +172,7 @@ Power BI преобразует отметки времени в первом с
 
 ![Изображение экрана новой быстрой меры](../media/tutorials/final-chart.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 >[Обнаружение аномалий при потоковой передаче данных с помощью Azure Databricks](anomaly-detection-streaming-databricks.md)

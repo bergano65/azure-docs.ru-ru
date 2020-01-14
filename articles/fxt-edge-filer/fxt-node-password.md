@@ -1,19 +1,19 @@
 ---
-title: Инициализация оборудования Microsoft Azure FXT Edge Filer
+title: Руководство. Инициализация оборудования Azure FXT Edge Filer
 description: Настройка исходного пароля на узлах Azure FXT Edge Filer
 author: ekpgh
+ms.author: rohogue
 ms.service: fxt-edge-filer
 ms.topic: tutorial
 ms.date: 06/20/2019
-ms.author: rohogue
-ms.openlocfilehash: 080aa05af77b996bc0eb71287a3dfef25c24629a
-ms.sourcegitcommit: 1c2659ab26619658799442a6e7604f3c66307a89
+ms.openlocfilehash: 8cb5f639deb0630575c46db30efe70ad967324a8
+ms.sourcegitcommit: ec2eacbe5d3ac7878515092290722c41143f151d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72256021"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75550897"
 ---
-# <a name="tutorial-set-hardware-passwords"></a>Руководство по Настройка паролей для оборудования
+# <a name="tutorial-set-hardware-passwords"></a>Руководство. Настройка паролей для оборудования
 
 При первом включении узла Azure FXT Edge Filer следует установить пароль привилегированного пользователя. Аппаратные узлы поставляются без заданного по умолчанию пароля. 
 
@@ -23,7 +23,7 @@ ms.locfileid: "72256021"
 
 В этом руководстве описано, как подключиться к аппаратному узлу и задать пароль. 
 
-Из этого учебника вы узнаете следующее: 
+В этом учебнике рассматривается следующее. 
 
 > [!div class="checklist"]
 > * Как подключить клавиатуру и монитор к узлу и запустить узел.
@@ -34,7 +34,7 @@ ms.locfileid: "72256021"
 
 Для работы с этим учебником потребуется около 15 минут. 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Перед работой с этим учебником необходимо выполнить следующие шаги: 
 
@@ -107,7 +107,7 @@ Password:**********
 
 После входа в качестве привилегированного пользователя сетевые порты станут активными и свяжутся с DHCP-сервером для получения IP-адресов. 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь узел можно применять в качестве элемента кластера. Его можно использовать для создания кластера Azure FXT Edge Filer или [добавить к имеющемуся кластеру](fxt-add-nodes.md). 
 

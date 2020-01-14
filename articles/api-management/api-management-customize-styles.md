@@ -1,5 +1,6 @@
 ---
-title: Настройка стиля страницы на классическом портале разработчика в службе управления API Azure | Документация Майкрософт
+title: Настройка стиля страницы на портале разработчика в службе "Управление API"
+titleSuffix: Azure API Management
 description: Следуйте инструкциям из этого руководства, чтобы настроить стиль элементов на портале разработчика в службе управления API Azure.
 services: api-management
 documentationcenter: ''
@@ -13,12 +14,12 @@ ms.custom: mvc
 ms.topic: tutorial
 ms.date: 11/04/2019
 ms.author: apimpm
-ms.openlocfilehash: 779d1228393cdc88f88820d8a335cb2e32424c14
-ms.sourcegitcommit: 98ce5583e376943aaa9773bf8efe0b324a55e58c
+ms.openlocfilehash: 664686511df8f310295a9f6ed6bc689b3a999544
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73176863"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75430732"
 ---
 # <a name="customize-the-style-of-the-developer-portal-pages"></a>Настройка стиля страниц для портала разработчика
 
@@ -36,10 +37,10 @@ ms.locfileid: "73176863"
 
 [!INCLUDE [premium-dev-standard-basic.md](../../includes/api-management-availability-premium-dev-standard-basic.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 + Ознакомьтесь с [терминологией службы управления API в Azure](api-management-terminology.md).
-+ Выполните инструкции из краткого руководства — [Создание экземпляра службы управления API Azure](get-started-create-service-instance.md).
++ Выполните инструкции из краткого руководства [Создание экземпляра службы управления API Azure](get-started-create-service-instance.md).
 + Также выполните инструкции из руководства [Импорт и публикация первого API](import-and-publish.md).
 
 ## <a name="customize-the-developer-portal"></a>Настройка портала разработчика
@@ -74,6 +75,6 @@ ms.locfileid: "73176863"
 1. Перейдите на портал разработчика.
 2. Вы увидите внесенные изменения.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения см. в статье [Настройка портала разработчика в службе управления API Azure с помощью шаблонов](api-management-developer-portal-templates.md).

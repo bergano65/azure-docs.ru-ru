@@ -9,12 +9,12 @@ ms.service: azure-sentinel
 ms.subservice: azure-sentinel
 ms.topic: quickstart
 ms.date: 12/05/2019
-ms.openlocfilehash: 108d251ec6aadb4881f500edfa3483f137a09a68
-ms.sourcegitcommit: 375b70d5f12fffbe7b6422512de445bad380fe1e
+ms.openlocfilehash: e8625b1d81db5b3ec90a177f426d05bd84bd10dd
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74900437"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75426978"
 ---
 # <a name="quickstart-on-board-azure-sentinel"></a>Краткое руководство. Подключение к Azure Sentinel
 
@@ -41,12 +41,14 @@ ms.locfileid: "74900437"
  
 ## Включение Azure Sentinel <a name="enable"></a>
 
-1. Перейдите на портал Azure.
-2. Проверьте, выбрана ли подписка, в которой создано решение Azure Sentinel. 
-3. Выполните поиск по фразе Azure Sentinel. 
-   ![search](./media/quickstart-onboard/search-product.png)
+1. Войдите на портал Azure. Убедитесь, что выбрана подписка, в которой создано решение Azure Sentinel.
 
-1. Щелкните **+Добавить**.
+1. Найдите и выберите **Azure Sentinel**.
+
+   ![поиск](./media/quickstart-onboard/search-product.png)
+
+1. Выберите **Добавить**.
+
 1. Выберите имеющуюся рабочую область или создайте другую. Запускать Azure Sentinel можно в нескольких рабочих областях, но данные можно использовать в одной.
 
    ![поиск](./media/quickstart-onboard/choose-workspace.png)
@@ -55,7 +57,7 @@ ms.locfileid: "74900437"
    > - Рабочие области по умолчанию, созданные Центром безопасности Azure, не будут отображаться в списке. Установить Azure Sentinel в них нельзя.
    > - Sentinel Azure можно запускать в рабочих областях в любом [общедоступном регионе Log Analytics](https://azure.microsoft.com/global-infrastructure/services/?products=monitor) за исключением Китая, Германии и регионов Azure для государственных организаций. Данные, созданные Sentinel Azure (например, инциденты, закладки и правила генерации оповещений, которые могут содержать данные о клиентах из этих рабочих областей), сохраняются либо в регионе "Западная Европа" (для рабочих областей, расположенных в Европе), либо в регионе "Восточная часть США" (для всех рабочих областей в США, а также в любом другом регионе, кроме Европы).
 
-6. Щелкните **Добавить Azure Sentinel**.
+1. Щелкните **Добавить Azure Sentinel**.
   
 
 ## <a name="connect-data-sources"></a>Подключение источников данных
@@ -71,7 +73,7 @@ Azure Sentinel создает подключение к службам и при
 
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Из этой статьи вы узнали о подключении источников данных к Azure Sentinel. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
 - Узнайте, как [отслеживать свои данные и потенциальные угрозы](quickstart-get-visibility.md).
 - Узнайте, как приступить к [обнаружению угроз с помощью Azure Sentinel](tutorial-detect-threats-built-in.md).

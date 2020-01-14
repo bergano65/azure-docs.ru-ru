@@ -1,5 +1,5 @@
 ---
-title: Руководство по работе с одностраничным приложением JavaScript на платформе удостоверений Майкрософт | Azure
+title: Руководство по работе с одностраничным приложением JavaScript — платформа удостоверений Майкрософт | Azure
 description: Узнайте, как одностраничные приложения JavaScript могут вызывать API, которым требуются маркеры доступа от конечной точки Azure Active Directory версии 2.0.
 services: active-directory
 documentationcenter: dev-center-name
@@ -16,12 +16,12 @@ ms.date: 03/20/2019
 ms.author: nacanuma
 ms.custom: aaddev, identityplatformtop40
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a3576c015fcca7eb9c390f38c6527d76353efe06
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: 995210e720040448927b2aaac2c2eb590e3de981
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74919398"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75423374"
 ---
 # <a name="sign-in-users-and-call-the-microsoft-graph-api-from-a-javascript-single-page-application-spa"></a>Вход пользователей и вызов API Microsoft Graph из одностраничного приложения JavaScript (SPA)
 
@@ -46,7 +46,7 @@ ms.locfileid: "74919398"
 
 В этом руководстве используется следующая библиотека:
 
-|Библиотека|ОПИСАНИЕ|
+|Библиотека|Description|
 |---|---|
 |[msal.js](https://github.com/AzureAD/microsoft-authentication-library-for-js)|Библиотека аутентификации Майкрософт для JavaScript (предварительная версия)|
 
@@ -66,7 +66,7 @@ ms.locfileid: "74919398"
 >
 > Перейдите к [настройке](#register-your-application), чтобы настроить пример кода перед выполнением.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * Для работы с этим учебником требуется локальный веб-сервер, например [Node.js](https://nodejs.org/en/download/) или [.NET Core](https://www.microsoft.com/net/core), либо интеграция IIS Express с [Visual Studio 2017](https://www.visualstudio.com/downloads/).
 
@@ -76,10 +76,10 @@ ms.locfileid: "74919398"
 
 ## <a name="create-your-project"></a>Создание проекта
 
-> ### <a name="option-1-nodejs-or-other-web-servers"></a>Вариант 1. Node.js или другие веб-серверы
+> ### <a name="option-1-nodejs-or-other-web-servers"></a>Вариант 1. Node.js или другие веб-серверы
 > Установите [Node.js](https://nodejs.org/en/download/) и создайте папку для размещения приложения.
 >
-> ### <a name="option-2-visual-studio"></a>Вариант 2. Visual Studio
+> ### <a name="option-2-visual-studio"></a>Вариант 2. Visual Studio
 > Если вы используете Visual Studio и создаете новый проект, выполните следующие шаги:
 > 1. В Visual Studio выберите **Файл** > **Создать** > **Проект**.
 > 1. В **Visual C#\Web** выберите **Веб-приложение ASP.NET (.NET Framework)** .
@@ -326,7 +326,7 @@ function callMSGraph(theUrl, accessToken, callback) {
 
 ## <a name="register-your-application"></a>Регистрация приложения
 
-1. Войдите на [портале Azure](https://portal.azure.com/).
+1. Войдите на [портал Azure](https://portal.azure.com/).
 
 1. Если ваша учетная запись предоставляет доступ к нескольким клиентам, вверху справа щелкните свою учетную запись и выберите для текущего сеанса работы нужный клиент Azure AD.
 1. Перейдите на страницу [Регистрация приложений](https://go.microsoft.com/fwlink/?linkid=2083908) платформы удостоверений Майкрософт для разработчиков.
@@ -338,7 +338,7 @@ function callMSGraph(theUrl, accessToken, callback) {
 
 1. Выберите **Зарегистрировать**.
 1. На странице приложения **Обзор** запишите **идентификатор приложения (клиента)** для использования в будущем.
-1. Для этого краткого руководства должно быть включено [неявное предоставление разрешения потока](v2-oauth2-implicit-grant-flow.md). В левой области навигации зарегистрированного приложения выберите **Проверка подлинности**.
+1. Для этого краткого руководства должно быть включено [неявное предоставление разрешения потока](v2-oauth2-implicit-grant-flow.md). В левой области зарегистрированного приложения выберите **Проверка подлинности**.
 1. В окне **Дополнительные параметры** в разделе **Неявное предоставление** установите флажки **Токен идентификатора** и **Маркеры доступа**. Токены идентификатора и маркеры доступа необходимы, так как это приложение должно обрабатывать вход пользователей и вызов API.
 1. Щелкните **Сохранить**.
 
@@ -378,7 +378,7 @@ function callMSGraph(theUrl, accessToken, callback) {
     };
     ```
 
-    Описание
+    Где:
     - *\<Enter_the_Application_Id_here>*  — **идентификатор приложения (клиент)** для зарегистрированного приложения.
     - *\<Enter_the_Tenant_info_here>* присваивается одно из следующих значений:
        - Если приложение поддерживает *учетные записи в этом каталоге организации*, замените это значение **идентификатором клиента** или **именем клиента** (например, *contoso.microsoft.com*).

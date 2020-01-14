@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция единого входа Azure Active Directory с F5 | Документация Майкрософт
+title: Руководство. Интеграция единого входа Azure Active Directory с F5 | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и F5.
 services: active-directory
 documentationCenter: na
@@ -16,14 +16,14 @@ ms.topic: tutorial
 ms.date: 11/19/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e1ec0dd844dea8cf98621130d6a19b415bda1cf0
-ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
+ms.openlocfilehash: a1f06b0b5aa59328d2fe39d501cfdf3ad7524427
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74786492"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75431458"
 ---
-# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-f5"></a>Руководство по Интеграция единого входа Azure Active Directory с F5
+# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-f5"></a>Руководство. Интеграция единого входа Azure Active Directory с F5
 
 В этом учебнике описано, как интегрировать F5 с Azure Active Directory (Azure AD). Интеграция F5 с Azure AD обеспечивает следующие возможности:
 
@@ -33,11 +33,11 @@ ms.locfileid: "74786492"
 
 Чтобы узнать больше об интеграции приложений SaaS с Azure AD, прочитайте статью [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы приступить к работе, потребуется следующее:
 
-* подписка Azure AD Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
+* подписка Azure AD; Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
 
 * Подписка F5 с поддержкой единого входа.
 
@@ -96,7 +96,7 @@ ms.locfileid: "74786492"
 
 - [Настройка единого входа в F5 для приложения Kerberos](#configure-f5-single-sign-on-for-kerberos-application)
 
-- [Настройка единого входа в F5 для приложения на основе заголовка](headerf5-tutorial.md)
+- [настройка единого входа в F5 для приложения на основе заголовка](headerf5-tutorial.md);
 
 - [Настройка единого входа в F5 для расширенного приложения Kerberos](advance-kerbf5-tutorial.md)
 
@@ -150,9 +150,9 @@ ms.locfileid: "74786492"
 
 1. Если вы хотите настроить приложение в режиме, инициируемом **поставщиком удостоверений**, в разделе **Базовая конфигурация SAML** введите значения следующих полей.
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<YourCustomFQDN>.f5.com/`.
+    а. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<YourCustomFQDN>.f5.com/`.
 
-    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<YourCustomFQDN>.f5.com/`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<YourCustomFQDN>.f5.com/`.
 
 1. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
@@ -204,7 +204,7 @@ ms.locfileid: "74786492"
 
 ## <a name="configure-f5-sso"></a>Настройка единого входа в F5
 
-- [Настройка единого входа в F5 для приложения на основе заголовка](headerf5-tutorial.md)
+- [настройка единого входа в F5 для приложения на основе заголовка](headerf5-tutorial.md);
 
 - [Настройка единого входа в F5 для расширенного приложения Kerberos](advance-kerbf5-tutorial.md)
 
@@ -273,7 +273,7 @@ ms.locfileid: "74786492"
 
     ![Настройка F5 (Kerberos)](./media/kerbf5-tutorial/configure13.png)
 
-## <a name="advanced-configuration"></a>Расширенная конфигурация
+## <a name="advanced-configuration"></a>Расширенная настройка
 
 >[!NOTE]
 >Для получения справки щелкните [здесь](https://techdocs.f5.com/kb/en-us/products/big-ip_apm/manuals/product/apm-authentication-single-sign-on-11-5-0/2.html).
@@ -370,7 +370,7 @@ ms.locfileid: "74786492"
     >[!Note]
     > Вам потребуется создать и указать учетную запись делегирования Kerberos. См. раздел KCD (см. приложение для ссылок на переменные).
 
-    * **Источник имени пользователя**: session.saml.last.attr.name. http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname
+    * **Источник имени пользователя**: session.saml.last.attr.name.http:\//schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname
 
     * **Источник области пользователя**: session.logon.last.domain.
 
@@ -379,7 +379,7 @@ ms.locfileid: "74786492"
 1. Чтобы настроить профиль доступа, выберите **Access > Profile/Policies > Access Profile (per session policies)** (Доступ > Профиль/политики > Профиль доступа (политики для каждого сеанса)), щелкните **Create** (Создать), введите следующие сведения и щелкните **Finished** (Завершено).
 
     * Имя: KerbApp200.
-    * Тип профиля: Все
+    * Тип профиля: All
     * Область профиля: Профиль
     * Языки: Английский
 
@@ -422,7 +422,7 @@ ms.locfileid: "74786492"
 1. Для добавления нового узла выберите **Local Traffic > Nodes > Node List (Локальный трафик > Узлы > Список узлов), щелкните Create (Создать)** , введите следующие сведения, а затем щелкните **Finished** (Завершено).
 
     * Имя: KerbApp200.
-    * Описание: KerbApp200.
+    * Описание. KerbApp200.
     * Адрес: 192.168.20.200.
 
         ![Настройка F5 (Kerberos)](./media/kerbf5-tutorial/configure39.png)
@@ -430,7 +430,7 @@ ms.locfileid: "74786492"
 1. Для создания пула выберите **Local Traffic > Pools > Pool List (Локальный трафик > Пулы > Список пулов), щелкните Create (Создать)** , введите следующие сведения и щелкните **Finished** (Завершено).
 
     * Имя: KerbApp200-Pool.
-    * Описание: KerbApp200-Pool.
+    * Описание. KerbApp200-Pool.
     * Мониторы работоспособности: http.
     * Адрес: 192.168.20.200.
     * Порт службы: 81
@@ -454,9 +454,9 @@ ms.locfileid: "74786492"
 >[!NOTE]
 >Для получения справки щелкните [здесь](https://www.f5.com/pdf/deployment-guides/kerberos-constrained-delegation-dg.pdf).
 
-*  **Шаг 1.** Создание учетной записи делегирования
+*  **Шаг 1**. Создание учетной записи делегирования
 
-    **Пример.**
+    **Пример**.
     * Доменное имя: **superdemo.live**.
 
     * Имя учетной записи SAM: **big-ipuser**.
@@ -465,7 +465,7 @@ ms.locfileid: "74786492"
 
 * **Шаг 2**. Установка имени субъекта-службы (для учетной записи делегирования APM)
 
-    **Пример.**
+    **Пример**.
     * setspn –A **host/big-ipuser.superdemo.live** big-ipuser
 
 * **Шаг 3**. Делегирование имени субъекта-службы (для учетной записи службы приложений). Настройте соответствующее делегирование для учетной записи делегирования F5.
@@ -495,7 +495,7 @@ ms.locfileid: "74786492"
 
 - [Попробуйте использовать F5 с Azure AD](https://aad.portal.azure.com/)
 
-- [Настройка единого входа в F5 для приложения на основе заголовка](headerf5-tutorial.md)
+- [настройка единого входа в F5 для приложения на основе заголовка](headerf5-tutorial.md);
 
 - [Настройка единого входа в F5 для расширенного приложения Kerberos](advance-kerbf5-tutorial.md)
 

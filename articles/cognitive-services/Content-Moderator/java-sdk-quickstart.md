@@ -1,7 +1,7 @@
 ---
 title: Краткое руководство. Клиентская библиотека Content Moderator для Java
 titleSuffix: Azure Cognitive Services
-description: Узнайте, как приступить к работе с клиентской библиотекой Content Moderator для Azure Cognitive Services для Java.
+description: Из этого краткого руководства вы узнайте, как приступить к работе с клиентской библиотекой Content Moderator для Azure Cognitive Services для Java.
 services: cognitive-services
 author: PatrickFarley
 manager: nitinme
@@ -10,12 +10,12 @@ ms.subservice: content-moderator
 ms.topic: quickstart
 ms.date: 10/25/2019
 ms.author: pafarley
-ms.openlocfilehash: edc51be93ba209a1c60970e6fa1b47fca75048c6
-ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
+ms.openlocfilehash: 53ac5c10672c433cb16d9ad326d936affe82a8c6
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73744442"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75381942"
 ---
 # <a name="quickstart-content-moderator-client-library-for-java"></a>Краткое руководство. Клиентская библиотека Content Moderator для Java
 
@@ -27,7 +27,7 @@ ms.locfileid: "73744442"
 
 [Справочная документация](https://docs.microsoft.com/java/api/overview/azure/cognitiveservices/client/contentmoderator?view=azure-java-stable) | [Артефакт (Maven)](https://mvnrepository.com/artifact/com.microsoft.azure.cognitiveservices/azure-cognitiveservices-contentmoderator) | [Примеры](https://docs.microsoft.com/samples/browse/?products=azure&term=content-moderator)
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/).
 * Текущая версия [пакета средств разработки Java (JDK)](https://www.oracle.com/technetwork/java/javase/downloads/index.html).
@@ -37,7 +37,7 @@ ms.locfileid: "73744442"
 
 ### <a name="create-a-content-moderator-azure-resource"></a>Создание ресурса Azure для Content Moderator
 
-Ресурсами Azure, на которые вы подписаны, будет представлено семейство служб Azure Cognitive Services. Создайте ресурс для Content Moderator с помощью [портала Azure](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) или [интерфейса командной строки Azure (CLI)](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account-cli) на локальном компьютере. Также можно:
+Ресурсами Azure, на которые вы подписаны, будет представлено семейство служб Azure Cognitive Services. Создайте ресурс для Content Moderator с помощью [портала Azure](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) или [интерфейса командной строки Azure (CLI)](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account-cli) на локальном компьютере. Кроме того, вы можете сделать следующее:
 
 * Получить бесплатный [ключ пробной версии](https://azure.microsoft.com/try/cognitive-services/#decision) на 7 дней. После регистрации он будет доступен на [веб-сайте Azure](https://azure.microsoft.com/try/cognitive-services/my-apis/).  
 * Просмотреть этот ресурс на [портале Azure](https://portal.azure.com/).
@@ -51,7 +51,7 @@ ms.locfileid: "73744442"
 ```console
 mkdir myapp && cd myapp
 ```
-Запустите `gradle init`. Эта команда создает необходимые файлы сборки для Gradle, включая *build.gradle.kts*, который используется во время выполнения для создания и настройки приложения. Выполните следующую команду из рабочего каталога.
+Выполните `gradle init`. Эта команда создает необходимые файлы сборки для Gradle, включая *build.gradle.kts*, который используется во время выполнения для создания и настройки приложения. Выполните следующую команду из рабочего каталога.
 
 ```console
 gradle init --type basic
@@ -95,7 +95,7 @@ mkdir -p src/main/java
 
 Следующие классы обрабатывают некоторые основные функции пакета SDK Java для Content Moderator.
 
-|ИМЯ|ОПИСАНИЕ|
+|Имя|Description|
 |---|---|
 |[ContentModeratorClient](https://docs.microsoft.com/java/api/com.microsoft.azure.cognitiveservices.vision.contentmoderator.contentmoderatorclient?view=azure-java-stable)|Этот класс требуется для всех функций Content Moderator. Вы создаете его экземпляр с информацией о подписке и используете его для создания экземпляров других классов.|
 |[ImageModeration](https://docs.microsoft.com/java/api/com.microsoft.azure.cognitiveservices.vision.contentmoderator.imagemoderations?view=azure-java-stable)|Этот класс предоставляет функции для анализа изображений на наличие содержимого для взрослых, личной информации или лиц людей.|
@@ -108,7 +108,7 @@ mkdir -p src/main/java
 Эти фрагменты кода показывают, как выполнить следующие действия с помощью клиентской библиотеки Content Moderator для Java:
 
 * [аутентификация клиента](#authenticate-the-client);
-* [Модерация изображений](#moderate-images)
+* [модерация изображений](#moderate-images);
 
 ## <a name="authenticate-the-client"></a>Аутентификация клиента
 
@@ -195,9 +195,9 @@ gradle run
 Если вы хотите очистить и удалить подписку Cognitive Services, вы можете удалить ресурс или группу ресурсов. При этом удаляются все ресурсы, связанные с ней.
 
 * [Портал](../cognitive-services-apis-create-account.md#clean-up-resources)
-* [Интерфейс командной строки Azure](../cognitive-services-apis-create-account-cli.md#clean-up-resources)
+* [Azure CLI](../cognitive-services-apis-create-account-cli.md#clean-up-resources)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом кратком руководстве вы узнали, как использовать библиотеку Java для Content Moderator для выполнения задач модерации. Теперь узнайте больше о модерации изображений или другого мультимедиа, прочитав концептуальное руководство.
 

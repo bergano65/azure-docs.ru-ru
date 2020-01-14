@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция единого входа Azure Active Directory с JIRA SAML SSO by Microsoft | Документация Майкрософт
+title: Руководство. Интеграция единого входа Azure Active Directory с JIRA SAML SSO by Microsoft | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в JIRA SAML SSO by Microsoft.
 services: active-directory
 documentationCenter: na
@@ -16,14 +16,14 @@ ms.topic: tutorial
 ms.date: 09/11/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6deeb224f8c70dabcf8c5a29e80e87414ea32657
-ms.sourcegitcommit: c31dbf646682c0f9d731f8df8cfd43d36a041f85
+ms.openlocfilehash: 7cd922d0e65da627f11e6aab3827cb848c3dd635
+ms.sourcegitcommit: 5925df3bcc362c8463b76af3f57c254148ac63e3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2019
-ms.locfileid: "74561423"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75560532"
 ---
-# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-jira-saml-sso-by-microsoft"></a>Руководство по Интеграция единого входа Azure Active Directory с JIRA SAML SSO by Microsoft
+# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-jira-saml-sso-by-microsoft"></a>Руководство. Интеграция единого входа Azure Active Directory с JIRA SAML SSO by Microsoft
 
 В этом руководстве описано, как интегрировать JIRA SAML SSO by Microsoft с Azure Active Directory (Azure AD). Интеграция JIRA SAML SSO by Microsoft с Azure AD обеспечивает следующие возможности:
 
@@ -33,16 +33,16 @@ ms.locfileid: "74561423"
 
 Чтобы узнать больше об интеграции приложений SaaS с Azure AD, прочитайте статью [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-## <a name="description"></a>ОПИСАНИЕ
+## <a name="description"></a>Description
 
 Используйте учетную запись Microsoft Azure Active Directory с сервером Atlassian JIRA, чтобы включить единый вход. Таким образом, все пользователи вашей организации смогут использовать учетные данные Azure AD для входа в приложение JIRA. Этот подключаемый модуль для федерации использует SAML 2.0.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с JIRA SAML SSO by Microsoft, вам потребуется следующее:
 
-- подписка Azure AD Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
-- в 64-разрядной версии Windows должен быть установлен и настроен выпуск JIRA Core and Software 6.4 – 8.0 или JIRA Service Desk 3.0 – 3.5;
+- подписка Azure AD; Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
+- в 64-разрядной версии Windows должен быть установлен и настроен выпуск JIRA Core и JIRA Software 6.4–8.5.1 или JIRA Service Desk 3.0–4.6.0;
 - поддержка HTTPS на сервере JIRA;
 - поддерживаемые версии подключаемого модуля JIRA указаны в разделе ниже;
 - сервер JIRA должен быть доступен через Интернет, в частности, на странице входа Azure AD для аутентификации, и должен иметь возможность получать маркер из Azure AD;
@@ -61,7 +61,7 @@ ms.locfileid: "74561423"
 ## <a name="supported-versions-of-jira"></a>Поддерживаемые версии JIRA
 
 * JIRA Core и JIRA Software: 6.4–8.5.1.
-* Jira Service Desk: версии 3.0.0–4.5.1.
+* JIRA Service Desk 3.0.0–4.6.0
 * JIRA поддерживает также 5.2. Дополнительные сведения см. в статье об [использовании единого входа Microsoft Azure Active Directory для JIRA 5.2](jira52microsoft-tutorial.md).
 
 > [!NOTE]
@@ -109,7 +109,7 @@ ms.locfileid: "74561423"
 
 1. На странице **Базовая конфигурация SAML** введите значения следующих полей.
 
-    a. В текстовое поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<domain:port>/plugins/servlet/saml/auth`.
+    а. В текстовое поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<domain:port>/plugins/servlet/saml/auth`.
 
     b. В поле **Идентификатор** введите URL-адрес в следующем формате: `https://<domain:port>/`.
 
@@ -169,7 +169,7 @@ ms.locfileid: "74561423"
     > [!NOTE]
     > Сначала нужно настроить сервер, выполнив инструкции ниже, а затем установить подключаемый модуль.
 
-    a. Добавьте следующий атрибут в раздел порта **соединителя** в файле **server.xml** серверного приложения JIRA.
+    а. Добавьте следующий атрибут в раздел порта **соединителя** в файле **server.xml** серверного приложения JIRA.
 
     `scheme="https" proxyName="<subdomain.domain.com>" proxyPort="<proxy_port>" secure="true"`
 
@@ -246,7 +246,7 @@ ms.locfileid: "74561423"
 
     ![Добавление сотрудника](./media/jiramicrosoft-tutorial/user4.png) 
 
-    a. В текстовом поле **Email address** (Адрес электронной почты) введите адрес электронной почты пользователя, например B.simon@contoso.com.
+    а. В текстовом поле **Email address** (Адрес электронной почты) введите адрес электронной почты пользователя, например B.simon@contoso.com.
 
     b. В текстовом поле **Full Name** (Полное имя) введите полное имя пользователя, например B.Simon.
 
@@ -254,7 +254,7 @@ ms.locfileid: "74561423"
 
     d. В текстовом поле **Password** (Пароль) введите пароль пользователя.
 
-    д. Щелкните **Create user** (Создать пользователя).
+    д) Щелкните **Create user** (Создать пользователя).
 
 ## <a name="test-sso"></a>Проверка единого входа
 

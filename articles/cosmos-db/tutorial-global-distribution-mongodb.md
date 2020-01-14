@@ -8,12 +8,12 @@ ms.subservice: cosmosdb-mongo
 ms.topic: tutorial
 ms.date: 12/26/2018
 ms.reviewer: sngun
-ms.openlocfilehash: 5a9c618fdcf2e904a2a3c03b3ae6b5477cd47c4e
-ms.sourcegitcommit: 8074f482fcd1f61442b3b8101f153adb52cf35c9
+ms.openlocfilehash: b446697977395aa9bbbcf2192aa232fbc85a0b68
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72754772"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75444672"
 ---
 # <a name="set-up-global-distributed-database-using-azure-cosmos-dbs-api-for-mongodb"></a>Настройка глобальной распределенной базы данных с помощью API Azure Cosmos DB для MongoDB
 
@@ -88,7 +88,7 @@ collection = collection.WithReadPreference(new ReadPreference(ReadPreferenceMode
 
 На этом руководство завершено. Сведения об управлении согласованностью глобально реплицируемой учетной записи Azure Cosmos DB см. в [этой статье](consistency-levels.md). Сведения о том, как функционирует репликация глобальной базы данных в Azure Cosmos DB, см. в статье о [глобальном распределении данных в Azure Cosmos DB](distribute-data-globally.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом руководстве вы выполнили следующее:
 
@@ -99,4 +99,4 @@ collection = collection.WithReadPreference(new ReadPreference(ReadPreferenceMode
 Перейдите к следующему руководству, чтобы узнать о разработке в локальной среде с помощью локального эмулятора Azure Cosmos DB.
 
 > [!div class="nextstepaction"]
-> [Использование эмулятора Azure Cosmos DB для разработки и тестирования в локальной среде](local-emulator.md)
+> [Разработка с помощью эмулятора Azure Cosmos DB в локальной среде](local-emulator.md)

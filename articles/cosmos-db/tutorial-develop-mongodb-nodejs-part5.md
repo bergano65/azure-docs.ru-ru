@@ -1,6 +1,5 @@
 ---
-title: Создание приложения Angular с использованием API Azure Cosmos DB для MongoDB. Подключение к Cosmos DB с помощью Mongoose
-titleSuffix: Azure Cosmos DB
+title: Подключение приложения Angular к API Azure Cosmos DB для MongoDB с помощью Mongoose
 description: В этом руководстве описывается создание приложения Node.js (с помощью Angular и Express), которое управляет данными, хранящимися в Cosmos DB. В этой части для подключения к Azure Cosmos DB используется Mongoose.
 author: johnpapa
 ms.service: cosmos-db
@@ -12,12 +11,12 @@ ms.author: jopapa
 ms.custom: seodec18
 ms.reviewer: sngun
 Customer intent: As a developer, I want to build a Node.js application, so that I can manage the data stored in Cosmos DB.
-ms.openlocfilehash: 626015e2aac5eb09dfd271a139dbc5eb49a088fc
-ms.sourcegitcommit: e0e6663a2d6672a9d916d64d14d63633934d2952
+ms.openlocfilehash: ba893eeb8c2560397f3524d1042566dbafee7d1b
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "69616416"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75444710"
 ---
 # <a name="create-an-angular-app-with-azure-cosmos-dbs-api-for-mongodb---use-mongoose-to-connect-to-cosmos-db"></a>Создание приложения Angular с использованием API Azure Cosmos DB для MongoDB. Подключение к Cosmos DB с помощью Mongoose
 
@@ -34,7 +33,7 @@ ms.locfileid: "69616416"
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * Перед началом работы с этим руководством выполните шаги в [части 4](tutorial-develop-mongodb-nodejs-part4.md).
 
@@ -228,11 +227,11 @@ Mongoose является библиотекой моделирования да
 
 Давайте выделим пару минут на проверку и просмотрим предыдущий код. Сначала мы переходим к файлу index.js, который задает сервер узла. Обратите внимание, что он настраивает и определяет ваши маршруты. Затем файл routes.js обращается к службе Hero и дает ей команду получить функции, например **getHeroes**, а также передать запрос и ответ. Файл hero.service.js получает модель и подключается к Mongo. При вызове он выполняет **getHeroes** и возвращает обратно ответ 200. 
 
-## <a name="run-the-app"></a>Запуск приложения
+## <a name="run-the-app"></a>Запустите приложение
 
 Затем выполните приложение, следуя приведенным ниже шагам:
 
-1. Сохраните все изменения в Visual Studio Code. Нажмите кнопку **Отладка** слева, ![значок отладки в Visual Studio Code](./media/tutorial-develop-mongodb-nodejs-part5/debug-button.png), а затем — кнопку **Начать отладку** ![значок начала отладки в Visual Studio Code](./media/tutorial-develop-mongodb-nodejs-part5/start-debugging-button.png).
+1. Сохраните все изменения в Visual Studio Code. Нажмите кнопку **Отладка** слева, ![значок отладки в Visual Studio Code](./media/tutorial-develop-mongodb-nodejs-part5/debug-button.png), а затем — кнопку **Начать отладку**![значок начала отладки в Visual Studio Code](./media/tutorial-develop-mongodb-nodejs-part5/start-debugging-button.png).
 
 1. Теперь переключитесь на браузер. Откройте **средства разработчика** и перейдите на **вкладку "Сеть"** . Перейдите по адресу `http://localhost:3000`, где расположено ваше приложение.
 
@@ -248,7 +247,7 @@ Mongoose является библиотекой моделирования да
  1. Выберите **Удалить группу ресурсов**.
  1. Подтвердите имя удаляемой группы ресурсов и выберите **Удалить**.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Приступите к части 6 руководства и добавьте в приложение функции Post, Put и Delete:
 

@@ -1,44 +1,41 @@
 ---
 title: Краткое руководство по Конфигурации приложения Azure с ASP.NET Core | Документация Майкрософт
-description: Краткое руководство по использованию Конфигурации приложения Azure с приложениями ASP.NET Core
+description: Краткое руководство по использованию Конфигурации приложений Azure с приложениями ASP.NET Core
 services: azure-app-configuration
-documentationcenter: ''
-author: yegu-ms
-manager: balans
-editor: ''
-ms.assetid: ''
+author: jpconnock
 ms.service: azure-app-configuration
 ms.devlang: csharp
 ms.topic: quickstart
-ms.tgt_pltfrm: ASP.NET Core
-ms.workload: tbd
-ms.date: 10/11/2019
-ms.author: yegu
-ms.openlocfilehash: 91712b3f730317e65cda7b48c8f5636b2fb9ab2c
-ms.sourcegitcommit: dbde4aed5a3188d6b4244ff7220f2f75fce65ada
+ms.date: 01/04/2020
+ms.author: jeconnoc
+ms.openlocfilehash: f625135f036ec8fc816bc3c3eb6c76c635c51fe9
+ms.sourcegitcommit: 2f8ff235b1456ccfd527e07d55149e0c0f0647cc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74185090"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75690217"
 ---
 # <a name="quickstart-create-an-aspnet-core-app-with-azure-app-configuration"></a>Краткое руководство. Создание приложения ASP.NET Core с помощью службы "Конфигурация приложений Azure"
 
-В этом кратком руководстве описано, как добавить службу конфигурации приложений Azure в приложение ASP.NET Core, чтобы обеспечить централизованное хранение параметров приложения и управление ими отдельно от кода. ASP.NET Core создает один объект конфигурации на основе пары "ключ — значение" с использованием параметров из одного или нескольких источников данных, указанных приложением. Эти источники данных называются *поставщиками конфигурации*. Так как в качестве такого поставщика реализован клиент .NET Core службы "Конфигурация приложений", служба выглядит как другой источник данных.
+В этом кратком руководстве описано, как использовать Конфигурацию приложений Azure, чтобы обеспечить централизованное хранение параметров приложения ASP.NET Core и управление ими. ASP.NET Core создает один объект конфигурации на основе пары "ключ — значение" с использованием параметров из одного или нескольких источников данных, указанных приложением. Эти источники данных называются *поставщиками конфигурации*. Так как в качестве поставщика конфигурации реализован клиент .NET Core службы "Конфигурация приложений", служба выглядит как другой источник данных.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 - Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/).
 - [Базовый пакет SDK для .NET](https://dotnet.microsoft.com/download)
+
+>[!TIP]
+> Azure Cloud Shell — это бесплатная интерактивная оболочка, с помощью которой можно выполнять инструкции командной строки, описанные в этой статье.  Она содержит предварительно установленные общие инструменты Azure, включая пакет SDK для .NET Core. Если вы вошли в подписку Azure, запустите [Azure Cloud Shell](https://shell.azure.com) на сайте shell.azure.com.  Дополнительные сведения об Azure Cloud Shell см. в [нашей документации](../cloud-shell/overview.md)
 
 ## <a name="create-an-app-configuration-store"></a>Создание хранилища Конфигурации приложений
 
 [!INCLUDE [azure-app-configuration-create](../../includes/azure-app-configuration-create.md)]
 
-6. Выберите **Configuration Explorer** (Обозреватель конфигураций)  >  **+ Создать**, чтобы добавить следующие пары "ключ-значение".
+6. Выберите **Обозреватель конфигураций** > **Создать**, чтобы добавить указанные ниже пары "ключ — значение":
 
-    | Ключ | Значение |
+    | Клавиши | Значение |
     |---|---|
-    | TestApp:Settings:BackgroundColor | Белый |
+    | TestApp:Settings:BackgroundColor | White |
     | TestApp:Settings:FontSize | 24 |
     | TestApp:Settings:FontColor | Черный |
     | TestApp:Settings:FontSize | Данные из конфигурации приложения Azure |
@@ -47,24 +44,29 @@ ms.locfileid: "74185090"
 
 ## <a name="create-an-aspnet-core-web-app"></a>Создание веб-приложения ASP.NET Core
 
-Используйте [интерфейс командной строки .NET Core](https://docs.microsoft.com/dotnet/core/tools/) для создания проекта веб-приложения MVC для ASP.NET Core. Преимущество использования .NET Core CLI по сравнению с Visual Studio заключается в том, что он доступен на платформах Windows, macOS и Linux.
+Используйте [интерфейс командной строки .NET Core](https://docs.microsoft.com/dotnet/core/tools/) для создания проекта веб-приложения MVC для ASP.NET Core. [Azure Cloud Shell](https://shell.azure.com) предоставляет эти инструменты.  Они также доступны на платформах Windows, macOS и Linux.
 
 1. Создайте новый каталог для своего проекта В этом кратком руководстве назовите его *TestAppConfig*.
 
-2. В новой папке выполните следующую команду, чтобы создать проект веб-приложения MVC для ASP.NET Core:
+1. В новой папке выполните следующую команду, чтобы создать проект веб-приложения MVC для ASP.NET Core:
 
-    ```CLI
-        dotnet new mvc --no-https
-    ```
+```dotnetcli
+dotnet new mvc --no-https
+```
 
 ## <a name="add-secret-manager"></a>Добавление диспетчера секретов
 
 Чтобы использовать диспетчер секретов, добавьте элемент `UserSecretsId` в файл *.csproj*.
 
-- Откройте *CSPROJ*-файл. Добавьте элемент `UserSecretsId`, как показано здесь. Вы можете использовать тот же GUID или заменить это значение собственным. Сохраните файл.
+Откройте *CSPROJ*-файл. Добавьте элемент `UserSecretsId`, как показано здесь. Вы можете использовать тот же GUID или заменить это значение собственным. Сохраните файл.
 
-    ```xml
-    <Project Sdk="Microsoft.NET.Sdk.Web">
+> [!IMPORTANT]
+> `CreateHostBuilder` заменяет `CreateWebHostBuilder` в .NET Core 3.0.  Выберите правильный синтаксис в зависимости от среды.
+
+#### <a name="net-core-2xtabcore2x"></a>[.NET Core 2.x](#tab/core2x).
+
+```xml
+<Project Sdk="Microsoft.NET.Sdk.Web">
 
     <PropertyGroup>
         <TargetFramework>netcoreapp2.1</TargetFramework>
@@ -76,8 +78,22 @@ ms.locfileid: "74185090"
         <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
     </ItemGroup>
 
-    </Project>
-    ```
+</Project>
+```
+
+#### <a name="net-core-3xtabcore3x"></a>[.NET Core 3.x](#tab/core3x).
+
+```xml
+<Project Sdk="Microsoft.NET.Sdk.Web">
+    
+    <PropertyGroup>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+        <UserSecretsId>79a3edd0-2092-40a2-a04d-dcb46d5ca9ed</UserSecretsId>
+    </PropertyGroup>
+
+</Project>
+```
+---
 
 Инструмент "Диспетчер секретов" хранит конфиденциальные данные для разработки вне вашего дерева проектов. Этот подход помогает предотвратить случайный обмен секретами приложений в исходном коде. См. сведения о диспетчере секретов в руководстве по [безопасному хранению секретов приложений при разработке с помощью ASP.NET Core](https://docs.microsoft.com/aspnet/core/security/app-secrets).
 
@@ -85,22 +101,22 @@ ms.locfileid: "74185090"
 
 1. Добавьте ссылку на пакет NuGet `Microsoft.Azure.AppConfiguration.AspNetCore`, выполнив следующую команду:
 
-    ```CLI
-        dotnet add package Microsoft.Azure.AppConfiguration.AspNetCore --version 2.0.0-preview-010060003-1250
+    ```dotnetcli
+    dotnet add package Microsoft.Azure.AppConfiguration.AspNetCore --version 3.0.0-preview-010560002-1165
     ```
-2. Выполните следующую команду, чтобы восстановить пакеты проекта:
+1. Выполните следующую команду, чтобы восстановить пакеты проекта:
 
-    ```CLI
-        dotnet restore
+    ```dotnetcli
+    dotnet restore
     ```
-3. Добавьте секрет с именем *ConnectionStrings:AppConfig* в диспетчер секретов.
+1. Добавьте секрет с именем *ConnectionStrings:AppConfig* в диспетчер секретов.
 
     Этот секрет содержит строку подключения для получения доступа к хранилищу Конфигурации приложений. Замените значение в следующей команде строкой подключения к своему хранилищу Конфигурации приложений.
 
     Эта команда должна выполняться в том же каталоге, что и файл *CSPROJ*.
 
-    ```CLI
-        dotnet user-secrets set ConnectionStrings:AppConfig <your_connection_string>
+    ```dotnetcli
+    dotnet user-secrets set ConnectionStrings:AppConfig <your_connection_string>
     ```
 
     > [!IMPORTANT]
@@ -108,20 +124,20 @@ ms.locfileid: "74185090"
 
     Диспетчер секретов используется только для локальной проверки веб-приложения. При развертывании приложения, например в [Службе приложений Azure](https://azure.microsoft.com/services/app-service/web), вы будете использовать параметр приложения **Строки подключения** в Службе приложений, а не хранить строку подключения с помощью диспетчера секретов.
 
-    Доступ к этому секрету осуществляется с помощью API конфигурации. Двоеточие (:) используется в имени конфигурации с API конфигурации на всех поддерживаемых платформах. Дополнительные сведения см. в статье [Конфигурация в .NET Core](https://docs.microsoft.com/aspnet/core/fundamentals/configuration/index?tabs=basicconfiguration&view=aspnetcore-2.0).
+    Доступ к этому секрету можно получить с помощью API конфигурации. Двоеточие (:) используется в имени конфигурации с API конфигурации на всех поддерживаемых платформах. Дополнительные сведения см. в статье [Конфигурация в .NET Core](https://docs.microsoft.com/aspnet/core/fundamentals/configuration/index?tabs=basicconfiguration&view=aspnetcore-2.0).
 
-4. Откройте файл *Program.cs* и добавьте ссылку на поставщик конфигурации приложений .NET Core.
+1. Откройте файл *Program.cs* и добавьте ссылку на поставщик конфигурации приложений .NET Core.
 
     ```csharp
     using Microsoft.Extensions.Configuration.AzureAppConfiguration;
     ```
 
-5. Обновите метод `CreateWebHostBuilder`, чтобы использовать службу "Конфигурация приложений", путем вызова метода `config.AddAzureAppConfiguration()`.
+1. Обновите метод `CreateWebHostBuilder`, чтобы использовать службу "Конфигурация приложений", путем вызова метода `config.AddAzureAppConfiguration()`.
     
     > [!IMPORTANT]
     > `CreateHostBuilder` заменяет `CreateWebHostBuilder` в .NET Core 3.0.  Выберите правильный синтаксис в зависимости от среды.
 
-    ### <a name="update-createwebhostbuilder-for-net-core-2x"></a>Обновите `CreateWebHostBuilder` для .NET Core 2.x
+    #### <a name="net-core-2xtabcore2x"></a>[.NET Core 2.x](#tab/core2x).
 
     ```csharp
     public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
@@ -134,8 +150,8 @@ ms.locfileid: "74185090"
             .UseStartup<Startup>();
     ```
 
-    ### <a name="update-createhostbuilder-for-net-core-3x"></a>Обновите `CreateHostBuilder` для .NET Core 3.x
-
+    #### <a name="net-core-3xtabcore3x"></a>[.NET Core 3.x](#tab/core3x).
+    
     ```csharp
     public static IHostBuilder CreateHostBuilder(string[] args) =>
         Host.CreateDefaultBuilder(args)
@@ -147,8 +163,9 @@ ms.locfileid: "74185090"
         })
         .UseStartup<Startup>());
     ```
+    ---
 
-6. Откройте файл *Index.cshtml* в каталоге "Представления > Главная" и замените его содержимое следующим кодом.
+1. Перейдите в каталог *<app root>/Views/Home* и откройте файл *Index.cshtml*. Замените содержимое приведенным ниже кодом:
 
     ```HTML
     @using Microsoft.Extensions.Configuration
@@ -167,7 +184,7 @@ ms.locfileid: "74185090"
     <h1>@Configuration["TestApp:Settings:Message"]</h1>
     ```
 
-7. Откройте файл *_Layout.cshtml* в каталоге "Представления > Общие" и замените его содержимое следующим кодом.
+1. Перейдите в каталог *<app root>/Views/Shared* и откройте файл *_Layout.cshtml*. Замените содержимое приведенным ниже кодом:
 
     ```HTML
     <!DOCTYPE html>
@@ -196,25 +213,31 @@ ms.locfileid: "74185090"
 
 ## <a name="build-and-run-the-app-locally"></a>Создание и запуск приложения локально
 
-1. Чтобы создать приложение с помощью .NET Core CLI, выполните следующую команду в оболочке командной строки:
+1. Чтобы создать приложение с помощью .NET Core CLI, перейдите к корневому каталогу приложения и выполните следующую команду в командной оболочке:
 
-    ```CLI
-       dotnet build
+    ```dotnetcli
+    dotnet build
     ```
 
-2. Когда создание завершится, запустите веб-приложение локально с помощью следующей команды:
+1. Когда создание завершится, запустите веб-приложение локально с помощью следующей команды:
 
-    ```CLI
-        dotnet run
+    ```dotnetcli
+    dotnet run
     ```
 
-3. Откройте окно браузера и перейдите по адресу `http://localhost:5000`, который является URL-адресом по умолчанию для веб-приложения, размещенного локально.
+1. Если вы работаете на локальном компьютере, перейдите по адресу `http://localhost:5000` в браузере. Это URL-адрес по умолчанию для локального веб-приложения.  
+
+Если вы работаете в Azure Cloud Shell, нажмите кнопку *Просмотр в Интернете*, а затем — *Настроить*.  
+
+![Найдите кнопку "Просмотр в Интернете"](./media/quickstarts/cloud-shell-web-preview.png)
+
+При появлении запроса на настройку порта для предварительного просмотра введите 5000 и выберите *Открыть и перейти*.  На веб-странице будет указано "Данные из конфигурации приложения Azure".
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
 [!INCLUDE [azure-app-configuration-cleanup](../../includes/azure-app-configuration-cleanup.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом кратком руководстве вы создали хранилище Конфигурации приложений и использовали его с веб-приложением ASP.NET Core с помощью [поставщика Конфигурации приложений](https://go.microsoft.com/fwlink/?linkid=2074664). Чтобы узнать, как настроить приложение ASP.NET Core для динамического обновления параметров конфигурации, перейдите к следующему учебнику.
 

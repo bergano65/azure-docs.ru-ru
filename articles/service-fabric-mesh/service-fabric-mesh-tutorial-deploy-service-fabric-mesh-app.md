@@ -1,26 +1,17 @@
 ---
-title: Руководство. Развертывание приложения Сетки Service Fabric | Документация Майкрософт
+title: Руководство. Развертывание приложения Сетки Service Fabric
 description: Узнайте, как использовать Visual Studio, чтобы опубликовать приложение Сетки Azure Service Fabric, состоящее из веб-сайта ASP.NET Core, который обменивается данными с северной веб-службой.
-services: service-fabric-mesh
-documentationcenter: .net
 author: dkkapur
-manager: chakdan
-editor: ''
-ms.assetid: ''
-ms.service: service-fabric-mesh
-ms.devlang: dotNet
 ms.topic: tutorial
-ms.tgt_pltfrm: NA
-ms.workload: NA
 ms.date: 09/18/2018
 ms.author: dekapur
 ms.custom: mvc, devcenter
-ms.openlocfilehash: eef4cfaff38a96597794354cc991f5d3eeae9404
-ms.sourcegitcommit: 7f7c2fe58c6cd3ba4fd2280e79dfa4f235c55ac8
+ms.openlocfilehash: d2bb37252bc93c982dbc090a0c3f20aef842325f
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2019
-ms.locfileid: "56806629"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75351848"
 ---
 # <a name="tutorial-deploy-a-service-fabric-mesh-application"></a>Руководство. Развертывание приложения Сетки Service Fabric.
 
@@ -42,7 +33,7 @@ ms.locfileid: "56806629"
 
 [!INCLUDE [preview note](./includes/include-preview-note.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Перед началом работы с этим руководством выполните следующие действия:
 
@@ -66,15 +57,15 @@ git clone https://github.com/azure-samples/service-fabric-mesh
 
 Дальше появится диалоговое окно **Публикация приложения Service Fabric**.
 
-![Диалоговое окно публикации Сетки Service Fabric в Visual Studio](./media/service-fabric-mesh-tutorial-deploy-dotnetcore/visual-studio-publish-dialog.png)
+![Диалоговое окно публикации службы "Сетка Service Fabric" в Visual Studio](./media/service-fabric-mesh-tutorial-deploy-dotnetcore/visual-studio-publish-dialog.png)
 
 Выберите учетную запись Azure и подписку. Выберите **расположение**. В этой статье используется **восточная часть США**.
 
-В разделе **Группа ресурсов** выберите **\<Создать новую группу ресурсов...>**. Откроется диалоговое окно, в котором создайте новую группу ресурсов. В этой статье используется расположение **восточная часть США** и имена группы **sfmeshTutorial1RG** (если в организации несколько человек используют одну и ту же подписку, выберите уникальное имя группы).  Нажмите клавишу **Создать**, чтобы создать группу ресурсов и вернитесь в диалоговое окно публикации.
+В разделе **Группа ресурсов** выберите **\<Создать новую группу ресурсов...>** . Откроется диалоговое окно, в котором создайте новую группу ресурсов. В этой статье используется расположение **восточная часть США** и имена группы **sfmeshTutorial1RG** (если в организации несколько человек используют одну и ту же подписку, выберите уникальное имя группы).  Нажмите клавишу **Создать**, чтобы создать группу ресурсов и вернитесь в диалоговое окно публикации.
 
-![Диалоговое окно новой группы ресурсов Сетки Service Fabric в Visual Studio](./media/service-fabric-mesh-tutorial-deploy-dotnetcore/visual-studio-publish-new-resource-group-dialog.png)
+![Диалоговое окно новой группы ресурсов службы "Сетка Service Fabric" в Visual Studio](./media/service-fabric-mesh-tutorial-deploy-dotnetcore/visual-studio-publish-new-resource-group-dialog.png)
 
-Вернитесь в диалоговое окно **Опубликовать приложение Service Fabric** в разделе **Реестр контейнеров Azure**, выберите **\<Создать реестр контейнеров Azure...>**. В диалоговом окне **Создать реестр контейнеров** используйте уникальное имя для **Имя реестра контейнеров**. Укажите **Расположение** (в этом руководстве используется **восточная часть США**). Выберите в раскрывающемся списке **группу ресурсов**, созданную на предыдущем шаге, например **sfmeshTutorial1RG**. Для **номера SKU** установите значение **Базовый**, а затем щелкните **Создать**, чтобы создать частный реестр контейнеров Azure и вернуться в диалоговое окно публикации.
+Вернитесь в диалоговое окно **Опубликовать приложение Service Fabric** в разделе **Реестр контейнеров Azure**, выберите **\<Создать реестр контейнеров Azure...>** . В диалоговом окне **Создать реестр контейнеров** используйте уникальное имя для параметра **Имя реестра контейнеров**. Укажите **Расположение** (в этом руководстве используется **восточная часть США**). Выберите в раскрывающемся списке **группу ресурсов**, созданную на предыдущем шаге, например **sfmeshTutorial1RG**. Для **номера SKU** установите значение **Базовый**, а затем щелкните **Создать**, чтобы создать частный реестр контейнеров Azure и вернуться в диалоговое окно публикации.
 
 ![Диалоговое окно нового реестра контейнеров службы "Сетка Service Fabric" в Visual Studio](./media/service-fabric-mesh-tutorial-deploy-dotnetcore/visual-studio-publish-new-container-registry-dialog.png)
 
@@ -93,7 +84,7 @@ Register-AzureRmResourceProvider -ProviderNamespace Microsoft.ContainerRegistry
 
 Чтобы развернуть приложение Service Fabric в Azure, в диалоговом окне публикации нажмите клавишу **Опубликовать**.
 
-При первой публикации в Azure образ docker помещается в Реестр контейнеров Azure (ACR), на что требуется определенное время в зависимости от размера образа. Следующие публикации того же проекта будут проходить быстрее. Ход выполнения процесса развертывания можно отследить, выбрав панель **Средства Service Fabric** в окне **Вывод** в Visual Studio. После завершения развертывания выходные данные **Средства Service Fabric** будут отображать IP-адрес и порт приложения в виде URL-адреса.
+При первой публикации в Azure образ Docker помещается в службу "Реестр контейнеров Azure" (ACR), на что требуется определенное время в зависимости от размера образа. Следующие публикации того же проекта будут проходить быстрее. Ход выполнения процесса развертывания можно отследить, выбрав панель **Средства Service Fabric** в окне **Вывод** в Visual Studio. После завершения развертывания выходные данные в области **Средства Service Fabric** будут отображать IP-адрес и порт приложения в виде URL-адреса.
 
 ```
 Packaging Application...
@@ -136,7 +127,7 @@ az mesh gateway show --resource-group myResourceGroup --name todolistappGateway
 az mesh app list --output table
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой части руководства вы узнали, как выполнить следующие действия:
 > [!div class="checklist"]

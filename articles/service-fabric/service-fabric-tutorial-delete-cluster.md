@@ -1,32 +1,21 @@
 ---
-title: Удаление кластера Service Fabric в Azure | Документация Майкрософт
+title: Удаление кластера Service Fabric в Azure
 description: Из этого руководства вы узнаете, как удалить размещенный в Azure кластер Service Fabric и все его ресурсы. Можно удалить группу ресурсов, содержащую кластер, или выборочно удалить его ресурсы.
-services: service-fabric
-documentationcenter: .net
-author: athinanthny
-manager: chackdan
-editor: ''
-ms.assetid: ''
-ms.service: service-fabric
-ms.devlang: dotNet
 ms.topic: tutorial
-ms.tgt_pltfrm: NA
-ms.workload: NA
 ms.date: 07/22/2019
-ms.author: atsenthi
 ms.custom: mvc
-ms.openlocfilehash: c6fd4234257cbb19580a5b406750cc72d03609c0
-ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
+ms.openlocfilehash: 802fdfc46344929930b1ffb015b364b4e2360cca
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68598865"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75465364"
 ---
-# <a name="tutorial-remove-a-service-fabric-cluster-running-in-azure"></a>Руководство по Удаление кластера Service Fabric, работающего в Azure
+# <a name="tutorial-remove-a-service-fabric-cluster-running-in-azure"></a>Руководство. Удаление кластера Service Fabric, работающего в Azure
 
 В этом руководстве из серии из пяти руководств показано, как удалить кластер Service Fabric, выполняющийся в Azure. Чтобы полностью удалить кластер Service Fabric, нужно также удалить и все ресурсы, которые он использует. Вы можете сделать это одним из двух способов: удалить группу ресурсов, в которой находится кластер (при этом будет удален кластерный ресурс и другие ресурсы в группе ресурсов), или удалить ресурс кластера и связанные с ним ресурсы по отдельности (но не другие ресурсы в группе ресурсов).
 
-Из этого руководства вы узнаете, как выполнять следующие задачи:
+В этом руководстве описано следующее.
 
 > [!div class="checklist"]
 > * Удаление группы ресурсов со всеми ее ресурсами.
@@ -35,7 +24,7 @@ ms.locfileid: "68598865"
 Из этого цикла руководств вы узнаете, как выполнять следующие задачи:
 > [!div class="checklist"]
 > * создание безопасного [кластера Windows](service-fabric-tutorial-create-vnet-and-windows-cluster.md) в Azure с помощью шаблона;
-> * [мониторинг кластера](service-fabric-tutorial-monitor-cluster.md);
+> * [Мониторинг кластера](service-fabric-tutorial-monitor-cluster.md)
 > * [свертывание и развертывание кластера](service-fabric-tutorial-scale-cluster.md);
 > * [Обновление среды выполнения кластера](service-fabric-tutorial-upgrade-cluster.md)
 > * Удаление кластера
@@ -43,7 +32,7 @@ ms.locfileid: "68598865"
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Перед началом работы с этим руководством выполните следующие действия:
 
@@ -109,9 +98,9 @@ Remove-AzResource -ResourceName "<name of the Resource>" -ResourceType "Microsof
 az resource delete --name "<name of the Resource>" --resource-type "Microsoft.ServiceFabric/clusters" --resource-group $ResourceGroupName
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-Из этого руководства вы узнали, как выполнить следующие задачи:
+В этом руководстве вы узнали, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 > * Удаление группы ресурсов со всеми ее ресурсами.

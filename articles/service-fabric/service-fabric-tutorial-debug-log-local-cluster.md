@@ -1,28 +1,19 @@
 ---
-title: Отладка приложения Java в локальном кластере Service Fabric | Документы Майкрософт
+title: Отладка приложения Java в локальном кластере Service Fabric
 description: Из этого руководства вы узнаете, как выполнить отладку и получить журналы из приложения Java в Service Fabric, которое запущено в локальном кластере.
-services: service-fabric
-documentationcenter: java
 author: suhuruli
-manager: mfussell
-editor: ''
-ms.assetid: ''
-ms.service: service-fabric
-ms.devlang: java
 ms.topic: tutorial
-ms.tgt_pltfrm: NA
-ms.workload: NA
 ms.date: 02/26/2018
 ms.author: suhuruli
 ms.custom: mvc
-ms.openlocfilehash: c5ff1a0373fcce339bea2b235d86f20dc861a15c
-ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.openlocfilehash: c664b586260957138249028e4d521c29b411d56d
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57444265"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75465383"
 ---
-# <a name="tutorial-debug-a-java-application-deployed-on-a-local-service-fabric-cluster"></a>Руководство по Отладка приложения Java, развернутого в локальном кластере Service Fabric
+# <a name="tutorial-debug-a-java-application-deployed-on-a-local-service-fabric-cluster"></a>Руководство. Отладка приложения Java, развернутого в локальном кластере Service Fabric
 
 Это руководство представляет собой вторую часть цикла. Вы узнаете, как подключить удаленный отладчик с помощью Eclipse для приложения Service Fabric. Кроме того, вы узнаете, как перенаправлять журналы из запущенных приложений в расположение, удобное для разработчика.
 
@@ -41,7 +32,7 @@ ms.locfileid: "57444265"
 > * перенаправление журналов в настраиваемое расположение.
 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Перед началом работы с этим руководством выполните следующие действия:
 
@@ -87,7 +78,7 @@ git clone https://github.com/Azure-Samples/service-fabric-java-quickstart
 
 8. В обозревателе пакетов щелкните правой кнопкой мыши проект **Voting** и выберите **Service Fabric -> Publish Application** (Публикация приложения).
 
-9. В окне **публикации приложения** выберите **Local.json** в раскрывающемся списке и нажмите кнопку **Publish** (Опубликовать).
+9. В окне **Публикация приложения** выберите **Local.json** в раскрывающемся списке и нажмите кнопку **Опубликовать**.
 
 10. В среде IDE Eclipse выберите **Run -> Debug Configurations -> Remote Java Application** (Запустить -> Конфигурации отладки -> Удаленное приложение Java), щелкните конфигурацию **Voting**, которую вы создали ранее, и нажмите кнопку **Debug** (Отладить).
 
@@ -97,7 +88,7 @@ git clone https://github.com/Azure-Samples/service-fabric-java-quickstart
 
 ## <a name="redirect-application-logs-to-custom-location"></a>Перенаправление журналов приложения в пользовательское расположение
 
-Ниже приведены пошаговые инструкции по перенаправлению журналов из расположения по умолчанию (*/var/log/syslog*) в пользовательское расположение.
+Ниже приведены пошаговые инструкции по перенаправлению журналов из расположения по умолчанию ( */var/log/syslog*) в пользовательское расположение.
 
 1. Сейчас приложения, работающие в кластерах Service Fabric для Linux, поддерживают только принятие одного файла журнала. Чтобы настроить приложение, в котором журналы будут всегда записываться в */tmp/mysfapp0.0.log*, создайте файл с именем logging.properties в расположении *Voting/VotingApplication/VotingWebPkg/Code/logging.properties* и добавьте следующее содержимое.
 
@@ -126,7 +117,7 @@ git clone https://github.com/Azure-Samples/service-fabric-java-quickstart
 
 На этом этапе вы узнали, как выполнить отладку и получить доступ к журналам приложений при разработке приложений Java в Service Fabric.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой части руководства вы узнали, как выполнить следующие действия:
 

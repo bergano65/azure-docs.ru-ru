@@ -1,5 +1,5 @@
 ---
-title: Руководство. Создание пакета для доступа в управлении правами Azure AD в Azure Active Directory
+title: Руководство. Создание пакета для доступа в управлении правами Azure AD
 description: Пошаговое руководство по созданию пакета для доступа в управлении правами Azure Active Directory.
 services: active-directory
 documentationCenter: ''
@@ -16,14 +16,14 @@ ms.date: 10/22/2019
 ms.author: ajburnle
 ms.reviewer: markwahl-msft
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: de4d4a1825149a512d7abdb192d8fb9d49e85a20
-ms.sourcegitcommit: 98ce5583e376943aaa9773bf8efe0b324a55e58c
+ms.openlocfilehash: cd4feeb83acc3842874e7a2e4bbd32dacabcc00d
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73174872"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75422659"
 ---
-# <a name="tutorial-create-your-first-access-package-in-azure-ad-entitlement-management"></a>Руководство по созданию пакета для доступа в управлении правами Azure AD
+# <a name="tutorial-create-your-first-access-package-in-azure-ad-entitlement-management"></a>Руководство. созданию пакета для доступа в управлении правами Azure AD
 
 Управление доступом ко всем ресурсам, которые требуются сотрудникам, таким как группы, приложения и сайты, является важной функцией для организаций. Вам нужна возможность предоставлять сотрудникам нужный уровень доступа, который требуется им для продуктивной работы, и удалять права доступа, когда они больше не нужны.
 
@@ -31,7 +31,7 @@ ms.locfileid: "73174872"
 
 ![Обзор сценария](./media/entitlement-management-access-package-first/elm-scenario-overview.png)
 
-Из этого руководства вы узнаете, как выполнять следующие задачи:
+В этом руководстве описано следующее.
 
 > [!div class="checklist"]
 > * Создавать пакет для доступа с группой в качестве ресурса.
@@ -42,7 +42,7 @@ ms.locfileid: "73174872"
 
 >[!VIDEO https://www.youtube.com/embed/zaaKvaaYwI4]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы использовать управление правами Azure AD, необходимо иметь одну из следующих лицензий:
 
@@ -65,7 +65,7 @@ ms.locfileid: "73174872"
 
 1. Создайте или настройте следующих двух пользователей. Можно использовать указанные или другие имена. **Admin1** может быть пользователем, под именем которого вы вошли сейчас.
 
-    | ИМЯ | Роль каталога |
+    | Имя | Роль каталога |
     | --- | --- |
     | **Admin1** | Глобальный администратор.<br/>-или-<br/>Администратор пользователей |
     | **Requestor1** | Пользователь |
@@ -190,7 +190,7 @@ ms.locfileid: "73174872"
 
     ![Портал "Мой доступ" с запросом на доступ](./media/entitlement-management-shared/my-access-request-access.png)
 
-1. Нажмите кнопку **Submit**(Отправить).
+1. Щелкните **Отправить**.
 
 1. В меню слева щелкните **История запросов**, чтобы убедиться, что ваш запрос был отправлен.
 
@@ -256,7 +256,7 @@ ms.locfileid: "73174872"
 
 1. Удалите группу **Маркетинговые ресурсы**.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Перейдите к следующей статье, чтобы узнать о распространенных сценариях управления правами.
 > [!div class="nextstepaction"]

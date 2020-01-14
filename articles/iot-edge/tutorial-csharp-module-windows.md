@@ -9,18 +9,18 @@ ms.date: 04/23/2019
 ms.topic: tutorial
 ms.service: iot-edge
 ms.custom: mvc
-ms.openlocfilehash: 041efc62b32e8d8c0c477d9d5715882fd7899cd9
-ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
+ms.openlocfilehash: 8ed622ff928fa612e6d33ba0647ce258bf4c1c21
+ms.sourcegitcommit: 2c59a05cb3975bede8134bc23e27db5e1f4eaa45
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74701943"
+ms.lasthandoff: 01/05/2020
+ms.locfileid: "75665208"
 ---
-# <a name="tutorial-develop-a-c-iot-edge-module-for-windows-devices"></a>Руководство по Разработка модулей IoT Edge на языке C# для устройств Windows
+# <a name="tutorial-develop-a-c-iot-edge-module-for-windows-devices"></a>Руководство. Разработка модулей IoT Edge на языке C# для устройств Windows
 
 Для разработки и развертывания кода C# на устройствах Windows с Azure IoT Edge используйте Visual Studio. 
 
-Вы можете использовать модули Azure IoT Edge для развертывания кода, который реализует бизнес-логику непосредственно на устройствах IoT Edge. В этом руководстве рассматриваются создание и развертывание модуля IoT Edge, который фильтрует данные датчика. Из этого руководства вы узнаете, как выполнять следующие задачи:    
+Вы можете использовать модули Azure IoT Edge для развертывания кода, который реализует бизнес-логику непосредственно на устройствах IoT Edge. В этом руководстве рассматриваются создание и развертывание модуля IoT Edge, который фильтрует данные датчика. В этом руководстве описано следующее.    
 
 > [!div class="checklist"]
 > * Создать модуль IoT Edge на основе пакета SDK C# с помощью Visual Studio.
@@ -43,7 +43,7 @@ ms.locfileid: "74701943"
 | **Разработка Windows AMD64** | ![Разработка модулей C# для WinAMD64 в VS Code](./media/tutorial-c-module/green-check.png) | ![Разработка модулей C# для WinAMD64 в Visual Studio](./media/tutorial-c-module/green-check.png) |
 | **Отладка Windows AMD64** |   | ![Отладка модулей C# для WinAMD64 в Visual Studio](./media/tutorial-c-module/green-check.png) |
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Перед началом работы с этим руководством вам нужно настроить среду разработки, выполнив инструкции, приведенные в статье о [разработке модуля IoT Edge для устройств Windows](tutorial-develop-for-windows.md). После работы с этим руководством у вас должны быть готовы все необходимые компоненты: 
 
@@ -66,7 +66,7 @@ ms.locfileid: "74701943"
 
 1. Запустите Visual Studio 2019 и выберите **Создать проект**.
 
-2. В окне нового проекта найдите проект **IoT Edge** и выберите для него тип **Azure IoT Edge (Windows amd64)** . Щелкните **Далее**. 
+2. найдите проект **IoT Edge** и выберите для него тип **Azure IoT Edge (Windows amd64)** . Щелкните **Далее**. 
 
    ![Создание проекта Azure IoT Edge](./media/tutorial-csharp-module-windows/new-project.png)
 
@@ -92,29 +92,30 @@ ms.locfileid: "74701943"
 
 1. В обозревателе решений Visual Studio откройте файл **deployment.template.json**. 
 
-2. Найдите свойство **registryCredentials** в требуемых свойствах $edgeAgent. 
-
-3. Обновите свойство, указав свои учетные данные в следующем формате: 
+2. Найдите свойство **registryCredentials** в требуемых свойствах $edgeAgent. Адрес реестра должен автоматически заполняться данными, предоставленными при создании проекта, а поля имени пользователя и пароля должны содержать имена переменных. Пример: 
 
    ```json
    "registryCredentials": {
      "<registry name>": {
-       "username": "<username>",
-       "password": "<password>",
+       "username": "$CONTAINER_REGISTRY_USERNAME_<registry name>",
+       "password": "$CONTAINER_REGISTRY_PASSWORD_<registry name>",
        "address": "<registry name>.azurecr.io"
      }
    }
-   ```
 
-4. Сохраните файл deployment.template.json. 
+3. Open the **.env** file in your module solution. (It's hidden by default in the Solution Explorer, so you might need to select the **Show All Files** button to display it.) The .env file should contain the same username and password variables that you saw in the deployment.template.json file. 
 
-### <a name="update-the-module-with-custom-code"></a>Обновление модуля с помощью пользовательского кода
+4. Add the **Username** and **Password** values from your Azure container registry. 
 
-Код стандартного модуля получает сообщения из очереди входящих сообщений и передает их через очередь исходящих сообщений. Давайте добавим еще немного кода, чтобы модуль обрабатывал сообщения на границе до передачи в Центр Интернета вещей. Обновите модуль таким образом, чтобы он анализировал данные о температуре, получаемые в каждом сообщении, и отправлял в Центр Интернета вещей только сообщения со сведениями о том, что температура превышает определенный порог. 
+5. Save your changes to the .env file.
 
-1. В Visual Studio откройте **CSharpModule** > **Program.cs**.
+### Update the module with custom code
 
-2. В верхней части пространства имен **CSharpModule** добавьте три **инструкции** для типов, которые будут использоваться позже.
+The default module code receives messages on an input queue and passes them along through an output queue. Let's add some additional code so that the module processes the messages at the edge before forwarding them to IoT Hub. Update the module so that it analyzes the temperature data in each message, and only sends the message to IoT Hub if the temperature exceeds a certain threshold. 
+
+1. In Visual Studio, open **CSharpModule** > **Program.cs**.
+
+2. At the top of the **CSharpModule** namespace, add three **using** statements for types that are used later:
 
     ```csharp
     using System.Collections.Generic;     // For KeyValuePair<>
@@ -291,7 +292,7 @@ ms.locfileid: "74701943"
 
 В предыдущем разделе вы создали решение IoT Edge и добавили код **CSharpModule**, который будет отфильтровывать сообщения, где указанная температура компьютера ниже допустимого порогового значения. Теперь необходимо создать решение в качестве образа контейнера и передать его в реестр контейнеров. 
 
-1. Используйте следующую команду, чтобы войти в Docker на компьютере разработки. Выполните вход в систему, используя имя пользователя, пароль и сервер входа из реестра контейнеров Azure. Вы можете получить эти значения из раздела **Ключи доступа** в реестре на портале Azure.
+1. Используйте следующую команду, чтобы войти в Docker на компьютере разработки. Выполните вход в систему, используя имя пользователя, пароль и сервер входа из реестра контейнеров Azure. Вы можете получить эти значения в разделе **Ключи доступа** в разделе реестра на портале Azure.
 
    ```cmd
    docker login -u <ACR username> -p <ACR password> <ACR login server>
@@ -303,13 +304,13 @@ ms.locfileid: "74701943"
 
 3. Выберите **Build and Push IoT Edge Modules** (Создание и отправка модулей IoT Edge). 
 
-   Команда сборки и отправки запускает три операции. Во-первых,в решении создается папка с именем **config**, которая содержит полный манифест развертывания на основе информации из шаблона развертывания и других файлов решения. Во-вторых, выполняется `docker build` для сборки образа контейнера на основе подходящего файла dockerfile для целевой архитектуры. В-третьих, выполняется `docker push` для отправки образа в реестр контейнеров. 
+   Эта команда сборки и отправки позволяет запустить три операции. Во-первых,в решении создается папка с именем **config**, которая содержит полный манифест развертывания на основе информации из шаблона развертывания и других файлов решения. Во-вторых, выполняется `docker build` для сборки образа контейнера на основе подходящего файла dockerfile для целевой архитектуры. В-третьих, выполняется `docker push` для отправки образа в реестр контейнеров. 
 
 ## <a name="deploy-modules-to-device"></a>Развертывание модулей на устройстве
 
 Разверните проект модуля на устройство IoT Edge с помощью обозревателя Visual Studio Cloud Explorer и расширения Azure IoT Edge Tools. У вас уже есть манифест развертывания, подготовленный для вашего сценария (файл **deployment.json** в папке config). Теперь вам осталось выбрать устройство для получения развертывания.
 
-Убедитесь, что устройство IoT Edge запущено и работает. 
+Убедитесь, что устройство IoT Edge работает. 
 
 1. В Visual Studio Cloud Explorer разверните ресурсы, чтобы увидеть список устройств IoT. 
 
@@ -331,7 +332,7 @@ ms.locfileid: "74701943"
 
 2. Из списка **Actions** (Действия) выберите **Start Monitoring Built-in Event Endpoint** (Начать мониторинг встроенной конечной точки событий). 
 
-3. Просмотрите сообщения, поступающие в Центр Интернета вещей. Для поступления сообщений может потребоваться некоторое время, так как измененный нами код CSharpModule ожидает, пока температура компьютера не достигнет 25 градусов, и лишь затем отправляет сообщения. Он также присваивает тип **Предупреждение** всем сообщениям, которые сообщают о достижении порогового значения температуры. 
+3. Просмотрите сообщения, поступающие в Центр Интернета вещей. Для поступления сообщений может потребоваться некоторое время, так как измененный нами код CSharpModule ожидает, пока температура компьютера не достигнет 25 градусов, и лишь затем отправляет сообщения. С помощью кода также присваивается тип **Оповещение** всем сообщениям со сведениями о достижении порога температуры. 
 
    ![Просмотр поступающих сообщений в Центре Интернета вещей](./media/tutorial-csharp-module-windows/view-d2c-message.png)
 
@@ -357,7 +358,7 @@ ms.locfileid: "74701943"
 
 [!INCLUDE [iot-edge-clean-up-cloud-resources](../../includes/iot-edge-clean-up-cloud-resources.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом руководстве вы создали модуль IoT Edge с кодом для фильтрации необработанных данных, созданных устройством IoT Edge. Дополнительные сведения о создании собственных модулей см. в статьях [о разработке модулей IoT Edge](module-development.md) и [о разработке модулей с помощью Visual Studio](how-to-visual-studio-develop-module.md). Примеры модулей IoT Edge, включая смоделированный модуль температуры, см. в [этой статье](https://github.com/Azure/iotedge/tree/master/edge-modules). 
 

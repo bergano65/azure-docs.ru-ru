@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство по управлению файловыми ресурсами Azure с помощью Обозревателя службы хранилища Azure
+title: Управление общими папками Azure с помощью Обозревателя службы хранилища Azure
 description: Используйте это краткое руководство, чтобы узнать, как управлять файловыми ресурсами Azure с помощью Обозревателя службы хранилища Azure.
 author: roygara
 ms.service: storage
@@ -7,12 +7,12 @@ ms.topic: quickstart
 ms.date: 10/18/2018
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: b034b3e7aa5fcb61cf83565f3e4c3b1c83f3610c
-ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
+ms.openlocfilehash: 0bf66baba1b665c92a11d7bda91dcaa3e355dd96
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68699460"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75431820"
 ---
 # <a name="quickstart-create-and-manage-azure-file-shares-with-azure-storage-explorer"></a>Краткое руководство. Создание общих файловых ресурсов Azure и управление ими с помощью Обозревателя службы хранилища Azure
 В этом руководстве рассматриваются основы работы с [файловыми ресурсами Azure](storage-files-introduction.md) с помощью Обозревателя службы хранилища Azure. Общие файловые ресурсы Azure отличаются от других ресурсов тем, что хранятся в облаке и поддерживаются платформой Azure. Общие файловые ресурсы Azure поддерживают отраслевой протокол SMB и позволяют совместно использовать файлы на нескольких компьютерах, а также в нескольких приложениях и экземплярах. 
@@ -21,7 +21,7 @@ ms.locfileid: "68699460"
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 Для работы с этим кратким руководством необходимо установить Обозреватель службы хранилища. Чтобы загрузить и установить Обозреватель службы хранилища Azure, [перейдите по этой ссылке](https://azure.microsoft.com/features/storage-explorer/).
 
 ## <a name="create-a-storage-account"></a>Создание учетной записи хранения
@@ -56,7 +56,7 @@ ms.locfileid: "68699460"
 ## <a name="use-your-azure-file-share"></a>Использование общего файлового ресурса Azure
 Теперь, когда файловый ресурс Azure создан, его можно подключить с помощью SMB к [Windows](storage-how-to-use-files-windows.md), [Linux](storage-how-to-use-files-linux.md) или [macOS](storage-how-to-use-files-mac.md). Кроме того, с файловым ресурсом Azure можно работать с помощью Обозревателя службы хранилища Azure. Преимущество использования Обозревателя службы хранилища Azure вместо подключения файлового ресурса по протоколу SMB заключается в том, что все запросы, созданные с помощью Обозревателя службы хранилища Azure, выполняются через REST API службы файлов. Файловый REST API можно использовать для создания, изменения и удаления файлов и каталогов на клиентах, у которых нет доступа по SMB.
 
-### <a name="create-a-directory"></a>создать каталог;
+### <a name="create-a-directory"></a>Создание каталога
 Добавление каталога обеспечивает иерархическую структуру для управления файловым ресурсом. В вашем каталоге можно создать несколько уровней. Однако прежде, чем создавать подкаталог, необходимо убедиться в наличии всех родительских каталогов. Например, для пути myDirectory/mySubDirectory необходимо сначала создать каталог *myDirectory*. Затем создается *mySubDirectory*. 
 
 1. На вкладке для файлового ресурса в верхнем меню нажмите кнопку **New Folder** (Создать папку). Откроется панель **Создать новый каталог**.
@@ -85,7 +85,7 @@ ms.locfileid: "68699460"
 
 [!INCLUDE [storage-files-clean-up-portal](../../../includes/storage-files-clean-up-portal.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Что представляет собой служба "Файлы Azure"?](storage-files-introduction.md)

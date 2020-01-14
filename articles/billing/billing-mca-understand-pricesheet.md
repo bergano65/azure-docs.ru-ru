@@ -1,5 +1,5 @@
 ---
-title: Сведения о условиях в прейскуранте для клиентов с Клиентским соглашением Майкрософт — Azure
+title: Термины в прейскуранте Клиентского соглашения Майкрософт в Azure
 description: Узнайте, как правильно интерпретировать сведения о потреблении и счетах для клиентов с Клиентским соглашением Майкрософт.
 author: bandersmsft
 manager: jureid
@@ -11,16 +11,16 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/26/2019
 ms.author: banders
-ms.openlocfilehash: 1e7e698bede44ddb3fe701c50f69164b03fe13d8
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: f4285b8185b2df2694f399f6bcb6751c1e9c6650
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74223769"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75449351"
 ---
 # <a name="terms-in-your-microsoft-customer-agreement-price-sheet"></a>Условия в прейскуранте Клиентского соглашения Майкрософт
 
-В этой статье рассматривается учетная запись выставления счетов Azure для Клиентского соглашения Майкрософт. [Проверьте наличие доступа к Клиентскому соглашению Майкрософт](#check-access-to-a-microsoft-customer-agreement).
+В этой статье рассматривается учетная запись выставления счетов Azure для клиентского соглашения Майкрософт. [Проверьте наличие доступа к Клиентскому соглашению Майкрософт](#check-access-to-a-microsoft-customer-agreement).
 
 Если вы являетесь владельцем профиля выставления счетов, участником, читателем или менеджером счетов, вы можете скачать прейскурант для вашей организации из портала Azure. См. [Просмотр и скачивание сведений о ценах для вашей организации](billing-ea-pricing.md).
 
@@ -64,6 +64,6 @@ ms.locfileid: "74223769"
 
 Если у вас есть вопросы или вам нужна помощь, [создайте запрос в службу поддержки](https://go.microsoft.com/fwlink/?linkid=2083458).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Просмотр и скачивание сведений о ценах для вашей организации](billing-ea-pricing.md)

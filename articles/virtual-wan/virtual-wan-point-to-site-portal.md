@@ -7,18 +7,18 @@ ms.service: virtual-wan
 ms.topic: tutorial
 ms.date: 11/04/2019
 ms.author: alzam
-ms.openlocfilehash: 394ca0c244db751645eb56f50e7023fcee229876
-ms.sourcegitcommit: 5aefc96fd34c141275af31874700edbb829436bb
+ms.openlocfilehash: 02c8bf24d4ddb6408160da7a4c517d6c8c82de5f
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74807465"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75450897"
 ---
-# <a name="tutorial-create-a-user-vpn-connection-using-azure-virtual-wan"></a>Руководство по созданию пользовательского соединения VPN с помощью Виртуальной глобальной сети Azure
+# <a name="tutorial-create-a-user-vpn-connection-using-azure-virtual-wan"></a>Руководство. созданию пользовательского соединения VPN с помощью Виртуальной глобальной сети Azure
 
 В этом руководстве показано, как создать подключение к ресурсам в Azure через VPN-соединение IPsec/IKE (IKEv2) или OpenVPN с помощью Виртуальной глобальной сети. Этот тип подключения требует, чтобы клиент был настроен на клиентском компьютере. Дополнительные сведения о Виртуальной глобальной сети см. в [этой статье](virtual-wan-about.md).
 
-Из этого руководства вы узнаете, как выполнять следующие задачи:
+В этом руководстве описано следующее.
 
 > [!div class="checklist"]
 > * Создание глобальной сети.
@@ -33,7 +33,7 @@ ms.locfileid: "74807465"
 
 ![Схема Виртуальной глобальной сети](./media/virtual-wan-about/virtualwanp2s.png)
 
-## <a name="before-you-begin"></a>Перед началом работы
+## <a name="before-you-begin"></a>Перед началом
 
 Перед началом настройки убедитесь, что удовлетворены следующие требования:
 
@@ -135,7 +135,7 @@ ms.locfileid: "74807465"
 2. Загрузите профиль VPN для шлюза. Это можно сделать с вкладки конфигурации VPN пользователя на портале Azure, или с помощью New-AzureRmVpnClientConfiguration в PowerShell.
 3. Распакуйте профиль. Откройте файл конфигурации vpnconfig.ovpn из папки OpenVPN в Notepad.
 4. Заполните раздел сертификата клиента подключения "точка — сеть" открытым ключом сертификата клиента P2S в формате base64. В сертификате с форматированием PEM вы можете просто открыть файл CER и скопировать ключ в формате base64, находящийся между заголовками сертификата. Сведения о том, [как экспортировать сертификат, чтобы получить закодированный открытый ключ, см. ниже.](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-certificates-point-to-site)
-5. Заполните раздел секретного ключа закрытым ключом сертификата клиента P2S в base64. Как извлечь закрытый ключ, см. в этом разделе.
+5. Заполните раздел секретного ключа закрытым ключом сертификата клиента P2S в base64. Как извлечь закрытый ключ, см. в [этом разделе](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-howto-openvpn-clients#windows).
 6. Не изменяйте остальные поля. Для подключения к VPN используйте заполненную конфигурацию на входе клиента.
 7. Скопируйте файл vpnconfig.ovpn в папку C:\Program Files\OpenVPN\config.
 8. Щелкните правой кнопкой мыши значок OpenVPN в области уведомлений и щелкните "Подключить".
@@ -167,6 +167,6 @@ ms.locfileid: "74807465"
 Remove-AzResourceGroup -Name myResourceGroup -Force
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о Виртуальной глобальной сети см. в [этой статье](virtual-wan-about.md).

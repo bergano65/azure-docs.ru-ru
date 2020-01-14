@@ -1,26 +1,16 @@
 ---
-title: Создание приложения-контейнера Windows в Service Fabric в Azure | Документы Майкрософт
+title: Создание приложения-контейнера Windows в Service Fabric в Azure
 description: В этом кратком руководстве вы создадите первое приложение-контейнер Windows в Azure Service Fabric.
-services: service-fabric
-documentationcenter: .net
-author: athinanthny
-manager: jpconnock
-editor: vturecek
-ms.assetid: ''
-ms.service: service-fabric
-ms.devlang: dotNet
 ms.topic: quickstart
-ms.tgt_pltfrm: NA
-ms.workload: NA
 ms.date: 07/10/2019
 ms.author: atsenthi
 ms.custom: mvc
-ms.openlocfilehash: 096a398b8fc4f7f42dcc42feb7fe00b182d7649b
-ms.sourcegitcommit: 0f54f1b067f588d50f787fbfac50854a3a64fff7
+ms.openlocfilehash: 477d47fabc59c5718c449418f225d6a38838b270
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68599374"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75466267"
 ---
 # <a name="quickstart-deploy-windows-containers-to-service-fabric"></a>Краткое руководство. Развертывание контейнеров Windows в Service Fabric
 
@@ -40,7 +30,7 @@ Azure Service Fabric — это платформа распределенных 
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * Подписка Azure. Вы можете создать [бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 * Компьютер для разработки, на котором установлено ПО, перечисленное ниже.
@@ -51,7 +41,7 @@ Azure Service Fabric — это платформа распределенных 
 
 Пакет SDK и средства для Service Fabric предоставляют шаблон службы для развертывания контейнера в кластере Service Fabric.
 
-Запустите Visual Studio от имени администратора.  Выберите **Файл** > **Создать** > **Проект**.
+Запустите Visual Studio от имени администратора.  Выберите **File** > **New** > **Project** ( Файл > Создать > Проект).
 
 Выберите **Приложение Service Fabric**, назовите его MyFirstContainer и щелкните **Создать**.
 
@@ -106,7 +96,7 @@ Azure Service Fabric — это платформа распределенных 
 
 Предоставив значения для переменных, нажмите клавишу **F5**, чтобы запустить сценарий.
 
-После выполнения сценария и создания кластера в выходных данных найдите значение `ClusterEndpoint`. Например:
+После выполнения сценария и создания кластера в выходных данных найдите значение `ClusterEndpoint`. Пример:
 
 ```powershell
 ...
@@ -160,7 +150,7 @@ Thumbprint                                Subject
 
 Пока кластер работает, с вас будет взиматься плата. Рекомендуем [удалить кластер](service-fabric-cluster-delete.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из этого руководства вы узнали, как выполнить следующие действия:
 

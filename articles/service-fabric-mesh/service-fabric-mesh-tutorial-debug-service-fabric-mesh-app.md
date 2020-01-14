@@ -1,26 +1,17 @@
 ---
-title: Руководство. Отладка веб-приложения Сетки Azure Service Fabric, выполняющегося в локальном кластере разработки | Документация Майкрософт
+title: Отладка веб-приложения Сетки Azure Service Fabric, выполняющегося в локальной среде
 description: В этом руководстве описывается отладка приложения Сетки Azure Service Fabric, работающая в локальном кластере.
-services: service-fabric-mesh
-documentationcenter: .net
 author: dkkapur
-manager: chakdan
-editor: ''
-ms.assetid: ''
-ms.service: service-fabric-mesh
-ms.devlang: dotNet
 ms.topic: tutorial
-ms.tgt_pltfrm: NA
-ms.workload: NA
 ms.date: 10/31/2018
 ms.author: dekapur
 ms.custom: mvc, devcenter
-ms.openlocfilehash: bef86b189064a82b6605e8b99a374b1ee92682e2
-ms.sourcegitcommit: 7f7c2fe58c6cd3ba4fd2280e79dfa4f235c55ac8
+ms.openlocfilehash: c36d45919ae8a17026fc91f8e9040f3bb11d3eb0
+ms.sourcegitcommit: f0dfcdd6e9de64d5513adf3dd4fe62b26db15e8b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2019
-ms.locfileid: "56805126"
+ms.lasthandoff: 12/26/2019
+ms.locfileid: "75494958"
 ---
 # <a name="tutorial-debug-a-service-fabric-mesh-application-running-in-your-local-development-cluster"></a>Руководство. Отладка приложения Сетки Service Fabric, выполняющегося в локальном кластере разработки
 
@@ -42,7 +33,7 @@ ms.locfileid: "56805126"
 
 [!INCLUDE [preview note](./includes/include-preview-note.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Перед началом работы с этим руководством выполните следующие действия:
 
@@ -99,7 +90,7 @@ git clone https://github.com/azure-samples/service-fabric-mesh
 4. Шаг назад (F10) к запросу `client.GetAsync(backendUrl).GetAwaiter().GetResult())` и вы окажетесь в точке останова оператора `Get()`. При помощи этого метода можно увидеть как список работающих элементов извлекается из списка в памяти.
 5. После окончания остановите отладку проекта в Visual Studio, нажав комбинацию клавиш **SHIFT+F5**.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой части руководства было показано следующее.
 

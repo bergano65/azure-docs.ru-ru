@@ -1,5 +1,5 @@
 ---
-title: Руководство. Создание веб-приложения Node.js с помощью пакета SDK для JavaScript для управления данными API SQL Azure Cosmos DB
+title: Руководство. Создание веб-приложения Node.js с помощью пакета SDK JavaScript для Azure Cosmos DB для управления данными API SQL
 description: В этом руководстве по Node.js описывается использование Microsoft Azure Cosmos DB для хранения данных и доступа к ним из веб-приложения Node.js Express, размещенного в компоненте "Веб-приложения" Службы приложений Microsoft Azure.
 author: SnehaGunda
 ms.service: cosmos-db
@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 11/05/2019
 ms.author: sngun
 Customer intent: As a developer, I want to build a Node.js web application to access and manage SQL API account resources in Azure Cosmos DB, so that customers can better use the service.
-ms.openlocfilehash: a67870cc2494321aa739d6f59f18651013b7403b
-ms.sourcegitcommit: d614a9fc1cc044ff8ba898297aad638858504efa
+ms.openlocfilehash: 7a01c436f31a8ce5b8071db3eda4cf5562c421c0
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74995955"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75441278"
 ---
 # <a name="tutorial-build-a-nodejs-web-app-using-the-javascript-sdk-to-manage-a-sql-api-account-in-azure-cosmos-db"></a>Руководство. Создание веб-приложения Node.js с помощью пакета SDK для JavaScript для управления учетной записью API SQL в Azure Cosmos DB 
 
@@ -51,7 +51,7 @@ ms.locfileid: "74995955"
 * Установите [Git][Git] на локальной рабочей станции.
 
 ## <a name="_Toc395637761"></a>Создание учетной записи Azure Cosmos DB
-Давайте сначала создадим учетную запись Azure Cosmos DB. Если у вас уже есть учетная запись или вы используете эмулятор Azure Cosmos DB в этом руководстве, можно перейти к разделу [Шаг 2. Создание нового приложения Node.js](#_Toc395783178).
+Давайте сначала создадим учетную запись Azure Cosmos DB. Если у вас уже есть учетная запись или вы используете эмулятор Azure Cosmos DB для работы с этим руководством, можно перейти к разделу [Шаг 2. Создание нового приложения Node.js](#_Toc395783178).
 
 [!INCLUDE [cosmos-db-create-dbaccount](../../includes/cosmos-db-create-dbaccount.md)]
 
@@ -478,7 +478,7 @@ ms.locfileid: "74995955"
 
 Можно удалить группу ресурсов, учетную запись Azure Cosmos DB и все связанные ресурсы, когда они больше не нужны. Для этого выберите группу ресурсов, которая использовалась для учетной записи Azure Cosmos DB, выберите **Удалить**, а затем подтвердите имя удаляемой группы ресурсов.
 
-## <a name="_Toc395637775"></a>Дальнейшие действия
+## <a name="_Toc395637775"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [Создание мобильных приложений с помощью Xamarin и Azure Cosmos DB](mobile-apps-with-xamarin.md)

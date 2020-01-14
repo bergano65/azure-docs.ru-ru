@@ -1,25 +1,18 @@
 ---
-title: Краткое руководство. Настройка службы Azure NetApp Files и создание тома NFS | Документация Майкрософт
+title: Краткое руководство. Настройка Azure NetApp Files и тома NFS
 description: Краткое руководство. Описание быстрой настройки Azure NetApp Files и создания тома.
-services: azure-netapp-files
-documentationcenter: ''
 author: b-juche
-manager: ''
-editor: ''
-ms.assetid: ''
+ms.author: b-juche
 ms.service: azure-netapp-files
 ms.workload: storage
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: quickstart
 ms.date: 12/01/2019
-ms.author: b-juche
-ms.openlocfilehash: 912fd6bde4d00cca304a1506465a524cda947a07
-ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
+ms.openlocfilehash: fc7f13fb7ffe1667aaeaa4a3cc1916c6049a98c1
+ms.sourcegitcommit: ec2eacbe5d3ac7878515092290722c41143f151d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74769852"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75551664"
 ---
 # <a name="quickstart-set-up-azure-netapp-files-and-create-an-nfs-volume"></a>Краткое руководство. Настройка Azure NetApp Files и создание тома NFS 
 
@@ -34,7 +27,7 @@ ms.locfileid: "74769852"
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-## <a name="before-you-begin"></a>Перед началом работы 
+## <a name="before-you-begin"></a>Перед началом 
 
 > [!IMPORTANT] 
 > Необходимо иметь доступ к службе Azure NetApp Files.  Запросить доступ к службе можно на [странице заявки на доступ к Azure NetApp Files](https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR8cq17Xv9yVBtRCSlcD_gdVUNUpUWEpLNERIM1NOVzA5MzczQ0dQR1ZTSS4u).  Перед продолжением необходимо дождаться официального подтверждения по электронной почте от команды Azure NetApp Files. 
@@ -69,7 +62,7 @@ ms.locfileid: "74769852"
     Register-AzResourceProvider -ProviderNamespace Microsoft.NetApp
     ```
 
-# <a name="azure-clitabazure-cli"></a>[Интерфейс командной строки Azure](#tab/azure-cli)
+# <a name="azure-clitabazure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 [!INCLUDE [azure-netapp-files-cloudshell-include](../../includes/azure-netapp-files-azure-cloud-shell-window.md)]
 
@@ -90,7 +83,7 @@ ms.locfileid: "74769852"
 3. В окне "New NetApp Account" (Новая учетная запись NetApp) укажите следующую информацию. 
    1. Введите имя учетной записи **myaccount1**. 
    2. Выберите свою подписку.
-   3. Выберите **Создать**, чтобы создать группу ресурсов. Введите имя группы ресурсов **myRG1**. Последовательно выберите **ОК**. 
+   3. Выберите **Создать**, чтобы создать группу ресурсов. Введите имя группы ресурсов **myRG1**. Нажмите кнопку **ОК**. 
    4. Выберите расположение учетной записи.  
 
       ![Окно создания учетной записи NetApp](../media/azure-netapp-files/azure-netapp-files-new-account-window.png)  
@@ -126,7 +119,7 @@ ms.locfileid: "74769852"
     New-AzNetAppFilesAccount -ResourceGroupName $resourceGroup -Location $location -Name $anfAccountName
     ```
 
-# <a name="azure-clitabazure-cli"></a>[Интерфейс командной строки Azure](#tab/azure-cli)
+# <a name="azure-clitabazure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 1. Определите некоторые переменные, чтобы мы могли ссылаться на них во всех остальных примерах:
 
@@ -180,7 +173,7 @@ ms.locfileid: "74769852"
     2. Выберите уровень обслуживания **Премиум**. 
     3. Укажите размер пула **4 (Тиб)** . 
 
-5. Последовательно выберите **ОК**.
+5. Нажмите кнопку **ОК**.
 
 # <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
 
@@ -198,7 +191,7 @@ ms.locfileid: "74769852"
     New-AzNetAppFilesPool -ResourceGroupName $resourceGroup -Location $location -AccountName $anfAccountName -Name $poolName -PoolSize $poolSizeBytes -ServiceLevel $serviceLevel
     ```
 
-# <a name="azure-clitabazure-cli"></a>[Интерфейс командной строки Azure](#tab/azure-cli)
+# <a name="azure-clitabazure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 1. Определение новых переменных для дальнейшего использования
 
@@ -306,7 +299,7 @@ ms.locfileid: "74769852"
         -ProtocolType NFSv3
     ```
 
-# <a name="azure-clitabazure-cli"></a>[Интерфейс командной строки Azure](#tab/azure-cli)
+# <a name="azure-clitabazure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 1. Определение некоторых переменных для последующего использования.
     
@@ -400,7 +393,7 @@ ms.locfileid: "74769852"
     Remove-AzResourceGroup -Name $resourceGroup
     ```
 
-# <a name="azure-clitabazure-cli"></a>[Интерфейс командной строки Azure](#tab/azure-cli)
+# <a name="azure-clitabazure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 По окончании группу ресурсов можно при необходимости удалить. Удаление группы ресурсов — необратимая операция.  
 
@@ -415,7 +408,7 @@ ms.locfileid: "74769852"
     ```
 ---
 
-## <a name="next-steps"></a>Дополнительная информация  
+## <a name="next-steps"></a>Дальнейшие действия  
 
 > [!div class="nextstepaction"]
 > [Управление томами с помощью Azure NetApp Files](azure-netapp-files-manage-volumes.md)  

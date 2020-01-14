@@ -1,27 +1,27 @@
 ---
 title: Краткое руководство. Проверка орфографии с помощью REST API и Ruby — Проверка орфографии Bing
 titleSuffix: Azure Cognitive Services
-description: Приступите к работе с REST API проверки орфографии Bing для проверки орфографии и грамматики.
+description: Приступите к работе с REST API Проверки орфографии Bing для проверки орфографии и грамматики при помощи этого руководства.
 services: cognitive-services
 author: aahill
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-spell-check
 ms.topic: quickstart
-ms.date: 09/13/2019
+ms.date: 12/16/2019
 ms.author: aahi
-ms.openlocfilehash: e80a7bd3b56ccfd13a20c11f845d076271448b76
-ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
+ms.openlocfilehash: 89a2a345e2a4e3ca1be31297e614e86f800e6316
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74383838"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75448435"
 ---
 # <a name="quickstart-check-spelling-with-the-bing-spell-check-rest-api-and-ruby"></a>Краткое руководство. Проверка орфографии с помощью REST API Проверки орфографии Bing и Ruby
 
 В этом кратком руководстве показано, как с помощью Ruby отправить вызов к REST API Проверки орфографии Bing. Это простое приложение отправляет запрос к API и возвращает список слов, которые не удалось распознать, с предлагаемыми исправлениями. Хотя это приложение создается на языке Ruby, API представляет собой веб-службу RESTful, совместимую с большинством языков программирования. Исходный код этого приложения доступен на [GitHub](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/ruby/Search/BingSpellCheckv7.rb).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * [Ruby 2.4](https://www.ruby-lang.org/en/downloads/) или более поздней версии.
 
@@ -32,13 +32,13 @@ ms.locfileid: "74383838"
 
 1. Создайте файл Ruby в выбранном редакторе или интегрированной среде разработки и добавьте следующие требования. 
 
-    ```javascript
+    ```ruby
     require 'net/http'
     require 'uri'
     require 'json'
     ```
 
-2. Создайте переменные для вашего ключа подписки, универсальный код ресурса (URI) и путь для конечной точки. Создайте параметры запроса, добавив параметр `mkt=` для языкового стандарта и `&mode` для режима проверки `proof`.
+2. Создайте переменные для вашего ключа подписки, универсальный код ресурса (URI) и путь для конечной точки. Создайте параметры запроса, добавив параметр `mkt=` для языкового стандарта и `&mode` для режима проверки `proof`. Вы можете использовать указанную ниже глобальную конечную точку или конечную точку [пользовательского поддомена](../../../cognitive-services/cognitive-services-custom-subdomains.md), отображаемого на портале Azure для вашего ресурса.
 
     ```ruby
     key = 'ENTER YOUR KEY HERE'
@@ -82,6 +82,16 @@ ms.locfileid: "74383838"
     puts result
     ```
 
+## <a name="run-the-application"></a>Выполнение приложения
+
+Выполните сборку проекта и запустите его.
+
+При использовании командной строки выполните приведенные ниже команды для запуска приложения.
+
+```bash
+ruby <FILE_NAME>.rb
+```
+
 ## <a name="example-json-response"></a>Пример ответа в формате JSON
 
 Успешный ответ возвращается в формате JSON, как показано в примере ниже. 
@@ -124,7 +134,7 @@ ms.locfileid: "74383838"
 }
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Создание одностраничного веб-приложения](../tutorials/spellcheck.md)

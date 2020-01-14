@@ -1,5 +1,5 @@
 ---
-title: Рекомендации по фирменной символике приложения Azure AD
+title: Рекомендации по фирменной символике приложения | Azure
 titleSuffix: Microsoft identity platform
 description: Полное руководство по ориентированным на разработчиков ресурсам для Azure Active Directory
 services: active-directory
@@ -15,12 +15,12 @@ ms.author: ryanwi
 ms.reviewer: arielgo
 ms.custom: aaddev, signin_art
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1ad786429eb23b51cc2da5da5d8af11d19985c9a
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.openlocfilehash: d130bfb055b41ea3d2726c83c06430a0ea58fe98
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74967291"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75424566"
 ---
 # <a name="branding-guidelines-for-applications"></a>Рекомендации по фирменной символике для приложений
 
@@ -69,7 +69,7 @@ ms.locfileid: "74967291"
 
 ![Кнопка с логотипом корпорации Майкрософт и текстом "Добавить в мою организацию"](./media/howto-add-branding-in-azure-ad-apps/add-to-my-org.png)
 
-Тем не менее рекомендуется написать пояснение, а не полагаться на кнопки. Например:
+Тем не менее рекомендуется написать пояснение, а не полагаться на кнопки. Пример:
 
 > *Если вы уже используете Office 365 или другие бизнес-службы Майкрософт, можно просто предоставить для <имя_вашего_приложения> доступ к корпоративным данным. Это позволит пользователям получить доступ к <имя_вашего_приложения> с помощью имеющихся рабочих учетных записей.*
 

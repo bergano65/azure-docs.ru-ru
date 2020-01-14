@@ -12,14 +12,14 @@ ms.workload: data-services
 ms.topic: tutorial
 ms.custom: vs-azure
 ms.date: 01/22/2018
-ms.openlocfilehash: 49b3b5890fe38f6c635e7ba420a1adf5d778de0f
-ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
+ms.openlocfilehash: eb9c21bf1972304da688586da9ccabe5063fa112
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74703936"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75438969"
 ---
-# <a name="tutorial-create-a-data-factory-by-using-visual-studio"></a>Руководство по Создание фабрики данных с помощью Visual Studio
+# <a name="tutorial-create-a-data-factory-by-using-visual-studio"></a>Руководство. Создание фабрики данных с помощью Visual Studio
 > [!div class="op_single_selector" title="Tools/SDKs"]
 > * [Обзор и предварительные требования](data-factory-build-your-first-pipeline.md)
 > * [Visual Studio](data-factory-build-your-first-pipeline-using-vs.md)
@@ -29,7 +29,7 @@ ms.locfileid: "74703936"
 
 
 > [!NOTE]
-> В этой статье рассматривается служба "Фабрика данных Azure" версии 1. Если вы используете текущую версию службы "Фабрика данных", ознакомьтесь с [кратким руководством по созданию фабрики данных с помощью службы "Фабрика данных Azure"](../quickstart-create-data-factory-dot-net.md).
+> В этой статье рассматривается служба "Фабрика данных Azure" версии 1. Если вы используете текущую версию службы "Фабрика данных", ознакомьтесь с [кратким руководством по Создание фабрики данных и конвейера с помощью пакета SDK .NET](../quickstart-create-data-factory-dot-net.md).
 
 В этом руководстве рассматривается создание фабрики данных Azure с помощью Visual Studio. Вы сможете создать проект Visual Studio с помощью шаблона проекта фабрики данных, определить сущности фабрики данных (связанные службы, наборы данных и конвейеры) в формате JSON, а затем опубликовать или развернуть эти сущности в облаке. 
 
@@ -41,7 +41,7 @@ ms.locfileid: "74703936"
 > Конвейер может содержать сразу несколько действий. Два действия можно объединить в цепочку (выполнить одно действие вслед за другим), настроив выходной набор данных одного действия как входной набор данных другого действия. Дополнительные сведения см. в разделе [Несколько действий в конвейере](data-factory-scheduling-and-execution.md#multiple-activities-in-a-pipeline).
 
 
-## <a name="walkthrough-create-and-publish-data-factory-entities"></a>Пошаговое руководство Создание и публикация сущностей фабрики данных
+## <a name="walkthrough-create-and-publish-data-factory-entities"></a>Пошаговое руководство. Создание и публикация сущностей фабрики данных
 В процессе работы с этим руководством вам потребуется выполнить приведенные ниже действия.
 
 1. Создание двух связанных служб: **AzureStorageLinkedService1** и **HDInsightOnDemandLinkedService1**. 
@@ -56,7 +56,7 @@ ms.locfileid: "74703936"
 4. Создать фабрику данных с именем **DataFactoryUsingVS**. Развертывание фабрики данных и всех сущностей фабрики данных, таких как связанные службы, таблицы и конвейеры.
 5. После публикации для мониторинга конвейера вы можете использовать колонки портала Azure и приложение мониторинга и управления. 
   
-### <a name="prerequisites"></a>Предварительные требования
+### <a name="prerequisites"></a>предварительные требования
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
@@ -70,13 +70,13 @@ ms.locfileid: "74703936"
 Теперь давайте создадим фабрику данных Azure с помощью Visual Studio.
 
 ### <a name="create-visual-studio-project"></a>Создание проекта Visual Studio
-1. Запустите **Visual Studio 2013** или **Visual Studio 2015**. Щелкните **Файл**, наведите указатель мыши на пункт **Создать** и щелкните **Проект**. Откроется диалоговое окно **Новый проект** .  
+1. Запустите **Visual Studio 2013** или **Visual Studio 2015**. В меню **Файл**выберите **Создать**, а затем **Проект**. Откроется диалоговое окно **Новый проект** .  
 2. В диалоговом окне **Новый проект** выберите шаблон **DataFactory** и щелкните **Empty Data Factory Project** (Пустой проект фабрики данных).   
 
     ![Диалоговое окно "Новый проект"](./media/data-factory-build-your-first-pipeline-using-vs/new-project-dialog.png)
 3. Введите **имя** проекта, **расположение** и имя **решения**, а затем нажмите кнопку **ОК**.
 
-    ![обозревателе решений](./media/data-factory-build-your-first-pipeline-using-vs/solution-explorer.png)
+    ![Обозреватель решений](./media/data-factory-build-your-first-pipeline-using-vs/solution-explorer.png)
 
 ### <a name="create-linked-services"></a>Создание связанных служб
 На этом шаге создайте две связанные службы: **службу хранилища Azure** и **HDInsight по запросу**. 
@@ -92,7 +92,7 @@ ms.locfileid: "74703936"
 1. Щелкните правой кнопкой мыши **Связанные службы** в обозревателе решений, наведите указатель мыши на команду **Добавить** и выберите **Новый элемент**.      
 2. В диалоговом окне **Добавление нового элемента** выберите в списке пункт **Azure Storage Linked Service** (Связанная служба хранилища Azure) и нажмите кнопку **Добавить**.
     ![Связанная служба хранения Azure](./media/data-factory-build-your-first-pipeline-using-vs/new-azure-storage-linked-service.png)
-3. Замените `<accountname>` и `<accountkey>` именем и ключом учетной записи хранения Azure. Сведения о получении, просмотре, копировании и повторном создании ключей доступа к хранилищу см. в разделе [Управление учетной записью хранения](../../storage/common/storage-account-manage.md#access-keys).
+3. Замените `<accountname>` и `<accountkey>` именем и ключом учетной записи хранения Azure. Сведения о том, как получить ключ доступа к хранилищу, см. в статье [Управление ключами доступа к хранилищу](../../storage/common/storage-account-keys-manage.md).
     ![Связанная служба хранения Azure](./media/data-factory-build-your-first-pipeline-using-vs/azure-storage-linked-service.png)
 4. Сохраните файл **AzureStorageLinkedService1.json** .
 
@@ -119,7 +119,7 @@ ms.locfileid: "74703936"
 
     В следующей таблице приведены описания свойств JSON, используемых в этом фрагменте кода.
 
-    Свойство | ОПИСАНИЕ
+    Свойство | Description
     -------- | ----------- 
     clusterSize (размер кластера) | Указывает размер кластера HDInsight Hadoop.
     timeToLive | Указывает, сколько времени может простаивать кластер HDInsight, прежде чем он будет удален.
@@ -168,9 +168,9 @@ ms.locfileid: "74703936"
 
     В следующей таблице приведены описания свойств JSON, используемых в этом фрагменте кода.
 
-    Свойство | ОПИСАНИЕ |
+    Свойство | Description |
     -------- | ----------- |
-    Тип |Так как данные размещаются в хранилище BLOB-объектов Azure, для свойства типа задается значение **AzureBlob**.
+    type |Так как данные размещаются в хранилище BLOB-объектов Azure, для свойства типа задается значение **AzureBlob**.
     linkedServiceName | Указывает созданную ранее службу AzureStorageLinkedService1.
     fileName |Это необязательное свойство. Если это свойство не указано, выбираются все файлы из папки folderPath. В этом случае обрабатывается только файл input.log.
     type | Файлы журнала представлены в текстовом формате, поэтому мы используем значение TextFormat. |
@@ -303,7 +303,7 @@ ms.locfileid: "74703936"
     ![Публикация. Новые параметры фабрики данных](media/data-factory-build-your-first-pipeline-using-vs/publish-new-data-factory.png)
 
    1. Выберите **Создать новую фабрику данных** .
-   2. Введите уникальное **имя** фабрики данных. Например:  **DataFactoryUsingVS09152016**. Оно должно быть глобально уникальным.
+   2. Введите уникальное **имя** фабрики данных. Пример: **DataFactoryUsingVS09152016**. Оно должно быть глобально уникальным.
    3. Выберите соответствующую подписку в поле **Подписка** . 
         > [!IMPORTANT]
         > Если подписки не отображаются, проверьте, выполнен ли вход с использованием учетной записи администратора или соадминистратора подписки.
@@ -323,7 +323,7 @@ ms.locfileid: "74703936"
 
 Необходимо учитывать следующие важные замечания.
 
-- Если появится сообщение об ошибке **This subscription is not registered to use namespace Microsoft.DataFactory** (Подписка не зарегистрирована для использования пространства имен Microsoft.DataFactory), выполните одно из следующих действий и повторите попытку публикации:
+- Если возникнет ошибка, сделайте следующее. **This subscription is not registered to use namespace Microsoft.DataFactory** (Подписка не зарегистрирована для использования пространства имен Microsoft.DataFactory), выполните одно из следующих действий и повторите попытку публикации:
     - В Azure PowerShell выполните следующую команду, чтобы зарегистрировать поставщик фабрики данных Azure:
         ```powershell   
         Register-AzResourceProvider -ProviderNamespace Microsoft.DataFactory
@@ -368,13 +368,13 @@ ms.locfileid: "74703936"
 7. Щелкните **X**, чтобы закрыть колонку **AzureBlobInput**.
 8. В **представлении схемы** дважды щелкните набор данных **AzureBlobOutput**. Вы увидите срез, который сейчас обрабатывается.
 
-   ![Выборка](./media/data-factory-build-your-first-pipeline-using-vs/dataset-blade.png)
+   ![Dataset](./media/data-factory-build-your-first-pipeline-using-vs/dataset-blade.png)
 9. Как только обработка завершится, срез перейдет в состояние **Готово** .
 
    > [!IMPORTANT]
    > Создание используемого по требованию кластера HDInsight обычно занимает некоторое время (около 20 минут). Таким образом, конвейер обработает срез **примерно через 30 минут** .  
    
-    ![Выборка](./media/data-factory-build-your-first-pipeline-using-vs/dataset-slice-ready.png)    
+    ![Dataset](./media/data-factory-build-your-first-pipeline-using-vs/dataset-slice-ready.png)    
 10. Когда срез перейдет в состояние **Готово**, проверьте выходные данные в папке `partitioneddata` контейнера `adfgetstarted` в хранилище BLOB-объектов.  
 
     ![выходные данные](./media/data-factory-build-your-first-pipeline-using-vs/three-ouptut-files.png)
@@ -555,15 +555,15 @@ ms.locfileid: "74703936"
 3. Создание двух **наборов данных**, которые описывают входные и выходные данные для действия HDInsight Hive в конвейере.
 4. Создание **конвейера** с действием **HDInsight Hive**.  
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Next Steps
 В этой статье вы создали конвейер с действием преобразования (действие HDInsight), которое выполняет сценарий Hive в кластере HDInsight по требованию. См. дополнительные сведения о том, как [копировать данные из хранилища BLOB-объектов Azure в SQL Azure с помощью действия копирования](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md).
 
 Можно объединить в цепочку два действия (выполнить одно действие вслед за другим), настроив выходной набор данных одного действия как входной набор данных другого действия. Подробные сведения см. в статье [Планирование и исполнение с использованием фабрики данных](data-factory-scheduling-and-execution.md). 
 
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также:
 
-| Раздел | ОПИСАНИЕ |
+| Раздел | Description |
 |:--- |:--- |
 | [Конвейеры](data-factory-create-pipelines.md) |В этой статье описываются сведения о конвейерах и действиях в фабрике данных Azure, а также использование этих сущностей для создания комплексных рабочих процессов, управляемых данными, для конкретных бизнес-сценариев. |
 | [Наборы данных](data-factory-create-datasets.md) |Эта статья поможет вам понять, что такое наборы данных в фабрике данных Azure. |

@@ -1,5 +1,5 @@
 ---
-title: Создание консольного приложения с помощью API для MongoDB (Azure Cosmos DB) и пакета SDK Golang
+title: Создание консольного приложения с помощью API Azure Cosmos DB для MongoDB и пакета SDK Golang
 description: В этой статье представлен пример кода Golang, который можно использовать для подключения и выполнения запросов c помощью API Azure Cosmos DB для MongoDB.
 author: markjbrown
 ms.author: mjbrown
@@ -7,12 +7,12 @@ ms.service: cosmos-db
 ms.subservice: cosmosdb-mongo
 ms.topic: quickstart
 ms.date: 12/26/2018
-ms.openlocfilehash: e16b9b7e591fcc089d74794c98ddfc951cbdced9
-ms.sourcegitcommit: 8074f482fcd1f61442b3b8101f153adb52cf35c9
+ms.openlocfilehash: c717a8d5baa57ce780fbbc0d25e67c2509ca86fc
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72755112"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75441944"
 ---
 # <a name="quickstart-build-a-console-app-using-azure-cosmos-dbs-api-for-mongodb-and-golang-sdk"></a>Краткое руководство. Создание консольного приложения с помощью API для MongoDB (Azure Cosmos DB) и пакета SDK Golang
 
@@ -31,7 +31,7 @@ Azure Cosmos DB — это глобально распределенная мн
 
 Другими словами, только приложение Golang "знает" о подключении с помощью клиента MongoDB. Приложению понятно, что данные хранятся в базе данных Cosmos.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 - Подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free), прежде чем начинать работу. 
 
@@ -87,7 +87,7 @@ Azure Cosmos DB — это глобально распределенная мн
 
 ## <a name="review-the-code"></a>Просмотр кода
 
-Этот шаг не является обязательным. Если вы хотите узнать, как создать в коде ресурсы базы данных, изучите приведенные ниже фрагменты кода. Или вы можете сразу перейти к [запуску приложения](#run-the-app). 
+Это необязательный шаг. Если вы хотите узнать, как создать в коде ресурсы базы данных, изучите приведенные ниже фрагменты кода. Или вы можете сразу перейти к [запуску приложения](#run-the-app). 
 
 Приведенные ниже фрагменты кода взяты из файла main.go.
 
@@ -212,7 +212,7 @@ if err != nil {
 }
 ```
     
-## <a name="run-the-app"></a>Запуск приложения
+## <a name="run-the-app"></a>Запустите приложение
 
 1. В Golang убедитесь, что путь GOPATH (находится в меню **File** (Файл), **Settings** (Параметры), **Go**, **GOPATH**) включает расположение, в котором установлен gopkg. По умолчанию это папка USERPROFILE\go. 
 2. Закомментируйте строки, удаляющие документ (строки 103–107), чтобы вы могли видеть документ после запуска приложения.
@@ -246,7 +246,7 @@ if err != nil {
 
 [!INCLUDE [cosmosdb-delete-resource-group](../../includes/cosmos-db-delete-resource-group.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом кратком руководстве вы узнали, как создать учетную запись Cosmos и запустить приложение Golang. Теперь вы можете импортировать дополнительные данные в базу данных Cosmos. 
 

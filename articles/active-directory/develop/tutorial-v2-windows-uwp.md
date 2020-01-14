@@ -12,16 +12,16 @@ ms.devlang: na
 ms.topic: tutorial
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 09/24/2019
+ms.date: 12/13/2019
 ms.author: jmprieur
 ms.custom: aaddev, identityplatformtop40
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d0cafc439a24c10c4c5a678219a0e0dce84476ff
-ms.sourcegitcommit: 29880cf2e4ba9e441f7334c67c7e6a994df21cfe
+ms.openlocfilehash: e2a243b11c2789afe0b2eb7ffd8de032dc10d8d8
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71290854"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75423339"
 ---
 # <a name="call-microsoft-graph-api-from-a-universal-windows-platform-application-xaml"></a>Вызов API Microsoft Graph из приложения для универсальной платформы Windows (XAML)
 
@@ -44,7 +44,7 @@ ms.locfileid: "71290854"
 
 Для работы с руководством необходимы следующие пакеты NuGet:
 
-|Библиотека|ОПИСАНИЕ|
+|Библиотека|Description|
 |---|---|
 |[Microsoft.Identity.Client](https://www.nuget.org/packages/Microsoft.Identity.Client)|Библиотека проверки подлинности Майкрософт|
 
@@ -55,7 +55,7 @@ ms.locfileid: "71290854"
 В руководстве показано, как создать приложение, в котором отображается кнопка для запроса к API Graph и кнопка выхода. В приложении также есть текстовые поля, содержащие результаты вызовов.
 
 > [!NOTE]
-> Вы можете скачать этот пример проекта Visual Studio, а не создавать его заново. Если вы решили [скачать проект](https://github.com/Azure-Samples/active-directory-dotnet-native-uwp-v2/archive/msal3x.zip), переходите к шагу [регистрации приложения](#register-your-application "aШаг регистрации приложения"), чтобы настроить пример кода перед выполнением.
+> Вы можете скачать этот пример проекта Visual Studio, а не создавать его заново. Если вы решили [скачать проект](https://github.com/Azure-Samples/active-directory-dotnet-native-uwp-v2/archive/msal3x.zip), переходите к шагу [регистрации приложения](#register-your-application "Шаг регистрации приложения"), чтобы настроить пример кода перед выполнением.
 
 ### <a name="create-your-application"></a>Создание приложения
 
@@ -344,7 +344,7 @@ Visual Studio автоматически создает файл *MainPage.xaml*
 
 Теперь вам нужно зарегистрировать приложение.
 
-1. Войдите на [портале Azure](https://portal.azure.com).
+1. Войдите на [портал Azure](https://portal.azure.com).
 1. Выберите **Azure Active Directory** > **Регистрация приложений**.
 1. Выберите **Новая регистрация**. Введите понятное имя приложения, которое будет отображаться пользователям, например *UWP-App-calling-MSGraph*.
 1. В разделе **Поддерживаемые типы учетных записей** выберите **Учетные записи в любом каталоге организации и личные учетные записи Майкрософт (например, Skype, Xbox, Outlook.com)** и щелкните **Зарегистрировать**, чтобы продолжить процесс.
@@ -353,7 +353,7 @@ Visual Studio автоматически создает файл *MainPage.xaml*
 Настройте проверку подлинности для приложения.
 
 1. На [портале Azure](https://portal.azure.com) в разделе **Управление** выберите **Аутентификация**.
-1. В списке **URI перенаправления** в поле **Тип** выберите значение **Public client (mobile & desktop)** (Общедоступный клиент (мобильный и классический) и введите `urn:ietf:wg:oauth:2.0:oob` в поле **URI перенаправления**.
+1. В разделе **URI перенаправления** | **Предлагаемые URI перенаправления для общедоступных клиентов (мобильные устройства, компьютеры)** выберите **https://login.microsoftonline.com/common/oauth2/nativeclient** .
 1. Щелкните **Сохранить**.
 
 Настройте разрешения API для приложения.
@@ -400,7 +400,7 @@ Visual Studio автоматически создает файл *MainPage.xaml*
 
 Вы также увидите основные сведения о маркере, полученные с помощью `AcquireTokenInteractive` или `AcquireTokenSilent`, в окне **Token Info** (Сведения о маркере):
 
-|Свойство  |Формат  |ОПИСАНИЕ |
+|Свойство  |Формат  |Description |
 |---------|---------|---------|
 |`Username` |`user@domain.com` |Имя пользователя, которое позволяет его идентифицировать.|
 |`Token Expires` |`DateTime` |Это время, когда истекает срок действия маркера. MSAL продлевает срок действия, по мере необходимости обновляя маркер.|

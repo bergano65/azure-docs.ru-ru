@@ -1,5 +1,5 @@
 ---
-title: Пример сценария Azure PowerShell — добавление сертификата приложения в кластер | Документы Майкрософт
+title: Добавление сертификата приложения в кластер с помощью PowerShell
 description: Пример сценария Azure PowerShell — добавление сертификата приложения в кластер Service Fabric.
 services: service-fabric
 documentationcenter: ''
@@ -14,12 +14,12 @@ ms.topic: sample
 ms.date: 01/18/2018
 ms.author: atsenthi
 ms.custom: mvc
-ms.openlocfilehash: 1ef48f5dd7fabd724dee2c2910e44f47979258b5
-ms.sourcegitcommit: a678f00c020f50efa9178392cd0f1ac34a86b767
+ms.openlocfilehash: 069ad55136101c0b57c9faee95578f816b5efef4
+ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74547480"
+ms.lasthandoff: 01/02/2020
+ms.locfileid: "75614882"
 ---
 # <a name="add-an-application-certificate-to-a-service-fabric-cluster"></a>Добавление сертификата приложения в кластер Service Fabric
 
@@ -95,7 +95,7 @@ Update-AzVmss -ResourceGroupName $ResourceGroupName -VirtualMachineScaleSet $VMS
 
 Этот сценарий использует следующие команды: Для каждой команды в таблице приведены ссылки на соответствующую документацию.
 
-| Команда | Примечания |
+| Get-Help | Примечания |
 |---|---|
 | [New-AzKeyVaultCertificatePolicy](/powershell/module/az.keyvault/New-AzKeyVaultCertificatePolicy) | Создает политику в памяти, представляющую сертификат |
 | [Add-AzKeyVaultCertificate](/powershell/module/az.keyvault/Add-AzKeyVaultCertificate)| Развертывает политику в Key Vault |
@@ -104,7 +104,7 @@ Update-AzVmss -ResourceGroupName $ResourceGroupName -VirtualMachineScaleSet $VMS
 | [Add-AzVmssSecret](/powershell/module/az.compute/Add-AzVmssSecret) | Добавляет сертификат в определение памяти масштабируемого набора виртуальных машин |
 | [Update-AzVmss](/powershell/module/az.compute/Update-AzVmss) | Развертывает новое определение масштабируемого набора виртуальных машин |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о модуле Azure PowerShell см. в [документации по Azure PowerShell](/powershell/azure/overview).
 

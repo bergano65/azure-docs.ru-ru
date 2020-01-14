@@ -1,7 +1,7 @@
 ---
-title: Руководство по Создание, публикация и получение ответов в QnA Maker
+title: Руководство. Создание, публикация и получение ответов в QnA Maker
 titleSuffix: Azure Cognitive Services
-description: Создайте базу знаний с вопросами и ответами из общедоступных часто задаваемых веб-вопросов. Сохраните, обучите и опубликуйте базу знаний. После публикации базы знаний отправьте вопрос и получите ответ с помощью команды cURL. Затем создайте бот и протестируйте его с помощью того же вопроса.
+description: В этом руководстве показано, как создать базу знаний с вопросами и ответами из общедоступных веб-страниц с часто задаваемыми вопросами. Сохраните, обучите и опубликуйте базу знаний. После публикации базы знаний отправьте вопрос и получите ответ с помощью команды cURL. Затем создайте бот и протестируйте его с помощью того же вопроса.
 services: cognitive-services
 author: diberry
 manager: nitinme
@@ -11,18 +11,18 @@ ms.subservice: qna-maker
 ms.topic: tutorial
 ms.date: 10/14/2019
 ms.author: diberry
-ms.openlocfilehash: 51d051fee1da1f9bb0c89ea9123748b512f84007
-ms.sourcegitcommit: 1d0b37e2e32aad35cc012ba36200389e65b75c21
+ms.openlocfilehash: 5b2f2decf3d070da2fb58bebd424b4209f353316
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72327986"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75447385"
 ---
-# <a name="tutorial-from-the-qna-maker-portal-create-a-knowledge-base"></a>Руководство по На портале QnA Maker создайте базу знаний.
+# <a name="tutorial-from-the-qna-maker-portal-create-a-knowledge-base"></a>Руководство. На портале QnA Maker создайте базу знаний.
 
 Создайте базу знаний с вопросами и ответами из общедоступных часто задаваемых веб-вопросов. Сохраните, обучите и опубликуйте базу знаний. После публикации базы знаний отправьте вопрос и получите ответ с помощью команды cURL. Затем создайте бот и протестируйте его с помощью того же вопроса. 
 
-Из этого руководства вы узнаете, как выполнять следующие задачи: 
+В этом руководстве описано следующее. 
 
 > [!div class="checklist"]
 > * Создание базы знаний на портале QnA Maker.
@@ -35,7 +35,7 @@ ms.locfileid: "72327986"
 > [!NOTE]
 > Программная версия этого руководства доступна с полным решением в [**репозитории GitHub** Azure-Samples/cognitive-services-qnamaker-csharp](https://github.com/Azure-Samples/cognitive-services-qnamaker-csharp/tree/master/documentation-samples/tutorials/create-publish-answer-knowledge-base).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 В этом руководстве требуется имеющаяся [служба QnA Maker](../How-To/set-up-qnamaker-service-azure.md). 
 
@@ -213,7 +213,7 @@ ms.locfileid: "72327986"
 
 Когда вы закончите работу с базой знаний, на портале QnA Maker выберите **My knowledge bases** (Мои базы знаний). Затем выберите базу знаний **My Tutorial kb** и щелкните значок удаления справа в этой строке.  
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о поддерживаемых форматах файлов см. [здесь](../Concepts/data-sources-supported.md). 
 

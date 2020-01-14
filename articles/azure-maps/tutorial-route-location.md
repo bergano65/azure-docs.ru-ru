@@ -1,6 +1,6 @@
 ---
-title: Руководство по Поиск маршрута с помощью службы Azure Maps
-description: Руководство по Поиск маршрута к точке интереса с помощью службы "Карты Azure"
+title: Руководство. Поиск маршрута с помощью службы Azure Maps
+description: Руководство. Поиск маршрута к точке интереса с помощью службы "Карты Azure"
 author: walsehgal
 ms.author: v-musehg
 ms.date: 11/12/2019
@@ -9,25 +9,25 @@ ms.service: azure-maps
 services: azure-maps
 manager: timlt
 ms.custom: mvc
-ms.openlocfilehash: c9e407b271fd77397723ee49f530339847096749
-ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
+ms.openlocfilehash: efc60acae78c96983e79044ae1ba7399154f3568
+ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74106619"
+ms.lasthandoff: 01/02/2020
+ms.locfileid: "75613607"
 ---
-# <a name="tutorial-route-to-a-point-of-interest-using-azure-maps"></a>Руководство по Поиск маршрута к точке интереса с помощью службы "Карты Azure"
+# <a name="tutorial-route-to-a-point-of-interest-using-azure-maps"></a>Руководство. Поиск маршрута к точке интереса с помощью службы "Карты Azure"
 
-В этом руководстве показано, как использовать учетную запись службы "Карты Azure" и пакет SDK службы построения маршрутов, чтобы найти маршрут к объекту. Из этого руководства вы узнаете, как выполнять следующие задачи:
+В этом руководстве показано, как использовать учетную запись службы "Карты Azure" и пакет SDK службы построения маршрутов, чтобы найти маршрут к объекту. В этом руководстве описано следующее.
 
 > [!div class="checklist"]
 > * создание веб-страницы с помощью API элементов управления картой;
 > * Настройка координат адреса.
 > * Отправка запроса к службе построения маршрутов поиска маршрута к объекту.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
-Прежде чем продолжить, выполните инструкции [по управлению учетной записью](https://docs.microsoft.com/azure/azure-maps/how-to-manage-account-keys#create-a-new-account), чтобы создать подписку Azure Maps в ценовой категории S1, и выполните инструкции из раздела о [получении первичного ключа для учетной записи](./tutorial-search-location.md#getkey).
+Следуйте инструкциям [по созданию учетной записи](quick-demo-map-app.md#create-an-account-with-azure-maps), чтобы создать подписку учетной записи Azure Maps в ценовой категории S1, и выполните инструкции из раздела по [получению первичного ключа для учетной записи](quick-demo-map-app.md#get-the-primary-key-for-your-account). Дополнительные сведения об управлении проверкой подлинности в Azure Maps см. в [этой статье](how-to-manage-authentication.md).
 
 <a id="getcoordinates"></a>
 
@@ -209,9 +209,9 @@ ms.locfileid: "74106619"
 
     ![Azure Map Control и служба построения маршрутов](./media/tutorial-route-location/map-route.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-Из этого руководства вы узнали, как выполнить следующие задачи:
+В этом руководстве вы узнали, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 > * создание веб-страницы с помощью API элементов управления картой;

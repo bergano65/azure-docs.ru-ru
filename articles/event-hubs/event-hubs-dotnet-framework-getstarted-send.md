@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Отправка и получение событий с помощью .NET Framework в Центрах событий Azure | Документация Майкрософт
+title: Отправка и получение событий с помощью .NET Framework в Центрах событий Azure
 description: Краткое руководство. В этой статье описано, как создать приложение .NET Framework, которое отправляет события в Центры событий Azure.
 services: event-hubs
 documentationcenter: ''
@@ -13,21 +13,21 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: quickstart
 ms.custom: seodec18
-ms.date: 11/05/2019
+ms.date: 12/20/2019
 ms.author: shvija
-ms.openlocfilehash: 89419e9a3ef364d4095800a617a84ff2f63c09a0
-ms.sourcegitcommit: bc7725874a1502aa4c069fc1804f1f249f4fa5f7
+ms.openlocfilehash: 385430d993afe8b7a0ad57991d3c93eebd46ddcb
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73720644"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75437269"
 ---
 # <a name="quickstart-send-events-to-or-receive-events-from-azure-event-hubs-using-net-framework"></a>Краткое руководство. Отправка и получение событий с помощью .NET Framework в Центрах событий Azure
 Центры событий Azure — это платформа потоковой передачи больших данных и служба приема событий, принимающая и обрабатывающая миллионы событий в секунду. Центры событий могут обрабатывать и сохранять события, данные и телеметрию, созданные распределенным программным обеспечением и устройствами. Данные, отправляемые в концентратор событий, можно преобразовывать и сохранять с помощью любого поставщика аналитики в реальном времени, а также с помощью адаптеров пакетной обработки или хранения. Подробный обзор Центров событий см. в статьях [Что такое Центры событий Azure?](event-hubs-about.md) и [Обзор функций Центров событий](event-hubs-features.md).
 
 В этом руководстве описано, как создавать консольные приложения .NET Framework на C# для отправки и получения событий через концентратор событий. 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 Для работы с данным руководством вам потребуется:
 
 - [Microsoft Visual Studio 2019](https://visualstudio.com).
@@ -214,7 +214,7 @@ ms.locfileid: "73720644"
     
 3. Запустите программу и убедитесь в отсутствии ошибок.
   
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Ознакомьтесь со следующими статьями: 
 
 - [EventProcessorHost](event-hubs-event-processor-host.md)

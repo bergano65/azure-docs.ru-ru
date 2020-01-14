@@ -1,26 +1,17 @@
 ---
-title: Руководство по созданию, отладке, развертыванию и мониторингу приложения на базе нескольких служб в Сетке Service Fabric | Документация Майкрософт
+title: Создание и развертывание веб-приложения на базе нескольких служб в Сетке Service Fabric
 description: В рамках этого руководства вы создадите приложение Сетки Azure Service Fabric на базе нескольких служб, состоящее из веб-сайта ASP.NET Core, который взаимодействует с серверной веб-службой, выполните отладку приложения локально и опубликуете его в Azure.
-services: service-fabric-mesh
-documentationcenter: .net
 author: dkkapur
-manager: chakdan
-editor: ''
-ms.assetid: ''
-ms.service: service-fabric-mesh
-ms.devlang: dotNet
 ms.topic: tutorial
-ms.tgt_pltfrm: NA
-ms.workload: NA
 ms.date: 09/18/2018
 ms.author: dekapur
 ms.custom: mvc, devcenter
-ms.openlocfilehash: 2053706aac2e6136e35e8574dcd19150fe3d3b6a
-ms.sourcegitcommit: 7f7c2fe58c6cd3ba4fd2280e79dfa4f235c55ac8
+ms.openlocfilehash: e3a6ee382208119e46a816790c15ae47f16be57e
+ms.sourcegitcommit: f0dfcdd6e9de64d5513adf3dd4fe62b26db15e8b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2019
-ms.locfileid: "56805432"
+ms.lasthandoff: 12/26/2019
+ms.locfileid: "75495185"
 ---
 # <a name="tutorial-create-debug-deploy-and-upgrade-a-multi-service-service-fabric-mesh-app"></a>Руководство. Создание, отладка, развертывание и обновление приложения на базе нескольких служб в Сетке Service Fabric
 
@@ -50,7 +41,7 @@ ms.locfileid: "56805432"
 
 [!INCLUDE [preview note](./includes/include-preview-note.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Перед началом работы с этим руководством выполните следующие действия:
 
@@ -60,15 +51,15 @@ ms.locfileid: "56805432"
 
 ## <a name="create-a-service-fabric-mesh-project-in-visual-studio"></a>Создание проекта Сетки Service Fabric в Visual Studio
 
-Запустите Visual Studio и выберите **Файл** > **Создать** > **Проект...**.
+Запустите Visual Studio и выберите **Файл** > **Создать** > **Проект...** .
 
 В диалоговом окне **Новый проект** вверху в поле **Поиск** введите `mesh`. Выберите шаблон **Service Fabric Mesh Application** (Приложение службы "Сетка Service Fabric"). Если шаблон не отображается, убедитесь, что вы установили пакет SDK для Сетки Service Fabric и предварительную версию средств VS, как описано в статье о [настройке среды разработки](service-fabric-mesh-howto-setup-developer-environment-sdk.md).  
 
 В поле **Имя** введите `todolistapp`, а в поле **Расположение** укажите путь к папке, где вы хотите хранить файлы для проекта.
 
-Установите флажок **Create directory for solution** (Создать каталог для решения) и нажмите кнопку **ОК**, чтобы создать проект Сетки Service Fabric.
+Установите флажок **Create directory for solution** (Создать каталог для решения) и нажмите кнопку **ОК**, чтобы создать проект службы "Сетка Service Fabric".
 
-![Диалоговое окно проекта Сетки Service Fabric в Visual Studio](./media/service-fabric-mesh-tutorial-deploy-dotnetcore/visual-studio-new-project.png)
+![Диалоговое окно нового проекта службы "Сетка Service Fabric" в Visual Studio](./media/service-fabric-mesh-tutorial-deploy-dotnetcore/visual-studio-new-project.png)
 
 Затем откроется диалоговое окно **Служба структуры для новой службы**.
 
@@ -126,7 +117,7 @@ public class ToDoItem
 
 Этот класс представляет задачи.
 
-В Visual Studio щелкните правой кнопкой мыши библиотеку классов **Модель** и выберите **Добавить** > **Класс...**, чтобы создать список для хранения задач. Откроется диалоговое окно **Добавление нового элемента**. В поле **Имя** укажите `ToDoList.cs` и нажмите кнопку **Добавить**.
+В Visual Studio щелкните правой кнопкой мыши библиотеку классов **Модель** и выберите **Добавить** > **Класс...** , чтобы создать список для хранения задач. Откроется диалоговое окно **Добавление нового элемента**. В поле **Имя** укажите `ToDoList.cs` и нажмите кнопку **Добавить**.
 
 В **ToDoList.cs** замените пустую строку `class ToDoList` на:
 
@@ -362,7 +353,8 @@ URL-адрес состоит из имени службы и порта. Вся
 
 ![Рис. 1. Файл service.yaml в проекте ToDoService](./media/service-fabric-mesh-tutorial-deploy-dotnetcore/visual-studio-serviceyaml-port.png)
 
-* Имя службы `ToDoService` находится под строкой `services:` (см. (1) на рисунке выше).
+ Имя службы `ToDoService` находится под строкой `services:` (см. (1) на рисунке выше).
+
 * Порт `80` находится в разделе `endpoints:` (см. (2) на рисунке выше). Номер порта вашего проекта может быть другим.
 
 Далее необходимо определить переменные среды, представляющие имя службы и номер порта в проекте WebFrontEnd, чтобы он мог вызвать серверную службу.
@@ -391,7 +383,7 @@ URL-адрес состоит из имени службы и порта. Вся
 
 Теперь вы готовы к созданию и развертыванию образа приложения Сетки Service Fabric вместе с серверной веб-службой в локальном кластере.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой части руководства вы узнали, как выполнить следующие действия:
 

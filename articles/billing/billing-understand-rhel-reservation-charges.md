@@ -1,5 +1,5 @@
 ---
-title: Общие сведения о скидках и использовании плана резервирования Red Hat в Azure | Документация Майкрософт
+title: Скидки на план резервирования Red Hat в Azure
 description: Узнайте, как скидки на план Red Hat применяются к программному обеспечению Red Hat на виртуальных машинах.
 services: billing
 documentationcenter: ''
@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/30/2019
 ms.author: cwatson
-ms.openlocfilehash: 0ac7425ed695d7ceac134e29b20cd12b01545239
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: 7af9f6ae0c274f38798d96dd9228a68ce709686c
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74225763"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75388454"
 ---
 # <a name="understand-how-the-red-hat-linux-enterprise-software-reservation-plan-discount-is-applied-for-azure"></a>Общие сведения о применении скидок на план резервирования программного обеспечения Red Hat Linux Enterprise в Azure
 
@@ -154,7 +154,7 @@ ms.locfileid: "74225763"
 |Лицензия на виртуальную машину 96 виртуальных ЦП|b13895fc-0d06-4de9-b860-627c471cd247|2.166666667||
 |Лицензия на виртуальную машину 128 виртуальных ЦП|6e67ac0b-19d3-4289-96df-05d0093d4b3b|2.166666667| M128ms|
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о резервировании см. в следующих статьях:
 

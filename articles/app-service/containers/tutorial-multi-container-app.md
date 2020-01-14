@@ -1,23 +1,26 @@
 ---
-title: Руководство по созданию многоконтейнерного приложения
+title: Руководство. созданию многоконтейнерного приложения
 description: Узнайте, как создать в Службе приложений Azure многоконтейнерное приложение, содержащее приложение WordPress и контейнер MySQL, и настроить приложение WordPress.
 keywords: служба приложений azure, веб-приложение, linux, docker, compose, многоконтейнерное, несколько контейнеров, веб-приложение для контейнеров, много контейнеров, контейнер, wordpress, azure db для mysql, рабочая база данных с контейнерами
 author: msangapu-msft
 ms.topic: tutorial
 ms.date: 04/29/2019
 ms.author: msangapu
-ms.openlocfilehash: 327b2aaadd77c00d847504ff16415813d2fcf89c
-ms.sourcegitcommit: 48b7a50fc2d19c7382916cb2f591507b1c784ee5
+ms.openlocfilehash: 555a60579c11a7ecb9b39753c5e4b35e801edeb1
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74687458"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75422158"
 ---
-# <a name="tutorial-create-a-multi-container-preview-app-in-web-app-for-containers"></a>Руководство по Создание многоконтейнерного приложения (предварительная версия) на платформе Azure "Веб-приложение для контейнеров"
+# <a name="tutorial-create-a-multi-container-preview-app-in-web-app-for-containers"></a>Руководство. Создание многоконтейнерного приложения (предварительная версия) на платформе Azure "Веб-приложение для контейнеров"
+
+> [!NOTE]
+> Многоконтейнерное приложение поддерживается в предварительной версии.
 
 Платформа [Веб-приложение для контейнеров](app-service-linux-intro.md) предоставляет гибкие возможности для использования образов Docker. В этом руководстве объясняется, как создать многоконтейнерное приложение с помощью WordPress и MySQL. Примеры из этого руководства вы будете выполнять в Cloud Shell, но эти команды также можно выполнить на локальном компьютере с помощью программы командной строки [Azure CLI](/cli/azure/install-azure-cli) (версии 2.0.32 или более поздней).
 
-Из этого руководства вы узнаете, как выполнять следующие задачи:
+В этом руководстве описано следующее.
 
 > [!div class="checklist"]
 > * преобразование конфигурации Docker Compose для работы на платформе "Веб-приложение для контейнеров";
@@ -29,7 +32,7 @@ ms.locfileid: "74687458"
 
 [!INCLUDE [Free trial note](../../../includes/quickstarts-free-trial-note.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Для изучения этого учебника требуется опыт работы с [Docker Compose](https://docs.docker.com/compose/).
 
@@ -506,9 +509,9 @@ WordPress подключится к серверу Redis. **Состояние**
 
 [!INCLUDE [Clean-up section](../../../includes/cli-script-clean-up.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-Из этого руководства вы узнали, как выполнить следующие задачи:
+В этом руководстве вы узнали, как выполнять следующие задачи:
 > [!div class="checklist"]
 > * преобразование конфигурации Docker Compose для работы на платформе "Веб-приложение для контейнеров";
 > * развертывание многоконтейнерного приложения в Azure;

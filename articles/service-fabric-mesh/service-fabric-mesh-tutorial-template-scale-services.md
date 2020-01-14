@@ -1,28 +1,19 @@
 ---
-title: Руководство. Масштабирование приложения, работающего в Сетке Azure Service Fabric | Документация Майкрософт
+title: Руководство. Масштабирование приложения, работающего в Сетке Azure Service Fabric
 description: Из этого руководства вы узнаете, как масштабировать службы в приложении, работающем в Сетке Service Fabric.
-services: service-fabric-mesh
-documentationcenter: .net
 author: dkkapur
-manager: jeconnoc
-editor: ''
-ms.assetid: ''
-ms.service: service-fabric-mesh
-ms.devlang: dotNet
 ms.topic: tutorial
-ms.tgt_pltfrm: NA
-ms.workload: NA
 ms.date: 01/11/2019
 ms.author: dekapur
 ms.custom: mvc, devcenter
-ms.openlocfilehash: 31b1e7a777c65a270b7b08673fcd73a5ab63f11f
-ms.sourcegitcommit: 02d17ef9aff49423bef5b322a9315f7eab86d8ff
+ms.openlocfilehash: 1b9070e826c30bbeafdee4185ea45cfb53d9efd2
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58337771"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75351824"
 ---
-# <a name="tutorial-scale-an-application-running-in-service-fabric-mesh"></a>Руководство по Масштабирование приложения, работающего в Сетке Service Fabric
+# <a name="tutorial-scale-an-application-running-in-service-fabric-mesh"></a>Руководство. Масштабирование приложения, работающего в Сетке Service Fabric
 
 Это руководство представляет собой вторую часть цикла. Узнайте, как вручную изменять число экземпляров службы приложения, которое было [развернуто в Сетке Service Fabric](service-fabric-mesh-tutorial-template-deploy-app.md). По завершении у вас будет интерфейсная служба с тремя работающими экземплярами и служба данных с двумя запущенными экземплярами.
 
@@ -41,7 +32,7 @@ ms.locfileid: "58337771"
 
 [!INCLUDE [preview note](./includes/include-preview-note.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Перед началом работы с этим руководством выполните следующие действия:
 
@@ -84,7 +75,7 @@ az mesh service show --resource-group myResourceGroup --name ToDoService --app-n
       }
 ```
 
-Сохраните изменения в файле параметров.  Параметры *frontEndReplicaCount* и *serviceReplicaCount* объявлены в разделе *parameters* [шаблона развертывания mesh_rp.windows.json](https://github.com/Azure-Samples/service-fabric-mesh/blob/master/templates/todolist/mesh_rp.windows.json).
+Сохраните изменения в файле параметров.  Параметры *frontEndReplicaCount* и *serviceReplicaCount* объявлены в разделе *parameters*[шаблона развертывания mesh_rp.windows.json](https://github.com/Azure-Samples/service-fabric-mesh/blob/master/templates/todolist/mesh_rp.windows.json).
 
 ```json
 "frontEndReplicaCount":{
@@ -162,7 +153,7 @@ az mesh service show --resource-group myResourceGroup --name WebFrontEnd --app-n
 az mesh service show --resource-group myResourceGroup --name ToDoService --app-name todolistapp --query "replicaCount"
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой части руководства вы узнали, как выполнить следующие действия:
 

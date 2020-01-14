@@ -1,6 +1,6 @@
 ---
-title: Руководство по Реализация пространственной аналитики Интернета вещей с помощью Azure Maps
-description: Руководство по Интеграция Центра Интернета вещей с API-интерфейсами службы Azure Maps.
+title: Руководство. Реализация пространственной аналитики Интернета вещей с помощью Azure Maps
+description: Руководство. Интеграция Центра Интернета вещей с API-интерфейсами службы Azure Maps.
 author: walsehgal
 ms.author: v-musehg
 ms.date: 11/12/2019
@@ -9,14 +9,14 @@ ms.service: azure-maps
 services: azure-maps
 manager: philmea
 ms.custom: mvc
-ms.openlocfilehash: b876b27d0eb24a9eabcffe0d131ea0ef5bb79bad
-ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
+ms.openlocfilehash: 6c35b52149e3c0117c727771d38d0f010180fc63
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74107043"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75432811"
 ---
-# <a name="tutorial-implement-iot-spatial-analytics-using-azure-maps"></a>Руководство по Реализация пространственной аналитики Интернета вещей с помощью Azure Maps
+# <a name="tutorial-implement-iot-spatial-analytics-using-azure-maps"></a>Руководство. Реализация пространственной аналитики Интернета вещей с помощью Azure Maps
 
 Отслеживание и сбор важных событий по определенному пространству и времени является типичным сценарием для Интернета вещей. Примеры таких сценариев: управление автопарком, отслеживание ресурсов, приложения мобильности и умного города. В этом руководстве описывается шаблон решения, в котором API-интерфейсы Azure Maps применяются для важных событий, собранных в Центре Интернета вещей, на основе модели подписки на события в службе "Сетка событий".
 
@@ -77,7 +77,7 @@ ms.locfileid: "74107043"
   ![Маршрут по геозоне](./media/tutorial-iot-hub-maps/geofence-route.png)
 
 
-## <a name="prerequisites"></a>Предварительные требования 
+## <a name="prerequisites"></a>предварительные требования 
 
 ### <a name="create-a-resource-group"></a>Создание группы ресурсов
 
@@ -104,7 +104,8 @@ ms.locfileid: "74107043"
 
 ### <a name="create-an-azure-maps-account"></a>создание учетной записи службы "Карты Azure"; 
 
-Чтобы реализовать бизнес-логику на основе пространственной аналитики Azure Maps, нам потребуется учетная запись Azure Maps в созданной ранее группе ресурсов. Следуйте инструкциям [по управлению учетной записью](https://docs.microsoft.com/azure/azure-maps/how-to-manage-account-keys#create-a-new-account), чтобы создать подписку Azure Maps в ценовой категорией S1, и выполните инструкции из раздела [Получение первичного ключа для учетной записи](./tutorial-search-location.md#getkey).
+Чтобы реализовать бизнес-логику на основе пространственной аналитики Azure Maps, нам потребуется учетная запись Azure Maps в созданной ранее группе ресурсов. Следуйте инструкциям [по созданию учетной записи](quick-demo-map-app.md#create-an-account-with-azure-maps), чтобы создать подписку учетной записи Azure Maps в ценовой категории S1, и выполните инструкции из раздела по [получению первичного ключа для учетной записи](quick-demo-map-app.md#get-the-primary-key-for-your-account). Дополнительные сведения об управлении проверкой подлинности в Azure Maps см. в [этой статье](how-to-manage-authentication.md).
+
 
 
 ### <a name="create-a-storage-account"></a>Создание учетной записи хранения
@@ -167,7 +168,7 @@ ms.locfileid: "74107043"
     
     Значение geojson для параметра `dataFormat` в пути URL-адреса определяет формат отправляемых данных.
 
-3. Щелкните **Params** (Параметры) и введите следующие пары "ключ — значение" для URL-адреса запроса POST. Замените значение ключа подписки первичным ключом подписки на Azure Maps.
+3. Щелкните **Params** (Параметры) и введите следующие пары "ключ — значение" для URL-адреса запроса POST. Замените значение ключа подписки своим ключом Azure Maps.
    
     ![Пары "ключ — значение" на вкладке параметров приложения Postman](./media/tutorial-iot-hub-maps/postman-key-vals.png)
 
@@ -280,7 +281,7 @@ ms.locfileid: "74107043"
 
 ![Карта нарушений](./media/tutorial-iot-hub-maps/violation-map.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Для изучения API-интерфейсов Azure Maps, используемых в этом руководстве, прочтите следующие статьи.
 

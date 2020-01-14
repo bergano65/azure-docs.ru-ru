@@ -1,25 +1,25 @@
 ---
 title: Краткое руководство. Распознавание рукописного ввода с помощью REST API Распознавателя рукописного текста и Java
 titleSuffix: Azure Cognitive Services
-description: Используйте API Распознавателя рукописного текста, чтобы начать распознавать рукописный текст.
+description: Из этого краткого руководства вы узнаете, как использовать API "Распознаватель рукописного текста", чтобы начать распознавать рукописный текст.
 services: cognitive-services
 author: aahill
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: ink-recognizer
 ms.topic: quickstart
-ms.date: 09/23/2019
+ms.date: 12/17/2019
 ms.author: aahi
-ms.openlocfilehash: e8cd6a4acbd1492bba1c9e88b523a7c44a44f009
-ms.sourcegitcommit: 9f330c3393a283faedaf9aa75b9fcfc06118b124
+ms.openlocfilehash: d2cd4e56477ea39587ce318538c9ddd84c51b03b
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "71996843"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75448123"
 ---
 # <a name="quickstart-recognize-digital-ink-with-the-ink-recognizer-rest-api-and-java"></a>Краткое руководство. Распознавание рукописного ввода с помощью REST API Распознавателя рукописного текста и Java
 
-В этом кратком руководстве описано, как использовать API Распознавателя рукописного текста для росчерков пера. Это приложение Java отправляет запрос API, содержащий данные росчерка пера в формате JSON, и возвращает ответ.
+Используйте это краткое руководство, чтобы начать использовать API Распознавателя рукописного текста для рукописных фрагментов. Это приложение Java отправляет запрос API, содержащий данные росчерка пера в формате JSON, и возвращает ответ.
 
 Хотя это приложение создано на языке Java, API представляет собой веб-службу RESTful, совместимую с большинством языков программирования.
 
@@ -29,7 +29,7 @@ ms.locfileid: "71996843"
 
 Исходный код для этого краткого руководства можно найти на портале [GitHub](https://go.microsoft.com/fwlink/?linkid=2089904).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 - Пакет разработчиков [Java&trade; (JDK) версии 7](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) или более поздней.
 
@@ -88,7 +88,7 @@ ms.locfileid: "71996843"
 
 Запустите приложение. Успешный ответ возвращается в формате JSON. Ответ JSON также можно найти на портале [GitHub](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/java/InkRecognition/quickstart/example-response.json).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Справочник по REST API](https://go.microsoft.com/fwlink/?linkid=2089907)

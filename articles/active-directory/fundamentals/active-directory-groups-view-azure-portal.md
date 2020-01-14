@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство по просмотру групп и членов — Azure Active Directory | Документация Майкрософт
+title: Краткое руководство. Просмотр групп и участников в Azure AD
 description: Инструкции по поиску и просмотру групп вашей организации и назначенных в них членов.
 services: active-directory
 author: msaburnley
@@ -13,12 +13,12 @@ ms.author: ajburnle
 ms.custom: it-pro, seodec18, seo-update-azuread-jan
 ms.reviewer: krbain
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9b4f2f6e86ce076e7c0464609252b027499a8307
-ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
+ms.openlocfilehash: d52c90db5414c39c4e916bbab19c43739d9ea904
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2019
-ms.locfileid: "68942882"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75423015"
 ---
 <!--As a brand-new Azure AD administrator, I need to view my organization’s groups along with the assigned members, so I can manage permissions to apps and services for people in my organization-->
 
@@ -29,7 +29,7 @@ ms.locfileid: "68942882"
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу. 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 Для этого потребуются следующие компоненты.
 
 - Создайте клиента Azure Active Directory. Дополнительные сведения см. в статье [Quickstart: Access Azure Active Directory to create a new tenant](active-directory-access-create-new-tenant.md) (Краткое руководство. Использование Azure Active Directory для создания нового клиента).
@@ -61,7 +61,7 @@ ms.locfileid: "68942882"
 
     - **Имя.** Введите _Alain Charon_.
 
-    - **Имя пользователя.** Введите *alain\@contoso.com*.
+    - **Имя пользователя:** Введите *alain\@contoso.com*.
 
 3. Скопируйте автоматически созданный пароль, который подставляется в поле **Пароль**, а затем щелкните **Создать**.
 
@@ -72,7 +72,7 @@ ms.locfileid: "68942882"
 
 2. На странице **Группы — Все группы** найдите и выберите группу **MDM policy - West**.
 
-3. На странице **Обзор MDM policy - West** выберите **Члены** из области **Управление**.
+3. На странице **Обзор политики управления мобильными устройствами — Запад** выберите **Члены** из области **Управление**.
 
 4. Выберите **Добавление членов**, а затем найдите и выберите **Alain Charon**.
 
@@ -118,7 +118,7 @@ ms.locfileid: "68942882"
 
     Откроется страница **Обзор MDM policy - West**.
 
-3. Нажмите кнопку **Удалить**.
+3. Выберите команду **Удалить**.
 
     Это действие удаляет группы и всех связанных с ней членов.
 
@@ -127,7 +127,7 @@ ms.locfileid: "68942882"
     >[!Important]
     >Но удаляется не сам пользователь Ален Charon, а его членство в удаленной группе.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Перейдите к следующей статье, которая описывает процесс привязки подписки к каталогу Azure AD.
 
 > [!div class="nextstepaction"]

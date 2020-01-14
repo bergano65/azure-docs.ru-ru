@@ -8,12 +8,12 @@ ms.author: crtreasu
 ms.date: 02/24/2019
 ms.topic: quickstart
 ms.service: azure-spatial-anchors
-ms.openlocfilehash: 3814a12657b2634ede02eda83c7e7bcdf78cd7e2
-ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
+ms.openlocfilehash: 01a9a8239e2997335f5123d63cfc664027cffa02
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74277103"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75376398"
 ---
 # <a name="quickstart-create-a-hololens-app-with-azure-spatial-anchors-in-cwinrt-and-directx"></a>Краткое руководство. Создание приложения HoloLens с использованием Пространственных привязок Azure в C++/WinRT и DirectX
 
@@ -22,16 +22,16 @@ ms.locfileid: "74277103"
 Вы узнаете, как:
 
 > [!div class="checklist"]
-> * создавать учетную запись в службе "Пространственные привязки";
+> * создать учетную запись в службе "Пространственные привязки";
 > * настроить идентификатор и ключ учетной записи в службе "Пространственные привязки";
 > * развернуть и запустить приложение на устройстве HoloLens.
 
 [!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 В рамках этого краткого руководства вам потребуются:
-- Компьютер Windows с <a href="https://www.visualstudio.com/downloads/" target="_blank">Visual Studio версии 2019 и выше</a> с рабочей нагрузкой **Разработка приложений для универсальной платформы Windows** и **пакетом SDK для Windows 10 (версии 10.0.18362.0 и выше)** , а также <a href="https://git-scm.com/download/win" target="_blank">Git для Windows</a>.
+- Компьютер Windows с установленной программой <a href="https://www.visualstudio.com/downloads/" target="_blank">Visual Studio 2019</a> или более поздней версии с рабочей нагрузкой **Разработка приложений для универсальной платформы Windows** и компонентом **Пакет SDK для Windows 10 (10.0.18362.0 или более поздняя версия)** . Необходимо также установить <a href="https://git-scm.com/download/win" target="_blank">Git для Windows</a> и <a href="https://git-lfs.github.com/">Git LFS</a>.
 - Установленное [расширение Visual Studio C++/WinRT](https://aka.ms/cppwinrt/vsix) из [Visual Studio Marketplace](https://marketplace.visualstudio.com/).
 - Устройство HoloLens с включенным [режимом разработчика](https://docs.microsoft.com/windows/mixed-reality/using-visual-studio). Для этой статьи требуется устройство HoloLens с [обновлением Windows 10 за октябрь 2018 г.](https://docs.microsoft.com/windows/mixed-reality/release-notes-october-2018 ) (также известным как RS5). Чтобы обновить HoloLens до последней версии, откройте приложение **Параметры**, перейдите в раздел **Обновление и безопасность**, а затем нажмите кнопку **Проверить обновления**.
 - В манифесте AppX приложения необходимо настроить возможность **spatialPerception**.
@@ -46,9 +46,9 @@ ms.locfileid: "74277103"
 
 ## <a name="configure-account-identifier-and-key"></a>Настройка идентификатора и ключа учетной записи
 
-Следующим шагом является настройка приложения для использования идентификатора вашей учетной записи и ключа учетной записи. Вы скопировали их в текстовый редактор, когда выполняли [настройку ресурсов Пространственных привязок](#create-a-spatial-anchors-resource).
+Следующим шагом является настройка приложения для использования идентификатора вашей учетной записи и ключа учетной записи. Вы скопировали их в текстовый редактор, когда выполняли [настройку ресурсов пространственных привязок](#create-a-spatial-anchors-resource).
 
-Откройте `HoloLens\DirectX\SampleHoloLens\ViewController.cpp`.
+Откройте среду `HoloLens\DirectX\SampleHoloLens\ViewController.cpp`.
 
 Найдите поле `SpatialAnchorsAccountKey` и замените `Set me` ключом учетной записи.
 

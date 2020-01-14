@@ -1,7 +1,7 @@
 ---
-title: Руководство по Бот Распознавания речи версии 4 на Node.js
+title: Руководство. Бот Распознавания речи версии 4 на Node.js
 titleSuffix: Azure Cognitive Services
-description: Создавайте чат-боты, интегрированные со службой распознавания речи (LUIS), используя Node.js. Для быстрой реализации решений ботов этот чат-бот использует приложение "Управление персоналом". Бот создается с помощью Bot Framework версии 4 и бота веб-приложения Azure.
+description: Из этого руководства вы узнаете, как создавать чат-боты, интегрированные со службой распознавания речи (LUIS), используя Node.js. Для быстрой реализации решений ботов этот чат-бот использует приложение "Управление персоналом". Бот создается с помощью Bot Framework версии 4 и бота веб-приложения Azure.
 services: cognitive-services
 author: diberry
 ms.custom: seodec18
@@ -11,14 +11,14 @@ ms.subservice: language-understanding
 ms.topic: tutorial
 ms.date: 10/14/2019
 ms.author: diberry
-ms.openlocfilehash: 9a38f43b24e5db6a60ff38cd0f1d9b59b9875bba
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 754d9d74a5d2c74a873145eaaddaaced29aa2ca8
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73492697"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75447994"
 ---
-# <a name="tutorial-use-a-web-app-bot-enabled-with-language-understanding-in-nodejs"></a>Руководство по совместному использованию бота веб-приложения и службы "Распознавание речи" в Node.js 
+# <a name="tutorial-use-a-web-app-bot-enabled-with-language-understanding-in-nodejs"></a>Руководство. совместному использованию бота веб-приложения и службы "Распознавание речи" в Node.js 
 
 Создавайте чат-боты, интегрированные со службой "Распознавание речи" (LUIS), используя Node.js. Бот создается с помощью ресурса [Бот веб-приложения](https://docs.microsoft.com/azure/bot-service/) Azure и [Bot Framework версии 4](https://github.com/Microsoft/botbuilder-dotnet).
 
@@ -32,7 +32,7 @@ ms.locfileid: "73492697"
 > * Запуск бота и эмулятора на локальном компьютере
 > * Просмотр результатов высказывания в боте
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * [Bot Emulator](https://aka.ms/abs/build/emulatordownload)
 * [Visual Studio Code](https://code.visualstudio.com/Download)
@@ -83,7 +83,7 @@ ms.locfileid: "73492697"
 |Заказ авиабилетов|`Travel to Paris`|
 |Отмена|`bye`|
 |GetWeather|`what's the weather like?`|
-|Нет|Все, что находится за пределами домена приложения.|
+|None|Все, что находится за пределами домена приложения.|
 
 ## <a name="test-the-bot-in-web-chat"></a>Тестирование бота в веб-чате
 
@@ -216,7 +216,7 @@ ms.locfileid: "73492697"
 
 [!INCLUDE [Bot Information](../../../includes/cognitive-services-qnamaker-luis-bot-info.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 См. дополнительные [примеры](https://github.com/microsoft/botframework-solutions) чат-ботов. 
 

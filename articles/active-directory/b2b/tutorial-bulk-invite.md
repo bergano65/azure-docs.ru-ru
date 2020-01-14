@@ -11,20 +11,22 @@ author: msmimart
 manager: celestedg
 ms.reviewer: mal
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1ffcdad43195ce49ef3cd8b695f9ad5009af82fb
-ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
+ms.openlocfilehash: 493c60e8148b666ba1f514d303229b7a11c2e43e
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74272353"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75425044"
 ---
-# <a name="tutorial-bulk-invite-azure-ad-b2b-collaboration-users-preview"></a>Руководство по массовой отправке приглашений пользователям службы совместной работы Azure Active Directory B2B (предварительная версия)
+# <a name="tutorial-bulk-invite-azure-ad-b2b-collaboration-users-preview"></a>Руководство. массовой отправке приглашений пользователям службы совместной работы Azure Active Directory B2B (предварительная версия)
 
 |     |
 | --- |
 | В этой статье описана общедоступная предварительная версия функции Azure Active Directory. См. подробные сведения о [дополнительных условиях использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).|
 |     |
 
+> [!NOTE]
+> Начиная с 22.12.2019 функция "Массовое приглашение пользователей" (предварительная версия) временно отключена.
 
 Если вы используете службу совместной работы Azure Active Directory (Azure AD) B2B для работы с внешними партнерами, вы можете одновременно пригласить несколько гостевых пользователей к вашей организации. Из этого руководства вы узнаете, как с помощью портала Azure выполнять массовую отправку приглашений внешним пользователям. В частности, вы выполните описанные ниже действия:
 
@@ -35,7 +37,7 @@ ms.locfileid: "74272353"
 
 Если у вас нет учетной записи AAD, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу. 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Требуется две или больше тестовых учетных записей электронной почты, с которых можно отправлять приглашения. Учетные записи должны находиться за пределами вашей организации. Вы можете использовать любой тип учетной записи, включая учетные записи социальных сетей, такие как адреса gmail.com или outlook.com.
 
@@ -102,7 +104,7 @@ ms.locfileid: "74272353"
 
 Например: `Remove-AzureADUser -ObjectId "lstokes_fabrikam.com#EXT#@contoso.onmicrosoft.com"`
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 С помощью этого руководства вы отправили массовые приглашения гостевым пользователям за пределами своей организации. Затем узнайте, как работает процесс активации приглашения.
 

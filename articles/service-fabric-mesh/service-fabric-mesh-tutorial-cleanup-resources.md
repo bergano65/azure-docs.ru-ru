@@ -1,26 +1,17 @@
 ---
-title: Руководство по удалению ресурсов в службе "Сетка Azure Service Fabric" | Документация Майкрософт
+title: Руководство по удалению ресурсов службы "Сетка Azure Service Fabric"
 description: Сведения об удалении ресурсов в Сетке Azure Service Fabric таким образом, чтобы с вас не взималась плата за неиспользуемые ресурсы.
-services: service-fabric-mesh
-documentationcenter: .net
 author: dkkapur
-manager: chakdan
-editor: ''
-ms.assetid: ''
-ms.service: service-fabric-mesh
-ms.devlang: dotNet
 ms.topic: tutorial
-ms.tgt_pltfrm: NA
-ms.workload: NA
 ms.date: 09/18/2018
 ms.author: dekapur
 ms.custom: mvc, devcenter
-ms.openlocfilehash: a60c42310f0698b8290e7ba6195eeed44fe0b95e
-ms.sourcegitcommit: 1516779f1baffaedcd24c674ccddd3e95de844de
+ms.openlocfilehash: d5e33099d58c9cb4c110a78f2576d6eac83a7932
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56815796"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75351877"
 ---
 # <a name="tutorial-remove-azure-resources"></a>Руководство. Удаление ресурсов Azure
 
@@ -40,7 +31,7 @@ ms.locfileid: "56815796"
 
 [!INCLUDE [preview note](./includes/include-preview-note.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Перед началом работы с этим руководством выполните следующие действия:
 
@@ -62,9 +53,9 @@ az group delete --resource-group sfmeshTutorial1RG
 Remove-AzureRmResourceGroup -Name sfmeshTutorial1RG
 ```
 
-Кроме того, можно удалить группу ресурсов **sfmeshTutorial1RG** [с портала](../azure-resource-manager/manage-resource-groups-portal.md#delete-resource-groups). 
+Кроме того, можно удалить группу ресурсов **sfmeshTutorial1RG**[с портала](../azure-resource-manager/management/manage-resource-groups-portal.md#delete-resource-groups). 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 После завершения публикации приложения Сетки Service Fabric в Azure попробуйте следующее.
 

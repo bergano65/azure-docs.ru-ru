@@ -1,6 +1,5 @@
 ---
-title: Создание приложения Angular с помощью API Azure Cosmos DB для MongoDB. Добавление функций CRUD в приложение
-titleSuffix: Azure Cosmos DB
+title: Добавление функций CRUD в приложение Angular с помощью API Azure Cosmos DB для MongoDB
 description: Часть 6 из серии руководств по созданию в Azure Cosmos DB приложения MongoDB с помощью Angular и Node и тех же API, которые используются для MongoDB
 author: johnpapa
 ms.service: cosmos-db
@@ -11,12 +10,12 @@ ms.date: 12/26/2018
 ms.author: jopapa
 ms.custom: seodec18
 ms.reviewer: sngun
-ms.openlocfilehash: 42015ca816f2744ef28660c5396db4cfd93a76f0
-ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
+ms.openlocfilehash: 0c39ffe40a490ee23ac65f892c46fba2578bce74
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54040563"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75441106"
 ---
 # <a name="create-an-angular-app-with-azure-cosmos-dbs-api-for-mongodb---add-crud-functions-to-the-app"></a>Создание приложения Angular с помощью API Azure Cosmos DB для MongoDB. Добавление функций CRUD в приложение
 
@@ -24,11 +23,11 @@ ms.locfileid: "54040563"
 
 > [!div class="checklist"]
 > * Создание функций Post, Put и Delete для службы hero
-> * Запуск приложения
+> * Запустите приложение
 
 > [!VIDEO https://www.youtube.com/embed/Y5mdAlFGZjc]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Прежде чем переходить к этой части руководства, следует выполнить все задачи из [части 5](tutorial-develop-mongodb-nodejs-part5.md).
 
@@ -37,7 +36,7 @@ ms.locfileid: "54040563"
 
 ## <a name="add-a-post-function-to-the-hero-service"></a>Добавление функции Post в службу hero
 
-1. Откройте в Visual Studio Code файлы **routes.js** и **hero.service.js** параллельно. Для этого нажмите кнопку **Разделить редактор** ![Кнопка "Разделить редактор" в Visual Studio](./media/tutorial-develop-mongodb-nodejs-part6/split-editor-button.png).
+1. Откройте в Visual Studio Code файлы **routes.js** и **hero.service.js** параллельно. Для этого нажмите кнопку **Разделить редактор**![Кнопка "Разделить редактор" в Visual Studio](./media/tutorial-develop-mongodb-nodejs-part6/split-editor-button.png).
 
     Вы увидите, что строка 7 файла routes.js вызывает функцию `getHeroes` в строке 5 файла **hero.service.js**.  Необходимо создать такие же пары для функций Post, Put и Delete. 
 
@@ -85,7 +84,7 @@ ms.locfileid: "54040563"
     });
     ```
 
-5. Запустите приложение, чтобы убедиться в его работоспособности. В Visual Studio Code сохраните все изменения, нажмите кнопку **Отладка** слева ![Значок "Отладка" в Visual Studio Code](./media/tutorial-develop-mongodb-nodejs-part6/debug-button.png) и нажмите кнопку **Начать отладку** ![Значок "Начать отладку" в Visual Studio Code](./media/tutorial-develop-mongodb-nodejs-part6/start-debugging-button.png).
+5. Запустите приложение, чтобы убедиться в его работоспособности. В Visual Studio Code сохраните все изменения, нажмите кнопку **Отладка** слева ![Значок "Отладка" в Visual Studio Code](./media/tutorial-develop-mongodb-nodejs-part6/debug-button.png) и нажмите кнопку **Начать отладку**![Значок "Начать отладку" в Visual Studio Code](./media/tutorial-develop-mongodb-nodejs-part6/start-debugging-button.png).
 
 6. Теперь вернитесь в браузер и откройте вкладку с параметрами сети в инструментах разработчика. На большинстве компьютеров эта вкладка открывается нажатием клавиши F12. Перейдите по адресу [http://localhost:3000](http://localhost:3000) для просмотра вызовов по сети.
 
@@ -186,7 +185,7 @@ ms.locfileid: "54040563"
 
     Если обновить страницу, на вкладке с параметрами сети отобразится время, требуемое для получения элементов hero. Хотя эти операции выполняются быстро, многое зависит от расположения данных в мире и вашей возможности выполнять георепликацию в ближайшую к пользователям область. Дополнительные сведения о георепликации см. в следующем руководстве, которое скоро появится.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой части руководства мы выполнили следующую задачу:
 

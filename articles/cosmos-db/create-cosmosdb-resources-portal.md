@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Создание базы данных Azure Cosmos на портале Azure
+title: Краткое руководство. Создание ресурсов Azure Cosmos DB на портале Azure
 description: В этом кратком руководстве показано, как создать базу данных, контейнер и элементы Azure Cosmos с помощью портала Azure.
 author: SnehaGunda
 ms.author: sngun
@@ -8,17 +8,17 @@ ms.subservice: cosmosdb-sql
 ms.devlang: dotnet
 ms.topic: quickstart
 ms.date: 12/02/2019
-ms.openlocfilehash: 9b563f7546710b0cb07573d32b2f3939d8e64085
-ms.sourcegitcommit: 9405aad7e39efbd8fef6d0a3c8988c6bf8de94eb
+ms.openlocfilehash: 58fa891503342ac0ec9d41e9c458a71d18e58161
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74872219"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75445601"
 ---
 # <a name="quickstart-create-an-azure-cosmos-account-database-container-and-items-from-the-azure-portal"></a>Краткое руководство. Создание учетной записи, базы данных, контейнера и элементов Azure Cosmos на портале Azure
 
 > [!div class="op_single_selector"]
-> * [портал Azure](create-cosmosdb-resources-portal.md)
+> * [Портал Azure](create-cosmosdb-resources-portal.md)
 > * [.NET](create-sql-api-dotnet.md)
 > * [Java](create-sql-api-java.md)
 > * [Node.js](create-sql-api-nodejs.md)
@@ -30,7 +30,7 @@ Azure Cosmos DB — это глобально распределенная мн
 
 В этом кратком руководстве показано, как с помощью портала Azure создать учетную запись [API SQL](sql-api-introduction.md) в Azure Cosmos DB, создать базу данных документов и контейнер, а также добавить данные в контейнер. 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Подписка Azure или бесплатная пробная учетная запись Azure Cosmos DB.
 - [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)] 
@@ -55,7 +55,7 @@ Azure Cosmos DB — это глобально распределенная мн
     
 1.  На панели **Добавить контейнер** введите параметры для нового контейнера.
     
-    |Параметр|Рекомендуемое значение|ОПИСАНИЕ
+    |Параметр|Рекомендуемое значение|Description
     |---|---|---|
     |**Идентификатор базы данных**|ToDoList|Введите *ToDoList* в качестве имени новой базы данных. Имена баз данных должны быть длиной от 1 до 255 символов и не могут содержать символы `/, \\, #, ?` или пробел в конце. Проверьте параметр **Provision database throughput** (Подготовка пропускной способности базы данных), который позволяет предоставить общий доступ к пропускной способности, подготовленной для базы данных всех контейнеров в пределах базы данных. Этот параметр также способствует экономии денежных средств. |
     |**Пропускная способность**|400|Для пропускной способности сохраните значение в 400 единиц запроса в секунду. Чтобы сократить задержку, позже вы можете увеличить масштаб пропускной способности.| 
@@ -101,7 +101,7 @@ Azure Cosmos DB — это глобально распределенная мн
 
 [!INCLUDE [cosmosdb-delete-resource-group](../../includes/cosmos-db-delete-resource-group.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом руководстве описано, как создать учетную запись Azure Cosmos DB, базу данных и контейнер с помощью обозревателя данных. Теперь можно импортировать дополнительные данные в учетную запись Azure Cosmos DB. 
 

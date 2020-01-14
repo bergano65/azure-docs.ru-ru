@@ -11,48 +11,63 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/01/2019
 ms.author: banders
-ms.openlocfilehash: bbd456f82e333ab8e096e5695a55be43c2084c6d
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: 48f7e0b3d1289d8e9c620f931f9bc85570b90042
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74223790"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75449544"
 ---
 # <a name="track-microsoft-customer-agreement-azure-credit-balance"></a>Отслеживание кредитного баланса Azure для Клиентского соглашения Майкрософт
 
-На портале Azure можно проверить кредитный баланс Azure для вашей учетной записи выставления счетов для Клиентского соглашения Майкрософт. 
+На портале Azure или через REST API можно проверить остаток денег на счете Azure для вашей учетной записи выставления счетов в рамках Клиентского соглашения Майкрософт.
 
-Кредиты можно использовать только для оплаты расходов, на которые такие кредиты распространяются. Плата взимается при использовании продуктов, которые можно оплатить кредитами или использование которых превышает ваш кредитный баланс. См. дополнительные сведения о [продуктах, которые не охватываются кредитами Azure](#products-that-arent-covered-by-azure-credits).
-
-В учетной записи выставления счетов для Клиентского соглашения Майкрософт кредиты назначаются профилю выставления счетов. Каждый профиль выставления счетов имеет собственные кредиты. Для просмотра кредитного баланса Azure профиля выставления счетов необходимо иметь роль "владелец", "участник", "читатель" или "менеджер счетов" для профиля выставления счетов, или роль "владелец", "участник", "читатель" для учетной записи выставления счетов. Подробные сведения о ролях см. в разделе [Сведения об административных ролях клиентских соглашений Майкрософт в Azure](billing-understand-mca-roles.md).
+В учетной записи выставления счетов для Клиентского соглашения Майкрософт кредиты назначаются профилю выставления счетов. В каждом профиле выставления счетов есть деньги на счете, которые автоматически используются для погашения расходов по соответствующим счетам. Для просмотра кредитного баланса Azure профиля выставления счетов необходимо иметь роль "владелец", "участник", "читатель" или "менеджер счетов" для профиля выставления счетов, или роль "владелец", "участник", "читатель" для учетной записи выставления счетов. Подробные сведения о ролях см. в разделе [Сведения об административных ролях клиентских соглашений Майкрософт в Azure](billing-understand-mca-roles.md).
 
 В этой статье рассматривается учетная запись выставления счетов для Клиентского соглашения Майкрософт. [Проверьте наличие доступа к Клиентскому соглашению Майкрософт](#check-access-to-a-microsoft-customer-agreement).
 
-## <a name="check-your-credit-balance-in-the-azure-portal"></a>Проверка кредитного баланса на портале Azure
+## <a name="check-your-credit-balance"></a>Проверьте свой кредитный баланс
 
-1. Войдите на [портале Azure]( https://portal.azure.com).
+### <a name="azure-portaltabportal"></a>[Портал Azure](#tab/portal)
+
+1. Войдите на [портал Azure](https://portal.azure.com).
 
 2. Выполните поиск по фразе **Управление затратами + выставление счетов**.
 
     ![Снимок экрана с изображением поиска на портале по фразе "Управление затратами + выставление счетов"](./media/billing-mca-check-azure-credits-balance/billing-search-cost-management-billing.png)
 
-3.  Выберите **Кредиты Azure** в левой части. В зависимости от уровня вашего доступа вам, возможно, потребуется выбрать учетную запись выставления счетов или профиль выставления счетов, а затем — **Кредиты Azure**.
+3. На странице областей выставления счетов выберите учетную запись выставления счетов, для которой вам нужно проверить остаток денег на счете. Учетная запись выставления счетов должна иметь тип **Клиентское соглашение Майкрософт**.
 
-4. На странице "Кредиты Azure" отображается следующая информация:
+    ![Снимок экрана с изображением поиска на портале по фразе "Управление затратами + выставление счетов"](./media/billing-mca-check-azure-credits-balance/list-of-scopes.png)
 
-   ![Снимок экрана: кредитный баланс и транзакции для профиля выставления счетов](./media/billing-mca-check-azure-credits-balance/billing-mca-credits-overview.png)
+    > [!NOTE]
+    >
+    > На портале Azure сохраняется область выставления счетов, которую вы просматривали последней, и она отображается при следующем обращении к странице "Управление затратами + выставление счетов". Если вы посещали страницу "Управление затратами + выставление счетов" ранее, вы не увидите страницу областей выставления счетов. В этом случае убедитесь, что выбрана [правильная область](#check-access-to-a-microsoft-customer-agreement). В противном случае [переключите область](billing-view-all-accounts.md#switch-billing-scope-in-the-azure-portal) и выберите учетную запись выставления счетов для Клиентского соглашения Майкрософт.
+
+3. В меню слева щелкните **Методы оплаты** и выберите **Деньги на счете в Azure**.
+
+   ![Снимок экрана с информацией об остатке денег на счете в профиле выставления счетов](./media/billing-mca-check-azure-credits-balance/mca-payment-methods.png)
+
+4. На странице сведений о деньгах на счете в Azure присутствуют следующие разделы:
+    
+   #### <a name="balance"></a>Balance
+   
+   В этом разделе отображается сводка по остатку денег на счете в Azure.
+
+   ![Снимок экрана с информацией об остатке денег на счете в профиле выставления счетов](./media/billing-mca-check-azure-credits-balance/mca-credit-balance.png)
 
    | Термин               | Определение                           |
    |--------------------|--------------------------------------------------------|
    | Оценка баланса  | Оценочная сумма кредитов, которые у вас есть после рассмотрения всех выставленных счетов и незавершенных транзакций |
    | Текущий баланс    | Количество кредитов к последнему счету. Сюда не включены ожидающие транзакции |
-   | Транзакции       | Платежные операции, на которые распространяется ваш кредитный баланс Azure |
 
    Когда ваш расчетный баланс снижается до 0, с вас взимается плата за все использование, в том числе за продукты, которые можно оплатить кредитами.
 
-6. Выберите **Список кредитов**, чтобы просмотреть список кредитов для профиля выставления счетов. В списке кредитов представлены следующие данные:
+   #### <a name="credits-list"></a>Список кредитов
+   
+   В этом разделе отображается список с данными о деньгах на счете в Azure.
 
-   ![Снимок экрана списка кредитов для профиля выставления счетов](./media/billing-mca-check-azure-credits-balance/billing-mca-credits-list.png)
+   ![Снимок экрана списка кредитов для профиля выставления счетов](./media/billing-mca-check-azure-credits-balance/mca-credits-list.png)
 
    | Термин | Определение |
    |---|---|
@@ -61,9 +76,30 @@ ms.locfileid: "74223790"
    | Срок действия | Дата истечения срока действия кредита |
    | Текущий баланс | Баланс последнего счета |
    | Исходная сумма | Исходный объем кредита |
-   | Status | Текущее состояние кредита. Состояние может быть "Активно", "Использовано", "Просрочено" или "С истекшим сроком действия" |
+   | Состояние | Текущее состояние кредита. Состояние может быть "Активно", "Использовано", "Просрочено" или "С истекшим сроком действия" |
 
-## <a name="check-your-credit-balance-programmatically"></a>Проверьте свой кредитный баланс программным образом
+   #### <a name="transactions"></a>Transactions
+
+   В разделе транзакций отображаются все транзакции, которые влияли на остаток денег на счете.
+
+   ![Снимок экрана с информацией о транзакциях для профиля выставления счетов](./media/billing-mca-check-azure-credits-balance/mca-credits-transactions.png)
+    
+   | Термин | Определение |
+   |---|---|
+   | Дата транзакции | Дата выполнения транзакции. |
+   | Description | Описание транзакции. |
+   | Сумма| Сумма транзакции |
+   | Balance | Остаток на счете после транзакции. |
+
+    > [!NOTE]
+    >
+    > Если на странице методов оплаты не отображаются деньги на счете в Azure, значит у вас не осталось денег на счете или вы выбрали не ту область. Выберите учетную запись выставления счетов, в которую входит один или несколько профилей выставления счетов с остатком денег на счете. Сведения о том, как менять области, см. в разделе [Переключение области выставления счетов на портале Azure](billing-view-all-accounts.md#switch-billing-scope-in-the-azure-portal).
+
+5. Если вы просматриваете сведения о деньгах на счете в Azure по области учетной записи выставления счетов, в которую входят несколько профилей выставления счетов, на странице со сведениями о деньгах на счете в Azure отобразится таблица со сводной информацией об этих деньгах по каждому профилю выставления счетов. Выберите в этом списке профиль выставления счетов, затем методы оплаты и деньги на счете в Azure, чтобы просмотреть сведения о профиле выставления счетов.
+
+    ![Снимок экрана со списком с данными о деньгах на счете в профиле выставления счетов](./media/billing-mca-check-azure-credits-balance/mca-account-credit-list.png)
+
+### <a name="rest-apitabrest"></a>[REST API](#tab/rest)
 
 Вы можете использовать API [Выставления счетов Azure](https://docs.microsoft.com/rest/api/billing/) и [Потребление](https://docs.microsoft.com/rest/api/consumption/), чтобы проверить кредитный баланс для своего платежного счета программным способом.
 
@@ -118,11 +154,11 @@ GET https://management.azure.com/providers/Microsoft.Billing/billingAccounts?$ex
 }
 ```
 
-Используйте свойство `displayName` профиля выставления счетов, чтобы определить профиль выставления счетов, для которого необходимо проверить кредитный баланс. Скопируйте `id` профиля выставления счетов. Например, если вы хотите проверить кредитный баланс для профиля выставления счетов **Development** (Разработка), скопируйте ```/providers/Microsoft.Billing/billingAccounts/5e98e158-xxxx-xxxx-xxxx-xxxxxxxxxxxx:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx_xxxx-xx-xx/billingProfiles/PBFV-xxxx-xxx-xxx```. Вставьте это значение в любое место, чтобы его можно было использовать на следующем шаге.
+Используйте свойство `displayName` профиля выставления счетов, чтобы определить профиль выставления счетов, для которого необходимо проверить остаток денег на счете. Скопируйте `id` профиля выставления счетов. Например, если вы хотите проверить кредитный баланс для профиля выставления счетов **Development** (Разработка), скопируйте ```/providers/Microsoft.Billing/billingAccounts/5e98e158-xxxx-xxxx-xxxx-xxxxxxxxxxxx:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx_xxxx-xx-xx/billingProfiles/PBFV-xxxx-xxx-xxx```. Вставьте это значение в любое место, чтобы его можно было использовать на следующем шаге.
 
 ### <a name="get-azure-credit-balance"></a>Получение кредитного баланса Azure 
 
-Выполните следующий запрос, заменив `<billingProfileId>` на `id`, скопированный на первом шаге (```/providers/Microsoft.Billing/billingAccounts/5e98e158-xxxx-xxxx-xxxx-xxxxxxxxxxxx:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx_xxxx-xx-xx/billingProfiles/PBFV-xxxx-xxx-xxx```). 
+Выполните следующий запрос, заменив `<billingProfileId>` на идентификатор `id`, который вы скопировали на первом шаге (```/providers/Microsoft.Billing/billingAccounts/5e98e158-xxxx-xxxx-xxxx-xxxxxxxxxxxx:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx_xxxx-xx-xx/billingProfiles/PBFV-xxxx-xxx-xxx```). 
 
 ```json
 GET https://management.azure.com<billingProfileId>/providers/Microsoft.Consumption/credits/balanceSummary?api-version=2019-10-01
@@ -163,7 +199,7 @@ GET https://management.azure.com<billingProfileId>/providers/Microsoft.Consumpti
 }
 ```
 
-| Имя элемента  | ОПИСАНИЕ                                                                           |
+| Имя элемента  | Description                                                                           |
 |---------------|---------------------------------------------------------------------------------------|
 | `estimatedBalance` | Предполагаемая сумма кредитов, которые у вас есть после рассмотрения всех выставленных счетов и незавершенных транзакций. |
 | `currentBalance`   | Количество кредитов по состоянию на момент выставления последнего счета. Сюда не включены незавершенные транзакции.    |
@@ -173,7 +209,7 @@ GET https://management.azure.com<billingProfileId>/providers/Microsoft.Consumpti
 
 ### <a name="get-list-of-credits"></a>Получение списка кредитов
 
-Выполните следующий запрос, заменив `<billingProfileId>` на `id`, скопированный на первом шаге (```/providers/Microsoft.Billing/billingAccounts/5e98e158-xxxx-xxxx-xxxx-xxxxxxxxxxxx:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx_xxxx-xx-xx/billingProfiles/PBFV-xxxx-xxx-xxx```). 
+Выполните следующий запрос, заменив `<billingProfileId>` на идентификатор `id`, который вы скопировали на первом шаге (```/providers/Microsoft.Billing/billingAccounts/5e98e158-xxxx-xxxx-xxxx-xxxxxxxxxxxx:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx_xxxx-xx-xx/billingProfiles/PBFV-xxxx-xxx-xxx```). 
 
 ```json
 GET https://management.azure.com<billingProfileId>/providers/Microsoft.Consumption/lots?api-version=2019-10-01
@@ -226,7 +262,7 @@ GET https://management.azure.com<billingProfileId>/providers/Microsoft.Consumpti
   ]
 }
 ```
-| Имя элемента  | ОПИСАНИЕ                                                                                               |
+| Имя элемента  | Description                                                                                               |
 |---------------|-----------------------------------------------------------------------------------------------------------|
 | `originalAmount` | Первоначальная сумма кредита. |
 | `closedBalance`   | Баланс до выставления последнего счета.    |
@@ -237,7 +273,7 @@ GET https://management.azure.com<billingProfileId>/providers/Microsoft.Consumpti
 
 ### <a name="get-transactions-that-affected-credit-balance"></a>Получение транзакций, на которые распространяется кредитный баланс
 
-Выполните следующий запрос, заменив `<billingProfileId>` на `id`, скопированный на первом шаге (```providers/Microsoft.Billing/billingAccounts/5e98e158-xxxx-xxxx-xxxx-xxxxxxxxxxxx:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx_xxxx-xx-xx/billingProfiles/PBFV-xxxx-xxx-xxx```). Чтобы получить транзакции за требуемый период времени, необходимо передать **startDate** и **endDate**.
+Выполните следующий запрос, заменив `<billingProfileId>` на идентификатор `id`, который вы скопировали на первом шаге (```providers/Microsoft.Billing/billingAccounts/5e98e158-xxxx-xxxx-xxxx-xxxxxxxxxxxx:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx_xxxx-xx-xx/billingProfiles/PBFV-xxxx-xxx-xxx```). Чтобы получить транзакции за требуемый период времени, необходимо передать **startDate** и **endDate**.
 
 ```json
 GET https://management.azure.com<billingProfileId>/providers/Microsoft.Consumption/events?api-version=2019-10-01&startDate=2018-10-01T00:00:00.000Z&endDate=2019-10-11T12:00:00.000Z?api-version=2019-10-01
@@ -314,7 +350,7 @@ GET https://management.azure.com<billingProfileId>/providers/Microsoft.Consumpti
   ]
 }
 ```
-| Имя элемента  | ОПИСАНИЕ                                                                                               |
+| Имя элемента  | Description                                                                                               |
 |---------------|-----------------------------------------------------------------------------------------------------------|
 | `transactionDate` | Дата выполнения транзакции. |
 | `description` | Описание транзакции. |
@@ -324,6 +360,8 @@ GET https://management.azure.com<billingProfileId>/providers/Microsoft.Consumpti
 | `closedBalance`  | Баланс после транзакции.   |
 | `eventType`  | Тип транзакции.   |
 | `invoiceNumber`  | Номер счета, по которому оплачивалась транзакция. Он будет пустым для незавершенной транзакции.   |
+
+---
 
 ## <a name="how-credits-are-used"></a>Использование кредитов
 
@@ -356,7 +394,7 @@ GET https://management.azure.com<billingProfileId>/providers/Microsoft.Consumpti
 
 Если вам нужна помощь, [обратитесь в службу поддержки](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade), которая поможет быстро устранить проблему.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Общие сведения об учетных записях выставления счетов для клиентского соглашения Майкрософт](billing-mca-overview.md)
 - [Условия в счете клиентского соглашения Майкрософт](billing-mca-understand-your-invoice.md)

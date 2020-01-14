@@ -8,24 +8,22 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: quickstart
-ms.date: 11/04/2019
+ms.date: 12/17/2019
 ms.author: diberry
-ms.openlocfilehash: 65af2caa2272549b5ad562ff3c38b90e3ea43fd5
-ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
+ms.openlocfilehash: a67852d333a86c5acf20e8bf69004aa9131e1f9f
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74278539"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75448072"
 ---
 # <a name="quickstart-deploy-an-app-in-the-luis-portal"></a>Краткое руководство. Развертывание приложения на портале LUIS
-
-[!INCLUDE [Uses preview portal](./includes/uses-portal-preview.md)]
 
 Когда приложение LUIS будет готово возвращать прогнозы касательно речевых фрагментов в клиентское приложение (например, в чат-бот), его необходимо развернуть в конечной точке прогнозирования.
 
 В рамках этого краткого руководства вы узнаете, как развернуть приложение. Вы создадите ресурс конечной точки прогнозирования, назначите его приложению, обучите и опубликуете это приложение.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * Оформите [подписку Azure](https://azure.microsoft.com/free).
 * Выполните указания из [предыдущего краткого руководства по порталу](get-started-portal-build-app.md) или [скачайте и импортируйте приложение](https://github.com/Azure-Samples/cognitive-services-language-understanding/blob/master/documentation-samples/quickstarts/in-portal/build-portal-app.json).
@@ -41,7 +39,7 @@ ms.locfileid: "74278539"
 
    |Параметр|Значение|Назначение|
    |--|--|--|
-   |ИМЯ|`my-luis-resource`|Имя ресурса Azure. Это имя понадобится при назначении ресурса для приложения на портале LUIS.|
+   |Имя|`my-luis-resource`|Имя ресурса Azure. Это имя понадобится при назначении ресурса для приложения на портале LUIS.|
    |Subscription|Ваша подписка|Выберите одну из подписок, связанных с вашей учетной записью.|
    |группа ресурсов.|`my-resource-group`|Создайте группу ресурсов для всех ресурсов Cognitive Services. Выполнив все необходимые действия с ресурсами, вы можете удалить группу ресурсов, чтобы очистить подписку. |
    |Место разработки|**Западная часть США**|Регион Azure для разработки.|
@@ -61,7 +59,7 @@ ms.locfileid: "74278539"
 
 Каждый раз при создании ресурса для LUIS необходимо назначать его для приложения LUIS. После этого вам не нужно будет еще раз выполнять этот шаг до создания следующего ресурса. Вы можете создать ресурс для расширения регионов приложения или для поддержки большего количества запросов прогнозирования.
 
-1. Войдите на [портал LUIS](https://preview.luis.ai) и выберите приложение **myEnglishApp** из списка приложений.
+1. Войдите на [портал LUIS (предварительная версия)](https://preview.luis.ai) и выберите приложение **myEnglishApp** из списка приложений.
 
 1. В верхнем правом меню выберите **Manage** (Управление), **Azure Resources** (Ресурсы Azure).
 
@@ -143,7 +141,7 @@ ms.locfileid: "74278539"
 
 Изучив это краткое руководство, щелкните **Мои приложения** в меню навигации вверху. Установите флажок возле имени приложения в списке, а затем щелкните **Удалить** в контекстном меню над списком.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Определение общих намерений и сущностей](luis-tutorial-prebuilt-intents-entities.md)

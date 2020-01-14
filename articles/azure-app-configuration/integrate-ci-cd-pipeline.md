@@ -1,5 +1,6 @@
 ---
-title: Руководство по интеграции конвейера непрерывной интеграции и доставки с помощью Конфигурации приложений Azure | Документация Майкрософт
+title: Руководство. Интеграция с использованием конвейера непрерывной интеграции и поставки
+titleSuffix: Azure App Configuration
 description: В этом руководстве вы узнаете, как создать файл конфигурации с помощью данных в Конфигурации приложений Azure во время непрерывной интеграции и доставки.
 services: azure-app-configuration
 documentationcenter: ''
@@ -12,12 +13,12 @@ ms.topic: tutorial
 ms.date: 02/24/2019
 ms.author: yegu
 ms.custom: mvc
-ms.openlocfilehash: e9b81baed14b18c6db736bd94a2aba43a4e671ad
-ms.sourcegitcommit: dbde4aed5a3188d6b4244ff7220f2f75fce65ada
+ms.openlocfilehash: f8adfee1e707181e78f4e845f61477b08af935e9
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74185106"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75433639"
 ---
 # <a name="integrate-with-a-cicd-pipeline"></a>Интеграция с конвейером CI/CD
 
@@ -37,7 +38,7 @@ ms.locfileid: "74185106"
 
 Вы можете выполнять шаги в этом учебнике с помощью любого редактора кода. [Visual Studio Code](https://code.visualstudio.com/) является отличным вариантом, который доступен на платформах Windows, macOS и Linux.
 
-### <a name="prerequisites"></a>Предварительные требования
+### <a name="prerequisites"></a>предварительные требования
 
 Если сборка выполняется локально, скачайте и установите [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest), если этот компонент отсутствует.
 
@@ -98,9 +99,9 @@ ms.locfileid: "74185106"
 
     ![Краткое руководство. Запуск приложения, размещенного локально](./media/quickstarts/aspnet-core-app-launch-local.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом руководстве вы экспортировали данные Конфигурации приложений Azure для использования в конвейере развертывания. Чтобы узнать больше об использовании службы "Конфигурация приложений", перейдите к примерам скриптов Azure CLI.
 
 > [!div class="nextstepaction"]
-> [Интеграция управляемых удостоверений](./howto-integrate-azure-managed-service-identity.md)
+> [Руководство по интеграции с управляемыми удостоверениями Azure](./howto-integrate-azure-managed-service-identity.md)

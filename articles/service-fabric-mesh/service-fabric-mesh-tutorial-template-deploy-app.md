@@ -1,28 +1,19 @@
 ---
-title: Руководство. Развертывание приложения в службе "Сетка Azure Service Fabric" | Документы Майкрософт
+title: Руководство. Развертывание приложения в службе "Сетка Azure Service Fabric"
 description: В этом руководстве вы узнаете, как развертывать приложение в Сетке Service Fabric с помощью шаблона.
-services: service-fabric-mesh
-documentationcenter: .net
 author: dkkapur
-manager: jeconnoc
-editor: ''
-ms.assetid: ''
-ms.service: service-fabric-mesh
-ms.devlang: dotNet
 ms.topic: tutorial
-ms.tgt_pltfrm: NA
-ms.workload: NA
 ms.date: 01/11/2019
 ms.author: dekapur
 ms.custom: mvc, devcenter
-ms.openlocfilehash: ce063d8a256cbf2507e19d459aafe13150eccce7
-ms.sourcegitcommit: 009334a842d08b1c83ee183b5830092e067f4374
+ms.openlocfilehash: 1ff1407400843fdb0f0ff997e2e0a3c1b7e67c7d
+ms.sourcegitcommit: f0dfcdd6e9de64d5513adf3dd4fe62b26db15e8b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66306952"
+ms.lasthandoff: 12/26/2019
+ms.locfileid: "75494934"
 ---
-# <a name="tutorial-deploy-an-application-to-service-fabric-mesh-using-a-template"></a>Руководство по Развертывание приложения в Сетке Service Fabric с помощью шаблона
+# <a name="tutorial-deploy-an-application-to-service-fabric-mesh-using-a-template"></a>Руководство. Развертывание приложения в Сетке Service Fabric с помощью шаблона
 
 Это руководство представляет первую часть цикла. Вы узнаете, как развернуть приложение сетки Azure Service Fabric с помощью шаблона.  Приложение состоит из службы веб-интерфейса ASP.NET и службы серверной части веб-API ASP.NET Core, которые находятся в Docker Hub.  Вы извлечете образы двух контейнеров из Docker Hub и затем отправите их в свой частный реестр. Затем вы создадите шаблон Azure RM для приложения и развернете приложение из реестра контейнеров в Сетку Service Fabric. Когда вы закончите, у вас будет простое приложение списка дел в Сетке Service Fabric.
 
@@ -43,7 +34,7 @@ ms.locfileid: "66306952"
 
 [!INCLUDE [preview note](./includes/include-preview-note.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Перед началом работы с этим руководством выполните следующие действия:
 
@@ -264,7 +255,7 @@ az acr credential show --name myContainerRegistry --query "passwords[0].value"
                   "endpoints": [
                     {
                       "name": "ServiceAListener",
-                      "port": 20001
+                      "port": 80
                     }
                   ],
                   "resources": {
@@ -405,7 +396,7 @@ az mesh app show --resource-group myResourceGroup --name todolistapp
 az mesh code-package-log get --resource-group myResourceGroup --application-name todolistapp --service-name WebFrontEnd --replica-name 0 --code-package-name WebFrontEnd
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой части руководства вы узнали, как выполнить следующие действия:
 

@@ -1,27 +1,27 @@
 ---
 title: Краткое руководство. Проверка орфографии с помощью REST API и Node.js — Проверка орфографии Bing
 titleSuffix: Azure Cognitive Services
-description: Приступите к работе с REST API проверки орфографии Bing для проверки орфографии и грамматики.
+description: Приступите к работе с REST API Проверки орфографии Bing для проверки орфографии и грамматики при помощи этого руководства.
 services: cognitive-services
 author: aahill
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-spell-check
 ms.topic: quickstart
-ms.date: 04/02/2019
-ms.author: aahill
-ms.openlocfilehash: ab8f1d52b5a0b9f5f2539de0acc4728277f9f7b2
-ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
+ms.date: 12/16/2019
+ms.author: aahi
+ms.openlocfilehash: 69c391e6c3f93a998ade7c5721a528d895f8df76
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74378824"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75382866"
 ---
 # <a name="quickstart-check-spelling-with-the-bing-spell-check-rest-api-and-nodejs"></a>Краткое руководство. Проверка орфографии с помощью REST API проверки орфографии Bing и Node.js
 
 В этом кратком руководстве показано, как отправить первый вызов к REST API "Проверка орфографии Bing". Это простое приложение Node отправляет запрос к API и возвращает список слов, которые не удалось распознать, с предлагаемыми исправлениями. Хотя это приложение создано на языке Node.js, API представляет собой веб-службу RESTful, совместимую с большинством языков программирования. Исходный код этого приложения доступен на [GitHub](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/nodejs/Search/BingSpellCheckv7.js).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * [Node.js 6](https://nodejs.org/en/download/) или более поздней версии.
 
@@ -30,7 +30,7 @@ ms.locfileid: "74378824"
 
 ## <a name="create-and-initialize-a-project"></a>Создание и инициализация проекта
 
-1. Создайте файл JavaScript в используемой вами интегрированной среде разработки или редакторе. Установите степень строгости и добавьте требование использования протокола `https`. Затем создайте переменные для узла конечной точки API, пути и ключа подписки.
+1. Создайте файл JavaScript в используемой вами интегрированной среде разработки или редакторе. Установите степень строгости и добавьте требование использования протокола `https`. Затем создайте переменные для узла конечной точки API, пути и ключа подписки. Вы можете использовать указанную ниже глобальную конечную точку или конечную точку [пользовательского поддомена](../../../cognitive-services/cognitive-services-custom-subdomains.md), отображаемого на портале Azure для вашего ресурса.
 
     ```javascript
     'use strict';
@@ -97,6 +97,18 @@ req.write ("text=" + text);
 req.end ();
 ```
 
+
+## <a name="run-the-application"></a>Выполнение приложения
+
+Выполните сборку проекта и запустите его.
+
+При использовании командной строки выполните приведенные ниже команды для сборки и запуска приложения.
+
+```bash
+node <FILE_NAME>.js
+```
+
+
 ## <a name="example-json-response"></a>Пример ответа в формате JSON
 
 Успешный ответ возвращается в формате JSON, как показано в примере ниже.
@@ -139,7 +151,7 @@ req.end ();
 }
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Создание одностраничного веб-приложения](../tutorials/spellcheck.md)

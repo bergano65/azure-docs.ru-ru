@@ -9,12 +9,12 @@ ms.service: iot-dps
 services: iot-dps
 ms.devlang: csharp
 ms.custom: mvc
-ms.openlocfilehash: 1986f51b834f177a7c8d70392cc532cbfadb7170
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.openlocfilehash: 64bc3921a606ab3211173b46b268ded53952c8bb
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74974739"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75434660"
 ---
 # <a name="quickstart-enroll-x509-devices-to-the-device-provisioning-service-using-c"></a>Краткое руководство. Регистрация устройств X.509 в Службе подготовки устройств с помощью C#
 
@@ -28,7 +28,7 @@ ms.locfileid: "74974739"
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * Установите [Visual Studio 2019](https://www.visualstudio.com/vs/).
 * Установите [пакет SDK для .NET Core](https://www.microsoft.com/net/download/windows).
@@ -49,17 +49,21 @@ ms.locfileid: "74974739"
 
 Чтобы создать сертификаты с помощью этих средств тестирования, выполните следующие действия:
 
-1. Откройте окно командной строки или оболочку Git Bash и перейдите в рабочую папку на вашем компьютере. Выполните следующую команду для клонирования репозитория GitHub [пакета SDK Azure IoT для C](https://github.com/Azure/azure-iot-sdk-c).
+1. Найдите имя тега для [последнего выпуска](https://github.com/Azure/azure-iot-sdk-c/releases/latest) пакета SDK Azure IoT для C.
 
-   ```cmd/sh
-   git clone https://github.com/Azure/azure-iot-sdk-c.git --recursive
-   ```
+2. Откройте командную строку или оболочку Git Bash и перейдите в рабочую папку на компьютере. Выполните приведенные ниже команды, чтобы клонировать репозиторий GitHub с последним выпуском [пакета SDK Azure IoT для C](https://github.com/Azure/azure-iot-sdk-c). Используйте найденный тег в качестве значения для параметра `-b`:
 
-   Выполнение этой операции может занять несколько минут.
+    ```cmd/sh
+    git clone -b <release-tag> https://github.com/Azure/azure-iot-sdk-c.git
+    cd azure-iot-sdk-c
+    git submodule update --init
+    ```
+
+    Выполнение этой операции может занять несколько минут.
 
    Средства тестирования находятся в клонированном репозитории *azure-iot-sdk-c/tools/CACertificates*.
 
-1. Выполните действия, описанные в статье [Managing test CA certificates for samples and tutorials](https://github.com/Azure/azure-iot-sdk-c/blob/master/tools/CACertificates/CACertificateOverview.md) (Управление тестовыми сертификатами ЦС для образцов и руководств).
+3. Выполните действия, описанные в статье [Managing test CA certificates for samples and tutorials](https://github.com/Azure/azure-iot-sdk-c/blob/master/tools/CACertificates/CACertificateOverview.md) (Управление тестовыми сертификатами ЦС для образцов и руководств).
 
 Помимо средств в *пакете SDK для Центра Интернета вещей Microsoft Azure для .NET* в [примере проверки сертификата группы](https://github.com/Azure-Samples/azure-iot-samples-csharp/tree/master/provisioning/Samples/service/GroupCertificateVerificationSample) показано, как подтвердить владение в C# с помощью имеющегося промежуточного или корневого сертификата ЦС X.509.
 
@@ -163,7 +167,7 @@ ms.locfileid: "74974739"
    Console.ReadLine();
    ```
 
-1. Выполните сборку решения.
+1. Создайте решение.
 
 ## <a name="run-the-enrollment-group-sample"></a>Запуск примера группы регистрации
   
@@ -185,7 +189,7 @@ ms.locfileid: "74974739"
 
 1. На странице службы подготовки устройств на портале Azure щелкните **Сертификаты**, выберите сертификат, загруженный для работы с этим кратким руководством, а затем нажмите кнопку **Удалить** в верхней части окна **Сведения о сертификате**.  
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом кратком руководстве вы создали группу регистрации сертификата X.509 промежуточного или корневого центра сертификации с помощью службы "Подготовка устройств к добавлению в Центр Интернета вещей". Дополнительные сведения о подготовке устройств см. в руководстве по настройке службы подготовки устройств на портале Azure.
 

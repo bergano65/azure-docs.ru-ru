@@ -5,14 +5,14 @@ services: virtual-desktop
 author: Heidilohr
 ms.service: virtual-desktop
 ms.topic: overview
-ms.date: 11/19/2019
+ms.date: 12/17/2019
 ms.author: helohr
-ms.openlocfilehash: 5ae6c30c595c2e3c4c7ce90d6ab208e50722bfc2
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: dd5167af5f45ebae0529e16f224065627085e9b0
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74227702"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75348810"
 ---
 # <a name="what-is-windows-virtual-desktop"></a>Что такое Виртуальный рабочий стол Windows 
 
@@ -64,7 +64,7 @@ ms.locfileid: "74227702"
 
 Мы планируем добавить поддержку приведенных ниже операционных систем. Поэтому убедитесь, что у вас есть [соответствующие лицензии](https://azure.microsoft.com/pricing/details/virtual-desktop/) для пользователей в соответствии с рабочим столом и приложениями, которые вы планируете развернуть.
 
-|ОС|Требуемая лицензия|
+|OS|Требуемая лицензия|
 |---|---|
 |Windows 10 Корпоративная с поддержкой нескольких сеансов или Windows 10 Корпоративная|Microsoft 365 E3, E5, A3, A5, F1, бизнес<br>Windows E3, E5, A3, A5|
 |Windows 7 Корпоративная |Microsoft 365 E3, E5, A3, A5, F1, бизнес<br>Windows E3, E5, A3, A5|
@@ -110,8 +110,11 @@ ms.locfileid: "74227702"
 
 Виртуальный рабочий стол Windows поддерживают следующие клиенты удаленного рабочего стола:
 
-* [Windows](https://docs.microsoft.com/azure/virtual-desktop/connect-windows-7-and-10)
-* [HTML5](https://docs.microsoft.com/azure/virtual-desktop/connect-web)
+* [Windows](connect-windows-7-and-10.md)
+* [Web](connect-web.md)
+* [Mac](connect-macos.md)
+* [iOS](connect-ios.md)
+* [Android (предварительная версия)](connect-android.md)
 
 ## <a name="supported-virtual-machine-os-images"></a>Поддерживаемые образы ОС виртуальной машины
 
@@ -120,8 +123,8 @@ ms.locfileid: "74227702"
 * Windows 10 Корпоративная с поддержкой нескольких сеансов, 1809 или более поздней версии
 * Windows 10 Корпоративная, 1809 или более поздней версии
 * Windows 7 Корпоративная
-* Windows Server 2019
-* Windows Server 2016
+* Windows Server 2019
+* Windows Server 2016
 * Windows Server 2012 R2
 
 Виртуальный рабочий стол Windows не поддерживает образы операционных систем x86 (32-разрядная), Windows 10 Корпоративная N или Windows 10 Корпоративная KN.
@@ -130,16 +133,16 @@ ms.locfileid: "74227702"
 
 |Операционная система|Коллекция образов Azure|Развертывание ВМ вручную|Интеграция шаблона Azure Resource Manager|Подготовка пулов узлов в Azure Marketplace|Обновления агента Виртуального рабочего стола Windows|
 |--------------------------------------|:------:|:------:|:------:|:------:|:------:|
-|Windows 10 для нескольких сеансов, версия 1903|Yes|Да|Да|Yes|Автоматический|
-|Windows 10 для нескольких сеансов, версия 1809|Yes|Да|Нет|Нет|Автоматический|
-|Windows 10 Корпоративная, версия 1903|Yes|Да|Да|Yes|Автоматический|
-|Windows 10 Корпоративная, версия 1809|Yes|Да|Нет|Нет|Автоматический|
-|Windows 7 Корпоративная|Yes|Да|Нет|Нет|Руководство|
-|Windows Server 2019|Yes|Да|Нет|Нет|Автоматический|
-|Windows Server 2016|Yes|Да|Да|Yes|Автоматический|
-|Windows Server 2012 R2|Yes|Да|Нет|Нет|Автоматический|
+|Windows 10 для нескольких сеансов, версия 1903|Да|Да|Да|Да|Автоматически|
+|Windows 10 для нескольких сеансов, версия 1809|Да|Да|нет|нет|Автоматически|
+|Windows 10 Корпоративная, версия 1903|Да|Да|Да|Да|Автоматически|
+|Windows 10 Корпоративная, версия 1809|Да|Да|нет|нет|Автоматически|
+|Windows 7 Корпоративная|Да|Да|нет|нет|Вручную|
+|Windows Server 2019|Да|Да|нет|нет|Автоматически|
+|Windows Server 2016|Да|Да|Да|Да|Автоматически|
+|Windows Server 2012 R2|Да|Да|нет|нет|Автоматически|
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы начать работу, необходимо создать клиент. См. дополнительные сведения о создании клиента.
 

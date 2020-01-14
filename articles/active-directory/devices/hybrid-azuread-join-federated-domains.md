@@ -11,14 +11,14 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: eb415d7434130c6ea2e7c9e2e11daccc657ddbf8
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: b1f5c837f1912df407960fca41387eb84986381e
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74207654"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75423156"
 ---
-# <a name="tutorial-configure-hybrid-azure-active-directory-join-for-federated-domains"></a>Руководство по Настройка гибридного присоединения к Azure Active Directory для федеративных доменов
+# <a name="tutorial-configure-hybrid-azure-active-directory-join-for-federated-domains"></a>Руководство. Настройка гибридного присоединения к Azure Active Directory для федеративных доменов
 
 Подобно пользователю в вашей организации, устройство — это еще одно основное удостоверение, которое необходимо защитить. Удостоверение устройства можно использовать для защиты ресурсов в любое время и из любого расположения. Для этого разместите удостоверения своих устройств в Azure AD и управляйте ими с помощью одного из следующих методов:
 
@@ -40,7 +40,7 @@ ms.locfileid: "74207654"
    `/adfs/services/trust/13/certificatemixed` 
 
 > [!WARNING] 
-> Также нужно включить **adfs/services/trust/2005/windowstransport** или **adfs/services/trust/13/windowstransport**, но только в качестве конечных точек с подключением к интрасети. Их НЕЛЬЗЯ предоставлять как конечные точки с подключением к экстрасети через прокси-сервер веб-приложения. Дополнительные сведения см. в статье об [отключении конечных точек WS-Trust в Windows на прокси-сервере](https://docs.microsoft.com/windows-server/identity/ad-fs/deployment/best-practices-securing-ad-fs#disable-ws-trust-windows-endpoints-on-the-proxy-ie-from-extranet). В разделе **Служба** > **Конечные точки** вы можете увидеть, какие конечные точки активированы в консоли управления AD FS.
+> Также нужно включить **adfs/services/trust/2005/windowstransport** и **adfs/services/trust/13/windowstransport**, но только в качестве конечных точек с подключением к интрасети. Их НЕЛЬЗЯ предоставлять как конечные точки с подключением к экстрасети через прокси-сервер веб-приложения. Дополнительные сведения см. в статье об [отключении конечных точек WS-Trust в Windows на прокси-сервере](https://docs.microsoft.com/windows-server/identity/ad-fs/deployment/best-practices-securing-ad-fs#disable-ws-trust-windows-endpoints-on-the-proxy-ie-from-extranet). В разделе **Служба** > **Конечные точки** вы можете увидеть, какие конечные точки активированы в консоли управления AD FS.
 
 В этом руководстве описано, как настроить гибридное присоединение к Azure AD для компьютеров, подключенных к домену Active Directory в федеративной среде, с помощью AD FS.
 
@@ -48,11 +48,11 @@ ms.locfileid: "74207654"
 
 > [!div class="checklist"]
 > * Настройка гибридного присоединения к Azure AD.
-> * Включение устройств Windows нижнего уровня.
+> * Включение устройств Windows нижнего уровня
 > * Проверка регистрации
-> * Устранение неполадок
+> * Диагностика
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 В данном руководстве предполагается, что вы ознакомлены со следующими статьями:
 
@@ -104,7 +104,7 @@ ms.locfileid: "74207654"
 
 **Чтобы настроить гибридное присоединение к Azure AD с помощью Azure AD Connect, сделайте следующее.** :
 
-1. Запустите Azure AD Connect и выберите **Настройка**.
+1. Запустите Azure AD Connect и выберите **Настройка**.
 
    ![Экран приветствия](./media/hybrid-azuread-join-federated-domains/11.png)
 
@@ -165,7 +165,7 @@ ms.locfileid: "74207654"
 
 Необходимо также включить параметр **Разрешить обновление строки состояния в сценарии** в локальной зоне интрасети пользователя.
 
-### <a name="install-microsoft-workplace-join-for-windows-downlevel-computers"></a>Установка Microsoft Workplace Join для компьютеров Windows нижнего уровня
+### <a name="install-microsoft-workplace-join-for-windows-downlevel-computers"></a>Установка Microsoft Workplace Join для компьютеров Windows нижнего уровня.
 
 Чтобы зарегистрировать устройства Windows нижнего уровня, необходимо установить в организации [Microsoft Workplace Join для компьютеров, на которых не используется Windows 10](https://www.microsoft.com/download/details.aspx?id=53554). Microsoft Workplace Join для компьютеров не на базе Windows 10 доступна в центре загрузки Майкрософт.
 
@@ -187,7 +187,7 @@ ms.locfileid: "74207654"
 
 1. Откройте Windows PowerShell от имени администратора.
 1. Введите `Connect-MsolService`, чтобы подключится к своему клиенту Azure.  
-1. Укажите `get-msoldevice -deviceId <deviceId>`.
+1. Введите `get-msoldevice -deviceId <deviceId>`.
 1. Убедитесь, что параметр **Включено** имеет значение **True**.
 
 ## <a name="troubleshoot-your-implementation"></a>Устранение неполадок реализации
@@ -197,7 +197,7 @@ ms.locfileid: "74207654"
 - [Устранение неполадок на устройствах под управлением Windows 10 и Windows Server 2016 с гибридным присоединением к Azure Active Directory](troubleshoot-hybrid-join-windows-current.md)
 - [Устранение неполадок на устройствах нижнего уровня с гибридным присоединением к Azure Active Directory](troubleshoot-hybrid-join-windows-legacy.md)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте, как [управлять удостоверениями устройств с помощью портала Azure](device-management-azure-portal.md).
 

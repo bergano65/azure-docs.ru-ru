@@ -1,5 +1,5 @@
 ---
-title: Руководство. Создание учетной записи API Cassandra с помощью приложения Java — Azure Cosmos DB
+title: Руководство. Создание приложения Java для создания учетной записи API Cassandra Azure Cosmos DB
 description: В этом руководстве показано, как создать учетную запись API Cassandra, добавить базу данных (также называемую пространством ключей) и таблицу в эту учетную запись с помощью приложения Java.
 author: kanshiG
 ms.author: govindk
@@ -10,12 +10,12 @@ ms.topic: tutorial
 ms.date: 12/06/2018
 ms.custom: seodec18
 Customer intent: As a developer, I want to build a Java application to access and manage Azure Cosmos DB resources so that customers can store key/value data and utilize the global distribution, elastic scaling, multi-master, and other capabilities offered by Azure Cosmos DB.
-ms.openlocfilehash: d2d4d568f53c426b063f3285cc8d3d510c3db440
-ms.sourcegitcommit: 94ee81a728f1d55d71827ea356ed9847943f7397
+ms.openlocfilehash: b0103f7b827de77c522f78000c8d28683ac85f4b
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70034612"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75441903"
 ---
 # <a name="tutorial-create-a-cassandra-api-account-in-azure-cosmos-db-by-using-a-java-application-to-store-keyvalue-data"></a>Руководство. Создание учетной записи API Cassandra в Azure Cosmos DB с помощью приложения Java для хранения данных пар "ключ — значение"
 
@@ -28,9 +28,9 @@ ms.locfileid: "70034612"
 > * Получение строки подключения к учетной записи
 > * Создание проекта Maven и зависимостей
 > * Добавление базы данных и таблицы
-> * Запуск приложения
+> * Запустите приложение
 
-## <a name="prerequisites"></a>Предварительные требования 
+## <a name="prerequisites"></a>предварительные требования 
 
 * Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio), прежде чем начинать работу. 
 
@@ -41,15 +41,15 @@ ms.locfileid: "70034612"
 
 ## <a name="create-a-database-account"></a>Создание учетной записи базы данных 
 
-1. Войдите на [портале Azure](https://portal.azure.com/). 
+1. Войдите на [портал Azure](https://portal.azure.com/). 
 
 2. Последовательно выберите **Создать ресурс** > **Базы данных** > **Azure Cosmos DB**. 
 
 3. На панели **Новая учетная запись** введите параметры для новой учетной записи Azure Cosmos. 
 
-   |Параметр   |Рекомендуемое значение  |ОПИСАНИЕ  |
+   |Параметр   |Рекомендуемое значение  |Description  |
    |---------|---------|---------|
-   |ИД   |   Введите уникальное имя.    | Введите уникальное имя для идентификации этой учетной записи Azure Cosmos. <br/><br/>Так как элемент cassandra.cosmosdb.azure.com добавляется к указанному идентификатору для создания точки контакта, используйте уникальный, но узнаваемый идентификатор.         |
+   |ID   |   Введите уникальное имя.    | Введите уникальное имя для идентификации этой учетной записи Azure Cosmos. <br/><br/>Так как элемент cassandra.cosmosdb.azure.com добавляется к указанному идентификатору для создания точки контакта, используйте уникальный, но узнаваемый идентификатор.         |
    |API    |  Cassandra   |  API определяет тип учетной записи, которую нужно создать. <br/> Выберите **Cassandra**, так как в этой статье вы создадите базу данных с широкими столбцами, к которой можно отправлять запросы с помощью синтаксиса языка запросов Cassandra (CQL).  |
    |Subscription    |  Ваша подписка        |  Выберите подписку Azure, которую планируете использовать для этой учетной записи Azure Cosmos.        |
    |Группа ресурсов   | Введите имя.    |  Выберите **Создать** и введите новое имя группы ресурсов для учетной записи. Для удобства можно использовать то же имя, которое присвоено идентификатору.    |
@@ -204,7 +204,7 @@ cassandra_password=<FILLME_with_PRIMARY PASSWORD>
    } 
    ```
  
-## <a name="run-the-app"></a>Запуск приложения 
+## <a name="run-the-app"></a>Запустите приложение 
 
 1. Откройте командную строку или окно терминала. Вставьте следующий блок кода. 
 
@@ -222,7 +222,7 @@ cassandra_password=<FILLME_with_PRIMARY PASSWORD>
    
 2. Теперь на портале Azure откройте **обозреватель данных** и убедитесь, что пространство ключей и таблица созданы.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом руководстве вы узнали, как создать учетную запись API Cassandra в Azure Cosmos DB, базу данных и таблицу с помощью приложения Java. Теперь вы можете перейти к следующей статье:
 

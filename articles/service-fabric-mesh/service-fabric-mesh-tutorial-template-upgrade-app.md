@@ -1,28 +1,19 @@
 ---
-title: Руководство. Обновление приложения, работающего в Сетке Azure Service Fabric | Документация Майкрософт
+title: Руководство. Обновление приложения, работающего в Сетке Azure Service Fabric
 description: Из этого руководства вы узнаете, как обновить приложение Service Fabric, работающее в Сетке Service Fabric.
-services: service-fabric-mesh
-documentationcenter: .net
 author: dkkapur
-manager: jeconnoc
-editor: ''
-ms.assetid: ''
-ms.service: service-fabric-mesh
-ms.devlang: dotNet
 ms.topic: tutorial
-ms.tgt_pltfrm: NA
-ms.workload: NA
 ms.date: 01/11/2019
 ms.author: dekapur
 ms.custom: mvc, devcenter
-ms.openlocfilehash: 3567ede82f2eebf602e95dcd012f5c88a40af796
-ms.sourcegitcommit: 02d17ef9aff49423bef5b322a9315f7eab86d8ff
+ms.openlocfilehash: 42db17fa6474d3230bc523d0cf65b375cf01276e
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58337635"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75351731"
 ---
-# <a name="tutorial-upgrade-a-service-fabric-application-running-in-service-fabric-mesh"></a>Руководство по Обновление приложения Service Fabric, работающего в Сетке Service Fabric
+# <a name="tutorial-upgrade-a-service-fabric-application-running-in-service-fabric-mesh"></a>Руководство. Обновление приложения Service Fabric, работающего в Сетке Service Fabric
 
 Это руководство представляет собой первую часть цикла. Вы узнаете, как обновить приложение Service Fabric, которое было [ранее развернуто в Сетке Service Fabric](service-fabric-mesh-tutorial-template-deploy-app.md), увеличив выделенные ресурсы ЦП.  По завершении вы получите службу веб-интерфейса с большим количеством ресурсов ЦП.
 
@@ -41,7 +32,7 @@ ms.locfileid: "58337635"
 
 [!INCLUDE [preview note](./includes/include-preview-note.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Перед началом работы с этим руководством выполните следующие действия:
 
@@ -77,7 +68,7 @@ az mesh service show --resource-group myResourceGroup --name WebFrontEnd --app-n
 
 Сохраните изменения в файле параметров.  
 
-Параметры *frontEndCpu* объявлены в разделе *parameters* [шаблона развертывания mesh_rp.windows.json](https://github.com/Azure-Samples/service-fabric-mesh/blob/master/templates/todolist/mesh_rp.windows.json).
+Параметры *frontEndCpu* объявлены в разделе *parameters*[шаблона развертывания mesh_rp.windows.json](https://github.com/Azure-Samples/service-fabric-mesh/blob/master/templates/todolist/mesh_rp.windows.json).
 
 ```json
 "frontEndCpu": {
@@ -133,7 +124,7 @@ az mesh deployment create --resource-group myResourceGroup --template-file c:\te
 az mesh service show --resource-group myResourceGroup --name WebFrontEnd --app-name todolistapp
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой части руководства вы узнали, как выполнить следующие действия:
 

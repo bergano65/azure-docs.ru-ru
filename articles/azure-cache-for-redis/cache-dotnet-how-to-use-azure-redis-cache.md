@@ -1,25 +1,25 @@
 ---
-title: Краткое руководство. Использование кэша Azure для Redis в приложениях .NET
+title: Краткое руководство. Использование Кэша Azure для Redis с приложениями .NET
 description: В этом кратком руководстве объясняется, как обращаться к кэшу Azure для Redis из приложений .NET.
 author: yegu-ms
+ms.author: yegu
 ms.service: cache
 ms.devlang: dotnet
 ms.topic: quickstart
-ms.date: 05/18/2018
-ms.author: yegu
 ms.custom: mvc
-ms.openlocfilehash: 2738805043b701d9e116d962f88225a6c6ae3e9b
-ms.sourcegitcommit: 5a8c65d7420daee9667660d560be9d77fa93e9c9
+ms.date: 05/18/2018
+ms.openlocfilehash: b22d40e29d2150592f2753edd789458fbf25911f
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74122813"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75433526"
 ---
 # <a name="quickstart-use-azure-cache-for-redis-with-a-net-framework-application"></a>Краткое руководство. Использование кэша Azure для Redis с приложениями .NET Framework
 
 Из этого краткого руководства вы узнаете, как реализовать кэш Azure для Redis в приложении .NET Framework для обеспечения доступа к защищенному выделенному кэшу, к которому может обращаться любое приложение в Azure. Вы будете использовать клиент [StackExchange.Redis](https://github.com/StackExchange/StackExchange.Redis) с кодом C# в консольном приложении .NET.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 - Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/).
 - [Visual Studio 2019](https://www.visualstudio.com/downloads/)
@@ -244,7 +244,7 @@ using Newtonsoft.Json;
 
 Введите имя группы ресурсов в текстовое поле **Фильтровать по имени...** . В инструкциях в этой статье использовалась группа ресурсов с именем *TestResources*. В своей группе ресурсов в списке результатов щелкните **...** , а затем **Удалить группу ресурсов**.
 
-![Удаление](./media/cache-dotnet-how-to-use-azure-redis-cache/cache-delete-resource-group.png)
+![DELETE](./media/cache-dotnet-how-to-use-azure-redis-cache/cache-delete-resource-group.png)
 
 Подтвердите операцию удаления группы ресурсов. Введите имя группы ресурсов и нажмите кнопку **Удалить**.
 
@@ -254,7 +254,7 @@ using Newtonsoft.Json;
 
 <a name="next-steps"></a>
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из этого краткого руководства вы узнали, как использовать кэш Azure для Redis в приложениях .NET. Переходите к следующему краткому руководству по использованию кэша Azure для Redis в веб-приложениях ASP.NET.
 

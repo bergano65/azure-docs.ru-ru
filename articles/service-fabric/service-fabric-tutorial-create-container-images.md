@@ -1,27 +1,17 @@
 ---
-title: Создание образов контейнеров в Service Fabric в Azure | Документы Майкрософт
+title: Создание образов контейнеров в Service Fabric в Azure
 description: Из этого руководства вы узнаете, как создавать образы контейнеров для многоконтейнерного приложения Service Fabric.
-services: service-fabric
-documentationcenter: ''
 author: suhuruli
-manager: chackdan
-editor: suhuruli
-tags: servicefabric
-keywords: Docker, контейнеры, микрослужбы, Service Fabric, Azure
-ms.assetid: ''
-ms.service: service-fabric
 ms.topic: tutorial
-ms.tgt_pltfrm: na
-ms.workload: na
 ms.date: 07/22/2019
 ms.author: suhuruli
 ms.custom: mvc
-ms.openlocfilehash: b5dba1f7e71149c37edc909d2bb43d708192bdbb
-ms.sourcegitcommit: 04ec7b5fa7a92a4eb72fca6c6cb617be35d30d0c
+ms.openlocfilehash: fa7f7a57e16b6ba70535d3f07ebd69abf0784171
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/22/2019
-ms.locfileid: "68385228"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75465440"
 ---
 # <a name="tutorial-create-container-images-on-a-linux-service-fabric-cluster"></a>Руководство. Создание образов контейнеров в кластере Service Fabric на платформе Linux
 
@@ -32,16 +22,16 @@ ms.locfileid: "68385228"
 > * создание образа контейнера из исходного кода приложения;
 > * развертывание экземпляра реестра контейнеров Azure;
 > * добавление тегов к образу контейнера для реестра контейнеров Azure;
-> * передача образа в реестр контейнеров Azure.
+> * отправка образа в реестр контейнеров Azure.
 
-Из этого цикла руководств вы узнаете, как выполнять такие задачи:
+Из этой серии руководств вы узнаете, как выполнить следующие задачи:
 
 > [!div class="checklist"]
 > * создание образов контейнеров для Service Fabric;
 > * [создание и развертывание приложения Service Fabric с использованием контейнеров](service-fabric-tutorial-package-containers.md);
 > * [отработка отказа и масштабирование в Service Fabric](service-fabric-tutorial-containers-failover.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * Настроенная среда разработки Linux для Service Fabric. Следуйте [этим](service-fabric-get-started-linux.md) инструкциям по настройке среды Linux.
 * Для этого руководства требуется Azure CLI версии 2.0.4 или более поздней. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI]( /cli/azure/install-azure-cli).
@@ -206,7 +196,7 @@ azure-vote-front
 
 По завершении работы с этим руководством образ контейнера будет сохранен в частном экземпляре реестра контейнеров Azure. В следующих руководствах мы развернем этот образ из ACR в кластер Service Fabric.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом руководстве приложение было извлечено из GitHub, а также были созданы образы контейнеров, которые затем были помещены в реестр. Были выполнены следующие действия:
 

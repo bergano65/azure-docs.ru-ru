@@ -1,5 +1,5 @@
 ---
-title: Загрузка больших объемов случайных данных из службы хранилища Azure | Документация Майкрософт
+title: Скачивание больших объемов случайных данных из службы хранилища Azure
 description: Сведения о скачивании больших объемов случайных данных из учетной записи хранения Azure с использованием пакета SDK Azure
 author: roygara
 ms.service: storage
@@ -7,12 +7,12 @@ ms.topic: tutorial
 ms.date: 02/20/2018
 ms.author: rogarana
 ms.subservice: blobs
-ms.openlocfilehash: 8d270485cef9fb6859de056bc364a36c054c0121
-ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
+ms.openlocfilehash: b3fe9c7481e79b8eeda9f18e9a036fa8c72e658d
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68699012"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75372097"
 ---
 # <a name="download-large-amounts-of-random-data-from-azure-storage"></a>Скачивание больших объемов случайных данных из службы хранилища Azure
 
@@ -25,7 +25,7 @@ ms.locfileid: "68699012"
 > * Выполнение приложения
 > * Проверка количества подключений.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Для работы с этим руководством необходимо изучить предыдущее руководство по использованию хранилища: [Передача больших объемов случайных данных в параллельном режиме в службу хранилища Azure][previous-tutorial].
 
@@ -98,7 +98,7 @@ dotnet run
 Приложение считывает контейнеры, расположенные в учетной записи хранения, указанной в **storageconnectionstring**. При помощи метода [ListBlobsSegmented](/dotnet/api/microsoft.azure.storage.blob.cloudblobcontainer) за раз оно проходит по 10 больших двоичных объектов в контейнерах и скачивает их на локальный компьютер с помощью метода [DownloadToFileAsync](/dotnet/api/microsoft.azure.storage.blob.cloudblob.downloadtofileasync).
 В следующей таблице показаны [BlobRequestOptions](/dotnet/api/microsoft.azure.storage.blob.blobrequestoptions), которые определятся для каждого большого двоичного объекта при скачивании.
 
-|Свойство|Значение|ОПИСАНИЕ|
+|Свойство|Значение|Description|
 |---|---|---|
 |[DisableContentMD5Validation](/dotnet/api/microsoft.azure.storage.blob.blobrequestoptions.disablecontentmd5validation)| Да| Это свойство отключает проверку хэша MD5 отправляемого содержимого. При этом передача ускоряется. Но без проверки MD5 не будет подтверждения о достоверности или целостности передаваемых файлов. |
 |[StoreBlobContentMD5](/dotnet/api/microsoft.azure.storage.blob.blobrequestoptions.storeblobcontentmd5)| false| Это свойство определяет, будет ли хэш MD5 вычисляться и сохраняться.   |
@@ -198,7 +198,7 @@ C:\>netstat -a | find /c "blob:https"
 C:\>
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из третьей части в серии вы узнали не только о скачивании больших объемов случайных данных из учетной записи хранения, но и о следующем:
 

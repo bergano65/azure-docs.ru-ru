@@ -1,28 +1,17 @@
 ---
-title: Добавление конечной точки HTTPS в приложение Service Fabric в Azure с использованием Kestrel | Документация Майкрософт
+title: Добавление конечной точки HTTPS с помощью Kestrel
 description: Из этого руководства вы узнаете, как добавить конечную точку HTTPS в интерфейсную веб-службу ASP.NET Core с использованием Kestrel и развернуть приложение в кластере.
-services: service-fabric
-documentationcenter: .net
-author: athinanthny
-manager: chackdan
-editor: ''
-ms.assetid: ''
-ms.service: service-fabric
-ms.devlang: dotNet
 ms.topic: tutorial
-ms.tgt_pltfrm: NA
-ms.workload: NA
 ms.date: 07/22/2019
-ms.author: atsenthi
 ms.custom: mvc
-ms.openlocfilehash: e38822e1d774cc32590a13239edb34d7a15e2d02
-ms.sourcegitcommit: a678f00c020f50efa9178392cd0f1ac34a86b767
+ms.openlocfilehash: 077c2ab67efa51542baa3048eb678fa22b0bc2eb
+ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74545766"
+ms.lasthandoff: 01/02/2020
+ms.locfileid: "75614083"
 ---
-# <a name="tutorial-add-an-https-endpoint-to-an-aspnet-core-web-api-front-end-service-using-kestrel"></a>Руководство по Добавление конечной точки HTTPS в интерфейсную службу веб-API ASP.NET Core с использованием Kestrel
+# <a name="tutorial-add-an-https-endpoint-to-an-aspnet-core-web-api-front-end-service-using-kestrel"></a>Руководство. Добавление конечной точки HTTPS в интерфейсную службу веб-API ASP.NET Core с использованием Kestrel
 
 Это руководство представляет собой первую часть цикла.  Вы узнаете, как включить HTTPS в службе ASP.NET Core, работающей в Service Fabric. Когда вы закончите, у вас будет приложение для голосования с внешним веб-интерфейсом ASP.NET Core с поддержкой HTTPS, прослушивающего порт 443. Если вы не хотите вручную создавать приложение для голосования в статье [Руководство по развертыванию приложения в кластере Service Fabric в Azure](service-fabric-tutorial-deploy-app-to-party-cluster.md), вы можете [скачать исходный код](https://github.com/Azure-Samples/service-fabric-dotnet-quickstart/).
 
@@ -30,9 +19,9 @@ ms.locfileid: "74545766"
 
 > [!div class="checklist"]
 > * Определение конечной точки HTTPS в службе.
-> * Настройка Kestrel для использования HTTPS.
+> * Настройка Kestrel для использования HTTPS
 > * Настройка SSL-сертификата на узлах удаленного кластера.
-> * Предоставление службе NETWORK SERVICE доступа к закрытому ключу сертификата.
+> * Предоставление службе NETWORK SERVICE доступа к закрытому ключу сертификата
 > * Открытие порта 443 в подсистеме балансировки нагрузки Azure
 > * Развертывание приложения в удаленном кластере.
 
@@ -47,7 +36,7 @@ ms.locfileid: "74545766"
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Перед началом работы с этим руководством выполните следующие действия:
 
@@ -400,15 +389,15 @@ $slb | Set-AzLoadBalancer
 
 ![Приложение для голосования][image3]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой части руководства вы узнали, как выполнить следующие действия:
 
 > [!div class="checklist"]
 > * Определение конечной точки HTTPS в службе.
-> * Настройка Kestrel для использования HTTPS.
+> * Настройка Kestrel для использования HTTPS
 > * Настройка SSL-сертификата на узлах удаленного кластера.
-> * Предоставление службе NETWORK SERVICE доступа к закрытому ключу сертификата.
+> * Предоставление службе NETWORK SERVICE доступа к закрытому ключу сертификата
 > * Открытие порта 443 в подсистеме балансировки нагрузки Azure
 > * Развертывание приложения в удаленном кластере.
 

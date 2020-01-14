@@ -1,6 +1,6 @@
 ---
-title: Руководство по объединению данных от датчиков с прогнозом погоды с помощью Записных книжек Azure (Python) | Документация Майкрософт
-description: Руководство по объединению данных от датчиков с прогнозом погоды из Azure Maps с помощью Записных книжек Azure (Python).
+title: Руководство. объединению данных от датчиков с прогнозом погоды с помощью Записных книжек Azure (Python) | Документация Майкрософт
+description: Руководство. объединению данных от датчиков с прогнозом погоды из Azure Maps с помощью Записных книжек Azure (Python).
 author: walsehgal
 ms.author: v-musehg
 ms.date: 12/09/2019
@@ -9,14 +9,14 @@ ms.service: azure-maps
 services: azure-maps
 manager: philmea
 ms.custom: mvc
-ms.openlocfilehash: 8f641640ff6cf4174e2e1374404d47fc0760f79f
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.openlocfilehash: 809c188dc37aba64de27e89e38acd8692c7de032
+ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74979580"
+ms.lasthandoff: 01/02/2020
+ms.locfileid: "75613573"
 ---
-# <a name="tutorial-join-sensor-data-with-weather-forecast-data-by-using-azure-notebooks-python"></a>Руководство по Объединение данных от датчиков с прогнозом погоды с помощью Записных книжек Azure (Python)
+# <a name="tutorial-join-sensor-data-with-weather-forecast-data-by-using-azure-notebooks-python"></a>Руководство. Объединение данных от датчиков с прогнозом погоды с помощью Записных книжек Azure (Python)
 
 Сила ветра является одним из источников энергии, способных заменить ископаемое топливо и остановить изменение климата. В силу низкой стабильности ветров операторам ветряных электростанций потребуются модели машинного обучения, позволяющие прогнозировать мощность ветра, сопоставлять ее со спросом на электричество и обеспечивать стабильность электросети. Из этого руководства мы узнаем, как можно объединить данные прогноза погоды из Azure Maps с демонстрационным набором данных, полученных от датчиков окружающей среды. Данные о прогнозе погоды извлекаются с помощью запроса к службе погоды Azure Maps.
 
@@ -31,12 +31,15 @@ ms.locfileid: "74979580"
 > * Наносить данные прогнозов погоды на графики.
 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Для работы с этим руководством вам потребуется следующее:
 
-1. Создайте подписку Azure Maps с ценовой категорией S0, следуя инструкциям [по управлению учетной записью](https://docs.microsoft.com/azure/azure-maps/how-to-manage-account-keys#create-a-new-account).
-2. Получите первичный ключ подписки для учетной записи, выполнив инструкции из [этой статьи](./tutorial-search-location.md#getkey).
+1. Создайте подписку Azure Maps с ценовой категорией S0, следуя инструкциям [по созданию учетной записи](quick-demo-map-app.md#create-an-account-with-azure-maps).
+2. Чтобы получить первичный ключ подписки для учетной записи, выполните инструкции из [этой статьи](quick-demo-map-app.md#get-the-primary-key-for-your-account).
+
+
+Дополнительные сведения об управлении проверкой подлинности в Azure Maps см. в [этой статье](./how-to-manage-authentication.md).
 
 Ознакомьтесь с работой записных книжек Azure и узнайте, как их запускать, по инструкциям из [этой статьи](https://docs.microsoft.com/azure/azure-maps/tutorial-ev-routing#create-an-azure-notebook).
 
@@ -68,7 +71,7 @@ df = pd.read_csv("./data/weather_dataset_demo.csv")
 
 
 ```python
-subscription_key = "Your Azure Maps primary subscription key"
+subscription_key = "Your Azure Maps key"
 
 # Get a lists of unique station IDs and their coordinates 
 station_ids = pd.unique(df[['StationID']].values.ravel())
@@ -172,14 +175,14 @@ windsPlot.set_xlabel("Date")
 windsPlot.set_ylabel("Wind direction")
 ```
 
-На представленных ниже графиках визуализированы данные о прогнозах скорости (левый график) и направления ветра (правый график) на ближайшие 15 дней от текущей даты.
+На представленных ниже графиках визуализированы данные о прогнозах скорости (левый график) и направления ветра (правый график) на ближайшие 15 дней от даты запроса данных.
 
 <center>
 
-![График скорости ветра](./media/weather-service-tutorial/speed-date-plot.png) ![График направления ветра](./media/weather-service-tutorial/direction-date-plot.png)</center>
+![График скорости ветра](./media/weather-service-tutorial/speed-date-plot.png)![График направления ветра](./media/weather-service-tutorial/direction-date-plot.png)</center>
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из этого руководства вы узнали, как вызывать REST API для Azure Maps для получения данных прогнозов и визуализации этих данных на графиках.
 
@@ -190,6 +193,6 @@ windsPlot.set_ylabel("Wind direction")
 * [Прогноз по дням](https://aka.ms/AzureMapsWeatherDailyForecast)
 * [Render — Get Map Image](https://docs.microsoft.com/rest/api/maps/render/getmapimage) (Отрисовка — получение изображения карты)
 
-Полный список API-интерфейсов Azure Maps вы найдете на [этой странице](https://docs.microsoft.com/azure/azure-maps/#reference).
+Полный список API-интерфейсов Azure Maps вы найдете на [этой странице](https://docs.microsoft.com/azure/azure-maps/consumption-model).
 
 Дополнительные сведения о службе "Записные книжки Azure" см. в [этой статье](https://docs.microsoft.com/azure/notebooks).

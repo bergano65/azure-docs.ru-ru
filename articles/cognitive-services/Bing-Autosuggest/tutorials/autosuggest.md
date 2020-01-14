@@ -1,5 +1,5 @@
 ---
-title: Руководство по Получение результатов автоматических рекомендаций с помощью API Автозаполнения Bing
+title: Руководство. Получение результатов автоматических рекомендаций с помощью API Автозаполнения Bing
 titleSuffix: Azure Cognitive Services
 description: В рамках работы с этим учебником мы создадим веб-страницу, которая позволит пользователям запрашивать API "Автозаполнение Bing" и просматривать результаты.
 services: cognitive-services
@@ -8,16 +8,16 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-autosuggest
 ms.topic: tutorial
-ms.date: 09/13/2019
+ms.date: 12/17/2019
 ms.author: aahi
-ms.openlocfilehash: 1408faf09ef8950fb0d86f8a036269da2963e3d4
-ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
+ms.openlocfilehash: b6a8b0664cb205a7c3cbdb72f41433b145b02d00
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74072837"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75448767"
 ---
-# <a name="tutorial-get-search-suggestions-on-a-web-page"></a>Руководство по Получение результатов поиска на веб-странице
+# <a name="tutorial-get-search-suggestions-on-a-web-page"></a>Руководство. Получение результатов поиска на веб-странице
 
 В рамках работы с этим руководством мы создадим веб-страницу, которая позволит пользователям запрашивать API автозаполнения Bing.
 
@@ -27,7 +27,7 @@ ms.locfileid: "74072837"
 > - Выполнение простого запроса к API автозаполнения Bing.
 > - Отображение результатов запроса.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы выполнить задания, описанные в этом руководстве, требуется ключ подписки для API автозаполнения Bing. Если у вас его нет, [зарегистрируйтесь, чтобы воспользоваться бесплатной пробной версией](https://azure.microsoft.com/try/cognitive-services/?api=autosuggest-api).
 
@@ -184,7 +184,7 @@ function renderErrorMessage(message, code) {
 function bingAutosuggest(query, key) {
 ```
 
-Укажите конечную точку API автозаполнения Bing и объявите объект XMLHttpRequest, который мы будем использовать для отправки запросов к конечной точке.
+Укажите конечную точку API "Автозаполнение Bing" и объявите объект XMLHttpRequest, который мы будем использовать для отправки запросов. Вы можете использовать указанную ниже глобальную конечную точку или конечную точку [пользовательского поддомена](../../../cognitive-services/cognitive-services-custom-subdomains.md), отображаемого на портале Azure для вашего ресурса.
 
 ```html
     var endpoint = "https://api.cognitive.microsoft.com/bing/v7.0/Suggestions";
@@ -349,7 +349,7 @@ function bingAutosuggest(query, key) {
 }
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Требования к использованию и отображению](../UseAndDisplayRequirements.md)

@@ -1,5 +1,6 @@
 ---
-title: Пример скрипта Azure CLI. Создание хранилища конфигураций для приложения Azure | Документация Майкрософт
+title: Пример скрипта Azure CLI. Создание хранилища конфигураций для приложения в Azure
+titleSuffix: Azure App Configuration
 description: Пример скрипта Azure CLI. Создание хранилища конфигураций для приложения Azure
 services: azure-app-configuration
 documentationcenter: ''
@@ -14,12 +15,12 @@ ms.workload: azure-app-configuration
 ms.date: 02/24/2019
 ms.author: yegu
 ms.custom: mvc
-ms.openlocfilehash: cd150368898b3f02b4366debbe775ece76b23043
-ms.sourcegitcommit: dbde4aed5a3188d6b4244ff7220f2f75fce65ada
+ms.openlocfilehash: d57de8219cb73864ed722c6906a1bd75fec51a50
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74184901"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75433590"
 ---
 # <a name="create-an-azure-app-configuration-store"></a>Создание хранилища конфигураций для приложения Azure
 
@@ -73,13 +74,13 @@ echo "$connstring"
 
 Для создания группы ресурсов и хранилища Конфигурации приложений этот скрипт использует следующие команды. Для каждой команды в таблице приведены ссылки на соответствующую документацию.
 
-| Команда | Примечания |
+| Get-Help | Примечания |
 |---|---|
 | [az group create](/cli/azure/group#az-group-create) | Создает группу ресурсов, в которой хранятся все ресурсы. |
 | [az appconfig create](/cli/azure/ext/appconfig/appconfig#ext-appconfig-az-appconfig-create) | Создает ресурс хранилища Конфигурации приложений. |
 | [az appconfig kv list](/cli/azure/ext/appconfig/appconfig/kv#ext-appconfig-az-appconfig-kv-list) | Выводит список ключей, которые содержатся в хранилище Конфигурации приложений. |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об Azure CLI см. в [документации по Azure CLI](/cli/azure).
 

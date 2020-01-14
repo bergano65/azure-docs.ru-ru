@@ -1,5 +1,5 @@
 ---
-title: Использование API Cassandra и Java для создания приложения — Azure Cosmos DB
+title: Создание приложения Java с помощью API Cassandra для Azure Cosmos DB
 description: В этом руководстве показано, как использовать API Cassandra Azure Cosmos DB для создания приложения профиля с помощью портала Azure и Java.
 ms.service: cosmos-db
 author: SnehaGunda
@@ -9,12 +9,12 @@ ms.devlang: java
 ms.topic: quickstart
 ms.date: 09/24/2018
 ms.custom: seo-java-august2019, seo-java-september2019
-ms.openlocfilehash: 5b1eacb1d0121f2dd0d97807f07042e828fe7932
-ms.sourcegitcommit: 3f22ae300425fb30be47992c7e46f0abc2e68478
+ms.openlocfilehash: 1f9151ab174a9a1f9e492bd068b5285772f6a546
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71266023"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75442058"
 ---
 # <a name="quickstart-build-a-java-app-to-manage-azure-cosmos-db-cassandra-api-data"></a>Краткое руководство. Создание приложения Java для управления данными API Cassandra Azure Cosmos DB
 
@@ -29,7 +29,7 @@ ms.locfileid: "71266023"
 
 Azure Cosmos DB — это глобально распределенная многомодельная служба базы данных Майкрософт. Вы можете быстро создавать и запрашивать документы, таблицы, пары "ключ — значение" и базы данных графов, используя возможности глобального распределения и горизонтального масштабирования Azure Cosmos DB. 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)] Кроме того, можно воспользоваться [бесплатной пробной версией Azure Cosmos DB](https://azure.microsoft.com/try/cosmosdb/) без подписки Azure, оплаты и каких-либо обязательств.
 
@@ -52,7 +52,7 @@ Azure Cosmos DB — это глобально распределенная мн
 
 Теперь перейдем к работе с кодом. Клонируйте приложение API Cassandra с GitHub, укажите строку подключения и запустите это приложение. Вы узнаете, как можно упростить работу с данными программным способом. 
 
-1. Откройте окно командной строки. Создайте папку с именем `git-samples`. Затем закройте командную строку.
+1. Откройте командную строку. Создайте папку с именем `git-samples`. Затем закройте командную строку.
 
     ```bash
     md "C:\git-samples"
@@ -72,7 +72,7 @@ Azure Cosmos DB — это глобально распределенная мн
 
 ## <a name="review-the-code"></a>Просмотр кода
 
-Этот шаг не является обязательным. Если вы хотите узнать, как создавать ресурсы базы данных в коде, изучите приведенные ниже фрагменты кода. Если вас это не интересует, можете сразу переходить к разделу [Обновление строки подключения](#update-your-connection-string). Эти фрагменты кода взяты из файла *src/main/java/com/azure/cosmosdb/cassandra/util/CassandraUtils.java*.  
+Это необязательный шаг. Если вы хотите узнать, как создавать ресурсы базы данных в коде, изучите приведенные ниже фрагменты кода. Если вас это не интересует, можете сразу переходить к разделу [Обновление строки подключения](#update-your-connection-string). Эти фрагменты кода взяты из файла *src/main/java/com/azure/cosmosdb/cassandra/util/CassandraUtils.java*.  
 
 * Здесь для Cassandra задаются узел, порт, имя пользователя, пароль и параметры SSL. Строку подключения вы можете получить на странице строки подключения на портале Azure.
 
@@ -154,7 +154,7 @@ Azure Cosmos DB — это глобально распределенная мн
 
     ![Просмотрите и скопируйте имя пользователя на странице "Строка подключения" на портале Azure.](./media/create-cassandra-java/copy-username-connection-string-azure-portal.png)
 
-2. Вы можете использовать ![кнопку "Копировать"](./media/create-cassandra-java/copy-button-azure-portal.png) в правой части экрана, чтобы скопировать значение параметра CONTACT POINT.
+2. Вы можете использовать кнопку ![Кнопка "Копировать"](./media/create-cassandra-java/copy-button-azure-portal.png) в правой части экрана, чтобы скопировать значение параметра CONTACT POINT.
 
 3. Откройте файл `config.properties` в папке `C:\git-samples\azure-cosmosdb-cassandra-java-getting-started\java-examples\src\main\resources`. 
 
@@ -218,7 +218,7 @@ Azure Cosmos DB — это глобально распределенная мн
 
 [!INCLUDE [cosmosdb-delete-resource-group](../../includes/cosmos-db-delete-resource-group.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из этого краткого руководства вы узнали, как создать учетную запись Azure Cosmos DB, базу данных Cassandra и контейнер с помощью обозревателя данных, а также как запустить приложение, чтобы эти операции выполнялись программными средствами. Теперь вы можете импортировать дополнительные данные в контейнер Azure Cosmos. 
 

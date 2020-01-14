@@ -8,12 +8,12 @@ ms.author: crtreasu
 ms.date: 02/24/2019
 ms.topic: quickstart
 ms.service: azure-spatial-anchors
-ms.openlocfilehash: 7c62ded627ab6f6ead5c03ef8cf298b4ee622265
-ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
+ms.openlocfilehash: 0501c8bb1d71c6cff6033fc937cda019c8890056
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74277118"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75376466"
 ---
 # <a name="quickstart-create-an-android-app-with-azure-spatial-anchors"></a>Краткое руководство. Создание приложения Android с помощью Пространственных привязок Azure
 
@@ -22,19 +22,19 @@ ms.locfileid: "74277118"
 Вы узнаете, как:
 
 > [!div class="checklist"]
-> * создавать учетную запись в службе "Пространственные привязки";
+> * создать учетную запись в службе "Пространственные привязки";
 > * настроить идентификатор и ключ учетной записи в службе "Пространственные привязки";
 > * развертывать и запускать на устройстве Android.
 
 [!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 В рамках этого краткого руководства вам потребуются:
 
 - Компьютер под управлением macOS или Windows с <a href="https://developer.android.com/studio/" target="_blank">Android Studio 3.4 или более поздних версий</a>.
-  - Если вы используете ОС Windows, вам также потребуется <a href="https://git-scm.com/download/win" target="_blank">Git для Windows</a>.
-  - Если вы используете macOS, установите Git с помощью Homebrew. Введите в одну строку терминала такую команду: `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`. Затем выполните `brew install git`.
+  - Если вы используете ОС Windows, вам также потребуется <a href="https://git-scm.com/download/win" target="_blank">Git для Windows</a> и <a href="https://git-lfs.github.com/">Git LFS</a>.
+  - Если вы используете macOS, установите Git с помощью Homebrew. Введите в одну строку терминала такую команду: `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`. Затем выполните `brew install git` и `brew install git-lfs`.
   - Чтобы создать пример NDK, вам также необходимо установить пакет NDK и SDK Tools CMake 3.6 (или более поздней версии) в Android Studio.
 - Устройство Android с включенным <a href="https://developer.android.com/studio/debug/dev-options" target="_blank">режимом разработчика</a> и поддержкой <a href="https://developers.google.com/ar/discover/supported-devices" target="_blank">ARCore</a>.
   - Для взаимодействия компьютера с устройством Android могут потребоваться дополнительные драйверы устройств. Дополнительные сведения и инструкции см. [здесь](https://developer.android.com/studio/run/device.html).
@@ -52,7 +52,7 @@ ms.locfileid: "74277118"
 
 [!INCLUDE [Clone Sample Repo](../../../includes/spatial-anchors-clone-sample-repository.md)]
 
-Загрузите файл `arcore_c_api.h` [отсюда](https://raw.githubusercontent.com/google-ar/arcore-android-sdk/v1.11.0/libraries/include/arcore_c_api.h) и поместите его в папку `Android\NDK\libraries\include`.
+Загрузите файл `arcore_c_api.h`[отсюда](https://raw.githubusercontent.com/google-ar/arcore-android-sdk/v1.11.0/libraries/include/arcore_c_api.h) и поместите его в папку `Android\NDK\libraries\include`.
 
 Из нового клонированного репозитория инициализируйте подмодули, выполнив следующую команду:
 
@@ -80,7 +80,7 @@ git submodule update --init --recursive
 
 # <a name="javatabopenproject-java"></a>[Java](#tab/openproject-java)
 
-Откройте `Android/Java/app/src/main/java/com/microsoft/sampleandroid/AzureSpatialAnchorsManager.java`.
+Откройте среду `Android/Java/app/src/main/java/com/microsoft/sampleandroid/AzureSpatialAnchorsManager.java`.
 
 Найдите поле `SpatialAnchorsAccountKey` и замените `Set me` ключом учетной записи.
 
@@ -88,7 +88,7 @@ git submodule update --init --recursive
 
 # <a name="ndktabopenproject-ndk"></a>[NDK](#tab/openproject-ndk)
 
-Откройте `Android/NDK/app/src/main/cpp/AzureSpatialAnchorsApplication.cpp`.
+Откройте среду `Android/NDK/app/src/main/cpp/AzureSpatialAnchorsApplication.cpp`.
 
 Найдите поле `SpatialAnchorsAccountKey` и замените `Set me` ключом учетной записи.
 

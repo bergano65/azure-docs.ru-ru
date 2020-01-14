@@ -7,12 +7,12 @@ ms.date: 11/19/2019
 ms.service: storage
 ms.subservice: blobs
 ms.topic: quickstart
-ms.openlocfilehash: 0a6d7ce8f1f6b81c3dbae3d41842345be5d2e551
-ms.sourcegitcommit: 4c831e768bb43e232de9738b363063590faa0472
+ms.openlocfilehash: 089cda74740d3934c76a3b0ca8803a30654feccf
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74422011"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75465116"
 ---
 # <a name="quickstart-azure-blob-storage-client-library-v12-for-javascript"></a>Краткое руководство. Использование клиентской библиотеки хранилища BLOB-объектов Azure версии 12 для JavaScript
 
@@ -29,11 +29,11 @@ ms.locfileid: "74422011"
 * скачивание большого двоичного объекта на локальный компьютер;
 * Удаление контейнера
 
-[Справочная документация по API](/javascript/api/@azure/storage-blob) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/storage/storage-blob) | [Пакет (Node Package Manager)](https://www.npmjs.com/package/@azure/storage-blob/v/12.0.0) | [Примеры](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/storage/storage-blob/samples)
+[Справочная документация по API](/javascript/api/@azure/storage-blob) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/storage/storage-blob) | [Пакет (Node Package Manager)](https://www.npmjs.com/package/@azure/storage-blob) | [Примеры](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/storage/storage-blob/samples)
 
 [!INCLUDE [storage-multi-protocol-access-preview](../../../includes/storage-multi-protocol-access-preview.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/).
 * Учетная запись хранения Azure — [создайте такую учетную запись](https://docs.microsoft.com/azure/storage/common/storage-quickstart-create-account).
@@ -114,7 +114,7 @@ npm install
 
 1. Сохраните новый файл как *blob-quickstart-v12.js* в каталоге *blob-quickstart-v12*.
 
-[!INCLUDE [storage-quickstart-connection-string-include](../../../includes/storage-quickstart-credentials-include.md)]
+[!INCLUDE [storage-quickstart-credentials-include](../../../includes/storage-quickstart-credentials-include.md)]
 
 ## <a name="object-model"></a>Объектная модель
 
@@ -154,11 +154,11 @@ npm install
 ```javascript
 // Retrieve the connection string for use with the application. The storage
 // connection string is stored in an environment variable on the machine
-// running the application called CONNECT_STR. If the environment variable is
-// created after the application is launched in a console or with Visual Studio,
-// the shell or application needs to be closed and reloaded to take the
-// environment variable into account.
-const CONNECT_STR = process.env.CONNECT_STR;
+// running the application called AZURE_STORAGE_CONNECTION_STRING. If the
+// environment variable is created after the application is launched in a
+// console or with Visual Studio, the shell or application needs to be closed
+// and reloaded to take the environment variable into account.
+const AZURE_STORAGE_CONNECTION_STRING = process.env.AZURE_STORAGE_CONNECTION_STRING;
 ```
 
 ### <a name="create-a-container"></a>Создание контейнера
@@ -174,7 +174,7 @@ const CONNECT_STR = process.env.CONNECT_STR;
 
 ```javascript
 // Create the BlobServiceClient object which will be used to create a container client
-const blobServiceClient = await BlobServiceClient.fromConnectionString(CONNECT_STR);
+const blobServiceClient = await BlobServiceClient.fromConnectionString(AZURE_STORAGE_CONNECTION_STRING);
 
 // Create a unique name for the container
 const containerName = 'quickstart' + uuidv1();
@@ -308,16 +308,16 @@ Deleting container...
 Done
 ```
 
-Пошагово выполните код в отладчике и просматривайте результаты на портале Azure. Проверьте, создан ли контейнер. Вы можете открыть большой двоичный объект в контейнере и просмотреть его содержимое.
+Пошагово выполните код в отладчике и просматривайте результаты на [портале Azure](https://portal.azure.com). Проверьте, создан ли контейнер. Вы можете открыть большой двоичный объект в контейнере и просмотреть его содержимое.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом кратком руководстве вы узнали, как передавать и скачивать большие двоичные объекты, а также выводить их список с помощью JavaScript.
 
-Чтобы просмотреть примеры приложений для хранилища BLOB-объектов, перейдите к следующему разделу:
+Руководства, примеры, краткие руководства и другую документацию можно найти здесь:
 
 > [!div class="nextstepaction"]
-> [Примеры для пакета SDK хранилища BLOB-объектов Azure версии 12 для JavaScript](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/storage/storage-blob/samples)
+> [Документация по работе с Azure для JavaScript](/azure/javascript/).
 
-* Чтобы узнать больше, ознакомьтесь с [пакетом SDK Azure для JavaScript](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/storage/storage-blob/README.md).
-* Руководства, примеры, краткие руководства и другую документацию можно найти на странице [Документация по пакету SDK для JavaScript](/azure/javascript/).
+* Дополнительные сведения см в документации по [клиентской библиотеке Хранилища Blob-объектов Azure для JavaScript](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/storage/storage-blob).
+* Дополнительные примеры приложений для хранилища Blob-объектов Azure версии 12 для JavaScript собраны [здесь](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/storage/storage-blob/samples).

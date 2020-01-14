@@ -1,5 +1,6 @@
 ---
-title: Пример скрипта Azure CLI. Использование пар "ключ-значение" в хранилище конфигураций приложения Azure | Документация Майкрософт
+title: Пример скрипта Azure CLI. Использование пар "ключ — значение" в хранилище конфигураций приложения Azure
+titleSuffix: Azure App Configuration
 description: Сведения об использовании пар "ключ-значение" в хранилище конфигураций приложения Azure
 services: azure-app-configuration
 documentationcenter: ''
@@ -14,12 +15,12 @@ ms.workload: azure-app-configuration
 ms.date: 11/08/2019
 ms.author: lcozzens
 ms.custom: mvc
-ms.openlocfilehash: 51697aa426a638ad536390c4114df5faa18a41ef
-ms.sourcegitcommit: dbde4aed5a3188d6b4244ff7220f2f75fce65ada
+ms.openlocfilehash: 366485c8c735af5689e1b2c2e63eb192218f5ce0
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74184864"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75433577"
 ---
 # <a name="work-with-key-values-in-an-azure-app-configuration-store"></a>Использование пар "ключ-значение" в хранилище конфигураций приложения Azure
 
@@ -86,13 +87,13 @@ az appconfig kv list --name $appConfigName
 
 В этом скрипте используются приведенные ниже команды для работы с парами "ключ —значение" в хранилище Конфигурации приложений. Для каждой команды в таблице приведены ссылки на соответствующую документацию.
 
-| Команда | Примечания |
+| Get-Help | Примечания |
 |---|---|
 | [az appconfig kv set](/cli/azure/ext/appconfig/appconfig/kv#ext-appconfig-az-appconfig-kv-set) | Создает или обновляет пары "ключ-значение". |
 | [az appconfig kv list](/cli/azure/ext/appconfig/appconfig/kv#ext-appconfig-az-appconfig-kv-list) | Выводит список пар "ключ —значение" в хранилище Конфигурации приложений. |
 | [az appconfig kv delete](/cli/azure/ext/appconfig/appconfig/kv#ext-appconfig-az-appconfig-kv-delete) | Удаляет пару "ключ-значение". |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об Azure CLI см. в [документации по Azure CLI](/cli/azure).
 

@@ -1,32 +1,32 @@
 ---
 title: Краткое руководство. Распознавание речи из файлов, находящихся в хранилище BLOB-объектов, в службе "Речь" с помощью C#
 titleSuffix: Azure Cognitive Services
-description: ПОДЛЕЖИТ УТОЧНЕНИЮ
+description: TBD
 services: cognitive-services
 author: erhopf
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
-ms.topic: quickstart
+ms.topic: include
 ms.date: 10/28/2019
 ms.author: erhopf
 zone_pivot_groups: programming-languages-set-two
-ms.openlocfilehash: 96062057a139e4ab2c91792b5c451e093f7f4c96
-ms.sourcegitcommit: 5aefc96fd34c141275af31874700edbb829436bb
+ms.openlocfilehash: b8b650920c03b14c7d55aafd6ecdb43dafaafafe
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74828838"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75468848"
 ---
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Перед началом работы нужно сделать следующее:
 
 > [!div class="checklist"]
-> * [Создать ресурс службы "Речь" Azure](../../../../get-started.md).
+> * [Создать ресурс службы "Речь" Azure.](../../../../get-started.md)
 > * [Отправить исходный файл в большой двоичный объект Azure](https://docs.microsoft.com/azure/storage/blobs/storage-quickstart-blobs-portal).
-> * [Настроить среду разработки](../../../../quickstarts/setup-platform.md?tabs=dotnet).
-> * [Создать пустой пример проекта](../../../../quickstarts/create-project.md?tabs=dotnet).
+> * [Настроить среду разработки.](../../../../quickstarts/setup-platform.md?tabs=dotnet)
+> * [Создать пустой пример проекта.](../../../../quickstarts/create-project.md?tabs=dotnet)
 
 ## <a name="open-your-project-in-visual-studio"></a>Откройте проект в Visual Studio.
 
@@ -51,7 +51,7 @@ ms.locfileid: "74828838"
 
    После установки пакета на **Консоли диспетчера пакетов** появится подтверждение.
 
-## <a name="start-with-some-boilerplate-code"></a>Использование стандартного кода
+## <a name="start-with-some-boilerplate-code"></a>Добавление стандартного кода
 
 Добавим код, который выступает в качестве основы для нашего проекта.
 
@@ -102,6 +102,6 @@ ms.locfileid: "74828838"
 2. **Запустите приложение**. В строке меню выберите **Отладка** > **Начать отладку** или нажмите клавишу **F5**.
 3. **Начните распознавание**. Вам будет предложено произнести фразу на английском языке. Речь, записанная в виде текста, отправляется в службу "Речь" и выводится в консоли.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [!INCLUDE [footer](./footer.md)]

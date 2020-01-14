@@ -1,19 +1,19 @@
 ---
-title: Использование Python и TensorFlow в Функциях Azure для получения выводов машинного обучения
+title: Использование Python и TensorFlow для машинного обучения в Azure
 description: В этом руководстве показано, как применять модели машинного обучения TensorFlow в Функциях Azure.
 author: anthonychu
 ms.topic: tutorial
 ms.date: 07/29/2019
 ms.author: antchu
 ms.custom: mvc
-ms.openlocfilehash: e7c4e1bbd23d43d5e11ab8b26c3d4e1215b4946b
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: f8122a828f19c3daf6c23a866a99a214ee2c4427
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74230506"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75409778"
 ---
-# <a name="tutorial-apply-machine-learning-models-in-azure-functions-with-python-and-tensorflow"></a>Руководство по Применение моделей машинного обучения в Функциях Azure с использованием Python и TensorFlow
+# <a name="tutorial-apply-machine-learning-models-in-azure-functions-with-python-and-tensorflow"></a>Руководство. Применение моделей машинного обучения в Функциях Azure с использованием Python и TensorFlow
 
 В статье демонстрируется, как Функции Azure позволяют использовать Python и TensorFlow с моделью машинного обучения, чтобы классифицировать изображение на основе его содержимого.
 
@@ -29,7 +29,7 @@ ms.locfileid: "74230506"
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
-## <a name="prerequisites"></a>Предварительные требования 
+## <a name="prerequisites"></a>предварительные требования 
 
 Для работы в Функциях Azure с Python необходимо установить несколько средств:
 
@@ -274,7 +274,7 @@ py -3.6  -m http.server
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 Все инструкции из этого руководство выполняются локально на компьютере, поэтому нет необходимости в очистке ресурсов или служб Azure.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из этого руководства вы узнали, как создать и настроить API HTTP с помощью Функций Azure для создания прогнозов с использованием модели TensorFlow. Вы также научились вызывать API из веб-приложения.
 

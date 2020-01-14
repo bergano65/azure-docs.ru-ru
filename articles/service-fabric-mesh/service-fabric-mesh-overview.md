@@ -1,20 +1,16 @@
 ---
-title: Общие сведения о Сетке Azure Service Fabric | Документация Майкрософт
+title: Общие сведения о службе "Сетка Azure Service Fabric"
 description: Дополнительные сведения о Сетке Azure Service Fabric. С помощью Сетки Service Fabric можно развертывать и масштабировать приложение, не беспокоясь о его потребностях в инфраструктуре.
-services: service-fabric-mesh
-keywords: ''
 author: dkkapur
 ms.author: dekapur
 ms.date: 10/1/2018
 ms.topic: overview
-ms.service: service-fabric-mesh
-manager: timlt
-ms.openlocfilehash: d315ca0702b1d76e0f990d4d33a3807a1dc57935
-ms.sourcegitcommit: ef06b169f96297396fc24d97ac4223cabcf9ac33
+ms.openlocfilehash: d6522d417556104a1ece703c725f3fbeab49d683
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66428187"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75458982"
 ---
 # <a name="what-is-service-fabric-mesh"></a>Что такое Сетка Service Fabric?
 
@@ -64,7 +60,7 @@ ms.locfileid: "66428187"
 - Развертывайте приложения в [зонах доступности](/azure/availability-zones/az-overview) и нескольких регионах для обеспечения географической надежности.
 - Используйте все функции безопасности и соответствия, которые предоставляет Azure.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Для развертывания образца проекта с Visual Studio требуется всего несколько шагов. Дополнительные сведения см. в разделе [Создание основного веб-сайта ASP.NET](service-fabric-mesh-quickstart-dotnet-core.md). 
 

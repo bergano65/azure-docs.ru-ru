@@ -9,12 +9,12 @@ ms.service: iot-central
 services: iot-central
 ms.custom: mvc
 manager: timlt
-ms.openlocfilehash: 30e7b4c39c24f4271c53f7a9f8940e4fb3c2e298
-ms.sourcegitcommit: b1a8f3ab79c605684336c6e9a45ef2334200844b
+ms.openlocfilehash: a1aa2f12f62a95ac14750c821079df2bac46e8ac
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74048660"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75434972"
 ---
 <!---
 Purpose of an Overview article: 
@@ -95,11 +95,11 @@ Azure IoT Central — это платформа приложений IoT, ко�
 
 Администраторы управляют доступом к приложению, настраивая [пользовательские роли и разрешения](howto-administer.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы ознакомились с Azure IoT Central, предлагаем следующие шаги:
 
-- Изучите различия между [Azure IoT Central и акселераторами решений Azure IoT](overview-iot-options.md).
+- Ознакомьтесь с доступными [технологиями и службами Azure для создания решений Интернета вещей](../../iot-fundamentals/iot-services-and-technologies.md).
 - Ознакомьтесь с [пользовательским интерфейсом Azure IoT Central](overview-iot-central-tour.md).
 - [Создайте приложение Azure IoT Central](quick-deploy-iot-central.md).
 - Ознакомьтесь з руководствами, в которых описано, как:

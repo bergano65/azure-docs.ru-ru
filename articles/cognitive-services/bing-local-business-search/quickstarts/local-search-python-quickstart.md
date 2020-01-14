@@ -1,7 +1,7 @@
 ---
 title: Краткое руководство. Отправка запроса в API Поиска местных компаний Bing с помощью Python
 titleSuffix: Azure Cognitive Services
-description: Из этой статьи вы узнаете, как использовать API Bing Local Business Search с помощью Python.
+description: Из этого руководства вы узнаете, как использовать API "Поиск местных компаний Bing" с помощью Python.
 services: cognitive-services
 author: aahill
 manager: nitinme
@@ -10,12 +10,12 @@ ms.subservice: bing-local-business
 ms.topic: quickstart
 ms.date: 11/29/2019
 ms.author: aahi
-ms.openlocfilehash: a73851a4c88998a377a5123d411948946173fa89
-ms.sourcegitcommit: 57eb9acf6507d746289efa317a1a5210bd32ca2c
+ms.openlocfilehash: c7e7ef7f052fccfea18b246f41109d5fa7528b4b
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2019
-ms.locfileid: "74664936"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75379749"
 ---
 # <a name="quickstart-send-a-query-to-the-bing-local-business-search-api-in-python"></a>Краткое руководство. Отправка запроса в API Bing Local Business Search с помощью Python
 
@@ -23,7 +23,7 @@ ms.locfileid: "74664936"
 
 В этом примере приложения из API извлекаются сведения о местных компаниях по поисковому запросу `hotel in Bellevue`.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * [Python](https://www.python.org/) 2.x или 3.x.
  
@@ -34,7 +34,7 @@ ms.locfileid: "74664936"
 Следующий код получает локализованные результаты. Он реализуется с помощью следующих действий:
 1. Объявите переменные для указания конечной точки с помощью узла и пути.
 2. Задайте параметр запроса. 
-3. Определите функцию Поиска, которая создает запрос и добавляет заголовок Ocp-Apim-Subscription-Key.
+3. Определите функцию поиска, которая создает запрос и добавляет заголовок "Ocp-Apim-Subscription-Key".
 4. Задайте заголовок Ocp-Apim-Subscription-Key. 
 5. Установите подключение и отправьте запрос.
 6. Выведите на экран результаты JSON.
@@ -67,7 +67,7 @@ print (json.dumps(json.loads(result), indent=4))
 
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - [Краткое руководство. Использование Local Business Search с помощью Java](local-search-java-quickstart.md)
 - [Краткое руководство. Использование Local Business Search с помощью C#](local-quickstart.md)
 - [Краткое руководство. Использование Local Business Search с помощью Node](local-search-node-quickstart.md)

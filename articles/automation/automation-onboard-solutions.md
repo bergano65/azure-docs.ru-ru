@@ -2,19 +2,15 @@
 title: Внедрение решений по обновлению и отслеживанию изменений в службу автоматизации Azure
 description: Узнайте, как подключить решения по обновлению и отслеживанию изменений к службе автоматизации Azure.
 services: automation
-ms.service: automation
-author: eamonoreilly
-ms.author: eamono
-manager: carmonm
 ms.topic: tutorial
 ms.date: 05/10/2018
 ms.custom: mvc
-ms.openlocfilehash: cacd9206eb0213d410a11ee3a2dcf5c0e28989c6
-ms.sourcegitcommit: 0576bcb894031eb9e7ddb919e241e2e3c42f291d
+ms.openlocfilehash: d0024b8c43e76e3dd26b4b73c4ae0e09890b3b46
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72372820"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75421848"
 ---
 # <a name="onboard-update-and-change-tracking-solutions-to-azure-automation"></a>Внедрение решений по обновлению и отслеживанию изменений в службу автоматизации Azure
 
@@ -27,7 +23,7 @@ ms.locfileid: "72372820"
 > * импорт модуля runbook для подключения;
 > * Запуск модуля runbook
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Ниже перечислены необходимые условия для выполнения инструкций из этого руководства.
 
@@ -37,7 +33,7 @@ ms.locfileid: "72372820"
 
 ## <a name="onboard-an-azure-vm"></a>подключение виртуальной машины Azure;
 
-Существует несколько способов подключения решений на виртуальных машинах: подключить решение можно [на одной виртуальной машине](automation-onboard-solutions-from-vm.md), [на нескольких виртуальных машинах](automation-onboard-solutions-from-browse.md) [в учетной записи Службы автоматизации](automation-onboard-solutions-from-automation-account.md) или с помощью модуля runbook. В этом руководстве рассматривается включение решения "Управление обновлениями" через модуль runbook. Чтобы подключить виртуальные машины Azure в масштабе, необходимо подключить к существующей виртуальной машине решение по отслеживанию изменений или управлению обновлениями. На этом этапе следует подключить к виртуальной машине решения по управлению обновлениями и отслеживанию изменений.
+Существует несколько способов подключения решений на виртуальных машинах: подключить решение [на одной виртуальной машине](automation-onboard-solutions-from-vm.md), [на нескольких виртуальных машинах](automation-onboard-solutions-from-browse.md), [из учетной записи Службы автоматизации](automation-onboard-solutions-from-automation-account.md) или с помощью модуля runbook. В этом руководстве рассматривается включение решения "Управление обновлениями" через модуль runbook. Чтобы подключить виртуальные машины Azure в масштабе, необходимо подключить к существующей виртуальной машине решение по отслеживанию изменений или управлению обновлениями. На этом этапе следует подключить к виртуальной машине решения по управлению обновлениями и отслеживанию изменений.
 
 ### <a name="enable-change-tracking-and-inventory"></a>Включение решения для отслеживания изменений и инвентаризации
 
@@ -83,7 +79,7 @@ ms.locfileid: "72372820"
 > [!NOTE]
 > Если вы не ожидаете завершения другого решения, при включении следующего решения появляется такое сообщение: *Выполняется установка другого решения на этой или другой виртуальной машине. Когда она завершится, кнопка "Включить" активируется и вы сможете запросить установку решения на этой виртуальной машине.*
 
-## <a name="install-and-update-modules"></a>Установка и обновление модулей
+## <a name="install-and-update-modules"></a>установка и обновление модулей;
 
 Чтобы успешно автоматизировать подключение решения, необходимо обновить все модули Azure до последних версий и импортировать модуль `AzureRM.OperationalInsights`.
 
@@ -99,7 +95,7 @@ ms.locfileid: "72372820"
 
 ![Импорт модуля OperationalInsights](media/automation-onboard-solutions/import-operational-insights-module.png)
 
-## <a name="import-the-onboarding-runbook"></a>Импорт модуля runbook для подключения
+## <a name="import-the-onboarding-runbook"></a>импорт модуля runbook для подключения;
 
 1. В учетной записи службы автоматизации в области **Автоматизация процессов** выберите **Модули Runbook**.
 1. Выберите **Обзор коллекции**.
@@ -138,9 +134,9 @@ ms.locfileid: "72372820"
 * В рабочей области Log Analytics удалите виртуальную машину из сохраненных поисковых запросов конфигурации области `MicrosoftDefaultScopeConfig-Updates`. Сохраненные поисковые запросы хранятся на вкладке **Общие** рабочей области.
 * Удалите [Microsoft Monitoring Agent](../azure-monitor/learn/quick-collect-windows-computer.md#clean-up-resources) или [Агент Log Analytics для Linux](../azure-monitor/learn/quick-collect-linux-computer.md#clean-up-resources).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-Из этого руководства вы узнали, как выполнить следующие задачи:
+В этом руководстве вы узнали, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 > * подключение виртуальной машины Azure вручную;

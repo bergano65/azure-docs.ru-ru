@@ -1,6 +1,6 @@
 ---
-title: включение файла
-description: включение файла
+title: включить файл
+description: включить файл
 services: virtual-wan
 author: cherylmc
 ms.service: virtual-wan
@@ -8,27 +8,27 @@ ms.topic: include
 ms.date: 11/04/2019
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: bcc4af837cc28a18345e49cd39ddf88d24e44dd8
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 8b338f25e9771f5947fd494cfb00d0f6cb9ef67a
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73488947"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75450832"
 ---
 1. Выберите пункт **Подключение сайтов VPN**, чтобы открыть страницу **Подключение сайтов**.
 
-    ![подключиться](./media/virtual-wan-tutorial-connect-vpn-site-include/connect.png "подключение")
+    ![connect](./media/virtual-wan-tutorial-connect-vpn-site-include/connect.png "подключение")
 
    Заполните следующие поля.
 
    * Введите общий ключ. Если вы не введете ключ, Azure автоматически создаст его.
-   * Выберите параметры протокола и IPsec. Ознакомьтесь со сведениями о стандартных и пользовательских значениях IPSec (вставьте ссылку на страницу).
+   * Выберите параметры протокола и IPsec. См. статью о [стандартных и пользовательских значениях IPSec] (https://docs.microsoft.com/azure/virtual-wan/virtual-wan-ipsec)
    * Выберите соответствующий вариант для параметра **Propagate Default Route** (Распространить маршрут по умолчанию). Если выбрать вариант **Включить**, виртуальный концентратор будет распространять полученный маршрут по умолчанию на это подключение. Этот флаг разрешает распространение маршрута по умолчанию на подключение только в том случае, если маршрут по умолчанию уже был получен концентратором Виртуальной глобальной сети в результате развертывания брандмауэра в концентраторе или если для другого подключенного сайта включено принудительное туннелирование. Маршрут по умолчанию не создается в концентраторе Виртуальной глобальной сети.
 
-2. Нажмите кнопку **Подключиться**.
+2. Выберите **Подключиться**.
 3. Через несколько минут на сайте отобразится состояние подключения и подключение.
 
-   ![состояние](./media/virtual-wan-tutorial-connect-vpn-site-include/status.png "status")
+   ![status](./media/virtual-wan-tutorial-connect-vpn-site-include/status.png "status")
 
    **Состояние подключения.** Это состояние ресурса Azure для подключения, которое соединяет VPN-сайт с VPN-шлюзом концентратора Azure. После успешного выполнения этой операции уровня управления VPN-шлюз Azure и локальное VPN-устройство продолжат установку подключения.
 

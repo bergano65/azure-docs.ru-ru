@@ -4,12 +4,12 @@ description: Узнайте, как создать первую функцию P
 ms.date: 11/07/2019
 ms.topic: quickstart
 ms.custom: mvc
-ms.openlocfilehash: 18ae1ed000ffe61ce1ea9ff5c18aae98a0ffae65
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: bd20c55fdaef5e820773b4ff4e0ddf3d36c6e371
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74227191"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75433198"
 ---
 # <a name="quickstart-create-an-http-triggered-python-function-in-azure"></a>Краткое руководство. Создание функции Python, активируемой HTTP, в Azure
 
@@ -19,7 +19,7 @@ ms.locfileid: "74227191"
 
 Существует также версия этой статьи для [Visual Studio Code](/azure/python/tutorial-vs-code-serverless-python-01).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Перед началом работы вам следует:
 
@@ -124,7 +124,7 @@ Http Functions:
 
 Приложение-функция предоставляет среду для выполнения кода функции. Это позволяет группировать функции в логические единицы, чтобы упростить управление, развертывание и совместное использование ресурсов. 
 
-Выполните следующую команду: Замените `<APP_NAME>` уникальным именем приложения-функции. Замените `<STORAGE_NAME>` на имя учетной записи хранения. `<APP_NAME>` также является доменом DNS по умолчанию для приложения-функции. Это имя должно быть уникальным среди всех приложений Azure.
+Выполните следующую команду. Замените `<APP_NAME>` уникальным именем приложения-функции. Замените `<STORAGE_NAME>` на имя учетной записи хранения. `<APP_NAME>` также является доменом DNS по умолчанию для приложения-функции. Это имя должно быть уникальным среди всех приложений Azure.
 
 > [!NOTE]
 > Вы не можете разместить приложения Windows и Linux в одной группе ресурсов. Если у вас есть группа ресурсов `myResourceGroup` с приложением-функцией Windows или веб-приложением, необходимо использовать другую группу ресурсов.
@@ -144,10 +144,10 @@ az functionapp create --resource-group myResourceGroup --os-type Linux \
 Создав в Azure приложение-функцию, вы можете развернуть код проекта в Azure с помощью команды Core Tools [func azure functionapp publish](functions-run-local.md#project-file-deployment). В этом примере следует заменить `<APP_NAME>` именем приложения.
 
 ```console
-func azure functionapp publish <APP_NAME> --build remote
+func azure functionapp publish <APP_NAME>
 ```
 
-Параметр `--build remote` позволяет удаленно выполнить сборку проекта Python в Azure из файлов в пакете развертывания (что рекомендуется). 
+Сборка проекта Python в Azure выполняется удаленно из файлов в пакете развертывания. 
 
 Появится выходные данные, аналогичные указанному ниже сообщению. Они усекаются для удобства чтения.
 
@@ -172,7 +172,7 @@ Functions in myfunctionapp:
 > [!NOTE]
 > Чтобы просматривать журналы для опубликованного приложения Python, которые ведутся практически в режиме реального времени, используйте [Live Metrics Stream для Application Insights](functions-monitoring.md#streaming-logs).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Вы создали проект функций Python с функцией, активируемой HTTP-запросами, запустили ее на своем локальном компьютере и развернули в Azure. Теперь расширьте свою функцию путем...
 

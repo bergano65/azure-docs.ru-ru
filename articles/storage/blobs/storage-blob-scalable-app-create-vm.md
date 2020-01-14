@@ -1,5 +1,5 @@
 ---
-title: Создание виртуальной машины и учетной записи хранения для масштабируемого приложения в Azure | Документация Майкрософт
+title: Создание виртуальной машины и учетной записи хранения для масштабируемого приложения в Azure
 description: Узнайте, как развернуть виртуальную машину для запуска масштабируемого приложения, использующего хранилище BLOB-объектов Azure.
 author: roygara
 ms.service: storage
@@ -7,12 +7,12 @@ ms.topic: tutorial
 ms.date: 02/20/2018
 ms.author: rogarana
 ms.subservice: blobs
-ms.openlocfilehash: 49689585b3f52bbee300ff68d2c2653f5e7ff8d0
-ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
+ms.openlocfilehash: 60bb227af7cc886bb35cbd045cc8a27cf82ae903
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68699059"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75372301"
 ---
 # <a name="create-a-virtual-machine-and-storage-account-for-a-scalable-application"></a>Создание виртуальной машины и учетной записи хранения для масштабируемого приложения
 
@@ -121,7 +121,7 @@ Set-AzVMCustomScriptExtension -ResourceGroupName myResourceGroup `
     -Name DemoScriptExtension
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В первой части этой серии руководств вы узнали, как создать учетную запись хранения, развернуть виртуальную машину и установить на ней необходимые компоненты, в частности как выполнять следующие действия:
 

@@ -9,18 +9,18 @@ ms.date: 05/28/2019
 ms.topic: tutorial
 ms.service: iot-edge
 ms.custom: mvc
-ms.openlocfilehash: 332229dbcb35a209721fc9b457ebf1e804eaca5f
-ms.sourcegitcommit: c31dbf646682c0f9d731f8df8cfd43d36a041f85
+ms.openlocfilehash: d44e85b069a38f48ad4ad06814db5fbcb58c9dc6
+ms.sourcegitcommit: 2c59a05cb3975bede8134bc23e27db5e1f4eaa45
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2019
-ms.locfileid: "74561032"
+ms.lasthandoff: 01/05/2020
+ms.locfileid: "75665234"
 ---
-# <a name="tutorial-develop-a-c-iot-edge-module-for-windows-devices"></a>Руководство по Разработка модулей IoT Edge на языке C для устройств с Windows
+# <a name="tutorial-develop-a-c-iot-edge-module-for-windows-devices"></a>Руководство. Разработка модулей IoT Edge на языке C для устройств с Windows
 
 Для разработки и развертывания кода C на устройствах Windows с Azure IoT Edge используйте Visual Studio. 
 
-Вы можете использовать модули Azure IoT Edge для развертывания кода, который реализует бизнес-логику непосредственно на устройствах IoT Edge. В этом руководстве рассматриваются создание и развертывание модуля IoT Edge, который фильтрует данные датчика. Из этого руководства вы узнаете, как выполнять следующие задачи:    
+Вы можете использовать модули Azure IoT Edge для развертывания кода, который реализует бизнес-логику непосредственно на устройствах IoT Edge. В этом руководстве рассматриваются создание и развертывание модуля IoT Edge, который фильтрует данные датчика. В этом руководстве описано следующее.    
 
 > [!div class="checklist"]
 > * Создать модуль IoT Edge на основе пакета SDK для C с помощью Visual Studio.
@@ -38,11 +38,11 @@ ms.locfileid: "74561032"
 
 В следующей таблице перечислены возможные варианты для разработки и развертывания модулей C для устройств с Windows: 
 
-| C | Visual Studio Code | Visual Studio 2017 или Visual Studio 2019 | 
+| C | Visual Studio Code | Visual Studio 2017 или 2019 | 
 | -- | ------------------ | ------------------ |
 | **Windows AMD64** |  | ![Разработка модулей C для WinAMD64 в Visual Studio](./media/tutorial-c-module/green-check.png) |
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Перед началом работы с этим учебником вы должны были пройти предыдущий учебник, в котором настроили среду разработки для разработки контейнеров Windows: [Tutorial: Develop IoT Edge modules for Windows devices](tutorial-develop-for-windows.md) (Учебник: разработка модулей IoT Edge для устройств с Windows) После работы с ним у вас должны быть готовы все необходимые компоненты: 
 
@@ -74,7 +74,7 @@ ms.locfileid: "74561032"
 
 1. Запустите Visual Studio 2019 и выберите **Создать проект**.
 
-2. В окне нового проекта найдите проект **IoT Edge** и выберите для него тип **Azure IoT Edge (Windows amd64)** . Щелкните **Далее**. 
+2. найдите проект **IoT Edge** и выберите для него тип **Azure IoT Edge (Windows amd64)** . Щелкните **Далее**. 
 
    ![Создание проекта Azure IoT Edge](./media/tutorial-c-module-windows/new-project.png)
 
@@ -100,45 +100,43 @@ ms.locfileid: "74561032"
 
 1. В обозревателе решений Visual Studio откройте файл **deployment.template.json**. 
 
-2. Найдите свойство **registryCredentials** в требуемых свойствах $edgeAgent. 
-
-3. Обновите свойство, указав свои учетные данные в следующем формате: 
+2. Найдите свойство **registryCredentials** в требуемых свойствах $edgeAgent. Адрес реестра должен автоматически заполняться данными, предоставленными при создании проекта, а поля имени пользователя и пароля должны содержать имена переменных. Пример: 
 
    ```json
    "registryCredentials": {
      "<registry name>": {
-       "username": "<username>",
-       "password": "<password>",
+       "username": "$CONTAINER_REGISTRY_USERNAME_<registry name>",
+       "password": "$CONTAINER_REGISTRY_PASSWORD_<registry name>",
        "address": "<registry name>.azurecr.io"
      }
    }
-   ```
 
-4. Сохраните файл deployment.template.json. 
+3. Open the **.env** file in your module solution. (It's hidden by default in the Solution Explorer, so you might need to select the **Show All Files** button to display it.) The .env file should contain the same username and password variables that you saw in the deployment.template.json file. 
 
-### <a name="update-the-module-with-custom-code"></a>Обновление модуля с помощью пользовательского кода
+4. Add the **Username** and **Password** values from your Azure container registry. 
 
-Код стандартного модуля получает сообщения из очереди входящих сообщений и передает их через очередь исходящих сообщений. Давайте добавим еще немного кода, чтобы модуль обрабатывал сообщения на границе до передачи в Центр Интернета вещей. Обновите модуль таким образом, чтобы он анализировал данные о температуре, получаемые в каждом сообщении, и отправлял в Центр Интернета вещей только сообщения со сведениями о том, что температура превышает определенный порог. 
+5. Save your changes to the .env file.
+
+### Update the module with custom code
+
+The default module code receives messages on an input queue and passes them along through an output queue. Let's add some additional code so that the module processes the messages at the edge before forwarding them to IoT Hub. Update the module so that it analyzes the temperature data in each message, and only sends the message to IoT Hub if the temperature exceeds a certain threshold. 
 
 
-1. Данные с датчиков в этом сценарии поступают в формате JSON. Для фильтрации сообщений в формате JSON импортируйте библиотеку JSON для модуля C. Это руководство использует Parson.
+1. The data from the sensor in this scenario comes in JSON format. To filter messages in JSON format, import a JSON library for C. This tutorial uses Parson.
 
-   1. Скачайте [репозиторий GitHub для Parson](https://github.com/kgabis/parson). Скопируйте файлы **parson.c** и **parson.h** в проект **CModule**.
+   1. Download the [Parson GitHub repository](https://github.com/kgabis/parson). Copy the **parson.c** and **parson.h** files into the **CModule** project.
 
-   2. В Visual Studio откройте файл **CMakeLists.txt** из папки проекта CModule. В верхней части файла импортируйте файлы Parson в качестве библиотеки, называемой **my_parson**.
+   2. In Visual Studio, open the **CMakeLists.txt** file from the CModule project folder. At the top of the file, import the Parson files as a library called **my_parson**.
 
       ```
-      add_library(my_parson
-          parson.c
-          parson.h
-      )
+      add_library(my_parson        parson.c        parson.h    )
       ```
 
-   3. Добавьте `my_parson` в список библиотек в разделе **target_link_libraries** файл CMakeLists.txt.
+   3. Add `my_parson` to the list of libraries in the **target_link_libraries** section of the CMakeLists.txt file.
 
-   4. Сохраните файл **CMakeLists.txt**.
+   4. Save the **CMakeLists.txt** file.
 
-   5. Откройте **CModule** > **main.c**. В нижней части списка содержатся операторы. Добавьте новый, чтобы включить `parson.h` для поддержки JSON:
+   5. Open **CModule** > **main.c**. At the bottom of the list of include statements, add a new one to include `parson.h` for JSON support:
 
       ```c
       #include "parson.h"
@@ -169,7 +167,7 @@ ms.locfileid: "74561032"
    }
    ```
 
-   Эти новые строки кода в инструкции else добавляют в сообщение новое свойство, которое помечает сообщение как оповещение. Этот код помечает все сообщения как оповещения, так как наша новая функция отправляет в Центр Интернета вещей только те сообщения, в которых сообщается о высокой температуре. 
+   Эти новые строки кода в инструкции else добавляют в сообщение новое свойство, которое помечает сообщение как оповещение. Этот код помечает все сообщения как оповещения, так как наша новая функция отправляет в центр Интернета вещей только сообщения со сведениями о высокой температуре. 
 
 4. Найдите функцию `InputQueue1Callback` и замените всю функцию следующим кодом. Эта функция реализует фактический фильтр обмена сообщениями. При получении сообщения функция проверяет, превышает ли температура, указанная в сообщении, заданный порог. Если это так, функция перенаправляет сообщение через очередь исходящих сообщений. Если нет, сообщение игнорируется. 
 
@@ -326,13 +324,13 @@ ms.locfileid: "74561032"
 
 3. Выберите **Build and Push IoT Edge Modules** (Создание и отправка модулей IoT Edge). 
 
-   Команда сборки и отправки запускает три операции. Во-первых, она создает в решении папку с именем **config**, которая содержит полный манифест развертывания на основе сведений из шаблона развертывания и других файлов решения. Во-вторых, она выполняет команду `docker build` для сборки образа контейнера на основе подходящего файла dockerfile для целевой архитектуры. В-третьих, выполняется `docker push` для отправки образа в реестр контейнеров. 
+   Эта команда сборки и отправки позволяет запустить три операции. Во-первых, она создает в решении папку с именем **config**, которая содержит полный манифест развертывания на основе сведений из шаблона развертывания и других файлов решения. Во-вторых, выполняется `docker build` для сборки образа контейнера на основе подходящего файла dockerfile для целевой архитектуры. В-третьих, выполняется `docker push` для отправки образа в реестр контейнеров. 
 
 ## <a name="deploy-modules-to-device"></a>Развертывание модулей на устройстве
 
 Разверните проект модуля на устройство IoT Edge с помощью обозревателя Visual Studio Cloud Explorer и расширения Azure IoT Edge Tools. У вас уже есть манифест развертывания, подготовленный для вашего сценария (файл **deployment.json** в папке config). Теперь вам осталось выбрать устройство для получения развертывания.
 
-Убедитесь, что устройство IoT Edge запущено и работает. 
+Убедитесь, что устройство IoT Edge работает. 
 
 1. В Visual Studio Cloud Explorer разверните ресурсы, чтобы увидеть список устройств IoT. 
 
@@ -381,9 +379,9 @@ ms.locfileid: "74561032"
 
 [!INCLUDE [iot-edge-clean-up-cloud-resources](../../includes/iot-edge-clean-up-cloud-resources.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-В этом руководстве вы создали модуль IoT Edge с кодом для фильтрации необработанных данных, созданных устройством IoT Edge. Дополнительные сведения о создании собственных модулей см. в статьях [о разработке модулей IoT Edge](module-development.md) и [о разработке модулей с помощью Visual Studio](how-to-visual-studio-develop-module.md). Примеры модулей IoT Edge, включая смоделированный модуль температуры, см. в этой [статье](https://github.com/Azure/iotedge/tree/master/edge-modules) и на [странице примеров пакета SDK Azure IoT для C](https://github.com/Azure/azure-iot-sdk-c/tree/master/iothub_client/samples). 
+В этом руководстве вы создали модуль IoT Edge с кодом для фильтрации необработанных данных, созданных устройством IoT Edge. Дополнительные сведения о создании собственных модулей см. в статьях [о разработке модулей IoT Edge](module-development.md) и [о разработке модулей с помощью Visual Studio](how-to-visual-studio-develop-module.md). Примеры модулей IoT Edge, включая смоделированный модуль температуры, см. в [этой статье](https://github.com/Azure/iotedge/tree/master/edge-modules) и на [странице примеров пакета SDK Azure IoT для C](https://github.com/Azure/azure-iot-sdk-c/tree/master/iothub_client/samples). 
 
 Перейдите к следующим руководствам, чтобы узнать, как Azure IoT Edge поможет развернуть облачные службы Azure для обработки данных на пограничном устройстве.
 

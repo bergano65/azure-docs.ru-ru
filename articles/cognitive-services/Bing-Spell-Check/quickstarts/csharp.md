@@ -8,20 +8,20 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-spell-check
 ms.topic: quickstart
-ms.date: 04/11/2019
+ms.date: 12/16/2019
 ms.author: aahi
-ms.openlocfilehash: e51c1220e120d157ea4a413b95a7beb20c950518
-ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
+ms.openlocfilehash: 036ea00362b604957a1887127fca0b8d775d4e7b
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74378915"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75382971"
 ---
 # <a name="quickstart-check-spelling-with-the-bing-spell-check-rest-api-and-c"></a>Краткое руководство. Проверка орфографии с помощью REST API проверки орфографии Bing и C#
 
 В этом кратком руководстве показано, как отправить первый вызов к REST API "Проверка орфографии Bing". Это простое приложение C# отправляет запрос к API и возвращает список предлагаемых исправлений. Хотя это приложение создается на языке C#, API представляет собой веб-службу RESTful, совместимую с большинством языков программирования. Исходный код этого приложения доступен на [GitHub](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/dotnet/Search/BingAutosuggestv7.cs).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * Любой выпуск [Visual Studio 2017 или более поздней версии](https://www.visualstudio.com/downloads/).
 * Чтобы установить `Newtonsoft.Json` в качестве пакета NuGet в Visual Studio, сделайте следующее.
@@ -46,7 +46,7 @@ ms.locfileid: "74378915"
     using Newtonsoft.Json;
     ```
 
-2. Создайте переменные для конечной точки API, ключа подписки и текста, в котором нужно проверить орфографию.
+2. Создайте переменные для конечной точки API, ключа подписки и текста, в котором нужно проверить орфографию. Вы можете использовать указанную ниже глобальную конечную точку или конечную точку [пользовательского поддомена](../../../cognitive-services/cognitive-services-custom-subdomains.md), отображаемого на портале Azure для вашего ресурса.
 
     ```csharp
     namespace SpellCheckSample
@@ -137,6 +137,10 @@ static void Main(string[] args)
 }
 ```
 
+## <a name="run-the-application"></a>Выполнение приложения
+
+Выполните сборку проекта и запустите его. Если вы используете Visual Studio, то для отладки файла нажмите клавишу **F5**.
+
 ## <a name="example-json-response"></a>Пример ответа в формате JSON
 
 Успешный ответ возвращается в формате JSON, как показано в примере ниже. 
@@ -179,7 +183,7 @@ static void Main(string[] args)
 }
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Создание одностраничного веб-приложения](../tutorials/spellcheck.md)

@@ -8,12 +8,12 @@ ms.author: crtreasu
 ms.date: 02/24/2019
 ms.topic: quickstart
 ms.service: azure-spatial-anchors
-ms.openlocfilehash: 39732ef785fc610572f917be77dec3f560698fb7
-ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
+ms.openlocfilehash: 277a669484201a060a2bb5455d6154165bbb8e84
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74277206"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75465170"
 ---
 # <a name="quickstart-create-an-ios-app-with-azure-spatial-anchors-in-either-swift-or-objective-c"></a>Краткое руководство. Создание приложения iOS на языке Swift или Objective-C с помощью службы "Пространственные привязки Azure"
 
@@ -22,18 +22,18 @@ ms.locfileid: "74277206"
 Вы узнаете, как:
 
 > [!div class="checklist"]
-> * создавать учетную запись в службе "Пространственные привязки";
+> * создать учетную запись в службе "Пространственные привязки";
 > * настроить идентификатор и ключ учетной записи в службе "Пространственные привязки";
-> * выполнять развертывание и запуск на устройстве iOS.
+> * выполнить развертывание и запуск на устройстве iOS.
 
 [!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 В рамках этого краткого руководства вам потребуются:
 
 - Компьютер для разработки под управлением macOS с установленной последней версией <a href="https://geo.itunes.apple.com/us/app/xcode/id497799835?mt=12" target="_blank">Xcode</a> и <a href="https://cocoapods.org" target="_blank">CocoaPods</a>.
-- Система Git, установленная с помощью HomeBrew. В терминале ведите такую команду в одну строку: `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`. Затем выполните `brew install git`.
+- Система Git, установленная с помощью HomeBrew. Введите в одну строку терминала такую команду: `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`. Затем выполните `brew install git` и `brew install git-lfs`.
 - Устройство для разработки на iOS, <a href="https://developer.apple.com/documentation/arkit/verifying_device_support_and_user_permission" target="_blank">совместимое с ARKit</a>.
 
 [!INCLUDE [Create Spatial Anchors resource](../../../includes/spatial-anchors-get-started-create-resource.md)]
@@ -69,7 +69,7 @@ cd ./iOS/Objective-C/
 Теперь откройте файл с расширением `.xcworkspace` в Xcode.
 
 > [!NOTE]
-> Ознакомьтесь с действиями по устранению неполадок [здесь](#cocoapods-issues-on-macos-catalina-1015) при возникновении проблем с CocoaPod после обновления до macOS Catalina (10.15).
+> См. [руководство по устранению неполадок с CocoaPod после обновления до macOS Catalina (10.15)](#cocoapods-issues-on-macos-catalina-1015).
 
 # <a name="swifttabopenproject-swift"></a>[Swift](#tab/openproject-swift)
 
@@ -91,7 +91,7 @@ open ./SampleObjC.xcworkspace
 
 # <a name="swifttabopenproject-swift"></a>[Swift](#tab/openproject-swift)
 
-Откройте `iOS/Swift/SampleSwift/ViewControllers/BaseViewController.swift`.
+Откройте среду `iOS/Swift/SampleSwift/ViewControllers/BaseViewController.swift`.
 
 Найдите поле `spatialAnchorsAccountKey` и замените `Set me` ключом учетной записи.
 
@@ -99,7 +99,7 @@ open ./SampleObjC.xcworkspace
 
 # <a name="objective-ctabopenproject-objc"></a>[Objective-C](#tab/openproject-objc)
 
-Откройте `iOS/Objective-C/SampleObjC/BaseViewController.m`.
+Откройте среду `iOS/Objective-C/SampleObjC/BaseViewController.m`.
 
 Найдите поле `SpatialAnchorsAccountKey` и замените `Set me` ключом учетной записи.
 

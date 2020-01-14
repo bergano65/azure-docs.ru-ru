@@ -1,19 +1,19 @@
 ---
-title: Добавление серверного хранилища к кластеру Microsoft Azure FXT Edge Filer
+title: Руководство. Добавление хранилища в кластер Azure FXT Edge Filer
 description: Настройка серверного хранилища и виртуального пространства имен для клиента в Azure FXT Edge Filer
 author: ekpgh
+ms.author: rohogue
 ms.service: fxt-edge-filer
 ms.topic: tutorial
 ms.date: 06/20/2019
-ms.author: rohogue
-ms.openlocfilehash: ecc246368cae74440ada782940931b3588193975
-ms.sourcegitcommit: 1c2659ab26619658799442a6e7604f3c66307a89
+ms.openlocfilehash: 3f736942627d088e3a639f89bef5438714c2608b
+ms.sourcegitcommit: ec2eacbe5d3ac7878515092290722c41143f151d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72256063"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75551970"
 ---
-# <a name="tutorial-add-back-end-storage-and-configure-the-virtual-namespace"></a>Руководство по Добавление серверного хранилища и настройка виртуального пространства имен 
+# <a name="tutorial-add-back-end-storage-and-configure-the-virtual-namespace"></a>Руководство. Добавление серверного хранилища и настройка виртуального пространства имен 
 
 В этом руководстве объясняется, как добавить серверное хранилища для кэша и как настроить виртуальную файловую систему для клиента. 
 
@@ -97,7 +97,7 @@ ms.locfileid: "72256063"
 
 Виртуальные серверы кластера поддерживают пространство имен и предоставляют содержимое клиентам. Для создания пространства имен кластера нужно выполнить два шага: 
 
-1. создать виртуальный сервер; 
+1. Создание виртуального сервера 
 1. настроить соединения между серверными системами хранения и путями в клиентской файловой системе. 
 
 ### <a name="create-a-vserver"></a>Создание виртуального сервера
@@ -156,7 +156,7 @@ ms.locfileid: "72256063"
 Подробности см. в разделе [об управлении доступом к основному файловому хранилищу с помощью правил и политик экспорта](https://azure.github.io/Avere/legacy/ops_guide/4_7/html/export_rules_overview.html) руководства по настройке кластера.
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Завершив добавление хранилища и настройку пространства имен для взаимодействия с клиентами, завершите начальную настройку кластера. 
 

@@ -1,6 +1,6 @@
 ---
-title: Руководство по поиску с помощью службы Azure Maps
-description: Руководство по Поиск ближайшей точки интереса с помощью службы "Карты Azure"
+title: Руководство. поиску с помощью службы Azure Maps
+description: Руководство. Поиск ближайшей точки интереса с помощью службы "Карты Azure"
 author: walsehgal
 ms.author: v-musehg
 ms.date: 11/12/2019
@@ -9,16 +9,16 @@ ms.service: azure-maps
 services: azure-maps
 manager: timlt
 ms.custom: mvc
-ms.openlocfilehash: 86ba98bfb4003a723cfaaf2d1c51301314ca47cf
-ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
+ms.openlocfilehash: ae2d7b3d855f1c06397d4eb0f977dd04aa841942
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74109515"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75432735"
 ---
-# <a name="tutorial-search-nearby-points-of-interest-using-azure-maps"></a>Руководство по Поиск ближайшей точки интереса с помощью службы "Карты Azure"
+# <a name="tutorial-search-nearby-points-of-interest-using-azure-maps"></a>Руководство. Поиск ближайшей точки интереса с помощью службы "Карты Azure"
 
-В этом руководстве показано, как настроить учетную запись службы "Карты Azure", а затем использовать API службы "Карты Azure" для поиска точки интереса. Из этого руководства вы узнаете, как выполнять следующие задачи:
+В этом руководстве показано, как настроить учетную запись службы "Карты Azure", а затем использовать API службы "Карты Azure" для поиска точки интереса. В этом руководстве описано следующее.
 
 > [!div class="checklist"]
 > * создание учетной записи службы "Карты Azure";
@@ -30,7 +30,7 @@ ms.locfileid: "74109515"
 
 ## <a name="sign-in-to-the-azure-portal"></a>Вход на портал Azure
 
-Войдите на [портале Azure](https://portal.azure.com).
+Войдите на [портал Azure](https://portal.azure.com).
 
 <a id="createaccount"></a>
 
@@ -55,13 +55,15 @@ ms.locfileid: "74109515"
 
 ## <a name="get-the-primary-key-for-your-account"></a>Получение первичного ключа для учетной записи
 
-После успешного создания учетной записи службы "Карты Azure" извлеките ключ, позволяющий запрашивать API службы "Карты Azure".
+После успешного создания учетной записи службы "Карты Azure" извлеките ключ, позволяющий запрашивать API службы "Карты Azure". При вызове служб Azure Maps мы рекомендуем использовать первичный ключ учетной записи в качестве ключа подписки.
 
 1. Откройте учетную запись службы "Карты Azure" на портале.
 2. В разделе "Параметры" выберите **Проверка подлинности**.
 3. Скопируйте **первичный ключ** в буфер обмена. Сохраните его локально для использования в этом руководстве позже.
 
 ![Получение первичного ключа на портале](./media/tutorial-search-location/get-key.png)
+
+Дополнительные сведения об управлении проверкой подлинности в Azure Maps см. в [этой статье](how-to-manage-authentication.md).
 
 <a id="createmap"></a>
 
@@ -184,7 +186,7 @@ API элементов управления картой — это удобна
    var searchURL = new atlas.service.SearchURL(pipeline); 
    ```
 
-   `SubscriptionKeyCredential` создает `SubscriptionKeyCredentialPolicy` для проверки подлинности HTTP-запросов для Azure Maps с помощью ключа подписки. `atlas.service.MapsURL.newPipeline()` принимает политику `SubscriptionKeyCredential` и создает экземпляр [конвейера](https://docs.microsoft.com/javascript/api/azure-maps-rest/atlas.service.pipeline?view=azure-maps-typescript-latest). `searchURL` представляет собой URL-адрес к операциям [поиска](https://docs.microsoft.com/rest/api/maps/search) службы Azure Maps.
+   `SubscriptionKeyCredential` создает политику `SubscriptionKeyCredentialPolicy` для аутентификации HTTP-запросов для Azure Maps с помощью ключа подписки. `atlas.service.MapsURL.newPipeline()` принимает политику `SubscriptionKeyCredential` и создает экземпляр [конвейера](https://docs.microsoft.com/javascript/api/azure-maps-rest/atlas.service.pipeline?view=azure-maps-typescript-latest). `searchURL` представляет собой URL-адрес к операциям [поиска](https://docs.microsoft.com/rest/api/maps/search) службы Azure Maps.
 
 2. Затем, чтобы создать поисковый запрос, добавьте следующий блок сценария. В нем используется служба поиска нечетких соответствий, которая является базовым API поиска Службы поиска. Служба поиска нечетких соответствий обрабатывает большинство нечетких входных данных, например адреса, места и точки интереса (POI). Этот код выполняет поиск ближайших бензозаправочных станций для заданных координат широты и долготы в пределах указанного адреса. Затем с помощью метода `geojson.getFeatures()` из ответа извлекается коллекция функций GeoJSON и добавляется к источнику данных, после чего данные автоматически отображаются на карте с помощью слоя символов. Последняя часть сценария устанавливает представление с камер на карте, используя ограничивающий прямоугольник с результатами, с помощью свойства карты [setCamera](/javascript/api/azure-maps-control/atlas.map#setcamera-cameraoptions---cameraboundsoptions---animationoptions-).
 
@@ -273,9 +275,9 @@ API элементов управления картой — это удобна
 
     ![Azure Map Control и служба поиска](./media/tutorial-search-location/popup-map.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-Из этого руководства вы узнали, как выполнить следующие задачи:
+В этом руководстве вы узнали, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 > * Создание учетной записи службы "Карты Azure"

@@ -1,6 +1,5 @@
 ---
-title: Создание приложения Angular с помощью API Azure Cosmos DB для MongoDB. Создание приложения Express Node.js
-titleSuffix: Azure Cosmos DB
+title: Создание приложения Express Node.js с помощью API Azure Cosmos DB для MongoDB (часть 2)
 description: Часть 2 серии руководств по созданию приложения MongoDB в Azure Cosmos DB с помощью Angular и Node и тех же API, которые используются для MongoDB.
 author: johnpapa
 ms.service: cosmos-db
@@ -11,12 +10,12 @@ ms.date: 12/26/2018
 ms.author: jopapa
 ms.custom: seodec18
 ms.reviewer: sngun
-ms.openlocfilehash: 8dd725bed6364979a9388d5741bf17f667bda0b7
-ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.openlocfilehash: 693222f4c1abd9bda128d18dc4dd67703a245bc8
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57435275"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75441130"
 ---
 # <a name="create-an-angular-app-with-azure-cosmos-dbs-api-for-mongodb---create-a-nodejs-express-app"></a>Создание приложения Angular с помощью API Azure Cosmos DB для MongoDB. Создание приложения Express Node.js
 
@@ -34,7 +33,7 @@ ms.locfileid: "57435275"
 
 > [!VIDEO https://www.youtube.com/embed/lIwJIYcGSUg]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Прежде чем начинать работу с этой частью руководства, обязательно просмотрите [вводный видеоролик](tutorial-develop-mongodb-nodejs.md).
 
@@ -46,7 +45,7 @@ ms.locfileid: "57435275"
 > [!TIP]
 > В этом руководстве изложены пошаговые инструкции по созданию приложения. Готовое приложение можно скачать из [репозитория angular-cosmosdb](https://github.com/Azure-Samples/angular-cosmosdb) на GitHub.
 
-## <a name="install-the-angular-cli-and-typescript"></a>Установка Angular CLI и TypeScript
+## <a name="install-the-angular-cli-and-typescript"></a>установка Angular CLI и TypeScript;
 
 1. Откройте командную строку Windows или окно терминала Mac и установите Angular CLI.
 
@@ -148,11 +147,11 @@ ms.locfileid: "57435275"
 
 7. Сохраните все измененные файлы. 
 
-8. В Visual Studio Code нажмите кнопку **отладки** ![значок отладки в Visual Studio Code](./media/tutorial-develop-mongodb-nodejs-part2/debug-button.png), затем нажмите кнопку шестеренки ![значок шестеренки в Visual Studio Code](./media/tutorial-develop-mongodb-nodejs-part2/gear-button.png). В Visual Studio Code откроется новый файл launch.json.
+8. В Visual Studio Code нажмите кнопку **отладки**![значок отладки в Visual Studio Code](./media/tutorial-develop-mongodb-nodejs-part2/debug-button.png), затем нажмите кнопку шестеренки ![значок шестеренки в Visual Studio Code](./media/tutorial-develop-mongodb-nodejs-part2/gear-button.png). В Visual Studio Code откроется новый файл launch.json.
 
 8. В 11-й строке файла launch.json замените `"${workspaceFolder}\\server"` на `"program": "${workspaceRoot}/src/server/index.js"` и сохраните файл.
 
-9. Нажмите кнопку **Начать отладку** ![значок отладки в Visual Studio Code](./media/tutorial-develop-mongodb-nodejs-part2/start-debugging-button.png), чтобы запустить приложение.
+9. Нажмите кнопку **Начать отладку**![значок отладки в Visual Studio Code](./media/tutorial-develop-mongodb-nodejs-part2/start-debugging-button.png), чтобы запустить приложение.
 
     Приложение должно запуститься без ошибок.
 
@@ -167,7 +166,7 @@ ms.locfileid: "57435275"
     ![Запрос и ответ в Postman](./media/tutorial-develop-mongodb-nodejs-part2/azure-cosmos-db-postman.png)
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой части руководства мы выполнили следующую задачу:
 
@@ -178,4 +177,4 @@ ms.locfileid: "57435275"
 Теперь можно перейти к следующей части руководства, чтобы создать пользовательский интерфейс.
 
 > [!div class="nextstepaction"]
-> [Создание пользовательского интерфейса с помощью Angular](tutorial-develop-mongodb-nodejs-part3.md)
+> [создание пользовательского интерфейса с помощью Angular](tutorial-develop-mongodb-nodejs-part3.md);
