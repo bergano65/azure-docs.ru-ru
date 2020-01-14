@@ -1,5 +1,5 @@
 ---
-title: Руководство по созданию приложения HoloLens Unity
+title: Руководство. созданию приложения HoloLens Unity
 description: Из этого учебника вы узнаете, как создать приложение HoloLens Unity с использованием Пространственных привязок Azure.
 author: julianparismorgan
 manager: vriveras
@@ -8,18 +8,18 @@ ms.author: pmorgan
 ms.date: 07/05/2019
 ms.topic: tutorial
 ms.service: azure-spatial-anchors
-ms.openlocfilehash: 0d63f2df17804d5cc171f94a34ebc5831be384fb
-ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
+ms.openlocfilehash: e1abb759c80e770f1e650c232b6b2e21232b7e6f
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74276905"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75457726"
 ---
-# <a name="tutorial-step-by-step-instructions-to-create-a-new-hololens-unity-app-using-azure-spatial-anchors"></a>Руководство по созданию приложения HoloLens Unity с использованием Пространственных привязок Azure
+# <a name="tutorial-step-by-step-instructions-to-create-a-new-hololens-unity-app-using-azure-spatial-anchors"></a>Руководство. созданию приложения HoloLens Unity с использованием Пространственных привязок Azure
 
 В этом учебнике описывается, как создать приложение HoloLens Unity с помощью Пространственных привязок Azure.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 В рамках этого руководства вам потребуются:
 
@@ -141,17 +141,27 @@ ms.locfileid: "74276905"
 
 ## <a name="get-the-azure-spatial-anchors-sdk"></a>Получение пакета SDK Пространственных привязок Azure
 
-Теперь мы скачаем пакет SDK Пространственных привязок Azure. Перейдите на [страницу выпусков Пространственных привязок Azure на GitHub](https://github.com/Azure/azure-spatial-anchors-samples/releases). В разделе "Ресурсы" скачайте файл **AzureSpatialAnchors.unitypackage**.
+## <a name="via-unity-packagetabunitypackage"></a>[С помощью пакета Unity](#tab/UnityPackage)
 
-В Unity перейдите к разделу **Ресурсы** и щелкните **Import Package** (Импорт пакета)  > **Custom Package...** (Пользовательский пакет...). Перейдите к пакету и выберите **Открыть**.
+Теперь мы скачаем пакет SDK Пространственных привязок Azure. Перейдите на [страницу выпусков Пространственных привязок Azure на сайте GitHub](https://github.com/Azure/azure-spatial-anchors-samples/releases). В разделе Assets (Ресурсы) скачайте файл **AzureSpatialAnchors.unitypackage**. В Unity перейдите к разделу **Ресурсы** и щелкните **Import Package** (Импорт пакета)  > **Custom Package...** (Пользовательский пакет...). Перейдите к пакету и выберите **Открыть**.
 
-В появившемся окне **Import Unity Package** (Импорт пакета Unity) выберите **Нет** слева внизу. Затем в разделе **AzureSpatialAnchorsPlugin** > **Plugins** (Подключаемые модули) выберите **Общий**, **Редактор** и **HoloLens**. В нижнем правом углу щелкните **Импорт**.
+В открывшемся окне **Import Unity Package** (Импорт пакета Unity) отмените выбор пункта **Plugins** (Подключаемые модули), а затем щелкните **Import** (Импортировать) в нижнем правом углу страницы.
 
 Теперь необходимо восстановить пакеты Nuget, чтобы получить пакет SDK Пространственных привязок Azure. Создайте из **Unity**, а затем откройте и снова создайте результирующее решение **Visual Studio**, как описано в разделе о [проверке работы](#trying-it-out).
 
+## <a name="via-nugetforunitytabnugetforunity"></a>[С помощью NuGetForUnity](#tab/NuGetForUnity)
+
+Сначала необходимо установить NuGetForUnity. Перейдите на [страницу выпусков NuGetForUnity на сайте GitHub](https://github.com/GlitchEnzo/NuGetForUnity/releases). В разделе ресурсов скачайте последнюю версию **NuGetForUnity.unitypackage**. В Unity перейдите к разделу **Ресурсы** и щелкните **Import Package** (Импорт пакета)  > **Custom Package...** (Пользовательский пакет...). Перейдите к пакету и выберите **Открыть**. Теперь Unity установит NugetForUnity. Если в Unity не отображается раскрывающийся список **NuGet**, щелкните правой кнопкой мыши **Projects** (Проекты) > **Assets** (Ресурсы). Затем выберите **Reimport All** (Повторно импортировать все элементы).
+
+После установки NuGetForUnity выберите **NuGet** > **Управление пакетами NuGet**. Затем найдите Microsoft.Azure.SpatialAnchors.Unity и щелкните **Установить**.
+
+Теперь необходимо выполнить сборку, чтобы получить пакет SDK для Пространственных привязок Azure, ведь только что скачанный пакет NuGet содержит лишь вспомогательные сценарии. Создайте из **Unity**, а затем откройте и снова создайте результирующее решение **Visual Studio**, как описано в разделе о [проверке работы](#trying-it-out).
+
+---
+
 В решении **Visual Studio** добавьте следующую операцию импорта в `<ProjectName>\Assets\Scripts\AzureSpatialAnchorsScript.cs`:
 
-[!code-csharp[AzureSpatialAnchorsScript](../../../includes/spatial-anchors-new-unity-hololens-app-finished.md?range=23-26&highlight=1)]
+[!code-csharp[AzureSpatialAnchorsScript](../../../includes/spatial-anchors-new-unity-hololens-app-finished.md?range=18-21&highlight=1)]
 
 Затем добавьте следующие переменные-члены в класс `AzureSpatialAnchorsScript`:
 

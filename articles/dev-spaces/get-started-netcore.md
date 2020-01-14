@@ -3,14 +3,14 @@ title: 'Создание пространства разработки Kubernete
 services: azure-dev-spaces
 ms.date: 09/26/2018
 ms.topic: tutorial
-description: Быстрая разработка в Kubernetes с использованием контейнеров и микрослужб в Azure
+description: В этом руководстве описано, как использовать Azure Dev Spaces и Visual Studio Code для отладки и быстрого выполнения итерации приложения .NET Core в службе Azure Kubernetes
 keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, service mesh, service mesh routing, kubectl, k8s
-ms.openlocfilehash: fa7b4b4dcd1883c7619faa6fcfe014f4fc8c036f
-ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
+ms.openlocfilehash: 634206523972c7bc78ba818688bc342fe66885d6
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74708580"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75438555"
 ---
 # <a name="create-a-kubernetes-dev-space-visual-studio-code-and-net-core-with-azure-dev-spaces"></a>Создание пространства разработки Kubernetes: Использование Visual Studio Code и .NET Core с Azure Dev Spaces
 
@@ -21,7 +21,7 @@ ms.locfileid: "74708580"
 - эффективная разработка и тестирование кода в среде командной работы.
 
 > [!Note]
-> **Если на каком-то этапе у вас возникли трудности**, см. статью об [устранении неполадок](troubleshooting.md).
+> **Если на каком-то этапе у вас возникли трудности**, см. раздел об [устранении неполадок](troubleshooting.md).
 
 ## <a name="install-the-azure-cli"></a>Установка Azure CLI
 Для Azure Dev Spaces требуется минимальная настройка локального компьютера. Большая часть конфигурации среды разработки хранится в облаке и доступна для других пользователей. Начните со скачивания и запуска [Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest).
@@ -248,7 +248,7 @@ public IActionResult About()
 
 **Теперь у вас есть метод быстрой итерации кода и отладки непосредственно в Kubernetes**. Далее вы узнаете, как создать и вызвать второй контейнер.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Узнайте больше о разработке с использованием нескольких служб](multi-service-netcore.md)

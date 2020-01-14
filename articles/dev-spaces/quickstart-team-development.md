@@ -3,15 +3,15 @@ title: Коллективная разработка в Kubernetes
 services: azure-dev-spaces
 ms.date: 04/25/2019
 ms.topic: quickstart
-description: Коллективная разработка в Kubernetes с использованием контейнеров и микрослужб Azure
+description: В этом кратком руководстве описано, как выполнить командную разработку Kubernetes с помощью контейнеров и микрослужб, используя Azure Dev Spaces
 keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, service mesh, service mesh routing, kubectl, k8s
 manager: gwallace
-ms.openlocfilehash: 2f3ed0f2a9635488aea509e7816fbe84e1589d14
-ms.sourcegitcommit: 8cf199fbb3d7f36478a54700740eb2e9edb823e8
+ms.openlocfilehash: 396358be63f93fde2ba5ec5f00545708dbfa19d4
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74484026"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75438212"
 ---
 # <a name="quickstart-team-development-on-kubernetes---azure-dev-spaces"></a>Краткое руководство. Коллективная разработка в Kubernetes с использованием Azure Dev Spaces
 
@@ -23,7 +23,7 @@ ms.locfileid: "74484026"
 
 ![Коллективная разработка в Azure Dev Spaces](media/azure-dev-spaces/collaborate-graphic.gif)
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 - Подписка Azure. Если у вас нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free).
 - [Установленный Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest).
@@ -228,7 +228,7 @@ http://dev.gateway.fedcab0987.eus.azds.io/                      Available
 az group delete --name MyResourceGroup --yes --no-wait
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте, каким образом в Azure Dev Spaces можно разрабатывать более сложные приложения в нескольких контейнерах и как упростить совместную разработку, работая с разными версиями или ветвями кода в разных средах.
 

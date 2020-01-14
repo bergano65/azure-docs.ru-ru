@@ -1,29 +1,28 @@
 ---
-title: Руководство по Интеграции единого входа Azure Active Directory с Salesforce | Документация Майкрософт
+title: Руководство. Интеграция единого входа Azure Active Directory с Salesforce | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в приложении Salesforce.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: daveba
+manager: mtillman
 ms.reviewer: barbkess
 ms.assetid: d2d7d420-dc91-41b8-a6b3-59579e043b35
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
-ms.date: 08/13/2019
+ms.date: 12/23/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4d137a96a967e017c67da7dfabf25502de32ba7a
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.openlocfilehash: 71521348c5510696add4399d3046833d3b42193c
+ms.sourcegitcommit: 5925df3bcc362c8463b76af3f57c254148ac63e3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74970046"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75561901"
 ---
-# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-salesforce"></a>Руководство по Интеграции единого входа Azure Active Directory с Salesforce
+# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-salesforce"></a>Руководство. Интеграция единого входа Azure Active Directory с Salesforce
 
 В этом руководстве описано, как интегрировать Salesforce с Azure Active Directory (Azure AD). Интеграция Salesforce с Azure AD обеспечивает следующие возможности.
 
@@ -33,11 +32,11 @@ ms.locfileid: "74970046"
 
 Чтобы узнать больше об интеграции приложений SaaS с Azure AD, прочитайте статью [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы приступить к работе, потребуется следующее:
 
-* подписка Azure AD Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
+* подписка Azure AD; Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
 * Подписка Salesforce с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -70,17 +69,13 @@ ms.locfileid: "74970046"
 Чтобы настроить и проверить единый вход Azure AD в Salesforce выполните действия описанные в стандартных блоках ниже.
 
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-sso)** необходима, чтобы пользователи могли использовать эту функцию.
-    1. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD с помощью пользователя B.Simon.
-    1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить пользователю B.Simon использовать единый вход Azure AD.
-2. **[Настройка единого входа в Salesforce](#configure-salesforce-sso)** необходима для настройки параметров единого входа на стороне приложения.
-    1. **[Создание тестового пользователя Salesforce](#create-salesforce-test-user)** требуется для создания в Salesforce пользователя B.Simon, связанного с представлением этого пользователя в Azure AD.
-3. **[Проверка единого входа](#test-sso)** необходима, чтобы убедиться в корректной работе конфигурации.
+    * **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD с помощью пользователя B.Simon.
+    * **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить пользователю B.Simon использовать единый вход Azure AD.
+1. **[Настройка единого входа в Salesforce](#configure-salesforce-sso)** необходима для настройки параметров единого входа на стороне приложения.
+    * **[Создание тестового пользователя Salesforce](#create-salesforce-test-user)** требуется для создания в Salesforce пользователя B.Simon, связанного с представлением этого пользователя в Azure AD.
+1. **[Проверка единого входа](#test-sso)** необходима, чтобы убедиться в корректной работе конфигурации.
 
 ## <a name="configure-azure-ad-sso"></a>Настройка единого входа Azure AD
-
-В этом разделе описано включение единого входа Azure AD на портале Azure.
-
-Чтобы настроить единый вход Azure AD в Salesforce, выполните следующие действия.
 
 Выполните следующие действия, чтобы включить единый вход Azure AD на портале Azure.
 
@@ -90,9 +85,9 @@ ms.locfileid: "74970046"
 
    ![Правка базовой конфигурации SAML](common/edit-urls.png)
 
-1. В разделе **Базовая конфигурация SAML** выполните приведенные ниже действия.
+1. На странице **Базовая конфигурация SAML** введите значения следующих полей.
 
-    a. В текстовом поле **URL-адрес для входа** введите значение в следующем формате:
+    а. В текстовом поле **URL-адрес для входа** введите значение в следующем формате:
 
     Учетная запись предприятия: `https://<subdomain>.my.salesforce.com`
 
@@ -107,7 +102,7 @@ ms.locfileid: "74970046"
     > [!NOTE]
     > Эти значения приведены для примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Чтобы получить их, обратитесь в [службу поддержки клиентов Salesforce](https://help.salesforce.com/support).
 
-1. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Скачать**, чтобы скачать нужный вам **XML метаданных федерации**, и сохраните его на компьютере.
+1. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** найдите элемент **XML метаданных федерации** и выберите **Скачать**, чтобы скачать сертификат и сохранить его на компьютере.
 
     ![Ссылка для скачивания сертификата](common/metadataxml.png)
 
@@ -126,9 +121,6 @@ ms.locfileid: "74970046"
    1. В поле **Имя пользователя** введите username@companydomain.extension. Например, `B.Simon@contoso.com`.
    1. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
    1. Нажмите кнопку **Создать**.
-   
-    > [!NOTE]
-    > Атрибуты пользователя Salesforce чувствительны к регистру при выполнении проверки SAML.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -150,48 +142,56 @@ ms.locfileid: "74970046"
 
 ## <a name="configure-salesforce-sso"></a>Настройка единого входа Salesforce
 
-1. Откройте новую вкладку в браузере и выполните вход с учетной записью администратора Salesforce.
+1. Для автоматизации настройки в Salesforce необходимо установить **Расширение браузера "Безопасный вход в мои приложения"** , щелкнув **Установить расширение**.
 
-2. Щелкните **Setup** (Настройка) под **значком параметров** в правом верхнем углу страницы.
+    ![Расширение "Мои приложения"](common/install-myappssecure-extension.png)
+
+1. Чтобы перейти к приложению Salesforce после добавления расширения в браузер, щелкните **Настройка Salesforce**. После этого укажите учетные данные администратора для входа в Salesforce. Расширение браузера автоматически настроит приложение и автоматизирует шаги 3–13.
+
+    ![Настройка конфигурации](common/setup-sso.png)
+
+1. Если необходимо вручную настроить Salesforce, откройте новое окно веб-браузера, зайдите на сайт компании Salesforce с правами администратора и выполните следующие действия.
+
+1. Щелкните **Setup** (Настройка) под **значком параметров** в правом верхнем углу страницы.
 
     ![Настройка единого входа](./media/salesforce-tutorial/configure1.png)
 
-3. В области навигации прокрутите вниз до элемента **Settings** (Параметры) и щелкните **Identity** (Удостоверение), чтобы развернуть соответствующий раздел. Затем щелкните **Параметры единого входа**.
+1. В области навигации прокрутите вниз до элемента **Settings** (Параметры) и щелкните **Identity** (Удостоверение), чтобы развернуть соответствующий раздел. Затем щелкните **Параметры единого входа**.
 
     ![Настройка единого входа](./media/salesforce-tutorial/sf-admin-sso.png)
 
-4. На странице **Single Sign-On Settings** (Параметры единого входа) нажмите кнопку **Edit** (Изменить).
+1. На странице **Single Sign-On Settings** (Параметры единого входа) нажмите кнопку **Edit** (Изменить).
 
     ![Настройка единого входа](./media/salesforce-tutorial/sf-admin-sso-edit.png)
 
     > [!NOTE]
     > Если не удается включить параметры единого входа для своей учетной записи Salesforce, возможно, вам придется обратиться за помощью в [службу поддержки Salesforce](https://help.salesforce.com/support).
 
-5. Выберите **SAML Enabled** (SAML включен), а затем щелкните **Save** (Сохранить).
+1. Выберите **SAML Enabled** (SAML включен), а затем щелкните **Save** (Сохранить).
 
-      ![Настройка единого входа](./media/salesforce-tutorial/sf-enable-saml.png)
+    ![Настройка единого входа](./media/salesforce-tutorial/sf-enable-saml.png)
 
-6. Чтобы настроить параметры единого входа SAML, щелкните **New from Metadata File** (Создать из файла метаданных).
+1. Чтобы настроить параметры единого входа SAML, щелкните **New from Metadata File** (Создать из файла метаданных).
 
     ![Настройка единого входа](./media/salesforce-tutorial/sf-admin-sso-new.png)
 
-7. Щелкните **Выбрать файл** для отправки XML-файла метаданных, загруженного с портала Azure, и щелкните **Создать**.
+1. Щелкните **Выбрать файл** для отправки XML-файла метаданных, загруженного с портала Azure, и щелкните **Создать**.
 
     ![Настройка единого входа](./media/salesforce-tutorial/xmlchoose.png)
 
-8. На странице **SAML Single Sign-On Settings** (Параметры единого входа SAML) поля заполняются автоматически. Щелкните "Сохранить".
+1. На странице **SAML Single Sign-On Settings** (Параметры единого входа SAML) поля заполняются автоматически. Щелкните "Сохранить".
 
     ![Настройка единого входа](./media/salesforce-tutorial/salesforcexml.png)
 
-9. В области навигации слева в Salesforce щелкните **Company Settings** (Параметры компании), чтобы развернуть соответствующий раздел, и выберите пункт **My Domain** (Мой домен).
+1. В области навигации слева в Salesforce щелкните **Company Settings** (Параметры компании), чтобы развернуть соответствующий раздел, и выберите пункт **My Domain** (Мой домен).
 
     ![Настройка единого входа](./media/salesforce-tutorial/sf-my-domain.png)
 
-10. Прокрутите страницу вниз до раздела **Authentication Configuration** (Конфигурация аутентификации) и нажмите кнопку **Edit** (Изменить).
+1. Прокрутите страницу вниз до раздела **Authentication Configuration** (Конфигурация аутентификации) и нажмите кнопку **Edit** (Изменить).
 
     ![Настройка единого входа](./media/salesforce-tutorial/sf-edit-auth-config.png)
 
-11. В разделе **Authentication Configuration** (Конфигурация аутентификации), установите флажок **AzureSSO** (Единый вход Azure) для параметра **Authentication Service** (Служба проверки подлинности) конфигурации единого входа SAML и нажмите кнопку **Save** (Сохранить).
+1. В разделе **Authentication Configuration** (Конфигурация аутентификации), установите флажок **AzureSSO** (Единый вход Azure) для параметра **Authentication Service** (Служба проверки подлинности) конфигурации единого входа SAML и нажмите кнопку **Save** (Сохранить).
 
     ![Настройка единого входа](./media/salesforce-tutorial/sf-auth-config.png)
 
@@ -228,7 +228,7 @@ ms.locfileid: "74970046"
 
 1. Наконец, после успешного входа на сайт отобразится домашняя страница приложения.
 
-    ![Мобильное приложение "Salesforce"](media/salesforce-tutorial/mobile-app5.png) ![Мобильное приложение "Salesforce"](media/salesforce-tutorial/mobile-app6.png)
+    ![Мобильное приложение Salesforce](media/salesforce-tutorial/mobile-app5.png)![Мобильное приложение Salesforce](media/salesforce-tutorial/mobile-app6.png)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
@@ -236,7 +236,7 @@ ms.locfileid: "74970046"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 
 - [Руководство по настройке Google Apps для автоматической подготовки пользователей](salesforce-provisioning-tutorial.md)
 

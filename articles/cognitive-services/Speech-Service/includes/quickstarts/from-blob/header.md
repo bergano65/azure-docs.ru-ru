@@ -1,25 +1,25 @@
 ---
 title: Краткое руководство. Распознавание речи из файлов, находящихся в хранилище BLOB-объектов, в службе "Речь"
 titleSuffix: Azure Cognitive Services
-description: ПОДЛЕЖИТ УТОЧНЕНИЮ
+description: TBD
 services: cognitive-services
 author: erhopf
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: include
-ms.date: 10/28/2019
+ms.date: 12/17/2019
 ms.author: erhopf
 zone_pivot_groups: programming-languages-set-two
-ms.openlocfilehash: ef61139056ad194d89e2a67cb4ac1b1414a3380b
-ms.sourcegitcommit: 5aefc96fd34c141275af31874700edbb829436bb
+ms.openlocfilehash: 495d2a8e38b58eb3ef1494e6a3a33ee1dc32d049
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74828866"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75468603"
 ---
-В этом кратком руководстве показано, как с помощью [REST API транскрибирования пакетов](../../../batch-transcription.md) распознавать речь в файлах, хранящихся в [большом двоичном объекте SAS](https://aka.ms/ignite2019/speech/placeholder). После выполнения нескольких предварительных требований распознавание речи с помощью REST API займет всего несколько шагов:
-> [!div class="checklist"]
-> * Отправьте запрос JSON в службу "Речь" для начала транскрибирования речи.
-> * Проверьте состояние транскрибирования.
-> * Загрузите результаты транскрибирования по завершении.
+В рамках этого краткого руководства вы будете использовать REST API для распознавания речи из файлов в процессе пакетной обработки, в котором транскрибирование речи выполняется без взаимодействия со стороны пользователя. Таким образом вы получаете простую модель программирования без необходимости в управлении параллелизмом, пользовательскими моделями речи или другими элементами. Она обеспечивает расширенные возможности управления и эффективное использование ресурсов службы речи Azure.
+
+Дополнительные сведения об этих возможностях содержатся в статье [How to use batch transcription](../../../batch-transcription.md) (Использование пакетного транскрибирования). Подробные сведения об API доступны в [документе Swagger](https://westus.cris.ai/swagger/ui/index#/Custom%20Speech%20transcriptions%3A) под заголовком `Custom Speech transcriptins`. 
+
+В следующем кратком руководстве вы сможете ознакомиться с примером использования.

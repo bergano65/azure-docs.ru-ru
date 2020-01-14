@@ -2,30 +2,23 @@
 title: Краткое руководство по использованию службы "Конфигурация приложений Azure" с решением "Функции Azure"| Документация Майкрософт
 description: Краткое руководство по использованию службы "Конфигурация приложений Azure" с решением "Функции Azure".
 services: azure-app-configuration
-documentationcenter: ''
 author: yegu-ms
-manager: balans
-editor: ''
-ms.assetid: ''
 ms.service: azure-app-configuration
-ms.devlang: csharp
 ms.topic: quickstart
-ms.tgt_pltfrm: Azure Functions
-ms.workload: tbd
-ms.date: 02/24/2019
+ms.date: 12/17/2019
 ms.author: yegu
-ms.openlocfilehash: 6329cf0e74bbcf57164afeab5b04e2af4ee43943
-ms.sourcegitcommit: dbde4aed5a3188d6b4244ff7220f2f75fce65ada
+ms.openlocfilehash: 3c8dc27b9d7781a8420fa76e5aeac9637b87c569
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74187217"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75413769"
 ---
 # <a name="quickstart-create-an-azure-functions-app-with-azure-app-configuration"></a>Краткое руководство. Создание приложения Функций Azure с использованием службы "Конфигурация приложений Azure"
 
 В этом кратком руководстве описано, как добавить службу "Конфигурация приложений Azure" в приложение Функций Azure, чтобы обеспечить централизованное хранение всех параметров приложения и управление ими отдельно от кода.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 - Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/).
 - [Visual Studio 2019](https://visualstudio.microsoft.com/vs) с рабочей нагрузкой **разработки Azure**.
@@ -37,7 +30,7 @@ ms.locfileid: "74187217"
 
 6. Выберите **Configuration Explorer** (Обозреватель конфигураций)  >  **+ Создать**, чтобы добавить следующие пары "ключ-значение".
 
-    | Ключ | Значение |
+    | Клавиши | Значение |
     |---|---|
     | TestApp:Settings:FontSize | Данные из конфигурации приложения Azure |
 
@@ -61,7 +54,7 @@ ms.locfileid: "74187217"
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.Configuration.AzureAppConfiguration;
     ```
-3. Добавьте свойство `Configuration` типа `static`, чтобы создать отдельный экземпляр `IConfiguration`. Затем добавьте конструктор `static` для подключения к службе "Конфигурация приложения", вызвав `AddAzureAppConfiguration()`. Конфигурация будет загружена один раз при запуске приложения. Позже один и тот же экземпляр конфигурации будет использоваться для всех вызовов функций.
+3. Добавьте свойство `static` с именем `Configuration`, чтобы создать отдельный экземпляр `IConfiguration`. Затем добавьте конструктор `static` для подключения к службе "Конфигурация приложения", вызвав `AddAzureAppConfiguration()`. Конфигурация будет загружена один раз при запуске приложения. Позже один и тот же экземпляр конфигурации будет использоваться для всех вызовов функций.
 
     ```csharp
     private static IConfiguration Configuration { set; get; }
@@ -94,17 +87,19 @@ ms.locfileid: "74187217"
 
 1. Задайте переменную среды с именем **ConnectionString** и укажите для нее ключ доступа к хранилищу службы "Конфигурация приложений". Если вы используете командную строку Windows, выполните следующую команду и перезапустите командную строку, чтобы изменения вступили в силу:
 
+    ```CLI
         setx ConnectionString "connection-string-of-your-app-configuration-store"
-
+    ```
     Если вы используете Windows PowerShell, выполните следующую команду:
 
+    ```azurepowershell
         $Env:ConnectionString = "connection-string-of-your-app-configuration-store"
-
+    ```
     Если вы используете macOS или Linux, выполните следующую команду:
 
         export ConnectionString='connection-string-of-your-app-configuration-store'
 
-2. Чтобы проверить работу функции, нажмите клавишу F5. Если будет предложено, примите запрос от Visual Studio на скачивание и установку **основных инструментов решения "Функции Azure" (CLI)** . Кроме того, возможно, вам понадобиться включить исключение брандмауэра, чтобы инструменты могли обрабатывать HTTP-запросы.
+2. Чтобы проверить работу функции, нажмите клавишу F5. Если будет предложено, примите запрос от Visual Studio на скачивание и установку **основных инструментов решения "Функции Azure" (CLI)** . Кроме того, возможно, вам понадобиться включить исключение брандмауэра, чтобы инструменты могли обрабатывать HTTP-запросы.
 
 3. Скопируйте URL-адрес функции из выходных данных среды выполнения функций Azure.
 
@@ -118,7 +113,7 @@ ms.locfileid: "74187217"
 
 [!INCLUDE [azure-app-configuration-cleanup](../../includes/azure-app-configuration-cleanup.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом кратком руководстве вы создали хранилище службы "Конфигурация приложений" и использовали его с приложением Функций Azure с помощью [поставщика Конфигурации приложений](https://go.microsoft.com/fwlink/?linkid=2074664). Чтобы узнать, как настроить приложение Функций Azure для динамического обновления параметров конфигурации, перейдите к следующему учебнику.
 

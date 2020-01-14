@@ -3,17 +3,17 @@ title: 'Отладка и итерация в Kubernetes: Visual Studio и .NET 
 services: azure-dev-spaces
 ms.date: 11/13/2019
 ms.topic: quickstart
-description: Быстрая разработка в Kubernetes с использованием контейнеров и микрослужб в Azure
+description: В этом кратком руководстве описано, как использовать Azure Dev Spaces и Visual Studio для отладки и быстрого выполнения итерации приложения .NET Core в службе Azure Kubernetes
 keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, service mesh, service mesh routing, kubectl, k8s
 manager: gwallace
 ms.custom: vs-azure
 ms.workload: azure-vs
-ms.openlocfilehash: a151314bef14e302879f4db0f7c0094779bdcfec
-ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
+ms.openlocfilehash: bfa798027a3905eff29bf1ce11251ce900bd7267
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74325607"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75438244"
 ---
 # <a name="quickstart-debug-and-iterate-on-kubernetes-visual-studio--net-core---azure-dev-spaces"></a>Краткое руководство. Отладка и итерация в Kubernetes: Использование Visual Studio и .NET Core в Azure Dev Spaces
 
@@ -28,7 +28,7 @@ Azure Dev Spaces также позволяет выполнять отладку
 - [Node.js и Visual Studio Code](quickstart-nodejs.md);
 - [.NET Core и Visual Studio Code](quickstart-netcore.md);
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 - Подписка Azure. Если ее нет, можно создать [бесплатную учетную запись](https://azure.microsoft.com/free).
 - Visual Studio 2019 в Windows с установленной рабочей нагрузкой для разработки в Azure. Можно также использовать Visual Studio 2017 в Windows с установленной рабочей нагрузкой для веб-разработки и [Средствами Visual Studio для Kubernetes](https://aka.ms/get-vsk8stools). Если среда Visual Studio не установлена, скачайте ее [отсюда](https://aka.ms/vsdownload?utm_source=mscom&utm_campaign=msdocs).
@@ -54,8 +54,8 @@ Azure Dev Spaces также позволяет выполнять отладку
 
 ## <a name="create-a-new-aspnet-web-app"></a>Создание веб-приложения ASP.NET
 
-1. Откройте Visual Studio.
-1. создание проекта;
+1. Запустите Visual Studio.
+1. Создайте новый проект.
 1. Выберите *Веб-приложение ASP.NET Core* и щелкните *Далее*.
 1. Присвойте проекту имя *webfrontend* и нажмите кнопку *Создать*.
 1. При появлении запроса выберите *Веб-приложение (модель-представление-контроллер)* в качестве шаблона.
@@ -68,11 +68,11 @@ Azure Dev Spaces также позволяет выполнять отладку
 
 ![](media/get-started-netcore-visualstudio/LaunchSettings.png)
 
-В диалоговом окне Azure Dev Spaces выберите соответствующие значения в полях *Подписка* и *Кластер AKS*. Параметр *Space* (Пространство) оставьте значение *по умолчанию* и установите флажок *Общедоступные*. Последовательно выберите *ОК*.
+В диалоговом окне Azure Dev Spaces выберите соответствующие значения в полях *Подписка* и *Кластер AKS*. Параметр *Space* (Пространство) оставьте значение *по умолчанию* и установите флажок *Общедоступные*. Нажмите кнопку *ОК*.
 
 ![](media/get-started-netcore-visualstudio/Azure-Dev-Spaces-Dialog.png)
 
-При этом ваша служба будет развернута в пространстве разработки *по умолчанию* с общедоступным URL-адресом. Если выбран кластер, который еще не был настроен для работы с Azure Dev Spaces, вы увидите сообщение с вопросом, хотите ли вы настроить его. Последовательно выберите *ОК*.
+При этом ваша служба будет развернута в пространстве разработки *по умолчанию* с общедоступным URL-адресом. Если выбран кластер, который еще не был настроен для работы с Azure Dev Spaces, вы увидите сообщение с вопросом, хотите ли вы настроить его. Нажмите кнопку *ОК*.
 
 ![](media/get-started-netcore-visualstudio/Add-Azure-Dev-Spaces-Resource.png)
 
@@ -128,7 +128,7 @@ ViewData["Message"] = "Your application description page in Azure.";
 az group delete --name MyResourceGroup --yes --no-wait
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Работа с несколькими контейнерами и командной разработкой](multi-service-netcore-visualstudio.md)

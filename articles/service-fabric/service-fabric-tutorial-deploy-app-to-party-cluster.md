@@ -1,32 +1,23 @@
 ---
-title: Развертывание приложения Service Fabric в кластер в Azure | Документы Майкрософт
-description: Сведения о развертывании приложения в кластере из Visual Studio.
-services: service-fabric
-documentationcenter: .net
+title: Развертывание приложения Service Fabric в кластер в Azure
+description: Узнайте, как развернуть существующее приложение в недавно созданном кластере Azure Service Fabric из Visual Studio.
 author: athinanthny
-manager: msfussell
-editor: ''
-ms.assetid: ''
-ms.service: service-fabric
-ms.devlang: dotNet
 ms.topic: tutorial
-ms.tgt_pltfrm: NA
-ms.workload: NA
 ms.date: 07/22/2019
 ms.author: mikhegn
 ms.custom: mvc
-ms.openlocfilehash: 37c27ae71eddcb5a35b9baeae250bee232c7acb7
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: 9951610732cbb1c5884a7b7e830033f427db0ab1
+ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74213202"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75646013"
 ---
-# <a name="tutorial-deploy-a-service-fabric-application-to-a-cluster-in-azure"></a>Руководство по Развертывание приложения Service Fabric в кластер в Azure
+# <a name="tutorial-deploy-a-service-fabric-application-to-a-cluster-in-azure"></a>Руководство. Развертывание приложения Service Fabric в кластер в Azure
 
 Это руководство представляет собой вторую часть цикла. Здесь показано, как развернуть приложение Azure Service Fabric в новый кластер в Azure.
 
-Из этого руководства вы узнаете, как выполнять следующие задачи:
+В этом руководстве описано следующее.
 > [!div class="checklist"]
 > * Создание кластера.
 > * Развертывание приложения на удаленный кластер с помощью Visual Studio.
@@ -39,7 +30,7 @@ ms.locfileid: "74213202"
 > * [Настройка CI/CD с помощью Azure Pipelines](service-fabric-tutorial-deploy-app-with-cicd-vsts.md).
 > * [Настройка мониторинга и диагностики приложения](service-fabric-tutorial-monitoring-aspnet.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Перед началом работы с этим руководством выполните следующие действия:
 
@@ -93,7 +84,7 @@ git clone https://github.com/Azure-Samples/service-fabric-dotnet-quickstart
 
 ![Создание кластера](./media/service-fabric-tutorial-deploy-app-to-party-cluster/certificate.png)
 
-На вкладке **Сведения о виртуальной машине** введите **Имя пользователя** и **Пароль** для учетной записи администратора кластера.  Выберите **Образ виртуальной машины** для узлов кластера и **Размер виртуальной машины** для каждого узла кластера.  Выберите вкладку **Advanced** (Дополнительно).
+На вкладке **Сведения о виртуальной машине** введите **Имя пользователя** и **Пароль** для учетной записи администратора кластера.  Выберите **Образ виртуальной машины** для узлов кластера и **Размер виртуальной машины** для каждого узла кластера.  Перейдите на вкладку **Дополнительно**.
 
 ![Создание кластера](./media/service-fabric-tutorial-deploy-app-to-party-cluster/vm-detail.png)
 
@@ -117,7 +108,7 @@ git clone https://github.com/Azure-Samples/service-fabric-dotnet-quickstart
 ![Пример для голосования Service Fabric](./media/service-fabric-tutorial-deploy-app-to-party-cluster/application-screenshot-new-azure.png)
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 В этой части руководства вы узнали, как выполнить следующие действия:
 
 > [!div class="checklist"]

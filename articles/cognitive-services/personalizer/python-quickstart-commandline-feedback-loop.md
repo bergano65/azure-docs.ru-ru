@@ -1,7 +1,7 @@
 ---
-title: Краткое руководство. Клиентская библиотека Персонализатора для Python | Документация Майкрософт
+title: Краткое руководство. Клиентская библиотека Персонализатора для Python
 titleSuffix: Azure Cognitive Services
-description: Приступите к работе с клиентской библиотекой Персонализатора для Python, используя цикл обучения.
+description: В этом руководстве описано как приступить к работе с клиентской библиотекой Персонализатора для Python, используя цикл обучения.
 services: cognitive-services
 author: diberry
 manager: nitinme
@@ -10,12 +10,12 @@ ms.subservice: personalizer
 ms.topic: quickstart
 ms.date: 10/23/2019
 ms.author: diberry
-ms.openlocfilehash: 02c4e0142ed7b3719cc07306f089769c532d6653
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: f999a54c7841437e169205fed2edea1630aa81a2
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73494429"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75378948"
 ---
 # <a name="quickstart-personalizer-client-library-for-python"></a>Краткое руководство. Клиентская библиотека Персонализатора для Python
 
@@ -28,7 +28,7 @@ ms.locfileid: "73494429"
 
 [Пакеты (pypi)](https://pypi.org/project/azure-cognitiveservices-personalizer/)) | [Примеры](https://github.com/Azure-Samples/cognitive-services-personalizer-samples/blob/master/quickstarts/python/sample.py)
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/).
 * [Python 3.x](https://www.python.org/)
@@ -47,7 +47,7 @@ ms.locfileid: "73494429"
 
 ## <a name="create-a-personalizer-azure-resource"></a>Создание ресурса Azure для Персонализатора
 
-Ресурсами Azure, на которые вы подписаны, будет представлено семейство служб Azure Cognitive Services. Создайте ресурс для Персонализатора с помощью [портала Azure](https://portal.azure.com/) или [Azure CLI](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account-cli) на локальном компьютере. Дополнительные сведения см. в статье о [создании ресурса Cognitive Services с помощью портал Azure](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account). Также можно:
+Ресурсами Azure, на которые вы подписаны, будет представлено семейство служб Azure Cognitive Services. Создайте ресурс для Персонализатора с помощью [портала Azure](https://portal.azure.com/) или [Azure CLI](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account-cli) на локальном компьютере. Дополнительные сведения см. в статье о [создании ресурса Cognitive Services с помощью портал Azure](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account). Кроме того, вы можете сделать следующее:
 
 * получить бесплатный [ключ пробной версии](https://azure.microsoft.com/try/cognitive-services) на 7 дней. После регистрации он будет доступен на [веб-сайте Azure](https://azure.microsoft.com/try/cognitive-services/my-apis/).  
 * Просмотреть этот ресурс на [портале Azure](https://portal.azure.com/).
@@ -175,9 +175,9 @@ python sample.py
 Если вы хотите очистить и удалить подписку Cognitive Services, вы можете удалить ресурс или группу ресурсов. При этом удаляются все ресурсы, связанные с ней.
 
 * [Портал](../cognitive-services-apis-create-account.md#clean-up-resources)
-* [Интерфейс командной строки Azure](../cognitive-services-apis-create-account-cli.md#clean-up-resources)
+* [Azure CLI](../cognitive-services-apis-create-account-cli.md#clean-up-resources)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 >[Принцип работы Персонализатора](how-personalizer-works.md)

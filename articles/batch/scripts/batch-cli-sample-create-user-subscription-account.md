@@ -1,6 +1,6 @@
 ---
-title: Пример скрипта Azure CLI для создания учетной записи пакетной службы в режиме подписки пользователя | Документация Майкрософт
-description: Пример скрипта Azure CLI для создания учетной записи пакетной службы в режиме подписки пользователя
+title: Пример скрипта Azure CLI для создания учетной записи пакетной службы в режиме подписки пользователя
+description: Этот скрипт создает учетную запись пакетной службы Azure в режиме подписки пользователя. Эта учетная запись выделяет вычислительные узлы в подписке.
 services: batch
 documentationcenter: ''
 author: laurenhughes
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: multiple
 ms.workload: na
 ms.date: 01/29/2018
 ms.author: lahugh
-ms.openlocfilehash: a22bd7a2ab4e3a9c0d56aa9f4a2137881b6216af
-ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
+ms.openlocfilehash: 55429e0aafe978cfa6861d73b132ebcee26de493
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68322216"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75449708"
 ---
 # <a name="cli-example-create-a-batch-account-in-user-subscription-mode"></a>Пример использования CLI. Создание учетной записи пакетной службы в режиме подписки пользователя
 
@@ -45,7 +45,7 @@ az group delete --name myResourceGroup
 
 Этот скрипт использует следующие команды. Для каждой команды в таблице приведены ссылки на соответствующую документацию.
 
-| Команда | Примечания |
+| Get-Help | Примечания |
 |---|---|
 | [az role assignment create](/cli/azure/role); | Создайте новое назначение роли для пользователя, группы или субъекта-службы. |
 | [az group create](/cli/azure/group#az-group-create) | Создает группу ресурсов, в которой хранятся все ресурсы. |
@@ -55,6 +55,6 @@ az group delete --name myResourceGroup
 | [az batch account login](/cli/azure/batch/account#az-batch-account-login) | Выполняет проверку подлинности с помощью указанной учетной записи пакетной службы для дальнейшего взаимодействия с интерфейсом командной строки.  |
 | [az group delete](/cli/azure/group#az-group-delete) | Удаляет группу ресурсов со всеми вложенными ресурсами. |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об Azure CLI см. в [документации по Azure CLI](/cli/azure).

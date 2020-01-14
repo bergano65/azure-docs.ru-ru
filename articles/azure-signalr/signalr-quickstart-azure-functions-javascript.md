@@ -5,30 +5,28 @@ author: sffamily
 ms.service: signalr
 ms.devlang: javascript
 ms.topic: quickstart
-ms.date: 03/04/2019
+ms.date: 12/14/2019
 ms.author: zhshang
-ms.openlocfilehash: fd935ffda7d16988781d5debce9333ccf2adb16f
-ms.sourcegitcommit: d4c9821b31f5a12ab4cc60036fde00e7d8dc4421
+ms.openlocfilehash: eadeb0f0203868c2a1a37190fdd46e47bf26e8f7
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71709759"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75450263"
 ---
 # <a name="quickstart-create-a-chat-room-with-azure-functions-and-signalr-service-using-javascript"></a>Краткое руководство. Создание чат-комнаты с помощью служб "Функции Azure" и SignalR с использованием JavaScript
 
 Служба Azure SignalR позволяет легко добавлять в приложение функции реального времени. Функции Azure — бессерверная платформа, которая позволяет выполнять код без необходимости управлять какой-либо инфраструктурой. В этом кратком руководстве вы научитесь использовать службы SignalR и "Функции Azure" для построения бессерверного чат-приложения, работающего в режиме реального времени.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Это краткое руководство предназначено для macOS, Windows или Linux.
 
 Скачайте и установите редактор кодов [Visual Studio Code](https://code.visualstudio.com/).
 
-Установите [Основные инструменты службы "Функции Azure" (версии 2)](https://github.com/Azure/azure-functions-core-tools#installing) для локального запуска приложения "Функции Azure".
+Установите [Azure Functions Core Tools](https://github.com/Azure/azure-functions-core-tools#installing) (версии 2 и выше) для локального запуска приложений-функций Azure.
 
-Для работы Функций Azure требуется [Node.js](https://nodejs.org/en/download/) версии 8 или 10.
-
-Чтобы установить расширения основных инструментов Функции Azure в настоящее время требуется, чтобы был установлен [пакет SDK для .NET Core](https://www.microsoft.com/net/download). Тем не менее для создания приложения "Функции Azure" для JavaScript не требуются знания платформы .NET.
+В этом кратком руководстве используется [Node.js](https://nodejs.org/en/download/) 10.x, но другие версии также должны работать. Дополнительные сведения о поддерживаемых версиях Node.js см. в [этой статье](../azure-functions/functions-versions.md#languages).
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
@@ -63,13 +61,7 @@ ms.locfileid: "71709759"
     - **Согласование** использует входную привязку *SignalRConnectionInfo* для генерации и возврата сведений о допустимом соединении.
     - **Сообщения**. Эта функция получает мгновенное сообщение в тексте запроса и использует выходную привязку *SignalR* для рассылки сообщений ко всем подключенным клиентским приложениям.
 
-1. В терминале убедитесь, что вы находитесь в папке *src/chat/javascript*. Используйте основные инструменты "Функции Azure" для установки расширений, необходимых для запуска приложения.
-
-    ```bash
-    func extensions install
-    ```
-
-1. Запустите приложение-функцию.
+1. В терминале убедитесь, что вы находитесь в папке *src/chat/javascript*. Запустите приложение-функцию.
 
     ```bash
     func start
@@ -81,7 +73,7 @@ ms.locfileid: "71709759"
 
 [!INCLUDE [Cleanup](includes/signalr-quickstart-cleanup.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом кратком руководстве вы создали и запустили бессерверное приложение в режиме реального времени в VS Code. Далее узнайте, как развертывать Функции Azure с помощью VS Code.
 

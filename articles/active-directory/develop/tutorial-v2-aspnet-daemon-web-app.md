@@ -13,20 +13,28 @@ ms.devlang: na
 ms.topic: tutorial
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 11/20/2019
+ms.date: 12/10/2019
 ms.author: jmprieur
 ms.custom: aaddev, identityplatformtop40, scenarios:getting-started, languages:ASP.NET
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d130a962c14415c417eedecd6ae26af1131b2e86
-ms.sourcegitcommit: d614a9fc1cc044ff8ba898297aad638858504efa
+ms.openlocfilehash: d884987ed5fb00d4078a38aa37d463a81630ca7e
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74997026"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75423395"
 ---
-# <a name="build-a-multitenant-daemon-that-uses-the-microsoft-identity-platform-endpoint"></a>Создание мультитенантной управляющей программы, которая использует конечную точку платформы удостоверений Майкрософт
+# <a name="tutorial-build-a-multitenant-daemon-that-uses-the-microsoft-identity-platform-endpoint"></a>Руководство. Создание мультитенантной управляющей программы, которая использует конечную точку платформы удостоверений Майкрософт
 
 В этом учебнике вы узнаете, как использовать платформу удостоверений Майкрософт для доступа к данным бизнес-клиентов Майкрософт с использованием продолжительного неинтерактивного процесса. Пример управляющей программы использует [предоставление учетных данных клиента OAuth2](v2-oauth2-client-creds-grant-flow.md) для получения маркера доступа. Затем управляющая программа использует этот маркер для вызова [Microsoft Graph](https://graph.microsoft.io) и доступа к данным организации.
+
+> [!div class="checklist"]
+> * Интеграция управляющей программы с платформой удостоверений Майкрософт.
+> * Непосредственное предоставление разрешений приложению администратором.
+> * Получение маркера доступа для вызова API Microsoft Graph
+> * Вызовите API Microsoft Graph.
+
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 Это приложение создается в формате приложения ASP.NET MVC. Для входа пользователей в нем используется ПО промежуточного слоя OWIN для OpenID Connect.  
 
@@ -42,7 +50,7 @@ ms.locfileid: "74997026"
 
 Дополнительные сведения об основных понятиях, используемых в этом примере, см. в [документации по протоколу учетных данных клиента для конечной точки платформы удостоверений](v2-oauth2-client-creds-grant-flow.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы запустить пример в этом кратком руководстве, вам потребуется:
 
@@ -60,11 +68,11 @@ git clone https://github.com/Azure-Samples/active-directory-dotnet-daemon-v2.git
 
 Вы также можете [скачать пример в виде ZIP-файла](https://github.com/Azure-Samples/ms-identity-aspnet-daemon-webapp/archive/master.zip).
 
-## <a name="register-the-sample-application-with-your-azure-ad-tenant"></a>Регистрация примера приложения в арендаторе Azure AD
+## <a name="register-your-application"></a>Регистрация приложения
 
-Этот пример содержит один проект. Чтобы зарегистрировать его, выполните одно из следующих действий:
+Этот пример содержит один проект. Чтобы зарегистрировать приложение в клиенте Azure AD, вы можете сделать следующее:
 
-- Выполните шаги, описанные в разделах [Регистрация примера приложения в арендаторе Azure AD](#register-the-sample-application-with-your-azure-ad-tenant) и [Настройка примера для использования арендатора Azure AD](#choose-the-azure-ad-tenant).
+- Выполните шаги, описанные в разделах [Регистрация примера приложения в арендаторе Azure AD](#register-your-application) и [Настройка примера для использования арендатора Azure AD](#choose-the-azure-ad-tenant).
 - Используйте скрипты PowerShell, которые:
   - *автоматически* создают приложения Azure AD и связанные объекты (пароли, разрешения и зависимости);
   - изменяют файлы конфигурации проектов Visual Studio.
@@ -208,7 +216,7 @@ git clone https://github.com/Azure-Samples/active-directory-dotnet-daemon-v2.git
 
 ### <a name="create-and-publish-dotnet-web-daemon-v2-to-an-azure-website"></a>Создание и публикация dotnet-web-daemon-v2 на веб-сайте Azure
 
-1. Войдите на [портале Azure](https://portal.azure.com).
+1. Войдите на [портал Azure](https://portal.azure.com).
 1. В нижнем левом углу щелкните **Создать ресурс**.
 1. Выберите **Интернет** > **Веб-приложение** и присвойте веб-сайту имя. Например, **dotnet-web-daemon-v2-contoso.azurewebsites.net**.
 1. Заполните поля **Подписка**, **Группа ресурсов**, а также **Расположение или план службы приложений**- Для параметра **Операционная система** укажите **Windows**, а для параметра **Публиковать** — значение **Код**.
@@ -221,7 +229,7 @@ git clone https://github.com/Azure-Samples/active-directory-dotnet-daemon-v2.git
    1. В обозревателе решений щелкните правой кнопкой мыши проект и выберите **Опубликовать**.
    1. Щелкните **Импортировать профиль** на нижней панели и импортируйте скачанный ранее профиль публикации.
 1. Нажмите кнопку **Настроить**.
-1. На вкладке **Подключение** измените значение URL-адреса назначения, чтобы в нем был указан протокол HTTPS. Например, укажите [https://dotnet-web-daemon-v2-contoso.azurewebsites.net](https://dotnet-web-daemon-v2-contoso.azurewebsites.net). Щелкните **Далее**.
+1. На вкладке **Подключение** измените значение URL-адреса назначения, чтобы в нем был указан протокол HTTPS. Например, укажите [https://dotnet-web-daemon-v2-contoso.azurewebsites.net](https://dotnet-web-daemon-v2-contoso.azurewebsites.net). Выберите **Далее**.
 1. На вкладке **Параметры** убедитесь, что снят флажок **Включение аутентификации в организации**.  
 1. Щелкните **Сохранить**. Щелкните **Опубликовать** на главном экране.
 
@@ -237,7 +245,10 @@ Visual Studio опубликует проект и автоматически о
 1. Сохраните конфигурацию.
 1. Добавьте тот же URL-адрес в список значений в меню **Проверка подлинности** > **URI перенаправления**. При наличии нескольких URL-адресов перенаправления убедитесь, что для каждого из них есть новая запись, в которой указан соответствующий URI службы приложений.
 
-## <a name="community-help-and-support"></a>Справка и поддержка в сообществе
+## <a name="clean-up-resources"></a>Очистка ресурсов
+Удалите ненужный объект приложения, созданный на шаге [Регистрация приложения](#register-your-application).  Чтобы удалить приложение, следуйте инструкциям в разделе[Удаление приложения, созданного вами или организацией](quickstart-remove-app.md#remove-an-application-authored-by-you-or-your-organization).
+
+## <a name="get-help"></a>Получить справку
 
 Для получения поддержки от сообщества используйте [Stack Overflow](http://stackoverflow.com/questions/tagged/msal).
 Задайте вопросы на сайте Stack Overflow и просмотрите имеющиеся проблемы, чтобы узнать, не задавал ли кто-то аналогичные вопросы раньше.
@@ -249,7 +260,7 @@ Visual Studio опубликует проект и автоматически о
 
 Чтобы предоставить рекомендацию, откройте страницу [форума User Voice](https://feedback.azure.com/forums/169401-azure-active-directory).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о различных потоках проверки подлинности и сценариях приложений, поддерживаемых платформой идентификации Майкрософт, см. [здесь](authentication-flows-app-scenarios.md).
 
 Дополнительные сведения см. в следующей документации:
@@ -259,8 +270,8 @@ Visual Studio опубликует проект и автоматически о
 - [Sign in any Azure Active Directory user using the multi-tenant application pattern](howto-convert-app-to-be-multi-tenant.md) (Реализация входа любого пользователя Azure Active Directory с помощью шаблона мультитенантного приложения)
 - [Understand user and admin consent](howto-convert-app-to-be-multi-tenant.md#understand-user-and-admin-consent) (Получение согласия пользователя и администратора)
 - [Application and service principal objects in Azure Active Directory](app-objects-and-service-principals.md) (Объекты приложения и субъекта-службы в Azure Active Directory)
-- [Краткое руководство Регистрация приложения с помощью платформы удостоверений Майкрософт](quickstart-register-app.md)
-- [Краткое руководство Настройка клиентского приложения для доступа к веб-API](quickstart-configure-app-access-web-apis.md)
+- [Краткое руководство. Регистрация приложения с помощью платформы удостоверений Майкрософт](quickstart-register-app.md)
+- [Краткое руководство. Настройка клиентского приложения для доступа к веб-API](quickstart-configure-app-access-web-apis.md)
 - [Public client and confidential client applications](msal-client-applications.md) (Общедоступные клиентские и конфиденциальные клиентские приложения)
 
 Более простой пример мультитенантной консольной управляющей программы вы найдете в статье [Краткое руководство. Получение маркера безопасности и вызов API Microsoft Graph из консольного приложения с помощью удостоверения приложения](quickstart-v2-netcore-daemon.md).

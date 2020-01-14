@@ -1,29 +1,29 @@
 ---
-title: Руководство по Подключение к службе "Анализ текста" с помощью компонента "Подключенные службы" в Visual Studio
+title: Руководство. Подключение к службе "Анализ текста" с помощью компонента "Подключенные службы" в Visual Studio
 titleSuffix: Azure Cognitive Services
-description: В этой статье и других статьях этого цикла приводятся сведения об использовании компонента "Подключенная служба" Visual Studio для службы "Анализ текста".
+description: Узнайте, как использовать компонент "Подключенные службы" Visual Studio для службы "Анализ текста".
 services: cognitive-services
 author: aahill
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: tutorial
-ms.date: 07/24/2019
+ms.date: 12/19/2019
 ms.author: aahi
-ms.openlocfilehash: b094a6917892dfff58c49435de4dc42551be19df
-ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
+ms.openlocfilehash: 317a5f4ae642dc2306ae84c42a042206b9059ba7
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73837192"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75446145"
 ---
-# <a name="tutorial-connect-to-the-text-analytics-service-with-connected-services-in-visual-studio"></a>Руководство по Подключение к службе "Анализ текста" с помощью компонента "Подключенные службы" в Visual Studio
+# <a name="tutorial-connect-to-the-text-analytics-service-with-connected-services-in-visual-studio"></a>Руководство. Подключение к службе "Анализ текста" с помощью компонента "Подключенные службы" в Visual Studio
 
 С помощью службы "Анализ текста" можно извлекать из изображений ценные сведения для классификации и обработки визуальных данных, а функция машинной модерации изображений обеспечит необходимый контроль за вашими службами.
 
 В этой статье и других статьях этого цикла приводятся сведения об использовании компонента "Подключенная служба" Visual Studio для службы "Анализ текста". Эта возможность доступна в Visual Studio 2019 и в более поздних версиях с установленным расширением Cognitive Services.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 - Подписка Azure. Если у вас нет подписки, вы можете зарегистрироваться для использования [бесплатной учетной записи](https://azure.microsoft.com/pricing/free-trial/).
 - Visual Studio 2019 с установленной рабочей нагрузкой "Веб-разработка". [Скачайте это приложение](https://aka.ms/vsdownload?utm_source=mscom&utm_campaign=msdocs).
@@ -265,6 +265,6 @@ ms.locfileid: "73837192"
 2. Выберите **Удалить группу ресурсов**.
 3. В поле **Введите имя группы ресурсов:** введите имя группы ресурсов и выберите **Удалить**.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о службе "Анализ текста" см. в [документации по службе "Анализ текста"](index.yml).

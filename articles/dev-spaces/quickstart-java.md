@@ -3,15 +3,15 @@ title: 'Отладка и итерация в Kubernetes: Visual Studio Code и 
 services: azure-dev-spaces
 ms.date: 07/08/2019
 ms.topic: quickstart
-description: Быстрая разработка в Kubernetes с использованием контейнеров, микрослужб и Java в Azure
+description: В этом кратком руководстве описано, как использовать Azure Dev Spaces и Visual Studio Code для отладки и быстрого выполнения итерации приложения Java в службе Azure Kubernetes
 keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Java, Helm, service mesh, service mesh routing, kubectl, k8s
 manager: gwallace
-ms.openlocfilehash: 5f0f9991ae8718b60221c3f291b6169f677b59c5
-ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
+ms.openlocfilehash: 8050e7793146456894ce86ab89e1563c6282b8df
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74325635"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75438276"
 ---
 # <a name="quickstart-debug-and-iterate-on-kubernetes-with-visual-studio-code-and-java---azure-dev-spaces"></a>Краткое руководство. Отладка и итерация с помощью Visual Studio Code, Java и Azure Dev Spaces в Kubernetes
 
@@ -22,11 +22,11 @@ ms.locfileid: "74325635"
 - Отладка кода в среде разработки с помощью Visual Studio Code.
 
 Azure Dev Spaces также позволяет выполнять отладку и итерацию с помощью:
-- [Node.js и Visual Studio Code](quickstart-nodejs.md)
-- [.NET Core и Visual Studio Code](quickstart-netcore.md)
+- [Node.js и Visual Studio Code](quickstart-nodejs.md);
+- [.NET Core и Visual Studio Code](quickstart-netcore.md);
 - [.NET Core и Visual Studio](quickstart-netcore-visualstudio.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 - Подписка Azure. Если ее нет, можно создать [бесплатную учетную запись](https://azure.microsoft.com/free).
 - [Средство Visual Studio Code](https://code.visualstudio.com/download).
@@ -115,7 +115,7 @@ git clone https://github.com/Azure/dev-spaces
 
 ## <a name="update-code"></a>Обновление кода
 
-Чтобы развернуть обновленную версию службы, обновите любой файл в проекте и повторно выполните *Запуск Java Program (AZDS)* . Например:
+Чтобы развернуть обновленную версию службы, обновите любой файл в проекте и повторно выполните *Запуск Java Program (AZDS)* . Пример:
 
 1. Если ваше приложение по-прежнему работает, нажмите кнопку *Debug* (Отладка), а затем — *Stop Debugging* (Остановить отладку), чтобы остановить ее.
 1. Измените [строку 19 в `src/main/java/com/ms/sample/webfrontend/Application.java`](https://github.com/Azure/dev-spaces/blob/master/samples/java/getting-started/webfrontend/src/main/java/com/ms/sample/webfrontend/Application.java#L19):
@@ -143,7 +143,7 @@ git clone https://github.com/Azure/dev-spaces
 
 ## <a name="update-code-from-visual-studio-code"></a>Обновление кода из Visual Studio Code
 
-Пока служба выполняется в режиме отладки, обновите строку 19 в `src/main/java/com/ms/sample/webfrontend/Application.java`. Например:
+Пока служба выполняется в режиме отладки, обновите строку 19 в `src/main/java/com/ms/sample/webfrontend/Application.java`. Пример:
 ```java
 return "Hello from webfrontend in Azure while debugging!";
 ```
@@ -162,7 +162,7 @@ return "Hello from webfrontend in Azure while debugging!";
 az group delete --name MyResourceGroup --yes --no-wait
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте, как в Azure Dev Spaces можно разрабатывать более сложные приложения в нескольких контейнерах и как упростить совместную разработку, используя разные версии и ветви кода в разных средах.
 

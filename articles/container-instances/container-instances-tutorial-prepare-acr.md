@@ -2,29 +2,29 @@
 title: Учебник. Подготовка реестра контейнеров для развертывания образа
 description: Руководство по службе "Экземпляры контейнеров Azure" — часть 2 из 3. Подготовка реестра контейнеров Azure и отправка образа
 ms.topic: tutorial
-ms.date: 03/21/2018
+ms.date: 12/18/2019
 ms.custom: seodec18, mvc
-ms.openlocfilehash: d8a14acb196b257d96792444fe41e7e9f6b73592
-ms.sourcegitcommit: 85e7fccf814269c9816b540e4539645ddc153e6e
+ms.openlocfilehash: 131ea39b382735423a1edff72774313c4096ea2b
+ms.sourcegitcommit: ec2eacbe5d3ac7878515092290722c41143f151d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74533323"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75552430"
 ---
-# <a name="tutorial-deploy-an-azure-container-registry-and-push-a-container-image"></a>Руководство. Развертывание реестра контейнеров Azure и отправка образа контейнера
+# <a name="tutorial-create-an-azure-container-registry-and-push-a-container-image"></a>Руководство. Создание реестра контейнеров Azure и отправка образа контейнера
 
 Это вторая часть руководства, состоящего из трех частей. [Первая часть](container-instances-tutorial-prepare-app.md) руководства по созданию образа контейнера Docker для веб-приложения Node.js. В этом руководстве мы поместим образ в реестр контейнеров Azure. Если вы еще не создали образ контейнера, вернитесь к первой части этой серии — [руководству по созданию образа контейнера](container-instances-tutorial-prepare-app.md).
 
-Реестр контейнеров Azure является частным реестром Docker в Azure. Из этого руководства вы узнаете, как в своей подписке создать экземпляр реестра контейнеров Azure, а затем, как в него отправить созданный ранее образ контейнера. В этой статье (второй части цикла) вы:
+Реестр контейнеров Azure является частным реестром Docker в Azure. В этом учебнике, второй части серии, вы:
 
 > [!div class="checklist"]
-> * создадите экземпляр реестра контейнеров Azure;
+> * создадите экземпляр Реестра контейнеров Azure с помощью Azure CLI;
 > * добавите образ контейнера для помещения в реестр контейнеров Azure;
 > * отправите образ в реестр.
 
 В следующей статье (последнем руководстве в серии) вы развернете контейнер из частного реестра в службе "Экземпляры контейнеров Azure".
 
-## <a name="before-you-begin"></a>Перед началом работы
+## <a name="before-you-begin"></a>Перед началом
 
 [!INCLUDE [container-instances-tutorial-prerequisites](../../includes/container-instances-tutorial-prerequisites.md)]
 
@@ -41,16 +41,15 @@ az group create --name myResourceGroup --location eastus
 После создания группы ресурсов создайте реестр контейнеров Azure с помощью команды [az acr create][az-acr-create]. Имя реестра контейнеров должно быть уникальным в пределах Azure и содержать от 5 до 50 буквенно-цифровых знаков. Замените `<acrName>` уникальным именем реестра.
 
 ```azurecli
-az acr create --resource-group myResourceGroup --name <acrName> --sku Basic --admin-enabled true
+az acr create --resource-group myResourceGroup --name <acrName> --sku Basic
 ```
 
 Ниже приведен пример выходных данных для нового реестра контейнеров Azure с именем *mycontainerregistry082* (показаны в сокращенном виде).
 
 ```console
-$ az acr create --resource-group myResourceGroup --name mycontainerregistry082 --sku Basic --admin-enabled true
+$ az acr create --resource-group myResourceGroup --name mycontainerregistry082 --sku Basic
 ...
 {
-  "adminUserEnabled": true,
   "creationDate": "2018-03-16T21:54:47.297875+00:00",
   "id": "/subscriptions/<Subscription ID>/resourceGroups/myResourceGroup/providers/Microsoft.ContainerRegistry/registries/mycontainerregistry082",
   "location": "eastus",
@@ -119,7 +118,7 @@ REPOSITORY          TAG       IMAGE ID        CREATED           SIZE
 aci-tutorial-app    latest    5c745774dfa9    39 minutes ago    68.1 MB
 ```
 
-Добавьте к образу *aci-tutorial-app* тег loginServer реестра контейнеров. Также добавьте тег `:v1` в конец имени образа, чтобы указать номер версии образа. Замените `<acrLoginServer>` полученным ранее результатом выполненной команды [az acr show][az-acr-show].
+Добавьте к образу *aci-tutorial-app* тег сервера входа реестра контейнеров. Также добавьте тег `:v1` в конец имени образа, чтобы указать номер версии образа. Замените `<acrLoginServer>` полученным ранее результатом выполненной команды [az acr show][az-acr-show].
 
 ```bash
 docker tag aci-tutorial-app <acrLoginServer>/aci-tutorial-app:v1
@@ -164,7 +163,7 @@ v1: digest: sha256:ed67fff971da47175856505585dcd92d1270c3b37543e8afd46014d328f05
 az acr repository list --name <acrName> --output table
 ```
 
-Например:
+Пример:
 
 ```console
 $ az acr repository list --name mycontainerregistry082 --output table
@@ -179,7 +178,7 @@ aci-tutorial-app
 az acr repository show-tags --name <acrName> --repository aci-tutorial-app --output table
 ```
 
-Вы должны увидеть результат, аналогичный приведенному ниже:
+Выходные данные должны иметь следующий вид.
 
 ```console
 $ az acr repository show-tags --name mycontainerregistry082 --repository aci-tutorial-app --output table
@@ -188,12 +187,12 @@ Result
 v1
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом руководстве вы подготовили реестр контейнеров Azure к использованию со службой "Экземпляры контейнеров Azure", а также передали образ контейнера в реестр. Были выполнены следующие действия:
 
 > [!div class="checklist"]
-> * развертывание экземпляра реестра контейнеров Azure;
+> * Создание экземпляра Реестра контейнеров Azure с помощью Azure CLI
 > * добавление тегов к образу контейнера для помещения в реестр контейнеров Azure;
 > * отправка образа в реестр контейнеров Azure.
 

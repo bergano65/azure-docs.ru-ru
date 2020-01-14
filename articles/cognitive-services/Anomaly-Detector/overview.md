@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: anomaly-detector
 ms.topic: overview
-ms.date: 09/05/2019
+ms.date: 12/18/2019
 ms.author: aahi
-ms.openlocfilehash: 706bd9c141b191632acee1c04745d64baaf50ee5
-ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
+ms.openlocfilehash: 05ed7903cafbb265f23ba74a24ee0498be0effe9
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74012059"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75448970"
 ---
 # <a name="what-is-the-anomaly-detector-api"></a>Общие сведения об API Детектора аномалий
 
@@ -25,11 +25,11 @@ API Детектор аномалий позволяет отслеживать 
 
 Использование Детектора аномалий не требует какого-либо предварительного опыта в машинном обучении, а API RESTful позволяет легко интегрировать сервис в ваши приложения и процессы.
 
-## <a name="features"></a>Функции
+## <a name="features"></a>Компоненты
 
 С помощью Детектора аномалий можно автоматически обнаруживать аномалии в данных временных рядов или по мере их появления в режиме реального времени. 
 
-|Функция  |ОПИСАНИЕ  |
+|Компонент  |Description  |
 |---------|---------|
 |Обнаружение аномалий по мере их появления в режиме реального времени. | Обнаружьте аномалии в потоковой передаче данных, используя ранее просмотренные точки данных, чтобы определить, является ли последняя точка аномалией. Эта операция приводит к созданию модели, которая использует отправленные точки данных и определяет, является ли целевая точка аномалией. Путем вызова API с каждой новой сгенерированной точкой данных, можно отслеживать свои данные по мере их создания. |
 |Обнаружение аномалий набора данных в пакетном режиме. | Используйте временной ряд, чтобы обнаружить любые аномалии, которые могут существовать в ваших данных. Эта операция приводит к созданию модели использующей все данные временных рядов, и каждая точка анализируется с помощью одной и той же модели.         |
@@ -41,7 +41,7 @@ API Детектор аномалий позволяет отслеживать 
 Ознакомьтесь с этой [интерактивной демонстрацией](https://aka.ms/adDemo), чтобы понять, как работает Детектор аномалий.
 Чтобы запустить демонстрацию, вам нужно создать ресурс Детектор аномалий и получить ключ API и конечную точку.
 
-## <a name="notebook"></a>Заметки
+## <a name="notebook"></a>Записная книжка
 
 Чтобы узнать, как вызвать API Детектора аномалий, попробуйте использовать эту [Записную книжку Azure](https://aka.ms/adNotebook). Эта Записная книжка Jupyter, размещенная в Интернете, показывает, как отправить API-запрос и визуализировать результат.
 
@@ -72,8 +72,12 @@ API Детектор аномалий - это веб-сервис RESTful, по
 
 ## <a name="algorithms"></a>Алгоритмы
 
-* Дополнительные сведения о внутренних алгоритмах см. в статьях технического блога [Introducing Azure Anomaly Detector API](https://techcommunity.microsoft.com/t5/AI-Customer-Engineering-Team/Introducing-Azure-Anomaly-Detector-API/ba-p/490162) (Общие сведения об API Детектора аномалий Azure) и [Overview of SR-CNN algorithm in Azure Anomaly Detector](https://techcommunity.microsoft.com/t5/AI-Customer-Engineering-Team/Overview-of-SR-CNN-algorithm-in-Azure-Anomaly-Detector/ba-p/982798) (Обзор алгоритма SR-CNN в Детекторе аномалий Azure).
-* Дополнительные сведения о новейших алгоритмах SR-CNN, разработанных корпорацией Майкрософт см. в статье [Служба Детектора аномалий временных рядов в Microsoft](https://arxiv.org/abs/1906.03821) (принятая KDD 2019).
+* Сведения об используемых алгоритмах см. в следующих технических блогах:
+    * [Introducing Azure Anomaly Detector API](https://techcommunity.microsoft.com/t5/AI-Customer-Engineering-Team/Introducing-Azure-Anomaly-Detector-API/ba-p/490162) (Общие сведения об API Детектора аномалий Azure)
+    * [Overview of SR-CNN algorithm in Azure Anomaly Detector](https://techcommunity.microsoft.com/t5/AI-Customer-Engineering-Team/Overview-of-SR-CNN-algorithm-in-Azure-Anomaly-Detector/ba-p/982798) (Общие сведения об алгоритме в Детекторе аномалий Azure).
+
+Дополнительные сведения об алгоритмах SR-CNN, разработанных корпорацией Майкрософт, см. в статье [Time-Series Anomaly Detection Service at Microsoft](https://arxiv.org/abs/1906.03821) (Служба Детектора аномалий временных рядов в корпорации Майкрософт) (принятая KDD 2019).
+
 
 > [!VIDEO https://www.youtube.com/embed/ERTaAnwCarM]
 
@@ -82,8 +86,8 @@ API Детектор аномалий - это веб-сервис RESTful, по
 * Присоединяйтесь к [группе консультантов по Детектору аномалий в Microsoft Teams](https://aka.ms/AdAdvisorsJoin)
 * См. избранное [создаваемое пользователями содержимое](user-generated-content.md)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-* [Краткое руководство Обнаружение аномалий в данных временных рядов с помощью Детектор аномалий API REST](quickstarts/detect-data-anomalies-csharp.md)
+* [Краткое руководство. Обнаружение аномалий в данных временных рядов с помощью Детектор аномалий API REST](quickstarts/detect-data-anomalies-csharp.md)
 * [Онлайн-демонстрация](https://notebooks.azure.com/AzureAnomalyDetection/projects/anomalydetector) API Детектор аномалий
 * Справочник по [Детектор аномалий API REST](https://westus2.dev.cognitive.microsoft.com/docs/services/AnomalyDetector/operations/post-timeseries-entire-detect)

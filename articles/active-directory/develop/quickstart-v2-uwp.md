@@ -8,16 +8,16 @@ ms.service: active-directory
 ms.subservice: develop
 ms.topic: quickstart
 ms.workload: identity
-ms.date: 07/16/2019
+ms.date: 12/12/2019
 ms.author: jmprieur
 ms.custom: aaddev, identityplatformtop40, scenarios:getting-started, languages:UWP
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 996bc35820d35e031056207adeb707a7ea98a763
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: c29aadfde6c0ab01b2e6ed2c9e4bcc59572bef57
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74920435"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75424021"
 ---
 # <a name="quickstart-call-the-microsoft-graph-api-from-a-universal-windows-platform-uwp-application"></a>Краткое руководство. Вызов API Microsoft Graph из приложения для универсальной платформы Windows (UWP)
 
@@ -40,7 +40,7 @@ ms.locfileid: "74920435"
 >
 > ### <a name="option-2-register-and-manually-configure-your-application-and-code-sample"></a>Вариант 2. Регистрация и настройка приложения и примера кода вручную
 > [!div renderon="docs"]
-> #### <a name="step-1-register-your-application"></a>Шаг 1. Регистрация приложения
+> #### <a name="step-1-register-your-application"></a>Шаг 1. Регистрация приложения
 > Чтобы зарегистрировать приложение и добавить сведения о его регистрации в решение, сделайте следующее:
 > 1. Войдите на [портал Azure](https://portal.azure.com) с помощью личной учетной записи Майкрософт либо рабочей или учебной учетной записи.
 > 1. Если учетная запись предоставляет доступ нескольким клиентам, выберите свою учетную запись в правом верхнем углу и нужный клиент Azure AD для этого сеанса портала.
@@ -51,13 +51,12 @@ ms.locfileid: "74920435"
 >      - В разделе **Поддерживаемые типы учетных записей** выберите **Accounts in any organizational directory and personal Microsoft accounts (for example, Skype, Xbox, Outlook.com)** (Учетные записи в любом каталоге организации и личные учетные записи Майкрософт (например, Skype, Xbox, Outlook.com)).
 >      - Выберите **Зарегистрировать**, чтобы создать приложение.
 > 1. В списке страниц приложения выберите **Проверка подлинности**.
-> 1. Разверните раздел **Desktop + devices** (Настольный компьютер и устройства).  (Если раздел **Desktop + devices** (Настольный компьютер и устройства) не отображается, сначала щелкните верхний баннер, чтобы просмотреть краткие сведения об аутентификации)
-> 1. В разделе **URI перенаправления** выберите **Добавить URI**.  Введите **urn:ietf:wg:oauth:2.0:oob**.
+> 1. В разделе **URI перенаправления** | **Предлагаемые URI перенаправления для общедоступных клиентов (мобильные устройства, компьютеры)** выберите **https://login.microsoftonline.com/common/oauth2/nativeclient** .
 > 1. Щелкните **Сохранить**.
 
 > [!div renderon="portal" class="sxs-lookup"]
 > #### <a name="step-1-configure-your-application"></a>Шаг 1. Настройка приложения
-> Для работы примера кода в этом кратком руководстве необходимо добавить URI перенаправления в виде **urn:ietf:wg:oauth:2.0:oob**.
+> Для работы примера кода в этом кратком руководстве необходимо добавить URI перенаправления **https://login.microsoftonline.com/common/oauth2/nativeclient** .
 > > [!div renderon="portal" id="makechanges" class="nextstepaction"]
 > > [Внести это изменение для меня]()
 >
@@ -82,7 +81,7 @@ ms.locfileid: "74920435"
 > > В этом кратком руководстве поддерживается Enter_the_Supported_Account_Info_Here.    
 
 > [!div renderon="docs"]
-> Описание
+> Где:
 > - `Enter_the_Application_Id_here` — идентификатор регистрируемого приложения.
 >
 > > [!TIP]
@@ -124,7 +123,7 @@ PublicClientApp = PublicClientApplicationBuilder.Create(ClientId)
                                                     .Build();
 ```
 
-> |Описание ||
+> |Где: ||
 > |---------|---------|
 > | `ClientId` | **Идентификатор приложения (клиента)** , зарегистрированного на портале Azure. Это значение можно найти на странице приложения **Обзор** на портале Azure. |
 
@@ -146,7 +145,7 @@ authResult = await App.PublicClientApp.AcquireTokenInteractive(scopes)
                       .ExecuteAsync();
 ```
 
-> |Описание||
+> |Где:||
 > |---------|---------|
 > | `scopes` | Содержит запрашиваемые области (такие как `{ "user.read" }` для Microsoft Graph или `{ "api://<Application ID>/access_as_user" }` для пользовательских веб-API). |
 
@@ -161,14 +160,14 @@ authResult = await App.PublicClientApp.AcquireTokenSilent(scopes, firstAccount)
                                       .ExecuteAsync();
 ```
 
-> |Описание ||
+> |Где: ||
 > |---------|---------|
 > | `scopes` | Содержит запрашиваемые области (такие как `{ "user.read" }` для Microsoft Graph или `{ "api://<Application ID>/access_as_user" }` для пользовательских веб-API) |
 > | `firstAccount` | Указывает первую учетную запись пользователя в кэше (MSAL поддерживает нескольких пользователей в одном приложении) |
 
 [!INCLUDE [Help and support](../../../includes/active-directory-develop-help-support-include.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В руководстве по классическому приложению Windows вы найдете пошаговые инструкции по созданию приложений и компонентов, в том числе полное описание того, о чем говорится в этом кратком руководстве.
 

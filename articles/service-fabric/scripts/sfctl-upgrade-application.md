@@ -1,5 +1,5 @@
 ---
-title: Пример сценария для интерфейса командной строки Service Fabric. Обновление приложения в кластере
+title: Обновление приложения в кластере в sfctl
 description: Пример сценария для интерфейса командной строки Service Fabric для установки новой версии приложения. Этот пример устанавливает новую версию развернутого приложения.
 services: service-fabric
 documentationcenter: ''
@@ -14,14 +14,14 @@ ms.topic: sample
 ms.date: 12/06/2017
 ms.author: atsenthi
 ms.custom: ''
-ms.openlocfilehash: e925f4f7b4a3da2d298413feccc94ea742e47f6b
-ms.sourcegitcommit: 18061d0ea18ce2c2ac10652685323c6728fe8d5f
+ms.openlocfilehash: 34f2ae6f3a2ff3adc35794d6e7dfd682640c646b
+ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69034713"
+ms.lasthandoff: 01/02/2020
+ms.locfileid: "75614729"
 ---
-# <a name="add-an-application-certificate-to-a-service-fabric-cluster"></a>Добавление сертификата приложения в кластер Service Fabric
+# <a name="update-an-application-using-the-service-fabric-cli"></a>Обновление приложения с помощью Service Fabric CLI
 
 Этот сценарий передает новую версию существующего приложения, а затем обновляет развернутое приложение с ее помощью.
 
@@ -31,7 +31,7 @@ ms.locfileid: "69034713"
 
 [!code-sh[main](../../../cli_scripts/service-fabric/upgrade-application/upgrade-application.sh "Upload and update an application on a Service Fabric cluster")]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения см. в [документации интерфейса командной строки Service Fabric](../service-fabric-cli.md).
 

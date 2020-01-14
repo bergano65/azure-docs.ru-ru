@@ -1,5 +1,5 @@
 ---
-title: Пример скрипта Azure CLI. Создание виртуальной машины путем подключения управляемого диска в качестве диска ОС
+title: Пример для CLI. Создание виртуальной машины путем подключения управляемого диска в качестве диска ОС
 description: Пример скрипта Azure CLI. Создание виртуальной машины путем подключения управляемого диска в качестве диска ОС
 services: virtual-machines-linux
 documentationcenter: virtual-machines
@@ -16,12 +16,12 @@ ms.workload: infrastructure
 ms.date: 05/10/2017
 ms.author: ramankum
 ms.custom: mvc
-ms.openlocfilehash: 05263df1327eff49d0c9ec84316447ba563695ca
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.openlocfilehash: 1616466619c7c7627106c09de703d02a7c40d248
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74039164"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75458406"
 ---
 # <a name="create-a-virtual-machine-using-an-existing-managed-os-disk-with-cli"></a>Создание виртуальной машины с помощью существующего управляемого диска ОС с использованием CLI
 
@@ -50,11 +50,11 @@ az group delete --name myResourceGroup
 
 Этот скрипт использует следующие команды для получения свойств управляемого диска, его подключения к новой виртуальной машине и создания виртуальной машины. Для каждого элемента в таблице приведены ссылки на документацию по команде.
 
-| Команда | Примечания |
+| Get-Help | Примечания |
 |---|---|
 | [az disk show](https://docs.microsoft.com/cli/azure/disk) | Получает свойства управляемого диска, используя имя диска и имя группы ресурсов. Свойство идентификатора используется для подключения управляемого диска к новой виртуальной машине. |
 | [az vm create](https://docs.microsoft.com/cli/azure/vm) | Создает виртуальную машину с помощью управляемого диска ОС. |
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об Azure CLI см. в [документации по Azure CLI](https://docs.microsoft.com/cli/azure).
 

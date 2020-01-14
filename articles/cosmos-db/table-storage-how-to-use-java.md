@@ -1,5 +1,5 @@
 ---
-title: Как использовать Хранилище таблиц Azure и API таблиц Azure Cosmos DB в Java
+title: Использование хранилища таблиц Azure и API таблиц Azure Cosmos DB в Java
 description: Хранение структурированных данных в облаке с помощью хранилища таблиц Azure или API таблиц Azure Cosmos DB.
 ms.service: cosmos-db
 ms.subservice: cosmosdb-table
@@ -8,12 +8,12 @@ ms.topic: sample
 ms.date: 04/05/2018
 author: wmengmsft
 ms.author: wmeng
-ms.openlocfilehash: 6b8b2d2d035183861f367c9425ec54d1c9babf34
-ms.sourcegitcommit: 8a59b051b283a72765e7d9ac9dd0586f37018d30
+ms.openlocfilehash: 9e5f9d3fbd7fcf12271329ec324b38b03b4dcd7a
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58286556"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75444822"
 ---
 # <a name="how-to-use-azure-table-storage-or-azure-cosmos-db-table-api-from-java"></a>Как использовать в Java хранилище таблиц Azure и API таблиц Azure Cosmos DB
 [!INCLUDE [storage-selector-table-include](../../includes/storage-selector-table-include.md)]
@@ -590,12 +590,12 @@ catch (Exception e)
 ```
 [!INCLUDE [storage-check-out-samples-java](../../includes/storage-check-out-samples-java.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Getting Started with Azure Table Service in Java](https://github.com/Azure-Samples/storage-table-java-getting-started) (Приступая к работе со службой таблиц Azure на языке Java)
 * [Обозреватель хранилищ Microsoft Azure](../vs-azure-tools-storage-manage-with-storage-explorer.md) — это бесплатное автономное приложение от корпорации Майкрософт, позволяющее визуализировать данные из службы хранилища Azure на платформе Windows, macOS и Linux.
-* [Пакет SDK службы хранилища Azure для Java][Azure Storage SDK for Java]
-* [справочнике по пакету sdk для клиента службы хранилища azure][справочнике по пакету sdk для клиента службы хранилища azure]
+* [Пакет SDK для службы хранилища Azure для Java][Azure Storage SDK for Java]
+* [справочнике по пакету SDK для клиента службы хранилища Azure][Azure Storage Client SDK Reference]
 * [REST API службы хранилища Azure][Azure Storage REST API]
 * [Блог рабочей группы службы хранилища Azure][Azure Storage Team Blog]
 

@@ -1,5 +1,5 @@
 ---
-title: Руководство по Azure Cosmos DB. Создание, запрос и просмотр в консоли Apache TinkerPops Gremlin
+title: 'Выполнение запроса на API Gremlin для Azure Cosmos DB с помощью консоли TinkerPop Gremlin: Учебник'
 description: Краткое руководство по созданию вершин, границ и запросов с помощью Gremlin API в Azure Cosmos DB.
 author: luisbosquez
 ms.service: cosmos-db
@@ -7,12 +7,12 @@ ms.subservice: cosmosdb-graph
 ms.topic: quickstart
 ms.date: 07/23/2019
 ms.author: lbosq
-ms.openlocfilehash: 3f25bbbbc8b3f34bdb89ba8797b042826a88ca8d
-ms.sourcegitcommit: 80da36d4df7991628fd5a3df4b3aa92d55cc5ade
+ms.openlocfilehash: b873cdc65ed483836dc4c3cf9904a8fab1d2f09f
+ms.sourcegitcommit: 2c59a05cb3975bede8134bc23e27db5e1f4eaa45
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71815963"
+ms.lasthandoff: 01/05/2020
+ms.locfileid: "75665179"
 ---
 # <a name="quickstart-create-query-and-traverse-an-azure-cosmos-db-graph-database-using-the-gremlin-console"></a>Краткое руководство. Создание, запрос и просмотр в консоли Gremlin графовой базы данных Azure Cosmos DB
 
@@ -33,13 +33,13 @@ Azure Cosmos DB — это глобально распределенная мн
 
 Консоль Gremlin создана на базе Groovy и Java и работает на компьютерах Linux, Mac и Windows. Ее можно скачать с [сайта Apache TinkerPop](https://tinkerpop.apache.org/downloads.html).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Для создания учетной записи Azure Cosmos DB во время работы с этим кратким руководством вам потребуется подписка Azure.
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
-Вам также нужно установить [консоль Gremlin](https://tinkerpop.apache.org/). Используйте версию 3.2.5 или более позднюю. (Чтобы использовать консоль Gremlin в Windows, необходимо установить [среду выполнения Java](https://www.oracle.com/technetwork/java/javase/overview/index.html).)
+Вам также нужно установить [консоль Gremlin](https://tinkerpop.apache.org/downloads.html). **Рекомендуемая версия — 3.4.3** или более ранняя. (Чтобы использовать консоль Gremlin на Windows, необходимо установить [среду выполнения Java](https://www.oracle.com/technetwork/java/javase/overview/index.html)).
 
 ## <a name="create-a-database-account"></a>Создание учетной записи базы данных
 
@@ -53,11 +53,11 @@ Azure Cosmos DB — это глобально распределенная мн
 1. Перед запуском консоли Gremlin создайте или измените файл конфигурации remote-secure.yaml в каталоге `apache-tinkerpop-gremlin-console-3.2.5/conf`.
 2. Укажите *узел*, *порт*, *имя пользователя*, *пароль*, *пул подключений* и *сериализатор* согласно определениям в следующей таблице:
 
-    Параметр|Рекомендуемое значение|ОПИСАНИЕ
+    Параметр|Рекомендуемое значение|Description
     ---|---|---
     Узлы|[*имя_учетной_записи*.**gremlin**.cosmos.azure.com]|Экран должен выглядеть следующим образом. Это значение **Gremlin URI** на странице обзора портала Azure, заключенное в квадратные скобки и без окончания 443/. Примечание. Обязательно используйте значение Gremlin, а **не** универсальный код ресурса (URI), который заканчивается на [*имя_учетной_записи*.documents.azure.com] (его использование может привести к появлению исключения Host did not respond in a timely fashion (Узел не ответил вовремя) при попытке выполнить запросы Gremlin позже). 
     порт|443|Задайте значение 443.
-    Имя пользователя|*Имя пользователя*|Ресурс в формате `/dbs/<db>/colls/<coll>`, где `<db>` — это имя базы данных, а `<coll>` — имя коллекции.
+    username|*Имя пользователя*|Ресурс в формате `/dbs/<db>/colls/<coll>`, где `<db>` — это имя базы данных, а `<coll>` — имя коллекции.
     password|*Значение первичного ключа*| Просмотрите второй снимок экрана ниже. Это первичный ключ, который можно получить на странице "Ключи" на портале Azure в поле "Первичный ключ". Скопируйте значение с помощью кнопки копирования в левой части поля.
     Пул подключений|{enableSsl: true}|Параметр пула подключений для SSL.
     serializer|{ className: org.apache.tinkerpop.gremlin.<br>driver.ser.GraphSONMessageSerializerV2d0,<br> config: { serializeResultToString: true }}|Задайте это значение и удалите все разрывы строк `\n` при вставке значения.
@@ -312,7 +312,7 @@ g.V().drop()
 
 [!INCLUDE [cosmosdb-delete-resource-group](../../includes/cosmos-db-delete-resource-group.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом кратком руководстве вы узнали, как создать учетную запись Azure Cosmos DB, создать граф с помощью обозревателя данных, вершины и границы, а также просмотреть граф с помощью консоли Gremlin. Теперь вы можете создавать более сложные запросы и внедрять эффективную логику обхода графа с помощью Gremlin. 
 

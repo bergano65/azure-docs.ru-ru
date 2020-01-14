@@ -1,19 +1,19 @@
 ---
-title: Пример сценария Azure CLI — получение имени узла, портов и ключей для Кэша Redis для Azure
-description: Пример сценария Azure CLI — получение имени узла, портов и ключей для экземпляра кэша Redis для Azure
+title: Получение имени узла, портов и ключей кэша Redis для Azure — Azure CLI
+description: В этом примере кода Azure CLI показано как получить имя узла, портов и ключей для экземпляра кэша Azure для Redis.
 author: yegu-ms
+ms.author: yegu
 tags: azure-service-management
 ms.service: cache
 ms.devlang: azurecli
 ms.topic: sample
 ms.date: 08/30/2017
-ms.author: yegu
-ms.openlocfilehash: 604ec6de3b95a4bc289176d54d9c7b0a6c42eae6
-ms.sourcegitcommit: 5a8c65d7420daee9667660d560be9d77fa93e9c9
+ms.openlocfilehash: 199c5707e9ecd887af64e271184e151ce0966745
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74122513"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75411302"
 ---
 # <a name="get-the-hostname-ports-and-keys-for-azure-cache-for-redis"></a>Получение имени узла, портов и ключей для кэша Redis для Azure
 
@@ -30,13 +30,13 @@ ms.locfileid: "74122513"
 
 Чтобы получить имя узла, порты и ключи для экземпляра кэша Redis для Azure, в этом сценарии используются приведенные ниже команды. Для каждой команды в таблице приведены ссылки на соответствующую документацию.
 
-| Команда | Примечания |
+| Get-Help | Примечания |
 |---|---|
 | [az redis show](https://docs.microsoft.com/cli/azure/redis) | Извлекает сведения об экземпляре кэша Redis для Azure. |
 | [az redis list-keys](https://docs.microsoft.com/cli/azure/redis) | Извлекает ключи доступа для экземпляра кэша Redis для Azure. |
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об Azure CLI см. в [документации по Azure CLI](https://docs.microsoft.com/cli/azure).
 

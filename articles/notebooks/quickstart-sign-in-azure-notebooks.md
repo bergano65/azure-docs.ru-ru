@@ -1,18 +1,20 @@
 ---
-title: Вход в службу "Записные книжки Azure"
-description: Быстро входите в Записные книжки Azure и настраивайте идентификатор пользователя для получения доступа к сохраненным проектам и совместного использования записных книжек с другими пользователями.
+title: Вход в предварительную версию службы "Записные книжки Azure"
+description: Быстро входите в предварительную версию службы "Записные книжки Azure" и настраивайте идентификатор пользователя для получения доступа к сохраненным проектам и совместного использования записных книжек с другими пользователями.
 ms.topic: quickstart
 ms.date: 04/15/2019
-ms.openlocfilehash: 234703da9662380a59c7673ca3b34a1b01b7dbef
-ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
+ms.openlocfilehash: b6572a7c0b965b2b72916db577b47eff4f1921c0
+ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74277443"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75647022"
 ---
-# <a name="quickstart-sign-in-and-set-a-user-id"></a>Краткое руководство. Вход и настройка идентификатора пользователя
+# <a name="quickstart-sign-in-and-set-a-user-id-for-azure-notebooks-preview"></a>Краткое руководство. Вход и установление идентификатора пользователя для предварительной версии службы "Записные книжки Microsoft Azure"
 
 Несмотря на то что вы всегда можете просмотреть службу "Записные книжки Azure" без входа в систему, вам необходимо войти, чтобы запускать записные книжки, получать доступ к сохраненным проектам и записным книжками и делиться последними.
+
+[!INCLUDE [notebooks-status](../../includes/notebooks-status.md)]
 
 ## <a name="sign-in"></a>Вход
 
@@ -54,7 +56,7 @@ ms.locfileid: "74277443"
 
 ![Расположение команды выхода из системы в Записных книжках Azure](media/accounts/sign-out-command.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Краткое руководство по созданию и совместному использованию записной книжки](quickstart-create-share-jupyter-notebook.md)
+> [Краткое руководство. по созданию и совместному использованию записной книжки](quickstart-create-share-jupyter-notebook.md)

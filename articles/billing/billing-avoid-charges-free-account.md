@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/01/2019
 ms.author: banders
-ms.openlocfilehash: 9f75b630dd26e2cdef009771ad5e09cc3d230449
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: 1b7d08ba25a02334152e661501acf826d6c9bdf7
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74226440"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75449640"
 ---
 # <a name="avoid-charges-with-your-azure-free-account"></a>Экономия благодаря использованию бесплатной учетной записи Azure
 
@@ -41,7 +41,7 @@ ms.locfileid: "74226440"
 
 Срок использования бесплатных служб истекает в конце года. Узнать окончание срока действия бесплатных служб можно на портале Azure.
 
-1. Войдите на [портале Azure](https://portal.azure.com).
+1. Войдите на [портал Azure](https://portal.azure.com).
 
 2. В области навигации слева выберите **Все службы**.
 
@@ -60,5 +60,5 @@ ms.locfileid: "74226440"
 
 Если у вас есть вопросы или вам нужна помощь, [создайте запрос в службу поддержки](https://go.microsoft.com/fwlink/?linkid=2083458).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - [Обновление бесплатной учетной записи Azure](billing-upgrade-azure-subscription.md)

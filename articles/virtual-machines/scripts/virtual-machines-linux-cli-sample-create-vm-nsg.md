@@ -1,6 +1,6 @@
 ---
-title: Пример скрипта Azure CLI. Создание двух виртуальных машин с внутренней и внешней группой безопасности сети
-description: Пример скрипта Azure CLI. Создание двух виртуальных машин с внутренней и внешней группой безопасности сети
+title: 'Пример CLI: создание двух виртуальных машин с внутренней и внешней группой безопасности сети'
+description: Создайте две виртуальные машины с внутренними и внешними группами безопасности сети для защиты сетевого трафика с помощью Azure CLI.
 services: virtual-machines-linux
 documentationcenter: virtual-machines
 author: cynthn
@@ -16,14 +16,14 @@ ms.workload: infrastructure
 ms.date: 02/27/2017
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: 857a2862a7ddf515567f96b2e688e54a957cd3d9
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.openlocfilehash: 3e3d1fe3bf464892934198d06b602a5b8bcafb67
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74039584"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75458389"
 ---
-# <a name="secure-network-traffic-between-virtual-machines"></a>Защита сетевого трафика между виртуальными машинами
+# <a name="secure-network-traffic-between-virtual-machines-using-an-nsg"></a>Защита сетевого трафика между виртуальными машинами с помощью группы безопасности сети
 
 Этот скрипт создает две виртуальные машины и защищает их входящий трафик. Одна виртуальная машина доступна через Интернет. Ее группа безопасности сети настроена таким образом, чтобы разрешать трафик на портах 22 и 80. Вторая виртуальная машина недоступна через Интернет. Ее группа безопасности сети настроена таким образом, чтобы разрешать трафик только из первой виртуальной машины.
 
@@ -47,7 +47,7 @@ az group delete --name myResourceGroup
 
 Для создания группы ресурсов, виртуальной машины и всех связанных ресурсов этот скрипт использует следующие команды. Для каждой команды в таблице приведены ссылки на соответствующую документацию.
 
-| Команда | Примечания |
+| Get-Help | Примечания |
 |---|---|
 | [az group create](https://docs.microsoft.com/cli/azure/group) | Создает группу ресурсов, в которой хранятся все ресурсы. |
 | [az network vnet create](https://docs.microsoft.com/cli/azure/network/vnet) | Создает виртуальную сеть и подсеть Azure. |
@@ -57,7 +57,7 @@ az group delete --name myResourceGroup
 | [az network nsg rule update](https://docs.microsoft.com/cli/azure/network/nsg/rule) | Обновляет правило NSG. В этом примере внутреннее правило обновляется, чтобы разрешить передачу трафика только из интерфейсной подсети. |
 | [az group delete](https://docs.microsoft.com/cli/azure/vm/extension) | Удаляет группу ресурсов со всеми вложенными ресурсами. |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об Azure CLI см. в [документации по Azure CLI](https://docs.microsoft.com/cli/azure).
 

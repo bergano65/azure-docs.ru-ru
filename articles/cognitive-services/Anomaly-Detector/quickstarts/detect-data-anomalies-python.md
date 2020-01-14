@@ -1,7 +1,7 @@
 ---
 title: Краткое руководство. Обнаружение аномалий в пакетном режиме с помощью REST API "Детектор аномалий" и Python | Документация Майкрософт
 titleSuffix: Azure Cognitive Services
-description: API Детектора аномалий используется для обнаружения отклонений в ряде данных как в пакетном режиме, так и при потоковой передаче.
+description: В этом кратком руководстве описано, как использовать API "Детектор аномалий" для обнаружения отклонений в ряде данных как в пакетном режиме, так и при потоковой передаче.
 services: cognitive-services
 author: aahill
 manager: nitinme
@@ -10,12 +10,12 @@ ms.subservice: anomaly-detector
 ms.topic: quickstart
 ms.date: 11/19/2019
 ms.author: aahi
-ms.openlocfilehash: e24436cef11cc07571adb55bca63add5bda783c4
-ms.sourcegitcommit: 8cf199fbb3d7f36478a54700740eb2e9edb823e8
+ms.openlocfilehash: 7cef1c8c1b05c859f9435b06c3096bb983965656
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74483399"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75448869"
 ---
 # <a name="quickstart-detect-anomalies-in-your-time-series-data-using-the-anomaly-detector-rest-api-and-python"></a>Краткое руководство. Обнаружение аномалий в данных временных рядов с использованием REST API Детектора аномалий и Python
 
@@ -28,7 +28,7 @@ ms.locfileid: "74483399"
 
  Хотя это приложение создается на языке Python, API представляет собой веб-службу RESTful, совместимую с большинством языков программирования. Исходный код для этого краткого руководства можно найти на портале [GitHub](https://github.com/Azure-Samples/AnomalyDetector/blob/master/quickstarts/python-detect-anomalies.py).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 - [Python версии 2.x или 3.x](https://www.python.org/downloads/)
 - Конечная точка и ключ Детектора аномалий
@@ -70,15 +70,15 @@ ms.locfileid: "74483399"
 
     [!code-python[request method](~/samples-anomaly-detector/quickstarts/python-detect-anomalies.py?name=request)]
 
-## <a name="detect-anomalies-as-a-batch"></a>Обнаружение аномальных действий в пакетном режиме
+## <a name="detect-anomalies-as-a-batch"></a>Обнаружение аномалий в пакетном режиме
 
-1. Чтобы выполнить пакетное обнаружение данных, создайте метод `detect_batch()`. С помощью конечной точки, URL-адреса, ключа подписки и данных JSON вызовите метод `send_request()`, который был создан ранее.
+1. Чтобы выполнить пакетное обнаружение данных, создайте метод `detect_batch()`. С помощью конечной точки, URL-адреса, ключа подписки и данных JSON вызовите созданный метод `send_request()`.
 
 2. Чтобы отформатировать `json.dumps()`, вызовите его в результате и выведите его в консоль.
 
-3. Если ответ содержит поле `code`, выведите код ошибки и сообщение ошибки.
+3. Если ответ содержит поле `code`, выведите код ошибки и сообщение об ошибке.
 
-4. В противном случае найдите позиции аномалий в наборе данных. Поле ответа `isAnomaly` содержит логическое значение, которое зависит от того, является ли заданная точка данных аномалией. Пройдите по списку, а затем выведите перечень любых `True` значений. Эти значения соответствуют индексу аномальных точек данных, если они были найдены.
+4. В противном случае найдите положения аномалий в наборе данных. Поле ответа `isAnomaly` содержит логическое значение, которое зависит от того, является ли заданная точка данных аномалией. Пройдите по списку, а затем выведите перечень любых `True` значений. Эти значения соответствуют индексу аномальных точек данных, если они были найдены.
 
     [!code-python[detection as a batch](~/samples-anomaly-detector/quickstarts/python-detect-anomalies.py?name=detectBatch)]
 

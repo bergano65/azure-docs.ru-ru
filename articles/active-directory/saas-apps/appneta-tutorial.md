@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с AppNeta Performance Monitor | Документация Майкрософт
+title: Руководство. Интеграция единого входа Azure Active Directory с AppNeta Performance Monitor | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в AppNeta Performance Monitor.
 services: active-directory
 documentationCenter: na
@@ -13,33 +13,31 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 01/17/2019
+ms.date: 11/06/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b6316959ee177fa9e7cf1eb2a371020a054d9a26
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.openlocfilehash: 0ac9e1d32e0280bcf053578aa102cc6fd200a4b2
+ms.sourcegitcommit: 5925df3bcc362c8463b76af3f57c254148ac63e3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73152791"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75561243"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-appneta-performance-monitor"></a>Руководство по Интеграция Azure Active Directory с AppNeta Performance Monitor
+# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-appneta-performance-monitor"></a>Руководство. Интеграция единого входа Azure Active Directory с AppNeta Performance Monitor
 
-В этом руководстве описано, как интегрировать Azure Active Directory (Azure AD) с AppNeta Performance Monitor.
-Интеграция AppNeta Performance Monitor с Azure AD обеспечивает следующие преимущества:
+В этом учебнике описано, как интегрировать Azure Active Directory (Azure AD) с AppNeta Performance Monitor. Интеграция AppNeta Performance Monitor с Azure AD обеспечивает следующие возможности:
 
-* С помощью Azure AD вы можете контролировать доступ к AppNeta Performance Monitor.
-* Вы можете включить автоматический вход пользователей в AppNeta Performance Monitor (единый вход) с учетной записью Azure AD.
-* Вы можете управлять учетными записями централизованно на портале Azure.
+* Контроль доступа к AppNeta Performance Monitor с помощью Azure AD.
+* Автоматический вход пользователей в AppNeta Performance Monitor с использованием учетных записей Azure AD.
+* Централизованное управление учетными записями через портал Azure.
 
-Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
+Чтобы узнать больше об интеграции приложений SaaS с Azure AD, прочитайте статью [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
-Чтобы настроить интеграцию Azure AD с AppNeta Performance Monitor, вам потребуется:
+Чтобы приступить к работе, потребуется следующее:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Azure AD; Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
 * Подписка AppNeta Performance Monitor с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -47,80 +45,65 @@ ms.locfileid: "73152791"
 В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде.
 
 * Приложение AppNeta Performance Monitor поддерживает единый вход, инициируемый **поставщиком услуг**.
+
+
 * Приложение AppNeta Performance Monitor поддерживает **JIT**-подготовку пользователей.
+
+> [!NOTE]
+> Идентификатор этого приложения — фиксированное строковое значение, поэтому в одном клиенте можно настроить только один экземпляр.
+
 
 ## <a name="adding-appneta-performance-monitor-from-the-gallery"></a>Добавление AppNeta Performance Monitor из коллекции.
 
 Чтобы настроить интеграцию AppNeta Performance Monitor с Azure AD, необходимо добавить AppNeta Performance Monitor из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить AppNeta Performance Monitor из коллекции, сделайте следующее.**
+1. Войдите на [портал Azure](https://portal.azure.com) с помощью личной учетной записи Майкрософт либо рабочей или учебной учетной записи.
+1. В области навигации слева выберите службу **Azure Active Directory**.
+1. Перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
+1. Чтобы добавить новое приложение, выберите **Новое приложение**.
+1. В разделе **Добавление из коллекции** в поле поиска введите **AppNeta Performance Monitor**.
+1. Выберите **AppNeta Performance Monitor** на панели результатов, а затем добавьте приложение. Подождите несколько секунд, пока приложение не будет добавлено в ваш клиент.
 
-1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
-    ![Кнопка Azure Active Directory](common/select-azuread.png)
+## <a name="configure-and-test-azure-ad-single-sign-on-for-appneta-performance-monitor"></a>Настройка и проверка единого входа Azure AD для AppNeta Performance Monitor
 
-2. Перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
+Настройте и проверьте единый вход Azure AD в AppNeta Performance Monitor с помощью тестового пользователя **B. Simon**. Для обеспечения работы единого входа необходимо установить связь между пользователем Azure AD и соответствующим пользователем в AppNeta Performance Monitor.
 
-    ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
+Чтобы настроить и проверить единый вход Azure AD в AppNeta Performance Monitor, выполните действия в следующих стандартных блоках:
 
-3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
+1. **[Настройка единого входа Azure AD](#configure-azure-ad-sso)** необходима, чтобы пользователи могли использовать эту функцию.
+    1. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD с помощью пользователя B.Simon.
+    1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить пользователю B.Simon использовать единый вход Azure AD.
+1. **[Настройка единого входа в AppNeta Performance Monitor](#configure-appneta-performance-monitor-sso)** необходима, чтобы настроить параметры единого входа на стороне приложения.
+    1. **[Создание тестового пользователя AppNeta Performance Monitor](#create-appneta-performance-monitor-test-user)** нужно для того, чтобы в AppNeta Performance Monitor существовал пользователь B. Simon, связанный с одноименным пользователем в Azure AD.
+1. **[Проверка единого входа](#test-sso)** необходима, чтобы убедиться в корректной работе конфигурации.
 
-    ![Кнопка "Создать приложение"](common/add-new-app.png)
+## <a name="configure-azure-ad-sso"></a>Настройка единого входа Azure AD
 
-4. В поле поиска введите **AppNeta Performance Monitor**, выберите **AppNeta Performance Monitor** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить приложение.
+Выполните следующие действия, чтобы включить единый вход Azure AD на портале Azure.
 
-     ![AppNeta Performance Monitor в списке результатов](common/search-new-app.png)
+1. На [портале Azure](https://portal.azure.com/) на странице интеграции с приложением **AppNeta Performance Monitor** найдите раздел **Управление** и выберите **Единый вход**.
+1. На странице **Выбрать метод единого входа** выберите **SAML**.
+1. На странице **Настройка единого входа с помощью SAML** щелкните значок "Изменить" (значок пера), чтобы открыть диалоговое окно **Базовая конфигурация SAML** и изменить параметры.
 
-## <a name="configure-and-test-azure-ad-single-sign-on"></a>Настройка и проверка единого входа в Azure AD
+   ![Правка базовой конфигурации SAML](common/edit-urls.png)
 
-В этом разделе описана настройка и проверка единого входа Azure AD в AppNeta Performance Monitor с использованием тестового пользователя **Britta Simon**.
-Чтобы обеспечить единый вход, необходимо установить связь между пользователем Azure AD и соответствующим пользователем в AppNeta Performance Monitor.
+1. На странице **Базовая конфигурация SAML** введите значения следующих полей.
 
-Чтобы настроить и проверить единый вход в Azure AD с AppNeta Performance Monitor, вам потребуется выполнить действия в следующих стандартных блоках.
+    а. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<subdomain>.pm.appneta.com`.
 
-1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
-2. **[Настройка единого входа в AppNeta Performance Monitor](#configure-appneta-performance-monitor-single-sign-on)** необходима, чтобы настроить параметры единого входа на стороне приложения.
-3. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
-4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
-5. **[Создание тестового пользователя AppNeta Performance Monitor](#create-appneta-performance-monitor-test-user)** нужно для того, чтобы в AppNeta Performance Monitor существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
-6. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы проверить работу конфигурации.
-
-### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
-
-В этом разделе описано включение единого входа Azure AD на портале Azure.
-
-Чтобы настроить единый вход Azure AD в AppNeta Performance Monitor, сделайте следующее:
-
-1. На [портале Azure](https://portal.azure.com/) на странице интеграции с приложением **AppNeta Performance Monitor** выберите **Единый вход**.
-
-    ![Ссылка "Настройка единого входа"](common/select-sso.png)
-
-2. В диалоговом окне **Выбрать метод единого входа** выберите режим **SAML/WS-Fed**, чтобы включить единый вход.
-
-    ![Режим выбора единого входа](common/select-saml-option.png)
-
-3. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
-
-    ![Правка базовой конфигурации SAML](common/edit-urls.png)
-
-4. В разделе **Базовая конфигурация SAML** выполните приведенные ниже действия.
-
-    ![Сведения о домене и URL-адресах единого входа для AppNeta Performance Monitor](common/sp-identifier.png)
-
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<subdomain>.pm.appneta.com`.
-
-    b. В текстовом поле **Идентификатор (сущности)** введите значение: `PingConnect`
+    b. В текстовом поле **Идентификатор (сущности)** введите значение следующим образом: `PingConnect`.
 
     > [!NOTE]
     > Значение URL-адреса входа приведено для примера. Вместо него необходимо указать фактический URL-адрес входа. Чтобы получить это значение, свяжитесь со [службой поддержки клиентов AppNeta Performance Monitor](mailto:support@appneta.com). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
-5. Оператор утверждения SAML необходимо передавать приложению AppNeta Performance Monitor в определенном формате. Настройте следующие утверждения для этого приложения. Управлять значениями этих атрибутов можно в разделе **Атрибуты пользователя** на странице интеграции приложения. На странице **Настройка единого входа с помощью SAML** нажмите кнопку **Изменить**, чтобы открыть диалоговое окно **Атрибуты пользователя**.
+1. Приложение AppNeta Performance Monitor ожидает проверочные утверждения SAML в определенном формате, который требует добавить настраиваемые сопоставления атрибутов в вашу конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию.
 
     ![image](common/edit-attribute.png)
 
-6. В разделе **Утверждения пользователя** диалогового окна **Атрибуты пользователя** измените утверждения, щелкнув значок **Изменить**, или добавьте утверждение, нажав кнопку **Добавить новое утверждение**, чтобы настроить атрибут токена SAML, как показано на рисунке выше, и выполните следующие действия. 
+1. В дополнение к описанному выше, приложение AppNeta Performance Monitor ожидает несколько дополнительных атрибутов в ответе SAML, как показано ниже. Эти атрибуты также заранее заполнены, но вы можете изменить их в соответствии со своими требованиями.
 
-    | ИМЯ | Исходный атрибут|
+    | Имя | Исходный атрибут|
     | --------| ----------------|
     | firstName| user.givenname|
     | lastName| user.surname|
@@ -134,101 +117,70 @@ ms.locfileid: "73152791"
     > [!NOTE]
     > **groups** — это группа безопасности в Appneta, которая сопоставлена с **ролью** в Azure AD. Подробные сведения о создании пользовательских ролей в Azure AD см. в [этом](https://docs.microsoft.com/azure/active-directory/active-directory-enterprise-app-role-management) документе.
 
-    a. Щелкните **Добавить новое утверждение**, чтобы открыть диалоговое окно **Управление утверждениями пользователя**.
+    1. Щелкните **Добавить новое утверждение**, чтобы открыть диалоговое окно **Управление утверждениями пользователя**.
 
-    ![image](common/new-save-attribute.png)
+    1. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
 
-    ![image](common/new-attribute-details.png)
+    1. Оставьте пустым поле **Пространство имен**.
 
-    b. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
+    1. В качестве источника выберите **Атрибут**.
 
-    c. Оставьте пустым поле **Пространство имен**.
+    1. В списке **Атрибут источника** введите значение атрибута, отображаемое для этой строки.
 
-    d. В качестве источника выберите **Атрибут**.
+    1. Нажмите кнопку **ОК**.
 
-    д. В списке **Атрибут источника** введите значение атрибута, отображаемое для этой строки.
+    1. Выберите команду **Сохранить**.
 
-    Е. Нажмите кнопку **ОК**.
-
-    ж. Выберите команду **Сохранить**.
-
-7. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Скачать**, чтобы скачать нужный вам **XML метаданных федерации**, и сохраните его на компьютере.
+1. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** найдите элемент **XML метаданных федерации** и выберите **Скачать**, чтобы скачать сертификат и сохранить его на компьютере.
 
     ![Ссылка для скачивания сертификата](common/metadataxml.png)
 
-8. Требуемый URL-адрес можно скопировать из раздела **настройки AppNeta Performance Monitor**.
+1. Требуемый URL-адрес можно скопировать из раздела **Настройка AppNeta Performance Monitor**.
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
-    б) Идентификатор Azure AD.
+В этом разделе описано, как на портале Azure создать тестового пользователя с именем B.Simon.
 
-    в) URL-адрес выхода.
-
-### <a name="configure-appneta-performance-monitor-single-sign-on"></a>Настройка единого входа в AppNeta Performance Monitor
-
-Чтобы настроить единый вход на стороне **AppNeta Performance Monitor**, нужно отправить загруженный файл **XML метаданных федерации** и соответствующие URL-адреса, скопированные на портале Azure, в [службу технической поддержки AppNeta Performance Monitor](mailto:support@appneta.com). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
-
-### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD 
-
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
-
-1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
-
-    ![Ссылки "Пользователи и группы" и "Все пользователи"](common/users.png)
-
-2. В верхней части экрана выберите **Новый пользователь**.
-
-    ![Кнопка "Новый пользователь"](common/new-user.png)
-
-3. В разделе свойств пользователя сделайте следующее:
-
-    ![Диалоговое окно "Пользователь"](common/user-properties.png)
-
-    а. В поле **Имя** введите **BrittaSimon**.
-  
-    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
-    Например BrittaSimon@contoso.com.
-
-    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
-
-    d. Нажмите кнопку **Создать**.
+1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
+1. В верхней части экрана выберите **Новый пользователь**.
+1. В разделе **Свойства пользователя** выполните следующие действия.
+   1. В поле **Имя** введите `B.Simon`.  
+   1. В поле **Имя пользователя** введите username@companydomain.extension. Например, `B.Simon@contoso.com`.
+   1. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
+   1. Нажмите кнопку **Создать**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
-В этом разделе описано, как разрешить пользователю Britta Simon использовать единый вход Azure, предоставив этому пользователю доступ к AppNeta Performance Monitor.
+В этом разделе описано, как разрешить пользователю B. Simon использовать единый вход Azure, предоставив этому пользователю доступ к AppNeta Performance Monitor.
 
-1. На портале Azure последовательно выберите **Корпоративные приложения**, **Все приложения** и **AppNeta Performance Monitor**.
+1. На портале Azure выберите **Корпоративные приложения**, а затем —**Все приложения**.
+1. В списке приложений выберите **AppNeta Performance Monitor**.
+1. На странице "Обзор" приложения найдите раздел **Управление** и выберите **Пользователи и группы**.
 
-    ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
+   ![Ссылка "Пользователи и группы"](common/users-groups-blade.png)
 
-2. В списке приложений выберите **AppNeta Performance Monitor**.
+1. Выберите **Добавить пользователя**, а в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
 
-    ![Ссылка AppNeta Performance Monitor в списке приложений](common/all-applications.png)
+    ![Ссылка "Добавить пользователя"](common/add-assign-user.png)
 
-3. В меню слева выберите **Пользователи и группы**.
+1. В диалоговом окне **Пользователи и группы** выберите **B.Simon** в списке пользователей, а затем в нижней части экрана нажмите кнопку **Выбрать**.
+1. Если ожидается, что в утверждении SAML будет получено какое-либо значение роли, то в диалоговом окне **Выбор роли** нужно выбрать соответствующую роль для пользователя из списка и затем нажать кнопку **Выбрать**, расположенную в нижней части экрана.
+1. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
 
-    ![Ссылка "Пользователи и группы"](common/users-groups-blade.png)
+## <a name="configure-appneta-performance-monitor-sso"></a>Настройка единого входа в AppNeta Performance Monitor
 
-4. Нажмите кнопку **Добавить пользователя**, а затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
-
-    ![Область "Добавление назначения"](common/add-assign-user.png)
-
-5. В диалоговом окне **Пользователи и группы** из списка пользователей выберите **Britta Simon**, а затем в верхней части экрана нажмите кнопку **Выбрать**.
-
-6. Если ожидается, что в утверждении SAML будет получено какое-либо значение роли, то в диалоговом окне **Выбор ролей** нужно выбрать соответствующую роль для пользователя из списка и затем нажать кнопку **Выбрать**, расположенную в нижней части экрана.
-
-7. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
+Чтобы настроить единый вход на стороне **AppNeta Performance Monitor**, нужно отправить загруженный файл **XML метаданных федерации** и соответствующие URL-адреса, скопированные на портале Azure, в [службу технической поддержки AppNeta Performance Monitor](mailto:support@appneta.com). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 ### <a name="create-appneta-performance-monitor-test-user"></a>Создание тестового пользователя в приложении AppNeta Performance Monitor
 
 В рамках этого раздела в AppNeta Performance Monitor создается пользователь с именем Britta Simon. Приложение AppNeta Performance Monitor поддерживает JIT-подготовку пользователей. Эта функция включена по умолчанию. В этом разделе никакие действия с вашей стороны не требуются. Если пользователь еще не существует в AppNeta Performance Monitor, он создается после проверки подлинности.
 
 > [!Note]
-> Если необходимо вручную создать пользователя, обратитесь в  [службу технической поддержки AppNeta Performance Monitor](mailto:support@appneta.com).
+> Если необходимо вручную создать пользователя, обратитесь в [службу поддержки клиентов AppNeta Performance Monitor](mailto:support@appneta.com).
 
-### <a name="test-single-sign-on"></a>Проверка единого входа
+## <a name="test-sso"></a>Проверка единого входа 
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
@@ -236,8 +188,11 @@ ms.locfileid: "73152791"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+
+- [Попробуйте использовать AppNeta Performance Monitor с Azure AD](https://aad.portal.azure.com/)
+

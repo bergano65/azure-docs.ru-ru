@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/04/2019
 ms.author: rkarlin
-ms.openlocfilehash: 4b21d6aa95a38df402cf7a2640467c7a060a7f49
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 3c6fd3de43f80c4cbe8f1f822faebad861c64d64
+ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73496385"
+ms.lasthandoff: 01/02/2020
+ms.locfileid: "75610613"
 ---
 # <a name="connect-data-sources"></a>Подключение источников данных
 
@@ -43,7 +43,8 @@ ms.locfileid: "73496385"
 
 Azure Sentinel поддерживает следующие методы подключения к данным:
 
-- **Службы Майкрософт**.<br> Службы Майкрософт подключены в собственном коде с помощью платформы Azure для готовой интеграции. Следующие решения можно подключить несколькими щелчками мыши.
+- **Интеграция между службами**.<br> Некоторые службы подключены в собственном коде, например службы AWS и Майкрософт. Они используют платформу Azure для готовой интеграции. Следующие решения можно подключить несколькими щелчками мыши:
+    - [Amazon Web Services — CloudTrail](connect-aws.md);
     - [Office 365](connect-office-365.md)
     - [Данные для входа и журналы аудита Azure AD](connect-azure-active-directory.md)
     - [Действия Azure](connect-azure-activity.md)
@@ -93,7 +94,7 @@ Azure Sentinel поддерживает следующие методы подк
 ## <a name="map-data-types-with-azure-sentinel-connection-options"></a>Преобразование типов данных с помощью параметров подключения к Sentinel Azure
 
 
-| **Тип данных** | **Инструкции по подключению** | **Соединитель данных?** | **Комментарии** |
+| **Data type** | **Инструкции по подключению** | **Соединитель данных?** | **Комментарии** |
 |------|---------|-------------|------|
 | AWSCloudTrail | [Подключение AWS](connect-aws.md) | V | |
 | AzureActivity | [Подключение действий Azure](connect-azure-activity.md) и [обзора журналов действий](../azure-monitor/platform/activity-logs-overview.md)| V | |
@@ -127,7 +128,7 @@ Azure Sentinel поддерживает следующие методы подк
 | Barracuda_CL | [Подключение Barracuda](connect-barracuda.md) | V | |
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Чтобы начать работу с Azure Sentinel, вам нужна подписка на Microsoft Azure. Если у вас нет подписки, вы можете зарегистрироваться для получения [бесплатной пробной версии](https://azure.microsoft.com/free/).
 - Узнайте, как [подключить данные к Azure Sentinel](quickstart-onboard.md), и [отслеживайте свои данные и потенциальные угрозы](quickstart-get-visibility.md).

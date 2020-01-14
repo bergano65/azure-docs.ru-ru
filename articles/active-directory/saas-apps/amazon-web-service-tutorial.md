@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция единого входа Azure Active Directory с Amazon Web Services (AWS) | Документация Майкрософт
+title: Руководство. Интеграция единого входа Azure Active Directory с Amazon Web Services (AWS) | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Amazon Web Services (AWS).
 services: active-directory
 documentationCenter: na
@@ -16,14 +16,14 @@ ms.topic: tutorial
 ms.date: 10/25/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f2fea3bca40d8a5783448e68ea89c3b238a0104d
-ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
+ms.openlocfilehash: 758b14a53927e00a5546147f8d67e556b45acc3c
+ms.sourcegitcommit: 2f8ff235b1456ccfd527e07d55149e0c0f0647cc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74074036"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75689775"
 ---
-# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-amazon-web-services-aws"></a>Руководство по Интеграция единого входа Azure Active Directory с Amazon Web Services (AWS)
+# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-amazon-web-services-aws"></a>Руководство. Интеграция единого входа Azure Active Directory с Amazon Web Services (AWS)
 
 В этом руководстве описано, как интегрировать Amazon Web Services (AWS) с Azure Active Directory (Azure AD). Интеграция Amazon Web Services (AWS) с Azure AD обеспечивает следующие возможности.
 
@@ -35,7 +35,7 @@ ms.locfileid: "74074036"
 
 ![Схема связи между Azure AD и AWS](./media/amazon-web-service-tutorial/tutorial_amazonwebservices_image.png)
 
-Вы можете настроить идентификаторы для нескольких экземпляров. Например:
+Вы можете настроить идентификаторы для нескольких экземпляров. Пример:
 
 * `https://signin.aws.amazon.com/saml#1`
 
@@ -54,11 +54,11 @@ ms.locfileid: "74074036"
 > [!Note]
 > Убедитесь, что используется только приложение из коллекции.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы приступить к работе, потребуется следующее:
 
-* подписка Azure AD Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
+* подписка Azure AD; Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
 * Подписка AWS с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -75,9 +75,9 @@ ms.locfileid: "74074036"
 Чтобы настроить интеграцию Amazon Web Services с Azure AD, вам потребуется добавить Amazon Web Services из коллекции в список управляемых приложений SaaS.
 
 1. Войдите на [портал Azure](https://portal.azure.com) с помощью личной учетной записи Майкрософт либо рабочей или учебной учетной записи.
-1. В области навигации слева выберите службу **Azure Active Directory**.
-1. Перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
-1. Чтобы добавить новое приложение, выберите **Новое приложение**.
+1. На портале Azure найдите и выберите **Azure Active Directory**.
+1. В меню обзора Azure Active Directory выберите **Корпоративные приложения** > **Все приложения**.
+1. Чтобы добавить приложение, выберите **Новое приложение**.
 1. В разделе **Добавление из коллекции** в поле поиска введите **Amazon Web Services (AWS)** .
 1. Выберите **Amazon Web Services (AWS)** в области результатов и добавьте это приложение. Подождите несколько секунд, пока приложение не будет добавлено в ваш клиент.
 
@@ -123,7 +123,8 @@ ms.locfileid: "74074036"
 
 В этом разделе описано, как на портале Azure создать тестового пользователя с именем B.Simon.
 
-1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
+1. На портале Azure найдите и выберите **Azure Active Directory**.
+1. В меню обзора Azure Active Directory выберите **Пользователи** > **Все пользователи**.
 1. В верхней части экрана выберите **Новый пользователь**.
 1. В разделе **Свойства пользователя** выполните следующие действия.
    1. В поле **Имя** введите `B.Simon`.  
@@ -135,8 +136,9 @@ ms.locfileid: "74074036"
 
 В этом разделе описано, как включить единый вход в Azure для пользователя B.Simon, предоставив этому пользователю доступ к Amazon Web Services (AWS).
 
-1. На портале Azure выберите **Корпоративные приложения**, а затем —**Все приложения**.
-1. В списке приложений выберите **Amazon Web Services**.
+1. На портале Azure найдите и выберите **Azure Active Directory**.
+1. В меню обзора Azure Active Directory выберите **Корпоративные приложения** > **Все приложения**.
+1. В списке приложений выберите **Amazon Web Services (AWS)** .
 1. На странице "Обзор" приложения найдите раздел **Управление** и выберите **Пользователи и группы**.
 
    ![Ссылка "Пользователи и группы"](common/users-groups-blade.png)
@@ -169,7 +171,7 @@ ms.locfileid: "74074036"
 
     ![Снимок экрана: страница Configure Provider (Настройка поставщика)][14]
 
-    a. В качестве **типа поставщика** выберите **SAML**.
+    а. В качестве **типа поставщика** выберите **SAML**.
 
     b. В поле **Provider Name** (Имя поставщика) введите имя поставщика (например: *WAAD*).
 
@@ -189,7 +191,7 @@ ms.locfileid: "74074036"
 
     ![Снимок экрана: страница Create role (Создать роль).][19]
 
-    a. В разделе **Select type of trusted entity** (Выбор типа доверенной сущности) выберите **SAML 2.0 federation** (Федерация SAML 2.0).
+    а. В разделе **Select type of trusted entity** (Выбор типа доверенной сущности) выберите **SAML 2.0 federation** (Федерация SAML 2.0).
 
     b. В разделе **Choose a SAML 2.0 Provider** (Выбор поставщика SAML 2.0) выберите созданный ранее **поставщик SAML** (например: *WAAD*).
 
@@ -205,7 +207,7 @@ ms.locfileid: "74074036"
 
     ![Снимок экрана: диалоговое окно Review (Обзор)][34]
 
-    a. В поле **Role name** (Имя роли) введите имя роли.
+    а. В поле **Role name** (Имя роли) введите имя роли.
 
     b. В поле **Role description** (Описание роли) введите описание.
 
@@ -231,7 +233,7 @@ ms.locfileid: "74074036"
 
     ![Снимок экрана: страница Create policy (Создание политики) с выделенным пунктом JSON](./media/amazon-web-service-tutorial/policy1.png)
 
-    a. В разделе **Create policy** (Создание политики) щелкните вкладку **JSON**.
+    а. В разделе **Create policy** (Создание политики) щелкните вкладку **JSON**.
 
     b. Добавьте приведенный ниже код JSON в документ политики.
 
@@ -258,7 +260,7 @@ ms.locfileid: "74074036"
 
     ![Снимок экрана: страница Create policy (Создание политики) с выделенными полями Name (Имя) и Description (Описание)](./media/amazon-web-service-tutorial/policy2.png)
 
-    a. В поле **Name** (Имя) введите **AzureAD_SSOUserRole_Policy**.
+    а. В поле **Name** (Имя) введите **AzureAD_SSOUserRole_Policy**.
 
     b. В поле **Description** (Описание) введите текст: **Эта политика позволит получать роли из учетных записей AWS**.
 
@@ -266,7 +268,7 @@ ms.locfileid: "74074036"
 
 17. Создайте учетную запись пользователя в службе IAM AWS.
 
-    a. В консоли IAM AWS выберите **Users** (Пользователи).
+    а. В консоли IAM AWS выберите **Users** (Пользователи).
 
     ![Снимок экрана: консоль IAM AWS с выделенным пунктом Users (Пользователи)](./media/amazon-web-service-tutorial/policy3.png)
 
@@ -288,7 +290,7 @@ ms.locfileid: "74074036"
 
     ![Снимок экрана: раздел Add user (Добавление пользователя)](./media/amazon-web-service-tutorial/adduser2.png)
 
-    a. Щелкните **Attach existing policies directly** (Подключить существующие политики напрямую).
+    а. Щелкните **Attach existing policies directly** (Подключить существующие политики напрямую).
 
     b. Выполните поиск только что созданной политики в разделе фильтра **AzureAD_SSOUserRole_Policy**.
 
@@ -298,7 +300,7 @@ ms.locfileid: "74074036"
 
     ![Снимок экрана: страница Add user (Добавление пользователя) с выделенным пунктом Create user (Создать пользователя)](./media/amazon-web-service-tutorial/adduser3.png)
 
-    a. Проверьте имя пользователя, тип доступа и политику, сопоставленную с пользователем.
+    а. Проверьте имя пользователя, тип доступа и политику, сопоставленную с пользователем.
 
     b. Щелкните **Create user** (Создать пользователя).
 
@@ -306,11 +308,11 @@ ms.locfileid: "74074036"
 
     ![Снимок экрана: раздел Add user (Добавление пользователя)](./media/amazon-web-service-tutorial/adduser4.png)
 
-    a. Скопируйте значения полей **Access key ID** (Идентификатор ключа доступа) и **Secret access key** (Секретный ключ доступа) для этого пользователя.
+    а. Скопируйте значения полей **Access key ID** (Идентификатор ключа доступа) и **Secret access key** (Секретный ключ доступа) для этого пользователя.
 
     b. Введите эти учетные данные в раздел с параметрами подготовки пользователя Azure AD, чтобы получить роли из консоли AWS.
 
-    c. Нажмите кнопку **Закрыть**.
+    c. Выберите **Закрыть**.
 
 ### <a name="how-to-configure-role-provisioning-in-amazon-web-services-aws"></a>Настройка подготовки ролей в Amazon Web Services (AWS)
 
@@ -322,7 +324,7 @@ ms.locfileid: "74074036"
 
     ![Снимок экрана: диалоговое окно "Учетные данные администратора"](./media/amazon-web-service-tutorial/provisioning1.png)
 
-    a. Введите ключ доступа пользователя AWS в поле **Секрет клиента**.
+    а. Введите ключ доступа пользователя AWS в поле **Секрет клиента**.
 
     b. Введите секрет пользователя AWS в поле **Секретный токен**.
 
@@ -351,7 +353,7 @@ ms.locfileid: "74074036"
 
  * В разделе **Подготовка** в подразделе **Сопоставление** отображается сообщение "Идет загрузка...", но никогда не отображаются сопоставления атрибутов. Единственный рабочий процесс подготовки, поддерживаемый сегодня, — импорт ролей из AWS в Azure AD для выбора во время назначения пользователя или группы. Сопоставления атрибутов для этого определены заранее и не настраиваются.
 
- * Раздел **Подготовка** поддерживает ввод только одного набора учетных данных для одного клиента AWS за раз. Все импортированные роли записываются в свойство `appRoles` [объекта `servicePrincipal`](https://docs.microsoft.com/graph/api/resources/serviceprincipal?view=graph-rest-beta) Azure AD для клиента AWS.
+ * Раздел **Подготовка** поддерживает ввод только одного набора учетных данных для одного клиента AWS за раз. Все импортированные роли записываются в свойство `appRoles`[объекта `servicePrincipal`](https://docs.microsoft.com/graph/api/resources/serviceprincipal?view=graph-rest-beta) Azure AD для клиента AWS.
 
    Вы можете добавить несколько клиентов AWS (представленных как `servicePrincipals`) в Azure AD из коллекции для подготовки. При этом существует известная проблема, когда не удается автоматически записывать все импортированные роли из нескольких `servicePrincipals` AWS, используемых для объединения в `servicePrincipal` и включения возможности единого входа.
 

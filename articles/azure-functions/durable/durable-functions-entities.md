@@ -3,14 +3,14 @@ title: Устойчивые сущности — Функции Azure
 description: Узнайте, что такое устойчивые сущности и как их использовать в расширении "Устойчивые функции" для Функций Azure.
 author: cgillum
 ms.topic: overview
-ms.date: 11/02/2019
+ms.date: 12/17/2019
 ms.author: azfuncdf
-ms.openlocfilehash: aa4d1c4bfab349659c42a34ca5a73f676a2ea2b8
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: 8aaa19a9d5bd5d7b2764320d5d91c8a6c010b3c8
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74232929"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75433319"
 ---
 # <a name="entity-functions"></a>Функции сущностей
 
@@ -41,6 +41,7 @@ ms.locfileid: "74232929"
 * **Идентификатор целевой сущности**.
 * **Имя выполняемой операции** в строковом формате. Например, сущность `Counter` может поддерживать операции `add`, `get` или `reset`.
 * **Входные данные для операции** (необязательно), которые передаются в вызываемую операцию. Например, операция add может принимать в качестве входных данных целое число.
+* **Запланированное время* — необязательный параметр, позволяющий указать время доставки операции. Например, для операции можно надежно запланировать выполнение на протяжении нескольких дней в будущем.
 
 Операции могут возвращать результирующее значение или ошибку (например, ошибку JavaScript или исключение .NET). Этот результат или ошибку можно наблюдать из средств оркестрации, которые вызвали эту операцию.
 
@@ -54,7 +55,7 @@ ms.locfileid: "74232929"
 
 **Синтаксис на основе классов**, в котором сущности и операции представлены классами и методами, соответственно. Этот синтаксис позволяет получить более удобочитаемый код и вызывать операции типобезопасным способом. Синтаксис на основе классов представляет собой тонкий слой, реализованный на базе синтаксиса на основе функций, и вы можете применять оба варианта одновременно в одном приложении.
 
-### <a name="example-function-based-syntax---c"></a>Пример: Синтаксис на основе функций: C#
+### <a name="example-function-based-syntax---c"></a>Пример Синтаксис на основе функций: C#
 
 Приведенный ниже код является примером простой сущности `Counter`, реализованной в формате устойчивой функции. Эта функция определяет три операции: `add`, `reset` и `get`, каждая из которых изменяет целочисленное значение состояния.
 
@@ -79,7 +80,7 @@ public static void Counter([EntityTrigger] IDurableEntityContext ctx)
 
 Дополнительные сведения о синтаксисе на основе функций и его использовании см. в [этой статье](durable-functions-dotnet-entities.md#function-based-syntax).
 
-### <a name="example-class-based-syntax---c"></a>Пример: Синтаксис на основе классов: C#
+### <a name="example-class-based-syntax---c"></a>Пример Синтаксис на основе классов: C#
 
 Следующий пример представляет собой эквивалентную реализацию сущности `Counter` с помощью классов и методов.
 
@@ -106,7 +107,7 @@ public class Counter
 
 Дополнительные сведения о синтаксисе на основе классов и его использовании см. в [этой статье](durable-functions-dotnet-entities.md#defining-entity-classes).
 
-### <a name="example-javascript-entity"></a>Пример: Сущность JavaScript
+### <a name="example-javascript-entity"></a>Пример Сущность JavaScript
 
 Устойчивые сущности доступны в JavaScript начиная с версии **1.3.0** пакета npm `durable-functions`. Приведенный ниже код является примером сущности `Counter`, реализованной в виде устойчивой функции на JavaScript.
 
@@ -163,9 +164,9 @@ module.exports = df.entity(function(context) {
 > [!NOTE]
 > Для простоты в этих примерах используется слабо типизированный синтаксис для обращений к сущностям. Как правило, мы рекомендуем [обращаться к сущностям через интерфейсы](durable-functions-dotnet-entities.md#accessing-entities-through-interfaces), так как они обеспечивают дополнительную проверку типов.
 
-### <a name="example-client-signals-an-entity"></a>Пример: сигнал к сущности из клиента
+### <a name="example-client-signals-an-entity"></a>Пример сигнал к сущности из клиента
 
-Чтобы обратиться к сущности из обычных функций Azure, также известных как клиентские функции, используйте [выходную привязку клиента сущности](durable-functions-bindings.md#entity-client). В следующем примере показана функция, активируемая очередью, которая сигнализирует сущностям, использующим эту привязку.
+Для доступа к сущностям из обычной функции Azure, также известной как клиентская функция, используйте [привязку клиента сущности](durable-functions-bindings.md#entity-client). В следующем примере показана функция, активируемая очередью, которая сигнализирует сущностям, использующим эту привязку.
 
 ```csharp
 [FunctionName("AddFromQueue")]
@@ -186,13 +187,13 @@ const df = require("durable-functions");
 module.exports = async function (context) {
     const client = df.getClient(context);
     const entityId = new df.EntityId("Counter", "myCounter");
-    await context.df.signalEntity(entityId, "add", 1);
+    await client.signalEntity(entityId, "add", 1);
 };
 ```
 
 *Сигнализация* означает, что вызов API сущности является односторонним и асинхронным. Клиентская функция не может получить информацию о том, когда сущность обработала операцию. Также клиентская функция не может получить результирующие значения и (или) исключения. 
 
-### <a name="example-client-reads-an-entity-state"></a>Пример: клиент считывает состояние сущности
+### <a name="example-client-reads-an-entity-state"></a>Пример клиент считывает состояние сущности
 
 Клиентские функции могут также запрашивать состояние сущности, как показано в примере ниже:
 
@@ -203,8 +204,8 @@ public static async Task<HttpResponseMessage> Run(
     [DurableClient] IDurableEntityClient client)
 {
     var entityId = new EntityId(nameof(Counter), "myCounter");
-    JObject state = await client.ReadEntityStateAsync<JObject>(entityId);
-    return req.CreateResponse(HttpStatusCode.OK, state);
+    EntityStateResponse<JObject> stateResponse = await client.ReadEntityStateAsync<JObject>(entityId);
+    return req.CreateResponse(HttpStatusCode.OK, stateResponse.EntityState);
 }
 ```
 
@@ -214,13 +215,14 @@ const df = require("durable-functions");
 module.exports = async function (context) {
     const client = df.getClient(context);
     const entityId = new df.EntityId("Counter", "myCounter");
-    return context.df.readEntityState(entityId);
+    const stateResponse = await context.df.readEntityState(entityId);
+    return stateResponse.entityState;
 };
 ```
 
 Запросы о состоянии объектов отправляются в хранилище отслеживания Устойчивых сущностей и возвращают последнее сохраненное состояние сущности. Это состояние всегда является "фиксированным", то есть не может быть временным состоянием на период выполнения операции. Но возвращаемое состояние может быть устаревшим по сравнению с текущим состоянием сущности, сохраненным в памяти. Только оркестрации могут считывать состояние сущности в памяти, как описано в разделе ниже.
 
-### <a name="example-orchestration-signals-and-calls-an-entity"></a>Пример: сигнал и вызов сущности из оркестрации
+### <a name="example-orchestration-signals-and-calls-an-entity"></a>Пример сигнал и вызов сущности из оркестрации
 
 Функции оркестрации могут обращаться к сущностям с помощью API-интерфейсов в [привязке триггера оркестрации](durable-functions-bindings.md#orchestration-trigger). В следующем примере кода показан вызов функции оркестрации и сигнализация сущности `Counter`.
 
@@ -249,19 +251,18 @@ module.exports = df.orchestrator(function*(context){
 
     // Two-way call to the entity which returns a value - awaits the response
     currentValue = yield context.df.callEntity(entityId, "get");
-    if (currentValue < 10) {
-        // One-way signal to the entity which updates the value - does not await a response
-        yield context.df.signalEntity(entityId, "add", 1);
-    }
 });
 ```
+
+> [!NOTE]
+> JavaScript в настоящее время не поддерживает передачу сигнала сущности из оркестратора. Используйте вместо этого `callEntity`.
 
 Только оркестрации могут вызывать сущности и получать ответ, который может быть либо возвращаемым значением, либо исключением. Клиентские функции, использующие [клиентскую привязку](durable-functions-bindings.md#entity-client), могут сигнализировать только сущностям.
 
 > [!NOTE]
 > Вызов сущности из функции оркестрации аналогичен вызову [функции действия](durable-functions-types-features-overview.md#activity-functions) из функции оркестрации. Основное отличие заключается в том, что функции сущностей являются устойчивыми объектами с адресом (идентификатор сущности). Функции сущностей поддерживают указание имени операции. Функции действий, с другой стороны, не имеют состояния и концепции использования системы.
 
-### <a name="example-entity-signals-an-entity"></a>Пример: сигнал к сущности из сущности
+### <a name="example-entity-signals-an-entity"></a>Пример сигнал к сущности из сущности
 
 Функция сущности может отправлять сигналы сущностям (в том числе сама себе) при выполнении любой операции.
 Например, мы можем изменить представленный выше пример сущности `Counter` так, чтобы она отправляла некоторой сущности-наблюдателю сигнал о достижении заданной отметки, когда значение счетчика будет равно 100.
@@ -294,7 +295,7 @@ module.exports = df.orchestrator(function*(context){
 
 Иногда приходится координировать операции между несколькими сущностями. Например, в приложении для банковских операций могут быть сущности, представляющие отдельные банковские счета. При передаче средств из одной учетной записи в другую необходимо убедиться, что на исходном счете имеется достаточно средств, а также что как исходный счет, так и целевой обновляются в транзакционно согласованном виде.
 
-### <a name="example-transfer-funds-c"></a>Пример: передача средств (C#)
+### <a name="example-transfer-funds-c"></a>Пример передача средств (C#)
 
 Следующий пример кода перемещает средства между двумя сущностями счетов с помощью функции оркестрации. Для координации обновлений сущностей необходимо использовать метод `LockAsync`, чтобы создать _критическую секцию_ в оркестрации:
 
@@ -375,7 +376,7 @@ public static async Task<bool> TransferFundsAsync(
 
 ## <a name="comparison-with-virtual-actors"></a>Сравнение с виртуальными субъектами
 
-Многие из функций Устойчивых сущностей представляют собой [модель субъектов](https://en.wikipedia.org/wiki/Actor_model). Если вы уже знакомы с субъектами, вам могут быть знакомы многие из концепций, описанных в этой статье. Устойчивые сущности очень похожи на [виртуальные субъекты](https://research.microsoft.com/projects/orleans/) (зерна), которые известны по [проекту Orleans](http://dotnet.github.io/orleans/). Например:
+Многие из функций Устойчивых сущностей представляют собой [модель субъектов](https://en.wikipedia.org/wiki/Actor_model). Если вы уже знакомы с субъектами, вам могут быть знакомы многие из концепций, описанных в этой статье. Устойчивые сущности очень похожи на [виртуальные субъекты](https://research.microsoft.com/projects/orleans/) (зерна), которые известны по [проекту Orleans](http://dotnet.github.io/orleans/). Пример:
 
 * К устойчивым сущностям можно обращаться с помощью идентификатора сущности.
 * Операции с устойчивыми сущностями выполняются последовательно, по очереди, чтобы предотвратить состояние гонки.
@@ -392,7 +393,7 @@ public static async Task<bool> TransferFundsAsync(
 * Устойчивые сущности можно использовать совместно с устойчивой оркестрацией вместе с поддержкой механизмов распределенной блокировки. 
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Изучить руководство для разработчиков по устойчивым сущностям в .NET](durable-functions-dotnet-entities.md)

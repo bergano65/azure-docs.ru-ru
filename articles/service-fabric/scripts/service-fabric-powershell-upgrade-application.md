@@ -1,6 +1,6 @@
 ---
-title: Пример сценария Azure PowerShell — создание приложения Service Fabric | Документация Майкрософт
-description: Пример сценария Azure PowerShell — создание приложения Service Fabric.
+title: Обновление приложения Service Fabric в Powershell
+description: Пример сценария Azure PowerShell. Создание и мониторинг приложения Azure Service Fabric с помощью Powershell
 services: service-fabric
 documentationcenter: ''
 author: athinanthny
@@ -14,12 +14,12 @@ ms.topic: sample
 ms.date: 01/18/2018
 ms.author: atsenthi
 ms.custom: mvc
-ms.openlocfilehash: 45186f497371b533451ff374e68b38f9a7eebe51
-ms.sourcegitcommit: 18061d0ea18ce2c2ac10652685323c6728fe8d5f
+ms.openlocfilehash: 3a4ef9fad8567eb145d51c6fef61773cc3a00b11
+ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69035488"
+ms.lasthandoff: 01/02/2020
+ms.locfileid: "75614746"
 ---
 # <a name="upgrade-a-service-fabric-application"></a>Обновление приложения Service Fabric
 
@@ -35,7 +35,7 @@ ms.locfileid: "69035488"
 
 Этот скрипт использует следующие команды. Для каждой команды в таблице приведены ссылки на соответствующую документацию.
 
-| Команда | Примечания |
+| Get-Help | Примечания |
 |---|---|
 | [Get-ServiceFabricApplication](/powershell/module/servicefabric/get-servicefabricapplication?view=azureservicefabricps) | Возвращает все приложения в кластер Service Fabric или конкретное приложение.  |
 | [Get-ServiceFabricApplicationUpgrade](/powershell/module/servicefabric/get-servicefabricapplicationupgrade?view=azureservicefabricps) | Возвращает состояние обновления приложения Service Fabric. |
@@ -47,7 +47,7 @@ ms.locfileid: "69035488"
 | [Remove-ServiceFabricApplicationPackage](/powershell/module/servicefabric/remove-servicefabricapplicationpackage?view=azureservicefabricps) | Удаляет пакет приложения Service Fabric из хранилища образов.|
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о модуле Service Fabric PowerShell см. в [документации по Azure PowerShell](/powershell/azure/service-fabric/?view=azureservicefabricps).
 

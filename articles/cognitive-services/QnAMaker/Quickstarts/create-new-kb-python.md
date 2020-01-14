@@ -8,31 +8,31 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: quickstart
-ms.date: 10/01/2019
+ms.date: 12/16/2019
 ms.author: diberry
-ms.openlocfilehash: 9114d491be1ae11623264c3beaf7c26f1fa143de
-ms.sourcegitcommit: 4f3f502447ca8ea9b932b8b7402ce557f21ebe5a
+ms.openlocfilehash: 4aeee7ebf2c96166392d49d218f8ac5de6fe2709
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71803143"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75447583"
 ---
 # <a name="quickstart-create-a-knowledge-base-in-qna-maker-using-python"></a>Краткое руководство. Создание базы знаний в QnA Maker с помощью Python
 
-В этом кратком руководстве описано, как программным способом создать и опубликовать пример базы знаний QnA Maker. Служба QnA Maker автоматически извлекает вопросы и ответы из частично структурированного содержимого, например со страниц с вопросами и ответами, [источников данных](../Concepts/data-sources-supported.md). Модель базы знаний определяется в коде JSON, отправляемом в теле запроса API. 
+В этом кратком руководстве описано, как программным способом создать и опубликовать пример базы знаний QnA Maker. Служба QnA Maker автоматически извлекает вопросы и ответы из частично структурированного содержимого, например со страниц с вопросами и ответами, [источников данных](../Concepts/data-sources-supported.md). Модель базы знаний определяется в коде JSON, отправляемом в теле запроса API.
 
 В этом кратком руководстве вызываются API службы QnA Maker:
-* [Создание базы знаний](https://go.microsoft.com/fwlink/?linkid=2092179).
+* [Создание базы знаний](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/knowledgebase/create).
 * [Получение сведений об операции](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/operations/getdetails).
+
+[Справочная документация](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/knowledgebase) | [Пример на языке Python](https://github.com/Azure-Samples/cognitive-services-qnamaker-python/blob/master/documentation-samples/quickstarts/create-knowledge-base/create-new-knowledge-base-3x.py)
 
 [!INCLUDE [Custom subdomains notice](../../../../includes/cognitive-services-custom-subdomains-note.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * [Python 3.7](https://www.python.org/downloads/).
-* У вас должна быть [служба QnA Maker](../How-To/set-up-qnamaker-service-azure.md). Чтобы получить ключ и конечную точку (включая имя ресурса), щелкните **Быстрый запуск** для ресурса на портале Azure. 
-
-[!INCLUDE [Code is available in Azure-Samples GitHub repo](../../../../includes/cognitive-services-qnamaker-python-repo-note.md)]
+* У вас должна быть [служба QnA Maker](../How-To/set-up-qnamaker-service-azure.md). Чтобы получить ключ и конечную точку (включая имя ресурса), щелкните **Быстрый запуск** для ресурса на портале Azure.
 
 ## <a name="create-a-knowledge-base-python-file"></a>Создание файла базы знаний на Python
 
@@ -46,6 +46,13 @@ ms.locfileid: "71803143"
 
 ## <a name="add-the-required-constants"></a>Добавление необходимых констант
 После указания зависимостей добавьте необходимые константы, чтобы получить доступ к QnA Maker. Замените значения `<your-qna-maker-subscription-key>` и `<your-resource-name>` собственным ключом и именем ресурса QnA Maker.
+
+В верхней части класса Program добавьте необходимые константы для доступа к QnA Maker.
+
+Задайте следующие значения:
+
+* `<your-qna-maker-subscription-key>`. **Ключ** — это строка из 32 символов, которая доступна на странице "Быстрый запуск" ресурса QnA Maker на портале Azure. Это не то же самое, что ключ конечной точки прогнозирования.
+* `<your-resource-name>`. **Имя ресурса** используется для создания URL-адреса конечной точки разработки в формате `https://YOUR-RESOURCE-NAME.cognitiveservices.azure.com`. Это не тот же URL-адрес, который используется для запроса конечной точки прогнозирования.
 
 [!code-python[Add the required constants](~/samples-qnamaker-python/documentation-samples/quickstarts/create-knowledge-base/create-new-knowledge-base-3x.py?range=5-13 "Add the required constants")]
 
@@ -63,11 +70,12 @@ ms.locfileid: "71803143"
 
 ## <a name="add-function-to-create-kb"></a>Добавление функции для создания базы знаний
 
-Добавьте приведенную ниже функцию, чтобы отправить HTTP-запрос POST на создание базы знаний. Этот вызов API возвращает ответ JSON, в заголовке которого в поле **Location** содержится идентификатор операции. С помощью этого идентификатора определите, успешно ли создана база знаний. `Ocp-Apim-Subscription-Key` — это ключ службы QnA Maker, используемый в процессе аутентификации. 
+Добавьте приведенную ниже функцию, чтобы отправить HTTP-запрос POST на создание базы знаний.
+Этот вызов API возвращает ответ JSON, в заголовке которого в поле **Location** содержится идентификатор операции. С помощью этого идентификатора определите, успешно ли создана база знаний. `Ocp-Apim-Subscription-Key` — это ключ службы QnA Maker, используемый в процессе аутентификации.
 
 [!code-python[Add function to create KB](~/samples-qnamaker-python/documentation-samples/quickstarts/create-knowledge-base/create-new-knowledge-base-3x.py?range=48-59 "Add function to create KB")]
 
-Этот вызов API возвращает ответ JSON, который содержит идентификатор операции. С помощью этого идентификатора определите, успешно ли создана база знаний. 
+Этот вызов API возвращает ответ JSON, который содержит идентификатор операции. С помощью этого идентификатора определите, успешно ли создана база знаний.
 
 ```JSON
 {
@@ -85,7 +93,7 @@ ms.locfileid: "71803143"
 
 [!code-python[Add function to check creation status](~/samples-qnamaker-python/documentation-samples/quickstarts/create-knowledge-base/create-new-knowledge-base-3x.py?range=61-67 "Add function to check creation status")]
 
-Этот вызов API возвращает ответ JSON, который содержит состояние операции: 
+Этот вызов API возвращает ответ JSON, который содержит состояние операции:
 
 ```JSON
 {
@@ -97,7 +105,7 @@ ms.locfileid: "71803143"
 }
 ```
 
-Повторяйте вызов до успешного или неудачного выполнения: 
+Повторяйте вызов до успешного или неудачного выполнения:
 
 ```JSON
 {
@@ -111,7 +119,7 @@ ms.locfileid: "71803143"
 ```
 
 ## <a name="add-main-code-block"></a>Добавление основного блока кода
-Следующий цикл периодически запрашивает состояние операции создания до ее завершения. 
+Следующий цикл периодически запрашивает состояние операции создания до ее завершения.
 
 [!code-python[Add main code block](~/samples-qnamaker-python/documentation-samples/quickstarts/create-knowledge-base/create-new-knowledge-base-3x.py?range=70-96 "Add main code block")]
 
@@ -125,9 +133,9 @@ python create-new-knowledge-base-3x.py
 
 Созданную базу знаний вы можете просмотреть на странице [My knowledge bases](https://www.qnamaker.ai/Home/MyServices) (Мои базы знаний) на портале QnA Maker. Выберите имя базы знаний, например QnA Maker FAQ, чтобы просмотреть ее.
 
-[!INCLUDE [Clean up files and KB](../../../../includes/cognitive-services-qnamaker-quickstart-cleanup-resources.md)] 
+[!INCLUDE [Clean up files and KB](../../../../includes/cognitive-services-qnamaker-quickstart-cleanup-resources.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [QnA Maker (V4) REST API Reference](https://go.microsoft.com/fwlink/?linkid=2092179) (Справочник по API REST QnA Maker (V4))

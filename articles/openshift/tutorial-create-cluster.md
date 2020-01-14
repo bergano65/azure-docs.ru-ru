@@ -8,14 +8,14 @@ manager: jeconnoc
 ms.topic: tutorial
 ms.service: container-service
 ms.date: 11/04/2019
-ms.openlocfilehash: 4a09a0fe4aa1f04e665aeb71ebece17a8b368090
-ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
+ms.openlocfilehash: b8ab4362945b84b4337859a1dad03906cc289c99
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73582386"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75378251"
 ---
-# <a name="tutorial-create-an-azure-red-hat-openshift-cluster"></a>Руководство по Создание кластера Azure Red Hat OpenShift
+# <a name="tutorial-create-an-azure-red-hat-openshift-cluster"></a>Руководство. Создание кластера Azure Red Hat OpenShift
 
 Это руководство представляет первую часть цикла. Из него вы узнаете, как создать кластер Microsoft Azure Red Hat OpenShift с помощью Azure CLI, выполнить его масштабирование, а затем удалить, чтобы очистить ресурсы.
 
@@ -30,7 +30,7 @@ ms.locfileid: "73582386"
 > * [Масштабирование кластера Azure Red Hat OpenShift](tutorial-scale-cluster.md)
 > * [Удаление кластера Azure Red Hat OpenShift](tutorial-delete-cluster.md)
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 > [!IMPORTANT]
 > Для этого учебника требуется Azure CLI 2.0.65.
@@ -65,13 +65,13 @@ az login
 CLUSTER_NAME=<cluster name in lowercase>
 ```
 
-Выберите расположение для создания кластера. Список регионов Azure, в которых поддерживается OpenShift в Azure, см. в списке [поддерживаемых регионов](supported-resources.md#azure-regions). Например, `LOCATION=eastus`.
+Выберите расположение для создания кластера. Список регионов Azure, в которых поддерживается OpenShift в Azure, см. в списке [поддерживаемых регионов](supported-resources.md#azure-regions). Например: `LOCATION=eastus`.
 
 ```bash
 LOCATION=<location>
 ```
 
-Присвойте параметру `APPID` значение, которое вы сохранили на шаге 5 процедуры [создания регистрации приложения Azure AD](howto-aad-app-configuration.md#create-an-azure-ad-app-registration).  
+Присвойте параметру `APPID` значение, которое вы сохранили на шаге 5 процедуры [создания регистрации приложения Azure AD](howto-aad-app-configuration.md#create-an-azure-ad-app-registration).
 
 ```bash
 APPID=<app ID value>
@@ -83,13 +83,13 @@ APPID=<app ID value>
 GROUPID=<group ID value>
 ```
 
-Присвойте параметру `SECRET` значение, которое вы сохранили на шаге 8 процедуры [создания секрета клиента](howto-aad-app-configuration.md#create-a-client-secret).  
+Присвойте параметру `SECRET` значение, которое вы сохранили на шаге 8 процедуры [создания секрета клиента](howto-aad-app-configuration.md#create-a-client-secret).
 
 ```bash
 SECRET=<secret value>
 ```
 
-Параметру `TENANT` присвойте значение идентификатора клиента, которое вы сохранили на шаге 7 процедуры [создание клиента](howto-create-tenant.md#create-a-new-azure-ad-tenant).  
+Параметру `TENANT` присвойте значение идентификатора клиента, которое вы сохранили на шаге 7 процедуры [создание клиента](howto-create-tenant.md#create-a-new-azure-ad-tenant).
 
 ```bash
 TENANT=<tenant ID>
@@ -101,11 +101,11 @@ TENANT=<tenant ID>
 az group create --name $CLUSTER_NAME --location $LOCATION
 ```
 
-### <a name="optional-connect-the-clusters-virtual-network-to-an-existing-virtual-network"></a>Необязательно: подключение виртуальной сети кластера к существующей виртуальной сети
+### <a name="optional-connect-the-clusters-virtual-network-to-an-existing-virtual-network"></a>Необязательное действие: подключение виртуальной сети кластера к существующей виртуальной сети
 
 Если вам не нужно подключать виртуальную сеть создаваемого кластера к существующей виртуальной сети с помощью пиринга, пропустите этот шаг.
 
-Если пиринг сети находится за пределами подписки по умолчанию, то в этой подписке также понадобится зарегистрировать поставщик Microsoft.ContainerService. Для этого выполните указанную ниже команду в этой подписке. В противном случае если виртуальная сеть, пиринг которой выполняется, находится в той же подписке, шаг регистрации можно пропустить. 
+Если пиринг сети находится за пределами подписки по умолчанию, то в этой подписке также понадобится зарегистрировать поставщик Microsoft.ContainerService. Для этого выполните указанную ниже команду в этой подписке. В противном случае если виртуальная сеть, пиринг которой выполняется, находится в той же подписке, шаг регистрации можно пропустить.
 
 `az provider register -n Microsoft.ContainerService --wait`
 
@@ -121,27 +121,52 @@ VNET_ID=$(az network vnet show -n {VNET name} -g {VNET resource group} --query i
 
 Например: `VNET_ID=$(az network vnet show -n MyVirtualNetwork -g MyResourceGroup --query id -o tsv`
 
-### <a name="create-the-cluster"></a>Создание кластера
+### <a name="optional-connect-the-cluster-to-azure-monitoring"></a>Необязательное действие: подключение кластера к мониторингу Azure
+
+Сначала получите идентификатор **имеющейся** рабочей области Log Analytics. Этот идентификатор имеет такой формат:
+
+`/subscriptions/{subscription}/resourceGroups/{resourcegroup}/providers/Microsoft.OperationalInsights/workspaces/{workspace-id}`.
+
+Если вам неизвестно имя рабочей области Log Analytics или группы ресурсов, к которой принадлежит имеющаяся рабочая область, перейдите в раздел [Рабочая область Log Analytics](https://portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.OperationalInsights%2Fworkspaces) и щелкните рабочие области Log Analytics. Откроется страница рабочей области Log Analytics, на которой указаны имя рабочей области и группа ресурсов, к которой она принадлежит.
+
+_Сведения о создании рабочей области Log Analytics см. в [этой статье](../azure-monitor/learn/quick-create-workspace-cli.md)_ .
+
+Определите переменную WORKSPACE_ID с помощью следующей команды CLI в оболочке BASH:
+
+```bash
+WORKSPACE_ID=$(az monitor log-analytics workspace show -g {RESOURCE_GROUP} -n {NAME} --query id -o tsv)
+```
+
+### <a name="create-the-cluster"></a>Создайте кластер.
 
 Теперь можно создать новый кластер. Далее будет создан кластер в указанном клиенте Azure AD, указан объект приложения Azure AD и секрет для использования в качестве субъекта безопасности, а также группа безопасности, содержащая участников, у которых есть доступ администратора к кластеру.
 
 > [!IMPORTANT]
 > Перед созданием кластера проверьте, правильно ли вы добавили соответствующие разрешения для приложения Azure AD, как [описано здесь](howto-aad-app-configuration.md#add-api-permissions).
 
-Если вы **не выполняете** пиринг кластера к виртуальной сети, используйте следующую команду:
+Если вы **не выполняете** пиринг кластера к виртуальной сети **или не хотите выполнять** мониторинг Azure, используйте следующую команду:
 
 ```bash
 az openshift create --resource-group $CLUSTER_NAME --name $CLUSTER_NAME -l $LOCATION --aad-client-app-id $APPID --aad-client-app-secret $SECRET --aad-tenant-id $TENANT --customer-admin-group-id $GROUPID
 ```
 
 Если вы **выполняете** пиринг кластера к виртуальной сети, используйте следующую команду, которая добавит флаг `--vnet-peer`:
- 
+
 ```bash
 az openshift create --resource-group $CLUSTER_NAME --name $CLUSTER_NAME -l $LOCATION --aad-client-app-id $APPID --aad-client-app-secret $SECRET --aad-tenant-id $TENANT --customer-admin-group-id $GROUPID --vnet-peer $VNET_ID
 ```
 
+Если вы **хотите выполнять** мониторинг Azure для кластера, выполните приведенную ниже команду, которая добавит флаг `--workspace-id`:
+
+```bash
+az openshift create --resource-group $RESOURCE_GROUP --name $CLUSTER_NAME -l $LOCATION --aad-client-app-id $APPID --aad-client-app-secret $SECRET --aad-tenant-id $TENANT --customer-admin-group-id $GROUPID --workspace-id $WORKSPACE_ID
+```
+
 > [!NOTE]
 > Если вы получите ошибку с сообщением о том, что имя узла недоступно, это может означать, что указанное имя кластера уже существует. Попробуйте удалить исходную регистрацию приложения и повторить все действия с другим именем кластера из раздела о [регистрации приложения](howto-aad-app-configuration.md#create-an-azure-ad-app-registration), пропустив шаг создания пользователя и группы безопасности.
+
+
+
 
 Через несколько минут операция `az openshift create` выполнится.
 
@@ -155,7 +180,7 @@ az openshift show -n $CLUSTER_NAME -g $CLUSTER_NAME
 
 Найдите `publicHostName` в выходных данных, например: `"publicHostname": "openshift.xxxxxxxxxxxxxxxxxxxx.eastus.azmosa.io"`.
 
-URL-адрес входа для кластера будет `https://`, за которым следует значение `publicHostName`.  Например, `https://openshift.xxxxxxxxxxxxxxxxxxxx.eastus.azmosa.io`.  Этот URI будет использоваться на следующем шаге как часть URI-перенаправления регистрации приложения.
+URL-адрес входа для кластера будет `https://`, за которым следует значение `publicHostName`.  Например: `https://openshift.xxxxxxxxxxxxxxxxxxxx.eastus.azmosa.io`.  Этот URI будет использоваться на следующем шаге как часть URI-перенаправления регистрации приложения.
 
 ## <a name="step-3-update-your-app-registration-redirect-uri"></a>Шаг 3. Обновление URI-перенаправления регистрации приложения
 
@@ -201,7 +226,7 @@ URL-адрес входа для кластера будет `https://`, за к
 
 Если описанные выше шаги не позволили получить значение токена, получите это значение с помощью `https://<your cluster name>.<azure region>.cloudapp.azure.com/oauth/token/request`.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой части руководства вы узнали, как выполнить следующие действия:
 

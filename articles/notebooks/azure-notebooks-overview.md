@@ -1,22 +1,24 @@
 ---
-title: Общие сведения о службе "Записные книжки Azure"
-description: Запустите в облаке записные книжки Jupyter в облаке, используя бесплатную службу "Записные книжки Azure", не требующую настройки.
+title: Общие сведения о предварительной версии службы "Записные книжки Azure"
+description: Запустите записные книжки Jupyter в облаке, используя предварительную версию бесплатной службы "Записные книжки Azure", не требующую настройки.
 ms.topic: overview
 ms.date: 04/05/2019
-ms.openlocfilehash: b3dfa6cec962809fad1a03f5100c55315ff6a9ad
-ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
+ms.openlocfilehash: bd2355bdefcedca5026a25915dc1da55fdc33a36
+ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74277683"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75646336"
 ---
-# <a name="overview-of-azure-notebooks"></a>Общие сведения о службе "Записные книжки Azure"
+# <a name="overview-of-azure-notebooks-preview"></a>Общие сведения о предварительной версии службы "Записные книжки Azure"
 
 Записные книжки Azure — это бесплатная размещенная служба для разработки и запуска записных книжек Jupyter в облаке без их установки. [Jupyter](https://jupyter.org/) (прежнее название — IPython) — это проект с открытым кодом, который позволяет легко объединять текст с разметкой, исполняемый код, хранимые данные, графики и визуализации на одном общем холсте, который называется *записной книжкой* (изображение предоставлено сайтом jupyter.org):
 
 [![Примеры записных книжек Jupyter](https://jupyter.org/assets/jupyterpreview.png)](https://jupyter.org/assets/jupyterpreview.png#lightbox)
 
 Из-за мощного сочетания кода, графики и пояснений Jupyter стал популярным для различных целей, включая инструкции по обработке и анализу данных, очистку и преобразование данных, цифровое и статистическое моделирование, а также разработку моделей машинного обучения.
+
+[!INCLUDE [notebooks-status](../../includes/notebooks-status.md)]
 
 ## <a name="hassle-free-experience"></a>Беспроблемная среда
 
@@ -85,7 +87,7 @@ ms.locfileid: "74277683"
 
 Если у вас возникли вопросы о службе "Записные книжки Azure", разместите их в [репозитории GitHub](https://github.com/Microsoft/AzureNotebooks/issues).
 
-## <a name="next-steps"></a>Дополнительная информация  
+## <a name="next-steps"></a>Дальнейшие действия  
 
 - [Обзор примеров записных книжек](azure-notebooks-samples.md)
 
@@ -97,7 +99,7 @@ ms.locfileid: "74277683"
   - [Использование настраиваемой среды](quickstart-create-jupyter-notebook-project-environment.md)
   - [Вход и настройка идентификатора пользователя](quickstart-sign-in-azure-notebooks.md)
 
-- Руководства:
+- Руководства.
 
   - [Создание и запуск записной книжки](tutorial-create-run-jupyter-notebook.md  )
 

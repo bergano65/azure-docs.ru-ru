@@ -8,12 +8,12 @@ ms.topic: overview
 ms.custom: mvc
 ms.service: iot-hub
 services: iot-hub
-ms.openlocfilehash: 0dde7bd9bd3372f0f5eddbbd56727eca3ae4a9dd
-ms.sourcegitcommit: 78ebf29ee6be84b415c558f43d34cbe1bcc0b38a
+ms.openlocfilehash: 78678474430792eb7fe419ef4f15828d461c1fec
+ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68950463"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75647413"
 ---
 # <a name="what-is-azure-iot-hub"></a>Что такое Центр Интернета вещей в Azure?
 
@@ -111,12 +111,16 @@ ms.locfileid: "68950463"
 
 Для каждой подписки Azure предусмотрена квота по умолчанию для предотвращения нарушений службы, которая может повлиять на зону охвата решения Интернета вещей. Текущее ограничение для каждой подписки составляет 50 Центров Интернета вещей на подписку. Вы можете обратиться в службу поддержки с просьбой увеличить квоту. Дополнительные сведения см. в разделе о [квотах и регулировании Центра Интернета вещей](iot-hub-devguide-quotas-throttling.md). Дополнительные сведения о квотах см. в одной из следующих статей:
 
-* [Подписка Azure, границы, квоты и ограничения службы](../azure-subscription-service-limits.md)
+* [Подписка Azure, границы, квоты и ограничения службы](../azure-resource-manager/management/azure-subscription-service-limits.md)
 
 * [IoT Hub throttling and you](https://azure.microsoft.com/blog/iot-hub-throttling-and-you/) (Регулирование Центра Интернета вещей и вы)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы проверить готовые решения Интернета вещей, ознакомьтесь с краткими руководствами по быстрому началу работы с Центром Интернета вещей:
 
-* [Краткое руководство по отправке данных телеметрии с устройства в Центр Интернета вещей](quickstart-send-telemetry-node.md)
+* [Краткое руководство. по отправке данных телеметрии с устройства в Центр Интернета вещей](quickstart-send-telemetry-node.md)
+
+Дополнительные сведения о способах создания и развертывания решений Интернета вещей с помощью Azure IoT см. по адресу:
+
+* [Основные сведения: Технологии и решения Интернета вещей Azure](../iot-fundamentals/iot-services-and-technologies.md).

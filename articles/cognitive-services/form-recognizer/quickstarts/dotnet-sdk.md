@@ -1,6 +1,6 @@
 ---
-title: Краткое руководство. Клиентская библиотека Распознавателя документов для .NET | Документация Майкрософт
-description: Здесь приведены сведения о том, как начать работу с клиентской библиотекой Распознавателя документов для .NET, чтобы обучать, извлекать, анализировать и получать структурированные выходные данные.
+title: Краткое руководство. Клиентская библиотека Распознавателя документов для .NET
+description: В этом кратком руководстве приведены сведения о том, как начать работу с клиентской библиотекой Распознавателя документов для .NET, чтобы обучать, извлекать, анализировать и получать структурированные выходные данные.
 services: cognitive-services
 author: PatrickFarley
 manager: nitinme
@@ -9,12 +9,12 @@ ms.subservice: forms-recognizer
 ms.topic: quickstart
 ms.date: 12/05/2019
 ms.author: pafarley
-ms.openlocfilehash: 018371f4c188d05d92a5fd3fd81511d941a359a6
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.openlocfilehash: 8fd938e685c712cda60c171ccf9092ff42e6037e
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74978617"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75446494"
 ---
 # <a name="quickstart-form-recognizer-client-library-for-net"></a>Краткое руководство. Клиентская библиотека Распознавателя документов для .NET
 
@@ -28,9 +28,9 @@ ms.locfileid: "74978617"
 * [получение списка пользовательских моделей](#get-a-list-of-custom-models).
 * [удаление пользовательской модели](#delete-a-custom-model).
 
-[Справочная документация](https://docs.microsoft.com/dotnet/api/overview/azure/cognitiveservices/client/formrecognizer?view=azure-dotnet-preview) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/cognitiveservices/Vision.FormRecognizer) | [Пакет (NuGet)](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.FormRecognizer/).
+[Справочная документация](https://docs.microsoft.com/dotnet/api/overview/azure/cognitiveservices/client/formrecognizer?view=azure-dotnet-preview) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/cognitiveservices/FormRecognizer) | [Пакет (NuGet)](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.FormRecognizer/).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/).
 * Доступ к предварительной версии Распознавателя документов с ограниченным доступом. Чтобы получить доступ к предварительной версии, заполните и отправьте [форму запроса на доступ к Распознавателю документов](https://aka.ms/FormRecognizerRequestAccess).
@@ -91,7 +91,7 @@ dotnet add package Microsoft.Azure.CognitiveServices.FormRecognizer --version 0.
 
 Приведенные ниже классы обработают основные функции пакета SDK Распознавателя документов.
 
-|ИМЯ|ОПИСАНИЕ|
+|Имя|Description|
 |---|---|
 |[FormRecognizerClient](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.formrecognizer.formrecognizerclient?view=azure-dotnet-preview)|Этот класс необходим для всех функций Распознавателя документов. Вы создаете его экземпляр с информацией о подписке и используете его для создания экземпляров других классов.|
 |[TrainRequest](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.formrecognizer.models.trainrequest?view=azure-dotnet-preview)| Этот класс используется для обучения пользовательской модели Распознавателя документов по собственным входным данным для обучения. |
@@ -160,7 +160,7 @@ dotnet add package Microsoft.Azure.CognitiveServices.FormRecognizer --version 0.
 
 [!code-csharp[](~/cognitive-services-quickstart-code/dotnet/FormRecognizer/Program.cs?name=snippet_displayanalyze)]
 
-## <a name="get-a-list-of-custom-models"></a>Получение списка пользовательских моделей
+## <a name="get-a-list-of-custom-models"></a>получение списка пользовательских моделей.
 
 Можно вернуть список всех обученных моделей, принадлежащих вашей учетной записи, а также получить сведения о времени их создания. Список моделей представлен в объекте [ModelsResult](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.formrecognizer.models.modelsresult?view=azure-dotnet-preview).
 
@@ -185,11 +185,11 @@ dotnet run
 Если вы хотите очистить и удалить подписку Cognitive Services, вы можете удалить ресурс или группу ресурсов. При этом удаляются все ресурсы, связанные с ней.
 
 * [Портал](../../cognitive-services-apis-create-account.md#clean-up-resources)
-* [Интерфейс командной строки Azure](../../cognitive-services-apis-create-account-cli.md#clean-up-resources)
+* [Azure CLI](../../cognitive-services-apis-create-account-cli.md#clean-up-resources)
 
 Кроме того, если вы обучили пользовательскую модель, которую необходимо удалить из учетной записи, запустите метод в области [Удаление пользовательской модели](#delete-a-custom-model).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом кратком руководстве описано использование клиентской библиотеки Распознавателя документов .NET для обучения пользовательской модели и анализа документов. Теперь следует изучить советы по созданию лучшего набора данных для обучения и созданию более точных моделей.
 

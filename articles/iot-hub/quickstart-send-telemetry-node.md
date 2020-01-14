@@ -10,12 +10,12 @@ ms.devlang: nodejs
 ms.topic: quickstart
 ms.custom: mvc, seo-javascript-september2019
 ms.date: 06/21/2019
-ms.openlocfilehash: 92d6af41e55429f1b788de68940bc9b033c51ad6
-ms.sourcegitcommit: aef6040b1321881a7eb21348b4fd5cd6a5a1e8d8
+ms.openlocfilehash: e37ce216bf1928785ef9052115599bbd4ab2a603
+ms.sourcegitcommit: 2f8ff235b1456ccfd527e07d55149e0c0f0647cc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72167030"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75690851"
 ---
 # <a name="quickstart-send-telemetry-from-a-device-to-an-iot-hub-and-read-it-with-a-back-end-application-nodejs"></a>Краткое руководство. Отправка данных телеметрии из устройства в Центр Интернета вещей и их чтение с помощью внутреннего приложения (Node.js)
 
@@ -29,9 +29,9 @@ ms.locfileid: "72167030"
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
-Два примера приложений, запускаемых в рамках этого краткого руководства, написаны на языке Node.js. Вам потребуется установить Node.js 10 x.x или более поздней версии на компьютере для разработки.
+Два примера приложений, запускаемых в рамках этого краткого руководства, написаны на языке Node.js. Вам потребуется установить Node.js 10 x.x или более поздней версии на компьютере для разработки. Если вы используете Azure Cloud Shell, не обновляйте установленную версию Node.js. Azure Cloud Shell уже имеет последнюю версию Node.js.
 
 Node.js, предназначенный для нескольких платформ, можно скачать здесь: [nodejs.org](https://nodejs.org).
 
@@ -141,7 +141,7 @@ az extension add --name azure-cli-iot-ext
 
 [!INCLUDE [iot-hub-quickstarts-clean-up-resources](../../includes/iot-hub-quickstarts-clean-up-resources.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из этого краткого руководства вы узнали, как настроить центр Интернета вещей, зарегистрировать устройство, отправить имитированные данные телеметрии в центр с помощью приложения Node.js, а также считывать данные телеметрии из центра, используя простое внутреннее приложение.
 

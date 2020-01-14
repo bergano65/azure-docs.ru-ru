@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.custom: mvc
 ms.date: 03/14/2019
 ms.author: robinsh
-ms.openlocfilehash: c8554fc3f691af05a2c6a660d07ffb9a6ff29f31
-ms.sourcegitcommit: a22cb7e641c6187315f0c6de9eb3734895d31b9d
+ms.openlocfilehash: 03b0269b1a4500fd8ae26cd5e56f48427c5506aa
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74084334"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75429181"
 ---
 # <a name="quickstart-enable-ssh-and-rdp-over-an-iot-hub-device-stream-by-using-a-c-proxy-application-preview"></a>Краткое руководство. Подключение по протоколу SSH и RDP через поток устройств центра Интернета вещей с помощью прокси-приложения C (предварительная версия)
 
@@ -50,7 +50,7 @@ ms.locfileid: "74084334"
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * Предварительная версия потоков устройств сейчас поддерживается только в центрах Интернета вещей, созданных в следующих регионах:
 
@@ -76,18 +76,19 @@ ms.locfileid: "74084334"
 
     *Перед* установкой CMake важно установить на компьютер необходимые компоненты Visual Studio (Visual Studio и рабочую нагрузку *Разработка классических приложений на C++* ). После установки компонентов и проверки загрузки вы можете установить систему сборки CMake.
 
-1. Откройте командную строку или оболочку Git Bash. Выполните следующую команду для клонирования репозитория GitHub [пакета SDK для устройства C Интернета вещей Azure](https://github.com/Azure/azure-iot-sdk-c):
+1. Откройте командную строку или оболочку Git Bash. Выполните следующие команды для клонирования репозитория GitHub [пакета SDK Azure IoT для C](https://github.com/Azure/azure-iot-sdk-c).
 
-    ```
-    git clone https://github.com/Azure/azure-iot-sdk-c.git --recursive -b public-preview
-    ```
-
-    Эта операция займет несколько минут.
-
-1. Создайте подкаталог *cmake* в корневом каталоге репозитория Git, как показано в следующей команде и перейдите в эту папку.
-
-    ```
+    ```cmd/sh
+    git clone -b public-preview https://github.com/Azure/azure-iot-sdk-c.git
     cd azure-iot-sdk-c
+    git submodule update --init
+    ```
+
+    Это должно занять несколько минут.
+
+1. Создайте подкаталог *cmake* в корневом каталоге репозитория git и перейдите в эту папку. В каталоге *azure-iot-sdk-c* выполните следующие команды:
+
+    ```cmd/sh
     mkdir cmake
     cd cmake
     ```
@@ -109,6 +110,9 @@ ms.locfileid: "74084334"
 
       rem Or for VS2017
       cmake .. -G "Visual Studio 15 2017"
+
+      rem Or for VS2019
+      cmake .. -G "Visual Studio 16 2019"
 
       rem Then build the project
       cmake --build . -- /m /p:Configuration=Release
@@ -217,7 +221,7 @@ ssh {username}@localhost -p 2222
 
 [!INCLUDE [iot-hub-quickstarts-clean-up-resources](../../includes/iot-hub-quickstarts-clean-up-resources-device-streams.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В рамках этого краткого руководства вы настроили центр Интернета вещей, зарегистрировали устройство, развернули программу локальных прокси-серверов устройств и служб, чтобы установить потоковую передачу устройств через центр Интернета вещей, а также использовали прокси-серверы для туннелирования трафика SSH.
 

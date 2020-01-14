@@ -8,12 +8,12 @@ author: mrbullwinkle
 ms.author: mbullwin
 ms.date: 08/13/2019
 ms.custom: mvc
-ms.openlocfilehash: cd1a483cd50051ade5d7d4f45c8eb7e5d8351787
-ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
+ms.openlocfilehash: f9074a004683393df18d621a679fbb7378dc6704
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72900457"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75398624"
 ---
 # <a name="find-and-diagnose-performance-issues-with-azure-application-insights"></a>Поиск и диагностика проблем производительности с помощью Azure Application Insights
 
@@ -26,7 +26,7 @@ Azure Application Insights собирает данные телеметрии и
 > * Анализ сведений просмотра страниц с помощью языка запросов.
 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Для работы с этим руководством:
 
@@ -72,7 +72,7 @@ Application Insights собирает данные о производитель
 
     ![Совет по производительности](media/tutorial-performance/6-perf-tip.png)
 
-8.  Для дальнейшего анализа выберите **Скачать трассировку**, чтобы скачать файл трассировки в Visual Studio.
+8.   Для дальнейшего анализа выберите **Скачать трассировку**, чтобы скачать файл трассировки. Эти данные можно просмотреть с помощью [PerfView](https://github.com/Microsoft/perfview#perfview-overview).
 
 ## <a name="use-logs-data-for-server"></a>Использование данных журналов для сервера
  Журналы предоставляют полнофункциональный язык запросов, позволяющий анализировать все данные, собранные Application Insights. Это позволяет выполнить глубокий анализ запроса и данных о производительности.
@@ -98,7 +98,7 @@ Application Insights собирает данные о производитель
 ## <a name="use-logs-data-for-client"></a>Использование данных журналов для клиента
 Аналогично данным, собранным для производительности сервера, Application Insight позволяет выполнить глубокий анализ данных клиента с помощью журналов.
 
-1. Вернитесь в сводку браузера и щелкните ![Представление значков журналов](media/tutorial-performance/app-viewinlogs-icon.png) **в журналах (аналитика)**
+1. Вернитесь в сводку браузера и щелкните ![Представление значков журналов](media/tutorial-performance/app-viewinlogs-icon.png) **Просмотреть в журналах (аналитика)**
 
 2. В журналах откроется запрос для каждого представления на панели. Первый запрос отображает длительность различных просмотров страниц с течением времени.
 
@@ -109,7 +109,7 @@ Application Insights собирает данные о производитель
     ![Журналы с интеллектуальной диагностикой](media/tutorial-performance/11-page-view-logs-dsmart.png)
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Теперь, когда вы узнали, как определить исключения времени выполнения, перейдите к следующему руководству, чтобы научиться создавать оповещения в ответ на неполадки.
 
 > [!div class="nextstepaction"]

@@ -1,32 +1,21 @@
 ---
-title: Масштабирование кластера Service Fabric в Azure | Документы Майкрософт
-description: В этом руководстве описано, как масштабировать кластер Service Fabric в Azure.
-services: service-fabric
-documentationcenter: .net
-author: athinanthny
-manager: chackdan
-editor: ''
-ms.assetid: ''
-ms.service: service-fabric
-ms.devlang: dotNet
+title: Масштабирование кластера Service Fabric в Azure
+description: В этом руководстве описано, как масштабировать кластер Service Fabric из службы Azure и в нее, а также как очищать излишние ресурсы.
 ms.topic: tutorial
-ms.tgt_pltfrm: NA
-ms.workload: NA
 ms.date: 07/22/2019
-ms.author: atsenthi
 ms.custom: mvc
-ms.openlocfilehash: 6270237e2319c42ed30fc347b7ab9c1c2a008314
-ms.sourcegitcommit: 98ce5583e376943aaa9773bf8efe0b324a55e58c
+ms.openlocfilehash: 9f3049f5a46918d9e70e27fe862372de2cf577ae
+ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73177748"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75639060"
 ---
-# <a name="tutorial-scale-a-service-fabric-cluster-in-azure"></a>Руководство по Масштабирование кластера Service Fabric в Azure
+# <a name="tutorial-scale-a-service-fabric-cluster-in-azure"></a>Руководство. Масштабирование кластера Service Fabric в Azure
 
 Это руководство представляет собой третью часть серии. В нем показано, как масштабировать имеющийся кластер. Завершив работу с этим руководством, вы будете знать, как масштабировать кластер и очистить все остающиеся ресурсы.  Дополнительные сведения о масштабировании запущенного в Azure кластера, см. в руководстве по [масштабированию кластеров Service Fabric](service-fabric-cluster-scaling.md).
 
-Из этого руководства вы узнаете, как выполнять следующие задачи:
+В этом руководстве описано следующее.
 
 > [!div class="checklist"]
 > * добавление и удаление узлов (развертывание и свертывание кластера);
@@ -44,7 +33,7 @@ ms.locfileid: "73177748"
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Перед началом работы с этим руководством выполните следующие действия:
 
@@ -387,6 +376,20 @@ az group deployment create --resource-group sfclustertutorialgroup --template-fi
     },
     "properties": {
         "securityRules": [
+            {
+                "name": "allowSvcFabSMB",
+                "properties": {
+                    "access": "Allow",
+                    "destinationAddressPrefix": "*",
+                    "destinationPortRange": "445",
+                    "direction": "Inbound",
+                    "priority": 3950,
+                    "protocol": "*",
+                    "sourceAddressPrefix": "VirtualNetwork",
+                    "sourcePortRange": "*",
+                    "description": "allow SMB traffic within the net, used by fabric to move packages around"
+                }
+            },
             {
                 "name": "allowSvcFabCluser",
                 "properties": {
@@ -857,9 +860,9 @@ New-AzResourceGroupDeployment -ResourceGroupName sfclustertutorialgroup -Templat
 az group deployment create --resource-group sfclustertutorialgroup --template-file c:\temp\template.json --parameters c:\temp\parameters.json
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-Из этого руководства вы узнали, как выполнить следующие задачи:
+В этом руководстве вы узнали, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 > * добавление и удаление узлов (развертывание и свертывание кластера);
@@ -880,7 +883,7 @@ az group deployment create --resource-group sfclustertutorialgroup --template-fi
 
 Теперь перейдите к следующему руководству, чтобы узнать, как обновить среду выполнения кластера.
 > [!div class="nextstepaction"]
-> [обновление среды выполнения кластера;](service-fabric-tutorial-upgrade-cluster.md)
+> [Обновление среды выполнения кластера](service-fabric-tutorial-upgrade-cluster.md)
 
 [durability]: service-fabric-cluster-capacity.md#the-durability-characteristics-of-the-cluster
 [reliability]: service-fabric-cluster-capacity.md#the-reliability-characteristics-of-the-cluster

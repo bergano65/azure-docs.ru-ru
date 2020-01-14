@@ -6,28 +6,28 @@ ms.service: spring-cloud
 ms.topic: tutorial
 ms.date: 10/31/2019
 ms.author: jeconnoc
-ms.openlocfilehash: 1653db3619fd569238872ca1fcfd6d0c439e84c9
-ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
+ms.openlocfilehash: 662d36f8a25f2f0a21d800b7b1a25e94b13908a7
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74708788"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75461493"
 ---
-# <a name="tutorial-bind-azure-services-to-your-azure-spring-cloud-application-azure-cache-for-redis"></a>Руководство по Привяжите службы Azure к приложению Azure Spring Cloud: Кэш Redis для Azure
+# <a name="bind-azure-cache-for-redis-to-your-azure-spring-cloud-application"></a>Привязка Кэша Azure для Redis к приложению Azure Spring Cloud 
 
-С помощью Azure Spring Cloud можно автоматически привязать выбранные службы Azure к приложениям, а не вручную настраивать приложение Spring Boot. В этой статье показано, как привязать приложение к кэшу Azure для Redis.
+Чтобы не настраивать приложения Spring Boot вручную, вы можете автоматически привязать выбранные службы Azure к приложениям с помощью Azure Spring Cloud. В этой статье показано, как привязать приложение к Кэшу Azure для Redis.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * Развернутый облачный экземпляр Azure Spring Cloud
 * Экземпляр службы кэша Azure для Redis
-* Расширение Azure Spring Cloud для Azure CLI
+* Расширение Azure Spring Cloud для Azure CLI.
 
-Если у вас еще не развернут экземпляр Azure Spring Cloud, выполните процедуру в [этом кратком руководстве](spring-cloud-quickstart-launch-app-portal.md), чтобы развернуть первое приложение Spring Cloud.
+Если у вас еще не развернут экземпляр Azure Spring Cloud, выполните процедуру в [этом кратком руководстве](spring-cloud-quickstart-launch-app-portal.md), чтобы развернуть приложение Azure Spring Cloud.
 
 ## <a name="bind-azure-cache-for-redis"></a>Привязка кэша Azure для Redis
 
-1. Добавьте в `pom.xml` проекта следующую зависимость
+1. Добавьте следующую зависимость в файл pom.xml. проекта:
 
     ```xml
     <dependency>
@@ -35,13 +35,15 @@ ms.locfileid: "74708788"
         <artifactId>spring-boot-starter-data-redis-reactive</artifactId>
     </dependency>
     ```
-1. Удалите свойства `spring.redis.*` (если они есть) в файле `application.properties`
+1. Удалите все свойства `spring.redis.*` из файла `application.properties`.
 
 1. Обновите текущую развернутую службу с помощью `az spring-cloud app update` или создайте новое развертывание с помощью `az spring-cloud app deployment create`.
 
-1. Перейдите к странице своей службы Azure Spring Cloud на портале Azure. Найдите **панель мониторинга приложения** и выберите приложение для привязки к кэшу Azure для Redis.  Это то же приложение, которое вы обновили или развернули на предыдущем шаге. Затем выберите `Service binding` и нажмите кнопку `Create service binding`. Заполните форму, убедившись, что выбран параметр **Binding Type** `Azure Cache for Redis`, сервер Redis и первичный ключ. 
+1. Перейдите к странице своей службы Azure Spring Cloud на портале Azure. Перейдите на **панель мониторинга приложений** и выберите приложение для привязки к Кэшу Azure для Redis. Это то же приложение, которое вы обновили или развернули на предыдущем шаге.
 
-1. Перезапустите приложение, и эта привязка должна начать работать прямо сейчас.
+1. Выберите **Service binding** (Привязка службы), а затем — **Создание привязки службы**. Заполняя форму, не забудьте выбрать в качестве **типа привязки** значение **Кэш Azure для Redis**, а также сервер Кэша Azure для Redis и **первичный** ключ.
+
+1. Перезапустите приложение. Теперь привязка должна работать.
 
 1. Чтобы обеспечить правильную привязку службы, выберите имя привязки и проверьте сведения о ней. Поле `property` должно выглядеть следующим образом:
     ```
@@ -51,9 +53,9 @@ ms.locfileid: "74708788"
     spring.redis.ssl=true
     ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-В этом руководстве описывается, как привязать приложение Azure Spring Cloud к кэшу Redis для Azure.  Дополнительные сведения о привязке служб к приложению см. в руководстве по привязке приложения к базе данных MySQL.
+Работая с этим учебником, вы узнали, как привязать приложение Azure Spring Cloud к Кэшу Azure для Redis. Дополнительные сведения о привязке служб к приложению см. в учебнике по привязке приложения к экземпляру Базы данных Azure для MySQL.
 
 > [!div class="nextstepaction"]
-> [Как привязать службу Azure MySQL к службе Azure Spring Cloud](spring-cloud-tutorial-bind-mysql.md).
+> [Учебник по привязке к экземпляру Базы данных Azure для MySQL.](spring-cloud-tutorial-bind-mysql.md)

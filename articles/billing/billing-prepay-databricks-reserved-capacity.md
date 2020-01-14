@@ -8,12 +8,12 @@ ms.service: cost-management-billing
 ms.topic: conceptual
 ms.date: 10/01/2019
 ms.author: banders
-ms.openlocfilehash: 0165da8adbb28b97d524f1a07c725716b69277d4
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: 8f3b38b3455b171701ff78345a3ee667c2c45071
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74223639"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75449331"
 ---
 # <a name="optimize-azure-databricks-costs-with-a-pre-purchase"></a>Оптимизация затрат на Azure Databricks с помощью предварительного приобретения
 
@@ -41,8 +41,8 @@ ms.locfileid: "74223639"
 
 Планы Databricks можно приобрести на [портале Azure](https://portal.azure.com/#blade/Microsoft_Azure_Reservations/CreateBlade/referrer/documentation/filters/%7B%22reservedResourceType%22%3A%22Databricks%22%7D). Чтобы приобрести резервную мощность, необходимо иметь роль "Владелец" по крайней мере для одной подписки Enterprise.
 
-- Сейчас предварительная покупка доступна только для клиентов с Соглашением Enterprise.
-- Необходимо иметь роль "Владелец" по крайней мере для одной подписки Enterprise.
+- Необходимо иметь роль "Владелец" по крайней мере для одного Соглашения Enterprise (номера предложений: MS-AZR-0017P или MS-AZR-0148P) или Клиентского соглашения Майкрософт либо отдельную подписку с оплатой по мере использования (номера предложений: MS-AZR-0003P или MS-AZR 0023P).
+- Для подписок с Соглашением Enterprise параметр "Добавить зарезервированные экземпляры" следует включить на портале EA. Если этот параметр отключен, необходимо быть администратором подписки EA.
 - Для подписок с соглашением Enterprise параметр **Добавить зарезервированные экземпляры** следует включить на [портале EA](https://ea.azure.com/). Или, если этот параметр отключен, необходимо быть администратором подписки EA.
 
 **Для покупки:**
@@ -75,7 +75,7 @@ ms.locfileid: "74223639"
 
 Если у вас есть вопросы или вам нужна помощь, [создайте запрос в службу поддержки](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о резервировании в Azure см. по следующим ссылкам:
   - [Основные сведения о резервировании в Azure](billing-save-compute-costs-reservations.md)

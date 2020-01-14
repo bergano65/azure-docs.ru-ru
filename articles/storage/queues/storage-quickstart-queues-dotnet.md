@@ -1,282 +1,338 @@
 ---
-title: Краткое руководство. Использование .NET для создания очереди в службе хранилища Azure
-description: Из этого краткого руководства вы узнаете, как использовать клиентскую библиотеку службы хранилища Azure для .NET, чтобы создавать очередь и добавлять в нее сообщения, а также читать и обрабатывать сообщения из очереди.
+title: Краткое руководство. Библиотека Хранилища очередей Azure версии 12 для .NET
+description: Сведения о том, как использовать клиентскую библиотеку Хранилища очередей Azure версии 12 для .NET, чтобы создавать очередь и добавлять в нее сообщения. Далее вы узнаете, как читать и удалять сообщения из очереди. Также здесь описано, как удалить очередь.
 author: mhopkins-msft
 ms.author: mhopkins
-ms.date: 02/06/2018
+ms.date: 11/22/2019
 ms.service: storage
 ms.subservice: queues
 ms.topic: quickstart
-ms.reviewer: cbrooks
-ms.openlocfilehash: d3706f8585c2644a31bf1f418f5425e0fa58d2a0
-ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
+ms.openlocfilehash: 71a714124cecfc4f985d448371042c8aff092a11
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68721254"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75463850"
 ---
-# <a name="quickstart-use-net-to-create-a-queue-in-azure-storage"></a>Краткое руководство. Использование .NET для создания очереди в службе хранилища Azure
+# <a name="quickstart-azure-queue-storage-client-library-v12-for-net"></a>Краткое руководство. Использование клиентской библиотеки Хранилища очередей Azure версии 12 для .NET
 
-Из этого краткого руководства вы узнаете, как использовать клиентскую библиотеку службы хранилища Azure для .NET, чтобы создавать очередь и добавлять в нее сообщения, а также читать и обрабатывать сообщения из очереди. 
+Приступите к работе с клиентской библиотекой Хранилища очередей Azure версии 12 для .NET. Хранилище очередей Azure — это служба для хранения большого количества сообщений для последующего получения и обработки. Выполните приведенные здесь действия, чтобы установить пакет и протестировать пример кода для выполнения базовых задач.
 
-## <a name="prerequisites"></a>Предварительные требования
+> [!NOTE]
+> Чтобы приступить к работе с предыдущей версией пакета SDK, обратитесь к разделу [Краткое руководство. Использование пакета SDK службы хранилища Azure версии 11 для .NET, чтобы управлять очередью](storage-quickstart-queues-dotnet-legacy.md).
 
-[!INCLUDE [storage-quickstart-prereq-include](../../../includes/storage-quickstart-prereq-include.md)]
+Клиентскую библиотеку Хранилища очередей Azure версии 12 для .NET можно использовать для выполнения следующих задач.
 
-Затем загрузите и установите .NET Core 2.0 для своей ОС. На компьютере Windows можно установить Visual Studio и, если вы предпочитаете платформу .NET Framework, использовать ее. Кроме того, вы можете установить редактор для использования с ОС.
+* Создание очереди
+* Добавление сообщений в очередь
+* Просмотр сообщений из очереди
+* Обновление сообщений в очереди
+* Получение сообщений из очереди
+* Удаление сообщений из очереди
+* Удаление очереди
 
-### <a name="windows"></a>Windows
+[Справочная документация по API](/dotnet/api/azure.storage.queues) | [исходный код библиотеки](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/storage/Azure.Storage.Queues) | [пакет (NuGet)](https://www.nuget.org/packages/Azure.Storage.Queues/12.0.0) | [примеры](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/storage/Azure.Storage.Queues/samples)
 
-- Установите [.NET Core для Windows](https://www.microsoft.com/net/download/windows) или [.NET Framework](https://www.microsoft.com/net/download/windows) (входит в состав Visual Studio для Windows).
-- Установите [Visual Studio для Windows](https://www.visualstudio.com/). Если вы используете .NET Core, устанавливать Visual Studio не обязательно.  
+## <a name="prerequisites"></a>предварительные требования
 
-Сведения о выборе между .NET Core и .NET Framework см. в статье [Выбор между .NET Core и .NET Framework для серверных приложений](https://docs.microsoft.com/dotnet/standard/choosing-core-framework-server).
+* Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/).
+* Учетная запись хранения Azure — [создайте такую учетную запись](https://docs.microsoft.com/azure/storage/common/storage-quickstart-create-account).
+* [Пакет SDK для .NET Core](https://dotnet.microsoft.com/download/dotnet-core) последней версии для вашей операционной системы. Обязательно получите пакет SDK, а не среду выполнения.
 
-### <a name="linux"></a>Linux
+## <a name="setting-up"></a>Настройка
 
-- Установите [.NET Core для Linux](https://www.microsoft.com/net/download/linux).
-- При необходимости установите [Visual Studio Code](https://www.visualstudio.com/) и [расширение C#](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp&dotnetid=963890049.1518206068).
+В этом разделе рассматривается подготовка проекта для работы с клиентской библиотекой Хранилища очередей Azure версии 12 для .NET.
 
-### <a name="macos"></a>macOS
+### <a name="create-the-project"></a>Создание проекта
 
-- Установите [.NET Core для macOS](https://www.microsoft.com/net/download/macos).
-- При необходимости установите [Visual Studio для Mac](https://www.visualstudio.com/vs/visual-studio-mac/).
+Создайте приложение .NET Core с именем *QueuesQuickstartV12*.
 
-## <a name="download-the-sample-application"></a>Загрузка примера приложения
+1. В окне консоли (командная строка, PowerShell или Bash) выполните команду `dotnet new`, чтобы создать консольное приложение *QueuesQuickstartV12*. Эта команда создает простой проект Hello World на языке C# с одним файлом исходного кода: *Program.cs*.
 
-Пример приложения, используемый в этом кратком руководстве, является простым консольным приложением. Пример приложения можно найти на сайте [GitHub](https://github.com/Azure-Samples/storage-queues-dotnet-quickstart).
+   ```console
+   dotnet new console -n QueuesQuickstartV12
+   ```
 
-Используйте команду [git](https://git-scm.com/), чтобы скачать копию приложения в среду разработки. 
+1. Переключитесь на только что созданный каталог *QueuesQuickstartV12*.
 
-```bash
-git clone https://github.com/Azure-Samples/storage-queues-dotnet-quickstart.git
+   ```console
+   cd QueuesQuickstartV12
+   ```
+
+### <a name="install-the-package"></a>Установка пакета
+
+Оставаясь в каталоге приложения, установите пакет клиентской библиотеки Хранилища очередей Azure для .NET с помощью команды `dotnet add package`.
+
+```console
+dotnet add package Azure.Storage.Queues
 ```
 
-Эта команда клонирует репозиторий в локальную папку git. Чтобы открыть решение Visual Studio, найдите папку *storage-queues-dotnet-quickstart*, откройте ее и дважды щелкните файл *storage-queues-dotnet-quickstart.sln*. 
+### <a name="set-up-the-app-framework"></a>Настройка платформы приложения
 
-[!INCLUDE [storage-copy-connection-string-portal](../../../includes/storage-copy-connection-string-portal.md)]
+Из каталога проекта:
 
-## <a name="configure-your-storage-connection-string"></a>Настройка строки подключения хранилища
+1. Откройте файл *Program.cs* в редакторе.
+1. Удалите инструкцию `Console.WriteLine("Hello World!");`.
+1. Добавьте директивы `using`.
+1. Обновите объявление метода `Main` для [поддержки асинхронного кода](https://docs.microsoft.com/dotnet/csharp/whats-new/csharp-7-1#async-main).
 
-Чтобы запустить приложение, укажите строку подключения для учетной записи хранения. Пример приложения считывает строку подключения из переменной среды и использует ее для авторизации запросов к службе хранилища Azure.
 
-После копирования строки подключения запишите ее в переменной среды на локальном компьютере, где выполняется приложение. Чтобы задать переменную среды, откройте окно консоли и следуйте инструкциям для используемой операционной системы. Замените `<yourconnectionstring>` фактической строкой подключения:
 
-### <a name="windows"></a>Windows
-
-```cmd
-setx storageconnectionstring "<yourconnectionstring>"
-```
-
-После добавления переменной среды может потребоваться перезапустить все запущенные приложения, которым может понадобиться считать переменную среды, в том числе окно консоли. Например, если вы используете Visual Studio в качестве редактора, перезапустите Visual Studio перед запуском примера. 
-
-### <a name="linux"></a>Linux
-
-```bash
-export storageconnectionstring=<yourconnectionstring>
-```
-
-После добавления переменной среды запустите `source ~/.bashrc` из окна консоли, чтобы применить изменения.
-
-### <a name="macos"></a>macOS
-
-Измените .bash_profile и добавьте переменную среды.
-
-```bash
-export STORAGE_CONNECTION_STRING=<yourconnectionstring>
-```
-
-После добавления переменной среды запустите `source .bash_profile` из окна консоли, чтобы применить изменения.
-
-## <a name="run-the-sample"></a>Запуск примера
-
-В этом примере приложения создается очередь и в нее добавляется сообщение. Сначала сообщение просматривается в приложении без удаления из очереди. Затем сообщение извлекается и удаляется из очереди.
-
-### <a name="windows"></a>Windows
-
-Если вы используете Visual Studio в качестве редактора, нажмите клавишу **F5** для запуска. 
-
-Или перейдите к каталогу приложения и запустите приложение с помощью команды `dotnet run`.
-
-```
-dotnet run
-```
-
-### <a name="linux"></a>Linux
-
-Перейдите к каталогу приложения и запустите приложение с помощью команды `dotnet run`.
-
-```
-dotnet run
-```
-
-### <a name="macos"></a>macOS
-
-Перейдите к каталогу приложения и запустите приложение с помощью команды `dotnet run`.
-
-```
-dotnet run
-```
-
-Выходные данные в этом примере приложения будут выглядеть примерно так:
-
-```
-Azure Queues - .NET Quickstart sample
-
-Created queue 'quickstartqueues-3136fe9a-fa52-4b19-a447-8999a847da52'
-
-Added message 'aa8fa95f-07ea-4df7-bf86-82b3f7debfb7' to queue 'quickstartqueues-3136fe9a-fa52-4b19-a447-8999a847da52'
-Message insertion time: 2/7/2019 4:30:46 AM +00:00
-Message expiration time: 2/14/2019 4:30:46 AM +00:00
-
-Contents of peeked message 'aa8fa95f-07ea-4df7-bf86-82b3f7debfb7': Hello, World
-
-Message 'aa8fa95f-07ea-4df7-bf86-82b3f7debfb7' becomes visible again at 2/7/2019 4:31:16 AM +00:00
-
-Processed and deleted message 'aa8fa95f-07ea-4df7-bf86-82b3f7debfb7'
-
-Press any key to delete the sample queue.
-```
-
-## <a name="understand-the-sample-code"></a>Разбор примера кода
-
-Изучим пример кода, чтобы понять, как он работает.
-
-### <a name="try-parsing-the-connection-string"></a>Разбор строки подключения
-
-Сначала в примере проверяется, содержит ли переменная среды строку подключения, которую можно проанализировать, чтобы создать объект [CloudStorageAccount](/dotnet/api/microsoft.azure.cosmos.table.cloudstorageaccount), указывающий на учетную запись хранения. Чтобы проверить, допустима ли строка подключения, в приложении используется метод [TryParse](/dotnet/api/microsoft.azure.cosmos.table.cloudstorageaccount.tryparse). Если результаты выполнения метода **TryParse** успешны, он инициализирует переменную *storageAccount* и возвращает значение **true**.
+Вот этот код:
 
 ```csharp
-// Retrieve the connection string for use with the application. The storage connection string is stored
-// in an environment variable called storageconnectionstring, on the machine where the application is running.
-// If the environment variable is created after the application is launched in a console or with Visual
-// Studio, the shell needs to be closed and reloaded to take the environment variable into account.
-string storageConnectionString = Environment.GetEnvironmentVariable("storageconnectionstring");
+using Azure;
+using Azure.Storage.Queues;
+using Azure.Storage.Queues.Models;
+using System;
+using System.Threading.Tasks;
 
-// Check whether the connection string can be parsed.
-if (CloudStorageAccount.TryParse(storageConnectionString, out storageAccount))
+namespace QueuesQuickstartV12
 {
-    // If the connection string is valid, proceed with calls to Azure Queues here.
-    ...    
-}
-else
-{
-    Console.WriteLine(
-        "A connection string has not been defined in the system environment variables. " +
-        "Add an environment variable named 'storageconnectionstring' with your storage " +
-        "connection string as a value.");
+    class Program
+    {
+        static async Task Main(string[] args)
+        {
+        }
+    }
 }
 ```
 
-### <a name="create-the-queue"></a>Создание очереди
+[!INCLUDE [storage-quickstart-credentials-include](../../../includes/storage-quickstart-credentials-include.md)]
 
-В примере приложения сначала создается очередь и в нее добавляется сообщение. 
+## <a name="object-model"></a>Объектная модель
+
+Хранилище очередей Azure — это служба для хранения большого количества сообщений. Максимальный размер сообщения в очереди составляет 64 КБ. Очередь может содержать миллионы сообщений вплоть до лимита всей емкости учетной записи хранения. Очереди обычно используются для создания списка невыполненных заданий для асинхронной обработки. В Хранилище очередей предлагается три типа ресурсов:
+
+* учетная запись хранения;
+* очередь в учетной записи хранилища;
+* сообщения в очереди.
+
+На следующей схеме показана связь между этими ресурсами.
+
+![Схема архитектуры Хранилища очередей](./media/storage-queues-introduction/queue1.png)
+
+Используйте следующие классы .NET для взаимодействия с этими ресурсами:
+
+* [QueueServiceClient](/dotnet/api/azure.storage.queues.queueserviceclient). `QueueServiceClient` позволяет управлять всеми очередями в учетной записи хранения.
+* [QueueClient](/dotnet/api/azure.storage.queues.queueclient). Класс `QueueClient` позволяет управлять отдельной очередью и сообщениями в ней.
+* [QueueMessage](/dotnet/api/azure.storage.queues.models.queuemessage). Класс `QueueMessage` представляет отдельные объекты, которые возвращаются при вызове [ReceiveMessages](/dotnet/api/azure.storage.queues.queueclient.receivemessages) для очереди.
+
+## <a name="code-examples"></a>Примеры кода
+
+В этих примерах фрагментов кода показано, как выполнять следующие действия с помощью клиентской библиотеки Хранилища очередей Azure для .NET.
+
+* [Получение строки подключения](#get-the-connection-string)
+* [Создание очереди](#create-a-queue)
+* [Добавление сообщений в очередь](#add-messages-to-a-queue)
+* [Просмотр сообщений из очереди](#peek-at-messages-in-a-queue)
+* [Обновление сообщений в очереди](#update-a-message-in-a-queue)
+* [Получение сообщений из очереди](#receive-messages-from-a-queue)
+* [Удаление сообщений из очереди](#delete-messages-from-a-queue)
+* [Удаление очереди](#delete-a-queue)
+
+### <a name="get-the-connection-string"></a>Получение строки подключения
+
+Приведенный ниже код извлекает строку подключения к учетной записи хранения. Эта строка подключения сохраняется в переменной среды, которую вы создали в разделе [Настройка строки подключения хранилища](#configure-your-storage-connection-string).
+
+Добавьте этот код в метод `Main`.
 
 ```csharp
-// Create a queue called 'quickstartqueues' and append a GUID value so that the queue name 
-// is unique in your storage account. 
-queue = cloudQueueClient.GetQueueReference("quickstartqueues-" + Guid.NewGuid().ToString());
-await queue.CreateAsync();
+Console.WriteLine("Azure Queue storage v12 - .NET quickstart sample\n");
 
-Console.WriteLine("Created queue '{0}'", queue.Name);
-Console.WriteLine();
+// Retrieve the connection string for use with the application. The storage
+// connection string is stored in an environment variable called
+// AZURE_STORAGE_CONNECTION_STRING on the machine running the application.
+// If the environment variable is created after the application is launched
+// in a console or with Visual Studio, the shell or application needs to be
+// closed and reloaded to take the environment variable into account.
+string connectionString = Environment.GetEnvironmentVariable("AZURE_STORAGE_CONNECTION_STRING");
 ```
 
-### <a name="add-a-message"></a>Добавление сообщения
+### <a name="create-a-queue"></a>Создание очереди
 
-Затем сообщение добавляется в конец очереди. 
+Выберите имя для новой очереди. Приведенный ниже код добавляет к имени очереди значение GUID, чтобы сделать это имя уникальным.
 
-Сообщение должно быть в формате, допустимом для передачи XML-запросов с кодированием UTF-8. Размер сообщения не должен превышать 64 КБ. Если сообщение содержит двоичные данные, мы советуем использовать кодировку Base64 для сообщения.
+> [!IMPORTANT]
+> Имя очереди может содержать только строчные буквы, цифры и дефисы и должно начинаться с буквы или цифры. Перед каждым дефисом должен быть знак без дефиса. Количество символов в имени должно быть от 3 до 63. Дополнительные сведения см. в статье о [присвоении имен очередям и метаданным](/rest/api/storageservices/naming-queues-and-metadata).
 
-По умолчанию максимальное время действия сообщения составляет 7 дней. Для срока жизни сообщения можно указать любое положительное число.
+
+Создайте экземпляр класса [QueueClient](/dotnet/api/azure.storage.queues.queueclient). Затем вызовите метод [CreateAsync](/dotnet/api/azure.storage.queues.queueclient.createasync), чтобы создать очередь в своей учетной записи хранения.
+
+Добавьте следующий код в конец метода `Main`.
 
 ```csharp
-// Create a message and add it to the queue. Set expiration time to 14 days.
-CloudQueueMessage message = new CloudQueueMessage("Hello, World");
-await queue.AddMessageAsync(message, new TimeSpan(14,0,0,0), null, null, null);
-Console.WriteLine("Added message '{0}' to queue '{1}'", message.Id, queue.Name);
-Console.WriteLine("Message insertion time: {0}", message.InsertionTime.ToString());
-Console.WriteLine("Message expiration time: {0}", message.ExpirationTime.ToString());
-Console.WriteLine();
+// Create a unique name for the queue
+string queueName = "quickstartqueues-" + Guid.NewGuid().ToString();
+
+Console.WriteLine($"Creating queue: {queueName}");
+
+// Instantiate a QueueClient which will be
+// used to create and manipulate the queue
+QueueClient queueClient = new QueueClient(connectionString, queueName);
+
+// Create the queue
+await queueClient.CreateAsync();
 ```
 
-Чтобы добавить сообщение с неограниченным сроком действия, используйте `Timespan.FromSeconds(-1)` при вызове [AddMessageAsync](/dotnet/api/microsoft.azure.storage.queue.cloudqueue.addmessageasync).
+### <a name="add-messages-to-a-queue"></a>Добавление сообщений в очередь
+
+Следующий фрагмент кода асинхронно добавляет сообщения в очередь, вызывая метод [sendMessageAsync](/dotnet/api/azure.storage.queues.queueclient.sendmessageasync). Он также сохраняет [SendReceipt](/dotnet/api/azure.storage.queues.models.sendreceipt), возвращенный вызовом `SendMessageAsync`. Это подтверждение используется для обновления сообщения далее в коде программы.
+
+Добавьте следующий код в конец метода `Main`.
 
 ```csharp
-await queue.AddMessageAsync(message, TimeSpan.FromSeconds(-1), null, null, null);
+Console.WriteLine("\nAdding messages to the queue...");
+
+// Send several messages to the queue
+await queueClient.SendMessageAsync("First message");
+await queueClient.SendMessageAsync("Second message");
+
+// Save the receipt so we can update this message later
+SendReceipt receipt = await queueClient.SendMessageAsync("Third message");
 ```
 
-### <a name="peek-a-message-from-the-queue"></a>Просмотр сообщения из очереди
+### <a name="peek-at-messages-in-a-queue"></a>Просмотр сообщений из очереди
 
-В примере показано, как просмотреть сообщение из очереди. Во время просмотра сообщения можно считывать его содержимое. Но сообщение продолжает отображаться для других клиентов, чтобы другой клиент впоследствии смог извлечь и обработать его.
+Чтобы просмотреть сообщение в начале очереди, вызовите метод [PeekMessagesAsync](/dotnet/api/azure.storage.queues.queueclient.peekmessagesasync). Метод `PeekMessagesAsync` извлекает одно или несколько сообщений из начала очереди, не изменяя видимость этих сообщений.
+
+Добавьте следующий код в конец метода `Main`.
 
 ```csharp
-// Peek at the message at the front of the queue. Peeking does not alter the message's 
-// visibility, so that another client can still retrieve and process it. 
-CloudQueueMessage peekedMessage = await queue.PeekMessageAsync();
+Console.WriteLine("\nPeek at the messages in the queue...");
 
-// Display the ID and contents of the peeked message.
-Console.WriteLine("Contents of peeked message '{0}': {1}", peekedMessage.Id, peekedMessage.AsString);
-Console.WriteLine();
+// Peek at messages in the queue
+PeekedMessage[] peekedMessages = await queueClient.PeekMessagesAsync(maxMessages: 10);
+
+foreach (PeekedMessage peekedMessage in peekedMessages)
+{
+    // Display the message
+    Console.WriteLine($"Message: {peekedMessage.MessageText}");
+}
 ```
 
-### <a name="dequeue-a-message"></a>Вывод сообщения из очереди
+### <a name="update-a-message-in-a-queue"></a>Обновление сообщений в очереди
 
-В этом примере также показано, как вывести сообщение из очереди. При выводе сообщения из очереди оно извлекается из начала очереди и временно не отображается для других клиентов. По умолчанию это сообщение остается невидимым в течение 30 секунд. За это время код может обработать сообщение. Чтобы завершить вывод сообщения из очереди, оно удаляется сразу после обработки, чтобы другой клиент не смог вывести из очереди это же сообщение.
-
-Если приложению не удается обработать сообщение из-за сбоя оборудования или программного обеспечения, по завершении указанного периода сообщение снова становится видимым. Другой клиент может получить это же сообщение и повторить попытку.
+Чтобы обновить содержимое сообщения, вызовите метод [UpdateMessageAsync](/dotnet/api/azure.storage.queues.queueclient.updatemessageasync). Метод `UpdateMessageAsync` может изменить время видимости сообщения и (или) его содержимое. Содержимое сообщение должно иметь формат строки в кодировке UTF-8 длиной не более 64 КБ. Вместе с новым содержимым сообщения передайте значения из `SendReceipt`, сохраненного ранее в коде программы. Значения `SendReceipt` указывают, какое сообщение следует обновить.
 
 ```csharp
-// Retrieve the message at the front of the queue. The message becomes invisible for 
-// a specified interval, during which the client attempts to process it.
-CloudQueueMessage retrievedMessage = await queue.GetMessageAsync();
+Console.WriteLine("\nUpdating the third message in the queue...");
 
-// Display the time at which the message will become visible again if it is not deleted.
-Console.WriteLine("Message '{0}' becomes visible again at {1}", retrievedMessage.Id, retrievedMessage.NextVisibleTime);
-Console.WriteLine();
-
-//Process and delete the message within the period of invisibility.
-await queue.DeleteMessageAsync(retrievedMessage);
-Console.WriteLine("Processed and deleted message '{0}'", retrievedMessage.Id);
-Console.WriteLine();
+// Update a message using the saved receipt from sending the message
+await queueClient.UpdateMessageAsync(receipt.MessageId, receipt.PopReceipt, "Third message has been updated");
 ```
 
-### <a name="clean-up-resources"></a>Очистка ресурсов
+### <a name="receive-messages-from-a-queue"></a>Получение сообщений из очереди
 
-В примере приложения очищаются ресурсы, созданные при удалении очереди. При удалении очереди все сообщения, содержащиеся в ней, также удаляются.
+Чтобы скачать ранее добавленные сообщения, вызовите метод [ReceiveMessagesAsync](/dotnet/api/azure.storage.queues.queueclient.receivemessagesasync).
+
+Добавьте следующий код в конец метода `Main`.
 
 ```csharp
-Console.WriteLine("Press any key to delete the sample queue.");
+Console.WriteLine("\nReceiving messages from the queue...");
+
+// Get messages from the queue
+QueueMessage[] messages = await queueClient.ReceiveMessagesAsync(maxMessages: 10);
+```
+
+### <a name="delete-messages-from-a-queue"></a>Удаление сообщений из очереди
+
+Удалите из очереди сообщения, которые уже обработаны. В нашем примере обработка сводится к выводу сообщения в консоль.
+
+Перед обработкой и удалением сообщений приложение ожидает ввода от пользователя, вызывая метод `Console.ReadLine`. Перед удалением ресурсов убедитесь на [портале Azure](https://portal.azure.com), что они были правильно созданы. Все сообщения, которые не были удалены явным образом, снова становятся видимыми в очереди для новой попытки их обработать.
+
+Добавьте следующий код в конец метода `Main`.
+
+```csharp
+Console.WriteLine("\nPress Enter key to 'process' messages and delete them from the queue...");
 Console.ReadLine();
-Console.WriteLine("Deleting the queue and any messages it contains...");
-Console.WriteLine();
-if (queue != null)
+
+// Process and delete messages from the queue
+foreach (QueueMessage message in messages)
 {
-    await queue.DeleteIfExistsAsync();
+    // "Process" the message
+    Console.WriteLine($"Message: {message.MessageText}");
+
+    // Let the service know we're finished with
+    // the message and it can be safely deleted.
+    await queueClient.DeleteMessageAsync(message.MessageId, message.PopReceipt);
 }
 ```
 
-## <a name="resources-for-developing-net-applications-with-queues"></a>Ресурсы для разработки приложений .NET с очередями
+### <a name="delete-a-queue"></a>Удаление очереди
 
-Ознакомьтесь со следующими дополнительными ресурсами для разработки .NET с использованием хранилища очередей Azure:
+Следующий код очищает созданные приложением ресурсы, удаляя очередь с помощью метода [DeleteAsync](/dotnet/api/azure.storage.queues.queueclient.deleteasync).
 
-### <a name="binaries-and-source-code"></a>Двоичные файлы и исходный код
+Добавьте следующий код в конец метода `Main`.
 
-- Скачайте пакеты NuGet для последней версии [клиентской библиотеки службы хранилища Azure для .NET](/dotnet/api/overview/azure/storage/client).
-    - [Common](https://www.nuget.org/packages/Microsoft.Azure.Storage.Common/)
-    - [Очереди](https://www.nuget.org/packages/Azure.Storage.Queues/)
-- См. [исходный код клиентской библиотеки .NET](https://github.com/Azure/azure-storage-net) на сайте GitHub.
+```csharp
+Console.WriteLine("\nPress Enter key to delete the queue...");
+Console.ReadLine();
 
-### <a name="client-library-reference-and-samples"></a>Справочник по клиентской библиотеке и примеры
+// Clean up
+Console.WriteLine($"Deleting queue: {queueClient.Name}");
+await queueClient.DeleteAsync();
 
-- Подробные сведения о клиентской библиотеке .NET см. в [справочнике по API-интерфейсу .NET](https://docs.microsoft.com/dotnet/api/overview/azure/storage).
-- Изучите [примеры для хранилища очередей](https://azure.microsoft.com/resources/samples/?sort=0&service=storage&platform=dotnet&term=queues), написанные с использованием клиентской библиотеки .NET.
+Console.WriteLine("Done");
+```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="run-the-code"></a>Выполнение кода
 
-Из этого краткого руководства вы узнали, как добавлять сообщения в очередь, просматривать их и выводить из очереди, а также обрабатывать сообщения с помощью .NET. 
+Это приложение создает три сообщения и добавляет их в очередь Azure. Затем код получает список сообщений, извлекает и удаляет их, и наконец удаляет саму очередь.
+
+В окне консоли перейдите к каталогу приложения, выполните его сборку и запустите его.
+
+```console
+dotnet build
+```
+
+```console
+dotnet run
+```
+
+Вы должны увидеть выходные данные приложения, как показано ниже.
+
+```output
+Azure Queue storage v12 - .NET quickstart sample
+
+Creating queue: quickstartqueues-5c72da2c-30cc-4f09-b05c-a95d9da52af2
+
+Adding messages to the queue...
+
+Peek at the messages in the queue...
+Message: First message
+Message: Second message
+Message: Third message
+
+Updating the third message in the queue...
+
+Receiving messages from the queue...
+
+Press Enter key to 'process' messages and delete them from the queue...
+
+Message: First message
+Message: Second message
+Message: Third message has been updated
+
+Press Enter key to delete the queue...
+
+Deleting queue: quickstartqueues-5c72da2c-30cc-4f09-b05c-a95d9da52af2
+Done
+```
+
+Когда приложение приостановится перед получением сообщений, проверьте учетную запись хранения на [портале Azure](https://portal.azure.com). Убедитесь, что сообщения находятся в очереди.
+
+Нажмите клавишу **ВВОД**, чтобы получить и удалить сообщения. При появлении запроса снова нажмите клавишу **ВВОД**, чтобы удалить очередь и завершить демонстрацию.
+
+## <a name="next-steps"></a>Дальнейшие действия
+
+Из этого краткого руководства вы узнали, как создавать очередь и добавлять в нее сообщения из асинхронного кода на .NET. Затем вы изучили процессы вставки, просмотра, получения и удаления сообщений. Наконец, вы узнали, как удалить очередь сообщений.
+
+Руководства, примеры, краткие руководства и другую документацию можно найти здесь:
 
 > [!div class="nextstepaction"]
-> [Обмен данными между приложениями с помощью хранилища очередей Azure](https://docs.microsoft.com/learn/modules/communicate-between-apps-with-azure-queue-storage/index)
+> [Azure для разработчиков .NET и .NET Core](https://docs.microsoft.com/dotnet/azure/)
 
-- Дополнительные сведения о .NET Core см. в статье [Get started with .NET in 10 minutes](https://www.microsoft.com/net/learn/get-started/) (Быстрое начало работы с .NET).
+* Чтобы узнать больше, ознакомьтесь с [библиотеками службы хранилища Azure для .NET](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/storage).
+* Дополнительные примеры приложений для Хранилища очередей Azure версии 12 для .NET собраны [здесь](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/storage/Azure.Storage.Queues/samples).
+* Дополнительные сведения о .NET Core см. в статье [Get started with .NET in 10 minutes](https://www.microsoft.com/net/learn/get-started/) (Быстрое начало работы с .NET).

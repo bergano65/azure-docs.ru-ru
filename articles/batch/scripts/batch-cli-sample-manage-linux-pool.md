@@ -1,6 +1,6 @@
 ---
-title: Пример скрипта Azure CLI для создания пула Linux в пакетной службе | Документация Майкрософт
-description: 'Пример скрипта Azure CLI: создание пула Linux и управление им в пакетной службе Azure'
+title: Пример скрипта Azure CLI для создания пула Linux в пакетной службе
+description: В этом скрипте показаны некоторые из доступных команд Azure CLI для создания пулов вычислительных узлов Linux в пакетной службе Azure и управления ими.
 services: batch
 documentationcenter: ''
 author: laurenhughes
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: multiple
 ms.workload: na
 ms.date: 01/29/2018
 ms.author: lahugh
-ms.openlocfilehash: a0e78ec35ff001b6a4ee59794a002cb3a74e90cb
-ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
+ms.openlocfilehash: 33f66da1911bdefee298f3de949937bbc52d8fe1
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68698493"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75390216"
 ---
 # <a name="cli-example-create-and-manage-a-linux-pool-in-azure-batch"></a>Пример использования CLI. Создание пула Linux и управление им в пакетной службе Azure
 
@@ -45,7 +45,7 @@ az group delete --name myResourceGroup
 
 Этот скрипт использует следующие команды. Для каждой команды в таблице приведены ссылки на соответствующую документацию.
 
-| Команда | Примечания |
+| Get-Help | Примечания |
 |---|---|
 | [az group create](/cli/azure/group#az-group-create) | Создает группу ресурсов, в которой хранятся все ресурсы. |
 | [az batch account create](/cli/azure/batch/account#az-batch-account-create) | Создает учетную запись пакетной службы. |
@@ -59,6 +59,6 @@ az group delete --name myResourceGroup
 | [az batch node delete](https://docs.microsoft.com/cli/azure/batch/node#az-batch-node-delete) | Удаляет указанные узлы из выбранного пула.  |
 | [az group delete](/cli/azure/group#az-group-delete) | Удаляет группу ресурсов со всеми вложенными ресурсами. |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об Azure CLI см. в [документации по Azure CLI](https://docs.microsoft.com/cli/azure).

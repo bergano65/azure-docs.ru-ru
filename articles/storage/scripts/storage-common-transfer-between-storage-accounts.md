@@ -1,6 +1,6 @@
 ---
-title: Пример сценария Azure PowerShell по миграции больших двоичных объектов между учетными записями хранения с помощью AzCopy в ОС Windows | Документация Майкрософт
-description: Копирование содержимого большого двоичного объекта между учетными записями хранения Azure с помощью AzCopy.
+title: Перенос больших двоичных объектов между различными учетными записями хранения с помощью AzCopy в ОС Windows
+description: Пример скрипта Azure PowerShell. Копирование содержимого большого двоичного объекта между учетными записями хранения Azure с помощью AzCopy.
 services: storage
 documentationcenter: na
 author: normesta
@@ -12,12 +12,12 @@ ms.devlang: azurecli
 ms.topic: sample
 ms.date: 02/01/2018
 ms.author: normesta
-ms.openlocfilehash: 0af945177289760ca0d2a97133a300d9978ce702
-ms.sourcegitcommit: 55f7fc8fe5f6d874d5e886cb014e2070f49f3b94
+ms.openlocfilehash: 559b8b2875b789034ae07901f668f241505073b1
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71260627"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75465060"
 ---
 # <a name="migrate-blobs-across-storage-accounts-using-azcopy-on-windows"></a>Перенос больших двоичных объектов между различными учетными записями хранения с помощью AzCopy в ОС Windows
 
@@ -65,12 +65,12 @@ AzCopyPath: C:\Program Files (x86)\Microsoft SDKs\Azure\AzCopy\AzCopy.exe
 
 В этом сценарии для копирования данных между учетными записями хранения используются следующие команды: Для каждого элемента в таблице приведены ссылки на документацию по команде.
 
-| Команда | Примечания |
+| Get-Help | Примечания |
 |---|---|
 | [Get-AzStorageContainer](/powershell/module/az.storage/Get-AzStorageContainer) | Возвращает контейнеры, связанные с этой учетной записью хранения. |
 | [New-AzStorageContext](/powershell/module/az.storage/New-AzStorageContext) | Создает контекст службы хранилища Azure. |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о модуле Azure PowerShell см. в [документации по Azure PowerShell](/powershell/azure/overview).
 

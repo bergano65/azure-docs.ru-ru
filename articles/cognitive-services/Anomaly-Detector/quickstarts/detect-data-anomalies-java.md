@@ -1,7 +1,7 @@
 ---
 title: Краткое руководство. Обнаружение аномалий в данных временных рядов с использованием REST API Детектора аномалий и Java
 titleSuffix: Azure Cognitive Services
-description: API Детектора аномалий используется для обнаружения отклонений в ряде данных как в пакетном режиме, так и при потоковой передаче.
+description: В этом кратком руководстве описано, как использовать Детектор аномалий для обнаружения отклонений в ряде данных как в пакетном режиме, так и при потоковой передаче.
 services: cognitive-services
 author: aahill
 manager: nitinme
@@ -10,12 +10,12 @@ ms.subservice: anomaly-detector
 ms.topic: quickstart
 ms.date: 11/19/2019
 ms.author: aahi
-ms.openlocfilehash: 6b79470194c5e8dc9b8d51f8b528cb4e51f7daf2
-ms.sourcegitcommit: 8cf199fbb3d7f36478a54700740eb2e9edb823e8
+ms.openlocfilehash: 3bc406b22b7e8a684713385dfd15daed99bcf977
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74483023"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75448942"
 ---
 # <a name="quickstart-detect-anomalies-in-your-time-series-data-using-the-anomaly-detector-rest-api-and-java"></a>Краткое руководство. Обнаружение аномалий в данных временных рядов с использованием REST API Детектора аномалий и Java
 
@@ -28,7 +28,7 @@ ms.locfileid: "74483023"
 
  Хотя это приложение создано на языке Java, API представляет собой веб-службу RESTful, совместимую с большинством языков программирования. Исходный код для этого краткого руководства можно найти на портале [GitHub](https://github.com/Azure-Samples/AnomalyDetector/blob/master/quickstarts/java-detect-anomalies.java).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 - Пакет разработчиков [Java&trade; (JDK) версии 7](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) или более поздней.
 - Конечная точка и ключ Детектора аномалий
@@ -75,17 +75,17 @@ ms.locfileid: "74483023"
 
 ## <a name="detect-anomalies-as-a-batch"></a>Обнаружение аномалий в пакетном режиме
 
-1. Чтобы выполнить пакетное обнаружение данных, создайте метод `detectAnomaliesBatch()`. С помощью конечной точки, URL-адреса, ключа подписки и данных JSON вызовите метод `sendRequest()`, который был создан ранее. Получите результат и выведите его в консоль.
+1. Чтобы выполнить пакетное обнаружение данных, создайте метод `detectAnomaliesBatch()`. С помощью конечной точки, URL-адреса, ключа подписки и данных JSON вызовите созданный метод `sendRequest()`. Получите результат и выведите его в консоль.
 
 2. Если ответ содержит поле `code`, выведите код ошибки и сообщение об ошибке.
 
-3. В противном случае найдите позиции аномалий в наборе данных. Поле ответа `isAnomaly` содержит логическое значение, которое зависит от того, является ли заданная точка данных аномалией. Получите массив JSON и выполните итерацию по нему, напечатав индекс любых значений `true`. Эти значения соответствуют индексу аномальных точек данных, если они были найдены.
+3. В противном случае найдите положения аномалий в наборе данных. Поле ответа `isAnomaly` содержит логическое значение, которое зависит от того, является ли заданная точка данных аномалией. Получите массив JSON и выполните итерацию по нему, напечатав индекс любых значений `true`. Эти значения соответствуют индексу аномальных точек данных, если они были найдены.
 
     [!code-java[Method for batch detection](~/samples-anomaly-detector/quickstarts/java-detect-anomalies.java?name=detectBatch)]
 
 ## <a name="detect-the-anomaly-status-of-the-latest-data-point"></a>Обнаружение состояний аномалии последней точки данных
 
-Создайте метод с именем `detectAnomaliesLatest()`, чтобы обнаружить состояние аномалии последней точки данных в наборе данных. С помощью конечной точки, URL-адреса, ключа подписки и данных JSON вызовите метод `sendRequest()`, который был создан ранее. Получите результат и выведите его в консоль.
+Создайте метод с именем `detectAnomaliesLatest()`, чтобы обнаружить состояние аномалии последней точки данных в наборе данных. С помощью конечной точки, URL-адреса, ключа подписки и данных JSON вызовите созданный метод `sendRequest()`. Получите результат и выведите его в консоль.
 
 [!code-java[Latest point detection method](~/samples-anomaly-detector/quickstarts/java-detect-anomalies.java?name=detectLatest)]
 

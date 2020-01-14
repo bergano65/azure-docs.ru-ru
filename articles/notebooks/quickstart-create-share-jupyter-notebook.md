@@ -1,18 +1,24 @@
 ---
-title: Создание и совместное использование записной книжки Jupyter в Azure
-description: Быстрое создание и запуск записной книжки Jupyter в Записных книжках Azure, а также предоставление общего доступа к этой записной книжке.
+title: Создание и совместное использование записной книжки Jupyter в предварительной версии службы "Записные книжки Azure"
+description: Быстрое создание и запуск записной книжки Jupyter в предварительной версии службы "Записные книжки Azure", а также предоставление общего доступа к этой записной книжке.
 ms.topic: quickstart
 ms.date: 12/04/2018
-ms.openlocfilehash: 71220fa5aa0367d1cb1694582b4f96459a3016e7
-ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
+ms.openlocfilehash: 7b983d927bfd789cddb8d00675294cefc9f55e08
+ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74277508"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75647090"
 ---
-# <a name="quickstart-create-and-share-a-notebook"></a>Краткое руководство. Создание и совместное использование записной книжки
+# <a name="quickstart-create-and-share-a-notebook-in-azure-notebooks-preview"></a>Краткое руководство. Создание и совместное использование записной книжки в предварительной версии службы "Записные книжки Azure"
 
-1. Перейдите в службу [Записные книжки Azure](https://notebooks.azure.com) и выполните вход. (Дополнительные сведения см. в кратком руководстве по [входу в Записные книжки Azure](quickstart-sign-in-azure-notebooks.md).)
+Из этого краткого руководства вы узнаете, как быстро создать и запустить записную книжку Jupyter в службе "Записные книжки Azure", а затем предоставить общий доступ к ней другим пользователям.
+
+[!INCLUDE [notebooks-status](../../includes/notebooks-status.md)]
+
+## <a name="create-a-new-project-and-notebook"></a>Создание проекта и записной книжки
+
+1. Перейдите на сайт [Записные книжки Azure (https://notebooks.azure.com)](https://notebooks.azure.com) и выполните вход. (Дополнительные сведения см. в кратком руководстве по [входу в Записные книжки Azure](quickstart-sign-in-azure-notebooks.md).)
 
 1. Вверху на общедоступной странице профиля щелкните **Мои проекты**:
 
@@ -93,7 +99,7 @@ ms.locfileid: "74277508"
 
 ![Команда предоставления общего доступа к проекту](media/quickstarts/share-project-command.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Руководство по созданию и запуску записной книжки Jupyter для выполнения линейной регрессии](tutorial-create-run-jupyter-notebook.md)

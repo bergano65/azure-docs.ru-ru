@@ -1,5 +1,5 @@
 ---
-title: Руководство по интеграции единого входа Azure Active Directory с Airtable | Документация Майкрософт
+title: Руководство. интеграции единого входа Azure Active Directory с Airtable | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Airtable.
 services: active-directory
 documentationCenter: na
@@ -13,17 +13,17 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 11/12/2019
+ms.date: 12/16/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3f43d965e2c1d706097c9cc2c432ca77e16f162c
-ms.sourcegitcommit: dbde4aed5a3188d6b4244ff7220f2f75fce65ada
+ms.openlocfilehash: b4c8e254b2ceb040b487de1cfaac6e4d8670d8b5
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74187268"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75430952"
 ---
-# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-airtable"></a>Руководство по интеграции единого входа Azure Active Directory с Airtable
+# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-airtable"></a>Руководство. интеграции единого входа Azure Active Directory с Airtable
 
 В этом учебнике описано, как интегрировать Airtable с Azure Active Directory (Azure AD). Интеграция Airtable с Azure AD обеспечивает следующие возможности:
 
@@ -33,11 +33,11 @@ ms.locfileid: "74187268"
 
 Чтобы узнать больше об интеграции приложений SaaS с Azure AD, прочитайте статью [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы приступить к работе, потребуется следующее:
 
-* подписка Azure AD Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
+* подписка Azure AD; Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
 * подписка Airtable с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -134,7 +134,7 @@ ms.locfileid: "74187268"
 
 ## <a name="configure-airtable-sso"></a>Настройка единого входа в Airtable
 
-Чтобы настроить единый вход на стороне **Airtable**, нужно отправить скачанный **сертификат (Base64)** и соответствующие URL-адреса, скопированные на портале Azure, [группе поддержки Airtable](mailto:azure-ad-marketplace@airtable.com). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+Следуйте инструкциям, приведенным по [ссылке](https://support.airtable.com/hc/articles/360037475234), чтобы настроить единый вход на стороне **Airtable**.
 
 ### <a name="create-airtable-test-user"></a>Создание тестового пользователя Airtable
 

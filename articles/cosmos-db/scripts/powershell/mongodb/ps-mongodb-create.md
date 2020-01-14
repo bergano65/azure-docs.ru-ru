@@ -1,5 +1,5 @@
 ---
-title: Скрипт Azure PowerShell — создание базы данных и коллекции для Azure Cosmos DB с помощью API MongoDB
+title: Скрипт PowerShell для создания базы данных и коллекции в API Azure Cosmos DB для MongoDB
 description: Скрипт Azure PowerShell — создание базы данных и коллекции для Azure Cosmos DB с помощью API MongoDB
 author: markjbrown
 ms.service: cosmos-db
@@ -7,12 +7,12 @@ ms.subservice: cosmosdb-mongo
 ms.topic: sample
 ms.date: 05/18/2019
 ms.author: mjbrown
-ms.openlocfilehash: 54fd220978a66081979de456568173a7e2784280
-ms.sourcegitcommit: 83df2aed7cafb493b36d93b1699d24f36c1daa45
+ms.openlocfilehash: 347bd6d4d9788516d51d22f43ea60a223e91c49f
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2019
-ms.locfileid: "71178898"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75444988"
 ---
 # <a name="create-a-database-and-collection-for-azure-cosmos-db---mongodb-api"></a>Создание базы данных и коллекции для Azure Cosmos DB — API MongoDB
 
@@ -36,7 +36,7 @@ Remove-AzResourceGroup -ResourceGroupName "myResourceGroup"
 
 Этот скрипт использует следующие команды. Для каждой команды в таблице приведены ссылки на соответствующую документацию.
 
-| Команда | Примечания |
+| Get-Help | Примечания |
 |---|---|
 |**Ресурсы Azure**| |
 | [New-AzResource](https://docs.microsoft.com/powershell/module/az.resources/new-azresource) | Создает ресурс. |
@@ -44,7 +44,7 @@ Remove-AzResourceGroup -ResourceGroupName "myResourceGroup"
 | [Remove-AzResourceGroup](https://docs.microsoft.com/powershell/module/az.resources/remove-azresourcegroup) | Удаляет группу ресурсов со всеми вложенными ресурсами. |
 |||
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о Azure PowerShell см. в [документации по Azure PowerShell](https://docs.microsoft.com/powershell/).
 

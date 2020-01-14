@@ -1,6 +1,6 @@
 ---
-title: Примеры Azure PowerShell. Создание полного масштабируемого набора виртуальных машин | Документация Майкрософт
-description: Примеры сценариев Azure PowerShell.
+title: Примеры Azure PowerShell. Создание полного масштабируемого набора виртуальных машин
+description: Этот скрипт создает масштабируемый набор виртуальных машин Windows Server 2016, где настраиваются и создаются индивидуальные ресурсы.
 services: virtual-machine-scale-sets
 documentationcenter: ''
 author: cynthn
@@ -16,12 +16,12 @@ ms.workload: na
 ms.date: 05/29/2018
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: ebbc47739b2be72d0dd98c0659bfcaba512e79e9
-ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.openlocfilehash: b116a6cb4266b5ec05abd2b3210ebc772bac9868
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57448933"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75350938"
 ---
 # <a name="create-a-complete-virtual-machine-scale-set-with-powershell"></a>Создание полного масштабируемого набора виртуальных машин с помощью PowerShell
 
@@ -30,7 +30,7 @@ ms.locfileid: "57448933"
 
 [!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
 
-[!INCLUDE [updated-for-az-vm.md](../../../includes/updated-for-az-vm.md)]
+[!INCLUDE [updated-for-az.md](../../../includes/updated-for-az.md)]
 
 ## <a name="sample-script"></a>Пример скрипта
 
@@ -46,7 +46,7 @@ Remove-AzResourceGroup -Name $resourceGroupName
 ## <a name="script-explanation"></a>Описание скрипта
 Чтобы создать развертывание, скрипт использует следующие команды. Для каждого элемента в таблице приведены ссылки на документацию по команде.
 
-| Команда | Примечания |
+| Get-Help | Примечания |
 |---|---|
 | [New-AzResourceGroup](/powershell/module/az.resources/new-azresourcegroup) | Создает группу ресурсов, в которой хранятся все ресурсы. |
 | [New-AzVirtualNetworkSubnetConfig](/powershell/module/az.network/new-azvirtualnetworksubnetconfig) | Создает конфигурацию подсети. Эта конфигурация используется в процессе создания виртуальной сети. |
@@ -67,7 +67,7 @@ Remove-AzResourceGroup -Name $resourceGroupName
 | [New-AzVmss](/powershell/module/az.Compute/New-azVmss) | Создает масштабируемый набор на основе данных, указанных в конфигурации масштабируемого набора. |
 | [Remove-AzResourceGroup](/powershell/module/az.resources/remove-azresourcegroup) | Удаляет группу ресурсов и все ресурсы, содержащиеся в ней. |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о модуле Azure PowerShell см. в [документации по Azure PowerShell](/powershell/azure/overview).
 
 См. дополнительные примеры сценариев PowerShell для [масштабируемого набора виртуальных машин Azure](../powershell-samples.md).

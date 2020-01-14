@@ -1,5 +1,5 @@
 ---
-title: Руководство по Использование контекстно-зависимых данных с ролями — LUIS
+title: Руководство. Использование контекстно-зависимых данных с ролями — LUIS
 titleSuffix: Azure Cognitive Services
 description: Поиск связанных данных на основе контекста. Например, места исходного расположения и назначения при перемещении из одного здания и офиса в другое связаны между собой.
 services: cognitive-services
@@ -9,22 +9,20 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: tutorial
-ms.date: 12/05/2019
+ms.date: 12/17/2019
 ms.author: diberry
-ms.openlocfilehash: 29e43692c1eb543768934a961a2bb8ae5a023b1d
-ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
+ms.openlocfilehash: cd646ef061a0be06a9b1a56b72a4f35d9796aa63
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74894609"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75447866"
 ---
-# <a name="tutorial-extract-contextually-related-data-from-an-utterance"></a>Руководство по Извлечение из речевого фрагмента данных, связанных с контекстом
+# <a name="tutorial-extract-contextually-related-data-from-an-utterance"></a>Руководство. Извлечение из речевого фрагмента данных, связанных с контекстом
 
 Из данного руководства можно узнать, как выполнять поиск связанных частей данных на основе контекста. Например, исходное и конечное расположения для перемещения из одного города в другой. Могут потребоваться фрагменты данных, которые связаны друг с другом.
 
 Роли можно использовать с любым предварительно созданным или настраиваемым типом сущности. Они используются в примерах речевых фрагментов и шаблонов.
-
-[!INCLUDE [Only valid with current portal](includes/old-portal-only.md)]
 
 **В этом руководстве рассмотрено, как выполнять следующие задачи.**
 
@@ -51,7 +49,11 @@ ms.locfileid: "74894609"
 
 ## <a name="create-a-new-app"></a>Создание нового приложения
 
-[!INCLUDE [Follow these steps to create a new LUIS app](../../../includes/cognitive-services-luis-create-new-app-steps.md)]
+1. Войдите в предварительную версию портала LUIS по URL-адресу [https://preview.luis.ai](https://preview.luis.ai).
+
+1. Выберите **Создание приложения**, введите имя `HumanResources` и сохраните язык и региональные параметры по умолчанию (на **английском языке**). Описание оставьте пустым.
+
+1. Нажмите кнопку **Готово**.
 
 ## <a name="create-an-intent-to-move-employees-between-cities"></a>Создание намерения для перемещения сотрудников между городами
 
@@ -61,7 +63,8 @@ ms.locfileid: "74894609"
 
 1. Введите `MoveEmployeeToCity` во всплывающем диалоговом окне и нажмите кнопку **Done** (Готово).
 
-    ![Снимок экрана диалогового окна создания намерения с](./media/tutorial-entity-roles/create-new-intent-move-employee-to-city.png)
+    > [!div class="mx-imgBorder"]
+    > ![Снимок экрана диалогового окна создания намерения с](./media/tutorial-entity-roles/create-new-intent-move-employee-to-city.png)
 
 1. Добавьте примеры фраз в намерение.
 
@@ -77,7 +80,8 @@ ms.locfileid: "74894609"
     |Отправить Стива Стандиша из Сан-Диего в Бельвю. |
     |Перебросить Таннера Томпсона из Канзас-Сити в Чикаго.|
 
-    [![Снимок экрана приложения LUIS с новыми фразами в намерении MoveEmployee](./media/tutorial-entity-roles/hr-enter-utterances.png)](./media/tutorial-entity-roles/hr-enter-utterances.png#lightbox)
+    > [!div class="mx-imgBorder"]
+    > ![Снимок экрана приложения LUIS с новыми фразами в намерении MoveEmployee](./media/tutorial-entity-roles/hr-enter-utterances.png)
 
 ## <a name="add-prebuilt-entity-geographyv2"></a>Добавление предварительно созданной сущности geographyV2
 
@@ -87,16 +91,30 @@ ms.locfileid: "74894609"
 
 1. Выберите **Add prebuilt entity** (Добавить предварительно созданную сущность), а затем выберите `geo` в строке поиска, чтобы отфильтровать предварительно созданные сущности.
 
-    ![Добавление предварительно созданной сущности geographyV2 в приложение](media/tutorial-entity-roles/add-geographyV2-prebuilt-entity.png)
+    > [!div class="mx-imgBorder"]
+    > ![Добавление предварительно созданной сущности geographyV2 в приложение](media/tutorial-entity-roles/add-geographyV2-prebuilt-entity.png)
+
 1. Установите флажок и выберите **Done** (Готово).
 1. В списке **Entities** (Сущности) выберите **geographyV2**, чтобы открыть новую сущность.
 1. Добавьте две роли, `Origin` и `Destination`.
 
-    ![Добавление ролей в предварительно созданную сущность](media/tutorial-entity-roles/add-roles-to-prebuilt-entity.png)
-1. Выберите **Intents** (Намерения) в области навигации слева, затем выберите намерение **MoveEmployeeToCity**. Обратите внимание на то, что названия городов помечены с использованием предварительно созданной сущности **geographyV2**.
-1. В первом речевом фрагменте списка выберите исходное расположение. Откроется раскрывающееся меню. Выберите **geographyV2** из списка, затем проведите указателем мыши по меню, чтобы выбрать **Origin** (Источник).
-1. Используя метод из предыдущего шага, пометьте все роли расположений во всех речевых фрагментах.
+    > [!div class="mx-imgBorder"]
+    > ![Добавление ролей в предварительно созданную сущность](media/tutorial-entity-roles/add-roles-to-prebuilt-entity.png)
 
+1. Выберите **Intents** (Намерения) в области навигации слева, затем выберите намерение **MoveEmployeeToCity**. Обратите внимание на то, что названия городов помечены с использованием предварительно созданной сущности **geographyV2**.
+1. На контекстной панели инструментов выберите **Entity palette** (Палитра сущностей).
+
+    > [!div class="mx-imgBorder"]
+    > ![Выбор палитры сущностей на контекстной панели инструментов](media/tutorial-entity-roles/intent-detail-context-toolbar-select-entity-palette.png)
+
+1. Выберите созданную сущность **geographyV2**, а затем щелкните **Entity inspector** (Инспектор сущностей).
+1. В разделе **Entity inspector** (Инспектор сущностей) выберите одну роль — **Назначение**. Это приведет к изменению курсора мыши. С помощью курсора пометьте текст во всех речевых фрагментах, которые являются конечным расположением.
+
+    > [!div class="mx-imgBorder"]
+    > ![Выбор роли на палитре сущностей](media/tutorial-entity-roles/entity-palette-select-entity-role.png)
+
+
+1. Вернитесь к разделу **Entity inspector** (Инспектор сущностей) и выберите роль **Источник**. С помощью курсора пометьте текст во всех речевых фрагментах, которые являются исходным расположением.
 
 ## <a name="add-example-utterances-to-the-none-intent"></a>Добавление примеров речевых фрагментов в намерение None
 
@@ -159,7 +177,7 @@ ms.locfileid: "74894609"
 
 [!INCLUDE [LUIS How to clean up resources](../../../includes/cognitive-services-luis-tutorial-how-to-clean-up-resources.md)]
 
-## <a name="related-information"></a>Связанные сведения
+## <a name="related-information"></a>Дополнительные сведения
 
 * [Основные понятия сущностей](luis-concept-entity-types.md)
 * [Основные понятия ролей](luis-concept-roles.md)
@@ -169,7 +187,7 @@ ms.locfileid: "74894609"
 * [Тестирование приложения LUIS на портале LUIS](luis-interactive-test.md)
 * [Роли](luis-concept-roles.md)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из этого руководства вы узнали, как создать намерение и добавить пример с речевыми фрагментами для данных об исходном и конечном расположении, полученных с учетом контекста. После обучения и публикации приложения клиентское приложение может использовать данную информацию для создания и перемещения билета с соответствующей информацией.
 

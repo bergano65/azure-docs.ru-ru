@@ -1,6 +1,6 @@
 ---
-title: Примеры Azure CLI. Масштабируемый набор с одной зоной | Документация Майкрософт
-description: Примеры Azure CLI
+title: Примеры Azure CLI. Масштабируемый набор с одной зоной
+description: Этот скрипт создает масштабируемый набор виртуальных машин Azure под управлением Ubuntu в одной зоне доступности.
 services: virtual-machine-scale-sets
 documentationcenter: ''
 author: cynthn
@@ -16,12 +16,12 @@ ms.workload: na
 ms.date: 03/27/2018
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: 12e8ebea994b39b7c4324b52068b574749002117
-ms.sourcegitcommit: 943af92555ba640288464c11d84e01da948db5c0
+ms.openlocfilehash: 45cef0e0e7d56baf8a5af3514f167d3a4565d15f
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/09/2019
-ms.locfileid: "55982239"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75350989"
 ---
 # <a name="create-a-single-zone-virtual-machine-scale-set-with-the-azure-cli"></a>Создание однозонного масштабируемого набора виртуальных машин с помощью Azure CLI
 Этот скрипт создает масштабируемый набор виртуальных машин под управлением Ubuntu в одной зоне доступности. После выполнения сценария можно получить доступ к виртуальной машине по протоколу RDP.
@@ -43,13 +43,13 @@ az group delete --name myResourceGroup
 ## <a name="script-explanation"></a>Описание скрипта
 Для создания группы ресурсов, масштабируемого набора виртуальных машин и всех связанных ресурсов в этом скрипте используются приведенные ниже команды. Для каждой команды в таблице приведены ссылки на соответствующую документацию.
 
-| Команда | Примечания |
+| Get-Help | Примечания |
 |---|---|
 | [az group create](/cli/azure/ad/group) | Создает группу ресурсов, в которой хранятся все ресурсы. |
 | [az vmss create](/cli/azure/vmss) | Создает масштабируемый набор виртуальных машин и подключает его к виртуальной сети, подсети и группе безопасности сети. Чтобы распределить трафик между несколькими экземплярами виртуальных машин, создается еще и подсистема балансировки нагрузки. Эта команда также указывает образ виртуальной машины, который будет использоваться, и учетные данные администратора.  |
 | [az group delete](/cli/azure/ad/group) | Удаляет группу ресурсов со всеми вложенными ресурсами. |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения об Azure CLI см. в [документации по Azure CLI](https://docs.microsoft.com/cli/azure/overview).
 
 Изучите дополнительные примеры сценариев Azure CLI в [документации по масштабируемым наборам виртуальных машин Azure](../cli-samples.md).

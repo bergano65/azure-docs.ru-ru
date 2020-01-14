@@ -1,7 +1,7 @@
 ---
-title: Краткое руководство. Клиентская библиотека Персонализатора для Node.js | Документация Майкрософт
+title: Краткое руководство. Клиентская библиотека Персонализатора для Node.js
 titleSuffix: Azure Cognitive Services
-description: Приступите к работе с клиентской библиотекой Персонализатора для Node.js, используя цикл обучения.
+description: В этом руководстве описано как приступить к работе с клиентской библиотекой Персонализатора для Node.js, используя цикл обучения.
 services: cognitive-services
 author: diberry
 manager: nitinme
@@ -10,12 +10,12 @@ ms.subservice: personalizer
 ms.topic: quickstart
 ms.date: 10/23/2019
 ms.author: diberry
-ms.openlocfilehash: f7667ce99ceaa713332ad9419ffab9d57aa0f075
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 91aee7f4a110490495a3cf840e6b3ef3282c91c5
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73494465"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75446374"
 ---
 # <a name="quickstart-personalizer-client-library-for-nodejs"></a>Краткое руководство. Клиентская библиотека Персонализатора для Node.js
 
@@ -28,7 +28,7 @@ ms.locfileid: "73494465"
 
 [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/cognitiveservices/cognitiveservices-personalizer) | [Пакет (NPM)](https://www.npmjs.com/package/@azure/cognitiveservices-personalizer) | [Примеры](https://github.com/Azure-Samples/cognitive-services-personalizer-samples/blob/master/quickstarts/node/sample.js)
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/).
 * Текущая версия [Node.js](https://nodejs.org) и NPM.
@@ -47,7 +47,7 @@ ms.locfileid: "73494465"
 
 ## <a name="create-a-personalizer-azure-resource"></a>Создание ресурса Azure для Персонализатора
 
-Ресурсами Azure, на которые вы подписаны, будет представлено семейство служб Azure Cognitive Services. Создайте ресурс для Персонализатора с помощью [портала Azure](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) или [Azure CLI](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account-cli) на локальном компьютере. Также можно:
+Ресурсами Azure, на которые вы подписаны, будет представлено семейство служб Azure Cognitive Services. Создайте ресурс для Персонализатора с помощью [портала Azure](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) или [Azure CLI](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account-cli) на локальном компьютере. Кроме того, вы можете сделать следующее:
 
 * получить бесплатный [ключ пробной версии](https://azure.microsoft.com/try/cognitive-services) на 7 дней. После регистрации он будет доступен на [веб-сайте Azure](https://azure.microsoft.com/try/cognitive-services/my-apis/).  
 * Просмотреть этот ресурс на [портале Azure](https://portal.azure.com/).
@@ -190,9 +190,9 @@ node sample.js
 Если вы хотите очистить и удалить подписку Cognitive Services, вы можете удалить ресурс или группу ресурсов. При этом удаляются все ресурсы, связанные с ней.
 
 * [Портал](../cognitive-services-apis-create-account.md#clean-up-resources)
-* [Интерфейс командной строки Azure](../cognitive-services-apis-create-account-cli.md#clean-up-resources)
+* [Azure CLI](../cognitive-services-apis-create-account-cli.md#clean-up-resources)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 >[Принцип работы Персонализатора](how-personalizer-works.md)

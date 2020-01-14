@@ -1,5 +1,5 @@
 ---
-title: Руководство по Включение проверки подлинности в веб-приложении
+title: Руководство. Включение проверки подлинности в веб-приложении
 titleSuffix: Azure AD B2C
 description: Руководство по предоставлению пользователю данных для входа в веб-приложение ASP.NET с помощью Azure Active Directory B2C.
 services: active-directory-b2c
@@ -11,27 +11,27 @@ ms.custom: mvc
 ms.topic: tutorial
 ms.service: active-directory
 ms.subservice: B2C
-ms.openlocfilehash: b4305e9b3cfdb5e05ce76ee1811dc0d2dcc265b7
-ms.sourcegitcommit: 5b9287976617f51d7ff9f8693c30f468b47c2141
+ms.openlocfilehash: 6fa0379f2f8194356ed122e86b5a225f72adfe7d
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2019
-ms.locfileid: "74950210"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75367609"
 ---
-# <a name="tutorial-enable-authentication-in-a-web-application-using-azure-active-directory-b2c"></a>Руководство по Включение в веб-приложении аутентификации с помощью Azure Active Directory B2C
+# <a name="tutorial-enable-authentication-in-a-web-application-using-azure-active-directory-b2c"></a>Руководство. Включение в веб-приложении аутентификации с помощью Azure Active Directory B2C
 
 В этом руководстве описано использование Azure Active Directory B2C (Azure AD B2C) для входа и регистрации пользователей в веб-приложении ASP.NET. Azure AD B2C позволяет приложениям выполнять проверку подлинности учетных записей социальных сетей, корпоративных учетных записей и учетных записей Azure Active Directory с помощью стандартных протоколов.
 
-Из этого руководства вы узнаете, как выполнять следующие задачи:
+В этом руководстве описано следующее.
 
 > [!div class="checklist"]
 > * Обновление приложения в Azure AD B2C.
-> * Настройка примера для использования приложения.
+> * настройка примера для использования приложения;
 > * регистрация с помощью потока пользователя.
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * [Создайте потоки пользователя](tutorial-create-user-flows.md), чтобы обеспечить взаимодействие с пользователями в приложении.
 * Установите [Visual Studio 2019](https://www.visualstudio.com/downloads/) с рабочей нагрузкой **ASP.NET и веб-разработка**.
@@ -46,7 +46,7 @@ ms.locfileid: "74950210"
 
 #### <a name="applicationstabapplications"></a>[Приложения](#tab/applications/)
 
-1. Войдите на [портале Azure](https://portal.azure.com).
+1. Войдите на [портал Azure](https://portal.azure.com).
 1. Убедитесь, что используете каталог с клиентом Azure AD B2C, выбрав фильтр **Каталог и подписка** в меню вверху и каталог с вашим клиентом.
 1. Выберите **Все службы** в левом верхнем углу окна портала Azure, а затем найдите и выберите **Azure AD B2C**.
 1. Щелкните пункт **Приложения**, а затем выберите приложение *webapp1*.
@@ -56,7 +56,7 @@ ms.locfileid: "74950210"
 
 #### <a name="app-registrations-previewtabapp-reg-preview"></a>[Регистрация приложений (предварительная версия)](#tab/app-reg-preview/)
 
-1. Войдите на [портале Azure](https://portal.azure.com).
+1. Войдите на [портал Azure](https://portal.azure.com).
 1. Выберите фильтр **Каталог и подписка** в верхнем меню, а затем выберите каталог, содержащий клиент Azure AD B2C.
 1. В меню слева выберите **Azure AD B2C**. Либо щелкните **Все службы**, а затем найдите и выберите **Azure AD B2C**
 1. Выберите **Регистрация приложений (предварительная версия)** , щелкните вкладку **Собственные приложения**, а затем выберите приложение *webapp1*.
@@ -94,7 +94,7 @@ git clone https://github.com/Azure-Samples/active-directory-b2c-dotnet-webapp-an
 1. В проекте **TaskWebApp** откройте файл **Web.config**.
     1. Измените значение `ida:Tenant` и `ida:AadInstance` на имя созданного клиента Azure AD B2C. Например, замените `fabrikamb2c` на `contoso`.
     1. Замените значение `ida:ClientId` идентификатором приложения, который вы записали.
-    1. Замените значение `ida:ClientSecret` ключом, который вы записали. Перед добавлением секрета клиента в файл Web. config необходимо выполнить его кодирование в формате XML.
+    1. Замените значение `ida:ClientSecret` ключом, который вы записали. Если секрет клиента содержит какие-либо предопределенные сущности XML, например такие символы, как меньше (`<`), больше (`>`), амперсанд (`&`) или двойные кавычки (`"`), их необходимо экранировать, применив к секрету клиента кодировку XML перед его добавлением в файл Web.config.
     1. Замените значение `ida:SignUpSignInPolicyId` на `b2c_1_signupsignin1`.
     1. Замените значение `ida:EditProfilePolicyId` на `b2c_1_profileediting1`.
     1. Замените значение `ida:ResetPasswordPolicyId` на `b2c_1_passwordreset1`.
@@ -118,13 +118,13 @@ git clone https://github.com/Azure-Samples/active-directory-b2c-dotnet-webapp-an
 
 Однако компонент **Список задач** не будет работать, пока вы не завершите работу со следующим руководством в серии, [Руководство: Использование Azure AD B2C для защиты веб-API ASP.NET](active-directory-b2c-tutorials-web-api.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-Из этого руководства вы узнали, как выполнить следующие задачи:
+В этом руководстве вы узнали, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 > * Обновление приложения в Azure AD B2C.
-> * Настройка примера для использования приложения.
+> * настройка примера для использования приложения;
 > * регистрация с помощью потока пользователя.
 
 Теперь перейдите к следующему руководству, чтобы включить компонент**Список задач** в веб-приложении. В нем вы зарегистрируете приложение веб-API в собственном клиенте Azure AD B2C, а затем измените пример кода, чтобы использовать клиент для проверки подлинности API.

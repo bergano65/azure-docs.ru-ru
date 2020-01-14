@@ -1,20 +1,16 @@
 ---
-title: Краткое руководство. Развертывание приложения Hello World в Сетке Azure Service Fabric | Документация Майкрософт
+title: Краткое руководство. Развертывание приложения Hello World в Сетке Azure Service Fabric
 description: В этом кратком руководстве показано, как развернуть приложение Сетки Service Fabric в Сетке Azure Service Fabric.
-services: service-fabric-mesh
-keywords: Не добавляйте и не изменяйте ключевые слова, не посоветовавшись с консультантом SEO.
 author: dkkapur
 ms.author: dekapur
 ms.date: 11/27/2018
 ms.topic: quickstart
-ms.service: service-fabric-mesh
-manager: timlt
-ms.openlocfilehash: 5ca622602c71976917a07005bf349dd98086327c
-ms.sourcegitcommit: 02d17ef9aff49423bef5b322a9315f7eab86d8ff
+ms.openlocfilehash: ce897b6e0e9d6a0b9b672907a64f4683f907b677
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58336989"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75458963"
 ---
 # <a name="quickstart-deploy-hello-world-to-service-fabric-mesh"></a>Краткое руководство. Развертывание приложения Hello World в Сетке Service Fabric
 
@@ -103,7 +99,7 @@ az mesh code-package-log get --resource-group myResourceGroup --application-name
 az group delete --name myResourceGroup
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о создании и развертывании приложений службы "Сетка Service Fabric" доступны в руководстве.
 > [!div class="nextstepaction"]

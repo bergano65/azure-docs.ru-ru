@@ -1,5 +1,5 @@
 ---
-title: Руководство по интеграции единого входа Azure Active Directory со Slack | Документация Майкрософт
+title: Руководство. интеграции единого входа Azure Active Directory со Slack | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Slack.
 services: active-directory
 documentationCenter: na
@@ -11,19 +11,18 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
-ms.date: 08/23/2019
+ms.date: 12/23/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0085db3f38fb8af014434f36893182e1682b05a7
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.openlocfilehash: 9f67a5b5513ad5d8a07551b2a9f5605fc32a9bf6
+ms.sourcegitcommit: 5925df3bcc362c8463b76af3f57c254148ac63e3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74972154"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75561853"
 ---
-# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-slack"></a>Руководство по интеграции единого входа Azure Active Directory со Slack
+# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-slack"></a>Руководство. интеграции единого входа Azure Active Directory со Slack
 
 В этом учебнике описано, как интегрировать Slack с Azure Active Directory (Azure AD). Интеграция Slack с Azure AD дает следующие возможности.
 
@@ -33,11 +32,11 @@ ms.locfileid: "74972154"
 
 Чтобы узнать больше об интеграции приложений SaaS с Azure AD, прочитайте статью [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы приступить к работе, потребуется следующее:
 
-* подписка Azure AD Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
+* подписка Azure AD; Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
 * Подписка Slack с поддержкой единого входа (SSO).
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -45,7 +44,8 @@ ms.locfileid: "74972154"
 В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде.
 
 * Slack поддерживает единый вход, инициированный **поставщиком услуг**.
-* Slack поддерживает [**автоматическую** подготовку пользователей и ее отмену](slack-provisioning-tutorial.md) (рекомендуется).
+* Slack поддерживает **JIT**-подготовку пользователей.
+* Slack поддерживает [**автоматическую** подготовку пользователей](https://docs.microsoft.com/azure/active-directory/saas-apps/slack-provisioning-tutorial).
 
 > [!NOTE]
 > Идентификатор этого приложения — фиксированное строковое значение, поэтому в одном клиенте можно настроить только один экземпляр.
@@ -68,10 +68,10 @@ ms.locfileid: "74972154"
 Чтобы настроить и проверить единый вход Azure AD в Slack, выполните действия в следующих стандартных блоках:
 
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-sso)** необходима, чтобы пользователи могли использовать эту функцию.
-    1. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD с помощью пользователя B.Simon.
-    1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить пользователю B.Simon использовать единый вход Azure AD.
+    * **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD с помощью пользователя B.Simon.
+    * **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить пользователю B.Simon использовать единый вход Azure AD.
 1. **[Настройка единого входа в Slack](#configure-slack-sso)** необходима, чтобы настроить параметры единого входа на стороне приложения.
-    1. **[Создание тестового пользователя Slack](#create-slack-test-user)** требуется для того, чтобы в Slack существовал пользователь B. Simon, связанный с одноименным пользователем в Azure AD.
+    * **[Создание тестового пользователя Slack](#create-slack-test-user)** требуется для того, чтобы в Slack существовал пользователь B. Simon, связанный с одноименным пользователем в Azure AD.
 1. **[Проверка единого входа](#test-sso)** необходима, чтобы убедиться в корректной работе конфигурации.
 
 ### <a name="configure-azure-ad-sso"></a>Настройка единого входа Azure AD
@@ -86,12 +86,23 @@ ms.locfileid: "74972154"
 
 1. На странице **Базовая конфигурация SAML** введите значения следующих полей.
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<your Slack company>.slack.com`.
+    а. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<companyname>.slack.com`.
 
     b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес следующим образом: `https://slack.com`
 
     > [!NOTE]
     > Значение URL-адреса входа приведено только для примера. Для входа укажите фактический URL-адрес. Чтобы получить это значение, обратитесь к [группе поддержки клиентов Slack](https://slack.com/help/contact). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
+
+1. Приложение Slack ожидает проверочные утверждения SAML в определенном формате, который требует добавить настраиваемые сопоставления атрибутов в конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию.
+
+    ![image](common/edit-attribute.png)
+
+1. В дополнение к описанному выше приложение Slack ожидает несколько дополнительных атрибутов в ответе SAML, как показано ниже. Эти атрибуты также заранее заполнены, но вы можете изменить их в соответствии со своими требованиями. Если у пользователей нет адреса электронной почты, сопоставьте **emailaddress** с **user.userprincipalname**.
+
+    | Имя | Исходный атрибут |
+    | -----|---------|
+    | emailaddress | user.userprincipalname |
+    | | |
 
 1. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** найдите пункт **Сертификат (Base64)** и щелкните **Скачать**, чтобы скачать сертификат. Сохраните этот сертификат на компьютере.
 
@@ -135,7 +146,7 @@ ms.locfileid: "74972154"
 
 1. В другом окне веб-браузера войдите на свой корпоративный сайт Slack в качестве администратора.
 
-2. Перейдите к названию вашей организации в Slack слева, которое в нашем случае было **Microsoft Azure AD**, а затем перейдите к **параметрам команды**, как показано на следующем снимке экрана.
+2. Выберите **Microsoft Azure AD** > **Team Settings** (Параметры команды).
 
      ![Настройка единого входа на стороне приложения](./media/slack-tutorial/tutorial_slack_001.png)
 
@@ -147,7 +158,7 @@ ms.locfileid: "74972154"
 
     ![Настройка единого входа на стороне приложения](./media/slack-tutorial/tutorial_slack_003.png)
 
-    a.  В текстовое поле **SAML 2.0 Endpoint (HTTP)** (Конечная точка SAML 2.0 (HTTP)) вставьте **URL-адрес входа**, скопированный на портале Azure.
+    а.  В текстовое поле **SAML 2.0 Endpoint (HTTP)** (Конечная точка SAML 2.0 (HTTP)) вставьте **URL-адрес входа**, скопированный на портале Azure.
 
     b.  В текстовое поле **Identity Provider Issuer** (Издатель поставщика удостоверений) вставьте значение **идентификатора Azure AD**, скопированное на портале Azure.
 
@@ -155,7 +166,7 @@ ms.locfileid: "74972154"
 
     d. Настройте три показанных выше параметра для своей группы Slack. Дополнительные сведения о параметрах см. в статье **Guide to single sign-on with Slack** (Руководство по настройке единого входа в Slack). `https://get.slack.help/hc/articles/220403548-Guide-to-single-sign-on-with-Slack%60`
 
-    д.  Щелкните **Сохранить конфигурацию**.
+    д)  Щелкните **Сохранить конфигурацию**.
 
 ### <a name="create-slack-test-user"></a>Создание тестового пользователя Slack
 

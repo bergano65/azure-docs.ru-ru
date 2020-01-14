@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство Azure. Создание и использование общей папки службы "Файлы Azure" на виртуальных машинах Windows | Документация Майкрософт
+title: Создание и использование общей папки службы "Файлы Azure" на виртуальных машинах Windows
 description: В этом кратком руководстве вы установите общую папку службы "Файлы Azure" на портале Azure и подключите ее к виртуальной машине Windows. Затем вы подключитесь к общей папке службы "Файлы" и передадите в нее файл. После этого вы создадите моментальный снимок этой общей папки, измените файл в ней и восстановите предыдущий моментальный снимок общей папки службы "Файлы".
 author: roygara
 ms.service: storage
@@ -7,12 +7,12 @@ ms.topic: quickstart
 ms.date: 02/01/2019
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: 22c2f3b91b650bcdbf8eb7368023e068a397323f
-ms.sourcegitcommit: 8a2949267c913b0e332ff8675bcdfc049029b64b
+ms.openlocfilehash: 6bbab0ee2eefe6e86c150d5bddab4f8e91a7c92d
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74305820"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75463909"
 ---
 # <a name="quickstart-create-and-manage-azure-files-share-with-windows-virtual-machines"></a>Краткое руководство. Создание общей папки службы "Файлы Azure" и управление ею с помощью виртуальных машин Windows
 
@@ -22,7 +22,7 @@ ms.locfileid: "74305820"
 
 ## <a name="sign-in-to-azure"></a>Вход в Azure
 
-Войдите на [портале Azure](https://portal.azure.com).
+Войдите на [портал Azure](https://portal.azure.com).
 
 ## <a name="prepare-your-environment"></a>Подготовка среды
 
@@ -107,7 +107,7 @@ ms.locfileid: "74305820"
 
    ![Снимок экрана диалогового окна "Подключение сетевого диска"](./media/storage-files-quick-create-use-windows/mountonwindows10.png)
 
-1. Выберите **Готово**.
+1. Нажмите кнопку **Готово**.
 1. В диалоговом окне **Безопасность Windows** выполните следующее:
 
    - Скопируйте из Блокнота имя учетной записи хранения, начинающееся с AZURE\, и вставьте его в диалоговом окне **Безопасность Windows** в качестве имени пользователя. Если вы следовали рекомендациям по именованию из этого краткого руководства, скопируйте *AZURE\qsstorageacct*.
@@ -179,7 +179,7 @@ ms.locfileid: "74305820"
 
 [!INCLUDE [storage-files-clean-up-portal](../../../includes/storage-files-clean-up-portal.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Использование общей папки Azure в Windows](storage-how-to-use-files-windows.md)

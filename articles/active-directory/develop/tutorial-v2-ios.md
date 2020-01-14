@@ -1,6 +1,6 @@
 ---
-title: Начало работы с iOS и macOS на платформе удостоверений Майкрософт | Azure
-description: Как приложения iOS и macOS (Swift) могут вызывать API, которому необходимы маркеры доступа, используя платформу удостоверений Майкрософт
+title: Руководство по MSAL для iOS и macOS на платформе удостоверений Майкрософт | Azure
+description: Узнайте, как приложения iOS и macOS (Swift) могут вызывать API, которому необходимы маркеры доступа, используя платформу удостоверений Майкрософт
 services: active-directory
 documentationcenter: dev-center-name
 author: tylermsft
@@ -14,12 +14,12 @@ ms.author: jmprieur
 ms.reviewer: oldalton
 ms.custom: aaddev, identityplatformtop40
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 64f161d94d622ae76932e88be52df6f068bfc945
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.openlocfilehash: a0aa97f2cb54295d9403ec332eb9c0ada684df12
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74964674"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75423407"
 ---
 # <a name="sign-in-users-and-call-the-microsoft-graph-from-an-ios-or-macos-app"></a>Вход пользователей и вызов Microsoft Graph из приложения iOS или macOS
 
@@ -45,7 +45,7 @@ ms.locfileid: "74964674"
 
 Этот учебник применим к приложениям iOS и macOS. Обратите внимание, что некоторые шаги для этих двух платформ отличаются. 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 - Для сборки приложения в этом руководстве требуется XCode версии 10.x или более поздней. Скачать XCode можно с [сайта iTunes](https://geo.itunes.apple.com/us/app/xcode/id497799835?mt=12 "URL-адрес скачивания XCode").
 - Библиотека проверки подлинности Майкрософт ([MSAL.framework](https://github.com/AzureAD/microsoft-authentication-library-for-objc)). Вы можете использовать диспетчер зависимостей или добавить библиотеку вручную. В инструкциях ниже описано как это сделать.
@@ -649,7 +649,7 @@ func updateSignOutButton(enabled : Bool) {
 
 После выполнения входа в приложении будут отображаться данные, возвращенные из конечной точки Microsoft Graph `/me`.
 
-## <a name="get-help"></a>Получение справки
+## <a name="get-help"></a>Получить справку
 
 Если у вас возникли вопросы касательно этого руководства или платформы удостоверений Майкрософт, см. статью, посвященную [справке и поддержке](https://docs.microsoft.com/azure/active-directory/develop/developer-support-help-options).
 

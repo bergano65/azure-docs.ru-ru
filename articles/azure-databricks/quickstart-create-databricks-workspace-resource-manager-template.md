@@ -10,24 +10,24 @@ ms.workload: big-data
 ms.topic: quickstart
 ms.custom: mvc
 ms.date: 07/12/2019
-ms.openlocfilehash: 2fbe1e91204df7901b4ac3ccfdcd323304b2ce3c
-ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
+ms.openlocfilehash: 1c485a21f974e3ed9c8882e7a900d1632b33a1ed
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74706170"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75410660"
 ---
 # <a name="quickstart-run-a-spark-job-on-azure-databricks-using-the-azure-resource-manager-template"></a>Краткое руководство. Запуск задания Spark в Azure Databricks с помощью шаблона Azure Resource Manager
 
 Из этого краткого руководства вы узнаете, как с помощью шаблона Azure Resource Manager создать рабочую область Azure Databricks с кластером Apache Spark. Вы запустите задание в кластере и воспользуетесь пользовательскими диаграммами для получения отчетов в режиме реального времени на основе демографических данных по бесплатному и платному использованию.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 - Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/).
 
 ## <a name="sign-in-to-the-azure-portal"></a>Вход на портал Azure
 
-Войдите на [портале Azure](https://portal.azure.com). 
+Войдите на [портал Azure](https://portal.azure.com). 
 
 > [!Note]
 > Инструкции из этого руководство нельзя выполнять с **бесплатной пробной версией подписки**.
@@ -47,11 +47,11 @@ ms.locfileid: "74706170"
 
    Укажите следующие значения.
 
-   |Свойство  |Описание  |
+   |Свойство  |Description  |
    |---------|---------|
    |**подписка**     | Выберите подписку Azure в раскрывающемся списке.        |
-   |**группа ресурсов**     | Укажите, следует ли создать новую группу ресурсов или использовать имеющуюся. Группа ресурсов — это контейнер, содержащий связанные ресурсы для решения Azure. Дополнительные сведения см. в [обзоре группы ресурсов Azure](../azure-resource-manager/resource-group-overview.md). |
-   |**Местоположение.**     | Выберите регион **Восточная часть США 2**. Другие доступные регионы см. в статье о [доступности служб Azure по регионам](https://azure.microsoft.com/regions/services/).        |
+   |**группа ресурсов**     | Укажите, следует ли создать новую группу ресурсов или использовать имеющуюся. Группа ресурсов — это контейнер, содержащий связанные ресурсы для решения Azure. Дополнительные сведения см. в [обзоре группы ресурсов Azure](../azure-resource-manager/management/overview.md). |
+   |**Местоположение**     | Выберите регион **Восточная часть США 2**. Другие доступные регионы см. в статье о [доступности служб Azure по регионам](https://azure.microsoft.com/regions/services/).        |
    |**Имя рабочей области**     | Укажите имя рабочей области Databricks.        |
    |**Ценовая категория**     |  Вы можете выбрать уровень **Стандартный** или **Премиум**. Дополнительные сведения об этих ценовых категориях см. на [странице цен на Databricks](https://azure.microsoft.com/pricing/details/databricks/).       |
 
@@ -123,7 +123,7 @@ ms.locfileid: "74706170"
 
           spark.conf.set("fs.azure.account.key.{YOUR STORAGE ACCOUNT NAME}.blob.core.windows.net", "{YOUR STORAGE ACCOUNT ACCESS KEY}")
 
-     Сведения о том, как получить ключ учетной записи хранения, см. в разделе [Управление учетной записью хранения](../storage/common/storage-account-manage.md#access-keys).
+     Сведения о том, как получить ключи доступа к учетной записи хранения, см. в разделе [Управление ключами доступа к учетной записи хранения](../storage/common/storage-account-keys-manage.md).
 
    > [!NOTE]
    > Вы также можете воспользоваться Azure Data Lake Store с кластером Spark в Azure Databricks. Дополнительные сведения см. в разделе [Azure Data Lake Store](/azure/databricks/data/data-sources/azure/azure-datalake-gen2).
@@ -178,13 +178,13 @@ ms.locfileid: "74706170"
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Когда вы выполните задачи в статье, можно будет завершить работу кластера. Для этого в рабочей области Azure Databricks на панели слева выберите **Кластеры**. Для кластера, работу которого необходимо завершить, переместите указатель мыши на многоточие в столбце **Actions** (Действия) и выберите значок **Завершить**.
+Когда вы выполните задачи в статье, можно будет завершить работу кластера. Для этого в рабочей области Azure Databricks на левой панели выберите **Кластеры**. Для кластера, работу которого необходимо завершить, переместите указатель мыши на многоточие в столбце **Actions** (Действия) и выберите значок **Завершить**.
 
 ![Остановка кластера Databricks](./media/quickstart-create-databricks-workspace-resource-manager-template/terminate-databricks-cluster.png "Остановка кластера Databricks")
 
 Если не завершить работу кластера вручную, она завершится автоматически, если во время создания кластера вы установили флажок **Terminate after \_\_ minutes of inactivity** (Завершать работу после \_\_ мин бездействия). В этом случае работа кластера автоматически завершается, если он был неактивным в течение определенного времени.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой статье вы создали кластер Spark в Azure Databricks и запустили задание Spark, используя данные в хранилище Azure. Вы также можете просмотреть [источники данных Spark](/azure/databricks/data/data-sources/index), чтобы узнать, как импортировать данные из источников данных в Azure Databricks. Можно также ознакомиться с шаблоном Resource Manager для [создания рабочей области Azure Databricks с настраиваемым адресом виртуальной сети](https://github.com/Azure/azure-quickstart-templates/tree/master/101-databricks-workspace-with-custom-vnet-address). Синтаксис и свойства JSON, используемые в шаблоне, см. в справочнике по шаблону [Microsoft.Databricks/workspaces](/azure/templates/microsoft.databricks/workspaces).
 

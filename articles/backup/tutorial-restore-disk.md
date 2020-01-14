@@ -4,12 +4,12 @@ description: Дополнительные сведения о восстанов
 ms.topic: tutorial
 ms.date: 01/31/2019
 ms.custom: mvc
-ms.openlocfilehash: 9b2048d8683ba2dde00a874445eb936cfb775cf1
-ms.sourcegitcommit: 4821b7b644d251593e211b150fcafa430c1accf0
+ms.openlocfilehash: f0300930d4dbfb7745f0837eb5fa9605a2e766d7
+ms.sourcegitcommit: a100e3d8b0697768e15cbec11242e3f4b0e156d3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74171742"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75680582"
 ---
 # <a name="restore-a-disk-and-create-a-recovered-vm-in-azure"></a>Восстановление диска и создание восстановленной виртуальной машины в Azure
 
@@ -27,7 +27,7 @@ ms.locfileid: "74171742"
 
 Если вы решили установить и использовать интерфейс командной строки локально, то для работы с этим руководством вам понадобится Azure CLI 2.0.18 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI]( /cli/azure/install-azure-cli).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Для выполнения этого руководства требуется виртуальная машина Linux, защищенная с помощью службы архивации Azure. Для имитации случайного удаления виртуальной машины и процесса восстановления виртуальная машина создается на основе диска в точке восстановления. Если вам требуется виртуальная машина Linux, защищенная с помощью службы архивации Azure, см. раздел [Резервное копирование виртуальной машины в Azure с помощью интерфейса командной строки](quick-backup-vm-cli.md).
 
@@ -57,7 +57,43 @@ az backup recoverypoint list \
 
 ## <a name="restore-a-vm-disk"></a>Восстановление диска виртуальной машины
 
-Чтобы восстановить диск из точки восстановления, сначала необходимо создать учетную запись хранения Azure. Она используется для хранения восстановленного диска. Затем этот восстановленный диск используется для создания виртуальной машины.
+> [!IMPORTANT]
+> Мы настоятельно рекомендуем использовать AZ CLI версии 2.0.74 или более поздней, чтобы получить все преимущества быстрого восстановления, в том числе восстановление управляемых дисков. Лучше всего всегда использовать последнюю версию.
+
+### <a name="managed-disk-restore"></a>Восстановление управляемого диска
+
+Если в виртуальной машине, для которой используется резервное копирование, есть управляемые диски, и вы намерены восстанавливать эти управляемые диски из точки восстановления, вам необходимо предоставить учетную запись хранения Azure. Эта учетная запись хранения используется для сохранения конфигурации виртуальной машины и шаблона развертывания, которые позже можно применить для развертывания виртуальной машины с восстановленных дисков. Также предоставьте целевую группу ресурсов для восстановления управляемых дисков.
+
+1. Создайте учетную запись хранения с помощью команды [az storage account create](https://docs.microsoft.com/cli/azure/storage/account?view=azure-cli-latest#az-storage-account-create). Имя учетной записи хранения следует указывать в нижнем регистре, оно должно быть глобально уникальным. Замените *mystorageaccount* собственным уникальным именем:
+
+    ```azurecli-interactive
+    az storage account create \
+        --resource-group myResourceGroup \
+        --name mystorageaccount \
+        --sku Standard_LRS
+    ```
+
+2. Восстановите диск из точки восстановления с помощью команды [az backup restore restore-disks](https://docs.microsoft.com/cli/azure/backup/restore?view=azure-cli-latest#az-backup-restore-restore-disks). Замените *mystorageaccount* именем учетной записи хранения, созданной с помощью предыдущей команды. Замените *myRecoveryPointName* именем точки восстановления, полученной в выходных данных предыдущей команды [az backup recoverypoint list](https://docs.microsoft.com/cli/azure/backup/recoverypoint?view=azure-cli-latest#az-backup-recoverypoint-list). ***Также предоставьте целевую группу ресурсов, в которую будут восстановлены управляемые диски***.
+
+    ```azurecli-interactive
+    az backup restore restore-disks \
+        --resource-group myResourceGroup \
+        --vault-name myRecoveryServicesVault \
+        --container-name myVM \
+        --item-name myVM \
+        --storage-account mystorageaccount \
+        --rp-name myRecoveryPointName
+        --target-resource-group targetRG
+    ```
+
+> [!WARNING]
+> Если параметр target-resource-group не указан, управляемые диски будут восстановлены в предоставленную учетную запись в виде неуправляемых дисков. Это существенно повлияет на время восстановления, поскольку время на восстановление дисков полностью зависит от используемой учетной записи хранения.
+
+### <a name="unmanaged-disks-restore"></a>Восстановление неуправляемых дисков
+
+Если в виртуальной машине, для которой используется резервное копирование, есть неуправляемые диски, и вы намерены восстанавливать их из точки восстановления, вам необходимо предоставить учетную запись хранения Azure. Эта учетная запись хранения используется для сохранения конфигурации виртуальной машины и шаблона развертывания, которые позже можно применить для развертывания виртуальной машины с восстановленных дисков. По умолчанию неуправляемые диски восстанавливаются в исходных учетных записях хранения. Если пользователь хочет восстановить все неуправляемые диски в одном месте, указанная учетная запись хранения может использоваться в качестве промежуточного расположения для этих дисков.
+
+Затем этот восстановленный диск используется для создания виртуальной машины.
 
 1. Создайте учетную запись хранения с помощью команды [az storage account create](https://docs.microsoft.com/cli/azure/storage/account?view=azure-cli-latest#az-storage-account-create). Имя учетной записи хранения следует указывать в нижнем регистре, оно должно быть глобально уникальным. Замените *mystorageaccount* собственным уникальным именем:
 
@@ -80,9 +116,22 @@ az backup recoverypoint list \
         --rp-name myRecoveryPointName
     ```
 
-## <a name="monitor-the-restore-job"></a>Мониторинг задания восстановления
+Как уже упоминалось, неуправляемые диски восстанавливаются в исходных учетных записях хранения. Это обеспечивает наилучшую производительность восстановления. Но если вам нужно восстановить все неуправляемые диски в указанную учетную запись хранения, используйте соответствующий флаг, как показано ниже.
 
-Чтобы отслеживать состояние задания восстановления, используйте команду [az backup job list](https://docs.microsoft.com/cli/azure/backup/job?view=azure-cli-latest#az-backup-job-list):
+```azurecli-interactive
+    az backup restore restore-disks \
+        --resource-group myResourceGroup \
+        --vault-name myRecoveryServicesVault \
+        --container-name myVM \
+        --item-name myVM \
+        --storage-account mystorageaccount \
+        --rp-name myRecoveryPointName
+        --restore-to-staging-storage-account
+    ```
+
+## Monitor the restore job
+
+To monitor the status of restore job, use [az backup job list](https://docs.microsoft.com/cli/azure/backup/job?view=azure-cli-latest#az-backup-job-list):
 
 ```azurecli-interactive
 az backup job list \
@@ -101,69 +150,109 @@ a0a8e5e6  Backup           Completed   myvm         2017-09-19T03:09:21  0:15:26
 fe5d0414  ConfigureBackup  Completed   myvm         2017-09-19T03:03:57  0:00:31.191807
 ```
 
-Когда *состояние* задания восстановления изменится на *Завершено*, это будет означать, что диск восстановлен в учетной записи хранения.
-
-## <a name="convert-the-restored-disk-to-a-managed-disk"></a>Преобразование восстановленного диска в управляемый диск
-
-Задание восстановления создает неуправляемый диск. Чтобы создать виртуальную машину на основе диска, его сначала необходимо преобразовать в управляемый диск.
-
-1. Получите сведения о подключении для вашей учетной записи хранения с помощью команды [az storage account show-connection-string](https://docs.microsoft.com/cli/azure/storage/account?view=azure-cli-latest#az-storage-account-show-connection-string). Замените *mystorageaccount* именем своей учетной записи хранения следующим образом:
-
-    ```azurecli-interactive
-    export AZURE_STORAGE_CONNECTION_STRING=$( az storage account show-connection-string \
-        --resource-group myResourceGroup \
-        --output tsv \
-        --name mystorageaccount )
-    ```
-
-2. Неуправляемый диск защищен в учетной записи хранения. Следующая команда получает сведения о неуправляемом диске и создает переменную с именем *uri*, которая используется в следующем шаге при создании управляемого диска.
-
-    ```azurecli-interactive
-    container=$(az storage container list --query [0].name -o tsv)
-    blob=$(az storage blob list --container-name $container --query [0].name -o tsv)
-    uri=$(az storage blob url --container-name $container --name $blob -o tsv)
-    ```
-
-3. Теперь на основе восстановленного диска можно создать управляемый диск с помощью команды [az disk create](https://docs.microsoft.com/cli/azure/disk?view=azure-cli-latest#az-disk-create). Переменная *uri* из предыдущего шага используется как источник для управляемого диска.
-
-    ```azurecli-interactive
-    az disk create \
-        --resource-group myResourceGroup \
-        --name myRestoredDisk \
-        --source $uri
-    ```
-
-4. Создав управляемый диск на основе восстановленного диска, выполните очистку неуправляемого диска и учетной записи хранения с помощью команды [az storage account delete](/cli/azure/storage/account?view=azure-cli-latest#az-storage-account-delete). Замените *mystorageaccount* именем своей учетной записи хранения следующим образом:
-
-    ```azurecli-interactive
-    az storage account delete \
-        --resource-group myResourceGroup \
-        --name mystorageaccount
-    ```
+Параметр *Состояние* для задания восстановления принимает значение *Завершено*, это когда вся необходимая информация (конфигурация виртуальной машины и шаблон развертывания) восстановлена в учетной записи хранения.
 
 ## <a name="create-a-vm-from-the-restored-disk"></a>Создание виртуальной машины на основе восстановленного диска
 
-Последним шагом является создание виртуальной машины на основе управляемого диска.
+Последним шагом является создание виртуальной машины на основе восстановленных дисков. Для создания виртуальной машины можно использовать шаблон развертывания, скачанный в указанную учетную запись хранения.
 
-1. Создайте виртуальную машину на основе управляемого диска с помощью команды [az vm create](/cli/azure/vm?view=azure-cli-latest#az-vm-create) следующим образом:
+### <a name="fetch-the-job-details"></a>Получение подробных сведений о задании
 
-    ```azurecli-interactive
-    az vm create \
-        --resource-group myResourceGroup \
-        --name myRestoredVM \
-        --attach-os-disk myRestoredDisk \
-        --os-type linux
-    ```
+В подробных сведениях о результирующем задании указан URI шаблона, который можно получить и развернуть. Используйте команду "job show", чтобы получить дополнительные сведения о запущенном задании восстановления.
 
-2. Чтобы убедиться, что виртуальная машина была создана на основе восстановленного диска, перечислите виртуальные машины в группе ресурсов с помощью команды [az vm list](/cli/azure/vm?view=azure-cli-latest#az-vm-list) следующим образом:
+```azurecli-interactive
+az backup job show \
+    -v myRecoveryServicesVault \
+    -g myResourceGroup \
+    -n 1fc2d55d-f0dc-4ca6-ad48-aca0fe5d0414
+```
 
-    ```azurecli-interactive
-    az vm list --resource-group myResourceGroup --output table
-    ```
+Выходные данные этого запроса содержат подробные сведения, из которых нас интересует только содержимое учетной записи хранения. Для получения нужных сведений мы можем использовать [функцию запросов](https://docs.microsoft.com/cli/azure/query-azure-cli?view=azure-cli-latest) в Azure CLI.
 
-## <a name="next-steps"></a>Дополнительная информация
+```azurecli-interactive
+az backup job show \
+    -v myRecoveryServicesVault \
+    -g myResourceGroup \
+    -n 1fc2d55d-f0dc-4ca6-ad48-aca0fe5d0414 \
+    --query properties.extendedInfo.propertyBag
 
-В этом руководстве описывается восстановление диска из точки восстановления, а затем создание виртуальной машины на его основе. Вы научились выполнять следующие задачи:
+{
+  "Config Blob Container Name": "myVM-daa1931199fd4a22ae601f46d8812276",
+  "Config Blob Name": "config-myVM-1fc2d55d-f0dc-4ca6-ad48-aca0fe5d0414.json",
+  "Config Blob Uri": "https://mystorageaccount.blob.core.windows.net/myVM-daa1931199fd4a22ae601f46d8812276/config-appvm8-1fc2d55d-f0dc-4ca6-ad48-aca0519c0232.json",
+  "Job Type": "Recover disks",
+  "Recovery point time ": "12/25/2019 10:07:11 PM",
+  "Target Storage Account Name": "mystorageaccount",
+  "Target resource group": "mystorageaccountRG",
+  "Template Blob Uri": "https://mystorageaccount.blob.core.windows.net/myVM-daa1931199fd4a22ae601f46d8812276/azuredeploy1fc2d55d-f0dc-4ca6-ad48-aca0519c0232.json"
+}
+```
+
+### <a name="fetch-the-deployment-template"></a>Получение шаблона развертывания
+
+Этот шаблон недоступен напрямую, так как он находится в учетной записи хранения клиента, в указанном контейнере. Для доступа к этому шаблону требуется полный URL-адрес (вместе с временным маркером SAS).
+
+Сначала извлеките URI BLOB-объекта шаблона из сведений о задании.
+
+```azurecli-interactive
+az backup job show \
+    -v myRecoveryServicesVault \
+    -g myResourceGroup \
+    -n 1fc2d55d-f0dc-4ca6-ad48-aca0fe5d0414 \
+    --query properties.extendedInfo.propertyBag."""Template Blob Uri"""
+
+"https://mystorageaccount.blob.core.windows.net/myVM-daa1931199fd4a22ae601f46d8812276/azuredeploy1fc2d55d-f0dc-4ca6-ad48-aca0519c0232.json"
+```
+
+URI BLOB-объекта шаблона имеет указанный ниже формат, из которого вы можете извлечь имя шаблона.
+
+```https
+https://<storageAccountName.blob.core.windows.net>/<containerName>/<templateName>
+```
+
+Например, в приведенном выше примере имя шаблона имеет значение ```azuredeploy1fc2d55d-f0dc-4ca6-ad48-aca0519c0232.json```, а имя контейнера — ```myVM-daa1931199fd4a22ae601f46d8812276```.
+
+Теперь получите маркер SAS для этого контейнера и шаблона, как описано [здесь](https://docs.microsoft.com/azure/azure-resource-manager/templates/secure-template-with-sas-token?tabs=azure-cli#provide-sas-token-during-deployment).
+
+```azurecli-interactive
+expiretime=$(date -u -d '30 minutes' +%Y-%m-%dT%H:%MZ)
+connection=$(az storage account show-connection-string \
+    --resource-group mystorageaccountRG \
+    --name mystorageaccount \
+    --query connectionString)
+token=$(az storage blob generate-sas \
+    --container-name myVM-daa1931199fd4a22ae601f46d8812276 \
+    --name azuredeploy1fc2d55d-f0dc-4ca6-ad48-aca0519c0232.json \
+    --expiry $expiretime \
+    --permissions r \
+    --output tsv \
+    --connection-string $connection)
+url=$(az storage blob url \
+   --container-name myVM-daa1931199fd4a22ae601f46d8812276 \
+    --name azuredeploy1fc2d55d-f0dc-4ca6-ad48-aca0519c0232.json \
+    --output tsv \
+    --connection-string $connection)
+```
+
+### <a name="deploy-the-template-to-create-the-vm"></a>Развертывание шаблона для создания виртуальной машины
+
+Теперь разверните шаблон, чтобы создать виртуальную машину, как описано [здесь](https://docs.microsoft.com/azure/azure-resource-manager/templates/deploy-cli).
+
+```azurecli-interactive
+az group deployment create \
+  --resource-group ExampleGroup \
+  --template-uri $url?$token
+```
+
+Чтобы убедиться, что виртуальная машина была создана на основе восстановленного диска, перечислите виртуальные машины в группе ресурсов с помощью команды [az vm list](/cli/azure/vm?view=azure-cli-latest#az-vm-list) следующим образом:
+
+```azurecli-interactive
+az vm list --resource-group myResourceGroup --output table
+```
+
+## <a name="next-steps"></a>Дальнейшие действия
+
+В этом руководстве описывается восстановление диска из точки восстановления, а затем создание виртуальной машины на его основе. Вы ознакомились с выполнением следующих задач:
 
 > [!div class="checklist"]
 >

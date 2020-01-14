@@ -3,15 +3,15 @@ title: 'Отладка и итерация в Kubernetes: Visual Studio Code и 
 services: azure-dev-spaces
 ms.date: 07/08/2019
 ms.topic: quickstart
-description: Быстрая разработка в Kubernetes с использованием контейнеров и микрослужб в Azure
+description: В этом кратком руководстве описано, как использовать Azure Dev Spaces и Visual Studio Code для отладки и быстрого выполнения итерации приложения .NET Core в службе Azure Kubernetes
 keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, service mesh, service mesh routing, kubectl, k8s
 manager: gwallace
-ms.openlocfilehash: 278ec0683a7ddb3c41f724e06e8ca291d18e3bad
-ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
+ms.openlocfilehash: a9a750e239dd47ce85b6075c65c644258134ba52
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74325589"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75438223"
 ---
 # <a name="quickstart-debug-and-iterate-on-kubernetes-visual-studio-code-and-net-core---azure-dev-spaces"></a>Краткое руководство. Отладка и итерация в Kubernetes: Использование Visual Studio Code и .NET Core в Azure Dev Spaces
 
@@ -26,7 +26,7 @@ Azure Dev Spaces также позволяет выполнять отладку
 - [Node.js и Visual Studio Code](quickstart-nodejs.md);
 - [.NET Core и Visual Studio](quickstart-netcore-visualstudio.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 - Подписка Azure. Если ее нет, можно создать [бесплатную учетную запись](https://azure.microsoft.com/free).
 - [Средство Visual Studio Code](https://code.visualstudio.com/download).
@@ -110,7 +110,7 @@ git clone https://github.com/Azure/dev-spaces
 
 ## <a name="update-code"></a>Обновление кода
 
-Чтобы развернуть обновленную версию службы, обновите любой файл в проекте и повторно выполните команду *.NET Core Launch (AZDS)* (Запуск .NET Core (AZDS)). Например:
+Чтобы развернуть обновленную версию службы, обновите любой файл в проекте и повторно выполните команду *.NET Core Launch (AZDS)* (Запуск .NET Core (AZDS)). Пример:
 
 1. Если ваше приложение по-прежнему работает, нажмите кнопку *Debug* (Отладка), а затем — *Stop Debugging* (Остановить отладку), чтобы остановить ее.
 1. Измените [строку 22 в `Controllers/HomeController.cs`](https://github.com/Azure/dev-spaces/blob/master/samples/dotnetcore/getting-started/webfrontend/Controllers/HomeController.cs#L22) на такую:
@@ -139,7 +139,7 @@ git clone https://github.com/Azure/dev-spaces
 
 ## <a name="update-code-from-visual-studio-code"></a>Обновление кода из Visual Studio Code
 
-Пока служба выполняется в режиме отладки, обновите строку 22 в `Controllers/HomeController.cs`. Например:
+Пока служба выполняется в режиме отладки, обновите строку 22 в `Controllers/HomeController.cs`. Пример:
 
 ```csharp
 ViewData["Message"] = "Your application description page in Azure while debugging!";
@@ -159,7 +159,7 @@ ViewData["Message"] = "Your application description page in Azure while debuggin
 az group delete --name MyResourceGroup --yes --no-wait
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте, как в Azure Dev Spaces можно разрабатывать более сложные приложения в нескольких контейнерах и как упростить совместную разработку, используя разные версии и ветви кода в разных средах. 
 

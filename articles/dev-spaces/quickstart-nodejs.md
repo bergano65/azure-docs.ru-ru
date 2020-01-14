@@ -3,15 +3,15 @@ title: 'Отладка и итерация в Kubernetes: Visual Studio Code и 
 services: azure-dev-spaces
 ms.date: 07/08/2019
 ms.topic: quickstart
-description: Быстрая разработка в Kubernetes с использованием контейнеров, микрослужб и Node.js в Azure
+description: В этом кратком руководстве описано, как использовать Azure Dev Spaces и Visual Studio Code для отладки и быстрого выполнения итерации приложения Node.js в службе Azure Kubernetes.
 keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, service mesh, service mesh routing, kubectl, k8s
 manager: gwallace
-ms.openlocfilehash: 8f3ffb6a539937b6d4a03b8fdc808c033c371697
-ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
+ms.openlocfilehash: 1b2101c5e7a59105b2c1da876e9a66294ce3a021
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74325581"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75438199"
 ---
 # <a name="quickstart-debug-and-iterate-on-kubernetes-with-visual-studio-code-and-nodejs---azure-dev-spaces"></a>Краткое руководство. Отладка и итерация с помощью Visual Studio Code, Node.js и Azure Dev Spaces в Kubernetes
 
@@ -26,7 +26,7 @@ Azure Dev Spaces также позволяет выполнять отладку
 - [.NET Core и Visual Studio Code](quickstart-netcore.md);
 - [.NET Core и Visual Studio](quickstart-netcore-visualstudio.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 - Подписка Azure. Если у вас нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free).
 - [Средство Visual Studio Code](https://code.visualstudio.com/download).
@@ -110,7 +110,7 @@ git clone https://github.com/Azure/dev-spaces
 
 ## <a name="update-code"></a>Обновление кода
 
-Чтобы развернуть обновленную версию службы, обновите любой файл в проекте и повторно выполните команду *Launch Server* (Запустить сервер). Например:
+Чтобы развернуть обновленную версию службы, обновите любой файл в проекте и повторно выполните команду *Launch Server* (Запустить сервер). Пример:
 
 1. Если ваше приложение по-прежнему работает, нажмите кнопку *Debug* (Отладка), а затем — *Stop Debugging* (Остановить отладку), чтобы остановить ее.
 1. Измените [строку 13 в `server.js`](https://github.com/Azure/dev-spaces/blob/master/samples/nodejs/getting-started/webfrontend/server.js#L13) следующим образом:
@@ -148,7 +148,7 @@ git clone https://github.com/Azure/dev-spaces
 
 Перейдите к запущенной службе с помощью браузера и поработайте с ней.
 
-Пока служба выполняется, вернитесь в VS Code и обновите строку 13 в `server.js`. Например:
+Пока служба выполняется, вернитесь в VS Code и обновите строку 13 в `server.js`. Пример:
 ```javascript
     res.send('Hello from webfrontend in Azure while debugging!');
 ```
@@ -163,7 +163,7 @@ git clone https://github.com/Azure/dev-spaces
 az group delete --name MyResourceGroup --yes --no-wait
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте, как в Azure Dev Spaces можно разрабатывать более сложные приложения в нескольких контейнерах и как упростить совместную разработку, используя разные версии и ветви кода в разных средах.
 

@@ -1,31 +1,23 @@
 ---
-title: Руководство по использованию службы конфигурации приложений Azure | Документация Майкрософт
+title: Руководство по использованию службы "Конфигурация приложений Azure"
 description: Руководство по использованию службы конфигурации приложений Azure с приложениями Java Spring.
-services: azure-app-configuration
-documentationcenter: ''
 author: yidon
-manager: jeffya
-editor: ''
-ms.assetid: ''
-ms.service: azure-app-configuration
-ms.devlang: java
-ms.topic: quickstart
-ms.tgt_pltfrm: Spring
-ms.workload: tbd
-ms.date: 01/08/2019
 ms.author: yidon
-ms.openlocfilehash: e8f6f9ca610c515deca6ed1bdbee54f40cacf427
-ms.sourcegitcommit: dbde4aed5a3188d6b4244ff7220f2f75fce65ada
+ms.service: azure-app-configuration
+ms.topic: quickstart
+ms.date: 12/17/2019
+ms.openlocfilehash: c4fee6c61ba58a8a1629b5c98d7eebdadfdf1a89
+ms.sourcegitcommit: f0dfcdd6e9de64d5513adf3dd4fe62b26db15e8b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74184938"
+ms.lasthandoff: 12/26/2019
+ms.locfileid: "75495201"
 ---
 # <a name="quickstart-create-a-java-spring-app-with-azure-app-configuration"></a>Краткое руководство. Создание приложения Java Spring с помощью службы "Конфигурация приложений Azure"
 
 В этом кратком руководстве описано, как добавить службу "Конфигурация приложений Azure" в приложение Java Spring, чтобы обеспечить централизованное хранение параметров приложения и управление ими отдельно от кода.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 - Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/).
 - Поддерживаемый [комплект разработчика Java (JDK)](https://docs.microsoft.com/java/azure/jdk) версии 8.
@@ -37,7 +29,7 @@ ms.locfileid: "74184938"
 
 6. Выберите **Configuration Explorer** (Обозреватель конфигураций)  >  **+ Создать**, чтобы добавить следующие пары "ключ-значение".
 
-    | Ключ | Значение |
+    | Клавиши | Значение |
     |---|---|
     | /application/config.message | Привет |
 
@@ -121,7 +113,7 @@ ms.locfileid: "74184938"
 
 6. В каталоге ресурсов создайте файл с именем `bootstrap.properties` и добавьте в него приведенные ниже строки. Замените примеры значений на соответствующие свойства хранилища конфигураций приложений.
 
-    ```properties
+    ```CLI
     spring.cloud.azure.appconfiguration.stores[0].connection-string=[your-connection-string]
     ```
 
@@ -129,13 +121,13 @@ ms.locfileid: "74184938"
 
 1. Создайте приложение Spring Boot с помощью Maven и запустите его, например, следующим образом:
 
-    ```shell
+    ```CLI
     mvn clean package
     mvn spring-boot:run
     ```
 2. После запуска приложение можно протестировать с помощью средства *curl*, например:
 
-      ```shell
+      ```CLI
       curl -X GET http://localhost:8080/
       ```
     Вы увидите сообщение, которое указали в хранилище конфигураций приложений.
@@ -144,7 +136,7 @@ ms.locfileid: "74184938"
 
 [!INCLUDE [azure-app-configuration-cleanup](../../includes/azure-app-configuration-cleanup.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом кратком руководстве описано, как создать хранилище конфигураций приложений и использовать его с приложением Java Spring. Дополнительные сведения см. в статье [Spring в Azure](https://docs.microsoft.com/java/azure/spring-framework/). Чтобы узнать, как с помощью удостоверения, управляемого Azure, упростить доступ к службе "Конфигурация приложения Azure", перейдите к следующему учебнику.
 

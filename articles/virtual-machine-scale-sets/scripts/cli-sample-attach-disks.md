@@ -1,6 +1,6 @@
 ---
-title: Примеры для Azure CLI. Подключение и использование дисков данных | Документация Майкрософт
-description: Примеры Azure CLI
+title: Примеры для Azure CLI. Подключение и использование дисков данных
+description: При помощи этого скрипта создается масштабируемый набор виртуальных машин, а также присоединяются и подготавливаются диски данных с Azure CLI.
 services: virtual-machine-scale-sets
 documentationcenter: ''
 author: cynthn
@@ -16,12 +16,12 @@ ms.workload: na
 ms.date: 03/27/2018
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: 6966aead6ced88e0ff9b201dd12bec0a16799907
-ms.sourcegitcommit: de32e8825542b91f02da9e5d899d29bcc2c37f28
+ms.openlocfilehash: 04d0c557dcca3ca0acd736d3013cf9119490af52
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2019
-ms.locfileid: "55661384"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75351057"
 ---
 # <a name="attach-and-use-data-disks-with-a-virtual-machine-scale-set-with-the-azure-cli"></a>Подключение дисков данных к масштабируемому набору виртуальных машин и их использование с помощью Azure CLI
 При помощи этого скрипта создается масштабируемый набор виртуальных машин, а также присоединяются и подготавливаются диски данных.
@@ -43,7 +43,7 @@ az group delete --name myResourceGroup
 ## <a name="script-explanation"></a>Описание скрипта
 Для создания группы ресурсов, масштабируемого набора виртуальных машин и всех связанных ресурсов в этом скрипте используются приведенные ниже команды. Для каждой команды в таблице приведены ссылки на соответствующую документацию.
 
-| Команда | Примечания |
+| Get-Help | Примечания |
 |---|---|
 | [az group create](/cli/azure/ad/group) | Создает группу ресурсов, в которой хранятся все ресурсы. |
 | [az vmss create](/cli/azure/vmss) | Создает масштабируемый набор виртуальных машин и подключает его к виртуальной сети, подсети и группе безопасности сети. Чтобы распределить трафик между несколькими экземплярами виртуальных машин, создается еще и подсистема балансировки нагрузки. Эта команда также указывает образ виртуальной машины, который будет использоваться, и учетные данные администратора.  |
@@ -51,7 +51,7 @@ az group delete --name myResourceGroup
 | [az vmss extension set](/cli/azure/vmss/extension) | Устанавливает расширение пользовательских скриптов Azure для выполнения сценария, который позволяет подготовить диски данных для каждого экземпляра виртуальной машины. |
 | [az group delete](/cli/azure/ad/group) | Удаляет группу ресурсов со всеми вложенными ресурсами. |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения об Azure CLI см. в [документации по Azure CLI](https://docs.microsoft.com/cli/azure/overview).
 
 Изучите дополнительные примеры сценариев Azure CLI в [документации по масштабируемым наборам виртуальных машин Azure](../cli-samples.md).

@@ -1,6 +1,6 @@
 ---
-title: Краткое руководство. Пользовательский поиск Bing для Java | Документация Майкрософт
-description: Начало работы с клиентской библиотекой Пользовательского поиска Bing для Java, с запроса результатов поиска из экземпляра Пользовательского поиска Bing.
+title: Краткое руководство. Клиентская библиотека Пользовательского поиска Bing для Java
+description: В этом кратком руководстве описано, как начать работу с клиентской библиотекой Пользовательского поиска Bing для Java, с запроса результатов поиска из экземпляра Пользовательского поиска Bing.
 services: cognitive-services
 author: aahill
 manager: nitinme
@@ -9,12 +9,12 @@ ms.subservice: ''
 ms.topic: quickstart
 ms.date: 12/09/2019
 ms.author: aahi
-ms.openlocfilehash: f0a3008dace4e9382bbb6b6d9465ce1c9b4ddc6c
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.openlocfilehash: 1060cceb9241d9c1c490f7e7f12490c734b0a78d
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74976066"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75384559"
 ---
 # <a name="quickstart-bing-custom-search-client-library-for-java"></a>Краткое руководство. Клиентская библиотека Пользовательского поиска Bing для Java
 
@@ -26,7 +26,7 @@ ms.locfileid: "74976066"
 
 [Справочная документация](https://docs.microsoft.com/java/api/overview/azure/cognitiveservices/client/bingcustomsearch?view=azure-java-stable) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/cognitiveservices/Search.BingCustomSearch) | [Артефакт (Maven)](https://search.maven.org/artifact/com.microsoft.azure.cognitiveservices/azure-cognitiveservices-customsearch/) | [Примеры](https://github.com/Azure-Samples/cognitive-services-java-sdk-samples)
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/).
 * Текущая версия [пакета средств разработки Java (JDK)](https://www.oracle.com/technetwork/java/javase/downloads/index.html).
@@ -37,7 +37,7 @@ ms.locfileid: "74976066"
 
 ### <a name="create-a-bing-custom-search-azure-resource"></a>Создание ресурса для Пользовательского поиска Bing
 
-Ресурсами Azure, на которые вы подписаны, будет представлено семейство служб Azure Cognitive Services. Создайте ресурс для Пользовательского поиска Bing с помощью [портала Azure](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) или [Azure CLI](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account-cli) на локальном компьютере. Также можно:
+Ресурсами Azure, на которые вы подписаны, будет представлено семейство служб Azure Cognitive Services. Создайте ресурс для Пользовательского поиска Bing с помощью [портала Azure](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) или [Azure CLI](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account-cli) на локальном компьютере. Кроме того, вы можете сделать следующее:
 
 * получить бесплатный [ключ пробной версии](https://azure.microsoft.com/try/cognitive-services/#decision) на 7 дней. После регистрации он будет доступен на [веб-сайте Azure](https://azure.microsoft.com/try/cognitive-services/my-apis/).  
 * Просмотреть этот ресурс на [портале Azure](https://portal.azure.com/).
@@ -152,9 +152,9 @@ gradle run
 Если вы хотите очистить и удалить подписку Cognitive Services, вы можете удалить ресурс или группу ресурсов. При этом удаляются все ресурсы, связанные с ней.
 
 * [Портал](../cognitive-services-apis-create-account.md#clean-up-resources)
-* [Интерфейс командной строки Azure](../cognitive-services-apis-create-account-cli.md#clean-up-resources)
+* [Azure CLI](../cognitive-services-apis-create-account-cli.md#clean-up-resources)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Создание веб-страницы пользовательского поиска](./tutorials/custom-search-web-page.md)

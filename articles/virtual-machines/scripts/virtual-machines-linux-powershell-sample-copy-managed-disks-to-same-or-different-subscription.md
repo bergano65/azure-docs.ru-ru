@@ -1,6 +1,6 @@
 ---
-title: Пример сценария Azure PowerShell для копирования (перемещения) управляемых дисков в ту же или другую подписку.
-description: Пример сценария Azure PowerShell для копирования (перемещения) управляемых дисков в ту же или другую подписку.
+title: Пример для PowerShell. Копирование управляемых дисков в подписку
+description: Пример сценария Azure PowerShell. Копирование (или перемещение) управляемых дисков в ту же или другую подписку
 services: virtual-machines-linux
 documentationcenter: storage
 author: ramankumarlive
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 06/06/2017
 ms.author: ramankum
-ms.openlocfilehash: bb473a2f543c1621b99904b5a58dc7fc6625f6fc
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.openlocfilehash: 9e655ce33c8952acab7228f4caae81f09c2d56ba
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74021471"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75375905"
 ---
 # <a name="copy-managed-disks-in-the-same-subscription-or-different-subscription-with-powershell"></a>Копирование управляемых дисков в ту же или другую подписку с помощью PowerShell
 
@@ -39,12 +39,12 @@ ms.locfileid: "74021471"
 
 Этот сценарий использует приведенные ниже команды для создания управляемого диска в целевой подписке с помощью идентификатора исходного управляемого диска. Для каждой команды в таблице приведены ссылки на соответствующую документацию.
 
-| Команда | Примечания |
+| Get-Help | Примечания |
 |---|---|
 | [New-AzDiskConfig](https://docs.microsoft.com/powershell/module/az.compute/New-AzDiskConfig) | Создает конфигурацию диска, которая используется для создания диска. Она содержит идентификатор ресурса родительского диска и расположение, которое совпадает с расположением родительского диска.  |
 | [New-AzDisk](https://docs.microsoft.com/powershell/module/az.compute/New-AzDisk) | Создает диск с помощью конфигурации диска, имени диска и имени группы ресурсов, которые передаются в качестве параметров. |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о модуле Azure PowerShell см. в [документации по Azure PowerShell](/powershell/azure/overview).
 

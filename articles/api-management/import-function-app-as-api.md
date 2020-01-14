@@ -1,5 +1,6 @@
 ---
-title: Импорт приложения-функции Azure в качестве API в службу управления API Azure | Документация Майкрософт
+title: Импорт приложения-функции Azure в качестве API в службу "Управление API"
+titleSuffix: Azure API Management
 description: В этом руководстве показано, как импортировать приложение-функцию Azure в качестве API в службу "Управление API Azure".
 services: api-management
 documentationcenter: ''
@@ -12,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 06/28/2019
 ms.author: apimpm
-ms.openlocfilehash: 0c4a95669eea1b98baea5f9a866598e000c0923c
-ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
+ms.openlocfilehash: 97e4863294a32e7c11cd0c4bfa987b4e5764c0d4
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74107850"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75442583"
 ---
 # <a name="import-an-azure-function-app-as-an-api-in-azure-api-management"></a>Импорт приложения-функции Azure в качестве API в службу управления API Azure
 
@@ -34,7 +35,7 @@ ms.locfileid: "74107850"
 > * проверка API на портале Azure;
 > * проверка API на портале разработчика.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * Выполните задачи в кратком руководстве по [созданию экземпляра службы "Управление API Azure"](get-started-create-service-instance.md).
 * Убедитесь, что в подписке есть приложение-функция Azure. Дополнительные сведения см. в разделе [Создание приложения-функции](../azure-functions/functions-create-first-azure-function.md#create-a-function-app). В приложении должны быть функции с триггером HTTP и уровень авторизации со значением *Анонимный* или *Функция*.
@@ -117,7 +118,7 @@ ms.locfileid: "74107850"
 * ключ узла в приложении-функции с именем apim-{*имя экземпляра службы "Управление API Azure"* };
 * именованное значение в экземпляре службы "Управление API Azure" с именем {*имя экземпляра приложения-функции Azure*}-key, которое содержит созданный ключ узла.
 
-При использовании интерфейсов API, созданных после 4 апреля 2019 г., ключ узла передается в HTTP-запросе от службы "Управление API" к приложению-функции в заголовке. Более старые API передают ключ узла в виде [параметра запроса](../azure-functions/functions-bindings-http-webhook.md#api-key-authorization). Такое поведение можно изменить с помощью вызова [REST API](https://docs.microsoft.com/rest/api/apimanagement/2019-01-01/backend/update#backendcredentialscontract) `PATCH Backend` к сущности *Backend*, связанной с приложением-функцией.
+При использовании интерфейсов API, созданных после 4 апреля 2019 г., ключ узла передается в HTTP-запросе от службы "Управление API" к приложению-функции в заголовке. Более старые API передают ключ узла в виде [параметра запроса](../azure-functions/functions-bindings-http-webhook.md#api-key-authorization). Такое поведение можно изменить с помощью вызова [REST API](https://docs.microsoft.com/rest/api/apimanagement/2019-01-01/backend/update#backendcredentialscontract)`PATCH Backend` к сущности *Backend*, связанной с приложением-функцией.
 
 > [!WARNING]
 > Удаление или изменение значения ключа узла в приложении-функции Azure или именованного значения службы "Управление API Azure" приведет к разрыву подключения между службами. Значения не синхронизируются автоматически.
@@ -160,7 +161,7 @@ ms.locfileid: "74107850"
 
 [!INCLUDE [api-management-define-api-topics.md](../../includes/api-management-define-api-topics.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Преобразование и защита опубликованного API](transform-api.md)

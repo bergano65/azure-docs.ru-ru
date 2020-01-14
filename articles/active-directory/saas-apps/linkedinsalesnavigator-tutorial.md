@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с LinkedIn Sales Navigator | Документация Майкрософт
+title: Руководство. Интеграция единого входа Azure Active Directory с LinkedIn Sales Navigator | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и LinkedIn Sales Navigator.
 services: active-directory
 documentationCenter: na
@@ -13,159 +13,138 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 04/19/2019
+ms.date: 12/17/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 38ce83df4d4de6d7816ee969a4fee153ad5457d8
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 0d8293b23559860e70191576db13c3cd14f520e6
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67097999"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75430883"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-linkedin-sales-navigator"></a>Руководство по Интеграция Azure Active Directory с LinkedIn Sales Navigator
+# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-linkedin-sales-navigator"></a>Руководство. Интеграция единого входа Azure Active Directory с LinkedIn Sales Navigator
 
-В этом руководстве описано, как интегрировать приложение LinkedIn Sales Navigator с Azure Active Directory (Azure AD).
-Интеграция Azure AD с LinkedIn Sales Navigator обеспечивает следующие преимущества:
+В этом учебнике описано, как интегрировать приложение LinkedIn Sales Navigator с Azure Active Directory (Azure AD). Интеграция LinkedIn Sales Navigator с Azure AD обеспечивает следующие возможности:
 
-* С помощью Azure AD вы можете контролировать доступ к LinkedIn Sales Navigator.
-* Вы можете включить автоматический вход пользователей в LinkedIn Sales Navigator (единый вход) с использованием учетной записи Azure AD.
-* Вы можете управлять учетными записями централизованно на портале Azure.
+* Управление доступом к LinkedIn Sales Navigator с помощью Azure AD.
+* Автоматический вход пользователей в LinkedIn Sales Navigator с учетными записями Azure AD.
+* Централизованное управление учетными записями через портал Azure.
 
-Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
+Чтобы узнать больше об интеграции приложений SaaS с Azure AD, прочитайте статью [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
-Чтобы настроить интеграцию Azure AD с LinkedIn Sales Navigator, вам потребуется:
+Чтобы приступить к работе, потребуется следующее:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
-* подписка LinkedIn Sales Navigator с поддержкой единого входа.
+* подписка Azure AD; Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
+* Подписка LinkedIn Sales Navigator с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
 
 В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде.
 
 * LinkedIn Sales Navigator поддерживает единый вход, инициированный **поставщиком услуг и поставщиком удостоверений**.
-
 * LinkedIn Sales Navigator поддерживает **JIT**-подготовку пользователей.
-
 * LinkedIn Sales Navigator поддерживает [**автоматическую** подготовку пользователей](linkedinsalesnavigator-provisioning-tutorial.md).
 
 ## <a name="adding-linkedin-sales-navigator-from-the-gallery"></a>Добавление LinkedIn Sales Navigator из коллекции
 
 Чтобы настроить интеграцию LinkedIn Sales Navigator с Azure AD, нужно добавить LinkedIn Sales Navigator из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить LinkedIn Sales Navigator из коллекции, выполните следующие действия:**
+1. Войдите на [портал Azure](https://portal.azure.com) с помощью личной учетной записи Майкрософт либо рабочей или учебной учетной записи.
+1. В области навигации слева выберите службу **Azure Active Directory**.
+1. Перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
+1. Чтобы добавить новое приложение, выберите **Новое приложение**.
+1. В разделе **Добавление из коллекции** в поле поиска введите **LinkedIn Sales Navigator**.
+1. Выберите **LinkedIn Sales Navigator** на панели результатов и добавьте это приложение. Подождите несколько секунд, пока приложение не будет добавлено в ваш клиент.
 
-1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
+## <a name="configure-and-test-azure-ad-single-sign-on-for-linkedin-sales-navigator"></a>Настройка и проверка единого входа Azure AD для LinkedIn Sales Navigator
 
-    ![Кнопка Azure Active Directory](common/select-azuread.png)
+Настройте и проверьте единый вход Azure AD в LinkedIn Sales Navigator с помощью тестового пользователя **B. Simon**. Для обеспечения работы единого входа необходимо установить связь между пользователем Azure AD и соответствующим пользователем в LinkedIn Sales Navigator.
 
-2. Перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
+Чтобы настроить и проверить единый вход Azure AD в LinkedIn Sales Navigator, выполните действия из следующих стандартных блоков:
 
-    ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
+1. **[Настройка единого входа Azure AD](#configure-azure-ad-sso)** необходима, чтобы пользователи могли использовать эту функцию.
+    * **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD с помощью пользователя B.Simon.
+    * **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить пользователю B.Simon использовать единый вход Azure AD.
+1. **[Настройка единого входа в LinkedIn Sales Navigator](#configure-linkedin-sales-navigator-sso)** необходима, чтобы настроить параметры единого входа на стороне приложения.
+    * **[Создание тестового пользователя LinkedIn Sales Navigator](#create-linkedin-sales-navigator-test-user)** требуется для создания пользователя B. Simon в LinkedIn Sales Navigator, связанного с соответствующим пользователем в Azure AD.
+1. **[Проверка единого входа](#test-sso)** необходима, чтобы убедиться в корректной работе конфигурации.
 
-3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
+## <a name="configure-azure-ad-sso"></a>Настройка единого входа Azure AD
 
-    ![Кнопка "Создать приложение"](common/add-new-app.png)
+Выполните следующие действия, чтобы включить единый вход Azure AD на портале Azure.
 
-4. В поле поиска введите **LinkedIn Sales Navigator**, выберите **LinkedIn Sales Navigator** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
+1. На [портале Azure](https://portal.azure.com/) на странице интеграции с приложением **LinkedIn Sales Navigator** найдите раздел **Управление** и выберите **Единый вход**.
+1. На странице **Выбрать метод единого входа** выберите **SAML**.
+1. На странице **Настройка единого входа с помощью SAML** щелкните значок "Изменить" (значок пера), чтобы открыть диалоговое окно **Базовая конфигурация SAML** и изменить параметры.
 
-    ![LinkedIn Sales Navigator в списке результатов](common/search-new-app.png)
+   ![Правка базовой конфигурации SAML](common/edit-urls.png)
 
-## <a name="configure-and-test-azure-ad-single-sign-on"></a>Настройка и проверка единого входа в Azure AD
+1. Если вы хотите настроить приложение в режиме, инициируемом **поставщиком удостоверений**, в разделе **Базовая конфигурация SAML** введите значения следующих полей.
 
-В этом разделе описана настройка и проверка единого входа Azure AD в приложение LinkedIn Sales Navigator с использованием тестового пользователя **Britta Simon**.
-Для обеспечения работы единого входа необходимо установить связь между пользователем Azure AD и соответствующим пользователем LinkedIn Sales Navigator.
-
-Чтобы настроить и проверить единый вход Azure AD в LinkedIn Sales Navigator, вам потребуется выполнить действия в следующих стандартных блоках:
-
-1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
-2. **[Настройка единого входа в LinkedIn Sales Navigator](#configure-linkedin-sales-navigator-single-sign-on)** необходима, чтобы настроить параметры единого входа на стороне приложения.
-3. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
-4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
-5. **[Создание тестового пользователя LinkedIn Sales Navigator](#create-linkedin-sales-navigator-test-user)** требуется для создания пользователя Britta Simon в LinkedIn Sales Navigator, связанного с соответствующим пользователем в Azure AD.
-6. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы проверить работу конфигурации.
-
-### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
-
-В этом разделе описано включение единого входа Azure AD на портале Azure.
-
-Чтобы настроить единый вход Azure AD в LinkedIn Sales Navigator, сделайте следующее:
-
-1. На [портале Azure](https://portal.azure.com/) на странице интеграции с приложением **LinkedIn Sales Navigator** щелкните **Единый вход**.
-
-    ![Ссылка "Настройка единого входа"](common/select-sso.png)
-
-2. В диалоговом окне **Выбрать метод единого входа** выберите режим **SAML/WS-Fed**, чтобы включить единый вход.
-
-    ![Режим выбора единого входа](common/select-saml-option.png)
-
-3. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
-
-    ![Правка базовой конфигурации SAML](common/edit-urls.png)
-
-4. Если вы хотите настроить приложение в режиме, инициируемом **поставщиком удостоверений**, в разделе **Базовая конфигурация SAML** выполните следующие действия.
-
-    ![Сведения о домене и URL-адресах единого входа для приложения LinkedIn Sales Navigator](common/idp-intiated.png)
-
-    a. В текстовом поле **Идентификатор** введите значение **идентификатора сущности**. Далее в этом учебнике описано, как скопировать его на портале LinkedIn.
+    а. В текстовом поле **Идентификатор** введите значение **идентификатора сущности**. Далее в этом учебнике описано, как скопировать его на портале LinkedIn.
 
     b. В текстовом поле **URL-адрес ответа** введите значение **URL-адреса службы обработчика утверждений (ACS)** . Далее в этом учебнике описано, как скопировать это значение URL-адреса на портале LinkedIn.
 
-5. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
-
-    ![Сведения о домене и URL-адресах единого входа для приложения LinkedIn Sales Navigator](common/metadata-upload-additional-signon.png)
+1. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
     В текстовом поле **URL-адрес входа** введите URL-адрес в формате `https://www.linkedin.com/checkpoint/enterprise/login/<account id>?application=salesNavigator`.
 
-6. Приложение LinkedIn Sales Navigator ожидает утверждения SAML в определенном формате, а для этого вам нужно добавить настраиваемые сопоставления атрибутов в конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию, когда **nameidentifier** сопоставляется с **user.userprincipalname**. Приложение LinkedIn Sales Navigator ожидает сопоставления nameidentifier с **user.mail**, поэтому необходимо изменить сопоставление атрибутов, щелкнув значок "Изменить" и изменив сопоставление атрибутов.
+1. Приложение LinkedIn Sales Navigator ожидает утверждения SAML в определенном формате, а для этого вам нужно добавить настраиваемые сопоставления атрибутов в конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию.
 
-    ![image](common/edit-attribute.png)
+    ![image](common/default-attributes.png)
 
-7. В дополнение к описанному выше приложение LinkedIn Sales Navigator ожидает несколько дополнительных атрибутов в ответе SAML. В разделе "Утверждения пользователя" диалогового окна **Атрибуты пользователя** выполните следующие действия, чтобы добавить атрибут токена SAML, как показано в приведенной ниже таблице.
+1. В дополнение к описанному выше приложение LinkedIn Sales Navigator ожидает в ответе SAML несколько дополнительных атрибутов, которые показаны ниже. Эти атрибуты также заранее заполнены, но вы можете изменить их в соответствии со своими требованиями.
 
-    | ИМЯ | Исходный атрибут|
+    | Имя | Исходный атрибут|
     | --- | --- |
     | email| user.mail |
     | department| user.department |
     | firstname| user.givenname |
     | lastname| user.surname |
+    | Уникальный идентификатор пользователя | user.mail |
 
-    a. Щелкните **Добавить новое утверждение**, чтобы открыть диалоговое окно **Управление утверждениями пользователя**.
-
-    ![image](common/new-save-attribute.png)
-
-    ![image](common/new-attribute-details.png)
-
-    b. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
-
-    c. Оставьте пустым поле **Пространство имен**.
-
-    d. В качестве источника выберите **Атрибут**.
-
-    д. В списке **Атрибут источника** введите значение атрибута, отображаемое для этой строки.
-
-    Е. Нажмите кнопку **ОК**.
-
-    ж. Выберите команду **Сохранить**.
-
-8. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Скачать**, чтобы скачать нужный вам **XML метаданных федерации**, и сохраните его на компьютере.
+1. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** найдите элемент **XML метаданных федерации** и выберите **Скачать**, чтобы скачать сертификат и сохранить его на компьютере.
 
     ![Ссылка для скачивания сертификата](common/metadataxml.png)
 
-9. Требуемый URL-адрес можно скопировать из раздела **Настройка LinkedIn Sales Navigator**.
+1. Требуемый URL-адрес можно скопировать из раздела **Настройка LinkedIn Sales Navigator**.
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
-    b. Идентификатор Azure AD
+В этом разделе описано, как на портале Azure создать тестового пользователя с именем B.Simon.
 
-    c. URL-адрес выхода.
+1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
+1. В верхней части экрана выберите **Новый пользователь**.
+1. В разделе **Свойства пользователя** выполните следующие действия.
+   1. В поле **Имя** введите `B.Simon`.  
+   1. В поле **Имя пользователя** введите username@companydomain.extension. Например, `B.Simon@contoso.com`.
+   1. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
+   1. Нажмите кнопку **Создать**.
 
-### <a name="configure-linkedin-sales-navigator-single-sign-on"></a>Настройка единого входа в LinkedIn Sales Navigator
+### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
+
+В этом разделе описано, как разрешить пользователю B. Simon использовать единый вход Azure путем предоставления доступа к LinkedIn Sales Navigator.
+
+1. На портале Azure выберите **Корпоративные приложения**, а затем —**Все приложения**.
+1. В списке приложений выберите **LinkedIn Sales Navigator**.
+1. На странице "Обзор" приложения найдите раздел **Управление** и выберите **Пользователи и группы**.
+
+   ![Ссылка "Пользователи и группы"](common/users-groups-blade.png)
+
+1. Выберите **Добавить пользователя**, а в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
+
+    ![Ссылка "Добавить пользователя"](common/add-assign-user.png)
+
+1. В диалоговом окне **Пользователи и группы** выберите **B.Simon** в списке пользователей, а затем в нижней части экрана нажмите кнопку **Выбрать**.
+1. Если ожидается, что в утверждении SAML будет получено какое-либо значение роли, то в диалоговом окне **Выбор роли** нужно выбрать соответствующую роль для пользователя из списка и затем нажать кнопку **Выбрать**, расположенную в нижней части экрана.
+1. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
+
+## <a name="configure-linkedin-sales-navigator-sso"></a>Настройка единого входа в LinkedIn Sales Navigator
 
 1. В другом окне веб-браузера войдите на свой веб-сайт **LinkedIn Sales Navigator** в качестве администратора.
 
@@ -177,7 +156,7 @@ ms.locfileid: "67097999"
 
     ![Настройка единого входа](./media/linkedinsalesnavigator-tutorial/tutorial_linkedin_admin_031.png)
 
-    a. Скопируйте **идентификатор сущности** и вставьте его в текстовое поле **Идентификатор** в разделе **Базовая конфигурация SAML** на портале Azure.
+    а. Скопируйте **идентификатор сущности** и вставьте его в текстовое поле **Идентификатор** в разделе **Базовая конфигурация SAML** на портале Azure.
 
     b. Скопируйте **URL-адрес службы обработчика утверждений (ACS)** и вставьте его в текстовое поле **URL-адрес ответа** в разделе **Базовая конфигурация SAML** на портале Azure.
 
@@ -189,63 +168,13 @@ ms.locfileid: "67097999"
 
     ![Настройка единого входа](./media/linkedinsalesnavigator-tutorial/tutorial_linkedin_admin_05.png)
 
-### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD 
-
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
-
-1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
-
-    ![Ссылки "Пользователи и группы" и "Все пользователи"](common/users.png)
-
-2. В верхней части экрана выберите **Новый пользователь**.
-
-    ![Кнопка "Новый пользователь"](common/new-user.png)
-
-3. В разделе свойств пользователя сделайте следующее:
-
-    ![Диалоговое окно "Пользователь"](common/user-properties.png)
-
-    а. В поле **Имя** введите **BrittaSimon**.
-  
-    b. В поле **Имя пользователя** введите `brittasimon@yourcompanydomain.extension`. Например BrittaSimon@contoso.com.
-
-    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
-
-    d. Нажмите кнопку **Создать**.
-
-### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
-
-В этом разделе описано, как разрешить пользователю Britta Simon использовать единый вход Azure путем предоставления доступа к LinkedIn Sales Navigator.
-
-1. На портале Azure выберите **Корпоративные приложения**, **Все приложения**, а затем — **LinkedIn Sales Navigator**.
-
-    ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
-
-2. В списке приложений выберите **LinkedIn Sales Navigator**.
-
-    ![Ссылка на LinkedIn Sales Navigator в списке приложений](common/all-applications.png)
-
-3. В меню слева выберите **Пользователи и группы**.
-
-    ![Ссылка "Пользователи и группы"](common/users-groups-blade.png)
-
-4. Нажмите кнопку **Добавить пользователя**, а затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
-
-    ![Область "Добавление назначения"](common/add-assign-user.png)
-
-5. В диалоговом окне **Пользователи и группы** из списка пользователей выберите **Britta Simon**, а затем в верхней части экрана нажмите кнопку **Выбрать**.
-
-6. Если ожидается, что в утверждении SAML будет получено какое-либо значение роли, то в диалоговом окне **Выбор ролей** нужно выбрать соответствующую роль для пользователя из списка и затем нажать кнопку **Выбрать**, расположенную в нижней части экрана.
-
-7. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
-
 ### <a name="create-linkedin-sales-navigator-test-user"></a>Создание тестового пользователя LinkedIn Sales Navigator
 
 Приложение LinkedIn Sales Navigator поддерживает JIT-подготовку пользователей, поэтому после проверки подлинности пользователи создаются в приложении автоматически. Включите параметр **Automatically assign licenses** (Автоматически назначать лицензии), чтобы назначить лицензию пользователю.
 
    ![Создание тестового пользователя Azure AD](./media/linkedinsalesnavigator-tutorial/LinkedinUserprovswitch.png)
 
-### <a name="test-single-sign-on"></a>Проверка единого входа
+## <a name="test-sso"></a>Проверка единого входа 
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
@@ -253,9 +182,10 @@ ms.locfileid: "67097999"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 
+- [Попробуйте использовать LinkedIn Sales Navigator с Azure AD](https://aad.portal.azure.com/)

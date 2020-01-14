@@ -1,6 +1,6 @@
 ---
-title: Пример сценария Azure PowerShell. Создание кластера Service Fabric | Документы Майкрософт
-description: Пример сценария Azure PowerShell — создание кластера Service Fabric.
+title: Создание кластера Service Fabric в Powershell
+description: Пример сценария Azure PowerShell. Создание кластера Service Fabric, защищенного с помощью сертификата X.509.
 services: service-fabric
 documentationcenter: ''
 author: athinanthny
@@ -14,12 +14,12 @@ ms.topic: sample
 ms.date: 01/19/2018
 ms.author: atsenthi
 ms.custom: mvc
-ms.openlocfilehash: ac57778f83a9e7c07360e6ff496186ae78a95dbd
-ms.sourcegitcommit: 18061d0ea18ce2c2ac10652685323c6728fe8d5f
+ms.openlocfilehash: f8e1a0ca86f9346cf07c87a738d48cb56f6d7d57
+ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69035580"
+ms.lasthandoff: 01/02/2020
+ms.locfileid: "75614780"
 ---
 # <a name="create-a-service-fabric-cluster"></a>Создание кластера Service Fabric
 
@@ -46,11 +46,11 @@ Remove-AzResourceGroup -Name $groupname -Force
 
 Этот скрипт использует следующие команды. Для каждой команды в таблице приведены ссылки на соответствующую документацию.
 
-| Команда | Примечания |
+| Get-Help | Примечания |
 |---|---|
 | [New-AzServiceFabricCluster](/powershell/module/az.servicefabric/New-azServiceFabricCluster) | Создает кластер Service Fabric. |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о модуле Azure PowerShell см. в [документации по Azure PowerShell](/powershell/azure/overview).
 

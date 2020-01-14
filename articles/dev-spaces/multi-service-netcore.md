@@ -3,14 +3,14 @@ title: Выполнение нескольких зависимых служб �
 services: azure-dev-spaces
 ms.date: 11/21/2018
 ms.topic: tutorial
-description: Быстрая разработка в Kubernetes с использованием контейнеров и микрослужб в Azure
+description: В этом руководстве описано, как использовать Azure Dev Spaces и Visual Studio Code для отладки приложения .NET Core с несколькими службами в службе Azure Kubernetes
 keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, service mesh, service mesh routing, kubectl, k8s
-ms.openlocfilehash: 453cf1fdf2d37817d12ec32f2cba00b3671b1d11
-ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
+ms.openlocfilehash: 0bbb1aefe517c45207160b83b89f7207e8909666
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74325682"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75438320"
 ---
 # <a name="running-multiple-dependent-services-net-core-and-visual-studio-code-with-azure-dev-spaces"></a>Выполнение нескольких зависимых служб с использованием .NET Core и Visual Studio Code с Azure Dev Spaces
 
@@ -75,7 +75,7 @@ ms.locfileid: "74325682"
 Теперь у вас есть многоконтейнерное приложение, где каждый контейнер можно разрабатывать и развертывать отдельно.
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Коллективная разработка с помощью Dev Spaces](team-development-netcore.md)

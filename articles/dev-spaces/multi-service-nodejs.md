@@ -3,14 +3,14 @@ title: 'Выполнение нескольких зависимых служб:
 services: azure-dev-spaces
 ms.date: 11/21/2018
 ms.topic: tutorial
-description: Быстрая разработка в Kubernetes с использованием контейнеров и микрослужб в Azure
+description: В этом руководстве описано, как использовать Azure Dev Spaces и Visual Studio Code для отладки приложения Node.js с несколькими службами в службе Azure Kubernetes.
 keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, service mesh, service mesh routing, kubectl, k8s
-ms.openlocfilehash: 357a03e154e3c0146d3275e8cba64bc2d966f5b8
-ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
+ms.openlocfilehash: a5fa0aae3a966dd96ee95e6bcafc3b2eec4e6837
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74325665"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75438295"
 ---
 # <a name="running-multiple-dependent-services-nodejs-and-visual-studio-code-with-azure-dev-spaces"></a>Выполнение нескольких зависимых служб: Использование Node.js и Visual Studio Code в Azure Dev Spaces
 
@@ -62,7 +62,7 @@ ms.locfileid: "74325665"
 
 ### <a name="debug-across-multiple-services"></a>Отладка в нескольких службах
 1. На этом этапе служба `mywebapi` по-прежнему должна выполняться с подключенным отладчиком. Если это не так, нажмите клавишу F5 в проекте `mywebapi`.
-1. Установите точку останова в обработчике GET по умолчанию `/` [в строке 8 `server.js` ](https://github.com/Azure/dev-spaces/blob/master/samples/nodejs/getting-started/mywebapi/server.js#L8).
+1. Установите точку останова в обработчике GET по умолчанию `/`[в строке 8 `server.js`](https://github.com/Azure/dev-spaces/blob/master/samples/nodejs/getting-started/mywebapi/server.js#L8).
 1. В проекте `webfrontend` установите точку останова до отправки запроса GET к `http://mywebapi`.
 1. Нажмите клавишу F5 в проекте `webfrontend`.
 1. Откройте веб-приложение и выполните пошаговое прохождение кода в обеих службах. В веб-приложении должно отобразиться объединенное сообщение от двух служб: "Hello from webfrontend and Hello from mywebapi".
@@ -70,7 +70,7 @@ ms.locfileid: "74325665"
 ### <a name="well-done"></a>Все готово!
 Теперь у вас есть многоконтейнерное приложение, где каждый контейнер можно разрабатывать и развертывать отдельно.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Коллективная разработка с помощью Dev Spaces](team-development-nodejs.md)

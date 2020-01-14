@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с ProductBoard | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с ProductBoard | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и ProductBoard.
 services: active-directory
 documentationCenter: na
@@ -16,14 +16,14 @@ ms.topic: tutorial
 ms.date: 10/21/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 529c2a453bade8745a596b5cd2e374907a66f613
-ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
+ms.openlocfilehash: 1c308243e3dfebb3622ebbe346771fe781b97cc5
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74893728"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75443309"
 ---
-# <a name="tutorial-integrate-productboard-with-azure-active-directory"></a>Руководство по Интеграция ProductBoard с Azure Active Directory
+# <a name="tutorial-integrate-productboard-with-azure-active-directory"></a>Руководство. Интеграция ProductBoard с Azure Active Directory
 
 В этом руководстве описано, как интегрировать ProductBoard с Azure Active Directory (Azure AD). Интеграция ProductBoard с Azure AD обеспечивает следующие возможности:
 
@@ -33,11 +33,11 @@ ms.locfileid: "74893728"
 
 Чтобы узнать больше об интеграции приложений SaaS с Azure AD, прочитайте статью [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы приступить к работе, потребуется следующее:
 
-* подписка Azure AD Если у вас нет подписки, [здесь](https://azure.microsoft.com/pricing/free-trial/) вы можете получить бесплатную пробную версию сроком на один месяц.
+* подписка Azure AD; Если у вас нет подписки, [здесь](https://azure.microsoft.com/pricing/free-trial/) вы можете получить бесплатную пробную версию сроком на один месяц.
 * подписка с поддержкой единого входа на ProductBoard.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -68,7 +68,7 @@ ms.locfileid: "74893728"
     * **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD с помощью пользователя B.Simon.
     * **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить пользователю B.Simon использовать единый вход Azure AD.
 1. **[Настройка единого входа в ProductBoard](#configure-productboard-sso)** необходима, чтобы настроить параметры единого входа на стороне приложения.
-    * **[Создание тестового пользователя](#create-productboard-test-user)** ProductBoard требуется для того, чтобы в ProductBoard существовал пользователь B. Simon, связанный с одноименным пользователем в Azure AD.
+    * **[Создание тестового пользователя productboard](#create-productboard-test-user)** требуется для того, чтобы в productboard существовал пользователь B.Simon, связанный с одноименным пользователем в Azure AD.
 1. **[Проверка единого входа](#test-sso)** необходима, чтобы убедиться в корректной работе конфигурации.
 
 ### <a name="configure-azure-ad-sso"></a>Настройка единого входа Azure AD

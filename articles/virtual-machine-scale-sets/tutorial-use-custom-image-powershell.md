@@ -1,5 +1,5 @@
 ---
-title: Руководство. Использование пользовательского образа виртуальной машины в масштабируемом наборе с помощью Azure PowerShell | Документация Майкрософт
+title: Учебник. Использование пользовательского образа виртуальной машины в масштабируемом наборе с помощью Azure PowerShell
 description: Сведения о создании пользовательского образа виртуальной машины, который можно использовать для развертывания масштабируемого набора виртуальных машин, с помощью Azure PowerShell
 services: virtual-machine-scale-sets
 documentationcenter: ''
@@ -16,21 +16,21 @@ ms.topic: tutorial
 ms.date: 03/27/2018
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: bd605ac3a4dd3f878dd3d5b861374816243f3467
-ms.sourcegitcommit: 1aefdf876c95bf6c07b12eb8c5fab98e92948000
+ms.openlocfilehash: 4f47c4118db9d5fc799193f4abeea142c74ec691
+ms.sourcegitcommit: ec2eacbe5d3ac7878515092290722c41143f151d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66728552"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75551579"
 ---
-# <a name="tutorial-create-and-use-a-custom-image-for-virtual-machine-scale-sets-with-azure-powershell"></a>Руководство по Создание и использование пользовательского образа для масштабируемых наборов виртуальных машин с помощью Azure PowerShell
+# <a name="tutorial-create-and-use-a-custom-image-for-virtual-machine-scale-sets-with-azure-powershell"></a>Руководство. Создание и использование пользовательского образа для масштабируемых наборов виртуальных машин с помощью Azure PowerShell
 
 Создавая масштабируемый набор, вы указываете образ для использования при развертывании экземпляров виртуальных машин. Чтобы сократить количество задач после развертывания экземпляров виртуальных машин, можно использовать пользовательский образ виртуальной машины. Этот образ содержит все необходимые установки или конфигурации приложения. Все экземпляры виртуальных машин, созданные в масштабируемом наборе, используют пользовательский образ виртуальной машины и готовы обслуживать трафик приложения. Из этого руководства вы узнаете, как выполнить следующие задачи:
 
 > [!div class="checklist"]
 > * создание и настройка виртуальной машины;
 > * отмена подготовки виртуальной машины и подготовка ее к использованию;
-> * создание пользовательского образа виртуальной машины из исходной виртуальной машины;
+> * Создание пользовательского образа виртуальной машины из исходной виртуальной машины
 > * развертывание масштабируемого набора, использующего пользовательский образ виртуальной машины.
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
@@ -113,6 +113,18 @@ $image = New-AzImageConfig -Location "EastUS" -SourceVirtualMachineId $vm.ID
 New-AzImage -Image $image -ImageName "myImage" -ResourceGroupName "myResourceGroup"
 ```
 
+## <a name="configure-the-network-security-group-rules"></a>Настройка правил группы безопасности сети
+Перед созданием масштабируемого набора необходимо настроить связанные правила группы безопасности сети для предоставления доступа подключениям по протоколу HTTP, RDP и для удаленного взаимодействия. 
+
+```azurepowershell-interactive
+$rule1 = New-AzNetworkSecurityRuleConfig -Name web-rule -Description "Allow HTTP" -Access Allow -Protocol Tcp -Direction Inbound -Priority 100 -SourceAddressPrefix Internet -SourcePortRange * -DestinationAddressPrefix * -DestinationPortRange 80
+
+$rule2 = New-AzNetworkSecurityRuleConfig -Name rdp-rule -Description "Allow RDP" -Access Allow -Protocol Tcp -Direction Inbound -Priority 110 -SourceAddressPrefix Internet -SourcePortRange * -DestinationAddressPrefix * -DestinationPortRange 3389
+
+$rule3 = New-AzNetworkSecurityRuleConfig -Name remoting-rule -Description "Allow PS Remoting" -Access Allow -Protocol Tcp -Direction Inbound -Priority 120 -SourceAddressPrefix Internet -SourcePortRange * -DestinationAddressPrefix * -DestinationPortRange 5985
+
+New-AzNetworkSecurityGroup -Name "myNSG" -ResourceGroupName "myResourceGroup" -Location "EastUS" -SecurityRules $rule1,$rule2,$rule3
+```
 
 ## <a name="create-a-scale-set-from-the-custom-vm-image"></a>Создание масштабируемого набора на основе пользовательского образа виртуальной машины
 Теперь создайте масштабируемый набор с помощью командлета [New-AzVmss](/powershell/module/az.compute/new-azvmss), который использует параметр `-ImageName` для определения пользовательского образа виртуальной машины, созданного на предыдущем шаге. Чтобы распределить трафик между отдельными экземплярами виртуальных машин, создается еще и подсистема балансировки нагрузки. Подсистема балансировки нагрузки определяет правила передачи трафика на TCP-порт 80, а также разрешает подключение удаленного рабочего стола трафик через TCP-порт 3389 и удаленное взаимодействие PowerShell через TCP-порт 5985. При появлении запроса введите учетные данные администратора для экземпляров виртуальных машин в масштабируемом наборе:
@@ -124,6 +136,7 @@ New-AzVmss `
   -VMScaleSetName "myScaleSet" `
   -VirtualNetworkName "myVnet" `
   -SubnetName "mySubnet" `
+  -SecurityGroupName "myNSG"
   -PublicIpAddressName "myPublicIPAddress" `
   -LoadBalancerName "myLoadBalancer" `
   -UpgradePolicyMode "Automatic" `
@@ -156,7 +169,7 @@ Remove-AzResourceGroup -Name "myResourceGroup" -Force -AsJob
 ```
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Из этого руководства вы узнали, как создавать и использовать пользовательский образ виртуальной машины для масштабируемых наборов с помощью Azure PowerShell, в частности, как выполнять такие задачи:
 
 > [!div class="checklist"]

@@ -5,14 +5,14 @@ ms.custom: vs-azure
 ms.workload: azure-vs
 ms.date: 07/09/2018
 ms.topic: tutorial
-description: Быстрая разработка в Kubernetes с использованием контейнеров и микрослужб в Azure
+description: В этом руководстве описано, как использовать Azure Dev Spaces и Visual Studio для отладки приложения .NET Core с несколькими службами в службе Azure Kubernetes
 keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, service mesh, service mesh routing, kubectl, k8s
-ms.openlocfilehash: 9fb6993c913454d67e2118cd3ff5a4b8fea6464b
-ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
+ms.openlocfilehash: 7f95c21c2cf5b7adcdb34d7bbe2b1f8314c20333
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74325698"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75438402"
 ---
 # <a name="running-multiple-dependent-services-net-core-and-visual-studio-with-azure-dev-spaces"></a>Выполнение нескольких зависимых служб с использованием .NET Core и Visual Studio с Azure Dev Spaces
 
@@ -37,7 +37,7 @@ ms.locfileid: "74325698"
     ![](media/get-started-netcore-visualstudio/WebAPIResponse.png)
 
 ### <a name="make-a-request-from-webfrontend-to-mywebapi"></a>Запрос из *webfrontend* к *mywebapi*
-Давайте теперь напишем код в `webfrontend`, который отправляет запрос к `mywebapi`. Переключитесь в окно Visual Studio, в котором есть проект `webfrontend`. В файле `HomeController.cs` *замените* код метода About следующим кодом:
+Давайте теперь напишем код в `webfrontend`, который отправляет запрос к `mywebapi`. Переключитесь в окно Visual Studio, в котором есть проект `webfrontend`. В файле `HomeController.cs`*замените* код метода About следующим кодом:
 
    ```csharp
    public async Task<IActionResult> About()
@@ -77,7 +77,7 @@ ms.locfileid: "74325698"
 ### <a name="well-done"></a>Все готово!
 Теперь у вас есть многоконтейнерное приложение, где каждый контейнер можно разрабатывать и развертывать отдельно.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Коллективная разработка с помощью Dev Spaces](team-development-netcore-visualstudio.md)

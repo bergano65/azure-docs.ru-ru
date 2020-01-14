@@ -1,6 +1,6 @@
 ---
-title: Пример сценария Azure CLI. Копирование (перемещение) управляемых дисков в ту же или другую подписку
-description: Пример сценария Azure CLI. Копирование (перемещение) управляемых дисков в ту же или другую подписку
+title: Пример для CLI. Копирование управляемых дисков в подписку
+description: Пример сценария Azure CLI. Копирование (или перемещение) управляемых дисков в ту же или другую подписку
 services: virtual-machines-linux
 documentationcenter: storage
 author: ramankumarlive
@@ -16,12 +16,12 @@ ms.workload: infrastructure
 ms.date: 05/19/2017
 ms.author: ramankum
 ms.custom: mvc
-ms.openlocfilehash: 5f3859d632b14f1ec22ecd37ee0f10b01cbc7cd5
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.openlocfilehash: 7ccdec703781a4e48870d5b4c27ec9d23de71dd0
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74038286"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75458575"
 ---
 # <a name="copy-managed-disks-to-same-or-different-subscription-with-cli"></a>Копирование управляемых дисков в ту же или другую подписку с помощью интерфейса командной строки
 
@@ -41,12 +41,12 @@ ms.locfileid: "74038286"
 
 Этот сценарий использует приведенные ниже команды для создания управляемого диска в целевой подписке с помощью идентификатора исходного управляемого диска. Для каждой команды в таблице приведены ссылки на соответствующую документацию.
 
-| Команда | Примечания |
+| Get-Help | Примечания |
 |---|---|
 | [az disk show](https://docs.microsoft.com/cli/azure/disk) | Получает все свойства управляемого диска, используя имя и свойства группы ресурсов управляемого диска. Свойство идентификатора используется для копирования управляемого диска в другую подписку.  |
 | [az disk create](https://docs.microsoft.com/cli/azure/disk) | Копирует управляемый диск путем создания нового управляемого диска в другой подписке, используя идентификатор и имя родительского управляемого диска.  |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Создание виртуальной машины на основе управляемого диска](./virtual-machines-linux-cli-sample-create-vm-from-managed-os-disks.md?toc=%2fpowershell%2fmodule%2ftoc.json)
 

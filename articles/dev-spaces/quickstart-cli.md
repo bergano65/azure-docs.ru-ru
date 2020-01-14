@@ -3,15 +3,15 @@ title: Разработка приложения в Kubernetes
 services: azure-dev-spaces
 ms.date: 07/08/2019
 ms.topic: quickstart
-description: Развертывание микрослужбы в AKS с помощью Azure Dev Spaces
+description: В этом кратком руководстве показано, как использовать Azure Dev Spaces и командную строку для разработки приложения в службе Azure Kubernetes
 keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, service mesh, service mesh routing, kubectl, k8s
 manager: gwallace
-ms.openlocfilehash: 932b25e277936a2efe6a3e037458fabd67b024c2
-ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
+ms.openlocfilehash: b4902930b04e880bbbdfbe7418d5e0ec86f89470
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74325641"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75438262"
 ---
 # <a name="quickstart-develop-an-application-on-kubernetes---azure-dev-spaces"></a>Краткое руководство. Разработка приложения в Kubernetes с помощью Azure Dev Spaces
 Из этого руководства вы узнаете, как выполнить следующие задачи:
@@ -19,7 +19,7 @@ ms.locfileid: "74325641"
 - Настройка Azure Dev Spaces с помощью управляемого кластера Kubernetes в Azure.
 - Разработка и выполнение кода в контейнерах с помощью командной строки.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 - Подписка Azure. Если у вас нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free).
 - [Установленный Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest).
@@ -116,7 +116,7 @@ Service 'webfrontend' port 80 (http) is available at http://localhost:54256
 
 ## <a name="update-code"></a>Обновление кода
 
-Чтобы развернуть обновленную версию службы, обновите любой файл в проекте и повторно выполните команду `azds up`. Например:
+Чтобы развернуть обновленную версию службы, обновите любой файл в проекте и повторно выполните команду `azds up`. Пример:
 
 1. Если `azds up` по-прежнему выполняется, нажмите клавиши *CTRL+C*.
 1. Измените [строку 13 в `server.js`](https://github.com/Azure/dev-spaces/blob/master/samples/nodejs/getting-started/webfrontend/server.js#L13) следующим образом:
@@ -146,7 +146,7 @@ Service 'webfrontend' port 80 (http) is available at http://localhost:54256
 az group delete --name MyResourceGroup --yes --no-wait
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте, как в Azure Dev Spaces можно разрабатывать более сложные приложения в нескольких контейнерах и как упростить совместную разработку, используя разные версии и ветви кода в разных средах.
 

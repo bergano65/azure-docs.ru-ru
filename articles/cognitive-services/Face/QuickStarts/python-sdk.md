@@ -1,6 +1,6 @@
 ---
-title: Краткое руководство. Клиентская библиотека API Распознавания лиц для Python | Документация Майкрософт
-description: Эта статья поможет вам приступить к работе с клиентской библиотекой Распознавания лиц для Python, чтобы выполнять распознавание, поиск похожих лиц, идентификацию, проверку и многое другое.
+title: Краткое руководство. Клиентская библиотека API Распознавания лиц для Python
+description: Это краткое руководство поможет вам приступить к работе с клиентской библиотекой Распознавания лиц для Python, чтобы выполнять распознавание, поиск похожих лиц, идентификацию, проверку и многое другое.
 services: cognitive-services
 author: PatrickFarley
 manager: nitinme
@@ -9,12 +9,12 @@ ms.subservice: face-api
 ms.topic: quickstart
 ms.date: 12/05/2019
 ms.author: pafarley
-ms.openlocfilehash: cd797567b381fb89c568b06dc8b056648e5c734a
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.openlocfilehash: e41817e3409f79aab3fbb3d57195b6b7ff13e7af
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74977817"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75448204"
 ---
 # <a name="quickstart-face-client-library-for-python"></a>Краткое руководство. Клиентская библиотека API Распознавания лиц для Python
 
@@ -24,14 +24,14 @@ ms.locfileid: "74977817"
 
 * Определение лиц на изображении
 * Поиск похожих лиц
-* создание и обучение на основе изображения группы людей;
+* Создание и обучение на основе изображения группы людей
 * опознание лиц;
 * Проверка лиц
 * создание моментального снимка для переноса данных.
 
 [Справочная документация](https://docs.microsoft.com/python/api/azure-cognitiveservices-vision-face/?view=azure-python) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/cognitiveservices/azure-cognitiveservices-vision-face) | [Пакет (PiPy)](https://pypi.org/project/azure-cognitiveservices-vision-face/) | [Примеры](https://docs.microsoft.com/samples/browse/?products=azure&term=face)
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/).
 * [Python 3.x](https://www.python.org/)
@@ -40,7 +40,7 @@ ms.locfileid: "74977817"
 
 ### <a name="create-a-face-azure-resource"></a>Создание ресурса API Распознавания лиц
 
-Ресурсами Azure, на которые вы подписаны, будет представлено семейство служб Azure Cognitive Services. Создайте ресурс API Распознавания лиц с помощью [портала Azure](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) или [Azure CLI](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account-cli) на локальном компьютере. Также можно:
+Ресурсами Azure, на которые вы подписаны, будет представлено семейство служб Azure Cognitive Services. Создайте ресурс API Распознавания лиц с помощью [портала Azure](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) или [Azure CLI](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account-cli) на локальном компьютере. Кроме того, вы можете сделать следующее:
 
 * Получить бесплатный [ключ пробной версии](https://azure.microsoft.com/try/cognitive-services/#decision) на 7 дней. После регистрации он будет доступен на [веб-сайте Azure](https://azure.microsoft.com/try/cognitive-services/my-apis/).  
 * Просмотреть этот ресурс на [портале Azure](https://portal.azure.com/).
@@ -72,7 +72,7 @@ pip install --upgrade azure-cognitiveservices-vision-face
 
 Следующие классы и интерфейсы обрабатывают некоторые основные функции пакета SDK Распознавания лиц для Python.
 
-|ИМЯ|ОПИСАНИЕ|
+|Имя|Description|
 |---|---|
 |[FaceClient](https://docs.microsoft.com/python/api/azure-cognitiveservices-vision-face/azure.cognitiveservices.vision.face.faceclient?view=azure-python) | Этот класс реализует авторизацию для использования Распознавания лиц и требуется для реализации всех ее функций. Вы создаете его экземпляр с информацией о подписке и используете его для создания экземпляров других классов. |
 |[FaceOperations](https://docs.microsoft.com/python/api/azure-cognitiveservices-vision-face/azure.cognitiveservices.vision.face.operations.faceoperations?view=azure-python)|Этот класс обрабатывает основные задачи по обнаружению и распознаванию лиц. |
@@ -169,7 +169,7 @@ pip install --upgrade azure-cognitiveservices-vision-face
 
 [!code-python[](~/cognitive-services-quickstart-code/python/Face/FaceQuickstart.py?name=snippet_persongroup_train)]
 
-## <a name="identify-a-face"></a>Опознание лица
+## <a name="identify-a-face"></a>опознание лиц;
 
 Следующий код принимает изображение с несколькими лицами и опознает каждое лицо на изображении. Он сравнивает каждое обнаруженное лицо с **PersonGroup**, которая является базой данных объектов **Person** с известными характеристиками лиц.
 
@@ -273,7 +273,7 @@ python quickstart-file.py
 Если вы хотите очистить и удалить подписку Cognitive Services, вы можете удалить ресурс или группу ресурсов. При этом удаляются все ресурсы, связанные с ней.
 
 * [Портал](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account#clean-up-resources)
-* [Интерфейс командной строки Azure](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account-cli#clean-up-resources)
+* [Azure CLI](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account-cli#clean-up-resources)
 
 Если при изучении этого краткого руководства вы создали объект **PersonGroup** и хотите его удалить, выполните в скрипте следующий код:
 
@@ -283,7 +283,7 @@ python quickstart-file.py
 
 [!code-python[](~/cognitive-services-quickstart-code/python/Face/FaceQuickstart.py?name=snippet_deletetargetgroup)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из этого краткого руководство вы узнали, как с помощью клиентской библиотеки API Распознавания лиц для Python выполнять базовые задачи. Далее ознакомьтесь со справочной документацией, чтобы узнать больше о библиотеке.
 

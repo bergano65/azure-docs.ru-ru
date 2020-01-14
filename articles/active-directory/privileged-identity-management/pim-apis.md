@@ -10,16 +10,16 @@ ms.service: active-directory
 ms.workload: identity
 ms.subservice: pim
 ms.topic: overview
-ms.date: 11/08/2019
+ms.date: 01/02/2020
 ms.author: curtand
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: aea9fbb14d3892419af104c44c8bfd5528eef421
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.openlocfilehash: 6da6bffbc54bfa6e9c39ddace665eb7cfec58614
+ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74021924"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75638669"
 ---
 # <a name="microsoft-graph-apis-for-privileged-identity-management-preview"></a>API-интерфейсы Microsoft Graph для управления привилегированными пользователями (предварительная версия)
 
@@ -29,6 +29,8 @@ ms.locfileid: "74021924"
 
 > [!IMPORTANT]
 > API-интерфейсы бета-версии в Microsoft Graph доступны в предварительной версии и могут быть изменены. Использование этих API для приложений в рабочей среде не поддерживается.
+>
+> Хотя поддержка операций PIM осуществляется с помощью команд API Graph, мы используем другой механизм, чтобы утвердить запросы на активацию. API Graph для утверждения находится на стадии разработки и будет выпущен через несколько месяцев.
 
 ## <a name="required-permissions"></a>Необходимые разрешения
 
@@ -59,6 +61,6 @@ ms.locfileid: "74021924"
 
 1. Щелкните **Изменить разрешения**, чтобы применить изменения разрешений.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Справочник по API Azure AD Privileged Identity Management](https://developer.microsoft.com/graph/docs/api-reference/beta/resources/privilegedidentitymanagement_root)

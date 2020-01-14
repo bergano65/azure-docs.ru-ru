@@ -1,7 +1,7 @@
 ---
-title: Краткое руководство. Клиентская библиотека Персонализатора для .NET | Документация Майкрософт
+title: Краткое руководство. Клиентская библиотека Персонализатора для .NET
 titleSuffix: Azure Cognitive Services
-description: Приступите к работе с клиентской библиотекой Персонализатора для .NET, используя цикл обучения.
+description: В этом руководстве описано как приступить к работе с клиентской библиотекой Персонализатора для .NET, используя цикл обучения.
 services: cognitive-services
 author: diberry
 manager: nitinme
@@ -10,12 +10,12 @@ ms.subservice: personalizer
 ms.topic: quickstart
 ms.date: 10/24/2019
 ms.author: diberry
-ms.openlocfilehash: 411bd82ade2ca7b904b36a3a4408c1a00852fc2c
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: c17bf54d89e3a98ca667eeba40f2d2b166550833
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74927842"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75446387"
 ---
 # <a name="quickstart-personalizer-client-library-for-net"></a>Краткое руководство. Клиентская библиотека Персонализатора для .NET
 
@@ -28,7 +28,7 @@ ms.locfileid: "74927842"
 
 [Справочная документация](https://docs.microsoft.com/dotnet/api/Microsoft.Azure.CognitiveServices.Personalizer?view=azure-dotnet-preview) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/cognitiveservices/Personalizer) | [Пакет (NuGet)](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Personalizer/) | [Примеры](https://github.com/Azure-Samples/cognitive-services-personalizer-samples)
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/).
 * Текущая версия [.NET Core](https://dotnet.microsoft.com/download/dotnet-core).
@@ -45,7 +45,7 @@ ms.locfileid: "74927842"
 
 ## <a name="create-a-personalizer-azure-resource"></a>Создание ресурса Azure для Персонализатора
 
-Создайте ресурс для Персонализатора с помощью [портала Azure](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) или [Azure CLI](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account-cli) на локальном компьютере. Также можно:
+Создайте ресурс для Персонализатора с помощью [портала Azure](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) или [Azure CLI](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account-cli) на локальном компьютере. Кроме того, вы можете сделать следующее:
 
 * получить бесплатный [ключ пробной версии](https://azure.microsoft.com/try/cognitive-services) на 7 дней. После регистрации он будет доступен на [веб-сайте Azure](https://azure.microsoft.com/try/cognitive-services/my-apis/).  
 * Просмотреть этот ресурс на [портале Azure](https://portal.azure.com/).
@@ -203,9 +203,9 @@ dotnet run
 Если вы хотите очистить и удалить подписку Cognitive Services, вы можете удалить ресурс или группу ресурсов. При этом удаляются все ресурсы, связанные с ней.
 
 * [Портал](../cognitive-services-apis-create-account.md#clean-up-resources)
-* [Интерфейс командной строки Azure](../cognitive-services-apis-create-account-cli.md#clean-up-resources)
+* [Azure CLI](../cognitive-services-apis-create-account-cli.md#clean-up-resources)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 >[Принцип работы Персонализатора](how-personalizer-works.md)
@@ -213,4 +213,3 @@ dotnet run
 * [Что такое служба "Персонализатор"?](what-is-personalizer.md)
 * [Где можно использовать Персонализатор](where-can-you-use-personalizer.md)
 * [Устранение неполадок](troubleshooting.md)
-

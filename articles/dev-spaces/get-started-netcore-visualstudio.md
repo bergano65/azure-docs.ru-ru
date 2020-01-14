@@ -5,14 +5,14 @@ ms.custom: vs-azure
 ms.workload: azure-vs
 ms.date: 07/09/2018
 ms.topic: tutorial
-description: Быстрая разработка в Kubernetes с использованием контейнеров и микрослужб в Azure
+description: В этом руководстве описано, как использовать Azure Dev Spaces и Visual Studio для отладки и быстрого выполнения итерации приложения .NET Core в службе Azure Kubernetes
 keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, service mesh, service mesh routing, kubectl, k8s
-ms.openlocfilehash: bd59046af58f63c974d5c8d6a97a372f63b848ae
-ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
+ms.openlocfilehash: 71c0a87e8743ccbab8aa39888bf3a2edbf78000c
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74327326"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75438569"
 ---
 # <a name="create-a-kubernetes-dev-space-visual-studio-and-net-core-with-azure-dev-spaces"></a>Создание пространства разработки Kubernetes: Visual Studio и .NET Core в Azure Dev Spaces
 
@@ -20,7 +20,7 @@ ms.locfileid: "74327326"
 
 - Настройка Azure Dev Spaces с помощью управляемого кластера Kubernetes в Azure.
 - итеративно разрабатывать код в контейнерах с помощью Visual Studio.
-- независимо разработать две отдельные службы и использовать обнаружение службы DNS Kubernetes для вызова другой службы;
+- независимая разработка двух отдельных служб и вызов другой службы с помощью обнаружения службы DNS Kubernetes;
 - эффективная разработка и тестирование кода в среде командной работы.
 
 > [!Note]
@@ -30,7 +30,7 @@ ms.locfileid: "74327326"
 ## <a name="create-a-kubernetes-cluster-enabled-for-azure-dev-spaces"></a>Создание и включение кластера Kubernetes для Azure Dev Spaces
 
 1. Войдите на портал Azure по адресу https://portal.azure.com.
-1. Выберите **Создать ресурс**, выполните поиск **Kubernetes**, затем выберите **Kubernetes Service** (Служба Kubernetes)  >  **Создать**.
+1. Выберите **Создать ресурс**, выполните поиск **Kubernetes**, затем выберите **Kubernetes Service** (Служба Kubernetes)  > **Создать**.
 
    Выполните следующие шаги под каждым заголовком формы *Создание кластера Kubernetes* и убедитесь, что выбранный вами [регион поддерживает Azure Dev Spaces][supported-regions].
 
@@ -62,7 +62,7 @@ ms.locfileid: "74327326"
 
 ![](media/get-started-netcore-visualstudio/NewProjectDialog1.png)
 
-Выберите шаблон **Веб-приложение (модель-представление-контроллер)** и выберите **.NET Core** и **ASP.NET Core 2.0** в двух раскрывающихся списках в верхней части диалогового окна. Нажмите кнопку **ОК** , чтобы создать проект.
+Выберите шаблон **Веб-приложение (модель-представление-контроллер)** и выберите **.NET Core** и **ASP.NET Core 2.0** в двух раскрывающихся списках в верхней части диалогового окна. Чтобы создать проект, нажмите кнопку **ОК** .
 
 ![](media/get-started-netcore-visualstudio/NewProjectDialog2.png)
 
@@ -146,7 +146,7 @@ Azure Dev Spaces — это не просто среда выполнения к
 
 В браузере обновите веб-приложение и перейдите на страницу About (Сведения). Вы должны увидеть настраиваемое сообщение в пользовательском интерфейсе.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Узнайте больше о разработке с использованием нескольких служб](multi-service-netcore-visualstudio.md)

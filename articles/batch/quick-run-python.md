@@ -1,6 +1,6 @@
 ---
 title: Краткое руководство. Выполнение задания пакетной службы Azure с помощью API Python
-description: Быстрый запуск пакетного задания и задач с помощью пакетной службы клиентской библиотеки Python.
+description: Быстрый запуск примера задания и задач пакетной службы Azure с помощью пакетной службы клиентской библиотеки Python. Ознакомьтесь с основными понятиями пакетной службы.
 services: batch
 author: laurenhughes
 manager: gwallace
@@ -12,12 +12,12 @@ ms.author: lahugh
 ms.custom:
 - seo-python-october2019
 - mvc
-ms.openlocfilehash: 6c9690a74e8dff9978fa4e07883738d062238121
-ms.sourcegitcommit: 77bfc067c8cdc856f0ee4bfde9f84437c73a6141
+ms.openlocfilehash: ab628ebe81592e7d5b2e6c79de5a62b368ee772d
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72437362"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75390242"
 ---
 # <a name="quickstart-run-your-first-batch-job-with-the-python-api"></a>Краткое руководство. Выполнение пакетного задания с помощью API Python
 
@@ -29,7 +29,7 @@ ms.locfileid: "72437362"
 
 [!INCLUDE [quickstarts-free-trial-note.md](../../includes/quickstarts-free-trial-note.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * [Python версии 2.7 или 3.3 и более поздней](https://www.python.org/downloads/).
 
@@ -59,7 +59,7 @@ git clone https://github.com/Azure-Samples/batch-python-quickstart.git
 pip install -r requirements.txt
 ```
 
-Откройте файл `config.py`. Замените строки учетных данных учетной записи пакетной службы и учетной записи хранения значениями, полученными для ваших учетных записей. Например:
+Откройте файл `config.py`. Замените строки учетных данных учетной записи пакетной службы и учетной записи хранения значениями, полученными для ваших учетных записей. Пример:
 
 ```Python
 _BATCH_ACCOUNT_NAME = 'mybatchaccount'
@@ -69,7 +69,7 @@ _STORAGE_ACCOUNT_NAME = 'mystorageaccount'
 _STORAGE_ACCOUNT_KEY = 'xxxxxxxxxxxxxxxxy4/xxxxxxxxxxxxxxxxfwpbIC5aAWA8wDu+AFXZB827Mt9lybZB1nUcQbQiUrkPtilK5BQ=='
 ```
 
-## <a name="run-the-app"></a>Запуск приложения
+## <a name="run-the-app"></a>Запустите приложение
 
 Чтобы просмотреть действие рабочего процесса пакетной службы, запустите сценарий:
 
@@ -236,7 +236,7 @@ for task in tasks:
 
 Ставшие ненужными группу ресурсов, учетную запись пакетной службы и учетную запись хранения можно удалить. Для этого на портале Azure выберите группу ресурсов для учетной записи пакетной службы и нажмите **Удалить группу ресурсов**.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом кратком руководстве вы запустили небольшое приложение, созданное с помощью API пакетной службы для Python, для создания пула пакетной службы и пакетного задания. Это задание запустило образец задач и скачало выходные данные, созданные на одном узле. Изучив основные понятия пакетной службы, вы сможете использовать ее с более реалистичными рабочими нагрузками в большем масштабе. Дополнительные сведения о пакетной службе Azure и параллельной рабочей нагрузке с реальным приложением см. в следующем руководстве по пакетной службе для Python.
 

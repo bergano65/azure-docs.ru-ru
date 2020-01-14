@@ -5,15 +5,15 @@ author: stepro
 ms.author: stephpr
 ms.date: 08/01/2018
 ms.topic: tutorial
-description: Быстрая разработка в Kubernetes с использованием контейнеров и микрослужб в Azure
+description: В этом руководстве описано, как использовать Azure Dev Spaces и Visual Studio Code для командной разработки в приложении Java в службе Kubernetes Azure.
 keywords: 'Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, service mesh, service mesh routing, kubectl, k8s '
 manager: gwallace
-ms.openlocfilehash: 400aec21d028011523fc5b441ed8ba77a1a46074
-ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
+ms.openlocfilehash: d81b0227a627593b16bd07f4cfcf4c1b6d61f84b
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74325522"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75438154"
 ---
 # <a name="team-development-using-java-and-visual-studio-code-with-azure-dev-spaces"></a>Коллективная разработка с помощью Azure Dev Spaces в Java и Visual Studio Code
 
@@ -56,7 +56,7 @@ _Без_ использования сред Dev Spaces у Василия был
 
 1. Клонируйте [пример приложения Dev Spaces](https://github.com/Azure/dev-spaces): `git clone https://github.com/Azure/dev-spaces && cd dev-spaces`
 1. Проверьте удаленную ветвь *azds_updates*: `git checkout -b azds_updates origin/azds_updates`
-1. Выберите среду _dev_: `azds space select --name dev`. При появлении запроса на выбор родительской среды выберите _\<none\>_ .
+1. Выберите среду _dev_: `azds space select --name dev`. При появлении запроса на выбор родительского пространства выберите _\<none\>_ .
 1. Перейдите в каталог _mywebapi_ и выполните `azds up -d`
 1. Перейдите в каталог _webfrontend_ и выполните `azds up -d`
 1. Выполните `azds list-uris`, чтобы увидеть общедоступную конечную точку для _webfrontend_
@@ -66,7 +66,7 @@ _Без_ использования сред Dev Spaces у Василия был
 >
 > Ознакомьтесь с руководством [по настройке CI/CD в Azure DevOps](how-to/setup-cicd.md), чтобы создать рабочий процесс, как на следующей схеме.
 >
-> ![Пример диаграммы CI/CD](media/common/ci-cd-complex.png)
+> ![Пример схемы CI/CD](media/common/ci-cd-complex.png)
 
 На этом этапе базовый план должен быть запущен. Выполните команду `azds list-up --all`, и вы увидите результат, аналогичный приведенному ниже:
 
@@ -149,7 +149,7 @@ http://scott.s.dev.webfrontend.6364744826e042319629.ce.azds.io/  Available
 При наличии среды _dev_, которая всегда содержит последние изменения, и при условии, что приложение настроено для использования маршрутизации на основе среды DevSpace, как описано в разделе этого руководства, станет понятнее, как Dev Spaces может быть очень полезной при тестировании новых функций в контексте более крупного приложения. Вместо того чтобы развернуть _все_ службы в частной среде, вы можете создать частную среду, которая является производной от среды _dev_ и будет включать только те службы, с которыми вы фактически работаете. Инфраструктура маршрутизации Dev Spaces будет обрабатывать все остальное за счет использования всех доступных служб частной среды и по умолчанию применять последнюю версию, выполняемую в среде _dev_. Тем не менее _несколько_ разработчиков могут одновременно активно создавать разные службы в собственной среде, не нарушая работу друг друга.
 
 ### <a name="well-done"></a>Все готово!
-Вы выполнили руководство по началу работы. Вы научились выполнять следующие задачи:
+Вы выполнили руководство по началу работы. Вы ознакомились с выполнением следующих задач:
 
 > [!div class="checklist"]
 > * Настройка Azure Dev Spaces с помощью управляемого кластера Kubernetes в Azure.

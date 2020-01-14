@@ -1,19 +1,19 @@
 ---
-title: включение файла
-description: включение файла
+title: включить файл
+description: включить файл
 services: bastion
 author: cherylmc
 ms.service: bastion
 ms.topic: include
-ms.date: 10/15/2019
+ms.date: 12/17/2019
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: d31e30991056cc891e63347a2c88e7fc4caeab28
-ms.sourcegitcommit: 9405aad7e39efbd8fef6d0a3c8988c6bf8de94eb
+ms.openlocfilehash: c085ce4aba6760b09dcc3eaf2f6232c5cc904706
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74875473"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75468807"
 ---
 ### <a name="regions"></a>Какие регионы доступны?
 
@@ -22,6 +22,10 @@ ms.locfileid: "74875473"
 ### <a name="publicip"></a>Нужен ли общедоступный IP-адрес моей виртуальной машине?
 
 Общедоступный IP-адрес не нужен для виртуальной машины Azure, с помощью которой вы подключаетесь к Бастиону Azure. Бастион устанавливает подключение к вашей виртуальной машине по протоколу удаленного рабочего стола или SSH, используя ее частный IP-адрес в вашей виртуальной сети.
+
+### <a name="is-ipv6-supported"></a>Поддерживается ли IPv6?
+
+Сейчас IPv6 не поддерживается. Служба "Бастион Azure" поддерживает только IPv4.
 
 ### <a name="rdpssh"></a>Нужен ли клиент RDP или SSH?
 
@@ -57,7 +61,7 @@ ms.locfileid: "74875473"
 
 ### <a name="udr"></a>Поддерживаются ли определяемые пользователем маршруты в подсети Бастиона Azure?
 
-№ Определяемые пользователем маршруты не поддерживаются в подсети Бастиона Azure.
+Нет. Определяемые пользователем маршруты не поддерживаются в подсети Бастиона Azure.
 В сценариях, в которых Бастион Azure и Брандмауэр Azure или виртуальный сетевой модуль (NVA) находятся в одной виртуальной сети, не нужно принудительно перенаправлять трафик из подсети Бастиона Azure в Брандмауэр Azure, так как обмен данными между Бастионом Azure и виртуальными машинами выполняется по частному каналу. Дополнительные сведения см. в статье [Accessing VMs behind Azure Firewall with Bastion](https://azure.microsoft.com/blog/accessing-virtual-machines-behind-azure-firewall-with-azure-bastion/) (Доступ к виртуальным машинам за Брандмауэром Azure с помощью Бастиона).
 
 ### <a name="filetransfer"></a>Поддерживается ли перенос файлов с помощью сеанса RDP Бастиона Azure?

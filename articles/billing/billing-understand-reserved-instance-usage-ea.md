@@ -9,14 +9,14 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 07/01/2019
+ms.date: 06/30/2019
 ms.author: banders
-ms.openlocfilehash: 07f8d897d55868923ecca03797cf18a5346d667c
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: 20eacdb1ab8f7ebdf118646cd548d7b60b2d2ebc
+ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74225794"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75644351"
 ---
 # <a name="get-enterprise-agreement-reservation-costs-and-usage"></a>Получение сведений о затратах на резервирование и использовании по Соглашениям Enterprise
 
@@ -46,7 +46,7 @@ ms.locfileid: "74225794"
 | Покупки резервирований | Доступно в этом представлении.<br><br>  Чтобы получить эти данные, установите фильтр ChargeType = &quot;Purchase&quot;. <br><br> Значения ReservationID и (или) ReservationName помогут выяснить, за какое резервирование взималась плата.  | Неприменимо в этом представлении. <br><br> Затраты на покупку не предоставляются в амортизированных данных. |
 | EffectivePrice | Для использования, которое получает скидку за резервирование, это значение равно нулю. | Это значение содержит пропорциональную почасовую долю стоимости резервирования, скидка за которое была применена к этому использованию. |
 | Неиспользованное резервирование (содержит количество часов, в течение которых резервирование за определенный день не использовалось, и потери от этого в денежном выражении). | Неприменимо в этом представлении. | Доступно в этом представлении.<br><br> Чтобы получить эти данные, установите фильтр ChargeType = &quot;UnusedReservation&quot;.<br><br>  Значения ReservationID и (или) ReservationName помогут узнать, какое резервирование использовалось неэффективно. Это данные о том, какая часть резервирования за день была потрачена впустую.  |
-| UnitPrice (цена ресурса по применимому прайс-листу) | Доступна | Доступна |
+| UnitPrice (цена ресурса по применимому прайс-листу) | Доступно | Доступно |
 
 Изменения, которые коснулись других значений в данных об использовании Azure:
 
@@ -65,9 +65,9 @@ ms.locfileid: "74225794"
 
 Для получения новых данных используйте [API сведений об использовании](/rest/api/consumption/usagedetails/list). Дополнительные сведения о терминологии вы найдете в [разделе условий использования](billing-understand-your-usage.md). Вызывающая сторона должна иметь роль администратора предприятия по Соглашению Enterprise, назначенную на [портале EA](https://ea.azure.com). Администраторы предприятия с доступом только для чтения также могут получать эти данные.
 
-Эти данные недоступны через [API-интерфейсы отчетов для корпоративных клиентов (см. сведения об использовании)](/rest/api/billing/enterprise/billing-enterprise-api-usage-detail).
+Обратите внимание, что эти данные недоступны через [API-интерфейсы отчетов для корпоративных клиентов (см. сведения об использовании)](/rest/api/billing/enterprise/billing-enterprise-api-usage-detail).
 
-Ниже приведен пример вызова этого API.
+Ниже приведен пример вызова этого API сведений о потреблении.
 
 ```
 https://management.azure.com/providers/Microsoft.Billing/billingAccounts/{enrollmentId}/providers/Microsoft.Billing/billingPeriods/{billingPeriodId}/providers/Microsoft.Consumption/usagedetails?metric={metric}&amp;api-version=2019-05-01&amp;$filter={filter}
@@ -89,7 +89,7 @@ https://management.azure.com/providers/Microsoft.Billing/billingAccounts/{enroll
 
 ## <a name="download-the-usage-csv-file-with-new-data"></a>Скачивание CSV-файла с новыми данными
 
-Если вы являетесь администратором EA, вы можете скачать CSV-файл с новыми данными об использовании на портале Azure. Эти данные недоступны на [портале EA](https://ea.azure.com).
+Если вы являетесь администратором EA, вы можете скачать CSV-файл с новыми данными об использовании на портале Azure. Эти данные недоступны на портале EA (ea.azure.com). Чтобы просмотреть новые данные, необходимо скачать файл использования с портала Azure (portal.azure.com).
 
 Перейдите к разделу [Управление затратами + выставление счетов](https://portal.azure.com/#blade/Microsoft_Azure_Billing/ModernBillingMenuBlade/BillingAccounts) на портале Azure.
 
@@ -113,7 +113,7 @@ https://management.azure.com/providers/Microsoft.Billing/billingAccounts/{enroll
 
 Перейдите к набору данных "Амортизированная стоимость" и установите фильтр _ChargeType_ _= UnusedReservation_. Вы получите данные о неиспользованном объеме резервирования в день и расходах на него. Можно также отфильтровать данные по отдельному резервированию или заказу на резервирование, используя поля _ReservationId_ и _ProductOrderId_ соответственно. Если резервирование было использовано на 100%, эта запись содержит нулевое значение.
 
-### <a name="amortize-reservation-costs"></a>Амортизация стоимости резервирования
+### <a name="amortize-reservation-costs"></a>амортизировать расходы на резервирование.
 
 Перейдите к данным "Амортизированная стоимость" и установите фильтр по заказу на резервирование (поле _ProductOrderID_), чтобы получить данные о ежедневных амортизированных расходах на резервирование.
 
@@ -154,7 +154,7 @@ https://management.azure.com/providers/Microsoft.Billing/billingAccounts/{enroll
 
 Если у вас есть вопросы или вам нужна помощь, [создайте запрос в службу поддержки](https://go.microsoft.com/fwlink/?linkid=2083458).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о резервировании в Azure см. по следующим ссылкам:
 

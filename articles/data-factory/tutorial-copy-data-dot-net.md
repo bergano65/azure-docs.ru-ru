@@ -1,5 +1,5 @@
 ---
-title: 'Копирование данных из хранилища BLOB-объектов Azure в службу "База данных SQL" '
+title: Копирование данных из хранилища BLOB-объектов Azure в базу данных SQL Azure
 description: В этом руководстве приведены пошаговые инструкции по копированию данных из хранилища BLOB-объектов Azure в Базу данных SQL Azure.
 services: data-factory
 documentationcenter: ''
@@ -9,21 +9,20 @@ ms.reviewer: douglasl
 ms.service: data-factory
 ms.workload: data-services
 ms.topic: tutorial
-ms.custom: seo-lt-2019
-ms.date: 02/20/2019
+ms.date: 11/08/2019
 ms.author: jingwang
-ms.openlocfilehash: 93f674cf080ccbc94b9dbdc6ee9a66eb091c3542
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: 7f3fdf1b723158db873bc2635de34d878c464201
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74926591"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75439438"
 ---
 # <a name="copy-data-from-azure-blob-to-azure-sql-database-using-azure-data-factory"></a>Копирование данных из хранилища BLOB-объектов Azure в Базу данных SQL Azure с помощью фабрики данных Azure
 
-В этом руководстве вы создадите фабрику данных с конвейером, который перемещает данные из хранилища BLOB-объектов Azure в Базу данных SQL Azure. Шаблон конфигурации в этом руководстве применяется к копированию из файлового в реляционное хранилище данных. Список хранилищ данных, которые поддерживаются в качестве источников и приемников, см. в таблице [Поддерживаемые хранилища данных и форматы](copy-activity-overview.md#supported-data-stores-and-formats).
+В этом руководстве вы создадите фабрику данных с конвейером, который перемещает данные из хранилища BLOB-объектов Azure в Базу данных SQL Azure. Шаблон конфигурации в этом руководстве применяется к копированию из файлового в реляционное хранилище данных. Список хранилищ данных, которые поддерживаются в качестве источников и приемников, см. в разделе [Поддерживаемые хранилища данных и форматы](copy-activity-overview.md#supported-data-stores-and-formats).
 
-В этом руководстве вы выполните следующие шаги:
+При работе с этим руководством вы выполните следующие задачи:
 
 > [!div class="checklist"]
 > * Создали фабрику данных.
@@ -33,36 +32,40 @@ ms.locfileid: "74926591"
 > * Запуск конвейера.
 > * Мониторинг конвейера и выполнения действий.
 
-В этом руководстве используется пакет SDK для .NET. Вы можете использовать другие механизмы для взаимодействия с фабрикой данных Azure (см. примеры в разделе "Быстрое начало работы").
+В этом руководстве используется пакет SDK для .NET. Вы можете использовать другие механизмы для взаимодействия с Фабрикой данных Azure (см. примеры в разделе **Краткие руководства**).
 
-Если у вас еще нет подписки Azure, создайте [бесплатную](https://azure.microsoft.com/free/) учетную запись Azure, прежде чем начинать работу.
+Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/) Azure, прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
-* **Учетная запись хранения Azure.** В этом руководстве в качестве **источника** будет использоваться хранилище BLOB-объектов. Если у вас нет учетной записи хранения Azure, ознакомьтесь с разделом [Создание учетной записи хранения](../storage/common/storage-quickstart-create-account.md).
-* **База данных SQL Azure**. Используйте базу данных как хранилище данных-**приемник**. Если у вас нет базы данных SQL Azure, вы можете создать ее, выполнив шаги из статьи [Создание базы данных SQL Azure на портале Azure](../sql-database/sql-database-get-started-portal.md).
-* **Visual Studio** 2015 или 2017. В этом руководстве используется Visual Studio 2017.
-* **Скачайте и установите [пакет Azure SDK для .NET](https://azure.microsoft.com/downloads/)** .
-* [Используйте следующие инструкции](../active-directory/develop/howto-create-service-principal-portal.md#create-an-azure-active-directory-application), **чтобы создать приложение в Azure Active Directory**. Запишите следующие значения, которые вы используете в следующих шагах: **идентификатор приложения**, **ключ аутентификации** и **идентификатор клиента**. Назначьте приложению роль **Участник**, следуя указаниям в той же статье.
+* *Учетная запись хранения Azure.* В этом руководстве в качестве *источника* будет использоваться хранилище BLOB-объектов. Если у вас нет учетной записи хранения Azure, см. инструкции по [созданию учетной записи хранения общего назначения](../storage/common/storage-quickstart-create-account.md).
+* *База данных SQL Azure*. Используйте базу данных как хранилище данных-*приемник*. Если у вас нет базы данных SQL Azure, см. статью [Создание базы данных SQL Azure](../sql-database/sql-database-single-database-get-started.md).
+* *Visual Studio*. В этом пошаговом руководстве используется Visual Studio 2019.
+* *[Пакет Azure SDK для .NET](/dotnet/azure/dotnet-tools)* .
+* *Приложение Azure Active Directory*. Если у вас нет приложения Azure Active Directory, см. раздел [о создании такого приложения](../active-directory/develop/howto-create-service-principal-portal.md#create-an-azure-active-directory-application) из [руководства по созданию приложения AAD с помощью портала](../active-directory/develop/howto-create-service-principal-portal.md). Скопируйте следующие значения для использования на следующих шагах: **идентификатор приложения (клиента)** , **ключ проверки подлинности** и **идентификатор каталога (арендатора)** . Назначьте приложению роль **Участник**, следуя указаниям в той же статье.
 
 ### <a name="create-a-blob-and-a-sql-table"></a>Создание большого двоичного объекта и таблицы SQL
 
-Теперь подготовьте большой двоичный объект Azure и базу данных SQL Azure к изучению этого руководства, выполнив следующие действия.
+Теперь подготовьте большой двоичный объект Azure и Базу данных SQL Azure для работы с этим руководством, создав BLOB-объект в качестве источника и таблицу SQL в качестве приемника.
 
 #### <a name="create-a-source-blob"></a>Создание исходного большого двоичного объекта
 
-1. Запустите Блокнот. Скопируйте следующий текст и сохраните его в файл **inputEmp.txt** на диске.
+Сначала нужно создать исходный BLOB-объект. Для этого создайте контейнер и отправьте в него входной текстовый файл.
 
-    ```
+1. Откройте Блокнот. Скопируйте следующий текст и сохраните его в локальный файл с именем *inputEmp.txt*.
+
+    ```inputEmp.txt
     John|Doe
     Jane|Doe
     ```
 
-2. При помощи таких средств, как [обозреватель службы хранилища Azure](https://storageexplorer.com/), создайте контейнер **adfv2tutorial** и отправьте в него файл **inputEmp.txt**.
+2. С помощью [Обозревателя службы хранилища Azure](https://azure.microsoft.com/features/storage-explorer/) или аналогичного средства создайте контейнер *adfv2tutorial* и отправьте в него файл *inputEmp.txt*.
 
 #### <a name="create-a-sink-sql-table"></a>Создание таблицы-приемника SQL
 
-1. Используйте следующий скрипт SQL, чтобы создать таблицу **dbo.emp** в базе данных SQL Azure.
+Теперь создайте таблицу SQL в качестве приемника.
+
+1. Используйте следующий скрипт SQL, чтобы создать таблицу *dbo.emp* в базе данных SQL Azure.
 
     ```sql
     CREATE TABLE dbo.emp
@@ -76,51 +79,62 @@ ms.locfileid: "74926591"
     CREATE CLUSTERED INDEX IX_emp_ID ON dbo.emp (ID);
     ```
 
-2. Предоставьте службам Azure доступ к серверу SQL Server. Убедитесь, что параметр **Разрешить доступ к службам Azure** имеет состояние **ВКЛ** для вашего сервера Azure SQL Server, чтобы служба фабрики данных могла записывать данные на него. Чтобы проверить и при необходимости включить этот параметр, сделайте следующее.
+2. Предоставьте службам Azure доступ к серверу SQL Server. Убедитесь, что доступ к службам Azure разрешен для вашего сервера Azure SQL Server, чтобы служба "Фабрика данных" могла записывать на него данные. Чтобы проверить и при необходимости включить этот параметр, сделайте следующее.
 
-    1. Щелкните **Больше служб** слева и выберите **Серверы SQL**.
-    2. Выберите сервер и щелкните **Брандмауэр** в разделе **Параметры**.
-    3. На странице **Параметры брандмауэра** щелкните **ВКЛ** для параметра **Разрешить доступ к службам Azure**.
+    1. Перейдите на [портал Azure](https://portal.azure.com) для управления сервером SQL Server. Выполните поиск по фразе **Серверы SQL** и выберите этот вариант.
 
+    2. Выберите нужный сервер.
+    
+    3. В меню сервера SQL выберите в разделе **Безопасность** элемент **Брандмауэры и виртуальные сети**.
+
+    4. На странице **Брандмауэры и виртуальные сети** для параметра **Разрешить доступ к серверу службам и ресурсам Azure** выберите значение **ВКЛ**.
 
 ## <a name="create-a-visual-studio-project"></a>Создание проекта Visual Studio
 
-С помощью Visual Studio 2015 или 2017 создайте консольное приложение C# .NET.
+С помощью Visual Studio создайте консольное приложение C# .NET.
 
-1. Запустите **Visual Studio**.
-2. Щелкните **Файл**, наведите указатель мыши на пункт **Создать** и щелкните **Проект**.
-3. Выберите **Visual C#**  -> **Консольное приложение (.NET Framework)** из списка типов проектов справа. Требуется .NET версии 4.5.2 или более поздней.
-4. Введите **ADFv2Tutorial** в качестве имени.
-5. Нажмите кнопку **ОК** , чтобы создать проект.
+1. Запустите Visual Studio.
+2. В окне **Начало работы** выберите **Создать проект**.
+3. В окне **Создание проекта** выберите версию C# для элемента **Консольное приложение (.NET Framework)** в списке типов проекта. Выберите **Далее**.
+4. В окне **Настроить новый проект** введите для параметра **Имя проекта** значение *ADFv2Tutorial*. Для параметра **Расположение** найдите или создайте каталог, в который будет сохранен проект. Щелкните **Создать**. Новый проект появится в интегрированной среде разработки Visual Studio.
 
 ## <a name="install-nuget-packages"></a>Установка пакетов Nuget
 
-1. Выберите **Инструменты** -> **Диспетчер пакетов NuGet** -> **Консоль диспетчера пакетов**.
-2. В **консоли диспетчера пакетов** выполните следующие команды, чтобы установить пакеты. Дополнительные сведения см. в документации по пакету NuGet [Microsoft.Azure.Management.DataFactory](https://www.nuget.org/packages/Microsoft.Azure.Management.DataFactory/).
+Теперь установите обязательные пакеты библиотек с помощью диспетчера пакетов NuGet.
 
-    ```powershell
+1. В строке меню последовательно выберите **Средства** > **Диспетчер пакетов NuGet** > **Консоль диспетчера пакетов**.
+2. На панели **Консоль диспетчера пакетов** выполните следующие команды, чтобы установить пакеты. Дополнительные сведения см. в документации по пакету NuGet [Microsoft.Azure.Management.DataFactory](https://www.nuget.org/packages/Microsoft.Azure.Management.DataFactory/) для Фабрики данных Azure.
+
+    ```package manager console
     Install-Package Microsoft.Azure.Management.DataFactory
-    Install-Package Microsoft.Azure.Management.ResourceManager
+    Install-Package Microsoft.Azure.Management.ResourceManager -PreRelease
     Install-Package Microsoft.IdentityModel.Clients.ActiveDirectory
     ```
 
 ## <a name="create-a-data-factory-client"></a>Создание клиента фабрики данных
 
-1. Откройте файл **Program.cs** и включите следующие инструкции, чтобы добавить ссылки на пространства имен.
+Чтобы создать клиент фабрики данных, сделайте следующее.
+
+1. Откройте файл *Program.cs* и замените все существующие инструкции `using` следующим кодом, чтобы добавить ссылки на пространства имен.
 
     ```csharp
     using System;
     using System.Collections.Generic;
     using System.Linq;
     using Microsoft.Rest;
+    using Microsoft.Rest.Serialization;
     using Microsoft.Azure.Management.ResourceManager;
     using Microsoft.Azure.Management.DataFactory;
     using Microsoft.Azure.Management.DataFactory.Models;
     using Microsoft.IdentityModel.Clients.ActiveDirectory;
     ```
 
-    
-2. Добавьте приведенный ниже код в метод **Main**, в котором задаются переменные. Замените заполнители своими значениями. Чтобы получить список регионов Azure, в которых сейчас доступна Фабрика данных, выберите интересующие вас регионы на следующей странице, а затем разверните раздел **Аналитика**, чтобы найти пункт **Фабрика данных**: [Доступность продуктов по регионам](https://azure.microsoft.com/global-infrastructure/services/). Хранилища данных (служба хранилища Azure, база данных SQL Azure и т. д.) и вычисления (HDInsight и т. д.), используемые фабрикой данных, могут располагаться в других регионах.
+2. Добавьте приведенный ниже код в метод `Main`, в котором задаются переменные. Замените значения 14 заполнителей на собственные.
+
+    Список регионов Azure, в которых сейчас доступна Фабрика данных см. на странице [Доступность продуктов по регионам](https://azure.microsoft.com/global-infrastructure/services/). В раскрывающемся списке **Продукты** выберите **Обзор** > **Аналитика** > **Фабрика данных**. Затем в раскрывающемся списке **Регионы** выберите все интересующие регионы. Отобразится сетка со сведениями о доступности продуктов Фабрики данных для выбранных регионов.
+
+    > [!NOTE]
+    > Используемые Фабрикой данных хранилища данных, например служба хранилища Azure и База данных SQL Azure, и вычислительные среды, например HDInsight, могут находиться не в том регионе, который выбран для самой Фабрики данных.
 
     ```csharp
     // Set variables
@@ -130,8 +144,8 @@ ms.locfileid: "74926591"
     string subscriptionId = "<your subscription ID to create the factory>";
     string resourceGroup = "<your resource group to create the factory>";
 
-    string region = "East US";
-    string dataFactoryName = "<specify the name of a data factory to create. It must be globally unique.>";
+    string region = "<location to create the data factory in, such as East US>";
+    string dataFactoryName = "<name of data factory to create (must be globally unique)>";
 
     // Specify the source Azure Blob information
     string storageAccount = "<your storage account name to copy data>";
@@ -140,7 +154,12 @@ ms.locfileid: "74926591"
     string inputBlobName = "inputEmp.txt";
 
     // Specify the sink Azure SQL Database information
-    string azureSqlConnString = "Server=tcp:<your server name>.database.windows.net,1433;Database=<your database name>;User ID=<your username>@<your server name>;Password=<your password>;Trusted_Connection=False;Encrypt=True;Connection Timeout=30";
+    string azureSqlConnString = 
+        "Server=tcp:<your server name>.database.windows.net,1433;" +
+        "Database=<your database name>;" +
+        "User ID=<your username>@<your server name>;" +
+        "Password=<your password>;" +
+        "Trusted_Connection=False;Encrypt=True;Connection Timeout=30";
     string azureSqlTableName = "dbo.emp";
 
     string storageLinkedServiceName = "AzureStorageLinkedService";
@@ -150,20 +169,22 @@ ms.locfileid: "74926591"
     string pipelineName = "Adfv2TutorialBlobToSqlCopy";
     ```
 
-3. Добавьте в метод **Main** приведенный ниже код, создающий экземпляр класса **DataFactoryManagementClient**. Этот объект используется не только для создания фабрики данных, связанной службы, наборов данных и конвейера, но и для отслеживания подробностей выполнения конвейера.
+3. Добавьте в метод `Main` следующий код, который создает экземпляр класса `DataFactoryManagementClient`. Этот объект используется не только для создания фабрики данных, связанной службы, наборов данных и конвейера, но и для отслеживания подробностей выполнения конвейера.
 
     ```csharp
     // Authenticate and create a data factory management client
     var context = new AuthenticationContext("https://login.windows.net/" + tenantID);
     ClientCredential cc = new ClientCredential(applicationId, authenticationKey);
-    AuthenticationResult result = context.AcquireTokenAsync("https://management.azure.com/", cc).Result;
+    AuthenticationResult result = context.AcquireTokenAsync(
+        "https://management.azure.com/", cc
+    ).Result;
     ServiceClientCredentials cred = new TokenCredentials(result.AccessToken);
     var client = new DataFactoryManagementClient(cred) { SubscriptionId = subscriptionId };
     ```
 
 ## <a name="create-a-data-factory"></a>Создание фабрики данных
 
-Добавьте следующий код, создающий **фабрику данных**, в метод **Main**.
+Добавьте в метод `Main` следующий код, который создает *фабрику данных*.
 
 ```csharp
 // Create a data factory
@@ -172,12 +193,18 @@ Factory dataFactory = new Factory
 {
     Location = region,
     Identity = new FactoryIdentity()
-
 };
-client.Factories.CreateOrUpdate(resourceGroup, dataFactoryName, dataFactory);
-Console.WriteLine(SafeJsonConvert.SerializeObject(dataFactory, client.SerializationSettings));
 
-while (client.Factories.Get(resourceGroup, dataFactoryName).ProvisioningState == "PendingCreation")
+client.Factories.CreateOrUpdate(resourceGroup, dataFactoryName, dataFactory);
+Console.WriteLine(
+    SafeJsonConvert.SerializeObject(dataFactory, client.SerializationSettings)
+);
+
+while (
+    client.Factories.Get(
+        resourceGroup, dataFactoryName
+    ).ProvisioningState == "PendingCreation"
+)
 {
     System.Threading.Thread.Sleep(1000);
 }
@@ -185,11 +212,11 @@ while (client.Factories.Get(resourceGroup, dataFactoryName).ProvisioningState ==
 
 ## <a name="create-linked-services"></a>Создание связанных служб
 
-Работая с этим руководством, вы создали две связанные службы для источника и приемника соответственно:
+Работая с этим руководством, вы создадите две связанные службы для источника и приемника, соответственно.
 
 ### <a name="create-an-azure-storage-linked-service"></a>Создание связанной службы хранилища Azure
 
-Добавьте следующий код, создающий **связанную службу хранилища Azure**, в метод **Main**. Дополнительные сведения о свойствах связанных служб BLOB-объектов Azure см. в [этом разделе](connector-azure-blob-storage.md#linked-service-properties).
+Добавьте в метод `Main` приведенный ниже код, который создает *связанную службу хранилища Azure*. Информацию о поддерживаемых свойствах и подробные сведения см. в статье [о свойствах связанной службы BLOB-объектов Azure](connector-azure-blob-storage.md#linked-service-properties).
 
 ```csharp
 // Create an Azure Storage linked service
@@ -198,16 +225,24 @@ Console.WriteLine("Creating linked service " + storageLinkedServiceName + "...")
 LinkedServiceResource storageLinkedService = new LinkedServiceResource(
     new AzureStorageLinkedService
     {
-        ConnectionString = new SecureString("DefaultEndpointsProtocol=https;AccountName=" + storageAccount + ";AccountKey=" + storageKey)
+        ConnectionString = new SecureString(
+            "DefaultEndpointsProtocol=https;AccountName=" + storageAccount +
+            ";AccountKey=" + storageKey
+        )
     }
 );
-client.LinkedServices.CreateOrUpdate(resourceGroup, dataFactoryName, storageLinkedServiceName, storageLinkedService);
-Console.WriteLine(SafeJsonConvert.SerializeObject(storageLinkedService, client.SerializationSettings));
+
+client.LinkedServices.CreateOrUpdate(
+    resourceGroup, dataFactoryName, storageLinkedServiceName, storageLinkedService
+);
+Console.WriteLine(
+    SafeJsonConvert.SerializeObject(storageLinkedService, client.SerializationSettings)
+);
 ```
 
 ### <a name="create-an-azure-sql-database-linked-service"></a>Создание связанной службы Базы данных SQL Azure
 
-Добавьте следующий код, создающий **связанную службу Базы данных SQL Azure**, в метод **Main**. Дополнительные сведения о свойствах связанной службы "База данных SQL Azure" см. в [этом разделе](connector-azure-sql-database.md#linked-service-properties).
+Добавьте в метод `Main` приведенный ниже код, который создает *связанную службу Базы данных SQL Azure*. Информацию о поддерживаемых свойствах и подробные сведения см. в статье [о свойствах связанной службы Базы данных SQL Azure](connector-azure-sql-database.md#linked-service-properties).
 
 ```csharp
 // Create an Azure SQL Database linked service
@@ -219,23 +254,28 @@ LinkedServiceResource sqlDbLinkedService = new LinkedServiceResource(
         ConnectionString = new SecureString(azureSqlConnString)
     }
 );
-client.LinkedServices.CreateOrUpdate(resourceGroup, dataFactoryName, sqlDbLinkedServiceName, sqlDbLinkedService);
-Console.WriteLine(SafeJsonConvert.SerializeObject(sqlDbLinkedService, client.SerializationSettings));
+
+client.LinkedServices.CreateOrUpdate(
+    resourceGroup, dataFactoryName, sqlDbLinkedServiceName, sqlDbLinkedService
+);
+Console.WriteLine(
+    SafeJsonConvert.SerializeObject(sqlDbLinkedService, client.SerializationSettings)
+);
 ```
 
 ## <a name="create-datasets"></a>Создание наборов данных
 
-В этом разделе создайте два набора данных: для источника и приемника. 
+В этом разделе вы создадите два набора данных: по одному для источника и приемника. 
 
 ### <a name="create-a-dataset-for-source-azure-blob"></a>Создание набора данных для исходного большого двоичного объекта Azure
 
-Добавьте следующий код, который создает **набор данных большого двоичного объекта Azure**, в метод **Main**. Дополнительные сведения о свойствах набора данных больших двоичных объектов Azure см. в [этом разделе](connector-azure-blob-storage.md#dataset-properties).
+Добавьте в метод `Main` приведенный ниже код, который создает *набор данных большого двоичного объекта Azure*. Информацию о поддерживаемых свойствах и подробные сведения см. в разделе [о свойствах набора данных BLOB-объектов Azure](connector-azure-blob-storage.md#dataset-properties).
 
 Задайте набор данных, представляющий исходные данные в большом двоичном объекте Azure. Этот набор данных большого двоичного объекта относится к связанной службе хранилища Azure, созданной на предыдущем шаге, и описывает следующее:
 
-- Расположение большого двоичного объекта для копирования: **FolderPath** и **FileName**.
-- Формат большого двоичного объекта, указывающий, как анализировать содержимое: **TextFormat** и его настройки (например, разделитель столбцов).
-- Структура данных, включая имена столбцов и типы данных, которые в этом случае сопоставляются с таблицей-приемником SQL.
+- расположение большого двоичного объекта для копирования: `FolderPath` и `FileName`;
+- формат большого двоичного объекта, указывающий, как анализировать содержимое, `TextFormat` и все параметры, как например разделитель столбцов;
+- структура данных, включая имена столбцов и типы данных, которые в нашем примере сопоставляются с таблицей-приемником SQL.
 
 ```csharp
 // Create an Azure Blob dataset
@@ -243,37 +283,33 @@ Console.WriteLine("Creating dataset " + blobDatasetName + "...");
 DatasetResource blobDataset = new DatasetResource(
     new AzureBlobDataset
     {
-        LinkedServiceName = new LinkedServiceReference
-        {
-            ReferenceName = storageLinkedServiceName
+        LinkedServiceName = new LinkedServiceReference { 
+            ReferenceName = storageLinkedServiceName 
         },
         FolderPath = inputBlobPath,
         FileName = inputBlobName,
         Format = new TextFormat { ColumnDelimiter = "|" },
         Structure = new List<DatasetDataElement>
         {
-            new DatasetDataElement
-            {
-                Name = "FirstName",
-                Type = "String"
-            },
-            new DatasetDataElement
-            {
-                Name = "LastName",
-                Type = "String"
-            }
+            new DatasetDataElement { Name = "FirstName", Type = "String" },
+            new DatasetDataElement { Name = "LastName", Type = "String" }
         }
     }
 );
-client.Datasets.CreateOrUpdate(resourceGroup, dataFactoryName, blobDatasetName, blobDataset);
-Console.WriteLine(SafeJsonConvert.SerializeObject(blobDataset, client.SerializationSettings));
+
+client.Datasets.CreateOrUpdate(
+    resourceGroup, dataFactoryName, blobDatasetName, blobDataset
+);
+Console.WriteLine(
+    SafeJsonConvert.SerializeObject(blobDataset, client.SerializationSettings)
+);
 ```
 
 ### <a name="create-a-dataset-for-sink-azure-sql-database"></a>Создание набора данных для базы данных-приемника SQL Azure
 
-Добавьте следующий код, создающий **набор данных Базы данных SQL Azure**, в метод **Main**. Дополнительные сведения о свойствах набора данных Базы данных SQL Azure см. в [этом разделе](connector-azure-sql-database.md#dataset-properties).
+Добавьте в метод `Main` приведенный ниже код, который создает *набор данных Базы данных SQL Azure*. Информацию о поддерживаемых свойствах и подробные сведения см. в разделе [о свойствах набора данных Базы данных SQL Azure](connector-azure-sql-database.md#dataset-properties).
 
-Задайте набор данных, который представляет данные приемника в Базе данных SQL Azure. Этот набор данных относится к связанным службам Базы данных SQL Azure, созданным на предыдущем шаге. Он также указывает таблицу SQL, которая содержит копируемые данных. 
+Задайте набор данных, который представляет данные приемника в Базе данных SQL Azure. Этот набор данных относится к связанной службе Базы данных SQL Azure, которую вы создали на предыдущем шаге. Он также указывает таблицу SQL, которая содержит копируемые данных. 
 
 ```csharp
 // Create an Azure SQL Database dataset
@@ -288,13 +324,18 @@ DatasetResource sqlDataset = new DatasetResource(
         TableName = azureSqlTableName
     }
 );
-client.Datasets.CreateOrUpdate(resourceGroup, dataFactoryName, sqlDatasetName, sqlDataset);
-Console.WriteLine(SafeJsonConvert.SerializeObject(sqlDataset, client.SerializationSettings));
+
+client.Datasets.CreateOrUpdate(
+    resourceGroup, dataFactoryName, sqlDatasetName, sqlDataset
+);
+Console.WriteLine(
+    SafeJsonConvert.SerializeObject(sqlDataset, client.SerializationSettings)
+);
 ```
 
 ## <a name="create-a-pipeline"></a>Создание конвейера
 
-Добавьте в метод **Main** следующий код, создающий **конвейер с действием копирования**. В этом руководстве конвейер содержит одно действие: операцию копирования, которая принимает набор данных большого двоичного объекта в качестве источника и другой набор данных SQL в качестве приемника. Дополнительные сведения о действии копирования см. в статье [Действие копирования в фабрике данных Azure](copy-activity-overview.md).
+Добавьте в метод `Main` приведенный ниже код, который создает *конвейер с действием копирования*. В этом руководстве этот конвейер содержит одно действие `CopyActivity`, которое принимает в качестве источника набор данных большого двоичного объекта, а в качестве приемника — набор данных SQL. Информацию о поддерживаемых свойствах и подробные сведения см. в разделе [Действие копирования в Фабрике данных Azure](copy-activity-overview.md).
 
 ```csharp
 // Create a pipeline with copy activity
@@ -308,41 +349,42 @@ PipelineResource pipeline = new PipelineResource
             Name = "CopyFromBlobToSQL",
             Inputs = new List<DatasetReference>
             {
-                new DatasetReference()
-                {
-                    ReferenceName = blobDatasetName
-                }
+                new DatasetReference() { ReferenceName = blobDatasetName }
             },
             Outputs = new List<DatasetReference>
             {
-                new DatasetReference
-                {
-                    ReferenceName = sqlDatasetName
-                }
+                new DatasetReference { ReferenceName = sqlDatasetName }
             },
             Source = new BlobSource { },
             Sink = new SqlSink { }
         }
     }
 };
+
 client.Pipelines.CreateOrUpdate(resourceGroup, dataFactoryName, pipelineName, pipeline);
-Console.WriteLine(SafeJsonConvert.SerializeObject(pipeline, client.SerializationSettings));
+Console.WriteLine(
+    SafeJsonConvert.SerializeObject(pipeline, client.SerializationSettings)
+);
 ```
 
 ## <a name="create-a-pipeline-run"></a>Создание конвейера
 
-Добавьте в метод **Main** следующий код, **активирующий выполнение конвейера**.
+Добавьте в метод `Main` следующий код, который *активирует выполнение конвейера*.
 
 ```csharp
 // Create a pipeline run
 Console.WriteLine("Creating pipeline run...");
-CreateRunResponse runResponse = client.Pipelines.CreateRunWithHttpMessagesAsync(resourceGroup, dataFactoryName, pipelineName).Result.Body;
+CreateRunResponse runResponse = client.Pipelines.CreateRunWithHttpMessagesAsync(
+    resourceGroup, dataFactoryName, pipelineName
+).Result.Body;
 Console.WriteLine("Pipeline run ID: " + runResponse.RunId);
 ```
 
 ## <a name="monitor-a-pipeline-run"></a>Мониторинг выполнения конвейера
 
-1. Добавьте следующий код в метод **Main**, чтобы постоянно проверять состояние выполнения конвейера до завершения копирования данных.
+Теперь вставьте код, чтобы проверять состояния выполнения конвейера и получать сведения о выполнении действий копирования.
+
+1. Добавьте в метод `Main` следующий код, который постоянно проверяет состояния выполнения конвейера, пока тот не завершит копирование данных.
 
     ```csharp
     // Monitor the pipeline run
@@ -350,7 +392,9 @@ Console.WriteLine("Pipeline run ID: " + runResponse.RunId);
     PipelineRun pipelineRun;
     while (true)
     {
-        pipelineRun = client.PipelineRuns.Get(resourceGroup, dataFactoryName, runResponse.RunId);
+        pipelineRun = client.PipelineRuns.Get(
+            resourceGroup, dataFactoryName, runResponse.RunId
+        );
         Console.WriteLine("Status: " + pipelineRun.Status);
         if (pipelineRun.Status == "InProgress")
             System.Threading.Thread.Sleep(15000);
@@ -359,21 +403,26 @@ Console.WriteLine("Pipeline run ID: " + runResponse.RunId);
     }
     ```
 
-2. Добавьте в метод **Main** следующий код, извлекающий сведения о выполнении действия копирования, например размер записанных и прочитанных данных.
+2. Добавьте в метод `Main` следующий код, который извлекает сведения о выполнении действия копирования, например размер записанных и прочитанных данных.
 
     ```csharp
     // Check the copy activity run details
     Console.WriteLine("Checking copy activity run details...");
 
-    List<ActivityRun> activityRuns = client.ActivityRuns.ListByPipelineRun(
-    resourceGroup, dataFactoryName, runResponse.RunId, DateTime.UtcNow.AddMinutes(-10), DateTime.UtcNow.AddMinutes(10)).ToList(); 
+    RunFilterParameters filterParams = new RunFilterParameters(
+        DateTime.UtcNow.AddMinutes(-10), DateTime.UtcNow.AddMinutes(10)
+    );
+
+    ActivityRunsQueryResponse queryResponse = client.ActivityRuns.QueryByPipelineRun(
+        resourceGroup, dataFactoryName, runResponse.RunId, filterParams
+    );
  
     if (pipelineRun.Status == "Succeeded")
     {
-        Console.WriteLine(activityRuns.First().Output);
+        Console.WriteLine(queryResponse.Value.First().Output);
     }
     else
-        Console.WriteLine(activityRuns.First().Error);
+        Console.WriteLine(queryResponse.Value.First().Error);
     
     Console.WriteLine("\nPress any key to exit...");
     Console.ReadKey();
@@ -381,9 +430,9 @@ Console.WriteLine("Pipeline run ID: " + runResponse.RunId);
 
 ## <a name="run-the-code"></a>Выполнение кода
 
-Создайте и запустите приложение, а затем проверьте выполнение конвейера.
+Создайте приложение, выбрав **Сборка** > **Собрать решение**. Создайте и запустите приложение, выбрав **Отладка** > **Начать отладку**, а затем проверьте выполнение конвейера.
 
-Консоль выведет ход выполнения создания фабрики данных, связанной службы, наборов данных, конвейера и выполнения конвейера. Затем она проверяет состояние выполнения конвейера. Дождитесь появления сведений о действии копирования с размером записанных и прочитанных данных. Затем используйте такие средства, как SSMS (SQL Server Management Studio) или Visual Studio, для подключения к базе данных SQL Azure и проверьте, скопированы ли данные в указанную таблицу.
+Консоль выведет ход выполнения создания фабрики данных, связанной службы, наборов данных, конвейера и выполнения конвейера. Затем она проверяет состояние выполнения конвейера. Дождитесь появления сведений о действии копирования с информацией о размере записанных и прочитанных данных. Затем вы можете с помощью SSMS (SQL Server Management Studio), Visual Studio или аналогичных средств подключиться к Базе данных SQL Azure и проверить, скопированы ли данные в указанную таблицу.
 
 ### <a name="sample-output"></a>Пример выходных данных
 
@@ -513,10 +562,9 @@ Checking copy activity run details...
 Press any key to exit...
 ```
 
+## <a name="next-steps"></a>Дальнейшие действия
 
-## <a name="next-steps"></a>Дополнительная информация
-
-В этом примере конвейер копирует данные из одного расположения в другое в хранилище BLOB-объектов Azure. Вы научились выполнять следующие задачи: 
+В этом примере конвейер копирует данные из одного расположения в другое в хранилище BLOB-объектов Azure. Вы ознакомились с выполнением следующих задач: 
 
 > [!div class="checklist"]
 > * Создали фабрику данных.
@@ -525,7 +573,6 @@ Press any key to exit...
 > * Создание конвейера с действием копирования.
 > * Запуск конвейера.
 > * Мониторинг конвейера и выполнения действий.
-
 
 Перейдите к следующему руководству, чтобы узнать о копировании данных из локальной среды в облако: 
 

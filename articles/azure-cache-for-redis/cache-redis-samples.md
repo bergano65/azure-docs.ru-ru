@@ -1,20 +1,19 @@
 ---
-title: Примеры использования кэша Azure для Redis
-description: Сведения об использовании кэша Azure для Redis
+title: Примеры использования кэша Redis для Azure
+description: 'Узнайте, как использовать кэш Azure для Redis со следующими примерами кода: подключение к кэшу, чтение и запись данных в кэше, кэш Azure ASP.NET для поставщиков Redis.'
 author: yegu-ms
-ms.service: cache
-ms.devlang: multiple
-ms.topic: conceptual
-ms.date: 01/23/2017
 ms.author: yegu
-ms.openlocfilehash: 9097a25c0223faebd91fe3c01ff3edea6c4e6f9f
-ms.sourcegitcommit: 5a8c65d7420daee9667660d560be9d77fa93e9c9
-ms.translationtype: MT
+ms.service: cache
+ms.topic: sample
+ms.date: 01/23/2017
+ms.openlocfilehash: 8057a7db3d1a2db0e51ec15e4966ed0b31c84226
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74122597"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75433407"
 ---
-# <a name="azure-cache-for-redis-samples"></a>Примеры использования кэша Azure для Redis
+# <a name="azure-cache-for-redis-samples"></a>Примеры использования кэша Redis для Azure
 Здесь представлен список примеров кэша Azure для Redis, охватывающих такие сценарии, как подключение к кэшу, чтение и запись данных в кэше и использование поставщиков кэша Azure для Redis ASP.NET. Некоторые примеры представляют собой скачиваемые проекты, а некоторые содержат пошаговые инструкции и фрагменты кода, но не ссылаются на скачиваемый проект.
 
 ## <a name="hello-world-samples"></a>Примеры Hello World
@@ -62,4 +61,3 @@ ms.locfileid: "74122597"
 
 ## <a name="bandwidth-monitor"></a>Монитор пропускной способности
 Пример [Монитор пропускной способности](https://github.com/JonCole/SampleCode/tree/master/BandWidthMonitor) позволяет наблюдать за пропускной способностью, используемой на клиентском компьютере. Чтобы измерить пропускную способность, запустите пример на клиентском компьютере кэша, выполните вызовы кэша и отследите пропускную способность, передаваемую примером монитора пропускной способности.
-

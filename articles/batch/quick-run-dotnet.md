@@ -1,6 +1,6 @@
 ---
 title: Краткое руководство Azure по выполнению пакетного задания с помощью .NET
-description: Быстрый запуск пакетного задания и задач с помощью пакетной службы клиентской библиотеки .NET.
+description: Быстрый запуск примера задания и задач пакетной службы Azure из приложения C# помощью пакетной службы клиентской библиотеки .NET.
 services: batch
 author: laurenhughes
 manager: gwallace
@@ -10,12 +10,12 @@ ms.topic: quickstart
 ms.date: 11/29/2018
 ms.author: lahugh
 ms.custom: mvc
-ms.openlocfilehash: 37cd6fdd2f82af581e27f9341292c484b1cc601e
-ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
+ms.openlocfilehash: 613f771af71c4f03f7ccf9283b98c09836c312cc
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68322330"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75390316"
 ---
 # <a name="quickstart-run-your-first-azure-batch-job-with-the-net-api"></a>Краткое руководство. Выполнение пакетного задания Azure с помощью API для .NET
 
@@ -25,7 +25,7 @@ ms.locfileid: "68322330"
 
 [!INCLUDE [quickstarts-free-trial-note.md](../../includes/quickstarts-free-trial-note.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * [Visual Studio 2017 или более поздней версии](https://www.visualstudio.com/vs), или [.NET Core 2.1](https://www.microsoft.com/net/download/dotnet-core/2.1) для Linux, macOS или Windows. 
 
@@ -47,7 +47,7 @@ git clone https://github.com/Azure-Samples/batch-dotnet-quickstart.git
 
 Перейдите в каталог, в котором содержится файл решения Visual Studio `BatchDotNetQuickstart.sln`.
 
-Откройте файл решения в Visual Studio и замените строки учетных данных в `Program.cs` значениями, полученными для своих учетных записей. Например:
+Откройте файл решения в Visual Studio и замените строки учетных данных в `Program.cs` значениями, полученными для своих учетных записей. Пример:
 
 ```csharp
 // Batch account credentials
@@ -248,7 +248,7 @@ foreach (CloudTask task in completedtasks)
 
 Ставшие ненужными группу ресурсов, учетную запись пакетной службы и учетную запись хранения можно удалить. Для этого на портале Azure выберите группу ресурсов для учетной записи пакетной службы и щелкните **Удалить группу ресурсов**.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом кратком руководстве вы запустили небольшое приложение, созданное с помощью API пакетной службы для .NET, для создания пула пакетной службы и пакетного задания. Это задание запустило образец задач и скачало выходные данные, созданные на одном узле. Изучив основные понятия пакетной службы, вы сможете использовать ее с более реалистичными рабочими нагрузками в большем масштабе. Дополнительные сведения о пакетной службе Azure и параллельной рабочей нагрузке с реальным приложением см. в следующем руководстве по пакетной службе для .NET.
 

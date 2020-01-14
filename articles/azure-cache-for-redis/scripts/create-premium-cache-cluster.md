@@ -1,19 +1,19 @@
 ---
-title: Пример скрипта Azure CLI. Создание кэша Azure для Redis уровня "Премиум" с кластеризацией
-description: Пример скрипта Azure CLI. Создание кэша Azure для Redis уровня "Премиум" с кластеризацией
+title: Создание кэша Azure для Redis уровня "Премиум" с кластеризацией — Azure CLI
+description: В этом примере кода Azure CLI показано, как создать кэш Azure для Redis уровня "Премиум" размером 6 ГБ с кластеризацией и двумя сегментами.
 author: yegu-ms
+ms.author: yegu
 tags: azure-service-management
 ms.service: cache
 ms.devlang: azurecli
 ms.topic: sample
 ms.date: 08/30/2017
-ms.author: yegu
-ms.openlocfilehash: 1813bf7112969436012627147b94f656537029d5
-ms.sourcegitcommit: 5a8c65d7420daee9667660d560be9d77fa93e9c9
+ms.openlocfilehash: 68203fe2e054f32ce5764fe4f1b07013b0806104
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74122502"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75411146"
 ---
 # <a name="create-a-premium-azure-cache-for-redis-with-clustering"></a>Создание кэша Azure для Redis уровня "Премиум" с кластеризацией
 
@@ -31,13 +31,13 @@ ms.locfileid: "74122502"
 
 Для создания группы ресурсов и кэша Azure для Redis уровня "Премиум" с кластеризацией в этом скрипте используются приведенные ниже команды. Для каждой команды в таблице приведены ссылки на соответствующую документацию.
 
-| Команда | Примечания |
+| Get-Help | Примечания |
 |---|---|
 | [az group create](https://docs.microsoft.com/cli/azure/group) | Создает группу ресурсов, в которой хранятся все ресурсы. |
 | [az redis create](https://docs.microsoft.com/cli/azure/redis) | Создает экземпляр кэша Azure для Redis. |
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об Azure CLI см. в [документации по Azure CLI](https://docs.microsoft.com/cli/azure).
 

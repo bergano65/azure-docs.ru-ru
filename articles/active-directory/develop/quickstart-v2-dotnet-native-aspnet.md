@@ -1,6 +1,6 @@
 ---
-title: Вызов защищенного веб-API ASP.NET Azure AD — Платформа удостоверений Майкрософт
-description: Из этого краткого руководства вы узнаете, как вызвать веб-API ASP.NET, защищенный с помощью Azure Active Directory, из приложения Windows Desktop (WPF). Клиент WPF выполняет проверку подлинности пользователя, запрашивает маркер доступа и вызывает веб-API.
+title: Вызов веб-API ASP.NET, защищенного с помощью платформы удостоверений Майкрософт
+description: Из этого краткого руководства вы узнаете, как вызвать веб-API ASP.NET, защищенный с помощью платформы удостоверений Майкрософт, из приложения Windows Desktop (WPF). Клиент WPF выполняет проверку подлинности пользователя, запрашивает маркер доступа и вызывает веб-API.
 services: active-directory
 author: jmprieur
 manager: CelesteDG
@@ -8,24 +8,24 @@ ms.service: active-directory
 ms.subservice: develop
 ms.topic: quickstart
 ms.workload: identity
-ms.date: 10/30/2019
+ms.date: 12/12/2019
 ms.author: jmprieur
 ms.custom: aaddev, identityplatformtop40, scenarios:getting-started, languages:ASP.NET
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fe3301c3c91343277997be1ee554ced76884274a
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.openlocfilehash: 1c6c51b0a7ae7255391fd35d234b5ee47b7a9525
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74963313"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75424033"
 ---
-# <a name="quickstart-call-an-aspnet-web-api-protected-by-azure-ad"></a>Краткое руководство. Вызов веб-API ASP.NET, защищенного с помощью Azure AD
+# <a name="quickstart-call-an-aspnet-web-api-protected-by-microsoft-identity-platform"></a>Краткое руководство. Вызов веб-API ASP.NET, защищенного с помощью платформы удостоверений Майкрософт
 
-В этом кратком руководстве вы предоставляете веб-API и защищаете его, чтобы доступ к нему могли получить только пользователи, прошедшие проверку подлинности. В этом примере показано, как предоставить веб-API ASP.NET, чтобы он мог принимать маркеры, выданные личными учетными записями (включая outlook.com, live.com и др.), а также рабочими и учебными учетными записями любой компании или организации, интегрированной с Azure Active Directory.
+В этом кратком руководстве вы предоставляете веб-API и защищаете его, чтобы доступ к нему могли получить только пользователи, прошедшие проверку подлинности. В этом примере показано, как предоставить веб-API ASP.NET, чтобы он мог принимать токены, выданные личными учетными записями (включая outlook.com, live.com и др.), а также рабочими и учебными учетными записями любой компании или организации, интегрированной с платформой удостоверений Майкрософт.
 
 Пример также включает клиент классического приложения для Windows (WPF), который демонстрирует, как можно запросить маркер доступа для доступа к веб-API.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Для запуска этого примера потребуется:
 
@@ -76,7 +76,7 @@ ms.locfileid: "74963313"
      - Сохраните для параметра **Состояние** значение **Включено**.
      - Выберите **Добавить область**.
 
-### <a name="configure-the-service-and-client-projects-to-match-the-registered-web-api"></a>Настройка проектов службы и клиента в соответствии с зарегистрированным веб-API 
+### <a name="configure-the-service-project-to-match-the-registered-web-api"></a>Настройка проекта службы в соответствии с зарегистрированным веб-API 
 
 1. Откройте решение в Visual Studio, а затем откройте файл **Web.config** в корневом каталоге проекта **TodoListService**.
 1. Замените значение параметра `ida:ClientId` на **идентификатор клиента (идентификатор приложения)** из приложения, которое вы только что зарегистрировали на портале регистрации приложений.
@@ -104,7 +104,7 @@ ms.locfileid: "74963313"
    - Измените значение параметра **Поддерживаемые типы учетных записей** на **Учетные записи в любом каталоге организации**.
    - Выберите **Зарегистрировать**, чтобы создать приложение.
 1. На странице обзора приложения выберите раздел **Проверка подлинности**.
-   - В разделе **URI перенаправления** | **Suggested Redirect URLs for public clients (mobile, desktop)** (Предлагаемые URL-адреса перенаправления для общедоступных клиентов (мобильные устройства, компьютеры)) выберите **urn:ietf:wg:oauth:2.0:oob**.
+   - В разделе **URI перенаправления** | **Предлагаемые URI перенаправления для общедоступных клиентов (мобильные устройства, компьютеры)** выберите **https://login.microsoftonline.com/common/oauth2/nativeclient** .
    - Щелкните **Сохранить**.
 1. Выберите раздел **Разрешения API**.
    - Нажмите кнопку **Добавить разрешение**.
@@ -140,26 +140,26 @@ ms.locfileid: "74963313"
 1. Нажмите клавишу `<F5>`, чтобы запустить проект. *TodoListClient* должен открыться.
 1. Выберите **Войти** в правом верхнем углу (или "Очистить кэш/Войти"), а затем войдите в систему с помощью личной учетной записи Майкрософт (live.com или hotmail.com), рабочей или учебной учетной записи.
 
-## <a name="optional-restrict-sign-in-access-to-your-application"></a>Необязательно: Ограничение доступа на вход в приложении
+## <a name="optional-restrict-sign-in-access-to-your-application"></a>Необязательное действие: Ограничение доступа на вход в приложении
 
 По умолчанию при скачивании этого примера кода и настройке приложения для использования конечной точки Azure Active Directory версии 2 по указанным выше инструкциям запрашивать маркеры и получать доступ к веб-API могут как персональные учетные записи (такие как outlook.com, live.com и др.), так и рабочие или учебные учетные записи любой организации, которая интегрирована с Azure AD. 
 
 Чтобы ограничить круг пользователей, которые могут входить в приложение, используйте один из следующих вариантов:
 
-### <a name="option-1-restrict-access-to-a-single-organization-single-tenant"></a>Вариант 1. Ограничение доступа одной организацией (один клиент)
+### <a name="option-1-restrict-access-to-a-single-organization-single-tenant"></a>Вариант 1. Ограничение доступа одной организацией (один клиент)
 
 Вы можете ограничить доступ на вход в приложение до тех учетных записей пользователей, которые находятся в одном клиенте Azure AD, включая *гостевые учетные записи* этого клиента. Это распространенный сценарий для *бизнес-приложений*:
 
 1. Откройте файл **App_Start\Startup.Auth** и измените значение конечной точки метаданных, передаваемое в `OpenIdConnectSecurityTokenProvider`, на `"https://login.microsoftonline.com/{Tenant ID}/v2.0/.well-known/openid-configuration"` (также можно использовать имя клиента, например `contoso.onmicrosoft.com`).
 2. В том же файле задайте для свойства `ValidIssuer` в `TokenValidationParameters` значение `"https://sts.windows.net/{Tenant ID}/"`, а для аргумента `ValidateIssuer` — значение `true`.
 
-### <a name="option-2-use-a-custom-method-to-validate-issuers"></a>Вариант 2. Используйте пользовательский метод для проверки издателей
+### <a name="option-2-use-a-custom-method-to-validate-issuers"></a>Вариант 2. Используйте пользовательский метод для проверки издателей
 
 Пользовательский метод можно реализовать для проверки издателей с помощью параметра **IssuerValidator**. Дополнительные сведения о том, как использовать этот параметр, см. в статье [TokenValidationParameters Class](/dotnet/api/microsoft.identitymodel.tokens.tokenvalidationparameters?view=azure-dotnet) (Класс TokenValidationParameters).
 
 [!INCLUDE [Help and support](../../../includes/active-directory-develop-help-support-include.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о сценарии защищенного веб-API, который поддерживается платформой удостоверений Microsoft:
 > [!div class="nextstepaction"]
 > [Scenario: Protected web API](scenario-protected-web-api-overview.md) (Сценарий: защищенный веб-API)

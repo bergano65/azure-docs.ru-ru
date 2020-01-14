@@ -9,14 +9,14 @@ ms.date: 03/28/2019
 ms.topic: tutorial
 ms.service: iot-edge
 ms.custom: mvc
-ms.openlocfilehash: dc8e3e92a9b843291643fe3a43092a6ac9b9c7cb
-ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
+ms.openlocfilehash: c16fca06950ea06b80f2e27d6fb845f5d0d282c0
+ms.sourcegitcommit: 2c59a05cb3975bede8134bc23e27db5e1f4eaa45
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74701912"
+ms.lasthandoff: 01/05/2020
+ms.locfileid: "75665132"
 ---
-# <a name="tutorial-store-data-at-the-edge-with-sql-server-databases"></a>Руководство по Хранение данных в граничной системе с помощью баз данных SQL Server
+# <a name="tutorial-store-data-at-the-edge-with-sql-server-databases"></a>Руководство. Хранение данных в граничной системе с помощью баз данных SQL Server
 
 Развертывание модуля SQL Server для хранения данных на устройстве с Linux, где используется Azure IoT Edge.
 
@@ -24,7 +24,7 @@ ms.locfileid: "74701912"
 
 В этой статье содержатся сведения для развертывания базы данных SQL Server на устройство IoT Edge. Функции Azure, запущенные на устройстве IoT Edge, структурируют входящие данные, а затем отправляют их в базу данных. Шаги, описанные в этой статье, также можно применить к другим базам данных, которые работают в контейнерах, например MySQL или PostgreSQL.
 
-Из этого руководства вы узнаете, как выполнять следующие задачи: 
+В этом руководстве описано следующее. 
 
 > [!div class="checklist"]
 > * Использование Visual Studio Code для создания функции Azure
@@ -34,12 +34,13 @@ ms.locfileid: "74701912"
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Предполагается, что перед началом работы с этим руководством вы прошли предыдущее, в рамках которого настроили окружение для разработки контейнеров Linux: [Tutorial: Develop IoT Edge modules for Linux devices](tutorial-develop-for-linux.md) (Руководство. Разработка модулей IoT Edge для устройств с Linux). После работы с ним у вас должны быть готовы все необходимые компоненты: 
 
 * [Центр Интернета вещей](../iot-hub/iot-hub-create-through-portal.md) ценовой категории "Бесплатный" или "Стандартный" в Azure.
-* [устройство Linux, на котором выполняется Azure IoT Edge](quickstart-linux.md);
+* Устройство AMD64 [с Linux, на котором выполняется Azure IoT Edge](quickstart-linux.md);
+  * Устройства ARM, такие как Raspberry Pis, не могут выполнять SQL Server. Если вы хотите использовать SQL на устройстве ARM, вы можете зарегистрироваться, чтобы использовать предварительную версию [Базы данных SQL Azure для пограничных вычислений](https://azure.microsoft.com/services/sql-database-edge/). 
 * реестр контейнеров, например [Реестр контейнеров Azure](https://docs.microsoft.com/azure/container-registry/);
 * средство [Visual Studio Code](https://code.visualstudio.com/), настроенное с помощью [Azure IoT Tools](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-tools);
 * выпуск [Docker CE](https://docs.docker.com/install/), настроенный для выполнения контейнеров Linux.
@@ -325,7 +326,7 @@ ms.locfileid: "74701912"
 [!INCLUDE [iot-edge-clean-up-cloud-resources](../../includes/iot-edge-clean-up-cloud-resources.md)]
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом руководстве вы создали модуль службы "Функции Azure", который содержит код для фильтрации необработанных данных, созданных вашим устройством IoT Edge. Когда вы будете готовы создавать собственные модули, вы можете узнать больше о том, как [разрабатывать решения службы "Функции Azure" с помощью Azure IoT Edge для Visual Studio Code](how-to-develop-csharp-function.md). 
 

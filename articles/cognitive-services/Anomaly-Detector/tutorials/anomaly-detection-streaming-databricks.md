@@ -1,7 +1,7 @@
 ---
-title: Руководство по Обнаружение аномалий при потоковой передаче данных с помощью Azure Databricks
+title: Руководство. Обнаружение аномалий при потоковой передаче данных с помощью Azure Databricks
 titleSuffix: Azure Cognitive Services
-description: Мониторинг аномалий в данных с помощью API Детектора аномалий и Azure Databricks.
+description: Сведения о мониторинге аномалий в данных с помощью API Детектора аномалий и Azure Databricks.
 titlesuffix: Azure Cognitive Services
 services: cognitive-services
 author: aahill
@@ -9,22 +9,22 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: anomaly-detector
 ms.topic: tutorial
-ms.date: 10/01/2019
+ms.date: 12/19/2019
 ms.author: aahi
-ms.openlocfilehash: 75c2c8bf8b3baee1f9f89282840622e1e29d2a18
-ms.sourcegitcommit: 15e3bfbde9d0d7ad00b5d186867ec933c60cebe6
+ms.openlocfilehash: 93ee5df4327aa396573665cd0c2cbd8222015cce
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71837783"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75448901"
 ---
-# <a name="tutorial-anomaly-detection-on-streaming-data-using-azure-databricks"></a>Руководство по Обнаружение аномалий при потоковой передаче данных с помощью Azure Databricks
+# <a name="tutorial-anomaly-detection-on-streaming-data-using-azure-databricks"></a>Руководство. Обнаружение аномалий при потоковой передаче данных с помощью Azure Databricks
 
 [Azure Databricks](https://azure.microsoft.com/services/databricks/) — это быстрая и удобная служба аналитики на базе Apache Spark с возможностью совместной работы. API Детектора аномалий является частью служб Azure Cognitive Services. Он предоставляет способ мониторинга данных временных рядов. В этом учебнике показано, как выполнить обнаружение аномалий при потоковой передаче данных практически в реальном времени с помощью Azure Databricks. Вы примете данные Twitter с помощью Центров событий Azure и импортируете их в Azure Databricks с помощью соединителя Центров событий Spark. После этого вы используете API для обнаружения аномалий в данных потоковой передачи. 
 
 На следующем рисунке показан поток в приложении.
 
-![Azure Databricks с Центрами событий и Cognitive Services](../media/tutorials/databricks-cognitive-services-tutorial.png "Azure Databricks with Event Hubs and Cognitive Services")
+![Azure Databricks с концентраторами событий и Cognitive Services](../media/tutorials/databricks-cognitive-services-tutorial.png "Azure Databricks с концентраторами событий и Cognitive Services")
 
 В рамках этого руководства рассматриваются следующие задачи:
 
@@ -37,7 +37,7 @@ ms.locfileid: "71837783"
 > * Создание ресурса "Детектор аномалий" и получение ключа доступа.
 > * Отправка твитов в Центры событий.
 > * Чтение твитов из Центров событий.
-> * Выполнение обнаружения аномалий в твитах.
+> * Выполнение обнаружения аномалий в твитах
 
 > [!Note]
 > В этом учебнике представлен подход к реализации рекомендуемой [архитектуры решения](https://azure.microsoft.com/solutions/architecture/anomaly-detector-process/) для API Детектора аномалий.
@@ -47,7 +47,7 @@ ms.locfileid: "71837783"
 > [!Note]
 > Для выполнения действий в этом учебнике будет не достаточно ключа бесплатной пробной версии для API Детектора аномалий. Чтобы использовать бесплатную учетную запись для создания кластера Azure Databricks, перед созданием кластера перейдите в свой профиль и измените свою подписку на **оплату по мере использования**. Дополнительные сведения см. на странице [создания бесплатной учетной записи Azure](https://azure.microsoft.com/free/).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 - [Пространство имен Центров событий Azure](https://docs.microsoft.com/azure/event-hubs/event-hubs-create) и концентратор событий.
 
@@ -65,17 +65,17 @@ ms.locfileid: "71837783"
 
 1. На портале Azure выберите **Создать ресурс** > **Analytics** > **Azure Databricks**.
 
-    ![Databricks на портале Azure](../media/tutorials/azure-databricks-on-portal.png "Databricks on Azure portal")
+    ![Databricks на портале Azure](../media/tutorials/azure-databricks-on-portal.png "Databricks на портале Azure")
 
 3. В разделе **Служба Azure Databricks** укажите следующие значения, чтобы создать рабочую область Databricks:
 
 
-    |Свойство  |ОПИСАНИЕ  |
+    |Свойство  |Description  |
     |---------|---------|
     |**Имя рабочей области**     | Укажите имя рабочей области Databricks.        |
     |**подписка**     | Выберите подписку Azure в раскрывающемся списке.        |
-    |**группа ресурсов**     | Укажите, следует ли создать новую группу ресурсов или использовать имеющуюся. Группа ресурсов — это контейнер, содержащий связанные ресурсы для решения Azure. Дополнительные сведения см. в [обзоре группы ресурсов Azure](../../../azure-resource-manager/resource-group-overview.md). |
-    |**Местоположение.**     | Выберите **восточная часть США 2** или один из доступных регионов. Доступные регионы см. в статье о [доступности служб Azure по регионам](https://azure.microsoft.com/regions/services/).        |
+    |**группа ресурсов**     | Укажите, следует ли создать новую группу ресурсов или использовать имеющуюся. Группа ресурсов — это контейнер, содержащий связанные ресурсы для решения Azure. Дополнительные сведения см. в [обзоре группы ресурсов Azure](../../../azure-resource-manager/management/overview.md). |
+    |**Местоположение**     | Выберите **восточная часть США 2** или один из доступных регионов. Доступные регионы см. в статье о [доступности служб Azure по регионам](https://azure.microsoft.com/regions/services/).        |
     |**Ценовая категория**     |  Вы можете выбрать уровень **Стандартный** или **Премиум**. НЕ выбирайте **Пробная версия**. Дополнительные сведения об этих ценовых категориях см. на [странице цен на Databricks](https://azure.microsoft.com/pricing/details/databricks/).       |
 
     Нажмите кнопку **Создать**.
@@ -88,11 +88,11 @@ ms.locfileid: "71837783"
 
 2. Вы будете перенаправлены на портал Azure Databricks. На портале выберите **Создать кластер**.
 
-    ![Databricks в Azure](../media/tutorials/databricks-on-azure.png "Databricks on Azure")
+    ![Databricks в Azure](../media/tutorials/databricks-on-azure.png "Databricks в Azure")
 
 3. На странице **создания кластера** укажите значения для создания кластера.
 
-    ![Создание кластера Databricks Spark в Azure](../media/tutorials/create-databricks-spark-cluster.png "Create Databricks Spark cluster on Azure")
+    ![Создание кластера Databricks Spark в Azure](../media/tutorials/create-databricks-spark-cluster.png "Создание кластера Databricks Spark в Azure")
 
     Для всех остальных параметров, кроме следующих, примите значения по умолчанию:
 
@@ -109,15 +109,15 @@ ms.locfileid: "71837783"
 
 1. В веб-браузере перейдите в раздел [Twitter Application Management](https://apps.twitter.com/) (Управление приложением Twitter) и выберите **Создание приложения**.
 
-    ![Создание приложения Twitter](../media/tutorials/databricks-create-twitter-app.png "Create Twitter application")
+    ![Создание приложения Twitter](../media/tutorials/databricks-create-twitter-app.png "Создание приложения Twitter")
 
 2. На странице **Create an application** (Создание приложения) укажите сведения для нового приложения, а затем выберите **Create your Twitter application** (Создать приложение Twitter).
 
-    ![Подробные сведения о приложении Twitter](../media/tutorials/databricks-provide-twitter-app-details.png "Twitter application details")
+    ![Сведения о приложении Twitter](../media/tutorials/databricks-provide-twitter-app-details.png "Сведения о приложении Twitter")
 
 3. На странице приложения перейдите на вкладку **Keys and Access Tokens** (Ключи и маркеры доступа) и скопируйте значения **ключа потребителя** и **секрета потребителя**. Кроме того, выберите **Create my access token** (Создать маркер доступа), чтобы создать маркеры доступа. Скопируйте значения **маркера доступа** и **секрета маркера доступа**.
 
-    ![Подробные сведения о приложении Twitter](../media/tutorials/twitter-app-key-secret.png "Twitter application details")
+    ![Сведения о приложении Twitter](../media/tutorials/twitter-app-key-secret.png "Сведения о приложении Twitter")
 
 Сохраните значения, полученные для приложения Twitter. Они понадобятся вам позже при работе с этим руководством.
 
@@ -127,20 +127,20 @@ ms.locfileid: "71837783"
 
 1. В рабочей области Azure Databricks выберите **Рабочая область** и щелкните правой кнопкой мыши **Shared** (Общая). В контекстном меню выберите **Создать** > **Библиотека**.
 
-   ![Диалоговое окно добавления библиотеки](../media/tutorials/databricks-add-library-option.png "Add library dialog box")
+   ![Диалоговое окно "Добавить библиотеку"](../media/tutorials/databricks-add-library-option.png "Диалоговое окно "Добавить библиотеку"")
 
 2. На странице новой библиотеки для параметра **Источник** выберите **Maven**. В поле **Координаты** введите координаты пакета, который требуется добавить. Ниже указаны координаты Maven для библиотек, используемых в рамках этого руководства.
 
    * Соединитель Центров событий Spark — `com.microsoft.azure:azure-eventhubs-spark_2.11:2.3.10`
    * API Twitter — `org.twitter4j:twitter4j-core:4.0.7`
 
-     ![Предоставление координат Maven](../media/tutorials/databricks-eventhub-specify-maven-coordinate.png "Provide Maven coordinates")
+     ![Указание координат Maven](../media/tutorials/databricks-eventhub-specify-maven-coordinate.png "Указание координат Maven")
 
 3. Нажмите кнопку **Создать**.
 
 4. Выберите папку, в которую добавлена библиотека, а затем выберите имя библиотеки.
 
-    ![Выбор добавляемой библиотеки](../media/tutorials/select-library.png "Select library to add")
+    ![Выбор добавляемой библиотеки](../media/tutorials/select-library.png "Выбор добавляемой библиотеки")
 
 5. Если на странице библиотеки нет кластера, выберите **Кластеры** и запустите созданный кластер. Дождитесь, когда состояние перейдет в значение "Выполняется", и вернитесь на страницу библиотеки.
 На странице библиотеки выберите кластер, в котором нужно использовать библиотеку, а затем щелкните **Установить**. Сразу после успешного установления связи между библиотекой и кластером состояние библиотеки изменяется на **Установлено**.
@@ -153,19 +153,19 @@ ms.locfileid: "71837783"
 
 В этом учебнике для выполнения обнаружения аномалий в потоке твитов практически в реальном времени используются [API Детектора аномалий Azure Cognitive Services](../overview.md). Прежде чем использовать API, необходимо создать ресурс "Детектор аномалий" в Azure и получить ключ доступа к API Детектора аномалий.
 
-1. Войдите на [портале Azure](https://portal.azure.com/).
+1. Войдите на [портал Azure](https://portal.azure.com/).
 
 2. Выберите действие **Создать ресурс**.
 
 3. В разделе Azure Marketplace щелкните **Искусственный интеллект и машинное обучение** > **Просмотреть все** > **Cognitive Services — Больше** > **Детектор аномалий**. Вы также можете использовать [эту ссылку](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesAnomalyDetector) непосредственно на диалоговое окно **Создать**.
 
-    ![Создание ресурса "Детектор аномалий"](../media/tutorials/databricks-cognitive-services-anomaly-detector.png "Создание ресурса \"Детектор аномалий\"")
+    ![Создание ресурса "Детектор аномалий"](../media/tutorials/databricks-cognitive-services-anomaly-detector.png "Создание ресурса "Детектор аномалий"")
 
 4. В диалоговом окне **Создать** введите следующие значения.
 
-    |Значение |ОПИСАНИЕ  |
+    |Значение |Description  |
     |---------|---------|
-    |ИМЯ     | Имя ресурса "Детектор аномалий".        |
+    |Имя     | Имя ресурса "Детектор аномалий".        |
     |Subscription     | Подписка Azure, с которой будет связан ресурс.        |
     |Location     | Расположение Azure.        |
     |Ценовая категория     | Ценовая категория службы. Дополнительные сведения о ценах на Детектор аномалий см. на [странице расценок](https://azure.microsoft.com/pricing/details/cognitive-services/anomaly-detector/).        |
@@ -176,11 +176,11 @@ ms.locfileid: "71837783"
 
 5. После создания ресурса со вкладки **Обзор** скопируйте и сохраните URL-адрес **конечной точки**, как показано на снимке экрана. Затем выберите **Показать ключи доступа**.
 
-    ![Показать ключи доступа](../media/tutorials/cognitive-services-get-access-keys.png "Show access keys")
+    ![Отображение ключей доступа](../media/tutorials/cognitive-services-get-access-keys.png "Отображение ключей доступа")
 
 6. В разделе **Ключи** нажмите значок копирования возле выбранного ключа. Сохраните ключ доступа.
 
-    ![Копирование ключей доступа](../media/tutorials/cognitive-services-copy-access-keys.png "")
+    ![Копирование ключей доступа](../media/tutorials/cognitive-services-copy-access-keys.png "Копирование ключей доступа")
 
 ## <a name="create-notebooks-in-databricks"></a>Создание записных книжек в Databricks
 
@@ -191,11 +191,11 @@ ms.locfileid: "71837783"
 
 1. В рабочей области Azure Databricks на левой панели выберите **Рабочая область**. В раскрывающемся списке **Рабочая область** выберите **Создать**, а затем **Записная книжка**.
 
-    ![Создание записной книжки в Databricks](../media/tutorials/databricks-create-notebook.png "Create notebook in Databricks")
+    ![Создание записной книжки в Databricks](../media/tutorials/databricks-create-notebook.png "Создание записной книжки в Databricks")
 
 2. В диалоговом окне **создания записной книжки** введите имя **SendTweetsToEventHub**, выберите **Scala** в качестве языка, а затем выберите созданный ранее кластер Spark.
 
-    ![Создание записной книжки в Databricks](../media/tutorials/databricks-notebook-details.png "Create notebook in Databricks")
+    ![Создание записной книжки в Databricks](../media/tutorials/databricks-notebook-details.png "Создание записной книжки в Databricks")
 
     Нажмите кнопку **Создать**.
 
@@ -680,11 +680,11 @@ adResult.show()
 
 После выполнения заданий из этого руководства вы можете завершить работу кластера. Для этого в рабочей области Azure Databricks на левой панели выберите **Кластеры**. Для кластера, работу которого необходимо завершить, переместите указатель мыши на многоточие в столбце **Действия** и выберите значок **Завершить**, а затем **Подтвердить**.
 
-![Завершение работы кластера Databricks](../media/tutorials/terminate-databricks-cluster.png "Stop a Databricks cluster")
+![Остановка кластера Databricks](../media/tutorials/terminate-databricks-cluster.png "Остановка кластера Databricks")
 
 Если не завершить работу кластера вручную, она завершится автоматически, если во время создания кластера вы установили флажок **Terminate after \_\_ minutes of inactivity** (Завершать работу после \_\_ мин бездействия). В этом случае работа кластера должна завершиться автоматически, если кластер был неактивным в течение определенного времени.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом руководстве вы узнали, как с помощью Azure Databricks выполнить потоковую передачу данных в Центры событий Azure с последующим чтением данных потоковой передачи из Центров событий в реальном времени. Перейдите к следующему учебнику, чтобы узнать, как вызвать API Детектора аномалий и визуализировать аномалии с помощью Power BI Desktop. 
 

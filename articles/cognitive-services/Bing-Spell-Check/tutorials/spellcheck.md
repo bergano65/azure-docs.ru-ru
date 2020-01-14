@@ -1,23 +1,23 @@
 ---
-title: Руководство по Получение результатов проверки орфографии с помощью API Bing для проверки орфографии
+title: Руководство. Получение результатов проверки орфографии с помощью API Bing для проверки орфографии
 titleSuffix: Azure Cognitive Services
-description: В рамках работы с этим учебником мы создадим веб-страницу, с помощью которой пользователи смогут запрашивать API Проверки орфографии Bing и отображать результаты.
+description: Используйте этот учебник для создания веб-страницы, которая отправляет запросы в API "Проверка орфографии Bing" и отображает результаты.
 services: cognitive-services
 author: aahill
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-spell-check
 ms.topic: tutorial
-ms.date: 09/13/2019
+ms.date: 12/20/2019
 ms.author: aahi
-ms.openlocfilehash: 4ef45d0d67d44ee1bcf0f06f41425ca5366ce46d
-ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
+ms.openlocfilehash: 038716f43c18432b1b8e7c86c3ffbcab46f1db8f
+ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74111450"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75382802"
 ---
-# <a name="tutorial-build-a-web-page-spell-check-client"></a>Руководство по Создание веб-страницы клиента для проверки орфографии
+# <a name="tutorial-build-a-web-page-spell-check-client"></a>Руководство. Создание веб-страницы клиента для проверки орфографии
 
 В рамках работы с этим руководством мы создадим веб-страницу, с помощью которой пользователи смогут запрашивать API Bing для проверки орфографии. Исходный код этого приложения доступен на [GitHub](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/Tutorials/BingSpellCheckApp.html).
 
@@ -27,7 +27,7 @@ ms.locfileid: "74111450"
 > - Выполнение простого запроса к API Bing для проверки орфографии.
 > - Отображение результатов запроса.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы выполнить задачи, описанные в этом руководстве, вам потребуется ключ подписки для API Bing для проверки орфографии. Если у вас его нет, [зарегистрируйтесь, чтобы воспользоваться бесплатной пробной версией](https://azure.microsoft.com/try/cognitive-services/?api=spellcheck-api).
 
@@ -319,7 +319,7 @@ function bingSpellCheck(query, key) {
 }
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Требования к использованию и отображению](../UseAndDisplayRequirements.md)
