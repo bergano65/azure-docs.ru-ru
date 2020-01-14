@@ -2,18 +2,18 @@
 title: Устранение неполадок подключения к аварийному восстановлению Azure в Azure с помощью Azure Site Recovery
 description: Устранение ошибок и проблем при репликации виртуальных машин Azure для аварийного восстановления
 services: site-recovery
-author: asgang
+author: carmonmills
 manager: rochakm
 ms.service: site-recovery
 ms.topic: article
 ms.date: 08/05/2019
-ms.author: asgang
-ms.openlocfilehash: 4995a4086c471a06fe859febfd2d1af7fbb22a76
-ms.sourcegitcommit: 6c2c97445f5d44c5b5974a5beb51a8733b0c2be7
+ms.author: carmonm
+ms.openlocfilehash: 41b5203c328243c9ef7cc74e6b9771c677a54c7c
+ms.sourcegitcommit: 014e916305e0225512f040543366711e466a9495
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73622452"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75933406"
 ---
 # <a name="troubleshoot-azure-to-azure-vm-network-connectivity-issues"></a>Устранение неполадок с сетевым подключением Azure к виртуальной машине Azure
 
@@ -21,7 +21,7 @@ ms.locfileid: "73622452"
 
 Чтобы реплика Site Recovery заработала, от виртуальной машины требуется исходящее подключение для конкретного URL-адреса или IP-диапазонов. Если виртуальная машина находится за брандмауэром или использует правила группы безопасности сети (NSG) для управления исходящими подключениями, могут возникнуть следующие проблемы.
 
-**URL-адрес** | **Дополнительные сведения**  
+**URL-адрес** | **Сведения**  
 --- | ---
 *.blob.core.windows.net | Это необходимо, чтобы данные можно было записать в учетную запись хранения кэша в исходном регионе из виртуальной машины. Если вы знакомы со всеми учетными записями хранения кэша для виртуальных машин, вы можете разрешить-перечислить определенные URL-адреса учетных записей хранения (например, cache1.blob.core.windows.net и cache2.blob.core.windows.net) вместо *. blob.core.windows.net
 login.microsoftonline.com | Требуется для авторизации и проверки подлинности URL-адресов службы Site Recovery.
@@ -73,9 +73,9 @@ login.microsoftonline.com | Требуется для авторизации и 
 
 3. Создайте правила исходящих подключений HTTPS (443) для IP-адресов Site Recovery, соответствующих целевому расположению:
 
-   **Расположение** | **IP-адрес Site Recovery** |  **IP-адрес мониторинга Site Recovery**
+   **Местоположение** | **IP-адрес Site Recovery** |  **IP-адрес мониторинга Site Recovery**
     --- | --- | ---
-   Центральный регион США | 40.69.144.231 | 52.165.34.144
+   Центральная часть США | 40.69.144.231 | 52.165.34.144
 
 ### <a name="nsg-rules---central-us"></a>Правила NSG. Центральная часть США
 
@@ -87,9 +87,9 @@ login.microsoftonline.com | Требуется для авторизации и 
 
 3. Создайте правила исходящих подключений HTTPS (443) для IP-адресов Site Recovery, соответствующих исходному расположению:
 
-   **Расположение** | **IP-адрес Site Recovery** |  **IP-адрес мониторинга Site Recovery**
+   **Местоположение** | **IP-адрес Site Recovery** |  **IP-адрес мониторинга Site Recovery**
     --- | --- | ---
-   Центральный регион США | 13.82.88.226 | 104.45.147.24
+   Центральная часть США | 13.82.88.226 | 104.45.147.24
 ## <a name="issue-3-site-recovery-configuration-failed-151197"></a>Проблема 3. Сбой при выполнении настройки Site Recovery (151197)
 - **Возможная причина** </br>
   - Не удается подключиться к конечным точкам службы Azure Site Recovery.

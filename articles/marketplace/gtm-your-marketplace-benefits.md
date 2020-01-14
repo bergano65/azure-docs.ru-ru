@@ -2,18 +2,18 @@
 title: Услуги по маркетингу — ваши преимущества для коммерческого рынка | Службы
 description: В этом разделе описаны службы по выходу на рынок — ресурсы Майкрософт, которые издатели могут использовать.
 services: Azure, Marketplace, Compute, Storage, Networking, Blockchain, Security, Partner Center
-author: qianw211
+author: MaggiePucciEvans
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: article
 ms.date: 09/10/2019
-ms.author: v-qiwe
-ms.openlocfilehash: 7b563cd90ec3e46dfd2d4420b728cd6f69df40eb
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.author: evansma
+ms.openlocfilehash: b8c1034b047e0c72db41bbbbff06feb0bdf06517
+ms.sourcegitcommit: 014e916305e0225512f040543366711e466a9495
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73818650"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75933924"
 ---
 # <a name="your-commercial-marketplace-benefits"></a>Преимущества коммерческого рынка
 
@@ -103,7 +103,7 @@ ms.locfileid: "73818650"
 
 Это предложение выполняется на английском языке для всех партнеров, у которых есть действующее предложение в Azure Marketplace или Microsoft AppSource.
 
-Транзакции, которые считаются мошенническими, не будут учитываться на [уровне программы выставления счетов](https://aka.ms/marketplacepublisherrewards)издателя, как указано в [списке, пробной версии, разделе консультации](#list-trial-and-consulting-benefits) , разделе [преимущества для партнеров Transact](#marketplace-rewards-for-transact-partners) и [подробном колоде программ. ](https://aka.ms/marketplacepublisherrewards). Корпорация Майкрософт выделит партнеров на уровни приемлемости на основе фактических выставляемых продаж, после того как мошенничеств будет удалено. 
+Транзакции, которые считаются мошенническими, не будут учитываться на [уровне программы выставления счетов](https://aka.ms/marketplacepublisherrewards)издателя, как указано в [списке, пробной версии,](#list-trial-and-consulting-benefits) в разделе "преимущества для [участников Transact](#marketplace-rewards-for-transact-partners) " и в [подробном колоде программ](https://aka.ms/marketplacepublisherrewards). Корпорация Майкрософт выделит партнеров на уровни приемлемости на основе фактических выставляемых продаж, после того как мошенничеств будет удалено. 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

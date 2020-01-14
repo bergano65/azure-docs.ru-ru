@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 12/30/2019
 ms.author: mbaldwin
 ms.custom: security-recommendations
-ms.openlocfilehash: 9081f74aee7ff503c7fe29cef6ca76e6d6b46a4f
-ms.sourcegitcommit: 5925df3bcc362c8463b76af3f57c254148ac63e3
+ms.openlocfilehash: 543573610c2ea3ab0bcd89e1b8f4ee5f5a34dbc0
+ms.sourcegitcommit: 014e916305e0225512f040543366711e466a9495
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75564274"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75934430"
 ---
 # <a name="security-control-identity-and-access-control"></a>Управление безопасностью: идентификация и управление доступом
 
@@ -63,9 +63,11 @@ https://docs.microsoft.com/powershell/module/azuread/get-azureaddirectoryrolemem
 
 Везде, где это возможно, следует использовать Azure Active Directory SSO, а не настраивать отдельные автономные учетные данные для каждой службы. Используйте рекомендации по управлению удостоверениями и доступом в центре безопасности Azure.
 
-Общие сведения об использовании единого входа в Azure AD: https://docs.microsoft.com/azure/active-directory/manage-apps/what-is-single-sign-on
+Общие сведения об использовании единого входа в Azure AD:
 
-## <a name="35-use-multi-factor-authentication-for-all-azure-active-directory-based-access"></a>3,5: используйте многофакторную проверку подлинности для всех Azure Active Directoryного доступа.
+https://docs.microsoft.com/azure/active-directory/manage-apps/what-is-single-sign-on
+
+## <a name="35-use-multi-factor-authentication-for-all-azure-active-directory-based-access"></a>3,5: используйте многофакторную проверку подлинности для всех Azure Active Directoryного доступа
 
 | Идентификатор Azure | Идентификаторы CIS | Ответственность |
 |--|--|--|
@@ -89,9 +91,13 @@ https://docs.microsoft.com/azure/security-center/security-center-identity-access
 
 Используйте лапы (рабочие станции привилегированного доступа) с MFA, настроенным для входа и настройки ресурсов Azure.
 
-Дополнительные сведения о рабочих станциях с привилегированным доступом: https://docs.microsoft.com/windows-server/identity/securing-privileged-access/privileged-access-workstations
+Дополнительные сведения о рабочих станциях с привилегированным доступом:
 
-Как включить MFA в Azure: https://docs.microsoft.com/azure/active-directory/authentication/howto-mfa-getstarted
+https://docs.microsoft.com/windows-server/identity/securing-privileged-access/privileged-access-workstations
+
+Как включить MFA в Azure:
+
+https://docs.microsoft.com/azure/active-directory/authentication/howto-mfa-getstarted
 
 
 ## <a name="37-log-and-alert-on-suspicious-activity-from-administrative-accounts"></a>3,7: регистрация и оповещение о подозрительных действиях из учетных записей администраторов
@@ -130,19 +136,25 @@ https://docs.microsoft.com/azure/active-directory/reports-monitoring/quickstart-
 
 Используйте Azure Active Directory (AAD) в качестве централизованной системы проверки подлинности и авторизации. AAD защищает данные с помощью надежного шифрования для неактивных и транзитных данных. AAD также содержит Salt-записи, хэши и безопасно хранит учетные данные пользователя.
 
-Создание и настройка экземпляра AAD: https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-access-create-new-tenant
+Создание и настройка экземпляра AAD:
+
+https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-access-create-new-tenant
 
 ## <a name="310-regularly-review-and-reconcile-user-access"></a>3,10: регулярно просматривайте и выверяйте доступ пользователей
 
 | Идентификатор Azure | Идентификаторы CIS | Ответственность |
 |--|--|--|
-| 3.1 | 16,9, 16,10 | Customer |
+| 3,10 | 16,9, 16,10 | Customer |
 
 Azure AD предоставляет журналы для облегчения поиска устаревших учетных записей. Кроме того, используйте проверку доступа удостоверений Azure, чтобы эффективно управлять членством в группах, доступом к корпоративным приложениям и назначениями ролей. Доступ пользователей можно проверить регулярно, чтобы убедиться, что доступ к ним имеют только нужные пользователи. 
 
-https://docs.microsoft.com/azure/active-directory/reports-monitoring/ отчетов Azure AD
+Отчеты Azure AD:
 
-Использование проверок доступа к удостоверениям Azure: https://docs.microsoft.com/azure/active-directory/governance/access-reviews-overview
+https://docs.microsoft.com/azure/active-directory/reports-monitoring/
+
+Использование проверок доступа для идентификации Azure:
+
+https://docs.microsoft.com/azure/active-directory/governance/access-reviews-overview
 
 ## <a name="311-monitor-attempts-to-access-deactivated-accounts"></a>3,11: монитор пытается получить доступ к отключенным учетным записям
 
@@ -186,7 +198,7 @@ https://docs.microsoft.com/azure/sentinel/quickstart-onboard
 
 В сценариях поддержки, в которых корпорации Майкрософт требуется доступ к данным клиентов, защищенное хранилище предоставляет интерфейс для просмотра и утверждения или отклонения запросов на доступ к данным клиентов.
 
-Основные сведения о защищенное хранилище:
+Общие сведения о защищенное хранилище:
 
 https://docs.microsoft.com/azure/security/fundamentals/customer-lockbox-overview
 

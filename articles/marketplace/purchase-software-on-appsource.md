@@ -1,19 +1,19 @@
 ---
 title: Приобретение программного обеспечения в AppSource | Azure Marketplace
 description: Действия по приобретению программного обеспечения в AppSource | Azure Marketplace.
-author: qianw211
+author: MaggiePucciEvans
 manager: evansma
-ms.author: v-qiwe
+ms.author: evansma
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 06/05/2019
-ms.openlocfilehash: 3ca07f060aebcea82895f0463cac693c66f0c629
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.openlocfilehash: 70e51d7c05e93e7d5f4451fa383023605a02af99
+ms.sourcegitcommit: 014e916305e0225512f040543366711e466a9495
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73827733"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75933499"
 ---
 # <a name="how-to-purchase-software-on-microsoft-appsource"></a>Как приобрести программное обеспечение на Microsoft AppSource
 
@@ -23,7 +23,7 @@ ms.locfileid: "73827733"
 
 Чтобы приобрести предложения SaaS, вам потребуется:
 
-- Рабочая или учебная учетная запись.
+- Наличие рабочей или учебной учетной записи.
 
     > [!Note]
     > Если у вас нет рабочей или учебной учетной записи, необходимо создать Azure Active Directory клиент, к которому можно добавить рабочую или учебную учетную запись. Дополнительные сведения см. [в разделе Краткое руководство. Создание нового клиента в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-access-create-new-tenant).
@@ -41,7 +41,7 @@ ms.locfileid: "73827733"
     > [!Note]
     > AppSource предоставляет возможность выбора приложений, включая бесплатные, пробные и платные подписки. В этой статье описывается, как можно приобрести платные подписки через AppSource.
 
-1. Выберите **получить сейчас**.
+1. Выберите **Get it now** (Получить).
 1. Выберите план:
 
     1. Задание числа рабочих мест
@@ -49,7 +49,7 @@ ms.locfileid: "73827733"
     
 1. Введите свой адрес для выставления счетов.
 1. Введите метод оплаты:
-    * Поддерживаемые кредитные карты: Visa, Master Card, American Express, Discovery.
+    * Поддерживаемые кредитные карты: Visa, Master Card, Америка Express, обнаружение.
     
 1. Выберите **порядок размещения**.
 
@@ -63,7 +63,7 @@ ms.locfileid: "73827733"
     > [!Note]
     > Этот шаг является обязательным и может быть выполнен в любое время.
 
-## <a name="contact-support"></a>Обратитесь в службу поддержки.
+## <a name="contact-support"></a>Обращение в службу поддержки
 
 Вы можете [Отправить запрос в службу поддержки](https://admin.microsoft.com/Adminportal/Home?source=applauncher#/homepage) через центр администрирования Microsoft 365.
 

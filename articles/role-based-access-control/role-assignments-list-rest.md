@@ -12,19 +12,22 @@ ms.workload: multiple
 ms.tgt_pltfrm: rest-api
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 11/25/2019
+ms.date: 01/10/2020
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: e20edcb5e2406c216711a2e0f696ef06e19fe21e
-ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
+ms.openlocfilehash: 8a9841e2a8a8ec0aede94f849b7818c86f9862df
+ms.sourcegitcommit: 014e916305e0225512f040543366711e466a9495
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74710403"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75934098"
 ---
 # <a name="list-role-assignments-using-azure-rbac-and-the-rest-api"></a>Вывод списка назначений ролей с помощью Azure RBAC и REST API
 
 [!INCLUDE [Azure RBAC definition list access](../../includes/role-based-access-control-definition-list.md)] этой статье описывается, как вывести список назначений ролей с помощью REST API.
+
+> [!NOTE]
+> Если в вашей организации есть функции управления с использованием внешнего источника для поставщика услуг, использующего [Управление делегированными ресурсами Azure](../lighthouse/concepts/azure-delegated-resource-management.md), назначения ролей, предоставленные этим поставщиком услуг, не будут показаны здесь.
 
 ## <a name="list-role-assignments"></a>Список назначений ролей
 
@@ -42,14 +45,14 @@ ms.locfileid: "74710403"
     | --- | --- |
     | `providers/Microsoft.Management/managementGroups/{groupId1}` | группа управления; |
     | `subscriptions/{subscriptionId1}` | Subscription |
-    | `subscriptions/{subscriptionId1}/resourceGroups/myresourcegroup1` | группа ресурсов. |
+    | `subscriptions/{subscriptionId1}/resourceGroups/myresourcegroup1` | Группа ресурсов |
     | `subscriptions/{subscriptionId1}/resourceGroups/myresourcegroup1/ providers/Microsoft.Web/sites/mysite1` | Ресурс |
 
     В предыдущем примере Microsoft. Web — это поставщик ресурсов, который ссылается на экземпляр службы приложений. Аналогичным образом можно использовать любые другие поставщики ресурсов и указать область. Дополнительные сведения см. в статьях [поставщики ресурсов Azure и типы](../azure-resource-manager/resource-manager-supported-services.md) и поддерживаемые [операции Azure Resource Manager поставщика ресурсов](resource-provider-operations.md).  
      
 1. Замените *{filter}* условием, по которому требуется отфильтровать список назначений ролей.
 
-    | Фильтр | Описание |
+    | Фильтр | Description |
     | --- | --- |
     | `$filter=atScope()` | Выводит список назначений ролей только для указанной области, не включая назначения ролей в подобластях. |
     | `$filter=principalId%20eq%20'{objectId}'` | Выводит список назначений ролей для указанного пользователя, группы или субъекта-службы. |

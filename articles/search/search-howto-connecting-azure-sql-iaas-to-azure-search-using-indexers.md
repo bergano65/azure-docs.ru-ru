@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: 12e642e59a1341926a0c4d66533465cecfc21709
-ms.sourcegitcommit: 12a26f6682bfd1e264268b5d866547358728cd9a
+ms.openlocfilehash: 7933e2608ae0b59a6dce89169f4bb1faba0aa25e
+ms.sourcegitcommit: 014e916305e0225512f040543366711e466a9495
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75863144"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75934144"
 ---
 # <a name="configure-a-connection-from-an-azure-cognitive-search-indexer-to-sql-server-on-an-azure-vm"></a>Настройка подключения из индексатора Когнитивный поиск Azure для SQL Server на виртуальной машине Azure
 
@@ -77,7 +77,7 @@ ms.locfileid: "75863144"
 
 IP-адрес можно узнать, обратившись к полному доменному имени (например, `<your-search-service-name>.search.windows.net`) службы поиска.
 
-Диапазон IP-адресов `AzureCognitiveSearch` [тега службы](https://docs.microsoft.com/azure/virtual-network/service-tags-overview#available-service-tags) для конкретного региона, в котором находится служба когнитивный Поиск Azure, можно узнать с помощью [загружаемых JSON-файлов](https://docs.microsoft.com/azure/virtual-network/service-tags-overview#discover-service-tags-by-using-downloadable-json-files) или через [API обнаружения тегов служб](https://docs.microsoft.com/azure/virtual-network/service-tags-overview#use-the-service-tag-discovery-api-public-preview). Диапазон IP-адресов обновляется еженедельно.
+Диапазон IP-адресов `AzureCognitiveSearch` [тега службы](https://docs.microsoft.com/azure/virtual-network/service-tags-overview#available-service-tags) можно узнать с помощью [загружаемых файлов JSON](https://docs.microsoft.com/azure/virtual-network/service-tags-overview#discover-service-tags-by-using-downloadable-json-files) или через [API обнаружения тегов служб](https://docs.microsoft.com/azure/virtual-network/service-tags-overview#use-the-service-tag-discovery-api-public-preview). Диапазон IP-адресов обновляется еженедельно.
 
 #### <a name="managing-ip-address-fluctuations"></a>Управление колебаниями IP-адреса
 Если служба поиска имеет только одну единицу поиска (то есть одну реплику и одну секцию), то IP-адрес может меняться во время перезагрузки службы, аннулируя существующий список управления доступом с вашим IP-адресом службы поиска.

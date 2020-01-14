@@ -9,13 +9,13 @@ ms.topic: conceptual
 ms.reviewer: larryfr
 ms.author: aashishb
 author: aashishb
-ms.date: 01/03/2020
-ms.openlocfilehash: 333d7faacfb5965e74eae69f07ff974a8fff8f25
-ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
+ms.date: 01/13/2020
+ms.openlocfilehash: f1cedd9851e425de1e4b6392d42a11dbf9f92644
+ms.sourcegitcommit: 014e916305e0225512f040543366711e466a9495
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75894015"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75934388"
 ---
 # <a name="secure-azure-ml-experimentation-and-inference-jobs-within-an-azure-virtual-network"></a>Защита заданий экспериментирования и вывода машинного обучения Azure в виртуальной сети Azure
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -167,7 +167,7 @@ ms.locfileid: "75894015"
    - Служба хранилища Azure с помощью __тега службы__ __Storage. Region_Name__ (например, Storage. EastUS);
    - Реестр контейнеров Azure с помощью __тега службы__ __азуреконтаинеррегистри. Region_Name__ (например, азуреконтаинеррегистри. EastUS).
    - Машинное обучение Azure с помощью __тега службы__ __азуремачинелеарнинг__
-   - В случае с вычислительным экземпляром Azure Cloud с помощью __тега службы__ __AzureCloud. Region_Name__ (например, AzureCloud. NorthCentralUS).
+   - В случае с вычислительным экземпляром Azure Cloud с помощью __тега службы__ __AzureResourceManager__
 
 Конфигурация правила NSG на портал Azure показана на следующем рисунке:
 

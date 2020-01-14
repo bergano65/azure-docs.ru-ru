@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 09/20/2017
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: dbc932bd7a68212ce94f2ad07de6e625d26c0918
-ms.sourcegitcommit: 5b9287976617f51d7ff9f8693c30f468b47c2141
+ms.openlocfilehash: ae29a068ef29898c3fa27d3620d1e6be0be4bf3b
+ms.sourcegitcommit: 014e916305e0225512f040543366711e466a9495
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2019
-ms.locfileid: "74950244"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75931200"
 ---
 # <a name="azure-active-directory-b2c-configure-the-ui-with-dynamic-content-by-using-custom-policies"></a>Azure Active Directory B2C: настройка пользовательского интерфейса с динамическим содержимым, используя пользовательские политики
 
@@ -40,7 +40,7 @@ ms.locfileid: "74950244"
 
 Раздел `ContentDefinitions` содержит серии XML-элементов `ContentDefinition`. Атрибут идентификатора элемента `ContentDefinition` указывает тип страниц, относящихся к определению содержимого. Таким образом, этот элемент определяет контекст, который пользовательский шаблон HTML5/CSS будет применять. В следующей таблице описан набор идентификаторов определений содержимого, распознаваемых ядром IEF, и типы страниц, относящихся к ним.
 
-| Идентификатор для определения содержимого | Шаблон HTML5 по умолчанию| Описание |
+| Идентификатор для определения содержимого | Шаблон HTML5 по умолчанию| Description |
 |-----------------------|--------|-------------|
 | *api.error* | [exception.cshtml](https://login.microsoftonline.com/static/tenant/default/exception.cshtml) | **Страница ошибки.** Эта страница отображается при обнаружении исключения или ошибки. |
 | *api.idpselections* | [idpSelector.cshtml](https://login.microsoftonline.com/static/tenant/default/idpSelector.cshtml) | **Страница выбора поставщика удостоверений.** На этой странице содержится список поставщиков удостоверений, которые пользователи могут выбирать во время входа. Обычно это поставщики удостоверений организаций, социальных сетей, включая Facebook и Google+, или локальных учетных записей. |
@@ -81,7 +81,7 @@ ms.locfileid: "74950244"
 
     ![Выбор шаблона "Веб-приложение"](media/active-directory-b2c-ui-customization-custom-dynamic/aadb2c-ief-ui-customization-create-project2.png)
 
-6. Нажмите кнопку **ОК**, чтобы создать проект.
+6. Чтобы создать проект, щелкните **ОК**.
 
 ## <a name="step-2-create-mvc-view"></a>Шаг 2. Создание представления MVC
 ### <a name="step-21-download-the-b2c-built-in-html5-template"></a>Шаг 2.1. Скачивание встроенного в B2C шаблона HTML5
@@ -122,7 +122,7 @@ ms.locfileid: "74950244"
 
 ### <a name="step-23-change-the-background-image"></a>Шаг 2.3. Изменение фонового изображения
 
-Найдите элемент `<img>` со значением `ID` *background_background_image* и замените `src` на **https://kbdevstorage1.blob.core.windows.net/asset-blobs/19889_en_1** или любое другое необходимое изображение фона.
+Найдите элемент `<img>` со значением `ID`*background_background_image* и замените `src` на **https://kbdevstorage1.blob.core.windows.net/asset-blobs/19889_en_1** или любое другое необходимое изображение фона.
 
 ![элемент img со значением пользовательского background_background_image src](media/active-directory-b2c-ui-customization-custom-dynamic/aadb2c-ief-ui-customization-add-static-background.png)
 
@@ -217,25 +217,27 @@ ms.locfileid: "74950244"
     ![Пример фрагмента XML с выделенным элементом LoadUri](media/active-directory-b2c-ui-customization-custom-dynamic/aadb2c-ief-ui-customization-content-definition.png)
 
 ## <a name="step-6-upload-the-policy-to-your-tenant"></a>Шаг 6. Отправка политики в клиент
-1. На [портале Azure](https://portal.azure.com) переключитесь в [контекст клиента Azure AD B2C](active-directory-b2c-navigate-to-b2c-context.md) и выберите **Azure AD B2C**.
+1. В [портал Azure](https://portal.azure.com)щелкните значок **Каталог + подписка** на панели инструментов портала, а затем выберите каталог, содержащий клиент Azure AD B2C.
 
-2. Выберите **Инфраструктура процедур идентификации**.
+1. В портал Azure найдите и выберите **Azure AD B2C**.
 
-3. Выберите **Все политики**.
+1. Выберите **Инфраструктура процедур идентификации**.
 
-4. Щелкните **Отправить политику**.
+1. Выберите **Все политики**.
 
-5. Установите флажок **Перезаписать политику, если она существует**.
+1. Щелкните **Отправить политику**.
 
-6. Отправьте файл *TrustFrameworkExtensions.xml* и немного подождите, чтобы удостовериться, что он прошел проверку.
+1. Установите флажок **Перезаписать политику, если она существует**.
+
+1. Отправьте файл *TrustFrameworkExtensions.xml* и немного подождите, чтобы удостовериться, что он прошел проверку.
 
 ## <a name="step-7-test-the-custom-policy-by-using-run-now"></a>Шаг 7. Тестирование настраиваемой политики с помощью команды "Запустить сейчас"
 1. Откройте **параметры Azure AD B2C** и выберите **Identity Experience Framework**.
 
     >[!NOTE]
-    >Для использования команды "Запустить сейчас" необходимо, чтобы в клиенте было предварительно зарегистрировано хотя бы одно приложение. Дополнительные сведения о регистрации приложений см. в статье [Azure AD B2C: начало работы](active-directory-b2c-get-started.md) или [Регистрация приложения](active-directory-b2c-app-registration.md).
+    >Для использования команды Run now (Запустить сейчас) необходимо, чтобы в клиенте было предварительно зарегистрировано хотя бы одно приложение. Дополнительные сведения о регистрации приложений см. в статье [Azure AD B2C: начало работы](active-directory-b2c-get-started.md) или [Регистрация приложения](active-directory-b2c-app-registration.md).
 
-2. Откройте **B2C_1A_signup_signin**, отправленную вами пользовательскую политику проверяющей стороны, а затем выберите **Запустить сейчас**.
+2. Откройте **B2C_1A_signup_signin**, отправленную вами пользовательскую политику проверяющей стороны, а затем выберите **Run Now** (Запустить сейчас).
     Вы должны увидеть настраиваемый HTML5 с ранее созданным фоном.
 
     ![Политика регистрации или входа в систему](media/active-directory-b2c-ui-customization-custom-dynamic/aadb2c-ief-ui-customization-demo1.png)
@@ -322,19 +324,19 @@ ms.locfileid: "74950244"
 Если выбрать ссылку **Зарегистрироваться сейчас** на странице входа, в браузере отобразится фоновое изображение по умолчанию, а не определенное изображение. Это связано с тем, что вы изменили только страницу регистрации или входа в систему. Чтобы изменить остальную часть определений содержимого с самостоятельным утверждением, сделайте следующее:
 1. Вернитесь к шагу 2 и выполните следующие действия.
 
-    а) Скачайте файл *selfasserted*.
+    а. Скачайте файл *selfasserted*.
 
-    б) Скопируйте содержимое файла.
+    b. Скопируйте содержимое файла.
 
-    в) Создайте представление *selfasserted*.
+    c. Создайте представление *selfasserted*.
 
-    г) Добавьте *selfasserted* в контроллер **Home**.
+    d. Добавьте *selfasserted* в контроллер **Home**.
 
 2. Вернитесь к шагу 4 и выполните следующие действия.
 
-    а) В политике расширения найдите узел `<ContentDefinition>`, который содержит `Id="api.selfasserted"`, `Id="api.localaccountsignup"` и `Id="api.localaccountpasswordreset"`.
+    а. В политике расширения найдите узел `<ContentDefinition>`, который содержит `Id="api.selfasserted"`, `Id="api.localaccountsignup"` и `Id="api.localaccountpasswordreset"`.
 
-    б) Задайте для атрибута `LoadUri` универсальный код ресурса (URI) *selfasserted*.
+    b. Задайте для атрибута `LoadUri` универсальный код ресурса (URI) *selfasserted*.
 
 3. Вернитесь к шагу 8.2 и измените код так, чтобы принимать параметры строки запроса, но на этот раз укажите функцию *selfasserted*.
 
@@ -345,7 +347,3 @@ ms.locfileid: "74950244"
 ## <a name="optional-download-the-complete-policy-files-and-code"></a>Скачивание полного текста файлов политики и кода (необязательно)
 * После того как вы ознакомитесь с [пошаговым руководством по началу работы с пользовательскими политиками](active-directory-b2c-get-started-custom.md), рекомендуем создать свой сценарий, используя собственные файлы пользовательской политики. Для справки мы предоставили [образцы файлов политики](https://github.com/Azure-Samples/active-directory-b2c-custom-policy-starterpack/tree/master/scenarios/aadb2c-ief-ui-customization).
 * Вы можете загрузить полный код из примера решения Visual Studio [отсюда](https://github.com/Azure-Samples/active-directory-b2c-custom-policy-starterpack/tree/master/scenarios/aadb2c-ief-ui-customization).
-
-
-
-

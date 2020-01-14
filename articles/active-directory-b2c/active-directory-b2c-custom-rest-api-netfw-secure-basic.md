@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 09/25/2017
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 1a956638e8bd74c974012834ca650195e5bee37e
-ms.sourcegitcommit: 5b9287976617f51d7ff9f8693c30f468b47c2141
+ms.openlocfilehash: 24aa0d3d3f12934c54ac9aaa5ab8ae5c0d710825
+ms.sourcegitcommit: 014e916305e0225512f040543366711e466a9495
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2019
-ms.locfileid: "74949446"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75930510"
 ---
 # <a name="secure-your-restful-services-by-using-http-basic-authentication"></a>Защита служб RESTful с использованием обычной проверки подлинности HTTP
 
@@ -69,7 +69,7 @@ PM> Install-Package Microsoft.Owin.Host.SystemWeb
 
 ### <a name="step-13-add-an-authentication-middleware-class"></a>Шаг 1.3. Настройка класса ПО промежуточного слоя для аутентификации
 
-Добавьте класс `ClientAuthMiddleware.cs` в папку *App_Start*. Для этого выполните следующие действия:
+Добавьте класс `ClientAuthMiddleware.cs` в папку *App_Start*. Для этого:
 
 1. Щелкните правой кнопкой мыши папку *App_Start*, выберите **Добавить**, а затем — **Класс**.
 
@@ -193,7 +193,7 @@ PM> Install-Package Microsoft.Owin.Host.SystemWeb
 
 ### <a name="step-14-add-an-owin-startup-class"></a>Шаг 1.4. Добавление класса запуска OWIN
 
-Добавьте класс запуска OWIN с именем `Startup.cs` в API. Для этого выполните следующие действия:
+Добавьте класс запуска OWIN с именем `Startup.cs` в API. Для этого:
 1. Щелкните проект правой кнопкой мыши и выберите **Добавить** > **Новый элемент**, после чего найдите **OWIN**.
 
    ![Создание класса запуска OWIN в диалоговом окне "Добавление нового элемента" в Visual Studio](media/aadb2c-ief-rest-api-netfw-secure-basic/rest-api-netfw-secure-basic-OWIN-startup.png)
@@ -233,7 +233,7 @@ PM> Install-Package Microsoft.Owin.Host.SystemWeb
 
 ### <a name="step-31-add-a-restful-services-client-id"></a>Шаг 3.1. Добавление идентификатора клиента служб RESTful
 
-1. В клиенте Azure AD B2C выберите **B2C Settings** (Параметры B2C)  >  **Identity Experience Framework**.
+1. В клиенте Azure AD B2C выберите **B2C Settings** (Параметры B2C)  > **Identity Experience Framework**.
 
 
 2. Выберите **Policy Keys** (Ключи политики), чтобы просмотреть доступные в клиенте ключи.
@@ -255,7 +255,7 @@ PM> Install-Package Microsoft.Owin.Host.SystemWeb
 
 ### <a name="step-32-add-a-restful-services-client-secret"></a>Шаг 3.2. Добавление секрета клиента служб RESTful
 
-1. В клиенте Azure AD B2C выберите **B2C Settings** (Параметры B2C)  >  **Identity Experience Framework**.
+1. В клиенте Azure AD B2C выберите **B2C Settings** (Параметры B2C)  > **Identity Experience Framework**.
 
 2. Выберите **Policy Keys** (Ключи политики), чтобы просмотреть доступные в клиенте ключи.
 
@@ -303,26 +303,28 @@ PM> Install-Package Microsoft.Owin.Host.SystemWeb
 
 ## <a name="step-5-upload-the-policy-to-your-tenant"></a>Шаг 5. Отправка политики в клиент
 
-1. На [портале Azure](https://portal.azure.com) переключитесь в [контекст клиента Azure AD B2C](active-directory-b2c-navigate-to-b2c-context.md) и откройте **Azure AD B2C**.
+1. В [портал Azure](https://portal.azure.com)щелкните значок **Каталог + подписка** на панели инструментов портала, а затем выберите каталог, содержащий клиент Azure AD B2C.
 
-2. Выберите **Инфраструктура процедур идентификации**.
+1. В портал Azure найдите и выберите **Azure AD B2C**.
 
-3. Откройте **Все политики**.
+1. Выберите **Инфраструктура процедур идентификации**.
 
-4. Щелкните **Отправить политику**.
+1. Откройте **Все политики**.
 
-5. Установите флажок **Перезаписать политику, если она существует**.
+1. Щелкните **Отправить политику**.
 
-6. Отправьте файл *TrustFrameworkExtensions.xml* и немного подождите, чтобы удостовериться, что он прошел проверку.
+1. Установите флажок **Перезаписать политику, если она существует**.
+
+1. Отправьте файл *TrustFrameworkExtensions.xml* и немного подождите, чтобы удостовериться, что он прошел проверку.
 
 ## <a name="step-6-test-the-custom-policy-by-using-run-now"></a>Шаг 6. Тестирование настраиваемой политики с помощью команды "Запустить сейчас"
 
 1. Откройте **параметры Azure AD B2C** и выберите **Identity Experience Framework**.
 
     >[!NOTE]
-    >Для использования команды "Запустить сейчас" необходимо, чтобы в клиенте было предварительно зарегистрировано хотя бы одно приложение. Дополнительные сведения о регистрации приложений см. в статье [Azure AD B2C: начало работы](active-directory-b2c-get-started.md) или [Регистрация приложения](active-directory-b2c-app-registration.md).
+    >Для использования команды Run now (Запустить сейчас) необходимо, чтобы в клиенте было предварительно зарегистрировано хотя бы одно приложение. Дополнительные сведения о регистрации приложений см. в статье [Azure AD B2C: начало работы](active-directory-b2c-get-started.md) или [Регистрация приложения](active-directory-b2c-app-registration.md).
 
-2. Откройте **B2C_1A_signup_signin**, отправленную вами пользовательскую политику проверяющей стороны, а затем выберите **Запустить сейчас**.
+2. Откройте **B2C_1A_signup_signin**, отправленную вами пользовательскую политику проверяющей стороны, а затем выберите **Run Now** (Запустить сейчас).
 
 3. Проверьте процесс, введя **Test** в поле **Имя**.
     В верхней части страницы Azure AD B2C отобразится сообщение об ошибке.

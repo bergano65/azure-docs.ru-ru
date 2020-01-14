@@ -3,7 +3,7 @@ title: Каталог архивов StorSimple Snapshot Manager | Докуме�
 description: Узнайте, как использовать оснастку консоли MMC "Диспетчер моментальных снимков StorSimple" для просмотра каталога резервных копий и управления ими.
 services: storsimple
 documentationcenter: NA
-author: SharS
+author: twooley
 manager: timlt
 editor: ''
 ms.assetid: 6abdbfd2-22ce-45a5-aa15-38fae4c8f4ec
@@ -13,13 +13,13 @@ ms.topic: article
 ms.tgt_pltfrm: NA
 ms.workload: TBD
 ms.date: 06/05/2017
-ms.author: v-sharos
-ms.openlocfilehash: dc24ebd59fd977ef35766c304aec5824e2c7bb4c
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: twooley
+ms.openlocfilehash: 38ef7774263e4b28b7c316fd0870ca8f7b89d6b8
+ms.sourcegitcommit: 014e916305e0225512f040543366711e466a9495
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "62127190"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75931705"
 ---
 # <a name="use-storsimple-snapshot-manager-to-manage-the-backup-catalog"></a>Использование диспетчера моментальных снимков StorSimple для управления каталогом резервных копий
 

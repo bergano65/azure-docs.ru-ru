@@ -6,29 +6,29 @@ ms.subservice: logs
 ms.topic: conceptual
 author: yossi-y
 ms.author: yossiy
-ms.date: 01/07/2020
-ms.openlocfilehash: d6419e86e1a541638a7053654bfcd7945aa41ae7
-ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
+ms.date: 01/11/2020
+ms.openlocfilehash: 04bda5b016234f96d4bef7796799f2526296dd26
+ms.sourcegitcommit: 014e916305e0225512f040543366711e466a9495
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75891071"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75932755"
 ---
 # <a name="azure-monitor-customer-managed-key-configuration"></a>Azure Monitor конфигурация ключа, управляемого клиентом 
 
-В этой статье содержатся общие сведения и инструкции по настройке ключей, управляемых клиентом (CMK), для рабочих областей Log Analytics и компонентов Application Insights. После настройки все данные, отправленные в рабочие области, шифруются с помощью ключа Azure Key Vault.
+В этой статье содержатся общие сведения и инструкции по настройке ключей, управляемых клиентом (CMK), для рабочих областей Log Analytics и компонентов Application Insights. После настройки все данные, отправленные в рабочие области или компоненты, шифруются с помощью ключа Azure Key Vault.
 
 Перед настройкой рекомендуется ознакомиться [с ограничениями и ограничениями,](#Limitations and constraints) приведенными ниже.
 
 ## <a name="disclaimers"></a>Заявления об отказе от ответственности
 
-- Azure Monitor CMK является функцией раннего доступа и включена для зарегистрированных подписок
+- Azure Monitor CMK — это функция раннего доступа, которая включена для зарегистрированных подписок.
 
 - Развертывание CMK, описанное в этой статье, распространяется в рабочее качество и поддерживается таким образом, хотя оно является функцией раннего доступа.
 
 - Возможность CMK поставляется в выделенном кластере хранилища данных, который является кластером Azure обозреватель данных (ADX) и подходит для клиентов, отправляющих 1 ТБ в день или более. 
 
-- Модель ценообразования CMK сейчас недоступна, и она не рассматривается в этой статье. В втором квартале календарного года (CY) 2020 требуется модель ценообразования для выделенного кластера хранения данных. она будет применяться ко всем существующим CMK развертываниям.
+- Модель ценообразования CMK сейчас недоступна, и она не рассматривается в этой статье. Модель ценообразования для выделенного кластера ADX ожидается во втором квартале календарного года (CY) 2020 и будет применяться к любым существующим развертываниям CMK.
 
 - В этой статье описывается конфигурация CMK для рабочих областей Log Analytics. CMK для компонентов Application Insights также поддерживается в этой статье, а различия перечислены в приложении.
 
@@ -46,11 +46,17 @@ Azure Monitor использование шифрования идентично
 Частота, с которой Azure Monitor доступ к хранилищу Key Vault для операций упаковки и распаковки, составляет от 6 до 60 секунд. Хранилище Azure Monitor  
 всегда учитывает изменения в ключевых разрешениях в течение часа.
 
+Полученные данные за последние 14 дней также сохраняются в оперативном кэше (с поддержкой SSD) для эффективной работы механизма запросов. Эти данные остаются зашифрованными с помощью ключей Майкрософт независимо от конфигурации CMK, но мы работаем над тем, чтобы SSD был зашифрован с CMK раннего 2020.
+
 ## <a name="how-cmk-works-in-azure-monitor"></a>Как работает CMK в Azure Monitor
 
 Azure Monitor использует управляемое системой удостоверение для предоставления доступа к Azure Key Vault. Управляемое системой удостоверение может быть связано только с одним ресурсом Azure. Удостоверение хранилища данных Azure Monitor (кластер ADX) поддерживается на уровне кластера, и это указывает на то, что возможность CMK доставляется в выделенный кластер ADX. Для поддержки CMK в нескольких рабочих областях новый ресурс Log Analytics (*кластер*) выполняет в качестве промежуточного подключения между Key Vaultом и рабочими областями log Analytics. Эта концепция соответствует ограничению удостоверения, назначенного системой, и удостоверение сохраняется между кластером ADX и ресурсом *кластера* log Analytics *,* а данные всех связанных рабочих областей защищаются с помощью ключа Key Vault. Хранилище кластера ундерлай ADX использует управляемое удостоверение\', связанное с ресурсом *кластера* для проверки подлинности и доступа к Azure Key Vault через Azure Active Directory.
 
-![Обзор CMK](media/customer-managed-keys/cmk-overview-8bit.png)
+![Обзор CMK](media/customer-managed-keys/cmk-overview.png)
+1.  Key Vault клиента.
+2.  Ресурс кластера Log Analytics клиента с правами управляемого удостоверения с разрешениями на Key Vault — удостоверение поддерживается на уровне хранилища данных (ADX Cluster).
+3.  Azure Monitor выделенный кластер ADX.
+4.  Рабочие области клиента, связанные с ресурсом кластера для шифрования CMK.
 
 ## <a name="encryption-keys-management"></a>Управление ключами шифрования
 
@@ -82,7 +88,7 @@ Azure Monitor использует управляемое системой уд�
 2. Создание Azure Key Vault и хранение ключа
 3. Создание ресурса *кластера*
 4. Предоставление разрешений Key Vault
-5. Подготовка Azure Monitor хранилища данных (ADX)
+5. Подготовка Azure Monitor хранилища данных (кластер ADX)
 6. Сопоставление рабочих областей Log Analytics
 
 В настоящее время процедура не поддерживается в пользовательском интерфейсе, а процесс подготовки выполняется с помощью REST API.
@@ -94,11 +100,11 @@ Azure Monitor использует управляемое системой уд�
 
 ```rst
 GET
-https://management.azure.com/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}?api-version=2015-11-01-preview]
-  authorization: Bearer eyJ0eXAiO....
+https://management.azure.com/subscriptions/<subscriptionId>/resourcegroups/<resourceGroupName>/providers/Microsoft.OperationalInsights/workspaces/<workspaceName>?api-version=2015-11-01-preview
+Authorization: Bearer eyJ0eXAiO....
 ```
 
-где *eyJ0eXAiO...* представляет полный маркер авторизации. 
+Где *eyJ0eXAiO...* представляет полный маркер авторизации. 
 
 Получить маркер можно с помощью одного из следующих методов:
 
@@ -124,25 +130,25 @@ https://management.azure.com/subscriptions/{subscriptionId}/resourcegroups/{reso
 
 Azure Key Vault должны быть настроены как восстанавливаемые для защиты ключа и доступа к данным Azure Monitor.
 
-Чтобы [включить параметры восстановления](https://docs.microsoft.com/azure/key-vault/key-vault-best-practices#turn-on-recovery-options), выполните следующие действия.
+Эти параметры доступны через CLI и Поверселл:
 - Необходимо включить [обратимое удаление](https://docs.microsoft.com/azure/key-vault/key-vault-ovw-soft-delete)
-- Чтобы защититься от принудительного удаления секрета или хранилища даже после обратимого удаления, необходимо включить защиту от удаления.
+- Чтобы защититься от принудительного удаления секрета или хранилища даже после обратимого удаления, необходимо включить [защиту](https://docs.microsoft.com/azure/key-vault/key-vault-ovw-soft-delete#purge-protection) от удаления.
 
 ### <a name="create-cluster-resource"></a>Создание ресурса *кластера*
 
-Этот ресурс используется в качестве промежуточного подключения удостоверения между вашей Key Vault и рабочими областями. Только после получения подтверждения о том, что ваши подписки были список разрешений, создайте ресурс *кластера* log Analytics в регионе, где находятся ваши рабочие области.
+Этот ресурс используется в качестве промежуточного подключения удостоверения между вашей Key Vault и рабочими областями. Только после получения подтверждения о том, что ваши подписки были список разрешений, создайте ресурс *кластера* log Analytics в регионе, где находятся ваши рабочие области. Для Application Insights и Log Analytics требуются отдельные ресурсы кластера. Тип ресурса кластера определяется во время создания, присвоив свойству "clusterType" значение "LogAnalytics" или "ApplicationInsights". Невозможно изменить тип ресурса кластера.
 
 **Создание**
 
-```json
-PUT https://management.azure.com/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.OperationalInsights/clusters/{cluster-name}?api-version=2019-08-01-preview
+```rst
+PUT https://management.azure.com/subscriptions/<subscription-id>/resourceGroups/<resource-group-name>/providers/Microsoft.OperationalInsights/clusters/<cluster-name>?api-version=2019-08-01-preview
 Authorization: Bearer <token>
 Content-type: application/json
 
 {
-  "location": "region-name",
+  "location": "<region-name>",
    "properties": {
-      "clusterType": "LogAnalytics"
+      "clusterType": "LogAnalytics"   //Should be "ApplicationInsights" for Application Insights CMK
     },
    "identity": {
       "type": "systemAssigned"
@@ -152,40 +158,47 @@ Content-type: application/json
 
 **Ответ**
 
-Удостоверение назначается *кластеру* во время создания.
+Удостоверение назначается ресурсу *кластера* во время создания.
 
 ```json
 {
   "identity": {
     "type": "SystemAssigned",
     "tenantId": "tenant-id",
-    "principalId": "principle-id" //A GUID that was generated by the managed identity service
+    "principalId": "principle-id"    //A GUID that was generated by the managed identity service
   },
   "properties": {
     "provisioningState": "Succeeded",
     "clusterType": "LogAnalytics", 
-    "clusterId": "cluster-id"   //A GUID that Log Analytics generates for the cluster
+    "clusterId": "cluster-id"    //A GUID that Log Analytics generates for the cluster
   },
-  "id": "/subscriptions/subscription-id/resourceGroups/resource-group-name/providers/Microsoft.OperationalInsights/clusters/cluster-name", //The cluster resource Id
+  "id": "/subscriptions/subscription-id/resourceGroups/resource-group-name/providers/Microsoft.OperationalInsights/clusters/cluster-name",    //The cluster resource Id
   "name": "cluster-name",
   "type": "Microsoft.OperationalInsights/clusters",
   "location": "region-name"
 }
 
 ```
+> [!IMPORTANT]
+> Скопируйте и сохраним "Cluster-ID", так как он понадобится вам в следующих шагах.
 
 Если вы хотите удалить ресурс *кластера* по какой-либо причине (например, создайте его с другим именем), используйте этот вызов API:
 
-```
+```rst
 DELETE
-https://management.azure.com/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.OperationalInsights/clusters/{cluster-name}?api-version=2019-08-01-preview
+https://management.azure.com/subscriptions/<subscription-id>/resourceGroups/<resource-group-name>/providers/Microsoft.OperationalInsights/clusters/<cluster-name>?api-version=2019-08-01-preview
 ```
 
 ### <a name="grant-key-vault-permissions"></a>Предоставление Key Vault разрешений
 
-Обновите Key Vault и добавьте политику доступа с разрешениями "получить", "ключ переноса ключа" и "разносить ключ" для идентификатора ресурса *кластера* или имени ресурса *кластера* . Эти разрешения будут распространяться на подAzure Monitorное хранилище.
+Обновите Key Vault и добавьте политику доступа для ресурса кластера. После этого разрешения на Key Vault распространяются на подAzure Monitorное хранилище, которое будет использоваться для шифрования данных.
+Откройте Key Vault в портал Azure и щелкните "политики доступа", а затем "+ добавить политику доступа", чтобы создать новую политику с этими параметрами:
 
-![Предоставление Key Vault разрешений](media/customer-managed-keys/grant-key-vault-permissions-8bit.png)
+- Разрешения ключа: выберите "Get", "обернуть ключ" и "разворачивать ключ".
+
+- Выберите субъект: введите Cluster-ID, который является значением "clusterId" в ответе предыдущего шага.
+
+![Предоставление Key Vault разрешений](media/customer-managed-keys/grant-key-vault-permissions.png)
 
 Разрешение *Get* необходимо для проверки того, что Key Vault настроена как восстанавливаемая для защиты ключа и доступа к данным Azure Monitor.
 
@@ -193,7 +206,9 @@ https://management.azure.com/subscriptions/{subscription-id}/resourceGroups/{res
 
 ### <a name="update-cluster-resource-with-key-identifier-details"></a>Обновление ресурса кластера с подробными сведениями об идентификаторе ключа
 
-При создании новой версии ключа необходимо обновить ресурс кластера с Azure Key Vault сведениями об идентификаторе ключа, чтобы разрешить хранилищу Azure Monitor использовать новую версию. Чтобы получить идентификатор ключа, выберите текущую версию ключа в Azure Key Vault:
+Эта процедура также применяется при создании новой версии ключа.
+
+Обновите ресурс кластера с Azure Key Vault сведениями об идентификаторе ключа, чтобы разрешить хранилищу Azure Monitor использовать новую версию ключа. Выберите текущую версию ключа в Azure Key Vault, чтобы получить сведения об идентификаторе ключа:
 
 ![Предоставление Key Vault разрешений](media/customer-managed-keys/key-identifier-8bit.png)
 
@@ -201,20 +216,20 @@ https://management.azure.com/subscriptions/{subscription-id}/resourceGroups/{res
 
 **Update**
 
-```json
-PUT https://management.azure.com/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.OperationalInsights/clusters/{cluster-name}?api-version=2019-08-01-preview
+```rst
+PUT https://management.azure.com/subscriptions/<subscription-id>/resourceGroups/<resource-group-name>/providers/Microsoft.OperationalInsights/clusters/<cluster-name>?api-version=2019-08-01-preview
 Authorization: Bearer <token>
 Content-type: application/json
 
 {
    "properties": {
-       "KeyVaultProperties": { //Key Vault key identifier
-            KeyVaultUri: "https://{key-vault-name}.vault.azure.net,
-            KeyName: {key-name},
-            KeyVersion: {current-version}
+       "KeyVaultProperties": {     //Key Vault key identifier details taken from Key identifier URI
+            KeyVaultUri: "https://<key-vault-name>.vault.azure.net",
+            KeyName: "<key-name>",
+            KeyVersion: "<current-version>"
             },
    },
-   "location":"region-name",
+   "location":"<region-name>",
    "identity": { 
         "type": "systemAssigned" 
         }
@@ -232,18 +247,18 @@ Content-type: application/json
   },
   "properties": {
        "KeyVaultProperties": {     // Key Vault key identifier
-            KeyVaultUri: "https://{key-vault-name}.vault.azure.net,
-            KeyName: {key-name},
-            KeyVersion: {current-version}
+            KeyVaultUri: "https://key-vault-name.vault.azure.net",
+            KeyName: "key-name",
+            KeyVersion: "current-version"
             },
     "provisioningState": "Succeeded",
     "clusterType": "LogAnalytics", 
     "clusterId": "cluster-id"
   },
-  "id": "/subscriptions/subscription-id/resourceGroups/resource-group-name/providers/Microsoft.OperationalInsights/clusters/cluster-name", //The cluster resource Id
+  "id": "/subscriptions/subscription-id/resourceGroups/resource-group-name/providers/Microsoft.OperationalInsights/clusters/cluster-name",    //The cluster resource Id
   "name": "cluster-name",
   "type": "Microsoft.OperationalInsights/clusters",
-  "location": "region-name" //Example: Switzerland North
+  "location": "region-name"    //Example: Switzerland North
 }
 ```
 
@@ -253,18 +268,12 @@ Content-type: application/json
 
 1. Подтверждение выполнения описанных выше действий
 
-2. Идентификатор ресурса *кластера* , полученный в ответе, выглядит следующим образом:
-
-```
-"id": "/subscriptions/subscription-id/resourceGroups/resource-group-name/providers/Microsoft.OperationalInsights/clusters/cluster-name"
-```
-
-Идентификатор ресурса *кластера* можно получить в любое время с помощью вызова API Get.
+2. Ответ API ресурсов кластера. его можно получить в любое время с помощью вызова API Get.
 
 **Чтение идентификатора ресурса *кластера***
 
-```
-GET https://management.azure.com/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.OperationalInsights/clusters/{cluster-name}?api-version=2019-08-01-preview
+```rst
+GET https://management.azure.com/subscriptions/<subscription-id>/resourceGroups/<resource-group-name>/providers/Microsoft.OperationalInsights/clusters/<cluster-name>?api-version=2019-08-01-preview
 Authorization: Bearer <token>
 ```
 
@@ -277,10 +286,10 @@ Authorization: Bearer <token>
     "principalId": "principal-Id"
   },
   "properties": {
-       "KeyVaultProperties": { // Key Vault key identifier
-            KeyVaultUri: "https://{key-vault-name}.vault.azure.net,
-            KeyName: {key-name},
-            KeyVersion: {current-version}
+       "KeyVaultProperties": {    // Key Vault key identifier
+            KeyVaultUri: "https://key-vault-name.vault.azure.net",
+            KeyName: "key-name",
+            KeyVersion: "current-version"
             },
     "provisioningState": "Succeeded",
     "clusterType": "LogAnalytics", 
@@ -298,31 +307,31 @@ Authorization: Bearer <token>
 > [!NOTE]
 > Этот шаг следует выполнить **только** после получения подтверждения от группы продуктов по каналу Майкрософт, который **Azure Monitor подготовки хранилища данных (кластера ADX)** . При связывании рабочих областей и приема данных до этой **подготовки**данные будут удалены и не будут восстановлены.
 
-**Связывание рабочей области с ресурсом *кластера***
+**Связывание рабочей области с ресурсом *кластера* с помощью [рабочих областей — создание или обновление](https://docs.microsoft.com/rest/api/loganalytics/workspaces/createorupdate) API**
 
-```json
-PUT https://management.azure.com.resources.windows-int.net/Customer.svc/subscriptions/{subscription-id}/resourcegroups/{resource-group-name}/providers/microsoft.operationalinsights/workspaces/{workspace-name} 
+```rst
+PUT https://management.azure.com/subscriptions/<subscription-id>/resourcegroups/<resource-group-name>/providers/microsoft.operationalinsights/workspaces/<workspace-name>?api-version=2015-11-01-preview 
 Authorization: Bearer <token>
 Content-type: application/json
 
 {
   "properties": {
     "source": "Azure",
-    "customerId": {workspace-id}, //Available in Azure portal under Log Analytics workspace Overview section
+    "customerId": "<workspace-id>",    //Available in Azure portal under Log Analytics workspace Overview section
     "features": {
-      "clusterDefinitionId": "cluster-id" //The id of the Cluster resource
+      "clusterDefinitionId": "<cluster-id>"    //It's the "clusterId" value provided in the respond from the previous step 
     }
   },
-  "id": "/subscriptions/{subscription-id}/resourcegroups/{resource-group-name}/providers/microsoft.operationalinsights/workspaces/{workspace-name}",
-  "name": "workspace-name",
+  "id": "/subscriptions/<subscription-id>/resourcegroups/<resource-group-name>/providers/microsoft.operationalinsights/workspaces/<workspace-name>",
+  "name": "<workspace-name>",
   "type": "Microsoft.OperationalInsights/workspaces",
-  "location": "region-name"
+  "location": "<region-name>"
 }
 ```
 
 **Ответ**
 
-```
+```json
 {
   "properties": {
     "source": "Azure",
@@ -339,12 +348,11 @@ Content-type: application/json
       "dataIngestionStatus": "RespectQuota"
     }
   },
-  "id": "/subscriptions/{subscription-id}/resourcegroups/{resource-group-name}/providers/microsoft.operationalinsights/workspaces/{workspace-name}",
+  "id": "/subscriptions/subscription-id/resourcegroups/resource-group-name/providers/microsoft.operationalinsights/workspaces/workspace-name",
   "name": "workspace-name",
   "type": "Microsoft.OperationalInsights/workspaces",
   "location": "region-name"
 }
-
 ```
 
 После сопоставления данные, отправляемые в ваши рабочие области, сохраняются в зашифрованном виде с помощью управляемого ключа.
@@ -380,6 +388,8 @@ Azure Monitor хранилище всегда будет учитывать из
   - [Обратимое удаление](https://docs.microsoft.com/azure/key-vault/key-vault-ovw-soft-delete) включено
   - Параметр "не очищать" включен для защиты от принудительного удаления секрета или хранилища даже после обратимого удаления
 
+- Для Application Insights и Log Analytics требуются отдельные ресурсы *кластера* . Тип ресурса *кластера* определяется во время создания, присвоив свойству "clusterType" значение "LogAnalytics" или "ApplicationInsights". Невозможно изменить тип ресурса *кластера* .
+
 - Перемещение ресурса *кластера* в другую группу ресурсов или подписку сейчас не поддерживается.
 
 - Связь рабочей области с ресурсом *кластера* завершится ошибкой, если ресурс *кластера* находится в другом клиенте.
@@ -403,62 +413,66 @@ Azure Monitor хранилище всегда будет учитывать из
 
 - При попытке удалить ресурс *кластера* , связанный с рабочей областью, операция удаления завершится ошибкой.
 
-- Получить все кластеры для группы ресурсов:
+- Получить все ресурсы *кластера* для группы ресурсов:
 
-    ```
-    GET https://management.azure.com/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.OperationalInsights/clusters?api-version=2019-08-01-preview
-    ```
+  ```rst
+  GET https://management.azure.com/subscriptions/<subscription-id>/resourceGroups/<resource-group-name>/providers/Microsoft.OperationalInsights/clusters?api-version=2019-08-01-preview
+  Authorization: Bearer <token>
+  ```
     
-    *Ответ*
+**Ответ**
 
-    ```json
+```json
+{
+  "value": [
     {
-      "value": [
-        {
-          "identity": {
-            "type": "SystemAssigned",
-            "tenantId": "tenant-id",
-            "principalId": "principal-Id"
-          },
-          "properties": {
-             "KeyVaultProperties": { // Key Vault key identifier
-                KeyVaultUri: "https://{key-vault-name}.vault.azure.net,
-                KeyName: {key-name},
-                KeyVersion: {current-version}
-                },
-            "provisioningState": "Succeeded",
-            "clusterType": "LogAnalytics", 
-            "clusterId": "cluster-id"
-          },
-          "id": "/subscriptions/{subscription-id}/resourcegroups/{resource-group-name}/providers/microsoft.operationalinsights/workspaces/{workspace-name}",
-          "name": "cluster-name",
-          "type": "Microsoft.OperationalInsights/clusters",
-          "location": "region-name"
-        }
-      ]
+      "identity": {
+        "type": "SystemAssigned",
+        "tenantId": "tenant-id",
+        "principalId": "principal-Id"
+      },
+      "properties": {
+         "KeyVaultProperties": {    // Key Vault key identifier
+            KeyVaultUri: "https://{key-vault-name}.vault.azure.net",
+            KeyName: "key-name",
+            KeyVersion: "current-version"
+            },
+        "provisioningState": "Succeeded",
+        "clusterType": "LogAnalytics", 
+        "clusterId": "cluster-id"
+      },
+      "id": "/subscriptions/subscription-id/resourcegroups/resource-group-name/providers/microsoft.operationalinsights/workspaces/workspace-name",
+      "name": "cluster-name",
+      "type": "Microsoft.OperationalInsights/clusters",
+      "location": "region-name"
     }
-    ```
+  ]
+}
+```
 
-- Получение всех кластеров для подписки
+- Получение всех ресурсов *кластера* для подписки
 
-    ```
-    GET https://management.azure.com/subscriptions/{subscription-id}/providers/Microsoft.OperationalInsights/clusters?api-version=2019-08-01-preview
-    ```
+  ```rst
+  GET https://management.azure.com/subscriptions/<subscription-id>/providers/Microsoft.OperationalInsights/clusters?api-version=2019-08-01-preview
+  Authorization: Bearer <token>
+  ```
     
-    *Ответ*
+**Ответ**
     
-    То же, что и ответ от для "все кластеры для группы ресурсов", но в области подписки.
+Тот же ответ, что и для "ресурсов*кластера* для группы ресурсов", но в области подписки.
     
-- Удаление ресурса *кластера* :
+- Удаление ресурса *кластера* . перед удалением ресурса *кластера* необходимо удалить все связанные рабочие области:
 
-> Прежде чем можно будет удалить ресурс *кластера* , необходимо удалить все связанные рабочие области:
->
-> DELETE https://management.azure.com/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.OperationalInsights/clusters/{cluster-name}?api-version=2019-08-01-preview
->
+  ```rst
+  DELETE
+  https://management.azure.com/subscriptions/<subscription-id>/resourceGroups/<resource-group-name>/providers/Microsoft.OperationalInsights/clusters/<cluster-name>?api-version=2019-08-01-preview
+  Authorization: Bearer <token>
+  ```
 
-Ответ
+**Ответ**
 
 200 ОК
+
 
 ## <a name="appendix"></a>Приложение
 
@@ -468,7 +482,7 @@ Log Analytics и Application Insights используют одну и ту же
 2020. Это изменение приведет к внесению данных Application Insights в Log Analytics рабочие области и сделать запросы, аналитические данные и другие улучшения, которые могут быть доступны в процессе настройки CMK в рабочей области, также будут применяться к данным Application Insights.
 
 > [!NOTE]
-> Если вам не нужно развертывать CMK в данных Application Insights до второго квартала CY 2020, рекомендуется ожидать завершения консолидации, так как такие развертывания будут нарушены консолидацией, и вам придется повторно настроить CMK на Рабочая область после нее.
+> Если вам не нужно развертывать CMK для данных Application Insights, мы рекомендуем дождаться завершения консолидации, так как такие развертывания будут нарушены консолидацией, и потребуется повторно настроить CMK после миграции в журнал. Рабочая область "аналитика". Минимум 1 ТБ в день применяется на уровне кластера и до завершения консолидации в течение второго квартала Application Insights и Log Analytics требуются отдельные кластеры.
 
 ## <a name="application-insights-cmk-configuration"></a>Конфигурация Application Insights CMK
 
@@ -484,15 +498,15 @@ Log Analytics и Application Insights используют одну и ту же
 
 Этот ресурс используется в качестве промежуточного подключения между Key Vault и компонентами. После получения подтверждения о том, что ваши подписки были список разрешений, создайте ресурс кластера Log Analytics в регионе, где находятся компоненты. Тип ресурса кластера определяется во время создания, присвоив свойству *clusterType* значение *LogAnalytics*или *ApplicationInsights*. Он должен быть *ApplicationInsights* для Application Insights CMK. Параметр *clusterType* не может быть изменен после настройки.
 
-Создание:
+**Создание**
 
-```json
-PUT https://management.azure.com/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.OperationalInsights/clusters/{cluster-name}?api-version=2019-08-01-preview
+```rst
+PUT https://management.azure.com/subscriptions/<subscription-id>/resourceGroups/<resource-group-name>/providers/Microsoft.OperationalInsights/clusters/<cluster-name>?api-version=2019-08-01-preview
 Authorization: Bearer <token>
 Content-type: application/json
 
 {
-  "location": "region-name",
+  "location": "<region-name>",
   "properties": {
       "clusterType":"ApplicationInsights"
   },
@@ -502,9 +516,9 @@ Content-type: application/json
 }
 ```
 
-Ответ:
+**Ответ**
 
-Удостоверение назначается кластеру во время создания.
+Удостоверение назначается ресурсу *кластера* во время создания.
 
 ```json
 
@@ -512,12 +526,12 @@ Content-type: application/json
   "identity": {
     "type": "SystemAssigned",
     "tenantId": "tenant-id",
-    "principalId": "principle-id" //A GUID that was generated by the managed identity service
+    "principalId": "principle-id"    //A GUID that was generated by the managed identity service
   },
   "properties": {
     "provisioningState": "Succeeded",
-    "clusterType": "ApplicationInsights", //The value is ‘ApplicationInsights’ for Application Insights CMK
-    "clusterId": "cluster-id"   //A GUID that Log Analytics generates for the cluster
+    "clusterType": "ApplicationInsights",    //The value is ‘ApplicationInsights’ for Application Insights CMK
+    "clusterId": "cluster-id"   //A GUID that Log Analytics generates for the cluster - copy it since you need it for Key Vault and components association 
   },
   "id": "/subscriptions/subscription-id/resourceGroups/resource-group-name/providers/Microsoft.OperationalInsights/clusters/cluster-name", //The cluster resource Id
   "name": "cluster-name",
@@ -526,23 +540,23 @@ Content-type: application/json
 }
 ```
 
-### <a name="associate-a-component-to-a-cluster-resource"></a>Связывание компонента с ресурсом кластера
+### <a name="associate-a-component-to-a-cluster-resource"></a>Связывание компонента с ресурсом *кластера*
 
-```json
+```rst
 PUT https://management.azure.com/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.Insights/components/{component-name}?api-version=2015-05-01
 Authorization: Bearer <token>
 Content-type: application/json
 
 {
   "properties": {
-    "clusterDefinitionId": "cluster-id" //The id of the cluster resource
+    "clusterDefinitionId": "cluster-id" //It's the "clusterId" value provided in the respond from the previous step
   },
   "location": "region-name",
   "kind": "component-type",
 }
 ```
 
-Ответ
+**Ответ**
 
 ```json
 {
@@ -553,7 +567,7 @@ Content-type: application/json
   "tags": "",
   "kind": "",
   "properties": {
-    "clusterDefinitionId": "cluster-id" //The id of the cluster resource
+    "clusterDefinitionId": "cluster-id" //The Cluster resource ID that is associated to this component
     "ApplicationId": "",
     "AppId": "",
     "Application_Type": "",

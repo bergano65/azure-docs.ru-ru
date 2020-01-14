@@ -2,19 +2,19 @@
 title: Распространенные проблемы при создании VHD (часто задаваемые вопросы) для Azure Marketplace
 description: Часто задаваемые вопросы о создании виртуального жесткого диска и связанные с ним проблемы.
 services: Azure Marketplace
-author: HannibalSII
+author: MaggiePucciEvans
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: article
 ms.date: 10/02/2018
-ms.author: hascipio
+ms.author: evansma
 ms.reviewer: v-divte; v-miclar
-ms.openlocfilehash: 1d4224d8f1f735ecef3d4551e3032b916e81dc3c
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.openlocfilehash: 152a2f6fda081b2612197cc4848207b336adf8dc
+ms.sourcegitcommit: 014e916305e0225512f040543366711e466a9495
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73826617"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75934262"
 ---
 # <a name="common-issues-during-vhd-creation-faq"></a>Распространенные проблемы при создании виртуального жесткого диска. Вопросы и ответы
 

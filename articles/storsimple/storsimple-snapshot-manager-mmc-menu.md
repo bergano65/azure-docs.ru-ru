@@ -3,7 +3,7 @@ title: Действия меню MMC в StorSimple Snapshot Manager | Докум
 description: Узнайте, как использовать стандартные действия меню консоли управления (MMC) в диспетчере моментальных снимков StorSimple.
 services: storsimple
 documentationcenter: NA
-author: SharS
+author: twooley
 manager: timlt
 editor: ''
 ms.assetid: 78ef81af-0d3a-4802-be54-ad192f9ac8a6
@@ -13,28 +13,28 @@ ms.topic: article
 ms.tgt_pltfrm: NA
 ms.workload: TBD
 ms.date: 06/05/2017
-ms.author: v-sharos
-ms.openlocfilehash: be761f0a2e59878139ae54dba62634a53b172711
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: twooley
+ms.openlocfilehash: ced075395c4f2a51308d5d3b0cbe4c0153a17816
+ms.sourcegitcommit: 014e916305e0225512f040543366711e466a9495
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64715272"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75931470"
 ---
 # <a name="use-the-mmc-menu-actions-in-storsimple-snapshot-manager"></a>Использование действий меню MMC в диспетчере моментальных снимков StorSimple
 
 ## <a name="overview"></a>Обзор
 В диспетчере моментальных снимков StorSimple все меню действия и варианты панели **Действия** включают указанные ниже действия.
 
-* Просмотр
+* Показать
 * Создать окно отсюда 
 * Обновить 
 * Экспорт списка 
-* Help 
+* Справка 
 
 Эти действия доступны в консоли управления (MMC), а не только в диспетчере моментальных снимков StorSimple. В этом учебнике описываются эти действия и объясняется, как использовать каждую из них в диспетчере моментальных снимков StorSimple.
 
-## <a name="view"></a>Просмотр
+## <a name="view"></a>Показать
 Параметр **Вид** позволяет изменить представления панели **Результаты** и окна консоли. 
 
 #### <a name="to-change-the-results-pane-view"></a>Изменение представления панели "Результаты"
@@ -58,7 +58,7 @@ ms.locfileid: "64715272"
     ![Настройка окна консоли](./media/storsimple-snapshot-manager-mmc-menu/HCS_SSM_Customize.png) 
 3. Установите или снимите флажки, чтобы показать или скрыть элементы в окне консоли. Выбрав необходимые параметры, нажмите кнопку **ОК**.
 
-## <a name="new-window-from-here"></a>Новое окно отсюда
+## <a name="new-window-from-here"></a>Создать окно отсюда
 Параметр **Новое окно отсюда** позволяет открыть новое окно консоли.
 
 #### <a name="to-open-a-new-console-window"></a>Открытие нового окна консоли
@@ -91,7 +91,7 @@ ms.locfileid: "64715272"
       
       ![Экспорт списка в виде файла с разделителями-запятыми](./media/storsimple-snapshot-manager-mmc-menu/HCS_SSM_Export_List.png) 
 
-## <a name="help"></a>Help
+## <a name="help"></a>Справка
 В меню **Справка** вы можете просмотреть справку по диспетчеру моментальных снимков StorSimple и MMC, доступную в Интернете.
 
 #### <a name="to-view-available-online-help"></a>Просмотр доступной справки в Интернете

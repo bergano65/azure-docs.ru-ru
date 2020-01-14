@@ -1,14 +1,14 @@
 ---
 title: Настройка Azure Monitor для Prometheus интеграции контейнеров | Документация Майкрософт
-description: В этой статье описывается, как настроить Azure Monitor для агента контейнеров для сбора метрик из Prometheus с помощью кластера службы Kubernetes Azure.
+description: В этой статье описывается настройка Azure Monitor для агента контейнеров для сбора метрик из Prometheus в кластере Kubernetes.
 ms.topic: conceptual
-ms.date: 10/15/2019
-ms.openlocfilehash: f1da2142f287bde83be7cede282bd854ce822d23
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.date: 01/13/2020
+ms.openlocfilehash: b774bf042778ca9118a7bc9f051655b200d87659
+ms.sourcegitcommit: 014e916305e0225512f040543366711e466a9495
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75403520"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75931425"
 ---
 # <a name="configure-scraping-of-prometheus-metrics-with-azure-monitor-for-containers"></a>Настройка брака/отхода метрик Prometheus с Azure Monitor для контейнеров
 
@@ -18,6 +18,45 @@ ms.locfileid: "75403520"
 
 >[!NOTE]
 >Минимальная версия агента, поддерживаемая для брака Prometheus метрик, — ciprod07092019 или более поздней версии, а версия агента, поддерживаемая для записи ошибок конфигурации и агента в `KubeMonAgentEvents` таблице, — ciprod10112019. Дополнительные сведения о версиях агентов и о том, что входит в каждый выпуск, см. в разделе [заметки о выпуске агента](https://github.com/microsoft/Docker-Provider/tree/ci_feature_prod). Чтобы проверить версию агента, на вкладке **узел** выберите узел и в области свойства запишите значение свойства **тег образа агента** .
+
+Отходы метрик Prometheus поддерживаются в кластерах Kubernetes, размещенных на:
+
+- Служба Azure Kubernetes (AKS)
+- Служба "Экземпляры контейнеров Azure"
+- Azure Stack или локально
+- Azure Red Hat OpenShift
+
+>[!NOTE]
+>Для Azure Red Hat OpenShift в пространстве имен *OpenShift-Azure-Logging* создается файл шаблона ConfigMap. Он не настроен на активное отслеживание метрик или сбор данных от агента.
+>
+
+## <a name="azure-red-hat-openshift-prerequisites"></a>Предварительные требования для OpenShift в Azure Red Hat
+
+Прежде чем начать, подтвердите, что вы являетесь членом роли администратора кластера Azure Red Hat OpenShift, чтобы настроить контейнерные параметры агента и Prometheus. Чтобы убедиться, что вы являетесь членом группы *OSA-Customer-администраторы* , выполните следующую команду:
+
+``` bash
+  oc get groups
+```
+
+Результат должен выглядеть так:
+
+``` bash
+NAME                  USERS
+osa-customer-admins   <your-user-account>@<your-tenant-name>.onmicrosoft.com
+```
+
+Если вы являетесь членом группы *"OSA — клиент-Администраторы"* , вы можете получить список `container-azm-ms-agentconfig` ConfigMap с помощью следующей команды:
+
+``` bash
+oc get configmaps container-azm-ms-agentconfig -n openshift-azure-logging
+```
+
+Результат должен выглядеть так:
+
+``` bash
+NAME                           DATA      AGE
+container-azm-ms-agentconfig   4         56m
+```
 
 ### <a name="prometheus-scraping-settings"></a>Параметры отхода Prometheus
 
@@ -53,11 +92,22 @@ ms.locfileid: "75403520"
 
 ## <a name="configure-and-deploy-configmaps"></a>Настройка и развертывание Конфигмапс
 
-Выполните следующие действия, чтобы настроить и развернуть файл конфигурации ConfigMap в кластере.
+Выполните следующие действия, чтобы настроить файл конфигурации ConfigMap для кластеров Kubernetes.
 
 1. [Скачайте](https://github.com/microsoft/OMS-docker/blob/ci_feature_prod/Kubernetes/container-azm-ms-agentconfig.yaml) файл шаблона ConfigMap YAML и сохраните его как Container-АЗМ-MS-ажентконфиг. YAML.
 
-2. Измените файл YAML ConfigMap, дополнив настройки, чтобы забракировать метрики Prometheus.
+   >[!NOTE]
+   >Этот шаг не требуется при работе с Azure Red Hat OpenShift, так как шаблон ConfigMap уже существует в кластере.
+
+2. Измените файл YAML ConfigMap, дополнив настройки, чтобы забракировать метрики Prometheus. Если вы редактируете файл YAML ConfigMap для Azure Red Hat OpenShift, сначала выполните команду `oc edit configmaps container-azm-ms-agentconfig -n openshift-azure-logging`, чтобы открыть файл в текстовом редакторе.
+
+    >[!NOTE]
+    >Для предотвращения выверки в метаданных *Container-АЗМ-MS-ажентконфиг* ConfigMap необходимо добавить следующее примечание `openshift.io/reconcile-protect: "true"`. 
+    >```
+    >metadata:
+    >   annotations:
+    >       openshift.io/reconcile-protect: "true"
+    >```
 
     - Чтобы собираются службы Kubernetes Services на уровне кластера, настройте файл ConfigMap, используя следующий пример.
 
@@ -121,21 +171,35 @@ ms.locfileid: "75403520"
     
           Если вы хотите ограничить мониторинг определенными пространствами имен для модулей Pod с заметками, например, включайте только модули памяти, выделенные для рабочих нагрузок, установите `monitor_kubernetes_pod` в значение `true` в ConfigMap и добавьте фильтр пространства имен `monitor_kubernetes_pods_namespaces` указав пространства имен, из которых следует избавиться. Например `monitor_kubernetes_pods_namespaces = ["default1", "default2", "default3"]`.
 
-3. Создайте ConfigMap, выполнив следующую команду kubectl: `kubectl apply -f <configmap_yaml_file.yaml>`.
+3. Для кластеров, отличных от Azure Red Hat OpenShift, выполните следующую команду kubectl: `kubectl apply -f <configmap_yaml_file.yaml>`.
     
     Пример: `kubectl apply -f container-azm-ms-agentconfig.yaml`. 
-    
-    До вступления в силу изменение конфигурации может занять несколько минут, и все omsagent Pod в кластере будут перезапущены. Перезагрузка является пошаговым перезапуском для всех модулей omsagent Pod, а не всех перезапусков одновременно. После завершения перезагрузки отображается сообщение, похожее на следующее и содержащее результат: `configmap "container-azm-ms-agentconfig" created`.
+
+    Для Azure Red Hat OpenShift сохраните изменения в редакторе.
+
+До вступления в силу изменение конфигурации может занять несколько минут, и все omsagent Pod в кластере будут перезапущены. Перезагрузка является пошаговым перезапуском для всех модулей omsagent Pod, а не всех перезапусков одновременно. После завершения перезагрузки отображается сообщение, похожее на следующее и содержащее результат: `configmap "container-azm-ms-agentconfig" created`.
+
+Вы можете просмотреть обновленный ConfigMap для Azure Red Hat OpenShift, выполнив команду `oc describe configmaps container-azm-ms-agentconfig -n openshift-azure-logging`. 
 
 ## <a name="applying-updated-configmap"></a>Применение обновленных ConfigMap
 
-Если вы уже развернули ConfigMap в кластере и хотите обновить ее с помощью более новой конфигурации, вы можете изменить ранее использовавшийся файл ConfigMap, а затем применить его с помощью той же команды, что и ранее, `kubectl apply -f <configmap_yaml_file.yaml`.
+Если вы уже развернули ConfigMap в кластер и хотите обновить его с помощью более новой конфигурации, вы можете изменить ранее использовавшийся файл ConfigMap, а затем применить те же команды, что и раньше.
+
+Для кластеров Kubernetes, отличных от Azure Red Hat OpenShift, выполните команду `kubectl apply -f <configmap_yaml_file.yaml`. 
+
+Для кластера Azure Red Hat OpenShift выполните команду, `oc edit configmaps container-azm-ms-agentconfig -n openshift-azure-logging`, чтобы открыть файл в редакторе по умолчанию, чтобы изменить и сохранить его.
 
 До вступления в силу изменение конфигурации может занять несколько минут, и все omsagent Pod в кластере будут перезапущены. Перезагрузка является пошаговым перезапуском для всех модулей omsagent Pod, а не всех перезапусков одновременно. После завершения перезагрузки отображается сообщение, похожее на следующее и содержащее результат: `configmap "container-azm-ms-agentconfig" updated`.
 
-## <a name="verify-configuration"></a>Проверка конфигурации 
+## <a name="verify-configuration"></a>Проверка конфигурации
 
-Чтобы убедиться, что конфигурация была успешно применена, выполните следующую команду, чтобы проверить журналы из модуля Pod: `kubectl logs omsagent-fdf58 -n=kube-system`. При наличии ошибок конфигурации из модулей Pod omsagent в выходных данных отобразятся ошибки, аналогичные приведенным ниже.
+Чтобы убедиться, что конфигурация была успешно применена к кластеру, выполните следующую команду, чтобы проверить журналы из модуля Pod: `kubectl logs omsagent-fdf58 -n=kube-system`. 
+
+>[!NOTE]
+>Эта команда неприменима к кластеру Azure Red Hat OpenShift.
+> 
+
+При наличии ошибок конфигурации из модулей Pod omsagent в выходных данных отобразятся ошибки, аналогичные приведенным ниже.
 
 ``` 
 ***************Start Config Processing******************** 
@@ -144,17 +208,24 @@ config::unsupported/missing config schema version - 'v21' , using defaults
 
 Ошибки, связанные с применением изменений конфигурации, также доступны для проверки. Следующие параметры позволяют выполнить дополнительные действия по устранению изменений конфигурации и браку в Prometheus метриках.
 
-- Из журналов Pod агента с помощью одной и той же команды `kubectl logs`. 
+- Из журналов Pod агента с помощью одной и той же команды `kubectl logs` 
+    >[!NOTE]
+    >Эта команда неприменима к кластеру Azure Red Hat OpenShift.
+    > 
 
-- Из активных журналов. В журналах в реальном времени отображаются ошибки, аналогичные приведенным ниже.
+- Из динамических данных (Предварительная версия). В журналах интерактивных данных (Предварительная версия) отображаются ошибки, аналогичные следующим:
 
     ```
     2019-07-08T18:55:00Z E! [inputs.prometheus]: Error in plugin: error making HTTP request to http://invalidurl:1010/metrics: Get http://invalidurl:1010/metrics: dial tcp: lookup invalidurl on 10.0.0.10:53: no such host
     ```
 
-- Из таблицы **кубемонажентевентс** в рабочей области log Analytics. Данные отправляются каждый час с серьезностью *предупреждения* для ошибок конфигурации и серьезности *ошибки* . Если ошибок нет, запись в таблице будет содержать данные со *сведениями об*уровне серьезности, которые не сообщают об ошибках. Свойство **Tags** содержит дополнительные сведения о Pod и идентификаторе контейнера, в которых произошла ошибка, а также первое вхождение, Последнее повторение и количество за последний час.
+- Из таблицы **кубемонажентевентс** в рабочей области log Analytics. Данные отправляются каждый час с серьезностью *предупреждения* для ошибок конфигурации и серьезности *ошибки* . Если ошибок нет, запись в таблице будет содержать данные со *сведениями об*уровне серьезности, которые не сообщают об ошибках. Свойство **Tags** содержит дополнительные сведения о Pod и идентификаторе контейнера, в которых произошла ошибка, а также первое вхождение, Последнее вхождение и количество за последний час.
 
-Ошибки не позволяют omsagent анализировать файл, что приводит к перезапуску и использованию конфигурации по умолчанию. После исправления ошибок в ConfigMap сохраните файл YAML и примените обновленный Конфигмапс, выполнив команду: `kubectl apply -f <configmap_yaml_file.yaml`.
+- Для Azure Red Hat OpenShift просмотрите журналы omsagent, выполнив поиск в таблице **контаинерлог** , чтобы проверить, включено ли ведение журнала OpenShift-Azure-Logging.
+
+Ошибки не позволяют omsagent анализировать файл, что приводит к перезапуску и использованию конфигурации по умолчанию. После исправления ошибок в ConfigMap для кластеров, отличных от Azure Red Hat OpenShift, сохраните файл YAML и примените обновленную Конфигмапс, выполнив команду `kubectl apply -f <configmap_yaml_file.yaml`. 
+
+Для Azure Red Hat OpenShift измените и сохраните обновленный Конфигмапс, выполнив команду: `oc edit configmaps container-azm-ms-agentconfig -n openshift-azure-logging`.
 
 ## <a name="query-prometheus-metrics-data"></a>Запрос данных метрик Prometheus
 

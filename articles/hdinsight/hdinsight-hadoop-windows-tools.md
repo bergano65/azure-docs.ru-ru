@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.date: 12/20/2019
-ms.openlocfilehash: 0fd299ea6ceb9631ff473ec2ac9f37be2f6be215
-ms.sourcegitcommit: f0dfcdd6e9de64d5513adf3dd4fe62b26db15e8b
+ms.openlocfilehash: 3ec50acc693452fe73d929effcea98b12fc5ff8b
+ms.sourcegitcommit: 014e916305e0225512f040543366711e466a9495
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/26/2019
-ms.locfileid: "75495734"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75933933"
 ---
 # <a name="work-in-the-apache-hadoop-ecosystem-on-hdinsight-from-a-windows-pc"></a>Работа в экосистеме Apache Hadoop в HDInsight на компьютере с Windows
 
@@ -58,7 +58,7 @@ Azure PowerShell — это среда сценариев, которая по�
 Visual Studio с пакетом SDK для .NET позволяет управлять кластерами и разрабатывать приложения больших данных. Ниже приведены примеры задач, которые можно выполнять в Visual Studio. Но их также можно выполнять и с помощью других интерфейсов IDE.
 
 При помощи пакета SDK для .NET в Visual Studio можно выполнять следующие задачи:
-* [создавать кластеры и работать в HDInsight из приложения .NET Framework](hdinsight-hadoop-create-linux-clusters-dotnet-sdk.md);
+* [Пакет SDK Azure HDInsight для .NET](https://docs.microsoft.com/dotnet/api/overview/azure/hdinsight?view=azure-dotnet).
 * [выполнять запросы Apache Hive с помощью пакета SDK для .NET](hadoop/apache-hadoop-use-hive-dotnet-sdk.md);
 * [использовать определяемые пользователем функций C# при потоковой передаче Apache Hive и Apache Pig в Apache Hadoop](hadoop/apache-hadoop-hive-pig-udf-dotnet-csharp.md).
 

@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 12/30/2019
 ms.author: mbaldwin
 ms.custom: security-recommendations
-ms.openlocfilehash: 08458777d8a8c5c74ac20a63245135ffaf0a5c04
-ms.sourcegitcommit: 5925df3bcc362c8463b76af3f57c254148ac63e3
+ms.openlocfilehash: 03564effeee36ddb3316d48329ccab8ccfce75b9
+ms.sourcegitcommit: 014e916305e0225512f040543366711e466a9495
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75564118"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75934290"
 ---
 # <a name="security-control-secure-configuration"></a>Управление безопасностью: безопасная конфигурация
 
@@ -27,7 +27,9 @@ ms.locfileid: "75564118"
 
 Используйте политику Azure или центр безопасности Azure, чтобы поддерживать конфигурации безопасности для всех ресурсов Azure.
 
-Как настроить политику Azure и управлять ей: https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage
+Как настроить политику Azure и управлять ей:
+
+https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage
 
 ## <a name="72-establish-secure-operating-system-configurations"></a>7,2: Установка безопасных конфигураций операционной системы
 
@@ -85,7 +87,7 @@ https://docs.microsoft.com/azure/virtual-machines/extensions/dsc-overview
 |--|--|--|
 | 7.5 | 5,3 | Customer |
 
-Если вы используете пользовательские определения политики Azure, используйте Azure Azure DevOps или Azure Repos для безопасного хранения кода и управления им.
+Если вы используете пользовательские определения политики Azure, используйте Azure DevOps или Azure Repos для безопасного хранения кода и управления им.
 
 Как сохранить код в Azure DevOps:
 
@@ -171,11 +173,17 @@ https://docs.microsoft.com/azure/security-center/security-center-container-recom
 
 Используйте Управляемое удостоверение службы в сочетании с Azure Key Vault, чтобы упростить и защитить управление секретами для облачных приложений.
 
-Интеграция с управляемыми удостоверениями Azure: https://docs.microsoft.com/azure/azure-app-configuration/howto-integrate-azure-managed-service-identity
+Как интегрироваться с управляемыми удостоверениями Azure:
 
-Создание Key Vault: https://docs.microsoft.com/azure/key-vault/quick-create-portal
+https://docs.microsoft.com/azure/azure-app-configuration/howto-integrate-azure-managed-service-identity
 
-Как обеспечить проверку подлинности Key Vault с помощью управляемого удостоверения: https://docs.microsoft.com/azure/key-vault/managed-identity
+Создание Key Vault.
+
+https://docs.microsoft.com/azure/key-vault/quick-create-portal
+
+Как обеспечить проверку подлинности Key Vault с помощью управляемого удостоверения:
+
+https://docs.microsoft.com/azure/key-vault/managed-identity
 
 ## <a name="712-manage-identities-securely-and-automatically"></a>7,12: безопасно управляйте удостоверениями и автоматически
 
@@ -185,7 +193,9 @@ https://docs.microsoft.com/azure/security-center/security-center-container-recom
 
 Используйте управляемые удостоверения для предоставления служб Azure с автоматически управляемым удостоверением в Azure AD. Управляемые удостоверения позволяют проходить проверку подлинности в любой службе, поддерживающей проверку подлинности Azure AD, включая Key Vault без каких бы то ни было учетных данных в коде.
 
-Настройка управляемых удостоверений: https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/qs-configure-portal-windows-vm
+Как настроить управляемые удостоверения:
+
+https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/qs-configure-portal-windows-vm
 
 ## <a name="713-eliminate-unintended-credential-exposure"></a>7,13: устранение непреднамеренной раскрытия учетных данных
 
@@ -195,7 +205,9 @@ https://docs.microsoft.com/azure/security-center/security-center-container-recom
 
 Реализуйте средство проверки учетных данных для обнаружения учетных данных в коде. Средство проверки учетных данных также рекомендует перемещать обнаруженные учетные данные в более безопасные расположения, такие как Azure Key Vault. 
 
-Настройка средства проверки учетных данных: https://secdevtools.azurewebsites.net/helpcredscan.html
+Настройка средства проверки учетных данных:
+
+https://secdevtools.azurewebsites.net/helpcredscan.html
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

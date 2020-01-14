@@ -11,19 +11,22 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 01/08/2020
+ms.date: 01/10/2020
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: 9582881626f58ebbbae5648fe5d4b46e14fd5850
-ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
+ms.openlocfilehash: 6117f22b24887e913ed2f8d3a43e80335121636d
+ms.sourcegitcommit: 014e916305e0225512f040543366711e466a9495
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75763336"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75934476"
 ---
 # <a name="list-role-assignments-using-azure-rbac-and-the-azure-portal"></a>Вывод списка назначений ролей с помощью Azure RBAC и портал Azure
 
 [!INCLUDE [Azure RBAC definition list access](../../includes/role-based-access-control-definition-list.md)] этой статье описывается, как вывести список назначений ролей с помощью портал Azure.
+
+> [!NOTE]
+> Если в вашей организации есть функции управления с использованием внешнего источника для поставщика услуг, использующего [Управление делегированными ресурсами Azure](../lighthouse/concepts/azure-delegated-resource-management.md), назначения ролей, предоставленные этим поставщиком услуг, не будут показаны здесь.
 
 ## <a name="list-role-assignments-for-a-user-or-group"></a>Вывод списка назначений ролей для пользователя или группы
 

@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 12/30/2019
 ms.author: mbaldwin
 ms.custom: security-recommendations
-ms.openlocfilehash: 914d1af9793107031af9797cb965420443e80c4a
-ms.sourcegitcommit: 5925df3bcc362c8463b76af3f57c254148ac63e3
+ms.openlocfilehash: 5482495f87e87e5d05d8adca6b053810a62dcb4e
+ms.sourcegitcommit: 014e916305e0225512f040543366711e466a9495
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75564339"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75934520"
 ---
 # <a name="security-control-data-protection"></a>Управление безопасностью: защита данных
 
@@ -117,7 +117,7 @@ https://docs.microsoft.com/azure/information-protection/deployment-roadmap
 
 Используйте Azure AD RBAC для управления доступом к данным и ресурсам. в противном случае используйте специфические методы управления доступом к службам.
 
-Основные сведения об Azure RBAC:
+Общие сведения об Azure RBAC:
 
 https://docs.microsoft.com/azure/role-based-access-control/overview
 
@@ -164,4 +164,3 @@ https://docs.microsoft.com/azure/azure-monitor/platform/alerts-activity-log
 ## <a name="next-steps"></a>Дальнейшие действия
 
 См. следующий контроль безопасности: [Управление уязвимостью](security-control-vulnerability-management.md)
-

@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 12/30/2019
 ms.author: mbaldwin
 ms.custom: security-recommendations
-ms.openlocfilehash: b027a668403f47e9ffb824179ae54b89cded7a0c
-ms.sourcegitcommit: 5925df3bcc362c8463b76af3f57c254148ac63e3
+ms.openlocfilehash: fb3560aa2d3fbf48ab63c4da4d3a8d69cb677209
+ms.sourcegitcommit: 014e916305e0225512f040543366711e466a9495
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75564235"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75934418"
 ---
 # <a name="security-control-incident-response"></a>Контроль безопасности: реагирование на инциденты
 
@@ -65,7 +65,7 @@ https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r2.pdf
 
 https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-84.pdf
 
-## <a name="104-provide-security-incident-contact-details-and-configure-alert-notifications-nbspfor-security-incidents"></a>10,4: укажите контактные данные инцидента безопасности и настройте уведомления об оповещениях &nbsp;для инцидентов безопасности.
+## <a name="104-provide-security-incident-contact-details-and-configure-alert-notifications-for-security-incidents"></a>10,4: укажите контактные данные инцидента безопасности и настройте уведомления о событиях для инцидентов безопасности.
 
 | Идентификатор Azure | Идентификаторы CIS | Ответственность |
 |--|--|--|

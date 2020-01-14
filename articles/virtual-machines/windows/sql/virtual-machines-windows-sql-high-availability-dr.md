@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 06/27/2017
 ms.author: mikeray
-ms.openlocfilehash: ac62ec49803bf55bbe61e08e60b648dd6c268510
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: f58bb534728660b85f7d16910dde7a37914fd571
+ms.sourcegitcommit: 014e916305e0225512f040543366711e466a9495
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75358009"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75933962"
 ---
 # <a name="high-availability-and-disaster-recovery-for-sql-server-in-azure-virtual-machines"></a>Высокий уровень доступности и аварийное восстановление для SQL Server на виртуальных машинах Azure
 
@@ -77,7 +77,7 @@ ms.locfileid: "75358009"
 
 ## <a name="free-dr-replica-in-azure"></a>Бесплатная реплика аварийного восстановления в Azure
 
-При наличии [программы Software Assurance](https://www.microsoft.com/licensing/licensing-programs/software-assurance-default?rtc=1&activetab=software-assurance-default-pivot:primaryr3)можно реализовать планы гибридного аварийного восстановления (Dr) с SQL Server помощью группы доступности Always On или экземпляров отказоустойчивого кластера без дополнительных затрат на лицензирование для экземпляра пассивного восстановления.
+Если у вас есть [Software Assurance](https://www.microsoft.com/licensing/licensing-programs/software-assurance-default?rtc=1&activetab=software-assurance-default-pivot:primaryr3), вы можете реализовать планы гибридного аварийного восстановления (Dr) с SQL Server без дополнительных затрат на лицензирование для экземпляра пассивного восстановления.
 
 На приведенном ниже рисунке программа установки использует SQL Server, выполняющиеся на виртуальной машине Azure, использующей 12 ядер, в качестве реплики аварийного восстановления для локального SQL Serverного развертывания с помощью 12 ядер. В прошлом вам пришлось бы лицензировать 12 ядер SQL Server для локальной среды и развертывания виртуальных машин Azure. Новое преимущество предоставляет преимущества пассивных реплик, выполняемых на виртуальной машине Azure. Теперь вам потребуется только 12 основных ядер SQL Server, работающих в локальной среде, при условии, что условия аварийного восстановления для пассивной реплики на виртуальной машине Azure выполняются.
 

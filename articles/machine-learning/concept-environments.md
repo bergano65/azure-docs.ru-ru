@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.author: trbye
 author: trevorbye
 ms.date: 01/06/2020
-ms.openlocfilehash: ad520c7e6503f28de0bd5538662c223575a078fa
-ms.sourcegitcommit: 2f8ff235b1456ccfd527e07d55149e0c0f0647cc
+ms.openlocfilehash: 3216248943ccc0dba788816cdba38732f9e43e14
+ms.sourcegitcommit: 014e916305e0225512f040543366711e466a9495
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75692736"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75930766"
 ---
 # <a name="what-are-azure-machine-learning-environments"></a>Что такое Машинное обучение Azure среды?
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -44,6 +44,7 @@ ms.locfileid: "75692736"
 * Определение новых `Environment` объектов либо с помощью проверенной среды, либо путем определения собственных зависимостей
 * Использование существующих объектов `Environment` из рабочей области. Это обеспечивает согласованность и воспроизводимость с зависимостями
 * Импорт из существующего определения среды Anaconda.
+* Использование интерфейса командной строки Машинное обучение Azure
 
 Конкретные примеры кода см. [в этой статье](how-to-use-environments.md#create-an-environment) . Среда также легко управляется в рабочей области и включает следующие функциональные возможности:
 

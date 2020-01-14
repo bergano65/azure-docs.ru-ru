@@ -8,12 +8,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 05/14/2018
 ms.author: hrasheed
-ms.openlocfilehash: abfbac552cc5cb4449a75c45d0c1ffdbcf6b770c
-ms.sourcegitcommit: 79496a96e8bd064e951004d474f05e26bada6fa0
+ms.openlocfilehash: 432b8855ffb9542a1e052c8c97b52bcddeb5c824
+ms.sourcegitcommit: 014e916305e0225512f040543366711e466a9495
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67508102"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75934735"
 ---
 # <a name="manage-apache-hadoop-clusters-in-hdinsight-by-using-net-sdk"></a>Управление кластерами Apache Hadoop в HDInsight с помощью пакета SDK для .NET
 
@@ -108,11 +108,8 @@ namespace HDInsightManagement
 
 При запуске этой программы появится запрос.  Если запрос не появится, обратитесь к статье [Создание приложений .NET HDInsight с неинтерактивной проверкой подлинности](hdinsight-create-non-interactive-authentication-dotnet-applications.md).
 
-## <a name="create-clusters"></a>Создание кластеров
 
-Ознакомьтесь со статьей [Создание кластеров под управлением Linux в HDInsight с помощью пакета SDK для .NET](hdinsight-hadoop-create-linux-clusters-dotnet-sdk.md).
-
-## <a name="list-clusters"></a>Получение списка кластеров
+## <a name="list-clusters"></a>список кластеров
 
 В следующем фрагменте кода перечислены кластеры и некоторые свойства:
 
@@ -140,7 +137,7 @@ _hdiManagementClient.Clusters.DeleteAsync("<Resource Group Name>", "<Cluster Nam
 Масштабирование кластера позволяет изменить количество рабочих узлов в кластере, который работает под управлением Azure HDInsight. При этом не требуется повторно создавать кластер.
 
 > [!NOTE]  
-> Поддерживаются только кластеры HDInsight версии 3.1.3 или более поздней. Если вы не знаете версию кластера, см. страницу «Свойства».  См. раздел [Отображение кластеров](hdinsight-administer-use-portal-linux.md#showClusters).
+> Поддерживаются только кластеры HDInsight версии 3.1.3 или более поздней. Если вы не знаете версию кластера, см. страницу «Свойства».  Выполняемые по запросу и самоопределяющиеся связанные службы HDInsight описаны в статьях [Отображение кластеров](hdinsight-administer-use-portal-linux.md#showClusters).
 
 Ниже представлены возможности, связанные с изменением количества узлов данных в кластере каждого типа, поддерживаемого в HDInsight.
 
@@ -229,7 +226,7 @@ _hdiManagementClient.Clusters.ConfigureHttpSettings("<Resource Group Name>, <Clu
 > [!NOTE]  
 > Предоставляя или отменяя доступ, вы сбрасываете имя пользователя и пароль кластера.
 
-Это также можно сделать через портал. См. в разделе [управление Apache кластерами Hadoop в HDInsight с помощью портала Azure](hdinsight-administer-use-portal-linux.md).
+Это также можно сделать через портал. См. раздел [Управление кластерами Apache Hadoop в HDInsight с помощью портал Azure](hdinsight-administer-use-portal-linux.md).
 
 ## <a name="update-http-user-credentials"></a>Обновление учетных данных пользователя HTTP
 
@@ -267,9 +264,9 @@ foreach (var key in results.Configuration.Keys)
 
 ## <a name="upload-data-to-azure-blob-storage"></a>Отправка данных в хранилище BLOB-объектов Azure
 
-См. в разделе [отправка данных в HDInsight][hdinsight-upload-data].
+См. раздел [Отправка данных в HDInsight][hdinsight-upload-data].
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также:
 
 * [Справочная документация к пакету SDK для HDInsight .NET](https://docs.microsoft.com/dotnet/api/overview/azure/hdinsight)
 * [Управление кластерами Apache Hadoop в HDInsight с помощью портала Azure](hdinsight-administer-use-portal-linux.md)

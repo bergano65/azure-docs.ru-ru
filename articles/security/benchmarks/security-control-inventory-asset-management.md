@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 12/30/2019
 ms.author: mbaldwin
 ms.custom: security-recommendations
-ms.openlocfilehash: 95c1834e997caae13e650df5b588df898a1e361d
-ms.sourcegitcommit: 5925df3bcc362c8463b76af3f57c254148ac63e3
+ms.openlocfilehash: 2f24012a69a7673426644a8ded6162cd1021938e
+ms.sourcegitcommit: 014e916305e0225512f040543366711e466a9495
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75564183"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75930061"
 ---
 # <a name="security-control-inventory-and-asset-management"></a>Управление безопасностью: Инвентаризация и управление активами
 
@@ -37,7 +37,7 @@ https://docs.microsoft.com/azure/governance/resource-graph/first-query-portal
 
 https://docs.microsoft.com/powershell/module/az.accounts/get-azsubscription?view=azps-3.0.0
 
-Основные сведения об Azure RBAC:
+Общие сведения об Azure RBAC:
 
 https://docs.microsoft.com/azure/role-based-access-control/overview
 
@@ -193,7 +193,9 @@ https://docs.microsoft.com/azure/role-based-access-control/conditional-access-az
 
 Используйте конфигурации операционной системы или сторонние ресурсы, чтобы ограничить возможность пользователей выполнять сценарии в ресурсах вычислений Azure.
 
-Например, управление выполнением скриптов PowerShell в средах Windows: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/set-executionpolicy?view=powershell-6
+Например, управление выполнением скриптов PowerShell в средах Windows:
+
+https://docs.microsoft.com/powershell/module/microsoft.powershell.security/set-executionpolicy?view=powershell-6
 
 ## <a name="613-physically-or-logically-segregate-high-risk-applications"></a>6,13: физическое или логическое разделение приложений с высоким риском
 

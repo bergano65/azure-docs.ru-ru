@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 12/30/2019
 ms.author: mbaldwin
 ms.custom: security-recommendations
-ms.openlocfilehash: 1354bd2895a8fe6e8aa1f12cd92295c77ca2d4b2
-ms.sourcegitcommit: 5925df3bcc362c8463b76af3f57c254148ac63e3
+ms.openlocfilehash: ceb82bf729470f9996bc9ecc766329a0d1242ec4
+ms.sourcegitcommit: 014e916305e0225512f040543366711e466a9495
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75564170"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75930035"
 ---
 # <a name="security-control-logging-and-monitoring"></a>Управление безопасностью: ведение журнала и мониторинг
 
@@ -79,9 +79,13 @@ https://docs.microsoft.com/azure/azure-monitor/platform/platform-logs-overview
 
 Если ресурсы для вычислений принадлежат корпорации Майкрософт, корпорация Майкрософт несет ответственность за мониторинг ИТ-ресурсов. Если ресурс-источник принадлежит вашей организации, вы отвечаете за его мониторинг. Для мониторинга операционной системы можно использовать центр безопасности Azure. Данные, собираемые центром безопасности из операционной системы, включают в себя тип ОС и версию, ОПЕРАЦИОНную систему (журналы событий Windows), запущенные процессы, имя компьютера, IP-адреса и вошедший в систему пользователь. Агент Log Analytics также собирает файлы аварийного дампа.
 
-Как получить журналы внутреннего узла виртуальной машины Azure с помощью Azure Monitor: https://docs.microsoft.com/azure/azure-monitor/learn/quick-collect-azurevm
+Как получить журналы внутреннего узла виртуальной машины Azure с помощью Azure Monitor:
 
-Общие сведения о сборе данных центра безопасности Azure: https://docs.microsoft.com/azure/security-center/security-center-enable-data-collection
+https://docs.microsoft.com/azure/azure-monitor/learn/quick-collect-azurevm
+
+Общие сведения о сборе данных в центре безопасности Azure:
+
+https://docs.microsoft.com/azure/security-center/security-center-enable-data-collection
 
 ## <a name="25-configure-security-log-storage-retention"></a>2,5: Настройка хранения журнала безопасности
 
@@ -91,7 +95,9 @@ https://docs.microsoft.com/azure/azure-monitor/platform/platform-logs-overview
 
 В Azure Monitor задайте срок хранения Log Analytics рабочей области согласно нормативным требованиям Организации. Используйте учетные записи хранения Azure для долгосрочного и архивного хранения.
 
-Как задать параметры хранения журнала для рабочих областей Log Analytics: https://docs.microsoft.com/azure/azure-monitor/platform/manage-cost-storage#change-the-data-retention-period
+Как задать параметры хранения журнала для рабочих областей Log Analytics:
+
+https://docs.microsoft.com/azure/azure-monitor/platform/manage-cost-storage#change-the-data-retention-period
 
 ## <a name="26-monitor-and-review-logs"></a>2,6: мониторинг и просмотр журналов
 
@@ -107,7 +113,7 @@ https://docs.microsoft.com/azure/azure-monitor/platform/platform-logs-overview
 
 https://docs.microsoft.com/azure/sentinel/quickstart-onboard
 
-Основные сведения о Log Analytics рабочей области:
+Общие сведения о Log Analytics рабочей области:
 
 https://docs.microsoft.com/azure/azure-monitor/log-query/get-started-portal
 
@@ -153,7 +159,7 @@ https://docs.microsoft.com/powershell/module/servicemanagement/azure/set-azurevm
 
 https://docs.microsoft.com/powershell/module/servicemanagement/azure/set-azureserviceantimalwareextension?view=azuresmps-4.0.0
 
-Основные сведения о антивредоносном по Майкрософт:
+Знакомство с антивредоносным по Майкрософт:
 
 https://docs.microsoft.com/azure/security/fundamentals/antimalware
 

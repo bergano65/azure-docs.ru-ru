@@ -1,19 +1,19 @@
 ---
 title: Обработка отзывов о предложениях по проверке приложений Azure в коммерческом магазине
 description: Сведения о том, как с помощью портала коммерческого рынка в центре партнеров Майкрософт работать с отзывом о просмотре приложений Azure для получения списка или продажи в Azure Marketplace, AppSource или с помощью программы поставщика облачных решений (CSP).
-author: qianw211
+author: MaggiePucciEvans
 manager: evansma
-ms.author: v-qiwe
+ms.author: evansma
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 11/11/2019
-ms.openlocfilehash: 7406a6e35929e3df5d342affbcb4b740efa0cab8
-ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
+ms.openlocfilehash: 5dd74a7be95ecf92289f2a144c9c509c71ce935b
+ms.sourcegitcommit: 014e916305e0225512f040543366711e466a9495
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74281224"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75933650"
 ---
 # <a name="handling-review-feedback"></a>Обработка отзывов по результатам проверки
 
@@ -73,6 +73,6 @@ If the incident creation was successful, a confirmation page is displayed. Save 
 
    ![Первый ответ с исправлением и комментарием](./media/first-comment-reply.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Завершив исправление всех критических проблем, описанных в запросе на вытягивание по результатам проверки, необходимо [повторно опубликовать предложение приложения Azure](./create-new-azure-apps-offer.md#publish).

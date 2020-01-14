@@ -2,18 +2,18 @@
 title: Репликация виртуальных машин Azure, работающих Локальные дисковые пространства, с помощью Azure Site Recovery
 description: В этой статье описывается, как реплицировать виртуальные машины Azure, на которых выполняется Локальные дисковые пространства, с помощью Azure Site Recovery.
 services: site-recovery
-author: asgang
+author: carmonmills
 manager: rochakm
 ms.service: site-recovery
 ms.topic: article
 ms.date: 01/29/2019
-ms.author: asgang
-ms.openlocfilehash: 25ac7fa577aa33eda036c0f8544cc5ab03b12cd7
-ms.sourcegitcommit: 44c2a964fb8521f9961928f6f7457ae3ed362694
+ms.author: carmonm
+ms.openlocfilehash: 49a4f59e68a409696480f89ee4b606fbed2b77ed
+ms.sourcegitcommit: 014e916305e0225512f040543366711e466a9495
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73954463"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75929842"
 ---
 # <a name="replicate-azure-vms-running-storage-spaces-direct-to-another-region"></a>Репликация виртуальных машин Azure, работающих Локальные дисковые пространства, в другой регион
 
@@ -23,7 +23,7 @@ ms.locfileid: "73954463"
 >Для кластеров локальных дисковых пространств поддерживаются только отказоустойчивые точки восстановления.
 >
 
-## <a name="introduction"></a>Введение 
+## <a name="introduction"></a>Общие сведения 
 [Локальные дисковые пространства (S2D)](https://docs.microsoft.com/windows-server/storage/storage-spaces/deploy-storage-spaces-direct) — это программно-определяемое хранилище, которое позволяет создавать [гостевые кластеры](https://blogs.msdn.microsoft.com/clustering/2017/02/14/deploying-an-iaas-vm-guest-clusters-in-microsoft-azure) в Azure.  Гостевой кластер в Microsoft Azure — это отказоустойчивый кластер, состоящий из виртуальных машин IaaS. Это позволяет размещать рабочие нагрузки на виртуальных машинах при сбое в гостевых кластерах, обеспечивая более высокий уровень доступности по соглашению об уровне обслуживания для приложений, чем может обеспечить одна виртуальная машина Azure. Это полезно в сценариях, где виртуальная машина размещает критически важные приложения, например, SQL или масштабируемый файловый сервер и т. д.
 
 ## <a name="disaster-recovery-of-azure-virtual-machines-using-storage-spaces-direct"></a>Аварийное восстановление виртуальных машин Azure с помощью локальных дисковых пространств
@@ -95,6 +95,6 @@ ms.locfileid: "73954463"
 4.  Чтобы запустить отработку отказа, выберите точку восстановления.
 
 Дополнительные сведения см. в статье [Отработка отказа в Site Recovery](site-recovery-failover.md).
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о выполнении отработки отказа см. [здесь](https://docs.microsoft.com/azure/site-recovery/azure-to-azure-tutorial-failover-failback).

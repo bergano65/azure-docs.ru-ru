@@ -1,19 +1,19 @@
 ---
 title: Идет перемещение образов виртуальных машин в хранилище управляемых дисков в Azure Marketplace.
 description: Чтобы обеспечить более быстрое, надежное хранение и поддержку новых функций и возможностей Marketplace, мы перемещаем образы виртуальных машин Marketplace в управляемый дисковый накопитель.
-author: qianw211
+author: MaggiePucciEvans
 manager: evansma
-ms.author: v-qiwe
+ms.author: evansma
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 11/22/2019
-ms.openlocfilehash: 81503b08c5c45a671ac7996905f0772dccaf2f5a
-ms.sourcegitcommit: 12d902e78d6617f7e78c062bd9d47564b5ff2208
+ms.openlocfilehash: 5eeb223601a3990ef899d7eea96378a8b2a28eee
+ms.sourcegitcommit: 014e916305e0225512f040543366711e466a9495
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2019
-ms.locfileid: "74456680"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75933529"
 ---
 # <a name="were-moving-virtual-machine-vm-images-on-azure-marketplace-to-managed-disk-storage"></a>Вы перемещаете образы виртуальных машин в Azure Marketplace в управляемый дисковый накопитель
 
@@ -39,11 +39,11 @@ ms.locfileid: "74456680"
 
 ### <a name="do-i-need-to-take-any-action"></a>Нужно ли предпринимать какие – либо действия?
 
-Нет Издателям и потребителям не нужно предпринимать никаких действий.
+Нет. Издателям и потребителям не нужно предпринимать никаких действий.
 
 ### <a name="do-i-have-to-update-my-system-to-call-the-cloud-portal-apis-in-a-different-way-after-they-are-moved-to-managed-disk-storage"></a>Нужно ли мне обновить мою систему, чтобы вызвать API-интерфейсы облачного портала другим способом после их перемещения в хранилище управляемых дисков?
 
-Нет Существующие вызовы API будут продолжать работать.
+Нет. Существующие вызовы API будут продолжать работать.
 
 ### <a name="would-all-my-vm-images-be-moved-to-managed-disk-at-the-same-time"></a>Будут ли все мои образы виртуальной машины перемещены на управляемый диск одновременно?
 
@@ -57,6 +57,6 @@ ms.locfileid: "74456680"
 
 Обновления образов виртуальных машин не могут быть сделаны во время перемещения.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Посетите страницу с [руководством по созданию для издателя виртуальной машины](https://docs.microsoft.com/azure/marketplace/marketplace-virtual-machines) .

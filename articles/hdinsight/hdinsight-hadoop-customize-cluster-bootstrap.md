@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 11/21/2019
-ms.openlocfilehash: baef54fc5c8fd03ea190da2023dcba2e96abb982
-ms.sourcegitcommit: dd0304e3a17ab36e02cf9148d5fe22deaac18118
+ms.openlocfilehash: e641340ac04415ee4a20cda2bc09bbdbef9802a6
+ms.sourcegitcommit: 014e916305e0225512f040543366711e466a9495
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74406281"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75931400"
 ---
 # <a name="customize-hdinsight-clusters-using-bootstrap"></a>Настройка кластеров HDInsight с помощью начальной загрузки
 
@@ -34,7 +34,7 @@ ms.locfileid: "74406281"
 * hbase-site.xml
 * hdfs-site.xml
 * hive-env.xml
-* hive-site.xml
+* Hive-site.xml
 * mapred-site
 * oozie-site.xml
 * oozie-env.xml
@@ -46,7 +46,7 @@ ms.locfileid: "74406281"
 
 Сведения об установке дополнительных компонентов в кластере HDInsight во время создания см. в статье [Настройка кластеров hdinsight с помощью действия сценария (Linux)](hdinsight-hadoop-customize-cluster-linux.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Технические условия
 
 * При использовании PowerShell вам потребуется [модуль AZ](https://docs.microsoft.com/powershell/azure/overview).
 
@@ -108,7 +108,7 @@ $OozieConfigValues = @{ "oozie.service.coord.normal.default.timeout"="150" }  # 
 
 ## <a name="use-net-sdk"></a>Использование пакета SDK для .NET
 
-Ознакомьтесь с разделом [Создание кластеров под управлением Linux в HDInsight с помощью пакета SDK для .NET](hdinsight-hadoop-create-linux-clusters-dotnet-sdk.md#use-bootstrap).
+См. раздел [Azure HDINSIGHT SDK для .NET](https://docs.microsoft.com/dotnet/api/overview/azure/hdinsight?view=azure-dotnet).
 
 ## <a name="use-resource-manager-template"></a>Использование шаблона Resource Manager
 
@@ -131,7 +131,7 @@ $OozieConfigValues = @{ "oozie.service.coord.normal.default.timeout"="150" }  # 
 * [Создание кластеров Apache Hadoop в hdinsight](hdinsight-hadoop-provision-linux-clusters.md) содержит инструкции по созданию кластера HDInsight с помощью других настраиваемых параметров.
 * [Разработка скриптов действия сценария для HDInsight](hdinsight-hadoop-script-actions-linux.md)
 * [Установка и использование Apache Spark в кластерах HDInsight](spark/apache-spark-jupyter-spark-sql-use-portal.md)
-* [Установка и использование Giraph в кластерах HDInsight под управлением Windows](hdinsight-hadoop-giraph-install.md).
+* [Установка и использование Apache Giraph в кластерах HDInsight под управлением Windows](hdinsight-hadoop-giraph-install.md).
 
 ## <a name="appendix-powershell-sample"></a>Приложение. Пример PowerShell
 

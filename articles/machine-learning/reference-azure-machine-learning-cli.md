@@ -11,12 +11,12 @@ ms.author: jordane
 author: jpe316
 ms.date: 11/05/2019
 ms.custom: seodec18
-ms.openlocfilehash: 355640a900411ccedffa587824694343067817be
-ms.sourcegitcommit: ce4a99b493f8cf2d2fd4e29d9ba92f5f942a754c
+ms.openlocfilehash: 5a2acb3a6bd7401de2a5b934f539adbb63c3f129
+ms.sourcegitcommit: 014e916305e0225512f040543366711e466a9495
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/28/2019
-ms.locfileid: "75536321"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75930383"
 ---
 # <a name="use-the-cli-extension-for-azure-machine-learning"></a>Использование расширения CLI для Машинное обучение Azure
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -262,6 +262,65 @@ az extension remove -n azure-cli-ml
     ```
 
     Дополнительные сведения см. в статье [AZ ML Environment download](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/environment?view=azure-cli-latest#ext-azure-cli-ml-az-ml-environment-download).
+
+### <a name="environment-configuration-schema"></a>Схема конфигурации среды
+
+Если вы использовали команду `az ml environment scaffold`, она создает шаблон `azureml_environment.json` файл, который можно изменить и использовать для создания настраиваемых конфигураций среды с помощью интерфейса командной строки. Объект верхнего уровня слабо соответствует классу [`Environment`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.environment(class)?view=azure-ml-py) в пакете SDK для Python. 
+
+```json
+{
+    "name": "testenv",
+    "version": null,
+    "environmentVariables": {
+        "EXAMPLE_ENV_VAR": "EXAMPLE_VALUE"
+    },
+    "python": {
+        "userManagedDependencies": false,
+        "interpreterPath": "python",
+        "condaDependenciesFile": null,
+        "baseCondaEnvironment": null
+    },
+    "docker": {
+        "enabled": false,
+        "baseImage": "mcr.microsoft.com/azureml/base:intelmpi2018.3-ubuntu16.04",
+        "baseDockerfile": null,
+        "sharedVolumes": true,
+        "shmSize": "2g",
+        "arguments": [],
+        "baseImageRegistry": {
+            "address": null,
+            "username": null,
+            "password": null
+        }
+    },
+    "spark": {
+        "repositories": [],
+        "packages": [],
+        "precachePackages": true
+    },
+    "databricks": {
+        "mavenLibraries": [],
+        "pypiLibraries": [],
+        "rcranLibraries": [],
+        "jarLibraries": [],
+        "eggLibraries": []
+    },
+    "inferencingStackVersion": null
+}
+```
+
+В следующей таблице подробно описывается каждое поле верхнего уровня в JSON-файле, его тип и описание. Если тип объекта связан с классом из пакета SDK для Python, между каждым полем JSON и именем общедоступной переменной в классе Python имеется свободное 1:1 совпадений. В некоторых случаях поле может сопоставляться с аргументом конструктора, а не с переменной класса. Например, поле `environmentVariables` сопоставляется с переменной `environment_variables` в классе [`Environment`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.environment(class)?view=azure-ml-py) .
+
+| Поле JSON | Тип | Description |
+|---|---|---|
+| `name` | `string` | Имя среды. Не запускайте имя с помощью **Microsoft** или **AzureML**. |
+| `version` | `string` | Версия среды. |
+| `environmentVariables` | `{string: string}` | Хэш-схема имен и значений переменных среды. |
+| `python` | [`PythonSection`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.environment.pythonsection?view=azure-ml-py) | Объект, определяющий среду и интерпретатор Python для использования в целевом ресурсе вычислений. |
+| `docker` | [`DockerSection`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.environment.dockersection?view=azure-ml-py) | Определяет параметры для настройки образа DOCKER, созданного в спецификациях среды. |
+| `spark` | [`SparkSection`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.environment.sparksection?view=azure-ml-py) | В разделе настраиваются параметры Spark. Он используется только в том случае, если для платформы задано значение PySpark. |
+| `databricks` | [`DatabricksSection`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.databricks.databrickssection?view=azure-ml-py) | Настраивает зависимости библиотеки кирпичей. |
+| `inferencingStackVersion` | `string` | Указывает версию стека, добавленную в образ. Чтобы не допустить добавления стека, оставьте это поле `null`. Допустимое значение: "latest". |
 
 ## <a name="ml-pipeline-management"></a>Управление конвейером ML
 

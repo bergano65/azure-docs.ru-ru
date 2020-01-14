@@ -1,18 +1,18 @@
 ---
 title: Аварийное восстановление для многоуровневых развертываний Dynamics AX с Azure Site Recovery | Документация Майкрософт
 description: В этой статье описано, как настроить аварийное восстановление для Dynamics AX с помощью Azure Site Recovery
-author: asgang
+author: carmonmills
 manager: rochakm
 ms.service: site-recovery
 ms.topic: article
 ms.date: 11/27/2018
-ms.author: asgang
-ms.openlocfilehash: 5b8aaff3a3418177f92c3b54fb3bb3e99f93810e
-ms.sourcegitcommit: 6c2c97445f5d44c5b5974a5beb51a8733b0c2be7
+ms.author: carmonm
+ms.openlocfilehash: 089edd1f408494f59c8f0042b57d2d79c7faffae
+ms.sourcegitcommit: 014e916305e0225512f040543366711e466a9495
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73620751"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75930186"
 ---
 # <a name="set-up-disaster-recovery-for-a-multitier-dynamics-ax-application"></a>Настройка аварийного восстановления для многоуровневого приложения Dynamics AX   
 
@@ -27,7 +27,7 @@ ms.locfileid: "73620751"
 
 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Для реализации аварийного восстановления для приложения Dynamics AX с помощью Site Recovery необходимо выполнить следующие предварительные требования:
 

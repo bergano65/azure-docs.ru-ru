@@ -1,18 +1,18 @@
 ---
 title: Устранение неполадок с агентами Azure Site Recovery | Документация Майкрософт
 description: В статье содержатся сведения о симптомах, причинах и способах устранения сбоев в работе агентов Azure Site Recovery.
-author: asgang
+author: carmonmills
 manager: rochakm
 ms.service: site-recovery
 ms.topic: troubleshooting
 ms.date: 11/27/2018
-ms.author: asgang
-ms.openlocfilehash: 5ea701682c03370cea46f9126ecf78427a776371
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: carmonm
+ms.openlocfilehash: 0de5a9843b8029c1e1926ae296f43fc95b48106c
+ms.sourcegitcommit: 014e916305e0225512f040543366711e466a9495
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61280677"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75930136"
 ---
 # <a name="troubleshoot-issues-with-the-azure-site-recovery-agent"></a>Устранение неполадок с агентом Azure Site Recovery
 
@@ -21,39 +21,39 @@ ms.locfileid: "61280677"
 
 ## <a name="azure-site-recovery-extension-time-out"></a>Время ожидания для расширения Azure Site Recovery  
 
-Сообщение об ошибке: "Время ожидания выполнения задачи истекло из-за ожидания запуска операции расширения."<br>
-Код ошибки: 151076
+Сообщение об ошибке: "Task execution has timed out while tracking for extension operation to be started" (Истекло время ожидания выполнения задачи при отслеживании запуска операции расширения)<br>
+Код ошибки: "151076"
 
  Azure Site Recovery устанавливает расширение на виртуальной машине в рамках задания включения защиты. Любое из указанных ниже условий может помешать активации защиты и привести к сбою задания. Выполните следующие шаги по устранению неполадок, а затем повторите операцию:
 
-**Причина 1. [Агент установлен на виртуальной машине, но не отвечает (для виртуальных машин Windows)](#the-agent-installed-in-the-vm-but-unresponsive-for-windows-vms)**     
-**Причина 2. [Устарел агент, установленный на виртуальной машине (для виртуальных машин Linux)](#the-agent-installed-in-the-vm-is-out-of-date-for-linux-vms)**  
-**Причина 3. [Не удалось обновить или загрузить расширение Site Recovery](#the-site-recovery-extension-fails-to-update-or-load)** .  
+**Причина 1. [Агент установлен на виртуальной машине, но не отвечает (для виртуальных машин Windows)](#the-agent-installed-in-the-vm-but-unresponsive-for-windows-vms)**   .  
+**Причина 2. [Устарел агент, установленный на виртуальной машине (для виртуальных машин Linux)](#the-agent-installed-in-the-vm-is-out-of-date-for-linux-vms)** .  
+**Причина 3. [Не удалось обновить или загрузить расширение Site Recovery](#the-site-recovery-extension-fails-to-update-or-load)** .  
 
-Сообщение об ошибке: "Операция расширения восстановления сайта занимает больше времени, чем ожидалось."<br>
-Код ошибки: 150066<br>
+Сообщение об ошибке: "Previous site recovery extension operation is taking more time than expected" (Предыдущая операция расширения Site Recovery занимает больше времени, чем ожидалось)<br>
+Код ошибки: "150066"<br>
 
-**Причина 1. [Агент установлен на виртуальной машине, но не отвечает (для виртуальных машин Windows)](#the-agent-installed-in-the-vm-but-unresponsive-for-windows-vms)**     
-**Причина 2. [Устарел агент, установленный на виртуальной машине (для виртуальных машин Linux)](#the-agent-installed-in-the-vm-is-out-of-date-for-linux-vms)**  
-**Причина 3. [Неправильное состояние расширения Site Recovery](#the-site-recovery-extension-fails-to-update-or-load)** .  
+**Причина 1. [Агент установлен на виртуальной машине, но не отвечает (для виртуальных машин Windows)](#the-agent-installed-in-the-vm-but-unresponsive-for-windows-vms)**   .  
+**Причина 2. [Устарел агент, установленный на виртуальной машине (для виртуальных машин Linux)](#the-agent-installed-in-the-vm-is-out-of-date-for-linux-vms)** .  
+**Причина 3. [Неправильное состояние расширения Site Recovery](#the-site-recovery-extension-fails-to-update-or-load)** .  
 
 ## <a name="protection-fails-because-the-vm-agent-is-unresponsive"></a>Защита завершается ошибкой, так как агент виртуальной машины не отвечает
 
-Сообщение об ошибке: "Время ожидания выполнения задачи истекло из-за ожидания запуска операции расширения."<br>
-Код ошибки: 151099<br>
+Сообщение об ошибке: "Task execution has timed out while tracking for extension operation to be started" (Истекло время ожидания выполнения задачи при отслеживании запуска операции расширения)<br>
+Код ошибки: "151099"<br>
 
 Эта ошибка может возникать, если гостевой агент Azure на виртуальной машине не находится в состоянии готовности.
 Состояние гостевого агента Azure можно проверить на [портале Azure](https://portal.azure.com/). Перейдите к виртуальной машине, которую хотите защитить, и проверьте состояние в разделе "Виртуальная машина" > "Параметры" > "Свойства" > "Состояние агента". В большинстве случаев агент переходит в состояние готовности после перезагрузки виртуальной машины. Однако если перезагрузка не подходит или не позволяет устранить проблему, выполните указанные ниже действия.
 
-**Причина 1. [Агент установлен на виртуальной машине, но не отвечает (для виртуальных машин Windows)](#the-agent-installed-in-the-vm-but-unresponsive-for-windows-vms)**     
-**Причина 2. [Устарел агент, установленный на виртуальной машине (для виртуальных машин Linux)](#the-agent-installed-in-the-vm-is-out-of-date-for-linux-vms)** .  
+**Причина 1. [Агент установлен на виртуальной машине, но не отвечает (для виртуальных машин Windows)](#the-agent-installed-in-the-vm-but-unresponsive-for-windows-vms)**   .  
+**Причина 2. [Устарел агент, установленный на виртуальной машине (для виртуальных машин Linux)](#the-agent-installed-in-the-vm-is-out-of-date-for-linux-vms)** .  
 
 
-Сообщение об ошибке: "Время ожидания выполнения задачи истекло из-за ожидания запуска операции расширения."<br>
-Код ошибки: 151095<br>
+Сообщение об ошибке: "Task execution has timed out while tracking for extension operation to be started" (Истекло время ожидания выполнения задачи при отслеживании запуска операции расширения)<br>
+Код ошибки: "151095"<br>
 
 Эта ситуация возникает, когда на компьютере Linux используется старая версия агента. Выполните указанный ниже шаг по устранению неполадок.<br>
-  **Причина 1. [Устарел агент, установленный на виртуальной машине (для виртуальных машин Linux)](#the-agent-installed-in-the-vm-is-out-of-date-for-linux-vms)** .  
+  **Причина 1. [Устарел агент, установленный на виртуальной машине (для виртуальных машин Linux)](#the-agent-installed-in-the-vm-is-out-of-date-for-linux-vms)** .  
 ## <a name="causes-and-solutions"></a>Причины и решения
 
 ### <a name="the-agent-installed-in-the-vm-but-unresponsive-for-windows-vms"></a>Агент установлен на виртуальной машине, но не отвечает (для виртуальных машин Windows)

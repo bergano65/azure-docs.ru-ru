@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 08/21/2019
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 3bea04ba077aebe9a52400a1292c5cd27c15b72e
-ms.sourcegitcommit: 5b9287976617f51d7ff9f8693c30f468b47c2141
+ms.openlocfilehash: 8bc6a9c8910c25f5fdb403e7f45c5f567f7c1224
+ms.sourcegitcommit: 014e916305e0225512f040543366711e466a9495
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2019
-ms.locfileid: "74950924"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75930659"
 ---
 # <a name="integrate-rest-api-claims-exchanges-in-your-azure-ad-b2c-user-journey-as-validation-of-user-input"></a>Интеграция обмена утверждениями REST API в путях взаимодействия пользователей Azure AD B2C как проверка входных данных
 
@@ -74,7 +74,7 @@ Azure AD B2C позволяет добавлять собственную биз
     ![Выбор шаблона веб-API в Visual Studio](media/aadb2c-ief-rest-api-netfw/aadb2c-ief-rest-api-netfw-select-web-api.png)
 
 1. Обязательно выберите **Без проверки аутентификации** в параметрах проверки подлинности.
-1. Нажмите кнопку **ОК**, чтобы создать проект.
+1. Чтобы создать проект, щелкните **ОК**.
 
 ## <a name="step-2-prepare-the-rest-api-endpoint"></a>Шаг 2. Подготовка конечной точки REST API
 
@@ -337,7 +337,9 @@ Azure AD B2C позволяет добавлять собственную биз
 
 ## <a name="step-7-upload-the-policy-to-your-tenant"></a>Шаг 7. Отправка политики в клиент
 
-1. На [портале Azure](https://portal.azure.com) переключитесь в [контекст клиента Azure AD B2C](active-directory-b2c-navigate-to-b2c-context.md) и откройте **Azure AD B2C**.
+1. В [портал Azure](https://portal.azure.com)щелкните значок **Каталог + подписка** на панели инструментов портала, а затем выберите каталог, содержащий клиент Azure AD B2C.
+
+1. В портал Azure найдите и выберите **Azure AD B2C**.
 
 1. Выберите **Инфраструктура процедур идентификации**.
 
@@ -358,7 +360,7 @@ Azure AD B2C позволяет добавлять собственную биз
     > [!NOTE]
     > Для использования команды **Запустить сейчас** необходимо, чтобы в клиенте было предварительно зарегистрировано хотя бы одно приложение. Дополнительные сведения о регистрации приложений см. в статье [Azure AD B2C: начало работы](active-directory-b2c-get-started.md) или [Регистрация приложения](active-directory-b2c-app-registration.md).
 
-2. Откройте **B2C_1A_signup_signin**, отправленную вами пользовательскую политику проверяющей стороны, а затем выберите **Запустить сейчас**.
+2. Откройте **B2C_1A_signup_signin**, отправленную вами пользовательскую политику проверяющей стороны, а затем выберите **Run Now** (Запустить сейчас).
 
     ![Страница настраиваемой политики B2C_1A_signup_signin в портал Azure](media/aadb2c-ief-rest-api-netfw/aadb2c-ief-rest-api-netfw-run.png)
 

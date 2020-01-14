@@ -13,20 +13,20 @@ ms.tgt_pltfrm: vm-linux
 ms.topic: article
 ms.date: 09/21/2018
 ms.author: akjosh
-ms.openlocfilehash: 2b69a17c7f9de62187d9dc99f7c1d5c5b74c25ad
-ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
+ms.openlocfilehash: 8a5b54131210d243015b37bf234408fd9d2b4c12
+ms.sourcegitcommit: 014e916305e0225512f040543366711e466a9495
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74073190"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75933611"
 ---
 # <a name="chef-vm-extension-for-linux-and-windows"></a>Расширение Chef виртуальной машины для Linux и Windows
 
 Chef Software — это платформа автоматизации DevOps для Linux и Windows, которая позволяет управлять конфигурациями как физического, так и виртуального серверов. Chef — это расширение, которое включает среду Chef на виртуальной машине.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Технические условия
 
-### <a name="operating-system"></a>операционная система
+### <a name="operating-system"></a>Операционная система
 
 Chef работает во всех [операционных системах, поддерживаемых расширением](https://support.microsoft.com/help/4078134/azure-extension-supported-operating-systems) в Azure.
 
@@ -67,26 +67,26 @@ Chef работает во всех [операционных системах, 
 
 ### <a name="core-property-values"></a>Значения свойств ядра
 
-| имя | Значение и пример | Тип данных
+| Имя | Значение и пример | Тип данных
 | ---- | ---- | ----
 | версия_API | `2017-12-01` | Строка (дата) |
-| publisher | `Chef.Bootstrap.WindowsAzure` | строка |
-| type | `LinuxChefClient` (Linux), `ChefClient` (Windows) | строка |
+| publisher | `Chef.Bootstrap.WindowsAzure` | string |
+| type | `LinuxChefClient` (Linux), `ChefClient` (Windows) | string |
 | typeHandlerVersion | `1210.12` | Строка (двойная) |
 
-### <a name="settings"></a>данных
+### <a name="settings"></a>Настройки
 
-| имя | Значение и пример | Тип данных | Обязательный?
+| Имя | Значение и пример | Тип данных | Обязательно?
 | ---- | ---- | ---- | ----
 | settings/параметры_начальной_загрузки/URL-адрес_сервера_Chef | `https://api.chef.io/organizations/myorg` | Строка (URL-адрес) | Да |
-| settings/параметры_начальной_загрузки/имя_клиента_для_проверки | `myorg-validator` | строка | Да |
-| settings/runlist | `recipe[mycookbook::default]` | строка | Да |
+| settings/параметры_начальной_загрузки/имя_клиента_для_проверки | `myorg-validator` | string | Да |
+| settings/runlist | `recipe[mycookbook::default]` | string | Да |
 
 ### <a name="protected-settings"></a>Защищенные параметры
 
-| имя | Пример | Тип данных | Обязательный?
+| Имя | Пример | Тип данных | Обязательно?
 | ---- | ---- | ---- | ---- |
-| protectedSettings/ключ_проверки | `-----BEGIN RSA PRIVATE KEY-----\nKEYDATA\n-----END RSA PRIVATE KEY-----` | строка | Да |
+| protectedSettings/ключ_проверки | `-----BEGIN RSA PRIVATE KEY-----\nKEYDATA\n-----END RSA PRIVATE KEY-----` | string | Да |
 
 <!--
 ### Linux-specific settings
@@ -152,6 +152,9 @@ C:\Packages\Plugins\Chef.Bootstrap.WindowsAzure.ChefClient\
 
 Дополнительные сведения об устранении неполадок см. в [файле сведений о расширении Chef виртуальной машины](https://github.com/chef-partners/azure-chef-extension).
 
-## <a name="next-steps"></a>Дополнительная информация
+> [!NOTE]
+> Чтобы получить все остальное, непосредственно связанные с Chef, обратитесь в [службу поддержки Chef](https://www.chef.io/support/).
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если в любой момент при изучении этой статьи вам потребуется дополнительная помощь, вы можете обратиться к экспертам по Azure на [форумах MSDN Azure и Stack Overflow](https://azure.microsoft.com/support/forums/). Кроме того, можно зарегистрировать обращение в службу поддержки Azure. Перейдите на [сайт поддержки Azure](https://azure.microsoft.com/support/options/) и щелкните "Получить поддержку". Дополнительные сведения об использовании службы поддержки Azure см. в статье [Часто задаваемые вопросы о поддержке Microsoft Azure](https://azure.microsoft.com/support/faq/).

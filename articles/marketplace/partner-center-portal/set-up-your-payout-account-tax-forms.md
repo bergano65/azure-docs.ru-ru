@@ -3,16 +3,16 @@ Description: Чтобы получить деньги от продаж пред
 title: Настройка учетной записи выплата и налоговых форм | Azure Marketplace
 ms.date: 12/10/2019
 ms.topic: article
-author: qianw211
+author: MaggiePucciEvans
 manager: evansma
-ms.author: v-qiwe
+ms.author: evansma
 ms.service: marketplace
-ms.openlocfilehash: 73ee800a837e7cd201025c93c7e88ad46f7fe256
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.openlocfilehash: a6ef9711d6047a75ca5058f12e95d72a79628e30
+ms.sourcegitcommit: 014e916305e0225512f040543366711e466a9495
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74980222"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75934160"
 ---
 # <a name="set-up-your-payout-account-and-tax-forms"></a>Настройка счета для выплат и налоговых форм
 

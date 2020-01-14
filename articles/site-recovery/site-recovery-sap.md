@@ -1,18 +1,18 @@
 ---
 title: Настройка аварийного восстановления SAP NetWeaver с помощью Azure Site Recovery
 description: В этой статье описывается, как настроить аварийное восстановление для развернутых приложений SAP NetWeaver с помощью Azure Site Recovery.
-author: asgang
+author: carmonmills
 manager: rochakm
 ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 11/27/2018
-ms.author: asgang
-ms.openlocfilehash: 29b3e4af33702c75e92b5e36c5521d9af12b1013
-ms.sourcegitcommit: 85e7fccf814269c9816b540e4539645ddc153e6e
+ms.author: carmonm
+ms.openlocfilehash: 3ae9a92a27da1b736bf9db6dff88660f7d40143b
+ms.sourcegitcommit: 014e916305e0225512f040543366711e466a9495
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74533847"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75934447"
 ---
 # <a name="set-up-disaster-recovery-for-a-multi-tier-sap-netweaver-app-deployment"></a>Настройка аварийного восстановления для многоуровневого развертывания приложения SAP NetWeaver
 
@@ -33,10 +33,10 @@ ms.locfileid: "74533847"
 * [Проектирование сети для аварийного восстановления](site-recovery-azure-to-azure-networking-guidance.md).
 * [Выполнение тестовой отработки отказа в Azure](azure-to-azure-walkthrough-test-failover.md).
 * [Выполнение отработки отказа в Azure](site-recovery-failover.md).
-* [Реплицирование контроллера домена](site-recovery-active-directory.md).
+* [Репликация контроллера домена](site-recovery-active-directory.md).
 * [Репликация SQL Server](site-recovery-sql.md)
 
-## <a name="supported-scenarios"></a>Поддерживаемые сценарии использования.
+## <a name="supported-scenarios"></a>Поддерживаемые сценарии
 С помощью Site Recovery можно реализовать решение аварийного восстановления для приведенных ниже сценариев:
 * Системы SAP, работающие в одном центре обработки данных Azure, реплицируются в другой центр обработки данных Azure (аварийное восстановление из Azure в Azure). Дополнительные сведения см. в статье [Azure to Azure replication architecture](https://aka.ms/asr-a2a-architecture) (Архитектура репликации из Azure в Azure).
 * Системы SAP, выполняемые на локальных физических серверах или серверах VMware, которые реплицируются на сайт аварийного восстановления в центр обработки данных Azure (аварийное восстановление из VMware в Azure). Данному сценарию требуются некоторые дополнительные компоненты. Дополнительные сведения см. в статье [Архитектура репликации из VMware в Azure](https://aka.ms/asr-v2a-architecture).
@@ -95,7 +95,7 @@ Azure Site Recovery можно использовать, чтобы выполн
 
 Ниже приведена рекомендация для аварийного восстановления на каждом уровне, используемом в этом примере. 
 
- **Уровни SAP** | **Рекомендации**
+ **Уровни SAP** | **Рекомендация**
  --- | ---
 **Пул Диспетчера SAP Web** |  Репликация с помощью Site Recovery 
 **Пул серверов приложений SAP** |  Репликация с помощью Site Recovery 

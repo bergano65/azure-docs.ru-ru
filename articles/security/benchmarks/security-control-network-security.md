@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 12/30/2019
 ms.author: mbaldwin
 ms.custom: security-recommendations
-ms.openlocfilehash: d052226470042d374544de0b7e1ced4ca0f48a14
-ms.sourcegitcommit: 5925df3bcc362c8463b76af3f57c254148ac63e3
+ms.openlocfilehash: 376d7c1a9d2fe2ebce857362fd216e2047eb1f7b
+ms.sourcegitcommit: 014e916305e0225512f040543366711e466a9495
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75564157"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75934334"
 ---
 # <a name="security-control-network-security"></a>Управление безопасностью: Сетевая безопасность
 
@@ -27,9 +27,11 @@ ms.locfileid: "75564157"
 
 Убедитесь, что все развертывания подсетей виртуальных сетей имеют группу безопасности сети, применяемую к элементам управления доступом к сети, относящимся к доверенным портам и источникам приложения. Используйте службы Azure с включенной частной ссылкой, разверните службу в виртуальной сети или Подключайтесь в частном порядке с помощью частных конечных точек. Требования к конкретной службе см. в рекомендации по безопасности для этой конкретной службы.
 
-Кроме того, если у вас есть конкретный вариант использования, для реализации брандмауэра Azure необходимо выполнить требования.
+Кроме того, если у вас есть конкретный вариант использования, для реализации брандмауэра Azure можно выполнить требования.
 
-Общие сведения о частной ссылке: https://docs.microsoft.com/azure/private-link/private-link-overview
+Общие сведения о частной ссылке:
+
+https://docs.microsoft.com/azure/private-link/private-link-overview
 
 Создание виртуальной сети.
 
@@ -97,11 +99,11 @@ https://docs.microsoft.com/azure/firewall/tutorial-firewall-deploy-portal
 
 https://docs.microsoft.com/azure/security-center/security-center-alerts-service-layer
 
-Общие сведения о адаптивной защите сети в центре безопасности Azure
+Сведения о адаптивной усиленной защите сети в центре безопасности Azure:
 
 https://docs.microsoft.com/azure/security-center/security-center-adaptive-network-hardening
 
-Общие сведения об управлении доступом к сети в центре безопасности Azure
+Общие сведения об управлении доступом к сети в центре безопасности Azure.
 
 https://docs.microsoft.com/azure/security-center/security-center-just-in-time
 
@@ -113,9 +115,13 @@ https://docs.microsoft.com/azure/security-center/security-center-just-in-time
 
 Запись журналов потоков NSG в учетную запись хранения для создания записей нефиксированного формата. Если требуется для изучения аномальных действий, включите запись пакетов наблюдателя за сетями.
 
-Включение журналов потоков NSG: https://docs.microsoft.com/azure/network-watcher/network-watcher-nsg-flow-logging-portal
+Как включить журналы потоков NSG:
 
-Включение наблюдателя за сетями: https://docs.microsoft.com/azure/network-watcher/network-watcher-create
+https://docs.microsoft.com/azure/network-watcher/network-watcher-nsg-flow-logging-portal
+
+Как включить наблюдатель за сетями:
+
+https://docs.microsoft.com/azure/network-watcher/network-watcher-create
 
 ## <a name="16-deploy-network-based-intrusion-detectionintrusion-prevention-systems-idsips"></a>1,6: развертывание систем обнаружения вторжений на основе сети и предотвращения вторжений (ИДЕНТИФИКАТОРы и IP-адреса)
 
@@ -137,11 +143,17 @@ https://docs.microsoft.com/azure/security-center/security-center-just-in-time
 
 Разверните шлюз приложений Azure для веб-приложений с включенным протоколом HTTPS/SSL для доверенных сертификатов.
 
-Развертывание шлюза приложений: https://docs.microsoft.com/azure/application-gateway/quick-create-portal
+Развертывание шлюза приложений.
 
-Настройка шлюза приложений для использования протокола HTTPS: https://docs.microsoft.com/azure/application-gateway/create-ssl-portal
+https://docs.microsoft.com/azure/application-gateway/quick-create-portal
 
-Основные сведения о балансировке нагрузки уровня 7 с помощью шлюзов веб-приложений Azure: https://docs.microsoft.com/azure/application-gateway/overview
+Как настроить шлюз приложений для использования протокола HTTPS:
+
+https://docs.microsoft.com/azure/application-gateway/create-ssl-portal
+
+Общие сведения о балансировке нагрузки уровня 7 с помощью шлюзов веб-приложений Azure:
+
+https://docs.microsoft.com/azure/application-gateway/overview
 
 ## <a name="18-minimize-complexity-and-administrative-overhead-of-network-security-rules"></a>1,8: сократите сложность и издержки администрирования правил безопасности сети
 
@@ -149,9 +161,11 @@ https://docs.microsoft.com/azure/security-center/security-center-just-in-time
 |--|--|--|
 | 1.8 | 1.5 | Customer |
 
-Используйте теги службы виртуальной сети &nbsp;, чтобы определить элементы управления доступом к сети для групп безопасности сети или брандмауэра Azure. Теги служб можно использовать вместо определенных IP-адресов при создании правил безопасности. Указав имя тега службы (например, ApiManagement) в соответствующем поле источника или назначения правила, можно разрешить или запретить трафик для соответствующей службы. Корпорация Майкрософт управляет префиксами адресов, включенными в тег службы, и автоматически обновляет тег службы при изменении адресов.
+Используйте теги службы виртуальной сети для определения элементов управления доступом к сети для групп безопасности сети или брандмауэра Azure. Теги служб можно использовать вместо определенных IP-адресов при создании правил безопасности. Указав имя тега службы (например, ApiManagement) в соответствующем поле источника или назначения правила, можно разрешить или запретить трафик для соответствующей службы. Корпорация Майкрософт управляет префиксами адресов, включенными в тег службы, и автоматически обновляет тег службы при изменении адресов.
 
-Основные сведения и использование тегов служб: https://docs.microsoft.com/azure/virtual-network/service-tags-overview
+Общие сведения и использование тегов служб:
+
+https://docs.microsoft.com/azure/virtual-network/service-tags-overview
 
 ## <a name="19-maintain-standard-security-configurations-for-network-devices"></a>1,9: поддержание стандартных конфигураций безопасности для сетевых устройств
 
@@ -161,7 +175,7 @@ https://docs.microsoft.com/azure/security-center/security-center-just-in-time
 
 Определение и реализация стандартных конфигураций безопасности для сетевых ресурсов с помощью политики Azure.
 
-Вы также можете использовать схемы Azure для упрощения крупномасштабных развертываний Azure с помощью ключевых артефактов среды пакетов, таких как шаблоны Azure Resource Manager, элементы управления RBAC и политики, в одном определении схемы. Схему можно применить к новым подпискам и средам, а также настроить управление и управление с помощью управления версиями.
+Вы также можете использовать схемы Azure для упрощения крупномасштабных развертываний Azure с помощью ключевых артефактов среды пакетов, таких как шаблоны Azure Resource Manager, элементы управления RBAC и политики, в одном определении схемы. Вы можете применить схему к новым подпискам и точно настраивать управление и управление с помощью управления версиями.
 
 Как настроить политику Azure и управлять ей:
 

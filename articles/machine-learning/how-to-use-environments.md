@@ -10,12 +10,12 @@ ms.service: machine-learning
 ms.subservice: core
 ms.topic: conceptual
 ms.date: 01/06/2020
-ms.openlocfilehash: af6848e85db5d2a557835b063a499e3439557eb6
-ms.sourcegitcommit: 2f8ff235b1456ccfd527e07d55149e0c0f0647cc
+ms.openlocfilehash: 93a70bf0d9189368135b8007e95627fc64064c51
+ms.sourcegitcommit: 014e916305e0225512f040543366711e466a9495
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75690431"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75932188"
 ---
 # <a name="reuse-environments-for-training--deployment-with-azure-machine-learning"></a>Повторное использование сред для обучения & развертывании с Машинное обучение Azure.
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -344,6 +344,34 @@ service = Model.deploy(
 ## <a name="example-notebooks"></a>Примеры записных книжек
 
 В этом [примере Записная книжка](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/training/using-environments) расширяет концепции и методы, продемонстрированные в этой статье.
+
+## <a name="create-and-manage-environments-with-the-cli"></a>Создание сред и управление ими с помощью интерфейса командной строки
+
+[Машинное обучение Azure CLI](reference-azure-machine-learning-cli.md) отражает большую часть функциональных возможностей пакета SDK для Python и может использоваться для создания и управления средой. Следующие команды демонстрируют базовые функциональные возможности.
+
+Следующая команда формирует шаблоны файлов для определения среды по умолчанию в указанном каталоге. Эти файлы представляют собой JSON, которые похожи на функции соответствующего класса в пакете SDK и могут использоваться для создания новых сред с пользовательскими параметрами. 
+
+```azurecli-interactive
+az ml environment scaffold -n myenv -d myenvdir
+```
+
+Выполните следующую команду, чтобы зарегистрировать среду из указанного каталога.
+
+```azurecli-interactive
+az ml environment register -d myenvdir
+```
+
+При выполнении следующей команды будут перечислены все зарегистрированные среды.
+
+```azurecli-interactive
+az ml environment list
+```
+
+Скачайте зарегистрированную среду с помощью следующей команды.
+
+```azurecli-interactive
+az ml environment download -n myenv -d downloaddir
+```
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

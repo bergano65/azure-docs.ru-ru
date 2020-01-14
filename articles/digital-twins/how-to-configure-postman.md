@@ -7,13 +7,13 @@ manager: bertvanhoof
 ms.service: digital-twins
 services: digital-twins
 ms.topic: conceptual
-ms.date: 11/13/2019
-ms.openlocfilehash: 8c358b727a436f1951337005883b5d577119fac1
-ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
+ms.date: 01/10/2020
+ms.openlocfilehash: 3d0220f23c8098222b93473dc6c7aa7a4f2dd791
+ms.sourcegitcommit: 014e916305e0225512f040543366711e466a9495
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75895624"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75933444"
 ---
 # <a name="how-to-configure-postman-for-azure-digital-twins"></a>Настройка Postman для Azure Digital Twins
 
@@ -131,6 +131,12 @@ ms.locfileid: "75895624"
    > * Вы должны выбрать `multipart/mixed` или другой подходящий **Content-Type** для всего запроса.
 
 1. Наконец, выберите **Отправить** , чтобы отправить многокомпонентный запрос HTTP POST. Код состояния `200` или `201` указывает на Успешный запрос. В интерфейсе клиента появится соответствующее ответное сообщение.
+
+1. Проверьте данные запроса HTTP POST, вызвав конечную точку API: 
+
+   ```URL
+   YOUR_MANAGEMENT_API_URL/spaces/blobs?includes=description
+   ```
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

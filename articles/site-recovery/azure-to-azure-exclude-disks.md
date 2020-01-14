@@ -1,18 +1,18 @@
 ---
 title: Исключите диски виртуальной машины Azure из репликации с Azure Site Recovery и Azure PowerShell
 description: Узнайте, как исключить диски виртуальных машин Azure во время Azure Site Recovery с помощью Azure PowerShell.
-author: asgang
+author: carmonmills
 manager: rochakm
 ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 02/18/2019
-ms.author: asgang
-ms.openlocfilehash: beb4ee6fcf6413634d7d728e3f070294e8ce3787
-ms.sourcegitcommit: a22cb7e641c6187315f0c6de9eb3734895d31b9d
+ms.author: carmonm
+ms.openlocfilehash: ead46368db68cf11facfe437b3ea0ef77171d548
+ms.sourcegitcommit: 014e916305e0225512f040543366711e466a9495
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74084970"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75929811"
 ---
 # <a name="exclude-disks-from-powershell-replication-of-azure-vms"></a>Исключение дисков из репликации PowerShell для виртуальных машин Azure
 
@@ -21,12 +21,12 @@ ms.locfileid: "74084970"
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Технические условия
 
-Перед началом работы:
+Перед началом:
 
 - Убедитесь, что вы понимаете [архитектуру аварийного восстановления и компоненты](azure-to-azure-architecture.md).
-- Ознакомьтесь с [требованиями поддержки ](azure-to-azure-support-matrix.md) для всех компонентов.
+- [Ознакомьтесь](azure-to-azure-support-matrix.md) с требованиями поддержки для всех компонентов.
 - Убедитесь, что у вас есть модуль AzureRm PowerShell "AZ". Сведения об установке или обновлении PowerShell см. в разделе [Установка модуля Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-az-ps).
 - Убедитесь, что хранилище служб восстановления и защищенные виртуальные машины созданы по крайней мере один раз. Если вы еще не сделали этого, выполните процедуру [настройки аварийного восстановления для виртуальных машин Azure с помощью Azure PowerShell](azure-to-azure-powershell.md).
 - Если вы ищете сведения о добавлении дисков на виртуальную машину Azure, для которой включена репликация, [Ознакомьтесь с этой статьей](azure-to-azure-enable-replication-added-disk.md).
@@ -136,6 +136,6 @@ $TempASRJob = New-ASRReplicationProtectedItem -AzureToAzure -AzureVmId $VM.Id -N
 
 После завершения начальной репликации репликация переходит на фазу разностной синхронизации. На этом этапе виртуальная машина защищена. Выберите защищенную виртуальную машину, чтобы проверить, не исключены ли какие либо диски.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о [выполнении тестовой отработки отказа](site-recovery-test-failover-to-azure.md).

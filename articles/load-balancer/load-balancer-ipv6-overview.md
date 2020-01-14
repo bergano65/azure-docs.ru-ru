@@ -13,17 +13,20 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 08/24/2018
 ms.author: allensu
-ms.openlocfilehash: 4f4baea1c293a1707d87780044a21ff675cb7f98
-ms.sourcegitcommit: 57eb9acf6507d746289efa317a1a5210bd32ca2c
+ms.openlocfilehash: 6bc7f45d84d525156a3d25bdceef4d1012844afa
+ms.sourcegitcommit: 014e916305e0225512f040543366711e466a9495
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2019
-ms.locfileid: "74666211"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75931988"
 ---
 # <a name="overview-of-ipv6-for-azure-load-balancer"></a>Общие сведения о поддержке IPv6 для Azure Load Balancer
 
 
 >[!NOTE] 
+>Это содержимое заменено [IPv6 для виртуальной сети Azure](https://docs.microsoft.com/azure/virtual-network/ipv6-overview). Azure рекомендует использовать новые развертывания IPv6 для виртуальных сетей Azure.
+
+>[!NOTE]
 >Azure Load Balancer поддерживает два типа: категории "Базовый" и "Стандартный". В этой статье рассматривается Azure Load Balancer категории "Базовый". См. дополнительные сведения в статье [Обзор Azure Load Balancer уровня "Стандартный" (предварительная версия)](load-balancer-standard-overview.md).
 
 Базовые подсистемы балансировки нагрузки уровня "базовый", доступные в Интернете, можно развернуть с помощью IPv6-адреса. Помимо подключения по протоколу IPv4 это дает следующие возможности:
@@ -37,7 +40,7 @@ ms.locfileid: "74666211"
 
 После развертывания Интернет-клиент с поддержкой IPv4 или IPv6 может взаимодействовать с общедоступными IPv4 или IPv6-адресами (или именами узлов) балансировщика нагрузки Azure Load Balancer для Интернета. Балансировщик нагрузки маршрутизирует пакеты IPv6 на частные IPv6-адреса виртуальных машин с помощью преобразования сетевых адресов (NAT). Интернет-клиент с поддержкой IPv6 не может напрямую взаимодействовать с IPv6-адресами виртуальных машин.
 
-## <a name="features"></a>Компоненты
+## <a name="features"></a>Возможности
 
 Встроенная поддержка IPv6 для виртуальных машин, развернутых с помощью Azure Resource Manager, предоставляет следующие возможности:
 
