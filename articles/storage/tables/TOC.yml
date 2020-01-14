@@ -75,7 +75,7 @@
       href: table-storage-design-modeling.md
     - name: Шаблоны для разработки таблиц
       href: table-storage-design-patterns.md
-- name: Практические руководства
+- name: Практическое руководство
   items:
     - name: Создание учетной записи хранения
       displayName: 'resource manager, resource manager template, template, ARM'
@@ -83,11 +83,49 @@
       maintainContext: true
     - name: Обновление учетной записи хранения
       href: ../common/storage-account-upgrade.md?toc=%2fazure%2fstorage%2ftables%2ftoc.json
-    - name: Просмотр ключей учетной записи и управление ими
-      href: ../common/storage-account-keys-manage.md?toc=%2fazure%2fstorage%2ftables%2ftoc.json
-    - name: Как использовать эмулятор хранилища
+    - name: Использование эмулятора хранилища
       href: /azure/storage/common/storage-use-emulator?toc=%2fazure%2fstorage%2ftables%2ftoc.json
       maintainContext: true
+    - name: Защита данных таблицы
+      items:
+        - name: Авторизация доступа к данным таблицы
+          items:
+            - name: Просмотр ключей учетной записи и управление ими
+              href: ../common/storage-account-keys-manage.md?toc=%2fazure%2fstorage%2ftables%2ftoc.json
+            - name: Настройка строк подключения
+              href: ../common/storage-configure-connection-string.md?toc=%2fazure%2fstorage%2ftables%2ftoc.json
+            - name: Использование REST API службы хранилища Azure
+              href: ../common/storage-rest-api-auth.md?toc=%2fazure%2fstorage%2ftables%2ftoc.json
+        - name: Управление шифрованием службы хранилища Azure
+          items:
+            - name: 'Создание учетной записи, поддерживающей ключи, управляемые клиентом'
+              href: ../common/account-encryption-key-create.md?toc=%2fazure%2fstorage%2ftables%2ftoc.json
+            - name: 'Настройка ключей, управляемых клиентом'
+              items:
+                - name: Портал
+                  href: ../common/storage-encryption-keys-portal.md?toc=%2fazure%2fstorage%2ftables%2ftoc.json
+                - name: PowerShell
+                  href: ../common/storage-encryption-keys-powershell.md?toc=%2fazure%2fstorage%2ftables%2ftoc.json
+                - name: Azure CLI
+                  href: ../common/storage-encryption-keys-cli.md?toc=%2fazure%2fstorage%2ftables%2ftoc.json
+            - name: Проверка модели ключа шифрования для учетной записи
+              href: ../common/storage-encryption-key-model-get.md?toc=%2fazure%2fstorage%2ftables%2ftoc.json
+        - name: Настройка шифрования на стороне клиента
+          items:
+            - name: .NET
+              href: ../common/storage-client-side-encryption.md?toc=%2fazure%2fstorage%2ftables%2ftoc.json
+            - name: Java
+              href: ../common/storage-client-side-encryption-java.md?toc=%2fazure%2fstorage%2ftables%2ftoc.json
+            - name: Python
+              href: ../common/storage-client-side-encryption-python.md?toc=%2fazure%2fstorage%2ftables%2ftoc.json
+        - name: Настройка безопасности сети
+          items:
+            - name: Настройка брандмауэров и виртуальных сетей
+              href: ../common/storage-network-security.md?toc=%2fazure%2fstorage%2ftables%2ftoc.json
+            - name: Требование безопасной передачи
+              href: ../common/storage-require-secure-transfer.md?toc=%2fazure%2fstorage%2ftables%2ftoc.json
+            - name: Включение протокола TLS
+              href: ../common/storage-security-tls.md?toc=%2fazure%2fstorage%2ftables%2ftoc.json
     - name: Передача данных
       items:
         - name: AzCopy (версия 10)

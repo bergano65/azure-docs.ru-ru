@@ -63,7 +63,7 @@
           href: security-center-alerts-data-services.md
         - name: Обнаружение угроз для уровней служб Azure
           href: security-center-alerts-service-layer.md
-        - name: Обнаружение угроз для Azure WAF и Защиты от атак DDoS Azure
+        - name: Оповещения об обнаружении угроз от Azure WAF и Защиты от атак DDoS Azure
           href: security-center-alerts-integration.md
         - name: Корреляция интеллектуальных оповещений в облаке (инциденты)
           href: security-center-alerts-cloud-smart.md

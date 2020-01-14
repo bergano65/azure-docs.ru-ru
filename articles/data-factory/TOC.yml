@@ -617,6 +617,8 @@
           href: solution-template-copy-new-files-lastmodifieddate.md
         - name: Массовое копирование из базы данных
           href: solution-template-bulk-copy-with-control-table.md
+        - name: Массовое копирование из файлов в базу данных
+          href: solution-template-bulk-copy-from-files-to-database.md
         - name: Разностное копирование из базы данных
           href: solution-template-delta-copy-with-control-table.md
         - name: "Миграция данных из Amazon\_S3 в службу хранилища Azure"
