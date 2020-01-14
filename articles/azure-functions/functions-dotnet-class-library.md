@@ -3,12 +3,12 @@ title: Справочник разработчика C# по функциям Az
 description: Узнайте, как разрабатывать Функции Azure с помощью C#.
 ms.topic: reference
 ms.date: 09/12/2018
-ms.openlocfilehash: f412e5ea358fe7b97476802f432616c37b05dbd9
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.openlocfilehash: 89b3ae927b14454ac3f58fb510626e315842240f
+ms.sourcegitcommit: f34165bdfd27982bdae836d79b7290831a518f12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74975488"
+ms.lasthandoff: 01/13/2020
+ms.locfileid: "75921044"
 ---
 # <a name="azure-functions-c-developer-reference"></a>Справочник разработчика C# по функциям Azure
 
@@ -136,7 +136,7 @@ public static class BindingExpressionsExample
 
 Процесс сборки создает файл *function.json* в папке функции в папке сборки. Как уже говорилось, этот файл не предназначен для непосредственного редактирования. Невозможно изменить конфигурацию привязки или отключить функцию путем редактирования этого файла. 
 
-Назначение этого файла — предоставить сведения контроллеру масштаба для [принятия решений о масштабировании плана потребления](functions-scale.md#how-the-consumption-and-premium-plans-work). По этой причине файл содержит только сведения о триггерах, но не о входных или выходных привязках.
+Цель этого файла — предоставить сведения контроллеру масштабирования, который будет использоваться для [принятия решений о масштабировании в плане потребления](functions-scale.md#how-the-consumption-and-premium-plans-work). По этой причине файл содержит только сведения о триггерах, но не о входных или выходных привязках.
 
 Создаваемый файл *function.json* содержит свойство `configurationSource`, которое указывает среде выполнения использовать атрибуты .NET для привязок, вместо конфигурации *function.json*. Ниже приведен пример:
 

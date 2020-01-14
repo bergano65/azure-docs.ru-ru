@@ -1,14 +1,14 @@
 ---
 title: Краткое описание примера схемы рабочей нагрузки ASE или SQL на основе ISO 27001
 description: Обзор и описание архитектуры примера схемы рабочей нагрузки Среды службы приложений или Базы данных SQL на основе ISO 27001.
-ms.date: 11/18/2019
+ms.date: 01/13/2020
 ms.topic: sample
-ms.openlocfilehash: 749304f332bc5c65a9a1cd18aae3131f024b4f53
-ms.sourcegitcommit: a678f00c020f50efa9178392cd0f1ac34a86b767
+ms.openlocfilehash: d77029b93b1e77bdba85c5dd5608cbdc5d6543a5
+ms.sourcegitcommit: f34165bdfd27982bdae836d79b7290831a518f12
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74546741"
+ms.lasthandoff: 01/13/2020
+ms.locfileid: "75920770"
 ---
 # <a name="overview-of-the-iso-27001-app-service-environmentsql-database-workload-blueprint-sample"></a>Обзор примера схемы рабочей нагрузки Среды службы приложений или Базы данных SQL на основе ISO 27001
 
@@ -20,7 +20,7 @@ ms.locfileid: "74546741"
 > [!IMPORTANT]
 > Этот пример зависит от инфраструктуры, развертываемой с помощью примера схемы [ISO 27001: общие службы](../iso27001-shared/index.md), который нужно развернуть первым.
 
-## <a name="architecture"></a>Архитектура
+## <a name="architecture"></a>Architecture
 
 Пример схемы рабочей нагрузки Среды службы приложений или Базы данных SQL на основе ISO 27001 позволяет развернуть платформу в качестве веб-среды на основе службы. В этой среде можно размещать несколько веб-приложений, веб-интерфейсов API и экземпляров Базы данных SQL в соответствии со стандартами ISO 27001. Этот пример схемы основан на примере схемы [ISO 27001: общие службы](../iso27001-shared/index.md).
 

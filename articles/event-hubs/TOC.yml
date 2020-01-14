@@ -81,7 +81,7 @@
       items:
         - name: Геоизбыточное аварийное восстановление и георепликация
           href: event-hubs-geo-dr.md
-    - name: Безопасность
+    - name: безопасность
       items:
         - name: Авторизация
           items:
@@ -106,7 +106,7 @@
     - name: "Руководство по использованию протокола AMQP\_1.0"
       href: ../service-bus-messaging/service-bus-amqp-protocol-guide.md
       maintainContext: true
-- name: Руководства
+- name: Практические руководства
   items:
     - name: Разработка
       items:
@@ -164,15 +164,15 @@
           href: event-hubs-service-endpoints.md
         - name: Обеспечение интеграции виртуальных сетей и брандмауэров с пространством имен Центров событий
           href: event-hubs-tutorial-virtual-networks-firewalls.md
-        - name: Настройка управляемых пользователем ключей для шифрования неактивных данных (предварительная версия)
+        - name: Настройка управляемых пользователем ключей для шифрования неактивных данных
           href: configure-customer-managed-key.md
-    - name: Устранение неполадок
+    - name: Диагностика
       items:
         - name: Руководство по устранению неполадок
           href: event-hubs-messaging-exceptions.md
         - name: Исключения Resource Manager
           href: resource-manager-exceptions.md
-- name: Справочные материалы
+- name: Справочник
   items:
     - name: Java
       items:
@@ -204,7 +204,7 @@
   items:
     - name: Развитие навыков с помощью Microsoft Learn
       href: /learn/browse/?products=azure-event-hubs
-    - name: Вопросы и ответы
+    - name: ВОПРОСЫ И ОТВЕТЫ
       href: event-hubs-faq.md
     - name: Стратегия развития Azure
       href: 'https://azure.microsoft.com/roadmap/?category=iot'

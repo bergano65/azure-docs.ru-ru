@@ -1,5 +1,5 @@
 ---
-title: Рабочие процессы Apache Oozie & Корпоративная безопасность — Azure HDInsight
+title: Apache Oozie workflows & Enterprise Security - Azure HDInsight
 description: Защита рабочих процессов Apache Oozie с помощью Корпоративного пакета безопасности для Azure HDInsight Узнайте, как определить рабочий процесс и отправить задание для Oozie.
 author: omidm1
 ms.author: omidm
@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: hdinsightactive,seodec18
 ms.date: 12/09/2019
-ms.openlocfilehash: 125450394a829667d45479e6e0b7844a0357f009
-ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
+ms.openlocfilehash: ecc4d5053ef6d9194f09b8a5aa6ba1528f9d94fa
+ms.sourcegitcommit: f34165bdfd27982bdae836d79b7290831a518f12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75750015"
+ms.lasthandoff: 01/13/2020
+ms.locfileid: "75920717"
 ---
 # <a name="run-apache-oozie-in-hdinsight-hadoop-clusters-with-enterprise-security-package"></a>Запуск Apache Oozie в кластерах Hadoop HDInsight с Корпоративным пакетом безопасности
 
@@ -31,7 +31,7 @@ Apache Oozie — это система рабочих процессов и ко
 Кластер Azure HDInsight Hadoop с Корпоративным пакетом безопасности (ESP). Ознакомьтесь со статьей [Настройка кластера HDInsight с корпоративным пакетом безопасности с помощью доменных служб Azure Active Directory](./apache-domain-joined-configure-using-azure-adds.md).
 
 > [!NOTE]  
-> Подробные инструкции по использованию Oozie в кластерах, отличных от ESP, см. [в статье Использование рабочих процессов Apache Oozie в Azure HDInsight под управлением Linux](../hdinsight-use-oozie-linux-mac.md).
+> For detailed instructions on how to use Oozie on non-ESP clusters, see [Use Apache Oozie workflows in Linux-based Azure HDInsight](../hdinsight-use-oozie-linux-mac.md).
 
 ## <a name="connect-to-an-esp-cluster"></a>Подключение к кластеру ESP
 
@@ -214,39 +214,21 @@ Apache Oozie — это система рабочих процессов и ко
 
 2. Открыв редактор nano, используйте следующий код XML в качестве содержимого файла:
 
-<<<<<<< HEAD
    ```bash
-       nameNode=adl://home
-       jobTracker=headnodehost:8050
-       queueName=default
-       examplesRoot=examples
-       oozie.wf.application.path=${nameNode}/user/[domainuser]/examples/apps/map-reduce/workflow.xml
-       hiveScript1=${nameNode}/user/${user.name}/countrowshive1.hql
-       hiveScript2=${nameNode}/user/${user.name}/countrowshive2.hql
-       oozie.use.system.libpath=true
-       user.name=[domainuser]
-       jdbcPrincipal=hive/<active-headnode-name>.<Domain>.com@<Domain>.COM
-       jdbcURL=[jdbcurlvalue]
-       hiveOutputDirectory1=${nameNode}/user/${user.name}/hiveresult1
-       hiveOutputDirectory2=${nameNode}/user/${user.name}/hiveresult2
+   nameNode=adl://home
+   jobTracker=headnodehost:8050
+   queueName=default
+   examplesRoot=examples
+   oozie.wf.application.path=${nameNode}/user/[domainuser]/examples/apps/map-reduce/workflow.xml
+   hiveScript1=${nameNode}/user/${user.name}/countrowshive1.hql
+   hiveScript2=${nameNode}/user/${user.name}/countrowshive2.hql
+   oozie.use.system.libpath=true
+   user.name=[domainuser]
+   jdbcPrincipal=hive/<active-headnode-name>.<Domain>.com@<Domain>.COM
+   jdbcURL=[jdbcurlvalue]
+   hiveOutputDirectory1=${nameNode}/user/${user.name}/hiveresult1
+   hiveOutputDirectory2=${nameNode}/user/${user.name}/hiveresult2
    ```
-=======
-    ```bash
-    nameNode=adl://home
-    jobTracker=headnodehost:8050
-    queueName=default
-    examplesRoot=examples
-    oozie.wf.application.path=${nameNode}/user/[domainuser]/examples/apps/map-reduce/workflow.xml
-    hiveScript1=${nameNode}/user/${user.name}/countrowshive1.hql
-    hiveScript2=${nameNode}/user/${user.name}/countrowshive2.hql
-    oozie.use.system.libpath=true
-    user.name=[domainuser]
-    jdbcPrincipal=hive/hn0-<ClusterShortName>.<Domain>.com@<Domain>.COM
-    jdbcURL=[jdbcurlvalue]
-    hiveOutputDirectory1=${nameNode}/user/${user.name}/hiveresult1
-    hiveOutputDirectory2=${nameNode}/user/${user.name}/hiveresult2
-    ```
->>>>>>> 0650d78429b6d1b43cddf90fc713eb4050d71eef
 
    - Используйте URI `adl://home` для свойства `nameNode`, если в качестве основного хранилища кластера используется Azure Data Lake Storage 1-го поколения. Если вы используете хранилище BLOB-объектов Azure, измените его на `wasb://home`. Если вы используете Azure Data Lake Storage 2-го поколения, измените его на `abfs://home`.
    - Замените `domainuser` на свое имя пользователя для домена.  

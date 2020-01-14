@@ -7,13 +7,13 @@ author: HeidiSteen
 ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
-ms.date: 01/07/2020
-ms.openlocfilehash: 2627e4be20d80251e3753e46624c58a0c6244aba
-ms.sourcegitcommit: 12a26f6682bfd1e264268b5d866547358728cd9a
+ms.date: 01/13/2020
+ms.openlocfilehash: e115316daf3673d9ad854e7ccd6d5256d729b5af
+ms.sourcegitcommit: f34165bdfd27982bdae836d79b7290831a518f12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75863093"
+ms.lasthandoff: 01/13/2020
+ms.locfileid: "75921015"
 ---
 # <a name="whats-new-in-azure-cognitive-search"></a>Новые возможности Azure Когнитивный поиск
 
@@ -33,7 +33,11 @@ ms.locfileid: "75863093"
 
 + [Ключи шифрования, управляемые клиентом](search-security-manage-encryption-keys.md) , теперь общедоступны. Если вы используете функцию RESTFUL, доступ к этой функции можно получить с помощью `api-version=2019-05-06`. Для управляемого кода правильный пакет по-прежнему является [пакетом SDK для .NET версии 8,0-Preview](search-dotnet-sdk-migration-version-9.md) , хотя эта функция находится в предварительной версии. 
 
-+ *Доступ к ограниченному IP-адресу и закрытой конечной точке (Предварительная версия)* в конечной точке службы поиска теперь доступен в **API-Version = 2019 – 10 01-Preview**. Вы можете настроить безопасную конечную точку с помощью новых свойств **ипруле** и **нетворкрулесет** в REST API управления [созданием или обновлением](https://docs.microsoft.com/rest/api/searchmanagement/services/createorupdate) . Дополнительные сведения о версиях API и региональных доступности см. [в разделе использование REST API управления](https://docs.microsoft.com/rest/api/searchmanagement/search-howto-management-rest-api).
++ Закрытый доступ к службе поиска доступен в двух механизмах:
+
+  + Для создания службы можно ограничить доступ к определенным IP-адресам с помощью `api-version=2019-10-01-Preview` REST API управления. API предварительной версии содержит новые свойства **ипруле** и **Нетворкрулесет** в [API CreateOrUpdate](https://docs.microsoft.com/rest/api/searchmanagement/services/createorupdate). Эта предварительная версия функции доступна в выбранных регионах. Дополнительные сведения см. [в разделе использование REST API управления](https://docs.microsoft.com/rest/api/searchmanagement/search-howto-management-rest-api).
+
+  + В настоящее время в предварительной версии с ограниченным доступом можно подготавливать службу поиска Azure, которая поддерживает частные конечные точки Azure для подключений клиентов в той же виртуальной сети. Дополнительные сведения см. в статье [Создание частной конечной точки для безопасного подключения](service-create-private-endpoint.md).
 
 ### <a name="december-2019"></a>Декабрь 2019 г.
 

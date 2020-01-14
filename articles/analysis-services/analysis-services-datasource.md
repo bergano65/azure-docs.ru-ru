@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 12/02/2019
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: b08a124ade6e2db8ca27ef61c7f5a6b3fe839885
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 4a99bfe8d8235400f9122423aa4592fc6898abc1
+ms.sourcegitcommit: f34165bdfd27982bdae836d79b7290831a518f12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75442763"
+ms.lasthandoff: 01/13/2020
+ms.locfileid: "75922289"
 ---
 # <a name="data-sources-supported-in-azure-analysis-services"></a>Источники данных, поддерживаемые в службах Azure Analysis Services
 
@@ -120,7 +120,9 @@ ms.locfileid: "75442763"
 
 ## <a name="oauth-credentials"></a>Учетные данные OAuth
 
-Для табличных моделей на уровне совместимости 1400 и выше, база данных SQL Azure, хранилище данных SQL Azure, Dynamics 365 и список SharePoint поддерживают учетные данные OAuth. Azure Analysis Services управляет обновлением маркера для источников данных OAuth во избежание истечения времени ожидания для длительных операций обновления. Чтобы создать допустимые токены, задайте учетные данные с помощью SSMS.
+Для табличных моделей на уровне совместимости 1400 и выше с использованием режима в памяти, базы данных SQL Azure, хранилища данных SQL Azure, Dynamics 365 и списка SharePoint поддерживаются учетные данные OAuth. Azure Analysis Services управляет обновлением маркера для источников данных OAuth во избежание истечения времени ожидания для длительных операций обновления. Чтобы создать допустимые токены, задайте учетные данные с помощью SSMS.
+
+Режим прямого запроса не поддерживается с учетными данными OAuth.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 [Локальный шлюз](analysis-services-gateway.md)   

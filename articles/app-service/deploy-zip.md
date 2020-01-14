@@ -5,12 +5,12 @@ ms.topic: article
 ms.date: 08/12/2019
 ms.reviewer: sisirap
 ms.custom: seodec18
-ms.openlocfilehash: 3569c6a066b09daa0c24975b9de840a844b6ba2c
-ms.sourcegitcommit: 265f1d6f3f4703daa8d0fc8a85cbd8acf0a17d30
+ms.openlocfilehash: 28bd45b0e9bdaf87c29b0118c47595db9179edc5
+ms.sourcegitcommit: f34165bdfd27982bdae836d79b7290831a518f12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74670230"
+ms.lasthandoff: 01/13/2020
+ms.locfileid: "75921159"
 ---
 # <a name="deploy-your-app-to-azure-app-service-with-a-zip-or-war-file"></a>Развертывание приложения в Службе приложений Azure с помощью ZIP- или WAR-файла
 
@@ -88,6 +88,8 @@ az webapp config appsettings set --resource-group <resource-group-name> --name <
 ## <a name="deploy-war-file"></a>Развертывание WAR-файла
 
 Чтобы развернуть WAR-файл в службе приложений, отправьте запрос POST в `https://<app_name>.scm.azurewebsites.net/api/wardeploy`. В тексте сообщения запроса POST должен содержаться WAR-файл. Учетные данные развертывания для приложения указываются в запросе с использованием обычной проверки подлинности HTTP.
+
+Всегда используйте `/api/wardeploy` при развертывании WAR-файлов. Этот API расширяет WAR-файл и размещает его на общем файловом диске. использование других API-интерфейсов развертывания может привести к несовместимости поведения. 
 
 Для обычной аутентификации HTTP требуются учетные данные развертывания службы приложений. См. дополнительные сведения об [установке и сбросе учетных данных на уровне пользователя](deploy-configure-credentials.md#userscope).
 

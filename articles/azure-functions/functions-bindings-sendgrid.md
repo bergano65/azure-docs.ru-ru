@@ -5,12 +5,12 @@ author: craigshoemaker
 ms.topic: conceptual
 ms.date: 11/29/2017
 ms.author: cshoe
-ms.openlocfilehash: a0731a66af32b45215145c1d4f4404eb008cf897
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: d70b05842fc7f251af6aefd743f064c037f63b7b
+ms.sourcegitcommit: f34165bdfd27982bdae836d79b7290831a518f12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75410044"
+ms.lasthandoff: 01/13/2020
+ms.locfileid: "75922358"
 ---
 # <a name="azure-functions-sendgrid-bindings"></a>Привязки SendGrid для Функций Azure
 
@@ -27,9 +27,6 @@ ms.locfileid: "75410044"
 ## <a name="packages---functions-2x-and-higher"></a>Packages — функции 2. x и более поздних версий
 
 Привязки SendGrid доступны в пакете NuGet [Microsoft.Azure.WebJobs.Extensions.SendGrid](https://www.nuget.org/packages/Microsoft.Azure.WebJobs.Extensions.SendGrid) версии 3.x. Исходный код для пакета находится в репозитории GitHub [azure-webjobs-sdk-extensions](https://github.com/Azure/azure-webjobs-sdk-extensions/blob/master/src/WebJobs.Extensions.SendGrid/).
-
-> [!NOTE]
-> Версии 2. x и выше не создают раздел или подписку, настроенные в экземпляре `ServiceBusTrigger`. Эти версии основаны на [Microsoft. Azure. servicebus](https://www.nuget.org/packages/Microsoft.Azure.ServiceBus) , который не обрабатывает управление очередями.
 
 [!INCLUDE [functions-package-v2](../../includes/functions-package-v2.md)]
 
@@ -351,9 +348,9 @@ public static void Run(
 
 | Свойство *Function. JSON* | Свойство атрибута или заметки | Description | Необязательно |
 |--------------------------|-------------------------------|-------------|----------|
-| type || Нужно задать значение `sendGrid`.| Нет |
-| direction || Нужно задать значение `out`.| Нет |
-| name || Имя переменной, используемое в коде функции для запроса или текста запроса. Это значение равно `$return` при наличии только одного возвращаемого значения. | Нет |
+| type |Н/Д| Нужно задать значение `sendGrid`.| Нет |
+| direction |Н/Д| Нужно задать значение `out`.| Нет |
+| name |Н/Д| Имя переменной, используемое в коде функции для запроса или текста запроса. Это значение равно `$return` при наличии только одного возвращаемого значения. | Нет |
 | apiKey | ApiKey | Имя параметра приложения, в котором содержится ваш ключ API. Если параметр не задан, по умолчанию используется имя параметра приложения *AzureWebJobsSendGridApiKey*.| Нет |
 | значение| До | Адрес электронной почты получателя. | Да |
 | из| От | Адрес электронной почты отправителя. |  Да |

@@ -3,12 +3,12 @@ title: Обзор версий среды выполнения для решен
 description: Решение "Функции Azure" поддерживает разные версии среды выполнения. В этой статье приводятся различия между ними и рекомендации по выбору подходящей для вас версии.
 ms.topic: conceptual
 ms.date: 12/09/2019
-ms.openlocfilehash: 1172f1cba3dfc10fe08863626db0aa8e7a4bf173
-ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
+ms.openlocfilehash: 88c151149d1d960746ff449819d31e8b32d98120
+ms.sourcegitcommit: f34165bdfd27982bdae836d79b7290831a518f12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75769121"
+ms.lasthandoff: 01/13/2020
+ms.locfileid: "75921855"
 ---
 # <a name="azure-functions-runtime-versions-overview"></a>Обзор версий среды выполнения для решения "Функции Azure"
 
@@ -70,7 +70,7 @@ ms.locfileid: "75769121"
 
 * По умолчанию для функций в плане службы приложений устанавливается время ожидания 30 минут. Вы можете вручную снять это ограничение, изменив параметр [functionTimeout](functions-host-json.md#functiontimeout) в файле host.json.
 
-* Регулирование параллельной обработки HTTP по умолчанию применяется для функций плана потребления, по умолчанию допуская не более 100 одновременных запросов на один экземпляр. Этот параметр можно изменить в параметре [`maxConcurrentRequests`](functions-host-json.md#http) файла host.json.
+* Ограничения параллелизма HTTP реализуются по умолчанию для функций плана потребления со значением по умолчанию 100 одновременных запросов на экземпляр. Этот параметр можно изменить в параметре [`maxConcurrentRequests`](functions-host-json.md#http) файла host.json.
 
 * Из-за [ограничений .NET Core](https://github.com/Azure/azure-functions-host/issues/3414)поддержка функций F# скриптов (. fsx) была удалена. Скомпилированные функции F# (.fs) по-прежнему поддерживаются.
 
