@@ -11,12 +11,12 @@ metadata:
   services: cognitive-services
   title: Документация по QnA Maker
   description: QnA Maker — это облачная служба API, которая позволяет работать с данными в форме вопросов и ответов. QnA Maker представляет собой службу для отправки вопросов и получения ответов из частично структурированного содержимого, например документов с часто задаваемыми вопросами, URL-адресов и руководств по продуктам. Служба QnA Maker отвечает на вопросы, сформулированные на естественном языке, сопоставляя их с наиболее точными ответами в разделе вопросов и ответов вашей базы знаний.
-  ms.openlocfilehash: f88336107203a166b61df98c55b680f1f11f79f6
-  ms.sourcegitcommit: 4c831e768bb43e232de9738b363063590faa0472
+  ms.openlocfilehash: 03518a1d7156d57424b28980d05bb03bfef56503
+  ms.sourcegitcommit: 49e14e0d19a18b75fd83de6c16ccee2594592355
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 11/23/2019
-  ms.locfileid: "74422644"
+  ms.lasthandoff: 01/14/2020
+  ms.locfileid: "75945608"
 landingContent:
 - title: Сведения о QnA Maker
   linkLists:
@@ -68,8 +68,8 @@ landingContent:
       url: quickstarts/get-answer-from-knowledge-base-using-url-tool.md
     - text: Краткое руководство. Использование REST и C#
       url: quickstarts/get-answer-from-knowledge-base-csharp.md
-    - text: Краткое руководство. Использование NuGet и C#
-      url: quickstarts/create-publish-kb-csharp-sdk.md#generate-an-answer-from-the-knowledge-base
+    - text: Краткое руководство. Использование пакета SDK
+      url: quickstarts/quickstart-sdk.md
   - linkListType: how-to-guide
     links:
     - text: Получение ответа с использованием метаданных
@@ -100,7 +100,7 @@ landingContent:
       url: tutorials/integrate-qnamaker-luis.md
     - text: Другие примеры ботов
       url: https://github.com/Microsoft/BotBuilder-Samples/blob/master/README.md
-- title: Справочные материалы
+- title: Справочник
   linkLists:
   - linkListType: reference
     links:

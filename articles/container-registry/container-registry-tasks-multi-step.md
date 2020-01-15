@@ -3,12 +3,12 @@ title: Многошаговая задача для сборки, тестиро
 description: Общие сведения о многошаговых задачах, функции записей контроля доступа в реестре контейнеров Azure, которая предоставляет рабочие процессы на основе задач для создания, тестирования и исправления образов контейнеров в облаке.
 ms.topic: article
 ms.date: 03/28/2019
-ms.openlocfilehash: 3ed071fa2027e91ee5bc6c07738dc66763454847
-ms.sourcegitcommit: 12d902e78d6617f7e78c062bd9d47564b5ff2208
+ms.openlocfilehash: cf5f90263c75aeb96220967142d28995209f2d86
+ms.sourcegitcommit: 49e14e0d19a18b75fd83de6c16ccee2594592355
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2019
-ms.locfileid: "74456176"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75945667"
 ---
 # <a name="run-multi-step-build-test-and-patch-tasks-in-acr-tasks"></a>Выполнение многошаговых задач сборки, тестирования и исправления в службе "Задачи ACR"
 
@@ -50,33 +50,33 @@ ms.locfileid: "74456176"
 Следующие фрагменты кода демонстрируют, как объединить эти типы шагов задач. Многошаговая задача может быть такой же простой, как создание единого образа из файла Docker и отправка его в реестр с помощью файла YAML, аналогично этому примеру.
 
 ```yml
-version: v1.0.0
+version: v1.1.0
 steps:
-  - build: -t {{.Run.Registry}}/hello-world:{{.Run.ID}} .
-  - push: ["{{.Run.Registry}}/hello-world:{{.Run.ID}}"]
+  - build: -t $Registry/hello-world:$ID .
+  - push: ["$Registry/hello-world:$ID"]
 ```
 
 Или она может быть сложной, как это вымышленное многошаговое определение, включающее шаги по сборке и тестированию пакета Helm и его развертыванию (реестр контейнеров и конфигурация репозитория Helm не показаны).
 
 ```yml
-version: v1.0.0
+version: v1.1.0
 steps:
   - id: build-web
-    build: -t {{.Run.Registry}}/hello-world:{{.Run.ID}} .
+    build: -t $Registry/hello-world:$ID .
     when: ["-"]
   - id: build-tests
-    build -t {{.Run.Registry}}/hello-world-tests ./funcTests
+    build -t $Registry/hello-world-tests ./funcTests
     when: ["-"]
   - id: push
-    push: ["{{.Run.Registry}}/helloworld:{{.Run.ID}}"]
+    push: ["$Registry/helloworld:$ID"]
     when: ["build-web", "build-tests"]
   - id: hello-world-web
-    cmd: {{.Run.Registry}}/helloworld:{{.Run.ID}}
+    cmd: $Registry/helloworld:$ID
   - id: funcTests
-    cmd: {{.Run.Registry}}/helloworld:{{.Run.ID}}
+    cmd: $Registry/helloworld:$ID
     env: ["host=helloworld:80"]
-  - cmd: {{.Run.Registry}}/functions/helm package --app-version {{.Run.ID}} -d ./helm ./helm/helloworld/
-  - cmd: {{.Run.Registry}}/functions/helm upgrade helloworld ./helm/helloworld/ --reuse-values --set helloworld.image={{.Run.Registry}}/helloworld:{{.Run.ID}}
+  - cmd: $Registry/functions/helm package --app-version $ID -d ./helm ./helm/helloworld/
+  - cmd: $Registry/functions/helm upgrade helloworld ./helm/helloworld/ --reuse-values --set helloworld.image=$Registry/helloworld:$ID
 ```
 
 В разделе [примеры задач](container-registry-tasks-samples.md) для многоэтапных файлов YAML и файлы dockerfile в нескольких сценариях.
@@ -145,7 +145,7 @@ Run ID: yd14 was successful after 19s
 
 Дополнительные сведения об автоматизированных сборках при фиксации в Git или обновлении основного образа см. в статях [об автоматизации сборок образов](container-registry-tutorial-build-task.md) и [сборке с обновлением основного образа](container-registry-tutorial-base-image-update.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Справочные сведения и примеры многошаговых задач можно найти здесь:
 

@@ -6,13 +6,13 @@ ms.subservice: logs
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
-ms.date: 10/28/2019
-ms.openlocfilehash: 2b54dd5161312a081d439b3e10d2cb4bf9014d52
-ms.sourcegitcommit: f0dfcdd6e9de64d5513adf3dd4fe62b26db15e8b
+ms.date: 01/14/2020
+ms.openlocfilehash: 739f97e912a33402aa7482e59dd78f5aeb005772
+ms.sourcegitcommit: 49e14e0d19a18b75fd83de6c16ccee2594592355
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/26/2019
-ms.locfileid: "75496532"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75944427"
 ---
 # <a name="delete-and-restore-azure-log-analytics-workspace"></a>Удаление и восстановление рабочей области Azure Log Analytics
 
@@ -55,7 +55,7 @@ ms.locfileid: "75496532"
 
 ### <a name="powershell"></a>PowerShell
 ```PowerShell
-PS C:\>Remove-AzOperationalInsightsWorkspace -ResourceGroupName "ContosResourceGroup" -Name "MyWorkspace"
+PS C:\>Remove-AzOperationalInsightsWorkspace -ResourceGroupName "resource-group-name" -Name "workspace-name"
 ```
 
 ## <a name="recover-workspace"></a>Восстановить рабочую область
@@ -68,6 +68,12 @@ PS C:\>Remove-AzOperationalInsightsWorkspace -ResourceGroupName "ContosResourceG
 * Имя группы ресурсов
 * имя рабочей области.
 * Регион
+
+### <a name="powershell"></a>PowerShell
+```PowerShell
+PS C:\>Select-AzSubscription "subscription-name-the-workspace-was-in"
+PS C:\>New-AzOperationalInsightsWorkspace -ResourceGroupName "resource-group-name-the-workspace-was-in" -Name "deleted-workspace-name" -Location "region-name-the-workspace-was-in"
+```
 
 После завершения операции восстановления Рабочая область и все ее данные возвращаются обратно. Решения и связанные службы были окончательно удалены из рабочей области, когда они были удалены, и их следует перенастроить, чтобы перевести рабочую область в ранее настроенное состояние. Некоторые данные могут быть недоступны для запроса после восстановления рабочей области до тех пор, пока не будут повторно установлены связанные решения и их схемы не будут добавлены в рабочую область.
 

@@ -1,18 +1,16 @@
 ---
 title: Распространенные вопросы о аварийном восстановлении виртуальной машины Azure с помощью Azure Site Recovery
-description: В этой статье содержатся ответы на часто задаваемые вопросы о аварийном восстановлении виртуальных машин Azure в другой регион Azure с помощью Azure Site Recovery
-author: carmonmills
+description: В этой статье содержатся ответы на часто задаваемые вопросы о аварийном восстановлении виртуальной машины Azure с помощью Azure Site Recovery.
+author: sideeksh
 manager: rochakm
-ms.service: site-recovery
 ms.date: 04/29/2019
 ms.topic: conceptual
-ms.author: carmonm
-ms.openlocfilehash: 2e1689a4f6d3a2271da868350263bef098562127
-ms.sourcegitcommit: 014e916305e0225512f040543366711e466a9495
+ms.openlocfilehash: 8ed5df15b8ae8e9836c5b8ac8e7d6ad0111f63e1
+ms.sourcegitcommit: b5106424cd7531c7084a4ac6657c4d67a05f7068
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 01/14/2020
-ms.locfileid: "75929904"
+ms.locfileid: "75941898"
 ---
 # <a name="common-questions-azure-to-azure-disaster-recovery"></a>Распространенные вопросы: аварийное восстановление из Azure в Azure
 
@@ -45,7 +43,7 @@ ms.locfileid: "75929904"
 Да, Site Recovery поддерживает аварийное восстановление виртуальных машин с включенным шифрованием дисков Azure (ADE). При включении репликации все необходимые ключи и секреты шифрования диска копируются из исходного региона в целевой регион в контексте пользователя. Если у вас нет соответствующего разрешения, можно передать администратору безопасности готовый сценарий, чтобы скопировать ключи и секреты.
 
 - Site Recovery поддерживает ADE для виртуальных машин Azure под Windows.
-- Site Recovery поддерживает ADE версии 0,1 со схемой, использующей Azure Active Directory (AAD) и версии 1,1 без AAD. [Узнайте больше](../virtual-machines/extensions/azure-disk-enc-windows.md#extension-schemata).
+- Site Recovery поддерживает ADE версии 0,1 с схемой, использующей Azure Active Directory (AAD) и версии 1,1, без AAD. [Узнайте больше](../virtual-machines/extensions/azure-disk-enc-windows.md#extension-schemata).
 - ADE версии 1,1, виртуальные машины Windows должны использовать управляемые диски.
 - Дополнительные [сведения](azure-to-azure-how-to-enable-replication-ade-vms.md) о включении репликации для зашифрованных виртуальных машин.
 

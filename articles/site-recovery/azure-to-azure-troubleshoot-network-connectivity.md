@@ -1,19 +1,16 @@
 ---
 title: Устранение неполадок подключения к аварийному восстановлению Azure в Azure с помощью Azure Site Recovery
-description: Устранение ошибок и проблем при репликации виртуальных машин Azure для аварийного восстановления
-services: site-recovery
-author: carmonmills
+description: Устранение неполадок подключения в аварийном восстановлении виртуальной машины Azure
+author: sideeksh
 manager: rochakm
-ms.service: site-recovery
-ms.topic: article
+ms.topic: how-to
 ms.date: 08/05/2019
-ms.author: carmonm
-ms.openlocfilehash: 41b5203c328243c9ef7cc74e6b9771c677a54c7c
-ms.sourcegitcommit: 014e916305e0225512f040543366711e466a9495
+ms.openlocfilehash: d55f06669a538c2f26f3a1d2da0d96a73529f76e
+ms.sourcegitcommit: b5106424cd7531c7084a4ac6657c4d67a05f7068
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 01/14/2020
-ms.locfileid: "75933406"
+ms.locfileid: "75941471"
 ---
 # <a name="troubleshoot-azure-to-azure-vm-network-connectivity-issues"></a>Устранение неполадок с сетевым подключением Azure к виртуальной машине Azure
 

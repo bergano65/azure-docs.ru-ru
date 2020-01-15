@@ -117,6 +117,8 @@
       items:
         - name: Развертывание приложения
           items:
+            - name: Запуск из пакета
+              href: deploy-run-package.md
             - name: Развертывание ZIP- или WAR-файла
               href: deploy-zip.md
             - name: Развертывание через FTP

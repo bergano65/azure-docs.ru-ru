@@ -3,14 +3,14 @@ title: Решение для управления обновлениями в Az
 description: В этой статье описывается, как использовать решение Azure Управление обновлениями для управления обновлениями компьютеров под управлением Windows и Linux.
 services: automation
 ms.subservice: update-management
-ms.date: 12/03/2019
+ms.date: 01/14/2020
 ms.topic: conceptual
-ms.openlocfilehash: 924f5bee94544c533f3a2548d931fce292469567
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 0cf47538f7db1cef629c2b58a9fbde16640a50ae
+ms.sourcegitcommit: 49e14e0d19a18b75fd83de6c16ccee2594592355
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75420341"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75945128"
 ---
 # <a name="update-management-solution-in-azure"></a>Решение для управления обновлениями в Azure
 
@@ -237,7 +237,9 @@ ms.locfileid: "75420341"
 sudo yum -q --security check-update
 ```
 
-В настоящее время нет поддерживаемого метода для включения собственной классификации — доступность данных в CentOS. В настоящее время для клиентов, которые могли включить этот вариант самостоятельно, предоставляется только лучшая поддержка.
+В настоящее время нет поддерживаемого метода для включения собственной классификации — доступность данных в CentOS. В настоящее время для клиентов, которые могли включить этот вариант самостоятельно, предоставляется только лучшая поддержка. 
+
+Для классификации обновлений в Red Hat Enterprise версии 6 необходимо установить подключаемый модуль Yum-Security. В Red Hat Enterprise Linux 7 подключаемый модуль уже является частью yum, поэтому нет необходимости устанавливать ничего. Дополнительные сведения см. в следующей [статье базы знаний](https://access.redhat.com/solutions/10021)Red Hat.
 
 ## <a name="integrate-with-system-center-configuration-manager"></a>Интеграция с System Center Configuration Manager
 
@@ -251,7 +253,7 @@ sudo yum -q --security check-update
 
 ## <a name="patch-linux-machines"></a>Исправление компьютеров Linux
 
-В следующих разделах объясняются возможные проблемы, которые могут возникнуть при установке исправлений Linux.
+В следующих разделах объясняются потенциальные проблемы с установкой исправлений для Linux дистрибутивов.
 
 ### <a name="unexpected-os-level-upgrades"></a>Непредвиденные обновления на уровне ОС
 

@@ -10,12 +10,12 @@ ms.subservice: immersive-reader
 ms.topic: reference
 ms.date: 06/20/2019
 ms.author: metan
-ms.openlocfilehash: 09244b634fa2603a7dc92af3c78d171f8d6bd9df
-ms.sourcegitcommit: bc193bc4df4b85d3f05538b5e7274df2138a4574
+ms.openlocfilehash: 47d10f75775c49fda0effe10c32e219b3682866d
+ms.sourcegitcommit: 49e14e0d19a18b75fd83de6c16ccee2594592355
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2019
-ms.locfileid: "73903110"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75945279"
 ---
 # <a name="immersive-reader-sdk-reference-guide"></a>Справочное руководство по пакету SDK для иммерсивного чтения
 
@@ -39,14 +39,14 @@ ms.locfileid: "73903110"
 launchAsync(token: string, subdomain: string, content: Content, options?: Options): Promise<HTMLDivElement>;
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>Параметры
 
-| имя | введите | ОПИСАНИЕ |
+| Имя | Тип | Description |
 | ---- | ---- |------------ |
-| `token` | строка | Маркер проверки подлинности Azure AD. См. [руководство по проверке подлинности Azure AD](./azure-active-directory-authentication.md). |
-| `subdomain` | строка | Пользовательский поддомен для иммерсивного ресурса чтения в Azure. См. [руководство по проверке подлинности Azure AD](./azure-active-directory-authentication.md). |
+| `token` | string | Маркер проверки подлинности Azure AD. |
+| `subdomain` | string | Пользовательский поддомен для иммерсивного ресурса чтения в Azure. |
 | `content` | [Содержимое](#content) | Объект, содержащий содержимое, которое должно отображаться в иммерсивное средство чтения. |
-| `options` | [Варианты](#options) | Параметры для настройки определенного поведения иммерсивное средство чтения. необязательный параметр. |
+| `options` | [Параметры](#options) | Параметры для настройки определенного поведения иммерсивное средство чтения. Необязательный параметр. |
 
 ### <a name="returns"></a>Результаты
 
@@ -78,15 +78,15 @@ close(): void;
 renderButtons(options?: RenderButtonsOptions): void;
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>Параметры
 
-| имя | введите | ОПИСАНИЕ |
+| Имя | Тип | Description |
 | ---- | ---- |------------ |
-| `options` | [рендербуттонсоптионс](#renderbuttonsoptions) | Параметры для настройки определенного поведения функции Рендербуттонс. необязательный параметр. |
+| `options` | [рендербуттонсоптионс](#renderbuttonsoptions) | Параметры для настройки определенного поведения функции Рендербуттонс. Необязательный параметр. |
 
 ## <a name="types"></a>Типы
 
-### <a name="content"></a>Содержимое
+### <a name="content"></a>Контент
 
 Содержит содержимое, отображаемое в иммерсивное средство чтения.
 
@@ -97,7 +97,7 @@ renderButtons(options?: RenderButtonsOptions): void;
 }
 ```
 
-### <a name="chunk"></a>Фрагмент
+### <a name="chunk"></a>Блок
 
 Один блок данных, который будет передан в содержимое иммерсивное средство чтения.
 
@@ -109,22 +109,30 @@ renderButtons(options?: RenderButtonsOptions): void;
 }
 ```
 
+### <a name="cookiepolicy-enum"></a>Перечисление Кукиеполици
+
+Перечисление, используемое для задания политики использования файлов cookie для иммерсивного модуля чтения. См. раздел [Параметры](#options).
+
+```typescript
+enum CookiePolicy { Disable, Enable }
+```
+
 #### <a name="supported-mime-types"></a>Поддерживаемые типы MIME
 
-| Тип MIME | ОПИСАНИЕ |
+| Тип MIME | Description |
 | --------- | ----------- |
 | text/plain | Обычный текст. |
-| text/html | Содержимое HTML. [Подробнее](#html-support)|
-| Application/масмл + XML | Язык математической разметки (Масмл). [Дополнительные сведения](https://developer.mozilla.org/en-US/docs/Web/MathML)
+| text/html | Содержимое в виде HTML. [Дополнительные сведения](#html-support)|
+| Application/масмл + XML | Язык математической разметки (Масмл). [Узнайте больше](./how-to/display-math.md).
 | приложение/vnd. openxmlformats-officeDocument. WordprocessingML. Document | Документ в формате Microsoft Word. docx.
 
 ### <a name="html-support"></a>Поддержка HTML
 | HTML | Поддерживаемое содержимое |
 | --------- | ----------- |
 | Стили шрифтов | Полужирный, курсив, подчеркнутый, код, Зачеркнутый, надстрочный, нижний индекс |
-| Неупорядоченные списки | Диск, круг, квадрат |
+| Маркированные списки | Диск, круг, квадрат |
 | Упорядоченные списки | Десятичная, верхняя-альфа, Нижняя-альфа, верхняя-латиница, строчная латиница |
-| Гиперссылки | Скоро |
+| Гиперссылки | Ожидается в ближайшее время |
 
 Неподдерживаемые теги будут подготовлены к просмотру сравнимо. Изображения и таблицы в настоящее время не поддерживаются.
 
@@ -142,6 +150,7 @@ renderButtons(options?: RenderButtonsOptions): void;
     customDomain?: string;     // Reserved for internal use. Custom domain where the Immersive Reader webapp is hosted (default is null).
     allowFullscreen?: boolean; // The ability to toggle fullscreen (default is true).
     hideExitButton?: boolean;  // Whether or not to hide the Immersive Reader's exit button arrow (default is false). This should only be true if there is an alternative mechanism provided to exit the Immersive Reader (e.g a mobile toolbar's back arrow).
+    cookiePolicy?: CookiePolicy; // Setting for the Immersive Reader's cookie usage (default is CookiePolicy.Disable). It's the responsibility of the host application to obtain any necessary user consent in accordance with EU Cookie Compliance Policy.
 }
 ```
 
@@ -168,12 +177,12 @@ renderButtons(options?: RenderButtonsOptions): void;
 
 #### <a name="error-codes"></a>Коды ошибок
 
-| Код | ОПИСАНИЕ |
+| Код | Description |
 | ---- | ----------- |
-| бадаргумент | Указан недопустимый аргумент. Дополнительные сведения см. в `message`. |
+| BadArgument | Указан недопустимый аргумент. Дополнительные сведения см. в `message`. |
 | Время ожидания | Не удалось загрузить иммерсивное средство чтения в течение указанного времени ожидания. |
 | TokenExpired | Срок действия заданного маркера истек. |
-| Регулирование | Превышено ограничение скорости вызовов. |
+| Ожидает повтора | Превышено ограничение скорости вызовов. |
 
 ## <a name="launching-the-immersive-reader"></a>Запуск иммерсивное средство чтения
 
@@ -187,7 +196,7 @@ renderButtons(options?: RenderButtonsOptions): void;
 
 Используйте следующие атрибуты, чтобы настроить внешний вид и поведение кнопки.
 
-| Атрибут | ОПИСАНИЕ |
+| attribute | Description |
 | --------- | ----------- |
 | `data-button-style` | Задает стиль кнопки. Возможные значения: `icon`, `text` или `iconAndText`. По умолчанию равен `icon`. |
 | `data-locale` | Задает языковой стандарт. Например, `en-US` или `fr-FR`. По умолчанию используется английский `en`. |
@@ -203,7 +212,7 @@ renderButtons(options?: RenderButtonsOptions): void;
 * Mozilla Firefox
 * Apple Safari;
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Изучите [пакет SDK иммерсивного средства чтения на сайте GitHub](https://github.com/microsoft/immersive-reader-sdk).
 * [Краткое руководство. Создание веб-приложения, запускающего иммерсивное средство чтения (C#)](./quickstart.md)

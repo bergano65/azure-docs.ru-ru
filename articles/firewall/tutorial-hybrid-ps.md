@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 10/18/2019
 ms.author: victorh
 customer intent: As an administrator, I want to control network access from an on-premises network to an Azure virtual network.
-ms.openlocfilehash: d198ee2e1fa8d3afeacda53c2ad6b91d69abca2a
-ms.sourcegitcommit: 8e31a82c6da2ee8dafa58ea58ca4a7dd3ceb6132
+ms.openlocfilehash: 14e33bf77144e4cd5728ec85d3012dc0ba717ece
+ms.sourcegitcommit: 49e14e0d19a18b75fd83de6c16ccee2594592355
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74195765"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75945654"
 ---
 # <a name="deploy-and-configure-azure-firewall-in-a-hybrid-network-using-azure-powershell"></a>Развертывание и настройка Брандмауэра Azure в гибридной сети с помощью Azure PowerShell
 
@@ -29,14 +29,14 @@ ms.locfileid: "74195765"
 
 ![Брандмауэр в гибридной сети](media/tutorial-hybrid-ps/hybrid-network-firewall.png)
 
-В этой статье раскрываются следующие темы:
+Вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 > * Объявление переменных
 > * Создание центральной виртуальной сети с брандмауэром
 > * Создание периферийной виртуальной сети
 > * Создание локальной виртуальной сети
-> * Настройка и развертывание брандмауэра.
+> * Настройка и развертывание брандмауэра
 > * Создание и подключение шлюзов VPN
 > * Настройка пиринга между центральной и периферийной виртуальными сетями
 > * Создание маршрутов.
@@ -47,13 +47,13 @@ ms.locfileid: "74195765"
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Технические условия
 
 Для работы с этой статьей необходимо запустить PowerShell локально. Необходимо установить модуль Azure PowerShell. Чтобы узнать версию, выполните команду `Get-Module -ListAvailable Az`. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-Az-ps). После проверки версии PowerShell выполните командлет `Login-AzAccount`, чтобы создать подключение к Azure.
 
 Чтобы этот сценарий работал правильно, есть три ключевых требования:
 
-- Определяемый пользователем маршрут (UDR) в периферийной подсети, указывающий на IP-адрес Брандмауэра Azure как шлюз по умолчанию. Распространение маршрутов BGP должно быть **отключено** в этой таблице маршрутов.
+- Определяемый пользователем маршрут (UDR) в периферийной подсети, указывающий на IP-адрес Брандмауэра Azure как шлюз по умолчанию. Распространение маршрута шлюза виртуальной сети должно быть **отключено** в этой таблице маршрутов.
 - Маршрут UDR в подсети шлюза центра должен указывать на IP-адрес брандмауэра в качестве следующего прыжка к периферийным сетям.
 
    В подсети Брандмауэра Azure не требуется указывать UDR, так как он узнает о маршрутах из BGP.
@@ -71,7 +71,7 @@ ms.locfileid: "74195765"
 
 Связанную справочную документацию по Azure PowerShell см. [здесь](https://docs.microsoft.com/powershell/module/az.network/new-azfirewall).
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) , прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 ## <a name="declare-the-variables"></a>Объявление переменных
 
@@ -185,7 +185,7 @@ $VNetOnprem = New-AzVirtualNetwork -Name $VNetnameOnprem -ResourceGroupName $RG1
   -Location $Location1 -AllocationMethod Dynamic
 ```
 
-## <a name="configure-and-deploy-the-firewall"></a>Настройка и развертывание брандмауэра.
+## <a name="configure-and-deploy-the-firewall"></a>Настройка и развертывание брандмауэра
 
 Теперь разверните брандмауэр в центральной виртуальной сети.
 
@@ -355,7 +355,7 @@ Set-AzVirtualNetwork
 
 #Now create the default route
 
-#Create a table, with BGP route propagation disabled
+#Create a table, with BGP route propagation disabled. The property is now called "Virtual network gateway route propagation," but the API still refers to the parameter as "DisableBgpRoutePropagation."
 $routeTableSpokeDG = New-AzRouteTable `
   -Name 'UDR-DG' `
   -ResourceGroupName $RG1 `
@@ -493,7 +493,7 @@ Set-AzFirewall -AzureFirewall $azfw
 
 Вы можете сохранить ресурсы брандмауэра для следующего руководства или, если он больше не нужен, удалить группу ресурсов **FW-Hybrid-Test**, чтобы удалить ресурсы, связанные с брандмауэром.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь вы можете отследить журналы Брандмауэра Azure.
 

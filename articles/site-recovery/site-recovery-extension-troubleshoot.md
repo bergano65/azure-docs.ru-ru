@@ -1,20 +1,18 @@
 ---
-title: Устранение неполадок с агентами Azure Site Recovery | Документация Майкрософт
-description: В статье содержатся сведения о симптомах, причинах и способах устранения сбоев в работе агентов Azure Site Recovery.
-author: carmonmills
+title: Устранение неполадок расширения виртуальной машины Azure для аварийного восстановления с помощью Azure Site Recovery
+description: Устранение неполадок с расширением виртуальной машины Azure для аварийного восстановления с Azure Site Recovery.
+author: sideeksh
 manager: rochakm
-ms.service: site-recovery
 ms.topic: troubleshooting
 ms.date: 11/27/2018
-ms.author: carmonm
-ms.openlocfilehash: 0de5a9843b8029c1e1926ae296f43fc95b48106c
-ms.sourcegitcommit: 014e916305e0225512f040543366711e466a9495
+ms.openlocfilehash: 7f9ae32b95d629ef79f085ed590d9057b0414911
+ms.sourcegitcommit: b5106424cd7531c7084a4ac6657c4d67a05f7068
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 01/14/2020
-ms.locfileid: "75930136"
+ms.locfileid: "75941542"
 ---
-# <a name="troubleshoot-issues-with-the-azure-site-recovery-agent"></a>Устранение неполадок с агентом Azure Site Recovery
+# <a name="troubleshoot-azure-vm-extension-issues"></a>Устранение проблем с расширением виртуальной машины Azure
 
 В этой статье описано, как устранять ошибки Azure Site Recovery, связанные с расширением и агентом виртуальной машины.
 
@@ -30,7 +28,7 @@ ms.locfileid: "75930136"
 **Причина 2. [Устарел агент, установленный на виртуальной машине (для виртуальных машин Linux)](#the-agent-installed-in-the-vm-is-out-of-date-for-linux-vms)** .  
 **Причина 3. [Не удалось обновить или загрузить расширение Site Recovery](#the-site-recovery-extension-fails-to-update-or-load)** .  
 
-Сообщение об ошибке: "Previous site recovery extension operation is taking more time than expected" (Предыдущая операция расширения Site Recovery занимает больше времени, чем ожидалось)<br>
+Сообщение об ошибке: "Предыдущая операция расширения Site Recovery занимает больше времени, чем ожидалось".<br>
 Код ошибки: "150066"<br>
 
 **Причина 1. [Агент установлен на виртуальной машине, но не отвечает (для виртуальных машин Windows)](#the-agent-installed-in-the-vm-but-unresponsive-for-windows-vms)**   .  

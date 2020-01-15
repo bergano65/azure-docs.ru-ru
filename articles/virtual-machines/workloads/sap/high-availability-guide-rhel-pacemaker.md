@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 08/17/2018
 ms.author: sedusch
-ms.openlocfilehash: ee67c811835d99bf2f4c00dc59b43e29f63c81d6
-ms.sourcegitcommit: 85e7fccf814269c9816b540e4539645ddc153e6e
+ms.openlocfilehash: 9ccbd67348a8dae7391471ccd1dcc1ba9b135ea2
+ms.sourcegitcommit: b5106424cd7531c7084a4ac6657c4d67a05f7068
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74533816"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75941825"
 ---
 # <a name="setting-up-pacemaker-on-red-hat-enterprise-linux-in-azure"></a>Настройка кластера Pacemaker в Red Hat Enterprise Linux в Azure
 
@@ -88,7 +88,7 @@ ms.locfileid: "74533816"
    sudo subscription-manager attach --pool=&lt;pool id&gt;
    </code></pre>
 
-   Обратите внимание, что, присоединив пул к образу PAYG RHEL для Azure Marketplace, вы будете эффективно выставлять счет за использование RHEL: один раз для образа PAYG и один раз для назначения RHEL в присоединенном пуле. Чтобы устранить эту проблемы, Azure теперь предоставляет образы BYOS RHEL. Дополнительные сведения можно найти [здесь](https://aka.ms/rhel-byos).
+   Обратите внимание, что, присоединив пул к образу PAYG RHEL для Azure Marketplace, вы будете эффективно выставлять счет за использование RHEL: один раз для образа PAYG и один раз для назначения RHEL в присоединенном пуле. Чтобы устранить эту проблемы, Azure теперь предоставляет образы BYOS RHEL. Дополнительные сведения можно найти [здесь](../redhat/byos.md).
 
 1. **[A]** Включение RHEL для репозиториев SAP
 
@@ -250,7 +250,7 @@ ms.locfileid: "74533816"
 1. Выберите "Добавить назначение ролей".
 1. Выберите роль Linux Fence Agent Role.
 1. Введите имя созданного ранее приложения.
-1. Щелкните Сохранить
+1. Нажмите кнопку "Сохранить".
 
 Повторите предыдущие шаги для второго узла кластера.
 

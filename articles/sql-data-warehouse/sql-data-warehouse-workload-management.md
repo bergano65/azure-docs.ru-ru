@@ -1,5 +1,5 @@
 ---
-title: Управление рабочей нагрузкой
+title: Управление рабочими нагрузками
 description: Руководство по реализации управления рабочей нагрузкой в хранилище данных SQL Azure.
 services: sql-data-warehouse
 author: ronortloff
@@ -7,16 +7,16 @@ manager: craigg
 ms.service: sql-data-warehouse
 ms.topic: conceptual
 ms.subservice: workload-management
-ms.date: 10/30/2019
+ms.date: 01/13/2020
 ms.author: rortloff
 ms.reviewer: jrasnick
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 2563ea4ab498c11c846cfe79f0e668f7d491c2e7
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: 66edde9591d4491fa630772f99372f9901319b2f
+ms.sourcegitcommit: b5106424cd7531c7084a4ac6657c4d67a05f7068
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73692356"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75940583"
 ---
 # <a name="what-is-workload-management"></a>Что такое управление рабочей нагрузкой?
 
@@ -42,7 +42,7 @@ ms.locfileid: "73692356"
 
 Управление рабочей нагрузкой в хранилище данных SQL состоит из трех высокоуровневых концепций: [классификация рабочей нагрузки](sql-data-warehouse-workload-classification.md), [важность рабочей](sql-data-warehouse-workload-importance.md) нагрузки и [изоляция рабочей нагрузки](sql-data-warehouse-workload-isolation.md).  Эти возможности обеспечивают больший контроль над тем, как Рабочая нагрузка использует системные ресурсы.
 
-Классификация рабочей нагрузки — это концепция назначения запроса группе рабочей нагрузки и настройки уровней важности.  Исторически это назначение было выполнено через членство в роли с помощью процедуры [sp_addrolemember](https://docs.microsoft.com/azure/sql-data-warehouse/resource-classes-for-workload-management#change-a-users-resource-class).  Теперь это можно сделать с помощью командлета [CREATE классификаторе рабочей нагрузки](https://docs.microsoft.com/sql/t-sql/statements/create-workload-classifier-transact-sql).  Функция классификации предоставляет более широкий набор параметров, таких как метка, сеанс и время для классификации запросов.
+Классификация рабочей нагрузки — это концепция назначения запроса группе рабочей нагрузки и настройки уровней важности.  Исторически это назначение было выполнено через членство в роли с помощью [sp_addrolemember](https://docs.microsoft.com/azure/sql-data-warehouse/resource-classes-for-workload-management#change-a-users-resource-class).  Теперь это можно сделать с помощью командлета [CREATE классификаторе рабочей нагрузки](https://docs.microsoft.com/sql/t-sql/statements/create-workload-classifier-transact-sql).  Функция классификации предоставляет более широкий набор параметров, таких как метка, сеанс и время для классификации запросов.
 
 Важность рабочей нагрузки влияет на порядок, в котором запрос получает доступ к ресурсам.  В занятой системе запрос с более высокой важностью имеет первый доступ к ресурсам.  Важность также обеспечивает упорядоченный доступ к блокировкам. 
 
@@ -54,3 +54,4 @@ ms.locfileid: "73692356"
 - Дополнительные сведения о классификации рабочей нагрузки см. в разделе [классификация рабочей нагрузки](sql-data-warehouse-workload-classification.md).  
 - Дополнительные сведения об изоляции рабочей нагрузки см. в разделе [изоляция рабочей нагрузки](sql-data-warehouse-workload-isolation.md).  
 - Дополнительные сведения о важности рабочей нагрузки см. в статье [важность рабочей нагрузки](sql-data-warehouse-workload-importance.md).  
+- Дополнительные сведения о мониторинге управления рабочей нагрузкой см. в разделе [Рабочая нагрузка портал управления мониторинг](sql-data-warehouse-workload-management-portal-monitor.md).  

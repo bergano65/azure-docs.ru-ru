@@ -1,18 +1,16 @@
 ---
-title: Аварийное восстановление для многоуровневых развертываний Dynamics AX с Azure Site Recovery | Документация Майкрософт
-description: В этой статье описано, как настроить аварийное восстановление для Dynamics AX с помощью Azure Site Recovery
-author: carmonmills
+title: Аварийное восстановление Dynamics AX с Azure Site Recovery
+description: Узнайте, как настроить аварийное восстановление для Dynamics AX с Azure Site Recovery
+author: sideeksh
 manager: rochakm
-ms.service: site-recovery
-ms.topic: article
+ms.topic: how-to
 ms.date: 11/27/2018
-ms.author: carmonm
-ms.openlocfilehash: 089edd1f408494f59c8f0042b57d2d79c7faffae
-ms.sourcegitcommit: 014e916305e0225512f040543366711e466a9495
+ms.openlocfilehash: 0b32f00374aa8ce6c41415e28f319e3e7d5abddb
+ms.sourcegitcommit: b5106424cd7531c7084a4ac6657c4d67a05f7068
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 01/14/2020
-ms.locfileid: "75930186"
+ms.locfileid: "75941591"
 ---
 # <a name="set-up-disaster-recovery-for-a-multitier-dynamics-ax-application"></a>Настройка аварийного восстановления для многоуровневого приложения Dynamics AX   
 
@@ -39,7 +37,7 @@ ms.locfileid: "75930186"
 
 ## <a name="site-recovery-support"></a>Поддержка Site Recovery
 
-При написании этой статьи использовались виртуальные машины VMware с Dynamics AX 2012 R3 под управлением Windows Server 2012 R2 Enterprise. Так как репликация восстановления сайта не зависит от приложения, описанные здесь рекомендации также подходят для сценариев, представленных ниже.
+При написании этой статьи использовались виртуальные машины VMware с Dynamics AX 2012 R3 под управлением Windows Server 2012 R2 Enterprise. Поскольку Site Recovery репликация не зависит от приложения, мы планируем, чтобы рекомендации, приведенные здесь, содержались в следующих сценариях.
 
 ### <a name="source-and-target"></a>Исходный и целевой объект
 

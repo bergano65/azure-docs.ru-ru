@@ -12,12 +12,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 12/18/2019
 ms.author: alsin
-ms.openlocfilehash: 61991e271a68c9160a34d0de99fe4c9259ca41cb
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 32df17ffed400af80eadadbdeaafbaa1e3e1dbce
+ms.sourcegitcommit: b5106424cd7531c7084a4ac6657c4d67a05f7068
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75486343"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75941708"
 ---
 # <a name="red-hat-enterprise-linux-rhel-images-available-in-azure"></a>Образы Red Hat Enterprise Linux (RHEL), доступные в Azure
 Azure предлагает разнообразные образы RHEL для различных вариантов использования.
@@ -66,5 +66,5 @@ RHEL — BYOS     |RHEL — lvm74| Диспетчер логических то�
 ## <a name="next-steps"></a>Дальнейшие действия
 * Дополнительные сведения о [образах Red Hat в Azure](./redhat-images.md).
 * Узнайте больше об [инфраструктуре обновления Red Hat](./redhat-rhui.md).
-* Дополнительные сведения о [предложении RHEL BYOS](./redhat-byos.md).
+* Дополнительные сведения о [предложении RHEL BYOS](./byos.md).
 * Сведения о политиках поддержки Red Hat для всех версий RHEL можно найти на странице [о жизненных циклах выпусков Red Hat Enterprise Linux](https://access.redhat.com/support/policy/updates/errata).

@@ -9,16 +9,16 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: sashan, moslake, carlrab
 ms.date: 11/13/2019
-ms.openlocfilehash: 394c674da63bbda643246c3d61fb670d6ac8d1f7
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: d1a59e7ad86191bcc30b7d898d00f327c20fbc5e
+ms.sourcegitcommit: 49e14e0d19a18b75fd83de6c16ccee2594592355
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74928613"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75945622"
 ---
 # <a name="azure-hybrid-benefit"></a>Преимущество гибридного использования Azure
 
-В подготовленной среде вычислений для модели приобретения на основе виртуальное ядро вы можете обмениваться существующими лицензиями по тарифам со скидкой в базе данных SQL с помощью [преимущество гибридного использования Azure для SQL Server](https://azure.microsoft.com/pricing/hybrid-benefit/). Это преимущество Azure позволяет сэкономить до 30% в базе данных SQL Azure, используя локальные лицензии SQL Server с Software Assurance. 
+В подготовленной среде вычислений для модели приобретения на основе виртуальное ядро вы можете обмениваться существующими лицензиями по тарифам со скидкой в базе данных SQL с помощью [преимущество гибридного использования Azure для SQL Server](https://azure.microsoft.com/pricing/hybrid-benefit/). Это преимущество Azure позволяет сэкономить до 30% или даже выше в базе данных SQL Azure с помощью локальных лицензий SQL Server с Software Assurance. Используйте калькулятор Преимущество гибридного использования Azure, используя ссылку, указанную ранее для правильных значений. 
 
 > [!NOTE]
 > Переход на Преимущество гибридного использования Azure не требует времени простоя.
@@ -40,7 +40,7 @@ ms.locfileid: "74928613"
 - [New-AzSqlInstance](/powershell/module/az.sql/new-azsqlinstance)
 - [Set-AzSqlInstance](/powershell/module/az.sql/set-azsqlinstance)
 
-# <a name="azure-clitabazure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-clitabazure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 Чтобы задать или обновить тип лицензии с помощью Azure CLI:
 
@@ -49,11 +49,11 @@ ms.locfileid: "74928613"
 - [az sql mi create](/cli/azure/sql/mi#az-sql-mi-create)
 - [az sql mi update](/cli/azure/sql/mi#az-sql-mi-update)
 
-# <a name="rest-apitabrest"></a>[REST API](#tab/rest)
+# <a name="rest-apitabrest"></a>[REST API](#tab/rest)
 
 Чтобы задать или обновить тип лицензии с помощью REST API:
 
-- [Создание или обновление баз данных](/rest/api/sql/databases/createorupdate)
+- [Базы данных: создание или обновление](/rest/api/sql/databases/createorupdate)
 - [Базы данных: обновление](/rest/api/sql/databases/update)
 - [Управляемые экземпляры. Создание или обновление](/rest/api/sql/managedinstances/createorupdate)
 - [Управляемые экземпляры. Обновление](/rest/api/sql/managedinstances/update)

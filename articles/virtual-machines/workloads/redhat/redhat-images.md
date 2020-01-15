@@ -12,12 +12,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 12/18/2019
 ms.author: alsin
-ms.openlocfilehash: 27cd5b775fbd2af58d93d539420262665d70ead4
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 211ac68fd10cd745faf68a5efae7392345008d7b
+ms.sourcegitcommit: b5106424cd7531c7084a4ac6657c4d67a05f7068
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75486330"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75941450"
 ---
 # <a name="overview-of-red-hat-enterprise-linux-images"></a>Общие сведения об образах Red Hat Enterprise Linux
 В этой статье описываются доступные образы Red Hat Enterprise Linux (RHEL) в Azure Marketplace, а также политики их именования и хранения.
@@ -154,5 +154,5 @@ RHEL 8,0      |Н/Д                            | Нет ЕУС, доступн�
 ## <a name="next-steps"></a>Дальнейшие действия
 * Просмотрите полный список [образов RHEL в Azure](./redhat-imagelist.md).
 * Дополнительные сведения об Azure Red Hat Update Infrastructure см. [здесь](https://aka.ms/rhui-update).
-* Дополнительные сведения о [предложении RHEL BYOS](./redhat-byos.md).
+* Дополнительные сведения о [предложении RHEL BYOS](./byos.md).
 * Сведения о политиках поддержки Red Hat для всех версий RHEL можно найти на странице [о жизненных циклах выпусков Red Hat Enterprise Linux](https://access.redhat.com/support/policy/updates/errata).

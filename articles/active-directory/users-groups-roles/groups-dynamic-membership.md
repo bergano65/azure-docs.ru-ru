@@ -14,12 +14,12 @@ ms.author: curtand
 ms.reviewer: krbain
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8f5be34a58d8f0416a31cd575ef0fea614b3d43e
-ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
+ms.openlocfilehash: 8ff2ff69ca00a9ed9c48ebd6f1704fac0b16d068
+ms.sourcegitcommit: b5106424cd7531c7084a4ac6657c4d67a05f7068
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75768726"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75940994"
 ---
 # <a name="dynamic-membership-rules-for-groups-in-azure-active-directory"></a>Правила динамического членства в группах для Azure Active Directory
 
@@ -321,7 +321,12 @@ Direct Reports for "62e19b97-8b3d-4d4a-a106-4ce66896a863"
 Правило "все пользователи" создается с помощью одного выражения с помощью оператора-Ne и значения NULL. Это правило добавляет в группу гостевых пользователей B2B, а также пользователей-участников.
 
 ```
-user.objectid -ne null
+user.objectId -ne null
+```
+Если вы хотите, чтобы группа содержала гостевых пользователей и включала только членов клиента, можно использовать следующий синтаксис:
+
+```
+(user.objectId -ne null) -and (user.userType -eq “Member”)
 ```
 
 ### <a name="create-an-all-devices-rule"></a>Создание правила "все устройства"
@@ -331,7 +336,7 @@ user.objectid -ne null
 Правило "все устройства" создается с помощью одного выражения с помощью оператора-Ne и значения NULL:
 
 ```
-device.objectid -ne null
+device.objectId -ne null
 ```
 
 ## <a name="extension-properties-and-custom-extension-properties"></a>Свойства расширения и пользовательские свойства расширения
