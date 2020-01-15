@@ -26,8 +26,6 @@
           href: tutorial-windows-vm-access-nonaad.md
         - name: Доступ к Azure Cosmos DB
           href: tutorial-windows-vm-access-cosmos-db.md
-        - name: Доступ к API Graph Azure AD
-          href: tutorial-windows-vm-access-azure-ad-graph.md
         - name: 'Доступ к Azure Resource Manager с помощью управляемого удостоверения, назначаемого пользователем'
           href: tutorial-windows-vm-ua-arm.md
     - name: Виртуальные машины и масштабируемые наборы виртуальных машин Linux
@@ -46,8 +44,6 @@
           href: tutorial-linux-vm-access-cosmos-db.md
         - name: Доступ к Реестру контейнеров Azure
           href: /azure/container-registry/container-registry-authentication-managed-identity?context=azure/active-directory/managed-identities-azure-resources/context/msi-context
-        - name: Доступ к API Graph Azure AD
-          href: tutorial-linux-vm-access-azure-ad-graph.md
         - name: 'Доступ к Azure Resource Manager с помощью управляемого удостоверения, назначаемого пользователем'
           href: msi-tutorial-linux-vm-access-arm.md
     - name: Служебная шина Azure
