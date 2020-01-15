@@ -31,9 +31,9 @@
         - name: Java
           href: event-hubs-java-get-started-send.md
         - name: Python
-          href: event-hubs-python-get-started-send.md
+          href: get-started-python-send-v2.md
         - name: Node.js
-          href: event-hubs-node-get-started-send.md
+          href: get-started-node-send-v2.md
         - name: Go
           href: event-hubs-go-get-started-send.md
         - name: C (только отправка)
@@ -49,7 +49,7 @@
         - name: Использование шаблона Resource Manager для включения функции "Сбор" в Центрах событий
           href: event-hubs-resource-manager-namespace-event-hub-enable-capture.md
         - name: Сбор данных в Центрах событий с помощью Python
-          href: event-hubs-capture-python.md
+          href: get-started-capture-python-v2.md
     - name: Потоковая передача данных в Центры событий для Apache Kafka
       href: event-hubs-quickstart-kafka-enabled-event-hubs.md
     - name: Создание кластера ценовой категории "Выделенный"
@@ -114,10 +114,22 @@
           href: event-hubs-get-connection-string.md
         - name: Обмен событиями между приложениями с использованием разных протоколов
           href: event-hubs-exchange-events-different-protocols.md
-        - name: Руководство по программированию для .NET
-          href: event-hubs-programming-guide.md
-        - name: 'Отправка, получение и запись событий с помощью Python'
-          href: event-hubs-python.md
+        - name: Руководства по программированию
+          items:
+            - name: Python
+              href: 'https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/eventhub/azure-eventhub/README.md'
+            - name: JavaScript
+              href: 'https://github.com/Azure/azure-sdk-for-java/blob/master/sdk/eventhubs/azure-messaging-eventhubs/README.md'
+            - name: Руководство по программированию для .NET
+              href: event-hubs-programming-guide.md
+        - name: Считывание собранных данных с помощью Python (устаревшая информация)
+          href: event-hubs-capture-python.md
+        - name: Отправка и получение событий (устаревшая информация)
+          items:
+            - name: Python (устаревшая информация)
+              href: event-hubs-python-get-started-send.md
+            - name: Node.js (устаревшая информация)
+              href: event-hubs-node-get-started-send.md
     - name: Обработка данных
       items:
         - name: Обработка данных с помощью Azure Stream Analytics
@@ -193,7 +205,15 @@
         - name: Microsoft.Azure.Management.EventHub
           href: /dotnet/api/microsoft.azure.management.eventhub
     - name: Node.js
-      href: /javascript/api/overview/azure/event-hub?view=azure-node-latest
+      items:
+        - name: "Переход с версии\_2 на версию\_5"
+          href: 'https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/eventhub/event-hubs/migrationguide.md'
+        - name: Справочник по API
+          href: /javascript/api/overview/azure/event-hub?view=azure-node-latest
+    - name: Python
+      items:
+        - name: "Переход с версии\_1 на версию\_5"
+          href: 'https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/eventhub/azure-eventhub/migration_guide.md'
     - name: REST
       href: /rest/api/eventhub
     - name: Шаблон Resource Manager

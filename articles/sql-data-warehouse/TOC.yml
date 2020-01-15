@@ -14,7 +14,7 @@
       href: sql-data-warehouse-best-practices.md
     - name: Ограничения емкости
       href: sql-data-warehouse-service-capacity-limits.md
-    - name: Вопросы и ответы
+    - name: ВОПРОСЫ И ОТВЕТЫ
       href: sql-data-warehouse-overview-faq.md
 - name: Заметки о выпуске
   items:
@@ -37,7 +37,7 @@
           href: pause-and-resume-compute-portal.md
         - name: PowerShell
           href: pause-and-resume-compute-powershell.md
-    - name: Масштаб
+    - name: Масштабирование
       items:
         - name: Портал
           href: quickstart-scale-compute-portal.md
@@ -57,7 +57,7 @@
               href: quickstart-configure-workload-isolation-tsql.md
 - name: Основные понятия
   items:
-    - name: Безопасность
+    - name: безопасность
       items:
         - name: Обзор
           href: sql-data-warehouse-overview-manage-security.md
@@ -141,7 +141,7 @@
               href: performance-tuning-materialized-views.md
             - name: Создание
               href: /sql/t-sql/statements/create-materialized-view-as-select-transact-sql?toc=/azure/sql-data-warehouse/toc.json&bc=/azure/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest
-            - name: Изменение
+            - name: Alter
               href: /sql/t-sql/statements/alter-materialized-view-transact-sql?toc=/azure/sql-data-warehouse/toc.json&bc=/azure/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest
             - name: Проверка затрат на просмотр
               href: /sql/t-sql/database-console-commands/dbcc-pdw-showmaterializedviewoverhead-transact-sql?toc=/azure/sql-data-warehouse/toc.json&bc=/azure/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest
@@ -183,7 +183,7 @@
               href: sql-data-warehouse-tables-index.md
             - name: Удостоверение
               href: sql-data-warehouse-tables-identity.md
-            - name: Разделы
+            - name: Секции
               href: sql-data-warehouse-tables-partition.md
             - name: Реплицированные таблицы
               href: design-guidance-for-replicated-tables.md
@@ -197,7 +197,7 @@
               href: sql-data-warehouse-develop-loops.md
             - name: Хранимые процедуры
               href: sql-data-warehouse-develop-stored-procedures.md
-            - name: Транзакции
+            - name: Transactions
               href: sql-data-warehouse-develop-transactions.md
             - name: Рекомендации по транзакциям
               href: sql-data-warehouse-develop-best-practices-transactions.md
@@ -225,6 +225,8 @@
           href: sql-data-warehouse-workload-importance.md
         - name: Изоляция рабочей нагрузки
           href: sql-data-warehouse-workload-isolation.md
+        - name: Мониторинг управления рабочими нагрузками
+          href: sql-data-warehouse-workload-management-portal-monitor.md
         - name: Ограничения памяти и параллелизма
           href: memory-concurrency-limits.md
         - name: Классы ресурсов
@@ -241,7 +243,7 @@
           href: backup-and-restore.md
         - name: Рекомендации
           href: sql-data-warehouse-concept-recommendations.md
-        - name: Устранение неполадок
+        - name: Диагностика
           href: sql-data-warehouse-troubleshoot.md
     - name: Расписание обслуживания
       href: maintenance-scheduling.md
@@ -295,7 +297,7 @@
               href: sql-data-warehouse-source-control-integration.md
             - name: Непрерывная интеграция и развертывание
               href: sql-data-warehouse-continuous-integration-and-deployment.md
-        - name: Подключение и запросы
+        - name: Подключение и выполнение запросов
           items:
             - name: SSDT для Visual Studio
               href: sql-data-warehouse-query-visual-studio.md
@@ -351,11 +353,11 @@
           items:
             - name: Визуализация с помощью Power BI
               href: sql-data-warehouse-get-started-visualize-with-power-bi.md
-    - name: Устранение неполадок
+    - name: Диагностика
       items:
-        - name: Возможность подключения
+        - name: Соединение
           href: sql-data-warehouse-troubleshoot-connectivity.md
-- name: Справочные материалы
+- name: Справочник
   items:
     - name: Типы параметров сортировки баз данных
       href: sql-data-warehouse-reference-collation-types.md
@@ -371,7 +373,7 @@
       href: sql-data-warehouse-reference-tsql-system-views.md
     - name: Командлеты PowerShell
       href: sql-data-warehouse-reference-powershell-cmdlets.md
-    - name: Интерфейсы API REST
+    - name: Интерфейсы REST API
       href: sql-data-warehouse-manage-compute-rest-api.md
 - name: Ресурсы
   items:
@@ -393,7 +395,7 @@
       href: sql-data-warehouse-get-started-create-support-ticket.md
     - name: Видео
       href: sql-data-warehouse-videos.md
-    - name: Партнеры
+    - name: Участники
       items:
         - name: Бизнес-аналитика
           href: sql-data-warehouse-partner-business-intelligence.md

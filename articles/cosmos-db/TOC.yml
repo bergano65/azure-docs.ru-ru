@@ -869,6 +869,9 @@
         - name: Поиск сведений о расходуемых единицах запросов
           displayName: 'request units, RUs, RU, charge, consumption'
           href: find-request-unit-charge.md
+        - name: Масштабирование с использованием таймера в Функциях Azure
+          displayName: 'request units, RUs, RU, timer'
+          href: scale-on-schedule.md
     - name: Работа с контейнерами и элементами
       items:
         - name: "Работа с данными Cosmos\_DB"

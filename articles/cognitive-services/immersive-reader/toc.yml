@@ -9,26 +9,32 @@
   items:
     - name: 'Использование C#'
       href: Quickstart.md
+    - name: Использование Node.js
+      href: quickstart-nodejs.md
     - name: Использование Swift (iOS)
       href: ios-quickstart.md
 - name: Учебники
   items:
-    - name: Запуск Иммерсивного средства чтения (Node.js)
-      href: tutorial-nodejs.md
     - name: Запуск иммерсивного средства чтения (Python)
       href: tutorial-python.md
-    - name: Изображение к Иммерсивному средству чтения (Swift)
-      href: tutorial-ios-picture-immersive-reader.md
 - name: Инструкции
   items:
-    - name: Аутентификация Azure Active Directory
-      href: azure-active-directory-authentication.md
-- name: Справочные материалы
+    - name: Создание ресурса иммерсивного средства чтения
+      href: how-to-create-immersive-reader.md
+    - name: Настройка политики файлов cookie
+      href: how-to/set-cookie-policy.md
+    - name: Отображение математического содержимого
+      href: how-to/display-math.md
+    - name: Запуск иммерсивного средства чтения с содержимым HTML
+      href: how-to-launch-with-html.md
+    - name: Кнопка настройки иммерсивного средства чтения
+      href: how-to-customize-launch-button.md
+    - name: Кэширование маркера проверки подлинности
+      href: how-to-cache-token.md
+- name: Справочник
   items:
     - name: Справочник по пакету SDK
       href: reference.md
-    - name: Справочник по пакету SDK для iOS
-      href: ios-reference.md
 - name: Ресурсы
   items:
     - name: Стратегия развития Azure

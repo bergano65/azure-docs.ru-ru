@@ -7,7 +7,7 @@
       href: overview.md
     - name: Поддержка языков и региональных параметров
       href: language-support.md
-      displayName: 'languages,locales,region,voice,gender,language code,locale,locale code'
+      displayName: 'languages,locales,region,voice,gender,language code,locale,locale code,neural voice,standard voice'
 - name: Преобразование речи в текст
   expanded: false
   items:
@@ -27,6 +27,8 @@
       items:
         - name: Изменение исходного языка при распознавании речи
           href: how-to-specify-source-language.md
+        - name: Выбор режима распознавания речи
+          href: how-to-choose-recognition-mode.md
         - name: Повышение точности с помощью пользовательского распознавания речи
           href: how-to-custom-speech.md
         - name: Повышение точности с помощью списков фраз
@@ -102,6 +104,7 @@
           href: speech-synthesis-markup.md
         - name: Улучшение выходных данных с помощью пользовательских голосов
           href: how-to-custom-voice.md
+          displayName: custom voice
         - name: Синтезирование речи с помощью API длинных аудиоматериалов
           href: long-audio-api.md
         - name: Использование синтеза речи с контейнерами Docker
@@ -363,6 +366,7 @@
           items:
             - name: Начало работы с настраиваемыми голосовыми моделями
               href: how-to-custom-voice.md
+              displayName: 'custom voice, neural voice'
             - name: Подготовка данных
               href: how-to-custom-voice-prepare-data.md
             - name: Создание и использование настраиваемых голосовых моделей
