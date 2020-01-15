@@ -57,7 +57,7 @@
     - name: Контейнеры Azure
       href: ../container-instances/container-instances-managed-identity.md
     - name: Шаблон Azure Resource Manager
-      href: ../azure-resource-manager/resource-manager-keyvault-parameter.md
+      href: ../azure-resource-manager/templates/key-vault-parameter.md
     - name: Настройка смены ключей и аудита
       href: key-vault-key-rotation-log-monitoring.md
 - name: Примеры

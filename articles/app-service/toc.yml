@@ -204,7 +204,7 @@
         - name: Клонирование приложения
           href: app-service-web-app-cloning.md
         - name: Перемещение ресурсов
-          href: '../azure-resource-manager/resource-group-move-resources.md?toc=%2fazure%2fapp-service%2ftoc.json#app-service-limitations'
+          href: '../azure-resource-manager/management/move-resource-group-and-subscription.md?toc=%2fazure%2fapp-service%2ftoc.json#app-service-limitations'
         - name: Восстановление удаленной Службы приложений
           href: app-service-undelete.md
     - name: Выполнение фоновых задач

@@ -17,7 +17,7 @@
           href: stream-files-tutorial-with-rest.md
         - name: С помощью CLI
           href: stream-files-cli-quickstart.md
-        - name: Использование .NET
+        - name: С помощью .NET
           href: stream-files-dotnet-quickstart.md
         - name: Использование Node.js
           href: stream-files-nodejs-quickstart.md
@@ -77,7 +77,7 @@
         - name: Автоматическое создание схемы передачи с адаптивной скоростью
           href: autogen-bitrate-ladder.md
         - name: Кодирование с учетом содержимого
-          href: cae-experimental.md
+          href: content-aware-encoding.md
     - name: Анализ содержимого (Индексатор видео)
       items:
         - name: Обзор
@@ -146,7 +146,7 @@
           href: live-event-states-billing.md
         - name: Задержка
           href: live-event-latency.md
-    - name: Мониторинг
+    - name: Наблюдение
       items:
         - name: События в Сетке событий
           href: reacting-to-media-services-events.md
@@ -178,7 +178,7 @@
     - name: Руководство по миграции из версии 2 в версию 3
       href: migrate-from-v2-to-v3.md
       displayName: naming
-- name: Инструкции
+- name: Практические руководства
   items:
     - name: Начало работы
       items:
@@ -228,7 +228,7 @@
           href: cli-create-transform.md
         - name: "Создание заданий\_— CLI"
           href: cli-create-jobs.md
-    - name: Кодирование содержимого
+    - name: Кодирование контента
       items:
         - name: "URL-адрес HTTPS в качестве входных данных для задания\_— .NET"
           displayName: 'encode, encoding'
@@ -238,7 +238,7 @@
           href: job-input-from-local-file-how-to.md
         - name: Кодирование с помощью пользовательского преобразования
           items:
-            - name: Использование .NET
+            - name: С помощью .NET
               displayName: 'encode, encoding, custom, transform'
               href: customize-encoder-presets-how-to.md
             - name: С помощью CLI
@@ -294,7 +294,7 @@
           href: cli-publish-asset.md
         - name: Описательный звуковой сигнал
           href: signal-descriptive-audio-howto.md
-- name: Справочные материалы
+- name: Справочник
   items:
     - name: Спецификация OpenAPI (Swagger)
       href: 'https://aka.ms/ams-v3-rest-sdk'
@@ -356,7 +356,7 @@
       href: 'https://github.com/Azure/Azure-Media-Services-Explorer'
     - name: Квоты и ограничения
       href: limits-quotas-constraints.md
-    - name: Вопросы и ответы
+    - name: ВОПРОСЫ И ОТВЕТЫ
       href: frequently-asked-questions.md
     - name: Облака и регионы Azure
       href: azure-clouds-regions.md
