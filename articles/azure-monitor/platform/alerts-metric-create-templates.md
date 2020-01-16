@@ -5,15 +5,15 @@ author: harelbr
 services: azure-monitor
 ms.service: azure-monitor
 ms.topic: conceptual
-ms.date: 1/13/2020
+ms.date: 1/14/2020
 ms.author: harelbr
 ms.subservice: alerts
-ms.openlocfilehash: 9f8ed6be825470504b5e7b45a15c4faa9cf5ccfc
-ms.sourcegitcommit: 014e916305e0225512f040543366711e466a9495
+ms.openlocfilehash: bfa5d240ba4905f79274941568933daf1425bf8b
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75932883"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75969428"
 ---
 # <a name="create-a-metric-alert-with-a-resource-manager-template"></a>Создание оповещения о метриках с помощью шаблона Resource Manager
 
@@ -29,7 +29,7 @@ ms.locfileid: "75932883"
 1. Используйте один из приведенных ниже шаблонов в виде JSON-файла, описывающего создание оповещения.
 2. Измените и используйте соответствующий файл параметров как JSON, чтобы настроить оповещение.
 3. Сведения о параметре `metricName` см. в разделе Доступные метрики в [Azure Monitor поддерживаемых метриках](https://docs.microsoft.com/azure/azure-monitor/platform/metrics-supported).
-4. Разверните шаблон с помощью [любого метода развертывания](../../azure-resource-manager/resource-group-template-deploy.md).
+4. Разверните шаблон с помощью [любого метода развертывания](../../azure-resource-manager/templates/deploy-powershell.md).
 
 ## <a name="template-for-a-simple-static-threshold-metric-alert"></a>Шаблон для простого оповещения о метрике со статическим пороговым значением
 
@@ -378,6 +378,13 @@ az group deployment create \
                 "description": "The number of unhealthy periods to alert on (must be lower or equal to numberOfEvaluationPeriods)."
             }
         },
+    "ignoreDataBefore": {
+            "type": "string",
+            "defaultValue": "",
+            "metadata": {
+                "description": "Use this option to set the date from which to start learning the metric historical data and calculate the dynamic thresholds (in ISO8601 format, e.g. '2019-12-31T22:00:00Z')."
+            }
+        },
         "timeAggregation": {
             "type": "string",
             "defaultValue": "Average",
@@ -455,6 +462,7 @@ az group deployment create \
                                 "numberOfEvaluationPeriods": "[parameters('numberOfEvaluationPeriods')]",
                                 "minFailingPeriodsToAlert": "[parameters('minFailingPeriodsToAlert')]"
                             },
+                "ignoreDataBefore": "[parameters('ignoreDataBefore')]",
                             "timeAggregation": "[parameters('timeAggregation')]"
                         }
                     ]
@@ -511,6 +519,9 @@ az group deployment create \
         "minFailingPeriodsToAlert": {
             "value": "3"
         },
+    "ignoreDataBefore": {
+            "value": ""
+        },
         "timeAggregation": {
             "value": "Average"
         },
@@ -559,7 +570,7 @@ az group deployment create \
 - В каждом из критериев можно выбрать только одно значение для каждого измерения.
 - Нельзя использовать "\*" в качестве значения измерения.
 - Если метрики, настроенные в разных критериях, поддерживают одно и то же измерение, то настроенное значение измерения должно быть явно задано одинаково для всех этих метрик (в соответствующих критериях).
-    - В приведенном ниже примере, поскольку метрики **транзакций** и **SuccessE2ELatency** имеют измерение **имен API** , а *criterion1* указывает значение *"BLOB"* для измерения " **имя API** ", *criterion2* также необходимо задать значение *"BLOB"* для измерения " **имя API** ".
+    - В приведенном ниже примере, поскольку метрики **Transactions** и **SuccessE2ELatency** имеют измерение **ApiName** , а *criterion1* задает значение *"BLOB"* для измерения **ApiName** , *criterion2* также необходимо задать значение *"BLOB"* для измерения **ApiName** .
 
 
 В целях данного пошагового руководства сохраните приведенный ниже JSON в виде файла advancedstaticmetricalert.json.

@@ -7,16 +7,16 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 11/13/2019
-ms.openlocfilehash: f6e1af2fdf43eb4351e996297f7dba775b7ffcef
-ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
+ms.openlocfilehash: 4baa65ca5dda6b266cd6c739225ebd01d011268c
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74278791"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75980082"
 ---
 # <a name="move-a-log-analytics-workspace-to-different-subscription-or-resource-group"></a>Перемещение рабочей области Log Analytics в другую подписку или группу ресурсов
 
-В этой статье вы узнаете, как переместить рабочую область Log Analytics в другую группу ресурсов или подписку в том же регионе. Дополнительные сведения о перемещении ресурсов Azure можно получить с помощью портал Azure, PowerShell, Azure CLI или REST API. [Переместите ресурсы в новую группу ресурсов или подписку](../../azure-resource-manager/resource-group-move-resources.md). 
+В этой статье вы узнаете, как переместить рабочую область Log Analytics в другую группу ресурсов или подписку в том же регионе. Дополнительные сведения о перемещении ресурсов Azure можно получить с помощью портал Azure, PowerShell, Azure CLI или REST API. [Переместите ресурсы в новую группу ресурсов или подписку](../../azure-resource-manager/management/move-resource-group-and-subscription.md). 
 
 > [!IMPORTANT]
 > Невозможно переместить рабочую область в другой регион.
@@ -34,7 +34,7 @@ ms.locfileid: "74278791"
 
 Решения, которые необходимо удалить перед удалением связи с учетной записью службы автоматизации:
 
-- управление обновлениями;
+- Управление обновлениями
 - Отслеживание изменений
 - Запуск и остановка виртуальных машин в нерабочее время
 
@@ -82,7 +82,7 @@ Remove-AzResource -ResourceType 'Microsoft.OperationsManagement/solutions' -Reso
 
 ## <a name="move-your-workspace"></a>Перемещение рабочей области
 
-### <a name="azure-portal"></a>портале Azure
+### <a name="azure-portal"></a>Портал Azure
 Используйте следующую процедуру для перемещения рабочей области с помощью портал Azure:
 
 1. Откройте меню **log Analytics рабочие области** и выберите рабочую область.
@@ -106,5 +106,5 @@ Move-AzResource -ResourceId "/subscriptions/00000000-0000-0000-0000-000000000000
 > После операции перемещения удаленные решения и ссылки на учетную запись службы автоматизации необходимо перенастроить, чтобы восстановить предыдущее состояние рабочей области.
 
 
-## <a name="next-steps"></a>Дополнительная информация
-- Список ресурсов, которые поддерживают перемещение, см. в разделе [Поддержка операций перемещения для ресурсов](../../azure-resource-manager/move-support-resources.md).
+## <a name="next-steps"></a>Дальнейшие действия
+- Список ресурсов, которые поддерживают перемещение, см. в разделе [Поддержка операций перемещения для ресурсов](../../azure-resource-manager/management/move-support-resources.md).

@@ -10,12 +10,12 @@ ms.subservice: security-fundamentals
 ms.topic: conceptual
 ms.date: 09/05/2019
 ms.author: mbaldwin
-ms.openlocfilehash: 4ae75df89ef5ab45dd241b38f904b6645e3978aa
-ms.sourcegitcommit: d70c74e11fa95f70077620b4613bb35d9bf78484
+ms.openlocfilehash: 570cc8457e69b7056b2865af9c1feb5d62a395eb
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70910199"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75981453"
 ---
 # <a name="index-of-built-in-security-controls-articles-for-azure-services"></a>Индекс статьи "встроенные элементы управления безопасностью" для служб Azure
 
@@ -25,7 +25,7 @@ ms.locfileid: "70910199"
 
 - [Управление API](../../api-management/api-management-security-controls.md)
 - [Служба приложений Azure](../../app-service/app-service-security-controls.md)
-- [Azure Resource Manager](../../azure-resource-manager/azure-resource-manager-security-controls.md)
+- [Azure Resource Manager](../../azure-resource-manager/management/azure-resource-manager-security-controls.md)
 - [Azure Backup](../../backup/backup-security-controls.md)
 - [Azure Cosmos DB](../../cosmos-db/cosmos-db-security-controls.md)
 - [Центры событий Azure](../../event-hubs/event-hubs-security-controls.md)
@@ -35,7 +35,7 @@ ms.locfileid: "70910199"
 - [Обмен сообщениями служебной шины Azure](../../service-bus-messaging/service-bus-messaging-security-controls.md)
 - [Ретранслятор служебной шины Azure](../../service-bus-relay/service-bus-relay-security-controls.md)
 - [Azure Service Fabric](../../service-fabric/service-fabric-security-controls.md)
-- [база данных SQL Azure;](../../sql-database/sql-database-security-controls.md)
+- [База данных SQL Azure](../../sql-database/sql-database-security-controls.md)
 - [Хранилище Azure](../../storage/common/storage-security-controls.md)
 - [Масштабируемые наборы виртуальных машин Azure](../../virtual-machine-scale-sets/virtual-machine-scale-sets-security-controls.md)
 - [Виртуальные машины Linux](../../virtual-machines/linux/virtual-machines-linux-security-controls.md)

@@ -10,12 +10,12 @@ ms.date: 10/01/2019
 ms.author: tamram
 ms.reviewer: cbrooks
 ms.subservice: common
-ms.openlocfilehash: 13e9abb2a7b79ad9355261832145766e424c3df6
-ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
+ms.openlocfilehash: b49b3187f9178012131d793a7762ae470b0ea540
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74895172"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75965723"
 ---
 # <a name="call-rest-api-operations-with-shared-key-authorization"></a>Вызов REST API операций с авторизацией общего ключа
 
@@ -23,13 +23,13 @@ ms.locfileid: "74895172"
 
 ## <a name="prerequisites"></a>Технические условия
 
-Пример приложения перечисляет контейнеры больших двоичных объектов для учетной записи хранения. Чтобы выполнить код, описанный в этой статье, необходимо следующее. 
+Пример приложения перечисляет контейнеры больших двоичных объектов для учетной записи хранения. Чтобы выполнить код, описанный в этой статье, необходимо следующее.
 
-- Установите [Visual Studio 2019](https://www.visualstudio.com/visual-studio-homepage-vs.aspx) с рабочей нагрузкой **разработки Azure** .
+- Установите [Visual Studio 2019](https://www.visualstudio.com/visual-studio-homepage-vs.aspx) с рабочей нагрузкой **разработки в Azure**.
 
 - Подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-- Учетная запись хранения общего назначения. Если у вас еще нет учетной записи хранения Azure, [создайте ее](storage-quickstart-create-account.md).
+- Учетная запись хранения общего назначения. Если у вас еще нет учетной записи хранения Azure, [создайте ее](storage-account-create.md).
 
 - Пример в этой статье показывает, как перечислять контейнеры в учетной записи хранения. Для просмотра выходных данных перед началом работы добавьте несколько контейнеров в хранилище BLOB-объектов в учетной записи хранения.
 
@@ -43,7 +43,7 @@ ms.locfileid: "74895172"
 git clone https://github.com/Azure-Samples/storage-dotnet-rest-api-with-auth.git
 ```
 
-Эта команда клонирует репозиторий в локальную папку git. Чтобы открыть решение Visual Studio, найдите папку storage-dotnet-rest-api-with-auth, откройте ее и дважды щелкните файл StorageRestApiAuth.sln. 
+Эта команда клонирует репозиторий в локальную папку git. Чтобы открыть решение Visual Studio, найдите папку storage-dotnet-rest-api-with-auth, откройте ее и дважды щелкните файл StorageRestApiAuth.sln.
 
 ## <a name="about-rest"></a>О программе
 
@@ -93,16 +93,16 @@ git clone https://github.com/Azure-Samples/storage-dotnet-rest-api-with-auth.git
 
 В нашем примере проекта код для создания заголовка авторизации находится в отдельном классе. Идея состоит в том, что вы можете взять весь класс и добавить его в собственное решение и использовать его "как есть". Код заголовка авторизации работает для большинства вызовов REST API в хранилище Azure.
 
-Чтобы создать запрос, который является объектом HttpRequestMessage, перейдите в ListContainersAsyncREST в Program.cs. Для создания запроса, необходимо: 
+Чтобы создать запрос, который является объектом HttpRequestMessage, перейдите в ListContainersAsyncREST в Program.cs. Для создания запроса, необходимо:
 
-- Создайте URI, используемый для вызова службы. 
+- Создайте URI, используемый для вызова службы.
 - Создайте объект HttpRequestMessage и настройте полезную нагрузку. Полезная нагрузка равна нулю для ListContainersAsyncREST, потому что мы ничего не передаем.
 - Добавьте заголовки запросов для x-ms-date и x-ms-version.
 - Получите заголовок авторизации и добавьте его.
 
-Необходимые базовые сведения: 
+Необходимые базовые сведения:
 
-- Для ListContainers **методом** является `GET`. Это значение устанавливается при создании экземпляра запроса. 
+- Для ListContainers **методом** является `GET`. Это значение устанавливается при создании экземпляра запроса.
 - **Ресурс** является частью запроса URI, который указывает на вызываемый API, поэтому значением будет `/?comp=list`. Как отмечалось ранее, ресурс находится на странице справочной документации о [ListContainers API](/rest/api/storageservices/List-Containers2).
 - URI создается путем создания конечной точки службы BLOB-объектов для этой учетной записи хранения и сцепки ресурсов. Значением для **URI запроса** будет `http://contosorest.blob.core.windows.net/?comp=list`.
 - Для ListContainers **requestBody** имеет значение null и не имеет дополнительных **заголовков**.
@@ -160,7 +160,7 @@ httpRequestMessage.Headers.Authorization = AzureStorageAuthenticationHelper.GetA
     using (HttpResponseMessage httpResponseMessage =
       await new HttpClient().SendAsync(httpRequestMessage, cancellationToken))
     {
-        // If successful (status code = 200), 
+        // If successful (status code = 200),
         //   parse the XML response for the container names.
         if (httpResponseMessage.StatusCode == HttpStatusCode.OK)
         {
@@ -209,7 +209,7 @@ Content-Length: 1511
 
 ```xml  
 <?xml version="1.0" encoding="utf-8"?>
-<EnumerationResults 
+<EnumerationResults
   ServiceEndpoint="http://contosorest.blob.core.windows.net/">
   <Containers>
     <Container>
@@ -308,7 +308,7 @@ StringToSign = VERB + "\n" +
 
 ### <a name="canonicalized-headers"></a>Канонические заголовки
 
-Чтобы создать это значение, загрузите заголовки, начинающиеся с x-ms-, и отсортируйте их, а затем отформатируйте их в строку экземпляров `[key:value\n]`, объединенных в одну строку. В этом примере канонические заголовки будут выглядеть следующим образом: 
+Чтобы создать это значение, загрузите заголовки, начинающиеся с x-ms-, и отсортируйте их, а затем отформатируйте их в строку экземпляров `[key:value\n]`, объединенных в одну строку. В этом примере канонические заголовки будут выглядеть следующим образом:
 
 ```
 x-ms-date:Fri, 17 Nov 2017 00:44:48 GMT\nx-ms-version:2017-07-29\n
@@ -316,7 +316,7 @@ x-ms-date:Fri, 17 Nov 2017 00:44:48 GMT\nx-ms-version:2017-07-29\n
 
 Вот код, используемый для создания этих выходных данных:
 
-```csharp 
+```csharp
 private static string GetCanonicalizedHeaders(HttpRequestMessage httpRequestMessage)
 {
     var headers = from kvp in httpRequestMessage.Headers
@@ -444,7 +444,7 @@ https://myaccount.blob.core.windows.net/container-1?restype=container&comp=list
 В ListContainersAsyncREST измените код, который устанавливает URI в API для ListBlob. Имя контейнера — **container-1**.
 
 ```csharp
-String uri = 
+String uri =
     string.Format("http://{0}.blob.core.windows.net/container-1?restype=container&comp=list",
       storageAccountName);
 
@@ -516,7 +516,7 @@ Date: Fri, 17 Nov 2017 05:20:21 GMT
 Content-Length: 1135
 ```
 
-**Текст ответа (XML):** этот ответ XML отображает список BLOB-объектов и их свойства. 
+**Текст ответа (XML):** этот ответ XML отображает список BLOB-объектов и их свойства.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -563,7 +563,7 @@ Content-Length: 1135
 </EnumerationResults>
 ```
 
-## <a name="summary"></a>Резюме
+## <a name="summary"></a>Сводка
 
 В этой статье вы узнали, как выполнить запрос к хранилищу BLOB-объектов REST API. С помощью запроса можно получить список контейнеров или список больших двоичных объектов в контейнере. Вы узнали, как создать подпись авторизации для вызова REST API и как использовать ее в запросе RESTFUL. Наконец, вы узнали, как проверить ответ.
 

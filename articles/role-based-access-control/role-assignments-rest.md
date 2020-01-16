@@ -15,12 +15,12 @@ ms.topic: conceptual
 ms.date: 11/25/2019
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: 1ba0c2bd81f32c0aec242dbfb32b2d7f4064ddbe
-ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
+ms.openlocfilehash: 3c7b7dac649548b8b21cc13761009c11609c8904
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74707827"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75981038"
 ---
 # <a name="add-or-remove-role-assignments-using-azure-rbac-and-the-rest-api"></a>Добавление и удаление назначений ролей с помощью Azure RBAC и REST API
 
@@ -61,7 +61,7 @@ ms.locfileid: "74707827"
     | --- | --- |
     | `providers/Microsoft.Management/managementGroups/{groupId1}` | группа управления; |
     | `subscriptions/{subscriptionId1}` | Subscription |
-    | `subscriptions/{subscriptionId1}/resourceGroups/myresourcegroup1` | группа ресурсов. |
+    | `subscriptions/{subscriptionId1}/resourceGroups/myresourcegroup1` | Группа ресурсов |
     | `subscriptions/{subscriptionId1}/resourceGroups/myresourcegroup1/ providers/microsoft.web/sites/mysite1` | Ресурс |
 
 1. Замените *{roleAssignmentName}* идентификатором GUID для назначения роли.
@@ -72,7 +72,7 @@ ms.locfileid: "74707827"
     | --- | --- |
     | `providers/Microsoft.Management/managementGroups/{groupId1}` | группа управления; |
     | `subscriptions/{subscriptionId1}` | Subscription |
-    | `subscriptions/{subscriptionId1}/resourceGroups/myresourcegroup1` | группа ресурсов. |
+    | `subscriptions/{subscriptionId1}/resourceGroups/myresourcegroup1` | Группа ресурсов |
     | `subscriptions/{subscriptionId1}/resourceGroups/myresourcegroup1/ providers/microsoft.web/sites/mysite1` | Ресурс |
 
 1. Замените *{roleDefinitionId}* идентификатором определения роли.
@@ -97,7 +97,7 @@ ms.locfileid: "74707827"
     | --- | --- |
     | `providers/Microsoft.Management/managementGroups/{groupId1}` | группа управления; |
     | `subscriptions/{subscriptionId1}` | Subscription |
-    | `subscriptions/{subscriptionId1}/resourceGroups/myresourcegroup1` | группа ресурсов. |
+    | `subscriptions/{subscriptionId1}/resourceGroups/myresourcegroup1` | Группа ресурсов |
     | `subscriptions/{subscriptionId1}/resourceGroups/myresourcegroup1/ providers/microsoft.web/sites/mysite1` | Ресурс |
 
 1. Замените *{roleAssignmentName}* идентификатором GUID для назначения роли.
@@ -105,6 +105,6 @@ ms.locfileid: "74707827"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - [Вывод списка назначений ролей с помощью Azure RBAC и REST API](role-assignments-list-rest.md)
-- [Развертывание ресурсов с использованием шаблонов и REST API Resource Manager](../azure-resource-manager/resource-group-template-deploy-rest.md)
+- [Развертывание ресурсов с использованием шаблонов и REST API Resource Manager](../azure-resource-manager/templates/deploy-rest.md)
 - [Справочник по REST API Azure](/rest/api/azure/)
 - [Создание пользовательских ролей для ресурсов Azure с помощью REST API](custom-roles-rest.md)

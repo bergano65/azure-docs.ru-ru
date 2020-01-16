@@ -15,12 +15,12 @@ ms.custom: H1Hack27Feb2017
 ms.workload: infrastructure-services
 ms.date: 12/18/2017
 ms.author: allensu
-ms.openlocfilehash: e80de4a3102f9fec8ad06c0facd110b51558d338
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: 37e5f5ed1d877900d8ef967f83de95f056fcca0c
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74211008"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75980531"
 ---
 # <a name="overview-of-dns-zones-and-records"></a>Обзор зон и записей DNS
 
@@ -115,7 +115,7 @@ Azure DNS поддерживает [записи с подстановочным
 
 ### <a name="tags"></a>Теги
 
-Теги — это список пар "имя — значение", которые используются Azure Resource Manager для пометки ресурсов.  Azure Resource Manager использует теги, чтобы обеспечить отфильтрованные представления счетов Azure, а также позволяет задать политику, для которой необходимы теги. Дополнительные сведения о тегах см. в статье [Использование тегов для организации ресурсов в Azure](../azure-resource-manager/resource-group-using-tags.md).
+Теги — это список пар "имя — значение", которые используются Azure Resource Manager для пометки ресурсов.  Azure Resource Manager использует теги, чтобы обеспечить отфильтрованные представления счетов Azure, а также позволяет задать политику, для которой необходимы теги. Дополнительные сведения о тегах см. в статье [Использование тегов для организации ресурсов в Azure](../azure-resource-manager/management/tag-resources.md).
 
 Azure DNS поддерживает использование тегов Azure Resource Manager в ресурсах зоны DNS.  Эта служба не поддерживает использование тегов в наборе записей DNS, хотя в качестве альтернативы в наборе записей DNS поддерживаются метаданные, как описано ниже.
 
@@ -147,7 +147,7 @@ Azure DNS поддерживает использование тегов Azure R
 
 [!INCLUDE [dns-limits](../../includes/dns-limits.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Чтобы начать работу с Azure DNS, узнайте, как [создать зону DNS](dns-getstarted-create-dnszone-portal.md) и [записи DNS](dns-getstarted-create-recordset-portal.md).
 * Чтобы перенести имеющуюся зону DNS, узнайте, как [импортировать и экспортировать файл зоны DNS](dns-import-export.md).
