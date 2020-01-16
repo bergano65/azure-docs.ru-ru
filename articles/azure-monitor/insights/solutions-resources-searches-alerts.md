@@ -8,12 +8,12 @@ author: bwren
 ms.author: bwren
 ms.date: 07/29/2019
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 488130fbd2939fa4d98e379126ba3353a417fd72
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 5ff9c45ffb636f53951a763f617c25a2e8c09088
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75401764"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75977725"
 ---
 # <a name="adding-log-analytics-saved-searches-and-alerts-to-management-solution-preview"></a>Добавление сохраненных поисковых запросов и оповещений Log Analytics в решение по управлению (предварительная версия)
 
@@ -23,7 +23,7 @@ ms.locfileid: "75401764"
 > [!NOTE]
 > Это предварительная версия документации по созданию решений по управлению, доступных в режиме предварительной версии. Любые схемы, приведенные ниже, могут измениться.
 
-[Решения по управлению](solutions.md) обычно включают в себя возможность [сохранения поисковых запросов](../../azure-monitor/log-query/log-query-overview.md) в Log Analytics для анализа данных, собранных этим решением. Они могут также определять [оповещения](../../azure-monitor/platform/alerts-overview.md) для уведомления пользователя или автоматического выполнения действия в ответ на критическую ошибку. В этой статье описывается, как определить сохраненные поиски и оповещения Log Analytics в [шаблоне Resource Manager](../../azure-resource-manager/resource-manager-quickstart-create-templates-use-the-portal.md), чтобы их можно было добавлять в [решения для управления](solutions-creating.md).
+[Решения по управлению](solutions.md) обычно включают в себя возможность [сохранения поисковых запросов](../../azure-monitor/log-query/log-query-overview.md) в Log Analytics для анализа данных, собранных этим решением. Они могут также определять [оповещения](../../azure-monitor/platform/alerts-overview.md) для уведомления пользователя или автоматического выполнения действия в ответ на критическую ошибку. В этой статье описывается, как определить сохраненные поиски и оповещения Log Analytics в [шаблоне Resource Manager](../../azure-resource-manager/templates/quickstart-create-templates-use-the-portal.md), чтобы их можно было добавлять в [решения для управления](solutions-creating.md).
 
 > [!NOTE]
 > В примерах этой статьи используются обязательные или общие параметры и переменные для решений по управлению, описанные в статье [Проектирование и сборка решения по управлению в Azure (предварительная версия)](solutions-creating.md).

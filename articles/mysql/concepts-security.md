@@ -6,12 +6,12 @@ ms.author: andrela
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 12/02/2019
-ms.openlocfilehash: 421604bcec5277d337b7e7f73a869f40fa73158a
-ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
+ms.openlocfilehash: fb0a71a650a8c36d4da962adaf3f1f314c30d4c2
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74764973"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75980008"
 ---
 # <a name="security-in-azure-database-for-mysql"></a>Безопасность в Базе данных Azure для MySQL
 
@@ -37,8 +37,10 @@ ms.locfileid: "74764973"
 ### <a name="virtual-network-firewall-rules"></a>Правила брандмауэра для виртуальной сети
 Конечные точки службы виртуальной сети расширяют возможности подключения к виртуальной сети по магистрали Azure. С помощью правил виртуальной сети можно включить сервер базы данных Azure для MySQL, чтобы разрешить подключения из выбранных подсетей в виртуальной сети. Дополнительные сведения см. в разделе [Общие сведения о конечной точке службы виртуальной сети](concepts-data-access-and-security-vnet.md).
 
+### <a name="private-ip"></a>Частный IP-адрес
+Частная ссылка позволяет подключаться к базе данных Azure для MySQL в Azure с помощью частной конечной точки. Частная связь Azure, по сути, предоставляет службы Azure в частной виртуальной сети (VNet). Доступ к ресурсам PaaS можно получить, используя частный IP-адрес, как и любой другой ресурс в виртуальной сети. Дополнительные сведения см. в статье [Общие сведения о частной ссылке](concepts-data-access-security-private-link.md) .
 
-## <a name="access-management"></a>управление доступом
+## <a name="access-management"></a>Управление доступом
 
 При создании сервера базы данных Azure для MySQL вы предоставляете учетные данные для пользователя с правами администратора. Этот администратор может использоваться для создания дополнительных пользователей MySQL.
 

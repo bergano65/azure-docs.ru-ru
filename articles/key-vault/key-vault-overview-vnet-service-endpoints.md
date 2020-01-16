@@ -8,12 +8,12 @@ manager: rkarlin
 ms.date: 01/02/2019
 ms.service: key-vault
 ms.topic: conceptual
-ms.openlocfilehash: 6e85e33cf0488cf688303c590c2bbaf5d671d9b7
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: e31153a1c490948266714633202d5e59fe66fa3a
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73467108"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75980487"
 ---
 # <a name="virtual-network-service-endpoints-for-azure-key-vault"></a>Конечные точки служб для виртуальной сети для Azure Key Vault
 
@@ -46,7 +46,7 @@ ms.locfileid: "73467108"
 Дополнительные сведения см. в статье [Настройка брандмауэров и виртуальных сетей Azure Key Vault](key-vault-network-security.md).
 
 > [!IMPORTANT]
-> Когда правила брандмауэра начнут действовать, пользователи смогут выполнять операции [плоскости данных](../key-vault/key-vault-secure-your-key-vault.md#data-plane-access-control) в Key Vault только из разрешенных виртуальных сетей или диапазонов IPv4-адресов. Это относится и к получению доступа к Key Vault с портала Azure. Пользователь сможет перейти в хранилище ключей с портала Azure, но не сможет получить список ключей, секретов и сертификатов, если клиентский компьютер не включен в список разрешенных. Это также влияет на выбор хранилища ключей другими службами Azure. Пользователи смогут просматривать список хранилищ ключей, но не список ключей, если правила брандмауэра запрещают доступ их клиентским компьютерам.
+> Когда правила брандмауэра начнут действовать, пользователи смогут выполнять запросы на операции [плоскости данных](../key-vault/key-vault-secure-your-key-vault.md#data-plane-access-control) в Key Vault только из разрешенных виртуальных сетей или диапазонов IPv4-адресов. Это относится и к получению доступа к Key Vault с портала Azure. Пользователь сможет перейти в хранилище ключей с портала Azure, но не сможет получить список ключей, секретов и сертификатов, если клиентский компьютер не включен в список разрешенных. Это также влияет на выбор хранилища ключей другими службами Azure. Пользователи смогут просматривать список хранилищ ключей, но не список ключей, если правила брандмауэра запрещают доступ их клиентским компьютерам.
 
 
 > [!NOTE]
@@ -63,15 +63,15 @@ ms.locfileid: "73467108"
 |Доверенная служба|Поддерживаемые сценарии использования|
 | --- | --- |
 |Служба развертывания виртуальных машин Azure|[Развертывание сертификатов на виртуальных машинах из хранилища ключей, управляемого пользователем](https://blogs.technet.microsoft.com/kv/2016/09/14/updated-deploy-certificates-to-vms-from-customer-managed-key-vault/)|
-|Служба развертывания шаблонов Azure Resource Manager|[Передача защищенных значений в процессе развертывания](../azure-resource-manager/resource-manager-keyvault-parameter.md).|
+|Служба развертывания шаблонов Azure Resource Manager|[Передача защищенных значений в процессе развертывания](../azure-resource-manager/templates/key-vault-parameter.md).|
 |Служба шифрования томов для шифрования дисков Azure|Разрешение доступа к ключу BitLocker (виртуальная машина Windows), парольной фразе DM (виртуальная машина Linux) и ключу шифрования ключей во время развертывания виртуальной машины. Это позволяет включить [шифрование дисков Azure](../security/fundamentals/encryption-overview.md).|
-|Служба архивации Azure|Разрешение резервного копирования и восстановления соответствующих ключей и секретов во время резервного копирования виртуальной машины Azure с помощью службы [Azure Backup](../backup/backup-introduction-to-azure-backup.md).|
+|Служба Azure Backup|Разрешение резервного копирования и восстановления соответствующих ключей и секретов во время резервного копирования виртуальной машины Azure с помощью службы [Azure Backup](../backup/backup-introduction-to-azure-backup.md).|
 |Exchange Online и SharePoint Online|Разрешение доступа к ключу клиента для функции шифрования службы хранилища Azure с использованием [ключа пользователя](https://support.office.com/article/Controlling-your-data-in-Office-365-using-Customer-Key-f2cd475a-e592-46cf-80a3-1bfb0fa17697).|
 |Azure Information Protection|Разрешение доступа к ключу клиента для [Azure Information Protection.](https://docs.microsoft.com/azure/information-protection/what-is-information-protection)|
 |Служба приложений Azure|[Развертывание сертификата веб-приложения Azure через Key Vault](https://azure.github.io/AppService/2016/05/24/Deploying-Azure-Web-App-Certificate-through-Key-Vault.html)|
 |База данных SQL Azure|[Прозрачное шифрование данных с поддержкой использования собственных ключей для Базы данных SQL Azure и Хранилища данных SQL Azure](../sql-database/transparent-data-encryption-byok-azure-sql.md?view=sql-server-2017&viewFallbackFrom=azuresqldb-current)|
-|Хранилище Azure|[Шифрование службы хранилища с помощью управляемых пользователем ключей в Azure Key Vault](../storage/common/storage-service-encryption-customer-managed-keys.md).|
-|Хранилище озера данных Azure|[Шифрование данных в Azure Data Lake Storage](../data-lake-store/data-lake-store-encryption.md) с помощью управляемого пользователем ключа.|
+|Служба хранилища Azure|[Шифрование службы хранилища с помощью управляемых пользователем ключей в Azure Key Vault](../storage/common/storage-service-encryption-customer-managed-keys.md).|
+|Azure Data Lake Store|[Шифрование данных в Azure Data Lake Storage](../data-lake-store/data-lake-store-encryption.md) с помощью управляемого пользователем ключа.|
 |Azure Databricks|[Быстрая и простая служба аналитики на основе Apache Spark для совместной работы](../azure-databricks/what-is-azure-databricks.md).|
 |Cлужба управления Azure API|[Развертывание сертификатов для пользовательского домена из Key Vault с помощью MSI](../api-management/api-management-howto-use-managed-service-identity.md#use-the-managed-service-identity-to-access-other-resources)|
 |Фабрика данных Azure|[Выбор учетных данных хранилища данных в Key Vault из фабрики данных](https://go.microsoft.com/fwlink/?linkid=2109491)|

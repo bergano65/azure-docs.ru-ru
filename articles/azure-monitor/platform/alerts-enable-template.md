@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 4/27/2018
 ms.author: johnkem
 ms.subservice: metrics
-ms.openlocfilehash: dd02fe17d5225a63f352069b3c6c5a47b7cbcb73
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 7c1cdf912f9a1e4e8ae92baa4381e9705702136f
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75397278"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75977591"
 ---
 # <a name="create-a-classic-metric-alert-with-a-resource-manager-template"></a>Создание классического оповещения метрики с помощью шаблона Resource Manager
 В этой статье показано, как можно использовать [шаблон Azure Resource Manager](../../azure-resource-manager/templates/template-syntax.md) для настройки оповещений метрик Azure. Это позволяет автоматически настраивать оповещения для ресурсов при их создании, чтобы обеспечить правильный мониторинг всех ресурсов.
@@ -27,7 +27,7 @@ ms.locfileid: "75397278"
 Основными шагами являются следующие:
 
 1. Создайте шаблон в виде JSON-файла, который описывает создание оповещения.
-2. [Разверните шаблон с помощью любого метода развертывания](../../azure-resource-manager/resource-group-template-deploy.md).
+2. [Разверните шаблон с помощью любого метода развертывания](../../azure-resource-manager/templates/deploy-powershell.md).
 
 Ниже описано, как сначала создать шаблон Resource Manager только для оповещения, а затем — как это сделать во время создания другого ресурса.
 

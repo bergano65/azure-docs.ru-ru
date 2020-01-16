@@ -4,15 +4,15 @@ description: Описывает использование REST API Azure Analys
 author: minewiskan
 ms.service: azure-analysis-services
 ms.topic: conceptual
-ms.date: 10/28/2019
+ms.date: 01/14/2020
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: 7c6fba10264939335cdef26f288973f8217f340b
-ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
+ms.openlocfilehash: 2281f9d493edf955881772ec174c82b527f1b6fa
+ms.sourcegitcommit: dbcc4569fde1bebb9df0a3ab6d4d3ff7f806d486
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73573392"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76029879"
 ---
 # <a name="asynchronous-refresh-with-the-rest-api"></a>Асинхронное обновление с помощью REST API
 
@@ -30,7 +30,7 @@ REST API для Azure Analysis Services позволяет выполнять о
 https://<rollout>.asazure.windows.net/servers/<serverName>/models/<resource>/
 ```
 
-Например, рассмотрим модель с именем AdventureWorks на сервере myserver, расположенном в регионе Azure "Западная часть США". Тогда у сервера будет такое имя:
+Например, рассмотрим модель с именем AdventureWorks на сервере с именем `myserver`, расположенную в регионе Azure "Западная часть США". Тогда у сервера будет такое имя:
 
 ```
 asazure://westus.asazure.windows.net/myserver 
@@ -93,26 +93,37 @@ https://westus.asazure.windows.net/servers/myserver/models/AdventureWorks/refres
 }
 ```
 
-### <a name="parameters"></a>parameters
+### <a name="parameters"></a>Параметры
 
 Указывать параметры не обязательно. Применяются значения по умолчанию.
 
-| Name             | введите  | ОПИСАНИЕ  |значение по умолчанию  |
+| Имя             | Тип  | Description  |По умолчанию  |
 |------------------|-------|--------------|---------|
-| `Type`           | Перечисление,  | Тип выполняемой обработки. Тип выполняемой обработки зависит от типа [команды refresh](https://docs.microsoft.com/bi-reference/tmsl/refresh-command-tmsl) TMSL: full, clearValues, calculate, dataOnly, automatic или defragment. Тип add не поддерживается.      |   automatic      |
-| `CommitMode`     | Перечисление,  | Определяет, будут объекты зафиксированы в пакетах или только после завершения. Режимы: default, transactional, partialBatch.  |  transactional       |
-| `MaxParallelism` | int   | Это значение определяет максимальное количество потоков, над которыми можно параллельно выполнять команды обработки. Это значение согласуется со свойством MaxParallelism, которое можно задать, используя [команду sequence](https://docs.microsoft.com/bi-reference/tmsl/sequence-command-tmsl) или другими способами.       | 10        |
-| `RetryCount`     | int   | Указывает число попыток повторить операцию, по исчерпании которого будет определен сбой.      |     0    |
-| `Objects`        | Массив. | Массив объектов для обработки. Для каждого объекта указываются параметр table, если нужно обработать целую таблицу, или параметры table и partition для обработки секции. Если нет указанных объектов, обновляется вся модель. |   Обработка целой модели      |
+| `Type`           | Перечисление.  | Тип выполняемой обработки. Тип выполняемой обработки зависит от типа [команды refresh](https://docs.microsoft.com/bi-reference/tmsl/refresh-command-tmsl) TMSL: full, clearValues, calculate, dataOnly, automatic или defragment. Тип add не поддерживается.      |   automatic      |
+| `CommitMode`     | Перечисление.  | Определяет, будут объекты зафиксированы в пакетах или только после завершения. Режимы: default, transactional, partialBatch.  |  transactional       |
+| `MaxParallelism` | Int   | Это значение определяет максимальное количество потоков, над которыми можно параллельно выполнять команды обработки. Это значение согласуется со свойством MaxParallelism, которое можно задать, используя [команду sequence](https://docs.microsoft.com/bi-reference/tmsl/sequence-command-tmsl) или другими способами.       | 10        |
+| `RetryCount`     | Int   | Указывает число попыток повторить операцию, по исчерпании которого будет определен сбой.      |     0    |
+| `Objects`        | Array | Массив объектов для обработки. Для каждого объекта указываются параметр table, если нужно обработать целую таблицу, или параметры table и partition для обработки секции. Если нет указанных объектов, обновляется вся модель. |   Обработка целой модели      |
 
 Значение CommitMode — partialBatch. Оно используется при начальной загрузке для больших наборов данных, что может занять несколько часов. Если обновление завершится сбоем после успешной фиксации одного или нескольких пакетов, эти пакеты останутся зафиксированными (т. е. для них не будет выполнен откат).
 
 > [!NOTE]
 > На момент написания статьи требуется, чтобы размер пакета был равен значению MaxParallelism, но это могло измениться.
 
+### <a name="status-values"></a>Значения состояния
+
+|Значение состояния  |Description  |
+|---------|---------|
+|`notStarted`    |   Операция еще не запущена.      |
+|`inProgress`     |   Выполняется операция.      |
+|`timedOut`     |    Время ожидания операции истекло на основе указанного пользователем времени ожидания.     |
+|`cancelled`     |   Операция отменена пользователем или системой.      |
+|`failed`     |   Ошибка при выполнении операции.      |
+|`succeeded`      |   Операция успешно завершена.      |
+
 ## <a name="get-refreshesrefreshid"></a>GET /refreshes/\<refreshId>
 
-Чтобы проверить состояние обновления, используйте команду GET с идентификатором обновления. Ниже приведен пример текста ответа. Если операция еще выполняется, возвращается состояние **inProgress**.
+Чтобы проверить состояние обновления, используйте команду GET с идентификатором обновления. Ниже приведен пример текста ответа. Если операция выполняется, `inProgress` возвращается в состояние.
 
 ```
 {
@@ -208,12 +219,12 @@ https://westus.asazure.windows.net/servers/myserver/models/AdventureWorks/refres
 
 1.  В примере кода найдите фрагмент **string authority = …** и замените **стандартный** идентификатор на код клиента своей организации.
 2.  Закомментируйте или раскомментируйте код, так чтобы класс ClientCredential использовался для создания экземпляра объекта cred. Убедитесь, что доступ к значениям \<App ID> и \<App Key> осуществляется безопасно, или настройте для субъектов-служб проверку подлинности.
-3.  Запустите пример.
+3.  Запустите образец.
 
 
 ## <a name="see-also"></a>См. также
 
 [Примеры](analysis-services-samples.md)   
-[ИНТЕРФЕЙС REST API](https://docs.microsoft.com/rest/api/analysisservices/servers)   
+[REST API](https://docs.microsoft.com/rest/api/analysisservices/servers)   
 
 

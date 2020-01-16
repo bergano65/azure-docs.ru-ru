@@ -6,12 +6,12 @@ ms.author: andrela
 ms.service: mariadb
 ms.topic: conceptual
 ms.date: 12/02/2019
-ms.openlocfilehash: 72d8e58d1f4ca2955ed2469d061277949751d8b3
-ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
+ms.openlocfilehash: 17c957dbd9c43b3cc66af39195a73bad8e006814
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74772704"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75982348"
 ---
 # <a name="use-virtual-network-service-endpoints-and-rules-for-azure-database-for-mariadb"></a>Сведения об использовании конечных точек служб и правил виртуальной сети с Базой данных Azure для MariaDB
 
@@ -50,11 +50,11 @@ ms.locfileid: "74772704"
 
 Пока вы не выполните соответствующие действия, виртуальные машины в подсети не могут взаимодействовать с сервером базы данных Azure для MariaDB. Создание правила виртуальной сети — это единственное действие, которое устанавливает подключение. Чтобы обосновать выбор подхода на основе правил виртуальной сети, требуется сравнить преимущества и недостатки этого подхода с конкурирующими функциями безопасности, предоставляемыми брандмауэром.
 
-### <a name="a-allow-access-to-azure-services"></a>О. Разрешение доступа к службам Azure
+### <a name="a-allow-access-to-azure-services"></a>A. Разрешение доступа к службам Azure
 
 На панели безопасности подключения есть кнопка **Вкл./Выкл.** с надписью **Разрешить доступ к службам Azure**. Значение **ON** (Вкл.) разрешает подключение со всех IP-адресов Azure и из всех подсетей Azure. Эти Azure IP-адреса и подсети могут принадлежать не вам. Возможно, значение **Вкл.** делает вашу систему более открытой, чем требуется для базы данных Azure для MariaDB. Правила виртуальной сети обеспечивают более детализированный контроль.
 
-### <a name="b-ip-rules"></a>B. Правила фильтрации IP-адресов
+### <a name="b-ip-rules"></a>Б. Правила фильтрации IP-адресов
 
 Брандмауэр базы данных Azure для MariaDB позволяет указать диапазоны IP-адресов, подключения с которых принимаются базой данных Azure для MariaDB. Эта методика хорошо подходит для постоянных IP-адресов, которые находятся за пределами частной сети Azure. Однако за пределами частной сети Azure используется множество *динамических* IP-адресов. Динамические IP-адреса могут изменяться, например при перезапуске виртуальной машины. Было бы неразумно указывать динамический IP-адрес в правиле брандмауэра в рабочей среде.
 
@@ -62,7 +62,7 @@ ms.locfileid: "74772704"
 
 Однако применение статических IP-адресов может усложнить управление и создать дополнительные расходы при увеличении масштаба среды. Правила виртуальной сети проще устанавливать и контролировать.
 
-### <a name="c-cannot-yet-have-azure-database-for-mariadb-on-a-subnet-without-defining-a-service-endpoint"></a>C. Базу данных Azure для MariaDB невозможно создать в подсети без определения конечной точки службы
+### <a name="c-cannot-yet-have-azure-database-for-mariadb-on-a-subnet-without-defining-a-service-endpoint"></a>В. Базу данных Azure для MariaDB невозможно создать в подсети без определения конечной точки службы
 
 Если сервер **Microsoft.Sql** будет узлом в подсети виртуальной сети, то все узлы в этой виртуальной сети смогут взаимодействовать с сервером базы данных Azure для MariaDB. В этом случае виртуальные машины могут взаимодействовать с базой данных Azure для MariaDB без дополнительных правил виртуальной сети или фильтрации IP-адресов.
 
@@ -88,8 +88,8 @@ ms.locfileid: "74772704"
 
 Роли безопасности для администрирования конечных точек служб для виртуальной сети разделены. Требуется действие каждой из следующих ролей:
 
-- **администратор сети:** &nbsp; включение конечной точки;
-- **администратор базы данных:** &nbsp; обновление списка управления доступом (ACL) для добавления данной подсети на сервер базы данных Azure для MariaDB.
+- **Администратор сети:** &nbsp; включить конечную точку.
+- **Администратор базы данных:** &nbsp; обновить список управления доступом (ACL), чтобы добавить данную подсеть к серверу базы данных Azure для MariaDB.
 
 *Альтернатива RBAC*
 
@@ -148,7 +148,7 @@ ms.locfileid: "74772704"
 -->
 
 <!-- Link references, to text, Within this same GitHub repo. -->
-[resource-manager-deployment-model-568f]: ../azure-resource-manager/resource-manager-deployment-model.md
+[resource-manager-deployment-model-568f]: ../azure-resource-manager/management/deployment-models.md
 
 [vm-virtual-network-overview]: ../virtual-network/virtual-networks-overview.md
 
@@ -162,4 +162,4 @@ ms.locfileid: "74772704"
 
 [expressroute-indexmd-744v]: ../expressroute/index.yml
 
-[resource-manager-portal]: ../azure-resource-manager/resource-manager-supported-services.md
+[resource-manager-portal]: ../azure-resource-manager/management/resource-providers-and-types.md

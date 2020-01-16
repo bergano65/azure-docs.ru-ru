@@ -7,19 +7,19 @@ ms.topic: conceptual
 author: mrbullwinkle
 ms.author: mbullwin
 ms.date: 09/05/2018
-ms.openlocfilehash: 860694a750ae313f04aceab924429dcf08ecbb66
-ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
+ms.openlocfilehash: f915764deaa70117b96a42c5e7310b691125d731
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2019
-ms.locfileid: "73887541"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75979850"
 ---
 # <a name="application-insights-for-azure-cloud-services"></a>Использование Application Insights для облачных служб Azure
 [Application Insights][start] можете отслеживать [приложения облачных служб Azure](https://azure.microsoft.com/services/cloud-services/) на предмет доступности, производительности, сбоев и использования, объединяя данные из Application Insights SDK с [система диагностики Azure](https://docs.microsoft.com/azure/monitoring-and-diagnostics/azure-diagnostics) данными из облачных служб. Благодаря получаемым данным о производительности и эффективности работы приложения на практике вы можете принимать осознанные решения о направлении разработки в каждом жизненном цикле.
 
 ![Панель мониторинга с общими сведениями](./media/cloudservices/overview-graphs.png)
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Технические условия
 Для этого потребуются следующие компоненты.
 
 * Подписка [Azure](https://azure.com). Войдите с помощью учетной записи Майкрософт для Windows, XBox Live или других облачных служб Майкрософт. 
@@ -52,7 +52,7 @@ ms.locfileid: "73887541"
 ## <a name="plan-resources-and-resource-groups"></a>Планирование ресурсов и групп ресурсов
 Данные телеметрии из приложения сохраняются, анализируются и отображаются в ресурсе Azure типа Application Insights. 
 
-Каждый ресурс относится к группе ресурсов. Группы ресурсов используются для управления затратами, предоставления доступа участникам команды и развертывания обновлений в отдельной согласованной транзакции. Например, вы можете [написать скрипт для развертывания](../../azure-resource-manager/resource-group-template-deploy.md) облачной службы Azure и ресурсов мониторинга Application Insights в одной операции.
+Каждый ресурс относится к группе ресурсов. Группы ресурсов используются для управления затратами, предоставления доступа участникам команды и развертывания обновлений в отдельной согласованной транзакции. Например, вы можете [написать скрипт для развертывания](../../azure-resource-manager/templates/deploy-powershell.md) облачной службы Azure и ресурсов мониторинга Application Insights в одной операции.
 
 ### <a name="resources-for-components"></a>Ресурсы для компонентов
 Мы рекомендуем создать отдельный ресурс для каждого компонента приложения. Это означает, что ресурс создается для каждой веб-роли и рабочей роли. Вы можете анализировать каждый компонент отдельно, но удобнее создать [панель мониторинга](../../azure-monitor/app/overview-dashboard.md) с важнейшими диаграммами для всех компонентов, чтобы сравнивать и отслеживать их вместе. 
@@ -107,7 +107,7 @@ ms.locfileid: "73887541"
 
 1. Чтобы настроить **рабочие ролей**, сделайте следующее: 
 
-    a. Щелкните проект правой кнопкой мыши и выберите **Управление пакетами Nuget**.
+    а. Щелкните проект правой кнопкой мыши и выберите **Управление пакетами Nuget**.
 
     b. Добавьте [Application Insights для Windows Servers](https://www.nuget.org/packages/Microsoft.ApplicationInsights.WindowsServer/).
 
@@ -115,7 +115,7 @@ ms.locfileid: "73887541"
 
 1. Чтобы настроить пакет SDK для отправки данных в ресурс Application Insights, сделайте следующее:
 
-    a. В соответствующей функции запуска задайте ключ инструментирования, указанный в параметре конфигурации из файла *.cscfg*.
+    а. В соответствующей функции запуска задайте ключ инструментирования, указанный в параметре конфигурации из файла *.cscfg*.
  
     ```csharp
    
@@ -237,7 +237,7 @@ ms.locfileid: "73887541"
 * \ASP.NET Applications(??APP_W3SVC_PROC??)\Время выполнения запросов
 * \ASP.NET Applications(??APP_W3SVC_PROC??)\Запросы в очереди приложений
 
-Можно указать дополнительные пользовательские или другие счетчики производительности Windows, *изменив файл* ApplicationInsights.config[](https://github.com/Microsoft/ApplicationInsights-Home/blob/master/Samples/AzureEmailService/WorkerRoleA/ApplicationInsights.config#L14).
+Можно указать дополнительные пользовательские или другие счетчики производительности Windows, изменив *файл ApplicationInsights. config* , [как показано в этом примере](https://github.com/Microsoft/ApplicationInsights-Home/blob/master/Samples/AzureEmailService/WorkerRoleA/ApplicationInsights.config#L14).
 
   ![Счетчики производительности](./media/cloudservices/002-servers.png)
 
@@ -246,7 +246,7 @@ ms.locfileid: "73887541"
 
 Для рабочих ролей вы можете использовать пользовательский инициализатор телеметрии, чтобы задать атрибут общего контекста Operation.Id для всех данных телеметрии. Это позволит с первого взгляда понять, связаны ли сбой или задержка с некоторой зависимостью или ошибкой в коде. 
 
-Этот процесс описывается далее.
+Это делается так.
 
 * [Настройте идентификатор корреляции в объекте CallContext](https://github.com/Microsoft/ApplicationInsights-Home/blob/master/Samples/AzureEmailService/WorkerRoleA/WorkerRoleA.cs#L36). В нашем примере мы используем идентификатор запроса как идентификатор корреляции.
 * Добавьте пользовательскую реализацию TelemetryInitializer, которая сохраняет в Operation.Id заданное ранее значение correlationId. Пример: [ItemCorrelationTelemetryInitializer](https://github.com/Microsoft/ApplicationInsights-Home/blob/master/Samples/AzureEmailService/WorkerRoleA/Telemetry/ItemCorrelationTelemetryInitializer.cs#L13).
@@ -275,7 +275,7 @@ ms.locfileid: "73887541"
 
 > [!VIDEO https://channel9.msdn.com/events/Connect/2016/100/player]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * [Настройка системы диагностики Azure для отправки данных в Application Insights](../../azure-monitor/platform/diagnostics-extension-to-application-insights.md)
 * [Создание ресурсов Application Insights с помощью PowerShell](../../azure-monitor/app/powershell.md)
 * [Настройка Application Insights для веб-приложения Azure с помощью PowerShell](../../azure-monitor/app/powershell-azure-diagnostics.md)

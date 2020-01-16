@@ -3,12 +3,12 @@ title: Мониторинг кластера службы Azure Kubernetes Servi
 description: Узнайте, как включить мониторинг кластера Azure Kubernetes Service (AKS) с Azure Monitor для контейнеров, уже развернутых в вашей подписке.
 ms.topic: conceptual
 ms.date: 09/12/2019
-ms.openlocfilehash: eced371f7d44b486d671c2c22ca9fbb4c0b65fbb
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 57d492778828254da7a6899641ab9dbd19a40154
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75405492"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75977790"
 ---
 # <a name="enable-monitoring-of-azure-kubernetes-service-aks-cluster-already-deployed"></a>Включение мониторинга уже развернутого кластера Azure Kubernetes Service (AKS)
 
@@ -18,12 +18,12 @@ ms.locfileid: "75405492"
 
 * Интерфейс командной строки Azure
 * Terraform
-* [Из Azure Monitor](#enable-from-azure-monitor-in-the-portal) или [непосредственно из кластера AKS](#enable-directly-from-aks-cluster-in-the-portal) в портал Azure 
-* С [предоставленным шаблоном Azure Resource Manager](#enable-using-an-azure-resource-manager-template) с помощью командлета Azure PowerShell `New-AzResourceGroupDeployment` или с Azure CLI. 
+* [Из Azure Monitor](#enable-from-azure-monitor-in-the-portal) или [непосредственно из кластера AKS](#enable-directly-from-aks-cluster-in-the-portal) в портал Azure
+* С [предоставленным шаблоном Azure Resource Manager](#enable-using-an-azure-resource-manager-template) с помощью командлета Azure PowerShell `New-AzResourceGroupDeployment` или с Azure CLI.
 
 ## <a name="sign-in-to-the-azure-portal"></a>Вход на портал Azure
 
-Войдите на [портал Azure](https://portal.azure.com). 
+Войдите на [портал Azure](https://portal.azure.com).
 
 ## <a name="enable-using-azure-cli"></a>Включение мониторинга с помощью Azure CLI
 
@@ -65,14 +65,14 @@ provisioningState       : Succeeded
     az account set -s <subscriptionId of the workspace>
     ```
 
-3. В следующем примере отображается список рабочих областей в подписках в формате JSON по умолчанию. 
+3. В следующем примере отображается список рабочих областей в подписках в формате JSON по умолчанию.
 
     ```
     az resource list --resource-type Microsoft.OperationalInsights/workspaces -o json
     ```
 
     В выходных данных найдите имя рабочей области, а затем скопируйте полный идентификатор ресурса этой Log Analytics рабочей области под **идентификатором**поля.
- 
+
 4. Выполните следующую команду, чтобы включить надстройку мониторинга, заменив значение параметра `--workspace-resource-id`. Строковое значение должно быть заключено в двойные кавычки:
 
     ```azurecli
@@ -100,11 +100,11 @@ provisioningState       : Succeeded
 
 2. Добавьте [azurerm_log_analytics_solution](https://www.terraform.io/docs/providers/azurerm/r/log_analytics_solution.html), выполнив шаги, описанные в документации Terraform.
 
-## <a name="enable-from-azure-monitor-in-the-portal"></a>Включение из Azure Monitor на портале 
+## <a name="enable-from-azure-monitor-in-the-portal"></a>Включение из Azure Monitor на портале
 
 Чтобы включить мониторинг кластера AKS на портале Azure из раздела Azure Monitor, выполните следующие действия:
 
-1. На портале Azure выберите **Монитор**. 
+1. На портале Azure выберите **Монитор**.
 
 2. В списке выберите **Контейнеры**.
 
@@ -113,22 +113,22 @@ provisioningState       : Succeeded
 4. В списке неотслеживаемых кластеров выберите контейнер и щелкните **Включить**.   
 
 5. Если рабочая область Log Analytics расположена в той же подписке, что и кластер, выберите ее из раскрывающегося списка на странице **Onboarding to Azure Monitor for containers** (Подключение к Azure Monitor для контейнеров).  
-    В списке предварительно выбрана рабочая область по умолчанию и расположение, в которое контейнер AKS развертывается в подписке. 
+    В списке предварительно выбрана рабочая область по умолчанию и расположение, в которое контейнер AKS развертывается в подписке.
 
     ![Включение мониторинга аналитических сведений о контейнере AKS](./media/container-insights-onboard/kubernetes-onboard-brownfield-01.png)
 
     >[!NOTE]
-    >Если вы хотите создать рабочую область Log Analytics для хранения данных мониторинга из кластера, выполните инструкции, описанные в статье [Создание рабочей области Log Analytics на портале Azure](../../azure-monitor/learn/quick-create-workspace.md). Создайте рабочую область в той же подписке, в которой развернут контейнер AKS. 
- 
-После включения мониторинга может пройти около 15 минут, прежде чем вы сможете просмотреть метрики работоспособности кластера. 
+    >Если вы хотите создать рабочую область Log Analytics для хранения данных мониторинга из кластера, выполните инструкции, описанные в статье [Создание рабочей области Log Analytics на портале Azure](../../azure-monitor/learn/quick-create-workspace.md). Создайте рабочую область в той же подписке, в которой развернут контейнер AKS.
+
+После включения мониторинга может пройти около 15 минут, прежде чем вы сможете просмотреть метрики работоспособности кластера.
 
 ## <a name="enable-directly-from-aks-cluster-in-the-portal"></a>Включение непосредственно из кластера AKS на портале
 
 Чтобы включить мониторинг непосредственно из одного из кластеров AKS в портал Azure, выполните следующие действия.
 
-1. На портале Azure щелкните **Все службы**. 
+1. На портале Azure щелкните **Все службы**.
 
-2. В списке ресурсов введите **Контейнеры**.  Как только вы начнете вводить данные, список отфильтруется соответствующим образом. 
+2. В списке ресурсов введите **Контейнеры**.  Как только вы начнете вводить данные, список отфильтруется соответствующим образом.
 
 3. Выберите **Службы Kubernetes**.  
 
@@ -139,20 +139,20 @@ provisioningState       : Succeeded
 5. На странице обзора контейнеров выберите **Контейнеры мониторов**.  
 
 6. Если имеющаяся рабочая область Log Analytics расположена в той же подписке, что и кластер, выберите ее из раскрывающегося списка на странице **Onboarding to Azure Monitor for containers** (Подключение к Azure Monitor для контейнеров).  
-    В списке предварительно выбрана рабочая область по умолчанию и расположение, в которое контейнер AKS развертывается в подписке. 
+    В списке предварительно выбрана рабочая область по умолчанию и расположение, в которое контейнер AKS развертывается в подписке.
 
     ![Включение мониторинга работоспособности контейнера AKS](./media/container-insights-onboard/kubernetes-onboard-brownfield-02.png)
 
     >[!NOTE]
-    >Если вы хотите создать рабочую область Log Analytics для хранения данных мониторинга из кластера, выполните инструкции, описанные в статье [Создание рабочей области Log Analytics на портале Azure](../../azure-monitor/learn/quick-create-workspace.md). Создайте рабочую область в той же подписке, в которой развернут контейнер AKS. 
- 
-После включения мониторинга может потребоваться подождать около 15 минут, прежде чем вы сможете просмотреть операционные данные кластера. 
+    >Если вы хотите создать рабочую область Log Analytics для хранения данных мониторинга из кластера, выполните инструкции, описанные в статье [Создание рабочей области Log Analytics на портале Azure](../../azure-monitor/learn/quick-create-workspace.md). Создайте рабочую область в той же подписке, в которой развернут контейнер AKS.
+
+После включения мониторинга может потребоваться подождать около 15 минут, прежде чем вы сможете просмотреть операционные данные кластера.
 
 ## <a name="enable-using-an-azure-resource-manager-template"></a>Включение с помощью шаблона Azure Resource Manager
 
 В этом методе используются два шаблона JSON. Один шаблон задает конфигурацию для включения мониторинга, а другой содержит значения параметров, которые можно настроить, чтобы указать следующее:
 
-* идентификатор ресурса контейнера AKS; 
+* идентификатор ресурса контейнера AKS;
 * группу ресурсов, в которой развернут кластер;
 
 >[!NOTE]
@@ -163,11 +163,11 @@ provisioningState       : Succeeded
 
 Если вы не знакомы с концепцией развертывания ресурсов с помощью шаблона, ознакомьтесь со статьями:
 
-* [Развертывание ресурсов с использованием шаблонов Resource Manager и Azure PowerShell](../../azure-resource-manager/resource-group-template-deploy.md)
+* [Развертывание ресурсов с использованием шаблонов Resource Manager и Azure PowerShell](../../azure-resource-manager/templates/deploy-powershell.md)
 
-* [Развертывание ресурсов с использованием шаблонов Resource Manager и Azure CLI](../../azure-resource-manager/resource-group-template-deploy-cli.md)
+* [Развертывание ресурсов с использованием шаблонов Resource Manager и Azure CLI](../../azure-resource-manager/templates/deploy-cli.md)
 
-Если вы решили использовать Azure CLI, необходимо сначала установить интерфейс командной строки и использовать его локально. Необходимо запустить Azure CLI версии 2.0.59 или более поздней. Для определения версии выполните `az --version`. Если вам необходимо установить или обновить Azure CLI, ознакомьтесь со статьей [Установка Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli). 
+Если вы решили использовать Azure CLI, необходимо сначала установить интерфейс командной строки и использовать его локально. Необходимо запустить Azure CLI версии 2.0.59 или более поздней. Для определения версии выполните `az --version`. Если вам необходимо установить или обновить Azure CLI, ознакомьтесь со статьей [Установка Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli).
 
 ### <a name="create-and-execute-a-template"></a>Создание и выполнение шаблона
 
@@ -256,20 +256,20 @@ provisioningState       : Succeeded
     }
     ```
 
-4. Измените значения **аксресаурцеид** и **аксресаурцелокатион** , используя значения на странице **Обзор AKS** для кластера AKS. Значение для **workspaceResourceId** — это полный идентификатор ресурса рабочей области Log Analytics, который включает имя рабочей области. 
+4. Измените значения **аксресаурцеид** и **аксресаурцелокатион** , используя значения на странице **Обзор AKS** для кластера AKS. Значение для **workspaceResourceId** — это полный идентификатор ресурса рабочей области Log Analytics, который включает имя рабочей области.
 
     Измените значения для **аксресаурцетагвалуес** , чтобы они совпадали с существующими значениями тегов, указанными для кластера AKS.
 
 5. Сохраните этот файл как **existingClusterParam.json** в локальную папку.
 
-6. Теперь вы можете развернуть этот шаблон. 
+6. Теперь вы можете развернуть этот шаблон.
 
    * Чтобы выполнить развертывание с Azure PowerShell, используйте следующие команды в папке, содержащей шаблон:
 
        ```powershell
        New-AzResourceGroupDeployment -Name OnboardCluster -ResourceGroupName <ResourceGroupName> -TemplateFile .\existingClusterOnboarding.json -TemplateParameterFile .\existingClusterParam.json
        ```
-       
+
        Изменение конфигурации может занять несколько минут. После завершения настройки конфигурации появится сообщение, похожее на приведенное ниже, с таким результатом:
 
        ```powershell
@@ -277,7 +277,7 @@ provisioningState       : Succeeded
        ```
 
    * Чтобы выполнить развертывание с Azure CLI, выполните следующие команды:
-    
+
        ```azurecli
        az login
        az account set --subscription "Subscription Name"
@@ -289,8 +289,8 @@ provisioningState       : Succeeded
        ```azurecli
        provisioningState       : Succeeded
        ```
-     
-       После включения мониторинга может пройти около 15 минут, прежде чем вы сможете просмотреть метрики работоспособности кластера. 
+
+       После включения мониторинга может пройти около 15 минут, прежде чем вы сможете просмотреть метрики работоспособности кластера.
 
 ## <a name="verify-agent-and-solution-deployment"></a>Проверка развертывания агента и решения
 
@@ -298,7 +298,7 @@ provisioningState       : Succeeded
 
 ### <a name="agent-version-06072018-or-later"></a>Версия агента 06072018 или более поздняя
 
-Выполните следующую команду, чтобы проверить успешное развертывание агента. 
+Выполните следующую команду, чтобы проверить успешное развертывание агента.
 
 ```
 kubectl get ds omsagent --namespace=kube-system
@@ -307,7 +307,7 @@ kubectl get ds omsagent --namespace=kube-system
 Результат должен выглядеть приблизительно, как показано ниже, что означает успешное выполнение развертывания:
 
 ```
-User@aksuser:~$ kubectl get ds omsagent --namespace=kube-system 
+User@aksuser:~$ kubectl get ds omsagent --namespace=kube-system
 NAME       DESIRED   CURRENT   READY     UP-TO-DATE   AVAILABLE   NODE SELECTOR                 AGE
 omsagent   2         2         2         2            2           beta.kubernetes.io/os=linux   1d
 ```  
@@ -321,7 +321,7 @@ kubectl get deployment omsagent-rs -n=kube-system
 Результат должен выглядеть приблизительно, как показано ниже, что означает успешное выполнение развертывания:
 
 ```
-User@aksuser:~$ kubectl get deployment omsagent-rs -n=kube-system 
+User@aksuser:~$ kubectl get deployment omsagent-rs -n=kube-system
 NAME       DESIRED   CURRENT   UP-TO-DATE   AVAILABLE    AGE
 omsagent   1         1         1            1            3h
 ```
@@ -337,7 +337,7 @@ kubectl get ds omsagent --namespace=kube-system
 Результат должен выглядеть приблизительно, как показано ниже, что означает успешное выполнение развертывания:  
 
 ```
-User@aksuser:~$ kubectl get ds omsagent --namespace=kube-system 
+User@aksuser:~$ kubectl get ds omsagent --namespace=kube-system
 NAME       DESIRED   CURRENT   READY     UP-TO-DATE   AVAILABLE   NODE SELECTOR                 AGE
 omsagent   2         2         2         2            2           beta.kubernetes.io/os=linux   1d
 ```  
@@ -368,5 +368,3 @@ az aks show -g <resourceGroupofAKSCluster> -n <nameofAksCluster>
 * Если при попытке подключить решение у вас возникли проблемы, ознакомьтесь с [руководством по устранению неполадок](container-insights-troubleshoot.md).
 
 * С включенным наблюдением для получения сведений о работоспособности и использовании ресурсов кластером AKS и рабочими нагрузками, которые выполняются на них, Узнайте, [как использовать](container-insights-analyze.md) Azure Monitor для контейнеров.
-
-

@@ -5,27 +5,28 @@ services: networking
 author: anavinahar
 ms.service: networking
 ms.topic: include
-ms.date: 01/13/2020
+ms.date: 01/14/2020
 ms.author: anavin
 ms.custom: include file
-ms.openlocfilehash: 97ee10e0b286f1b007f2e807351301f2037d1754
-ms.sourcegitcommit: 014e916305e0225512f040543366711e466a9495
+ms.openlocfilehash: 17558b44c91425ce1a06625f8fd5c1806a762ba2
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75942676"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76021320"
 ---
 <a name="azure-resource-manager-virtual-networking-limits"></a>Ограничения сети. Azure Resource Manager следующие ограничения применяются только к сетевым ресурсам, управляемым с помощью **Azure Resource Manager** для каждого региона на подписку. Узнайте, как [просмотреть текущие данные об использовании ресурсов в соответствии с ограничениями подписки](../articles/networking/check-usage-against-limits.md).
 
 > [!NOTE]
-> Недавно мы увеличили все ограничения по умолчанию до максимального уровня. Если столбец максимального ограничения отсутствует, ресурс не имеет регулируемых ограничений. Если эти ограничения были увеличены за счет поддержки в прошлом и не видят обновленные ограничения в следующих таблицах, отправьте [запрос в службу поддержки по сети](../articles/azure-resource-manager/resource-manager-quota-errors.md) бесплатно.
+> Недавно мы увеличили все ограничения по умолчанию до максимального уровня. Если столбец максимального ограничения отсутствует, ресурс не имеет регулируемых ограничений. Если эти ограничения были увеличены за счет поддержки в прошлом и не видят обновленные ограничения в следующих таблицах, отправьте [запрос в службу поддержки по сети](../articles/azure-resource-manager/templates/error-resource-quota.md) бесплатно.
 
 | Ресурс | По умолчанию/максимальное ограничение | 
 | --- | --- |
 | Виртуальные сети |1000 |
 | Подсетей на виртуальную сеть |3000 |
 | Пиринг виртуальных сетей на виртуальную сеть |500 |
-| [Шлюзы виртуальной сети (VPN-шлюзы) на виртуальную сеть](../articles/vpn-gateway/vpn-gateway-about-vpngateways.md#gwsku) |30 |
+| [Шлюзы виртуальной сети (VPN-шлюзы) на виртуальную сеть](../articles/vpn-gateway/vpn-gateway-about-vpngateways.md#gwsku) |1 |
+| [Шлюзы виртуальной сети (шлюзы ExpressRoute) на виртуальную сеть](../articles/expressroute/expressroute-about-virtual-network-gateways.md#gwsku) |1 |
 | DNS-серверов на виртуальную сеть |20 |
 | Частных IP-адресов на виртуальную сеть |65 536 |
 | Частные IP-адреса на сетевой интерфейс |256 |

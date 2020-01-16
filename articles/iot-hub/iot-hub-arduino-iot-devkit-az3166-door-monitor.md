@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.tgt_pltfrm: arduino
 ms.date: 03/19/2018
 ms.author: liydu
-ms.openlocfilehash: 23607b52f866bb7b0be760e49be7d62d1732d43c
-ms.sourcegitcommit: 44c2a964fb8521f9961928f6f7457ae3ed362694
+ms.openlocfilehash: 6bebe8ac6b9869466938600d6267fd0062c84477
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73954754"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75977300"
 ---
 # <a name="door-monitor----using-azure-functions-and-sendgrid-send-email-when-a-door-is-opened"></a>Монитор двери — использование функций Azure и SendGrid, отправка электронной почты при открытии дверцы           
 
@@ -65,7 +65,7 @@ ms.locfileid: "73954754"
 
 Заполните форму регистрации:
 
-   * **Группа ресурсов**. Создайте группу ресурсов для размещения SendGrid или используйте имеющуюся. Дополнительные сведения см. в статье [Управление ресурсами Azure через портал](../azure-resource-manager/manage-resource-groups-portal.md).
+   * **Группа ресурсов**. Создайте группу ресурсов для размещения SendGrid или используйте имеющуюся. Дополнительные сведения см. в статье [Управление ресурсами Azure через портал](../azure-resource-manager/management/manage-resource-groups-portal.md).
 
    * **Имя**. Имя службы SendGrid. Выберите уникальное имя, отличающееся от других служб, которые могут быть у вас.
 
@@ -105,7 +105,7 @@ ms.locfileid: "73954754"
 
 Заполните поля в форме регистрации.
 
-   * **Группа ресурсов**. Создайте группу ресурсов для размещения SendGrid или используйте имеющуюся. Дополнительные сведения см. в статье [Управление ресурсами Azure через портал](../azure-resource-manager/manage-resource-groups-portal.md).
+   * **Группа ресурсов**. Создайте группу ресурсов для размещения SendGrid или используйте имеющуюся. Дополнительные сведения см. в статье [Управление ресурсами Azure через портал](../azure-resource-manager/management/manage-resource-groups-portal.md).
 
    * **Имя Центра Интернета вещей**. Имя Центра Интернета вещей. Выберите уникальное имя, отличающееся от других служб, которые могут быть у вас.
 
@@ -159,7 +159,7 @@ ms.locfileid: "73954754"
 
 2. Терминал предложит перейти в режим настройки. Чтобы сделать это, удерживая нажатой кнопку "A", нажмите и отпустите кнопку "Reset" (Сброс). На экране отображается идентификационный номер DevKit и слово *Configuration*.
 
-#### <a name="macos"></a>macOS
+#### <a name="macos"></a>MacOS
 
 1. Переведите плату DevKit в режим настройки. Для этого, удерживая нажатой кнопку A, нажмите и отпустите кнопку сброса. На экране отобразится надпись "Configuration" (Настройка).
 
@@ -195,7 +195,7 @@ ms.locfileid: "73954754"
 * [Gitter.im](https://gitter.im/Microsoft/azure-iot-developer-kit)
 * [Stack Overflow](https://stackoverflow.com/questions/tagged/iot-devkit)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Вы узнали, как подключить устройство DevKit к акселератору решения Azure IoT для удаленного мониторинга и как использовать службу SendGrid для отправки сообщений электронной почты. Ниже приведены предлагаемые дальнейшие действия:
 

@@ -6,12 +6,12 @@ ms.topic: article
 ms.date: 12/30/2019
 ms.author: danlep
 ms.custom: mvc
-ms.openlocfilehash: 823a25f388860fa55962a717b9dfed22f5d9c103
-ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
+ms.openlocfilehash: 0d39c83646357cf9426239d28e445c4791ddceb0
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75770528"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75981690"
 ---
 # <a name="deploy-to-azure-container-instances-from-azure-container-registry"></a>Развертывание в службе "Экземпляры контейнеров Azure" из реестра контейнеров Azure
 
@@ -136,7 +136,7 @@ $ az container create --name aci-demo --resource-group $RES_GROUP --image $ACR_L
 
 Полные параметры группы контейнеров см. в [справочнике по шаблону диспетчер ресурсов](/azure/templates/Microsoft.ContainerInstance/2018-10-01/containerGroups).    
 
-Дополнительные сведения об использовании ссылки на секреты Azure Key Vault в шаблоне Resource Manager см. в статье [Использование Azure Key Vault для передачи защищенного значения параметра во время развертывания](../azure-resource-manager/resource-manager-keyvault-parameter.md).
+Дополнительные сведения об использовании ссылки на секреты Azure Key Vault в шаблоне Resource Manager см. в статье [Использование Azure Key Vault для передачи защищенного значения параметра во время развертывания](../azure-resource-manager/templates/key-vault-parameter.md).
 
 ## <a name="deploy-with-azure-portal"></a>Развертывание с помощью портала Azure
 

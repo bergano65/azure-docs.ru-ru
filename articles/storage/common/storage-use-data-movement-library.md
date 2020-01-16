@@ -10,12 +10,12 @@ ms.topic: how-to
 ms.date: 12/04/2019
 ms.author: tamram
 ms.subservice: common
-ms.openlocfilehash: 22dae518a45d5c4af20044d5f3eb88e764e92c8b
-ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
+ms.openlocfilehash: 5fe1e45f2ff80c1a212009291ab880a57f347fdf
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74895116"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75978393"
 ---
 # <a name="transfer-data-with-the-data-movement-library"></a>Перенос данных с помощью библиотеки перемещения данных
 
@@ -35,7 +35,7 @@ ms.locfileid: "74895116"
 ## <a name="prerequisites"></a>Технические условия
 
 - [Код Visual Studio](https://code.visualstudio.com/)
-- [учетная запись хранения Azure](storage-quickstart-create-account.md)
+- [учетная запись хранения Azure](storage-account-create.md)
 
 ## <a name="setup"></a>Настройка
 

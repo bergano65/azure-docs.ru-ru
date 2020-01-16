@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 10/09/2019
 ms.author: mathoma
-ms.openlocfilehash: f92226a76462289b9f26ae9d3bab22d780fb35db
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 2453b29c5efd768930f534df89d4c62320ed4770
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75464998"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75965347"
 ---
 # <a name="configure-a-sql-server-failover-cluster-instance-with-premium-file-share-on-azure-virtual-machines"></a>Настройка SQL Server экземпляра отказоустойчивого кластера с общей папкой Premium на виртуальных машинах Azure
 
@@ -42,7 +42,7 @@ ms.locfileid: "75464998"
 Вы также должны иметь общее представление об этих технологиях:
 
 - [Общая папка Azure Premium](../../../storage/files/storage-how-to-create-premium-fileshare.md)
-- [группы ресурсов Azure](../../../azure-resource-manager/manage-resource-groups-portal.md).
+- [группы ресурсов Azure](../../../azure-resource-manager/management/manage-resource-groups-portal.md).
 
 > [!IMPORTANT]
 > На данный момент SQL Server экземпляры отказоустойчивого кластера на виртуальных машинах Azure поддерживаются только в [режиме упрощенного управления](virtual-machines-windows-sql-register-with-resource-provider.md#management-modes) [расширением агента IaaS SQL Server](virtual-machines-windows-sql-server-agent-extension.md). Чтобы перейти с полного режима расширения на облегченный, удалите ресурс **виртуальной машины SQL** для соответствующих виртуальных машин, а затем зарегистрируйте их с помощью поставщика ресурсов ВИРТУАЛЬНОЙ машины SQL в упрощенном режиме. При удалении ресурса **виртуальной машины SQL** с помощью портал Azure **снимите флажок рядом с соответствующей виртуальной машиной**. Полное расширение поддерживает такие функции, как автоматическое резервное копирование, установка исправлений и Управление порталом. Эти функции не будут работать для виртуальных машин SQL после переустановки агента в режиме упрощенного управления.

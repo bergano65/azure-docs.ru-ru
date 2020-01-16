@@ -15,12 +15,12 @@ ms.workload: iaas-sql-server
 ms.date: 05/02/2017
 ms.author: mikeray
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 29aaedeafb3995cc09e221d2e049dd538808904a
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.openlocfilehash: f26c5a6c6fc2774d19beaa021015357a1991f0ed
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74032660"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75978170"
 ---
 # <a name="configure-an-ilb-listener-for-availability-groups-on-azure-sql-server-vms"></a>Настройка прослушивателя ILB для групп доступности на виртуальных машинах Azure SQL Server
 > [!div class="op_single_selector"]
@@ -32,7 +32,7 @@ ms.locfileid: "74032660"
 ## <a name="overview"></a>Обзор
 
 > [!IMPORTANT]
-> В Azure предлагаются две модели развертывания для создания ресурсов и работы с ними: [модель Azure Resource Manager и классическая модель](../../../azure-resource-manager/resource-manager-deployment-model.md). В этой статье рассматривается использование классической модели развертывания. Для большинства новых развертываний рекомендуется использовать модель Resource Manager.
+> В Azure предлагаются две модели развертывания для создания ресурсов и работы с ними: [модель Azure Resource Manager и классическая модель](../../../azure-resource-manager/management/deployment-models.md). В этой статье рассматривается использование классической модели развертывания. Для большинства новых развертываний рекомендуется использовать модель Resource Manager.
 
 Дополнительные сведения о настройке прослушивателя для группы доступности AlwaysOn в модели Resource Manager см. в [этой статье](../sql/virtual-machines-windows-portal-sql-alwayson-int-listener.md).
 
@@ -65,7 +65,7 @@ ms.locfileid: "74032660"
 5. Запустите Azure PowerShell.  
     Откроется новый сеанс PowerShell с загруженными административными модулями Azure.
 
-6. Запустите `Get-AzurePublishSettingsFile`. Он перенаправит вас в браузер для скачивания файла параметров публикации в локальный каталог. Может потребоваться ввод учетных данных для входа в подписку Azure.
+6. Выполните `Get-AzurePublishSettingsFile`. Он перенаправит вас в браузер для скачивания файла параметров публикации в локальный каталог. Может потребоваться ввод учетных данных для входа в подписку Azure.
 
 7. Выполните следующую команду `Import-AzurePublishSettingsFile`, указав путь к скачанному файлу параметров публикации:
 
@@ -156,7 +156,7 @@ ms.locfileid: "74032660"
 4. Повторите предыдущие действия для каждой виртуальной машины.  
     Этот скрипт настраивает ресурс IP-адреса путем установки IP-адреса облачной службы и прочих параметров, таких как порт зонда. После подключения ресурс IP-адреса сможет отвечать на запросы, отправляемые на порт зонда из созданной ранее конечной точки балансировки нагрузки.
 
-## <a name="bring-the-listener-online"></a>Подключение прослушивателя
+## <a name="bring-the-listener-online"></a>Подключите прослушиватель.
 [!INCLUDE [Bring-Listener-Online](../../../../includes/virtual-machines-ag-listener-bring-online.md)]
 
 ## <a name="follow-up-items"></a>Дальнейшие действия
@@ -165,5 +165,5 @@ ms.locfileid: "74032660"
 ## <a name="test-the-availability-group-listener-within-the-same-virtual-network"></a>Проверка прослушивателя группы доступности (в пределах одной виртуальной сети)
 [!INCLUDE [Test-Listener-Within-VNET](../../../../includes/virtual-machines-ag-listener-test.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 [!INCLUDE [Listener-Next-Steps](../../../../includes/virtual-machines-ag-listener-next-steps.md)]

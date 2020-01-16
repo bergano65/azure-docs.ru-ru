@@ -9,12 +9,12 @@ ms.topic: how-to
 ms.date: 12/11/2019
 ms.author: tamram
 ms.subservice: common
-ms.openlocfilehash: 0d12f50b059bf74cc1bbc55913d4ce49b77f81fd
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 203bff23b2ae1a5e5e19b4abc323c3ffeb31f367
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75486720"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75975914"
 ---
 # <a name="create-an-azure-storage-account"></a>Создание учетной записи хранения Azure
 
@@ -260,7 +260,7 @@ az storage account delete --name storageAccountName --resource-group resourceGro
 
 ---
 
-Кроме того, можно удалить группу ресурсов, которая удаляет учетную запись хранения и другие ресурсы в этой группе ресурсов. Дополнительные сведения об удалении группы ресурсов см. в разделе [Удаление группы ресурсов и ресурсов](../../azure-resource-manager/resource-group-delete.md).
+Кроме того, можно удалить группу ресурсов, которая удаляет учетную запись хранения и другие ресурсы в этой группе ресурсов. Дополнительные сведения об удалении группы ресурсов см. в разделе [Удаление группы ресурсов и ресурсов](../../azure-resource-manager/management/delete-resource-group.md).
 
 > [!WARNING]
 > Восстановить удаленную учетную запись хранения или ее содержимое невозможно. Создайте резервные копии нужных данных, прежде чем удалять учетную запись. Это касается также любых ресурсов в учетной записи. Восстановить удаленный BLOB-объект, таблицу, очередь или файл невозможно.

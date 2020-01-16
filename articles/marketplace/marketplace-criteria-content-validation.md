@@ -9,18 +9,18 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: article
 ms.date: 12/31/2019
 ms.author: evansma
-ms.openlocfilehash: f4cd5083d694cb7c463596b7b45c384e0dc8b28d
-ms.sourcegitcommit: 5b073caafebaf80dc1774b66483136ac342f7808
+ms.openlocfilehash: 8c0af3f059d1beb0e1d07d3494b31c674f15438d
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75779745"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75980876"
 ---
 # <a name="azure-marketplace-listing-guidelines"></a>Рекомендации по публикации в Azure Marketplace
 
 Этот документ содержит рекомендации по соблюдению требований, а также контрольный список, по которому можно проверить новые предложения и службы перед их отправкой в Azure Marketplace.
 
-Все предложения должны соответствовать описанным ниже [требованиям ко всем публикациям](https://docs.microsoft.com/azure/marketplace/marketplace-criteria-content-validation#all-listing-requirements). Существуют также дополнительные требования и контрольные списки для отдельных типов публикаций, например для предложений [с пробными версиями](https://docs.microsoft.com/azure/marketplace/marketplace-criteria-content-validation#trial-offer-requirements), [приложений SaaS](https://docs.microsoft.com/azure/marketplace/marketplace-criteria-content-validation#saas-apps-requirements), [контейнеров](https://docs.microsoft.com/azure/marketplace/marketplace-criteria-content-validation#container-offer-requirements) и [предложений консультационных услуг](https://docs.microsoft.com/azure/marketplace/marketplace-criteria-content-validation#consulting-offer-requirements).
+Все предложения должны соответствовать описанным ниже [требованиям ко всем публикациям](https://docs.microsoft.com/azure/marketplace/marketplace-criteria-content-validation#all-listing-requirements). Существуют также дополнительные требования и контрольные списки для отдельных типов публикаций, например для предложений [с пробными версиями](https://docs.microsoft.com/azure/marketplace/marketplace-criteria-content-validation#trial-offer-requirements), [приложений SaaS](https://docs.microsoft.com/azure/marketplace/marketplace-criteria-content-validation#saas-app-requirements), [контейнеров](https://docs.microsoft.com/azure/marketplace/marketplace-criteria-content-validation#container-offer-requirements) и [предложений консультационных услуг](https://docs.microsoft.com/azure/marketplace/marketplace-criteria-content-validation#consulting-offer-requirements).
 
 
 ## <a name="all-listing-requirements"></a>Требования ко всем публикациям

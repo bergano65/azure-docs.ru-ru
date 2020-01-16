@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: c1a800ceb12c2e7ad69329d0391478a8e2ae268b
-ms.sourcegitcommit: 49e14e0d19a18b75fd83de6c16ccee2594592355
+ms.openlocfilehash: 44d5edd7b5808b6c212a832dd95de7a9cb4b7c08
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75945688"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75978588"
 ---
 # <a name="security-and-data-privacy-in-azure-cognitive-search"></a>Безопасность и конфиденциальность данных в Azure Когнитивный поиск
 
@@ -49,7 +49,7 @@ ms.locfileid: "75945688"
 
 Некоторые механизмы безопасности доступны в Azure и, таким способом, автоматически доступны для создаваемых ресурсов Azure Когнитивный поиск.
 
-+ [Блокировки на уровне подписки или ресурсов для предотвращения удаления](../azure-resource-manager/resource-group-lock-resources.md)
++ [Блокировки на уровне подписки или ресурсов для предотвращения удаления](../azure-resource-manager/management/lock-resources.md)
 + [Управление доступом на основе ролей (RBAC) для управления доступом к информации и административным операциям](../role-based-access-control/overview.md)
 
 Все службы Azure поддерживают элементы управления доступом на основе ролей (RBAC) для согласованного задания уровней доступа во всех службах. Например, просматривать конфиденциальные данные, такие как ключ администратора, могут только пользователи с ролью владельца или участника, а состояние службы доступно для обладателей любой роли. RBAC предоставляет роли владельца, участника и читателя. По умолчанию все администраторы службы являются участниками роли владельца.

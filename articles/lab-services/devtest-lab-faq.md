@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/18/2019
 ms.author: spelluru
-ms.openlocfilehash: 4e95cc6a724c17402ed1ed0cda83377492787a3a
-ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
+ms.openlocfilehash: afd6ded6dc027e118694078f8b8eeadfe8dd80e4
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75644925"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75981482"
 ---
 # <a name="azure-devtest-labs-faq"></a>Часто задаваемые вопросы об Azure DevTest Labs
 В этой статье содержатся ответы на некоторые самые распространенные вопросы об Azure DevTest Labs.
@@ -46,13 +46,13 @@ ms.locfileid: "75644925"
 ### <a name="what-if-my-question-isnt-answered-here"></a>Мне не удалось найти ответ на свой вопрос. Что делать?
 Если ваш вопрос не указан здесь, сообщите нам о том, что мы можем помочь вам найти ответ.
 
-- Опубликуйте вопрос в конце этой статьи 
+- Опубликуйте вопрос в конце этой статьи
 - Чтобы охватить большую аудиторию, опубликуйте вопрос на [форуме MSDN по Azure DevTest Labs](https://social.msdn.microsoft.com/Forums/azure/home?forum=AzureDevTestLabs) и обсудите его с командой разработчиков Azure DevTest Labs и другими участниками сообщества.
 - Чтобы сделать запрос на функцию, разместите свои запросы и предложения на [форуме пользователей Azure DevTest Labs](https://feedback.azure.com/forums/320373-azure-devtest-labs).
 
 ### <a name="what-is-a-microsoft-account"></a>Что такое учетная запись Майкрософт?
 Учетная запись Майкрософт используется практически для всех действий с устройствами и службами Майкрософт. Это адрес электронной почты и пароль, используемые для входа в Skype, Outlook.com, OneDrive, Windows Phone, Azure и Xbox Live. что означает, что ваши файлы, фотографии, контакты и параметры доступны на любом вашем устройстве.
- 
+
 > [!NOTE]
 > Учетная запись Майкрософт, который используется для вызова Windows Live ID.
 
@@ -145,18 +145,18 @@ $policyRoleDef = New-AzRoleDefinition -Role $policyRoleDef
 ## <a name="lab-configuration"></a>Настройка лаборатории
 
 ### <a name="how-do-i-create-a-lab-from-a-resource-manager-template"></a>Как создать лабораторию на основе шаблона Resource Manager?
-[В GitHub доступен репозиторий шаблонов Azure Resource Manager Azure для лабораторий](https://azure.microsoft.com/resources/templates/101-dtl-create-lab), которые можно развернуть "как есть" или изменить, чтобы создать пользовательские шаблоны для своих лабораторий. Каждый шаблон содержит ссылку для развертывания лаборатории, так как она находится в собственной подписке Azure. Вы также можете настроить шаблон и [развернуть его с помощью PowerShell или Azure CLI](../azure-resource-manager/resource-group-template-deploy.md).
+[В GitHub доступен репозиторий шаблонов Azure Resource Manager Azure для лабораторий](https://azure.microsoft.com/resources/templates/101-dtl-create-lab), которые можно развернуть "как есть" или изменить, чтобы создать пользовательские шаблоны для своих лабораторий. Каждый шаблон содержит ссылку для развертывания лаборатории, так как она находится в собственной подписке Azure. Вы также можете настроить шаблон и [развернуть его с помощью PowerShell или Azure CLI](../azure-resource-manager/templates/deploy-powershell.md).
 
 
-### <a name="can-i-have-all-virtual-machines-to-be-created-in-a-common-resource-group-instead-having-each-machine-in-its-own-resource-group"></a>Можно ли создать все виртуальные машины в общей группе ресурсов вместо того, чтобы каждый компьютер был в отдельной группе ресурсов? 
-Да, в качестве владельца лаборатории вы можете либо разрешить для вашей лаборатории выделение группы ресурсов, либо создать все виртуальные машины, созданные в указанной вами общей группе ресурсов. 
+### <a name="can-i-have-all-virtual-machines-to-be-created-in-a-common-resource-group-instead-having-each-machine-in-its-own-resource-group"></a>Можно ли создать все виртуальные машины в общей группе ресурсов вместо того, чтобы каждый компьютер был в отдельной группе ресурсов?
+Да, в качестве владельца лаборатории вы можете либо разрешить для вашей лаборатории выделение группы ресурсов, либо создать все виртуальные машины, созданные в указанной вами общей группе ресурсов.
 
 Отдельный сценарий группы ресурсов:
 -   DevTest Labs создает новую группу ресурсов для каждой виртуальной машины общедоступных и частных IP-адресов.
 -   DevTest Labs создает группу ресурсов для общих IP-компьютеров, принадлежащих к одному и тому же размеру.
 
 Сценарий общей группы ресурсов:
--   Все виртуальные машины загружаются в указанную общую группу ресурсов. Дополнительные сведения о [выделении группы ресурсов для лаборатории](https://aka.ms/RGControl). 
+-   Все виртуальные машины загружаются в указанную общую группу ресурсов. Дополнительные сведения о [выделении группы ресурсов для лаборатории](https://aka.ms/RGControl).
 
 ### <a name="how-do-i-maintain-a-naming-convention-across-my-devtest-labs-environment"></a>Как правильно поддерживать соглашения об именовании в среде DevTest Labs?
 Вы можете расширить существующие корпоративные соглашения об именовании на операции в среде Azure и поддерживать их единообразие для всей среды DevTest Labs. Мы рекомендуем вам создать четкие начальные политики сразу же при развертывании DevTest Labs. Для обеспечения согласованности эти политики развертываются с помощью централизованного скрипта и шаблонов JSON. Политики наименования также можно реализовать в политиках Azure, применяемых на уровне подписки. Примеры кода JSON для службы "Политика Azure" вы найдете в статье [Примеры для Политики Azure](../governance/policy/samples/index.md).
@@ -196,7 +196,7 @@ $policyRoleDef = New-AzRoleDefinition -Role $policyRoleDef
 Существует два варианта одновременного создания нескольких виртуальных машин из одного шаблона:
 
 - Вы можете использовать [расширение Azure DevOps Tasks](https://marketplace.visualstudio.com/items?itemName=ms-azuredevtestlabs.tasks).
-- Вы можете [создать шаблон диспетчер ресурсов](devtest-lab-add-vm.md#save-azure-resource-manager-template) во время создания виртуальной машины и [развернуть шаблон диспетчер ресурсов из Windows PowerShell](../azure-resource-manager/resource-group-template-deploy.md).
+- Вы можете [создать шаблон диспетчер ресурсов](devtest-lab-add-vm.md#save-azure-resource-manager-template) во время создания виртуальной машины и [развернуть шаблон диспетчер ресурсов из Windows PowerShell](../azure-resource-manager/templates/deploy-powershell.md).
 - Можно также указать несколько экземпляров компьютера, которые будут созданы во время создания виртуальной машины. Дополнительные сведения о создании нескольких экземпляров виртуальных машин см. в документации по [созданию виртуальной машины лаборатории](devtest-lab-add-vm.md).
 
 ### <a name="how-do-i-move-my-existing-azure-vms-into-my-devtest-labs-lab"></a>Как переместить имеющиеся виртуальные машины Azure в лабораторию DevTest Labs?
@@ -252,7 +252,7 @@ foreach($labVM in $labVMs)
 }
 ```
 
-## <a name="environments"></a>Среды 
+## <a name="environments"></a>Среды
 
 ### <a name="how-can-i-use-resource-manager-templates-in-my-devtest-labs-environment"></a>Как применить шаблоны Resource Manager в моей среде DevTest Labs?
 Шаблоны диспетчер ресурсов развертываются в среде DevTest Labs с помощью действий, упомянутых в статье о [средах DevTest Labs](devtest-lab-test-env.md) . Вкратце, вам нужно разместить нужные шаблоны Resource Manager в репозиторий Git (Azure Repos или GitHub) и добавить в лабораторию [частный репозиторий для шаблонов](devtest-lab-test-env.md). Этот сценарий может оказаться нецелесообразным, если вы используете DevTest Labs для размещения машин разработки, но может быть полезным при создании промежуточной среды, которая представляет собой рабочую среду.
@@ -264,7 +264,7 @@ foreach($labVM in $labVMs)
 ### <a name="how-can-i-set-up-an-easily-repeatable-process-to-bring-my-custom-organizational-images-into-a-devtest-labs-environment"></a>Как мне настроить легко воспроизводимый процесс, позволяющий использовать корпоративные пользовательские образы в среде DevTest Labs?
 Ознакомьтесь [с этим видео по шаблону фабрики изображений](https://sec.ch9.ms/ch9/8e8a/9ea0b8d4-b803-4f23-bca4-4808d9368e8a/dtlimagefactory_mid.mp4). Это достаточно сложный сценарием, и предлагаемые для него скрипты служат только примерами для изучения. Если потребуется внести в них изменения, поддерживайте и обслуживайте специально созданные для вашей среды скрипты.
 
-Дополнительные сведения о создании фабрики образов см. [в разделе Создание настраиваемой фабрики изображений в Azure DevTest Labs](image-factory-create.md). 
+Дополнительные сведения о создании фабрики образов см. [в разделе Создание настраиваемой фабрики изображений в Azure DevTest Labs](image-factory-create.md).
 
 ### <a name="what-is-the-difference-between-a-custom-image-and-a-formula"></a>В чем разница между пользовательским образом и формулой?
 Пользовательский образ — это управляемый образ. Формула — это настраиваемый образ, для которого можно задать дополнительные параметры, а затем сохранить их для воспроизведения в будущем. Пользовательский образ рекомендуется использовать для быстрого создания нескольких сред с одинаковой базой. А формула лучше подходит, если необходимо воспроизвести конфигурацию виртуальной машины с последними обновлениями как часть виртуальной сети или подсети или как виртуальную машину определенного размера. Дополнительные сведения см. в статье [Сравнение пользовательских образов и формул в DevTest Labs](devtest-lab-comparing-vm-base-image-types.md).
@@ -343,19 +343,19 @@ foreach($labVM in $labVMs)
 - [Развертывание новой виртуальной машины из Azure DevOps Services в имеющейся лаборатории Azure DevTest Labs](https://www.visualstudiogeeks.com/blog/DevOps/Deploy-New-VM-To-Existing-AzureDevTestLab-From-VSTS)
 - [Использование управления выпусками Azure DevOps Services для непрерывного развертывания в Azure DevTest Labs](https://www.visualstudiogeeks.com/blog/DevOps/Use-VSTS-ReleaseManagement-to-Deploy-and-Test-in-AzureDevTestLabs)
 
-Для других цепочек инструментов непрерывной интеграции (CI) и непрерывной поставки (CD) можно реализовать такие же сценарии путем развертывания [шаблонов Azure Resource Manager](https://azure.microsoft.com/resources/templates/) с помощью командлетов [Azure PowerShell](../azure-resource-manager/resource-group-template-deploy.md) и [пакетов SDK для .NET](https://www.nuget.org/packages/Microsoft.Azure.Management.DevTestLabs/). Для интеграции DevTest Labs с набором инструментов также можно использовать [REST API для DevTest Labs](https://aka.ms/dtlrestapis).
+Для других цепочек инструментов непрерывной интеграции (CI) и непрерывной поставки (CD) можно реализовать такие же сценарии путем развертывания [шаблонов Azure Resource Manager](https://azure.microsoft.com/resources/templates/) с помощью командлетов [Azure PowerShell](../azure-resource-manager/templates/deploy-powershell.md) и [пакетов SDK для .NET](https://www.nuget.org/packages/Microsoft.Azure.Management.DevTestLabs/). Для интеграции DevTest Labs с набором инструментов также можно использовать [REST API для DevTest Labs](https://aka.ms/dtlrestapis).
 
 ## <a name="networking"></a>Работа в сети
 
 ### <a name="when-should-i-create-a-new-virtual-network-for-my-devtest-labs-environment-vs-using-an-existing-virtual-network"></a>Когда мне лучше создать новую виртуальную сеть для среды DevTest Labs, а когда — использовать существующую виртуальную сеть?
-Если виртуальным машинам необходимо взаимодействовать с существующей инфраструктурой, рассмотрите возможность использования существующей виртуальной сети в среде DevTest Labs. При использовании ExpressRoute может потребоваться максимально ограничить количество виртуальных сетей и подсетей, чтобы не фрагментировать пространство IP-адресов, назначенное для использования в подписках. 
+Если виртуальным машинам необходимо взаимодействовать с существующей инфраструктурой, рассмотрите возможность использования существующей виртуальной сети в среде DevTest Labs. При использовании ExpressRoute может потребоваться максимально ограничить количество виртуальных сетей и подсетей, чтобы не фрагментировать пространство IP-адресов, назначенное для использования в подписках.
 
-Рассмотрите возможность использования шаблона пиринга виртуальной сети ([модель-звезда](/azure/architecture/reference-architectures/hybrid-networking/hub-spoke)). Такой подход обеспечивает взаимодействие между виртуальными сетями и подсетью в рамках подписок. В противном случае каждой среде DevTest Labs потребуется собственная виртуальная сеть. 
+Рассмотрите возможность использования шаблона пиринга виртуальной сети ([модель-звезда](/azure/architecture/reference-architectures/hybrid-networking/hub-spoke)). Такой подход обеспечивает взаимодействие между виртуальными сетями и подсетью в рамках подписок. В противном случае каждой среде DevTest Labs потребуется собственная виртуальная сеть.
 
 Существуют [ограничения](../azure-resource-manager/management/azure-subscription-service-limits.md) на количество виртуальных сетей на подписку. По умолчанию действует ограничение в 50 сетей, но его можно увеличить до 100.
 
 ### <a name="when-should-i-use-a-shared-ip-vs-public-ip-vs-private-ip"></a>Когда мне лучше использовать общий, общедоступный и частный IP-адреса?
- 
+
 Если вы используете подключение VPN или Express Route типа "сеть — сеть", лучше всего применить частные IP-адреса. Тогда ваши компьютеры будут доступны во внутренней сети, но недоступны через Интернет.
 
 > [!NOTE]
@@ -383,15 +383,15 @@ foreach($labVM in $labVMs)
 ### <a name="why-do-i-get-a-parent-resource-not-found-error-when-i-provision-a-vm-from-powershell"></a>Почему при подготовке из PowerShell выводится ошибка Parent resource not found (Родительский ресурс не найден)?
 Если один ресурс является родительским для другого ресурса, то перед созданием этого дочернего ресурса должен существовать его родительский ресурс. Если родительский ресурс не существует, появится сообщение **ParentResourceNotFound** . Если не задать зависимость от родительского ресурса, то дочерний ресурс может быть развернут раньше родительского.
 
-Виртуальные машины представляют собой дочерние ресурсы в лаборатории в группе ресурсов. При использовании шаблонов Resource Manager для развертывания виртуальных машин с помощью PowerShell имя группы ресурсов, указанное в скрипте PowerShell, должно совпадать с именем группы ресурсов лаборатории. Дополнительные сведения см. в статье [Устранение распространенных ошибок развертывания в Azure с помощью Azure Resource Manager | Microsoft Azure](../azure-resource-manager/resource-manager-common-deployment-errors.md).
+Виртуальные машины представляют собой дочерние ресурсы в лаборатории в группе ресурсов. При использовании шаблонов Resource Manager для развертывания виртуальных машин с помощью PowerShell имя группы ресурсов, указанное в скрипте PowerShell, должно совпадать с именем группы ресурсов лаборатории. Дополнительные сведения см. в статье [Устранение распространенных ошибок развертывания в Azure с помощью Azure Resource Manager | Microsoft Azure](../azure-resource-manager/templates/common-deployment-errors.md).
 
 ### <a name="where-can-i-find-more-error-information-if-a-vm-deployment-fails"></a>Где найти дополнительные сведения об ошибке при сбое развертывания виртуальной машины?
 Ошибки при развертывании виртуальной машины записываются в журналы действий. Журналы действий ВИРТУАЛЬНЫХ машин лаборатории можно найти в разделе **журналы аудита** или **Диагностика виртуальных машин** в меню ресурсов на странице виртуальной машины лаборатории (Эта страница отображается после выбора виртуальной машины в списке мои виртуальные машины).
 
-В некоторых случаях ошибка развертывания возникает до начала развертывания виртуальной машины. Например, при превышении лимита подписки для ресурса, созданного с помощью виртуальной машины. В таком случае сведения об ошибке регистрируются на уровне журналов действий. Журналы действий находятся под параметрами **конфигурации и политик**. Дополнительные сведения об использовании журналов действий в Azure см. в статье [Просмотр журналов действий для аудита действий с ресурсами](../azure-resource-manager/resource-group-audit.md).
+В некоторых случаях ошибка развертывания возникает до начала развертывания виртуальной машины. Например, при превышении лимита подписки для ресурса, созданного с помощью виртуальной машины. В таком случае сведения об ошибке регистрируются на уровне журналов действий. Журналы действий находятся под параметрами **конфигурации и политик**. Дополнительные сведения об использовании журналов действий в Azure см. в статье [Просмотр журналов действий для аудита действий с ресурсами](../azure-resource-manager/management/view-activity-logs.md).
 
 ### <a name="why-do-i-get-location-is-not-available-for-resource-type-error-when-trying-to-create-a-lab"></a>Почему при попытке создать лабораторию появляется сообщение об ошибке "Местоположение недоступно для типа ресурса"?
-При попытке создать лабораторию может появиться сообщение об ошибке следующего вида: 
+При попытке создать лабораторию может появиться сообщение об ошибке следующего вида:
 
 ```
 The provided location 'australiacentral' is not available for resource type 'Microsoft.KeyVault/vaults'. List of available regions for the resource type is 'northcentralus,eastus,northeurope,westeurope,eastasia,southeastasia,eastus2,centralus,southcentralus,westus,japaneast,japanwest,australiaeast,australiasoutheast,brazilsouth,centralindia,southindia,westindia,canadacentral,canadaeast,uksouth,ukwest,westcentralus,westus2,koreacentral,koreasouth,francecentral,southafricanorth
@@ -400,9 +400,7 @@ The provided location 'australiacentral' is not available for resource type 'Mic
 Эту ошибку можно устранить, выполнив одно из следующих действий.
 
 #### <a name="option-1"></a>Вариант 1
-Проверьте доступность типа ресурса в регионах Azure на странице [доступность продуктов по регионам](https://azure.microsoft.com/global-infrastructure/services/) . Если тип ресурса недоступен в определенном регионе, DevTest Labs не поддерживает создание лаборатории в этом регионе. Выберите другой регион при создании лаборатории. 
+Проверьте доступность типа ресурса в регионах Azure на странице [доступность продуктов по регионам](https://azure.microsoft.com/global-infrastructure/services/) . Если тип ресурса недоступен в определенном регионе, DevTest Labs не поддерживает создание лаборатории в этом регионе. Выберите другой регион при создании лаборатории.
 
 #### <a name="option-2"></a>Вариант 2
-Если тип ресурса доступен в вашем регионе, проверьте, зарегистрирован ли он в вашей подписке. Это можно сделать на уровне владельца подписки, как показано в [этой статье](../azure-resource-manager/resource-manager-supported-services.md). 
-
-
+Если тип ресурса доступен в вашем регионе, проверьте, зарегистрирован ли он в вашей подписке. Это можно сделать на уровне владельца подписки, как показано в [этой статье](../azure-resource-manager/management/resource-providers-and-types.md).

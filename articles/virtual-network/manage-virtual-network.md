@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 01/10/2019
 ms.author: kumud
-ms.openlocfilehash: 87cdd3d18fe0e6a3655c8bbc940cdc00fa211e74
-ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
+ms.openlocfilehash: 70523dc12f3f20362fcf4a2c3cb456a182038e8a
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75750595"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75982248"
 ---
 # <a name="create-change-or-delete-a-virtual-network"></a>Создание, изменение или удаление виртуальной сети
 
@@ -79,7 +79,7 @@ ms.locfileid: "75750595"
 
      ![Обзор сетевого интерфейса](./media/manage-virtual-network/vnet-overview.png)
 
-     Виртуальную сеть можно переместить в другую подписку или группу ресурсов, выбрав **Изменить** рядом с элементом **Группа ресурсов** или с элементом **Название подписки**. Чтобы узнать, как переместить виртуальную сеть, см. статью [Перемещение ресурсов в новую группу ресурсов или подписку](../azure-resource-manager/resource-group-move-resources.md?toc=%2fazure%2fvirtual-network%2ftoc.json). В ней указаны необходимые компоненты для перемещения, а также описана процедура перемещения с помощью портала Azure, PowerShell и Azure CLI. Виртуальную сеть необходимо перемещать со всеми ресурсами, подключенными к ней.
+     Виртуальную сеть можно переместить в другую подписку или группу ресурсов, выбрав **Изменить** рядом с элементом **Группа ресурсов** или с элементом **Название подписки**. Чтобы узнать, как переместить виртуальную сеть, см. статью [Перемещение ресурсов в новую группу ресурсов или подписку](../azure-resource-manager/management/move-resource-group-and-subscription.md?toc=%2fazure%2fvirtual-network%2ftoc.json). В ней указаны необходимые компоненты для перемещения, а также описана процедура перемещения с помощью портала Azure, PowerShell и Azure CLI. Виртуальную сеть необходимо перемещать со всеми ресурсами, подключенными к ней.
    - **Адресное пространство.** Отображаются адресные пространства, назначенные виртуальной сети. Чтобы узнать, как добавлять и удалять диапазоны адресов, выполните инструкции, приведенные в [этом разделе](#add-or-remove-an-address-range).
    - **Подключенные устройства.** Перечислены все ресурсы, подключенные к виртуальной сети. На снимке экрана выше показано, что к виртуальной сети подключены три сетевых интерфейса и одна подсистема балансировки нагрузки. В списке отображаются все создаваемые и подключаемые к виртуальной сети ресурсы. Если удалить ресурс, подключенный к виртуальной сети, он не будет отображаться в списке.
    - **Подсети.** Отображается список подсетей в виртуальной сети. Сведения о добавлении или удалении подсети см. в статье [Создание, изменение или удаление виртуальной сети](virtual-network-manage-subnet.md).
@@ -90,8 +90,8 @@ ms.locfileid: "75750595"
    - **Common Azure settings** (Общие параметры Azure). Дополнительные сведения об общих параметрах Azure см. по следующим ссылкам:
      - [Журнал действий](../azure-monitor/platform/platform-logs-overview.md)
      - [Управление доступом (IAM)](../role-based-access-control/overview.md)
-     - [Теги](../azure-resource-manager/resource-group-using-tags.md?toc=%2fazure%2fvirtual-network%2ftoc.json)
-     - [Блокировки](../azure-resource-manager/resource-group-lock-resources.md?toc=%2fazure%2fvirtual-network%2ftoc.json)
+     - [Теги](../azure-resource-manager/management/tag-resources.md?toc=%2fazure%2fvirtual-network%2ftoc.json)
+     - [Блокировки](../azure-resource-manager/management/lock-resources.md?toc=%2fazure%2fvirtual-network%2ftoc.json)
      - [Сценарий автоматизации](../azure-resource-manager/management/manage-resource-groups-portal.md#export-resource-groups-to-templates)
 
 **Команды**

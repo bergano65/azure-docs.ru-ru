@@ -4,21 +4,21 @@ ms.service: virtual-machine-scale-sets
 ms.topic: include
 ms.date: 04/26/2019
 ms.author: manayar
-ms.openlocfilehash: c41beda6c9d6bb4b63a45944126421dd22799904
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.openlocfilehash: 633f7f9231e08acdb0e08ee97067d2a469bbdb45
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67185312"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75980180"
 ---
-Предыдущий шаблон можно развернуть, следуя указаниям, описанным в [документации по Azure Resource Manager](../articles/azure-resource-manager/resource-group-template-deploy.md).
+Предыдущий шаблон можно развернуть, следуя указаниям, описанным в [документации по Azure Resource Manager](../articles/azure-resource-manager/templates/deploy-powershell.md).
 
-Можно начать с этой серией руководств [простой масштабируемый набор статьи о шаблоне](../articles/virtual-machine-scale-sets/virtual-machine-scale-sets-mvss-start.md).
+Эту серию руководств можно запустить из [статьи базовый шаблон масштабируемого набора](../articles/virtual-machine-scale-sets/virtual-machine-scale-sets-mvss-start.md).
 
-Можно увидеть, как изменить [простой масштабируемый набор шаблона](../articles/virtual-machine-scale-sets/virtual-machine-scale-sets-mvss-start.md) для [развернуть масштабируемый набор в существующей виртуальной сети](../articles/virtual-machine-scale-sets/virtual-machine-scale-sets-mvss-existing-vnet.md).
+Вы можете увидеть, как изменить [шаблон базового масштабируемого набора](../articles/virtual-machine-scale-sets/virtual-machine-scale-sets-mvss-start.md) , чтобы [развернуть масштабируемый набор в существующей виртуальной сети](../articles/virtual-machine-scale-sets/virtual-machine-scale-sets-mvss-existing-vnet.md).
 
-Можно увидеть, как изменить [простой масштабируемый набор шаблона](../articles/virtual-machine-scale-sets/virtual-machine-scale-sets-mvss-start.md) для [развернуть масштабируемый набор с пользовательским образом](../articles/virtual-machine-scale-sets/virtual-machine-scale-sets-mvss-custom-image.md).
+Вы можете увидеть, как изменить [шаблон базового масштабируемого набора](../articles/virtual-machine-scale-sets/virtual-machine-scale-sets-mvss-start.md) , чтобы [развернуть масштабируемый набор с помощью пользовательского образа](../articles/virtual-machine-scale-sets/virtual-machine-scale-sets-mvss-custom-image.md).
 
-Можно увидеть, как изменить [простой масштабируемый набор шаблона](../articles/virtual-machine-scale-sets/virtual-machine-scale-sets-mvss-start.md) для [развернуть масштабируемый набор с помощью автомасштабирования на основе гостевой системы Linux](../articles/virtual-machine-scale-sets/virtual-machine-scale-sets-mvss-guest-based-autoscale-linux.md).
+Вы можете увидеть, как изменить [шаблон базового масштабируемого набора](../articles/virtual-machine-scale-sets/virtual-machine-scale-sets-mvss-start.md) , чтобы [развернуть масштабируемый набор Linux с автомасштабированием на основе гостевых систем](../articles/virtual-machine-scale-sets/virtual-machine-scale-sets-mvss-guest-based-autoscale-linux.md).
 
-Дополнительные сведения о масштабируемых наборах см. [странице обзора масштабируемых наборов](../articles/virtual-machine-scale-sets/virtual-machine-scale-sets-overview.md).
+Дополнительные сведения о масштабируемых наборах см. на [странице обзора масштабируемого набора](../articles/virtual-machine-scale-sets/virtual-machine-scale-sets-overview.md).

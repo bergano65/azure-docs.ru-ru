@@ -6,17 +6,17 @@ services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
 ms.topic: conceptual
-ms.author: ylxiong
-author: YLXiong1125
+ms.author: sihhu
+author: MayMSFT
 ms.reviewer: nibaccam
-ms.date: 12/10/2019
+ms.date: 01/15/2020
 ms.custom: seodec18
-ms.openlocfilehash: ac6ef6341013ca13d5a9f27be8897365c1c2155d
-ms.sourcegitcommit: ce4a99b493f8cf2d2fd4e29d9ba92f5f942a754c
+ms.openlocfilehash: f8bad8be3c02228fee9dded729e22c5a406da178
+ms.sourcegitcommit: dbcc4569fde1bebb9df0a3ab6d4d3ff7f806d486
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/28/2019
-ms.locfileid: "75540949"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76025044"
 ---
 # <a name="access-data-in-azure-storage-services"></a>Доступ к данным в службах хранилища Azure
 [!INCLUDE [aml-applies-to-basic-enterprise-sku](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -43,12 +43,42 @@ ms.locfileid: "75540949"
         
    ws = Workspace.from_config()
    ```
+<a name="matrix"></a>
+
+## <a name="supported-data-storage-service-types"></a>Поддерживаемые типы служб хранилища данных
+
+В настоящее время хранилища данных поддерживают хранение сведений о подключении к службам хранилища, указанным в следующей матрице.
+
+| Тип&nbsp;хранилища | Тип&nbsp;проверки подлинности | [&nbsp;машинного обучения Azure&nbsp;Machine Studio](https://ml.azure.com/) | [&nbsp; пакета SDK для Python&nbsp;машинного обучения Azure&nbsp;](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py) |  [Интерфейс командной строки для&nbsp;машинного обучения Azure&nbsp;](reference-azure-machine-learning-cli.md) | [Azure&nbsp;машинного обучения&nbsp;Learning&nbsp; API-интерфейс для других служб](https://docs.microsoft.com/rest/api/azureml/)
+---|---|---|---|---|---
+[Хранилище&nbsp;BLOB-объектов&nbsp;Azure](https://docs.microsoft.com/azure/storage/blobs/storage-blobs-overview)| Ключ учетной записи <br> Маркер SAS | ✓ | ✓ | ✓ |✓
+[Файловый ресурс&nbsp;&nbsp;Azure]((https://docs.microsoft.com/azure/storage/files/storage-files-introduction))| Ключ учетной записи <br> Маркер SAS | ✓ | ✓ | ✓ |✓
+[Azure&nbsp;Data Lake&nbsp;хранилище Gen&nbsp;1](https://docs.microsoft.com/azure/data-lake-store/)| Субъект-служба| ✓ | ✓ | ✓ |✓
+[Azure&nbsp;Data Lake&nbsp;хранилище Gen&nbsp;2](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-introduction)| Субъект-служба| ✓ | ✓ | ✓ |✓
+База данных SQL Azure&nbsp;&nbsp;| Проверка подлинности SQL <br>Субъект-служба| ✓ | ✓ | ✓ |✓
+Azure&nbsp;PostgreSQL | Проверка подлинности SQL| ✓ | ✓ | ✓ |✓
+&nbsp;базы данных Azure&nbsp;для&nbsp;MySQL | Проверка подлинности SQL|  | ✓ | ✓ |✓
+Кирпичи&nbsp;файловая&nbsp;система| без аутентификации; | | ✓ | ✓ |✓ 
+
+\* поддерживается только для локальных целевых сценариев вычислений
+
+### <a name="storage-guidance"></a>Рекомендации по выбору хранилища
+
+Рекомендуется создать хранилище данных для контейнера больших двоичных объектов Azure.  
+Хранилище уровня "Стандартный" и "Премиум" доступны для больших двоичных объектов. Хотя хранилище класса Premium является более дорогим, его быстрые скорости пропускной способности могут повысить скорость выполнения обучения, особенно при обучении большого набора данных. Сведения о стоимости учетных записей хранения см. в [калькуляторе цен Azure](https://azure.microsoft.com/pricing/calculator/?service=machine-learning-service).
+
+При создании рабочей области контейнер больших двоичных объектов Azure и файловый ресурс Azure автоматически регистрируются в рабочей области. Они называются `workspaceblobstore` и `workspacefilestore`соответственно. Они хранят сведения о подключении для контейнера больших двоичных объектов и общей папки, подготовленные в учетной записи хранения, подключенной к рабочей области. Контейнер `workspaceblobstore` задается в качестве хранилища данных по умолчанию.
 
 <a name="access"></a>
 
 ## <a name="create-and-register-datastores"></a>Создание и регистрация хранилищ данных
 
-При регистрации решения службы хранилища Azure в качестве хранилища данных автоматически создается хранилище данных в определенной рабочей области. Хранилища данных можно создавать и регистрировать в рабочей области с помощью пакета SDK для Python или Машинное обучение Azure Studio.
+При регистрации решения службы хранилища Azure в качестве хранилища данных вы автоматически создаете и регистрируете хранилище данных в определенной рабочей области. Хранилища данных можно создавать и регистрировать в рабочей области с помощью пакета SDK для Python или Машинное обучение Azure Studio.
+
+>[!IMPORTANT]
+> В ходе создания и регистрации текущего хранилища данных Машинное обучение Azure проверяет, имеет ли предоставленный пользователем субъект (имя пользователя, субъект-служба или маркер SAS) доступ к базовой службе хранилища. 
+<br>
+Однако для Azure Data Lake Storage 1 и 2 хранилищ данных эта проверка происходит позже, когда вызываются методы доступа к данным, такие как [`from_files()`](https://docs.microsoft.com/python/api/azureml-core/azureml.data.dataset_factory.filedatasetfactory?view=azure-ml-py) или [`from_delimited_files()`](https://docs.microsoft.com/python/api/azureml-core/azureml.data.dataset_factory.tabulardatasetfactory?view=azure-ml-py#from-parquet-files-path--validate-true--include-path-false--set-column-types-none--partition-format-none-) . 
 
 ### <a name="python-sdk"></a>Пакет Python SDK
 
@@ -62,7 +92,7 @@ ms.locfileid: "75540949"
 > [!IMPORTANT]
 > Если ваша учетная запись хранения находится в виртуальной сети, поддерживается только создание хранилища данных BLOB-объектов Azure. Чтобы предоставить рабочей области доступ к вашей учетной записи хранения, задайте для параметра `grant_workspace_access` значение `True`.
 
-В следующих примерах показано, как зарегистрировать контейнер больших двоичных объектов Azure, файловый ресурс Azure и данные SQL Azure в качестве хранилища данных.
+В следующих примерах показано, как зарегистрировать контейнер больших двоичных объектов Azure, файловый ресурс Azure и Azure Data Lake Storage поколение 2 в качестве хранилища данных. Сведения о других службах хранилища см. в [справочной документации по методам `register_azure_*`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.datastore.datastore?view=azure-ml-py#methods).
 
 #### <a name="blob-container"></a>Контейнер BLOB-объектов
 
@@ -96,56 +126,37 @@ account_name=os.getenv("FILE_SHARE_ACCOUNTNAME", "<my-account-name>") # Storage 
 account_key=os.getenv("FILE_SHARE_ACCOUNT_KEY", "<my-account-key>") # Storage account key
 
 file_datastore = Datastore.register_azure_file_share(workspace=ws,
-                                                 datastore_name=file_datastore_name, 
-                                                 file_share_name=file_share_name, 
-                                                 account_name=account_name,
-                                                 account_key=account_key)
+                                                     datastore_name=file_datastore_name, 
+                                                     file_share_name=file_share_name, 
+                                                     account_name=account_name,
+                                                     account_key=account_key)
 ```
 
-#### <a name="sql-data"></a>SQL-данные
+#### <a name="azure-data-lake-storage-generation-2"></a>Поколение Azure Data Lake Storage 2
 
-Для хранилища данных SQL Azure используйте [register_azure_sql_database ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.datastore.datastore?view=azure-ml-py#register-azure-sql-database-workspace--datastore-name--server-name--database-name--tenant-id-none--client-id-none--client-secret-none--resource-url-none--authority-url-none--endpoint-none--overwrite-false--username-none--password-none-) , чтобы зарегистрировать хранилище учетных записей, подключенное к базе данных SQL Azure, с разрешениями проверки подлинности SQL или субъекта-службы. 
+Для хранилища данных Azure Data Lake Storage Generation 2 (ADLS Gen 2) используйте [register_azure_data_lake_gen2 ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.datastore.datastore?view=azure-ml-py#register-azure-data-lake-gen2-workspace--datastore-name--filesystem--account-name--tenant-id--client-id--client-secret--resource-url-none--authority-url-none--protocol-none--endpoint-none--overwrite-false-) , чтобы зарегистрировать хранилище учетные данные, подключенное к хранилищу Azure Data Lake 2 с разрешениями субъекта-службы. Узнайте больше об [управлении доступом, настроенном для ADLS Gen 2](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-access-control). 
 
-Для регистрации с помощью проверки подлинности SQL:
-
-```python
-sql_datastore_name="azsqlsdksql"
-server_name=os.getenv("SQL_SERVERNAME", "<my-server-name>") # Name of the Azure SQL server
-database_name=os.getenv("SQL_DATBASENAME", "<my-database-name>") # Name of the Azure SQL database
-username=os.getenv("SQL_USER_NAME", "<my-sql-user-name>") # Username of the database user to access the database
-password=os.getenv("SQL_USER_PASSWORD", "<my-sql-user-password>") # Password of the database user to access the database
-
-sql_datastore = Datastore.register_azure_sql_database(workspace=ws,
-                                                  datastore_name=sql_datastore_name,
-                                                  server_name=server_name,
-                                                  database_name=database_name,
-                                                  username=username,
-                                                  password=password)
-
-```
-
-Для регистрации через субъект-службу выполните следующие действия.
+Следующий код создает и регистрирует хранилище данных `adlsgen2_datastore_name` в рабочей области `ws`. Это хранилище данных обращается к файловой системе `test` в учетной записи хранения `account_name`, используя предоставленные учетные данные субъекта-службы.
 
 ```python 
-sql_datastore_name="azsqlsdksp"
-server_name=os.getenv("SQL_SERVERNAME", "<my-server-name>") # Name of the SQL server
-database_name=os.getenv("SQL_DATBASENAME", "<my-database-name>") # Name of the SQL database
-client_id=os.getenv("SQL_CLIENTNAME", "<my-client-id>") # Client ID of the service principal with permissions to access the database
-client_secret=os.getenv("SQL_CLIENTSECRET", "<my-client-secret>") # Secret of the service principal
-tenant_id=os.getenv("SQL_TENANTID", "<my-tenant-id>") # Tenant ID of the service principal
+adlsgen2_datastore_name = 'adlsgen2datastore'
 
-sql_datastore = Datastore.register_azure_sql_database(workspace=ws,
-                                                      datastore_name=sql_datastore_name,
-                                                      server_name=server_name,
-                                                      database_name=database_name,
-                                                      client_id=client_id,
-                                                      client_secret=client_secret,
-                                                      tenant_id=tenant_id)
+subscription_id=os.getenv("ADL_SUBSCRIPTION", "<my_subscription_id>") # subscription id of ADLS account
+resource_group=os.getenv("ADL_RESOURCE_GROUP", "<my_resource_group>") # resource group of ADLS account
+
+account_name=os.getenv("ADLSGEN2_ACCOUNTNAME", "<my_account_name>") # ADLS Gen2 account name
+tenant_id=os.getenv("ADLSGEN2_TENANT", "<my_tenant_id>") # tenant id of service principal
+client_id=os.getenv("ADLSGEN2_CLIENTID", "<my_client_id>") # client id of service principal
+client_secret=os.getenv("ADLSGEN2_CLIENT_SECRET", "<my_client_secret>") # the secret of service principal
+
+adlsgen2_datastore = Datastore.register_azure_data_lake_gen2(workspace=ws,
+                                                             datastore_name=adlsgen2_datastore_name,
+                                                             account_name=account_name, # ADLS Gen2 account name
+                                                             filesystem='test', # ADLS Gen2 filesystem
+                                                             tenant_id=tenant_id, # tenant id of service principal
+                                                             client_id=client_id, # client id of service principal
+                                                             client_secret=client_secret) # the secret of service principal
 ```
-
-#### <a name="storage-guidance"></a>Рекомендации по выбору хранилища
-
-Мы рекомендуем использовать контейнер больших двоичных объектов Azure. Хранилище уровня "Стандартный" и "Премиум" доступны для больших двоичных объектов. Хотя хранилище класса Premium является более дорогим, его быстрые скорости пропускной способности могут повысить скорость выполнения обучения, особенно при обучении большого набора данных. Сведения о стоимости учетных записей хранения см. в [калькуляторе цен Azure](https://azure.microsoft.com/pricing/calculator/?service=machine-learning-service).
 
 ### <a name="azure-machine-learning-studio"></a>Студия машинного обучения Azure. 
 
@@ -181,8 +192,6 @@ datastores = ws.datastores
 for name, datastore in datastores.items():
     print(name, datastore.datastore_type)
 ```
-
-При создании рабочей области контейнер больших двоичных объектов Azure и файловый ресурс Azure автоматически регистрируются в рабочей области. Они называются `workspaceblobstore` и `workspacefilestore`соответственно. Они хранят сведения о подключении для контейнера больших двоичных объектов и общей папки, подготовленные в учетной записи хранения, подключенной к рабочей области. Контейнер `workspaceblobstore` задается в качестве хранилища данных по умолчанию.
 
 Чтобы получить хранилище данных по умолчанию для рабочей области, используйте следующую строку:
 
@@ -230,100 +239,10 @@ datastore.download(target_path='your target path',
 Параметр `target_path` — это расположение локального каталога, в который нужно загрузить данные. Чтобы указать путь к папке для загрузки в общей папке (или контейнере больших двоичных объектов), укажите этот путь в `prefix`. Если `prefix` `None`, будут скачаны все содержимое общей папки (или контейнера больших двоичных объектов).
 
 <a name="train"></a>
+
 ## <a name="access-your-data-during-training"></a>Доступ к данным во время обучения
 
-> [!IMPORTANT]
-> Теперь мы советуем использовать [машинное обучение Azure наборы](how-to-create-register-datasets.md) данных для доступа к данным в процессе обучения. Наборы данных предоставляют функции, которые загружают табличные данные в таблицу данных Pandas или Spark. Наборы данных также предоставляют возможность скачивания или подключения файлов любого формата из хранилища BLOB-объектов Azure, файлов Azure, Azure Data Lake Storage 1-го поколения, Azure Data Lake Storage 2-го поколения, базы данных SQL Azure и Azure для PostgreSQL. [Узнайте больше о том, как обучить наборы данных](how-to-train-with-datasets.md).
-
-В следующей таблице перечислены методы, которые сообщают целевому объекту вычислений, как использовать хранилища данных во время выполнения: 
-
-Проезд|Метод|Description|
-----|-----|--------
-Подключение| [`as_mount()`](https://docs.microsoft.com/python/api/azureml-core/azureml.data.azure_storage_datastore.abstractazurestoragedatastore?view=azure-ml-py#as-mount--)| Используйте для подключения хранилища данных к целевому объекту вычислений. При подключении хранилища данных все файлы хранилища данных становятся доступными для целевого объекта вычислений.
-Загрузить|[`as_download()`](https://docs.microsoft.com/python/api/azureml-core/azureml.data.azure_storage_datastore.abstractazurestoragedatastore?view=azure-ml-py#as-download-path-on-compute-none-)|Используйте для загрузки содержимого хранилища данных в расположение, указанное `path_on_compute`. <br><br> Этот процесс загрузки выполняется перед запуском.
-Отправка|[`as_upload()`](https://docs.microsoft.com/python/api/azureml-core/azureml.data.azure_storage_datastore.abstractazurestoragedatastore?view=azure-ml-py#as-upload-path-on-compute-none-)| Используйте для передачи файла из расположения, указанного параметром `path_on_compute`, в хранилище данных. <br><br> Эта отправка происходит после запуска.
-
-Чтобы создать ссылку на определенную папку или файл в хранилище данных и сделать его доступным на целевом объекте вычислений, используйте метод [`path()`](https://docs.microsoft.com/python/api/azureml-core/azureml.data.azure_storage_datastore.abstractazurestoragedatastore?view=azure-ml-py#path-path-none--data-reference-name-none-) хранилища данных:
-
-```Python
-# To mount the full contents in your storage to the compute target
-datastore.as_mount()
-
-# To download the contents of only the `./bar` directory in your storage to the compute target
-datastore.path('./bar').as_download()
-```
-> [!NOTE]
-> Любой указанный `datastore` или `datastore.path` объект разрешается в имя переменной среды в формате `"$AZUREML_DATAREFERENCE_XXXX"`. Значение этого имени представляет путь подключения или загрузки в целевом объекте вычислений. Путь к хранилищу данных в целевом объекте вычислений может отличаться от пути выполнения для обучающего скрипта.
-
-### <a name="examples"></a>Примеры 
-
-Для доступа к данным во время обучения рекомендуется использовать класс [`Estimator`](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.estimator.estimator?view=azure-ml-py) . 
-
-`script_params` переменная — это словарь, содержащий параметры для `entry_script`. Используйте его для передачи хранилища данных и описания того, как данные становятся доступными в целевом объекте вычислений. Ознакомьтесь с [комплексным руководством](tutorial-train-models-with-aml.md).
-
-```Python
-from azureml.train.estimator import Estimator
-
-# Notice that '/' is in front, which indicates the absolute path
-script_params = {
-    '--data_dir': datastore.path('/bar').as_mount()
-}
-
-est = Estimator(source_directory='your code directory',
-                entry_script='train.py',
-                script_params=script_params,
-                compute_target=compute_target
-                )
-```
-
-Можно также передать список хранилищ данных в параметр `inputs` конструктора `Estimator`, чтобы подключать или копировать данные в хранилище. Этот пример кода:
-* Скачивает все содержимое в `datastore1` целевому объекту вычислений перед выполнением скрипта обучения `train.py`.
-* Загружает `'./foo'` папку в `datastore2` целевой объект вычислений перед запуском `train.py`.
-* Передает файл `'./bar.pkl'` из целевого объекта вычислений в `datastore3` после выполнения скрипта.
-
-```Python
-est = Estimator(source_directory='your code directory',
-                compute_target=compute_target,
-                entry_script='train.py',
-                inputs=[datastore1.as_download(), datastore2.path('./foo').as_download(), datastore3.as_upload(path_on_compute='./bar.pkl')])
-```
-Если вы предпочитаете использовать объект `RunConfig` для обучения, необходимо настроить объект [`DataReference`](https://docs.microsoft.com/python/api/azureml-core/azureml.data.data_reference.datareference?view=azure-ml-py) . 
-
-В следующем коде показано, как работать с объектом `DataReference` в конвейере оценки. Полный пример см. в [этой записной книжке](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/machine-learning-pipelines/intro-to-pipelines/aml-pipelines-how-to-use-estimatorstep.ipynb).
-
-```Python
-from azureml.core import Datastore
-from azureml.data.data_reference import DataReference
-from azureml.pipeline.core import PipelineData
-
-def_blob_store = Datastore(ws, "workspaceblobstore")
-
-input_data = DataReference(
-       datastore=def_blob_store,
-       data_reference_name="input_data",
-       path_on_datastore="20newsgroups/20news.pkl")
-
-output = PipelineData("output", datastore=def_blob_store)
-```
-<a name="matrix"></a>
-
-### <a name="compute-and-datastore-matrix"></a>Матрица вычислений и хранилища данных
-
-В настоящее время хранилища данных поддерживают хранение сведений о подключении к службам хранилища, указанным в следующей матрице. Эта матрица отображает доступные функции доступа к данным для различных целевых объектов вычислений и сценариев хранилища данных. Дополнительные [сведения о целевых показателях вычислений для машинное обучение Azure](how-to-set-up-training-targets.md#compute-targets-for-training).
-
-|Среда выполнения приложений|[азуреблобдатасторе](https://docs.microsoft.com/python/api/azureml-core/azureml.data.azure_storage_datastore.azureblobdatastore?view=azure-ml-py)                                       |[азурефиледатасторе](https://docs.microsoft.com/python/api/azureml-core/azureml.data.azure_storage_datastore.azurefiledatastore?view=azure-ml-py)                                      |[азуредаталакедатасторе](https://docs.microsoft.com/python/api/azureml-core/azureml.data.azure_data_lake_datastore.azuredatalakedatastore?view=azure-ml-py) |[AzureDataLakeGen2Datastore](https://docs.microsoft.com/python/api/azureml-core/azureml.data.azure_data_lake_datastore.azuredatalakegen2datastore?view=azure-ml-py) [азурепостгресклдатасторе](https://docs.microsoft.com/python/api/azureml-core/azureml.data.azure_postgre_sql_datastore.azurepostgresqldatastore?view=azure-ml-py) [азуресклдатабаседатасторе](https://docs.microsoft.com/python/api/azureml-core/azureml.data.azure_sql_database_datastore.azuresqldatabasedatastore?view=azure-ml-py) |
-|--------------------------------|----------------------------------------------------------|----------------------------------------------------------|------------------------|----------------------------------------------------------------------------------------|
-| Местного уровня|[as_download ()](https://docs.microsoft.com/python/api/azureml-core/azureml.data.data_reference.datareference?view=azure-ml-py#as-download-path-on-compute-none--overwrite-false-), [as_upload ()](https://docs.microsoft.com/python/api/azureml-core/azureml.data.data_reference.datareference?view=azure-ml-py#as-upload-path-on-compute-none--overwrite-false-)|[as_download ()](https://docs.microsoft.com/python/api/azureml-core/azureml.data.data_reference.datareference?view=azure-ml-py#as-download-path-on-compute-none--overwrite-false-), [as_upload ()](https://docs.microsoft.com/python/api/azureml-core/azureml.data.data_reference.datareference?view=azure-ml-py#as-upload-path-on-compute-none--overwrite-false-)|Н/Д         |Н/Д                                                                         |
-| Вычислительная среда Машинного обучения Azure |[as_mount ()](https://docs.microsoft.com/python/api/azureml-core/azureml.data.data_reference.datareference?view=azure-ml-py#as-mount--), [as_download ()](https://docs.microsoft.com/python/api/azureml-core/azureml.data.data_reference.datareference?view=azure-ml-py#as-download-path-on-compute-none--overwrite-false-), [as_upload ()](https://docs.microsoft.com/python/api/azureml-core/azureml.data.data_reference.datareference?view=azure-ml-py#as-upload-path-on-compute-none--overwrite-false-), [машинное обучениеные конвейеры](concept-ml-pipelines.md)|[as_mount ()](https://docs.microsoft.com/python/api/azureml-core/azureml.data.data_reference.datareference?view=azure-ml-py#as-mount--), [as_download ()](https://docs.microsoft.com/python/api/azureml-core/azureml.data.data_reference.datareference?view=azure-ml-py#as-download-path-on-compute-none--overwrite-false-), [as_upload ()](https://docs.microsoft.com/python/api/azureml-core/azureml.data.data_reference.datareference?view=azure-ml-py#as-upload-path-on-compute-none--overwrite-false-), [машинное обучениеные конвейеры](concept-ml-pipelines.md)|Н/Д         |Н/Д                                                                         |
-| Виртуальные машины               |[as_download ()](https://docs.microsoft.com/python/api/azureml-core/azureml.data.data_reference.datareference?view=azure-ml-py#as-download-path-on-compute-none--overwrite-false-), [as_upload ()](https://docs.microsoft.com/python/api/azureml-core/azureml.data.data_reference.datareference?view=azure-ml-py#as-upload-path-on-compute-none--overwrite-false-)                           | [as_download ()](https://docs.microsoft.com/python/api/azureml-core/azureml.data.data_reference.datareference?view=azure-ml-py#as-download-path-on-compute-none--overwrite-false-) [as_upload ()](https://docs.microsoft.com/python/api/azureml-core/azureml.data.data_reference.datareference?view=azure-ml-py#as-upload-path-on-compute-none--overwrite-false-)                            |Н/Д         |Н/Д                                                                         |
-| Azure HDInsight                      |[as_download ()](https://docs.microsoft.com/python/api/azureml-core/azureml.data.data_reference.datareference?view=azure-ml-py#as-download-path-on-compute-none--overwrite-false-) [as_upload ()](https://docs.microsoft.com/python/api/azureml-core/azureml.data.data_reference.datareference?view=azure-ml-py#as-upload-path-on-compute-none--overwrite-false-)                            | [as_download ()](https://docs.microsoft.com/python/api/azureml-core/azureml.data.data_reference.datareference?view=azure-ml-py#as-download-path-on-compute-none--overwrite-false-) [as_upload ()](https://docs.microsoft.com/python/api/azureml-core/azureml.data.data_reference.datareference?view=azure-ml-py#as-upload-path-on-compute-none--overwrite-false-)                            |Н/Д         |Н/Д                                                                         |
-| Передача данных                  |[Конвейеры Машинное обучение](concept-ml-pipelines.md)                                               |Н/Д                                           |[Конвейеры Машинное обучение](concept-ml-pipelines.md)            |[Конвейеры Машинное обучение](concept-ml-pipelines.md)                                                                            |
-| Azure Databricks                     |[Конвейеры Машинное обучение](concept-ml-pipelines.md)                                              |Н/Д                                           |[Конвейеры Машинное обучение](concept-ml-pipelines.md)             |Н/Д                                                                         |
-| Пакетная служба Azure                    |[Конвейеры Машинное обучение](concept-ml-pipelines.md)                                               |Н/Д                                           |Н/Д         |Н/Д                                                                         |
-| Аналитика озера данных Azure       |Н/Д                                           |Н/Д                                           |[Конвейеры Машинное обучение](concept-ml-pipelines.md)             |Н/Д                                                                         |
-
-> [!NOTE]
-> Возможны ситуации, в которых очень итеративные процессы обработки больших данных выполняются быстрее с использованием `as_download()` вместо `as_mount()`. Это эксперимент можно проверить.
+Для взаимодействия с данными в хранилищах данных или упаковки данных в объект, который можно использовать для задач машинного обучения, например для обучения, [Создайте набор данных машинное обучение Azure](how-to-create-register-datasets.md). Наборы данных предоставляют функции, которые загружают табличные данные в таблицу данных Pandas или Spark. Наборы данных также предоставляют возможность скачивания или подключения файлов любого формата из хранилища BLOB-объектов Azure, файлов Azure, Azure Data Lake Storage 1-го поколения, Azure Data Lake Storage 2-го поколения, базы данных SQL Azure и Azure для PostgreSQL. [Узнайте больше о том, как обучить наборы данных](how-to-train-with-datasets.md).
 
 ### <a name="accessing-source-code-during-training"></a>Доступ к исходному коду во время обучения
 
@@ -349,13 +268,15 @@ run_config.source_directory_data_store = "workspaceblobstore"
 В ситуациях, когда пакет SDK не предоставляет доступ к хранилищам данных, вы можете создать пользовательский код с помощью соответствующего пакета SDK Azure для доступа к данным. Например, [пакет SDK для службы хранилища Azure для Python](https://github.com/Azure/azure-storage-python) — это клиентская библиотека, которую можно использовать для доступа к данным, хранящимся в больших двоичных объектах или файлах.
 
 <a name="move"></a>
+
 ## <a name="move-data-to-supported-azure-storage-solutions"></a>Перемещение данных в поддерживаемые решения службы хранилища Azure
 
-Машинное обучение Azure поддерживает доступ к данным из хранилища BLOB-объектов Azure, файлов Azure, Azure Data Lake Storage 1-го поколения, Azure Data Lake Storage 2-го поколения, базы данных SQL Azure и базы данных Azure для PostgreSQL. Если вы используете неподдерживаемое хранилище, мы рекомендуем перенести данные в поддерживаемые решения службы хранилища Azure с помощью фабрики данных Azure. Перемещение данных в поддерживаемое хранилище поможет сохранить затраты на исходящие данные во время экспериментов машинного обучения. 
+Машинное обучение Azure поддерживает доступ к данным из хранилища BLOB-объектов Azure, файлов Azure, Azure Data Lake Storage 1-го поколения, Azure Data Lake Storage 2-го поколения, базы данных SQL Azure и базы данных Azure для PostgreSQL. Если вы используете неподдерживаемое хранилище, мы рекомендуем перенести данные в поддерживаемые решения службы хранилища Azure с помощью [фабрики данных Azure и следующих шагов]((https://docs.microsoft.com/azure/data-factory/quickstart-create-data-factory-copy-data-tool)). Перемещение данных в поддерживаемое хранилище поможет сохранить затраты на исходящие данные во время экспериментов машинного обучения. 
 
-Фабрика данных Azure обеспечивает эффективную и устойчивую пересылку данных с более чем 80 предварительно подготовленных соединителей без дополнительных затрат. К этим соединителям относятся службы данных Azure, локальные источники данных, Amazon S3 и Redshift и Google BigQuery. Следуйте пошаговым [инструкциям, чтобы переместить данные с помощью фабрики данных Azure](https://docs.microsoft.com/azure/data-factory/quickstart-create-data-factory-copy-data-tool).
+Фабрика данных Azure обеспечивает эффективную и устойчивую пересылку данных с более чем 80 предварительно подготовленных соединителей без дополнительных затрат. К этим соединителям относятся службы данных Azure, локальные источники данных, Amazon S3 и Redshift и Google BigQuery.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
+* [Создание набора данных машинного обучения Azure](how-to-create-register-datasets.md)
 * [Обучение модели](how-to-train-ml-models.md)
 * [Развертывание модели](how-to-deploy-and-where.md)

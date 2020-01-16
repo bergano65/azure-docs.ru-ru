@@ -7,22 +7,22 @@ ms.author: evansma
 ms.service: marketplace
 ms.topic: guide
 ms.date: 12/12/2019
-ms.openlocfilehash: 0fda04bbfa632f429539ddc0ad90941cb645226b
-ms.sourcegitcommit: 014e916305e0225512f040543366711e466a9495
+ms.openlocfilehash: a483f143b70a4969114c078b3b0a6f960c4b6b41
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75934640"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75976081"
 ---
-# <a name="commercial-marketplace-billing"></a>Выставление счетов в коммерческом магазине 
+# <a name="commercial-marketplace-billing"></a>Выставление счетов в коммерческом магазине
 
 В этой статье рассматриваются темы для коммерческого рынка, связанные с коммерческими решениями.
 
-- [Параметры публикации Marketplace](#marketplace-publishing-options) 
+- [Параметры публикации Marketplace](#marketplace-publishing-options)
 - [Общие сведения о языке Transact](#transact-general-overview)
 - [Модели выставления счетов Transact](#transact-billing-models)
 
-## <a name="marketplace-publishing-options"></a>Варианты публикации в Marketplace 
+## <a name="marketplace-publishing-options"></a>Варианты публикации в Marketplace
 
 В коммерческой Marketplace предлагается несколько вариантов публикации для издателей.
 
@@ -36,9 +36,9 @@ ms.locfileid: "75934640"
 
 ## <a name="transact-general-overview"></a>Общие сведения о транзакциях
 
-При использовании параметра публикации на языке Transact Корпорация Майкрософт включает продажу сторонних программ и развертывание некоторых типов предложений в подписку Azure клиента. При выборе модели выставления счетов и типа предложения издатель должен учитывать выставление счетов за инфраструктуру и лицензии на лицензирование программного обеспечения издателя. 
+При использовании параметра публикации на языке Transact Корпорация Майкрософт включает продажу сторонних программ и развертывание некоторых типов предложений в подписку Azure клиента. При выборе модели выставления счетов и типа предложения издатель должен учитывать выставление счетов за инфраструктуру и лицензии на лицензирование программного обеспечения издателя.
 
-В настоящее время параметр публикации Transact поддерживает следующие типы предложений: виртуальные машины, приложения Azure и приложения SaaS. 
+В настоящее время параметр публикации Transact поддерживает следующие типы предложений: виртуальные машины, приложения Azure и приложения SaaS.
 
 ![Transact в Azure Marketplace](./media/transact-amp.png)
 

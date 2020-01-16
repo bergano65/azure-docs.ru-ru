@@ -11,16 +11,16 @@ ms.topic: conceptual
 author: dalechen
 manager: dcscontentpm
 ms.author: ninarn
-ms.reviewer: carlrab
-ms.date: 11/14/2019
-ms.openlocfilehash: c25fa3f378c1e5a0f8bc26e4fb8c6f4ec752b43c
-ms.sourcegitcommit: a22cb7e641c6187315f0c6de9eb3734895d31b9d
+ms.reviewer: carlrab, vanto
+ms.date: 01/14/2020
+ms.openlocfilehash: d2b56e259f551f7655936c975a7a864a27a1df79
+ms.sourcegitcommit: dbcc4569fde1bebb9df0a3ab6d4d3ff7f806d486
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74082495"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76027797"
 ---
-# <a name="working-with-sql-database-connection-issues-and-transient-errors"></a>Работа с проблемами подключения Базы данных SQL и временными ошибками
+# <a name="troubleshooting-transient-connection-errors-to-sql-database"></a>Устранение временных ошибок подключения к базе данных SQL
 
 Эта статья содержит информацию о предотвращении, диагностике и устранении ошибок подключения и временных ошибок, которые происходят в клиентском приложении во время взаимодействия с базой данных SQL Azure. Узнайте, как настроить логику повторных попыток, создать строку подключения и настроить другие параметры подключения.
 
@@ -48,7 +48,7 @@ ms.locfileid: "74082495"
 
 <a id="j-retry-logic-transient-faults" name="j-retry-logic-transient-faults"></a>
 
-## <a name="retry-logic-for-transient-errors"></a>Логика повторных попыток для временных ошибок
+## <a name="retry-logic-for-transient-errors"></a>Повтор логики для временных ошибок
 
 Клиентские программы, в которых иногда происходят временные ошибки, являются более надежными, если используют логику повторных попыток. Если программа взаимодействует с базой данных SQL через стороннее программное обеспечение промежуточного слоя, спросите поставщика, содержит ли это стороннее ПО логику повторных попыток на случай временных ошибок.
 
@@ -77,8 +77,8 @@ ms.locfileid: "74082495"
 
 Образцы кода с логикой повторных попыток доступны по ссылкам:
 
-- [Отказоустойчивое подключение к SQL с помощью ADO.NET][step-4-connect-resiliently-to-sql-with-ado-net-a78n]
-- [Отказоустойчивое подключение к SQL с помощью PHP][step-4-connect-resiliently-to-sql-with-php-p42h]
+- [Выполнение устойчивого подключения к SQL с помощью ADO.NET][step-4-connect-resiliently-to-sql-with-ado-net-a78n]
+- [Выполнение устойчивого подключения к SQL с помощью PHP][step-4-connect-resiliently-to-sql-with-php-p42h]
 
 <a id="k-test-retry-logic" name="k-test-retry-logic"></a>
 
@@ -102,7 +102,7 @@ ms.locfileid: "74082495"
 - После выявления ошибки удаляет 11001 из списка.
 - Выводит сообщение с просьбой подключить компьютер к сети.
 - Программа приостанавливает дальнейшее выполнение с помощью метода **Console.ReadLine** или диалогового окна с кнопкой "ОК". Клавишу ВВОД пользователю нужно нажимать после подключения компьютера к сети.
-- Попытайтесь подключиться еще раз. В этот раз попытка должна завершиться успехом
+- Попытаться подключиться еще раз. В этот раз попытка должна завершиться успехом.
 
 #### <a name="test-by-misspelling-the-database-name-when-connecting"></a>Выполните проверку, сделав опечатку в имени базы данных при подключении.
 
@@ -119,7 +119,7 @@ ms.locfileid: "74082495"
 - Добавить элемент WRONG_ к имени пользователя.
 - После выявления ошибки удалить 18456 из списка.
 - Удалить WRONG_ из имени пользователя.
-- Попытайтесь подключиться еще раз. В этот раз попытка должна завершиться успехом
+- Попытаться подключиться еще раз. В этот раз попытка должна завершиться успехом.
 
 <a id="net-sqlconnection-parameters-for-connection-retry" name="net-sqlconnection-parameters-for-connection-retry"></a>
 
@@ -215,7 +215,7 @@ ms.locfileid: "74082495"
 
 <a id="e-diagnostics-test-utilities-connect" name="e-diagnostics-test-utilities-connect"></a>
 
-## <a name="diagnostics"></a>Диагностика
+## <a name="diagnostics"></a>Диагностика:
 
 <a id="d-test-whether-utilities-can-connect" name="d-test-whether-utilities-can-connect"></a>
 
@@ -275,7 +275,7 @@ TCP port 1433 (ms-sql-s service): LISTENING
 
 Ниже приведены некоторые Transact-SQL-инструкции SELECT, которые запрашивают в журналах сведения об ошибках и прочую информацию.
 
-| Запрос у журнала | ОПИСАНИЕ |
+| Запрос у журнала | Description |
 |:--- |:--- |
 | `SELECT e.*`<br/>`FROM sys.event_log AS e`<br/>`WHERE e.database_name = 'myDbName'`<br/>`AND e.event_category = 'connectivity'`<br/>`AND 2 >= DateDiff`<br/>&nbsp;&nbsp;`(hour, e.end_time, GetUtcDate())`<br/>`ORDER BY e.event_category,`<br/>&nbsp;&nbsp;`e.event_type, e.end_time;` |В представлении [sys.event_log](https://msdn.microsoft.com/library/dn270018.aspx) приводятся сведения об отдельных событиях, включая те, которые могут привести к временным ошибкам или проблемам с подключением.<br/><br/>В идеале значения **start_time** или **end_time** можно сопоставить с временем возникновения ошибок в клиентской программе.<br/><br/>Для выполнения этого запроса необходимо подключиться к базе данных *master*. |
 | `SELECT c.*`<br/>`FROM sys.database_connection_stats AS c`<br/>`WHERE c.database_name = 'myDbName'`<br/>`AND 24 >= DateDiff`<br/>&nbsp;&nbsp;`(hour, c.end_time, GetUtcDate())`<br/>`ORDER BY c.end_time;` |Представление [sys.database_connection_stats](https://msdn.microsoft.com/library/dn269986.aspx) отображает суммарное количество событий каждого типа, что также бывает полезно при дополнительной диагностике.<br/><br/>Для выполнения этого запроса необходимо подключиться к базе данных *master*. |
@@ -442,9 +442,8 @@ public bool IsTransient(Exception ex)
 }
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-- Сведения об устранении других распространенных неполадок, возникающих при подключении к базе данных SQL, см. в статье [Устранение неполадок подключения к базе данных SQL Azure](sql-database-troubleshoot-common-connection-issues.md).
 - [Библиотеки подключений для Базы данных SQL и SQL Server](sql-database-libraries.md)
 - [Пул подключений SQL Server (ADO.NET)](https://docs.microsoft.com/dotnet/framework/data/adonet/sql-server-connection-pooling)
 - [*Retrying* — это лицензированная общая библиотека Apache 2.0 для повторных попыток, написанная на языке Python](https://pypi.python.org/pypi/retrying), которая позволяет легко добавить режим повтора куда угодно.

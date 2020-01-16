@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: article
 ms.date: 04/01/2017
 ms.author: kasing
-ms.openlocfilehash: bebfcedcd2944e2c6b05c3203e67df7658dd751a
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: d5245f73520a77648fc590520185a2cf66bffd02
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75460048"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75980884"
 ---
 # <a name="planning-for-migration-of-iaas-resources-from-classic-to-azure-resource-manager"></a>Планирование переноса ресурсов IaaS из классической модели развертывания в модель Azure Resource Manager.
 Хотя Azure Resource Manager и предлагает множество разнообразных возможностей, чрезвычайно важно спланировать процесс переноса ресурсов, чтобы не столкнуться с какими-либо проблемами. Грамотное планирование позволит предотвратить возникновение ошибок при выполнении действий по переносу ресурсов.
@@ -130,8 +130,8 @@ ms.locfileid: "75460048"
   - таблицы маршрутов;
 
     Используйте команды ниже с помощью последней версии Azure PowerShell, чтобы проверить текущие квоты Azure Resource Manager.
-    
-     
+
+
 
     **Вычисление** *(ядра, наборы доступности)*
 
@@ -203,9 +203,9 @@ ms.locfileid: "75460048"
 Включайте только необходимые службы в Azure Resource Manager.  Ниже приведены службы, которыми ограничивается большинство клиентов, использующих среды Azure.
 
 - [Управление доступом на основе ролей](../../role-based-access-control/overview.md).
-- [Шаблоны Azure Resource Manager для быстрого и контролируемого развертывания](../../azure-resource-manager/template-deployment-overview.md).
-- [Теги](../../azure-resource-manager/resource-group-using-tags.md).
-- [Управление действиями](../../azure-resource-manager/resource-group-audit.md).
+- [Шаблоны Azure Resource Manager для быстрого и контролируемого развертывания](../../azure-resource-manager/templates/overview.md).
+- [Теги](../../azure-resource-manager/management/tag-resources.md).
+- [Управление действиями](../../azure-resource-manager/management/view-activity-logs.md).
 - [Политики Azure](../../governance/policy/overview.md).
 
 ### <a name="pitfalls-to-avoid"></a>Типичные недочеты

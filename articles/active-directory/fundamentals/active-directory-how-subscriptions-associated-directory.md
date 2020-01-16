@@ -13,12 +13,12 @@ ms.author: ajburnle
 ms.reviewer: jeffsta
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8d2111e631dd43b5d86a0bd486642657a20cc3ba
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: b8f44e9a1e43da2b9ce6c817898c1722fba715c4
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75422988"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75978961"
 ---
 # <a name="associate-or-add-an-azure-subscription-to-your-azure-active-directory-tenant"></a>Связывание или добавление подписки Azure в клиент Azure Active Directory
 
@@ -79,7 +79,7 @@ ms.locfileid: "75422988"
 
 ![Страница "переключение каталога" с образцом данных](media/active-directory-how-subscriptions-associated-directory/directory-switcher.png)
 
-Изменение каталога подписки происходит на уровне службы и не влияет на выставление счетов для подписки. Администратор учетной записи по-прежнему может изменить администратора службы в [Центре управления учетной записью](https://account.azure.com/subscriptions). Чтобы удалить исходный каталог, необходимо переместить владельца выставления счетов по подписке на нового администратора учетной записи. Дополнительные сведения о передаче владения выставлением счетов см. в статье передача прав владения [подпиской Azure другой учетной записи](../../billing/billing-subscription-transfer.md).
+Изменение каталога подписки происходит на уровне службы и не влияет на выставление счетов для подписки. Администратор учетной записи по-прежнему может изменить администратора службы в [Центре управления учетной записью](https://account.azure.com/subscriptions). Чтобы удалить исходный каталог, необходимо переместить владельца выставления счетов по подписке на нового администратора учетной записи. Дополнительные сведения о передаче владения выставлением счетов см. в статье передача прав владения [подпиской Azure другой учетной записи](../../cost-management-billing/manage/billing-subscription-transfer.md).
 
 ## <a name="post-association-steps"></a>Действия после сопоставления
 

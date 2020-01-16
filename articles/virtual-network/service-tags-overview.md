@@ -13,12 +13,12 @@ ms.workload: infrastructure-services
 ms.date: 10/22/2019
 ms.author: jispar
 ms.reviewer: kumud
-ms.openlocfilehash: d0d7d9a4dd39428468d05ddf7297a424832d1020
-ms.sourcegitcommit: f34165bdfd27982bdae836d79b7290831a518f12
+ms.openlocfilehash: e4c18f1148259d246445b94ac6117ebefa9470a4
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/13/2020
-ms.locfileid: "75921195"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75975375"
 ---
 # <a name="virtual-network-service-tags"></a>Теги службы виртуальной сети 
 <a name="network-service-tags"></a>
@@ -27,7 +27,7 @@ ms.locfileid: "75921195"
 
 Теги службы можно использовать для определения элементов управления доступом к сети в [группах безопасности сети](https://docs.microsoft.com/azure/virtual-network/security-overview#security-rules) или в [брандмауэре Azure](https://docs.microsoft.com/azure/firewall/service-tags). При создании правил безопасности используйте теги службы вместо конкретных IP-адресов. Указав имя тега службы (например, **ApiManagement**) в соответствующем поле *источника* или *назначения* правила, можно разрешить или запретить трафик для соответствующей службы. 
 
-Теги службы можно использовать для обеспечения изоляции сети и защиты ресурсов Azure от общего доступа через Интернет при доступе к службам Azure, имеющим общедоступные конечные точки. Создайте правила группы безопасности сети для входящих и исходящих подключений, чтобы запретить передачу трафика в **Интернет** и разрешить входящий и исходящий трафик **AzureCloud** или других [доступных тегов]() службы Azure. 
+Теги службы можно использовать для обеспечения изоляции сети и защиты ресурсов Azure от общего доступа через Интернет при доступе к службам Azure, имеющим общедоступные конечные точки. Создайте правила группы безопасности сети для входящих и исходящих подключений, чтобы запретить передачу трафика в **Интернет** и разрешить входящий и исходящий трафик **AzureCloud** или других [доступных тегов](#available-service-tags) службы Azure. 
 
 ## <a name="available-service-tags"></a>Доступные теги службы
 В следующей таблице перечислены все теги службы, доступные для использования в правилах [группы безопасности сети](https://docs.microsoft.com/azure/virtual-network/security-overview#security-rules) .

@@ -2,18 +2,17 @@
 title: Обработка событий из Центров событий с помощью Storm в Azure HDInsight
 description: Узнайте, как обрабатывать данные службы Центров событий Azure с использованием топологии C# Storm, созданной в Visual Studio с помощью средств HDInsight для Visual Studio.
 author: hrasheed-msft
+ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
-ms.date: 11/27/2017
-ms.author: hrasheed
-ROBOTS: NOINDEX
-ms.openlocfilehash: 62d65a4f004494ac4ce4ecd3df0f091460028d8f
-ms.sourcegitcommit: be8e2e0a3eb2ad49ed5b996461d4bff7cba8a837
+ms.date: 01/14/2020
+ms.openlocfilehash: 85b7093df99127b690c51e8f2f28d18e3f5f3c95
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72800057"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75981638"
 ---
 # <a name="process-events-from-azure-event-hubs-with-apache-storm-on-hdinsight-c"></a>Обработка событий из Центров событий Azure с помощью Apache Storm в HDInsight (C#)
 
@@ -26,19 +25,11 @@ ms.locfileid: "72800057"
 
 Действия, описанные в этом документе, используют SCP.NET. Это пакет NuGet, который упрощает создание топологий и компонентов C# для использования со Storm в HDInsight.
 
-> [!IMPORTANT]  
-> Хотя действия, описанные в этой статье, зависят от среды разработки Windows и Visual Studio, готовый скомпилированный проект можно отправить в Storm в кластере HDInsight под управлением Linux. Топологии SCP.NET поддерживаются только теми кластерами под управлением Linux, которые созданы после 28 октября 2016 года.
-
 В HDInsight 3.4 и более поздних версий использует Mono для запуска топологий C#. Для примера в этом документе используется HDInsight 3.6. Если вы планируете создавать собственные решения .NET для HDInsight, вам следует просмотреть документ о [совместимости Mono](https://www.mono-project.com/docs/about-mono/compatibility/), чтобы определить потенциальные проблемы с совместимостью.
 
 ### <a name="cluster-versioning"></a>Управление версиями кластера
 
 Пакет Microsoft.SCP.Net.SDK NuGet, который вы используете для своего проекта, должен соответствовать основному номеру версии Storm, установленной в HDInsight. В HDInsight версий 3.5 и 3.6 используется Storm 1.x, следовательно, для таких кластеров нужно использовать версию SCP.NET 1.0.x.x.
-
-> [!IMPORTANT]  
-> Пример в этом документе предполагает наличие кластера HDInsight 3.5 или 3.6.
->
-> Linux — единственная операционная система, используемая для работы с HDInsight 3.4 или более поздней версии. 
 
 Топологии C# должны быть рассчитаны на использование с .NET 4.5.
 
@@ -109,9 +100,6 @@ topologyBuilder.SetJavaBolt(
 
 * Кластер Apache Storm в HDInsight. Ознакомьтесь со статьей [Create Linux-based clusters in HDInsight by using the Azure portal](../hdinsight-hadoop-create-linux-clusters-portal.md) (Создание кластеров под управлением Linux в HDInsight с помощью портала Azure) и выберите **Storm** для параметра **Тип кластера**.
 
-    > [!WARNING]  
-    > Для примера, используемого в этом документе, требуется кластер Storm в HDInsight версии 3.5 или 3.6. Это не будет работать с более старыми версиями HDInsight из-за критических изменений имени класса. Версию этого примера, которая работает со старыми кластерами, можно найти на сайте [GitHub](https://github.com/Azure-Samples/hdinsight-dotnet-java-storm-eventhub/releases).
-
 * [Концентратор событий Azure](../../event-hubs/event-hubs-create.md).
 
 * [Пакет Azure SDK для .NET](https://azure.microsoft.com/downloads/).
@@ -133,11 +121,11 @@ topologyBuilder.SetJavaBolt(
 
 Служба "Центры событий" используется в качестве источника данных для этого примера. Используйте сведения в разделе "Создание концентратора событий" блока о [начале работы с Центрами событий](../../event-hubs/event-hubs-create.md).
 
-1. Создав **концентратор событий**, просмотрите его параметры на портале Azure и щелкните **Политики общего доступа**. Воспользуйтесь ссылкой **+ Добавить**, чтобы добавить следующие политики.
+1. Создав **концентратор событий**, просмотрите его параметры на портале Azure и щелкните **Политики общего доступа**. Выберите **+ Добавить** , чтобы создать следующие политики:
 
-   | Name | Разрешения |
+   | Имя | Разрешения |
    | --- | --- |
-   | writer |Отправка |
+   | writer |Отправить |
    | reader |Прослушивание |
 
     ![Снимок экрана окна политик общего доступа](./media/apache-storm-develop-csharp-event-hub-topology/share-access-policies.png)
@@ -146,13 +134,13 @@ topologyBuilder.SetJavaBolt(
 
 ## <a name="configure-the-eventhubwriter"></a>Настройка EventHubWriter
 
-1. Если вы еще не установили последнюю версию средств HDInsight для Visual Studio, см. статью [Подключение к Azure HDInsight и выполнение запросов Hive с помощью средств Data Lake для Visual Studio](../hadoop/apache-hadoop-visual-studio-tools-get-started.md).
+1. Если вы еще не установили последнюю версию средств HDInsight для Visual Studio, см. статью Приступая к [работе с инструментами hdinsight для Visual Studio](../hadoop/apache-hadoop-visual-studio-tools-get-started.md).
 
 2. Скачайте решение из [eventhub-storm-hybrid](https://github.com/Azure-Samples/hdinsight-dotnet-java-storm-eventhub).
 
-3. В проекте **EventHubWriter** откройте файл **App.config**. Используйте сведения из концентратора событий, настроенного ранее, чтобы указать значения следующих ключей:
+3. Откройте **EventHubExample. sln**. В проекте **EventHubWriter** откройте файл **App.config**. Используйте сведения из концентратора событий, настроенного ранее, чтобы указать значения следующих ключей:
 
-   | Ключ | Value |
+   | Ключ | Значение |
    | --- | --- |
    | EventHubPolicyName |writer (если для политики с разрешением на *отправку* указано другое имя, используйте его). |
    | EventHubPolicyKey |Ключ для политики writer. |
@@ -168,7 +156,7 @@ topologyBuilder.SetJavaBolt(
 
 2. Для **EventHubReader** откройте файл **App.config**. Используйте сведения из концентратора событий, настроенного ранее, чтобы указать значения следующих ключей:
 
-   | Ключ | Value |
+   | Ключ | Значение |
    | --- | --- |
    | EventHubPolicyName |reader (если для политики с разрешением на *прослушивание* указано другое имя, используйте его). |
    | EventHubPolicyKey |Ключ для политики reader. |
@@ -204,9 +192,11 @@ topologyBuilder.SetJavaBolt(
 
 9. В разделе **Executors** (Исполнители) выберите одну из ссылок в столбце **Порт**. Будет выведена информация, зарегистрированная компонентом. Записанные данные аналогичны приведенным ниже:
 
-        2017-03-02 14:51:29.255 m.s.p.TaskHost [INFO] Received C# STDOUT: 2017-03-02 14:51:29,255 [1] INFO  EventHubReader_LogBolt [(null)] - Received data: {"deviceValue":1830978598,"deviceId":"8566ccbc-034d-45db-883d-d8a31f34068e"}
-        2017-03-02 14:51:29.283 m.s.p.TaskHost [INFO] Received C# STDOUT: 2017-03-02 14:51:29,283 [1] INFO  EventHubReader_LogBolt [(null)] - Received data: {"deviceValue":1756413275,"deviceId":"647a5eff-823d-482f-a8b4-b95b35ae570b"}
-        2017-03-02 14:51:29.313 m.s.p.TaskHost [INFO] Received C# STDOUT: 2017-03-02 14:51:29,312 [1] INFO  EventHubReader_LogBolt [(null)] - Received data: {"deviceValue":1108478910,"deviceId":"206a68fa-8264-4d61-9100-bfdb68ee8f0a"}
+    ```output
+    2017-03-02 14:51:29.255 m.s.p.TaskHost [INFO] Received C# STDOUT: 2017-03-02 14:51:29,255 [1] INFO  EventHubReader_LogBolt [(null)] - Received data: {"deviceValue":1830978598,"deviceId":"8566ccbc-034d-45db-883d-d8a31f34068e"}
+    2017-03-02 14:51:29.283 m.s.p.TaskHost [INFO] Received C# STDOUT: 2017-03-02 14:51:29,283 [1] INFO  EventHubReader_LogBolt [(null)] - Received data: {"deviceValue":1756413275,"deviceId":"647a5eff-823d-482f-a8b4-b95b35ae570b"}
+    2017-03-02 14:51:29.313 m.s.p.TaskHost [INFO] Received C# STDOUT: 2017-03-02 14:51:29,312 [1] INFO  EventHubReader_LogBolt [(null)] - Received data: {"deviceValue":1108478910,"deviceId":"206a68fa-8264-4d61-9100-bfdb68ee8f0a"}
+    ```
 
 ## <a name="stop-the-topologies"></a>Остановка топологий
 
@@ -220,7 +210,7 @@ topologyBuilder.SetJavaBolt(
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-В этом документе рассмотрено использование объектов spout и bolt Java службы Центров событий из топологии C# для работы с данными в Центрах событий Azure. Дополнительные сведения о создании топологий C# см. в следующих статьях:
+В этом документе вы узнали, как использовать концентраторы событий Java spout и из C# топологии для работы с данными в концентраторах событий Azure. Дополнительные сведения о создании топологий C# см. в следующих статьях:
 
 * [Разработка топологий для Apache Storm в HDInsight на C# с помощью Visual Studio](apache-storm-develop-csharp-visual-studio-topology.md)
 * [Руководство по программированию для SCP](apache-storm-scp-programming-guide.md)

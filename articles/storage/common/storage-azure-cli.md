@@ -10,12 +10,12 @@ ms.date: 06/02/2017
 ms.author: tamram
 ms.reviewer: seguler
 ms.subservice: common
-ms.openlocfilehash: f8e745b214ced865ac41d72bdfd5e44ca36b803a
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: b80c29788bd2f8d5172795aa2c92a80e460ff81f
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75460460"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75978526"
 ---
 # <a name="using-the-azure-cli-with-azure-storage"></a>Использование интерфейса командной строки (CLI) Azure со службой хранилища Azure
 
@@ -23,7 +23,7 @@ ms.locfileid: "75460460"
 
 В этом руководстве рассказывается о том, как использовать [Azure CLI](https://docs.microsoft.com/cli/azure/get-started-with-az-cli2) для выполнения ряда задач при работе с ресурсами в учетной записи хранения Azure. Рекомендуется скачать и установить (или обновить до последней версии) интерфейс командной строки, прежде чем продолжать работу с этим руководством.
 
-В примерах, приведенных в этом руководстве, используется оболочка Bash на Ubuntu. Другие платформы должны работать аналогично. 
+В примерах, приведенных в этом руководстве, используется оболочка Bash на Ubuntu. Другие платформы должны работать аналогично.
 
 [!INCLUDE [storage-multi-protocol-access-preview](../../../includes/storage-multi-protocol-access-preview.md)]
 
@@ -34,7 +34,7 @@ ms.locfileid: "75460460"
 
 ### <a name="accounts"></a>Учетные записи
 * **Учетная запись Azure.** Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/).
-* **Учетная запись хранения**. См. раздел [Создание учетной записи хранения](storage-quickstart-create-account.md) в статье [Об учетных записях хранения Azure](storage-create-storage-account.md).
+* **Учетная запись хранения**. См. раздел [Создание учетной записи хранения](storage-account-create.md) в статье [Об учетных записях хранения Azure](storage-account-overview.md).
 
 ### <a name="install-the-azure-cli"></a>Установка Azure CLI
 
@@ -335,7 +335,7 @@ az storage blob delete --container-name <container_name> --name <blob_name>
 
 ```azurecli
 az storage blob update
-    --container-name <container_name> 
+    --container-name <container_name>
     --name <blob_name>
     --content-type <content_type>
 ```
@@ -390,7 +390,7 @@ az storage file list --share-name myshare --path myDir/mySubDir/MySubDir2 --outp
 
 ### <a name="copy-files"></a>Копирование файлов      
 Вы можете скопировать файл в другой файл, файл в большой двоичный объект или большой двоичный объект в файл. Например, чтобы скопировать файл в каталог в другой общей папке, выполните следующее:        
-        
+
 ```azurecli
 az storage file copy start \
 --source-share share1 --source-path dir1/file.txt \
@@ -524,7 +524,7 @@ az storage file download --path IMG_0966.JPG --share-name sharesnapshotdefs --sn
 Чтобы удалить моментальный снимок общего ресурса, используйте команду `az storage share delete` и укажите для параметра `--snapshot` метку времени этого снимка.
 
 ```cli
-az storage share delete -n <share name> --snapshot '2017-10-04T23:28:35.0000000Z' 
+az storage share delete -n <share name> --snapshot '2017-10-04T23:28:35.0000000Z'
 ```
 
 Пример выходных данных
@@ -535,7 +535,7 @@ az storage share delete -n <share name> --snapshot '2017-10-04T23:28:35.0000000Z
 ```
 
 ## <a name="next-steps"></a>Дальнейшие действия
-Дополнительные сведения о работе с Azure CLI 2.0 доступны в следующих ресурсах: 
+Дополнительные сведения о работе с Azure CLI 2.0 доступны в следующих ресурсах:
 
 * [Приступая к работе с Azure CLI](https://docs.microsoft.com/cli/azure/get-started-with-az-cli2)
 * [Справочник по командам Azure CLI](/cli/azure)

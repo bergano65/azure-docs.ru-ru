@@ -8,26 +8,26 @@ author: bwren
 ms.author: bwren
 ms.date: 01/09/2018
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 517b9768c1df928012c34a4dcdd2dfa6b0c94d0c
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: d583f47a9c83abb1119262a2a6b70292cfa4ab69
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75401587"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75977694"
 ---
 # <a name="creating-a-management-solution-file-in-azure-preview"></a>Создание файла решения по управлению в Azure (предварительная версия)
 > [!NOTE]
 > Это предварительная документация по созданию решений по управлению в Azure, которая доступна в данный момент в режиме предварительной версии. Любые схемы, приведенные ниже, могут измениться.  
 
-Решения по управлению в Azure реализуются как [шаблоны управления ресурсами](../../azure-resource-manager/resource-manager-quickstart-create-templates-use-the-portal.md).  Поэтому создание решения для управления — это, по сути, [создание шаблона](../../azure-resource-manager/templates/template-syntax.md).  В этой статье подробно описываются шаблоны, используемые для решений, а также способы настойки ресурсов для типичного решения.
+Решения по управлению в Azure реализуются как [шаблоны управления ресурсами](../../azure-resource-manager/templates/quickstart-create-templates-use-the-portal.md).  Поэтому создание решения для управления — это, по сути, [создание шаблона](../../azure-resource-manager/templates/template-syntax.md).  В этой статье подробно описываются шаблоны, используемые для решений, а также способы настойки ресурсов для типичного решения.
 
 
 ## <a name="tools"></a>Средства
 
 Для работы с файлами решения можно использовать любой текстовый редактор, но мы рекомендуем использовать компоненты, предоставляемые в Visual Studio или Visual Studio Code, как описано в следующих статьях.
 
-- [Создание и развертывание групп ресурсов Azure с помощью Visual Studio](../../azure-resource-manager/vs-azure-tools-resource-groups-deployment-projects-create-deploy.md)
-- [Работа с шаблонами Azure Resource Manager в Visual Studio Code](../../azure-resource-manager/resource-manager-quickstart-create-templates-use-the-portal.md)
+- [Создание и развертывание групп ресурсов Azure с помощью Visual Studio](../../azure-resource-manager/templates/create-visual-studio-deployment-project.md)
+- [Работа с шаблонами Azure Resource Manager в Visual Studio Code](../../azure-resource-manager/templates/quickstart-create-templates-use-the-portal.md)
 
 
 
@@ -159,7 +159,7 @@ ms.locfileid: "75401587"
 
 
 ### <a name="dependencies"></a>Зависимости
-Элемент **dependsOn** указывает [зависимость](../../azure-resource-manager/resource-group-define-dependencies.md) от другого ресурса.  При установке решения ресурс не создается, пока не будут созданы все его зависимости.  Например, при установке решение может [запустить модуль Runbook](solutions-resources-automation.md#runbooks) с помощью [ресурса задания](solutions-resources-automation.md#automation-jobs).  Ресурс задания будет зависеть от ресурса модуля Runbook. Таким образом обеспечивается создание модуля Runbook до задания.
+Элемент **dependsOn** указывает [зависимость](../../azure-resource-manager/templates/define-resource-dependency.md) от другого ресурса.  При установке решения ресурс не создается, пока не будут созданы все его зависимости.  Например, при установке решение может [запустить модуль Runbook](solutions-resources-automation.md#runbooks) с помощью [ресурса задания](solutions-resources-automation.md#automation-jobs).  Ресурс задания будет зависеть от ресурса модуля Runbook. Таким образом обеспечивается создание модуля Runbook до задания.
 
 ### <a name="log-analytics-workspace-and-automation-account"></a>Рабочая область Log Analytics и учетная запись службы автоматизации
 Решениям по управлению требуется [рабочая область Log Analytics](../../azure-monitor/platform/manage-access.md) для хранения представлений и [учетная запись службы автоматизации](../../automation/automation-security-overview.md#automation-account-overview) для хранения модулей Runbook и связанных ресурсов.  К ним нужно предоставить доступ перед созданием ресурсов решения. Их не нужно определять в самом решении.  Пользователь указывает [рабочую область и учетную запись](solutions.md#log-analytics-workspace-and-automation-account) при развертывании решения. Однако разработчик решения должен учитывать следующие моменты.
@@ -200,7 +200,7 @@ ms.locfileid: "75401587"
 
 
 ### <a name="dependencies"></a>Зависимости
-Ресурс решения должен содержать [зависимость](../../azure-resource-manager/resource-group-define-dependencies.md) от всех ресурсов решения, так как их нужно создать до решения.  Это можно сделать, добавив запись для каждого ресурса в элемент **dependsOn**.
+Ресурс решения должен содержать [зависимость](../../azure-resource-manager/templates/define-resource-dependency.md) от всех ресурсов решения, так как их нужно создать до решения.  Это можно сделать, добавив запись для каждого ресурса в элемент **dependsOn**.
 
 ### <a name="properties"></a>Свойства
 У ресурса решения есть свойства, приведенные в таблице ниже.  Сюда входят ресурсы, на которые решение ссылается и которые оно содержит. Это и определяет, как будет осуществляться управление ресурсом после установки решения.  Каждый ресурс в решении должен быть указан в одном из свойств: **referencedResources** или **containedResources**.

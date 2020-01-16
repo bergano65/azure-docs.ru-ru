@@ -1,20 +1,20 @@
 ---
-title: Хранилище секретов Service Fabric
-description: В этой статье описывается, как использовать хранилище секретов Service Fabric.
+title: Хранилище секретов Azure Service Fabric Central
+description: В этой статье описывается, как использовать центральное хранилище секретов в Azure Service Fabric.
 ms.topic: conceptual
 ms.date: 07/25/2019
-ms.openlocfilehash: 16608d9eaf12fc9abc535ef316d7b5e8b74a8b37
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: bc6ea6260bf50d5b4f8e294e0a3827426f90bee3
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75457508"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75980942"
 ---
-#  <a name="service-fabric-secrets-store"></a>Хранилище секретов Service Fabric
-В этой статье описывается создание и использование секретов в Service Fabric приложениях с помощью хранилища секретов (CSS) Service Fabric. CSS — это локальный кэш хранилища секретов, используемый для хранения конфиденциальных данных, таких как пароль, маркеры и ключи, зашифрованные в памяти.
+# <a name="central-secrets-store-in-azure-service-fabric"></a>Центральное хранилище секретов в Azure Service Fabric 
+В этой статье описывается, как использовать центральное хранилище секретов (CSS) в Service Fabric Azure для создания секретов в Service Fabric приложениях. CSS — это локальный кэш хранилища секретов, в котором хранятся конфиденциальные данные, такие как пароль, маркеры и ключи, зашифрованные в памяти.
 
-## <a name="enabling-secrets-store"></a>Включение хранилища секретов
- Добавьте приведенный ниже код в конфигурацию кластера в разделе `fabricSettings`, чтобы включить CSS. Для CSS рекомендуется использовать сертификат, отличный от сертификата кластера. Убедитесь, что сертификат шифрования установлен на всех узлах, а `NetworkService` имеет разрешение на чтение закрытого ключа сертификата.
+## <a name="enable-central-secrets-store"></a>Включить центральное хранилище секретов
+Добавьте следующий скрипт в конфигурацию кластера в разделе `fabricSettings`, чтобы включить CSS. Для CSS рекомендуется использовать сертификат, отличный от сертификата кластера. Убедитесь, что сертификат шифрования установлен на всех узлах и у `NetworkService` есть разрешение на чтение закрытого ключа сертификата.
   ```json
     "fabricSettings": 
     [
@@ -46,10 +46,14 @@ ms.locfileid: "75457508"
         ...
      ]
 ```
-## <a name="declare-secret-resource"></a>Объявить секретный ресурс
-Вы можете создать секретный ресурс либо с помощью шаблона диспетчер ресурсов, либо с помощью REST API.
+## <a name="declare-a-secret-resource"></a>Объявление секретного ресурса
+Секретный ресурс можно создать с помощью шаблона Azure Resource Manager или REST API.
 
-* Шаблон Resource Manager
+### <a name="use-resource-manager"></a>Использование диспетчер ресурсов
+
+Используйте следующий шаблон, чтобы использовать диспетчер ресурсов для создания секретного ресурса. Шаблон создает `supersecret` секретный ресурс, но пока значение для секретного ресурса еще не задано.
+
+
 ```json
    "resources": [
       {
@@ -66,20 +70,20 @@ ms.locfileid: "75457508"
         }
       ]
 ```
-Указанный выше шаблон создает `supersecret` секретный ресурс, но пока значение для секретного ресурса еще не задано.
 
-* Использование REST API
+### <a name="use-the-rest-api"></a>Использование REST API
 
-Чтобы создать секретный ресурс, `supersecret` сделать запрос на размещение `https://<clusterfqdn>:19080/Resources/Secrets/supersecret?api-version=6.4-preview`. Для создания секрета необходим сертификат кластера или сертификат клиента администратора.
+Чтобы создать `supersecret` секретный ресурс с помощью REST API, выполните запрос на размещение `https://<clusterfqdn>:19080/Resources/Secrets/supersecret?api-version=6.4-preview`. Для создания секретного ресурса необходим сертификат кластера или сертификат клиента администратора.
 
 ```powershell
 Invoke-WebRequest  -Uri https://<clusterfqdn>:19080/Resources/Secrets/supersecret?api-version=6.4-preview -Method PUT -CertificateThumbprint <CertThumbprint>
 ```
 
-## <a name="set-secret-value"></a>Задать значение секрета
-* Шаблон Resource Manager
+## <a name="set-the-secret-value"></a>Установка значения секрета
 
-В приведенном ниже шаблоне диспетчер ресурсов создается и задается значение для секретного `supersecret` с версией `ver1`.
+### <a name="use-the-resource-manager-template"></a>Использование шаблона диспетчер ресурсов
+
+Используйте следующий шаблон диспетчер ресурсов, чтобы создать и задать значение секрета. Этот шаблон задает значение секрета для `supersecret` секретного ресурса как версия `ver1`.
 ```json
   {
   "parameters": {
@@ -117,67 +121,68 @@ Invoke-WebRequest  -Uri https://<clusterfqdn>:19080/Resources/Secrets/supersecre
     }
   ],
   ```
-* Использование REST API
+### <a name="use-the-rest-api"></a>Использование REST API
 
+Используйте следующий скрипт, чтобы использовать REST API для задания значения секрета.
 ```powershell
 $Params = @{"properties": {"value": "mysecretpassword"}}
 Invoke-WebRequest -Uri https://<clusterfqdn>:19080/Resources/Secrets/supersecret/values/ver1?api-version=6.4-preview -Method PUT -Body $Params -CertificateThumbprint <ClusterCertThumbprint>
 ```
-## <a name="using-the-secret-in-your-application"></a>Использование секрета в приложении
+## <a name="use-the-secret-in-your-application"></a>Использование секрета в приложении
 
-1.  Добавьте раздел в файл Settings. XML с приведенным ниже содержимым. Обратите внимание, что значение имеет формат {`secretname:version`}.
+Выполните следующие действия, чтобы использовать секрет в приложении Service Fabric.
 
-```xml
-  <Section Name="testsecrets">
-   <Parameter Name="TopSecret" Type="SecretsStoreRef" Value="supersecret:ver1"/
-  </Section>
-```
-2. Теперь импортируйте раздел в ApplicationManifest. XML.
-```xml
-  <ServiceManifestImport>
-    <ServiceManifestRef ServiceManifestName="testservicePkg" ServiceManifestVersion="1.0.0" />
-    <ConfigOverrides />
-    <Policies>
-      <ConfigPackagePolicies CodePackageRef="Code">
-        <ConfigPackage Name="Config" SectionName="testsecrets" EnvironmentVariableName="SecretPath" />
-        </ConfigPackagePolicies>
-    </Policies>
-  </ServiceManifestImport>
-```
+1. Добавьте раздел в файл **Settings. XML** с помощью следующего фрагмента кода. Обратите внимание, что значение имеет формат {`secretname:version`}.
 
-Переменная среды "Секретпас" будет указывать на каталог, где хранятся все секреты. Каждый параметр, указанный в разделе `testsecrets` раздела, будет храниться в отдельном файле. Теперь приложение может использовать секрет, как показано ниже.
-```C#
-secretValue = IO.ReadFile(Path.Join(Environment.GetEnvironmentVariable("SecretPath"),  "TopSecret"))
-```
-3. Подключение секретов к контейнеру
+   ```xml
+     <Section Name="testsecrets">
+      <Parameter Name="TopSecret" Type="SecretsStoreRef" Value="supersecret:ver1"/
+     </Section>
+   ```
 
-Только изменение, необходимое для обеспечения доступности секретов в контейнере, заключается в том, чтобы указать точку подключения в `<ConfigPackage>`.
-Изменен ApplicationManifest. XML  
+1. Импортируйте раздел в **ApplicationManifest. XML**.
+   ```xml
+     <ServiceManifestImport>
+       <ServiceManifestRef ServiceManifestName="testservicePkg" ServiceManifestVersion="1.0.0" />
+       <ConfigOverrides />
+       <Policies>
+         <ConfigPackagePolicies CodePackageRef="Code">
+           <ConfigPackage Name="Config" SectionName="testsecrets" EnvironmentVariableName="SecretPath" />
+           </ConfigPackagePolicies>
+       </Policies>
+     </ServiceManifestImport>
+   ```
 
-```xml
-<ServiceManifestImport>
-    <ServiceManifestRef ServiceManifestName="testservicePkg" ServiceManifestVersion="1.0.0" />
-    <ConfigOverrides />
-    <Policies>
-      <ConfigPackagePolicies CodePackageRef="Code">
-        <ConfigPackage Name="Config" SectionName="testsecrets" MountPoint="C:\secrets" EnvironmentVariableName="SecretPath" />
-        <!-- Linux Container
-         <ConfigPackage Name="Config" SectionName="testsecrets" MountPoint="/mnt/secrets" EnvironmentVariableName="SecretPath" />
-        -->
-      </ConfigPackagePolicies>
-    </Policies>
-  </ServiceManifestImport>
-```
-Секреты будут доступны в точке подключения внутри контейнера.
+   Переменная среды `SecretPath` будет указывать на каталог, где хранятся все секреты. Каждый параметр, указанный в разделе `testsecrets`, хранится в отдельном файле. Теперь приложение может использовать секрет, как показано ниже.
+   ```C#
+   secretValue = IO.ReadFile(Path.Join(Environment.GetEnvironmentVariable("SecretPath"),  "TopSecret"))
+   ```
+1. Подключите секреты к контейнеру. Единственное изменение, необходимое для предоставления секретов в контейнере, заключается в `specify` точки подключения в `<ConfigPackage>`.
+Следующий фрагмент кода является модифицированным **ApplicationManifest. XML**.  
 
-4. Привязка секрета к переменной среды 
+   ```xml
+   <ServiceManifestImport>
+       <ServiceManifestRef ServiceManifestName="testservicePkg" ServiceManifestVersion="1.0.0" />
+       <ConfigOverrides />
+       <Policies>
+         <ConfigPackagePolicies CodePackageRef="Code">
+           <ConfigPackage Name="Config" SectionName="testsecrets" MountPoint="C:\secrets" EnvironmentVariableName="SecretPath" />
+           <!-- Linux Container
+            <ConfigPackage Name="Config" SectionName="testsecrets" MountPoint="/mnt/secrets" EnvironmentVariableName="SecretPath" />
+           -->
+         </ConfigPackagePolicies>
+       </Policies>
+     </ServiceManifestImport>
+   ```
+   Секреты доступны в точке подключения внутри контейнера.
 
-Можно привязать секрет к переменной среды процесса, указав Type = ' Секретссторереф '. Ниже приведен пример привязки `supersecret` версии `ver1` к переменной среды `MySuperSecret` в ServiceManifest. XML.
+1. Можно привязать секрет к переменной среды процесса, указав `Type='SecretsStoreRef`. В следующем фрагменте кода приведен пример привязки `supersecret` версии `ver1` к переменной среды `MySuperSecret` в **ServiceManifest. XML**.
 
-```xml
-<EnvironmentVariables>
-  <EnvironmentVariable Name="MySuperSecret" Type="SecretsStoreRef" Value="supersecret:ver1"/>
-</EnvironmentVariables>
-```
+   ```xml
+   <EnvironmentVariables>
+     <EnvironmentVariable Name="MySuperSecret" Type="SecretsStoreRef" Value="supersecret:ver1"/>
+   </EnvironmentVariables>
+   ```
+
 ## <a name="next-steps"></a>Дальнейшие действия
-Ознакомьтесь с дополнительными сведениями о [безопасности приложений и служб](service-fabric-application-and-service-security.md).
+Дополнительные сведения о [безопасности приложений и служб](service-fabric-application-and-service-security.md).

@@ -7,12 +7,12 @@ ms.topic: article
 ms.date: 01/14/2016
 ms.author: aelnably
 ms.custom: seodec18
-ms.openlocfilehash: ccff07009d2f46f6d91b8e3c57158aa6ede3607e
-ms.sourcegitcommit: 265f1d6f3f4703daa8d0fc8a85cbd8acf0a17d30
+ms.openlocfilehash: 332f7a562fc8c1d7b2bbebb0e596a068797c2ce3
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74671432"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75967211"
 ---
 # <a name="azure-app-service-app-cloning-using-powershell"></a>Клонирование приложений службы приложений Azure с помощью PowerShell
 
@@ -124,10 +124,10 @@ $destapp = New-AzWebApp -ResourceGroupName <Resource group name> -Name dest-weba
 * При клонировании в другую единицу масштабирования исходящие IP-адреса изменяются.
 * Недоступно для приложений Linux
 
-### <a name="references"></a>Справочники
+### <a name="references"></a>Ссылки
 * [Клонирование службы приложений](app-service-web-app-cloning.md)
 * [Резервное копирование приложения в службе приложений Azure](manage-backup.md)
 * [Предварительная поддержка диспетчера трафика Azure в диспетчере ресурсов Azure](../traffic-manager/traffic-manager-powershell-arm.md)
 * [Введение в среду службы приложения](environment/intro.md)
-* [Использование Azure PowerShell с Azure Resource Manager](../azure-resource-manager/manage-resources-powershell.md)
+* [Использование Azure PowerShell с диспетчером ресурсов Azure](../azure-resource-manager/management/manage-resources-powershell.md)
 

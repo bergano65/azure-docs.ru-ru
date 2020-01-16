@@ -8,12 +8,12 @@ ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 12/18/2019
-ms.openlocfilehash: 54d1b640a4067cf65fc28501840b4926455ec259
-ms.sourcegitcommit: 3eb0cc8091c8e4ae4d537051c3265b92427537fe
+ms.openlocfilehash: aa8bd6e89dd47c4e972a860691d1bc3779ba5bc7
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75903461"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75982315"
 ---
 # <a name="common-query-patterns-in-azure-stream-analytics"></a>Общие шаблоны запросов в Azure Stream Analytics
 
@@ -836,7 +836,7 @@ From
 
 Определяемая пользователем функция будет вычислять значение *bigint* из хексвалуе при каждом потреблении события.
 
-Дополнительные сведения см. в разделе [JavaScript](/stream-analytics/stream-analytics-javascript-user-defined-functions) и [C#](/stream-analytics/stream-analytics-edge-csharp-udf).
+Дополнительные сведения см. в разделе [JavaScript](/azure/stream-analytics/stream-analytics-javascript-user-defined-functions) и [C#](/azure/stream-analytics/stream-analytics-edge-csharp-udf).
 
 ## <a name="advanced-pattern-matching-with-match_recognize"></a>Расширенное сопоставление шаблонов с MATCH_RECOGNIZE
 

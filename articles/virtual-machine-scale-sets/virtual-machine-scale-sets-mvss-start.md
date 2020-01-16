@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/26/2019
 ms.author: manayar
-ms.openlocfilehash: e3d8ada67b0a592df9c2dba145626836f27da631
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 52fb7c770e9f9e2570cad92a8c0dd9bc4374e708
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75459372"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75980194"
 ---
 # <a name="learn-about-virtual-machine-scale-set-templates"></a>Подробнее о шаблонах масштабируемых наборов виртуальных машин
 [Шаблоны Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/template-deployment-overview#template-deployment-process) прекрасно подходят для развертывания группы связанных ресурсов. В этой серии руководств показано, как создать шаблон базового масштабируемого набора и как изменить этот шаблон в соответствии с различными сценариями. Все примеры взяты из этого [репозитория GitHub](https://github.com/gatneil/mvss).
@@ -75,7 +75,7 @@ ms.locfileid: "75459372"
 ```
 
 ## <a name="specify-location"></a>Определение расположения
-Чтобы указать расположение для виртуальной сети, примените [функции шаблона Resource Manager](../azure-resource-manager/resource-group-template-functions.md). Каждая функция заключается в кавычки и квадратные скобки, примерно так: `"[<template-function>]"`. В этом случае используйте функцию `resourceGroup`. Она не принимает никаких аргументов и возвращает объект JSON с метаданными о группе ресурсов, в которой выполняется развертывание. Группу ресурсов устанавливает пользователь во время развертывания. Затем, используя функцию `.location`, значение этого объекта JSON индексируется, чтобы получить из него сведения о расположении.
+Чтобы указать расположение для виртуальной сети, примените [функции шаблона Resource Manager](../azure-resource-manager/templates/template-functions.md). Каждая функция заключается в кавычки и квадратные скобки, примерно так: `"[<template-function>]"`. В этом случае используйте функцию `resourceGroup`. Она не принимает никаких аргументов и возвращает объект JSON с метаданными о группе ресурсов, в которой выполняется развертывание. Группу ресурсов устанавливает пользователь во время развертывания. Затем, используя функцию `.location`, значение этого объекта JSON индексируется, чтобы получить из него сведения о расположении.
 
 ```json
        "location": "[resourceGroup().location]",

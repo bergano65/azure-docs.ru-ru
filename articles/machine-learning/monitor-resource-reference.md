@@ -10,12 +10,12 @@ ms.reviewer: larryfr
 ms.author: aashishb
 author: aashishb
 ms.date: 11/06/2019
-ms.openlocfilehash: 8d2dccc1543512ead4b0ff6475ace20045bb1b8c
-ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
+ms.openlocfilehash: bbc62aa153e6ecb5d9ae65c37392c2697b9beaa2
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75762779"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75979722"
 ---
 # <a name="azure-machine-learning-monitoring-data-reference"></a>Справочник по данным мониторинга машинного обучения Azure
 
@@ -194,5 +194,5 @@ ms.locfileid: "75762779"
 
 ## <a name="see-also"></a>См. также:
 
-- Описание Машинное обучение Azure мониторинга см. в разделе [monitoring машинное обучение Azure](service/monitor-azure-machine-learning.md) .
+- Описание Машинное обучение Azure мониторинга см. в разделе [monitoring машинное обучение Azure](monitor-azure-machine-learning.md) .
 - Дополнительные сведения о мониторинге ресурсов Azure см. в статье [мониторинг ресурсов Azure с помощью Azure Monitor](/azure/azure-monitor/insights/monitor-azure-resource) .

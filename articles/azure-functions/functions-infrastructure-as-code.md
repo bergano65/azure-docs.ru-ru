@@ -4,12 +4,12 @@ description: Узнайте, как создать шаблон Azure Resource M
 ms.assetid: d20743e3-aab6-442c-a836-9bcea09bfd32
 ms.topic: conceptual
 ms.date: 04/03/2019
-ms.openlocfilehash: 6d5b7b33bfb2645128a545bb371c70188a724c40
-ms.sourcegitcommit: f34165bdfd27982bdae836d79b7290831a518f12
+ms.openlocfilehash: 650997cfddc71a8bfe347e29c8992b78d1828034
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/13/2020
-ms.locfileid: "75920618"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75978789"
 ---
 # <a name="automate-resource-deployment-for-your-function-app-in-azure-functions"></a>Автоматизация развертывания ресурсов приложения-функции для службы "Функции Azure"
 
@@ -372,7 +372,7 @@ ms.locfileid: "75920618"
 ```
 
 
-<a name="app-service-plan"></a> 
+<a name="app-service-plan"></a>
 
 ## <a name="deploy-on-app-service-plan"></a>Развертывание в плане службы приложений
 
@@ -419,7 +419,7 @@ ms.locfileid: "75920618"
 }
 ```
 
-### <a name="create-a-function-app"></a>Создание приложения-функции 
+### <a name="create-a-function-app"></a>Создание приложения-функции
 
 Для приложения-функции в плане службы приложений свойство `serverFarmId` должно иметь значение, равное ИДЕНТИФИКАТОРу ресурса, созданному ранее.
 
@@ -637,10 +637,10 @@ ms.locfileid: "75920618"
 
 Для развертывания шаблона можно использовать любой из следующих способов:
 
-* [PowerShell](../azure-resource-manager/resource-group-template-deploy.md)
-* [Azure CLI](../azure-resource-manager/resource-group-template-deploy-cli.md)
-* [Портал Azure](../azure-resource-manager/resource-group-template-deploy-portal.md)
-* [REST API](../azure-resource-manager/resource-group-template-deploy-rest.md)
+* [PowerShell](../azure-resource-manager/templates/deploy-powershell.md)
+* [Azure CLI](../azure-resource-manager/templates/deploy-cli.md)
+* [Портал Azure](../azure-resource-manager/templates/deploy-portal.md)
+* [REST API](../azure-resource-manager/templates/deploy-rest.md)
 
 ### <a name="deploy-to-azure-button"></a>Кнопка "Развертывание в Azure"
 

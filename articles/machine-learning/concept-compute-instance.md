@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.author: sgilley
 author: sdgilley
 ms.date: 12/13/2019
-ms.openlocfilehash: 02655a3697139ae3a9c4c36b423b874b6e5d34f9
-ms.sourcegitcommit: ce4a99b493f8cf2d2fd4e29d9ba92f5f942a754c
+ms.openlocfilehash: 6bba4414390efa6e07be6c253fe55f1638d414dc
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/28/2019
-ms.locfileid: "75541872"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75974107"
 ---
 # <a name="what-is-an-azure-machine-learning-compute-instance"></a>Что такое Машинное обучение Azure вычислительного экземпляра?
 
@@ -54,7 +54,7 @@ ms.locfileid: "75541872"
 |Библиотека Intel MPI||
 |Интерфейс командной строки Azure ||
 |Примеры Машинное обучение Azure ||
-|Машинное обучение Azure подсистему ЕДАТ ||            
+|Машинное обучение Azure подсистему ЕДАТ ||
 |Docker||
 |Nginx||
 |НККЛ 2,0 ||
@@ -76,11 +76,26 @@ ms.locfileid: "75541872"
 |Другие пакеты PyPI|`jupytext`</br>`jupyterlab-git`</br>`tensorboard`</br>`nbconvert`</br>`notebook`</br>`Pillow`|
 |Пакеты Conda|`cython`</br>`numpy`</br>`ipykernel`</br>`scikit-learn`</br>`matplotlib`</br>`tqdm`</br>`joblib`</br>`nodejs`</br>`nb_conda_kernels`|
 |Пакеты глубокого обучения|`PyTorch`</br>`TensorFlow`</br>`Keras`</br>`Horovod`</br>`MLFlow`</br>`pandas-ml`</br>`scrapbook`|
-|Пакеты ONNX|`keras2onnx`</br>`onnx`</br>`onnxconverter-common`</br>`skl2onnx`</br>`onnxmltools`|                           
+|Пакеты ONNX|`keras2onnx`</br>`onnx`</br>`onnxconverter-common`</br>`skl2onnx`</br>`onnxmltools`|
 |Примеры SDK для Машинное обучение Azure Python & R||
+
+Пакеты Python устанавливаются в среде **python 3,6-AzureML** .  
 
 Вычислительные экземпляры обычно используются в качестве сред разработки.  Их также можно использовать в качестве целевого объекта вычислений для обучения и изучения при разработке и тестировании.  Для больших задач в качестве целевого объекта вычислений лучше выбрать [машинное обучение Azureный кластер](how-to-set-up-training-targets.md#amlcompute) с возможностями масштабирования с несколькими узлами.
 
+### <a name="installing-packages"></a>Установка пакетов
+
+Пакеты можно устанавливать непосредственно в записной книжке Jupyter или Rstudio:
+
+* RStudio используйте вкладку **пакеты** в правом нижнем углу или вкладку **консоли** в левом верхнем углу.  
+* Python: Добавьте код установки и выполните команду в ячейке записной книжки Jupyter.
+
+Кроме того, можно получить доступ к окну терминала одним из следующих способов:
+
+* RStudio: выберите вкладку **Terminal (терминал** ) в левом верхнем углу.
+* Jupyter Lab: выберите плитку **терминала** под заголовком **другой** на вкладке Средство запуска.
+* Jupyter: выберите **новый > терминал** в правом верхнем углу на вкладке "файлы".
+* Подключитесь к компьютеру по протоколу SSH.  Затем установите пакеты Python в среду **python 3,6-AzureML** .  Установите пакеты R в среду **r** .
 
 ## <a name="accessing-files"></a>Доступ к файлам
 

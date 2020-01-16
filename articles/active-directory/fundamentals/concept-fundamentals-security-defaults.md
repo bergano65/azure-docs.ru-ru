@@ -5,18 +5,18 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: conditional-access
 ms.topic: conceptual
-ms.date: 12/06/2019
+ms.date: 01/14/2020
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: rogoya
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 83a839d75757bcee14d7f696d2d11d1d7d8fa4cc
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 589d8219681304242585c9fed33a4e3d364909ec
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75422840"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75978906"
 ---
 # <a name="what-are-security-defaults"></a>Что такое параметры безопасности по умолчанию?
 
@@ -28,7 +28,10 @@ ms.locfileid: "75422840"
 
 ![Снимок экрана портал Azure с переключателем для включения параметров безопасности по умолчанию](./media/concept-fundamentals-security-defaults/security-defaults-azure-ad-portal.png)
  
-В клиенте будут включены следующие конфигурации безопасности. 
+> [!TIP]
+> Если ваш клиент создан в или после октября 22 2019, возможно, вы столкнулись с новым поведением по умолчанию и уже включили в клиенте параметры безопасности по умолчанию. В целях защиты всех наших пользователей развертывание по умолчанию выполняется для всех созданных клиентов.
+
+Дополнительные сведения о том, почему доступны параметры безопасности по умолчанию, можно найти в записи блога Алекс Вайнерт, в которой представлены [Параметры безопасности по умолчанию](https://techcommunity.microsoft.com/t5/azure-active-directory-identity/introducing-security-defaults/ba-p/1061414).
 
 ## <a name="unified-multi-factor-authentication-registration"></a>Регистрация единой многофакторной проверки подлинности
 

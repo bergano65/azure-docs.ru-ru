@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 12/04/2019
-ms.openlocfilehash: 09a6b158c4390f881754c90d52a476f0bc249a5a
-ms.sourcegitcommit: 5b9287976617f51d7ff9f8693c30f468b47c2141
+ms.openlocfilehash: bcb0e9551f4415b2aac9eb2d641c91df9f692437
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2019
-ms.locfileid: "74947645"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75979122"
 ---
 # <a name="create-apache-hadoop-cluster-with-secure-transfer-storage-accounts-in-azure-hdinsight"></a>Создание кластера Apache Hadoop с помощью учетных записей хранения с безопасной передачей в Azure HDInsight
 
@@ -24,14 +24,14 @@ ms.locfileid: "74947645"
 Прежде чем приступать к этой статье, необходимо:
 
 * Подписка Azure. чтобы создать бесплатную пробную учетную запись на один месяц, перейдите по [Azure.Microsoft.com/Free](https://azure.microsoft.com/free).
-* Учетная запись хранения Azure с включенной безопасной переносю. Инструкции см. в статье [Об учетных записях хранения Azure](../storage/common/storage-quickstart-create-account.md) и [Требование безопасной передачи](../storage/common/storage-require-secure-transfer.md). Включение безопасного обмена хранилищами после создания кластера требует дополнительных действий, не описанных в этой статье.
+* Учетная запись хранения Azure с включенной безопасной переносю. Инструкции см. в статье [Об учетных записях хранения Azure](../storage/common/storage-account-create.md) и [Требование безопасной передачи](../storage/common/storage-require-secure-transfer.md). Включение безопасного обмена хранилищами после создания кластера требует дополнительных действий, не описанных в этой статье.
 * Контейнер больших двоичных объектов в учетной записи хранения.
 
 ## <a name="create-cluster"></a>Создание кластера
 
 [!INCLUDE [delete-cluster-warning](../../includes/hdinsight-delete-cluster-warning.md)]
 
-В этом разделе вы создадите в HDInsight кластер Hadoop, используя [шаблон Azure Resource Manager](../azure-resource-manager/resource-group-template-deploy.md). Шаблон можно найти на сайте [GitHub](https://azure.microsoft.com/resources/templates/101-hdinsight-linux-with-existing-default-storage-account/). Для работы с этой статьей диспетчер ресурсов шаблона не требуется. Сведения о других способах создания кластера и о свойствах, используемых в этой статье, см. в разделе [Создание кластеров HDInsight](hdinsight-hadoop-provision-linux-clusters.md).
+В этом разделе вы создадите в HDInsight кластер Hadoop, используя [шаблон Azure Resource Manager](../azure-resource-manager/templates/deploy-powershell.md). Шаблон можно найти на сайте [GitHub](https://azure.microsoft.com/resources/templates/101-hdinsight-linux-with-existing-default-storage-account/). Для работы с этой статьей диспетчер ресурсов шаблона не требуется. Сведения о других способах создания кластера и о свойствах, используемых в этой статье, см. в разделе [Создание кластеров HDInsight](hdinsight-hadoop-provision-linux-clusters.md).
 
 1. Щелкните следующее изображение, чтобы войти в Azure и открыть шаблон Resource Manager на портале Azure.
 

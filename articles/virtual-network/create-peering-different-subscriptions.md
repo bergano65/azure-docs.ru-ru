@@ -12,18 +12,18 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 04/09/2019
 ms.author: anavin
-ms.openlocfilehash: dd1d930fa09e3e53a4ac67e513ba1bff77ee1376
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: e44a27178434e7e5decbd30fda8febe0a710e7f0
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75373369"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75978951"
 ---
 # <a name="create-a-virtual-network-peering---resource-manager-different-subscriptions"></a>Создание пиринга виртуальных сетей, развернутых с помощью Resource Manager в разных подписках
 
 В этом руководстве вы узнаете, как установить пиринг между виртуальными сетями, развернутыми с помощью Resource Manager. Эти виртуальные сети находятся в разных подписках. Установление пиринга между двумя виртуальными сетями позволяет ресурсам в разных виртуальных сетях взаимодействовать друг с другом с такими же пропускной способностью и задержкой, как если бы эти ресурсы находились в одной виртуальной сети. Узнайте больше о [пиринге виртуальных сетей](virtual-network-peering-overview.md).
 
-Действия по созданию пиринга виртуальных сетей зависят от того, находятся ли виртуальные сети в одной или разных подписках, и того, какая [модель развертывания Azure](../azure-resource-manager/resource-manager-deployment-model.md?toc=%2fazure%2fvirtual-network%2ftoc.json) использовалась для их создания. Узнайте, как создать пиринг виртуальных сетей в других сценариях, выбрав сценарий в следующей таблице.
+Действия по созданию пиринга виртуальных сетей зависят от того, находятся ли виртуальные сети в одной или разных подписках, и того, какая [модель развертывания Azure](../azure-resource-manager/management/deployment-models.md?toc=%2fazure%2fvirtual-network%2ftoc.json) использовалась для их создания. Узнайте, как создать пиринг виртуальных сетей в других сценариях, выбрав сценарий в следующей таблице.
 
 |Модель развертывания Azure  | Подписка на Azure  |
 |--------- |---------|

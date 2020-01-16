@@ -11,18 +11,18 @@ ms.topic: article
 ms.date: 11/29/2017
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
-ms.openlocfilehash: eca19b3774ad285cb143ffc2b6c53360bec85fa4
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 8d47f6f5b983c0f785c76d1b2cede815dda699a4
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73492357"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75968734"
 ---
 # <a name="the-team-data-science-process-in-action---using-an-azure-hdinsight-hadoop-cluster-on-a-1-tb-dataset"></a>Процесс обработки и анализа данных группы на практике: использование кластера Azure HDInsight Hadoop с набором данных объемом 1 ТБ
 
 В этом пошаговом руководстве показано как использовать комплексный сценарий процесса обработки и анализа данных группы на примере [кластера Azure HDInsight Hadoop](https://azure.microsoft.com/services/hdinsight/) для хранения, изучения, проектирования признаков и снижения частоты выборки данных в одном из общедоступных наборов данных [Criteo](https://labs.criteo.com/downloads/download-terabyte-click-logs/). Мы построим модель двоичной классификации этих данных, используя Машинное обучение Azure, и покажем, как опубликовать одну из этих моделей в качестве веб-службы.
 
-Для выполнения заданий, представленных в этом пошаговом руководстве, можно также использовать iPython Notebook. Пользователям, которые хотят применить этот подход, следует просмотреть раздел [Criteo walkthrough using a Hive ODBC connection](https://github.com/Azure/Azure-MachineLearning-DataScience/blob/master/Misc/DataScienceProcess/iPythonNotebooks/machine-Learning-data-science-process-hive-walkthrough-criteo.ipynb) (Пошаговое руководство Criteo по использованию подключения Hive ODBC).
+Для выполнения заданий, представленных в этом пошаговом руководстве, можно также использовать iPython Notebook. Пользователям, которые хотят применить этот подход, следует просмотреть статью [Criteo walkthrough using a Hive ODBC connection](https://github.com/Azure/Azure-MachineLearning-DataScience/blob/master/Misc/DataScienceProcess/iPythonNotebooks/machine-Learning-data-science-process-hive-walkthrough-criteo.ipynb) (Пошаговое руководство Criteo по использованию подключения Hive ODBC).
 
 ## <a name="dataset"></a>Описание набора данных Criteo
 Данные Criteo представляют собой набор данных для прогнозирования переходов по рекламным объявлениям, который содержит приблизительно 370 ГБ TSV-файлов, сжатых с помощью служебной программы gzip (около 1,3 TБ без сжатия), что составляет 4,3 миллиарда записей. Эти данные получены на основе данных о переходах по ссылкам за 24 дня, предоставленных [Criteo](https://labs.criteo.com/downloads/download-terabyte-click-logs/). Для удобства специалистов по обработке и анализу данных данные, доступные для экспериментирования, были разархивированы.
@@ -44,7 +44,7 @@ ms.locfileid: "73492357"
 
 В этом наборе данных как в числовых столбцах, так и в категориальных столбцах есть недостающие значения. Простой способ обработки недостающих значений приведен ниже. Дополнительные сведения о данных предоставляются при их сохранении в таблицах Hive.
 
-**Определение.** *Коэффициент выбора рекламного объявления* — это процент выбора элементов путем щелчка в данных. В этом наборе Criteo коэффициент составляет около 3,3 % или 0,033.
+**Определение:** *Частота* переходов: это процент щелчков в данных. В этом наборе Criteo коэффициент составляет около 3,3 % или 0,033.
 
 ## <a name="mltasks"></a>Примеры задач прогнозирования
 В этом пошаговом руководстве рассмотрены два примера задач по прогнозированию:
@@ -60,7 +60,7 @@ ms.locfileid: "73492357"
 
 Настройте среду обработки и анализа данных Azure, чтобы создавать решения для прогнозной аналитики с помощью кластеров HDInsight, выполнив три шага:
 
-1. [Создание учетной записи хранения.](../../storage/common/storage-quickstart-create-account.md) Эта учетная запись хранения используется для хранения данных в хранилище BLOB-объектов Azure. Здесь хранятся данные, используемые в кластерах HDInsight.
+1. [Создание учетной записи хранения.](../../storage/common/storage-account-create.md) Эта учетная запись хранения используется для хранения данных в хранилище BLOB-объектов Azure. Здесь хранятся данные, используемые в кластерах HDInsight.
 2. [Настройка кластеров Azure HDInsight Hadoop для обработки и анализа данных.](customize-hadoop-cluster.md) На этом шаге создается кластер Azure HDInsight Hadoop и на всех узлах устанавливается 64-разрядный дистрибутив Anaconda Python 2.7. При настройке кластера HDInsight следует выполнить два важных шага (описанных в этом разделе).
 
    * Во время создания кластера HDInsight необходимо связать учетную запись хранения, созданную на шаге 1, с этим кластером. Эта учетная запись хранения используется для доступа к данным, которые можно обработать в пределах кластера.

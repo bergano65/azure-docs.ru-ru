@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: mrbullwinkle
 ms.author: mbullwin
 ms.date: 10/17/2019
-ms.openlocfilehash: 3f9a04d767ffeb5112e2b06ed319a3c28f3b7f57
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 82b406d6f2d9f9dc4464472108c8136c7b65c67a
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75406517"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75977832"
 ---
 #  <a name="manage-application-insights-resources-using-powershell"></a>Управление ресурсами Application Insights с помощью PowerShell
 
@@ -20,7 +20,7 @@ ms.locfileid: "75406517"
 
 В этой статье показано, как автоматизировать создание и обновление ресурсов [Application Insights](../../azure-monitor/app/app-insights-overview.md) с помощью управления ресурсами Azure. Эту функцию можно использовать, например, в процессе сборки. Наряду с базовым ресурсом Application Insights можно создавать [веб-тесты доступности](../../azure-monitor/app/monitor-web-app-availability.md) и другие ресурсы Azure, а также настраивать [оповещения](../../azure-monitor/app/alerts.md) и [схему цен](pricing.md).
 
-Ключ к созданию этих ресурсов — шаблоны JSON для [диспетчера ресурсов Azure](../../azure-resource-manager/manage-resources-powershell.md). Основная процедура: Скачайте определения JSON для существующих ресурсов. Параметризация определенных значений, таких как имена; а затем запустите шаблон каждый раз, когда нужно создать новый ресурс. Несколько ресурсов можно объединить, чтобы создавать их одновременно, например, объединить монитор приложений с тестами доступности, оповещениями и хранилищем для непрерывного экспорта. С параметризацией некоторых значений связаны определенные тонкости, которые мы рассмотрим позднее.
+Ключ к созданию этих ресурсов — шаблоны JSON для [диспетчера ресурсов Azure](../../azure-resource-manager/management/manage-resources-powershell.md). Основная процедура: Скачайте определения JSON для существующих ресурсов. Параметризация определенных значений, таких как имена; а затем запустите шаблон каждый раз, когда нужно создать новый ресурс. Несколько ресурсов можно объединить, чтобы создавать их одновременно, например, объединить монитор приложений с тестами доступности, оповещениями и хранилищем для непрерывного экспорта. С параметризацией некоторых значений связаны определенные тонкости, которые мы рассмотрим позднее.
 
 ## <a name="one-time-setup"></a>Однократная настройка
 Если вы ранее не использовали PowerShell для подписки Azure:
@@ -394,7 +394,7 @@ Set-AzApplicationInsightsPricingPlan -ResourceGroupName <resource group> -Name <
     `"apiVersion": "2015-05-01",`
 
 ### <a name="parameterize-the-template"></a>Параметризация шаблона
-Теперь отдельные имена необходимо заменить параметрами. Для [параметризации шаблона](../../azure-resource-manager/templates/template-syntax.md) необходимо записать выражения, используя [набор вспомогательных функций](../../azure-resource-manager/resource-group-template-functions.md). 
+Теперь отдельные имена необходимо заменить параметрами. Для [параметризации шаблона](../../azure-resource-manager/templates/template-syntax.md) необходимо записать выражения, используя [набор вспомогательных функций](../../azure-resource-manager/templates/template-functions.md). 
 
 Параметризовать только часть строки нельзя, поэтому для формирования строки используйте `concat()` .
 

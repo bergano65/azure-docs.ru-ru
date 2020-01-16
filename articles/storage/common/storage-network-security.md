@@ -9,12 +9,12 @@ ms.date: 03/21/2019
 ms.author: tamram
 ms.reviewer: santoshc
 ms.subservice: common
-ms.openlocfilehash: b9a5e388ce6749023cff223de2376d1360ca7574
-ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
+ms.openlocfilehash: 5e4a8afdb9bea4f528e57c914149f611b0578c63
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75895696"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75973473"
 ---
 # <a name="configure-azure-storage-firewalls-and-virtual-networks"></a>Настройка брандмауэров службы хранилища Azure и виртуальных сетей
 
@@ -224,7 +224,7 @@ ms.locfileid: "75895696"
 
     > [!TIP]
     > Чтобы добавить правило для подсети, принадлежащей другому клиенту Azure AD, используйте полный идентификатор подсети в форме "/Subscriptions/\<Subscription-ID\>/resourceGroups/\<resourceGroup-Name\>/Провидерс/Микрософт.Нетворк/виртуалнетворкс/\<vNet-Name\>/субнетс/\<Subnet-Name\>".
-    > 
+    >
     > Чтобы получить идентификатор подсети для виртуальной сети, принадлежащей другому клиенту Azure AD, можно использовать параметр **Subscription** .
 
 1. Удалите сетевое правило для виртуальной сети и подсети.
@@ -391,7 +391,7 @@ ms.locfileid: "75895696"
 | Задачи Реестра контейнеров Azure | Microsoft.ContainerRegistry/registries | Задачи записи контроля доступа могут получать доступ к учетным записям хранения при создании образов контейнеров. |
 | Фабрика данных Azure             | Microsoft.DataFactory/factories;        | Разрешает доступ к учетным записям хранения через среду выполнения ADF. |
 | Azure Logic Apps               | Microsoft.Logic/workflows              | Позволяет приложениям логики получать доступ к учетным записям хранения. [Узнайте больше](../../logic-apps/create-managed-service-identity.md#authenticate-access-with-managed-identity). |
-| Машинное обучение Azure | Microsoft.MachineLearningServices      | Полномочные Машинное обучение Azure рабочие области записывают выходные данные эксперимента, модели и журналы в хранилище BLOB-объектов. [Узнайте больше](/azure/machine-learning/service/how-to-enable-virtual-network#use-a-storage-account-for-your-workspace). | 
+| Машинное обучение Azure | Microsoft.MachineLearningServices      | Полномочные Машинное обучение Azure рабочие области записывают выходные данные эксперимента, модели и журналы в хранилище BLOB-объектов. [Узнайте больше](/azure/machine-learning/service/how-to-enable-virtual-network#use-a-storage-account-for-your-workspace). |
 | Хранилище данных SQL Azure       | Microsoft.Sql                          | Позволяет импортировать и экспортировать данные из конкретных экземпляров базы данных SQL с помощью Polybase. [Узнайте больше](/azure/sql-database/sql-database-vnet-service-endpoint-rule-overview). |
 | Azure Stream Analytics         | Microsoft.StreamAnalytics             | Позволяет записывать данные из задания потоковой передачи в хранилище BLOB-объектов. Эта функция в настоящее время находится на стадии предварительной версии. [Узнайте больше](/azure/stream-analytics/blob-output-managed-identity). |
 | Azure Synapse Analytics        | Microsoft. синапсе/рабочие области          | Обеспечивает доступ к данным в службе хранилища Azure из синапсе Analytics. |
@@ -471,4 +471,4 @@ ms.locfileid: "75895696"
 
 Дополнительные сведения о конечных точках службы сети Azure см. в статье [Конечные точки службы виртуальной сети](/azure/virtual-network/virtual-network-service-endpoints-overview).
 
-Более подробную информацию о безопасности службы хранилища Azure см. в статье [Руководство по безопасности службы хранилища Azure](storage-security-guide.md).
+Более подробную информацию о безопасности службы хранилища Azure см. в статье [Руководство по безопасности службы хранилища Azure](../blobs/security-recommendations.md).

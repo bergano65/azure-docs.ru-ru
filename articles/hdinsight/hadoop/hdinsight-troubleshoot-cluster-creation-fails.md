@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: troubleshooting
 ms.date: 08/26/2019
-ms.openlocfilehash: 607eacc531166d9d770f31cc64825e8ffea9ca76
-ms.sourcegitcommit: fa4852cca8644b14ce935674861363613cf4bfdf
+ms.openlocfilehash: ea60faf5b5689fa674095201d3db18422d3e0f1b
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2019
-ms.locfileid: "70810681"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75980499"
 ---
 # <a name="troubleshoot-cluster-creation-failures-with-azure-hdinsight"></a>Устранение сбоев при создании кластера с помощью Azure HDInsight
 
@@ -29,7 +29,7 @@ ms.locfileid: "70810681"
 
 ## <a name="permissions-issues"></a>Проблемы с разрешениями
 
-Если вы используете Azure Data Lake Storage 2-го поколения и получаете ошибку ```AmbariClusterCreationFailedErrorCode```, ```Internal server error occurred while processing the request. Please retry the request or contact support.```откройте портал Azure, перейдите к своей учетной записи хранения и в разделе Управление доступом (IAM) убедитесь, что **участник данных BLOB-объекта хранилища** или **большой двоичный объект хранилища. Роль владельца данных** назначила доступ к **управляемому удостоверению, назначенному пользователю** для подписки. Подробные инструкции см. в разделе о [настройке разрешений для управляемого удостоверения в учетной записи Data Lake Storage 2-го поколения](../hdinsight-hadoop-use-data-lake-storage-gen2.md#set-up-permissions-for-the-managed-identity-on-the-data-lake-storage-gen2-account).
+Если вы используете Azure Data Lake Storage 2-го поколения и получаете сообщение об ошибке ```AmbariClusterCreationFailedErrorCode```, ```Internal server error occurred while processing the request. Please retry the request or contact support.```, откройте портал Azure, перейдите к своей учетной записи хранения и в разделе Управление доступом (IAM) убедитесь, что **участник данных BLOB-объекта хранилища** или роль **владельца данных BLOB-объекта хранилища** назначили доступ к **управляемому удостоверению, назначенному пользователю** для подписки. Подробные инструкции см. в разделе о [настройке разрешений для управляемого удостоверения в учетной записи Data Lake Storage 2-го поколения](../hdinsight-hadoop-use-data-lake-storage-gen2.md#set-up-permissions-for-the-managed-identity-on-the-data-lake-storage-gen2-account).
 
 Если вы используете Azure Data Lake Storage 1-го поколения, см. инструкции по настройке и настройке [здесь](../hdinsight-hadoop-use-data-lake-store.md). Data Lake Storage 1-го поколения не поддерживается для кластеров HBase и не поддерживается в HDInsight версии 4,0.
 
@@ -51,12 +51,12 @@ ms.locfileid: "70810681"
 
 Разрешить трафик с IP-адресов, указанных в таблице ниже.
 
-| Исходный IP-адрес | Назначение | Direction |
+| Исходный IP-адрес | Место назначения | Направление |
 |---|---|---|
-| 168.61.49.99 | *: 443 | Входящий трафик |
-| 23.99.5.239 | *: 443 | Входящий трафик |
-| 168.61.48.131 | *: 443 | Входящий трафик |
-| 138.91.141.162 | *: 443 | Входящий трафик |
+| 168.61.49.99 | *: 443 | Вход. |
+| 23.99.5.239 | *: 443 | Вход. |
+| 168.61.48.131 | *: 443 | Вход. |
+| 138.91.141.162 | *: 443 | Вход. |
 
 Также добавьте IP-адреса, относящиеся к региону, в котором создается кластер. Список адресов для каждого региона Azure см. в разделе [IP-адреса управления HDInsight](../hdinsight-management-ip-addresses.md) .
 
@@ -64,7 +64,7 @@ ms.locfileid: "70810681"
 
 ## <a name="resources-locks"></a>Блокировки ресурсов  
 
-Убедитесь, что [в виртуальной сети и группе ресурсов нет блокировок](../../azure-resource-manager/resource-group-lock-resources.md).  
+Убедитесь, что [в виртуальной сети и группе ресурсов нет блокировок](../../azure-resource-manager/management/lock-resources.md).  
 
 ## <a name="unsupported-component-versions"></a>Неподдерживаемые версии компонентов
 
@@ -80,7 +80,7 @@ ms.locfileid: "70810681"
 
 Проверьте [состояние Azure](https://status.azure.com/status) на наличие потенциальных сбоев или проблем со службой.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Расширение возможностей HDInsight с помощью виртуальной сети Azure](../hdinsight-plan-virtual-network-deployment.md)
 * [Использование Azure Data Lake Storage Gen2 с кластерами Azure HDInsight](../hdinsight-hadoop-use-data-lake-storage-gen2.md)  

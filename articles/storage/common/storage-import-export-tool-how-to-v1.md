@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 1/15/2017
 ms.author: twooley
 ms.subservice: common
-ms.openlocfilehash: 4cd5fde2f47cca1b03efbc217d7764ac429d15fb
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.openlocfilehash: aaceee65ae91a22dc658d185a874e2040b1e0f04
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74973940"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75975671"
 ---
 # <a name="using-the-azure-importexport-tool-classic-deployment-model"></a>Использование средства импорта и экспорта Azure (классическая модель развертывания)
 
@@ -25,10 +25,10 @@ ms.locfileid: "74973940"
 
 - Установка и настройка средства импорта и экспорта.
 - Подготовка жестких дисков для задания, импортирующего данные с дисков в хранилища BLOB-объектов Azure.
-- Просмотр состояния задания с помощью файлов журнала копирования. 
-- Исправление задания импорта. 
-- Исправление задания экспорта. 
-- Устранение неполадок средства импорта и экспорта Azure, возникающих при его использовании. 
+- Просмотр состояния задания с помощью файлов журнала копирования.
+- Исправление задания импорта.
+- Исправление задания экспорта.
+- Устранение неполадок средства импорта и экспорта Azure, возникающих при его использовании.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

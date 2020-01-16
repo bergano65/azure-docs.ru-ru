@@ -7,17 +7,17 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 09/30/2019
-ms.openlocfilehash: f4612232acfe6099c56d365e482cbc82c8436dee
-ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
+ms.openlocfilehash: 2bf2f012e553e08a1eb829f93d9af0f0e74f638b
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75745631"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75977658"
 ---
 # <a name="collect-and-analyze-azure-activity-logs-in-log-analytics-workspace-in-azure-monitor"></a>Собирайте и анализируйте журналы действий Azure в Log Analytics рабочей области в Azure Monitor
 
 > [!WARNING]
-> Теперь можно выполнить сбор журнала действий в Log Analytics рабочую область, используя параметр диагностики, аналогичный сбору журналов ресурсов. См. статью [Получение и анализ журналов действий Azure в log Analytics рабочей области в Azure Monitor](diagnostic-settings-subscription.md).
+> Теперь можно выполнить сбор журнала действий в Log Analytics рабочую область, используя параметр диагностики, аналогичный сбору журналов ресурсов. См. статью [Получение и анализ журналов действий Azure в log Analytics рабочей области в Azure Monitor](diagnostic-settings-legacy.md).
 
 [Журнал действий Azure](platform-logs-overview.md) позволяет получить представление о событиях уровня подписки, произошедших в подписке Azure. В этой статье описывается, как получить журнал действий в Log Analytics рабочей области и как использовать [решение для мониторинга](../insights/solutions.md)аналитика журнала действий, которое предоставляет запросы и представления журнала для анализа этих данных. 
 
@@ -32,7 +32,7 @@ ms.locfileid: "75745631"
 Одну рабочую область можно подключить к журналу действий для нескольких подписок в одном клиенте Azure. Сведения о сборе в нескольких клиентах см. в статье [Сбор журналов действий Azure в log Analytics рабочей области между подписками в разных клиентах Azure Active Directory](activity-log-collect-tenants.md).
 
 > [!IMPORTANT]
-> Если поставщики ресурсов Microsoft. OperationalInsights и Microsoft. OperationsManagement не зарегистрированы для вашей подписки, может появиться сообщение об ошибке со следующей процедурой. Чтобы зарегистрировать эти поставщики, см. раздел [поставщики и типы ресурсов Azure](../../azure-resource-manager/resource-manager-supported-services.md) .
+> Если поставщики ресурсов Microsoft. OperationalInsights и Microsoft. OperationsManagement не зарегистрированы для вашей подписки, может появиться сообщение об ошибке со следующей процедурой. Чтобы зарегистрировать эти поставщики, см. раздел [поставщики и типы ресурсов Azure](../../azure-resource-manager/management/resource-providers-and-types.md) .
 
 Используйте следующую процедуру, чтобы подключить журнал действий к рабочей области Log Analytics:
 

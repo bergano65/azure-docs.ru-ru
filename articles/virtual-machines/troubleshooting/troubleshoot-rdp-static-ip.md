@@ -12,21 +12,21 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 11/08/2018
 ms.author: genli
-ms.openlocfilehash: d1cb34f1666db0e213a41fa8d2e684ba148b7e61
-ms.sourcegitcommit: c79aa93d87d4db04ecc4e3eb68a75b349448cd17
+ms.openlocfilehash: 7756d4c808e104b0de14e1cea4af5e843cff755c
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71088449"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75981769"
 ---
 #  <a name="cannot-remote-desktop-to-azure-virtual-machines-because-of-static-ip"></a>Сбой подключения удаленного рабочего стола к Виртуальным машинам Azure из-за статического IP-адреса
 
 В этой статье описывается проблема, при которой не удается установить подключение удаленного рабочего стола к виртуальным машинам Azure под управлением Windows после настройки на виртуальной машины статического IP-адреса.
 
 > [!NOTE]
-> В Azure предлагаются две модели развертывания для создания ресурсов и работы с ними: [модель развертывания с помощью Resource Manager и классическая модель](../../azure-resource-manager/resource-manager-deployment-model.md). В этой статье описывается использование модели развертывания c помощью Resource Manager. Для новых развертываний рекомендуется использовать эту модель вместо классической.
+> В Azure предлагаются две модели развертывания для создания ресурсов и работы с ними: [модель диспетчера ресурсов и классическая модель](../../azure-resource-manager/management/deployment-models.md). В этой статье описывается использование модели развертывания c помощью Resource Manager. Для новых развертываний рекомендуется использовать эту модель вместо классической.
 
-## <a name="symptoms"></a>Проблемы
+## <a name="symptoms"></a>Симптомы
 
 При подключении RDP к виртуальной машине в Azure может появиться сообщение об ошибке:
 
@@ -42,7 +42,7 @@ ms.locfileid: "71088449"
 
 При проверке снимка экрана в разделе [Диагностика загрузки](../troubleshooting/boot-diagnostics.md) на портале Azure вы увидите, что виртуальная машина загружается нормально и ожидает учетных данных на экране входа.
 
-## <a name="cause"></a>Причина:
+## <a name="cause"></a>Причина
 
 У виртуальной машины есть статический IP-адрес, определенный для сетевого интерфейса в Windows. Этот IP-адрес отличается от адреса, который определен на портале Azure.
 

@@ -3,7 +3,7 @@ title: Обзор агента виртуальной машины Azure
 description: Обзор агента виртуальной машины Azure
 services: virtual-machines-windows
 documentationcenter: virtual-machines
-author: axayjo
+author: MicahMcKittrick-MSFT
 manager: gwallace
 editor: tysonn
 tags: azure-resource-manager
@@ -14,17 +14,17 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 07/20/2019
 ms.author: akjosh
-ms.openlocfilehash: b003f2823ffceebecdb2af681a3bdbb4cf25704c
-ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
+ms.openlocfilehash: 7185ac40cafce86c68efbf28c7e6a35fd4789bc3
+ms.sourcegitcommit: dbcc4569fde1bebb9df0a3ab6d4d3ff7f806d486
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/02/2020
-ms.locfileid: "75615077"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76027640"
 ---
 # <a name="azure-virtual-machine-agent-overview"></a>Обзор агента виртуальной машины Azure
 Агент виртуальной машины Microsoft Azure — это защищенный упрощенный процесс, который управляет взаимодействием виртуальной машины с контроллером структуры Azure. Основная роль агента виртуальной машины — это включение и выполнение расширений виртуальной машины Azure. Расширения виртуальной машины позволяют выполнять дополнительные действия по настройке виртуальной машины после развертывания, например устанавливать и настраивать программное обеспечение. Они также предоставляют возможности восстановления, такие как сброс пароля администратора виртуальной машины. Расширения виртуальной машины не могут выполняться без агента виртуальной машины Azure.
 
-В этой статье описаны процессы установки, обнаружения и удаления агента виртуальной машины Azure.
+В этой статье подробно описывается установка и обнаружение агента виртуальной машины Azure.
 
 ## <a name="install-the-vm-agent"></a>"Установить агент виртуальной машины"
 
@@ -61,8 +61,17 @@ ms.locfileid: "75615077"
 ### <a name="manual-installation"></a>Ручная установка
 Агент виртуальной машины Windows можно установить вручную с помощью пакета установщика Windows. Установка вручную может потребоваться при создании пользовательского образа виртуальной машины, который будет развернут в Azure. Чтобы вручную установить агент виртуальной машины Windows, [скачайте установщик агента виртуальной машины](https://go.microsoft.com/fwlink/?LinkID=394789). Агент виртуальной машины поддерживается в Windows Server 2008 R2 и более поздних версиях.
 
+> [Примечание.] Важно обновить параметр Алловекстенсионоператионс после ручной установки VMAgent на виртуальной машине, которая была развернута из образа без Провисионвмажент Enable.
+
+```powershell
+$vm.OSProfile.AllowExtensionOperations = $true
+$vm | Update-AzVM
+```
+
 ### <a name="prerequisites"></a>Технические условия
-Для запуска агента виртуальной машины Windows требуется по меньшей мере Windows Server 2008 R2 (64-бит) с .NET Framework 4,0. См. раздел [Минимальная поддержка версий для агентов виртуальных машин в Azure](https://support.microsoft.com/en-us/help/4049215/extensions-and-virtual-machine-agent-minimum-version-support) .
+- Для запуска агента виртуальной машины Windows требуется по меньшей мере Windows Server 2008 R2 (64-бит) с .NET Framework 4,0. См. раздел [Минимальная поддержка версий для агентов виртуальных машин в Azure](https://support.microsoft.com/en-us/help/4049215/extensions-and-virtual-machine-agent-minimum-version-support) .
+
+- Убедитесь, что ваша виртуальная машина имеет доступ к IP-адресу 168.63.129.16. Дополнительные сведения см. в разделе [что такое IP-адрес 168.63.129.16](https://docs.microsoft.com/azure/virtual-network/what-is-ip-address-168-63-129-16).
 
 ## <a name="detect-the-vm-agent"></a>Обнаружение агента виртуальной машины
 

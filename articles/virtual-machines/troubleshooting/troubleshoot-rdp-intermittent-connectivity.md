@@ -12,25 +12,25 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 10/24/2018
 ms.author: genli
-ms.openlocfilehash: be563e39ed1bfa405830999a96d8630b6f8254bb
-ms.sourcegitcommit: ca359c0c2dd7a0229f73ba11a690e3384d198f40
+ms.openlocfilehash: 636973110e11770e33c635e312c86b25110705da
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71057976"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75981352"
 ---
 # <a name="remote-desktop-disconnects-frequently-in-azure-vm"></a>Частый разрыв подключения к удаленному рабочему столу на виртуальной машине Azure
 
 В этой статье объясняется, как устранять проблемы с частым разрывом подключений по протоколу удаленного рабочего стола на виртуальной машине Azure.
 
 > [!NOTE] 
-> В Azure предлагаются две модели развертывания для создания ресурсов и работы с ними: [модель развертывания с помощью Resource Manager и классическая модель](../../azure-resource-manager/resource-manager-deployment-model.md). В этой статье описывается использование модели развертывания на основе диспетчера ресурсов. Для новых развертываний рекомендуется использовать эту модель развертывания вместо классической.
+> В Azure предлагаются две модели развертывания для создания ресурсов и работы с ними: [модель диспетчера ресурсов и классическая модель](../../azure-resource-manager/management/deployment-models.md). В этой статье описывается использование модели развертывания на основе диспетчера ресурсов. Для новых развертываний рекомендуется использовать эту модель развертывания вместо классической.
 
 ## <a name="symptom"></a>Симптом
 
 Во время сеансов работы иногда возникают проблемы с подключением по протоколу удаленного рабочего стола (RDP). Сначала подключение к виртуальной машине выполняется нормально, но затем разрывается.
 
-## <a name="cause"></a>Причина:
+## <a name="cause"></a>Причина
 
 Это может происходить при неправильной настройке прослушивателя RDP. Чаще всего эта проблема возникает на виртуальных машинах, использующих пользовательские образы.
 
@@ -151,7 +151,7 @@ ms.locfileid: "71057976"
         REG ADD "HKLM\BROKENSYSTEM\ControlSet001\control\Terminal Server\Winstations\RDP-Tcp" /v 'MaxConnectionTime' /t REG_DWORD /d 0 /f
 
         REG ADD "HKLM\BROKENSYSTEM\ControlSet002\control\Terminal Server\Winstations\RDP-Tcp" /v 'MaxConnectionTime' /t REG_DWORD /d 0 /f
-16. Настройте параметр отключения при неактивности для RDP.     REG ADD "HKLM\BROKENSYSTEM\ControlSet001\control\Terminal Server\Winstations\RDP-Tcp" /v 'fInheritMaxIdleTime' /t REG_DWORD /d 1 /f 
+16. Установите параметр времени ожидания для сеанса RDP: REG ADD "HKLM\BROKENSYSTEM\ControlSet001\control\Terminal Server\Winstations\RDP-Tcp" /v 'fInheritMaxIdleTime' /t REG_DWORD /d 1 /f 
 
         REG ADD "HKLM\BROKENSYSTEM\ControlSet001\control\Terminal Server\Winstations\RDP-Tcp" /v ' MaxIdleTime' /t REG_DWORD /d 0 /f
 
@@ -165,7 +165,7 @@ ms.locfileid: "71057976"
         REG ADD "HKLM\BROKENSYSTEM\ControlSet002\control\Terminal Server\Winstations\RDP-Tcp" /v 'MaxInstanceCount' /t REG_DWORD /d ffffffff /f
 18. Перезапустите виртуальную машину и снова попробуйте подключиться по протоколу удаленного рабочего стола.
 
-## <a name="need-help"></a>Требуется помощь? 
+## <a name="need-help"></a>Нужна помощь? 
 Обратитесь в службу поддержки. Если вам все еще нужна помощь, [обратитесь в службу поддержки](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade), которая поможет быстро устранить проблему.
 
 

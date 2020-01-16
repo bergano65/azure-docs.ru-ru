@@ -6,12 +6,12 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 09/28/2019
 ms.author: mjbrown
-ms.openlocfilehash: 80e77e2caacfed7d662fdfa04aa9524bd7c2083a
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 36f6152e52d6cb45d0a30b385678596331232560
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75445416"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75980678"
 ---
 # <a name="configure-access-from-virtual-networks-vnet"></a>Настройка доступа из виртуальных сетей (VNet)
 
@@ -52,7 +52,7 @@ ms.locfileid: "75445416"
 > Чтобы включить конечные точки служб для виртуальной сети, потребуются следующие права доступа к подписке:
 >   * подписка с виртуальной сетью — участник сетей;
 >   * подписка с учетной записью Azure Cosmos DB — участник учетной записи DocumentDB.
->   * Если ваша виртуальная сеть и учетная запись Azure Cosmos DB находятся в разных подписках, убедитесь, что в подписке с виртуальной сетью также зарегистрирован `Microsoft.DocumentDB` поставщик ресурсов. Сведения о регистрации поставщика ресурсов см. в статье [поставщики и типы ресурсов Azure](../azure-resource-manager/resource-manager-supported-services.md) .
+>   * Если ваша виртуальная сеть и учетная запись Azure Cosmos DB находятся в разных подписках, убедитесь, что в подписке с виртуальной сетью также зарегистрирован `Microsoft.DocumentDB` поставщик ресурсов. Сведения о регистрации поставщика ресурсов см. в статье [поставщики и типы ресурсов Azure](../azure-resource-manager/management/resource-providers-and-types.md) .
 
 Ниже приведены инструкции по регистрации подписки с помощью поставщика ресурсов.
 

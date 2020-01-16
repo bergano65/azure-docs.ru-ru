@@ -8,12 +8,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 10/02/2019
 ms.author: mlearned
-ms.openlocfilehash: e68ce5a198165c4187cbad9e86ce61f67694a82d
-ms.sourcegitcommit: 39da2d9675c3a2ac54ddc164da4568cf341ddecf
+ms.openlocfilehash: ff44409180d61828c25980704c71b72965f6bd5d
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73961603"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75967439"
 ---
 # <a name="frequently-asked-questions-about-azure-kubernetes-service-aks"></a>Вопросы и ответы о Службе Azure Kubernetes (AKS)
 
@@ -124,7 +124,7 @@ AKS поддерживает следующие [контроллеры допу
 
 В AKS можно задать значение `maxPods` при создании кластера с помощью шаблонов Azure CLI и Azure Resource Manager. Однако для Кубенет и Azure CNI требуется *минимальное значение* (проверка во время создания):
 
-| Сеть | Минимальная | Максимальная |
+| Работа в сети | Минимальные | Максимальная |
 | -- | :--: | :--: |
 | Azure CNI | 30 | 250 |
 | кубенет | 30 | 110 |
@@ -204,7 +204,7 @@ AKS не является управляемой службой, и управл
 [nodepool-upgrade]: use-multiple-node-pools.md#upgrade-a-node-pool
 [aks-windows-cli]: windows-container-cli.md
 [aks-windows-limitations]: windows-node-limitations.md
-[reservation-discounts]: ../billing/billing-save-compute-costs-reservations.md
+[reservation-discounts]:../cost-management-billing/reservations/save-compute-costs-reservations.md
 [api-server-authorized-ip-ranges]: ./api-server-authorized-ip-ranges.md
 [multi-node-pools]: ./use-multiple-node-pools.md
 [availability-zones]: ./availability-zones.md
