@@ -19,6 +19,9 @@
           href: ../storage/blobs/storage-blob-event-quickstart-powershell.md?toc=%2fazure%2fevent-grid%2ftoc.json
         - name: Портал
           href: blob-event-quickstart-portal.md
+        - name: Шаблон
+          displayName: 'arm, resource manager template'
+          href: blob-event-quickstart-template.md
     - name: Настраиваемые события
       items:
         - name: Azure CLI
@@ -107,7 +110,7 @@
       href: event-handlers.md
     - name: Аварийное восстановление с георепликацией
       href: geo-disaster-recovery.md
-- name: Руководства
+- name: Практические руководства
   items:
     - name: Публикация в пользовательском разделе
       href: post-to-custom-topic.md
@@ -135,7 +138,7 @@
       href: custom-disaster-recovery.md
     - name: Устранение неполадок
       href: troubleshoot-errors.md
-- name: Справочные материалы
+- name: Справочник
   items:
     - name: Azure CLI
       href: /cli/azure/eventgrid

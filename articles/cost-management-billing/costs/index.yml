@@ -1,0 +1,84 @@
+### YamlMime:Landing
+title: Управление затратами и использованием в Azure
+summary: Управление затратами Azure — это решение по управлению затратами, которое помогает отслеживать и контролировать расходы на Azure и оптимизировать использование ресурсов. Узнайте, как анализировать затраты, создавать бюджеты и управлять ими, экспортировать данные, а также просматривать рекомендации и реагировать на них с помощью наших кратких руководств и учебников.
+metadata:
+  title: Управление затратами и выставление счетов Azure
+  description: Управление затратами Azure — это решение по управлению затратами, которое помогает отслеживать и контролировать расходы на Azure и оптимизировать использование ресурсов. Узнайте, как анализировать затраты, создавать бюджеты и управлять ими, экспортировать данные, а также просматривать рекомендации и реагировать на них с помощью наших кратких руководств и учебников.
+  ms.service: cost-management-billing
+  ms.topic: landing-page
+  ms.collection: collection
+  author: bandersmsft
+  ms.author: banders
+  ms.manager: dougeby
+  ms.date: 12/18/2019
+  ms.openlocfilehash: 33821c027d242da1a9361a796280213b5265dcde
+  ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 01/15/2020
+  ms.locfileid: "75983228"
+landingContent:
+- title: Сведения об Управлении затратами
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Что собой представляет служба Управления затратами и выставления счетов?
+      url: ../cost-management-billing-overview.md
+  - linkListType: concept
+    links:
+    - text: Рекомендации для Управления затратами Azure
+      url: cost-mgt-best-practices.md
+    - text: Интерпретация данных службы "Управление затратами"
+      url: understand-cost-mgt-data.md
+    - text: Общие сведения об областях и работа с ними
+      url: understand-work-scopes.md
+- title: Анализ затрат и управление ими в Azure
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Начало анализа затрат
+      url: quick-acm-cost-analysis.md
+  - linkListType: tutorial
+    links:
+    - text: Создание бюджетов и управление ими
+      url: tutorial-acm-create-budgets.md
+    - text: Экспорт данных о затратах и использовании
+      url: tutorial-export-acm-data.md
+    - text: Выполнение действий на основе рекомендаций
+      url: tutorial-acm-opt-recommendations.md
+  - linkListType: how-to-guide
+    links:
+    - text: Назначение прав доступа к данным
+      url: assign-access-acm-data.md
+    - text: Выполнение распространенных задач с помощью анализа затрат
+      url: cost-analysis-common-uses.md
+    - text: Использование оповещений о затратах
+      url: cost-mgt-alerts-monitor-usage-spending.md
+    - text: Управление затратами для партнеров
+      url: get-started-partners.md
+    - text: Подключение с помощью Power BI Desktop
+      url: /power-bi/desktop-connect-azure-cost-management
+- title: Анализ затрат и управление ими в AWS
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Установка и настройка интеграции AWS
+      url: aws-integration-set-up-configure.md
+    - text: Управление затратами и использованием AWS
+      url: aws-integration-manage.md
+- title: API-интерфейсы Управления затратами
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Миграция из EA в API MCA
+      url: migrate-cost-management-api.md
+  - linkListType: reference
+    links:
+    - text: REST API Управления затратами Azure
+      url: https://docs.microsoft.com/rest/api/cost-management
+    - text: REST API потребления Azure
+      url: https://docs.microsoft.com/rest/api/consumption
+    - text: Шаблон Resource Manager
+      url: /azure/templates/microsoft.consumption/budgets
+    - text: Примеры REST API службы "Управление затратами"
+      url: https://github.com/Azure-Samples/Cost-Management-Samples

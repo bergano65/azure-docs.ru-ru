@@ -40,13 +40,13 @@
       href: cdn-china-delivery.md
     - name: Поддержка HTTP/2
       href: cdn-http2.md
-    - name: Получение списка точек POP для Verizon
+    - name: Получение IP-адресов POP
       href: cdn-pop-list-api.md
     - name: Переход с Verizon ценовой категории "Стандартный" на Verizon ценовой категории "Премиум"
       href: cdn-migrate.md
     - name: Защита от атак DDoS
       href: cdn-ddos.md
-- name: Руководства
+- name: Практические руководства
   items:
     - name: Оптимизация содержимого
       href: cdn-optimization-overview.md
@@ -126,7 +126,7 @@
           href: cdn-app-dev-net.md
         - name: Node.js
           href: cdn-app-dev-node.md
-    - name: Устранение неполадок
+    - name: Диагностика
       items:
         - name: "Состояние\_404"
           href: cdn-troubleshoot-endpoint.md
@@ -134,7 +134,7 @@
           href: cdn-troubleshoot-compression.md
         - name: Разрешенные центры сертификации
           href: cdn-troubleshoot-allowed-ca.md
-- name: Справочные материалы
+- name: Справочник
   items:
     - name: Справочник по стандартному обработчику правил
       href: cdn-standard-rules-engine-reference.md

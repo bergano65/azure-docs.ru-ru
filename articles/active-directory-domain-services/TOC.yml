@@ -29,6 +29,8 @@
   items:
     - name: Создание управляемого домена с помощью Azure PowerShell
       href: powershell-create-instance.md
+    - name: Создание управляемого домена с помощью шаблона
+      href: template-create-instance.md
 - name: Основные понятия
   items:
     - name: Основы администрирования

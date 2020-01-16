@@ -1,0 +1,149 @@
+- name: Документация по учетным записям выставления счетов и подпискам
+  href: index.yml
+- name: Обзор
+  items:
+    - name: Что собой представляет служба Управления затратами и выставления счетов?
+      href: ../cost-management-billing-overview.md
+- name: Практические руководства
+  expanded: true
+  items:
+    - name: Бесплатная учетная запись
+      items:
+        - name: Создание бесплатных служб
+          href: create-free-services.md
+        - name: Предотвращение расходов
+          href: avoid-charges-free-account.md
+        - name: Проверка использования
+          href: check-free-service-usage.md
+        - name: Обновление бесплатной учетной записи
+          href: upgrade-azure-subscription.md
+    - name: Администрирование учетных записей
+      items:
+        - name: Задачи администратора учетной записи
+          href: account-admin-tasks.md
+        - name: Обновите свою учетную запись Azure
+          href: upgrade-azure-subscription.md
+        - name: Изменение профиля
+          href: change-azure-account-profile.md
+        - name: Решение проблемы просроченных платежей
+          href: resolve-past-due-balance.md
+        - name: Доступ к данным для выставления счетов
+          href: manage-billing-access.md
+        - name: Роли для клиентского соглашения Майкрософт в Azure
+          href: understand-mca-roles.md
+        - name: Привязка идентификатора партнера
+          href: link-partner-id.md
+    - name: Управление учетными записями
+      items:
+        - name: Просмотр учетных записей выставления счетов
+          href: view-all-accounts.md
+        - name: Упорядочение затрат с помощью разделов счетов
+          href: mca-section-invoice.md
+        - name: Настройка учетной записи выставления счетов для Клиентского соглашения Майкрософт
+          href: mca-setup-account.md
+        - name: "Регистрация с помощью учетной записи Office\_365"
+          href: office-365-account-for-azure-subscription.md
+        - name: Оформление подписки на Office 365 с помощью учетной записи Azure
+          href: azure-account-for-office-365-subscription.md
+        - name: Оплата с проведением строгой проверки подлинности клиентов
+          href: open-banking-strong-customer-authentication.md
+    - name: Администрирование подписок
+      items:
+        - name: Состояния подписки
+          href: subscription-states.md
+        - name: Повторная активация подписки
+          href: subscription-disabled.md
+        - name: Повторная активация подписки Azure для учащихся
+          href: azurestudents-subscription-disabled.md
+        - name: Передача владения
+          href: billing-subscription-transfer.md
+        - name: Запрос прав владения для Клиентского соглашения Майкрософт
+          href: mca-request-billing-ownership.md
+        - name: Запрос прав владения для Соглашения с партнером Майкрософт
+          href: mpa-request-ownership.md
+    - name: Управление подписками
+      items:
+        - name: Отмена подписки
+          href: cancel-azure-subscription.md
+        - name: Изменение кредитной карты
+          href: change-credit-card.md
+        - name: Изменение администратора
+          href: add-change-subscription-administrator.md
+        - name: Изменение предложения подписки
+          href: switch-azure-offer.md
+        - name: Оплата по счету
+          href: pay-by-invoice.md
+        - name: Создание дополнительных подписок
+          href: create-subscription.md
+        - name: Экспорт сведений о подписке
+          href: export-subscriptions.md
+    - name: Управление подписками в рамках Соглашения Enterprise
+      items:
+        - name: Начало работы на портале Azure EA
+          href: ea-portal-get-started.md
+        - name: Интерпретация счета EA
+          href: ../understand/review-enterprise-agreement-bill.md
+        - name: Роли EA в Azure
+          href: understand-ea-roles.md
+        - name: Администрирование на портале Azure EA
+          href: ea-portal-administration.md
+        - name: Задачи EA в клиентском соглашении Майкрософт
+          href: mca-enterprise-operations.md
+        - name: Соглашения и изменения для Azure EA
+          href: ea-portal-agreements.md
+        - name: Счета на корпоративную регистрацию
+          href: ea-portal-enrollment-invoices.md
+        - name: REST API Azure Enterprise
+          href: ea-portal-rest-apis.md
+        - name: Зарезервированные экземпляры виртуальной машины Azure EA
+          href: ea-portal-vm-reservations.md
+        - name: Устранение неполадок с доступом к порталу Azure EA
+          href: ea-portal-troubleshoot.md
+        - name: Задачи EA в клиентском соглашении Майкрософт
+          href: mca-enterprise-operations.md
+- name: Диагностика
+  items:
+    - name: Подписки не найдены
+      href: no-subscriptions-found.md
+    - name: Проблемы с оплатой
+      href: billing-troubleshoot-azure-payment-issues.md
+    - name: Карта не принимается
+      href: troubleshoot-declined-card.md
+    - name: Проблемы с регистрацией
+      href: troubleshoot-azure-sign-up.md
+    - name: Проблемы со входом в подписку
+      href: troubleshoot-sign-in-issue.md
+    - name: Просмотр стоимости Enterprise отключен
+      href: enterprise-mgmt-grp-troubleshoot-cost-view.md
+    - name: Обращение в службу поддержки
+      href: ../../azure-portal/supportability/how-to-create-azure-support-request.md
+- name: Примеры
+  items:
+    - name: Пример кода API счетов
+      href: 'https://github.com/Azure-Samples/billing-dotnet-core-invoice-download'
+    - name: Пример кода API использования ресурсов
+      href: 'https://github.com/Azure-Samples/billing-dotnet-usage-api'
+    - name: Пример кода API RateCard
+      href: 'https://github.com/Azure-Samples/billing-dotnet-ratecard-api'
+- name: Справочник
+  items:
+    - name: Сценарии автоматизации выставления счетов
+      href: cost-management-automation-scenarios.md
+    - name: Управление затратами с помощью API управления бюджетом Azure
+      href: cost-management-budget-scenario.md
+    - name: Общие сведения об API выставления счетов Azure
+      href: usage-rate-card-overview.md
+    - name: REST API выставления счетов Azure
+      href: 'https://docs.microsoft.com/rest/api/billing'
+    - name: Общие сведения об API потребления ресурсов Azure
+      href: consumption-api-overview.md
+    - name: REST API потребления Azure
+      href: 'https://docs.microsoft.com/rest/api/consumption'
+    - name: REST API RateCard
+      href: 'https://msdn.microsoft.com/library/azure/mt219005.aspx'
+    - name: REST API использования ресурсов
+      href: 'https://msdn.microsoft.com/library/azure/mt219003.aspx'
+    - name: Общие сведения о корпоративной отчетности
+      href: enterprise-api.md
+    - name: REST API для корпоративной отчетности
+      href: 'https://docs.microsoft.com/rest/api/billing/enterprise/billing-enterprise-api-balance-summary'

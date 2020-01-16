@@ -54,8 +54,12 @@
                   href: supportability/classic-deployment-model-quota-increase-requests.md
             - name: Увеличение лимита сети
               href: supportability/networking-quota-requests.md
+    - name: Устранение неполадок с порталом Azure
+      items:
         - name: Устранение неполадок c доступом подписки к региону или номеру SKU
           href: supportability/sku-series-unavailable.md
+        - name: Запись трассировки браузера для устранения неполадок
+          href: capture-browser-trace.md
 - name: Справочник
   items:
     - name: сочетания клавиш

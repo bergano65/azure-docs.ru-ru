@@ -82,6 +82,8 @@
               href: tutorial-v2-windows-uwp.md
             - name: Платформа .NET для классических приложений Windows
               href: tutorial-v2-windows-desktop.md
+            - name: Использование режима совместной работы с устройством в приложении Android
+              href: tutorial-v2-shared-device-mode.md
         - name: Управляющие программы
           items:
             - name: Веб-приложение управляющей программы ASP.NET
@@ -208,6 +210,8 @@
                   href: scenario-mobile-app-configuration.md
                 - name: Конфигурация для конкретных мобильных платформ
                   items:
+                    - name: Режим совместной работы с устройством Android
+                      href: shared-device-mode.md
                     - name: Xamarin Android
                       href: msal-net-xamarin-android-considerations.md
                     - name: Системный браузер в Android

@@ -54,22 +54,28 @@
   items:
     - name: Таблицы поддержки
       items:
-        - name: Таблица поддержки для Миграции Azure
+        - name: Общая поддержка
           href: migrate-support-matrix.md
-        - name: Таблица поддержки для оценки и переноса виртуальных машин VMware
+        - name: Поддержка оценки VMware
           href: migrate-support-matrix-vmware.md
-        - name: Таблица поддержки для оценки и переноса виртуальных машин Hyper-V
+        - name: Поддержка переноса данных VMware
+          href: migrate-support-matrix-vmware-migration.md
+        - name: Поддержка оценки Hyper-V
           href: migrate-support-matrix-hyper-v.md
-        - name: Таблица поддержки для оценки и переноса физических серверов
+        - name: Поддержка переноса данных Hyper-V
+          href: migrate-support-matrix-hyper-v-migration.md
+        - name: Поддержка оценки физического сервера
           href: migrate-support-matrix-physical.md
-        - name: Матрица поддержки для устройства Миграции Azure
+        - name: Поддержка оценки переноса сервера
+          href: migrate-support-matrix-physical-migration.md
+        - name: Требования к устройству Миграции Azure
           href: migrate-appliance.md
+        - name: Требования к устройству репликации
+          href: migrate-replication-appliance.md
     - name: Архитектура миграции для Hyper-V
       href: hyper-v-migration-architecture.md
     - name: Архитектура миграции на основе агента
       href: agent-based-migration-architecture.md
-    - name: Устройство репликации в службе "Миграция Azure"
-      href: migrate-replication-appliance.md
     - name: Рекомендации по оценке
       href: best-practices-assessment.md
     - name: Обзор оценок
@@ -112,16 +118,16 @@
       href: prepare-for-migration.md
     - name: Удаление проекта службы "Миграция Azure"
       href: how-to-delete-project.md
-- name: Масштабирование оценки и миграции
-  items:
-    - name: Оценка большого количества виртуальных машин VMware
-      href: scale-vmware-assessment.md
-    - name: Оценка большого количества виртуальных машин Hyper-V
-      href: scale-hyper-v-assessment.md
-    - name: Автоматизация переноса большого количества виртуальных машин
-      href: how-to-migrate-at-scale.md
-    - name: Ряд примеров по миграции (Contoso)
-      href: contoso-migration-overview.md
+    - name: Масштабирование оценки и миграции
+      items:
+        - name: Оценка большого количества виртуальных машин VMware
+          href: scale-vmware-assessment.md
+        - name: Оценка большого количества виртуальных машин Hyper-V
+          href: scale-hyper-v-assessment.md
+        - name: Автоматизация переноса большого количества виртуальных машин
+          href: how-to-migrate-at-scale.md
+        - name: Ряд примеров по миграции (Contoso)
+          href: contoso-migration-overview.md
 - name: Диагностика
   items:
     - name: Устранение неполадок в службе "Миграция Azure"

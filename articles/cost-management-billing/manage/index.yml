@@ -1,0 +1,90 @@
+### YamlMime:Landing
+title: Управление учетными записями и подписками с помощью API выставления счетов Azure
+summary: Узнайте, как расшифровывать счета Azure, а также управлять учетными записями и подписками.
+metadata:
+  title: Управление учетными записями и подписками с помощью API выставления счетов Azure
+  description: Узнайте, как расшифровывать счета Azure, а также управлять учетными записями и подписками.
+  ms.service: cost-management-billing
+  ms.topic: landing-page
+  ms.collection: collection
+  author: bandersmsft
+  ms.author: banders
+  ms.manager: dougeby
+  ms.date: 12/18/2019
+  ms.openlocfilehash: 61158d44399891f0f6293f53a11f227506fbddbe
+  ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 01/15/2020
+  ms.locfileid: "75983330"
+landingContent:
+- title: Управление учетными записями
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Роли для Клиентского соглашения Майкрософт в Azure
+      url: understand-mca-roles.md
+  - linkListType: how-to-guide
+    links:
+    - text: Изменение профиля
+      url: change-azure-account-profile.md
+    - text: Решение проблемы просроченных платежей
+      url: resolve-past-due-balance.md
+    - text: Доступ к данным для выставления счетов
+      url: manage-billing-access.md
+    - text: Просмотр учетных записей выставления счетов
+      url: view-all-accounts.md
+    - text: Упорядочение затрат с помощью разделов счетов
+      url: mca-section-invoice.md
+- title: Управление подписками
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Повторная активация подписки
+      url: subscription-disabled.md
+    - text: Передача прав владения отдельной подпиской другой учетной записи
+      url: billing-subscription-transfer.md
+    - text: Передача прав владения для клиентов с Клиентским соглашением Майкрософт
+      url: mca-request-billing-ownership.md
+    - text: Передача прав владения для клиентов с Соглашением с партнером Майкрософт
+      url: mpa-request-ownership.md
+    - text: Отмена подписки
+      url: cancel-azure-subscription.md
+    - text: Изменение кредитной карты
+      url: change-credit-card.md
+    - text: Изменение администратора
+      url: add-change-subscription-administrator.md
+    - text: Оплата по счету
+      url: pay-by-invoice.md
+    - text: Создание дополнительной подписки
+      url: create-subscription.md
+- title: Управление бесплатной учетной записью
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Создание бесплатных служб
+      url: create-free-services.md
+    - text: Предотвращение расходов
+      url: avoid-charges-free-account.md
+    - text: Проверка использования
+      url: check-free-service-usage.md
+    - text: Обновление учетной записи
+      url: upgrade-azure-subscription.md
+- title: Управление Соглашением Enterprise
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Роли EA в Azure
+      url: understand-ea-roles.md
+  - linkListType: how-to-guide
+    links:
+    - text: Начало работы на портале Azure EA
+      url: ea-portal-get-started.md
+    - text: Администрирование на портале Azure EA
+      url: ea-portal-administration.md
+    - text: Устранение неполадок с доступом к порталу Azure EA
+      url: ea-portal-troubleshoot.md
+  - linkListType: reference
+    links:
+    - text: REST API Azure Enterprise
+      url: ea-portal-rest-apis.md

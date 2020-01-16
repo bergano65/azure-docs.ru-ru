@@ -1,0 +1,53 @@
+- name: Документация по началу работы с выставлением счетов Azure
+  href: index.yml
+  items:
+    - name: Учебники
+      items:
+        - name: Просмотр отдельного счета для учетной записи
+          href: review-individual-bill.md
+        - name: Просмотр счета в рамках Клиентского соглашения Майкрософт
+          href: review-customer-agreement-bill.md
+        - name: Просмотр счета в рамках Соглашения с партнером Майкрософт
+          href: review-partner-agreement-bill.md
+    - name: Основные понятия
+      items:
+        - name: Условия использования отдельных подписок
+          href: understand-usage.md
+        - name: Условия выставления счетов для отдельных подписок
+          href: understand-invoice.md
+        - name: Условия использования в рамках Клиентского соглашения Майкрософт
+          href: mca-understand-your-usage.md
+        - name: Условия выставления счетов в рамках Клиентского соглашения Майкрософт
+          href: mca-understand-your-invoice.md
+        - name: 'Условия, касающиеся прейскурантов, в рамках Клиентского соглашения Майкрософт'
+          href: ../manage/mca-understand-pricesheet.md
+        - name: Учетные записи выставления счетов для клиентского соглашения Майкрософт
+          href: mca-overview.md
+        - name: Условия выставления счетов в рамках Соглашения с партнером Майкрософт
+          href: mpa-invoice-terms.md
+        - name: Учетные записи выставления счетов для партнерского соглашения Майкрософт
+          href: mpa-overview.md
+    - name: Практические руководства
+      items:
+        - name: Предотвращение непредвиденных расходов
+          href: ../manage/getting-started.md
+        - name: Просмотр и скачивание счета Azure
+          href: download-azure-invoice.md
+        - name: Просмотр и скачивание сведений об использовании и расходах Azure
+          href: download-azure-daily-usage.md
+        - name: Скачивание счета и сведений о ежедневном использовании
+          href: ../manage/download-azure-invoice-daily-usage-date.md
+        - name: Просмотр и скачивание налоговых документов
+          href: mca-download-tax-document.md
+        - name: Просмотр сведений о расходах на внешние службы Azure
+          href: understand-azure-marketplace-charges.md
+        - name: Оплата счета
+          href: pay-bill.md
+        - name: Просмотр и скачивание сведений о ценах для вашей организации
+          href: ../manage/ea-pricing.md
+        - name: Отслеживание остатка на счете для клиентского соглашения Майкрософт
+          href: ../manage/mca-check-azure-credits-balance.md
+        - name: Расчет цены
+          href: 'https://azure.microsoft.com/pricing/calculator/'
+        - name: Общие сведения о предельной сумме расходов
+          href: ../manage/spending-limit.md

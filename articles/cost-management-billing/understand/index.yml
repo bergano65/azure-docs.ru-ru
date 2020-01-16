@@ -1,0 +1,88 @@
+### YamlMime:Landing
+title: Начало работы с выставлением счетов Azure
+summary: Узнайте, как приступить к работе со службой выставления счетов Azure, просмотрев счет и сведения о затратах и использовании.
+metadata:
+  title: Начало работы с выставлением счетов Azure
+  description: Начало работы с выставлением счетов Azure
+  ms.service: cost-management-billing
+  ms.topic: landing-page
+  ms.collection: collection
+  author: bandersmsft
+  ms.author: banders
+  ms.manager: dougeby
+  ms.date: 12/18/2019
+  ms.openlocfilehash: bc472c68ea2a414fce81fe39e3282a43be3db829
+  ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 01/15/2020
+  ms.locfileid: "75983296"
+landingContent:
+- title: Просмотр сведений об отдельных учетных записях
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Просмотр отдельного счета для учетной записи
+      url: review-individual-bill.md
+  - linkListType: concept
+    links:
+    - text: Сведения об условиях использования
+      url: understand-usage.md
+    - text: Сведения о счетах
+      url: understand-invoice.md
+  - linkListType: how-to-guide
+    links:
+    - text: Просмотр и скачивание счета Azure
+      url: download-azure-invoice.md
+    - text: Просмотр и скачивание сведений об использовании и расходах Azure
+      url: download-azure-daily-usage.md
+    - text: Просмотр сведений о расходах на внешние службы
+      url: understand-azure-marketplace-charges.md
+- title: Просмотр сведений об учетных записях в рамках Клиентского соглашения Майкрософт
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Просмотр счета в рамках Клиентского соглашения Майкрософт
+      url: review-customer-agreement-bill.md
+  - linkListType: concept
+    links:
+    - text: Учетные записи выставления счетов для клиентского соглашения Майкрософт
+      url: mca-overview.md
+    - text: Условия использования в рамках Клиентского соглашения Майкрософт
+      url: mca-understand-your-usage.md
+    - text: Условия выставления счетов в рамках Клиентского соглашения Майкрософт
+      url: mca-understand-your-invoice.md
+  - linkListType: how-to-guide
+    links:
+    - text: Просмотр и скачивание счета Azure
+      url: download-azure-invoice.md
+    - text: Просмотр и скачивание сведений об использовании и расходах в Azure
+      url: download-azure-daily-usage.md
+    - text: Просмотр и скачивание налоговых документов
+      url: mca-download-tax-document.md
+    - text: Просмотр сведений о расходах на внешние службы
+      url: understand-azure-marketplace-charges.md
+    - text: Оплата счета в рамках Клиентского соглашения Майкрософт
+      url: pay-bill.md
+- title: Просмотр сведений об учетных записях в рамках Соглашения с партнером Майкрософт
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Просмотр счета в рамках Соглашения с партнером Майкрософт
+      url: review-partner-agreement-bill.md
+  - linkListType: concept
+    links:
+    - text: Учетные записи выставления счетов для партнерского соглашения Майкрософт
+      url: mpa-overview.md
+    - text: Условия выставления счетов в рамках Клиентского соглашения Майкрософт
+      url: mpa-invoice-terms.md
+- title: Просмотр сведений об учетных записях в рамках Соглашения Enterprise
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Просмотр счета в рамках Соглашения Enterprise
+      url: review-enterprise-agreement-bill.md
+  - linkListType: concept
+    links:
+    - text: Начало работы на портале Azure EA
+      url: ../manage/ea-portal-get-started.md
