@@ -2,7 +2,7 @@
 title: Событие завершения удаления пула пакетной службы Azure | Документы Майкрософт
 description: Справочник по событию завершения удаления пула пакетной службы.
 services: batch
-author: laurenhughes
+author: ju-shim
 manager: gwallace
 ms.assetid: ''
 ms.service: batch
@@ -10,13 +10,13 @@ ms.topic: article
 ms.tgt_pltfrm: ''
 ms.workload: big-compute
 ms.date: 04/20/2017
-ms.author: lahugh
-ms.openlocfilehash: 9bf50bd19ca3f4316c4c2ddbcdd3333745ebefd7
-ms.sourcegitcommit: 267a9f62af9795698e1958a038feb7ff79e77909
+ms.author: jushiman
+ms.openlocfilehash: bcbfe009e2880c0155a067305cc28317678cbfa6
+ms.sourcegitcommit: dbcc4569fde1bebb9df0a3ab6d4d3ff7f806d486
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70258564"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76026689"
 ---
 # <a name="pool-delete-complete-event"></a>Событие завершения удаления пула
 
@@ -34,9 +34,9 @@ ms.locfileid: "70258564"
 
 |Элемент|Тип|Примечания|
 |-------------|----------|-----------|
-|`id`|Строковое|Идентификатор пула.|
-|`startTime`|DateTime|Время, когда было начато удаление пула.|
-|`endTime`|DateTime|Время, когда удаление пула было завершено.|
+|`id`|String|Идентификатор пула.|
+|`startTime`|Дата и время|Время, когда было начато удаление пула.|
+|`endTime`|Дата и время|Время, когда удаление пула было завершено.|
 
-## <a name="remarks"></a>Примечания
+## <a name="remarks"></a>Remarks
 Дополнительные сведения о состояниях и кодах ошибок для операции изменения размера пула см. в статье [Удаление пула из учетной записи](https://docs.microsoft.com/rest/api/batchservice/delete-a-pool-from-an-account).
