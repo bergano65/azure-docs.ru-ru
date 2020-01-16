@@ -12,12 +12,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: carlrab
 ms.date: 02/11/2019
-ms.openlocfilehash: df1ef21da43bc74809bd9fd71b5dde3906cdb343
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.openlocfilehash: 6812393b01172cda5d2fa4dcbe9de2bf4264a99f
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73820973"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75980774"
 ---
 # <a name="sql-server-database-migration-to-azure-sql-database"></a>Перенос базы данных SQL Server в Базу данных SQL Azure
 
@@ -56,7 +56,7 @@ ms.locfileid: "73820973"
 - Выберите наивысший уровень служб и объем вычислительных ресурсов, который позволяет бюджет, чтобы увеличить производительность передачи данных. Чтобы сэкономить деньги, вы можете уменьшить производительность после завершения миграции.
 - Минимизируйте расстояние между BACPAC-файлом и целевым центром обработки данных.
 - Отключите автоматическую статистику во время миграции.
-- Выполните секционирование таблиц и индексов.
+- Секционированные таблицы и индексы
 - Удалите индексированные представления и заново создайте их по завершении миграции.
 - Скопируйте редко запрашиваемые данные журнала в другую базу данных, а затем перенесите их в отдельную базу данных SQL Azure. Затем вы сможете запросить эти данные с помощью [эластичных запросов](sql-database-elastic-query-overview.md).
 
@@ -84,14 +84,14 @@ ms.locfileid: "73820973"
 
 1. Настройка распространения
    - [С помощью SQL Server Management Studio (SSMS)](https://msdn.microsoft.com/library/ms151192.aspx#Anchor_1).
-   - [С помощью Transact-SQL](https://msdn.microsoft.com/library/ms151192.aspx#Anchor_2).
+   - [Использование Transact-SQL](https://msdn.microsoft.com/library/ms151192.aspx#Anchor_2)
 
 2. Создание публикации
    - [С помощью SQL Server Management Studio (SSMS)](https://msdn.microsoft.com/library/ms151160.aspx#Anchor_1).
-   - [С помощью Transact-SQL](https://msdn.microsoft.com/library/ms151160.aspx#Anchor_2).
-3. Создание подписки
+   - [Использование Transact-SQL](https://msdn.microsoft.com/library/ms151160.aspx#Anchor_2)
+3. Создавать подписку
    - [С помощью SQL Server Management Studio (SSMS)](https://msdn.microsoft.com/library/ms152566.aspx#Anchor_0).
-   - [С помощью Transact-SQL](https://msdn.microsoft.com/library/ms152566.aspx#Anchor_1).
+   - [Использование Transact-SQL](https://msdn.microsoft.com/library/ms152566.aspx#Anchor_1)
 
 Некоторые советы и описание различий при миграции в базу данных SQL
 
@@ -121,7 +121,7 @@ ms.locfileid: "73820973"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - Воспользуйтесь скриптом в блоге разработчиков EMEA SQL Azure для [отслеживания использования базы данных TempDB во время миграции](https://blogs.msdn.microsoft.com/azuresqlemea/2016/12/28/lesson-learned-10-monitoring-tempdb-usage/).
-- Воспользуйтесь скриптом в блоге разработчиков EMEA SQL Azure, чтобы [отслеживать объем, занимаемый журналом транзакций в базе данных, во время миграции](https://blogs.msdn.microsoft.com/azuresqlemea/2016/10/31/lesson-learned-7-monitoring-the-transaction-log-space-of-my-database/0).
+- Воспользуйтесь скриптом в блоге разработчиков EMEA SQL Azure, чтобы [отслеживать объем, занимаемый журналом транзакций в базе данных, во время миграции](https://docs.microsoft.com/archive/blogs/azuresqlemea/lesson-learned-7-monitoring-the-transaction-log-space-of-my-database).
 - Сведения о миграции из SQL Server в Базу данных SQL Azure с использованием BACPAC-файлов см. в [блоге группы консультирования клиентов SQL Server](https://blogs.msdn.microsoft.com/sqlcat/2016/10/20/migrating-from-sql-server-to-azure-sql-database-using-bacpac-files/).
 - Сведения об изменении часового пояса по умолчанию для локального часового пояса см. на [этой странице](https://blogs.msdn.microsoft.com/azuresqlemea/2016/07/27/lesson-learned-4-modifying-the-default-time-zone-for-your-local-time-zone/).
 - Сведения об изменении языка по умолчанию в базе данных SQL Azure после миграции см. на [этой странице](https://blogs.msdn.microsoft.com/azuresqlemea/2017/01/13/lesson-learned-16-how-to-change-the-default-language-of-azure-sql-database/).

@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: article
 ms.date: 09/20/2019
 ms.author: iainfou
-ms.openlocfilehash: 459aeaefc07e3f55b0829f0ad378992104982941
-ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
+ms.openlocfilehash: 26ae70f9283ac7be847a59753130dd8ba8c11c18
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74703945"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75979909"
 ---
 # <a name="known-issues-common-alerts-and-resolutions-in-azure-active-directory-domain-services"></a>Известные проблемы. Общие предупреждения и разрешения в доменных службах Azure Active Directory
 
@@ -92,7 +92,7 @@ Azure AD DS автоматически синхронизируется с ка�
 
 Для AD DS Azure требуется активная подписка, поэтому ее нельзя переместить в другую подписку. Если подписка Azure, с которой связан управляемый домен AD DS Azure, удалена, необходимо повторно создать подписку Azure и управляемый домен Azure AD DS.
 
-1. [Создайте подписку Azure](../billing/billing-create-subscription.md).
+1. [Создайте подписку Azure](../cost-management-billing/manage/create-subscription.md).
 1. [Удалите управляемый домен AD DS Azure](delete-aadds.md) из существующего каталога Azure AD.
 1. [Создайте заменяющий управляемый домен Azure AD DS](tutorial-create-instance.md).
 

@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 12/10/2019
 ms.author: mlearned
-ms.openlocfilehash: d7b1d82f88afd8ac3d94cbdd2d117834c12d0b96
-ms.sourcegitcommit: 12a26f6682bfd1e264268b5d866547358728cd9a
+ms.openlocfilehash: e01579272878a2436abca2ee50f0f6ea6cf78cbf
+ms.sourcegitcommit: 05cdbb71b621c4dcc2ae2d92ca8c20f216ec9bc4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75867158"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76045595"
 ---
 # <a name="create-a-private-azure-kubernetes-service-cluster-preview"></a>Создание частного кластера службы Kubernetes Azure (Предварительная версия)
 
@@ -131,7 +131,7 @@ az aks create \
 
 ## <a name="limitations"></a>Ограничения 
 * [Ограничения службы частной связи Azure][private-link-service] применяются к частным кластерам, частным конечным точкам Azure и конечным точкам службы виртуальной сети, которые в настоящее время не поддерживаются в одной виртуальной сети.
-* Виртуальные узлы в частном кластере не поддерживаются для прокрутки частных экземпляров инфраструктуры Cisco Application-Infrastructure (ACI) в частной виртуальной сети Azure.
+* Виртуальные узлы в частном кластере не поддерживаются для прокрутки частных экземпляров инфраструктуры Cisco Application-ACI Infrastructure в частной виртуальной сети Azure.
 * Не поддерживает интеграцию Azure DevOps из Box с частными кластерами.
 * Для клиентов, которым необходимо включить реестр контейнеров Azure для работы с частными AKS, виртуальная сеть реестра контейнеров должна быть соединена с виртуальной сетью кластера агента.
 * Отсутствует текущая поддержка Azure Dev Spaces.

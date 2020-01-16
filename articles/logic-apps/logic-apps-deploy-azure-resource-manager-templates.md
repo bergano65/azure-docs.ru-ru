@@ -6,12 +6,12 @@ ms.suite: integration
 ms.reviewer: klam, logicappspm
 ms.topic: article
 ms.date: 08/01/2019
-ms.openlocfilehash: 73c4c8839bd1d9e37f3dc4f0802ad5a648b1026b
-ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
+ms.openlocfilehash: 506c518e8bdd889c585feb92f2a6baee8ba0147c
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74793045"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75979083"
 ---
 # <a name="deploy-azure-resource-manager-templates-for-azure-logic-apps"></a>Развертывание шаблонов Azure Resource Manager для Azure Logic Apps
 
@@ -20,8 +20,8 @@ ms.locfileid: "74793045"
 * [Портал Azure](#portal)
 * [Visual Studio](#visual-studio)
 * [Azure PowerShell](#powershell)
-* [Azure CLI](#cli)
-* [API REST диспетчера ресурсов Azure](../azure-resource-manager/resource-group-template-deploy-rest.md)
+* [Azure CLI](#cli)
+* [API REST диспетчера ресурсов Azure](../azure-resource-manager/templates/deploy-rest.md)
 * [Azure Pipelines Azure DevOps](#azure-pipelines)
 
 <a name="portal"></a>
@@ -44,7 +44,7 @@ ms.locfileid: "74793045"
 Дополнительные сведения см. в следующих статьях:
 
 * [Обзор: Автоматизация развертывания приложений логики с помощью шаблонов Azure Resource Manager](logic-apps-azure-resource-manager-templates-overview.md)
-* [Развертывание ресурсов с помощью шаблонов Azure Resource Manager и портал Azure](../azure-resource-manager/resource-group-template-deploy-portal.md)
+* [Развертывание ресурсов с помощью шаблонов Azure Resource Manager и портал Azure](../azure-resource-manager/templates/deploy-portal.md)
 
 <a name="visual-studio"></a>
 
@@ -79,7 +79,7 @@ az group deployment create -g <Azure-resource-group-name> --template-uri https:/
 
 Дополнительные сведения см. в следующих статьях:
 
-* [Развертывание ресурсов с использованием шаблонов Resource Manager и Azure CLI](../azure-resource-manager/resource-group-template-deploy-cli.md) 
+* [Развертывание ресурсов с использованием шаблонов Resource Manager и Azure CLI](../azure-resource-manager/templates/deploy-cli.md) 
 * [`az group deployment create`](https://docs.microsoft.com/cli/azure/group/deployment?view=azure-cli-latest#az-group-deployment-create)
 
 <a name="azure-pipelines"></a>
@@ -90,8 +90,8 @@ az group deployment create -g <Azure-resource-group-name> --template-uri https:/
 
 Дополнительные сведения о непрерывной интеграции и непрерывном развертывании (CI/CD) для шаблонов Azure Resource Manager с Azure Pipelines см. в следующих разделах и образцах:
 
-* [Интеграция шаблонов диспетчер ресурсов с Azure Pipelines](../azure-resource-manager/vs-resource-groups-project-devops-pipelines.md)
-* [Учебник. Непрерывная интеграция шаблонов Azure Resource Manager с Azure Pipelines](../azure-resource-manager/resource-manager-tutorial-use-azure-pipelines.md)
+* [Интеграция шаблонов диспетчер ресурсов с Azure Pipelines](../azure-resource-manager/templates/add-template-to-azure-pipelines.md)
+* [Учебник. Непрерывная интеграция шаблонов Azure Resource Manager с Azure Pipelines](../azure-resource-manager/templates/template-tutorial-use-azure-pipelines.md)
 * [Пример. подключение к очередям служебной шины Azure из Azure Logic Apps и развертывание с помощью Azure Pipelines в Azure DevOps](https://docs.microsoft.com/samples/azure-samples/azure-logic-apps-deployment-samples/connect-to-azure-service-bus-queues-from-azure-logic-apps-and-deploy-with-azure-devops-pipelines/)
 * [Пример. подключение к учетным записям хранения Azure из Azure Logic Apps и развертывание с помощью Azure Pipelines в Azure DevOps](https://docs.microsoft.com/samples/azure-samples/azure-logic-apps-deployment-samples/connect-to-azure-storage-accounts-from-azure-logic-apps-and-deploy-with-azure-devops-pipelines/)
 * [Пример. Настройка действия приложения-функции для Azure Logic Apps и развертывание с помощью Azure Pipelines в Azure DevOps](https://docs.microsoft.com/samples/azure-samples/azure-logic-apps-deployment-samples/set-up-an-azure-function-app-action-for-azure-logic-apps-and-deploy-with-azure-devops-pipelines/)

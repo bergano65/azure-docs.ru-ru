@@ -16,20 +16,20 @@ ms.date: 05/07/2019
 ms.author: jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: cc92fb7bc5ddf451279e6c157f9e93aa7fe9a12a
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 9cf660cbf981079ca20111e34fcd34504d8dcbfb
+ms.sourcegitcommit: 05cdbb71b621c4dcc2ae2d92ca8c20f216ec9bc4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75423625"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76044119"
 ---
-# <a name="web-api-that-calls-web-apis---acquire-a-token-for-the-app"></a>Веб-API, вызывающий веб-API — получение маркера для приложения
+# <a name="a-web-api-that-calls-web-apis-acquire-a-token-for-the-app"></a>Веб-API, вызывающий веб-API: получение маркера для приложения
 
 После построения объекта клиентского приложения используйте его для получения маркера, который можно использовать для вызова веб-API.
 
 ## <a name="code-in-the-controller"></a>Код в контроллере
 
-Ниже приведен пример кода, который будет вызываться в действиях контроллеров API с вызовом подчиненного API (с именем ToDoList).
+Ниже приведен пример кода, который вызывается в действиях контроллеров API. Он вызывает нисходящий API с именем *ToDoList*.
 
 ```csharp
 private async Task GetTodoList(bool isAppStarting)
@@ -50,9 +50,9 @@ private async Task GetTodoList(bool isAppStarting)
 }
 ```
 
-`BuildConfidentialClient()` аналогично тому, что вы видели в [веб-API статьи, который вызывает веб-API — конфигурацию приложения](scenario-web-api-call-api-app-configuration.md). `BuildConfidentialClient()` создает экземпляры `IConfidentialClientApplication` с кэшем, который содержит только сведения для одной учетной записи. Учетная запись предоставляется методом `GetAccountIdentifier`.
+`BuildConfidentialClient()` похожа на сценарий в [веб-API, который вызывает веб-API: Конфигурация приложения](scenario-web-api-call-api-app-configuration.md). `BuildConfidentialClient()` создает экземпляр `IConfidentialClientApplication` с кэшем, который содержит сведения только для одной учетной записи. Учетная запись предоставляется методом `GetAccountIdentifier`.
 
-Метод `GetAccountIdentifier` использует утверждения, связанные с идентификатором пользователя, для которого веб-API получил JWT:
+Метод `GetAccountIdentifier` использует утверждения, связанные с идентификатором пользователя, для которого веб-API получил JSON Web Token (JWT):
 
 ```csharp
 public static string GetMsalAccountId(this ClaimsPrincipal claimsPrincipal)
@@ -73,4 +73,4 @@ public static string GetMsalAccountId(this ClaimsPrincipal claimsPrincipal)
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Вызов веб-API](scenario-web-api-call-api-call-api.md)
+> [Веб-API, вызывающий веб-API: вызов API](scenario-web-api-call-api-call-api.md)

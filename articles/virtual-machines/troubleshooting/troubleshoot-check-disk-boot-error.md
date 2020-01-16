@@ -12,19 +12,19 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 08/31/2018
 ms.author: genli
-ms.openlocfilehash: 839803c8cf54a85946e7134fdb6fe6be2da3dc4c
-ms.sourcegitcommit: ca359c0c2dd7a0229f73ba11a690e3384d198f40
+ms.openlocfilehash: ba3138076da89610bef878583e424153594c5dcc
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71058097"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75981373"
 ---
 # <a name="windows-shows-checking-file-system-when-booting-an-azure-vm"></a>Отображение в Windows уведомления "Проверка файловой системы" при загрузке виртуальной машины Azure
 
 В этой статье описывается ошибка "Проверка файловой системы", которая может возникнуть при загрузке виртуальной машины Windows (VM) в Microsoft Azure.
 
 > [!NOTE] 
-> В Azure предлагаются две модели развертывания для создания ресурсов и работы с ними: [модель развертывания с помощью Resource Manager и классическая модель](../../azure-resource-manager/resource-manager-deployment-model.md). В этой статье описывается использование модели развертывания c помощью Resource Manager. Для новых развертываний рекомендуется использовать эту модель вместо классической.
+> В Azure предлагаются две модели развертывания для создания ресурсов и работы с ними: [модель диспетчера ресурсов и классическая модель](../../azure-resource-manager/management/deployment-models.md). В этой статье описывается использование модели развертывания c помощью Resource Manager. Для новых развертываний рекомендуется использовать эту модель вместо классической.
 
 ## <a name="symptom"></a>Симптом 
 
@@ -33,7 +33,7 @@ ms.locfileid: "71058097"
 - Проверка и восстановление диска (C:)
 - Проверка файловой системы на диске С.
 
-## <a name="cause"></a>Причина:
+## <a name="cause"></a>Причина
 
 Если в файловой системе обнаружена ошибка NTFS, Windows проверит и восстановит согласованность диска при следующем перезапуске. Обычно это происходит, если у виртуальной машины был неожиданный перезапуск, или если процесс ее завершения был прерван.
 

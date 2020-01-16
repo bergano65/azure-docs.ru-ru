@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: b5fec342cf9f228edce80e3f0e8fb5243196973d
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: 68afc782e13f967bc1b455434c3ae952baff81b9
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74924155"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75980920"
 ---
 # <a name="load-1-tb-into-azure-sql-data-warehouse-under-15-minutes-with-data-factory"></a>Загрузка 1 ТБ в хранилище данных SQL Azure с помощью фабрики данных менее чем за 15 минут
 > [!NOTE]
@@ -45,7 +45,7 @@ ms.locfileid: "74924155"
 >
 
 ## <a name="prerequisites"></a>Технические условия
-* Хранилище BLOB-объектов Azure: в этом эксперименте хранилище BLOB-объектов Azure (GRS) используется для хранения тестового набора данных TPC-H.  Если у вас нет учетной записи хранения Azure, узнайте, как [создать учетную запись хранения](../../storage/common/storage-quickstart-create-account.md).
+* Хранилище BLOB-объектов Azure: в этом эксперименте хранилище BLOB-объектов Azure (GRS) используется для хранения тестового набора данных TPC-H.  Если у вас нет учетной записи хранения Azure, узнайте, как [создать учетную запись хранения](../../storage/common/storage-account-create.md).
 * Данные [TPC-H](http://www.tpc.org/tpch/): в качестве тестового набора данных мы будем использовать TPC-H.  Для этого необходимо использовать `dbgen` из набора средств TPC-H. Это поможет создать набор данных.  Можно скачать исходный код `dbgen` из [инструментов TPC](http://www.tpc.org/tpc_documents_current_versions/current_specifications.asp) и скомпилировать его или скачать скомпилированный двоичный файл с сайта [GitHub](https://github.com/Azure/Azure-DataFactory/tree/master/SamplesV1/TPCHTools).  Выполните dbgen.exe с приведенными ниже командами, чтобы создать неструктурированный файл размером в 1 ТБ для таблицы `lineitem`, распределенной на 10 файлов.
 
   * `Dbgen -s 1000 -S **1** -C 10 -T L -v`
@@ -123,7 +123,7 @@ ms.locfileid: "74924155"
       2. выберите **Создать** и введите имя для группы ресурсов.
    4. Укажите **расположение** фабрики данных.
    5. Установите флажок **Закрепить на панели мониторинга** в нижней части колонки.  
-   6. Щелкните **Create**(Создать).
+   6. Нажмите кнопку **Создать**.
 4. После создания вы увидите колонку **Фабрика данных**, как показано на рисунке ниже.
 
    ![Домашняя страница фабрики данных](media/data-factory-load-sql-data-warehouse/data-factory-home-page-copy-data.png)

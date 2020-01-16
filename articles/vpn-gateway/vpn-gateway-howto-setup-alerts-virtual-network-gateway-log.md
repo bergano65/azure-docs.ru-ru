@@ -7,12 +7,12 @@ ms.service: vpn-gateway
 ms.topic: conceptual
 ms.date: 06/12/2019
 ms.author: alzam
-ms.openlocfilehash: 732f4b460a3a97f84dd79a37715aff972e8482ed
-ms.sourcegitcommit: 014e916305e0225512f040543366711e466a9495
+ms.openlocfilehash: eb8f0204771b204af740c4ddc8e359499520a012
+ms.sourcegitcommit: 05cdbb71b621c4dcc2ae2d92ca8c20f216ec9bc4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75934530"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76045945"
 ---
 # <a name="set-up-alerts-on-diagnostic-log-events-from-vpn-gateway"></a>Настройка оповещений о событиях журнала диагностики из VPN-шлюза
 
@@ -56,10 +56,9 @@ ms.locfileid: "75934530"
 6. Введите сведения и убедитесь, что выбран параметр **Send to log Analytics** и **туннелдиагностиклог** . Выберите рабочую область Log Analytics, созданную на шаге 3.
 
    ![Выбранные флажки](./media/vpn-gateway-howto-setup-alerts-virtual-network-gateway-log/log-alert5.png  "Выберите")
-   
-> [!NOTE]
-> Первоначальное отображение данных может занять несколько часов.
->
+
+   > [!NOTE]
+   > Первоначальное отображение данных может занять несколько часов.
 
 7. Перейдите к обзору ресурса шлюза виртуальной сети и выберите **оповещения** на вкладке **мониторинг** . Затем создайте новое правило генерации оповещений или измените существующее правило генерации оповещений.
 

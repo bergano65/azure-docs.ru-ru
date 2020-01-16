@@ -7,12 +7,12 @@ ms.reviewer: klam, logicappspm
 ms.topic: article
 ms.custom: mvc
 ms.date: 10/29/2019
-ms.openlocfilehash: ed48082c52a5b4f79fd2030303dbe2bb7bedafe6
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 6319d2d72df69cc9633bd2b2ff8e777c2a48966a
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75456583"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75982534"
 ---
 # <a name="manage-logic-apps-with-visual-studio"></a>Управление приложениями логики в Visual Studio
 
@@ -90,13 +90,13 @@ ms.locfileid: "75456583"
 
    ![Открытие развернутого приложения логики с портала Azure](./media/manage-logic-apps-with-visual-studio/open-logic-app-in-editor.png)
 
-   После открытия приложения логики в конструкторе Logic Apps в нижней части конструктора можно выбрать **представление кода** , чтобы можно было просмотреть структуру определения базового приложения логики. Если вы хотите создать шаблон развертывания для приложения логики, узнайте о [загрузке шаблона Azure Resource Manager](#download-logic-app) для этого приложения. Узнайте больше о [шаблонах Resource Manager](../azure-resource-manager/template-deployment-overview.md).
+   После открытия приложения логики в конструкторе Logic Apps в нижней части конструктора можно выбрать **представление кода** , чтобы можно было просмотреть структуру определения базового приложения логики. Если вы хотите создать шаблон развертывания для приложения логики, узнайте о [загрузке шаблона Azure Resource Manager](#download-logic-app) для этого приложения. Узнайте больше о [шаблонах Resource Manager](../azure-resource-manager/templates/overview.md).
 
 <a name="download-logic-app"></a>
 
 ## <a name="download-from-azure"></a>Скачивание из Azure
 
-Вы можете загрузить приложения логики с [портала Azure](https://portal.azure.com) и сохранить их в виде шаблонов [Azure Resource Manager](../azure-resource-manager/management/overview.md). Затем вы можете локально изменить шаблоны в Visual Studio и настроить приложения логики для разных сред развертывания.  При загрузке приложений логики автоматически *параметризуются* их определения внутри [шаблонов Resource Manager](../azure-resource-manager/template-deployment-overview.md), которые также используют формат JSON.
+Вы можете загрузить приложения логики с [портала Azure](https://portal.azure.com) и сохранить их в виде шаблонов [Azure Resource Manager](../azure-resource-manager/management/overview.md). Затем вы можете локально изменить шаблоны в Visual Studio и настроить приложения логики для разных сред развертывания.  При загрузке приложений логики автоматически *параметризуются* их определения внутри [шаблонов Resource Manager](../azure-resource-manager/templates/overview.md), которые также используют формат JSON.
 
 1. В Visual Studio откройте Cloud Explorer. Найдите и выберите приложение логики, которое необходимо скачать из Azure.
 
@@ -113,13 +113,13 @@ ms.locfileid: "75456583"
 
 1. Когда появится запрос указать расположение, перейдите к нему и сохраните шаблон Resource Manager для определения этого приложения логики в виде JSON-файла.
 
-   Определение вашего приложения логики появится в подразделе `resources` внутри шаблона Resource Manager. Теперь вы можете изменить определение приложения логики и шаблон Resource Manager с помощью Visual Studio. Вы также можете добавить шаблон в качестве [проекта группы ресурсов Azure](../azure-resource-manager/vs-azure-tools-resource-groups-deployment-projects-create-deploy.md) в решение Visual Studio. Сведения о [проектах групп ресурсов Azure для приложений логики в Visual Studio](../logic-apps/quickstart-create-logic-apps-with-visual-studio.md).
+   Определение вашего приложения логики появится в подразделе `resources` внутри шаблона Resource Manager. Теперь вы можете изменить определение приложения логики и шаблон Resource Manager с помощью Visual Studio. Вы также можете добавить шаблон в качестве [проекта группы ресурсов Azure](../azure-resource-manager/templates/create-visual-studio-deployment-project.md) в решение Visual Studio. Сведения о [проектах групп ресурсов Azure для приложений логики в Visual Studio](../logic-apps/quickstart-create-logic-apps-with-visual-studio.md).
 
 <a name="link-integration-account"></a>
 
 ## <a name="link-to-integration-account"></a>Ссылка на учетную запись интеграции
 
-Чтобы создать приложения логики для сценариев интеграции "бизнес — бизнес" (B2B) Enterprise, можно связать приложение логики с ранее созданной [учетной записью интеграции](../logic-apps/logic-apps-enterprise-integration-create-integration-account.md) , которая находится в том же регионе, что и приложение логики. Учетная запись интеграции содержит артефакты B2B, такие как торговые партнеры, соглашения, схемы и карты, и позволяет приложению логики использовать соединители B2B для проверки XML и кодирования неструктурированных файлов или декодирования. Несмотря на то, что [эту ссылку можно создать с помощью портал Azure](../logic-apps/logic-apps-enterprise-integration-create-integration-account.md#link-account), можно также использовать Visual Studio после выполнения [предварительных требований](#requirements), и приложение логики существует в виде JSON-файла (JSON) в [проекте группы ресурсов Azure](../azure-resource-manager/vs-azure-tools-resource-groups-deployment-projects-create-deploy.md). Сведения о [проектах групп ресурсов Azure для приложений логики в Visual Studio](../logic-apps/quickstart-create-logic-apps-with-visual-studio.md#create-resource-group-project).
+Чтобы создать приложения логики для сценариев интеграции "бизнес — бизнес" (B2B) Enterprise, можно связать приложение логики с ранее созданной [учетной записью интеграции](../logic-apps/logic-apps-enterprise-integration-create-integration-account.md) , которая находится в том же регионе, что и приложение логики. Учетная запись интеграции содержит артефакты B2B, такие как торговые партнеры, соглашения, схемы и карты, и позволяет приложению логики использовать соединители B2B для проверки XML и кодирования неструктурированных файлов или декодирования. Несмотря на то, что [эту ссылку можно создать с помощью портал Azure](../logic-apps/logic-apps-enterprise-integration-create-integration-account.md#link-account), можно также использовать Visual Studio после выполнения [предварительных требований](#requirements), и приложение логики существует в виде JSON-файла (JSON) в [проекте группы ресурсов Azure](../azure-resource-manager/templates/create-visual-studio-deployment-project.md). Сведения о [проектах групп ресурсов Azure для приложений логики в Visual Studio](../logic-apps/quickstart-create-logic-apps-with-visual-studio.md#create-resource-group-project).
 
 1. В Visual Studio откройте проект группы ресурсов Azure, содержащий приложение логики.
 
@@ -149,7 +149,7 @@ ms.locfileid: "75456583"
 
 ## <a name="change-deployment-location"></a>Изменить расположение развертывания
 
-В Visual Studio, если приложение логики существует как файл JSON (JSON) в [проекте группы ресурсов Azure](../azure-resource-manager/vs-azure-tools-resource-groups-deployment-projects-create-deploy.md) , который используется для автоматизации развертывания, для этого приложения логики задается тип расположения и определенное расположение. Это расположение является либо регионом Azure, либо существующей [средой службы интеграции (ISE)](connect-virtual-network-vnet-isolated-environment.md).
+В Visual Studio, если приложение логики существует как файл JSON (JSON) в [проекте группы ресурсов Azure](../azure-resource-manager/templates/create-visual-studio-deployment-project.md) , который используется для автоматизации развертывания, для этого приложения логики задается тип расположения и определенное расположение. Это расположение является либо регионом Azure, либо существующей [средой службы интеграции (ISE)](connect-virtual-network-vnet-isolated-environment.md).
 
 Чтобы изменить тип расположения или расположение приложения логики, необходимо открыть файл определения рабочего процесса (JSON) приложения логики из обозреватель решений с помощью конструктора приложений логики. Эти свойства нельзя изменить с помощью Cloud Explorer.
 

@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 11/19/2019
 ms.author: allensu
-ms.openlocfilehash: eab86b3643dde2a6e854d73c38b5267c65fb7e3e
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: 21fc494f52b168f92da6972ee44be33b4e227a66
+ms.sourcegitcommit: 05cdbb71b621c4dcc2ae2d92ca8c20f216ec9bc4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74214763"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76046057"
 ---
 # <a name="troubleshoot-azure-load-balancer"></a>Устранение неполадок Azure Load Balancer
 
@@ -123,7 +123,7 @@ ms.locfileid: "74214763"
 
 ### <a name="cause-4-accessing-the-internal-load-balancer-frontend-from-the-participating-load-balancer-backend-pool-vm"></a>Причина 4: доступ к интерфейсу внутреннего Load Balancer осуществляется из виртуальной машины серверного пула Load Balancer
 
-Если внутренний Load Balancer настроен в виртуальной сети, а одна из участвующих серверных виртуальных машин пытается получить доступ к интерфейсу внутреннего Load Balancer, то когда поток сопоставляется с исходной виртуальной машиной, могут произойти сбои. Этот сценарий не поддерживается. Просмотрите [ограничения](load-balancer-overview.md#limitations) для подробного обсуждения.
+Если внутренний Load Balancer настроен в виртуальной сети, а одна из участвующих серверных виртуальных машин пытается получить доступ к интерфейсу внутреннего Load Balancer, то когда поток сопоставляется с исходной виртуальной машиной, могут произойти сбои. Такой сценарий не поддерживается. Просмотрите [ограничения](concepts-limitations.md#limitations) для подробного обсуждения.
 
 **Разрешение** Существует несколько способов разблокировать этот сценарий, включая использование прокси-сервера. Оцените шлюз приложений или другие сторонние прокси-серверы (например, nginx или haproxy). Дополнительные сведения о шлюзе приложений см. в статье [Обзор шлюза приложений](../application-gateway/application-gateway-introduction.md).
 
@@ -132,7 +132,7 @@ ms.locfileid: "74214763"
 - Воспользуйтесь командой Psping с одной из виртуальных машин внутреннего пула в виртуальной сети, чтобы проверить ответ порта пробы (пример: psping 10.0.0.4:3389), и запишите результаты. 
 - Если в результате этих проверок связи ответ не получен, то одновременно с выполнением команды PsPing запустите команду netsh trace на виртуальной машине внутреннего пула и тестовой виртуальной машине в виртуальной сети, а затем остановите команду netsh trace. 
   
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если описанные выше шаги не устранят проблему, отправьте [запрос в службу поддержки](https://azure.microsoft.com/support/options/).
 

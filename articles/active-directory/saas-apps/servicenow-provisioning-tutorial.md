@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 12/10/2019
 ms.author: jeedes
-ms.openlocfilehash: da733eef4dcfc15db10bb5bf303086ae601189ed
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 04fb34ff9c0ba9822e9760bcd3989bd0b5675506
+ms.sourcegitcommit: 05cdbb71b621c4dcc2ae2d92ca8c20f216ec9bc4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75443234"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76044736"
 ---
 # <a name="tutorial-configure-servicenow-for-automatic-user-provisioning"></a>Учебник. Настройка ServiceNow для автоматической подготовки пользователей
 
@@ -142,6 +142,7 @@ ms.locfileid: "75443234"
 * **Ентрижоинингпропертивалуеисмиссинг:** Проверьте [сопоставления атрибутов](https://docs.microsoft.com/azure/active-directory/manage-apps/customize-application-attributes) , чтобы обозначить соответствующий атрибут. Это значение должно присутствовать у пользователя или группы, которые вы пытаетесь подготавливать. 
 * Ознакомьтесь с [API-интерфейсом ServiceNow для протокола SOAP](https://docs.servicenow.com/bundle/newyork-application-development/page/integrate/web-services-apis/reference/r_DirectWebServiceAPIFunctions.html) , чтобы ознакомиться с любыми требованиями или ограничениями (например, Format, чтобы указать код страны для пользователя).
 * Для некоторых развертываний ServiceNow требуется разрешить диапазоны IP-адресов для службы подготовки Azure AD. Зарезервированные диапазоны IP-адресов для службы подготовки Azure AD можно найти [здесь по адресу](https://www.microsoft.com/download/details.aspx?id=56519) "азуреактиведиректоридомаинсервицес".
+* Подготовка пользователей в облаке для государственных организаций ServiceNow в настоящее время не поддерживается.
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

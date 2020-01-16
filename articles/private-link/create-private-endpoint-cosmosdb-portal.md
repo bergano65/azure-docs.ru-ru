@@ -6,12 +6,12 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 11/04/2019
 ms.author: allensu
-ms.openlocfilehash: 13b0f7bd37956b51c6dce780d0709abfb3546336
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 23e04bf651c199364f23bf36f327de94c709d643
+ms.sourcegitcommit: dbcc4569fde1bebb9df0a3ab6d4d3ff7f806d486
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75430302"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76028581"
 ---
 # <a name="connect-privately-to-an-azure-cosmos-account-using-azure-private-link"></a>Подключение в частном порядке к учетной записи Azure Cosmos с помощью частной ссылки Azure
 
@@ -141,7 +141,7 @@ ms.locfileid: "75430302"
    10.1.255.14 mycosmosaccount-eastus.documents.azure.com
 
 
-1. В удаленный рабочий стол *myVM*установите [Обозреватель службы хранилища Microsoft Azure](https://docs.microsoft.com/azure/vs-azure-tools-storage-manage-with-storage-explorer?toc=%2Fazure%2Fstorage%2Fblobs%2Ftoc.json&tabs=windows).
+1. В удаленный рабочий стол *myVM*установите [Обозреватель службы хранилища Microsoft Azure](https://docs.microsoft.com/azure/vs-azure-tools-storage-manage-with-storage-explorer?toc=%2Fazure%2Fstorage%2Fblobs%2Ftoc.json&tabs=windows).
 
 1. Выберите **учетные записи Cosmos DB (Предварительная версия)** , щелкнув правой кнопкой мыши.
 
@@ -159,22 +159,22 @@ ms.locfileid: "75430302"
 
 1. (Необязательно) Добавление новых элементов в *микосмосаккаунт*.
 
-1. Закройте подключение к удаленному рабочему столу *myVM*.
+1. Закройте подключение к удаленному рабочему столу *myVM*.
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
 Завершив использование частной конечной точки, учетной записи Azure Cosmos и виртуальной машины, удалите группу ресурсов и все содержащиеся в ней ресурсы. 
 
-1. Введите *myResourceGroup* в поле **Поиск** в верхней части портала и выберите *myResourceGroup* в результатах поиска.
+1. Введите *myResourceGroup* в поле **Поиск** в верхней части портала и выберите *myResourceGroup* в результатах поиска.
 
 1. Выберите **Удалить группу ресурсов**.
 
-1. Введите *myResourceGroup* **в поле введите имя группы ресурсов** и выберите **Удалить**.
+1. Введите *myResourceGroup* в поле **Введите имя группы ресурсов** и нажмите кнопку **Удалить**.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 В этой статье вы создали виртуальную машину в виртуальной сети, учетную запись Azure Cosmos и закрытую конечную точку. Вы подключились к виртуальной машине из Интернета и безопасно взаимодействовали с учетной записью Azure Cosmos, используя закрытую ссылку.
 
-* Дополнительные сведения о частных конечных точках см. в статье [что такое частная конечная точка Azure?](private-endpoint-overview.md).
+* Дополнительные сведения о частных конечных точках см. в статье [что такое частная конечная точка Azure?](private-endpoint-overview.md).
 
 * Дополнительные сведения об ограничении частных конечных точек при использовании с Azure Cosmos DB см. в статье [Частная ссылка Azure с Azure Cosmos DB](../cosmos-db/how-to-configure-private-endpoints.md) .

@@ -8,12 +8,12 @@ author: bwren
 ms.author: bwren
 ms.date: 03/20/2017
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 8c08dc5091e7ab0eec5d4e6dd455e6adb3caa35f
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 5465c177cf174ebf8d6b7d4f43c5387bce3adb70
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75402048"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75969702"
 ---
 # <a name="design-and-build-a-management-solution-in-azure-preview"></a>Проектирование и сборка решения по управлению в Azure (предварительная версия)
 > [!NOTE]
@@ -23,7 +23,7 @@ ms.locfileid: "75402048"
 
 ## <a name="what-is-a-management-solution"></a>Что такое решение по управлению?
 
-Решения по управлению содержат ресурсы Azure, которые используются для выполнения задач в рамках определенных сценариев управления.  Они реализуются как [шаблоны управления ресурсами](../../azure-resource-manager/resource-manager-quickstart-create-templates-use-the-portal.md), которые содержат сведения об установке и настройке содержащихся в них ресурсов после установки решения.
+Решения по управлению содержат ресурсы Azure, которые используются для выполнения задач в рамках определенных сценариев управления.  Они реализуются как [шаблоны управления ресурсами](../../azure-resource-manager/templates/quickstart-create-templates-use-the-portal.md), которые содержат сведения об установке и настройке содержащихся в них ресурсов после установки решения.
 
 Основная стратегия заключается в том, что решение по управлению запускается при создании отдельных компонентов в среде Azure.  Если все компоненты работают правильно, вы можете упаковать их в [файл решения по управлению]( solutions-solution-file.md). 
 
@@ -64,7 +64,7 @@ ms.locfileid: "75402048"
 
 
 ## <a name="test-your-solution"></a>Тестирование решения
-В ходе разработки решения вам нужно установить его и протестировать в рабочей области.  Это можно сделать с помощью любого из методов [тестирования и установки шаблонов Resource Managerв](../../azure-resource-manager/resource-group-template-deploy.md).
+В ходе разработки решения вам нужно установить его и протестировать в рабочей области.  Это можно сделать с помощью любого из методов [тестирования и установки шаблонов Resource Managerв](../../azure-resource-manager/templates/deploy-powershell.md).
 
 ## <a name="publish-your-solution"></a>Опубликуйте свое решения
 После того как решение будет создано и протестировано, вы можете предоставить клиентам доступ к нему, используя следующие источники.

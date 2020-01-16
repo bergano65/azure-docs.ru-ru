@@ -10,12 +10,12 @@ ms.workload: data-services
 author: djpmsft
 ms.author: daperlov
 manager: anandsub
-ms.openlocfilehash: 00d84a7f3b4a15c9278caac8c2715380dd330482
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: d143992317c77c6fc3137527bea485a98c046daa
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74930497"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75969222"
 ---
 # <a name="roles-and-permissions-for-azure-data-factory"></a>Роли и разрешения для службы "Фабрика данных Azure"
 
@@ -29,7 +29,7 @@ ms.locfileid: "74930497"
 - Чтобы создавать дочерние ресурсы и управлять ими на портале Azure, необходимо иметь роль **Участник Фабрики данных** на уровне группы ресурсов или более высоком.
 - Чтобы создавать дочерние ресурсы и управлять ими с помощью PowerShell или пакета SDK, достаточно роли **Участник** на уровне ресурса или более высоком.
 
-Примеры инструкций по назначению пользователю роли см. в статье [Добавление или изменение администраторов подписки Azure](../billing/billing-add-change-azure-subscription-administrator.md).
+Примеры инструкций по назначению пользователю роли см. в статье [Добавление или изменение администраторов подписки Azure](../cost-management-billing/manage/add-change-subscription-administrator.md).
 
 ## <a name="set-up-permissions"></a>Настройка разрешений
 

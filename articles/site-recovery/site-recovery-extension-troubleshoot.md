@@ -5,12 +5,12 @@ author: sideeksh
 manager: rochakm
 ms.topic: troubleshooting
 ms.date: 11/27/2018
-ms.openlocfilehash: 7f9ae32b95d629ef79f085ed590d9057b0414911
-ms.sourcegitcommit: b5106424cd7531c7084a4ac6657c4d67a05f7068
+ms.openlocfilehash: a9d28a12f5f1fa32d2bc3bcf590134930503f2ac
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75941542"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75970384"
 ---
 # <a name="troubleshoot-azure-vm-extension-issues"></a>Устранение проблем с расширением виртуальной машины Azure
 
@@ -105,8 +105,6 @@ ms.locfileid: "75941542"
 4. Выберите **Расширение Site Recovery**.
 5. Выберите **Удалить**.
 
-Если расширение VMSnapshot для виртуальной машины Linux не отображается на портале Azure, [обновите агент Azure для Linux](../virtual-machines/linux/update-agent.md), а затем запустите защиту. 
+Если расширение VMSnapshot для виртуальной машины Linux не отображается на портале Azure, [обновите агент Azure для Linux](../virtual-machines/linux/update-agent.md), а затем запустите защиту.
 
 После этого расширение будет повторно установлено при активации защиты.
-
-

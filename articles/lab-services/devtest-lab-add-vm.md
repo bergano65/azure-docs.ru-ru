@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/25/2019
 ms.author: spelluru
-ms.openlocfilehash: 64a5892226b90019f175308b5984dc0a0108e226
-ms.sourcegitcommit: 19a821fc95da830437873d9d8e6626ffc5e0e9d6
+ms.openlocfilehash: 22060cc6dd5eb15e81a0c397a7b0255f16780d74
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70162256"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75976491"
 ---
 # <a name="add-a-vm-to-a-lab-in-azure-devtest-labs"></a>Добавление виртуальной машины в лабораторию в Azure DevTest Labs
 Если вы уже [создали свою первую виртуальную машину](tutorial-create-custom-lab.md#add-a-vm-to-the-lab), скорее всего, вы использовали предварительно загруженный [образ Мarketplace](devtest-lab-configure-marketplace-images.md). Теперь, если вы хотите добавить в лабораторию больше виртуальных машин, вы также можно использовать *базовый образ* — [пользовательский образа](devtest-lab-create-template.md) или [формулу](devtest-lab-manage-formulas.md). В данном руководстве описывается добавление виртуальной машины в лабораторию в DevTest Labs с помощью портала Azure.
@@ -27,7 +27,7 @@ ms.locfileid: "70162256"
 В этой статье также описывается управление артефактами для виртуальной машины в лаборатории.
 
 ## <a name="steps-to-add-a-vm-to-a-lab-in-azure-devtest-labs"></a>Добавление виртуальной машины в лабораторию в Azure DevTest Labs
-1. Войдите на [портале Azure](https://go.microsoft.com/fwlink/p/?LinkID=525040).
+1. Войдите на [портал Azure](https://go.microsoft.com/fwlink/p/?LinkID=525040).
 1. Щелкните **Все службы** и выберите **DevTest Labs** в разделе **DEVOPS**. Выберите * (звездочку) рядом с полем **DevTest Labs** в разделе **DEVOPS**. После этого пункт **DevTest Labs** будет добавлен в левое меню навигации, чтобы вы в следующий раз могли легко открыть его. Теперь вы можете выбрать **DevTest Labs** в левом меню навигации.
 
     ![Окно "Все службы". Выбор DevTest Labs](./media/devtest-lab-create-lab/all-services-select.png)
@@ -46,7 +46,7 @@ ms.locfileid: "70162256"
         Вы также можете сначала сохранить секреты в хранилище ключей, а затем использовать их при создании виртуальной машины в лаборатории. Дополнительные сведения см. в статье [Хранение секретов в хранилище ключей в Azure DevTest Labs](devtest-lab-store-secrets-in-key-vault.md). Если вы хотите использовать пароль, хранящийся в хранилище ключей, выберите **Use a saved secret** (Использовать сохраненный секрет) и укажите значение ключа, которое соответствует секрету (пароль).
     4. В разделе **Дополнительные параметры** выберите **Изменить размер**. Выберите один из стандартных пунктов, указывающих количество ядер процессора, объем ОЗУ и размер жесткого диска для создаваемой виртуальной машины.
     5. Выберите **Добавление/удаление артефактов**. Выберите и настройте артефакты, которые необходимо добавить в базовый образ.
-    **Примечание.** Если вы незнакомы с DevTest Labs или настройкой артефактов, перейдите к разделу, описывающему [добавление существующего артефакта к виртуальной машине](./devtest-lab-add-vm.md#add-an-existing-artifact-to-a-vm), а затем вернитесь к этой статье.
+    **Примечание.** Если вы незнакомы с DevTest Labs или настройкой артефактов, перейдите к разделу [Добавление существующего артефакта к виртуальной машине](./devtest-lab-add-vm.md#add-an-existing-artifact-to-a-vm), а затем вернитесь в этот раздел.
 2. Переключитесь на вкладку **Дополнительные параметры**, расположенную сверху, и выполните следующие действия.
     1. Чтобы изменить виртуальную сеть, в которой находится виртуальная машина, выберите **Изменить виртуальную сеть**.
     2. Чтобы изменить подсеть, выберите **Изменить подсеть**.
@@ -70,7 +70,7 @@ ms.locfileid: "70162256"
 
 Дополнительные сведения о создании артефактов см. в статье [Создание пользовательских артефактов для виртуальной машины DevTest Lab](devtest-lab-artifact-author.md).
 
-1. Войдите на [портале Azure](https://go.microsoft.com/fwlink/p/?LinkID=525040).
+1. Войдите на [портал Azure](https://go.microsoft.com/fwlink/p/?LinkID=525040).
 1. Щелкните **Все службы** и выберите в списке **DevTest Labs**.
 1. Из списка лабораторий выберите ту, где содержится виртуальная машина, с которой вы будете работать.
 1. Выберите **My virtual machines** (Мои виртуальные машины).
@@ -107,7 +107,7 @@ ms.locfileid: "70162256"
 ## <a name="save-azure-resource-manager-template"></a>Сохранение шаблона Azure Resource Manager
 С помощью шаблона Azure Resource Manager можно декларативно определить повторяемое развертывание.
 Далее описывается процесс сохранения шаблона Azure Resource Manager для создаваемой виртуальной машины.
-После сохранения шаблон Azure Resource Manager можно использовать для [развертывания новых виртуальных машин с помощью Azure PowerShell](../azure-resource-manager/template-deployment-overview.md).
+После сохранения шаблон Azure Resource Manager можно использовать для [развертывания новых виртуальных машин с помощью Azure PowerShell](../azure-resource-manager/templates/overview.md).
 
 1. В области **Виртуальная машина** выберите **Просмотр шаблона Azure Resource Manager**.
 2. В области **Просмотр шаблона Azure Resource Manager** выделите текст шаблона.
@@ -119,7 +119,7 @@ ms.locfileid: "70162256"
 
 [!INCLUDE [devtest-lab-try-it-out](../../includes/devtest-lab-try-it-out.md)]
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * После создания виртуальной машины к ней можно подключиться, щелкнув **Подключиться** в области виртуальной машины.
 * Узнайте, как [создавать пользовательские артефакты для виртуальной машины DevTest Labs](devtest-lab-artifact-author.md).
 * Изучите [коллекцию шаблонов быстрого запуска Azure Resource Manager для DevTest Labs](https://github.com/Azure/azure-devtestlab/tree/master/samples/DevTestLabs/QuickStartTemplates).

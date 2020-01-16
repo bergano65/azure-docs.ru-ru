@@ -3,12 +3,12 @@ title: Примеры шаблонов Azure Resource Manager
 description: Поиск образцов шаблонов Azure Resource Manager для развертывания экземпляров контейнеров Azure в различных конфигурациях
 ms.topic: article
 ms.date: 03/07/2019
-ms.openlocfilehash: ddea823525002662363d61a795f34d6094c897d0
-ms.sourcegitcommit: 85e7fccf814269c9816b540e4539645ddc153e6e
+ms.openlocfilehash: a8f3c81c539562a3c56e4822cf6e4df77d04928f
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74533447"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75981648"
 ---
 # <a name="azure-resource-manager-templates-for-azure-container-instances"></a>Шаблоны Azure Resource Manager для службы "Экземпляры контейнеров Azure"
 
@@ -20,7 +20,7 @@ ms.locfileid: "74533447"
 
 | | |
 |-|-|
-| **Приложения**. ||
+| **Приложения** ||
 | [WordPress][app-wp] | Создает веб-сайт WordPress и его базу данных MySQL в группе контейнеров. Содержимое сайта WordPress и база данных MySQL сохраняются в общей папке Azure. Также создает шлюз приложений для предоставления доступа к общедоступной сети WordPress. |
 | [MS NAV с SQL Server и IIS][app-nav] | Развертывает один контейнер Windows с полнофункциональной автономной средой Dynamics NAV или Dynamics 365 Business Central. |
 | **Тома** ||
@@ -38,13 +38,13 @@ ms.locfileid: "74533447"
 
 Для развертывания ресурсов с помощью шаблонов Resource Manager доступны несколько вариантов:
 
-[Azure CLI][deploy-cli]
+[Azure CLI][deploy-cli]
 
 [Azure PowerShell][deploy-powershell]
 
 [Портал Azure][deploy-portal]
 
-[REST API][deploy-rest]
+[REST API][deploy-rest]
 
 <!-- LINKS - External -->
 [app-nav]: https://github.com/Azure/azure-quickstart-templates/tree/master/101-aci-dynamicsnav
@@ -59,8 +59,8 @@ ms.locfileid: "74533447"
 [vol-secret]: https://github.com/Azure/azure-quickstart-templates/tree/master/201-aci-linuxcontainer-volume-secret
 
 <!-- LINKS - Internal -->
-[deploy-cli]: ../azure-resource-manager/resource-group-template-deploy-cli.md
-[deploy-portal]: ../azure-resource-manager/resource-group-template-deploy-portal.md
-[deploy-powershell]: ../azure-resource-manager/resource-group-template-deploy.md
-[deploy-rest]: ../azure-resource-manager/resource-group-template-deploy-rest.md
+[deploy-cli]: ../azure-resource-manager/templates/deploy-cli.md
+[deploy-portal]: ../azure-resource-manager/templates/deploy-portal.md
+[deploy-powershell]: ../azure-resource-manager/templates/deploy-powershell.md
+[deploy-rest]: ../azure-resource-manager/templates/deploy-rest.md
 [ref]: /azure/templates/microsoft.containerinstance/containergroups

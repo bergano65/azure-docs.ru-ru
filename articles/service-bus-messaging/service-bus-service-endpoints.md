@@ -10,12 +10,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 12/20/2019
 ms.author: aschhab
-ms.openlocfilehash: 5446ee12a6933a916444d4f64a0eb983a35a59f8
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 212cd96571561362003e7dcbd89efc5d2c54ab48
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75462060"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75980804"
 ---
 # <a name="use-virtual-network-service-endpoints-with-azure-service-bus"></a>Использование конечных точек служб для виртуальной сети со Служебной шиной Azure
 
@@ -196,5 +196,5 @@ ms.locfileid: "75462060"
 - [IP-фильтрация в служебной шине Azure][ip-filtering]
 
 [vnet-sep]: ../virtual-network/virtual-network-service-endpoints-overview.md
-[lnk-deploy]: ../azure-resource-manager/resource-group-template-deploy.md
+[lnk-deploy]: ../azure-resource-manager/templates/deploy-powershell.md
 [ip-filtering]: service-bus-ip-filtering.md

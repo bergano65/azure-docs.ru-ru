@@ -6,12 +6,12 @@ ms.service: hpc-cache
 ms.topic: conceptual
 ms.date: 10/30/2019
 ms.author: rohogue
-ms.openlocfilehash: e0ff9bc66c7d185f8fe07b4b4574833fcd7e2604
-ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
+ms.openlocfilehash: 4eb203915c8fedbef6af0e5a3bc14eff1835a92b
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73582079"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75982156"
 ---
 # <a name="use-multiple-caches-for-regional-failover-recovery"></a>Использование нескольких кэшей для восстановления региональных отработок отказа
 
@@ -37,7 +37,7 @@ ms.locfileid: "73582079"
    1. Команда подключения для использования клиентами кэша
 
    > [!NOTE]
-   > Кэш Azure HPC можно создать программным путем с помощью [шаблона Azure Resource Manager](../azure-resource-manager/template-deployment-overview.md) или путем прямого доступа к его API. Для получения дополнительных сведений обратитесь к группе кэша HPC Azure.
+   > Кэш Azure HPC можно создать программным путем с помощью [шаблона Azure Resource Manager](../azure-resource-manager/templates/overview.md) или путем прямого доступа к его API. Для получения дополнительных сведений обратитесь к группе кэша HPC Azure.
 
 ## <a name="failover-example"></a>Пример отработки отказа
 
@@ -55,7 +55,7 @@ ms.locfileid: "73582079"
 
 Все клиенты должны будут подключать новый кэш, даже если на них не повлияло отключение региона. Новый кэш имеет разные адреса подключения от старого.
 
-## <a name="learn-more"></a>Подробнее
+## <a name="learn-more"></a>Подробнее…
 
 Руководство по архитектуре приложений Azure содержит дополнительные сведения о [восстановлении при прерывании работы службы на уровне региона](<https://docs.microsoft.com/azure/architecture/resiliency/recovery-loss-azure-region>).
 <!-- this should be an internal link instead of a URL but I can't find the tree  -->

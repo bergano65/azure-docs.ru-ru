@@ -11,12 +11,12 @@ ms.topic: article
 ms.date: 11/29/2017
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
-ms.openlocfilehash: 63a77a4f715402951ba8af70755196d52e3b742d
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 3e52f88136517339139bebd17dea929ac02201e3
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73492394"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75982026"
 ---
 # <a name="set-up-data-science-environments-for-use-in-the-team-data-science-process"></a>Настройка сред обработки и анализа данных для использования в процессе обработки и анализа данных группы
 Процесс обработки и анализа данных группы использует различные специализированные среды для хранения, обработки и анализа данных. Сюда относятся хранилище BLOB-объектов Azure, несколько типов виртуальных машин Azure, кластеры HDInsight (Hadoop) и рабочие области Машинного обучения Azure. Выбор используемой среды зависит от типа и количества данных, которые нужно моделировать, и места хранения этих данных в облаке. 
@@ -26,7 +26,7 @@ ms.locfileid: "73492394"
 
 В следующих статьях описывается настройка различных сред обработки и анализа данных, используемых процессом обработки и анализа данных группы.
 
-* [Учетная запись службы хранилища Azure](../../storage/common/storage-quickstart-create-account.md)
+* [Учетная запись службы хранилища Azure](../../storage/common/storage-account-create.md)
 * [Кластер HDInsight Hadoop](customize-hadoop-cluster.md)
 * [Рабочая область Машинное обучение Azure Studio (классическая модель)](../studio/create-workspace.md)
 

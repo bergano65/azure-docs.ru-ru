@@ -13,16 +13,16 @@ ms.workload: identity
 ms.date: 12/02/2019
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: 9d4b4134fa26fd2cb904a862ac16544873bf8bcb
-ms.sourcegitcommit: 014e916305e0225512f040543366711e466a9495
+ms.openlocfilehash: e2655a03fe315feb58668fcda0d19578a5df1a78
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75934466"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75981094"
 ---
 # <a name="azure-resource-manager-resource-provider-operations"></a>Операции поставщиков ресурсов Azure Resource Manager
 
-В этой статье перечислены операции, доступные в каждом поставщике ресурсов Azure Resource Manager. Эти операции могут использоваться в [настраиваемых ролях](custom-roles.md), чтобы обеспечить детализированное [управление доступом на основе ролей (RBAC)](overview.md) для ресурсов в Azure. Строки операций имеют следующий формат: `{Company}.{ProviderName}/{resourceType}/{action}`. Сведения о том, как пространства имен поставщиков ресурсов сопоставляются со службами Azure, см. [в разделе Сопоставление поставщика ресурсов со службой](../azure-resource-manager/azure-services-resource-providers.md).
+В этой статье перечислены операции, доступные в каждом поставщике ресурсов Azure Resource Manager. Эти операции могут использоваться в [настраиваемых ролях](custom-roles.md), чтобы обеспечить детализированное [управление доступом на основе ролей (RBAC)](overview.md) для ресурсов в Azure. Строки операций имеют следующий формат: `{Company}.{ProviderName}/{resourceType}/{action}`. Сведения о том, как пространства имен поставщиков ресурсов сопоставляются со службами Azure, см. [в разделе Сопоставление поставщика ресурсов со службой](../azure-resource-manager/management/azure-services-resource-providers.md).
 
 Операции в поставщиках ресурсов всегда развиваются. Чтобы получить список последних операций, используйте команду [Get-AzProviderOperation](/powershell/module/az.resources/get-azprovideroperation) или [az provider operation list](/cli/azure/provider/operation#az-provider-operation-list).
 
@@ -6708,6 +6708,6 @@ ms.locfileid: "75934466"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Сопоставить поставщик ресурсов со службой](../azure-resource-manager/azure-services-resource-providers.md)
+- [Сопоставить поставщик ресурсов со службой](../azure-resource-manager/management/azure-services-resource-providers.md)
 - [Пользовательские роли для ресурсов Azure](custom-roles.md)
 - [Встроенные роли управления доступом на основе ролей в Azure](built-in-roles.md)

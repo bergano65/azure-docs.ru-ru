@@ -11,12 +11,12 @@ author: MayMSFT
 manager: cgronlun
 ms.reviewer: nibaccam
 ms.date: 11/04/2019
-ms.openlocfilehash: 775c6016acbcd0f87f368852a68eaea706c79898
-ms.sourcegitcommit: 49e14e0d19a18b75fd83de6c16ccee2594592355
+ms.openlocfilehash: d55dc2a1311d66eae01ae12a3dae798fbab20677
+ms.sourcegitcommit: 05cdbb71b621c4dcc2ae2d92ca8c20f216ec9bc4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75945707"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76045616"
 ---
 # <a name="create-azure-machine-learning-datasets"></a>Создание наборов данных Машинное обучение Azure
 
@@ -196,16 +196,7 @@ titanic_ds = titanic_ds.register(workspace=workspace,
 
 Чтобы создать наборы данных с открытыми наборами данных Azure из пакета SDK, убедитесь, что пакет установлен с `pip install azureml-opendatasets`. Каждый дискретный набор данных представлен своим собственным классом в пакете SDK, а некоторые классы доступны как `TabularDataset`, `FileDataset`или и то, и другое. Полный список классов см. в [справочной документации](https://docs.microsoft.com/python/api/azureml-opendatasets/azureml.opendatasets?view=azure-ml-py) .
 
-Большинство классов наследуют от и возвращают экземпляр `TabularDataset`. Примерами таких классов являются `PublicHolidays`, `BostonSafety`и `UsPopulationZip`. Чтобы создать `TabularDataset` из этих типов классов, используйте конструктор без аргументов. При регистрации набора данных, созданного из открытых наборов данных, данные не загружаются немедленно, но доступ к ним будет осуществляться позже при запросе (например, во время обучения) из центрального хранилища. 
-
-```python
-from azureml.opendatasets import UsPopulationZip
-
-tabular_dataset = UsPopulationZip()
-tabular_dataset = tabular_dataset.register(workspace=workspace, name="pop data", description="US population data by zip code")
-```
-
-Определенные классы можно получить в виде `TabularDataset` или `FileDataset`, что позволяет управлять файлами и/или загружать их напрямую. Другие классы могут получить набор данных только с помощью функций `get_tabular_dataset()` или `get_file_dataset()`. В следующем примере кода приведено несколько примеров классов следующих типов:
+Определенные классы можно получить в виде `TabularDataset` или `FileDataset`, что позволяет управлять файлами и/или загружать их напрямую. Другие классы могут получить набор данных **только** с помощью одной из функций `get_tabular_dataset()` или `get_file_dataset()`. В следующем образце кода приведено несколько примеров этих типов классов.
 
 ```python
 from azureml.opendatasets import MNIST
@@ -219,6 +210,8 @@ from azureml.opendatasets import Diabetes
 # Diabetes class can return ONLY return TabularDataset and must be called from the static function
 diabetes_tabular = Diabetes.get_tabular_dataset()
 ```
+
+При регистрации набора данных, созданного из открытых наборов данных, данные не загружаются немедленно, но доступ к ним будет осуществляться позже при запросе (например, во время обучения) из центрального хранилища.
 
 ### <a name="use-the-ui"></a>Использование пользовательского интерфейса
 

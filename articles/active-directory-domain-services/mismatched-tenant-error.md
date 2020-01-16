@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: conceptual
 ms.date: 09/27/2019
 ms.author: iainfou
-ms.openlocfilehash: 0d96fd4c435251fb4dd604351e6efeea8bde8353
-ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
+ms.openlocfilehash: 601574cc2a478dc53a261cfcb074e43a556dd4c0
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74704546"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75979514"
 ---
 # <a name="resolve-mismatched-directory-errors-for-existing-azure-ad-domain-services-managed-domains"></a>Устранение ошибок несоответствия каталога для существующих управляемых доменов доменных служб Azure AD
 
@@ -56,7 +56,7 @@ Azure использует управление доступом на основ
 Следующие два параметра позволяют устранить ошибку несоответствия каталога:
 
 * [Удалите управляемый домен AD DS Azure](delete-aadds.md) из существующего каталога Azure AD. [Создайте заменяющий управляемый домен azure AD DS](tutorial-create-instance.md) в том же каталоге Azure AD, что и виртуальная сеть, которую вы хотите использовать. Когда все будет готово, присоедините все компьютеры, которые ранее присоединились к удаленному домену, к повторно созданному управляемому домену.
-* [Переместите подписку Azure](../billing/billing-subscription-transfer.md) , содержащую виртуальную сеть, в тот же каталог Azure AD, что и управляемый домен Azure AD DS.
+* [Переместите подписку Azure](../cost-management-billing/manage/billing-subscription-transfer.md) , содержащую виртуальную сеть, в тот же каталог Azure AD, что и управляемый домен Azure AD DS.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
