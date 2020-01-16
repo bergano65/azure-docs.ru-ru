@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: rboucher
 ms.author: robb
 ms.date: 06/25/2019
-ms.openlocfilehash: 54122d784467bc090d82f4126e03ab688883ea7d
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 4835f1034149a015963569a0b1fc5f9195e3cfca
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75364804"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75969525"
 ---
 # <a name="create-view-and-manage-activity-log-alerts-by-using-azure-monitor"></a>Создание, просмотр и Управление оповещениями журнала действий с помощью Azure Monitor  
 
@@ -197,7 +197,7 @@ ms.locfileid: "75364804"
   ]
 }
 ```
-Предыдущий пример JSON можно сохранить как, например, в Самплеактивитилогалерт. JSON, в рамках этого пошагового руководства, и его можно развернуть с помощью [Azure Resource Manager в портал Azure](../../azure-resource-manager/resource-group-template-deploy-portal.md).
+Предыдущий пример JSON можно сохранить как, например, в Самплеактивитилогалерт. JSON, в рамках этого пошагового руководства, и его можно развернуть с помощью [Azure Resource Manager в портал Azure](../../azure-resource-manager/templates/deploy-portal.md).
 
 > [!NOTE]
 > Для того, чтобы новое правило генерации оповещений журнала действий стало активным, может потребоваться до 5 минут.

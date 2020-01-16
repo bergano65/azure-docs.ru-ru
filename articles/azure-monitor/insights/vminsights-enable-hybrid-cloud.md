@@ -7,18 +7,18 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 10/15/2019
-ms.openlocfilehash: 40d89dd675e063283d1ed90cf145575b8164e4e5
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 0afc67bf6d9e997ef615ecadc6836b36ed73e2ea
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75400692"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75969679"
 ---
 # <a name="enable-azure-monitor-for-vms-preview-for-a-hybrid-environment"></a>Включение Azure Monitor для виртуальных машин (Предварительная версия) для гибридной среды
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
-В этой статье объясняется, как включить Azure Monitor для виртуальных машин (Предварительная версия) для виртуальных машин или физических компьютеров, размещенных в вашем центре обработки данных или в другой облачной среде. По завершении этого процесса вы сможете успешно приступили к наблюдению за виртуальными машинами в среде и узнать, испытывает ли они проблемы с производительностью или доступностью. 
+В этой статье объясняется, как включить Azure Monitor для виртуальных машин (Предварительная версия) для виртуальных машин или физических компьютеров, размещенных в вашем центре обработки данных или в другой облачной среде. По завершении этого процесса вы сможете успешно приступили к наблюдению за виртуальными машинами в среде и узнать, испытывает ли они проблемы с производительностью или доступностью.
 
 Прежде чем начать, обязательно ознакомьтесь с [предварительными требованиями](vminsights-enable-overview.md) и убедитесь, что подписка и ресурсы соответствуют требованиям. Ознакомьтесь с требованиями и методами развертывания для [агента Log Analytics в Linux и Windows](../../log-analytics/log-analytics-agent-overview.md).
 
@@ -121,7 +121,7 @@ configuration ServiceMap {
     Node localhost
     {
         # Download and install the Dependency agent
-        xRemoteFile DAPackage 
+        xRemoteFile DAPackage
         {
             Uri = "https://aka.ms/dependencyagentwindows"
             DestinationPath = $DAPackageLocalPath
@@ -154,8 +154,8 @@ configuration ServiceMap {
 В этом методе используется шаблон JSON, который задает конфигурацию для включения компонентов решения в рабочей области Log Analytics.
 
 Если вы не умеете развертывать ресурсы с помощью шаблона, см. следующие материалы:
-* [Развертывание ресурсов с использованием шаблонов Resource Manager и Azure PowerShell](../../azure-resource-manager/resource-group-template-deploy.md)
-* [Развертывание ресурсов с использованием шаблонов Resource Manager и Azure CLI](../../azure-resource-manager/resource-group-template-deploy-cli.md)
+* [Развертывание ресурсов с использованием шаблонов Resource Manager и Azure PowerShell](../../azure-resource-manager/templates/deploy-powershell.md)
+* [Развертывание ресурсов с использованием шаблонов Resource Manager и Azure CLI](../../azure-resource-manager/templates/deploy-cli.md)
 
 Чтобы использовать Azure CLI, сначала необходимо установить и использовать CLI локально. Необходимо запустить Azure CLI версии 2.0.27 или более поздней. Для определения версии выполните `az --version`. Сведения об установке или обновлении Azure CLI см. в разделе [установка Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli).
 
@@ -232,13 +232,13 @@ configuration ServiceMap {
 
 1. Успешно ли установлен Dependency Agent? Для этого проверьте, установлена и запущена ли служба.
 
-    **Windows**: найдите службу с именем "Microsoft Dependency Agent". 
+    **Windows**: найдите службу с именем "Microsoft Dependency Agent".
 
     **Linux**: найдите выполняющийся процесс microsoft-dependency-agent.
 
 2. Вы в ценовой категории " [бесплатный" log Analytics](https://docs.microsoft.com/azure/log-analytics/log-analytics-add-solutions)? Бесплатный план позволяет создавать до пяти уникальных компьютеров. Все последующие компьютеры не будут отображаться на карте, даже если предыдущие пять больше не отправляют данные.
 
-3. Отправляет ли компьютер журнал и данные о производительности в Azure Monitor журналы? Выполните следующий запрос к компьютеру: 
+3. Отправляет ли компьютер журнал и данные о производительности в Azure Monitor журналы? Выполните следующий запрос к компьютеру:
 
     ```Kusto
     Usage | where Computer == "computer-name" | summarize sum(Quantity), any(QuantityUnit) by DataType
@@ -248,7 +248,7 @@ configuration ServiceMap {
 
 #### <a name="computer-appears-on-the-map-but-has-no-processes"></a>Компьютер отображается на карте, но не содержит процессов
 
-Если сервер отображается на карте, но у него нет данных процесса или соединения, это означает, что агент зависимостей установлен и работает, но драйвер ядра не был загружен. 
+Если сервер отображается на карте, но у него нет данных процесса или соединения, это означает, что агент зависимостей установлен и работает, но драйвер ядра не был загружен.
 
 Проверьте файл C:\Program Files\Microsoft Dependency Agent\logs\wrapper.log (Windows) или /var/opt/microsoft/dependency-agent/log/service.log (Linux). В последних строках файла должно быть указано, почему не удалось загрузить ядро. Например, если вы обновили ядро, оно может не поддерживаться в Linux.
 
@@ -256,7 +256,7 @@ configuration ServiceMap {
 ## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда наблюдение включено для виртуальных машин, эти сведения доступны для анализа с Azure Monitor для виртуальных машин.
- 
+
 - Для просмотра обнаруженных зависимостей приложений см. статью о [просмотре схемы Azure Monitor для виртуальных машин](vminsights-maps.md).
 
 - Чтобы определить узкие места и общее использование с производительностью виртуальной машины, см. статью [Просмотр производительности виртуальной машины Azure](vminsights-performance.md).

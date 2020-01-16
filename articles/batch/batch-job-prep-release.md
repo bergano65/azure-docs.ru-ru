@@ -3,7 +3,7 @@ title: Создание задач подготовки и завершения 
 description: Используйте задачи подготовки на уровне задания для минимизации передачи данных на вычислительные узлы пакетной службы Azure и задачи снятия для очистки узла после завершения задания.
 services: batch
 documentationcenter: .net
-author: laurenhughes
+author: ju-shim
 manager: gwallace
 editor: ''
 ms.assetid: 63d9d4f1-8521-4bbb-b95a-c4cad73692d3
@@ -12,14 +12,14 @@ ms.topic: article
 ms.tgt_pltfrm: ''
 ms.workload: big-compute
 ms.date: 02/27/2017
-ms.author: lahugh
+ms.author: jushiman
 ms.custom: seodec18
-ms.openlocfilehash: 2dbdbc8b13a75b72ca09a319c6925d0835a52e13
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: 7c5c9dfcaa88b35e14cf5d56b01b4e364c856600
+ms.sourcegitcommit: dbcc4569fde1bebb9df0a3ab6d4d3ff7f806d486
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70095123"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76027115"
 ---
 # <a name="run-job-preparation-and-job-release-tasks-on-batch-compute-nodes"></a>Выполнение задач подготовки и задач завершения заданий на вычислительных узлах пакетной службы
 
@@ -67,7 +67,7 @@ ms.locfileid: "70095123"
 > 
 > 
 
-## <a name="job-release-task"></a>Задача прекращения задания
+## <a name="job-release-task"></a>задачи снятия задания
 Когда задание будет отмечено как завершенное, на каждом узле в пуле, на котором была выполнена хотя бы одна задача, выполняется задача снятия задания. Чтобы пометить задание как завершенное, нужно направить запрос прекращения. После этого пакетная служба устанавливает состояние задания *Прекращение*, прекращает все активные или запущенные задачи, связанные с заданием, и запускает задачу снятия задания. Затем состояние задания меняется на *Завершено* .
 
 > [!NOTE]
@@ -80,7 +80,7 @@ ms.locfileid: "70095123"
 ## <a name="job-prep-and-release-tasks-with-batch-net"></a>Задачи подготовки и снятия заданий с использованием пакетной службы .NET
 Чтобы использовать задачу подготовки задания, назначьте объект [JobPreparationTask][net_job_prep] для свойства [CloudJob. JobPreparationTask][net_job_prep_cloudjob] задания. Аналогичным образом инициализируйте [JobReleaseTask][net_job_release] и присвойте его свойству [CloudJob. JobReleaseTask][net_job_prep_cloudjob] задания, чтобы задать задачу выпуска задания.
 
-В этом фрагменте `myBatchClient` кода является экземпляром [BatchClient][net_batch_client]и `myPool` является существующим пулом в учетной записи пакетной службы.
+В этом фрагменте кода `myBatchClient` является экземпляром [BatchClient][net_batch_client], а `myPool` — существующим пулом в учетной записи пакетной службы.
 
 ```csharp
 // Create the CloudJob for CloudPool "myPool"
@@ -185,7 +185,7 @@ Sample complete, hit ENTER to exit...
 
 ![Свойства подготовки задания на портале Azure][1]
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 ### <a name="application-packages"></a>Пакеты приложений
 Для подготовки вычислительных узлов к выполнению задач вы можете использовать не только задачи подготовки заданий, но и функцию пакетной службы [Пакет приложения](batch-application-packages.md) . Эта функция особенно полезна для развертывания приложений, которые не требуют выполнения установщика, приложений с большим числом файлов (более 100) и приложений, требующих строгого управления версиями.
 

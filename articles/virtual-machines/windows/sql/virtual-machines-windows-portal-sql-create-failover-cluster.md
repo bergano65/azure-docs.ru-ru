@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 06/11/2018
 ms.author: mikeray
-ms.openlocfilehash: 1a69741ba3ced91b6b0d1fc4bcd4aea887452151
-ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
+ms.openlocfilehash: 20c231e4f3052797eac79a3c97a3d8148690b8c5
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74792180"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75965436"
 ---
 # <a name="configure-a-sql-server-failover-cluster-instance-on-azure-virtual-machines"></a>Настройка SQL Server экземпляра отказоустойчивого кластера на виртуальных машинах Azure
 
@@ -78,7 +78,7 @@ ms.locfileid: "74792180"
 Вы также должны иметь общее представление об этих технологиях:
 
 - [Решения с технологией Hyper-Solutions, использующие Локальные дисковые пространства в Windows Server 2016](https://docs.microsoft.com/windows-server/storage/storage-spaces/storage-spaces-direct-overview)
-- [группы ресурсов Azure](../../../azure-resource-manager/manage-resource-groups-portal.md).
+- [группы ресурсов Azure](../../../azure-resource-manager/management/manage-resource-groups-portal.md).
 
 > [!IMPORTANT]
 > На данный момент SQL Server экземпляры отказоустойчивого кластера на виртуальных машинах Azure поддерживаются только в [режиме упрощенного управления](virtual-machines-windows-sql-register-with-resource-provider.md#management-modes) [расширением агента IaaS SQL Server](virtual-machines-windows-sql-server-agent-extension.md). Чтобы перейти с полного режима расширения на облегченный, удалите ресурс **виртуальной машины SQL** для соответствующих виртуальных машин, а затем зарегистрируйте их с помощью поставщика ресурсов ВИРТУАЛЬНОЙ машины SQL в упрощенном режиме. При удалении ресурса **виртуальной машины SQL** с помощью портал Azure **снимите флажок рядом с соответствующей виртуальной машиной**. Полное расширение поддерживает такие функции, как автоматическое резервное копирование, установка исправлений и Управление порталом. Эти функции не будут работать для виртуальных машин SQL после переустановки агента в режиме упрощенного управления.
@@ -174,9 +174,9 @@ ms.locfileid: "74792180"
 
    На каждой виртуальной машине откройте следующие порты в брандмауэре Windows:
 
-   | Цель | TCP-порт | Заметки
+   | Цель | TCP-порт | Примечания
    | ------ | ------ | ------
-   | SQL Server | 1433 | Обычный порт для экземпляров SQL Server по умолчанию. Если используется образ из коллекции, этот порт будет автоматически открыт.
+   | SQL Server | 1433 | Обычный порт для экземпляров SQL Server по умолчанию. Если используется образ из коллекции, этот порт будет автоматически открыт.
    | Проверка работоспособности | 59999 | Любой открытый TCP-порт. Позже настройте [проверку работоспособности](#probe) балансировщика нагрузки и кластер для использования этого порта.  
 
 1. Добавьте хранилище в виртуальную машину. Дополнительные сведения см. в статье [Хранилище класса "Премиум": высокопроизводительная служба хранилища для рабочих нагрузок виртуальных машин Azure](../disks-types.md).
@@ -236,14 +236,14 @@ ms.locfileid: "74792180"
 
 1. В разделе **Диспетчер сервера**выберите **Сервис**, а затем выберите **Диспетчер отказоустойчивости кластеров**.
 1. В разделе **Диспетчер отказоустойчивости кластеров**выберите **действие**и щелкните **проверить конфигурацию**.
-1. Щелкните **Далее**.
+1. Выберите **Далее**.
 1. В разделе **Выбор серверов или кластера**введите имена обеих виртуальных машин.
-1. В разделе **Параметры тестирования**выберите **выполнять только выбранные тесты**. Щелкните **Далее**.
+1. В разделе **Параметры тестирования**выберите **выполнять только выбранные тесты**. Выберите **Далее**.
 1. В разделе **Выбор теста**выберите все тесты, кроме **хранилища**, как показано ниже:
 
    ![Выберите тесты проверки кластера](./media/virtual-machines-windows-portal-sql-create-failover-cluster/10-validate-cluster-test.png)
 
-1. Щелкните **Далее**.
+1. Выберите **Далее**.
 1. В разделе **Подтверждение**нажмите кнопку **Далее**.
 
 Мастер проверки конфигурации выполняет проверочные тесты.
@@ -256,7 +256,7 @@ ms.locfileid: "74792180"
 
 После проверки кластера создайте отказоустойчивый кластер.
 
-### <a name="create-the-failover-cluster"></a>Создание отказоустойчивого кластера
+### <a name="create-the-failover-cluster"></a>Создание отказоустойчивого кластера.
 
 Для создания отказоустойчивого кластера требуется следующее.
 - Имена виртуальных машин, которые станут узлами кластера.
@@ -292,7 +292,7 @@ New-Cluster -Name <FailoverCluster-Name> -Node ("<node1>","<node2>") –StaticAd
 
 1. Настройте свидетель кворума отказоустойчивого кластера. См. раздел [Настройка следящего сервера кворума в пользовательском интерфейсе](https://technet.microsoft.com/windows-server-docs/failover-clustering/deploy-cloud-witness#to-configure-cloud-witness-as-a-quorum-witness).
 
-### <a name="add-storage"></a>Добавление хранилища.
+### <a name="add-storage"></a>Добавление хранилища
 
 Диски для Локальные дисковые пространства должны быть пустыми. Они не могут содержать разделы или другие данные. Чтобы очистить диски, выполните [действия, описанные в этом руководстве](https://docs.microsoft.com/windows-server/storage/storage-spaces/deploy-storage-spaces-direct?redirectedfrom=MSDN#step-31-clean-drives).
 
@@ -318,7 +318,7 @@ New-Cluster -Name <FailoverCluster-Name> -Node ("<node1>","<node2>") –StaticAd
 
    На этом снимке экрана показан общий том кластера с Локальные дисковые пространства:
 
-   ![общий том кластера](./media/virtual-machines-windows-portal-sql-create-failover-cluster/15-cluster-shared-volume.png)
+   ![Общий том кластера](./media/virtual-machines-windows-portal-sql-create-failover-cluster/15-cluster-shared-volume.png)
 
 ## <a name="step-3-test-failover-cluster-failover"></a>Шаг 3. Тестирование отработки отказа отказоустойчивого кластера
 
@@ -499,7 +499,7 @@ New-Cluster -Name <FailoverCluster-Name> -Node ("<node1>","<node2>") –StaticAd
 - Кластеризованный ресурс MSDTC не может быть настроен для использования общего хранилища. В Windows Server 2016 при создании ресурса MSDTC он не будет отображать доступное для использования общее хранилище, даже если хранилище доступно. Эта проблема устранена в Windows Server 2019.
 - Базовая подсистема балансировки нагрузки не обрабатывает порты RPC.
 
-## <a name="see-also"></a>Дополнительные материалы
+## <a name="see-also"></a>См. также
 
 [Настройка Локальные дисковые пространства с помощью удаленного рабочего стола (Azure)](https://technet.microsoft.com/windows-server-docs/compute/remote-desktop-services/rds-storage-spaces-direct-deployment)
 

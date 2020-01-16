@@ -14,12 +14,12 @@ ms.author: curtand
 ms.reviewer: vincesm
 ms.custom: fasttrack-edit
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2b6d9a394971e59abaeb48e058b05cd52da69626
-ms.sourcegitcommit: ce4a99b493f8cf2d2fd4e29d9ba92f5f942a754c
+ms.openlocfilehash: 84296631e35de759fbb971f5de2d918afa5d17f0
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/28/2019
-ms.locfileid: "75529734"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75967574"
 ---
 # <a name="administrator-role-permissions-in-azure-active-directory"></a>Разрешения роли администратора в Azure Active Directory
 
@@ -425,12 +425,6 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 > [!NOTE]
 > В Microsoft Graph API, Azure AD API Graph и Azure AD PowerShell эта роль определяется как "Администратор службы Lync". На [портале Azure](https://portal.azure.com/) она называется "Администратор Skype для бизнеса".
 
-### <a name="teams-administratorteams-service-administrator-permissions"></a>[Администратор команды](#teams-service-administrator-permissions)
-
-пользователи с этой ролью могут управлять всеми функциями рабочей нагрузки Microsoft Teams с помощью центра администрирования Microsoft Teams и Skype для бизнеса и соответствующих модулей PowerShell. Сюда входят, помимо прочего, все средства управления, связанные с телефонией, обменом сообщениями, собраниями и самими командами Teams. Кроме того, эта роль позволяет создавать все группы Office 365 и управлять ими, а также управлять запросами в службу поддержки и отслеживать работоспособность служб.
-> [!NOTE]
-> В API Microsoft Graph, API Azure AD Graph и Azure AD PowerShell эта роль определяется как "Администратор службы Teams". На [портале Azure](https://portal.azure.com) она называется "Администратор Teams".
-
 ### <a name="teams-communications-administratorteams-communications-administrator-permissions"></a>[Администратор связи команд](#teams-communications-administrator-permissions)
 
 пользователи с этой ролью могут управлять функциями рабочей нагрузки Microsoft Teams, связанными с голосовой связью и телефонией. Сюда входят средства управления для назначения номера телефона, политики голосовой связи и собраний, а также полный доступ к набору инструментов анализа вызовов.
@@ -442,6 +436,10 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 ### <a name="teams-communications-support-specialistteams-communications-support-specialist-permissions"></a>[Специалист по технической поддержке для разработчиков](#teams-communications-support-specialist-permissions)
 
 пользователи с этой ролью могут устранять неполадки со связью в Microsoft Teams и Skype для бизнеса с помощью соответствующих средств для пользовательских вызовов в центре администрирования Microsoft Teams и Skype для бизнеса. Пользователи с этой ролью могут просматривать сведения об определенном пользователе только при его вызове. Данная роль не обладает доступом для просмотра, создания или управления запросами в службу поддержки.
+
+### <a name="teams-service-administratorteams-service-administrator-permissions"></a>[Администратор служб Team Services](#teams-service-administrator-permissions)
+
+пользователи с этой ролью могут управлять всеми функциями рабочей нагрузки Microsoft Teams с помощью центра администрирования Microsoft Teams и Skype для бизнеса и соответствующих модулей PowerShell. Сюда входят, помимо прочего, все средства управления, связанные с телефонией, обменом сообщениями, собраниями и самими командами Teams. Кроме того, эта роль позволяет создавать все группы Office 365 и управлять ими, а также управлять запросами в службу поддержки и отслеживать работоспособность служб.
 
 ### <a name="user-administratoruser-administrator-permissions"></a>[Администратор пользователей](#user-administrator-permissions)
 

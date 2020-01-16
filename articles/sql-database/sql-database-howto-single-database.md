@@ -10,13 +10,13 @@ ms.topic: conceptual
 author: jovanpop-msft
 ms.author: jovanpop
 ms.reviewer: carlr
-ms.date: 02/08/2019
-ms.openlocfilehash: 3c03797c97a354eb06b6c3b1d76ba5c39d512c18
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.date: 01/14/2020
+ms.openlocfilehash: 4283e1a2c92b7fe738fb57a8103cea1deb0015a0
+ms.sourcegitcommit: dbcc4569fde1bebb9df0a3ab6d4d3ff7f806d486
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73811220"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76027716"
 ---
 # <a name="how-to-use-a-single-database-in-azure-sql-database"></a>Использование отдельной базы данных в Базе данных SQL Azure
 
@@ -42,7 +42,7 @@ ms.locfileid: "73811220"
 - [Включение уведомлений по электронной почте об автоматической настройке](sql-database-automatic-tuning-email-notifications.md), чтобы получать сведения о рекомендациях по настройке.
 - [Применение рекомендаций по производительности](sql-database-advisor-portal.md) и оптимизация своей базы данных.
 - [Создание оповещений](sql-database-insights-alerts-portal.md) для получения уведомлений от Базы данных SQL Azure.
-- [Устранение неполадок с подключением](sql-database-troubleshoot-common-connection-issues.md) при возникновении проблем с подключением между приложениями и базой данных. Вы также можете воспользоваться службой [Работоспособность ресурсов](sql-database-resource-health.md).
+- [Устранение неполадок с подключением](troubleshoot-connectivity-issues-microsoft-azure-sql-database.md) при возникновении проблем с подключением между приложениями и базой данных. Вы также можете воспользоваться службой [Работоспособность ресурсов](sql-database-resource-health.md).
 - [Управление файловым пространством](sql-database-file-space-management.md), чтобы отслеживать использование хранилища в базе данных.
 
 ## <a name="query-distributed-data"></a>Запрашивание распределенных данных

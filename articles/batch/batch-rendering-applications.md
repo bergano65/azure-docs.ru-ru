@@ -3,16 +3,16 @@ title: Приложения для рендеринга — пакетная с
 description: Предварительно установленные приложения пакетной службы для рендеринга
 services: batch
 ms.service: batch
-author: laurenhughes
-ms.author: lahugh
+author: ju-shim
+ms.author: jushiman
 ms.date: 09/19/2019
 ms.topic: conceptual
-ms.openlocfilehash: 30a365b36645dfe79f35b4bb889c0a06535a4c73
-ms.sourcegitcommit: 7df70220062f1f09738f113f860fad7ab5736e88
+ms.openlocfilehash: 367f7655c32c30f11b37c86c098d76e146fec69c
+ms.sourcegitcommit: dbcc4569fde1bebb9df0a3ab6d4d3ff7f806d486
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71212725"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76026574"
 ---
 # <a name="pre-installed-applications-on-rendering-vm-images"></a>Предварительно установленные приложения в образах виртуальных машин для рендеринга
 
@@ -64,7 +64,7 @@ ms.locfileid: "71212725"
 * AZ 10
 
 > [!IMPORTANT]
-> Чтобы запустить V-Ray с Maya за пределами [шаблонов расширений пакетной](https://github.com/Azure/batch-extension-templates)службы `vrayses.exe` Azure, запустите перед выполнением подготовки к просмотру. Чтобы запустить врайсес. exe за пределами шаблонов, можно использовать следующую команду `%MAYA_2017%\vray\bin\vrayses.exe"`.
+> Чтобы запустить V-Ray с Maya за пределами [шаблонов расширений пакетной службы Azure](https://github.com/Azure/batch-extension-templates), запустите `vrayses.exe` перед выполнением подготовки к просмотру. Чтобы запустить врайсес. exe за пределами шаблонов, можно использовать следующую команду `%MAYA_2017%\vray\bin\vrayses.exe"`.
 >
 > Пример см. в описании задачи запуска [шаблона Maya и V-Ray](https://github.com/Azure/batch-extension-templates/blob/master/templates/maya/render-vray-windows/pool.template.json) на сайте GitHub.
 
@@ -89,6 +89,6 @@ ms.locfileid: "71212725"
 > [!NOTE]
 > Chaos Group V-Ray для 3ds Max 2019 (версия 4.10.01) вводит критические изменения в V-Ray. Чтобы использовать предыдущую версию (Version 3.60.02), используйте узлы отрисовки Windows Server 2016, версия 1.3.2.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы использовать образы виртуальных машин для рендеринга, их необходимо указывать в конфигурации пула при создании пула. Подробнее см. статью о [возможностях рендеринга в пакетной службе](https://docs.microsoft.com/azure/batch/batch-rendering-functionality#batch-pools).
