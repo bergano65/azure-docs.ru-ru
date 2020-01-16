@@ -11,12 +11,12 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 12/11/2018
-ms.openlocfilehash: aaa67c5e48c6246e94410bdbf2eb8509b6810001
-ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
+ms.openlocfilehash: 8325b4ef6b89a76eeec418386cec4922cb5916b1
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75645197"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75979146"
 ---
 # <a name="alert-and-monitor-data-factories-by-using-azure-monitor"></a>Предупреждения и мониторинг фабрик данных с помощью Azure Monitor
 
@@ -67,7 +67,7 @@ https://management.azure.com/{resource-id}/providers/microsoft.insights/diagnost
 ##### <a name="headers"></a>Заголовки
 
 * Замените `{api-version}` на `2016-09-01`.
-* Замените `{resource-id}` ИДЕНТИФИКАТОРом ресурса, параметры диагностики которого необходимо изменить. Дополнительные сведения см. в разделе [Использование групп ресурсов для управления ресурсами Azure](../azure-resource-manager/manage-resource-groups-portal.md).
+* Замените `{resource-id}` ИДЕНТИФИКАТОРом ресурса, параметры диагностики которого необходимо изменить. Дополнительные сведения см. в разделе [Использование групп ресурсов для управления ресурсами Azure](../azure-resource-manager/management/manage-resource-groups-portal.md).
 * В качестве заголовка `Content-Type` установите `application/json`.
 * Задайте заголовок авторизации для веб-токена JSON, полученного из Azure Active Directory (Azure AD). Дополнительные сведения см. в статье [Сценарии аутентификации в Azure Active Directory](../active-directory/develop/authentication-scenarios.md).
 
@@ -188,7 +188,7 @@ https://management.azure.com/{resource-id}/providers/microsoft.insights/diagnost
 ##### <a name="headers"></a>Заголовки
 
 * Замените `{api-version}` на `2016-09-01`.
-* Замените `{resource-id}` ИДЕНТИФИКАТОРом ресурса, параметры диагностики которого необходимо изменить. Дополнительные сведения см. в разделе [Использование групп ресурсов для управления ресурсами Azure](../azure-resource-manager/manage-resource-groups-portal.md).
+* Замените `{resource-id}` ИДЕНТИФИКАТОРом ресурса, параметры диагностики которого необходимо изменить. Дополнительные сведения см. в разделе [Использование групп ресурсов для управления ресурсами Azure](../azure-resource-manager/management/manage-resource-groups-portal.md).
 * В качестве заголовка `Content-Type` установите `application/json`.
 * Задайте заголовок авторизации для веб-токена JSON, полученного из Azure AD. Дополнительные сведения см. в статье [Сценарии аутентификации в Azure Active Directory](../active-directory/develop/authentication-scenarios.md).
 

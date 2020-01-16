@@ -4,14 +4,14 @@ ms.author: banders
 ms.service: virtual-machines-windows
 ms.topic: include
 ms.date: 11/21/2019
-ms.openlocfilehash: 9bed0a47c6c13b3c209f593509b71aa697c6eb4a
-ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
+ms.openlocfilehash: 119ef52bd801f66cd25a844d3a87b1906881c484
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75901576"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76020905"
 ---
-При фиксации в зарезервированном экземпляре виртуальной машины Azure вы можете сэкономить деньги. Скидка на резервирование автоматически применяется к количеству работающих виртуальных машин, которые соответствуют области и атрибутам резервирования. Для получения скидок не нужно назначать резервирование виртуальной машине. Покупка зарезервированного экземпляра охватывает только вычислительную часть использования виртуальной машины. Для виртуальных машин Windows показатель использования делится на два отдельных счетчика. Есть счетчик вычислений, который аналогичен показателю Linux и счетчику IP-адресов Windows. Плата, которую вы видите при совершении покупки, будет взиматься только за затраты на вычисление. В оплату не входят расходы на программное обеспечение Windows. Дополнительные сведения о затратах на программное обеспечение см. [в разделе затраты на программное обеспечение, не включаемые в Azure reserved VM Instances](../articles/billing/billing-reserved-instance-windows-software-costs.md).
+При фиксации в зарезервированном экземпляре виртуальной машины Azure вы можете сэкономить деньги. Скидка на резервирование автоматически применяется к количеству работающих виртуальных машин, которые соответствуют области и атрибутам резервирования. Для получения скидок не нужно назначать резервирование виртуальной машине. Покупка зарезервированного экземпляра охватывает только вычислительную часть использования виртуальной машины. Для виртуальных машин Windows показатель использования делится на два отдельных счетчика. Есть счетчик вычислений, который аналогичен показателю Linux и счетчику IP-адресов Windows. Плата, которую вы видите при совершении покупки, будет взиматься только за затраты на вычисление. В оплату не входят расходы на программное обеспечение Windows. Дополнительные сведения о затратах на программное обеспечение см. [в разделе затраты на программное обеспечение, не включаемые в Azure reserved VM Instances](../articles/cost-management-billing/reservations/reserved-instance-windows-software-costs.md).
 
 ## <a name="determine-the-right-vm-size-before-you-buy"></a>Определение нужного размера виртуальной машины перед покупкой
 
@@ -78,7 +78,7 @@ ms.locfileid: "75901576"
 
 ## <a name="buy-a-reserved-vm-instance"></a>Приобретение Reserved VM Instance
 
-Зарезервированный экземпляр виртуальной машины можно купить в [портал Azure](https://portal.azure.com/#blade/Microsoft_Azure_Reservations/CreateBlade/referrer/documentation/filters/%7B%22reservedResourceType%22%3A%22VirtualMachines%22%7D). Платите за резервирование [наперед или ежемесячными платежами](../articles/billing/billing-monthly-payments-reservations.md).
+Зарезервированный экземпляр виртуальной машины можно купить в [портал Azure](https://portal.azure.com/#blade/Microsoft_Azure_Reservations/CreateBlade/referrer/documentation/filters/%7B%22reservedResourceType%22%3A%22VirtualMachines%22%7D). Платите за резервирование [наперед или ежемесячными платежами](../articles/cost-management-billing/reservations/monthly-payments-reservations.md).
 Эти требования применяются для приобретения зарезервированного экземпляра виртуальной машины.
 
 - Необходимо быть членом роли владельца по крайней мере для одной подписки EA или подписки с оплатой по мере использования.
@@ -111,7 +111,7 @@ ms.locfileid: "75901576"
 
 В данных об использовании указана нулевая эффективная цена за использование, на которое распространяется скидка на резервирование. Вы можете увидеть, какой экземпляр виртуальной машины получил скидку резервирования для каждого резервирования.
 
-Дополнительные сведения о том, как скидки на резервирование отображаются в данных об использовании, см. в статье [сведения об использовании резервирования Azure для регистрации на предприятии](../articles/billing/billing-understand-reserved-instance-usage-ea.md) , если вы ЯВЛЯЕТЕСЬ клиентом EA. Если у вас есть отдельная подписка, см. статью [сведения об использовании резервирования Azure для подписки с оплатой по мере использования](../articles/billing/billing-understand-reserved-instance-usage.md).
+Дополнительные сведения о том, как скидки на резервирование отображаются в данных об использовании, см. в статье [сведения об использовании резервирования Azure для регистрации на предприятии](../articles/cost-management-billing/reservations/understand-reserved-instance-usage-ea.md) , если вы ЯВЛЯЕТЕСЬ клиентом EA. Если у вас есть отдельная подписка, см. статью [сведения об использовании резервирования Azure для подписки с оплатой по мере использования](../articles/cost-management-billing/reservations/understand-reserved-instance-usage.md).
 
 ## <a name="change-a-reservation-after-purchase"></a>Изменение резервирования после покупки
 
@@ -134,7 +134,7 @@ ms.locfileid: "75901576"
 
 ## <a name="cancel-exchange-or-refund-reservations"></a>Отмена, обмен резервирования, возмещение средств за резервирование
 
-Вы можете отменить и обменять резервирования, а также вернуть вложенные в резервирование средства, но при этом применяются определенные ограничения. Дополнительные сведения см. в статье [Self-service exchanges and refunds for Azure Reservations](../articles/billing/billing-azure-reservations-self-service-exchange-and-refund.md) (Самостоятельное выполнение обмена и возмещения средств для резервирований Azure).
+Вы можете отменить и обменять резервирования, а также вернуть вложенные в резервирование средства, но при этом применяются определенные ограничения. Дополнительные сведения см. в статье [Self-service exchanges and refunds for Azure Reservations](../articles/cost-management-billing/reservations/exchange-and-refund-azure-reservations.md) (Самостоятельное выполнение обмена и возмещения средств для резервирований Azure).
 
 ## <a name="need-help-contact-us"></a>Нужна помощь? Связаться с нами.
 
@@ -142,12 +142,12 @@ ms.locfileid: "75901576"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Сведения об управлении резервированием см. в разделе [Управление резервированиями в Azure](../articles/billing/billing-manage-reserved-vm-instance.md).
+- Сведения об управлении резервированием см. в разделе [Управление резервированиями в Azure](../articles/cost-management-billing/reservations/manage-reserved-vm-instance.md).
 - Дополнительные сведения о резервировании в Azure см. по следующим ссылкам:
-    - [Основные сведения о резервировании в Azure](../articles/billing/billing-save-compute-costs-reservations.md)
-    - [Управление резервированиями в Azure](../articles/billing/billing-manage-reserved-vm-instance.md)
-    - [Сведения о применении скидки на зарезервированный экземпляр виртуальной машины](../articles/billing/billing-understand-vm-reservation-charges.md)
-    - [Общие сведения об использовании резервирования Azure для отдельной подписки с оплатой по мере использования](../articles/billing/billing-understand-reserved-instance-usage.md)
-    - [Общие сведения об использовании зарезервированных экземпляров Azure с Соглашением о регистрации Enterprise](../articles/billing/billing-understand-reserved-instance-usage-ea.md)
-    - [Затраты на программное обеспечение Windows, которые не включены в стоимость зарезервированных экземпляров Azure](../articles/billing/billing-reserved-instance-windows-software-costs.md)
+    - [Основные сведения о резервировании в Azure](../articles/cost-management-billing/reservations/save-compute-costs-reservations.md)
+    - [Управление резервированиями в Azure](../articles/cost-management-billing/reservations/manage-reserved-vm-instance.md)
+    - [Сведения о применении скидки на зарезервированный экземпляр виртуальной машины](../articles/cost-management-billing/manage/understand-vm-reservation-charges.md)
+    - [Общие сведения об использовании резервирования Azure для отдельной подписки с оплатой по мере использования](../articles/cost-management-billing/reservations/understand-reserved-instance-usage.md)
+    - [Общие сведения об использовании зарезервированных экземпляров Azure с Соглашением о регистрации Enterprise](../articles/cost-management-billing/reservations/understand-reserved-instance-usage-ea.md)
+    - [Затраты на программное обеспечение Windows, которые не включены в стоимость зарезервированных экземпляров Azure](../articles/cost-management-billing/reservations/reserved-instance-windows-software-costs.md)
     - [Приобретение зарезервированных экземпляров Azure](https://docs.microsoft.com/partner-center/azure-reservations)

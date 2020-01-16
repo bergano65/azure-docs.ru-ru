@@ -9,12 +9,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: sashan, moslake, carlrab
 ms.date: 11/27/2019
-ms.openlocfilehash: c01e5c508644214c078dfc42ae8c77964933a277
-ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
+ms.openlocfilehash: 7c4d6a01ccaeffb4042753dc0a904d970631383f
+ms.sourcegitcommit: 05cdbb71b621c4dcc2ae2d92ca8c20f216ec9bc4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75895995"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76045211"
 ---
 # <a name="vcore-model-overview"></a>Общие сведения о модели виртуального ядра
 
@@ -142,6 +142,16 @@ ms.locfileid: "75895995"
   
 **Изменение создания оборудования существующего управляемого экземпляра**
 
+# <a name="portaltabazure-portal"></a>[Портал](#tab/azure-portal)
+
+На странице управляемый экземпляр выберите ссылку **ценовая категория** , помещенную в раздел Параметры.
+
+![изменение оборудования управляемого экземпляра](media/sql-database-service-tiers-vcore/change-managed-instance-hardware.png)
+
+На странице **ценовая** Категория вы сможете изменить создание оборудования, как описано в предыдущих шагах.
+
+# <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
+
 Используйте следующий сценарий PowerShell:
 
 ```powershell-interactive
@@ -178,6 +188,8 @@ Set-AzResource -Properties $properties -ResourceName $instanceName -ResourceType
 
 Обязательно введите идентификатор подписки, имя и группу ресурсов управляемого экземпляра.
 
+---
+
 ### <a name="hardware-availability"></a>Доступность оборудования
 
 #### <a name="gen4gen5-1"></a>Го поколения/го поколения
@@ -213,9 +225,9 @@ Set-AzResource -Properties $properties -ResourceName $instanceName -ResourceType
 
 На странице **сведения** укажите следующие данные.
 
-5. В разделе **сведения о проблеме** выберите ссылку **указать сведения** . 
-6. Для **типа квоты базы данных SQL** выберите пункт **M-Series**.
-7. В поле **регион**выберите регион, чтобы включить ряд M.
+1. В разделе **сведения о проблеме** выберите ссылку **указать сведения** . 
+2. Для **типа квоты базы данных SQL** выберите пункт **M-Series**.
+3. В поле **регион**выберите регион, чтобы включить ряд M.
     Для регионов, где доступна серия M, см. статью [доступность рядов m](#m-series).
 
 Утвержденные запросы на поддержку обычно выполняются в течение 5 рабочих дней.

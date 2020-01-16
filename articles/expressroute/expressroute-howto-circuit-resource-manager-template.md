@@ -8,19 +8,19 @@ ms.topic: article
 ms.date: 11/13/2019
 ms.author: cherylmc
 ms.reviewer: ganesr
-ms.openlocfilehash: 25ed38e72f5a21622a87e36ad811ffd66f6a4c90
-ms.sourcegitcommit: a22cb7e641c6187315f0c6de9eb3734895d31b9d
+ms.openlocfilehash: 78da84a462566cca1a2800174849159ace8dd6dc
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74083514"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75981134"
 ---
 # <a name="create-an-expressroute-circuit-by-using-azure-resource-manager-template"></a>Создание канала ExpressRoute с помощью шаблона Azure Resource Manager
 
 > [!div class="op_single_selector"]
-> * [портал Azure](expressroute-howto-circuit-portal-resource-manager.md)
+> * [Портал Azure](expressroute-howto-circuit-portal-resource-manager.md)
 > * [PowerShell](expressroute-howto-circuit-arm.md)
-> * [Интерфейс командной строки Azure](howto-circuit-cli.md)
+> * [Azure CLI](howto-circuit-cli.md)
 > * [Шаблон Azure Resource Manager](expressroute-howto-circuit-resource-manager-template.md)
 > * [Видео — портал Azure](https://azure.microsoft.com/documentation/videos/azure-expressroute-how-to-create-an-expressroute-circuit)
 > * [PowerShell (классическая модель)](expressroute-howto-circuit-classic.md)
@@ -44,7 +44,7 @@ ms.locfileid: "74083514"
 
 Чтобы создать канал ExpressRoute путем развертывания шаблона, выполните следующие действия.
 
-1. Выберите вариант **попробовать** в следующем блоке кода, а затем следуйте инструкциям по входу в Azure Cloud Shell.
+1. Выберите **Попробовать** в следующем блоке кода и следуйте инструкциям, чтобы войти в Azure Cloud Shell.
 
     ```azurepowershell-interactive
     $circuitName = Read-Host -Prompt "Enter a circuit name"
@@ -74,15 +74,15 @@ ms.locfileid: "74083514"
     Имя группы ресурсов — это имя пространства имен служебной шины с добавленным **RG** .
 
 2. Нажмите кнопку **Копировать**, чтобы скопировать сценарий PowerShell.
-3. Щелкните правой кнопкой мыши консоль оболочки и выберите команду **Вставить**.
+3. Щелкните правой кнопкой в консоли оболочки и выберите **Вставить**.
 
-Создание концентратора событий займет несколько секунд.
+Создание концентратора событий занимает несколько секунд.
 
 Azure PowerShell используется для развертывания шаблона в этом руководстве. Другие методы развертывания шаблонов см. в следующих статьях:
 
-* С [помощью портал Azure](../azure-resource-manager/resource-group-template-deploy-portal.md).
-* С [помощью Azure CLI](../azure-resource-manager/resource-group-template-deploy-cli.md).
-* С [помощью REST API](../azure-resource-manager/resource-group-template-deploy-rest.md).
+* С [помощью портал Azure](../azure-resource-manager/templates/deploy-portal.md).
+* С [помощью Azure CLI](../azure-resource-manager/templates/deploy-cli.md).
+* С [помощью REST API](../azure-resource-manager/templates/deploy-rest.md).
 
 ## <a name="delete"></a>Отзыв и удаление канала ExpressRoute
 
@@ -90,7 +90,7 @@ Azure PowerShell используется для развертывания ша
 
 * Связь между ExpressRoute и всеми виртуальными сетями необходимо разорвать. Если операция завершится ошибкой, проверьте, не привязаны ли к каналу какие-либо виртуальные сети.
 * Если подготовка поставщика услуг канала ExpressRoute находится в состоянии **Идет подготовка** или **Подготовлено** то свяжитесь с поставщиком услуг, чтобы отозвать канал с его стороны. Мы будем резервировать ресурсы и выставлять вам счета до тех пор, пока поставщик услуг не завершит отзыв канала и не отправит нам соответствующее уведомление.
-* Если поставщик услуг отзовет канал (состояние подготовки поставщика услуг изменится на **Не подготовлено**), вы можете удалить его. Это приостанавливает выставление счетов для канала.
+* Если поставщик услуг отзовет канал (состояние подготовки поставщика услуг изменится на **Не подготовлено**), вы можете удалить такой канал. Это приостанавливает выставление счетов для канала.
 
 Вы можете удалить канал ExpressRoute, выполнив следующую команду PowerShell:
 
@@ -101,7 +101,7 @@ $resourceGroupName = "${circuitName}rg"
 Remove-AzExpressRouteCircuit -ResourceGroupName $resourceGroupName -Name $circuitName
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Создав канал, выполните задачи, описанные в следующих статьях:
 

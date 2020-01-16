@@ -1,6 +1,6 @@
 ---
-title: включение файла
-description: включение файла
+title: включить файл
+description: включить файл
 services: virtual-machines
 author: singhkays
 ms.service: virtual-machines
@@ -8,20 +8,20 @@ ms.topic: include
 ms.date: 05/18/2018
 ms.author: kasing
 ms.custom: include file
-ms.openlocfilehash: c8629975d375dda32fdd9aee42b4ae09069a2049
-ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
+ms.openlocfilehash: a7a3c6edbbeca96a90f8003fda1b92fc8bf99fec
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74005419"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76021016"
 ---
 ## <a name="does-this-migration-plan-affect-any-of-my-existing-services-or-applications-that-run-on-azure-virtual-machines"></a>Влияет ли этот план миграции на существующие службы или приложения, которые выполняются на виртуальных машинах Azure? 
 
-Нет Виртуальные машины (классические) — это службы, которые полностью поддерживаются в общедоступной версии. Можно продолжать использовать эти ресурсы, чтобы расширить занимаемый объем в Microsoft Azure.
+Нет. Виртуальные машины (классические) — это службы, которые полностью поддерживаются в общедоступной версии. Можно продолжать использовать эти ресурсы, чтобы расширить занимаемый объем в Microsoft Azure.
 
 ## <a name="what-happens-to-my-vms-if-i-dont-plan-on-migrating-in-the-near-future"></a>Что произойдет с моей виртуальной машиной, если я не планирую перенос в ближайшем будущем? 
 
-Мы не прекратим предоставлять поддержку существующих интерфейсов API и ресурсов классической модели. Мы хотим максимально упростить миграцию с помощью расширенных функций, доступных в модели развертывания с помощью Resource Manager. Настоятельно рекомендуется рассмотреть [некоторые улучшения](../articles/azure-resource-manager/resource-manager-deployment-model.md) , добавленные в Resource Manager как часть IaaS.
+Мы не прекратим предоставлять поддержку существующих интерфейсов API и ресурсов классической модели. Мы хотим максимально упростить миграцию с помощью расширенных функций, доступных в модели развертывания с помощью Resource Manager. Настоятельно рекомендуется рассмотреть [некоторые улучшения](../articles/azure-resource-manager/management/deployment-models.md) , добавленные в Resource Manager как часть IaaS.
 
 ## <a name="what-does-this-migration-plan-mean-for-my-existing-tooling"></a>Как изменятся существующие средства с этим планом миграции? 
 
@@ -41,7 +41,7 @@ ms.locfileid: "74005419"
 
 ## <a name="do-i-have-to-buy-another-express-route-circuit-if-i-have-to-use-iaas-under-resource-manager"></a>Нужно ли приобретать еще один канал ExpressRoute, если нужно использовать ресурсы IaaS в модели Resource Manager? 
 
-Нет Мы недавно включили [перемещение каналов ExpressRoute из классической модели развертывания в модель развертывания с помощью Resource Manager](../articles/expressroute/expressroute-move.md). Поэтому при наличии существующего канала ExpressRoute не нужно приобретать еще один.
+Нет. Мы недавно включили [перемещение каналов ExpressRoute из классической модели развертывания в модель развертывания с помощью Resource Manager](../articles/expressroute/expressroute-move.md). Поэтому при наличии существующего канала ExpressRoute не нужно приобретать еще один.
 
 ## <a name="what-if-i-had-configured-role-based-access-control-policies-for-my-classic-iaas-resources"></a>Что произойдет, если для классических ресурсов IaaS настроено управление доступом на основе ролей? 
 

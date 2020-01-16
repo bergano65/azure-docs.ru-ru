@@ -7,12 +7,12 @@ ms.reviewer: klam, logicappspm
 ms.topic: conceptual
 ms.date: 12/15/2019
 tags: connectors
-ms.openlocfilehash: 71f768506d7cec575c6bd765447397d8d0406859
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 0314dceb23f02b723854dfc406e9440bbc14ccf6
+ms.sourcegitcommit: 05cdbb71b621c4dcc2ae2d92ca8c20f216ec9bc4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75446113"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76044287"
 ---
 # <a name="create-monitor-and-manage-ftp-files-by-using-azure-logic-apps"></a>Создание и отслеживание FTP-файлов, а также управление ими с помощью Azure Logic Apps
 
@@ -25,7 +25,7 @@ ms.locfileid: "75446113"
 
 Вы можете использовать триггеры, которые получают ответы из сервера FTP и делают выходные данные доступными для других действий. Вы можете использовать действия запуска в своих приложениях логики для управления файлами на сервере FTP. Кроме того, выходные данные от действий FTP могут использоваться другими действиями. Например, если вы регулярно извлекаете файлы с сервера FTP, вы можете отправлять сообщения об этих файлах и их содержимое с помощью соединителя Office 365 Outlook или соединителя Outlook.com. Если вы не знакомы с приложениями логики, ознакомьтесь со статьей [Что такое Azure Logic Apps](../logic-apps/logic-apps-overview.md).
 
-## <a name="limits"></a>Ограничения
+## <a name="limitations"></a>Ограничения
 
 * Соединитель FTP поддерживает только явный FTP через SSL (FTPS) и не совместим с неявным FTPS.
 
@@ -36,6 +36,8 @@ ms.locfileid: "75446113"
   * Используйте триггер FTP, возвращающий свойства файла, например **при добавлении или изменении файла (только свойства)** .
 
   * Выполните триггер с действием FTP **Get File Content** , которое считывает полный файл и неявно использует фрагментацию.
+
+* Если у вас есть локальный FTP-сервер, рассмотрите возможность создания [среды службы интеграции (ISE)](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md) или использования [гибридных подключений службы приложений Azure](../app-service/app-service-hybrid-connections.md), которые позволяют получать доступ к локальным источникам данных без использования локального шлюза данных.
 
 ## <a name="how-ftp-triggers-work"></a>Как работают триггеры FTP
 

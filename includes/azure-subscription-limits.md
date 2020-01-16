@@ -1,6 +1,6 @@
 ---
-title: включение файла
-description: включение файла
+title: включить файл
+description: включить файл
 services: billing
 author: rothja
 ms.service: cost-management-billing
@@ -8,17 +8,17 @@ ms.topic: include
 ms.date: 05/18/2018
 ms.author: jroth
 ms.custom: include file
-ms.openlocfilehash: 5b2ab103c2384b53f384c45945b387585fdbb4b4
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: f49d91a2dffbd02067efd82b88963b5cb6eaa8b4
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74224429"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76021270"
 ---
-| Resource (Ресурс) | Ограничение по умолчанию | Максимальное ограничение |
+| Ресурс | Ограничение по умолчанию | Максимальное ограничение |
 | --- | --- | --- |
-| Виртуальных ЦП на [подписку](../articles/billing-buy-sign-up-azure-subscription.md)<sup>1</sup> |20 |10 000 |
-| [Соадминистраторов](../articles/billing-add-change-azure-subscription-administrator.md) на подписку |200 |200 |
+| Число виртуальных ЦП на [подписку](../articles/billing-buy-sign-up-azure-subscription.md)<sup>1</sup> |20 |10 000 |
+| [Соадминистраторов](../articles/cost-management-billing/manage/add-change-subscription-administrator.md) на подписку |200 |200 |
 | [Учетных записей хранения](../articles/storage/common/storage-create-storage-account.md) на подписку<sup>2</sup> |100 |100 |
 | [Облачные службы](../articles/cloud-services/cloud-services-choose-me.md) на подписку |20 |200 |
 | [Локальные сети](/previous-versions/azure/reference/jj157100(v=azure.100)) на подписку |10 |500 |

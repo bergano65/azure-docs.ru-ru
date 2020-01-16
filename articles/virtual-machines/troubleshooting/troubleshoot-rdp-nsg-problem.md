@@ -12,12 +12,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 11/20/2018
 ms.author: genli
-ms.openlocfilehash: 5f95b42fd17aec4e3ec6b7b8fac1965772fefa67
-ms.sourcegitcommit: a7a9d7f366adab2cfca13c8d9cbcf5b40d57e63a
+ms.openlocfilehash: aedb9c8d178cb210efedf8ff4bcbbeca39f89e60
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/20/2019
-ms.locfileid: "71162594"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75981809"
 ---
 #  <a name="cannot-connect-remotely-to-a-vm-because-rdp-port-is-not-enabled-in-nsg"></a>Ошибка удаленного подключения к виртуальной машине из-за отключенного порта RDP в NSG
 
@@ -25,7 +25,7 @@ ms.locfileid: "71162594"
 
 
 > [!NOTE] 
-> В Azure предусмотрены две модели развертывания, позволяющие создавать ресурсы и работать с ними: [модель развертывания с помощью Resource Manager и классическая модель](../../azure-resource-manager/resource-manager-deployment-model.md). Для новых развертываний мы рекомендуем использовать модель развертывания Resource Manager вместо классической. 
+> В Azure предусмотрены две модели развертывания, позволяющие создавать ресурсы и работать с ними: [модель Resource Manager и классическая модель](../../azure-resource-manager/management/deployment-models.md). Для новых развертываний мы рекомендуем использовать модель развертывания Resource Manager вместо классической. 
 
 ## <a name="symptom"></a>Симптом
 
@@ -45,9 +45,9 @@ ms.locfileid: "71162594"
     **Имя**: Port_3389 </br>
     **Порт (назначение)** : 3389 </br>
     **Протокол**: TCP </br>
-    **Источник**: Any </br>
-    **Назначения**: Any </br>
-    **Действие**: Allow </br>
+    **Источник**: Любой </br>
+    **Назначение**: Любое </br>
+    **Действие**: Разрешить </br>
 
 Если вы указываете IP-адрес источника, этот параметр разрешает передачу трафика только с определенного IP-адреса или диапазона IP-адресов для подключения к виртуальной машине. Убедитесь, что компьютер, который используется для начала сеанса RDP, находится в диапазоне.
 
@@ -56,7 +56,7 @@ ms.locfileid: "71162594"
 > [!NOTE]
 > RDP-порт 3389 доступен через Интернет. Поэтому мы рекомендуем использовать этот порт только для тестирования. Для рабочих сред мы рекомендуем использовать VPN или частное подключение.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если порт RDP уже включен в NSG, ознакомьтесь со статьей [Устранение общей ошибки RDP на виртуальной машине Azure](./troubleshoot-rdp-general-error.md).
 

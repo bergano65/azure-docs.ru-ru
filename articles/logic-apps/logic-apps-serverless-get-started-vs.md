@@ -6,12 +6,12 @@ ms.suite: integration
 ms.reviewer: klam, logicappspm
 ms.topic: article
 ms.date: 06/20/2019
-ms.openlocfilehash: a3fcff9f895fba3574bbce976087295018ab51c0
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 2e27958dd9379a26ca7e7f4d7e427e5afa216e29
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75428743"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75981163"
 ---
 # <a name="build-your-first-serverless-app-by-using-azure-logic-apps-and-azure-functions-in-visual-studio"></a>Создание первого бессерверного приложения с помощью Azure Logic Apps и функций Azure в Visual Studio
 
@@ -56,7 +56,7 @@ ms.locfileid: "75428743"
 
 ## <a name="create-a-resource-group-project"></a>Создание проекта группы ресурсов
 
-Чтобы начать работу, создайте для бессерверного приложения [проект группы ресурсов Azure](../azure-resource-manager/vs-azure-tools-resource-groups-deployment-projects-create-deploy.md). В Azure вы создаете ресурсы в *группе ресурсов*, которая является логической коллекцией, используемой для Организации и развертывания ресурсов для всего приложения в виде одного ресурса. Группа ресурсов для бессерверного приложения в Azure содержит ресурсы для Azure Logic Apps и службы "Функции Azure". Узнайте больше о [группах ресурсов Azure и ресурсах](../azure-resource-manager/management/overview.md).
+Чтобы начать работу, создайте для бессерверного приложения [проект группы ресурсов Azure](../azure-resource-manager/templates/create-visual-studio-deployment-project.md). В Azure вы создаете ресурсы в *группе ресурсов*, которая является логической коллекцией, используемой для Организации и развертывания ресурсов для всего приложения в виде одного ресурса. Группа ресурсов для бессерверного приложения в Azure содержит ресурсы для Azure Logic Apps и службы "Функции Azure". Узнайте больше о [группах ресурсов Azure и ресурсах](../azure-resource-manager/management/overview.md).
 
 1. Запустите Visual Studio и выполните вход с помощью учетной записи Azure.
 

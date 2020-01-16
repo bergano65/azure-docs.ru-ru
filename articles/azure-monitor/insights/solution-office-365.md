@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 01/08/2019
-ms.openlocfilehash: aaa083ef52dcf18fade3315f598b5f57e791cbe0
-ms.sourcegitcommit: 014e916305e0225512f040543366711e466a9495
+ms.openlocfilehash: b026ef7dbbe850f0d2d1cb67ec8ca93b14ef879a
+ms.sourcegitcommit: 05cdbb71b621c4dcc2ae2d92ca8c20f216ec9bc4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75932972"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76044909"
 ---
 # <a name="office-365-management-solution-in-azure-preview"></a>Решение по управлению Office 365 в Azure (предварительная версия)
 
@@ -106,7 +106,7 @@ ms.locfileid: "75932972"
 > 
 > ###   <a name="q-what-will-happen-on-march-30-do-i-need-to-offboard-beforehand"></a>Вопрос. что произойдет 30 марта? Нужно ли отключение заранее?
 > 
-> - Вы не сможете получать данные из решения **Office 365** , и они будут удалены из всех рабочих областей, где они установлены. Решение больше не будет доступно в Marketplace
+> - Вы не сможете получать данные из решения **Office 365** . Решение больше не будет доступно в Marketplace
 > - Для клиентов с метками Azure **Office 365** в решение Azure Sentinel **секуритинсигхтс** будет включена log Analyticsная Рабочая область.
 > - Если вы не отключение решение вручную, ваши данные будут автоматически отключены 30 марта.
 > 

@@ -6,14 +6,14 @@ services: vpn-gateway
 author: cherylmc
 ms.service: vpn-gateway
 ms.topic: conceptual
-ms.date: 07/31/2019
+ms.date: 01/15/2020
 ms.author: cherylmc
-ms.openlocfilehash: 85ea3855b13350901d85701e9bca8d87ff6632c3
-ms.sourcegitcommit: 5b073caafebaf80dc1774b66483136ac342f7808
+ms.openlocfilehash: d1693a6165aa31b221b6901e2e1c8b2955a3dfb3
+ms.sourcegitcommit: 05cdbb71b621c4dcc2ae2d92ca8c20f216ec9bc4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75778810"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76045705"
 ---
 # <a name="create-a-vnet-with-a-site-to-site-vpn-connection-using-powershell"></a>Создание виртуальной сети с VPN-подключением типа "сеть — сеть" с помощью PowerShell
 
@@ -33,23 +33,15 @@ ms.locfileid: "75778810"
 
 ## <a name="before"></a>Перед началом работы
 
-[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
-
 Перед началом настройки убедитесь, что удовлетворены следующие требования:
 
 * Убедитесь, что у вас есть совместимое VPN–устройство и пользователь, который может настроить его. Дополнительные сведения о совместимых устройствах VPN и их настройке см. в [этой статье](vpn-gateway-about-vpn-devices.md).
 * Убедитесь, что у вас есть общедоступный IPv4–адрес для вашего VPN–устройства.
 * Если вы не знаете диапазоны IP-адресов в своей конфигурации локальной сети, найдите того, кто сможет предоставить вам нужную информацию. При создании этой конфигурации необходимо указать префиксы диапазона IP-адресов, которые Azure будет направлять к локальному расположению. Ни одна из подсетей локальной сети не может перекрывать виртуальные подсети, к которым вы хотите подключиться.
 
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
+### <a name="azure-powershell"></a>Azure PowerShell
 
-### <a name="running-powershell-locally"></a>Запуск PowerShell в локальной среде
-
-Чтобы установить и использовать PowerShell локально, потребуется установить последнюю версию командлетов PowerShell для Azure Resource Manager. Командлеты PowerShell обновляются часто, и вам, как правило, необходимо обновить командлеты PowerShell, чтобы получить новейшие функциональные возможности. Если вы не обновите командлеты PowerShell, при указании значений может произойти сбой. 
-
-Чтобы определить, какая версия используется, выполните командлет Get-Module -ListAvailable Az. Если необходимо выполнить обновление, см. статью об [установке модуля Azure PowerShell](/powershell/azure/install-az-ps). Подробнее: [Установка и настройка Azure PowerShell](/powershell/azure/overview).
-Если модуль PowerShell запущен локально, необходимо также выполнить командлет Connect-AzAccount, чтобы создать подключение к Azure.
-
+[!INCLUDE [powershell](../../includes/vpn-gateway-cloud-shell-powershell-about.md)]
 
 ### <a name="example"></a>Примеры значений
 
@@ -257,6 +249,15 @@ New-AzVirtualNetworkGateway -Name VNet1GW -ResourceGroupName TestRG1 `
 ## <a name="modifygwipaddress"></a>Изменение IP-адреса шлюза для локального сетевого шлюза
 
 [!INCLUDE [Modify gateway IP address](../../includes/vpn-gateway-modify-lng-gateway-ip-rm-include.md)]
+
+## <a name="deleteconnection"></a>Удаление подключения шлюза
+
+Если имя подключения неизвестно, его можно найти с помощью командлета Get-Азвиртуалнетворкгатевайконнектион.
+
+```azurepowershell-interactive
+Remove-AzVirtualNetworkGatewayConnection -Name VNet1toSite1 `
+-ResourceGroupName TestRG1
+```
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

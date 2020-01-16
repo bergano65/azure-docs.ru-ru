@@ -6,14 +6,14 @@ services: vpn-gateway
 author: cherylmc
 ms.service: vpn-gateway
 ms.topic: article
-ms.date: 01/10/2020
+ms.date: 01/15/2020
 ms.author: cherylmc
-ms.openlocfilehash: 4df22108591fe3f80078bce050081c4953443847
-ms.sourcegitcommit: 3eb0cc8091c8e4ae4d537051c3265b92427537fe
+ms.openlocfilehash: 9342a70e539c4a2717fe45426c26595285172681
+ms.sourcegitcommit: 05cdbb71b621c4dcc2ae2d92ca8c20f216ec9bc4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75902996"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76045782"
 ---
 # <a name="create-and-install-vpn-client-configuration-files-for-native-azure-certificate-authentication-p2s-configurations"></a>Создание и установка файлов конфигурации VPN-клиента для настройки подключений типа "точка — сеть" с использованием собственной аутентификации Azure на основе сертификата
 
@@ -99,9 +99,14 @@ ms.locfileid: "75902996"
 4. В папке **Generic** из файла **VpnSettings.xml** скопируйте значение тега **VpnServer**. Вставьте это значение в поля профиля **Server Address** (Адрес сервера) и **Remote ID** (Удаленный ИД).
 
    ![Сведения о сервере](./media/point-to-site-vpn-client-configuration-azure-cert/server.png)
-5. Щелкните **Authentication Settings** (Параметры аутентификации) и выберите **Certificate** (Сертификат). 
+5. Щелкните **Authentication Settings** (Параметры аутентификации) и выберите **Certificate** (Сертификат). Для **Catalina**щелкните **нет** , а затем — **сертификат** .
 
    ![Параметры аутентификации](./media/point-to-site-vpn-client-configuration-azure-cert/authsettings.png)
+
+   * Для Catalina выберите **нет** и **сертификат**. **Выберите** правильный сертификат:
+   
+   ![Catalina](./media/point-to-site-vpn-client-configuration-azure-cert/catalina.png)
+
 6. Щелкните **Select…** (Выбрать), чтобы выбрать сертификат клиента, который будет использоваться для аутентификации. Это сертификат, установленный на шаге 2.
 
    ![сертификат](./media/point-to-site-vpn-client-configuration-azure-cert/certificate.png)

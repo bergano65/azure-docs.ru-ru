@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 11/22/2019
 ms.author: apimpm
-ms.openlocfilehash: a06184cb45280d323a050085e94945a730d6c72c
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 81daada7a62da86772d4657a1a8aaff91f27b673
+ms.sourcegitcommit: 05cdbb71b621c4dcc2ae2d92ca8c20f216ec9bc4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75442592"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76045583"
 ---
 # <a name="azure-api-management-developer-portal-overview"></a>Обзор портала разработчика управления API Azure
 
@@ -39,7 +39,7 @@ ms.locfileid: "75442592"
 Создать портал разработчика можно двумя способами:
 
 - **Управляемая версия** — путем изменения и настройки портала, который встроен в экземпляр управления API и доступен по URL-адресу `<your-api-management-instance-name>.developer.azure-api.net`. Сведения о том, как получить доступ и настроить управляемый портал, см. в [этой статье документации](api-management-howto-developer-portal-customize.md) .
-- **Самостоятельная версия** — путем развертывания и самостоятельного размещения портала за пределами экземпляра управления API. Такой подход позволяет изменять базу кода портала и расширять предоставляемые Основные функции. Также необходимо обновить портал до последней версии. Дополнительные сведения и инструкции см. в [репозитории GitHub с исходным кодом портала][1]. [Руководство по управляемой версии](api-management-howto-developer-portal-customize.md) переходит на панель администрирования портала, которая также включена в версию на собственном сервере.
+- **Самостоятельная версия** — путем развертывания и самостоятельного размещения портала за пределами экземпляра управления API. Такой подход позволяет изменять базу кода портала и расширять предоставляемые Основные функции. Также необходимо обновить портал до последней версии. Дополнительные сведения и инструкции см. в [репозитории GitHub с исходным кодом портала][1] и [в руководстве по реализации мини-][4]приложения. [Руководство по управляемой версии](api-management-howto-developer-portal-customize.md) переходит на панель администрирования портала, которая также включена в версию на собственном сервере.
 
 ## <a name="portal-architectural-concepts"></a>Основные понятия архитектуры портала
 
@@ -101,6 +101,10 @@ ms.locfileid: "75442592"
 Старые порталы для разработчиков и издателей теперь являются *устаревшими* компонентами — они будут получать только обновления для системы безопасности. Новые возможности будут внедрены только на новом портале разработчика.
 
 Устаревшие устаревшие порталы будут объявлены отдельно. Если у вас есть вопросы, проблемы или комментарии, их следует вызывать [в выделенной проблемы GitHub](https://github.com/Azure/api-management-developer-portal/issues/121).
+
+### <a name="functionality-i-need-isnt-supported-in-the-portal"></a>Требуемые функции не поддерживаются на портале
+
+Используйте автономную версию и [Реализуйте собственное мини-приложение][4].
 
 ### <a name="how-can-i-automate-portal-deployments"></a>Как автоматизировать развертывание портала?
 
@@ -216,6 +220,7 @@ New-AzRoleAssignment -SignInName "user1@contoso.com" -RoleDefinitionName "APIM N
 
 - [Доступ и Настройка портала управляемого разработчика](api-management-howto-developer-portal-customize.md)
 - [Настройка самостоятельно размещенной версии портала][2]
+- [Реализация собственного мини-приложения][4]
 
 Обзор других ресурсов:
 
@@ -225,3 +230,4 @@ New-AzRoleAssignment -SignInName "user1@contoso.com" -RoleDefinitionName "APIM N
 [1]: https://aka.ms/apimdevportal
 [2]: https://github.com/Azure/api-management-developer-portal/wiki
 [3]: https://github.com/Azure/api-management-developer-portal/projects
+[4]: https://aka.ms/apimdevportal/extend

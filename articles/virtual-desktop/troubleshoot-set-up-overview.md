@@ -7,12 +7,12 @@ ms.service: virtual-desktop
 ms.topic: troubleshooting
 ms.date: 12/06/2019
 ms.author: helohr
-ms.openlocfilehash: 817cd09797ad861521a462da9c5d0850c65bf562
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: ce1af278d67f96873ed611db8dc05938205638dc
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75459570"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75980238"
 ---
 # <a name="troubleshooting-overview-feedback-and-support"></a>Общие сведения об устранении неисправностей, отзывы и поддержка
 
@@ -27,7 +27,7 @@ ms.locfileid: "75459570"
 Используйте следующую таблицу для определения и устранения проблем, с которыми вы можете столкнуться при настройке среды клиента с помощью клиента удаленный рабочий стол. После настройки клиента можно использовать нашу новую [службу диагностики](https://docs.microsoft.com/azure/virtual-desktop/diagnostics-role-service) для определения проблем в распространенных сценариях.
 
 >[!NOTE]
-> У нас есть форум технического сообщества, который можно использовать для обсуждения проблем, связанных с группой разработки продукта и активными членами сообщества. Посетите [сообщество специалистов по виртуальным рабочим столам Windows](https://techcommunity.microsoft.com/t5/Windows-Virtual-Desktop/bd-p/WindowsVirtualDesktop) , чтобы 
+> У нас есть форум технического сообщества, который можно использовать для обсуждения проблем, связанных с группой разработки продукта и активными членами сообщества. Посетите [сообщество специалистов по виртуальным рабочим столам Windows](https://techcommunity.microsoft.com/t5/Windows-Virtual-Desktop/bd-p/WindowsVirtualDesktop) , чтобы
 
 | **Проблема**                                                            | **Предлагаемое решение**  |
 |----------------------------------------------------------------------|-------------------------------------------------|
@@ -54,6 +54,6 @@ ms.locfileid: "75459570"
 - Сведения об устранении неполадок, связанных с удаленный рабочий стол клиентами, см. [в разделе Устранение неполадок клиента удаленный рабочий стол](troubleshoot-client.md)
 - Сведения об устранении неполадок при использовании PowerShell с виртуальным рабочим столом Windows см. в статье [Windows Virtual Desktop PowerShell](troubleshoot-powershell.md).
 - Дополнительные сведения о службе см. в разделе [Среда виртуальных рабочих столов Windows](environment-setup.md).
-- Руководство по устранению неполадок см. в разделе [учебник. Устранение неполадок диспетчер ресурсов развертываний шаблонов](../azure-resource-manager/resource-manager-tutorial-troubleshoot.md).
-- Сведения о действиях аудита см. в статье [Операции аудита с помощью Resource Manager](../azure-resource-manager/resource-group-audit.md).
-- Сведения о действиях по определению ошибок при развертывании см. в разделе [Просмотр операций развертывания](../azure-resource-manager/resource-manager-deployment-operations.md).
+- Руководство по устранению неполадок см. в разделе [учебник. Устранение неполадок диспетчер ресурсов развертываний шаблонов](../azure-resource-manager/templates/template-tutorial-troubleshoot.md).
+- Сведения о действиях аудита см. в статье [Операции аудита с помощью Resource Manager](../azure-resource-manager/management/view-activity-logs.md).
+- Сведения о действиях по определению ошибок при развертывании см. в разделе [Просмотр операций развертывания](../azure-resource-manager/templates/deployment-history.md).

@@ -1,14 +1,14 @@
 ---
 title: Просмотр поставщиков служб и управление ими
 description: Клиенты могут использовать страницу "Поставщики услуг" на портале Azure для просмотра сведений о поставщиках услуг, предложениях поставщиков услуг и делегированных ресурсах.
-ms.date: 11/15/2019
+ms.date: 01/15/2020
 ms.topic: conceptual
-ms.openlocfilehash: 453f5d3ba4ed5c49b5e71c7530298bc0a03c73ee
-ms.sourcegitcommit: 95931aa19a9a2f208dedc9733b22c4cdff38addc
+ms.openlocfilehash: ff3c37c02c580a833008a65315009d1e42e49043
+ms.sourcegitcommit: 05cdbb71b621c4dcc2ae2d92ca8c20f216ec9bc4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74463809"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76046125"
 ---
 # <a name="view-and-manage-service-providers"></a>Просмотр поставщиков служб и управление ими
 
@@ -61,7 +61,10 @@ ms.locfileid: "74463809"
 
 Фильтры в верхней части страницы позволяют сортировать и группировать сведения о делегировании или фильтровать их по клиентам, предложениям или ключевым словам.
 
-## <a name="next-steps"></a>Дополнительная информация
+> [!NOTE]
+> Клиенты не увидят эти назначения ролей или пользователей из клиента поставщика услуг, которым предоставлены эти роли, при [просмотре сведений о назначении ролей для делегированной области в портал Azure](../../role-based-access-control/role-assignments-list-portal.md#list-role-assignments-at-a-scope) или через API-интерфейсы.
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о [Azure Lighthouse](../overview.md).
 - Узнайте, как поставщики услуг могут [просматривать клиентов и управлять ими](view-manage-customers.md), перейдя на страницу **Мои клиенты** на портале Azure.

@@ -1,20 +1,20 @@
 ---
-title: включение файла
-description: включение файла
+title: включить файл
+description: включить файл
 services: digital-twins
 ms.author: alinast
 author: alinamstanciu
 manager: bertvanhoof
 ms.service: digital-twins
 ms.topic: include
-ms.date: 11/20/2019
+ms.date: 01/15/2020
 ms.custom: include file
-ms.openlocfilehash: 53733a3fb33aeb99321d4c94a64225ffa84eb424
-ms.sourcegitcommit: 8a2949267c913b0e332ff8675bcdfc049029b64b
+ms.openlocfilehash: 864d693f2919922b5035f963103b2ce98600a51c
+ms.sourcegitcommit: 05cdbb71b621c4dcc2ae2d92ca8c20f216ec9bc4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74307226"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76044927"
 ---
 В следующей таблице описаны имеющиеся роли в Azure Digital Twins:
 

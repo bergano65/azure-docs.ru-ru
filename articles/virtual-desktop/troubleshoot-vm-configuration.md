@@ -7,12 +7,12 @@ ms.service: virtual-desktop
 ms.topic: troubleshooting
 ms.date: 12/03/2019
 ms.author: helohr
-ms.openlocfilehash: c357e460e49ffee669f3978be7678353acfcd249
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: f8400cbefc514fa01dedb1434a60989b1df0528d
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75459433"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75980218"
 ---
 # <a name="session-host-virtual-machine-configuration"></a>Конфигурация виртуальной машины узла сеанса
 
@@ -209,11 +209,11 @@ ms.locfileid: "75459433"
 
 1. Используйте протокол удаленного рабочего стола (RDP) для непосредственного перехода на виртуальную машину узла сеансов в качестве локального администратора.
 2. Скачайте и импортируйте [модуль PowerShell для виртуальных рабочих столов Windows](https://docs.microsoft.com/powershell/windows-virtual-desktop/overview) , который будет использоваться в сеансе PowerShell, если вы этого еще не сделали, а затем выполните этот командлет, чтобы войти в учетную запись:
-    
+
     ```powershell
     Add-RdsAccount -DeploymentUrl "https://rdbroker.wvd.microsoft.com"
     ```
-    
+
 3. Установите параллельный стек, используя [Создание пула узлов с помощью PowerShell](https://docs.microsoft.com/azure/virtual-desktop/create-host-pools-powershell).
 
 ## <a name="how-to-fix-a-windows-virtual-desktop-side-by-side-stack-that-malfunctions"></a>Как исправить стек параллельных виртуальных рабочих столов Windows, который работает неверно
@@ -322,7 +322,7 @@ ms.locfileid: "75459433"
 2. Введите "About" в строку поиска рядом с меню "Пуск".
 3. Выберите **о компьютере**.
 4. Проверьте номер рядом с номером версии. Необходимо указать значение "1809" или "1903", как показано на следующем рисунке.
-   
+
     ![Снимок экрана окна спецификации Windows. Номер версии выделен синим цветом.](media/windows-specifications.png)
 
 Теперь, когда вы знакомы с номером версии, перейдите к соответствующему разделу.
@@ -344,6 +344,6 @@ ms.locfileid: "75459433"
 - Сведения об устранении неполадок, связанных с удаленный рабочий стол клиентами, см. [в разделе Устранение неполадок клиента удаленный рабочий стол](troubleshoot-client.md)
 - Сведения об устранении неполадок при использовании PowerShell с виртуальным рабочим столом Windows см. в статье [Windows Virtual Desktop PowerShell](troubleshoot-powershell.md).
 - Дополнительные сведения о службе см. в разделе [Среда виртуальных рабочих столов Windows](environment-setup.md).
-- Руководство по устранению неполадок см. в разделе [учебник. Устранение неполадок диспетчер ресурсов развертываний шаблонов](../azure-resource-manager/resource-manager-tutorial-troubleshoot.md).
-- Сведения о действиях аудита см. в статье [Операции аудита с помощью Resource Manager](../azure-resource-manager/resource-group-audit.md).
-- Дополнительные сведения об определении ошибок во время развертывания см. в статье [Просмотр операций развертывания с помощью портала Azure](../azure-resource-manager/resource-manager-deployment-operations.md).
+- Руководство по устранению неполадок см. в разделе [учебник. Устранение неполадок диспетчер ресурсов развертываний шаблонов](../azure-resource-manager/templates/template-tutorial-troubleshoot.md).
+- Сведения о действиях аудита см. в статье [Операции аудита с помощью Resource Manager](../azure-resource-manager/management/view-activity-logs.md).
+- Дополнительные сведения об определении ошибок во время развертывания см. в статье [Просмотр операций развертывания с помощью портала Azure](../azure-resource-manager/templates/deployment-history.md).

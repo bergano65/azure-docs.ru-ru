@@ -8,12 +8,12 @@ ms.author: jehollan
 ms.reviewer: estfan, logicappspm
 ms.topic: article
 ms.date: 03/15/2018
-ms.openlocfilehash: ebc1d449cdb8702a984304e92697d4b7c778daaa
-ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
+ms.openlocfilehash: e300bf9c9aa0acf0bed6426eb73f690f9a38bd74
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74792903"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75980425"
 ---
 # <a name="create-a-streaming-customer-insights-dashboard-with-azure-logic-apps-and-azure-functions"></a>Создание панели мониторинга потоковой передачи сведений о клиентах с помощью Функций Azure и Azure Logic Apps.
 
@@ -104,7 +104,7 @@ Azure Logic Apps представляет беcсерверный обработ
 
 ## <a name="create-automated-deployment-templates"></a>Создание шаблонов для автоматического развертывания
 
-После создания решения приложения логики вы можете сохранить и развернуть его в качестве [шаблона Azure Resource Manager](../azure-resource-manager/template-deployment-overview.md) в любом регионе Azure в мире. Вы можете использовать эту возможность, чтобы изменить параметры как для создания различных версий вашего приложения, так и для интеграции вашего решения в Azure Pipelines. Функции Azure также можно включить в шаблон развертывания таким образом, чтобы всем решением вместе со всеми зависимостями можно было управлять как одним шаблоном. Узнайте, как [автоматизировать развертывание приложений логики](logic-apps-azure-resource-manager-templates-overview.md).
+После создания решения приложения логики вы можете сохранить и развернуть его в качестве [шаблона Azure Resource Manager](../azure-resource-manager/templates/overview.md) в любом регионе Azure в мире. Вы можете использовать эту возможность, чтобы изменить параметры как для создания различных версий вашего приложения, так и для интеграции вашего решения в Azure Pipelines. Функции Azure также можно включить в шаблон развертывания таким образом, чтобы всем решением вместе со всеми зависимостями можно было управлять как одним шаблоном. Узнайте, как [автоматизировать развертывание приложений логики](logic-apps-azure-resource-manager-templates-overview.md).
 
 Пример шаблона развертывания с функцией Azure можно найти в [репозитории шаблонов быстрого запуска Azure](https://github.com/Azure/azure-quickstart-templates/tree/master/101-function-app-create-dynamic).
 

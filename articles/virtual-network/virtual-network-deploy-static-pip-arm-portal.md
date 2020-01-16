@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 08/08/2018
 ms.author: kumud
-ms.openlocfilehash: 891b21aa1c832214fad12759643dc72a632e1cd7
-ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
+ms.openlocfilehash: 66050c16f40e0a06117327ef53e3aae87d03c5db
+ms.sourcegitcommit: 05cdbb71b621c4dcc2ae2d92ca8c20f216ec9bc4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75647804"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76043545"
 ---
 # <a name="create-a-virtual-machine-with-a-static-public-ip-address-using-the-azure-portal"></a>Создание виртуальной машины со статическим общедоступным IP-адресом с помощью портала Azure
 
@@ -51,7 +51,7 @@ ms.locfileid: "75647804"
 
    ![Выбор значения "Статический"](./media/virtual-network-deploy-static-pip-arm-portal/select-static.png)
 
-   Если общедоступный IP-адрес должен принадлежать к SKU "Стандартный", выберите **Стандартный** в разделе **SKU**. Дополнительные сведения о [номерах SKU общедоступных IP-адресов](virtual-network-ip-addresses-overview-arm.md#sku). Если виртуальная машина добавляется в серверный пул общедоступной подсистемы Azure Load Balancer, номера SKU общедоступных IP-адресов виртуальной машины и подсистемы балансировки нагрузки должны совпадать. Подробные сведения см. в статье [Что такое Azure Load Balancer](../load-balancer/load-balancer-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json#skus).
+   Если общедоступный IP-адрес должен принадлежать к SKU "Стандартный", выберите **Стандартный** в разделе **SKU**. Дополнительные сведения о [номерах SKU общедоступных IP-адресов](virtual-network-ip-addresses-overview-arm.md#sku). Если виртуальная машина добавляется в серверный пул общедоступной подсистемы Azure Load Balancer, номера SKU общедоступных IP-адресов виртуальной машины и подсистемы балансировки нагрузки должны совпадать. Подробные сведения см. в статье [Что такое Azure Load Balancer](../load-balancer/concepts-limitations.md#skus).
 
 6. Выберите порт или оставьте пустое поле в разделе **Выберите общедоступные входящие порты**. Порт 3389 выбран для обеспечения удаленного доступа к виртуальной машине Windows Server из Интернета. Открытие порта 3389 из Интернета не рекомендуется для производственных рабочих нагрузок.
 

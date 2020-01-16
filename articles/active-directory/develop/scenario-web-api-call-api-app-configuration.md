@@ -16,18 +16,18 @@ ms.date: 07/16/2019
 ms.author: jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2082265b96388b4fbf860118efc3eefd4c5c67af
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 1e54e26bba1618a3b5835480ed1b1fe698bc8db4
+ms.sourcegitcommit: 05cdbb71b621c4dcc2ae2d92ca8c20f216ec9bc4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75423591"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76043417"
 ---
-# <a name="web-api-that-calls-web-apis---code-configuration"></a>Веб-API, вызывающий веб-API — конфигурация кода
+# <a name="a-web-api-that-calls-web-apis-code-configuration"></a>Веб-API, вызывающий веб-API: конфигурация кода
 
 После регистрации веб-API можно настроить код для приложения.
 
-Код для настройки веб-API таким образом, чтобы он вызывал нисходящие веб-API, построенные поверх кода, используемого для защиты веб-API. Дополнительные сведения см. в разделе [защищенный веб-API — Конфигурация приложения](scenario-protected-web-api-app-configuration.md).
+Код, используемый для настройки веб-API таким образом, чтобы он вызывал нисходящие веб-API на основе кода, используемого для защиты веб-API. Дополнительные сведения см. в разделе [защищенный веб-API: Конфигурация приложения](scenario-protected-web-api-app-configuration.md).
 
 ## <a name="code-subscribed-to-ontokenvalidated"></a>Код подписан на Онтокенвалидатед
 
@@ -35,10 +35,10 @@ ms.locfileid: "75423591"
 
 ```csharp
 /// <summary>
-/// Protects the web API with Microsoft Identity Platform (a.k.k AAD v2.0)
+/// Protects the web API with the Microsoft identity platform, or Azure Active Directory (Azure AD) developer platform
 /// This supposes that the configuration files have a section named "AzureAD"
 /// </summary>
-/// <param name="services">Service collection to which to add authentication</param>
+/// <param name="services">The service collection to which to add authentication</param>
 /// <param name="configuration">Configuration</param>
 /// <returns></returns>
 public static IServiceCollection AddProtectedApiCallsWebApis(this IServiceCollection services,
@@ -49,14 +49,14 @@ public static IServiceCollection AddProtectedApiCallsWebApis(this IServiceCollec
     services.Configure<JwtBearerOptions>(AzureADDefaults.JwtBearerAuthenticationScheme, options =>
     {
         // When an access token for our own web API is validated, we add it 
-        // to MSAL.NET's cache so that it can be used from the controllers.
+        // to the MSAL.NET cache so that it can be used from the controllers.
         options.Events = new JwtBearerEvents();
 
         options.Events.OnTokenValidated = async context =>
         {
             context.Success();
 
-            // Adds the token to the cache, and also handles the incremental consent 
+            // Adds the token to the cache and handles the incremental consent 
             // and claim challenges
             AddAccountToCacheFromJwt(context, scopes);
             await Task.FromResult(0);
@@ -66,18 +66,18 @@ public static IServiceCollection AddProtectedApiCallsWebApis(this IServiceCollec
 }
 ```
 
-## <a name="on-behalf-of-flow"></a>Поток On-Behalf-Of
+## <a name="on-behalf-of-flow"></a>Поток "от имени"
 
 Метод Аддаккаунттокачефромжвт () должен:
 
-- Создайте экземпляр MSAL конфиденциального клиентского приложения.
-- Вызовите `AcquireTokenOnBehalf` для обмена токеном носителя, который был получен клиентом для веб-API, от токена носителя для того же пользователя, но для нашего API, чтобы вызвать нисходящий API.
+- Создание экземпляра конфиденциального клиентского приложения библиотеки проверки подлинности Microsoft (MSAL).
+- Вызовите метод `AcquireTokenOnBehalf` . Этот вызов обменивается токеном носителя, который был получен клиентом для веб-API, по токену носителя для того же пользователя, но у него есть API, который вызывает нисходящий API.
 
 ### <a name="instantiate-a-confidential-client-application"></a>Создание экземпляра конфиденциального клиентского приложения
 
-Этот поток доступен только в конфиденциальном потоке клиента, поэтому защищенный веб-API предоставляет учетные данные клиента (секрет клиента или сертификат) [ConfidentialClientApplicationBuilder](https://docs.microsoft.com/dotnet/api/microsoft.identity.client.confidentialclientapplicationbuilder) через методы `WithClientSecret` или `WithCertificate`.
+Этот поток доступен только в конфиденциальном потоке клиента, поэтому защищенный веб-API предоставляет учетные данные клиента (секрет клиента или сертификата) [классу конфидентиалклиентаппликатионбуилдер](https://docs.microsoft.com/dotnet/api/microsoft.identity.client.confidentialclientapplicationbuilder) с помощью метода `WithClientSecret` или `WithCertificate`.
 
-![изображение](https://user-images.githubusercontent.com/13203188/55967244-3d8e1d00-5c7a-11e9-8285-a54b05597ec9.png)
+![Список методов Иконфидентиалклиентаппликатион](https://user-images.githubusercontent.com/13203188/55967244-3d8e1d00-5c7a-11e9-8285-a54b05597ec9.png)
 
 ```csharp
 IConfidentialClientApplication app;
@@ -95,18 +95,20 @@ app = ConfidentialClientApplicationBuilder.Create(config.ClientId)
 #endif
 ```
 
-Наконец, вместо секрета клиента или сертификата конфиденциальные клиентские приложения также могут доказать свою личность с помощью утверждений клиента.
-Этот расширенный сценарий подробно описан в [утверждениях клиента](msal-net-client-assertions.md) .
+Наконец, вместо подтверждения своей личности с помощью секрета клиента или сертификата конфиденциальные клиентские приложения могут доказать свою личность с помощью утверждений клиента.
+Дополнительные сведения об этом расширенном сценарии см. в разделе [конфиденциальные утверждения клиента](msal-net-client-assertions.md).
 
 ### <a name="how-to-call-on-behalf-of"></a>Как позвонить от имени
 
-Вызов от имени пользователя (OBO) осуществляется путем вызова метода [аккуиретокенонбехалф](https://docs.microsoft.com/dotnet/api/microsoft.identity.client.acquiretokenonbehalfofparameterbuilder) в интерфейсе `IConfidentialClientApplication`.
+Чтобы выполнить вызов on-of (OBO), вызовите [метод аккуиретокенонбехалф](https://docs.microsoft.com/dotnet/api/microsoft.identity.client.acquiretokenonbehalfofparameterbuilder) в интерфейсе `IConfidentialClientApplication`.
 
-`UserAssertion` создается на основе токена носителя, полученного веб-API от собственных клиентов. Существует [два конструктора](https://docs.microsoft.com/dotnet/api/microsoft.identity.client.clientcredential.-ctor?view=azure-dotnet), один из которых принимает маркер носителя JWT, и один, принимающий любой тип пользовательского утверждения (другой тип маркера безопасности, который затем указывается в дополнительном параметре с именем `assertionType`).
+Класс `UserAssertion` строится на основе токена носителя, полученного веб-API от собственных клиентов. Существует [два конструктора](https://docs.microsoft.com/dotnet/api/microsoft.identity.client.clientcredential.-ctor?view=azure-dotnet):
+* Один, принимающий токен носителя JSON Web Token (JWT)
+* Один, принимающий любое утверждение пользователя, другой вид маркера безопасности, тип которого затем указывается в дополнительном параметре с именем `assertionType`
 
-![изображение](https://user-images.githubusercontent.com/13203188/37082180-afc4b708-21e3-11e8-8af8-a6dcbd2dfba8.png)
+![Свойства и методы Усерассертион](https://user-images.githubusercontent.com/13203188/37082180-afc4b708-21e3-11e8-8af8-a6dcbd2dfba8.png)
 
-На практике поток OBO часто используется для получения маркера для нисходящих API и сохранения его в кэше пользовательских маркеров MSAL.NET, чтобы другие части веб-API могли впоследствии вызывать [переопределения](https://docs.microsoft.com/dotnet/api/microsoft.identity.client.clientapplicationbase.acquiretokensilent?view=azure-dotnet) ``AcquireTokenOnSilent`` для вызова нижестоящих API. Этот вызов оказывает воздействие обновления токенов при необходимости.
+На практике поток OBO часто используется для получения маркера для подчиненного API и сохранения его в кэше пользовательских маркеров MSAL.NET. Это делается для того, чтобы другие части веб-API могли впоследствии вызывать [переопределения](https://docs.microsoft.com/dotnet/api/microsoft.identity.client.clientapplicationbase.acquiretokensilent?view=azure-dotnet) ``AcquireTokenOnSilent`` для вызова нижестоящих API. Этот вызов оказывает воздействие обновления токенов при необходимости.
 
 ```csharp
 private void AddAccountToCacheFromJwt(IEnumerable<string> scopes, JwtSecurityToken jwtToken, ClaimsPrincipal principal, HttpContext httpContext)
@@ -128,7 +130,7 @@ private void AddAccountToCacheFromJwt(IEnumerable<string> scopes, JwtSecurityTok
         // Create the application
         var application = BuildConfidentialClientApplication(httpContext, principal);
 
-        // .Result to make sure that the cache is filled-in before the controller tries to get access tokens
+        // .Result to make sure that the cache is filled in before the controller tries to get access tokens
         var result = application.AcquireTokenOnBehalfOf(requestedScopes.Except(scopesRequestedByMsalNet),
                                                         userAssertion)
                                 .ExecuteAsync()
@@ -142,13 +144,13 @@ private void AddAccountToCacheFromJwt(IEnumerable<string> scopes, JwtSecurityTok
 }
 ```
 
-Вы также можете просмотреть пример реализации потока в [NodeJS и функциях Azure](https://github.com/Azure-Samples/ms-identity-nodejs-webapi-onbehalfof-azurefunctions/blob/master/MiddleTierAPI/MyHttpTrigger/index.js#L61).
+Вы также можете увидеть пример реализации потока OBO в [node. js и функциях Azure](https://github.com/Azure-Samples/ms-identity-nodejs-webapi-onbehalfof-azurefunctions/blob/master/MiddleTierAPI/MyHttpTrigger/index.js#L61).
 
 ## <a name="protocol"></a>Протокол
 
-Дополнительные сведения о протоколе "от имени пользователя" см. в [статье о платформе Microsoft Identity и OAuth 2,0 от имени потока](https://docs.microsoft.com/azure/active-directory/develop/v2-oauth2-on-behalf-of-flow).
+Дополнительные сведения о протоколе OBO см. [в статье о платформе Microsoft Identity и OAuth 2,0 от имени потока](https://docs.microsoft.com/azure/active-directory/develop/v2-oauth2-on-behalf-of-flow).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Получение маркера для приложения](scenario-web-api-call-api-acquire-token.md)
+> [Веб-API, вызывающий веб-API: получение маркера для приложения](scenario-web-api-call-api-acquire-token.md)

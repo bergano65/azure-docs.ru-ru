@@ -15,20 +15,20 @@ ms.date: 05/07/2019
 ms.author: jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5829ca41aaa4bd61f8878657e5eedbf6351b5df4
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 701f1f7c26731f3e9653955907f5f16d2688cdb2
+ms.sourcegitcommit: 05cdbb71b621c4dcc2ae2d92ca8c20f216ec9bc4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75423582"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76043439"
 ---
-# <a name="web-api-that-calls-web-apis---call-an-api"></a>Веб-API, вызывающий веб-API — вызов API
+# <a name="a-web-api-that-calls-web-apis-call-an-api"></a>Веб-API, вызывающий веб-API: вызов API
 
-После получения маркера можно вызвать защищенный веб-API. Это делается с контроллера веб-API ASP.NET/ASP.NET Core.
+После создания маркера можно вызвать защищенный веб-API. Это можно сделать с помощью контроллера веб-API ASP.NET или ASP.NET Core.
 
 ## <a name="controller-code"></a>Код контроллера
 
-Вот продолжение примера кода, показанного в разделе [защищенный веб-API, вызывает веб-API — получение маркера](scenario-web-api-call-api-acquire-token.md), вызываемого в действиях контроллеров API, вызов подчиненного API (с именем ToDoList).
+Следующий код продолжит пример кода, показанного в [веб-API, который вызывает веб-API: получение маркера для приложения](scenario-web-api-call-api-acquire-token.md). Код вызывается в действиях контроллеров API. Он вызывает нисходящий API с именем *ToDoList*.
 
 После получения маркера используйте его в качестве токена носителя для вызова подчиненного API.
 
@@ -49,7 +49,7 @@ private async Task GetTodoList(bool isAppStarting)
  }
 ...
 
-// Once the token has been returned by MSAL, add it to the http authorization header, before making the call to access the To Do list service.
+// After the token has been returned by Microsoft Authentication Library (MSAL), add it to the HTTP authorization header before making the call to access the To Do list service.
 _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", result.AccessToken);
 
 // Call the To Do list service.
@@ -61,4 +61,4 @@ HttpResponseMessage response = await _httpClient.GetAsync(TodoListBaseAddress + 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Переместить в рабочую среду](scenario-web-api-call-api-production.md)
+> [Веб-API, который вызывает веб-API: переместить в рабочую среду](scenario-web-api-call-api-production.md)

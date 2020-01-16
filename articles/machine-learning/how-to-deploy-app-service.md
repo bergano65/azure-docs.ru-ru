@@ -10,12 +10,12 @@ ms.author: aashishb
 author: aashishb
 ms.reviewer: larryfr
 ms.date: 08/27/2019
-ms.openlocfilehash: a8a5b8df4307d9a73477944351c2889a86bdb2b4
-ms.sourcegitcommit: ce4a99b493f8cf2d2fd4e29d9ba92f5f942a754c
+ms.openlocfilehash: 562dd900bb3d64731e5467058e2718b081c675b6
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/28/2019
-ms.locfileid: "75540338"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75968548"
 ---
 # <a name="deploy-a-machine-learning-model-to-azure-app-service-preview"></a>Развертывание модели машинного обучения в службе приложений Azure (Предварительная версия)
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -49,7 +49,7 @@ ms.locfileid: "75540338"
     > * `model` — Зарегистрированная модель, которая будет развернута.
     > * `inference_config` — конфигурация вывода для модели.
     >
-    > Дополнительные сведения об установке этих переменных см. в разделе [Развертывание моделей с помощью машинное обучение Azure](service/how-to-deploy-and-where.md).
+    > Дополнительные сведения об установке этих переменных см. в разделе [Развертывание моделей с помощью машинное обучение Azure](how-to-deploy-and-where.md).
 
 ## <a name="prepare-for-deployment"></a>Подготовка к развертыванию
 
@@ -67,7 +67,7 @@ ms.locfileid: "75540338"
     >
     > Другой альтернативой, который может работать в вашем сценарии, являются [пакетные прогнозы](how-to-run-batch-predictions.md), которые обеспечивают доступ к хранилищам данных при оценке.
 
-    Дополнительные сведения о сценариях входа см. в разделе [Развертывание моделей с помощью машинное обучение Azure](service/how-to-deploy-and-where.md).
+    Дополнительные сведения о сценариях входа см. в разделе [Развертывание моделей с помощью машинное обучение Azure](how-to-deploy-and-where.md).
 
 * **Зависимости**, такие как вспомогательные скрипты или пакеты Python или Conda, необходимые для запуска сценария записи или модели
 
@@ -93,7 +93,7 @@ ms.locfileid: "75540338"
 
 Дополнительные сведения о средах см. в статье [создание сред для обучения и развертывания и управление ими](how-to-use-environments.md).
 
-Дополнительные сведения о конфигурации вывода см. в разделе [Развертывание моделей с помощью машинное обучение Azure](service/how-to-deploy-and-where.md).
+Дополнительные сведения о конфигурации вывода см. в разделе [Развертывание моделей с помощью машинное обучение Azure](how-to-deploy-and-where.md).
 
 > [!IMPORTANT]
 > При развертывании в службе приложений Azure не требуется создавать __конфигурацию развертывания__.
@@ -103,7 +103,7 @@ ms.locfileid: "75540338"
 Чтобы создать образ DOCKER, развернутый в службе приложений Azure, используйте [модель. Package](https://docs.microsoft.com//python/api/azureml-core/azureml.core.model.model?view=azure-ml-py#package-workspace--models--inference-config-none--generate-dockerfile-false-). В следующем фрагменте кода показано, как создать новый образ из модели и конфигурации вывода:
 
 > [!NOTE]
-> В фрагменте кода предполагается, что `model` содержит зарегистрированную модель и `inference_config` содержит конфигурацию для среды вывода. Дополнительные сведения см. в разделе [Развертывание моделей с помощью машинное обучение Azure](service/how-to-deploy-and-where.md).
+> В фрагменте кода предполагается, что `model` содержит зарегистрированную модель и `inference_config` содержит конфигурацию для среды вывода. Дополнительные сведения см. в разделе [Развертывание моделей с помощью машинное обучение Azure](how-to-deploy-and-where.md).
 
 ```python
 from azureml.core import Model
@@ -121,7 +121,7 @@ print(package.location)
 
 ## <a name="deploy-image-as-a-web-app"></a>Развертывание образа как веб-приложения
 
-1. Используйте следующую команду, чтобы получить учетные данные входа для реестра контейнеров Azure, содержащего образ. Замените `<acrinstance>` на значение TH e, возвращенное ранее из `package.location`: 
+1. Используйте следующую команду, чтобы получить учетные данные входа для реестра контейнеров Azure, содержащего образ. Замените `<acrinstance>` на значение TH e, возвращенное ранее из `package.location`:
 
     ```azurecli-interactive
     az acr credential show --name <myacr>
@@ -168,7 +168,7 @@ print(package.location)
     Эта команда возвращает сведения, аналогичные следующему документу JSON:
 
     ```json
-    { 
+    {
     "adminSiteName": null,
     "appServicePlanName": "myplanname",
     "geoRegion": "West Europe",

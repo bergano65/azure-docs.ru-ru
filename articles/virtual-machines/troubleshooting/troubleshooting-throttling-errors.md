@@ -13,12 +13,12 @@ ms.workload: infrastructure-services
 ms.date: 09/18/2018
 ms.author: changov
 ms.reviewer: vashan, rajraj
-ms.openlocfilehash: db1c6e8e4f1e98db08d5f7ff0ef218fa42d25860
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: f5fbd80fc9a8e519cf8f49ab16d7e747c6a8171b
+ms.sourcegitcommit: 05cdbb71b621c4dcc2ae2d92ca8c20f216ec9bc4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70103301"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76045357"
 ---
 # <a name="troubleshooting-api-throttling-errors"></a>Устранение ошибок регулирования API 
 
@@ -26,13 +26,13 @@ ms.locfileid: "70103301"
 
 ## <a name="throttling-by-azure-resource-manager-vs-resource-providers"></a>Регулирование Azure Resource Manager и поставщиками ресурсов  
 
-Azure Resource Manager в качестве "входной двери" Azure выполняет аутентификацию и первоочередную проверку, а также регулирование всех входящих запросов API. [Здесь](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-request-limits) описываются ограничения частоты вызовов Azure Resource Manager и связанные диагностические HTTP-заголовки ответа.
+Azure Resource Manager в качестве "входной двери" Azure выполняет аутентификацию и первоочередную проверку, а также регулирование всех входящих запросов API. [Здесь](https://docs.microsoft.com/azure/azure-resource-manager/management/request-limits-and-throttling) описываются ограничения частоты вызовов Azure Resource Manager и связанные диагностические HTTP-заголовки ответа.
  
 При получении клиентом API Azure ошибки регулирования состояние HTTP следующее: "429 —слишком много запросов". Чтобы понять, с помощью чего выполняется регулирование запросов (Azure Resource Manager или поставщика базовых ресурсов, например CRP), проверьте `x-ms-ratelimit-remaining-subscription-reads` для запросов GET и заголовки ответа `x-ms-ratelimit-remaining-subscription-writes` для запросов, отличных от GET. Если оставшееся количество вызовов приближается к 0, значит достигнут определенный Azure Resource Manager предел вызовов в подписке. Действия по всем клиентам подписки учитываются вместе. В противном случае регулирование поступает от поставщика целевых ресурсов (указанного в сегменте `/providers/<RP>` URL-адреса запроса). 
 
 ## <a name="call-rate-informational-response-headers"></a>Заголовки ответов, содержащие сведения о частоте вызовов 
 
-| Header                            | Формат значения                           | Пример                               | Описание                                                                                                                                                                                               |
+| Заголовок                            | Формат значения                           | Пример                               | Description                                                                                                                                                                                               |
 |-----------------------------------|----------------------------------------|---------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | x-ms-ratelimit-remaining-resource |```<source RP>/<policy or bucket>;<count>```| Microsoft.Compute/HighCostGet3Min;159 | Оставшееся количество вызовов API для политики регулирования, охватывающей группу ресурсов или группу операций, включая целевой объект запроса.                                                                   |
 | x-ms-request-charge               | ```<count>```                             | 1                                     | Число счетчиков вызовов, засчитанных для этого HTTP-запроса по отношению к лимиту применяемой политики. Это чаще всего 1. Для пакетных запросов, например для масштабирования масштабируемого набора виртуальных машин, могут засчитываться несколько счетчиков. |
@@ -98,6 +98,6 @@ Content-Type: application/json; charset=utf-8
 - Если для кода клиента нужны виртуальные машины, диски и моментальные снимки из определенного расположения Azure, то используйте форму на основе расположения вместо запрашивания всех виртуальных машин в подписке, а затем примените фильтр по расположению на стороне клиента: запрос региональных конечных точек поставщика вычислительных ресурсов `GET /subscriptions/<subId>/providers/Microsoft.Compute/locations/<location>/virtualMachines?api-version=2017-03-30`. 
 -   При создании или обновлении ресурсов API, в частности виртуальных машин и масштабируемого набора виртуальных машин, гораздо более эффективно отслеживать завершение возвращаемой асинхронной операции, а не опрашивать URL-адрес ресурса (на основе `provisioningState`).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о механизме повторов для других служб в Azure см. [здесь](https://docs.microsoft.com/azure/architecture/best-practices/retry-service-specific).

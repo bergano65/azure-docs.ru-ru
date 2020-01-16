@@ -3,12 +3,12 @@ title: Программное создание политик
 description: В этой статье описывается программное создание политик и управление ими для политики Azure с помощью Azure CLI, Azure PowerShell и REST API.
 ms.date: 01/31/2019
 ms.topic: how-to
-ms.openlocfilehash: e81f0ca43788d8f36dde0a58d2ecd4b1604fd77e
-ms.sourcegitcommit: 9405aad7e39efbd8fef6d0a3c8988c6bf8de94eb
+ms.openlocfilehash: 08ed43a464d1dd7de8220428dbc1c61ce9fc3ad6
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74873069"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75982466"
 ---
 # <a name="programmatically-create-policies"></a>Программное создание политик
 
@@ -30,7 +30,7 @@ ms.locfileid: "74873069"
    Register-AzResourceProvider -ProviderNamespace 'Microsoft.PolicyInsights'
    ```
 
-   Дополнительные сведения о регистрации и просмотре поставщиков ресурсов см. в статье [Поставщики и типы ресурсов](../../../azure-resource-manager/resource-manager-supported-services.md).
+   Дополнительные сведения о регистрации и просмотре поставщиков ресурсов см. в статье [Поставщики и типы ресурсов](../../../azure-resource-manager/management/resource-providers-and-types.md).
 
 1. Установите интерфейс командной строки Azure CLI, если это еще не сделано. Последнюю версию CLI см. в статье [Установка Azure CLI в Windows](/cli/azure/install-azure-cli-windows).
 
@@ -88,7 +88,7 @@ ms.locfileid: "74873069"
    Замените _ContosoRG_ именем вашей целевой группы ресурсов.
 
    Параметр **области** в `New-AzPolicyAssignment` работает с группой управления, подпиской, группой ресурсов или одним ресурсом. Параметр использует полный путь к ресурсу, возвращаемый свойством **ResourceId** в `Get-AzResourceGroup`. Формат параметра **Scope** для каждого контейнера приведен ниже. Замените `{rName}`, `{rgName}`, `{subId}` и `{mgName}` именем ресурса, именем группы ресурсов, идентификатором подписки и именем группы управления соответственно.
-   Замените `{rType}` **типом ресурса**, таким как `Microsoft.Compute/virtualMachines` для виртуальной машины.
+   Замените `{rType}`**типом ресурса**, таким как `Microsoft.Compute/virtualMachines` для виртуальной машины.
 
    - Ресурс: `/subscriptions/{subID}/resourceGroups/{rgName}/providers/{rType}/{rName}`.
    - Группа ресурсов — `/subscriptions/{subId}/resourceGroups/{rgName}`
@@ -216,7 +216,7 @@ ms.locfileid: "74873069"
    az policy assignment create --name '<name>' --scope '<scope>' --policy '<policy definition ID>'
    ```
 
-   Параметр **--scope** в `az policy assignment create` работает с группой управления, подпиской, группой ресурсов или отдельным ресурсом. Параметр использует полный путь к ресурсу. Формат параметра **--scope** для каждого контейнера приведен ниже. Замените `{rName}`, `{rgName}`, `{subId}` и `{mgName}` именем ресурса, именем группы ресурсов, идентификатором подписки и именем группы управления соответственно. Замените `{rType}` **типом ресурса**, таким как `Microsoft.Compute/virtualMachines` для виртуальной машины.
+   Параметр **--scope** в `az policy assignment create` работает с группой управления, подпиской, группой ресурсов или отдельным ресурсом. Параметр использует полный путь к ресурсу. Формат параметра **--scope** для каждого контейнера приведен ниже. Замените `{rName}`, `{rgName}`, `{subId}` и `{mgName}` именем ресурса, именем группы ресурсов, идентификатором подписки и именем группы управления соответственно. Замените `{rType}`**типом ресурса**, таким как `Microsoft.Compute/virtualMachines` для виртуальной машины.
 
    - Ресурс: `/subscriptions/{subID}/resourceGroups/{rgName}/providers/{rType}/{rName}`.
    - Группа ресурсов — `/subscriptions/{subID}/resourceGroups/{rgName}`

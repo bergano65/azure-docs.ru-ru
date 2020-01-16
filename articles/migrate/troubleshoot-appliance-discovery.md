@@ -6,12 +6,12 @@ ms.manager: abhemraj
 ms.author: hamusa
 ms.topic: troubleshooting
 ms.date: 01/02/2020
-ms.openlocfilehash: 1dbbe04818e75e41944a1c0fe54f53849cf71983
-ms.sourcegitcommit: 02160a2c64a5b8cb2fb661a087db5c2b4815ec04
+ms.openlocfilehash: 854d98a4f2a1b2500bc301d2305c0dd1f27aaaa4
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75725862"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75980820"
 ---
 # <a name="troubleshoot-the-azure-migrate-appliance-and-discovery"></a>Устранение неполадок с устройством и обнаружением службы "миграция Azure"
 
@@ -75,7 +75,7 @@ ms.locfileid: "75725862"
 
 - Ошибка 60052, "устройство может быть не зарегистрировано в проекте" миграция Azure ", происходит, если учетная запись Azure, используемая для регистрации устройства, имеет недостаточные разрешения.
     - Убедитесь, что учетная запись пользователя Azure, используемая для регистрации устройства, имеет по крайней мере разрешения участника на подписку.
-    - Дополнительные [сведения](https://docs.microsoft.com/azure/migrate/migrate-appliance#appliance-deployment-requirements) о необходимых ролях и разрешениях Azure.
+    - Дополнительные [сведения](https://docs.microsoft.com/azure/migrate/migrate-appliance#appliance---vmware) о необходимых ролях и разрешениях Azure.
 - Ошибка 60039, "устройство может быть не зарегистрировано в проекте" миграция Azure ", может произойти, если регистрация завершается неудачей, поскольку не удается найти проект" миграция Azure ", используемый для регистрации устройства.
     - В портал Azure и проверьте, существует ли проект в группе ресурсов.
     - Если проект не существует, создайте новый проект "миграция Azure" в группе ресурсов и снова зарегистрируйте устройство. [Узнайте, как](https://docs.microsoft.com/azure/migrate/how-to-add-tool-first-time#create-a-project-and-add-a-tool) создать новый проект.
@@ -86,7 +86,7 @@ ms.locfileid: "75725862"
 - Убедитесь, что учетная запись пользователя Azure, используемая для регистрации устройства, имеет по крайней мере разрешения участника на подписку.
 - Убедитесь, что учетная запись имеет доступ к хранилищу ключей, указанному в сообщении об ошибке, и повторите операцию.
 - Если проблема будет повторяться, обратитесь в службу поддержки Майкрософт.
-- Дополнительные [сведения](https://docs.microsoft.com/azure/migrate/migrate-appliance#appliance-deployment-requirements) о необходимых ролях и разрешениях Azure.
+- Дополнительные [сведения](https://docs.microsoft.com/azure/migrate/migrate-appliance#appliance---vmware) о необходимых ролях и разрешениях Azure.
 
 ## <a name="error-60028-discovery-couldnt-be-initiated"></a>Ошибка 60028: не удалось инициировать обнаружение
 
@@ -101,7 +101,7 @@ ms.locfileid: "75725862"
 - Убедитесь, что учетная запись пользователя, инициирующая обнаружение, совпадает с той, которая использовалась для регистрации устройства.
 - Предоставьте Azure Active Directory разрешения на доступ к учетной записи пользователя, для которой происходит сбой операции обнаружения.
 - Удалите группу ресурсов, созданную ранее для проекта службы "миграция Azure". Создайте другую группу ресурсов для повторного запуска.
-- Дополнительные [сведения](https://docs.microsoft.com/azure/migrate/migrate-appliance#appliance-deployment-requirements) о Azure Active Directory разрешениях приложения.
+- Дополнительные [сведения](https://docs.microsoft.com/azure/migrate/migrate-appliance#appliance---vmware) о Azure Active Directory разрешениях приложения.
 
 
 ## <a name="error-50004-cant-connect-to-host-or-cluster"></a>Ошибка 50004: не удается подключиться к узлу или кластеру

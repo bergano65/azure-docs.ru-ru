@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 12/26/2019
 ms.author: mathoma
-ms.openlocfilehash: 231c8cb8e66d658ad49e02fd585f6c8a1593cb2d
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 9d8fce0772f13c6e009b2441ecd85779a7622c5c
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75374012"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75981738"
 ---
 # <a name="storage-configuration-for-sql-server-vms"></a>Настройка хранилища для виртуальных машин SQL Server
 
@@ -33,7 +33,7 @@ ms.locfileid: "75374012"
 Для поддержки параметров автоматической настройки хранилища виртуальная машина должна:
 
 * быть подготовлена с помощью [коллекции образов SQL Server](virtual-machines-windows-sql-server-iaas-overview.md#payasyougo);
-* использовать [модель развертывания с помощью Resource Manager](../../../azure-resource-manager/resource-manager-deployment-model.md);
+* использовать [модель развертывания с помощью Resource Manager](../../../azure-resource-manager/management/deployment-models.md);
 * использовать [твердотельные накопители класса Premium](../disks-types.md).
 
 ## <a name="new-vms"></a>Новые виртуальные машины

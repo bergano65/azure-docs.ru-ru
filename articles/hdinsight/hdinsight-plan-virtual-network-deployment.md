@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 07/23/2019
-ms.openlocfilehash: bb60d22c62096725e29b9351bf304504861d9bf1
-ms.sourcegitcommit: 3eb0cc8091c8e4ae4d537051c3265b92427537fe
+ms.openlocfilehash: 1e6a21e8bf9c284c83af09885aa66b612b52ad7c
+ms.sourcegitcommit: 05cdbb71b621c4dcc2ae2d92ca8c20f216ec9bc4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75902520"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76044707"
 ---
 # <a name="plan-a-virtual-network-for-azure-hdinsight"></a>Планирование виртуальной сети для Azure HDInsight
 
@@ -251,7 +251,7 @@ Azure предоставляет разрешение имен для служб
 
 ## <a name="load-balancing"></a>Балансировка нагрузки
 
-При создании кластера HDInsight также создается балансировщик нагрузки. Тип этой подсистемы балансировки нагрузки — это [уровень SKU "базовый](../load-balancer/load-balancer-overview.md#skus) ", имеющий определенные ограничения. Одно из этих ограничений заключается в том, что если у вас есть две виртуальные сети в разных регионах, вы не сможете подключиться к базовым подсистемам балансировки нагрузки. Дополнительные сведения см. [в статье вопросы и ответы по виртуальным сетям: ограничения для пиринга глобальной виртуальной](../virtual-network/virtual-networks-faq.md#what-are-the-constraints-related-to-global-vnet-peering-and-load-balancers)сети.
+При создании кластера HDInsight также создается балансировщик нагрузки. Тип этой подсистемы балансировки нагрузки — это [уровень SKU "базовый](../load-balancer/concepts-limitations.md#skus) ", имеющий определенные ограничения. Одно из этих ограничений заключается в том, что если у вас есть две виртуальные сети в разных регионах, вы не сможете подключиться к базовым подсистемам балансировки нагрузки. Дополнительные сведения см. [в статье вопросы и ответы по виртуальным сетям: ограничения для пиринга глобальной виртуальной](../virtual-network/virtual-networks-faq.md#what-are-the-constraints-related-to-global-vnet-peering-and-load-balancers)сети.
 
 ## <a name="transport-layer-security"></a>Безопасность транспортного уровня
 

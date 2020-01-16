@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 1/14/2020
 ms.author: alsin
-ms.openlocfilehash: e9cbd98afd5f9ed5561cba2236d85da331db7895
-ms.sourcegitcommit: 49e14e0d19a18b75fd83de6c16ccee2594592355
+ms.openlocfilehash: 911d86dd7cb03479d9bde49d8fce0f7861e32e27
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75944704"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75980144"
 ---
 # <a name="red-hat-enterprise-linux-bring-your-own-subscription-gold-images-in-azure"></a>Red Hat Enterprise Linux образы Gold собственных подписок в Azure
 Образы Red Hat Enterprise Linux (RHEL) доступны в Azure посредством модели с оплатой по мере использования (PAYG) или с помощью собственной подписки (образ Red Hat Gold). В этом документе представлен обзор образов Red Hat Gold в Azure.
@@ -189,5 +189,6 @@ ms.locfileid: "75944704"
 ## <a name="next-steps"></a>Дальнейшие действия
 * Пошаговые руководства и сведения о программе для доступа к облаку доступны в [документации по облачному доступу к Red Hat.](https://access.redhat.com/documentation/en-us/red_hat_subscription_management/1/html/red_hat_cloud_access_reference_guide/index)
 * Узнайте больше о [инфраструктуре обновления Azure Red Hat](./redhat-rhui.md).
-* Дополнительные сведения об образах Red Hat в Azure можно найти на [странице документации](./redhat-images.md).
+* Чтобы узнать больше о всех образах Red Hat в Azure, перейдите на [страницу документации](./redhat-images.md).
 * Сведения о политиках поддержки Red Hat для всех версий RHEL можно найти на странице [о жизненных циклах выпусков Red Hat Enterprise Linux](https://access.redhat.com/support/policy/updates/errata).
+* Дополнительную документацию по образам RHEL Gold можно найти в [документации по Red Hat](https://access.redhat.com/documentation/en-us/red_hat_subscription_management/1/html/red_hat_cloud_access_reference_guide/using_red_hat_gold_images#con-gold-image-azure).
