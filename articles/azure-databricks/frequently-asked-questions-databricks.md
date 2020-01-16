@@ -9,12 +9,12 @@ ms.service: azure-databricks
 ms.workload: big-data
 ms.topic: conceptual
 ms.date: 10/25/2018
-ms.openlocfilehash: f4164966d1a9662a72d41fefcb7cfbb1b444d614
-ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
+ms.openlocfilehash: c2cb7a90f0fe57efcd8f4d75aff3b5ee375abd07
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75888985"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75971502"
 ---
 # <a name="frequently-asked-questions-about-azure-databricks"></a>Часто задаваемые вопросы об Azure Databricks
 
@@ -107,7 +107,7 @@ ms.locfileid: "75888985"
 1. Выберите элемент **Подписки**, затем используемую подписку и щелкните **Поставщики ресурсов**. 
 1. В списке поставщиков ресурсов выберите действие **Зарегистрировать** рядом с **Microsoft.Compute**. Чтобы зарегистрировать поставщика ресурсов, нужно иметь в подписке роль участника или владельца.
 
-Подробные инструкции см. в статье [Поставщики и типы ресурсов](../azure-resource-manager/resource-manager-supported-services.md).
+Подробные инструкции см. в статье [Поставщики и типы ресурсов](../azure-resource-manager/management/resource-providers-and-types.md).
 
 ### <a name="issue-azure-databricks-needs-permissions-to-access-resources-in-your-organization-that-only-an-admin-can-grant"></a>Проблема. Azure Databricks требуются разрешения на доступ к ресурсам в вашей организации, которые может предоставить только администратор
 

@@ -3,7 +3,7 @@ title: Выполнение вычислительных узлов виртуа
 description: Узнайте, как обрабатывать параллельные вычислительные рабочие нагрузки в пулах виртуальных машин Linux в пакетной службе Azure.
 services: batch
 documentationcenter: python
-author: laurenhughes
+author: ju-shim
 manager: gwallace
 editor: ''
 ms.assetid: dc6ba151-1718-468a-b455-2da549225ab2
@@ -12,14 +12,14 @@ ms.topic: article
 ms.tgt_pltfrm: ''
 ms.workload: na
 ms.date: 06/01/2018
-ms.author: lahugh
+ms.author: jushiman
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 18df43ebf3a20547917ddd372d922741b4cee849
-ms.sourcegitcommit: 7f6d986a60eff2c170172bd8bcb834302bb41f71
+ms.openlocfilehash: 27273fecc9d117079cfda58d537cf7342d3c5dc4
+ms.sourcegitcommit: dbcc4569fde1bebb9df0a3ab6d4d3ff7f806d486
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71350108"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76027076"
 ---
 # <a name="provision-linux-compute-nodes-in-batch-pools"></a>Подготовка вычислительных узлов Linux в пулах пакетной службы
 
@@ -45,10 +45,10 @@ ms.locfileid: "71350108"
 
 | **Свойства ссылки на образ** | **Пример** |
 | --- | --- |
-| Издатель |Канонический |
+| Издатель |Canonical |
 | Предложение |UbuntuServer |
-| номер SKU |14.04.4-LTS |
-| Version |latest |
+| SKU |14.04.4-LTS |
+| Версия |latest |
 
 > [!TIP]
 > Дополнительные сведения об этих свойствах и о том, как получить список образов из Marketplace, см. в статье [Выбор образов виртуальных машин Linux с помощью интерфейса командной строки Azure (Azure CLI)](../virtual-machines/linux/cli-ps-findimage.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json). Обратите внимание, что не все образы из Marketplace в настоящее время совместимы с пакетной службой. Дополнительные сведения см. в разделе [Номер SKU агента узла](#node-agent-sku).
@@ -58,7 +58,7 @@ ms.locfileid: "71350108"
 ### <a name="node-agent-sku"></a>Номер SKU агента узла
 Агент узла пакетной службы — это программа, которая выполняется на каждом узле в пуле и предоставляет интерфейс контроля и управления между узлом и пакетной службой. Существуют различные реализации агента узла, известные как номера SKU, для различных операционных систем. По существу, при создании конфигурации виртуальной машины сначала следует указать ссылку на образ виртуальной машины, а затем указать агент узла, который будет установлен на этом образе. Как правило, каждый номер SKU агента узла совместим с несколькими образами виртуальных машин. Вот несколько примеров номеров SKU агентов узлов:
 
-* batch.node.ubuntu 14.04;
+* batch.node.ubuntu 14.04
 * batch.node.centos 7
 * batch.node.windows amd64
 
@@ -67,7 +67,7 @@ ms.locfileid: "71350108"
 >
 >
 
-## <a name="create-a-linux-pool-batch-python"></a>Создание пула Linux. Python для пакетной службы
+## <a name="create-a-linux-pool-batch-python"></a>Создание пула Linux: библиотека Python для пакетной службы
 В следующем фрагменте кода показан пример использования [клиентской библиотеки Пакетная служба Microsoft Azure для Python][py_batch_package] для создания пула вычислений-узлов Ubuntu Server. Справочную документацию по модулю Python для пакетной службы можно найти в [пакете Azure. Batch][py_batch_docs] по чтению документации.
 
 Этот фрагмент кода явно создает [ImageReference][py_imagereference] и задает каждое из его свойств (издатель, предложение, SKU, версия). Однако в рабочем коде рекомендуется использовать метод [list_node_agent_skus][py_list_skus] для определения и выбора из доступных комбинаций образа и номера SKU агента узла во время выполнения.
@@ -126,7 +126,7 @@ new_pool.virtual_machine_configuration = vmc
 client.pool.add(new_pool)
 ```
 
-Как упоминалось ранее, вместо того, чтобы создавать [ImageReference][py_imagereference] явным образом, рекомендуется использовать метод [list_node_agent_skus][py_list_skus] , чтобы динамически выбирать из поддерживаемых в настоящее время сочетаний образов или агентов узла. Следующий фрагмент кода Python демонстрирует, как использовать этот метод.
+Как упоминалось ранее, вместо того, чтобы создавать [ImageReference][py_imagereference] явным образом, рекомендуется использовать метод [list_node_agent_skus][py_list_skus] , чтобы динамически выбирать из поддерживаемых в настоящее время комбинаций образа или агента узла. Следующий фрагмент кода Python демонстрирует, как использовать этот метод.
 
 ```python
 # Get the list of node agents from the Batch service
@@ -146,7 +146,7 @@ vmc = batchmodels.VirtualMachineConfiguration(
     node_agent_sku_id=ubuntu1404agent.id)
 ```
 
-## <a name="create-a-linux-pool-batch-net"></a>Создание пула Linux. .NET для пакетной службы
+## <a name="create-a-linux-pool-batch-net"></a>Создание пула Linux: библиотека .NET для пакетной службы
 В следующем фрагменте кода показан пример использования клиентской библиотеки [.NET пакетной][nuget_batch_net] службы для создания пула вычислений-узлов Ubuntu Server. [Справочную документацию по .NET для пакетной][api_net] службы можно найти на docs.Microsoft.com.
 
 В следующем фрагменте кода используется [PoolOperations][net_pool_ops]. Метод [ListNodeAgentSkus][net_list_skus] для выбора из списка поддерживаемых в настоящее время образов Marketplace и номеров SKU агента узла. Этот способ является предпочтительным, так как список поддерживаемых сочетаний может меняться время от времени. Чаще всего добавляются поддерживаемые сочетания.
@@ -208,7 +208,7 @@ ImageReference imageReference = new ImageReference(
 ```
 
 ## <a name="list-of-virtual-machine-images"></a>Список образов виртуальных машин
-В следующей таблице указаны образы виртуальных машин из Marketplace, которые совместимы с доступными агентами узлов пакетной службы на момент написания этой статьи. Важно отметить, что этот список не является окончательным, так как в любое время образы и агенты узлов могут добавляться или удаляться. Для определения и выбора доступных номеров SKU мы рекомендуем всегда использовать [list_node_agent_skus][py_list_skus] (Python) или [ListNodeAgentSkus][net_list_skus] (пакет .NET) для приложений пакетной службы.
+В следующей таблице указаны образы виртуальных машин из Marketplace, которые совместимы с доступными агентами узлов пакетной службы на момент написания этой статьи. Важно отметить, что этот список не является окончательным, так как в любое время образы и агенты узлов могут добавляться или удаляться. Мы советуем, чтобы приложения и службы пакетной служб всегда использовали [list_node_agent_skus][py_list_skus] (Python) или [ListNodeAgentSkus][net_list_skus] (пакет .NET) для определения и выбора из доступных в настоящее время номеров SKU.
 
 > [!WARNING]
 > Следующий список может меняться в любое время. При выполнении заданий пакетной службы следует всегда использовать методы **получения списка номеров SKU агентов узлов**, доступные в интерфейсах API пакетной службы, для перечисления совместимых виртуальных машин и номеров SKU агентов узлов.
@@ -217,10 +217,10 @@ ImageReference imageReference = new ImageReference(
 
 | **Издатель** | **ПРЕДЛОЖЕНИЕ** | **Номер SKU образа** | **Версия** | **Идентификатор SKU агента узла** |
 | ------------- | --------- | ------------- | ----------- | --------------------- |
-| пакет (1) | rendering-centos73 | rendering | latest | batch.node.centos 7 |
-| пакет (1) | rendering-windows2016 | rendering | latest | batch.node.windows amd64 |
-| Канонический | UbuntuServer | 16.04-LTS | latest | batch.node.ubuntu 16.04 |
-| Канонический | UbuntuServer | 14.04.5-LTS | latest | batch.node.ubuntu 14.04 |
+| пакетная_служба | rendering-centos73 | rendering | latest | batch.node.centos 7 |
+| пакетная_служба | rendering-windows2016 | rendering | latest | batch.node.windows amd64 |
+| Canonical | UbuntuServer | 16.04-LTS | latest | batch.node.ubuntu 16.04 |
+| Canonical | UbuntuServer | 14.04.5-LTS | latest | batch.node.ubuntu 14.04 |
 | Credativ | Debian | 9 | latest | batch.node.debian 9 |
 | Credativ | Debian | 8 | latest | batch.node.debian 8 |
 | microsoft-ads | linux-data-science-vm | linuxdsvm | latest | batch.node.centos 7 |
@@ -319,12 +319,12 @@ tvm-1219235766_4-20160414t192511z | ComputeNodeState.idle | 13.91.7.57 | 50001
 
 При создании пользователя на узле вместо пароля можно указать открытый ключ SSH. В пакете SDK для Python используйте параметр **ssh_public_key** в [ComputeNodeUser][py_computenodeuser]. В .NET используйте [ComputeNodeUser][net_computenodeuser]. Свойство [SshPublicKey][net_ssh_key] .
 
-## <a name="pricing"></a>Цены
+## <a name="pricing"></a>Стоимость
 Пакетная служба Azure основана на технологии виртуальных машин Azure и облачных служб Azure. Сама пакетная служба предоставляется бесплатно. Это означает, что плата взимается только за вычислительные ресурсы, используемые решениями пакетной службы. При выборе **конфигурации облачных служб**плата выставляются на основе структуры [ценообразования облачных служб][cloud_services_pricing] . При выборе **конфигурации виртуальной машины**плата насчитывается на основе структуры [ценообразования виртуальных машин][vm_pricing] . 
 
 При развертывании приложений на узлах пакетной службы с помощью [пакетов приложений](batch-application-packages.md) также взимается плата за ресурсы службы хранилища Azure, используемые пакетами приложений. Как правило, эти затраты на службу хранилища Azure минимальны. 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Примеры кода Python][github_samples_py] в репозитории [Azure-Batch-Samples][github_samples] на сайте GitHub содержат сценарии, демонстрирующие выполнение общих пакетных операций, таких как создание пулов, заданий и задач. [Файл readme][github_py_readme] , сопровождающий примеры Python, содержит сведения о том, как установить необходимые пакеты.
 

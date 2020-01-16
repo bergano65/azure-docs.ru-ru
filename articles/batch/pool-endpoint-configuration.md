@@ -2,18 +2,18 @@
 title: Настройка конечных точек узла в пуле пакетной службы Azure | Документация Майкрософт
 description: Сведения о том, как настроить или отключить доступ к портам SSH или RDP на вычислительных узлах пула пакетной службы Azure.
 services: batch
-author: laurenhughes
+author: ju-shim
 manager: gwallace
 ms.service: batch
 ms.topic: article
 ms.date: 02/13/2018
-ms.author: lahugh
-ms.openlocfilehash: e6c7f2762a6742a1aff7a2c3aff977b5e3657349
-ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
+ms.author: jushiman
+ms.openlocfilehash: 1ac4c7647125cd6164235e98a4a828f6b072cbee
+ms.sourcegitcommit: dbcc4569fde1bebb9df0a3ab6d4d3ff7f806d486
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68322471"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76029464"
 ---
 # <a name="configure-or-disable-remote-access-to-compute-nodes-in-an-azure-batch-pool"></a>Настройка или отключение удаленного доступа к вычислительным узлам пула пакетной службы Azure
 
@@ -22,7 +22,7 @@ ms.locfileid: "68322471"
 В своей среде вам может потребоваться ограничить или отключить эти параметры внешнего доступа по умолчанию. Эти параметры можно изменить с помощью API пакетной службы для установки свойства [PoolEndpointConfiguration](/rest/api/batchservice/pool/add#poolendpointconfiguration). 
 
 ## <a name="about-the-pool-endpoint-configuration"></a>О конфигурации конечной точки пула
-Конфигурация конечной точки состоит из одного или нескольких [пулов преобразования сетевых адресов (NAT)](/rest/api/batchservice/pool/add#inboundnatpool) интерфейсных портов. (Не путайте пул NAT с пулом пакетной службы вычислительных узлов.) Настройте каждый пул NAT на переопределение параметров подключения по умолчанию на вычислительных узлах пула. 
+Конфигурация конечной точки состоит из одного или нескольких [пулов преобразования сетевых адресов (NAT)](/rest/api/batchservice/pool/add#inboundnatpool) интерфейсных портов. (Не путайте пул NAT с пулом пакетной службы для кластерных узлов.) Вы настраиваете каждый пул NAT для переопределения параметров подключения по умолчанию на расчетных узлах пула. 
 
 Каждая конфигурация пула NAT включает одно или несколько правил [групп безопасности сети](/rest/api/batchservice/pool/add#networksecuritygrouprule), каждое из которых разрешает или запрещает определенный сетевой трафик к конечной точке. Вы можете разрешить или запретить весь трафик, трафик, определяемый по [тегу службы](../virtual-network/security-overview.md#service-tags) (например, "Интернет"), или трафик из определенных IP-адресов или подсетей.
 
@@ -31,7 +31,7 @@ ms.locfileid: "68322471"
 * При настройке пула NAT можно настроить несколько правил группы безопасности сети (NSG). Правила проверяются в порядке приоритета. Когда применяется правило, соответствие других правил не проверяется.
 
 
-## <a name="example-deny-all-rdp-traffic"></a>Пример: запрет всего трафика RDP
+## <a name="example-deny-all-rdp-traffic"></a>Пример. Запрет всего трафика RDP
 
 В следующем фрагменте кода C# показано, как настроить конечную точку RDP на вычислительных узлах в пуле Windows, чтобы запретить весь сетевой трафик. Конечная точка использует пул интерфейсных портов в диапазоне *60000–60099*. 
 
@@ -48,7 +48,7 @@ pool.NetworkConfiguration = new NetworkConfiguration
 };
 ```
 
-## <a name="example-deny-all-ssh-traffic-from-the-internet"></a>Пример: запрет на получение всего трафика SSH из Интернета
+## <a name="example-deny-all-ssh-traffic-from-the-internet"></a>Пример. Запрет на получение всего трафика SSH из Интернета
 
 В следующем фрагменте кода Python показано, как настроить конечную точку SSH на вычислительных узлах в пуле Linux, чтобы запретить весь сетевой трафик. Конечная точка использует пул интерфейсных портов в диапазоне *4000–4100*. 
 
@@ -74,7 +74,7 @@ pool.network_configuration = batchmodels.NetworkConfiguration(
 )
 ```
 
-## <a name="example-allow-rdp-traffic-from-a-specific-ip-address"></a>Пример: разрешение трафика RDP с определенного IP-адреса
+## <a name="example-allow-rdp-traffic-from-a-specific-ip-address"></a>Пример. Разрешение трафика RDP с определенного IP-адреса
 
 В следующем фрагменте кода C# показано, как настроить конечную точку RDP на вычислительных узлах в пуле Windows, чтобы предоставить доступ RDP только с одного IP-адреса: *198.51.100.7*. Второе правило NSG запрещает трафик, для которого не соответствует IP-адрес.
 
@@ -92,7 +92,7 @@ pool.NetworkConfiguration = new NetworkConfiguration
 };
 ```
 
-## <a name="example-allow-ssh-traffic-from-a-specific-subnet"></a>Пример: разрешение трафика SSH из определенной подсети
+## <a name="example-allow-ssh-traffic-from-a-specific-subnet"></a>Пример. Разрешение трафика SSH из определенной подсети
 
 В следующем фрагменте кода Python показано, как настроить конечную точку SSH на вычислительных узлах в пуле Linux, чтобы разрешить доступ только из подсети по адресу *192.168.1.0/24*. Второе правило NSG запрещает трафик, который не соответствует подсети.
 
@@ -123,7 +123,7 @@ pool.network_configuration = batchmodels.NetworkConfiguration(
 )
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о правилах NSG см. в статье [Фильтрация сетевого трафика с помощью групп безопасности сети](../virtual-network/security-overview.md).
 

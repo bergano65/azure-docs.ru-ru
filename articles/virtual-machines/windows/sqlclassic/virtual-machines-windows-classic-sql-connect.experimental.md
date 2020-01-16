@@ -14,17 +14,18 @@ ms.workload: iaas-sql-server
 ms.date: 01/31/2017
 ms.author: mathoma
 ms.reviewer: jroth
+experimental: true
 experimental_id: d51f3cc6-753b-4e
-ms.openlocfilehash: 60c5af609cea876370c74684362e9b44db40c1ee
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: 1c2d5ae5d85624ea172eb9a95d4086dd71287c4f
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70101951"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75978199"
 ---
 # <a name="connect-to-a-sql-server-virtual-machine-on-azure-classic-deployment"></a>Подключение к виртуальной машине SQL Server в Azure (классическое развертывание)
 > [!div class="op_single_selector"]
-> * [Диспетчер ресурсов](../sql/virtual-machines-windows-sql-connect.md)
+> * [Resource Manager](../sql/virtual-machines-windows-sql-connect.md)
 > * [Классический](../classic/sql-connect.md)
 > 
 > 
@@ -33,7 +34,7 @@ ms.locfileid: "70101951"
 В этом разделе показано, как подключиться к экземпляру SQL Server, выполняемому на виртуальной машине Azure. Сначала рассматриваются некоторые [общие сценарии подключения](#connection-scenarios), а затем предоставляются [подробные инструкции по настройке подключений SQL Server на виртуальной машине Azure](#steps-for-configuring-sql-server-connectivity-in-an-azure-vm).
 
 > [!IMPORTANT] 
-> В Azure предлагаются две модели развертывания для создания ресурсов и работы с ними: [модель развертывания с помощью Resource Manager и классическая модель](../../../azure-resource-manager/resource-manager-deployment-model.md). В этой статье рассматривается использование классической модели развертывания. Для большинства новых развертываний Майкрософт рекомендует использовать модель диспетчера ресурсов. Если вы используете виртуальные машины Resource Manager, то ознакомьтесь со статьей [Подключение к виртуальной машине SQL Server в Azure (диспетчер ресурсов)](../sql/virtual-machines-windows-sql-connect.md).
+> В Azure предлагаются две модели развертывания для создания ресурсов и работы с ними: [модель Resource Manager и классическая модель](../../../azure-resource-manager/management/deployment-models.md). В этой статье рассматривается использование классической модели развертывания. Для большинства новых развертываний Майкрософт рекомендует использовать модель диспетчера ресурсов. Если вы используете виртуальные машины Resource Manager, то ознакомьтесь со статьей [Подключение к виртуальной машине SQL Server в Azure (диспетчер ресурсов)](../sql/virtual-machines-windows-sql-connect.md).
 
 ## <a name="connection-scenarios"></a>Сценарии подключения
 Способ подключения клиента к системе SQL Server, выполняемой на виртуальной машине, зависит от расположения клиента, а также конфигурации компьютера и сети. Ниже приведены соответствующие сценарии.

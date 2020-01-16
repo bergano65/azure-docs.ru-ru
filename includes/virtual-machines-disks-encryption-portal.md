@@ -5,15 +5,15 @@ services: virtual-machines
 author: roygara
 ms.service: virtual-machines
 ms.topic: include
-ms.date: 01/10/2020
+ms.date: 01/13/2020
 ms.author: rogarana
 ms.custom: include file
-ms.openlocfilehash: a799339f2780c2bc372c39120a6e20b34d907326
-ms.sourcegitcommit: e9776e6574c0819296f28b43c9647aa749d1f5a6
+ms.openlocfilehash: 662b2792a2e09603425b1988138326799334f323
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/13/2020
-ms.locfileid: "75912757"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75973462"
 ---
 ### <a name="portal"></a>Портал
 
@@ -88,3 +88,27 @@ ms.locfileid: "75912757"
 1. Сделайте оставшиеся варианты выбора нужным образом.
 
     ![ССЕ-креате-ВМ-Селект-КМК-енкриптион-Сет. png](media/virtual-machines-disk-encryption-portal/sse-create-vm-select-cmk-encryption-set.png)
+
+#### <a name="enable-on-an-existing-disk"></a>Включить на существующем диске
+
+Для управления шифрованием дисков и их настройки на имеющихся дисках необходимо использовать следующую ссылку: https://aka.ms/diskencryptionsets. Включение управляемых клиентом ключей на существующих дисках еще не доступно в глобальном портал Azure.
+
+> [!CAUTION]
+> Для включения шифрования дисков на всех дисках, подключенных к виртуальной машине, потребуется отключить виртуальную машину.
+
+1. Перейдите к виртуальной машине, расположенной в том же регионе, что и один из наборов шифрования дисков.
+1. Откройте виртуальную машину и выберите команду " **Закрыть**".
+
+    ![ССЕ-стоп-ВМ-то-енкрипт-диск. png](media/virtual-machines-disk-encryption-portal/sse-stop-VM-to-encrypt-disk.png)
+
+1. После завершения остановки виртуальной машины выберите **диски** , а затем выберите диск, который нужно зашифровать.
+
+    ![ССЕ-ексистинг-диск-Селект. png](media/virtual-machines-disk-encryption-portal/sse-existing-disk-select.png)
+
+1. Выберите **Шифрование** и выберите **Шифрование неактивных данных с помощью управляемого клиентом ключа** , а затем выберите набор шифрования дисков в раскрывающемся списке.
+1. Щелкните **Сохранить**.
+
+    ![ССЕ-енкрипт-ексистинг-диск-Кустомер-манажед-Кэй. png](media/virtual-machines-disk-encryption-portal/sse-encrypt-existing-disk-customer-managed-key.png)
+
+1. Повторите эту процедуру для всех дисков, подключенных к виртуальной машине, которую вы хотите зашифровать.
+1. Когда диски завершат переключение на управляемые клиентом ключи, если нет других подключенных дисков, которые вы хотите зашифровать, вы можете запустить виртуальную машину.

@@ -9,12 +9,12 @@ services: iot-hub
 ms.devlang: csharp
 ms.topic: conceptual
 ms.date: 08/08/2017
-ms.openlocfilehash: 4d9fe58457f9a74466128273dcffee08e17aeb75
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 02e814a9da320d688fe57edf3a3fe0640b8f5a47
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75457035"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75976737"
 ---
 # <a name="create-an-iot-hub-using-azure-resource-manager-template-net"></a>Создание Центра Интернета вещей с помощью шаблона Azure Resource Manager (.NET)
 
@@ -23,7 +23,7 @@ ms.locfileid: "75457035"
 Диспетчер ресурсов Azure можно использовать для создания Центров Интернета вещей Azure программным способом и управления ими. В этом учебнике показано, как использовать шаблон Azure Resource Manager для создания Центра Интернета вещей из программы на C#.
 
 > [!NOTE]
-> В Azure предлагаются две модели развертывания для создания ресурсов и работы с ними: [модель Azure Resource Manager и классическая модель](../azure-resource-manager/resource-manager-deployment-model.md).  В этой статье описывается использование модели развертывания на основе Azure Resource Manager.
+> В Azure предлагаются две модели развертывания для создания ресурсов и работы с ними: [модель Azure Resource Manager и классическая модель](../azure-resource-manager/management/deployment-models.md).  В этой статье описывается использование модели развертывания на основе Azure Resource Manager.
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 

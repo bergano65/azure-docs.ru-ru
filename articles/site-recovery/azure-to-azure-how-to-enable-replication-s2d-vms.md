@@ -5,12 +5,12 @@ author: sideeksh
 manager: rochakm
 ms.topic: how-to
 ms.date: 01/29/2019
-ms.openlocfilehash: 465c0ddd91e81bb597a996637fdc2147e90464de
-ms.sourcegitcommit: b5106424cd7531c7084a4ac6657c4d67a05f7068
+ms.openlocfilehash: 9f394fa8d618c97d74a47ff6e42a002f177cf7d9
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75942215"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75973665"
 ---
 # <a name="replicate-azure-vms-running-storage-spaces-direct-to-another-region"></a>Репликация виртуальных машин Azure, работающих Локальные дисковые пространства, в другой регион
 
@@ -30,7 +30,7 @@ ms.locfileid: "75942215"
 
 ![storagespacesdirect](./media/azure-to-azure-how-to-enable-replication-s2d-vms/storagespacedirect.png)
 
- 
+
 - Две виртуальные машины Azure в отказоустойчивом кластере Windows и каждая виртуальная машина имеют два или более дисков с данными.
 - S2D синхронизирует данные на диске данных и представляет синхронизированное хранилище в качестве пула носителей.
 - Пул носителей представляет общий том кластера (CSV) для отказоустойчивого кластера.
@@ -51,7 +51,7 @@ ms.locfileid: "75942215"
 
    ![Защита storagespacesdirect](./media/azure-to-azure-how-to-enable-replication-s2d-vms/multivmgroup.png)
 
-2. Перейдите к реплицированным элементам и вы увидите состояние виртуальной машины. 
+2. Перейдите к реплицированным элементам и вы увидите состояние виртуальной машины.
 3. Обе виртуальные машины становятся защищенными и также отображаются как часть группы согласованности нескольких виртуальных машин.
 
    ![Защита storagespacesdirect](./media/azure-to-azure-how-to-enable-replication-s2d-vms/storagespacesdirectgroup.PNG)

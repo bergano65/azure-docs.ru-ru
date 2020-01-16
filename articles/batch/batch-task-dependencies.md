@@ -3,7 +3,7 @@ title: Использование зависимостей для выполне
 description: Создание задач, которые зависят от выполнения других задач, для обработки по модели MapReduce и аналогичных рабочих нагрузок больших данных в пакетной службе Azure.
 services: batch
 documentationcenter: .net
-author: laurenhughes
+author: ju-shim
 manager: gwallace
 editor: ''
 ms.assetid: b8d12db5-ca30-4c7d-993a-a05af9257210
@@ -12,14 +12,14 @@ ms.topic: article
 ms.tgt_pltfrm: ''
 ms.workload: big-compute
 ms.date: 05/22/2017
-ms.author: lahugh
+ms.author: jushiman
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 2a1378a5c00acbbce5e7ec73a75902ec55140575
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: 875e0314c41a6bb277769361b6faa0345312db2b
+ms.sourcegitcommit: dbcc4569fde1bebb9df0a3ab6d4d3ff7f806d486
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70094619"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76026234"
 ---
 # <a name="create-task-dependencies-to-run-tasks-that-depend-on-other-tasks"></a>Создание зависимостей для выполнения задач, которые зависят от других задач
 
@@ -40,7 +40,7 @@ ms.locfileid: "70094619"
 В этой статье обсуждается Настройка зависимостей задач с помощью библиотеки [.NET пакетной][net_msdn] службы. Сначала в этой статье описывается, как [включить зависимость задачи](#enable-task-dependencies) в заданиях, а потом рассматривается, как [настроить задачу с зависимостями](#create-dependent-tasks). Мы также опишем, как указать действие зависимости, запускающее зависимые задачи при сбое родительской задачи. Напоследок рассматриваются поддерживаемые пакетной службой [сценарии использования зависимостей](#dependency-scenarios) .
 
 ## <a name="enable-task-dependencies"></a>Включение зависимостей задач
-Чтобы использовать зависимости задач в приложении пакетной службы, сначала необходимо настроить задание для использования зависимостей задач. В пакетной среде .NET включите ее в [CloudJob][net_cloudjob] , задав свойству `true` [UsesTaskDependencies][net_usestaskdependencies] значение:
+Чтобы использовать зависимости задач в приложении пакетной службы, сначала необходимо настроить задание для использования зависимостей задач. В пакетной среде .NET включите ее в [CloudJob][net_cloudjob] , задав для свойства [UsesTaskDependencies][net_usestaskdependencies] значение `true`.
 
 ```csharp
 CloudJob unboundJob = batchClient.JobOperations.CreateJob( "job001",
@@ -77,7 +77,7 @@ new CloudTask("Flowers", "cmd.exe /c echo Flowers")
 | Сценарий&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Пример |  |
 |:---:| --- | --- |
 |  [Один к одному](#one-to-one) |Задача *taskB* зависит от задачи *taskA*. <p/> Выполнение задачи *taskB* не начнется, пока задача *taskA* не будет успешно выполнена. |![Схема: зависимость задач один к одному][1] |
-|  [Один ко многим](#one-to-many) |Задача *taskC* зависит от задач *taskA* и *taskB*. <p/> Выполнение задачи *taskC* не начнется, пока задачи *taskA* и *taskB* не будут успешно выполнены). |![Схема: зависимость задач один ко многим][2] |
+|  [«Один ко многим»](#one-to-many) |Задача *taskC* зависит от задач *taskA* и *taskB*. <p/> Выполнение задачи *taskC* не начнется, пока задачи *taskA* и *taskB* не будут успешно выполнены). |![Схема: зависимость задач один ко многим][2] |
 |  [Диапазон идентификаторов задач](#task-id-range) |Задача *taskD* зависит от ряда задач. <p/> Выполнение задачи *taskD* не начнется, пока не будут успешно выполнены задачи с идентификаторами от *1* до *10*. |![Схема: зависимость диапазона идентификаторов задач][3] |
 
 > [!TIP]
@@ -209,7 +209,7 @@ new CloudTask("B", "cmd.exe /c echo B")
 - как создать задачи, которые зависят от других задач;
 - как выполнить эти задачи в пуле вычислительных узлов.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 ### <a name="application-deployment"></a>Развертывание приложения
 Функция [пакетов приложения](batch-application-packages.md) в пакетной службе дает возможность очень легко развернуть приложения, которые задачи выполняют на вычислительных узлах, и управлять их версиями.
 

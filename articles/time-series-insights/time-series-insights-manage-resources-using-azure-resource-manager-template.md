@@ -11,12 +11,12 @@ ms.workload: big-data
 ms.topic: conceptual
 ms.date: 12/06/2019
 ms.custom: seodec18
-ms.openlocfilehash: c4902ff5194c1648a8353b2a21ea559d15d574b3
-ms.sourcegitcommit: 12a26f6682bfd1e264268b5d866547358728cd9a
+ms.openlocfilehash: b60b036954691bdea12dfff559ceee86f179d44d
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75861852"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75973221"
 ---
 # <a name="create-time-series-insights-resources-using-azure-resource-manager-templates"></a>Создание ресурсов службы "Аналитика временных рядов" с помощью шаблонов Resource Manager
 
@@ -33,8 +33,8 @@ ms.locfileid: "75861852"
 
 Шаблоны Resource Manager являются файлами в формате JSON, определяющими инфраструктуру и конфигурацию ресурсов в группе ресурсов. В следующих документах более подробно описаны файлы шаблонов:
 
-- [Развертывание шаблона Azure Resource Manager](../azure-resource-manager/template-deployment-overview.md)
-- [Развертывание ресурсов с использованием шаблонов Resource Manager и Azure PowerShell](../azure-resource-manager/resource-group-template-deploy.md)
+- [Развертывание шаблона Azure Resource Manager](../azure-resource-manager/templates/overview.md)
+- [Развертывание ресурсов с использованием шаблонов Resource Manager и Azure PowerShell](../azure-resource-manager/templates/deploy-powershell.md)
 - [Microsoft.TimeSeriesInsights resource types](/azure/templates/microsoft.timeseriesinsights/allversions) (Типы ресурсов Microsoft.TimeSeriesInsights)
 
 Шаблон быстрого запуска [201-timeseriesinsights-environment-with-eventhub](https://github.com/Azure/azure-quickstart-templates/tree/master/201-timeseriesinsights-environment-with-eventhub) опубликован на GitHub. Этот шаблон создает среду "Аналитика временных рядов", дочерний источник событий, который должен использовать события из концентратора событий, и политики доступа, которые предоставляют доступ к данным среды. Если не указан имеющийся концентратор событий, он будет создан при развертывании.
@@ -118,7 +118,7 @@ ms.locfileid: "75861852"
          }
      }
      ```
-  
+
     * Дополнительные сведения см. в статье [Параметры](../azure-resource-manager/templates/parameter-files.md) .
 
 ## <a name="deploy-the-quickstart-template-locally-using-powershell"></a>Развертывание шаблона быстрого запуска локально с помощью PowerShell
@@ -174,12 +174,12 @@ ms.locfileid: "75861852"
 
 1. Создание развертывания
 
-    * Чтобы создать развертывание, выполните командлет `New-AzResourceGroupDeployment` и укажите необходимые параметры при появлении запроса. Параметры включают в себя имя развертывания, имя группы ресурсов и путь к файлу шаблона или его URL-адрес. Если параметр **Режим** не указан, используется стандартное значение **Добавочный**. Дополнительные сведения см. в статье [добавочные и полные развертывания](../azure-resource-manager/deployment-modes.md).
+    * Чтобы создать развертывание, выполните командлет `New-AzResourceGroupDeployment` и укажите необходимые параметры при появлении запроса. Параметры включают в себя имя развертывания, имя группы ресурсов и путь к файлу шаблона или его URL-адрес. Если параметр **Режим** не указан, используется стандартное значение **Добавочный**. Дополнительные сведения см. в статье [добавочные и полные развертывания](../azure-resource-manager/templates/deployment-modes.md).
 
     * Следующая команда запрашивает пять обязательных параметров в окне PowerShell:
 
       ```powershell
-      New-AzResourceGroupDeployment -Name MyDemoDeployment -ResourceGroupName MyDemoRG -TemplateFile <path to template file>\azuredeploy.json 
+      New-AzResourceGroupDeployment -Name MyDemoDeployment -ResourceGroupName MyDemoRG -TemplateFile <path to template file>\azuredeploy.json
       ```
 
     * Чтобы использовать вместо этого файл параметров, выполните приведенную ниже команду:
@@ -194,7 +194,7 @@ ms.locfileid: "75861852"
       New-AzResourceGroupDeployment -Name MyDemoDeployment -ResourceGroupName MyDemoRG -TemplateFile <path to template file>\azuredeploy.json -parameterName "parameterValue"
       ```
 
-    * Чтобы выполнить [полное](../azure-resource-manager/deployment-modes.md) развертывание, установите для параметра **Режим** значение **Полный**.
+    * Чтобы выполнить [полное](../azure-resource-manager/templates/deployment-modes.md) развертывание, установите для параметра **Режим** значение **Полный**.
 
       ```powershell
       New-AzResourceGroupDeployment -Name MyDemoDeployment -Mode Complete -ResourceGroupName MyDemoRG -TemplateFile <path to template file>\azuredeploy.json

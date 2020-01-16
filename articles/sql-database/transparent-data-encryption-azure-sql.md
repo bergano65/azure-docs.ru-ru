@@ -12,12 +12,12 @@ author: jaszymas
 ms.author: jaszymas
 ms.reviewer: vanto
 ms.date: 11/01/2019
-ms.openlocfilehash: 9eebb181ed7aa1ac5898646c29e308f85dbe0f8e
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 381dfb4fca7476d5805bff92d58ecbbf49679346
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75354889"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75979970"
 ---
 # <a name="transparent-data-encryption-for-sql-database-and-data-warehouse"></a>Прозрачное шифрование данных для хранилища данных и Базы данных SQL
 
@@ -79,7 +79,7 @@ SQL Server на виртуальной машине Azure также может 
 
 Включение и отключение прозрачного шифрования данных осуществляется на уровне базы данных. Чтобы включить TDE для базы данных, войдите на [портал Azure](https://portal.azure.com) с учетной записью администратора или участника Azure. Настройки прозрачного шифрования данных представлены в разделе информации о пользовательской базе данных. По умолчанию используется управляемое службой прозрачное шифрование данных. Для сервера, который содержит базу данных, автоматически создается сертификат TDE. Для Управляемого экземпляра Базы данных SQL Azure используйте T-SQL, чтобы включить и отключить прозрачное шифрование данных для базы данных.
 
-![Управляемое службой прозрачное шифрование данных](./media/transparent-data-encryption-azure-sql/service-managed-transparent-data-encryption.png)  
+![Управляемое службой прозрачное шифрование данных](./media/transparent-data-encryption-azure-sql/service-managed-transparent-data-encryption.png)
 
 Главный ключ прозрачного шифрования данных ( также называется предохранителем прозрачного шифрования данных) задается на уровне сервера. Чтобы использовать TDE с поддержкой создания собственных ключей и защитить базы данных с помощью ключа, сохраненного в Key Vault, откройте параметры TDE для своего сервера.
 

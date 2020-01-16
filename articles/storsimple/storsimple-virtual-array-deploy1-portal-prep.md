@@ -15,12 +15,12 @@ ms.workload: NA
 ms.date: 07/25/2019
 ms.author: alkohli
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: ccdd234f951327aeb5baa6aabcac4314b9de7b34
-ms.sourcegitcommit: f5cc71cbb9969c681a991aa4a39f1120571a6c2e
+ms.openlocfilehash: 0b938de0fec099b3f964eae60dc94d059e05a1c6
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68517102"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75973489"
 ---
 # <a name="deploy-storsimple-virtual-array---prepare-the-azure-portal"></a>Развертывание виртуального массива StorSimple. Подготовка портала Azure
 
@@ -37,7 +37,7 @@ ms.locfileid: "68517102"
 
 Сведения, приведенные в этой статье, относятся к развертыванию виртуальных массивов StorSimple на портале Azure, а также в облаке Microsoft Azure для государственных организаций.
 
-### <a name="get-started"></a>Начало работы
+### <a name="get-started"></a>Начать
 Рабочий процесс развертывания состоит из подготовки портала, подготовки виртуального массива к работе в виртуальной среде и настройки. Чтобы приступить к развертыванию виртуального массива StorSimple в качестве файлового сервера или сервера iSCSI, изучите ресурсы, приведенные в таблице ниже.
 
 #### <a name="deployment-articles"></a>Статьи по развертыванию
@@ -59,7 +59,7 @@ ms.locfileid: "68517102"
 * Скачайте [контрольный список для настройки виртуального массива StorSimple в качестве файлового сервера](https://download.microsoft.com/download/E/E/6/EE690BB0-B442-4B84-8165-4731EE727ACF/MicrosoftAzureStorSimpleVirtualArrayFileServerConfigurationChecklist.pdf).
 * Скачайте [контрольный список для настройки виртуального массива StorSimple в качестве сервера iSCSI](https://download.microsoft.com/download/E/E/6/EE690BB0-B442-4B84-8165-4731EE727ACF/MicrosoftAzureStorSimpleVirtualArrayiSCSIServerConfigurationChecklist.pdf).
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Ниже приведены предварительные требования для настройки службы диспетчера устройств StorSimple, виртуального массива StorSimple и сети центра обработки данных.
 
@@ -94,9 +94,9 @@ ms.locfileid: "68517102"
 
 Ниже приведены пошаговые инструкции для подготовки портала к использованию службы диспетчера устройств StorSimple.
 
-## <a name="step-1-create-a-new-service"></a>Шаг 1.: Создание службы
+## <a name="step-1-create-a-new-service"></a>Шаг 1. Создание новой службы
 
-Один экземпляр службы диспетчера устройств StorSimple может управлять несколькими виртуальными массивами StorSimple. Чтобы создать экземпляр службы диспетчера устройств StorSimple, выполните следующие действия. Если у вас уже есть служба диспетчера устройств, управляющая виртуальными массивами StorSimple, пропустите этот шаг и перейдите к разделу [Шаг 2. Получение ключа регистрации службы](#step-2-get-the-service-registration-key).
+Один экземпляр службы диспетчера устройств StorSimple может управлять несколькими виртуальными массивами StorSimple. Чтобы создать экземпляр службы диспетчера устройств StorSimple, выполните следующие действия. Если у вас уже есть служба диспетчера устройств StorSimple, управляющая виртуальными массивами StorSimple, пропустите этот шаг и перейдите к [шагу 2 — получение регистрационного ключа службы](#step-2-get-the-service-registration-key).
 
 [!INCLUDE [storsimple-virtual-array-create-new-service](../../includes/storsimple-virtual-array-create-new-service.md)]
 
@@ -104,11 +104,11 @@ ms.locfileid: "68517102"
 > Если вы не использовали автоматическое создание учетной записи хранения вашей службой, то после успешного создания службы вам нужно будет создать хотя бы одну учетную запись хранения.
 > 
 > * Если вы не создали учетную запись хранения автоматически, перейдите к разделу [Настройка новой учетной записи хранения для службы](#optional-step-configure-a-new-storage-account-for-the-service) , чтобы ознакомиться с подробными инструкциями.
-> * Если вы включили автоматическое создание учетной записи хранения, перейдите к разделу [Шаг 2. Получение ключа регистрации службы](#step-2-get-the-service-registration-key).
+> * Если вы включили автоматическое создание учетной записи хранения, перейдите к [шагу 2, "Получение ключа регистрации службы"](#step-2-get-the-service-registration-key).
 > 
 > 
 
-## <a name="step-2-get-the-service-registration-key"></a>Шаг 2.: Получение регистрационного ключа службы
+## <a name="step-2-get-the-service-registration-key"></a>шагу 2, "Получение ключа регистрации службы"
 
 После запуска и настройки службы диспетчера устройств StorSimple вам необходимо будет получить ключ регистрации службы. Этот ключ используется для регистрации вашего устройства StorSimple в службе и подключения к ней.
 
@@ -144,15 +144,15 @@ ms.locfileid: "68517102"
    * VMDK для VMWare ESXi 5.0, 5.5, 6.0 и 6.5.
 5. Скачайте файл и распакуйте его на локальный диск, запомнив, где находится распакованный файл.
 
-## <a name="optional-step-configure-a-new-storage-account-for-the-service"></a>Необязательный шаг. Настройка новой учетной записи хранения для службы
+## <a name="optional-step-configure-a-new-storage-account-for-the-service"></a>(Необязательно) Настройте новую учетную запись хранения для службы
 
 Это необязательный шаг. Выполните его, только если вы автоматически не создавали учетную запись хранения для службы.
 
-Если требуется создать учетную запись хранения Azure в другом регионе, то см. пошаговые инструкции в разделе [Создайте учетную запись хранения](../storage/common/storage-quickstart-create-account.md).
+Если требуется создать учетную запись хранения Azure в другом регионе, то см. пошаговые инструкции в разделе [Создайте учетную запись хранения](../storage/common/storage-account-create.md).
 
 Чтобы добавить имеющуюся учетную запись хранения Microsoft Azure, на [портале Azure](https://ms.portal.azure.com/) на странице службы диспетчера устройств StorSimple выполните следующие действия.
 
-#### <a name="to-add-a-storage-account-credential-that-has-the-same-azure-subscription-as-the-device-manager-service"></a>Добавление учетных данных учетной записи хранения, которая связана с той же подпиской Azure, что и служба диспетчера устройств
+#### <a name="to-add-a-storage-account-credential-that-has-the-same-azure-subscription-as-the-device-manager-service"></a>добавить учетные данные учетной записи хранения, которая связана с той же подпиской Azure, что и служба диспетчера устройств;
 
 1. Найдите службу диспетчера устройств и щелкните ее дважды. Откроется колонка **Обзор**.
 2. В разделе **Конфигурация** выберите **Учетные данные для учетной записи хранения**.
@@ -169,7 +169,7 @@ ms.locfileid: "68517102"
    
       ![Добавление учетных данных имеющейся учетной записи хранения](./media/storsimple-virtual-array-manage-storage-accounts/ova-add-storageacct.png)
 
-## <a name="next-step"></a>Дальнейшие действия
+## <a name="next-step"></a>Следующий шаг
 
 Далее необходимо подготовить виртуальную машину для виртуального массива StorSimple. Инструкции зависят от используемой ОС сервера виртуальных машин.
 

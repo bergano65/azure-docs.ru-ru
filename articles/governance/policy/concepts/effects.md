@@ -3,12 +3,12 @@ title: Принцип работы эффектов
 description: Определения политик Azure имеют различные эффекты, которые определяют, как Управление соответствием и о них сообщается.
 ms.date: 11/04/2019
 ms.topic: conceptual
-ms.openlocfilehash: fec2f966260d997b45be50554e0f41d5fd0491aa
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 2b588cfb7c13a63e3fa5d3a65d9ccb24a2e854fd
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75436364"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75972818"
 ---
 # <a name="understand-azure-policy-effects"></a>Сведения о действии политик Azure
 
@@ -367,7 +367,7 @@ ms.locfileid: "75436364"
   - Это свойство должно содержать массив строк, которые соответствуют идентификатору роли управления доступом на основе ролей, доступному для определенной подписки. Дополнительные сведения см. в статье [Исправление несоответствующих ресурсов с помощью службы "Политика Azure"](../how-to/remediate-resources.md#configure-policy-definition).
 - **DeploymentScope** (необязательно)
   - Допустимые значения: _Subscription_ и _ResourceGroup_.
-  - Задает тип инициируемого развертывания. _Subscription_ указывает на [развертывание на уровне подписки](../../../azure-resource-manager/deploy-to-subscription.md), а _ResourceGroup_ — на развертывание в группе ресурсов.
+  - Задает тип инициируемого развертывания. _Subscription_ указывает на [развертывание на уровне подписки](../../../azure-resource-manager/templates/deploy-to-subscription.md), а _ResourceGroup_ — на развертывание в группе ресурсов.
   - Свойство _location_ должно быть указано для объекта _Deployment_ при использовании развертываний на уровне подписки.
   - По умолчанию задано значение _ResourceGroup_.
 - **Deployment** [обязательный]

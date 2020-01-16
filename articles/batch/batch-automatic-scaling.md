@@ -3,7 +3,7 @@ title: Автомасштабирование вычислительных уз�
 description: Включение автоматического масштабирования в облачном пуле для динамического изменения количества вычислительных узлов в пуле.
 services: batch
 documentationcenter: ''
-author: laurenhughes
+author: ju-shim
 manager: gwallace
 editor: ''
 ms.assetid: c624cdfc-c5f2-4d13-a7d7-ae080833b779
@@ -12,14 +12,14 @@ ms.topic: article
 ms.tgt_pltfrm: ''
 ms.workload: multiple
 ms.date: 10/24/2019
-ms.author: lahugh
+ms.author: jushiman
 ms.custom: H1Hack27Feb2017,fasttrack-edit
-ms.openlocfilehash: c3c94805c18b0a7a3052158871c5fafce2dd5a33
-ms.sourcegitcommit: 51ed913864f11e78a4a98599b55bbb036550d8a5
+ms.openlocfilehash: 6dc048651f0a4d8af81852f062206788571b9a1e
+ms.sourcegitcommit: dbcc4569fde1bebb9df0a3ab6d4d3ff7f806d486
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2020
-ms.locfileid: "75660721"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76027318"
 ---
 # <a name="create-an-automatic-formula-for-scaling-compute-nodes-in-a-batch-pool"></a>Создание автоматической формулы для масштабирования вычисляемых узлов в пуле пакетной службы
 

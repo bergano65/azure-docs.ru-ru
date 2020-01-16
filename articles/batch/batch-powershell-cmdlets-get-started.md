@@ -3,7 +3,7 @@ title: Приступая к работе с модулем PowerShell для п
 description: Краткое описание командлетов Azure PowerShell, используемых для управления ресурсами пакетной службы.
 services: batch
 documentationcenter: ''
-author: laurenhughes
+author: ju-shim
 manager: gwallace
 editor: ''
 ms.assetid: ''
@@ -13,14 +13,14 @@ ms.topic: conceptual
 ms.tgt_pltfrm: powershell
 ms.workload: big-compute
 ms.date: 01/15/2019
-ms.author: lahugh
+ms.author: jushiman
 ms.custom: seodec18
-ms.openlocfilehash: 21930d5240225540159fa425d9d9fa518a1b19d5
-ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
+ms.openlocfilehash: 48b728d0e5b710f3adaa576f012bdbd19effc20a
+ms.sourcegitcommit: dbcc4569fde1bebb9df0a3ab6d4d3ff7f806d486
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68323079"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76026594"
 ---
 # <a name="manage-batch-resources-with-powershell-cmdlets"></a>Управление ресурсами пакетной службы с помощью командлетов PowerShell
 
@@ -30,7 +30,7 @@ ms.locfileid: "68323079"
 
 В этой статье описаны командлеты модуля пакетной службы Azure 1.0.0. Рекомендуется регулярно обновлять модули Azure PowerShell, чтобы пользоваться всеми преимуществами службы.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 * [Установите и настройте последнюю версию модуля Azure PowerShell](/powershell/azure/overview). Установить определенный модуль пакетной службы Azure, например модуль предварительной версии, можно из [коллекции PowerShell](https://www.powershellgallery.com/packages/Az.Batch/1.0.0).
 
@@ -48,15 +48,15 @@ ms.locfileid: "68323079"
 
 ## <a name="manage-batch-accounts-and-keys"></a>Управление учетными записями пакетной службы и ключами
 
-### <a name="create-a-batch-account"></a>Создание учетной записи Пакетной службы
+### <a name="create-a-batch-account"></a>Создание учетной записи пакетной службы
 
-Командлет **New-AzBatchAccount** создает учетную запись пакетной службы в указанной группе ресурсов. Если у вас еще нет группы ресурсов, создайте ее, выполнив командлет [New-AzResourceGroup](/powershell/module/az.resources/new-azresourcegroup). Укажите один из регионов Azure в параметре **Location**, например Central US. Пример:
+Командлет **New-AzBatchAccount** создает учетную запись пакетной службы в указанной группе ресурсов. Если у вас еще нет группы ресурсов, создайте ее, выполнив командлет [New-AzResourceGroup](/powershell/module/az.resources/new-azresourcegroup). Укажите один из регионов Azure в параметре **Location**, например Central US. Пример.
 
 ```powershell
 New-AzResourceGroup –Name MyBatchResourceGroup –Location "Central US"
 ```
 
-Далее создайте учетную запись пакетной службы в новой группе ресурсов. Укажите имя учетной записи вместо <*account_name*>, а также расположение и имя группы ресурсов. Создание учетной записи пакетной службы может занять некоторое время. Пример:
+Далее создайте учетную запись пакетной службы в новой группе ресурсов. Укажите имя учетной записи вместо <*account_name*>, а также расположение и имя группы ресурсов. Создание учетной записи пакетной службы может занять некоторое время. Пример.
 
 ```powershell
 New-AzBatchAccount –AccountName <account_name> –Location "Central US" –ResourceGroupName <res_group_name>
@@ -90,7 +90,7 @@ New-AzBatchAccountKey -AccountName <account_name> -KeyType Primary
 
 ### <a name="delete-a-batch-account"></a>Удаление учетной записи Пакетной службы
 
-**Remove-AzBatchAccount** удаляет учетную запись пакетной службы. Пример:
+**Remove-AzBatchAccount** удаляет учетную запись пакетной службы. Пример.
 
 ```powershell
 Remove-AzBatchAccount -AccountName <account_name>
@@ -111,7 +111,7 @@ $context = Get-AzBatchAccountKeys -AccountName <account_name>
 > [!NOTE]
 > По умолчанию первичный ключ учетной записи используется для проверки подлинности, но вы можете явно выбрать ключ, который нужно использовать, изменив свойство **KeyInUse** объекта BatchAccountContext: `$context.KeyInUse = "Secondary"`.
 
-### <a name="azure-active-directory-authentication"></a>Аутентификация Azure Active Directory
+### <a name="azure-active-directory-authentication"></a>Проверка подлинности Azure Active Directory
 
 ```powershell
 $context = Get-AzBatchAccount -AccountName <account_name>
@@ -175,7 +175,7 @@ Get-AzBatchPool -Id "myPool" -BatchContext $context
 
 ### <a name="use-the-maxcount-parameter"></a>Использование параметра MaxCount
 
-По умолчанию каждый командлет возвращает максимум 1000 объектов. Если этот предел достигнут, уточните параметры фильтра, чтобы он возвращал меньшее количество объектов, или явно задайте максимальное значение с помощью параметра **MaxCount** . Пример:
+По умолчанию каждый командлет возвращает максимум 1000 объектов. Если этот предел достигнут, уточните параметры фильтра, чтобы он возвращал меньшее количество объектов, или явно задайте максимальное значение с помощью параметра **MaxCount** . Пример.
 
 ```powershell
 Get-AzBatchTask -MaxCount 2500 -BatchContext $context
@@ -303,7 +303,7 @@ Get-AzBatchComputeNode -PoolId "PoolWithAppPackage" -BatchContext $context | Res
 > [!TIP]
 > На вычислительных узлах в пуле можно развернуть несколько пакетов приложений. Если нужно *добавить* пакет приложения, а не заменить развернутые пакеты, не указывайте строку `$pool.ApplicationPackageReferences.Clear()`, приведенную выше.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Подробные сведения о синтаксисе командлетов и их примеры см. в [справке по командлетам пакетной службы Azure](/powershell/module/az.batch).
 * Дополнительные сведения о приложениях и пакетах приложений в пакетной службе см. в статье [Развертывание приложений на вычислительных узлах с помощью пакетов приложений пакетной службы](batch-application-packages.md).

@@ -8,12 +8,12 @@ ms.service: cloud-services
 ms.topic: article
 ms.date: 01/29/2018
 ms.author: tagore
-ms.openlocfilehash: 096077550a426d7eb77ed0d71e720149dd103a55
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 61c794ba03934ae1828ba310f3f776bfb61b652b
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75386074"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75972943"
 ---
 # <a name="introduction-to-cloud-service-monitoring"></a>Введение в мониторинг облачных служб
 
@@ -52,7 +52,7 @@ ms.locfileid: "75386074"
 
 ## <a name="setup-diagnostics-extension"></a>Настройка расширения системы диагностики
 
-Если у вас еще нет **классической** учетной записи хранения, [создайте ее](../storage/common/storage-quickstart-create-account.md). Для создания учетной записи хранения обязательно используйте **классическую модель развертывания**.
+Если у вас еще нет **классической** учетной записи хранения, [создайте ее](../storage/common/storage-account-create.md). Для создания учетной записи хранения обязательно используйте **классическую модель развертывания**.
 
 Затем перейдите к ресурсу **Учетная запись хранения (классика)** . Выберите **Параметры** > **Ключи доступа** и скопируйте значение **Основная строка подключения**. Это значение вы примените для облачной службы. 
 

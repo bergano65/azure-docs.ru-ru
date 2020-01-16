@@ -3,12 +3,12 @@ title: Часто задаваемые вопросы об устройстве 
 description: Получите ответы на часто задаваемые вопросы об устройстве миграции Azure
 ms.topic: conceptual
 ms.date: 11/21/2019
-ms.openlocfilehash: 29cb390f509a2a4ebf44c1f9aacef99b507aebb8
-ms.sourcegitcommit: 02160a2c64a5b8cb2fb661a087db5c2b4815ec04
+ms.openlocfilehash: c8bcebeee58401cb3d2b65ae82e51d31ab4dad0b
+ms.sourcegitcommit: dbcc4569fde1bebb9df0a3ab6d4d3ff7f806d486
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75720333"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76029128"
 ---
 # <a name="azure-migrate-appliance-common-questions"></a>Устройство для миграции Azure: распространенные вопросы
 
@@ -40,9 +40,9 @@ ms.locfileid: "75720333"
 ## <a name="what-network-connectivity-is-needed"></a>Какое сетевое подключение требуется?
 
 Проверьте следующее:
-- Оценка устройства VMware: требования к [URL-адресу](migrate-support-matrix-vmware.md#assessment-url-access-requirements) и [порту](migrate-support-matrix-vmware.md#assessment-port-requirements) .
-- Миграция VMware без агента устройства: требования к [URL-адресу](migrate-support-matrix-vmware.md#agentless-migration-url-access-requirements) и [порту](migrate-support-matrix-vmware.md#agentless-migration-port-requirements) .
-- Оценка устройства Hyper-V: требования к [URL-адресу](migrate-support-matrix-hyper-v.md#assessment-appliance-url-access) и [порту](migrate-support-matrix-hyper-v.md#assessment-port-requirements) .
+- Оценка VMware с помощью устройства "миграция Azure": требования к [URL-адресу](migrate-appliance.md#url-access) и [портам](migrate-support-matrix-vmware.md#port-access) .
+- Миграция без агента VMware с помощью устройства "миграция Azure": требования к [URL-адресу](migrate-appliance.md#url-access) и [портам](migrate-support-matrix-vmware-migration.md#agentless-ports) .
+- Оценка Hyper-V с помощью устройства "миграция Azure": требования к [URL-адресу](migrate-appliance.md#url-access) и [портам](migrate-support-matrix-hyper-v.md#port-access) .
 
 
 ## <a name="what-data-does-the-appliance-collect"></a>Какие данные собираются устройством?

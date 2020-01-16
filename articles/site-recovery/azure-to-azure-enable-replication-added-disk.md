@@ -5,12 +5,12 @@ author: sideeksh
 manager: rochakm
 ms.topic: how-to
 ms.date: 04/29/2019
-ms.openlocfilehash: fd020755ec579b2553bca42db5d050bd442bf6fc
-ms.sourcegitcommit: b5106424cd7531c7084a4ac6657c4d67a05f7068
+ms.openlocfilehash: 6cbbe63d7968816de78256f5a8408517bb8da278
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75942302"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75973789"
 ---
 # <a name="enable-replication-for-a-disk-added-to-an-azure-vm"></a>Включение репликации для диска, добавленного в виртуальную машину Azure
 
@@ -31,9 +31,9 @@ ms.locfileid: "75942302"
 
 ## <a name="before-you-start"></a>Перед началом работы
 
-В этой статье предполагается, что вы уже настроили аварийное восстановление для виртуальной машины, в которую добавляется диск. Если вы этого не сделали, следуйте указаниям в [руководстве по аварийному восстановлению из Azure в Azure](azure-to-azure-tutorial-enable-replication.md). 
+В этой статье предполагается, что вы уже настроили аварийное восстановление для виртуальной машины, в которую добавляется диск. Если вы этого не сделали, следуйте указаниям в [руководстве по аварийному восстановлению из Azure в Azure](azure-to-azure-tutorial-enable-replication.md).
 
-## <a name="enable-replication-for-an-added-disk"></a>Включение репликации для добавленного диска 
+## <a name="enable-replication-for-an-added-disk"></a>Включение репликации для добавленного диска
 
 Чтобы включить репликацию для добавленного диска, выполните следующие действия.
 

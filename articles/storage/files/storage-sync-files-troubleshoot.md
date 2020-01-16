@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 12/8/2019
 ms.author: jeffpatt
 ms.subservice: files
-ms.openlocfilehash: f60d9714db71325bd9c67cae6e2f82d54f8e5eb3
-ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
+ms.openlocfilehash: 1b24258efdd75977b5571506b3eabf952a4ae0a4
+ms.sourcegitcommit: dbcc4569fde1bebb9df0a3ab6d4d3ff7f806d486
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75753914"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76027783"
 ---
 # <a name="troubleshoot-azure-file-sync"></a>Устранение неполадок службы "Синхронизация файлов Azure"
 Используйте службу "Синхронизация файлов Azure", чтобы централизованно хранить файловые ресурсы организации в службе файлов Azure, обеспечивая гибкость, производительность и совместимость локального файлового сервера. Это достигается путем преобразования Windows Server в быстрый кэш общего файлового ресурса Azure. Для локального доступа к данным вы можете использовать любой протокол, доступный в Windows Server, в том числе SMB, NFS и FTPS. Кроме того, вы можете создать любое количество кэшей в любом регионе.
@@ -182,8 +182,6 @@ Set-AzStorageSyncServerEndpoint `
     ```powershell
     Reset-AzStorageSyncServerCertificate -ResourceGroupName <string> -StorageSyncServiceName <string>
     ```
-
-
 <a id="endpoint-noactivity-sync"></a>**Конечная точка сервера находится в состоянии работоспособности "Нет действия", а в колонке "Зарегистрированные серверы" для сервера показано состояние "В сети"**  
 
 Состояние работоспособности конечной точки сервера "Нет действия" означает, что конечная точка сервера не выполнила действие синхронизации за последние два часа.
@@ -393,6 +391,22 @@ PerItemErrorCount: 1006.
 3. [Убедитесь, что служба "Синхронизация файлов Azure" имеет доступ к учетной записи хранения.](#troubleshoot-rbac)
 4. [Убедитесь, что параметры брандмауэра и виртуальной сети в учетной записи хранения настроены правильно (если они включены).](https://docs.microsoft.com/azure/storage/files/storage-sync-files-deployment-guide?tabs=azure-portal#configure-firewall-and-virtual-network-settings)
 
+<a id="-2134351804"></a>**Не удалось выполнить синхронизацию, так как запрос не имеет полномочий на выполнение этой операции.**  
+
+| | |
+|-|-|
+| **HRESULT** | 0x80c86044 |
+| **HRESULT (десятичное число)** | — 2134351804 |
+| **Строка ошибки** | ECS_E_AZURE_AUTHORIZATION_FAILED |
+| **Требуются действия по исправлению** | Да |
+
+Эта ошибка возникает из-за того, что агент Синхронизация файлов Azure не имеет прав доступа к общему файловому ресурсу Azure. Вы можете устранить эту ошибку, выполнив следующие шаги:
+
+1. [Проверьте наличие учетной записи хранения.](#troubleshoot-storage-account)
+2. [Проверьте наличие общего файлового ресурса Azure.](#troubleshoot-azure-file-share)
+3. [Убедитесь, что параметры брандмауэра и виртуальной сети в учетной записи хранения настроены правильно (если они включены).](https://docs.microsoft.com/azure/storage/files/storage-sync-files-deployment-guide?tabs=azure-portal#configure-firewall-and-virtual-network-settings)
+4. [Убедитесь, что служба "Синхронизация файлов Azure" имеет доступ к учетной записи хранения.](#troubleshoot-rbac)
+
 <a id="-2134364064"></a><a id="cannot-resolve-storage"></a>**Не удалось разрешить имя используемой учетной записи хранения.**  
 
 | | |
@@ -495,7 +509,7 @@ PerItemErrorCount: 1006.
 | **Строка ошибки** | ECS_E_SYNC_BLOCKED_ON_SUSPENDED_SUBSCRIPTION |
 | **Требуются действия по исправлению** | Да |
 
-Эта ошибка возникает, когда использование подписки Azure приостановлено. Синхронизация будет восстановлена после восстановления подписки Azure. Дополнительные сведения см. в статье [Почему подписка Azure отключена и как активировать ее повторно?](../../billing/billing-subscription-become-disable.md)
+Эта ошибка возникает, когда использование подписки Azure приостановлено. Синхронизация будет восстановлена после восстановления подписки Azure. Дополнительные сведения см. в статье [Почему подписка Azure отключена и как активировать ее повторно?](../../cost-management-billing/manage/subscription-disabled.md)
 
 <a id="-2134364052"></a>**Для учетной записи хранения настроен брандмауэр или виртуальные сети.**  
 

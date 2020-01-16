@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/16/2017
 ms.author: monicar
-ms.openlocfilehash: f5e0344cb1da86661ae87b5e45bd93dd181e7bb0
-ms.sourcegitcommit: 51ed913864f11e78a4a98599b55bbb036550d8a5
+ms.openlocfilehash: 7c80ba6b15cec08da9bcefea243493a824ef66bd
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2020
-ms.locfileid: "75659565"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75978758"
 ---
 # <a name="microsoft-azure-glossary-a-dictionary-of-cloud-terminology-on-the-azure-platform"></a>Словарь терминов Microsoft Azure: словарь терминов, связанных с облаком на платформе Azure
 
@@ -31,7 +31,7 @@ ms.locfileid: "75659565"
 
 ## <a name="account"></a>account
 Учетная запись, используемая для доступа к подписке Azure и управления ей. Зачастую она называется учетной записью Azure, хотя учетной записью может быть любая из следующих: существующая рабочая, учебная или личная учетная запись Майкрософт либо имя пользователя и пароль Office 365. Можно также создать учетную запись для управления подпиской Azure во время регистрации в [бесплатной пробной версии](https://azure.microsoft.com).  
-См. разделы [Регистрация для получения подписки Azure с помощью учетной записи Office 365](billing/billing-use-existing-office-365-account-azure-subscription.md) и [Учетные записи для входа](active-directory/fundamentals/active-directory-how-subscriptions-associated-directory.md).
+См. разделы [Регистрация для получения подписки Azure с помощью учетной записи Office 365](cost-management-billing/manage/office-365-account-for-azure-subscription.md) и [Учетные записи для входа](active-directory/fundamentals/active-directory-how-subscriptions-associated-directory.md).
 
 ## <a name="api-app"></a>приложение API;
 Другое название [приложения службы приложений](#app-service-app).
@@ -96,11 +96,11 @@ ms.locfileid: "75659565"
 
 ## <a name="resource"></a>ресурс
 Элемент, который является частью решения Azure. Каждая служба Azure позволяет развертывать различные типы ресурсов, такие как базы данных или виртуальные машины.   
-См. статью [Общие сведения о диспетчере ресурсов Azure](azure-resource-manager/resource-group-overview.md).
+См. статью [Общие сведения о диспетчере ресурсов Azure](azure-resource-manager/management/overview.md).
 
 ## <a name="resource-group"></a>resource group
 Контейнер в диспетчере ресурсов, содержащий связанные ресурсы для приложения. Группа ресурсов может содержать все ресурсы для приложения или только те ресурсы, которые логически сгруппированы вместе. Можно выбрать способ распределения ресурсов для групп ресурсов, который наиболее оптимален для вашей организации.  
-См. статью [Общие сведения о диспетчере ресурсов Azure](azure-resource-manager/resource-group-overview.md).
+См. статью [Общие сведения о диспетчере ресурсов Azure](azure-resource-manager/management/overview.md).
 
 ## <a name="arm-template"></a>шаблон Resource Manager
 JSON-файл, который декларативно определяет один или несколько ресурсов Azure и устанавливает зависимости между развернутыми ресурсами. Шаблон можно использовать для согласованного и многократного развертывания ресурсов.  
@@ -108,7 +108,7 @@ JSON-файл, который декларативно определяет од
 
 ## <a name="resource-provider"></a>поставщик ресурсов
 Служба, которая предоставляет ресурсы для развертывания и управления посредством диспетчера ресурсов. Каждый поставщик ресурсов предоставляет операции REST API для работы с развернутыми ресурсами. Доступ к поставщикам ресурсов можно получить через портал Azure, Azure PowerShell и несколько пакетов SDK для программирования.  
-См. статью [Общие сведения о диспетчере ресурсов Azure](azure-resource-manager/resource-group-overview.md).
+См. статью [Общие сведения о диспетчере ресурсов Azure](azure-resource-manager/management/overview.md).
 
 ## <a name="role"></a>роль
 Средства для управления доступом, которые можно назначать пользователям, группам и службам. Роли могут выполнять такие действия, как создание, управление и чтение ресурсов Azure.  

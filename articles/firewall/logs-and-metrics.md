@@ -7,12 +7,12 @@ ms.service: firewall
 ms.topic: article
 ms.date: 11/19/2019
 ms.author: victorh
-ms.openlocfilehash: f233b1a60202b440abf34edd1c56eebaecba18e2
-ms.sourcegitcommit: 4821b7b644d251593e211b150fcafa430c1accf0
+ms.openlocfilehash: 1267b3295762f6eb6af92b1cec909bae768886c1
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74166998"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75974503"
 ---
 # <a name="azure-firewall-logs-and-metrics"></a>Журналы и метрики Брандмауэра Azure
 
@@ -20,7 +20,7 @@ ms.locfileid: "74166998"
 
 Доступ к некоторым из этих журналов можно получить через портал. Журналы можно передавать в [Журналы Azure Monitor](../azure-monitor/insights/azure-networking-analytics.md), службу хранилища, Центры событий, а затем анализировать в Журналах Azure Monitor или при помощи различных инструментов, таких как Excel и Power BI.
 
-Метрики являются упрощенными и могут поддерживать сценарии практически в реальном времени, что позволяет использовать их для оповещений и быстрого обнаружения проблем. 
+Метрики являются упрощенными и могут поддерживать сценарии практически в реальном времени, что позволяет использовать их для оповещений и быстрого обнаружения проблем.
 
 ## <a name="diagnostic-logs"></a>Журналы диагностики
 
@@ -33,7 +33,7 @@ ms.locfileid: "74166998"
    ```
    Category: application rule logs.
    Time: log timestamp.
-   Properties: currently contains the full message. 
+   Properties: currently contains the full message.
    note: this field will be parsed to specific fields in the future, while maintaining backward compatibility with the existing properties field.
    ```
 
@@ -56,7 +56,7 @@ ms.locfileid: "74166998"
    ```
    Category: network rule logs.
    Time: log timestamp.
-   Properties: currently contains the full message. 
+   Properties: currently contains the full message.
    note: this field will be parsed to specific fields in the future, while maintaining backward compatibility with the existing properties field.
    ```
 
@@ -83,7 +83,7 @@ ms.locfileid: "74166998"
 
    Записи этого журнала собираются по умолчанию, и их можно просмотреть на портале Azure.
 
-   [Журналы действий Azure](../azure-resource-manager/resource-group-audit.md) (ранее известные как операционные журналы и журналы аудита) можно использовать для просмотра всех операций, отправленных в подписку Azure.
+   [Журналы действий Azure](../azure-resource-manager/management/view-activity-logs.md) (ранее известные как операционные журналы и журналы аудита) можно использовать для просмотра всех операций, отправленных в подписку Azure.
 
 ## <a name="metrics"></a>Метрики
 
@@ -122,7 +122,7 @@ ms.locfileid: "74166998"
    При добавлении дополнительных общедоступных IP-адресов в брандмауэр становятся доступными дополнительные порты SNAT, уменьшающие использование портов SNAT. Кроме того, когда брандмауэр масштабируется по разным причинам (например, ЦП или пропускная способность), также становятся доступны дополнительные порты SNAT. Таким образом, заданный процент использования портов SNAT может быть отключен без добавления общедоступных IP-адресов, так как служба масштабируется. Можно напрямую управлять количеством доступных общедоступных IP-адресов, чтобы увеличить число доступных портов в брандмауэре. Но вы не можете напрямую управлять масштабированием брандмауэра. В настоящее время порты SNAT добавляются только для первых пяти общедоступных IP-адресов.   
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - См. дополнительные сведения об [отслеживании метрик и журналов Брандмауэра Azure](tutorial-diagnostics.md).
 

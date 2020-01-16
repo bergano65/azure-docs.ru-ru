@@ -6,12 +6,12 @@ ms.author: raagyema
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 11/22/2019
-ms.openlocfilehash: a1bd9b8cbcbc785425c2d1870dc555ff91f695f7
-ms.sourcegitcommit: 8cf199fbb3d7f36478a54700740eb2e9edb823e8
+ms.openlocfilehash: 02dc9e1ad9ee46b1a400e44b6ef737e70571a17a
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74485085"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75972583"
 ---
 # <a name="security-in-azure-database-for-postgresql---single-server"></a>Безопасность в базе данных Azure для PostgreSQL — один сервер
 
@@ -37,8 +37,11 @@ ms.locfileid: "74485085"
 ### <a name="virtual-network-firewall-rules"></a>Правила брандмауэра для виртуальной сети
 Конечные точки службы виртуальной сети расширяют возможности подключения к виртуальной сети по магистрали Azure. С помощью правил виртуальной сети можно включить сервер базы данных Azure для PostgreSQL, чтобы разрешить подключения из выбранных подсетей в виртуальной сети. Дополнительные сведения см. в разделе [Общие сведения о конечной точке службы виртуальной сети](concepts-data-access-and-security-vnet.md).
 
+### <a name="private-ip"></a>Частный IP-адрес
+Частная ссылка позволяет подключаться к базе данных Azure для PostgreSQL на одном сервере в Azure с помощью частной конечной точки. Частная связь Azure, по сути, предоставляет службы Azure в частной виртуальной сети (VNet). Доступ к ресурсам PaaS можно получить, используя частный IP-адрес, как и любой другой ресурс в виртуальной сети. Дополнительные сведения см. в статье [Общие сведения о частной ссылке](concepts-data-access-and-security-private-link.md) .
 
-## <a name="access-management"></a>управление доступом
+
+## <a name="access-management"></a>Управление доступом
 
 При создании базы данных Azure для сервера PostgreSQL Вы предоставляете учетные данные для роли администратора. Эту роль администратора можно использовать для создания дополнительных [ролей PostgreSQL](https://www.postgresql.org/docs/current/user-manag.html).
 
@@ -52,6 +55,6 @@ ms.locfileid: "74485085"
 [Ведение журнала аудита](concepts-audit.md) доступно для наблюдения за действиями в базах данных. 
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - Включение правил брандмауэра для [IP-адресов](concepts-firewall-rules.md) или [виртуальных сетей](concepts-data-access-and-security-vnet.md)
 - Дополнительные сведения о [проверке подлинности Azure Active Directory](concepts-aad-authentication.md) в базе данных Azure для PostgreSQL

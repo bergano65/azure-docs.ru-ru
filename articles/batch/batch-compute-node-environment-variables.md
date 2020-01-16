@@ -2,7 +2,7 @@
 title: Переменные среды выполнения задач — Пакетная служба Azure | Документация Майкрософт
 description: Руководство по переменным среды выполнения задач и Справочник по пакетной аналитике Azure.
 services: batch
-author: laurenhughes
+author: ju-shim
 manager: gwallace
 ms.assetid: ''
 ms.service: batch
@@ -10,13 +10,13 @@ ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: big-compute
 ms.date: 09/12/2019
-ms.author: lahugh
-ms.openlocfilehash: cb087b261780ba88bd26bea3e14fc875e5c63566
-ms.sourcegitcommit: 98ce5583e376943aaa9773bf8efe0b324a55e58c
+ms.author: jushiman
+ms.openlocfilehash: fd3c8ac9e65f7f77be070e1d1d108490e61eb248
+ms.sourcegitcommit: dbcc4569fde1bebb9df0a3ab6d4d3ff7f806d486
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73177149"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76027187"
 ---
 # <a name="azure-batch-runtime-environment-variables"></a>Переменные среды среды выполнения пакетной службы Azure
 
@@ -44,11 +44,11 @@ ms.locfileid: "73177149"
 
 ## <a name="environment-variables"></a>Переменные среды
 
-| Имя переменной                     | Описание                                                              | Доступность | Пример |
+| Имя переменной                     | Description                                                              | Доступность | Пример |
 |-----------------------------------|--------------------------------------------------------------------------|--------------|---------|
 | AZ_BATCH_ACCOUNT_NAME           | Имя учетной записи пакетной службы, к которой относится задача.                  | Все задачи.   | mybatchaccount |
 | AZ_BATCH_ACCOUNT_URL            | URL-адрес учетной записи пакетной службы. | Все задачи. | `https://myaccount.westus.batch.azure.com` |
-| AZ_BATCH_APP_PACKAGE            | Префикс всех переменных среды пакета приложения. Например, если приложение "FOO" версии "1" установлено в пул, переменная среды — AZ_BATCH_APP_PACKAGE_FOO_1. AZ_BATCH_APP_PACKAGE_FOO_1 указывает на расположение, в которое был загружен пакет (папка). При использовании версии пакета приложения по умолчанию используйте переменную среды AZ_BATCH_APP_PACKAGE без номеров версий. | Любую задачу с помощью пакета связанного приложения. Доступно также для всех задач, если сам узел имеет пакеты приложений. | AZ_BATCH_APP_PACKAGE_FOO_1 |
+| AZ_BATCH_APP_PACKAGE            | Префикс всех переменных среды пакета приложения. Например, если приложение "FOO" версии "1" установлено в пул, переменная среды будет AZ_BATCH_APP_PACKAGE_FOO_1. AZ_BATCH_APP_PACKAGE_FOO_1 указывает на расположение, в которое был загружен пакет (папка). При использовании версии пакета приложения по умолчанию используйте переменную среды AZ_BATCH_APP_PACKAGE без номеров версий. | Любую задачу с помощью пакета связанного приложения. Доступно также для всех задач, если сам узел имеет пакеты приложений. | AZ_BATCH_APP_PACKAGE_FOO_1 |
 | AZ_BATCH_AUTHENTICATION_TOKEN   | Маркер проверки подлинности, который предоставляет доступ к ограниченному набору операций пакетной службы. Эта переменная среды присутствует, только если [authenticationTokenSettings](/rest/api/batchservice/task/add#authenticationtokensettings) устанавливается при [добавлении задачи](/rest/api/batchservice/task/add#request-body). В API пакетной службы, например в [API BatchClient.Open() для .NET](https://docs.microsoft.com/dotnet/api/microsoft.azure.batch.batchclient.open#Microsoft_Azure_Batch_BatchClient_Open_Microsoft_Azure_Batch_Auth_BatchTokenCredentials_), значение маркера используется в качестве учетных данных для создания клиента пакетной службы. | Все задачи. | Маркер доступа OAuth2 |
 | AZ_BATCH_CERTIFICATES_DIR       | Каталог в [рабочем каталоге задачи][files_dirs] , в котором хранятся сертификаты для вычислений-узлов Linux. Эта переменная среды не применяется к вычисленным узлам Windows.                                                  | Все задачи.   |  /mnt/batch/tasks/workitems/batchjob001/job-1/task001/certs |
 | AZ_BATCH_HOST_LIST              | Список узлов, выделенных [задаче с несколькими экземплярами][multi_instance] в формате `nodeIP,nodeIP`. | Основные задачи и подзадачи с несколькими экземплярами. | `10.0.0.4,10.0.0.5` |

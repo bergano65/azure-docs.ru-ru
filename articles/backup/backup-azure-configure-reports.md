@@ -3,12 +3,12 @@ title: Настройка отчетов Power BI
 description: Настройка отчетов Power BI для службы Azure Backup с помощью хранилища Служб восстановления.
 ms.topic: conceptual
 ms.date: 07/09/2019
-ms.openlocfilehash: 9b6ef62a924761642ef3217ff8af64ac6847c766
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 4f8a2dd927f996ea09e40c7db2e43b46c17f6258
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75450110"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75978375"
 ---
 # <a name="configure-azure-backup-reports"></a>Настройка отчетов службы Azure Backup
 
@@ -30,7 +30,7 @@ ms.locfileid: "75450110"
 
 ## <a name="prerequisites"></a>Технические условия
 
-- Создайте [учетную запись хранения Azure](../storage/common/storage-quickstart-create-account.md), чтобы настроить ее для отчетов. Она будет использоваться для хранения данных для отчетов.
+- Создайте [учетную запись хранения Azure](../storage/common/storage-account-create.md), чтобы настроить ее для отчетов. Она будет использоваться для хранения данных для отчетов.
 - [Создайте учетную запись Power BI](https://powerbi.microsoft.com/landing/signin/) для просмотра, настройки и создания собственных отчетов с помощью портала Power BI.
 - Зарегистрируйте поставщик ресурсов **Microsoft.insights**, если он еще не зарегистрирован. Используйте подписки для учетной записи хранения и хранилище Служб восстановления, чтобы данные отчетов передавались в учетную запись хранения. Для этого перейдите на портал Azure, выберите **Подписки** > **Поставщики ресурсов** и установите флажок для нужного поставщика, чтобы зарегистрировать его.
 

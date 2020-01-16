@@ -14,18 +14,18 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 10/31/2018
 ms.author: genli
-ms.openlocfilehash: c37c49d8f7e09334014af290bf3a8c8e6d35f04b
-ms.sourcegitcommit: ca359c0c2dd7a0229f73ba11a690e3384d198f40
+ms.openlocfilehash: a13a0a54e9ded48cc5848843f4c329b2dea90f65
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71058354"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75975221"
 ---
 # <a name="how-to-set-a-static-internal-private-ip-address-using-powershell-classic"></a>Как задать статический внутренний частный IP-адрес с помощью PowerShell (классическая модель)
 В большинстве случаев для виртуальной машины не нужно указывать статический внутренний IP-адрес. Виртуальные машины в виртуальной сети будут автоматически получать внутренний IP-адрес из указанного вами диапазона. Однако в некоторых случаях указание статического IP-адреса для конкретной виртуальной машины имеет смысл. Например, если на виртуальной машине планируется запускать DNS или она будет контроллером домена. Статический внутренний IP-адрес остается у виртуальной машины даже при переходе в состояние остановки или отзыва. 
 
 > [!IMPORTANT]
-> В Azure предлагаются две модели развертывания для создания ресурсов и работы с ними:  [модель развертывания с помощью Resource Manager и классическая модель](../azure-resource-manager/resource-manager-deployment-model.md). В этой статье рассматривается использование классической модели развертывания. Для большинства новых развертываний корпорация Майкрософт рекомендует [использовать модель развертывания с помощью Resource Manager](virtual-networks-static-private-ip-arm-ps.md).
+> В Azure предлагаются две модели развертывания для создания ресурсов и работы с ними: [модель Resource Manager и классическая модель](../azure-resource-manager/management/deployment-models.md). В этой статье рассматривается использование классической модели развертывания. Для большинства новых развертываний корпорация Майкрософт рекомендует [использовать модель развертывания с помощью Resource Manager](virtual-networks-static-private-ip-arm-ps.md).
 > 
 > 
 > ## <a name="install-the-azure-powershell-service-management-module"></a>Установка модуля управления службами Azure PowerShell
@@ -107,7 +107,7 @@ ms.locfileid: "71058354"
     | Set-AzureStaticVNetIP -IPAddress 10.10.0.7 `
     | Update-AzureVM
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 [Зарезервированный IP-адрес](virtual-networks-reserved-public-ip.md)
 
 [Общедоступный IP-адрес уровня экземпляра (ILPIP)](virtual-networks-instance-level-public-ip.md)
