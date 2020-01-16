@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 01/09/2020
-ms.openlocfilehash: 630eeb8ec5582f2dc968a10e7cf1b5750683cf66
-ms.sourcegitcommit: 8b37091efe8c575467e56ece4d3f805ea2707a64
+ms.openlocfilehash: 21ad0c38b8901c1e33e05ab162552cb074a392a4
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75830549"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75969592"
 ---
 # <a name="what-is-monitored-by-azure-monitor"></a>Что отслеживается Azure Monitor?
 В этой статье описываются различные приложения и службы, которые отслеживаются Azure Monitor. 
@@ -177,7 +177,7 @@ Insights предоставляет настраиваемый интерфей�
 |:---|:---|
 | [Служба автоматизации Azure](/azure/automation/) | Управление обновлениями операционной системы и отслеживание изменений на компьютерах Windows и Linux. См. раздел [Отслеживание изменений](../automation/change-tracking.md) и [Управление обновлениями](../automation/automation-update-management.md). |
 | [Azure Information Protection](https://docs.microsoft.com/azure/information-protection/) | Классификация и дополнительно Защита документов и сообщений электронной почты. См. раздел [Central Reporting for Azure Information Protection](https://docs.microsoft.com/azure/information-protection/reports-aip#configure-a-log-analytics-workspace-for-the-reports). |
-| [Центр безопасности Azure](/azure/security-center/) | Собирайте и анализируйте события безопасности и проводите анализ угроз. См. раздел [сбор данных в центре безопасности Azure](/security-center/security-center-enable-data-collection.md) . |
+| [Центр безопасности Azure](/azure/security-center/) | Собирайте и анализируйте события безопасности и проводите анализ угроз. См. раздел [сбор данных в центре безопасности Azure](/azure/security-center/security-center-enable-data-collection) . |
 | [Azure Sentinel](/azure/sentinel/) | Подключается к различным источникам, включая Office 365 и Amazon Web Services Cloud. См. раздел [Подключение к источникам данных](/azure/sentinel/connect-data-sources). |
 | [Аналитика Key Vault](insights/azure-key-vault.md) | Анализируйте журналы Azure Key Vault AuditEvent. |
 | [Microsoft Intune](https://docs.microsoft.com/intune/) | Создайте параметр диагностики для отправки журналов в Azure Monitor. См. статью [Отправка данных журнала в хранилище, концентраторы событий или log Analytics в Intune (Предварительная версия)](https://docs.microsoft.com/intune/fundamentals/review-logs-using-azure-monitor).  |

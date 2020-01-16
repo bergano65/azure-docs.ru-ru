@@ -11,12 +11,12 @@ author: jaszymas
 ms.author: jaszymas
 ms.reviewer: vanto
 ms.date: 03/12/2019
-ms.openlocfilehash: e647725c5d30f35f39263757508bdd1725552731
-ms.sourcegitcommit: d614a9fc1cc044ff8ba898297aad638858504efa
+ms.openlocfilehash: 72825a709ec55bf5879e15287eb8b258dc4c8e94
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74997315"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75965795"
 ---
 # <a name="powershell-and-cli-enable-transparent-data-encryption-with-customer-managed-key-from-azure-key-vault"></a>PowerShell и CLI: включение прозрачное шифрование данных с помощью ключа, управляемого клиентом, из Azure Key Vault
 
@@ -28,7 +28,7 @@ ms.locfileid: "74997315"
 - [Рекомендуется, но необязательно.] Аппаратный модуль безопасности (HSM) или локальное хранилище ключей для создания локальной копии материала ключа для предохранителя TDE.
 - Необходимо установить и запустить Azure PowerShell.
 - Создайте Azure Key Vault и ключи для TDE.
-  - [Инструкции по использованию аппаратного модуля безопасности (HSM) и Key Vault](../key-vault/key-vault-hsm-protected-keys.md).
+  - [Инструкции по использованию аппаратного модуля безопасности (HSM) и Key Vault](../key-vault/key-vault-hsm-protected-keys.md)
     - Чтобы использовать хранилище ключей для TDE, обязательно настройте для него следующее свойство:
   - [обратимое удаление](../key-vault/key-vault-ovw-soft-delete.md) и очистка защиты
 - Чтобы использовать ключ для TDE, обязательно настройте для него следующие атрибуты:
@@ -119,7 +119,7 @@ Get-AzSqlDatabaseTransparentDataEncryptionActivity -ResourceGroupName <SQLDataba
    -ServerName <LogicalServerName> -DatabaseName <DatabaseName>  
 ```
 
-# <a name="azure-clitabazure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-clitabazure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 Чтобы установить необходимый интерфейс командной строки версии 2,0 или более поздней и подключиться к подписке Azure, см. статью [Установка и настройка межплатформенного интерфейса командной строки azure 2,0](https://docs.microsoft.com/cli/azure/install-azure-cli).
 
@@ -205,7 +205,7 @@ az sql db tde show --database <dbname> --server <servername> --resource-group <r
    Remove-AzSqlServerKeyVaultKey -KeyId <KeyVaultKeyId> -ServerName <LogicalServerName> -ResourceGroupName <SQLDatabaseResourceGroupName>
    ```
 
-# <a name="azure-clitabazure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-clitabazure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 - Общие параметры базы данных см. в разделе [AZ SQL](/cli/azure/sql).
 
@@ -227,7 +227,7 @@ az sql db tde show --database <dbname> --server <servername> --resource-group <r
    Get-AzSubscription -SubscriptionId <SubscriptionId>
    ```
 
-   # <a name="azure-clitabazure-cli"></a>[Azure CLI](#tab/azure-cli)
+   # <a name="azure-clitabazure-cli"></a>[Azure CLI](#tab/azure-cli)
 
    ```powershell
    az account show - s <SubscriptionId>

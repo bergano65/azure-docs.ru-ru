@@ -3,7 +3,7 @@ title: Общая папка Azure для пулов пакетной служб
 description: Как подключить общую папку с помощью функции "Файлы Azure" к вычислительным узлам в пуле Linux или Windows пакетной службы Azure
 services: batch
 documentationcenter: ''
-author: laurenhughes
+author: ju-shim
 manager: gwallace
 editor: ''
 ms.assetid: ''
@@ -12,14 +12,14 @@ ms.topic: article
 ms.tgt_pltfrm: multiple
 ms.workload: big-compute
 ms.date: 05/24/2018
-ms.author: lahugh
+ms.author: jushiman
 ms.custom: ''
-ms.openlocfilehash: cd185035640bf0beaa54fa6a0f4d92a33837442b
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: d84fdd4635a7a9227e29fe3cd8c43a1fc4cbeb5b
+ms.sourcegitcommit: dbcc4569fde1bebb9df0a3ab6d4d3ff7f806d486
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70093972"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76029451"
 ---
 # <a name="use-an-azure-file-share-with-a-batch-pool"></a>Использование общей папки Azure с пулом пакетной службы
 
@@ -50,8 +50,8 @@ ms.locfileid: "70093972"
 
 Например, включите команду `net use`, чтобы подключить общую папку как часть командной строки каждой задачи. Для подключения общей папки требуются следующие учетные данные:
 
-* **Имя пользователя**. AZURE\\\<имя_учетной_записи_хранения\>, например AZURE\\*mystorageaccountname*;
-* **Пароль**. \<Сторажеаккаунткэйвхичендс в = = >, например *кскскскскскскскскскскскскскскскскскскскскс = =*
+* **имя пользователя**: AZURE\\\<имя_учетной_записи_хранения\>, например AZURE\\*mystorageaccountname*;
+* **Пароль**: \<сторажеаккаунткэйвхичендс in = = >, например *кскскскскскскскскскскскскскскскскскскскскс = =* .
 
 Следующая команда позволяет подключить общую папку *myfileshare* в учетной записи хранения *mystorageaccountname* как диск *S:*
 
@@ -128,7 +128,7 @@ apt-get update && apt-get install cifs-utils && sudo mkdir -p /mnt/MyAzureFileSh
 Затем выполните команду `mount` для подключения общей папки, указав следующие учетные данные:
 
 * **имя пользователя**: \<имя_учетной_записи_хранения\>, например *mystorageaccountname*;
-* **Пароль**. \<Сторажеаккаунткэйвхичендс в = = >, например *кскскскскскскскскскскскскскскскскскскскскс = =*
+* **Пароль**: \<сторажеаккаунткэйвхичендс in = = >, например *кскскскскскскскскскскскскскскскскскскскскс = =* .
 
 Следующая команда позволяет подключить общую папку *myfileshare* в учетной записи хранения *mystorageaccountname* по адресу */mnt/MyAzureFileShare*: 
 
@@ -181,7 +181,7 @@ batch_service_client.task.add(job_id, task)
 ```
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Другие варианты чтения и записи данных в пакетной службе см. в [обзоре возможностей пакетной службы](batch-api-basics.md) и статье [Сохранение пакетных заданий и выходных данных задач](batch-task-output.md).
 

@@ -5,12 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 12/04/2019
 ms.topic: conceptual
-ms.openlocfilehash: e37b6b800cbe0b4272df227e1411257b33a3e0cb
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 37fee7f96a27942a1295cb8c2315fedffc5bdefe
+ms.sourcegitcommit: dbcc4569fde1bebb9df0a3ab6d4d3ff7f806d486
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75420803"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76030155"
 ---
 # <a name="startstop-vms-during-off-hours-solution-in-azure-automation"></a>Решение для запуска и остановки виртуальных машин в нерабочее время в службе автоматизации Azure
 
@@ -33,7 +33,7 @@ ms.locfileid: "75420803"
 > [!NOTE]
 > Если вы используете решение для классических виртуальных машин, все виртуальные машины в каждой облачной службе будут обрабатываться последовательно. Виртуальные машины по-прежнему обрабатываются параллельно в разных облачных службах. Если у вас более 20 виртуальных машин на одну облачную службу, рекомендуется создать несколько расписаний с родительским модулем Runbook **ScheduledStartStop_Parent** и указать 20 виртуальных машин по расписанию. В свойствах расписания укажите в виде списка с разделителями-запятыми имена виртуальных машин в параметре **VMList** . В противном случае, если задание службы автоматизации для этого решения выполняется более трех часов, оно временно выгружается или останавливается в течение предельного размера [общего ресурса](automation-runbook-execution.md#fair-share) .
 >
-> Подписки поставщика облачных решений Azure (Azure CSP) поддерживают только модель Azure Resource Manager; в этой программе отсутствуют все службы, созданные с помощью других моделей. При выполнении решения для запуска и остановки могут возникнуть ошибки, так как в нем есть командлеты для управления классическими ресурсами. Дополнительные сведения о CSP см. в разделе [Комментарии](https://docs.microsoft.com/azure/cloud-solution-provider/overview/azure-csp-available-services#comments). Если вы используете подписку CSP, после развертывания вам следует изменить [**External_EnableClassicVMs**](#variables) на **False**.
+> Подписки поставщика облачных решений Azure (Azure CSP) поддерживают только модель Azure Resource Manager; в этой программе отсутствуют все службы, созданные с помощью других моделей. При выполнении решения для запуска и остановки могут возникнуть ошибки, так как в нем есть командлеты для управления классическими ресурсами. Дополнительные сведения о CSP см. в разделе [Комментарии](https://docs.microsoft.com/azure/cloud-solution-provider/overview/azure-csp-available-services). Если вы используете подписку CSP, после развертывания вам следует изменить [**External_EnableClassicVMs**](#variables) на **False**.
 
 [!INCLUDE [azure-monitor-log-analytics-rebrand](../../includes/azure-monitor-log-analytics-rebrand.md)]
 

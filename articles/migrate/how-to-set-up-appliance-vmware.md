@@ -1,17 +1,14 @@
 ---
 title: Настройка устройства "миграция Azure" для VMware
 description: Узнайте, как настроить устройство "миграция Azure" для оценки и миграции виртуальных машин VMware.
-author: rayne-wiselman
-ms.service: azure-migrate
 ms.topic: article
 ms.date: 11/18/2019
-ms.author: raynew
-ms.openlocfilehash: adb78682e80d78aa4fa6b48507f1fcce789a3fe1
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: da451149d0420bc71a355fdf4f4fb122b196d5a0
+ms.sourcegitcommit: dbcc4569fde1bebb9df0a3ab6d4d3ff7f806d486
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75360180"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76029062"
 ---
 # <a name="set-up-an-appliance-for-vmware-vms"></a>Настройка устройства для виртуальных машин VMware
 
@@ -72,7 +69,7 @@ ms.locfileid: "75360180"
 
 ### <a name="verify-appliance-access-to-azure"></a>Проверка доступа устройства к Azure
 
-Убедитесь, что виртуальная машина устройства может подключиться к [URL-адресам Azure](migrate-support-matrix-vmware.md#assessment-url-access-requirements).
+Убедитесь, что виртуальная машина устройства может подключиться к [URL-адресам Azure](migrate-appliance.md#url-access).
 
 
 ## <a name="configure-the-appliance"></a>Настройка устройства
@@ -114,7 +111,7 @@ ms.locfileid: "75360180"
 
 ### <a name="specify-vcenter-server-details"></a>Укажите сведения о vCenter Server
 1. В разделе **Укажите сведения о vCenter Server** укажите полное доменное имя или IP-адрес сервера vCenter Server. Вы можете оставить порт по умолчанию или указать пользовательский порт, который прослушивает vCenter Server.
-2. В полях **Имя пользователя** и **Пароль** укажите данные учетной записи только для чтения, которые устройство будет использовать для обнаружения виртуальных машин на сервере vCenter Server. Убедитесь, что в учетной записи есть [необходимые разрешения для обнаружения](migrate-support-matrix-vmware.md#assessment-vcenter-server-permissions). Вы можете обозначить область обнаружения, ограничив доступ к учетной записи vCenter соответствующим образом. Дополнительные сведения об обозначении области обнаружения см. [здесь](tutorial-assess-vmware.md#set-the-scope-of-discovery).
+2. В полях **Имя пользователя** и **Пароль** укажите данные учетной записи только для чтения, которые устройство будет использовать для обнаружения виртуальных машин на сервере vCenter Server. Вы можете обозначить область обнаружения, ограничив доступ к учетной записи vCenter соответствующим образом. Дополнительные сведения об обозначении области обнаружения см. [здесь](tutorial-assess-vmware.md#set-the-scope-of-discovery).
 3. Щелкните **Проверить подключение**, чтобы убедиться, что устройство может подключаться к vCenter Server.
 
 ### <a name="specify-vm-credentials"></a>Указание учетных данных виртуальной машины

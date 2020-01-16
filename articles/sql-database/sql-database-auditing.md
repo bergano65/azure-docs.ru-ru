@@ -9,12 +9,12 @@ author: barmichal
 ms.author: mibar
 ms.reviewer: vanto
 ms.date: 08/22/2019
-ms.openlocfilehash: aeca4499a41adf37ba78452f1cf76047dd8c6592
-ms.sourcegitcommit: 014e916305e0225512f040543366711e466a9495
+ms.openlocfilehash: 0994ebe451bddea371f375e4d39172833df4d88a
+ms.sourcegitcommit: dbcc4569fde1bebb9df0a3ab6d4d3ff7f806d486
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75931932"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76028530"
 ---
 # <a name="get-started-with-sql-database-auditing"></a>Начало работы с аудитом базы данных SQL
 
@@ -246,6 +246,14 @@ ms.locfileid: "75931932"
 - Если используется проверка подлинности AAD, неудачные попытки входа *не* отображаются в журнале аудита SQL. Чтобы просмотреть записи аудита для неудачных попыток входа, посетите [портал Azure Active Directory]( ../active-directory/reports-monitoring/reference-sign-ins-error-codes.md), который регистрирует сведения об этих событиях.
 
 - Аудит базы данных SQL Azure оптимизирован для обеспечения доступности & производительности. Во время очень высокой активности база данных SQL Azure позволяет выполнять операции и не записывать некоторые события аудита.
+
+- Сведения о настройке неизменяемого аудита учетной записи хранения см. в разделе [разрешение записи BLOB-объектов с защищенным добавлением](https://docs.microsoft.com/azure/storage/blobs/storage-blob-immutable-storage#allow-protected-append-blobs-writes). Обратите внимание, что имя контейнера для аудита — **sqldbauditlogs**.
+
+> [!IMPORTANT] 
+>  Параметр Разрешить защищенные добавочные большие двоичные объекты записи в настоящее время доступен и виден только в следующих регионах:
+> - Восточная часть США
+> - Центрально-южная часть США
+> - Западная часть США 2
 
 
 ## <a id="subheading-7"></a>Управление SQL Serverом Azure и аудитом базы данных с помощью Azure PowerShell

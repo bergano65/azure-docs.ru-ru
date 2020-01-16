@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 03/20/2018
-ms.openlocfilehash: 6500020d9d1c7c735206efe8ebb08fd908eee10d
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: bca77db3452aecb31852c4c50e7754c7777fc458
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75403252"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75971262"
 ---
 # <a name="gather-insights-about-your-dns-infrastructure-with-the-dns-analytics-preview-solution"></a>Сбор сведений об инфраструктуре DNS с помощью решения аналитики DNS (предварительной версии)
 
@@ -100,7 +100,7 @@ ms.locfileid: "75403252"
 
 ![Колонка "Безопасность DNS"](./media/dns-analytics/dns-security-blade.png)
 
-При выборе IP-адреса клиента из списка откроется колонка поиска по журналу, в которой отобразятся сведения о соответствующем запросе поиска. В следующем примере решение аналитики DNS обнаружило, что обмен данными выполнялся с программой-трояном [IRCbot](https://www.microsoft.com/en-us/wdsi/threats/malware-encyclopedia-description?Name=Backdoor:Win32/IRCbot).
+При выборе IP-адреса клиента из списка откроется колонка поиска по журналу, в которой отобразятся сведения о соответствующем запросе поиска. В следующем примере решение аналитики DNS обнаружило, что обмен данными выполнялся с программой-трояном [IRCbot](https://www.microsoft.com/en-us/wdsi/threats/malware-encyclopedia-description?Name=Backdoor:Win32/IRCbot&threatId=2621).
 
 ![Результаты поиска по журналу, показывающие ircbot](./media/dns-analytics/ircbot.png)
 

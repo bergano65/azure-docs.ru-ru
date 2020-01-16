@@ -9,21 +9,21 @@ ms.reviewer: klam
 ms.assetid: 5ec78e60-a9b9-405a-91a8-f010f3872d50
 ms.topic: article
 ms.date: 08/16/2016
-ms.openlocfilehash: 3cc15d173ad735d77505f636bd230e0876371271
-ms.sourcegitcommit: 29880cf2e4ba9e441f7334c67c7e6a994df21cfe
+ms.openlocfilehash: 6a729df7eb08f8dacff4b0d35d011854208510ff
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71300933"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75979286"
 ---
 # <a name="high-availability-and-reliability-for-azure-scheduler"></a>Высокая доступность и надежность для планировщика Azure
 
 > [!IMPORTANT]
 > [Azure Logic Apps](../logic-apps/logic-apps-overview.md) заменяет планировщик Azure, который выводится из [эксплуатации](../scheduler/migrate-from-scheduler-to-logic-apps.md#retire-date). Чтобы продолжить работу с заданиями, настроенными в планировщике, выполните [миграцию на Azure Logic Apps](../scheduler/migrate-from-scheduler-to-logic-apps.md) как можно скорее. 
 
-Планировщик Azure обеспечивает [высокий уровень доступности](https://docs.microsoft.com/azure/architecture/guide/pillars#availability) и надежности для заданий. Дополнительные сведения см. в статье [Соглашение об уровне обслуживания для планировщика](https://azure.microsoft.com/support/legal/sla/scheduler).
+Планировщик Azure обеспечивает [высокий уровень доступности](https://docs.microsoft.com/azure/architecture/framework/#resiliency) и надежности для заданий. Дополнительные сведения см. в статье [Соглашение об уровне обслуживания для планировщика](https://azure.microsoft.com/support/legal/sla/scheduler).
 
-## <a name="high-availability"></a>Высокая надежность
+## <a name="high-availability"></a>Высокий уровень доступности
 
 Планировщик Azure отличается высокой доступностью и использует географически избыточное развертывание служб и репликацию заданий по географическим регионам.
 
@@ -50,7 +50,7 @@ ms.locfileid: "71300933"
 
 <a name="retry-policies"></a>
 
-### <a name="retry-policies"></a>Политики повтора
+### <a name="retry-policies"></a>политики повтора;
 
 Планировщик Azure позволяет настроить политики повтора. При сбое задания планировщик по умолчанию выполняет еще четыре попытки запустить это задание с интервалом 30 секунд. Вы можете задать собственное значение интенсивности, например 10 раз с интервалом 30 секунд или два раза с интервалом в один день.
 

@@ -1,6 +1,6 @@
 ---
 title: Поддержка добавления виртуальных машин Azure в существующую группу доступности | Документы Майкрософт
-description: Поддержка добавления виртуальных машин Azure в существующую группу доступности.
+description: Эта статья содержит матрицу поддержки, в которой можно смешивать серии виртуальных машин в одной группе доступности.
 services: virtual-machines-linux
 documentationcenter: ''
 author: Deland-Han
@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: troubleshooting
 ms.date: 06/15/2018
 ms.author: delhan
-ms.openlocfilehash: 3954df389516aa7199022d713dc63d62dda961ae
-ms.sourcegitcommit: 116bc6a75e501b7bba85e750b336f2af4ad29f5a
+ms.openlocfilehash: cb0034f2b353284e94d6f1508541b31040a5b076
+ms.sourcegitcommit: dbcc4569fde1bebb9df0a3ab6d4d3ff7f806d486
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/20/2019
-ms.locfileid: "71155458"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76028404"
 ---
 # <a name="supportability-of-adding-azure-vms-to-an-existing-availability-set"></a>Поддержка добавления виртуальных машин Azure в существующую группу доступности
 
@@ -27,14 +27,14 @@ ms.locfileid: "71155458"
 
 Ниже приводится матрица поддержки для объединения различных типов виртуальных машин:
 
-Серии и группа доступности|Вторая виртуальная машина|Объект|Av2|D|Dv2|Dv3|
+Серии и группа доступности|Вторая виртуальная машина|A|Av2|D|Dv2|Dv3|
 |---|---|---|---|---|---|---|
 |Первая виртуальная машина|||||||
-|Объект||OK|OK|OK|OK|OK|
-|Av2||OK|OK|OK|OK|OK|
-|D||OK|OK|OK|OK|OK|
-|Dv2||OK|OK|OK|OK|OK|
-|Dv3||OK|OK|OK|OK|OK|
+|A||ОК|ОК|ОК|ОК|ОК|
+|Av2||ОК|ОК|ОК|ОК|ОК|
+|D||ОК|ОК|ОК|ОК|ОК|
+|Dv2||ОК|ОК|ОК|ОК|ОК|
+|Dv3||ОК|ОК|ОК|ОК|ОК|
 
 Все остальные серии не могут находиться в одной и той же группе доступности, так как для них требуется определенное оборудование.
 

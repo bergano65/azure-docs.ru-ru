@@ -1,5 +1,5 @@
 ---
-title: 'Python: Операции управления учетными записями в Azure Data Lake Storage 1-го поколения | Документация Майкрософт'
+title: Python. Операции управления учетными записями в Azure Data Lake Storage 1-го поколения | Документы Майкрософт
 description: Узнайте, как использовать пакет Python SDK для работы с операциями управления учетными записями Azure Data Lake Storage 1-го поколения.
 services: data-lake-store
 documentationcenter: ''
@@ -12,12 +12,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/29/2018
 ms.author: twooley
-ms.openlocfilehash: 494959e071fb5777f9a815b5bde4bd093cf10bd6
-ms.sourcegitcommit: c79aa93d87d4db04ecc4e3eb68a75b349448cd17
+ms.openlocfilehash: fad832ba7b16e8dbb37043d971368062fcbd842f
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71088800"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75966046"
 ---
 # <a name="account-management-operations-on-azure-data-lake-storage-gen1-using-python"></a>Операции управления учетными записями в Azure Data Lake Storage 1-го поколения c использованием Python
 > [!div class="op_single_selector"]
@@ -27,15 +27,15 @@ ms.locfileid: "71088800"
 >
 >
 
-Узнайте, как использовать пакет SDK для Python для Azure Data Lake Storage 1-го поколения для выполнения основных операций управления учетными записями, таких как создание учетной записи Data Lake Storage 1-го поколения, перечисление учетных записей Data Lake Storage 1-го поколения и т. д. Дополнительные сведения о том, как выполнять операции файловой системы в Data Lake Storage 1-го поколения с помощью Python, см. в [этой статье](data-lake-store-data-operations-python.md).
+Узнайте, как использовать пакет SDK для Python для Azure Data Lake Storage 1-го поколения для выполнения основных операций по управлению учетными записями, таких как создание учетной записи Data Lake Storage 1-го поколения, получение списка учетных записей Data Lake Storage 1-го поколения и т. д. Инструкции по выполнению операций файловой системы в Data Lake Storage 1-го поколения с помощью Python см. [в разделе операции файловой системы на Data Lake Storage 1-го поколения с помощью Python](data-lake-store-data-operations-python.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 * **Python**. Скачать Python можно [здесь](https://www.python.org/downloads/). В этой статье используется версия Python 3.6.2.
 
 * **Подписка Azure**. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial/).
 
-* **Группа ресурсов Azure.** Инструкции см. в статье [Управление ресурсами Azure через портал](../azure-resource-manager/manage-resource-groups-portal.md).
+* **Группа ресурсов Azure.** Инструкции см. в статье [Управление ресурсами Azure через портал](../azure-resource-manager/management/manage-resource-groups-portal.md).
 
 ## <a name="install-the-modules"></a>Установка модулей
 
@@ -91,11 +91,11 @@ pip install azure-datalake-store
 В этом разделе мы рассмотрим различные способы проверки подлинности в Azure AD. Доступны следующие варианты.
 
 * Дополнительные сведения о проверке подлинности пользователей в приложении см. в статье [Аутентификация пользователей в Data Lake Store с помощью Python](data-lake-store-end-user-authenticate-python.md).
-* Дополнительные сведения о проверке подлинности между службами в приложении см. в статье [Проверка подлинности между службами в Data Lake Storage 1-го поколения с использованием Python](data-lake-store-service-to-service-authenticate-python.md).
+* Дополнительные сведения о проверке подлинности между службами в приложении см. в статье [Аутентификация между службами в Data Lake Store с помощью Python](data-lake-store-service-to-service-authenticate-python.md).
 
 ## <a name="create-client-and-data-lake-storage-gen1-account"></a>Создание клиента и учетной записи Data Lake Storage 1-го поколения
 
-Следующий фрагмент кода сначала создает клиент учетной записи Data Lake Storage 1-го поколения. Затем он использует объект клиента для создания учетной записи Data Lake Storage 1-го поколения. И наконец, он создает объект клиента файловой системы.
+Приведенный ниже фрагмент кода сначала создает клиент учетной записи Data Lake Storage 1-го поколения. Затем он использует объект клиента для создания учетной записи Data Lake Storage 1-го поколения. И наконец, он создает объект клиента файловой системы.
 
     ## Declare variables
     subscriptionId = 'FILL-IN-HERE'
@@ -130,10 +130,10 @@ pip install azure-datalake-store
     adlsAcctClient.account.delete(adlsAccountName)
     
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * [Операции файловой системы в Data Lake Storage 1-го поколения c использованием Python](data-lake-store-data-operations-python.md).
 
 ## <a name="see-also"></a>См. также
 
 * [Справочник по azure-datalake-store для Python. Файловая система](https://azure-datalake-store.readthedocs.io/en/latest)
-* [Приложения больших данных с открытым исходным кодом, которые работают с Azure Data Lake Storage 1-го поколения](data-lake-store-compatible-oss-other-applications.md)
+* [Приложения больших данных с открытым исходным кодом, которые работают с Azure Data Lake Storage Gen1](data-lake-store-compatible-oss-other-applications.md)

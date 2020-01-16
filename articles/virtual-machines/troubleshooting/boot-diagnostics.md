@@ -10,22 +10,22 @@ ms.service: virtual-machines
 ms.topic: troubleshooting
 ms.date: 10/31/2018
 ms.author: delhan
-ms.openlocfilehash: d34182e09bf453dbec1e9592f131cb9b3b78a086
-ms.sourcegitcommit: c79aa93d87d4db04ecc4e3eb68a75b349448cd17
+ms.openlocfilehash: 0506527808892bf1ee531d892e2773d095e18560
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71086472"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75965628"
 ---
 # <a name="how-to-use-boot-diagnostics-to-troubleshoot-virtual-machines-in-azure"></a>Как устранять неполадки виртуальных машин в Azure с помощью диагностики загрузки
 
-Существует множество причин, почему виртуальную машину невозможно загрузить. Чтобы перейти к проблемам, связанным с вашей виртуальной машиной, созданной с помощью модели развертывания Resource Manager, вы можете использовать следующие функции отладки: поддержка выходных данных и снимка экрана консоли для виртуальных машин Azure. 
+Существует множество причин, почему виртуальную машину невозможно загрузить. Чтобы устранить проблемы с виртуальными машинами, созданными с помощью диспетчер ресурсов модели развертывания, можно использовать следующие функции отладки: вывод на консоль и снимок экрана для виртуальных машин Azure. 
 
 На портале вы можете просмотреть выходные данные журнала консоли для виртуальных машинах Linux. Azure позволяет просмотреть снимок экрана из гипервизора для виртуальных машин Windows и Linux. Обе эти функции поддерживаются на виртуальных машинах Azure во всех регионах. Обратите внимание, что отображение снимков экрана и выходных данных в учетной записи хранения может занять до 10 минут.
 
 Можно выбрать параметр **Диагностика загрузки**, чтобы просмотреть журнал и снимок экрана.
 
-![Resource Manager](./media/virtual-machines-common-boot-diagnostics/screenshot1.png)
+![Диспетчер ресурсов](./media/virtual-machines-common-boot-diagnostics/screenshot1.png)
 
 ## <a name="common-boot-errors"></a>Распространенные ошибки загрузки
 
@@ -49,7 +49,7 @@ ms.locfileid: "71086472"
 
 На вкладке **Управление** в разделе **Наблюдение** удостоверьтесь, что включена **Диагностика загрузки**. В раскрывающемся списке **Учетная запись хранения диагностики** выберите учетную запись хранения, в которой следует разместить файлы диагностики.
  
-![Создать VM](./media/virtual-machines-common-boot-diagnostics/enable-boot-diagnostics-vm.png)
+![Создание виртуальной машины](./media/virtual-machines-common-boot-diagnostics/enable-boot-diagnostics-vm.png)
 
 > [!NOTE]
 > Функция диагностики загрузки не поддерживает учетную запись хранения уровня "Премиум". В случае использования учетной записи хранения уровня "Премиум" для диагностики загрузки при запуске виртуальной машины может произойти ошибка StorageAccountTypeNotSupported.
@@ -79,7 +79,7 @@ ms.locfileid: "71086472"
 }
 ```
 
-Дополнительные сведения о развертывании ресурсов с помощью шаблонов см. в статье [Краткое руководство по созданию и развертыванию шаблонов Azure Resource Manager с помощью портала Azure](../../azure-resource-manager/resource-manager-quickstart-create-templates-use-the-portal.md).
+Дополнительные сведения о развертывании ресурсов с помощью шаблонов см. [в разделе Краткое руководство. Создание и развертывание шаблонов Azure Resource Manager с помощью портал Azure](../../azure-resource-manager/templates/quickstart-create-templates-use-the-portal.md).
 
 ## <a name="enable-boot-diagnostics-on-existing-virtual-machine"></a>Включение диагностики загрузки в существующей виртуальной машине 
 

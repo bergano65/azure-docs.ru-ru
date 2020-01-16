@@ -10,12 +10,12 @@ ms.author: larryfr
 author: Blackmist
 ms.date: 11/04/2019
 ms.custom: seoapril2019
-ms.openlocfilehash: 275eb545b431085627658eb5d8ac0a065d0cb00e
-ms.sourcegitcommit: 12a26f6682bfd1e264268b5d866547358728cd9a
+ms.openlocfilehash: 6cd450ac18007e31d9d8144fdb0e8554dd31c363
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75867012"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75968660"
 ---
 [!INCLUDE [aml-applies-to-basic-enterprise-sku](../../includes/aml-applies-to-basic-enterprise-sku.md)]
 
@@ -92,7 +92,7 @@ new-azresourcegroupdeployment -name exampledeployment `
   -templatefile .\azuredeploy.json -workspaceName "exampleworkspace" -sku "basic"
 ```
 
-Дополнительные сведения см. в статьях [Развертывание ресурсов с использованием шаблонов Resource Manager и Azure PowerShell](../azure-resource-manager/resource-group-template-deploy.md) и [Развертывание частного шаблона Resource Manager с использованием токена SAS и Azure PowerShell](../azure-resource-manager/secure-template-with-sas-token.md).
+Дополнительные сведения см. в статьях [Развертывание ресурсов с использованием шаблонов Resource Manager и Azure PowerShell](../azure-resource-manager/templates/deploy-powershell.md) и [Развертывание частного шаблона Resource Manager с использованием токена SAS и Azure PowerShell](../azure-resource-manager/templates/secure-template-with-sas-token.md).
 
 ## <a name="use-azure-cli"></a>Использование Azure CLI
 
@@ -107,7 +107,7 @@ az group deployment create \
   --parameters workspaceName=exampleworkspace location=eastus sku=basic
 ```
 
-Дополнительные сведения см. в статьях [Развертывание ресурсов с использованием шаблонов Resource Manager и Azure CLI](../azure-resource-manager/resource-group-template-deploy-cli.md) и [Развертывание частного шаблона Resource Manager с использованием токена SAS и Azure CLI](../azure-resource-manager/secure-template-with-sas-token.md).
+Дополнительные сведения см. в статьях [Развертывание ресурсов с использованием шаблонов Resource Manager и Azure CLI](../azure-resource-manager/templates/deploy-cli.md) и [Развертывание частного шаблона Resource Manager с использованием токена SAS и Azure CLI](../azure-resource-manager/templates/secure-template-with-sas-token.md).
 
 ## <a name="troubleshooting"></a>Устранение неисправностей
 
@@ -124,7 +124,7 @@ az group deployment create \
 Чтобы избежать этой проблемы, рекомендуется использовать один из следующих подходов.
 
 * Не развертывайте шаблон более одного раза для одних и тех же параметров. Или удалите существующие ресурсы перед использованием шаблона для их повторного создания.
-  
+
 * Изучите политики доступа Key Vault, а затем используйте эти политики, чтобы задать свойство `accessPolicies` шаблона. Чтобы просмотреть политики доступа, используйте следующую команду Azure CLI.
 
     ```azurecli-interactive
@@ -165,7 +165,7 @@ az group deployment create \
           }
         },
         ```
-    
+
     * **Удалите** `"[resourceId('Microsoft.KeyVault/vaults', variables('keyVaultName'))]",` строку из раздела `dependsOn` рабочей области. Также **измените** запись `keyVault` в разделе `properties` рабочей области, чтобы она ссылалась на параметр `keyVaultId`:
 
         ```json
@@ -193,7 +193,7 @@ az group deployment create \
           }
         }
         ```
-      
+
     После внесения этих изменений можно указать идентификатор существующего Key Vault ресурса при запуске шаблона. Затем шаблон будет повторно использовать Key Vault, задав для свойства `keyVault` рабочей области его идентификатор.
 
     Чтобы получить идентификатор Key Vault, можно сослаться на выходные данные исходного шаблона Run или использовать Azure CLI. Следующая команда является примером использования Azure CLI для получения Key Vaultного идентификатора ресурса:
@@ -210,5 +210,5 @@ az group deployment create \
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Развертывание ресурсов с использованием шаблонов и REST API Resource Manager](../azure-resource-manager/resource-group-template-deploy-rest.md).
-* [Создание и развертывание групп ресурсов Azure с помощью Visual Studio](../azure-resource-manager/vs-azure-tools-resource-groups-deployment-projects-create-deploy.md).
+* [Развертывание ресурсов с использованием шаблонов и REST API Resource Manager](../azure-resource-manager/templates/deploy-rest.md).
+* [Создание и развертывание групп ресурсов Azure с помощью Visual Studio](../azure-resource-manager/templates/create-visual-studio-deployment-project.md).

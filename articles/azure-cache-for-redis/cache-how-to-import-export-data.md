@@ -6,15 +6,15 @@ ms.service: cache
 ms.topic: conceptual
 ms.date: 07/31/2017
 ms.author: yegu
-ms.openlocfilehash: e4265cf3f9c211a19fe05bc18cf47a273165c3c3
-ms.sourcegitcommit: 5a8c65d7420daee9667660d560be9d77fa93e9c9
+ms.openlocfilehash: df8b65fcb4dd2b9622716052be2df59cbfa5424a
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74122775"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75971808"
 ---
 # <a name="import-and-export-data-in-azure-cache-for-redis"></a>Импорт и экспорт данных в кэше Azure для Redis
-Функция импорта и экспорта является операцией управления данными в кэше Azure для Redis, которая позволяет импортировать данные в кэш и экспортировать их оттуда путем импорта и экспорта моментального снимка базы данных кэша Azure для Redis (RDB) из кэша категории "Премиум" в большой двоичный объект в учетной записи службы хранилища Azure. 
+Функция импорта и экспорта является операцией управления данными в кэше Azure для Redis, которая позволяет импортировать данные в кэш и экспортировать их оттуда путем импорта и экспорта моментального снимка базы данных кэша Azure для Redis (RDB) из кэша категории "Премиум" в большой двоичный объект в учетной записи службы хранилища Azure.
 
 - **Экспорт**. Моментальные снимки в формате RDB из кэша Azure для Redis можно экспортировать в страничный BLOB-объект.
 - **Импорт**. Моментальные снимки в формате RDB можно импортировать в кэш Azure для Redis из страничного или блочного BLOB-объекта.
@@ -57,11 +57,11 @@ ms.locfileid: "74122775"
 
     ![Импорт](./media/cache-how-to-import-export-data/cache-import-blobs.png)
 
-    Ход выполнения операции импорта можно отслеживать, выбирая уведомления на портале Azure или просматривая события в [журнале аудита](../azure-resource-manager/resource-group-audit.md).
+    Ход выполнения операции импорта можно отслеживать, выбирая уведомления на портале Azure или просматривая события в [журнале аудита](../azure-resource-manager/management/view-activity-logs.md).
 
     ![Ход выполнения импорта](./media/cache-how-to-import-export-data/cache-import-data-import-complete.png)
 
-## <a name="export"></a>экспорт.
+## <a name="export"></a>Экспортировать
 Экспорт позволяет экспортировать данные, хранящиеся в кэше Azure для Redis, в RDB-файлы, совместимые с Redis. Эту функцию можно использовать для перемещения данных из одного экземпляра кэша Azure для Redis в другой или на другой сервер Redis. Во время экспорта на виртуальной машине, где размещается экземпляр сервера кэша Azure для Redis, создается временный файл, который отправляется в заданную учетную запись хранения. После успешного или неудачного завершения операции экспорта этот временный файл удаляется.
 
 1. Чтобы экспортировать текущее содержимое кэша в хранилище, [перейдите к кэшу](cache-configure.md#configure-azure-cache-for-redis-settings) на портале Azure и нажмите кнопку **Экспорт данных** в **меню ресурсов**.
@@ -79,9 +79,9 @@ ms.locfileid: "74122775"
     ![Выберите контейнер хранилища](./media/cache-how-to-import-export-data/cache-export-data-container.png)
 4. Введите значение **Префикс имени BLOB-объекта** и нажмите кнопку **Экспорт** для запуска процедуры экспорта. Префикс имени BLOB-объекта добавляется к именам файлов, создаваемых этой операцией экспорта.
 
-    ![экспорт.](./media/cache-how-to-import-export-data/cache-export-data.png)
+    ![Экспортировать](./media/cache-how-to-import-export-data/cache-export-data.png)
 
-    Ход выполнения операции экспорта можно отслеживать, выбирая уведомления на портале Azure или просматривая события в [журнале аудита](../azure-resource-manager/resource-group-audit.md).
+    Ход выполнения операции экспорта можно отслеживать, выбирая уведомления на портале Azure или просматривая события в [журнале аудита](../azure-resource-manager/management/view-activity-logs.md).
 
     ![Экспорт данных завершен](./media/cache-how-to-import-export-data/cache-export-data-export-complete.png)
 
@@ -109,8 +109,8 @@ ms.locfileid: "74122775"
 
 > [!IMPORTANT]
 > Для успешного импорта данных, экспортированных с серверов Redis (не являющихся серверами кэша Azure для Redis), при использовании страничного BLOB-объекта его размер должен равняться границе в 512 байтов. Пример кода для выполнения необходимого заполнения байтов см. на странице [SamplePageBlobUpload](https://github.com/JimRoberts-MS/SamplePageBlobUpload).
-> 
-> 
+>
+>
 
 ### <a name="what-rdb-versions-can-i-import"></a>Какие версии RDB-файлов можно импортировать?
 
@@ -149,7 +149,7 @@ ms.locfileid: "74122775"
 ### <a name="i-got-an-error-when-exporting-my-data-to-azure-blob-storage-what-happened"></a>При экспорте данных в хранилище BLOB-объектов возникает ошибка. Что произошло?
 Функция экспорта работает только с RDB-файлами, сохраненными в виде страничных BLOB-объектов. Другие типы BLOB-объектов пока не поддерживаются, включая учетные записи хранилища BLOB-объектов с "горячим" и "холодным" уровнями. Дополнительные сведения см. в статье [Общие сведения об учетной записи хранения Azure](../storage/common/storage-account-overview.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Узнайте, как использовать расширенные функции кэша.
 
 * [Общие сведения о кэше Azure для Redis уровня "Премиум"](cache-premium-tier-intro.md)

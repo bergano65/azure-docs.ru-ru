@@ -11,12 +11,12 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/10/2018
-ms.openlocfilehash: 699aab617e56ab87eb0bd6d6c4ceabf9aac4c4fa
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: afc7a7406831568304c2ebd8d9a6c72b497e04e4
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75438889"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75972881"
 ---
 # <a name="process-large-scale-datasets-by-using-data-factory-and-batch"></a>Обработка больших наборов данных с помощью фабрики данных и пакетной службы
 > [!NOTE]
@@ -43,8 +43,8 @@ ms.locfileid: "75438889"
 
 Дополнительные сведения о пакете см. в [документации по пакетной](https://docs.microsoft.com/azure/batch/)службе.
 
-## <a name="why-azure-data-factory"></a>Сведения о фабрике данных Azure
-Фабрика данных представляет собой облачную службу интеграции информации, которая организует и автоматизирует перемещение и преобразование данных. С помощью фабрики данных можно создать управляемые конвейеры данных, которые перемещают данные из локальных и облачных хранилищ данных в централизованное. Например, в хранилище BLOB-объектов Azure. Фабрика данных также позволяет обрабатывать и преобразовывать данные с помощью служб, таких как Azure HDInsight и Машинное обучение Azure. Кроме того, вы можете планировать запуск конвейеров данных по расписанию (например, ежечасно, ежедневно и еженедельно), отслеживать их состояние и управлять ими, чтобы обнаруживать проблемы и принимать меры.
+## <a name="why-azure-data-factory"></a>Преимущества фабрики данных Azure
+Фабрика данных представляет собой облачную службу интеграции данных, которая координирует и автоматизирует перемещение и преобразование данных. С помощью фабрики данных можно создать управляемые конвейеры данных, которые перемещают данные из локальных и облачных хранилищ данных в централизованное. Например, в хранилище BLOB-объектов Azure. Фабрика данных также позволяет обрабатывать и преобразовывать данные с помощью служб, таких как Azure HDInsight и Машинное обучение Azure. Кроме того, вы можете планировать запуск конвейеров данных по расписанию (например, ежечасно, ежедневно и еженедельно), отслеживать их состояние и управлять ими, чтобы обнаруживать проблемы и принимать меры.
 
   Если вы не знакомы с фабрикой данных, изучите приведенные ниже статьи. Это поможет понять архитектуру и схему реализации решения, описанного в этой статье.  
 
@@ -86,12 +86,12 @@ ms.locfileid: "75438889"
 
 **Время.** Если вы знакомы с основами использования Azure, фабрики данных и пакетной службы, а также выполнили указанные ниже предварительные требования, создание решения должно занять 1–2 часа.
 
-### <a name="prerequisites"></a>предварительные требования
-#### <a name="azure-subscription"></a>Подписка Azure.
+### <a name="prerequisites"></a>Технические условия
+#### <a name="azure-subscription"></a>Подписка на Azure
 Если у вас нет подписки Azure, можно быстро создать бесплатную пробную учетную запись. Дополнительные сведения см. на странице [Создайте бесплатную учетную запись Azure уже сегодня](https://azure.microsoft.com/pricing/free-trial/).
 
 #### <a name="azure-storage-account"></a>Учетная запись хранения Azure.
-Учетная запись хранения используется в этом руководстве для хранения данных. Если у вас нет учетной записи хранения, [создайте ее](../../storage/common/storage-quickstart-create-account.md). В примере решения используется хранилище BLOB-объектов.
+Учетная запись хранения используется в этом руководстве для хранения данных. Если у вас нет учетной записи хранения, [создайте ее](../../storage/common/storage-account-create.md). В примере решения используется хранилище BLOB-объектов.
 
 #### <a name="azure-batch-account"></a>Учетная запись пакетной службы Azure
 Создайте учетную запись пакетной службы с помощью [портала Azure](https://portal.azure.com/). Дополнительные сведения см. в [этой статье](../../batch/batch-account-create-portal.md). Запишите ключ и имя учетной записи пакетной службы. Для создания учетной записи пакетной службы можно также использовать командлет [New-азбатчаккаунт](https://docs.microsoft.com/powershell/module/az.batch/new-azbatchaccount) . Инструкции по использованию этого командлета см. в статье [Управление ресурсами пакетной службы с помощью командлетов PowerShell](../../batch/batch-powershell-cmdlets-get-started.md).
@@ -121,7 +121,7 @@ ms.locfileid: "75438889"
 
    е) Нажмите кнопку **ОК**, чтобы создать пул.
 
-#### <a name="azure-storage-explorer"></a>Обозреватель службы хранилища Azure
+#### <a name="azure-storage-explorer"></a>Обозреватель хранилища Azure
 Для проверки и изменения данных в проектах службы хранилища используется [Обозреватель службы хранилища Azure 6](https://azurestorageexplorer.codeplex.com/) или [CloudXplorer](https://clumsyleaf.com/products/cloudxplorer) (от ClumsyLeaf Software). Кроме того, с помощью этих средств можно проверять и изменять данные в журналах облачных приложений.
 
 1. Создайте контейнер **mycontainer** с закрытым доступом (без анонимного доступа).
@@ -211,10 +211,10 @@ public IDictionary<string, string> Execute(
     using System.Globalization;
     using System.Diagnostics;
     using System.Linq;
-    
+
     using Microsoft.Azure.Management.DataFactories.Models;
     using Microsoft.Azure.Management.DataFactories.Runtime;
-    
+
     using Microsoft.WindowsAzure.Storage;
     using Microsoft.WindowsAzure.Storage.Blob;
     ```
@@ -241,15 +241,15 @@ public IDictionary<string, string> Execute(
        Activity activity,
        IActivityLogger logger)
     {
-    
+
        // Declare types for the input and output data stores.
        AzureStorageLinkedService inputLinkedService;
-    
+
        Dataset inputDataset = datasets.Single(dataset => dataset.Name == activity.Inputs.Single().Name);
-    
+
        foreach (LinkedService ls in linkedServices)
            logger.Write("linkedService.Name {0}", ls.Name);
-    
+
        // Use the First method instead of Single because we are using the same
        // Azure Storage linked service for input and output.
        inputLinkedService = linkedServices.First(
@@ -257,15 +257,15 @@ public IDictionary<string, string> Execute(
            linkedService.Name ==
            inputDataset.Properties.LinkedServiceName).Properties.TypeProperties
            as AzureStorageLinkedService;
-    
+
        string connectionString = inputLinkedService.ConnectionString; // To create an input storage client.
        string folderPath = GetFolderPath(inputDataset);
        string output = string.Empty; // for use later.
-    
+
        // Create the storage client for input. Pass the connection string.
        CloudStorageAccount inputStorageAccount = CloudStorageAccount.Parse(connectionString);
        CloudBlobClient inputClient = inputStorageAccount.CreateCloudBlobClient();
-    
+
        // Initialize the continuation token before using it in the do-while loop.
        BlobContinuationToken continuationToken = null;
        do
@@ -277,34 +277,34 @@ public IDictionary<string, string> Execute(
                                     continuationToken,
                                     null,
                                     null);
-    
+
            // The Calculate method returns the number of occurrences of
            // the search term "Microsoft" in each blob associated
            // with the data slice.
            //
            // The definition of the method is shown in the next step.
            output = Calculate(blobList, logger, folderPath, ref continuationToken, "Microsoft");
-    
+
        } while (continuationToken != null);
-    
+
        // Get the output dataset by using the name of the dataset matched to a name in the Activity output collection.
        Dataset outputDataset = datasets.Single(dataset => dataset.Name == activity.Outputs.Single().Name);
-    
+
        folderPath = GetFolderPath(outputDataset);
-    
+
        logger.Write("Writing blob to the folder: {0}", folderPath);
-    
+
        // Create a storage object for the output blob.
        CloudStorageAccount outputStorageAccount = CloudStorageAccount.Parse(connectionString);
        // Write the name of the file.
        Uri outputBlobUri = new Uri(outputStorageAccount.BlobEndpoint, folderPath + "/" + GetFileName(outputDataset));
-    
+
        logger.Write("output blob URI: {0}", outputBlobUri.ToString());
        // Create a blob and upload the output text.
        CloudBlockBlob outputBlob = new CloudBlockBlob(outputBlobUri, outputStorageAccount.Credentials);
        logger.Write("Writing {0} to the output blob", output);
        outputBlob.UploadText(output);
-    
+
        // The dictionary can be used to chain custom activities together in the future.
        // This feature is not implemented yet, so just return an empty dictionary.
        return new Dictionary<string, string>();
@@ -322,41 +322,41 @@ public IDictionary<string, string> Execute(
        {
            return null;
        }
-    
+
        AzureBlobDataset blobDataset = dataArtifact.Properties.TypeProperties as AzureBlobDataset;
        if (blobDataset == null)
        {
            return null;
        }
-    
+
        return blobDataset.FolderPath;
     }
-    
+
     /// <summary>
     /// Gets the fileName value from the input/output dataset.
     /// </summary>
-    
+
     private static string GetFileName(Dataset dataArtifact)
     {
        if (dataArtifact == null || dataArtifact.Properties == null)
        {
            return null;
        }
-    
+
        AzureBlobDataset blobDataset = dataArtifact.Properties.TypeProperties as AzureBlobDataset;
        if (blobDataset == null)
        {
            return null;
        }
-    
+
        return blobDataset.FileName;
     }
-    
+
     /// <summary>
     /// Iterates through each blob (file) in the folder, counts the number of instances of the search term in the file,
     /// and prepares the output text that is written to the output blob.
     /// </summary>
-    
+
     public static string Calculate(BlobResultSegment Bresult, IActivityLogger logger, string folderPath, ref BlobContinuationToken token, string searchTerm)
     {
        string output = string.Empty;
@@ -416,7 +416,7 @@ public IDictionary<string, string> Execute(
     {
     // Get the list of input blobs from the input storage client object.
     BlobResultSegment blobList = inputClient.ListBlobsSegmented(folderPath,
-    
+
                          true,
                                    BlobListingDetails.Metadata,
                                    null,
@@ -424,9 +424,9 @@ public IDictionary<string, string> Execute(
                                    null,
                                    null);
     // Return a string derived from parsing each blob.
-    
+
      output = Calculate(blobList, logger, folderPath, ref continuationToken, "Microsoft");
-    
+
     } while (continuationToken != null);
 
     ```
@@ -454,14 +454,14 @@ public IDictionary<string, string> Execute(
 
     ```csharp
     AzureBlobDataset blobDataset = dataArtifact.Properties.TypeProperties as AzureBlobDataset;
-    
+
     return blobDataset.FolderPath;
     ```
 1. Код вызывает метод **GetFileName** , чтобы получить имя файла (имя большого двоичного объекта). Используемый код аналогичен приведенному выше коду, используемому для получения пути к папке.
 
     ```csharp
     AzureBlobDataset blobDataset = dataArtifact.Properties.TypeProperties as AzureBlobDataset;
-    
+
     return blobDataset.FileName;
     ```
 1. Чтобы записать имя файла, создается объект универсального кода ресурса (URI). Для возврата имени контейнера в конструкторе URI используется свойство **BlobEndpoint** . Для создания URI выходного большого двоичного объекта сочетаются путь к папке и имя файла.  
@@ -578,7 +578,7 @@ test custom activity Microsoft test custom activity Microsoft
    d. Введите URI пакета для свойства JSON **batchUri** .
 
       > [!IMPORTANT]
-      > URL-адрес из колонки **учетной записи пакетной службы** имеет следующий формат: \<имя_учетной_записи\>.\<регион\>.batch.azure.com. В свойстве **batchUri** в скрипте JSON необходимо удалить a88"accountname."** из URL-адреса. Например, `"batchUri": "https://eastus.batch.azure.com"`.
+      > URL-адрес из колонки **учетной записи пакетной службы** имеет следующий формат: \<имя_учетной_записи\>.\<регион\>.batch.azure.com. Для свойства **batchUri** в СКРИПТе JSON необходимо удалить A88 "AccountName". * * из URL-адреса. Например, `"batchUri": "https://eastus.batch.azure.com"`.
       >
       >
 
@@ -590,7 +590,7 @@ test custom activity Microsoft test custom activity Microsoft
       > Служба фабрики данных не поддерживает параметр по требованию для пакетной службы, как для HDInsight. В фабрике данных можно использовать только собственный пул пакетной службы.
       >
       >
-   
+
    д) В качестве параметра семейства операционных систем укажите **StorageLinkedService** for the **linkedServiceName** . Эта связанная служба была создана на предыдущем шаге. Это хранилище используется в качестве промежуточной области для файлов и журналов.
 
 1. Чтобы развернуть связанную службу, выберите **Развернуть** на панели команд.
@@ -847,7 +847,7 @@ test custom activity Microsoft test custom activity Microsoft
 
 1. В колонке **OutputDataset** щелкните правой кнопкой мыши срез, для которого в столбце **Время начала среза** задано значение **11/16/2015 01:00:00 AM**. Выберите **Запустить** для повторного выполнения и обработки среза. Теперь в срезе пять файлов вместо одного.
 
-    ![Run (Запустить)](./media/data-factory-data-processing-using-batch/image17.png)
+    ![Запуск](./media/data-factory-data-processing-using-batch/image17.png)
 
 1. Когда после запуска среза его состояние изменится на **Готов**, проверьте содержимое в выходном файле для этого среза (**2015-11-16-01.txt**). Выходные файлы появятся в папке `mycontainer` контейнера `outputfolder` в хранилище BLOB-объектов. В выходном файле каждому файлу среза должна соответствовать одна строка.
 
@@ -900,11 +900,11 @@ test custom activity Microsoft test custom activity Microsoft
 
     ```
     Trace\_T\_D\_12/6/2015 1:43:35 AM\_T\_D\_\_T\_D\_Verbose\_T\_D\_0\_T\_D\_Loading assembly file MyDotNetActivity...
-    
+
     Trace\_T\_D\_12/6/2015 1:43:35 AM\_T\_D\_\_T\_D\_Verbose\_T\_D\_0\_T\_D\_Creating an instance of MyDotNetActivityNS.MyDotNetActivity from assembly file MyDotNetActivity...
-    
+
     Trace\_T\_D\_12/6/2015 1:43:35 AM\_T\_D\_\_T\_D\_Verbose\_T\_D\_0\_T\_D\_Executing Module
-    
+
     Trace\_T\_D\_12/6/2015 1:43:38 AM\_T\_D\_\_T\_D\_Information\_T\_D\_0\_T\_D\_Activity e3817da0-d843-4c5c-85c6-40ba7424dce2 finished successfully
     ```
 1. Добавьте **PDB-файл** в ZIP-файл, чтобы в случае возникновения ошибки сведения об ошибке содержали, например, информацию о стеке вызовов.
@@ -936,13 +936,13 @@ test custom activity Microsoft test custom activity Microsoft
 
 1. Создайте пул с большим или меньшим значением для параметра **Maximum tasks per VM** (Максимальное число задач на виртуальную машину). Чтобы воспользоваться созданным пулом, обновите связанную службу пакетной службы в решении фабрики данных. Дополнительные сведения о параметре **Maximum tasks per VM** (Максимальное число задач на виртуальную машину) см. в разделе "Шаг 4. Создание и запуск конвейера".
 
-1. Создайте пул пакетной службы с использованием функции **автомасштабирования**. Автоматическое масштабирование вычислительных узлов в пуле пакетной службы представляет собой динамическую настройку вычислительной мощности, используемой вашим приложением. 
+1. Создайте пул пакетной службы с использованием функции **автомасштабирования**. Автоматическое масштабирование вычислительных узлов в пуле пакетной службы представляет собой динамическую настройку вычислительной мощности, используемой вашим приложением.
 
     Приведенный здесь пример формулы обеспечивает следующее поведение. Созданный пул изначально содержит одну виртуальную машину. Метрика $PendingTasks определяет количество задач в состоянии выполнения и активном состоянии (в очереди). Формула находит среднее число ожидающих выполнения задач за последние 180 секунд и соответствующим образом задает значение TargetDedicated. Благодаря этому значение TargetDedicated никогда не превысит 25 виртуальных машин. По мере добавления новых задач пул автоматически расширяется. При завершении задач виртуальные машины поочередно высвобождаются, и функция автомасштабирования сжимает виртуальные машины. Вы можете настроить значения startingNumberOfVMs и maxNumberofVMs в соответствии со своими потребностями.
- 
+
     Формула автоматического масштабирования:
 
-    ``` 
+    ```
     startingNumberOfVMs = 1;
     maxNumberofVMs = 25;
     pendingTaskSamplePercent = $PendingTasks.GetSamplePercent(180 * TimeInterval_Second);

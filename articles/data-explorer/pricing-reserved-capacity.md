@@ -7,12 +7,12 @@ ms.reviewer: orspodek
 ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 11/03/2019
-ms.openlocfilehash: c728f3b9a4c10d52d7361ca76e9b40198a6a0dba
-ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
+ms.openlocfilehash: bbb2108967353b851a0fa0ee610ec30380e3fc50
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74769104"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75969268"
 ---
 # <a name="prepay-for-azure-data-explorer-markup-units-with-azure-data-explorer-reserved-capacity"></a>Предоплата за обозреватель данных Azure для единиц разметки с зарезервированной емкостью Azure обозреватель данных
 
@@ -27,8 +27,8 @@ ms.locfileid: "74769104"
 * Для программы поставщика облачных решений (CSP) только агенты администратора или агенты продаж могут приобрести зарезервированную емкость Azure обозреватель данных.
 
 Дополнительные сведения о том, как клиентские клиенты и клиенты с оплатой по мере использования оплачиваются по покупкам резервирования, см. в следующих статьях:
-* [Сведения об использовании резервирования Azure для регистрации на предприятии](../billing/billing-understand-reserved-instance-usage-ea.md) 
-* [Сведения об использовании резервирования Azure для подписки с оплатой по мере использования](../billing/billing-understand-reserved-instance-usage.md).
+* [Сведения об использовании резервирования Azure для регистрации на предприятии](../cost-management-billing/reservations/understand-reserved-instance-usage-ea.md) 
+* [Сведения об использовании резервирования Azure для подписки с оплатой по мере использования](../cost-management-billing/reservations/understand-reserved-instance-usage.md).
 
 ## <a name="determine-the-right-markup-usage-before-purchase"></a>Определение правильного использования разметки перед покупкой
 
@@ -36,7 +36,7 @@ ms.locfileid: "74769104"
 
 ## <a name="buy-azure-data-explorer-reserved-capacity"></a>Приобретение зарезервированной емкости Azure обозреватель данных
 
-1. Войдите на [портале Azure](https://portal.azure.com).
+1. Войдите на [портал Azure](https://portal.azure.com).
 1. Выберите **все службы** > **резервирования** > **приобрести сейчас**. Выберите **Добавить**.
 1. На панели **Выбор типа продукта** выберите **Azure обозреватель данных** , чтобы приобрести новое резервирование для единиц разметки обозреватель данных Azure. 
 1. Выберите **купить**
@@ -52,9 +52,9 @@ ms.locfileid: "74769104"
 
 Если вам нужно отменить зарезервированную резервную емкость Azure обозреватель данных, может взиматься плата за более 12%. Возмещение основано на наименьшей цене цены покупки или текущей стоимости резервирования. Максимальная сумма возмещенных средств — 50 000 долл. США в год. Полученные возмещенные средства включают оставшийся пропорциональный баланс за вычетом 12 % за досрочное аннулирование. Если нужно запросить отмену, перейдите к резервированию на портале Azure и выберите **Возместить**, чтобы создать запрос в службу поддержки.
 
-Если вам нужно изменить резервирование резервирования емкости Azure обозреватель данных на другой термин, вы можете обмениваться данными с другой зарезервированной единицей, которая равна или больше. Дата начала срока использования нового резервирования не переносится с обмененного резервирования. Срок использования (1 или 3 года) начинается с момента создания резервирования. Если нужно запросить обмен, перейдите в резервирование на портале Azure и выберите **Обмен**, чтобы создать запрос в службу поддержки.
+Если вам нужно изменить резервирование резервирования емкости Azure обозреватель данных на другой термин, вы можете обмениваться данными с другой зарезервированной единицей, которая равна или больше. При обмене дата начала использования для нового резервирования не переносится из текущего резервирования. Срок использования (1 или 3 года) начинается с момента создания резервирования. Если нужно запросить обмен, перейдите в резервирование на портале Azure и выберите **Обмен**, чтобы создать запрос в службу поддержки.
 
-Дополнительные сведения об обмене и возмещении резервирования см. в статье [Обмен резервированиями и](../billing/billing-azure-reservations-self-service-exchange-and-refund.md)возврат денег.
+Дополнительные сведения об обмене и возмещении резервирования см. в статье [Обмен резервированиями и](../cost-management-billing/reservations/exchange-and-refund-azure-reservations.md)возврат денег.
 
 ## <a name="manage-your-reserved-capacity-reservation"></a>Управление резервированиями зарезервированных мощностей
 
@@ -63,18 +63,18 @@ ms.locfileid: "74769104"
 
 > [!NOTE]
 > * Вы можете обновить область резервирования зарезервированных ресурсов Azure обозреватель данных с помощью [портал Azure](https://portal.azure.com), POWERSHELL, CLI или API.
-> * Чтобы узнать, как управлять зарезервированной емкостью обозреватель данных Azure, см. статью Управление зарезервированной [емкостью azure обозреватель данных](../billing/billing-understand-kusto-azuredataexplorer-reservation-charges.md).
+> * Чтобы узнать, как управлять зарезервированной емкостью обозреватель данных Azure, см. статью Управление зарезервированной [емкостью azure обозреватель данных](../cost-management-billing/reservations/understand-azure-data-explorer-reservation-charges.md).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о резервировании в Azure см. в следующих статьях.
+Дополнительные сведения о резервировании в Azure см. по следующим ссылкам:
 
-* [Основные сведения о резервировании в Azure](../billing/billing-save-compute-costs-reservations.md)
-* [Управление Azure Reserved VM Instances](../billing/billing-manage-reserved-vm-instance.md)
-* [Сведения о скидках на резервирование Azure](../billing/billing-understand-reservation-charges.md)
-* [Общие сведения об использовании резервирования Azure для подписки с оплатой по мере использования](../billing/billing-understand-reserved-instance-usage.md)
-* [Общие сведения об использовании зарезервированных экземпляров Azure с Соглашением о регистрации Enterprise](../billing/billing-understand-reserved-instance-usage-ea.md)
-* [Sell Microsoft Azure Reserved Instances](https://docs.microsoft.com/partner-center/azure-reservations) (Продажа зарезервированных экземпляров Microsoft Azure)
+* [Основные сведения о резервировании в Azure](../cost-management-billing/reservations/save-compute-costs-reservations.md)
+* [Управление Azure Reserved VM Instances](../cost-management-billing/reservations/manage-reserved-vm-instance.md)
+* [Сведения о скидках на резервирование Azure](../cost-management-billing/reservations/understand-reservation-charges.md)
+* [Общие сведения об использовании резервирования Azure для подписки с оплатой по мере использования](../cost-management-billing/reservations/understand-reserved-instance-usage.md)
+* [Общие сведения об использовании зарезервированных экземпляров Azure с Соглашением о регистрации Enterprise](../cost-management-billing/reservations/understand-reserved-instance-usage-ea.md)
+* [Приобретение зарезервированных экземпляров Azure](https://docs.microsoft.com/partner-center/azure-reservations)
 
 ## <a name="need-help-contact-us"></a>Нужна помощь? Связаться с нами
 

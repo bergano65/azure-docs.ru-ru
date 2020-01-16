@@ -10,12 +10,12 @@ ms.date: 01/10/2020
 ms.author: tamram
 ms.reviewer: cbrooks
 ms.subservice: common
-ms.openlocfilehash: 39568d65978592b360512db2e556cfa6b59760b6
-ms.sourcegitcommit: f34165bdfd27982bdae836d79b7290831a518f12
+ms.openlocfilehash: 8cf1f8ecb68e31f93c19d93d6ebc4f8ef37724e7
+ms.sourcegitcommit: dbcc4569fde1bebb9df0a3ab6d4d3ff7f806d486
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/13/2020
-ms.locfileid: "75921218"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76028454"
 ---
 # <a name="create-an-account-that-supports-customer-managed-keys-for-tables-and-queues"></a>Создание учетной записи, поддерживающей управляемые клиентом ключи для таблиц и очередей
 
@@ -149,7 +149,7 @@ az storage account create \
 
 ## <a name="verify-the-account-encryption-key"></a>Проверка ключа шифрования учетной записи
 
-Чтобы убедиться, что в новой учетной записи хранения используется ключ шифрования учетной записи, вызовите команду Azure CLI [AZ Storage Account](/cli/azure/storage/account#az-storage-account-show) . Эта команда возвращает список свойств учетной записи хранения и их значений. Найдите свойство `keyType` и убедитесь, что оно имеет значение `Account`.
+Чтобы убедиться, что служба в учетной записи хранения использует ключ шифрования учетной записи, вызовите команду Azure CLI [AZ Storage Account](/cli/azure/storage/account#az-storage-account-show) . Эта команда возвращает набор свойств учетной записи хранения и их значений. Найдите поле `keyType` для каждой службы в свойстве encryption и убедитесь, что оно имеет значение `Account`.
 
 ```azurecli
 az storage account show /

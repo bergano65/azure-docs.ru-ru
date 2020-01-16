@@ -7,12 +7,12 @@ ms.reviewer: klam, logicappspm
 ms.topic: conceptual
 ms.date: 10/10/2019
 tags: connectors
-ms.openlocfilehash: 14daa37a414e814ed6de036bbb625933ce2532e0
-ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
+ms.openlocfilehash: 24746b7bbbbf3985a9801139b301a829c51a14da
+ms.sourcegitcommit: dbcc4569fde1bebb9df0a3ab6d4d3ff7f806d486
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75888130"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76030079"
 ---
 # <a name="create-and-run-automated-event-based-workflows-by-using-http-webhooks-in-azure-logic-apps"></a>Создание и Запуск автоматизированных рабочих процессов на основе событий с помощью веб-перехватчиков HTTP в Azure Logic Apps
 
@@ -36,7 +36,16 @@ ms.locfileid: "75888130"
 Например, действие веб-перехватчика " [**отправить утверждение по электронной почте**](connectors-create-api-office365-outlook.md) " в Office 365 Outlook Этот шаблон можно расширить в любой службе с помощью действия веб-перехватчика.
 
 > [!NOTE]
-> Logic Apps обеспечивает безопасность транспортного уровня (TLS) 1,2 при получении вызова к триггеру или действию веб-перехватчика HTTP. Если вы видите ошибки подтверждения SSL, убедитесь, что вы используете TLS 1,2.
+> Logic Apps обеспечивает безопасность транспортного уровня (TLS) 1,2 при получении вызова к триггеру или действию веб-перехватчика HTTP. Если вы видите ошибки подтверждения SSL, убедитесь, что вы используете TLS 1,2. Для входящих вызовов ниже приведены поддерживаемые комплекты шифров:
+>
+> * TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384
+> * TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256
+> * TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+> * TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
+> * TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384
+> * TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256
+> * TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384
+> * TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256
 
 Дополнительные сведения см. в следующих статьях:
 

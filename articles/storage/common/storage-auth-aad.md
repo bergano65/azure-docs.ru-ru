@@ -10,12 +10,12 @@ ms.date: 12/12/2019
 ms.author: tamram
 ms.reviewer: cbrooks
 ms.subservice: common
-ms.openlocfilehash: 0678d437a5c24b8193e7440a62445fb30ec97759
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 820e7187332b02993d3d8bcba9c01958cfbdd61d
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75460503"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75965817"
 ---
 # <a name="authorize-access-to-blobs-and-queues-using-azure-active-directory"></a>Авторизация доступа к BLOB-объектам и очередям с помощью Azure Active Directory
 
@@ -83,7 +83,7 @@ Azure Active Directory (Azure AD) разрешает права доступа �
 
 ### <a name="data-access-from-powershell-or-azure-cli"></a>Доступ к данным из PowerShell или Azure CLI
 
-Azure CLI и PowerShell поддерживают вход с использованием учетных данных Azure AD. После входа в систему сеанс выполняется под этими учетными данными. Дополнительные сведения см. в статье [запуск Azure CLI или команд PowerShell с учетными данными Azure AD для доступа к данным BLOB-объектов или очередей](storage-auth-aad-script.md).
+Azure CLI и PowerShell поддерживают вход с использованием учетных данных Azure AD. После входа в систему сеанс выполняется под этими учетными данными. Дополнительные сведения см. в статье [запуск Azure CLI или команд PowerShell с учетными данными Azure AD для доступа к данным BLOB-объектов или очередей](authorize-active-directory-powershell.md).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 08/29/2019
 ms.author: banders
 ms.reviewer: sngun
-ms.openlocfilehash: 0a956a1372ba1535b9d918333bd7411a4ca6abe4
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 83ecb0ad85a02c8c05b9d7e504e578afd98ed7b6
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75441934"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75969355"
 ---
 # <a name="optimize-cost-with-reserved-capacity-in-azure-cosmos-db"></a>Оптимизация затрат на резервную мощностью в Azure Cosmos DB
 
@@ -20,9 +20,9 @@ Azure Cosmos DB зарезервированная емкость позволя
 
 Однолетние и трехлетние контракты на резервную мощность Azure Cosmos DB с предварительной оплатой позволят сэкономить существенную сумму &mdash;до 65 % по сравнению с обычной платой. Резервная мощность предоставляет скидку на выставление счетов и не влияет на состояние среды выполнения ресурсов Azure Cosmos DB.
 
-Резервная мощность Azure Cosmos DB покрывает расходы на пропускную способность, подготовленную для ресурсов. Но она не распространяется на расходы хранилища и сети. После того как вы купите резервирование, при начислении платы за пропускную способность, соответствующей атрибутам резервирования, не будут применяться ставки оплаты по мере использования. Дополнительные сведения о резервировании см. в статье [Общие сведения об Azure Reserved VM Instances](../billing/billing-save-compute-costs-reservations.md).
+Резервная мощность Azure Cosmos DB покрывает расходы на пропускную способность, подготовленную для ресурсов. Но она не распространяется на расходы хранилища и сети. После того как вы купите резервирование, при начислении платы за пропускную способность, соответствующей атрибутам резервирования, не будут применяться ставки оплаты по мере использования. Дополнительные сведения о резервировании см. в статье [Общие сведения об Azure Reserved VM Instances](../cost-management-billing/reservations/save-compute-costs-reservations.md).
 
-Вы можете приобрести резервную мощность Azure Cosmos DB на [портале Azure](https://portal.azure.com). Платите за резервирование [наперед или ежемесячными платежами](../billing/billing-monthly-payments-reservations.md). Требования для приобретения резервной мощности.
+Вы можете приобрести резервную мощность Azure Cosmos DB на [портале Azure](https://portal.azure.com). Платите за резервирование [наперед или ежемесячными платежами](../cost-management-billing/reservations/monthly-payments-reservations.md). Требования для приобретения резервной мощности.
 
 * Необходимо быть в роли владельца по крайней мере для одной корпоративной или отдельной подписки с тарифами с оплатой по мере использования.  
 * Для подписок с соглашением Enterprise параметр **Добавить зарезервированные экземпляры** следует включить на [портале EA](https://ea.azure.com). Или, если этот параметр отключен, необходимо быть администратором подписки EA.
@@ -74,22 +74,22 @@ Azure Cosmos DB зарезервированная емкость позволя
 
 ## <a name="cancel-exchange-or-refund-reservations"></a>Отмена, обмен резервирования, возмещение средств за резервирование
 
-Сведения о том, как определить правую зарезервированную емкость, см. [в статье сведения о применении скидки резервирования к Azure Cosmos DB](../billing/billing-understand-cosmosdb-reservation-charges.md).
+Сведения о том, как определить правую зарезервированную емкость, см. [в статье сведения о применении скидки резервирования к Azure Cosmos DB](../cost-management-billing/reservations/understand-cosmosdb-reservation-charges.md).
 
-Вы можете отменить и обменять резервирования, а также вернуть вложенные в резервирование средства, но при этом применяются определенные ограничения. Дополнительные сведения см. в статье [Self-service exchanges and refunds for Azure Reservations](../billing/billing-azure-reservations-self-service-exchange-and-refund.md) (Самостоятельное выполнение обмена и возмещения средств для резервирований Azure).
+Вы можете отменить и обменять резервирования, а также вернуть вложенные в резервирование средства, но при этом применяются определенные ограничения. Дополнительные сведения см. в статье [Self-service exchanges and refunds for Azure Reservations](../cost-management-billing/reservations/exchange-and-refund-azure-reservations.md) (Самостоятельное выполнение обмена и возмещения средств для резервирований Azure).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 Скидка на резервирование автоматически применяется к ресурсам Azure Cosmos DB, которые соответствуют области и атрибутам резервирования. Вы можете обновить область резервирования с помощью портала Azure, PowerShell, Azure CLI или API.
 
-*  Чтобы узнать, как скидки на резервную мощность применяются к Azure Cosmos DB, ознакомьтесь со статьей [Общие сведения о применении скидки на резервирование в Azure Cosmos DB](../billing/billing-understand-cosmosdb-reservation-charges.md).
+*  Чтобы узнать, как скидки на резервную мощность применяются к Azure Cosmos DB, ознакомьтесь со статьей [Общие сведения о применении скидки на резервирование в Azure Cosmos DB](../cost-management-billing/reservations/understand-cosmosdb-reservation-charges.md).
 
 * Дополнительные сведения о резервировании в Azure см. в следующих статьях:
 
-   * [Основные сведения о резервировании в Azure](../billing/billing-save-compute-costs-reservations.md)  
-   * [Управление зарезервированными экземплярами в Azure](../billing/billing-manage-reserved-vm-instance.md)  
-   * [Общие сведения об использовании зарезервированных экземпляров Azure с Соглашением о регистрации Enterprise](../billing/billing-understand-reserved-instance-usage-ea.md)  
-   * [Общие сведения об использовании резервирования Azure для подписки с оплатой по мере использования](../billing/billing-understand-reserved-instance-usage.md)
+   * [Основные сведения о резервировании в Azure](../cost-management-billing/reservations/save-compute-costs-reservations.md)  
+   * [Управление зарезервированными экземплярами в Azure](../cost-management-billing/reservations/manage-reserved-vm-instance.md)  
+   * [Общие сведения об использовании зарезервированных экземпляров Azure с Соглашением о регистрации Enterprise](../cost-management-billing/reservations/understand-reserved-instance-usage-ea.md)  
+   * [Общие сведения об использовании резервирования Azure для подписки с оплатой по мере использования](../cost-management-billing/reservations/understand-reserved-instance-usage.md)
    * [Sell Microsoft Azure Reserved Instances](https://docs.microsoft.com/partner-center/azure-reservations) (Продажа зарезервированных экземпляров Microsoft Azure)
 
 ## <a name="need-help-contact-us"></a>Нужна помощь? Связаться с нами.

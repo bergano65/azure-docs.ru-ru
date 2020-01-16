@@ -8,12 +8,12 @@ ms.service: vpn-gateway
 ms.topic: conceptual
 ms.date: 09/06/2019
 ms.author: mbaldwin
-ms.openlocfilehash: 2c32f46ca85007608b5e17f2bf77b0a8f0fb8397
-ms.sourcegitcommit: 12a26f6682bfd1e264268b5d866547358728cd9a
+ms.openlocfilehash: cdf616b29a93e786ef26af83b5d3b3541f94d67c
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75862753"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75972278"
 ---
 # <a name="security-controls-for-azure-vpn-gateway"></a>Средства управления безопасностью для VPN-шлюза Azure
 
@@ -36,7 +36,7 @@ ms.locfileid: "75862753"
 |---|---|--|
 | Поддержка мониторинга Azure (log Analytics, App Insights и т. д.)| Да | См. раздел [Azure Monitor журналов диагностики/оповещений](vpn-gateway-howto-setup-alerts-virtual-network-gateway-log.md) & [Azure Monitor метрики/оповещение](vpn-gateway-howto-setup-alerts-virtual-network-gateway-metric.md).  |
 | Ведение журнала и аудит в плоскости управления и управления| Да | Azure Resource Manager журнал действий. |
-| Ведение журнала и аудит в плоскости данных | Да | [Azure Monitor журналы диагностики](../azure-resource-manager/resource-group-audit.md) для ведения журнала и аудита VPN-подключений. |
+| Ведение журнала и аудит в плоскости данных | Да | [Azure Monitor журналы диагностики](../azure-resource-manager/management/view-activity-logs.md) для ведения журнала и аудита VPN-подключений. |
 
 ## <a name="identity"></a>Удостоверение
 
@@ -59,7 +59,7 @@ ms.locfileid: "75862753"
 
 | Управление безопасностью | Да/нет | Примечания|
 |---|---|--|
-| Поддержка управления конфигурацией (управление версиями конфигураций и т. д.)| Да | Для операций управления состояние конфигурации VPN-шлюза Azure можно экспортировать как шаблон Azure Resource Manager и с течением времени с управлением версиями. | 
+| Поддержка управления конфигурацией (управление версиями конфигураций и т. д.)| Да | Для операций управления состояние конфигурации VPN-шлюза Azure можно экспортировать как шаблон Azure Resource Manager и с течением времени с управлением версиями. |
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

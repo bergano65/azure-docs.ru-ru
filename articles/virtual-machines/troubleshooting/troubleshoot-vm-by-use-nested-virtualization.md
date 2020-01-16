@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: article
 ms.date: 11/19/2019
 ms.author: genli
-ms.openlocfilehash: 87faea5385f5b0fd2c481c6aa7c45a9867b34163
-ms.sourcegitcommit: b5106424cd7531c7084a4ac6657c4d67a05f7068
+ms.openlocfilehash: 4ef8bc029c63aaf297462a7b53f6daba1a7c850b
+ms.sourcegitcommit: dbcc4569fde1bebb9df0a3ab6d4d3ff7f806d486
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75942182"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76028426"
 ---
 # <a name="troubleshoot-a-problem-azure-vm-by-using-nested-virtualization-in-azure"></a>Устранение проблем на виртуальной машине Azure с помощью вложенной виртуализации в Azure
 
@@ -26,11 +26,7 @@ ms.locfileid: "75942182"
 
 ## <a name="prerequisites"></a>Технические условия
 
-Чтобы подключить виртуальную машину, на которой имеются неполадки, виртуальная машина спасения должна отвечать следующим требованиям:
-
--   виртуальная машина спасения должна находиться в том же расположении, что и виртуальная машина, на которой нужно устранить проблемы;
-
--   для виртуальной машины спасения должен использоваться тот же тип учетной записи хранения (уровня "Стандартный" или "Премиум"), что и для виртуальной машины, на которой нужно устранить проблемы.
+Чтобы подключить проблемную виртуальную машину, ВИРТУАЛЬная машина службы "помощь" должна использовать тот же тип учетной записи хранения ("Стандартный" или "Премиум"), что и у проблемы.
 
 ## <a name="step-1-create-a-rescue-vm-and-install-hyper-v-role"></a>Шаг 1. Создание виртуальной машины спасения и настройка роли Hyper-V
 

@@ -2,20 +2,20 @@
 title: Мониторинг пакетной службы Azure | Документация Майкрософт
 description: Сведения о службах, метриках, журналах диагностики и других функциях мониторинга для пакетной службы Azure.
 services: batch
-author: laurenhughes
+author: ju-shim
 manager: gwallace
 ms.assetid: ''
 ms.service: batch
 ms.topic: article
 ms.workload: na
 ms.date: 04/05/2018
-ms.author: lahugh
-ms.openlocfilehash: f7155baa7b899922c9553a9a556e5bfcf3562d1b
-ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
+ms.author: jushiman
+ms.openlocfilehash: 05881dc5c2df9103a57af699cf807d6d66db27b9
+ms.sourcegitcommit: dbcc4569fde1bebb9df0a3ab6d4d3ff7f806d486
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75745239"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76029534"
 ---
 # <a name="monitor-batch-solutions"></a>Мониторинг решений пакетной службы
 

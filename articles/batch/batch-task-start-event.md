@@ -2,7 +2,7 @@
 title: Событие начала выполнения задачи пакетной службы Azure | Документы Майкрософт
 description: Справочник по событию начала выполнения задачи пакетной службы.
 services: batch
-author: laurenhughes
+author: ju-shim
 manager: gwallace
 ms.assetid: ''
 ms.service: batch
@@ -10,13 +10,13 @@ ms.topic: article
 ms.tgt_pltfrm: ''
 ms.workload: big-compute
 ms.date: 04/20/2017
-ms.author: lahugh
-ms.openlocfilehash: ffad1696bc2c85a1a150ac87d90c2fb9c34e1519
-ms.sourcegitcommit: 267a9f62af9795698e1958a038feb7ff79e77909
+ms.author: jushiman
+ms.openlocfilehash: e8265286a5d33c9a8a118dafa66a83b5ed36f8a6
+ms.sourcegitcommit: dbcc4569fde1bebb9df0a3ab6d4d3ff7f806d486
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70258544"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76029624"
 ---
 # <a name="task-start-event"></a>Событие начала выполнения задачи
 
@@ -49,27 +49,27 @@ ms.locfileid: "70258544"
 
 |Имя элемента|Тип|Примечания|
 |------------------|----------|-----------|
-|`jobId`|Строковое|Идентификатор задания, содержащего задачу.|
-|`id`|Строковое|Идентификатор задачи.|
-|`taskType`|Строковое|Тип задачи. Может быть установлено значение "JobManager", указывающее, что это задача диспетчера заданий, или значение "User", указывающее, что задача не относится к диспетчеру заданий.|
+|`jobId`|String|Идентификатор задания, содержащего задачу.|
+|`id`|String|Идентификатор задачи.|
+|`taskType`|String|Тип задачи. Может быть установлено значение "JobManager", указывающее, что это задача диспетчера заданий, или значение "User", указывающее, что задача не относится к диспетчеру заданий.|
 |`systemTaskVersion`|Int32|Это внутренний счетчик повторных попыток для задачи. Пакетная служба может повторить попытку выполнения задачи для преодоления временных неполадок. В таким неполадкам относятся внутренние ошибки планирования и попытки восстановления из вычислительных узлов в неисправном состоянии.|
-|[`nodeInfo`](#nodeInfo)|Комплексный тип|Содержит сведения о вычислительном узле, где выполнялась задача.|
-|[`multiInstanceSettings`](#multiInstanceSettings)|Комплексный тип|Указывает, что задача включает в себя несколько экземпляров и требует несколько вычислительных узлов.  Дополнительные сведения см. в статье [multiInstanceSettings](https://docs.microsoft.com/rest/api/batchservice/get-information-about-a-task).|
-|[`constraints`](#constraints)|Комплексный тип|Ограничения выполнения, применяемые к этой задаче.|
-|[`executionInfo`](#executionInfo)|Комплексный тип|Содержит сведения о выполнении задачи.|
+|[`nodeInfo`](#nodeInfo)|Сложный тип|Содержит сведения о вычислительном узле, где выполнялась задача.|
+|[`multiInstanceSettings`](#multiInstanceSettings)|Сложный тип|Указывает, что задача включает в себя несколько экземпляров и требует несколько вычислительных узлов.  Дополнительные сведения см. в статье [multiInstanceSettings](https://docs.microsoft.com/rest/api/batchservice/get-information-about-a-task).|
+|[`constraints`](#constraints)|Сложный тип|Ограничения выполнения, применяемые к этой задаче.|
+|[`executionInfo`](#executionInfo)|Сложный тип|Содержит сведения о выполнении задачи.|
 
 ###  <a name="nodeInfo"></a> nodeInfo
 
 |Имя элемента|Тип|Примечания|
 |------------------|----------|-----------|
-|`poolId`|Строковое|Идентификатор пула, в котором выполнялась задача.|
-|`nodeId`|Строковое|Идентификатор узла, на котором выполнялась задача.|
+|`poolId`|String|Идентификатор пула, в котором выполнялась задача.|
+|`nodeId`|String|Идентификатор узла, на котором выполнялась задача.|
 
 ###  <a name="multiInstanceSettings"></a> multiInstanceSettings
 
-|Имя элемента|Type|Примечания|
+|Имя элемента|Тип|Примечания|
 |------------------|----------|-----------|
-|`numberOfInstances`|int|Число вычислительных узлов, необходимых задаче.|
+|`numberOfInstances`|Int|Число вычислительных узлов, необходимых задаче.|
 
 ###  <a name="constraints"></a> constraints
 

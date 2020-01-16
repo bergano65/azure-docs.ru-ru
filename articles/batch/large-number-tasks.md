@@ -3,7 +3,7 @@ title: Отправка большого количества задач в па
 description: Сведения об эффективной отправке большого количества задач в одном задании пакетной службы
 services: batch
 documentationcenter: ''
-author: laurenhughes
+author: ju-shim
 manager: gwallace
 editor: ''
 ms.assetid: ''
@@ -12,14 +12,14 @@ ms.topic: article
 ms.tgt_pltfrm: ''
 ms.workload: big-compute
 ms.date: 08/24/2018
-ms.author: lahugh
+ms.author: jushiman
 ms.custom: ''
-ms.openlocfilehash: fc47b18dd51bbaa48d950515cccfe618d9e58426
-ms.sourcegitcommit: 2d3740e2670ff193f3e031c1e22dcd9e072d3ad9
+ms.openlocfilehash: 29d5ca378f13e047773c4e036c5e43f944fd08e3
+ms.sourcegitcommit: dbcc4569fde1bebb9df0a3ab6d4d3ff7f806d486
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/16/2019
-ms.locfileid: "74132758"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76029512"
 ---
 # <a name="submit-a-large-number-of-tasks-to-a-batch-job"></a>Отправка большого количества задач в пакетное задание
 
@@ -35,7 +35,7 @@ ms.locfileid: "74132758"
 
 * Следующие API пакетной службы ограничивают коллекцию до **100 задач**. Предел может быть меньше в зависимости от размера задач. Например, если задачи включают большое количество файлов ресурсов или переменных среды.
 
-    * [ИНТЕРФЕЙС REST API](/rest/api/batchservice/task/addcollection)
+    * [REST API](/rest/api/batchservice/task/addcollection)
     * [API Python](/python/api/azure-batch/azure.batch.operations.TaskOperations?view=azure-python)
     * [API Node.js](/javascript/api/@azure/batch/task?view=azure-node-latest)
 
@@ -43,7 +43,7 @@ ms.locfileid: "74132758"
 
 * Следующие API-интерфейсы поддерживают гораздо большие коллекции задач и ограничиваются только доступностью ОЗУ в клиенте, выполняющем отправку. Эти API прозрачно обрабатывают разделение коллекции задач на "блоки" для API нижнего уровня и повторы при сбое добавления задач:
 
-    * [API .NET](/dotnet/api/microsoft.azure.batch.cloudjob.addtaskasync?view=azure-dotnet)
+    * [API для .NET](/dotnet/api/microsoft.azure.batch.cloudjob.addtaskasync?view=azure-dotnet)
     * [API Java](/java/api/com.microsoft.azure.batch.protocol.tasks.addcollectionasync?view=azure-java-stable)
     * [расширение CLI пакетной службы Azure](batch-cli-templates.md) с шаблонами CLI пакетной службы;
     * [расширение пакета SDK для Python](https://pypi.org/project/azure-batch-extensions/).
@@ -64,7 +64,7 @@ ms.locfileid: "74132758"
 
 В следующих фрагментах кода C# показаны параметры, которые нужно настроить при добавлении большого количества задач с помощью API .NET пакетной службы.
 
-Чтобы увеличить пропускную способность задачи, увеличьте значение свойства [MaxDegreeOfParallelism](/dotnet/api/microsoft.azure.batch.batchclientparalleloptions.maxdegreeofparallelism) в [BatchClient](/dotnet/api/microsoft.azure.batch.batchclient?view=azure-dotnet). Например,
+Чтобы увеличить пропускную способность задачи, увеличьте значение свойства [MaxDegreeOfParallelism](/dotnet/api/microsoft.azure.batch.batchclientparalleloptions.maxdegreeofparallelism) в [BatchClient](/dotnet/api/microsoft.azure.batch.batchclient?view=azure-dotnet). Пример.
 
 ```csharp
 BatchClientParallelOptions parallelOptions = new BatchClientParallelOptions()
@@ -74,7 +74,7 @@ BatchClientParallelOptions parallelOptions = new BatchClientParallelOptions()
 ...
 ```
 Добавьте коллекцию задач в задание, используя соответствующую перегрузку метода [AddTaskAsync](/dotnet/api/microsoft.azure.batch.cloudjob.addtaskasync?view=azure-dotnet) или [AddTask](/dotnet/api/microsoft.azure.batch.cloudjob.addtask?view=azure-dotnet
-). Например,
+). Пример.
 
 ```csharp
 // Add a list of tasks as a collection
@@ -145,7 +145,7 @@ client = batch.BatchExtensionsClient(
 ...
 ```
 
-Создайте коллекцию задач для добавления в задание. Например,
+Создайте коллекцию задач для добавления в задание. Пример.
 
 
 ```python
@@ -209,7 +209,7 @@ except Exception as e:
     raise e
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения о расширении CLI пакетной службы Azure см. в статье [Использование шаблонов интерфейса командной строки для пакетной службы Azure и передачи файлов](batch-cli-templates.md).
 * Ознакомьтесь с дополнительными сведениями о [расширении пакета SDK для Python в пакетной службе](https://pypi.org/project/azure-batch-extensions/).

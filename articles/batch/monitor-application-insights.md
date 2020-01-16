@@ -2,7 +2,7 @@
 title: Мониторинг пакетной службы с помощью Azure Application Insights | Документация Майкрософт
 description: Узнайте, как инструментировать приложение .NET пакетной службы Azure с помощью библиотеки Azure Application Insights.
 services: batch
-author: laurenhughes
+author: ju-shim
 manager: gwallace
 ms.assetid: ''
 ms.service: batch
@@ -10,13 +10,13 @@ ms.devlang: .NET
 ms.topic: article
 ms.workload: na
 ms.date: 04/05/2018
-ms.author: lahugh
-ms.openlocfilehash: 8d896785a2f000a22f68611d5b3b1162c2021236
-ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
+ms.author: jushiman
+ms.openlocfilehash: c69ef0bf20e2ade15d2278d0fc2fabd75f39153b
+ms.sourcegitcommit: dbcc4569fde1bebb9df0a3ab6d4d3ff7f806d486
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68322563"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76029502"
 ---
 # <a name="monitor-and-debug-an-azure-batch-net-application-with-application-insights"></a>Мониторинг и отладка приложения .NET пакетной службы Azure с помощью Application Insights
 
@@ -30,14 +30,14 @@ ms.locfileid: "68322563"
 > Также можно настроить в решении пакетной службы отображение данных из Application Insights, таких как счетчики производительности виртуальных машин в Batch Explorer. [Batch Explorer](https://github.com/Azure/BatchExplorer) — это бесплатный автономный клиентский инструмент с множеством функций для создания, отладки и мониторинга приложений пакетной службы Azure. Скачайте [пакет установки](https://azure.github.io/BatchExplorer/) для Mac, Linux или Windows. См. [репозиторий batch-insights](https://github.com/Azure/batch-insights) с описанием быстрых действий, позволяющих включить данные Application Insights в Batch Explorer. 
 >
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 * [Visual Studio 2017 или более поздней версии](https://www.visualstudio.com/vs)
 
 * [Учетная запись пакетной службы и связанная учетная запись хранения](batch-account-create-portal.md).
 
 * [Ресурс Application Insights](../azure-monitor/app/create-new-resource.md ).
   
-   * Создайте *ресурс* Application Insights на портале Azure. Выберите *Общие* **Тип приложения**.
+   * Создайте *ресурс* Application Insights на портале Azure. Выберите *Общий* **Тип приложения**.
 
    * Скопируйте [ключ инструментирования](../azure-monitor/app/create-new-resource.md #copy-the-instrumentation-key) на портале. Он понадобится вам позже.
   
@@ -45,7 +45,7 @@ ms.locfileid: "68322563"
   > За данные, хранимые в Application Insights, может [взиматься плата](https://azure.microsoft.com/pricing/details/application-insights/). В том числе и данные диагностики и мониторинга, о которых идет речь в этой статье.
   > 
 
-## <a name="add-application-insights-to-your-project"></a>Добавление Application Insights в ваш проект
+## <a name="add-application-insights-to-your-project"></a>Добавьте Application Insights в свой проект
 
 Для вашего проекта необходим пакет NuGet **Microsoft.ApplicationInsights.WindowsServer** и его зависимости. Добавьте или восстановите их в проект приложения. Чтобы установить пакет, используйте команду `Install-Package` или диспетчер пакетов NuGet.
 
@@ -341,7 +341,7 @@ pool.StartTask = new StartTask()
 Из-за особенностей крупномасштабных приложений пакетной службы Azure, работающих в рабочей среде, для управления затратами может потребоваться ограничить объем данных, собираемых Application Insights. Сведения о механизмах, с помощью которых этого можно добиться, см. в статье [Выборка в Application Insights](../azure-monitor/app/sampling.md).
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Дополнительные сведения об [Application Insights](../azure-monitor/app/app-insights-overview.md).
 
 * Для поддержки Application Insights на других языках ознакомьтесь с [документацией по языкам, платформам и интеграции](../azure-monitor/app/platforms.md).

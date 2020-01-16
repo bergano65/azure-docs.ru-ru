@@ -9,12 +9,12 @@ ms.author: magoedte
 ms.date: 04/04/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: eeaf44b9abe5c8f0343325454f599d282be6c743
-ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
+ms.openlocfilehash: aa71e1e6b58906953dfa22d08405c05c10c83242
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75769852"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75966685"
 ---
 # <a name="troubleshoot-the-startstop-vms-during-off-hours-solution"></a>Устранение неполадок с решением запуска и остановки виртуальных машин в нерабочее время
 
@@ -67,13 +67,13 @@ Start-AzureRmVm : Run Login-AzureRmAccount to login
 Ниже приведен список возможных решений для вашей проблемы и указано, где следует искать источник неполадки.
 
 1. Учетные записи службы автоматизации должны быть уникальными в пределах региона Azure, даже если они находятся в разных группах ресурсов. Проверьте существующие учетные записи службы автоматизации в целевом регионе.
-2. Существующая политика запрещает использование ресурса, необходимого для развертывания решения для запуска и остановки виртуальной машины. Перейдите к своим назначениям политики на портале Azure и проверьте, есть ли у вас назначение политики, запрещающее развертывание этого ресурса. Дополнительные сведения см. в статье [Ошибка RequestDisallowedByPolicy с политикой ресурсов Azure](../../azure-resource-manager/resource-manager-policy-requestdisallowedbypolicy-error.md).
+2. Существующая политика запрещает использование ресурса, необходимого для развертывания решения для запуска и остановки виртуальной машины. Перейдите к своим назначениям политики на портале Azure и проверьте, есть ли у вас назначение политики, запрещающее развертывание этого ресурса. Дополнительные сведения см. в статье [Ошибка RequestDisallowedByPolicy с политикой ресурсов Azure](../../azure-resource-manager/templates/error-policy-requestdisallowedbypolicy.md).
 3. Чтобы развернуть решение для запуска и остановки виртуальной машины, ваша подписка должна быть зарегистрирована в указанных ниже пространствах имен ресурсов Azure.
     * `Microsoft.OperationsManagement`
     * `Microsoft.Insights`
     * `Microsoft.Automation`
 
-   Дополнительные сведения об ошибках при регистрации поставщиков см. в статье [Устранение ошибок регистрации поставщика ресурсов](../../azure-resource-manager/resource-manager-register-provider-errors.md).
+   Дополнительные сведения об ошибках при регистрации поставщиков см. в статье [Устранение ошибок регистрации поставщика ресурсов](../../azure-resource-manager/templates/error-register-resource-provider.md).
 4. Если у вас есть блокировка в рабочей области Log Analytics, перейдите в свою рабочую область на портале Azure и удалите все блокировки в ресурсе.
 5. Если описанные выше разрешения не позволяют устранить проблему, следуйте инструкциям в разделе [Обновление решения](../automation-solution-vm-management.md#update-the-solution) для повторного развертывания решения запуск/завершение.
 

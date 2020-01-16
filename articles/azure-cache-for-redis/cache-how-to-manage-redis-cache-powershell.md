@@ -6,12 +6,12 @@ ms.service: cache
 ms.topic: conceptual
 ms.date: 07/13/2017
 ms.author: yegu
-ms.openlocfilehash: 6eeabb279f5bd5165ebb249651b8bc926deb92a6
-ms.sourcegitcommit: ce4a99b493f8cf2d2fd4e29d9ba92f5f942a754c
+ms.openlocfilehash: a385d3ed7ef46389f96de72c98ffc29cebf60ec4
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/28/2019
-ms.locfileid: "75530924"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75978847"
 ---
 # <a name="manage-azure-cache-for-redis-with-azure-powershell"></a>Управление кэшем Azure для Redis с использованием Azure PowerShell
 > [!div class="op_single_selector"]
@@ -26,7 +26,7 @@ ms.locfileid: "75530924"
 
 [!INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-rm-include.md)]
 
-Дополнительные сведения о классической модели развертывания см. в статье [Azure Resource Manager vs. classic deployment: Understand deployment models and the state of your resources](../azure-resource-manager/resource-manager-deployment-model.md) (Развертывание с помощью Azure Resource Manager и классическое развертывание: сведения о моделях развертывания и состоянии ресурсов).
+Дополнительные сведения о классической модели развертывания см. в статье [Azure Resource Manager vs. classic deployment: Understand deployment models and the state of your resources](../azure-resource-manager/management/deployment-models.md) (Развертывание с помощью Azure Resource Manager и классическое развертывание: сведения о моделях развертывания и состоянии ресурсов).
 
 ## <a name="prerequisites"></a>Технические условия
 Если вы уже установили Azure PowerShell, необходимо использовать Azure PowerShell 1.0.0 или более поздней версии. Установленную версию Azure PowerShell можно узнать в командной строке Azure PowerShell с помощью такой команды:
@@ -776,7 +776,7 @@ ms.locfileid: "75530924"
 
 * [Документация по командлету кэша Azure для Redis на MSDN](https://docs.microsoft.com/powershell/module/az.rediscache)
 * [Командлеты диспетчера ресурсов Azure](https://go.microsoft.com/fwlink/?LinkID=394765): узнайте, как использовать командлеты в модуле диспетчера ресурсов Azure.
-* [Развертывание ресурсов с использованием шаблонов Resource Manager и портала Azure](../azure-resource-manager/resource-group-template-deploy-portal.md): узнайте, как создавать группы ресурсов и управлять ими на портале Azure.
+* [Развертывание ресурсов с использованием шаблонов Resource Manager и портала Azure](../azure-resource-manager/templates/deploy-portal.md): узнайте, как создавать группы ресурсов и управлять ими на портале Azure.
 * [Блог Azure](https://azure.microsoft.com/blog/): узнайте о новых возможностях в Azure.
 * [Блог Windows PowerShell](https://blogs.msdn.com/powershell): узнайте о новых возможностях в Windows PowerShell.
 * [Блог "Hey, Scripting Блог](https://blogs.technet.com/b/heyscriptingguy/): реальные советы и рекомендации от сообщества Windows PowerShell.

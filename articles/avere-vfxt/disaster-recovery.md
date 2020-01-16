@@ -6,12 +6,12 @@ ms.service: avere-vfxt
 ms.topic: conceptual
 ms.date: 12/10/2019
 ms.author: rohogue
-ms.openlocfilehash: 19f31a2fafc112f499ff87eed23843915cab32a2
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 28278f76497d6e9d0fee221bb4ef32fe6d369db0
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75414221"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75966649"
 ---
 # <a name="disaster-recovery-guidance-for-avere-vfxt-for-azure"></a>Руководство по аварийному восстановлению для Авере Вфкст для Azure
 
@@ -60,7 +60,7 @@ ms.locfileid: "75414221"
 Рекомендации по защите данных в хранилище BLOB-объектов Azure:
 
 * Часто копируйте критически важные данные в другую учетную запись хранения в другом регионе (как часто определяется планом аварийного восстановления).
-* Контролируйте доступ к данным во всех целевых системах, чтобы предотвратить случайное удаление или повреждение. Рассмотрите возможность использования [блокировок ресурсов](../azure-resource-manager/resource-group-lock-resources.md) в хранилище данных.
+* Контролируйте доступ к данным во всех целевых системах, чтобы предотвратить случайное удаление или повреждение. Рассмотрите возможность использования [блокировок ресурсов](../azure-resource-manager/management/lock-resources.md) в хранилище данных.
 * Включите функцию Авере Вфкст для [облачного моментального снимка](<https://azure.github.io/Avere/legacy/ops_guide/4_7/html/gui_cloud_snapshot_policies.html>) Azure для своего основного BLOB-объекта фильтрами определенными.
 
 ### <a name="copy-avere-vfxt-core-filer-data-to-a-backup-account"></a>Копирование данных Авере Вфкст Core фильтр в учетную запись резервной копии

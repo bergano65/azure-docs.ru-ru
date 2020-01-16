@@ -9,16 +9,16 @@ ms.author: magoedte
 ms.date: 03/11/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 2d1c747a52a1e8dedd0b5ba411b673eee463a2b6
-ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
+ms.openlocfilehash: 1aa759a2984764169eb28935e095d0f7c0f90c08
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74849587"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75969826"
 ---
 # <a name="move-your-azure-automation-account-to-another-subscription"></a>Перемещение учетной записи службы автоматизации Azure в другую подписку
 
-Azure предоставляет возможность перемещения некоторых ресурсов в новую группу ресурсов или подписку. Ресурсы можно перемещать с помощью портал Azure, PowerShell, Azure CLI или REST API. Дополнительные сведения о процессе см. в статье [Перемещение ресурсов в новую группу ресурсов или подписку](../../azure-resource-manager/resource-group-move-resources.md).
+Azure предоставляет возможность перемещения некоторых ресурсов в новую группу ресурсов или подписку. Ресурсы можно перемещать с помощью портал Azure, PowerShell, Azure CLI или REST API. Дополнительные сведения о процессе см. в статье [Перемещение ресурсов в новую группу ресурсов или подписку](../../azure-resource-manager/management/move-resource-group-and-subscription.md).
 
 Учетные записи службы автоматизации Azure — это один из ресурсов, которые можно переместить. В этой статье вы узнаете, как переместить учетные записи автоматизации в другой ресурс или подписку.
 
@@ -147,4 +147,4 @@ Remove-AzureRmActionGroup -ResourceGroupName <myResourceGroup> -Name StartStop_V
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о перемещении ресурсов в Azure см. в статье [Перемещение ресурсов в Azure](../../azure-resource-manager/move-support-resources.md).
+Дополнительные сведения о перемещении ресурсов в Azure см. в статье [Перемещение ресурсов в Azure](../../azure-resource-manager/management/move-support-resources.md).

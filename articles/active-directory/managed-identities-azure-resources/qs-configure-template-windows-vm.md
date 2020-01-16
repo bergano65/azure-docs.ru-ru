@@ -15,18 +15,18 @@ ms.workload: identity
 ms.date: 09/26/2019
 ms.author: markvi
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 820ed0c3de49105bb0365213e5179c474652e5f0
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: e5540697e8e64586d73e34d253fb95e549fc0301
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75429975"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75972148"
 ---
 # <a name="configure-managed-identities-for-azure-resources-on-an-azure-vm-using-a-templates"></a>Настройка управляемых удостоверений для ресурсов Azure на виртуальной машине Azure с помощью шаблонов
 
 [!INCLUDE [preview-notice](../../../includes/active-directory-msi-preview-notice.md)]
 
-Функция управляемых удостоверений для ресурсов Azure предоставляет службам Azure автоматически управляемые удостоверения в Azure Active Directory. Это удостоверение можно использовать для аутентификации в любой службе, которая поддерживает аутентификацию Azure AD, не храня какие-либо учетные данные в коде. 
+Функция управляемых удостоверений для ресурсов Azure предоставляет службам Azure автоматически управляемые удостоверения в Azure Active Directory. Это удостоверение можно использовать для аутентификации в любой службе, которая поддерживает аутентификацию Azure AD, не храня какие-либо учетные данные в коде.
 
 В этой статье вы узнаете, как с помощью шаблона развертывания Azure Resource Manager выполнять приведенные ниже операции с управляемыми удостоверениями для ресурсов Azure на виртуальной машине Azure.
 
@@ -44,7 +44,7 @@ ms.locfileid: "75429975"
    - Использование локального [редактора JSON (например, VS Code)](../../azure-resource-manager/resource-manager-create-first-template.md), а затем передача и развертывание с помощью PowerShell или интерфейса командной строки.
    - Использование [проекта группы ресурсов Azure](../../azure-resource-manager/templates/create-visual-studio-deployment-project.md) Visual Studio для создания и развертывания шаблона.  
 
-Независимо оттого, какой вариант выбран, во время первоначального развертывания и повторного развертывания в шаблоне используется одинаковый синтаксис. Включение управляемого удостоверения, назначаемого системой или пользователем, для новой или существующей виртуальной машины выполняется таким же образом. Коме того, по умолчанию Azure Resource Manager выполняет [добавочное обновление](../../azure-resource-manager/deployment-modes.md) для развертываний.
+Независимо оттого, какой вариант выбран, во время первоначального развертывания и повторного развертывания в шаблоне используется одинаковый синтаксис. Включение управляемого удостоверения, назначаемого системой или пользователем, для новой или существующей виртуальной машины выполняется таким же образом. Коме того, по умолчанию Azure Resource Manager выполняет [добавочное обновление](../../azure-resource-manager/templates/deployment-modes.md) для развертываний.
 
 ## <a name="system-assigned-managed-identity"></a>Управляемое удостоверение, назначаемое системой
 
@@ -59,7 +59,7 @@ ms.locfileid: "75429975"
 2. Чтобы включить управляемое удостоверение, назначаемое системой, загрузите шаблон в редактор, найдите интересующий ресурс `Microsoft.Compute/virtualMachines` в разделе `resources` и добавьте свойство `"identity"` на том же уровне, что и свойство `"type": "Microsoft.Compute/virtualMachines"`. Используйте следующий синтаксис:
 
    ```JSON
-   "identity": { 
+   "identity": {
        "type": "SystemAssigned"
    },
    ```
@@ -80,7 +80,7 @@ ms.locfileid: "75429975"
                 "type": "SystemAssigned",
                 },
             },
-        
+
             //The following appears only if you provisioned the optional VM extension (to be deprecated)
             {
             "type": "Microsoft.Compute/virtualMachines/extensions",
@@ -110,9 +110,9 @@ ms.locfileid: "75429975"
 Чтобы назначить роль для присвоенного системой удостоверения виртуальной машины, вашей учетной записи должна быть назначена роль [Администратора доступа пользователей](/azure/role-based-access-control/built-in-roles#user-access-administrator).
 
 1. После входа в Azure локально или через портал Azure используйте учетную запись, связанную с подпиской Azure, содержащей виртуальную машину.
- 
+
 2. Загрузите шаблон в [редактор](#azure-resource-manager-templates) и добавьте приведенную ниже информацию, чтобы предоставить виртуальной машине доступ для **чтения** к группе ресурсов, в которой она создана.  Структура шаблона зависит от редактора и выбранной модели развертывания.
-   
+
    Добавьте следующий элемент в раздел `parameters`:
 
     ```JSON
@@ -156,15 +156,15 @@ ms.locfileid: "75429975"
 1. После входа в Azure локально или через портал Azure используйте учетную запись, связанную с подпиской Azure, содержащей виртуальную машину.
 
 2. Загрузив шаблон в [редактор](#azure-resource-manager-templates), найдите нужный ресурс `Microsoft.Compute/virtualMachines` в разделе `resources`. Если у вашей виртуальной машины есть только управляемое удостоверение, назначаемое системой, его можно отключить, изменив тип удостоверения на `None`.  
-   
+
    **Microsoft.Compute/virtualMachines API версии 2018-06-01**
 
    Если у виртуальной машины есть управляемые удостоверения, назначаемые как системой, так и пользователями, удалите `SystemAssigned` из типа удостоверения и сохраните `UserAssigned` вместе со значениями словаря `userAssignedIdentities`.
 
    **Microsoft.Compute/virtualMachines API версии 2018-06-01**
-   
+
    Если значение `apiVersion` соответствует `2017-12-01` и у виртуальной машины есть управляемые удостоверения, назначаемые как системой, так и пользователями, удалите `SystemAssigned` из типа удостоверения и сохраните`UserAssigned` с массивом пользовательских удостоверений `identityIds`.  
-   
+
 В следующем примере показано, как удалить управляемое удостоверение, назначаемое системой, из виртуальной машины без управляемых удостоверений, назначаемых пользователем.
 
  ```JSON
@@ -173,7 +173,7 @@ ms.locfileid: "75429975"
      "type": "Microsoft.Compute/virtualMachines",
      "name": "[parameters('vmName')]",
      "location": "[resourceGroup().location]",
-     "identity": { 
+     "identity": {
          "type": "None"
      }
  }
@@ -210,11 +210,11 @@ ms.locfileid: "75429975"
         }
     }
    ```
-   
+
    **Microsoft.Compute/virtualMachines API версии 2017-12-01**
-    
+
    Если значение `apiVersion` соответствует `2017-12-01`, управляемые удостоверения, назначаемые пользователем, хранятся в массиве `identityIds`, а значение `<USERASSIGNEDIDENTITYNAME>` должно храниться в переменной, определенной в разделе `variables` шаблона.
-    
+
    ```JSON
    {
        "apiVersion": "2017-12-01",
@@ -229,9 +229,9 @@ ms.locfileid: "75429975"
        }
    }
    ```
-       
+
 3. Когда все будет готово, следующие разделы должны быть добавлены в раздел `resource` шаблона, который в результате должен выглядеть следующим образом.
-   
+
    **Microsoft.Compute/virtualMachines API версии 2018-06-01**    
 
    ```JSON
@@ -271,7 +271,7 @@ ms.locfileid: "75429975"
     ]   
    ```
    **Microsoft.Compute/virtualMachines API версии 2017-12-01**
-   
+
    ```JSON
    "resources": [
         {
@@ -287,7 +287,7 @@ ms.locfileid: "75429975"
                 ]
             }
         },
-                 
+
         //The following appears only if you provisioned the optional VM extension (to be deprecated)                   
         {
             "type": "Microsoft.Compute/virtualMachines/extensions",
@@ -317,33 +317,33 @@ ms.locfileid: "75429975"
 1. После входа в Azure локально или через портал Azure используйте учетную запись, связанную с подпиской Azure, содержащей виртуальную машину.
 
 2. Загрузив шаблон в [редактор](#azure-resource-manager-templates), найдите нужный ресурс `Microsoft.Compute/virtualMachines` в разделе `resources`. Если у вашей виртуальной машины есть только управляемое удостоверение, назначаемое пользователем, его можно отключить, изменив тип удостоверения на `None`.
- 
+
    В следующем примере показано, как удалить все управляемые удостоверения, назначаемые пользователем, из виртуальной машины без управляемых удостоверений, назначаемых системой.
-   
+
    ```json
     {
       "apiVersion": "2018-06-01",
       "type": "Microsoft.Compute/virtualMachines",
       "name": "[parameters('vmName')]",
       "location": "[resourceGroup().location]",
-      "identity": { 
+      "identity": {
           "type": "None"
           },
     }
    ```
-   
+
    **Microsoft.Compute/virtualMachines API версии 2018-06-01**
-    
+
    Чтобы удалить отдельное управляемое удостоверение, назначаемое пользователем, из виртуальной машины, удалите его из словаря `useraAssignedIdentities`.
 
    Если у вас есть управляемое удостоверение, назначаемое системой, сохраните его в значении `type` в рамках значения `identity`.
- 
+
    **Microsoft.Compute/virtualMachines API версии 2017-12-01**
 
    Чтобы удалить отдельное управляемое удостоверение, назначаемое пользователем, из виртуальной машины, удалите его из массива `identityIds`.
 
    Если у вас есть управляемое удостоверение, назначаемое системой, сохраните его в значении `type` в рамках значения `identity`.
-   
+
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - [Обзор управляемых удостоверений для ресурсов Azure](overview.md).
