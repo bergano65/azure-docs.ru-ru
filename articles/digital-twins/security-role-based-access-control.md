@@ -7,13 +7,13 @@ manager: bertvanhoof
 ms.service: digital-twins
 services: digital-twins
 ms.topic: conceptual
-ms.date: 11/20/2019
-ms.openlocfilehash: efa19cdd1dd0827fd0e88f533b94f69bd7b99ca9
-ms.sourcegitcommit: 8a2949267c913b0e332ff8675bcdfc049029b64b
+ms.date: 01/15/2020
+ms.openlocfilehash: feda4b3a7f21b581fb4f08aec013f87c0fabb7e5
+ms.sourcegitcommit: 05cdbb71b621c4dcc2ae2d92ca8c20f216ec9bc4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74307211"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76044939"
 ---
 # <a name="role-based-access-control-in-azure-digital-twins"></a>Управление доступом на основе ролей в Azure Digital Twins
 
@@ -21,7 +21,7 @@ Azure Digital двойников обеспечивает точный конт�
 
 Используя RBAC, разрешения может предоставляться:
 
-- пользователю;
+- Пользователь.
 - устройству;
 - субъект-службе;
 - определяемой пользователем функции;
@@ -81,7 +81,7 @@ RBAC может использоваться разработчиком для �
 >[!IMPORTANT]
 > Дополнительные сведения о назначении ролей см. в статье [Создание назначений ролей и управление ими в Azure Digital Twins](./security-create-manage-role-assignments.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о создании и управлении назначениями ролей Azure Digital Twins см. в статье [Создание назначений ролей и управление ими в Azure Digital Twins](./security-create-manage-role-assignments.md).
 
