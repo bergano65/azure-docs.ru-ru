@@ -8,6 +8,8 @@
   items:
     - name: Ограничения подписки и службы
       href: azure-subscription-service-limits.md
+    - name: Правила именования ресурсов
+      href: resource-name-rules.md
     - name: Развертывание с помощью Azure Resource Manager и классическая модель развертывания
       href: deployment-models.md
     - name: Общие атрибуты безопасности Azure

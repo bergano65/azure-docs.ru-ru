@@ -249,6 +249,8 @@
           items:
             - name: Интеграция пользовательских навыков
               href: cognitive-search-custom-skill-interface.md
+            - name: Пример. Функции Azure (Python)
+              href: cognitive-search-custom-skill-python.md
             - name: "Пример\_— Функции Azure"
               href: cognitive-search-create-custom-skill-example.md
             - name: "Пример\_— контейнеры"

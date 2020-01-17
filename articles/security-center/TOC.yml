@@ -1,4 +1,4 @@
-- name: Документация по центру безопасности
+- name: Документация по Центру безопасности
   href: index.yml
 - name: Обзор
   items:
@@ -29,6 +29,10 @@
       href: security-center-compliance-dashboard.md
 - name: Основные понятия
   items:
+    - name: Оценка безопасности в Центре безопасности
+      href: security-center-secure-score.md
+    - name: Расширенная оценка безопасности
+      href: secure-score-security-controls.md
     - name: Разрешения
       href: security-center-permissions.md
     - name: Безопасность данных
@@ -73,8 +77,6 @@
           href: security-center-alert-validation.md
 - name: Практические руководства
   items:
-    - name: Улучшение результатов оценки безопасности
-      href: security-center-secure-score.md
     - name: Переход к расширенным функциям безопасности
       href: security-center-onboarding.md
     - name: Проверка виртуальных машин на наличие уязвимостей

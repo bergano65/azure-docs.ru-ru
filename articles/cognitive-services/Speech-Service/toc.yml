@@ -452,7 +452,9 @@
           href: how-to-use-logging.md
         - name: Отслеживание использования памяти
           href: how-to-track-speech-sdk-memory-usage.md
-          displayName: 'memory usage, memory consumption, object logging, object tracking, memory'
+        - name: Настройка OpenSSL для Linux
+          href: how-to-configure-openssl-linux.md
+          displayName: 'memory usage, memory consumption, object logging, object tracking, memory, openssl'
     - name: Примеры
       items:
         - name: Примеры пакета SDK службы "Речь" (GitHub)

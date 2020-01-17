@@ -2,44 +2,36 @@
   href: index.yml
 - name: Справка по двухфакторной проверке подлинности
   items:
-    - name: Обзор
-      href: user-help-two-step-verification-overview.md
-    - name: Настройка методов двухфакторной проверки подлинности
-      items:
-        - name: Обзор
-          href: multi-factor-authentication-end-user-first-time.md
-        - name: Настройка приложения Authenticator
-          href: multi-factor-authentication-setup-auth-app.md
-        - name: Настройка мобильного устройства
-          href: multi-factor-authentication-setup-phone-number.md
-        - name: Настройка рабочего телефона
-          href: multi-factor-authentication-setup-office-phone.md
+    - name: Что такое страница дополнительной проверки?
+      href: multi-factor-authentication-end-user-first-time.md
+    - name: Настройка приложения Authenticator
+      href: multi-factor-authentication-setup-auth-app.md
+    - name: Настройка мобильного устройства
+      href: multi-factor-authentication-setup-phone-number.md
+    - name: Настройка рабочего телефона
+      href: multi-factor-authentication-setup-office-phone.md
     - name: Управление параметрами
       href: multi-factor-authentication-end-user-manage-settings.md
-    - name: Получение справки
-      href: multi-factor-authentication-end-user-troubleshoot.md
     - name: Управление паролями приложения
       href: multi-factor-authentication-end-user-app-passwords.md
     - name: Как войти
       href: user-help-sign-in.md?toc=./toc.json
+    - name: Получить справку
+      href: multi-factor-authentication-end-user-troubleshoot.md
 - name: Справка по сбросу пароля
   items:
-    - name: Обзор
-      href: user-help-password-reset-overview.md
     - name: Регистрация для сброса пароля
       href: active-directory-passwords-reset-register.md
     - name: Сброс пароля
       href: active-directory-passwords-update-your-own-password.md
 - name: Справка по приложению Microsoft Authenticator
   items:
-    - name: Обзор
+    - name: Что такое приложение Microsoft Authenticator?
       href: user-help-auth-app-overview.md
     - name: Скачивание и установка приложения
       href: user-help-auth-app-download-install.md
     - name: Добавление учетных записей
       items:
-        - name: Обзор
-          href: user-help-auth-app-add-account-overview.md
         - name: Добавление рабочей или учебной учетной записи
           href: user-help-auth-app-add-work-school-account.md
         - name: Добавление личной учетной записи Майкрософт
@@ -52,14 +44,14 @@
       href: user-help-auth-app-sign-in.md
     - name: Резервное копирование и восстановление учетных записей
       href: user-help-auth-app-backup-recovery.md
-    - name: Часто задаваемые вопросы
+    - name: ВОПРОСЫ И ОТВЕТЫ
       href: user-help-auth-app-faq.md
 - name: Справка по порталу "Моя учетная запись"
   items:
-    - name: Обзор
+    - name: Что представляет собой портал "Моя учетная запись"?
       href: my-account-portal-overview.md
     - name: Управление сведениями для защиты
-      href: user-help-security-info-overview.md
+      href: security-info-setup-signin.md
     - name: Управление подключенными устройствами
       href: my-account-portal-devices-page.md
     - name: Изменение пароля
@@ -72,14 +64,10 @@
       href: my-account-portal-sign-ins-page.md
 - name: Справка по сведениям для защиты (предварительная версия)
   items:
-    - name: Обзор
-      href: user-help-security-info-overview.md
     - name: Добавление сведений для защиты при входе в систему
       href: security-info-setup-signin.md
     - name: Методы добавления или обновления сведений для защиты
       items:
-        - name: Обзор
-          href: security-info-add-update-methods-overview.md
         - name: Настройка приложения Authenticator
           href: security-info-setup-auth-app.md
         - name: Настройка обмена текстовыми сообщениями
@@ -98,8 +86,6 @@
       href: user-help-sign-in.md?toc=./toc.json
 - name: Справка по управлению устройствами
   items:
-    - name: Обзор
-      href: user-help-device-mgmt-overview.md
     - name: Присоединение рабочего устройства
       href: user-help-join-device-on-network.md
     - name: Регистрация личного устройства для работы
@@ -108,8 +94,6 @@
       href: user-help-device-remediation.md
 - name: Справка по порталу "Мои приложения"
   items:
-    - name: Обзор
-      href: my-apps-portal-end-user-overview.md
     - name: Доступ к порталу "Мои приложения" и его использование
       href: my-apps-portal-end-user-access.md
     - name: Изменение или обновление данных профиля
@@ -122,8 +106,6 @@
       href: my-apps-portal-end-user-troubleshoot.md
 - name: Справка по предварительной версии раздела "Мои приложения" на портале
   items:
-    - name: Обзор
-      href: my-applications-portal-overview.md
     - name: Доступ к порталу "Мои приложения" и его использование
       href: my-applications-portal-access.md
     - name: Доступ к рабочим областям и их использование

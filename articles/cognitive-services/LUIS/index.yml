@@ -12,12 +12,12 @@ metadata:
   title: Документация по Распознаванию речи (LUIS)
   titleSuffix: Azure Cognitive Services
   description: Служба "Распознавание речи" (LUIS) позволяет приложению распознавать желания людей, исходя из их слов. LUIS использует машинное обучение, позволяя разработчикам создавать приложения, которые могут получать входные данные пользователей на естественном языке, а также распознавать их значение.
-  ms.openlocfilehash: 43f40e042fdbecbfc571fb719a0a42ded6c70909
-  ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
+  ms.openlocfilehash: f45461b49b51d6d25464ffa7d2084b1bbb1f9e0e
+  ms.sourcegitcommit: d29e7d0235dc9650ac2b6f2ff78a3625c491bbbf
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 12/03/2019
-  ms.locfileid: "74706693"
+  ms.lasthandoff: 01/17/2020
+  ms.locfileid: "76169659"
 landingContent:
 - title: Сведения о Распознавании речи (LUIS)
   linkLists:
@@ -58,9 +58,9 @@ landingContent:
     - text: 'Портал: Создание приложения LUIS'
       url: get-started-portal-build-app.md
     - text: Использование пакета SDK для C#
-      url: sdk-csharp-quickstart-authoring-app.md
+      url: sdk-authoring.md?pivots=programming-language-csharp
     - text: Использование пакета SDK для Python
-      url: sdk-python-quickstart-authoring-app.md
+      url: sdk-authoring.md?pivots=programming-language-python
   - linkListType: how-to-guide
     links:
     - text: Создание приложения LUIS
@@ -85,10 +85,8 @@ landingContent:
     links:
     - text: 'Портал: Развертывание приложения в конечной точке прогнозирования'
       url: get-started-portal-deploy-app.md
-    - text: Использование пакета SDK для C#
-      url: sdk-csharp-quickstart-authoring-app.md#train-the-app
-    - text: Использование пакета SDK для Python
-      url: sdk-python-quickstart-authoring-app.md#train-the-app
+    - text: Использование пакета SDK
+      url: sdk-authoring.md
   - linkListType: how-to-guide
     links:
     - text: Управление версиями приложения
@@ -105,8 +103,8 @@ landingContent:
   linkLists:
   - linkListType: quickstart
     links:
-    - text: Использование пакета SDK для .NET с C#
-      url: sdk-csharp-quickstart-query-prediction-endpoint.md
+    - text: Использование пакета SDK
+      url: sdk-query-prediction-endpoint.md
   - linkListType: quickstart
     links:
     - text: Использование REST API с C#
@@ -119,7 +117,7 @@ landingContent:
       url: luis-get-started-node-get-intent.md
     - text: Использование REST API с Python
       url: luis-get-started-python-get-intent.md
-- title: Справочные материалы
+- title: Справочник
   linkLists:
   - linkListType: reference
     links:

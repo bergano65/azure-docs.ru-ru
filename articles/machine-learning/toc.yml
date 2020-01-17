@@ -310,15 +310,9 @@
         - name: Использование в режиме реального времени
           displayName: create client consume request response synchronous
           href: how-to-consume-web-service.md
-        - name: Составление пакетных прогнозов
-          displayName: score scoring batch consume pipeline parallelrunstep inference
-          href: how-to-run-batch-predictions.md
         - name: Пакетные прогнозы конструктора
           displayName: score scoring asynchronous consume pipeline parallelrunstep inference designer
           href: how-to-run-batch-predictions-designer.md
-        - name: Отладка пакетных прогнозов и устранение неполадок с ними
-          displayName: debug_batch consume pipeline parallelrunstep inference
-          href: how-to-debug-batch-predictions.md
     - name: Мониторинг моделей
       items:
         - name: Сбор и оценка данных модели
@@ -343,6 +337,12 @@
         - name: 'Конструктор: Повторное обучение с использованием опубликованных конвейеров'
           displayName: 'retrain, designer, published pipeline'
           href: how-to-retrain-designer.md
+        - name: Параллельное выполнение шагов
+          displayName: score scoring batch consume pipeline parallelrunstep inference
+          href: how-to-use-parallel-run-step.md
+        - name: Отладка и устранение неполадок с параллельным выполнением шагов
+          displayName: debug_batch consume pipeline parallelrunstep inference
+          href: how-to-debug-parallel-run-step.md
     - name: Управление квотами ресурсов
       displayName: limits
       href: how-to-manage-quotas.md

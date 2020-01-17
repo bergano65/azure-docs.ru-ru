@@ -50,6 +50,8 @@
       href: powershell-samples.md
 - name: Основные понятия
   items:
+    - name: Компоненты и ограничения
+      href: concepts-limitations.md
     - name: Мониторинг работоспособности
       items:
         - name: Пробы работоспособности

@@ -17,6 +17,8 @@
   items:
     - name: Запуск иммерсивного средства чтения (Python)
       href: tutorial-python.md
+    - name: Использование нескольких ресурсов иммерсивного средства чтения
+      href: tutorial-multiple-resources.md
 - name: Инструкции
   items:
     - name: Создание ресурса иммерсивного средства чтения
