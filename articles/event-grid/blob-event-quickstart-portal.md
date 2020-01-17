@@ -1,6 +1,6 @@
 ---
 title: Краткое руководство. Отправка событий хранилища BLOB-объектов в конечную веб-точку с помощью портала
-description: Краткое руководство. Использование службы "Сетка событий Azure" и портала Azure для создания учетной записи хранилища BLOB-объектов и подписки на связанные события. Отправка событий в Веб-перехватчик
+description: Краткое руководство. Использование службы "Сетка событий Azure" и портала Azure для создания учетной записи хранилища BLOB-объектов и подписки на связанные события. Отправка событий в веб-перехватчик.
 services: event-grid
 keywords: ''
 author: spelluru
@@ -9,12 +9,12 @@ ms.date: 11/05/2019
 ms.topic: quickstart
 ms.service: event-grid
 ms.custom: seodec18
-ms.openlocfilehash: 9ecffc25461a909d47329d536d1c19724b3c22ac
-ms.sourcegitcommit: bc7725874a1502aa4c069fc1804f1f249f4fa5f7
+ms.openlocfilehash: 1aa8c9ff26b85f5af8095ad1cff062b224abff83
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73718067"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75982183"
 ---
 # <a name="quickstart-route-blob-storage-events-to-web-endpoint-with-the-azure-portal"></a>Краткое руководство. Отправка событий хранилища BLOB-объектов в конечную веб-точку с помощью портала Azure
 
@@ -38,7 +38,7 @@ ms.locfileid: "73718067"
 
    ![Выбор хранилища](./media/blob-event-quickstart-portal/create-storage.png)
 
-1. Чтобы подписаться на события, создайте учетную запись хранения общего назначения версии 2 или учетную запись хранения BLOB-объектов. Дополнительные сведения см. в разделе [Создание учетной записи хранения](../storage/common/storage-quickstart-create-account.md).
+1. Чтобы подписаться на события, создайте учетную запись хранения общего назначения версии 2 или учетную запись хранения BLOB-объектов. Дополнительные сведения см. в разделе [Создание учетной записи хранения](../storage/common/storage-account-create.md).
 
    ![Начальные шаги](./media/blob-event-quickstart-portal/provide-blob-values.png)
 
@@ -136,7 +136,7 @@ ms.locfileid: "73718067"
 
 Выберите группу ресурсов и щелкните **Удалить группу ресурсов**.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы знаете, как создавать пользовательские раздели и подписки на события, ознакомьтесь с дополнительными сведениями о сетке событий, которые могут помочь вам:
 

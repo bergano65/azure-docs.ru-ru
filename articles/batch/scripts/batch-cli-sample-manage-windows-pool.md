@@ -3,7 +3,7 @@ title: Пример скрипта Azure CLI. Пул Windows в пакетной
 description: Этот скрипт демонстрирует некоторые из доступных команд Azure CLI для создания пулов вычислительных узлов Windows в пакетной службе Azure и управления ими.
 services: batch
 documentationcenter: ''
-author: laurenhughes
+author: ju-shim
 manager: gwallace
 editor: ''
 ms.assetid: ''
@@ -13,13 +13,13 @@ ms.topic: sample
 ms.tgt_pltfrm: multiple
 ms.workload: na
 ms.date: 12/12/2019
-ms.author: lahugh
-ms.openlocfilehash: 662dda0c72cd50a84751ef92236e4e94b45de450
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.author: jushiman
+ms.openlocfilehash: 2a692be38b1af610bfee755b68a5e9fc9bb96691
+ms.sourcegitcommit: dbcc4569fde1bebb9df0a3ab6d4d3ff7f806d486
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75390154"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76029277"
 ---
 # <a name="cli-example-create-and-manage-a-windows-pool-in-azure-batch"></a>Пример использования CLI. Создание пула Windows и управление им в пакетной службе Azure
 

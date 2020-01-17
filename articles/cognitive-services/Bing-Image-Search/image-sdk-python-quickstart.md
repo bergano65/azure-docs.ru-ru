@@ -11,12 +11,12 @@ ms.topic: quickstart
 ms.date: 12/06/2019
 ms.author: aahi
 ms.custom: seodec2018
-ms.openlocfilehash: 85aa1bda395240d0f11b0654ee48b9f1a0401eaa
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: 561162767a48a060763510310de77767f37d4eb4
+ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74930594"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75770192"
 ---
 # <a name="quickstart-search-for-images-with-the-bing-image-search-sdk-for-python"></a>Краткое руководство. Поиск изображений с помощью пакета SDK для поиска изображений Bing для Python
 
@@ -24,7 +24,7 @@ ms.locfileid: "74930594"
 
 Исходный код, используемый в данном примере, вместе с дополнительной обработкой ошибок и аннотациями можно получить на [GitHub](https://github.com/Azure-Samples/cognitive-services-python-sdk-samples/blob/master/samples/search/image-search-quickstart.py).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * [Python 2.7 или 3.4](https://www.python.org/) и более поздних версий.
 
@@ -38,7 +38,7 @@ ms.locfileid: "74930594"
 1. Создайте сценарий Python в избранной интегрированной среде разработки или редакторе и добавьте следующие строки импорта:
 
     ```python
-    from azure.cognitiveservices.search.imagesearch import ImageSearchAPI
+    from azure.cognitiveservices.search.imagesearch import ImageSearchClient
     from msrest.authentication import CognitiveServicesCredentials
     ```
 
@@ -46,6 +46,7 @@ ms.locfileid: "74930594"
 
     ```python
     subscription_key = "Enter your key here"
+    subscription_endpoint = "Enter your endpoint here"
     search_term = "canadian rockies"
     ```
 
@@ -54,7 +55,7 @@ ms.locfileid: "74930594"
 1. Создайте экземпляр `CognitiveServicesCredentials` и используйте его для создания клиента:
 
     ```python
-    client = ImageSearchAPI(CognitiveServicesCredentials(subscription_key))
+    client = ImageSearchClient(endpoint=subscription_endpoint, credentials=CognitiveServicesCredentials(subscription_key))
     ```
 1. Отправьте поисковой запрос к API Bing для поиска изображений:
     ```python
@@ -78,12 +79,12 @@ else:
     print("No image results returned!")
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Руководство по одностраничным приложениям для API Bing для поиска изображений](https://docs.microsoft.com/azure/cognitive-services/bing-image-search/tutorial-bing-image-search-single-page-app)
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 * [Что такое API Bing для поиска изображений?](https://docs.microsoft.com/azure/cognitive-services/bing-image-search/overview)  
 * [Попробуйте API Bing для поиска изображений](https://azure.microsoft.com/services/cognitive-services/bing-image-search-api/)  

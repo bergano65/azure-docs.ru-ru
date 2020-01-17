@@ -13,12 +13,12 @@ ms.devlang: rest-api
 ms.topic: quickstart
 ms.date: 06/10/2019
 ms.author: jingwang
-ms.openlocfilehash: bfe786405ad32f68af33fcea1131fe856c9f38d2
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: fbfd3e2577655e8cfccd84fffe2971ff509bd2f4
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75440054"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75977455"
 ---
 # <a name="quickstart-create-an-azure-data-factory-and-pipeline-by-using-the-rest-api"></a>Краткое руководство. Создание фабрики данных Azure и конвейера с помощью REST API
 
@@ -37,7 +37,7 @@ ms.locfileid: "75440054"
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 * **Подписка Azure**. Если у вас нет подписки, вы можете [создать бесплатную пробную учетную запись](https://azure.microsoft.com/pricing/free-trial/).
-* **Учетная запись хранения Azure.** Хранилище BLOB-объектов используется как хранилище данных **источник** и **приемник**. Если у вас нет учетной записи хранения Azure, ознакомьтесь с разделом [Создание учетной записи хранения](../storage/common/storage-quickstart-create-account.md).
+* **Учетная запись хранения Azure.** Хранилище BLOB-объектов используется как хранилище данных **источник** и **приемник**. Если у вас нет учетной записи хранения Azure, ознакомьтесь с разделом [Создание учетной записи хранения](../storage/common/storage-account-create.md).
 * Создайте **контейнер больших двоичных объектов** в хранилище BLOB-объектов, в контейнере создайте входную **папку** и отправьте несколько файлов в нее. Такие средства, как [обозреватель службы хранилища Azure](https://azure.microsoft.com/features/storage-explorer/), можно использовать для подключения к хранилищу BLOB-объектов Azure, создания контейнера BLOB-объектов, отправки входного файла и проверки выходного.
 * Установите **Azure PowerShell**. Следуйте инструкциям по [установке и настройке Azure PowerShell](/powershell/azure/install-Az-ps). В этом руководстве используется PowerShell для вызова REST API.
 * [Используйте следующие инструкции](../active-directory/develop/howto-create-service-principal-portal.md#create-an-azure-active-directory-application), **чтобы создать приложение в Azure Active Directory**. Запишите следующие значения, которые понадобятся на следующих шагах: **идентификатор приложения**, **clientSecrets** и **идентификатор клиента**. Назначьте приложению роль **Участник**.
@@ -47,7 +47,7 @@ ms.locfileid: "75440054"
 1. Запустите **PowerShell**. Не закрывайте Azure PowerShell, пока выполняются описанные в этом кратком руководстве инструкции. Если закрыть и снова открыть это окно, то придется вновь выполнять эти команды.
 
     Выполните следующую команду и введите имя пользователя и пароль, которые используются для входа на портал Azure.
-    
+
     ```powershell
     Connect-AzAccount
     ```
@@ -430,7 +430,7 @@ $runId = $response.runId
         "runGroupId":"04a2bb9a-71ea-4c31-b46e-75276b61bafc",
         "pipelineName":"Adfv2QuickStartPipeline",
         "parameters":{  
-    
+
         },
         "invokedBy":{  
             "id":"2bb3938176ee43439752475aa12b2251",
@@ -444,15 +444,15 @@ $runId = $response.runId
         "message":"",
         "lastUpdated":"2019-09-03T07:22:57.8862692Z",
         "annotations":[  
-    
+
         ],
         "runDimension":{  
-    
+
         },
         "isLatest":true
     }
     ```
-    
+
 2. Запустите следующий скрипт, извлекающий сведения о выполнении действия копирования, например размер записанных и прочитанных данных.
 
     ```powershell

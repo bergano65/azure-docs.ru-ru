@@ -6,12 +6,12 @@ ms.service: spring-cloud
 ms.topic: quickstart
 ms.date: 11/04/2019
 ms.author: jeconnoc
-ms.openlocfilehash: c00749191b83423e771535525afcbdd7892da88e
-ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
+ms.openlocfilehash: 41801fce41cd79898e9ebd12f9ca970f17b017bb
+ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74895442"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75891720"
 ---
 # <a name="quickstart-launch-a-java-spring-application-using-the-azure-cli"></a>Краткое руководство. Запуск приложения Java Spring с помощью Azure CLI
 
@@ -28,10 +28,10 @@ Azure Spring Cloud позволяет легко запустить прилож
 > * развертывание каждой микрослужбы;
 > * назначение общедоступной конечной точки для приложения.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 >[!Note]
-> Azure Spring Cloud в настоящее время предлагается в качестве общедоступной предварительной версии. Предложения общедоступной предварительной версии позволяют клиентам поэкспериментировать с новыми функциями до официального выпуска.  Функции и службы общедоступной предварительной версии не предназначены для использования в рабочей среде.  Чтобы получить дополнительные сведения о поддержке на этапе использования предварительных версий, ознакомьтесь с разделом [Вопросы и ответы](https://azure.microsoft.com/support/faq/) или оформите [запрос на поддержку](https://docs.microsoft.com/azure/azure-supportability/how-to-create-azure-support-request).
+> Azure Spring Cloud в настоящее время предлагается в качестве общедоступной предварительной версии. Предложения общедоступной предварительной версии позволяют клиентам поэкспериментировать с новыми функциями до официального выпуска.  Функции и службы общедоступной предварительной версии не предназначены для использования в рабочей среде.  Чтобы получить дополнительные сведения о поддержке на этапе использования предварительных версий, ознакомьтесь с разделом [Вопросы и ответы](https://azure.microsoft.com/support/faq/) или оформите [запрос на поддержку](https://docs.microsoft.com/azure/azure-portal/supportability/how-to-create-azure-support-request).
 
 >[!TIP]
 > Azure Cloud Shell — это бесплатная интерактивная оболочка, с помощью которой можно выполнять действия, описанные в этой статье.  Она содержит предварительно установленные общие инструменты Azure вместе с новейшими версиями Git, JDK, Maven и Azure CLI. Если вы вошли в подписку Azure, запустите [Azure Cloud Shell](https://shell.azure.com) на сайте shell.azure.com.  Дополнительные сведения об Azure Cloud Shell см. в [нашей документации](../cloud-shell/overview.md)
@@ -69,7 +69,7 @@ az extension add --name spring-cloud
     ```azurecli
         az group create --location eastus --name <resource group name>
     ```
-    Узнайте больше о [группах ресурсов Azure](../azure-resource-manager/resource-group-overview.md).
+    Узнайте больше о [группах ресурсов Azure](../azure-resource-manager/management/overview.md).
 
 4. Откройте окно Azure CLI и выполните приведенные ниже команды, чтобы подготавливать экземпляр Azure Spring Cloud к работе.
 
@@ -86,6 +86,9 @@ az extension add --name spring-cloud
         az configure --defaults spring-cloud=<service instance name>
     ```
 
+> [!div class="nextstepaction"]
+> [У меня есть проблема](https://www.research.net/r/javae2e?tutorial=asc-cli-quickstart&step=provision)
+
 ## <a name="setup-your-configuration-server"></a>Настройка сервера конфигурации
 
 Обновите файл config-server, указав расположение репозитория Git для нашего проекта:
@@ -93,6 +96,9 @@ az extension add --name spring-cloud
 ```git
 az spring-cloud config-server git set -n <your-service-name> --uri https://github.com/Azure-Samples/piggymetrics --label config
 ```
+
+> [!div class="nextstepaction"]
+> [У меня есть проблема](https://www.research.net/r/javae2e?tutorial=asc-cli-quickstart&step=config-server)
 
 ## <a name="build-the-microservices-applications-locally"></a>Локальное выполнение сборки приложений для микрослужб
 
@@ -132,6 +138,9 @@ az spring-cloud app deploy -n account-service --jar-path ./account-service/targe
 az spring-cloud app deploy -n auth-service --jar-path ./auth-service/target/auth-service.jar
 ```
 
+> [!div class="nextstepaction"]
+> [У меня есть проблема](https://www.research.net/r/javae2e?tutorial=asc-cli-quickstart&step=deploy)
+
 ## <a name="assign-public-endpoint-to-gateway"></a>Назначение общедоступной конечной точки шлюзу
 
 Нам нужен способ доступа к приложению через веб-браузер. Приложению шлюза требуется общедоступная конечная точка, которую можно назначить с помощью следующей команды:
@@ -157,7 +166,10 @@ URL-адрес можно найти на портале Azure.
     ![Снимок экрана выполнения PiggyMetrics](media/spring-cloud-quickstart-launch-app-cli/navigate-app1.png)
 1. Найдите URL-адрес на странице **общих сведений о шлюзе**. ![Снимок экрана выполнения PiggyMetrics](media/spring-cloud-quickstart-launch-app-cli/navigate-app2-url.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+> [!div class="nextstepaction"]
+> [У меня есть проблема](https://www.research.net/r/javae2e?tutorial=asc-cli-quickstart&step=public-endpoint)
+
+## <a name="next-steps"></a>Next Steps
 
 В этом кратком руководстве вы развернули приложение Spring Cloud из Azure CLI.  Дополнительные сведения об Azure Spring Cloud см. в учебнике по подготовке приложения к развертыванию.
 

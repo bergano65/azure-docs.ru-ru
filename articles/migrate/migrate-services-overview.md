@@ -4,12 +4,12 @@ description: Информация о службе "Миграция Azure"
 ms.topic: overview
 ms.date: 12/29/2019
 ms.custom: mvc
-ms.openlocfilehash: 983ba420067bf2e4b6416287d8898943142c90c0
-ms.sourcegitcommit: 5925df3bcc362c8463b76af3f57c254148ac63e3
+ms.openlocfilehash: c336b2f95a17896edcc7eaad2b2586c6859804f9
+ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75563570"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75772199"
 ---
 # <a name="about-azure-migrate"></a>Сведения о службе "Миграция Azure"
 
@@ -39,7 +39,7 @@ ms.locfileid: "75563570"
 **Database Migration Service (DMS)** | Миграция локальных баз данных в SQL на виртуальных машинах Azure, в БД SQL Azure и на Управляемые экземпляры Базы данных SQL Azure. | См. дополнительные сведения о [DMS](https://docs.microsoft.com/azure/dms/dms-overview).
 **Movere** | Оценка серверов | [Дополнительные сведения](#movere) о Movere.
 **Помощник по переносу веб-приложений** | Оценка веб-приложений и миграция в Azure. |  Воспользуйтесь помощником по миграции службы приложений Azure, чтобы оценить локальные веб-сайты на предмет миграции в службу приложений Azure.<br/><br/> Перенос веб-приложений .NET и PHP в Azure с помощью помощника по миграции службы приложений Azure. [Узнайте больше о Помощнике.](https://appmigration.microsoft.com/)
-**Azure Data Box** | Автономная миграция данных. | Примените продукты Azure Data Box для перемещения в автономном режиме больших объемов данных в Azure. [Узнайте больше](https:/docs.microsoft.com/azure/databox/).
+**Azure Data Box** | Автономная миграция данных. | Примените продукты Azure Data Box для перемещения в автономном режиме больших объемов данных в Azure. [Узнайте больше](https://docs.microsoft.com/azure/databox/).
 
 ## <a name="isv-integration"></a>Интеграция независимого поставщика программного обеспечения
 

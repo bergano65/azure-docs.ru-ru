@@ -1,6 +1,6 @@
 ---
-title: включение файла
-description: включение файла
+title: включить файл
+description: включить файл
 services: functions
 author: ggailey777
 ms.service: azure-functions
@@ -8,14 +8,14 @@ ms.topic: include
 ms.date: 10/17/2019
 ms.author: glenga
 ms.custom: include file
-ms.openlocfilehash: cd118def8b9caf97f26aaa5ad5dc1f6fb015316d
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 7da9f795f1865d635a26cd3acf3866dff3565716
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73469225"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76021260"
 ---
-1. Выберите команду **Создать ресурс** в меню на портале Azure.
+1. В меню портала Azure выберите **Создать ресурс**.
 
     ![Добавление ресурса с помощью меню на портале Azure](./media/functions-create-function-app-portal/create-function-app-resource.png)
 
@@ -25,10 +25,10 @@ ms.locfileid: "73469225"
 
     ![Основы](./media/functions-create-function-app-portal/function-app-create-basics.png)
 
-    | Параметр      | Рекомендуемое значение  | Описание |
+    | Параметр      | Рекомендуемое значение  | Description |
     | ------------ | ---------------- | ----------- |
-    | **Подписка** | Ваша подписка | Подписка, в которой создано приложение-функция. |
-    | **[Группа ресурсов](../articles/azure-resource-manager/resource-group-overview.md)** |  *myResourceGroup* | Имя новой группы ресурсов, в которой создается приложение-функция. |
+    | **подписка** | Ваша подписка | Подписка, в которой создано приложение-функция. |
+    | **[Группа ресурсов](../articles/azure-resource-manager/management/overview.md)** |  *myResourceGroup* | Имя новой группы ресурсов, в которой создается приложение-функция. |
     | **Имя приложения-функции** | Глобально уникальное имя | Имя, которое идентифицирует ваше новое приложение-функцию. Допустимые символы: `a-z` (без учета регистра), `0-9`и `-`.  |
     |**Опубликовать**| Код | Параметр для публикации файлов кода или контейнера Docker. |
     | **Стек среды выполнения** | Предпочитаемый язык | Выберите среду выполнения, которая поддерживает нужный функциональный язык программирования. Выберите **.NET** для функций C# и F#. |
@@ -40,9 +40,9 @@ ms.locfileid: "73469225"
 
     ![Hosting](./media/functions-create-function-app-portal/function-app-create-hosting.png)
 
-    | Параметр      | Рекомендуемое значение  | ОПИСАНИЕ |
+    | Параметр      | Рекомендуемое значение  | Description |
     | ------------ | ---------------- | ----------- |
-    | **[Учетная запись хранения](../articles/storage/common/storage-quickstart-create-account.md)** |  Глобально уникальное имя |  Создайте учетную запись хранения для использования приложением-функцией. Имя учетной записи хранения должно содержать от 3 до 24 символов и состоять только из цифр и строчных букв. Можно также использовать существующую учетную запись при условии, что она соответствует [требованиям учетной записи хранилища](../articles/azure-functions/functions-scale.md#storage-account-requirements). |
+    | **[Учетная запись хранения](../articles/storage/common/storage-account-create.md)** |  Глобально уникальное имя |  Создайте учетную запись хранения для использования приложением-функцией. Имя учетной записи хранения должно содержать от 3 до 24 символов и состоять только из цифр и строчных букв. Можно также использовать существующую учетную запись при условии, что она соответствует [требованиям учетной записи хранилища](../articles/azure-functions/functions-scale.md#storage-account-requirements). |
     |**Операционная система**| Предпочтительная операционная система | Операционная система предварительно выбирается с учетом выбранного стека среды выполнения, но при необходимости ее можно изменить. |
     | **[План](../articles/azure-functions/functions-scale.md)** | План потребления | План размещения, который определяет выделение ресурсов в приложении-функции. В **плане потребления** по умолчанию ресурсы добавляются динамически в соответствии с потребностями функций. При таком [бессерверном](https://azure.microsoft.com/overview/serverless-computing/) размещении вы платите только за время выполнения функций. Когда выполняется план службы приложений необходимо управлять [масштабированием приложения-функции](../articles/azure-functions/functions-scale.md).  |
 
@@ -50,11 +50,11 @@ ms.locfileid: "73469225"
 
 1. Введите следующие параметры мониторинга.
 
-    ![Мониторинг](./media/functions-create-function-app-portal/function-app-create-monitoring.png)
+    ![Наблюдение](./media/functions-create-function-app-portal/function-app-create-monitoring.png)
 
-    | Параметр      | Рекомендуемое значение  | ОПИСАНИЕ |
+    | Параметр      | Рекомендуемое значение  | Description |
     | ------------ | ---------------- | ----------- |
-    | **[Application Insights](../articles/azure-functions/functions-monitoring.md)** | значение по умолчанию | Создает ресурс Application Insights с таким же *именем приложения* в ближайшем поддерживаемом регионе. Развернув этот параметр, можно задать **новое имя ресурса** или выбрать другое **расположение** в [географическом регионе Azure](https://azure.microsoft.com/global-infrastructure/geographies/), где будут хранится данные. |
+    | **[Application Insights](../articles/azure-functions/functions-monitoring.md)** | По умолчанию | Создает ресурс Application Insights с таким же *именем приложения* в ближайшем поддерживаемом регионе. Развернув этот параметр, можно задать **новое имя ресурса** или выбрать другое **расположение** в [географическом регионе Azure](https://azure.microsoft.com/global-infrastructure/geographies/), где будут хранится данные. |
 
     Выберите **Просмотр и создание** , чтобы просмотреть выбранные параметры конфигурации приложения.
 

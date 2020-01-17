@@ -1,6 +1,6 @@
 ---
-title: включение файла
-description: включение файла
+title: включить файл
+description: включить файл
 author: robinsh
 ms.service: iot-hub
 services: iot-hub
@@ -8,16 +8,16 @@ ms.topic: include
 ms.date: 08/07/2019
 ms.author: robinsh
 ms.custom: include file
-ms.openlocfilehash: 1bcab7c0d23aab6a21e845d1402daa001dcb63a1
-ms.sourcegitcommit: 5cfe977783f02cd045023a1645ac42b8d82223bd
+ms.openlocfilehash: e93ce54262fe6dd38ef2ebc07d676608dae7cfff
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2019
-ms.locfileid: "74151289"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75968910"
 ---
 В этом разделе описывается создание центра Интернета вещей с помощью [портала Azure](https://portal.azure.com).
 
-1. Войдите на [портале Azure](https://portal.azure.com).
+1. Войдите на [портал Azure](https://portal.azure.com).
 
 1. На начальной странице портала Azure нажмите кнопку **+Создать ресурс** и введите текст *Центр Интернета вещей* в поле **поиска в Marketplace**.
 
@@ -27,7 +27,7 @@ ms.locfileid: "74151289"
 
    - **Подписка**: Выберите нужную подписку для концентратора.
 
-   - **Группа ресурсов**. Выберите группу ресурсов или создайте новую. Чтобы создать новую, щелкните **Создать** и введите нужное имя. Чтобы выбрать существующую группу ресурсов, щелкните ее. Дополнительные сведения о группах ресурсов см. в статье об [управлении группами ресурсов в Azure Resource Manager](../articles/azure-resource-manager/manage-resource-groups-portal.md).
+   - **Группа ресурсов**. Выберите группу ресурсов или создайте новую. Чтобы создать новую, щелкните **Создать** и введите нужное имя. Чтобы выбрать существующую группу ресурсов, щелкните ее. Дополнительные сведения о группах ресурсов см. в статье об [управлении группами ресурсов в Azure Resource Manager](../articles/azure-resource-manager/management/manage-resource-groups-portal.md).
 
    - **Регион**. Выберите регион, в котором будет расположен концентратор. Выберите ближайшее к вам расположение.
 

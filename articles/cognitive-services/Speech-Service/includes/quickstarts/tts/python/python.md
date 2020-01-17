@@ -3,43 +3,42 @@ title: Краткое руководство. Синтез речи с помо�
 titleSuffix: Azure Cognitive Services
 description: Из этой статьи вы узнаете, как синтезировать речь в Linux, используя Python и пакет SDK службы "Речь".
 services: cognitive-services
-author: yulin-li
+author: IEvangelist
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: include
-ms.date: 09/14/2019
-ms.author: yulili
-ms.openlocfilehash: 990e795d0331df41ff098ed498508d6ecfd58f0e
-ms.sourcegitcommit: 6c01e4f82e19f9e423c3aaeaf801a29a517e97a0
+ms.date: 19/14/2020
+ms.author: dapine
+ms.openlocfilehash: 7be9037ddfd19d82263b37fe0b824e3c2b3f5078
+ms.sourcegitcommit: dbcc4569fde1bebb9df0a3ab6d4d3ff7f806d486
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74818175"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76037840"
 ---
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Перед началом работы нужно сделать следующее:
 
 > [!div class="checklist"]
 > * [Создать ресурс службы "Речь" Azure.](../../../../get-started.md)
 > * [Настроить среду разработки.](../../../../quickstarts/setup-platform.md)
-> * [Создать пустой пример проекта](../../../../quickstarts/create-project.md).
-```
+> * [Создать пустой пример проекта.](../../../../quickstarts/create-project.md)
 
-## Support and updates
+## <a name="support-and-updates"></a>Поддержка и обновления
 
-Updates to the Speech SDK Python package are distributed via PyPI and announced in the [Release notes](~/articles/cognitive-services/Speech-Service/releasenotes.md).
-If a new version is available, you can update to it with the command `pip install --upgrade azure-cognitiveservices-speech`.
-Check which version is currently installed by inspecting the `azure.cognitiveservices.speech.__version__` variable.
+Обновления пакета SDK службы "Речь" для Python распространяются с помощью PyPI, о чем указывается в [заметках о выпуске](~/articles/cognitive-services/Speech-Service/releasenotes.md).
+Если новая версия доступна, вы можете обновить ее с помощью команды `pip install --upgrade azure-cognitiveservices-speech`.
+Проверьте, какая версия установлена в данный момент, просмотрев переменную `azure.cognitiveservices.speech.__version__`.
 
-If you have a problem, or you're missing a feature, see [Support and help options](~/articles/cognitive-services/Speech-Service/support.md).
+Если у вас возникла проблема или отсутствует функция, ознакомьтесь со статьей [Возможности получения поддержки и справки](~/articles/cognitive-services/Speech-Service/support.md).
 
-## Create a Python application that uses the Speech SDK
+## <a name="create-a-python-application-that-uses-the-speech-sdk"></a>Создание приложения Python, использующего пакет SDK для службы "Речь"
 
-### Run the sample
+### <a name="run-the-sample"></a>Запуск примера
 
-You can copy the [sample code](#sample-code) from this quickstart to a source file `quickstart.py` and run it in your IDE or in the console:
+Вы можете скопировать [пример кода](#sample-code) из этого краткого руководства в исходный файл `quickstart.py` и запустить его в интегрированной среде разработки или в консоли.
 
 ```sh
 python quickstart.py
@@ -47,7 +46,7 @@ python quickstart.py
 
 Кроме того, можно скачать это краткое руководство как записную книжку [Jupyter](https://jupyter.org) из [репозитория с примером пакета SDK для службы "Речь"](https://aka.ms/csspeech/samples) и запустить его как записную книжку.
 
-### <a name="sample-code"></a>Пример кода
+### <a name="sample-code"></a>Образец кода
 
 [!code-python[Quickstart Code](~/samples-cognitive-services-speech-sdk/quickstart/python/text-to-speech/quickstart.py#code)]
 
@@ -82,11 +81,11 @@ python quickstart.py
 
 При возникновении проблемы в процессе работы с данной инструкцией см. более подробное руководство по [Visual Studio Code для Python](https://code.visualstudio.com/docs/python/python-tutorial).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [!INCLUDE [footer](./footer.md)]
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 - [Создание пользовательского голоса](~/articles/cognitive-services/Speech-Service/how-to-custom-voice-create-voice.md)
 - [Запись пользовательских образцов голоса](~/articles/cognitive-services/Speech-Service/record-custom-voice-samples.md)

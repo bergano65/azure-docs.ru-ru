@@ -10,18 +10,18 @@ keywords: служба автоматизации Azure, DSC, PowerShell, нас
 ms.date: 08/25/2019
 ms.custom: mvc
 ms.topic: quickstart
-ms.openlocfilehash: 2ae7c8545286baebc83077276e356cd2e41f0dc3
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: 26c79db956b2703bf037fc6f7790d4ee13874410
+ms.sourcegitcommit: f53cd24ca41e878b411d7787bd8aa911da4bc4ec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73668678"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75834248"
 ---
 # <a name="quickstart-connect-machines-to-azure-using-azure-arc-for-servers---portal"></a>Краткое руководство. Подключение компьютеров к Azure с помощью Azure Arc для серверов на портале
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Ознакомьтесь со сведениями о поддерживаемых клиентах и требуемой конфигурации сети в [обзоре решения Azure Arc для серверов](overview.md).
 
@@ -88,7 +88,7 @@ ms.locfileid: "73668678"
    sudo apt purge hybridagent
    ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Назначение политики подключенным компьютерам](../../governance/policy/assign-policy-portal.md)

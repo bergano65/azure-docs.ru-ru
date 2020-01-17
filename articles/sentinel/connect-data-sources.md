@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/04/2019
 ms.author: rkarlin
-ms.openlocfilehash: 3c6fd3de43f80c4cbe8f1f822faebad861c64d64
-ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
+ms.openlocfilehash: cbd452fcf4056c1bcf4d5b8d6debb9d8f4a6f11c
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/02/2020
-ms.locfileid: "75610613"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75976105"
 ---
 # <a name="connect-data-sources"></a>Подключение источников данных
 
@@ -97,7 +97,7 @@ Azure Sentinel поддерживает следующие методы подк
 | **Data type** | **Инструкции по подключению** | **Соединитель данных?** | **Комментарии** |
 |------|---------|-------------|------|
 | AWSCloudTrail | [Подключение AWS](connect-aws.md) | V | |
-| AzureActivity | [Подключение действий Azure](connect-azure-activity.md) и [обзора журналов действий](../azure-monitor/platform/activity-logs-overview.md)| V | |
+| AzureActivity | [Подключение действий Azure](connect-azure-activity.md) и [обзора журналов действий](../azure-monitor/platform/platform-logs-overview.md)| V | |
 | AuditLogs | [Подключение Azure AD](connect-azure-active-directory.md)  | V | |
 | SigninLogs | [Подключение Azure AD](connect-azure-active-directory.md)  | V | |
 | AzureFirewall |[Система диагностики Azure](../firewall/tutorial-diagnostics.md) | V | |
@@ -105,7 +105,7 @@ Azure Sentinel поддерживает следующие методы подк
 | AzureNetworkAnalytics_CL  | [Схема аналитики трафика](../network-watcher/traffic-analytics.md) [Аналитика трафика](../network-watcher/traffic-analytics.md)  | | |
 | CommonSecurityLog  | [Подключение CEF](connect-common-event-format.md)  | V | |
 | OfficeActivity | [Подключение Office 365](connect-office-365.md) | V | |
-| SecurityEvents | [Подключение событий безопасности Windows](connect-windows-security-events.md)  | V | Книги небезопасных протоколов см. в разделе [Настройка книг небезопасных протоколов](https://blogs.technet.microsoft.com/jonsh/azure-sentinel-insecure-protocols-dashboard-setup/)  |
+| SecurityEvents | [Подключение событий безопасности Windows](connect-windows-security-events.md)  | V | Книги небезопасных протоколов см. в разделе [Настройка книг небезопасных протоколов](/azure/sentinel/quickstart-get-visibility#use-built-in-workbooks)  |
 | Системный журнал | [Подключение системного журнала](connect-syslog.md) | V | |
 | Брандмауэр веб-приложений Майкрософт (WAF) – (AzureDiagnostics) |[Подключение брандмауэра веб-приложений Майкрософт](connect-microsoft-waf.md) | V | |
 | SymantecICDx_CL | [Подключение Symantec](connect-symantec.md) | V | |

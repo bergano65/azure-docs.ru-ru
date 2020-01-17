@@ -11,12 +11,12 @@ ms.subservice: language-understanding
 ms.topic: tutorial
 ms.date: 12/17/2019
 ms.author: diberry
-ms.openlocfilehash: d52b2485436f0a9075dcc3f505806e46094340a3
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 69894dfc6bcbe9eb56451524c78e82da2745aa52
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75381704"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75979765"
 ---
 # <a name="tutorial-add-common-pattern-template-utterance-formats-to-improve-predictions"></a>Руководство. Добавление шаблонов высказываний в стандартных форматах для улучшения прогнозирования
 
@@ -578,4 +578,4 @@ ms.locfileid: "75381704"
 
 
 > [!div class="nextstepaction"]
-> [Tutorial: Improve app with pattern roles](luis-tutorial-pattern-roles.md) (Руководство. Улучшение приложения с помощью ролей шаблонов)
+> [Tutorial: Improve app with pattern roles](luis-tutorial-pattern.md) (Руководство. Улучшение приложения с помощью ролей шаблонов)

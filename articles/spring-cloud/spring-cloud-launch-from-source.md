@@ -6,12 +6,12 @@ ms.service: spring-cloud
 ms.topic: quickstart
 ms.date: 10/30/2019
 ms.author: jeconnoc
-ms.openlocfilehash: ca78a9d7eeeeccb71fea75f6ab429e76f2344bbe
-ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
+ms.openlocfilehash: f9d7fa5df1f7568aa357abf8b5864344d768cf75
+ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74895449"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75891767"
 ---
 # <a name="quickstart-launch-your-spring-cloud-application-from-source-code"></a>Краткое руководство. Запуск приложения Spring Cloud из исходного кода
 
@@ -28,10 +28,10 @@ Azure Spring Cloud позволяет запускать приложение н
 > * развертывание каждой микрослужбы;
 > * назначение общедоступной конечной точки для приложения.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 >[!Note]
-> Azure Spring Cloud в настоящее время предлагается в качестве общедоступной предварительной версии. Предложения общедоступной предварительной версии позволяют клиентам поэкспериментировать с новыми функциями до официального выпуска.  Функции и службы общедоступной предварительной версии не предназначены для использования в рабочей среде.  Чтобы получить дополнительные сведения о поддержке на этапе использования предварительных версий, ознакомьтесь с разделом [Вопросы и ответы](https://azure.microsoft.com/support/faq/) или оформите [запрос на поддержку](https://docs.microsoft.com/azure/azure-supportability/how-to-create-azure-support-request).
+> Azure Spring Cloud в настоящее время предлагается в качестве общедоступной предварительной версии. Предложения общедоступной предварительной версии позволяют клиентам поэкспериментировать с новыми функциями до официального выпуска.  Функции и службы общедоступной предварительной версии не предназначены для использования в рабочей среде.  Чтобы получить дополнительные сведения о поддержке на этапе использования предварительных версий, ознакомьтесь с разделом [Вопросы и ответы](https://azure.microsoft.com/support/faq/) или оформите [запрос на поддержку](https://docs.microsoft.com/azure/azure-portal/supportability/how-to-create-azure-support-request).
 
 Прежде чем начать, убедитесь, что подписка Azure имеет необходимые зависимости:
 
@@ -76,6 +76,9 @@ az account set --subscription
 az configure --defaults group=<service group name>
 az configure --defaults spring-cloud=<service instance name>
 ```
+
+> [!div class="nextstepaction"]
+> [У меня есть проблема](https://www.research.net/r/javae2e?tutorial=asc-source-quickstart&step=provision)
 
 ## <a name="create-the-spring-cloud-application"></a>Создание приложения Spring Cloud
 
@@ -137,6 +140,9 @@ az spring-cloud app show-deploy-log -n <app-name> [-d <deployment-name>]
 > [!NOTE]
 > В журналах kpack будет отображаться только последнее развертывание, если оно создано из исходного кода с помощью kpack.
 
+> [!div class="nextstepaction"]
+> [У меня есть проблема](https://www.research.net/r/javae2e?tutorial=asc-source-quickstart&step=deploy)
+
 ## <a name="assign-a-public-endpoint-to-gateway"></a>Назначение общедоступной конечной точки шлюзу
 
 1. Откройте страницу **Панель мониторинга приложения**.
@@ -144,7 +150,10 @@ az spring-cloud app show-deploy-log -n <app-name> [-d <deployment-name>]
 3. Выберите **Назначить домен**, чтобы назначить общедоступную конечную точку шлюзу. Для этого может потребоваться несколько минут. 
 4. Введите назначенный общедоступный IP-адрес в браузере, чтобы просмотреть работающее приложение.
 
-## <a name="next-steps"></a>Дополнительная информация
+> [!div class="nextstepaction"]
+> [У меня есть проблема](https://www.research.net/r/javae2e?tutorial=asc-source-quickstart&step=public-endpoint)
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из этого руководства вы узнали, как выполнить следующие действия:
 

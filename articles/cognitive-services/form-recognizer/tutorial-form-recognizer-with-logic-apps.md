@@ -10,12 +10,12 @@ ms.subservice: forms-recognizer
 ms.topic: tutorial
 ms.date: 10/27/2019
 ms.author: nitinme
-ms.openlocfilehash: dfbd11b97ee77d77599ead08ba58fe173b64f876
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 14affb2c2aa53fc7a2b1a5946e81ad124800f678
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75446478"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75981261"
 ---
 # <a name="tutorial-use-form-recognizer-with-azure-logic-apps-to-analyze-invoices"></a>Руководство. использованию Распознавателя документов с Azure Logic Apps для анализа счетов
 
@@ -52,7 +52,7 @@ ms.locfileid: "75446478"
 
 Этот контейнер используется для отправки примера данных, необходимых для обучения модели.
 
-1. Создайте учетную запись хранения, следуя указаниям, приведенным [здесь](../../storage/common/storage-quickstart-create-account.md). Используйте **formrecostorage** в качестве имени учетной записи хранения.
+1. Создайте учетную запись хранения, следуя указаниям, приведенным [здесь](../../storage/common/storage-account-create.md). Используйте **formrecostorage** в качестве имени учетной записи хранения.
 1. Создайте контейнер больших двоичных объектов в учетной записи хранения Azure, следуя указаниям, приведенным [здесь](../../storage/blobs/storage-quickstart-blobs-portal.md). В качестве имени контейнера используйте **formrecocontainer**. Задайте контейнеру общедоступный уровень доступа, выбрав **Container (anonymous read access for containers and blobs)** (Контейнер (анонимный доступ на чтение к контейнерам и большим двоичным объектам)).
 
     > [!div class="mx-imgBorder"]

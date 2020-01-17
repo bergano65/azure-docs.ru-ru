@@ -2,21 +2,21 @@
 title: Параллельное моделирование на R с помощью пакетной службы Azure
 description: Руководство. Пошаговые инструкции по запуску финансового моделирования методом Монте-Карло в пакетной службе Azure с помощью пакета doAzureParallel на языке R
 services: batch
-author: laurenhughes
+author: ju-shim
 manager: gwallace
 ms.assetid: ''
 ms.service: batch
 ms.devlang: r
 ms.topic: tutorial
 ms.date: 01/23/2018
-ms.author: lahugh
+ms.author: jushiman
 ms.custom: mvc
-ms.openlocfilehash: 7fad37af268d3dcd3d4d974d8e839ac47f171b50
-ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
+ms.openlocfilehash: a5422b3b3dfee548e24e989654f8cc219700e712
+ms.sourcegitcommit: dbcc4569fde1bebb9df0a3ab6d4d3ff7f806d486
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68321907"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76029209"
 ---
 # <a name="tutorial-run-a-parallel-r-simulation-with-azure-batch"></a>Руководство. Параллельное моделирование на R с помощью пакетной службы Azure 
 
@@ -30,7 +30,7 @@ ms.locfileid: "68321907"
 > * Создание пула пакетной службы в качестве параллельного сервера для сеанса R.
 > * Запуск примера параллельного моделирования в пуле.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * Установленный дистрибутив [R](https://www.r-project.org/), такой как [Microsoft R Open](https://mran.microsoft.com/open). Используйте R версии 3.3.1 или более поздней.
 
@@ -110,7 +110,7 @@ generateClusterConfig("cluster.json")
 * Увеличьте значение `maxTasksPerNode` до *2*, чтобы воспользоваться преимуществами обоих ядер на каждом узле.
 * Задайте для `dedicatedNodes` значение *0*, чтобы воспользоваться низкоприоритетными виртуальными машинами, доступными для пакетной службы. Задайте для свойства `min` параметра `lowPriorityNodes` значение *5*, а для свойства `max` значение *10*. При необходимости вы можете выбрать меньшие значения. 
 
-Оставьте значения по умолчанию для остальных параметров и сохраните файл. Это должно выглядеть следующим образом:
+Оставьте значения по умолчанию для остальных параметров и сохраните файл. Экран будет выглядеть примерно так:
 
 ```json
 {
@@ -256,7 +256,7 @@ difftime(end_p, start_p, unit = "min")
 stopCluster(cluster)
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Из этого руководства вы узнали, как выполнять такие задачи:
 
 > [!div class="checklist"]

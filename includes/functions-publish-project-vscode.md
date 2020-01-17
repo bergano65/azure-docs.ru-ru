@@ -1,6 +1,6 @@
 ---
-title: включение файла
-description: включение файла
+title: включить файл
+description: включить файл
 services: functions
 author: ggailey777
 manager: jeconnoc
@@ -9,12 +9,12 @@ ms.topic: include
 ms.date: 04/16/2019
 ms.author: glenga
 ms.custom: include file
-ms.openlocfilehash: abb8b6bed6766ff0ea85eab1434014a057af4ca3
-ms.sourcegitcommit: bc3a153d79b7e398581d3bcfadbb7403551aa536
+ms.openlocfilehash: 66c100ecd40e9f0899f7686397339ab849315c3e
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68843311"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76021111"
 ---
 ## <a name="publish-the-project-to-azure"></a>Публикация проекта в Azure
 
@@ -37,8 +37,8 @@ Visual Studio Code позволяет опубликовать проект фу
 
     При нажатии клавиши ВВОД в Azure в вашей подписке создаются следующие ресурсы:
 
-    * **[Группа ресурсов](../articles/azure-resource-manager/resource-group-overview.md)** . Содержит все созданные ресурсы Azure. Имя основывается на имени приложения-функции.
-    * **[Учетная запись хранения](../articles/storage/common/storage-quickstart-create-account.md)** . Стандартная учетная запись хранения создается с уникальным именем, основанным на имени приложения-функции.
+    * **[Группа ресурсов](../articles/azure-resource-manager/management/overview.md)** . Содержит все созданные ресурсы Azure. Имя основывается на имени приложения-функции.
+    * **[Учетная запись хранения](../articles/storage/common/storage-account-create.md)** . Стандартная учетная запись хранения создается с уникальным именем, основанным на имени приложения-функции.
     * **[План размещения](../articles/azure-functions/functions-scale.md)** . План потребления создается в регионе "Западная часть США" для размещения бессерверного приложения-функции.
     * **Приложение-функция**. Проект развертывается и выполняется в этом новом приложении-функции.
 

@@ -3,7 +3,7 @@ title: Пример скрипта Azure CLI для создания учетн�
 description: Этот скрипт создает учетную запись пакетной службы Azure в режиме подписки пользователя. Эта учетная запись выделяет вычислительные узлы в подписке.
 services: batch
 documentationcenter: ''
-author: laurenhughes
+author: ju-shim
 manager: gwallace
 editor: ''
 ms.assetid: ''
@@ -13,13 +13,13 @@ ms.topic: sample
 ms.tgt_pltfrm: multiple
 ms.workload: na
 ms.date: 01/29/2018
-ms.author: lahugh
-ms.openlocfilehash: 55429e0aafe978cfa6861d73b132ebcee26de493
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.author: jushiman
+ms.openlocfilehash: 38c908e1e490d1b852abc64ba0e3f695307d5341
+ms.sourcegitcommit: dbcc4569fde1bebb9df0a3ab6d4d3ff7f806d486
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75449708"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76029307"
 ---
 # <a name="cli-example-create-a-batch-account-in-user-subscription-mode"></a>Пример использования CLI. Создание учетной записи пакетной службы в режиме подписки пользователя
 

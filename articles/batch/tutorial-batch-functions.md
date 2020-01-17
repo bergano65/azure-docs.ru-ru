@@ -1,8 +1,8 @@
 ---
-title: Активация пакетного задания с использованием Функций Azure
+title: активации пакетного задания с использованием Функций Azure
 description: Учебник. Применение распознавания текста к отсканированным документам при добавлении их в хранилище BLOB-объектов
 services: batch
-author: laurenhughes
+author: ju-shim
 manager: jeconnoc
 ms.assetid: ''
 ms.service: batch
@@ -11,27 +11,27 @@ ms.topic: tutorial
 ms.date: 05/30/2019
 ms.author: peshultz
 ms.custom: mvc
-ms.openlocfilehash: d5a5197227ff62ca0c610e2c4e269480690d3faf
-ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
+ms.openlocfilehash: 6e3cdb6c7e2774eeb29df6986088f822cbb894cf
+ms.sourcegitcommit: dbcc4569fde1bebb9df0a3ab6d4d3ff7f806d486
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/24/2019
-ms.locfileid: "67343085"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76029220"
 ---
-# <a name="tutorial-trigger-a-batch-job-using-azure-functions"></a>Руководство по активации пакетного задания с использованием Функций Azure
+# <a name="tutorial-trigger-a-batch-job-using-azure-functions"></a>Руководство. активации пакетного задания с использованием Функций Azure
 
 В этом учебнике вы узнаете, как запускать пакетное задание с помощью Функций Azure. Мы рассмотрим пример, в котором к документам, добавленным в контейнер хранилища BLOB-объектов Azure, применяется оптическое распознавание символов (OCR) с помощью пакетной службы Azure. Чтобы упростить обработку распознавания, мы настроим функцию Azure, которая запускает пакетное задание распознавания текста при каждом добавлении файла в контейнер больших двоичных объектов.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * Подписка Azure. Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/), прежде чем начать работу.
 * учетная запись пакетной службы Azure и связанная учетная запись службы хранилища Azure. Дополнительные сведения о том, как создать и связать учетные записи, см. в разделе [Создание учетной записи Пакетной службы](quick-create-portal.md#create-a-batch-account).
 * [Batch Explorer](https://azure.github.io/BatchExplorer/)
-* [Azure Storage Explorer;](https://azure.microsoft.com/features/storage-explorer/)
+* [Обозреватель службы хранилища Azure](https://azure.microsoft.com/features/storage-explorer/)
 
 ## <a name="sign-in-to-azure"></a>Вход в Azure
 
-Войдите на [портале Azure](https://portal.azure.com).
+Войдите на [портал Azure](https://portal.azure.com).
 
 ## <a name="create-a-batch-pool-and-batch-job-using-batch-explorer"></a>Создание пула пакетной службы и пакетного задания с помощью Batch Explorer
 
@@ -47,7 +47,7 @@ ms.locfileid: "67343085"
     1. Выберите размер виртуальной машины `Standard_f2s_v2`.
     1. Включите задачу запуска и добавьте команду `/bin/bash -c "sudo update-locale LC_ALL=C.UTF-8 LANG=C.UTF-8; sudo apt-get update; sudo apt-get -y install ocrmypdf"`. Обязательно установите для пользователя удостоверение как **пользователь задач по умолчанию (администратор)** , что позволит запускать задачи, включая команды с `sudo`.
     1. Нажмите кнопку **ОК**.
-### <a name="create-a-job"></a>создать задание;
+### <a name="create-a-job"></a>Создание задания
 
 1. Создайте задание в пуле, выбрав **Задания** на левой боковой панели, а затем нажав кнопку **Добавить** над формой поиска. 
     1. Выберите идентификатор и отображаемое имя. В этом примере мы используем имя `ocr-job`.
@@ -92,8 +92,8 @@ ms.locfileid: "67343085"
 2019-05-29T19:45:25.846 [Information] Creating job...
 2019-05-29T19:45:25.847 [Information] Accessing input container <inputContainer>...
 2019-05-29T19:45:25.847 [Information] Adding <fileName> as a resource file...
-2019-06-21T20:02:35.129 [Information] Name of output text file: <outputTxtFile>
-2019-06-21T20:02:35.130 [Information] Name of output PDF file: <outputPdfFile>
+2019-05-29T19:45:25.848 [Information] Name of output text file: <outputTxtFile>
+2019-05-29T19:45:25.848 [Information] Name of output PDF file: <outputPdfFile>
 2019-05-29T19:45:26.200 [Information] Adding OCR task <taskID> for <fileName> <size of fileName>...
 ```
 
@@ -102,7 +102,7 @@ ms.locfileid: "67343085"
 > [!TIP]
 > Скачанные файлы доступны для поиска в программе для чтения PDF-файлов.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из этого руководства вы узнали, как выполнять такие задачи: 
 

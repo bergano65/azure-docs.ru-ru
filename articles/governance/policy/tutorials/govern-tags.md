@@ -1,18 +1,18 @@
 ---
-title: Руководство по Администрирование системы управления тегами
+title: Руководство. Администрирование системы управления тегами
 description: С помощью действия изменения в службе "Политика Azure" можно создать и применить модель управления тегами к новым и имеющимся ресурсам.
 ms.date: 11/25/2019
 ms.topic: tutorial
-ms.openlocfilehash: e3d6e279b293ea8063c690f9fb69a6f183b2838d
-ms.sourcegitcommit: 8cf199fbb3d7f36478a54700740eb2e9edb823e8
+ms.openlocfilehash: 5e9cb9a4acb930c117374281a3debaeecce47110
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74482251"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75965986"
 ---
-# <a name="tutorial-manage-tag-governance-with-azure-policy"></a>Руководство по системе управления тегами с помощью Политики Azure
+# <a name="tutorial-manage-tag-governance-with-azure-policy"></a>Руководство. системе управления тегами с помощью Политики Azure
 
-[Теги](../../../azure-resource-manager/resource-group-using-tags.md) являются важной частью организации ресурсов Azure в таксономию. Если следовать [рекомендациям по управлению тегами](/azure/cloud-adoption-framework/ready/azure-best-practices/naming-and-tagging#naming-and-tagging-resources), с помощью тегов можно применять бизнес-политики с использованием службы "Политика Azure" или [отслеживать затраты с помощью службы "Управление затратами"](../../../cost-management/cost-mgt-best-practices.md#organize-and-tag-your-resources).
+[Теги](../../../azure-resource-manager/management/tag-resources.md) являются важной частью организации ресурсов Azure в таксономию. Если следовать [рекомендациям по управлению тегами](/azure/cloud-adoption-framework/ready/azure-best-practices/naming-and-tagging#naming-and-tagging-resources), с помощью тегов можно применять бизнес-политики с использованием службы "Политика Azure" или [отслеживать затраты с помощью службы "Управление затратами"](../../../cost-management-billing/costs/cost-mgt-best-practices.md#organize-and-tag-your-resources).
 Независимо от метода и причины применения тегов, важно иметь возможность быстро добавлять, изменять и удалять эти теги в ресурсах Azure.
 
 Действие [изменения](../concepts/effects.md#modify) Политики Azure призвано помочь в управлении тегами, независимо от этапа управления ресурсами. Действие **изменения** помогает в следующих случаях:
@@ -28,7 +28,7 @@ ms.locfileid: "74482251"
 > - сопоставление каждого требования с определением политики;
 > - группировка политик тегов в инициативу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Для работы с этим руководством вам потребуется подписка Azure. Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/), прежде чем начать работу.
 
@@ -204,7 +204,7 @@ ms.locfileid: "74482251"
 
 1. Щелкните строку правой кнопкой мыши или выберите многоточие в конце определения (или назначения), а затем выберите **Удалить определение** (или **Удаление назначения**).
 
-## <a name="review"></a>Проверка
+## <a name="review"></a>Просмотр
 
 При работе с этим учебником вы выполнили такие задачи:
 
@@ -213,7 +213,7 @@ ms.locfileid: "74482251"
 > - сопоставили каждое требование с определением политики;
 > - сгруппировали политики тегов в инициативу.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о структурах определения политик см. в статье:
 

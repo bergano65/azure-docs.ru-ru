@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.topic: tutorial
 ms.date: 11/08/2019
 ms.author: jingwang
-ms.openlocfilehash: 7f3fdf1b723158db873bc2635de34d878c464201
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 93c4f71c762cff3e3f5a01f0e2595f3498f9d38d
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75439438"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75977316"
 ---
 # <a name="copy-data-from-azure-blob-to-azure-sql-database-using-azure-data-factory"></a>Копирование данных из хранилища BLOB-объектов Azure в Базу данных SQL Azure с помощью фабрики данных Azure
 
@@ -38,7 +38,7 @@ ms.locfileid: "75439438"
 
 ## <a name="prerequisites"></a>предварительные требования
 
-* *Учетная запись хранения Azure.* В этом руководстве в качестве *источника* будет использоваться хранилище BLOB-объектов. Если у вас нет учетной записи хранения Azure, см. инструкции по [созданию учетной записи хранения общего назначения](../storage/common/storage-quickstart-create-account.md).
+* *Учетная запись хранения Azure.* В этом руководстве в качестве *источника* будет использоваться хранилище BLOB-объектов. Если у вас нет учетной записи хранения Azure, см. инструкции по [созданию учетной записи хранения общего назначения](../storage/common/storage-account-create.md).
 * *База данных SQL Azure*. Используйте базу данных как хранилище данных-*приемник*. Если у вас нет базы данных SQL Azure, см. статью [Создание базы данных SQL Azure](../sql-database/sql-database-single-database-get-started.md).
 * *Visual Studio*. В этом пошаговом руководстве используется Visual Studio 2019.
 * *[Пакет Azure SDK для .NET](/dotnet/azure/dotnet-tools)* .
@@ -84,7 +84,7 @@ ms.locfileid: "75439438"
     1. Перейдите на [портал Azure](https://portal.azure.com) для управления сервером SQL Server. Выполните поиск по фразе **Серверы SQL** и выберите этот вариант.
 
     2. Выберите нужный сервер.
-    
+
     3. В меню сервера SQL выберите в разделе **Безопасность** элемент **Брандмауэры и виртуальные сети**.
 
     4. На странице **Брандмауэры и виртуальные сети** для параметра **Разрешить доступ к серверу службам и ресурсам Azure** выберите значение **ВКЛ**.
@@ -154,7 +154,7 @@ ms.locfileid: "75439438"
     string inputBlobName = "inputEmp.txt";
 
     // Specify the sink Azure SQL Database information
-    string azureSqlConnString = 
+    string azureSqlConnString =
         "Server=tcp:<your server name>.database.windows.net,1433;" +
         "Database=<your database name>;" +
         "User ID=<your username>@<your server name>;" +
@@ -265,7 +265,7 @@ Console.WriteLine(
 
 ## <a name="create-datasets"></a>Создание наборов данных
 
-В этом разделе вы создадите два набора данных: по одному для источника и приемника. 
+В этом разделе вы создадите два набора данных: по одному для источника и приемника.
 
 ### <a name="create-a-dataset-for-source-azure-blob"></a>Создание набора данных для исходного большого двоичного объекта Azure
 
@@ -283,8 +283,8 @@ Console.WriteLine("Creating dataset " + blobDatasetName + "...");
 DatasetResource blobDataset = new DatasetResource(
     new AzureBlobDataset
     {
-        LinkedServiceName = new LinkedServiceReference { 
-            ReferenceName = storageLinkedServiceName 
+        LinkedServiceName = new LinkedServiceReference {
+            ReferenceName = storageLinkedServiceName
         },
         FolderPath = inputBlobPath,
         FileName = inputBlobName,
@@ -309,7 +309,7 @@ Console.WriteLine(
 
 Добавьте в метод `Main` приведенный ниже код, который создает *набор данных Базы данных SQL Azure*. Информацию о поддерживаемых свойствах и подробные сведения см. в разделе [о свойствах набора данных Базы данных SQL Azure](connector-azure-sql-database.md#dataset-properties).
 
-Задайте набор данных, который представляет данные приемника в Базе данных SQL Azure. Этот набор данных относится к связанной службе Базы данных SQL Azure, которую вы создали на предыдущем шаге. Он также указывает таблицу SQL, которая содержит копируемые данных. 
+Задайте набор данных, который представляет данные приемника в Базе данных SQL Azure. Этот набор данных относится к связанной службе Базы данных SQL Azure, которую вы создали на предыдущем шаге. Он также указывает таблицу SQL, которая содержит копируемые данных.
 
 ```csharp
 // Create an Azure SQL Database dataset
@@ -416,14 +416,14 @@ Console.WriteLine("Pipeline run ID: " + runResponse.RunId);
     ActivityRunsQueryResponse queryResponse = client.ActivityRuns.QueryByPipelineRun(
         resourceGroup, dataFactoryName, runResponse.RunId, filterParams
     );
- 
+
     if (pipelineRun.Status == "Succeeded")
     {
         Console.WriteLine(queryResponse.Value.First().Output);
     }
     else
         Console.WriteLine(queryResponse.Value.First().Error);
-    
+
     Console.WriteLine("\nPress any key to exit...");
     Console.ReadKey();
     ```
@@ -564,7 +564,7 @@ Press any key to exit...
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-В этом примере конвейер копирует данные из одного расположения в другое в хранилище BLOB-объектов Azure. Вы ознакомились с выполнением следующих задач: 
+В этом примере конвейер копирует данные из одного расположения в другое в хранилище BLOB-объектов Azure. Вы ознакомились с выполнением следующих задач:
 
 > [!div class="checklist"]
 > * Создали фабрику данных.
@@ -574,7 +574,7 @@ Press any key to exit...
 > * Запуск конвейера.
 > * Мониторинг конвейера и выполнения действий.
 
-Перейдите к следующему руководству, чтобы узнать о копировании данных из локальной среды в облако: 
+Перейдите к следующему руководству, чтобы узнать о копировании данных из локальной среды в облако:
 
 > [!div class="nextstepaction"]
 >[Копирование данных между локальной средой и облаком](tutorial-hybrid-copy-powershell.md)

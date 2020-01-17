@@ -1,26 +1,25 @@
 ---
 title: Краткое руководство. Распознавание речи с микрофона в службе "Речь" с помощью C# (Unity)
 titleSuffix: Azure Cognitive Services
-description: ПОДЛЕЖИТ УТОЧНЕНИЮ
 services: cognitive-services
 author: erhopf
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
-ms.topic: quickstart
-ms.date: 10/28/2019
+ms.topic: include
+ms.date: 12/17/2019
 ms.author: erhopf
-ms.openlocfilehash: b0a9eddf147eedfa972e0574e62c9e7c2eace84f
-ms.sourcegitcommit: 5aefc96fd34c141275af31874700edbb829436bb
+ms.openlocfilehash: 149ec84732171cd57b3f8a9590d5340107536eac
+ms.sourcegitcommit: f34165bdfd27982bdae836d79b7290831a518f12
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74818874"
+ms.lasthandoff: 01/13/2020
+ms.locfileid: "75928106"
 ---
 > [!NOTE]
 > Пакет SDK службы "Речь" для Unity поддерживает Windows Desktop (x86 и x64) или универсальную платформу Windows (x86, x64, ARM и ARM64), Android (x86, ARM32/64) и iOS (симулятор x64, ARM32 и ARM64).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Необходимые условия:
 
@@ -133,6 +132,6 @@ ms.locfileid: "74818874"
 Это приложение также можно развернуть как приложение Android, автономное приложение Windows или приложение UWP.
 Дополнительные сведения см. в [репозитории с примерами](https://aka.ms/csspeech/samples). В папке `quickstart/csharp-unity` содержится описание конфигурации для этих дополнительных целевых объектов.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [!INCLUDE [footer](./footer.md)]

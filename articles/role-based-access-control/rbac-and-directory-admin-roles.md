@@ -15,12 +15,12 @@ ms.date: 10/01/2019
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.custom: it-pro;
-ms.openlocfilehash: 8dbccdfdcf2a309c8324328f46336bab74839da4
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 1d0966737964c44fc4a6778cdb811a4ecc732ffc
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75357534"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75979313"
 ---
 # <a name="classic-subscription-administrator-roles-azure-rbac-roles-and-azure-ad-administrator-roles"></a>Роли классического администратора подписки, роли RBAC Azure и роли администратора Azure AD
 
@@ -81,7 +81,7 @@ RBAC Azure — это система авторизации на основе [
 
 Остальные встроенные роли разрешают управление определенными ресурсами Azure. Например, роль [Участник виртуальных машин](built-in-roles.md#virtual-machine-contributor) позволяет пользователю создавать виртуальные машины и управлять ими. Полный список встроенных ролей см. в статье [Встроенные роли для ресурсов Azure](built-in-roles.md).
 
-Модель RBAC поддерживается только порталом Azure и API-интерфейсами Azure Resource Manager. Пользователи, группы и приложения, которым назначены роли RBAC, не могут использовать [API классической модели развертывания Azure](../azure-resource-manager/resource-manager-deployment-model.md).
+Модель RBAC поддерживается только порталом Azure и API-интерфейсами Azure Resource Manager. Пользователи, группы и приложения, которым назначены роли RBAC, не могут использовать [API классической модели развертывания Azure](../azure-resource-manager/management/deployment-models.md).
 
 На портале Azure сведения о назначении ролей RBAC отображаются в колонке **Управление доступом (IAM)** . Эта колонка представлена в различных разделах портала, в том числе в группах управления, подписках, группах ресурсов и различных ресурсах.
 

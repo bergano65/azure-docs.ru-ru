@@ -10,16 +10,16 @@ ms.date: 09/03/2019
 ms.author: alkohli
 ms.localizationpriority: high
 Customer intent: As an IT admin, I need to be able to order Data Box Disk to upload on-premises data from my server onto Azure.
-ms.openlocfilehash: c309a7cb18086526b23c875b41d9d4f4db4bc213
-ms.sourcegitcommit: 49c4b9c797c09c92632d7cedfec0ac1cf783631b
+ms.openlocfilehash: be2bda4e1bfd6a679076f79969e4829aa1a847c9
+ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70231375"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75895969"
 ---
 ::: zone target="docs"
 
-# <a name="tutorial-copy-data-to-azure-data-box-disk-and-verify"></a>Руководство по Копирование данных на Диск Microsoft Azure Data Box и проверка
+# <a name="tutorial-copy-data-to-azure-data-box-disk-and-verify"></a>Руководство. Копирование данных на Диск Microsoft Azure Data Box и проверка
 
 ::: zone-end
 
@@ -35,18 +35,18 @@ ms.locfileid: "70231375"
 
 Это руководство содержит инструкции как копировать данные с главного компьютера, а затем создавать контрольные суммы для проверки целостности данных.
 
-Из этого руководства вы узнаете, как выполнять следующие задачи:
+В этом руководстве описано следующее.
 
 > [!div class="checklist"]
 > * Копирование данных на диск Data Box
 > * Проверка данных
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Перед тем как начать, убедитесь в следующем.
 - Вы завершили [руководство Распаковка, подключение и разблокировка Диска Azure Data Box](data-box-disk-deploy-set-up.md).
 - Диски разблокированы и подключены к клиентскому компьютеру.
-- На клиентском компьютере, с которого вы будете копировать данные на диски, установлена [поддерживаемая операционная система](data-box-disk-system-requirements.md##supported-operating-systems-for-clients).
+- На клиентском компьютере, с которого вы будете копировать данные на диски, установлена [поддерживаемая операционная система](data-box-disk-system-requirements.md#supported-operating-systems-for-clients).
 - Убедитесь, что предполагаемый тип хранилища для ваших данных соответствует [поддерживаемым типам хранилища](data-box-disk-system-requirements.md#supported-storage-types-for-upload).
 - Просмотрите [ограничения размеров управляемых дисков в ограничениях размера для объектов Azure](data-box-disk-limits.md#azure-object-size-limits).
 
@@ -73,9 +73,9 @@ ms.locfileid: "70231375"
 
     |Выбранное целевое хранилище  |Тип учетной записи хранения|Тип учетной записи промежуточного хранения |Папки и вложенные папки  |
     |---------|---------|---------|------------------|
-    |Учетная запись хранения     |GPv1 или GPv2                 | Нет данных | BlockBlob <br> PageBlob <br> AzureFile        |
-    |Учетная запись хранения     |Учетная запись хранения больших двоичных объектов         | Нет данных | BlockBlob        |
-    |Управляемые диски     |Нет данных | GPv1 или GPv2         | ManagedDisk<ul> <li>PremiumSSD</li><li>StandardSSD</li><li>StandardHDD</li></ul>        |
+    |Учетная запись хранения     |GPv1 или GPv2                 | Н/Д | BlockBlob <br> PageBlob <br> AzureFile        |
+    |Учетная запись хранения     |Учетная запись хранения больших двоичных объектов         | Н/Д | BlockBlob        |
+    |Управляемые диски     |Н/Д | GPv1 или GPv2         | ManagedDisk<ul> <li>PremiumSSD</li><li>StandardSSD</li><li>StandardHDD</li></ul>        |
     |Учетная запись хранения <br> Управляемые диски     |GPv1 или GPv2 | GPv1 или GPv2         |BlockBlob <br> PageBlob <br> AzureFile <br> ManagedDisk<ul> <li> PremiumSSD </li><li>StandardSSD</li><li>StandardHDD</li></ul>         |
     |Учетная запись хранения <br> Управляемые диски    |Учетная запись хранения больших двоичных объектов | GPv1 или GPv2         |BlockBlob <br> ManagedDisk<ul> <li>PremiumSSD</li><li>StandardSSD</li><li>StandardHDD</li></ul>         |
 
@@ -101,10 +101,10 @@ ms.locfileid: "70231375"
     
     Параметры и функции для команды приведены в таблице следующим образом:
     
-    |Параметры или функции  |ОПИСАНИЕ |
+    |Параметры или функции  |Description |
     |--------------------|------------|
     |Источник            | Указание пути к исходному каталогу.        |
-    |Место назначения       | Указание пути к целевому каталогу.        |
+    |Назначение       | Указание пути к целевому каталогу.        |
     |/E                  | Копирование подкаталогов, включая пустые каталоги. |
     |/MT [: N]             | Создание многопоточных копий с N потоками, где N — целое число от 1 до 128. <br>Значение по умолчанию для N — 8.        |
     |/R: \<N>             | Указание количества повторных попыток для неудавшихся копий. Значение по умолчанию N составляет 1 000 000 (один миллион попыток).        |
@@ -184,7 +184,7 @@ ms.locfileid: "70231375"
  
     Чтобы оптимизировать производительность, при копировании данных используйте указанные ниже параметры robocopy.
 
-    |    платформа    |    Главным образом малые файлы (менее 512 КБ)                           |    Главным образом файлы среднего размера (от 512 КБ до 1 МБ)                      |    Главным образом большие файлы (более 1 МБ)                             |   
+    |    Платформа    |    Главным образом малые файлы (менее 512 КБ)                           |    Главным образом файлы среднего размера (от 512 КБ до 1 МБ)                      |    Главным образом большие файлы (более 1 МБ)                             |   
     |----------------|--------------------------------------------------------|--------------------------------------------------------|--------------------------------------------------------|
     |    Диск Data Box        |    4 сеанса Robocopy* <br> 16 потоков на сеансы    |    2 сеанса Robocopy* <br> 16 потоков на сеансы    |    2 сеанса Robocopy* <br> 16 потоков на сеансы    |
     
@@ -238,7 +238,7 @@ ms.locfileid: "70231375"
  
 7. Откройте окно командной строки и 
 
-8. Запустите `DataBoxDiskSplitCopy.exe`. type
+8. Запустите `DataBoxDiskSplitCopy.exe`. Тип
 
     `DataBoxDiskSplitCopy.exe PrepImport /config:<Your-config-file-name.json>`
 
@@ -290,7 +290,7 @@ ms.locfileid: "70231375"
 
 Если возникают ошибки при проверке, см. статью [Use logs to troubleshoot validation issues in Azure Data Box Disk](data-box-disk-troubleshoot.md) (Устранение неполадок проверки на Диске Azure Data Box с помощью журналов).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом руководстве раскрыты следующие сведения о диске Azure Data Box.
 

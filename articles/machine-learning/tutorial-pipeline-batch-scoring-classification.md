@@ -10,12 +10,12 @@ author: trevorbye
 ms.author: trbye
 ms.reviewer: trbye
 ms.date: 11/04/2019
-ms.openlocfilehash: f7446bc4a7f827fe1c65a0ce8df8ce6a5627624c
-ms.sourcegitcommit: ce4a99b493f8cf2d2fd4e29d9ba92f5f942a754c
+ms.openlocfilehash: 4850a58ae96b9fc5e8293efbac0de447915289ca
+ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/28/2019
-ms.locfileid: "75532787"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75763357"
 ---
 # <a name="tutorial-build-an-azure-machine-learning-pipeline-for-batch-scoring"></a>Руководство. Создание конвейеров Машинного обучения Azure для пакетной оценки
 
@@ -139,7 +139,7 @@ model = Model.register(model_path="models/inception_v3.ckpt",
 
 Конвейеры машинного обучения невозможно запустить локально, поэтому их можно запускать в облачных ресурсах или *удаленных целевых объектах вычислений*. Удаленный целевой объект вычислений — это повторно используемая виртуальная среда вычислений, в которой выполняются эксперименты и рабочие процессы машинного обучения. 
 
-Выполните приведенный ниже код, чтобы создать целевой объект [`AmlCompute`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.compute.amlcompute.amlcompute?view=azure-ml-py) с поддержкой GPU, а затем вложите его в свою рабочую область. Дополнительные сведения о целевых объектах вычислений см. в [тематической статье](https://docs.microsoft.com/azure/machine-learning/service/concept-compute-target).
+Выполните приведенный ниже код, чтобы создать целевой объект [`AmlCompute`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.compute.amlcompute.amlcompute?view=azure-ml-py) с поддержкой GPU, а затем вложите его в свою рабочую область. Дополнительные сведения о целевых объектах вычислений см. в [тематической статье](https://docs.microsoft.com/azure/machine-learning/concept-compute-target).
 
 
 ```python

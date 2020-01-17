@@ -9,12 +9,12 @@ ms.subservice: forms-recognizer
 ms.topic: quickstart
 ms.date: 11/14/2019
 ms.author: pafarley
-ms.openlocfilehash: 2abbf06fee8189bc6ca678e546c8e88504409a51
-ms.sourcegitcommit: 51ed913864f11e78a4a98599b55bbb036550d8a5
+ms.openlocfilehash: f00702326cf6fe2efd8d4abbfce7174815ea0b1d
+ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2020
-ms.locfileid: "75660398"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75770294"
 ---
 # <a name="train-a-form-recognizer-model-with-labels-using-the-sample-labeling-tool"></a>Обучение модели Распознавателя документов по примерам с метками с помощью средства маркировки данных
 
@@ -33,9 +33,11 @@ ms.locfileid: "75660398"
 
 Для запуска средства маркировки данных используется модуль Docker. Чтобы настроить контейнер Docker, сделайте следующее. Ознакомьтесь с [общими сведениями о Docker и контейнерах](https://docs.docker.com/engine/docker-overview/).
 1. Для начала установите Docker на главный компьютер. Роль главного компьютера может выполнять локальный компьютер под управлением [Windows](https://docs.docker.com/docker-for-windows/), [MacOS](https://docs.docker.com/docker-for-mac/) или [Linux](https://docs.docker.com/install/). Вы также можете использовать службу размещения Docker в Azure, например [Службу Azure Kubernetes](https://docs.microsoft.com/azure/aks/index) и [Экземпляры контейнеров Azure](https://docs.microsoft.com/azure/container-instances/index), или в кластере Kubernetes, [развернутом в Azure Stack](https://docs.microsoft.com/azure-stack/user/azure-stack-solution-template-kubernetes-deploy?view=azs-1910). Главный компьютер должен отвечать следующим требованиям к аппаратному обеспечению.
+
     | Контейнер | Минимальные | Рекомендуемая|
     |:--|:--|:--|
-    |Средство маркировки данных|2 ядра, 4 ГБ памяти|4 ядра, 8 ГБ памяти
+    |Средство маркировки данных|2 ядра, 4 ГБ памяти|4 ядра, 8 ГБ памяти|
+    
 1. Также вам потребуется [интерфейс командной строки Azure (CLI)](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest). Установите его на своем компьютере, если вы еще не сделали этого.
 1. Затем введите в командной строке следующую команду. Значения для `<username>` и `<password>` вы найдете в сообщении электронной почты с приглашением к использованию Распознавателя документов.
     ```
@@ -49,7 +51,8 @@ ms.locfileid: "75660398"
     ```
     docker run -it -p 3000:80 containerpreview.azurecr.io/microsoft/cognitive-services-form-recognizer-custom-supervised-labeltool eula=accept
     ```
-    Так средство маркировки данных станет доступным в веб-браузере. Перейдите на сайт [http://localhost:3000](http://localhost:3000).
+
+   Так средство маркировки данных станет доступным в веб-браузере. Перейдите на сайт [http://localhost:3000](http://localhost:3000).
 
 > [!NOTE]
 > Вы также можете присваивать документам метки и обучать модели с помощью REST API Распознавателя документов. См. сведения о том, как [выполнять обучение на основе меток и анализ с использованием REST API и Python](./python-labeled-data.md).

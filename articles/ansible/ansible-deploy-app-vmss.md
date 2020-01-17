@@ -3,15 +3,15 @@ title: Руководство по развертыванию приложени
 description: Узнайте, как с помощью Ansible настроить масштабируемые наборы виртуальных машин Azure и развернуть приложение в масштабируемом наборе.
 keywords: ansible, azure, devops, bash, playbook, virtual machine, virtual machine scale set, vmss
 ms.topic: tutorial
-ms.date: 04/30/2019
-ms.openlocfilehash: 7c54790a3d988341caa65bdf0ce33c240f0580fb
-ms.sourcegitcommit: 28688c6ec606ddb7ae97f4d0ac0ec8e0cd622889
+ms.date: 01/13/2020
+ms.openlocfilehash: d638ae3f0c33734b42ef5456772fcd2bc62e35a4
+ms.sourcegitcommit: b5106424cd7531c7084a4ac6657c4d67a05f7068
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2019
-ms.locfileid: "74156390"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75940859"
 ---
-# <a name="tutorial-deploy-apps-to-virtual-machine-scale-sets-in-azure-using-ansible"></a>Руководство по развертыванию приложений в масштабируемых наборах виртуальных машин в Azure c помощью Ansible
+# <a name="tutorial-deploy-apps-to-virtual-machine-scale-sets-in-azure-using-ansible"></a>Руководство. развертыванию приложений в масштабируемых наборах виртуальных машин в Azure c помощью Ansible
 
 [!INCLUDE [ansible-27-note.md](../../includes/ansible-27-note.md)]
 
@@ -26,7 +26,7 @@ ms.locfileid: "74156390"
 > * Установка JRE (среды выполнения Java) в масштабируемом наборе
 > * Развертывание приложения Java в масштабируемом наборе
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 [!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../../includes/open-source-devops-prereqs-azure-subscription.md)]
 [!INCLUDE [ansible-prereqs-cloudshell-use-or-vm-creation2.md](../../includes/ansible-prereqs-cloudshell-use-or-vm-creation2.md)] 
@@ -56,13 +56,13 @@ ms.locfileid: "74156390"
   - name: Add all hosts
     add_host:
       groups: scalesethosts
-      hostname: "{{ output_ip_address.ansible_facts.azure_publicipaddresses[0].properties.ipAddress }}_{{ item.properties.frontendPort }}"
-      ansible_host: "{{ output_ip_address.ansible_facts.azure_publicipaddresses[0].properties.ipAddress }}"
+      hostname: "{{ output_ip_address.publicipaddresses[0].ip_address }}_{{ item.properties.frontendPort }}"
+      ansible_host: "{{ output_ip_address.publicipaddresses[0].ip_address }}"
       ansible_port: "{{ item.properties.frontendPort }}"
       ansible_ssh_user: "{{ admin_username }}"
       ansible_ssh_pass: "{{ admin_password }}"
     with_items:
-      - "{{ output.ansible_facts.azure_loadbalancers[0].properties.inboundNatRules }}"
+      - "{{ output.ansible_info.azure_loadbalancers[0].properties.inboundNatRules }}"
   ```
 
 ## <a name="prepare-an-application-for-deployment"></a>Подготовка приложения для развертывания
@@ -234,7 +234,7 @@ ms.locfileid: "74156390"
 
 ![Приложение Java работает в масштабируемом наборе в Azure.](media/ansible-vmss-deploy/ansible-deploy-app-vmss.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Руководство. автомасштабированию масштабируемых наборов виртуальных машин в Azure с помощью Ansible](./ansible-auto-scale-vmss.md)

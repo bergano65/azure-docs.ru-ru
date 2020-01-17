@@ -9,19 +9,19 @@ ms.service: digital-twins
 ms.topic: include
 ms.date: 01/06/2020
 ms.custom: include file
-ms.openlocfilehash: 6f8eaa1d13e7a8c4ea69118cdea4286f2dd90860
-ms.sourcegitcommit: 2f8ff235b1456ccfd527e07d55149e0c0f0647cc
+ms.openlocfilehash: a6adbe095b3ed486be8eb2e2611db5a40162d5dd
+ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75692584"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75895517"
 ---
 >[!NOTE]
 >В этом разделе приводятся инструкции по [регистрации приложения Azure AD](https://docs.microsoft.com/azure/active-directory/develop/quickstart-register-app).
 
 1. На [портале Azure](https://portal.azure.com) выберите **Azure Active Directory** в развертываемом меню слева, а затем откройте область **Регистрация приложений**. 
 
-    [![Выбор панели Azure Active Directory](./media/digital-twins-permissions/select-aad-pane.png)](./media/digital-twins-permissions/select-aad-pane.png#lightbox)
+    [![Выбор панели Azure Active Directory](./media/digital-twins-permissions/azure-portal-select-aad-pane.png)](./media/digital-twins-permissions/azure-portal-select-aad-pane.png#lightbox)
 
 1. Нажмите кнопку **+ Новая регистрация**.
 
@@ -35,7 +35,7 @@ ms.locfileid: "75692584"
 
     Установите флажок **Маркеры доступа**, чтобы включить параметр **oauth2AllowImplicitFlow** в файле Manifest.json.
 
-    [![Параметр конфигурации общедоступного клиента](./media/digital-twins-permissions/aad-public-client.png)](./media/digital-twins-permissions/aad-public-client.png#lightbox)
+    [![Параметр конфигурации общедоступного клиента](./media/digital-twins-permissions/aad-configure-public-client.png)](./media/digital-twins-permissions/aad-configure-public-client.png#lightbox)
 
 1.  Откройте область **Обзор** зарегистрированного приложения и скопируйте значения следующих сущностей во временный файл. Эти значения будут использоваться для настройки примера приложения в следующих разделах.
 

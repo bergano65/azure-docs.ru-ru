@@ -7,12 +7,12 @@ ms.topic: quickstart
 ms.date: 08/23/2019
 ms.author: msangapu
 ms.custom: seodec18
-ms.openlocfilehash: 5c2aca1996d1ec764dcdca30c7657ee360b9c355
-ms.sourcegitcommit: 265f1d6f3f4703daa8d0fc8a85cbd8acf0a17d30
+ms.openlocfilehash: ed756a972b3887ac638a061075d2e6fbeea98104
+ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74671485"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75747949"
 ---
 # <a name="create-a-static-html-web-app-in-azure"></a>Создание статического веб-приложения HTML в Azure
 
@@ -49,7 +49,7 @@ git clone https://github.com/Azure-Samples/html-docs-hello-world.git
 ```bash
 cd html-docs-hello-world
 
-az webapp up --location westeurope --name <app_name>
+az webapp up --location westeurope --name <app_name> --html
 ```
 
 Команда `az webapp up` выполняет следующие действия:
@@ -101,7 +101,7 @@ az webapp up --location westeurope --name <app_name>
 Теперь повторно разверните приложение с помощью той же команды `az webapp up`.
 
 ```bash
-az webapp up --location westeurope --name <app_name>
+az webapp up --location westeurope --name <app_name> --html
 ```
 
 После завершения развертывания перейдите в окно браузера, открытое на шаге **перехода в приложение**, и обновите страницу.
@@ -134,7 +134,7 @@ az group delete --name appsvc_rg_Windows_westeurope
 
 Ее выполнение может занять до минуты.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Сопоставление пользовательского домена](app-service-web-tutorial-custom-domain.md)

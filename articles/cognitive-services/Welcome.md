@@ -10,12 +10,12 @@ ms.subservice: ''
 ms.topic: overview
 ms.date: 12/19/2019
 ms.author: nitinme
-ms.openlocfilehash: e6f074dd6748f58a86a6ac8166ca0ee858926975
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 544ca198b846ca5032bdf400b300ac076d729d88
+ms.sourcegitcommit: f53cd24ca41e878b411d7787bd8aa911da4bc4ec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75379799"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75834150"
 ---
 # <a name="what-are-azure-cognitive-services"></a>Общие сведения об Azure Cognitive Services
 

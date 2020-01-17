@@ -7,13 +7,13 @@ ms.service: cosmos-db
 ms.subservice: cosmosdb-sql
 ms.devlang: dotnet
 ms.topic: quickstart
-ms.date: 11/04/2019
-ms.openlocfilehash: 362662cb6ac9b0535a0e762e5c484b31dcc009a6
-ms.sourcegitcommit: 018e3b40e212915ed7a77258ac2a8e3a660aaef8
+ms.date: 01/10/2020
+ms.openlocfilehash: b69d67a5c4fc1d907f676cf4e400f9fa7df2653b
+ms.sourcegitcommit: 12a26f6682bfd1e264268b5d866547358728cd9a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73796100"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75867261"
 ---
 # <a name="quickstart-build-a-console-app-using-the-net-v4-sdk-to-manage-azure-cosmos-db-sql-api-account-resources"></a>Краткое руководство. Создание консольного приложения c помощью пакета SDK для .NET версии 4 для управления ресурсами учетной записи API SQL для Azure Cosmos DB.
 
@@ -36,10 +36,10 @@ Azure Cosmos DB — это глобально распределенная мн
 
 [Исходный код библиотеки](https://github.com/Azure/azure-cosmos-dotnet-v3/tree/v4) | [Пакет (NuGet)](https://www.nuget.org/packages/Azure.Cosmos)
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * Подписка Azure — [можно создать](https://azure.microsoft.com/free/) или [воспользоваться бесплатной пробной версией Azure Cosmos DB](https://azure.microsoft.com/try/cosmosdb/) без подписки Azure, оплаты и каких-либо обязательств. 
-* [Пакет SDK для .NET Core 3](https://dotnet.microsoft.com/download/dotnet-core). Чтобы проверить, какая версия доступна в вашей среде, запустите `dotnet --version`.
+* [Пакет SDK для .NET Core 3](https://dotnet.microsoft.com/download/dotnet-core). Чтобы проверить, какая версия доступна в вашей среде, выполните `dotnet --version`.
 
 ## <a name="setting-up"></a>Настройка
 
@@ -115,14 +115,14 @@ Time Elapsed 00:00:34.17
 Оставаясь в каталоге приложения, установите клиентскую библиотеку Azure Cosmos DB для .NET Core с помощью команды.
 
    ```bash
-   dotnet add package Azure.Cosmos --version 4.0.0-preview
+   dotnet add package Azure.Cosmos --version 4.0.0-preview3
    ```
 
 ### <a name="copy-your-azure-cosmos-account-credentials-from-the-azure-portal"></a>Копирование учетных данных Azure Cosmos с портала Azure
 
 Чтобы использовать пример приложения, нужно выполнить проверку подлинности доступа к вашей учетной записи хранения Azure Cosmos. Для проверки подлинности необходимо передать учетную запись Azure Cosmos в приложение. Чтобы просмотреть учетные данные учетной записи Azure Cosmos, сделайте следующее:
 
-1. Войдите на [портале Azure](https://portal.azure.com/).
+1. Войдите на [портал Azure](https://portal.azure.com/).
 
 1. Перейдите к своей учетной записи Azure Cosmos.
 
@@ -170,7 +170,7 @@ Time Elapsed 00:00:34.17
 
 ### <a name="create-a-database"></a>Создание базы данных 
 
-Определите метод `CreateDatabaseAsync` в классе `program.cs`. Этот метод создает `FamilyDatabase`, если она не существует.
+Определите метод `CreateDatabaseAsync` в классе `program.cs`. Этот метод создает `FamilyDatabase`, если он еще не существует.
 
 [!code-csharp[Main](~/cosmos-dotnet-v4-getting-started/src/Program.cs?name=CreateDatabaseAsync)]
 
@@ -253,7 +253,7 @@ Time Elapsed 00:00:34.17
 az group delete -g "myResourceGroup"
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом кратком руководстве вы узнали, как создать учетную запись Azure Cosmos, базу данных и контейнер с помощью приложения .NET Core. Теперь вы можете импортировать дополнительные данные в свою учетную запись Azure Cosmos, следуя инструкциям в следующей статье. 
 

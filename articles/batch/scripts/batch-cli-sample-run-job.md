@@ -3,7 +3,7 @@ title: Пример сценария Azure CLI. Выполнение пакет�
 description: Этот сценарий создает задание пакетной службы и добавляет в него ряд задач. Он также демонстрирует, как отслеживать задание и его задачи.
 services: batch
 documentationcenter: ''
-author: laurenhughes
+author: ju-shim
 manager: gwallace
 editor: tysonn
 ms.assetid: ''
@@ -13,13 +13,13 @@ ms.topic: sample
 ms.tgt_pltfrm: multiple
 ms.workload: na
 ms.date: 12/12/2019
-ms.author: lahugh
-ms.openlocfilehash: 3fff556f91558f30389ac3548d699e3788719d59
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.author: jushiman
+ms.openlocfilehash: 3506ef73bea3215cd548969daa10efca21cf118b
+ms.sourcegitcommit: dbcc4569fde1bebb9df0a3ab6d4d3ff7f806d486
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75390035"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76029298"
 ---
 # <a name="cli-example-run-a-job-and-tasks-with-azure-batch"></a>Пример использования CLI. Выполнение задания и задач с использованием пакетной службы Azure
 

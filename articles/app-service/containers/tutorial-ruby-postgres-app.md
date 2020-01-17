@@ -1,16 +1,16 @@
 ---
-title: Руководство по приложению Ruby в Linux на основе Postgres
+title: Руководство. приложению Ruby в Linux на основе Postgres
 description: Узнайте, как создать приложение Ruby в Linux, работающее в Службе приложений Azure, с подключением к базе данных PostgreSQL в Azure. В этом руководстве используется Rails.
 ms.devlang: ruby
 ms.topic: tutorial
 ms.date: 03/27/2019
 ms.custom: seodec18
-ms.openlocfilehash: 6af9da060f7742fe2a9b9656199edd5feb67bec1
-ms.sourcegitcommit: 48b7a50fc2d19c7382916cb2f591507b1c784ee5
+ms.openlocfilehash: 3238de3f1d3416964af05db031b5ecec20e4f140
+ms.sourcegitcommit: 02160a2c64a5b8cb2fb661a087db5c2b4815ec04
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74687413"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75720197"
 ---
 # <a name="build-a-ruby-and-postgres-app-in-azure-app-service-on-linux"></a>Разработка приложения на основе Ruby и Postgres в Службе приложений Azure в Linux
 
@@ -18,7 +18,7 @@ ms.locfileid: "74687413"
 
 ![Приложение Ruby on Rails, работающее в службе приложений Azure](./media/tutorial-ruby-postgres-app/complete-checkbox-published.png)
 
-Из этого руководства вы узнаете, как выполнять следующие задачи:
+В этом руководстве описано следующее.
 
 > [!div class="checklist"]
 > * Создание базы данных PostgreSQL в Azure
@@ -30,7 +30,7 @@ ms.locfileid: "74687413"
 
 [!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Для работы с этим руководством:
 
@@ -151,7 +151,7 @@ az postgres server create --location "West Europe" --resource-group myResourceGr
 В Cloud Shell создайте правило брандмауэра для сервера Postgres, выполнив команду [`az postgres server firewall-rule create`](/cli/azure/postgres/server/firewall-rule?view=azure-cli-latest#az-postgres-server-firewall-rule-create), чтобы разрешить подключения клиентов. Если для начального и конечного IP-адресов задано значение 0.0.0.0, брандмауэр открыт только для других ресурсов Azure. Замените заполнитель *\<postgres-server-name>* уникальным именем сервера.
 
 ```azurecli-interactive
-az postgres server firewall-rule create --resource-group myResourceGroup --server <postgres-server-name> --name AllowAllIps --start-ip-address 0.0.0.0 --end-ip-address 255.255.255.255
+az postgres server firewall-rule create --resource-group myResourceGroup --server <postgres-server-name> --name AllowAllIps --start-ip-address 0.0.0.0 --end-ip-address 0.0.0.0
 ```
 
 > [!TIP] 
@@ -491,9 +491,9 @@ git push azure master
 
 <a name="next"></a>
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-Из этого руководства вы узнали, как выполнить следующие задачи:
+В этом руководстве вы узнали, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 > * Создание базы данных Postgres в Azure

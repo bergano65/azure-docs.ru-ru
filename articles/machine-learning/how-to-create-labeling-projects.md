@@ -7,12 +7,12 @@ ms.author: laobri
 ms.service: machine-learning
 ms.topic: tutorial
 ms.date: 11/04/2019
-ms.openlocfilehash: 019c75e67534198494d7591602bd5f9023704a1d
-ms.sourcegitcommit: ce4a99b493f8cf2d2fd4e29d9ba92f5f942a754c
+ms.openlocfilehash: 864cccc4629140754a326823cbaebd7ad8933d3d
+ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/28/2019
-ms.locfileid: "75533107"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75765075"
 ---
 # <a name="create-a-data-labeling-project-and-export-labels"></a>Создание проекта маркировки данных и экспорт меток 
 
@@ -49,7 +49,7 @@ ms.locfileid: "75533107"
 
 Проекты добавления меток администрируются в Машинном обучении Azure. Страница **Labeling projects** (Проекты добавления меток) позволяет управлять проектами и пользователями. Каждому проекту назначается одна или несколько команд, а в команду назначаются один или несколько пользователей.
 
-Если данные уже размещены в хранилище BLOB-объектов Azure, перед созданием проекта добавления меток сделайте данные доступными в виде хранилища данных. Дополнительные сведения см. в статье о [создании и регистрации хранилищ данных](https://docs.microsoft.com/azure/machine-learning/service/how-to-access-data#create-and-register-datastores).
+Если данные уже размещены в хранилище BLOB-объектов Azure, перед созданием проекта добавления меток сделайте данные доступными в виде хранилища данных. Дополнительные сведения см. в статье о [создании и регистрации хранилищ данных](https://docs.microsoft.com/azure/machine-learning/how-to-access-data#create-and-register-datastores).
 
 Чтобы создать проект, щелкните **Добавить проект**. Присвойте проекту подходящее имя и выберите **тип задачи добавления меток**.
 

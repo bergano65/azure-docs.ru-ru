@@ -1,6 +1,6 @@
 ---
-title: включение файла
-description: включение файла
+title: включить файл
+description: включить файл
 services: data-factory
 author: linda33wj
 ms.service: data-factory
@@ -8,14 +8,14 @@ ms.topic: include
 ms.date: 06/27/2019
 ms.author: jingwang
 ms.custom: include file
-ms.openlocfilehash: 26793c91c85ba4cc33a07358ab8ff318becb325f
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: f808158c959894e757adaa73a81e3bf57f475da0
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73490658"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76021239"
 ---
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 ### <a name="azure-subscription"></a>Подписка Azure.
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
@@ -28,15 +28,15 @@ ms.locfileid: "73490658"
 - Чтобы создавать дочерние ресурсы и управлять ими на портале Azure, необходимо иметь роль **Участник Фабрики данных** на уровне группы ресурсов или более высоком.
 - Чтобы создавать дочерние ресурсы и управлять ими с помощью PowerShell или пакета SDK, достаточно роли **Участник** на уровне ресурса или более высоком.
 
-Примеры инструкций по назначению пользователю роли см. в статье [Добавление или изменение администраторов подписки Azure](../articles/billing/billing-add-change-azure-subscription-administrator.md).
+Примеры инструкций по назначению пользователю роли см. в статье [Добавление или изменение администраторов подписки Azure](../articles/cost-management-billing/manage/add-change-subscription-administrator.md).
 
-Дополнительные сведения см. в следующих ресурсах:
+Дополнительные сведения см. в следующих статьях:
 
 - [Участник Фабрики данных](../articles/role-based-access-control/built-in-roles.md#data-factory-contributor)
 - [Roles and permissions for Azure Data Factory](../articles/data-factory/concepts-roles-permissions.md) (Роли и разрешения для службы "Фабрика данных Azure")
 
 ### <a name="azure-storage-account"></a>Учетная запись хранения Azure.
-В этом кратком руководстве в качестве *исходного* и *целевого* хранилища данных используется учетная запись хранения Azure общего назначения (в частности, хранилища BLOB-объектов). Если у вас нет учетной записи хранения Azure общего назначения, см. инструкции по [созданию учетной записи хранения](../articles/storage/common/storage-quickstart-create-account.md). 
+В этом кратком руководстве в качестве *исходного* и *целевого* хранилища данных используется учетная запись хранения Azure общего назначения (в частности, хранилища BLOB-объектов). Если у вас нет учетной записи хранения Azure общего назначения, см. инструкции по [созданию учетной записи хранения](../articles/storage/common/storage-account-create.md). 
 
 #### <a name="get-the-storage-account-name"></a>Получение имени учетной записи хранения
 Для выполнения инструкций этого краткого руководства вам потребуется имя учетной записи хранения Azure. Далее описана процедура получения имени учетной записи хранения. 

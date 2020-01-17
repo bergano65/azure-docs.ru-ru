@@ -1,23 +1,22 @@
 ---
 title: Краткое руководство. Распознавание речи с микрофона в службе "Речь" с помощью C++ (macOS)
 titleSuffix: Azure Cognitive Services
-description: Узнайте, как распознавать речь в macOS, используя C++ и пакет SDK службы "Речь"
 services: cognitive-services
 author: wolfma61
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
-ms.topic: quickstart
-ms.date: 07/05/2019
+ms.topic: include
+ms.date: 12/17/2019
 ms.author: wolfma
-ms.openlocfilehash: 885e853528eb0b20079e6a7739450687ed001b8e
-ms.sourcegitcommit: 5aefc96fd34c141275af31874700edbb829436bb
+ms.openlocfilehash: 08459238173b379280cb513ccb3242e4f15ef0bc
+ms.sourcegitcommit: f34165bdfd27982bdae836d79b7290831a518f12
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74818663"
+ms.lasthandoff: 01/13/2020
+ms.locfileid: "75927758"
 ---
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Необходимые условия:
 
@@ -51,7 +50,7 @@ ms.locfileid: "74818663"
   g++ helloworld.cpp -o helloworld --std=c++14 -F${SPEECHSDK_ROOT} -framework MicrosoftCognitiveServicesSpeech
   ```
 
-## <a name="run-the-app"></a>Запуск приложения
+## <a name="run-the-app"></a>Запустите приложение
 
 1. Настройте путь к библиотеке загрузчика так, чтобы он указывал на библиотеку пакета SDK для службы "Речь".
 
@@ -72,6 +71,6 @@ ms.locfileid: "74818663"
    We recognized: What's the weather like?
    ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [!INCLUDE [footer](./footer.md)]

@@ -7,18 +7,18 @@ ms.reviewer: jasonh
 ms.service: azure-databricks
 ms.topic: tutorial
 ms.date: 07/19/2019
-ms.openlocfilehash: 27e166a8798f851f6c086c025dd82957b2dcfb84
-ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
+ms.openlocfilehash: 15399d5a00c13141877dcf44640df2c1f9b9ba5c
+ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74849281"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75889058"
 ---
-# <a name="tutorial-access-azure-blob-storage-from-azure-databricks-using-azure-key-vault"></a>Руководство по Доступ к хранилищу BLOB-объектов Azure из Azure Databricks с помощью Azure Key Vault
+# <a name="tutorial-access-azure-blob-storage-from-azure-databricks-using-azure-key-vault"></a>Руководство. Доступ к хранилищу BLOB-объектов Azure из Azure Databricks с помощью Azure Key Vault
 
 В этом учебнике описано, как получить доступ к хранилищу BLOB-объектов Azure из Azure Databricks, используя секреты, хранящиеся в хранилище ключей.
 
-Из этого руководства вы узнаете, как выполнять следующие задачи:
+В этом руководстве описано следующее.
 
 > [!div class="checklist"]
 > * Создание контейнера BLOB-объектов и учетной записи хранения.
@@ -26,17 +26,17 @@ ms.locfileid: "74849281"
 > * Создание рабочей области Azure Databricks и области секретов.
 > * Получение доступа к контейнеру BLOB-объектов из Azure Databricks.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 - Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/).
 
 ## <a name="sign-in-to-the-azure-portal"></a>Вход на портал Azure
 
-Войдите на [портале Azure](https://portal.azure.com/).
+Войдите на [портал Azure](https://portal.azure.com/).
 
 > [!Note]
 > Инструкции из этого руководство нельзя выполнять с **бесплатной пробной версией подписки**.
-> Если у вас есть бесплатная учетная запись, перейдите к профилю и измените подписку на подписку с **оплатой по мере использования**. Дополнительные сведения см. на странице [создания бесплатной учетной записи Azure](https://azure.microsoft.com/free/). Затем [удалите предельную сумму расходов](https://docs.microsoft.com/azure/billing/billing-spending-limit#why-you-might-want-to-remove-the-spending-limit) и [запросите увеличение квоты](https://docs.microsoft.com/azure/azure-supportability/resource-manager-core-quotas-request) на ЦП в своем регионе. При создании рабочей области Azure Databricks можно выбрать ценовую категорию **Пробная версия ("Премиум" — 14 дней бесплатно (DBU))** для предоставления рабочей области доступа к бесплатным DBU Azure Databricks уровня "Премиум" на 14 дней.
+> Если у вас есть бесплатная учетная запись, перейдите к профилю и измените подписку на подписку с **оплатой по мере использования**. Дополнительные сведения см. на странице [создания бесплатной учетной записи Azure](https://azure.microsoft.com/free/). Затем [удалите предельную сумму расходов](https://docs.microsoft.com/azure/billing/billing-spending-limit#why-you-might-want-to-remove-the-spending-limit) и [запросите увеличение квоты](https://docs.microsoft.com/azure/azure-portal/supportability/resource-manager-core-quotas-request) на ЦП в своем регионе. При создании рабочей области Azure Databricks можно выбрать ценовую категорию **Пробная версия ("Премиум" — 14 дней бесплатно (DBU))** для предоставления рабочей области доступа к бесплатным DBU Azure Databricks уровня "Премиум" на 14 дней.
 
 ## <a name="create-a-storage-account-and-blob-container"></a>Создание контейнера BLOB-объектов и учетной записи хранения.
 
@@ -62,7 +62,7 @@ ms.locfileid: "74849281"
 
    ![Ключи доступа к учетной записи хранения](./media/store-secrets-azure-key-vault/storage-access-keys.png)
 
-## <a name="create-an-azure-key-vault-and-add-a-secret"></a>Создание Azure Key Vault и добавление секрета
+## <a name="create-an-azure-key-vault-and-add-a-secret"></a>Создание Azure Key Vault и добавление секрета.
 
 1. На портале Azure перейдите на страницу **Создать ресурс** и введите **Key Vault** в строке поиска.
 
@@ -74,9 +74,9 @@ ms.locfileid: "74849281"
 
 3. На странице **Создать Key Vault** введите следующую информацию и оставьте значения по умолчанию для остальных полей:
 
-   |Свойство|Описание|
+   |Свойство|Description|
    |--------|-----------|
-   |ИМЯ|Укажите уникальное имя для хранилища ключей.|
+   |Имя|Укажите уникальное имя для хранилища ключей.|
    |Subscription|Выберите подписку.|
    |группа ресурсов.|Выберите группу ресурсов или создайте новую.|
    |Location|Выберите расположение.|
@@ -93,8 +93,8 @@ ms.locfileid: "74849281"
 
    |Свойство|Значение|
    |--------|-----------|
-   |Параметры отправки|Руководство|
-   |ИМЯ|Понятное имя для вашего ключа учетной записи хранения.|
+   |Параметры отправки|Вручную|
+   |Имя|Понятное имя для вашего ключа учетной записи хранения.|
    |Значение|key1 из вашей учетной записи хранения.|
 
    ![Свойства нового секрета хранилища ключей](./media/store-secrets-azure-key-vault/create-storage-secret.png)
@@ -103,7 +103,7 @@ ms.locfileid: "74849281"
 
    ![Копирование DNS-имени Azure Key Vault и идентификатора ресурса](./media/store-secrets-azure-key-vault/copy-dns-resource.png)
 
-## <a name="create-an-azure-databricks-workspace-and-add-a-secret-scope"></a>Создание рабочей области Azure Databricks и области секретов
+## <a name="create-an-azure-databricks-workspace-and-add-a-secret-scope"></a>Создание рабочей области Azure Databricks и области секретов.
 
 1. На портале Azure выберите **Создать ресурс** > **Analytics** > **Azure Databricks**.
 
@@ -111,7 +111,7 @@ ms.locfileid: "74849281"
 
 2. В разделе **Служба Azure Databricks** укажите следующие значения, чтобы создать рабочую область Databricks:
 
-   |Свойство  |ОПИСАНИЕ  |
+   |Свойство  |Description  |
    |---------|---------|
    |имя рабочей области.     | Укажите имя рабочей области Databricks.        |
    |Subscription     | Выберите подписку Azure в раскрывающемся списке.        |
@@ -136,7 +136,7 @@ ms.locfileid: "74849281"
 
    ![Создание области секретов в рабочей области Azure Databricks](./media/store-secrets-azure-key-vault/create-secret-scope.png)
 
-## <a name="access-your-blob-container-from-azure-databricks"></a>Получение доступа к контейнеру BLOB-объектов из Azure Databricks
+## <a name="access-your-blob-container-from-azure-databricks"></a>Получение доступа к контейнеру BLOB-объектов из Azure Databricks.
 
 1. На домашней странице рабочей области Azure Databricks выберите **Создать кластер** в разделе **Общие задачи**.
 
@@ -208,7 +208,7 @@ ms.locfileid: "74849281"
 
 2. Выберите **Удалить группу ресурсов** и введите имя своей группы ресурсов. Теперь щелкните **Удалить**. 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В следующей статье описывается, как реализовать среду Databricks, внедренную в виртуальную сеть, с помощью конечной точки службы с поддержкой Cosmos DB.
 > [!div class="nextstepaction"]

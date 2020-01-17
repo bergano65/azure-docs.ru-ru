@@ -8,12 +8,12 @@ ms.author: babanisa
 ms.date: 11/15/2019
 ms.topic: quickstart
 ms.service: event-grid
-ms.openlocfilehash: 5c4ba510360475e1365d4901136c94181e8c3da3
-ms.sourcegitcommit: 4821b7b644d251593e211b150fcafa430c1accf0
+ms.openlocfilehash: a9281ba1e2bf68da2318c32ab7037515697f92a5
+ms.sourcegitcommit: f2149861c41eba7558649807bd662669574e9ce3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74174871"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75708852"
 ---
 # <a name="quickstart-route-custom-events-to-an-azure-function-with-event-grid"></a>Краткое руководство. Маршрутизация настраиваемых событий в Функции Azure с помощью Сетки событий
 
@@ -96,7 +96,7 @@ ms.locfileid: "74174871"
 В первом примере используется Azure CLI. Он возвращает URL-адрес, ключ пользовательского раздела и пример данных события. Используйте имя пользовательского раздела для `<topic name>`. Будет создан пример данных событий. Элемент `data` JSON отображает полезные данные события. Любое значение JSON с правильным форматом может быть в этом поле. Кроме того, можно использовать поле темы для дополнительной маршрутизации и фильтрации. CURL — это служебная программа, которая отправляет HTTP-запросы.
 
 
-### <a name="azure-cli"></a>Инфраструктура CLI Azure
+### <a name="azure-cli"></a>Azure CLI
 1. На портале Azure выберите **Cloud Shell**. Выберите **Bash** в левом верхнем углу окна Cloud Shell. 
 
     ![Cloud Shell — Bash](./media/custom-event-quickstart-portal/cloud-shell-bash.png)
@@ -184,13 +184,12 @@ ms.locfileid: "74174871"
     ![Группы ресурсов](./media/custom-event-to-function/delete-resource-groups.png)
 
     Другая группа ресурсов, показанная на рисунке, создана и используется в окне Cloud Shell. Удалите ее, если вы не планируете использовать окно Cloud Shell в дальнейшем. 
-```
 
-## Next steps
+## <a name="next-steps"></a>Дальнейшие действия
 
-Now that you know how to create topics and event subscriptions, learn more about what Event Grid can help you do:
+Теперь, когда вы знаете, как создавать темы и подписки на события, ознакомьтесь с дополнительными сведениями о сетке событий, которые могут помочь вам:
 
-- [About Event Grid](overview.md)
-- [Route Blob storage events to a custom web endpoint](../storage/blobs/storage-blob-event-quickstart.md?toc=%2fazure%2fevent-grid%2ftoc.json)
-- [Monitor virtual machine changes with Azure Event Grid and Logic Apps](monitor-virtual-machine-changes-event-grid-logic-app.md)
-- [Stream big data into a data warehouse](event-grid-event-hubs-integration.md)
+- [An introduction to Azure Event Grid](overview.md) (Общие сведения о службе "Сетка событий Azure")
+- [Перенаправление событий хранилища BLOB-объектов в пользовательскую конечную веб-точку (предварительная версия)](../storage/blobs/storage-blob-event-quickstart.md?toc=%2fazure%2fevent-grid%2ftoc.json)
+- [Monitor virtual machine changes with Azure Event Grid and Logic Apps](monitor-virtual-machine-changes-event-grid-logic-app.md) (Отслеживание изменений виртуальной машины с помощью Azure Logic Apps и службы "Сетка событий Azure")
+- [Потоковая передача больших данных в хранилище данных](event-grid-event-hubs-integration.md)

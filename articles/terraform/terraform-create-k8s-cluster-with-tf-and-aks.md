@@ -3,12 +3,12 @@ title: Руководство. Создание кластера Kubernetes с �
 description: В этом руководстве показано, как создать кластер Kubernetes с помощью службы Azure Kubernetes и Terraform
 ms.topic: tutorial
 ms.date: 11/07/2019
-ms.openlocfilehash: cea9d93ed418a4f2e90fa3f2dfd3441f4b296316
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: e04abdab2893e76a65615635ae9937797be89855
+ms.sourcegitcommit: f2149861c41eba7558649807bd662669574e9ce3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75374970"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75708280"
 ---
 # <a name="tutorial-create-a-kubernetes-cluster-with-azure-kubernetes-service-using-terraform"></a>Руководство. созданию кластера Kubernetes с помощью Службы Azure Kubernetes и Terraform
 
@@ -140,10 +140,8 @@ ms.locfileid: "75374970"
 
         default_node_pool {
             name            = "agentpool"
-            count           = var.agent_count
+            node_count      = var.agent_count
             vm_size         = "Standard_DS1_v2"
-            os_type         = "Linux"
-            os_disk_size_gb = 30
         }
 
         service_principal {

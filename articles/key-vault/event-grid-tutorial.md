@@ -9,12 +9,12 @@ ms.service: key-vault
 ms.topic: tutorial
 ms.date: 10/25/2019
 ms.author: mbaldwin
-ms.openlocfilehash: b30e260b2eeb0d8af0c347996cdb51685dedd046
-ms.sourcegitcommit: 2d3740e2670ff193f3e031c1e22dcd9e072d3ad9
+ms.openlocfilehash: 77bc092c7d44e559562699d9177c2bd168f7dea0
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/16/2019
-ms.locfileid: "74133332"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75981595"
 ---
 # <a name="receive-and-respond-to-key-vault-notifications-with-azure-event-grid-preview"></a>Получение уведомлений хранилища ключей и реагирование на них с помощью Сетки событий Azure (предварительная версия)
 
@@ -22,7 +22,7 @@ ms.locfileid: "74133332"
 
 В этом руководстве показано, как получать уведомления Key Vault через Сетку событий Azure и как реагировать на изменения состояния с помощью службы автоматизации Azure.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 - Подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 - Хранилище ключей в подписке Azure. Вы можете быстро создать хранилище ключей, выполнив действия, описанные в статье [Краткое руководство. Настройка и получение секрета из Azure Key Vault с помощью Azure CLI](quick-create-cli.md).
@@ -184,19 +184,19 @@ write-Error "No input data found."
 
 ### <a name="you-cant-create-an-event-subscription"></a>Не удается создать подписку на событие
 
-Повторите регистрацию Сетки событий и поставщика хранилища ключей в поставщиках ресурсов подписки Azure. Ознакомьтесь с разделом [Поставщики и типы ресурсов Azure](../azure-resource-manager/resource-manager-supported-services.md).
+Повторите регистрацию Сетки событий и поставщика хранилища ключей в поставщиках ресурсов подписки Azure. Ознакомьтесь с разделом [Поставщики и типы ресурсов Azure](../azure-resource-manager/management/resource-providers-and-types.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Поздравляем! Если вы выполнили все описанные выше действия, теперь все готово для программного реагирования на изменение состояния секретов в хранилище ключей.
 
 Если вы используете систему на основе опроса для выявления изменений состояния секретов в хранилищах ключей, теперь вы можете начать использовать эту функцию уведомления. Вы можете также заменить сценарий теста в модуле runbook кодом для программного продления секретов, когда срок их действия подходит к концу.
 
-Дополнительные сведения
+Дополнительные сведения:
 
 
-- Рассматриваемые действия: [Мониторинг Key Vault с помощью службы "Сетка событий Azure" (предварительная версия)](event-grid-overview.md)
-- Практическое руководство: [Получение сообщения электронной почты при изменении секрета в хранилище ключей](event-grid-logicapps.md)
+- Общие сведения. [Мониторинг Key Vault с помощью службы "Сетка событий Azure" (предварительная версия)](event-grid-overview.md)
+- Руководство. [Получение сообщения электронной почты при изменении секрета в хранилище ключей](event-grid-logicapps.md)
 - [Схема событий службы "Сетка событий Azure" для Azure Key Vault (предварительная версия)](../event-grid/event-schema-key-vault.md)
 - [Общие сведения об Azure Key Vault](key-vault-overview.md)
 - [Обзор службы "Сетка событий Azure"](../event-grid/overview.md)

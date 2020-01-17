@@ -7,19 +7,19 @@ ms.date: 11/19/2019
 ms.service: storage
 ms.subservice: blobs
 ms.topic: quickstart
-ms.openlocfilehash: 089cda74740d3934c76a3b0ca8803a30654feccf
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: c8473bff3b6e7d2079bb202befc23e1ada3791eb
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75465116"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75970256"
 ---
 # <a name="quickstart-azure-blob-storage-client-library-v12-for-javascript"></a>Краткое руководство. Использование клиентской библиотеки хранилища BLOB-объектов Azure версии 12 для JavaScript
 
 Приступите к работе с клиентской библиотекой хранилища BLOB-объектов Azure версии 12 для JavaScript. Хранилище BLOB-объектов Azure — это решение корпорации Майкрософт для хранения объектов в облаке. Чтобы установить пакет и испробовать пример кода для выполнения базовых задач, выполните приведенные здесь действия. Хранилище BLOB-объектов оптимизировано для хранения больших объемов неструктурированных данных.
 
 > [!NOTE]
-> Чтобы приступить к работе с предыдущей версией пакета SDK, обратитесь к разделу [Краткое руководство. Клиентская библиотека хранилища BLOB-объектов Azure для JavaScript](storage-quickstart-blobs-nodejs-v10.md).
+> Чтобы приступить к работе с предыдущей версией пакета SDK, обратитесь к разделу [Краткое руководство. Клиентская библиотека хранилища BLOB-объектов Azure для JavaScript](storage-quickstart-blobs-nodejs-legacy.md).
 
 Клиентскую библиотеку хранилища BLOB-объектов Azure версии 12 для JavaScript можно использовать для выполнения следующих задач:
 

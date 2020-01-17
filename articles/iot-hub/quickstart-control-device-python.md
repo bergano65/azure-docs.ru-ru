@@ -9,13 +9,13 @@ services: iot-hub
 ms.devlang: python
 ms.topic: quickstart
 ms.custom: mvc
-ms.date: 06/21/2019
-ms.openlocfilehash: b36e5d88c67a4aabf530aa8d945c17870e9c126b
-ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
+ms.date: 01/09/2020
+ms.openlocfilehash: 11768a0d72549d917d93c0f6f7f4d0c7e8217da4
+ms.sourcegitcommit: 12a26f6682bfd1e264268b5d866547358728cd9a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74892657"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75864428"
 ---
 # <a name="quickstart-control-a-device-connected-to-an-iot-hub-python"></a>Краткое руководство. Управление подключенным к Центру Интернета вещей устройством (Python)
 
@@ -29,15 +29,11 @@ ms.locfileid: "74892657"
 
 * Внутреннее приложение, вызывающее прямые методы в имитированном устройстве. Чтобы вызвать прямой метод в устройстве, это приложение подключается к конечной точке на стороне службы в Центре Интернета вещей.
 
-> [!IMPORTANT]
-> В этой статье серверное приложение использует клиент службы Python версии 1, а приложение устройства использует клиент устройства Python версии 2. Клиент службы версии 1 находится в [нерекомендуемой ветви версии 1](https://github.com/Azure/azure-iot-sdk-python/tree/v1-deprecated) репозитория GitHub пакета SDK Azure IoT для Python. Пакет PIP для клиента службы версии 1 *azure-iothub-service-client* имеет определенные требования к конкретной платформе, включая версию Python, установленную на компьютере разработки. Эти требования указаны в разделе **предварительных требований**.
->
-
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Выполните следующую команду, чтобы добавить расширение Интернета вещей Microsoft Azure для Azure CLI в экземпляр Cloud Shell. Расширение Интернета вещей добавляет в Azure CLI специальные команды Центра Интернета вещей, IoT Edge и службы подготовки устройств Интернета вещей (DPS).
 
@@ -47,13 +43,7 @@ az extension add --name azure-cli-iot-ext
 
 Если вы это еще не сделали, загрузите пример проекта Python по адресу https://github.com/Azure-Samples/azure-iot-samples-python/archive/master.zip и извлеките ZIP-архив.
 
-**Для Windows** необходимо выполнить следующие предварительные требования для установки пакета PIP клиента службы Центра Интернета вещей версии 1:
-
-* Убедитесь, что установлен [Python версии **3.6.x**](https://www.python.org/downloads/).
-
-* Убедитесь, что установлен [Распространяемый компонент Visual C++ для Visual Studio](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads).
-
-**Для платформ, отличных от Windows**, см. таблицу [распределения пакетов Python PIP](https://github.com/Azure/azure-iot-sdk-python/blob/v1-deprecated/doc/python-devbox-setup.md#python-pip-package-distribution-table) в документации по пакету SDK версии 1. Убедитесь, что версия Python 3.x, указанная для вашей платформы, и все связанные с ней компоненты установлены на компьютере разработки. Если установить Python версии 3.x, а не 2.7, в клиенте устройства версии 2 будут включены асинхронные операции, которые также используются в этом кратком руководстве.
+Установлен [Python версии 3.7 или более поздней](https://www.python.org/downloads/) на компьютере, на котором ведется разработка. Сведения о других поддерживаемых версиях Python см. в документации по пакету SDK в разделе о [возможностях устройств Azure IoT](https://github.com/Azure/azure-iot-sdk-python/tree/master/azure-iot-device#azure-iot-device-features).
 
 ## <a name="create-an-iot-hub"></a>Создание Центра Интернета вещей
 
@@ -132,7 +122,7 @@ az extension add --name azure-cli-iot-ext
 
     На следующем снимке экрана показан пример выходных данных, когда приложение имитированного устройства отправляет данные телеметрии в Центр Интернета вещей:
 
-    ![Запуск виртуального устройства](./media/quickstart-control-device-python/SimulatedDevice-1.png)
+    ![Запуск виртуального устройства](./media/quickstart-control-device-python/simulated-device-1.png)
 
 ## <a name="call-the-direct-method"></a>Вызов прямого метода
 
@@ -147,7 +137,7 @@ az extension add --name azure-cli-iot-ext
 1. Установите необходимые библиотеки для приложения имитированного устройства, выполнив в окне терминала на локальном компьютере следующие команды:
 
     ```cmd/sh
-    pip install azure-iothub-service-client future
+    pip install azure-iot-hub
     ```
 
 1. Запустите внутреннее приложение, выполнив в окне терминала на локальном компьютере следующие команды:
@@ -158,21 +148,17 @@ az extension add --name azure-cli-iot-ext
 
     На следующем снимке экрана показан пример выходных данных, когда приложение выполняет вызов прямого метода к устройству и получает подтверждение:
 
-    ![Запуск внутреннего приложения](./media/quickstart-control-device-python/BackEndApplication.png)
+    ![Запуск внутреннего приложения](./media/quickstart-control-device-python/backend-application.png)
 
     После запуска внутреннего приложения в окне консоли, в котором выполняется имитированное устройство, отобразится сообщение и изменится интервал, с которым это приложение отправляет сообщения:
 
-    ![Изменения в имитированном клиенте](./media/quickstart-control-device-python/SimulatedDevice-2.png)
-
-    > [!NOTE]
-    > Если при импорте *iothub_service_client* возникает ошибка, убедитесь, что вы установили точную версию Python и другие связанные артефакты, указанные для вашей платформы в разделе [предварительных требований](#prerequisites). Если после проверки необходимых компонентов по-прежнему возникает ошибка, может потребоваться создать клиент службы для своей платформы. Чтобы узнать, как создать пакет SDK для своей платформы, ознакомьтесь с инструкциями по установке [devbox](https://github.com/Azure/azure-iot-sdk-python/blob/v1-deprecated/doc/python-devbox-setup.md) в документации по пакету SDK версии 1.
-    >
+    ![Изменения в имитированном клиенте](./media/quickstart-control-device-python/simulated-device-2.png)
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
 [!INCLUDE [iot-hub-quickstarts-clean-up-resources](../../includes/iot-hub-quickstarts-clean-up-resources.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В рамках этого краткого руководства вы вызвали прямой метод в устройстве из внутреннего приложения, а также ответили на этот вызов в приложении имитированного устройства.
 

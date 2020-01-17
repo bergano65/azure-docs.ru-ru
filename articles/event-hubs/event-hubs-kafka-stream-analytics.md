@@ -13,12 +13,12 @@ ms.workload: na
 ms.custom: seodec18
 ms.date: 12/20/2019
 ms.author: spelluru
-ms.openlocfilehash: dd429c7e8478bb0576605bcffe3c72bde35ae41e
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: b0b48fea308b385fd8c66bf87d708b1c51f7f495
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75437254"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75977353"
 ---
 # <a name="tutorial-process-apache-kafka-for-event-hubs-events-using-stream-analytics"></a>Руководство. Обработка событий Центров событий в Apache Kafka с использованием Stream Analytics 
 В этой статье показано, как выполняется потоковая передача данных в Центры событий с поддержкой Kafka и обработка с помощью Azure Stream Analytics. Здесь подробно описаны следующие действия: 
@@ -38,7 +38,7 @@ ms.locfileid: "75437254"
 * [Комплект разработчика Java (JDK) 1.7+](https://aka.ms/azure-jdks).
 * [Скачайте](https://maven.apache.org/download.cgi) и [установите](https://maven.apache.org/install.html) двоичный архив Maven.
 * [Git](https://www.git-scm.com/)
-* **Учетная запись хранения Azure**. Если ее у вас нет, то, прежде чем продолжить, [создайте учетную запись хранения Azure](../storage/common/storage-quickstart-create-account.md). В этом пошаговом руководстве задание Stream Analytics состоит в сохранении выходных данных в хранилище BLOB-объектов Azure. 
+* **Учетная запись хранения Azure**. Если ее у вас нет, то, прежде чем продолжить, [создайте учетную запись хранения Azure](../storage/common/storage-account-create.md). В этом пошаговом руководстве задание Stream Analytics состоит в сохранении выходных данных в хранилище BLOB-объектов Azure. 
 
 
 ## <a name="create-a-kafka-enabled-event-hubs-namespace"></a>Создание пространства имен Центров событий с поддержкой Kafka
@@ -114,7 +114,7 @@ ms.locfileid: "75437254"
     ![Концентратор событий. Сообщения](./media/event-hubs-kafka-stream-analytics/confirm-event-hub-messages.png)
 
 ## <a name="process-event-data-using-a-stream-analytics-job"></a>Обработка данных событий с помощью задания Stream Analytics
-В этом разделе будет создано задание Azure Stream Analytics. Клиент Kafka отправит события в концентратор событий. Вы создадите задание Stream Analytics, которое принимает данные о событиях в качестве входных данных и выводит их в хранилище BLOB-объектов Azure. Если у вас нет **учетной записи службы хранилища Azure**, то потребуется [ее создать](../storage/common/storage-quickstart-create-account.md).
+В этом разделе будет создано задание Azure Stream Analytics. Клиент Kafka отправит события в концентратор событий. Вы создадите задание Stream Analytics, которое принимает данные о событиях в качестве входных данных и выводит их в хранилище BLOB-объектов Azure. Если у вас нет **учетной записи службы хранилища Azure**, то потребуется [ее создать](../storage/common/storage-account-create.md).
 
 Запрос в задании Stream Analytics проходит через данные без выполнения какой-либо аналитики. Можно создать запрос, преобразующий входные данные в выходные данные в другом формате или с полученными аналитическими сведениями.  
 

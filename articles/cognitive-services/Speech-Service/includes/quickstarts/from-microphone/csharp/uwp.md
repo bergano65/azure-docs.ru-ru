@@ -1,23 +1,22 @@
 ---
 title: Краткое руководство. Распознавание речи с микрофона в службе "Речь" с помощью C# (UWP)
 titleSuffix: Azure Cognitive Services
-description: ПОДЛЕЖИТ УТОЧНЕНИЮ
 services: cognitive-services
 author: erhopf
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
-ms.topic: quickstart
-ms.date: 10/28/2019
+ms.topic: include
+ms.date: 12/17/2019
 ms.author: erhopf
-ms.openlocfilehash: 5f83f249228c96021979edc14c092eded03b96e4
-ms.sourcegitcommit: 5aefc96fd34c141275af31874700edbb829436bb
+ms.openlocfilehash: e6934e908111773cef3f7ddcfc2a971d8e1706bf
+ms.sourcegitcommit: f34165bdfd27982bdae836d79b7290831a518f12
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74818870"
+ms.lasthandoff: 01/13/2020
+ms.locfileid: "75927947"
 ---
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Необходимые условия:
 
@@ -33,7 +32,7 @@ ms.locfileid: "74818870"
 
 Сначала необходимо убедиться, что проект открыт в Visual Studio.
 
-## <a name="start-with-some-boilerplate-code"></a>Использование стандартного кода
+## <a name="start-with-some-boilerplate-code"></a>Добавление стандартного кода
 
 Добавим код, который выступает в качестве основы для нашего проекта.
 
@@ -54,7 +53,7 @@ ms.locfileid: "74818870"
 Перед инициализацией объекта `SpeechRecognizer` необходимо создать конфигурацию, использующую ключ и регион подписки. Вставьте код в метод `RecognizeSpeechAsync()`.
 
 > [!NOTE]
-> В этом примере для создания `SpeechConfig` используется метод `FromSubscription()`. Полный список доступных методов см. в статье [SpeechConfig Class](https://docs.microsoft.com/dotnet/api/) (Класс SpeechConfig) [!code-csharp[](~/samples-cognitive-services-speech-sdk/quickstart/csharp/uwp/from-microphone/helloworld/MainPage.xaml.cs?range=51-53)].
+> В этом примере для создания `SpeechConfig` используется метод `FromSubscription()`. Полный список доступных методов см. в статье [SpeechConfig Class](https://docs.microsoft.com/dotnet/api/) [!code-csharp[](~/samples-cognitive-services-speech-sdk/quickstart/csharp/uwp/from-microphone/helloworld/MainPage.xaml.cs?range=51-53)](Класс SpeechConfig)
 
 ## <a name="initialize-a-speechrecognizer"></a>Инициализация SpeechRecognizer
 
@@ -91,6 +90,6 @@ ms.locfileid: "74818870"
 
    ![Пользовательский интерфейс распознавания речи](~/articles/cognitive-services/Speech-Service/media/sdk/qs-csharp-uwp-11-ui-result.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [!INCLUDE [footer](./footer.md)]

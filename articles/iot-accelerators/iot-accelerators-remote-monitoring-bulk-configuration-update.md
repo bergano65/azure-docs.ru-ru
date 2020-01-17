@@ -8,14 +8,14 @@ services: iot-accelerators
 ms.topic: tutorial
 ms.date: 11/29/2018
 ms.author: adugar
-ms.openlocfilehash: 8a5c74c76662a089675fcbdcd8d5a7ea54b58fd1
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: 8ba2d4eca3287efc746c0d4902b6bcc4bd0c796e
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59799046"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75980548"
 ---
-# <a name="tutorial-manage-your-connected-devices-in-bulk"></a>Руководство по управлению подключенными устройствами в пакетном режиме
+# <a name="tutorial-manage-your-connected-devices-in-bulk"></a>Руководство. управлению подключенными устройствами в пакетном режиме
 
 В этом руководстве показано, как управлять конфигурацией подключенных устройств в пакетном режиме с помощью акселератора решений для удаленного мониторинга.
 
@@ -24,8 +24,8 @@ ms.locfileid: "59799046"
 Изучив это руководство, вы:
 
 >[!div class="checklist"]
-> * создадите группу устройств;
-> * подготовите и разместите встроенное ПО;
+> * Создание группы устройств
+> * Подготовка и размещение встроенного ПО
 > * создадите конфигурацию устройства на портале Azure;
 > * импортируете конфигурацию устройства в решение для удаленного мониторинга;
 > * развернете конфигурацию на устройства в группе устройств.
@@ -39,13 +39,13 @@ If this is going to be a tutorial - we need to split this include into two so th
 [!INCLUDE [iot-accelerators-tutorial-prereqs](../../includes/iot-accelerators-tutorial-prereqs.md)]
 -->
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Для работы с этим руководством вам понадобится развернутый экземпляр акселератора решения для удаленного мониторинга в подписке Azure.
 
 Если акселератор решения для удаленного мониторинга еще не развернут, выполните краткое руководство по [развертыванию облачного решения для удаленного мониторинга](quickstart-remote-monitoring-deploy.md).
 
-Для размещения файлов встроенного ПО потребуется учетная запись хранения Azure. Вы можете использовать имеющуюся учетную запись хранения или [создать новую учетную запись хранения](../storage/common/storage-quickstart-create-account.md) в своей подписке.
+Для размещения файлов встроенного ПО потребуется учетная запись хранения Azure. Вы можете использовать имеющуюся учетную запись хранения или [создать новую учетную запись хранения](../storage/common/storage-account-create.md) в своей подписке.
 
 В этом руководстве используется устройство [IoT DevKit](https://microsoft.github.io/azure-iot-developer-kit/) в качестве примера устройства.
 
@@ -54,7 +54,7 @@ If this is going to be a tutorial - we need to split this include into two so th
 * [Visual Studio Code (VS Code)](https://code.visualstudio.com/);
 * расширение VS Code [Azure IoT Workbench](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.vscode-iot-workbench).
 
-Перед началом работы:
+Перед началом:
 
 * Убедитесь, что версия [загрузчика на вашем устройстве IoT DevKit — 1.4.0 или более поздняя](https://microsoft.github.io/azure-iot-developer-kit/docs/firmware-upgrading/).
 * Убедитесь, что версия пакета SDK для IoT DevKit совпадает с версией загрузчика. Обновить пакет SDK для IoT DevKit можно с помощью Azure IoT Workbench в VS Code. Откройте палитру команд и введите **Arduino: Board Manager** (Диспетчер плат Arduino). Дополнительные сведения см. в разделе [Подготовка среды разработки](../iot-hub/iot-hub-arduino-iot-devkit-az3166-get-started.md#prepare-the-development-environment).
@@ -228,10 +228,10 @@ If this is going to be a tutorial - we need to split this include into two so th
 
     |Параметр|Значение|
     |---|---|
-    |ИМЯ|Развертывание обновления встроенного ПО|
+    |Имя|Развертывание обновления встроенного ПО|
     |Тип пакета|Конфигурация устройств|
     |Тип конфигурации|Встроенное ПО|
-    |Package|firmware-update.json|
+    |Пакет|firmware-update.json|
     |Группа устройств|Устройства IoT DevKit|
     |Приоритет|10|
 
@@ -272,6 +272,6 @@ If this is going to be a tutorial - we need to split this include into two so th
 
 [!INCLUDE [iot-accelerators-tutorial-cleanup](../../includes/iot-accelerators-tutorial-cleanup.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом руководстве показано, как обновить встроенное ПО группы устройств, подключенных к решению. Для обновления устройств в вашем решении используется автоматическое управление устройствами. Дополнительные сведения о возможности автоматического управления устройствами в основном центре Интернета вещей вашего решения см. в статье [Настройка и мониторинг устройств Центра Интернета вещей с помощью портала Azure](../iot-hub/iot-hub-auto-device-config.md).

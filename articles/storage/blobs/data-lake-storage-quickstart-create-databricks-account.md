@@ -8,12 +8,12 @@ ms.service: storage
 ms.topic: quickstart
 ms.date: 02/15/2019
 ms.reviewer: jeking
-ms.openlocfilehash: a19a6e7e74fc645c891754e5afdbd2a6a1bdefd4
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 193fe96d3e98b2917d9228784b93a9335406283f
+ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75443811"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75771757"
 ---
 # <a name="quickstart-analyze-data-in-azure-data-lake-storage-gen2-by-using-azure-databricks"></a>Краткое руководство. Анализ данных в Azure Data Lake Storage 2-го поколения с помощью Azure Databricks
 
@@ -140,7 +140,7 @@ ms.locfileid: "75443811"
 
 Теперь в новую ячейку под этой введите следующий код и замените значения, которые отображаются в скобках, использованными ранее.
 
-    dbutils.fs.cp("file:///tmp/small_radio_json.json", "abfss://<file-system>@<account-name>.dfs.core.windows.net/")
+    dbutils.fs.cp("file:///tmp/small_radio_json.json", "abfss://<container-name>@<storage-account-name>.dfs.core.windows.net/")
 
 В ячейке нажмите клавиши **SHIFT+ВВОД**, чтобы выполнить код.
 

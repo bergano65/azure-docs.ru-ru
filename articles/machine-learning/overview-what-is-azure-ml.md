@@ -8,12 +8,12 @@ ms.topic: overview
 author: j-martens
 ms.author: jmartens
 ms.date: 11/04/2019
-ms.openlocfilehash: aea3e6d0e7b0a1d2f28d67f013701a9af5c3ba70
-ms.sourcegitcommit: ce4a99b493f8cf2d2fd4e29d9ba92f5f942a754c
+ms.openlocfilehash: cd94001cfe795e7aa78a1332325052afce6b8ec6
+ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/28/2019
-ms.locfileid: "75542190"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75762813"
 ---
 # <a name="what-is-azure-machine-learning"></a>Что такое служба "Машинное обучение Microsoft Azure"?
 
@@ -46,13 +46,13 @@ ms.locfileid: "75542190"
 
 + Скрипты R или записные книжки, в которых используется <a href="https://azure.github.io/azureml-sdk-for-r/reference/index.html" target="_blank">пакет SDK для R</a> для написания собственного кода, или модули R в конструкторе.
 
-+ [Расширение Visual Studio Code](service/how-to-vscode-tools.md)
++ [Расширение Visual Studio Code](how-to-vscode-tools.md)
 
 + [Интерфейс командной строки для машинного обучения](reference-azure-machine-learning-cli.md)
 
 + Платформы с открытым кодом, например Python, PyTorch, TensorFlow, scikit-learn и многие другие.
 
-Вы можете даже использовать [MLflow для мониторинга метрик и развертывания моделей](service/how-to-use-mlflow.md) или Kubeflow для [создания конвейеров сквозных рабочих процессов](https://www.kubeflow.org/docs/azure/).
+Вы можете даже использовать [MLflow для мониторинга метрик и развертывания моделей](how-to-use-mlflow.md) или Kubeflow для [создания конвейеров сквозных рабочих процессов](https://www.kubeflow.org/docs/azure/).
 
 ## <a name="build-ml-models-in-python-or-r"></a>Создание моделей машинного обучения на языке Python или R
 
@@ -104,12 +104,12 @@ ms.locfileid: "75542190"
 
 + Целевые объекты вычислений, такие как __Служба Azure Kubernetes__, __Экземпляры контейнеров Azure__, __Azure Databricks__, __Azure Data Lake Analytics__ и __Azure HDInsight__. Дополнительные сведения о целевых объектах вычислений см. в [этой статье](concept-compute-target.md).
 + __Сетка событий Azure__. Дополнительную информацию см. в статье [Consume Azure Machine Learning events (Preview)](concept-event-grid-integration.md) (Использование событий Машинного обучения Azure (предварительная версия)).
-+ __Azure Monitor__. Дополнительную информацию см. в статье [Monitoring Azure Machine Learning](service/monitor-azure-machine-learning.md) (Мониторинг Машинного обучения Azure).
++ __Azure Monitor__. Дополнительную информацию см. в статье [Monitoring Azure Machine Learning](monitor-azure-machine-learning.md) (Мониторинг Машинного обучения Azure).
 + Хранилища данных, такие как __учетные записи хранения Azure__, __Azure Data Lake Storage__, __База данных SQL Azure__, __База данных Azure для PostgreSQL__, а также __Открытые наборы данных Azure__. Дополнительные сведения см. в статье [Access data in Azure storage services](how-to-access-data.md) (Доступ к данным в службах хранилища Azure) и разделе [Create datasets with Azure Open Datasets](how-to-create-register-datasets.md#create-datasets-with-azure-open-datasets) (Создание наборов данных с помощью Открытых наборов данных Azure).
 + __Виртуальные сети Azure__ Дополнительные сведения см. в статье [Secure Azure ML experimentation and inference jobs within an Azure Virtual Network](how-to-enable-virtual-network.md) (Защита заданий экспериментирования и вывода Машинного обучения Azure в виртуальной сети Azure).
 + __Azure Pipelines__. Дополнительные сведения см. в статье [Train and deploy machine learning models](/azure/devops/pipelines/targets/azure-machine-learning) (Обучение и развертывание моделей машинного обучения).
 + __Журналы репозитория Git__. Дополнительные сведения см. в статье [Git integration for Azure Machine Learning](concept-train-model-git-integration.md) (Интеграция с Git для Машинного обучения Azure).
-+ __MLflow__ Дополнительные сведения см. в статье [Track metrics and deploy models with MLflow and Azure Machine Learning (preview)](service/how-to-use-mlflow.md) (Отслеживание метрик и развертывание моделей с помощью MLflow и Машинного обучения Azure (предварительная версия)). 
++ __MLflow__ Дополнительные сведения см. в статье [Track metrics and deploy models with MLflow and Azure Machine Learning (preview)](how-to-use-mlflow.md) (Отслеживание метрик и развертывание моделей с помощью MLflow и Машинного обучения Azure (предварительная версия)). 
 + __Kubeflow__. Дополнительные сведения см. в на странице [Kubeflow в Azure](https://www.kubeflow.org/docs/azure/).
 
 ### <a name="secure-communications"></a>Безопасное соединение
@@ -135,10 +135,10 @@ ms.locfileid: "75542190"
 - Создайте свой первый эксперимент предпочитаемым способом.
   + [Использование записных книжек Python для обучения и развертывания моделей машинного обучения](tutorial-1st-experiment-sdk-setup.md).
   + [Использование R Markdown для обучения и развертывания моделей машинного обучения](tutorial-1st-r-experiment.md). 
-  + [Использование автоматизированного машинного обучения для обучения и развертывания моделей](  service/tutorial-first-experiment-automated-ml.md). 
+  + [Использование автоматизированного машинного обучения для обучения и развертывания моделей](tutorial-first-experiment-automated-ml.md). 
   + [Использование возможностей перетаскивания конструктора для обучения и развертывания](tutorial-designer-automobile-price-train-score.md). 
   + [Использование CLI машинного обучения для обучения и развертывания модели](tutorial-train-deploy-model-cli.md).
 
-- См. сведения о [конвейерах машинного обучения](/azure/machine-learning/service/concept-ml-pipelines), которые можно использовать для создания и оптимизации сценариев машинного обучения, а также управления ими.
+- См. сведения о [конвейерах машинного обучения](concept-ml-pipelines.md), которые можно использовать для создания и оптимизации сценариев машинного обучения, а также управления ими.
 
 - Изучите статью [Как работает машинное обучение Azure: архитектура и понятия](concept-azure-machine-learning-architecture.md).

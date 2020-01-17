@@ -12,12 +12,12 @@ ms.workload: infrastructure
 ms.date: 1/3/2020
 ms.author: ushan
 ms.custom: devops
-ms.openlocfilehash: c9d8ec2ce78746352b1fc5d2f337ad8686213839
-ms.sourcegitcommit: 51ed913864f11e78a4a98599b55bbb036550d8a5
+ms.openlocfilehash: 0318b73dfb8fed05432dd25b5784e1c890815c53
+ms.sourcegitcommit: 5b073caafebaf80dc1774b66483136ac342f7808
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2020
-ms.locfileid: "75662484"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75778521"
 ---
 # <a name="tutorial-deploy-your-app-to-linux-virtual-machines-in-azure-using-azure-devops-services-and-azure-pipelines"></a>Руководство. Развертывание приложения на виртуальных машинах Linux в Azure с помощью Azure DevOps Services и Azure Pipelines
 
@@ -148,20 +148,20 @@ https://github.com/azure-devops/fabrikam-node
 
 ```YAML
 - job: Build
-    displayName: Build Maven Project
-    steps:
-    - task: Maven@3
-      displayName: 'Maven Package'
-      inputs:
-        mavenPomFile: 'pom.xml'
-    - task: CopyFiles@2
-      displayName: 'Copy Files to artifact staging directory'
-      inputs:
-        SourceFolder: '$(System.DefaultWorkingDirectory)'
-        Contents: '**/target/*.?(war|jar)'
-        TargetFolder: $(Build.ArtifactStagingDirectory)
-    - upload: $(Build.ArtifactStagingDirectory)
-      artifact: drop
+  displayName: Build Maven Project
+  steps:
+  - task: Maven@3
+    displayName: 'Maven Package'
+    inputs:
+      mavenPomFile: 'pom.xml'
+  - task: CopyFiles@2
+    displayName: 'Copy Files to artifact staging directory'
+    inputs:
+      SourceFolder: '$(System.DefaultWorkingDirectory)'
+      Contents: '**/target/*.?(war|jar)'
+      TargetFolder: $(Build.ArtifactStagingDirectory)
+  - upload: $(Build.ArtifactStagingDirectory)
+    artifact: drop
 ```
 
 См. сведения о том, как [создать приложение Java с помощью Maven](https://docs.microsoft.com/azure/devops/pipelines/ecosystems/java).
@@ -213,13 +213,13 @@ https://github.com/azure-devops/fabrikam-node
 
    ```YAML
    jobs:  
-     - deployment: VMDeploy
-       displayName: web
-       environment:
-         name:  <environment name>
-         resourceType: VirtualMachine
-         tags: web1
-       strategy:
+   - deployment: VMDeploy
+     displayName: web
+     environment:
+       name:  <environment name>
+       resourceType: VirtualMachine
+       tags: web1
+     strategy:
    ```
 2. Вы можете выбрать из среды определенные наборы виртуальных машин, которые будут получать развертывание, указав **теги**, определенные в среде для каждой виртуальной машины.
 См. [полную схему YAML для задания развертывания](https://docs.microsoft.com/azure/devops/pipelines/yaml-schema?view=azure-devops&tabs=schema#deployment-job).
@@ -256,7 +256,7 @@ https://github.com/azure-devops/fabrikam-node
        resourceType: VirtualMachine
      strategy:
          rolling:
-           maxParallel: 2  #for percentages, mention as x%
+           maxParallel: 5  #for percentages, mention as x%
            preDeploy:
              steps:
              - download: current
@@ -298,3 +298,7 @@ https://github.com/azure-devops/fabrikam-node
 ## <a name="next-steps"></a>Дальнейшие действия
 - Вы можете приступить к [настройке конвейера](https://docs.microsoft.com/azure/devops/pipelines/customize-pipeline), который только что создали.
 - См. сведения о [других доступных операциях с конвейерами YAML](https://docs.microsoft.com/azure/devops/pipelines/yaml-schema).
+- Чтобы узнать, как развернуть стек LAMP (Linux, Apache, MySQL и PHP), перейдите к следующему руководству.
+
+> [!div class="nextstepaction"]
+> [Развертывание стека LAMP](tutorial-lamp-stack.md)

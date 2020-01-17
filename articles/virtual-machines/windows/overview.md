@@ -11,12 +11,12 @@ ms.topic: overview
 ms.date: 11/14/2019
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: b479717491c9bf4962ff633795b98e1d016ed288
-ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
+ms.openlocfilehash: efcbdb2ebd7f4830214dbd0f2ea2ea1cfe36c3de
+ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75646937"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75893519"
 ---
 # <a name="windows-virtual-machines-in-azure"></a>Виртуальные машины Windows в Azure
 
@@ -65,7 +65,7 @@ ms.locfileid: "75646937"
 Azure взимает [почасовую оплату](https://azure.microsoft.com/pricing/details/virtual-machines/windows/), исходя из размера и операционной системы виртуальной машины. При частичном использовании Azure взимает плату только за использованные минуты. Плата за использование хранилища взимается отдельно.
 
 ## <a name="vm-limits"></a>Ограничения виртуальной машины
-Для подписки Azure предусмотрена [квота](../../azure-resource-manager/management/azure-subscription-service-limits.md) по умолчанию, от которой зависит возможность развертывания большого количества виртуальных машин для проекта. Текущее ограничение для каждой подписки составляет 20 виртуальных машин на регион. Чтобы увеличить квоту, следует отправить [соответствующий запрос в службу поддержки](../../azure-supportability/resource-manager-core-quotas-request.md).
+Для подписки Azure предусмотрена [квота](../../azure-resource-manager/management/azure-subscription-service-limits.md) по умолчанию, от которой зависит возможность развертывания большого количества виртуальных машин для проекта. Текущее ограничение для каждой подписки составляет 20 виртуальных машин на регион. Чтобы увеличить квоту, следует отправить [соответствующий запрос в службу поддержки](../../azure-portal/supportability/resource-manager-core-quotas-request.md).
 
 ### <a name="operating-system-disks-and-images"></a>Диски и образы операционной системы
 Для хранения операционной системы и данных виртуальные машины используют [виртуальные жесткие диски](managed-disks-overview.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json). Они также используются для образов, которые доступны для установки операционной системы. 

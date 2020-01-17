@@ -3,14 +3,14 @@ title: Руководство. Хранение состояния Terraform в 
 description: Общие сведения о сохранении состояния Terraform в службе хранилища Azure.
 ms.topic: tutorial
 ms.date: 11/07/2019
-ms.openlocfilehash: d1b622a372be48bf044b512f3c964a5720fc3c5b
-ms.sourcegitcommit: 28688c6ec606ddb7ae97f4d0ac0ec8e0cd622889
+ms.openlocfilehash: 1cc475e5070b21a7ea96585f2183c07d258acdc5
+ms.sourcegitcommit: f2149861c41eba7558649807bd662669574e9ce3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2019
-ms.locfileid: "74159333"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75708430"
 ---
-# <a name="tutorial-store-terraform-state-in-azure-storage"></a>Руководство по Хранение состояния Terraform в службе хранилища Azure
+# <a name="tutorial-store-terraform-state-in-azure-storage"></a>Руководство. Хранение состояния Terraform в службе хранилища Azure
 
 Состояние Terraform используется для согласования развернутых ресурсов с конфигурациями Terraform. Благодаря состоянию Terraform известно, какие ресурсы Azure следует добавить, изменить или удалить. По умолчанию, состояние Terraform хранится локально при выполнении команды `terraform apply`. Такая конфигурация не является идеальной по следующим причинам.
 
@@ -84,6 +84,7 @@ export ARM_ACCESS_KEY=$(az keyvault secret show --name terraform-backend-key --v
 ```hcl
 terraform {
   backend "azurerm" {
+    resource_group_name   = "tstate"
     storage_account_name  = "tstate09762"
     container_name        = "tstate"
     key                   = "terraform.tfstate"
@@ -119,7 +120,7 @@ resource "azurerm_resource_group" "state-demo-secure" {
 
 Дополнительные сведения о шифровании в службе хранилища Azure см. в статье [Шифрование службы хранилища Azure для неактивных данных](../storage/common/storage-service-encryption.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"] 
 > [Документация по Terraform в Azure](/azure/terraform)

@@ -6,12 +6,12 @@ ms.service: spring-cloud
 ms.topic: quickstart
 ms.date: 11/04/2019
 ms.author: jeconnoc
-ms.openlocfilehash: 61436b4317e85b67387a75e87c31a1c6cd13d84f
-ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
+ms.openlocfilehash: 8aaf5f5fbcabf3476284f0d5e9f4f50ef3e92bd6
+ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74895411"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75891632"
 ---
 # <a name="quickstart-launch-an-azure-spring-cloud-app-using-the-maven-plug-in"></a>Краткое руководство. Запуск приложения Azure Spring Cloud с помощью подключаемого модуля Maven
 
@@ -27,7 +27,7 @@ ms.locfileid: "74895411"
 > * назначение общедоступной конечной точки для приложения.
 
 >[!Note]
-> Azure Spring Cloud в настоящее время предлагается в качестве общедоступной предварительной версии. Предложения общедоступной предварительной версии позволяют клиентам поэкспериментировать с новыми функциями до официального выпуска.  Функции и службы общедоступной предварительной версии не предназначены для использования в рабочей среде.  Чтобы получить дополнительные сведения о поддержке на этапе использования предварительных версий, ознакомьтесь с разделом [Вопросы и ответы](https://azure.microsoft.com/support/faq/) или оформите [запрос на поддержку](https://docs.microsoft.com/azure/azure-supportability/how-to-create-azure-support-request).
+> Azure Spring Cloud в настоящее время предлагается в качестве общедоступной предварительной версии. Предложения общедоступной предварительной версии позволяют клиентам поэкспериментировать с новыми функциями до официального выпуска.  Функции и службы общедоступной предварительной версии не предназначены для использования в рабочей среде.  Чтобы получить дополнительные сведения о поддержке на этапе использования предварительных версий, ознакомьтесь с разделом [Вопросы и ответы](https://azure.microsoft.com/support/faq/) или оформите [запрос на поддержку](https://docs.microsoft.com/azure/azure-portal/supportability/how-to-create-azure-support-request).
 
 
 >[!TIP]
@@ -57,6 +57,9 @@ ms.locfileid: "74895411"
 
 Развертывание службы занимает около 5 минут. После развертывания службы выберите **Перейти к ресурсу**. Отобразится страница **Обзор** для экземпляра службы.
 
+> [!div class="nextstepaction"]
+> [У меня есть проблема](https://www.research.net/r/javae2e?tutorial=asc-maven-quickstart&step=provision)
+
 ## <a name="set-up-your-configuration-server"></a>Настройка сервера конфигурации
 
 1. На странице **Обзор** службы выберите **Config Server** (Сервер конфигурации).
@@ -64,6 +67,9 @@ ms.locfileid: "74895411"
 
     > [!div class="mx-imgBorder"]
     > ![Определение и применение параметров конфигурации](media/maven-qs-apply-config.jpg)
+
+> [!div class="nextstepaction"]
+> [У меня есть проблема](https://www.research.net/r/javae2e?tutorial=asc-maven-quickstart&step=config-server)
 
 ## <a name="clone-and-build-the-sample-application-repository"></a>Клонирование и сборка репозитория примера приложения
 
@@ -90,7 +96,7 @@ ms.locfileid: "74895411"
     mvn com.microsoft.azure:azure-spring-cloud-maven-plugin:1.0.0:config
     ```
 
-    a. Выберите модули `gateway`, `auth-service` и `account-service`.
+    а. Выберите модули `gateway`, `auth-service` и `account-service`.
 
     b. Выберите свою подписку и кластер служб Azure Spring Cloud.
 
@@ -106,7 +112,10 @@ ms.locfileid: "74895411"
 
 1. После завершения развертывания доступ к PiggyMetrics можно будет получить с помощью URL-адреса, который указан в выходных данных предыдущей команды.
 
-## <a name="next-steps"></a>Дополнительная информация
+> [!div class="nextstepaction"]
+> [У меня есть проблема](https://www.research.net/r/javae2e?tutorial=asc-maven-quickstart&step=deploy)
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 В рамках этого краткого руководства вы развернули приложение Spring Cloud из репозитория Maven. Дополнительные сведения об Azure Spring Cloud см. в учебнике по подготовке приложения к развертыванию.
 

@@ -1,6 +1,6 @@
 ---
-title: включение файла
-description: включение файла
+title: включить файл
+description: включить файл
 services: azure-resource-manager
 author: tfitzmac
 ms.service: azure-resource-manager
@@ -8,14 +8,14 @@ ms.topic: include
 ms.date: 02/19/2018
 ms.author: tomfitz
 ms.custom: include file
-ms.openlocfilehash: e7fcb72cecbfad2de80b844ed5281267d5e4c0c3
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.openlocfilehash: 226079b1970508004c55c54cd3de6d2e9475aa08
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67185219"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75970129"
 ---
-После применения тегов к ресурсам можно просмотреть затраты на ресурсы с этими тегами. Однако сведения о последнем использовании отобразятся в анализе затрат только через некоторое время. Если сведения о затратах на ресурсы доступны, их можно просмотреть в группах ресурсов в подписке. Чтобы пользователи увидели сведения о затратах, им необходимы права [доступа на уровне подписки к сведениям о выставлении счетов](../articles/billing/billing-manage-access.md).
+После применения тегов к ресурсам можно просмотреть затраты на ресурсы с этими тегами. Однако сведения о последнем использовании отобразятся в анализе затрат только через некоторое время. Если сведения о затратах на ресурсы доступны, их можно просмотреть в группах ресурсов в подписке. Чтобы пользователи увидели сведения о затратах, им необходимы права [доступа на уровне подписки к сведениям о выставлении счетов](../articles/cost-management-billing/manage/manage-billing-access.md).
 
 Чтобы просмотреть сведения о затратах по тегам на портале, выберите подписку и щелкните **Анализ затрат**.
 
@@ -25,4 +25,4 @@ ms.locfileid: "67185219"
 
 ![Просмотр данных о затратах по тегу](./media/resource-manager-governance-tags-billing/view-costs-by-tag.png)
 
-Кроме того, можно использовать [API-интерфейсы выставления счетов Azure](../articles/billing/billing-usage-rate-card-overview.md), чтобы получить сведения о затратах программным образом.
+Кроме того, можно использовать [API-интерфейсы выставления счетов Azure](../articles/cost-management-billing/manage/usage-rate-card-overview.md), чтобы получить сведения о затратах программным образом.

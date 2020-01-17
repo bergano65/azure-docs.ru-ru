@@ -3,14 +3,14 @@ title: Руководство. Создание контроллера вход�
 description: В этом руководстве показано, как создать кластер Kubernetes с помощью Службы Azure Kubernetes со Шлюзом приложений в качестве контроллера входящего трафика
 ms.topic: tutorial
 ms.date: 11/13/2019
-ms.openlocfilehash: 6d07fc6becf76453de792c69b25aea49c39775ae
-ms.sourcegitcommit: 28688c6ec606ddb7ae97f4d0ac0ec8e0cd622889
+ms.openlocfilehash: 898a2052f31965ee45ab2cc5df6956af4831b0d2
+ms.sourcegitcommit: 12a26f6682bfd1e264268b5d866547358728cd9a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2019
-ms.locfileid: "74159099"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75867399"
 ---
-# <a name="tutorial-create-an-application-gateway-ingress-controller-in-azure-kubernetes-service"></a>Руководство по Создание контроллера входящего трафика Шлюза приложений в Службе Azure Kubernetes
+# <a name="tutorial-create-an-application-gateway-ingress-controller-in-azure-kubernetes-service"></a>Руководство. Создание контроллера входящего трафика Шлюза приложений в Службе Azure Kubernetes
 
 [Служба Azure Kubernetes (AKS)](/azure/aks/) управляет размещенной средой Kubernetes. AKS позволяет быстро и легко развернуть и администрировать контейнерные приложения даже без опыта в оркестрации контейнеров. AKS также устраняет нагрузку при переводе приложений в автономный режим для рабочих задач и задач обслуживания. Благодаря AKS эти задачи (включая подготовку, обновление и масштабирование ресурсов) могут выполняться по запросу.
 
@@ -25,9 +25,9 @@ ms.locfileid: "74159099"
 > * Создание кластера Kubernetes с помощью AKS и Terraform.
 > * Проверка доступности кластера Kubernetes с помощью средства kubectl.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
-- **Подписка Azure.** Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio) , прежде чем начинать работу.
+- **Подписка Azure**: Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio), прежде чем начинать работу.
 
 - **Настройка Terraform.** Следуйте указаниям в статье [Terraform и настройка доступа к Azure](/azure/virtual-machines/linux/terraform-install-configure).
 
@@ -261,7 +261,7 @@ ms.locfileid: "74159099"
       name = var.resource_group_name
     }
 
-    # User Assigned Idntities 
+    # User Assigned Identities 
     resource "azurerm_user_assigned_identity" "testIdentity" {
       resource_group_name = data.azurerm_resource_group.rg.name
       location            = data.azurerm_resource_group.rg.location
@@ -769,7 +769,7 @@ kubectl create -f https://raw.githubusercontent.com/Azure/aad-pod-identity/maste
 az group delete -n <resource-group>
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"] 
 > [Контроллер входящего трафика Шлюза приложений](https://azure.github.io/application-gateway-kubernetes-ingress/)

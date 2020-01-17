@@ -6,12 +6,12 @@ ms.service: spring-cloud
 ms.topic: quickstart
 ms.date: 11/4/2019
 ms.author: jeconnoc
-ms.openlocfilehash: a96429a84fab10c033cc18a2c35edb4b2a056924
-ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
+ms.openlocfilehash: c5e01f3ddeef929a1a01726cafa6e9dca3a8a3d8
+ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74895392"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75891527"
 ---
 # <a name="quickstart-launch-an-azure-spring-cloud-application-using-the-azure-portal"></a>Краткое руководство. Запуск приложения Azure Spring Cloud с помощью портала Azure
 
@@ -28,10 +28,10 @@ Azure Spring Cloud позволяет легко выполнять прилож
 > * развертывание каждой микрослужбы;
 > * назначение общедоступной конечной точки для приложения.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 >[!Note]
-> Azure Spring Cloud в настоящее время предлагается в качестве общедоступной предварительной версии. Предложения общедоступной предварительной версии позволяют клиентам поэкспериментировать с новыми функциями до официального выпуска.  Функции и службы общедоступной предварительной версии не предназначены для использования в рабочей среде.  Чтобы получить дополнительные сведения о поддержке на этапе использования предварительных версий, ознакомьтесь с разделом [Вопросы и ответы](https://azure.microsoft.com/support/faq/) или оформите [запрос на поддержку](https://docs.microsoft.com/azure/azure-supportability/how-to-create-azure-support-request).
+> Azure Spring Cloud в настоящее время предлагается в качестве общедоступной предварительной версии. Предложения общедоступной предварительной версии позволяют клиентам поэкспериментировать с новыми функциями до официального выпуска.  Функции и службы общедоступной предварительной версии не предназначены для использования в рабочей среде.  Чтобы получить дополнительные сведения о поддержке на этапе использования предварительных версий, ознакомьтесь с разделом [Вопросы и ответы](https://azure.microsoft.com/support/faq/) или оформите [запрос на поддержку](https://docs.microsoft.com/azure/azure-portal/supportability/how-to-create-azure-support-request).
 
 >[!TIP]
 > Azure Cloud Shell — это бесплатная интерактивная оболочка, с помощью которой можно выполнять действия, описанные в этой статье.  Она содержит предварительно установленные общие инструменты Azure вместе с новейшими версиями Git, JDK, Maven и Azure CLI. Если вы вошли в подписку Azure, запустите [Azure Cloud Shell](https://shell.azure.com) на сайте shell.azure.com.  Дополнительные сведения об Azure Cloud Shell см. в [нашей документации](../cloud-shell/overview.md)
@@ -68,6 +68,10 @@ az extension add --name spring-cloud
 
 Развертывание службы занимает около 5 минут.  После развертывания появится страница **Обзор** для экземпляра службы.
 
+> [!div class="nextstepaction"]
+> [У меня есть проблема](https://www.research.net/r/javae2e?tutorial=asc-portal-quickstart&step=provision)
+
+
 ## <a name="set-up-your-configuration-server"></a>Настройка сервера конфигурации
 
 1. Перейдите на страницу **Обзор** службы и выберите **Config Server** (Сервер конфигурации).
@@ -79,6 +83,9 @@ az extension add --name spring-cloud
 1. Щелкните **Применить**, чтобы сохранить изменения.
 
     ![Снимок экрана, где отображается окно портала ASC](media/spring-cloud-quickstart-launch-app-portal/portal-config.png)
+
+> [!div class="nextstepaction"]
+> [У меня есть проблема](https://www.research.net/r/javae2e?tutorial=asc-portal-quickstart&step=config-server)
 
 ## <a name="build-and-deploy-microservice-applications"></a>Создание и развертывание приложений микрослужб
 
@@ -121,6 +128,9 @@ az extension add --name spring-cloud
 
 1. Для завершения развертывания приложений потребуется несколько минут. Чтобы убедиться, что они развернуты, перейдите в колонку **Приложения** на портале Azure. Вы увидите строку каждого из трех приложений.
 
+> [!div class="nextstepaction"]
+> [У меня есть проблема](https://www.research.net/r/javae2e?tutorial=asc-portal-quickstart&step=deploy)
+
 ## <a name="assign-a-public-endpoint-to-gateway"></a>Назначение общедоступной конечной точки шлюзу
 
 1. В меню слева откройте вкладку **Приложения**.
@@ -135,8 +145,10 @@ az extension add --name spring-cloud
 
     ![Снимок экрана, где отображается окно портала ASC](media/spring-cloud-quickstart-launch-app-portal/sample-app.png)
 
+> [!div class="nextstepaction"]
+> [У меня есть проблема](https://www.research.net/r/javae2e?tutorial=asc-portal-quickstart&step=public-endpoint)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из этого руководства вы узнали, как выполнить следующие действия:
 

@@ -3,18 +3,18 @@ title: Пример скрипта Azure PowerShell. Скачивание шаб
 description: Скачивание шаблона конфигурации устройства.
 services: vpn-gateway
 documentationcenter: vpn-gateway
-author: anzaman
+author: yushwang
 ms.service: vpn-gateway
 ms.devlang: powershell
 ms.topic: sample
-ms.date: 04/17/2018
-ms.author: alzam
-ms.openlocfilehash: a4cec6661750935cefd3767be7e10e2674ee8473
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.date: 01/09/2020
+ms.author: yushwang
+ms.openlocfilehash: 11906dfa8a3d7c49b71ff1cdcc51d8ae5c6cbdc6
+ms.sourcegitcommit: 12a26f6682bfd1e264268b5d866547358728cd9a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "66113670"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75862424"
 ---
 # <a name="download-vpn-device-template-using-powershell"></a>Скачивание шаблона VPN-устройства с помощью PowerShell
 
@@ -48,11 +48,11 @@ Remove-AzResourceGroup -Name TestRG1
 
 Чтобы создать развертывание, скрипт использует следующие команды. Для каждого элемента в таблице приведены ссылки на документацию по команде.
 
-| Команда | Примечания |
+| Get-Help | Примечания |
 |---|---|
 | [Get-AzVirtualNetworkGatewaySupportedVpnDevice](/powershell/module/az.network/Get-azVirtualNetworkGatewaySupportedVpnDevice) | Выводит список всех доступных моделей и версий VPN-устройств. |
 | [Get-AzVirtualNetworkGatewayConnectionVpnDeviceConfigScript](/powershell/module/az.network/Get-azVirtualNetworkGatewayConnectionVpnDeviceConfigScript) | Позволяет скачать шаблон конфигурации для подключения. |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о модуле Azure PowerShell см. в [документации по Azure PowerShell](/powershell/azure/overview).

@@ -4,14 +4,14 @@ description: Начните работу с приложениями Linux в С
 ms.topic: quickstart
 ms.date: 10/22/2019
 ms.custom: seo-python-october2019
-experimental: false
-experiment_id: 1e304dc9-5add-4b
-ms.openlocfilehash: 67fbffbe96bc32b6ec38fa75c1e754c7f11d38d6
-ms.sourcegitcommit: 48b7a50fc2d19c7382916cb2f591507b1c784ee5
+experimental: true
+experiment_id: 01a9132f-eaab-4c
+ms.openlocfilehash: aaf1f5cb6a11e0a5358d6c8a59581b46e57a3274
+ms.sourcegitcommit: 05cdbb71b621c4dcc2ae2d92ca8c20f216ec9bc4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74687483"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76045919"
 ---
 # <a name="quickstart-create-a-python-app-in-azure-app-service-on-linux"></a>Краткое руководство. Создание приложения Python в Службе приложений Azure в Linux
 
@@ -19,12 +19,12 @@ ms.locfileid: "74687483"
 
 Если вы предпочитаете развертывать приложения с помощью интегрированной среды разработки, см. статью [Развертывание приложений Python в службе приложений из Visual Studio Code](/azure/python/tutorial-deploy-app-service-on-linux-01).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 - Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio).
 - <a href="https://www.python.org/downloads/" target="_blank">Python 3.7</a> (также поддерживается Python 3.6)
 - <a href="https://git-scm.com/downloads" target="_blank">Git</a>
-- <a href="https://docs.microsoft.com/cli/azure/install-azure-cli" target="_blank">Интерфейс командной строки Azure</a>
+- <a href="https://docs.microsoft.com/cli/azure/install-azure-cli" target="_blank">Azure CLI</a>
 
 ## <a name="download-the-sample"></a>Скачивание примера приложения
 
@@ -52,7 +52,7 @@ cd python-docs-hello-world
 python3 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
-FLASK_APP=application.py
+export FLASK_APP=application.py
 flask run
 ```
 
@@ -80,7 +80,7 @@ flask run
 
 Откройте веб-браузер и перейдите к примеру приложения по адресу `http://localhost:5000/`. Приложение отображает сообщение **Hello World!** .
 
-![Локальный запуск примера приложения Python](./media/quickstart-python/run-hello-world-sample-python-app-in-browser.png)
+![Локальный запуск примера приложения Python](./media/quickstart-python/run-hello-world-sample-python-app-in-browser-localhost.png)
 
 В окне терминала нажмите клавиши **CTRL**+**C**, чтобы выйти из веб-сервера.
 
@@ -98,7 +98,7 @@ az login
 
 Команда [`az webapp up`](/cli/azure/webapp#az-webapp-up) создает веб-приложение в Службе приложений и развертывает ваш код.
 
-В папке *python-docs-hello-world*, содержащей пример кода, выполните следующую команду `az webapp up`. Замените `<app-name>` глобальным уникальным именем приложения (*допустимые символы: `a-z`, `0-9` и `-`* ). Также замените `<location-name>` на регион Azure, например **centralus**, **eastasia**, **westeurope**, **koreasouth**, **brazilsouth**, **centralindia** и т. д. (Список допустимых регионов для учетной записи Azure можно получить, выполнив команду [`az account locations-list`](/cli/azure/appservice?view=azure-cli-latest.md#az-appservice-list-locations).)
+В папке *python-docs-hello-world*, содержащей пример кода, выполните следующую команду `az webapp up`. Замените `<app-name>` глобальным уникальным именем приложения (*допустимые символы: `a-z`, `0-9` и `-`* ). Также замените `<location-name>` на регион Azure, например **centralus**, **eastasia**, **westeurope**, **koreasouth**, **brazilsouth**, **centralindia** и т. д. (Список допустимых регионов для учетной записи Azure можно получить, выполнив команду [`az account list-locations`](/cli/azure/appservice?view=azure-cli-latest.md#az-appservice-list-locations).)
 
 
 ```terminal
@@ -197,7 +197,7 @@ az webapp log tail --name <app-name> --resource-group <resource-group-name>
 
 ## <a name="manage-the-azure-app"></a>Управление приложением Azure
 
-Перейдите на <a href="https://portal.azure.com" target="_blank">портал Azure</a>, чтобы управлять созданным приложением. Найдите и выберите **Службы приложений**.
+Перейдите на <a href="https://portal.azure.com" target="_blank">портал Azure</a>, чтобы управлять созданным приложением. Найдите в поиске и выберите **Службы приложений**.
 
 ![Перейдите к разделу службы приложений на портале Azure](./media/quickstart-python/navigate-to-app-services-in-the-azure-portal.png)
 
@@ -221,7 +221,7 @@ az webapp log tail --name <app-name> --resource-group <resource-group-name>
 az group delete -n <resource-group-name>
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Руководство. Веб-приложение Python (Django) с PostgreSQL](tutorial-python-postgresql-app.md)

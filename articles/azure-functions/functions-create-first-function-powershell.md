@@ -6,12 +6,12 @@ ms.author: jaiello
 ms.reviewer: glenga
 ms.date: 04/25/2019
 ms.topic: quickstart
-ms.openlocfilehash: 8f77083ae0107ed9f9c5e3943cfcec25846ff087
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: 934f3f69d46362e4bef4e713bcee23e9a3e24eb6
+ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74227205"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75769359"
 ---
 # <a name="create-your-first-powershell-function-in-azure"></a>Создание первой функции PowerShell в Azure
 
@@ -26,7 +26,7 @@ ms.locfileid: "74227205"
 
 Следующие шаги поддерживаются в операционных системах MacOS, Windows и Linux.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Для работы с этим кратким руководством сделайте следующее:
 
@@ -48,7 +48,7 @@ ms.locfileid: "74227205"
 
 ## <a name="create-a-function-app-project"></a>Создание проекта приложения-функции
 
-С помощью шаблона проекта Функции Azure в Visual Studio Code можно создать проект и затем опубликовать его в виде приложения-функции в Azure. Приложение-функция позволяет группировать функции в логические единицы для развертывания и совместного использования ресурсов, а также управления ими. 
+С помощью шаблона проекта Функции Azure в Visual Studio Code можно создать проект и затем опубликовать его в виде приложения-функции в Azure. позволяющее группировать функции в логические единицы и упростить развертывание, масштабирование и совместное использование ресурсов, а также управление ими.
 
 1. В Visual Studio Code выберите логотип Azure, чтобы отобразить область **Функций Azure**, а затем нажмите значок "Создать новый проект".
 
@@ -128,7 +128,7 @@ ParsedHtml        : mshtml.HTMLDocumentClass
 RawContentLength  : 16
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Вы использовали Visual Studio Code для создания приложения-функции PowerShell с простой функцией, запускаемой по протоколу HTTP. Возможно, вы также захотите узнать подробнее об [отладке функции PowerShell локально](functions-debug-powershell-local.md), используя основные инструменты Функций Azure. Ознакомьтесь с [руководством разработчика PowerShell для Функций Azure](functions-reference-powershell.md).
 

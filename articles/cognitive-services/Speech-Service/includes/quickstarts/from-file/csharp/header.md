@@ -1,20 +1,19 @@
 ---
 title: Краткое руководство. Распознавание речи из звукового файла в службе "Речь" с помощью C#
 titleSuffix: Azure Cognitive Services
-description: ПОДЛЕЖИТ УТОЧНЕНИЮ
 services: cognitive-services
 author: erhopf
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
-ms.topic: quickstart
-ms.date: 10/28/2019
+ms.topic: include
+ms.date: 12/17/2019
 ms.author: erhopf
-ms.openlocfilehash: bd015024f34eb3f908a1581bc9f3caf21a887493
-ms.sourcegitcommit: 5aefc96fd34c141275af31874700edbb829436bb
+ms.openlocfilehash: 5111bbaebd53d6ab28149c9e0770e1c5fd07ac93
+ms.sourcegitcommit: f34165bdfd27982bdae836d79b7290831a518f12
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74819348"
+ms.lasthandoff: 01/13/2020
+ms.locfileid: "75928117"
 ---
 Если вы предпочитаете сразу перейти к работе, просмотрите или скачайте все <a href="https://aka.ms/speech/github-csharp">примеры для пакета SDK службы "Речь" для C#</a> на сайте GitHub. В противном случае ознакомьтесь с инструкциями.

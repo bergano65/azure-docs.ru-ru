@@ -1,25 +1,23 @@
 ---
-title: включить файл
-description: включить файл
-services: azure-app-configuration
 author: yegu
+ms.author: yegu
 ms.service: azure-app-configuration
 ms.topic: include
 ms.date: 12/03/2019
-ms.author: yegu
-ms.custom: include file
-ms.openlocfilehash: ccd2a0ded1cd915dc52dea1449d75136bbef18fc
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: ceeeb5ee155624e050f36e733a464c2cb21db88c
+ms.sourcegitcommit: c32050b936e0ac9db136b05d4d696e92fefdf068
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75413402"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75750288"
 ---
 1. Чтобы создать хранилище Конфигурации приложений, войдите на [портал Azure](https://portal.azure.com). Выберите **Создать ресурс** в левом верхнем углу домашней страницы. В поле **Поиск в Marketplace** введите **App Configuration** и нажмите клавишу ВВОД.
 
-    ![Поиск службы конфигурации приложений](../articles/azure-app-configuration/media/quickstarts/azure-app-configuration-new.png)
+    ![Поиск службы конфигурации приложений](media/azure-app-configuration-create/azure-portal-search.png)
 
 1. В результатах поиска выберите **Конфигурация приложений** и щелкните **Создать**.
+
+    ![Нажмите кнопку "Создать"](media/azure-app-configuration-create/azure-portal-app-configuration-create.png)
 
 1. В области **Конфигурация приложений** > **Создать** введите приведенные ниже параметры.
 
@@ -30,7 +28,7 @@ ms.locfileid: "75413402"
     | **группа ресурсов** | *AppConfigTestResources* | Выберите или создайте группу ресурсов для ресурса хранилища Конфигурации приложений. Эта группа может быть полезна для упорядочения нескольких ресурсов, которые может потребоваться удалить одновременно путем удаления группы ресурсов. Дополнительные сведения см. в статье [Управление ресурсами Azure через портал](/azure/azure-resource-manager/resource-group-overview). |
     | **Местоположение** | *Центральная часть США* | В поле **Расположение** укажите, где будет географически располагаться хранилище конфигураций приложения. Для наилучшей производительности создайте ресурс в одном регионе с другими компонентами приложения. |
 
-    ![Создание ресурса хранилища Конфигурации приложений](../articles/azure-app-configuration/media/quickstarts/azure-app-configuration-create.png)
+    ![Создание ресурса хранилища Конфигурации приложений](media/azure-app-configuration-create/azure-portal-app-configuration-create-settings.png)
 
 1. Нажмите кнопку **Создать**. Развертывание может занять несколько минут.
 

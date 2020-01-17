@@ -8,23 +8,23 @@ ms.service: storage
 ms.subservice: queues
 ms.topic: tutorial
 ms.reviewer: cbrooks
-ms.openlocfilehash: c8e1d5c1c11c4fdf902c7be7bc03be298e93a8b9
-ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
+ms.openlocfilehash: 9cbdc5231fdc9f836f300b1a3a81a237a9efc123
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68721142"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75968202"
 ---
-# <a name="tutorial-work-with-azure-storage-queues"></a>Руководство по Работа с очередями хранилища Azure
+# <a name="tutorial-work-with-azure-storage-queues"></a>Руководство. Работа с очередями хранилища Azure
 
 Хранилище очередей Azure реализует облачный механизм очередей для поддержки взаимодействия между компонентами распределенного приложения. Каждая очередь отслеживает список сообщений, которые добавляются компонентом отправителя и обрабатываются компонентом получателя. Очередь позволяет мгновенно масштабировать приложение при любом изменении нагрузки. В этой статье описаны основные процессы работы с очередью хранилища Azure.
 
-Из этого руководства вы узнаете, как выполнять следующие задачи:
+В этом руководстве описано следующее.
 
 > [!div class="checklist"]
 >
 > - Создание учетной записи хранения Azure
-> - Создание приложения
+> - Создайте приложение
 > - Добавление поддержки для асинхронных вызовов
 > - Создание очереди
 > - Вставка сообщения в очередь
@@ -33,7 +33,7 @@ ms.locfileid: "68721142"
 > - Проверка аргументов командной строки
 > - Создание и запуск приложения
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 - Получите бесплатную копию межплатформенного редактора [Visual Studio Code](https://code.visualstudio.com/download).
 - Скачайте и установите [пакет SDK для .NET Core](https://dotnet.microsoft.com/download).
@@ -41,9 +41,9 @@ ms.locfileid: "68721142"
 
 ## <a name="create-an-azure-storage-account"></a>Создание учетной записи хранения Azure
 
-Прежде всего создайте учетную запись хранения Azure. Пошаговые инструкции по созданию учетной записи хранения см. в [этом кратком руководстве](../common/storage-quickstart-create-account.md?toc=%2Fazure%2Fstorage%2Fqueues%2Ftoc.json).
+Прежде всего создайте учетную запись хранения Azure. Пошаговые инструкции по созданию учетной записи хранения см. в [этом кратком руководстве](../common/storage-account-create.md?toc=%2Fazure%2Fstorage%2Fqueues%2Ftoc.json).
 
-## <a name="create-the-app"></a>Создание приложения
+## <a name="create-the-app"></a>Создайте приложение
 
 Создайте приложение .NET Core с именем **QueueApp**. Для простоты одно приложение будет отправлять сообщения в очередь и принимать их.
 
@@ -503,9 +503,9 @@ await theQueue.AddMessageAsync(message, TimeSpan.FromSeconds(-1), null, null, nu
    C:\Tutorials\QueueApp>_
    ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-Из этого руководства вы узнали, как выполнить следующие задачи:
+В этом руководстве вы узнали, как выполнять следующие задачи:
 
 1. Создание очереди
 2. Добавление и удаление сообщений из очереди

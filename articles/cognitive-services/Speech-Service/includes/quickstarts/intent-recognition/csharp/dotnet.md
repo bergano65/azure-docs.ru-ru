@@ -10,19 +10,19 @@ ms.date: 01/02/2020
 ms.topic: include
 ms.author: erhopf
 zone_pivot_groups: programming-languages-set-two
-ms.openlocfilehash: 58cdf3ba369c4377f123f4e3dfe34414c5491f38
-ms.sourcegitcommit: 51ed913864f11e78a4a98599b55bbb036550d8a5
+ms.openlocfilehash: acd122668a5aa70becbf284bd064535e859ad01b
+ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2020
-ms.locfileid: "75660529"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75772987"
 ---
 ## <a name="prerequisites"></a>предварительные требования
 
 Необходимые условия:
 
-* Если это ваш первый проект C#, воспользуйтесь этим руководством, чтобы <a href="../quickstarts/create-project.md?tabs=dotnet" target="_blank">создать пустой пример проекта</a>.
-* <a href="../quickstarts/setup-platform.md?tabs=dotnet" target="_blank">Установите пакет SDK для службы "Речь" для среды разработки</a>.
+* Если это ваш первый проект C#, воспользуйтесь этим руководством, чтобы <a href="~/articles/cognitive-services/Speech-Service/quickstarts/create-project.md?tabs=dotnet" target="_blank">создать пустой пример проекта</a>.
+* <a href="~/articles/cognitive-services/Speech-Service/quickstarts/setup-platform.md?tabs=dotnet" target="_blank">Установите пакет SDK для службы "Речь" для среды разработки</a>.
 
 ## <a name="create-a-luis-app-for-intent-recognition"></a>Создание приложения LUIS для распознавания намерений
 

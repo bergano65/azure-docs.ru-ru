@@ -1,36 +1,36 @@
 ---
-title: включение файла
-description: включение файла
+title: включить файл
+description: включить файл
 services: digital-twins
 ms.author: alinast
 author: alinamstanciu
 manager: bertvanhoof
 ms.service: digital-twins
 ms.topic: include
-ms.date: 11/12/2019
+ms.date: 01/07/2020
 ms.custom: include file
-ms.openlocfilehash: 4ed5be09d952d4d64c269e3eaf698ad7a74fffdd
-ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
+ms.openlocfilehash: 9ccdc7a438d1dade534d39dc97a39a3bdae37dc4
+ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74014132"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75895394"
 ---
-1. Войдите на [портале Azure](https://portal.azure.com).
+1. Войдите на [портал Azure](https://portal.azure.com).
 
 1. На боковой панели домашней страницы выберите **+ Создать ресурс**. 
 
-   [![Разверните боковую панель домашней страницы, а затем выберите "+ Создать ресурс"](./media/create-digital-twins-portal/create-a-resource.png)](./media/create-digital-twins-portal/create-a-resource.png#lightbox)
+   [![Разверните боковую панель домашней страницы, а затем выберите "+ Создать ресурс"](./media/create-digital-twins-portal/azure-portal-create-a-resource.png)](./media/create-digital-twins-portal/azure-portal-create-a-resource.png#lightbox)
 
 1. Выполните поиск по фразе **Digital Twins** и выберите **Digital Twins**. 
 
-   [![Выбранные элементы для создания экземпляра Digital Twins](./media/create-digital-twins-portal/create-digital-twins.png)](./media/create-digital-twins-portal/create-digital-twins.png#lightbox)
+   [![Выбранные элементы для создания экземпляра Digital Twins](./media/create-digital-twins-portal/azure-portal-create-digital-twins.png)](./media/create-digital-twins-portal/azure-portal-create-digital-twins.png#lightbox)
 
    Кроме того, выберите **Интернет вещей**, а затем щелкните **Digital Twins (preview)** (Digital Twins (предварительная версия)).
 
 1. Нажмите кнопку **Создать**, чтобы начать развертывание.
 
-   [![Создание ресурса и подтверждение развертывания](./media/create-digital-twins-portal/create-and-confirm-resource.png)](./media/create-digital-twins-portal/create-and-confirm-resource.png#lightbox)
+   [![Создание ресурса и подтверждение развертывания](./media/create-digital-twins-portal/azure-create-and-confirm-resource.png)](./media/create-digital-twins-portal/azure-create-and-confirm-resource.png#lightbox)
 
 1. В области **Digital Twins** введите следующие сведения:
    * **Имя ресурса**: Задайте уникальное имя для экземпляра Digital Twins.

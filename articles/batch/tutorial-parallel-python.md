@@ -2,22 +2,22 @@
 title: Запуск параллельной рабочей нагрузки с помощью пакетной службы Azure для Python
 description: Руководство. Обработка медиафайлов параллельно с ffmpeg в пакетной службе с помощью клиентской библиотеки пакетной службы для Python
 services: batch
-author: laurenhughes
+author: ju-shim
 manager: gwallace
 ms.service: batch
 ms.devlang: python
 ms.topic: tutorial
 ms.date: 11/29/2018
-ms.author: lahugh
+ms.author: jushiman
 ms.custom: mvc
-ms.openlocfilehash: d06cf74b2a29af3fea2c24facac2899d09a0a84f
-ms.sourcegitcommit: c79aa93d87d4db04ecc4e3eb68a75b349448cd17
+ms.openlocfilehash: bc73c3c40754d1c3eeb6c86f6c9578047a22d73e
+ms.sourcegitcommit: dbcc4569fde1bebb9df0a3ab6d4d3ff7f806d486
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71090787"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76029253"
 ---
-# <a name="tutorial-run-a-parallel-workload-with-azure-batch-using-the-python-api"></a>Руководство по Запуск параллельной рабочей нагрузки с помощью пакета Azure с использованием Python API
+# <a name="tutorial-run-a-parallel-workload-with-azure-batch-using-the-python-api"></a>Руководство. Запуск параллельной рабочей нагрузки с помощью пакета Azure с использованием Python API
 
 Используйте пакетную службу Azure, чтобы эффективно выполнять пакетные задания для крупномасштабных параллельных и высокопроизводительных вычислений (HPC). В этом руководстве рассматривается пример Python для запуска параллельной рабочей нагрузки с помощью пакетной службы Azure. Вы изучите общий рабочий процесс приложения пакетной службы и узнаете, как программно взаимодействовать с ресурсами пакетной службы и службы хранилища. Вы узнаете, как выполнять следующие задачи:
 
@@ -27,13 +27,13 @@ ms.locfileid: "71090787"
 > * Создание пула вычислительных узлов для запуска приложения.
 > * Создание задания и задач для обработки входных файлов.
 > * Мониторинг выполнения задач.
-> * Извлечение выходных файлов.
+> * Извлечение выходных файлов
 
 В этом руководстве вы преобразовываете медиафайлы формата MP4 в формат MP3 с помощью инструмента с открытым кодом [ffmpeg](https://ffmpeg.org/). 
 
 [!INCLUDE [quickstarts-free-trial-note.md](../../includes/quickstarts-free-trial-note.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * [Python версии 2.7 или 3.3 и более поздней](https://www.python.org/downloads/).
 
@@ -65,7 +65,7 @@ git clone https://github.com/Azure-Samples/batch-python-ffmpeg-tutorial.git
 pip install -r requirements.txt
 ```
 
-Откройте файл `config.py`. Обновите строки учетных данных учетной записи пакетной службы и учетной записи хранения со значениями, уникальными для ваших учетных записей. Например:
+Откройте файл `config.py`. Обновите строки учетных данных учетной записи пакетной службы и учетной записи хранения со значениями, уникальными для ваших учетных записей. Пример:
 
 
 ```Python
@@ -76,7 +76,7 @@ _STORAGE_ACCOUNT_NAME = 'mystorageaccount'
 _STORAGE_ACCOUNT_KEY = 'xxxxxxxxxxxxxxxxy4/xxxxxxxxxxxxxxxxfwpbIC5aAWA8wDu+AFXZB827Mt9lybZB1nUcQbQiUrkPtilK5BQ=='
 ```
 
-### <a name="run-the-app"></a>Запуск приложения
+### <a name="run-the-app"></a>Запустите приложение
 
 Выполните следующее, чтобы запустить этот сценарий.
 
@@ -199,7 +199,7 @@ new_pool = batch.models.PoolAddParameter(
 batch_service_client.pool.add(new_pool)
 ```
 
-### <a name="create-a-job"></a>создать задание;
+### <a name="create-a-job"></a>Создание задания
 
 Пакетное задание указывает пул для запуска задач и дополнительные параметры, такие как приоритет и расписание работы. Пример создает задание путем вызова `create_job`. Определенная функция использует класс [JobAddParameter](/python/api/azure-batch/azure.batch.models.jobaddparameter) для создания задания в пуле. Метод [job.add](/python/api/azure-batch/azure.batch.operations.joboperations) отправляет пул в пакетную службу. Изначально у задания нет задач.
 
@@ -271,7 +271,7 @@ while datetime.datetime.now() < timeout_expiration:
 
 Ставшие ненужными группу ресурсов, учетную запись пакетной службы и учетную запись хранения можно удалить. Для этого на портале Azure выберите группу ресурсов для учетной записи пакетной службы и щелкните **Удалить группу ресурсов**.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из этого руководства вы узнали, как выполнять такие задачи:
 
@@ -281,7 +281,7 @@ while datetime.datetime.now() < timeout_expiration:
 > * Создание пула вычислительных узлов для запуска приложения.
 > * Создание задания и задач для обработки входных файлов.
 > * Мониторинг выполнения задач.
-> * Извлечение выходных файлов.
+> * Извлечение выходных файлов
 
 Дополнительные примеры использования Python API для планирования и обработки рабочих нагрузок пакетной службы см. в примерах на сайте GitHub.
 

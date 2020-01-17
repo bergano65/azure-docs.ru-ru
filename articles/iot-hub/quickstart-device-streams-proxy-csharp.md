@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.custom: mvc
 ms.date: 03/14/2019
 ms.author: robinsh
-ms.openlocfilehash: d131e0112070dcc60e601b2859e8c9df8d40764a
-ms.sourcegitcommit: a22cb7e641c6187315f0c6de9eb3734895d31b9d
+ms.openlocfilehash: b48c43f90be3f43b05dcb4028c774836ffd196b7
+ms.sourcegitcommit: 05cdbb71b621c4dcc2ae2d92ca8c20f216ec9bc4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74084346"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76045973"
 ---
 # <a name="quickstart-enable-ssh-and-rdp-over-an-iot-hub-device-stream-by-using-a-c-proxy-application-preview"></a>Краткое руководство. Подключение по протоколу SSH и RDP через поток устройств центра Интернета вещей с помощью прокси-приложения C# (предварительная версия)
 
@@ -47,7 +47,7 @@ ms.locfileid: "74084346"
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * Предварительная версия потоков устройств сейчас поддерживается только в центрах Интернета вещей, созданных в следующих регионах:
 
@@ -152,7 +152,7 @@ dotnet run {DeviceConnectionString} localhost 22
 
 ### <a name="run-the-service-local-proxy-application"></a>Запуск приложения локального прокси-сервера службы
 
-В другом окне терминала на локальном компьютере перейдите к `device-streams-proxy/service` в распакованной папке проекта. Держите следующие сведения под рукой:
+В другом окне терминала на локальном компьютере перейдите к `iot-hub/quickstarts/device-streams-proxy/service` в распакованной папке проекта. Держите следующие сведения под рукой:
 
 | Имя параметра | Значение параметра |
 |----------------|-----------------|
@@ -261,7 +261,7 @@ dotnet run {ServiceConnectionString} MyDevice 2222
 
 [!INCLUDE [iot-hub-quickstarts-clean-up-resources](../../includes/iot-hub-quickstarts-clean-up-resources-device-streams.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В рамках этого краткого руководства вы настроили центр Интернета вещей, зарегистрировали устройство, развернули приложение локальных прокси-серверов устройств и служб, чтобы установить поток устройств через центр Интернета вещей, а также использовали приложения прокси-сервера для туннелирования трафика SSH и RDP. Та же парадигма может размещать другие протоколы клиента или сервера (где сервер запущен на устройстве, например на управляющей программе SSH).
 

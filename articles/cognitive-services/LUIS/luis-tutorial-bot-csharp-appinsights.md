@@ -1,5 +1,5 @@
 ---
-title: Руководство по Application Insights (C#) — LUIS
+title: Руководство. Application Insights (C#) — LUIS
 titleSuffix: Azure Cognitive Services
 description: В руководстве описана процедура добавления сведений, полученных от бота и службы "Распознавание речи", в хранилище данных телеметрии Application Insights.
 services: cognitive-services
@@ -11,26 +11,26 @@ ms.subservice: language-understanding
 ms.topic: tutorial
 ms.date: 10/14/2019
 ms.author: diberry
-ms.openlocfilehash: 036ecbbbd2ea562f3e809691a1b3af62578893f5
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: b9c47685253e2a70c7b5e947debaac6f5f3264b2
+ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73498972"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75888300"
 ---
-# <a name="tutorial-add-luis-results-to-application-insights-from-a-bot-in-c"></a>Руководство по Добавление результатов LUIS в Application Insights из бота C#
+# <a name="tutorial-add-luis-results-to-application-insights-from-a-bot-in-c"></a>Руководство. Добавление результатов LUIS в Application Insights из бота C#
 
 В руководстве описана процедура добавления сведений, полученных от бота и службы "Распознавание речи", в хранилище данных телеметрии [Application Insights](https://azure.microsoft.com/services/application-insights/). Полученные данные можно запрашивать (используя язык Kusto или Power Bi) для анализа, статистической обработки и создания отчетов по намерениям и сущностям фрагментов речи в реальном времени. Этот анализ помогает определить, следует ли добавлять или изменять намерения и сущности приложения LUIS.
 
 [!INCLUDE [Waiting for Bot refresh](./includes/wait-bot-upgrade.md)]
 
-Из этого руководства вы узнаете, как выполнять следующие задачи:
+В этом руководстве описано следующее.
 
 > [!div class="checklist"]
 > * получать данные от бота и службы распознавания речи в Application Insights;
 > * запрашивать данные о распознавании речи из Application Insights.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * Бот службы Azure Bot с подключением к Application Insights.
 * Скачанный код бота из предыдущего **[руководства](luis-csharp-tutorial-bf-v4.md)** по работе с ботами. 
@@ -162,7 +162,7 @@ ms.locfileid: "73498972"
 1. В Visual Studio выполните сборку и запуск бота. 
 1. Запустите эмулятор бота и откройте бота. Этот [шаг](luis-csharp-tutorial-bf-v4.md#use-the-bot-emulator-to-test-the-bot) описан в предыдущем руководстве.
 
-1. Задайте боту вопрос. Этот [шаг](luis-csharp-tutorial-bf-v4.md##use-the-bot-emulator-to-test-the-bot) описан в предыдущем руководстве.
+1. Задайте боту вопрос. Этот [шаг](luis-csharp-tutorial-bf-v4.md#use-the-bot-emulator-to-test-the-bot) описан в предыдущем руководстве.
 
 ## <a name="view-luis-entries-in-application-insights"></a>Просмотр записей LUIS в Application Insights
 
@@ -195,7 +195,7 @@ Application Insights позволяет выполнять запросы дан
 
 Дополнительные сведения о [платформе Bot Framework](https://dev.botframework.com/).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Другие данные, которые может потребоваться добавить в данные Application Insights, включают идентификатор приложения, идентификатор версии, время последнего изменения модели, дату последнего обучения, дату последней публикации. Эти значения можно получить из URL-адреса конечной точки (идентификатор приложения и идентификатор версии) или из вызова API разработки, заданного в параметрах бота веб-приложения и полученного от него.  
 

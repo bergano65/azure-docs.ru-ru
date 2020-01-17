@@ -2,19 +2,19 @@
 title: Отрисовка сцены в облаке с помощью пакетной службы Azure
 description: Руководство. Отрисовка сцены Autodesk 3ds Max с Arnold с помощью пакетной службы рендеринга и интерфейса командной строки Azure
 services: batch
-author: laurenhughes
+author: ju-shim
 manager: gwallace
 ms.service: batch
 ms.topic: tutorial
 ms.date: 12/11/2018
-ms.author: lahugh
+ms.author: jushiman
 ms.custom: mvc
-ms.openlocfilehash: 28914244f7ea84ec133821d4b125cbd3b0378348
-ms.sourcegitcommit: a6718e2b0251b50f1228b1e13a42bb65e7bf7ee2
+ms.openlocfilehash: e63bd26ec226cfeba1c11570b085fd88570fbb2d
+ms.sourcegitcommit: dbcc4569fde1bebb9df0a3ab6d4d3ff7f806d486
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71272337"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76029193"
 ---
 # <a name="tutorial-render-a-scene-with-azure-batch"></a>Руководство. Отрисовка сцены с помощью пакетной службы Azure 
 
@@ -23,13 +23,13 @@ ms.locfileid: "71272337"
 > [!div class="checklist"]
 > * Отправка данных в хранилище Azure.
 > * Создание пула пакетной службы для рендеринга.
-> * Отрисовка однокадровой сцены.
+> * Отрисовка однокадровой сцены
 > * Масштабирование пула и отрисовка сцены с несколькими кадрами.
 > * Скачивание выводимых данных.
 
 В этом руководстве вы выполните рендеринг сцены 3ds Max с помощью пакетной службы Azure и отрисовщика трассировки лучей [Arnold](https://www.autodesk.com/products/arnold/overview). Пул пакетной службы использует образ Azure Marketplace с предварительно установленными графиками и визуализацией приложений, предоставляющие лицензирование с оплатой по мере использования.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Вам потребуется подписка с оплатой по мере использования или другой вариант приобретения Azure для использования приложениями для рендеринга в пакетной службе Azure по принципу оплаты по мере использования. **Лицензирование с оплатой за использование не поддерживается, если использовать бесплатное предложение Azure, которое предоставляет денежной кредит.**
 
@@ -96,7 +96,7 @@ az storage container create \
     --name scenefiles
 ```
 
-Скачайте сцену `MotionBlur-Dragon-Flying.max` с сайта [GitHub](https://github.com/Azure/azure-docs-cli-python-samples/raw/master/batch/render-scene/MotionBlur-DragonFlying.max) в локальный рабочий каталог. Например:
+Скачайте сцену `MotionBlur-Dragon-Flying.max` с сайта [GitHub](https://github.com/Azure/azure-docs-cli-python-samples/raw/master/batch/render-scene/MotionBlur-DragonFlying.max) в локальный рабочий каталог. Пример:
 
 ```azurecli-interactive
 wget -O MotionBlur-DragonFlying.max https://github.com/Azure/azure-docs-cli-python-samples/raw/master/batch/render-scene/MotionBlur-DragonFlying.max
@@ -186,7 +186,7 @@ se=2020-11-15&sp=rw&sv=2019-09-24&ss=b&srt=co&sig=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 ## <a name="render-a-single-frame-scene"></a>Отрисовка однокадровой сцены
 
-### <a name="create-a-job"></a>создать задание;
+### <a name="create-a-job"></a>Создание задания
 
 Создайте задание рендеринга для запуска в пуле с помощью команды [az batch job create](/cli/azure/batch/job#az-batch-job-create). Изначально у задания нет задач.
 
@@ -301,7 +301,7 @@ az batch task create --job-id myrenderjob --json-file myrendertask_multi.json
 
 ### <a name="view-task-output"></a>Просмотр выходных данных задачи
 
-На запуск задания может потребоваться несколько минут. Просмотреть состояние задач можно с помощью команды [az batch task list](/cli/azure/batch/task#az-batch-task-list). Например:
+На запуск задания может потребоваться несколько минут. Просмотреть состояние задач можно с помощью команды [az batch task list](/cli/azure/batch/task#az-batch-task-list). Пример:
 
 ```azurecli-interactive
 az batch task list \
@@ -309,7 +309,7 @@ az batch task list \
     --output table
 ```
 
-С помощью команды [az batch task show](/cli/azure/batch/task#az-batch-task-show) просмотрите сведения об отдельных задачах. Например:
+С помощью команды [az batch task show](/cli/azure/batch/task#az-batch-task-show) просмотрите сведения об отдельных задачах. Пример:
 
 ```azurecli-interactive
 az batch task show \
@@ -317,7 +317,7 @@ az batch task show \
     --task-id mymultitask1
 ```
  
-Задачи создают выходные файлы *dragon0002.jpg* - *dragon0007.jpg* на вычислительных узлах и передают их в контейнер *job-myrenderjob* в вашей учетной записи хранения. Чтобы просмотреть выходные данные, скачайте файлы в папку на локальном компьютере с помощью команды [az storage blob download-batch](/cli/azure/storage/blob). Например:
+Задачи создают выходные файлы *dragon0002.jpg* - *dragon0007.jpg* на вычислительных узлах и передают их в контейнер *job-myrenderjob* в вашей учетной записи хранения. Чтобы просмотреть выходные данные, скачайте файлы в папку на локальном компьютере с помощью команды [az storage blob download-batch](/cli/azure/storage/blob). Пример:
 
 ```azurecli-interactive
 az storage blob download-batch \
@@ -338,7 +338,7 @@ az storage blob download-batch \
 az group delete --name myResourceGroup
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из этого руководства вы узнали, как выполнять такие задачи:
 
