@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 10/24/2019
 ms.author: rogarana
 ms.custom: include file
-ms.openlocfilehash: c88cba57ed987074c0dde3c8b251f54393667740
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 370cdc18ae5d7680d2ce38b42bdc436367ce3700
+ms.sourcegitcommit: 276c1c79b814ecc9d6c1997d92a93d07aed06b84
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75002686"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76159717"
 ---
 | Размеры дисков SSD (цен. категория "Премиум") | P1* | P2* | P3* | P4 | P6 | P10 | P15 | P20 | P30 | P40 | P50 | P60 | P70 | P80 |
 |-------------------|----|----|----|----|----|-----|-----|-----|-----|-----|-----|------|------|------|
@@ -24,6 +24,5 @@ ms.locfileid: "75002686"
 | Максимальная пиковая пропускная способность на диск** | 170 МиБ/с | 170 МиБ/с | 170 МиБ/с | 170 МиБ/с | 170 МиБ/с | 170 МиБ/с | 170 МиБ/с | 170 МиБ/с |
 | Максимальная длительность пика** | 30 мин  | 30 мин  | 30 мин  | 30 мин  | 30 мин  | 30 мин  | 30 мин  | 30 мин  |
 
-\*Обозначает размер диска, который сейчас находится на этапе предварительной версии. Сведения о доступности в регионах см. в разделе [Размеры новых управляемых и неуправляемых дисков](https://docs.microsoft.com/azure/virtual-machines/linux/faq-for-disks#new-disk-sizes-managed-and-unmanaged).
-
+\*Обозначает размер диска, который сейчас находится на этапе предварительной версии. Сведения о доступности в регионах см. в разделе [Размеры новых управляемых и неуправляемых дисков](https://docs.microsoft.com/azure/virtual-machines/linux/faq-for-disks#new-disk-sizes-managed-and-unmanaged).  
 \*\* Обозначает, что доступна предварительная версия компонента. Дополнительные сведения см. в разделе о [поддержке пакетов дисками](https://docs.microsoft.com/azure/virtual-machines/linux/disk-bursting#regional-availability).
