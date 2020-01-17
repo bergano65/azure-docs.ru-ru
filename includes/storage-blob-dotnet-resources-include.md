@@ -1,19 +1,19 @@
 ---
-title: включение файла
-description: включение файла
+title: включить файл
+description: включить файл
 services: storage
 author: tamram
 ms.service: storage
 ms.topic: include
-ms.date: 07/11/2019
+ms.date: 01/15/2020
 ms.author: tamram
 ms.custom: include file
-ms.openlocfilehash: d72915cc8a96dd2593f640045da71d4569efa60c
-ms.sourcegitcommit: 3f8017692169bd75483eefa96c225d45cd497f06
+ms.openlocfilehash: e32754d94bf6d0c35ac131f244696049f56380e9
+ms.sourcegitcommit: 05cdbb71b621c4dcc2ae2d92ca8c20f216ec9bc4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73591291"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76118106"
 ---
 ## <a name="resources-for-development-with-net"></a>Ресурсы для разработки с помощью .NET
 
@@ -30,7 +30,7 @@ ms.locfileid: "73591291"
 - [Справочная документация по API](/dotnet/api/overview/azure/storage/client)
 - [Исходный код библиотеки](https://github.com/Azure/azure-storage-net/tree/master/Blob)
 - [Package (NuGet) для версии 11. x](https://www.nuget.org/packages/Microsoft.Azure.Storage.Blob/)
-- [Пакет (NuGet) для версии 12. x — Предварительная версия](https://www.nuget.org/packages/Azure.Storage.Blobs)
+- [Package (NuGet) для версии 12. x](https://www.nuget.org/packages/Azure.Storage.Blobs)
 - [Примеры](https://azure.microsoft.com/resources/samples/?sort=0&service=storage&platform=dotnet&term=blob)
 
 ### <a name="net-tools"></a>Средства .NET

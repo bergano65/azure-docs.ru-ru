@@ -3,12 +3,12 @@ title: Развертывание ресурсов в группе управл�
 description: Описывает развертывание ресурсов в области группы управления в шаблоне Azure Resource Manager.
 ms.topic: conceptual
 ms.date: 11/07/2019
-ms.openlocfilehash: e3661225dd69721ab223da0b44d69a592abb59bc
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 4ba4f4d2e95c0b878e9f402fa84139ac5b351e3c
+ms.sourcegitcommit: 5bbe87cf121bf99184cc9840c7a07385f0d128ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75477789"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76121919"
 ---
 # <a name="create-resources-at-the-management-group-level"></a>Создание ресурсов на уровне группы управления
 
@@ -63,7 +63,7 @@ https://schema.management.azure.com/schemas/2019-08-01/managementGroupDeployment
 
 * Функция [resourceGroup()](template-functions-resource.md#resourcegroup)**не** поддерживается.
 * Функция [Subscription ()](template-functions-resource.md#subscription) **не** поддерживается.
-* Функция [resourceId()](template-functions-resource.md#resourceid) поддерживается. Используйте его, чтобы получить идентификатор ресурса для ресурсов, используемых при развертывании на уровне группы управления. Например, получите идентификатор ресурса для определения политики с `resourceId('Microsoft.Authorization/roleDefinitions/', parameters('roleDefinition'))`. Он возвращает идентификатор ресурса в формате `/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}`.
+* Функция [resourceId()](template-functions-resource.md#resourceid) поддерживается. Используйте его, чтобы получить идентификатор ресурса для ресурсов, используемых при развертывании на уровне группы управления. Например, получите идентификатор ресурса для определения политики с `resourceId('Microsoft.Authorization/policyDefinitions/', parameters('policyDefinition'))`. Он возвращает идентификатор ресурса в формате `/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}`.
 * Функции [reference()](template-functions-resource.md#reference) и [list()](template-functions-resource.md#list) поддерживаются.
 
 ## <a name="create-policies"></a>Создайте политики.
@@ -74,30 +74,30 @@ https://schema.management.azure.com/schemas/2019-08-01/managementGroupDeployment
 
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2019-08-01/managementGroupDeploymentTemplate.json#",
-    "contentVersion": "1.0.0.0",
-    "parameters": {},
-    "variables": {},
-    "resources": [
-        {
-            "type": "Microsoft.Authorization/policyDefinitions",
-            "name": "locationpolicy",
-            "apiVersion": "2018-05-01",
-            "properties": {
-                "policyType": "Custom",
-                "parameters": {},
-                "policyRule": {
-                    "if": {
-                        "field": "location",
-                        "equals": "northeurope"
-                    },
-                    "then": {
-                        "effect": "deny"
-                    }
-                }
-            }
+  "$schema": "https://schema.management.azure.com/schemas/2019-08-01/managementGroupDeploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {},
+  "variables": {},
+  "resources": [
+    {
+      "type": "Microsoft.Authorization/policyDefinitions",
+      "apiVersion": "2018-05-01",
+      "name": "locationpolicy",
+      "properties": {
+        "policyType": "Custom",
+        "parameters": {},
+        "policyRule": {
+          "if": {
+            "field": "location",
+            "equals": "northeurope"
+          },
+          "then": {
+            "effect": "deny"
+          }
         }
-    ]
+      }
+    }
+  ]
 }
 ```
 
@@ -107,36 +107,34 @@ https://schema.management.azure.com/schemas/2019-08-01/managementGroupDeployment
 
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2019-08-01/managementGroupDeploymentTemplate.json#",
-    "contentVersion": "1.0.0.0",
-    "parameters": {
-        "policyDefinitionID": {
-            "type": "string"
-        },
-        "policyName": {
-            "type": "string"
-        },
-        "policyParameters": {
-            "type": "object",
-            "defaultValue": {}
-        }
+  "$schema": "https://schema.management.azure.com/schemas/2019-08-01/managementGroupDeploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "policyDefinitionID": {
+      "type": "string"
     },
-    "variables": {},
-    "resources": [
-        {
-            "type": "Microsoft.Authorization/policyAssignments",
-            "name": "[parameters('policyName')]",
-            "apiVersion": "2018-03-01",
-            "properties": {
-                "policyDefinitionId": "[parameters('policyDefinitionID')]",
-                "parameters": "[parameters('policyParameters')]"
-            }
-        }
-    ]
+    "policyName": {
+      "type": "string"
+    },
+    "policyParameters": {
+      "type": "object",
+      "defaultValue": {}
+    }
+  },
+  "variables": {},
+  "resources": [
+    {
+      "type": "Microsoft.Authorization/policyAssignments",
+      "apiVersion": "2018-03-01",
+      "name": "[parameters('policyName')]",
+      "properties": {
+        "policyDefinitionId": "[parameters('policyDefinitionID')]",
+        "parameters": "[parameters('policyParameters')]"
+      }
+    }
+  ]
 }
 ```
-
-
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

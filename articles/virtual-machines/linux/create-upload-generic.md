@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.topic: article
 ms.date: 10/08/2018
 ms.author: mimckitt
-ms.openlocfilehash: d98efd46e3c2fbc11be2cde6a0c4f2b37acc8d7c
-ms.sourcegitcommit: 014e916305e0225512f040543366711e466a9495
+ms.openlocfilehash: ffa99c6ba0157eca133dc36ecbbb159b076b8bc0
+ms.sourcegitcommit: 276c1c79b814ecc9d6c1997d92a93d07aed06b84
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75933999"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76155559"
 ---
 # <a name="information-for-non-endorsed-distributions"></a>Информация о нерекомендованных дистрибутивах
 
@@ -43,7 +43,7 @@ ms.locfileid: "75933999"
 
 ## <a name="general-linux-installation-notes"></a>Общие замечания по установке Linux
 * Azure не поддерживает формат виртуального жесткого диска Hyper-V (VHDX) и может работать только с *фиксированными виртуальными жесткими дисками*.  Можно преобразовать диск в формат VHD с помощью диспетчера Hyper-V или командлета [Convert-VHD](https://docs.microsoft.com/powershell/module/hyper-v/convert-vhd). Если вы используете VirtualBox, при создании диска нужно выбрать **фиксированный размер** вместо динамически выделяемого, который используется по умолчанию.
-* Azure поддерживает только виртуальные машины поколения 1. Виртуальную машину первого поколения можно преобразовать из формата VHDX в формат VHD, а также переключить с динамически расширяемого диска на диск фиксированного размера. Вы не можете изменить поколение виртуальной машины. Дополнительные сведения см. в статье о том, [как выбрать поколение для виртуальной машины в Hyper-V](https://technet.microsoft.com/windows-server-docs/compute/hyper-v/plan/should-i-create-a-generation-1-or-2-virtual-machine-in-hyper-v).
+* Azure поддерживает виртуальные машины Gen1 (Boot BIOS) & Gen2 (Загрузка UEFI).
 * Максимально допустимый размер виртуального жесткого диска составляет 1023 ГБ.
 * При установке системы Linux рекомендуется использовать стандартные разделы, а не диспетчер логических томов (LVM), который часто используется по умолчанию при установке. Это позволит избежать конфликта имен LVM c клонированными виртуальными машинами, особенно если диск с OC может быть подключен к другой идентичной виртуальной машине в целях устранения неполадок. Для дисков данных можно использовать [LVM](configure-lvm.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) или [RAID](configure-raid.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
 * Требуется поддержка ядра для монтирования файловых систем UDF. При первой загрузке в Azure конфигурация подготовки передается в виртуальную машину Linux через UDF-носитель, подключенный к гостевой машине. Агент Azure Linux должен подключить файловую систему UDF для считывания конфигурации и подготовки виртуальной машины.

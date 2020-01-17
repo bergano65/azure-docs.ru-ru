@@ -3,12 +3,12 @@ title: Ошибка "ресурс не найден"
 description: Описание способов устранения ошибок, когда не удается найти ресурс при развертывании с помощью шаблона Azure Resource Manager.
 ms.topic: troubleshooting
 ms.date: 06/06/2018
-ms.openlocfilehash: 832dc15f81c0fd815072b9e95920a4388a94cb0b
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 81a2541be4f0a99aa28186eb6b7289bdb595e678
+ms.sourcegitcommit: 276c1c79b814ecc9d6c1997d92a93d07aed06b84
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75477763"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76152431"
 ---
 # <a name="resolve-not-found-errors-for-azure-resources"></a>Устранение ошибок с поиском ресурсов Azure
 
@@ -41,8 +41,8 @@ Resource Manager нужно получить свойства ресурса, н
 
 ```json
 {
-  "apiVersion": "2015-08-01",
   "type": "Microsoft.Web/sites",
+  "apiVersion": "2015-08-01",
   "dependsOn": [
     "[variables('hostingPlanName')]"
   ],
@@ -76,8 +76,8 @@ Resource Manager нужно получить свойства ресурса, н
 
 ```json
 "properties": {
-    "name": "[parameters('siteName')]",
-    "serverFarmId": "[resourceId('plangroup', 'Microsoft.Web/serverfarms', parameters('hostingPlanName'))]"
+  "name": "[parameters('siteName')]",
+  "serverFarmId": "[resourceId('plangroup', 'Microsoft.Web/serverfarms', parameters('hostingPlanName'))]"
 }
 ```
 

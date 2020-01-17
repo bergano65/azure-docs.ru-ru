@@ -11,12 +11,12 @@ author: jpe316
 ms.author: jordane
 ms.date: 11/22/2019
 ms.custom: seodec18
-ms.openlocfilehash: 9cde171f1c031b4b02a71fe0dac1a689e3ec0722
-ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
+ms.openlocfilehash: f6819ddce777a5740ef1f5f9ab887a0646c4e464
+ms.sourcegitcommit: 5bbe87cf121bf99184cc9840c7a07385f0d128ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75772590"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76122344"
 ---
 # <a name="mlops-model-management-deployment-and-monitoring-with-azure-machine-learning"></a>Млопс: Управление моделями, развертывание и мониторинг с помощью Машинное обучение Azure
 
@@ -90,7 +90,7 @@ ms.locfileid: "75772590"
 При создании образа также добавляются компоненты, необходимые для Машинное обучение Azure. Например, ресурсы, необходимые для запуска веб-службы и взаимодействия с IoT Edge.
 
 #### <a name="batch-scoring"></a>Пакетная оценка
-Пакетная Оценка поддерживается через конвейеры ML. Дополнительные сведения см. [в статье пакетные прогнозы для больших данных](how-to-run-batch-predictions.md).
+Пакетная Оценка поддерживается через конвейеры ML. Дополнительные сведения см. [в статье пакетные прогнозы для больших данных](how-to-use-parallel-run-step.md).
 
 #### <a name="real-time-web-services"></a>Веб-службы в режиме реального времени
 

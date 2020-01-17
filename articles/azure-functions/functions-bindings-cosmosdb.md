@@ -6,12 +6,12 @@ ms.author: cshoe
 ms.topic: reference
 ms.date: 11/21/2017
 ms.custom: seodec18
-ms.openlocfilehash: bae027fc5a3b6ce7b4246c403841fa529b8884cb
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: e30b256d9fa43402c3b2c444aa1a0e0dc16cfdcf
+ms.sourcegitcommit: 5bbe87cf121bf99184cc9840c7a07385f0d128ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74925940"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76120581"
 ---
 # <a name="azure-cosmos-db-bindings-for-azure-functions-1x"></a>Привязки Azure Cosmos DB для службы "Функции Azure" версии 1.х
 
@@ -178,18 +178,18 @@ namespace CosmosDBSamplesV1
 
 В следующей таблице описываются свойства конфигурации привязки, которые задаются в файле *function.json* и атрибуте `CosmosDBTrigger`.
 
-|свойство function.json | Свойство атрибута |Описание|
+|свойство function.json | Свойство атрибута |Description|
 |---------|---------|----------------------|
-|**type** || Нужно задать значение `cosmosDBTrigger`. |
-|**direction** || Нужно задать значение `in`. Этот параметр задается автоматически при создании триггера на портале Azure. |
-|**name** || Имя переменной, используемое в коде функции, представляющей список документов с изменениями. |
+|**type** | Н/Д | Нужно задать значение `cosmosDBTrigger`. |
+|**direction** | Н/Д | Нужно задать значение `in`. Этот параметр задается автоматически при создании триггера на портале Azure. |
+|**name** | Н/Д | Имя переменной, используемое в коде функции, представляющей список документов с изменениями. |
 |**connectionStringSetting**|**ConnectionStringSetting** | Имя параметра приложения, содержащего строку подключения, используемую для подключения к отслеживаемой учетной записи Azure Cosmos DB. |
 |**databaseName**|**DatabaseName**  | Имя базы данных Azure Cosmos DB с отслеживаемой коллекцией. |
 |**collectionName** |**CollectionName** | Имя отслеживаемой коллекции. |
 |**leaseConnectionStringSetting** | **LeaseConnectionStringSetting** | (Необязательно.) Имя параметра приложения, содержащее строку подключения для службы, содержащей коллекцию аренды. Если значение не задано, используется значение `connectionStringSetting`. Этот параметр задается автоматически при создании привязки на портале. Строка подключения для коллекции аренд должна иметь разрешения на запись.|
 |**leaseDatabaseName** |**LeaseDatabaseName** | (Необязательно.) Имя базы данных, в которой содержится коллекция, используемая для хранения аренд. Если значение не задано, используется значение параметра `databaseName`. Этот параметр задается автоматически при создании привязки на портале. |
 |**leaseCollectionName** | **LeaseCollectionName** | (Необязательно.) Имя коллекции, используемой для хранения аренд. Если значение не задано, используется значение `leases`. |
-|**createLeaseCollectionIfNotExists** | **CreateLeaseCollectionIfNotExists** | (Необязательно.) Если задано значение `true`, коллекция аренд создается автоматически, если она не создана. По умолчанию используется значение `false`. |
+|**createLeaseCollectionIfNotExists** | **CreateLeaseCollectionIfNotExists** | (Необязательно.) Если задано значение `true`, коллекция аренд создается автоматически, если она не создана. Значение по умолчанию — `false`. |
 |**leasesCollectionThroughput**| **LeasesCollectionThroughput**| (Необязательно.) Определяет количество единиц запросов для назначения при создании коллекции аренд. Этот параметр используется, только если для `createLeaseCollectionIfNotExists` задано значение `true`. Этот параметр задается автоматически при создании привязки с помощью портала.
 |**leaseCollectionPrefix**| **LeaseCollectionPrefix**| (Дополнительно) Если параметр задан, то он добавляет префикс к созданной аренде в коллекции аренды для этой функции, позволяя двум разным функциям Azure совместно эффективно использовать коллекцию аренд с помощью различных префиксов.
 |**feedPollDelay**| **FeedPollDelay**| (Дополнительно) Если параметр задан, то он определяет задержку между опросами секции на наличие новых изменений в веб-канале, после того как все текущие изменения будут утеряны (в миллисекундах). По умолчанию это 5000 (5 секунд).
@@ -217,7 +217,7 @@ namespace CosmosDBSamplesV1
 
 # <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
-В этом разделе содержатся следующие примеры:
+Этот раздел содержит следующие примеры.
 
 * [Триггер очереди, поисковый идентификатор из JSON](#queue-trigger-look-up-id-from-json-c)
 * [Триггер HTTP, поисковый идентификатор из строки запроса](#http-trigger-look-up-id-from-query-string-c)
@@ -525,7 +525,7 @@ namespace CosmosDBSamplesV1
 
 # <a name="c-scripttabcsharp-script"></a>[C#Индекса](#tab/csharp-script)
 
-В этом разделе содержатся следующие примеры:
+Этот раздел содержит следующие примеры.
 
 * [Триггер очереди, поисковый идентификатор из строки](#queue-trigger-look-up-id-from-string-c-script)
 * [Триггер очереди, получение нескольких документов, используется SqlQuery](#queue-trigger-get-multiple-docs-using-sqlquery-c-script)
@@ -883,7 +883,7 @@ public static async Task<HttpResponseMessage> Run(HttpRequestMessage req, Docume
 
 # <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
 
-В этом разделе содержатся следующие примеры:
+Этот раздел содержит следующие примеры.
 
 * [Триггер очереди, поисковый идентификатор из JSON](#queue-trigger-look-up-id-from-json-javascript)
 * [Триггер HTTP, поисковый идентификатор из строки запроса](#http-trigger-look-up-id-from-query-string-javascript)
@@ -1113,16 +1113,16 @@ module.exports = function (context, req, toDoItem) {
 
 В следующей таблице описываются свойства конфигурации привязки, которые задаются в файле *function.json* и атрибуте `DocumentDB`.
 
-|свойство function.json | Свойство атрибута |Описание|
+|свойство function.json | Свойство атрибута |Description|
 |---------|---------|----------------------|
-|**type**     || Нужно задать значение `documentdb`.        |
-|**direction**     || Нужно задать значение `in`.         |
-|**name**     || Имя параметра привязки, представляющего документ в функции.  |
+|**type**     | Н/Д | Нужно задать значение `documentdb`.        |
+|**direction**     | Н/Д | Нужно задать значение `in`.         |
+|**name**     | Н/Д | Имя параметра привязки, представляющего документ в функции.  |
 |**databaseName** |**DatabaseName** |База данных, содержащая документ.        |
 |**collectionName** |**CollectionName** | Имя коллекции, содержащей документ. |
-|**id**    | **Id** | Идентификатор документа, который нужно получить. Это свойство поддерживает [выражения привязок](./functions-bindings-expressions-patterns.md). Не задавайте свойства **id** или **sqlQuery** одновременно. Если не задать ни одного из них, извлекается вся коллекция. |
+|**идентификатор**    | **Id** | Идентификатор документа, который нужно получить. Это свойство поддерживает [выражения привязок](./functions-bindings-expressions-patterns.md). Не задавайте свойства **id** или **sqlQuery** одновременно. Если не задать ни одного из них, извлекается вся коллекция. |
 |**sqlQuery**  |**SqlQuery**  | SQL-запрос к Azure Cosmos DB, используемый для извлечения нескольких документов. Свойство поддерживает привязки времени выполнения, как показано в примере: `SELECT * FROM c where c.departmentId = {departmentId}`. Не задавайте свойства **id** или **sqlQuery** одновременно. Если не задать ни одного из них, извлекается вся коллекция.|
-|**подключение**     |**ConnectionStringSetting**|Имя параметра приложения, содержащего строку подключения к Azure Cosmos DB.        |
+|**connection**     |**ConnectionStringSetting**|Имя параметра приложения, содержащего строку подключения к Azure Cosmos DB.        |
 |**partitionKey**|**PartitionKey**|Задает значение ключа секции для поиска. Может включать параметры привязки.|
 
 [!INCLUDE [app settings to local.settings.json](../../includes/functions-app-settings-local.md)]
@@ -1149,7 +1149,7 @@ module.exports = function (context, req, toDoItem) {
 
 # <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
-В этом разделе содержатся следующие примеры:
+Этот раздел содержит следующие примеры.
 
 * Триггер очереди, запись одного документа
 * Триггер очереди, запись документов с помощью `IAsyncCollector`
@@ -1235,7 +1235,7 @@ namespace CosmosDBSamplesV1
 
 # <a name="c-scripttabcsharp-script"></a>[C#Индекса](#tab/csharp-script)
 
-В этом разделе содержатся следующие примеры:
+Этот раздел содержит следующие примеры.
 
 * Триггер очереди, запись одного документа
 * Триггер очереди, запись документов с помощью `IAsyncCollector`
@@ -1452,17 +1452,17 @@ public static async Task Run(ToDoItem[] toDoItemsIn, IAsyncCollector<ToDoItem> t
 
 В следующей таблице описываются свойства конфигурации привязки, которые задаются в файле *function.json* и атрибуте `DocumentDB`.
 
-|свойство function.json | Свойство атрибута |Описание|
+|свойство function.json | Свойство атрибута |Description|
 |---------|---------|----------------------|
-|**type**     || Нужно задать значение `documentdb`.        |
-|**direction**     || Нужно задать значение `out`.         |
-|**name**     || Имя параметра привязки, представляющего документ в функции.  |
+|**type**     | Н/Д | Нужно задать значение `documentdb`.        |
+|**direction**     | Н/Д | Нужно задать значение `out`.         |
+|**name**     | Н/Д | Имя параметра привязки, представляющего документ в функции.  |
 |**databaseName** | **DatabaseName**|База данных, содержащая коллекцию, в которой создается документ.     |
 |**collectionName** |**CollectionName**  | Имя коллекции, в которой создается документ. |
 |**createIfNotExists**  |**CreateIfNotExists**    | Логическое значение, указывающее, будет ли создана коллекция при ее отсутствии. Значение по умолчанию — *false*, так как коллекции создаются с использованием зарезервированной пропускной способности, с которой связаны ценовые требования. Дополнительные сведения см. на [странице с расценками](https://azure.microsoft.com/pricing/details/documentdb/).  |
 |**partitionKey**|**PartitionKey** |Если для `CreateIfNotExists` задано значение true, определяется путь к ключу раздела для созданной коллекции.|
 |**CollectionThroughput**|**CollectionThroughput**| Если для `CreateIfNotExists` задано значение true, определяется [пропускная способность](../cosmos-db/set-throughput.md) созданной коллекции.|
-|**подключение**    |**ConnectionStringSetting** |Имя параметра приложения, содержащего строку подключения к Azure Cosmos DB.        |
+|**connection**    |**ConnectionStringSetting** |Имя параметра приложения, содержащего строку подключения к Azure Cosmos DB.        |
 
 [!INCLUDE [app settings to local.settings.json](../../includes/functions-app-settings-local.md)]
 

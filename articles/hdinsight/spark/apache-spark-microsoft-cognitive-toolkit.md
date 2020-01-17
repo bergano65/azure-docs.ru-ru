@@ -2,32 +2,32 @@
 title: Microsoft Cognitive Toolkit с Apache Spark Azure HDInsight
 description: Узнайте, как можно применить обученную модель обучения Microsoft Cognitive Toolkit к набору данных с помощью API Python для Spark в кластере Azure HDInsight Spark.
 author: hrasheed-msft
+ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
-ms.custom: hdinsightactive
 ms.topic: conceptual
-ms.date: 11/28/2017
-ms.author: hrasheed
-ms.openlocfilehash: 0f4172c7a5b287c85c0548c7fe9812305a1ee1e6
-ms.sourcegitcommit: 3486e2d4eb02d06475f26fbdc321e8f5090a7fac
+ms.custom: hdinsightactive
+ms.date: 01/14/2020
+ms.openlocfilehash: 587de168a17c407abf3c2a7797969df013760a9f
+ms.sourcegitcommit: 276c1c79b814ecc9d6c1997d92a93d07aed06b84
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73241532"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76156647"
 ---
 # <a name="use-microsoft-cognitive-toolkit-deep-learning-model-with-azure-hdinsight-spark-cluster"></a>Использование модели глубокого обучения Microsoft Cognitive Toolkit в кластере Azure HDInsight Spark
 
 Ниже перечислены действия, которые вы выполните в этой статье.
 
-1. запуск пользовательского сценария для установки [Microsoft Cognitive Toolkit](https://www.microsoft.com/en-us/cognitive-toolkit/) в кластере Azure HDInsight Spark;
+1. запуск пользовательского сценария для установки [Microsoft Cognitive Toolkit](https://docs.microsoft.com/cognitive-toolkit/) в кластере Azure HDInsight Spark;
 
-2. передача [Jupyter Notebook](https://jupyter.org/) в кластер [Apache Spark](https://spark.apache.org/) для применения обученной модели глубокого обучения Microsoft Cognitive Toolkit к файлам в учетной записи хранилища BLOB-объектов Azure с помощью [API Python для Spark (PySpark)](https://spark.apache.org/docs/0.9.0/python-programming-guide.html).
+2. передача [Jupyter Notebook](https://jupyter.org/) в кластер [Apache Spark](https://spark.apache.org/) для применения обученной модели глубокого обучения Microsoft Cognitive Toolkit к файлам в учетной записи хранилища BLOB-объектов Azure с помощью [API Python для Spark (PySpark)](https://spark.apache.org/docs/latest/api/python/index.html).
 
 ## <a name="prerequisites"></a>Технические условия
 
-* **Подписка Azure**. Прежде чем приступать к этой статье, необходимо иметь подписку Azure. Ознакомьтесь со страницей [Создайте бесплатную учетную запись Azure уже сегодня](https://azure.microsoft.com/free).
+* Кластер Apache Spark в HDInsight. Ознакомьтесь со статьей [Краткое руководство. Создание кластера Apache Spark в HDInsight с помощью шаблона](./apache-spark-jupyter-spark-sql-use-portal.md).
 
-* **Кластер Azure HDInsight Spark**. В этой статье создайте кластер Spark 2.0. Инструкции см. в разделе [Начало работы. Создание кластера Apache Spark в HDInsight на платформе Linux и выполнение интерактивных запросов с помощью SQL Spark](apache-spark-jupyter-spark-sql.md).
+* Опыт работы с записными книжками Jupyter с Spark в HDInsight. Дополнительные сведения см. в статье [Руководство. Загрузка данных и выполнение запросов в кластере Apache Spark в Azure HDInsight](./apache-spark-load-data-run-query.md).
 
 ## <a name="how-does-this-solution-flow"></a>Как реализуется это решение?
 
@@ -38,84 +38,77 @@ ms.locfileid: "73241532"
 
 Перечисленные ниже оставшиеся шаги приведены в описании Jupyter Notebook.
 
-- Загрузка примеров изображений в устойчивый распределенный набор данных Spark (RDD).
-   - Загрузка модулей и определение предустановок.
-   - Скачивание набора данных локально в кластер Spark.
-   - Преобразование набора данных в RDD.
-- Оценка изображений с помощью обученной модели Cognitive Toolkit.
-   - Скачивание обученной модели Cognitive Toolkit в кластер Spark.
-   - Определение функций, используемых рабочими узлами.
-   - Оценка изображений на рабочих узлах.
-   - Анализ точности модели.
-
+* Загрузите образцы изображений в отказоустойчивый распределенный набор данных Spark или RDD.
+  * Загрузка модулей и определение предустановок.
+  * Скачивание набора данных локально в кластер Spark.
+  * Преобразование набора данных в RDD.
+* Оценка изображений с помощью обученной модели Cognitive Toolkit.
+  * Скачивание обученной модели Cognitive Toolkit в кластер Spark.
+  * Определение функций, используемых рабочими узлами.
+  * Оценка изображений на рабочих узлах.
+  * Анализ точности модели.
 
 ## <a name="install-microsoft-cognitive-toolkit"></a>Установка Microsoft Cognitive Toolkit
 
-Microsoft Cognitive Toolkit в кластере Spark можно установить с помощью действия сценария. Действие сценария использует пользовательские скрипты для установки компонентов в кластере, которые по умолчанию недоступны. Пользовательский скрипт можно использовать из портал Azure, с помощью пакета SDK для HDInsight .NET или с помощью Azure PowerShell. Этот сценарий можно также использовать для установки данного набора средств при создании кластера или после его подготовки и запуска. 
+Microsoft Cognitive Toolkit в кластере Spark можно установить с помощью действия сценария. Действие скрипта использует пользовательские скрипты для установки компонентов в кластере, которые недоступны по умолчанию. Пользовательский скрипт можно использовать из портал Azure, с помощью пакета SDK для HDInsight .NET или с помощью Azure PowerShell. Этот сценарий можно также использовать для установки данного набора средств при создании кластера или после его подготовки и запуска.
 
 В этой статье мы используем портал для установки набора средств после того, как кластер был создан. Другие способы выполнения пользовательского сценария описаны в разделе [Настройка кластеров HDInsight под управлением Linux с помощью действия сценария](../hdinsight-hadoop-customize-cluster-linux.md).
 
 ### <a name="using-the-azure-portal"></a>Использование портала Azure
 
-Инструкции по использованию портал Azure для выполнения действия сценария см. в разделе [Настройка кластеров HDInsight с помощью действия сценария](../hdinsight-hadoop-customize-cluster-linux.md#use-a-script-action-during-cluster-creation). Обязательно укажите приведенные ниже данные для установки Microsoft Cognitive Toolkit.
+Инструкции по использованию портал Azure для выполнения действия сценария см. в разделе [Настройка кластеров HDInsight с помощью действия сценария](../hdinsight-hadoop-customize-cluster-linux.md#use-a-script-action-during-cluster-creation). Обязательно укажите приведенные ниже данные для установки Microsoft Cognitive Toolkit. Используйте следующие значения для действия скрипта:
 
-* Укажите значение имени действия сценария.
-
-* В поле **URI bash-скрипта** введите `https://raw.githubusercontent.com/Azure-Samples/hdinsight-pyspark-cntk-integration/master/cntk-install.sh`.
-
-* Настройте выполнение сценария только на головном и рабочем узлах и снимите все остальные флажки.
-
-* Щелкните **Create**(Создать).
+|Свойство |Значение |
+|---|---|
+|Тип скрипта|- Custom|
+|Имя| Установка MCT|
+|URI bash-скрипта|`https://raw.githubusercontent.com/Azure-Samples/hdinsight-pyspark-cntk-integration/master/cntk-install.sh`|
+|Типы узлов:|Головной, Рабочий|
+|Параметры|Нет|
 
 ## <a name="upload-the-jupyter-notebook-to-azure-hdinsight-spark-cluster"></a>Передача Jupyter Notebook в кластер Azure HDInsight Spark
 
 Чтобы использовать Microsoft Cognitive Toolkit с кластером Azure HDInsight Spark, необходимо загрузить Jupyter Notebook **CNTK_model_scoring_on_Spark_walkthrough.ipynb** в кластер Azure HDInsight Spark. Эта записная книжка доступна на GitHub по адресу [https://github.com/Azure-Samples/hdinsight-pyspark-cntk-integration](https://github.com/Azure-Samples/hdinsight-pyspark-cntk-integration).
 
-1. Клонируйте репозиторий GitHub [https://github.com/Azure-Samples/hdinsight-pyspark-cntk-integration](https://github.com/Azure-Samples/hdinsight-pyspark-cntk-integration). Инструкции по клонированию приведены в разделе [Cloning a repository](https://help.github.com/articles/cloning-a-repository/) (Клонирование репозитория).
+1. Скачайте и распакуйте [https://github.com/Azure-Samples/hdinsight-pyspark-cntk-integration](https://github.com/Azure-Samples/hdinsight-pyspark-cntk-integration).
 
-2. В портал Azure откройте колонку кластера Spark, которая уже была подготовлена, щелкните **панель мониторинга кластера**, а затем щелкните **Записная книжка Jupyter**.
+1. В веб-браузере перейдите к `https://CLUSTERNAME.azurehdinsight.net/jupyter`, где `CLUSTERNAME` — имя кластера.
 
-    Можно также запустить Jupyter Notebook, перейдя по URL-адресу `https://<clustername>.azurehdinsight.net/jupyter/`. Замените \<clustername> именем кластера HDInsight.
-
-3. В Jupyter Notebook нажмите кнопку **Upload** (Передать) в правом верхнем углу, а затем перейдите к расположению, в которое вы клонировали репозиторий GitHub.
+1. В записной книжке Jupyter выберите **Отправить** в правом верхнем углу, а затем перейдите к загрузке и выберите файл `CNTK_model_scoring_on_Spark_walkthrough.ipynb`.
 
     ![Отправка записной книжки Jupyter в кластер Azure HDInsight Spark](./media/apache-spark-microsoft-cognitive-toolkit/hdinsight-microsoft-cognitive-toolkit-load-jupyter-notebook.png "Отправка записной книжки Jupyter в кластер Azure HDInsight Spark")
 
-4. Еще раз нажмите кнопку **Upload** (Передать).
+1. Выберите **Отправить** еще раз.
 
-5. После отправки записной книжки щелкните имя записной книжки, а затем следуйте инструкциям в самой записной книжке о том, как загрузить набор данных и выполнить статью.
+1. После отправки записной книжки щелкните имя записной книжки, а затем следуйте инструкциям в самой записной книжке о том, как загрузить набор данных и выполнить статью.
 
-## <a name="see-also"></a>Дополнительные материалы
+## <a name="see-also"></a>См. также
+
 * [Обзор: Apache Spark в Azure HDInsight](apache-spark-overview.md)
 
 ### <a name="scenarios"></a>Сценарии
+
 * [Использование Apache Spark со средствами бизнес-аналитики. Выполнение интерактивного анализа данных с использованием Spark в HDInsight с помощью средств бизнес-аналитики](apache-spark-use-bi-tools.md)
 * [Apache Spark и Машинное обучение. Анализ температуры в здании на основе данных системы кондиционирования с помощью Spark в HDInsight](apache-spark-ipython-notebook-machine-learning.md)
 * [Apache Spark и Машинное обучение. Прогнозирование результатов проверки пищевых продуктов с помощью Spark в HDInsight](apache-spark-machine-learning-mllib-ipython.md)
-* [Анализ журнала веб-сайта с помощью Spark в HDInsight](apache-spark-custom-library-website-log-analysis.md)
+* [Анализ журналов веб-сайтов с помощью Apache Spark в HDInsight](apache-spark-custom-library-website-log-analysis.md)
 * [Анализ журналов телеметрии Application Insights с помощью Apache Spark в HDInsight](apache-spark-analyze-application-insight-logs.md)
 
 ### <a name="create-and-run-applications"></a>Создание и запуск приложений
+
 * [Создание автономного приложения с использованием Scala](apache-spark-create-standalone-application.md)
 * [Удаленный запуск заданий с помощью Apache Livy в кластере Apache Spark](apache-spark-livy-rest-interface.md)
 
 ### <a name="tools-and-extensions"></a>Средства и расширения
+
 * [Использование подключаемого модуля средств HDInsight для IntelliJ IDEA для создания и отправки приложений Spark Scala](apache-spark-intellij-tool-plugin.md)
-* [Удаленная отладка приложений Apache Spark в HDInsight через VPN с помощью Azure Toolkit for IntelliJ](apache-spark-intellij-tool-plugin-debug-jobs-remotely.md)
+* [Удаленная отладка приложений Apache Spark с помощью подключаемого модуля средств HDInsight для IntelliJ IDEA](apache-spark-intellij-tool-plugin-debug-jobs-remotely.md)
 * [Использование записных книжек Zeppelin с кластером Apache Spark в Azure HDInsight](apache-spark-zeppelin-notebook.md)
 * [Ядра для записной книжки Jupyter в кластерах Apache Spark в Azure HDInsight](apache-spark-jupyter-notebook-kernels.md)
 * [Использование внешних пакетов с записными книжками Jupyter](apache-spark-jupyter-notebook-use-external-packages.md)
 * [Установка записной книжки Jupyter на компьютере и ее подключение к кластеру Apache Spark в Azure HDInsight (предварительная версия)](apache-spark-jupyter-notebook-install-locally.md)
 
 ### <a name="manage-resources"></a>Управление ресурсами
+
 * [Управление ресурсами кластера Apache Spark в Azure HDInsight](apache-spark-resource-manager.md)
 * [Отслеживание и отладка заданий в кластере Apache Spark в HDInsight на платформе Linux](apache-spark-job-debugging.md)
-
-[hdinsight-versions]: hdinsight-component-versioning.md
-[hdinsight-upload-data]: hdinsight-upload-data.md
-[hdinsight-storage]: hdinsight-hadoop-use-blob-storage.md
-
-[azure-purchase-options]: https://azure.microsoft.com/pricing/purchase-options/
-[azure-member-offers]: https://azure.microsoft.com/pricing/member-offers/
-[azure-free-trial]: https://azure.microsoft.com/pricing/free-trial/
-[azure-create-storageaccount]:../../storage/common/storage-create-storage-account.md

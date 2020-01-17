@@ -9,13 +9,13 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
-ms.date: 12/12/2019
-ms.openlocfilehash: 9001a7837e6106df4e052277168388064e65e7ee
-ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
+ms.date: 01/16/2020
+ms.openlocfilehash: f245254c85cbf9223ab5dda60799c6b7ce72f11c
+ms.sourcegitcommit: 5bbe87cf121bf99184cc9840c7a07385f0d128ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75893308"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76120219"
 ---
 # <a name="copy-and-transform-data-in-azure-blob-storage-by-using-azure-data-factory"></a>Копирование и преобразование данных в хранилище BLOB-объектов Azure с помощью фабрики данных Azure
 
@@ -270,7 +270,7 @@ ms.locfileid: "75893308"
 
 Общие сведения о проверке подлинности хранилища Azure см. в статье [Authenticate access to Azure Storage using Azure Active Directory](../storage/common/storage-auth-aad.md) (Проверка подлинности при доступе к службе хранилища Azure с помощью Azure Active Directory). Чтобы использовать управляемые удостоверения для проверки подлинности ресурсов Azure, выполните следующие действия.
 
-1. [Получите управляемые сведения об удостоверении фабрики данных](data-factory-service-identity.md#retrieve-managed-identity) , скопировав значение "идентификатор приложения удостоверений службы", созданное вместе с фабрикой.
+1. [Получите управляемые сведения об удостоверении фабрики данных](data-factory-service-identity.md#retrieve-managed-identity) , СКОПИРОВАВ значение **идентификатора объекта управляемого идентификатора** , созданного вместе с фабрикой.
 
 2. Предоставьте правильное разрешение управляемому удостоверению в Хранилище BLOB-объектов Azure. Дополнительные сведения о ролях см. в статье [Manage access rights to Azure Storage data with RBAC](../storage/common/storage-auth-aad-rbac.md) (Управление ролями доступа к данным службы хранилища Azure с помощью RBAC).
 

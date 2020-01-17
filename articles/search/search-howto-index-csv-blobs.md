@@ -1,7 +1,7 @@
 ---
 title: Поиск по CSV-BLOB-объектам
 titleSuffix: Azure Cognitive Search
-description: Извлеките и импортируйте CSV-файл из хранилища BLOB-объектов Azure с помощью режима разбора delimitedText, в настоящее время в общедоступной предварительной версии
+description: Извлеките и импортируйте CSV-файл из хранилища BLOB-объектов Azure с помощью режима синтаксического анализа delimitedText.
 manager: nitinme
 author: mgottein
 ms.author: magottei
@@ -9,17 +9,14 @@ ms.devlang: rest-api
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: 2166e100f03f21c218618d19dc37ee70c6ab29ef
-ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
+ms.openlocfilehash: bf600890bfed570e712a159005b8ef5267298cc0
+ms.sourcegitcommit: 5bbe87cf121bf99184cc9840c7a07385f0d128ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74113030"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76122327"
 ---
-# <a name="how-to-index-csv-blobs-using-delimitedtext-parsing-mode-and-blob-indexers-in-azure-cognitive-search"></a>Как индексировать большие двоичные объекты CSV с помощью режима синтаксического анализа delimitedText и индексаторов BLOB-объектов в Azure Когнитивный поиск 
-
-> [!IMPORTANT] 
-> Режим анализа delimitedText в настоящее время находится в общедоступной предварительной версии. Для предварительной версии функции соглашение об уровне обслуживания не предусмотрено. Мы не рекомендуем использовать ее в рабочей среде. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/). Эта функция предоставляется в [версии REST API 2019-05-06-Preview](search-api-preview.md). В настоящее время нет поддержки портала или пакета SDK для .NET.
+# <a name="how-to-index-csv-blobs-using-delimitedtext-parsing-mode-and-blob-indexers-in-azure-cognitive-search"></a>Как индексировать большие двоичные объекты CSV с помощью режима синтаксического анализа delimitedText и индексаторов BLOB-объектов в Azure Когнитивный поиск
 
 По умолчанию [индексатор BLOB-объектов когнитивный Поиск Azure](search-howto-indexing-azure-blob-storage.md) анализирует текстовые большие двоичные объекты с разделителями как единый фрагмент текста. Однако в больших двоичных объектах, содержащих CSV-данные, часто возникает необходимость обрабатывать каждую строку объекта как отдельный документ. Например, учитывая следующий разделительный текст, вы можете проанализировать его в двух документах, каждый из которых содержит поля "id", "datePublished" и "tags": 
 
@@ -46,7 +43,7 @@ ms.locfileid: "74113030"
 
     "parameters" : { "configuration" : { "parsingMode" : "delimitedText", "delimitedTextHeaders" : "id,datePublished,tags" } } 
 
-Можно настроить символ разделителя с помощью параметра конфигурации `delimitedTextDelimiter`. Например,
+Можно настроить символ разделителя с помощью параметра конфигурации `delimitedTextDelimiter`. Пример.
 
     "parameters" : { "configuration" : { "parsingMode" : "delimitedText", "delimitedTextDelimiter" : "|" } }
 
@@ -63,7 +60,7 @@ ms.locfileid: "74113030"
 
 Источник данных: 
 
-    POST https://[service name].search.windows.net/datasources?api-version=2019-05-06-Preview
+    POST https://[service name].search.windows.net/datasources?api-version=2019-05-06
     Content-Type: application/json
     api-key: [admin key]
 
@@ -76,7 +73,7 @@ ms.locfileid: "74113030"
 
 Индексатор:
 
-    POST https://[service name].search.windows.net/indexers?api-version=2019-05-06-Preview
+    POST https://[service name].search.windows.net/indexers?api-version=2019-05-06
     Content-Type: application/json
     api-key: [admin key]
 

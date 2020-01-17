@@ -10,12 +10,12 @@ ms.topic: reference
 ms.date: 09/10/2018
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: f8acf499d4d82c49096e4e5beff8209d0970b421
-ms.sourcegitcommit: f209d0dd13f533aadab8e15ac66389de802c581b
+ms.openlocfilehash: 1ce564767fe9664604687d8cbaced58507e6b8b3
+ms.sourcegitcommit: 5bbe87cf121bf99184cc9840c7a07385f0d128ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71064331"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76119658"
 ---
 # <a name="contentdefinitions"></a>ContentDefinitions
 
@@ -37,7 +37,7 @@ ms.locfileid: "71064331"
   <Metadata>
     <Item Key="DisplayName">Local account sign up page</Item>
   </Metadata>
-  <LoalizedResourcesReferences MergeBehavior="Prepend">
+  <LocalizedResourcesReferences MergeBehavior="Prepend">
     <LocalizedResourcesReference Language="en" LocalizedResourcesReferenceId="api.localaccountsignup.en" />
     <LocalizedResourcesReference Language="es" LocalizedResourcesReferenceId="api.localaccountsignup.es" />
     ...
@@ -61,13 +61,13 @@ ms.locfileid: "71064331"
 
 Элемент **ContentDefinition** содержит следующий атрибут:
 
-| Атрибут | Обязательное значение | Описание |
+| attribute | Обязательно для заполнения | Description |
 | --------- | -------- | ----------- |
-| Id | Да | Идентификатор определения содержимого. Значение указано в разделе **Идентификаторы определения содержимого** далее на этой странице. |
+| Идентификатор | Да | Идентификатор определения содержимого. Значение указано в разделе **Идентификаторы определения содержимого** далее на этой странице. |
 
 Элемент **ContentDefinition** содержит следующие элементы:
 
-| Элемент | Вхождения | Описание |
+| Элемент | Вхождения | Description |
 | ------- | ----------- | ----------- |
 | LoadUri | 1:1 | Строка, содержащая URL-адрес страницы HTML5 для определения содержимого. |
 | RecoveryUri | 0:1 | Строка, содержащая URL-адрес страницы HTML для отображения ошибки, связанной с определением содержимого. |
@@ -79,7 +79,7 @@ ms.locfileid: "71064331"
 
 Элемент **DataUri** используется для указания идентификатора страницы. В Azure AD B2C идентификатор страницы используется для загрузки и запуска элементов пользовательского интерфейса и JavaScript на стороне клиента. Формат значения — `urn:com:microsoft:aad:b2c:elements:page-name:version`.  В следующей таблице перечислены идентификаторы страниц, которые можно использовать.
 
-| Значение |   Описание |
+| Значение |   Description |
 | ----- | ----------- |
 | `urn:com:microsoft:aad:b2c:elements:globalexception:1.1.0` | Отображает страницу ошибки при обнаружении исключения или ошибки. |
 | `urn:com:microsoft:aad:b2c:elements:idpselection:1.0.0` | Отображает список поставщиков удостоверений, которые пользователи могут выбирать во время входа. |
@@ -93,13 +93,13 @@ ms.locfileid: "71064331"
 
 Элемент **LocalizedResourcesReferences** содержит следующие элементы:
 
-| Элемент | Вхождения | Описание |
+| Элемент | Вхождения | Description |
 | ------- | ----------- | ----------- |
 | LocalizedResourcesReference | 1:n | Список ссылок на локализованные ресурсы для определения содержимого. |
 
 Элемент **LocalizedResourcesReferences** содержит следующие атрибуты:
 
-| Атрибут | Обязательное значение | Описание |
+| attribute | Обязательно для заполнения | Description |
 | --------- | -------- | ----------- |
 | Язык | Да | Строка, содержащая поддерживаемый язык для политики согласно стандарту RFC 5646 "Tags for Identifying Languages" (Теги для идентификации языков). |
 | LocalizedResourcesReferenceId | Да | Идентификатор элемента **LocalizedResources**. |
@@ -141,7 +141,7 @@ ms.locfileid: "71064331"
 
 Атрибут ID (идентификатор) элемента **ContentDefinition** указывает тип страницы, относящейся к определению содержимого. Этот элемент определяет контекст, который будет применяться в пользовательском шаблоне HTML5 или CSS. В следующей таблице описан набор идентификаторов определений содержимого, распознаваемых Identity Experience Framework, и типы страниц, относящиеся к ним. Вы можете создать собственные определения содержимого с произвольным идентификатором.
 
-| id | Шаблон по умолчанию | Описание |
+| ID | Шаблон по умолчанию | Description |
 | -- | ---------------- | ----------- |
 | **api.error** | [exception.cshtml](https://login.microsoftonline.com/static/tenant/default/exception.cshtml) | **Страница ошибки** — отображает страницу ошибки при обнаружении исключения или ошибки. |
 | **api.idpselections** | [idpSelector.cshtml](https://login.microsoftonline.com/static/tenant/default/idpSelector.cshtml) | **Страница выбора поставщика удостоверений** — на этой странице содержится список поставщиков удостоверений, которые пользователи могут выбирать во время входа. Обычно это поставщики удостоверений организаций, социальных сетей, включая Facebook и Google+, или локальных учетных записей. |

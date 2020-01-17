@@ -12,24 +12,27 @@ ms.topic: conceptual
 ms.date: 10/28/2019
 ms.author: lizross
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 37994125f7f1a7119a8878c7edec401328fd75ca
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: 9cd2d712dfcc6d3f01cbdb1f4886dd64a6d299d4
+ms.sourcegitcommit: 276c1c79b814ecc9d6c1997d92a93d07aed06b84
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74233218"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76156222"
 ---
-# <a name="manage-devices-connected-to-your-work-or-school-account-from-the-devices-page"></a>Управление устройствами, подключенными к рабочей или учебной учетной записи, со страницы устройства
+# <a name="manage-your-connected-devices-from-the-devices-page"></a>Управление подключенными устройствами с помощью страницы "устройства"
 
-На странице **устройства** портала " **Моя учетная запись** " можно:
+Страница **устройства** портала " **Моя учетная запись** " помогает управлять устройствами, подключенными к рабочей или учебной учетной записи. На странице **устройства** можно выполнить следующие действия.
 
 - Просмотрите рабочую или учебную учетную запись — подключенные устройства.
 
 - Отключите все устройства, которые больше не являются владельцами, потеряны или были украдены.
 
+>[!Important]
+>Эта статья предназначена для пользователей, пытающихся обновить сведения об устройстве, подключенные к рабочей или учебной учетной записи. Если вы являетесь администратором, который ищет сведения об управлении устройствами для ваших сотрудников и других функциях, см. [документацию по удостоверениям устройств](https://docs.microsoft.com/azure/active-directory/devices/index).
+
 ## <a name="view-your-connected-devices"></a>Обзор подключенных устройств
 
-1. Войдите в рабочую или учебную учетную запись, а затем перейдите на страницу https://myprofile.microsoft.com/.
+1. Войдите в рабочую или учебную учетную запись, а затем перейдите на страницу **Моя учетная запись** (https://myprofile.microsoft.com/).
 
 2. На левой навигационной панели выберите **Устройства** или выберите ссылку **Управление устройствами** в блоке **Устройства**.
 
@@ -62,7 +65,7 @@ ms.locfileid: "74233218"
 
 2. Выберите **Просмотреть ключи BitLocker** для заблокированного устройства и запишите ключ BitLocker для заблокированного устройства.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 После просмотра подключенных устройств вы можете:
 
@@ -73,3 +76,13 @@ ms.locfileid: "74233218"
 - Просмотр [действий входа](my-account-portal-sign-ins-page.md).
 
 - Посмотрите, как ваша организация [использует данные, связанные с конфиденциальностью](my-account-portal-privacy-page.md).
+
+## <a name="related-office-content"></a>Связанное содержимое Office
+
+- [Вход для управления продуктом Office](https://support.office.com/article/sign-in-to-manage-your-office-product-959ac957-8d37-4ae4-b1b6-d6e4874e013f)
+
+- [Переход на страницу **Моя учетная запись** Office](https://portal.office.com/account/#home)
+
+- [Переход на страницу **Мои установленные экземпляры** Office](https://portal.office.com/account/#installs)
+
+- [Переход на страницу **Подписки** Office](https://portal.office.com/account/#subscriptions)

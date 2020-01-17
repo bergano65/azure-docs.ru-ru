@@ -11,14 +11,14 @@ ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.custom: seodec18
-ms.date: 12/03/2019
+ms.date: 01/16/2020
 ms.author: shvija
-ms.openlocfilehash: bea59ff29579c5d009a87c8d1564db4c0baf6e69
-ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
+ms.openlocfilehash: 26056e9b52ea319856505db837c67dc68b2f4aa6
+ms.sourcegitcommit: 276c1c79b814ecc9d6c1997d92a93d07aed06b84
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74793270"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76157293"
 ---
 # <a name="troubleshooting-guide-for-azure-event-hubs"></a>Руководство по устранению неполадок для концентраторов событий Azure
 В этой статье приведены некоторые исключения .NET, создаваемые концентраторами событий .NET Framework API, а также другие советы по устранению неполадок. 
@@ -115,10 +115,10 @@ ExceptionId: 00000000000-00000-0000-a48a-9c908fbe84f6-ServerBusyException: The r
     ```shell
     telnet sbwagn2.servicebus.windows.net 5671
     ```
-- При наличии периодических проблем с подключением выполните следующую команду, чтобы проверить наличие пропущенных пакетов. Не заключайте его в течение приблизительно 1 минуты, чтобы убедиться, что подключения частично заблокированы. Вы можете скачать средство `psping` [отсюда.](/sysinternals/downloads/psping)
+- При наличии периодических проблем с подключением выполните следующую команду, чтобы проверить наличие пропущенных пакетов. Эта команда попытается установить 25 разных TCP-подключений каждые 1 секунду со службой, после чего можно проверить количество успешных и неудачных попыток, а также задержку подключения TCP. Вы можете скачать средство `psping` [отсюда.](/sysinternals/downloads/psping)
 
     ```shell
-    psping.exe -t -q ehedhdev.servicebus.windows.net:9354 -nobanner     
+    .\psping.exe -n 25 -i 1 -q yournamespace.servicebus.windows.net:5671 -nobanner     
     ```
     Аналогичные команды можно использовать, если вы используете другие средства, такие как `tnc`, `ping`и т. д. 
 - Найдите трассировку сети, если предыдущие шаги не помогают и не проанализировали ее, либо обратитесь в [Служба поддержки Майкрософт](https://support.microsoft.com/). 
@@ -129,4 +129,4 @@ ExceptionId: 00000000000-00000-0000-a48a-9c908fbe84f6-ServerBusyException: The r
 
 * [Общие сведения о Центрах событий](event-hubs-what-is-event-hubs.md)
 * [Создание концентратора событий](event-hubs-create.md)
-* [Часто задаваемые вопросы о концентраторах событий](event-hubs-faq.md)
+* [Часто задаваемые вопросы о Центрах событий](event-hubs-faq.md)

@@ -7,12 +7,12 @@ ms.topic: reference
 ms.date: 10/22/2019
 author: rboucher
 ms.author: robb
-ms.openlocfilehash: e744cdde298054de3631adb96b56bbc808f36a38
-ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
+ms.openlocfilehash: 044c453152d44420d5e78855751a2680698e89f3
+ms.sourcegitcommit: 5bbe87cf121bf99184cc9840c7a07385f0d128ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75750938"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76120151"
 ---
 # <a name="supported-services-schemas-and-categories-for-azure-resource-logs"></a>Поддерживаемые службы, схемы и категории для журналов ресурсов Azure
 
@@ -86,6 +86,9 @@ ms.locfileid: "75750938"
 | Шлюзы виртуальной сети | Схема недоступна. |
 
 ## <a name="supported-log-categories-per-resource-type"></a>Поддерживаемые категории журнала для каждого типа ресурса
+
+Некоторые категории могут поддерживаться только для определенных типов ресурсов. Это список всех, доступных в некоторой форме.  Например, категории Microsoft. SQL/Servers/databases недоступны для всех типов баз данных. Дополнительные сведения см. [в разделе сведения о журнале диагностики базы данных SQL](../../sql-database/sql-database-metrics-diag-logging.md). 
+
 |Тип ресурса|Категория|Отображаемое имя категории|
 |---|---|---|
 |Microsoft. AAD/domainServices|системсекурити|системсекурити|

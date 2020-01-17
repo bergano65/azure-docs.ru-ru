@@ -10,17 +10,65 @@ ms.service: cloud-services
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: tbd
-ms.date: 01/08/2020
+ms.date: 01/15/2020
 ms.author: raiye
-ms.openlocfilehash: 97f4283e02dd3b67df5381f78e87c3ee5b23b74e
-ms.sourcegitcommit: 5b073caafebaf80dc1774b66483136ac342f7808
+ms.openlocfilehash: 85029b5f819a59ffc4934d245778044a94a18d5e
+ms.sourcegitcommit: 5bbe87cf121bf99184cc9840c7a07385f0d128ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75779592"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76122140"
 ---
 # <a name="azure-guest-os"></a>Гостевая ОС Azure
 В следующей таблице приведены обновления Microsoft Security Response Center (MSRC) для гостевой ОС Azure. Выполните поиск по этой статье, чтобы определить, применяется ли какое-либо конкретное обновление к используемой гостевой ОС. Обновления всегда переносятся для определенного [семейства][family-explain] , в котором они были представлены.
+
+## <a name="january-2020-guest-os"></a>Гостевая ОС за январь 2020
+
+>[!NOTE]
+>Январская гостевая ОС сейчас развертывается для виртуальных машин облачной службы, которые настроены для автоматического обновления. После завершения выпуска эта версия будет доступна для обновления вручную через портал Azure и файлы конфигурации. Следующие исправления включены в гостевой ОС за январь. Этот список подлежит изменению.
+
+| Категория продукта | Родительская статья базы знаний | Описание уязвимости | Гостевая ОС | Дата первого появления |
+| --- | --- | --- | --- | --- |
+|  Rel 20-01  |  [4532960]  |  Безопасность Windows  | 2.94 | 14 января 2020 г. |
+|  Rel 20-01  |  [4534251]  |  Internet Explorer  | 2.94 | 14 января 2020 г. |
+|  Rel 20-01  |  [4534314]  |  Безопасность Windows  | 2.94 | 14 января 2020 г. |
+|  Rel 20-01  |  [4532958]  |  Безопасность Windows  | 3,81 | 14 января 2020 г. |
+|  Rel 20-01  |  [4532963]  |  Безопасность Windows  | 3,81 | 14 января 2020 г. |
+|  Rel 20-01  |  [4534251]  |  Internet Explorer  | 3,81 | 14 января 2020 г. |
+|  Rel 20-01  |  [4534288]  |  Безопасность Windows  | 3,81 | 14 января 2020 г. |
+|  Rel 20-01  |  [4532961]  |  Безопасность Windows  | 4.74 | 14 января 2020 г. |
+|  Rel 20-01  |  [4532962]  |  Безопасность Windows  | 4.74 | 14 января 2020 г. |
+|  Rel 20-01  |  [4534251]  |  Internet Explorer  | 4.74 | 14 января 2020 г. |
+|  Rel 20-01  |  [4534309]  |  Безопасность Windows  | 4.74 | 14 января 2020 г. |
+|  Rel 20-01  |  [4494175]  |  Микрокодовая Версия V3  | 5,39 | 29 августа 2019 г. |
+|  Rel 20-01  |  [4534271]  |  LCU  | 5,39 | 14 января 2020 г. |
+|  Rel 20-01  |  [4494174]  |  Микрокод v4  | 6,15 | 29 августа 2019 г. |
+|  Rel 20-01  |  [4532947]  |  Безопасность Windows  | 6,15 | 14 января 2020 г. |
+|  Rel 20-01  |  [4534273]  |  LCU  | 6,15 | 14 января 2020 г. |
+|  Rel 20-01  |  [4530734]  |  Без безопасности  | 2.94 | 10 декабря 2019 г. |
+|  Rel 20-01  |  [4530691]  |  Без безопасности   | 3,81 | 10 декабря 2019 г. |
+|  Rel 20-01  |  [4530702]  |  Без безопасности  | 4.74 | 10 декабря 2019 г. |
+
+[4532960]: https://support.microsoft.com/kb/4532960
+[4534251]: https://support.microsoft.com/kb/4534251
+[4534314]: https://support.microsoft.com/kb/4534314
+[4532958]: https://support.microsoft.com/kb/4532958
+[4532963]: https://support.microsoft.com/kb/4532963
+[4534251]: https://support.microsoft.com/kb/4534251
+[4534288]: https://support.microsoft.com/kb/4534288
+[4532961]: https://support.microsoft.com/kb/4532961
+[4532962]: https://support.microsoft.com/kb/4532962
+[4534251]: https://support.microsoft.com/kb/4534251
+[4534309]: https://support.microsoft.com/kb/4534309
+[4494175]: https://support.microsoft.com/kb/4494175
+[4534271]: https://support.microsoft.com/kb/4534271
+[4494174]: https://support.microsoft.com/kb/4494174
+[4532947]: https://support.microsoft.com/kb/4532947
+[4534273]: https://support.microsoft.com/kb/4534273
+[4530734]: https://support.microsoft.com/kb/4530734
+[4530691]: https://support.microsoft.com/kb/4530691
+[4530702]: https://support.microsoft.com/kb/4530702
+
 
 ## <a name="december-2019-guest-os"></a>Декабрь 2019 гостевая ОС
 

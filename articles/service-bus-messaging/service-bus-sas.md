@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 12/20/2019
 ms.author: aschhab
-ms.openlocfilehash: 15b7dab7de2affb67fa080d69b4895a31bf9ba3b
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: c381d9413c4003bc2ab9a9357ff2769e84d14c3e
+ms.sourcegitcommit: 5bbe87cf121bf99184cc9840c7a07385f0d128ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75462080"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76121749"
 ---
 # <a name="service-bus-access-control-with-shared-access-signatures"></a>Управление доступом к служебной шине с помощью подписанных URL-адресов
 
@@ -82,7 +82,7 @@ SharedAccessSignature sig=<signature-string>&se=<expiry>&skn=<keyName>&sr=<URL-e
 * **`sr`** — URI ресурса, к которому осуществляется доступ.
 * **`sig`** — подпись.
 
-`signature-string` — это хэш SHA-256, вычисленный на основе URI ресурса (в значении **области**, описанном в предыдущем разделе), и строковое представление срока действия маркера, разделенное символом CRLF.
+`signature-string` — это хэш SHA-256, вычисленный на основе URI ресурса (**область** , как описано в предыдущем разделе) и строковое представление срока действия маркера, разделенного LF.
 
 Вычисление хэша напоминает следующий псевдокод и возвращает 256-битное (32-байтное) значение хэша.
 

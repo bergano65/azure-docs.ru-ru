@@ -10,12 +10,12 @@ ms.author: aashishb
 author: aashishb
 ms.reviewer: larryfr
 ms.date: 01/09/2020
-ms.openlocfilehash: 9dad936e2e6cc7a9b0cdde78a9557a51d3074e71
-ms.sourcegitcommit: 014e916305e0225512f040543366711e466a9495
+ms.openlocfilehash: 277b22498066542deaa080845cb816df493d7e13
+ms.sourcegitcommit: 5bbe87cf121bf99184cc9840c7a07385f0d128ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75930882"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76122361"
 ---
 # <a name="enterprise-security-for-azure-machine-learning"></a>Корпоративная безопасность для Машинное обучение Azure
 
@@ -335,7 +335,7 @@ SSL можно использовать для защиты внутренней
 
 * [Защита веб-служб Машинного обучения Azure с помощью SSL](how-to-secure-web-service.md)
 * [Использование Машинное обучениеной модели, развернутой в качестве веб-службы](how-to-consume-web-service.md)
-* [Run batch predictions on large data sets with Azure Machine Learning service](how-to-run-batch-predictions.md) (Составление пакетных прогнозов для больших наборов данных с помощью Службы машинного обучения Azure)
+* [Run batch predictions on large data sets with Azure Machine Learning service](how-to-use-parallel-run-step.md) (Составление пакетных прогнозов для больших наборов данных с помощью Службы машинного обучения Azure)
 * [Мониторинг моделей машинного обучения в Azure с помощью Application Insights](how-to-enable-app-insights.md)
 * [Сбор данных для моделей в рабочей среде](how-to-enable-data-collection.md)
 * [Пакет SDK для Машинное обучение Azure](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py)

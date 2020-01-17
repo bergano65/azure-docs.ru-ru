@@ -9,14 +9,14 @@ ms.reviewer: sgilley
 ms.service: machine-learning
 ms.subservice: core
 ms.topic: conceptual
-ms.date: 11/21/2019
+ms.date: 01/16/2020
 ms.custom: seodec18
-ms.openlocfilehash: 730436c7437d2ed77f9066f486d9716ec6d5681f
-ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
+ms.openlocfilehash: c7fd70ca32054b3b25e717c8c7169cf2d30ef9be
+ms.sourcegitcommit: 276c1c79b814ecc9d6c1997d92a93d07aed06b84
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75771842"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76156358"
 ---
 # <a name="set-up-and-use-compute-targets-for-model-training"></a>Настройка и использование целевых объектов вычислений для обучения модели 
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -54,7 +54,7 @@ ms.locfileid: "75771842"
 
 ## <a name="whats-an-estimator"></a>Что такое оценщик?
 
-Для упрощения обучения модели с помощью популярных платформ пакет SDK для Машинное обучение Azure Python предоставляет альтернативную абстракцию более высокого уровня, класс оценщика.  Этот класс позволяет легко создавать конфигурации запуска. Вы можете создать и использовать универсальный [оценщик](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.estimator?view=azure-ml-py) для отправки сценариев обучения, использующих любую выбранную платформу обучения (например, scikit-учиться). Мы рекомендуем использовать Оценщик для обучения, так как он автоматически контруктс внедренные объекты, такие как среда или объекты RunConfiguration. Если вы хотите получить более полный контроль над созданием этих объектов и спекфифи, какие пакеты следует установить для выполнения експериемент, выполните следующие [действия](#amlcompute) , чтобы отправить обучающие эксперименты с помощью объекта RunConfiguration на машинное обучение Azure вычислений.
+Для упрощения обучения модели с помощью популярных платформ пакет SDK для Машинное обучение Azure Python предоставляет альтернативную абстракцию более высокого уровня, класс оценщика.  Этот класс позволяет легко создавать конфигурации запуска. Вы можете создать и использовать универсальный [оценщик](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.estimator?view=azure-ml-py) для отправки сценариев обучения, использующих любую выбранную платформу обучения (например, scikit-учиться). Мы рекомендуем использовать Оценщик для обучения, так как он автоматически конструирует внедренные объекты, такие как среда или объекты RunConfiguration. Если вы хотите получить более полный контроль над созданием этих объектов и указать, какие пакеты следует установить для запуска эксперимента, выполните следующие [действия](#amlcompute) , чтобы отправить обучающие эксперименты с помощью объекта RunConfiguration на машинное обучение Azure вычислений.
 
 Для задач PyTorch, TensorFlow и Chain Машинное обучение Azure также предоставляет соответствующие средства оценки [PyTorch](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.dnn.pytorch?view=azure-ml-py), [TensorFlow](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.dnn.tensorflow?view=azure-ml-py)и [формирователя цепочки](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.dnn.chainer?view=azure-ml-py) для упрощения использования этих платформ.
 
@@ -364,7 +364,7 @@ myvm = ComputeTarget(workspace=ws, name='my-vm-name')
 
 ## <a name="set-up-with-vs-code"></a>Настройка с помощью VS Code
 
-Вы можете получать доступ, создавать и администрировать целевые объекты вычислений, связанные с рабочей областью, с помощью [расширения VS Code](how-to-vscode-tools.md#create-and-manage-compute-targets) для машинное обучение Azure.
+Вы можете получать доступ, создавать и администрировать целевые объекты вычислений, связанные с рабочей областью, с помощью [расширения VS Code](tutorial-train-deploy-image-classification-model-vscode.md#configure-compute-targets) для машинное обучение Azure.
 
 ## <a id="submit"></a>Отправка учебного прогона с помощью пакета SDK для Машинное обучение Azure
 
@@ -414,7 +414,7 @@ myvm = ComputeTarget(workspace=ws, name='my-vm-name')
 
 * отправить эксперимент с объектом `Estimator`, как показано в разделе [Обучение моделей машинного обучения с использованием средства оценки](how-to-train-ml-models.md);
 * Отправка видеодиска для [настройки параметров](how-to-tune-hyperparameters.md).
-* Отправьте эксперимент с помощью [расширения VS Code](how-to-vscode-tools.md#train-and-tune-models).
+* Отправьте эксперимент с помощью [расширения VS Code](tutorial-train-deploy-image-classification-model-vscode.md#train-the-model).
 
 Дополнительные сведения см. в документации по [скриптрунконфиг](https://docs.microsoft.com/python/api/azureml-core/azureml.core.scriptrunconfig?view=azure-ml-py) и [RunConfiguration](https://docs.microsoft.com/python/api/azureml-core/azureml.core.runconfiguration?view=azure-ml-py) .
 

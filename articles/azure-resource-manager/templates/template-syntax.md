@@ -3,12 +3,12 @@ title: Структура и синтаксис шаблона
 description: Описывается создание структуры и свойств шаблонов Azure Resource Manager с помощью декларативного синтаксиса JSON.
 ms.topic: conceptual
 ms.date: 11/12/2019
-ms.openlocfilehash: 4cebe017793bc167f0a78c0be2f24154dc27b3c9
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 7f9b964212d7b8056895aa1c6826766315af2ec2
+ms.sourcegitcommit: 5bbe87cf121bf99184cc9840c7a07385f0d128ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75483899"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76122072"
 ---
 # <a name="understand-the-structure-and-syntax-of-azure-resource-manager-templates"></a>Описание структуры и синтаксиса шаблонов Azure Resource Manager
 
@@ -185,33 +185,17 @@ ms.locfileid: "75483899"
 "resources": [
   {
       "condition": "<true-to-deploy-this-resource>",
-      "apiVersion": "<api-version-of-resource>",
       "type": "<resource-provider-namespace/resource-type-name>",
+      "apiVersion": "<api-version-of-resource>",
       "name": "<name-of-the-resource>",
-      "location": "<location-of-resource>",
-      "tags": {
-          "<tag-name1>": "<tag-value1>",
-          "<tag-name2>": "<tag-value2>"
-      },
       "comments": "<your-reference-notes>",
-      "copy": {
-          "name": "<name-of-copy-loop>",
-          "count": <number-of-iterations>,
-          "mode": "<serial-or-parallel>",
-          "batchSize": <number-to-deploy-serially>
-      },
+      "location": "<location-of-resource>",
       "dependsOn": [
           "<array-of-related-resource-names>"
       ],
-      "properties": {
-          "<settings-for-the-resource>",
-          "copy": [
-              {
-                  "name": ,
-                  "count": ,
-                  "input": {}
-              }
-          ]
+      "tags": {
+          "<tag-name1>": "<tag-value1>",
+          "<tag-name2>": "<tag-value2>"
       },
       "sku": {
           "name": "<sku-name>",
@@ -221,12 +205,28 @@ ms.locfileid: "75483899"
           "capacity": <sku-capacity>
       },
       "kind": "<type-of-resource>",
+      "copy": {
+          "name": "<name-of-copy-loop>",
+          "count": <number-of-iterations>,
+          "mode": "<serial-or-parallel>",
+          "batchSize": <number-to-deploy-serially>
+      },
       "plan": {
           "name": "<plan-name>",
           "promotionCode": "<plan-promotion-code>",
           "publisher": "<plan-publisher>",
           "product": "<plan-product>",
           "version": "<plan-version>"
+      },
+      "properties": {
+          "<settings-for-the-resource>",
+          "copy": [
+              {
+                  "name": ,
+                  "count": ,
+                  "input": {}
+              }
+          ]
       },
       "resources": [
           "<array-of-child-resources>"
@@ -238,18 +238,18 @@ ms.locfileid: "75483899"
 | Имя элемента | Обязательно для заполнения | Description |
 |:--- |:--- |:--- |
 | condition | Нет | Логическое значение, указывающее, будет ли подготавливаться ресурс во время этого развертывания. Если установлено значение `true`, при развертывании создается ресурс. Если установлено значение `false`, при развертывании ресурс не создается. См. [условие](conditional-resource-deployment.md). |
-| версия_API |Да |Версия REST API, которая будет использована для создания ресурса. Чтобы определить доступные значения, см. раздел [Справочник по шаблону](/azure/templates/). |
 | type |Да |Тип ресурса. Это значение представляет собой сочетание пространства имен поставщика ресурсов и типа ресурса (например, **Microsoft.Storage/storageAccounts**). Чтобы определить доступные значения, см. раздел [Справочник по шаблону](/azure/templates/). Для дочернего ресурса формат типа зависит от того, является ли он вложенным в родительский ресурс или определен за пределами родительского ресурса. См. о [настройке имени и типа дочернего ресурса](child-resource-name-type.md). |
+| версия_API |Да |Версия REST API, которая будет использована для создания ресурса. Чтобы определить доступные значения, см. раздел [Справочник по шаблону](/azure/templates/). |
 | name |Да |Имя ресурса. Имя должно соответствовать ограничениям компонентов URI, определенным в RFC3986. Службы Azure, предоставляющие имя ресурса внешним сторонам, проверяют имя, чтобы убедиться, что это не попытка подмены другого удостоверения. Для дочернего ресурса формат имени зависит от того, является ли он вложенным в родительский ресурс или определен за пределами родительского ресурса. См. о [настройке имени и типа дочернего ресурса](child-resource-name-type.md). |
-| location |Различается |Поддерживаемые географические расположения указанного ресурса. Вы можете выбрать любое из доступных расположений. Но обычно имеет смысл выбрать расположение, которое находится недалеко от пользователей. Кроме того, целесообразно разместить взаимодействующие ресурсы в одном регионе. Большинству типов ресурсов нужно расположение, но некоторым типам (например, назначению роли) оно не требуется. См. раздел [Задание расположения ресурса](resource-location.md). |
-| tags |Нет |Теги, связанные с ресурсом. Примените теги, чтобы логически организовать ресурсы в подписке. |
 | comments |Нет |Заметки по ресурсам в шаблоне. Дополнительные сведения см. в разделе [комментариев в шаблонах](template-syntax.md#comments). |
-| copy |Нет |Количество создаваемых ресурсов (если нужно несколько экземпляров). Параллельный режим используется по умолчанию. Используйте последовательный режим, если вы не хотите развертывать все ресурсы одновременно. Дополнительные сведения см. в статье [Создание нескольких экземпляров ресурсов в Azure Resource Manager](create-multiple-instances.md). |
+| location |Различается |Поддерживаемые географические расположения указанного ресурса. Вы можете выбрать любое из доступных расположений. Но обычно имеет смысл выбрать расположение, которое находится недалеко от пользователей. Кроме того, целесообразно разместить взаимодействующие ресурсы в одном регионе. Большинству типов ресурсов нужно расположение, но некоторым типам (например, назначению роли) оно не требуется. См. раздел [Задание расположения ресурса](resource-location.md). |
 | Свойство dependsOn |Нет |Ресурсы, которые должны быть развернуты перед развертыванием этого ресурса. Resource Manager оценивает зависимости между ресурсами и развертывает эти ресурсы в правильном порядке. Если ресурсы не зависят друг от друга, они развертываются параллельно. Значение может представлять собой разделенный запятыми список имен ресурсов или уникальных идентификаторов ресурсов. Выводится только список ресурсов, развертываемых в этом шаблоне. Ресурсы, которые не определены в этом шаблоне, уже должны существовать. Избегайте добавления ненужных зависимостей, так как это может замедлить развертывание и привести к созданию циклических зависимостей. Рекомендации по настройке зависимостей см. в статье [Определение зависимостей в шаблонах диспетчера ресурсов Azure](define-resource-dependency.md). |
-| properties |Нет |Параметры конфигурации ресурса. Значения свойств совпадают со значениями, указываемыми в тексте запроса для операции REST API (метод PUT) для создания ресурса. Кроме того, можно указать массив copy для создания нескольких экземпляров свойства. Чтобы определить доступные значения, см. раздел [Справочник по шаблону](/azure/templates/). |
+| tags |Нет |Теги, связанные с ресурсом. Примените теги, чтобы логически организовать ресурсы в подписке. |
 | sku | Нет | В некоторых ресурсах допускается использовать значения, определяющие номер SKU для развертывания. Например, можно указать тип избыточности для учетной записи хранения. |
 | kind | Нет | В некоторых ресурсах допускается использовать значение, которое определяет тип развертываемого ресурса. Например, можно указать в качестве типа создаваемой базы данных Cosmos DB. |
+| copy |Нет |Количество создаваемых ресурсов (если нужно несколько экземпляров). Параллельный режим используется по умолчанию. Используйте последовательный режим, если вы не хотите развертывать все ресурсы одновременно. Дополнительные сведения см. в статье [Создание нескольких экземпляров ресурсов в Azure Resource Manager](create-multiple-instances.md). |
 | План | Нет | В некоторых ресурсах допускается использовать значения, определяющие номер плана для развертывания. Например, можно указать образ Marketplace для виртуальной машины. |
+| properties |Нет |Параметры конфигурации ресурса. Значения свойств совпадают со значениями, указываемыми в тексте запроса для операции REST API (метод PUT) для создания ресурса. Кроме того, можно указать массив copy для создания нескольких экземпляров свойства. Чтобы определить доступные значения, см. раздел [Справочник по шаблону](/azure/templates/). |
 | ресурсов |Нет |Дочерние ресурсы, которые зависят от определяемого ресурса. Следует указать только те типы ресурсов, которые разрешены в схеме родительского ресурса. Зависимость от родительского ресурса не подразумевается. Ее необходимо определить явным образом. См. о [настройке имени и типа дочернего ресурса](child-resource-name-type.md). |
 
 ## <a name="outputs"></a>Выходные данные
@@ -293,9 +293,9 @@ ms.locfileid: "75483899"
 ```json
 {
   "type": "Microsoft.Compute/virtualMachines",
+  "apiVersion": "2018-10-01",
   "name": "[variables('vmName')]", // to customize name, change it in variables
   "location": "[parameters('location')]", //defaults to resource group location
-  "apiVersion": "2018-10-01",
   "dependsOn": [ /* storage account and network interface must be deployed first */
     "[resourceId('Microsoft.Storage/storageAccounts/', variables('storageAccountName'))]",
     "[resourceId('Microsoft.Network/networkInterfaces/', variables('nicName'))]"
@@ -341,10 +341,10 @@ ms.locfileid: "75483899"
 ```json
 "resources": [
   {
-    "comments": "Storage account used to store VM disks",
-    "apiVersion": "2018-07-01",
     "type": "Microsoft.Storage/storageAccounts",
+    "apiVersion": "2018-07-01",
     "name": "[concat('storage', uniqueString(resourceGroup().id))]",
+    "comments": "Storage account used to store VM disks",
     "location": "[parameters('location')]",
     "metadata": {
       "comments": "These tags are needed for policy compliance."
@@ -384,11 +384,11 @@ ms.locfileid: "75483899"
 ```json
 {
   "type": "Microsoft.Compute/virtualMachines",
+  "apiVersion": "2018-10-01",
   "name": "[variables('vmName')]", // to customize name, change it in variables
   "location": "[
     parameters('location')
     ]", //defaults to resource group location
-  "apiVersion": "2018-10-01",
   /*
     storage account and network interface
     must be deployed first

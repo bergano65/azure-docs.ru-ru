@@ -8,12 +8,12 @@ ms.date: 05/20/2019
 author: rboucher
 ms.author: robb
 ms.subservice: metrics
-ms.openlocfilehash: 1bab6a990ba38bc32c2b7350bb1d4eac15a7b95e
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 5d38786d3c7b852d3a9b65cd366eed68ebbb01e3
+ms.sourcegitcommit: 276c1c79b814ecc9d6c1997d92a93d07aed06b84
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75479037"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76152958"
 ---
 # <a name="azure-monitor-platform-metrics-exportable-via-diagnostic-settings"></a>Azure Monitor экспортировать метрики платформы через параметры диагностики
 
@@ -689,10 +689,10 @@ Azure Monitor предоставляет [метрики платформы](dat
 Да | Microsoft.Devices/IotHubs | d2c.endpoints.latency.serviceBusQueues | Routing: message latency for Service Bus Queue (Маршрутизация: задержка сообщений для очереди служебной шины) | Миллисекунды | Среднее
 Да | Microsoft.Devices/IotHubs | d2c.endpoints.latency.serviceBusTopics | Routing: message latency for Service Bus Topic (Маршрутизация: задержка сообщений для раздела служебной шины) | Миллисекунды | Среднее
 Да | Microsoft.Devices/IotHubs | d2c.Endpoints.latency.Storage | Routing: message latency for storage (Маршрутизация: задержка сообщений для хранилища) | Миллисекунды | Среднее
-Да | Microsoft.Devices/IotHubs | d2c.telemetry.egress.dropped | Маршрутизация: сообщения телеметрии отброшены | Количество | Итого
+Да | Microsoft.Devices/IotHubs | d2c.telemetry.egress.dropped | Routing: telemetry messages dropped (Маршрутизация: отброшено сообщений телеметрии)  | Количество | Итого
 Да | Microsoft.Devices/IotHubs | d2c.telemetry.egress.fallback | Routing: messages delivered to fallback (Маршрутизация: доставлено сообщений на резервный маршрут) | Количество | Итого
 Да | Microsoft.Devices/IotHubs | d2c.telemetry.egress.invalid | Routing: telemetry messages incompatible (Маршрутизация: несовместимых сообщений телеметрии) | Количество | Итого
-Да | Microsoft.Devices/IotHubs | d2c.telemetry.egress.orphaned | Маршрутизация: сообщения телеметрии потеряны | Количество | Итого
+Да | Microsoft.Devices/IotHubs | d2c.telemetry.egress.orphaned | Routing: telemetry messages orphaned (Маршрутизация: потеряно сообщений телеметрии)  | Количество | Итого
 Да | Microsoft.Devices/IotHubs | d2c.telemetry.egress.success | Routing: telemetry messages delivered (Маршрутизация: доставлено сообщений телеметрии) | Количество | Итого
 Да | Microsoft.Devices/IotHubs | d2c.telemetry.ingress.allProtocol | Число предпринятых попыток отправки сообщений телеметрии. | Количество | Итого
 Да | Microsoft.Devices/IotHubs | d2c.telemetry.ingress.sendThrottle | Количество ошибок регулирования | Количество | Итого

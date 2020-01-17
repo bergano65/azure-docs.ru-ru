@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 05/21/2019
 ms.author: apimpm
-ms.openlocfilehash: 36b4b597ae70642fee8726555ea71b5164c13cca
-ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
+ms.openlocfilehash: 771257df12ee29c2bc8d32672c8e8b7d039a96ba
+ms.sourcegitcommit: 5bbe87cf121bf99184cc9840c7a07385f0d128ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75889387"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76120815"
 ---
 # <a name="protect-an-api-by-using-oauth-20-with-azure-active-directory-and-api-management"></a>Защита API с помощью протокола OAuth 2.0 и службы управления API в Azure Active Directory
 
@@ -207,6 +207,8 @@ ms.locfileid: "75889387"
     </required-claims>
 </validate-jwt>
 ```
+> [!NOTE]
+> Этот `openid-config` URL-адрес соответствует конечной точке v1. Для конечной точки `openid-config`v2 используйте `https://login.microsoftonline.com/common/v2.0/.well-known/openid-configuration`.
 
 ## <a name="build-an-application-to-call-the-api"></a>Создание приложения для вызова API
 

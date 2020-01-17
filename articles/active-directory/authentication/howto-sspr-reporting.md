@@ -11,12 +11,12 @@ author: iainfoulds
 manager: daveba
 ms.reviewer: sahenry
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d3b05c45d218c0f85817b4b5023ac22401879f81
-ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
+ms.openlocfilehash: 27d219f46f82f4a74cb5dee0a6b11b673a4a3509
+ms.sourcegitcommit: 276c1c79b814ecc9d6c1997d92a93d07aed06b84
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74847224"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76155013"
 ---
 # <a name="reporting-options-for-azure-ad-password-management"></a>Параметры отчетов для управления паролями Azure AD
 
@@ -53,7 +53,7 @@ ms.locfileid: "74847224"
 
 ### <a name="converged-registration-preview"></a>Конвергентная регистрация (предварительная версия)
 
-Если вы участвуете в общедоступной предварительной версии согласованной регистрации, сведения о действиях пользователей в журналах аудита будут найдены в **методах проверки подлинности**службы.
+Если вы участвуете в общедоступной предварительной версии согласованной регистрации, сведения о действиях пользователей в журналах аудита будут найдены в разделе **методы проверки Подлинности** > **безопасности** .
 
 ## <a name="description-of-the-report-columns-in-the-azure-portal"></a>Описание столбцов отчета на портале Azure
 
@@ -173,8 +173,8 @@ ms.locfileid: "74847224"
 
 * [Отчеты об использовании и аналитике SSPR и MFA](howto-authentication-methods-usage-insights.md)
 * [Как развернуть самостоятельный сброс пароля?](howto-sspr-deployment.md)
-* [Сброс или изменение пароля](../user-help/active-directory-passwords-update-your-own-password.md).
-* [Регистрация для самостоятельного сброса пароля](../user-help/active-directory-passwords-reset-register.md).
+* [Сброс или изменение пароля](../user-help/active-directory-passwords-update-your-own-password.md)
+* [Регистрация для самостоятельного сброса пароля](../user-help/active-directory-passwords-reset-register.md)
 * [Требования к лицензированию самостоятельного сброса пароля в Azure AD](concept-sspr-licensing.md)
 * [Какие данные используются для SSPR и какие сведения нужно указывать для пользователей](howto-sspr-authenticationdata.md)
 * [Доступные пользователям методы проверки подлинности](concept-sspr-howitworks.md#authentication-methods)

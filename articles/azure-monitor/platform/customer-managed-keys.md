@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: yossi-y
 ms.author: yossiy
 ms.date: 01/11/2020
-ms.openlocfilehash: 0354abf6a5450a1116423e3a35c3a7e2ae7b9057
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.openlocfilehash: ef70c211c395556a4c15ff06e65098e8aaac32ba
+ms.sourcegitcommit: 5bbe87cf121bf99184cc9840c7a07385f0d128ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75971093"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76120270"
 ---
 # <a name="azure-monitor-customer-managed-key-configuration"></a>Azure Monitor конфигурация ключа, управляемого клиентом 
 
@@ -378,8 +378,6 @@ Azure Monitor хранилище всегда будет учитывать из
 
 - Шифрование CMK применяется к вновь принимаемым данным после настройки CMK. Данные, которые были приняты до настройки CMK, оставались зашифрованными с помощью ключа Microsoft Key. Вы можете запрашивать данные до и после настройки без проблем.
 
-- CMKная возможность — это региональный Azure Key Vault, ресурс *кластера* и связанные рабочие области должны находиться в одном регионе, но могут находиться в разных подписках.
-
 - После того как Рабочая область связана с ресурсом *кластера* , она не может быть отменена из ресурса *кластера* , так как данные шифруются с помощью ключа и недоступны без KEK в Azure Key Vault.
 
 - Azure Key Vault должны быть настроены как восстанавливаемые. Эти свойства не включены по умолчанию и должны быть настроены с помощью CLI и PowerShell:
@@ -391,9 +389,9 @@ Azure Monitor хранилище всегда будет учитывать из
 
 - Перемещение ресурса *кластера* в другую группу ресурсов или подписку сейчас не поддерживается.
 
-- Связь рабочей области с ресурсом *кластера* завершится ошибкой, если ресурс *кластера* находится в другом клиенте.
+- Ваша Azure Key Vault, *кластерный* ресурс и связанные рабочие области должны находиться в одном и том же регионе и в одном клиенте Azure Active Directory (Azure AD), но они могут находиться в разных подписках.
 
--   Связь рабочей области с ресурсом *кластера* завершится ошибкой, если она связана с другим ресурсом *кластера* .
+- Связь рабочей области с ресурсом *кластера* завершится ошибкой, если она связана с другим ресурсом *кластера* .
 
 ## <a name="troubleshooting-and-management"></a>Устранение неполадок и управление
 
@@ -557,7 +555,7 @@ Content-type: application/json
 
 ```json
 {
-  "id": "/subscriptions/{subscription-id}/resourcegroups/{resource-group-name}/providers/microsoft.insights/components/{component-name}",
+  "id": "/subscriptions/subscription-id/resourcegroups/resource-group-name/providers/microsoft.insights/components/component-name",
   "name": "component-name",
   "type": "Microsoft.Insights/components",
   "location": "region-name",

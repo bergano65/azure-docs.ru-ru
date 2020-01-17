@@ -11,14 +11,14 @@ ms.service: virtual-machines-linux
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
-ms.date: 6/6/2019
-ms.author: borisb
-ms.openlocfilehash: 34a2742c752259fec5859af1681da2429276ea41
-ms.sourcegitcommit: b5106424cd7531c7084a4ac6657c4d67a05f7068
+ms.date: 1/15/2020
+ms.author: guybo
+ms.openlocfilehash: 505c8619ba7f456458f681ded68604a78f938bf6
+ms.sourcegitcommit: 5bbe87cf121bf99184cc9840c7a07385f0d128ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75941866"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76122174"
 ---
 # <a name="red-hat-update-infrastructure-for-on-demand-red-hat-enterprise-linux-vms-in-azure"></a>Red Hat Update Infrastructure для предоставляемых по запросу виртуальных машин Red Hat Enterprise Linux в Azure
  [Red Hat Update Infrastructure](https://access.redhat.com/products/red-hat-update-infrastructure) (RHUI) позволяет поставщикам облачных служб (например, Azure) создавать зеркальные копии размещенного с помощью Red Hat содержимого репозитория, создавать пользовательские репозитории с содержимым для Azure и предоставлять пользовательским виртуальным машинам доступ к этому содержимому.
@@ -199,19 +199,6 @@ sudo yum makecache
 В сентябре 2016 года была развернута обновленная инфраструктура RHUI в Azure. В апреле 2017 года работа старой инфраструктуры RHUI в Azure была завершена. Если вы использовали образы RHEL (PAYG) либо их моментальные снимки с сентября 2016 года или более позднего времени, вы автоматически подключились к новой версии инфраструктуры RHUI в Azure. Но если у вас есть более старые моментальные снимки виртуальных машин, их конфигурации необходимо обновить вручную, чтобы обеспечить доступ к инфраструктуре RHUI в Azure, как описано в следующем разделе.
 
 Новые серверы RHUI в Azure развертываются с помощью [диспетчера трафика Azure](https://azure.microsoft.com/services/traffic-manager/). В диспетчере трафика одну конечную точку (rhui-1.microsoft.com) может использовать любая виртуальная машина независимо от региона.
-
-### <a name="manual-update-procedure-to-use-the-azure-rhui-servers"></a>Процедура обновления вручную для использования серверов Azure RHUI
-Эта процедура приводится только для справки. Образы RHEL (PAYG) уже содержат правильную конфигурацию для подключения к инфраструктуре RHUI в Azure. Чтобы вручную обновить конфигурацию для использования серверов RHUI в Azure, выполните следующие действия.
-
-- Для RHEL 6:
-  ```bash
-  yum --config='https://rhelimage.blob.core.windows.net/repositories/rhui-microsoft-azure-rhel6.config' install 'rhui-azure-rhel6'
-  ```
-
-- Для RHEL 7:
-  ```bash
-  yum --config='https://rhelimage.blob.core.windows.net/repositories/rhui-microsoft-azure-rhel7.config' install 'rhui-azure-rhel7'
-  ```
 
 ## <a name="next-steps"></a>Дальнейшие действия
 * Сведения о создании виртуальной машины Red Hat Enterprise Linux на основе образа с оплатой по мере использования (PAYG) и о применении размещенной в Azure инфраструктуры RHUI см. на странице [Azure Marketplace](https://azure.microsoft.com/marketplace/partners/redhat/).

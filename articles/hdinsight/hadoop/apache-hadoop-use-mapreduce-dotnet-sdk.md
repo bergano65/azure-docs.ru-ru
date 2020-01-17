@@ -1,48 +1,48 @@
 ---
 title: Отправка заданий MapReduce с использованием пакета SDK HDInsight для .NET в Azure
 description: Узнайте, как отправлять задания MapReduce в Apache Hadoop для Azure HDInsight с помощью пакета SDK для HDInsight .NET.
-ms.reviewer: jasonh
 author: hrasheed-msft
-ms.service: hdinsight
-ms.custom: hdinsightactive
-ms.topic: conceptual
-ms.date: 05/16/2018
 ms.author: hrasheed
-ms.openlocfilehash: 1ac2dda20ba1219c9f62e834b5cd2cfba8a50086
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.reviewer: jasonh
+ms.service: hdinsight
+ms.topic: conceptual
+ms.custom: hdinsightactive
+ms.date: 01/15/2020
+ms.openlocfilehash: e50510f2420d69be37af584a2648a794e1561ee3
+ms.sourcegitcommit: 276c1c79b814ecc9d6c1997d92a93d07aed06b84
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64718958"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76157058"
 ---
 # <a name="run-mapreduce-jobs-using-hdinsight-net-sdk"></a>Выполнение заданий MapReduce с использованием пакета SDK для HDInsight .NET
+
 [!INCLUDE [mapreduce-selector](../../../includes/hdinsight-selector-use-mapreduce.md)]
 
-Узнайте, как отправлять задания MapReduce с использованием пакета SDK для HDInsight .NET. В кластерах HDInsight предусмотрен JAR-файл с несколькими примерами MapReduce. Этот JAR-файл — */example/jars/hadoop-mapreduce-examples.jar*.  Один из примеров — *wordcount* (подсчет слов). Вы разрабатываете консольное приложение на C# для отправки задания по подсчету слов.  Задание считывает файл */example/data/gutenberg/davinci.txt* и сохраняет результат в */example/data/davinciwordcount*.  Чтобы снова запустить приложение, необходимо очистить папку выходных данных.
+Узнайте, как отправлять задания MapReduce с использованием пакета SDK для HDInsight .NET. В кластерах HDInsight предусмотрен JAR-файл с несколькими примерами MapReduce. JAR-файл `/example/jars/hadoop-mapreduce-examples.jar`.  Один из примеров — **wordcount** (подсчет слов). Вы разрабатываете консольное приложение на C# для отправки задания по подсчету слов.  Задание считывает файл `/example/data/gutenberg/davinci.txt` и выводит результаты в `/example/data/davinciwordcount`.  Чтобы снова запустить приложение, необходимо очистить папку выходных данных.
 
 > [!NOTE]  
 > Действия, описанные в этой статье, необходимо выполнять из клиента Windows. Чтобы получить сведения об использовании клиента Linux, OS X или Unix для работы с Hive, воспользуйтесь выбором вкладок в верхней части статьи.
-> 
-> 
 
 ## <a name="prerequisites"></a>Технические условия
-Перед началом работы с этой статьей необходимо иметь следующее:
 
-* **Кластер Hadoop в HDInsight**. Дополнительные сведения см. в кратком руководстве [Использование Apache Hadoop и Apache Hive в Azure HDInsight с шаблоном Resource Manager](apache-hadoop-linux-tutorial-get-started.md).
-* **Visual Studio 2013, Visual Studio 2015, Visual Studio 2017**.
+* Кластер Apache Hadoop в HDInsight. См. раздел [Создание кластеров Apache Hadoop с помощью портал Azure](../hdinsight-hadoop-create-linux-clusters-portal.md).
+
+* [Visual Studio](https://visualstudio.microsoft.com/vs/community/).
 
 ## <a name="submit-mapreduce-jobs-using-hdinsight-net-sdk"></a>Отправка заданий MapReduce с использованием пакета SDK для HDInsight .NET
-Пакет SDK для HDInsight .NET содержит клиентские библиотеки .NET, которые упрощают работу с кластерами HDInsight из .NET. 
 
-**Отправка заданий**
+Пакет SDK для HDInsight .NET предоставляет клиентские библиотеки .NET, которые упрощают работу с кластерами HDInsight из .NET.
 
-1. Создайте в Visual Studio консольное приложение C#.
-2. Введите следующую команду в окне консоли диспетчера пакетов NuGet:
+1. Запустите Visual Studio и создайте C# консольное приложение.
+
+1. Перейдите в **меню инструменты** > **диспетчер пакетов NuGet** > **консоль диспетчера пакетов** и введите следующую команду:
 
     ```   
     Install-Package Microsoft.Azure.Management.HDInsight.Job
     ```
-3. Используйте следующий код:
+
+1. Скопируйте приведенный ниже код в **Program.CS**. Затем измените код, задав значения для: `existingClusterName`, `existingClusterPassword`, `defaultStorageAccountName`, `defaultStorageAccountKey`и `defaultStorageContainerName`.
 
     ```csharp
     using System.Collections.Generic;
@@ -54,57 +54,56 @@ ms.locfileid: "64718958"
     using Hyak.Common;
     using Microsoft.WindowsAzure.Storage;
     using Microsoft.WindowsAzure.Storage.Blob;
-
+    
     namespace SubmitHDInsightJobDotNet
     {
         class Program
         {
             private static HDInsightJobManagementClient _hdiJobManagementClient;
-
+    
             private const string existingClusterName = "<Your HDInsight Cluster Name>";
-            private const string existingClusterUri = existingClusterName + ".azurehdinsight.net";
-            private const string existingClusterUsername = "<Cluster Username>";
             private const string existingClusterPassword = "<Cluster User Password>";
-
-            private const string defaultStorageAccountName = "<Default Storage Account Name>"; //<StorageAccountName>.blob.core.windows.net
+            private const string defaultStorageAccountName = "<Default Storage Account Name>"; 
             private const string defaultStorageAccountKey = "<Default Storage Account Key>";
             private const string defaultStorageContainerName = "<Default Blob Container Name>";
-
-            private const string sourceFile = "/example/data/gutenberg/davinci.txt";  
+    
+            private const string existingClusterUsername = "admin";
+            private const string existingClusterUri = existingClusterName + ".azurehdinsight.net";
+            private const string sourceFile = "/example/data/gutenberg/davinci.txt";
             private const string outputFolder = "/example/data/davinciwordcount";
-
+    
             static void Main(string[] args)
             {
                 System.Console.WriteLine("The application is running ...");
-
+    
                 var clusterCredentials = new BasicAuthenticationCloudCredentials { Username = existingClusterUsername, Password = existingClusterPassword };
                 _hdiJobManagementClient = new HDInsightJobManagementClient(existingClusterUri, clusterCredentials);
-
+    
                 SubmitMRJob();
-
+    
                 System.Console.WriteLine("Press ENTER to continue ...");
                 System.Console.ReadLine();
             }
-
+    
             private static void SubmitMRJob()
             {
                 List<string> args = new List<string> { { "/example/data/gutenberg/davinci.txt" }, { "/example/data/davinciwordcount" } };
-
+    
                 var paras = new MapReduceJobSubmissionParameters
                 {
                     JarFile = @"/example/jars/hadoop-mapreduce-examples.jar",
                     JarClass = "wordcount",
                     Arguments = args
                 };
-
+    
                 System.Console.WriteLine("Submitting the MR job to the cluster...");
                 var jobResponse = _hdiJobManagementClient.JobManagement.SubmitMapReduceJob(paras);
                 var jobId = jobResponse.JobSubmissionJsonResponse.Id;
                 System.Console.WriteLine("Response status code is " + jobResponse.StatusCode);
                 System.Console.WriteLine("JobId is " + jobId);
-
+    
                 System.Console.WriteLine("Waiting for the job completion ...");
-
+    
                 // Wait for job completion
                 var jobDetail = _hdiJobManagementClient.JobManagement.GetJob(jobId).JobDetail;
                 while (!jobDetail.Status.JobComplete)
@@ -112,7 +111,7 @@ ms.locfileid: "64718958"
                     Thread.Sleep(1000);
                     jobDetail = _hdiJobManagementClient.JobManagement.GetJob(jobId).JobDetail;
                 }
-
+    
                 // Get job output
                 System.Console.WriteLine("Job output is: ");
                 var storageAccess = new AzureStorageAccess(defaultStorageAccountName, defaultStorageAccountKey,
@@ -121,8 +120,8 @@ ms.locfileid: "64718958"
                 if (jobDetail.ExitValue == 0)
                 {
                     // Create the storage account object
-                    CloudStorageAccount storageAccount = CloudStorageAccount.Parse("DefaultEndpointsProtocol=https;AccountName=" + 
-                        defaultStorageAccountName + 
+                    CloudStorageAccount storageAccount = CloudStorageAccount.Parse("DefaultEndpointsProtocol=https;AccountName=" +
+                        defaultStorageAccountName +
                         ";AccountKey=" + defaultStorageAccountKey);
     
                     // Create the blob client.
@@ -147,7 +146,7 @@ ms.locfileid: "64718958"
                 else
                 {
                     // fetch stderr output in case of failure
-                    var output = _hdiJobManagementClient.JobManagement.GetJobErrorLogs(jobId, storageAccess); 
+                    var output = _hdiJobManagementClient.JobManagement.GetJobErrorLogs(jobId, storageAccess);
     
                     using (var reader = new StreamReader(output, Encoding.UTF8))
                     {
@@ -159,20 +158,21 @@ ms.locfileid: "64718958"
             }
         }
     }
+
     ```
 
-4. Нажмите клавишу **F5** для запуска приложения.
+1. Нажмите клавишу **F5** для запуска приложения.
 
-Чтобы снова запустить задание, необходимо изменить имя выходной папки задания. В нашем примере это /example/data/davinciwordcount.
+Чтобы снова запустить задание, необходимо изменить имя выходной папки задания в примере `/example/data/davinciwordcount`.
 
-По завершении задания приложение печатает содержимое выходного файла part-r-00000.
+После успешного завершения задания приложение выводит содержимое выходного файла `part-r-00000`.
 
 ## <a name="next-steps"></a>Дальнейшие действия
-В этой статье вы ознакомились с несколькими способами создания кластера HDInsight. Для получения дополнительных сведений ознакомьтесь со следующими статьями:
+
+В этой статье вы ознакомились с несколькими способами создания кластера HDInsight. Дополнительные сведения см. в следующих статьях:
 
 * Сведения об отправке задания Hive см. в статье [Выполнение запросов Apache Hive с использованием пакета SDK .NET для HDInsight](apache-hadoop-use-hive-dotnet-sdk.md).
 * Сведения о создании кластеров HDInsight см. в статье [Установка кластеров в HDInsight с использованием Hadoop, Spark, Kafka и других технологий](../hdinsight-hadoop-provision-linux-clusters.md).
 * Сведения об управлении кластерами в HDInsight см. в статье [Управление кластерами Apache Hadoop в HDInsight с помощью портала Azure](../hdinsight-administer-use-portal-linux.md).
 * Подробные сведения о пакете SDK для HDInsight .NET см. в [соответствующей справке](https://docs.microsoft.com/dotnet/api/overview/azure/hdinsight).
 * Сведения о неинтерактивной проверке подлинности в Azure см. в статье [Создание приложений .NET HDInsight с неинтерактивной проверкой подлинности](../hdinsight-create-non-interactive-authentication-dotnet-applications.md).
-

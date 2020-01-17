@@ -4,12 +4,12 @@ description: Из этой статьи вы узнаете, как выполн
 ms.reviewer: vijayts
 ms.topic: conceptual
 ms.date: 09/11/2019
-ms.openlocfilehash: 52a7e98702299e790ee097cca871332ebb6a52c5
-ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
+ms.openlocfilehash: fc0c3127594fe3ca90b0a66ce548f471c55f4e5f
+ms.sourcegitcommit: 276c1c79b814ecc9d6c1997d92a93d07aed06b84
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/02/2020
-ms.locfileid: "75611395"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76156477"
 ---
 # <a name="back-up-sql-server-databases-in-azure-vms"></a>Создание резервных копий баз данных SQL Server на виртуальных машинах Azure
 
@@ -29,7 +29,7 @@ SQL Server базы данных — это критически важные р
 
 Перед созданием резервной копии SQL Server базы данных проверьте следующие критерии.
 
-1. Выявление или создание [хранилища служб восстановления](backup-sql-server-database-azure-vms.md#create-a-recovery-services-vault) в том же регионе или в локальной службе, что и виртуальная машина, на которой размещен экземпляр SQL Server.
+1. Выявление или создание [хранилища служб восстановления](backup-sql-server-database-azure-vms.md#create-a-recovery-services-vault) в том же регионе и подписке, что и виртуальная машина, на которой размещен экземпляр SQL Server.
 2. Убедитесь, что виртуальная машина подключена [к сети](backup-sql-server-database-azure-vms.md#establish-network-connectivity).
 3. Убедитесь, что SQL Server базы данных соответствуют [рекомендациям по именованию баз данных для Azure Backup](#database-naming-guidelines-for-azure-backup).
 4. Убедитесь, что для базы данных не включены другие решения резервного копирования. Отключите все остальные SQL Server резервные копии, прежде чем создавать резервную копию базы данных.

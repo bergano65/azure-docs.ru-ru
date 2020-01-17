@@ -8,14 +8,14 @@ editor: ''
 ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
-ms.date: 04/08/2019
+ms.date: 01/16/2020
 ms.author: jingwang
-ms.openlocfilehash: ede1e56384c75c64765962b7db196973a30c605b
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: 45699680ad2003c034bce588857f8b102a0b6d26
+ms.sourcegitcommit: 5bbe87cf121bf99184cc9840c7a07385f0d128ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74928450"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76121800"
 ---
 # <a name="managed-identity-for-data-factory"></a>Управляемое удостоверение для Фабрики данных
 
@@ -23,7 +23,7 @@ ms.locfileid: "74928450"
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-## <a name="overview"></a>Краткое описание
+## <a name="overview"></a>Обзор
 
 При создании фабрики данных можно создать управляемое удостоверение вместе с созданием фабрики. Управляемое удостоверение является управляемым приложением, зарегистрированным в Azure Active Directory, и представляет эту конкретную фабрику данных.
 
@@ -155,17 +155,19 @@ client.Factories.CreateOrUpdate(resourceGroup, dataFactoryName, dataFactory);
 
 ### <a name="retrieve-managed-identity-using-azure-portal"></a>Получение управляемого удостоверения с помощью портал Azure
 
-Сведения об управляемом удостоверении можно найти на странице портал Azure-> свойства фабрики данных >.
+Вы можете найти сведения об управляемом удостоверении из портал Azure-> свойств фабрики данных >.
 
 - Идентификатор объекта управляемого идентификатора
 - Управляемый клиент удостоверений
-- **Идентификатор приложения управляемого удостоверения** > скопировать это значение
+- Идентификатор приложения управляемого удостоверения
 
-![Получение управляемого удостоверения](media/data-factory-service-identity/retrieve-service-identity-portal.png)
+Сведения об управляемом удостоверении также будут отображаться при создании связанной службы, которая поддерживает проверку подлинности управляемого удостоверения, например, большой двоичный объект Azure, Azure Data Lake Storage, Azure Key Vault и т. д.
+
+При предоставлении разрешения используйте идентификатор объекта или имя фабрики данных (в качестве имени управляемого удостоверения), чтобы найти это удостоверение.
 
 ### <a name="retrieve-managed-identity-using-powershell"></a>Получение управляемого удостоверения с помощью PowerShell
 
-Идентификатор управляемого участника удостоверений и идентификатор клиента будут возвращены при получении определенной фабрики данных следующим образом.
+Идентификатор управляемого участника удостоверений и идентификатор клиента будут возвращены при получении определенной фабрики данных, как показано ниже. Используйте **PrincipalId** для предоставления доступа:
 
 ```powershell
 PS C:\WINDOWS\system32> (Get-AzDataFactoryV2 -ResourceGroupName <resourceGroupName> -Name <dataFactoryName>).Identity
@@ -175,7 +177,7 @@ PrincipalId                          TenantId
 765ad4ab-XXXX-XXXX-XXXX-51ed985819dc 72f988bf-XXXX-XXXX-XXXX-2d7cd011db47
 ```
 
-Скопируйте идентификатор субъекта, а затем выполните указанную ниже команду Azure Active Directory с идентификатором субъекта в качестве параметра, чтобы получить **идентификатор приложения**, используемый для предоставления доступа:
+Идентификатор приложения можно получить, скопировав выше ИД участника, а затем выполните следующую команду Azure Active Directory с ИДЕНТИФИКАТОРом субъекта в качестве параметра.
 
 ```powershell
 PS C:\WINDOWS\system32> Get-AzADServicePrincipal -ObjectId 765ad4ab-XXXX-XXXX-XXXX-51ed985819dc

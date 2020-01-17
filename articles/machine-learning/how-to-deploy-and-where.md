@@ -9,14 +9,14 @@ ms.topic: conceptual
 ms.author: jordane
 author: jpe316
 ms.reviewer: larryfr
-ms.date: 12/17/2019
+ms.date: 12/27/2019
 ms.custom: seoapril2019
-ms.openlocfilehash: 48ecaea82e8874ff521abafaa075b41367f8fbf1
-ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
+ms.openlocfilehash: 1560b5d60ae3c6de3ecb6d50859e24ebb7bc2d28
+ms.sourcegitcommit: 276c1c79b814ecc9d6c1997d92a93d07aed06b84
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75754002"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76156919"
 ---
 # <a name="deploy-models-with-azure-machine-learning"></a>Развертывание моделей с помощью Машинное обучение Azure
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -38,7 +38,7 @@ ms.locfileid: "75754002"
 
 - Модель. Если у вас нет обученной модели, можно использовать модель и файлы зависимостей, предоставленные в [этом руководстве](https://aka.ms/azml-deploy-cloud).
 
-- [Расширение Azure CLI для службы машинное обучение](reference-azure-machine-learning-cli.md), [машинное обучение Azure SDK для Python](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py)или [расширение машинное обучение Azure Visual Studio Code](how-to-vscode-tools.md).
+- [Расширение Azure CLI для службы машинное обучение](reference-azure-machine-learning-cli.md), [машинное обучение Azure SDK для Python](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py)или [расширение машинное обучение Azure Visual Studio Code](tutorial-setup-vscode-extension.md).
 
 ## <a name="connect-to-your-workspace"></a>Подключение к рабочей области
 
@@ -59,7 +59,7 @@ ms.locfileid: "75754002"
 
 + **Использование VS Code**
 
-   При использовании VS Code рабочую область можно выбрать с помощью графического интерфейса. Дополнительные сведения см. в разделе [Развертывание моделей и управление ими](how-to-vscode-tools.md#deploy-and-manage-models) в документации по расширению VS Code.
+   При использовании VS Code рабочую область можно выбрать с помощью графического интерфейса. Дополнительные сведения см. в разделе [Развертывание моделей и управление ими](tutorial-train-deploy-image-classification-model-vscode.md#deploy-the-model) в документации по расширению VS Code.
 
 ## <a id="registermodel"></a>Регистрация модели
 
@@ -115,7 +115,7 @@ ms.locfileid: "75754002"
 
 + **Использование VS Code**
 
-  Регистрация моделей с помощью любых файлов или папок модели с помощью расширения [VS Code](how-to-vscode-tools.md#deploy-and-manage-models) .
+  Регистрация моделей с помощью любых файлов или папок модели с помощью расширения [VS Code](tutorial-train-deploy-image-classification-model-vscode.md#deploy-the-model) .
 
 ### <a name="register-a-model-from-a-local-file"></a>Регистрация модели из локального файла
 
@@ -185,7 +185,7 @@ ms.locfileid: "75754002"
     >
     > * Пакет SDK для Машинное обучение Azure не предоставляет веб-службам и IoT Edgeным развертываниям доступ к хранилищу данных или наборам DataSet. Если развернутой модели требуется доступ к данным, хранящимся за пределами развертывания, например данных в учетной записи хранения Azure, необходимо разработать собственное решение с кодом, используя соответствующий пакет SDK. Например, [пакет SDK для службы хранилища Azure для Python](https://github.com/Azure/azure-storage-python).
     >
-    >   Альтернативой, который может работать в вашем сценарии, является [Прогнозирование пакетной обработки](how-to-run-batch-predictions.md), предоставляющее доступ к хранилищам данных во время оценки.
+    >   Альтернативой, который может работать в вашем сценарии, является [Прогнозирование пакетной обработки](how-to-use-parallel-run-step.md), предоставляющее доступ к хранилищам данных во время оценки.
 
 * **Зависимости**, например вспомогательные скрипты или пакеты Python и Conda, необходимые для выполнения скрипта входа или модели.
 

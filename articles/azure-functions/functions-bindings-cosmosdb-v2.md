@@ -5,12 +5,12 @@ author: craigshoemaker
 ms.topic: reference
 ms.date: 11/21/2017
 ms.author: cshoe
-ms.openlocfilehash: a97490bffa16a32d17d41d3a3386b3d363f818d8
-ms.sourcegitcommit: f34165bdfd27982bdae836d79b7290831a518f12
+ms.openlocfilehash: 478a7ae8d6938ee4d4ef5c30c8126c3e95f35305
+ms.sourcegitcommit: 5bbe87cf121bf99184cc9840c7a07385f0d128ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/13/2020
-ms.locfileid: "75921114"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76121290"
 ---
 # <a name="azure-cosmos-db-bindings-for-azure-functions-2x"></a>Привязки Azure Cosmos DB для службы "Функции Azure" версии 2.х
 
@@ -255,9 +255,9 @@ namespace CosmosDBSamplesV2
 
 |свойство function.json | Свойство атрибута |Description|
 |---------|---------|----------------------|
-|**type** || Нужно задать значение `cosmosDBTrigger`. |
-|**direction** || Нужно задать значение `in`. Этот параметр задается автоматически при создании триггера на портале Azure. |
-|**name** || Имя переменной, используемое в коде функции, представляющей список документов с изменениями. |
+|**type** | Н/Д | Нужно задать значение `cosmosDBTrigger`. |
+|**direction** | Н/Д | Нужно задать значение `in`. Этот параметр задается автоматически при создании триггера на портале Azure. |
+|**name** | Н/Д | Имя переменной, используемое в коде функции, представляющей список документов с изменениями. |
 |**connectionStringSetting**|**ConnectionStringSetting** | Имя параметра приложения, содержащего строку подключения, используемую для подключения к отслеживаемой учетной записи Azure Cosmos DB. |
 |**databaseName**|**DatabaseName**  | Имя базы данных Azure Cosmos DB с отслеживаемой коллекцией. |
 |**collectionName** |**CollectionName** | Имя отслеживаемой коллекции. |
@@ -1737,9 +1737,9 @@ public class DocsFromRouteSqlQuery {
 
 |свойство function.json | Свойство атрибута |Description|
 |---------|---------|----------------------|
-|**type**     || Нужно задать значение `cosmosDB`.        |
-|**direction**     || Нужно задать значение `in`.         |
-|**name**     || Имя параметра привязки, представляющего документ в функции.  |
+|**type**     | Н/Д | Нужно задать значение `cosmosDB`.        |
+|**direction**     | Н/Д | Нужно задать значение `in`.         |
+|**name**     | Н/Д | Имя параметра привязки, представляющего документ в функции.  |
 |**databaseName** |**DatabaseName** |База данных, содержащая документ.        |
 |**collectionName** |**CollectionName** | Имя коллекции, содержащей документ. |
 |**идентификатор**    | **Id** | Идентификатор документа, который нужно получить. Это свойство поддерживает [выражения привязок](./functions-bindings-expressions-patterns.md). Не задавайте свойства **id** или **sqlQuery** одновременно. Если не задать ни одного из них, извлекается вся коллекция. |
@@ -2366,9 +2366,9 @@ def main(req: func.HttpRequest, doc: func.Out[func.Document]) -> func.HttpRespon
 
 |свойство function.json | Свойство атрибута |Description|
 |---------|---------|----------------------|
-|**type**     || Нужно задать значение `cosmosDB`.        |
-|**direction**     || Нужно задать значение `out`.         |
-|**name**     || Имя параметра привязки, представляющего документ в функции.  |
+|**type**     | Н/Д | Нужно задать значение `cosmosDB`.        |
+|**direction**     | Н/Д | Нужно задать значение `out`.         |
+|**name**     | Н/Д | Имя параметра привязки, представляющего документ в функции.  |
 |**databaseName** | **DatabaseName**|База данных, содержащая коллекцию, в которой создается документ.     |
 |**collectionName** |**CollectionName**  | Имя коллекции, в которой создается документ. |
 |**createIfNotExists**  |**CreateIfNotExists**    | Логическое значение, указывающее, будет ли создана коллекция при ее отсутствии. Значение по умолчанию — *false*, так как коллекции создаются с использованием зарезервированной пропускной способности, с которой связаны ценовые требования. Дополнительные сведения см. на [странице с расценками](https://azure.microsoft.com/pricing/details/cosmos-db/).  |

@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/23/2019
 ms.author: aschhab
-ms.openlocfilehash: 11ea10f1deba5a21b98dea875a1b7dc94998aa00
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: fc7e40661ae345412eb0336322599616dc89d6c4
+ms.sourcegitcommit: 5bbe87cf121bf99184cc9840c7a07385f0d128ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60402740"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76122191"
 ---
 # <a name="message-deferral"></a>Откладывание сообщений
 
@@ -32,11 +32,11 @@ ms.locfileid: "60402740"
 
 ## <a name="message-deferral-apis"></a>Интерфейсы API откладывания сообщений
 
-Доступные API: [BrokeredMessage.Defer](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage.defer?view=azureservicebus-4.1.1#Microsoft_ServiceBus_Messaging_BrokeredMessage_Defer) или [BrokeredMessage.DeferAsync](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage.deferasync?view=azureservicebus-4.1.1#Microsoft_ServiceBus_Messaging_BrokeredMessage_DeferAsync) в клиенте .NET Framework, [MessageReceiver.DeferAsync](/dotnet/api/microsoft.azure.servicebus.core.messagereceiver.deferasync) в клиенте .NET Standard и **mesageReceiver.defer** или **messageReceiver.deferSync** в клиенте Java. 
+API-интерфейс — [BrokeredMessage. Отсрочка](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage.defer?view=azureservicebus-4.1.1#Microsoft_ServiceBus_Messaging_BrokeredMessage_Defer) или [BrokeredMessage. DeferAsync](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage.deferasync?view=azureservicebus-4.1.1#Microsoft_ServiceBus_Messaging_BrokeredMessage_DeferAsync) в клиенте .NET Framework, [MessageReceiver. DeferAsync](/dotnet/api/microsoft.azure.servicebus.core.messagereceiver.deferasync) в .NET Standardном клиенте и [Имессажерецеивер. Отсрочка](/java/api/com.microsoft.azure.servicebus.imessagereceiver.defer?view=azure-java-stable) или [имессажерецеивер. DeferAsync](/java/api/com.microsoft.azure.servicebus.imessagereceiver.deferasync?view=azure-java-stable) в клиенте Java. 
 
 Отложенные сообщения остаются в основной очереди вместе с другими активными сообщениями (в отличие от недоставленных сообщений, находящихся в подочереди), но их больше невозможно получить с помощью обычных функций Receive и ReceiveAsync. Отложенные сообщения можно будет обнаружить посредством [обзора сообщений](message-browsing.md), если приложение потеряет их.
 
-Для получения отложенного сообщения его владелец обязан запомнить значение [SequenceNumber](/dotnet/api/microsoft.azure.servicebus.message.systempropertiescollection.sequencenumber#Microsoft_Azure_ServiceBus_Message_SystemPropertiesCollection_SequenceNumber), присваиваемое при откладывании. Любой получатель, который знает последовательный номер отложенного сообщения, позже сможет получить сообщение явным образом с помощью функции `Receive(sequenceNumber)`. Для очередей, можно использовать [QueueClient](/dotnet/api/microsoft.servicebus.messaging.queueclient), использовать подписки на разделы [SubscriptionClient](/dotnet/api/microsoft.servicebus.messaging.subscriptionclient).
+Для получения отложенного сообщения его владелец обязан запомнить значение [SequenceNumber](/dotnet/api/microsoft.azure.servicebus.message.systempropertiescollection.sequencenumber#Microsoft_Azure_ServiceBus_Message_SystemPropertiesCollection_SequenceNumber), присваиваемое при откладывании. Любой получатель, который знает последовательный номер отложенного сообщения, позже сможет получить сообщение явным образом с помощью функции `Receive(sequenceNumber)`. Для очередей можно использовать [QueueClient](/dotnet/api/microsoft.servicebus.messaging.queueclient)подписки раздела, использующие [SubscriptionClient](/dotnet/api/microsoft.servicebus.messaging.subscriptionclient).
 
 Если сообщение не удается обработать, так как конкретный ресурс для его обработки временно недоступен, но обработку этого сообщения нельзя бесцеремонно приостанавливать, можно отложить это сообщение в сторону на несколько минут, запомнив значение **SequenceNumber** в [запланированном сообщении](message-sequencing.md), которое должно быть опубликовано через несколько минут, и повторно получить отложенное сообщение при получении этого запланированного сообщения. Если все операции обработчика сообщений зависят от базы данных, и она временно недоступна, то следует не откладывать, а полностью приостанавливать получение сообщений, пока эта база данных снова не будет доступна.
 

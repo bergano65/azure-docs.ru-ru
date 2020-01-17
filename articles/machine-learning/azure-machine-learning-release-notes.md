@@ -10,12 +10,12 @@ ms.author: jmartens
 author: j-martens
 ms.date: 11/04/2019
 ms.custom: seodec18
-ms.openlocfilehash: b413fd7efe865f1dc2062a8f2dcfae983ec2f27a
-ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
+ms.openlocfilehash: 0e613dd1c47a9942d95bd668f1e9f85e42649b5c
+ms.sourcegitcommit: 5bbe87cf121bf99184cc9840c7a07385f0d128ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75771927"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76122378"
 ---
 # <a name="azure-machine-learning-release-notes"></a>Заметки о выпуске Машинное обучение Azure
 
@@ -125,7 +125,7 @@ ms.locfileid: "75771927"
     + Исправление для загрузки Рунконфигуратионс из относительных путей.
     + При вызове `keep_columns` или `drop_columns`, который приводит к удалению столбца TimeSeries, соответствующие возможности также будут удалены для набора данных.
   + **azureml-интерпретировать**
-    + обновленная версия интерпретации сообщества до 0.2.0
+    + Обновленная версия интерпретации сообщества до 0.2.0
   + **azureml-конвейер — шаги**
     + Описаны поддерживаемые значения для `runconfig_pipeline_params` действий конвейера машинного обучения Azure.
   + **azureml-конвейер — ядро**
@@ -1488,7 +1488,7 @@ ms.locfileid: "75771927"
 + Конвейеры машинного обучения
   + Новые и обновленные записные книжки для начала работы с примерами конвейеров, пакетного определения области и передачи стиля: https://aka.ms/aml-pipeline-notebooks
   + Узнайте, как [создать свой первый конвейер](how-to-create-your-first-pipeline.md).
-  + Узнайте, как [выполнять пакетное прогнозирование с помощью конвейеров](how-to-run-batch-predictions.md).
+  + Узнайте, как [выполнять пакетное прогнозирование с помощью конвейеров](how-to-use-parallel-run-step.md).
 + Целевой объект вычислений Машинного обучения Azure
   + [Примеры записных книжек](https://aka.ms/aml-notebooks) теперь обновлены для использования новой управляемой вычислительной среды.
   + [Сведения об этой вычислительной среде](how-to-set-up-training-targets.md#amlcompute).

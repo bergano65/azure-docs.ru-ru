@@ -8,15 +8,15 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 10/26/2019
+ms.date: 01/07/2020
 ms.author: qiohu
 zone_pivot_groups: programming-languages-set-two
-ms.openlocfilehash: 94b8fb026b61b52e8096cf54e1db30a6c260c04b
-ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
+ms.openlocfilehash: e4f4dd3c1e23855a8a1a69dac72c232779206f1d
+ms.sourcegitcommit: 5bbe87cf121bf99184cc9840c7a07385f0d128ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74109951"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76121715"
 ---
 # <a name="specify-source-language-for-speech-to-text"></a>Укажите исходный язык для перевода речи в текст
 
@@ -26,23 +26,28 @@ ms.locfileid: "74109951"
 
 ## <a name="how-to-specify-source-language-in-c"></a>Как указать исходный язык вC#
 
-Первым шагом является создание `SpeechConfig`:
+В этом примере исходный язык явно указывается в качестве параметра с помощью конструкции `SpeechRecognizer`.
 
 ```csharp
-var speechConfig = SpeechConfig.FromSubscription("YourSubscriptionKey", "YourServiceRegion");
+var recognizer = new SpeechRecognizer(speechConfig, "de-DE", audioConfig);
 ```
 
-Затем укажите исходный язык звука с помощью `SpeechRecognitionLanguage`:
+В этом примере исходный язык предоставляется с помощью `SourceLanguageConfig`. Затем `sourceLanguageConfig` передается в качестве параметра в `SpeechRecognizer` конструкцию.
 
 ```csharp
-speechConfig.SpeechRecognitionLanguage = "de-DE";
+var sourceLanguageConfig = SourceLanguageConfig.FromLanguage("de-DE");
+var recognizer = new SpeechRecognizer(speechConfig, sourceLanguageConfig, audioConfig);
 ```
 
-Если вы используете пользовательскую модель для распознавания, можно указать конечную точку с `EndpointId`:
+В этом примере исходный язык и Пользовательская конечная точка предоставляются с помощью `SourceLanguageConfig`. Затем `sourceLanguageConfig` передается в качестве параметра в `SpeechRecognizer` конструкцию.
 
 ```csharp
-speechConfig.EndpointId = "The Endpoint ID for your custom model.";
+var sourceLanguageConfig = SourceLanguageConfig.FromLanguage("de-DE", "The Endpoint ID for your custom model.");
+var recognizer = new SpeechRecognizer(speechConfig, sourceLanguageConfig, audioConfig);
 ```
+
+>[!Note]
+> методы `SpeechRecognitionLanguage` и `EndpointId` не рекомендуются из класса `SpeechConfig` в C#. Использовать эти методы не рекомендуется, и их не следует использовать при создании `SpeechRecognizer`.
 
 ::: zone-end
 
@@ -178,6 +183,6 @@ speechConfig.endpointId = @"The Endpoint ID for your custom model.";
 
 * Список поддерживаемых языков и языковых стандартов для распознавания речи в тексте см. в разделе [Поддержка языков](language-support.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Справочная документация по пакету SDK для распознавания речи](speech-sdk.md)

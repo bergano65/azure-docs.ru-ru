@@ -11,12 +11,12 @@ author: iainfoulds
 manager: daveba
 ms.reviewer: jsimmons
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d8602a9c5b69c47c2f663dab461394ef5e1a9bed
-ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
+ms.openlocfilehash: 2440d373b726b4f97cd5d9ba162daaa0714f79e0
+ms.sourcegitcommit: 276c1c79b814ecc9d6c1997d92a93d07aed06b84
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75762864"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76155056"
 ---
 # <a name="azure-ad-password-protection-operational-procedures"></a>операционные процедуры службы защиты паролем Azure AD
 
@@ -28,7 +28,7 @@ ms.locfileid: "75762864"
 
 ## <a name="enable-password-protection"></a>Включение защиты паролем
 
-1. Войдите в [портал Azure](https://portal.azure.com) и перейдите к **Azure Active Directory**, **безопасности**,**методам проверки подлинности**, а затем **защиты паролем**.
+1. Войдите в [портал Azure](https://portal.azure.com) и перейдите к **Azure Active Directory** > **Безопасность** > **методы проверки подлинности** > **Защита паролем**.
 1. Для параметра **Включить защиту паролем в Windows Server Active Directory** выберите значение **Да**.
 1. Как упоминалось в [руководстве по развертыванию](howto-password-ban-bad-on-premises-deploy.md#deployment-strategy), рекомендуется изначально выбрать **режим** **Аудит**.
    * Ознакомившись с возможностями этого компонента, вы сможете переключиться на **режим** **Применено**.

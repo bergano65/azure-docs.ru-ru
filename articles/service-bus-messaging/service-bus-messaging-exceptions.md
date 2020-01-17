@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/21/2018
 ms.author: aschhab
-ms.openlocfilehash: 7ad0eb602d9e7b907e23ebf7b91ed86650c1e807
-ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
+ms.openlocfilehash: eebbef25f2cd4539a5092f271c3944c24503f287
+ms.sourcegitcommit: 276c1c79b814ecc9d6c1997d92a93d07aed06b84
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74790477"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76156817"
 ---
 # <a name="troubleshooting-guide-for-azure-service-bus"></a>Руководство по устранению неполадок в служебной шине Azure
 В этой статье приведены некоторые исключения .NET, создаваемые служебной шиной .NET Framework API, а также другие советы по устранению неполадок. 
@@ -101,7 +101,7 @@ ConnectionsQuotaExceeded for namespace xxx.
 ### <a name="timeoutexception"></a>TimeoutException
 [TimeoutException](https://msdn.microsoft.com/library/system.timeoutexception.aspx) указывает, что запущенная пользователем операция занимает больше времени, чем время ожидания операции. 
 
-Следует проверить значение свойства [ServicePointManager.DefaultConnectionLimit](https://msdn.microsoft.com/library/system.net.servicepointmanager.defaultconnectionlimit), так как достижение этого ограничения также может вызвать исключение [TimeoutException](https://msdn.microsoft.com/library/system.timeoutexception.aspx).
+Следует проверить значение свойства [ServicePointManager.DefaultConnectionLimit](https://msdn.microsoft.com/library/system.net.servicepointmanager.defaultconnectionlimit), так как достижение этого ограничения также может породить исключение [TimeoutException](https://msdn.microsoft.com/library/system.timeoutexception.aspx).
 
 #### <a name="queues-and-topics"></a>Очереди и разделы
 Для очередей и разделов время ожидания указывается в свойстве [MessagingFactorySettings.OperationTimeout](/dotnet/api/microsoft.servicebus.messaging.messagingfactorysettings) (как часть строки подключения) или с помощью [ServiceBusConnectionStringBuilder](/dotnet/api/microsoft.azure.servicebus.servicebusconnectionstringbuilder). Само сообщение об ошибке может отличаться, но оно всегда содержит значение времени ожидания, указанное для текущей операции. 
@@ -121,10 +121,10 @@ ConnectionsQuotaExceeded for namespace xxx.
     ```shell
     telnet sbwagn2.servicebus.windows.net 5671
     ```
-- При наличии периодических проблем с подключением выполните следующую команду, чтобы проверить наличие пропущенных пакетов. Не заключайте его в течение приблизительно 1 минуты, чтобы убедиться, что подключения частично заблокированы. Вы можете скачать средство `psping` [отсюда.](/sysinternals/downloads/psping)
+- При наличии периодических проблем с подключением выполните следующую команду, чтобы проверить наличие пропущенных пакетов. Эта команда попытается установить 25 разных TCP-подключений каждые 1 секунду со службой, после чего можно проверить количество успешных и неудачных попыток, а также задержку подключения TCP. Вы можете скачать средство `psping` [отсюда.](/sysinternals/downloads/psping)
 
     ```shell
-    psping.exe -t -q ehedhdev.servicebus.windows.net:9354 -nobanner     
+    .\psping.exe -n 25 -i 1 -q yournamespace.servicebus.windows.net:5671 -nobanner     
     ```
     Аналогичные команды можно использовать, если вы используете другие средства, такие как `tnc`, `ping`и т. д. 
 - Найдите трассировку сети, если предыдущие шаги не помогают и не проанализировали ее, либо обратитесь в [Служба поддержки Майкрософт](https://support.microsoft.com/).

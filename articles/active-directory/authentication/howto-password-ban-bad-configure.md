@@ -11,12 +11,12 @@ author: iainfoulds
 manager: daveba
 ms.reviewer: rogoya
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c58371edffa4400c2c2b3efd37c3ce6d7c3cad95
-ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
+ms.openlocfilehash: eb47b9df51803c76662b5fb4ca1fe23740e7af9a
+ms.sourcegitcommit: 276c1c79b814ecc9d6c1997d92a93d07aed06b84
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74847921"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76155066"
 ---
 # <a name="configuring-the-custom-banned-password-list"></a>Настройка пользовательского списка заблокированных паролей
 
@@ -26,7 +26,7 @@ ms.locfileid: "74847921"
 
 Чтобы настроить пользовательский список заблокированных паролей, вам потребуется лицензия Azure Active Directory Premium P1 или P2. Более подробные сведения о лицензировании Azure Active Directory см. на [странице цен на Azure Active Directory](https://azure.microsoft.com/pricing/details/active-directory/).
 
-1. Войдите в [портал Azure](https://portal.azure.com) и перейдите к **Azure Active Directory**, **методам проверки подлинности**, а затем **защиты паролем**.
+1. Войдите в [портал Azure](https://portal.azure.com) и перейдите к **Azure Active Directory** > **Безопасность** > **методы проверки подлинности** > **Защита паролем**.
 1. Для параметра **Принудительный настраиваемый список** задайте значение **Да**.
 1. Добавьте по одной строке на каждую линию в **пользовательский список заблокированных паролей**.
    * Список настраиваемых паролей с запрещением может содержать до 1000 условий.

@@ -3,16 +3,16 @@ title: Развертывание ресурсов с помощью REST API и
 description: Для развертывания ресурсов в Azure используйте Azure Resource Manager и диспетчер ресурсов REST API. Эти ресурсы определяются в шаблоне Resource Manager.
 ms.topic: conceptual
 ms.date: 06/04/2019
-ms.openlocfilehash: 3a3447746b3e7cbdfeeddd296ce78068e120a134
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: fc386f51073c256fd083a04bbed39316784827b1
+ms.sourcegitcommit: 276c1c79b814ecc9d6c1997d92a93d07aed06b84
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75484965"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76152516"
 ---
 # <a name="deploy-resources-with-resource-manager-templates-and-resource-manager-rest-api"></a>Развертывание ресурсов с использованием шаблонов и REST API Resource Manager
 
-В этом разделе объясняется, как использовать шаблоны и REST API Resource Manager для развертывания ресурсов в Azure.  
+В этом разделе объясняется, как использовать шаблоны и REST API Resource Manager для развертывания ресурсов в Azure.
 
 Вы можете включить шаблон в текст запроса или связать с файлом. Файл может быть локальным или внешним, доступным по универсальному коду ресурса (URI). Если шаблон находится в учетной записи хранения, то во время развертывания можно ограничить доступ к шаблону и предоставить маркер подписанного URL-адреса (SAS).
 
@@ -67,7 +67,7 @@ PUT https://management.azure.com/providers/Microsoft.Management/managementGroups
 
 1. Проверьте развернутую службу перед ее выполнением. Для этого выполните операцию [проверки развертывания шаблонов](/rest/api/resources/deployments/validate). При тестировании развернутой службы укажите точно такие же параметры, как и при ее выполнении (как показано на следующем шаге).
 
-1. Чтобы развернуть шаблон, укажите идентификатор подписки, имя группы ресурсов, имя развертывания в URI запроса. 
+1. Чтобы развернуть шаблон, укажите идентификатор подписки, имя группы ресурсов, имя развертывания в URI запроса.
 
    ```HTTP
    PUT https://management.azure.com/subscriptions/<YourSubscriptionId>/resourcegroups/<YourResourceGroupName>/providers/Microsoft.Resources/deployments/<YourDeploymentName>?api-version=2019-05-01
@@ -116,7 +116,7 @@ PUT https://management.azure.com/providers/Microsoft.Management/managementGroups
 
     Можно настроить учетную запись хранения для использования маркера подписанного URL-адреса (SAS). Дополнительные сведения см. в статье [Делегирование доступа с помощью подписанного URL-адреса](/rest/api/storageservices/delegating-access-with-a-shared-access-signature).
 
-    Если требуется предоставить конфиденциальное значение для параметра (например, пароль), добавьте это значение в хранилище ключей. Получите хранилище ключей во время развертывания, как показано в предыдущем примере. Дополнительные сведения см. в статье [Передача безопасных значений в процессе развертывания](key-vault-parameter.md). 
+    Если требуется предоставить конфиденциальное значение для параметра (например, пароль), добавьте это значение в хранилище ключей. Получите хранилище ключей во время развертывания, как показано в предыдущем примере. Дополнительные сведения см. в статье [Передача безопасных значений в процессе развертывания](key-vault-parameter.md).
 
 1. Вместо создания ссылки на файлы для шаблона и параметров их можно включить в тексте запроса. В следующем примере показан текст запроса с шаблоном и встроенным параметром:
 
@@ -155,8 +155,8 @@ PUT https://management.azure.com/providers/Microsoft.Management/managementGroups
         "resources": [
           {
             "type": "Microsoft.Storage/storageAccounts",
-            "name": "[variables('storageAccountName')]",
             "apiVersion": "2018-02-01",
+            "name": "[variables('storageAccountName')]",
             "location": "[parameters('location')]",
             "sku": {
               "name": "[parameters('storageAccountType')]"

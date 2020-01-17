@@ -6,12 +6,12 @@ ms.topic: reference
 ms.date: 09/03/2018
 ms.author: cshoe
 ms.custom: cc996988-fb4f-47
-ms.openlocfilehash: 3680de5d8e0e761047e1263c2679da87b1fa2d0b
-ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
+ms.openlocfilehash: 70254e42b5964c7c7a3bf15c396f4c118f68a5ed
+ms.sourcegitcommit: 5bbe87cf121bf99184cc9840c7a07385f0d128ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75769461"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76121239"
 ---
 # <a name="azure-queue-storage-bindings-for-azure-functions"></a>Привязки хранилища очередей Azure для службы "Функции Azure"
 
@@ -249,7 +249,7 @@ def main(msg: func.QueueMessage):
   }
   ```
 
-  Чтобы указать учетную запись хранения, которую нужно использовать, можно задать свойство `Connection`, как показано в следующем примере.
+  Можно задать свойство `Connection`, чтобы указать параметр приложения, который содержит строку подключения к учетной записи хранения, которая будет использоваться, как показано в следующем примере:
 
   ```csharp
   [FunctionName("QueueTrigger")]
@@ -312,7 +312,7 @@ def main(msg: func.QueueMessage):
 
 Если при попытке привязать к `CloudQueueMessage` вы получаете сообщение об ошибке, убедитесь, что у вас есть ссылка на [правильную версию пакета SDK для службы хранилища](#azure-storage-sdk-version-in-functions-1x).
 
-В JavaScript используйте `context.bindings.<name>`, чтобы получить доступ к полезным данным элемента очереди. Если полезные данные представлены в виде JSON, они десериализируются в объект.
+В JavaScript используйте `context.bindings.<name>`, чтобы получить доступ к полезным данным элемента очереди. Если полезные данные представлены в виде JSON, они десериализируются в объект. Эти полезные данные также передаются в качестве второго параметра в функцию.
 
 ## <a name="trigger---message-metadata"></a>Метаданные сообщения триггера
 
@@ -320,7 +320,7 @@ def main(msg: func.QueueMessage):
 
 |Свойство|Тип|Description|
 |--------|----|-----------|
-|`QueueTrigger`|`string`|Полезные данные очереди (если это допустимая строка). Если полезные данные очереди сообщений представлены в виде строки, значение `QueueTrigger` совпадает со значением переменной, имя которой назначено свойством `name` в файле *function.json*.|
+|`QueueTrigger`|`string`|Полезные данные очереди (если это допустимая строка). Если полезная нагрузка сообщения очереди является строкой, `QueueTrigger` имеет то же значение, что и переменная, именованная свойством `name` в *Function. JSON*.|
 |`DequeueCount`|`int`|Количество раз, когда сообщение было выведено из очереди.|
 |`ExpirationTime`|`DateTimeOffset`|Время истечения срока действия сообщения.|
 |`Id`|`string`|Идентификатор сообщения в очереди.|
@@ -411,7 +411,7 @@ public static class QueueFunctions
     {
       "type": "http",
       "direction": "out",
-      "name": "return"
+      "name": "$return"
     },
     {
       "type": "queue",
@@ -472,7 +472,7 @@ public static void Run(
     {
       "type": "http",
       "direction": "out",
-      "name": "return"
+      "name": "$return"
     },
     {
       "type": "queue",
@@ -506,7 +506,7 @@ module.exports = function(context) {
 
 ### <a name="output---java-example"></a>Пример выходных данных Java
 
- В следующем примере показана функция Java, которая создает сообщения очереди, если оно активировано HTTP-запросом.
+ В следующем примере показана функция Java, которая создает сообщение очереди при срабатывании HTTP-запроса.
 
 ```java
 @FunctionName("httpToQueue")
@@ -514,7 +514,7 @@ module.exports = function(context) {
  public String pushToQueue(
      @HttpTrigger(name = "request", methods = {HttpMethod.POST}, authLevel = AuthorizationLevel.ANONYMOUS)
      final String message,
-     @HttpOutput(name = "response") final OutputBinding&lt;String&gt; result) {
+     @HttpOutput(name = "response") final OutputBinding<String> result) {
        result.setValue(message + " has been added.");
        return message;
  }

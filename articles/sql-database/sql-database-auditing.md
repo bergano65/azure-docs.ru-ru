@@ -9,12 +9,12 @@ author: barmichal
 ms.author: mibar
 ms.reviewer: vanto
 ms.date: 08/22/2019
-ms.openlocfilehash: 0994ebe451bddea371f375e4d39172833df4d88a
-ms.sourcegitcommit: dbcc4569fde1bebb9df0a3ab6d4d3ff7f806d486
+ms.openlocfilehash: 3d6f9f7d09664f9a5bd968ca5c0441b0846ceca3
+ms.sourcegitcommit: 5bbe87cf121bf99184cc9840c7a07385f0d128ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76028530"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76122701"
 ---
 # <a name="get-started-with-sql-database-auditing"></a>Начало работы с аудитом базы данных SQL
 
@@ -249,11 +249,11 @@ ms.locfileid: "76028530"
 
 - Сведения о настройке неизменяемого аудита учетной записи хранения см. в разделе [разрешение записи BLOB-объектов с защищенным добавлением](https://docs.microsoft.com/azure/storage/blobs/storage-blob-immutable-storage#allow-protected-append-blobs-writes). Обратите внимание, что имя контейнера для аудита — **sqldbauditlogs**.
 
-> [!IMPORTANT] 
->  Параметр Разрешить защищенные добавочные большие двоичные объекты записи в настоящее время доступен и виден только в следующих регионах:
-> - Восточная часть США
-> - Центрально-южная часть США
-> - Западная часть США 2
+    > [!IMPORTANT]
+    > Параметр Разрешить защищенные добавочные большие двоичные объекты записи в настоящее время доступен и виден только в следующих регионах:
+    > - Восточная часть США
+    > - Центрально-южная часть США
+    > - Западная часть США 2
 
 
 ## <a id="subheading-7"></a>Управление SQL Serverом Azure и аудитом базы данных с помощью Azure PowerShell

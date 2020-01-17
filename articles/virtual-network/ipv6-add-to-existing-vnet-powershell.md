@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 10/21/2019
 ms.author: kumud
-ms.openlocfilehash: 907a6de2ff89ddd3c2cb5bdab67e1deb984141dc
-ms.sourcegitcommit: c4700ac4ddbb0ecc2f10a6119a4631b13c6f946a
+ms.openlocfilehash: d08ce1c382d173ac98a0e61e6117ed50b958ba44
+ms.sourcegitcommit: 5bbe87cf121bf99184cc9840c7a07385f0d128ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2019
-ms.locfileid: "72965241"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76119845"
 ---
 # <a name="upgrade-an-ipv4-application-to-ipv6-in-azure-virtual-network---powershell-preview"></a>Обновление приложения IPv4 до IPv6 в виртуальной сети Azure с помощью PowerShell (Предварительная версия)
 
@@ -26,7 +26,7 @@ ms.locfileid: "72965241"
 - Адресное пространство IPv6 для виртуальной сети и подсети
 - Load Balancer (цен. категория "Стандартный") с многоинтерфейсными конфигурациями IPv4 и IPV6
 - Виртуальные машины с сетевыми адаптерами с конфигурацией IPv4 и IPv6
-- ИПВ общедоступный IP-адрес, чтобы балансировщик нагрузки работал с Интернет-подключением IPv6.
+- Общедоступный IP-адрес IPv6, поэтому подсистема балансировки нагрузки использует IPv6-подключение к Интернету
 
 > [!Important]
 > Поддержка IPv6 для виртуальной сети Azure в настоящее время доступна в общедоступной предварительной версии. Предварительная версия предоставляется без соглашения об уровне обслуживания. Не рекомендуем использовать ее в рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. См. [дополнительные условия использования для предварительных версий Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
@@ -57,7 +57,7 @@ Get-AzProviderFeature -FeatureName AllowIPv6CAOnStandardLB -ProviderNamespace Mi
 Register-AzResourceProvider -ProviderNamespace Microsoft.Network
 ```
 
-### <a name="create-a-standard-load-balancer"></a>создание подсистемы балансировки нагрузки уровня "Стандартный";
+### <a name="create-a-standard-load-balancer"></a>Создание подсистемы балансировки нагрузки уровня "Стандартный"
 В этой статье предполагается, что вы развернули Load Balancer (цен. категория "Стандартный"), как описано в разделе [Краткое руководство по созданию Load Balancer (цен. категория "Стандартный") Azure PowerShell](../load-balancer/quickstart-create-standard-load-balancer-powershell.md).
 
 ## <a name="retrieve-the-resource-group"></a>Получение группы ресурсов
@@ -108,7 +108,7 @@ $lb | Add-AzLoadBalancerBackendAddressPoolConfig -Name "LbBackEndPool_v6"
 $lb | Set-AzLoadBalancer
 ```
 
-## <a name="configure-load-balancer-rules"></a>Настройка правил подсистемы балансировки нагрузки
+## <a name="configure-load-balancer-rules"></a>Настройка правил подсистемы балансировки нагрузки.
 Извлеките существующую конфигурацию внешнего интерфейса и внутреннего пула подсистемы балансировки нагрузки, а затем добавьте новые правила балансировки нагрузки с помощью [Add-азлоадбаланцеррулеконфиг](/powershell/module/az.network/Add-AzLoadBalancerRuleConfig).
 
 ```azurepowershell

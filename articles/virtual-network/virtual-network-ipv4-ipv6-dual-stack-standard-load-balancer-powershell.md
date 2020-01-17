@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 12/17/2019
 ms.author: kumud
-ms.openlocfilehash: eb6119584787973f097f496fd24064a65383fecd
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 96ede56e7b21d2447d238306e00f2c4fbca56f04
+ms.sourcegitcommit: 5bbe87cf121bf99184cc9840c7a07385f0d128ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75368164"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76122259"
 ---
 # <a name="deploy-an-ipv6-dual-stack-application-in-azure---powershell-preview"></a>Развертывание приложения с двумя стеками IPv6 в Azure с помощью PowerShell (Предварительная версия)
 
@@ -42,7 +42,7 @@ Register-AzProviderFeature -FeatureName AllowIPv6CAOnStandardLB -ProviderNamespa
 Регистрация функции занимает до 30 минут. Вы можете проверить состояние регистрации, выполнив следующую команду Azure PowerShell: Проверьте регистрацию следующим образом:
 ```azurepowershell
 Get-AzProviderFeature -FeatureName AllowIPv6VirtualNetwork -ProviderNamespace Microsoft.Network
-Get-AzProviderFeature -FeatureName AllowIPv6CAOnStandardLB -ProviderNamespace 
+Get-AzProviderFeature -FeatureName AllowIPv6CAOnStandardLB -ProviderNamespace Microsoft.Network
 ```
 После регистрации выполните следующую команду:
 

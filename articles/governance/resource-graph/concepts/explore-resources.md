@@ -3,12 +3,12 @@ title: Просмотр ресурсов Azure
 description: Узнайте, как использовать язык запросов Graph, чтобы исследовать ресурсы и узнать, как они подключены.
 ms.date: 10/18/2019
 ms.topic: conceptual
-ms.openlocfilehash: e489a4eafdbbd838c4850d67fcd8ec40f76f290c
-ms.sourcegitcommit: 39da2d9675c3a2ac54ddc164da4568cf341ddecf
+ms.openlocfilehash: 0c191915b8c558d80ffef554ef758a35157e035c
+ms.sourcegitcommit: 276c1c79b814ecc9d6c1997d92a93d07aed06b84
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73959234"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76156987"
 ---
 # <a name="explore-your-azure-resources-with-resource-graph"></a>Изучение ресурсов Azure с помощью Resource Graph
 
@@ -152,7 +152,7 @@ Search-AzGraph -Query "Resources | where type =~ 'Microsoft.Compute/virtualMachi
 ```kusto
 Resources
 | where type =~ 'Microsoft.Compute/virtualMachines' and properties.hardwareProfile.vmSize == 'Standard_B2s'
-| project name, resourceGroup"
+| project name, resourceGroup
 ```
 
 ```azurecli-interactive
@@ -307,8 +307,8 @@ Search-AzGraph -Query "Resources | where type =~ 'Microsoft.Network/publicIPAddr
 
 Чтобы узнать, как выполнить эти действия в одном запросе с помощью оператора `join`, см. [список виртуальных машин с их сетевым интерфейсом и примером общедоступного IP-адреса](../samples/advanced.md#join-vmpip) .
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-- Дополнительные сведения о [языке запросов](query-language.md).
+- Узнайте больше о [языке запросов](query-language.md).
 - См. язык, используемый в [начальных запросах](../samples/starter.md).
 - См. Дополнительные сведения о расширенном использовании в [расширенных запросах](../samples/advanced.md).

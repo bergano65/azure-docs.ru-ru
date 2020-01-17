@@ -5,12 +5,12 @@ author: craigshoemaker
 ms.topic: reference
 ms.date: 02/28/2019
 ms.author: cshoe
-ms.openlocfilehash: cbc45036497547b78514b1d175d67c6ed437ee2d
-ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
+ms.openlocfilehash: d5ded7200c438fc734e1af0a42ca6071196bd41c
+ms.sourcegitcommit: 5bbe87cf121bf99184cc9840c7a07385f0d128ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75769495"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76120343"
 ---
 # <a name="signalr-service-bindings-for-azure-functions"></a>Привязки службы SignalR для службы "Функции Azure"
 
@@ -1011,9 +1011,9 @@ public SignalRGroupAction removeFromGroup(
 
 |свойство function.json | Свойство атрибута |Description|
 |---------|---------|----------------------|
-|**type**|| Нужно задать значение `signalRConnectionInfo`.|
-|**direction**|| Нужно задать значение `in`.|
-|**name**|| Имя переменной, используемой в коде функции для объекта сведений о подключении. |
+|**type**| Н/Д | Нужно задать значение `signalRConnectionInfo`.|
+|**direction**| Н/Д | Нужно задать значение `in`.|
+|**name**| Н/Д | Имя переменной, используемой в коде функции для объекта сведений о подключении. |
 |**hubName**|**HubName**| В качестве значения следует указать имя центра SignalR, для которого создаются сведения о подключении.|
 |**userId**|**UserId**| Необязательно: значение утверждения идентификатора пользователя, которое следует задать в маркере доступа. |
 |**connectionStringSetting**|**ConnectionStringSetting**| Имя параметра приложения, который содержит строку подключения службы SignalR (по умолчанию — AzureSignalRConnectionString) |
@@ -1024,9 +1024,9 @@ public SignalRGroupAction removeFromGroup(
 
 |свойство function.json | Свойство атрибута |Description|
 |---------|---------|----------------------|
-|**type**|| Нужно задать значение `signalR`.|
-|**direction**|| Нужно задать значение `out`.|
-|**name**|| Имя переменной, используемой в коде функции для объекта сведений о подключении. |
+|**type**| Н/Д | Нужно задать значение `signalR`.|
+|**direction**| Н/Д | Нужно задать значение `out`.|
+|**name**| Н/Д | Имя переменной, используемой в коде функции для объекта сведений о подключении. |
 |**hubName**|**HubName**| В качестве значения следует указать имя центра SignalR, для которого создаются сведения о подключении.|
 |**connectionStringSetting**|**ConnectionStringSetting**| Имя параметра приложения, который содержит строку подключения службы SignalR (по умолчанию — AzureSignalRConnectionString) |
 

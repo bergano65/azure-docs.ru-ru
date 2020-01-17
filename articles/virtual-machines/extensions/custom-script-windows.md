@@ -10,12 +10,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 05/02/2019
 ms.author: robreed
-ms.openlocfilehash: ff84b085b7d40bcb6c5a0aa87416e5814f67814b
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.openlocfilehash: 058099ceca886f375e6add07033174bf80d5b647
+ms.sourcegitcommit: 276c1c79b814ecc9d6c1997d92a93d07aed06b84
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75979575"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76156545"
 ---
 # <a name="custom-script-extension-for-windows"></a>Расширение Custom Script в ОС Windows
 
@@ -147,7 +147,7 @@ ms.locfileid: "75979575"
 
 ####  <a name="property-managedidentity"></a>Свойство: managedIdentity
 
-CustomScript (версия 1.10.4) поддерживает [управляемые удостоверения](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview) RBAC для загрузки файлов с URL-адресов, указанных в параметре "fileUris". Это позволяет CustomScript доступ к частным BLOB-объектам и контейнерам службы хранилища Azure без необходимости передавать секреты, такие как маркеры SAS или ключи учетной записи хранения.
+CustomScript (начиная с версии 1,10) поддерживает [управляемое удостоверение](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview) для загрузки файлов с URL-адресов, указанных в параметре "fileUris". Это позволяет CustomScript доступ к частным BLOB-объектам или контейнерам службы хранилища Azure без необходимости передавать секреты, такие как маркеры SAS или ключи учетной записи хранения.
 
 Чтобы использовать эту функцию, пользователь должен добавить [назначенное системой](https://docs.microsoft.com/azure/app-service/overview-managed-identity?tabs=dotnet#adding-a-system-assigned-identity) или [назначенное пользователем](https://docs.microsoft.com/azure/app-service/overview-managed-identity?tabs=dotnet#adding-a-user-assigned-identity) удостоверение в виртуальную машину или VMSS, где ожидается запуск CustomScript, и [предоставить управляемому удостоверению доступ к контейнеру или BLOB-объекту службы хранилища Azure](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/tutorial-vm-windows-access-storage#grant-access).
 

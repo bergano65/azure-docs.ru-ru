@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 04/25/2018
 ms.author: mimckitt
-ms.openlocfilehash: dcc9e63eba605e87a14ba4f09c61a00e9629bd23
-ms.sourcegitcommit: b5106424cd7531c7084a4ac6657c4d67a05f7068
+ms.openlocfilehash: 22346501444694675d92d9a37497f9304c76e13d
+ms.sourcegitcommit: 276c1c79b814ecc9d6c1997d92a93d07aed06b84
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75941207"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76156562"
 ---
 # <a name="use-the-azure-custom-script-extension-version-2-with-linux-virtual-machines"></a>Использование расширения настраиваемых скриптов Azure версии 2 на виртуальных машинах Linux
 Расширение настраиваемых скриптов версии 2 скачивает и выполняет скрипты на виртуальных машинах Azure. Это расширение можно использовать для настройки после развертывания, установки программного обеспечения и других задач настройки или управления. Сценарии можно скачать из службы хранилища Azure или другого расположения, доступного из Интернета, или передать в среду выполнения расширения. 
@@ -210,7 +210,7 @@ cat script | gzip -9 | base64 -w 0
 
 ####  <a name="property-managedidentity"></a>Свойство: managedIdentity
 
-CustomScript (версия 2.1.2) поддерживает [управляемые удостоверения](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview) RBAC для загрузки файлов с URL-адресов, указанных в параметре "fileUris". Это позволяет CustomScript доступ к частным BLOB-объектам и контейнерам службы хранилища Azure без необходимости передавать секреты, такие как маркеры SAS или ключи учетной записи хранения.
+CustomScript (начиная с версии 2,1) поддерживает [управляемое удостоверение](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview) для загрузки файлов с URL-адресов, указанных в параметре "fileUris". Это позволяет CustomScript доступ к частным BLOB-объектам или контейнерам службы хранилища Azure без необходимости передавать секреты, такие как маркеры SAS или ключи учетной записи хранения.
 
 Чтобы использовать эту функцию, пользователь должен добавить [назначенное системой](https://docs.microsoft.com/azure/app-service/overview-managed-identity?tabs=dotnet#adding-a-system-assigned-identity) или [назначенное пользователем](https://docs.microsoft.com/azure/app-service/overview-managed-identity?tabs=dotnet#adding-a-user-assigned-identity) удостоверение в виртуальную машину или VMSS, где ожидается запуск CustomScript, и [предоставить управляемому удостоверению доступ к контейнеру или BLOB-объекту службы хранилища Azure](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/tutorial-vm-windows-access-storage#grant-access).
 

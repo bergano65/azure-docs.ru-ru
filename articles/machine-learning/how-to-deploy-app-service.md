@@ -10,12 +10,12 @@ ms.author: aashishb
 author: aashishb
 ms.reviewer: larryfr
 ms.date: 08/27/2019
-ms.openlocfilehash: 562dd900bb3d64731e5467058e2718b081c675b6
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.openlocfilehash: 2a3e1f1997857ab9812fe87d5ec68b71e280e6ce
+ms.sourcegitcommit: 5bbe87cf121bf99184cc9840c7a07385f0d128ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75968548"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76122548"
 ---
 # <a name="deploy-a-machine-learning-model-to-azure-app-service-preview"></a>Развертывание модели машинного обучения в службе приложений Azure (Предварительная версия)
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -65,7 +65,7 @@ ms.locfileid: "75968548"
     > [!IMPORTANT]
     > Пакет SDK для Машинное обучение Azure не предоставляет веб-службе способ доступа к хранилищу данных или наборам. Если требуется развернутая модель для доступа к данным, хранящимся за пределами развертывания, например в учетной записи хранения Azure, необходимо разработать собственное решение с кодом, используя соответствующий пакет SDK. Например, [пакет SDK для службы хранилища Azure для Python](https://github.com/Azure/azure-storage-python).
     >
-    > Другой альтернативой, который может работать в вашем сценарии, являются [пакетные прогнозы](how-to-run-batch-predictions.md), которые обеспечивают доступ к хранилищам данных при оценке.
+    > Другой альтернативой, который может работать в вашем сценарии, являются [пакетные прогнозы](how-to-use-parallel-run-step.md), которые обеспечивают доступ к хранилищам данных при оценке.
 
     Дополнительные сведения о сценариях входа см. в разделе [Развертывание моделей с помощью машинное обучение Azure](how-to-deploy-and-where.md).
 

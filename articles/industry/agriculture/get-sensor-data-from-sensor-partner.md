@@ -5,12 +5,12 @@ author: uhabiba04
 ms.topic: article
 ms.date: 11/04/2019
 ms.author: v-umha
-ms.openlocfilehash: d9e20c8e5859efc8f1f8a5214e6837ad46d2980d
-ms.sourcegitcommit: 5b073caafebaf80dc1774b66483136ac342f7808
+ms.openlocfilehash: 7c40cfc8fbc6a9957281be842f6714fa9289a3c8
+ms.sourcegitcommit: 5bbe87cf121bf99184cc9840c7a07385f0d128ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75777790"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76122225"
 ---
 # <a name="get-sensor-data-from-sensor-partners"></a>Получение данных датчика от партнеров датчиков
 
@@ -46,7 +46,7 @@ Azure Фармбеатс помогает перенести потоковые 
 
 3. Щелкните регистрацию приложения, созданную в рамках развертывания Фармбеатс. Имя будет совпадать с именем Фармбеатс Датахуб.
 
-4. Щелкните "предоставить API"-> щелкните "добавить клиентское приложение" и введите **04b07795-8ddb-461a-bbEE-02f9e1bf7b46** и установите флажок "авторизовать область". Это обеспечит доступ к Azure CLI (Cloud Shell) для выполнения следующих действий.
+4. Щелкните "предоставить API"-> щелкните "добавить клиентское приложение" и введите **04b07795-8ddb-461a-bbEE-02f9e1bf7b46** и установите флажок "авторизовать область". Это предоставит доступ к Azure CLI (Cloud Shell) для выполнения следующих действий.
 
 5. Откройте Cloud Shell. Этот параметр доступен на панели инструментов в правом верхнем углу портал Azure.
 

@@ -1,21 +1,21 @@
 ---
-title: Техническая документация и примеры в Avere vFTX для Azure
+title: Технические документы и примеры использования — Авере Вфкст для Azure
 description: В этой статье приводятся ссылки на скачиваемую техническую документацию, примеры и другие статьи, в которых представлено Avere vFXT для Azure и способы его использования.
 ms.service: avere-vfxt
 author: ekpgh
 ms.author: rohogue
 ms.topic: conceptual
-ms.date: 02/13/2019
-ms.openlocfilehash: a85b939eb222fa459d33ba4eb79b4937baf9056f
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.date: 01/06/2020
+ms.openlocfilehash: 66df6a2018960d83c4aaa9129dad067732a8b3cf
+ms.sourcegitcommit: 276c1c79b814ecc9d6c1997d92a93d07aed06b84
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75414278"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76152975"
 ---
-# <a name="azure-vftx-for-azure-whitepapers-and-other-resources"></a>Техническая документация и другие ресурсы Avere vFXT для Azure
+# <a name="azure-vfxt-for-azure-whitepapers-and-other-resources"></a>Технические документы и другие ресурсы по Azure Вфкст для Azure
 
-Ресурсы, указанные в данной таблице, включают примеры, техническую документацию, инфографику и другие статьи, в которых приведены сведения, помогающие понять, подходит ли Avere vFXT для Azure для рабочего процесса.
+В этой статье перечислены примеры использования, технические документы, инфографика и другие ресурсы, которые помогут понять, как Авере Вфкст для Azure соответствует рабочему процессу.
 
 ## <a name="deploy-agisoft-photoscan-on-azure"></a>Развертывание Agisoft PhotoScan в Azure
 
@@ -34,12 +34,6 @@ ms.locfileid: "75414278"
 **Ссылка:** [Инфографика: создание гибридного облака для файловых рабочих нагрузок](https://azure.microsoft.com/resources/building-a-hybrid-cloud-for-file-based-hpc-workloads/)
 
 На графике показаны компоненты и макеты в случае использования Avere vFXT для Azure для добавления облачной инфраструктуры в существующую систему. Avere vFXT для Azure можно использовать для увеличения производительности вычисления в существующей локальной инфраструктуре или для переноса данных и вычислений в облако на временной или постоянной основе.
-
-## <a name="cloud-bursting"></a>Выход в облако
-
-**Ссылка:** [ускорение облака для обеспечения высокой производительности, масштабируемого NAS](https://microsoft.sharepoint.com/sites/Infopedia_G01KC/KCDOCs2/Avere%20customer%20resources/Solution%20Brief%20Cloud%20Bursting.pdf)
-
- В этом кратком руководстве о решении по выходу в облако показано, как, не прерывая работу с Avere vFXT для Azure, можно быстро сделать доступными данные для облачных вычислений.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

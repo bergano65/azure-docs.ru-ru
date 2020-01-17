@@ -1,14 +1,14 @@
 ---
 title: Арендаторы, роли и пользователи в сценариях Azure Lighthouse
 description: Изучите принципы действия арендаторов, пользователей и ролей Azure Active Directory, а также узнайте о том, как их можно использовать в сценариях Azure Lighthouse.
-ms.date: 11/05/2019
+ms.date: 01/16/2020
 ms.topic: conceptual
-ms.openlocfilehash: 77a247c86765f25539833a6ba70f80e737c6846d
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 344e104201a83b3589dae6dbd3b02e49e4575e00
+ms.sourcegitcommit: 276c1c79b814ecc9d6c1997d92a93d07aed06b84
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75453575"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76156341"
 ---
 # <a name="tenants-roles-and-users-in-azure-lighthouse-scenarios"></a>Арендаторы, роли и пользователи в сценариях Azure Lighthouse
 
@@ -29,6 +29,9 @@ ms.locfileid: "75453575"
 - Роль [Владелец](../../role-based-access-control/built-in-roles.md#owner) не поддерживается.
 - Любые встроенные роли с разрешением [DataActions](../../role-based-access-control/role-definitions.md#dataactions) не поддерживаются.
 - Встроенная роль [Администратор доступа пользователей](../../role-based-access-control/built-in-roles.md#user-access-administrator) поддерживается, но только для [назначения ролей для управляемого удостоверения в арендаторе клиента](../how-to/deploy-policy-remediation.md#create-a-user-who-can-assign-roles-to-a-managed-identity-in-the-customer-tenant). Никакие другие разрешения, обычно предоставляемые этой ролью, применяться не будут. При определении пользователя с этой ролью необходимо также указать встроенные роли, которые этот пользователь может назначить управляемым удостоверениям.
+
+> [!NOTE]
+> После добавления в Azure соответствующей новой встроенной роли ее можно назначить при подключении [клиента с помощью шаблонов Azure Resource Manager](../how-to/onboard-customer.md). Возможна задержка, прежде чем вновь добавленная роль станет доступной в Портал Cloud Partner при [публикации предложения управляемой службы](../how-to/publish-managed-services-offers.md).
 
 ## <a name="best-practices-for-defining-users-and-roles"></a>Рекомендации по определению пользователей и ролей
 
