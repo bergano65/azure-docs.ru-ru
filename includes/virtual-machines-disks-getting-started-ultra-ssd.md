@@ -1,6 +1,6 @@
 ---
-title: включение файла
-description: включение файла
+title: включить файл
+description: включить файл
 services: virtual-machines
 author: roygara
 ms.service: virtual-machines
@@ -8,14 +8,14 @@ ms.topic: include
 ms.date: 11/14/2019
 ms.author: rogarana
 ms.custom: include file
-ms.openlocfilehash: 5751ed33673ca859ba1aed54cfc7c2e7ecc8e495
-ms.sourcegitcommit: 5a8c65d7420daee9667660d560be9d77fa93e9c9
+ms.openlocfilehash: ff3409fad12e54be5ac00ead3ca44c1f24bb0af8
+ms.sourcegitcommit: 2a2af81e79a47510e7dea2efb9a8efb616da41f0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74124076"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76268243"
 ---
-Высокопроизводительные диски Azure обеспечивают высокую пропускную способность, высокую скорость операций ввода-вывода и постоянную задержку на диске для виртуальных машин Azure IaaS. Это новое предложение обеспечивает первоклассную производительность с тем же уровнем доступности, что и имеющиеся предложения дисков. Одним из основных преимуществ использования Ultra Disks является возможность динамического изменения производительности SSD вместе с рабочими нагрузками без необходимости перезапуска виртуальных машин. Ultra Disks подходит для ресурсоемких рабочих нагрузок, таких как SAP HANA, базы данных верхнего уровня и рабочие нагрузки с большим объемом транзакций.
+Высокопроизводительные диски Azure обеспечивают высокую пропускную способность, высокую скорость операций ввода-вывода и постоянную задержку на диске для виртуальных машин Azure IaaS. Это новое предложение обеспечивает первоклассную производительность с тем же уровнем доступности, что и имеющиеся предложения дисков. Одним из основных преимуществ использования Ultra Disks является возможность динамического изменения производительности SSD вместе с рабочими нагрузками без необходимости перезапуска виртуальных машин. Диски категории "Ультра" подходят для рабочих нагрузок, предполагающих интенсивную работу с данными, например SAP HANA, базы данных верхнего уровня и рабочие нагрузки с большим количеством транзакций.
 
 ## <a name="ga-scope-and-limitations"></a>Область и ограничения общедоступного уровня
 
@@ -25,17 +25,19 @@ ms.locfileid: "74124076"
 
 Чтобы использовать диски Ultra, необходимо определить, в какой зоне доступности вы используете. Не каждый регион поддерживает каждый размер виртуальной машины с Ultra Disks. Чтобы определить, поддерживает ли ваш регион, зону и размер виртуальной машины, выполните одну из следующих команд, обязательно замените значения **Region**, **vmSize**и **Subscription** .
 
-CLI:
+Интерфейс командной строки.
 
 ```bash
 $subscription = "<yourSubID>"
-$region = "<yourLocation>, example value is southeastasia"
-$vmSize = "<yourVMSize>, example value is Standard_E64s_v3"
+# example value is southeastasia
+$region = "<yourLocation>"
+# example value is Standard_E64s_v3
+$vmSize = "<yourVMSize>"
 
 az vm list-skus --resource-type virtualMachines  --location $region --query "[?name=='$vmSize'].locationInfo[0].zoneDetails[0].Name" --subscription $subscription
 ```
 
-PowerShell:
+PowerShell.
 
 ```powershell
 $region = "southeastasia"
@@ -47,7 +49,7 @@ $vmSize = "Standard_E64s_v3"
 
 Сохраните значение **зон** , оно представляет вашу зону доступности и потребуется для развертывания Ultra Disk.
 
-|ResourceType  |имя  |Место проведения  |Зоны  |Ограничение  |Функция  |Значение  |
+|ResourceType  |Имя  |Расположение  |Зоны  |Ограничение  |Возможность  |Значение  |
 |---------|---------|---------|---------|---------|---------|---------|
 |disks     |UltraSSD_LRS         |eastus2         |X         |         |         |         |
 
@@ -99,7 +101,7 @@ $vmSize = "Standard_E64s_v3"
 Кроме того, если существующая виртуальная машина находится в зоне региона или доступности, которая поддерживает использование Ultra Disks, можно использовать Ultra Disks без необходимости создавать новую виртуальную машину. Включив диски Ultra на существующей виртуальной машине, присоединив их в качестве дисков данных.
 
 - Перейдите к виртуальной машине и выберите **диски**.
-- Выберите **Изменить**
+- Выберите команду **Изменить**.
 
 ![оптионс-селектор-ултра-дискс. png](media/virtual-machines-disks-getting-started-ultra-ssd/options-selector-ultra-disks.png)
 
@@ -264,6 +266,6 @@ $diskupdateconfig = New-AzDiskUpdateConfig -DiskMBpsReadWrite 2000
 Update-AzDisk -ResourceGroupName $resourceGroup -DiskName $diskName -DiskUpdate $diskupdateconfig
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если вы хотите попробовать новый тип диска [запросить доступ с помощью этого опроса](https://aka.ms/UltraDiskSignup).

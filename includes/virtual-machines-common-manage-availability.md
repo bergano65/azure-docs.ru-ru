@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 03/27/2018
 ms.author: cynthn
 ms.custom: include file
-ms.openlocfilehash: edaa3f7c17ff5fb6bc79f67b7028a7ba72347367
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 5350ecdd3b73894e43db3b9f342fc657cf73f224
+ms.sourcegitcommit: 2a2af81e79a47510e7dea2efb9a8efb616da41f0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75468981"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76268252"
 ---
 ## <a name="understand-vm-reboots---maintenance-vs-downtime"></a>Общие сведения о перезагрузках виртуальной машины. Обслуживание и простой
 Есть три сценария, которые могут повлиять на работу виртуальной машины в Azure: незапланированное техническое обслуживание, незапланированный простой и запланированное техническое обслуживание.
@@ -69,9 +69,15 @@ ms.locfileid: "75468981"
 ![Домены сбоя управляемых дисков](./media/virtual-machines-common-manage-availability/md-fd-updated.png)
 
 > [!IMPORTANT]
-> Количество доменов сбоя в управляемых группах доступности зависит от региона. На каждый регион выделяется два или три домена сбоя. В таблице ниже приведены сведения о числе доменов сбоя по регионам.
+> Количество доменов сбоя в управляемых группах доступности зависит от региона. На каждый регион выделяется два или три домена сбоя. Чтобы увидеть домен сбоя для каждого региона, запустите следующие скрипты.
 
-[!INCLUDE [managed-disks-common-fault-domain-region-list](managed-disks-common-fault-domain-region-list.md)]
+```azurepowershell-interactive
+Get-AzComputeResourceSku | where{$_.ResourceType -eq 'availabilitySets' -and $_.Name -eq 'Aligned'}
+```
+
+```azurecli-interactive 
+az vm list-skus --resource-type availabilitySets --query '[?name==`Aligned`].{Location:locationInfo[0].location, MaximumFaultDomainCount:capabilities[0].value}' -o Table
+```
 
 > Примечание. при определенных обстоятельствах может произойти, что две виртуальные машины одной и той же группы доступности совместно используют один и тот же FaultDomain. Чтобы подтвердить это, перейдите в свой уровень доступности и проверьте столбец "домен сбоя".
 > Это поведение можно наблюдать, если при развертывании виртуальных машин произошла следующая последовательность действий.
