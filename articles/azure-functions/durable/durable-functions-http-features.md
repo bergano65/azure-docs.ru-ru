@@ -5,12 +5,12 @@ author: cgillum
 ms.topic: conceptual
 ms.date: 09/04/2019
 ms.author: azfuncdf
-ms.openlocfilehash: 1c8f56810edb39db66cbb83750e5cff02e22662a
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: a7d8891c6f925cfac326685f01ba5f6149a1b233
+ms.sourcegitcommit: 2a2af81e79a47510e7dea2efb9a8efb616da41f0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75433286"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76262866"
 ---
 # <a name="http-features"></a>Функции HTTP
 
@@ -41,21 +41,21 @@ ms.locfileid: "75433286"
 
 [Привязка клиента оркестрации](durable-functions-bindings.md#orchestration-client) предоставляет интерфейсы API, которые могут создавать удобные полезные данные ответа HTTP. Например, он может создать ответ, содержащий ссылки на API управления для конкретного экземпляра оркестрации. В следующих примерах показана функция HTTP-триггера, которая демонстрирует использование этого API для нового экземпляра оркестрации:
 
-#### <a name="precompiled-c"></a>Предкомпилированный код C#
+# <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
 [!code-csharp[Main](~/samples-durable-functions/samples/precompiled/HttpStart.cs)]
 
-#### <a name="c-script"></a>Сценарии C#
+# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
 
-[!code-csharp[Main](~/samples-durable-functions/samples/csx/HttpStart/run.csx)]
-
-#### <a name="javascript-with-functions-20-or-later-only"></a>JavaScript с функциями 2,0 или более поздней версии
+**index.js**
 
 [!code-javascript[Main](~/samples-durable-functions/samples/javascript/HttpStart/index.js)]
 
-#### <a name="functionjson"></a>Function.json
+**function.json**
 
-[!code-javascript[Main](~/samples-durable-functions/samples/javascript/HttpStart/function.json)]
+[!code-json[Main](~/samples-durable-functions/samples/javascript/HttpStart/function.json)]
+
+---
 
 Запуск функции Orchestrator с помощью функций HTTP-триггеров, показанных выше, можно выполнить с помощью любого клиента HTTP. В следующей фигурной команде запускается функция Orchestrator с именем `DoWork`:
 
@@ -112,10 +112,9 @@ Retry-After: 10
 
 Начиная с Устойчивые функции 2,0, оркестрации могут использовать API-интерфейсы HTTP с помощью [привязки триггера оркестрации](durable-functions-bindings.md#orchestration-trigger).
 
-> [!NOTE]
-> Возможность вызова конечных точек HTTP непосредственно из функций Orchestrator пока недоступна в JavaScript.
+В следующем примере кода показана функция Orchestrator, выполняющая исходящий HTTP-запрос:
 
-В следующем примере кода показана C# функция Orchestrator, выполняющая исходящий HTTP-запрос с помощью API **каллхттпасинк** .NET.
+# <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
 ```csharp
 [FunctionName("CheckSiteAvailable")]
@@ -134,6 +133,23 @@ public static async Task CheckSiteAvailable(
     }
 }
 ```
+
+# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+
+```javascript
+const df = require("durable-functions");
+
+module.exports = df.orchestrator(function*(context){
+    const url = context.df.getInput();
+    const response = context.df.callHttp("GET", url)
+
+    if (response.statusCode >= 400) {
+        // handling of error codes goes here
+    }
+});
+```
+
+---
 
 С помощью действия Call HTTP можно выполнять следующие действия в функциях Orchestrator:
 
@@ -156,6 +172,8 @@ API "Call HTTP" может автоматически реализовать к�
 
 Следующий код является примером функции .NET Orchestrator. Функция выполняет проверку подлинности вызовов для перезапуска виртуальной машины с помощью Azure Resource Manager [виртуальных машин REST API](https://docs.microsoft.com/rest/api/compute/virtualmachines).
 
+# <a name="ctabcsharp"></a>[C#](#tab/csharp)
+
 ```csharp
 [FunctionName("RestartVm")]
 public static async Task RunOrchestrator(
@@ -164,6 +182,7 @@ public static async Task RunOrchestrator(
     string subscriptionId = "mySubId";
     string resourceGroup = "myRG";
     string vmName = "myVM";
+    string apiVersion = "2019-03-01";
     
     // Automatically fetches an Azure AD token for resource = https://management.core.windows.net
     // and attaches it to the outgoing Azure Resource Manager API call.
@@ -178,6 +197,32 @@ public static async Task RunOrchestrator(
     }
 }
 ```
+
+# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+
+```javascript
+const df = require("durable-functions");
+
+module.exports = df.orchestrator(function*(context) {
+    const subscriptionId = "mySubId";
+    const resourceGroup = "myRG";
+    const vmName = "myVM";
+    const apiVersion = "2019-03-01";
+    const tokenSource = new df.ManagedIdentityTokenSource("https://management.core.windows.net");
+
+    // get a list of the Azure subscriptions that I have access to
+    const restartResponse = yield context.df.callHttp(
+        "POST",
+        `https://management.azure.com/subscriptions/${subscriptionId}/resourceGroups/${resourceGroup}/providers/Microsoft.Compute/virtualMachines/${vmName}/restart?api-version=${apiVersion}`,
+        undefined, // no request content
+        undefined, // no request headers (besides auth which is handled by the token source)
+        tokenSource);
+
+    return restartResponse;
+});
+```
+
+---
 
 В предыдущем примере параметр `tokenSource` настроен для получения маркеров Azure AD для [Azure Resource Manager](../../azure-resource-manager/management/overview.md). Токены идентифицируются `https://management.core.windows.net`URI ресурса. В этом примере предполагается, что текущее приложение-функция выполняется локально или развернуто как приложение-функция с управляемым удостоверением. Предполагается, что локальным удостоверением или управляемым удостоверением предоставлено разрешение на управление виртуальными машинами в указанной группе ресурсов `myRG`.
 

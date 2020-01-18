@@ -1,5 +1,5 @@
 ---
-title: Загрузка VHD-файла в Azure DevTest Labs с помощью обозревателя хранилищ Microsoft Azure | Документация Майкрософт
+title: Отправка VHD-файла в Azure DevTest Labs с помощью Обозреватель службы хранилища
 description: Загрузка VHD-файла в учетную запись хранения лаборатории с помощью обозревателя хранилищ Microsoft Azure
 services: devtest-lab,virtual-machines,lab-services
 documentationcenter: na
@@ -12,14 +12,14 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 04/17/2018
+ms.date: 01/16/2020
 ms.author: spelluru
-ms.openlocfilehash: 3c187d104334fe75ec9e0ce41a3fdc14b508dfb2
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: defafdd5809b7e537b3b9abb78f8cb63d0033c16
+ms.sourcegitcommit: d29e7d0235dc9650ac2b6f2ff78a3625c491bbbf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60623429"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76170370"
 ---
 # <a name="upload-vhd-file-to-labs-storage-account-using-microsoft-azure-storage-explorer"></a>Загрузка VHD-файла в учетную запись хранения лаборатории с помощью обозревателя хранилищ Microsoft Azure
 
@@ -35,7 +35,7 @@ ms.locfileid: "60623429"
 
 1. Получите имя учетной записи хранения лаборатории с помощью портала Azure.
 
-    1. Войдите на [портале Azure](https://go.microsoft.com/fwlink/p/?LinkID=525040).
+    1. Войдите на [портал Azure](https://go.microsoft.com/fwlink/p/?LinkID=525040).
     
     1. Щелкните **Все службы** и выберите в списке **DevTest Labs**.
     

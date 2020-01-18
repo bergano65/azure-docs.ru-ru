@@ -5,12 +5,12 @@ author: cgillum
 ms.topic: conceptual
 ms.date: 11/02/2019
 ms.author: azfuncdf
-ms.openlocfilehash: ab9cc9b093008730d175fa3fde4391f9de236a84
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: 43094fe91921d1399650d9cf47e7a84c47996cd5
+ms.sourcegitcommit: 2a2af81e79a47510e7dea2efb9a8efb616da41f0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74231378"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76261574"
 ---
 # <a name="manage-instances-in-durable-functions-in-azure"></a>Управление экземплярами в Устойчивых функциях в Azure
 
@@ -39,7 +39,7 @@ ms.locfileid: "74231378"
 
 Следующий код является примером функции, запускающей новый экземпляр оркестрации:
 
-### <a name="c"></a>C#
+# <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
 ```csharp
 [FunctionName("HelloWorldManualStart")]
@@ -56,7 +56,40 @@ public static async Task Run(
 > [!NOTE]
 > Предыдущий C# код предназначен для устойчивые функции 2. x. Для Устойчивые функции 1. x необходимо использовать атрибут `OrchestrationClient` вместо атрибута `DurableClient`, а вместо `IDurableOrchestrationClient`необходимо использовать тип параметра `DurableOrchestrationClient`. Дополнительные сведения о различиях между версиями см. в статье [устойчивые функции версии](durable-functions-versions.md) .
 
-### <a name="javascript"></a>JavaScript
+# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+
+<a name="javascript-function-json"></a>Если не указано иное, в примерах на этой странице используется триггер HTTP со следующим параметром function. JSON.
+
+**function.json**
+
+```json
+{
+  "bindings": [
+    {
+      "name": "req",
+      "type": "httpTrigger",
+      "direction": "in",
+      "methods": ["post"]
+    },
+    {
+      "name": "$return",
+      "type": "http",
+      "direction": "out"
+    },
+    {
+      "name": "starter",
+      "type": "durableClient",
+      "direction": "in"
+    }
+  ],
+  "disabled": false
+}
+```
+
+> [!NOTE]
+> Этот пример предназначен для Устойчивые функции версии 2. x. В версии 1. x используйте `orchestrationClient` вместо `durableClient`.
+
+**index.js**
 
 ```javascript
 const df = require("durable-functions");
@@ -68,6 +101,8 @@ module.exports = async function(context, input) {
     context.log(`Started orchestration with ID = ${instanceId}.`);
 };
 ```
+
+---
 
 ### <a name="azure-functions-core-tools"></a>Azure Functions Core Tools
 
@@ -98,7 +133,7 @@ func durable start-new --function-name HelloWorld --input @counter-data.json --t
 
 * **`showHistory`** . Если задано значение `true`, ответ содержит журнал выполнения.
 * **`showHistoryOutput`** : Если задано значение `true`, журнал выполнения содержит выходные данные действия.
-* **`showInput`** . Если задано значение `false`, ответ не будет содержать входные данные функции. По умолчанию используется значение `true`.
+* **`showInput`** . Если задано значение `false`, ответ не будет содержать входные данные функции. Значение по умолчанию — `true`.
 
 Этот метод возвращает объект со следующими свойствами:
 
@@ -120,7 +155,7 @@ func durable start-new --function-name HelloWorld --input @counter-data.json --t
 
 Этот метод возвращает `null` (.NET) или `undefined` (JavaScript), если экземпляр не существует.
 
-### <a name="c"></a>C#
+# <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
 ```csharp
 [FunctionName("GetStatus")]
@@ -136,7 +171,7 @@ public static async Task Run(
 > [!NOTE]
 > Предыдущий C# код предназначен для устойчивые функции 2. x. Для Устойчивые функции 1. x необходимо использовать атрибут `OrchestrationClient` вместо атрибута `DurableClient`, а вместо `IDurableOrchestrationClient`необходимо использовать тип параметра `DurableOrchestrationClient`. Дополнительные сведения о различиях между версиями см. в статье [устойчивые функции версии](durable-functions-versions.md) .
 
-### <a name="javascript-functions-2x-only"></a>JavaScript (только для решения "Функции" версии 2.x)
+# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
 
 ```javascript
 const df = require("durable-functions");
@@ -149,13 +184,17 @@ module.exports = async function(context, instanceId) {
 }
 ```
 
+См. раздел [Start Instances](#javascript-function-json) для конфигурации Function. JSON.
+
+---
+
 ### <a name="azure-functions-core-tools"></a>Azure Functions Core Tools
 
 Также можно напрямую получить состояние экземпляра оркестрации с помощью команды [Azure Functions Core Tools](../functions-run-local.md) `durable get-runtime-status`. Она принимает следующие параметры.
 
 * **`id` (обязательно)** : идентификатор экземпляра оркестрации.
-* **`show-input` (необязательно)** . Если задано значение `true`, ответ содержит входные данные функции. По умолчанию используется значение `false`.
-* **`show-output` (необязательно)** . Если задано значение `true`, ответ содержит выходные данные функции. По умолчанию используется значение `false`.
+* **`show-input` (необязательно)** . Если задано значение `true`, ответ содержит входные данные функции. Значение по умолчанию — `false`.
+* **`show-output` (необязательно)** . Если задано значение `true`, ответ содержит выходные данные функции. Значение по умолчанию — `false`.
 * **`connection-string-setting` (необязательный)** : имя параметра приложения, содержащего нужную строку подключения к хранилищу. Значение по умолчанию — `AzureWebJobsStorage`.
 * **`task-hub-name` (необязательно)** : имя используемого центра задач устойчивые функции. Значение по умолчанию — `DurableFunctionsHub`. Его также можно задать в [Host. JSON](durable-functions-bindings.md#host-json)с помощью DurableTask: HubName.
 
@@ -181,7 +220,7 @@ func durable get-history --id 0ab8c55a66644d68a3a8b220b12d209c
 
 С помощью метода `GetStatusAsync` (.NET) или `getStatusAll` (JavaScript) вы можете запросить данные о состоянии всех экземпляров оркестрации. В .NET можно передать объект `CancellationToken` на случай, если вы хотите отменить его. Метод возвращает объекты с теми же свойствами, что и метод `GetStatusAsync` с параметрами.
 
-### <a name="c"></a>C#
+# <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
 ```csharp
 [FunctionName("GetAllStatus")]
@@ -201,7 +240,7 @@ public static async Task Run(
 > [!NOTE]
 > Предыдущий C# код предназначен для устойчивые функции 2. x. Для Устойчивые функции 1. x необходимо использовать атрибут `OrchestrationClient` вместо атрибута `DurableClient`, а вместо `IDurableOrchestrationClient`необходимо использовать тип параметра `DurableOrchestrationClient`. Дополнительные сведения о различиях между версиями см. в статье [устойчивые функции версии](durable-functions-versions.md) .
 
-### <a name="javascript-functions-2x-only"></a>JavaScript (только для решения "Функции" версии 2.x)
+# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
 
 ```javascript
 const df = require("durable-functions");
@@ -216,11 +255,15 @@ module.exports = async function(context, req) {
 };
 ```
 
+См. раздел [Start Instances](#javascript-function-json) для конфигурации Function. JSON.
+
+---
+
 ### <a name="azure-functions-core-tools"></a>Azure Functions Core Tools
 
 Кроме того, можно напрямую запрашивать экземпляры с помощью команды [Azure Functions Core Tools](../functions-run-local.md) `durable get-instances`. Она принимает следующие параметры.
 
-* **`top` (необязательный)** : эта команда поддерживает разбиение на страницы. Этот параметр соответствует количеству экземпляров, получаемых по запросу. По умолчанию задано значение 10.
+* **`top` (необязательный)** : эта команда поддерживает разбиение на страницы. Этот параметр соответствует количеству экземпляров, получаемых по запросу. Значение по умолчанию равно 10.
 * **`continuation-token` (необязательно)** : токен, указывающий, какую страницу или раздел экземпляров нужно извлечь. Каждое выполнение `get-instances` возвращает маркер для извлечения следующего набора экземпляров.
 * **`connection-string-setting` (необязательный)** : имя параметра приложения, содержащего нужную строку подключения к хранилищу. Значение по умолчанию — `AzureWebJobsStorage`.
 * **`task-hub-name` (необязательно)** : имя используемого центра задач устойчивые функции. Значение по умолчанию — `DurableFunctionsHub`. Его также можно задать в [Host. JSON](durable-functions-bindings.md#host-json)с помощью DurableTask: HubName.
@@ -235,7 +278,7 @@ func durable get-instances
 
 Используйте метод `GetStatusAsync` (.NET) или `getStatusBy` (JavaScript) для получения списка экземпляров оркестрации, соответствующих набору предопределенных фильтров.
 
-### <a name="c"></a>C#
+# <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
 ```csharp
 [FunctionName("QueryStatus")]
@@ -263,7 +306,7 @@ public static async Task Run(
 > [!NOTE]
 > Предыдущий C# код предназначен для устойчивые функции 2. x. Для Устойчивые функции 1. x необходимо использовать атрибут `OrchestrationClient` вместо атрибута `DurableClient`, а вместо `IDurableOrchestrationClient`необходимо использовать тип параметра `DurableOrchestrationClient`. Дополнительные сведения о различиях между версиями см. в статье [устойчивые функции версии](durable-functions-versions.md) .
 
-### <a name="javascript-functions-2x-only"></a>JavaScript (только для решения "Функции" версии 2.x)
+# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
 
 ```javascript
 const df = require("durable-functions");
@@ -286,6 +329,10 @@ module.exports = async function(context, req) {
 };
 ```
 
+См. раздел [Start Instances](#javascript-function-json) для конфигурации Function. JSON.
+
+---
+
 ### <a name="azure-functions-core-tools"></a>Azure Functions Core Tools
 
 В Azure Functions Core Tools можно также использовать команду `durable get-instances` с фильтрами. В дополнение к вышеупомянутым параметрам `top`, `continuation-token`, `connection-string-setting`и `task-hub-name` можно использовать три параметра фильтра (`created-after`, `created-before`и `runtime-status`).
@@ -293,7 +340,7 @@ module.exports = async function(context, req) {
 * **`created-after` (необязательный)** : получение экземпляров, созданных после этой даты и времени в формате UTC. Принимаются значения даты и времени в формате ISO 8601.
 * **`created-before` (необязательный)** : получение экземпляров, созданных до этой даты и времени в формате UTC. Принимаются значения даты и времени в формате ISO 8601.
 * **`runtime-status` (необязательно)** : получение экземпляров с определенным состоянием (например, "выполняется" или "завершено"). Можно указать несколько состояний (через пробел).
-* **`top` (необязательный)** : количество экземпляров, получаемых по запросу. По умолчанию задано значение 10.
+* **`top` (необязательный)** : количество экземпляров, получаемых по запросу. Значение по умолчанию равно 10.
 * **`continuation-token` (необязательно)** : токен, указывающий, какую страницу или раздел экземпляров нужно извлечь. Каждое выполнение `get-instances` возвращает маркер для извлечения следующего набора экземпляров.
 * **`connection-string-setting` (необязательный)** : имя параметра приложения, содержащего нужную строку подключения к хранилищу. Значение по умолчанию — `AzureWebJobsStorage`.
 * **`task-hub-name` (необязательно)** : имя используемого центра задач устойчивые функции. Значение по умолчанию — `DurableFunctionsHub`. Его также можно задать в [Host. JSON](durable-functions-bindings.md#host-json)с помощью DurableTask: HubName.
@@ -310,7 +357,7 @@ func durable get-instances --created-after 2018-03-10T13:57:31Z --created-before
 
 Для завершения экземпляров можно использовать метод `TerminateAsync` (.NET) или `terminate` (JavaScript) [привязки клиента оркестрации](durable-functions-bindings.md#orchestration-client) . Эти два параметра являются `instanceId` и `reason` строкой, которая записывается в журналы и в состояние экземпляра. Прерванный экземпляр прекращает работу сразу после достижения следующей `await` (.NET) или `yield` (JavaScript) или немедленно, если он уже находится в `await` или `yield`.
 
-### <a name="c"></a>C#
+# <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
 ```csharp
 [FunctionName("TerminateInstance")]
@@ -326,7 +373,7 @@ public static Task Run(
 > [!NOTE]
 > Предыдущий C# код предназначен для устойчивые функции 2. x. Для Устойчивые функции 1. x необходимо использовать атрибут `OrchestrationClient` вместо атрибута `DurableClient`, а вместо `IDurableOrchestrationClient`необходимо использовать тип параметра `DurableOrchestrationClient`. Дополнительные сведения о различиях между версиями см. в статье [устойчивые функции версии](durable-functions-versions.md) .
 
-### <a name="javascript-functions-2x-only"></a>JavaScript (только для решения "Функции" версии 2.x)
+# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
 
 ```javascript
 const df = require("durable-functions");
@@ -338,6 +385,10 @@ module.exports = async function(context, instanceId) {
     return client.terminate(instanceId, reason);
 };
 ```
+
+См. раздел [Start Instances](#javascript-function-json) для конфигурации Function. JSON.
+
+---
 
 > [!NOTE]
 > Прекращение работы экземпляра в настоящее время не распространяется. Функции действий и взаимосвязи выполняются до завершения независимо от того, был ли завершен экземпляр оркестрации, вызвавший их.
@@ -369,7 +420,7 @@ func durable terminate --id 0ab8c55a66644d68a3a8b220b12d209c --reason "It was ti
 * **EventName** — имя отправляемого события;
 * **EventData** — данные полезной нагрузки в формате JSON, отправляемые в экземпляр.
 
-### <a name="c"></a>C#
+# <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
 ```csharp
 [FunctionName("RaiseEvent")]
@@ -385,7 +436,7 @@ public static Task Run(
 > [!NOTE]
 > Предыдущий C# код предназначен для устойчивые функции 2. x. Для Устойчивые функции 1. x необходимо использовать атрибут `OrchestrationClient` вместо атрибута `DurableClient`, а вместо `IDurableOrchestrationClient`необходимо использовать тип параметра `DurableOrchestrationClient`. Дополнительные сведения о различиях между версиями см. в статье [устойчивые функции версии](durable-functions-versions.md) .
 
-### <a name="javascript-functions-2x-only"></a>JavaScript (только для решения "Функции" версии 2.x)
+# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
 
 ```javascript
 const df = require("durable-functions");
@@ -397,6 +448,10 @@ module.exports = async function(context, instanceId) {
     return client.raiseEvent(instanceId, "MyEvent", eventData);
 };
 ```
+
+См. раздел [Start Instances](#javascript-function-json) для конфигурации Function. JSON.
+
+---
 
 > [!NOTE]
 > Если экземпляр оркестрации с указанным ИДЕНТИФИКАТОРом экземпляра отсутствует, сообщение о событии отбрасывается. Если экземпляр существует, но еще не ожидает событие, то событие будет храниться в состоянии экземпляра до тех пор, пока оно не будет готово к получению и обработке.
@@ -427,9 +482,17 @@ func durable raise-event --id 1234567 --event-name MyOtherEvent --event-data 3
 
 Ниже приведен пример функции HTTP-триггера, в котором показано, как использовать этот API:
 
+# <a name="ctabcsharp"></a>[C#](#tab/csharp)
+
 [!code-csharp[Main](~/samples-durable-functions/samples/precompiled/HttpSyncStart.cs)]
 
+# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+
 [!code-javascript[Main](~/samples-durable-functions/samples/javascript/HttpSyncStart/index.js)]
+
+См. раздел [Start Instances](#javascript-function-json) для конфигурации Function. JSON.
+
+---
 
 Вызовите функцию с помощью следующей строки. Для интервала повтора используйте 2 секунды в течение времени ожидания и 0,5 секунд.
 
@@ -493,7 +556,7 @@ func durable raise-event --id 1234567 --event-name MyOtherEvent --event-data 3
 
 Функции могут отсылать экземпляры этих объектов во внешние системы для отслеживания или вызова событий в соответствующих оркестрации, как показано в следующих примерах:
 
-### <a name="c"></a>C#
+# <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
 ```csharp
 [FunctionName("SendInstanceInfo")]
@@ -515,7 +578,7 @@ public static void SendInstanceInfo(
 > [!NOTE]
 > Предыдущий C# код предназначен для устойчивые функции 2. x. Для Устойчивые функции 1. x необходимо использовать `DurableActivityContext` вместо `IDurableActivityContext`, необходимо использовать атрибут `OrchestrationClient` вместо атрибута `DurableClient`, а вместо `DurableOrchestrationClient` необходимо использовать тип параметра `IDurableOrchestrationClient`. Дополнительные сведения о различиях между версиями см. в статье [устойчивые функции версии](durable-functions-versions.md) .
 
-### <a name="javascript-functions-2x-only"></a>JavaScript (только для решения "Функции" версии 2.x)
+# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
 
 ```javascript
 const df = require("durable-functions");
@@ -533,6 +596,10 @@ modules.exports = async function(context, ctx) {
 };
 ```
 
+См. раздел [Start Instances](#javascript-function-json) для конфигурации Function. JSON.
+
+---
+
 ## <a name="rewind-instances-preview"></a>Перемотка экземпляров (Предварительная версия)
 
 При возникновении сбоя оркестрации в случае непредвиденной причины можно *Перемотать* экземпляр на предыдущее работоспособное состояние, используя API, созданный для этой цели.
@@ -547,7 +614,7 @@ modules.exports = async function(context, ctx) {
 > [!NOTE]
 > Функция *перемотки назад* не поддерживает Перемотка экземпляров оркестрации, использующих устойчивые таймеры.
 
-### <a name="c"></a>C#
+# <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
 ```csharp
 [FunctionName("RewindInstance")]
@@ -563,7 +630,7 @@ public static Task Run(
 > [!NOTE]
 > Предыдущий C# код предназначен для устойчивые функции 2. x. Для Устойчивые функции 1. x необходимо использовать атрибут `OrchestrationClient` вместо атрибута `DurableClient`, а вместо `IDurableOrchestrationClient`необходимо использовать тип параметра `DurableOrchestrationClient`. Дополнительные сведения о различиях между версиями см. в статье [устойчивые функции версии](durable-functions-versions.md) .
 
-### <a name="javascript-functions-2x-only"></a>JavaScript (только для решения "Функции" версии 2.x)
+# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
 
 ```javascript
 const df = require("durable-functions");
@@ -575,6 +642,10 @@ module.exports = async function(context, instanceId) {
     return client.rewind(instanceId, reason);
 };
 ```
+
+См. раздел [Start Instances](#javascript-function-json) для конфигурации Function. JSON.
+
+---
 
 ### <a name="azure-functions-core-tools"></a>Azure Functions Core Tools
 
@@ -595,6 +666,8 @@ func durable rewind --id 0ab8c55a66644d68a3a8b220b12d209c --reason "Orchestrator
 
 Этот метод имеет две перегрузки. Первая перегрузка удаляет журнал по ИДЕНТИФИКАТОРу экземпляра оркестрации:
 
+# <a name="ctabcsharp"></a>[C#](#tab/csharp)
+
 ```csharp
 [FunctionName("PurgeInstanceHistory")]
 public static Task Run(
@@ -605,6 +678,8 @@ public static Task Run(
 }
 ```
 
+# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+
 ```javascript
 const df = require("durable-functions");
 
@@ -614,7 +689,13 @@ module.exports = async function(context, instanceId) {
 };
 ```
 
+См. раздел [Start Instances](#javascript-function-json) для конфигурации Function. JSON.
+
+---
+
 В следующем примере показана функция, активируемая с помощью таймера, которая очищает журнал для всех экземпляров оркестрации, завершенных по истечении указанного интервала времени. В этом случае он удаляет данные для всех экземпляров, выполненных 30 или более дней назад. Оно запускается раз в день, в 00:00:
+
+# <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
 ```csharp
 [FunctionName("PurgeInstanceHistory")]
@@ -635,7 +716,49 @@ public static Task Run(
 > [!NOTE]
 > Предыдущий C# код предназначен для устойчивые функции 2. x. Для Устойчивые функции 1. x необходимо использовать атрибут `OrchestrationClient` вместо атрибута `DurableClient`, а вместо `IDurableOrchestrationClient`необходимо использовать тип параметра `DurableOrchestrationClient`. Дополнительные сведения о различиях между версиями см. в статье [устойчивые функции версии](durable-functions-versions.md) .
 
-**Код JavaScript** Метод `purgeInstanceHistoryBy` можно использовать для условной очистки журнала экземпляров для нескольких экземпляров.
+# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+
+Метод `purgeInstanceHistoryBy` можно использовать для условной очистки журнала экземпляров для нескольких экземпляров.
+
+**function.json**
+
+```json
+{
+  "bindings": [
+    {
+      "schedule": "0 0 12 * * *",
+      "name": "myTimer",
+      "type": "timerTrigger",
+      "direction": "in"
+    },
+    {
+      "name": "starter",
+      "type": "durableClient",
+      "direction": "in"
+    }
+  ],
+  "disabled": false
+}
+```
+
+> [!NOTE]
+> Этот пример предназначен для Устойчивые функции версии 2. x. В версии 1. x используйте `orchestrationClient` вместо `durableClient`.
+
+**index.js**
+
+```javascript
+const df = require("durable-functions");
+
+module.exports = async function (context, myTimer) {
+    const client = df.getClient(context);
+    const createdTimeFrom = new Date(0);
+    const createdTimeTo = new Date().setDate(today.getDate() - 30);
+    const runtimeStatuses = [ df.OrchestrationRuntimeStatus.Completed ];
+    return client.purgeInstanceHistoryBy(createdTimeFrom, createdTimeTo, runtimeStatuses);
+};
+```
+
+---
 
 > [!NOTE]
 > Чтобы успешно выполнить операцию очистки **журнала, состояние**среды выполнения целевого экземпляра должно быть **завершено**, завершено или **завершилось сбоем**.
@@ -669,7 +792,7 @@ func durable purge-history --created-before 2018-11-14T19:35:00.0000000Z --runti
 func durable delete-task-hub --task-hub-name UserTest
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Сведения об обработке управления версиями](durable-functions-versioning.md)

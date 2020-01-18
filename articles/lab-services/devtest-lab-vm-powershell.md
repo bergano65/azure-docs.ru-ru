@@ -1,5 +1,5 @@
 ---
-title: Создание виртуальной машины в DevTest Labs с помощью Azure PowerShell | Документация Майкрософт
+title: Создание виртуальной машины в DevTest Labs с Azure PowerShell
 description: Узнайте, как использовать Azure DevTest Labs для создания виртуальных машин и управления ими с помощью Azure PowerShell.
 services: devtest-lab,virtual-machines,lab-services
 documentationcenter: na
@@ -11,25 +11,25 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 04/02/2019
+ms.date: 01/16/2020
 ms.author: spelluru
-ms.openlocfilehash: 1a6938bd541e316dbe9f333c670c382faab6ad21
-ms.sourcegitcommit: 470041c681719df2d4ee9b81c9be6104befffcea
+ms.openlocfilehash: 13014c39641203bddadf858c34cff67462b3a4b3
+ms.sourcegitcommit: d29e7d0235dc9650ac2b6f2ff78a3625c491bbbf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67854265"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76167106"
 ---
 # <a name="create-a-virtual-machine-with-devtest-labs-using-azure-powershell"></a>Создание виртуальной машины с DevTest Labs с помощью Azure PowerShell
 В этой статье показано, как создать виртуальную машину в Azure DevTest Labs с помощью Azure PowerShell. Сценарии PowerShell можно использовать для автоматизации создания виртуальных машин в лаборатории в Azure DevTest Labs. 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 Перед началом работы
 
 - [Создайте лабораторию](devtest-lab-create-lab.md) , если вы не хотите использовать существующую лабораторию для тестирования сценария или команд в этой статье. 
 - [Установите Azure PowerShell](/powershell/azure/install-az-ps?view=azps-1.7.0) или используйте Azure Cloud Shell, интегрированные в портал Azure. 
 
-## <a name="powershell-script"></a>Сценарий PowerShell
+## <a name="powershell-script"></a>Скрипт PowerShell
 В примере сценария в этом разделе используется командлет [Invoke-азресаурцеактион](/powershell/module/az.resources/invoke-azresourceaction?view=azps-1.7.0) .  Этот командлет принимает идентификатор ресурса лаборатории, имя выполняемого действия (`createEnvironment`) и параметры, необходимые для выполнения этого действия. Параметры находятся в хэш-таблице, которая содержит все свойства описания виртуальной машины. 
 
 ```powershell
@@ -117,7 +117,7 @@ finally {
 
 Свойства виртуальной машины в приведенном выше сценарии позволяют создать виртуальную машину с Windows Server 2016 Datacenter в качестве ОС. Для каждого типа виртуальной машины эти свойства будут немного отличаться. В разделе [Определение виртуальной машины](#define-virtual-machine) показано, как определить, какие свойства следует использовать в этом скрипте.
 
-Следующая команда предоставляет пример запуска сценария, сохраненного в имени файла: Креате-лабвиртуалмачине. ps1. 
+Следующая команда предоставляет пример выполнения сценария, сохраненного в имени файла: Креате-лабвиртуалмачине. ps1. 
 
 ```powershell
  PS> .\Create-LabVirtualMachine.ps1 -ResourceGroupName 'MyLabResourceGroup' -LabName 'MyLab' -userName 'AdminUser' -password 'Password1!' -VMName 'MyLabVM'
@@ -180,7 +180,7 @@ finally {
 В этом примере показано, как получить определение образа на рынке Azure. Таким же образом можно получить определение пользовательского образа, формулы или среды. Добавьте артефакты, необходимые для виртуальной машины, и задайте необходимые дополнительные параметры. После предоставления значений для обязательных полей и любых дополнительных полей перед нажатием кнопки **Параметры автоматизации** .
 
 ### <a name="use-azure-rest-api"></a>Использование Azure REST API
-Следующая процедура позволяет получить свойства образа с помощью REST API: Эти действия применимы только к существующей виртуальной машине в лаборатории. 
+Следующая процедура позволяет получить свойства образа с помощью REST API. Эти действия работают только для существующей виртуальной машины в лаборатории. 
 
 1. Перейдите на страницу " [виртуальные машины — список](/rest/api/dtl/virtualmachines/list) " и нажмите кнопку " **попробовать** ". 
 2. Выберите свою **подписку Azure**.
@@ -189,7 +189,7 @@ finally {
 5. Выберите **Запуск**.
 6. Вы увидите **свойства для образа** , на основе которого была создана виртуальная машина. 
 
-## <a name="set-expiration-date"></a>Задание срока действия
+## <a name="set-expiration-date"></a>Дата истечения срока действия
 В таких сценариях, как обучение, демонстрации и пробные версии, вы можете создавать виртуальные машины и удалять их автоматически после фиксированной длительности, чтобы не тратить излишнее издержки. Вы можете задать дату истечения срока действия виртуальной машины при ее создании с помощью PowerShell, как показано в примере раздела [сценария PowerShell](#powershell-script) .
 
 Ниже приведен пример скрипта PowerShell, который задает дату истечения срока действия для всех существующих виртуальных машин в лаборатории.
@@ -224,5 +224,5 @@ Set-AzureRmResource -ResourceId $VmResourceId -Properties $VmProperties -Force
 ```
 
 
-## <a name="next-steps"></a>Следующие шаги
-См. следующее содержимое: [Azure PowerShell документация для Azure DevTest Labs](/powershell/module/az.devtestlabs/)
+## <a name="next-steps"></a>Дальнейшие действия
+См. следующее содержимое: [Azure PowerShell документация по Azure DevTest Labs](/powershell/module/az.devtestlabs/)

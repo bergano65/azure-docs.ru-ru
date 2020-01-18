@@ -1,5 +1,5 @@
 ---
-title: Подключение диска данных к виртуальной машине в Azure DevTest Labs и его отключение | Документация Майкрософт
+title: Подключение диска данных к виртуальной машине в Azure DevTest Labs и его отключение
 description: Узнайте, как подключить диск данных к виртуальной машине в Azure DevTest Labs и отключить его.
 services: devtest-lab,virtual-machines,lab-services
 documentationcenter: na
@@ -12,14 +12,14 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 04/05/2018
+ms.date: 01/16/2020
 ms.author: spelluru
-ms.openlocfilehash: 2e168867ed342fb0b0545b5fdc330ba790f78de0
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: e6b470c55815255c50a42821b0bf52219d890206
+ms.sourcegitcommit: d29e7d0235dc9650ac2b6f2ff78a3625c491bbbf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60304519"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76170083"
 ---
 # <a name="attach-or-detach-a-data-disk-to-a-virtual-machine-in-azure-devtest-labs"></a>Подключение диска данных к виртуальной машине в Azure DevTest Labs и его отключение
 Служба [Управляемые диски Azure](https://docs.microsoft.com/azure/virtual-machines/windows/managed-disks-overview) управляет учетными записями хранения, которые связаны с дисками данных виртуальной машины. Пользователь подключает новый диск данных к виртуальной машине, указывает необходимый тип и размер диска, а Azure автоматически создает диск и управляет им. Созданный диск данных можно отключить от виртуальной машины для последующего переподключения к той же виртуальной машине или подключения к другой, принадлежащей тому же пользователю.
@@ -35,7 +35,7 @@ ms.locfileid: "60304519"
 ### <a name="attach-a-new-disk"></a>Подключение нового диска
 Для создания и подключения нового управляемого диска данных к виртуальной машине в Azure DevTest Labs сделайте следующее:
 
-1. Войдите на [портале Azure](https://go.microsoft.com/fwlink/p/?LinkID=525040).
+1. Войдите на [портал Azure](https://go.microsoft.com/fwlink/p/?LinkID=525040).
 1. Щелкните **Все службы** и выберите в списке **DevTest Labs**.
 1. Из списка лабораторий выберите нужную лабораторию. 
 1. В списке **Мои виртуальные машины** выберите запущенную виртуальную машину.

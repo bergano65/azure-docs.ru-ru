@@ -1,5 +1,5 @@
 ---
-title: Добавление внутреннего заявления о поддержке в лабораторию в Azure DevTest Labs | Документация Майкрософт
+title: Добавление внутреннего заявления о поддержке в лабораторию в Azure DevTest Labs
 description: Узнайте, как отправить внутреннее заявление о поддержке в лабораторию в Azure DevTest Labs
 services: devtest-lab,virtual-machines,lab-services
 documentationcenter: na
@@ -12,14 +12,14 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 04/17/2018
+ms.date: 01/16/2020
 ms.author: spelluru
-ms.openlocfilehash: deb98c2c633200ab4be1d763a94fd2a04979a3b1
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 591dcec36dc62143901d3b49db24196e84d58c29
+ms.sourcegitcommit: d29e7d0235dc9650ac2b6f2ff78a3625c491bbbf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60562344"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76170351"
 ---
 # <a name="add-an-internal-support-statement-to-a-lab-in-azure-devtest-labs"></a>Добавление внутреннего заявления о поддержке в лабораторию в Azure DevTest Labs
 
@@ -31,7 +31,7 @@ Azure DevTest Labs позволяет добавить в лабораторию
 
 ## <a name="steps-to-add-a-support-statement-to-an-existing-lab"></a>Шаги по добавлению заявления о поддержке к имеющейся лаборатории
 
-1. Войдите на [портале Azure](https://go.microsoft.com/fwlink/p/?LinkID=525040).
+1. Войдите на [портал Azure](https://go.microsoft.com/fwlink/p/?LinkID=525040).
 1. При необходимости щелкните **Все службы**, а затем выберите в списке **DevTest Labs**. Возможно, лаборатория уже отображается на панели мониторинга в разделе **Все ресурсы**.
 1. Из списка лабораторий выберите ту, в которой необходимо добавить заявление о поддержке.  
 1. В области лаборатории **Обзор** выберите **Configuration and policies** (Конфигурация и политики).  

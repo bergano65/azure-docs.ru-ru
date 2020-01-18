@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 03/28/2019
-ms.openlocfilehash: e3e399e99dca453a84c4daef782027b2b1ad6da1
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 23b1391033713fc8eeccf2d0872c49a4291b8292
+ms.sourcegitcommit: d29e7d0235dc9650ac2b6f2ff78a3625c491bbbf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75401034"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76168895"
 ---
 # <a name="optimize-your-sql-environment-with-the-sql-server-health-check-solution-in-azure-monitor"></a>Оптимизируйте среду SQL с помощью решения SQL Server проверки работоспособности в Azure Monitor
 
@@ -196,6 +196,19 @@ Log Analytics использует агент Operations Manager и группу
 3. Если вы решите позже просмотреть игнорируемые рекомендации, удалите все файлы IgnoreRecommendations.txt или RecommendationIDs можно удалить из них.
 
 ## <a name="sql-health-check-solution-faq"></a>Вопросы и ответы по решению "Проверка работоспособности SQL"
+
+*Какие проверки выполняются Оценка SQLным решением?*
+
+* В следующем запросе показано описание всех проверок, которые выполняются в настоящее время:
+
+```Kusto
+SQLAssessmentRecommendation
+| distinct RecommendationId, FocusArea, ActionArea, Recommendation, Description
+| sort by FocusArea,ActionArea, Recommendation
+```
+Результаты можно экспортировать в Excel для дальнейшего анализа.
+
+
 *Как часто выполняется проверка работоспособности?*
 
 * Проверка выполняется каждые семь дней.

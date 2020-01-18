@@ -1,5 +1,5 @@
 ---
-title: Использование программ командной строки для запуска и завершения работы виртуальных машин Azure DevTest Labs | Документация Майкрософт
+title: Запуск и завершение работы виртуальных машин с помощью программ командной строки Azure DevTest Labs
 description: Узнайте, как использовать программы командной строки для запуска и завершения работы виртуальных машин в Azure DevTest Labs.
 services: devtest-lab,virtual-machines,lab-services
 documentationcenter: na
@@ -10,14 +10,14 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 03/25/2019
+ms.date: 01/16/2020
 ms.author: spelluru
-ms.openlocfilehash: 8e00de295a7f41bf0ff768c4f948a667bc188616
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: fd643559a09d5c75aad9be5f35c653994c8488cf
+ms.sourcegitcommit: d29e7d0235dc9650ac2b6f2ff78a3625c491bbbf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75456948"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76169253"
 ---
 # <a name="use-command-line-tools-to-start-and-stop-azure-devtest-labs-virtual-machines"></a>Использование программ командной строки для запуска и завершения Azure DevTest Labs виртуальных машин
 В этой статье показано, как использовать Azure PowerShell или Azure CLI для запуска или завершения работы виртуальных машин в лаборатории в Azure DevTest Labs. Вы можете создать скрипты PowerShell/CLI для автоматизации этих операций. 

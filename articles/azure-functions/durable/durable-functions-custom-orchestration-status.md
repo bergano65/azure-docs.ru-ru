@@ -4,16 +4,16 @@ description: Сведения о том, как настроить и испол
 ms.topic: conceptual
 ms.date: 11/02/2019
 ms.author: azfuncdf
-ms.openlocfilehash: 22242a40a29a1a014a7ab88ed705c7ca3e5ba288
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: 2b8b78f58570186a0b17eb47f8445d2ba9aa47e8
+ms.sourcegitcommit: 2a2af81e79a47510e7dea2efb9a8efb616da41f0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74232954"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76261659"
 ---
 # <a name="custom-orchestration-status-in-durable-functions-azure-functions"></a>Состояние пользовательской оркестрации в устойчивых функциях (Функции Azure)
 
-Эта возможность позволяет задать настраиваемое значение состояния для функции оркестратора. Такое значение состояния можно задать с помощью API HTTP-запросов GetStatus или API `DurableOrchestrationClient.GetStatusAsync`.
+Эта возможность позволяет задать настраиваемое значение состояния для функции оркестратора. Это состояние предоставляется через [API-интерфейс HTTP](durable-functions-http-api.md#get-instance-status) или [API`GetStatusAsync`](durable-functions-instance-management.md#query-instances) в клиенте оркестрации.
 
 ## <a name="sample-use-cases"></a>Примеры вариантов использования
 
@@ -24,7 +24,7 @@ ms.locfileid: "74232954"
 
 Клиенты могут выполнять опрос конечной точки состояния и просматривать пользовательский интерфейс, визуализирующий текущий этап выполнения. В следующем примере демонстрируется предоставление доступа к данным о ходе выполнения.
 
-#### <a name="c"></a>C#
+# <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
 ```csharp
 [FunctionName("E1_HelloSequence")]
@@ -51,7 +51,9 @@ public static string SayHello([ActivityTrigger] string name)
 }
 ```
 
-#### <a name="javascript-functions-20-only"></a>JavaScript (только Функции 2.0)
+# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+
+`E1_HelloSequence` функции Orchestrator:
 
 ```javascript
 const df = require("durable-functions");
@@ -71,15 +73,19 @@ module.exports = df.orchestrator(function*(context){
 });
 ```
 
+Функция действия `E1_SayHello`:
+
 ```javascript
 module.exports = async function(context, name) {
     return `Hello ${name}!`;
 };
 ```
 
+---
+
 Затем клиент получает выходные данные оркестрации, только если в поле `CustomStatus` задано "Лондон".
 
-#### <a name="c"></a>C#
+# <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
 ```csharp
 [FunctionName("HttpStart")]
@@ -112,7 +118,7 @@ public static async Task<HttpResponseMessage> Run(
 }
 ```
 
-#### <a name="javascript-functions-20-only"></a>JavaScript (только Функции 2.0)
+# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
 
 ```javascript
 const df = require("durable-functions");
@@ -144,11 +150,13 @@ module.exports = async function(context, req) {
 > [!NOTE]
 > При использовании JavaScript поле `customStatus` задается после планирования следующего действия `yield` или `return`.
 
+---
+
 ### <a name="output-customization"></a>Настройка выходных данных
 
 Другим интересным сценарием является сегментирование пользователей путем возврата настроенных выходных данных на основе уникальных характеристик или взаимодействий. С помощью пользовательских оркестраций состояния код на стороне клиента остается универсальным. Все основные изменения произойдут на стороне сервера, как показано в следующем примере.
 
-#### <a name="c"></a>C#
+# <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
 ```csharp
 [FunctionName("CityRecommender")]
@@ -186,7 +194,7 @@ public static void Run(
 }
 ```
 
-#### <a name="javascript-functions-20-only"></a>JavaScript (только Функции 2.0)
+# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
 
 ```javascript
 const df = require("durable-functions");
@@ -219,11 +227,13 @@ module.exports = df.orchestrator(function*(context) {
 });
 ```
 
+---
+
 ### <a name="instruction-specification"></a>Спецификация инструкции
 
 Оркестратор может передать уникальные инструкции для клиентов с помощью пользовательского состояния. Инструкции по пользовательскому состоянию будут сопоставлены с действиями в коде оркестрации.
 
-#### <a name="c"></a>C#
+# <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
 ```csharp
 [FunctionName("ReserveTicket")]
@@ -251,7 +261,7 @@ public static async Task<bool> Run(
 }
 ```
 
-#### <a name="javascript-functions-20-only"></a>JavaScript (только Функции 2.0)
+# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
 
 ```javascript
 const df = require("durable-functions");
@@ -278,11 +288,13 @@ module.exports = df.orchestrator(function*(context) {
 });
 ```
 
-## <a name="sample"></a>Образец
+---
+
+## <a name="sample"></a>Пример
 
 В следующем примере пользовательское состояние показано первым.
 
-### <a name="c"></a>C#
+# <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
 ```csharp
 public static async Task SetStatusTest([OrchestrationTrigger] IDurableOrchestrationContext context)
@@ -297,7 +309,7 @@ public static async Task SetStatusTest([OrchestrationTrigger] IDurableOrchestrat
 }
 ```
 
-### <a name="javascript-functions-20-only"></a>JavaScript (только Функции 2.0)
+# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
 
 ```javascript
 const df = require("durable-functions");
@@ -312,6 +324,8 @@ module.exports = df.orchestrator(function*(context) {
     // ...do more work...
 });
 ```
+
+---
 
 Когда выполняется оркестрация, внешние клиенты могут получить данные о таком настраиваемом значении состояния:
 
@@ -335,7 +349,7 @@ GET /runtime/webhooks/durabletask/instances/instance123
 > [!WARNING]
 > Полезные данные настраиваемого значения состояния не должны превышать 16 КБ JSON-текста в кодировке UTF-16, так как они должны поместиться в столбец Хранилища таблиц Azure. Если требуются большие полезные данные, рекомендуется использовать внешнее хранилище.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Сведения о устойчивых таймерах](durable-functions-timers.md)

@@ -1,5 +1,5 @@
 ---
-title: Диагностика сбоев артефактов на виртуальной машине Azure DevTest Labs | Документация Майкрософт
+title: Диагностика сбоев артефактов на виртуальной машине Azure DevTest Labs
 description: Узнайте, как устранять неполадки при сбоях артефактов в Azure DevTest Labs.
 services: devtest-lab,virtual-machines,lab-services
 documentationcenter: na
@@ -12,14 +12,14 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 08/22/2019
+ms.date: 01/16/2020
 ms.author: spelluru
-ms.openlocfilehash: 8b7a72c03d41d54aa80505e781b6f6d32cd2a2c0
-ms.sourcegitcommit: 007ee4ac1c64810632754d9db2277663a138f9c4
+ms.openlocfilehash: 50cb3138b8d79c4d60c94513d931996d667d9c01
+ms.sourcegitcommit: d29e7d0235dc9650ac2b6f2ff78a3625c491bbbf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "69991368"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76170317"
 ---
 # <a name="diagnose-artifact-failures-in-the-lab"></a>Диагностика сбоев артефактов в лаборатории 
 После создания артефакта можно проверить, работает ли он. Журналы артефактов в Azure DevTest Labs предоставляют сведения, которые можно использовать для диагностики сбоя артефакта. Есть два способа просмотреть данные журнала артефактов для виртуальной машины Windows:
@@ -52,12 +52,12 @@ ms.locfileid: "69991368"
 
 3. Откройте файл **состояния**.
 
-Инструкции по поиску файлов журналов на виртуальной машине **Linux** см. в следующей статье: [Использование расширения пользовательских сценариев Azure версии 2 с виртуальными машинами Linux](../virtual-machines/extensions/custom-script-linux.md#troubleshooting)
+Инструкции по поиску файлов журналов на виртуальной машине **Linux** см. в следующей статье: [Использование расширения пользовательских сценариев Azure версии 2 с виртуальными машинами Linux](../virtual-machines/extensions/custom-script-linux.md#troubleshooting) .
 
 
 ## <a name="related-blog-posts"></a>Связанные записи в блогах
 * [Join a VM to existing AD Domain using ARM template in Azure Dev Test Lab](https://www.visualstudiogeeks.com/blog/DevOps/Join-a-VM-to-existing-AD-domain-using-ARM-template-AzureDevTestLabs) (Присоединение виртуальной машины к имеющемуся домену AD с помощью шаблона ARM в Azure DevTest Labs)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Узнайте, как [добавить в лабораторию репозиторий Git](devtest-lab-add-artifact-repo.md).
 

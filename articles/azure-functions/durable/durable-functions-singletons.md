@@ -5,12 +5,12 @@ author: cgillum
 ms.topic: conceptual
 ms.date: 11/03/2019
 ms.author: azfuncdf
-ms.openlocfilehash: 8c12e0ab854bb2b5764dd326e3f1649202f6f16b
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: 4eff7c4c91ed664fcf1f4fc7a8be2d43d24e5c6b
+ms.sourcegitcommit: 2a2af81e79a47510e7dea2efb9a8efb616da41f0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74232799"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76262815"
 ---
 # <a name="singleton-orchestrators-in-durable-functions-azure-functions"></a>Одноэлементные экземпляры в устойчивых функциях (Функции Azure)
 
@@ -20,7 +20,7 @@ ms.locfileid: "74232799"
 
 В следующем примере показана функция триггера HTTP, которая создает одноэлементное согласование фонового задания. Код обеспечивает наличие только одного экземпляра с указанным идентификатором.
 
-### <a name="c"></a>C#
+# <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
 ```cs
 [FunctionName("HttpStartSingle")]
@@ -54,9 +54,10 @@ public static async Task<HttpResponseMessage> RunSingle(
 > [!NOTE]
 > Предыдущий C# код предназначен для устойчивые функции 2. x. Для Устойчивые функции 1. x необходимо использовать атрибут `OrchestrationClient` вместо атрибута `DurableClient`, а вместо `IDurableOrchestrationClient`необходимо использовать тип параметра `DurableOrchestrationClient`. Дополнительные сведения о различиях между версиями см. в статье [устойчивые функции версии](durable-functions-versions.md) .
 
-### <a name="javascript-functions-20-only"></a>JavaScript (только Функции 2.0)
+# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
 
-Ниже показан файл function.json:
+**function.json**
+
 ```json
 {
   "bindings": [
@@ -82,7 +83,8 @@ public static async Task<HttpResponseMessage> RunSingle(
 }
 ```
 
-Ниже показан код JavaScript.
+**index.js**
+
 ```javascript
 const df = require("durable-functions");
 
@@ -110,6 +112,8 @@ module.exports = async function(context, req) {
 };
 ```
 
+---
+
 По умолчанию идентификаторы экземпляров — это случайным образом сгенерированные GUID. Однако в предыдущем примере идентификатор экземпляра передается в данные маршрута из URL-адреса. Код вызывает `GetStatusAsync`(C#) или `getStatus` (JavaScript), чтобы проверить, запущен ли уже экземпляр с указанным идентификатором. Если такой экземпляр не работает, создается новый экземпляр с этим ИДЕНТИФИКАТОРом.
 
 > [!NOTE]
@@ -117,7 +121,7 @@ module.exports = async function(context, req) {
 
 Сведения о реализации функции Orchestrator не имеют значения. Это может быть обычная функция оркестратора, которая начинает и завершает работу, или же выполняющаяся бесконечно (т. е. [вечная оркестрация](durable-functions-eternal-orchestrations.md)). Важно то, что в любой момент времени выполняется только один экземпляр.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Сведения о собственных функциях HTTP оркестрации](durable-functions-http-features.md)

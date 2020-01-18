@@ -4,15 +4,15 @@ description: Получение количества просмотров стр
 ms.service: azure-monitor
 ms.subservice: application-insights
 ms.topic: conceptual
-author: mrbullwinkle
-ms.author: mbullwin
+author: Dawgfan
+ms.author: mmcc
 ms.date: 09/20/2019
-ms.openlocfilehash: 38f9872fb73f2c680264c2c0b84445db858cf203
-ms.sourcegitcommit: 05cdbb71b621c4dcc2ae2d92ca8c20f216ec9bc4
+ms.openlocfilehash: 83b167baa29a54e53f7fe8bdb7b7e5c88bc3eddf
+ms.sourcegitcommit: 2a2af81e79a47510e7dea2efb9a8efb616da41f0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76045829"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76264090"
 ---
 # <a name="application-insights-for-web-pages"></a>Application Insights для веб-страниц
 
@@ -29,7 +29,10 @@ Application Insights можно использовать с любыми веб-
     * [Фрагмент кода JavaScript](#snippet-based-setup)
 
 > [!IMPORTANT]
-> Для добавления Application Insights пакета SDK для JavaScript в приложение необходимо использовать только один из следующих методов. Если вы используете настройку на основе NPM, не используйте настройку на основе фрагментов кода. То же самое касается сценария обратных ситуаций при использовании подхода на основе фрагментов кода, но не также следует использовать настройку на основе NPM. 
+> > Для добавления пакета SDK для JavaScript в приложение используйте только один метод. Если вы используете программу установки NPM, не используйте фрагмент и наоборот.
+
+> [!NOTE]
+> Программа установки NPM устанавливает пакет SDK для JavaScript как зависимость от проекта, позволяя использовать IntelliSense, в то время как фрагмент кода извлекает пакет SDK во время выполнения. Обе поддерживают одни и те же функции. Однако разработчики, которым требуется больше пользовательских событий и конфигурации, обычно заNPM настройку, тогда как пользователи хотят быстро включить готовый веб-анализ.
 
 ### <a name="npm-based-setup"></a>Установка на основе NPM
 
@@ -261,4 +264,3 @@ Application Insights SDK JavaScript является открытым кодом
 * [Отслеживание использования](usage-overview.md)
 * [Пользовательские события и метрики](api-custom-events-metrics.md)
 * [Сборка, измерение и обучение](usage-overview.md)
-

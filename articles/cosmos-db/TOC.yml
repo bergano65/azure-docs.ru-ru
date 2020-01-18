@@ -851,8 +851,6 @@
         - name: Управление уровнями согласованности
           displayName: 'session, consistency prefix, strong, eventual, bounded staleness'
           href: how-to-manage-consistency.md
-        - name: Реализация пользовательской синхронизации
-          href: how-to-custom-synchronization.md
         - name: Настройка политик разрешения конфликтов
           href: how-to-manage-conflicts.md
     - name: Подготовленная пропускная способность

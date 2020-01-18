@@ -9,12 +9,12 @@ ms.service: cognitive-services
 ms.topic: conceptual
 ms.date: 10/04/2019
 ms.author: aahi
-ms.openlocfilehash: d715252f16a34f2261c108ebd3ff5d1f6f3424d8
-ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
+ms.openlocfilehash: 5d3aba2f6010ba16656be96433c521d2adae4c58
+ms.sourcegitcommit: d29e7d0235dc9650ac2b6f2ff78a3625c491bbbf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2019
-ms.locfileid: "73887916"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76169162"
 ---
 # <a name="create-a-cognitive-services-resource-using-the-azure-command-line-interfacecli"></a>Создание Cognitive Services ресурса с помощью интерфейс командной строки Azure (CLI)
 
@@ -25,7 +25,7 @@ ms.locfileid: "73887916"
 
 [!INCLUDE [cognitive-services-subscription-types](../../includes/cognitive-services-subscription-types.md)]
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Технические условия
 
 * Допустимая подписка Azure — [создайте ее](https://azure.microsoft.com/free/) бесплатно.
 * [Интерфейс командной строки Azure (CLI)](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest)
@@ -88,28 +88,28 @@ az group create \
 
 | Служба                    | Вид                      |
 |----------------------------|---------------------------|
-| API Компьютерного зрения            | `ComputerVision`          |
+| Компьютерное зрение            | `ComputerVision`          |
 | Прогнозирование Пользовательское визуальное распознавание | `CustomVision.Prediction` |
 | Пользовательское визуальное распознавание обучение   | `CustomVision.Training`   |
-| API распознавания лиц                   | `Face`                    |
+| API распознавания лиц                       | `Face`                    |
 | Распознаватель документов            | `FormRecognizer`          |
 | Распознаватель рукописного текста             | `InkRecognizer`           |
 
-### <a name="search"></a>поиска
+### <a name="search"></a>Поиск
 
 | Служба            | Вид                  |
 |--------------------|-----------------------|
 | API автозаполнения Bing   | `Bing.Autosuggest.v7` |
 | Пользовательский поиск Bing | `Bing.CustomSearch`   |
-| API Поиска сущностей Bing | `Bing.EntitySearch`   |
+| API Bing для поиска сущностей | `Bing.EntitySearch`   |
 | Поиск Bing        | `Bing.Search.v7`      |
-| API Bing для проверки орфографии   | `Bing.SpellCheck.v7`  |
+| API проверки орфографии Bing   | `Bing.SpellCheck.v7`  |
 
 ### <a name="speech"></a>Речь
 
 | Служба            | Вид                 |
 |--------------------|----------------------|
-| Службы распознавания речи    | `SpeechServices`     |
+| Службы речи    | `SpeechServices`     |
 | Распознавание речи | `SpeakerRecognition` |
 
 ### <a name="language"></a>Язык
@@ -119,7 +119,7 @@ az group create \
 | Основные сведения о форме | `FormUnderstanding` |
 | LUIS               | `LUIS`              |
 | QnA Maker          | `QnAMaker`          |
-| Текстовая аналитика     | `TextAnalytics`     |
+| Анализ текста     | `TextAnalytics`     |
 | Перевод текста   | `TextTranslation`   |
 
 ### <a name="decision"></a>Решение

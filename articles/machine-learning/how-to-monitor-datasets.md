@@ -10,12 +10,12 @@ ms.reviewer: nibaccam
 ms.author: copeters
 author: lostmygithubaccount
 ms.date: 11/04/2019
-ms.openlocfilehash: 524a831c63e2a034766b874cc45bb039e3185b50
-ms.sourcegitcommit: ce4a99b493f8cf2d2fd4e29d9ba92f5f942a754c
+ms.openlocfilehash: 4efdc47e65f0f29f74f1477b02efdc6b8767ffb2
+ms.sourcegitcommit: 2a2af81e79a47510e7dea2efb9a8efb616da41f0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/28/2019
-ms.locfileid: "75536880"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76264769"
 ---
 # <a name="detect-data-drift-preview-on-datasets"></a>Обнаружение смещения данных (Предварительная версия) в наборах
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -315,6 +315,7 @@ monitor = monitor.enable_schedule()
 * Ограничение функций 200, если не указан список функций (все используемые компоненты).
 * Размер вычислений должен быть достаточно большим, чтобы обрабатывать данные. 
 * Убедитесь, что набор данных содержит данные в пределах начальной и конечной даты для данного монитора.
+* Мониторы наборов данных будут работать только на наборах данных, содержащих 50 строк или более. 
 
 Столбцы или функции в наборе данных классифицируются по категориям или числу в зависимости от условий, приведенных в следующей таблице. Если функция не соответствует этим условиям (например, столбец строкового типа с > 100 уникальными значениями), функция удаляется из алгоритма смещения данных, но по-прежнему пройдет профилирование. 
 

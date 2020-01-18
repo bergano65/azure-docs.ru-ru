@@ -1,7 +1,7 @@
 ---
-title: Заметки о выпуске — служба API распознавания лиц
+title: Заметки о выпуске — служба распознавания лиц
 titleSuffix: Azure Cognitive Services
-description: Заметки о выпуске для службы API распознавания лиц содержат историю изменений для разных версий.
+description: Заметки о выпуске для службы распознавания лиц включают историю изменений выпуска для различных версий.
 services: cognitive-services
 author: yluiu
 manager: nitinme
@@ -10,34 +10,34 @@ ms.subservice: face-api
 ms.topic: conceptual
 ms.date: 06/06/2019
 ms.author: yluiu
-ms.openlocfilehash: a7667f94d3f4dea2901c4b4b0e2b2c893b9f535e
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 767c9dec373a2bda806d75d602b194edde98c6b5
+ms.sourcegitcommit: d29e7d0235dc9650ac2b6f2ff78a3625c491bbbf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67074093"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76165864"
 ---
-# <a name="face-api-release-notes"></a>Заметки о выпуске для API распознавания лиц
+# <a name="face-release-notes"></a>Заметки о выпуске лиц
 
-Эта статья относится к службе API распознавания лиц версии 1.0.
+Эта статья относится к версии службы лиц 1,0.
 
-### <a name="release-changes-in-june-2019"></a>Изменения выпуска в июне 2019 г.
+### <a name="release-changes-in-june-2019"></a>Изменения выпуска в июне 2019
 
-* Добавить новую модель обнаружения лиц с повышенную точность на небольших, вид сбоку, перекрыто и становится нечетким лиц. Используйте его с помощью [лиц — обнаруживать](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236), [FaceList — добавление распознавания лиц](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395250), [LargeFaceList — добавление распознавания лиц](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/5a158c10d2de3616c086f2d3), [Person каждой группе людей — добавление распознавания лиц](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f3039523b) и [LargePersonGroup лицо — добавление распознавания лиц](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/599adf2a3a7b9412a4d53f42) , указав новое имя модели обнаружения лиц `detection_02` в `detectionModel` параметра. Дополнительные сведения в [способы указания модели обнаружения](Face-API-How-to-Topics/specify-detection-model.md).
+* Добавлена новая модель обнаружения лиц с повышенной точностью для мелких, перекрыто и размытых лиц. Используйте его с помощью распознавания [лиц](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236), [фацелисти](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395250), [LargeFaceList-Add Face](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/5a158c10d2de3616c086f2d3), [Персонграуп Person — Добавление](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f3039523b) лица и [ларжеперсонграуп Person — добавьте лицо](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/599adf2a3a7b9412a4d53f42) , указав новое имя модели обнаружения лиц `detection_02` в параметре `detectionModel`. Дополнительные сведения см. в [описании способа указания модели обнаружения](Face-API-How-to-Topics/specify-detection-model.md).
 
-### <a name="release-changes-in-april-2019"></a>Изменения выпуска в апреля 2019 г.
+### <a name="release-changes-in-april-2019"></a>Изменения выпуска в апреле 2019
 
-* Улучшенная общая точность `age` и `headPose` атрибуты. `headPose` Атрибут также будет добавлена `pitch` значение включено. Эти атрибуты можно использовать, указав их в `returnFaceAttributes` параметр [лиц — обнаруживать](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236) `returnFaceAttributes` параметра. 
+* Улучшена общая точность атрибутов `age` и `headPose`. Атрибут `headPose` также обновляется с включенным параметром `pitch`. Используйте эти атрибуты, указав их в параметре `returnFaceAttributes` параметра `returnFaceAttributes` [-распознавания лиц](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236) . 
 
-* Улучшена скорость [лиц — обнаруживать](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236), [FaceList — добавление распознавания лиц](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395250), [LargeFaceList — добавление распознавания лиц](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/5a158c10d2de3616c086f2d3), [Person каждой группе людей — добавление распознавания лиц](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f3039523b) и [ LargePersonGroup лицо — добавление распознавания лиц](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/599adf2a3a7b9412a4d53f42).
+* Улучшенная скорость [распознавания лиц](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236), [фацелиста](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395250), [LargeFaceList-Добавление](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/5a158c10d2de3616c086f2d3)лица, [Персонграуп человек — Добавление](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f3039523b) лица и [ларжеперсонграуп Person — Добавление](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/599adf2a3a7b9412a4d53f42)лица.
 
-### <a name="release-changes-in-march-2019"></a>Изменения выпуска в марте 2019 г.
+### <a name="release-changes-in-march-2019"></a>Изменения выпуска в марте 2019
 
-* Добавлена новая модель распознавания лиц с повышенную точность. Использовать его с помощью [лиц — обнаруживать](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236), [FaceList - создание](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f3039524b), [LargeFaceList - создать](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/5a157b68d2de3616c086f2cc), [в каждой группе людей — создание](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395244) и [ LargePersonGroup - создание](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/599acdee6ac60f11b48b5a9d) , указав новое имя модели распознавания лиц `recognition_02` в `recognitionModel` параметра. Дополнительные сведения в [способы указания моделей распознавания](Face-API-How-to-Topics/specify-recognition-model.md).
+* Добавлена новая модель распознавания лиц с улучшенной точностью. Используйте его с помощью [распознавания лиц](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236), [фацелист-Create](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f3039524b), [LargeFaceList-Create](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/5a157b68d2de3616c086f2cc), [персонграуп-Create](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395244) и [ларжеперсонграуп-Create](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/599acdee6ac60f11b48b5a9d) , указав новое имя модели распознавания лиц `recognition_02` в `recognitionModel` параметре. Дополнительные сведения см. в [описании способа указания модели распознавания](Face-API-How-to-Topics/specify-recognition-model.md).
 
 ### <a name="release-changes-in-january-2019"></a>Изменения в выпуске за январь 2019 г.
 
-* Добавлена функция моментального снимка для поддержки миграции данных между подписками. [Моментальный снимок](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/snapshot-get). Дополнительные сведения в [как перенести данные лиц в другую подписку лиц](Face-API-How-to-Topics/how-to-migrate-face-data.md).
+* Добавлена функция моментального снимка для поддержки переноса данных между подписками: [snapshot](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/snapshot-get). Дополнительные сведения о [переносе данных о лицах в подписку другого лица](Face-API-How-to-Topics/how-to-migrate-face-data.md).
 
 ### <a name="release-changes-in-october-2018"></a>Изменения в выпуске за октябрь 2018 г.
 
@@ -45,19 +45,19 @@ ms.locfileid: "67074093"
 
 ### <a name="release-changes-in-may-2018"></a>Изменения в выпуске за май 2018 г.
 
-* Значительно улучшено поведение атрибута `gender`, а также улучшены атрибуты `age`, `glasses`, `facialHair`, `hair` и `makeup`. Вы можете использовать их в параметре `returnFaceAttributes` метода [Face — Detect](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236). 
+* Значительно улучшено поведение атрибута `gender`, а также улучшены атрибуты `age`, `glasses`, `facialHair`, `hair` и `makeup`. Используйте их с помощью параметра `returnFaceAttributes` распознавания [лиц](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236) . 
 
 * Предельный размер файла изображения увеличен с 4 МБ до 6 МБ для методов [Face — Detect](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236), [FaceList — Add Face](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395250), [LargeFaceList — Add Face](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/5a158c10d2de3616c086f2d3), [PersonGroup Person — Add Face](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f3039523b) и [LargePersonGroup Person — Add Face](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/599adf2a3a7b9412a4d53f42).
 
 ### <a name="release-changes-in-march-2018"></a>Изменения в выпуске за март 2018 г.
 
-* Добавлен контейнер в масштабе 1:1 000 000 [LargeFaceList](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/5a157b68d2de3616c086f2cc) и [LargePersonGroup](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/599acdee6ac60f11b48b5a9d). Дополнительные сведения см. в статье [How to use the large-scale feature](Face-API-How-to-Topics/how-to-use-large-scale.md) (Использование функции для увеличения масштаба).
+* Добавлены контейнеры, принимающие миллионы объектов: [LargeFaceList](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/5a157b68d2de3616c086f2cc) и [LargePersonGroup](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/599acdee6ac60f11b48b5a9d). Дополнительные сведения см. в статье [How to use the large-scale feature](Face-API-How-to-Topics/how-to-use-large-scale.md) (Использование функции для увеличения масштаба).
 
-* Для параметра `maxNumOfCandidatesReturned` в методе [Face — Identify](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395239) расширен диапазон с [1, 5] до [1, 100], а значение по умолчанию — 10.
+* Увеличено [лицо — выявление](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395239) параметра `maxNumOfCandidatesReturned` от [1, 5] до [1, 100] и по умолчанию равным 10.
 
 ### <a name="release-changes-in-may-2017"></a>Изменения в выпуске за май 2017 г.
 
-* Добавлены атрибуты `hair`, `makeup`, `accessory`, `occlusion`, `blur`, `exposure` и `noise` в параметре `returnFaceAttributes` метода [Face — Identify](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236).
+* Добавлены атрибуты `hair`, `makeup`, `accessory`, `occlusion`, `blur`, `exposure`и `noise` в параметре " [определить](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236) `returnFaceAttributes`".
 
 * Для PersonGroup в методе [Face — Identify](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395239) поддерживаются до 10 000 пользователей.
 
@@ -66,7 +66,7 @@ ms.locfileid: "67074093"
 * Добавлена поддержка параллелизма при добавлении и удалении лиц для разных FaceLists и разных людей в PersonGroup.
 
 ### <a name="release-changes-in-march-2017"></a>Изменения в выпуске за март 2017 г.
-* Добавлен атрибут `emotion` в параметре `returnFaceAttributes` метода [Face — Detect](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236).
+* Добавлен атрибут `emotion` в параметре `returnFaceAttributes` для распознавания [лиц](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236) .
 
 * Исправлена ошибка, не позволявшая повторно обнаружить лицо с наложенным прямоугольником, который возвращается методом [Face — Detect](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236) в качестве `targetFace` в [FaceList — Add Face](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395250) и [PersonGroup Person — Add Face](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f3039523b).
 
@@ -88,7 +88,7 @@ ms.locfileid: "67074093"
 * Добавлены необязательные параметры `start` и `top` в методе [PersonGroup — List](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395248), с помощью которых пользователь может указать начальную точку и общее число отображаемых групп PersonGroup.
 
 ### <a name="v10-changes-from-v0"></a>Отличия версии 1.0 от версии 0
-* Корневая конечная точка службы изменена с ```https://westus.api.cognitive.microsoft.com/face/v0/``` на ```https://westus.api.cognitive.microsoft.com/face/v1.0/```. Изменения применены к методам [Face — Detect](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236), [Face — Identify](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395239), [Face — Find Similar](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395237) и [Face — Group](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395238).
+* Корневая конечная точка службы изменена с ```https://westus.api.cognitive.microsoft.com/face/v0/``` на ```https://westus.api.cognitive.microsoft.com/face/v1.0/```. Внесены изменения в методы [Face — Detect](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236), [Face — Identify](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395239), [Face — Find Similar](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395237) и [Face — Group](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395238).
 
 * Минимальный размер обнаруживаемого лица изменен на 36×36 пикселей. Теперь лица размером менее 36×36 не обнаруживаются.
 

@@ -1,5 +1,5 @@
 ---
-title: Развертывание вложенных сред шаблонов диспетчер ресурсов в Azure DevTest Labs | Документация Майкрософт
+title: Развертывание вложенных сред шаблонов в Azure DevTest Labs
 description: Узнайте, как развертывать вложенные шаблоны Azure Resource Manager для предоставления сред с Azure DevTest Labs.
 services: devtest-lab,virtual-machines,lab-services
 documentationcenter: na
@@ -10,14 +10,14 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 05/16/2019
+ms.date: 01/16/2020
 ms.author: spelluru
-ms.openlocfilehash: 675d2c670f5bc11c1d8b61bc96313e408f788dc3
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.openlocfilehash: e83bc4e77a44f20d55fa3b56bc81aefd1d25bb03
+ms.sourcegitcommit: d29e7d0235dc9650ac2b6f2ff78a3625c491bbbf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75976551"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76168823"
 ---
 # <a name="deploy-nested-azure-resource-manager-templates-for-testing-environments"></a>Развертывание вложенных шаблонов Azure Resource Manager для тестовых сред
 Вложенное развертывание позволяет выполнять другие шаблоны Azure Resource Manager в основном шаблоне диспетчер ресурсов. Она позволяет разбивать развертывание на набор целевых шаблонов и определенных целей. Он предоставляет преимущества в отношении тестирования, повторного использования и удобочитаемости. В статье [Использование связанных шаблонов при развертывании ресурсов Azure](../azure-resource-manager/templates/linked-templates.md) представлено хорошее описание решения с несколькими примерами кода. В этой статье приведен пример, относящийся к Azure DevTest Labs. 

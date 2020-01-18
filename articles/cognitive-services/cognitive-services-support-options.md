@@ -9,12 +9,12 @@ ms.service: cognitive-services
 ms.topic: conceptual
 ms.date: 11/22/2019
 ms.author: dapine
-ms.openlocfilehash: 2dc5bfb7459e28a4d118c5d1629133bae3a5637f
-ms.sourcegitcommit: 85e7fccf814269c9816b540e4539645ddc153e6e
+ms.openlocfilehash: 2cdf34bb7df121665548be98f9f2098cc5cfe99b
+ms.sourcegitcommit: d29e7d0235dc9650ac2b6f2ff78a3625c491bbbf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74533695"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76169077"
 ---
 # <a name="azure-cognitive-services-support-and-help-options"></a>Параметры поддержки и справки Azure Cognitive Services
 
@@ -72,7 +72,7 @@ ms.locfileid: "74533695"
 | Компьютерное зрение               | https://cognitive.uservoice.com/forums/430309-computer-vision |
 | Content Moderator             | https://cognitive.uservoice.com/forums/559960-content-moderator |
 | Пользовательское визуальное распознавание                 | https://cognitive.uservoice.com/forums/598141-custom-vision-service |
-| Распознавание лиц                          | https://cognitive.uservoice.com/forums/430315-face |
+| API распознавания лиц                          | https://cognitive.uservoice.com/forums/430315-face |
 | Форма                          | https://cognitive.uservoice.com/forums/921556-form-recognizer |
 | Иммерсивные                     | https://feedback.azure.com/forums/34192--general-feedback |
 | Распознавание речи (LUIS) | https://cognitive.uservoice.com/forums/551524-luis |
@@ -92,7 +92,7 @@ ms.locfileid: "74533695"
 Заметки о выпуске обновляются по мере выпуска новых выпусков. Заметки содержат сведения о новых возможностях, улучшениях и исправлениях ошибок.
 
  - [Пользовательское визуальное распознавание](custom-vision-service/release-notes.md)
- - [API Распознавания лиц](face/releasenotes.md)
+ - [Распознавание лиц](face/releasenotes.md)
  - [Распознавание речи (LUIS)](luis/whats-new.md)
  - [Службы "Речь"](speech-service/releasenotes.md)
  - [Пакет SDK для речевых служб](speech-service/devices-sdk-release-notes.md)
@@ -106,7 +106,7 @@ ms.locfileid: "74533695"
 
 Новости о Cognitive Services доступны в [блоге Azure](https://azure.microsoft.com/blog/topics/cognitive-services/).
 
-## <a name="search"></a>служба поиска.
+## <a name="search"></a>Поиск
 
 <div class='icon is-large'>
     <img alt='Search' src='https://docs.microsoft.com/media/common/i_search.svg'>

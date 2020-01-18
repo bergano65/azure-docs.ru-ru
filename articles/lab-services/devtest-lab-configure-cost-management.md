@@ -1,5 +1,5 @@
 ---
-title: Просмотр помесячной тенденции изменения оценочной стоимости в Azure DevTest Labs | Документация Майкрософт
+title: Просмотр помесячной тенденции изменения оценочной стоимости в Azure DevTest Labs
 description: Узнайте о диаграмме Azure DevTest Labs "Помесячная тенденция изменения оценочной стоимости".
 services: devtest-lab,virtual-machines,lab-services
 documentationcenter: na
@@ -12,14 +12,14 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 03/07/2019
+ms.date: 01/16/2020
 ms.author: spelluru
-ms.openlocfilehash: 247327d001342fd0e2943ae7cf010e648761cdaa
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.openlocfilehash: 15ddaa6c73cedb32d920ef943627831c1e9b378b
+ms.sourcegitcommit: d29e7d0235dc9650ac2b6f2ff78a3625c491bbbf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75976345"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76169629"
 ---
 # <a name="track-costs-associated-with-a-lab-in-azure-devtest-labs"></a>Отслеживание затрат, связанных с лабораторией, в Azure DevTest Labs
 В этой статье содержатся сведения об отслеживании затрат на лабораторию. Здесь показано, как просмотреть оценочную стоимость Trent) для текущего календарного месяца для лаборатории. В этой статье также показано, как просмотреть стоимость каждого ресурса в лаборатории.

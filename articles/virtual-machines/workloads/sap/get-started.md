@@ -13,15 +13,15 @@ ms.service: virtual-machines-linux
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
-ms.date: 01/10/2020
+ms.date: 01/16/2020
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 5d4b6ba0c516e7c8c585f9364092403496a53139
-ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
+ms.openlocfilehash: 3712e67e95c8957d2537660add14d6cdb09d609f
+ms.sourcegitcommit: 2a2af81e79a47510e7dea2efb9a8efb616da41f0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75894672"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76264820"
 ---
 # <a name="use-azure-to-host-and-run-sap-workload-scenarios"></a>Использование Azure для размещения и запуска сценариев рабочей нагрузки SAP
 
@@ -120,6 +120,8 @@ ms.locfileid: "75894672"
 
 
 ## <a name="change-log"></a>Журнал изменений
+- 01/16/2020. изменение [способа установки и настройки SAP HANA (крупные экземпляры) в Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-installation) для адаптации выпусков ОС к каталогу оборудования IaaS для Hana
+- 01/16/2020: изменения в [высоком уровне доступности SAP NetWeaver на виртуальных машинах Azure в SLES с несколькими ИД безопасности](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/high-availability-guide-suse-multi-sid) для добавления инструкций для систем SAP с использованием архитектуры Server 2 для постановки в очередь (ENSA2)
 - 01/10/2020: изменения [SAP HANA горизонтальном масштабировании с резервным узлом на виртуальных машинах Azure с Azure NetApp Files на SLES](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/sap-hana-scale-out-standby-netapp-files-suse) и в [SAP HANA масштабирования с резервным узлом на виртуальных машинах Azure с Azure NetApp Files на RHEL](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/sap-hana-scale-out-standby-netapp-files-rhel) , чтобы добавить инструкции по внесению `nfs4_disable_idmapping`ных изменений в постоянное состояние.
 - 01/10/2020: изменения в [высокой доступности SAP NetWeaver на виртуальных машинах Azure в SLES с Azure NetApp Files для приложений SAP](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/high-availability-guide-suse-netapp-files) и на [виртуальных машинах Azure высокий уровень доступности для SAP NetWeaver на RHEL с Azure NETAPP Files для приложений SAP](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/high-availability-guide-rhel-netapp-files) добавьте инструкции по подключению томов Azure NetApp Files NFSv4.
 - 12/23/2019: выпуск [высокого уровня доступности для SAP NetWeaver на виртуальных машинах Azure в SLES с несколькими ИД безопасности](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/high-availability-guide-suse-multi-sid)

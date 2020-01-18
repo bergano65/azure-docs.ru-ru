@@ -4,12 +4,13 @@ description: Узнайте, как создать шаблон Azure Resource M
 ms.assetid: d20743e3-aab6-442c-a836-9bcea09bfd32
 ms.topic: conceptual
 ms.date: 04/03/2019
-ms.openlocfilehash: 650997cfddc71a8bfe347e29c8992b78d1828034
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.custom: fasttrack-edit
+ms.openlocfilehash: df0c90ba3784acb96bd9f76a436ff2746f7efe2c
+ms.sourcegitcommit: 2a2af81e79a47510e7dea2efb9a8efb616da41f0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75978789"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76262441"
 ---
 # <a name="automate-resource-deployment-for-your-function-app-in-azure-functions"></a>Автоматизация развертывания ресурсов приложения-функции для службы "Функции Azure"
 
@@ -139,7 +140,7 @@ ms.locfileid: "75978789"
 |------------------------------|-------------------------------------------------------------------------------------------|---------------------------------------|
 | AzureWebJobsStorage          | Строка подключения к учетной записи хранения, которую среда выполнения функций для внутренней очереди | См. [учетную запись хранения](#storage)       |
 | FUNCTIONS_EXTENSION_VERSION  | Версия среды выполнения функций Azure                                                | `~2`                                  |
-| FUNCTIONS_WORKER_RUNTIME     | Стек языка, используемый для функций в этом приложении                                   | `dotnet`, `node`, `java` или `python` |
+| FUNCTIONS_WORKER_RUNTIME     | Стек языка, используемый для функций в этом приложении                                   | `dotnet`, `node`, `java`, `python` или `powershell` |
 | WEBSITE_NODE_DEFAULT_VERSION | Требуется только при использовании стека языков `node`. указывает используемую версию              | `10.14.1`                             |
 
 Эти свойства указываются в коллекции `appSettings` в свойстве `siteConfig`:

@@ -1,5 +1,5 @@
 ---
-title: Использование служб "платформа как услуга" (PaaS) в Azure DevTest Labs | Документация Майкрософт
+title: Использование служб "платформа как услуга" (PaaS) в Azure DevTest Labs
 description: Узнайте, как использовать службы "платформа как услуга" (Pass) в Azure DevTest Labs.
 services: devtest-lab,lab-services
 documentationcenter: na
@@ -10,14 +10,14 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 05/02/2019
+ms.date: 01/16/2020
 ms.author: spelluru
-ms.openlocfilehash: 088913959b5850e87dc3a6a39d2907d30b7e5ade
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.openlocfilehash: 88bbf921fedae4bcdba2b6386ce6e08105206cd2
+ms.sourcegitcommit: d29e7d0235dc9650ac2b6f2ff78a3625c491bbbf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75976252"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76169193"
 ---
 # <a name="use-platform-as-a-service-paas-services-in-azure-devtest-labs"></a>Использование служб "платформа как услуга" (PaaS) в Azure DevTest Labs
 PaaS поддерживается в DevTest Labs с помощью функции "среды". Среды в DevTest Labs поддерживаются предварительно настроенными шаблонами Azure Resource Manager в репозитории Git. В средах могут содержаться ресурсы PaaS и IaaS. Они позволяют создавать сложные системы, которые могут включать ресурсы Azure, такие как виртуальные машины, базы данных, виртуальные сети и веб-приложения, настроенные для совместной работы. Эти шаблоны обеспечивают единообразное развертывание и улучшенное управление средами с помощью системы управления исходным кодом. 

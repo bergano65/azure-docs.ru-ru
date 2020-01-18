@@ -4,7 +4,7 @@
       href: 'https://azure.microsoft.com/features/resiliency'
     - name: Проектирование устойчивых приложений для Azure
       href: 'https://docs.microsoft.com/azure/architecture/resiliency/'
-- name: Высокая доступность
+- name: Высокий уровень доступности
   items:
     - name: Обеспечение высокой доступности для приложений Azure
       href: 'https://docs.microsoft.com/azure/architecture/resiliency/high-availability-azure-applications'
@@ -33,7 +33,7 @@
         - name: Load Balancer
           items:
             - name: Что такое Load Balancer?
-              href: ../load-balancer/load-balancer-standard-overview.md
+              href: ../load-balancer/load-balancer-overview.md
             - name: Load Balancer (цен. категория "Стандартный") и Зоны доступности
               href: ../load-balancer/load-balancer-standard-availability-zones.md
             - name: Создание избыточной в пределах зоны общедоступной службы Load Balancer (цен. категория "Стандартный")
@@ -61,7 +61,7 @@
           items:
             - name: Использование зон доступности с Базой данных SQL
               href: '../sql-database/sql-database-high-availability.md#zone-redundant-configuration'
-        - name: Служба хранилища
+        - name: Память
           items:
             - name: 'Хранилище, избыточное между зонами'
               href: ../storage/common/storage-redundancy-zrs.md

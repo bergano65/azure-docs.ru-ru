@@ -1,6 +1,6 @@
 ---
-title: Развертывание и управление центров уведомлений с помощью PowerShell
-description: Создание и управление центрами уведомлений с помощью PowerShell в целях автоматизации
+title: Развертывание концентраторов уведомлений и управление ими с помощью PowerShell
+description: Создание концентраторов уведомлений и управление ими с помощью PowerShell для автоматизации
 services: notification-hubs
 documentationcenter: ''
 author: sethmanheim
@@ -16,12 +16,12 @@ ms.date: 01/04/2019
 ms.author: sethm
 ms.reviewer: jowargo
 ms.lastreviewed: 01/04/2019
-ms.openlocfilehash: 5af920249000cabbc63f0c9ab453738450875172
-ms.sourcegitcommit: 7df70220062f1f09738f113f860fad7ab5736e88
+ms.openlocfilehash: 863fdb445cce41f0fe4cbee63a3d6198c0a79339
+ms.sourcegitcommit: 2a2af81e79a47510e7dea2efb9a8efb616da41f0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71213418"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76264650"
 ---
 # <a name="deploy-and-manage-notification-hubs-using-powershell"></a>Развертывание центров уведомлений и управление ими с помощью PowerShell
 
@@ -36,7 +36,7 @@ ms.locfileid: "71213418"
 
 Управление центрами уведомлений не поддерживается напрямую с помощью командлетов, включенных в Azure PowerShell. Лучше всего для PowerShell указать сборку Microsoft.Azure.NotificationHubs.dll. Сборка входит в состав [пакета NuGet для центров уведомлений Microsoft Azure](https://www.nuget.org/packages/Microsoft.Azure.NotificationHubs/).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 - Подписка Azure. Azure — это платформа на основе подписок. Дополнительные сведения о получении подписки см. на страницах [Как приобрести Azure], [Предложения для участников] или [Создайте бесплатную учетную запись Azure уже сегодня].
 - Компьютер с Azure PowerShell. Инструкции см. в статье [Установка и настройка Azure PowerShell].
@@ -94,10 +94,10 @@ Write-Output "NamespaceManager object for the [$Namespace] namespace has been su
 
 В этой части сценария выполняется настройка четырех локальных переменных.
 
-1. `$Namespace`. присвойте имя пространству имен, в котором нужно создать центр уведомлений.
-2. `$Path`. присвойте путь к имени нового центра уведомлений.  Например, MyHub.
-3. `$WnsPackageSid`. присвойте идентификатор безопасности пакета своему приложению для Windows из [Центра разработки для Windows](https://developer.microsoft.com/en-us/windows).
-4. `$WnsSecretkey`. присвойте значение секретного ключа своему приложению для Windows из [Центра разработки для Windows](https://developer.microsoft.com/en-us/windows).
+1. `$Namespace`: присвойте имя пространству имен, в котором нужно создать центр уведомлений.
+2. `$Path`: присвойте путь к имени нового центра уведомлений.  Например, MyHub.
+3. `$WnsPackageSid`: присвойте идентификатор безопасности пакета своему приложению для Windows из [Центра разработки для Windows](https://developer.microsoft.com/en-us/windows).
+4. `$WnsSecretkey`: присвойте значение секретного ключа для своего приложения Windows из [Центра разработки для Windows](https://developer.microsoft.com/en-us/windows).
 
 Эти переменные используются для подключения к пространству имен и создания нового центра уведомлений, настроенного для обработки уведомлений от служб уведомлений Windows (WNS) с использованием учетных данных WNS для приложения для Windows. Сведения о получении идентификатора безопасности пакета и секретного ключа см. в статье [Начало работы с Центрами уведомлений для приложений универсальной платформы Windows](notification-hubs-windows-store-dotnet-get-started-wns-push-notification.md).
 

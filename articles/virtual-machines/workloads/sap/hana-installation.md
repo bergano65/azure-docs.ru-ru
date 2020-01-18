@@ -10,15 +10,15 @@ ms.service: virtual-machines-linux
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
-ms.date: 07/12/2019
+ms.date: 01/16/2020
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 516f61775060b3e4073ed9d623545d4f227563ed
-ms.sourcegitcommit: 8074f482fcd1f61442b3b8101f153adb52cf35c9
+ms.openlocfilehash: c08036f16cd30a1c10963accd8d486d77c9683ee
+ms.sourcegitcommit: 2a2af81e79a47510e7dea2efb9a8efb616da41f0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72750364"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76264175"
 ---
 # <a name="how-to-install-and-configure-sap-hana-large-instances-on-azure"></a>Как установить и настроить SAP HANA в Azure (крупные экземпляры)
 
@@ -29,10 +29,7 @@ ms.locfileid: "72750364"
 > [!Note]
 > Для каждой политики SAP Установка SAP HANA должна выполняться пользователем, который прошел сертифицированный сертификационный экзамен SAP Technology, SAP HANA установки сертификационного экзамена или кто является сертифицированным системным интегратором SAP (SI).
 
-Если вы планируете установить HANA 2.0, см. документ [SAP Support Note #2235581 — SAP HANA: Supported Operating Systems](https://launchpad.support.sap.com/#/notes/2235581/E) (Примечание по поддержке SAP №2235581. SAP HANA: поддерживаемые операционные системы), чтобы убедиться, что используемая ОС поддерживается выпуском SAP HANA, который вы собираетесь установить. В поддерживаемой ОС для HANA 2.0 больше ограничений, чем в ОС для HANA 1.0. 
-
-> [!IMPORTANT] 
-> В настоящее время для единиц типа II поддерживается только ОС версии SLES 12 SP2. 
+Если вы планируете установить HANA 2.0, см. документ [SAP Support Note #2235581 — SAP HANA: Supported Operating Systems](https://launchpad.support.sap.com/#/notes/2235581/E) (Примечание по поддержке SAP №2235581. SAP HANA: поддерживаемые операционные системы), чтобы убедиться, что используемая ОС поддерживается выпуском SAP HANA, который вы собираетесь установить. В поддерживаемой ОС для HANA 2.0 больше ограничений, чем в ОС для HANA 1.0. Кроме того, необходимо проверить, не указан ли необходимый выпуск ОС для конкретной единицы ХЛИ в этом опубликованном [списке](https://www.sap.com/dmc/exp/2014-09-02-hana-hardware/enEN/iaas.html#categories=Microsoft%20Azure). Щелкните единицу, чтобы получить всю информацию с помощью списка поддерживаемых ОС этой единицы. 
 
 Перед началом установки HANA проверьте следующее:
 - [единицы HLI](#validate-the-hana-large-instance-units);
@@ -84,9 +81,6 @@ ms.locfileid: "72750364"
 
 ## <a name="operating-system"></a>Операционная система
 
-> [!IMPORTANT] 
-> В настоящее время для единиц типа II поддерживается только версия ОС SLES 12 SP2. 
-
 Для области буфера доставленного образа ОС выделено 2 ГБ в соответствии с документом [SAP Support Note #1999997 — FAQ: SAP HANA Memory](https://launchpad.support.sap.com/#/notes/1999997/E) (Примечание по поддержке SAP №1999997. Часто задаваемые вопросы: память SAP HANA). В качестве клиента необходимо самостоятельно задать требуемый параметр.
 
 Для SAP HANA в Azure (большие экземпляры) используется дистрибутив [SUSE Linux Enterprise Server 12 SP1 для приложений SAP](https://www.suse.com/products/sles-for-sap/download/). Этот дистрибутив предоставляет все необходимые для SAP функции без дополнительной настройки (в том числе предварительно настроенные параметры для эффективного запуска SAP на сервере SLES).
@@ -107,7 +101,7 @@ ms.locfileid: "72750364"
 - [SAP Support Note #171356 — SAP Software on Linux: General Information](https://launchpad.support.sap.com/#/notes/1984787) (Примечание по поддержке SAP №171356. Общие сведения о ПО SAP на платформе Linux).
 - [SAP Support Note #1391070 — Linux UUID Solutions](https://launchpad.support.sap.com/#/notes/1391070) (Примечание по поддержке SAP №1391070. Решения UUID для Linux).
 
-[Red Hat Enterprise Linux для SAP HANA](https://www.redhat.com/en/resources/red-hat-enterprise-linux-sap-hana) — еще одно решение для запуска SAP HANA на крупных экземплярах HANA. Доступны выпуски RHEL 6.7 и 7.2. Обратите внимание, что в противоположность собственным виртуальным машинам Azure, где поддерживаются только RHEL 7,2 и более поздние выпуски, крупные экземпляры HANA поддерживают RHEL 6,7. Мы рекомендуем использовать выпуск RHEL 7.x.
+[Red Hat Enterprise Linux для SAP HANA](https://www.redhat.com/en/resources/red-hat-enterprise-linux-sap-hana) — еще одно решение для запуска SAP HANA на крупных экземплярах HANA. Выпуски RHEL 7,2 и 7,3 доступны и поддерживаются. 
 
 Дополнительные сведения и полезные ссылки по SAP в Red Hat приведены ниже.
 - [Сайт SAP HANA в Red Hat Linux](https://wiki.scn.sap.com/wiki/display/ATopics/SAP+on+Red+Hat).
@@ -116,11 +110,9 @@ ms.locfileid: "72750364"
 
 - [SAP Support Note #2009879 — SAP HANA Guidelines for Red Hat Enterprise Linux (RHEL) Operating System](https://launchpad.support.sap.com/#/notes/2009879/E) (Примечание по поддержке SAP №2009879. Рекомендации по установке SAP HANA в ОС Red Hat Enterprise Linux (RHEL)).
 - [SAP Support Note #2292690 — SAP HANA DB: Recommended OS settings for RHEL 7](https://launchpad.support.sap.com/#/notes/2292690) (Примечание по поддержке SAP №2292690. База данных SAP HANA: рекомендуемые параметры операционной системы для RHEL 7).
-- [SAP Support Note #2247020 — SAP HANA DB: Recommended OS settings for RHEL 6.7](https://launchpad.support.sap.com/#/notes/2247020) (Примечание по поддержке SAP №2247020. База данных SAP HANA: рекомендуемые параметры операционной системы для RHEL 6.7).
 - [SAP Support Note #1391070 — Linux UUID Solutions](https://launchpad.support.sap.com/#/notes/1391070) (Примечание по поддержке SAP №1391070. Решения UUID для Linux).
 - [SAP Support Note #2228351 — Linux: SAP HANA Database SPS 11 revision 110 (or higher) on RHEL 6 or SLES 11](https://launchpad.support.sap.com/#/notes/2228351) (Примечание по поддержке SAP №2228351. Linux: база данных SAP HANA SPS 11, редакция 110 (или более поздняя), в RHEL 6 или SLES 11).
 - [SAP Support Note #2397039 — FAQ: SAP on RHEL](https://launchpad.support.sap.com/#/notes/2397039) (Примечание по поддержке SAP №2397039. Часто задаваемые вопросы: SAP в RHEL).
-- [SAP Support Note #1496410 — Red Hat Enterprise Linux 6.x: Installation and Upgrade](https://launchpad.support.sap.com/#/notes/1496410) (Примечание по поддержке SAP №1496410. Установка и обновление Red Hat Enterprise Linux 6.x).
 - [SAP Support Note #2002167 — Red Hat Enterprise Linux 7.x: Installation and Upgrade](https://launchpad.support.sap.com/#/notes/2002167) (Примечание по поддержке SAP №1496410. Установка и обновление Red Hat Enterprise Linux 7.x).
 
 ### <a name="time-synchronization"></a>Синхронизация времени
@@ -142,7 +134,7 @@ ms.locfileid: "72750364"
 
 Дополнительные сведения о Ethernet по архитектуре см. в разделе [Поддерживаемые сценарии для крупных экземпляров HANA](hana-supported-scenario.md).
 
-## <a name="storage"></a>Storage
+## <a name="storage"></a>Хранилище
 
 Структура хранилища для SAP HANA в Azure (крупные экземпляры) настраивается SAP HANA в `service management` Azure с помощью рекомендуемых рекомендаций SAP. Рекомендации описаны в техническом документе с описанием [требований к хранилищу SAP HANA](https://go.sap.com/documents/2015/03/74cdb554-5a7c-0010-82c7-eda71af511fa.html). 
 
@@ -152,8 +144,8 @@ ms.locfileid: "72750364"
 
 | Использование хранилища | Имя подключения | Имя тома | 
 | --- | --- | ---|
-| Данные HANA | /hana/data/SID/mnt0000 \<m > | IP хранилища: /hana_data_SID_mnt00001_tenant_vol |
-| Журнал HANA | /hana/log/SID/mnt0000 \<m > | IP хранилища: /hana_log_SID_mnt00001_tenant_vol |
+| Данные HANA | /hana/data/SID/mnt0000\<m > | IP хранилища: /hana_data_SID_mnt00001_tenant_vol |
+| Журнал HANA | /hana/log/SID/mnt0000\<m > | IP хранилища: /hana_log_SID_mnt00001_tenant_vol |
 | Резервная копия журнала HANA | /hana/log/backups | IP хранилища: /hana_log_backups_SID_mnt00001_tenant_vol |
 | Общий HANA | /hana/shared/SID | IP хранилища: /hana_shared_SID_mnt00001_tenant_vol/shared |
 | usr/sap | /usr/sap/SID | IP хранилища: /hana_shared_SID_mnt00001_tenant_vol/usr_sap |
@@ -172,7 +164,7 @@ HANA usr/sap предоставляет общий доступ к тому. В 
 
 Кроме предоставленного хранилища можно приобрести дополнительную емкость хранилища с шагом приращения 1 ТБ. Это дополнительное хранилище добавляется к HANA (крупные экземпляры) как новые тома.
 
-Во время адаптации с SAP HANA в Azure `service management` клиент указывает идентификатор пользователя (UID) и идентификатор группы (GID) для пользователя sidadm и группы sapsys (например: 1 000 500). Во время установки системы SAP HANA необходимо использовать эти же значения. Так как вы хотите развернуть несколько экземпляров HANA, вы получите несколько наборов томов (один набор для каждого экземпляра). В результате во время развертывания необходимо определить следующие моменты:
+Во время адаптации с SAP HANA в Azure `service management`клиент указывает идентификатор пользователя (UID) и идентификатор группы (GID) для пользователя sidadm и группы sapsys (например: 1 000 500). Во время установки системы SAP HANA необходимо использовать эти же значения. Так как вы хотите развернуть несколько экземпляров HANA, вы получите несколько наборов томов (один набор для каждого экземпляра). В результате во время развертывания необходимо определить следующие моменты:
 
 - Идентификатор SID разных экземпляров HANA (на его основе получается sidadm).
 - Объемы памяти разных экземпляров HANA. Объем памяти каждого экземпляра определяет размер тома в каждом отдельном наборе томов.

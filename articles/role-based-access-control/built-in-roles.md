@@ -11,16 +11,16 @@ ms.devlang: ''
 ms.topic: reference
 ms.tgt_pltfrm: ''
 ms.workload: identity
-ms.date: 12/02/2019
+ms.date: 01/17/2020
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.custom: it-pro
-ms.openlocfilehash: 17a1f2c245e19afbf4d8c5092a0ddf0562a7cb0e
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.openlocfilehash: b2a49528ca3c2b55c02f3bda89b3722ee8fef535
+ms.sourcegitcommit: 2a2af81e79a47510e7dea2efb9a8efb616da41f0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75979329"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76264260"
 ---
 # <a name="built-in-roles-for-azure-resources"></a>Встроенные роли для ресурсов Azure
 
@@ -48,6 +48,8 @@ ms.locfileid: "75979329"
 > | [Участник службы управления API](#api-management-service-contributor) | Может управлять службой и интерфейсами API. | 312a565d-c81f-4fd8-895a-4e21e48d571c |
 > | [Роль оператора службы управления API](#api-management-service-operator-role) | Может управлять службой, но не интерфейсами API. | e022efe7-f5ba-4159-bbe4-b44f577e9b61 |
 > | [Роль читателя данных службы управления API](#api-management-service-reader-role) | Доступ к службе и интерфейсам API в режиме "только для чтения". | 71522526-b88f-4d52-b57f-d31fc3546d0d |
+> | [Владелец данных конфигурации приложения](#app-configuration-data-owner) | Разрешает полный доступ к данным конфигурации приложения. | 5ae67dd6-50cb-40e7-96ff-dc2bfa4b606b |
+> | [Модуль чтения данных конфигурации приложений](#app-configuration-data-reader) | Разрешает доступ на чтение к данным конфигурации приложения. | 516239f1-63e1-4d78-a4de-a74fb236a071 |
 > | [Участник компонента Application Insights](#application-insights-component-contributor) | Может управлять компонентами Application Insights | ae349356-3a1b-4a5e-921d-050484c6347e |
 > | [Отладчик моментальных снимков Application Insights](#application-insights-snapshot-debugger) | Пользователю предоставляется разрешение на просмотр и загрузку моментальных снимков отладки, собранных с помощью Application Insights Snapshot Debugger. Обратите внимание, что эти разрешения не включены в роли [Владелец](#owner) или [Участник](#contributor). | 08954f03-6346-4c2e-81c0-ec3a5cfae23b |
 > | [Оператор задания автоматизации](#automation-job-operator) | Создание заданий и управление ими с помощью модулей Runbook службы автоматизации. | 4fe576fe-1146-4730-92eb-48519fa6bf9f |
@@ -55,6 +57,8 @@ ms.locfileid: "75979329"
 > | [Оператор Runbook автоматизации](#automation-runbook-operator) | Чтение свойств Runbook, позволяющее создавать задания Runbook. | 5fb5aef8-1081-4b8e-bb16-9d5d0385bab5 |
 > | [Участник авере](#avere-contributor) | Может создавать кластер Авере Вфкст и управлять им. | 4f8fab4f-1852-4a58-a46a-8eaf358af14a |
 > | [Оператор авере](#avere-operator) | Используется кластером Авере Вфкст для управления кластером. | c025889f-8102-4ebf-b32c-fc0c6f0c6bd9 |
+> | [Подключение к подключенному компьютеру Azure](#azure-connected-machine-onboarding) | Может подключить подключенные к Azure компьютеры. | b64e21ea-ac4e-4cdf-9dc9-5b892992bee7 |
+> | [Администратор ресурсов подключенного компьютера Azure](#azure-connected-machine-resource-administrator) | Может читать, записывать, удалять и повторно использовать подключенные к Azure компьютеры. | cd570a14-e51a-42ad-bac8-bafd67325302 |
 > | [Владелец данных концентраторов событий Azure](#azure-event-hubs-data-owner) | Обеспечивает полный доступ к ресурсам концентраторов событий Azure. | f526a384-b230-433a-b45c-95f59c4a2dec |
 > | [Приемник данных концентраторов событий Azure](#azure-event-hubs-data-receiver) | Разрешает получать доступ к ресурсам концентраторов событий Azure. | a638d3c7-ab3a-418d-83e6-5f17a39d4fde |
 > | [Отправитель данных концентраторов событий Azure](#azure-event-hubs-data-sender) | Разрешает отправку доступа к ресурсам концентраторов событий Azure. | 2b629674-e913-4c01-ae53-ef4638d8f975 |
@@ -378,6 +382,38 @@ ms.locfileid: "75979329"
 > | **NotDataActions** |  |
 > | *Нет* |  |
 
+## <a name="app-configuration-data-owner"></a>Владелец данных конфигурации приложения
+> [!div class="mx-tableFixed"]
+> | | |
+> | --- | --- |
+> | **Описание** | Разрешает полный доступ к данным конфигурации приложения. |
+> | **Id** | 5ae67dd6-50cb-40e7-96ff-dc2bfa4b606b |
+> | **Действия** |  |
+> | *Нет* |  |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | Microsoft. Аппконфигуратион/Конфигуратионсторес/*/Реад |  |
+> | Microsoft. Аппконфигуратион/Конфигуратионсторес/*/Врите |  |
+> | Microsoft. Аппконфигуратион/Конфигуратионсторес/*/Delete |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
+
+## <a name="app-configuration-data-reader"></a>Модуль чтения данных конфигурации приложений
+> [!div class="mx-tableFixed"]
+> | | |
+> | --- | --- |
+> | **Описание** | Разрешает доступ на чтение к данным конфигурации приложения. |
+> | **Id** | 516239f1-63e1-4d78-a4de-a74fb236a071 |
+> | **Действия** |  |
+> | *Нет* |  |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | Microsoft. Аппконфигуратион/Конфигуратионсторес/*/Реад |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
+
 ## <a name="application-insights-component-contributor"></a>Участник компонента Application Insights
 > [!div class="mx-tableFixed"]
 > | | |
@@ -561,6 +597,42 @@ ms.locfileid: "75979329"
 > | Microsoft.Storage/storageAccounts/blobServices/containers/blobs/delete | Возвращение результата, полученного при удалении большого двоичного объекта. |
 > | Microsoft.Storage/storageAccounts/blobServices/containers/blobs/read | Возвращение большого двоичного объекта или списка таких объектов. |
 > | Microsoft.Storage/storageAccounts/blobServices/containers/blobs/write | Возвращение результата, полученного при записи большого двоичного объекта. |
+> | **NotDataActions** |  |
+> | *Нет* |  |
+
+## <a name="azure-connected-machine-onboarding"></a>Подключение к подключенному компьютеру Azure
+> [!div class="mx-tableFixed"]
+> | | |
+> | --- | --- |
+> | **Описание** | Может подключить подключенные к Azure компьютеры. |
+> | **Id** | b64e21ea-ac4e-4cdf-9dc9-5b892992bee7 |
+> | **Действия** |  |
+> | Microsoft. Хибридкомпуте/Machines/Read | Чтение всех машин ARC в Azure |
+> | Microsoft. Хибридкомпуте/Machines/Write | Запись машин ARC в Azure |
+> | Microsoft.GuestConfiguration/guestConfigurationAssignments/read | Получение назначения конфигурации гостевой системы. |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
+
+## <a name="azure-connected-machine-resource-administrator"></a>Администратор ресурсов подключенного компьютера Azure
+> [!div class="mx-tableFixed"]
+> | | |
+> | --- | --- |
+> | **Описание** | Может читать, записывать, удалять и повторно использовать подключенные к Azure компьютеры. |
+> | **Id** | cd570a14-e51a-42ad-bac8-bafd67325302 |
+> | **Действия** |  |
+> | Microsoft. Хибридкомпуте/Machines/Read | Чтение всех машин ARC в Azure |
+> | Microsoft. Хибридкомпуте/Machines/Write | Запись машин ARC в Azure |
+> | Microsoft. Хибридкомпуте/Machines/Delete | Удаление компьютеров ARC в Azure |
+> | Microsoft. Хибридкомпуте/Machines/Reconnect/действие | Повторное подключение компьютеров ARC в Azure |
+> | Microsoft. Хибридкомпуте/*/Реад |  |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | *Нет* |  |
 > | **NotDataActions** |  |
 > | *Нет* |  |
 
@@ -821,7 +893,6 @@ ms.locfileid: "75979329"
 > | Microsoft.RecoveryServices/Vaults/backupFabrics/refreshContainers/action | Обновляет список контейнеров. |
 > | Microsoft.RecoveryServices/Vaults/backupJobs/* | Создание заданий резервного копирования и управление ими |
 > | Microsoft.RecoveryServices/Vaults/backupJobsExport/action | Экспортирует задания. |
-> | Microsoft.RecoveryServices/Vaults/backupManagementMetaData/* | Создание метаданных, связанных с управлением резервным копированием, и управление ими |
 > | Microsoft.RecoveryServices/Vaults/backupOperationResults/* | Создание результатов операций управления резервным копированием и управление ими |
 > | Microsoft.RecoveryServices/Vaults/backupPolicies/* | Создание политик резервного копирования и управление ими |
 > | Microsoft.RecoveryServices/Vaults/backupProtectableItems/* | Создание элементов, для которых можно создавать резервные копии, и управление ими |
@@ -886,7 +957,6 @@ ms.locfileid: "75979329"
 > | Microsoft.RecoveryServices/Vaults/backupFabrics/refreshContainers/action | Обновляет список контейнеров. |
 > | Microsoft.RecoveryServices/Vaults/backupJobs/* | Создание заданий резервного копирования и управление ими |
 > | Microsoft.RecoveryServices/Vaults/backupJobsExport/action | Экспортирует задания. |
-> | Microsoft.RecoveryServices/Vaults/backupManagementMetaData/read |  |
 > | Microsoft.RecoveryServices/Vaults/backupOperationResults/* | Создание результатов операций управления резервным копированием и управление ими |
 > | Microsoft.RecoveryServices/Vaults/backupPolicies/operationResults/read | Возвращает результаты операции политики. |
 > | Microsoft.RecoveryServices/Vaults/backupPolicies/read | Возвращает все политики защиты. |
@@ -952,7 +1022,6 @@ ms.locfileid: "75979329"
 > | Microsoft.RecoveryServices/Vaults/backupJobs/operationResults/read | Возвращает результат операции задания. |
 > | Microsoft.RecoveryServices/Vaults/backupJobs/read | Возвращает все объекты заданий. |
 > | Microsoft.RecoveryServices/Vaults/backupJobsExport/action | Экспортирует задания. |
-> | Microsoft.RecoveryServices/Vaults/backupManagementMetaData/read |  |
 > | Microsoft.RecoveryServices/Vaults/backupOperationResults/read | Возвращает результат операции архивации для хранилища служб восстановления. |
 > | Microsoft.RecoveryServices/Vaults/backupPolicies/operationResults/read | Возвращает результаты операции политики. |
 > | Microsoft.RecoveryServices/Vaults/backupPolicies/read | Возвращает все политики защиты. |

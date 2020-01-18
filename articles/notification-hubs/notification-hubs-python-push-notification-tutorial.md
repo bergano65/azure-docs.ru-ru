@@ -16,12 +16,12 @@ ms.date: 01/04/2019
 ms.author: sethm
 ms.reviewer: jowargo
 ms.lastreviewed: 01/04/2019
-ms.openlocfilehash: 5321802023d57bedc135e2d19b2289f1d66deb72
-ms.sourcegitcommit: 7df70220062f1f09738f113f860fad7ab5736e88
+ms.openlocfilehash: db5174ed6f008be0fed1fdf3c2c83d33277c3b4e
+ms.sourcegitcommit: 2a2af81e79a47510e7dea2efb9a8efb616da41f0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71213080"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76263801"
 ---
 # <a name="how-to-use-notification-hubs-from-python"></a>Использование концентраторов уведомлений с Python
 
@@ -32,7 +32,7 @@ ms.locfileid: "71213080"
 > [!NOTE]
 > Это образец эталонной реализации для отправки уведомлений в Python, который не является официально поддерживаемым пакетом SDK концентраторов уведомлений Python. Этот образец был создан с помощью Python 3.4.
 
-В этой статье описаны следующие процессы.
+В этой статье показано, как выполнить следующие действия:
 
 - Построение клиента REST для функций концентраторов уведомлений на языке Python.
 - Отправка уведомлений с помощью интерфейса API REST концентратора уведомления Python.
@@ -65,7 +65,7 @@ hub.send_windows_notification(wns_payload)
 
 ## <a name="implementation"></a>Реализация
 
-Если вы еще этого не делали, выполните шаги, описанные в [Приступая к работе с центрами уведомлений], до последнего раздела, в котором вам нужно реализовать серверную часть.
+Если вы еще этого не делали, выполните шаги, описанные в [Учебник по началу работы], до последнего раздела, в котором вам нужно реализовать серверную часть.
 
 Подробные сведения о реализации полноценной оболочки REST можно найти в [MSDN](https://msdn.microsoft.com/library/dn530746.aspx). В этом разделе описана реализация основных действий на языке Python, необходимых для доступа к конечным точкам REST службы "Центры уведомлений" и отправки уведомлений.
 
@@ -305,7 +305,7 @@ hub = NotificationHub("myConnectionString", "myNotificationHubName", isDebug)
 
 Теперь вы можете завершить работу с учебником по началу работы, отправив уведомление из серверной части Python.
 
-Инициализируйте клиент концентратора уведомлений (замените строку подключения и имя концентратора в соответствии с инструкциями в [Приступая к работе с центрами уведомлений]):
+Инициализируйте клиент концентратора уведомлений (замените строку подключения и имя концентратора в соответствии с инструкциями в [Учебник по началу работы]):
 
 ```python
 hub = NotificationHub("myConnectionString", "myNotificationHubName")
@@ -447,7 +447,7 @@ hub.send_template_notification(template_payload)
 
 ## <a name="next-steps"></a>Следующие шаги
 
-В этой статье рассмотрено создание простого клиента REST Python для службы "Центры уведомлений". На данном этапе можно сделать следующее.
+В этой статье рассмотрено создание простого клиента REST Python для службы "Центры уведомлений". Здесь вы можете сделать следующее:
 
 - Скачать полный [примере оболочки REST Python], содержащий весь код из этой статьи.
 - Продолжить изучение функции тегов в центрах уведомлений с помощью [учебника по передаче экстренных новостей]
@@ -455,7 +455,7 @@ hub.send_template_notification(template_payload)
 
 <!-- URLs -->
 [примере оболочки REST Python]: https://github.com/Azure/azure-notificationhubs-samples/tree/master/notificationhubs-rest-python
-[Приступая к работе с центрами уведомлений]: https://azure.microsoft.com/documentation/articles/notification-hubs-windows-store-dotnet-get-started/
+[Учебник по началу работы]: https://azure.microsoft.com/documentation/articles/notification-hubs-windows-store-dotnet-get-started/
 [учебника по передаче экстренных новостей]: https://azure.microsoft.com/documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news/
 [по передаче локализованных экстренных новостей]: https://azure.microsoft.com/documentation/articles/notification-hubs-windows-store-dotnet-send-localized-breaking-news/
 

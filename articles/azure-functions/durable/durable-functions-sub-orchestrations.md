@@ -4,12 +4,12 @@ description: Узнайте, как вызывать оркестрации из
 ms.topic: conceptual
 ms.date: 11/03/2019
 ms.author: azfuncdf
-ms.openlocfilehash: 379f2cb238aef08faba8dd3c8e5d9da4542a1867
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: d4d599063f727510cbf504ea3d121bdabfe001c9
+ms.sourcegitcommit: 2a2af81e79a47510e7dea2efb9a8efb616da41f0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74231295"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76261523"
 ---
 # <a name="sub-orchestrations-in-durable-functions-azure-functions"></a>Вложенные оркестрации в устойчивых функциях (Функции Azure)
 
@@ -22,7 +22,7 @@ ms.locfileid: "74231295"
 
 В следующем примере показан сценарий использования Интернета вещей с несколькими устройствами, которые нужно подготовить. Следующая функция представляет рабочий процесс подготовки, который должен выполняться для каждого устройства:
 
-### <a name="c"></a>C#
+# <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
 ```csharp
 public static async Task DeviceProvisioningOrchestration(
@@ -43,7 +43,7 @@ public static async Task DeviceProvisioningOrchestration(
 }
 ```
 
-### <a name="javascript-functions-20-only"></a>JavaScript (только Функции 2.0)
+# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
 
 ```javascript
 const df = require("durable-functions");
@@ -64,11 +64,13 @@ module.exports = df.orchestrator(function*(context) {
 });
 ```
 
+---
+
 Эту функцию оркестратора можно использовать как есть — для однократной подготовки устройства — или же как часть более крупной оркестрации. В последнем случае родительская функция Orchestrator может запланировать экземпляры `DeviceProvisioningOrchestration` с помощью API `CallSubOrchestratorAsync` (.NET) или `callSubOrchestrator` (JavaScript).
 
 В примере ниже показано, как реализовать параллельное выполнение нескольких функций оркестратора.
 
-### <a name="c"></a>C#
+# <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
 ```csharp
 [FunctionName("ProvisionNewDevices")]
@@ -94,7 +96,7 @@ public static async Task ProvisionNewDevices(
 > [!NOTE]
 > Предыдущие C# примеры предназначены для устойчивые функции 2. x. Для Устойчивые функции 1. x необходимо использовать `DurableOrchestrationContext` вместо `IDurableOrchestrationContext`. Дополнительные сведения о различиях между версиями см. в статье [устойчивые функции версии](durable-functions-versions.md) .
 
-### <a name="javascript-functions-20-only"></a>JavaScript (только Функции 2.0)
+# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
 
 ```javascript
 const df = require("durable-functions");
@@ -118,10 +120,12 @@ module.exports = df.orchestrator(function*(context) {
 });
 ```
 
+---
+
 > [!NOTE]
 > Подсогласования должны быть определены в том же приложении-функции, что и родительское согласование. Если необходимо вызвать и подождать согласования в другом приложении-функции, рассмотрите возможность использования встроенной поддержки API HTTP и шаблона потребителя опроса HTTP 202. Дополнительные сведения см. в разделе [функции HTTP](durable-functions-http-features.md) .
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Узнайте, как задать пользовательское состояние оркестрации](durable-functions-custom-orchestration-status.md)

@@ -1,6 +1,6 @@
 ---
-title: Часто задаваемые вопросы о Центрах уведомлений Azure | Документация Майкрософт
-description: Часто задаваемые вопросы по разработке и реализации решений в концентраторах уведомлений
+title: Часто задаваемые вопросы о центрах уведомлений Azure | Документация Майкрософт
+description: Часто задаваемые вопросы о проектировании и реализации решений в центрах уведомлений Azure.
 services: notification-hubs
 documentationcenter: mobile
 author: sethmanheim
@@ -17,12 +17,12 @@ ms.date: 11/13/2019
 ms.author: sethm
 ms.reviewer: jowargo
 ms.lastreviewed: 11/13/2019
-ms.openlocfilehash: c84a4472789430524cbf5ff3f1ae24ea10d342b9
-ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
+ms.openlocfilehash: 3212520f37d33a2d8fb1b071506f688b9f75f15c
+ms.sourcegitcommit: 2a2af81e79a47510e7dea2efb9a8efb616da41f0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74066873"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76263835"
 ---
 # <a name="push-notifications-with-azure-notification-hubs-frequently-asked-questions"></a>Часто задаваемые вопросы об отправке push-уведомлений с помощью Центров уведомлений Azure
 
@@ -153,7 +153,7 @@ Push-уведомления поддерживаются для [iOS](notificati
 
 Для отправки конфиденциальных полезных данных мы советуем использовать шаблон безопасных push-уведомлений. Отправитель посылает уведомление для проверки связи с идентификатором сообщения на устройство без конфиденциальных полезных данных. Когда приложение на устройстве получает эти полезные данные, оно может напрямую вызвать безопасный API, чтобы получить информацию о сообщении. Руководство по реализации этой схемы см. на странице [Безопасные push-уведомления посредством центров уведомлений Azure].
 
-## <a name="operations"></a>Операции
+## <a name="operations"></a>Operations
 
 ### <a name="what-support-is-provided-for-disaster-recovery"></a>Какая поддержка предоставляется для аварийного восстановления?
 
@@ -181,7 +181,7 @@ Push-уведомления поддерживаются для [iOS](notificati
 
 ### <a name="is-there-audit-log-capability"></a>Предусмотрена ли возможность ведения журнала аудита?
 
-Да. Все операции по управлению Центрами уведомлений обновляются в журнале действий Azure, который представлен на [портал Azure]. Журнал действий Azure предлагает аналитические сведения об операциях, которые выполнялись с ресурсами в подписках. С помощью журнала действий можно ответить на вопросы что, кто и когда о любой операции записи (PUT, POST, DELETE) с ресурсами в вашей подписке. Вы также можете отслеживать состояние операции и другие ее свойства. Тем не менее журнал действий не содержит сведения об операции чтения (GET).
+Да. Все операции по управлению Центрами уведомлений обновляются в журнале действий Azure, который представлен на [Портал Azure]. Журнал действий Azure предлагает аналитические сведения об операциях, которые выполнялись с ресурсами в подписках. С помощью журнала действий можно ответить на вопросы что, кто и когда о любой операции записи (PUT, POST, DELETE) с ресурсами в вашей подписке. Вы также можете отслеживать состояние операции и другие ее свойства. Тем не менее журнал действий не содержит сведения об операции чтения (GET).
 
 ## <a name="monitoring-and-troubleshooting"></a>Мониторинг и устранение неполадок
 
@@ -191,7 +191,7 @@ Push-уведомления поддерживаются для [iOS](notificati
 
 ### <a name="what-telemetry-features-are-available"></a>Какие телеметрические функции доступны?
 
-Центры уведомлений Microsoft Azure позволяют просматривать данные телеметрии на [портал Azure]. Дополнительные сведения о доступных метриках в Центрах уведомлений см. на [Метрики].
+Центры уведомлений Microsoft Azure позволяют просматривать данные телеметрии на [Портал Azure]. Дополнительные сведения о доступных метриках в Центрах уведомлений см. на [Метрики].
 
 Можно также программно получить доступ к метрикам. Дополнительные сведения см. в следующих статьях:
 
@@ -202,7 +202,7 @@ Push-уведомления поддерживаются для [iOS](notificati
 > [!NOTE]
 > Успешные уведомления означают, что push-уведомления были доставлены внешнему PNSу (например, APNs для iOS и macOS или FCM для устройств Android). Службы PNS отвечают за доставку уведомлений на целевые устройства. Как правило, служба PNS не предоставляет метрики доставки третьим лицам.  
 
-[портал Azure]: https://portal.azure.com
+[Портал Azure]: https://portal.azure.com
 [Цены на центры уведомлений]: https://azure.microsoft.com/pricing/details/notification-hubs/
 [Notification Hubs SLA]: https://azure.microsoft.com/support/legal/sla/
 [Использование интерфейса REST центров уведомлений]: https://msdn.microsoft.com/library/azure/dn530746.aspx
@@ -215,6 +215,6 @@ Push-уведомления поддерживаются для [iOS](notificati
 [Центры уведомлений Azure — рекомендации по диагностике]: https://azure.microsoft.com/documentation/articles/notification-hubs-diagnosing/
 [Метрики]: ../azure-monitor/platform/metrics-supported.md#microsoftnotificationhubsnamespacesnotificationhubs
 [Экспорт и импорт регистраций]: https://docs.microsoft.com/azure/notification-hubs/export-modify-registrations-bulk
-[портал Azure]: https://portal.azure.com
+[Портал Azure]: https://portal.azure.com
 [complete samples]: https://github.com/Azure/azure-notificationhubs-samples
 [App Service Pricing]: https://azure.microsoft.com/pricing/details/app-service/

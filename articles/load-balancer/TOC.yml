@@ -4,8 +4,6 @@
   items:
     - name: Что такое Load Balancer?
       href: load-balancer-overview.md
-    - name: Что такое Load Balancer ценовой категории "Стандартный"
-      href: load-balancer-standard-overview.md
 - name: Краткое руководство
   items:
     - name: Создание Load Balancer уровня "Стандартный"

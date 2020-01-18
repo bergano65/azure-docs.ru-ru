@@ -5,14 +5,14 @@ services: virtual-wan
 author: anzaman
 ms.service: virtual-wan
 ms.topic: conceptual
-ms.date: 11/21/2019
+ms.date: 01/16/2020
 ms.author: alzam
-ms.openlocfilehash: 9329ac33a771c829b8d67670bc07d9a353c58ff1
-ms.sourcegitcommit: 014e916305e0225512f040543366711e466a9495
+ms.openlocfilehash: fcb60e80189da89b3f634c14582be606307536e6
+ms.sourcegitcommit: d29e7d0235dc9650ac2b6f2ff78a3625c491bbbf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75930593"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76166697"
 ---
 # <a name="enable-azure-multi-factor-authentication-mfa-for-vpn-users"></a>Включение многофакторной идентификации Azure (MFA) для VPN-пользователей
 
@@ -22,27 +22,7 @@ ms.locfileid: "75930593"
 
 Необходимым условием для этой конфигурации является настроенный клиент Azure AD, выполнив действия, описанные в разделе [Настройка клиента](openvpn-azure-ad-tenant.md).
 
-## <a name="mfa"></a>Открытие страницы MFA
-
-1. Войдите на портал Azure.
-2. Перейдите в **Azure Active Directory — > все пользователи**.
-3. Выберите **многофакторную проверку подлинности** , чтобы открыть страницу многофакторной проверки подлинности.
-
-   ![Вход](./media/openvpn-azure-ad-mfa/mfa1.jpg)
-
-## <a name="users"></a>Выбор пользователей
-
-1. На странице **многофакторная идентификация** выберите пользователей, для которых необходимо включить mfa.
-2. Нажмите кнопку **Включить**.
-
-   ![Выберите](./media/openvpn-azure-ad-mfa/mfa2.jpg)
-
-## <a name="enableauth"></a>Включить проверку подлинности
-
-1. Перейдите в раздел **Azure Active Directory-> корпоративные приложения — > все приложения**.
-2. На странице **корпоративные приложения — все приложения** выберите **VPN-подключение Azure**.
-
-   ![Идентификатор каталога](./media/openvpn-azure-ad-mfa/user1.jpg)
+[!INCLUDE [MFA steps](../../includes/vpn-gateway-vwan-openvpn-azure-ad-mfa.md)]
 
 ## <a name="enablesign"></a>Настройка параметров входа
 

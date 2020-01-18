@@ -11,12 +11,12 @@ author: MayMSFT
 manager: cgronlun
 ms.reviewer: nibaccam
 ms.date: 11/04/2019
-ms.openlocfilehash: d55dc2a1311d66eae01ae12a3dae798fbab20677
-ms.sourcegitcommit: 05cdbb71b621c4dcc2ae2d92ca8c20f216ec9bc4
+ms.openlocfilehash: b9060823c997391d02eae61911f8aa748f191657
+ms.sourcegitcommit: 2a2af81e79a47510e7dea2efb9a8efb616da41f0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76045616"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76260860"
 ---
 # <a name="create-azure-machine-learning-datasets"></a>Создание наборов данных Машинное обучение Azure
 
@@ -49,7 +49,7 @@ ms.locfileid: "76045616"
 
 Существует два типа наборов данных в зависимости от того, как пользователи их используют в обучении:
 
-* [Табулардатасет](https://docs.microsoft.com/python/api/azureml-core/azureml.data.tabulardataset?view=azure-ml-py) представляет данные в табличном формате путем синтаксического анализа указанного файла или списка файлов. Это дает возможность материализовать данные в кадр данных Pandas или Spark. Объект `TabularDataset` можно создать из файлов CSV, TSV и Parquet, а также из результатов запросов SQL. Полный список см. в разделе [класс табулардатасетфактори](https://aka.ms/tabulardataset-api-reference).
+* [Табулардатасет](https://docs.microsoft.com/python/api/azureml-core/azureml.data.tabulardataset?view=azure-ml-py) представляет данные в табличном формате путем синтаксического анализа указанного файла или списка файлов. Это дает возможность материализовать данные в кадр данных Pandas или Spark. Объект `TabularDataset` можно создать из файлов CSV, TSV, Parquet, JSON и из результатов запроса SQL. Полный список см. в разделе [класс табулардатасетфактори](https://aka.ms/tabulardataset-api-reference).
 
 * Класс [филедатасет](https://docs.microsoft.com/python/api/azureml-core/azureml.data.file_dataset.filedataset?view=azure-ml-py) ссылается на один или несколько файлов в хранилищах данных или общедоступных URL-адресах. Этот метод позволяет скачать или подключить файлы к вычислению в качестве объекта Филедатасет. Файлы могут иметь любой формат, что позволяет использовать более широкий спектр сценариев машинного обучения, включая глубокое обучение.
 
@@ -74,7 +74,7 @@ ms.locfileid: "76045616"
 
 #### <a name="create-a-tabulardataset"></a>Создание Табулардатасет
 
-Табулардатасетс можно создать с помощью пакета SDK или Машинное обучение Azure Studio. Можно указать отметку времени из столбца данных или из шаблона пути, в котором хранятся данные, чтобы включить признаки временных рядов. Эта спецификация обеспечивает простую и эффективную фильтрацию по времени.
+Табулардатасетс можно создать с помощью пакета SDK или Машинное обучение Azure Studio. 
 
 Используйте метод [`from_delimited_files()`](https://docs.microsoft.com/python/api/azureml-core/azureml.data.dataset_factory.tabulardatasetfactory?view=azure-ml-py#from-delimited-files-path--validate-true--include-path-false--infer-column-types-true--set-column-types-none--separator------header-true--partition-format-none-) класса `TabularDatasetFactory` для чтения файлов в формате CSV или TSV, а также для создания незарегистрированного табулардатасет. Если выполняется чтение из нескольких файлов, результаты будут объединены в одно табличное представление.
 
@@ -244,7 +244,6 @@ titanic_ds = titanic_ds.register(workspace = workspace,
                                  description = 'new titanic training data',
                                  create_new_version = True)
 ```
-
 
 ## <a name="access-datasets-in-your-script"></a>Доступ к наборам данных в скрипте
 

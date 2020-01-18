@@ -1,5 +1,5 @@
 ---
-title: Просмотр и использование шаблона Azure Resource Manager виртуальной машины | Документация Майкрософт
+title: Просмотр и использование шаблона Azure Resource Manager виртуальной машины
 description: Сведения об использовании шаблона Azure Resource Manager виртуальной машины для создания других виртуальных машин.
 services: devtest-lab,virtual-machines,lab-services
 documentationcenter: na
@@ -12,14 +12,14 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 07/12/2019
+ms.date: 01/16/2020
 ms.author: spelluru
-ms.openlocfilehash: c14abf3acce0084507a03f3d34fdd59566d88c28
-ms.sourcegitcommit: 470041c681719df2d4ee9b81c9be6104befffcea
+ms.openlocfilehash: 7064fdeec04f4dc5ae2c73c1a3896cf2d10dd01d
+ms.sourcegitcommit: d29e7d0235dc9650ac2b6f2ff78a3625c491bbbf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67854271"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76169117"
 ---
 # <a name="create-virtual-machines-using-an-azure-resource-manager-template"></a>Создание виртуальных машин с использованием шаблона Azure Resource Manager 
 
@@ -63,12 +63,12 @@ ms.locfileid: "67854271"
 
 Шаблон Resource Manager готов к использованию для [создания виртуальной машины](devtest-lab-create-environment-from-arm.md).
 
-## <a name="set-expiration-date"></a>Задание срока действия
+## <a name="set-expiration-date"></a>Дата истечения срока действия
 В таких сценариях, как обучение, демонстрации и пробные версии, вы можете создавать виртуальные машины и удалять их автоматически после фиксированной длительности, чтобы не тратить излишнее издержки. Вы можете создать виртуальную машину лаборатории с датой окончания срока действия, указав свойство **expirationDate** для виртуальной машины. Ознакомьтесь с тем же шаблоном диспетчер ресурсов в [нашем репозитории GitHub](https://github.com/Azure/azure-devtestlab/tree/master/samples/DevTestLabs/QuickStartTemplates/101-dtl-create-vm-username-pwd-customimage-with-expiration).
 
 
 
-### <a name="next-steps"></a>Следующие шаги
+### <a name="next-steps"></a>Дальнейшие действия
 * Дополнительные сведения см. в статье [Создание сред со множеством виртуальных машин и ресурсов PaaS с помощью шаблонов Azure Resource Manager](devtest-lab-create-environment-from-arm.md).
 * [Deploy a Resource Manager template to create a VM](devtest-lab-create-environment-from-arm.md#automate-deployment-of-environments) (Развертывание шаблона Resource Manager для создания виртуальной машины)
 * Ознакомьтесь с кратким руководством по шаблонам Resource Manager для автоматизации работы в DevTest Labs в [общедоступном репозитории DevTest Labs на сайте GitHub](https://github.com/Azure/azure-quickstart-templates).

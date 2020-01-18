@@ -1,5 +1,5 @@
 ---
-title: Справочник по API распознавания лиц
+title: Справочник по API — лицевая стороны
 titleSuffix: Azure Cognitive Services
 description: Справочник по API содержит сведения об API-интерфейсах Person, Ларжеперсонграуп/Персонграуп, LargeFaceList/Фацелист и распознавания лиц.
 services: cognitive-services
@@ -10,16 +10,16 @@ ms.subservice: face-api
 ms.topic: reference
 ms.date: 03/01/2018
 ms.author: sbowles
-ms.openlocfilehash: 940a5e25125acc2631fd3629bd610bb0e927e650
-ms.sourcegitcommit: bb65043d5e49b8af94bba0e96c36796987f5a2be
+ms.openlocfilehash: 431525964eb69431600d36ba8249c6dc465a5df3
+ms.sourcegitcommit: d29e7d0235dc9650ac2b6f2ff78a3625c491bbbf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72390112"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76169930"
 ---
 # <a name="face-api-reference-list"></a>Список ссылок API распознавания лиц
 
-API распознавания лиц Azure — это облачный API, который предоставляет алгоритмы определения и распознавания лиц. API распознавания лиц включают следующее:
+Лицо Azure — это облачная служба, которая предоставляет алгоритмы для обнаружения и распознавания лиц. API распознавания лиц включают следующее:
 
 - API алгоритма распознавания лиц: основные функции, такие как [Обнаружение](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236), [Поиск похожих](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395237), [Проверка](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f3039523a), [Идентификация](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395239)и [Группа](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395238).
 - [API-интерфейсы фацелист](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f3039524b): используются для управления Фацелист для [поиска похожих](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395237).

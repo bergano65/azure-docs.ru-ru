@@ -10,12 +10,12 @@ ms.subservice: custom-vision
 ms.topic: conceptual
 ms.date: 04/02/2019
 ms.author: anroth
-ms.openlocfilehash: 50325b75280160a3fefa5b5487df29a25e53bddd
-ms.sourcegitcommit: fbea2708aab06c19524583f7fbdf35e73274f657
+ms.openlocfilehash: dcb12da680d70e1f0ce4cd763bee340bb3416c6b
+ms.sourcegitcommit: d29e7d0235dc9650ac2b6f2ff78a3625c491bbbf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70966942"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76169954"
 ---
 # <a name="use-your-model-with-the-prediction-api"></a>Использование модели с API-интерфейсом прогнозирования
 
@@ -109,7 +109,7 @@ ms.locfileid: "70966942"
     ```
 
 1. Измените следующие сведения:
-   * Присвойте `namespace` полю имя проекта.
+   * Задайте в поле `namespace` имя проекта.
    * Замените заполнитель `<Your prediction key>` значением ключа, полученным ранее.
    * Замените заполнитель `<Your prediction URL>` URL-адресом, полученным ранее.
 
@@ -130,12 +130,12 @@ ms.locfileid: "70966942"
 }
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом руководство вы узнали, как отправлять изображения в классификатор или детектор пользовательского образа, а также как получить ответ программным путем с C# помощью пакета SDK. Далее вы узнаете, как выполнять комплексные сценарии с C#или приступить к работе с другим ЯЗЫКОВым пакетом SDK.
 
 * [Краткое руководство. пакет SDK для .NET](csharp-tutorial.md)
-* [Краткое руководство Пакет SDK для Python](python-tutorial.md)
-* [Краткое руководство Пакет SDK для Java](java-tutorial.md)
-* [Краткое руководство Пакет SDK для Node](node-tutorial.md)
-* [Краткое руководство Пакет SDK для Go](go-tutorial.md)
+* [Краткое руководство. пакет SDK для Python](python-tutorial.md)
+* [Краткое руководство. пакет SDK для Java](java-tutorial.md)
+* [Краткое руководство. пакет SDK для Node](node-tutorial.md)
+* [Краткое руководство. пакет SDK для Go](go-tutorial.md)

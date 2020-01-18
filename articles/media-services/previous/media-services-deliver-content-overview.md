@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/18/2019
 ms.author: juliako
-ms.openlocfilehash: 5db2cb983c0c3cd0e2194f7686964d9ec3828d6f
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 22d98656f42f52f2fba0845fac6f1d210d2cf0bd
+ms.sourcegitcommit: 2a2af81e79a47510e7dea2efb9a8efb616da41f0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61232281"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76264684"
 ---
 # <a name="deliver-content-to-customers"></a>Доставка содержимого клиентам
 При доставке содержимого клиентам в виде потоковой трансляции или видео по запросу ваша задача — доставлять видео высокого качества для различных устройств в разных сетевых условиях.
@@ -77,7 +77,7 @@ ms.locfileid: "61232281"
 При создании указателя может возникать 30-секундная задержка из-за необходимых процессов сохранения и распространения в службе хранилища Azure.
 
 ## <a name="adaptive-streaming"></a>Адаптивная потоковая передача
-Технологии передачи с переменной скоростью позволяют видеопроигрывателю определить условия работы сети и выбрать одну из нескольких скоростей. Если условия передачи в сети ухудшаются, клиент может выбрать более низкую скорость, позволяя видеопроигрывателю продолжать воспроизводить видео в более низком качестве. Если состояние сети улучшается, то клиент может переключиться на более высокую скорость с более высоким качеством видео. Службы мультимедиа Azure поддерживают следующие технологий потоковой передачи с адаптивной скоростью: HTTP Live Streaming (HLS), Smooth Streaming и MPEG-DASH.
+Технологии передачи с переменной скоростью позволяют видеопроигрывателю определить условия работы сети и выбрать одну из нескольких скоростей. Если условия передачи в сети ухудшаются, клиент может выбрать более низкую скорость, позволяя видеопроигрывателю продолжать воспроизводить видео в более низком качестве. Если состояние сети улучшается, то клиент может переключиться на более высокую скорость с более высоким качеством видео. Службы мультимедиа Azure поддерживают следующие технологии передачи с переменной скоростью: HTTP Live Streaming (HLS), Smooth Streaming и MPEG-DASH.
 
 Чтобы предоставить пользователям URL-адреса потоковой передачи, сначала необходимо создать указатель OnDemandOrigin. При создании указателя вы получите базовый путь к ресурсу-контейнеру, в котором находится содержимое для потоковой передачи. Тем не менее, чтобы получить возможность потоковой передачи содержимого, необходимо изменить этот путь. Чтобы сформировать полный URL-адрес к файлу манифеста потоковой передачи, необходимо сцепить значение пути указателя и имя файла манифеста (filename.ism). Затем добавьте **/Manifest** и соответствующий формат (если нужно) в путь указателя.
 
@@ -92,22 +92,22 @@ ms.locfileid: "61232281"
 ### <a name="mpeg-dash-format"></a>Формат MPEG-DASH
 {имя конечной точки потоковой передачи - имя учетной записи служб мультимедиа}.streaming.mediaservices.windows.net/{идентификатор указателя}/{имя файла}.ism/Manifest(format=mpd-time-csf)
 
-http:\//testendpoint-testaccount.streaming.mediaservices.windows.net/fecebb23-46f6-490d-8b70-203e86b0df58/BigBuckBunny.ism/Manifest(format=mpd-time-csf)
+http:\//testendpoint-testaccount.streaming.mediaservices.windows.net/fecebb23-46f6-490d-8b70-203e86b0df58/BigBuckBunny.ism/Manifest (формат = MPD-Time-CSF)
 
 ### <a name="apple-http-live-streaming-hls-v4-format"></a>Формат Apple HTTP Live Streaming (HLS) V4
 {имя конечной точки потоковой передачи - имя учетной записи служб мультимедиа}.streaming.mediaservices.windows.net/{идентификатор указателя}/{имя файла}.ism/Manifest(format=m3u8-aapl)
 
-http:\//testendpoint-testaccount.streaming.mediaservices.windows.net/fecebb23-46f6-490d-8b70-203e86b0df58/BigBuckBunny.ism/Manifest(format=m3u8-aapl)
+http:\//testendpoint-testaccount.streaming.mediaservices.windows.net/fecebb23-46f6-490d-8b70-203e86b0df58/BigBuckBunny.ism/Manifest (Format = m3u8-AAPL)
 
 ### <a name="apple-http-live-streaming-hls-v3-format"></a>Формат Apple HTTP Live Streaming (HLS) V3
 {имя конечной точки потоковой передачи - имя учетной записи служб мультимедиа}.streaming.mediaservices.windows.net/{идентификатор указателя}/{имя файла}.ism/Manifest(format=m3u8-aapl-v3)
 
-http:\//testendpoint-testaccount.streaming.mediaservices.windows.net/fecebb23-46f6-490d-8b70-203e86b0df58/BigBuckBunny.ism/Manifest(format=m3u8-aapl-v3)
+http:\//testendpoint-testaccount.streaming.mediaservices.windows.net/fecebb23-46f6-490d-8b70-203e86b0df58/BigBuckBunny.ism/Manifest (Format = m3u8-AAPL-v3)
 
 ### <a name="apple-http-live-streaming-hls-format-with-audio-only-filter"></a>Формат Apple HTTP Live Streaming (HLS) с фильтром "только аудио"
 По умолчанию дорожки, содержащие только аудио, включены в манифест HLS. Это требуется для сертификации магазина Apple для сетей мобильной связи. В этом случае, если клиент не имеет достаточную пропускную способность или подключен через сеть 2G, то он переключается на воспроизведение только аудио дорожки. Это позволяет осуществлять потоковую передачу содержимого без необходимости буферизации, но и видео при этом не отображается. В некоторых сценариях буферизация проигрывателя может быть предпочтительнее воспроизведения лишь аудио дорожки. Для удаления дорожки, содержащей только аудио, добавьте к URL-адресу **audio-only=false** .
 
-http:\//testendpoint-testaccount.streaming.mediaservices.windows.net/fecebb23-46f6-490d-8b70-203e86b0df58/BigBuckBunny.ism/Manifest(format=m3u8-aapl-v3,audio-only=false)
+http:\//testendpoint-testaccount.streaming.mediaservices.windows.net/fecebb23-46f6-490d-8b70-203e86b0df58/BigBuckBunny.ism/Manifest (Format = m3u8-AAPL-v3, Audio-Only = false)
 
 Дополнительные сведения см. в записи блога [Azure Media Services – Dynamic Manifest Composition support and HLS output additional features](https://azure.microsoft.com/blog/azure-media-services-release-dynamic-manifest-composition-remove-hls-audio-only-track-and-hls-i-frame-track-support/) (Службы мультимедиа Azure — поддержка динамического создания манифестов и дополнительные функции вывода HLS).
 
@@ -123,10 +123,10 @@ http:\//testendpoint-testaccount.streaming.mediaservices.windows.net/fecebb23-46
 
 {имя конечной точки потоковой передачи - имя учетной записи служб мультимедиа}.streaming.mediaservices.windows.net/{идентификатор указателя}/{имя файла}.ism/Manifest(format=fmp4-v20)
 
-    http:\//testendpoint-testaccount.streaming.mediaservices.windows.net/fecebb23-46f6-490d-8b70-203e86b0df58/BigBuckBunny.ism/Manifest(format=fmp4-v20)
+    http://testendpoint-testaccount.streaming.mediaservices.windows.net/fecebb23-46f6-490d-8b70-203e86b0df58/BigBuckBunny.ism/Manifest(format=fmp4-v20)
 
 ## <a name="progressive-download"></a>Прогрессивное скачивание
-Поэтапная загрузка позволяет начать воспроизведение мультимедиа до окончания скачивания всего файла. ISMV-, ISMA-, ISMT- и ISMC-файлы не могут быть загружены поэтапно.
+Поэтапная загрузка позволяет начать воспроизведение мультимедиа до окончания скачивания всего файла. ISM\* (ISMV-, ISMA-, ISMT- и ISMC)-файлы не могут быть загружены поэтапно.
 
 Для последовательной загрузки содержимого используйте тип указателя OnDemandOrigin. В следующем примере показан URL-адрес, основанный на типе указателя OnDemandOrigin.
 
@@ -134,7 +134,7 @@ http:\//testendpoint-testaccount.streaming.mediaservices.windows.net/fecebb23-46
 
 Необходимо расшифровать все зашифрованные в хранилище ресурсы-контейнеры, которые требуется передать из исходной службы для поэтапной загрузки.
 
-## <a name="download"></a>Download (Скачать)
+## <a name="download"></a>Загрузить
 Для скачивания содержимого на клиентское устройство необходимо создать указатель SAS. Он предоставляет доступ к контейнеру службы хранилища Azure, в котором расположен ваш файл. Чтобы создать URL-адрес загрузки, необходимо вставить имя файла между узлом и подписью SAS.
 
 В следующем примере показан URL-адрес, основанный на типе указателя SAS.
@@ -155,7 +155,7 @@ http:\//testendpoint-testaccount.streaming.mediaservices.windows.net/fecebb23-46
 
 ## <a name="known-issues"></a>Известные проблемы
 ### <a name="changes-to-smooth-streaming-manifest-version"></a>Изменения в версии манифеста Smooth Streaming
-До выпуска набора исправлений в июле 2016 года дело обстояло так. Когда ресурсы-контейнеры, генерируемые стандартным кодировщиком мультимедиа, расширенным рабочим процессом кодировщика мультимедиа или устаревшим кодировщиком мультимедиа Azure, передавались в потоке с помощью динамической упаковки, выдавался манифест Smooth Streaming версии 2.0. В нем для длительностей фрагментов не использовались так называемые теги повтора (r-tag). Пример:
+До выпуска набора исправлений в июле 2016 года дело обстояло так. Когда ресурсы-контейнеры, генерируемые стандартным кодировщиком мультимедиа, расширенным рабочим процессом кодировщика мультимедиа или устаревшим кодировщиком мультимедиа Azure, передавались в потоке с помощью динамической упаковки, выдавался манифест Smooth Streaming версии 2.0. В нем для длительностей фрагментов не использовались так называемые теги повтора (r-tag). Пример.
 
 
     <?xml version="1.0" encoding="UTF-8"?>
@@ -169,7 +169,7 @@ http:\//testendpoint-testaccount.streaming.mediaservices.windows.net/fecebb23-46
         </StreamIndex>
     </SmoothStreamingMedia>
 
-После выпуска набора исправлений в июле 2016 года создаваемый манифест Smooth Streaming соответствует версии 2.2, в которой для длительностей фрагментов используются теги повтора. Пример:
+После выпуска набора исправлений в июле 2016 года создаваемый манифест Smooth Streaming соответствует версии 2.2, в которой для длительностей фрагментов используются теги повтора. Пример.
 
     <?xml version="1.0" encoding="UTF-8"?>
     <SmoothStreamingMedia MajorVersion="2" MinorVersion="2" Duration="8000" TimeScale="1000">
@@ -184,9 +184,9 @@ http:\//testendpoint-testaccount.streaming.mediaservices.windows.net/fecebb23-46
 ## <a name="media-services-learning-paths"></a>Схемы обучения работе со службами мультимедиа
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Отзывы
+## <a name="provide-feedback"></a>Отправить отзыв
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 
-## <a name="related-topics"></a>См. также
+## <a name="related-topics"></a>Связанные разделы
 [Обновление указателей служб мультимедиа после отката ключей хранилища](media-services-roll-storage-access-keys.md)
 

@@ -6,12 +6,12 @@ ms.topic: reference
 ms.date: 09/05/2019
 ms.author: cshoe
 ms.reviewer: jehollan
-ms.openlocfilehash: 4c6ccf9dce0fc119bd666871489a42a3ef734f81
-ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
+ms.openlocfilehash: a17ff15e71251e781cd30c33a5616af85e4f4eb9
+ms.sourcegitcommit: 2a2af81e79a47510e7dea2efb9a8efb616da41f0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75769206"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76260089"
 ---
 # <a name="use-dependency-injection-in-net-azure-functions"></a>Использование внедрения зависимостей в функциях Azure .NET
 
@@ -153,12 +153,22 @@ namespace MyNamespace
 
 Можно извлечь значения из экземпляра `IConfiguration` в пользовательский тип. Копирование значений параметров приложения в пользовательский тип упрощает тестирование служб, делая эти значения внедренными. Параметры, считываемые в экземпляр конфигурации, должны быть простыми парами "ключ-значение".
 
-Рассмотрим следующий класс, включающий свойство с именем consistent и параметром приложения.
+Рассмотрим следующий класс, который включает свойство с именем consistent с параметром приложения:
 
 ```csharp
 public class MyOptions
 {
     public string MyCustomSetting { get; set; }
+}
+```
+
+И файл `local.settings.json`, который может структурировать пользовательский параметр следующим образом:
+```json
+{
+  "IsEncrypted": false,
+  "Values": {
+    "MyOptions:MyCustomSetting": "Foobar"
+  }
 }
 ```
 
@@ -168,7 +178,7 @@ public class MyOptions
 builder.Services.AddOptions<MyOptions>()
                 .Configure<IConfiguration>((settings, configuration) =>
                                            {
-                                                configuration.Bind(settings);
+                                                configuration.GetSection("MyOptions").Bind(settings);
                                            });
 ```
 

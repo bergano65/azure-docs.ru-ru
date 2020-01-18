@@ -1,5 +1,5 @@
 ---
-title: Интеграция сред в Azure Pipelines в Azure DevTest Labs | Документация Майкрософт
+title: Интеграция сред в Azure Pipelines в Azure DevTest Labs
 description: Узнайте, как интегрировать среды Azure DevTest Labs в конвейеры непрерывной интеграции Azure DevOps (CI) и непрерывной поставки (CD).
 services: devtest-lab,virtual-machines,lab-services
 documentationcenter: na
@@ -10,21 +10,21 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 04/02/2019
+ms.date: 01/16/2020
 ms.author: spelluru
-ms.openlocfilehash: c665c65dcda2266a7acd7bc78726179d559f4d64
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.openlocfilehash: 3d7e481879326ac30093bd116222bddc28640398
+ms.sourcegitcommit: d29e7d0235dc9650ac2b6f2ff78a3625c491bbbf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73163929"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76169422"
 ---
 # <a name="integrate-environments-into-your-azure-devops-cicd-pipelines"></a>Интеграция сред в конвейеры CI/CD DevOps в Azure
-Вы можете использовать расширение задач Azure DevTest Labs, установленное в Azure DevOps Services (ранее известное как Visual Studio Team Services), чтобы легко интегрировать конвейер сборки и выпуска непрерывной интеграции (CI) и непрерывной поставки (CD) с Azure. DevTest Labs. Эти расширения упрощают развертывание [среды](devtest-lab-test-env.md) для определенной тестовой задачи, а затем удаляют ее после завершения теста. 
+Вы можете использовать расширение Tasks Azure DevTest Labs, которое устанавливается в Azure DevOps Services (ранее называлось Visual Studio Team Services), чтобы легко интегрировать конвейер сборки и выпуска непрерывной интеграции (CI) и непрерывной поставки (CD) с Azure DevTest Labs. Эти расширения упрощают развертывание [среды](devtest-lab-test-env.md) для определенной тестовой задачи, а затем удаляют ее после завершения теста. 
 
 В этой статье показано, как создать и развернуть среду, а затем удалить среду в одном полном конвейере. Вы обычно выполняете каждую из этих задач по отдельности в пользовательском конвейере сборки, тестирования и развертывания. Расширения, используемые в этой статье, добавляются к [задачам виртуальной машины с созданием или удалением](devtest-lab-integrate-ci-cd-vsts.md).
 
-- Создание среды
+- Создание среда
 - Удаление среды
 
 ## <a name="before-you-begin"></a>Перед началом работы
@@ -77,7 +77,7 @@ ms.locfileid: "73163929"
 2. Введите имя для определения выпуска и сохраните его.
 
 ## <a name="next-steps"></a>Дальнейшие действия
-Ознакомьтесь со следующими статьями: 
+См. следующие статьи: 
 - [Создавайте среды с несколькими виртуальными машинами с помощью шаблонов диспетчер ресурсов](devtest-lab-create-environment-from-arm.md).
 - Краткое руководство диспетчер ресурсов шаблонов для автоматизации DevTest Labs из [репозитория GitHub DevTest Labs](https://github.com/Azure/azure-quickstart-templates).
 - [Страница устранения неполадок VSTS](/azure/devops/pipelines/troubleshooting)

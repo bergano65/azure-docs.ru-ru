@@ -12,14 +12,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 09/21/2018
+ms.date: 01/17/2020
 ms.author: aschhab
-ms.openlocfilehash: eebbef25f2cd4539a5092f271c3944c24503f287
-ms.sourcegitcommit: 276c1c79b814ecc9d6c1997d92a93d07aed06b84
+ms.openlocfilehash: a795aa536e6e72b487abd18e60cfa52d6ab633ee
+ms.sourcegitcommit: 2a2af81e79a47510e7dea2efb9a8efb616da41f0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76156817"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76264888"
 ---
 # <a name="troubleshooting-guide-for-azure-service-bus"></a>Руководство по устранению неполадок в служебной шине Azure
 В этой статье приведены некоторые исключения .NET, создаваемые служебной шиной .NET Framework API, а также другие советы по устранению неполадок. 
@@ -109,25 +109,25 @@ ConnectionsQuotaExceeded for namespace xxx.
 ## <a name="connectivity-certificate-or-timeout-issues"></a>Проблемы с подключением, сертификатом или временем ожидания
 Следующие шаги могут помочь при устранении неполадок с подключением, сертификатами и временем ожидания для всех служб в каталоге *. servicebus.windows.net. 
 
-- Перейдите к `https://sbwagn2.servicebus.windows.net/`или [wget](https://www.gnu.org/software/wget/) . Он помогает проверять наличие IP-фильтрации, виртуальной сети или цепочки сертификатов (чаще всего при использовании пакета SDK для Java).
-- Выполните следующую команду, чтобы проверить, заблокирован ли порт в брандмауэре. В зависимости от используемой библиотеки также используются другие порты. Например: 443, 5672, 9354.
+- Перейдите к `https://<yournamespace>.servicebus.windows.net/`или [wget](https://www.gnu.org/software/wget/) . Он помогает проверять наличие IP-фильтрации, виртуальной сети или цепочки сертификатов (чаще всего при использовании пакета SDK для Java).
+- Выполните следующую команду, чтобы проверить, заблокирован ли порт в брандмауэре. Используются порты 443 (HTTPS), 5671 (AMQP) и 9354 (NET Messaging/SBMP). В зависимости от используемой библиотеки также используются другие порты. Ниже приведен пример команды, которая проверяет, заблокирован ли порт 5671. 
 
     ```powershell
-    tnc sbwagn2.servicebus.windows.net -port 5671
+    tnc <yournamespacename>.servicebus.windows.net -port 5671
     ```
 
     В Linux
 
     ```shell
-    telnet sbwagn2.servicebus.windows.net 5671
+    telnet <yournamespacename>.servicebus.windows.net 5671
     ```
-- При наличии периодических проблем с подключением выполните следующую команду, чтобы проверить наличие пропущенных пакетов. Эта команда попытается установить 25 разных TCP-подключений каждые 1 секунду со службой, после чего можно проверить количество успешных и неудачных попыток, а также задержку подключения TCP. Вы можете скачать средство `psping` [отсюда.](/sysinternals/downloads/psping)
+- При наличии периодических проблем с подключением выполните следующую команду, чтобы проверить наличие пропущенных пакетов. Эта команда попытается установить 25 разных TCP-подключений каждые 1 секунду со службой. После этого можно проверить, сколько из них прошло успешное выполнение и завершилось сбоем, а также увидеть задержку подключения TCP. Вы можете скачать средство `psping` [отсюда.](/sysinternals/downloads/psping)
 
     ```shell
-    .\psping.exe -n 25 -i 1 -q yournamespace.servicebus.windows.net:5671 -nobanner     
+    .\psping.exe -n 25 -i 1 -q <yournamespace>.servicebus.windows.net:5671 -nobanner     
     ```
     Аналогичные команды можно использовать, если вы используете другие средства, такие как `tnc`, `ping`и т. д. 
-- Найдите трассировку сети, если предыдущие шаги не помогают и не проанализировали ее, либо обратитесь в [Служба поддержки Майкрософт](https://support.microsoft.com/).
+- Найдите трассировку сети, если предыдущие шаги не помогают и не анализируют их с помощью таких средств, как [Wireshark](https://www.wireshark.org/). При необходимости обратитесь в [Служба поддержки Майкрософт](https://support.microsoft.com/) . 
 
 
 ## <a name="next-steps"></a>Дальнейшие действия

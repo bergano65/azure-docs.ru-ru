@@ -1,5 +1,5 @@
 ---
-title: Настройка лаборатории для использования шлюза удаленный рабочий стол в Azure DevTest Labs | Документация Майкрософт
+title: Настройка лаборатории для использования шлюза удаленный рабочий стол в Azure DevTest Labs
 description: Узнайте, как настроить лабораторию в Azure DevTest Labs с помощью шлюза удаленных рабочих столов, чтобы обеспечить безопасный доступ к виртуальным машинам лаборатории без необходимости предоставлять порт RDP.
 services: devtest-lab,virtual-machines,lab-services
 documentationcenter: na
@@ -10,14 +10,14 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 03/25/2019
+ms.date: 01/16/2020
 ms.author: spelluru
-ms.openlocfilehash: 0f879a6389c7a77708e8041dd8b82dc3785679fa
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.openlocfilehash: 88daecdf4490ffd4eef45e6cd664a16f86bad113
+ms.sourcegitcommit: d29e7d0235dc9650ac2b6f2ff78a3625c491bbbf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73162633"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76170289"
 ---
 # <a name="configure-your-lab-in-azure-devtest-labs-to-use-a-remote-desktop-gateway"></a>Настройка лаборатории в Azure DevTest Labs для использования шлюза удаленных рабочих столов
 В Azure DevTest Labs можно настроить шлюз удаленных рабочих столов для лаборатории, чтобы обеспечить безопасный доступ к виртуальным машинам лаборатории, не открывая RDP-порт. Лаборатория предоставляет пользователям лабораторий централизованное представление и подключение ко всем виртуальным машинам, к которым у них есть доступ. Кнопка **подключить** на странице **виртуальной машины** создает файл RDP, зависящий от компьютера, который можно открыть для подключения к компьютеру. Вы можете дополнительно настроить и защитить подключение RDP, подключив свою лабораторию к шлюзу удаленных рабочих столов. 
@@ -74,7 +74,7 @@ az resource show --name {lab-name} --resource-type 'Microsoft.DevTestLab/labs' -
 
 Настройте лабораторию для использования проверки подлинности на основе маркеров, выполнив следующие действия.
 
-1. Войдите на [портале Azure](https://portal.azure.com).
+1. Войдите на [портал Azure](https://portal.azure.com).
 1. Щелкните **Все службы** и выберите в списке **DevTest Labs**.
 1. В списке лабораторий выберите свою **лабораторию**.
 1. На странице лаборатории выберите **Конфигурация и политики**.

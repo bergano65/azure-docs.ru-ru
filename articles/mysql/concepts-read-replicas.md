@@ -5,13 +5,13 @@ author: ajlam
 ms.author: andrela
 ms.service: mysql
 ms.topic: conceptual
-ms.date: 12/03/2019
-ms.openlocfilehash: f3a6da6888b823c637411c508c949686fc378e58
-ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
+ms.date: 01/16/2020
+ms.openlocfilehash: 98461928e465a103f73761afce5270234224fbae
+ms.sourcegitcommit: d29e7d0235dc9650ac2b6f2ff78a3625c491bbbf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74790088"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76167350"
 ---
 # <a name="read-replicas-in-azure-database-for-mysql"></a>Реплики чтения в базе данных Azure для MySQL
 
@@ -103,7 +103,7 @@ mysql -h myreplica.mysql.database.azure.com -u myadmin@myreplica -p
 
 Процесс остановки репликации описан в [этой статье](howto-read-replicas-portal.md).
 
-## <a name="considerations-and-limitations"></a>Ограничения и рекомендации
+## <a name="considerations-and-limitations"></a>Рекомендации и ограничения
 
 ### <a name="pricing-tiers"></a>Ценовые категории
 
@@ -132,7 +132,7 @@ mysql -h myreplica.mysql.database.azure.com -u myadmin@myreplica -p
 
 ### <a name="deleted-master-and-standalone-servers"></a>Удаленные главного и отдельного серверов
 
-При удалении главного сервера репликация останавливается для всех реплик чтения. Эти реплики становятся изолированными серверами. Удаляется сам главный сервер.
+При удалении главного сервера репликация останавливается для всех реплик чтения. Эти реплики автоматически становятся автономными серверами и могут принимать операции чтения и записи. Удаляется сам главный сервер.
 
 ### <a name="user-accounts"></a>Учетные записи пользователей
 

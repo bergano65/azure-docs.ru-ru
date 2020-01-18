@@ -10,12 +10,12 @@ ms.reviewer: larryfr
 ms.author: aashishb
 author: aashishb
 ms.date: 01/13/2020
-ms.openlocfilehash: f1cedd9851e425de1e4b6392d42a11dbf9f92644
-ms.sourcegitcommit: 014e916305e0225512f040543366711e466a9495
+ms.openlocfilehash: b647af11e47952656011a06268d4b0f384126ae9
+ms.sourcegitcommit: 2a2af81e79a47510e7dea2efb9a8efb616da41f0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75934388"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76263716"
 ---
 # <a name="secure-azure-ml-experimentation-and-inference-jobs-within-an-azure-virtual-network"></a>Защита заданий экспериментирования и вывода машинного обучения Azure в виртуальной сети Azure
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -81,6 +81,22 @@ ms.locfileid: "75934388"
 >
 > Для учетных записей хранения, отличных от по умолчанию, параметр `storage_account` в [функции`Workspace.create()`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.workspace(class)?view=azure-ml-py#create-name--auth-none--subscription-id-none--resource-group-none--location-none--create-resource-group-true--sku--basic---friendly-name-none--storage-account-none--key-vault-none--app-insights-none--container-registry-none--default-cpu-compute-target-none--default-gpu-compute-target-none--exist-ok-false--show-output-true-) позволяет указать настраиваемую учетную запись хранения по идентификатору ресурса Azure.
 
+## <a name="use-azure-data-lake-storage-gen-2"></a>Использование Azure Data Lake Storage Gen 2
+
+Azure Data Lake Storage Gen 2 — это набор возможностей для аналитики больших данных, построенных в хранилище BLOB-объектов Azure. Он может использоваться для хранения данных, используемых для обучения моделей с Машинное обучение Azure. 
+
+Чтобы использовать Data Lake Storage Gen 2 в виртуальной сети Машинное обучение Azure рабочей области, выполните следующие действия.
+
+1. Создайте учетную запись Azure Data Lake Storage Gen 2. Дополнительные сведения см. [в статье Создание учетной записи хранения Azure Data Lake Storage 2-го поколения](../storage/blobs/data-lake-storage-quickstart-create-account.md).
+
+1. Выполните шаги 2-4 в предыдущем разделе, чтобы разместить учетную запись в виртуальной сети, [используя учетную запись хранения для рабочей области](#use-a-storage-account-for-your-workspace).
+
+При использовании Машинное обучение Azure с Data Lake Storage Gen 2 в виртуальной сети используйте следующие рекомендации.
+
+* Если __для создания набора данных используется пакет SDK__, а система, в которой выполняется код, отсутствует __в виртуальной сети__, используйте параметр `validate=False`. Этот параметр пропускает проверку, которая завершается ошибкой, если система не находится в той же виртуальной сети, что и учетная запись хранения. Дополнительные сведения см. в описании метода [from_files ()](https://docs.microsoft.com/python/api/azureml-core/azureml.data.dataset_factory.filedatasetfactory?view=azure-ml-py#from-files-path--validate-true-) .
+
+* При использовании Машинное обучение Azure вычислительного экземпляра или вычислительного кластера для обучения модели с помощью набора данных она должна находиться в той же виртуальной сети, что и учетная запись хранения.
+
 ## <a name="use-a-key-vault-instance-with-your-workspace"></a>Использование экземпляра хранилища ключей с рабочей областью
 
 Экземпляр хранилища ключей, связанный с рабочей областью, используется Машинное обучение Azure для хранения следующих учетных данных:
@@ -110,7 +126,7 @@ ms.locfileid: "75934388"
 ## <a name="compute-instance"></a>Использование Вычислительная среда Машинного обучения
 
 > [!NOTE]
-> Экземпляры вычислений (Предварительная версия) в настоящее время доступны только для рабочих областей с регионом **северо-центральная часть США** или **Южная часть Соединенного Королевства**. Поддержка других регионов ожидается в ближайшее время.
+> Экземпляры для вычислений (предварительная версия) сейчас доступны только для рабочих областей, расположенных в регионе **Центрально-северная часть США** или **Южная часть Соединенного Королевства**. Поддержка для других регионов ожидается в ближайшее время.
 > Используйте один из этих регионов, чтобы создать вычислительный экземпляр, который можно добавить в виртуальную сеть.
 
 Чтобы использовать Машинное обучение Azure вычислительный экземпляр или вычислительный кластер в виртуальной сети, необходимо соблюдать следующие требования к сети.

@@ -1,5 +1,5 @@
 ---
-title: Использование концентраторов уведомлений с Java
+title: Как использовать центры уведомлений Azure с Java
 description: Узнайте, как использовать центры уведомлений Azure из серверной части Java.
 services: notification-hubs
 documentationcenter: ''
@@ -16,12 +16,12 @@ ms.date: 01/04/2019
 ms.author: sethm
 ms.reviewer: jowargo
 ms.lastreviewed: 01/04/2019
-ms.openlocfilehash: 532ffc7a7393f016f27264b67b4ee5d3e6e5888f
-ms.sourcegitcommit: 7df70220062f1f09738f113f860fad7ab5736e88
+ms.openlocfilehash: d48973cc7c5ed1fc7ae3f96128d488f3f1df3a05
+ms.sourcegitcommit: 2a2af81e79a47510e7dea2efb9a8efb616da41f0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71213210"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76263869"
 ---
 # <a name="how-to-use-notification-hubs-from-java"></a>Использование концентраторов уведомлений из Java
 
@@ -41,7 +41,7 @@ ms.locfileid: "71213210"
 * обычную отправку;
 * запланированную отправку;
 * асинхронные операции с использованием Java NIO;
-* Поддерживаемые платформы: APNS (iOS), FCM (Android), WNS (приложения для Магазина Windows), MPNS (Windows Phone), ADM (Amazon Kindle Fire), Baidu (Android без служб Google).
+* Поддерживаемые платформы: APNS (iOS), FCM (Android), WNS (приложения для Магазина Windows), MPNS (Windows Phone), ADM (программа Amazon Kindle Fire), Baidu (Android без служб Google)
 
 ## <a name="sdk-usage"></a>Использование пакета SDK
 
@@ -71,7 +71,7 @@ ms.locfileid: "71213210"
     hub = namespaceManager.createNotificationHub(hub);
     ```
 
- Или
+ ИЛИ
 
     ```java
     hub = new NotificationHub("connection string", "hubname");
@@ -374,7 +374,7 @@ API установки — это альтернативный механизм 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-В этом разделе было показано, как создать простой клиент REST Java для службы "Центры уведомлений". На данном этапе можно сделать следующее.
+В этом разделе было показано, как создать простой клиент REST Java для службы "Центры уведомлений". Здесь вы можете сделать следующее:
 
 * Скачайте полный [пакет SDK для Java], содержащий весь код пакета SDK.
 * Попробуйте разные примеры:

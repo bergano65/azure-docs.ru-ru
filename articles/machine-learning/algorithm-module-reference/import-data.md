@@ -9,12 +9,12 @@ ms.topic: reference
 author: xiaoharper
 ms.author: zhanxia
 ms.date: 10/22/2019
-ms.openlocfilehash: 8d099d0b8f8e31bf77f5ddfad320ac792c5c01e5
-ms.sourcegitcommit: ce4a99b493f8cf2d2fd4e29d9ba92f5f942a754c
+ms.openlocfilehash: f3a1bf518b8ef122e2df64f2815c8885929b127d
+ms.sourcegitcommit: d29e7d0235dc9650ac2b6f2ff78a3625c491bbbf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/28/2019
-ms.locfileid: "75529615"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76166786"
 ---
 # <a name="import-data-module"></a>Модуль импорта данных
 
@@ -27,7 +27,7 @@ ms.locfileid: "75529615"
 > После регистрации набора данных его можно найти в категории **наборы** данных -> **My DataSets** в интерфейсе конструктора. Этот модуль зарезервирован для пользователей Studio (классические) для работы с привычными возможностями. 
 >
 
-Сначала выберите источник, из которого выполняется чтение, и закончите дополнительные параметры. Модуль **Импорт данных** поддерживает чтение данных из следующих источников:
+Модуль **Импорт данных** поддерживает чтение данных из следующих источников:
 
 - URL-адрес через HTTP
 - Облачные хранилища Azure через [**хранилища данных**](../how-to-access-data.md)

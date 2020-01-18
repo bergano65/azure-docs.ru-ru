@@ -1,5 +1,5 @@
 ---
-title: Создание иммерсивного ресурса чтения
+title: Создание ресурса иммерсивного средства чтения
 titleSuffix: Azure Cognitive Services
 description: В этой статье показано, как создать новый иммерсивное устройство чтения с помощью пользовательского поддомена, а затем настроить Azure AD в клиенте Azure.
 services: cognitive-services
@@ -10,12 +10,12 @@ ms.subservice: immersive-reader
 ms.topic: conceptual
 ms.date: 07/22/2019
 ms.author: rwaller
-ms.openlocfilehash: a806e6eeecc6976286566d05a0f19dac684b2c0b
-ms.sourcegitcommit: 49e14e0d19a18b75fd83de6c16ccee2594592355
+ms.openlocfilehash: a2a404a03c06dde59edc88436afdc9dba3d74797
+ms.sourcegitcommit: d29e7d0235dc9650ac2b6f2ff78a3625c491bbbf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75946092"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76170165"
 ---
 # <a name="create-an-immersive-reader-resource-and-configure-azure-active-directory-authentication"></a>Создание иммерсивного ресурса чтения и Настройка проверки подлинности Azure Active Directory
 
@@ -153,7 +153,7 @@ ms.locfileid: "75946092"
     | Параметр SubscriptionName |Имя подписки Azure, которая будет использоваться для вашего иммерсивного ресурса чтения. Чтобы создать ресурс, необходимо иметь подписку. |
     | ResourceName |  Должен быть буквенно-цифровым и может содержать символ "-", если "-" не является первым или последним знаком. Длина не может превышать 63 символов.|
     | ресаурцесубдомаин |Для иммерсивного ресурса чтения требуется пользовательский поддомен. Поддомен используется пакетом SDK при вызове иммерсивное службу чтения для запуска средства чтения. Поддомен должен быть глобально уникальным. Поддомен должен состоять из букв и цифр и может содержать символ "-", если "-" не является первым или последним знаком. Длина не может превышать 63 символов. Этот параметр является необязательным, если ресурс уже существует. |
-    | ресаурцеску |Параметры: `S0` или `S1`. Дополнительные сведения о каждом доступном номере SKU см. на [странице цен на Cognitive Services](https://azure.microsoft.com/pricing/details/cognitive-services/immersive-reader/) . Этот параметр является необязательным, если ресурс уже существует. |
+    | ресаурцеску |Параметры: `S0`. Дополнительные сведения о каждом доступном номере SKU см. на [странице цен на Cognitive Services](https://azure.microsoft.com/pricing/details/cognitive-services/immersive-reader/) . Этот параметр является необязательным, если ресурс уже существует. |
     | ResourceLocation |Параметры: `eastus`, `eastus2`, `southcentralus`, `westus`, `westus2`, `australiaeast`, `southeastasia`, `centralindia`, `japaneast`, `northeurope`, `uksouth`, `westeurope`. Этот параметр является необязательным, если ресурс уже существует. |
     | ResourceGroupName |Ресурсы создаются в группах ресурсов в рамках подписок. Укажите имя существующей группы ресурсов. Если группа ресурсов еще не существует, будет создана новая учетная часть с таким именем. |
     | ResourceGroupLocation |Если группа ресурсов не существует, необходимо указать расположение, в котором будет создана группа. Чтобы найти список расположений, запустите `az account list-locations`. Используйте свойство *Name* (без пробелов) возвращаемого результата. Этот параметр является необязательным, если группа ресурсов уже существует. |

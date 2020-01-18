@@ -1,5 +1,5 @@
 ---
-title: Использование отчетов Azure DevTest Labs в нескольких лабораториях и подписках в Azure | Документация Майкрософт
+title: Azure DevTest Labsное использование в нескольких лабораториях и подписках
 description: Узнайте, как сообщать об использовании Azure DevTest Labs в нескольких лабораториях и подписках.
 services: devtest-lab,virtual-machines,lab-services
 documentationcenter: na
@@ -11,14 +11,14 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 08/03/2018
+ms.date: 01/16/2020
 ms.author: takamath
-ms.openlocfilehash: 0d930263233056d8fa74ffe6ccb176ee39429121
-ms.sourcegitcommit: 3073581d81253558f89ef560ffdf71db7e0b592b
+ms.openlocfilehash: 912f510f6380c0ba1eb92b7c485091801123558e
+ms.sourcegitcommit: d29e7d0235dc9650ac2b6f2ff78a3625c491bbbf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68829233"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76169178"
 ---
 # <a name="report-azure-devtest-labs-usage-across-multiple-labs-and-subscriptions"></a>Использование отчетов Azure DevTest Labs в нескольких лабораториях и подписках
 
@@ -35,7 +35,7 @@ ms.locfileid: "68829233"
 Перед экспортом использования ресурсов DevTest Labs необходимо настроить учетную запись хранения Azure, чтобы разрешить сохранение различных файлов, содержащих данные об использовании. Существует два стандартных способа выполнения экспорта данных.
 
 * [DevTest Labs REST API](https://docs.microsoft.com/rest/api/dtl/labs/exportresourceusage) 
-* В PowerShell AZ. Resource Module [вызывается командлет-азресаурцеактион](https://docs.microsoft.com/powershell/module/az.resources/invoke-azresourceaction?view=azps-2.5.0&viewFallbackFrom=azps-2.3.2) с действием `exportResourceUsage`, идентификатором ресурса лаборатории и необходимыми параметрами. 
+* Командлет PowerShell AZ. Resource Module [вызывает-азресаурцеактион](https://docs.microsoft.com/powershell/module/az.resources/invoke-azresourceaction?view=azps-2.5.0&viewFallbackFrom=azps-2.3.2) с действием `exportResourceUsage`, идентификатором ресурса лаборатории и необходимыми параметрами. 
 
     Статья [Экспорт или удаление персональных данных](personal-data-delete-export.md) содержит пример скрипта PowerShell с подробными сведениями о экспортируемых данных. 
 
@@ -75,7 +75,7 @@ ms.locfileid: "68829233"
 * Создание сложных группирований
 * Статистическая обработка данных.
 
-Ниже приведены некоторые распространенные решения для хранения данных. [SQL Server](https://azure.microsoft.com/services/sql-database/), [Azure Data Lake](https://azure.microsoft.com/services/storage/data-lake-storage/)и [Cosmos DB](https://azure.microsoft.com/services/cosmos-db/). Выбор выбранного решения долгосрочного хранения зависит от предпочтений. Вы можете выбрать средство в зависимости от того, что оно предлагает в плане доступности взаимодействия при визуализации данных.
+Некоторые распространенные решения для хранения данных: [SQL Server](https://azure.microsoft.com/services/sql-database/), [Azure Data Lake](https://azure.microsoft.com/services/storage/data-lake-storage/)и [Cosmos DB](https://azure.microsoft.com/services/cosmos-db/). Выбор выбранного решения долгосрочного хранения зависит от предпочтений. Вы можете выбрать средство в зависимости от того, что оно предлагает в плане доступности взаимодействия при визуализации данных.
 
 ## <a name="visualizing-data-and-gathering-insights"></a>Визуализация данных и сбор ценных сведений
 
@@ -85,7 +85,7 @@ ms.locfileid: "68829233"
 
 ## <a name="next-steps"></a>Следующие шаги
 
-Когда система будет настроена и данные переходят в долгосрочное хранение, на следующем этапе следует указать вопросы, на которые должны ответить эти данные. Пример: 
+Когда система будет настроена и данные переходят в долгосрочное хранение, на следующем этапе следует указать вопросы, на которые должны ответить эти данные. Пример. 
 
 -   Каково использование размера виртуальной машины?
 

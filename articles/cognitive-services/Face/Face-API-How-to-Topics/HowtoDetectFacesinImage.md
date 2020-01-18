@@ -1,5 +1,5 @@
 ---
-title: Обнаружение лиц в образе — API распознавания лиц
+title: Обнаружение лиц на изображении
 titleSuffix: Azure Cognitive Services
 description: В этом руководстве показано, как использовать обнаружение лиц для извлечения таких атрибутов, как Gender, Age или of a, из определенного изображения.
 services: cognitive-services
@@ -10,16 +10,16 @@ ms.subservice: face-api
 ms.topic: conceptual
 ms.date: 04/18/2019
 ms.author: sbowles
-ms.openlocfilehash: 9b66231d995ffb6980ce36852115c571cd102681
-ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
+ms.openlocfilehash: 7070cb3bcd1b519828a750cf4ba6caf7ecb34bbb
+ms.sourcegitcommit: d29e7d0235dc9650ac2b6f2ff78a3625c491bbbf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73744282"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76169879"
 ---
 # <a name="get-face-detection-data"></a>Получение данных обнаружения лиц
 
-В этом руководстве показано, как использовать обнаружение лиц для извлечения таких атрибутов, как Gender, Age или of a, из определенного изображения. Фрагменты кода в этом пошаговом окне написаны C# с помощью клиентской библиотеки Azure Cognitive Services API распознавания лиц. Те же функциональные возможности доступны в [REST API](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236).
+В этом руководстве показано, как использовать обнаружение лиц для извлечения таких атрибутов, как Gender, Age или of a, из определенного изображения. Фрагменты кода в этом пошаговом окне написаны C# с помощью клиентской библиотеки Azure Cognitive Services Face. Те же функциональные возможности доступны в [REST API](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236).
 
 В этом учебнике показано, как:
 

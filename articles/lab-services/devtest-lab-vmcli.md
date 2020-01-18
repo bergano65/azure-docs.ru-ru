@@ -1,5 +1,5 @@
 ---
-title: Создание виртуальных машин и управление ими в DevTest Labs с помощью Azure CLI | Документация Майкрософт
+title: Создание виртуальных машин и управление ими в DevTest Labs с помощью Azure CLI
 description: Узнайте, как использовать Azure DevTest Labs для создания виртуальных машин и управления ими с помощью Azure CLI
 services: devtest-lab,virtual-machines,lab-services
 documentationcenter: na
@@ -11,14 +11,14 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 09/06/2019
+ms.date: 01/16/2020
 ms.author: spelluru
-ms.openlocfilehash: 7a089eae935fe5ecbf3dd2836d86912d0c63ef84
-ms.sourcegitcommit: a4b5d31b113f520fcd43624dd57be677d10fc1c0
+ms.openlocfilehash: d3cd104e36cb407e9b1b833335869cac2c69d0ec
+ms.sourcegitcommit: d29e7d0235dc9650ac2b6f2ff78a3625c491bbbf
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70773103"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76167055"
 ---
 # <a name="create-and-manage-virtual-machines-with-devtest-labs-using-the-azure-cli"></a>Создание виртуальных машин и управление ими с DevTest Labs с использованием Azure CLI
 Это краткое руководство поможет вам создать, запустить, подключить, обновить и очистить компьютер разработки в лаборатории. 
@@ -30,7 +30,7 @@ ms.locfileid: "70773103"
 * [Установка Azure CLI](/cli/azure/install-azure-cli). Перед началом выполните команду az login, чтобы создать подключение к Azure. 
 
 ## <a name="create-and-verify-the-virtual-machine"></a>Создание и проверка виртуальной машины 
-Перед выполнением команд, связанных с DevTest Labs, настройте соответствующий контекст Azure с помощью `az account set` команды:
+Перед выполнением команд, связанных с DevTest Labs, настройте соответствующий контекст Azure с помощью команды `az account set`:
 
 ```azurecli
 az account set --subscription 11111111-1111-1111-1111-111111111111
@@ -61,7 +61,7 @@ az lab vm create --lab-name sampleLabName --resource-group sampleLabResourceGrou
 Вы также можете создавать виртуальные машины на основе формул, присвоив параметру **Image-Type** значение **Формула**. Если необходимо выбрать определенную виртуальную сеть для виртуальной машины, используйте параметры **vnet-Name** и **Subnet** . Дополнительные сведения см. в статье [AZ Lab VM Create](/cli/azure/lab/vm#az-lab-vm-create).
 
 ## <a name="verify-that-the-vm-is-available"></a>Убедитесь, что виртуальная машина доступна.
-`az lab vm show` Используйте команду, чтобы убедиться, что виртуальная машина доступна перед запуском и подключением к ней. 
+Используйте команду `az lab vm show`, чтобы убедиться, что виртуальная машина доступна перед запуском и подключением к ней. 
 
 ```azurecli
 az lab vm show --lab-name sampleLabName --name sampleVMName --resource-group sampleResourceGroup --expand 'properties($expand=ComputeVm,NetworkInterface)' --query '{status: computeVm.statuses[0].displayStatus, fqdn: fqdn, ipAddress: networkInterface.publicIpAddress}'
@@ -81,7 +81,7 @@ az lab vm show --lab-name sampleLabName --name sampleVMName --resource-group sam
 az lab vm start --lab-name sampleLabName --name sampleVMName --resource-group sampleLabResourceGroup
 ```
 
-Подключение к виртуальной машине: [SSH](../virtual-machines/linux/mac-create-ssh-keys.md) или [Удаленный рабочий стол](../virtual-machines/windows/connect-logon.md).
+Подключитесь к виртуальной машине по протоколу [SSH](../virtual-machines/linux/mac-create-ssh-keys.md) или через [удаленный рабочий стол](../virtual-machines/windows/connect-logon.md).
 ```bash
 ssh userName@ipAddressOrfqdn 
 ```
@@ -127,19 +127,19 @@ az lab vm apply-artifacts --lab-name  sampleLabName --name sampleVMName  --resou
 
 Чтобы получить список артефактов, доступных в виртуальной машине в лаборатории, выполните следующие команды.
 
-**Cloud Shell-PowerShell**: Обратите внимание на использование обратной кавычки (\`) перед $ in $Expand (т. е. ' $Expand):
+**Cloud Shell-PowerShell**: Обратите внимание на использование обратного импульса (\`) перед $ in $Expand (т. е. $Expand):
 
 ```azurecli-interactive
 az lab vm show --resource-group <resourcegroupname> --lab-name <labname> --name <vmname> --expand "properties(`$expand=artifacts)" --query "artifacts[].{artifactId: artifactId, status: status}"
 ```
 
-**Cloud Shell-Bash**: Обратите внимание на использование символа косой\\черты () перед $ в команде. 
+**Cloud Shell-Bash**: Обратите внимание на использование символа косой черты (\\) перед $ в команде. 
 
 ```azurecli-interactive
 az lab vm show --resource-group <resourcegroupname> --lab-name <labname> --name <vmname> --expand "properties(\$expand=artifacts)" --query "artifacts[].{artifactId: artifactId, status: status}"
 ```
 
-Пример выходных данных: 
+Образец вывода: 
 
 ```json
 [
@@ -162,5 +162,5 @@ az lab vm stop --lab-name sampleLabName --name sampleVMName --resource-group sam
 az lab vm delete --lab-name sampleLabName --name sampleVMName --resource-group sampleResourceGroup
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 См. следующее содержимое: [Azure CLI документация для Azure DevTest Labs](/cli/azure/lab?view=azure-cli-latest). 
