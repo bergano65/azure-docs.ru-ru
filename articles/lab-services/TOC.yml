@@ -66,8 +66,6 @@
           href: enable-browser-connection-lab-virtual-machines.md
         - name: Настройка управления затратами
           href: devtest-lab-configure-cost-management.md
-        - name: Отправка уведомлений об автоматическом завершении работы
-          href: devtest-lab-auto-shutdown.md
         - name: Настройка автозапуска для виртуальных машин лаборатории
           href: devtest-lab-auto-startup-vm.md
         - name: Масштабирование лаборатории
@@ -124,8 +122,8 @@
           href: devtest-lab-resize-vm.md
         - name: Повторное развертывание виртуальной машины
           href: devtest-lab-redeploy-vm.md
-        - name: Настройка автозавершения работы виртуальной машины
-          href: devtest-lab-auto-shutdown-vm.md
+        - name: Настройка автоматического завершения работы виртуальных машин для вычислений и лаборатории
+          href: devtest-lab-auto-shutdown.md
         - name: Создание запрашиваемых виртуальных машин и управление ими
           href: devtest-lab-add-claimable-vm.md
         - name: Настройка секретов

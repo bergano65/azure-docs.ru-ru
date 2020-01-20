@@ -63,6 +63,8 @@
           href: container-instances-encrypt-data.md
         - name: Развертывание на выделенных узлах
           href: container-instances-dedicated-hosts.md
+        - name: Использование соединителя для Logic Apps
+          href: ../connectors/connectors-create-api-container-instances.md?toc=/azure/container-instances/toc.json&bc=/azure/container-instances/breadcrumb/toc.json
     - name: Сценарии с контейнерами
       items:
         - name: Настройка политика перезапуска разовых задач

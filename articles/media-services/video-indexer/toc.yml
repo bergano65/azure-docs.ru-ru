@@ -45,7 +45,7 @@
       href: connect-to-azure.md
     - name: 'Управление учетной записью, подключенной к Azure'
       href: manage-account-connected-to-azure.md
-    - name: Отправка и индексация видео с помощью API
+    - name: Отправка и индексирование видео
       href: upload-index-videos.md
     - name: Анализ выходных данных Индексатора видео
       href: video-indexer-output-json-v2.md
@@ -85,7 +85,7 @@
               href: customize-language-model-with-website.md
             - name: Использование API Индексатора видео
               href: customize-language-model-with-api.md
-- name: Справочные материалы
+- name: Справочник
   items:
     - name: API Индексатора видео
       href: 'https://api-portal.videoindexer.ai/'
@@ -95,9 +95,9 @@
       href: 'https://azure.microsoft.com/roadmap/?category=web-mobile'
     - name: Цены
       href: 'https://azure.microsoft.com/pricing/details/media-services/'
-    - name: Доступ по регионам
+    - name: Доступность по регионам
       href: 'https://azure.microsoft.com/regions/services/'
-    - name: регионы
+    - name: Регионы
       href: regions.md
     - name: Часто задаваемые вопросы
       href: faq.md

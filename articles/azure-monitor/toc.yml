@@ -6,6 +6,8 @@
       href: overview.md
     - name: Изменения в терминологии
       href: terminology.md
+    - name: ВОПРОСЫ И ОТВЕТЫ
+      href: faq.md
 - name: Краткие руководства
   items:
     - name: Мониторинг ресурса Azure
@@ -113,14 +115,6 @@
       href: visualizations.md
     - name: Интеграция с партнерскими решениями
       href: platform/partners.md
-    - name: ВОПРОСЫ И ОТВЕТЫ
-      items:
-        - name: Log Analytics
-          displayName: FAQ
-          href: platform/log-faq.md
-        - name: Application Insights
-          displayName: FAQ
-          href: app/troubleshoot-faq.md
 - name: Практические руководства
   items:
     - name: Управление Azure Monitor
@@ -162,6 +156,8 @@
       items:
         - name: Обзор Application Insights
           href: app/app-insights-overview.md
+        - name: ВОПРОСЫ И ОТВЕТЫ
+          href: app/troubleshoot-faq.md
         - name: Мониторинг на основе кода
           items:
             - name: ASP.NET Core
@@ -535,6 +531,8 @@
           items:
             - name: Общие сведения об агентах
               href: platform/agents-overview.md
+            - name: ВОПРОСЫ И ОТВЕТЫ
+              href: 'faq.md#agents'
             - name: Расширение службы "Диагностика Azure"
               items:
                 - name: Обзор
@@ -633,7 +631,7 @@
             - name: Часто задаваемые вопросы об общедоступной версии
               href: insights/vminsights-ga-release-faq.md
             - name: ВОПРОСЫ И ОТВЕТЫ
-              href: insights/vminsights-faq.md
+              href: 'faq.md#azure-monitor-for-vms-preview'
             - name: Включение мониторинга
               items:
                 - name: Общие сведения о включении мониторинга
@@ -679,7 +677,7 @@
             - name: Обзор
               href: insights/container-insights-overview.md
             - name: ВОПРОСЫ И ОТВЕТЫ
-              href: insights/container-insights-faq.md
+              href: 'faq.md#azure-monitor-for-containers'
             - name: Включение мониторинга
               items:
                 - name: Общие сведения о включении мониторинга

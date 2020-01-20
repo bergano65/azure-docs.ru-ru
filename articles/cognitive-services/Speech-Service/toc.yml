@@ -232,48 +232,68 @@
       items:
         - name: Вопросы и ответы. Перевод речи
           href: 'https://www.microsoft.com/translator/faq.aspx'
-- name: Транскрибирование бесед
+- name: Сценарии бесед
   expanded: false
   items:
-    - name: Обзор
+    - name: Транскрибирование бесед
       items:
-        - name: Что такое транскрибирование бесед?
-          href: conversation-transcription.md
-    - name: Практические руководства
-      items:
-        - name: Транскрибирование бесед в реальном времени
-          href: how-to-use-conversation-transcription.md
-        - name: Асинхронное транскрибирование бесед
-          href: how-to-async-conversation-transcription.md
-    - name: Справочник
-      items:
-        - name: Пакет SDK для службы "Речь"
+        - name: Обзор
           items:
-            - name: C++
-              href: 'https://aka.ms/csspeech/cppref'
-              displayName: 'C++ SDK,C++ dev kit,reference,reference docs,ref documentation'
-            - name: 'C#'
-              href: 'https://aka.ms/csspeech/csharpref'
-              displayName: 'CSharp SDK,.NET SDK,C# SDK,C# dev kit,reference,reference docs,ref documentation'
-            - name: Java
-              href: 'https://aka.ms/csspeech/javaref'
-              displayName: 'Java SDK,Java dev kit,reference,reference docs,ref documentation'
-            - name: JavaScript
-              href: 'https://aka.ms/csspeech/javascriptref'
-              displayName: 'JS SDK,JavaScript SDK,JavaScript dev kit,reference,reference docs,ref documentation'
-            - name: Objective-C
-              href: 'https://aka.ms/csspeech/objectivecref'
-              displayName: 'Objective-C SDK,Objective-C dev kit,reference,reference docs,ref documentation'
-            - name: Python
-              href: 'https://aka.ms/csspeech/pythonref'
-              displayName: 'Python SDK,Python dev kit,reference,reference docs,ref documentation'
-            - name: Заметки о выпуске
-              href: releasenotes.md
-              displayName: 'release notes,updates,what''s new,what is new,changes'
-        - name: Интерфейсы REST API
+            - name: Что такое транскрибирование бесед?
+              href: conversation-transcription.md
+        - name: Практические руководства
           items:
-            - name: Интерфейсы REST API для транскрибирования бесед
-              href: 'https://signature.centralus.cts.speech.microsoft.com/UI/index.html'
+            - name: Транскрибирование бесед в реальном времени
+              href: how-to-use-conversation-transcription.md
+            - name: Асинхронное транскрибирование бесед
+              href: how-to-async-conversation-transcription.md
+        - name: Справочник
+          items:
+            - name: Пакет SDK для службы "Речь"
+              items:
+                - name: C++
+                  href: 'https://aka.ms/csspeech/cppref'
+                  displayName: 'C++ SDK,C++ dev kit,reference,reference docs,ref documentation'
+                - name: 'C#'
+                  href: 'https://aka.ms/csspeech/csharpref'
+                  displayName: 'CSharp SDK,.NET SDK,C# SDK,C# dev kit,reference,reference docs,ref documentation'
+                - name: Java
+                  href: 'https://aka.ms/csspeech/javaref'
+                  displayName: 'Java SDK,Java dev kit,reference,reference docs,ref documentation'
+                - name: JavaScript
+                  href: 'https://aka.ms/csspeech/javascriptref'
+                  displayName: 'JS SDK,JavaScript SDK,JavaScript dev kit,reference,reference docs,ref documentation'
+                - name: Objective-C
+                  href: 'https://aka.ms/csspeech/objectivecref'
+                  displayName: 'Objective-C SDK,Objective-C dev kit,reference,reference docs,ref documentation'
+                - name: Python
+                  href: 'https://aka.ms/csspeech/pythonref'
+                  displayName: 'Python SDK,Python dev kit,reference,reference docs,ref documentation'
+                - name: Заметки о выпуске
+                  href: releasenotes.md
+                  displayName: 'release notes,updates,what''s new,what is new,changes'
+            - name: Интерфейсы REST API
+              items:
+                - name: Интерфейсы REST API для транскрибирования бесед
+                  href: 'https://signature.centralus.cts.speech.microsoft.com/UI/index.html'
+    - name: Ведение беседы с использованием нескольких устройств
+      items:
+        - name: Обзор
+          items:
+            - name: Что такое беседа с использованием нескольких устройств?
+              href: multi-device-conversation.md
+        - name: Краткие руководства
+          items:
+            - name: Начало беседы и присоединение к ней
+              href: quickstarts/multi-device-conversation.md
+        - name: Справочник
+          items:
+            - name: Пакет SDK для службы "Речь"
+              items:
+                - name: C++
+                  href: 'https://aka.ms/csspeech/cppref'
+                - name: 'C#'
+                  href: 'https://aka.ms/csspeech/csharpref'
 - name: Голосовые помощники
   expanded: false
   items:

@@ -54,7 +54,7 @@
       href: spring-cloud-service-registration.md
     - name: Анализ журналов и метрик приложений
       href: diagnostic-services.md
-    - name: Выполнение потоковой передачи журналов Azure Spring Cloud для обеспечения мгновенной доступности
+    - name: Потоковая передача журналов приложения в Azure Spring Cloud в реальном времени
       href: spring-cloud-howto-log-streaming.md
     - name: Автоматизация конвейера CI/CD в Azure Spring Cloud
       href: spring-cloud-howto-cicd.md

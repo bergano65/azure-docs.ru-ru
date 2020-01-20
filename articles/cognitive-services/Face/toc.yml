@@ -1,9 +1,9 @@
-- name: Документация по API Распознавания лиц
+- name: Документация по службе "Распознавание лиц"
   href: index.yml
 - name: Обзор
   expanded: true
   items:
-    - name: Что такое API Распознавания лиц?
+    - name: Что представляет собой служба "Распознавание лиц"?
       href: Overview.md
 - name: Краткие руководства
   items:
@@ -77,7 +77,7 @@
           href: face-resource-container-config.md
         - name: Использование экземпляров контейнеров
           href: Face-API-How-to-Topics/deploy-face-container-on-container-instances.md
-    - name: Использование подключенной службы API Распознавания лиц
+    - name: Использование подключенной службы "Распознавание лиц"
       href: vs-face-connected-service.md
 - name: Справочник
   items:
@@ -101,7 +101,7 @@
   items:
     - name: Примеры
       items:
-        - name: Примеры API Распознавания лиц
+        - name: Примеры для службы "Распознавание лиц"
           href: 'https://docs.microsoft.com/samples/browse/?products=azure&term=face'
     - name: Цены и ограничения
       href: 'https://azure.microsoft.com/pricing/details/cognitive-services/face-api'

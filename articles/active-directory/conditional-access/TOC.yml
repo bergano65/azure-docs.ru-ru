@@ -19,6 +19,8 @@
       href: concept-conditional-access-policy-common.md
     - name: Компоненты политики условного доступа
       href: concept-conditional-access-policies.md
+    - name: Облачные приложения и действия
+      href: concept-conditional-access-cloud-apps.md
     - name: Условия
       href: conditions.md
     - name: Условия расположения
@@ -35,7 +37,7 @@
       href: policy-migration.md
     - name: Базовые политики защиты
       href: concept-baseline-protection.md
-- name: Руководства
+- name: Практические руководства
   expanded: true
   items:
     - name: Планирование развертывания политики условного доступа
@@ -82,7 +84,7 @@
       items:
         - name: Устранение неполадок с помощью средства What If
           href: troubleshoot-conditional-access-what-if.md
-- name: Справочные материалы
+- name: Справочник
   items:
     - name: Технический справочник
       href: technical-reference.md
