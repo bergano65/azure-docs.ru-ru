@@ -173,8 +173,6 @@
           href: security-center-investigation.md
         - name: Управление пользовательскими данными исследования
           href: security-center-investigation-user-data.md
-        - name: Сборники схем в Logic Apps
-          href: security-center-playbooks.md
         - name: Планирование и эксплуатация
           href: security-center-planning-and-operations-guide.md
 - name: Справочник
