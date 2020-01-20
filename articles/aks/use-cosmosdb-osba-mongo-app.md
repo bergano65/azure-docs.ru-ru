@@ -1,25 +1,23 @@
 ---
 title: Интеграция имеющихся приложений с MongoDB с помощью API для MongoDB в Azure Cosmos DB и открытого компонента Service Broker для Azure (OSBA)
 description: Из этой статьи вы узнаете, как интегрировать имеющееся приложение Java и MongoDB с помощью API для MongoDB в Azure Cosmos DB и открытого компонента Service Broker для Azure (OSBA).
-services: azure-dev-spaces
 author: zr-msft
-manager: jeconnoc
 ms.service: azure-dev-spaces
-ms.topic: article
+ms.topic: conceptual
 ms.date: 01/25/2019
 ms.author: zarhoads
 ms.custom: mvc
 keywords: Cosmos DB, открытый компонент Service Broker, открытый компонент Service Broker для Azure
-ms.openlocfilehash: 46fa5564e5dd3429f812b263295044d867a8511c
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 3d0ab0b27d77e45d779227d30c5a8e4f824ba62a
+ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61028422"
+ms.lasthandoff: 01/19/2020
+ms.locfileid: "76277703"
 ---
 # <a name="integrate-existing-mongodb-application-with-azure-cosmos-db-api-for-mongodb-and-open-service-broker-for-azure-osba"></a>Интеграция имеющихся приложений с MongoDB с помощью API для MongoDB в Azure Cosmos DB и открытого компонента Service Broker для Azure (OSBA)
 
-Azure Cosmos DB — это многомодельная глобально распределенная служба баз данных. Она также обеспечивает совместимость проводного протокола с несколькими API-интерфейсами NoSQL, в том числе для MongoDB. API-интерфейс Cosmos DB для MongoDB позволяет использовать Cosmos DB с имеющимся приложением MongoDB без необходимости изменения драйверов в целях реализации базы данных приложения. Кроме того, можно предоставить службу Cosmos DB с помощью открытого компонента Service Broker для Azure.
+Azure Cosmos DB — это многомодельная, глобально распределенная служба баз данных. Она также обеспечивает совместимость проводного протокола с несколькими API-интерфейсами NoSQL, в том числе для MongoDB. API-интерфейс Cosmos DB для MongoDB позволяет использовать Cosmos DB с имеющимся приложением MongoDB без необходимости изменения драйверов в целях реализации базы данных приложения. Кроме того, можно предоставить службу Cosmos DB с помощью открытого компонента Service Broker для Azure.
 
 В этой статье вам потребуется имеющееся приложение Java, которое использует базу данных MongoDB. Вы обновите его для использования базы данных Cosmos DB с помощью открытого компонента Service Broker для Azure.
 
@@ -189,7 +187,7 @@ java -jar -Dspring.profiles.active=mongodb build/libs/spring-music-1.0.jar
 
 ## <a name="run-your-application-on-your-aks-cluster"></a>Запуск приложения в кластере AKS
 
-Чтобы развернуть приложение в кластере AKS, можно использовать [Azure Dev Spaces](../dev-spaces/azure-dev-spaces.md). Azure позволяет разработки пробелы и создают различные элементы, такие как файлы Dockerfile и Helm диаграммы, развертывание и запуск приложения в AKS.
+Чтобы развернуть приложение в кластере AKS, можно использовать [Azure Dev Spaces](../dev-spaces/azure-dev-spaces.md). Azure Dev Spaces помогает создавать артефакты, такие как диаграммы файлы dockerfile и Helm, а также развертывать и запускать приложения в AKS.
 
 Чтобы включить Azure Dev Spaces в кластере AKS:
 

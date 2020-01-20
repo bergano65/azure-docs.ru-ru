@@ -1,20 +1,18 @@
 ---
 title: Мониторинг кластера Azure Kubernetes с помощью Operations Management (не рекомендуется)
 description: Мониторинг кластера Kubernetes в Службе контейнеров Azure с помощью Log Analytics
-services: container-service
 author: bburns
-manager: jeconnoc
 ms.service: container-service
-ms.topic: article
+ms.topic: conceptual
 ms.date: 12/09/2016
 ms.author: bburns
 ms.custom: mvc
-ms.openlocfilehash: d7370fc14a5ede23744e04ac9d35140f2368e21f
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 3cb500d2f00d6657420d7f294a7318b339e1f81e
+ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60711800"
+ms.lasthandoff: 01/19/2020
+ms.locfileid: "76271073"
 ---
 # <a name="deprecated-monitor-an-azure-container-service-cluster-with-log-analytics"></a>Мониторинг кластера службы контейнеров Azure с помощью Log Analytics (не рекомендуется)
 
@@ -62,7 +60,7 @@ az acs kubernetes get-credentials --resource-group=$RESOURCE_GROUP --name=$CLUST
 
 ## <a name="monitoring-containers-with-log-analytics"></a>Мониторинг контейнеров с помощью Log Analytics
 
-Log Analytics — это облачное решение Майкрософт для управления ИТ-средой, которое помогает управлять локальной и облачной инфраструктурой и защищать ее. В Log Analytics реализовано решение для контейнеров, которое помогает просматривать сведения, касающиеся инвентаризации и производительности контейнеров, а также соответствующие журналы в одном расположении. Оно позволяет выполнять аудит и устранять неполадки контейнеров, просматривая журналы в централизованном расположении, а также находить контейнеры с высоким уровнем потребления ресурсов на узле.
+Log Analytics — это облачное решение Майкрософт для управления ИТ-средой, которое помогает управлять локальной и облачной инфраструктурой и защищать ее. Решение "контейнер" — это решение в Log Analytics, которое помогает просматривать инвентаризацию, производительность и журналы в одном расположении контейнера. Оно позволяет выполнять аудит и устранять неполадки контейнеров, просматривая журналы в централизованном расположении, а также находить контейнеры с высоким уровнем потребления ресурсов на узле.
 
 ![](media/container-service-monitoring-oms/image1.png)
 
@@ -93,7 +91,7 @@ $ kubectl create -f oms-daemonset.yaml
 
 - Скопируйте скрипт, файл шаблона секретов и YAML-файл DaemonSet (из [репозитория](https://github.com/Microsoft/OMS-docker/tree/master/Kubernetes)) и убедитесь, что они находятся в одном и том же каталоге.
   - Сценарий создания секретов — secret-gen.sh.
-  - Шаблон секретов — secret-template.yaml.
+  - Шаблон секретов — secret-template.yaml
     - YAML-файл DaemonSet — omsagent-ds-secrets.yaml.
 - Выполните скрипт. Сценарий будет запрашивать идентификатор и первичный ключ рабочей области Log Analytics. Вставьте их, и скрипт создаст YAML-файл секрета, который можно запустить.
   ```
@@ -123,7 +121,7 @@ $ kubectl create -f oms-daemonset.yaml
   KEY:    88 bytes
   ```
 
-  - Создайте набор daemon-set omsagent, выполнив команду ```kubectl create -f omsagent-ds-secrets.yaml```
+  - Создание свой набор daemon-set omsagent, выполнив команду ```kubectl create -f omsagent-ds-secrets.yaml```
 
 ### <a name="conclusion"></a>Заключение
 Вот и все! Через несколько минут можно будет увидеть, как в панель мониторинга Log Analytics поступает поток данных.

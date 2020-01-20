@@ -1,20 +1,18 @@
 ---
 title: Субъект-служба для кластера Azure Kubernetes (НЕ РЕКОМЕНДУЕТСЯ)
 description: Сведения о настройке субъекта-службы Azure Active Directory для кластера Kubernetes и управлении им в Службе контейнеров Azure.
-services: container-service
 author: iainfoulds
-manager: jeconnoc
 ms.service: container-service
 ms.topic: conceptual
 ms.date: 02/26/2018
 ms.author: iainfou
 ms.custom: mvc
-ms.openlocfilehash: 52ed101199126818abaddef47892e1f033eb3968
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 3126339a1eb8ff9c0ef34a330333635d3d0f6433
+ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60609136"
+ms.lasthandoff: 01/19/2020
+ms.locfileid: "76274368"
 ---
 # <a name="deprecated-set-up-an-azure-ad-service-principal-for-a-kubernetes-cluster-in-container-service"></a>Настройка субъекта-службы Azure AD для кластера Kubernetes в Службе контейнеров (НЕ РЕКОМЕНДУЕТСЯ)
 
@@ -33,11 +31,11 @@ ms.locfileid: "60609136"
 
 Вы можете использовать имеющийся субъект-службу Azure AD, который соответствует требованиям ниже, или создать другой.
 
-* **Область:** Группа ресурсов
+* **Область** — группа ресурсов.
 
-* **Роль:** Участник
+* **Роль** — участник.
 
-* **Секрет клиента:** нужно указать пароль. Сейчас субъект-службу нельзя использовать для проверки подлинности сертификата.
+* **Секрет клиента** — должен быть паролем. Сейчас субъект-службу нельзя использовать для проверки подлинности сертификата.
 
 > [!IMPORTANT]
 > Чтобы создать субъект-службу, вы должны иметь права на регистрацию приложения в клиенте Azure AD и назначение приложению роли в подписке Azure. Наличие этих разрешений можно [проверить на портале](../../active-directory/develop/howto-create-service-principal-portal.md#required-permissions).
@@ -80,7 +78,7 @@ az ad sp create-for-rbac --role="Contributor" --scopes="/subscriptions/<subscrip
 
 1. [Скачайте](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-acs-kubernetes/azuredeploy.parameters.json) файл параметров шаблона `azuredeploy.parameters.json` из репозитория GitHub.
 
-2. Чтобы указать субъект-службу, присвойте в файле значения параметрам `servicePrincipalClientId` и `servicePrincipalClientSecret`. (Также вам нужно присвоить собственные значения параметрам `dnsNamePrefix` и `sshRSAPublicKey`. Последний параметр — это открытый ключ SSH для доступа к кластеру.) Сохраните файл.
+2. Чтобы указать субъект-службу, присвойте в файле значения параметрам `servicePrincipalClientId` и `servicePrincipalClientSecret`. (Также вам нужно присвоить собственные значения параметрам `dnsNamePrefix` и `sshRSAPublicKey`. Последний — открытый ключ SSH для доступа к кластеру.) Сохраните файл.
 
     ![Передача параметров субъекта-службы](./media/container-service-kubernetes-service-principal/service-principal-params.png)
 
@@ -113,7 +111,7 @@ az acs create -n myClusterName -d myDNSPrefix -g myResourceGroup --generate-ssh-
 > Если учетная запись на имеет разрешений по подписке и разрешений Azure AD на создание субъекта-службы, команда вернет сообщение об ошибке, аналогичное следующему: `Insufficient privileges to complete the operation.`.
 >
 
-## <a name="additional-considerations"></a>Дополнительные замечания
+## <a name="additional-considerations"></a>Дополнительные сведения
 
 * Если у вас нет разрешений на создание субъекта-службы в подписке, обратитесь к администратору подписки или Azure AD для назначения необходимых разрешений или запросите субъект-службу для использования со Службой контейнеров Azure.
 

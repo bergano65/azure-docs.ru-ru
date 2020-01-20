@@ -1,49 +1,48 @@
 ---
-title: Создание клиента Azure AD для Azure Red Hat OpenShift | Документация Майкрософт
+title: Создание клиента Azure AD для Azure Red Hat OpenShift
 description: Вот как можно создать клиент Azure Active Directory (Azure AD) для размещения кластера Microsoft Azure Red Hat OpenShift.
 author: jimzim
 ms.author: jzim
 ms.service: container-service
-manager: jeconnoc
 ms.topic: conceptual
 ms.date: 05/13/2019
-ms.openlocfilehash: 560cdcf8a99a486c7f5177b675cff327c6fb6a41
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: ad03538cafcce9c1d660d0f2ac5eb3c6ae5f4f38
+ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66306448"
+ms.lasthandoff: 01/19/2020
+ms.locfileid: "76270448"
 ---
 # <a name="create-an-azure-ad-tenant-for-azure-red-hat-openshift"></a>Создание клиента Azure AD для Azure Red Hat OpenShift
 
-Требуется Microsoft Azure Red Hat OpenShift [Azure Active Directory (Azure AD)](https://docs.microsoft.com/azure/active-directory/develop/quickstart-create-new-tenant) клиента, в котором для создания кластера. Объект *клиента* — это выделенный экземпляр Azure AD, который разработчик организации или приложение получает при создании связи с корпорацией Майкрософт, оформите подписку Azure, Microsoft Intune или Microsoft 365. Каждый клиент Azure AD отличается, и отдельно от других Azure AD версии клиента и имеет свои собственные рабочие и удостоверения учебного заведения и регистрации приложений.
+Для Microsoft Azure Red Hat OpenShift требуется клиент [Azure Active Directory (Azure AD)](https://docs.microsoft.com/azure/active-directory/develop/quickstart-create-new-tenant) , в котором будет создан кластер. *Клиент* — это выделенный экземпляр Azure AD, который разработчик организации или приложения получает при создании связи с Майкрософт путем регистрации в Azure, Microsoft Intune или Microsoft 365. Каждый клиент Azure AD отличается от других клиентов Azure AD и имеет собственные рабочие и учебные удостоверения и регистрации приложений.
 
-Если у вас нет клиента Azure AD, выполните следующие действия для ее создания.
+Если у вас еще нет клиента Azure AD, следуйте этим инструкциям, чтобы создать его.
 
 ## <a name="create-a-new-azure-ad-tenant"></a>Создание нового клиента Azure AD
 
-Чтобы создать клиент:
+Чтобы создать клиент, выполните следующие действия.
 
-1. Войдите в [портала Azure](https://portal.azure.com/) с помощью учетной записи, вы хотите связать с кластером Azure Red Hat OpenShift.
-2. Откройте [колонки Azure Active Directory](https://portal.azure.com/#create/Microsoft.AzureActiveDirectory) для создания нового клиента (также известный как новый *Azure Active Directory*).
-3. Укажите **имя_организации**.
-4. Укажите **первоначальное доменное имя**. Это свойство будет иметь *onmicrosoft.com* добавленным к нему. Вы можете повторно использовать значение *имя_организации* здесь.
-5. Выберите страну или регион, где будет создан клиент.
+1. Войдите в [портал Azure](https://portal.azure.com/) с помощью учетной записи, которую вы хотите связать с кластером Azure Red Hat OpenShift.
+2. Откройте [колонку Azure Active Directory](https://portal.azure.com/#create/Microsoft.AzureActiveDirectory) , чтобы создать новый клиент (также известный как новый *Azure Active Directory*).
+3. Укажите **название организации**.
+4. Укажите **исходное доменное имя**. К нему будет добавлен *onmicrosoft.com* . Вы можете повторно использовать значение *имени Организации* здесь.
+5. Выберите страну или регион, в котором будет создан клиент.
 6. Нажмите кнопку **Создать**.
-7. После создания клиента Azure AD, выберите **щелкните здесь, чтобы управлять новым каталогом** ссылку. Новое имя клиента должно отображаться в правом верхнем углу портала Azure:  
+7. После создания клиента Azure AD выберите ссылку **щелкните здесь для управления ссылкой на новый каталог** . Новое имя клиента должно отображаться в правом верхнем углу портал Azure:  
 
-    ![Снимок экрана портала, на которой отображается имя клиента в правом верхнем углу][tenantcallout]  
+    ![Снимок экрана портала, отображающий имя клиента в верхнем правом углу][tenantcallout]  
 
-8. Запишите *идентификатор_клиента* , позже можно указать место для создания кластера Azure Red Hat OpenShift. На портале вы увидите колонку обзора Azure Active Directory для нового клиента. Выберите **свойства** и скопируйте значение для вашей **идентификатор каталога**. Мы будем называть это значение как `TENANT` в [создать кластер Azure Red Hat OpenShift](tutorial-create-cluster.md) руководства.
+8. Запишите *идентификатор клиента* , чтобы позднее указать, где можно создать кластер Azure Red Hat OpenShift. На портале отобразится колонка обзор Azure Active Directory для нового клиента. Выберите **Свойства** и скопируйте значение для **идентификатора каталога**. Мы будем называть это значение `TENANT` в учебнике [Создание кластера Azure Red Hat OpenShift](tutorial-create-cluster.md) .
 
 [tenantcallout]: ./media/howto-create-tenant/tenant-callout.png
 
 ## <a name="resources"></a>Ресурсы
 
-Ознакомьтесь с [документации Azure Active Directory](https://docs.microsoft.com/azure/active-directory/) Дополнительные сведения о [клиентов Azure AD](https://docs.microsoft.com/azure/active-directory/develop/quickstart-create-new-tenant).
+Дополнительные сведения о [клиентах Azure AD](https://docs.microsoft.com/azure/active-directory/develop/quickstart-create-new-tenant)см. в [Azure Active Directory документации](https://docs.microsoft.com/azure/active-directory/) .
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Узнайте, как создать субъект-службу, создать секрет и проверки подлинности обратного вызова URL-адрес клиента и создание нового пользователя Active Directory для тестирования приложений в кластере Azure Red Hat OpenShift.
+Узнайте, как создать субъект-службу, сгенерировать секрет клиента и URL обратного вызова проверки подлинности, а затем создать нового Active Directory пользователя для тестирования приложений в кластере Azure Red Hat OpenShift.
 
-[Создание объекта приложения Azure AD и пользователя](howto-aad-app-configuration.md)
+[Создание объекта приложения и пользователя Azure AD](howto-aad-app-configuration.md)

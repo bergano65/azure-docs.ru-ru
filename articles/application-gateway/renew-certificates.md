@@ -3,17 +3,16 @@ title: Обновление сертификата шлюза приложени
 description: Узнайте, как обновить сертификат, связанный с прослушивателем шлюза приложений.
 services: application-gateway
 author: vhorne
-manager: jpconnock
 ms.service: application-gateway
 ms.topic: article
 ms.date: 8/15/2018
 ms.author: victorh
-ms.openlocfilehash: 90200f7be6c71346441922365fc4439111dd8701
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: c7c27f00b9f8b4fdcd8f735f842edb8f66803c6a
+ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66133706"
+ms.lasthandoff: 01/19/2020
+ms.locfileid: "76277999"
 ---
 # <a name="renew-application-gateway-certificates"></a>Обновление сертификатов шлюза приложений
 
@@ -50,7 +49,7 @@ set-AzApplicationGatewaySSLCertificate -Name <oldcertname> `
 
 Set-AzApplicationGateway -ApplicationGateway $appgw
 ```
-## <a name="azure-cli"></a>Инфраструктура CLI Azure
+## <a name="azure-cli"></a>Интерфейс командной строки Azure
 
 ```azurecli-interactive
 az network application-gateway ssl-cert update \

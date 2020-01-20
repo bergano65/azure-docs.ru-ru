@@ -1,20 +1,18 @@
 ---
 title: Краткое руководство. Кластер Azure Docker CE для Linux (устаревшие материалы)
 description: Из этого краткого руководства вы узнаете, как создать кластер Docker CE для контейнеров Linux в службе контейнеров Azure при помощи Azure CLI.
-services: container-service
 author: iainfoulds
-manager: jeconnoc
 ms.service: container-service
-ms.topic: article
+ms.topic: conceptual
 ms.date: 07/16/2018
 ms.author: iainfou
 ms.custom: ''
-ms.openlocfilehash: a7a7455ce9167a9c480d317d50fdce49e2ef06a9
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 5f492dd2bd270d3f067c05c1dc2235d54e481847
+ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60721799"
+ms.lasthandoff: 01/19/2020
+ms.locfileid: "76274879"
 ---
 # <a name="deprecated-deploy-docker-ce-cluster"></a>Развертывание кластера Docker CE (устаревшие материалы)
 
@@ -30,7 +28,7 @@ ms.locfileid: "60721799"
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
-Создайте группу ресурсов с помощью команды [az group create](/cli/azure/group#az-group-create). Группа ресурсов Azure — это логическая группа, в которой выполняется развертывание и администрирование ресурсов Azure.
+Создайте группу ресурсов с помощью команды [az group create](/cli/azure/group#az-group-create). Группа ресурсов Azure — это логическая группа, в которой развертываются и управляются ресурсы Azure.
 
 В следующем примере создается группа ресурсов с именем *myResourceGroup* в расположении *westus2*.
 
@@ -65,7 +63,7 @@ az acs create --name mySwarmCluster --orchestrator-type dockerce --resource-grou
 
 В некоторых случаях, например при использовании ограниченной пробной версии, доступ подписки Azure к ресурсам Azure ограничен. Если происходит сбой развертывания из-за ограничения доступных ядер, уменьшите количество агентов по умолчанию, добавив `--agent-count 1` в команду [az acs create](/cli/azure/acs#az-acs-create). 
 
-Через несколько минут выполнение команды завершается и отображаются сведения о кластере в формате JSON.
+Через несколько минут команда завершается и возвращает сведения о кластере в формате JSON.
 
 ## <a name="connect-to-the-cluster"></a>Подключение к кластеру
 
@@ -106,7 +104,6 @@ export DOCKER_HOST=localhost:2374
 
 ```yaml
 version: '3'
-services:
   azure-vote-back:
     image: redis
     ports:
@@ -161,7 +158,7 @@ lg99i4hy68r9        azure-vote_azure-vote-back.1    redis:latest                
 az group delete --name myResourceGroup --yes --no-wait
 ```
 
-## <a name="get-the-code"></a>Получение кода
+## <a name="get-the-code"></a>Получить код
 
 В этом кратком руководстве для создания службы Docker используются предварительно созданные образы контейнеров. Связанный с приложением код, Dockerfile и файл Compose доступны на сайте GitHub.
 

@@ -3,17 +3,16 @@ title: Использование GPU в службе Azure Kubernetes (AKS)
 description: Узнайте, как использовать GPU для ресурсоемких вычислений или интенсивных графических рабочих нагрузок в Службе Azure Kubernetes (AKS).
 services: container-service
 author: zr-msft
-manager: jeconnoc
 ms.service: container-service
 ms.topic: article
 ms.date: 05/16/2019
 ms.author: zarhoads
-ms.openlocfilehash: e805ca87a34a6b50e9f799909efe8fcbe859883c
-ms.sourcegitcommit: 3e7646d60e0f3d68e4eff246b3c17711fb41eeda
+ms.openlocfilehash: a68bd124f323225062a86a3e1fc178d2fc089c5d
+ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70899466"
+ms.lasthandoff: 01/19/2020
+ms.locfileid: "76276009"
 ---
 # <a name="use-gpus-for-compute-intensive-workloads-on-azure-kubernetes-service-aks"></a>Использование процессоров GPU для интенсивных вычислительных рабочих нагрузок в Службе Azure Kubernetes (AKS)
 
@@ -40,7 +39,7 @@ ms.locfileid: "70899466"
 az group create --name myResourceGroup --location eastus
 ```
 
-Теперь создайте кластер AKS с помощью команды [AZ AKS Create][az-aks-create] . В следующем примере создается кластер с одним узлом размером `Standard_NC6`:
+Теперь создайте кластер AKS с помощью команды [AZ AKS Create][az-aks-create] . В следующем примере создается кластер с одним узлом размера `Standard_NC6`:
 
 ```azurecli-interactive
 az aks create \
@@ -223,7 +222,7 @@ kubectl apply -f samples-tf-mnist-demo.yaml
 
 ## <a name="view-the-status-and-output-of-the-gpu-enabled-workload"></a>Просмотр состояния и выходных данных рабочей нагрузки с поддержкой GPU
 
-Отслеживайте ход выполнения задания с помощью команды [kubectl Get Jobs][kubectl-get] с `--watch` аргументом. Извлечение изображения и последующая обработка набора данных может занять несколько минут. Когда в столбце *завершения* отображается *1/1*, задание успешно завершено. Выйдите из командыспомощьюклавишCTRL-`kubetctl --watch` C:
+Отслеживайте ход выполнения задания с помощью команды [kubectl Get Jobs][kubectl-get] с аргументом `--watch`. Извлечение изображения и последующая обработка набора данных может занять несколько минут. Когда в столбце *завершения* отображается *1/1*, задание успешно завершено. Выйдите из команды `kubetctl --watch` с помощью *клавиш CTRL + C*:
 
 ```console
 $ kubectl get jobs samples-tf-mnist-demo --watch
@@ -328,7 +327,7 @@ Adding run metadata for 499
 kubectl delete jobs samples-tf-mnist-demo
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Сведения о выполнении заданий Apache Spark см. в разделе [выполнение заданий Apache Spark в AKS][aks-spark].
 

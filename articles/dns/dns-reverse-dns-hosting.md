@@ -1,23 +1,18 @@
 ---
-title: Размещение зон обратного просмотра DNS в Azure DNS | Документация Майкрософт
+title: Размещение зон обратного просмотра DNS в Azure DNS
 description: Узнайте, как использовать Azure DNS, чтобы разместить зоны обратного просмотра DNS для диапазонов IP-адресов
-services: dns
-documentationcenter: na
 author: asudbring
-manager: jeconnoc
 ms.service: dns
-ms.devlang: na
-ms.topic: article
-ms.tgt_pltfrm: na
+ms.topic: conceptual
 ms.workload: infrastructure-services
 ms.date: 05/29/2017
 ms.author: allensu
-ms.openlocfilehash: aeefb523b401effe4dedb21a8284f296948bbef9
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: 6052934e15d6975265c9eded459eea4446c9eee1
+ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74211248"
+ms.lasthandoff: 01/19/2020
+ms.locfileid: "76277953"
 ---
 # <a name="host-reverse-dns-lookup-zones-in-azure-dns"></a>Размещение зон обратного просмотра DNS в Azure DNS
 
@@ -33,7 +28,7 @@ ms.locfileid: "74211248"
 
 ## <a name="create-a-reverse-lookup-dns-zone"></a>Создание зоны обратного просмотра DNS
 
-1. Войдите на [портале Azure](https://portal.azure.com).
+1. Войдите на [портал Azure](https://portal.azure.com).
 1. В **главном** меню выберите **Создать** > **Сети**, а затем выберите пункт **Зона DNS**.
 
    ![Выбор "зоны DNS"](./media/dns-reverse-dns-hosting/figure1.png)
@@ -245,7 +240,7 @@ Get-AzDnsRecordSet -ZoneName 0.0.0.0.c.d.b.a.8.b.d.0.1.0.0.2.ip6.arpa -ResourceG
     azure network dns record-set list -g MyResourceGroup -z 0.0.0.0.c.d.b.a.8.b.d.0.1.0.0.2.ip6.arpa
 ```
 
-## <a name="faq"></a>часто задаваемые вопросы
+## <a name="faq"></a>Часто задаваемые вопросы
 
 ### <a name="can-i-host-reverse-dns-lookup-zones-for-my-isp-assigned-ip-blocks-on-azure-dns"></a>Можно ли разместить зоны обратного просмотра DNS для блоков IP-адресов, назначенных поставщиком услуг Интернета, в DNS Azure?
 
@@ -267,7 +262,7 @@ Get-AzDnsRecordSet -ZoneName 0.0.0.0.c.d.b.a.8.b.d.0.1.0.0.2.ip6.arpa -ResourceG
 
 Дополнительные сведения см. в статье [Импорт и экспорт файла зоны DNS с помощью Azure CLI 1.0](dns-import-export.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения см. [в статье Википедии об обратном просмотре DNS](https://en.wikipedia.org/wiki/Reverse_DNS_lookup).
 <br>

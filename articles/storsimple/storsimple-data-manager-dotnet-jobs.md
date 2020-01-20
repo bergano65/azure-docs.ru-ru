@@ -1,27 +1,19 @@
 ---
-title: Запуск заданий диспетчера данных Microsoft Azure StorSimple с помощью пакета SDK для .NET | Документация Майкрософт
+title: Использование пакета SDK для .NET для Microsoft Azure StorSimple заданий Диспетчер данных
 description: Узнайте, как запускать задания диспетчера данных StorSimple с помощью пакета SDK для .NET
-services: storsimple
-documentationcenter: NA
 author: alkohli
-manager: jeconnoc
-editor: ''
-ms.assetid: ''
 ms.service: storsimple
-ms.devlang: NA
-ms.topic: article
-ms.tgt_pltfrm: NA
-ms.workload: TBD
+ms.topic: conceptual
 ms.date: 01/16/2018
 ms.author: alkohli
-ms.openlocfilehash: 80f01a926b94deebab59f8ef91bfc36a4600b5f0
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: b7cf1d3b9d4a9d751348c4792f904062b00ac104
+ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60632408"
+ms.lasthandoff: 01/19/2020
+ms.locfileid: "76270726"
 ---
-# <a name="use-the-net-sdk-to-initiate-data-transformation"></a>Запуск преобразования данных с помощью пакета SDK .NET
+# <a name="use-the-net-sdk-to-initiate-data-transformation"></a>Запуск преобразования данных с помощью пакета SDK для .NET
 
 ## <a name="overview"></a>Обзор
 
@@ -29,7 +21,7 @@ ms.locfileid: "60632408"
 
 Задание преобразования данных можно запустить двумя способами:
 
-- Использование пакета SDK для .NET
+- Использование пакета .NET SDK
 - Использование модуля runbook службы автоматизации Azure.
  
   В статье содержится подробная информация по созданию примера консольного приложения .NET для запуска задания преобразования данных и отслеживания его завершения. Дополнительные сведения о том, как запустить преобразование данных через службу автоматизации, можно узнать из статьи [Активация задания с помощью службы автоматизации Azure (закрытая предварительная версия)](storsimple-data-manager-job-using-automation.md).
@@ -76,7 +68,7 @@ ms.locfileid: "60632408"
     2. Выберите **Установленные > Шаблоны > Visual C# > Консольное приложение**.
     3. В поле **Имя** введите **DataTransformationApp**.
     4. В поле **Расположение** выберите **C:\DataTransformation**.
-    6. Нажмите кнопку **ОК** , чтобы создать проект.
+    6. Чтобы создать проект, нажмите кнопку **ОК** .
 
         ![Создание проекта 2](media/storsimple-data-manager-dotnet-jobs/create-new-project-1.png)
 

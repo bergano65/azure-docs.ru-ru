@@ -1,26 +1,18 @@
 ---
-title: Завершение уведомления для экземпляров масштабируемых наборов виртуальных машин Azure | Документация Майкрософт
+title: Завершение уведомления для экземпляров масштабируемых наборов виртуальных машин Azure
 description: Узнайте, как включить уведомление об увольнении для экземпляров масштабируемых наборов виртуальных машин Azure.
-services: virtual-machine-scale-sets
-documentationcenter: ''
 author: shandilvarun
-manager: drewm
-editor: ''
 tags: azure-resource-manager
-ms.assetid: ''
 ms.service: virtual-machine-scale-sets
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.date: 08/27/2019
 ms.author: vashan
-ms.openlocfilehash: d3d7f92b3803114321bc7420b5c4ba059aabcb9d
-ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
+ms.openlocfilehash: a1b1e07fa0622ae25d8086ec65827816ec52a5ce
+ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74705927"
+ms.lasthandoff: 01/19/2020
+ms.locfileid: "76271755"
 ---
 # <a name="terminate-notification-for-azure-virtual-machine-scale-set-instances-preview"></a>Завершение уведомления для экземпляров масштабируемых наборов виртуальных машин Azure (Предварительная версия)
 Экземпляры масштабируемых наборов могут использовать для получения уведомлений об увольнении экземпляра и задать предопределенное время ожидания задержки для операции завершения. Уведомление об увольнении отправляется через службу метаданных Azure — [запланированные события](../virtual-machines/windows/scheduled-events.md), которая предоставляет уведомления для и задержки таких операций, как перезагрузка и повторное развертывание. Решение предварительной версии добавляет еще одно событие — завершение — в список Запланированные события, а связанная задержка события завершения будет зависеть от предельной задержки, заданной пользователями в конфигурации модели масштабируемого набора.
@@ -35,7 +27,7 @@ ms.locfileid: "74705927"
 ## <a name="enable-terminate-notifications"></a>Включить уведомления о прекращении
 Существует несколько способов включения уведомлений об увольнении в экземплярах масштабируемого набора, как описано в примерах ниже.
 
-### <a name="rest-api"></a>REST API
+### <a name="rest-api"></a>REST API
 
 В следующем примере включается уведомление о завершении для модели масштабируемого набора.
 

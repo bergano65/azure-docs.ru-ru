@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: Dawgfan
 ms.author: mmcc
 ms.date: 09/20/2019
-ms.openlocfilehash: 83b167baa29a54e53f7fe8bdb7b7e5c88bc3eddf
-ms.sourcegitcommit: 2a2af81e79a47510e7dea2efb9a8efb616da41f0
+ms.openlocfilehash: c98feda62b7e5de5551b02d6189a1142ca8c5f88
+ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76264090"
+ms.lasthandoff: 01/19/2020
+ms.locfileid: "76276780"
 ---
 # <a name="application-insights-for-web-pages"></a>Application Insights для веб-страниц
 
@@ -29,7 +29,7 @@ Application Insights можно использовать с любыми веб-
     * [Фрагмент кода JavaScript](#snippet-based-setup)
 
 > [!IMPORTANT]
-> > Для добавления пакета SDK для JavaScript в приложение используйте только один метод. Если вы используете программу установки NPM, не используйте фрагмент и наоборот.
+> Для добавления пакета SDK для JavaScript в приложение используйте только один метод. Если вы используете программу установки NPM, не используйте фрагмент и наоборот.
 
 > [!NOTE]
 > Программа установки NPM устанавливает пакет SDK для JavaScript как зависимость от проекта, позволяя использовать IntelliSense, в то время как фрагмент кода извлекает пакет SDK во время выполнения. Обе поддерживают одни и те же функции. Однако разработчики, которым требуется больше пользовательских событий и конфигурации, обычно заNPM настройку, тогда как пользователи хотят быстро включить готовый веб-анализ.

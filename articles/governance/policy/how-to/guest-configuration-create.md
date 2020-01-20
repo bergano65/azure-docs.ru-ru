@@ -3,12 +3,12 @@ title: Создание политик конфигурации гостя
 description: Узнайте, как создать политику гостевой конфигурации политики Azure для виртуальных машин Windows или Linux с Azure PowerShell.
 ms.date: 12/16/2019
 ms.topic: how-to
-ms.openlocfilehash: dbdb4288812b8d1016c3ccc879582f76222d17cd
-ms.sourcegitcommit: 12a26f6682bfd1e264268b5d866547358728cd9a
+ms.openlocfilehash: 7a6c6bb68302d41cd750c59062432a40cf01e8bd
+ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75867336"
+ms.lasthandoff: 01/19/2020
+ms.locfileid: "76278459"
 ---
 # <a name="how-to-create-guest-configuration-policies"></a>Создание политик конфигурации гостя
 
@@ -176,42 +176,6 @@ New-GuestConfigurationPackage -Name '{PackageName}' -Configuration '{PathToMOF}'
 
 Готовый пакет должен храниться в расположении, доступном для управляемых виртуальных машин. Примеры включают репозитории GitHub, репозиторий Azure или службу хранилища Azure. Если вы предпочитаете не делать этот пакет общедоступным, можно включить [маркер SAS](../../../storage/common/storage-dotnet-shared-access-signature-part-1.md) в URL-адрес.
 Вы также можете реализовать [конечную точку службы](../../../storage/common/storage-network-security.md#grant-access-from-a-virtual-network) для компьютеров в частной сети, хотя эта конфигурация применяется только к пакету и не взаимодействует со службой.
-
-### <a name="working-with-secrets-in-guest-configuration-packages"></a>Работа с секретами в пакетах конфигурации гостей
-
-В гостевой конфигурации политики Azure оптимальным способом управления секретами, используемыми во время выполнения, является хранение их в Azure Key Vault. Эта схема реализуется в пользовательских ресурсах DSC.
-
-1. Создание управляемого удостоверения, назначаемого пользователем в Azure.
-
-   Удостоверение используется компьютерами для доступа к секретам, хранящимся в Key Vault. Подробные инструкции см. [в разделе Создание, перечисление или удаление назначенного пользователем управляемого удостоверения с помощью Azure PowerShell](../../../active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-powershell.md).
-
-1. Создайте экземпляр Key Vault.
-
-   Подробные инструкции см. [в разделе Установка и получение секрета в PowerShell](../../../key-vault/quick-create-powershell.md).
-   Назначьте разрешения для экземпляра, чтобы предоставить назначенному пользователю доступ к секретам, хранящимся в Key Vault. Подробные инструкции см. [в разделе Установка и получение секретного кода — .NET](../../../key-vault/quick-create-net.md#give-the-service-principal-access-to-your-key-vault).
-
-1. Назначьте компьютеру удостоверение, назначенное пользователем.
-
-   Подробные инструкции см. [в статье Настройка управляемых удостоверений для ресурсов Azure на виртуальной машине Azure с помощью PowerShell](../../../active-directory/managed-identities-azure-resources/qs-configure-powershell-windows-vm.md#user-assigned-managed-identity).
-   Назначьте это удостоверение, используя Azure Resource Manager через политику Azure в масштабе. Подробные инструкции см. в статье [Настройка управляемых удостоверений для ресурсов Azure на виртуальной машине Azure с помощью шаблона](../../../active-directory/managed-identities-azure-resources/qs-configure-template-windows-vm.md#assign-a-user-assigned-managed-identity-to-an-azure-vm).
-
-1. Используйте идентификатор клиента, созданный выше в настраиваемом ресурсе, чтобы получить доступ к Key Vault с помощью маркера, доступного на компьютере.
-
-   `client_id` и URL-адрес экземпляра Key Vault можно передать в ресурс в качестве [свойств](/powershell/scripting/dsc/resources/authoringresourcemof#creating-the-mof-schema), чтобы ресурс не обновлялся для нескольких сред или если значения необходимо изменить.
-
-Следующий пример кода можно использовать в настраиваемом ресурсе для получения секретов из Key Vault с помощью назначенного пользователем удостоверения. Значение, возвращаемое из запроса в Key Vault, является обычным текстом. Рекомендуется хранить его в объекте учетных данных.
-
-```azurepowershell-interactive
-# the following values should be input as properties
-$client_id = 'e3a78c9b-4dd2-46e1-8bfa-88c0574697ce'
-$keyvault_url = 'https://keyvaultname.vault.azure.net/secrets/mysecret'
-
-$access_token = ((Invoke-WebRequest -Uri "http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&client_id=$client_id&resource=https%3A%2F%2Fvault.azure.net" -Method GET -Headers @{Metadata='true'}).Content | ConvertFrom-Json).access_token
-
-$value = ((Invoke-WebRequest -Uri $($keyvault_url+'?api-version=2016-10-01') -Method GET -Headers @{Authorization="Bearer $access_token"}).content | convertfrom-json).value |  ConvertTo-SecureString -asplaintext -force
-
-$credential = New-Object System.Management.Automation.PSCredential('secret',$value)
-```
 
 ## <a name="test-a-guest-configuration-package"></a>Тестирование пакета гостевой конфигурации
 

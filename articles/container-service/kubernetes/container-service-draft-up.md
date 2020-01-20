@@ -1,20 +1,18 @@
 ---
 title: (УСТАРЕЛО) Использование Draft со Службой контейнеров Azure и Реестром контейнеров Azure
 description: Создайте кластер ACS Kubernetes и реестр контейнеров Azure, чтобы создать свое первое приложение в Azure с помощью черновика.
-services: container-service
 author: squillace
-manager: jeconnoc
 ms.service: container-service
-ms.topic: article
+ms.topic: conceptual
 ms.date: 09/14/2017
 ms.author: rasquill
 ms.custom: mvc
-ms.openlocfilehash: fb34be09ec08957621517c957b3570cdbcfc0468
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 8d688d2918c9100019d033e93e9a3dca9e492de2
+ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60712676"
+ms.lasthandoff: 01/19/2020
+ms.locfileid: "76271136"
 ---
 # <a name="deprecated-use-draft-with-azure-container-service-and-azure-container-registry-to-build-and-deploy-an-application-to-kubernetes"></a>(УСТАРЕЛО) Использование Draft со Службой контейнеров Azure и Реестром контейнеров Azure для создания и развертывания приложения в Kubernetes
 
@@ -31,7 +29,7 @@ ms.locfileid: "60712676"
 ## <a name="create-an-azure-container-registry"></a>Создание реестра контейнеров Azure
 Вы можете легко [создать реестр контейнеров Azure](../../container-registry/container-registry-get-started-azure-cli.md). Для этого вам нужно выполнить следующее:
 
-1. Создайте группу ресурсов Azure для управления реестром ACR и кластером Kubernetes в ACS.
+1. Создайте группу ресурсов Azure для управления реестром записей контроля доступа и кластером Kubernetes в ACS.
       ```azurecli
       az group create --name draft --location eastus
       ```
@@ -204,7 +202,7 @@ kubernetes                    10.0.0.1       <none>          443/TCP            
 
 ### <a name="map-the-ingress-ip-to-a-custom-subdomain"></a>Сопоставление пользовательского поддомена с входящим IP-адресом
 
-Черновик создает выпуск для каждого чарта Helm, который он создает, в каждом приложении, над которым вы работаете. Каждый выпуск получает автоматически сформированное имя, которое используется **черновиком** в качестве _поддомена_ поверх корневого _домена развертывания_, которым вы управляете. (В этом примере в качестве домена развертывания мы используем `squillace.io`.) Чтобы включить этот режим поддомена, вы должны создать запись А для `'*.draft'` в записях DNS для домена развертывания, чтобы каждый автоматически сформированный поддомен направлялся во входящий контроллер кластера Kubernetes. 
+Черновик создает выпуск для каждого чарта Helm, который он создает, в каждом приложении, над которым вы работаете. Каждый выпуск получает автоматически сформированное имя, которое используется **черновиком** в качестве _поддомена_ поверх корневого _домена развертывания_, которым вы управляете. (В этом примере мы используем `squillace.io` в качестве домена развертывания.) Чтобы включить это поведение поддомена, необходимо создать запись A для `'*.draft'` в записях DNS для домена развертывания, чтобы каждый созданный поддомен направлялся на контроллер входящего трафика кластера Kubernetes. 
 
 Поставщики домена самостоятельно назначают DNS-серверы. Чтобы [делегировать назначение имен серверов домена службе Azure DNS](../../dns/dns-delegate-domain-azure-dns.md), сделайте следующее:
 

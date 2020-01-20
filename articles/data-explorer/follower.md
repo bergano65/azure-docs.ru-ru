@@ -7,12 +7,12 @@ ms.reviewer: gabilehner
 ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 11/07/2019
-ms.openlocfilehash: b4e09bf84d78c88d3625b0f6b478746db09cc2d8
-ms.sourcegitcommit: dbcc4569fde1bebb9df0a3ab6d4d3ff7f806d486
+ms.openlocfilehash: 41d48bdd7cc7972536d0cf0e0cb78483f727d7f2
+ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76030066"
+ms.lasthandoff: 01/19/2020
+ms.locfileid: "76277017"
 ---
 # <a name="use-follower-database-to-attach-databases-in-azure-data-explorer"></a>Использование базы данных следующих служб для присоединения баз данных в Azure обозреватель данных
 
@@ -127,7 +127,7 @@ poller = kusto_management_client.attached_database_configurations.create_or_upda
 
 ### <a name="attach-a-database-using-an-azure-resource-manager-template"></a>Присоединение базы данных с помощью шаблона Azure Resource Manager
 
-В этом разделе вы узнаете, как создать следующий кластер и присоединить к нему базу данных с помощью [шаблона Azure Resource Manager](../azure-resource-manager/management/overview.md). Если у вас уже есть кластер, удалите ресурс `Microsoft.Kusto/clusters` из списка ресурсов ниже.
+В этом разделе вы узнаете, как присоединить базу данных к существующей кластеру с помощью [шаблона Azure Resource Manager](../azure-resource-manager/management/overview.md). 
 
 ```json
 {
@@ -138,7 +138,7 @@ poller = kusto_management_client.attached_database_configurations.create_or_upda
             "type": "string",
             "defaultValue": "",
             "metadata": {
-                "description": "Name of the follower cluster."
+                "description": "Name of the cluster to which the database will be attached."
             }
         },
         "attachedDatabaseConfigurationsName": {
@@ -180,17 +180,6 @@ poller = kusto_management_client.attached_database_configurations.create_or_upda
     "variables": {},
     "resources": [
         {
-            "name": "[parameters('followerClusterName')]",
-            "type": "Microsoft.Kusto/clusters",
-            "sku": {
-                "name": "Standard_D13_v2",
-                "tier": "Standard",
-                "capacity": 2
-            },
-            "apiVersion": "2019-09-07",
-            "location": "[parameters('location')]"
-        },
-        {
             "name": "[concat(parameters('followerClusterName'), '/', parameters('attachedDatabaseConfigurationsName'))]",
             "type": "Microsoft.Kusto/clusters/attachedDatabaseConfigurations",
             "apiVersion": "2019-09-07",
@@ -217,7 +206,7 @@ poller = kusto_management_client.attached_database_configurations.create_or_upda
 
 |**Параметр**  |**Описание**  |
 |---------|---------|
-|Имя кластера следов     |  Имя кластера последов. Если имя кластера существует, удалите ресурс `Microsoft.Kusto/clusters` из списка ресурсов в шаблоне ARM. В противном случае будет создан новый кластер.     |
+|Имя кластера следов     |  Имя кластера последов.  |
 |Имя конфигурации присоединенной базы данных    |    Имя объекта конфигурации присоединенной базы данных. Имя должно быть уникальным на уровне кластера.     |
 |Имя базы данных     |      Имя базы данных, которая будет следовать. Если вы хотите следовать всем базам данных лидера, используйте "*".   |
 |Идентификатор ресурса кластера лидера    |   Идентификатор ресурса для кластера лидера.      |

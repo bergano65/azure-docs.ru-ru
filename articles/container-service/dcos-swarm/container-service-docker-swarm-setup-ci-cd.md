@@ -1,20 +1,18 @@
 ---
 title: Непрерывная интеграция и непрерывное развертывание с использованием Службы контейнеров Azure и Swarm (не рекомендуется)
 description: Использование Службы контейнеров Azure с Docker Swarm, Реестром контейнеров Azure и Azure DevOps для непрерывной доставки многоконтейнерного приложения .NET Core
-services: container-service
 author: jcorioland
-manager: jeconnoc
 ms.service: container-service
-ms.topic: article
+ms.topic: conceptual
 ms.date: 12/08/2016
 ms.author: jucoriol
 ms.custom: mvc
-ms.openlocfilehash: 8990f1f8e4cda5a6cc8b8d3197b843662b1397a5
-ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
+ms.openlocfilehash: 860c277e88918dc37eceb496d852691ced2af114
+ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68598538"
+ms.lasthandoff: 01/19/2020
+ms.locfileid: "76277908"
 ---
 # <a name="deprecated-full-cicd-pipeline-to-deploy-a-multi-container-application-on-azure-container-service-with-docker-swarm-using-azure-devops-services"></a>Полный конвейер средств непрерывной интеграции и доставки для развертывания многоконтейнерного приложения в Службе контейнеров Azure с Docker Swarm с использованием Azure DevOps Services (не рекомендуется)
 
@@ -22,7 +20,6 @@ ms.locfileid: "68598538"
 
 Одна из основных сложностей при разработке современных приложений для облака — возможность предоставлять эти приложения непрерывно. Из этой статьи вы узнаете, как реализовать полный конвейер непрерывной интеграции и развертывания (CI/CD) с помощью Службы контейнеров Azure с Docker Swarm, Реестра контейнеров Azure, а также управления Azure Pipelines.
 
-В этой статье используется простое приложение, доступное в [GitHub](https://github.com/jcorioland/MyShop/tree/acs-docs) и разработанное с помощью ASP.NET Core. Это приложение состоит из четырех различных служб: трех веб-API и одного веб-интерфейса.
 
 ![Пример приложения MyShop](./media/container-service-docker-swarm-setup-ci-cd/myshop-application.png)
 
@@ -41,7 +38,7 @@ ms.locfileid: "68598538"
 1. Docker Swarm в кластере извлекает последнюю версию образов. 
 1. Развертывается новая версия приложения с помощью Docker Compose. 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Для работы с этим руководством вам потребуется выполнить следующие задачи:
 
@@ -55,7 +52,7 @@ ms.locfileid: "68598538"
 
 Вам также понадобится компьютер Ubuntu (14.04 или 16.04) с установленным программным обеспечением Docker. Этот компьютер используется службами Azure DevOps Services во время процессов Azure Pipelines. Этот компьютер можно создать, используя образ, доступный в [Azure Marketplace](https://azure.microsoft.com/marketplace/partners/canonicalandmsopentech/dockeronubuntuserver1404lts/). 
 
-## <a name="step-1-configure-your-azure-devops-services-organization"></a>Шаг 1. Настройка организации Azure DevOps Services 
+## <a name="step-1-configure-your-azure-devops-services-organization"></a>Шаг 1. Настройка организации Azure DevOps Services 
 
 В этом разделе вы настроите организацию Azure DevOps Services.
 
@@ -107,7 +104,7 @@ ms.locfileid: "68598538"
 
 Настройка завершена. На следующих шагах создается конвейер CI/CD, который создает и развертывает приложение в кластере Docker Swarm. 
 
-## <a name="step-2-create-the-build-pipeline"></a>Шаг 2. Создание конвейера сборки
+## <a name="step-2-create-the-build-pipeline"></a>Шаг 2. Создание конвейера сборки
 
 На этом шаге настраивается конвейер сборки для проекта Azure DevOps Services и определяется рабочий процесс сборки для образов контейнера.
 
@@ -162,17 +159,17 @@ ms.locfileid: "68598538"
 
 1. Настроив действия сборки и принудительной отправки для каждого из пяти образов, добавьте еще два действия в рабочий процесс сборки.
 
-    1\. Задача командной строки, которая использует bash-скрипт для замены вхождения *BuildNumber* в файле docker-compose.yml текущим идентификатором сборки. Подробнее показано на следующем снимке экрана.
+    а. Задача командной строки, использующая скрипт Bash для замены экземпляра *BuildNumber* в файле DOCKER-Compose. yml текущим идентификатором сборки. Дополнительные сведения см. на следующем экране.
 
     ![Azure DevOps Services — обновление файла Compose](./media/container-service-docker-swarm-setup-ci-cd/vsts-build-replace-build-number.png)
 
-    2\. Задача, которая удаляет обновленный файл Compose в качестве артефакта сборки, чтобы его можно было использовать в выпуске. Подробнее показано на следующем снимке экрана.
+    b. Задача, которая удаляет обновленный файл Compose в качестве артефакта сборки, чтобы его можно было использовать в выпуске. Подробнее показано на следующем снимке экрана.
 
     ![Azure DevOps Services — публикация файла Compose](./media/container-service-docker-swarm-setup-ci-cd/vsts-publish-compose.png) 
 
 1. Щелкните **Сохранить** и присвойте имя конвейеру сборки.
 
-## <a name="step-3-create-the-release-pipeline"></a>Шаг 3. Создание конвейера выпуска
+## <a name="step-3-create-the-release-pipeline"></a>Шаг 3. Создание конвейера выпуска
 
 Azure DevOps Services позволяет [управлять выпусками в разных средах](https://www.visualstudio.com/team-services/release-management/). Вы можете включить непрерывное развертывание, чтобы ваше приложение беспрепятственно развертывалось в разных средах (например, в среде разработки, тестирования, подготовки и рабочей среде). Вы также можете создать среду, которая представляет кластер Docker Swarm Службы контейнеров Azure.
 

@@ -1,20 +1,18 @@
 ---
 title: (УСТАРЕЛО) Реализация CI/CD с использованием обработчика службы контейнеров Azure и Swarm Mode
 description: Использование обработчика Службы контейнеров Azure с Docker Swarm Mode, Реестром контейнеров Azure и Azure DevOps для непрерывной доставки многоконтейнерного приложения .NET Core
-services: container-service
 author: diegomrtnzg
-manager: jeconnoc
 ms.service: container-service
-ms.topic: article
+ms.topic: conceptual
 ms.date: 05/27/2017
 ms.author: dimart
 ms.custom: mvc
-ms.openlocfilehash: fe24ab21a9a7d227d58e50c58f9aff2bd91e767f
-ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
+ms.openlocfilehash: 1ec7ece6f5afd1bbd2613ae08af04b82e8a156b2
+ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68598554"
+ms.lasthandoff: 01/19/2020
+ms.locfileid: "76277915"
 ---
 # <a name="deprecated-full-cicd-pipeline-to-deploy-a-multi-container-application-on-azure-container-service-with-acs-engine-and-docker-swarm-mode-using-azure-devops"></a>(УСТАРЕЛО) Реализация полного конвейера CI/CD для многоконтейнерного приложения в Службе контейнеров Azure с обработчиком ACS и Docker Swarm Mode при помощи Azure DevOps
 
@@ -27,7 +25,6 @@ ms.locfileid: "68598554"
 * Реестр контейнеров Azure
 * Azure DevOps
 
-В этой статье используется простое приложение, доступное в [GitHub](https://github.com/jcorioland/MyShop/tree/docker-linux) и разработанное с помощью ASP.NET Core. Это приложение состоит из четырех различных служб: трех веб-API и одного веб-интерфейса.
 
 ![Пример приложения MyShop](./media/container-service-docker-swarm-mode-setup-ci-cd-acs-engine/myshop-application.png)
 
@@ -46,12 +43,12 @@ ms.locfileid: "68598554"
 7. Docker Swarm Mode в кластере запрашивает последнюю версию образов. 
 8. Новая версия приложения развертывается с помощью Docker Stack. 
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Для работы с этим руководством вам потребуется выполнить следующие задачи:
 
 - [Создать кластер Swarm Mode в Службе контейнеров Azure с обработчиком ACS.](https://github.com/Azure/azure-quickstart-templates/tree/master/101-acsengine-swarmmode)
-- [Подключиться к кластеру Swarm в службе контейнеров Azure.](../container-service-connect.md)
+- [Подключитесь к кластеру Swarm в службе контейнеров Azure.](../container-service-connect.md)
 - [Создать реестр контейнеров Azure](../../container-registry/container-registry-get-started-portal.md)
 - [Создать организацию и проект Azure DevOps.](https://docs.microsoft.com/azure/devops/organizations/accounts/create-organization-msa-or-work-student)
 - [Скопировать репозиторий GitHub в свою учетную запись GitHub](https://github.com/jcorioland/MyShop/tree/docker-linux)
@@ -60,7 +57,7 @@ ms.locfileid: "68598554"
 > Оркестратор Docker Swarm в службе контейнеров Azure использует автономную устаревшую версию Swarm. Сейчас интегрированный [режим Swarm](https://docs.docker.com/engine/swarm/) (в Docker версии 1.12 или выше) не является поддерживаемым оркестратором в службе контейнеров Azure. По этой причине мы используем [обработчик ACS](https://github.com/Azure/acs-engine/blob/master/docs/swarmmode.md), предоставленный сообществом [шаблон для быстрого начала работы](https://azure.microsoft.com/resources/templates/101-acsengine-swarmmode/), или решение Docker из [Azure Marketplace](https://azuremarketplace.microsoft.com).
 >
 
-## <a name="step-1-configure-your-azure-devops-organization"></a>Шаг 1. Настройка организации Azure DevOps 
+## <a name="step-1-configure-your-azure-devops-organization"></a>Шаг 1. Настройка организации Azure DevOps 
 
 В этом разделе вы настроите организацию Azure DevOps. Чтобы настроить конечные точки служб Azure DevOps Services, в проекте Azure DevOps на панели инструментов щелкните значок **Параметры** и выберите **Службы**.
 
@@ -94,7 +91,7 @@ ms.locfileid: "68598554"
 
 Настройка завершена. На следующих шагах создается конвейер CI/CD, который создает и развертывает приложение в кластере Docker Swarm. 
 
-## <a name="step-2-create-the-build-pipeline"></a>Шаг 2. Создание конвейера сборки
+## <a name="step-2-create-the-build-pipeline"></a>Шаг 2. Создание конвейера сборки
 
 На этом шаге настраивается конвейер сборки для проекта Azure DevOps и определяется рабочий процесс сборки для образов контейнера.
 
@@ -108,7 +105,7 @@ ms.locfileid: "68598554"
 
     ![Azure DevOps — создание пустого конвейера сборки](./media/container-service-docker-swarm-mode-setup-ci-cd-acs-engine/create-empty-build-vsts.PNG)
 
-4. Затем щелкните вкладку **Переменные** и создайте две переменные: **RegistryURL** и **AgentURL**. Вставьте значения для DNS реестра и агентов кластера.
+4. Затем щелкните вкладку **Переменные** и создайте две новые переменные: **RegistryURL** и **AgentURL**. Вставьте значения для DNS реестра и агентов кластера.
 
     ![Azure DevOps — конфигурация переменных сборки](./media/container-service-docker-swarm-mode-setup-ci-cd-acs-engine/vsts-build-variables.png)
 
@@ -189,7 +186,7 @@ ms.locfileid: "68598554"
 
    ![Azure DevOps — "Сборка успешно выполнена"](./media/container-service-docker-swarm-mode-setup-ci-cd-acs-engine/vsts-build-succeeded.png) 
 
-## <a name="step-3-create-the-release-pipeline"></a>Шаг 3. Создание конвейера выпуска
+## <a name="step-3-create-the-release-pipeline"></a>Шаг 3. Создание конвейера выпуска
 
 Azure DevOps позволяет [управлять выпусками в разных средах](https://www.visualstudio.com/team-services/release-management/). Вы можете включить непрерывное развертывание, чтобы ваше приложение беспрепятственно развертывалось в разных средах (например, в среде разработки, тестирования, подготовки и рабочей среде). Вы также можете создать среду, которая представляет кластер Docker Swarm Mode Службы контейнеров Azure.
 
@@ -249,7 +246,7 @@ Azure DevOps позволяет [управлять выпусками в раз
 
 Теперь после выполнения настройки пришло время протестировать этот новый конвейер CI/CD. Самый простой способ сделать это — обновить исходный код и сохранить изменения в репозитории GitHub. Через несколько секунд после отправки кода в Azure DevOps появится новая сборка. После успешного выполнения новый выпуск активируется и разворачивает новую версию приложения в кластере Службы контейнеров Azure.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения о CI/CD с Azure DevOps см. в статье [Azure pipelines документация](/azure/devops/pipelines/?view=azure-devops) .
 * Дополнительные сведения об обработчике ACS см. в [репозитории GitHub для обработчика ACS](https://github.com/Azure/acs-engine).

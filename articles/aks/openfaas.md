@@ -1,24 +1,22 @@
 ---
 title: Использование OpenFaaS со Службой Azure Kubernetes (AKS)
 description: Развертывание и использование OpenFaaS со Службой Azure Kubernetes (AKS)
-services: container-service
 author: justindavies
-manager: jeconnoc
 ms.service: container-service
-ms.topic: article
+ms.topic: conceptual
 ms.date: 03/05/2018
 ms.author: juda
 ms.custom: mvc
-ms.openlocfilehash: 5ed6e0b21b00ede3f78a102fd004e5706ae3cea5
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 7949735eff4478d2d04700e1c6df69d28fe25979
+ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60464908"
+ms.lasthandoff: 01/19/2020
+ms.locfileid: "76278480"
 ---
 # <a name="using-openfaas-on-aks"></a>Использование OpenFaaS в AKS
 
-[OpenFaaS] [ open-faas] — это платформа для создания бессерверных функций при помощи контейнеров. Как проект с открытым кодом она стала очень популярной в сообществе. В этом документе описано, как установить и использовать OpenFaas в кластере Службы Azure Kubernetes (AKS).
+[OpenFaaS][open-faas] — это платформа для создания бессерверных функций с помощью контейнеров. Как проект с открытым кодом она стала очень популярной в сообществе. В этом документе описано, как установить и использовать OpenFaas в кластере Службы Azure Kubernetes (AKS).
 
 ## <a name="prerequisites"></a>Технические условия
 
@@ -29,9 +27,9 @@ ms.locfileid: "60464908"
 * Установленный компонент Azure CLI в системе разработки.
 * Средства командной строки Git, установленные в системе.
 
-## <a name="add-the-openfaas-helm-chart-repo"></a>Добавьте репозиторий helm диаграммы OpenFaaS
+## <a name="add-the-openfaas-helm-chart-repo"></a>Добавление репозитория диаграммы OpenFaaS Helm
 
-OpenFaaS поддерживает собственный чарты helm, чтобы поддерживать актуальность со всеми последними изменениями.
+OpenFaaS поддерживает собственные диаграммы Helm, чтобы поддерживать актуальность всех последних изменений.
 
 ```azurecli-interactive
 helm repo add openfaas https://openfaas.github.io/faas-netes/
@@ -42,13 +40,13 @@ helm repo update
 
 Рекомендуется, чтобы OpenFaaS и функции OpenFaaS хранились в собственном пространстве имен Kubernetes.
 
-Создание пространства имен для системы OpenFaaS и функции:
+Создайте пространство имен для системы OpenFaaS и функций:
 
 ```azurecli-interactive
 kubectl apply -f https://raw.githubusercontent.com/openfaas/faas-netes/master/namespaces.yml
 ```
 
-Создать пароль для OpenFaaS пользовательского интерфейса портала и REST API:
+Создайте пароль для портала пользовательского интерфейса OpenFaaS и REST API:
 
 ```azurecli-interactive
 # generate a random password
@@ -59,9 +57,9 @@ kubectl -n openfaas create secret generic basic-auth \
 --from-literal=basic-auth-password="$PASSWORD"
 ```
 
-Можно получить значение секрета с `echo $PASSWORD`.
+Значение секрета можно получить с помощью `echo $PASSWORD`.
 
-Пароль, который мы создаем здесь будет использоваться в диаграмме helm, чтобы включить обычную проверку подлинности на шлюзе OpenFaaS, который предоставляется в Интернете через подсистему балансировки нагрузки облака.
+Созданный здесь пароль будет использоваться Helm диаграммой для включения обычной проверки подлинности на шлюзе OpenFaaS, доступ к которому предоставляется через Интернет через облачную подсистему.
 
 Диаграмма Helm для OpenFaaS будет включена в клонированный репозиторий. С помощью этой диаграммы разверните OpenFaaS в кластере AKS.
 
@@ -95,7 +93,7 @@ To verify that openfaas has started, run:
   kubectl --namespace=openfaas get deployments -l "release=openfaas, app=openfaas"
 ```
 
-Для получения доступа к шлюзу OpenFaaS создается общедоступный IP-адрес. Чтобы получить этот IP-адрес, используйте команду [kubectl get service][kubectl-get]. Процесс назначения службе IP-адреса может занять около минуты.
+Для получения доступа к шлюзу OpenFaaS создается общедоступный IP-адрес. Чтобы получить этот IP-адрес, используйте команду [kubectl Get Service][kubectl-get] . Процесс назначения службе IP-адреса может занять около минуты.
 
 ```console
 kubectl get service -l component=gateway --namespace openfaas
@@ -109,19 +107,19 @@ gateway            ClusterIP      10.0.156.194   <none>         8080/TCP        
 gateway-external   LoadBalancer   10.0.28.18     52.186.64.52   8080:30800/TCP   7m
 ```
 
-Чтобы протестировать систему OpenFaaS, перейдите к внешнему IP-адресу на порту 8080 (в этом примере — `http://52.186.64.52:8080`). Вам будет предложено войти. Чтобы получить пароль, введите `echo $PASSWORD`.
+Чтобы протестировать систему OpenFaaS, перейдите к внешнему IP-адресу на порту 8080 (в этом примере — `http://52.186.64.52:8080`). Вам будет предложено войти в систему. Чтобы получить пароль, введите `echo $PASSWORD`.
 
 ![Пользовательский интерфейс OpenFaaS](media/container-service-serverless/openfaas.png)
 
-Установите интерфейс командной строки (CLI) OpenFaaS. В этом примере используется brew. Дополнительные варианты см. в [документации по OpenFaaS CLI][open-faas-cli].
+Установите интерфейс командной строки (CLI) OpenFaaS. В этом примере используется brew. Дополнительные параметры см. в документации по интерфейсу [командной строки OpenFaaS][open-faas-cli] .
 
 ```console
 brew install faas-cli
 ```
 
-Задайте `$OPENFAAS_URL` общедоступный IP-адрес, определенный выше.
+Задайте для `$OPENFAAS_URL` общедоступный IP-адрес, указанный выше.
 
-Войдите с помощью Azure CLI:
+Выполните вход с помощью Azure CLI:
 
 ```azurecli-interactive
 export OPENFAAS_URL=http://52.186.64.52:8080
@@ -197,7 +195,7 @@ COSMOS=$(az cosmosdb list-connection-strings \
 
 Используйте средство *mongoimport* для загрузки экземпляра CosmosDB с данными.
 
-При необходимости установите средства MongoDB. В следующем примере эти средства устанавливаются с помощью brew. Другие варианты см. в [документации MongoDB][install-mongo].
+При необходимости установите средства MongoDB. В следующем примере эти средства устанавливаются с помощью brew. другие параметры см. в [документации по MongoDB][install-mongo] .
 
 ```azurecli-interactive
 brew install mongodb
@@ -247,7 +245,7 @@ curl -s http://52.186.64.52:8080/function/cosmos-query
 
 ## <a name="next-steps"></a>Следующие шаги
 
-Вы можно продолжить обучение с обсуждения OpenFaaS через набор практических лабораторных работ, посвященных таким темам, как создание собственных программ-роботов GitHub, использования секретов, просмотре метрик и автоматическое масштабирование.
+Вы можете продолжить изучение OpenFaaSного семинара с помощью набора практических лабораторных занятий, в которых рассматриваются такие темы, как создание собственного робота GitHub, использование секретов, просмотр метрик и автоматическое масштабирование.
 
 <!-- LINKS - external -->
 [install-mongo]: https://docs.mongodb.com/manual/installation/

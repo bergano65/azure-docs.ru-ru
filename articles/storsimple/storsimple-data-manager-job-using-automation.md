@@ -1,31 +1,23 @@
 ---
-title: Запуск задания в диспетчере данных StorSimple при помощи службы автоматизации Azure | Документация Майкрософт
+title: Использование службы автоматизации Azure для запуска задания в Диспетчер данных StorSimple
 description: Узнайте, как активировать задания диспетчера данных StorSimple с помощью службы автоматизации Azure
-services: storsimple
-documentationcenter: NA
 author: alkohli
-manager: jeconnoc
-editor: ''
-ms.assetid: ''
 ms.service: storsimple
-ms.devlang: NA
-ms.topic: article
-ms.tgt_pltfrm: NA
-ms.workload: TBD
+ms.topic: conceptual
 ms.date: 01/16/2018
 ms.author: alkohli
-ms.openlocfilehash: b837aab871827c468295a365727a282f6c8a1a4b
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 034b4996672f0961cf31d342aa6055482f099b9f
+ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60634256"
+ms.lasthandoff: 01/19/2020
+ms.locfileid: "76273989"
 ---
 # <a name="use-azure-automation-to-trigger-a-job"></a>Активация задания с помощью службы автоматизации Azure
 
 В этой статье объясняется, как использовать функцию преобразования данных в службе диспетчера данных StorSimple для преобразования данных устройства StorSimple. Задание преобразования данных можно запустить двумя способами: 
 
- - Использование пакета SDK для .NET
+ - Использование пакета .NET SDK
  - Использование модуля runbook службы автоматизации Azure.
  
 В этой статье подробно описывается создание модуля runbook службы автоматизации Azure, а затем запуск задания преобразования данных с его помощью. Дополнительные сведения о том, как запустить преобразование данных с помощью пакета SDK для .NET, см. в статье [Запуск преобразования данных с помощью пакета SDK для .NET (закрытая предварительная версия)](storsimple-data-manager-dotnet-jobs.md).

@@ -1,33 +1,25 @@
 ---
-title: Использование расширения "Работоспособность приложения" с масштабируемыми наборами виртуальных машин Azure | Документация Майкрософт
+title: Использование расширения работоспособности приложений с масштабируемыми наборами виртуальных машин Azure
 description: Узнайте, как использовать расширение "Работоспособность приложения" для наблюдения за работоспособностью приложений, развернутых в масштабируемых наборах виртуальных машин.
-services: virtual-machine-scale-sets
-documentationcenter: ''
 author: mayanknayar
-manager: drewm
-editor: ''
 tags: azure-resource-manager
-ms.assetid: ''
 ms.service: virtual-machine-scale-sets
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.date: 01/30/2019
 ms.author: manayar
-ms.openlocfilehash: e074d76f9ed095725d99bddc9eb21925f4b3697c
-ms.sourcegitcommit: 8e1fb03a9c3ad0fc3fd4d6c111598aa74e0b9bd4
+ms.openlocfilehash: 37d93b04e6755512eac6c2a168bd2a04f8ac298f
+ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70114482"
+ms.lasthandoff: 01/19/2020
+ms.locfileid: "76275879"
 ---
 # <a name="using-application-health-extension-with-virtual-machine-scale-sets"></a>Использование расширения "Работоспособность приложения" с масштабируемыми наборами виртуальных машин
 Мониторинг работоспособности приложения предоставляет важные сведения, которые позволяют определить, когда требуется администрирование и обновление развертывания. Масштабируемые наборы виртуальных машин Azure поддерживают [последовательные обновления](virtual-machine-scale-sets-upgrade-scale-set.md#how-to-bring-vms-up-to-date-with-the-latest-scale-set-model), включая [автоматические обновления образа ОС](virtual-machine-scale-sets-automatic-upgrade.md), которые зависят от мониторинга работоспособности отдельных экземпляров для обновления развертывания.
 
 В этой статье описывается, как использовать расширение "Работоспособность приложения" для наблюдения за работоспособностью приложений, развернутых в масштабируемых наборах виртуальных машин.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 В данной статье предполагается, что вы знакомы с:
 -   [Расширениями](../virtual-machines/extensions/overview.md) виртуальной машины Azure.
 -   [Изменением](virtual-machine-scale-sets-upgrade-scale-set.md) масштабируемых наборов виртуальных машин.
@@ -63,19 +55,19 @@ ms.locfileid: "70114482"
 
 ### <a name="property-values"></a>Значения свойств
 
-| Название | Значение и пример | Тип данных
+| Имя | Значение и пример | Тип данных
 | ---- | ---- | ---- 
-| apiVersion | `2018-10-01` | date |
+| версия_API | `2018-10-01` | Дата |
 | publisher | `Microsoft.ManagedServices` | string |
 | type | `ApplicationHealthLinux` (Linux), `ApplicationHealthWindows` (Windows) | string |
 | typeHandlerVersion | `1.0` | int |
 
 ### <a name="settings"></a>Настройки
 
-| Название | Значение и пример | Тип данных
+| Имя | Значение и пример | Тип данных
 | ---- | ---- | ----
-| protocol | `http` или `tcp` | string |
-| port | Необязательно, если используется протокол `http`; обязательно, если используется протокол `tcp` | int |
+| protocol | `http` либо `tcp` | string |
+| порт | Необязательно, если используется протокол `http`; обязательно, если используется протокол `tcp` | int |
 | requestPath | Обязательно, если используется протокол `http`; не разрешено, если используется протокол `tcp` | string |
 
 ## <a name="deploy-the-application-health-extension"></a>Развертывание расширение "Работоспособность приложения"
@@ -184,5 +176,5 @@ C:\WindowsAzure\Logs\Plugins\Microsoft.ManagedServices.ApplicationHealthWindows\
 
 Журналы также периодически записывают состояние работоспособности приложения.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Узнайте, как [развертывать приложение](virtual-machine-scale-sets-deploy-app.md) в масштабируемых наборах виртуальных машин.

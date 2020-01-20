@@ -1,26 +1,18 @@
 ---
-title: Использование последовательности расширений в масштабируемых наборах виртуальных машин Azure | Документация Майкрософт
+title: Использование виртуализации расширения с масштабируемыми наборами виртуальных машин Azure
 description: Узнайте, как упорядочить подготовку расширений при развертывании нескольких расширений в масштабируемых наборах виртуальных машин.
-services: virtual-machine-scale-sets
-documentationcenter: ''
 author: mayanknayar
-manager: drewm
-editor: ''
 tags: azure-resource-manager
-ms.assetid: ''
 ms.service: virtual-machine-scale-sets
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.date: 01/30/2019
 ms.author: manayar
-ms.openlocfilehash: 2e5dfda16c4828b3113fc50d4cffc79fe6ff19e8
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: cde3fb8b56d8509a45bde00dde55e3c69d015b8e
+ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60620178"
+ms.lasthandoff: 01/19/2020
+ms.locfileid: "76278055"
 ---
 # <a name="sequence-extension-provisioning-in-virtual-machine-scale-sets"></a>Подготовка последовательности расширений в масштабируемых наборах виртуальных машин
 Расширения виртуальных машин Azure предоставляют такие возможности, как настройка и управление после развертывания, мониторинг, безопасность и многое другое. Для достижения желаемых результатов в рабочих развертываниях обычно используется сочетание нескольких расширений, настроенных для экземпляров виртуальной машины.
@@ -249,7 +241,7 @@ az vmss extension set \
 
 ### <a name="not-able-to-add-extension-with-dependencies"></a>Не удается добавить расширение с зависимостями
 1. Убедитесь, что расширения, указанные в provisionAfterExtensions, определены в модели масштабируемого набора.
-2. Убедитесь в отсутствии циклических зависимостей. Например, не допускается следующая последовательность: ExtensionA -> ExtensionB -> ExtensionC -> ExtensionA
+2. Убедитесь в отсутствии циклических зависимостей. Например, следующая последовательность не допускается: Extension a-> Екстенсионб-> Екстенсионк-> Extension a
 3. Убедитесь, что для всех расширений с зависимостями свойство "settings" указано под полем "properties" расширения. Например, если расширение ExtentionB должно быть подготовлено после ExtensionA, то для ExtensionA поле "settings" должно быть указано под полем "properties" этого же расширения. Вы можете указать пустое свойство "settings", если для расширения не требуются какие-либо обязательные параметры.
 
 ### <a name="not-able-to-remove-extensions"></a>Не удается удалить расширения

@@ -1,27 +1,20 @@
 ---
 title: Использование настройки требуемого состояния с масштабируемыми наборами виртуальных машин
 description: Использование масштабируемых наборов виртуальных машин с расширением настройки требуемого состояния Azure для настройки виртуальных машин.
-services: virtual-machine-scale-sets
-documentationcenter: ''
 author: zjalexander
-manager: jeconnoc
-editor: ''
 tags: azure-service-management,azure-resource-manager
-keywords: ''
 ms.assetid: c8f047b5-0e6c-4ef3-8a47-f1b284d32942
 ms.service: virtual-machine-scale-sets
-ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.tgt_pltfrm: vm-windows
-ms.workload: na
 ms.date: 04/05/2017
 ms.author: zachal
-ms.openlocfilehash: d3d064bc1d9c0a72b10ca27515d8325e7ca7fef9
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: a93a8a9c27be5a1736a50e6c4c4b830980b7d974
+ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75359304"
+ms.lasthandoff: 01/19/2020
+ms.locfileid: "76278073"
 ---
 # <a name="using-virtual-machine-scale-sets-with-the-azure-dsc-extension"></a>Использование наборов масштабирования виртуальных машин с помощью расширения Azure DSC
 [Масштабируемые наборы виртуальных машин](virtual-machine-scale-sets-overview.md) могут использоваться с обработчиком расширения [Настройка требуемого состояния (DSC) Azure](../virtual-machines/windows/extensions-dsc-overview.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json). Масштабируемые наборы виртуальных машин позволяют развертывать большое количество виртуальных машин и управлять ими, а также гибко масштабировать ресурсы согласно нагрузке. Расширение DSC используется для настройки виртуальных машин при их подключении для работы с программным обеспечением в рабочей среде.

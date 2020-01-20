@@ -1,68 +1,66 @@
 ---
-title: Поддерживаемые ресурсы для Azure Red Hat OpenShift | Документация Майкрософт
-description: Понять, какие регионы Azure и размеры виртуальных машин, поддерживаемых Microsoft Azure Red Hat OpenShift.
-services: container-service
+title: Поддерживаемые ресурсы для Azure Red Hat OpenShift
+description: Узнайте, какие регионы Azure и размеры виртуальных машин поддерживаются Microsoft Azure Red Hat OpenShift.
 author: jimzim
 ms.author: jzim
-manager: jeconnoc
 ms.service: container-service
-ms.topic: article
+ms.topic: conceptual
 ms.date: 05/15/2019
-ms.openlocfilehash: c226227797802ab58d1bcbaadb7e97e780b30560
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 1b794852390141d31a3218a1a434c21133db914c
+ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66306218"
+ms.lasthandoff: 01/19/2020
+ms.locfileid: "76274902"
 ---
 # <a name="azure-red-hat-openshift-resources"></a>Ресурсы Azure Red Hat OpenShift
 
-В этом разделе перечислены регионы Azure и размеры виртуальных машин, поддерживаемых службой Microsoft Azure Red Hat OpenShift.
+В этом разделе перечислены регионы Azure и размеры виртуальных машин, поддерживаемые Microsoft Azure службы Red Hat OpenShift.
 
 ## <a name="azure-regions"></a>Регионы Azure
 
-См. в разделе [доступность продуктов по регионам](https://azure.microsoft.com/global-infrastructure/services/?products=openshift&regions=all) текущий список регионов, где вы можете развернуть Azure Red Hat OpenShift кластеров.
+Текущий список регионов, в которых можно развернуть кластеры OpenShift Azure Red Hat, см. в разделе [Доступные продукты по регионам](https://azure.microsoft.com/global-infrastructure/services/?products=openshift&regions=all) .
 
-## <a name="virtual-machine-sizes"></a>Размер виртуальных машин
+## <a name="virtual-machine-sizes"></a>Размеры виртуальных машин
 
-Ниже приведены поддерживаемые размеры виртуальных машин, можно указать для вычислительных узлов в кластере Azure Red Hat OpenShift.
+Ниже приведены поддерживаемые размеры виртуальных машин, которые можно указать для вычислений узлов в кластере Azure Red Hat OpenShift.
 
 > [!Important]
-> Каждая виртуальная машина имеет разное количество дисков, которые можно подключить. Это может оказаться как очевидно как память или ЦП размер.
-> Не во всех регионах доступны виртуальные машины всех размеров. Даже если API поддерживает размер вами, если размер недоступен в регионе, в указанную вами может появиться ошибка.
-> См. в разделе [размеров текущий список поддерживаемых виртуальных Машин на регион](https://azure.microsoft.com/global-infrastructure/services/?products=virtual-machines) Дополнительные сведения.
+> Каждая виртуальная машина имеет различное количество дисков, которые можно подключить. Возможно, это не будет сразу же очищать память или размер ЦП.
+> Не во всех регионах доступны виртуальные машины всех размеров. Даже если API поддерживает указанный размер, может возникнуть ошибка, если размер недоступен в указанном регионе.
+> Дополнительные сведения см. [в текущем списке поддерживаемых размеров виртуальных машин на регион](https://azure.microsoft.com/global-infrastructure/services/?products=virtual-machines) .
 
-## <a name="compute-node-sizes"></a>Вычисления размеров узлов
+## <a name="compute-node-sizes"></a>Размеры узлов вычислений
 
-Azure Red Hat OpenShift REST API поддерживает следующие размеры вычислительных узлов.
+REST API Azure Red Hat OpenShift поддерживают следующие размеры расчетных узлов:
 
 |Размер|Виртуальных ЦП|ОЗУ|
 |-|-|-|
-|Стандартный D4s v3|4\.|16 ГБ|
+|Стандартный D4s v3|4|16 ГБ|
 |Стандартный D8s v3|8|32 ГБ|
 |Стандартный D16s v3|16|64 ГБ|
-|Стандартный D32s v3|32|128 ГБ|
+|Стандартный D32s v3|32|128 ГБ|
 |-|-|-|
-|Стандартный E4s v3|4\.|32 ГБ|
+|Стандартный E4s v3|4|32 ГБ|
 |Стандартный E8s v3|8|64 ГБ|
-|Стандартный E16s v3|16|128 ГБ|
+|Стандартный E16s v3|16|128 ГБ|
 |Стандартный E32s v3|32|256 ГБ|
 |-|-|-|
 |Стандартный F8s v2|8|16 ГБ|
 |Стандартный F16s v2|16|32 ГБ|
 |Стандартный F32s v2|32|64 ГБ|
 
-## <a name="master-node-sizes"></a>Размеры главный узел
+## <a name="master-node-sizes"></a>Размеры главного узла
 
-Следующий образец / размеров узлов инфраструктуры поддерживаются Azure Red Hat OpenShift REST API:
+В REST API Azure Red Hat OpenShift поддерживаются следующие размеры узлов главной и основной инфраструктуры:
 
 |Размер|Виртуальных ЦП|ОЗУ|
 |-|-|-|
-|Стандартный D4s v3|4\.|16 ГБ|
+|Стандартный D4s v3|4|16 ГБ|
 |Стандартный D8s v3|8|32 ГБ|
 |Стандартный D16s v3|16|64 ГБ|
-|Стандартный D32s v3|32|128 ГБ|
+|Стандартный D32s v3|32|128 ГБ|
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Попробуйте [создать кластер Azure Red Hat OpenShift](tutorial-create-cluster.md) руководства.
+Воспользуйтесь учебником [Создание кластера Azure Red Hat OpenShift](tutorial-create-cluster.md) .

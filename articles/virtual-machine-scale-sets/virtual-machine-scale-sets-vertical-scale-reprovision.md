@@ -1,26 +1,21 @@
 ---
-title: Вертикальное масштабирование масштабируемых наборов виртуальных машин Azure | Документация Майкрософт
+title: Вертикальное масштабирование масштабируемых наборов виртуальных машин Azure
 description: Сведения о вертикальном масштабировании виртуальной машины в ответ на оповещения c помощью службы автоматизации Azure
-services: virtual-machine-scale-sets
-documentationcenter: ''
 author: mayanknayar
-manager: jeconnoc
-editor: ''
 tags: azure-resource-manager
 ms.assetid: 16b17421-6b8f-483e-8a84-26327c44e9d3
 ms.service: virtual-machine-scale-sets
 ms.workload: infrastructure-services
 ms.tgt_pltfrm: vm-multiple
-ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.date: 04/18/2019
 ms.author: manayar
-ms.openlocfilehash: 87d2b19f6143f567782778e35c8511f233d8b0e8
-ms.sourcegitcommit: 7868d1c40f6feb1abcafbffcddca952438a3472d
+ms.openlocfilehash: fa1dda2907e8400491c8d18897bb41fb9cff49fd
+ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71958145"
+ms.lasthandoff: 01/19/2020
+ms.locfileid: "76274438"
 ---
 # <a name="vertical-autoscale-with-virtual-machine-scale-sets"></a>Вертикальное автомасштабирование масштабируемых наборов виртуальных машин
 
@@ -93,7 +88,7 @@ ms.locfileid: "71958145"
 > 
 
 ## <a name="create-an-azure-automation-account-with-run-as-capability"></a>Создание учетной записи службы автоматизации Azure с возможностью запуска от имени
-Сначала необходимо создать учетную запись службы автоматизации Azure, в которой будут размещаться модули runbook, используемые в масштабируемых наборах виртуальных машин. Недавно в [службе автоматизации Azure](https://azure.microsoft.com/services/automation/) появился компонент "Учетная запись запуска от имени". Этот компонент позволяет настраивать субъект-службу для автоматического запуска модулей runbook от имени пользователя. Дополнительные сведения можно найти в разделе
+Сначала необходимо создать учетную запись службы автоматизации Azure, в которой будут размещаться модули runbook, используемые в масштабируемых наборах виртуальных машин. Недавно в [службе автоматизации Azure](https://azure.microsoft.com/services/automation/) появился компонент "Учетная запись запуска от имени". Этот компонент позволяет настраивать субъект-службу для автоматического запуска модулей runbook от имени пользователя. Дополнительные сведения см. здесь:
 
 * [Проверка подлинности модулей Runbook в Azure с помощью учетной записи запуска от имени](../automation/automation-sec-configure-azure-runas-account.md)
 
@@ -124,7 +119,7 @@ ms.locfileid: "71958145"
 
 ## <a name="add-an-alert-to-your-virtual-machine-scale-set"></a>Добавление правила оповещения в масштабируемый набор виртуальных машин
 
-Ниже приведен сценарий PowerShell, с помощью которого вы можете добавить в масштабируемый набор виртуальных машин правило оповещения. Дополнительные сведения о получении имени метрики для активации оповещения см. в статье [Общие метрики автомасштабирования Azure Monitor](../azure-monitor/platform/autoscale-common-metrics.md).
+Ниже приведен сценарий PowerShell, с помощью которого вы можете добавить в масштабируемый набор виртуальных машин правило оповещения. Дополнительные сведения о получении имени метрики для активации оповещения см. в статье [Общие метрики автомасштабирования Azure Insights](../azure-monitor/platform/autoscale-common-metrics.md).
 
 ```powershell
 $actionEmail = New-AzAlertRuleEmail -CustomEmail user@contoso.com

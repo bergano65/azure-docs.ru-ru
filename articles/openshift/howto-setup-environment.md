@@ -1,20 +1,18 @@
 ---
-title: Настройка среды разработки Azure Red Hat OpenShift | Документация Майкрософт
+title: Настройка среды разработки Azure Red Hat OpenShift
 description: Ниже приведены необходимые условия для работы с Microsoft Azure Red Hat OpenShift.
-services: openshift
 keywords: Настройка установки Red Hat openshift
 author: jimzim
 ms.author: jzim
 ms.date: 11/04/2019
 ms.topic: conceptual
 ms.service: container-service
-manager: jeconnoc
-ms.openlocfilehash: fa09ed90258a62d37dafeea5f4760e1fabdc210b
-ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
+ms.openlocfilehash: 559c932c4826e82f36c09b85ee8da4186d90d34d
+ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73581598"
+ms.lasthandoff: 01/19/2020
+ms.locfileid: "76276090"
 ---
 # <a name="set-up-your-azure-red-hat-openshift-dev-environment"></a>Настройка среды разработки Azure Red Hat OpenShift
 
@@ -100,7 +98,7 @@ az --version
 
 Службе Azure Red Hat OpenShift требуется связанный клиент Azure Active Directory (Azure AD), представляющий вашу организацию и ее связь с Майкрософт. Клиент Azure AD позволяет регистрировать, создавать приложения и управлять ими, а также использовать другие службы Azure.
 
-Если у вас нет Azure AD для использования в качестве клиента для кластера Azure Red Hat OpenShift или вы хотите создать клиент для тестирования, следуйте инструкциям в статье [Создание клиента Azure AD для кластера OpenShift для Azure Red Hat](howto-create-tenant.md) , прежде чем продолжить работу с этим руководством. .
+Если у вас нет Azure AD для использования в качестве клиента для кластера Azure Red Hat OpenShift или вы хотите создать клиент для тестирования, следуйте инструкциям в статье [Создание клиента Azure AD для кластера OpenShift для Azure Red Hat](howto-create-tenant.md) , прежде чем продолжить работу с этим руководством.
 
 ## <a name="create-an-azure-ad-user-security-group-and-application-object"></a>Создание пользователя Azure AD, группы безопасности и объекта приложения
 

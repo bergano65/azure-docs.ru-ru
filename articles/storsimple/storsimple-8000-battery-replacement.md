@@ -1,25 +1,17 @@
 ---
-title: Замена аккумулятора на устройстве Microsoft Azure StorSimple серии 8000 | Документация Майкрософт
+title: Замена аккумулятора на устройстве серии Microsoft Azure StorSimple 8000
 description: Описывает процедуры снятия, замены и обслуживания модуля резервного аккумулятора на устройстве StorSimple.
-services: storsimple
-documentationcenter: ''
 author: alkohli
-manager: jeconnoc
-editor: ''
-ms.assetid: ''
 ms.service: storsimple
-ms.devlang: NA
-ms.topic: article
-ms.tgt_pltfrm: NA
-ms.workload: TBD
+ms.topic: conceptual
 ms.date: 01/09/2018
 ms.author: alkohli
-ms.openlocfilehash: 4ebf3f28d40e0461d140a3fe74fb940720f26db6
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: f21bbf4777aa74e84ffb8c1af903f90608d5551f
+ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64693752"
+ms.lasthandoff: 01/19/2020
+ms.locfileid: "76276899"
 ---
 # <a name="replace-the-backup-battery-module-on-your-storsimple-device"></a>Замена резервного аккумулятора на устройстве StorSimple
 
@@ -47,12 +39,12 @@ ms.locfileid: "64693752"
    
     **Рис. 1.** Задняя поверхность основного устройства с БПО и модулями контроллера
    
-   | Метка | Описание |
+   | Метка | Description |
    |:--- |:--- |
    | 1 |PCM 0 |
    | 2 |PCM 1 |
    | 3 |Контроллер 0 |
-   | 4\. |Контроллер 1 |
+   | 4 |Контроллер 1 |
    
     Как показывает число 3 на рис. 2, должен гореть индикатор для БПО 0, который соответствует **Неисправности батареи**.
    
@@ -60,12 +52,12 @@ ms.locfileid: "64693752"
    
     **Рис. 2.** Задняя поверхность БПО с индикаторами
    
-   | Метка | Описание |
+   | Метка | Description |
    |:--- |:--- |
    | 1 |Сбой питания от электросети |
    | 2 |Сбой вентилятора |
    | 3 |Сбой аккумулятора |
-   | 4\. |БПО исправен |
+   | 4 |БПО исправен |
    | 5 |Сбой постоянного напряжения |
    | 6 |Батарея работоспособна |
 3. Для снятия БПО с неисправной батареей выполните действия, описанные в разделе [Снятие БПО](storsimple-8000-power-cooling-module-replacement.md#remove-a-pcm).

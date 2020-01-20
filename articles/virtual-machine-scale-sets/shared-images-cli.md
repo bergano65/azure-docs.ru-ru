@@ -1,28 +1,20 @@
 ---
-title: Использование общих образов виртуальных машин для создания масштабируемого набора в Azure | Документация Майкрософт
+title: Использование образов общих виртуальных машин для создания масштабируемого набора в Azure
 description: Узнайте, как с помощью Azure CLI создать общие образы виртуальных машин для развертывания масштабируемых наборов виртуальных машин в Azure.
-services: virtual-machine-scale-sets
-documentationcenter: ''
 author: axayjo
-manager: jeconnoc
-editor: ''
 tags: azure-resource-manager
-ms.assetid: ''
 ms.service: virtual-machine-scale-sets
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.date: 05/06/2019
 ms.author: akjosh
 ms.reviewer: cynthn
 ms.custom: ''
-ms.openlocfilehash: 166e859f8ddd080ec8e44cf9647e1c8687b12b2c
-ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
+ms.openlocfilehash: 83b3d5c904a65b28482acf8b685c939493c8c03b
+ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2019
-ms.locfileid: "67621503"
+ms.lasthandoff: 01/19/2020
+ms.locfileid: "76276267"
 ---
 # <a name="create-and-use-shared-images-for-virtual-machine-scale-sets-with-the-azure-cli-20"></a>Создание и использование общих образов для масштабируемых наборов виртуальных машин с помощью Azure CLI 2.0
 
@@ -35,7 +27,7 @@ ms.locfileid: "67621503"
 [!INCLUDE [virtual-machines-common-shared-images-cli](../../includes/virtual-machines-common-shared-images-cli.md)]
 
 ## <a name="create-a-scale-set-from-the-custom-vm-image"></a>Создание масштабируемого набора на основе пользовательского образа виртуальной машины
-Создание масштабируемого набора с [ `az vmss create` ](/cli/azure/vmss#az-vmss-create). Вместо образа платформы, например *UbuntuLTS* или *CentOS*, укажите имя своего пользовательского образа виртуальной машины. В следующем примере создается масштабируемый набор с именем *myScaleSet*, использующий пользовательский образ *myImage* из предыдущего шага.
+Создайте масштабируемый набор с [`az vmss create`](/cli/azure/vmss#az-vmss-create). Вместо образа платформы, например *UbuntuLTS* или *CentOS*, укажите имя своего пользовательского образа виртуальной машины. В следующем примере создается масштабируемый набор с именем *myScaleSet*, использующий пользовательский образ *myImage* из предыдущего шага.
 
 ```azurecli-interactive
 az vmss create \
@@ -60,7 +52,7 @@ az group delete --name myResourceGroup --no-wait --yes
 ```
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Вы также можете создать ресурс коллекции общих образов с помощью шаблонов. Существует несколько шаблонов быстрого запуска Azure: 
 

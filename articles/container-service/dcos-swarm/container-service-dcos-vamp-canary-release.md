@@ -1,20 +1,18 @@
 ---
 title: (УСТАРЕЛО) Ранний выпуск с помощью Vamp в кластере DC/OS Azure
 description: Узнайте, как использовать Vamp для раннего выпуска служб и применения интеллектуальной фильтрации трафика в кластере DC/OS Службы контейнеров Azure.
-services: container-service
 author: gggina
-manager: jeconnoc
 ms.service: container-service
-ms.topic: article
+ms.topic: conceptual
 ms.date: 04/17/2017
 ms.author: rasquill
 ms.custom: mvc
-ms.openlocfilehash: f1b3c08cce2cb33feab899ea082fc6fb40225182
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 60ff148e044df81e64b54fc48c1cb6f67aee14df
+ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61458289"
+ms.lasthandoff: 01/19/2020
+ms.locfileid: "76275662"
 ---
 # <a name="deprecated-canary-release-microservices-with-vamp-on-an-azure-container-service-dcos-cluster"></a>(УСТАРЕЛО) Ранний выпуск микрослужб с помощью Vamp в кластере DC/OS Службы контейнеров Azure
 
@@ -44,7 +42,7 @@ ms.locfileid: "61458289"
 
 ## <a name="set-up-vamp"></a>Настройка Vamp
 
-Теперь, когда в работающем кластере DC/OS можно установить Vamp в пользовательском Интерфейсе DC/OS (http:\//localhost:80). 
+Теперь, когда вы используете кластер DC/OS, вы можете установить его с помощью пользовательского интерфейса DC/OS (http:\//ЛОКАЛХОСТ: 80). 
 
 ![Пользовательский интерфейс DC/OS](./media/container-service-dcos-vamp-canary-release/01_set_up_vamp.png)
 
@@ -135,7 +133,7 @@ Vamp требуется Elasticsearch для сбора метрик и агре
 
 1. Перейдите в раздел **Deployments** (Развертывания).
 
-2. Щелкните **Добавить**.
+2. Нажмите кнопку **Добавить**.
 
 3. Вставьте приведенный ниже YAML-файл схемы. Эта схема содержит один кластер только с одним вариантом службы, который мы изменим в дальнейшем:
 
@@ -145,7 +143,6 @@ Vamp требуется Elasticsearch для сбора метрик и агре
     9050: sava_cluster/webport      # stable endpoint
    clusters:
     sava_cluster:               # cluster to create
-     services:
         -
           breed:
             name: sava:1.0.0        # service variant name
@@ -206,7 +203,6 @@ Vamp развернула службу sava на узлах агента DC/OS, 
    name: sava:1.1.0      # blueprint name
    clusters:
     sava_cluster:       # cluster to update
-      services:
         -
           breed:
             name: sava:1.1.0    # service variant name

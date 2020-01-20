@@ -1,26 +1,20 @@
 ---
 title: Интеграция шлюза приложений с центром безопасности Azure | Документация Майкрософт
 description: Сведения об интеграции шлюза приложения с центром безопасности Azure.
-documentationcenter: na
 services: application-gateway
 author: vhorne
-manager: jpconnock
-editor: ''
+ms.author: victorh
 ms.assetid: e5ea5cf9-3b41-4b85-a12c-e758bff7f3ec
 ms.service: application-gateway
-ms.devlang: na
-ms.topic: article
-ms.tgt_pltfrm: na
-ms.custom: ''
+ms.topic: conceptual
 ms.workload: infrastructure-services
 ms.date: 06/07/2017
-ms.author: victorh
-ms.openlocfilehash: 10f115b64f0bd3f7e557da2bedbf3327d0ef483d
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: f5ecd2334ca80f5561c0611239b5bb00d222112a
+ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "62122301"
+ms.lasthandoff: 01/19/2020
+ms.locfileid: "76277186"
 ---
 # <a name="overview-of-integration-between-application-gateway-and-azure-security-center"></a>Общие сведения об интеграции шлюза приложений с центром безопасности Azure
 
@@ -76,7 +70,7 @@ ms.locfileid: "62122301"
 
 ![Оповещения системы безопасности][8]
 
-Если щелкнуть конкретное правило WAF, откроется список оповещений. Каждое оповещение содержит дополнительные сведения, а также ссылку на шлюз приложений.
+При выборе правила будет предоставлен список предупреждений для этого конкретного правила WAF. Каждое оповещение содержит дополнительные сведения, а также ссылку на шлюз приложений.
  
 ![Сведения в оповещении][9]
 

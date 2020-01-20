@@ -7,12 +7,12 @@ ms.reviewer: orspodek
 ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 01/06/2020
-ms.openlocfilehash: cc16a40b0ea53d433a5a6c592f3b9ea364ef9089
-ms.sourcegitcommit: 02160a2c64a5b8cb2fb661a087db5c2b4815ec04
+ms.openlocfilehash: 5f3bceb8398f9837f6f8eaa390def41456daf08d
+ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75725836"
+ms.lasthandoff: 01/19/2020
+ms.locfileid: "76271594"
 ---
 # <a name="secure-azure-data-explorer-clusters-in-azure"></a>Защита кластеров Azure обозреватель данных в Azure
 
@@ -24,7 +24,7 @@ ms.locfileid: "75725836"
 
 Эта проблема решается в Azure Active Directory (Azure AD) управляемые удостоверения для ресурсов Azure. Функция предоставляет службам Azure автоматически управляемое удостоверение в Azure AD. Удостоверение можно использовать для проверки подлинности в любой службе, которая поддерживает проверку подлинности Azure AD, включая Key Vault, при этом не сохраняя каких-либо учетных данных в коде. Дополнительные сведения об этой службе см. на странице Обзор [управляемых удостоверений для ресурсов Azure](/azure/active-directory/managed-identities-azure-resources/overview) .
 
-## <a name="data-encryption"></a>Шифрование данных
+## <a name="data-encryption"></a>шифрование данных;
 
 ### <a name="azure-disk-encryption"></a>Шифрование дисков Azure
 

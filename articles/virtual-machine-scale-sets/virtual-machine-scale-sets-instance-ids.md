@@ -1,26 +1,19 @@
 ---
 title: Общие сведения об идентификаторах экземпляров для виртуальных машин масштабируемого набора Azure
 description: Общие сведения о идентификаторах экземпляров для масштабируемых наборов виртуальных машин Azure и различных способах их поверхности.
-services: virtual-machine-scale-sets
-documentationcenter: ''
 author: mayanknayar
-manager: jeconnoc
-editor: ''
 tags: azure-resource-manager
 ms.assetid: e229664e-ee4e-4f12-9d2e-a4f456989e5d
 ms.service: virtual-machine-scale-sets
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.date: 02/22/2018
 ms.author: manayar
-ms.openlocfilehash: 1eb0cf1de3b0ebffac8810e19d69515224147bc7
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: aa2b0013818f897f01945d394266a57016ecb0bb
+ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75356001"
+ms.lasthandoff: 01/19/2020
+ms.locfileid: "76275848"
 ---
 # <a name="understand-instance-ids-for-azure-vm-scale-set-vms"></a>Общие сведения об идентификаторах экземпляров для виртуальных машин масштабируемого набора Azure
 В этой статье описаны идентификаторы экземпляров для масштабируемых наборов и связанные с ними возможности.

@@ -1,25 +1,17 @@
 ---
-title: Изменение пути к большому двоичному объекту по умолчанию | Документация Майкрософт
+title: Изменить путь к BLOB-объекту из значения по умолчанию
 description: Узнайте, как настроить функцию Azure для переименования пути к файлу большого двоичного объекта
-services: storsimple
-documentationcenter: NA
 author: alkohli
-manager: jeconnoc
-editor: ''
-ms.assetid: ''
 ms.service: storsimple
-ms.devlang: NA
-ms.topic: article
-ms.tgt_pltfrm: NA
-ms.workload: TBD
+ms.topic: conceptual
 ms.date: 01/16/2018
 ms.author: alkohli
-ms.openlocfilehash: cdaf991c25c23dee4f87b44142c1482bf892bcf2
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 5ba1709ae195631371e4ea72667ba9b2a4bf279e
+ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60723806"
+ms.lasthandoff: 01/19/2020
+ms.locfileid: "76270633"
 ---
 # <a name="change-a-blob-path-from-the-default-path"></a>Изменение пути к большому двоичному объекту по умолчанию
 

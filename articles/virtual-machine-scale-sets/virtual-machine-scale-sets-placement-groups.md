@@ -1,26 +1,19 @@
 ---
 title: Работа с крупными масштабируемыми наборами виртуальных машин Azure
 description: Что необходимо знать о больших масштабируемых наборах виртуальных машин Azure, чтобы использовать их в своем приложении.
-services: virtual-machine-scale-sets
-documentationcenter: ''
-author: rajsqr
-manager: jeconnoc
-editor: ''
+author: cynthn
+ms.author: cynthn
 tags: azure-resource-manager
 ms.assetid: 76ac7fd7-2e05-4762-88ca-3b499e87906e
 ms.service: virtual-machine-scale-sets
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 11/9/2017
-ms.author: jeconnoc
-ms.openlocfilehash: 839d889783a7ef3bcd602c37a4975ddeea4e2a16
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 618b677ee836327e8ed4ab7798ab35d92b364c98
+ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75459341"
+ms.lasthandoff: 01/19/2020
+ms.locfileid: "76272525"
 ---
 # <a name="working-with-large-virtual-machine-scale-sets"></a>Работа с крупными масштабируемыми наборами виртуальных машин
 Теперь вы можете создавать [масштабируемые наборы виртуальных машин](/azure/virtual-machine-scale-sets/) Azure, включающие до 1000 виртуальных машин. В этом документе под _крупным масштабируемым набором виртуальных машин_ подразумевается масштабируемый набор, в который можно добавить более 100 виртуальных машин. Эта возможность задается с помощью свойства масштабируемого набора (_singlePlacementGroup=False_). 

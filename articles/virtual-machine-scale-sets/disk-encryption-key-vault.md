@@ -2,17 +2,17 @@
 title: Создание и Настройка хранилища ключей для шифрования дисков Azure
 description: В этой статье описаны действия по созданию и настройке хранилища ключей для использования с шифрованием дисков Azure.
 ms.service: virtual-machine-scale-sets
-ms.topic: article
+ms.topic: conceptual
 author: msmbaldwin
 ms.author: mbaldwin
 ms.date: 10/10/2019
 ms.custom: seodec18
-ms.openlocfilehash: 0252fff84307577ab307e591948e16dc30c38f66
-ms.sourcegitcommit: 8074f482fcd1f61442b3b8101f153adb52cf35c9
+ms.openlocfilehash: eec5b42da709ab5e79da42f11600f6ffc81d247e
+ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72749993"
+ms.lasthandoff: 01/19/2020
+ms.locfileid: "76279014"
 ---
 # <a name="creating-and-configuring-a-key-vault-for-azure-disk-encryption"></a>Создание и Настройка хранилища ключей для шифрования дисков Azure
 
@@ -49,5 +49,5 @@ Connect-AzAccount
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - [Общие сведения о шифровании дисков Azure](disk-encryption-overview.md)
-- [Шифрование масштабируемых наборов виртуальных машин с помощью Azure CLI](disk-encryption-cli.md)
-- [Шифрование масштабируемых наборов виртуальных машин с помощью Azure PowerShell](disk-encryption-powershell.md)
+- [Encrypt OS and attached data disks in a virtual machine scale set with the Azure CLI](disk-encryption-cli.md) (Шифрование ОС и подключенных дисков данных в масштабируемом наборе виртуальных машин с помощью Azure CLI)
+- [Encrypt OS and attached data disks in a virtual machine scale set with Azure PowerShell](disk-encryption-powershell.md) (Шифрование ОС и подключенных дисков данных в масштабируемом наборе виртуальных машин с помощью Azure PowerShell)

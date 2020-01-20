@@ -13,15 +13,15 @@ ms.service: virtual-machines-linux
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
-ms.date: 01/16/2020
+ms.date: 01/17/2020
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 3712e67e95c8957d2537660add14d6cdb09d609f
-ms.sourcegitcommit: 2a2af81e79a47510e7dea2efb9a8efb616da41f0
+ms.openlocfilehash: 55872d48dcf2a85812e1627e4e85bcd98b25d576
+ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76264820"
+ms.lasthandoff: 01/19/2020
+ms.locfileid: "76271326"
 ---
 # <a name="use-azure-to-host-and-run-sap-workload-scenarios"></a>Использование Azure для размещения и запуска сценариев рабочей нагрузки SAP
 
@@ -120,6 +120,9 @@ ms.locfileid: "76264820"
 
 
 ## <a name="change-log"></a>Журнал изменений
+
+- 01/17/2020: измените в [группах размещения Azure с учетом расположения, чтобы обеспечить оптимальную задержку в сети с приложениями SAP](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/sap-proximity-placement-scenarios) , чтобы изменить раздел перемещения существующих виртуальных машин в группу размещения с учетом расположения.
+- 01/17/2020: измените [конфигурации рабочей нагрузки SAP с зоны доступности Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/sap-ha-availability-zones) , чтобы она указывала на процедуру, которая автоматизирует измерения задержки между зоны доступности
 - 01/16/2020. изменение [способа установки и настройки SAP HANA (крупные экземпляры) в Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-installation) для адаптации выпусков ОС к каталогу оборудования IaaS для Hana
 - 01/16/2020: изменения в [высоком уровне доступности SAP NetWeaver на виртуальных машинах Azure в SLES с несколькими ИД безопасности](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/high-availability-guide-suse-multi-sid) для добавления инструкций для систем SAP с использованием архитектуры Server 2 для постановки в очередь (ENSA2)
 - 01/10/2020: изменения [SAP HANA горизонтальном масштабировании с резервным узлом на виртуальных машинах Azure с Azure NetApp Files на SLES](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/sap-hana-scale-out-standby-netapp-files-suse) и в [SAP HANA масштабирования с резервным узлом на виртуальных машинах Azure с Azure NetApp Files на RHEL](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/sap-hana-scale-out-standby-netapp-files-rhel) , чтобы добавить инструкции по внесению `nfs4_disable_idmapping`ных изменений в постоянное состояние.

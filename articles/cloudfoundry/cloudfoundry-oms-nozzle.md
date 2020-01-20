@@ -3,21 +3,20 @@ title: Развертывание сопел Log Analytics Azure для мони
 description: Пошаговые рекомендации по развертыванию компонента Nozzle системы Cloud Foundry Loggregator для Azure Log Analytics. Используйте Nozzle для мониторинга метрик работоспособности и производительности системы Cloud Foundry.
 services: virtual-machines-linux
 author: ningk
-manager: jeconnoc
 tags: Cloud-Foundry
 ms.assetid: 00c76c49-3738-494b-b70d-344d8efc0853
 ms.service: azure-monitor
-ms.topic: article
+ms.topic: conceptual
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 07/22/2017
 ms.author: ningk
-ms.openlocfilehash: d71f1d6af0944a676e35dfe6347fafb8706f21b8
-ms.sourcegitcommit: e50a39eb97a0b52ce35fd7b1cf16c7a9091d5a2a
+ms.openlocfilehash: bf6691310ec964a1d6293f3a60c151e3d6f8e641
+ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74286648"
+ms.lasthandoff: 01/19/2020
+ms.locfileid: "76277360"
 ---
 # <a name="deploy-azure-log-analytics-nozzle-for-cloud-foundry-system-monitoring"></a>Развертывание компонента Azure Log Analytics Nozzle для мониторинга системы Cloud Foundry
 
@@ -29,7 +28,7 @@ Log Analyticsная сопла (сопла) — это компонент Cloud 
 
 [!INCLUDE [azure-monitor-log-analytics-rebrand](../../includes/azure-monitor-log-analytics-rebrand.md)]
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Технические условия
 
 Для развертывания Nozzle необходимо выполнить следующие шаги.
 
@@ -194,7 +193,7 @@ cf apps
 
 В случае необходимости можно [создавать оповещения](https://docs.microsoft.com/azure/log-analytics/log-analytics-alerts), настраивать запросы и пороговые значения. Ниже приведены рекомендуемые оповещения.
 
-| Поисковый запрос                                                                  | Создать оповещение на основе | ОПИСАНИЕ                                                                       |
+| Поисковый запрос                                                                  | Создать оповещение на основе | Description                                                                       |
 | ----------------------------------------------------------------------------- | ----------------------- | --------------------------------------------------------------------------------- |
 | Type=CF_ValueMetric_CL Origin_s=bbs Name_s="Domain.cf-apps"                   | Число результатов < 1   | **bbs.Domain.cf-apps** указывает, актуальны ли данные домена cf-apps, то есть синхронизированы ли выполняемые запросы приложения CF из Cloud Controller с bbs.LRPsDesired (ИИ Diego-desired). Если данные не получены, это означает, что данные домена cf-apps не являются актуальными в указанный период времени. |
 | Type=CF_ValueMetric_CL Origin_s=rep Name_s=UnhealthyCell Value_d>1            | Число результатов > 0   | Для ячеек Diego 0 означает работоспособное состояние, а 1 — неработоспособное. Установите оповещение, срабатывающее при обнаружении нескольких неработоспособных ячеек Diego в указанный период времени. |
@@ -220,7 +219,7 @@ Nozzle и Loggregator можно масштабировать.
 Loggregator отправляет сообщение журнала **LGR**, чтобы сообщить о проблемах процесса ведения журнала. Вы можете отслеживать это оповещение, чтобы определить, нужно ли увеличить масштаб Loggregator.
 Чтобы увеличить масштаб Loggregator, увеличьте размер буфера Doppler или добавьте дополнительные сущности сервера Doppler в манифест CF. Дополнительные сведения см. в статье [Configuring System Logging](https://docs.cloudfoundry.org/running/managing-cf/logging-config.html#scaling) (Настройка ведения системного журнала).
 
-## <a name="update"></a>Блокировка изменений
+## <a name="update"></a>Обновить
 
 Чтобы установить более новую версию Nozzle, скачайте новый выпуск Nozzle, выполните указания в разделе "Развертывание Nozzle" и отправьте приложение еще раз.
 
@@ -243,7 +242,7 @@ cf delete <App Name> -r
 
 Azure Log Analytics Nozzle является компонентом с открытым кодом. Отправляйте свои вопросы и отзывы в [разделе GitHub](https://github.com/Azure/oms-log-analytics-firehose-nozzle/issues). Чтобы отправить запрос в службу поддержки Azure, выберите категорию службы "Виртуальная машина со службой Cloud Foundry". 
 
-## <a name="next-step"></a>Дальнейшие действия
+## <a name="next-step"></a>Следующий шаг
 
 В PCF 2.0 метрики производительности виртуальной машины передаются в службу "сопла" Azure Log Analytics с помощью сервера пересылки метрик системы и интегрируются в рабочую область Log Analytics. Вам больше не нужно использовать агент Log Analytics для получения метрик производительности виртуальной машины. Однако агент Log Analytics по-прежнему можно применять для сбора данных системного журнала. Он устанавливается на виртуальные машины CF в виде надстройки Bosh. 
 

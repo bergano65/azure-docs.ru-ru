@@ -1,26 +1,24 @@
 ---
 title: Запуск задания Apache Spark с помощью Службы Azure Kubernetes (AKS)
 description: Использование Службы Azure Kubernetes (AKS) для выполнения задания Apache Spark
-services: container-service
 author: lenadroid
-manager: jeconnoc
 ms.service: container-service
-ms.topic: article
+ms.topic: conceptual
 ms.date: 10/18/2019
 ms.author: alehall
 ms.custom: mvc
-ms.openlocfilehash: 5ecfa1853479c1cdc705a1a465a1de6318917a72
-ms.sourcegitcommit: a10074461cf112a00fec7e14ba700435173cd3ef
+ms.openlocfilehash: 72e87acf418d5085a76f18c595bf31d43b0d64ac
+ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73929000"
+ms.lasthandoff: 01/19/2020
+ms.locfileid: "76274651"
 ---
 # <a name="running-apache-spark-jobs-on-aks"></a>Запуск заданий Apache Spark в AKS
 
 [Apache Spark][apache-spark] — это быстрый механизм для обработки больших данных. Начиная с [выпуска Spark 2.3.0][spark-latest-release], Apache Spark поддерживает собственную интеграцию с кластерами Kubernetes. Служба Azure Kubernetes (AKS) — это управляемая среда Kubernetes, выполняющаяся в Azure. В этом документе описывается подготовка и запуск заданий Apache Spark в кластере Службы Azure Kubernetes (AKS).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы выполнить действия, описанные в этой статье, необходимо следующее:
 
@@ -330,7 +328,7 @@ ENTRYPOINT [ "/opt/entrypoint.sh" ]
 > [!WARNING]
 > Из [документации по][spark-docs]Spark: "Планировщик Kubernetes в настоящее время экспериментальен. В будущих версиях возможны изменения в поведении конфигурации, образов контейнеров и точек входа".
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения см. в документации по Spark.
 

@@ -1,38 +1,34 @@
 ---
-title: Управление записями DNS в Azure DNS с помощью интерфейса командной строки Azure | Документация Майкрософт
+title: Управление записями DNS в Azure DNS с помощью интерфейса командной строки Azure
 description: Управляйте наборами записей и записями DNS в службе Azure DNS при размещении вашего домена в Azure DNS.
-services: dns
-documentationcenter: na
 author: asudbring
-manager: jeconnoc
 ms.assetid: 5356a3a5-8dec-44ac-9709-0c2b707f6cb5
 ms.service: dns
 ms.devlang: azurecli
-ms.topic: article
-ms.tgt_pltfrm: na
+ms.topic: conceptual
 ms.custom: H1Hack27Feb2017
 ms.workload: infrastructure-services
 ms.date: 05/15/2018
 ms.author: allensu
-ms.openlocfilehash: a0316710f78afc8810f5f65e108638b08fae3da2
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: a7ecbb5eb2ff6e9b62091496b4debab14e906c55
+ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74211637"
+ms.lasthandoff: 01/19/2020
+ms.locfileid: "76278579"
 ---
 # <a name="manage-dns-records-and-recordsets-in-azure-dns-using-the-azure-cli"></a>Управление записями и наборами записей DNS в Azure DNS с помощью Azure CLI
 
 > [!div class="op_single_selector"]
-> * [портал Azure](dns-operations-recordsets-portal.md)
-> * [Интерфейс командной строки Azure](dns-operations-recordsets-cli.md)
+> * [портале Azure](dns-operations-recordsets-portal.md)
+> * [Azure CLI](dns-operations-recordsets-cli.md)
 > * [PowerShell](dns-operations-recordsets.md)
 
 В этой статье показано, как управлять записями DNS для зоны DNS с помощью кроссплатформенного Azure CLI, доступного для Windows, Mac и Linux. Записями DNS также можно управлять с помощью [Azure PowerShell](dns-operations-recordsets.md) или [портала Azure](dns-operations-recordsets-portal.md).
 
 Для работы с этой статьей необходимо [установить интерфейс командной строки Azure, войти в учетную запись и создать зону DNS](dns-operations-dnszones-cli.md).
 
-## <a name="introduction"></a>Введение
+## <a name="introduction"></a>Общие сведения
 
 Чтобы создавать записи DNS в Azure DNS, нужно понимать, как Azure DNS организует записи DNS в соответствующие наборы записей.
 
@@ -133,7 +129,7 @@ az network dns record-set ns add-record --resource-group myresourcegroup --zone-
 
 ### <a name="create-a-ptr-record"></a>Создание записи типа PTR
 
-В этом случае my-arpa-zone.com представляет зону ARPA вашего диапазона IP-адресов. Каждая запись типа PTR в этой зоне соответствует IP-адресу в этом диапазоне.  Имя записи 10 — это последний октет IP-адреса в этом диапазоне IP-адресов, представленном данной записью.
+В этом случае my-arpa-zone.com представляет зону ARPA вашего диапазона IP-адресов. Каждая запись PTR в этой зоне соответствует IP-адресу в этом диапазоне.  Имя записи 10 — это последний октет IP-адреса в этом диапазоне IP-адресов, представленном данной записью.
 
 ```azurecli
 az network dns record-set ptr add-record --resource-group myresourcegroup --zone-name contoso.com --record-set-name my-arpa.zone.com --ptrdname myservice.contoso.com
@@ -293,7 +289,7 @@ az network dns record-set a delete --resource-group myresourcegroup --zone-name 
 
 Отобразится запрос на подтверждение операции удаления. Чтобы скрыть этот запрос, используйте параметр `--yes`.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 См. дополнительные сведения о [зонах и записях в Azure DNS](dns-zones-records.md).
 <br>

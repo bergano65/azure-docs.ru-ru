@@ -7,12 +7,12 @@ ms.reviewer: orspodek
 ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 01/06/2020
-ms.openlocfilehash: 7987555dfd435aae1f580c73795a5617c192490a
-ms.sourcegitcommit: 02160a2c64a5b8cb2fb661a087db5c2b4815ec04
+ms.openlocfilehash: ac37c0e1f1f7d769a881c5965744b29d40468486
+ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75725706"
+ms.lasthandoff: 01/19/2020
+ms.locfileid: "76276681"
 ---
 # <a name="configure-customer-managed-keys-using-c"></a>Настройка ключей, управляемых клиентом, с помощьюC#
 
@@ -34,9 +34,9 @@ ms.locfileid: "75725706"
 
 ### <a name="install-c-nuget"></a>Установка C# NuGet
 
-* Установите [пакет NuGet для Azure Data Explorer (Kusto)](https://www.nuget.org/packages/Microsoft.Azure.Management.Kusto/).
+* Установите [пакет NuGet для Azure обозреватель данных (Kusto)](https://www.nuget.org/packages/Microsoft.Azure.Management.Kusto/).
 
-* Установите [пакет NuGet Microsoft.IdentityModel.Clients.ActiveDirectory](https://www.nuget.org/packages/Microsoft.IdentityModel.Clients.ActiveDirectory/) для проверки подлинности.
+* Установите [пакет NuGet Microsoft. IdentityModel. Clients. ActiveDirectory](https://www.nuget.org/packages/Microsoft.IdentityModel.Clients.ActiveDirectory/) для проверки подлинности.
 
 ### <a name="authentication"></a>Проверка подлинности
 

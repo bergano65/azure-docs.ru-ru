@@ -1,25 +1,17 @@
 ---
-title: Использование сценариев Azure Resource Manager для управления устройствами StorSimple | Документация Майкрософт
+title: Использование сценариев Azure Resource Manager для управления устройствами StorSimple
 description: Узнайте, как использовать сценарии Azure Resource Manager для автоматизации заданий StorSimple
-services: storsimple
-documentationcenter: NA
 author: alkohli
-manager: jeconnoc
-editor: ''
-ms.assetid: ''
 ms.service: storsimple
-ms.devlang: NA
-ms.topic: article
-ms.tgt_pltfrm: NA
-ms.workload: TBD
+ms.topic: conceptual
 ms.date: 10/03/2017
 ms.author: alkohli
-ms.openlocfilehash: 646b862733e8727c9c8729f1ac038fa88cfa0580
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: d1c98aa8c9b635f08bb14db2bde5485640a5d24d
+ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60726423"
+ms.lasthandoff: 01/19/2020
+ms.locfileid: "76276647"
 ---
 # <a name="use-azure-resource-manager-sdk-based-scripts-to-manage-storsimple-devices"></a>Использование сценариев Azure Resource Manager для управления устройствами StorSimple на основе пакета SDK
 
@@ -27,13 +19,13 @@ ms.locfileid: "60726423"
 
 Эта статья относится только к устройствам StorSimple серии 8000 на портале Azure.
 
-## <a name="sample-scripts"></a>Примеры скриптов
+## <a name="sample-scripts"></a>Примеры сценариев
 
 Для автоматизации различных заданий StorSimple доступны приведенные ниже образцы сценариев.
 
 #### <a name="table-of-azure-resource-manager-sdk-based-sample-scripts"></a>Таблица сценариев на основе пакета SDK для Azure Resource Manager
 
-| Сценарии Azure Resource Manager                    | Описание                                                                                                                                                                                                       |
+| Сценарии Azure Resource Manager                    | Description                                                                                                                                                                                                       |
 |--------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [Authorize-ServiceEncryptionRollover.ps1](https://raw.githubusercontent.com/anoobbacker/storsimpledevicemgmttools/master/Authorize-ServiceEncryptionRollover.ps1)          | Этот сценарий позволяет авторизовать устройство StorSimple для изменения ключей шифрования данных службы.                                                                                                           |
 | [Create-StorSimpleCloudAppliance.ps1](https://raw.githubusercontent.com/anoobbacker/storsimpledevicemgmttools/master/Create-StorSimpleCloudAppliance.ps1)              | В этом сценарии создается облачное устройство StorSimple 8010 или 8020. Затем можно настроить и зарегистрировать облачное устройство в службе диспетчера данных StorSimple.                                                       |

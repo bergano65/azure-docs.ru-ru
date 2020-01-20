@@ -1,26 +1,19 @@
 ---
-title: Развертывание приложения в масштабируемый набор виртуальных машин Azure | Документация Майкрософт
+title: Развертывание приложения в масштабируемом наборе виртуальных машин Azure
 description: Узнайте, как развертывать приложения в экземплярах виртуальных машин Windows и Linux, размещенных в масштабируемом наборе.
-services: virtual-machine-scale-sets
-documentationcenter: ''
 author: cynthn
-manager: jeconnoc
-editor: ''
 tags: azure-resource-manager
 ms.assetid: f8892199-f2e2-4b82-988a-28ca8a7fd1eb
 ms.service: virtual-machine-scale-sets
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.date: 05/29/2018
 ms.author: cynthn
-ms.openlocfilehash: 0dc1c52e65090acd5f63d1b23d8da6f37e3cf567
-ms.sourcegitcommit: 39da2d9675c3a2ac54ddc164da4568cf341ddecf
+ms.openlocfilehash: 6bc319ea50da4ff6a654b2c9ab09bbe218695533
+ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73960725"
+ms.lasthandoff: 01/19/2020
+ms.locfileid: "76278106"
 ---
 # <a name="deploy-your-application-on-virtual-machine-scale-sets"></a>Развертывание приложения в масштабируемых наборах виртуальных машин
 
@@ -32,14 +25,14 @@ ms.locfileid: "73960725"
 
 Чтобы уменьшить число операций управления конфигурацией и время подготовки виртуальной машины, можно создать настраиваемый образ виртуальной машины, который позволит подготавливать в масштабируемом наборе экземпляры, уже готовые к запуску вашего приложения. Дополнительные сведения о том, как создать и использовать настраиваемый образ виртуальной машины с масштабируемым набором см. в документах ниже:
 
-- [Интерфейс командной строки Azure](tutorial-use-custom-image-cli.md)
+- [Azure CLI](tutorial-use-custom-image-cli.md)
 - [Azure PowerShell](tutorial-use-custom-image-powershell.md)
 
 
 ## <a name="already-provisioned"></a>Установка приложения с помощью расширения настраиваемых сценариев
 Расширение настраиваемых сценариев скачивает и выполняет сценарии на виртуальных машинах Azure. Это расширение можно использовать для настройки после развертывания, установки программного обеспечения и других задач настройки или управления. Сценарии можно скачать из службы хранилища Azure или GitHub или передать на портал Azure во время выполнения расширения. Дополнительные сведения об установке приложения с расширением пользовательского скрипта см. в следующих учебниках:
 
-- [Интерфейс командной строки Azure](tutorial-install-apps-cli.md)
+- [Azure CLI](tutorial-install-apps-cli.md)
 - [Azure PowerShell](tutorial-install-apps-powershell.md)
 - [Шаблон Azure Resource Manager](tutorial-install-apps-template.md)
 
@@ -47,7 +40,7 @@ ms.locfileid: "73960725"
 ## <a name="install-an-app-to-a-windows-vm-with-powershell-dsc"></a>Установка приложения на виртуальную машину Windows с помощью PowerShell DSC
 [PowerShell Desired State Configuration](/powershell/scripting/dsc/overview/overview) — это платформа управления, которая позволяет определить конфигурацию целевых виртуальных машин. Конфигурации DSC определяют компоненты, которые следует установить на виртуальной машине, а также параметры настройки узла. На каждом целевом узле, который обрабатывает запрашиваемые действия на основе отправленных конфигураций, выполняется модуль локального диспетчера конфигураций (LCM).
 
-Расширение PowerShell DSC позволяет настроить экземпляры виртуальных машин в масштабируемом наборе с помощью PowerShell. В следующем примере выполняются следующие действия:
+Расширение PowerShell DSC позволяет настроить экземпляры виртуальных машин в масштабируемом наборе с помощью PowerShell. Следующий пример:
 
 - Указывает, что экземпляры виртуальной машины должны загрузить пакет DSC с GitHub: *https://github.com/Azure-Samples/compute-automation-configurations/raw/master/dsc.zip*
 - Настраивает расширение для запуска сценария установки: `configure-http.ps1`.
@@ -118,5 +111,5 @@ az vmss create \
 При использовании настраиваемого образа виртуальной машины с предварительно установленным приложением обновления приложения можно интегрировать в конвейер развертывания, чтобы создавать новые образы и развертывать обновления ОС в масштабируемом наборе. Такой подход позволяет конвейеру извлечь последние сборки приложения, создать и проверить образ виртуальной машины, а затем обновить экземпляры виртуальных машин в масштабируемом наборе. Чтобы запустить конвейер развертывания, который выполняет сборку обновлений приложения и развертывает их в настраиваемых образах виртуальных машин, можно [создать образ Packer и развернуть его с помощью Azure DevOps Services](/azure/devops/pipelines/apps/cd/azure/deploy-azure-scaleset) или использовать другую платформу (например, [Spinnaker](https://www.spinnaker.io/) или [Jenkins](https://jenkins.io/)).
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Сведения о создании и развертывании приложений в масштабируемых наборах вы можете получить из раздела [Рекомендации по проектированию масштабируемых наборов](virtual-machine-scale-sets-design-overview.md). Дополнительные сведения об управлении масштабируемым набором см. в разделе [Управление масштабируемым набором виртуальных машин с помощью Azure PowerShell](virtual-machine-scale-sets-windows-manage.md).

@@ -1,26 +1,19 @@
 ---
-title: Изменение масштабируемого набора виртуальных машин Azure | Документация Майкрософт
+title: Изменение масштабируемого набора виртуальных машин Azure
 description: Узнайте, как изменить и обновить масштабируемый набор виртуальных машин Azure с помощью интерфейсов REST API, Azure PowerShell и Azure CLI.
-services: virtual-machine-scale-sets
-documentationcenter: ''
 author: mayanknayar
-manager: jeconnoc
-editor: ''
 tags: azure-resource-manager
 ms.assetid: e229664e-ee4e-4f12-9d2e-a4f456989e5d
 ms.service: virtual-machine-scale-sets
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.date: 02/14/2018
 ms.author: manayar
-ms.openlocfilehash: 71899a9d6782c4700c287458c85ec83bd1516a4b
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 49327ff0c3aeab25de02fc67c049f24597215d45
+ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60803135"
+ms.lasthandoff: 01/19/2020
+ms.locfileid: "76274453"
 ---
 # <a name="modify-a-virtual-machine-scale-set"></a>Изменение масштабируемого набора виртуальных машин
 
@@ -316,7 +309,7 @@ $ az vmss get-instance-view --resource-group myResourceGroup --name myScaleSet -
 - Можно также использовать [пакеты SDK Azure](https://azure.microsoft.com/downloads/) для конкретного языка.
 
 >[!NOTE]
-> В кластерах Service Fabric можно использовать только *автоматический* режим, но обновление обрабатывается по-разному. Дополнительные сведения см. в разделе [обновление приложений Service Fabric](../service-fabric/service-fabric-application-upgrade.md).
+> В кластерах Service Fabric можно использовать только *автоматический* режим, но обновление обрабатывается по-разному. Дополнительные сведения см. в разделе [Service Fabric обновления приложения](../service-fabric/service-fabric-application-upgrade.md).
 
 Существует один тип изменения глобальных свойств масштабируемого набора, который не соответствует политике обновления. Внести изменения в профиль ОС масштабируемого набора (например, изменить имя и пароль администратора) можно только в API версии *2017-12-01* или более поздней версии. Эти изменения применяются только к виртуальным машинам, созданным после изменения модели масштабируемого набора. Чтобы обеспечить актуальность существующих виртуальных машин, необходимо пересоздать образ каждой существующей виртуальной машины. Это можно сделать следующим образом.
 
@@ -344,21 +337,21 @@ $ az vmss get-instance-view --resource-group myResourceGroup --name myScaleSet -
 ## <a name="properties-with-restrictions-on-modification"></a>Свойства с ограничениями на изменение
 
 ### <a name="create-time-properties"></a>Свойства времени создания
-Некоторые свойства можно задать только при создании масштабируемого набора. Эти свойства включают:
+Некоторые свойства можно задать только при создании масштабируемого набора. Эти свойства включают в себя:
 
-- зоны доступности;
+- Зоны доступности
 - издатель ссылки на образ;
 - предложение ссылки на образ.
 - тип учетной записи хранения управляемого диска ОС.
 
 ### <a name="properties-that-can-only-be-changed-based-on-the-current-value"></a>Свойства, которые можно изменить только на основе текущего значения
-Некоторые свойства можно изменить только в зависимости от текущего значения. Эти свойства включают:
+Некоторые свойства можно изменить только в зависимости от текущего значения. Эти свойства включают в себя:
 
 - **singlePlacementGroup**. Если это свойство имеет значение true, его можно изменить на false. Однако, если значением является false, его **не возможно** изменить на true.
 - **subnet**. Подсеть масштабируемого набора можно изменить, если исходная и новая подсети находятся в одной и той же виртуальной сети.
 
 ### <a name="properties-that-require-deallocation-to-change"></a>Свойства, для изменения которых требуется освободить виртуальные машины
-Для некоторых свойств можно задать определенные значения, только если виртуальные машины в масштабируемом наборе освобождены. Эти свойства включают:
+Для некоторых свойств можно задать определенные значения, только если виртуальные машины в масштабируемом наборе освобождены. Эти свойства включают в себя:
 
 - **SKU name**. Если новый SKU виртуальной машины не поддерживается на оборудовании масштабируемого набора, необходимо освободить виртуальные машины в наборе перед изменением имени SKU. Дополнительные сведения см. в статье [Изменение размера виртуальной машины Windows](../virtual-machines/windows/resize-vm.md).
 
@@ -439,7 +432,7 @@ $ az vmss get-instance-view --resource-group myResourceGroup --name myScaleSet -
     Update-AzVmss -ResourceGroupName "myResourceGroup" -Name "myScaleSet" -virtualMachineScaleSet $vmss
     ```
 
-- Azure CLI:
+- В Azure CLI:
 
     ```azurecli
     # Remove the load balancer backend pool from the scale set model

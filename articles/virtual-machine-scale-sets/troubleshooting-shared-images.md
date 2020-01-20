@@ -1,28 +1,21 @@
 ---
 title: Устранение неполадок с общими образами в Azure
 description: Узнайте, как устранять неполадки с общими галереями образов в масштабируемых наборах виртуальных машин Azure.
-services: virtual-machine-scale-sets
 documentationcenter: virtual-machine-scale-sets
 author: axayjo
-manager: jeconnoc
-editor: tysonn
 tags: azure-resource-manager
-ms.assetid: ''
 ms.service: virtual-machine-scale-sets
-ms.devlang: na
-ms.topic: article
-ms.tgt_pltfrm: ''
+ms.topic: conceptual
 ms.workload: infrastructure
 ms.date: 04/25/2019
 ms.author: akjosh
 ms.reviewer: cynthn
-ms.custom: ''
-ms.openlocfilehash: 0496bb352721a19917e8f16d8dbe0ee3473a9f77
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 86ad6a6e5ec8f4eef045c270b5f0704d48d8a6ec
+ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75460255"
+ms.lasthandoff: 01/19/2020
+ms.locfileid: "76276236"
 ---
 # <a name="troubleshoot-shared-image-galleries"></a>Устранение неполадок c коллекциями общих образов
 

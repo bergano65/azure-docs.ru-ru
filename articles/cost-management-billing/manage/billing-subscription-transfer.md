@@ -10,15 +10,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 09/18/2019
+ms.date: 01/17/2020
 ms.author: banders
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 6f43f7424cddae8659301be0ddc4842412a62952
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.openlocfilehash: d2bbfd7f4ddc5fc34c0bec3612783dfef5074d83
+ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75993548"
+ms.lasthandoff: 01/19/2020
+ms.locfileid: "76270861"
 ---
 # <a name="transfer-billing-ownership-of-an-azure-subscription-to-another-account"></a>Передача прав владения на выставление счетов для подписки Azure другой учетной записи
 
@@ -86,7 +86,7 @@ ms.locfileid: "75993548"
 
 ## <a name="transfer-billing-ownership-of-enterprise-agreement-ea-subscriptions"></a>Передача права владения на выставление счетов для подписок EA
 
-Администратор предприятия может передать любой учетной записи права владения подпиской в рамках соглашения о регистрации. Дополнительные сведения см. в статье о [передаче прав владения на учетную запись](https://ea.azure.com/helpdocs/changeAccountOwnerForASubscription) на портале EA.
+Администратор предприятия может передать любой учетной записи права владения подпиской в рамках соглашения о регистрации. Дополнительные сведения см. в статье [изменение владельца учетной записи](https://docs.microsoft.com/azure/cost-management-billing/manage/ea-portal-get-started#change-account-owner) на портале EA.
 
 ## <a name="next-steps-after-accepting-billing-ownership"></a>Шаги после подтверждения прав владения на выставление счетов
 
@@ -117,7 +117,7 @@ ms.locfileid: "75993548"
 - [Visual Studio Test Professional](https://azure.microsoft.com/offers/ms-azr-0060p/)
 - [План Microsoft Azure](https://azure.microsoft.com/offers/ms-azr-0017g/)\*\*
 
-\* [через портал EA](#EA).
+\* [Через портал EA](#EA).
 
 \*\* Поддерживается только для учетных записей, созданных во время регистрации на веб-сайте Azure.
 

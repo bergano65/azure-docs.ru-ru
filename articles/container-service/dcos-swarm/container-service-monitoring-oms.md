@@ -1,26 +1,24 @@
 ---
 title: (УСТАРЕЛО) Мониторинг кластера Azure DC/OS с помощью Operations Management
 description: Мониторинг кластера DC/OS Службы контейнеров Azure с использованием Log Analytics.
-services: container-service
 author: keikhara
-manager: jeconnoc
 ms.service: container-service
-ms.topic: article
+ms.topic: conceptual
 ms.date: 11/17/2016
 ms.author: keikhara
 ms.custom: mvc
-ms.openlocfilehash: 290141136672729060f5156d645c47ac303fa0c3
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 1ab8d1cf3eb38a17f0b3d6c8137e37237498a527
+ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60810008"
+ms.lasthandoff: 01/19/2020
+ms.locfileid: "76277319"
 ---
 # <a name="deprecated-monitor-an-azure-container-service-dcos-cluster-with-log-analytics"></a>(УСТАРЕЛО) Мониторинг кластера DC/OS Службы контейнеров Azure с использованием Log Analytics
 
 [!INCLUDE [ACS deprecation](../../../includes/container-service-deprecation.md)]
 
-Log Analytics — это облачное решение Майкрософт для управления ИТ-средой, которое помогает управлять локальной и облачной инфраструктурой и защищать ее. В Log Analytics реализовано решение для контейнеров, которое помогает просматривать сведения, касающиеся инвентаризации и производительности контейнеров, а также соответствующие журналы в одном расположении. Оно позволяет выполнять аудит и устранять неполадки контейнеров, просматривая журналы в централизованном расположении, а также находить контейнеры с высоким уровнем потребления ресурсов на узле.
+Log Analytics — это облачное решение Майкрософт для управления ИТ-средой, которое помогает управлять локальной и облачной инфраструктурой и защищать ее. Решение "контейнер" — это решение в Log Analytics, которое помогает просматривать инвентаризацию, производительность и журналы в одном расположении контейнера. Оно позволяет выполнять аудит и устранять неполадки контейнеров, просматривая журналы в централизованном расположении, а также находить контейнеры с высоким уровнем потребления ресурсов на узле.
 
 ![](media/container-service-monitoring-oms/image1.png)
 
@@ -43,7 +41,7 @@ Log Analytics — это облачное решение Майкрософт д
 
    ![](media/container-service-monitoring-oms/image2.png)
 
-2. Нажмите кнопку **Установить**. Отобразится всплывающее окно со сведениями о версии и кнопкой **Установить пакет** или **Advanced Installation** (Расширенная установка). Нажав кнопку **Advanced Installation** (Расширенная установка), вы перейдете на страницу **OMS specific configuration properties** (Свойства конфигурации OMS).
+2. Щелкните **Install**(Установить). Отобразится всплывающее окно со сведениями о версии и кнопкой **Установить пакет** или **Advanced Installation** (Расширенная установка). Нажав кнопку **Advanced Installation** (Расширенная установка), вы перейдете на страницу **OMS specific configuration properties** (Свойства конфигурации OMS).
 
    ![](media/container-service-monitoring-oms/image3.png)
 

@@ -1,25 +1,17 @@
 ---
-title: Создание пакета поддержки StorSimple серии 8000 | Документация Майкрософт
+title: Создание пакета поддержки серии StorSimple 8000
 description: Узнайте, как создавать, расшифровывать и изменять содержимое пакетов поддержки для устройства StorSimple серии 8000.
-services: storsimple
-documentationcenter: ''
 author: alkohli
-manager: jeconnoc
-editor: ''
-ms.assetid: ''
 ms.service: storsimple
-ms.devlang: na
-ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: na
+ms.topic: conceptual
 ms.date: 01/09/2018
 ms.author: alkohli
-ms.openlocfilehash: dfc2d8d763a1eb64a37af73e03992f2d948a6856
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 9ca033f6f786c0142261dafa31b93b71a8b3336a
+ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61481867"
+ms.lasthandoff: 01/19/2020
+ms.locfileid: "76277073"
 ---
 # <a name="create-and-manage-a-support-package-for-storsimple-8000-series"></a>Создание пакета поддержки StorSimple для устройства StorSimple серии 8000 и управление им
 
@@ -31,7 +23,7 @@ ms.locfileid: "61481867"
 
 ## <a name="create-a-support-package"></a>Создать пакет поддержки.
 
-В некоторых случаях необходимо вручную создать пакет поддержки с помощью Windows PowerShell для StorSimple. Пример:
+В некоторых случаях необходимо вручную создать пакет поддержки с помощью Windows PowerShell для StorSimple. Пример.
 
 * Если необходимо удалить конфиденциальную информацию из файлов журнала до их предоставления службе технической поддержки Майкрософт.
 * Если возникают сложности с отправкой пакета из-за проблем с подключением.
@@ -72,7 +64,7 @@ ms.locfileid: "61481867"
 
 С командлетом Export-HcsSupportPackage можно использовать следующие параметры.
 
-| Параметр | Обязательный/необязательный | Описание |
+| Параметр | Обязательный/необязательный | Description |
 | --- | --- | --- |
 | `-Path` |Обязательно для заполнения |Позволяет указать расположение общей сетевой папки, в которой будет расположен пакет поддержки. |
 | `-EncryptionPassphrase` |Обязательно для заполнения |Позволяет указать парольную фразу для шифрования пакета поддержки. |
@@ -121,7 +113,7 @@ ms.locfileid: "61481867"
         Supply values for the following parameters:EncryptionPassphrase: ****
 9. Запишите новую парольную фразу, чтобы сообщить ее специалистам службы технической поддержки Майкрософт по запросу.
 
-### <a name="example-editing-files-in-a-support-package-on-a-password-protected-share"></a>Пример: Изменение файлов в пакет поддержки на ресурсе, защищенном паролем
+### <a name="example-editing-files-in-a-support-package-on-a-password-protected-share"></a>Пример: изменение файлов в пакете поддержки на ресурсе, защищенном паролем
 
 Ниже приведен пример, демонстрирующий расшифровку, изменение и повторное шифрование пакета поддержки.
 

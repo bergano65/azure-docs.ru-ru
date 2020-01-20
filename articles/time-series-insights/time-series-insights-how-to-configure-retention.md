@@ -8,20 +8,20 @@ ms.author: dpalled
 manager: cshankar
 ms.workload: big-data
 ms.topic: conceptual
-ms.date: 11/21/2019
+ms.date: 01/17/2020
 ms.custom: seodec18
-ms.openlocfilehash: 954e61aec5b622d44435a8a5b196fdbfed33c564
-ms.sourcegitcommit: c31dbf646682c0f9d731f8df8cfd43d36a041f85
+ms.openlocfilehash: 3fdc007caaa4cb79f6083599a5bc176bc022fb03
+ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2019
-ms.locfileid: "74561207"
+ms.lasthandoff: 01/19/2020
+ms.locfileid: "76278643"
 ---
 # <a name="configuring-retention-in-time-series-insights"></a>Настройка периода удержания в службе "Аналитика временных рядов"
 
 В этой статье описывается, как настроить **время хранения данных** и **поведение при превышении размера хранилища** в службе "Аналитика временных рядов Azure".
 
-## <a name="summary"></a>Резюме
+## <a name="summary"></a>Сводка
 
 Каждая среда "аналитика временных рядов Azure" имеет параметр для настройки **времени хранения данных**. Это значение охватывает период от 1 до 400 дней. Данные удаляются по емкости хранилища среды или длительности хранения (1–400) в зависимости от того, какое из ограничений будет превышено первым.
 
@@ -34,13 +34,13 @@ ms.locfileid: "74561207"
 
 ## <a name="configure-data-retention"></a>Настройка срока хранения данных
 
-1. Войдите на [портале Azure](https://portal.azure.com).
+1. Войдите на [портал Azure](https://portal.azure.com).
 
-1. Найдите существующую среду Аналитики временных рядов. На портале Azure щелкните **Все ресурсы** в меню слева. Выберите среду Time Series Insights.
+1. Найдите существующую среду "Аналитика временных рядов". На портале Azure щелкните **Все ресурсы** в меню слева. Выберите среду Time Series Insights.
 
 1. В разделе **Параметры** выберите **Конфигурация хранилища**.
 
-    [![выберите параметры, а затем настройте.](media/data-retention/1-configure-data-retention.png)](media/data-retention/1-configure-data-retention.png#lightbox)
+    [![в разделе Параметры выберите Конфигурация хранилища.](media/data-retention/configure-data-retention.png)](media/data-retention/configure-data-retention.png#lightbox)
 
 1. Выберите **время хранения данных (в днях)** для настройки периода удержания с помощью ползунка или введите число в текстовом поле.
 
@@ -48,7 +48,7 @@ ms.locfileid: "74561207"
 
 1. Перейдите к параметру **поведения при превышении размера хранилища**. Выберите поведение **очистки старых данных** или **остановки приема данных**.
 
-    [![хранение данных — примите и сохраните.](media/data-retention/2-accept-and-save.png)](media/data-retention/2-accept-and-save.png#lightbox)
+    [![приостановить входные данные — примите и сохраните.](media/data-retention/pause-ingress-accept-and-save.png)](media/data-retention/pause-ingress-accept-and-save.png#lightbox)
 
 1. Изучите документацию, чтобы понять потенциальные риски потери данных. Нажмите кнопку **Сохранить**, чтобы сохранить изменения.
 
