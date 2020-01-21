@@ -52,7 +52,7 @@ az webapp config appsettings set --name <app-name> --resource-group <resource-gr
 Параметр приложения `WEBSITE_LOAD_CERTIFICATES` делает указанные сертификаты доступными для приложения Windows, размещенного в хранилище сертификатов Windows, а расположение зависит от [ценовой](overview-hosting-plans.md)категории:
 
 - **Изолированный** уровень в [локальной мачине\ми](/windows-hardware/drivers/install/local-machine-and-current-user-certificate-stores). 
-- Все остальные уровни — в [текущем усер\ми](/windows-hardware/drivers/install/local-machine-and-current-user-certificate-stores).
+- Все остальные уровни — в [current user\me](/windows-hardware/drivers/install/local-machine-and-current-user-certificate-stores).
 
 В C# коде вы получите доступ к сертификату по отпечатку сертификата. Следующий код загружает сертификат с отпечатком `E661583E8FABEF4C0BEF694CBC41C28FB81CD870`.
 
