@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 04/03/2018
 ms.author: yurid
-ms.openlocfilehash: ea029e62ac1273d9796e52edc3f7a46868964d2a
-ms.sourcegitcommit: 3f8017692169bd75483eefa96c225d45cd497f06
+ms.openlocfilehash: 4603240a76ec72223b88853c63ed11152707201c
+ms.sourcegitcommit: d9ec6e731e7508d02850c9e05d98d26c4b6f13e6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73520759"
+ms.lasthandoff: 01/20/2020
+ms.locfileid: "76281297"
 ---
 # <a name="azure-security-center-readiness-roadmap"></a>План подготовки к работе с центром безопасности Azure
 Этот документ содержит план подготовки, который поможет вам приступить к работе с центром безопасности Azure.
@@ -32,7 +32,7 @@ ms.locfileid: "73520759"
 * [Введение в Центр безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-intro)
 * [Краткое руководство по центру безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-get-started)
 
-Видеоролики
+Видео
 * [Introduction to Azure Security Center](https://azure.microsoft.com/resources/videos/introduction-to-azure-security-center/) (Ознакомительное видео о центре безопасности Azure)
 * [Overview of Security Center Prevention, Detection and Response Capabilities](https://azure.microsoft.com/resources/videos/azurecon-2015-new-azure-security-center-helps-you-prevent-detect-and-respond-to-threats/) (Видеообзор возможностей предотвращения, обнаружения и ответных действий центра безопасности)
 
@@ -79,13 +79,13 @@ ms.locfileid: "73520759"
 
 Ознакомьтесь со следующими ресурсами, что узнать, как центр безопасности можно интегрировать в процесс реагирования на инциденты.
 
-Видеоролики  
+Видео  
 * [Azure Security Center in Incident Response](https://channel9.msdn.com/Blogs/Azure-Security-Videos/Azure-Security-Center-in-Incident-Response) (Реагирование на инциденты с помощью центра безопасности)
 * [Respond quickly to threats with next-generation security operation, and investigation](https://youtu.be/e8iFCz5RM4g) (Быстрая реакция на угрозы с помощью современных операций и анализа безопасности)
 
 Статьи    
 * [Использование центра безопасности Azure для реагирования на инциденты](https://docs.microsoft.com/azure/security-center/security-center-incident-response)
-* [Автоматизация реагирования с помощью тренировочных заданий по обеспечению безопасности](https://docs.microsoft.com/azure/security-center/security-center-playbooks)
+* [Автоматизация реагирования с помощью автоматизации рабочих процессов](workflow-automation.md)
 
 ## <a name="advanced-cloud-defense"></a>Расширенная защита облака
 
@@ -93,7 +93,7 @@ ms.locfileid: "73520759"
 
 В следующих ресурсах объясняется, как использовать эти возможности в центре безопасности.
 
-Видеоролики  
+Видео  
 * [Центр безопасности Azure — JIT-доступ к виртуальной машине](https://youtu.be/UOQb2FcdQnU)
 * [Центр безопасности Azure — адаптивные элементы управления приложениями](https://youtu.be/wWWekI1Y9ck)
 
@@ -115,7 +115,7 @@ ms.locfileid: "73520759"
 * [Рекомендации по обеспечению безопасности удостоверений](https://docs.microsoft.com/azure/security/fundamentals/identity-management-best-practices)
 * [Рекомендации по обеспечению сетевой безопасности](https://docs.microsoft.com/azure/security/fundamentals/network-best-practices)
 * [Рекомендации для PaaS](https://docs.microsoft.com/azure/security/security-paas-deployments)
-* [Соответствие требованиям](https://www.microsoft.com/trustcenter/compliance/due-diligence-checklist)
+* [Соответствие](https://www.microsoft.com/trustcenter/compliance/due-diligence-checklist)
 * [Клиенты log Analytics теперь могут использовать центр безопасности Azure для защиты своих гибридных облачных рабочих нагрузок.](https://blogs.technet.microsoft.com/msoms/2017/09/25/oms-customers-can-now-use-azure-security-center-to-protect-their-hybrid-cloud-workloads/)
 
 ## <a name="community-resources"></a>Ресурсы сообщества

@@ -6,12 +6,12 @@ ms.author: manishku
 ms.service: mariadb
 ms.topic: conceptual
 ms.date: 01/09/2020
-ms.openlocfilehash: 4e05de1fc1bfb880767d113e88d5c49082fc146c
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.openlocfilehash: 76e9526ab39cbccd45a48d2cd24e05867c953774
+ms.sourcegitcommit: d9ec6e731e7508d02850c9e05d98d26c4b6f13e6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75976084"
+ms.lasthandoff: 01/20/2020
+ms.locfileid: "76280838"
 ---
 # <a name="create-and-manage-private-link-for-azure-database-for-mariadb-preview-using-portal"></a>Создание и управление частной ссылкой для базы данных Azure для MariaDB (Предварительная версия) с помощью портала
 
@@ -163,7 +163,7 @@ ms.locfileid: "75976084"
     | Подсеть | Выберите *mySubnet*. |
     |**ЧАСТНАЯ ИНТЕГРАЦИЯ DNS**||
     |Интеграция с частной зоной DNS |Выберите **Да**. |
-    |Частная зона DNS |Выберите *(создать) привателинк. Database. Azure. com* |
+    |Частная зона DNS |Выберите *(создать) привателинк. MariaDB. Database. Azure. com* |
     |||
 
 1. Выберите **Review + create** (Просмотреть и создать). Вы будете перенаправлены на страницу **Просмотр и создание**, где Azure проверит вашу конфигурацию. 
@@ -201,14 +201,14 @@ ms.locfileid: "75976084"
 
 1. На удаленном рабочем столе  *myVm* откройте PowerShell.
 
-2. Введите `nslookup mydemomserver.mariadb.privatelink.database.azure.com`. 
+2. Введите `nslookup mydemomserver.privatelink.mariadb.database.azure.com`. 
 
     Должно появиться сообщение следующего вида:
     ```azurepowershell
     Server:  UnKnown
     Address:  168.63.129.16
     Non-authoritative answer:
-    Name:    mydemoMariaDBserver.mariadb.privatelink.database.azure.com
+    Name:    mydemoMariaDBserver.privatelink.mariadb.database.azure.com
     Address:  10.1.3.4
 
 3. Test the private link connection for the MariaDB server using any available client. In the example below I have used [MySQL Workbench](https://dev.mysql.com/doc/workbench/en/wb-installing-windows.html) to do the operation.
@@ -219,7 +219,7 @@ ms.locfileid: "75976084"
     | Setting | Value |
     | ------- | ----- |
     | Server type| Select **MariaDB**.|
-    | Server name| Select *mydemoserver.MariaDB.privatelink.database.azure.com* |
+    | Server name| Select *mydemoserver.privatelink.mariadb.database.azure.com* |
     | User name | Enter username as username@servername which is provided during the MariaDB server creation. |
     |Password |Enter a password provided during the MariaDB server creation. |
     |SSL|Select **Required**.|

@@ -9,12 +9,12 @@ ms.date: 03/21/2019
 ms.author: tamram
 ms.reviewer: santoshc
 ms.subservice: common
-ms.openlocfilehash: 5e4a8afdb9bea4f528e57c914149f611b0578c63
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.openlocfilehash: 28e3f276da231ef0186dba8ecd9c064cdd10a5a8
+ms.sourcegitcommit: d9ec6e731e7508d02850c9e05d98d26c4b6f13e6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75973473"
+ms.lasthandoff: 01/20/2020
+ms.locfileid: "76281229"
 ---
 # <a name="configure-azure-storage-firewalls-and-virtual-networks"></a>Настройка брандмауэров службы хранилища Azure и виртуальных сетей
 
@@ -381,7 +381,7 @@ ms.locfileid: "75973473"
 | Azure HDInsight          | Microsoft.HDInsight        | Подготавливает начальное содержимое файловой системы по умолчанию для нового кластера HDInsight. [Узнайте больше](/azure/hdinsight/hdinsight-hadoop-use-blob-storage). |
 | Экспорт импорта Azure      | Microsoft.ImportExport     | Позволяет импортировать данные в Azure и экспортировать данные из Azure с помощью службы импорта и экспорта. [Узнайте больше](/azure/storage/common/storage-import-export-service).  |
 | Azure Monitor            | Microsoft.Insights         | Позволяет записывать данные мониторинга в защищенную учетную запись. [Дополнительные сведения](/azure/monitoring-and-diagnostics/monitoring-roles-permissions-security). |
-| Сети Azure         | Microsoft.Network.          | Хранение и анализ журналов сетевого трафика. [Узнайте больше](/azure/network-watcher/network-watcher-packet-capture-overview). |
+| Сети Azure         | Microsoft.Network.          | Хранение и анализ журналов сетевого трафика. [Узнайте больше](https://docs.microsoft.com/azure/network-watcher/network-watcher-nsg-flow-logging-overview). |
 | Восстановление сайтов Azure      | Microsoft.SiteRecovery     | Включите репликацию для аварийного восстановления виртуальных машин IaaS Azure при использовании кэша, источника или целевых учетных записей хранения с поддержкой брандмауэра.  [Узнайте больше](https://docs.microsoft.com/azure/site-recovery/azure-to-azure-tutorial-enable-replication). |
 
 Параметр **Allow Trusted Microsoft Services...** также позволяет определенному экземпляру следующих служб получить доступ к учетной записи хранения, если [роль RBAC явно назначается](storage-auth-aad.md#assign-rbac-roles-for-access-rights) [управляемому удостоверению, назначенному системой](../../active-directory/managed-identities-azure-resources/overview.md) для этого экземпляра ресурса. В этом случае область доступа для экземпляра соответствует роли RBAC, назначенной управляемому удостоверению.

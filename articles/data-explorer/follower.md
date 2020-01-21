@@ -7,12 +7,12 @@ ms.reviewer: gabilehner
 ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 11/07/2019
-ms.openlocfilehash: 41d48bdd7cc7972536d0cf0e0cb78483f727d7f2
-ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
+ms.openlocfilehash: eb0b5ea960aa7bc9158791d1fc9fa0986e7d99e6
+ms.sourcegitcommit: d9ec6e731e7508d02850c9e05d98d26c4b6f13e6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2020
-ms.locfileid: "76277017"
+ms.lasthandoff: 01/20/2020
+ms.locfileid: "76281348"
 ---
 # <a name="use-follower-database-to-attach-databases-in-azure-data-explorer"></a>Использование базы данных следующих служб для присоединения баз данных в Azure обозреватель данных
 
@@ -383,6 +383,7 @@ poller = kusto_management_client.clusters.detach_follower_databases(resource_gro
 
 * Следующие и ведущие кластеры должны находиться в одном регионе.
 * Прием [потоковой передачи](/azure/data-explorer/ingest-data-streaming) нельзя использовать для базы данных, которая находится в процессе.
+* Шифрование данных с помощью [управляемых пользователем ключей](/azure/data-explorer/security#customer-managed-keys-with-azure-key-vault) не поддерживается как в лидерах, так и в кластерах-следах. 
 * Невозможно удалить базу данных, присоединенную к другому кластеру, прежде чем отсоединить ее.
 * Невозможно удалить кластер с базой данных, присоединенной к другому кластеру, прежде чем отсоединить его.
 * Невозможно прикрепить к кластеру, присоединенному к исполнению или выполнительу базы данных. 

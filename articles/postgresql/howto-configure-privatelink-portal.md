@@ -6,12 +6,12 @@ ms.author: manishku
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 01/09/2020
-ms.openlocfilehash: dca271e745976f7797d3e911c2f1f6232fe5400d
-ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
+ms.openlocfilehash: f7a796408267fda08d765425a3c529895a251782
+ms.sourcegitcommit: d9ec6e731e7508d02850c9e05d98d26c4b6f13e6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75897732"
+ms.lasthandoff: 01/20/2020
+ms.locfileid: "76281110"
 ---
 # <a name="create-and-manage-private-link-for-azure-database-for-postgresql---single-server-preview-using-portal"></a>Создание и управление частной ссылкой для базы данных Azure для PostgreSQL — один сервер (Предварительная версия) с помощью портала
 
@@ -163,7 +163,7 @@ ms.locfileid: "75897732"
     | Подсеть | Выберите *mySubnet*. |
     |**ЧАСТНАЯ ИНТЕГРАЦИЯ DNS**||
     |Интеграция с частной зоной DNS |Выберите **Да**. |
-    |Частная зона DNS |Выберите *(создать) привателинк. Database. Azure. com* |
+    |Частная зона DNS |Выберите *(создать) привателинк. postgres. Database. Azure. com* |
     |||
 
 1. Выберите **Review + create** (Просмотреть и создать). Вы будете перенаправлены на страницу **Просмотр и создание**, где Azure проверит вашу конфигурацию. 
@@ -201,14 +201,14 @@ ms.locfileid: "75897732"
 
 1. На удаленном рабочем столе  *myVm* откройте PowerShell.
 
-2. Введите `nslookup mydemopostgresserver.database.azure.com`. 
+2. Введите `nslookup mydemopostgresserver.privatelink.postgres.database.azure.com`. 
 
     Должно появиться сообщение следующего вида:
     ```azurepowershell
     Server:  UnKnown
     Address:  168.63.129.16
     Non-authoritative answer:
-    Name:    mydemopostgresserver.postgres.privatelink.database.azure.com
+    Name:    mydemopostgresserver.privatelink.postgres.database.azure.com
     Address:  10.1.3.4
 
 3. Test the private link connection for the PostgreSQL server using any available client. In the example below I have used [Azure Data studio](https://docs.microsoft.com/sql/azure-data-studio/download?view=sql-server-ver15) to do the operation.
@@ -218,7 +218,7 @@ ms.locfileid: "75897732"
     | Setting | Value |
     | ------- | ----- |
     | Server type| Select **PostgreSQL**.|
-    | Server name| Select *mydemopostgresserver.postgres.privatelink.database.azure.com* |
+    | Server name| Select *mydemopostgresserver.privatelink.postgres.database.azure.com* |
     | User name | Enter username as username@servername which is provided during the PostgreSQL server creation. |
     |Password |Enter a password provided during the PostgreSQL server creation. |
     |SSL|Select **Required**.|

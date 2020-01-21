@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 10/10/2019
 ms.author: damendo
-ms.openlocfilehash: 0eea6700b8b248a87666071ee02572d356110cd0
-ms.sourcegitcommit: 8b37091efe8c575467e56ece4d3f805ea2707a64
+ms.openlocfilehash: 570b8057fc09e3f054152d09467519a167d938e9
+ms.sourcegitcommit: d9ec6e731e7508d02850c9e05d98d26c4b6f13e6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75830179"
+ms.lasthandoff: 01/20/2020
+ms.locfileid: "76280787"
 ---
 # <a name="frequently-asked-questions-faq-about-azure-network-watcher"></a>Часто задаваемые вопросы о наблюдателе за сетями Azure
 Служба [наблюдателя за сетями Azure](https://docs.microsoft.com/azure/network-watcher/network-watcher-monitoring-overview) предоставляет набор средств для мониторинга, диагностики, просмотра метрик и включения или отключения журналов для ресурсов в виртуальной сети Azure. В этой статье содержатся ответы на часто задаваемые вопросы о службе.
@@ -71,9 +71,9 @@ ms.locfileid: "75830179"
 ### <a name="what-does-nsg-flow-logs-do"></a>Что делают журналы потоков NSG?
 Сетевые ресурсы Azure можно объединять и управлять ими с помощью [групп безопасности сети (группы безопасности сети)](https://docs.microsoft.com/azure/virtual-network/security-overview). Журналы потоков NSG позволяют записывать в журнал сведения о потоке с пятью кортежами по всему трафику через группы безопасности сети. Журналы необработанных потоков записываются в учетную запись хранения Azure, откуда они могут быть обработаны, проанализированы, запрошены или экспортированы по мере необходимости.
 
-### <a name="how-do-i-use-nsg-flow-logs-on-a-storage-account-with-a-firewall-or-through-a-service-endpoints"></a>Разделы справки использовать журналы потоков NSG в учетной записи хранения с брандмауэром или конечными точками службы?
+### <a name="how-do-i-use-nsg-flow-logs-on-a-storage-account-with-a-firewall"></a>Разделы справки использовать журналы потоков NSG в учетной записи хранения с брандмауэром?
 
-Чтобы использовать учетную запись хранения с брандмауэром или конечными точками службы, необходимо разрешить доверенным службам Майкрософт доступ к вашей учетной записи хранения:
+Чтобы использовать учетную запись хранения с брандмауэром, необходимо предоставить исключение для доступа к учетной записи хранения в доверенных службах Майкрософт:
 
 * Найдите имя учетной записи хранения, выполнив поиск NSG на [странице обзора журналов потоков NSG](https://ms.portal.azure.com/#blade/Microsoft_Azure_Network/NetworkWatcherMenuBlade/flowLogs).
 * Перейдите к учетной записи хранения и введите имя учетной записи в результатах глобального поиска на портале.
@@ -82,6 +82,11 @@ ms.locfileid: "75830179"
 * Если они уже выбраны, никаких изменений не требуется.  
 
 Через несколько минут можно проверить журналы хранилища. Вы должны увидеть обновленную метку времени или новый файл JSON.
+
+### <a name="how-do-i-use-nsg-flow-logs-with-service-endpoints-for-storage"></a>Разделы справки использовать журналы потоков NSG с конечными точками службы для хранения?
+
+Ознакомьтесь с [руководством включение конечных точек службы](https://docs.microsoft.com/azure/virtual-network/tutorial-restrict-network-access-to-resources#enable-a-service-endpoint). 
+
 
 ### <a name="what-is-the-difference-between-flow-logs-versions-1--2"></a>В чем разница между журналами потоков версии 1 & 2?
 Журналы потоков версии 2 представляют концепцию *состояния потока* & хранят сведения о передаваемых байтах и пакетах. [Дополнительные сведения](https://docs.microsoft.com/azure/network-watcher/network-watcher-nsg-flow-logging-overview#log-file).

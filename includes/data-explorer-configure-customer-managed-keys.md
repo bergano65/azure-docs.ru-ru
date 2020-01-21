@@ -4,17 +4,19 @@ ms.service: data-explorer
 ms.topic: include
 ms.date: 01/07/2020
 ms.author: orspodek
-ms.openlocfilehash: 5443ee6912c30b89cee6fdb43f84f3bc1fbcfe68
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.openlocfilehash: 0d78e48fead7b1f53e67860e6be8fe6d77469e87
+ms.sourcegitcommit: d9ec6e731e7508d02850c9e05d98d26c4b6f13e6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76021274"
+ms.lasthandoff: 01/20/2020
+ms.locfileid: "76280613"
 ---
 Azure обозреватель данных шифрует все данные в неактивных учетных записях хранения. По умолчанию данные шифруются с помощью ключей, управляемых корпорацией Майкрософт. Для дополнительного управления ключами шифрования можно предоставить ключи, управляемые клиентом, для шифрования данных. Ключи, управляемые клиентом, должны храниться в [Azure Key Vault](/azure/key-vault/key-vault-overview). Вы можете создавать собственные ключи и сохранять их в хранилище ключей, а также использовать Azure Key Vault API для создания ключей. Кластер Azure обозреватель данных и хранилище ключей должны находиться в одном регионе, но могут находиться в разных подписках. Подробное описание ключей, управляемых клиентом, см. в разделе [управляемые клиентом ключи с помощью Azure Key Vault](/azure/storage/common/storage-service-encryption). В этой статье показано, как настроить ключи, управляемые клиентом.
 
-> [!Note]
-> Чтобы настроить ключи, управляемые клиентом, с помощью Azure обозреватель данных, необходимо [задать два свойства в хранилище ключей](/azure/key-vault/key-vault-ovw-soft-delete): **обратимое удаление** и **не очищать**. Эти свойства не включены по умолчанию. Чтобы включить эти свойства, используйте [PowerShell](/azure/key-vault/key-vault-soft-delete-powershell) или [Azure CLI](/azure/key-vault/key-vault-soft-delete-cli). Поддерживаются только ключи RSA и размер ключа 2048.
+Чтобы настроить ключи, управляемые клиентом, с помощью Azure обозреватель данных, необходимо [задать два свойства в хранилище ключей](/azure/key-vault/key-vault-ovw-soft-delete): **обратимое удаление** и **не очищать**. Эти свойства не включены по умолчанию. Чтобы включить эти свойства, используйте [PowerShell](/azure/key-vault/key-vault-soft-delete-powershell) или [Azure CLI](/azure/key-vault/key-vault-soft-delete-cli). Поддерживаются только ключи RSA и размер ключа 2048.
+
+> [!NOTE]
+> Шифрование данных с помощью управляемых пользователем ключей не поддерживается в [кластерах "руководитель" и "следующий](/azure/data-explorer/follower)". 
 
 ## <a name="assign-an-identity-to-the-cluster"></a>Назначение удостоверения кластеру
 
