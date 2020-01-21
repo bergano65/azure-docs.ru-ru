@@ -1,4 +1,4 @@
-- name: Документация по API "Анализ текста"
+- name: Документация по API Анализа текста
   href: index.yml
 - name: Обзор
   expanded: true
@@ -14,8 +14,10 @@
   items:
     - name: Клиентская библиотека
       items:
-        - name: Анализ текста с использованием клиентской библиотеки
+        - name: "Анализ текста с помощью предварительной версии\_3.0"
           href: quickstarts/text-analytics-sdk.md
+        - name: "Анализ текста с помощью версии\_2"
+          href: quickstarts/text-analytics-sdk-v2.md
     - name: REST API
       items:
         - name: Использование Java
@@ -42,7 +44,7 @@
     - name: 'Использование Flask для перевода текста, анализа тональности и синтезирования речи'
       maintainContext: true
       href: 'https://docs.microsoft.com/azure/cognitive-services/translator/tutorial-build-flask-app-translation-synthesis'
-- name: Руководства
+- name: Практические руководства
   items:
     - name: Вызов API "Анализ текста"
       href: How-tos/text-analytics-how-to-call-api.md
@@ -66,13 +68,13 @@
           href: how-tos/text-analytics-how-to-use-kubernetes-service.md
     - name: Использование подключенной службы "Анализ текста"
       href: vs-text-connected-service.md
-- name: Справочные материалы
+- name: Справочник
   items:
     - name: Справочник по CLI
       href: 'https://docs.microsoft.com/cli/azure/cognitiveservices?view=azure-cli-latest#az_cognitiveservices_list'
     - name: Справочник по PowerShell
       href: 'https://aka.ms/azure-powershell-cognitiveservices'
-    - name: API "Анализ текста"
+    - name: API Анализа текста
       href: 'https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v2-1/operations/56f30ceeeda5650db055a3c7'
     - name: Пакеты SDK
       items:
@@ -92,7 +94,7 @@
       href: 'https://docs.microsoft.com/Yammer/integrate-yammer-with-other-apps/sentiment-analysis-flow-azure'
     - name: Внешние материалы и материалы сообщества
       href: text-analytics-resource-external-community.md
-    - name: Вопросы и ответы
+    - name: ВОПРОСЫ И ОТВЕТЫ
       href: text-analytics-resource-faq.md
     - name: Поддержка языков и региональных параметров
       href: language-support.md
