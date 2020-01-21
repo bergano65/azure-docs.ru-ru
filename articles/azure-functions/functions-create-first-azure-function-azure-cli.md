@@ -5,12 +5,12 @@ ms.assetid: 674a01a7-fd34-4775-8b69-893182742ae0
 ms.date: 11/13/2018
 ms.topic: quickstart
 ms.custom: mvc
-ms.openlocfilehash: 147ad4bd20ee1c7ae8f1529e1b3bc0e4f3e7dbb0
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: 222e4a98974a1af40ff860cfc4fdb246d9c97bca
+ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74230843"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75769393"
 ---
 # <a name="quickstart-create-your-first-function-from-the-command-line-using-azure-cli"></a>Краткое руководство. Создание первой функции из командной строки с помощью Azure CLI
 
@@ -18,7 +18,7 @@ ms.locfileid: "74230843"
 
 Выполните действия, приведенные ниже, с помощью компьютера Mac, Windows или Linux.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Перед выполнением этого примера вам понадобится следующее:
 
@@ -46,7 +46,7 @@ ms.locfileid: "74230843"
 
 ## <a name="create-a-function-app"></a>Создание приложения-функции
 
-Для выполнения функций вам понадобится приложение-функция, предоставляющее среду для выполнения кода функции без сервера. Это позволяет группировать функции в логические единицы и упростить развертывание и совместное использование ресурсов, а также управление ими. Создайте приложение-функцию с помощью команды [az functionapp create](/cli/azure/functionapp#az-functionapp-create). 
+Для выполнения функций вам понадобится приложение-функция, предоставляющее среду для выполнения кода функции без сервера. Это позволяет группировать функции в логические единицы, чтобы упростить управление, развертывание, масштабирование и совместное использование ресурсов. Создайте приложение-функцию с помощью команды [az functionapp create](/cli/azure/functionapp#az-functionapp-create).
 
 В следующей команде замените `<APP_NAME>` уникальным именем вашего приложения функции, а `<STORAGE_NAME>` — именем учетной записи хранения. `<APP_NAME>` используется по умолчанию в качестве домена DNS для приложения-функции. Поэтому это имя должно быть уникальным для всех приложений в Azure. Также следует задать среду выполнения `<language>` для приложения-функции из `dotnet` (C#) или `node` (JavaScript).
 

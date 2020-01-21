@@ -1,6 +1,6 @@
 ---
-title: Руководство. Поиск маршрута с помощью службы Azure Maps
-description: Руководство. Поиск маршрута к точке интереса с помощью службы "Карты Azure"
+title: Руководство. Поиск маршрута к местоположению | Microsoft Azure Maps
+description: В этом руководстве показано, как отобразить маршрут к местоположению (точку интереса) на карте с помощью службы построения маршрутов в Microsoft Azure Maps.
 author: walsehgal
 ms.author: v-musehg
 ms.date: 11/12/2019
@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: timlt
 ms.custom: mvc
-ms.openlocfilehash: efc60acae78c96983e79044ae1ba7399154f3568
-ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
+ms.openlocfilehash: 7f13e5342e880a9ed5e2cb35ebaf558a1641618b
+ms.sourcegitcommit: f9601bbccddfccddb6f577d6febf7b2b12988911
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/02/2020
-ms.locfileid: "75613607"
+ms.lasthandoff: 01/12/2020
+ms.locfileid: "75910832"
 ---
 # <a name="tutorial-route-to-a-point-of-interest-using-azure-maps"></a>Руководство. Поиск маршрута к точке интереса с помощью службы "Карты Azure"
 
@@ -168,7 +168,7 @@ ms.locfileid: "75613607"
 
 3. Сохраните файл **MapRoute.html** и обновите страницу в браузере. Теперь на карте будет крупным планом показан Сиэтл. Вы можете видеть голубую пометку, обозначающую начальную точку, и круглую голубую пометку, обозначающую конечную точку.
 
-   ![Просмотр карт с помеченными начальной и конечной точкой](media/tutorial-route-location/map-pins.png)
+   ![Просмотр начальной и конечной точки маршрута на карте](media/tutorial-route-location/map-pins.png)
 
 <a id="getroute"></a>
 

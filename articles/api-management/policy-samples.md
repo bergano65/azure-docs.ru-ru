@@ -13,12 +13,12 @@ ms.topic: sample
 ms.date: 10/31/2017
 ms.author: apimpm
 ms.custom: mvc
-ms.openlocfilehash: f8bd768dc7c01310874cd484f59869fbafcf3fe7
-ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
+ms.openlocfilehash: 9bdcf9ea247adb8d5941c75f90f7db3915af20bc
+ms.sourcegitcommit: b5106424cd7531c7084a4ac6657c4d67a05f7068
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70074194"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75940947"
 ---
 # <a name="api-management-policy-samples"></a>Примеры политик службы управления API Azure
 
@@ -33,6 +33,7 @@ ms.locfileid: "70074194"
 | [Авторизация доступа на основе утверждений JWT](./policies/authorize-request-based-on-jwt-claims.md?toc=api-management/toc.json)                                              | Авторизация доступа к определенным методам HTTP в API на основе утверждений JWT.                                                                                                                                       |
 | [Авторизация запросов с помощью внешнего авторизатора](./policies/authorize-request-using-external-authorizer.md)                                                   | Использование внешнего авторизатора для защиты доступа через API.                                                                                                                                                               |
 | [Авторизация доступа с помощью токена OAuth Google](./policies/use-google-as-oauth-token-provider.md?toc=api-management/toc.json)                                            | Авторизация доступа к конечным точкам с использованием Google в качестве поставщика токена OAuth.                                                                                                                                    |
+| [Фильтрация IP-адресов при использовании Шлюза приложений](./policies/filter-ip-addresses-when-using-appgw.md) | Фильтрация IP-адресов в политиках при доступе к экземпляру службы "Управление API" через Шлюз приложений.
 | [Создание подписанного URL-адреса и запроса на перенаправление к службе хранилища Azure](./policies/generate-shared-access-signature.md?toc=api-management/toc.json)                  | Создание [подписанного URL-адреса](https://docs.microsoft.com/azure/storage/storage-dotnet-shared-access-signature-part-1) с помощью выражений и перенаправление запроса в службу хранилища Azure с использованием политики rewrite-uri. |
 | [Получение маркера доступа OAuth2 из AAD и его перенаправление в серверную часть](./policies/use-oauth2-for-authorization.md?toc=api-management/toc.json)                             | Пример использования OAuth2 для авторизации между шлюзом и серверной частью. В статье показано, как получить маркер доступа из AAD и перенаправить его в серверную часть.                                                    |
 | [Получение маркера X-CSRF из шлюза SAP с помощью политики отправки запроса](./policies/get-x-csrf-token-from-sap-gateway.md?toc=api-management/toc.json)                           | Реализация шаблона X-CSRF, используемого во многих API-интерфейсах. Этот пример относится только к шлюзу SAP.                                                                                                                           |

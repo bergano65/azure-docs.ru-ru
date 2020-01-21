@@ -10,16 +10,16 @@ ms.date: 10/14/2019
 ms.topic: tutorial
 ms.service: iot-edge
 ms.custom: mvc
-ms.openlocfilehash: 8f937bcfb1bd03c970f21263c1cd09a1c3baba0a
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: e353a65544e86e702bd216db5c8b5f81f033c46a
+ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75429424"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75772250"
 ---
 # <a name="tutorial-develop-and-deploy-a-python-iot-edge-module-for-linux-devices"></a>Руководство. разработке модуля IoT Edge на языке Python и его развертыванию на устройствах Linux
 
-использованию Visual Studio Code для разработки и развертывания кода C на устройствах Linux с Azure IoT Edge. 
+Используйте Visual Studio Code для разработки и развертывания кода Python на устройствах Linux с Azure IoT Edge. 
 
 Вы можете использовать модули Azure IoT Edge для развертывания кода, который реализует бизнес-логику непосредственно на устройствах IoT Edge. В этом руководстве рассматривается создание и развертывание модуля IoT Edge, который фильтрует данные датчика на устройстве IoT Edge, настроенном с помощью краткого руководства. В этом руководстве описано следующее.    
 
@@ -100,7 +100,7 @@ ms.locfileid: "75429424"
 
 ### <a name="select-your-target-architecture"></a>Выбор целевой архитектуры
 
-Сейчас Visual Studio Code позволяет разрабатывать модули C для устройств Linux AMD64 и Linux ARM32v7. Для каждого решения вам нужно выбрать одну целевую платформу, так как сборка и запуск контейнера для разных архитектур различается. По умолчанию используется Linux AMD64. 
+Сейчас Visual Studio Code позволяет разрабатывать модули Python для устройств Linux AMD64 и Linux ARM32v7. Для каждого решения вам нужно выбрать одну целевую платформу, так как сборка и запуск контейнера для разных архитектур различается. По умолчанию используется Linux AMD64. 
 
 1. Откройте палитру команд и выполните поиск **Azure IoT Edge: Set Default Target Platform for Edge Solution** (Azure IoT Edge: установить целевую платформу по умолчанию для решения Edge) или выберите значок ярлыка на боковой панели в нижней части окна. 
 

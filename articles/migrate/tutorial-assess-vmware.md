@@ -7,12 +7,12 @@ ms.service: azure-migrate
 ms.topic: tutorial
 ms.date: 11/19/2019
 ms.author: hamusa
-ms.openlocfilehash: 31af4ad9c6985202555dbcbe86c52e45d5c4154a
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 58e6e7b3cdf749909165d7ff071a2f3885d7e8b9
+ms.sourcegitcommit: dbcc4569fde1bebb9df0a3ab6d4d3ff7f806d486
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75453285"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76028741"
 ---
 # <a name="assess-vmware-vms-by-using-azure-migrate-server-assessment"></a>Оценка готовности виртуальных машин VMware с помощью оценки сервера в службе "Миграция Azure"
 
@@ -41,11 +41,11 @@ ms.locfileid: "75453285"
 
 - [Настройка разрешений Azure](tutorial-prepare-vmware.md#prepare-azure) для службы "Миграция Azure".
 - [Подготовка VMware](tutorial-prepare-vmware.md#prepare-for-vmware-vm-assessment) для оценки.
-   - Проверьте параметры VMware.
-   - Настройте разрешения для создания виртуальной машины VMware с использованием шаблона в формате OVA.
-   - Настройте обнаружение виртуальных машин для учетной записи. 
-   - Предоставьте все требуемые порты.
-   - Учтите все URL-адреса, необходимые для доступа к Azure.
+   - [Проверьте](migrate-support-matrix-vmware.md#vmware-requirements) параметры VMware.
+   - Настройте разрешения в VMware для создания виртуальной машины VMware с использованием шаблона в формате OVA.
+   - Настройте [обнаружение виртуальных машин для учетной записи](migrate-support-matrix-vmware.md#vmware-requirements). 
+   - Сделайте все [требуемые порты](migrate-support-matrix-vmware.md#port-access) доступными.
+   - Учтите все [URL-адреса](migrate-replication-appliance.md#url-access), необходимые для доступа к Azure.
 
 ## <a name="set-up-an-azure-migrate-project"></a>Настройка проекта службы "Миграция Azure"
 
@@ -130,7 +130,7 @@ SHA256 | 4ce4faa3a78189a09a26bfa5b817c7afcf5b555eb46999c2fad9d2ebc808540c
 
 ### <a name="verify-appliance-access-to-azure"></a>Проверка доступа устройства к Azure
 
-Убедитесь, что виртуальная машина устройства может подключиться к [URL-адресам Azure](migrate-support-matrix-vmware.md#assessment-url-access-requirements).
+Убедитесь, что виртуальная машина устройства может подключиться к [URL-адресам Azure](migrate-appliance.md#url-access).
 
 ### <a name="configure-the-appliance"></a>Настройка устройства
 
@@ -172,7 +172,7 @@ SHA256 | 4ce4faa3a78189a09a26bfa5b817c7afcf5b555eb46999c2fad9d2ebc808540c
 1. В разделе **Выбор сведений о vCenter Server** укажите полное доменное имя или IP-адрес экземпляра vCenter Server. Вы можете оставить порт по умолчанию или указать пользовательский порт, на котором vCenter Server ожидает передачу данных.
 1. В полях **Имя пользователя** и **Пароль** укажите данные учетной записи vCenter Server, которые устройство будет использовать для обнаружения виртуальных машин в экземпляре vCenter Server. 
 
-   Убедитесь, что в учетной записи есть [необходимые разрешения для обнаружения](migrate-support-matrix-vmware.md#assessment-vcenter-server-permissions). Вы можете [обозначить область обнаружения](tutorial-assess-vmware.md#set-the-scope-of-discovery), ограничив доступ к учетной записи vCenter.
+   Убедитесь, что в учетной записи есть [необходимые разрешения для обнаружения](migrate-support-matrix-vmware.md#vmware-requirements). Вы можете [обозначить область обнаружения](tutorial-assess-vmware.md#set-the-scope-of-discovery), ограничив доступ к учетной записи vCenter.
 1. Щелкните **Проверить подключение** и убедитесь, что устройство может подключаться к vCenter Server.
 
 ### <a name="specify-vm-credentials"></a>Указание учетных данных виртуальной машины

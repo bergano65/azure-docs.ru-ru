@@ -5,14 +5,14 @@ services: private-link
 author: malopMSFT
 ms.service: private-link
 ms.topic: overview
-ms.date: 11/04/2019
+ms.date: 01/09/2020
 ms.author: allensu
-ms.openlocfilehash: 127807a57598fcfe239db39cb9874bca955da44e
-ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
+ms.openlocfilehash: 299cd81c05af385c435eaf3788e3d7e39c486623
+ms.sourcegitcommit: 12a26f6682bfd1e264268b5d866547358728cd9a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75647362"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75867557"
 ---
 # <a name="what-is-azure-private-link-preview"></a>Что собой представляет Приватный канал Azure? (предварительная версия)
 Приватный канал Azure обеспечивает доступ к службам Azure PaaS (например, к службе хранилища Azure, Azure Cosmos DB и Базе данных SQL), а также размещенным в Azure службам клиентов или партнеров через [частную конечную точку](private-endpoint-overview.md) виртуальной сети. Трафик между виртуальной сетью и службой проходит через магистральную сеть Майкрософт, что позволяет избежать рисков общедоступного Интернета. Кроме того, вы можете создать в своей виртуальной сети (VNet) собственную службу [Приватный канал](private-link-service-overview.md) и предоставлять ее клиентам в частном порядке. Настройка и потребление с использованием Приватного канала Azure согласованы между службами Azure PaaS, владельцами и общими партнерскими службами.
@@ -46,6 +46,9 @@ ms.locfileid: "75647362"
 |  |  База данных SQL Azure         | Все общедоступные регионы      |   Preview (Предварительный просмотр)      |
 ||Хранилище данных SQL Azure| Все общедоступные регионы |Preview (Предварительный просмотр)|
 ||Azure Cosmos DB| Центрально-западная часть США, западная часть США, центрально-северная часть США |Preview (Предварительный просмотр)|
+|  |  База данных Azure для PostgreSQL — отдельный сервер         | Все общедоступные регионы      |   Preview (Предварительный просмотр)      |
+|  |  База данных Azure для MySQL         | Все общедоступные регионы      |   Preview (Предварительный просмотр)      |
+|  |  База данных Azure для MariaDB         | Все общедоступные регионы      |   Preview (Предварительный просмотр)      |
 
 Самые актуальные уведомления доступны на странице [обновлений виртуальной сети Azure](https://azure.microsoft.com/updates/?product=virtual-network).
 

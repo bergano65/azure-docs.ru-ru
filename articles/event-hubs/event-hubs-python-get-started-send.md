@@ -7,14 +7,14 @@ manager: femila
 ms.service: event-hubs
 ms.workload: core
 ms.topic: quickstart
-ms.date: 11/05/2019
+ms.date: 01/08/2020
 ms.author: shvija
-ms.openlocfilehash: 9b6c3fb03f696f4142721284a14001eb51153a77
-ms.sourcegitcommit: bc7725874a1502aa4c069fc1804f1f249f4fa5f7
+ms.openlocfilehash: c4fa9e6038f4007246552610f537825f9def92a8
+ms.sourcegitcommit: b5106424cd7531c7084a4ac6657c4d67a05f7068
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73720549"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75939952"
 ---
 # <a name="quickstart-send-and-receive-events-with-event-hubs-using-python"></a>Краткое руководство. Отправка и получение событий через Центры событий Azure с использованием Python
 
@@ -22,10 +22,14 @@ ms.locfileid: "73720549"
 
 В этом кратком руководстве показано, как создать приложения Python, которые отправляют или получают события через концентратор событий. 
 
+> [!IMPORTANT]
+> В рамках этого краткого руководства используется версия 1 пакета SDK Центров событий Azure для Python. Если вы не знакомы с Центрами событий Azure, используйте пакет SDK для Python версии 5. Краткое руководство по использованию пакета SDK для Python версии 5 см. [здесь](get-started-python-send-v2.md). Чтобы перенести существующий код с версии 1 на версию 5, ознакомьтесь с [этим руководством по миграции](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/eventhub/azure-eventhub/migration_guide.md).
+
+
 > [!NOTE]
 > Вы можете пропустить работу с кратким руководством и сразу скачать [примеры приложений](https://github.com/Azure/azure-event-hubs-python/tree/master/examples) с сайта GitHub. Замените строки `EventHubConnectionString` и `EventHubName` значениями для реального концентратора событий. 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Для работы с данным руководством необходимо следующее:
 
@@ -168,7 +172,7 @@ start python send.py
 start python recv.py
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о Центрах событий см. в следующих статьях:
 
 - [EventProcessorHost](event-hubs-event-processor-host.md)

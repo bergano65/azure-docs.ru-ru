@@ -1,5 +1,5 @@
 ---
-title: Руководство по Индексирование данных на языке C# из баз данных SQL Azure
+title: Руководство. Индексирование данных на языке C# из баз данных SQL Azure
 titleSuffix: Azure Cognitive Search
 description: В этом учебнике по C# описано, как подключить базу данных SQL Azure, извлечь доступные для поиска данные и отправить их в индекс в службе "Когнитивный поиск Azure".
 manager: nitinme
@@ -8,14 +8,14 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: tutorial
 ms.date: 11/04/2019
-ms.openlocfilehash: 36215403f99cc86ab4fb111ce95a6b3190063d7b
-ms.sourcegitcommit: dd0304e3a17ab36e02cf9148d5fe22deaac18118
+ms.openlocfilehash: 1b03f5569386212905cdeb362cfe0a88774eb887
+ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74406713"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75754339"
 ---
-# <a name="tutorial-import-azure-sql-database-in-c-using-azure-cognitive-search-indexers"></a>Руководство по Импорт базы данных SQL Azure на языке C# с помощью индексаторов в службе "Когнитивный поиск Azure"
+# <a name="tutorial-import-azure-sql-database-in-c-using-azure-cognitive-search-indexers"></a>Руководство. Импорт базы данных SQL Azure на языке C# с помощью индексаторов в службе "Когнитивный поиск Azure"
 
 Вы узнаете, как настроить индексатор для извлечения доступных для поиска данных из примера базы данных SQL Azure. [Индексатор](search-indexer-overview.md) — это компонент службы "Когнитивный поиск Azure", который сканирует внешние источники данных и заполняет [индекс поиска](search-what-is-an-index.md) содержимым. Чаще всего используется индексатор для Базы данных SQL Azure. 
 
@@ -28,12 +28,12 @@ ms.locfileid: "74406713"
 > * подготовка внешнего набора данных в базе данных Azure SQL; 
 > * изучение определений индекса и индексатора в примере кода;
 > * выполнение кода индексатора для импорта данных;
-> * поиск по индексу;
+> * Поиск по индексу
 > * просмотр конфигурации индексатора на портале.
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 В этом кратком руководстве используются приведенные ниже службы, инструменты и данные. 
 
@@ -159,7 +159,7 @@ public string HotelName { get; set; }
 
 Основная программа содержит логику для создания клиента, индекса, источника данных и индексатора. При помощи этого кода проверяется наличие ресурсов с таким же именем. При обнаружении такие ресурсы удаляются, так как есть вероятность, что вы будете запускать эту программу несколько раз.
 
-Исходный объект данных настраивается с помощью параметров, относящихся к ресурсам базы данных Azure SQL, включая [добавочное индексирование](search-howto-connecting-azure-sql-database-to-azure-search-using-indexers.md#capture-new-changed-and-deleted-rows) для использования встроенных [функций обнаружения изменений](https://docs.microsoft.com/sql/relational-databases/track-changes/about-change-tracking-sql-server) SQL Azure. Демонстрационная база данных гостиниц в SQL Azure содержит столбец "обратимого удаления", **IsDeleted**. Если этот столбец имеет значение true в базе данных, индексатор удаляет соответствующий документ из индекса Когнитивного поиска Azure.
+Объект источника данных настраивается с помощью параметров, относящихся к ресурсам базы данных Azure SQL, включая [частичное или добавочное индексирование](search-howto-connecting-azure-sql-database-to-azure-search-using-indexers.md#capture-new-changed-and-deleted-rows) для использования встроенных [функций обнаружения изменений](https://docs.microsoft.com/sql/relational-databases/track-changes/about-change-tracking-sql-server) SQL Azure. Демонстрационная база данных гостиниц в SQL Azure содержит столбец "обратимого удаления", **IsDeleted**. Если этот столбец имеет значение true в базе данных, индексатор удаляет соответствующий документ из индекса Когнитивного поиска Azure.
 
   ```csharp
   Console.WriteLine("Creating data source...");
@@ -263,7 +263,7 @@ public string HotelName { get; set; }
 
 Самый быстрый способ очистки по завершении работы с учебником — удалить группу ресурсов, содержащую службу "Когнитивный поиск Azure". Теперь можно удалить группу ресурсов вместе со всем ее содержимым без возможности восстановления. На портале имя группы ресурсов находится на странице "Обзор" службы "Когнитивный поиск Azure".
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Алгоритмы расширения ИИ можно включить в конвейер индексатора. Дальнейшие действия см. в следующем руководстве.
 

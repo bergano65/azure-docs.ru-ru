@@ -10,18 +10,18 @@ keywords: служба автоматизации Azure, DSC, PowerShell, нас
 ms.date: 11/04/2019
 ms.custom: mvc
 ms.topic: quickstart
-ms.openlocfilehash: e7a527fc290433390436eac3d4c291f2a32bf2b3
-ms.sourcegitcommit: 5b9287976617f51d7ff9f8693c30f468b47c2141
+ms.openlocfilehash: 814be233c80213f84fb81a62caf152536ef4811f
+ms.sourcegitcommit: f53cd24ca41e878b411d7787bd8aa911da4bc4ec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2019
-ms.locfileid: "74951451"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75834081"
 ---
 # <a name="quickstart-connect-machines-to-azure-using-azure-arc-for-servers---powershell"></a>Краткое руководство. Подключение компьютеров к Azure с помощью Azure Arc для серверов в PowerShell
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Ознакомьтесь со сведениями о поддерживаемых клиентах и требуемой конфигурации сети в [обзоре решения Azure Arc для серверов](overview.md).
 
@@ -35,6 +35,9 @@ ms.locfileid: "74951451"
 ### <a name="steps-to-create-the-service-principal"></a>Действия по созданию субъекта-службы
 
 В этом примере для создания имени субъекта-службы (SPN) будет использоваться [Azure PowerShell](/powershell/azure/install-az-ps). Кроме того, для этой задачи можно выполнить действия, описанные в статье [Практическое руководство. Создание приложения Azure Active Directory и субъекта-службы с доступом к ресурсам с помощью портала](../../active-directory/develop/howto-create-service-principal-portal.md).
+
+> [!NOTE]
+> При создании субъекта-службы необходимо быть владельцем или администратором доступа пользователей в подписке, которую вы хотите использовать для подключения. Если у вас нет достаточных разрешений для создания назначений ролей, вы сможете создать субъект-службу, но вам не удастся подключить компьютеры.
 
 Роль `Azure Connected Machine Onboarding` содержит только разрешения, необходимые для подключения. Вы можете определить разрешение имени субъекта-службы, чтобы расширить область его охвата до группы ресурсов или подписки.
 
@@ -142,7 +145,7 @@ msiexec /i AzureConnectedMachineAgent.msi /l*v installationlog.txt /qn | Out-Str
   --service-principal-secret "{your-spn-password}" `
   --resource-group "{your-resource-group-name}" `
   --tenant-id "{your-tenant-id}" `
-  --location "{location-of-your-resource-group}" `
+  --location "{desired-location}" `
   --subscription-id "{your-subscription-id}"
 ```
 
@@ -164,7 +167,7 @@ azcmagent connect \
 * `tenant-id` : Уникальный идентификатор клиента. Его можно найти на портале Azure, выбрав **Azure Active Directory** -> **Свойства** -> **Идентификатор каталога**.
 * `subscription-id` : Уникальный идентификатор подписки в Azure, в которой необходимо подключить компьютер.
 * `resource-group` : Группа ресурсов, в которой необходимо подключить компьютер.
-* `location` : См. сведения о [регионах и расположениях Azure](https://azure.microsoft.com/global-infrastructure/regions/). Это расположение может совпадать или не совпадать с расположением группы ресурсов. Для общедоступной предварительной версии служба поддерживается в **западной части США 2** и **Западной Европе**.
+* `location` : См. сведения о [регионах и расположениях Azure](https://azure.microsoft.com/global-infrastructure/regions/). Это расположение может совпадать или не совпадать с расположением группы ресурсов. Для общедоступной предварительной версии служба поддерживается в **WestUS2**, **Юго-Восточной Азии**и **Западной Европе**.
 * `resource-name` :  (*Необязательно*.) Используется для представления ресурсов Azure на локальном компьютере. Если это значение не указано, будет использоваться имя узла компьютера.
 
 Дополнительные сведения о средстве azcmagent см. в справочнике по [azcmagent](azcmagent-reference.md).
@@ -230,7 +233,7 @@ Restart-Service -Name himds
    sudo apt purge hybridagent
    ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Назначение политики подключенным компьютерам](../../governance/policy/assign-policy-portal.md)

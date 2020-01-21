@@ -4,12 +4,12 @@ description: Пример скрипта Azure CLI для создания фу�
 ms.topic: sample
 ms.date: 04/20/2017
 ms.custom: mvc
-ms.openlocfilehash: 9c2a70066e673bfa164a58884891f29e220c7bd6
-ms.sourcegitcommit: 85e7fccf814269c9816b540e4539645ddc153e6e
+ms.openlocfilehash: 833b9223d473c8bfc62485e9e47ba662a4f0e154
+ms.sourcegitcommit: f34165bdfd27982bdae836d79b7290831a518f12
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74532832"
+ms.lasthandoff: 01/13/2020
+ms.locfileid: "75922673"
 ---
 # <a name="create-a-function-app-with-a-named-storage-account-connection"></a>Создание приложения-функции с именованным подключением учетной записи хранения 
 
@@ -33,7 +33,7 @@ ms.locfileid: "74532832"
 
 Этот скрипт использует следующие команды. Для каждой команды в таблице приведены ссылки на соответствующую документацию.
 
-| Команда | Примечания |
+| Get-Help | Примечания |
 |---|---|
 | [az group create](/cli/azure/group#az-group-create) | Создайте группу ресурсов с расположением. |
 | [az storage account create](/cli/azure/storage/account#az-storage-account-create) | Создайте учетную запись хранения. |
@@ -41,7 +41,7 @@ ms.locfileid: "74532832"
 | [az storage account show-connection-string](/cli/azure/storage/account#az-storage-account-show-connection-string) | Получает строку подключения для учетной записи. |
 | [az functionapp config appsettings set](/cli/azure/functionapp/config/appsettings#az-functionapp-config-appsettings-set) | Задает строку подключения в качестве параметра приложения в приложении-функции. |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об Azure CLI см. в [документации по Azure CLI](/cli/azure).
 

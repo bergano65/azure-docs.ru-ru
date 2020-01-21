@@ -7,20 +7,23 @@ ms.date: 09/26/2019
 ms.service: storage
 ms.subservice: common
 ms.topic: sample
-ms.openlocfilehash: 363739bbab67b92e78e0cdb56cf98cdb8e1446eb
-ms.sourcegitcommit: 7f6d986a60eff2c170172bd8bcb834302bb41f71
+ms.openlocfilehash: 44fe68b8b04a1192c928e04c7d2a9d147f400130
+ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71350889"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75748294"
 ---
 # <a name="azure-storage-samples-using-javascript"></a>Примеры для службы хранилища Azure с использованием JavaScript
 
 В таблицах ниже приведен обзор репозитория примеров и сценарии, описанные в каждом примере. Щелкните ссылки для просмотра соответствующего примера кода на сайте GitHub.
 
-## <a name="blob-samples"></a>Примеры больших двоичных объектов
+> [!NOTE]
+> В этих примерах используется библиотека JavaScript версии 10 службы хранилища Azure. Сведения о коде версии 12 см. в разделе [примеры](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/storage/storage-blob/samples) в репозитории GitHub.
 
-| **Сценарий** | **Пример кода** |
+## <a name="blob-samples-v10"></a>Примеры больших двоичных объектов (версия 10)
+
+| **Сценарий** | **Образец кода** |
 |--------------|-----------------|
 | Блочный BLOB-объект | [Getting Started with Azure Blob Service in JavaScript](https://github.com/Azure-Samples/storage-blob-node-getting-started/blob/master/basic.js#L43) (Приступая к работе со службой BLOB-объектов Azure на языке JavaScript) |
 | Шифрование на стороне клиента | [Управление ключами учетной записи хранения в Azure Key Vault с помощью JavaScript](https://github.com/Azure-Samples/key-vault-node-storage-accounts) |
@@ -43,9 +46,9 @@ ms.locfileid: "71350889"
 | Настройка правил CORS | [Getting Started with Azure Blob Service in JavaScript](https://github.com/Azure-Samples/storage-blob-node-getting-started/blob/master/advanced.js#L152) (Приступая к работе со службой BLOB-объектов Azure на языке JavaScript) |
 | Создание моментального снимка большого двоичного объекта | [Getting Started with Azure Blob Service in JavaScript](https://github.com/Azure-Samples/storage-blob-node-getting-started/blob/master/basic.js#L79) (Приступая к работе со службой BLOB-объектов Azure на языке JavaScript) |
 
-## <a name="file-samples"></a>Примеры файлов
+## <a name="file-samples-v10"></a>Примеры файлов (версия 10)
 
-| **Сценарий** | **Пример кода** |
+| **Сценарий** | **Образец кода** |
 |--------------|-----------------|
 | Создание общих папок, каталогов и файлов | [Getting Started with Azure File Service in JavaScript](https://github.com/Azure-Samples/storage-file-node-getting-started/blob/master/fileSample.js#L97) (Приступая к работе со службой файлов Azure на языке JavaScript) |
 | Удаление общих папок, каталогов и файлов | [Getting Started with Azure File Service in JavaScript](https://github.com/Azure-Samples/storage-file-node-getting-started/blob/master/fileSample.js#L135) (Приступая к работе со службой файлов Azure на языке JavaScript) |
@@ -53,9 +56,9 @@ ms.locfileid: "71350889"
 | Список каталогов и файлов | [Getting Started with Azure File Service in JavaScript](https://github.com/Azure-Samples/storage-file-node-getting-started/blob/master/fileSample.js#L115) (Приступая к работе со службой файлов Azure на языке JavaScript) |
 | Список общих папок | [Getting Started with Azure File Service in JavaScript](https://github.com/Azure-Samples/storage-file-node-getting-started/blob/master/fileSample.js#L187) (Приступая к работе со службой файлов Azure на языке JavaScript) |
 
-## <a name="queue-samples"></a>Примеры очередей
+## <a name="queue-samples-v10"></a>Примеры очередей (версия 10)
 
-| **Сценарий** | **Пример кода** |
+| **Сценарий** | **Образец кода** |
 |--------------|-----------------|
 | Добавление сообщения | [Getting Started with Azure Queue Service in JavaScript](https://github.com/Azure-Samples/storage-queue-node-getting-started/blob/master/basic.js#L142) (Приступая к работе со Службой очередей Azure на языке JavaScript) |
 | Шифрование на стороне клиента | [Управление ключами учетной записи хранения в Azure Key Vault с помощью JavaScript](https://github.com/Azure-Samples/key-vault-node-storage-accounts) |
@@ -71,9 +74,9 @@ ms.locfileid: "71350889"
 | Статистика очереди | [Getting Started with Azure Queue Service in JavaScript](https://github.com/Azure-Samples/storage-queue-node-getting-started/blob/master/advanced.js#L149) (Приступая к работе со Службой очередей Azure на языке JavaScript) |
 | Сообщение об обновлении | [Getting Started with Azure Queue Service in JavaScript](https://github.com/Azure-Samples/storage-queue-node-getting-started/blob/master/basic.js#L176) (Приступая к работе со Службой очередей Azure на языке JavaScript) |
 
-## <a name="table-samples"></a>Примеры таблиц
+## <a name="table-samples-v10"></a>Примеры таблиц (версия 10)
 
-| **Сценарий** | **Пример кода** |
+| **Сценарий** | **Образец кода** |
 |--------------|-----------------|
 | Пакетная служба сущностей | [Getting Started with Azure Table Service in JavaScript](https://github.com/Azure-Samples/storage-table-node-getting-started/blob/master/basic.js#L87) (Приступая к работе со службой таблиц Azure на языке JavaScript) |
 | Создание таблицы | [Getting Started with Azure Table Service in JavaScript](https://github.com/Azure-Samples/storage-table-node-getting-started/blob/master/basic.js#L41) (Приступая к работе со службой таблиц Azure на языке JavaScript) |
@@ -104,7 +107,7 @@ ms.locfileid: "71350889"
 * [Getting Started with Azure Queue Service in JavaScript](../queues/storage-nodejs-how-to-use-queues.md) (Приступая к работе со Службой очередей Azure на языке JavaScript)
 * [Getting Started with Azure Table Service in JavaScript](../../cosmos-db/table-storage-how-to-use-nodejs.md) (Приступая к работе со службой таблиц Azure на языке JavaScript)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о примерах для других языков см. здесь:
 

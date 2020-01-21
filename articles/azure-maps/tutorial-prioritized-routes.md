@@ -1,6 +1,6 @@
 ---
-title: Руководство. Несколько маршрутов с Azure Maps
-description: Руководство. Поиск маршрутов для различных способов перемещения с помощью службы "Карты Azure"
+title: Руководство. Поиск нескольких маршрутов по видам транспорта | Microsoft Azure Maps
+description: Из этого руководства вы узнаете, как найти маршруты для различных видов транспорта с помощью службы Microsoft Azure Maps.
 author: walsehgal
 ms.author: v-musehg
 ms.date: 11/12/2019
@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: timlt
 ms.custom: mvc
-ms.openlocfilehash: cec7027ee0eadae2284e9aa2b127c195870ee929
-ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
+ms.openlocfilehash: 258572d4451be6d9a1090c032467e85889148d14
+ms.sourcegitcommit: f9601bbccddfccddb6f577d6febf7b2b12988911
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/02/2020
-ms.locfileid: "75613641"
+ms.lasthandoff: 01/12/2020
+ms.locfileid: "75910853"
 ---
 # <a name="tutorial-find-routes-for-different-modes-of-travel-using-azure-maps"></a>Руководство. Поиск маршрутов для различных способов перемещения с помощью службы "Карты Azure"
 
@@ -117,7 +117,7 @@ ms.locfileid: "75613641"
 
 2. Сохраните файл **MapTruckRoute.html** и обновите страницу браузера. При взаимодействии с картой и приближении Лос-Анджелеса должны отобразиться улицы с текущими данными о движении на дорогах.
 
-   ![Просмотр карты с трафиком](./media/tutorial-prioritized-routes/traffic-map.png)
+   ![Просмотр данных дорожного движения на карте](./media/tutorial-prioritized-routes/traffic-map.png)
 
 <a id="queryroutes"></a>
 

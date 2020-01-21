@@ -1,5 +1,5 @@
 ---
-title: Руководство по Запуск иммерсивного средства чтения с помощью Python
+title: Руководство. Запуск иммерсивного средства чтения с помощью Python
 titleSuffix: Azure Cognitive Services
 description: В этом учебнике описано, как создать приложение Python, которое запускает иммерсивное средство чтения.
 services: cognitive-services
@@ -10,16 +10,16 @@ ms.subservice: immersive-reader
 ms.topic: tutorial
 ms.date: 08/02/2019
 ms.author: dylankil
-ms.openlocfilehash: 6404a5d49bd7af1ed5d74299f03eda8d0bb14b89
-ms.sourcegitcommit: e9936171586b8d04b67457789ae7d530ec8deebe
+ms.openlocfilehash: 3293c4ea76010e5f39c793a1faee14d9a74226a0
+ms.sourcegitcommit: 49e14e0d19a18b75fd83de6c16ccee2594592355
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71326447"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75945231"
 ---
-# <a name="tutorial-launch-the-immersive-reader-using-the-python-sample-project"></a>Руководство по запуска иммерсивного средства чтения с помощью тестового проекта Python
+# <a name="tutorial-launch-the-immersive-reader-using-the-python-sample-project"></a>Руководство. запуска иммерсивного средства чтения с помощью тестового проекта Python
 
-В [обзорной статье](./overview.md) вы узнали о том, что представляет собой иммерсивное средство чтения и каким образом в нем реализованы проверенные методы, улучшающие понимание прочитанного для начинающих, тех, кто изучает язык, и учащихся с особыми потребностями. В этом учебнике описано, как создать веб-приложение Python, которое запускает иммерсивное средство чтения. Из этого руководства вы узнаете, как выполнять следующие задачи:
+В [обзорной статье](./overview.md) вы узнали о том, что представляет собой иммерсивное средство чтения и каким образом в нем реализованы проверенные методы, улучшающие понимание прочитанного для начинающих, тех, кто изучает язык, и учащихся с особыми потребностями. В этом учебнике описано, как создать веб-приложение Python, которое запускает иммерсивное средство чтения. В этом руководстве описано следующее.
 
 > [!div class="checklist"]
 > * создание веб-приложения Python с поддержкой PIP, Flask, Jinja и virtualenv на основе примера проекта;
@@ -28,9 +28,9 @@ ms.locfileid: "71326447"
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
-* Ресурс "Иммерсивное средство чтения", настроенный для проверки подлинности Azure Active Directory (Azure AD). Инструкции по настройке см. [здесь](./azure-active-directory-authentication.md). Вам потребуются некоторые значения, созданные здесь при настройке свойств среды. Сохраните результаты своего сеанса в текстовом файле для использования в будущем.
+* Ресурс иммерсивного средства чтения, настроенный для проверки подлинности Azure Active Directory. Инструкции по настройке см. [здесь](./how-to-create-immersive-reader.md). Вам потребуются некоторые значения, созданные здесь при настройке свойств среды. Сохраните результаты своего сеанса в текстовом файле для использования в будущем.
 * [Git](https://git-scm.com/)
 * [Пакет SDK иммерсивного средства чтения](https://github.com/microsoft/immersive-reader-sdk)
 * [Python](https://www.python.org/downloads/) и [pip](https://docs.python.org/3/installing/index.html) Начиная с Python 3.4, pip включается по умолчанию с двоичными установщиками Python.
@@ -40,20 +40,9 @@ ms.locfileid: "71326447"
 * [модуль запросов](https://pypi.org/project/requests/2.7.0/)
 * Интегрированная среда разработки, такая как [Visual Studio Code](https://code.visualstudio.com/).
 
-## <a name="acquire-an-azure-ad-authentication-token"></a>Получение маркера проверки подлинности Azure AD
+## <a name="configure-authentication-credentials"></a>Определение учетных данных для проверки подлинности
 
-Напишите API серверной части, чтобы получать токен проверки подлинности AAD.
-
-Для этой части потребуются некоторые значения из описанного выше предварительного требования конфигурации проверки подлинности Azure AD. Вернитесь к текстовому файлу, который вы сохранили в этом сеансе.
-
-````text
-TenantId     => Azure subscription TenantId
-ClientId     => Azure AD ApplicationId
-ClientSecret => Azure AD Application Service Principal password
-Subdomain    => Immersive Reader resource subdomain (resource 'Name' if the resource was created in the Azure portal, or 'CustomSubDomain' option if the resource was created with Azure CLI Powershell. Check the Azure portal for the subdomain on the Endpoint in the resource Overview page, for example, 'https://[SUBDOMAIN].cognitiveservices.azure.com/')
-````
-
-Получив эти значения, создайте новый файл с именем _.env_ и вставьте в него следующий код, указав значения пользовательских свойств сверху. Заменит файл _.env_. из примера приложения созданным вами файлом.
+Создайте файл с расширением _.env_. Вставьте в него следующий код, указав значения, заданные при создании ресурса иммерсивного средства чтения.
 
 ```text
 TENANT_ID={YOUR_TENANT_ID}
@@ -321,7 +310,7 @@ flask run
 
 Откройте веб-браузер и перейдите по адресу _http://localhost:5000_ .
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Ознакомьтесь с разделом о [пакете SDK для иммерсивного средства чтения](https://github.com/microsoft/immersive-reader-sdk) и [справочнике по этому пакету](./reference.md).
 * Просмотрите примеры кода на сайте [GitHub](https://github.com/microsoft/immersive-reader-sdk/tree/master/js/samples/).

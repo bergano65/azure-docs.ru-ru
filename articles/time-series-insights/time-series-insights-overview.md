@@ -10,12 +10,12 @@ ms.workload: big-data
 ms.topic: overview
 ms.date: 12/11/2019
 ms.custom: seodec18
-ms.openlocfilehash: 9b9491a4438ff07222bb5ce5bd684964bdfc0031
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: c068e33bc7844c464bc8a289387990128d96dd35
+ms.sourcegitcommit: 12a26f6682bfd1e264268b5d866547358728cd9a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75452832"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75861801"
 ---
 # <a name="what-is-azure-time-series-insights"></a>Что собой представляет служба "Аналитика временных рядов Azure"
 
@@ -82,7 +82,7 @@ ms.locfileid: "75452832"
 1. Подготовьте к работе среду Аналитики временных рядов на портале Azure.
 1. Подключите к ней источник событий, например Центр Интернета вещей или концентратор событий.
 1. Передайте эталонные данные. Это не дополнительная служба.
-1. Уже через несколько минут вы увидите данные в обозревателе службы "Аналитика временных рядов".
+1. Просматривайте и отображайте данные уже через несколько минут в обозревателе службы "Аналитика временных рядов".
 
 ## <a name="explorer"></a>Обозреватель
 

@@ -5,12 +5,12 @@ author: mumian
 ms.date: 03/04/2019
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: 15c707b5424e84e99e0b1942bb623e6d3845213a
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: f73a35b9c04b8b520be4f0adeb8ddb4142499075
+ms.sourcegitcommit: f53cd24ca41e878b411d7787bd8aa911da4bc4ec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75471259"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75834365"
 ---
 # <a name="tutorial-create-azure-resource-manager-templates-with-dependent-resources"></a>Руководство. Создание шаблонов Azure Resource Manager с зависимыми ресурсами
 
@@ -161,7 +161,7 @@ ms.locfileid: "75471259"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-В этом руководстве описано, как разработать и развернуть шаблон для создания виртуальной машины, виртуальной сети и зависимых ресурсов. Сведения о том, как развернуть ресурсы Azure на основе условий, см. по ссылке ниже.
+В этом руководстве описано, как разработать и развернуть шаблон для создания виртуальной машины, виртуальной сети и зависимых ресурсов. Сведения об использовании скриптов развертывания для выполнения операций до и после развертывания см. в следующих статьях.
 
 > [!div class="nextstepaction"]
-> [Использование условий](./template-tutorial-use-conditions.md)
+> [Использование скрипта развертывания](./template-tutorial-deployment-script.md)

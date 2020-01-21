@@ -5,12 +5,12 @@ author: tfitzmac
 ms.topic: tutorial
 ms.date: 10/04/2018
 ms.author: tomfitz
-ms.openlocfilehash: de2b79c5016b44011a14c1071eab6579f3a0b6df
-ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
+ms.openlocfilehash: e756617a700d258078e84a3fa11c8aceb6f4dd88
+ms.sourcegitcommit: 3eb0cc8091c8e4ae4d537051c3265b92427537fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75649061"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75903261"
 ---
 # <a name="create-and-publish-a-managed-application-definition"></a>Создание и публикация определения управляемого приложения
 
@@ -18,7 +18,7 @@ ms.locfileid: "75649061"
 
 Вы можете создавать и публиковать [управляемые приложения Azure](overview.md), предназначенные для членов вашей организации. Например, отдел ИТ может публиковать управляемые приложения, которые соответствуют стандартам организации. Эти управляемые приложения доступны в каталоге служб, а не в Azure Marketplace.
 
-Чтобы опубликовать управляемое приложение для каталога услуг, необходимо выполнить следующее.
+Чтобы опубликовать управляемое приложение в каталоге услуг Azure, необходимо выполнить следующее.
 
 * Создайте шаблон, который определяет ресурсы, развертываемые с управляемым приложением.
 * Определите элементы пользовательского интерфейса для портала при развертывании управляемого приложения.
@@ -207,6 +207,108 @@ New-AzManagedApplicationDefinition `
   -Authorization "${groupID}:$ownerID" `
   -PackageFileUri $blob.ICloudBlob.StorageUri.PrimaryUri.AbsoluteUri
 ```
+
+## <a name="bring-your-own-storage-for-the-managed-application-definition"></a>Предоставление собственного хранилища для определения управляемого приложения
+Вы можете сохранить определение управляемого приложения в учетной записи хранения, предоставленной вами во время создания, чтобы полностью контролировать его расположение и доступ в соответствии с вашими нормативными потребностями.
+
+> [!NOTE]
+> Подключение к собственному хранилищу поддерживается только с шаблоном ARM или развертыванием REST API для определения управляемого приложения.
+
+### <a name="select-your-storage-account"></a>Выбор учетной записи хранения
+Необходимо [создать учетную запись хранения](../../storage/common/storage-account-create.md), в которой будет содержаться определение управляемого приложения для использования с каталогом услуг.
+
+Скопируйте идентификатор ресурса учетной записи хранения. Он будет использоваться позже при развертывании определения.
+
+### <a name="set-the-role-assignment-for-appliance-resource-provider-in-your-storage-account"></a>Задание назначения роли "Поставщик ресурсов устройства" в учетной записи хранения
+Перед развертыванием определения управляемого приложения в учетной записи хранения необходимо предоставить разрешения участника для роли **Поставщик ресурсов устройства**, чтобы предоставить разрешение на запись файлов определений в контейнер вашей учетной записи хранения.
+
+1. Войдите в свою учетную запись хранения на [портале Azure](https://portal.azure.com).
+1. Выберите **Управление доступом (IAM)** , чтобы отобразить параметры управления доступом для учетной записи хранения. Выберите вкладку **Назначения ролей**, чтобы просмотреть список назначений ролей.
+1. В окне **Добавить назначение ролей** выберите роль **Участник**. 
+1. Из поля **Назначение доступа к** выберите **пользователя, группу или субъект-службу Azure AD**.
+1. В разделе **Выбрать**, найдите **Поставщик ресурсов устройства** и выберите его.
+1. Сохраните назначение роли.
+
+### <a name="deploy-the-managed-application-definition-with-an-arm-template"></a>Развертывание определения управляемого приложения с помощью шаблона ARM 
+
+Используйте следующий шаблон ARM для развертывания упакованного управляемого приложения в качестве нового определения управляемого приложения в каталоге услуг, файлы определения которого хранятся и обслуживаются в вашей учетной записи хранения.
+   
+```json
+    {
+    "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "location": {
+            "type": "string",
+            "defaultValue": "[resourceGroup().location]"
+        },
+        "applicationName": {
+            "type": "string",
+            "metadata": {
+                "description": "Managed Application name"
+            }
+        },
+        "storageAccountType": {
+      "type": "string",
+      "defaultValue": "Standard_LRS",
+      "allowedValues": [
+        "Standard_LRS",
+        "Standard_GRS",
+        "Standard_ZRS",
+        "Premium_LRS"
+      ],
+      "metadata": {
+        "description": "Storage Account type"
+      }
+    },
+        "definitionStorageResourceID": {
+            "type": "string",
+            "metadata": {
+                "description": "Storage account resource ID for where you're storing your definition"
+            }
+        },
+        "_artifactsLocation": {
+            "type": "string",
+            "metadata": {
+                "description": "The base URI where artifacts required by this template are located."
+            }
+        }
+    },
+    "variables": {
+        "lockLevel": "None",
+        "description": "Sample Managed application definition",
+        "displayName": "Sample Managed application definition",
+        "managedApplicationDefinitionName": "[parameters('applicationName')]",
+        "packageFileUri": "[parameters('_artifactsLocation')]",
+        "defLocation": "[parameters('definitionStorageResourceID')]",
+        "managedResourceGroupId": "[concat(subscription().id,'/resourceGroups/', concat(parameters('applicationName'),'_managed'))]",
+        "applicationDefinitionResourceId": "[resourceId('Microsoft.Solutions/applicationDefinitions',variables('managedApplicationDefinitionName'))]"
+    },
+    "resources": [
+        {
+            "type": "Microsoft.Solutions/applicationDefinitions",
+            "apiVersion": "2019-07-01",
+            "name": "[variables('managedApplicationDefinitionName')]",
+            "location": "[parameters('location')]",
+            "properties": {
+                "lockLevel": "[variables('lockLevel')]",
+                "description": "[variables('description')]",
+                "displayName": "[variables('displayName')]",
+                "packageFileUri": "[variables('packageFileUri')]",
+                "storageAccountId": "[variables('defLocation')]"
+            }
+        }
+    ],
+    "outputs": {}
+}
+```
+
+Мы добавили новое свойство с именем **storageAccountId** в свойства applicationDefintion и предоставляем идентификатор учетной записи хранения, в качестве значения которого вы хотите сохранить определение.
+
+Вы можете убедиться, что файлы определения приложения сохранены в предоставленной учетной записи хранения в контейнере, под именем **applicationdefinitions**.
+
+> [!NOTE]
+> Для повышения безопасности можно создать определение управляемых приложений, чтобы сохранить его в [большом двоичном объекте учетной записи хранения Azure, где включено шифрование](../../storage/common/storage-service-encryption.md). Содержимое определений шифруется с помощью параметров шифрования учетной записи хранения. Определение в каталоге услуг могут видеть только пользователи с правами доступа к файлу.
 
 ### <a name="make-sure-users-can-see-your-definition"></a>Убедитесь, что пользователи могут видеть ваше определение.
 

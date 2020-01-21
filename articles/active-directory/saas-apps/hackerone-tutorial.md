@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с HackerOne | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с HackerOne | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в HackerOne.
 services: active-directory
 documentationCenter: na
@@ -16,14 +16,14 @@ ms.topic: tutorial
 ms.date: 02/15/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0158a7df96f4c83763c5b2324ccc2bfcb5a72b5d
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.openlocfilehash: e03aa99e53f4aa2c646dc425a18d848539d537b0
+ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73159157"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75768339"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-hackerone"></a>Руководство по Интеграция Azure Active Directory с HackerOne
+# <a name="tutorial-azure-active-directory-integration-with-hackerone"></a>Руководство. Интеграция Azure Active Directory с HackerOne
 
 В данном руководстве описано, как интегрировать Azure Active Directory (Azure AD) с приложением HackerOne.
 Интеграция HackerOn с Azure AD дает приведенные далее преимущества:
@@ -35,11 +35,11 @@ ms.locfileid: "73159157"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с HackerOn, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * подписка на HackerOne с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -107,12 +107,9 @@ ms.locfileid: "73159157"
 
     ![Сведения о домене и URL-адресах единого входа приложения HackerOne](common/sp-identifier.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://hackerone.com/<company name>/authentication`.
+    а. Введите в текстовое поле **URL-адрес для входа** следующий текст: `https://hackerone.com/users/saml/auth`.
 
-    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес следующим образом: `https://hackerone.com/users/saml/metadata`
-
-    > [!NOTE]
-    > Значение URL-адреса входа приведено для примера. Вместо него необходимо указать фактический URL-адрес входа. Чтобы получить его, обратитесь в [службу поддержки клиентов HackerOne](mailto:support@hackerone.com). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
+    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес следующего вида: `hackerone.com`.
 
 5. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Загрузить**, чтобы загрузить требуемый **сертификат (Base64)** из предложенных вариантов, и сохраните его на компьютере.
 
@@ -122,11 +119,11 @@ ms.locfileid: "73159157"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
-    б) Идентификатор Azure AD.
+    b. Идентификатор Azure AD.
 
-    в) URL-адрес выхода.
+    c. URL-адрес выхода.
 
 ### <a name="configure-hackerone-single-sign-on"></a>Настройка единого входа для HackerOne
 
@@ -144,7 +141,7 @@ ms.locfileid: "73159157"
 
     ![Настройка единого входа](./media/hackerone-tutorial/tutorial_hackerone_004.png)
 
-    a. Введите имя зарегистрированного домена в поле **Email Domain** (Домен электронной почты).
+    а. Введите имя зарегистрированного домена в поле **Email Domain** (Домен электронной почты).
 
     b. В текстовом поле **Single Sign On URL** (URL-адрес единого входа) вставьте значение **URL-адреса входа**, скопированное на портале Azure.
 
@@ -156,7 +153,7 @@ ms.locfileid: "73159157"
 
     ![Настройка единого входа](./media/hackerone-tutorial/tutorial_hackerone_005.png)
 
-    a. Щелкните **Run test**(Выполнить проверку).
+    а. Щелкните **Run test**(Выполнить проверку).
 
     b. Если поле **Status** (Состояние) имеет значение **Last test status: created** (Состояние при последней проверке: создан), обратитесь в [службу поддержки HackerOne](mailto:support@hackerone.com), чтобы запросить проверку своей конфигурации.
 

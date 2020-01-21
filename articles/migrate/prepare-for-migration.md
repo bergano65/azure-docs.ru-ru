@@ -1,19 +1,15 @@
 ---
 title: Подготовка компьютеров к миграции с помощью Миграции Azure
 description: Подготовка локальных компьютеров к миграции в Azure с помощью службы "Миграция Azure"
-author: rayne-wiselman
-manager: carmonm
-ms.service: azure-migrate
 ms.topic: tutorial
 ms.date: 12/10/2019
-ms.author: raynew
 ms.custom: MVC
-ms.openlocfilehash: 6f5535a57fae847c8a376b8b39e43955675da739
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.openlocfilehash: c3c10321e8d49ac6ecfe80024d23f24711298651
+ms.sourcegitcommit: dbcc4569fde1bebb9df0a3ab6d4d3ff7f806d486
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74974790"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76028752"
 ---
 # <a name="prepare-on-premises-machines-for-migration-to-azure"></a>Подготовка локальных компьютеров к миграции в Azure
 
@@ -44,9 +40,9 @@ ms.locfileid: "74974790"
 
 ## <a name="check-whats-supported"></a>Проверка поддерживаемых функций
 
-- Для виртуальных машин VMware миграция сервера службы "Миграция Azure" поддерживает [миграцию без агентов или на основе агентов](server-migrate-overview.md). Проверьте требования и поддерживаемые функции виртуальной машины VMware для [миграции без агентов](migrate-support-matrix-vmware.md#migration---limitations) и [на основе агентов](migrate-support-matrix-vmware.md#agent-based-migration-vmware-vm-requirements).
-- Проверьте [требования к миграции и поддерживаемые функции](migrate-support-matrix-hyper-v.md#migration-hyper-v-vm-requirements) для виртуальных машин Hyper-V.
-- Проверьте [требования к миграции и поддерживаемые функции](migrate-support-matrix-physical.md) для локальных физических компьютеров или других виртуализированных серверов. 
+- Для виртуальных машин VMware миграция сервера службы "Миграция Azure" поддерживает [миграцию без агентов или на основе агентов](server-migrate-overview.md). Проверьте [требования к миграции и поддерживаемые функции](migrate-support-matrix-vmware-migration.md) виртуальных машин VMware.
+- Проверьте [требования к миграции и поддерживаемые функции](migrate-support-matrix-hyper-v-migration.md) для Hyper-V.
+- Проверьте [требования к миграции и поддерживаемые функции](migrate-support-matrix-physical-migration.md) для локальных физических компьютеров или других виртуализированных серверов. 
 
 
 
@@ -55,10 +51,11 @@ ms.locfileid: "74974790"
 
 Во время миграции компьютерам может понадобиться доступ к Интернету.
 
-- Проверьте URL-адреса, к которым виртуальные машины VMware должны иметь доступ во время миграции [без агента](migrate-support-matrix-vmware.md#agentless-migration-url-access-requirements) или [на основе агента ](migrate-support-matrix-vmware.md#agent-based-migration-url-access-requirements).
-- Проверьте URL-адреса, к которым узлы Hyper-V должны иметь доступ во время миграции. Виртуальные машины Hyper-V не нуждаются в доступе к Интернету.
-- [Проверьте URL-адреса](migrate-support-matrix-vmware.md#agent-based-migration-url-access-requirements), к которым физические компьютеры или другие виртуализированные серверы должны иметь доступ во время миграции.
-- При миграции виртуальных машин VMware или физических серверов на основе агента Службе мобильности, работающей на компьютерах, необходим доступ к компонентам службы "Миграция Azure". Для управления репликацией служба, работающая на компьютере, взаимодействует с локальным устройством репликации службы "Миграция Azure" через входящий порт HTTPS 443. Компьютеры отправляют данные репликации на сервер обработки службы "Миграция Azure" через входящий порт HTTPS 9443. Этот порт можно изменить.
+- [Проверьте URL-адреса](migrate-appliance.md#url-access), к которым устройству миграции Azure требуется доступ во время миграции без агента. [Просмотрите требования для доступа к порту](migrate-support-matrix-vmware-migration.md#agentless-ports).
+- Проверьте [URL-адреса](migrate-replication-appliance.md#url-access) и [ports] (migrate-replication-appliance.md#port-access), которые используются устройством репликации во время миграции виртуальной машины VMware на основе агента. 
+- [Проверьте](migrate-support-matrix-hyper-v-migration.md#hyper-v-hosts) URL-адреса и порты, к которым будут ссылаться узлы Hyper-V во время миграции. 
+- Проверьте [URL-адреса](migrate-replication-appliance.md#url-access) и [порты] (migrate-replication-appliance.md#port-access), которые используются устройством репликации во время миграции физического сервера.
+
 
 
 ## <a name="verify-required-changes-before-migration"></a>Проверка изменений, которые необходимо внести перед миграцией
@@ -105,7 +102,7 @@ ms.locfileid: "74974790"
 
 ## <a name="check-azure-vm-requirements"></a>Проверка требований для виртуальных машин Azure
 
-Локальные компьютеры, реплицируемые в Azure, должны соответствовать требованиям к операционной системе и архитектуре, дискам, сетевым настройкам и наименованию для виртуальных машин Azure. Перед выполнением миграции проверьте требования для [виртуальных машин VMware или физических серверов](migrate-support-matrix-vmware.md#azure-vm-requirements) и [виртуальных машин Hyper-V](migrate-support-matrix-hyper-v.md#migration-hyper-v-vm-requirements).
+Локальные компьютеры, реплицируемые в Azure, должны соответствовать требованиям к операционной системе и архитектуре, дискам, сетевым настройкам и наименованию для виртуальных машин Azure. Перед выполнением миграции проверьте требования для [виртуальных машин VMware или физических серверов](migrate-support-matrix-vmware-migration.md#azure-vm-requirements) и [виртуальных машин Hyper-V](migrate-support-matrix-hyper-v-migration.md#azure-vm-requirements).
 
 
 ## <a name="prepare-to-connect-after-migration"></a>Подготовка к подключению после миграции
@@ -144,6 +141,6 @@ ms.locfileid: "74974790"
 
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Выберите предпочтительный метод [миграции виртуальных машин VMware](server-migrate-overview.md) в Azure или начните миграцию [виртуальных машин Hyper-V](tutorial-migrate-hyper-v.md), [физических серверов или виртуализованных/облачных виртуальных машин](tutorial-migrate-physical-virtual-machines.md).

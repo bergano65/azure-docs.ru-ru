@@ -5,12 +5,12 @@ ms.assetid: ba50ee47-58e0-4972-b67b-828f2dc48701
 ms.topic: quickstart
 ms.date: 03/28/2018
 ms.custom: mvc, cc996988-fb4f-47
-ms.openlocfilehash: 8e89c3923daab15793707ff99dbbed6deeb6a0b0
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: 808f0f81f937da688a8873e5f6ee959976e9d6aa
+ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74227178"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75769291"
 ---
 # <a name="create-a-function-in-azure-that-is-triggered-by-a-timer"></a>Создание в Azure функции, активируемой по таймеру
 
@@ -18,7 +18,7 @@ ms.locfileid: "74227178"
 
 ![Создание приложения-функции на портале Azure](./media/functions-create-scheduled-function/function-app-in-portal-editor.png)
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Для работы с этим руководством:
 
@@ -48,12 +48,12 @@ ms.locfileid: "74227178"
 
     ![Создайте функцию, активируемую по таймеру, на портале Azure.](./media/functions-create-scheduled-function/functions-create-timer-trigger-2.png)
 
-    | Параметр | Рекомендуемое значение | Описание |
+    | Параметр | Рекомендуемое значение | Description |
     |---|---|---|
-    | **Имя** | значение по умолчанию | Определяет имя функции, активируемой по таймеру. |
+    | **Название** | По умолчанию | Определяет имя функции, активируемой по таймеру. |
     | **Расписание** | 0 \*/1 \* \* \* \* | [Выражение CRON](functions-bindings-timer.md#ncrontab-expressions) с шестью полями, в котором запланировано ежеминутное выполнение функции. |
 
-4. Нажмите кнопку **Создать**. Будет создана функция на выбранном вами языке, которая будет выполняться каждую минуту.
+4. Нажмите кнопку **Создать**. Будет создана функция на выбранном вами языке, которая будет выполняться ровно каждую минуту.
 
 5. Проверьте выполнение, просмотрев записанные в журналах сведения трассировки.
 
@@ -69,13 +69,13 @@ ms.locfileid: "74227178"
 
 ![Обновление расписания таймера функций на портале Azure](./media/functions-create-scheduled-function/functions-timer-trigger-change-schedule.png)
 
-Теперь функция будет выполняться раз в час. 
+Теперь функция будет выполняться в начале каждого часа.
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
 [!INCLUDE [Next steps note](../../includes/functions-quickstart-cleanup.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Вы создали функцию, которая выполняется на основе расписания. Дополнительные сведения о триггерах см.в статье [Триггеры таймера для службы "Функции Azure"](functions-bindings-timer.md).
 

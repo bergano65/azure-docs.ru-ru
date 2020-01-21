@@ -7,12 +7,12 @@ ms.date: 09/06/2019
 ms.service: storage
 ms.subservice: common
 ms.topic: sample
-ms.openlocfilehash: 043a21aec5753dd16f558ad29d2300ada7a35d72
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 50c5067c3db2f07da225b72d9ba0a8f0bdc44368
+ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75431785"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75748138"
 ---
 # <a name="azure-storage-samples-using-net"></a>Примеры для службы хранилища Azure с использованием .NET
 
@@ -21,7 +21,7 @@ ms.locfileid: "75431785"
 > [!NOTE]
 > В этих примерах используется библиотека .NET версии 11 службы хранилища Azure. Сведения о коде версии 12 см. в разделе [примеры](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/storage/Azure.Storage.Blobs/samples) в репозитории GitHub.
 
-## <a name="blob-samples"></a>Примеры больших двоичных объектов
+## <a name="blob-samples-v11"></a>Примеры больших двоичных объектов (версия 11)
 
 | **Сценарий** | **Образец кода** |
 |--------------|-----------------|
@@ -42,7 +42,7 @@ ms.locfileid: "75431785"
 | Свойства службы | [Приступая к работе с большими двоичными объектами](https://github.com/Azure-Samples/storage-blob-dotnet-getting-started/blob/master/BlobStorage/Advanced.cs) |
 | Создание моментального снимка большого двоичного объекта | [Backup Azure Virtual Machine Disks with Incremental Snapshots](https://github.com/Azure-Samples/storage-blob-dotnet-back-up-with-incremental-snapshots/blob/master/Program.cs) (Резервное копирование дисков виртуальной машины Azure с помощью добавочных моментальных снимков) |
 
-## <a name="file-samples"></a>Примеры файлов
+## <a name="file-samples-v11"></a>Примеры файлов (версия 11)
 
 | **Сценарий** | **Образец кода** |
 |--------------|-----------------|
@@ -56,7 +56,7 @@ ms.locfileid: "75431785"
 | Список общих папок | [Пример хранилища файлов .NET для службы хранилища Azure](https://github.com/Azure-Samples/storage-file-dotnet-getting-started/blob/9f12304b2f5f5472a1c87c1e21be4af5661ac043/FileStorage/Advanced.cs) |
 | Статистика, метаданные и свойства общей папки | [Пример хранилища файлов .NET для службы хранилища Azure](https://github.com/Azure-Samples/storage-file-dotnet-getting-started/blob/9f12304b2f5f5472a1c87c1e21be4af5661ac043/FileStorage/Advanced.cs) |
 
-## <a name="queue-samples"></a>Примеры очередей
+## <a name="queue-samples-v11"></a>Примеры очередей (версия 11)
 
 | **Сценарий** | **Образец кода** |
 |--------------|-----------------|
@@ -69,7 +69,7 @@ ms.locfileid: "75431785"
 | Свойства службы очередей | [Приступая к работе со службой очередей Azure в .NET](https://github.com/Azure-Samples/storage-queue-dotnet-getting-started/blob/master/QueueStorage/Advanced.cs) |
 | Сообщение об обновлении | [Приступая к работе со службой очередей Azure в .NET](https://github.com/Azure-Samples/storage-queue-dotnet-getting-started/blob/master/QueueStorage/GettingStarted.cs) |
 
-## <a name="table-samples"></a>Примеры таблиц
+## <a name="table-samples-v11"></a>Примеры таблиц (версия 11)
 
 | **Сценарий** | **Образец кода** |
 |--------------|-----------------|

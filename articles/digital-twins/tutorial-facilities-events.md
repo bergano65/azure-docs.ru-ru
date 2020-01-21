@@ -1,5 +1,5 @@
 ---
-title: Руководство по Запись событий устройства из пространства Интернета вещей в Azure Digital Twins | Документация Майкрософт
+title: Руководство. Запись событий устройства из пространства Интернета вещей в Azure Digital Twins | Документация Майкрософт
 description: В этом руководстве вы узнаете, как получать уведомления от пространств, интегрировав Azure Digital Twins с Logic Apps.
 services: digital-twins
 ms.author: alinast
@@ -8,15 +8,15 @@ manager: bertvanhoof
 ms.custom: seodec18
 ms.service: digital-twins
 ms.topic: tutorial
-ms.date: 11/12/2019
-ms.openlocfilehash: 7700c61a978532a63fc5b3298d45b8e7041dba40
-ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
+ms.date: 01/10/2020
+ms.openlocfilehash: 1cd617204bbc12a99b6ae9e3b55fbc59b0e0578a
+ms.sourcegitcommit: 014e916305e0225512f040543366711e466a9495
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74790345"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75933694"
 ---
-# <a name="tutorial-receive-notifications-from-your-azure-digital-twins-spaces-by-using-logic-apps"></a>Руководство по Получение уведомлений от пространств Azure Digital Twins с использованием Logic Apps
+# <a name="tutorial-receive-notifications-from-your-azure-digital-twins-spaces-by-using-logic-apps"></a>Руководство. Получение уведомлений от пространств Azure Digital Twins с использованием Logic Apps
 
 Развернув экземпляр Azure Digital Twins, подготовив пространства и реализовав пользовательские функции для отслеживания определенных условий, вы можете по электронной почте уведомлять администратора офиса, когда возникают отслеживаемые условия.
 
@@ -24,7 +24,7 @@ ms.locfileid: "74790345"
 
 В этом руководстве показано, как интегрировать эти уведомления с Azure Logic Apps для отправки сообщений, когда комната свободна. Администратор офиса может использовать эти сведения, чтобы помогать сотрудникам бронировать конференц-зал с самыми оптимальными условиями для работы.
 
-Из этого руководства вы узнаете, как выполнять следующие задачи:
+В этом руководстве описано следующее.
 
 > [!div class="checklist"]
 > * Интеграция событий со службой "Сетка событий Azure".
@@ -51,7 +51,7 @@ ms.locfileid: "74790345"
 
 [Раздел службы "Сетка событий"](../event-grid/concepts.md#topics) предоставляет интерфейс для маршрутизации событий, созданных определяемой пользователем функцией. 
 
-1. Войдите на [портале Azure](https://portal.azure.com).
+1. Войдите на [портал Azure](https://portal.azure.com).
 
 1. В области слева выберите **Создать ресурс**. 
 
@@ -65,7 +65,7 @@ ms.locfileid: "74790345"
 
 1. Выберите **Ключи доступа** и скопируйте **Ключ 1** и **Ключ 2** во временный файл. Вам потребуются эти значения для создания конечной точки в следующем разделе.
 
-    [![Ключи службы "Сетка событий"](./media/tutorial-facilities-events/event-grid-keys.png)](./media/tutorial-facilities-events/event-grid-keys.png#lightbox)
+    [![Ключи службы "Сетка событий"](./media/tutorial-facilities-events/tutorial-event-grid-keys.png)](./media/tutorial-facilities-events/tutorial-event-grid-keys.png#lightbox)
 
 ### <a name="create-an-endpoint-for-the-event-grid-topic"></a>Создание конечной точки для раздела службы "Сетка событий"
 
@@ -94,7 +94,7 @@ ms.locfileid: "74790345"
     > [!IMPORTANT]
     > Введите все значения без кавычек. Убедитесь, что в файле YAML после двоеточия есть по крайней мере один пробел. Вы также можете проверить содержимое файла YAML с помощью любого проверяющего элемента управления YAML в Интернете, например [этого](https://onlineyamltools.com/validate-yaml).
 
-1. Сохраните и закройте файл. В командном окне выполните следующую команду и войдите в систему при появлении запроса. 
+1. Сохраните файл и закройте его. В командном окне выполните следующую команду и войдите в систему при появлении запроса. 
 
     ```cmd/sh
     dotnet run CreateEndpoints
@@ -114,7 +114,7 @@ ms.locfileid: "74790345"
 
 1. Введите **имя** для своего ресурса приложения логики, а затем выберите **подписку**, **группу ресурсов** и **расположение**. Нажмите кнопку **Создать**.
 
-    [![Создание ресурса Logic Apps](./media/tutorial-facilities-events/create-logic-app.png)](./media/tutorial-facilities-events/create-logic-app.png#lightbox)
+    [![Создание ресурса Logic Apps](./media/tutorial-facilities-events/tutorial-create-logic-app.png)](./media/tutorial-facilities-events/tutorial-create-logic-app.png#lightbox)
 
 1. Откройте развернутый ресурс Logic Apps, а затем откройте панель **Конструктор приложений логики**. 
 
@@ -122,7 +122,7 @@ ms.locfileid: "74790345"
 
 1. В окне **When an Event Grid event occurs (Preview)** (Когда происходит событие службы "Сетка событий") сделайте следующее: 
    
-   a. Выберите **подписку**, которую вы использовали ранее для создания раздела службы "Сетка событий".
+   а. Выберите **подписку**, которую вы использовали ранее для создания раздела службы "Сетка событий".
 
    b. Выберите **Microsoft.EventGrid.Topics** в качестве **типа ресурса**.
 
@@ -134,7 +134,7 @@ ms.locfileid: "74790345"
 
 1. В окне **Выберите действие** сделайте следующее:
 
-   a. Выполните поиск фразы **анализ json** и выберите действие **Анализ JSON**.
+   а. Выполните поиск фразы **анализ json** и выберите действие **Анализ JSON**.
 
    b. В поле **Содержимое** выберите **Текст** из списка **Динамическое содержимое**.
 
@@ -166,17 +166,17 @@ ms.locfileid: "74790345"
 
 1. В окне **Выберите действие** сделайте следующее:
 
-   a. Выберите **Управления > Условие** или найдите элемент **Условие** в списке **действий**. 
+   а. Выберите **Управления > Условие** или найдите элемент **Условие** в списке **действий**. 
 
    b. В первом текстовом поле **Выберите значение** выберите **eventType** из списка **Динамическое содержимое** окна **Анализ JSON**.
 
    c. Во втором текстовом поле **Выберите значение** введите `UdfCustom`.
 
-   [![Выбранные условия](./media/tutorial-facilities-events/logic-app-condition.png)](./media/tutorial-facilities-events/logic-app-condition.png#lightbox)
+   [![Выбранные условия](./media/tutorial-facilities-events/tutorial-logic-app-condition.png)](./media/tutorial-facilities-events/tutorial-logic-app-condition.png#lightbox)
 
 1. Внутри окна **Если истинно** сделайте следующее:
 
-   a. Выберите **Добавить действие** и **Office 365 Outlook**.
+   а. Выберите **Добавить действие** и **Office 365 Outlook**.
 
    b. В списке **Действия** выберите действие **Отправка электронной почты (V2)** . Выберите **Вход** и используйте данные учетной записи электронной почты. При появлении запроса выберите **Разрешить доступ**.
 
@@ -184,7 +184,7 @@ ms.locfileid: "74790345"
 
    d. В поле **Текст** того же окна введите примерно такой текст: **В комнате обнаружено плохое качество воздуха, и температура должна быть отрегулирована**. Вы можете прорабатывать все до мелочей, используя элементы из списка **Динамическое содержимое**.
 
-   [![Выбор действия "Отправить электронное письмо" в Logic Apps](./media/tutorial-facilities-events/logic-app-send-email.png)](./media/tutorial-facilities-events/logic-app-send-email.png#lightbox)
+   [![Выбор действия "Отправить электронное письмо" в Logic Apps](./media/tutorial-facilities-events/tutorial-logic-app-send-email.png)](./media/tutorial-facilities-events/tutorial-logic-app-send-email.png#lightbox)
 
 1. Нажмите кнопку **Сохранить** в верхней части панели **Конструктор приложений логики**.
 
@@ -207,7 +207,7 @@ ms.locfileid: "74790345"
 
 2. При необходимости удалите примеры приложений на компьютере.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Вы можете приступить к следующему руководству, чтобы узнать, как визуализировать данные датчиков, а также анализировать тенденции и обнаруживать аномалии.
 

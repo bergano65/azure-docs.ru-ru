@@ -4,12 +4,12 @@ description: Разверните первый настраиваемый кон
 ms.topic: quickstart
 ms.date: 08/30/2019
 ms.custom: seodec18
-ms.openlocfilehash: 0b618c4f1a24e4089cac2ddf34e61bab156aefdd
-ms.sourcegitcommit: 265f1d6f3f4703daa8d0fc8a85cbd8acf0a17d30
+ms.openlocfilehash: 7901498772b8e746fb2c87a5237f06ab279e3b64
+ms.sourcegitcommit: f34165bdfd27982bdae836d79b7290831a518f12
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74671354"
+ms.lasthandoff: 01/13/2020
+ms.locfileid: "75922300"
 ---
 # <a name="run-a-custom-windows-container-in-azure-preview"></a>Запуск пользовательского контейнера Windows в Azure (предварительная версия)
 
@@ -17,7 +17,7 @@ ms.locfileid: "74671354"
 
 В этом кратком руководстве показано, как развернуть приложение ASP.NET в образе Windows на сайте [Docker Hub](https://hub.docker.com/) из Visual Studio. Приложение можно запустить в пользовательском контейнере в Службе приложений Azure.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Для работы с этим руководством:
 
@@ -63,7 +63,7 @@ ms.locfileid: "74671354"
 
 1. Щелкните правой кнопкой мыши проект **myFirstAzureWebApp** в **обозревателе решений** и выберите **Опубликовать**.
 
-1. Выберите **Служба приложений**, а затем нажмите кнопку **Опубликовать**.
+1. Выберите **Служба приложений** и щелкните **Опубликовать**.
 
 1. В разделе **Выберите целевой объект публикации** выберите **Реестр контейнеров** и **Docker Hub**, а затем нажмите кнопку **Опубликовать**.
 
@@ -79,7 +79,7 @@ ms.locfileid: "74671354"
 
 ## <a name="create-a-windows-container-app"></a>Создание приложения-контейнера Windows
 
-1. Войдите на [портале Azure]( https://portal.azure.com).
+1. Войдите на [портал Azure]( https://portal.azure.com).
 
 1. Выберите **Создать ресурс** в верхнем левом углу окна портала Azure.
 
@@ -163,7 +163,7 @@ https://<app_name>.scm.azurewebsites.net/api/logstream
 
 ## <a name="use-a-different-parent-image"></a>Использование другого родительского образа
 
-Для запуска приложения можно использовать другой пользовательский образ Docker. При этом необходимо выбрать правильный [родительский образ](https://docs.docker.com/develop/develop-images/baseimages/) для платформы, которую вы хотите использовать:
+Для запуска приложения можно использовать другой пользовательский образ Docker. Но вам нужно выбрать правильный [родительский образ (базовый образ)](https://docs.docker.com/develop/develop-images/baseimages/) для платформы, которую вы хотите использовать:
 
 - Для развертывания приложений .NET Framework используйте родительский образ на основе выпуска [канала долгосрочного обслуживания (LTSC)](https://docs.microsoft.com/windows-server/get-started-19/servicing-channels-19#long-term-servicing-channel-ltsc) для Windows Server Core 2019. 
 - Для развертывания приложений .NET Core используйте родительский образ на основе выпуска [канала полугодичного обслуживания (SAC)](https://docs.microsoft.com/windows-server/get-started-19/servicing-channels-19#semi-annual-channel) для Windows Server Nano 1809. 
@@ -171,9 +171,9 @@ https://<app_name>.scm.azurewebsites.net/api/logstream
 Скачивание родительского образа во время запуска приложения занимает некоторое время. Но вы можете ускорить запуск, используя один из следующих родительских образов, уже кэшированных в службе приложений Azure:
 
 - [mcr.Microsoft.com/DotNet/Framework/ASPNET](https://hub.docker.com/_/microsoft-dotnet-framework-aspnet/): 4.7.2-windowsservercore-ltsc2019
-- [mcr.Microsoft.com/Windows/nanoserver](https://hub.docker.com/_/microsoft-windows-nanoserver/):1809 — это базовый контейнер, используемый для образов [ASP.NET Core](https://hub.docker.com/_microsoft-dotnet-cores-aspnet) Microsoft Windows Nano Server.
+- [mcr.Microsoft.com/Windows/nanoserver](https://hub.docker.com/_/microsoft-windows-nanoserver/):1809 — это базовый контейнер, используемый для образов [ASP.NET Core](https://hub.docker.com/_/microsoft-dotnet-core-aspnet/) Microsoft Windows Nano Server.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Перенос в контейнер Windows в Azure](app-service-web-tutorial-windows-containers-custom-fonts.md)

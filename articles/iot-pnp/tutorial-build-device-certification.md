@@ -1,5 +1,5 @@
 ---
-title: Создание готового к сертификации устройства IoT Plug and Play (предварительная версия) | Документация Майкрософт
+title: Создание готового к сертификации устройства IoT Plug and Play (предварительная версия) | Документация Майкрософт
 description: В этой статье разработчик устройств сможет ознакомиться со сведениями о создании готового к сертификации устройства IoT Plug and Play (предварительная версия).
 author: tbhagwat3
 ms.author: tanmayb
@@ -9,12 +9,12 @@ ms.custom: mvc
 ms.service: iot-pnp
 services: iot-pnp
 manager: philmea
-ms.openlocfilehash: 43fc928b1274159839dc0df395e86d065f84b4c7
-ms.sourcegitcommit: ec2eacbe5d3ac7878515092290722c41143f151d
+ms.openlocfilehash: 2dae0a31ad53a777f5ae88c1c12f988d2f80630a
+ms.sourcegitcommit: 12a26f6682bfd1e264268b5d866547358728cd9a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75550272"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75867425"
 ---
 # <a name="build-an-iot-plug-and-play-preview-device-thats-ready-for-certification"></a>Создание готового к сертификации устройства IoT Plug and Play (предварительная версия)
 
@@ -28,14 +28,14 @@ ms.locfileid: "75550272"
 - Код устройства реализует интерфейс со сведениями об устройстве.
 - Модель возможностей и код устройства работают с IoT Central.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим учебником необходимы указанные ниже компоненты.
 
 - [Visual Studio Code](https://code.visualstudio.com/download)
 - Пакет расширения [Azure IoT Tools для VS Code](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-tools)
 
-Кроме того, вам потребуется устройство IoT Plug and Play, созданное при изучении статьи [Quickstart: Use a device capability model to create an IoT Plug and Play device](quickstart-create-pnp-device-windows.md) (Краткое руководство по созданию устройства с помощью модели возможностей устройств).
+Кроме того, необходимо завершить быстрое руководство [Использование модели возможностей устройства для создания устройства](quickstart-create-pnp-device-windows.md) для Windows. В кратком руководстве показано, как настроить среду разработки с помощью Vcpkg и создать пример проекта.
 
 ## <a name="store-a-capability-model-and-interfaces"></a>Сохранение модели возможностей и интерфейсов
 
@@ -85,11 +85,11 @@ ms.locfileid: "75550272"
 
 1. Чтобы создать локальную копию интерфейса со **сведениями об устройстве**, выберите его в отфильтрованном списке, а затем щелкните **Скачать**. В VS Code отобразится файл интерфейса.
 
-Чтобы просмотреть интерфейс **Сведения об устройстве** в Azure CLI, сделайте следующее:
+Чтобы просмотреть интерфейс **Сведения об устройстве** в Azure CLI, сделайте следующее:
 
 1. [Установите расширение Azure CLI для Интернета вещей](howto-install-pnp-cli.md).
 
-1. Используйте следующую команду Azure CLI, чтобы отобразить интерфейс с идентификатором интерфейса сведений об устройстве:
+1. Используйте следующую команду Azure CLI, чтобы отобразить интерфейс с идентификатором интерфейса сведений об устройстве:
 
     ```cmd/sh
     az iot pnp interface show --interface urn:azureiot:DeviceManagement:DeviceInformation:1
@@ -101,26 +101,59 @@ ms.locfileid: "75550272"
 
 ### <a name="enable-device-provisioning-through-the-azure-iot-device-provisioning-service-dps"></a>Выполнение подготовки устройств с помощью Службы подготовки устройств к добавлению в Центр Интернета вещей
 
-Чтобы сертифицировать устройство, его необходимо подготовить с помощью [Службы подготовки устройств к добавлению в Центр Интернета вещей (DPS)](https://docs.microsoft.com/azure/iot-dps/about-iot-dps). Чтобы добавить возможность использования DPS, вы можете создать заглушку кода C в VS Code. Выполните следующие действия.
+Чтобы сертифицировать устройство, его необходимо подготовить с помощью [Службы подготовки устройств к добавлению в Центр Интернета вещей (DPS)](https://docs.microsoft.com/azure/iot-dps/about-iot-dps). Чтобы добавить возможность использования DPS, вы можете создать заглушку кода C в VS Code. Выполните следующие действия.
 
 1. Откройте папку с файлом DCM в VS Code, нажмите сочетание клавиш **CTRL+SHIFT+P**, чтобы открыть палитру команд, введите **IoT Plug and Play** и выберите **Generate Device Code Stub** (Создать заглушку кода устройства).
 
 1. Выберите файл DCM, который будет использоваться для создания заглушки кода устройства.
 
-1. Введите название проекта — это имя вашего устройства приложения.
+1. Введите название проекта, например **sample_device**. Это будет именем вашего устройства.
 
 1. Выберите язык **ANSI C**.
 
 1. В качестве метода подключения выберите **Via DPS (Device Provisioning Service) symmetric key** (С помощью симметричного ключа DPS (Служба подготовки устройств)).
 
-1. Выберите шаблон проекта **CMake в Windows** или **CMake в Linux** в зависимости от типа ОС на используемом устройстве.
+1. Выберите **CMake Project on Windows** в качестве шаблона проекта.
+
+1. Выберите **Via Vcpkg** (С помощью Vcpkg) в качестве способа добавления пакета SDK для устройств.
 
 1. В VS Code откроется новое окно, содержащее созданные файлы заглушек кода устройства.
 
-1. После создания кода введите учетные данные DPS (**область идентификатора DP**, **симметричный ключ DPS**, **идентификатор устройства**) в качестве параметров приложения. Получение учетных данных с портала сертификации описано в статье [Создание готового к сертификации устройства IoT Plug and Play (предварительная версия)](tutorial-certification-test.md#connect-and-discover-interfaces).
+## <a name="build-and-run-the-code"></a>Сборка и выполнение кода
 
-    ```cmd/sh
-    .\your_pnp_app.exe [DPS ID Scope] [DPS symmetric key] [device ID]
+Вы используете пакет Vcpkg для сборки созданной заглушки кода устройства. Создаваемое приложение имитирует устройство, которое подключается к Центру Интернета вещей. Оно отправляет данные телеметрии и свойства, а также получает команды.
+
+1. Создайте подкаталог `cmake` в папке `sample_device` и перейдите в эту папку.
+
+    ```cmd
+    mkdir cmake
+    cd cmake
+    ```
+
+1. Выполните приведенные ниже команды, чтобы выполнить сборку заглушки кода (заменив заполнитель каталогом репозитория Vcpkg).
+
+    ```cmd
+    cmake .. -G "Visual Studio 16 2019" -A Win32 -Duse_prov_client=ON -Dhsm_type_symm_key:BOOL=ON -DCMAKE_TOOLCHAIN_FILE="<directory of your Vcpkg repo>\scripts\buildsystems\vcpkg.cmake"
+
+    cmake --build .
+    ```
+    
+    > [!NOTE]
+    > При использовании Visual Studio 2017 или Visual Studio 2015 необходимо указать генератор CMake в соответствии с используемыми средствами сборки.
+    >```cmd
+    ># Either
+    >cmake .. -G "Visual Studio 15 2017" -Duse_prov_client=ON -Dhsm_type_symm_key:BOOL=ON -DCMAKE_TOOLCHAIN_FILE="{directory of your Vcpkg repo}\scripts\buildsystems\vcpkg.cmake"
+    ># or
+    >cmake .. -G "Visual Studio 14 2015" -Duse_prov_client=ON -Dhsm_type_symm_key:BOOL=ON -DCMAKE_TOOLCHAIN_FILE="{directory of your Vcpkg repo}\scripts\buildsystems\vcpkg.cmake"
+    >```
+
+    > [!NOTE]
+    > Если cmake не может найти ваш компилятор C++, при запуске предыдущей команды отобразятся ошибки сборки. В этом случае попробуйте выполнить эту команду в [командной строке Visual Studio](https://docs.microsoft.com/dotnet/framework/tools/developer-command-prompt-for-vs).
+
+1. После успешного завершения сборки, введите учетные данные DPS (**область идентификатора DP**, **симметричный ключ DPS**, **идентификатор устройства**) в качестве параметров приложения. Получение учетных данных с портала сертификации описано в статье [Создание готового к сертификации устройства IoT Plug and Play (предварительная версия)](tutorial-certification-test.md#connect-and-discover-interfaces).
+
+    ```cmd\sh
+    .\Debug\sample_device.exe [Device ID] [DPS ID Scope] [DPS symmetric key]
     ```
 
 ### <a name="implement-standard-interfaces"></a>Реализация стандартных интерфейсов

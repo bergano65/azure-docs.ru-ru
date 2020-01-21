@@ -8,12 +8,12 @@ ms.devlang: Java
 ms.topic: quickstart
 ms.date: 03/27/2019
 ms.custom: mvc, seo-java-july2019, seo-java-august2019, seo-java-september2019
-ms.openlocfilehash: 64d70390b3563e17bbe0c70ed426dcda81b50198
-ms.sourcegitcommit: 9405aad7e39efbd8fef6d0a3c8988c6bf8de94eb
+ms.openlocfilehash: 0f9378b80b4985ad542d6f602ba361f59737fc9d
+ms.sourcegitcommit: f2149861c41eba7558649807bd662669574e9ce3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74872746"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75707920"
 ---
 # <a name="quickstart-create-a-java-app-on-azure-app-service-on-linux"></a>Краткое руководство. Создание приложения Java в Службе приложений Azure в Linux
 
@@ -21,7 +21,7 @@ ms.locfileid: "74872746"
 
 > [!NOTE]
 >
-> То же самое можно выполнить с помощью популярных интегрированных сред разработки, например IntelliJ и Eclipse. См. подробнее об [Azure Toolkit for IntelliJ](/java/azure/intellij/azure-toolkit-for-intellij-create-hello-world-web-app) и [Azure Toolkit for Eclipse](/java/azure/eclipse/azure-toolkit-for-eclipse-create-hello-world-web-app).
+> То же самое можно выполнить с помощью популярных интегрированных сред разработки, например IntelliJ, Eclipse и VS Code. См. руководства по [Azure Toolkit for IntelliJ](/java/azure/intellij/azure-toolkit-for-intellij-create-hello-world-web-app), [Azure Toolkit for Eclipse](/java/azure/eclipse/azure-toolkit-for-eclipse-create-hello-world-web-app) и [VS Code](https://code.visualstudio.com/docs/java/java-webapp).
 >
 ![Приложение, работающее в Службе приложений Azure](media/quickstart-java/java-hello-world-in-browser-azure-app-service.png)
 
@@ -35,6 +35,11 @@ ms.locfileid: "74872746"
 
 ```bash
 mvn archetype:generate "-DgroupId=example.demo" "-DartifactId=helloworld" "-DarchetypeArtifactId=maven-archetype-webapp"
+```
+Затем измените рабочую папку на папку проекта:
+
+```bash
+cd helloworld
 ```
 
 ## <a name="configure-the-maven-plugin"></a>Настройка подключаемого модуля Maven
@@ -91,7 +96,7 @@ Confirm (Y/N)? : Y
 
 Снова перейдите к `pom.xml`, чтобы убедиться, что конфигурация подключаемого модуля обновлена. При необходимости вы можете изменить другие параметры Службы приложений непосредственно в POM-файле. Некоторые из них перечислены ниже:
 
- Свойство | Обязательно | ОПИСАНИЕ | Version (версия)
+ Свойство | Обязательно | Description | Версия
 ---|---|---|---
 `<schemaVersion>` | false | Указывает версию схемы конфигурации. Поддерживаемые значения: `v1` и `v2`. | 1.5.2
 `<resourceGroup>` | Да | Группа ресурсов Azure для вашего веб-приложения. | Версия 0.1.0 и выше
@@ -131,7 +136,7 @@ az group delete --name <your resource group name; for example: helloworld-155840
 
 Ее выполнение может занять до минуты.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Руководство. по приложению Java Enterprise с PostgreSQL](tutorial-java-enterprise-postgresql-app.md)

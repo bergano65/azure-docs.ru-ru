@@ -8,12 +8,12 @@ ms.topic: overview
 ms.date: 11/04/2019
 ms.author: tamram
 ms.subservice: blobs
-ms.openlocfilehash: 51f72011b89656d8f56e996d4654a2714f2f482b
-ms.sourcegitcommit: b2fb32ae73b12cf2d180e6e4ffffa13a31aa4c6f
+ms.openlocfilehash: 8c2bbd3aff8c2c10864fb2fa8937c9159ecd3606
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73615605"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75972456"
 ---
 # <a name="introduction-to-azure-blob-storage"></a>Общие сведения о хранилище BLOB-объектов Azure
 
@@ -41,7 +41,7 @@ ms.locfileid: "73615605"
 http://mystorageaccount.blob.core.windows.net 
 ```
 
-Чтобы создать учетную запись хранения, см. раздел [Создайте учетную запись хранения](../common/storage-quickstart-create-account.md). Дополнительные сведения об учетных записях хранения Azure см. в [этой статье](../common/storage-account-overview.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json).
+Чтобы создать учетную запись хранения, см. раздел [Создайте учетную запись хранения](../common/storage-account-create.md). Дополнительные сведения об учетных записях хранения Azure см. в [этой статье](../common/storage-account-overview.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json).
 
 ### <a name="containers"></a>Контейнеры
 
@@ -67,11 +67,11 @@ http://mystorageaccount.blob.core.windows.net
 - **AzCopy** является простой в использовании программой командной строки для Windows и Linux, которая копирует данные из хранилища BLOB-объектов и в него, между контейнерами и между учетными записями хранения. Дополнительные сведения об AzCopy см. в статье [Передача данных с помощью AzCopy версии 10 (предварительная версия)](../common/storage-use-azcopy-v10.md). 
 - **Библиотека перемещения данных для службы хранилища Azure** — это библиотека .NET для перемещения данных между службами хранилища Azure. Служебная программа AzCopy создана с библиотекой перемещения данных. Дополнительные сведения о библиотеке перемещения данных см. в [справочной документации](/dotnet/api/microsoft.azure.storage.datamovement). 
 - **Фабрика данных Azure** поддерживает копирование данных в хранилище BLOB-объектов и из него с использованием ключа учетной записи, подписанного URL-адреса, субъекта-службы или управляемых удостоверений для ресурсов Azure. Дополнительные сведения см. в статье [Копирование данных в хранилище BLOB-объектов Azure и обратно с помощью Фабрики данных Azure](https://docs.microsoft.com/azure/data-factory/connector-azure-blob-storage?toc=%2fazure%2fstorage%2fblobs%2ftoc.json). 
-- **Blobfuse** — это виртуальный драйвер файловой системы для хранилища BLOB-объектов Azure. Blobfuse можно использовать для доступа к существующим данным блочного BLOB-объекта в учетной записи хранения через файловую систему Linux. Дополнительные сведения см. в статье [Как подключить хранилище BLOB-объектов в качестве файловой системы с использованием blobfuse](storage-how-to-mount-container-linux.md).
+- **blobfuse** — это виртуальный драйвер файловой системы для хранилища BLOB-объектов Azure. Blobfuse можно использовать для доступа к существующим данным блочного BLOB-объекта в учетной записи хранения через файловую систему Linux. Дополнительные сведения см. в статье [Как подключить хранилище BLOB-объектов в качестве файловой системы с использованием blobfuse](storage-how-to-mount-container-linux.md).
 - Служба **Azure Data Box** предназначена для передачи локальных данных в хранилище BLOB-объектов. Она используется, когда из-за больших наборов данных или ограничений сети отправка данных по сети невозможна. В зависимости от размера данных вы можете запросить у корпорации Майкрософт устройства [Диск Azure Data Box](../../databox/data-box-disk-overview.md), [Azure Data Box](../../databox/data-box-overview.md) или [Azure Data Box Heavy](../../databox/data-box-heavy-overview.md). Вы сможете скопировать данные на эти устройства и отправить их обратно в корпорацию Майкрософт для передачи данных в хранилище BLOB-объектов.
 - **Служба импорта и экспорта Azure** позволяет импортировать большие объемы данных в учетную запись хранения или экспортировать их из нее, используя предоставленные вами жесткие диски. Дополнительные сведения см. в статье [Что такое служба "Импорт и экспорт Azure"?](../common/storage-import-export-service.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-* [создать учетную запись хранения;](../common/storage-create-storage-account.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)
-* [Целевые показатели масштабируемости и производительности службы хранилища Azure](../common/storage-scalability-targets.md)
+- [создать учетную запись хранения;](../common/storage-create-storage-account.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)
+- [Целевые показатели масштабируемости и производительности для хранилища BLOB-объектов](scalability-targets.md)

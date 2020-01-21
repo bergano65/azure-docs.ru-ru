@@ -6,12 +6,12 @@ ms.topic: quickstart
 ms.date: 06/26/2019
 ms.author: mikhegn
 ms.custom: mvc, devcenter, vs-azure
-ms.openlocfilehash: 545e3efc0815e48d5bd16beabbf9f6ef283fea8d
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: e3d984fee75dcdb8d4e14e7b454e74a3f7c629f2
+ms.sourcegitcommit: c32050b936e0ac9db136b05d4d696e92fefdf068
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75464421"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75730150"
 ---
 # <a name="quickstart-deploy-a-net-reliable-services-application-to-service-fabric"></a>Краткое руководство. Развертывание приложения надежных служб .NET в Service Fabric
 
@@ -51,6 +51,8 @@ Azure Service Fabric — это платформа распределенных 
 > Во время создания необходимо запускать Docker, так как кластер создается с включенными функциями контейнера. Если Docker не запущен, создайте кластер еще раз, чтобы включить функции контейнера.
 > Хоть это и не требуется в рамках руководства, инструкция по запуску Docker во время создания кластера показана в качестве рекомендации.
 > Проверьте, работает ли Docker, открыв окно терминала и выполнив команду `docker ps`, которая укажет, возникает ли ошибка. Если полученный ответ не является ошибкой, это значит что Docker работает и можно начинать создание кластера.
+>
+> [Настройка Windows 10 или Windows Server для контейнеров](https://docs.microsoft.com/virtualization/windowscontainers/quick-start/set-up-environment?tabs=Windows-10-Client)
 
 1. Откройте окно PowerShell с повышенными правами от имени администратора.
 2. Чтобы создать кластер разработки, выполните следующую команду PowerShell.

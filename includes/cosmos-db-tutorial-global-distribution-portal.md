@@ -2,18 +2,18 @@
 title: Глобальное распространение Azure Cosmos DB
 description: Сведения о глобальной репликации данных с помощью Azure DB Cosmos на портале Azure
 services: cosmos-db
-author: rimman
+author: SnehaGunda
+ms.author: sngun
 ms.service: cosmos-db
 ms.topic: include
 ms.date: 12/26/2018
-ms.author: rimman
 ms.custom: include file
-ms.openlocfilehash: 751571820d52c003a7e740bd63af8c9d9e071c7a
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.openlocfilehash: cb9899712fd023aaec41f4b6bb34357b60ecb106
+ms.sourcegitcommit: 02160a2c64a5b8cb2fb661a087db5c2b4815ec04
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67185030"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75751731"
 ---
 ## <a id="addregion"></a>Добавление регионов глобальной базы данных с помощью портала Azure
 Служба Azure Cosmos DB доступна во всех [регионах Azure][azureregions] по всему миру. После выбора уровня согласованности по умолчанию для учетной записи базы данных вы можете связать один или несколько регионов (в зависимости от выбранного уровня согласованности по умолчанию и потребностей глобального распространения).

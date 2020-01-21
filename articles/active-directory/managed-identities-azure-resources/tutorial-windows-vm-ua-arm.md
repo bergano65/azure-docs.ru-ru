@@ -1,28 +1,28 @@
 ---
-title: Учебник. Получение доступа к Azure Resource Manager для Windows в Azure AD с помощью управляемого удостоверения
+title: Учебник`:` Получение доступа к Azure Resource Manager для Windows в Azure AD с помощью управляемого удостоверения
 description: Из этого руководства вы узнаете, как получить доступ к Azure Resource Manager с помощью назначаемого пользователем управляемого удостоверения на виртуальной машине Windows.
 services: active-directory
 documentationcenter: ''
 author: MarkusVi
 manager: daveba
-editor: daveba
+editor: ''
 ms.service: active-directory
 ms.subservice: msi
 ms.devlang: na
 ms.topic: tutorial
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 04/10/2018
+ms.date: 01/14/2020
 ms.author: markvi
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0999492f0d9c7d28da3ac896792fb2d7b898fd18
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: ec9956f0c5d834633646938da19f03e5467a9f6d
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74224219"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75977837"
 ---
-# <a name="tutorial-use-a-user-assigned-managed-identity-on-a-windows-vm-to-access-azure-resource-manager"></a>Руководство по Получение доступа к Azure Resource Manager с помощью назначаемого пользователем управляемого удостоверения на виртуальной машине Windows
+# <a name="tutorial-use-a-user-assigned-managed-identity-on-a-windows-vm-to-access-azure-resource-manager"></a>Руководство. Получение доступа к Azure Resource Manager с помощью назначаемого пользователем управляемого удостоверения на виртуальной машине Windows
 
 [!INCLUDE [preview-notice](~/includes/active-directory-msi-preview-notice-ua.md)]
 
@@ -39,7 +39,7 @@ ms.locfileid: "74224219"
 
 [!INCLUDE [az-powershell-update](../../../includes/updated-for-az.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 [!INCLUDE [msi-qs-configure-prereqs](../../../includes/active-directory-msi-qs-configure-prereqs.md)]
 
@@ -54,9 +54,18 @@ ms.locfileid: "74224219"
 - Выполните `Install-Module -Name PowerShellGet -AllowPrerelease`, чтобы получить предварительную версию модуля `PowerShellGet` (может потребоваться `Exit` из текущего сеанса PowerShell после выполнения этой команды для установки модуля `Az.ManagedServiceIdentity`).
 - Выполните команду `Install-Module -Name Az.ManagedServiceIdentity -AllowPrerelease`, чтобы установить предварительную версию модуля `Az.ManagedServiceIdentity` для выполнения операций назначаемого пользователем удостоверения в рамках этой статьи.
 
-## <a name="create-a-user-assigned-identity"></a>Создание назначаемого пользователем удостоверения
 
-Назначаемое пользователем удостоверение создается как изолированный ресурс Azure. С помощью команды [New-AzUserAssignedIdentity](/powershell/module/az.managedserviceidentity/get-azuserassignedidentity) Azure создает в клиенте Azure AD удостоверение, которое можно назначить одному или нескольким экземплярам службы Azure.
+## <a name="enable"></a>Включить
+
+Для сценария, основанного на удостоверение пользователя, необходимо выполнить следующие шаги:
+
+- Создание удостоверения
+ 
+- Назначьте вновь созданное удостоверение
+
+### <a name="create-identity"></a>Создание удостоверения
+
+В этом разделе показано, как создать назначаемое пользователем удостоверение. Назначаемое пользователем удостоверение создается как изолированный ресурс Azure. С помощью команды [New-AzUserAssignedIdentity](/powershell/module/az.managedserviceidentity/get-azuserassignedidentity) Azure создает в клиенте Azure AD удостоверение, которое можно назначить одному или нескольким экземплярам службы Azure.
 
 [!INCLUDE [ua-character-limit](~/includes/managed-identity-ua-character-limits.md)]
 
@@ -80,20 +89,20 @@ Type: Microsoft.ManagedIdentity/userAssignedIdentities
 }
 ```
 
-## <a name="assign-the-user-assigned-identity-to-a-windows-vm"></a>Назначение пользовательского удостоверения виртуальной машине Windows
+### <a name="assign-identity"></a>Присвоить удостоверение
 
-Клиенты могут использовать назначаемое пользователем удостоверение для целого ряда ресурсов Azure. Чтобы назначить пользовательское удостоверение отдельной виртуальной машине, используйте следующие команды. Используйте свойство `Id`, возвращенное на предыдущем шаге, для параметра `-IdentityID`.
+В этом разделе описано, как присвоить назначенное пользователем удостоверение виртуальной машине Windows. Клиенты могут использовать назначаемое пользователем удостоверение для целого ряда ресурсов Azure. Чтобы назначить пользовательское удостоверение отдельной виртуальной машине, используйте следующие команды. Используйте свойство `Id`, возвращенное на предыдущем шаге, для параметра `-IdentityID`.
 
 ```azurepowershell-interactive
 $vm = Get-AzVM -ResourceGroupName myResourceGroup -Name myVM
 Update-AzVM -ResourceGroupName TestRG -VM $vm -IdentityType "UserAssigned" -IdentityID "/subscriptions/<SUBSCRIPTIONID>/resourcegroups/myResourceGroupVM/providers/Microsoft.ManagedIdentity/userAssignedIdentities/ID1"
 ```
 
-## <a name="grant-your-user-assigned-identity-access-to-a-resource-group-in-azure-resource-manager"></a>Предоставление назначаемому пользователем удостоверению доступа к группе ресурсов в Azure Resource Manager 
+## <a name="grant-access"></a>Предоставление доступа 
 
-Управляемые удостоверения для ресурсов Azure предоставляют удостоверения. С их помощью в коде можно запрашивать маркеры доступа для аутентификации в API ресурсов с поддержкой аутентификации Azure AD. В этом руководстве код получит доступ к API Azure Resource Manager. 
+В этом разделе описано, как предоставлять назначаемому пользователем удостоверению доступ к группе ресурсов в Azure Resource Manager. Управляемые удостоверения для ресурсов Azure предоставляют удостоверения. С их помощью в коде можно запрашивать маркеры доступа для аутентификации в API ресурсов с поддержкой аутентификации Azure AD. В этом руководстве код получит доступ к API Azure Resource Manager. 
 
-Чтобы ваш код мог получить доступ к API, необходимо сначала предоставить удостоверению доступ к ресурсу в Azure Resource Manager. В этом случае — к группе ресурсов, в которой содержится виртуальная машина. Измените значение `<SUBSCRIPTION ID>` в соответствии с вашей средой.
+Чтобы ваш код мог получить доступ к API, необходимо сначала предоставить удостоверению доступ к ресурсу в Azure Resource Manager. В этом случае — к группе ресурсов, в которой содержится виртуальная машина. Измените значение `<SUBSCRIPTION ID>` в соответствии с вашей средой.
 
 ```azurepowershell-interactive
 $spID = (Get-AzUserAssignedIdentity -ResourceGroupName myResourceGroupVM -Name ID1).principalid
@@ -114,7 +123,9 @@ ObjectType: ServicePrincipal
 CanDelegate: False
 ```
 
-## <a name="get-an-access-token-using-the-vms-identity-and-use-it-to-call-resource-manager"></a>Получение маркера доступа с помощью удостоверения виртуальной машины и вызов Resource Manager с его помощью 
+## <a name="access-data"></a>Доступ к данным
+
+### <a name="get-an-access-token"></a>Получение маркера доступа 
 
 Далее в этом руководстве мы будем работать с виртуальной машиной, которую создали ранее.
 
@@ -126,7 +137,7 @@ CanDelegate: False
 
 4. Теперь, когда создано **подключение к удаленному рабочему столу** с виртуальной машиной, откройте **PowerShell** в удаленном сеансе.
 
-5. С помощью командлета PowerShell `Invoke-WebRequest` выполните запрос к управляемым удостоверениям для локальной конечной точки ресурсов Azure, чтобы получить маркер доступа к Azure Resource Manager.  Значение `client_id` возвращается при [создании назначаемого пользователем управляемого удостоверения](#create-a-user-assigned-identity).
+5. С помощью командлета PowerShell `Invoke-WebRequest`выполните запрос к управляемым удостоверениям для локальной конечной точки ресурсов Azure, чтобы получить маркер доступа к Azure Resource Manager.  Значение `client_id` возвращается при создании назначаемого пользователем управляемого удостоверения.
 
     ```azurepowershell
     $response = Invoke-WebRequest -Uri 'http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&client_id=af825a31-b0e0-471f-baea-96de555632f9&resource=https://management.azure.com/' -Method GET -Headers @{Metadata="true"}
@@ -134,7 +145,7 @@ CanDelegate: False
     $ArmToken = $content.access_token
     ```
 
-## <a name="read-the-properties-of-a-resource-group"></a>Чтение свойств группы ресурсов.
+### <a name="read-properties"></a>Читать свойства
 
 Используйте маркер, полученный на предыдущем шаге, для доступа к Azure Resource Manager и считайте свойства группы ресурсов, доступ к которой вы предоставили назначаемому пользователем удостоверению. Замените `<SUBSCRIPTION ID>` идентификатором подписки своей среды.
 
@@ -147,7 +158,7 @@ CanDelegate: False
 {"id":"/subscriptions/<SUBSCRIPTIONID>/resourceGroups/myResourceGroupVM","name":"myResourceGroupVM","location":"eastus","properties":{"provisioningState":"Succeeded"}}
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из этого руководства вы узнали, как создать назначаемое пользователем удостоверение и подключить его к виртуальной машине Azure, чтобы получить доступ к API Azure Resource Manager.  Сведения об Azure Resource Manager см. здесь:
 

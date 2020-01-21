@@ -1,6 +1,6 @@
 ---
-title: Руководство. поиску с помощью службы Azure Maps
-description: Руководство. Поиск ближайшей точки интереса с помощью службы "Карты Azure"
+title: Руководство. Поиск ближайших объектов на карте | Microsoft Azure Maps
+description: Из этого руководства вы узнаете, как найти расположенные поблизости объекты (точки интереса) на карте с помощью Microsoft Azure Maps.
 author: walsehgal
 ms.author: v-musehg
 ms.date: 11/12/2019
@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: timlt
 ms.custom: mvc
-ms.openlocfilehash: ae2d7b3d855f1c06397d4eb0f977dd04aa841942
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 65a091dbe935967d63a11c3c40dd834207f34782
+ms.sourcegitcommit: f9601bbccddfccddb6f577d6febf7b2b12988911
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75432735"
+ms.lasthandoff: 01/12/2020
+ms.locfileid: "75910831"
 ---
 # <a name="tutorial-search-nearby-points-of-interest-using-azure-maps"></a>Руководство. Поиск ближайшей точки интереса с помощью службы "Карты Azure"
 
@@ -49,7 +49,7 @@ ms.locfileid: "75432735"
     * Ознакомьтесь с *лицензией* и *заявлением о конфиденциальности*, а затем установите флажок, чтобы принять условия соглашения.
     * Нажмите кнопку **Создать** .
 
-![Создание учетной записи службы "Карты Azure" на портале](./media/tutorial-search-location/create-account.png)
+![Создание учетной записи службы Azure Maps на портале Azure](./media/tutorial-search-location/create-account.png)
 
 <a id="getkey"></a>
 
@@ -61,7 +61,7 @@ ms.locfileid: "75432735"
 2. В разделе "Параметры" выберите **Проверка подлинности**.
 3. Скопируйте **первичный ключ** в буфер обмена. Сохраните его локально для использования в этом руководстве позже.
 
-![Получение первичного ключа на портале](./media/tutorial-search-location/get-key.png)
+![Получение первичного ключа на портале Azure](./media/tutorial-search-location/get-key.png)
 
 Дополнительные сведения об управлении проверкой подлинности в Azure Maps см. в [этой статье](how-to-manage-authentication.md).
 

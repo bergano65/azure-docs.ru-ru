@@ -1,6 +1,6 @@
 ---
-title: Руководство. созданию геозоны с помощью Azure Maps
-description: Руководство. Настройка геозоны с использованием Azure Maps.
+title: Руководство. Создание геозоны и отслеживание устройств на карте | Microsoft Azure Maps
+description: В этом руководстве содержатся сведения о настройке геозоны и отслеживании устройств относительно геозоны с помощью службы Microsoft Azure Maps.
 author: walsehgal
 ms.author: v-musehg
 ms.date: 11/12/2019
@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: timlt
 ms.custom: mvc
-ms.openlocfilehash: 2998c67bf00c74422baa19af0b389118600ba1c7
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 0e408adfe1daed402ef690224368e846bd0a97c8
+ms.sourcegitcommit: f9601bbccddfccddb6f577d6febf7b2b12988911
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75407828"
+ms.lasthandoff: 01/12/2020
+ms.locfileid: "75910943"
 ---
 # <a name="tutorial-set-up-a-geofence-by-using-azure-maps"></a>Руководство. Настройка геозоны с использованием Azure Maps
 
@@ -34,9 +34,9 @@ ms.locfileid: "75407828"
 
 ## <a name="prerequisites"></a>предварительные требования
 
-### <a name="create-an-azure-maps-account"></a>создание учетной записи службы "Карты Azure"; 
+### <a name="create-an-azure-maps-account"></a>создание учетной записи службы Azure Maps 
 
-Работа с этим руководством предполагает, что вы выполните инструкции [по созданию учетной записи](quick-demo-map-app.md#create-an-account-with-azure-maps), чтобы создать подписку Azure Maps с ценовой категорией S1, а также инструкции для [получения первичного ключа](quick-demo-map-app.md#get-the-primary-key-for-your-account), чтобы получить первичный ключ для учетной записи. Дополнительные сведения об управлении проверкой подлинности в Azure Maps см. в [этой статье](./how-to-manage-authentication.md).
+Работа с этим руководством предполагает, что вы выполните инструкции [по созданию учетной записи](quick-demo-map-app.md#create-an-account-with-azure-maps), чтобы создать подписку Azure Maps с ценовой категорией S1, а также инструкции для [получения первичного ключа](quick-demo-map-app.md#get-the-primary-key-for-your-account), чтобы получить первичный ключ для учетной записи. Дополнительные сведения об управлении проверкой подлинности в Azure Maps см. в [этой статье](./how-to-manage-authentication.md).
 
 ## <a name="upload-geofences"></a>Отправка данных о геозоне
 
@@ -44,7 +44,7 @@ ms.locfileid: "75407828"
 
 Откройте приложение Postman и следуйте дальнейшим инструкциям по отправке данных о геозоне строительной площадки с использованием Azure Maps и API отправки данных.
 
-1. Откройте приложение Postman и в раскрывающемся списке "New" (Создать) щелкните "Create New" (Создать) и выберите "Request" (Запрос). Введите имя запроса, чтобы отправить данные о геозоне, выберите коллекцию или папку, в которую нужно их сохранить, и щелкните Save (Сохранить).
+1. Откройте приложение Postman и в раскрывающемся списке "New" (Новый) щелкните "Create New" (Создать новый) и выберите "Request" (Запрос). Введите имя запроса, чтобы отправить данные о геозоне, выберите коллекцию или папку, в которую нужно их сохранить, и щелкните Save (Сохранить).
 
     ![Отправка данных о геозоне с помощью Postman](./media/tutorial-geofence/postman-new.png)
 
@@ -58,7 +58,7 @@ ms.locfileid: "75407828"
 
 3. Щелкните **Params** (Параметры) и введите следующие пары "ключ — значение" для URL-адреса запроса POST. Замените значение ключа подписки своим ключом Azure Maps.
    
-    ![Пары "ключ — значение" на вкладке параметров приложения Postman](./media/tutorial-geofence/postman-key-vals.png)
+    ![Параметры для отправки данных (геозоны) в Postman](./media/tutorial-geofence/postman-key-vals.png)
 
 4. Перейдите на вкладку **Body** (Текст) и выберите необработанный формат входных данных, а затем в раскрывающемся списке — JSON в качестве формата входных данных. Введите следующие данные для отправки в формате JSON:
 
@@ -177,7 +177,7 @@ ms.locfileid: "75407828"
 
 1. Создайте приложение логики на портале Azure.
 
-   ![Создание приложения логики](./media/tutorial-geofence/logic-app.png)
+   ![Создание Azure Logic Apps для управления событиями геозоны](./media/tutorial-geofence/logic-app.png)
 
 2. Выберите триггер HTTP-запроса, а затем — "Отправить сообщение" в соединителе Outlook.
   
@@ -185,7 +185,7 @@ ms.locfileid: "75407828"
 
 3. Сохраните приложение логики, чтобы создать конечную точку URL-адреса HTTP и скопируйте URL-адрес HTTP.
 
-   ![Конечная точка приложения логики](./media/tutorial-geofence/logic-app-endpoint.png)
+   ![Создание конечной точки Logic Apps](./media/tutorial-geofence/logic-app-endpoint.png)
 
 
 ## <a name="create-an-azure-maps-events-subscription"></a>Создайте подписку на события Azure Maps.
@@ -196,15 +196,15 @@ Azure Maps поддерживает три типа событий. Сведен
 
 1. Перейдите к своей учетной записи Azure Maps по [этой ссылке](https://ms.portal.azure.com/#@microsoft.onmicrosoft.com/dashboard/) и откройте вкладку событий.
 
-   ![События Azure Maps](./media/tutorial-geofence/events-tab.png)
+   ![Переход к событиям учетной записи Azure Maps](./media/tutorial-geofence/events-tab.png)
 
 2. Чтобы создать подписку на события, выберите "Подписка на события" на странице событий.
 
-   ![Подписка на события Azure Maps](./media/tutorial-geofence/create-event-subscription.png)
+   ![Создайте подписку на события Azure Maps.](./media/tutorial-geofence/create-event-subscription.png)
 
 3. Задайте имя подписке на события и подпишитесь на событие поступления оборудования. Для параметра "Тип конечной точки" задайте вариант "Веб-перехватчик" и скопируйте конечную точку URL-адреса HTTP своего приложения логики в поле "Конечная точка".
 
-   ![Подписка на события](./media/tutorial-geofence/events-subscription.png)
+   ![Детали подписки на события Azure Maps](./media/tutorial-geofence/events-subscription.png)
 
 
 ## <a name="use-geofence-api"></a>Использование API геозоны
@@ -214,13 +214,13 @@ Azure Maps поддерживает три типа событий. Сведен
 > [!Note]
 > Этот сценарий и механизм основаны на оценке одного **идентификатора устройства**, расположение которого фиксировалось в пяти разных местах, как показано на рисунке.
 
-![Схема геозоны](./media/tutorial-geofence/geofence.png)
+![Схема геозоны в Azure Maps](./media/tutorial-geofence/geofence.png)
 
 В приложении Postman откройте новую вкладку в ранее созданной коллекции. Выберите метод GET HTTP на вкладке конструктора.
 
 Ниже показаны пять запросов HTTP GET к API геозоны с различными соответствующими координатами расположения оборудования в хронологическом порядке. Каждый запрос сопровождается текстом ответа.
  
-1. Расположение 1
+1. Расположение 1
     
    ```HTTP
    https://atlas.microsoft.com/spatial/geofence/json?subscription-key={subscription-key}&api-version=1.0&deviceId=device_01&udId={udId}&lat=47.638237&lon=-122.1324831&searchBuffer=5&isAsync=True&mode=EnterAndExit
@@ -229,7 +229,7 @@ Azure Maps поддерживает три типа событий. Сведен
 
    В приведенном выше ответе отрицательное значение расстояния от основной геозоны означает, что оборудование находится в пределах геозоны, а положительное значение из дочерней геозоны означает, что оборудование покинуло ее. 
 
-2. Расположение 2 
+2. Расположение 2: 
    
    ```HTTP
    https://atlas.microsoft.com/spatial/geofence/json?subscription-key={subscription-key}&api-version=1.0&deviceId=device_01&udId={udId}&lat=47.63800&lon=-122.132531&searchBuffer=5&isAsync=True&mode=EnterAndExit
@@ -239,7 +239,7 @@ Azure Maps поддерживает три типа событий. Сведен
 
    Из приведенного выше ответа в формате JSON следует, что оборудование находится за пределами дочерней геозоны, но в границах основной геозоны. Это обстоятельство не инициирует событие и сообщение электронной почты не отправляется.
 
-3. Расположение 3 
+3. Расположение 3 
   
    ```HTTP
    https://atlas.microsoft.com/spatial/geofence/json?subscription-key={subscription-key}&api-version=1.0&deviceId=device_01&udId={udId}&lat=47.63810783315048&lon=-122.13336020708084&searchBuffer=5&isAsync=True&mode=EnterAndExit
@@ -249,7 +249,7 @@ Azure Maps поддерживает три типа событий. Сведен
 
    Произошло изменение состояния, и оборудование теперь находится как в основной, так и в дочерней геозоне. Это обстоятельство активирует событие и уведомления о нем направляется руководителю работ по электронной почте.
 
-4. Расположение 4 
+4. Расположение 4 
 
    ```HTTP
    https://atlas.microsoft.com/spatial/geofence/json?subscription-key={subscription-key}&api-version=1.0&deviceId=device_01&udId={udId}&lat=47.637988&lon=-122.1338344&searchBuffer=5&isAsync=True&mode=EnterAndExit
@@ -260,7 +260,7 @@ Azure Maps поддерживает три типа событий. Сведен
    Из ответа видно, что, хотя оборудование и покинуло дочернюю геозону, событие не было инициировано. Если обратить внимание на указанное пользователем время в запросе GET, видно, что срок действия геозоны истек к этому времени, а оборудование по-прежнему находится в основной геозоне. В строке ответа `expiredGeofenceGeometryId` также можно увидеть идентификатор геометрии дочерней геозоны.
 
 
-5. Расположение 5
+5. Расположение 5
       
    ```HTTP
    https://atlas.microsoft.com/spatial/geofence/json?subscription-key={subscription-key}&api-version=1.0&deviceId=device_01&udId={udId}&lat=47.63799&lon=-122.134505&userTime=2019-01-16&searchBuffer=5&isAsync=True&mode=EnterAndExit
@@ -272,7 +272,7 @@ Azure Maps поддерживает три типа событий. Сведен
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Из этого руководстве вы узнали, как настраивать геозону, передав ее данные в службу данных Azure Maps с помощью API отправки данных. Вы также научились подписываться на события геозоны и обрабатывать их в Сетке событий Azure Maps. 
+Из этого руководства вы узнали, как настраивать геозону, передав ее данные в службу данных Azure Maps с помощью API отправки данных. Вы также научились подписываться на события геозоны и обрабатывать их в Сетке событий Azure Maps. 
 
 * Сведения о создании более сложной логики с помощью Logic Apps и данных в формате JSON см. в статье [Обработка типов содержимого в Azure Logic Apps](https://docs.microsoft.com/azure/logic-apps/logic-apps-content-type).
 * Дополнительные сведения об обработчиках событий в службе "Сетка событий" см. в статье [Обработчики событий в службе "Сетка событий Azure"](https://docs.microsoft.com/azure/event-grid/event-handlers).

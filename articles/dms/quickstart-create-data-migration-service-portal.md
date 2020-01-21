@@ -11,13 +11,13 @@ ms.service: dms
 ms.workload: data-services
 ms.custom: seo-lt-2019
 ms.topic: quickstart
-ms.date: 11/05/2019
-ms.openlocfilehash: 71308b7f17d6009e8650cafbb02afd577fd73cf4
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.date: 01/08/2020
+ms.openlocfilehash: 42638af9f51770a9a5738cd92f91c28439af273a
+ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75437732"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75750100"
 ---
 # <a name="quickstart-create-an-instance-of-the-azure-database-migration-service-by-using-the-azure-portal"></a>Краткое руководство. Создание экземпляра службы Azure Database Migration Service с помощью портала Azure
 
@@ -59,7 +59,7 @@ ms.locfileid: "75437732"
 
         Виртуальная сеть предоставляет Azure Database Migration Service доступ к базе данных-источнику и целевой среде.
 
-        Изучите дополнительные сведения о [создании виртуальной сети с помощью портала Azure](https://aka.ms/vnet).
+        См. дополнительные сведения о [создании виртуальной сети с помощью портала Azure](https://aka.ms/vnet).
 
     - Выберите "Basic: 1 vCore" (Базовый: 1 виртуальное ядро) для параметра **Ценовая категория**.
 

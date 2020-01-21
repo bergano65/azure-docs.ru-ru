@@ -1,5 +1,5 @@
 ---
-title: Динамическая упаковка в Службах мультимедиа
+title: Динамическая упаковка в Службах мультимедиа Azure версии 3
 titleSuffix: Azure Media Services
 description: В этой статье представлены общие сведения о технологии динамической упаковки в Службах мультимедиа Azure.
 author: Juliako
@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: overview
 ms.date: 10/17/2019
 ms.author: juliako
-ms.openlocfilehash: c12ebe307eb370e07b785b4379f82a4274964492
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.openlocfilehash: 05a515d5f74569ff8d0fa8aec68eb681dc79d2fc
+ms.sourcegitcommit: 5b073caafebaf80dc1774b66483136ac342f7808
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74977766"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75779609"
 ---
-# <a name="dynamic-packaging-in-media-services"></a>Динамическая упаковка в Службах мультимедиа
+# <a name="dynamic-packaging-in-media-services-v3"></a>Динамическая упаковка в Службах мультимедиа версии 3
 
 Службы мультимедиа Microsoft Azure можно использовать для кодирования исходных файлов мультимедиа во множество форматов. Они предоставляют их через различные протоколы потоковой передачи (с защитой содержимого или без нее) для доступа к устройствам всех основных типов (например, на платформах с iOS и Android). Эти клиенты распознают разные протоколы. Например, для iOS потоки должны доставляться в формате HTTP Live Streaming (HLS), а устройства Android поддерживают как HLS, так и формат MPEG DASH.
 
@@ -281,7 +281,7 @@ QualityLevels(128041)/Manifest(aac_eng_2_128041_2_1,format=m3u8-aapl)
 
 Вы можете открыть запрос в службу поддержки, перейдя к разделу [нового запроса на техническую поддержку](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!NOTE]
 > В настоящее время вы не можете использовать портал Azure для управления ресурсами версии 3. Используйте [REST API](https://aka.ms/ams-v3-rest-ref), [CLI](https://aka.ms/ams-v3-cli-ref) или один из поддерживаемых [пакетов SDK](media-services-apis-overview.md#sdks).

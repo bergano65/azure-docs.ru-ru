@@ -7,12 +7,12 @@ ms.topic: tutorial
 ms.date: 11/19/2019
 ms.author: raynew
 ms.custom: mvc
-ms.openlocfilehash: 34bc62a9cb7e5d1358322500a8929b6f8b36d422
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 4dec76140f61c433561ccfea07b833d9821acfc5
+ms.sourcegitcommit: dbcc4569fde1bebb9df0a3ab6d4d3ff7f806d486
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75454553"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76028908"
 ---
 # <a name="prepare-vmware-vms-for-assessment-and-migration-to-azure"></a>Подготовка виртуальных машин VMware к оценке и миграции в Azure
 
@@ -104,8 +104,9 @@ ms.locfileid: "75454553"
 
 ### <a name="verify-vmware-settings"></a>Проверка параметров VMware
 
-1. [Проверьте](migrate-support-matrix-vmware.md#assessment-vcenter-server-requirements) соответствие требованиям сервера VMware для оценки.
-2. [Убедитесь](migrate-support-matrix-vmware.md#assessment-port-requirements), что на сервере vCenter Server открыты необходимые порты.
+1. [Проверьте](migrate-support-matrix-vmware.md#vmware-requirements) соответствие требованиям сервера VMware для оценки.
+2. [Убедитесь](migrate-support-matrix-vmware.md#port-access), что на сервере vCenter Server открыты необходимые порты.
+3. На сервере vCenter Server убедитесь, что у вашей учетной записи есть разрешения на создание виртуальной машины с использованием файла OVA. Развертывание устройства службы "Миграции Azure" в качестве виртуальной машины VMware осуществляется с использованием файла OVA.
 
 
 ### <a name="set-up-an-account-for-assessment"></a>Настройка учетной записи для оценки
@@ -120,15 +121,12 @@ ms.locfileid: "75454553"
 
 ### <a name="verify-appliance-settings-for-assessment"></a>Проверка настроек устройства для оценки
 
-Проверьте требования к устройству перед его развертыванием.
+Перед настройкой устройства Миграции Azure и началом оценки из следующего руководства вам следует подготовиться к развертыванию устройства.
 
-1. [Проверьте](migrate-support-matrix-vmware.md#assessment-appliance-requirements) требования к устройству и его ограничения.
-2. Если вы используете прокси-сервер или брандмауэр на основе URL-адресов, [проверьте](migrate-support-matrix-vmware.md#assessment-url-access-requirements) URL-адреса Azure, к которым устройству потребуется доступ. Убедитесь, что прокси-сервер разрешает любые записи CNAME, полученные при поиске URL-адресов.
-3. Просмотрите [данные производительности](migrate-appliance.md#collected-performance-data-vmware) и [метаданные](migrate-appliance.md#collected-metadata-vmware), собранные устройством во время обнаружения и оценки.
-4. [Обратите внимание](migrate-support-matrix-vmware.md#assessment-port-requirements) на порты, к которым устройство осуществляет доступ.
-5. На сервере vCenter Server убедитесь, что у вашей учетной записи есть разрешения на создание виртуальной машины с использованием файла OVA. Развертывание устройства службы "Миграции Azure" в качестве виртуальной машины VMware осуществляется с использованием файла OVA.
-
-При использовании firewall.proxy на основе URL-адреса, разрешите доступ к требуемым [URL-адресам Azure](migrate-support-matrix-vmware.md#assessment-url-access-requirements).
+1. [Проверка](migrate-appliance.md#appliance---vmware) требований к устройству для виртуальных машин VMware
+2. [Просмотрите](migrate-appliance.md#url-access) URL-адреса Azure, к которым устройству потребуется доступ. Если вы используете брандмауэр или прокси-сервер на основе URL-адресов, убедитесь, что он разрешает доступ к нужным URL-адресам.
+3. [Просмотрите данные](migrate-appliance.md#collected-data---vmware), которые прибор будет собирать во время обнаружения и оценки.
+4. [Обратите внимание](migrate-support-matrix-vmware.md#port-access) на требования доступа к порту для устройства.
 
 
 
@@ -137,23 +135,22 @@ ms.locfileid: "75454553"
 
 Ознакомьтесь с требованиями к миграции виртуальных машин VMware без агента.
 
-1. [Проверьте](migrate-support-matrix-vmware.md#agentless-migration-vmware-server-requirements) требования сервера VMware.
-2. Настройте учетную запись с [необходимыми разрешениями](migrate-support-matrix-vmware.md#agentless-migration-vcenter-server-permissions), чтобы служба "Миграция Azure" получила доступ к vCenter Server для миграции без агента с использованием собственного средства миграции серверов.
-3. [Просмотрите](migrate-support-matrix-vmware.md#agentless-migration-vmware-vm-requirements) требования к виртуальным машинам VMware, которые вы хотите перенести в Azure с помощью миграции без агента.
-4. [Изучите](migrate-support-matrix-vmware.md#agentless-migration-appliance-requirements) требования к использованию устройства службы "Миграция Azure" для миграции без агента.
-5. Обратите внимание на [доступ к URL-адресам](migrate-support-matrix-vmware.md#agentless-migration-url-access-requirements) и [порту](migrate-support-matrix-vmware.md#agentless-migration-port-requirements), которые требуются устройству службы "Миграция Azure" для миграции без агента.
+1. [Ознакомьтесь](migrate-support-matrix-vmware-migration.md#agentless-vmware-servers) требованиями к серверу VMware, а также с [разрешениями](migrate-support-matrix-vmware-migration.md#agentless-vmware-servers), которые необходимы службе миграции Azure для доступа к vCenter Server для миграции без агента с использованием собственного средства миграции серверов.
+2. [Просмотрите](migrate-support-matrix-vmware-migration.md#agentless-vmware-vms) требования к виртуальным машинам VMware, которые вы хотите перенести в Azure с помощью миграции без агента.
+4. [Изучите](migrate-support-matrix-vmware-migration.md#agentless-azure-migrate-appliance) требования к использованию устройства службы "Миграция Azure" для миграции без агента.
+5. Обратите внимание, что [доступ к URL-адресу](migrate-appliance.md#url-access) и [доступ к порту](migrate-support-matrix-vmware-migration.md#agentless-ports), требует миграцию без агента.
 
 
 ## <a name="prepare-for-agent-based-vmware-migration"></a>Подготовка к миграции VMware на основе агента
 
 Ознакомьтесь с требованиями к [миграции виртуальных машин VMware с использованием агента](server-migrate-overview.md).
 
-1. [Проверьте](migrate-support-matrix-vmware.md#agent-based-migration-vmware-server-requirements) требования сервера VMware.
-2. Настройте учетную запись с [необходимыми разрешениями](migrate-support-matrix-vmware.md#agent-based-migration-vcenter-server-permissions). В результате служба "Миграция Azure" сможет получить доступ к vCenter Server для миграции без агента с использованием собственного средства миграции серверов.
-3. [Просмотрите](migrate-support-matrix-vmware.md#agent-based-migration-vmware-vm-requirements) требования к виртуальным машинам VMware, которые вы хотите перенести в Azure с помощью миграции на основе агентов, включая установку Mobility Service на каждую виртуальную машину, которую вы хотите перенести.
-4. Обратите внимание на [Доступ к URL-адресам](migrate-support-matrix-vmware.md#agent-based-migration-url-access-requirements).
-5. Проверьте [доступ к порту](migrate-support-matrix-vmware.md#agent-based-migration-port-requirements), который необходим компонентам службы "Миграция Azure" для доступа на основе агента.
-
+1. [Ознакомьтесь](migrate-support-matrix-vmware-migration.md#agent-based-vmware-servers) требованиями к серверу VMware, а также с разрешениями, которые необходимы службе миграции Azure для доступа к vCenter Server для миграции на основе агента с использованием собственного средства миграции серверов.
+2. [Просмотрите](migrate-support-matrix-vmware-migration.md#agent-based-vmware-vms) требования к виртуальным машинам VMware, которые вы хотите перенести в Azure с помощью миграции на основе агентов, включая установку Mobility Service на каждую виртуальную машину, которую вы хотите перенести.
+3. Миграция на основе агентов использует устройство репликации:
+    - [Проверьте](migrate-replication-appliance.md#appliance-requirements) требования к развертыванию для устройства репликации и [параметры](migrate-replication-appliance.md#mysql-installation) для установки MySQL на устройстве.
+    - Проверьте требования к доступу к [URL-адресам](migrate-replication-appliance.md#url-access) и [портам](migrate-replication-appliance.md#port-access) для устройства репликации.
+    
 ## <a name="next-steps"></a>Дальнейшие действия
 
 Изучив это руководство, вы:

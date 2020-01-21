@@ -12,17 +12,17 @@ ms.devlang: na
 ms.topic: tutorial
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 11/20/2017
+ms.date: 01/10/2020
 ms.author: markvi
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 106252b7c77f9ee3d6b9bdebafce3441d9c4b090
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: cd9f85e3bfd11ee655ce581c60a5b65e13f4497b
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74224229"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75971904"
 ---
-# <a name="tutorial-use-a-windows-vm-system-assigned-managed-identity-to-access-azure-key-vault"></a>Руководство по Использование назначенного системой управляемого удостоверения на виртуальной машине Windows для доступа к Azure Key Vault 
+# <a name="tutorial-use-a-windows-vm-system-assigned-managed-identity-to-access-azure-key-vault"></a>Руководство. Использование назначенного системой управляемого удостоверения на виртуальной машине Windows для доступа к Azure Key Vault 
 
 [!INCLUDE [preview-notice](../../../includes/active-directory-msi-preview-notice.md)]
 
@@ -35,13 +35,20 @@ ms.locfileid: "74224229"
 > * предоставлять виртуальной машине доступ к секрету в Key Vault; 
 > * получать маркер доступа с помощью удостоверения виртуальной машины и использовать его для получения секрета из Key Vault. 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 [!INCLUDE [msi-tut-prereqs](../../../includes/active-directory-msi-tut-prereqs.md)]
 
-## <a name="grant-your-vm-access-to-a-secret-stored-in-a-key-vault"></a>Предоставление виртуальной машине доступа к секрету в Key Vault 
+
+## <a name="enable"></a>Включить
+
+[!INCLUDE [msi-tut-enable](../../../includes/active-directory-msi-tut-enable.md)]
+
+
+
+## <a name="grant-access"></a>Предоставление доступа  
  
-С помощью управляемых удостоверений для ресурсов Azure код может получить маркеры доступа, чтобы пройти проверку подлинности и получить доступ к ресурсам, поддерживающим аутентификацию Azure AD.  Однако не все службы Azure поддерживают аутентификацию Azure AD. Чтобы использовать управляемые удостоверения для ресурсов Azure с такими службами, сохраните учетные данные службы в Azure Key Vault и используйте управляемое удостоверение виртуальной машины для доступа к Key Vault и получения учетных данных. 
+В этом разделе показано, как предоставить виртуальной машине доступ к секрету в Key Vault. С помощью управляемых удостоверений для ресурсов Azure код может получить маркеры доступа, чтобы пройти проверку подлинности и получить доступ к ресурсам, поддерживающим аутентификацию Azure AD.  Однако не все службы Azure поддерживают аутентификацию Azure AD. Чтобы использовать управляемые удостоверения для ресурсов Azure с такими службами, сохраните учетные данные службы в Azure Key Vault и используйте управляемое удостоверение виртуальной машины для доступа к Key Vault и получения учетных данных. 
 
 Сначала нужно создать хранилище Key Vault и предоставить удостоверению виртуальной машины доступ к нему.   
 
@@ -66,9 +73,9 @@ ms.locfileid: "74224229"
 5. Не указывайте дату активации и окончания срока действия и для параметра **Включено** оставьте значение **Да**. 
 6. Щелкните **Создать**, чтобы создать секрет. 
  
-## <a name="get-an-access-token-using-the-vm-identity-and-use-it-to-retrieve-the-secret-from-the-key-vault"></a>Получение маркера доступа с помощью удостоверения виртуальной машины и его использование для получения секрета из Key Vault.  
+## <a name="access-data"></a>Доступ к данным  
 
-Если вы не установили версию PowerShell 4.3.1 или выше, [загрузите и установите последнюю версию](https://docs.microsoft.com/powershell/azure/overview).
+В этом разделе показано, как получить маркер доступа с помощью удостоверения виртуальной машины и использовать этот маркер для получения секрета из Key Vault. Если вы не установили версию PowerShell 4.3.1 или выше, [загрузите и установите последнюю версию](https://docs.microsoft.com/powershell/azure/overview).
 
 Сначала получим маркер доступа для аутентификации в Key Vault с помощью управляемого удостоверения виртуальной машины:
  
@@ -109,7 +116,14 @@ ms.locfileid: "74224229"
     
 После получения секрета из хранилища Key Vault, его можно использовать для аутентификации в службе, требующей имя пользователя и пароль. 
 
-## <a name="next-steps"></a>Дополнительная информация
+
+## <a name="disable"></a>Отключить
+
+[!INCLUDE [msi-tut-disable](../../../includes/active-directory-msi-tut-disable.md)]
+
+
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из этого руководства вы узнали, как получить доступ к хранилищу Azure Key Vault с помощью назначенного системой управляемого удостоверения на виртуальной машине Windows.  Дополнительные сведения об Azure Key Vault см. здесь:
 

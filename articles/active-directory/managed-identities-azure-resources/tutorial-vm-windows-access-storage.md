@@ -12,17 +12,17 @@ ms.devlang: na
 ms.topic: tutorial
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 04/12/2018
+ms.date: 01/14/2020
 ms.author: markvi
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e7d7200dd89d51817a5d146ff4d33e2501ed2826
-ms.sourcegitcommit: 9a699d7408023d3736961745c753ca3cec708f23
+ms.openlocfilehash: 182bf02bfaad598a447304cc9f2ed42f6221176d
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68278018"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75971965"
 ---
-# <a name="tutorial-use-a-windows-vm-system-assigned-managed-identity-to-access-azure-storage"></a>Руководство по Использование управляемого удостоверения, назначаемого системой, на виртуальной машине Windows для доступа к службе хранилища Azure
+# <a name="tutorial-use-a-windows-vm-system-assigned-managed-identity-to-access-azure-storage"></a>Руководство. Использование управляемого удостоверения, назначаемого системой, на виртуальной машине Windows для доступа к службе хранилища Azure
 
 [!INCLUDE [preview-notice](../../../includes/active-directory-msi-preview-notice.md)]
 
@@ -36,11 +36,22 @@ ms.locfileid: "68278018"
 > [!NOTE]
 > Аутентификация Azure Active Directory для службы хранилища Azure находится на этапе общедоступной предварительной версии.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 [!INCLUDE [msi-tut-prereqs](../../../includes/active-directory-msi-tut-prereqs.md)]
 
-## <a name="create-a-storage-account"></a>Создание учетной записи хранения
+
+
+## <a name="enable"></a>Включить
+
+[!INCLUDE [msi-tut-enable](../../../includes/active-directory-msi-tut-enable.md)]
+
+
+
+## <a name="grant-access"></a>Предоставление доступа
+
+
+### <a name="create-storage-account"></a>Создание учетной записи хранения
 
 В этом разделе вы создадите учетную запись хранения.
 
@@ -53,7 +64,7 @@ ms.locfileid: "68278018"
 
     ![Создание учетной записи хранения](./media/msi-tutorial-linux-vm-access-storage/msi-storage-create.png)
 
-## <a name="create-a-blob-container-and-upload-a-file-to-the-storage-account"></a>Создание контейнера больших двоичных объектов и передача файла в учетную запись хранения
+### <a name="create-a-blob-container-and-upload-a-file-to-the-storage-account"></a>Создание контейнера больших двоичных объектов и передача файла в учетную запись хранения
 
 Так как файлам необходимо хранилище BLOB-объектов, нужно создать контейнер больших двоичных объектов, в котором будет храниться файл. Затем файл отправляется в контейнер больших двоичных объектов в новой учетной записи хранения.
 
@@ -69,9 +80,9 @@ ms.locfileid: "68278018"
 7. В области **Отправить BLOB-объект** под полем **Файлы** щелкните значок папки и перейдите к файлу **hello_world.txt** на локальном компьютере, выберите этот файл и нажмите кнопку **Отправить**.
     ![Отправка текстового файла](./media/msi-tutorial-linux-vm-access-storage/upload-text-file.png)
 
-## <a name="grant-your-vm-access-to-an-azure-storage-container"></a>Предоставление виртуальной машине доступа к контейнеру службы хранилища Azure
+### <a name="grant-access"></a>Предоставление доступа
 
-Вы можете использовать управляемое удостоверение, назначаемое системой, на виртуальной машине, чтобы извлечь данные в большом двоичном объекте службы хранилища Azure.
+В этом разделе показано, как предоставить виртуальной машине доступ к контейнеру службы хранилища Azure Вы можете использовать управляемое удостоверение, назначаемое системой, на виртуальной машине, чтобы извлечь данные в большом двоичном объекте службы хранилища Azure.
 
 1. Вернитесь к только что созданной учетной записи хранения.
 2. Щелкните ссылку **Управление доступом (IAM)** на панели слева.
@@ -83,7 +94,7 @@ ms.locfileid: "68278018"
 
     ![Назначение разрешений](./media/tutorial-linux-vm-access-storage/access-storage-perms.png)
 
-## <a name="get-an-access-token-and-use-it-to-call-azure-storage"></a>Получение маркера доступа и его использование для вызова службы хранилища Azure 
+## <a name="access-data"></a>Доступ к данным 
 
 В службе хранилища Azure изначально реализована поддержка аутентификации Azure AD, поэтому она может напрямую принимать маркеры доступа, полученные с помощью управляемого удостоверения. Эта реализация является частью интеграции службы хранилища Azure с Azure AD и отличается от указания учетных данных в строке подключения.
 
@@ -161,7 +172,14 @@ namespace StorageOAuthToken
 
 `Hello world! :)`
 
-## <a name="next-steps"></a>Дополнительная информация
+
+## <a name="disable"></a>Отключить
+
+[!INCLUDE [msi-tut-disable](../../../includes/active-directory-msi-tut-disable.md)]
+
+
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из этого руководства вы узнали, как включить удостоверение, назначаемое системой, на виртуальной машине Windows, чтобы получить доступ к службе хранилища Azure.  Дополнительные сведения о службе хранилища Azure см. в статье ниже.
 

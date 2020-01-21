@@ -5,12 +5,12 @@ ms.assetid: 361da2a4-15d1-4903-bdc4-cc4b27fc3ff4
 ms.topic: quickstart
 ms.date: 10/01/2018
 ms.custom: mvc, cc996988-fb4f-47
-ms.openlocfilehash: 3f4e9f8a607856e3de92a4824a4221071f3c02a4
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: 3d4cfc40f1849ecd2745b1d662973c7f64a0a60c
+ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74227137"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75769257"
 ---
 # <a name="create-a-function-triggered-by-azure-queue-storage"></a>Создание функции, активируемой хранилищем очередей Azure
 
@@ -18,7 +18,7 @@ ms.locfileid: "74227137"
 
 ![Просмотр сообщения в журналах](./media/functions-create-storage-queue-triggered-function/function-app-in-portal-editor.png)
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 - Скачайте и установите [обозреватель хранилищ Microsoft Azure](https://storageexplorer.com/).
 
@@ -54,11 +54,11 @@ ms.locfileid: "74227137"
 
     ![Настройка функции, активируемой очередью хранилища](./media/functions-create-storage-queue-triggered-function/functions-create-queue-storage-trigger-portal-2.png)
 
-    | Параметр | Рекомендуемое значение | Описание |
+    | Параметр | Рекомендуемое значение | Description |
     |---|---|---|
-    | **Имя** | Уникальное для вашего приложения-функции | Имя функции, активируемой очередью. |
+    | **Название** | Уникальное для вашего приложения-функции | Имя функции, активируемой очередью. |
     | **Имя очереди**   | myqueue-items    | Имя очереди для подключения к вашей учетной записи хранения. |
-    | **Подключение к учетной записи хранения** | AzureWebJobStorage | Вы можете использовать подключение к учетной записи хранения, которое уже используется вашим приложением-функцией, или создать его.  |    
+    | **Подключение к учетной записи хранения** | AzureWebJobsStorage | Вы можете использовать подключение к учетной записи хранения, которое уже используется вашим приложением-функцией, или создать его.  |    
 
 1. Щелкните **Создать**, чтобы создать функцию.
 
@@ -88,7 +88,7 @@ ms.locfileid: "74227137"
 
 1. На портале Azure перейдите к вашей функции, в нижней части страницы разверните **Журналы** и убедитесь, что потоковая передача журналов не остановлена.
 
-1. Разверните свою учетную запись в обозревателе хранилищ, узел **Очереди** и **myqueue-items**, а затем щелкните **Add message** (Добавить сообщение).
+1. Разверните свою учетную запись в Обозреватель службы хранилища, узел **Очереди** и **myqueue-items**, а затем щелкните **Добавить сообщение**.
 
     ![Добавление сообщения в очередь](./media/functions-create-storage-queue-triggered-function/functions-storage-manager-add-message.png)
 
@@ -104,7 +104,7 @@ ms.locfileid: "74227137"
 
 [!INCLUDE [Next steps note](../../includes/functions-quickstart-cleanup.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Вы создали функцию, которая выполняется при добавлении сообщения в очередь хранилища. Дополнительные сведения о триггерах хранилища очередей см. в статье [Привязки очередей службы хранилища для Функций Azure](functions-bindings-storage-queue.md).
 

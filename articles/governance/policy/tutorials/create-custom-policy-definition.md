@@ -1,16 +1,16 @@
 ---
-title: Руководство по Создание определения пользовательской политики
+title: Руководство. Создание определения пользовательской политики
 description: В рамках этого учебника вы создадите определение пользовательской политики для Политики Azure, чтобы применять пользовательские бизнес-правила для ресурсов Azure.
 ms.date: 11/25/2019
 ms.topic: tutorial
-ms.openlocfilehash: 51899491d7a75dc41bdab94d17769393ab4a6659
-ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
+ms.openlocfilehash: f7c303956b209b88ce3c697b5b66243e37071c83
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74885455"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75966024"
 ---
-# <a name="tutorial-create-a-custom-policy-definition"></a>Руководство по Создание определения пользовательской политики
+# <a name="tutorial-create-a-custom-policy-definition"></a>Руководство. Создание определения пользовательской политики
 
 Определение пользовательской политики позволяет клиентам устанавливать собственные правила для использования Azure. Эти правила часто применяют для:
 
@@ -31,7 +31,7 @@ ms.locfileid: "74885455"
 > - определение требуемого эффекта;
 > - составление определения политики.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
@@ -66,7 +66,7 @@ ms.locfileid: "74885455"
 
 ### <a name="resource-manager-templates"></a>Шаблоны Resource Manager
 
-Существует несколько способов просмотреть [шаблон Resource Manager](../../../azure-resource-manager/resource-manager-tutorial-create-encrypted-storage-accounts.md), чтобы узнать свойство, которым мы хотим управлять.
+Существует несколько способов просмотреть [шаблон Resource Manager](../../../azure-resource-manager/templates/template-tutorial-create-encrypted-storage-accounts.md), чтобы узнать свойство, которым мы хотим управлять.
 
 #### <a name="existing-resource-in-the-portal"></a>Существующий ресурс на портале
 
@@ -164,7 +164,7 @@ ms.locfileid: "74885455"
 Есть несколько способов определить псевдонимы ресурса Azure. В этом руководстве мы рассмотрим каждый из них:
 
 - Расширение Политики Azure для VS Code
-- Инфраструктура CLI Azure
+- Azure CLI
 - Azure PowerShell
 - Azure Resource Graph
 
@@ -172,7 +172,7 @@ ms.locfileid: "74885455"
 
 Расширение Политики Azure для расширения VS Code позволяет легко просматривать ресурсы и [обнаруживать псевдонимы](../how-to/extension-for-vscode.md#discover-aliases-for-resource-properties).
 
-### <a name="azure-cli"></a>Инфраструктура CLI Azure
+### <a name="azure-cli"></a>Azure CLI
 
 Для поиска псевдонимов ресурса в Azure CLI используется группа команд `az provider`. Выполним поиск по запросу "пространство имен **Microsoft.Storage**", руководствуясь ранее полученными сведениями об этом ресурсе Azure.
 
@@ -463,7 +463,7 @@ Azure Resource Graph можно использовать в [Cloud Shell](https:
 
 1. Щелкните строку правой кнопкой мыши или выберите многоточие в конце определения (или назначения), а затем выберите **Удалить определение** (или **Удаление назначения**).
 
-## <a name="review"></a>Проверка
+## <a name="review"></a>Просмотр
 
 В этом руководстве вы успешно выполнили следующие действия:
 
@@ -474,7 +474,7 @@ Azure Resource Graph можно использовать в [Cloud Shell](https:
 > - определили требуемый эффект;
 > - составили определение политики.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Используйте определение пользовательской политики для создания и назначения политики, как описано в следующей статье:
 

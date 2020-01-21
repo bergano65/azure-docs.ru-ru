@@ -4,17 +4,17 @@ description: Сведения о службе Azure Digital Twins — решен
 ms.author: alinast
 author: alinamstanciu
 manager: bertvanhoof
-ms.date: 11/05/2019
+ms.date: 12/30/2019
 ms.topic: overview
 ms.service: digital-twins
 services: digital-twins
 ms.custom: mvc
-ms.openlocfilehash: 07065e891ec46f51636fad005ffeece976c9f2fa
-ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
+ms.openlocfilehash: a3c696a5bfa9286e664f69bd379bac408b7459d6
+ms.sourcegitcommit: 12a26f6682bfd1e264268b5d866547358728cd9a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74005960"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75863246"
 ---
 # <a name="overview-of-azure-digital-twins"></a>Обзор Azure Digital Twins
 
@@ -95,19 +95,19 @@ Digital Twins использует Центр Интернета вещей дл
 
 [![Digital Twins — это служба, созданная на основе Центра Интернета вещей](media/overview/azure-digital-twins-in-iot-ecosystem.png)](media/overview/azure-digital-twins-in-iot-ecosystem.png#lightbox)
 
-Дополнительные сведения об Интернете вещей см. в статье [Технологии и решения Интернета вещей Azure: PaaS и SaaS](../iot-fundamentals/iot-services-and-technologies.md).
+Дополнительные сведения об Интернете вещей см. в статье [Технологии и службы Azure для создания решений Интернета вещей](../iot-fundamentals/iot-services-and-technologies.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Перейдите к короткому демонстрационному видеоролику о службе Azure Digital Twins:
 
 >[!div class="nextstepaction"]
->[Краткое руководство Поиск свободных помещений с помощью Azure Digital Twins](./quickstart-view-occupancy-dotnet.md)
+>[Краткое руководство. Поиск свободных помещений с помощью Azure Digital Twins](./quickstart-view-occupancy-dotnet.md)
 
 Ознакомьтесь с более подробными сведениями о приложении управления объектами с помощью Digital Twins:
 
 >[!div class="nextstepaction"]
->[Руководство. Развертывание Azure Digital Twins и настройка пространственного графа](./tutorial-facilities-setup.md)
+>[Руководство. развертыванию Azure Digital Twins и настройке пространственного графа](./tutorial-facilities-setup.md)
 
 Ознакомьтесь с основными понятиями Digital Twins:
 

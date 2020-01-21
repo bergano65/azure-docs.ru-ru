@@ -8,14 +8,14 @@ ms.service: event-hubs
 ms.workload: core
 ms.topic: quickstart
 ms.custom: seodec18
-ms.date: 11/05/2019
+ms.date: 01/08/2020
 ms.author: spelluru
-ms.openlocfilehash: ded2c83bc648e509c8cf00236cdf453b9c61af53
-ms.sourcegitcommit: bc7725874a1502aa4c069fc1804f1f249f4fa5f7
+ms.openlocfilehash: 39087b189c424866fffcc3ea8723c712883f288c
+ms.sourcegitcommit: b5106424cd7531c7084a4ac6657c4d67a05f7068
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73720570"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75940725"
 ---
 # <a name="quickstart-send-events-to-or-receive-events-from-azure-event-hubs-using-nodejs"></a>Краткое руководство. Отправка и получение событий через Центры событий Azure с помощью Node.js
 
@@ -23,10 +23,13 @@ ms.locfileid: "73720570"
 
 В этом руководстве описано, как создавать приложения Node.js для отправки и получения событий через концентратор событий.
 
+> [!IMPORTANT]
+> В рамках этого краткого руководства используется версия 2 пакета SDK Центров событий Azure для JavaScript. Если вы не знакомы с Центрами событий Azure, используйте пакет SDK для JavaScript версии 5. Краткое руководство по использованию пакета SDK для JavaScript версии 5 см. [здесь](get-started-node-send-v2.md). Чтобы перенести существующий код с версии 2 на версию 5, ознакомьтесь с [этим руководством по миграции](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/eventhub/event-hubs/migrationguide.md).
+
 > [!NOTE]
 > Вы можете скачать это краткое руководство в качестве примера с сайта [GitHub](https://github.com/Azure/azure-event-hubs-node/tree/master/client), заменить строки `EventHubConnectionString` и `EventHubName` значениями для своего концентратора событий и выполнить этот пример. Или следуйте инструкциям из этого руководства, чтобы создать собственное решение.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Для работы с данным руководством вам потребуется:
 
@@ -37,10 +40,10 @@ ms.locfileid: "73720570"
 
 
 ### <a name="install-npm-package"></a>Установка пакета npm
-Чтобы установить [пакет npm для Центров событий](https://www.npmjs.com/package/@azure/event-hubs), откройте командную строку, где `npm` сохранен в переменной окружения path, перейдите в папку, в которой вы хотите сохранить примеры, и выполните эту команду.
+Чтобы установить [пакет npm для Центров событий](https://www.npmjs.com/package/@azure/event-hubs/v/2.1.0), откройте командную строку, где `npm` сохранен в переменной окружения path, перейдите в папку, в которой вы хотите сохранить примеры, и выполните эту команду.
 
 ```shell
-npm install @azure/event-hubs
+npm install @azure/event-hubs@2
 ```
 
 Чтобы установить [пакет npm для узла обработчика событий](https://www.npmjs.com/package/@azure/event-processor-host), выполните приведенную ниже команду.
@@ -57,7 +60,7 @@ npm install @azure/event-processor-host
 2. Создайте файл с именем `send.js` и вставьте в него приведенный ниже код. Получите строку подключения для пространства имен концентратора событий, следуя [Получение строки подключения на портале](event-hubs-get-connection-string.md#get-connection-string-from-the-portal). 
 
     ```javascript
-    const { EventHubClient } = require("@azure/event-hubs");
+    const { EventHubClient } = require("@azure/event-hubs@2");
 
     // Connection string - primary key of the Event Hubs namespace. 
     // For example: Endpoint=sb://myeventhubns.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -95,7 +98,7 @@ npm install @azure/event-processor-host
 1. Откройте редактор, например [Visual Studio Code](https://code.visualstudio.com). 
 2. Создайте файл с именем `receive.js` и вставьте в него приведенный ниже код.
     ```javascript
-    const { EventHubClient, delay } = require("@azure/event-hubs");
+    const { EventHubClient, delay } = require("@azure/event-hubs@2");
 
     // Connection string - primary key of the Event Hubs namespace. 
     // For example: Endpoint=sb://myeventhubns.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -127,7 +130,7 @@ npm install @azure/event-processor-host
     });
     ```
 3. Введите строку подключения и имя Центра событий в приведенный выше код.
-4. Затем выполните в окне командной строки команду `node receive.js`, которая запускает этот файл. Она получит события из одного раздела группы потребителей по умолчанию в указанном Центре событий.
+4. Затем в окне командной строки выполните команду `node receive.js`, которая запускает этот файл. Она получит события из одного раздела группы потребителей по умолчанию в указанном Центре событий.
 
 Поздравляем! Теперь вы получили события из концентратора событий.
 
@@ -182,11 +185,11 @@ npm install @azure/event-processor-host
 
     ```
 3. Введите в приведенный выше код строку подключения и имя Центра событий, в также строку подключения к хранилищу BLOB-объектов Azure.
-4. Затем выполните в окне командной строки команду `node receiveAll.js`, которая запускает этот файл.
+4. Затем в окне командной строки выполните команду `node receiveAll.js`, которая запускает этот файл.
 
 Поздравляем! Теперь вы получили сообщения из концентратора событий с помощью узла обработчика событий. Так вы получите события из всех разделов группы потребителей по умолчанию в указанном Центре событий.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Ознакомьтесь со следующими статьями:
 
 - [EventProcessorHost](event-hubs-event-processor-host.md)

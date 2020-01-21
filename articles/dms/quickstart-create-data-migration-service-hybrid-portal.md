@@ -1,5 +1,6 @@
 ---
-title: Краткое руководство. Создание экземпляра службы Azure Database Migration Service в гибридном режиме с помощью портала Azure | Документация Майкрософт
+title: Краткое руководство. Создание экземпляра в гибридном режиме с помощью портала Azure
+titleSuffix: Azure Database Migration Service
 description: Использование портала Azure для создания экземпляра службы Azure Database Migration Service в гибридном режиме.
 services: database-migration
 author: HJToland3
@@ -8,21 +9,32 @@ manager: craigg
 ms.reviewer: craigg
 ms.service: dms
 ms.workload: data-services
-ms.custom: mvc
+ms.custom: seo-lt-2019
 ms.topic: quickstart
-ms.date: 12/06/2019
-ms.openlocfilehash: a124c33f15318f1b9b22a750a1de15601823afa3
-ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
+ms.date: 12/17/2019
+ms.openlocfilehash: 64d4998e287f9981c666dee54fc3b67886791bbf
+ms.sourcegitcommit: f2149861c41eba7558649807bd662669574e9ce3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74890697"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75708297"
 ---
-# <a name="quickstart-create-an-instance-of-azure-database-migration-service-in-hybrid-mode-using-the-azure-portal-preview"></a>Краткое руководство. Создание экземпляра службы Azure Database Migration Service в гибридном режиме с помощью портала Azure (предварительная версия)
+# <a name="quickstart-create-a-hybrid-mode-instance-with-azure-portal--azure-database-migration-service"></a>Краткое руководство. Создание экземпляра в гибридном режиме с помощью портала Azure и Azure Database Migration Service
 
 Гибридный режим Azure Database Migration Service позволяет управлять миграцией баз данных с помощью рабочей роли миграции, размещенной локально, и экземпляра Azure Database Migration Service, работающего в облаке. Гибридный режим особенно удобен для сценариев, в которых подключение типа "сеть — сеть" между локальной сетью и Azure отсутствует или его пропускная способность ограничена.
 
+>[!NOTE]
+>В настоящее время Azure Database Migration Service, выполняемый в гибридном режиме, поддерживает миграцию SQL Server в:
+>
+>- Управляемый экземпляр базы данных SQL Azure с почти нулевым временем простоя (в сети).
+>- Единую базу данных SQL Azure с некоторым временем простоя (вне сети).
+>- MongoDb в Azure CosmosDB с почти нулевым временем простоя (в сети).
+>- MongoDb в Azure CosmosDB с некоторым временем простоя (вне сети).
+
 В этом кратком руководстве вы создадите экземпляр службы Azure Database Migration Service в гибридном режиме с помощью портала Azure. После этого вы скачаете, установите и настроите гибридную рабочую роль в локальной сети. На этапе предварительной версии гибридный режим Azure Database Migration Service можно использовать для миграции данных из локального экземпляра SQL Server в Базу данных SQL Azure.
+
+> [!NOTE]
+> Гибридный установщик Azure Database Migration Service работает на Microsoft Windows Server 2012 R2, Window Server 2016, Windows Server 2019 и Windows 10.
 
 > [!IMPORTANT]
 > Для гибридного установщика Azure Database Migration Service требуется .NET 4.7.2 или более поздней версии. Чтобы найти последние версии .NET, перейдите на страницу скачивания [.NET Framework](https://dotnet.microsoft.com/download/dotnet-framework).
@@ -51,7 +63,7 @@ ms.locfileid: "74890697"
 
 1. Щелкните **+Создать ресурс**, чтобы создать экземпляр Azure Database Migration Service.
 
-2. Выполните в Marketplace поиск по слову migration, выберите службу **Azure Database Migration Service**, а затем на экране **Azure Database Migration Service** нажмите кнопку **Create**.
+2. Выполните в Marketplace поиск по слову "migration" (миграция), выберите службу **Azure Database Migration Service**, а затем на экране **Azure Database Migration Service** нажмите кнопку **Создать**.
 
 3. На экране **Создать Migration Service** сделайте следующее:
 
@@ -59,13 +71,9 @@ ms.locfileid: "74890697"
     - Выберите **подписку** Azure, в которой нужно создать экземпляр.
     - Выберите существующую **группу ресурсов** или создайте новую.
     - Выберите **расположение**, наиболее близкое к исходному или целевому серверу.
-
-    > [!IMPORTANT]
-    > На этапе предварительной версии гибридный режим поддерживается только в регионе "Восточная часть США". Так как гибридная рабочая роль устанавливается в локальной сети, производительность практически или совсем не снижается, даже если выполняется миграция в другой регион.
-
     - Для параметра **Режим службы** выберите **Гибридная служба (предварительная версия)** .
 
-      ![Создание службы миграции: основы](media/quickstart-create-data-migration-service-hybrid-portal/dms-create-service-basics.png)
+           ![Create migration service - basics](media/quickstart-create-data-migration-service-hybrid-portal/dms-create-service-basics.png)
 
 4. Выберите **Review + create** (Просмотреть и создать).
 
@@ -120,7 +128,7 @@ ms.locfileid: "74890697"
 4. В папке установки найдите и откройте файл **dmsSettings.json**, укажите в нем **ApplicationId** и **resourceId**, а затем сохраните этот файл.
 
     ![Параметры гибридной рабочей роли Azure Database Migration Service](media/quickstart-create-data-migration-service-hybrid-portal/dms-settings.png)
- 
+
 5. Создайте сертификат, который Azure Database Migration Service сможет использовать для аутентификации связи с гибридной рабочей ролью, с помощью следующей команды.
 
     ```
@@ -141,6 +149,12 @@ ms.locfileid: "74890697"
     <drive>:\<folder>\Install>DMSWorkerBootstrap.exe -a Install -IAcceptDMSLicenseTerms
     ```
 
+    > [!NOTE]
+    > При выполнении команды "install" можно также использовать приведенные ниже параметры.
+    >
+    > - **-TelemetryOptOut** — останавливает отправку данных телеметрии рабочей ролью, но продолжает вести журнал, как минимум локально.  Установщик по-прежнему отправляет данные телеметрии.
+    > - **-p {InstallLocation}** . Включает изменение пути установки, который по умолчанию имеет значение "C:\Program Files\DatabaseMigrationServiceHybrid".
+
 8. Если установщик выполнится без ошибок, служба будет показывать состояние "В сети" для Azure Database Migration Service и все будет готово к миграции баз данных.
 
     ![Azure Database Migration Service в сети](media/quickstart-create-data-migration-service-hybrid-portal/dms-instance-hybrid-mode-online.png)
@@ -153,7 +167,28 @@ ms.locfileid: "74890697"
 <drive>:\<folder>\Install>DMSWorkerBootstrap.exe -a uninstall
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+> [!NOTE]
+> При выполнении команды удаления можно также использовать параметр "-ReuseCert", который хранит сертификат AdApp, созданный рабочим процессом generateCert.  Это позволяет использовать уже созданный и отправленный сертификат.
+
+## <a name="set-up-the-azure-database-migration-service-hybrid-worker-using-powershell"></a>Настройка гибридной рабочей роли Azure Database Migration Service с помощью PowerShell
+
+Помимо установки гибридной рабочей роли Azure Database Migration Service с помощью портала Azure мы предоставляем [сценарий PowerShell](https://techcommunity.microsoft.com/gxcuf89792/attachments/gxcuf89792/MicrosoftDataMigration/119/1/DMS_Hybrid_Script.zip), который можно использовать для автоматизации шагов установки рабочих ролей после создания нового экземпляра Azure Database Migration Service в гибридном режиме. Сценарий:
+
+1. Создает новый AdApp.
+2. Скачивает установщик.
+3. Запускает рабочий процесс generateCert.
+4. Отправляет сертификат.
+5. Добавляет AdApp в качестве участника в экземпляр Azure Database Migration Service.
+6. Запускает рабочий процесс установки.
+
+Этот сценарий предназначен для быстрого создания прототипов, когда у пользователя уже есть все необходимые разрешения в среде. Обратите внимание, что AdApp и Cert в рабочей среде могут иметь разные требования, поэтому сценарий может завершиться ошибкой.
+
+> [!IMPORTANT]
+> В этом сценарии предполагается, что у вас есть экземпляр Azure Database Migration Service в гибридном режиме и что используемая учетная запись Azure имеет права на создание AdApp в клиенте и изменение RBAC в подписке.
+
+Просто заполните параметры в верхней части скрипта, а затем выполните скрипт из экземпляра Администратора PowerShell.
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Перенос SQL Server в управляемый экземпляр Базы данных SQL Azure по сети](tutorial-sql-server-managed-instance-online.md)

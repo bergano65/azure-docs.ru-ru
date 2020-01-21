@@ -8,14 +8,14 @@ ms.date: 11/12/2019
 ms.topic: tutorial
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: d9890a393d9b2955c1eb0c9894d454a774af68ef
-ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
+ms.openlocfilehash: 3cba7781ac80ae567b2bfd54c4131429ed94b90f
+ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74701848"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75772369"
 ---
-# <a name="tutorial-create-and-deploy-custom-iot-edge-modules"></a>Руководство по Создание и развертывание пользовательских модулей IoT Edge
+# <a name="tutorial-create-and-deploy-custom-iot-edge-modules"></a>Руководство. Создание и развертывание пользовательских модулей IoT Edge
 
 > [!NOTE]
 > Эта статья входит в серию учебников по использованию Машинного обучения Azure в IoT Edge. Если вы перешли к этой статье по прямой ссылке, для оптимальных результатов рекомендуем начать с изучения [первой статьи](tutorial-machine-learning-edge-01-intro.md) этой серии.
@@ -248,7 +248,7 @@ ms.locfileid: "74701848"
    "classifierToRouter": "FROM /messages/modules/turbofanRulClassifier/outputs/amloutput INTO BrokeredEndpoint(\"/modules/turbofanRouter/inputs/rulInput\")"
    ```
 
-#### <a name="outputs"></a>outputs
+#### <a name="outputs"></a>Выходные данные
 
 Добавьте в параметр маршрутизации $edgeHub четыре дополнительные маршрута, которые будут обрабатывать выходы модуля маршрутизатора.
 
@@ -821,7 +821,7 @@ ms.locfileid: "74701848"
    sudo docker exec -it avroFileWriter bash
    ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой статье описано, как создать в Visual Studio Code решение IoT Edge с тремя модулями: классификатор, маршрутизатор, а также средство записи и отправки файлов. Мы настроили маршруты, которые позволяют модулям обмениваться данными друг с другом на граничном устройстве, изменили конфигурацию этого устройства и обновили файлы Dockerfile для установки зависимостей и добавления подключений с привязкой в контейнеры модулей. Затем мы обновили конфигурацию Центра Интернета вещей, чтобы передавать сообщения с учетом их типа и обрабатывать отправленные файлы. После этого мы развернули модули на устройстве IoT Edge и убедились, что эти модули работают правильно.
 

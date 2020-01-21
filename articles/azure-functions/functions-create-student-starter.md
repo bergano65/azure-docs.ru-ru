@@ -1,21 +1,21 @@
 ---
 title: Создание функции с помощью службы "Начальный набор Microsoft Azure для учащихся"
 description: Узнайте, как создать функцию Azure в подписке на службу "Начальный набор Microsoft Azure для учащихся"
-Customer intent: As a student, I want to be able to create a HTTP triggered Function App within the Student Starter plan so that I can easily add APIs to any project.
+Customer intent: As a student, I want to be able to create an HTTP triggered Function App within the Student Starter plan so that I can easily add APIs to any project.
 author: alexkarcher-msft
 ms.topic: quickstart
 ms.date: 02/22/2019
 ms.author: alkarche
-ms.openlocfilehash: 5c0228feb88296e0c82efa52648ce38d70e5b921
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 189a0bc80ab2894b2888b496b3beb45249d859f6
+ms.sourcegitcommit: f34165bdfd27982bdae836d79b7290831a518f12
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75409882"
+ms.lasthandoff: 01/13/2020
+ms.locfileid: "75921136"
 ---
 # <a name="create-a-function-using-azure-for-students-starter"></a>Создание функции с помощью службы "Начальный набор Microsoft Azure для учащихся"
 
-В этом руководстве мы создадим функцию HTTP Hello World в подписке на службу "Начальный набор Microsoft Azure для учащихся". Мы также рассмотрим доступные возможности в Функциях Azure для этого типа подписки.
+В этом руководстве описывается, как создать функцию HTTP Hello World в подписке на службу "Начальный набор Microsoft Azure для учащихся". Мы также рассмотрим доступные возможности в Функциях Azure для этого типа подписки.
 
 *Начальный набор Microsoft Azure для учащихся* предоставляет бесплатный доступ к ресурсам для начала работы с продуктами Azure, которые необходимо разработать в облаке. [Узнайте больше об этом предложении здесь.](https://azure.microsoft.com/offers/ms-azr-0144p/)
 
@@ -33,9 +33,9 @@ ms.locfileid: "75409882"
 
 ## <a name="create-a-function-app"></a>Создание приложения-функции
 
-Для выполнения функций вам понадобится приложение-функция, позволяющее группировать функции в логические единицы и упростить развертывание и совместное использование ресурсов, а также управление ими. 
+Для выполнения функций вам понадобится приложение-функция, позволяющее группировать функции в логические единицы и упростить развертывание, масштабирование и совместное использование ресурсов, а также управление ими.
 
-1. Нажмите кнопку **Создать** в верхнем левом углу портала Azure, а затем выберите **Вычисления** > **Приложение-функция**.
+1. Нажмите кнопку **Создать ресурс** в верхнем левом углу портала Azure. Затем щелкните **Вычислительные ресурсы** > **Приложение-функция**.
 
     ![Создание приложения-функции на портале Azure](./media/functions-create-student-starter/function-app-create-flow.png)
 
@@ -116,7 +116,7 @@ ms.locfileid: "75409882"
     * Поддерживаются все входные и выходные привязки! [Полный список см. здесь.](functions-triggers-bindings.md)
 * Поддерживаемые языки: 
     * C# (.NET Core 2);
-    * JavaScript, (Node.js 8 и 10);
+    * JavaScript (Node.js 8 и 10)
     * F# (.NET Core 2).
     * [Поддерживаемые языки в планах высшего уровня см. здесь](supported-languages.md)
 * Windows — единственная поддерживаемая операционная система.

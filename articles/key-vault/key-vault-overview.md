@@ -10,12 +10,12 @@ ms.topic: overview
 ms.custom: mvc
 ms.date: 01/07/2019
 ms.author: mbaldwin
-ms.openlocfilehash: 0cd6cbf21a392f68db707b9c0184320316d45ffe
-ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
+ms.openlocfilehash: 97df5c309a3bdbf5055d67f893e33ab1a0c3232a
+ms.sourcegitcommit: f53cd24ca41e878b411d7787bd8aa911da4bc4ec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74851032"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75832775"
 ---
 # <a name="what-is-azure-key-vault"></a>Что такое хранилище ключей Azure?
 
@@ -23,7 +23,7 @@ Azure Key Vault помогает в решении следующих пробл
 
 - **Управление секретами.** Azure Key Vault обеспечивает безопасное хранение токенов, паролей, сертификатов, ключей API и других секретных сведений со строгим контролем доступа к ним.
 - **Управление ключами.** Azure Key Vault также может использоваться как решение по управлению ключами. Эта служба позволяет легко создавать и контролировать ключи шифрования, используемые для шифрования данных. 
-- **Управление сертификатами.** С помощью службы Azure Key Vault можно с легкостью подготавливать, администрировать и развертывать общедоступные и частные сертификаты SSL и TLS для использования в Azure и внутренних подключенных ресурсах. 
+- **Управление сертификатами.** С помощью службы Azure Key Vault можно с легкостью подготавливать, администрировать и развертывать общедоступные и частные сертификаты TLS/SSL для использования в Azure и внутренних подключенных ресурсах. 
 - **Хранение секретов, защищенных аппаратными модулями безопасности.** Секреты и ключи могут быть защищены с помощью программного обеспечения или FIPS 140-2 уровня 2 с проверкой HSM.
 
 ## <a name="why-use-azure-key-vault"></a>Использование Azure Key Vault
@@ -77,7 +77,7 @@ Azure Key Vault может быть защищено либо с помощью 
 
 Key Vault можно интегрировать с учетными записями хранения, концентраторами событий и Log Analytics.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-- [Краткое руководство Настройка и получение секрета из Azure Key Vault с помощью Azure CLI](quick-create-cli.md)
+- [Краткое руководство. Настройка и получение секрета из Azure Key Vault с помощью Azure CLI](quick-create-cli.md)
 - [Tutorial: Configure an Azure web application to read a secret from Key Vault](tutorial-web-application-keyvault.md) (Руководство. Настройка веб-приложения Azure для считывания секрета из Key Vault)

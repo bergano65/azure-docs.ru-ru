@@ -7,20 +7,23 @@ ms.date: 09/06/2019
 ms.service: storage
 ms.subservice: common
 ms.topic: sample
-ms.openlocfilehash: 2d08180d40233c0ab990bc700f0412d11647d5f1
-ms.sourcegitcommit: 7f6d986a60eff2c170172bd8bcb834302bb41f71
+ms.openlocfilehash: dfdde1ae981dcd2d539dec3667e44e90cef4d1c8
+ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71349968"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75748044"
 ---
 # <a name="azure-storage-samples-using-java"></a>Примеры для службы хранилища Azure с использованием Java
 
 В таблице ниже приведен обзор репозитория примеров и сценарии, описанные в каждом примере. Щелкните ссылки для просмотра соответствующего примера кода на сайте GitHub.
 
-## <a name="blob-samples"></a>Примеры больших двоичных объектов
+> [!NOTE]
+> В этих примерах используется библиотека Java версии 11 службы хранилища Azure. Сведения о коде версии 12 см. в разделе [примеры](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/storage/azure-storage-blob/src/samples/java/com/azure/storage/blob) в репозитории GitHub.
 
-| **Сценарий** | **Пример кода** |
+## <a name="blob-samples-v11"></a>Примеры больших двоичных объектов (версия 11)
+
+| **Сценарий** | **Образец кода** |
 |--------------|-----------------|
 | Добавление больших двоичных объектов | [Getting Started with Azure Blob Service in Java](https://github.com/Azure-Samples/storage-blob-java-getting-started/blob/master/src/BlobBasics.java) (Приступая к работе со службой BLOB-объектов Azure на языке Java) |
 | Блочный BLOB-объект | [Getting Started with Azure Blob Service in Java](https://github.com/Azure-Samples/storage-blob-java-getting-started/blob/master/src/BlobBasics.java) (Приступая к работе со службой BLOB-объектов Azure на языке Java) |
@@ -39,9 +42,9 @@ ms.locfileid: "71349968"
 | Свойства службы | [Getting Started with Azure Blob Service in Java](https://github.com/Azure-Samples/storage-blob-java-getting-started/blob/master/src/BlobAdvanced.java) (Приступая к работе со службой BLOB-объектов Azure на языке Java) |
 | Создание моментального снимка большого двоичного объекта | [Getting Started with Azure Blob Service in Java](https://github.com/Azure-Samples/storage-blob-java-getting-started/blob/master/src/BlobBasics.java) (Приступая к работе со службой BLOB-объектов Azure на языке Java) |
 
-## <a name="file-samples"></a>Примеры файлов
+## <a name="file-samples-v11"></a>Примеры файлов (версия 11)
 
-| **Сценарий** | **Пример кода** |
+| **Сценарий** | **Образец кода** |
 |--------------|-----------------|
 | Создание общих папок, каталогов и файлов | [Getting Started with Azure File Service in Java](https://github.com/Azure-Samples/storage-file-java-getting-started/blob/master/src/FileBasics.java) (Приступая к работе с файловой службой Azure на языке Java) |
 | Удаление общих папок, каталогов и файлов | [Getting Started with Azure File Service in Java](https://github.com/Azure-Samples/storage-file-java-getting-started/blob/master/src/FileBasics.java) (Приступая к работе с файловой службой Azure на языке Java) |
@@ -53,9 +56,9 @@ ms.locfileid: "71349968"
 | Список общих папок | [Getting Started with Azure File Service in Java](https://github.com/Azure-Samples/storage-file-java-getting-started/blob/master/src/FileBasics.java) (Приступая к работе с файловой службой Azure на языке Java) |
 | Статистика, метаданные и свойства общей папки | [Getting Started with Azure File Service in Java](https://github.com/Azure-Samples/storage-file-java-getting-started/blob/master/src/FileAdvanced.java) (Приступая к работе с файловой службой Azure на языке Java) |
 
-## <a name="queue-samples"></a>Примеры очередей
+## <a name="queue-samples-v11"></a>Примеры очередей (версия 11)
 
-| **Сценарий** | **Пример кода** |
+| **Сценарий** | **Образец кода** |
 |--------------|-----------------|
 | Добавление сообщения | [Getting Started with Azure Queue Service in Java](https://github.com/Azure-Samples/storage-queue-java-getting-started/blob/master/src/QueueBasics.java#L63) (Приступая к работе со службой очередей Azure на языке Java) |
 | Шифрование на стороне клиента | [Приступая к работе с шифрованием на стороне клиента Azure в Java](https://github.com/Azure-Samples/storage-java-client-side-encryption/blob/master/src/gettingstarted/KeyVaultGettingStarted.java) |
@@ -66,9 +69,9 @@ ms.locfileid: "71349968"
 | Свойства службы очередей | [Getting Started with Azure Queue Service in Java](https://github.com/Azure-Samples/storage-queue-java-getting-started/blob/master/src/QueueAdvanced.java) (Приступая к работе со службой очередей Azure на языке Java) |
 | Сообщение об обновлении | [Getting Started with Azure Queue Service in Java](https://github.com/Azure-Samples/storage-queue-java-getting-started/blob/master/src/QueueBasics.java) (Приступая к работе со службой очередей Azure на языке Java)
 |
-## <a name="table-samples"></a>Примеры таблиц
+## <a name="table-samples-v11"></a>Примеры таблиц (версия 11)
 
-| **Сценарий** | **Пример кода** |
+| **Сценарий** | **Образец кода** |
 |--------------|-----------------|
 | Создание таблицы | [Getting Started with Azure Table Service in Java](https://github.com/Azure-Samples/storage-table-java-getting-started/blob/master/src/main/java/com/microsoft/azure/cosmosdb/tablesample/TableBasics.java) (Приступая к работе со службой таблиц Azure на языке Java) |
 | Удаление сущности или таблицы | [Getting Started with Azure Table Service in Java](https://github.com/Azure-Samples/storage-table-java-getting-started/blob/master/src/main/java/com/microsoft/azure/cosmosdb/tablesample/TableBasics.java) (Приступая к работе со службой таблиц Azure на языке Java) |
@@ -92,7 +95,7 @@ ms.locfileid: "71349968"
 * [Getting Started with Azure Table Service in Java](../../cosmos-db/table-storage-how-to-use-java.md) (Приступая к работе со службой таблиц Azure на языке Java)
 * [Getting Started with Azure File Service in Java](../files/storage-java-how-to-use-file-storage.md) (Приступая к работе с файловой службой Azure на языке Java)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о примерах для других языков см. здесь:
 

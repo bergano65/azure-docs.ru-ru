@@ -8,12 +8,12 @@ ms.service: sql-database
 ms.topic: overview
 ms.reviewer: vanto
 ms.date: 09/17/2019
-ms.openlocfilehash: fcb89cbcadb5e101ab2b4bfd18d0b7b91c63c92a
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.openlocfilehash: 6cc8282a5c56f8f45e8d9e5ee452089a74f0d4ed
+ms.sourcegitcommit: 05cdbb71b621c4dcc2ae2d92ca8c20f216ec9bc4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73821291"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76045638"
 ---
 # <a name="private-link-for-azure-sql-database-and-data-warehouse-preview"></a>Приватный канал для Базы данных и Хранилища данных SQL Azure (предварительная версия)
 
@@ -57,7 +57,7 @@ ms.locfileid: "73821291"
 ### <a name="approval-process"></a>Процесс утверждения
 После того как администратор сети создаст частную конечную точку (PE), администратор SQL может управлять подключением частной конечной точки (PEC) к Базе данных SQL.
 
-1. На портале Azure перейдите к своему ресурсу SQL Server.
+1. Перейдите к ресурсу SQL Server в портал Azure согласно шагам, показанным на снимке экрана ниже
 
     - (1) выберите подключения частной конечной точки в области слева;
     - (2) отобразится список всех подключений частных конечных точек (PEC);
@@ -146,8 +146,10 @@ Nmap done: 256 IP addresses (1 host up) scanned in 207.00 seconds
 
 
 ### <a name="check-connectivity-using-sql-server-management-studio-ssms"></a>Проверка подключения с помощью SQL Server Management Studio (SSMS)
+> [!NOTE]
+>Используйте **полное доменное имя** сервера в строках подключения для клиентов. Любые попытки входа, выполненные непосредственно на IP-адресе, будут завершаться ошибкой проектирования.
 
-Последний шаг — [подключение к Базе данных SQL с использованием SSMS](sql-database-connect-query-ssms.md). После подключения к Базе данных SQL с помощью SSMS убедитесь, что вы подключаетесь с частного IP-адреса виртуальной машины Azure, выполнив следующий запрос:
+Выполните следующие действия, чтобы использовать [SSMS для подключения к базе данных SQL](sql-database-connect-query-ssms.md). После подключения к Базе данных SQL с помощью SSMS убедитесь, что вы подключаетесь с частного IP-адреса виртуальной машины Azure, выполнив следующий запрос:
 
 ````
 select client_net_address from sys.dm_exec_connections 
@@ -179,7 +181,7 @@ PolyBase часто используют для загрузки данных в
 
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Общие сведения о методах защиты в Базе данных SQL Azure см. в [этой статье](sql-database-security-overview.md).
 - Общие сведения об архитектуре подключений к Базе данных SQL Azure см. в [этой статье](sql-database-connectivity-architecture.md).

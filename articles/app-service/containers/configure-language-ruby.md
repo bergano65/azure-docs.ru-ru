@@ -5,16 +5,16 @@ ms.topic: quickstart
 ms.date: 03/28/2019
 ms.reviewer: astay; kraigb
 ms.custom: seodec18
-ms.openlocfilehash: b17bec5663cc8e9d199ad79bb5282b052b8c0182
-ms.sourcegitcommit: 265f1d6f3f4703daa8d0fc8a85cbd8acf0a17d30
+ms.openlocfilehash: 74b0f83500903170616034d9d18d8ad31fa7065c
+ms.sourcegitcommit: f53cd24ca41e878b411d7787bd8aa911da4bc4ec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74670386"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75834316"
 ---
 # <a name="configure-a-linux-ruby-app-for-azure-app-service"></a>Настройка приложения Ruby в Linux для Службы приложений Azure
 
-В этой статье объясняется, как [Служба приложений Azure](app-service-linux-intro.md) запускает приложения Ruby, а также как вы можете настроить поведение Службы приложений при необходимости. Приложения Ruby нужно развертывать со всеми необходимыми модулями [pip](https://pypi.org/project/pip/).
+В этой статье объясняется, как [Служба приложений Azure](app-service-linux-intro.md) запускает приложения Ruby, а также как вы можете настроить поведение Службы приложений при необходимости. Приложения Ruby нужно развертывать со всеми необходимыми пакетами [gem](https://rubygems.org/gems).
 
 Это руководство содержит основные понятия и инструкции для разработчиков Ruby, которые используют встроенный контейнер Linux в Службе приложений. Если вы раньше не использовали Службу приложений Azure, сначала ознакомьтесь с [кратким руководством по Ruby](quickstart-ruby.md) и [руководством по использованию Ruby с PostgreSQL](tutorial-ruby-postgres-app.md).
 
@@ -47,7 +47,7 @@ az webapp config set --resource-group <resource-group-name> --name <app-name> --
 > ```
 > Your Ruby version is 2.3.3, but your Gemfile specified 2.3.1
 > ```
-> или
+> или диспетчер конфигурации служб
 > ```
 > rbenv: version `2.3.1' is not installed
 > ```
@@ -66,13 +66,13 @@ ENV['WEBSITE_SITE_NAME']
 Если вы развертываете [репозиторий Git](../deploy-local-git.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json) или [ZIP-пакет](../deploy-zip.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json) с включенными процессами сборки, механизм развертывания (Kudu) по умолчанию автоматически выполняет следующие шаги после развертывания:
 
 1. Проверка наличия *Gemfile*.
-1. Запустите `bundle clean`. 
-1. Запустите `bundle install --path "vendor/bundle"`.
+1. Выполните `bundle clean`. 
+1. Выполните `bundle install --path "vendor/bundle"`.
 1. Выполнение `bundle package` для упаковки пакетов в папку vendor/cache.
 
 ### <a name="use---without-flag"></a>Использование флага --without
 
-Чтобы выполнить `bundle install` с флагом [--without](https://bundler.io/man/bundle-install.1.html), сохраните в [параметр приложения](../configure-common.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json#configure-app-settings) `BUNDLE_WITHOUT` список групп с разделителями запятыми. Например, приведенная ниже команда позволяет присвоить ему значение `development,test`.
+Чтобы выполнить `bundle install` с флагом [--without](https://bundler.io/man/bundle-install.1.html), укажите для [параметра приложения](../configure-common.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json#configure-app-settings) `BUNDLE_WITHOUT` список групп с разделителями запятыми. Например, приведенная ниже команда позволяет присвоить ему значение `development,test`.
 
 ```azurecli-interactive
 az webapp config appsettings set --name <app-name> --resource-group <resource-group-name> --settings BUNDLE_WITHOUT="development,test"
@@ -82,7 +82,7 @@ az webapp config appsettings set --name <app-name> --resource-group <resource-gr
 
 ### <a name="precompile-assets"></a>Предварительная компиляция ресурсов
 
-По умолчанию предварительная компиляция ресурсов не входит в список действий после развертывания. Чтобы включить предварительную компиляцию активов, присвойте [параметру приложения](../configure-common.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json#configure-app-settings) `ASSETS_PRECOMPILE` значение `true`. Теперь команда `bundle exec rake --trace assets:precompile` будет выполняться последней в списке действий после развертывания. Например:
+По умолчанию предварительная компиляция ресурсов не входит в список действий после развертывания. Чтобы включить предварительную компиляцию ресурсов, присвойте [параметру приложения](../configure-common.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json#configure-app-settings) `ASSETS_PRECOMPILE` значение `true`. Теперь команда `bundle exec rake --trace assets:precompile` будет выполняться последней в списке действий после развертывания. Пример:
 
 ```azurecli-interactive
 az webapp config appsettings set --name <app-name> --resource-group <resource-group-name> --settings ASSETS_PRECOMPILE=true
@@ -98,7 +98,7 @@ az webapp config appsettings set --name <app-name> --resource-group <resource-gr
 1. Присвоение переменной среды `RAILS_ENV` значения `production`.
 1. Удаление всех файлов *.pid* в каталоге *tmp/pids*, которые остались от ранее запущенного сервера Rails.
 1. Проверка установки всех зависимостей. Если чего-то не хватает, следует установить пакеты из локального каталога *vendor/cache*.
-1. Запустите `rails server -e $RAILS_ENV`.
+1. Выполните `rails server -e $RAILS_ENV`.
 
 Процесс загрузки можно настроить следующими способами:
 
@@ -111,7 +111,7 @@ az webapp config appsettings set --name <app-name> --resource-group <resource-gr
 Сервер Rails в контейнере Ruby по умолчанию работает в режиме производственной среды и [ожидает, что все ресурсы заранее скомпилированы и предоставляются веб-сервером](https://guides.rubyonrails.org/asset_pipeline.html#in-production). Чтобы предоставлять статические ресурсы из сервера Rails, следует обеспечить следующее:
 
 - **Предварительная компиляция ресурсов** - [предварительно скомпилируйте статические ресурсы локально](https://guides.rubyonrails.org/asset_pipeline.html#local-precompilation) и вручную разверните их. Также вы можете поручить этот процесс механизму развертывания (подробнее см. статью [о предварительной компиляции ресурсов](#precompile-assets)).
-- **Настройка предоставления статических файлов** — чтобы обслуживать статические ресурсы из контейнера Ruby, [присвойте параметру приложения `RAILS_SERVE_STATIC_FILES`](../configure-common.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json#configure-app-settings) значение `true`. Например:
+- **Настройка предоставления статических файлов** — чтобы обслуживать статические ресурсы из контейнера Ruby, [присвойте параметру приложения `RAILS_SERVE_STATIC_FILES`](../configure-common.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json#configure-app-settings) значение `true`. Пример:
 
     ```azurecli-interactive
     az webapp config appsettings set --name <app-name> --resource-group <resource-group-name> --settings RAILS_SERVE_STATIC_FILES=true
@@ -125,7 +125,7 @@ az webapp config appsettings set --name <app-name> --resource-group <resource-gr
 az webapp config appsettings set --name <app-name> --resource-group <resource-group-name> --settings RAILS_ENV="development"
 ```
 
-Но этот параметр сам по себе только запускает сервер Rails в режиме разработки. То есть он будет обрабатывать запросы только от localhost и не будет доступен вне контейнера. Чтобы принимать запросы от удаленных клиентов, задайте [параметру приложения](../configure-common.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json#configure-app-settings) `APP_COMMAND_LINE` значение `rails server -b 0.0.0.0`. Этот параметр приложения позволяет выполнить в контейнере Ruby пользовательскую команду. Например:
+Но этот параметр сам по себе только запускает сервер Rails в режиме разработки. То есть он будет обрабатывать запросы только от localhost и не будет доступен вне контейнера. Чтобы принимать запросы от удаленных клиентов, задайте [параметру приложения](../configure-common.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json#configure-app-settings) `APP_COMMAND_LINE` значение `rails server -b 0.0.0.0`. Этот параметр приложения позволяет выполнить в контейнере Ruby пользовательскую команду. Пример:
 
 ```azurecli-interactive
 az webapp config appsettings set --name <app-name> --resource-group <resource-group-name> --settings APP_COMMAND_LINE="rails server -b 0.0.0.0"
@@ -133,7 +133,7 @@ az webapp config appsettings set --name <app-name> --resource-group <resource-gr
 
 ### <a name="set-secret_key_base-manually"></a>настройка secret_key_base вручную.
 
-Чтобы использовать собственное значение `secret_key_base` вместо автоматически созданного службой приложений, присвойте желаемое значение [параметру приложения](../configure-common.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json#configure-app-settings) `SECRET_KEY_BASE`. Например:
+Чтобы использовать собственное значение `secret_key_base`, а не автоматически созданное Службой приложений, присвойте желаемое значение [параметру приложения](../configure-common.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json#configure-app-settings) `SECRET_KEY_BASE`. Пример:
 
 ```azurecli-interactive
 az webapp config appsettings set --name <app-name> --resource-group <resource-group-name> --settings SECRET_KEY_BASE="<key-base-value>"
@@ -147,7 +147,7 @@ az webapp config appsettings set --name <app-name> --resource-group <resource-gr
 
 [!INCLUDE [Open SSH session in browser](../../../includes/app-service-web-ssh-connect-builtin-no-h.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Руководство. Приложение Ruby с PostgreSQL](tutorial-ruby-postgres-app.md)

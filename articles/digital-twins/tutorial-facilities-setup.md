@@ -1,5 +1,5 @@
 ---
-title: Руководство по Развертывание предварительной версии среды и пространственного графа в Azure Digital Twins | Документация Майкрософт
+title: Руководство. Развертывание предварительной версии среды и пространственного графа в Azure Digital Twins | Документация Майкрософт
 description: В этом руководстве вы узнаете, как развертывать экземпляр Azure Digital Twins и настроить пространственные ресурсы.
 services: digital-twins
 ms.author: alinast
@@ -8,15 +8,15 @@ manager: bertvanhoof
 ms.custom: seodec18
 ms.service: digital-twins
 ms.topic: tutorial
-ms.date: 11/12/2019
-ms.openlocfilehash: 20174a4eafb4e72fb62eeff6df2d129b91016b9e
-ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
+ms.date: 01/10/2020
+ms.openlocfilehash: bf07a165b6ea933719eb06b6625a91033030a120
+ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74383030"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75895461"
 ---
-# <a name="tutorial-deploy-azure-digital-twins-preview-and-configure-a-spatial-graph"></a>Руководство по развертыванию Azure Digital Twins (предварительная версия) и настройке пространственного графа
+# <a name="tutorial-deploy-azure-digital-twins-preview-and-configure-a-spatial-graph"></a>Руководство. развертыванию Azure Digital Twins (предварительная версия) и настройке пространственного графа
 
 Служба Azure Digital Twins (предварительная версия) позволяет объединять людей, места и устройства в связанной пространственной системе. В руководствах этой серии показано, как с помощью Azure Digital Twins определять степень заполненности помещения, а также оптимальные условия температуры и качества воздуха. 
 
@@ -36,7 +36,7 @@ ms.locfileid: "74383030"
 
 В этих руководствах для более детального и глубокого освещения концепций используются и изменяются те же примеры, что и [в руководстве по обнаружению свободных комнат](quickstart-view-occupancy-dotnet.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 - Подписка Azure. Если у вас нет учетной записи, вы можете создать [бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 
@@ -75,7 +75,7 @@ ms.locfileid: "74383030"
 
 * Вы можете использовать пример подготовки **occupancy-quickstart** для настройки и подготовки [пространственного интеллектуального графа](concepts-objectmodel-spatialgraph.md#digital-twins-object-models). Этот граф представляет собой цифровое изображение физических пространств и ресурсов в них. В этом примере используется [объектная модель](concepts-objectmodel-spatialgraph.md#digital-twins-object-models), которая определяет объекты для интеллектуального здания. Полный список объектов Digital Twins и интерфейсов REST API см. в [этой документации по REST API](https://docs.westcentralus.azuresmartspaces.net/management/swagger) или по URL-адресу API управления, который был создан для [вашего экземпляра](#deploy-digital-twins).
 
-   Чтобы изучить пример и увидеть, как он связывается с имеющимся экземпляром Digital Twins, можно начать с папки **src\actions**. Файлы в этой папке реализуют команды, которые вы будете использовать в этих руководствах:
+   Чтобы изучить пример и понять, как он связывается с имеющимся экземпляром Digital Twins, можно начать с папки **src\actions**. Файлы в этой папке реализуют команды, которые вы будете использовать в этих руководствах:
     - Файл **provisionSample.cs** показывает, как подготовить пространственный граф.
     - Файл **getSpaces.cs** получает информацию о подготовленных помещениях.
     - Файл **getAvailableAndFreshSpaces.cs** получает результаты пользовательской функции.
@@ -97,7 +97,7 @@ ms.locfileid: "74383030"
     dotnet restore
     ```
 
-1. В Visual Studio Code откройте файл [appSettings.json](https://github.com/Azure-Samples/digital-twins-samples-csharp/blob/master/occupancy-quickstart/src/appSettings.json) в проекте **occupancy-quickstart**. Обновите следующие значения:
+1. В Visual Studio Code откройте файл [appSettings.json](https://github.com/Azure-Samples/digital-twins-samples-csharp/blob/master/occupancy-quickstart/src/appSettings.json) в проекте **occupancy-quickstart**. Измените следующие значения:
    * **ClientId:** введите идентификатор приложения из регистрации приложения Azure AD. Вы записали этот идентификатор в разделе, в котором [устанавливали разрешения приложения](#grant-permissions-to-your-app).
    * **Tenant:** введите идентификатор каталога своего [клиента Azure AD](https://docs.microsoft.com/azure/active-directory/develop/quickstart-create-new-tenant). Вы также записали этот идентификатор в разделе, в котором [устанавливали разрешения приложения](#grant-permissions-to-your-app).
    * **BaseUrl:** введите URL-адрес экземпляра Digital Twins. Чтобы получить этот URL-адрес, замените заполнители в этом URL-адресе значениями для вашего экземпляра: `https://yourDigitalTwinsName.yourLocation.azuresmartspaces.net/management/api/v1.0/`. Вы также можете получить этот URL-адрес, изменив URL-адрес API управления, указанный в [разделе развертывания](#deploy-digital-twins). Замените **swagger/** на **api/v1.0/** .
@@ -129,7 +129,6 @@ public static async Task<IEnumerable<ProvisionResults.Space>> ProvisionSample(Ht
 
     return results;
 }
-
 ```
 
 Эта функция использует файл [provisionSample.yaml](https://github.com/Azure-Samples/digital-twins-samples-csharp/blob/master/occupancy-quickstart/src/actions/provisionSample.yaml) в той же папке. Откройте этот файл и обратите внимание на иерархию офисного здания: *место проведения*, *этаж*, *область* и *комнаты*. В любой из этих физических областей могут быть *устройства* и *датчики*. Каждая запись содержит предопределенный тип (`type`), например Floor (Этаж), Room (Комната).
@@ -150,7 +149,7 @@ public static async Task<IEnumerable<ProvisionResults.Space>> ProvisionSample(Ht
 
 - **devices:** пространства могут содержать объекты `devices` (устройства), которые являются физическими или виртуальными сущностями, управляющими рядом датчиков. Например, устройством может быть телефон пользователя, датчик Raspberry Pi или шлюз. В воображаемом здании в вашем примере комната с названием **Focus Room** содержит **устройство Raspberry Pi 3 A1**. Каждый узел устройства определяется уникальным идентификатором `hardwareId`, который жестко задан в примере. Чтобы настроить этот пример для фактической рабочей среды, замените их на значения из вашего экземпляра настройки.  
 
-- **sensors:** устройство может содержать несколько датчиков (`sensors`). Они могут обнаруживать и записывать изменения физических показателей, таких как температура, движение, уровень заряда батареи. Каждый узел датчика определяется уникальным идентификатором `hardwareId`, который жестко задан в примере. Для реального приложения замените их уникальными идентификаторами датчиков в вашем экземпляре настройки. Файл provisionSample.yaml содержит два датчика для записи: *Motion* и *CarbonDioxide*. Добавьте еще один датчик для регистрации *Temperature*, добавив следующие строки под строками для датчика CarbonDioxide. Обратите внимание, что они предоставлены в файле provisionSample.yaml в виде закомментированных строк. Чтобы раскомментировать их, удалите символ `#` в начале каждой строки. 
+- **sensors:** устройство может содержать несколько датчиков (`sensors`). Они могут обнаруживать и записывать изменения физических показателей, таких как температура, движение, уровень заряда батареи. Каждый узел датчика определяется уникальным идентификатором `hardwareId`, который жестко задан в примере. Для реального приложения замените их уникальными идентификаторами датчиков в вашем экземпляре настройки. Файл provisionSample.yaml содержит два датчика для записи: *Motion* и *CarbonDioxide*. Добавьте еще один датчик для регистрации *Temperature*, добавив следующие строки под строками для датчика CarbonDioxide. Они предоставлены в файле provisionSample.yaml в виде закомментированных строк. Чтобы раскомментировать их, удалите символ `#` в начале каждой строки. 
 
     ```yaml
             - dataType: Temperature
@@ -175,8 +174,8 @@ public static async Task<IEnumerable<ProvisionResults.Space>> ProvisionSample(Ht
 
 1. При необходимости удалите пример приложения на компьютере.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы узнать, как реализовать пользовательскую логику для мониторинга условий в вашем примере здания, перейдите к следующему руководству в серии: 
 > [!div class="nextstepaction"]
-> [Руководство по подготовке примера здания и мониторинге условий работы с помощью Azure Digital Twins](tutorial-facilities-udf.md)
+> [Руководство. подготовке примера здания и мониторинге условий работы с помощью Azure Digital Twins](tutorial-facilities-udf.md)

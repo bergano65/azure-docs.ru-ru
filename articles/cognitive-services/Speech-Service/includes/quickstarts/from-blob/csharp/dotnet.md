@@ -1,32 +1,25 @@
 ---
-title: Краткое руководство. Распознавание речи из файлов, находящихся в хранилище BLOB-объектов, в службе "Речь" с помощью C#
-titleSuffix: Azure Cognitive Services
-description: TBD
-services: cognitive-services
-author: erhopf
-manager: nitinme
+author: IEvangelist
 ms.service: cognitive-services
-ms.subservice: speech-service
 ms.topic: include
-ms.date: 10/28/2019
-ms.author: erhopf
-zone_pivot_groups: programming-languages-set-two
-ms.openlocfilehash: b8b650920c03b14c7d55aafd6ecdb43dafaafafe
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.date: 01/13/2020
+ms.author: dapine
+ms.openlocfilehash: 1022a744564ed61a90973f7bba3eb32e9a632b46
+ms.sourcegitcommit: 014e916305e0225512f040543366711e466a9495
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75468848"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75942814"
 ---
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Перед началом работы нужно сделать следующее:
 
 > [!div class="checklist"]
+> * [Настроить среду разработки.](../../../../quickstarts/setup-platform.md?tabs=vs&pivots=programmming-language-csharp)
+> * [Создать пустой пример проекта.](../../../../quickstarts/create-project.md?pivots=programmming-language-csharp)
 > * [Создать ресурс службы "Речь" Azure.](../../../../get-started.md)
 > * [Отправить исходный файл в большой двоичный объект Azure](https://docs.microsoft.com/azure/storage/blobs/storage-quickstart-blobs-portal).
-> * [Настроить среду разработки.](../../../../quickstarts/setup-platform.md?tabs=dotnet)
-> * [Создать пустой пример проекта.](../../../../quickstarts/create-project.md?tabs=dotnet)
 
 ## <a name="open-your-project-in-visual-studio"></a>Откройте проект в Visual Studio.
 
@@ -35,7 +28,7 @@ ms.locfileid: "75468848"
 1. Запустите Visual Studio 2019.
 2. Загрузите проект и откройте `Program.cs`.
 
-## <a name="add-a-reference-to-newtonsoftjson"></a>Добавление ссылки на NewtonSoftJSon
+## <a name="add-a-reference-to-newtonsoftjson"></a>Добавление ссылки на Newtonsoft.Json
 
 1. В Обозревателе решений щелкните правой кнопкой мыши на проект **helloworld** и выберите **Управление пакетами NuGet**, чтобы отобразить Диспетчер пакетов NuGet.
 
@@ -45,7 +38,7 @@ ms.locfileid: "75468848"
 
 1. В поле поиска введите *newtonsoft.json* и нажмите кнопку **ВВОД**.
 
-1. В результатах поиска выберите пакет **Newtonsoft.Json**, а затем нажмите кнопку **Установить** для установки последней стабильной версии.
+1. В результатах поиска выберите пакет [**Newtonsoft.Json**](https://www.nuget.org/packages/Newtonsoft.Json), а затем нажмите кнопку **Установить** для установки последней стабильной версии.
 
 1. Примите все соглашения и лицензии для запуска установки.
 
@@ -56,7 +49,9 @@ ms.locfileid: "75468848"
 Добавим код, который выступает в качестве основы для нашего проекта.
 
 [!code-csharp[](~/samples-cognitive-services-speech-sdk/quickstart/csharp/dotnet/from-blob/program.cs?range=6-43,138,277)]
-(Замените значения `YourSubscriptionKey`, `YourServiceRegion` и `YourFileUrl` собственными.)
+
+[!INCLUDE [placeholder-replacements](../placeholder-replacement.md)]
+
 ## <a name="json-wrappers"></a>Программы-оболочки JSON
 
 Так как REST API принимает запросы и возвращает результаты в формате JSON, с ними можно взаимодействовать только с помощью строк, но это не рекомендуется.

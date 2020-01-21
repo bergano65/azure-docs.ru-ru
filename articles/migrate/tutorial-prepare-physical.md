@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 11/19/2019
 ms.author: raynew
 ms.custom: mvc
-ms.openlocfilehash: 363549662a17a87513c8426347909142ee405cae
-ms.sourcegitcommit: 8e31a82c6da2ee8dafa58ea58ca4a7dd3ceb6132
+ms.openlocfilehash: f81f47349610cd72489df305ccf544c8346cb9b3
+ms.sourcegitcommit: dbcc4569fde1bebb9df0a3ab6d4d3ff7f806d486
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74196400"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76028668"
 ---
 # <a name="prepare-for-assessment-and-migration-of-physical-servers-to-azure"></a>Подготовка физических компьютеров к оценке и миграции в Azure
 
@@ -21,7 +21,7 @@ ms.locfileid: "74196400"
 
 Служба [Миграция Azure](migrate-overview.md) объединяет в себе инструменты, которые используются для поиска, оценки и переноса приложений, инфраструктуры и рабочих нагрузок в Microsoft Azure. Она включает в себя инструменты Миграции Azure и предложения независимых поставщиков программного обеспечения. 
 
-Это руководство является первым в цикле. В нем показано, как оценивать физические компьютеры с помощью Миграции Azure. Из этого руководства вы узнаете, как выполнять следующие задачи:
+Это руководство является первым в цикле. В нем показано, как оценивать физические компьютеры с помощью Миграции Azure. В этом руководстве описано следующее.
 
 > [!div class="checklist"]
 > * Подготовьте Azure. Настройка разрешений для своей учетной записи Azure и ресурсов для работы с Миграцией Azure.
@@ -95,18 +95,18 @@ ms.locfileid: "74196400"
 
 ### <a name="verify-physical-server-settings"></a>Проверка параметров физических серверов
 
-1. Проверьте [требования к физическим серверам](migrate-support-matrix-physical.md#assessment-physical-server-requirements) для оценки серверов.
-2. Убедитесь, что на физических серверах открыты [необходимые порты](migrate-support-matrix-physical.md#assessment-port-requirements).
+1. Проверьте [требования к физическим серверам](migrate-support-matrix-physical.md#physical-server-requirements) для оценки серверов.
+2. Убедитесь, что на физических серверах открыты [необходимые порты](migrate-support-matrix-physical.md#port-access).
 
 
 ### <a name="verify-appliance-settings"></a>Проверка настроек устройства
 
 Перед настройкой устройства Миграции Azure и началом оценки из следующего руководства вам следует подготовиться к развертыванию устройства.
 
-1. [Проверьте](migrate-support-matrix-physical.md#assessment-appliance-requirements) требования к устройству.
-2. [Просмотрите](migrate-support-matrix-physical.md#assessment-appliance-url-access) URL-адреса Azure, к которым устройству потребуется доступ.
-3. Просмотрите данные, собранные устройством во время обнаружения и оценки.
-4. [Обратите внимание](migrate-support-matrix-physical.md#assessment-port-requirements) на требования доступа к порту для устройства.
+1. [Проверьте](migrate-appliance.md#appliance---physical) требования к устройствам для физических серверов.
+2. [Просмотрите](migrate-appliance.md#url-access) URL-адреса Azure, к которым устройству потребуется доступ.
+3. [Просмотрите данные](migrate-appliance.md#collected-data---vmware), которые прибор будет собирать во время обнаружения и оценки.
+4. [Возьмите во внимание](migrate-support-matrix-physical.md#port-access) требования для доступа к порту для оценки физического сервера.
 
 
 ### <a name="set-up-an-account-for-physical-server-discovery"></a>Настройка учетной записи для обнаружения физических серверов
@@ -116,8 +116,17 @@ ms.locfileid: "74196400"
 - **Windows:** Настройте локальную учетную запись пользователя на всех серверах Windows, которые необходимо обнаружить. Эта учетная запись должна быть добавлена в следующие группы: "Пользователи удаленного управления", "Пользователи системного монитора" и "Пользователи журналов производительности".
 - **Linux:** Вам потребуются права суперпользователя на серверах Linux, которые вы хотите обнаружить.
 
+## <a name="prepare-for-physical-server-migration"></a>Подготовка к переносу физических серверов
 
-## <a name="next-steps"></a>Дополнительная информация
+Ознакомьтесь с требованиями к миграции физических серверов.
+
+- [Проверьте](migrate-support-matrix-physical-migration.md#physical-server-requirements) требования для миграции физического сервера.
+- Миграция Azure Миграция сервера использует сервер репликации для миграции физического сервера.
+    - [Проверьте](migrate-replication-appliance.md#appliance-requirements) требования к развертыванию для устройства репликации и [параметры](migrate-replication-appliance.md#mysql-installation) для установки MySQL на устройстве.
+    - Проверьте [URL-адрес](migrate-replication-appliance.md#url-access) и [порт] (migrate-replication-appliance.md#port-access) для устройства репликации.
+
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 Изучив это руководство, вы:
 

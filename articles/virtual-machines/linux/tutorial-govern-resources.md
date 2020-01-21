@@ -1,6 +1,6 @@
 ---
-title: Учебник. Управление виртуальными машинами Azure с помощью Azure CLI
-description: Из этого руководства вы узнаете, как управлять виртуальными машинами Azure с применением RBAC, политик, блокировок и тегов с помощью Azure CLI
+title: Руководство. Управление виртуальными машинами с помощью CLI
+description: Из этого руководства вы узнаете, как управлять виртуальными машинами Azure с применением RBAC, политик, блокировок и тегов с помощью Azure CLI.
 services: virtual-machines-linux
 documentationcenter: virtual-machines
 author: tfitzmac
@@ -13,14 +13,14 @@ ms.topic: tutorial
 ms.date: 09/30/2019
 ms.author: tomfitz
 ms.custom: mvc
-ms.openlocfilehash: e9475f4226a65ad06d45170e0ab802c6cdb79d8f
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.openlocfilehash: b9595c6ce464cf9e4ab0baff9ef842e76f3d18a3
+ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74034538"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75970142"
 ---
-# <a name="tutorial-learn-about-linux-virtual-machine-governance-with-azure-cli"></a>Руководство по Управление виртуальными машинами Linux с помощью Azure CLI
+# <a name="tutorial-learn-about-linux-virtual-machine-management-with-azure-cli"></a>Руководство. Управление виртуальными машинами Linux с помощью Azure CLI
 
 [!INCLUDE [Resource Manager governance introduction](../../../includes/resource-manager-governance-intro.md)]
 
@@ -140,7 +140,7 @@ az vm create --resource-group myResourceGroup --name myVM --image UbuntuLTS --ge
 
 ## <a name="lock-resources"></a>Блокировка ресурсов
 
-[Блокировки ресурсов](../../azure-resource-manager/resource-group-lock-resources.md) не позволяют пользователям в организации случайно удалить или изменить критически важные ресурсы. В отличие от управления доступом на основе ролей, блокировки ресурсов применяют ограничение для всех пользователей и ролей. Можно установить уровень блокировки *CanNotDelete* или *ReadOnly*.
+[Блокировки ресурсов](../../azure-resource-manager/management/lock-resources.md) не позволяют пользователям в организации случайно удалить или изменить критически важные ресурсы. В отличие от управления доступом на основе ролей, блокировки ресурсов применяют ограничение для всех пользователей и ролей. Можно установить уровень блокировки *CanNotDelete* или *ReadOnly*.
 
 Для создания или удаления блокировок управления необходим доступ к действиям `Microsoft.Authorization/locks/*`. Из встроенных ролей эти действия предоставляются только **владельцу** и **администратору доступа пользователей**.
 
@@ -172,7 +172,7 @@ az group delete --name myResourceGroup
 
 ## <a name="tag-resources"></a>Добавление тегов к ресурсам
 
-К ресурсам Azure можно применять [теги](../../azure-resource-manager/resource-group-using-tags.md), чтобы логически упорядочивать их по категориям. Каждый тег состоит из имени и значения. Например, имя Environment и значение Production можно применить ко всем ресурсам в рабочей среде.
+К ресурсам Azure можно применять [теги](../../azure-resource-manager/management/tag-resources.md), чтобы логически упорядочивать их по категориям. Каждый тег состоит из имени и значения. Например, имя Environment и значение Production можно применить ко всем ресурсам в рабочей среде.
 
 [!INCLUDE [Resource Manager governance tags CLI](../../../includes/resource-manager-governance-tags-cli.md)]
 
@@ -226,9 +226,9 @@ az group delete --name myResourceGroup
 ```
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-В рамках этого руководства вы создали пользовательский образ виртуальной машины. Вы научились выполнять следующие задачи:
+В рамках этого руководства вы создали пользовательский образ виртуальной машины. Вы ознакомились с выполнением следующих задач:
 
 > [!div class="checklist"]
 > * назначение пользователей для роли;

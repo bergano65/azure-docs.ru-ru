@@ -7,20 +7,23 @@ ms.date: 09/06/2019
 ms.service: storage
 ms.subservice: common
 ms.topic: sample
-ms.openlocfilehash: 3fc18646270bbec3836845bcf317afc2c1d3a6df
-ms.sourcegitcommit: 7f6d986a60eff2c170172bd8bcb834302bb41f71
+ms.openlocfilehash: 7f694ee51989023a3e7a72f40700edcbb6a97bae
+ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71351164"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75747989"
 ---
 # <a name="azure-storage-samples-using-python"></a>Примеры для работы со службой хранилища Azure с помощью Python
 
 В таблицах ниже приведен обзор репозитория примеров и сценарии, описанные в каждом примере. Щелкните ссылки для просмотра соответствующего примера кода на сайте GitHub.
 
-## <a name="blob-samples"></a>Примеры больших двоичных объектов
+> [!NOTE]
+> В этих примерах используется библиотека Python версии 2.1 службы хранилища Azure. Сведения о коде версии 12 см. в разделе [примеры](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/storage/azure-storage-blob/samples) в репозитории GitHub.
 
-| **Сценарий** | **Пример кода** |
+## <a name="blob-samples-v21"></a>Примеры больших двоичных объектов (версия 2.1)
+
+| **Сценарий** | **Образец кода** |
 |--------------|-----------------|
 | Добавление больших двоичных объектов | [Начало работы со службой BLOB-объектов Azure в Python](https://github.com/Azure-Samples/storage-blob-python-getting-started/blob/master/blob_basic_samples.py#L166) |
 | Блочный BLOB-объект | [Начало работы со службой BLOB-объектов Azure в Python](https://github.com/Azure-Samples/storage-blob-python-getting-started/blob/master/blob_basic_samples.py#L77) |
@@ -39,9 +42,9 @@ ms.locfileid: "71351164"
 | Свойства службы | [Начало работы со службой BLOB-объектов Azure в Python](https://github.com/Azure-Samples/storage-blob-python-getting-started/blob/master/blob_advanced_samples.py#L540) |
 | Создание моментального снимка большого двоичного объекта | [Начало работы со службой BLOB-объектов Azure в Python](https://github.com/Azure-Samples/storage-blob-python-getting-started/blob/master/blob_basic_samples.py#L214) |
 
-## <a name="file-samples"></a>Примеры файлов
+## <a name="file-samples-v21"></a>Примеры файлов (версия 2.1)
 
-| **Сценарий** | **Пример кода** |
+| **Сценарий** | **Образец кода** |
 |--------------|-----------------|
 | Создание общих папок, каталогов и файлов | [Начало работы со службой файлов Azure в Python](https://github.com/Azure-Samples/storage-file-python-getting-started/blob/master/file_basic_samples.py#L71) |
 | Удаление общих папок, каталогов и файлов | [Начало работы со службой файлов Azure в Python](https://github.com/Azure-Samples/storage-file-python-getting-started/blob/master/file_basic_samples.py#L170) |
@@ -53,9 +56,9 @@ ms.locfileid: "71351164"
 | Список общих папок | [Начало работы со службой файлов Azure в Python](https://github.com/Azure-Samples/storage-file-python-getting-started/blob/master/file_advanced_samples.py#L82) |
 | Статистика, метаданные и свойства общей папки | [Начало работы со службой файлов Azure в Python](https://github.com/Azure-Samples/storage-file-python-getting-started/blob/master/file_advanced_samples.py#L144) |
 
-## <a name="queue-samples"></a>Примеры очередей
+## <a name="queue-samples-v21"></a>Примеры очередей (версия 2.1)
 
-| **Сценарий** | **Пример кода** |
+| **Сценарий** | **Образец кода** |
 |--------------|-----------------|
 | Добавление сообщения | [Начало работы со службой очередей Azure в Python](https://github.com/Azure-Samples/storage-queue-python-getting-started/blob/master/queue_basic_samples.py#L94) |
 | Шифрование на стороне клиента | [Управление ключами учетной записи хранения в Azure Key Vault с помощью Python](https://github.com/Azure-Samples/key-vault-python-storage-accounts) |
@@ -66,9 +69,9 @@ ms.locfileid: "71351164"
 | Свойства службы очередей | [Начало работы со службой очередей Azure в Python](https://github.com/Azure-Samples/storage-queue-python-getting-started/blob/master/queue_advanced_samples.py#L128) |
 | Сообщение об обновлении | [Начало работы со службой очередей Azure в Python](https://github.com/Azure-Samples/storage-queue-python-getting-started/blob/master/queue_basic_samples.py#L120) |
 
-## <a name="table-samples"></a>Примеры таблиц
+## <a name="table-samples-v21"></a>Примеры таблиц (версия 2.1)
 
-| **Сценарий** | **Пример кода** |
+| **Сценарий** | **Образец кода** |
 |--------------|-----------------|
 | Создание таблицы | [Начало работы со службой таблиц Azure в Python](https://github.com/Azure-Samples/storage-table-python-getting-started/blob/master/table_basic_samples.py#L46) |
 | Удаление сущности или таблицы | [Начало работы со службой таблиц Azure в Python](https://github.com/Azure-Samples/storage-table-python-getting-started/blob/master/table_basic_samples.py#L79) |
@@ -93,7 +96,7 @@ ms.locfileid: "71351164"
 * [Начало работы со службой таблиц Azure в Python](../../cosmos-db/table-storage-how-to-use-python.md)
 * [Начало работы со службой файлов Azure в Python](../files/storage-python-how-to-use-file-storage.md)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о примерах для других языков см. здесь:
 

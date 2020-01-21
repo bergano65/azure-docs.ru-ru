@@ -8,12 +8,12 @@ ms.topic: overview
 ms.date: 09/05/2019
 ms.author: tamram
 ms.subservice: blobs
-ms.openlocfilehash: d4fae87d999bd0f6b0b388613098a17c181dae0c
-ms.sourcegitcommit: 88ae4396fec7ea56011f896a7c7c79af867c90a1
+ms.openlocfilehash: 78440b8150a0992bed2e2a3e597fdac8e7a1c7b0
+ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70392743"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75749729"
 ---
 # <a name="latency-in-blob-storage"></a>Задержка в хранилище BLOB-объектов
 
@@ -65,7 +65,7 @@ ms.locfileid: "70392743"
 
 Чтобы оценить задержку, сначала установите базовые метрики для своего сценария. Базовые метрики обеспечивают ожидаемую сквозную задержку и задержку сервера в контексте среды приложения в зависимости от профиля рабочей нагрузки, параметров конфигурации приложения, ресурсов клиента, сетевого канала и других факторов. С помощью базовых метрик можно легко определить ненормальные и нормальные условия. Базовые метрики также позволяют вам наблюдать влияние измененных параметров, таких как конфигурация приложения или размеры виртуальной машины.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-- [Azure Storage scalability and performance targets for storage accounts](../common/storage-scalability-targets.md) (Целевые показатели масштабируемости и производительности службы хранилища Azure для учетных записей хранения)
-- [Microsoft Azure Storage performance and scalability checklist](../common/storage-performance-checklist.md) (Контрольный список масштабируемости и производительности службы хранилища Azure)
+- [Целевые показатели масштабируемости и производительности для хранилища BLOB-объектов](scalability-targets.md)
+- [Контрольный список для обеспечения масштабируемости и производительности для Хранилища таблиц](storage-performance-checklist.md)

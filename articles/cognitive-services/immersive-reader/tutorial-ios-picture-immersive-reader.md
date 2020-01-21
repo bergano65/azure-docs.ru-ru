@@ -1,5 +1,5 @@
 ---
-title: Руководство по Созданию приложения для iOS, которое создает фотографию и запускает ее в Иммерсивном средстве чтения (Swift)
+title: Руководство. Созданию приложения для iOS, которое создает фотографию и запускает ее в Иммерсивном средстве чтения (Swift)
 titleSuffix: Azure Cognitive Services
 description: В этом руководстве вы создадите приложение для iOS с нуля и добавите изображение в функциональность Иммерсивного средства чтения.
 services: cognitive-services
@@ -9,14 +9,14 @@ ms.subservice: immersive-reader
 ms.topic: tutorial
 ms.date: 08/01/2019
 ms.author: metan
-ms.openlocfilehash: bdaee97c8c5d7e19076847c5f1f7c07c528c1747
-ms.sourcegitcommit: d3dced0ff3ba8e78d003060d9dafb56763184d69
+ms.openlocfilehash: 48e74f7dd6fa6f2c7fafe10797a301b3d4cc7f1d
+ms.sourcegitcommit: 05cdbb71b621c4dcc2ae2d92ca8c20f216ec9bc4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69899377"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76045240"
 ---
-# <a name="tutorial-create-an-ios-app-that-launches-the-immersive-reader-with-content-from-a-photo-swift"></a>Руководство по Созданию приложения для iOS, которое запускает иммерсивное средство чтения с содержимым из фотографии (Swift)
+# <a name="tutorial-create-an-ios-app-that-launches-the-immersive-reader-with-content-from-a-photo-swift"></a>Руководство. Созданию приложения для iOS, которое запускает иммерсивное средство чтения с содержимым из фотографии (Swift)
 
 [Иммерсивное средство чтения](https://www.onenote.com/learningtools) — это включительно разработанное решение, в котором реализованы проверенные методы, улучшающие понимание при чтении.
 
@@ -26,24 +26,24 @@ ms.locfileid: "69899377"
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * [Xcode](https://apps.apple.com/us/app/xcode/id497799835?mt=12)
-* Ресурс "Иммерсивное средство чтения", настроенный для проверки подлинности Azure Active Directory (Azure AD). Инструкции по настройке см. [здесь](./azure-active-directory-authentication.md). Некоторые из этих созданных значений потребуются вам при настройке свойств примера проекта. Сохраните результаты своего сеанса в текстовом файле для использования в будущем.
+* Ресурс "Иммерсивное средство чтения", настроенный для проверки подлинности Azure Active Directory. Инструкции по настройке см. [здесь](./how-to-create-immersive-reader.md). Некоторые из этих созданных значений потребуются вам при настройке свойств примера проекта. Сохраните результаты своего сеанса в текстовом файле для использования в будущем.
 * Для использования этого примера требуется подписка Azure на службу Cognitive Service "Компьютерное зрение". [Создайте ресурс "Компьютерное зрение" Cognitive Service на портале Azure](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesComputerVision).
 
 ## <a name="create-an-xcode-project"></a>Создание проекта Xcode
 
 Создайте проект в Xcode.
 
-![Новый проект](./media/ios/xcode-create-project.png)
+![Создать проект](./media/ios/xcode-create-project.png)
 
 Выберите **Приложение одного представления**.
 
 ![Новое приложение одного представления](./media/ios/xcode-single-view-app.png)
 
 ## <a name="get-the-sdk-cocoapod"></a>Получение пакета SDK CocoaPod
-Самый простой способ использовать пакет SDK для Иммерсивного средства чтения — через CocoaPods. Установка с помощью Cocoapods:
+Самый простой способ использовать пакет SDK для Иммерсивного средства чтения — через CocoaPods. Чтобы установить его с помощью Cocoapods, выполните следующее.
 1. [Установка CocoaPods](http://guides.cocoapods.org/using/getting-started.html) по инструкциям из руководства по началу работы.
 2. Создайте Podfile, запустив `pod init` в корневом каталоге проекта Xcode.
 3.  Добавьте CocoaPod в Podfile, добавив `pod 'immersive-reader-sdk', :path => 'https://github.com/microsoft/immersive-reader-sdk/tree/master/iOS/immersive-reader-sdk'`. Ваш Podfile должен выглядеть следующим образом, при этом имя вашего целевого объекта заменяется рисунком "picture-to-immersive-reader-swift":
@@ -73,19 +73,13 @@ Subdomain    => Immersive Reader resource subdomain (resource 'Name' if the reso
 
 В главной папке проекта, которая содержит файл ViewController.swift, создайте файл для класса Swift с именем Constants.swift. Замените этот класс следующим кодом, добавив в него нужные реальные значения. Сохраните этот файл как локальный, существующий только на вашем компьютере, и убедитесь, что этот файл не передан в систему управления версиями, так как он содержит секреты, которые не следует публиковать. Мы рекомендуем не сохранять секреты в коде приложения. Вместо этого лучше использовать внутреннюю службу для получения токена, что позволяет хранить секреты вне приложения и вне устройства. Конечная точка внутреннего-API должна быть защищена какой-либо формой аутентификации (например, [OAuth](https://oauth.net/2/)), чтобы предотвратить получение неавторизованными пользователями токенов для использования в службе "Иммерсивное средство чтения" и выставлении счетов. Эти действия не входят в данное руководство.
 
-[!code-swift[Constants](~/ImmersiveReaderSdk/iOS/samples/picture-to-immersive-reader-swift/picture-to-immersive-reader-swift/Constants.swift)]
-
 ## <a name="set-up-the-app-to-run-without-a-storyboard"></a>Настройка приложения для запуска без раскадровки
 
 Откройте AppDelegate.swift и замените его содержимое следующим кодом.
 
-[!code-swift[AppDelegate](~/ImmersiveReaderSdk/iOS/samples/picture-to-immersive-reader-swift/picture-to-immersive-reader-swift/AppDelegate.swift)]
-
 ## <a name="add-functionality-for-taking-and-uploading-photos"></a>Добавление функций для создания и отправки фотографий
 
 Переименуйте ViewController.swift в PictureLaunchViewController.swift и замените файл следующим кодом.
-
-[!code-swift[PictureLaunchViewController](~/ImmersiveReaderSdk/iOS/samples/picture-to-immersive-reader-swift/picture-to-immersive-reader-swift/PictureLaunchViewController.swift)]
 
 ## <a name="build-and-run-the-app"></a>Создание и запуск приложения
 
@@ -103,6 +97,6 @@ Subdomain    => Immersive Reader resource subdomain (resource 'Name' if the reso
 
 ![Иммерсивное средство чтения](./media/ios/picture-to-immersive-reader-ipad.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-* Изучите раздел о[пакете SDK Иммерсивного средства чтения для iOS](https://github.com/microsoft/immersive-reader-sdk/tree/master/iOS) и [Справочник о пакете SDK Иммерсивного средства чтения для iOS](./ios-reference.md)
+* Ознакомьтесь со справочной документацией по [пакету SDK для иммерсивного средства чтения](./reference.md).

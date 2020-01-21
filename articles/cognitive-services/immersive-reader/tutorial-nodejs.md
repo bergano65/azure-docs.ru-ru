@@ -1,5 +1,5 @@
 ---
-title: Руководство по Запуск Иммерсивного средства чтения с помощью Node.js
+title: Руководство. Запуск Иммерсивного средства чтения с помощью Node.js
 titleSuffix: Azure Cognitive Services
 description: В этом учебнике описано, как создать приложение Node.js, которое запускает иммерсивное средство чтения.
 services: cognitive-services
@@ -10,30 +10,30 @@ ms.subservice: immersive-reader
 ms.topic: tutorial
 ms.date: 06/20/2019
 ms.author: metan
-ms.openlocfilehash: 2a07e392170fb9e6993f4c560a4896a468d90820
-ms.sourcegitcommit: e1b6a40a9c9341b33df384aa607ae359e4ab0f53
+ms.openlocfilehash: 37453e1fdd8fdcfc89468731980581652027343c
+ms.sourcegitcommit: 49e14e0d19a18b75fd83de6c16ccee2594592355
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71338503"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75945239"
 ---
-# <a name="tutorial-launch-the-immersive-reader-nodejs"></a>Руководство по Запуск Иммерсивного средства чтения (Node.js)
+# <a name="tutorial-launch-the-immersive-reader-nodejs"></a>Руководство. Запуск Иммерсивного средства чтения (Node.js)
 
-В [обзорной статье](./overview.md) вы узнали о том, что представляет собой иммерсивное средство чтения и каким образом в нем реализованы проверенные методы, улучшающие понимание прочитанного для начинающих, тех, кто изучает язык, и учащихся с особыми потребностями. В этом учебнике описано, как создать веб-приложение Node.js, которое запускает иммерсивное средство чтения. Из этого руководства вы узнаете, как выполнять следующие задачи:
+В [обзорной статье](./overview.md) вы узнали о том, что представляет собой иммерсивное средство чтения и каким образом в нем реализованы проверенные методы, улучшающие понимание прочитанного для начинающих, тех, кто изучает язык, и учащихся с особыми потребностями. В этом учебнике описано, как создать веб-приложение Node.js, которое запускает иммерсивное средство чтения. В этом руководстве описано следующее.
 
 > [!div class="checklist"]
-> * Создание веб-приложения Node.js с помощью средства Express.
+> * Создание веб-приложения Node.js с помощью средства Express
 > * Получение маркера доступа
-> * Запуск иммерсивного средства чтения с примером содержимого.
-> * Указание языка содержимого.
-> * Указание языка интерфейса иммерсивного средства чтения.
-> * Запуск иммерсивного средства чтения с математическим содержимым.
+> * Запуск иммерсивного средства чтения с примером содержимого
+> * Указание языка содержимого
+> * Указание языка интерфейса иммерсивного средства чтения
+> * Запуск иммерсивного средства чтения с математическим содержимым
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
-* Ресурс "Иммерсивное средство чтения", настроенный для проверки подлинности Azure Active Directory (Azure AD). Инструкции по настройке см. [здесь](./azure-active-directory-authentication.md). Вам потребуются некоторые значения, созданные здесь при настройке свойств среды. Сохраните результаты своего сеанса в текстовом файле для использования в будущем.
+* Ресурс "Иммерсивное средство чтения", настроенный для проверки подлинности Azure Active Directory. Инструкции по настройке см. [здесь](./how-to-create-immersive-reader.md). Вам потребуются некоторые значения, созданные здесь при настройке свойств среды. Сохраните результаты своего сеанса в текстовом файле для использования в будущем.
 * [Node.js](https://nodejs.org/) и [Yarn](https://yarnpkg.com).
 * Интегрированная среда разработки, такая как [Visual Studio Code](https://code.visualstudio.com/).
 
@@ -111,14 +111,14 @@ router.get('/getimmersivereaderlaunchparams', function(req, res) {
                 if (err) {
                     return res.status(500).send('CogSvcs IssueToken error');
                 }
-        
+
                 const token = JSON.parse(tokenResponse).access_token;
                 const subdomain = process.env.SUBDOMAIN;
                 return res.send({token: token, subdomain: subdomain});
         }
   );
 });
- 
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
@@ -149,7 +149,7 @@ module.exports = router;
           p(id='content') The study of Earth's landforms is called physical geography. Landforms can be mountains and valleys. They can also be glaciers, lakes or rivers.
           div(class='immersive-reader-button' data-button-style='iconAndText' data-locale='en-US' onclick='launchImmersiveReader()')
           script.
-        
+
             function getImmersiveReaderLaunchParamsAsync() {
                     return new Promise((resolve, reject) => {
                         $.ajax({
@@ -165,7 +165,7 @@ module.exports = router;
                         });
                     });
             }
-        
+
             async function launchImmersiveReader() {
                     const content = {
                             title: document.getElementById('title').innerText,
@@ -174,11 +174,11 @@ module.exports = router;
                                     lang: 'en'
                             }]
                     };
-            
+
                     const launchParams = await getImmersiveReaderLaunchParamsAsync();
                     const token = launchParams.token;
                     const subdomain = launchParams.subdomain;
-            
+
                     ImmersiveReader.launchAsync(token, subdomain, content);
             }
     ```
@@ -258,7 +258,7 @@ module.exports = router;
 
 2. Перейдите по адресу _http://localhost:3000_ . Запустив иммерсивное средство чтения и прокрутив вниз страницы, вы увидите математическую формулу.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Ознакомьтесь с разделом о [пакете SDK для иммерсивного средства чтения](https://github.com/microsoft/immersive-reader-sdk) и [справочнике по этому пакету](./reference.md).
 * Просмотрите примеры кода на сайте [GitHub](https://github.com/microsoft/immersive-reader-sdk/tree/master/js/samples/advanced-csharp).

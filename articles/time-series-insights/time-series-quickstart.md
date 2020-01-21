@@ -10,12 +10,12 @@ ms.topic: quickstart
 ms.workload: big-data
 ms.custom: mvc seodec18
 ms.date: 01/06/2020
-ms.openlocfilehash: 21e9884ab4559b510b13691ac5cafccb753622d6
-ms.sourcegitcommit: 2f8ff235b1456ccfd527e07d55149e0c0f0647cc
+ms.openlocfilehash: a905054b1b2a04fa2b7865d2c1065ccee37cffc0
+ms.sourcegitcommit: 12a26f6682bfd1e264268b5d866547358728cd9a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75690804"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75860436"
 ---
 # <a name="quickstart-explore-azure-time-series-insights"></a>Краткое руководство. Знакомство со службой "Аналитика временных рядов Azure"
 
@@ -74,7 +74,7 @@ ms.locfileid: "75690804"
 
    [![Добавление условия](media/quickstart/quickstart-add-a-term.png)](media/quickstart/quickstart-add-a-term.png#lightbox)
 
-1. Оставьте поле **Фильтровать ряды** пустым, чтобы просмотреть все выбранные условия поиска, или введите условие фильтра в поле **Фильтровать ряды** для импровизированной фильтрации рядов.
+1. Оставьте поле **Фильтровать ряды** пустым, чтобы отображались все выбранные условия поиска, или введите условие фильтра в поле **Фильтровать ряды** для импровизированной фильтрации рядов.
 
    [![Фильтр рядов](media/quickstart/quickstart-filter-series.png)](media/quickstart/quickstart-filter-series.png#lightbox)
 

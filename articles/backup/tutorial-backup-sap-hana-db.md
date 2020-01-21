@@ -3,14 +3,14 @@ title: Учебник по резервному копированию баз д
 description: Из этого учебника вы узнаете, как выполнять резервное копирование баз данных SAP HANA, запущенных на виртуальной машине Azure, в хранилище Служб восстановления для Azure Backup.
 ms.topic: tutorial
 ms.date: 11/12/2019
-ms.openlocfilehash: a622370fca3144aeb6a5d7c071c227b3c21cf135
-ms.sourcegitcommit: e50a39eb97a0b52ce35fd7b1cf16c7a9091d5a2a
+ms.openlocfilehash: bb84f6b362adf7c190f3300e6e3f1bc572153151
+ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74287191"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75753989"
 ---
-# <a name="tutorial-back-up-sap-hana-databases-in-an-azure-vm"></a>Руководство по резервному копированию баз данных SAP HANA на виртуальной машине Azure
+# <a name="tutorial-back-up-sap-hana-databases-in-an-azure-vm"></a>Руководство. резервному копированию баз данных SAP HANA на виртуальной машине Azure
 
 В этом учебнике показано, как выполнять резервное копирование баз данных SAP HANA, запущенных на виртуальных машинах Azure, в хранилище Служб восстановления для Azure Backup. Из этой статьи вы узнаете о следующем.
 
@@ -34,7 +34,7 @@ ms.locfileid: "74287191"
     Register-AzProviderFeature -FeatureName "HanaBackup" –ProviderNamespace Microsoft.RecoveryServices
     ```
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Перед настройкой резервных копий убедитесь обязательно сделайте следующее:
 
@@ -55,11 +55,60 @@ sudo zypper install unixODBC
 
 ## <a name="set-up-network-connectivity"></a>Настройка сетевого подключения
 
-Для всех операций виртуальной машине SAP HANA требуется подключение к общедоступным IP-адресам Azure. Операции виртуальной машины (обнаружение базы данных, настройка резервного копирования, запланированное создание резервных копий, восстановление точек восстановления и т. д.) не выполняются без подключения. Установите подключение, предоставив доступ к диапазонам IP-адресов центра обработки данных Azure:
+Для всех операций виртуальной машине SAP HANA требуется подключение к общедоступным IP-адресам Azure. Операции виртуальной машины (обнаружение базы данных, настройка резервного копирования, запланированное создание резервных копий, восстановление точек восстановления и т. д.) не выполняются без подключения к общедоступным IP-адресам Azure.
 
-* Вы можете скачать [диапазоны IP-адресов](https://www.microsoft.com/download/details.aspx?id=41653) для центров обработки данных Azure, а затем разрешить доступ к этим IP-адресам.
-* Если вы используете группы безопасности сети (NSG), для разрешения всех общедоступных IP-адресов Azure можно использовать [тег службы](https://docs.microsoft.com/azure/virtual-network/security-overview#service-tags) AzureCloud. Изменить правила NSG можно с помощью командлета [Set-AzureNetworkSecurityRule](https://docs.microsoft.com/powershell/module/servicemanagement/azure/set-azurenetworksecurityrule?view=azuresmps-4.0.0).
-* Порт 443 должен быть добавлен в список разрешений, так как транспортировка осуществляется по протоколу HTTPS.
+Установите подключение, используя один из следующих вариантов.
+
+### <a name="allow-the-azure-datacenter-ip-ranges"></a>Разрешение диапазонов IP-адресов центра обработки данных Azure
+
+Этот параметр разрешает [диапазоны IP-адресов](https://www.microsoft.com/download/details.aspx?id=41653) в скачанном файле. Чтобы получить доступ к группе безопасности сети, используйте командлет "Set-AzureNetworkSecurityRule". Если список надежных получателей содержит только IP-адреса, относящиеся к региону, вам также нужно обновить список безопасных получателей тегом службы Azure Active Directory (Azure AD), чтобы включить проверку подлинности.
+
+### <a name="allow-access-using-nsg-tags"></a>Разрешение доступа с помощью тегов NSG
+
+При использовании NSG для ограничения возможностей подключения следует использовать тег службы AzureBackup, чтобы разрешить исходящий доступ к Azure Backup. Кроме того, вы также можете разрешить подключение для проверки подлинности и передачу данных, используя [правила](https://docs.microsoft.com/azure/virtual-network/security-overview#service-tags) для Azure AD и службы хранилища Azure. Это можно сделать на портале Azure или с помощью PowerShell.
+
+Чтобы создать правило с помощью портала, выполните следующие действия.
+
+  1. В разделе **Все службы** перейдите к **группам сетевой безопасности** и выберите группу сетевой безопасности.
+  2. Выберите **Правила безопасности для исходящего трафика** в разделе **Параметры**.
+  3. Выберите **Добавить**. Введите все необходимые сведения для создания нового правила, как описано в разделе [параметры правила безопасности](https://docs.microsoft.com/azure/virtual-network/manage-network-security-group#security-rule-settings). Убедитесь, что параметр **Назначение** имеет значение **Тег службы**, а **Тег целевой службы** имеет значение **AzureBackup**.
+  4. Щелкните **Добавить**, чтобы сохранить только что созданное исходящее правило безопасности.
+
+Чтобы создать правило с помощью PowerShell, выполните следующие действия.
+
+ 1. Добавление учетных данных учетной записи Azure и обновление национальных облаков<br/>
+      `Add-AzureRmAccount`<br/>
+
+ 2. Выберите подписку NSG<br/>
+      `Select-AzureRmSubscription "<Subscription Id>"`
+
+ 3. Выберите NSG<br/>
+    `$nsg = Get-AzureRmNetworkSecurityGroup -Name "<NSG name>" -ResourceGroupName "<NSG resource group name>"`
+
+ 4. Добавление разрешающего правила исходящего трафика для тега службы Azure Backup<br/>
+    `Add-AzureRmNetworkSecurityRuleConfig -NetworkSecurityGroup $nsg -Name "AzureBackupAllowOutbound" -Access Allow -Protocol * -Direction Outbound -Priority <priority> -SourceAddressPrefix * -SourcePortRange * -DestinationAddressPrefix "AzureBackup" -DestinationPortRange 443 -Description "Allow outbound traffic to Azure Backup service"`
+
+ 5. Добавление разрешающего правила исходящего трафика для тега Службы хранилища<br/>
+    `Add-AzureRmNetworkSecurityRuleConfig -NetworkSecurityGroup $nsg -Name "StorageAllowOutbound" -Access Allow -Protocol * -Direction Outbound -Priority <priority> -SourceAddressPrefix * -SourcePortRange * -DestinationAddressPrefix "Storage" -DestinationPortRange 443 -Description "Allow outbound traffic to Azure Backup service"`
+
+ 6. Добавление разрешающего правила исходящего трафика для тега AzureActiveDirectory<br/>
+    `Add-AzureRmNetworkSecurityRuleConfig -NetworkSecurityGroup $nsg -Name "AzureActiveDirectoryAllowOutbound" -Access Allow -Protocol * -Direction Outbound -Priority <priority> -SourceAddressPrefix * -SourcePortRange * -DestinationAddressPrefix "AzureActiveDirectory" -DestinationPortRange 443 -Description "Allow outbound traffic to AzureActiveDirectory service"`
+
+ 7. Сохраните файл NSG<br/>
+    `Set-AzureRmNetworkSecurityGroup -NetworkSecurityGroup $nsg`
+
+**Разрешите доступ с помощью тегов брандмауэра Azure**. Если вы используете брандмауэр Azure, создайте правило приложения с помощью[тега AzureBackup FQDN](https://docs.microsoft.com/azure/firewall/fqdn-tags). Это разрешает исходящий доступ к службам Azure Backup.
+
+**Развертывание прокси-сервера HTTP для маршрутизации трафика**. Когда создается резервная копия базы данных SAP HANA на виртуальной машине Azure, расширение резервного копирования на виртуальной машине использует API HTTPS для отправки команд управления к Azure Backup, а данных — в службу хранилища Azure. Расширение резервного копирования также использует Azure AD для аутентификации. Направьте трафик расширения резервного копирования для этих трех служб через прокси-сервер HTTP. Расширения — единственный компонент, который настроен для обмена данными с общедоступным Интернетом.
+
+Варианты подключения включают следующие преимущества и недостатки.
+
+**Параметр** | **Преимущества** | **Недостатки**
+--- | --- | ---
+Разрешить диапазоны IP-адресов | Нет дополнительных затрат | Сложность управления, так как задействованные диапазоны IP-адресов со временем меняются <br/><br/> Доступ ко всей службе Azure, а не только к службе хранилища Azure
+Использование тегов службы NSG | Упрощенное управление благодаря автоматическому объединению изменений диапазона <br/><br/> Нет дополнительных затрат <br/><br/> | Может использоваться только с NSG <br/><br/> Предоставляет доступ ко всей службе
+Использование тегов полного доменного имени службы "Брандмауэр Azure" | Проще управлять, так как требуемые управляются FQDN автоматически | Можно использовать только с брандмауэром Azure
+Использование прокси-сервера HTTP | Разрешено точное управление разрешенными URL-адресами хранилища в прокси-сервере <br/><br/> Единая точка доступа к виртуальным машинам через Интернет <br/><br/> Не подвергается влиянию изменений IP-адресов Azure | Дополнительные затраты для запуска виртуальной машины с программным обеспечением прокси-сервера
 
 ## <a name="setting-up-permissions"></a>Настройка разрешений
 
@@ -107,7 +156,7 @@ hdbuserstore list
 
 ![Создание хранилища Служб восстановления](./media/tutorial-backup-sap-hana-db/create-vault.png)
 
-* **Имя.** Имя используется для обнаружения хранилища служб восстановления. Оно должно быть уникальным для подписки Azure. Введите имя, которое содержит от 2 до 50 знаков. Оно должно начинаться с буквы и может содержать только буквы, цифры и дефисы. При работе с этим учебником мы использовали имя **SAPHanaVault**.
+* **Name**: Имя используется для обнаружения хранилища служб восстановления. Оно должно быть уникальным для подписки Azure. Введите имя, которое содержит от 2 до 50 знаков. Оно должно начинаться с буквы и может содержать только буквы, цифры и дефисы. При работе с этим учебником мы использовали имя **SAPHanaVault**.
 * **Подписка**: Выберите подписку, которую нужно использовать. Если вы являетесь участником только одной подписки, будет отображено ее имя. Если неизвестно, какую подписку нужно использовать, оставьте подписку по умолчанию (или предлагаемую подписку). Вариантов будет несколько только в том случае, если рабочая или учебная учетная запись связана с несколькими подписками Azure. Здесь мы использовали подписку на **решение SAP HANA**.
 * **Группа ресурсов.** Используйте имеющуюся группу ресурсов или создайте новую. Здесь мы использовали **SAPHANADemo**.<br>
 Выберите **Использовать существующий**, чтобы просмотреть список доступных групп ресурсов в вашей подписке, а затем выберите ресурс из раскрывающегося списка. Чтобы создать группу ресурсов, щелкните **Создать** и укажите ее имя. Дополнительные сведения о группах ресурсов см. в [обзоре Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview).
@@ -201,7 +250,7 @@ hdbuserstore list
 
 Теперь вы успешно настроили резервные копии для баз данных SAP HANA.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Next Steps
 
 * Узнайте, как [выполнять резервное копирование по запросу в базах данных SAP HANA, запущенных на виртуальных машинах Azure](backup-azure-sap-hana-database.md#run-an-on-demand-backup).
 * Узнайте, как [восстановить базы данных SAP HANA, запущенные на виртуальных машинах Azure](sap-hana-db-restore.md).

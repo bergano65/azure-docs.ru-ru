@@ -12,14 +12,14 @@ ms.workload: infrastructure
 ms.date: 07/31/2018
 ms.author: tarcher
 ms.custom: jenkins
-ms.openlocfilehash: 734b0a516d4a9fe882545dd5cde5a57d8af719cb
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.openlocfilehash: 1265861a872b01d558646ea2adb6cba27fa3ebd4
+ms.sourcegitcommit: 5b073caafebaf80dc1774b66483136ac342f7808
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74034564"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75778419"
 ---
-# <a name="tutorial-deploy-your-app-to-linux-virtual-machines-in-azure-with-using-jenkins-and-azure-devops-services"></a>Руководство по Развертывание приложения на виртуальных машинах Linux в Azure с помощью Jenkins и Azure DevOps Services
+# <a name="tutorial-deploy-your-app-to-linux-virtual-machines-in-azure-with-using-jenkins-and-azure-devops-services"></a>Руководство. Развертывание приложения на виртуальных машинах Linux в Azure с помощью Jenkins и Azure DevOps Services
 
 Непрерывная интеграция (CI) и непрерывное развертывание (CD) представляют собой конвейер, с помощью которого можно выполнить сборку, выпустить и развернуть свой код. Azure DevOps Services предоставляет полнофункциональный набор инструментов для автоматизации CI и CD для развертывания в Azure. Jenkins — это популярный сторонний серверный инструмент CI и CD стороннего поставщика, который также обеспечивает автоматизацию этих процессов. Вы можете использовать Azure DevOps Services и Jenkins вместе, чтобы настроить способ доставки своего облачного приложения или службы.
 
@@ -37,7 +37,7 @@ ms.locfileid: "74034564"
 > * Создайте конвейер выпуска в Azure Pipelines.
 > * Выполнение развертывания вручную и с помощью непрерывной интеграции.
 
-## <a name="before-you-begin"></a>Перед началом работы
+## <a name="before-you-begin"></a>Перед началом
 
 * Вам нужен доступ к серверу Jenkins. Если вы еще не создали сервер Jenkins, см. сведения в статье [Создание сервера Jenkins на виртуальной машине Azure под управлением Linux на портале Azure](https://docs.microsoft.com/azure/jenkins/install-jenkins-solution-template). 
 
@@ -163,7 +163,7 @@ ms.locfileid: "74034564"
 
 1. Щелкните **+ Release** (+ Выпуск) и выберите **Создать выпуск**.
 2. Щелкните созданную сборку в выделенном раскрывающемся списке и выберите **Очередь**.
-3. Перейдите по ссылке на выпуск во всплывающем сообщении. Например:  Создан выпуск **Release-1**.
+3. Перейдите по ссылке на выпуск во всплывающем сообщении. Пример: Создан выпуск **Release-1**.
 4. Откройте вкладку **Журналы**, чтобы просмотреть выходные данные консоли для выпуска.
 5. Откройте в браузере URL-адрес одного из серверов, добавленных в группу развертывания. Например, введите **http://{IP-адрес_вашего_сервера}** .
 6. Перейдите в исходный репозиторий Git и измените содержимое заголовка **h1** в файле app/views/index.jade, заменив его текст.
@@ -174,17 +174,19 @@ ms.locfileid: "74034564"
 
 Если вы столкнулись с ошибками, которые касаются подключаемых модулей Jenkins, сообщите о проблеме конкретного компонента в [JENKS JIRA](https://issues.jenkins-ci.org/).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-В этом руководстве вы автоматизировали развертывание приложения в Azure, настроив Jenkins для сборки и Azure DevOps Services для выпуска. Вы научились выполнять следующие задачи:
+В этом руководстве вы автоматизировали развертывание приложения в Azure, настроив Jenkins для сборки и Azure DevOps Services для выпуска. Вы ознакомились с выполнением следующих задач:
 
 > [!div class="checklist"]
 > * Выполнение сборки приложения в Jenkins.
 > * Настройка Jenkins для интеграции с Azure DevOps Services.
 > * Создание группы развертывания для виртуальных машин Azure.
-> * Создание конвейера выпуска, который настраивает виртуальные машины и развертывает приложение.
+> * Создание конвейера Azure для настройки виртуальных машин и развертывания приложения.
 
-Чтобы узнать, как развернуть стек LAMP (Linux, Apache, MySQL и PHP), перейдите к следующему руководству.
+Дополнительные сведения об использовании Azure Pipelines на этапах сборки выпуска см. [здесь](https://docs.microsoft.com/azure/devops/pipelines/apps/cd/deploy-linuxvm-deploygroups).
+
+Сведения о том, как создать конвейер CI/CD на основе YAML для развертывания на виртуальных машинах, см. в следующем руководстве.
 
 > [!div class="nextstepaction"]
-> [Развертывание стека LAMP](tutorial-lamp-stack.md)
+> [Создание конвейера CI/CD с помощью Azure Pipelines](tutorial-build-deploy-azure-pipelines.md)

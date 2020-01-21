@@ -5,12 +5,12 @@ ms.topic: quickstart
 ms.date: 03/28/2019
 ms.reviewer: astay; kraigb
 ms.custom: seodec18
-ms.openlocfilehash: b8de6df5761baef79310062614f578a92f17b826
-ms.sourcegitcommit: 265f1d6f3f4703daa8d0fc8a85cbd8acf0a17d30
+ms.openlocfilehash: 2570e3753dd93173166c6b563e9add69bed3f862
+ms.sourcegitcommit: f34165bdfd27982bdae836d79b7290831a518f12
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74670480"
+ms.lasthandoff: 01/13/2020
+ms.locfileid: "75922273"
 ---
 # <a name="configure-a-linux-python-app-for-azure-app-service"></a>Настройка приложения Python в Linux для Службы приложений Azure
 
@@ -50,7 +50,7 @@ az webapp config set --resource-group <resource-group-name> --name <app-name> --
 
 ## <a name="container-characteristics"></a>Характеристики контейнера
 
-Приложения Python, развернутые в службе приложений под управлением Linux, выполняются в контейнере Docker, который определен в репозитории GitHub, [Python 3.6](https://github.com/Azure-App-Service/python/tree/master/3.6.6) или [Python 3.7](https://github.com/Azure-App-Service/python/tree/master/3.7.0).
+Приложения Python, развернутые в Службе приложений в Linux, выполняются в контейнере Docker, который определен в [этом репозитории GitHub](https://github.com/Azure-App-Service/python). Конфигурации образов можно найти в каталогах для конкретных версий.
 
 Этот контейнер отличается следующими характеристиками.
 
@@ -171,7 +171,7 @@ if 'X-Forwarded-Proto' in request.headers and request.headers['X-Forwarded-Proto
 - Убедитесь, что ваше приложение структурировано, так как служба приложений ожидает [Djangо](#django-app) или [Flask](#flask-app) или использует [пользовательскую команду запуска](#customize-startup-command).
 - [Получите доступ к потоку журнала](#access-diagnostic-logs).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Руководство. по использованию приложения Python с PostgreSQL](tutorial-python-postgresql-app.md)

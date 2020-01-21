@@ -1,6 +1,6 @@
 ---
-title: Руководство. Создание указателя магазинов с помощью Azure Maps
-description: Руководство. Создание указателя магазинов с помощью Azure Maps.
+title: Руководство. Создание приложения для поиска магазинов с помощью Azure Maps | Microsoft Azure Maps
+description: Из этого руководства вы узнаете, как создать веб-приложение для поиска магазинов с помощью веб-пакета SDK для Microsoft Azure Maps.
 author: walsehgal
 ms.author: v-musehg
 ms.date: 11/12/2019
@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: timlt
 ms.custom: mvc
-ms.openlocfilehash: b5ce78e95d139cf16b6193fedffc563513b39719
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 830641ae1421b799ab8e7d8b47a1c1a6e38419cf
+ms.sourcegitcommit: f9601bbccddfccddb6f577d6febf7b2b12988911
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75408042"
+ms.lasthandoff: 01/12/2020
+ms.locfileid: "75910953"
 ---
 # <a name="tutorial-create-a-store-locator-by-using-azure-maps"></a>Руководство. Создание указателя магазинов с помощью Azure Maps
 
@@ -43,13 +43,13 @@ ms.locfileid: "75408042"
 
 <center>
 
-![Макет указателя магазинов-кафе Contoso Coffee](./media/tutorial-create-store-locator/SimpleStoreLocatorWireframe.png)</center>
+![Макет приложения для поиска кофеен Contoso Coffee](./media/tutorial-create-store-locator/SimpleStoreLocatorWireframe.png)</center>
 
 Чтобы этот указатель магазинов был как можно функциональнее, мы использовали гибкий макет, который адаптируется к ширине экрана пользователя, если она составляет менее 700 пикселей. Благодаря адаптивному макету с указателем магазинов удобно работать на небольшом экране, например на мобильном устройстве. Ниже показан макет для небольшого экрана.  
 
 <center>
 
-![Макет указателя магазинов Contoso Coffee на мобильном устройстве](./media/tutorial-create-store-locator/SimpleStoreLocatorMobileWireframe.png)</center>
+![Макет приложения для поиска кофеен Contoso Coffee на мобильном устройстве](./media/tutorial-create-store-locator/SimpleStoreLocatorMobileWireframe.png)</center>
 
 На макетах представлено довольно простое приложение. В приложении реализованы поле поиска, список ближайших магазинов, карта с определенными метками (символами) и всплывающее окно, в котором отображаются дополнительные сведения, когда пользователь выбирает маркер. Ниже приведено более подробное описание функций, которые мы добавляем в указатель магазинов в рамках этого руководства:
 

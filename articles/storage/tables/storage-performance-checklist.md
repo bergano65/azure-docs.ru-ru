@@ -8,18 +8,18 @@ ms.topic: overview
 ms.date: 10/10/2019
 ms.author: tamram
 ms.subservice: tables
-ms.openlocfilehash: 588f9595dbe04b98cb8d70a33beb5740d812bd7c
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 89581c8ae2fbdbb55a2abfbd527c8fdcf4b65761
+ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75457620"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75749552"
 ---
 # <a name="performance-and-scalability-checklist-for-table-storage"></a>Контрольный список для обеспечения масштабируемости и производительности для Хранилища таблиц
 
 Корпорация Майкрософт создала ряд проверенных методик для разработки высокопроизводительных приложений для работы с Хранилищем таблиц. Этот контрольный список определяет основные методики, которые помогут разработчикам оптимизировать производительность. Учитывайте эти рекомендации при проектировании приложения и на протяжении всего процесса разработки.
 
-Служба хранилища Azure имеет целевые показатели по масштабируемости и производительности, выраженные в объемах, скорости транзакций и пропускной способности. Дополнительные сведения о целевых показателях масштабируемости для службы хранилища Azure см. в [этой статье](../common/storage-scalability-targets.md?toc=%2fazure%2fstorage%2ftables%2ftoc.json).
+Служба хранилища Azure имеет целевые показатели по масштабируемости и производительности, выраженные в объемах, скорости транзакций и пропускной способности. См. дополнительные сведения о целевых показателях масштабируемости [для учетных записей хранения](../common/scalability-targets-standard-account.md?toc=%2fazure%2fstorage%2ftables%2ftoc.json) и [для хранилища очередей](scalability-targets.md) в службе хранилища Azure.
 
 ## <a name="checklist"></a>Контрольный список
 
@@ -289,5 +289,6 @@ ThreadPool.SetMinThreads(100,100); //(Determine the right number for your applic
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Azure Storage scalability and performance targets for storage accounts](../common/storage-scalability-targets.md?toc=%2fazure%2fstorage%2ftables%2ftoc.json) (Целевые показатели масштабируемости и производительности службы хранилища Azure для учетных записей хранения)
+- [Целевые показатели масштабируемости и производительности для хранилища очередей](scalability-targets.md)
+- [Целевые показатели масштабируемости и производительности для учетных записей хранения ценовой категории "Стандартный"](../common/scalability-targets-standard-account.md?toc=%2fazure%2fstorage%2ftables%2ftoc.json)
 - [Коды состояний и ошибок](/rest/api/storageservices/Status-and-Error-Codes2)
