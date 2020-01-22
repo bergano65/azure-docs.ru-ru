@@ -8,12 +8,12 @@ ms.author: abmotley
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: 74d209adf745d1a3c319ef6567b2a7818a5fd514
-ms.sourcegitcommit: 276c1c79b814ecc9d6c1997d92a93d07aed06b84
+ms.openlocfilehash: 9cf3bcc514118c7f8052981c39023d6cac361d22
+ms.sourcegitcommit: a9b1f7d5111cb07e3462973eb607ff1e512bc407
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76152262"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76314731"
 ---
 # <a name="troubleshooting-common-indexer-errors-and-warnings-in-azure-cognitive-search"></a>Устранение распространенных ошибок индексатора и предупреждений в Azure Когнитивный поиск
 
@@ -167,6 +167,11 @@ ms.locfileid: "76152262"
 Во всех этих случаях ознакомьтесь с [поддерживаемыми типами данных](https://docs.microsoft.com/rest/api/searchservice/supported-data-types) и [сопоставлением типов данных для индексаторов](https://docs.microsoft.com/rest/api/searchservice/data-type-map-for-indexers-in-azure-search) , чтобы убедиться в правильности построения схемы индекса и настройке соответствующих [сопоставлений полей индексатора](search-indexer-field-mappings.md). В сообщении об ошибке будут содержаться сведения, которые могут помочь в отслеживании источника несоответствия.
 
 <a name="could-not-process-document-within-indexer-max-run-time"/>
+
+## <a name="error-integrated-change-tracking-policy-cannot-be-used-because-table-has-a-composite-primary-key"></a>Ошибка: невозможно использовать встроенную политику отслеживания изменений, так как таблица имеет составной первичный ключ
+
+Это относится к таблицам SQL, и обычно происходит, когда ключ определен как составной ключ, или, если в таблице определен уникальный кластеризованный индекс (как в индексе SQL, а не в индексе службы поиска Azure). Основная причина заключается в том, что ключевой атрибут изменяется как составной первичный ключ в случае [уникального кластеризованного индекса](https://docs.microsoft.com/sql/relational-databases/indexes/clustered-and-nonclustered-indexes-described?view=sql-server-ver15). В этом случае убедитесь, что таблица SQL не имеет уникального кластеризованного индекса, или что поле ключа сопоставлено с полем, которое гарантированно не имеет повторяющихся значений.
+
 
 ## <a name="error-could-not-process-document-within-indexer-max-run-time"></a>Ошибка: не удалось обработать документ в течение максимального времени выполнения индексатора
 

@@ -9,12 +9,12 @@ ms.date: 12/20/2019
 ms.author: normesta
 ms.reviewer: cbrooks
 ms.subservice: common
-ms.openlocfilehash: 7a0cf3c41929eb6a020a9d4761b08a2a4f2f6caa
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 69983502fb7d099f474fb1c4c084f5d381a173e9
+ms.sourcegitcommit: a9b1f7d5111cb07e3462973eb607ff1e512bc407
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75460400"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76314765"
 ---
 # <a name="end-to-end-troubleshooting-using-azure-storage-metrics-and-logging-azcopy-and-message-analyzer"></a>Комплексный поиск и устранение неполадок с помощью метрик службы хранилища Azure и ведения журнала, AzCopy и анализатора сообщений
 
@@ -143,10 +143,10 @@ ms.locfileid: "75460400"
 
 Хранилища Azure записывает данные журналов сервера в BLOB-объекты, а метрики записываются в таблицы. BLOB-объекты журнала доступны в уже известном контейнере `$logs` для учетной записи хранения. BLOB-объекты журнала именуются иерархически годом, месяцем, днем и часом, так что можно легко найти диапазон времени, который нужно проанализировать. Например, в `storagesample` учетной записи контейнер BLOB-объектов журнала на 02.01.2015 г. с 8:00 до 9:00 часов имеет имя `https://storagesample.blob.core.windows.net/$logs/blob/2015/01/08/0800`. Отдельные BLOB-объекты в этом контейнере называются последовательно, начиная с `000000.log`.
 
-Можно использовать программу командной строки AzCopy для скачивания этих файлов журнала на стороне сервера на локальный компьютер. Например, можно использовать следующую команду для загрузки файлов журналов для больших двоичных объектов операций, выполняемых на 2 января 2015 г., в папку `C:\Temp\Logs\Server`; замените `<storageaccountname>` на имя вашей учетной записи хранения и `<storageaccountkey>` на ключ доступа к учетной записи.
+Можно использовать программу командной строки AzCopy для скачивания этих файлов журнала на стороне сервера на локальный компьютер. Например, с помощью следующей команды можно скачать файлы журналов для операций с BLOB-объектами, которые выполнялись 2 января 2015 в папку `C:\Temp\Logs\Server`; Замените `<storageaccountname>` именем своей учетной записи хранения:
 
 ```azcopy
-AzCopy.exe /Source:http://<storageaccountname>.blob.core.windows.net/$logs /Dest:C:\Temp\Logs\Server /Pattern:"blob/2015/01/02" /SourceKey:<storageaccountkey> /S /V
+azcopy copy 'http://<storageaccountname>.blob.core.windows.net/$logs/blob/2015/01/02' 'C:\Temp\Logs\Server'  --recursive
 ```
 
 AzCopy можно скачать на странице [Загрузки Azure](https://azure.microsoft.com/downloads/). Дополнительные сведения об использовании AzCopy см. в статье [Передача данных с помощью служебной программы командной строки AzCopy](storage-use-azcopy.md).
