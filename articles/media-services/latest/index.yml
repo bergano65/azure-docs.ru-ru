@@ -1,5 +1,5 @@
 ### YamlMime:Landing
-title: Документация по Службам мультимедиа Azure версии 3
+title: Узнайте об облачной платформе Служб мультимедиа Azure версии 3
 summary: Узнайте, как кодировать и упаковывать содержимое, а также выполнять потоковую передачу видео по запросу, широковещательную трансляцию и анализ видео с помощью Служб мультимедиа версии 3. В руководствах, справочниках по API и другой документации показано, как безопасно выполнять потоковую передачу видео- и аудиоматериалов по требованию и осуществлять прямую трансляцию с масштабированием для миллионов пользователей.
 metadata:
   title: Документация по Службам мультимедиа Azure версии 3
@@ -12,12 +12,12 @@ metadata:
   author: Juliako
   ms.author: juliako
   ms.date: 10/07/2019
-  ms.openlocfilehash: b55677aba5f99d4960d51d3a717175d47db026e2
-  ms.sourcegitcommit: 824e3d971490b0272e06f2b8b3fe98bbf7bfcb7f
+  ms.openlocfilehash: 70eab66c3bd2d8536e415c9ac7c62161f3710c0c
+  ms.sourcegitcommit: a9b1f7d5111cb07e3462973eb607ff1e512bc407
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 10/10/2019
-  ms.locfileid: "72244227"
+  ms.lasthandoff: 01/22/2020
+  ms.locfileid: "76314680"
 landingContent:
 - title: Сведения о Службах мультимедиа
   linkLists:
@@ -35,7 +35,7 @@ landingContent:
       url: storage-account-concept.md
     - text: Упаковка
       url: dynamic-packaging-overview.md
-    - text: Мониторинг
+    - text: Наблюдение
       url: reacting-to-media-services-events.md
     - text: Клиенты в Проигрывателе
       url: use-azure-media-player.md
@@ -59,7 +59,7 @@ landingContent:
       url: https://github.com/Azure-Samples/media-services-v3-rest-postman
   - linkListType: reference
     links:
-    - text: Инфраструктура CLI Azure
+    - text: Azure CLI
       url: https://aka.ms/ams-v3-cli-ref
     - text: REST
       url: https://aka.ms/ams-v3-rest-ref

@@ -148,10 +148,28 @@
           href: backup-mabs-sharepoint-azure-stack.md
         - name: "Защита базы данных SQL\_Server"
           href: backup-mabs-sql-azure-stack.md
-    - name: Общие папки Azure
+    - name: Резервное копирование общих папок Azure
       items:
-        - name: Резервное копирование общих папок Azure
-          href: backup-azure-files.md
+        - name: на портале Azure;
+          items:
+            - name: Резервное копирование общих папок Azure
+              href: backup-afs.md
+            - name: Восстановление общих папок Azure
+              href: restore-afs.md
+            - name: Управление резервными копиями файловых ресурсов Azure
+              href: manage-afs-backup.md
+        - name: С помощью Azure CLI
+          items:
+            - name: Резервное копирование общих папок Azure с помощью CLI
+              href: backup-afs-cli.md
+            - name: Восстановление общих папок Azure с помощью CLI
+              href: restore-afs-cli.md
+            - name: Управление резервными копиями общих папок Azure
+              href: manage-afs-backup-cli.md
+        - name: С помощью PowerShell
+          items:
+            - name: Резервное копирование общих папок Azure с помощью PowerShell
+              href: backup-azure-afs-automation.md
     - name: Резервное копирование виртуальных машин Azure
       items:
         - name: Сведения о резервном копировании виртуальных машин Azure
@@ -222,8 +240,6 @@
           href: backup-dpm-automation.md
         - name: Работа с Windows Server на портале Azure
           href: backup-client-automation.md
-        - name: Работа общими папками Azure на портале Azure
-          href: backup-azure-afs-automation.md
         - name: Использование SQL с резервными копиями виртуальных машин Azure
           href: backup-azure-sql-automation.md
     - name: "Использование REST\_API Azure Backup"

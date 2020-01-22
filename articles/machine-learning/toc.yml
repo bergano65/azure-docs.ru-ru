@@ -93,6 +93,8 @@
       href: concept-designer.md
     - name: Памятка по алгоритмам
       href: /azure/machine-learning/algorithm-cheat-sheet
+    - name: Выбор алгоритмов
+      href: /azure/machine-learning/how-to-select-algorithms
     - name: Автоматическое машинное обучение
       displayName: 'automl, auto ml'
       href: concept-automated-ml.md
