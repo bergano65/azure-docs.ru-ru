@@ -88,6 +88,8 @@
       href: templates-cloud-consistency.md
     - name: Режимы развертывания
       href: deployment-modes.md
+    - name: Удаление ресурсов в полном режиме
+      href: complete-mode-deletion.md
     - name: Диспетчер развертывания
       items:
         - name: Обзор
@@ -237,12 +239,6 @@
           href: template-functions-resource.md
         - name: Строковые функции
           href: template-functions-string.md
-    - name: Возможности ресурсов
-      items:
-        - name: Удаление ресурсов в полном режиме
-          href: complete-mode-deletion.md
-        - name: Типы ресурсов расширения
-          href: extension-resource-types.md
     - name: REST
       href: /rest/api/resources/
     - name: Azure PowerShell

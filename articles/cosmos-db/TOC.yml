@@ -1040,8 +1040,6 @@
         - name: Azure Stream Analytics
           href: '/azure/stream-analytics/stream-analytics-define-outputs#azure-cosmos-db'
           maintainContext: true
-        - name: Logic Apps и Служебная шина Azure
-          href: change-feed-hl7-fhir-logic-apps.md
         - name: Центры событий Azure и служба хранилища Azure
           href: 'https://github.com/hdinsight/hdinsight-storm-examples/blob/master/IotExample/README.md'
         - name: Использование начального приложения Spring Boot
