@@ -1,6 +1,6 @@
 ---
 title: Справочник по алгоритмам и модулям
-description: Сведения о модулях, доступных в Машинное обучение Azure Designer (Предварительная версия)
+description: Сведения о модулях, доступных в конструкторе Машинное обучение Azure
 titleSuffix: Azure Machine Learning
 services: machine-learning
 ms.service: machine-learning
@@ -9,16 +9,16 @@ ms.topic: reference
 author: peterclu
 ms.author: peterlu
 ms.date: 12/17/2019
-ms.openlocfilehash: 659c205bd12d7ca27bfc28e3ab6e62f58d9743ac
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.openlocfilehash: c265c2386b31fd02a5aa635c343be5d3cb227722
+ms.sourcegitcommit: a9b1f7d5111cb07e3462973eb607ff1e512bc407
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75978654"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76312184"
 ---
 # <a name="algorithm--module-reference-for-azure-machine-learning-designer"></a>Ссылка на модуль & алгоритма для конструктора Машинное обучение Azure
 
-Это справочное содержимое содержит технические сведения о каждом из алгоритмов и модулей машинного обучения, доступных в Машинное обучение Azure Designer (Предварительная версия).
+Это справочное содержимое содержит технические сведения о каждом из алгоритмов и модулей машинного обучения, доступных в Машинное обучение Azure Designer.
 
 Каждый модуль представляет собой набор кода, который может выполняться независимо и выполнять задачу машинного обучения с учетом требуемых входных данных. Модуль может содержать определенный алгоритм или выполнять задачу, важную для машинного обучения, например, замена отсутствующего значения или статистический анализ.
 

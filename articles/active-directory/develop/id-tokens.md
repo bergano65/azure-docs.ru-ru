@@ -14,12 +14,12 @@ ms.reviewer: hirsin
 ms.custom: aaddev, identityplatformtop40
 ms:custom: fasttrack-edit
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a0aa868d5ed57e27a89f2791f617dcdda74e766b
-ms.sourcegitcommit: d29e7d0235dc9650ac2b6f2ff78a3625c491bbbf
+ms.openlocfilehash: f7e910faaf9875b6791135c8721090fa801a7e08
+ms.sourcegitcommit: 7221918fbe5385ceccf39dff9dd5a3817a0bd807
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76167452"
+ms.lasthandoff: 01/21/2020
+ms.locfileid: "76294190"
 ---
 # <a name="microsoft-identity-platform-id-tokens"></a>Маркеры ИДЕНТИФИКАТОРов платформы Microsoft Identity
 
@@ -85,6 +85,12 @@ eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6IjFMVE16YWtpaGlSbGFfOHoyQkVKVlhlV01x
 |`unique_name` | String | Предоставляет удобное для восприятия значение, которое идентифицирует субъект маркера. Это значение является уникальным в любой момент времени, но по мере повторного использования сообщений электронной почты и других идентификаторов это значение может появиться в других учетных записях, и поэтому должно использоваться только в целях отображения. Выпущен только `id_tokens` версии 1.0. |
 |`uti` | Непрозрачная строка | Внутреннее утверждение, используемое Azure для повторной проверки маркеров. Можно пропустить. |
 |`ver` | Строка со значением 1.0 или 2.0 | Указывает номер версии маркера "id_token". |
+
+
+> [!NOTE]
+> Версии v1 и v2 id_token имеют различия в объеме информации, которая будет рассматриваться в приведенных выше примерах. В версии фактически указана конечная точка платформы Azure AD, из которой она была выдана. [Реализация OAuth Azure AD](https://docs.microsoft.com/azure/active-directory/develop/about-microsoft-identity-platform) развивалась по годам. В настоящее время у нас есть две разные конечные точки oAuth для приложений AzureAD. Можно использовать любую из новых конечных точек, которые относятся к категории версии 2 или старой, которая называется v1. Конечные точки OAuth для обоих типов различаются. Конечная точка версии 2 — это новая версия, в которой мы пытаемся перенести все функции конечной точки версии 1 и рекомендовать новым разработчикам использовать конечную точку версии 2. 
+> - V1: Azure Active Directory конечные точки: `https://login.microsoftonline.com/common/oauth2/authorize`
+> - V2: конечные точки платформы Microsoft Identity: `https://login.microsoftonline.com/common/oauth2/v2.0/authorize`
 
 ## <a name="validating-an-id_token"></a>Проверка маркера id_token
 

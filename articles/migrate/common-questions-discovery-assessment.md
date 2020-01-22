@@ -3,12 +3,12 @@ title: 'Распространенные вопросы: обнаружение,
 description: Получите ответы на часто задаваемые вопросы об обнаружении, оценке и анализе зависимостей в службе "миграция Azure".
 ms.topic: conceptual
 ms.date: 12/29/2019
-ms.openlocfilehash: 0b7bb425bff1d26c2a0d6feeaf70be826eab2b9a
-ms.sourcegitcommit: 5925df3bcc362c8463b76af3f57c254148ac63e3
+ms.openlocfilehash: 5afda40f4953b8eb51a757034661eb5a3349cd10
+ms.sourcegitcommit: 7221918fbe5385ceccf39dff9dd5a3817a0bd807
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75564053"
+ms.lasthandoff: 01/21/2020
+ms.locfileid: "76292371"
 ---
 # <a name="common-questions-about-discovery-assessment-and-dependency-analysis"></a>Распространенные вопросы об обнаружении, оценке и анализе зависимостей
 
@@ -20,7 +20,7 @@ ms.locfileid: "75564053"
 
 ## <a name="how-many-vms-can-i-discover-with-an-appliance"></a>Сколько виртуальных машин можно обнаружить с помощью устройства?
 
-Вы можете обнаружить до 10 000 виртуальных машин VMware и до 5 000 виртуальных машин Hyper-V с одним устройством. Если в локальной среде имеется больше компьютеров, ознакомьтесь с разрешениями по масштабированию [Hyper-V](scale-hyper-v-assessment.md) и [VMware](scale-vmware-assessment.md) .
+Вы можете обнаружить до 10 000 виртуальных машин VMware, до 5 000 виртуальных машин Hyper-V и до 250 серверов с одним устройством. Если в локальной среде имеется больше компьютеров, ознакомьтесь с разрешениями по масштабированию [Hyper-V](scale-hyper-v-assessment.md), [VMware](scale-vmware-assessment.md) и [физической](scale-physical-assessment.md) оценки.
 
 
 

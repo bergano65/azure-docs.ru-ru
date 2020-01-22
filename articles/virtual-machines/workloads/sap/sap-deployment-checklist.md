@@ -12,15 +12,15 @@ ms.service: virtual-machines-linux
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
-ms.date: 11/08/2019
+ms.date: 01/21/2020
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: b3a424c142fbfcbfe5e4c1802f3ba61da655f77f
-ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
+ms.openlocfilehash: 56b78f4296709206cefb762c87d4d1471bff2df7
+ms.sourcegitcommit: 7221918fbe5385ceccf39dff9dd5a3817a0bd807
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75896033"
+ms.lasthandoff: 01/21/2020
+ms.locfileid: "76291521"
 ---
 # <a name="sap-workloads-on-azure-planning-and-deployment-checklist"></a>Рабочие нагрузки SAP в Azure: контрольный список для планирования и развертывания
 
@@ -53,7 +53,7 @@ ms.locfileid: "75896033"
         - На [веб-сайте SAP](https://www.sap.com/dmc/exp/2014-09-02-hana-hardware/enEN/iaas.html#categories=Microsoft%20Azure)перечислены поддерживаемые SAP HANA виртуальные машины Azure и [крупные экземпляры Hana](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-overview-architecture) .
         - [Матрица доступности продуктов SAP](https://support.sap.com/en/).
         - Примечания SAP для других продуктов, связанных с SAP.     
-    - Для производственных систем SAP рекомендуется использовать не более трех уровней. Мы не рекомендуем объединять ASCS и серверы приложений на одной виртуальной машине. Использование конфигураций кластера с несколькими идентификаторами безопасности для центральных служб SAP поддерживается в гостевых операционных системах Windows в Azure. Но эта конфигурация не поддерживается для центральных служб SAP в операционных системах Linux в Azure. Документацию по сценарию гостевой ОС Windows можно найти в следующих статьях:
+    - Для производственных систем SAP рекомендуется использовать не более трех уровней. Мы не рекомендуем объединять ASCS и (или) СУБД и (или) серверы приложений на одной виртуальной машине. Использование конфигураций кластера с несколькими идентификаторами безопасности для центральных служб SAP поддерживается в гостевых операционных системах Windows в Azure. Но эта конфигурация не поддерживается для центральных служб SAP в операционных системах Linux в Azure. Документацию по сценарию гостевой ОС Windows можно найти в следующих статьях:
         - [Обеспечение высокого уровня доступности с несколькими идентификаторами безопасности для экземпляра SAP ASCS/SCS с помощью отказоустойчивой кластеризации Windows Server и общего диска в Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/sap-ascs-ha-multi-sid-wsfc-shared-disk)
         - [Обеспечение высокого уровня доступности экземпляра ASCS/SCS с несколькими ИД безопасности с помощью отказоустойчивой кластеризации Windows Server и файлового ресурса в Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/sap-ascs-ha-multi-sid-wsfc-file-share)
     - Архитектура высокого уровня доступности и аварийного восстановления.
@@ -135,7 +135,7 @@ ms.locfileid: "75896033"
         - Если вам не требуется высокая доступность для центральных служб SAP и СУБД, можно развернуть эти виртуальные машины в той же группе доступности, что и уровень приложений SAP.
         - Если вы защищаете центральные службы SAP и уровень СУБД для обеспечения высокой доступности с помощью пассивной репликации, поместите два узла для центральных служб SAP в одну отдельную группу доступности и два узла СУБД в другой группе доступности.
         - При развертывании в Зоны доступности Azure нельзя использовать группы доступности. Но необходимо убедиться, что узлы Active и пассивные центральные службы развернуты на двух разных Зоны доступности. Используйте Зоны доступности с наименьшей задержкой между ними.
-          Помните, что [Load Balancer (цен. Категория "Стандартный") Azure](https://docs.microsoft.com/azure/load-balancer/load-balancer-standard-availability-zones) необходимо использовать для установки отказоустойчивых кластеров Windows или Pacemaker на уровне СУБД и центральных служб SAP в зоны доступности. Для развертываний зональные нельзя использовать [базовый Load Balancer](https://docs.microsoft.com/azure/load-balancer/load-balancer-overview#skus) .
+          Помните, что [Load Balancer (цен. Категория "Стандартный") Azure](https://docs.microsoft.com/azure/load-balancer/load-balancer-standard-availability-zones) необходимо использовать для установки отказоустойчивых кластеров Windows или Pacemaker на уровне СУБД и центральных служб SAP в зоны доступности. Для развертываний зональные нельзя использовать [базовый Load Balancer](https://docs.microsoft.com/azure/load-balancer/load-balancer-overview) .
    5. Параметры времени ожидания.
         - Проверьте трассировку экземпляров SAP для разработчиков SAP NetWeaver, чтобы убедиться в отсутствии разрывов соединений между сервером очереди и рабочими процессами SAP. Можно избежать этих разрывов соединения, задав следующие два параметра реестра:
             - Хклм\систем\куррентконтролсет\сервицес\ткпип\параметерс\кипаливетиме = 120000. Дополнительные сведения см. в разделе [KeepAliveTime](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-2000-server/cc957549(v=technet.10)).

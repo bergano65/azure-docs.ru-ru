@@ -9,12 +9,12 @@ ms.author: mbaldwin
 ms.service: key-vault
 ms.topic: reference
 ms.date: 12/16/2019
-ms.openlocfilehash: 9ea77a6822a851951ea7363b9cf496fa0df534ed
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.openlocfilehash: 8c9390ea498647d34e8643ed4be596372ffb8696
+ms.sourcegitcommit: 7221918fbe5385ceccf39dff9dd5a3817a0bd807
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75982095"
+ms.lasthandoff: 01/21/2020
+ms.locfileid: "76293391"
 ---
 # <a name="azure-key-vault-rest-api-error-codes"></a>Коды ошибок Azure Key Vault REST API
  
@@ -54,7 +54,7 @@ Content-Length: 31
 
 ### <a name="the-token-lacks-the-correct-resource-associated-with-it"></a>Маркер не имеет нужного ресурса, связанного с ним. 
 
-При запросе маркера доступа из конечной точки Azure OAUTH параметр с именем Resource является обязательным. Значение важно для поставщика токена, так как он ограничивает область токена для его предполагаемого использования. Ресурс для **всех* токенов для доступа к Key Vault <https:\//vault.keyvault.net> (без замыкающей косой черты).
+При запросе маркера доступа из конечной точки Azure OAUTH параметр с именем Resource является обязательным. Значение важно для поставщика токена, так как он ограничивает область токена для его предполагаемого использования. Ресурс для **всех** токенов, обращающихся к Key Vault, — это *https:\//Vault.keyvault.NET* (без замыкающей косой черты).
 
 ### <a name="the-token-is-expired"></a>Срок действия маркера истек
 

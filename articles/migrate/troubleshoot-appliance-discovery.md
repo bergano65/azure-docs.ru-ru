@@ -6,12 +6,12 @@ ms.manager: abhemraj
 ms.author: hamusa
 ms.topic: troubleshooting
 ms.date: 01/02/2020
-ms.openlocfilehash: 854d98a4f2a1b2500bc301d2305c0dd1f27aaaa4
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.openlocfilehash: d66e792b901742f903dccf7a0e7999db4d02e26a
+ms.sourcegitcommit: 7221918fbe5385ceccf39dff9dd5a3817a0bd807
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75980820"
+ms.lasthandoff: 01/21/2020
+ms.locfileid: "76289532"
 ---
 # <a name="troubleshoot-the-azure-migrate-appliance-and-discovery"></a>Устранение неполадок с устройством и обнаружением службы "миграция Azure"
 
@@ -41,11 +41,11 @@ ms.locfileid: "75980820"
 - Убедитесь, что вы предоставляете учетные данные для авторизации, если они требуются прокси-серверу.
 - Если вы используете прокси-сервер брандмауэра на основе URL-адресов для управления исходящими подключениями, добавьте эти URL-адреса в список разрешений:
 
-    - [URL-адреса для оценки VMware](https://docs.microsoft.com/azure/migrate/migrate-support-matrix-vmware#assessment-url-access-requirements)
-    - [URL-адреса для оценки Hyper-V](https://docs.microsoft.com/azure/migrate/migrate-support-matrix-hyper-v#assessment-appliance-url-access)
-    - [URL-адреса для миграции без агента VMware](https://docs.microsoft.com/azure/migrate/migrate-support-matrix-vmware#agentless-migration-url-access-requirements)
-    - [URL-адреса для миграции на основе агента VMware](https://docs.microsoft.com/azure/migrate/migrate-support-matrix-vmware#replication-appliance-url-access)
-    - [URL-адреса для миграции Hyper-V](https://docs.microsoft.com/azure/migrate/migrate-support-matrix-hyper-v#migration-hyper-v-host-url-access)
+    - [URL-адреса для оценки VMware](https://docs.microsoft.com/azure/migrate/migrate-support-matrix-vmware)
+    - [URL-адреса для оценки Hyper-V](https://docs.microsoft.com/azure/migrate/migrate-support-matrix-hyper-v)
+    - [URL-адреса для миграции без агента VMware](https://docs.microsoft.com/azure/migrate/migrate-support-matrix-vmware)
+    - [URL-адреса для миграции на основе агента VMware](https://docs.microsoft.com/azure/migrate/migrate-support-matrix-vmware)
+    - [URL-адреса для миграции Hyper-V](https://docs.microsoft.com/azure/migrate/migrate-support-matrix-hyper-v)
 
 - Если вы используете перехватчик прокси-сервера для подключения к Интернету, импортируйте сертификат прокси-сервера на виртуальную машину устройства, выполнив [следующие действия](https://docs.microsoft.com/azure/migrate/concepts-collector).
 

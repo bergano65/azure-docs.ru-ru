@@ -14,23 +14,23 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 05/24/2017
 ms.author: huishao
-ms.openlocfilehash: ee15836906eef0b9205691f9a6003cea0b9fae80
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.openlocfilehash: 809216aadb77f014b7fb461ba8439070c5e23d43
+ms.sourcegitcommit: 7221918fbe5385ceccf39dff9dd5a3817a0bd807
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74036450"
+ms.lasthandoff: 01/21/2020
+ms.locfileid: "76291895"
 ---
 # <a name="create-and-upload-an-openbsd-disk-image-to-azure"></a>Создание и передача образа жесткого диска OpenBSD в Azure
 В этой статье описывается, как создать и передать виртуальный жесткий диск, содержащий операционную систему OpenBSD. После передачи его можно использовать как свой собственный образ для создания виртуальной машины в Azure с помощью Azure CLI.
 
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Технические условия
 В данной статье предполагается, что у вас есть следующие элементы:
 
 * **Подписка Azure.** Если у вас нет учетной записи, то ее можно создать, что займет всего лишь несколько минут. Если у вас есть подписка MSDN, см. страницу [Ежемесячная сумма денег на счете в Azure для подписчиков Visual Studio](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/). В противном случае узнайте, как [создать бесплатную пробную учетную запись](https://azure.microsoft.com/pricing/free-trial/).  
 * **Azure CLI.** Обязательно установите последнюю версию [Azure CLI](/cli/azure/install-azure-cli) и войдите в учетную запись Azure с помощью команды [az login](/cli/azure/reference-index).
-* **Операционная система OpenBSD, установленная в VHD-файле** — поддерживаемая операционная система OpenBSD ([6,2 версии AMD64](https://ftp.openbsd.org/pub/OpenBSD/6.2/amd64/)) должна быть установлена на виртуальный жесткий диск. Существует несколько средств для создания VHD-файлов. Например, для создания VHD-файла и установки операционной системы можно использовать решение для виртуализации, например Hyper-V. Инструкции по установке и использованию Hyper-V см. в статье [Установка Hyper-V и создание виртуальной машины](https://technet.microsoft.com/library/hh846766.aspx).
+* **Операционная система OpenBSD, установленная в VHD-файле** — поддерживаемая операционная система OpenBSD ([6,6 версии AMD64](https://ftp.openbsd.org/pub/OpenBSD/6.6/amd64/)) должна быть установлена на виртуальный жесткий диск. Существует несколько средств для создания VHD-файлов. Например, для создания VHD-файла и установки операционной системы можно использовать решение для виртуализации, например Hyper-V. Инструкции по установке и использованию Hyper-V см. в статье [Установка Hyper-V и создание виртуальной машины](https://technet.microsoft.com/library/hh846766.aspx).
 
 
 ## <a name="prepare-openbsd-image-for-azure"></a>Подготовка образа OpenBSD для Azure
@@ -95,7 +95,7 @@ ms.locfileid: "74036450"
 
 
 ## <a name="prepare-the-vhd"></a>Подготовка VHD
-Формат VHDX не поддерживается в Azure, поддерживается только **постоянный VHD**. Преобразовать диск в формат фиксированного VHD можно с помощью диспетчера Hyper-V или командлета PowerShell [convert-vhd](https://technet.microsoft.com/itpro/powershell/windows/hyper-v/convert-vhd). Например.
+Формат VHDX не поддерживается в Azure, поддерживается только **фиксированный VHD**. Преобразовать диск в формат фиксированного VHD можно с помощью диспетчера Hyper-V или командлета PowerShell [convert-vhd](https://technet.microsoft.com/itpro/powershell/windows/hyper-v/convert-vhd). Например.
 
 ```powershell
 Convert-VHD OpenBSD61.vhdx OpenBSD61.vhd -VHDType Fixed
@@ -173,7 +173,7 @@ ssh azureuser@<ip address>
 ```
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Если вы хотите получить дополнительные сведения о поддержке Hyper-V в OpenBSD 6.1, посетите веб-сайты [OpenBSD 6.1](https://www.openbsd.org/61.html) и [hyperv.4](https://man.openbsd.org/hyperv.4).
 
 Если требуется создать виртуальную машину из управляемого диска см. статью [Управляемые диски - az disk](/cli/azure/disk). 

@@ -11,12 +11,12 @@ ms.reviewer: maghan
 manager: jroth
 ms.topic: conceptual
 ms.date: 08/14/2019
-ms.openlocfilehash: fb049b5af5c700cdb72f0319019cfd6eee952d9f
-ms.sourcegitcommit: 276c1c79b814ecc9d6c1997d92a93d07aed06b84
+ms.openlocfilehash: 2e14b1bcc991a009ed9b3267477933706e1ec474
+ms.sourcegitcommit: 7221918fbe5385ceccf39dff9dd5a3817a0bd807
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76156970"
+ms.lasthandoff: 01/21/2020
+ms.locfileid: "76289957"
 ---
 # <a name="continuous-integration-and-delivery-in-azure-data-factory"></a>Непрерывная интеграция и доставка в фабрике данных Azure
 
@@ -82,7 +82,7 @@ ms.locfileid: "76156970"
 
 ### <a name="requirements"></a>Требования
 
--   Подписка Azure, связанная с Team Foundation Server или Azure Repos Visual Studio, использующая [конечную точку службы Azure Resource Manager](https://docs.microsoft.com/azure/devops/pipelines/library/service-endpoints#sep-azure-rm).
+-   Подписка Azure, связанная с Team Foundation Server или Azure Repos Visual Studio, использующая [конечную точку службы Azure Resource Manager](https://docs.microsoft.com/azure/devops/pipelines/library/service-endpoints#sep-azure-resource-manager).
 
 -   Фабрика данных, настроенная с интеграцией Azure Repos Git.
 

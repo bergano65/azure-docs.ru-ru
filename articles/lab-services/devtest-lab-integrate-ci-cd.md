@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/16/2020
 ms.author: spelluru
-ms.openlocfilehash: 54b4e6e6a283f46e03f7b94ce96ba79a03f75523
-ms.sourcegitcommit: d29e7d0235dc9650ac2b6f2ff78a3625c491bbbf
+ms.openlocfilehash: 9604da5252254120ac7bd3fca3f0cc97324aef92
+ms.sourcegitcommit: 7221918fbe5385ceccf39dff9dd5a3817a0bd807
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76170396"
+ms.lasthandoff: 01/21/2020
+ms.locfileid: "76293221"
 ---
 # <a name="integrate-azure-devtest-labs-into-your-azure-pipelines-cicd-pipeline"></a>Интеграция Azure DevTest Labs в конвейер Azure Pipelines CI/CD
 
@@ -140,7 +140,7 @@ ms.locfileid: "76170396"
    
    |Поле|Значение|
    |---|---|
-   |**Подписка Azure RM**|Выберите подключение службы или подписку из **доступных подключений к службам Azure** или **доступных подписок Azure** в раскрывающемся списке и при необходимости выберите **авторизовать** .<br /><br />**Примечание.** Сведения о создании подключения к подписке Azure с ограниченными разрешениями см. в разделе [Azure Resource Manager Service Endpoint](/azure/devops/pipelines/library/service-endpoints#sep-azure-rm).|
+   |**Подписка Azure RM**|Выберите подключение службы или подписку из **доступных подключений к службам Azure** или **доступных подписок Azure** в раскрывающемся списке и при необходимости выберите **авторизовать** .<br /><br />**Примечание.** Сведения о создании подключения к подписке Azure с ограниченными разрешениями см. в разделе [Azure Resource Manager Service Endpoint](/azure/devops/pipelines/library/service-endpoints#sep-azure-resource-manager).|
    |**Имя лаборатории**|Выберите имя существующей лаборатории, в которой будет создана лабораторная виртуальная машина.|
    |**Имя шаблона**|Введите полный путь и имя файла шаблона, который вы сохранили в репозитории исходного кода. Для упрощения пути можно использовать встроенные свойства, например:<br /><br />`$(System.DefaultWorkingDirectory)/Templates/CreateVMTemplate.json`|
    |**Параметры шаблона**|Введите параметры для переменных, которые вы определили ранее:<br /><br />`-newVMName '$(vmName)' -userName '$(userName)' -password (ConvertTo-SecureString -String '$(password)' -AsPlainText -Force)`|

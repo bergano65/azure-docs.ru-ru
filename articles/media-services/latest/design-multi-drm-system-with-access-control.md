@@ -1,5 +1,5 @@
 ---
-title: Проектирование системы защиты содержимого с несколькими подсистемами DRM и управлением доступом с помощью Служб мультимедиа Azure | Документация Майкрософт
+title: Система защиты содержимого с несколькими цифровыми правами (DRM). службы мультимедиа Azure v3
 description: В этой статье приводится подробное описание того, как спроектировать систему защиты содержимого с несколькими цифровыми правами с помощью служб мультимедиа Azure.
 services: media-services
 documentationcenter: ''
@@ -14,12 +14,12 @@ ms.topic: article
 ms.date: 12/21/2018
 ms.author: willzhan
 ms.custom: seodec18
-ms.openlocfilehash: 00ddedf135d13c07e8abe1094dd5366acb0f4ae5
-ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
+ms.openlocfilehash: efc070491ca1ea84dc8ef095a2144df9d0bf1bcb
+ms.sourcegitcommit: a9b1f7d5111cb07e3462973eb607ff1e512bc407
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74896172"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76311909"
 ---
 # <a name="design-of-a-multi-drm-content-protection-system-with-access-control"></a>Проектирование системы для защиты содержимого с несколькими подсистемами DRM и управлением доступом 
 
@@ -48,7 +48,7 @@ ms.locfileid: "74896172"
 | **Платформа клиента** | **Собственная подсистема DRM** | **EME** |
 | --- | --- | --- |
 | **Смарт-ТВ, STB** | PlayReady, Widevine и др. | Встроенный браузер и EME для PlayReady и/или Widevine|
-| **Windows 10** | PlayReady | Microsoft Edge и IE 11 для PlayReady|
+| **Windows 10** | PlayReady | Microsoft Edge и IE 11 для PlayReady|
 | **Устройства Android (телефоны, планшеты, телевизоры)** |Widevine |Chrome для Widevine |
 | **iOS** | FairPlay | Safari для FairPlay (начиная с iOS версии 11.2) |
 | **macOS** | FairPlay | Safari для FairPlay (начиная с Safari 9+ на Mac OS X 10.11+ El Capitan)|
@@ -133,7 +133,7 @@ ms.locfileid: "74896172"
 
 | **Стандартный блок** | **Технология** |
 | --- | --- |
-| **Проигрыватель** |[Проигрыватель Мультимедиа Azure](https://azure.microsoft.com/services/media-services/media-player/) |
+| **Проигрыватель** |[Проигрыватель мультимедиа Azure](https://azure.microsoft.com/services/media-services/media-player/) |
 | **Поставщик удостоверений (IDP)** |Azure Active Directory (Azure AD) |
 | **Служба маркеров безопасности (STS)** |Azure AD |
 | **Рабочий процесс защиты DRM** |Динамическая защита служб мультимедиа Azure |
@@ -200,12 +200,12 @@ ms.locfileid: "74896172"
 
 9. Сопоставление показано в тестовой матрице.
 
-    | **DRM** | **"Обзор"** | **Результат для соответствующего пользователя** | **Результат для не соответствующего пользователя** |
+    | **DRM** | **Браузер** | **Результат для соответствующего пользователя** | **Результат для не соответствующего пользователя** |
     | --- | --- | --- | --- |
-    | **PlayReady** |Microsoft Edge или Internet Explorer 11 в Windows 10 |Успешно |Fail; |
-    | **Widevine** |Chrome, Firefox, Opera |Успешно |Fail; |
-    | **FairPlay** |Safari в macOS      |Успешно |Fail; |
-    | **AES-128** |Большинство современных браузеров  |Успешно |Fail; |
+    | **PlayReady** |Microsoft Edge или Internet Explorer 11 в Windows 10 |Успешно |Ошибка |
+    | **Widevine** |Chrome, Firefox, Opera |Успешно |Ошибка |
+    | **FairPlay** |Safari в macOS      |Успешно |Ошибка |
+    | **AES-128** |Большинство современных браузеров  |Успешно |Ошибка |
 
 Дополнительные сведения о настройке Azure AD для приложения проигрывателя ASP.NET MVC см. в статье [Integrate Azure Media Services OWIN MVC based app with Azure Active Directory and restrict content key delivery based on JWT claims](http://gtrifonov.com/2015/01/24/mvc-owin-azure-media-services-ad-integration/) (Интеграция приложения на основе OWIN MVC Служб мультимедиа Azure с Azure Active Directory и ограничение доставки ключей содержимого на основе утверждений JWT).
 
@@ -276,7 +276,7 @@ ms.locfileid: "74896172"
 
 Так как Azure AD доверяет домену учетных записей Майкрософт, можно добавить любые учетные записи из любого из следующих доменов в пользовательский клиент Azure AD и использовать учетную запись для входа:
 
-| **Доменное имя** | **Домен** |
+| **Имя домена** | **Домен** |
 | --- | --- |
 | **Домен пользовательского клиента Azure AD** |somename.onmicrosoft.com |
 | **Домен организации** |microsoft.com |

@@ -1,6 +1,6 @@
 ---
 title: Обзор интерфейсов API Центров событий Azure для платформы .NET Framework | Документация Майкрософт
-description: Сводные сведения о некоторых ключевых клиентских API Центров событий для .NET Framework.
+description: В этой статье приведены общие сведения о некоторых основных концентраторах событий .NET Framework клиентских API-интерфейсах (управление и среда выполнения).
 services: event-hubs
 author: ShubhaVijayasarathy
 manager: timlt
@@ -9,12 +9,12 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 08/16/2018
 ms.author: shvija
-ms.openlocfilehash: f56882d2d73c85434c6f81972a06e5ea9ccdff99
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: f67351fa38543504d63dbf8d86c9537feea24a4f
+ms.sourcegitcommit: a9b1f7d5111cb07e3462973eb607ff1e512bc407
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60822049"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76312623"
 ---
 # <a name="event-hubs-net-framework-api-overview"></a>Обзор API Центров событий для платформы .NET Framework
 
@@ -26,7 +26,7 @@ ms.locfileid: "60822049"
 
 Для выполнения указанных ниже операций управления требуется разрешение на **управление** пространством имен Центров событий.
 
-### <a name="create"></a>Создание
+### <a name="create"></a>Create
 
 ```csharp
 // Create the event hub
@@ -35,7 +35,7 @@ ehd.PartitionCount = SampleManager.numPartitions;
 await namespaceManager.CreateEventHubAsync(ehd);
 ```
 
-### <a name="update"></a>Блокировка изменений
+### <a name="update"></a>Обновить
 
 ```csharp
 var ehd = await namespaceManager.GetEventHubAsync(eventHubName);
@@ -48,7 +48,7 @@ ehd.Authorization.Add(new SharedAccessAuthorizationRule(ruleName, ruleKey, new A
 await namespaceManager.UpdateEventHubAsync(ehd);
 ```
 
-### <a name="delete"></a>Delete (Удалить)
+### <a name="delete"></a>Удалить
 
 ```csharp
 await namespaceManager.DeleteEventHubAsync("event hub name");

@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 01/15/2020
 ms.author: oliversc
 ms.custom: seodec18
-ms.openlocfilehash: 1cf9ce6d57c1e106472caeef6c1f2a4b008a09bd
-ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
+ms.openlocfilehash: 15a118dc72ae9ffc4b6c99b0e0b527a252d3ded8
+ms.sourcegitcommit: 7221918fbe5385ceccf39dff9dd5a3817a0bd807
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2020
-ms.locfileid: "76277874"
+ms.lasthandoff: 01/21/2020
+ms.locfileid: "76293595"
 ---
 # <a name="release-notes"></a>Заметки о выпуске
 
@@ -26,7 +26,7 @@ ms.locfileid: "76277874"
 
 - Беседа с несколькими устройствами. Подключение нескольких устройств к одному речевому или текстовому диалогу и при необходимости преобразование передаваемых сообщений. Дополнительные сведения см. в [этой статье](multi-device-conversation.md). 
 - Добавлена поддержка распознавания ключевых слов для пакета Android. AAR и добавлена поддержка для версий x86 и x64. 
-- Цели-C: методы `SendMessage` и `SetMessageProperty`, добавленные в объект `Connection`. См. документацию [здесь](https://docs.microsoft.com/objectivec/cognitive-services/speech/).
+- Цели-C: методы `SendMessage` и `SetMessageProperty`, добавленные в объект `Connection`. См. документацию [здесь](https://docs.microsoft.com/objectivec/cognitive-services/speech/spxconnection).
 - API C++ TTS теперь поддерживает `std::wstring` как ввод текста синтеза, избавляя от необходимости преобразовывать wstring в строку перед передачей их в пакет SDK. Дополнительные сведения см. [здесь](https://docs.microsoft.com/cpp/cognitive-services/speech/speechsynthesizer#speaktextasync). 
 - C#: [Идентификатор языка](https://docs.microsoft.com/azure/cognitive-services/speech-service/how-to-automatic-language-detection?pivots=programming-language-csharp) и [Конфигурация языка исходного кода](https://docs.microsoft.com/azure/cognitive-services/speech-service/how-to-specify-source-language?pivots=programming-language-csharp) теперь доступны.
 - JavaScript: добавлена функция в `Connection` объект для передачи пользовательских сообщений из службы распознавания речи в качестве `receivedServiceMessage`обратного вызова.

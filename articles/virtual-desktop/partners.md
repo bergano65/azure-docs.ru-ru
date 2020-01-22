@@ -7,12 +7,12 @@ ms.service: virtual-desktop
 ms.topic: conceptual
 ms.date: 12/18/2019
 ms.author: helohr
-ms.openlocfilehash: f503377984a347d85af04d85728c53eaad0c4c74
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 3f725d7e902b1e020c26e82007d4d257b2fd21c4
+ms.sourcegitcommit: 7221918fbe5385ceccf39dff9dd5a3817a0bd807
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75451358"
+ms.lasthandoff: 01/21/2020
+ms.locfileid: "76293187"
 ---
 # <a name="windows-virtual-desktop-partner-integrations"></a>Интеграция с партнерами по виртуальным рабочим столам Windows
 
@@ -222,7 +222,7 @@ Printix — это дополнительный поставщик услуг Wi
 
 С помощью Трицерат печать в виртуальных рабочих столах Windows и более поздних версиях. Трицерат Software позволяет администраторам легко подключать локальные принтеры к облаку, расширяя возможности корпоративного управления печатью из традиционных сред в новые, современные рабочие области.
 
-- [Перейдите на веб-сайт партнера](https://www.tricerat.com/solutions/wvd-microsoft/).
+- [Перейдите на веб-сайт партнера](https://www.tricerat.com/microsoft-printing).
 
 ## <a name="workspot"></a>Workspot
 

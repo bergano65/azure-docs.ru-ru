@@ -11,12 +11,12 @@ author: stevestein
 ms.author: sashan
 ms.reviewer: carlrab
 ms.date: 11/14/2019
-ms.openlocfilehash: b3bc99d0fbdb551af0fb3711d74db537d3f9b1a5
-ms.sourcegitcommit: 4c831e768bb43e232de9738b363063590faa0472
+ms.openlocfilehash: e1df345fb9a89972ad1857a937c22d6e10ad1fba
+ms.sourcegitcommit: 7221918fbe5385ceccf39dff9dd5a3817a0bd807
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74421342"
+ms.lasthandoff: 01/21/2020
+ms.locfileid: "76289413"
 ---
 # <a name="copy-a-transactionally-consistent-copy-of-an-azure-sql-database"></a>Копирование транзакционно согласованной копии базы данных Azure SQL
 
@@ -63,7 +63,7 @@ New-AzSqlDatabaseCopy -ResourceGroupName "<resourceGroup>" -ServerName $sourcese
 
 Копия базы данных является асинхронной операцией, но Целевая база данных создается сразу после принятия запроса. Если необходимо отменить операцию копирования, пока все еще выполняется, удалите целевую базу данных с помощью командлета [Remove-азсклдатабасе](/powershell/module/az.sql/new-azsqldatabase) .
 
-# <a name="azure-clitabazure-cli"></a>[Интерфейс командной строки Azure](#tab/azure-cli)
+# <a name="azure-clitabazure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 ```azure-cli
 az sql db copy --dest-name "CopyOfMySampleDatabase" --dest-resource-group "myResourceGroup" --dest-server $targetserver `
@@ -151,7 +151,7 @@ CREATE DATABASE Database2 AS COPY OF server1.Database1;
 > Чтобы отменить копирование до его завершения, выполните в новой базе данных инструкцию [DROP DATABASE](https://msdn.microsoft.com/library/ms178613.aspx). Кроме того, процесс копирования отменяет также выполнение оператора DROP DATABASE в исходной базе данных.
 
 > [!IMPORTANT]
-> Если необходимо создать копию с существенно меньшим значением уровня обслуживания, чем у источника, то Целевая база данных может не иметь достаточных ресурсов для завершения процесса заполнения, и это может привести к сбою в области Opera для копирования. В этом сценарии для создания копии на другом сервере и (или) другом регионе используется запрос географического восстановления. Дополнительные сведения см. в статье [Восстановление базы данных SQL Azure с помощью резервных копий базы данных](sql-database-recovery-using-backups.md#geo-restore) .
+> Если необходимо создать копию с существенно меньшим значением уровня обслуживания, чем у источника, то Целевая база данных может не иметь достаточных ресурсов для завершения процесса заполнения и может привести к сбою операции копирования. В этом сценарии для создания копии на другом сервере и (или) другом регионе используется запрос географического восстановления. Дополнительные сведения см. в статье [Восстановление базы данных SQL Azure с помощью резервных копий](sql-database-recovery-using-backups.md#geo-restore) .
 
 ## <a name="resolve-logins"></a>Разрешение имен для входа
 
@@ -165,7 +165,7 @@ CREATE DATABASE Database2 AS COPY OF server1.Database1;
 
 При копировании базы данных в базе данных SQL Azure могут возникнуть следующие ошибки. Дополнительные сведения см. в статье [Копирование базы данных SQL Azure](sql-database-copy.md).
 
-| Код ошибки | Уровень серьезности | ОПИСАНИЕ |
+| Код ошибки | Серьезность | Description |
 | ---:| ---:|:--- |
 | 40635 |16 |Клиент с IP-адресом %.&#x2a;ls временно отключен. |
 | 40637 |16 |Возможность создания копии базы данных в настоящее время отключена. |
@@ -181,7 +181,7 @@ CREATE DATABASE Database2 AS COPY OF server1.Database1;
 | 40570 |16 |Произошел сбой при копировании базы данных из-за внутренней ошибки. Удалите целевую базу данных и повторите попытку позднее. |
 | 40571 |16 |Произошел сбой при копировании базы данных из-за внутренней ошибки. Удалите целевую базу данных и повторите попытку позднее. |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Сведения об именах для входа см. в статьях [Предоставление доступа к базе данных и управление им](sql-database-manage-logins.md) и [Настройка безопасности базы данных SQL Azure и управление ею для геовосстановления или отработки отказа](sql-database-geo-replication-security-config.md).
 - Сведения об экспорте базы данных см. в статье [Экспорт базы данных SQL Azure или SQL Server в BACPAC-файл](sql-database-export.md).

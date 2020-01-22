@@ -10,13 +10,13 @@ ms.topic: conceptual
 author: bonova
 ms.author: bonova
 ms.reviewer: sstein, carlrab, vanto
-ms.date: 11/27/2019
-ms.openlocfilehash: d5b3733947876958b4d72da4cb7bb0f10a3a9165
-ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
+ms.date: 01/21/2020
+ms.openlocfilehash: b8cf7992617b7263b86fd98e5def8be1d43ca68c
+ms.sourcegitcommit: 7221918fbe5385ceccf39dff9dd5a3817a0bd807
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/02/2020
-ms.locfileid: "75614945"
+ms.lasthandoff: 01/21/2020
+ms.locfileid: "76293374"
 ---
 # <a name="what-is-azure-sql-database-managed-instance"></a>Что такое управляемый экземпляр базы данных SQL Azure?
 
@@ -325,7 +325,7 @@ Azure Database Migration Service — это полностью управляе�
 
 |Свойство|Значение|Комментарий|
 |---|---|---|
-|`@@VERSION`|Microsoft SQL Azure (RTM) - 12.0.2000.8 2018-03-07 Copyright (C) 2018 Microsoft Corporation.|Это значение совпадает со значением в базе данных SQL.|
+|`@@VERSION`|Microsoft SQL Azure (RTM) - 12.0.2000.8 2018-03-07 Copyright (C) 2018 Microsoft Corporation.|Это значение совпадает со значением в базе данных SQL. Это **не** означает, что ядро СУБД SQL версии 12 (SQL Server 2014). Управляемый экземпляр всегда запускает последнюю стабильную версию ядра SQL, которая равна или выше последней доступной RTM-версии SQL Server.  |
 |`SERVERPROPERTY ('Edition')`|SQL Azure|Это значение совпадает со значением в базе данных SQL.|
 |`SERVERPROPERTY('EngineEdition')`|8|Данное значение уникально идентифицирует управляемый экземпляр.|
 |`@@SERVERNAME`, `SERVERPROPERTY ('ServerName')`|Полное DNS-имя экземпляра в формате `<instanceName>`.`<dnsPrefix>`.database.windows.net, где `<instanceName>` — имя, предоставленное клиентом, а `<dnsPrefix>` — автоматически формируемая часть имени, гарантируемая уникальность глобального DNS-имени (например, "wcus17662feb9ce98").|Пример: my-managed-instance.wcus17662feb9ce98.database.windows.net|

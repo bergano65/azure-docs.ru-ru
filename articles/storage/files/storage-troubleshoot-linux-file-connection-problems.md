@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 10/16/2018
 ms.author: jeffpatt
 ms.subservice: files
-ms.openlocfilehash: fa60cbeb3dc2dea928168529a7e7a58cf01657c4
-ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
+ms.openlocfilehash: 8b7a743ebcdf74f6ad740e4e4193bbd98da1536d
+ms.sourcegitcommit: 7221918fbe5385ceccf39dff9dd5a3817a0bd807
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/02/2020
-ms.locfileid: "75615021"
+ms.lasthandoff: 01/21/2020
+ms.locfileid: "76291130"
 ---
 # <a name="troubleshoot-azure-files-problems-in-linux"></a>Устранение неполадок службы файлов Azure в Linux
 
@@ -130,25 +130,25 @@ ms.locfileid: "75615021"
 
 Если используемый SMB-клиент Linux не поддерживает шифрование, подключите службу файлов Azure с помощью SMB 2.1 с виртуальной машины Linux в Azure, которая расположена в том же центре обработки данных, что и общий файловый ресурс. Убедитесь, что параметр [Требуется безопасное перемещение]( https://docs.microsoft.com/azure/storage/common/storage-require-secure-transfer) отключен в учетной записи хранения. 
 
-<a id="authorizationfailureportal"></a>
-## <a name="error-authorization-failure-when-browsing-to-an-azure-file-share-in-the-portal"></a>Ошибка "ошибка авторизации" при переходе на общий файловый ресурс Azure на портале
+<a id="noaaccessfailureportal"></a>
+## <a name="error-no-access-when-browsing-to-an-azure-file-share-in-the-portal"></a>Ошибка "нет доступа" при переходе на общую папку Azure на портале
 
 При переходе к общему файловому ресурсу Azure на портале, может появиться следующая ошибка.
 
-Сбой авторизации  
-Нет доступа
+Нет доступа  
+Код ошибки: 403 
 
-### <a name="cause-1-your-user-account-does-not-have-access-to-the-storage-account"></a>Причина 1. у вашей учетной записи пользователя нет доступа к учетной записи хранения
+### <a name="cause-1-virtual-network-or-firewall-rules-are-enabled-on-the-storage-account"></a>Причина 1. в учетной записи хранения включены виртуальная сеть или правила брандмауэра
 
 ### <a name="solution-for-cause-1"></a>Решение для причины 1
 
-Перейдите в учетную запись хранения, в которой размещается общий файловый ресурс Azure, щелкните **Управление доступом (IAM)** и убедитесь, что учетная запись пользователя имеет доступ к учетной записи хранения. Подробнее см. в статье [Защита учетной записи хранения с помощью управления доступом на основе ролей (RBAC)](https://docs.microsoft.com/azure/storage/blobs/security-recommendations#data-protection).
+Убедитесь, что правила виртуальной сети и брандмауэра настроены надлежащим образом для учетной записи хранения. Чтобы проверить, связана ли проблема с правилами виртуальной сети или брандмауэра, временно задайте для учетной записи хранения параметр **Разрешить доступ из всех сетей**. Подробнее см. в статье [Настройка брандмауэров службы хранилища Azure и виртуальных сетей (предварительная версия)](https://docs.microsoft.com/azure/storage/common/storage-network-security).
 
-### <a name="cause-2-virtual-network-or-firewall-rules-are-enabled-on-the-storage-account"></a>Причина 2. в учетной записи хранения включены виртуальная сеть или правила брандмауэра.
+### <a name="cause-2-your-user-account-does-not-have-access-to-the-storage-account"></a>Причина 2. у вашей учетной записи пользователя нет доступа к учетной записи хранения
 
 ### <a name="solution-for-cause-2"></a>Решение для причины 2
 
-Убедитесь, что правила виртуальной сети и брандмауэра настроены надлежащим образом для учетной записи хранения. Чтобы проверить, связана ли проблема с правилами виртуальной сети или брандмауэра, временно задайте для учетной записи хранения параметр **Разрешить доступ из всех сетей**. Подробнее см. в статье [Настройка брандмауэров службы хранилища Azure и виртуальных сетей (предварительная версия)](https://docs.microsoft.com/azure/storage/common/storage-network-security).
+Перейдите в учетную запись хранения, в которой размещается общий файловый ресурс Azure, щелкните **Управление доступом (IAM)** и убедитесь, что учетная запись пользователя имеет доступ к учетной записи хранения. Подробнее см. в статье [Защита учетной записи хранения с помощью управления доступом на основе ролей (RBAC)](https://docs.microsoft.com/azure/storage/blobs/security-recommendations#data-protection).
 
 <a id="open-handles"></a>
 ## <a name="unable-to-delete-a-file-or-directory-in-an-azure-file-share"></a>Не удается удалить файл или каталог в общем файловом ресурсе Azure

@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: na
 ms.date: 05/02/2018
 ms.author: robreed
-ms.openlocfilehash: 8f243527461a95d963854d8d018602dd81115482
-ms.sourcegitcommit: f0dfcdd6e9de64d5513adf3dd4fe62b26db15e8b
+ms.openlocfilehash: b6b9d0f146fd98fd90aa8858e522449be571842c
+ms.sourcegitcommit: 7221918fbe5385ceccf39dff9dd5a3817a0bd807
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/26/2019
-ms.locfileid: "75497276"
+ms.lasthandoff: 01/21/2020
+ms.locfileid: "76293170"
 ---
 # <a name="introduction-to-the-azure-desired-state-configuration-extension-handler"></a>Общие сведения об обработчике расширения Desired State Configuration в Azure
 
@@ -59,7 +59,7 @@ ms.locfileid: "75497276"
 - Если указано свойство **wmfVersion**, то устанавливается соответствующая версия WMF (за исключением случаев, когда эта версия несовместима с ОС виртуальной машины).
 - Если свойство **wmfVersion** не указано, то устанавливается последняя применимая версия WMF.
 
-Для установки WMF требуется перезагрузка. После перезапуска расширения скачивается ZIP-файл, указанный в свойстве **modulesUrl**, если оно предоставлено. Если это расположение находится в хранилище BLOB-объектов Azure, то для доступа к файлу в свойстве **sasToken** можно указать маркер SAS. После скачивания и распаковки ZIP-файла функция конфигурации, определенная в **configurationFunction**, запускается и создает MOF-файл. Затем расширение выполняет командлет `Start-DscConfiguration -Force` с созданным MOF-файлом. Расширение фиксирует выходные данные и записывает их в канал состояний Azure.
+Для установки WMF требуется перезагрузка. После перезапуска расширения скачивается ZIP-файл, указанный в свойстве **modulesUrl**, если оно предоставлено. Если это расположение находится в хранилище BLOB-объектов Azure, то для доступа к файлу в свойстве **sasToken** можно указать маркер SAS. После скачивания и распаковки ZIP-файла функция настройки, определенная в **configurationFunction** , запускает файл. mof ([MOF](https://docs.microsoft.com/windows/win32/wmisdk/managed-object-format--mof-)). Затем расширение выполняет командлет `Start-DscConfiguration -Force` с созданным MOF-файлом. Расширение фиксирует выходные данные и записывает их в канал состояний Azure.
 
 ### <a name="default-configuration-script"></a>Скрипт конфигурации по умолчанию
 

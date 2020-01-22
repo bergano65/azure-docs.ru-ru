@@ -8,20 +8,35 @@ ms.subservice: core
 ms.topic: reference
 ms.author: jmartens
 author: j-martens
-ms.date: 11/04/2019
+ms.date: 01/21/2019
 ms.custom: seodec18
-ms.openlocfilehash: 0e613dd1c47a9942d95bd668f1e9f85e42649b5c
-ms.sourcegitcommit: 5bbe87cf121bf99184cc9840c7a07385f0d128ae
+ms.openlocfilehash: 1cd9ca07aab1953d114caf748ca99170fae6b876
+ms.sourcegitcommit: 7221918fbe5385ceccf39dff9dd5a3817a0bd807
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76122378"
+ms.lasthandoff: 01/21/2020
+ms.locfileid: "76293204"
 ---
 # <a name="azure-machine-learning-release-notes"></a>Заметки о выпуске Машинное обучение Azure
 
 В этой статье вы узнаете о выпусках Машинное обучение Azure.  Полное справочное содержимое пакета SDK можно найти на странице справочника по [**основному пакету SDK для Python**](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py) машинное обучение Azure.
 
 Ознакомьтесь со [списком известных проблем](resource-known-issues.md), чтобы получить сведения об известных ошибках и способах их устранения.
+
+## <a name="2020-01-21"></a>2020-01-21
+
+### <a name="azure-machine-learning-designer-generally-available-ga"></a>Общедоступная версия конструктора Машинное обучение Azure (GA)
+
+Теперь конструктор общедоступен.
+
++ **Новые функции**
+    + Добавлен параметр модуля `Regenerate Output` для принудительного пропуска кэшированных результатов в конструкторе.
+    + Добавлены новые представления в сведения о выполнении конвейера:
+        + Представление списка конвейеров.
+        + Представление журнала в браузере.
+    + Добавлены Метки для входных и выходных портов модуля.
+    + Добавлен параметр конвейера `Set as Default` на [вкладке конечные точки](how-to-run-batch-predictions-designer.md#versioning-endpoints).
+    + Добавлены сочетания клавиш и [Специальные возможности](designer-accessibility.md)средства чтения с экрана.
 
 ## <a name="2020-01-06"></a>2020-01-06
 

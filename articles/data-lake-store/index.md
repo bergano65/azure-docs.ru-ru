@@ -11,12 +11,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 06/27/2018
 ms.author: twooley
-ms.openlocfilehash: ac2c34b8de4ac9f66f1618d854e26aa431d35184
-ms.sourcegitcommit: c79aa93d87d4db04ecc4e3eb68a75b349448cd17
+ms.openlocfilehash: 751179d9506267c95eee1d31724395a4fc5b87a7
+ms.sourcegitcommit: 7221918fbe5385ceccf39dff9dd5a3817a0bd807
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71088941"
+ms.lasthandoff: 01/21/2020
+ms.locfileid: "76290756"
 ---
 # <a name="azure-data-lake-storage-gen1-documentation"></a>Документация по Azure Data Lake Storage 1-го поколения
 
@@ -173,7 +173,7 @@ ms.locfileid: "71088941"
 
 ---
  
-<h2>Справочные материалы</h2>
+<h2>Справочник</h2>
 <ul class="panelContent cardsW">
     <li>
         <div class="cardSize">
@@ -198,7 +198,7 @@ ms.locfileid: "71088941"
                         <p><a href="/java/api/overview/azure/datalake">Java</a></p>
                         <p><a href="https://www.npmjs.com/package/azure-arm-datalake-store">Node.js</a></p>
                         <p><a href="/python/api/azure-mgmt-datalake-store/">Python (управление учетными записями)</a></p>
-                        <p><a href="https://azure-datalake-store.readthedocs.io/en/latest">Python (управление файловой системой)</a></p>
+                        <p><a href="https://docs.microsoft.com/python/api/azure-datalake-store/azure.datalake.store.core">Python (управление файловой системой)</a></p>
                     </div>
                 </div>
             </div>

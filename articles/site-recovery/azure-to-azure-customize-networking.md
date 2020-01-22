@@ -8,12 +8,12 @@ ms.service: site-recovery
 ms.topic: article
 ms.date: 10/21/2019
 ms.author: rajanaki
-ms.openlocfilehash: 191161c8185f45712052000285013a6e61c9fa6a
-ms.sourcegitcommit: b1c94635078a53eb558d0eb276a5faca1020f835
+ms.openlocfilehash: 96ffa34166797945afc04c66b03fe151d26c65bc
+ms.sourcegitcommit: 7221918fbe5385ceccf39dff9dd5a3817a0bd807
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2019
-ms.locfileid: "72968914"
+ms.lasthandoff: 01/21/2020
+ms.locfileid: "76292864"
 ---
 # <a name="customize-networking-configurations-of-the-target-azure-vm"></a>Настройка сетевых конфигураций целевой виртуальной машины Azure
 
@@ -27,7 +27,7 @@ ms.locfileid: "72968914"
 
 При репликации виртуальных машин Azure можно предоставить следующие основные конфигурации ресурсов для отработки отказа виртуальной машины:
 
-- [Внутренняя подсистема балансировки нагрузки](https://docs.microsoft.com/azure/load-balancer/load-balancer-standard-overview#what-is-standard-load-balancer)
+- [Внутренняя подсистема балансировки нагрузки](https://docs.microsoft.com/azure/load-balancer/load-balancer-overview)
 - [Общедоступный IP-адрес](https://docs.microsoft.com/azure/virtual-network/virtual-network-ip-addresses-overview-arm#public-ip-addresses)
 - [Группа безопасности сети](https://docs.microsoft.com/azure/virtual-network/manage-network-security-group) как для подсети, так и для сетевой карты
 

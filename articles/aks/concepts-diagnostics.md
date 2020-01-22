@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: conceptual
 ms.date: 11/04/2019
 ms.author: yunjchoi
-ms.openlocfilehash: 69ae6766414dbe533500860b01852ee8d25c3a1e
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 2148c6c8c9d78355847b3240b54349f1e7789921
+ms.sourcegitcommit: 7221918fbe5385ceccf39dff9dd5a3817a0bd807
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73513917"
+ms.lasthandoff: 01/21/2020
+ms.locfileid: "76291385"
 ---
 # <a name="azure-kubernetes-service-aks-diagnostics-overview"></a>Обзор диагностики службы Azure Kubernetes (AKS)
 
@@ -76,7 +76,7 @@ ms.locfileid: "73513917"
 
 - Сбои авторизации узла
 - ошибки 401
-- ошибки 403
+- Ошибки 403
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

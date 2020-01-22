@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 01/16/2020
 ms.author: radeltch
-ms.openlocfilehash: 94cf30d2d3650212707cf92db83236882fe5e49f
-ms.sourcegitcommit: d29e7d0235dc9650ac2b6f2ff78a3625c491bbbf
+ms.openlocfilehash: 7471fc6d7f10c849ba79fedf88961d6c3c99913f
+ms.sourcegitcommit: a9b1f7d5111cb07e3462973eb607ff1e512bc407
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76169353"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76314204"
 ---
 # <a name="high-availability-for-sap-netweaver-on-azure-vms-on-suse-linux-enterprise-server-for-sap-applications-multi-sid-guide"></a>Высокий уровень доступности SAP NetWeaver на виртуальных машинах Azure на SUSE Linux Enterprise Server для многоид безопасности приложений SAP
 
@@ -129,8 +129,8 @@ NFS-сервер, SAP NetWeaver ASCS, SAP NetWeaver SCS, SAP NetWeaver ERS и б
 
 * Конфигурация внешнего интерфейса:
   * IP-адрес для NW1 10.3.1.15
-  * IP-адрес для NW1 10.3.1.17
-  * IP-адрес для NW1 10.3.1.19
+  * IP-адрес для NW2.10.3.1.17
+  * IP-адрес для NW3 10.3.1.19
 * Конфигурация серверной части:
   * подключена к основным сетевым интерфейсам всех виртуальных машин, которые должны быть частью кластера (A)SCS/ERS.
 * Порт пробы:

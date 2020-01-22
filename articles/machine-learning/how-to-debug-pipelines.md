@@ -9,17 +9,17 @@ ms.topic: conceptual
 author: likebupt
 ms.author: keli19
 ms.date: 12/12/2019
-ms.openlocfilehash: e0e4ea4689baeb8e85a765a33c3f8124d6bc4362
-ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
+ms.openlocfilehash: 991f7ebf51be5f805a8b12fa0af0fefeff0ef582
+ms.sourcegitcommit: a9b1f7d5111cb07e3462973eb607ff1e512bc407
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75764292"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76309563"
 ---
 # <a name="debug-and-troubleshoot-machine-learning-pipelines"></a>Отладка и устранение неполадок в конвейерах машинного обучения
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
 
-Из этой статьи вы узнаете, как выполнять отладку и устранение неполадок в [конвейерах машинного обучения](concept-ml-pipelines.md) в [машинное обучение Azure SDK](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py) и [конструкторе машинное обучение Azure (Предварительная версия)](https://docs.microsoft.com/azure/machine-learning/concept-designer).
+Из этой статьи вы узнаете, как выполнять отладку и устранение неполадок в [конвейерах машинного обучения](concept-ml-pipelines.md) в [машинное обучение Azure SDK](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py) и [конструкторе машинное обучение Azure](https://docs.microsoft.com/azure/machine-learning/concept-designer).
 
 
 ## <a name="debug-and-troubleshoot-in-the-azure-machine-learning-sdk"></a>Отладка и устранение неполадок в пакете SDK для Машинное обучение Azure
@@ -79,7 +79,7 @@ ms.locfileid: "75764292"
 | Конвейер не использует повторно шаги | Повторное использование шага включено по умолчанию, но убедитесь, что вы не отключили его на этапе конвейера. Если повторное использование отключено, для параметра `allow_reuse` на шаге будет задано значение `False`. |
 | Конвейер перезапускается без необходимости | Чтобы обеспечить повторный запуск шагов только при изменении базовых данных или скриптов, установите соединение между каталогами для каждого шага. Если один и тот же исходный каталог используется для нескольких шагов, может возникнуть ненужное повторное использование. Используйте параметр `source_directory` объекта шага конвейера, чтобы указать на изолированный каталог для этого шага, и убедитесь, что вы не используете один и тот же путь `source_directory` для нескольких шагов. |
 
-## <a name="debug-and-troubleshoot-in-azure-machine-learning-designer-preview"></a>Отладка и устранение неполадок в конструкторе Машинное обучение Azure (Предварительная версия)
+## <a name="debug-and-troubleshoot-in-azure-machine-learning-designer"></a>Отладка и устранение неполадок в конструкторе Машинное обучение Azure
 
 В этом разделе приводятся общие сведения об устранении неполадок конвейеров в конструкторе.
 Для конвейеров, созданных в конструкторе, **файлы журнала** можно найти на странице «разработка» или на странице «сведения о выполнении конвейера».

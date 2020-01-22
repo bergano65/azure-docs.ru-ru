@@ -16,12 +16,12 @@ ms.workload: infrastructure-services
 ms.date: 01/21/2019
 ms.author: rclaus
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 1a52977a46c1222a1626fa5a4dcb4de7dd84f8dd
-ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
+ms.openlocfilehash: c04726bf3b4166255ada7c9f1252be0471dcc761
+ms.sourcegitcommit: 7221918fbe5385ceccf39dff9dd5a3817a0bd807
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75638210"
+ms.lasthandoff: 01/21/2020
+ms.locfileid: "76291487"
 ---
 # <a name="high-availability-architecture-and-scenarios-for-sap-netweaver"></a>Высокодоступная архитектура и сценарии для SAP NetWeaver
 
@@ -294,7 +294,7 @@ Azure находится в процессе развертывания конц
 При использовании Зон доступности есть несколько моментов, которые следует учесть. Ниже приведен список рекомендаций.
 
 - Вы не можете развертывать группы доступности Azure в Зоне доступности. Вам необходимо выбрать Зону доступности или группу доступности в качестве области развертывания для виртуальной машины.
-- Вы не можете использовать [Load Balancer (цен. категория "Базовый")](https://docs.microsoft.com/azure/load-balancer/load-balancer-overview#skus) для создания отказоустойчивых кластерных решений, основанных на службах отказоустойчивого кластера Windows или Linux Pacemaker. Вместо этого необходимо использовать [номер SKU Load Balancer (цен. категория "Стандартный") Azure](https://docs.microsoft.com/azure/load-balancer/load-balancer-standard-availability-zones).
+- Вы не можете использовать [Load Balancer (цен. категория "Базовый")](https://docs.microsoft.com/azure/load-balancer/load-balancer-overview) для создания отказоустойчивых кластерных решений, основанных на службах отказоустойчивого кластера Windows или Linux Pacemaker. Вместо этого необходимо использовать [номер SKU Load Balancer (цен. категория "Стандартный") Azure](https://docs.microsoft.com/azure/load-balancer/load-balancer-standard-availability-zones).
 - Зоны доступности Azure не дают никаких гарантий относительно определенного расстояния между различными зонами в одном регионе.
 - Задержка сети между различными Зонами доступности Azure в разных регионах Azure может отличаться. В некоторых случаях вы, как клиент, можете запустить прикладной уровень SAP, развернутый в разных зонах, так как задержка сети от одной зоны до активной виртуальной машины СУБД все еще приемлема из-за влияния бизнес-процесса. При этом будут сценарии клиента, в которых задержка между активной виртуальной машиной СУБД в одной зоне и экземпляром приложения SAP в виртуальной машине в другой зоне может быть слишком значительной и неприемлемой для бизнес-процессов SAP. В результате архитектуры развертывания должны отличаться: архитектура "активная — активная" для приложения или "активная — пассивная", если задержка слишком высока.
 - Использование [управляемых дисков Azure](https://azure.microsoft.com/services/managed-disks/) является обязательным для развертывания в Зонах доступности Azure. 

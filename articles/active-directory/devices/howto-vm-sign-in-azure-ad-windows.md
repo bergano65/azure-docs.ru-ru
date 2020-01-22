@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0b70a475d841c3649ba9e2bcc63187fc4484a23d
-ms.sourcegitcommit: 5bbe87cf121bf99184cc9840c7a07385f0d128ae
+ms.openlocfilehash: 42d1fde92e9315e8df3f65b2ab91ced74b377c0a
+ms.sourcegitcommit: 7221918fbe5385ceccf39dff9dd5a3817a0bd807
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76119981"
+ms.lasthandoff: 01/21/2020
+ms.locfileid: "76293459"
 ---
 # <a name="sign-in-to-windows-virtual-machine-in-azure-using-azure-active-directory-authentication-preview"></a>Вход в виртуальную машину Windows в Azure с помощью проверки подлинности Azure Active Directory (Предварительная версия)
 
@@ -63,10 +63,10 @@ ms.locfileid: "76119981"
 
 Чтобы включить проверку подлинности Azure AD для виртуальных машин Windows в Azure, необходимо убедиться, что конфигурация сети виртуальных машин разрешает исходящий доступ к следующим конечным точкам через TCP-порт 443:
 
-- https://enterpriseregistration.windows.net
-- https://login.microsoftonline.com
-- https://device.login.microsoftonline.com
-- https://pas.windows.net
+- HTTPS:\//enterpriseregistration.windows.net
+- https:\//login.microsoftonline.com
+- HTTPS:\//device.login.microsoftonline.com
+- HTTPS:\//pas.windows.net
 
 ## <a name="enabling-azure-ad-login-in-for-windows-vm-in-azure"></a>Включение входа Azure AD в для виртуальной машины Windows в Azure
 
@@ -239,24 +239,24 @@ az role assignment create \
 
    | Команда для запуска | Ожидаемые выходные данные |
    | --- | --- |
-   | Перелистывание метаданных: true "http://169.254.169.254/metadata/instance?api-version=2017-08-01 " | Правильные сведения о виртуальной машине Azure |
-   | Перелистывание метаданных: true "http://169.254.169.254/metadata/identity/info?api-version=2018-02-01 " | Допустимый идентификатор клиента, связанный с подпиской Azure |
-   | Перелистывание метаданных: true "http://169.254.169.254/metadata/identity/oauth2/token?resource=urn:ms-drs:enterpriseregistration.windows.net&api-version=2018-02-01 " | Допустимый маркер доступа, выданный Azure Active Directory для управляемого удостоверения, назначенного этой виртуальной машине |
+   | Перелистывание метаданных: true "http://169.254.169.254/metadata/instance?api-version=2017-08-01" | Правильные сведения о виртуальной машине Azure |
+   | Перелистывание метаданных: true "http://169.254.169.254/metadata/identity/info?api-version=2018-02-01" | Допустимый идентификатор клиента, связанный с подпиской Azure |
+   | Перелистывание метаданных: true "http://169.254.169.254/metadata/identity/oauth2/token?resource=urn:ms-drs:enterpriseregistration.windows.net&api-version=2018-02-01" | Допустимый маркер доступа, выданный Azure Active Directory для управляемого удостоверения, назначенного этой виртуальной машине |
 
    > [!NOTE]
    > Маркер доступа можно декодировать с помощью такого средства, как [http://calebb.net/](http://calebb.net/). Проверьте, что идентификатор AppID в маркере доступа соответствует управляемому удостоверению, назначенному виртуальной машине.
 
 1. Убедитесь, что необходимые конечные точки доступны из виртуальной машины с помощью командной строки:
    
-   - фигурная https://login.microsoftonline.com/ -D —
-   - Перелистывание https://login.microsoftonline.com/`<TenantID>` /-D —
+   - фигурная HTTPS:\//login.microsoftonline.com/-D —
+   - фигурная HTTPS:\//login.microsoftonline.com/`<TenantID>`/-D —
 
    > [!NOTE]
    > Замените `<TenantID>` ИДЕНТИФИКАТОРом клиента Azure AD, связанным с подпиской Azure.
 
-   - фигурная https://enterpriseregistration.windows.net/ -D-
-   - фигурная https://device.login.microsoftonline.com/ -D-
-   - фигурная https://pas.windows.net/ -D-
+   - фигурная HTTPS:\//enterpriseregistration.windows.net/-D-
+   - фигурная HTTPS:\//device.login.microsoftonline.com/-D-
+   - фигурная HTTPS:\//pas.windows.net/-D-
 
 1. Состояние устройства можно просмотреть, выполнив `dsregcmd /status`. Цель — это состояние устройства, которое будет отображаться как `AzureAdJoined : YES`.
 
@@ -283,15 +283,15 @@ az role assignment create \
 
 1. Убедитесь, что необходимые конечные точки доступны из виртуальной машины с помощью командной строки:
 
-   - фигурная https://login.microsoftonline.com/ -D —
-   - Перелистывание https://login.microsoftonline.com/`<TenantID>` /-D —
+   - фигурная HTTPS:\//login.microsoftonline.com/-D —
+   - фигурная HTTPS:\//login.microsoftonline.com/`<TenantID>`/-D —
    
    > [!NOTE]
    > Замените `<TenantID>` ИДЕНТИФИКАТОРом клиента Azure AD, связанным с подпиской Azure. Если необходимо найти идентификатор клиента, можно навести указатель мыши на имя учетной записи, чтобы получить идентификатор каталога или клиента, или выбрать Azure Active Directory > Свойства > идентификатор каталога в портал Azure.
 
-   - фигурная https://enterpriseregistration.windows.net/ -D-
-   - фигурная https://device.login.microsoftonline.com/ -D-
-   - фигурная https://pas.windows.net/ -D-
+   - фигурная HTTPS:\//enterpriseregistration.windows.net/-D-
+   - фигурная HTTPS:\//device.login.microsoftonline.com/-D-
+   - фигурная HTTPS:\//pas.windows.net/-D-
 
 1. Если какая-либо из команд завершается с ошибкой "не удалось разрешить узел `<URL>`", попробуйте выполнить эту команду, чтобы определить сервер DNS, используемый виртуальной машиной.
    

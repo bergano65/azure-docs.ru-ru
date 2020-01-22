@@ -1,5 +1,5 @@
 ---
-title: Фильтрация, упорядочение и разбиение на страницы объектов служб мультимедиа
+title: Фильтрация, упорядочение и разбиение на страницы объектов служб мультимедиа v3
 titleSuffix: Azure Media Services
 description: Сведения о фильтрации, упорядочении и разбиении на страницы сущностей служб мультимедиа Azure.
 services: media-services
@@ -10,15 +10,15 @@ editor: ''
 ms.service: media-services
 ms.workload: ''
 ms.topic: article
-ms.date: 10/11/2019
+ms.date: 01/21/2020
 ms.author: juliako
 ms.custom: seodec18
-ms.openlocfilehash: 22b8c4e2454d6130ebcaf85346b767c843fbc1f0
-ms.sourcegitcommit: dbde4aed5a3188d6b4244ff7220f2f75fce65ada
+ms.openlocfilehash: c5ae9839b7bbb86e28c9f8adab0aa0ec5e885087
+ms.sourcegitcommit: a9b1f7d5111cb07e3462973eb607ff1e512bc407
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74186250"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76311705"
 ---
 # <a name="filtering-ordering-and-paging-of-media-services-entities"></a>Фильтрация, упорядочение и разбиение на страницы объектов служб мультимедиа
 
@@ -62,15 +62,15 @@ var odataQuery = new ODataQuery<Asset>("properties/created lt 2018-05-11T17:39:0
 var firstPage = await MediaServicesArmClient.Assets.ListAsync(CustomerResourceGroup, CustomerAccountName, odataQuery);
 ```
 
-## <a name="order-by"></a>Упорядочить по
+## <a name="order-by"></a>Сортировка по
 
-Используйте `$orderby`, чтобы отсортировать возвращенные объекты по указанному параметру. Например,  
+Используйте `$orderby`, чтобы отсортировать возвращенные объекты по указанному параметру. Пример.  
 
 ```
 GET https://management.azure.com/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/mediaresources/providers/Microsoft.Media/mediaServices/amstestaccount/assets?api-version=2018-07-01$orderby=properties/created%20gt%202018-05-11T17:39:08.387Z
 ```
 
-Чтобы отсортировать результаты по возрастанию или по убыванию, добавьте в имя поля `asc` или `desc`, разделяя их пробелом. Например, `$orderby properties/created desc`.
+Чтобы отсортировать результаты по возрастанию или по убыванию, добавьте в имя поля `asc` или `desc`, разделяя их пробелом. Например: `$orderby properties/created desc`.
 
 ## <a name="skip-token"></a>Пропустить токен
 
@@ -156,31 +156,31 @@ client.Jobs.List(config.ResourceGroup, config.AccountName, VideoAnalyzerTransfor
 
 В следующей таблице показано, как можно применить параметры фильтрации и упорядочивания к разным сущностям.
 
-|Имя сущности|Имя свойства|Фильтр|Порядок|
+|Имя сущности|Имя свойства|Фильтр|Заказ|
 |---|---|---|---|
-|[Ресурсы](https://docs.microsoft.com/rest/api/media/assets/)|Имя|`eq`, `gt`, `lt`, `ge`, `le`|`asc` и `desc`|
+|[Ресурсы](https://docs.microsoft.com/rest/api/media/assets/)|name|`eq`, `gt`, `lt`, `ge`, `le`|`asc` и `desc`|
 ||properties.alternateId |`eq`||
 ||properties.assetId |`eq`||
 ||properties.created| `eq`, `gt`, `lt`| `asc` и `desc`|
-|[Политики ключей содержимого](https://docs.microsoft.com/rest/api/media/contentkeypolicies)|Имя|`eq`, `ne`, `ge`, `le`, `gt`, `lt`|`asc` и `desc`|
+|[Политики ключей содержимого](https://docs.microsoft.com/rest/api/media/contentkeypolicies)|name|`eq`, `ne`, `ge`, `le`, `gt`, `lt`|`asc` и `desc`|
 ||properties.created    |`eq`, `ne`, `ge`, `le`, `gt`, `lt`|`asc` и `desc`|
 ||properties.description    |`eq`, `ne`, `ge`, `le`, `gt`, `lt`||
 ||properties.lastModified|`eq`, `ne`, `ge`, `le`, `gt`, `lt`|`asc` и `desc`|
 ||properties.policyId|`eq`, `ne`||
-|[Задания](https://docs.microsoft.com/rest/api/media/jobs)| Имя  | `eq`            | `asc` и `desc`|
+|[Задания](https://docs.microsoft.com/rest/api/media/jobs)| name  | `eq`            | `asc` и `desc`|
 ||properties.state        | `eq`, `ne`        |                         |
 ||properties.created      | `gt`, `ge`, `lt`, `le`| `asc` и `desc`|
 ||properties.lastModified | `gt`, `ge`, `lt`, `le` | `asc` и `desc`| 
-|[Указатели потоковой передачи](https://docs.microsoft.com/rest/api/media/streaminglocators)|Имя|`eq`, `ne`, `ge`, `le`, `gt`, `lt`|`asc` и `desc`|
+|[Указатели потоковой передачи](https://docs.microsoft.com/rest/api/media/streaminglocators)|name|`eq`, `ne`, `ge`, `le`, `gt`, `lt`|`asc` и `desc`|
 ||properties.created    |`eq`, `ne`, `ge`, `le`, `gt`, `lt`|`asc` и `desc`|
 ||properties.endTime    |`eq`, `ne`, `ge`, `le`, `gt`, `lt`|`asc` и `desc`|
-|[Политики потоковой передачи](https://docs.microsoft.com/rest/api/media/streamingpolicies)|Имя|`eq`, `ne`, `ge`, `le`, `gt`, `lt`|`asc` и `desc`|
+|[Политики потоковой передачи](https://docs.microsoft.com/rest/api/media/streamingpolicies)|name|`eq`, `ne`, `ge`, `le`, `gt`, `lt`|`asc` и `desc`|
 ||properties.created    |`eq`, `ne`, `ge`, `le`, `gt`, `lt`|`asc` и `desc`|
-|[Преобразования](https://docs.microsoft.com/rest/api/media/transforms)| Имя | `eq`            | `asc` и `desc`|
+|[Преобразования](https://docs.microsoft.com/rest/api/media/transforms)| name | `eq`            | `asc` и `desc`|
 || properties.created      | `gt`, `ge`, `lt`, `le`| `asc` и `desc`|
 || properties.lastModified | `gt`, `ge`, `lt`, `le`| `asc` и `desc`|
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Список ресурсов](https://docs.microsoft.com/rest/api/media/assets/list)
 * [Список политик ключей содержимого](https://docs.microsoft.com/rest/api/media/contentkeypolicies/list)

@@ -8,14 +8,14 @@ manager: johndeu
 ms.service: media-services
 ms.subservice: video-indexer
 ms.topic: article
-ms.date: 05/15/2019
+ms.date: 01/14/2020
 ms.author: anzaman
-ms.openlocfilehash: 4ef5354a94ae707df8dd1f2767efe04dfbacd7ad
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: b7517c8a8745569635a9570c02c851854eebeb96
+ms.sourcegitcommit: 7221918fbe5385ceccf39dff9dd5a3817a0bd807
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65799593"
+ms.lasthandoff: 01/21/2020
+ms.locfileid: "76289498"
 ---
 # <a name="customize-a-language-model-with-the-video-indexer-apis"></a>Настройка языковой модели с помощью API Индексатора видео
 
@@ -27,40 +27,10 @@ ms.locfileid: "65799593"
 
 ## <a name="create-a-language-model"></a>Создание языковой модели
 
-Следующая команда создает новую пользовательскую языковую модель в указанной учетной записи. Вы можете передать файлы для языковой модели в этом вызове. Кроме того, можно создать модель языка и передать файлы для модели позже, обновив языковую модель.
+API [создания языковой модели](https://api-portal.videoindexer.ai/docs/services/Operations/operations/Create-Language-Model?) создает новую пользовательскую языковую модель в указанной учетной записи. Вы можете передать файлы для языковой модели в этом вызове. Кроме того, можно создать модель языка и передать файлы для модели позже, обновив языковую модель.
 
 > [!NOTE]
 > По-прежнему следует провести обучение модели с поддержкой файлов для модели, чтобы освоить содержимое из файлов. Направления по обучению языку находятся в следующем разделе.
-
-### <a name="request-url"></a>Request URL (URL-адрес запроса)
-
-Это запрос POST.
-
-```
-https://api.videoindexer.ai/{location}/Accounts/{accountId}/Customization/PersonModels?name={name}&accessToken={accessToken}
-```
-
-Ниже приведен запрос в Curl.
-
-```curl
-curl -v -X POST "https://api.videoindexer.ai/{location}/Accounts/{accountId}/Customization/Language?accessToken={accessToken}&modelName={modelName}&language={language}"
-
---data-ascii "{body}" 
-```
-
-[Просмотрите необходимые параметры и выполните тестирование с помощью портала разработчика Индексатора видео](https://api-portal.videoindexer.ai/docs/services/operations/operations/Create-Person-Model?).
-
-### <a name="request-parameters"></a>Параметры запроса
-
-|**Имя**|**Тип**|**Обязательный**|**Описание**|
-|---|---|---|---|
-|location|string|Да|Регион Azure, в который должен быть направлен вызов. Дополнительные сведения см. в статье [Azure regions in which Video Indexer exists](regions.md) (Регионы Azure, в которых существует Индексатор видео).|
-|accountId|string|Да|Глобальный уникальный идентификатор для учетной записи|
-|accessToken|string|Да|Маркер доступа (должен быть в области [маркера доступа к учетной записи](https://api-portal.videoindexer.ai/docs/services/authorization/operations/Get-Account-Access-Token?)) для проверки подлинности вызова. Срок действия маркеров доступа истекает в течение 1 часа.|
-|modelName|string|Да|Имя языковой модели|
-|language|string|Да|Язык языковой модели <br/>Параметру **язык** необходимо присвоить язык в формате BCP-47 "тег языка – регион" (например, en-US). Поддерживаемые языки: английский (en-US), немецкий (de-DE), испанский (es-SP), арабский (ar-EG), французский (fr-FR), хинди (hi-HI), итальянский (it-IT), японский (ja-JP), португальский (pt-BR), русский (ru-RU) и китайский (zh-CN).  |
-
-### <a name="request-body"></a>Текст запроса
 
 Чтобы передать файлы, которые будут добавлены в языковую модель, необходимо передать файлы в тексте, используя данные формы в дополнение к предоставлению значений для обязательных параметров выше. Это можно осуществить двумя путями: 
 
@@ -100,39 +70,10 @@ curl -v -X POST "https://api.videoindexer.ai/{location}/Accounts/{accountId}/Cus
 
 ## <a name="train-a-language-model"></a>Обучение языковой модели
 
-Следующая команда обучает пользовательскую языковую модель в указанной учетной записи с содержимым в файлах, которые были переданы и включены в языковой модели. 
+API [-интерфейс обучения языковой модели](https://api-portal.videoindexer.ai/docs/services/operations/operations/Train-Language-Model?&pattern=train) обучает пользовательскую языковую модель в указанной учетной записи с содержимым в файлах, которые были переданы и включены в языковой модели. 
 
 > [!NOTE]
 > Сначала необходимо создать языковую модель и передать ее файлы. Передавать файлы можно либо при создании языковой модели, либо путем обновления языковой модели. 
-
-### <a name="request-url"></a>Request URL (URL-адрес запроса)
-
-Это запрос PUT.
-
-```
-https://api.videoindexer.ai/{location}/Accounts/{accountId}/Customization/Language/{modelId}/Train?accessToken={accessToken}
-```
-
-Ниже приведен запрос в Curl.
-
-```curl
-curl -v -X PUT "https://api.videoindexer.ai/{location}/Accounts/{accountId}/Customization/Language/{modelId}/Train?accessToken={accessToken}"
-```
- 
-[Просмотрите необходимые параметры и выполните тестирование с помощью портала разработчика Индексатора видео](https://api-portal.videoindexer.ai/docs/services/operations/operations/Train-Language-Model?&pattern=train).
-
-### <a name="request-parameters"></a>Параметры запроса
-
-|**Имя**|**Тип**|**Обязательный**|**Описание**|
-|---|---|---|---|
-|location|string|Да|Регион Azure, в который должен быть направлен вызов. Дополнительные сведения см. в статье [Azure regions in which Video Indexer exists](regions.md) (Регионы Azure, в которых существует Индексатор видео).|
-|accountID|string|Да|Глобальный уникальный идентификатор этой учетной записи|
-|modelId|string|Да|Идентификатор языковой модели (создается при создании языковой модели)|
-|accessToken|string|Да|Маркер доступа (должен быть в области [маркера доступа к учетной записи](https://api-portal.videoindexer.ai/docs/services/authorization/operations/Get-Account-Access-Token?)) для проверки подлинности вызова. Срок действия маркеров доступа истекает в течение 1 часа.|
-
-### <a name="request-body"></a>Текст запроса
-
-Для этого вызова больше не требуется текст запроса.
 
 ### <a name="response"></a>Ответ
 
@@ -164,40 +105,12 @@ curl -v -X PUT "https://api.videoindexer.ai/{location}/Accounts/{accountId}/Cust
 }
 ```
 
-Затем следует использовать значение **идентификатор** языковой модели для параметра **linguisticModelId** при [передачи видео в индекс](https://api-portal.videoindexer.ai/docs/services/operations/operations/Upload-video?) и для параметра **languageModelId** при [повторном индексировании видео](https://api-portal.videoindexer.ai/docs/services/operations/operations/Re-index-video?).
+Необходимо использовать возвращенное значение **идентификатора** языковой модели для параметра **лингуистикмоделид** при [отправке видео в индекс](https://api-portal.videoindexer.ai/docs/services/operations/operations/Upload-video?) и для параметра **лангуажемоделид** при повторном [индексировании видео](https://api-portal.videoindexer.ai/docs/services/operations/operations/Re-index-video?).
 
+ 
 ## <a name="delete-a-language-model"></a>Удаление языковой модели
 
-Следующая команда удаляет пользовательскую языковую модель из указанной учетной записи. Любое видео, в котором использовалась удаленная языковая модель, будет хранить тот же индекс, пока вы не выполните повторную индексацию. При повторной индексации вы можете назначить новую языковую модель для видео. В противном случае для повторной индексации видео Индексатор видео будет использовать модель по умолчанию.
-
-### <a name="request-url"></a>Request URL (URL-адрес запроса)
-
-Это запрос DELETE.
-
-```
-https://api.videoindexer.ai/{location}/Accounts/{accountId}/Customization/Language/{modelId}?accessToken={accessToken}
-```
-
-Ниже приведен запрос в Curl.
-
-```curl
-curl -v -X DELETE "https://api.videoindexer.ai/{location}/Accounts/{accountId}/Customization/Language/{modelId}?accessToken={accessToken}"
-```
- 
-[Просмотрите необходимые параметры и выполните тестирование с помощью портала разработчика Индексатора видео](https://api-portal.videoindexer.ai/docs/services/operations/operations/Delete-Language-Model?&pattern=delete).
-
-### <a name="request-parameters"></a>Параметры запроса 
-
-|**Имя**|**Тип**|**Обязательный**|**Описание**|
-|---|---|---|---|
-|location|string|Да|Регион Azure, в который должен быть направлен вызов. Дополнительные сведения см. в статье [Azure regions in which Video Indexer exists](regions.md) (Регионы Azure, в которых существует Индексатор видео).|
-|accountID|string|Да|Глобальный уникальный идентификатор этой учетной записи|
-|modelId|string|Да|Идентификатор языковой модели (создается при создании языковой модели)|
-|accessToken|string|Да|Маркер доступа (должен быть в области [маркера доступа к учетной записи](https://api-portal.videoindexer.ai/docs/services/authorization/operations/Get-Account-Access-Token?)) для проверки подлинности вызова. Срок действия маркеров доступа истекает в течение 1 часа.|
-
-### <a name="request-body"></a>Текст запроса
-
-Для этого вызова больше не требуется текст запроса.
+API [удаления языковой модели](https://api-portal.videoindexer.ai/docs/services/operations/operations/Delete-Language-Model?&pattern=delete) удаляет пользовательскую языковую модель из указанной учетной записи. Любое видео, в котором использовалась удаленная языковая модель, будет хранить тот же индекс, пока вы не выполните повторную индексацию. При повторной индексации вы можете назначить новую языковую модель для видео. В противном случае для повторной индексации видео Индексатор видео будет использовать модель по умолчанию.
 
 ### <a name="response"></a>Ответ
 
@@ -205,46 +118,16 @@ curl -v -X DELETE "https://api.videoindexer.ai/{location}/Accounts/{accountId}/C
 
 ## <a name="update-a-language-model"></a>Обновление языковой модели
 
-Следующая команда обновляет пользовательскую языковую модель в указанной учетной записи.
+[Обновление API языковой модели](https://api-portal.videoindexer.ai/docs/services/operations/operations/Update-Language-Model?&pattern=update) обновляет пользовательскую модель языка в указанной учетной записи.
 
 > [!NOTE]
 > Должна быть создана языковая модель. Этот вызов можно использовать, чтобы включить или отключить все файлы в модели, обновить имя языковой модели и передать файлы для добавления в языковую модель.
-
-### <a name="request-url"></a>Request URL (URL-адрес запроса)
-
-Это запрос PUT.
-
-```
-https://api.videoindexer.ai/{location}/Accounts/{accountId}/Customization/Language/{modelId}?accessToken={accessToken}[&modelName][&enable]
-```
-
-Ниже приведен запрос в Curl.
-
-```curl
-curl -v -X PUT "https://api.videoindexer.ai/{location}/Accounts/{accountId}/Customization/Language/{modelId}?accessToken={accessToken}?modelName={string}&enable={string}"
-
---data-ascii "{body}" 
-```
- 
-[Просмотрите необходимые параметры и выполните тестирование с помощью портала разработчика Индексатора видео](https://api-portal.videoindexer.ai/docs/services/operations/operations/Update-Language-Model?&pattern=update).
-
-### <a name="request-parameters"></a>Параметры запроса 
-
-|**Имя**|**Тип**|**Обязательный**|**Описание**|
-|---|---|---|---|
-|location|string|Да|Регион Azure, в который должен быть направлен вызов. Дополнительные сведения см. в статье [Azure regions in which Video Indexer exists](regions.md) (Регионы Azure, в которых существует Индексатор видео).|
-|accountID|string|Да|Глобальный уникальный идентификатор этой учетной записи|
-|modelId|string|Да|Идентификатор языковой модели (создается при создании языковой модели)|
-|accessToken|string|Да|Маркер доступа (должен быть в области [маркера доступа к учетной записи](https://api-portal.videoindexer.ai/docs/services/authorization/operations/Get-Account-Access-Token?)) для проверки подлинности вызова. Срок действия маркеров доступа истекает в течение 1 часа.|
-|modelName|string|Нет|Новое имя, которое можно предоставить к модели|
-|enable|Логическое|Нет|Выберите, все ли файлы этой модели включены (true) или отключены (false)|
-
-### <a name="request-body"></a>Текст запроса
 
 Чтобы передать файлы, которые будут добавлены в языковую модель, необходимо передать файлы в тексте, используя данные формы в дополнение к предоставлению значений для обязательных параметров выше. Это можно осуществить двумя путями: 
 
 1. Ключом будет имя файла, а значением будет TXT-файл.
 2. Ключом будет имя файла, а значением будет URL-адрес текстового файла.
+
 
 ### <a name="response"></a>Ответ
 
@@ -275,43 +158,12 @@ curl -v -X PUT "https://api.videoindexer.ai/{location}/Accounts/{accountId}/Cust
     ]
 }
 ```
-Можно использовать **идентификатор** файлов, возвращенных здесь, чтобы загрузить содержимое файла.
+
+Используйте **идентификаторы** файлов, возвращенных в ответе, чтобы скачать содержимое файла.
 
 ## <a name="update-a-file-from-a-language-model"></a>Обновление файла языковой модели
 
-Следующая команда позволяет обновить имя и состояние **включения** файла пользовательской языковой модели в указанной учетной записи.
-
-### <a name="request-url"></a>Request URL (URL-адрес запроса)
-
-Это запрос PUT.
-
-```
-https://api.videoindexer.ai/{location}/Accounts/{accountId}/Customization/Language/{modelId}/Files/{fileId}?accessToken={accessToken}[&fileName][&enable]
-```
-
-Ниже приведен запрос в Curl.
-
-```curl
-curl -v -X PUT "https://api.videoindexer.ai/{location}/Accounts/{accountId}/Customization/Language/{modelId}/Files/{fileId}?accessToken={accessToken}?fileName={string}&enable={string}"
-```
- 
-[Просмотрите необходимые параметры и выполните тестирование с помощью портала разработчика Индексатора видео](https://api-portal.videoindexer.ai/docs/services/operations/operations/Update-Language-Model-file?&pattern=update).
-
-### <a name="request-parameters"></a>Параметры запроса 
-
-|**Имя**|**Тип**|**Обязательный**|**Описание**|
-|---|---|---|---|
-|location|string|Да|Регион Azure, в который должен быть направлен вызов. Дополнительные сведения см. в статье [Azure regions in which Video Indexer exists](regions.md) (Регионы Azure, в которых существует Индексатор видео).|
-|accountId|string|Да|Глобальный уникальный идентификатор этой учетной записи|
-|modelId|string|Да|Идентификатор языковой модели, содержащей файл (создается при создании языковой модели)|
-|fileId|string|Да|Идентификатор файла, который обновляется (созданный при передачи файла во время создания или обновления языковой модели)|
-|accessToken|string|Да|Маркер доступа (должен быть в области [маркера доступа к учетной записи](https://api-portal.videoindexer.ai/docs/services/authorization/operations/Get-Account-Access-Token?)) для проверки подлинности вызова. Срок действия маркеров доступа истекает в течение 1 часа.|
-|fileName|string|Нет|Имя обновляемого файла|
-|enable|Логическое|Нет|Обновление, является ли этот файл включен (true) или отключен (false) в языковой модели|
-
-### <a name="request-body"></a>Текст запроса
-
-Для этого вызова больше не требуется текст запроса.
+[Обновление файла](https://api-portal.videoindexer.ai/docs/services/operations/operations/Update-Language-Model-file?&pattern=update) позволяет обновить имя и **включить** состояние файла в пользовательской языковой модели в указанной учетной записи.
 
 ### <a name="response"></a>Ответ
 
@@ -326,39 +178,11 @@ curl -v -X PUT "https://api.videoindexer.ai/{location}/Accounts/{accountId}/Cust
   "creationTime": "2018-04-27T20:10:10.5233333"
 }
 ```
-Можно использовать **идентификатор** файла, возвращенного здесь, чтобы загрузить содержимое файла.
+Используйте **идентификатор** файла, возвращенного в ответе, чтобы скачать содержимое файла.
 
 ## <a name="get-a-specific-language-model"></a>Получение конкретной языковой модели
 
-Следующая команда возвращает сведения об указанной языковой модели в указанной учетной записи, например язык и файлы, которые находятся в языковой модели. 
-
-### <a name="request-url"></a>Request URL (URL-адрес запроса)
-
-Это запрос GET.
-```
-https://api.videoindexer.ai/{location}/Accounts/{accountId}/Customization/Language/{modelId}?accessToken={accessToken}
-```
-
-Ниже приведен запрос в Curl.
-
-```curl
-curl -v -X GET "https://api.videoindexer.ai/{location}/Accounts/{accountId}/Customization/Language/{modelId}?accessToken={accessToken}"
-```
- 
-[Просмотрите необходимые параметры и выполните тестирование с помощью портала разработчика Индексатора видео](https://api-portal.videoindexer.ai/docs/services/operations/operations/Get-Language-Model?&pattern=get).
-
-### <a name="request-parameters-and-request-body"></a>Параметры и текст запроса
-
-|**Имя**|**Тип**|**Обязательный**|**Описание**|
-|---|---|---|---|
-|location|string|Да|Регион Azure, в который должен быть направлен вызов. Дополнительные сведения см. в статье [Azure regions in which Video Indexer exists](regions.md) (Регионы Azure, в которых существует Индексатор видео).|
-|accountID|string|Да|Глобальный уникальный идентификатор этой учетной записи|
-|modelId|string|Да|Идентификатор языковой модели (создается при создании языковой модели)|
-|accessToken|string|Да|Маркер доступа (должен быть в области [маркера доступа к учетной записи](https://api-portal.videoindexer.ai/docs/services/authorization/operations/Get-Account-Access-Token?)) для проверки подлинности вызова. Срок действия маркеров доступа истекает в течение 1 часа.|
-
-### <a name="request-body"></a>Текст запроса
-
-Для этого вызова больше не требуется текст запроса.
+API [Get](https://api-portal.videoindexer.ai/docs/services/operations/operations/Get-Language-Model?&pattern=get) возвращает сведения о указанной модели языка в указанной учетной записи, например о языке и файлах, которые находятся в модели языка. 
 
 ### <a name="response"></a>Ответ
 
@@ -390,39 +214,11 @@ curl -v -X GET "https://api.videoindexer.ai/{location}/Accounts/{accountId}/Cust
 }
 ```
 
-Можно использовать **идентификатор** файла, возвращенного здесь, чтобы загрузить содержимое файла.
+Используйте **идентификатор** файла, возвращенного в ответе, чтобы скачать содержимое файла.
 
 ## <a name="get-all-the-language-models"></a>Получение всех языковых моделей
 
-Следующая команда возвращает все пользовательские языковые модели в указанной учетной записи в списке.
-
-### <a name="request-url"></a>Request URL (URL-адрес запроса)
-
-Это запрос GET.
-
-```
-https://api.videoindexer.ai/{location}/Accounts/{accountId}/Customization/Language?accessToken={accessToken}
-```
-
-Ниже приведен запрос в Curl.
-
-```curl
-curl -v -X GET "https://api.videoindexer.ai/{location}/Accounts/{accountId}/Customization/Language?accessToken={accessToken}"
-```
- 
-[Просмотрите необходимые параметры и выполните тестирование с помощью портала разработчика Индексатора видео](https://api-portal.videoindexer.ai/docs/services/operations/operations/Get-Language-Models?&pattern=get).
-
-### <a name="request-parameters"></a>Параметры запроса
-
-|**Имя**|**Тип**|**Обязательный**|**Описание**|
-|---|---|---|---|
-|location|string|Да|Регион Azure, в который должен быть направлен вызов. Дополнительные сведения см. в статье [Azure regions in which Video Indexer exists](regions.md) (Регионы Azure, в которых существует Индексатор видео).|
-|accountID|string|Да|Глобальный уникальный идентификатор для учетной записи|
-|accessToken|string|Да|Маркер доступа (должен быть в области [маркера доступа к учетной записи](https://api-portal.videoindexer.ai/docs/services/authorization/operations/Get-Account-Access-Token?)) для проверки подлинности вызова. Срок действия маркеров доступа истекает в течение 1 часа.|
-
-### <a name="request-body"></a>Текст запроса
-
-Для этого вызова больше не требуется текст запроса.
+API [получения всех](https://api-portal.videoindexer.ai/docs/services/operations/operations/Get-Language-Models?&pattern=get) функций возвращает все пользовательские языковые модели в указанной учетной записи в списке.
 
 ### <a name="response"></a>Ответ
 
@@ -466,36 +262,7 @@ curl -v -X GET "https://api.videoindexer.ai/{location}/Accounts/{accountId}/Cust
 
 ## <a name="delete-a-file-from-a-language-model"></a>Удаление файла из языковой модели
 
-Следующая команда удаляет указанный файл из указанной языковой модели в указанной учетной записи. 
-
-### <a name="request-url"></a>Request URL (URL-адрес запроса)
-
-Это запрос DELETE.
-```
-https://api.videoindexer.ai/{location}/Accounts/{accountId}/Customization/Language/{modelId}/Files/{fileId}?accessToken={accessToken}
-```
-
-Ниже приведен запрос в Curl.
-
-```curl
-curl -v -X DELETE "https://api.videoindexer.ai/{location}/Accounts/{accountId}/Customization/Language/{modelId}/Files/{fileId}?accessToken={accessToken}"
-```
- 
-[Просмотрите необходимые параметры и выполните тестирование с помощью портала разработчика Индексатора видео](https://api-portal.videoindexer.ai/docs/services/operations/operations/Delete-Language-Model-File?&pattern=delete).
-
-### <a name="request-parameters"></a>Параметры запроса 
-
-|**Имя**|**Тип**|**Обязательный**|**Описание**|
-|---|---|---|---|
-|location|string|Да|Регион Azure, в который должен быть направлен вызов. Дополнительные сведения см. в статье [Azure regions in which Video Indexer exists](regions.md) (Регионы Azure, в которых существует Индексатор видео).|
-|accountID|string|Да|Глобальный уникальный идентификатор этой учетной записи|
-|modelId|string|Да|Идентификатор языковой модели, содержащей файл (создается при создании языковой модели)|
-|fileId|string|Да|Идентификатор файла, который обновляется (созданный при передачи файла во время создания или обновления языковой модели)|
-|accessToken|string|Да|Маркер доступа (должен быть в области [маркера доступа к учетной записи](https://api-portal.videoindexer.ai/docs/services/authorization/operations/Get-Account-Access-Token?)) для проверки подлинности вызова. Срок действия маркеров доступа истекает в течение 1 часа.|
-
-### <a name="request-body"></a>Текст запроса
-
-Для этого вызова больше не требуется текст запроса.
+API [удаления](https://api-portal.videoindexer.ai/docs/services/operations/operations/Delete-Language-Model-File?&pattern=delete) удаляет указанный файл из указанной модели языка в указанной учетной записи. 
 
 ### <a name="response"></a>Ответ
 
@@ -503,36 +270,7 @@ curl -v -X DELETE "https://api.videoindexer.ai/{location}/Accounts/{accountId}/C
 
 ## <a name="get-metadata-on-a-file-from-a-language-model"></a>Получение метаданных файла из языковой модели
 
-Это возвращает содержимое и метаданные указанного файла из выбранной языковой модели в вашей учетной записи.
-
-### <a name="request-url"></a>Request URL (URL-адрес запроса)
-
-Это запрос GET.
-
-```
-https://api.videoindexer.ai/{location}/Accounts/{accountId}/Customization/PersonModels?accessToken={accessToken}
-```
-
-Ниже приведен запрос в Curl.
-```curl
-curl -v -X GET "https://api.videoindexer.ai/{location}/Accounts/{accountId}/Customization/Language/{modelId}/Files/{fileId}?accessToken={accessToken}"
-```
- 
-[Просмотрите необходимые параметры и выполните тестирование с помощью портала разработчика Индексатора видео](https://api-portal.videoindexer.ai/docs/services/operations/operations/Get-Language-Model-File-Data?&pattern=get%20language%20model).
-
-### <a name="request-parameters"></a>Параметры запроса 
-
-|**Имя**|**Тип**|**Обязательный**|**Описание**|
-|---|---|---|---|
-|location|string|Да|Регион Azure, в который должен быть направлен вызов. Дополнительные сведения см. в статье [Azure regions in which Video Indexer exists](regions.md) (Регионы Azure, в которых существует Индексатор видео).|
-|accountID|string|Да|Глобальный уникальный идентификатор этой учетной записи|
-|modelId|string|Да|Идентификатор языковой модели, содержащей файл (создается при создании языковой модели)|
-|fileId|string|Да|Идентификатор файла, который обновляется (созданный при передачи файла во время создания или обновления языковой модели)|
-|accessToken|string|Да|Маркер доступа (должен быть в области [маркера доступа к учетной записи](https://api-portal.videoindexer.ai/docs/services/authorization/operations/Get-Account-Access-Token?)) для проверки подлинности вызова. Срок действия маркеров доступа истекает в течение 1 часа.|
-
-### <a name="request-body"></a>Текст запроса
-
-Для этого вызова больше не требуется текст запроса.
+[Метаданные Get файла](https://api-portal.videoindexer.ai/docs/services/operations/operations/Get-Language-Model-File-Data?&pattern=get%20language%20model) API возвращают содержимое и метаданные указанного файла из выбранной языковой модели в вашей учетной записи.
 
 ### <a name="response"></a>Ответ
 
@@ -554,34 +292,7 @@ curl -v -X GET "https://api.videoindexer.ai/{location}/Accounts/{accountId}/Cust
 
 ## <a name="download-a-file-from-a-language-model"></a>Загрузка файла из языковой модели
 
-Следующая команда загружает текстовый файл, содержащий содержимое указанного файла, из указанной языковой модели в указанной учетной записи. Этот текстовый файл должен соответствовать содержимому текстового файла, который был изначально передан.
-
-### <a name="request-url"></a>Request URL (URL-адрес запроса)
-```
-https://api.videoindexer.ai/{location}/Accounts/{accountId}/Customization/Language/{modelId}/Files/{fileId}/download?accessToken={accessToken}
-```
-
-Ниже приведен запрос в Curl.
-
-```curl
-curl -v -X GET "https://api.videoindexer.ai/{location}/Accounts/{accountId}/Customization/Language/{modelId}/Files/{fileId}/download?accessToken={accessToken}"
-```
- 
-[Просмотрите необходимые параметры и выполните тестирование с помощью портала разработчика Индексатора видео](https://api-portal.videoindexer.ai/docs/services/operations/operations/Download-Language-Model-File-Content?).
-
-### <a name="request-parameters"></a>Параметры запроса 
-
-|**Имя**|**Тип**|**Обязательный**|**Описание**|
-|---|---|---|---|
-|location|string|Да|Регион Azure, в который должен быть направлен вызов. Дополнительные сведения см. в статье [Azure regions in which Video Indexer exists](regions.md) (Регионы Azure, в которых существует Индексатор видео).|
-|accountID|string|Да|Глобальный уникальный идентификатор этой учетной записи|
-|modelId|string|Да|Идентификатор языковой модели, содержащей файл (создается при создании языковой модели)|
-|fileId|string|Да|Идентификатор файла, который обновляется (созданный при передачи файла во время создания или обновления языковой модели)|
-|accessToken|string|Да|Маркер доступа (должен быть в области [маркера доступа к учетной записи](https://api-portal.videoindexer.ai/docs/services/authorization/operations/Get-Account-Access-Token?)) для проверки подлинности вызова. Срок действия маркеров доступа истекает в течение 1 часа.|
-
-### <a name="request-body"></a>Текст запроса 
-
-Для этого вызова больше не требуется текст запроса.
+[Загрузка API файла](https://api-portal.videoindexer.ai/docs/services/operations/operations/Download-Language-Model-File-Content?) скачивает текстовый файл, содержащий содержимое указанного файла из указанной языковой модели в указанной учетной записи. Этот текстовый файл должен соответствовать содержимому текстового файла, который был изначально передан.
 
 ### <a name="response"></a>Ответ
 

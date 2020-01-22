@@ -10,12 +10,12 @@ ms.author: aashishb
 author: aashishb
 ms.reviewer: larryfr
 ms.date: 01/09/2020
-ms.openlocfilehash: 277b22498066542deaa080845cb816df493d7e13
-ms.sourcegitcommit: 5bbe87cf121bf99184cc9840c7a07385f0d128ae
+ms.openlocfilehash: bc083a95ebf6c7ecfabfef87e606f99053ba58bb
+ms.sourcegitcommit: a9b1f7d5111cb07e3462973eb607ff1e512bc407
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76122361"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76312419"
 ---
 # <a name="enterprise-security-for-azure-machine-learning"></a>Корпоративная безопасность для Машинное обучение Azure
 
@@ -176,12 +176,12 @@ ms.locfileid: "76122361"
 
 #### <a name="azure-kubernetes-service"></a>Служба Azure Kubernetes
 
-Развернутый ресурс службы Azure Kubernetes можно зашифровать с помощью ключей, управляемых клиентом, в любое время. Дополнительные сведения см. в [https://aka.ms/aks/byok](https://aka.ms/aks/byok). 
+Развернутый ресурс службы Azure Kubernetes можно зашифровать с помощью ключей, управляемых клиентом, в любое время. Дополнительные сведения см. в статье [перевод собственных ключей в службу Azure Kubernetes](../aks/azure-disk-customer-managed-keys.md). 
 
 Этот процесс позволяет шифровать данные и диск операционной системы развернутых виртуальных машин в кластере Kubernetes.
 
 > [!IMPORTANT]
-> Этот процесс работает только с AKS K8s версии 1,16 или более поздней. Машинное обучение Azure добавлена поддержка AKS 1,16 на 13 января 2020 г.
+> Этот процесс работает только с AKS K8s версии 1,17 или более поздней. Машинное обучение Azure добавлена поддержка AKS 1,17 на 13 января 2020 г.
 
 #### <a name="machine-learning-compute"></a>Вычислительная среда Машинного обучения
 

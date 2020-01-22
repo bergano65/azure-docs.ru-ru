@@ -7,18 +7,18 @@ ms.service: container-service
 ms.topic: article
 ms.date: 06/20/2019
 ms.author: zarhoads
-ms.openlocfilehash: a9b942c4726c770f1ea0d35c924395cdff40e1c7
-ms.sourcegitcommit: c32050b936e0ac9db136b05d4d696e92fefdf068
+ms.openlocfilehash: 07e267af307fedd9b896e08919b7026a3a1c2bac
+ms.sourcegitcommit: 7221918fbe5385ceccf39dff9dd5a3817a0bd807
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75732024"
+ms.lasthandoff: 01/21/2020
+ms.locfileid: "76292968"
 ---
 # <a name="quickstart-develop-on-azure-kubernetes-service-aks-with-draft"></a>Краткое руководство. Разработка в службе Azure Kubernetes Service (AKS) с черновиком
 
 Черновик — это средство с открытым исходным кодом, которое помогает упаковывать и запускать контейнеры приложений в кластере Kubernetes. С помощью черновика можно быстро выполнить повторное развертывание приложения в Kubernetes по мере внесения изменений в код без фиксации изменений в системе управления версиями. Дополнительные сведения о черновике см. в [документации по черновику на сайте GitHub][draft-documentation].
 
-В этой статье показано, как использовать черновик пакета и запускать приложение в AKS.
+В этой статье показано, как использовать черновик для упаковки и запуска приложения в AKS.
 
 
 ## <a name="prerequisites"></a>Технические условия

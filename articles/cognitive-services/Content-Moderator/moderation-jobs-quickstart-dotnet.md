@@ -10,12 +10,12 @@ ms.subservice: content-moderator
 ms.topic: conceptual
 ms.date: 10/24/2019
 ms.author: pafarley
-ms.openlocfilehash: bdc9e8cbea77b504cfdc2c3b1c83c74ea4ab8ed1
-ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
+ms.openlocfilehash: fe1b5b4171dc5e61c1c82abfd723d0b77a05a5b9
+ms.sourcegitcommit: 7221918fbe5385ceccf39dff9dd5a3817a0bd807
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72935977"
+ms.lasthandoff: 01/21/2020
+ms.locfileid: "76294343"
 ---
 # <a name="define-and-use-moderation-jobs-net"></a>Определение и использование заданий по созадачам (.NET)
 
@@ -51,7 +51,7 @@ ms.locfileid: "72935977"
 
    В примере кода назовите проект **CreateReviews**.
 
-1. Выберите этот проект единственным запускаемым проектом для решения.
+1. Выберите этот проект в качестве единственного запускаемого проекта для решения.
 
 ### <a name="install-required-packages"></a>Установка необходимых пакетов
 
@@ -61,7 +61,7 @@ ms.locfileid: "72935977"
 - Microsoft.Rest.ClientRuntime
 - Newtonsoft.Json.
 
-### <a name="update-the-programs-using-statements"></a>Обновление инструкций using программы
+### <a name="update-the-programs-using-statements"></a>Обновление инструкций using в программе
 
 Измените инструкции using в вашей программе.
 
@@ -77,7 +77,7 @@ using System.Threading;
 
 ### <a name="create-the-content-moderator-client"></a>Создание клиента Content Moderator
 
-Чтобы создать для своей подписки клиент Content Moderator, добавьте следующий фрагмент кода.
+Добавьте следующий фрагмент кода, чтобы создать клиент Content Moderator для своей подписки.
 
 > [!IMPORTANT]
 > Обновите поля **AzureEndpoint** и **кмсубскриптионкэй** , указав значения URL-адреса конечной точки и ключа подписки.
@@ -124,7 +124,7 @@ public static class Clients
 Добавьте следующие константы и статические поля в класс **Program** в файле Program.cs.
 
 > [!NOTE]
-> Константе TeamName присваивается имя, указанное вами при создании подписки Content Moderator. Получить TeamName можно на [веб-сайте Content Moderator](https://westus.contentmoderator.cognitive.microsoft.com/).
+> Константе TeamName присваивается имя, указанное вами при создании подписки Content Moderator. Вы получаете Теамнаме с веб-сайта Content Moderator.
 > После входа в меню **Settings** (Параметры) (значок шестеренки) выберите **Credentials** (Учетные данные).
 >
 > Имя группы указано в поле **Id** (Идентификатор) в разделе **API**.
@@ -235,7 +235,7 @@ using (TextWriter writer = new StreamWriter(OutputFile, false))
 > [!NOTE]
 > Ключ службы Content Moderator предусматривает ограничение частоты запросов в секунду (RPS). Если превысить ограничение, пакет SDK порождает исключение с кодом ошибки 429.
 >
-> Ключ бесплатного уровня предусматривает ограничение в один RPS.
+> Для ключа бесплатного уровня предусмотрен лимит в один запрос в секунду.
 
 ## <a name="run-the-program-and-review-the-output"></a>Запуск программы и просмотр выходных данных
 

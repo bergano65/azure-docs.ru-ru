@@ -16,12 +16,12 @@ ms.author: twhitney
 ms.reviwer: hahamil
 ms.custom: aaddev, identityplatformtop40
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: babbaf75b91dfb870ba5001d23f62c5461a28218
-ms.sourcegitcommit: dbcc4569fde1bebb9df0a3ab6d4d3ff7f806d486
+ms.openlocfilehash: 70f629af35978771d48d0a29f9ec625628c3b630
+ms.sourcegitcommit: 7221918fbe5385ceccf39dff9dd5a3817a0bd807
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76030306"
+ms.lasthandoff: 01/21/2020
+ms.locfileid: "76291266"
 ---
 # <a name="shared-device-mode-for-android-devices"></a>Режим общего устройства для устройств Android
 
@@ -39,7 +39,7 @@ ms.locfileid: "76030306"
 Чтобы создать приложение в режиме общего устройства, разработчики и администраторы облачных устройств работают вместе:
 
 - Разработчики пишут приложение с одной учетной записью (приложения с несколькими учетными записями не поддерживаются в режиме общего устройства), добавляют `"shared_device_mode_supported": true` в конфигурацию приложения и пишут код для выполнения таких операций, как выход из общего устройства.
-- Администраторы устройств подготавливают устройство к совместному использованию, устанавливая приложение проверки подлинности и настроив устройство в общем режиме с помощью приложения Authenticator. Только пользователи, которые входят в роль [администратора облачных устройств](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles#cloud-device-administrator) , могут перевести устройство в общий режим с помощью [приложения для проверки подлинности](https://www.microsoft.com/account/authenticator). Членство в ролях Организации можно настроить в портал Azure с помощью: **Azure Active Directory** > **ролей и администраторов** > **администратора облачных устройств**.
+- Администраторы устройств подготавливают устройство к совместному использованию, устанавливая приложение проверки подлинности и настроив устройство в общем режиме с помощью приложения Authenticator. Только пользователи, которые входят в роль [администратора облачных устройств](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles#cloud-device-administrator) , могут перевести устройство в общий режим с помощью [приложения для проверки подлинности](https://docs.microsoft.com/azure/active-directory/user-help/user-help-auth-app-overview). Членство в ролях Организации можно настроить в портал Azure с помощью: **Azure Active Directory** > **ролей и администраторов** > **администратора облачных устройств**.
 
  В этой статье основное внимание уделяется разработчикам.
 

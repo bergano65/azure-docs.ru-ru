@@ -7,12 +7,12 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 08/22/2019
-ms.openlocfilehash: ea8e1565a5ebe4e5cb40049fbfcb329feb83bdda
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: f1fdb9dffbe06430ea7e3eb9339e23f5239e4e36
+ms.sourcegitcommit: a9b1f7d5111cb07e3462973eb607ff1e512bc407
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73498201"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76310838"
 ---
 # <a name="migrate-to-granular-role-based-access-for-cluster-configurations"></a>Переход на детализированный доступ на основе ролей для конфигураций кластера
 
@@ -29,9 +29,9 @@ ms.locfileid: "73498201"
 | Роль                                  | Ранее                                                                                       | Переход вперед       |
 |---------------------------------------|--------------------------------------------------------------------------------------------------|-----------|
 | Читатель                                | — Доступ на чтение, включая секреты                                                                   | — Доступ на чтение, **исключение** секретов |           |   |   |
-| Оператор кластера HDInsight<br>(Новая роль) | Недоступно                                                                                              | — Доступ на чтение и запись, включая секреты         |   |   |
-| Участник                           | — Доступ на чтение и запись, включая секреты<br>— Создание всех типов ресурсов Azure и управление ими.     | Без изменения. |
-| Владелец                                 | — Доступ на чтение и запись, включая секреты<br>— Полный доступ ко всем ресурсам<br>-Делегирование доступа другим пользователям | Без изменения. |
+| Оператор кластера HDInsight<br>(Новая роль) | Н/Д                                                                                              | — Доступ на чтение и запись, включая секреты         |   |   |
+| Участник                           | — Доступ на чтение и запись, включая секреты<br>— Создание всех типов ресурсов Azure и управление ими.     | Без изменения |
+| Владелец                                 | — Доступ на чтение и запись, включая секреты<br>— Полный доступ ко всем ресурсам<br>-Делегирование доступа другим пользователям | Без изменения |
 
 Сведения о том, как добавить назначение роли оператора кластера HDInsight пользователю, чтобы предоставить им доступ для чтения и записи к секретам кластера, см. в разделе ниже, [добавьте назначение роли "оператор кластера hdinsight" пользователю](#add-the-hdinsight-cluster-operator-role-assignment-to-a-user).
 
@@ -44,7 +44,7 @@ ms.locfileid: "73498201"
 - [Azure Toolkit for IntelliJ](#azure-toolkit-for-intellij) версии 3.20.0 или ниже.
 - [Средства Azure Data Lake и Stream Analytics для Visual Studio](#azure-data-lake-and-stream-analytics-tools-for-visual-studio) ниже версии 2.3.9000.1.
 - [Azure Toolkit for Eclipse](#azure-toolkit-for-eclipse) версии 3.15.0 или ниже.
-- [Пакет SDK для .NET:](#sdk-for-net)
+- [Пакет SDK для .NET](#sdk-for-net)
     - [версии 1. x или 2. x](#versions-1x-and-2x): пользователи, использующие методы `GetClusterConfigurations`, `GetConnectivitySettings`, `ConfigureHttpSettings`, `EnableHttp` или `DisableHttp` из класса конфигуратионсоператионсекстенсионс.
     - [версии 3. x и выше](#versions-3x-and-up): пользователи, использующие методы `Get`, `Update`, `EnableHttp`или `DisableHttp` из класса `ConfigurationsOperationsExtensions`.
 - [Пакет SDK для Python](#sdk-for-python): пользователи, использующие методы `get` или `update` из класса `ConfigurationsOperations`.
@@ -132,9 +132,7 @@ ms.locfileid: "73498201"
 Обновление до [версии 1.0.0](https://search.maven.org/artifact/com.microsoft.azure.hdinsight.v2018_06_01_preview/azure-mgmt-hdinsight/1.0.0/jar) или более поздней версии пакета SDK для HDInsight для Java. При использовании метода, затрагиваемого этими изменениями, могут потребоваться минимальные изменения в коде:
 
 - [`ConfigurationsInner.get`](https://docs.microsoft.com/java/api/com.microsoft.azure.management.hdinsight.v2018__06__01__preview.implementation._configurations_inner.get) **больше не будет возвращать конфиденциальные параметры** , такие как ключи хранилища (основной сайт) или учетные данные HTTP (шлюз).
-    - Чтобы получить все конфигурации, включая конфиденциальные параметры, используйте [`ConfigurationsInner.list`](https://docs.microsoft.com/java/api/com.microsoft.azure.management.hdinsight.v2018_06_01_preview.implementation.configurationsinner.list?view=azure-java-stable) перейдем вперед.  Обратите внимание, что пользователи с ролью "читатель" не смогут использовать этот метод. Это позволяет детально контролировать, какие пользователи могут получать доступ к конфиденциальной информации для кластера. 
-    - Чтобы получить только учетные данные шлюза HTTP, используйте [`ClustersInner.getGatewaySettings`](https://docs.microsoft.com/java/api/com.microsoft.azure.management.hdinsight.v2018_06_01_preview.implementation.clustersinner.getgatewaysettings?view=azure-java-stable).
-- [`ConfigurationsInner.update`](https://docs.microsoft.com/java/api/com.microsoft.azure.management.hdinsight.v2018__06__01__preview.implementation._configurations_inner.update) теперь является нерекомендуемым и заменено [`ClustersInner.updateGatewaySettings`](https://docs.microsoft.com/java/api/com.microsoft.azure.management.hdinsight.v2018_06_01_preview.implementation.clustersinner.updategatewaysettings?view=azure-java-stable).
+- [`ConfigurationsInner.update`](https://docs.microsoft.com/java/api/com.microsoft.azure.management.hdinsight.v2018__06__01__preview.implementation._configurations_inner.update) теперь устарел.
 
 ### <a name="sdk-for-go"></a>Пакет SDK для Go
 
@@ -187,7 +185,7 @@ az role assignment create --role "HDInsight Cluster Operator" --assignee user@do
 
 Можно также использовать портал Azure для добавления назначения роли оператора кластера HDInsight пользователю. См. документацию, [Управление доступом к ресурсам Azure с помощью RBAC и портал Azure — Добавление назначения ролей](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-portal#add-a-role-assignment).
 
-## <a name="faq"></a>Вопросы и ответы
+## <a name="faq"></a>Часто задаваемые вопросы
 
 ### <a name="why-am-i-seeing-a-403-forbidden-response-after-updating-my-api-requests-andor-tool"></a>Почему я вижу ответ 403 (запрещено) после обновления запросов API и/или средства?
 

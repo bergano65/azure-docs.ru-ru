@@ -15,18 +15,18 @@ ms.date: 10/30/2019
 ms.author: jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 75bb919b73791b78084e82351d7d6b7d93edc322
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 36aa220b49b8b71c79e4fe6f63afedee6db76a68
+ms.sourcegitcommit: 7221918fbe5385ceccf39dff9dd5a3817a0bd807
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75423866"
+ms.lasthandoff: 01/21/2020
+ms.locfileid: "76293340"
 ---
-# <a name="desktop-app-that-calls-web-apis---call-a-web-api"></a>Классическое приложение, вызывающее веб-API — вызов веб-API
+# <a name="desktop-app-that-calls-web-apis-call-a-web-api"></a>Классическое приложение, вызывающее веб-API: вызов веб-API
 
 Теперь, когда у вас есть маркер, можно вызвать защищенный веб-API.
 
-## <a name="calling-a-web-api"></a>Вызов веб-API
+## <a name="call-a-web-api"></a>Вызов веб-API
 
 # <a name="nettabdotnet"></a>[.NET](#tab/dotnet)
 
@@ -66,9 +66,9 @@ JSONObject responseObject = HttpClientHelper.processResponse(responseCode, respo
 
 # <a name="macostabmacos"></a>[MacOS](#tab/macOS)
 
-## <a name="calling-a-web-api-in-msal-for-ios-and-macos"></a>Вызов веб-API в MSAL для iOS и macOS
+## <a name="call-a-web-api-in-msal-for-ios-and-macos"></a>Вызов веб-API в MSAL для iOS и macOS
 
-Методы получения маркеров возвращают объект `MSALResult`. `MSALResult` предоставляет свойство `accessToken`, которое можно использовать для вызова веб-API. Маркер доступа должен быть добавлен в заголовок авторизации HTTP перед вызовом доступа к защищенному веб-API.
+Методы получения маркеров возвращают объект `MSALResult`. `MSALResult` предоставляет свойство `accessToken`, которое можно использовать для вызова веб-API. Перед вызовом доступа к защищенному веб-API добавьте маркер доступа в заголовок авторизации HTTP.
 
 Objective-C.
 
@@ -96,9 +96,9 @@ let task = URLSession.shared.dataTask(with: urlRequest as URLRequest) { (data: D
 task.resume()
 ```
 
-## <a name="calling-several-apis---incremental-consent-and-conditional-access"></a>Вызов нескольких интерфейсов API — добавочное согласие и условный доступ
+## <a name="call-several-apis-incremental-consent-and-conditional-access"></a>Вызов нескольких API: последовательное согласие и условный доступ
 
-Если необходимо вызвать несколько API для одного и того же пользователя, то после получения маркера для первого API можно просто вызвать `AcquireTokenSilent`, и вы получите маркер для других интерфейсов API в большинстве случаев.
+Чтобы вызвать несколько API для одного пользователя, после получения маркера для первого API вызовите `AcquireTokenSilent`. Вы получите маркер для других интерфейсов API в большинстве случаев.
 
 ```csharp
 var result = await app.AcquireTokenXX("scopeApi1")
@@ -108,9 +108,9 @@ result = await app.AcquireTokenSilent("scopeApi2")
                   .ExecuteAsync();
 ```
 
-Случаи, когда требуется взаимодействие,:
+Взаимодействие требуется, если:
 
-- Пользователь, которому предоставлен доступ к первому API, теперь должен предоставить согласие на дополнительные области (последовательное согласие)
+- Пользователь, которому предоставлен доступ к первому API, теперь должен предоставить согласие на дополнительные области. Этот тип разрешения известен как добавочное согласие.
 - Первый API не требует многофакторной проверки подлинности, а следующий —.
 
 ```csharp

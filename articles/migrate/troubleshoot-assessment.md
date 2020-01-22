@@ -7,14 +7,14 @@ author: musa-57
 ms.manager: abhemraj
 ms.author: hamusa
 ms.date: 01/02/2020
-ms.openlocfilehash: 3098e85fd21b6185defc4bbcf0a71d412846ab25
-ms.sourcegitcommit: 02160a2c64a5b8cb2fb661a087db5c2b4815ec04
+ms.openlocfilehash: fb1e32d9f67febb09eadfb5d31221db33504eb05
+ms.sourcegitcommit: 7221918fbe5385ceccf39dff9dd5a3817a0bd807
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75725745"
+ms.lasthandoff: 01/21/2020
+ms.locfileid: "76289481"
 ---
-# <a name="troubleshoot-assessmentdependency-visualization"></a>Устранение неполадок при оценке и визуализации зависимостей
+# <a name="troubleshoot-assessmentdependency-visualization"></a>Устранение неполадок с визуализацией оценок и зависимостей
 
 Эта статья поможет вам устранить проблемы с оценкой и визуализацией зависимостей с помощью службы ["миграция Azure": Оценка сервера](migrate-services-overview.md#azure-migrate-server-assessment-tool).
 
@@ -92,6 +92,7 @@ ms.locfileid: "75725745"
 - Это может произойти, если виртуальные машины отключены в течение периода оценки. Устройство не может выполнять собранные данные о производительности для виртуальной машины, если она выключена.
 - Если отсутствуют только счетчики памяти и вы пытаетесь оценить виртуальные машины Hyper-V, проверьте, включена ли динамическая память на этих виртуальных машинах. Существует известная ошибка только для виртуальных машин Hyper-V, в которых устройство для миграции Azure не может выполнять получение данных об использовании памяти для виртуальных машин, для которых не включена динамическая память.
 - Если какой-либо из счетчиков производительности отсутствует, Оценка сервера Azure для миграции переключается на выделенные ядра и память и рекомендует соответствующий размер виртуальной машины.
+- Если все счетчики производительности отсутствуют, убедитесь, что выполнены требования к доступу к портам для оценки. Узнайте больше о требованиях к доступу к портам для оценки [VMware](https://docs.microsoft.com/azure/migrate/migrate-support-matrix-vmware#port-access), [Hyper-V](https://docs.microsoft.com/azure/migrate/migrate-support-matrix-hyper-v#port-access) и [физического](https://docs.microsoft.com/azure/migrate/migrate-support-matrix-physical#port-access) сервера.
 
 ## <a name="is-the-operating-system-license-included"></a>Включена ли лицензия на операционную систему?
 

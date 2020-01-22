@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.author: sgilley
 author: sdgilley
 ms.date: 12/27/2019
-ms.openlocfilehash: b2fb165dfdcc97116b60075a5c3071171fa46cd7
-ms.sourcegitcommit: 276c1c79b814ecc9d6c1997d92a93d07aed06b84
+ms.openlocfilehash: 4891ec0ae87f0d7b0cd7e5d5d550f955a8fde1db
+ms.sourcegitcommit: a9b1f7d5111cb07e3462973eb607ff1e512bc407
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76157208"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76312385"
 ---
 # <a name="what-is-an-azure-machine-learning-workspace"></a>Что такое Рабочая область Машинное обучение Azure?
 
@@ -49,7 +49,7 @@ ms.locfileid: "76157208"
 
 + В Интернете:
     + [Машинное обучение Azure Studio](https://ml.azure.com) 
-    + [Конструктор машинное обучение Azure (Предварительная версия)](concept-designer.md) доступен только в рабочих областях [Enterprise Edition](overview-what-is-azure-ml.md#sku) .
+    + [Конструктор машинное обучение Azure](concept-designer.md) доступен только в рабочих областях [Enterprise Edition](overview-what-is-azure-ml.md#sku) .
 + В любой среде Python с [пакетом SDK для машинное обучение Azure для Python](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py).
 + В любой среде R с [машинное обучение Azureным пакетом SDK для r](https://azure.github.io/azureml-sdk-for-r/reference/index.html).
 + В командной строке с помощью [расширения CLI](https://docs.microsoft.com/azure/machine-learning/reference-azure-machine-learning-cli) машинное обучение Azure

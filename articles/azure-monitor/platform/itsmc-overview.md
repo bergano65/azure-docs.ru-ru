@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: JYOTHIRMAISURI
 ms.author: v-jysur
 ms.date: 05/24/2018
-ms.openlocfilehash: efb4e4f68935898c083c1dbca6a6c64512544095
-ms.sourcegitcommit: 2a2af81e79a47510e7dea2efb9a8efb616da41f0
+ms.openlocfilehash: 83d5b7ffb49a08d02d5dd34ad561ce725ead7e0e
+ms.sourcegitcommit: 7221918fbe5385ceccf39dff9dd5a3817a0bd807
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76263478"
+ms.lasthandoff: 01/21/2020
+ms.locfileid: "76289141"
 ---
 # <a name="connect-azure-to-itsm-tools-using-it-service-management-connector"></a>Подключение Azure к инструментам ITSM с помощью соединителя управления ИТ-услугами
 
@@ -58,7 +58,7 @@ ms.locfileid: "76263478"
 3. В разделе **Рабочая область OMS** выберите рабочую область Azure Log Analytics, где нужно установить решение.
    >[!NOTE]
    > * В рамках текущего перехода от Microsoft Operations Management Suite (OMS) к Azure Monitor рабочие области OMS теперь называются рабочими областями Log Analytics.
-   > * Соединитель ITSM можно установить только в Log Analytics рабочих областях в следующих регионах: Восточная часть США, Западная Европа, Юго-Восточная Азия, Юго-Восточная Австралия, Западная Центральная часть США, Восточная Япония, Южная Великобритания, Центральная Индия, Западная Канада, Запад США 2, Юго-Центральный регион США.
+   > * Соединитель ITSM можно установить только в Log Analytics рабочих областях в следующих регионах: Восточная часть США, Западная США 2, Юго-Центральный регион США, Западная Центральная часть США, Центральная Канада, Западная Европа, Южная Великобритания, Юго-Восточная Азия, Япония, Юго-Восточная, Центральная Индия, Юго-Восточная Австралия.
 
 4. В разделе **Параметры рабочей области OMS** выберите группу ресурсов, в которой вы хотите создать решение.
 

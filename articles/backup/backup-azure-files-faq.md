@@ -3,12 +3,12 @@ title: Часто задаваемые вопросы о резервном ко
 description: В этой статье вы найдете ответы на часто задаваемые вопросы о защите общих папок Azure с помощью службы Azure Backup.
 ms.date: 07/29/2019
 ms.topic: conceptual
-ms.openlocfilehash: bc4d7f9ad6512831687b974ae68870314775457d
-ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
+ms.openlocfilehash: 053fe38b07fff5d289c72024ef185fbf5d647f70
+ms.sourcegitcommit: 7221918fbe5385ceccf39dff9dd5a3817a0bd807
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74892580"
+ms.lasthandoff: 01/21/2020
+ms.locfileid: "76294003"
 ---
 # <a name="questions-about-backing-up-azure-files"></a>Вопросы о резервном копировании файлов Azure
 
@@ -36,7 +36,7 @@ ms.locfileid: "74892580"
 
 ### <a name="can-i-change-the-vault-to-which-i-back-up-my-file-shares"></a>Можно ли изменить хранилище, в котором создана резервная копия моих файловых ресурсов?
 
-Да. Но вам потребуется [остановить защиту](backup-azure-files.md#stop-protecting-an-azure-file-share) из подключенного хранилища, [отменить регистрацию](troubleshoot-azure-files.md#configuring-backup) этой учетной записи хранения и защитить ее из другого хранилища.
+Да. Тем не менее, необходимо [Отключить защиту общей папки](manage-afs-backup.md#stop-protection-on-a-file-share) из подключенного хранилища, [отменить регистрацию](troubleshoot-azure-files.md#configuring-backup) этой учетной записи хранения, а затем защитить ее из другого хранилища.
 
 ### <a name="in-which-geos-can-i-back-up-azure-file-shares"></a>В каких географических областях можно выполнять резервное копирование файловых ресурсов Azure?
 
@@ -93,7 +93,7 @@ ms.locfileid: "74892580"
 
 Нет. Все файловые ресурсы в учетной записи хранения могут быть защищены только одним хранилищем.
 
-## <a name="backup"></a>Backup
+## <a name="backup"></a>Архивация
 
 ### <a name="how-many-scheduled-backups-can-i-configure-per-file-share"></a>Сколько запланированных задач резервного копирования можно настроить для файлового ресурса?
 

@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 09/01/2019
 ms.author: sngun
 ms.custom: seodec18
-ms.openlocfilehash: dc627fc4bb7be449547a07cc34eb2cb3694964e9
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: ac93d1f4f0f148e1f0ce3d0f21ac9a694f2e896d
+ms.sourcegitcommit: a9b1f7d5111cb07e3462973eb607ff1e512bc407
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75445440"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76310022"
 ---
 # <a name="frequently-asked-questions-about-different-apis-in-azure-cosmos-db"></a>Часто задаваемые вопросы о различных API в службе Azure Cosmos DB
 
@@ -76,8 +76,6 @@ Azure Cosmos DB — это глобально распределенная мн
 Чтобы запросить новые функции, создайте запрос на форуме [UserVoice](https://feedback.azure.com/forums/263030-azure-cosmos-db).
 
 Чтобы устранить проблему, связанную с учетной записью, отправьте [запрос в службу поддержки](https://ms.portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest) на портале Azure.
-
-Другие вопросы можно отправить команде по адресу [askcosmosdb@microsoft.com](mailto:askcosmosdb@microsoft.com). Однако это не адрес службы технической поддержки.
 
 ## <a id="try-cosmos-db"></a>Пробная версия подписок Azure Cosmos DB
 
@@ -288,8 +286,6 @@ API таблиц Azure Cosmos DB доступен в [портал Azure][azure-
 | TableServiceEntity | " " |
 | TableServiceExtensions | " " |
 | TableServiceQuery | " " |
-
-Если какое-либо из этих различий вызывает проблемы в рамках вашего проекта, свяжитесь с нами по адресу [askcosmosdb@microsoft.com](mailto:askcosmosdb@microsoft.com) и сообщите об этом.
 
 ### <a name="how-do-i-provide-feedback-about-the-sdk-or-bugs"></a>Как отправить отзыв о пакете SDK или сообщить об ошибках?
 

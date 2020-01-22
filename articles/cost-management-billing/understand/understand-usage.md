@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 04/24/2019
 ms.author: banders
-ms.openlocfilehash: 93fad58e971d761f626b79dc68f9576ccc2e1892
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.openlocfilehash: a68393b2852f8ddc758e2a47b9e1b5d94befb7b4
+ms.sourcegitcommit: 7221918fbe5385ceccf39dff9dd5a3817a0bd807
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75994003"
+ms.lasthandoff: 01/21/2020
+ms.locfileid: "76290144"
 ---
 # <a name="understand-the-terms-in-your-azure-usage-and-charges-file"></a>Общие сведения об условиях в файле сведений об использовании и расходах Azure
 
@@ -90,11 +90,11 @@ PublisherType | Все | Тип издателя (значения: **Azure**, *
 Количество | Все | Количество приобретенных или израсходованных единиц.
 Идентификатор резервирования | EA, MCA | Уникальный идентификатор для приобретенного экземпляра резервирования.
 ReservationName | EA, MCA | Имя приобретенного экземпляра резервирования.
-ResourceGroup | Все | Имя [группы ресурсов](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview), в которой находится ресурс.
+ResourceGroup | Все | Имя [группы ресурсов](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview), в которой находится ресурс. Не все расходы берутся из ресурсов, развернутых в группах ресурсов. Расходы, у которых нет группы ресурсов, будут показаны как пустые или пустые, **другие**или **неприменимые**.
 ResourceId<sup>1</sup> | Все | Уникальный идентификатор ресурса [Azure Resource Manager](https://docs.microsoft.com/rest/api/resources/resources).
 ResourceLocation | Все | Расположение центра обработки данных, где выполняется ресурс. См. Location.
-ResourceName | EA, PAYG | Имя ресурса.
-ResourceType | MCA | Тип экземпляра ресурса.
+ResourceName | EA, PAYG | Имя ресурса. Не все расходы берутся из развернутых ресурсов. Плата за ресурсы, не имеющие типа ресурса, будет показана как null или пустая, **другие**или **неприменимые**.
+ResourceType | MCA | Тип экземпляра ресурса. Не все расходы берутся из развернутых ресурсов. Плата за ресурсы, не имеющие типа ресурса, будет показана как null или пустая, **другие**или **неприменимые**.
 ServiceFamily | MCA | Семейство служб, к которому принадлежит служба.
 ServiceInfo1 | Все | Метаданные определенных служб.
 ServiceInfo2 | Все | Устаревшее поле с необязательными метаданными службы.

@@ -7,18 +7,18 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 07/18/2019
-ms.openlocfilehash: 31a6c53ec269c512ad641fcdc10469ccf16a1fe9
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.openlocfilehash: 514f98d95090f978395dd3f7decdcc0743a1628a
+ms.sourcegitcommit: 7221918fbe5385ceccf39dff9dd5a3817a0bd807
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75979740"
+ms.lasthandoff: 01/21/2020
+ms.locfileid: "76289158"
 ---
 # <a name="standard-properties-in-azure-monitor-logs"></a>Стандартные свойства в журналах Azure Monitor
 Данные в журналах Azure Monitor [хранятся в виде набора записей в log Analytics рабочей области или в Application Insights приложении](../log-query/logs-structure.md), каждый из которых имеет определенный тип данных, имеющий уникальный набор свойств. Большинство типов данных имеют стандартные свойства, которые являются общими для нескольких типов. В этой статье описаны эти свойства и приведены примеры по их использованию в запросах.
 
 > [!NOTE]
-> Некоторые стандартные значения по мере использования не отображаются в представлении схемы или IntelliSense в Log Analytics и не отображаются в результатах запроса, если только в выходных данных не указано явное свойство.
+> Некоторые стандартные свойства не отображаются в представлении схемы или IntelliSense в Log Analytics и не отображаются в результатах запроса, если только в выходных данных не указано явное свойство.
 
 ## <a name="timegenerated-and-timestamp"></a>TimeGenerated и timestamp
 Свойства **TimeGenerated** log Analytics (Рабочая область) и **timestamp** (Application Insights приложение) содержат дату и время создания записи источником данных. Дополнительные сведения см. [в разделе время приема данных журнала в Azure Monitor](data-ingestion-time.md) .

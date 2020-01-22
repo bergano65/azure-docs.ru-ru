@@ -1,6 +1,6 @@
 ---
 title: Обзор API Центров событий Azure | Документация Майкрософт
-description: Обзор доступных интерфейсов API Центров событий Azure.
+description: В этой статье представлен обзор доступных интерфейсов API (среда выполнения и управление) для использования службы концентраторов событий Azure.
 services: event-hubs
 documentationcenter: na
 author: ShubhaVijayasarathy
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 07/02/2018
 ms.author: shvija
-ms.openlocfilehash: 80566b0246179064d2a479b8c9bf3c79a2a93aac
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: c852bdeb30efe6acf626ae67028ec1ccb9e0b6db
+ms.sourcegitcommit: a9b1f7d5111cb07e3462973eb607ff1e512bc407
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60822619"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76310974"
 ---
 # <a name="available-event-hubs-apis"></a>Доступные интерфейсы API Центров событий
 
@@ -31,7 +31,7 @@ ms.locfileid: "60822619"
 
 Чтобы узнать больше о текущем состоянии каждой библиотеки среды выполнения, см. раздел [Дополнительная информация](#additional-information).
 
-| Язык или платформа | Пакет клиента | Пакет EventProcessorHost | Репозиторий |
+| Язык или платформа | Пакет клиента | Пакет EventProcessorHost | Хранилище |
 | --- | --- | --- | --- |
 | .NET Standard | [NuGet](https://www.nuget.org/packages/Microsoft.Azure.EventHubs/) | [NuGet](https://www.nuget.org/packages/Microsoft.Azure.EventHubs.Processor/) | [GitHub](https://github.com/azure/azure-event-hubs-dotnet) |
 | .NET Framework | [NuGet](https://www.nuget.org/packages/WindowsAzure.ServiceBus/) | [NuGet](https://www.nuget.org/packages/Microsoft.Azure.ServiceBus.EventProcessorHost/) | Н/Д |
@@ -53,7 +53,7 @@ ms.locfileid: "60822619"
 
 В приведенной ниже таблице перечислены все доступные библиотеки, предназначенные для операций управления. Ни одна из этих библиотек не содержит операций среды выполнения. Они предназначены только для управления сущностями Центров событий.
 
-| Язык или платформа | Пакет управления | Репозиторий |
+| Язык или платформа | Пакет управления | Хранилище |
 | --- | --- | --- |
 | .NET Standard | [NuGet](https://www.nuget.org/packages/Microsoft.Azure.Management.EventHub) | [GitHub](https://github.com/Azure/azure-sdk-for-net/tree/AutoRest/src/ResourceManagement/EventHub) |
 

@@ -1,7 +1,7 @@
 ---
-title: Повторное обучение моделей с помощью конструктора Машинное обучение Azure (Предварительная версия)
+title: Повторное обучение моделей с помощью конструктора Машинное обучение Azure
 titleSuffix: Azure Machine Learning
-description: Узнайте, как переучить модели с опубликованными конвейерами в Машинное обучение Azure Designer (Предварительная версия).
+description: Узнайте, как переучить модели с опубликованными конвейерами в конструкторе Машинное обучение Azure.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -9,14 +9,14 @@ ms.topic: how-to
 ms.author: peterlu
 author: peterclu
 ms.date: 12/15/2019
-ms.openlocfilehash: 734acd712eb954e66a9c0b037d10b7b1fd626c6a
-ms.sourcegitcommit: c32050b936e0ac9db136b05d4d696e92fefdf068
+ms.openlocfilehash: d1382da739fd8ca56d4cc53c2c302331bdfbf1c3
+ms.sourcegitcommit: a9b1f7d5111cb07e3462973eb607ff1e512bc407
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75732167"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76311875"
 ---
-# <a name="retrain-models-with-azure-machine-learning-designer-preview"></a>Повторное обучение моделей с помощью конструктора Машинное обучение Azure (Предварительная версия)
+# <a name="retrain-models-with-azure-machine-learning-designer"></a>Повторное обучение моделей с помощью конструктора Машинное обучение Azure
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
 
 В этом пошаговом окне вы узнаете, как использовать конструктор Машинное обучение Azure для переобучения модели машинного обучения. Узнайте, как использовать опубликованные конвейеры для автоматизации рабочих процессов машинного обучения для повторного обучения.

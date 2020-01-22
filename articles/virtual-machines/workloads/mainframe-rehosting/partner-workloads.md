@@ -1,6 +1,6 @@
 ---
-title: Рабочих нагрузок мэйнфреймов, поддерживаемых в Azure | Документация Майкрософт
-description: Используйте эмулятор мэйнфреймов и другие службы от партнеров Майкрософт для повторного размещения рабочих нагрузок мэйнфреймов, например IBM Z-системы с помощью Microsoft Azure.
+title: Рабочие нагрузки мэйнфрейма, поддерживаемые в Azure | Документация Майкрософт
+description: Используйте эмулятор мэйнфрейма и другие службы от партнеров Майкрософт для повторного размещения рабочих нагрузок мэйнфреймов, таких как системы на основе IBM Z, с помощью Microsoft Azure.
 services: virtual-machines-linux
 documentationcenter: ''
 author: njray
@@ -10,50 +10,50 @@ ms.author: larryme
 ms.date: 04/02/2019
 ms.topic: article
 ms.service: multiple
-ms.openlocfilehash: 1923d6fe71a0a7c4b469dc88b61a6ab3a794c45e
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: cf02ff7078fe5d33f220c0abc2d941d483e5c125
+ms.sourcegitcommit: 7221918fbe5385ceccf39dff9dd5a3817a0bd807
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61487313"
+ms.lasthandoff: 01/21/2020
+ms.locfileid: "76293510"
 ---
-# <a name="mainframe-workloads-supported-on-azure"></a>Рабочих нагрузок мэйнфреймов, поддерживаемых в Azure
+# <a name="mainframe-workloads-supported-on-azure"></a>Рабочие нагрузки мэйнфрейма, поддерживаемые в Azure
 
-Решения, перечисленные здесь могут помочь вам перенести рабочую нагрузку мэйнфреймов в Microsoft Azure. Некоторые рабочие нагрузки можно перенести без особых трудностей. Может быть повторно размещен других рабочих нагрузок, которые зависят от устаревшей системы программного обеспечения. 
+Перечисленные здесь решения помогут вам перенести рабочую нагрузку на мэйнфреймы в Microsoft Azure. Некоторые рабочие нагрузки можно перенести без особых трудностей. Другие рабочие нагрузки, зависящие от устаревшего системного программного обеспечения, могут быть переразмещены. 
 
-Дополнительная помощь с мэйнфреймов эмуляции и службами см. в разделе [Центр миграции Azure мэйнфреймов](https://azure.microsoft.com/migration/mainframe/).
+Дополнительные сведения о эмуляции мэйнфреймов и службах см. в [центре миграции мэйнфреймов Azure](https://azure.microsoft.com/migration/mainframe/).
 
-## <a name="migrate-mainframe-closer-to-azure"></a>Перенос ближе мэйнфреймов в Azure
+## <a name="migrate-mainframe-closer-to-azure"></a>Перенос мэйнфреймов ближе к Azure
 
-- [Micro Visual COBOL фокус](https://www.microfocus.com/products/visual-cobol/) средства разработки и интеграции.
-- [Micro фокус PL / я](https://www.microfocus.com/campaign/download/pli-modernization/) устаревший компилятор для платформы .NET, поддержка больших ЭВМ PL / я синтаксис, типы данных и поведение.
-- [Micro Focus Enterprise Server](https://www.microfocus.com/products/enterprise-suite/enterprise-server/) платформа интеграции мэйнфреймов.
-- [Fujitsu NetCOBOL](https://www.fujitsu.com/global/products/software/developer-tool/netcobol/) средства разработки и интеграции.
-- [NTT данных Enterprise COBOL](https://www.nttdataservices.com/en-ie/services/application-modernization-services) средства разработки и интеграции.
-- [Откройте NTT PL / я](https://www.nttdataservices.com/en-ie/services/application-modernization-services) устаревший компилятор для платформы .NET, поддержка больших ЭВМ PL / я синтаксис, типы данных и поведение.
-- [Компилятор Raincode COBOL](https://www.raincode.com/products/cobol/) средства разработки и интеграции.
-- [Raincode PL / я компилятора](https://www.raincode.com/products/pli/) для .NET платформа поддерживает мэйнфреймов PL / я синтаксис, типы данных и поведение.
-- [Компилятор Raincode ASM370](https://www.raincode.com/technical-landscape/asm370/) для мэйнфреймов 370 ассемблера и HLASM синтаксис.
-- [ASNA Visual RPG для .NET](https://asna.com/us/products/visual-rpg) компилятора для .NET Framework через подключаемый модуль Visual Studio.
-- [Современные системы CTU (COBOL-универсальный)](https://modernsystems.com/automatic-cobol-to-java-conversion/) средства разработки и интеграции.
+- [Micro Focus](https://www.microfocus.com/products/visual-cobol/) средства разработки и интеграции Visual COBOL.
+- Устаревший компилятор [Micro Focus](https://www.microfocus.com/campaign/download/pli-modernization/) для платформы .NET, поддерживающий синтаксис PL/i в мэйнфрейме, типы данных и поведение.
+- Микрофокусировка платформы интеграции мэйнфреймов [Enterprise Server](https://www.microfocus.com/products/enterprise-suite/enterprise-server/) .
+- [Fujitsu неткобол](https://www.fujitsu.com/global/products/software/developer-tool/netcobol/) средства разработки и интеграции.
+- [NTT данных](https://us.nttdata.com/en/digital/application-development-and-modernization) — средства разработки и интеграции COBOL для корпоративных приложений.
+- [NTT Open PL/i](https://us.nttdata.com/en/digital/application-development-and-modernization) устаревший компилятор для платформы .NET, поддерживающий синтаксис PL/i в мэйнфрейме, типы данных и поведение.
+- Средства разработки и интеграции для [компилятора РАИНКОДЕ COBOL](https://www.raincode.com/products/cobol/) .
+- [Компилятор РАИНКОДЕ PL/i](https://www.raincode.com/products/pli/) для платформы .NET поддерживает синтаксис PL/i мэйнфрейма, типы данных и поведение.
+- [Компилятор РАИНКОДЕ ASM370](https://www.raincode.com/technical-landscape/asm370/) для синтаксиса 370 и Хласм для ассемблера мэйнфреймов.
+- [ASNA Visual RPG для компилятора .NET](https://asna.com/us/products/visual-rpg) для .NET Framework с помощью подключаемого модуля Visual Studio.
+- [Современные системы КТУ (COBOL-to-Universal)](https://modernsystems.com/automatic-cobol-to-java-conversion/) средства разработки и интеграции.
 
-## <a name="deploy-an-emulation-environment-for-online-and-batch-processing"></a>Развернуть среду для эмуляции сети и пакетную обработку
+## <a name="deploy-an-emulation-environment-for-online-and-batch-processing"></a>Развертывание среды эмуляции для интерактивной и пакетной обработки
 
-- [Micro Focus Enterprise Server](https://www.microfocus.com/products/enterprise-suite/enterprise-server/) платформа интеграции мэйнфреймов.
-- [NTT мэйнфреймов повторное размещение среда разработки данных](https://us.nttdata.com/en/-/media/assets/white-paper/apps-mainframe-re-hosting-development-environment-whitepaper.pdf) среда обработки встроенный механизм транзакций.
-- [Среды NTT данные пакетной обработки](https://us.nttdata.com/en/-/media/assets/white-paper/apps-mainframe-re-hosting-development-environment-whitepaper.pdf) (BPE) включая JCL возможностями выполнения транзакций.
-- [Raincode CICS](https://www.raincode.com/technical-landscape/cics/) эмулятор для платформ .NET и Azure.
-- [Raincode JCL](https://www.raincode.com/products/jcl/) plug-compatible JCL интерпретатора.
+- Микрофокусировка платформы интеграции мэйнфреймов [Enterprise Server](https://www.microfocus.com/products/enterprise-suite/enterprise-server/) .
+- [NTT данных в среде разработки](https://us.nttdata.com/en/-/media/assets/white-paper/apps-mainframe-re-hosting-development-environment-whitepaper.pdf) для повторного размещения собственной среды обработки транзакций.
+- [Среда пакетной обработки данных NTT](https://us.nttdata.com/en/-/media/assets/white-paper/apps-mainframe-re-hosting-development-environment-whitepaper.pdf) (BPE), включая возможности транзакций жкл.
+- [РАИНКОДЕ CICS](https://www.raincode.com/technical-landscape/cics/) Emulator для платформ .NET и Azure.
+- [РАИНКОДЕ жкл](https://www.raincode.com/products/jcl/) , совместимый с подключаемым модулем жкл.
 
 ## <a name="code-conversion"></a>Преобразование кода
 
-- [Asysco](https://www.asysco.com/azure-cloud/) источника преобразования кода.
-- [Мэйнфреймов определенные программного обеспечения компании LzLabs](https://www.lzlabs.com/) управляемого программного обеспечения контейнер для переноса приложений мэйнфреймов на компьютерах Linux или private, public и гибридной облачной среды.
-- [Возраст Blu](https://www.bluage.com/) средства для нажиму прежних версий бизнес-приложений и баз данных.
-- [Фамильные Computing](https://www.heirloomcomputing.com/tag/convert-cobol-to-java/) служб для преобразования COBOL мэйнфреймов CICS и VSAM в Java.
+- Преобразование исходного кода [асиско](https://www.asysco.com/azure-cloud/) .
+- Программный контейнер программно управляемого [мэйнфрейма LzLabs](https://www.lzlabs.com/) для переноса приложений мэйнфреймов на компьютеры Linux или в частные, общедоступные и гибридные облачные среды.
+- Инструменты [Blu Age](https://www.bluage.com/) для работы с устаревшими бизнес-приложениями и базами данных.
+- [Хеирлум вычислительные](https://www.heirloomcomputing.com/tag/convert-cobol-to-java/) службы для преобразования в Java COBOL, CICS и всам мэйнфреймов.
 
-## <a name="modernization-services"></a>Модернизация служб
+## <a name="modernization-services"></a>Модернизации Services
 
-Корпорация Майкрософт сотрудничает с глобальных системных интеграторов (GSIs), которые могут помочь в крупных организациях проектирования, создания и управления решениями. 
+Партнеры корпорации Майкрософт с глобальными системными интеграторами (ГСИС), которые могут помочь крупным организациям проектировать, создавать решения и управлять ими. 
 
-- [Центр Azure переход с мэйнфреймов](https://azure.microsoft.com/migration/mainframe/)
+- [Центр миграции мэйнфреймов Azure](https://azure.microsoft.com/migration/mainframe/)

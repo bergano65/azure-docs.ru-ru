@@ -16,12 +16,12 @@ ms.workload: infrastructure-services
 ms.date: 01/17/2020
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 698c198f58ead88b01b1c4b8b2e1fd9da4198c93
-ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
+ms.openlocfilehash: 0ee3d1d896d99d892d0a41799c4c1695633d29c4
+ms.sourcegitcommit: 7221918fbe5385ceccf39dff9dd5a3817a0bd807
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2020
-ms.locfileid: "76277464"
+ms.lasthandoff: 01/21/2020
+ms.locfileid: "76291504"
 ---
 # <a name="sap-workload-configurations-with-azure-availability-zones"></a>Конфигурации рабочих нагрузок SAP с использованием Зон доступности Azure
 [Зоны доступности Azure](https://docs.microsoft.com/azure/availability-zones/az-overview) — одна из функций высокой доступности, предлагаемых Azure. Использование Зон доступности повышает общую доступность рабочих нагрузок SAP в Azure. Эта функция уже доступна в некоторых [регионах Azure](https://azure.microsoft.com/global-infrastructure/regions/). В дальнейшем она будет доступна во всех регионах.
@@ -58,7 +58,7 @@ ms.locfileid: "76277464"
 - При развертывании в Зонах доступности Azure необходимо использовать [Управляемые диски Azure](https://azure.microsoft.com/services/managed-disks/). 
 - Сопоставление перечислений зон с физическими зонами фиксируется на уровне подписки Azure. Если вы используете разные подписки для развертывания систем SAP, для каждой подписки следует определить оптимальные зоны.
 - Вы не можете развертывать группы доступности Azure в пределах зоны доступности Azure, если не используете [группу размещения](https://docs.microsoft.com/azure/virtual-machines/linux/co-location)с учетом расположения в Azure. Способ развертывания уровня СУБД SAP и центральных служб в разных зонах, а также развертывание уровня приложений SAP с помощью групп доступности и по-прежнему достигнуть близкого сходства виртуальных машин приводится в статье [группы размещения Azure для обеспечения оптимальной сетевой задержки с приложениями SAP](sap-proximity-placement-scenarios.md). Если вы не используете группы размещения с учетом расположения в Azure, необходимо выбрать одну или другую как платформу развертывания для виртуальных машин.
-- Невозможно использовать [Azure Load Balancer (цен. категория "Базовый")](https://docs.microsoft.com/azure/load-balancer/load-balancer-overview#skus) для создания отказоустойчивых кластерных решений, основанных на службах отказоустойчивого кластера Windows Server или Linux Pacemaker. Вместо этого необходимо использовать [номер SKU Azure Load Balancer (цен. категория "Стандартный")](https://docs.microsoft.com/azure/load-balancer/load-balancer-standard-availability-zones).
+- Невозможно использовать [Azure Load Balancer (цен. категория "Базовый")](https://docs.microsoft.com/azure/load-balancer/load-balancer-overview) для создания отказоустойчивых кластерных решений, основанных на службах отказоустойчивого кластера Windows Server или Linux Pacemaker. Вместо этого необходимо использовать [номер SKU Azure Load Balancer (цен. категория "Стандартный")](https://docs.microsoft.com/azure/load-balancer/load-balancer-standard-availability-zones).
 
 
 

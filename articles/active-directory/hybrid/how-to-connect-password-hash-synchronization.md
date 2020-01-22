@@ -15,12 +15,12 @@ ms.author: billmath
 search.appverid:
 - MET150
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0c903e3378e06734a8785531c1a16c695d4b6c21
-ms.sourcegitcommit: 6c01e4f82e19f9e423c3aaeaf801a29a517e97a0
+ms.openlocfilehash: 111581def3ed0c366898534ee6b6c5f5b6d9e756
+ms.sourcegitcommit: 7221918fbe5385ceccf39dff9dd5a3817a0bd807
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74814939"
+ms.lasthandoff: 01/21/2020
+ms.locfileid: "76293119"
 ---
 # <a name="implement-password-hash-synchronization-with-azure-ad-connect-sync"></a>Реализация синхронизации хэшированных паролей в службе синхронизации Azure AD Connect
 В этой статье содержатся сведения о том, как синхронизировать пароли пользователей локального экземпляра службы Active Directory (AD) и облачного экземпляра службы Azure Active Directory (Azure AD).
@@ -98,9 +98,16 @@ ms.locfileid: "74814939"
 `(Get-AzureADUser -objectID <User Object ID>).passwordpolicies`
 
 
-Чтобы включить функцию Енфорцеклаудпассвордполицифорпассвордсинцедусерс, выполните следующую команду с помощью модуля PowerShell MSOnline:
-
-`Set-MsolDirSyncFeature -Feature EnforceCloudPasswordPolicyForPasswordSyncedUsers -Enable $true`
+Чтобы включить функцию Енфорцеклаудпассвордполицифорпассвордсинцедусерс, выполните следующую команду с помощью модуля PowerShell MSOnline, как показано ниже. Для параметра Enable необходимо ввести да, как показано ниже.
+```
+`Set-MsolDirSyncFeature -Feature EnforceCloudPasswordPolicyForPasswordSyncedUsers`
+`cmdlet Set-MsolDirSyncFeature at command pipeline position 1`
+`Supply values for the following parameters:`
+`Enable: yes`
+`Confirm`
+`Continue with this operation?`
+`[Y] Yes [N] No [S] Suspend [?] Help (default is "Y"): y`
+```
 
 После включения Azure AD не перейдет к каждому синхронизированному пользователю, чтобы удалить значение `DisablePasswordExpiration` из атрибута PasswordPolicies. Вместо этого значение задается равным `None` во время следующей синхронизации паролей для каждого пользователя при следующем изменении пароля в локальной службе AD.  
 

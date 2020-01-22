@@ -12,12 +12,12 @@ ms.date: 12/27/2019
 ms.author: mimart
 ms.reviewer: phsignor
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0c6a77fa8c6c48c9c3d4f2eba3ba56ac9114707a
-ms.sourcegitcommit: 5bbe87cf121bf99184cc9840c7a07385f0d128ae
+ms.openlocfilehash: 528aff73b931776ef9a6542437db271bb214c7fb
+ms.sourcegitcommit: 7221918fbe5385ceccf39dff9dd5a3817a0bd807
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76122994"
+ms.lasthandoff: 01/21/2020
+ms.locfileid: "76290705"
 ---
 # <a name="managing-consent-to-applications-and-evaluating-consent-requests"></a>Управление согласия для приложений и оценка запросов на согласие
 
@@ -42,7 +42,7 @@ ms.locfileid: "76122994"
 
 3. Если у вашей организации есть соответствующая лицензия:
 
-    * Используйте дополнительные [функции аудита приложений OAuth в Microsoft Cloud App Security](https://docs.microsoft.com/azure/cloud-app-security/investigate-risky-oauth).
+    * Используйте дополнительные [функции аудита приложений OAuth в Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/investigate-risky-oauth).
     * Используйте [Azure Monitor книги для наблюдения за разрешениями и](../reports-monitoring/howto-use-azure-monitor-workbooks.md) действиями, связанными с согласия. Книга " *Советы по согласию* " предоставляет представление о приложениях по количеству неудачных запросов на согласие. Это может быть полезно для определения приоритетов приложений для администраторов и принятия решения о предоставлении им согласия администратора.
 
 ### <a name="additional-considerations-for-reducing-friction"></a>Дополнительные соображения по снижению трения

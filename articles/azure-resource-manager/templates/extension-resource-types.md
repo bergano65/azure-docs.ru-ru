@@ -2,13 +2,13 @@
 title: Типы ресурсов расширения
 description: Список типов ресурсов Azure, используемых для расширения возможностей других типов ресурсов.
 ms.topic: conceptual
-ms.date: 10/24/2019
-ms.openlocfilehash: af60bd648e41532cca364272fb0ded01c0c18239
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.date: 01/20/2020
+ms.openlocfilehash: 47a98bca4912a1c59c8b2d9bad458769c6bf4ebf
+ms.sourcegitcommit: 7221918fbe5385ceccf39dff9dd5a3817a0bd807
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75484679"
+ms.lasthandoff: 01/21/2020
+ms.locfileid: "76293272"
 ---
 # <a name="resource-types-that-extend-capabilities-of-other-resources"></a>Типы ресурсов, расширяющие возможности других ресурсов
 
@@ -23,12 +23,14 @@ ms.locfileid: "75484679"
 - Microsoft. Алертсманажемент/Алертссуммари
 - Microsoft. Authorization/checkAccess
 - Microsoft. Authorization/Деняссигнментс
+- Microsoft. Authorization/Финдорфанролеассигнментс
 - Microsoft. Authorization/locks
 - Microsoft. Authorization/разрешения
 - Microsoft. Authorization/Полициассигнментс
 - Microsoft. Authorization/policyDefinitions
 - Microsoft. Authorization/Полицисетдефинитионс
 - Microsoft. Authorization/roleAssignments
+- Microsoft. Authorization/Ролеассигнментсусажеметрикс
 - Microsoft. Authorization/roleDefinitions
 - Microsoft. Billing/Биллингпериодс
 - Microsoft. Billing/Биллингпермиссионс
@@ -82,6 +84,7 @@ ms.locfileid: "75484679"
 - Microsoft. Insights/Аутоматедекспортсеттингс
 - Microsoft. Insights/базовый план
 - Microsoft. Insights/калкулатебаселине
+- Microsoft. Insights/ДатаколлектионрулеассоЦиатионс
 - Microsoft. Insights/diagnosticSettings
 - Microsoft. Insights/Диагностиксеттингскатегориес
 - Microsoft. Insights/евенттипес
@@ -94,6 +97,8 @@ ms.locfileid: "75484679"
 - Microsoft. Insights/метрикбаселинес
 - Microsoft. Insights/метрики
 - Microsoft. Insights/Миворкбукс
+- Microsoft. Insights/топология
+- Microsoft. Insights/Transactions
 - Microsoft. Insights/Вминсигхтсонбоардингстатусес
 - Microsoft. Кубернетесконфигуратион/Саурцеконтролконфигуратионс
 - Microsoft. Maintenance/Апплюпдатес
@@ -109,6 +114,7 @@ ms.locfileid: "75484679"
 - Microsoft. Полициинсигхтс/Полицитраккедресаурцес
 - Microsoft. Полициинсигхтс/исправление
 - Microsoft. RecoveryServices/Баккуппротектедитемс
+- Microsoft. RecoveryServices/Репликатионелигибилитиресултс  
 - Microsoft. Ресаурцехеалс/Аваилабилитистатусес
 - Microsoft. Ресаурцехеалс/Чилдаваилабилитистатусес
 - Microsoft. Ресаурцехеалс/Чилдресаурцес

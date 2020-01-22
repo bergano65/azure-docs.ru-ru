@@ -12,12 +12,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 12/05/2019
 ms.author: spelluru
-ms.openlocfilehash: d7a0c757f7314e45d5b4d13273df984739912b27
-ms.sourcegitcommit: b5106424cd7531c7084a4ac6657c4d67a05f7068
+ms.openlocfilehash: 43223f7cb9ed254340c99d235d494d1e93583c7f
+ms.sourcegitcommit: 7221918fbe5385ceccf39dff9dd5a3817a0bd807
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75942416"
+ms.lasthandoff: 01/21/2020
+ms.locfileid: "76293544"
 ---
 # <a name="capture-event-hubs-data-in-azure-storage-and-read-it-using-python"></a>Сбор данных концентраторов событий в службе хранилища Azure и их чтение с помощью Python 
 Можно использовать настройку концентратора событий, чтобы данные, отправляемые в концентратор событий, задавались в службе хранилища Azure или Azure Data Lake Storage. В этой статье показано, как использовать написание кода Python для отправки событий в концентратор событий и считывания записанных данных из хранилища BLOB-объектов Azure. Дополнительные сведения об этой функции см. в статье [Обзор функций записи концентраторов событий](event-hubs-capture-overview.md).
@@ -42,9 +42,9 @@ ms.locfileid: "75942416"
 - Подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/), прежде чем начать работу.
 - [Создайте пространство имен концентраторов событий и концентратор событий в пространстве имен](event-hubs-create.md). Запишите имя пространства имен концентраторов событий, имя концентратора событий и первичный ключ доступа для пространства имен. Получите ключ доступа, следуя инструкциям из статьи: [Получение строки подключения](event-hubs-get-connection-string.md#get-connection-string-from-the-portal). Имя ключа по умолчанию: **RootManageSharedAccessKey**. Строка подключения для учебника не требуется. Вам нужен только первичный ключ. 
 - Выполните следующие действия, чтобы создать **учетную запись хранения Azure** и **контейнер больших двоичных объектов**.
-    1. [Создайте учетную запись хранения Azure](/storage/common/storage-quickstart-create-account.md?tabs=azure-portal).
-    2. [Создайте контейнер больших двоичных объектов в хранилище](/storage/blobs/storage-quickstart-blobs-portal.md#create-a-container). 
-    3. [Получение строки подключения к учетной записи хранения](/storage/common/storage-configure-connection-string?#view-and-copy-a-connection-string)
+    1. [Создайте учетную запись хранения Azure](../storage/common/storage-quickstart-create-account.md?tabs=azure-portal).
+    2. [Создайте контейнер больших двоичных объектов в хранилище](../storage/blobs/storage-quickstart-blobs-portal.md#create-a-container). 
+    3. [Получите строку подключения к учетной записи хранения](../storage/common/storage-configure-connection-string.md#view-and-copy-a-connection-string).
 
         Запишите **строку подключения** и **имя контейнера**. Они будут использоваться позже в коде. 
 - Включите функцию **захвата** для концентратора событий, следуя инструкциям из раздела [Включение записи концентраторов событий с помощью портал Azure](event-hubs-capture-enable-through-portal.md). Выберите учетную запись хранения и контейнер больших двоичных объектов, созданный на предыдущем шаге. Эту функцию также можно включить при создании концентратора событий. 

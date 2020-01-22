@@ -3,23 +3,23 @@ title: Резервное копирование и восстановление
 description: В этой статье вы узнаете, как выполнять резервное копирование и восстановление файлов Azure с помощью службы Azure Backup и PowerShell.
 ms.topic: conceptual
 ms.date: 08/20/2019
-ms.openlocfilehash: 78000bc669eb7a61f8698ad8c39ef49f65b245a2
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: f9665bbc3562faab760562e1e6729d8be0796acd
+ms.sourcegitcommit: 7221918fbe5385ceccf39dff9dd5a3817a0bd807
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74224156"
+ms.lasthandoff: 01/21/2020
+ms.locfileid: "76294054"
 ---
 # <a name="back-up-and-restore-azure-files-with-powershell"></a>Резервное копирование и восстановление файлов Azure с помощью PowerShell
 
 В этой статье описывается, как использовать Azure PowerShell для резервного копирования и восстановления файлового ресурса службы файлов Azure с помощью хранилища служб восстановления [Azure Backup](backup-overview.md) .
 
-В этой статье описано, как:
+В статье описывается выполнение следующих задач:
 
 > [!div class="checklist"]
 >
 > * Настройте PowerShell и зарегистрируйте поставщик служб восстановления Azure.
-> * Создайте хранилище служб восстановления.
+> * Создайте хранилище служб восстановления,
 > * Настройте резервное копирование для файлового ресурса Azure.
 > * Запустите задание резервного копирования.
 > * Восстановление резервной копии общего файлового ресурса Azure или отдельного файла из общей папки.
@@ -28,7 +28,7 @@ ms.locfileid: "74224156"
 ## <a name="before-you-start"></a>Перед началом работы
 
 * Дополнительные [сведения](backup-azure-recovery-services-vault-overview.md) о хранилищах служб восстановления.
-* Ознакомьтесь с возможностями предварительной версии для [резервного копирования файловых ресурсов Azure](backup-azure-files.md).
+* Ознакомьтесь с возможностями предварительной версии для [резервного копирования файловых ресурсов Azure](backup-afs.md).
 * Проверьте иерархию объектов PowerShell для служб восстановления.
 
 ## <a name="recovery-services-object-hierarchy"></a>Иерархия объектов служб восстановления
@@ -37,7 +37,7 @@ ms.locfileid: "74224156"
 
 ![Иерархия объектов служб восстановления](./media/backup-azure-vms-arm-automation/recovery-services-object-hierarchy.png)
 
-Ознакомьтесь со справочником по [командлету](/powershell/module/az.recoveryservices) **AZ. RecoveryServices** в библиотеке Azure.
+Ознакомьтесь со [справочником по командлету](/powershell/module/az.recoveryservices) **AZ. RecoveryServices** в библиотеке Azure.
 
 ## <a name="set-up-and-install"></a>Установка и установка
 
@@ -417,6 +417,6 @@ $job.ErrorDetails
 1073871825 Microsoft Azure Backup encountered an internal error. Wait for a few minutes and then try the operation again. If the issue persists, please contact Microsoft support.
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-[Сведения о](backup-azure-files.md) резервном копировании файлов Azure в портал Azure.
+[Сведения о](backup-afs.md) резервном копировании файлов Azure в портал Azure.

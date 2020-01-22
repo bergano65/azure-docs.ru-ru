@@ -76,7 +76,7 @@
   items:
     - name: Интеграция приложений
       items:
-        - name: Регистрация приложения с поддержкой OIDC
+        - name: Регистрация приложения
           href: tutorial-register-applications.md
         - name: Регистрация поставщика служб SAML
           href: connect-with-saml-service-providers.md
@@ -282,6 +282,11 @@
                   items:
                     - name: Идентификаторы строк локализации
                       href: localization-string-ids.md
+                - name: DisplayControls
+                  href: display-controls.md
+                  items:
+                    - name: Проверка
+                      href: display-control-verification.md
             - name: ClaimsProviders
               href: claimsproviders.md
               items:
@@ -320,11 +325,6 @@
                       href: active-directory-b2c-reference-sso-custom.md
                     - name: Проверка
                       href: validation-technical-profile.md
-            - name: DisplayControls
-              href: display-controls.md
-              items:
-                - name: Проверка
-                  href: display-control-verification.md
             - name: UserJourneys
               href: userjourneys.md
             - name: RelyingParty

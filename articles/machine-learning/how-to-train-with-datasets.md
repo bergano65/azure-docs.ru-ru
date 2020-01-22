@@ -11,12 +11,12 @@ author: MayMSFT
 manager: cgronlun
 ms.reviewer: nibaccam
 ms.date: 09/25/2019
-ms.openlocfilehash: b6ea5c9ef5e128116ef389675a09e6ab4b230b75
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.openlocfilehash: 24a19487567f2753457d5886cbb9fa4bf438bad4
+ms.sourcegitcommit: a9b1f7d5111cb07e3462973eb607ff1e512bc407
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75982455"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76311348"
 ---
 # <a name="train-with-datasets-in-azure-machine-learning"></a>Обучение с наборами данных в Машинное обучение Azure
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -83,7 +83,7 @@ df = dataset.to_pandas_dataframe()
 
 * Каталог скрипта для скриптов. Все файлы в этом каталоге передаются в узел кластера для выполнения.
 * Сценарий обучения, *train_titanic. Корректировка*.
-* Входной набор данных для обучения, `titanic`.
+* Входной набор данных для обучения, `titanic`. `as_named_input()` требуется, чтобы на входной набор данных можно было ссылаться по назначенному имени в скрипте обучения. 
 * Целевой объект вычислений для эксперимента.
 * Определение окружения для эксперимента.
 
@@ -126,7 +126,7 @@ mnist_ds = Dataset.File.from_files(path = web_paths)
 
 ### <a name="configure-the-estimator"></a>Настройка средства оценки
 
-Вместо передачи набора данных с помощью параметра `inputs` в средстве оценки можно также передать набор данных с помощью `script_params` и получить путь к данным (точку подключения) в обучающем скрипте через аргументы. Таким образом вы сможете получить доступ к данным и использовать существующий обучающий сценарий.
+Помимо передачи набора данных с помощью параметра `inputs` в средстве оценки, можно также передать набор данных с помощью `script_params` и получить путь к данным (точку подключения) в обучающем скрипте через аргументы. Таким образом, вы можете разместить сценарий обучения независимо от azureml-SDK. Иными словами, вы сможете использовать один и тот же сценарий обучения для локальной отладки и удаленного обучения на любой облачной платформе.
 
 Объект средства оценки [SKLearn](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.sklearn.sklearn?view=azure-ml-py) используется для отправки экспериментов scikit-учиться. Узнайте больше о обучении с помощью средства [оценки SKlearn](how-to-train-scikit-learn.md).
 

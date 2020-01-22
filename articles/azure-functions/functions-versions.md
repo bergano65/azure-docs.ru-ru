@@ -3,12 +3,12 @@ title: Обзор версий среды выполнения для решен
 description: Решение "Функции Azure" поддерживает разные версии среды выполнения. В этой статье приводятся различия между ними и рекомендации по выбору подходящей для вас версии.
 ms.topic: conceptual
 ms.date: 12/09/2019
-ms.openlocfilehash: 88c151149d1d960746ff449819d31e8b32d98120
-ms.sourcegitcommit: f34165bdfd27982bdae836d79b7290831a518f12
+ms.openlocfilehash: 0138af15c89a4792b9ccb73a8b761577fad36c5e
+ms.sourcegitcommit: 7221918fbe5385ceccf39dff9dd5a3817a0bd807
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/13/2020
-ms.locfileid: "75921855"
+ms.lasthandoff: 01/21/2020
+ms.locfileid: "76290382"
 ---
 # <a name="azure-functions-runtime-versions-overview"></a>Обзор версий среды выполнения для решения "Функции Azure"
 
@@ -143,7 +143,7 @@ ms.locfileid: "75921855"
 ```
 
 > [!NOTE]
-> Для функций Azure 3. x и .NET требуется, чтобы расширение `Microsoft.Sdk.NET.Functions` было как минимум `3.0.0`.
+> Для функций Azure 3. x и .NET требуется, чтобы расширение `Microsoft.NET.Sdk.Functions` было как минимум `3.0.0`.
 
 ###### <a name="updating-2x-apps-to-3x-in-visual-studio"></a>Обновление приложений 2. x до 3. x в Visual Studio
 

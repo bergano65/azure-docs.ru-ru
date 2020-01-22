@@ -9,16 +9,16 @@ ms.topic: reference
 author: xiaoharper
 ms.author: zhanxia
 ms.date: 10/22/2019
-ms.openlocfilehash: 3511c448298aa96c95dc970d1d192869c127eb0d
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 6e78cbdd9cd921db2340a92c46a9337ac0fc98eb
+ms.sourcegitcommit: a9b1f7d5111cb07e3462973eb607ff1e512bc407
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73497669"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76311858"
 ---
 # <a name="select-columns-in-dataset-module"></a>Выбор столбцов в модуле набора данных
 
-В этой статье описывается модуль в Машинное обучение Azure Designer (Предварительная версия).
+В этой статье описывается модуль в конструкторе Машинное обучение Azure.
 
 Используйте этот модуль, чтобы выбрать подмножество столбцов для использования в последующих операциях. Модуль не удаляет столбцы из исходного набора данных физически. Вместо этого он создает подмножество столбцов, во многом похоже на *представление* базы данных или *проекцию*.
 

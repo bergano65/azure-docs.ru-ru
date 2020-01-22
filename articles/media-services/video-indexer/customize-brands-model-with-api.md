@@ -8,14 +8,14 @@ manager: johndeu
 ms.service: media-services
 ms.subservice: video-indexer
 ms.topic: article
-ms.date: 05/15/2019
+ms.date: 01/14/2020
 ms.author: anzaman
-ms.openlocfilehash: 804cc7b2b0b51312ed756723fff5150b02f324cc
-ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
+ms.openlocfilehash: 81ba4cc7be5f9361d21aaea2ba78d0fd6f0f8c95
+ms.sourcegitcommit: 7221918fbe5385ceccf39dff9dd5a3817a0bd807
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74892810"
+ms.lasthandoff: 01/21/2020
+ms.locfileid: "76289923"
 ---
 # <a name="customize-a-brands-model-with-the-video-indexer-api"></a>Настройка модели торговых марок с помощью API Индексатора видео
 
@@ -27,43 +27,15 @@ ms.locfileid: "74892810"
 
 ## <a name="create-a-brand"></a>Создание торговой марки
 
-Вы сможете создать новую собственную торговую марку и добавить ее к специальной модели торговых марок для указанной учетной записи.
+API [создания торговой марки](https://api-portal.videoindexer.ai/docs/services/operations/operations/Create-Brand) создает новый пользовательский бренд и добавляет его в настраиваемую модель торговых марок для указанной учетной записи. 
 
-### <a name="request-url"></a>Request URL (URL-адрес запроса)
+> [!NOTE]
+> **Включение** параметра (в тексте) в значение true помещает торговую марку в список *включаемых* индексаторов видео для обнаружения. Параметр **enabled** со значением false помещает торговую марку в список *Исключить*, чтобы Индексатор видео ее не обнаружил.
 
-```
-https://api.videoindexer.ai/{location}/Accounts/{accountId}/Customization/Brands?accessToken={accessToken}
-```
+Некоторые другие параметры, которые можно задать в тексте:
 
-[Просмотрите необходимые параметры и выполните тестирование с помощью Портала разработчика Индексатора видео](https://api-portal.videoindexer.ai/docs/services/operations/operations/Create-Brand).
-
-### <a name="request-parameters"></a>Параметры запроса
-
-|**Имя**|**Тип**|**Обязательный**|**Описание**|
-|---|---|---|---|
-|location|string|ДА|Регион Azure, в который должен быть направлен вызов. Дополнительные сведения см. в статье [Azure regions in which Video Indexer exists](regions.md) (Регионы Azure, в которых существует Индексатор видео).|
-|accountId|string|ДА|Глобальный уникальный идентификатор этой учетной записи|
-|accessToken|string|ДА|Маркер доступа (должен быть в области [маркера доступа к учетной записи](https://api-portal.videoindexer.ai/docs/services/authorization/operations/Get-Account-Access-Token?)) для проверки подлинности вызова. Срок действия маркеров доступа истекает в течение 1 часа.|
-
-### <a name="request-body"></a>Тело запроса
-
-В дополнение к этим параметрам необходимо указать текст запроса объекта JSON, который предоставляет информацию о новой торговой марке в соответствии с форматом примера ниже.
-
-```json
-{
-  "name": "Example",
-  "enabled": true,
-  "tags": ["Tag1", "Tag2"],
-  "description": "This is an example",
-  "referenceUrl": "https://en.wikipedia.org/wiki/Example"
-}
-```
-
-Параметр **enabled** со значением true помещает торговую марку в список *Включить*, чтобы Индексатор видео ее обнаружил. Параметр **enabled** со значением false помещает торговую марку в список *Исключить*, чтобы Индексатор видео ее не обнаружил.
-
-Значение **referenceUrl** может быть ссылкой на любой веб-сайт для торговой марки, например ссылка на страницу в Википедии.
-
-Значение **tags** представляет собой список тегов для торговой марки. Эго можно увидеть в поле для торговых марок *Категория* на веб-сайте Индексатора видео. Например, торговая марка "Azure" может быть отмечена тегом или отнесена к категории "Облако".
+* Значение **referenceUrl** может быть ссылкой на любой веб-сайт для торговой марки, например ссылка на страницу в Википедии.
+* Значение **tags** представляет собой список тегов для торговой марки. Эго можно увидеть в поле для торговых марок *Категория* на веб-сайте Индексатора видео. Например, торговая марка Azure может быть отмечена тегом или отнесена к категории "Облако".
 
 ### <a name="response"></a>Ответ
 
@@ -89,28 +61,7 @@ https://api.videoindexer.ai/{location}/Accounts/{accountId}/Customization/Brands
 
 ## <a name="delete-a-brand"></a>Удаление торговой марки
 
-Вы можете удалить торговую марку из специальной модели торговых марок для указанной учетной записи. Учетная запись указана в параметре **accountId**. После успешного вызова торговая марка больше не будет находиться в таких списках торговых марок, как *Включить* или *Исключить*.
-
-### <a name="request-url"></a>Request URL (URL-адрес запроса)
-
-```
-https://api.videoindexer.ai/{location}/Accounts/{accountId}/Customization/Brands/{id}?accessToken={accessToken}
-```
-
-[Просмотрите необходимые параметры и выполните тестирование с помощью Портала разработчика Индексатора видео](https://api-portal.videoindexer.ai/docs/services/operations/operations/Delete-Brand?).
-
-### <a name="request-parameters"></a>Параметры запроса
-
-|**Имя**|**Тип**|**Обязательный**|**Описание**|
-|---|---|---|---|
-|location|string|ДА|Регион Azure, в который должен быть направлен вызов. Дополнительные сведения см. в статье [Azure regions in which Video Indexer exists](regions.md) (Регионы Azure, в которых существует Индексатор видео).|
-|accountId|string|ДА|Глобальный уникальный идентификатор этой учетной записи|
-|id|целое число|ДА|Идентификатор торговой марки (сгенерированный во время создания торговой марки).|
-|accessToken|string|ДА|Маркер доступа (должен быть в области [маркера доступа к учетной записи](https://api-portal.videoindexer.ai/docs/services/authorization/operations/Get-Account-Access-Token?)) для проверки подлинности вызова. Срок действия маркеров доступа истекает в течение 1 часа.|
-
-### <a name="request-body"></a>Тело запроса
-
-Для этого вызова больше не требуется текст запроса.
+API [удаления торговой марки](https://api-portal.videoindexer.ai/docs/services/operations/operations/Delete-Brand?) удаляет торговую марку из настраиваемой модели торговых марок для указанной учетной записи. Учетная запись указана в параметре **accountId**. После успешного вызова торговая марка больше не будет находиться в таких списках торговых марок, как *Включить* или *Исключить*.
 
 ### <a name="response"></a>Ответ
 
@@ -118,28 +69,7 @@ https://api.videoindexer.ai/{location}/Accounts/{accountId}/Customization/Brands
 
 ## <a name="get-a-specific-brand"></a>Получение определенной торговой марки
 
-Вы можете искать информацию о торговой марке в специальной модели торговых марок для указанной учетной записи, используя идентификатор торговой марки.
-
-### <a name="request-url"></a>Request URL (URL-адрес запроса)
-
-```
-https://api.videoindexer.ai/{location}/Accounts/{accountId}/Customization/Brands?accessToken={accessToken}
-```
-
-[Просмотрите необходимые параметры и выполните тестирование с помощью Портала разработчика Индексатора видео](https://api-portal.videoindexer.ai/docs/services/operations/operations/Get-Brand?).
-
-### <a name="request-parameters"></a>Параметры запроса
-
-|**Имя**|**Тип**|**Обязательный**|**Описание**|
-|---|---|---|---|
-|location|string|ДА|Регион Azure, в который должен быть направлен вызов. Дополнительные сведения см. в статье [Azure regions in which Video Indexer exists](regions.md) (Регионы Azure, в которых существует Индексатор видео).|
-|accountId|string|ДА|Глобальный уникальный идентификатор этой учетной записи|
-|id|целое число|ДА|Идентификатор торговой марки (сгенерированный во время создания торговой марки).|
-|accessToken|string|ДА|Маркер доступа (должен быть в области [маркера доступа к учетной записи](https://api-portal.videoindexer.ai/docs/services/authorization/operations/Get-Account-Access-Token?)) для проверки подлинности вызова. Срок действия маркеров доступа истекает в течение 1 часа.|
-
-### <a name="request-body"></a>Тело запроса
-
-Для этого вызова больше не требуется текст запроса.
+API [получения торговой марки](https://api-portal.videoindexer.ai/docs/services/operations/operations/Get-Brand?) позволяет искать сведения о торговой марке в настраиваемой модели торговых марок для указанной учетной записи с помощью фирменного идентификатора.
 
 ### <a name="response"></a>Ответ
 
@@ -168,44 +98,7 @@ https://api.videoindexer.ai/{location}/Accounts/{accountId}/Customization/Brands
 
 ## <a name="update-a-specific-brand"></a>Обновление определенной торговой марки
 
-Вы можете искать информацию о торговой марке в специальной модели торговых марок для указанной учетной записи, используя идентификатор торговой марки.
-
-### <a name="request-url"></a>Request URL (URL-адрес запроса)
-
-```
-https://api.videoindexer.ai/{location}/Accounts/{accountId}/Customization/Brands/{id}?accessToken={accessToken}
-```
-
-[Просмотрите необходимые параметры и выполните тестирование с помощью Портала разработчика Индексатора видео](https://api-portal.videoindexer.ai/docs/services/operations/operations/Update-Brand?).
-
-### <a name="request-parameters"></a>Параметры запроса
-
-|**Имя**|**Тип**|**Обязательный**|**Описание**|
-|---|---|---|---|
-|location|string|ДА|Регион Azure, в который должен быть направлен вызов. Дополнительные сведения см. в статье [Azure regions in which Video Indexer exists](regions.md) (Регионы Azure, в которых существует Индексатор видео).|
-|accountId|string|ДА|Глобальный уникальный идентификатор этой учетной записи|
-|id|целое число|ДА|Идентификатор торговой марки (сгенерированный во время создания торговой марки).|
-|accessToken|string|ДА|Маркер доступа (должен быть в области [маркера доступа к учетной записи](https://api-portal.videoindexer.ai/docs/services/authorization/operations/Get-Account-Access-Token?)) для проверки подлинности вызова. Срок действия маркеров доступа истекает в течение 1 часа.|
-
-### <a name="request-body"></a>Тело запроса
-
-В дополнение к этим параметрам необходимо указать текст запроса объекта JSON, который предоставляет обновленную информацию о торговой марке, которую необходимо обновить, в соответствии с форматом примера ниже.
-
-```json
-{
-  "name": "Example",
-  "enabled": false,
-  "tags": ["Tag1", "NewTag2"],
-  "description": "This is an update example",
-  "referenceUrl": "https://en.wikipedia.org/wiki/Example",
-  "lastModifierUserName": "SampleUserName",
-  "created": "2018-04-25T14:59:52.7433333",
-  "lastModified": "2018-04-28T15:52:22.3413983",
-}
-```
-
-> [!NOTE]
-> В этом примере торговая марка, которая была создана в примере текста запроса в разделе**Create a Brand** (Создание торговой марки), обновиться с новым тегом и новым описанием. **Включенное** значение было изменено на false для помещения в список *Исключить*.
+Обновление API для [фирменной символики](https://api-portal.videoindexer.ai/docs/services/operations/operations/Update-Brand?) позволяет искать сведения о торговой марке в настраиваемой модели торговых марок для указанной учетной записи с помощью фирменного идентификатора.
 
 ### <a name="response"></a>Ответ
 
@@ -231,27 +124,7 @@ https://api.videoindexer.ai/{location}/Accounts/{accountId}/Customization/Brands
 
 ## <a name="get-all-of-the-brands"></a>Получение всех торговых марок
 
-Этот запрос возвращает все торговые марки в пользовательскую модель торговых марок для указанной учетной записи независимо от того, в каком списке должна находиться торговая марка — *Включить* или *Исключить*.
-
-### <a name="request-url"></a>Request URL (URL-адрес запроса)
-
-```
-https://api.videoindexer.ai/{location}/Accounts/{accountId}/Customization/Brands?accessToken={accessToken}
-```
-
-[Просмотрите необходимые параметры и выполните тестирование с помощью Портала разработчика Индексатора видео](https://api-portal.videoindexer.ai/docs/services/operations/operations/Get-Brands?).
-
-### <a name="request-parameters"></a>Параметры запроса
-
-|**Имя**|**Тип**|**Обязательный**|**Описание**|
-|---|---|---|---|
-|location|string|ДА|Регион Azure, в который должен быть направлен вызов. Дополнительные сведения см. в статье [Azure regions in which Video Indexer exists](regions.md) (Регионы Azure, в которых существует Индексатор видео).|
-|accountId|string|ДА|Глобальный уникальный идентификатор этой учетной записи|
-|accessToken|string|ДА|Маркер доступа (должен быть в области [маркера доступа к учетной записи](https://api-portal.videoindexer.ai/docs/services/authorization/operations/Get-Account-Access-Token?)) для проверки подлинности вызова. Срок действия маркеров доступа истекает в течение 1 часа.|
-
-### <a name="request-body"></a>Тело запроса
-
-Для этого вызова больше не требуется текст запроса.
+API [получения всех торговых марок](https://api-portal.videoindexer.ai/docs/services/operations/operations/Get-Brands?) возвращает все торговые марки в настраиваемой модели торговых марок для указанной учетной записи независимо от того, должна ли эта марка быть в списке *включить* или *исключить* торговые марки.
 
 ### <a name="response"></a>Ответ
 
@@ -291,27 +164,7 @@ https://api.videoindexer.ai/{location}/Accounts/{accountId}/Customization/Brands
 
 ## <a name="get-brands-model-settings"></a>Параметры модели торговых марок
 
-С помощью этой возможности можно возвратить параметры модели торговых марок в указанной учетной записи. Параметры торговой марки отображают, включена или нет база данных торговой марки Bing. Если торговые марки Bing не включены, Индексатор видео обнаружит только торговые марки из специальной модели торговых марок указанной учетной записи.
-
-### <a name="request-url"></a>Request URL (URL-адрес запроса)
-
-```
-https://api.videoindexer.ai/{location}/Accounts/{accountId}/Customization/Brands?accessToken={accessToken}
-```
-
-[Просмотрите необходимые параметры и выполните тестирование с помощью Портала разработчика Индексатора видео](https://api-portal.videoindexer.ai/docs/services/operations/operations/Get-Brands).
-
-### <a name="request-parameters"></a>Параметры запроса
-
-|**Имя**|**Тип**|**Обязательный**|**Описание**|
-|---|---|---|---|
-|location|string|ДА|Регион Azure, в который должен быть направлен вызов. Дополнительные сведения см. в статье [Azure regions in which Video Indexer exists](regions.md) (Регионы Azure, в которых существует Индексатор видео).|
-|accountId|string|ДА|Глобальный уникальный идентификатор этой учетной записи|
-|accessToken|string|ДА|Маркер доступа (должен быть в области [маркера доступа к учетной записи](https://api-portal.videoindexer.ai/docs/services/authorization/operations/Get-Account-Access-Token?)) для проверки подлинности вызова. Срок действия маркеров доступа истекает в течение 1 часа.|
-
-### <a name="request-body"></a>Тело запроса
-
-Для этого вызова больше не требуется текст запроса.
+API [параметров получения торговых марок](https://api-portal.videoindexer.ai/docs/services/operations/operations/Get-Brands) Возвращает параметры модели торговых марок в указанной учетной записи. Параметры торговой марки отображают, включена или нет база данных торговой марки Bing. Если торговые марки Bing не включены, Индексатор видео обнаружит только торговые марки из специальной модели торговых марок указанной учетной записи.
 
 ### <a name="response"></a>Ответ
 
@@ -329,35 +182,9 @@ https://api.videoindexer.ai/{location}/Accounts/{accountId}/Customization/Brands
 
 ## <a name="update-brands-model-settings"></a>Обновление параметров модели торговых марок
 
-Благодаря этому параметры модели торговых марок в указанной учетной записи обновляются. Параметры торговой марки отображают, включена или нет база данных торговой марки Bing. Если торговые марки Bing не включены, Индексатор видео обнаружит только торговые марки из специальной модели торговых марок указанной учетной записи.
+[Обновленные торговые марки](https://api-portal.videoindexer.ai/docs/services/operations/operations/Update-Brands-Model-Settings?) обновляют параметры модели торговых марок в указанной учетной записи. Параметры торговой марки отображают, включена или нет база данных торговой марки Bing. Если торговые марки Bing не включены, Индексатор видео обнаружит только торговые марки из специальной модели торговых марок указанной учетной записи.
 
-### <a name="request-url"></a>URL-адрес запроса
-```
-https://api.videoindexer.ai/{location}/Accounts/{accountId}/Customization/BrandsModelSettings?accessToken={accessToken}
-```
-
-[Просмотрите необходимые параметры и выполните тестирование с помощью Портала разработчика Индексатора видео](https://api-portal.videoindexer.ai/docs/services/operations/operations/Update-Brands-Model-Settings?).
-
-### <a name="request-parameters"></a>Параметры запроса
-
-|**Имя**|**Тип**|**Обязательный**|**Описание**|
-|---|---|---|---|
-|location|string|ДА|Регион Azure, в который должен быть направлен вызов. Дополнительные сведения см. в статье [Azure regions in which Video Indexer exists](regions.md) (Регионы Azure, в которых существует Индексатор видео).|
-|accountId|string|ДА|Глобальный уникальный идентификатор этой учетной записи|
-|accessToken|string|ДА|Маркер доступа (должен быть в области [маркера доступа к учетной записи](https://api-portal.videoindexer.ai/docs/services/authorization/operations/Get-Account-Access-Token?)) для проверки подлинности вызова. Срок действия маркеров доступа истекает в течение 1 часа.|
-
-### <a name="request-body"></a>Тело запроса
-
-В дополнение к этим параметрам необходимо указать текст запроса объекта JSON, который предоставляет информацию о новой торговой марке в соответствии с форматом примера ниже.
-
-```json
-{
-    "useBuiltIn":true
-}
-```
-
-> [!NOTE]
-> **useBuiltIn** со значением true означает, что торговые марки Bing включены. Если *useBuiltin* имеет значение false, торговые марки Bing отключены.
+Флаг **усебуилтин** , установленный в значение true, означает, что торговые марки Bing включены. Если *useBuiltin* имеет значение false, торговые марки Bing отключены.
 
 ### <a name="response"></a>Ответ
 

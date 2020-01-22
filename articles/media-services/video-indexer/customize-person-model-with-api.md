@@ -8,18 +8,18 @@ manager: johndeu
 ms.service: media-services
 ms.subservice: video-indexer
 ms.topic: article
-ms.date: 05/15/2019
+ms.date: 01/14/2020
 ms.author: anzaman
-ms.openlocfilehash: 44f97e3d9af9daac8d62ae42be76bd73dedbd453
-ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
+ms.openlocfilehash: 370e9e515359e2e2e598db90aa379f796b13c3fe
+ms.sourcegitcommit: 7221918fbe5385ceccf39dff9dd5a3817a0bd807
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73838264"
+ms.lasthandoff: 01/21/2020
+ms.locfileid: "76292405"
 ---
 # <a name="customize-a-person-model-with-the-video-indexer-api"></a>Настройка модели пользователя с помощью API Индексатора видео
 
-Индексатор видео поддерживает функцию определения лиц и распознавания знаменитостей для видеосодержимого. Функция распознавания знаменитостей охватывает около миллиона лиц на основе часто запрашиваемых источников данных, таких как IMDB, Википедия и влиятельные лица LinkedIn. Лица, которые не распознаются с помощью функции распознавания знаменитостей, также определяются, но их имя не указывается. После передачи видео в Индексатор видео и получения результатов вы можете вернуться и ввести имена для лиц, которые не удалось распознать. После того как вы введете имя для определенного лица, это лицо и назначенное имя будут добавлены в модель Person вашей учетной записи. Индексатор видео затем сможет распознать это лицо в будущих и предыдущих видео.
+Индексатор видео поддерживает функцию определения лиц и распознавания знаменитостей для видеосодержимого. Функция распознавания знаменитостей охватывает около миллиона лиц на основе часто запрашиваемых источников данных, таких как IMDB, Википедия и влиятельные лица LinkedIn. Лица, которые не распознаются с помощью функции распознавания знаменитостей, также определяются, но их имя не указывается. После передачи видео в Индексатор видео и получения результатов вы можете вернуться и ввести имена для лиц, которые не удалось распознать. После того как вы введете имя для определенного лица, это лицо и назначенное имя будут добавлены в модель пользователя вашей учетной записи. Индексатор видео затем сможет распознать это лицо в будущих и предыдущих видео.
 
 Вы можете использовать API Индексатора видео для изменения обнаруженных в видео лиц, как описано в этом разделе. Вы также можете использовать API, как описано в статье [Customize Person model using the Video Indexer website](customize-person-model-with-api.md) (Настройка модели пользователя с помощью API Индексатора видео).
 
@@ -35,38 +35,7 @@ ms.locfileid: "73838264"
 
 ## <a name="create-a-new-person-model"></a>Создание новой модели пользователя
 
-Создайте новую модель пользователя в указанной учетной записи. 
-
-### <a name="request-url"></a>Request URL (URL-адрес запроса)
-
-Это запрос POST.
-
-```
-https://api.videoindexer.ai/{location}/Accounts/{accountId}/Customization/PersonModels?name={name}&accessToken={accessToken}
-```
-
-Ниже приведен запрос в Curl.
-
-```curl
-curl -v -X POST "https://api.videoindexer.ai/{location}/Accounts/{accountId}/Customization/PersonModels?name={name}&accessToken={accessToken}"
-```
-
-[Просмотрите необходимые параметры и выполните тестирование с помощью портала разработчика Индексатора видео](https://api-portal.videoindexer.ai/docs/services/operations/operations/Create-Person-Model?).
-
-### <a name="request-parameters"></a>Параметры запроса 
-
-|**имя**|**Тип**|**Обязательный**|**Описание**|
-|---|---|---|---|
-|location|строка|Да|Регион Azure, в который должен быть направлен вызов. Дополнительные сведения см. в статье [Azure regions in which Video Indexer exists](regions.md) (Регионы Azure, в которых существует Индексатор видео).|
-|accountId|строка|Да|Глобальный уникальный идентификатор для учетной записи|
-|name|строка|Да|Имя для модели пользователя|
-|accessToken|строка|Да|Маркер доступа (должен быть в области [маркера доступа к учетной записи](https://api-portal.videoindexer.ai/docs/services/authorization/operations/Get-Account-Access-Token?)) для проверки подлинности вызова. Срок действия маркеров доступа истекает в течение 1 часа.|
-
-### <a name="request-body"></a>Тело запроса
-
-Для этого вызова больше не требуется текст запроса.
-
-### <a name="response"></a>Ответ
+Чтобы создать новую модель Person в указанной учетной записи, используйте API [создания модели Person](https://api-portal.videoindexer.ai/docs/services/operations/operations/Create-Person-Model?) .
 
 Ответ предоставляет имя и идентификатор модели пользователя, которую вы создали используя формат из примера приведенного ниже.
 
@@ -81,73 +50,15 @@ curl -v -X POST "https://api.videoindexer.ai/{location}/Accounts/{accountId}/Cus
 
 ## <a name="delete-a-person-model"></a>Удаление модели пользователя
 
-Удалите настраиваемую модель пользователя с указанной учетной записи. 
+Чтобы удалить пользовательскую модель Person из указанной учетной записи, используйте API [-интерфейс удаления модели Person](https://api-portal.videoindexer.ai/docs/services/operations/operations/Delete-Person-Model?) . 
 
 После успешного удаления модели пользователя, индекс ваших видео, который использовал удаленную модель, измениться только после переиндексации. После переиндексации лица, имена которых находились в удаленной модели, не будут распознаваться Индексатором видео в ваших видео индексированных с помощью этой модели. Тем не менее эти лица все же будут обнаруживаться. Ваши видео, индексирование с помощью удаленной модели, будут использовать модель пользователя вашей учетной записи по умолчанию. Если имена лиц с удаленной модели также подсоединены к вашей модели учетной записи по умолчанию, то они все же будут распознаваться в видео.
-
-### <a name="request-url"></a>Request URL (URL-адрес запроса)
-
-```
-https://api.videoindexer.ai/{location}/Accounts/{accountId}/Customization/PersonModels/{id}?accessToken={accessToken}
-```
-
-Ниже приведен запрос в Curl.
-```curl
-curl -v -X DELETE "https://api.videoindexer.ai/{location}/Accounts/{accountId}/Customization/PersonModels/{id}?accessToken={accessToken}"
-```
-
-[Просмотрите необходимые параметры и выполните тестирование с помощью портала разработчика Индексатора видео](https://api-portal.videoindexer.ai/docs/services/operations/operations/Delete-Person-Model?).
-
-### <a name="request-parameters"></a>Параметры запроса
-
-|**имя**|**Тип**|**Обязательный**|**Описание**|
-|---|---|---|---|
-|location|строка|Да|Регион Azure, в который должен быть направлен вызов. Дополнительные сведения см. в статье [Azure regions in which Video Indexer exists](regions.md) (Регионы Azure, в которых существует Индексатор видео).|
-|accountId|строка|Да|Глобальный уникальный идентификатор для учетной записи|
-|id|строка|Да|Идентификатор модели пользователя (создан вместе с моделью пользователя)|
-|accessToken|строка|Да|Маркер доступа (должен быть в области [маркера доступа к учетной записи](https://api-portal.videoindexer.ai/docs/services/authorization/operations/Get-Account-Access-Token?)) для проверки подлинности вызова. Срок действия маркеров доступа истекает в течение 1 часа.|
-
-### <a name="request-body"></a>Тело запроса
-
-Для этого вызова больше не требуется текст запроса.
-
-### <a name="response"></a>Ответ
 
 При успешном удалении языковой модели содержимое не возвращается.
 
 ## <a name="get-all-person-models"></a>Получение всех моделей пользователя
 
-Получите все модели пользователя в указанной учетной записи. 
-
-### <a name="request-call"></a>Вызов запроса
-
-Это запрос GET.
-
-```
-https://api.videoindexer.ai/{location}/Accounts/{accountId}/Customization/PersonModels?accessToken={accessToken}
-```
-
-Ниже приведен запрос в Curl.
-
-```curl
-curl -v -X GET "https://api.videoindexer.ai/{location}/Accounts/{accountId}/Customization/PersonModels?accessToken={accessToken}"
-```
-
-[Просмотрите необходимые параметры и выполните тестирование с помощью портала разработчика Индексатора видео](https://api-portal.videoindexer.ai/docs/services/operations/operations/Get-Person-Models?).
-
-### <a name="request-parameters"></a>Параметры запроса
-
-|**имя**|**Тип**|**Обязательный**|**Описание**|
-|---|---|---|---|
-|location|строка|Да|Регион Azure, в который должен быть направлен вызов. Дополнительные сведения см. в статье [Azure regions in which Video Indexer exists](regions.md) (Регионы Azure, в которых существует Индексатор видео).|
-|accountId|строка|Да|Глобальный уникальный идентификатор для учетной записи|
-|accessToken|строка|Да|Маркер доступа (должен быть в области [маркера доступа к учетной записи](https://api-portal.videoindexer.ai/docs/services/authorization/operations/Get-Account-Access-Token?)) для проверки подлинности вызова. Срок действия маркеров доступа истекает в течение 1 часа.|
-
-### <a name="request-body"></a>Тело запроса
-
-Для этого вызова больше не требуется текст запроса.
-
-### <a name="response"></a>Ответ
+Чтобы получить все модели Person в указанной учетной записи, используйте API-интерфейс [получения модели Person](https://api-portal.videoindexer.ai/docs/services/operations/operations/Get-Person-Models?) .
 
 В ответе содержится список всех моделей пользователя в вашей учетной записи (включая модель пользователя по умолчанию в указанной учетной записи), а также их имена и идентификаторы используя формат из примера приведенного ниже.
 
@@ -174,42 +85,9 @@ curl -v -X GET "https://api.videoindexer.ai/{location}/Accounts/{accountId}/Cust
 
 Вы можете присвоить лицу, которое Индексатор видео распознал как знаменитость, новое имя. Новое имя, которое вы присвоите, будет иметь приоритет над именами, встроенными в функцию распознавания знаменитостей.
 
-### <a name="request-call"></a>Вызов запроса
-
-Это запрос POST.
-
-```
-https://api.videoindexer.ai/{location}/Accounts/{accountId}/Videos/{videoId}/Index/Faces/{faceId}?accessToken={accessToken}&newName={newName}
-```
-
-Ниже приведен запрос в Curl.
-
-```curl
-curl -v -X PUT "https://api.videoindexer.ai/{location}/Accounts/{accountId}/Videos/{videoId}/Index/Faces/{faceId}?accessToken={accessToken}&newName={newName}"
-```
-
-[Просмотрите необходимые параметры и выполните тестирование с помощью портала разработчика Индексатора видео](https://api-portal.videoindexer.ai/docs/services/operations/operations/Update-Video-Face?).
-
-### <a name="request-parameters"></a>Параметры запроса
-
-|**имя**|**Тип**|**Обязательный**|**Описание**|
-|---|---|---|---|
-|location|строка|Да|Регион Azure, в который должен быть направлен вызов. Дополнительные сведения см. в статье [Azure regions in which Video Indexer exists](regions.md) (Регионы Azure, в которых существует Индексатор видео).|
-|accountId|строка|Да|Глобальный уникальный идентификатор для учетной записи|
-|videoId|строка|Да|Идентификатор для видео, в которых присутствует лицо, информацию о котором вы желаете обновить. Оно создается во время отправки и индексации.|
-|faceId|целое число|Да|Идентификатор для лица, информацию о котором вы будете обновлять. Вы можете получить faceId в индексе видео|
-|accessToken|строка|Да|Маркер доступа (должен быть в области [маркера доступа к учетной записи](https://api-portal.videoindexer.ai/docs/services/authorization/operations/Get-Account-Access-Token?)) для проверки подлинности вызова. Срок действия маркеров доступа истекает в течение 1 часа.|
-|name|строка|Да|Новое имя обновляемого лица.|
+Для обновления грани используйте API [обновления видеоролика](https://api-portal.videoindexer.ai/docs/services/operations/operations/Update-Video-Face?) .
 
 Имена являются уникальными в моделях Person, поэтому если вы присваиваете одно **имя** двум разным лицам, Индексатор видео распознает эти лица как лица одного человека и объединит их при повторной индексации видео. 
-
-### <a name="request-body"></a>Тело запроса
-
-Для этого вызова больше не требуется текст запроса.
-
-### <a name="response"></a>Ответ
-
-При успешном обновлении языковой модели содержимое не возвращается.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

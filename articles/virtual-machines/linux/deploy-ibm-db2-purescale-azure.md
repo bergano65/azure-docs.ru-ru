@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.topic: article
 ms.date: 11/09/2018
 ms.author: edprice
-ms.openlocfilehash: fe6e581963753cac33092285fee0c8d16959bde8
-ms.sourcegitcommit: ce4a99b493f8cf2d2fd4e29d9ba92f5f942a754c
+ms.openlocfilehash: c4db27b938934aafa350866991ff174cbdbed0ac
+ms.sourcegitcommit: 7221918fbe5385ceccf39dff9dd5a3817a0bd807
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/28/2019
-ms.locfileid: "75530108"
+ms.lasthandoff: 01/21/2020
+ms.locfileid: "76291555"
 ---
 # <a name="deploy-ibm-db2-purescale-on-azure"></a>Развертывание IBM DB2 pureScale в Azure
 
@@ -150,7 +150,5 @@ ms.locfileid: "75530108"
 -   [DB2 pureScale Clustered Database Solution: Part 1](https://www.ibmbigdatahub.com/blog/db2-purescale-clustered-database-solution-part-1) (Кластеризованное решение базы данных DB2 pureScale: часть 1)
 
 -   [IBM Data Studio](https://www.ibm.com/developerworks/downloads/im/data/index.html/)
-
--   [Platform модернизации Alliance: IBM DB2 в Azure](https://www.platformmodernization.org/pages/ibmdb2azure.aspx)
 
 -   [Виртуальный центр обработки данных Azure: руководство по миграции методом lift-and-shift](https://azure.microsoft.com/resources/azure-virtual-datacenter-lift-and-shift-guide/)

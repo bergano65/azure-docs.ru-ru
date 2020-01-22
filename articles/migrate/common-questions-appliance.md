@@ -3,12 +3,12 @@ title: Часто задаваемые вопросы об устройстве 
 description: Получите ответы на часто задаваемые вопросы об устройстве миграции Azure
 ms.topic: conceptual
 ms.date: 11/21/2019
-ms.openlocfilehash: c8bcebeee58401cb3d2b65ae82e51d31ab4dad0b
-ms.sourcegitcommit: dbcc4569fde1bebb9df0a3ab6d4d3ff7f806d486
+ms.openlocfilehash: c9727287160f996059e9c1fb2d1fb5aec5900ab5
+ms.sourcegitcommit: 7221918fbe5385ceccf39dff9dd5a3817a0bd807
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76029128"
+ms.lasthandoff: 01/21/2020
+ms.locfileid: "76292338"
 ---
 # <a name="azure-migrate-appliance-common-questions"></a>Устройство для миграции Azure: распространенные вопросы
 
@@ -83,9 +83,9 @@ ms.locfileid: "76029128"
 
 Нет. Между устройством и vCenter Serverом существует однозначное сопоставление. Для обнаружения виртуальных машин на нескольких экземплярах vCenter Server необходимо развернуть несколько устройств.
 
-### <a name="how-many-vms-can-i-discover-with-an-appliance"></a>Сколько виртуальных машин можно обнаружить с помощью устройства?
+### <a name="how-many-vms-or-servers-can-i-discover-with-an-appliance"></a>Сколько виртуальных машин или серверов можно обнаружить с помощью устройства?
 
-Вы можете обнаружить до 10 000 виртуальных машин VMware и до 5 000 виртуальных машин Hyper-V с одним устройством. Если в локальной среде имеется больше компьютеров, ознакомьтесь с разрешениями по масштабированию [Hyper-V](scale-hyper-v-assessment.md) и [VMware](scale-vmware-assessment.md) .
+Вы можете обнаружить до 10 000 виртуальных машин VMware, до 5 000 виртуальных машин Hyper-V и до 250 серверов с одним устройством. Если в локальной среде имеется больше компьютеров, ознакомьтесь с разрешениями по масштабированию [Hyper-V](scale-hyper-v-assessment.md), [VMware](scale-vmware-assessment.md) и [физической](scale-physical-assessment.md) оценки.
 
 ## <a name="can-i-delete-an-appliance"></a>Можно ли удалить устройство?
 
