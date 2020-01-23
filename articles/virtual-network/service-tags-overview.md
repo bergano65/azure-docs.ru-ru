@@ -13,12 +13,12 @@ ms.workload: infrastructure-services
 ms.date: 10/22/2019
 ms.author: jispar
 ms.reviewer: kumud
-ms.openlocfilehash: e4c18f1148259d246445b94ac6117ebefa9470a4
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.openlocfilehash: ed9b893b11f96a813cee4c751743ceb182a9a0bf
+ms.sourcegitcommit: 87781a4207c25c4831421c7309c03fce5fb5793f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75975375"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76543041"
 ---
 # <a name="virtual-network-service-tags"></a>Теги службы виртуальной сети 
 <a name="network-service-tags"></a>
@@ -51,7 +51,7 @@ ms.locfileid: "75975375"
 | **азуреадванцедсреатпротектион** | Azure Advanced Threat protection. | Исход. | Нет | Нет |
 | **AzureBackup** |Azure Backup.<br/><br/>*Примечание.* Этот тег зависит от тегов **хранилища** и **AzureActiveDirectory** . | Исход. | Нет | Да |
 | **азуреботсервице** | Служба Azure Bot. | Исход. | Нет | Нет |
-| **AzureCloud** | Все [общедоступные IP-адреса центра обработки данных](https://www.microsoft.com/download/details.aspx?id=41653). | Исход. | Да | Да |
+| **AzureCloud** | Все [общедоступные IP-адреса центра обработки данных](https://www.microsoft.com/download/details.aspx?id=56519). | Исход. | Да | Да |
 | **азурекогнитивесеарч** | Когнитивный поиск Azure (при использовании индексаторов с набором навыков). | Оба варианта | Нет | Нет |
 | **азуреконнекторс** | Azure Logic Apps соединители для пробных и внутренних соединений. | Вход. | Да | Да |
 | **азуреконтаинеррегистри** | Реестр контейнеров Azure. | Исход. | Да | Да |

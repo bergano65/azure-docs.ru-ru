@@ -9,24 +9,14 @@ ms.topic: quickstart
 ms.date: 09/03/2019
 ms.author: alkohli
 ms.localizationpriority: high
-ms.openlocfilehash: 26578e277a9f6747063ee377e72845b599a0301b
-ms.sourcegitcommit: a4b5d31b113f520fcd43624dd57be677d10fc1c0
+ms.openlocfilehash: 04343f684539307957cd635822ba1ba5a1ce24c9
+ms.sourcegitcommit: a9b1f7d5111cb07e3462973eb607ff1e512bc407
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70772749"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76313779"
 ---
-::: zone target="docs"
-
-# <a name="quickstart-deploy-azure-data-box-using-the-azure-portal"></a>Краткое руководство. Развертывание Azure Data Box с помощью портала Azure
-
-::: zone-end
-
-::: zone target="chromeless"
-
 # <a name="get-started-with-azure-data-box"></a>Начало работы с Azure Data Box 
-
-::: zone-end
 
 ::: zone target="docs"
 
@@ -172,7 +162,7 @@ ms.locfileid: "70772749"
 
 - Можно удалить заказ после того как на портале Azure отобразится состояние **Завершено** или **Отменено**. Чтобы удалить заказ, перейдите в раздел **Обзор** и нажмите на панели команд **Удалить**.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом кратком руководстве вы развернули Azure Data Box для импорта данных в Azure. Дополнительные сведения об управлении Azure Data Box см. в следующем руководстве: 
 

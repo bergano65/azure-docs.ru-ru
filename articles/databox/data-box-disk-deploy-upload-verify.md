@@ -9,17 +9,16 @@ ms.topic: tutorial
 ms.localizationpriority: high
 ms.date: 09/04/2019
 ms.author: alkohli
-Customer intent: As an IT admin, I need to be able to order Data Box Disk to upload on-premises data from my server onto Azure.
-ms.openlocfilehash: fc3145ee0b60402026389863b94d21da4b3e4123
-ms.sourcegitcommit: 49c4b9c797c09c92632d7cedfec0ac1cf783631b
+ms.openlocfilehash: e2851f7087151b09b5f859b7142aa28e5b18a4e5
+ms.sourcegitcommit: 38b11501526a7997cfe1c7980d57e772b1f3169b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70307760"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76514091"
 ---
 ::: zone target="docs"
 
-# <a name="tutorial-verify-data-upload-from-azure-data-box-disk"></a>Руководство по Проверка отправки данных из Диска Azure Data Box
+# <a name="tutorial-verify-data-upload-from-azure-data-box-disk"></a>Руководство. Проверка отправки данных из Диска Azure Data Box
 
 Это последнее руководство из серии "Развертывание диска Azure Data Box". В рамках этого учебника вы ознакомитесь со следующими сведениями:
 
@@ -105,7 +104,7 @@ ms.locfileid: "70307760"
 
 ::: zone target="docs"
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом руководстве раскрыты следующие сведения о диске Azure Data Box.
 

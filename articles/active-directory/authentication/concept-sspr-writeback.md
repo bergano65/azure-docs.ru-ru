@@ -11,12 +11,12 @@ author: iainfoulds
 manager: daveba
 ms.reviewer: sahenry
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 151e7b2ab091959c8b6c08d366318a49987aefd9
-ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
+ms.openlocfilehash: 6ddd7160a56a4529ee31c111f0e202ca235c71af
+ms.sourcegitcommit: 87781a4207c25c4831421c7309c03fce5fb5793f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74848533"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76544027"
 ---
 # <a name="what-is-password-writeback"></a>Что такое компонент обратной записи паролей?
 
@@ -29,9 +29,9 @@ ms.locfileid: "74848533"
 * [Сквозная проверка подлинности](../hybrid/how-to-connect-pta.md)
 
 > [!WARNING]
-> Компонент обратной записи паролей перестанет работать для клиентов, которые используют Azure AD Connect версии 1.0.8641.0 и выше, если [использование службы контроля доступа Azure было прекращено 7 ноября 2018 года](../develop/active-directory-acs-migration.md). Версии Azure AD Connect 1.0.8641.0 и выше больше не будут допускать использование функции обратной записи паролей, так как они зависят от ACS.
+> Компонент обратной записи паролей перестанет работать для клиентов, которые используют Azure AD Connect версии 1.0.8641.0 и выше, когда [поддержка службы контроля доступа Azure (ACS) будет прекращена, 7 ноября 2018 года](../develop/active-directory-acs-migration.md). Версии Azure AD Connect 1.0.8641.0 и выше больше не будут допускать использование функции обратной записи паролей, так как они зависят от ACS.
 >
-> Чтобы избежать перебоев в работе службы, обновите предыдущую версию Azure AD Connect до более новой, для этого см. статью [Azure AD Connect: обновление до последней версии](../hybrid/how-to-upgrade-previous-version.md)
+> Чтобы избежать перебоев в работе службы, обновите предыдущую версию Azure AD Connect до более новой. Для этого ознакомьтесь со статьей [Azure AD Connect: обновление до последней версии](../hybrid/how-to-upgrade-previous-version.md)
 >
 
 Возможности обратной записи паролей.
@@ -51,8 +51,8 @@ ms.locfileid: "74848533"
 
 Чтобы использовать компонент обратной записи паролей, клиенту должна быть назначена одна из приведенных ниже лицензий:
 
-* Azure AD Premium P1
-* Azure AD Premium P2
+* Azure AD Premium P1
+* Azure AD Premium P2
 * Enterprise Mobility + Security E3 или A3;
 * Enterprise Mobility + Security E5 или A5;
 * Microsoft 365 E3 или A3;
@@ -164,7 +164,7 @@ ms.locfileid: "74848533"
    * Любые сброс пароля конечного пользователя, инициированный администратором, из [центра администрирования Microsoft 365](https://admin.microsoft.com)
 
 > [!WARNING]
-> Используйте флажок "пользователь должен сменить пароль при следующем входе в систему" в локальных Active Directory средствах администрирования, таких как Active Directory пользователи и компьютеры, или центр администрирования Active Directory поддерживается в качестве предварительной версии функции Azure AD Connect. Дополнительные сведения см. в статье [Реализация синхронизации хэшей паролей с Azure AD Connect синхронизацией](../hybrid/how-to-connect-password-hash-synchronization.md#public-preview-of-synchronizing-temporary-passwords-and-force-password-on-next-logon).
+> Используйте флажок "пользователь должен сменить пароль при следующем входе в систему" в локальных Active Directory средствах администрирования, таких как Active Directory пользователи и компьютеры, или центр администрирования Active Directory поддерживается в качестве предварительной версии функции Azure AD Connect. Дополнительные сведения см. в статье [Реализация синхронизации хэшей паролей с Azure AD Connect синхронизацией](../hybrid/how-to-connect-password-hash-synchronization.md#public-preview-of-synchronizing-temporary-passwords-and-force-password-reset-on-next-logon).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

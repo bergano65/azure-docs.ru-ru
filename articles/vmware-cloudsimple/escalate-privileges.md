@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: 524772578ad724e969bbeab0be0a3edcf32a845f
-ms.sourcegitcommit: e42c778d38fd623f2ff8850bb6b1718cdb37309f
+ms.openlocfilehash: 36c6969ed89d0bb9222f52aa81de0d4128b9e533
+ms.sourcegitcommit: 87781a4207c25c4831421c7309c03fce5fb5793f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69619616"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76542854"
 ---
 # <a name="escalate-cloudsimple-privileges-to-perform-administrative-functions-in-private-cloud-vcenter"></a>Эскалация привилегий Клаудсимпле для выполнения административных функций в частном облаке vCenter
 
@@ -33,5 +33,8 @@ ms.locfileid: "69619616"
 На портале Клаудсимпле передайте [права](escalate-private-cloud-privileges.md) локального пользователя клаудовнер на сервер службы vCenter SSO.  Права удаленного пользователя можно эскалировать, только если в vCenter настроен дополнительный поставщик удостоверений.  Эскалация привилегий подразумевает Добавление выбранного пользователя в группу встроенных администраторов vSphere.  Только один пользователь может иметь повышенные привилегии.  Если необходимо эскалировать привилегии другого пользователя, сначала следует разоактивировать привилегии текущих пользователей.
 
 Пользователи из дополнительных источников удостоверений должны быть добавлены как члены группы Клаудовнер.
+
+> [!CAUTION]
+> Новые пользователи должны быть добавлены только в *облако-Owner-Group*, *Cloud-Global-Cluster-Admin-Group*, *Cloud-Global-Storage-* Admin-Group, Cloud-Global- *Network-* Admin-Group или *Cloud-Global-ВМ-Admin-Group*.  Пользователи, добавленные в группу *администраторов* , будут удалены автоматически.  Только учетные записи служб должны быть добавлены в группу *администраторов* , и учетные записи служб не должны использоваться для входа в веб-интерфейс vSphere.
 
 В течение периода эскалации Клаудсимпле использует автоматическое наблюдение с соответствующими уведомлениями об оповещениях для обнаружения непреднамеренного изменения среды.

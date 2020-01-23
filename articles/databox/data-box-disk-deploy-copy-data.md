@@ -9,13 +9,12 @@ ms.topic: tutorial
 ms.date: 09/03/2019
 ms.author: alkohli
 ms.localizationpriority: high
-Customer intent: As an IT admin, I need to be able to order Data Box Disk to upload on-premises data from my server onto Azure.
-ms.openlocfilehash: be2bda4e1bfd6a679076f79969e4829aa1a847c9
-ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
+ms.openlocfilehash: 93a7181a3b720a3b313bb75855b2564c4cd33bc1
+ms.sourcegitcommit: 38b11501526a7997cfe1c7980d57e772b1f3169b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75895969"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76514159"
 ---
 ::: zone target="docs"
 
@@ -35,13 +34,13 @@ ms.locfileid: "75895969"
 
 Это руководство содержит инструкции как копировать данные с главного компьютера, а затем создавать контрольные суммы для проверки целостности данных.
 
-В этом руководстве описано следующее.
+В этом руководстве описано следующее:
 
 > [!div class="checklist"]
 > * Копирование данных на диск Data Box
 > * Проверка данных
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Перед тем как начать, убедитесь в следующем.
 - Вы завершили [руководство Распаковка, подключение и разблокировка Диска Azure Data Box](data-box-disk-deploy-set-up.md).
@@ -101,7 +100,7 @@ ms.locfileid: "75895969"
     
     Параметры и функции для команды приведены в таблице следующим образом:
     
-    |Параметры или функции  |Description |
+    |Параметры или функции  |Описание |
     |--------------------|------------|
     |Источник            | Указание пути к исходному каталогу.        |
     |Назначение       | Указание пути к целевому каталогу.        |
