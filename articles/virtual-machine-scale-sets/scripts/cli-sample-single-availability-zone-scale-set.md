@@ -1,27 +1,20 @@
 ---
 title: Примеры Azure CLI. Масштабируемый набор с одной зоной
 description: Этот скрипт создает масштабируемый набор виртуальных машин Azure под управлением Ubuntu в одной зоне доступности.
-services: virtual-machine-scale-sets
-documentationcenter: ''
 author: cynthn
-manager: jeconnoc
-editor: ''
 tags: azure-resource-manager
-ms.assetid: ''
 ms.service: virtual-machine-scale-sets
 ms.devlang: azurecli
 ms.topic: sample
-ms.tgt_pltfrm: na
-ms.workload: na
 ms.date: 03/27/2018
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: 45cef0e0e7d56baf8a5af3514f167d3a4565d15f
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 64fbd715a21e801c4adac02f301ea91d3205fbbd
+ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75350989"
+ms.lasthandoff: 01/19/2020
+ms.locfileid: "76278732"
 ---
 # <a name="create-a-single-zone-virtual-machine-scale-set-with-the-azure-cli"></a>Создание однозонного масштабируемого набора виртуальных машин с помощью Azure CLI
 Этот скрипт создает масштабируемый набор виртуальных машин под управлением Ubuntu в одной зоне доступности. После выполнения сценария можно получить доступ к виртуальной машине по протоколу RDP.

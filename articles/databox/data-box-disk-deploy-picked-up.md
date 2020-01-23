@@ -9,13 +9,12 @@ ms.topic: tutorial
 ms.date: 09/19/2019
 ms.author: alkohli
 ms.localizationpriority: high
-Customer intent: As an IT admin, I need to be able to order Data Box Disk to upload on-premises data from my server onto Azure.
-ms.openlocfilehash: b67e7bf0b6b79d2ae29c2ba8ed7c337f152faebc
-ms.sourcegitcommit: a170b69b592e6e7e5cc816dabc0246f97897cb0c
+ms.openlocfilehash: d0acc2d92c564f89f4777ccb243c7255e47c9105
+ms.sourcegitcommit: 38b11501526a7997cfe1c7980d57e772b1f3169b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74092078"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76514125"
 ---
 ::: zone target="chromeless"
 
@@ -25,11 +24,11 @@ ms.locfileid: "74092078"
 
 ::: zone target="docs"
 
-# <a name="tutorial-return-azure-data-box-disk"></a>Руководство по Возврат Диска Azure Data Box 
+# <a name="tutorial-return-azure-data-box-disk"></a>Руководство. Возврат Диска Azure Data Box 
 
 В этом руководстве описано, как запланировать возврат Диска Azure Data Box. Инструкции по возврату будут отличаться в зависимости от региона. 
 
-Из этого учебника вы узнаете следующее:
+В этом учебнике рассматривается следующее.
 
 > [!div class="checklist"]
 > * Отправка диска Data Box в Майкрософт
@@ -81,7 +80,7 @@ ms.locfileid: "74092078"
 4. Перейдите на веб-сайт DHL Экспресс страны/региона и выберите **Book a Courier Collection > eReturn Shipment** (Забронировать приезд курьера > Отправка eReturn).    
 3. Укажите номер накладной и нажмите **Расписание отправки**, чтобы оформить отправку.
 
-### <a name="in-australiatabin-australia"></a>[Австралия](#tab/in-australia)
+### <a name="in-australiatabin-australia"></a>[В Австралии](#tab/in-australia)
 
 В центрах обработки данных Azure в Австралии предусмотрена процедура предварительного уведомления о посылке. Об отправке посылки необходимо заранее предупреждать. При возврате в Австралии выполните следующие действия:
 
@@ -161,7 +160,7 @@ ms.locfileid: "74092078"
 
 ::: zone target="docs"
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом руководстве раскрыты следующие сведения о диске Azure Data Box.
 

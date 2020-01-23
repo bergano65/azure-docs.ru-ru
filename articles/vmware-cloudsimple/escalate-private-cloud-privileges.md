@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: 3ee722f88f766178dd658600893b4497bf611be9
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 3d06f3e8be449e7050c65c75339a0cff6efe19e4
+ms.sourcegitcommit: 87781a4207c25c4831421c7309c03fce5fb5793f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75372777"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76544452"
 ---
 # <a name="escalate-private-cloud-vcenter-privileges-from-the-cloudsimple-portal"></a>Эскалация привилегий для частного облака vCenter на портале Клаудсимпле
 
@@ -55,6 +55,9 @@ ms.locfileid: "75372777"
 
 > [!IMPORTANT]
 > Только один пользователь может иметь повышенные привилегии.  Прежде чем можно будет эскалировать привилегии другого пользователя, необходимо разоактивировать привилегии пользователя.
+
+> [!CAUTION]
+> Новые пользователи должны быть добавлены только в *облако-Owner-Group*, *Cloud-Global-Cluster-Admin-Group*, *Cloud-Global-Storage-* Admin-Group, Cloud-Global- *Network-* Admin-Group или *Cloud-Global-ВМ-Admin-Group*.  Пользователи, добавленные в группу *администраторов* , будут удалены автоматически.  Только учетные записи служб должны быть добавлены в группу *администраторов* , и учетные записи служб не должны использоваться для входа в веб-интерфейс vSphere.
 
 ## <a name="extend-privilege-escalation"></a>Расширение расширенных привилегий
 

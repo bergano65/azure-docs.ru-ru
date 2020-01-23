@@ -1,27 +1,21 @@
 ---
-title: Пример скрипта Azure CLI. Масштабирование кластера ACS | Документы Майкрософт
+title: Пример скрипта Azure CLI. Масштабирование кластера ACS
 description: Пример скрипта Azure CLI. Масштабирование кластера ACS
-services: container-service
-documentationcenter: ''
 author: iainfoulds
-manager: jeconnoc
-editor: ''
 tags: acs, azure-container-service
 keywords: Docker, контейнеры, микрослужбы, Kubernetes, DC/OS, Azure
 ms.assetid: ''
 ms.service: container-service
 ms.devlang: azurecli
 ms.topic: sample
-ms.tgt_pltfrm: na
-ms.workload: na
 ms.date: 05/30/2017
 ms.author: iainfou
-ms.openlocfilehash: 199a2f09df57878d6523cfed6873001f190e14f5
-ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
+ms.openlocfilehash: 7e1136c179c5729f5ed0de189a90bbbb31412ab7
+ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52992241"
+ms.lasthandoff: 01/19/2020
+ms.locfileid: "76270659"
 ---
 # <a name="deprecated-scale-an-azure-container-service-cluster"></a>Масштабирование кластера Службы контейнеров Azure (не рекомендуется)
 
@@ -55,7 +49,7 @@ az group delete --name myResourceGroup
 |---|---|
 | [az acs scale](/cli/azure/acs#az-acs-scale) | Масштабирование кластера ACS. |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об Azure CLI см. в [документации по Azure CLI](https://docs.microsoft.com/cli/azure).
 

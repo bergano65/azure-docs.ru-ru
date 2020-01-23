@@ -2,7 +2,6 @@
 title: Учебник. Непрерывная интеграция и непрерывное развертывание из Jenkins на виртуальных машинах Azure с помощью Azure DevOps Services
 description: В этом руководстве описано, как настроить непрерывную интеграцию (CI) и непрерывное развертывание (CD) приложения Node.js с помощью Jenkins на виртуальных машинах Azure из Release Management в Visual Studio Team Services или Microsoft Team Foundation Server.
 author: tomarchermsft
-manager: jpconnock
 tags: azure-resource-manager
 ms.assetid: ''
 ms.service: virtual-machines-linux
@@ -12,12 +11,12 @@ ms.workload: infrastructure
 ms.date: 07/31/2018
 ms.author: tarcher
 ms.custom: jenkins
-ms.openlocfilehash: 1265861a872b01d558646ea2adb6cba27fa3ebd4
-ms.sourcegitcommit: 5b073caafebaf80dc1774b66483136ac342f7808
+ms.openlocfilehash: 0d82fd3269b9e99fb6969178f6066698f6b1a669
+ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75778419"
+ms.lasthandoff: 01/19/2020
+ms.locfileid: "76277274"
 ---
 # <a name="tutorial-deploy-your-app-to-linux-virtual-machines-in-azure-with-using-jenkins-and-azure-devops-services"></a>Руководство. Развертывание приложения на виртуальных машинах Linux в Azure с помощью Jenkins и Azure DevOps Services
 
@@ -82,7 +81,7 @@ ms.locfileid: "75778419"
 ## <a name="configure-a-jenkins-freestyle-project-for-nodejs"></a>Настройка универсального проекта Jenkins для Node.js
 
 1. Выберите **New Item** (Создать элемент). Введите имя элемента.
-2. Выберите **Freestyle project** (Универсальный проект). Нажмите кнопку **ОК**.
+2. Выберите **Freestyle project** (Универсальный проект). Щелкните **ОК**.
 3. На вкладке **Source Code Management** (Управление исходным кодом) выберите **Git** и введите сведения о репозитории и ветви, содержащей код приложения.    
     ![Добавление репозитория в сборку](media/tutorial-build-deploy-jenkins/jenkins-git.png)
 4. На вкладке **Build Triggers** (Триггеры сборки) выберите **Poll SCM** (Опрос SCM) и введите расписание `H/03 * * * *` для опроса репозитория Git на наличие изменений каждые три минуты. 

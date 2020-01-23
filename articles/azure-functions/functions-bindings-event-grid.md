@@ -5,22 +5,22 @@ author: craigshoemaker
 ms.topic: reference
 ms.date: 09/04/2018
 ms.author: cshoe
-ms.openlocfilehash: b1717b9b336d31c86db1ec38eb97c7e8814b76d7
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: 8062428ae63a572b81a5432c8b29910fe8422e24
+ms.sourcegitcommit: 87781a4207c25c4831421c7309c03fce5fb5793f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74925999"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76547461"
 ---
 # <a name="event-grid-trigger-for-azure-functions"></a>Триггер службы "Сетка событий" для службы "Функции Azure"
 
-В этом руководстве показано, как обрабатывать события службы [Сетка событий](../event-grid/overview.md) в службе "Функции Azure".
+В этом руководстве показано, как обрабатывать события службы [Сетка событий](../event-grid/overview.md) в службе "Функции Azure". Дополнительные сведения о том, как управлять сообщениями сетки событий в конечной точке HTTP, см. в статье [получение событий в конечной точке](../event-grid/receive-events.md)HTTP.
 
 Служба "Сетка событий" — это служба Azure, которая отправляет HTTP-запросы для уведомления о событиях, которые происходят в *издателях*. Издатель — это служба или ресурс, в котором происходит событие. Например, учетная запись хранения больших двоичных объектов Azure является издателем, а [отправка или удаление большого двоичного объекта — это событие](../storage/blobs/storage-blob-event-overview.md). Некоторые [службы Azure имеют встроенную поддержку публикации событий в службу "Сетка событий"](../event-grid/overview.md#event-sources).
 
 *Обработчики* событий получают и обрабатывают события. Служба "Функции Azure" является одной из нескольких [служб Azure, в которых есть встроенная поддержка обработки событий Сетки событий](../event-grid/overview.md#event-handlers). В этой статье вы узнаете, как использовать триггер службы "Сетка событий" для вызова функции при получении события из Сетки событий.
 
-При желании можно использовать триггер HTTP для обработки событий службы "Сетка событий". Дополнительные сведения см. в разделе [Использование триггера HTTP в качестве триггера службы "Сетка событий"](#use-an-http-trigger-as-an-event-grid-trigger) этой статьи. Сейчас, если событие доставляется в [схему CloudEvents](../event-grid/cloudevents-schema.md), триггер службы "Сетка событий" нельзя использовать в приложении "Функции Azure". В этом случае необходимо использовать триггер HTTP.
+При желании можно использовать триггер HTTP для управления событиями сетки событий. см. раздел [получение событий для конечной точки HTTP](../event-grid/receive-events.md). Сейчас, если событие доставляется в [схему CloudEvents](../event-grid/cloudevents-schema.md#azure-functions), триггер службы "Сетка событий" нельзя использовать в приложении "Функции Azure". В этом случае необходимо использовать триггер HTTP.
 
 [!INCLUDE [intro](../../includes/functions-bindings-intro.md)]
 
@@ -38,15 +38,9 @@ ms.locfileid: "74925999"
 
 ## <a name="example"></a>Пример
 
-Просмотрите пример триггера Сетки событий для конкретного языка:
+# <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
-* C#
-* [Сценарий C# (CSX)](#c-script-example)
-* [Java](#trigger---java-examples)
-* [JavaScript](#javascript-example)
-* [Python](#python-example)
-
-Пример триггера HTTP см. в разделе [Использование триггера HTTP в качестве триггера службы "Сетка событий"](#use-an-http-trigger-as-an-event-grid-trigger) в этой статье.
+Пример триггера HTTP см. [в разделе Receive Events to a HTTP Endpoint](../event-grid/receive-events.md).
 
 ### <a name="c-2x-and-higher"></a>C#(2. x и выше)
 
@@ -74,7 +68,7 @@ namespace Company.Function
 
 Ознакомьтесь с дополнительными сведениями о [пакетах](#attributes), [конфигурации](#configuration) и [использовании](#usage).
 
-### <a name="c-version-1x"></a>C# (версия 1.x)
+### <a name="version-1x"></a>Версия 1.x
 
 В следующем примере показана [функция C#](functions-dotnet-class-library.md) службы "Функции" 1.х, которая выполняет привязку к `JObject`.
 
@@ -99,7 +93,7 @@ namespace Company.Function
 }
 ```
 
-### <a name="c-script-example"></a>Пример сценария C#
+# <a name="c-scripttabcsharp-script"></a>[C#Индекса](#tab/csharp-script)
 
 В следующем примере показаны привязка триггера в файле *function.json* и [функция сценария C#](functions-reference-csharp.md), которая использует эту привязку.
 
@@ -135,7 +129,7 @@ public static void Run(EventGridEvent eventGridEvent, ILogger log)
 
 Ознакомьтесь с дополнительными сведениями о [пакетах](#attributes), [конфигурации](#configuration) и [использовании](#usage).
 
-#### <a name="c-script-version-1x"></a>Скрипт C# (версия 1.x)
+### <a name="version-1x"></a>Версия 1.x
 
 Ниже приведен код сценария C# службы "Функции" 1.х, который выполняет привязку к `JObject`:
 
@@ -151,7 +145,7 @@ public static void Run(JObject eventGridEvent, TraceWriter log)
 }
 ```
 
-### <a name="javascript-example"></a>Пример JavaScript
+# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
 
 В следующем примере показана привязка триггера в файле *function.json* и [функция JavaScript](functions-reference-node.md), которая использует привязку.
 
@@ -182,9 +176,9 @@ module.exports = function (context, eventGridEvent) {
 };
 ```
 
-### <a name="python-example"></a>Пример на Python
+# <a name="pythontabpython"></a>[Python](#tab/python)
 
-В следующем примере показаны привязка триггера в файле *function.json* и [функция Python](functions-reference-python.md), которая использует эту привязку.
+В следующем примере показаны привязка триггера в файле *function.json* и [функция Python](functions-reference-python.md), использующая эту привязку.
 
 Данные привязки в файле *function.json*:
 
@@ -205,23 +199,30 @@ module.exports = function (context, eventGridEvent) {
 Ниже приведен код Python.
 
 ```python
+import json
 import logging
+
 import azure.functions as func
 
-
 def main(event: func.EventGridEvent):
-    logging.info("Python Event Grid function processed a request.")
-    logging.info("  Subject: %s", event.subject)
-    logging.info("  Time: %s", event.event_time)
-    logging.info("  Data: %s", event.get_json())
+
+    result = json.dumps({
+        'id': event.id,
+        'data': event.get_json(),
+        'topic': event.topic,
+        'subject': event.subject,
+        'event_type': event.event_type,
+    })
+
+    logging.info('Python EventGrid trigger processed an event: %s', result)
 ```
 
-### <a name="trigger---java-examples"></a>Триггер — пример для Java
+# <a name="javatabjava"></a>[Java](#tab/java)
 
-В этом разделе содержатся следующие примеры:
+Этот раздел содержит следующие примеры.
 
-* [Триггер сетки событий, строковый параметр](#event-grid-trigger-string-parameter-java)
-* [Триггер сетки событий, параметр POJO](#event-grid-trigger-pojo-parameter-java)
+* [Триггер сетки событий, строковый параметр](#event-grid-trigger-string-parameter)
+* [Триггер сетки событий, параметр POJO](#event-grid-trigger-pojo-parameter)
 
 В следующих примерах показана привязка триггера в файле *function.json* и [функции Java](functions-reference-java.md), использующая привязку и печатающая событие; сначала событие принимается как ```String```, затем — как POJO.
 
@@ -237,7 +238,7 @@ def main(event: func.EventGridEvent):
 }
 ```
 
-#### <a name="event-grid-trigger-string-parameter-java"></a>Триггер сетки событий, строковый параметр (Java)
+### <a name="event-grid-trigger-string-parameter"></a>Триггер сетки событий, параметр строки
 
 ```java
   @FunctionName("eventGridMonitorString")
@@ -251,7 +252,7 @@ def main(event: func.EventGridEvent):
   }
 ```
 
-#### <a name="event-grid-trigger-pojo-parameter-java"></a>Триггер сетки событий, параметр POJO (Java)
+### <a name="event-grid-trigger-pojo-parameter"></a>Триггер сетки событий, параметр POJO
 
 В этом примере используется следующий POJO, представляющий свойства верхнего уровня события сетки событий.
 
@@ -293,7 +294,11 @@ public class EventSchema {
 
 В [библиотеке выполнения функций Java](/java/api/overview/azure/functions/runtime) используйте заметку `EventGridTrigger` для параметров, значение которых должно быть получено от EventGrid. Параметры с этими заметками запускают функцию, когда происходит событие.  Эта заметка может использоваться с собственными типами Java, объектами POJO или значениями, допускающими значения NULL, используя `Optional<T>`.
 
+---
+
 ## <a name="attributes"></a>Атрибуты
+
+# <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
 В [библиотеках классов C#](functions-dotnet-class-library.md) используйте атрибут [EventGridTrigger](https://github.com/Azure/azure-functions-eventgrid-extension/blob/master/src/EventGridExtension/TriggerBinding/EventGridTriggerAttribute.cs).
 
@@ -309,11 +314,29 @@ public static void EventGridTest([EventGridTrigger] JObject eventGridEvent, ILog
 
 Полный пример см. в разделе "Пример C#".
 
+# <a name="c-scripttabcsharp-script"></a>[C#Индекса](#tab/csharp-script)
+
+Атрибуты не поддерживаются C# сценарием.
+
+# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+
+Атрибуты не поддерживаются в JavaScript.
+
+# <a name="pythontabpython"></a>[Python](#tab/python)
+
+Атрибуты не поддерживаются в Python.
+
+# <a name="javatabjava"></a>[Java](#tab/java)
+
+Заметка [EventGridTrigger](https://github.com/Azure/azure-functions-java-library/blob/master/src/main/java/com/microsoft/azure/functions/annotation/EventGridTrigger.java) позволяет декларативно настроить привязку сетки событий, предоставляя значения конфигурации. Дополнительные сведения см. в разделах [примеры](#example) и [Конфигурация](#configuration) .
+
+---
+
 ## <a name="configuration"></a>Настройка
 
 В следующей таблице описываются свойства конфигурации привязки, которые задаются в файле *function.json*. В атрибуте `EventGridTrigger` не задаются параметры или свойства конструкции.
 
-|свойство function.json |Описание|
+|свойство function.json |Description|
 |---------|---------|
 | **type** | Обязательное. Необходимо задать значение `eventGridTrigger`. |
 | **direction** | Обязательное. Необходимо задать значение `in`. |
@@ -321,19 +344,47 @@ public static void EventGridTest([EventGridTrigger] JObject eventGridEvent, ILog
 
 ## <a name="usage"></a>Использование
 
-В функциях C# и F# в службе "Функции Azure" 1.х для триггера службы "Сетка событий" можно использовать следующие типы параметров:
+# <a name="ctabcsharp"></a>[C#](#tab/csharp)
+
+В функциях Azure 1. x можно использовать следующие типы параметров для триггера службы "Сетка событий":
 
 * `JObject`
 * `string`
 
-Для C# функций F# и в функциях Azure 2. x и более поздних версий также можно использовать следующий тип параметра для триггера службы "Сетка событий":
+В функциях Azure 2. x и более поздних версий вы также можете использовать для триггера службы "Сетка событий" следующий тип параметра:
+
+* `Microsoft.Azure.EventGrid.Models.EventGridEvent` — определяет свойства для полей, которые являются общими для всех типов событий.
+
+> [!NOTE]
+> В службе "Функции" 1.х при попытке сделать привязку к `Microsoft.Azure.WebJobs.Extensions.EventGrid.EventGridEvent` в компиляторе появится сообщение о том, что это не рекомендуется, и совет использовать `Microsoft.Azure.EventGrid.Models.EventGridEvent`. Чтобы использовать более новый тип, ссылайтесь на пакет NuGet [Microsoft.Azure.EventGrid](https://www.nuget.org/packages/Microsoft.Azure.EventGrid) и полностью определите имя типа `EventGridEvent`, добавив префикс `Microsoft.Azure.EventGrid.Models`.
+
+# <a name="c-scripttabcsharp-script"></a>[C#Индекса](#tab/csharp-script)
+
+В функциях Azure 1. x можно использовать следующие типы параметров для триггера службы "Сетка событий":
+
+* `JObject`
+* `string`
+
+В функциях Azure 2. x и более поздних версий вы также можете использовать для триггера службы "Сетка событий" следующий тип параметра:
 
 * `Microsoft.Azure.EventGrid.Models.EventGridEvent` — определяет свойства для полей, которые являются общими для всех типов событий.
 
 > [!NOTE]
 > В службе "Функции" 1.х при попытке сделать привязку к `Microsoft.Azure.WebJobs.Extensions.EventGrid.EventGridEvent` в компиляторе появится сообщение о том, что это не рекомендуется, и совет использовать `Microsoft.Azure.EventGrid.Models.EventGridEvent`. Чтобы использовать более новый тип, ссылайтесь на пакет NuGet [Microsoft.Azure.EventGrid](https://www.nuget.org/packages/Microsoft.Azure.EventGrid) и полностью определите имя типа `EventGridEvent`, добавив префикс `Microsoft.Azure.EventGrid.Models`. Сведения о том, как ссылаться на пакеты NuGet в функции сценария C#, см. в разделе [об использовании пакетов NuGet](functions-reference-csharp.md#using-nuget-packages).
 
-Для функций JavaScript параметр, названный по свойству `name` в файле *function.json*, имеет ссылку на объект события.
+# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+
+Экземпляр сетки событий доступен через параметр, настроенный в свойстве `name` файла *Function. JSON* .
+
+# <a name="pythontabpython"></a>[Python](#tab/python)
+
+Экземпляр сетки событий доступен через параметр, настроенный в свойстве `name` файла *Function. JSON* , типизированный как `func.EventGridEvent`.
+
+# <a name="javatabjava"></a>[Java](#tab/java)
+
+Экземпляр события сетки событий доступен через параметр, связанный с атрибутом `EventGridTrigger`, который типизирован как `EventSchema`. Дополнительные сведения см. в [примере](#example) .
+
+---
 
 ## <a name="event-schema"></a>Схема событий
 
@@ -377,7 +428,7 @@ public static void EventGridTest([EventGridTrigger] JObject eventGridEvent, ILog
 
 Чтобы начать получать HTTP-запросы Сетки событий, создайте подписку службы "Сетка событий", которая указывает URL-адрес конечной точки, вызывающей функцию.
 
-### <a name="azure-portal"></a>портала Azure
+### <a name="azure-portal"></a>Портал Azure
 
 Для функций, разрабатываемых на портале Azure с использованием триггера службы "Сетка событий", выберите **Добавить подписку сетки событий**.
 
@@ -389,7 +440,7 @@ public static void EventGridTest([EventGridTrigger] JObject eventGridEvent, ILog
 
 Дополнительные сведения о создании подписок с помощью портала Azure см. в разделе [Создание и перенаправление пользовательских событий с помощью портала Azure и службы "Сетка событий"](../event-grid/custom-event-quickstart-portal.md) документации по службе "Сетка событий".
 
-### <a name="azure-cli"></a>Azure CLI
+### <a name="azure-cli"></a>Интерфейс командной строки Azure
 
 Чтобы создать подписку с помощью [Azure CLI](https://docs.microsoft.com/cli/azure/get-started-with-azure-cli?view=azure-cli-latest), используйте команду [az eventgrid event-subscription create](https://docs.microsoft.com/cli/azure/eventgrid/event-subscription?view=azure-cli-latest#az-eventgrid-event-subscription-create).
 
@@ -545,227 +596,6 @@ http://{functionappname}.azurewebsites.net/admin/host/systemkeys/eventgridextens
 Функция триггера службы "Сетка событий" выполняет и показывает журналы, похожие на приведенные ниже:
 
 ![Пример журналов функций триггера службы "Сетка событий"](media/functions-bindings-event-grid/eg-output.png)
-
-## <a name="local-testing-with-ngrok"></a>Локальное тестирование с помощью ngrok
-
-Другим способом локально проверить триггер Сетки событий является автоматизация HTTP-подключения между Интернетом и компьютером разработчика. Это можно сделать с помощью такого средства, как [ngrok](https://ngrok.com/):
-
-1. [Создайте конечную точку ngrok](#create-an-ngrok-endpoint).
-1. [Запустите функцию триггера службы "Сетка событий"](#run-the-event-grid-trigger-function).
-1. [Создайте подписку службы "Сетка событий"](#create-a-subscription), которая отправляет события в конечную точку ngrok.
-1. [Активируйте событие](#trigger-an-event).
-
-Закончив тестирование, можно использовать ту же подписку для рабочей среды, обновив конечную точку. Используйте команду Azure CLI [az eventgrid event-subscription update](https://docs.microsoft.com/cli/azure/eventgrid/event-subscription?view=azure-cli-latest#az-eventgrid-event-subscription-update).
-
-### <a name="create-an-ngrok-endpoint"></a>Создание конечной точки ngrok
-
-Скачайте *ngrok.exe* из [ngrok](https://ngrok.com/) и выполните следующую команду:
-
-```
-ngrok http -host-header=localhost 7071
-```
-
-Параметр -host-header необходим, так как среда выполнения функций ожидает запросов от localhost при выполнении на локальном узле. 7071 — номер порта по умолчанию, если среда выполнения запущена локально.
-
-Команда создает выходные данные следующего вида:
-
-```
-Session Status                online
-Version                       2.2.8
-Region                        United States (us)
-Web Interface                 http://127.0.0.1:4040
-Forwarding                    http://263db807.ngrok.io -> localhost:7071
-Forwarding                    https://263db807.ngrok.io -> localhost:7071
-
-Connections                   ttl     opn     rt1     rt5     p50     p90
-                              0       0       0.00    0.00    0.00    0.00
-```
-
-Для подписки службы "Сетка событий" используется URL-адрес `https://{subdomain}.ngrok.io`.
-
-### <a name="run-the-event-grid-trigger-function"></a>Запуск функций триггера службы "Сетка событий"
-
-Служба "Сетка событий" не обрабатывает URL-адрес ngrok особым образом, поэтому при создании подписки функция должна выполняться локально. В противном случае ответ проверки не отправляется и происходит сбой при создании подписки.
-
-### <a name="create-a-subscription"></a>Создание подписки
-
-Создайте подписку службы "Сетка событий" типа, который необходимо протестировать, и присвойте ее конечной точке ngrok.
-
-Используйте этот шаблон конечной точки для функций 2. x и более поздних версий:
-
-```
-https://{SUBDOMAIN}.ngrok.io/runtime/webhooks/eventgrid?functionName={FUNCTION_NAME}
-```
-
-Для Функций версии 1.x используйте этот шаблон конечной точки:
-
-```
-https://{SUBDOMAIN}.ngrok.io/admin/extensions/EventGridExtensionConfig?functionName={FUNCTION_NAME}
-```
-
-Для параметра `{FUNCTION_NAME}` нужно указать имя, заданное в атрибуте `FunctionName`.
-
-Ниже приведен пример с использованием Azure CLI:
-
-```azurecli
-az eventgrid event-subscription create --resource-id /subscriptions/aeb4b7cb-b7cb-b7cb-b7cb-b7cbb6607f30/resourceGroups/eg0122/providers/Microsoft.Storage/storageAccounts/egblobstor0122 --name egblobsub0126 --endpoint https://263db807.ngrok.io/runtime/webhooks/eventgrid?functionName=EventGridTrigger
-```
-
-Дополнительные сведения о создании подписки см. в разделе [Создание подписки](#create-a-subscription) ранее в этой статье.
-
-### <a name="trigger-an-event"></a>Активация события
-
-Активируйте событие, которое будет создавать HTTP-трафик в конечную точку ngrok.  Например, если вы создали подписку хранилища BLOB-объектов, отправьте или удалите большой двоичный объект.
-
-Функция триггера службы "Сетка событий" выполняет и показывает журналы, похожие на приведенные ниже:
-
-![Пример журналов функций триггера службы "Сетка событий"](media/functions-bindings-event-grid/eg-output.png)
-
-## <a name="use-an-http-trigger-as-an-event-grid-trigger"></a>Использование триггера HTTP в качестве триггера службы "Сетка событий"
-
-События службы "Сетка событий" получаются в качестве HTTP-запросов, поэтому их можно обрабатывать с использованием триггера HTTP, а не триггера службы "Сетка событий". Одна из возможных причин — получение большего контроля над URL-адресом конечной точки, вызывающим функцию. Еще одна причина — необходимость получения событий в [схеме CloudEvents](../event-grid/cloudevents-schema.md). В настоящее время триггер службы "Сетка событий" не поддерживает схему CloudEvents. В примерах в этом разделе показаны решения для схемы "Сетка событий" и схемы CloudEvents.
-
-При использовании триггера HTTP необходимо написать код действий, которые триггер службы "Сетка событий" выполняет автоматически:
-
-* Отправляет запрос проверки в [запрос подтверждения подписки](../event-grid/security-authentication.md#webhook-event-delivery).
-* Вызывает функцию один раз для каждого элемента массива событий, содержащихся в тексте запроса.
-
-Дополнительные сведения об URL-адресе, используемом для вызова функции, выполняемой локально или в Azure, см. в [справочной документации по привязке триггера HTTP](functions-bindings-http-webhook.md).
-
-### <a name="event-grid-schema"></a>Схема службы "Сетка событий"
-
-Следующий пример кода C# для триггера HTTP имитирует поведение триггера службы "Сетка событий". Этот пример можно использовать для событий, доставленных в схеме "Сетка событий".
-
-```csharp
-[FunctionName("HttpTrigger")]
-public static async Task<HttpResponseMessage> Run(
-    [HttpTrigger(AuthorizationLevel.Anonymous, "post")]HttpRequestMessage req,
-    ILogger log)
-{
-    log.LogInformation("C# HTTP trigger function processed a request.");
-
-    var messages = await req.Content.ReadAsAsync<JArray>();
-
-    // If the request is for subscription validation, send back the validation code.
-    if (messages.Count > 0 && string.Equals((string)messages[0]["eventType"],
-        "Microsoft.EventGrid.SubscriptionValidationEvent",
-        System.StringComparison.OrdinalIgnoreCase))
-    {
-        log.LogInformation("Validate request received");
-        return req.CreateResponse<object>(new
-        {
-            validationResponse = messages[0]["data"]["validationCode"]
-        });
-    }
-
-    // The request is not for subscription validation, so it's for one or more events.
-    foreach (JObject message in messages)
-    {
-        // Handle one event.
-        EventGridEvent eventGridEvent = message.ToObject<EventGridEvent>();
-        log.LogInformation($"Subject: {eventGridEvent.Subject}");
-        log.LogInformation($"Time: {eventGridEvent.EventTime}");
-        log.LogInformation($"Event data: {eventGridEvent.Data.ToString()}");
-    }
-
-    return req.CreateResponse(HttpStatusCode.OK);
-}
-```
-
-Следующий пример кода JavaScript для триггера HTTP имитирует поведение триггера службы "Сетка событий". Этот пример можно использовать для событий, доставленных в схеме "Сетка событий".
-
-```javascript
-module.exports = function (context, req) {
-    context.log('JavaScript HTTP trigger function processed a request.');
-
-    var messages = req.body;
-    // If the request is for subscription validation, send back the validation code.
-    if (messages.length > 0 && messages[0].eventType == "Microsoft.EventGrid.SubscriptionValidationEvent") {
-        context.log('Validate request received');
-        var code = messages[0].data.validationCode;
-        context.res = { status: 200, body: { "ValidationResponse": code } };
-    }
-    else {
-        // The request is not for subscription validation, so it's for one or more events.
-        // Event Grid schema delivers events in an array.
-        for (var i = 0; i < messages.length; i++) {
-            // Handle one event.
-            var message = messages[i];
-            context.log('Subject: ' + message.subject);
-            context.log('Time: ' + message.eventTime);
-            context.log('Data: ' + JSON.stringify(message.data));
-        }
-    }
-    context.done();
-};
-```
-
-Код обработки событий переходит в цикл через массив `messages`.
-
-### <a name="cloudevents-schema"></a>Схема CloudEvents
-
-Следующий пример кода C# для триггера HTTP имитирует поведение триггера службы "Сетка событий".  Этот пример можно использовать для событий, доставленных в схеме CloudEvents.
-
-```csharp
-[FunctionName("HttpTrigger")]
-public static async Task<HttpResponseMessage> Run([HttpTrigger(AuthorizationLevel.Anonymous, "get", "post", Route = null)]HttpRequestMessage req, ILogger log)
-{
-    log.LogInformation("C# HTTP trigger function processed a request.");
-
-    var requestmessage = await req.Content.ReadAsStringAsync();
-    var message = JToken.Parse(requestmessage);
-
-    if (message.Type == JTokenType.Array)
-    {
-        // If the request is for subscription validation, send back the validation code.
-        if (string.Equals((string)message[0]["eventType"],
-        "Microsoft.EventGrid.SubscriptionValidationEvent",
-        System.StringComparison.OrdinalIgnoreCase))
-        {
-            log.LogInformation("Validate request received");
-            return req.CreateResponse<object>(new
-            {
-                validationResponse = message[0]["data"]["validationCode"]
-            });
-        }
-    }
-    else
-    {
-        // The request is not for subscription validation, so it's for an event.
-        // CloudEvents schema delivers one event at a time.
-        log.LogInformation($"Source: {message["source"]}");
-        log.LogInformation($"Time: {message["eventTime"]}");
-        log.LogInformation($"Event data: {message["data"].ToString()}");
-    }
-
-    return req.CreateResponse(HttpStatusCode.OK);
-}
-```
-
-Следующий пример кода JavaScript для триггера HTTP имитирует поведение триггера службы "Сетка событий". Этот пример можно использовать для событий, доставленных в схеме CloudEvents.
-
-```javascript
-module.exports = function (context, req) {
-    context.log('JavaScript HTTP trigger function processed a request.');
-
-    var message = req.body;
-    // If the request is for subscription validation, send back the validation code.
-    if (message.length > 0 && message[0].eventType == "Microsoft.EventGrid.SubscriptionValidationEvent") {
-        context.log('Validate request received');
-        var code = message[0].data.validationCode;
-        context.res = { status: 200, body: { "ValidationResponse": code } };
-    }
-    else {
-        // The request is not for subscription validation, so it's for an event.
-        // CloudEvents schema delivers one event at a time.
-        var event = JSON.parse(message);
-        context.log('Source: ' + event.source);
-        context.log('Time: ' + event.eventTime);
-        context.log('Data: ' + JSON.stringify(event.data));
-    }
-    context.done();
-};
-```
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

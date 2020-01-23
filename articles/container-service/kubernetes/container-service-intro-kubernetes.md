@@ -1,20 +1,18 @@
 ---
 title: Знакомство со службой контейнеров Azure для Kubernetes (не рекомендуется)
 description: Служба контейнеров Azure для Kubernetes упрощает развертывание и администрирование контейнерных приложений в Azure.
-services: container-service
 author: gabrtv
-manager: jeconnoc
 ms.service: container-service
 ms.topic: overview
 ms.date: 07/21/2017
 ms.author: gamonroy
 ms.custom: mvc
-ms.openlocfilehash: e00ac57cc36b3331cfb847ecedc6c75132cdeb6b
-ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
+ms.openlocfilehash: c0ef7255a087dd5dc26532316deab337f9eff715
+ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52999181"
+ms.lasthandoff: 01/19/2020
+ms.locfileid: "76271570"
 ---
 # <a name="deprecated-introduction-to-azure-container-service-for-kubernetes"></a>Знакомство со службой контейнеров Azure для Kubernetes (не рекомендуется)
 
@@ -48,7 +46,7 @@ Kubernetes автоматизирует развертывание, масшта
 
 ![Служба контейнеров Azure, настроенная для использования Kubernetes.](media/acs-intro/kubernetes.png)
 
-## <a name="videos"></a>Видеоролики
+## <a name="videos"></a>Видео
 
 Поддержка Kubernetes в службе контейнеров ("Пятница с Azure", январь 2017 г.):
 
@@ -62,6 +60,6 @@ Kubernetes автоматизирует развертывание, масшта
 >
 >
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Изучите [краткое руководство по Kubernetes](container-service-kubernetes-walkthrough.md), чтобы приступить к работе со службой контейнеров Azure прямо сейчас.

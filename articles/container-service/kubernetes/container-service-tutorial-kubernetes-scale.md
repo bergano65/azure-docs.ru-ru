@@ -1,20 +1,18 @@
 ---
 title: 'Руководство по Службе контейнеров Azure: масштабирование приложения (не рекомендуется)'
 description: 'Руководство по Службе контейнеров Azure: масштабирование приложения'
-services: container-service
 author: dlepow
-manager: jeconnoc
 ms.service: container-service
 ms.topic: tutorial
 ms.date: 09/14/2017
 ms.author: danlep
 ms.custom: mvc
-ms.openlocfilehash: b16682535e7311648e832286e1e876ee0e694712
-ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
+ms.openlocfilehash: b0aa78a519567a8e1ffd76e26f1d9ea3ca701fca
+ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52993079"
+ms.lasthandoff: 01/19/2020
+ms.locfileid: "76274181"
 ---
 # <a name="deprecated-scale-kubernetes-pods-and-kubernetes-infrastructure"></a>Масштабирование pod и инфраструктуры Kubernetes (не рекомендуется)
 
@@ -34,7 +32,7 @@ ms.locfileid: "52993079"
 
 В последующих руководствах описывается, как обновить приложение Azure для голосования, а также настроить Log Analytics для мониторинга кластера Kubernetes.
 
-## <a name="before-you-begin"></a>Перед началом работы
+## <a name="before-you-begin"></a>Перед началом
 
 В предыдущих руководствах приложение было упаковано в образ контейнера, этот образ был передан в реестр контейнеров Azure и был создан кластер Kubernetes. Затем приложение было запущено в кластере Kubernetes. 
 
@@ -143,9 +141,9 @@ az acs scale --resource-group=myResourceGroup --name=myK8SCluster --new-agent-co
 
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-В этом руководстве вы использовали различные возможности масштабирования кластера Kubernetes. Были рассмотрены такие задачи:
+В этом руководстве вы использовали различные возможности масштабирования кластера Kubernetes. в частности такие задачи:
 
 > [!div class="checklist"]
 > * масштабирование pod Kubernetes вручную;

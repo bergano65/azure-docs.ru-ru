@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 01/14/2020
-ms.openlocfilehash: 739f97e912a33402aa7482e59dd78f5aeb005772
-ms.sourcegitcommit: 49e14e0d19a18b75fd83de6c16ccee2594592355
+ms.openlocfilehash: 03be29cde42478abf32492f55a296aeee0a4a478
+ms.sourcegitcommit: 87781a4207c25c4831421c7309c03fce5fb5793f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75944427"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76547257"
 ---
 # <a name="delete-and-restore-azure-log-analytics-workspace"></a>Удаление и восстановление рабочей области Azure Log Analytics
 
@@ -57,6 +57,29 @@ ms.locfileid: "75944427"
 ```PowerShell
 PS C:\>Remove-AzOperationalInsightsWorkspace -ResourceGroupName "resource-group-name" -Name "workspace-name"
 ```
+
+## <a name="permanent-workspace-delete"></a>Удаление постоянной рабочей области
+Метод обратимого удаления может не помещаться в некоторых сценариях, таких как разработка и тестирование, где необходимо повторить развертывание с теми же параметрами и именем рабочей области. В таких случаях вы можете безвозвратно удалить рабочую область и "переопределить" период обратимого удаления. Операция удаления постоянной рабочей области освобождает рабочую область, и вы можете создать новую рабочей области с тем же именем.
+
+
+> [!IMPORTANT]
+> Будьте внимательны при окончательном удалении рабочей области, так как эта операция необратима, и ваша рабочая область и ее данные не будут восстановлены.
+
+В настоящее время можно выполнить удаление постоянной рабочей области с помощью REST API.
+
+> [!NOTE]
+> Любой запрос API должен содержать маркер авторизации носителя в заголовке запроса.
+>
+> Получить маркер можно с помощью:
+> - [Регистрация приложений](https://docs.microsoft.com/graph/auth/auth-concepts#access-tokens)
+> - Перейдите к портал Azure с помощью консоли разработчика (F12) в браузере. Просмотрите один из **пакетов** . экземпляры строки проверки подлинности в разделе **заголовки запроса**. Он будет находиться в шаблоне *авторизации: bearer <token>* . Скопируйте и добавьте его в вызов API, как показано в примерах.
+> - Перейдите на сайт документации по Azure RESTFUL. Нажмите кнопку **попробовать** на любом API, скопируйте токен носителя и добавьте его в вызов API.
+Чтобы удалить рабочую область без возможности восстановления, используйте функцию "удалить вызов API-интерфейса" из [рабочих областей]( https://docs.microsoft.com/rest/api/loganalytics/workspaces/delete) , используя принудительный тег:
+>
+> ```rst
+> DELETE https://management.azure.com/subscriptions/<subscription-id>/resourcegroups/<resource-group-name>/providers/Microsoft.OperationalInsights/workspaces/<workspace-name>?api-version=2015-11-01-preview&force=true
+> Authorization: Bearer eyJ0eXAiOiJKV1Qi….
+> ```
 
 ## <a name="recover-workspace"></a>Восстановить рабочую область
 

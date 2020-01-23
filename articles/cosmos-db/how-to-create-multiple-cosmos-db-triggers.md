@@ -6,12 +6,12 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 07/17/2019
 ms.author: maquaran
-ms.openlocfilehash: fbf1e11d7a283ca6c93356f055198c35350e0332
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: efb0a9229d6061d4df8d67ba8455801d9d2a2964
+ms.sourcegitcommit: 87781a4207c25c4831421c7309c03fce5fb5793f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75445355"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76548889"
 ---
 # <a name="create-multiple-azure-functions-triggers-for-cosmos-db"></a>Создание несколько активаций функций Azure для Cosmos DB
 
@@ -38,7 +38,7 @@ ms.locfileid: "75445355"
 
 ## <a name="configuring-a-shared-leases-container"></a>Настройка общего контейнера аренды
 
-Чтобы настроить контейнер общих аренд, необходимо `LeaseCollectionPrefix` добавить в триггеры только дополнительные настройки [, если вы](../azure-functions/functions-bindings-cosmosdb-v2.md#trigger---c-attributes) используете C# или `leaseCollectionPrefix` [атрибут](../azure-functions/functions-bindings-cosmosdb-v2.md#trigger---javascript-example) , если используете JavaScript. Значением атрибута должен быть логический дескриптор, описывающий, что собой представляет определенный триггер.
+Чтобы настроить контейнер общих аренд, необходимо `LeaseCollectionPrefix` добавить в триггеры только дополнительные настройки [, если вы](../azure-functions/functions-bindings-cosmosdb-v2.md#trigger---attributes-and-annotations) используете C# или `leaseCollectionPrefix` [атрибут](../azure-functions/functions-bindings-cosmosdb-v2.md#trigger) , если используете JavaScript. Значением атрибута должен быть логический дескриптор, описывающий, что собой представляет определенный триггер.
 
 Например, у вас есть три триггера: один отправляет сообщения электронной почты, другой использует статистическую обработку для создания материализованного представления, а третий отправляет изменения в другое хранилище для последующего анализа. Вы можете назначить атрибуту `LeaseCollectionPrefix` значение emails для первого триггера, значение materialized для второго триггера, и значение analytics для третьего.
 
@@ -109,5 +109,5 @@ public static void MaterializedViews([CosmosDBTrigger(
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * См. полную конфигурацию [активации функций Azure для Cosmos DB](../azure-functions/functions-bindings-cosmosdb-v2.md#trigger---configuration).
-* Ознакомьтесь с расширенным [списком примеров](../azure-functions/functions-bindings-cosmosdb-v2.md#trigger---example) для всех языков.
+* Ознакомьтесь с расширенным [списком примеров](../azure-functions/functions-bindings-cosmosdb-v2.md#trigger) для всех языков.
 * Изучите другие примеры сценариев бессерверных вычислений с Функциями Azure и Azure Cosmos DB в [репозитории GitHub](https://github.com/ealsur/serverless-recipes/tree/master/cosmosdbtriggerscenarios).

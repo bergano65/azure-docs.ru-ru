@@ -9,16 +9,16 @@ ms.topic: tutorial
 ms.date: 09/03/2019
 ms.author: alkohli
 ms.localizationpriority: high
-ms.openlocfilehash: b9d724a44a94ed13786391a235bb9967036f29dc
-ms.sourcegitcommit: e1b6a40a9c9341b33df384aa607ae359e4ab0f53
+ms.openlocfilehash: e892a8bfa3b4b0bb53d7a943e475d4e2a8228add
+ms.sourcegitcommit: 38b11501526a7997cfe1c7980d57e772b1f3169b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71338485"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76514142"
 ---
 ::: zone target="docs"
 
-# <a name="tutorial-cable-and-connect-to-your-azure-data-box"></a>Руководство по Присоединение кабелей и подключение к Azure Data Box
+# <a name="tutorial-cable-and-connect-to-your-azure-data-box"></a>Руководство. Присоединение кабелей и подключение к Azure Data Box
 
 ::: zone-end
 
@@ -32,7 +32,7 @@ ms.locfileid: "71338485"
 
 В этом руководстве описывается, как присоединить кабели, подключить и включить Azure Data Box.
 
-Из этого руководства вы узнаете, как выполнять следующие задачи:
+В этом руководстве описано следующее:
 
 > [!div class="checklist"]
 > * Подключение кабелей к Data Box.
@@ -126,9 +126,9 @@ ms.locfileid: "71338485"
     ![Получение учетных данных устройства](media/data-box-deploy-set-up/data-box-device-credentials.png)
     
     
-7. Введите пароль устройства, полученный на портале Azure на предыдущем шаге, чтобы войти на локальный пользовательский веб-интерфейс устройства. Щелкните **Войти**.
+7. Введите пароль устройства, полученный на портале Azure на предыдущем шаге, чтобы войти на локальный пользовательский веб-интерфейс устройства. Нажмите кнопку **Войти**.
 8. На **панели мониторинга** убедитесь, что сетевые интерфейсы настроены. 
-   - Если протокол DHCP включен в вашей среде, сетевые интерфейсы настраиваются автоматически. 
+   - Если в среде включен DHCP, сетевые интерфейсы настраиваются автоматически. 
    - Если протокол DHCP не включен, перейдите на страницу **Задать сетевые интерфейсы** и присвойте статические IP-адреса (при необходимости).
 
      ![Панель мониторинга устройства](media/data-box-deploy-set-up/data-box-dashboard-1.png)
@@ -153,7 +153,7 @@ ms.locfileid: "71338485"
 
 ::: zone target="docs"
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом руководстве были освещены следующие темы относительно Azure Data Box.
 

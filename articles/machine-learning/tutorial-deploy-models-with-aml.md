@@ -10,12 +10,12 @@ author: sdgilley
 ms.author: sgilley
 ms.date: 08/26/2019
 ms.custom: seodec18
-ms.openlocfilehash: c1a749570fe2320be18c98bb6267656cf2687aa1
-ms.sourcegitcommit: ce4a99b493f8cf2d2fd4e29d9ba92f5f942a754c
+ms.openlocfilehash: 3c0ff63a360d96d0e9db18d430e755e567197de1
+ms.sourcegitcommit: 5bbe87cf121bf99184cc9840c7a07385f0d128ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/28/2019
-ms.locfileid: "75532197"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76122089"
 ---
 # <a name="tutorial-deploy-an-image-classification-model-in-azure-container-instances"></a>Руководство. Развертывание модели классификации изображений в Экземплярах контейнеров Azure
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -38,7 +38,7 @@ ms.locfileid: "75532197"
 >[!NOTE]
 > Код в этой статье протестирован с помощью пакета SDK для Машинного обучения Azure версии 1.0.41.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы запустить записную книжку, выполните обучение модели, как описано в статье [Руководство (часть 1). Развертывание модели классификации изображений в Экземплярах контейнеров Azure](tutorial-train-models-with-aml.md).   Затем откройте записную книжку **/img-classification-part2-deploy.ipynb** в клонированной папке **tutorials**.
 
@@ -389,6 +389,6 @@ service.delete()
 
 + Сведения обо всех [вариантах развертывания Машинного обучения Azure](how-to-deploy-and-where.md).
 + Сведения о [создании клиентов для веб-службы](how-to-consume-web-service.md).
-+  Асинхронное [создание прогнозов на больших объемах данных](how-to-run-batch-predictions.md).
++  Асинхронное [создание прогнозов на больших объемах данных](how-to-use-parallel-run-step.md).
 + Мониторинг моделей машинного обучения в Azure с помощью [Application Insights](how-to-enable-app-insights.md).
 + Ознакомьтесь с руководством по [автоматическому выбору алгоритма](tutorial-auto-train-models.md). 

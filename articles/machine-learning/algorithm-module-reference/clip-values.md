@@ -9,16 +9,16 @@ ms.topic: reference
 author: likebupt
 ms.author: keli19
 ms.date: 09/09/2019
-ms.openlocfilehash: ca35af997834a897572555e752597026b5159712
-ms.sourcegitcommit: a9b1f7d5111cb07e3462973eb607ff1e512bc407
+ms.openlocfilehash: 5f695bf739a6e096083cd6d8271b6936f24c16da
+ms.sourcegitcommit: 87781a4207c25c4831421c7309c03fce5fb5793f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76314459"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76546832"
 ---
 # <a name="clip-values"></a>Обрезка значений
 
-В этой статье описывается модуль конструктора Машинное обучение Azure.
+В этой статье описывается модуль Машинное обучение Azure конструктора (Предварительная версия).
 
 Используйте модуль «значения Clip», чтобы указать и при необходимости заменить значения данных, превышающие или ниже заданного порогового значения, на среднее, константу или другое заменяющее значение.  
 

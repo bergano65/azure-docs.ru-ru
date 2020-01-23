@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 11/28/2018
 ms.author: thfalgou
 ms.custom: fasttrack-edit
-ms.openlocfilehash: ff55257891ff379bea9ff44aa5136195ced44354
-ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
+ms.openlocfilehash: 855d40f9c20f966f6fa2b89949e47c943704bf2b
+ms.sourcegitcommit: 87781a4207c25c4831421c7309c03fce5fb5793f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/02/2020
-ms.locfileid: "75613114"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76549161"
 ---
 # <a name="best-practices-for-business-continuity-and-disaster-recovery-in-azure-kubernetes-service-aks"></a>Рекомендации по обеспечению непрерывности бизнес-процессов и аварийного восстановления в Службе Azure Kubernetes (AKS)
 
@@ -66,7 +66,7 @@ ms.locfileid: "75613114"
 
 Если кластеры должны взаимодействовать друг с другом, подключение между виртуальными сетями может осуществляться через [пиринг виртуальных сетей](https://docs.microsoft.com/azure/virtual-network/virtual-network-peering-overview). Эта технология соединяет виртуальные сети друг с другом, обеспечивая высокую пропускную способность в магистральной сети Майкрософт, даже в разных географических регионах.
 
-Предварительные требования для пиринга между виртуальными сетями, в которых работают кластеры AKS, — это использование стандартных Load Balancer в кластере AKS, чтобы службы kubernetes были доступны через пиринг виртуальных сетей.
+Предварительные требования для пиринга между виртуальными сетями, в которых работают кластеры AKS, — это использование стандартных Load Balancer в кластере AKS, чтобы службы Kubernetes были доступны через пиринг виртуальных сетей.
 
 ## <a name="enable-geo-replication-for-container-images"></a>Включение георепликации для образов контейнеров
 

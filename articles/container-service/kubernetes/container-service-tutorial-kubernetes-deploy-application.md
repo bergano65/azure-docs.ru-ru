@@ -1,20 +1,18 @@
 ---
 title: 'Руководство по Службе контейнеров Azure: развертывание приложения (не рекомендуется)'
 description: 'Руководство по Службе контейнеров Azure: развертывание приложения'
-services: container-service
 author: iainfoulds
-manager: jeconnoc
 ms.service: container-service
 ms.topic: tutorial
 ms.date: 02/26/2018
 ms.author: iainfou
 ms.custom: mvc
-ms.openlocfilehash: dafbb8d1221d5e9c6194611ad338b3714a089cea
-ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
+ms.openlocfilehash: 7e10fd982c19e45be8c5da4ffc7f7248276352c1
+ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52998777"
+ms.lasthandoff: 01/19/2020
+ms.locfileid: "76275490"
 ---
 # <a name="deprecated-run-applications-in-kubernetes"></a>Запуск приложений в Kubernetes (не рекомендуется)
 
@@ -34,7 +32,7 @@ ms.locfileid: "52998777"
 
 Для работы с этим руководством требуется понимание основных концепций Kubernetes. Подробные сведения см. в [документации по Kubernetes](https://kubernetes.io/docs/home/).
 
-## <a name="before-you-begin"></a>Перед началом работы
+## <a name="before-you-begin"></a>Перед началом
 
 В предыдущих руководствах приложение упаковывалось в образ контейнера, далее этот образ отправлялся в реестр контейнеров Azure, после чего создавался кластер Kubernetes. 
 
@@ -66,7 +64,7 @@ containers:
   image: microsoft/azure-vote-front:v1
 ```
 
-Сохраните и закройте файл.
+Сохраните файл и закройте его.
 
 ## <a name="deploy-application"></a>Развертывание приложения
 
@@ -107,9 +105,9 @@ azure-vote-front   10.0.42.158   52.179.23.131 80:31873/TCP   2m
 
 ![Схема кластера Kubernetes в Аzure](media/container-service-kubernetes-tutorials/azure-vote.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-В этом руководстве приложение Vote Azure было развернуто в кластере Kubernetes Службы контейнеров Azure. Вы выполнили следующие задачи:  
+В этом руководстве приложение Vote Azure было развернуто в кластере Kubernetes Службы контейнеров Azure. Вам предстоят следующие задачи:  
 
 > [!div class="checklist"]
 > * скачивание файлов манифестов Kubernetes;

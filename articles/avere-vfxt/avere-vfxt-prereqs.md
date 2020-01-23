@@ -4,14 +4,14 @@ description: Необходимые условия для Avere vFXT для Azur
 author: ekpgh
 ms.service: avere-vfxt
 ms.topic: conceptual
-ms.date: 01/13/2020
+ms.date: 01/21/2020
 ms.author: rohogue
-ms.openlocfilehash: 7f89ea553bc7198c1faee5ba3549f88da5ec2b2c
-ms.sourcegitcommit: 276c1c79b814ecc9d6c1997d92a93d07aed06b84
+ms.openlocfilehash: a183989cc666f00da4be077c719c40d2524fd6e0
+ms.sourcegitcommit: 87781a4207c25c4831421c7309c03fce5fb5793f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76152992"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76547512"
 ---
 # <a name="prepare-to-create-the-avere-vfxt"></a>Подготовка к созданию Avere vFXT
 
@@ -23,10 +23,10 @@ ms.locfileid: "76152992"
 
 Чтобы создать подписку Azure на портале Azure:
 
-* Перейдите в колонку [Подписки](https://ms.portal.azure.com/#blade/Microsoft_Azure_Billing/SubscriptionsBlade).
-* Нажмите кнопку **+ Добавить** вверху.
-* Войдите при появлении соответствующего запроса.
-* Выберите предложение и выполните действия, чтобы создать подписку.
+1. Перейдите в колонку [Подписки](https://ms.portal.azure.com/#blade/Microsoft_Azure_Billing/SubscriptionsBlade).
+1. Нажмите кнопку **+ Добавить** вверху.
+1. Войдите при появлении соответствующего запроса.
+1. Выберите предложение и выполните действия, чтобы создать подписку.
 
 ## <a name="configure-subscription-owner-permissions"></a>Настройка разрешений владельца подписки
 
@@ -104,6 +104,6 @@ ms.locfileid: "76152992"
 
    ![Снимок экрана портала Azure с заметками для шагов создания конечной точки службы](media/avere-vfxt-service-endpoint.png)
 
-## <a name="next-step-create-the-vfxt-cluster"></a>Следующий шаг: создание кластера vFXT
+## <a name="next-steps"></a>Дальнейшие действия
 
 После выполнения этих предварительных требований можно создать кластер. Инструкции см. в статье [Развертывание кластера vFXT](avere-vfxt-deploy.md).
