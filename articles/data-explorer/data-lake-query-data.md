@@ -7,14 +7,14 @@ ms.reviewer: rkarlin
 ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 07/17/2019
-ms.openlocfilehash: d572e7f3fceaf2df8ad0ec684eaa421922389e71
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: 1e5af0b45b8d2e2eceac1b653a5219a236c25467
+ms.sourcegitcommit: 38b11501526a7997cfe1c7980d57e772b1f3169b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74922156"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76512918"
 ---
-# <a name="query-data-in-azure-data-lake-using-azure-data-explorer-preview"></a>Запрос данных в Azure Data Lake с помощью обозреватель данных Azure (Предварительная версия)
+# <a name="query-data-in-azure-data-lake-using-azure-data-explorer"></a>Запрос данных в Azure Data Lake с помощью обозреватель данных Azure
 
 Azure Data Lake Storage — это высокомасштабируемое и экономичное решение Data Lake для анализа больших данных. Оно сочетает в себе мощь высокопроизводительной файловой системы массивного масштабирования и экономии, что помогает сократить время анализа данных. Data Lake Storage Gen2 расширяет возможности хранилища BLOB-объектов Azure и является оптимизированным для рабочих нагрузок аналитики.
  

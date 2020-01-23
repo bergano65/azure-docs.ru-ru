@@ -5,12 +5,12 @@ ms.reviewer: saurse
 ms.topic: troubleshooting
 ms.date: 07/05/2019
 ms.service: backup
-ms.openlocfilehash: 255c18144fe0089a3f630d90f527a57d2b4ed68b
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 47adda38bb39a95fe9abc0775a1822d677f19dab
+ms.sourcegitcommit: 38b11501526a7997cfe1c7980d57e772b1f3169b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75391843"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76513853"
 ---
 # <a name="troubleshoot-azure-backup-failure-issues-with-the-agent-or-extension"></a>Устранение неполадок службы Azure Backup. Проблемы с агентом или расширением
 
@@ -89,7 +89,6 @@ ms.locfileid: "75391843"
 
 **Причина 1. [Не удалось получить состояние моментального снимка или создать моментальный снимок](#the-snapshot-status-cannot-be-retrieved-or-a-snapshot-cannot-be-taken)** .  
 **Причина 2. [Не удалось обновить или загрузить расширение резервного копирования](#the-backup-extension-fails-to-update-or-load)** .  
-**Причина 3. [Виртуальная машина не подключена к Интернету](#the-vm-has-no-internet-access)** .
 
 ## <a name="ExtensionOperationFailed-vmsnapshot-extension-operation-failed"></a>Сбой операции расширения Екстенсионоператионфаиледформанажеддискс-VMSnapshot
 
@@ -113,7 +112,7 @@ ms.locfileid: "75391843"
 **Причина 3. [Не удалось получить состояние моментального снимка или создать моментальный снимок](#the-snapshot-status-cannot-be-retrieved-or-a-snapshot-cannot-be-taken)** .  
 **Причина 4. [Не удалось обновить или загрузить расширение резервного копирования](#the-backup-extension-fails-to-update-or-load)** .  
 **Причина 5. служба архивации не имеет разрешения на удаление старых точек восстановления из-за блокировки группы ресурсов** <br>
-**Причина 6. [Виртуальная машина не подключена к Интернету](#the-vm-has-no-internet-access)** .
+
 
 ## <a name="usererrorunsupporteddisksize---the-configured-disk-sizes-is-currently-not-supported-by-azure-backup"></a>Усереррорунсуппортеддисксизе: настроенные размеры дисков в настоящее время не поддерживаются Azure Backup.
 
@@ -141,16 +140,6 @@ ms.locfileid: "75391843"
 Если запланированная операция архивации занимает больше времени, конфликтует с следующей конфигурацией резервного копирования, ознакомьтесь [с рекомендациями,](backup-azure-vms-introduction.md#best-practices) [производительностью резервного копирования](backup-azure-vms-introduction.md#backup-performance)и [соображениями восстановления](backup-azure-vms-introduction.md#backup-and-restore-considerations).
 
 ## <a name="causes-and-solutions"></a>Причины и решения
-
-### <a name="the-vm-has-no-internet-access"></a>Виртуальная машина не подключена к Интернету
-
-Согласно требованиям к развертыванию виртуальная машина не имеет доступа к Интернету. Или могут быть ограничения на доступ к инфраструктуре Azure.
-
-Чтобы расширение службы Backup работало правильно, требуется подключение к общедоступным IP-адресам Azure. Для управления моментальными снимками виртуальной машины это расширение отправляет команды к конечной точке службы хранилища Azure (URL-адрес HTTP). Если расширение не имеет доступа к общедоступному Интернету, резервное копирование завершится сбоем.
-
-#### <a name="solution"></a>Решение
-
-Решение проблемы с сетью см. в разделе [Установка сетевого подключения](backup-azure-arm-vms-prepare.md#establish-network-connectivity).
 
 ### <a name="the-agent-installed-in-the-vm-but-unresponsive-for-windows-vms"></a>Агент установлен на виртуальной машине, но не отвечает (для виртуальных машин Windows)
 

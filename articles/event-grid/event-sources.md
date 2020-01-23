@@ -1,18 +1,18 @@
 ---
 title: Источники событий службы "Сетка событий Azure"
-description: Описание поддерживаемых источников события в службе "Сетка событий Azure".
+description: В этой статье описываются поддерживаемые источники событий для службы "Сетка событий Azure". Источник события — это место, где оно произошло.
 services: event-grid
 author: spelluru
 ms.service: event-grid
 ms.topic: conceptual
 ms.date: 02/12/2019
 ms.author: spelluru
-ms.openlocfilehash: 63cd7cea65515488649507cb7d3c52877211ca04
-ms.sourcegitcommit: ce4a99b493f8cf2d2fd4e29d9ba92f5f942a754c
+ms.openlocfilehash: 3a87475146e2b23c4a824e568ea3da33e1f4abf0
+ms.sourcegitcommit: 38b11501526a7997cfe1c7980d57e772b1f3169b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/28/2019
-ms.locfileid: "75531451"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76512952"
 ---
 # <a name="event-sources-in-azure-event-grid"></a>Источники событий в службе "Сетка событий Azure"
 

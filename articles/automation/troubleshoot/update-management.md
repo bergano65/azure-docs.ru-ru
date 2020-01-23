@@ -8,12 +8,12 @@ ms.date: 05/31/2019
 ms.topic: conceptual
 ms.service: automation
 manager: carmonm
-ms.openlocfilehash: f60ec802af0c88ee8cb3809bf27feef89e11570a
-ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
+ms.openlocfilehash: 5ee1a20d4a3c46cab484b03b5fcc212a79d19047
+ms.sourcegitcommit: 38b11501526a7997cfe1c7980d57e772b1f3169b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75769801"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76513275"
 ---
 # <a name="troubleshooting-issues-with-update-management"></a>Устранение неполадок c помощью управления обновлениями
 
@@ -376,7 +376,7 @@ Unable to Register Machine for Patch Management, Registration Failed with Except
 
 ### <a name="i-know-updates-are-available-but-they-dont-show-as-available-on-my-machines"></a>Я знал, что доступны обновления, но они не отображаются как доступные на моих компьютерах
 
-* Это часто происходит, если компьютеры настроены для получения обновлений от WSUS или System Center Configuration Manager (SCCM), но WSUS и SCCM еще не утвердили обновления.
+* Это часто происходит, если компьютеры настроены на получение обновлений из WSUS или Microsoft Endpoint Configuration Manager, но WSUS и Configuration Manager не утвердили обновления.
 * Чтобы проверить, настроены ли на компьютерах службы WSUS и SCCM, [перекрестно ссылаться на раздел реестра UseWUServer на разделы реестра в разделе "настройка Автоматическое обновление путем изменения реестра" этой статьи](https://support.microsoft.com/help/328010/how-to-configure-automatic-updates-by-using-group-policy-or-registry-s).
 * Если обновления не утверждены в WSUS, они не будут установлены. Вы можете проверить неодобренные обновления в Log Analytics, выполнив следующий запрос:
 

@@ -3,12 +3,12 @@ title: Функции шаблонов — ресурсы
 description: Описывает функции, используемые в шаблоне Azure Resource Manager для получения значений ресурсов.
 ms.topic: conceptual
 ms.date: 01/20/2020
-ms.openlocfilehash: 56ace8c75ea27eb4d730b1630115b6fcbdc3f575
-ms.sourcegitcommit: a9b1f7d5111cb07e3462973eb607ff1e512bc407
+ms.openlocfilehash: 1b860876b0d8967a6a3f90c7bb68f20d6c442109
+ms.sourcegitcommit: 38b11501526a7997cfe1c7980d57e772b1f3169b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 01/22/2020
-ms.locfileid: "76310547"
+ms.locfileid: "76513870"
 ---
 # <a name="resource-functions-for-azure-resource-manager-templates"></a>Функции для работы с ресурсами в шаблонах Azure Resource Manager
 
@@ -32,7 +32,7 @@ ms.locfileid: "76310547"
 extensionResourceId(resourceId, resourceType, resourceName1, [resourceName2], ...)
 ```
 
-Возвращает идентификатор ресурса для [ресурса расширения](extension-resource-types.md), который является типом ресурса, который применяется к другому ресурсу для добавления к его возможностям.
+Возвращает идентификатор ресурса для [ресурса расширения](../management/extension-resource-types.md), который является типом ресурса, который применяется к другому ресурсу для добавления к его возможностям.
 
 ### <a name="parameters"></a>Параметры
 
@@ -536,7 +536,7 @@ reference(resourceName or resourceIdentifier, [apiVersion], ['Full'])
 
 ### <a name="get-managed-identity"></a>Получить управляемое удостоверение
 
-[Управляемые удостоверения для ресурсов Azure](../../active-directory/managed-identities-azure-resources/overview.md) являются [типами ресурсов расширения](extension-resource-types.md) , которые создаются неявно для некоторых ресурсов. Так как управляемое удостоверение не определено явным образом в шаблоне, необходимо указать ссылку на ресурс, к которому применяется удостоверение. Используйте `Full`, чтобы получить все свойства, включая явно созданное удостоверение.
+[Управляемые удостоверения для ресурсов Azure](../../active-directory/managed-identities-azure-resources/overview.md) являются [типами ресурсов расширения](../management/extension-resource-types.md) , которые создаются неявно для некоторых ресурсов. Так как управляемое удостоверение не определено явным образом в шаблоне, необходимо указать ссылку на ресурс, к которому применяется удостоверение. Используйте `Full`, чтобы получить все свойства, включая явно созданное удостоверение.
 
 Например, чтобы получить идентификатор клиента для управляемого удостоверения, применяемого к масштабируемому набору виртуальных машин, используйте:
 

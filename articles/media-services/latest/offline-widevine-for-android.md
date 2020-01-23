@@ -1,5 +1,5 @@
 ---
-title: Автономная потоковая передача Widevine для Android с помощью служб мультимедиа Azure v3
+title: Потоковая передача Widevine Android в автономном режиме с помощью служб мультимедиа Azure v3
 description: В этой статье показано, как настроить учетную запись служб мультимедиа Azure для автономной потоковой передачи содержимого, защищенного Widevine.
 services: media-services
 keywords: DASH, DRM, режим автономной работы Widevine, ExoPlayer, Android
@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/08/2019
 ms.author: willzhan
-ms.openlocfilehash: 17416fce887f5f5b952232e284873e539fd68337
-ms.sourcegitcommit: 5b073caafebaf80dc1774b66483136ac342f7808
+ms.openlocfilehash: 7c7e1ca8c27ba9b5d7558a75106cf6d3f3e2172e
+ms.sourcegitcommit: 38b11501526a7997cfe1c7980d57e772b1f3169b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75779915"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76513105"
 ---
 # <a name="offline-widevine-streaming-for-android"></a>Потоковая передача Widevine для Android (автономный режим)
 

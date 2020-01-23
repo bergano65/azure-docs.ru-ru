@@ -4,16 +4,16 @@ description: В этой статье описано, как управлять 
 keywords: ''
 author: bandersmsft
 ms.author: banders
-ms.date: 01/02/2020
+ms.date: 01/21/2020
 ms.topic: conceptual
 ms.service: cost-management-billing
 manager: boalcsva
-ms.openlocfilehash: 95df54eb096588fe23da87f7334f9d693e54cf9d
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.openlocfilehash: 7cb2966c94485d0a05febf3085ab367fcba97434
+ms.sourcegitcommit: 38b11501526a7997cfe1c7980d57e772b1f3169b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75992326"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76514363"
 ---
 # <a name="azure-enterprise-enrollment-invoices"></a>Счета по Соглашению о регистрации Azure Enterprise
 
@@ -370,7 +370,7 @@ Excel импортирует все поля как текст "General" и пр
 | Округление цен (2 десятичных знака) | =MROUND({_source_}, 0.02) |
 | Округление цен (0 десятичных знаков) | =MROUND({_source_}, 2) |
 
-**Таблица**  **2**  **— Преобразование в часы облачной службы и виртуальной машины**
+**Таблица** **2**  **— пересчет часов для виртуальных машин и облачных служб**
 
 ### <a name="conversion-between-download-usage-file-and-usage-summary-portal-view"></a>Преобразование между файлом сведений о загрузках и представлением сведения для использования на портале
 
@@ -417,7 +417,7 @@ Excel импортирует все поля как текст "General" и пр
 | Зона 2 | Азиатско-Тихоокеанский Восточный регион <br> Азиатско-Тихоокеанский Юго-восточный регион <br> Восточная Япония <br> Западная Япония <br> Восточная Австралия <br> Юго-Восточная Австралия | Азиатско-Тихоокеанский регион <br> Япония <br> Латинская Америка <br> Ближний Восток / Африка <br> Восточная Австралия <br> Юго-Восточная Австралия |
 | Зона 3 | Южная Бразилия |   |
 
-**Таблица**  **4**  **— Передача данных регионы**
+**Таблица** **4**  **— регионы передачи данных**
 
 Плата за исходящий трафик данных между службами (например, Office 365 и Azure) не взимается в пределах одного центра обработки данных.
 
@@ -557,7 +557,7 @@ LSP могут загрузить прейскурант, относящийся
 | [**Понятные имена служб**](https://azurepricing.blob.core.windows.net/supplemental/Friendly_Service_Names.xlsx) | Содержит список всех активных служб с категорией службы, понятным именем службы, именем обязательства и номером компонента, именем потребления и номером компонента, единицами измерения и коэффициентами преобразования между сообщаемым и отображаемым на портале Enterprise Portal использованием. | Friendly\_Service\_Names.xlsx |
 | [**Поля загрузки служб**](https://azurepricing.blob.core.windows.net/supplemental/Service_Download_Fields.xlsx) | В этой таблице содержится список всех возможных сочетаний полей, связанных со службами, в отчете по загрузке использования. | Service\_Download\_Fields.xlsx |
 
-**Таблица**  **5**  **— Дополнительные источники сведений**
+**Таблица** **5**  **— дополнительные источники сведений**
 
 ## <a name="power-bi-reporting"></a>Отчеты Power BI
 
@@ -585,7 +585,7 @@ Power BI Pro теперь доступна для клиентов EA. С пом
 1. Укажите ключ доступа API для подключения. Ключ для регистрации можно найти на портале [Enterprise Portal](https://ea.azure.com/?WT.mc_id=azurebg_email_Trans_33675_1378_Service_Notice_EA_Customer_Power_BI_EA_Content_Pack_Apr26). Щелкните **Войти**.
 1. Процесс импорта начнется автоматически. По завершении в области навигации отобразится новая панель мониторинга, отчет и модель. Щелкните панель мониторинга, чтобы просмотреть импортированные данные.
 
-Дополнительные сведения о создании ключа API для регистрации см. в файле справки по API Reports на портале [Enterprise Portal](https://ea.azure.com/?WT.mc_id=azurebg_email_Trans_33675_1378_Service_Notice_EA_Customer_Power_BI_EA_Content_Pack_Apr26). Чтобы получить дополнительные сведения о новом пакете содержимого, скачайте документ [Microsoft Azure Consumption Insights](https://automaticbillingspec.blob.core.windows.net/spec/Microsoft%20Azure%20Consumption%20Insights.docx?WT.mc_id=azurebg_email_Trans_33675_1378_Service_Notice_EA_Customer_Power_BI_EA_Content_Pack_Apr26).
+Дополнительные сведения о создании ключа API для регистрации см. в файле справки по API Reports на портале [Enterprise Portal](https://ea.azure.com/?WT.mc_id=azurebg_email_Trans_33675_1378_Service_Notice_EA_Customer_Power_BI_EA_Content_Pack_Apr26). Дополнительные сведения о новом пакете содержимого см. в разделе [Microsoft Azure consumption Insights](/power-bi/desktop-connect-azure-cost-management).
 
 ### <a name="to-access-the-legacy-power-bi-ea-content-pack"></a>Чтобы получить доступ к устаревшему пакету содержимого Power BI EA, выполните следующие действия.
 

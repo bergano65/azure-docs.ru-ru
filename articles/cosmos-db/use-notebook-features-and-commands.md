@@ -6,14 +6,14 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 12/07/2019
 ms.author: dech
-ms.openlocfilehash: 2066701a88e03feb29bd1689f36460765f1c638d
-ms.sourcegitcommit: 2a2af81e79a47510e7dea2efb9a8efb616da41f0
+ms.openlocfilehash: 61d46bbf0ccdeb5cd2e95e36e19f1aa81cfeeb48
+ms.sourcegitcommit: 38b11501526a7997cfe1c7980d57e772b1f3169b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76264718"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76513405"
 ---
-# <a name="use-built-in-notebook-commands-and-features-in-azure-cosmos-db"></a>Использование встроенных команд и функций записной книжки в Azure Cosmos DB
+# <a name="use-built-in-notebook-commands-and-features-in-azure-cosmos-db-preview"></a>Использование встроенных команд и функций записной книжки в Azure Cosmos DB (Предварительная версия)
 
 Встроенные записные книжки Jupyter в Azure Cosmos DB позволяют анализировать и визуализировать данные из портал Azure. В этой статье описывается, как использовать встроенные команды и функции записной книжки для выполнения стандартных операций.
 

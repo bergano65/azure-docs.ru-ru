@@ -1,5 +1,5 @@
 ---
-title: Подрезать видео при кодировании с помощью REST API Служб мультимедиа Azure
+title: Подрезать видео при кодировании с помощью служб мультимедиа Azure (ЧАСТное)
 description: В этом разделе описывается, как подрезать видео при кодировании со службами мультимедиа Azure с помощью функции RESTFUL.
 services: media-services
 documentationcenter: ''
@@ -13,12 +13,12 @@ ms.devlang: ne
 ms.topic: article
 ms.date: 06/10/2019
 ms.author: juliako
-ms.openlocfilehash: 3557aef6213955ef77542bffafe0a2b0c374ed68
-ms.sourcegitcommit: ad9120a73d5072aac478f33b4dad47bf63aa1aaa
+ms.openlocfilehash: c39aded55fe36cb130459a4f6f119f872b1adbc4
+ms.sourcegitcommit: 38b11501526a7997cfe1c7980d57e772b1f3169b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68704443"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76514329"
 ---
 # <a name="subclip-a-video-when-encoding-with-media-services---rest"></a>Подрезать видео при кодировании со службами мультимедиа — остальное
 
@@ -26,7 +26,7 @@ ms.locfileid: "68704443"
 
 Пример RESTFUL в этом разделе создает задание, которое обрезает видео по мере отправки задания кодирования. 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы выполнить действия, описанные в этом разделе, необходимо сделать следующее:
 
@@ -39,7 +39,7 @@ ms.locfileid: "68704443"
 
 ## <a name="create-a-subclipping-job"></a>Создание задания подрезки
 
-1. В скачанной коллекции после этого выберите **преобразования и задания** -> **создать задание с вложенной обрезки**.
+1. В скачанной коллекции POST выберите **преобразования и задания** -> **создать задание с вложенной**обрезкой.
     
     Запрос на **Размещение** выглядит следующим образом:
     
@@ -84,6 +84,6 @@ ms.locfileid: "68704443"
 
     Вы увидите **ответ** с информацией о созданном и отправленном задании, а также о состоянии задания. 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Кодирование с помощью пользовательского преобразования](custom-preset-rest-howto.md) 
