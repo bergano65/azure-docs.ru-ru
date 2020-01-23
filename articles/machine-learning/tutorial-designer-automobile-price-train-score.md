@@ -9,14 +9,14 @@ ms.service: machine-learning
 ms.subservice: core
 ms.topic: tutorial
 ms.date: 11/04/2019
-ms.openlocfilehash: 9184929099b43def0f690f51d5e76532a0310448
-ms.sourcegitcommit: ce4a99b493f8cf2d2fd4e29d9ba92f5f942a754c
+ms.openlocfilehash: 917ded03892f3a8a5812948bcbfe31f029fc5cf8
+ms.sourcegitcommit: a9b1f7d5111cb07e3462973eb607ff1e512bc407
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/28/2019
-ms.locfileid: "75532877"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76314986"
 ---
-# <a name="tutorial-predict-automobile-price-with-the-designer-preview"></a>Руководство. прогнозированию цен на автомобили с помощью конструктора (предварительная версия)
+# <a name="tutorial-predict-automobile-price-with-the-designer"></a>Руководство. прогнозированию цен на автомобили с помощью конструктора
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-enterprise-sku.md)]
 
 Из этого руководства, состоящего из двух частей, вы узнаете, как использовать конструктор Машинного обучения Azure для разработки и развертывания решения прогнозной аналитики для прогнозирования цены любого автомобиля. 

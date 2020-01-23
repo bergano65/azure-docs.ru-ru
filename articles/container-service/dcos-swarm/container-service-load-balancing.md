@@ -1,20 +1,18 @@
 ---
 title: Балансировка нагрузки контейнеров в кластере DC/OS Azure (не рекомендуется)
 description: Сведения о балансировке нагрузки нескольких контейнеров в кластере DC/OS в Службе контейнеров Azure.
-services: container-service
 author: rgardler
-manager: jeconnoc
 ms.service: container-service
 ms.topic: tutorial
 ms.date: 06/02/2017
 ms.author: rogardle
 ms.custom: mvc
-ms.openlocfilehash: 1e4c978a8767154fb6a1f9a822cb0dd8d1b8796e
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: d8dff1dc063cc3b940fbdf0698b8b328b90d60b6
+ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "66148882"
+ms.lasthandoff: 01/19/2020
+ms.locfileid: "76277837"
 ---
 # <a name="deprecated-load-balance-containers-in-an-azure-container-service-dcos-cluster"></a>Балансировка нагрузки контейнеров в кластере DC/OS в Службе контейнеров Azure (не рекомендуется)
 
@@ -113,7 +111,7 @@ dcos marathon app add hello-web.json
 
 Если применяется другой порт, необходимо добавить правило циклического перебора и зонд для этого порта в подсистему балансировки нагрузки. Это можно сделать в [интерфейсе командной строки Azure](../../azure-resource-manager/xplat-cli-azure-resource-manager.md) с помощью команд `azure network lb rule create` и `azure network lb probe create`.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из этого учебника вы узнали о балансировке нагрузки в ACS с помощью подсистемы балансировки нагрузки Marathon и Azure Load Balancer и выполнили следующие действия:
 

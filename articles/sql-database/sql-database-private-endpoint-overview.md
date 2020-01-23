@@ -8,12 +8,12 @@ ms.service: sql-database
 ms.topic: overview
 ms.reviewer: vanto
 ms.date: 09/17/2019
-ms.openlocfilehash: 6cc8282a5c56f8f45e8d9e5ee452089a74f0d4ed
-ms.sourcegitcommit: 05cdbb71b621c4dcc2ae2d92ca8c20f216ec9bc4
+ms.openlocfilehash: 427ba0e46f8f4090ce8c2080b1d6780b165e864c
+ms.sourcegitcommit: 5bbe87cf121bf99184cc9840c7a07385f0d128ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 01/16/2020
-ms.locfileid: "76045638"
+ms.locfileid: "76121086"
 ---
 # <a name="private-link-for-azure-sql-database-and-data-warehouse-preview"></a>Приватный канал для Базы данных и Хранилища данных SQL Azure (предварительная версия)
 
@@ -43,8 +43,6 @@ ms.locfileid: "76045638"
 Когда клиенты подключаются к общедоступной конечной точке из локальных компьютеров, их IP-адреса необходимо добавить в брандмауэр на основе IP-адресов, используя [правило брандмауэра на уровне сервера](sql-database-server-level-firewall-rule.md). Хотя эта модель отлично подходит для предоставления доступа к отдельным компьютерам для рабочих нагрузок разработки или тестирования, управлять ею в рабочей среде сложно.
 
 Используя Приватный канал, клиенты могут включить перекрестный доступ к частной конечной точке с помощью [ExpressRoute](../expressroute/expressroute-introduction.md), частного пиринга или VPN-туннелирования. После этого клиенты могут отключить доступ через общедоступную конечную точку и не использовать брандмауэр на основе IP-адресов для разрешения каких-либо IP-адресов.
-
-Используя Приватный канал, клиенты могут включить перекрестный доступ к частной конечной точке через Express Route (ER), частный пиринг или VPN-туннель. Затем они могут отключить доступ через общедоступную конечную точку и не использовать брандмауэр на основе IP-адресов.
 
 ## <a name="how-to-set-up-private-link-for-azure-sql-database"></a>Настройка Приватного канала для Базы данных SQL Azure 
 

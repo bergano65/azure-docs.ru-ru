@@ -1,20 +1,18 @@
 ---
 title: Краткое руководство по работе с кластером Azure Kubernetes для Linux (не рекомендуется)
 description: Вы научитесь быстро создавать кластер Kubernetes для контейнеров Linux в Службе контейнеров Azure при помощи Azure CLI.
-services: container-service
 author: iainfoulds
-manager: jeconnoc
 ms.service: container-service
 ms.topic: quickstart
 ms.date: 02/26/2018
 ms.author: iainfou
 ms.custom: H1Hack27Feb2017, mvc, devcenter
-ms.openlocfilehash: 70c9fec818147b76feb306cc47ba2e72cd865fe8
-ms.sourcegitcommit: de32e8825542b91f02da9e5d899d29bcc2c37f28
+ms.openlocfilehash: 5c182d6119f59daaf21e4b4e1304363eeb0c11e5
+ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2019
-ms.locfileid: "55659616"
+ms.lasthandoff: 01/19/2020
+ms.locfileid: "76273502"
 ---
 # <a name="deprecated-deploy-kubernetes-cluster-for-linux-containers"></a>Развертывание кластера Kubernetes для контейнеров Linux (не рекомендуется)
 
@@ -31,7 +29,7 @@ ms.locfileid: "55659616"
 
 Для работы с этим кратким руководством необходимо знание основных понятий Kubernetes. Подробные сведения см. в [документации по Kubernetes]( https://kubernetes.io/docs/home/).
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 [!INCLUDE [cloud-shell-try-it.md](../../../includes/cloud-shell-try-it.md)]
 
@@ -39,7 +37,7 @@ ms.locfileid: "55659616"
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
-Создайте группу ресурсов с помощью команды [az group create](/cli/azure/group#az-group-create). Группа ресурсов Azure — это логическая группа, в которой выполняется развертывание и администрирование ресурсов Azure. 
+Создайте группу ресурсов с помощью команды [az group create](/cli/azure/group#az-group-create). Группа ресурсов Azure — это логическая группа, в которой развертываются и управляются ресурсы Azure. 
 
 В следующем примере создается группа ресурсов с именем *myResourceGroup* в расположении *westeurope*.
 
@@ -64,7 +62,7 @@ az group create --name myResourceGroup --location westeurope
 
 ## <a name="create-kubernetes-cluster"></a>Создание кластера Kubernetes
 
-Создание кластера Kubernetes в Службе контейнеров Azure с помощью команды [az acs create](/cli/azure/acs#az-acs-create). В следующем примере создается кластер с именем *myK8sCluster* при помощи одного главного узла Linux и трех узлов-агентов Linux.
+Создание кластера Kubernetes в Службе контейнеров Azure с помощью команды [az acs create](/cli/azure/acs#az-acs-create). В следующем примере создается кластер *myK8sCluster* при помощи одного главного узла Linux и трех узлов агентов Linux.
 
 ```azurecli-interactive 
 az acs create --orchestrator-type kubernetes --resource-group myResourceGroup --name myK8sCluster --generate-ssh-keys
@@ -86,7 +84,7 @@ az acs create --orchestrator-type kubernetes --resource-group myResourceGroup --
 az acs kubernetes get-credentials --resource-group=myResourceGroup --name=myK8sCluster
 ```
 
-Проверьте подключение к кластеру, выполнив команду [kubectl get](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#get), чтобы просмотреть список узлов кластера.
+Чтобы проверить подключение к кластеру, используйте команду [kubectl get](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#get) для получения списка узлов кластера.
 
 ```azurecli-interactive
 kubectl get nodes
@@ -218,7 +216,7 @@ az group delete --name myResourceGroup --yes --no-wait
 
 [https://github.com/Azure-Samples/azure-voting-app-redis](https://github.com/Azure-Samples/azure-voting-app-redis.git)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом кратком руководстве мы развернули кластер Kubernetes, а затем развернули в нем многоконтейнерное приложение. 
 

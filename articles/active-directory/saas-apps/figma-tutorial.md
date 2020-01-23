@@ -1,5 +1,5 @@
 ---
-title: Руководство по интеграции единого входа Azure Active Directory с Figma | Документация Майкрософт
+title: Руководство. интеграции единого входа Azure Active Directory с Figma | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Figma.
 services: active-directory
 documentationCenter: na
@@ -16,14 +16,14 @@ ms.topic: tutorial
 ms.date: 10/10/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: cb2da2214cd5fab378368a363e6f18e02626b9d8
-ms.sourcegitcommit: 0576bcb894031eb9e7ddb919e241e2e3c42f291d
+ms.openlocfilehash: dfa07b3df7071ed99a02b854ff41ad6a5137c8dc
+ms.sourcegitcommit: 7221918fbe5385ceccf39dff9dd5a3817a0bd807
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72373099"
+ms.lasthandoff: 01/21/2020
+ms.locfileid: "76292847"
 ---
-# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-figma"></a>Руководство по интеграции единого входа Azure Active Directory с Figma
+# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-figma"></a>Руководство. интеграции единого входа Azure Active Directory с Figma
 
 В этом учебнике описано, как интегрировать Figma с Azure Active Directory (Azure AD). Интеграция Figma с Azure AD обеспечивает следующие возможности:
 
@@ -35,9 +35,9 @@ ms.locfileid: "72373099"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы приступить к работе, потребуется следующее:
+Чтобы приступить к работе, потребуется следующее.
 
-* подписка Azure AD Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
+* Подписка Azure AD. Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
 * Подписка Figma с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -69,7 +69,7 @@ ms.locfileid: "72373099"
     * **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить пользователю B.Simon использовать единый вход Azure AD.
 1. **[Настройка единого входа в Figma](#configure-figma-sso)** необходима, чтобы настроить параметры единого входа на стороне приложения.
     * **[Создание тестового пользователя приложения Figma](#create-figma-test-user)** необходимо для того, чтобы в Figma существовал пользователь B. Simon, связанный с одноименным пользователем в Azure AD.
-1. **[Проверка единого входа](#test-sso)** необходима, чтобы убедиться в корректной работе конфигурации.
+1. **[Проверка единого входа](#test-sso)** позволяет убедиться в правильности конфигурации.
 
 ## <a name="configure-azure-ad-sso"></a>Настройка единого входа Azure AD
 
@@ -79,28 +79,28 @@ ms.locfileid: "72373099"
 1. На странице **Выбрать метод единого входа** выберите **SAML**.
 1. На странице **Настройка единого входа с помощью SAML** щелкните значок "Изменить" (значок пера), чтобы открыть диалоговое окно **Базовая конфигурация SAML** и изменить параметры.
 
-   ![Правка базовой конфигурации SAML](common/edit-urls.png)
+   ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
 1. Если вы хотите настроить приложение в режиме, инициируемом **поставщиком удостоверений**, в разделе **Базовая конфигурация SAML** введите значения следующих полей.
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://www.figma.com/saml/<TENANT ID>`.
+    а. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://www.figma.com/saml/<TENANT ID>`.
 
-    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://www.figma.com/saml/<TENANT ID>/consume`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://www.figma.com/saml/<TENANT ID>/consume`.
 
 1. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
     В текстовом поле **URL-адрес входа** введите URL-адрес в формате `https://www.figma.com/saml/<TENANT ID>/start`.
 
     > [!NOTE]
-    > Эти значения приведены для примера. Замените их фактическими значениями идентификатора, URL-адреса ответа и URL-адреса входа. Значение `TENANT ID` вы получите на шаге 11, выполнив инструкции из руководства Figma по [настройке процесс настройки единого входа Azure AD с помощью SAML](https://help.figma.com/article/243-configure-azure-active-directory-saml-sso).
+    > Эти значения приведены для примера. Замените их фактическими значениями идентификатора, URL-адреса ответа и URL-адреса входа. Значение `TENANT ID` вы получите на шаге 11, выполнив инструкции из руководства Figma по [настройке процесс настройки единого входа Azure AD с помощью SAML](https://help.figma.com/hc/en-us/articles/360040532413-Configure-and-Provision-SAML-SSO-with-Azure-Active-Directory).
 
 1. Приложение Figma ожидает проверочные утверждения SAML в определенном формате, который требует добавить настраиваемые сопоставления атрибутов в конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию.
 
-    ![image](common/default-attributes.png)
+    ![Изображение](common/default-attributes.png)
 
 1. В дополнение к описанному выше приложение Figma ожидает в ответе SAML несколько дополнительных атрибутов, которые показаны ниже. Эти атрибуты также заранее заполнены, но вы можете изменить их в соответствии со своими требованиями.
 
-    | ИМЯ | Исходный атрибут|
+    | Имя | Исходный атрибут|
     | ---------------| --------- |
     | `externalId` | `user.mailnickname` |
     | `displayName` | `user.displayname` |
@@ -130,7 +130,7 @@ ms.locfileid: "72373099"
 
 В этом разделе описано, как включить единый вход в Azure для пользователя B. Simon, предоставив этому пользователю доступ к Figma.
 
-1. На портале Azure выберите **Корпоративные приложения**, а затем —**Все приложения**.
+1. На портале Azure выберите **Корпоративные приложения**, а затем — **Все приложения**.
 1. Из списка приложений выберите **Figma**.
 1. На странице "Обзор" приложения найдите раздел **Управление** и выберите **Пользователи и группы**.
 
@@ -146,7 +146,7 @@ ms.locfileid: "72373099"
 
 ## <a name="configure-figma-sso"></a>Настройка единого входа в Figma
 
-Чтобы настроить единый вход на стороне Figma, вам потребуется выполнить инструкции из руководства Figma по [настройке процесс настройки единого входа Azure AD с помощью SAML](https://help.figma.com/article/243-configure-azure-active-directory-saml-sso).
+Чтобы настроить единый вход на стороне Figma, вам потребуется выполнить инструкции из руководства Figma по [настройке процесс настройки единого входа Azure AD с помощью SAML](https://help.figma.com/hc/en-us/articles/360040532413-Configure-and-Provision-SAML-SSO-with-Azure-Active-Directory).
 
 ### <a name="create-figma-test-user"></a>Создание тестового пользователя приложения Figma
 
@@ -160,9 +160,9 @@ ms.locfileid: "72373099"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

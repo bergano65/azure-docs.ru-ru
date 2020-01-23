@@ -9,16 +9,16 @@ ms.topic: reference
 author: xiaoharper
 ms.author: zhanxia
 ms.date: 10/22/2019
-ms.openlocfilehash: b4180fced60c4a9f2402253c7c3b3d3ff97fe1e1
-ms.sourcegitcommit: a9b1f7d5111cb07e3462973eb607ff1e512bc407
+ms.openlocfilehash: 62e2168c674693ded31bd94206e2e13c82c67b68
+ms.sourcegitcommit: 87781a4207c25c4831421c7309c03fce5fb5793f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76314612"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76546390"
 ---
 # <a name="two-class-averaged-perceptron-module"></a>Усредненный модуль перцептрона с двумя классами
 
-В этой статье описывается модуль в конструкторе Машинное обучение Azure.
+В этой статье описывается модуль в Машинное обучение Azure Designer (Предварительная версия).
 
 Этот модуль используется для создания модели машинного обучения на основе среднего алгоритма перцептрона.  
   

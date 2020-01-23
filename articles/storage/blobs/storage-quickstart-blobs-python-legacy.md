@@ -8,12 +8,12 @@ ms.service: storage
 ms.subservice: blobs
 ms.topic: quickstart
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 606c7d1fd012052a22afeef906bbe9df4c63a76b
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.openlocfilehash: 3e1adc9220dd9b49c49ff3fe5e798dfcc9d5c928
+ms.sourcegitcommit: 5bbe87cf121bf99184cc9840c7a07385f0d128ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73825295"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76122684"
 ---
 # <a name="quickstart-azure-blob-storage-client-library-v21-for-python"></a>Краткое руководство. Использование клиентской библиотеки хранилища BLOB-объектов Azure версии 2.1 для Python
 
@@ -58,7 +58,7 @@ git clone https://github.com/Azure-Samples/storage-blobs-python-quickstart.git
         account_name='accountname', account_key='accountkey')
     ```
 
-1. Сохраните и закройте файл.
+1. Сохраните файл и закройте его.
 
 ## <a name="run-the-sample"></a>Запуск примера
 
@@ -67,7 +67,7 @@ git clone https://github.com/Azure-Samples/storage-blobs-python-quickstart.git
 1. Установка зависимостей:
 
     ```console
-    pip install azure-storage-blob
+    pip install azure-storage-blob==2.1.0
     ```
 
 1. Перейдите к примеру приложения:
@@ -219,7 +219,7 @@ os.remove(full_path_to_file2)
 - Дополнительные сведения о клиентской библиотеке Python см. в разделе [Библиотеки службы хранилища Azure для Python](https://docs.microsoft.com/python/api/overview/azure/storage).
 - Изучите [примеры для хранилища BLOB-объектов](https://azure.microsoft.com/resources/samples/?sort=0&service=storage&platform=python&term=blob), написанные с использованием клиентской библиотеки Python.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
  
 Из этого краткого руководства вы узнали, как передавать файлы между локальным диском и хранилищем BLOB-объектов Azure с помощью Python. 
 

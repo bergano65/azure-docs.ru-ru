@@ -1,27 +1,19 @@
 ---
 title: Примеры Azure PowerShell. Присоединение и использование дисков данных
 description: При помощи этого скрипта создается масштабируемый набор виртуальных машин Azure, а также присоединяются и подготавливаются диски данных с помощью PowerShell.
-services: virtual-machine-scale-sets
-documentationcenter: ''
 author: cynthn
-manager: jeconnoc
-editor: ''
 tags: azure-resource-manager
-ms.assetid: ''
 ms.service: virtual-machine-scale-sets
-ms.devlang: na
 ms.topic: sample
-ms.tgt_pltfrm: na
-ms.workload: na
 ms.date: 03/27/2018
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: f7098808837b9fd0206323fca03da4c98096d3c5
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: ea18b6d2271d56d9a2287b92678ef8bfcab891a5
+ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75350958"
+ms.lasthandoff: 01/19/2020
+ms.locfileid: "76279133"
 ---
 # <a name="attach-and-use-data-disks-with-a-virtual-machine-scale-set-with-powershell"></a>Присоединение и использование дисков данных с масштабируемым набором виртуальных машин с помощью PowerShell
 При помощи этого скрипта создается масштабируемый набор виртуальных машин, а также присоединяются и подготавливаются диски данных.

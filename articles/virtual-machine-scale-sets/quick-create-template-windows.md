@@ -1,33 +1,25 @@
 ---
 title: Краткое руководство. Создание масштабируемого набора виртуальных машин Windows с помощью шаблона Azure
 description: Узнайте, как быстро создать масштабируемый набор виртуальных машин Windows с помощью шаблона Azure Resource Manager, который позволяет развернуть пример приложения и настроить правила автоматического масштабирования.
-services: virtual-machine-scale-sets
-documentationcenter: ''
 author: cynthn
-manager: jeconnoc
-editor: ''
 tags: azure-resource-manager
-ms.assetid: ''
 ms.service: virtual-machine-scale-sets
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: quickstart
 ms.custom: mvc
 ms.date: 03/27/2018
 ms.author: cynthn
-ms.openlocfilehash: f3dd2fd092e49a0e526856f1e55211ec1837cfa4
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 4430a73f7b46a31847322e65c0aa3c95ebd385ca
+ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75351098"
+ms.lasthandoff: 01/19/2020
+ms.locfileid: "76270170"
 ---
 # <a name="quickstart-create-a-windows-virtual-machine-scale-set-with-an-azure-template"></a>Краткое руководство. Создание масштабируемого набора виртуальных машин Windows с помощью шаблона Azure
 
 Масштабируемый набор виртуальных машин обеспечивает развертывание и администрирование набора идентичных автомасштабируемых виртуальных машин. Вы можете вручную изменить число виртуальных машин в масштабируемом наборе или определить правила для автоматического масштабирования в зависимости от использования ЦП, объема памяти или сетевого трафика. После этого Azure Load Balancer будет распределять трафик между экземплярами виртуальных машин в масштабируемом наборе. С помощью этого краткого руководства вы создадите масштабируемый набор виртуальных машин и развернете пример приложения с помощью шаблона Azure Resource Manager.
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 

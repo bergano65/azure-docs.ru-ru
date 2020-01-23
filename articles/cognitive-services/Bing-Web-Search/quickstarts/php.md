@@ -11,12 +11,12 @@ ms.topic: quickstart
 ms.date: 12/09/2019
 ms.author: aahi
 ms.custom: seodec2018
-ms.openlocfilehash: cf3cf1f69f7b45dd90070f4074e85fa21359837d
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.openlocfilehash: 58192845e0119ce96ea2577007d211f075d3e419
+ms.sourcegitcommit: d29e7d0235dc9650ac2b6f2ff78a3625c491bbbf
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74961490"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76169730"
 ---
 # <a name="quickstart-use-php-to-call-the-bing-web-search-api"></a>Краткое руководство. Вызов API Bing для поиска в Интернете с помощью PHP  
 
@@ -43,7 +43,7 @@ ms.locfileid: "74961490"
 
 Создайте проект PHP в используемой вами интегрированной среде разработки или редакторе. Не забудьте добавить открывающие и закрывающие теги `<?php` и `?>`.
 
-Прежде чем продолжить, необходимо задать несколько переменных. В качестве `$endpoint` может быть глобальная конечная точка, приведенная ниже, или конечная точка [пользовательского поддомена](../../../cognitive-services/cognitive-services-custom-subdomains.md), отображаемая на портале Azure для вашего ресурса. Убедитесь, что значение `$endpoint` указано верно, и замените `$accesskey` действительным ключом подписки из своей учетной записи Azure. Вы можете настроить поисковый запрос, заменив значение `$term`.
+Прежде чем продолжить, необходимо задать несколько переменных. В качестве `$endpoint` может быть глобальная конечная точка, приведенная ниже, или конечная точка [пользовательского поддомена](../../../cognitive-services/cognitive-services-custom-subdomains.md), отображаемая на портале Azure для вашего ресурса. Убедитесь, что значение `$endpoint` указано верно, и замените `$accesskey` действительным ключом подписки из своей учетной записи Azure. Вы можете настроить поисковый запрос, заменив значение параметра `$term`.
 
 ```php
 $accessKey = 'enter key here';
@@ -177,9 +177,9 @@ if (strlen($accessKey) == 32) {
         "snippet": "Knock down barriers between you and your ideas. Enable natural and contextual interaction with tools that augment users' experiences via the power of machine-based AI. Plug them in and bring your ideas to life.",
         "deepLinks": [
           {
-            "name": "Face API",
+            "name": "Face",
             "url": "https://azure.microsoft.com/services/cognitive-services/face/",
-            "snippet": "Add facial recognition to your applications to detect, identify, and verify faces using a Face API from Microsoft Azure. ... Cognitive Services; Face API;"
+            "snippet": "Add facial recognition to your applications to detect, identify, and verify faces using the Face service from Microsoft Azure. ... Cognitive Services; Face service;"
           },
           {
             "name": "Text Analytics",
@@ -281,7 +281,7 @@ if (strlen($accessKey) == 32) {
 }
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Руководство по одностраничным приложениям для API Bing для Поиска в Интернете](../tutorial-bing-web-search-single-page-app.md)

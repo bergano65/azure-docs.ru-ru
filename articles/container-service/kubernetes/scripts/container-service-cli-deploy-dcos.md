@@ -1,27 +1,21 @@
 ---
-title: Пример скрипта Azure CLI. Создание кластера DC/OS ACS | Документы Майкрософт
+title: Пример скрипта Azure CLI. Создание кластера DC/OS ACS
 description: Пример скрипта Azure CLI. Создание кластера DC/OS ACS
-services: container-service
-documentationcenter: ''
 author: iainfoulds
-manager: jeconnoc
-editor: ''
 tags: acs, azure-container-service
 keywords: Docker, контейнеры, микрослужбы, Kubernetes, DC/OS, Azure
 ms.assetid: ''
 ms.service: container-service
 ms.devlang: azurecli
 ms.topic: sample
-ms.tgt_pltfrm: na
-ms.workload: na
 ms.date: 05/30/2017
 ms.author: iainfou
-ms.openlocfilehash: 2d9f58527908a17dd445b6afecbcd7e93f70de2c
-ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
+ms.openlocfilehash: b01d8d58da5a25ca9aa3d1ac16f10495fde8fc2b
+ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "53001630"
+ms.lasthandoff: 01/19/2020
+ms.locfileid: "76270543"
 ---
 # <a name="deprecated-create-an-azure-container-service-dcos-cluster"></a>Создание кластера DC/OS службы контейнеров Azure (не рекомендуется)
 
@@ -62,7 +56,7 @@ az group delete --name myResourceGroup
 | [az group create](https://docs.microsoft.com/cli/azure/group#az-group-create) | Создает группу ресурсов, в которой хранятся все ресурсы. |
 | [az acs create](https://docs.microsoft.com/cli/azure/acs#az-acs-create) | Создает кластер ACS. |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об Azure CLI см. в [документации по Azure CLI](https://docs.microsoft.com/cli/azure).
 

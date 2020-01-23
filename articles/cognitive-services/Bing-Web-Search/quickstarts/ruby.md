@@ -11,12 +11,12 @@ ms.topic: quickstart
 ms.date: 12/09/2019
 ms.author: aahi
 ms.custom: seodec2018
-ms.openlocfilehash: 4a902e869ed9fd2ae9274f0ad8eee11e43b8edc6
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.openlocfilehash: 5f3e05752967be8872c0e6fd9008bfae05d950fa
+ms.sourcegitcommit: d29e7d0235dc9650ac2b6f2ff78a3625c491bbbf
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74974331"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76169538"
 ---
 # <a name="quickstart-use-ruby-to-call-the-bing-web-search-api"></a>Краткое руководство. Вызов API Bing для поиска в Интернете с использованием Ruby  
 
@@ -157,9 +157,9 @@ puts JSON::pretty_generate(JSON(response.body))
         "snippet": "Knock down barriers between you and your ideas. Enable natural and contextual interaction with tools that augment users' experiences via the power of machine-based AI. Plug them in and bring your ideas to life.",
         "deepLinks": [
           {
-            "name": "Face API",
+            "name": "Face",
             "url": "https://azure.microsoft.com/services/cognitive-services/face/",
-            "snippet": "Add facial recognition to your applications to detect, identify, and verify faces using a Face API from Microsoft Azure. ... Cognitive Services; Face API;"
+            "snippet": "Add facial recognition to your applications to detect, identify, and verify faces using the Face service from Microsoft Azure. ... Cognitive Services; Face service;"
           },
           {
             "name": "Text Analytics",
@@ -261,7 +261,7 @@ puts JSON::pretty_generate(JSON(response.body))
 }
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Руководство по одностраничным приложениям для API Bing для Поиска в Интернете](../tutorial-bing-web-search-single-page-app.md)

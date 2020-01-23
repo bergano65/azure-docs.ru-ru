@@ -1,19 +1,19 @@
 ---
 title: Учебник. Как привязать экземпляр Базы данных Azure для MySQL к приложению Azure Spring Cloud
 description: В этом учебнике показано, как привязать экземпляр Базы данных Azure для MySQL к приложению Azure Spring Cloud.
-author: jpconnock
+author: bmitchell287
 ms.service: spring-cloud
 ms.topic: tutorial
 ms.date: 11/04/2019
-ms.author: jeconnoc
-ms.openlocfilehash: a9911798e42db55d5aaae90c933cfb64945b244c
-ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
+ms.author: brendm
+ms.openlocfilehash: 657aa70d77fd1af9fd2121a3e98ea3aca7773642
+ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74708808"
+ms.lasthandoff: 01/19/2020
+ms.locfileid: "76277540"
 ---
-# <a name="tutorial-bind-an-azure-database-for-mysql-instance-to-your-azure-spring-cloud-application"></a>Руководство по привязке экземпляра Базы данных Azure для MySQL к приложению Azure Spring Cloud 
+# <a name="tutorial-bind-an-azure-database-for-mysql-instance-to-your-azure-spring-cloud-application"></a>Руководство. привязке экземпляра Базы данных Azure для MySQL к приложению Azure Spring Cloud 
 
 С помощью Azure Spring Cloud можно автоматически привязать выбранные службы Azure к приложениям, не настраивая приложение Spring Boot вручную. Изучив этот учебник, вы узнаете, как привязать свое приложение к экземпляру Базы данных Azure для MySQL.
 
@@ -21,7 +21,7 @@ ms.locfileid: "74708808"
 
 * Развернутый облачный экземпляр Azure Spring Cloud
 * Учетная запись базы данных Azure для MySQL
-* Инфраструктура CLI Azure
+* Azure CLI
 
 Если у вас нет развернутого экземпляра Azure Spring Cloud, выполните инструкции, приведенные в статье [Краткое руководство. Запуск приложения Azure Spring Cloud с помощью портала Azure](spring-cloud-quickstart-launch-app-portal.md), чтобы развернуть первое приложение Azure Spring Cloud.
 
@@ -59,7 +59,7 @@ ms.locfileid: "74708808"
     spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL5InnoDBDialect
     ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом учебнике описывается, как привязать приложение Azure Spring Cloud к экземпляру Базы данных Azure для MySQL.  Дополнительные сведения об управлении службой Azure Spring Cloud см. в приведенной ниже статье.
 
