@@ -11,12 +11,12 @@ author: bonova
 ms.author: bonova
 ms.reviewer: sstein, carlrab, vanto
 ms.date: 01/21/2020
-ms.openlocfilehash: b8cf7992617b7263b86fd98e5def8be1d43ca68c
-ms.sourcegitcommit: 7221918fbe5385ceccf39dff9dd5a3817a0bd807
+ms.openlocfilehash: fb9b665f5631e6992966679b1dc0864539fde543
+ms.sourcegitcommit: 38b11501526a7997cfe1c7980d57e772b1f3169b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/21/2020
-ms.locfileid: "76293374"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76514561"
 ---
 # <a name="what-is-azure-sql-database-managed-instance"></a>Что такое управляемый экземпляр базы данных SQL Azure?
 
@@ -72,7 +72,7 @@ ms.locfileid: "76293374"
 
 ## <a name="vcore-based-purchasing-model"></a>Модель приобретения на основе виртуальных ядер
 
-[Модель приобретения на основе виртуальных ядер](sql-database-service-tiers-vcore.md) в управляемом экземпляре обеспечивает больше гибкости, контроля и прозрачности. Это простой способ перенести свои требования к локальной рабочей нагрузке в облако. Эта модель позволяет изменять ресурсы ЦП, памяти и хранилища с учетом потребностей рабочих нагрузок. Модель на основе виртуальных ядер также обеспечивает экономию до 30 % при использовании программы [Преимущество гибридного использования Azure для SQL Server](https://azure.microsoft.com/pricing/hybrid-benefit/).
+[Модель приобретения на основе виртуальных ядер](sql-database-service-tiers-vcore.md) в управляемом экземпляре обеспечивает больше гибкости, контроля и прозрачности. Это простой способ перенести свои требования к локальной рабочей нагрузке в облако. Эта модель позволяет изменять ресурсы ЦП, памяти и хранилища с учетом потребностей рабочих нагрузок. Модель Виртуальное ядро также может сэкономить до 55% на [Преимущество гибридного использования Azure SQL Server](https://azure.microsoft.com/pricing/hybrid-benefit/).
 
 В модели на основе виртуальных ядер можно выбрать поколение оборудования.
 

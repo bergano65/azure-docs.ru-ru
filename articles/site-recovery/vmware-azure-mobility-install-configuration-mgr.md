@@ -5,12 +5,12 @@ author: Rajeswari-Mamilla
 ms.topic: how-to
 ms.date: 12/22/2019
 ms.author: ramamill
-ms.openlocfilehash: 318b73011901e9ab07643bc2ecec28e5016e8702
-ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
+ms.openlocfilehash: 43e6a39a52eb81573b4a4ba8ad63d48d0e51dedd
+ms.sourcegitcommit: 38b11501526a7997cfe1c7980d57e772b1f3169b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/02/2020
-ms.locfileid: "75613913"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76514831"
 ---
 # <a name="automate-mobility-service-installation"></a>Автоматизация установки службы Mobility Service
 
@@ -19,8 +19,8 @@ ms.locfileid: "75613913"
 При развертывании Site Recovery для аварийного восстановления локальных виртуальных машин VMware и физических серверов в Azure необходимо установить агент службы Mobility Service на каждом компьютере, который необходимо реплицировать. Служба Mobility Service захватывает операции записи данных на компьютере и перенаправляет их на сервер обработки Site Recovery для репликации. Вы можете развернуть службу Mobility Service несколькими способами:
 
 - **Принудительная установка**: Позвольте Site Recovery установить агент службы Mobility Service при включении репликации для компьютера в портал Azure.
-- **Установка вручную**. вручную установите службу Mobility Service на каждом компьютере. [Дополнительные сведения](vmware-physical-mobility-service-overview.md) о принудительной установке.
-- **Автоматическое развертывание**. Автоматизируйте установку с помощью средств развертывания программного обеспечения, таких как System Center Configuration Manager, или сторонних средств, таких как Intigua жетпатч.
+- **Установка вручную**. вручную установите службу Mobility Service на каждом компьютере. [Дополнительные сведения](/vmware-physical-mobility-service-overview.md) о принудительной установке.
+- **Автоматическое развертывание**. Автоматизируйте установку с помощью средств развертывания программного обеспечения, таких как Microsoft Endpoint Configuration Manager или сторонних средств, таких как Intigua жетпатч.
 
 Автоматическая установка и обновление предоставляют решение, если:
 
@@ -356,7 +356,7 @@ cd /tmp
 
     **Параметр** | **Значение Windows** | **Значение Linux**
     --- | --- | ---
-    **Название** | Установка Microsoft Azure Mobility Service (Windows) | Установите Microsoft Azure Mobility Service (Linux).
+    **имя**; | Установка Microsoft Azure Mobility Service (Windows) | Установите Microsoft Azure Mobility Service (Linux).
     **Командная строка** | install.bat | ./install_linux.sh
     **Программа может выполняться** | Независимо от входа пользователя в систему | Независимо от входа пользователя в систему
     **Другие параметры** | Использовать параметр по умолчанию | Использовать параметр по умолчанию
@@ -376,7 +376,7 @@ cd /tmp
 
 1. В консоли Configuration Manager щелкните правой кнопкой мыши пакет > **распространения содержимого**.
    ![Снимок экрана с консолью Configuration Manager](./media/vmware-azure-mobility-install-configuration-mgr/sccm_distribute.png)
-2. Выберите точки распространения, в которых должны копироваться пакеты. [Узнайте больше](https://docs.microsoft.com/sccm/core/servers/deploy/configure/install-and-configure-distribution-points).
+2. Выберите точки распространения, в которых должны копироваться пакеты. [Подробнее](https://docs.microsoft.com/sccm/core/servers/deploy/configure/install-and-configure-distribution-points).
 3. Завершите работу мастера. Теперь пакет будет реплицироваться на выбранные точки распространения.
 4. После завершения распространения пакета щелкните правой кнопкой мыши пакет, > **развернуть**.
    ![Снимок экрана с консолью Configuration Manager](./media/vmware-azure-mobility-install-configuration-mgr/sccm_deploy.png)
@@ -386,7 +386,7 @@ cd /tmp
 
    ![Снимок экрана с мастером развертывания программного обеспечения](./media/vmware-azure-mobility-install-configuration-mgr/sccm-deploy-select-purpose.png)
 
-8. В поле **укажите расписание для этого развертывания**настройте расписание. [Узнайте больше](https://docs.microsoft.com/sccm/apps/deploy-use/deploy-applications#bkmk_deploy-sched).
+8. В поле **укажите расписание для этого развертывания**настройте расписание. [Подробнее](https://docs.microsoft.com/sccm/apps/deploy-use/deploy-applications#bkmk_deploy-sched).
 
     - Служба Mobility Service устанавливается в соответствии с заданным вами расписанием. 
     - Чтобы избежать лишних перезагрузок, запланируйте установку пакета на период ежемесячного обслуживания или обновления программного обеспечения.

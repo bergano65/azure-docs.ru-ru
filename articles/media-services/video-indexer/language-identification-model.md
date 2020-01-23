@@ -1,5 +1,5 @@
 ---
-title: Автоматическое распознавание речевого языка с помощью индексатора видео — Azure
+title: Использование индексатора видео для автоматического распознавания речевых языков в Azure
 titleSuffix: Azure Media Services
 description: В этой статье описывается, как модель идентификации языка индексатора видео используется для автоматической идентификации речевого языка в видео.
 services: media-services
@@ -10,12 +10,12 @@ ms.subservice: video-indexer
 ms.topic: article
 ms.date: 09/12/2019
 ms.author: ellbe
-ms.openlocfilehash: ce3e488a6387f9a823d7c1b514b52af24944776b
-ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
+ms.openlocfilehash: 7a2e03b8dacbf6c3ff20e02c804804b671e86d97
+ms.sourcegitcommit: 38b11501526a7997cfe1c7980d57e772b1f3169b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73838995"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76513887"
 ---
 # <a name="automatically-identify-the-spoken-language-with-language-identification-model"></a>Автоматическое определение языка для речи с использованием модели идентификации языка
 
@@ -47,7 +47,7 @@ ms.locfileid: "73838995"
       },
 ```
 
-## <a name="guidelines-and-limitations"></a>Рекомендации и ограничения
+## <a name="guidelines-and-limitations"></a>Правила и ограничения
 
 * Поддерживаются следующие языки: Английский, испанский, французский, немецкий, итальянский, китайский (упрощенное письмо), японский, русский и португальский (Бразилия).
 * Если звук содержит языки, отличные от приведенного выше, результат будет непредвиденным.

@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 12/8/2019
 ms.author: jeffpatt
 ms.subservice: files
-ms.openlocfilehash: 1b24258efdd75977b5571506b3eabf952a4ae0a4
-ms.sourcegitcommit: dbcc4569fde1bebb9df0a3ab6d4d3ff7f806d486
+ms.openlocfilehash: 9318944004ae98eeb2a3300cabca07dfbe4e4fc7
+ms.sourcegitcommit: 38b11501526a7997cfe1c7980d57e772b1f3169b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76027783"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76514635"
 ---
 # <a name="troubleshoot-azure-file-sync"></a>Устранение неполадок службы "Синхронизация файлов Azure"
 Используйте службу "Синхронизация файлов Azure", чтобы централизованно хранить файловые ресурсы организации в службе файлов Azure, обеспечивая гибкость, производительность и совместимость локального файлового сервера. Это достигается путем преобразования Windows Server в быстрый кэш общего файлового ресурса Azure. Для локального доступа к данным вы можете использовать любой протокол, доступный в Windows Server, в том числе SMB, NFS и FTPS. Кроме того, вы можете создать любое количество кэшей в любом регионе.
@@ -41,8 +41,15 @@ StorageSyncAgent.msi /l*v AFSInstaller.log
 
 Чтобы устранить проблему, передайте роль PDC другому контроллеру домена, работающему под управлением Windows Server 2012 R2 или более поздней версии, а затем установите агент синхронизации.
 
-<a id="server-registration-prerequisites"></a>**При регистрации сервера отображается следующее сообщение: "предварительные требования отсутствуют".**
+<a id="parameter-is-incorrect"></a>**Сбой доступа к тому в Windows Server 2012 R2 с ошибкой: неверный параметр**  
+После создания конечной точки сервера в Windows Server 2012 R2 возникает следующая ошибка при доступе к тому:
 
+буква_диска: \ недоступен.  
+Неправильный параметр".
+
+Чтобы устранить эту проблему, установите последние обновления для Windows Server 2012 R2 и перезапустите сервер.
+
+<a id="server-registration-prerequisites"></a>**При регистрации сервера отображается следующее сообщение: "предварительные требования отсутствуют".**  
 Это сообщение появляется, если модуль PowerShell az или AzureRM не установлен в PowerShell 5,1. 
 
 > [!Note]  

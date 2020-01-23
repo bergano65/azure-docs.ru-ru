@@ -1,6 +1,6 @@
 ---
 title: Обзор API-интерфейсов Node для ретранслятора Azure | Документация Майкрософт
-description: Общие сведения об API Node для ретранслятора
+description: В этой статье представлен обзор API Node. js для службы Azure Relay. В нем также показано, как использовать пакет узла HYCO-WS.
 services: service-bus-relay
 documentationcenter: na
 author: spelluru
@@ -12,14 +12,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 01/23/2018
+ms.date: 01/21/2020
 ms.author: spelluru
-ms.openlocfilehash: 794e797e504d6064c13ffe0a4ed131e668d86e97
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 2877284c419da4999e23490fc986e5da44e5d92e
+ms.sourcegitcommit: 38b11501526a7997cfe1c7980d57e772b1f3169b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64699391"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76514516"
 ---
 # <a name="relay-hybrid-connections-node-api-overview"></a>Общие сведения об API Node для гибридных подключений ретранслятора
 
@@ -131,7 +131,7 @@ var wss = new server(
 - `server` (обязательно) — полный URI гибридного подключения для прослушивания, который обычно создается с помощью вспомогательного метода WebSocket.createRelayListenUri().
 - `token` (обязательно) — этот аргумент содержит строку ранее выданного токена или функцию обратного вызова, которую можно вызвать для получения строки токена. Предпочтителен параметр обратного вызова, так как он позволяет возобновлять действие токена.
 
-#### <a name="events"></a>События
+#### <a name="events"></a>Мероприятия
 
 Экземпляры `RelayedServer` генерируют три события, которые позволяют обрабатывать входящие запросы, устанавливать подключения и обнаруживать ошибочные условия. Чтобы обрабатывать сообщения, необходимо подписаться на событие `connect`. 
 
@@ -143,7 +143,7 @@ function(headers)
 
 Событие `headers` возникает непосредственно перед тем, как принимается входящее подключение, позволяя изменять заголовки для отправки клиенту. 
 
-##### <a name="connection"></a>connection;
+##### <a name="connection"></a>соединение
 
 ```JavaScript
 function(socket)
@@ -152,7 +152,7 @@ function(socket)
 Генерируется, когда принимается новое подключение WebSocket. Объект принадлежит к типу `ws.WebSocket`, как и базовый пакет.
 
 
-##### <a name="error"></a>error
+##### <a name="error"></a>ошибка
 
 ```JavaScript
 function(error)

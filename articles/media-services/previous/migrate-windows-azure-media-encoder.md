@@ -13,16 +13,16 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/17/2019
 ms.author: juliako
-ms.openlocfilehash: 068b8b0a6e248caa70a8f88ea55d07c30a9437f0
-ms.sourcegitcommit: d614a9fc1cc044ff8ba898297aad638858504efa
+ms.openlocfilehash: e75e3f3eecf6c34050aeaa7fe387fffb0de58a74
+ms.sourcegitcommit: 38b11501526a7997cfe1c7980d57e772b1f3169b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74997172"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76513207"
 ---
 # <a name="migrate-from-windows-azure-media-encoder-to-media-encoder-standard"></a>Миграция из кодировщика мультимедиа Windows Azure в Media Encoder Standard
 
-В этой статье рассматриваются действия по переходу с устаревшего обработчика мультимедиа Windows Azure Media Encoder (ВАМЕ), который будет снят с 31 марта 2020 на процессор Media Encoder Standard Media.
+В этой статье рассматриваются действия по переходу с устаревшего обработчика мультимедиа Windows Azure Media Encoder (ВАМЕ) (который будет снят с учета) на процессор Media Encoder Standard Media. Сведения о датах выбытия см. в разделе об [устаревших компонентах](legacy-components.md) .
 
 При кодировании файлов с помощью ВАМЕ клиенты обычно используют именованную строку предустановки, например `H264 Adaptive Bitrate MP4 Set 1080p`. Чтобы выполнить миграцию, необходимо обновить код для использования **Media Encoder Standardного** обработчика мультимедиа вместо Ваме и одной из эквивалентных [системных предустановок](media-services-mes-presets-overview.md) , таких как `H264 Multiple Bitrate 1080p`. 
 

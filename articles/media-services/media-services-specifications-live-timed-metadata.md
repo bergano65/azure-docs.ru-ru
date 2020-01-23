@@ -1,5 +1,5 @@
 ---
-title: Службы мультимедиа Azure. Сигнализация метаданных времени в потоковой трансляции | Документация Майкрософт
+title: Службы мультимедиа Azure — сигнализация метаданных времени в потоковой трансляции
 description: В этой спецификации описаны методы для сигнализации метаданных времени при приеме и потоковой передаче в службы мультимедиа Azure. Это включает поддержку универсальных сигналов с метаданными времени (ID3), а также SCTE-35 для сигнализации о вставке рекламы и присоединения к условию.
 services: media-services
 documentationcenter: ''
@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/22/2019
 ms.author: johndeu
-ms.openlocfilehash: fd8533ff310e307604e5ce25a4285cc90f3ea4ab
-ms.sourcegitcommit: 014e916305e0225512f040543366711e466a9495
+ms.openlocfilehash: e686328464ac88abf28a0a8985d338838abca3d0
+ms.sourcegitcommit: 38b11501526a7997cfe1c7980d57e772b1f3169b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75933985"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76514244"
 ---
 # <a name="signaling-timed-metadata-in-live-streaming"></a>Сигнализация метаданных времени в потоковой трансляции 
 

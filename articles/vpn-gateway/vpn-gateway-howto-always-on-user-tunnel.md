@@ -8,12 +8,12 @@ ms.service: vpn-gateway
 ms.topic: conceptual
 ms.date: 10/02/2019
 ms.author: cherylmc
-ms.openlocfilehash: bff2ed48a78bfbae984dea5e5474971817023bc6
-ms.sourcegitcommit: c32050b936e0ac9db136b05d4d696e92fefdf068
+ms.openlocfilehash: a22ba5d8b33dd41fcc76c65fcddaf60c1c0ed5e3
+ms.sourcegitcommit: 38b11501526a7997cfe1c7980d57e772b1f3169b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75729327"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76514754"
 ---
 # <a name="configure-an-always-on-vpn-user-tunnel"></a>Настройка туннеля Always On VPN для пользователя
 
@@ -39,7 +39,7 @@ Always On VPN-подключений включают один из двух т�
 
 1. Установите клиентские сертификаты на клиенте Windows 10, как показано в статье [клиент VPN типа "точка — сеть](point-to-site-how-to-vpn-client-install-azure-cert.md) ". Сертификат должен находиться в хранилище текущего пользователя.
 
-1. Настройте Always On VPN-клиента с помощью PowerShell, System Center Configuration Manager или Intune, следуя инструкциям в разделе [Настройка клиента Windows 10 Always on VPN-подключения](https://docs.microsoft.com/windows-server/remote/remote-access/vpn/always-on-vpn/deploy/vpn-deploy-client-vpn-connections).
+1. Настройте Always On VPN-клиента с помощью PowerShell, Configuration Manager или Intune, следуя инструкциям в разделе [Настройка клиента Windows 10 Always on VPN-подключения](https://docs.microsoft.com/windows-server/remote/remote-access/vpn/always-on-vpn/deploy/vpn-deploy-client-vpn-connections).
 
 ### <a name="example-configuration-for-the-user-tunnel"></a>Пример конфигурации для пользовательского туннеля
 

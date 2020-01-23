@@ -1,6 +1,6 @@
 ---
 title: Обзор интерфейсов API ретранслятора Azure для платформы .NET Standard | Документация Майкрософт
-description: Обзор интерфейсов API ретранслятора Azure для .NET Standard.
+description: В этой статье перечислены некоторые основные сведения о Azure Relay гибридные подключения .NET Standard API.
 services: service-bus-relay
 documentationcenter: na
 author: spelluru
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 01/23/2018
 ms.author: spelluru
-ms.openlocfilehash: 78ad3ab49db162af060b4273deea717cd3472668
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 18eaf2d2daae817107be6cdb0da9359bb5f9b4e9
+ms.sourcegitcommit: 38b11501526a7997cfe1c7980d57e772b1f3169b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60749025"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76514541"
 ---
 # <a name="azure-relay-hybrid-connections-net-standard-api-overview"></a>Обзор API-интерфейсов гибридных подключений ретранслятора Azure для платформы .NET Standard
 
@@ -27,7 +27,7 @@ ms.locfileid: "60749025"
   
 ## <a name="relay-connection-string-builder-class"></a>Класс построителя строк подключения ретранслятора
 
-Класс [RelayConnectionStringBuilder][RelayConnectionStringBuilder] форматирует строки подключения, которые относятся к гибридным подключениям ретранслятора. Его можно использовать для проверки формата строки подключения, а также для создания строки подключения с нуля. В качестве примера ниже приведен код.
+Класс [релайконнектионстрингбуилдер][RelayConnectionStringBuilder] Форматирует строки соединения, относящиеся к ретрансляции гибридные подключения. Его можно использовать для проверки формата строки подключения, а также для создания строки подключения с нуля. В качестве примера ниже приведен код.
 
 ```csharp
 var endpoint = "[Relay namespace]";
@@ -63,13 +63,13 @@ catch (ArgumentException ae)
 
 ## <a name="hybrid-connection-stream"></a>Поток гибридного подключения
 
-Класс [HybridConnectionStream][HCStream] является основным объектом, с помощью которого выполняется отправка и получение данных через конечную точку ретранслятора Azure независимо от того, что используется —[HybridConnectionClient][HCClient] или [HybridConnectionListener][HCListener].
+Класс [hybridconnectionstream можно использовать][HCStream] является основным объектом, используемым для отправки и получения данных из конечной точки Azure Relay, независимо от того, работаете ли вы с [HybridConnectionClient][HCClient]или [HybridConnectionListener][HCListener].
 
 ### <a name="getting-a-hybrid-connection-stream"></a>Получение потока гибридного подключения
 
 #### <a name="listener"></a>Прослушиватель
 
-С помощью объекта [HybridConnectionListener][HCListener] можно получить объект `HybridConnectionStream`:
+Используя объект [HybridConnectionListener][HCListener] , можно получить объект `HybridConnectionStream` следующим образом:
 
 ```csharp
 // Use the RelayConnectionStringBuilder to get a valid connection string
@@ -80,9 +80,9 @@ await listener.OpenAsync();
 var hybridConnectionStream = await listener.AcceptConnectionAsync();
 ```
 
-#### <a name="client"></a>Клиент
+#### <a name="client"></a>клиент
 
-С помощью объекта [HybridConnectionClient][HCClient] можно получить объект `HybridConnectionStream`:
+Используя объект [HybridConnectionClient][HCClient] , можно получить объект `HybridConnectionStream` следующим образом:
 
 ```csharp
 // Use the RelayConnectionStringBuilder to get a valid connection string
@@ -93,7 +93,7 @@ var hybridConnectionStream = await client.CreateConnectionAsync();
 
 ### <a name="receiving-data"></a>Получение данных
 
-Класс [HybridConnectionStream][HCStream] можно использовать для двустороннего обмена данными. В большинстве случаев вы будете непрерывно получать данные из потока. Если выполняется чтение текста из потока, вам также может потребоваться использовать объект [StreamReader](https://msdn.microsoft.com/library/system.io.streamreader(v=vs.110).aspx) для упрощения анализа данных. Например, можно считывать данные как текст, а не как `byte[]`.
+Класс [hybridconnectionstream можно использовать][HCStream] обеспечивает двустороннюю связь. В большинстве случаев вы будете непрерывно получать данные из потока. Если выполняется чтение текста из потока, вам также может потребоваться использовать объект [StreamReader](https://msdn.microsoft.com/library/system.io.streamreader(v=vs.110).aspx) для упрощения анализа данных. Например, можно считывать данные как текст, а не как `byte[]`.
 
 Следующий код считывает отдельные строки текста из потока, пока не будет запрошена отмена.
 
