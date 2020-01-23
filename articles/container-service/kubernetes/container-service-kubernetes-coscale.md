@@ -1,26 +1,24 @@
 ---
 title: Мониторинг кластера Kubernetes в Azure с помощью CoScale (не рекомендуется)
 description: Мониторинг кластера Kubernetes в Службе контейнеров Azure с помощью CoScale
-services: container-service
 author: fryckbos
-manager: jeconnoc
 ms.service: container-service
-ms.topic: article
+ms.topic: conceptual
 ms.date: 05/22/2017
 ms.author: saudas
 ms.custom: mvc
-ms.openlocfilehash: 895346447e33926dcaa5ca09302f35c9d6636ed9
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: f1d0ca1ffc2e7a3d645ac5acbaafdf45f85550be
+ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60713083"
+ms.lasthandoff: 01/19/2020
+ms.locfileid: "76271100"
 ---
 # <a name="deprecated-monitor-an-azure-container-service-kubernetes-cluster-with-coscale"></a>Мониторинг кластера Kubernetes в Службе контейнеров Azure с помощью CoScale (не рекомендуется)
 
 [!INCLUDE [ACS deprecation](../../../includes/container-service-kubernetes-deprecation.md)]
 
-В этой статье показано, как развернуть агент [CoScale](https://web.archive.org/web/20180317071550/ https://www.coscale.com/) для отслеживания всех узлов и контейнеров кластера Kubernetes в Службе контейнеров Azure. Для работы с этой конфигурацией вам понадобится учетная запись с CoScale. 
+В этой статье показано, как развернуть агент [CoScale](https://web.archive.org/web/20180317071550/https://www.coscale.com/) для отслеживания всех узлов и контейнеров кластера Kubernetes в Службе контейнеров Azure. Для работы с этой конфигурацией вам понадобится учетная запись с CoScale. 
 
 
 ## <a name="about-coscale"></a>Сведения о CoScale 
@@ -34,7 +32,7 @@ CoScale представляет собой платформу для монит
 
 ## <a name="prerequisites"></a>Технические условия
 
-Сначала потребуется [создать учетную запись CoScale](https://web.archive.org/web/20170507123133/ https://www.coscale.com/free-trial).
+Сначала потребуется [создать учетную запись CoScale](https://web.archive.org/web/20170507123133/https://www.coscale.com/free-trial).
 
 В этом пошаговом руководстве предполагается, что вы [создали кластер Kubernetes с помощью службы контейнеров Azure](container-service-kubernetes-walkthrough.md).
 
@@ -81,5 +79,5 @@ Kubernetes использует наборы [DaemonSets](https://kubernetes.io/
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о решениях CoScale для мониторинга см. в [документации по CoScale](https://web.archive.org/web/20180415164304/ http://docs.coscale.com:80/) и в [блоге](https://web.archive.org/web/20170501021344/ http://www.coscale.com:80/blog). 
+Дополнительные сведения о решениях CoScale для мониторинга см. в [документации по CoScale](https://web.archive.org/web/20180415164304/http://docs.coscale.com:80/) и в [блоге](https://web.archive.org/web/20170501021344/http://www.coscale.com:80/blog). 
 
