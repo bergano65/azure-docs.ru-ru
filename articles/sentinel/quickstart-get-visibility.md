@@ -10,12 +10,12 @@ ms.topic: quickstart
 ms.custom: mvc
 ms.date: 09/23/2019
 ms.author: rkarlin
-ms.openlocfilehash: bf7ff356af343667133c0226b6b31df8fc9e32b8
-ms.sourcegitcommit: 5925df3bcc362c8463b76af3f57c254148ac63e3
+ms.openlocfilehash: 35ecb5c4e3987676d235fc6fd09f58c046301cda
+ms.sourcegitcommit: 87781a4207c25c4831421c7309c03fce5fb5793f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75563638"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76548039"
 ---
 # <a name="quickstart-get-started-with-azure-sentinel"></a>Краткое руководство. Начало работы с Azure Sentinel
 
@@ -91,7 +91,7 @@ ms.locfileid: "75563638"
 
 В следующем примере запрос позволяет сравнить тенденции трафика по неделям. Вы можете с легкостью переключаться между устройствами поставщика и источниками данных. на которых будете выполнять запрос. В этом примере используется SecurityEvent из Windows. Вы можете переключиться на AzureActivity или CommonSecurityLog на любом другом брандмауэре.
 
-     |where DeviceVendor = = "Palo Alto Networks":
+     |where DeviceVendor == "Palo Alto Networks":
       // week over week query
       SecurityEvent
       | where TimeGenerated > ago(14d)

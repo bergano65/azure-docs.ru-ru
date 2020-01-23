@@ -139,6 +139,8 @@
               href: configure-linked-sign-on.md
         - name: Назначение пользователей и управление доступом к приложениям
           items:
+            - name: Настройка согласия пользователя
+              href: configure-user-consent.md
             - name: Администрирование и оценка запросов на предоставление согласия
               href: manage-consent-requests.md
             - name: Предоставление согласия администратора на уровне клиента
