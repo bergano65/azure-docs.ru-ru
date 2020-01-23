@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 10/10/2019
 ms.author: damendo
-ms.openlocfilehash: 570b8057fc09e3f054152d09467519a167d938e9
-ms.sourcegitcommit: d9ec6e731e7508d02850c9e05d98d26c4b6f13e6
+ms.openlocfilehash: 856c249b72e9e0ff8667d10821ad14b3432b0775
+ms.sourcegitcommit: 38b11501526a7997cfe1c7980d57e772b1f3169b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/20/2020
-ms.locfileid: "76280787"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76509195"
 ---
 # <a name="frequently-asked-questions-faq-about-azure-network-watcher"></a>Часто задаваемые вопросы о наблюдателе за сетями Azure
 Служба [наблюдателя за сетями Azure](https://docs.microsoft.com/azure/network-watcher/network-watcher-monitoring-overview) предоставляет набор средств для мониторинга, диагностики, просмотра метрик и включения или отключения журналов для ресурсов в виртуальной сети Azure. В этой статье содержатся ответы на часто задаваемые вопросы о службе.
@@ -75,17 +75,17 @@ ms.locfileid: "76280787"
 
 Чтобы использовать учетную запись хранения с брандмауэром, необходимо предоставить исключение для доступа к учетной записи хранения в доверенных службах Майкрософт:
 
-* Найдите имя учетной записи хранения, выполнив поиск NSG на [странице обзора журналов потоков NSG](https://ms.portal.azure.com/#blade/Microsoft_Azure_Network/NetworkWatcherMenuBlade/flowLogs).
-* Перейдите к учетной записи хранения и введите имя учетной записи в результатах глобального поиска на портале.
+* Перейдите к учетной записи хранения, введя имя учетной записи хранения в глобальный поиск на портале или на [странице учетные записи хранения](https://ms.portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.Storage%2FStorageAccounts) .
 * В разделе **параметров** выберите **Брандмауэры и виртуальные сети**.
 * В окне "разрешить доступ из" выберите **Выбранные сети**. Затем в разделе **исключения**установите флажок **"разрешить доверенным службам Майкрософт доступ к этой учетной записи хранения"** . 
 * Если они уже выбраны, никаких изменений не требуется.  
+* Выберите целевую NSG на [странице Обзор журналов потоков NSG](https://ms.portal.azure.com/#blade/Microsoft_Azure_Network/NetworkWatcherMenuBlade/flowLogs) и включите журналы последовательностей NSG с выбранной учетной записью хранения.
 
 Через несколько минут можно проверить журналы хранилища. Вы должны увидеть обновленную метку времени или новый файл JSON.
 
 ### <a name="how-do-i-use-nsg-flow-logs-with-service-endpoints-for-storage"></a>Разделы справки использовать журналы потоков NSG с конечными точками службы для хранения?
 
-Ознакомьтесь с [руководством включение конечных точек службы](https://docs.microsoft.com/azure/virtual-network/tutorial-restrict-network-access-to-resources#enable-a-service-endpoint). 
+Ознакомьтесь с [руководством по включению конечных точек службы](https://docs.microsoft.com/azure/virtual-network/tutorial-restrict-network-access-to-resources#enable-a-service-endpoint). 
 
 
 ### <a name="what-is-the-difference-between-flow-logs-versions-1--2"></a>В чем разница между журналами потоков версии 1 & 2?

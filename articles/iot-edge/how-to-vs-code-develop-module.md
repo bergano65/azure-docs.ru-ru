@@ -8,12 +8,12 @@ ms.author: xshi
 ms.date: 08/07/2019
 ms.topic: conceptual
 ms.service: iot-edge
-ms.openlocfilehash: 09371cc66b54d822db5ad24679d28f40323eb871
-ms.sourcegitcommit: c31dbf646682c0f9d731f8df8cfd43d36a041f85
+ms.openlocfilehash: 42431c0db55219c3cb49968986c1a0c7f071b219
+ms.sourcegitcommit: 38b11501526a7997cfe1c7980d57e772b1f3169b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2019
-ms.locfileid: "74561015"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76509281"
 ---
 # <a name="use-visual-studio-code-to-develop-and-debug-modules-for-azure-iot-edge"></a>Использование Visual Studio Code для разработки и отладки модулей для Azure IoT Edge
 
@@ -30,12 +30,12 @@ ms.locfileid: "74561015"
 
 ## <a name="prerequisites"></a>Технические условия
 
-Для разработки вы должны использовать компьютер или виртуальную машину под управлением Windows, macOS или Linux. На компьютерах Windows можно разрабатывать модули Windows или Linux. Для разработки модулей Windows используйте компьютер под управлением Windows версии 1809/Build 17763 или более поздней. Для разработки модулей Linux используйте компьютер Windows, соответствующий [требованиям для работы DOCKER Desktop](https://docs.docker.com/docker-for-windows/install/#what-to-know-before-you-install). 
+Для разработки вы должны использовать компьютер или виртуальную машину под управлением Windows, macOS или Linux. На компьютерах Windows можно разрабатывать модули Windows или Linux. Для разработки модулей Windows используйте компьютер под управлением Windows версии 1809/Build 17763 или более поздней. Для разработки модулей Linux используйте компьютер Windows, соответствующий [требованиям для работы DOCKER Desktop](https://docs.docker.com/docker-for-windows/install/#what-to-know-before-you-install).
 
 Сначала установите [Visual Studio Code](https://code.visualstudio.com/), а затем добавьте следующие расширения:
 
 - [Средства Интернета вещей Azure](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-tools)
-- [Расширение Docker](https://marketplace.visualstudio.com/items?itemName=PeterJausovec.vscode-docker).
+- [расширение Docker](https://marketplace.visualstudio.com/items?itemName=PeterJausovec.vscode-docker).
 - расширения Visual Studio, в зависимости от выбранного для разработки языка:
   - C#, включая функции Azure: [ C# расширение](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp)
   - Python: [расширение Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
@@ -66,18 +66,19 @@ ms.locfileid: "74561015"
    ```cmd
    pip install --upgrade iotedgehubdev
    ```
+   
 > [!NOTE]
 > В настоящее время иотеджехубдев использует библиотеку DOCKER-копировать, которая несовместима с Python 3,8.
 >
 > Если у вас есть несколько Python, включая предварительно установленный Python 2,7 (например, в Ubuntu или macOS), убедитесь, что вы используете правильный `pip` или `pip3` для установки **иотеджехубдев**
 
-Для тестирования модуля на устройстве потребуется действующий Центр Интернета вещей по крайней мере с одним устройством IoT Edge. Чтобы использовать компьютер в качестве устройства IoT Edge, выполните инструкции в кратком руководстве для [Linux](quickstart-linux.md) или [Windows](quickstart.md). Если вы запустили управляющую программу IoT Edge на компьютере разработки, может потребоваться остановить EdgeHub и EdgeAgent, прежде чем перейти к следующему шагу.
+Для тестирования модуля на устройстве потребуется действующий центр Интернета вещей по крайней мере с одним устройством IoT Edge. Чтобы использовать компьютер в качестве устройства IoT Edge, выполните инструкции в кратком руководстве для [Linux](quickstart-linux.md) или [Windows](quickstart.md). Если вы запустили управляющую программу IoT Edge на компьютере разработки, может потребоваться остановить EdgeHub и EdgeAgent, прежде чем перейти к следующему шагу.
 
 ## <a name="create-a-new-solution-template"></a>Создайте новый шаблон решения
 
 В следующих шагах показано, как создать модуль IoT Edge с помощью предпочитаемого языка разработки (включая Функции Azure, написанные на языке C#) с использованием Visual Studio Code и средств Azure IoT. Сначала нужно создать решение, а затем сформировать первый модуль в этом решении. Каждое решение может содержать несколько модулей.
 
-1. Выберите **Представление** > **Палитра команд**.
+1. Выберите элемент **Вид** > **Палитра команд**.
 
 1. В палитре команд введите и выполните команду **Azure IoT Edge: New IoT Edge Solution**.
 

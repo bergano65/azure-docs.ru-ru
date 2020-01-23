@@ -9,12 +9,12 @@ services: iot-edge
 ms.topic: conceptual
 ms.date: 06/12/2019
 ms.author: gregman
-ms.openlocfilehash: b32bbfa5e849c1a0490bba5d09d1838268033b26
-ms.sourcegitcommit: c4700ac4ddbb0ecc2f10a6119a4631b13c6f946a
+ms.openlocfilehash: 99474246bf1ff5cbcc39861d56f05aa38f177f31
+ms.sourcegitcommit: 38b11501526a7997cfe1c7980d57e772b1f3169b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2019
-ms.locfileid: "72964659"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76510045"
 ---
 # <a name="run-azure-iot-edge-on-windows-server-virtual-machines"></a>Запуск Azure IoT Edge на виртуальных машинах Windows Server
 
@@ -26,28 +26,30 @@ ms.locfileid: "72964659"
 
 ## <a name="deploy-from-the-azure-marketplace"></a>Развертывание из Azure Marketplace
 
-1.  Перейдите к предложению [Windows Server](https://azuremarketplace.microsoft.com/marketplace/apps/microsoftwindowsserver.windowsserver?tab=Overview) Azure Marketplace или найдите "Windows Server" в [Azure Marketplace](https://azuremarketplace.microsoft.com/) .
-2.  Выберите **получить сейчас** 
-3.  В **плане программного обеспечения**найдите пункт "Windows Server 2019 Datacenter Server Core с контейнерами" и нажмите кнопку **продолжить** в следующем диалоговом окне.
+1. Перейдите к предложению [Windows Server](https://azuremarketplace.microsoft.com/marketplace/apps/microsoftwindowsserver.windowsserver?tab=Overview) Azure Marketplace или найдите "Windows Server" в [Azure Marketplace](https://azuremarketplace.microsoft.com/) .
+2. Выберите **получить сейчас**
+3. В **плане программного обеспечения**найдите пункт "Windows Server 2019 Datacenter Server Core с контейнерами" и нажмите кнопку **продолжить** в следующем диалоговом окне.
     * Эти инструкции также можно использовать для других версий Windows Server с контейнерами
-4.  Войдите на портал Azure, выберите **Создать** и следуйте указаниям мастера, чтобы развернуть виртуальную машину. 
-    *   Если вы впервые используете виртуальную машину, проще всего использовать пароль и включить RDP и SSH в меню общедоступный входящий порт. 
-    *   При наличии ресурсоемкой рабочей нагрузки следует обновить размер виртуальной машины, добавив дополнительные ЦП и (или) память.
-5.  После развертывания виртуальной машины настройте ее подключение к Центру Интернета вещей:
-    1.  Скопируйте строку подключения устройства с устройства IoT Edge, созданного в центре Интернета вещей. См. процедуру [получения строки подключения в портал Azure](how-to-register-device.md#retrieve-the-connection-string-in-the-azure-portal).
-    1.  Выберите недавно созданный ресурс виртуальной машины на портале Azure и щелкните **Выполнить команду**.
-    1.  Выберите параметр **рунповершеллскрипт**
-    1.  Скопируйте этот скрипт в командное окно со строкой подключения устройства: 
+4. Войдите на портал Azure, выберите **Создать** и следуйте указаниям мастера, чтобы развернуть виртуальную машину.
+    * Если вы впервые используете виртуальную машину, проще всего использовать пароль и включить RDP и SSH в меню общедоступный входящий порт.
+    * При наличии ресурсоемкой рабочей нагрузки следует обновить размер виртуальной машины, добавив дополнительные ЦП и (или) память.
+5. После развертывания виртуальной машины настройте ее подключение к Центру Интернета вещей:
+    1. Скопируйте строку подключения устройства с устройства IoT Edge, созданного в центре Интернета вещей. См. процедуру [получения строки подключения в портал Azure](how-to-register-device.md#retrieve-the-connection-string-in-the-azure-portal).
+    1. Выберите недавно созданный ресурс виртуальной машины на портале Azure и щелкните **Выполнить команду**.
+    1. Выберите параметр **рунповершеллскрипт**
+    1. Скопируйте этот скрипт в командное окно со строкой подключения устройства:
+
         ```powershell
         . {Invoke-WebRequest -useb aka.ms/iotedge-win} | Invoke-Expression; `
         Install-IoTEdge -Manual -DeviceConnectionString '<connection-string>'
         ```
-    1.  Выполните скрипт, чтобы установить среду выполнения IoT Edge и задать строку подключения, выбрав команду **выполнить** .
-    1.  Через одну или две минуты вы увидите сообщение о том, что среда выполнения пограничной установки и успешно подготовлена.
+
+    1. Выполните скрипт, чтобы установить среду выполнения IoT Edge и задать строку подключения, выбрав команду **выполнить** .
+    1. Через одну или две минуты вы увидите сообщение о том, что среда выполнения пограничной установки и успешно подготовлена.
 
 ## <a name="deploy-from-the-azure-portal"></a>Развертывание из портал Azure
 
-1. В портал Azure выполните поиск по запросу "Windows Server" и выберите **Windows server 2019 Datacenter** , чтобы начать рабочий процесс создания виртуальной машины. 
+1. В портал Azure выполните поиск по запросу "Windows Server" и выберите **Windows server 2019 Datacenter** , чтобы начать рабочий процесс создания виртуальной машины.
 2. На **панели Выбор плана программного обеспечения** выберите пункт "Windows Server 2019 Datacenter Server Core с контейнерами", а затем щелкните **создать** .
 3. Выполните шаг 5 из приведенных выше инструкций по развертыванию из Azure Marketplace.
 
@@ -69,7 +71,7 @@ ms.locfileid: "72964659"
    1. Скопируйте поле SubscriptionID подписки, которую необходимо использовать.
    1. Выполните эту команду с скопированным ИДЕНТИФИКАТОРом:
 
-      ```azurecli-interactive 
+      ```azurecli-interactive
       az account set -s {SubscriptionId}
       ```
 

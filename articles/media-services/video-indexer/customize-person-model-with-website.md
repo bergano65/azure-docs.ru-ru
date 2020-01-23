@@ -10,12 +10,12 @@ ms.subservice: video-indexer
 ms.topic: article
 ms.date: 05/15/2019
 ms.author: anzaman
-ms.openlocfilehash: 060d94d6181e894c18d268845b48eb802c52730c
-ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
+ms.openlocfilehash: e5ce43e7cdf70c1f552a8f5bbed28ce47f1826fc
+ms.sourcegitcommit: 38b11501526a7997cfe1c7980d57e772b1f3169b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73838274"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76513224"
 ---
 # <a name="customize-a-person-model-with-the-video-indexer-website"></a>Настройка модели Person с помощью веб-сайта Индексатора видео
 
@@ -134,14 +134,14 @@ ms.locfileid: "73838274"
 
 1. Нажмите кнопку **Отправить** в верхней части страницы.
 
-    ![Отправить](./media/customize-face-model/upload.png)
+    ![Отправка](./media/customize-face-model/upload.png)
 1. Перетащите видеофайл в круг или найдите файл.
 1. Щелкните стрелку дополнительные параметры.
 
-    ![Отправить](./media/customize-face-model/upload2.png)
+    ![Отправка](./media/customize-face-model/upload2.png)
 1. Щелкните раскрывающийся список и выберите созданную модель пользователя.
 
-    ![Отправить](./media/customize-face-model/upload3.png)
+    ![Отправка](./media/customize-face-model/upload3.png)
 1. Щелкните параметр Отправить в нижней части страницы, и новое видео будет индексироваться с использованием модели пользователя.
 
 Если не указать пользовательскую модель во время передачи, индексатор видео будет индексировать видео с использованием модели пользователя по умолчанию в вашей учетной записи.

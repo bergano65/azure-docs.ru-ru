@@ -1,5 +1,5 @@
 ---
-title: Непрерывность бизнес-процессов индексатора видео и аварийное восстановление (BCDR) — Azure | Документация Майкрософт
+title: Непрерывность бизнес-процессов индексатора видео и аварийное восстановление — Azure
 description: Узнайте, как выполнить отработку отказа на дополнительную учетную запись индексатора видео в случае сбоя или неудачи регионального центра обработки данных.
 services: media-services
 documentationcenter: ''
@@ -13,12 +13,12 @@ ms.topic: article
 ms.custom: ''
 ms.date: 07/29/2019
 ms.author: juliako
-ms.openlocfilehash: ce788b4640f0a6c6f25b3280ce4f52fd018d1699
-ms.sourcegitcommit: fecb6bae3f29633c222f0b2680475f8f7d7a8885
+ms.openlocfilehash: 2f54c340226a9ea78643df8e0a984c8ed8475c94
+ms.sourcegitcommit: 38b11501526a7997cfe1c7980d57e772b1f3169b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68668303"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76513581"
 ---
 # <a name="handle-video-indexer-business-continuity-and-disaster-recovery"></a>Работа индексатора видео — непрерывность бизнес-процессов и аварийное восстановление
 
@@ -26,7 +26,7 @@ ms.locfileid: "68668303"
 
 Рекомендуется настроить аварийное восстановление непрерывности бизнеса (BCDR) по парным регионам, чтобы пользоваться преимуществами политик изоляции и доступности Azure. Дополнительные сведения см. в статье [Непрерывность бизнес-процессов и аварийное восстановление в службах BizTalk: пары регионов Azure](https://docs.microsoft.com/azure/best-practices-availability-paired-regions).
 
-## <a name="prerequisites"></a>Предварительные требования 
+## <a name="prerequisites"></a>Технические условия 
 
 Подписка Azure. Если у вас еще нет подписки Azure, зарегистрируйтесь для получения [бесплатной пробной версии Azure](https://azure.microsoft.com/free/).
 
@@ -40,8 +40,8 @@ ms.locfileid: "68668303"
 > [!TIP]
 > Вы можете автоматизировать BCDR, настроив оповещения журнала действий для уведомлений о работоспособности службы в соответствии с [созданием оповещений журнала действий для уведомлений службы](../../service-health/alerts-activity-log-service-notifications.md).
 
-Дополнительные сведения об использовании нескольких клиентов см. в разделе [Управление несколькими клиентами](manage-multiple-tenants.md). Чтобы реализовать BCDR, выберите один из следующих двух вариантов: [Учетная запись индексатора видео для каждого](manage-multiple-tenants.md#video-indexer-account-per-tenant) клиента или [подписки Azure на каждого клиента](manage-multiple-tenants.md#azure-subscription-per-tenant).
+Дополнительные сведения об использовании нескольких клиентов см. в разделе [Управление несколькими клиентами](manage-multiple-tenants.md). Чтобы реализовать BCDR, выберите один из двух вариантов: [учетная запись индексатора видео для каждого клиента](manage-multiple-tenants.md#video-indexer-account-per-tenant) или [Подписка Azure на каждого клиента](manage-multiple-tenants.md#azure-subscription-per-tenant).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Управление учетной записью индексатора видео, подключенной к Azure](manage-account-connected-to-azure.md).

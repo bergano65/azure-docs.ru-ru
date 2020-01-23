@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.date: 11/14/2019
 ms.topic: conceptual
 ms.author: raynew
-ms.openlocfilehash: 16892ec729f56f8c8e1713379285e07fbc0dd4d1
-ms.sourcegitcommit: f0dfcdd6e9de64d5513adf3dd4fe62b26db15e8b
+ms.openlocfilehash: a078f1dc7d7aa3727f3f057f284c2ea5da923e07
+ms.sourcegitcommit: 38b11501526a7997cfe1c7980d57e772b1f3169b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/26/2019
-ms.locfileid: "75495427"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76514856"
 ---
 # <a name="common-questions-about-vmware-to-azure-replication"></a>Часто задаваемые вопросы о репликации из VMware в Azure
 
@@ -101,7 +101,7 @@ Site Recovery сертифицированы для ISO 27001:2013 и 27018, HIP
 
 - [Принудительная установка](vmware-physical-mobility-service-overview.md#push-installation)
 - [Установка вручную](vmware-physical-mobility-service-overview.md#install-mobility-agent-through-ui) из пользовательского интерфейса или PowerShell
-- Развертывание с помощью средства развертывания, например [System Center Configuration Manager](vmware-azure-mobility-install-configuration-mgr.md)
+- Развертывание с помощью средства развертывания, например [Configuration Manager](vmware-azure-mobility-install-configuration-mgr.md)
 
 ## <a name="managed-disks"></a>Управляемые диски
 
@@ -202,7 +202,7 @@ Site Recovery соответствует модели поддержки N-4. Д
 
 ## <a name="do-i-need-to-reboot-source-machines-for-each-upgrade"></a>Нужно ли перезагружать исходные компьютеры для каждого обновления?
 
-Для каждого обновления рекомендуется использовать перезагрузку, но не обязательно. [Узнайте больше](https://aka.ms/asr_vmware_upgrades).
+Для каждого обновления рекомендуется использовать перезагрузку, но не обязательно. [Подробнее](https://aka.ms/asr_vmware_upgrades).
 
 ## <a name="configuration-server"></a>Сервер конфигурации
 
@@ -326,7 +326,7 @@ Site Recovery соответствует модели поддержки N-4. Д
 
 ### <a name="how-do-i-access-azure-vms-after-failover"></a>Как получить доступ к виртуальным машина Azure после отработки отказа?
 
-После отработки отказа вы можете получить доступ к виртуальным машинам Azure через безопасное подключение к Интернету, через VPN типа "сеть — сеть" или через Azure ExpressRoute. Для подключения необходимо подготовить несколько вещей. [Узнайте больше](site-recovery-test-failover-to-azure.md#prepare-to-connect-to-azure-vms-after-failover).
+После отработки отказа вы можете получить доступ к виртуальным машинам Azure через безопасное подключение к Интернету, через VPN типа "сеть — сеть" или через Azure ExpressRoute. Для подключения необходимо подготовить несколько вещей. [Подробнее](site-recovery-test-failover-to-azure.md#prepare-to-connect-to-azure-vms-after-failover).
 
 ### <a name="is-failed-over-data-resilient"></a>Отработка отказа данных отказоустойчива?
 
@@ -338,7 +338,7 @@ Site Recovery соответствует модели поддержки N-4. Д
 
 ### <a name="can-i-fail-back-to-a-different-location"></a>Можно ли выполнить восстановление размещения в другое расположение?
 
-Да. Если вы отработка отказа в Azure, вы можете восстановить размещение в другое расположение, если исходное хранилище недоступно. [Узнайте больше](concepts-types-of-failback.md#alternate-location-recovery-alr).
+Да. Если вы отработка отказа в Azure, вы можете восстановить размещение в другое расположение, если исходное хранилище недоступно. [Подробнее](concepts-types-of-failback.md#alternate-location-recovery-alr).
 
 ### <a name="why-do-i-need-a-vpn-or-expressroute-with-private-peering-to-fail-back"></a>Зачем нужна виртуальная частная сеть или ExpressRoute с частным пирингом для отработки отказа?
 
@@ -349,13 +349,13 @@ Site Recovery соответствует модели поддержки N-4. Д
 
 ### <a name="can-i-set-up-replication-with-scripting"></a>Можно ли настроить репликацию с использованием скриптов?
 
-Да. Вы можете автоматизировать Site Recovery рабочие процессы с помощью API-интерфейса, PowerShell или пакета Azure SDK. [Узнайте больше](vmware-azure-disaster-recovery-powershell.md).
+Да. Вы можете автоматизировать Site Recovery рабочие процессы с помощью API-интерфейса, PowerShell или пакета Azure SDK. [Подробнее](vmware-azure-disaster-recovery-powershell.md).
 
 ## <a name="performance-and-capacity"></a>Производительность и емкость
 
 ### <a name="can-i-throttle-replication-bandwidth"></a>Можно ли отрегулировать пропускную способность репликации?
 
-Да. [Узнайте больше](site-recovery-plan-capacity-vmware.md).
+Да. [Подробнее](site-recovery-plan-capacity-vmware.md).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

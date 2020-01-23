@@ -1,5 +1,5 @@
 ---
-title: Настройка языковой модели с помощью веб-сайта Индексатора видео в Azure
+title: Настройка языковых моделей с помощью веб-сайта индексатора видео — Azure
 titleSuffix: Azure Media Services
 description: В этой статье описана настройка языковой модели с помощью веб-сайта Индексатора видео.
 services: media-services
@@ -10,12 +10,12 @@ ms.subservice: video-indexer
 ms.topic: article
 ms.date: 05/15/2019
 ms.author: anzaman
-ms.openlocfilehash: 5d92cb02a0ac52b317cf9d4b6c8e0278f9291910
-ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
+ms.openlocfilehash: 329da39914ef957d3a5376ba59e0c7103ad6a5dd
+ms.sourcegitcommit: 38b11501526a7997cfe1c7980d57e772b1f3169b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73838457"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76513921"
 ---
 # <a name="customize-a-language-model-with-the-video-indexer-website"></a>Настройка языковой модели с помощью веб-сайта Индексатора видео
 
@@ -61,10 +61,10 @@ ms.locfileid: "73838457"
 
 * Нажмите кнопку **Передать** в верхней части страницы. 
 
-    ![Отправить](./media/customize-language-model/upload.png)
+    ![Отправка](./media/customize-language-model/upload.png)
 * Поместите аудио- или видеофайл в круг или же перейдите к своему файлу.
 
-    ![Отправить](./media/customize-language-model/upload2.png)
+    ![Отправка](./media/customize-language-model/upload2.png)
 
 Это даст вам возможность выбрать **исходный язык видео**. Щелкните раскрывающийся список и выберите созданную языковую модель. В ней должны быть указаны язык вашей языковой модели и заданное имя в скобках.
 
