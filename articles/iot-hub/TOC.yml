@@ -84,9 +84,9 @@
 - name: Основные понятия
   items:
     - name: Поддержка TLS
-      href: iot-hub-tls.md
+      href: iot-hub-tls-support.md
     - name: "Прекращение поддержки протоколов TLS\_1.0 и 1.1"
-      href: tls-1.2-everywhere.md
+      href: iot-hub-tls-deprecating-1-0-and-1-1.md
     - name: Общие сведения об обогащении сообщений
       href: iot-hub-message-enrichments-overview.md
     - name: Обзор управления устройствами
