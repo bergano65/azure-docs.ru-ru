@@ -14,13 +14,12 @@ ms.workload: identity
 ms.date: 10/30/2019
 ms.author: jmprieur
 ms.custom: aaddev
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: e551159ad2d41af37b1f400e91680c49117498d6
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 7bf5256390961f4d469aa70be4b0b0c1069db4cf
+ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75423610"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76701694"
 ---
 # <a name="web-app-that-calls-web-apis---code-configuration"></a>Веб-приложение, вызывающее веб-API — конфигурация кода
 
@@ -35,7 +34,7 @@ ms.locfileid: "75423610"
 
 Библиотеки, поддерживающие поток кода авторизации для веб-приложений:
 
-| Библиотека MSAL | Description |
+| Библиотека MSAL | Описание |
 |--------------|-------------|
 | ![MSAL.NET](media/sample-v2-code/logo_NET.png) <br/> MSAL.NET  | Поддерживаемыми платформами являются .NET Framework и платформы .NET Core (не UWP, Xamarin. iOS и Xamarin. Android, так как эти платформы используются для создания общедоступных клиентских приложений). |
 | ![MSAL Python](media/sample-v2-code/logo_python.png) <br/> MSAL Python | Поддержка веб-приложений Python |
@@ -610,7 +609,7 @@ def _build_msal_app(cache=None):
 
 ---
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 На этом этапе, когда пользователь входит в маркер, он хранится в кэше маркеров. Давайте посмотрим, как он используется в других частях веб-приложения.
 
