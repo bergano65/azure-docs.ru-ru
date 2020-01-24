@@ -12,13 +12,12 @@ ms.date: 05/22/2019
 ms.author: ryanwi
 ms.reviwer: lenalepa, sureshja
 ms.custom: aaddev
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9ca59120bcfadc6c75e3687be84a0e70f97fc3c2
-ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
+ms.openlocfilehash: f28c33f20556825d84edda34752ac64714327526
+ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74842818"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76697342"
 ---
 # <a name="how-to-configure-terms-of-service-and-privacy-statement-for-an-app"></a>Как настроить условия предоставления услуг и заявления о конфиденциальности для приложения
 
@@ -40,7 +39,7 @@ ms.locfileid: "74842818"
 
 Перед добавлением ссылок на документы с условиями обслуживания и заявлением о конфиденциальности убедитесь, что их URL-адреса соответствуют следующим рекомендациям.
 
-| Рекомендация     | Описание                           |
+| Рекомендация     | Description                           |
 |---------------|---------------------------------------|
 | Формат        | Допустимый URL-адрес                             |
 | Допустимые схемы | HTTP и HTTPS<br/>Рекомендуется использовать протокол HTTPS |
@@ -59,7 +58,7 @@ ms.locfileid: "74842818"
 ### <a name="azure-portal"></a>Использование портал Azure
 Выполните следующие действия в портал Azure.
 
-1. Войдите на [портале Azure](https://portal.azure.com/).
+1. Войдите на [портал Azure](https://portal.azure.com/).
 2. Перейдите к разделу **Регистрация приложений** и выберите свое приложение.
 3. Откройте панель **фирменной символики** .
 4. Заполните поля **URL-адрес условий предоставления услуг** и **URL-адрес заявления о конфиденциальности**.

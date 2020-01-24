@@ -17,13 +17,12 @@ ms.date: 06/22/2018
 ms.author: ryanwi
 ms.reviewer: hirsin
 ms.custom: aaddev
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4acac79d79b584dac93d63f6d478627f7e953f81
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.openlocfilehash: 01ea64a56d43976d319618350e68e03bba775e8e
+ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74965762"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76702901"
 ---
 # <a name="azure-ad-saml-token-reference"></a>Справочник по токенам SAML в Azure AD
 
@@ -32,7 +31,7 @@ ms.locfileid: "74965762"
 ## <a name="claims-in-saml-tokens"></a>Утверждения в токенах SAML
 
 > [!div class="mx-codeBreakAll"]
-> | Name | Эквивалентное утверждение JWT | Описание | Пример |
+> | Имя | Эквивалентное утверждение JWT | Description | Пример |
 > | --- | --- | --- | ------------|
 > |Аудитория | `aud` |Целевой получатель маркера. Приложение, которое получает токен, должно проверять, верно ли значение, обозначающее аудиторию, и отклонять любые токены, предназначенные для другой аудитории. | `<AudienceRestriction>`<br>`<Audience>`<br>`https://contoso.com`<br>`</Audience>`<br>`</AudienceRestriction>`  |
 > | Время выполнения проверки подлинности | |Фиксирует дату и время выполнения сеанса проверки подлинности. | `<AuthnStatement AuthnInstant="2011-12-29T05:35:22.000Z">` | 
@@ -44,8 +43,8 @@ ms.locfileid: "74965762"
 > |IssuedAt | `iat` |Указывает время выдачи токена. Оно часто используется для определения времени существования токена. | `<Assertion ID="_d5ec7a9b-8d8f-4b44-8c94-9812612142be" IssueInstant="2014-01-06T20:20:23.085Z" Version="2.0" xmlns="urn:oasis:names:tc:SAML:2.0:assertion">` |
 > |Издатель | `iss` |Обозначает службу токенов безопасности (STS), которая создает и возвращает токен. В возвращаемых службой Azure AD токенах указан следующий издатель: sts.windows.net. Идентификатор GUID в значении утверждения Issuer — это идентификатор клиента каталога Azure AD. Идентификатор клиента представляет собой неизменяемый и надежный идентификатор каталога. | `<Issuer>https://sts.windows.net/cbb1a5ac-f33b-45fa-9bf5-f37db0fed422/</Issuer>` |
 > |Фамилия | `family_name` |Указывает фамилию пользователя в соответствии с определением в объекте пользователя Azure AD. | `<Attribute Name=" http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname">`<br>`<AttributeValue>Miller<AttributeValue>` |
-> |Name | `unique_name` |Предоставляет удобное для восприятия значение, которое идентифицирует субъект маркера. Это значение не обязательно должно быть уникальным в пределах клиента. Оно предназначено только для отображения. | `<Attribute Name="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name">`<br>`<AttributeValue>frankm@contoso.com<AttributeValue>`|
-> |Object ID | `oid` |Содержит уникальный идентификатор объекта в Azure AD. Это значение является неизменяемым и не может быть переназначено или повторно использовано. Используйте идентификатор объекта для идентификации объекта в запросах, адресованных Azure AD. | `<Attribute Name="http://schemas.microsoft.com/identity/claims/objectidentifier">`<br>`<AttributeValue>528b2ac2-aa9c-45e1-88d4-959b53bc7dd0<AttributeValue>` |
+> |Имя | `unique_name` |Предоставляет удобное для восприятия значение, которое идентифицирует субъект маркера. Это значение не обязательно должно быть уникальным в пределах клиента. Оно предназначено только для отображения. | `<Attribute Name="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name">`<br>`<AttributeValue>frankm@contoso.com<AttributeValue>`|
+> |Идентификатор объекта. | `oid` |Содержит уникальный идентификатор объекта в Azure AD. Это значение является неизменяемым и не может быть переназначено или повторно использовано. Используйте идентификатор объекта для идентификации объекта в запросах, адресованных Azure AD. | `<Attribute Name="http://schemas.microsoft.com/identity/claims/objectidentifier">`<br>`<AttributeValue>528b2ac2-aa9c-45e1-88d4-959b53bc7dd0<AttributeValue>` |
 > |Роли | `roles` |Представляет все роли приложения, предоставленные субъекту напрямую или косвенно через членство в группе, и может использоваться для реализации управления доступом на основе ролей. Роли приложения определяются на уровне приложения с использованием свойства `appRoles` манифеста приложения. Свойство `value` каждой роли приложения представляет значение, которое отображается в утверждении Roles. | `<Attribute Name="http://schemas.microsoft.com/ws/2008/06/identity/claims/role">`|
 > |Тема | `sub` |Указывает субъекта, сведения о котором утверждает токен, например данные о пользователе приложения. Это значение является неизменным, его невозможно назначить другому объекту или использовать повторно. Следовательно, это значение можно использовать для безопасного проведения проверок авторизации. Так как субъект всегда присутствует в выдаваемых Azure AD токенах, мы советуем использовать это значение в системе авторизации общего назначения. <br> `SubjectConfirmation` не является утверждением. Он описывает, как проверяется субъект токена. `Bearer` указывает, что субъект подтвержден благодаря владению токеном. | `<Subject>`<br>`<NameID>S40rgb3XjhFTv6EQTETkEzcgVmToHKRkZUIsJlmLdVc</NameID>`<br>`<SubjectConfirmation Method="urn:oasis:names:tc:SAML:2.0:cm:bearer" />`<br>`</Subject>`|
 > |Tenant ID | `tid` |Tenant ID — неизменяемый идентификатор без возможности повторного использования, который идентифицирует клиент каталога, выдавший токен. Это значение можно использовать для доступа к ресурсам каталога конкретного клиента в мультитенантном приложении. Например, это значение можно использовать для идентификации клиента при вызове API Graph. | `<Attribute Name="http://schemas.microsoft.com/identity/claims/tenantid">`<br>`<AttributeValue>cbb1a5ac-f33b-45fa-9bf5-f37db0fed422<AttributeValue>`|
@@ -155,7 +154,7 @@ ms.locfileid: "74965762"
       <t:KeyType>http://schemas.xmlsoap.org/ws/2005/05/identity/NoProofKey</t:KeyType>
     </t:RequestSecurityTokenResponse>
 
-## <a name="related-content"></a>Связанная информация
+## <a name="related-content"></a>См. также
 
 * Чтобы узнать больше об управлении политикой времени существования маркера посредством API Graph Azure AD, ознакомьтесь с [операциями с политиками](https://msdn.microsoft.com/library/azure/ad/graph/api/policy-operations) и [сущностью политики](https://msdn.microsoft.com/library/azure/ad/graph/api/entity-and-complex-type-reference#policy-entity) Azure AD Graph.
 * Дополнительные сведения об управлении политиками посредством командлетов PowerShell, включая примеры, см. в разделе [Configurable Token Lifetimes in Azure Active Directory (Public Preview)](active-directory-configurable-token-lifetimes.md) (Настраиваемое время существования маркеров в Azure Active Directory (общедоступная предварительная версия)). 

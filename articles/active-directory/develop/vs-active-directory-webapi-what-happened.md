@@ -11,13 +11,12 @@ ms.topic: conceptual
 ms.date: 03/12/2018
 ms.author: ghogen
 ms.custom: aaddev, vs-azure
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3a0cf375902281817ecc002f8fb76be32eed149d
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.openlocfilehash: 9858fdb7da80fe03498392ea93bf3c83b8a7e4dd
+ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74966322"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76699875"
 ---
 # <a name="what-happened-to-my-webapi-project-visual-studio-azure-active-directory-connected-service"></a>Что произошло с моим проектом WebApi в подключенной службе Visual Studio Azure Active Directory
 
@@ -129,5 +128,5 @@ ms.locfileid: "74966322"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Сценарии аутентификации в Azure Active Directory](authentication-scenarios.md).
+- [Сценарии аутентификации в Azure Active Directory](authentication-scenarios.md)
 - [Добавление возможности входа в веб-приложение ASP.NET с помощью учетной записи Майкрософт](quickstart-v1-aspnet-webapp.md)

@@ -13,13 +13,12 @@ ms.date: 04/24/2019
 ms.author: twhitney
 ms.reviewer: saeeda
 ms.custom: aaddev
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 678b581e09fe1eac49e4f2bf07eabbbc944c8d4e
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: c916ac98774600c16eb26ed43b8ae4b273137865
+ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75424155"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76695013"
 ---
 # <a name="xamarin-android-specific-considerations-with-msalnet"></a>Вопросы, связанные с Xamarin Android, с MSAL.NET
 В этой статье рассматриваются конкретные рекомендации при использовании Xamarin Android с библиотекой проверки подлинности Майкрософт для .NET (MSAL.NET).

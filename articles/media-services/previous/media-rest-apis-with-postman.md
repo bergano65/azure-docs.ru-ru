@@ -13,14 +13,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/01/2019
 ms.author: juliako
-ms.openlocfilehash: f55b3d5767f38c8fba2e79925f6f6e1e390aad2d
-ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
+ms.openlocfilehash: 11c9c26e7c0f36e1e3dba732e90a6aef95e6ee14
+ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74887799"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76694996"
 ---
-# <a name="configure-postman-for-media-services-rest-api-calls"></a>Настройка Postman для вызовов REST API служб мультимедиа  
+# <a name="configure-postman-for-media-services-v2-rest-api-calls"></a>Настройка POST для вызовов служб мультимедиа v2 REST API вызовы  
 
 > [!NOTE]
 > В Cлужбы мультимедиа версии 2 больше не добавляются новые компоненты или функциональные возможности. <br/>Ознакомьтесь с новейшей версией Служб мультимедиа — [версией 3](https://docs.microsoft.com/azure/media-services/latest/). См. также [руководство по миграции из v2 в версии 3](../latest/migrate-from-v2-to-v3.md) .
@@ -41,14 +41,14 @@ ms.locfileid: "74887799"
 2. Откройте **Postman**.
 3. В правой части экрана выберите параметр **Управление средой**.
 
-    ![отправить файл;](./media/media-services-rest-upload-files/postman-create-env.png)
+    ![Отправка файла](./media/media-services-rest-upload-files/postman-create-env.png)
 4. В диалоговом окне **Управление средой** нажмите кнопку **Импорт**.
 5. Найдите и выберите файл **AzureMediaServices.postman_environment.json**.
 6. Будет добавлена среда **AzureMedia**.
 7. Закройте диалоговое окно.
 8. Выберите среду **AzureMedia**.
 
-    ![отправить файл;](./media/media-services-rest-upload-files/postman-choose-env.png)
+    ![Отправка файла](./media/media-services-rest-upload-files/postman-choose-env.png)
 
 ## <a name="configure-the-collection"></a>Настройка коллекции
 
@@ -56,7 +56,7 @@ ms.locfileid: "74887799"
 2. Нажмите кнопку **импорта**, чтобы импортировать файл коллекции.
 3. Выберите файл **AzureMediaServicesOperations.postman_collection.json**.
 
-    ![отправить файл;](./media/media-services-rest-upload-files/postman-import-collection.png)
+    ![Отправка файла](./media/media-services-rest-upload-files/postman-import-collection.png)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

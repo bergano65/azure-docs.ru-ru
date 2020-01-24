@@ -1,18 +1,18 @@
 ---
 title: Создание и просмотр оповещений метрик, а также управление ими с помощью Azure Monitor
 description: Узнайте, как с помощью портала Azure или CLI создавать, просматривать оповещения метрик, а также управлять ими.
-author: snehithm
+author: harelbr
 ms.service: azure-monitor
 ms.topic: conceptual
 ms.date: 09/18/2018
-ms.author: snmuvva
+ms.author: harelbr
 ms.subservice: alerts
-ms.openlocfilehash: 117b65265c853194e93a97fe5e2b2dcc6e9f5bc2
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 00f5f37591ed2ed250cb756c686ea15136921512
+ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60712999"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76705536"
 ---
 # <a name="create-view-and-manage-metric-alerts-using-azure-monitor"></a>Создание и просмотр оповещений метрик, а также управление ими с помощью Azure Monitor
 
@@ -82,7 +82,7 @@ ms.locfileid: "60712999"
 
 ## <a name="with-azure-cli"></a>С помощью Azure CLI
 
-В предыдущих разделах описаны создание, просмотр правил генерации оповещений метрики и управление ими с помощью портала Azure. В этом разделе вы узнаете, как сделать то же самое с помощью кроссплатформенного [Azure CLI](https://docs.microsoft.com/cli/azure/get-started-with-azure-cli?view=azure-cli-latest). Самый быстрый способ начать использование Azure CLI — это [Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview?view=azure-cli-latest). В этой статье мы будем использовать Cloud Shell.
+В предыдущих разделах описаны создание, просмотр правил генерации оповещений метрики и управление ими с помощью портала Azure. В этом разделе вы узнаете, как сделать то же самое с помощью кроссплатформенного [Azure CLI](https://docs.microsoft.com/cli/azure/get-started-with-azure-cli?view=azure-cli-latest). Самый быстрый способ начать использовать Azure CLI посредством [Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview?view=azure-cli-latest). В этой статье мы будем использовать Cloud Shell.
 
 1. Перейдите на портал Azure и щелкните **Cloud Shell**.
 

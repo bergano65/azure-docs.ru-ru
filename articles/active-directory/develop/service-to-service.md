@@ -16,13 +16,12 @@ ms.date: 11/20/2019
 ms.author: ryanwi
 ms.reviewer: saeeda, jmprieur, andret
 ms.custom: aaddev
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 49081ba72559b021d2e4846e7d9feffd61ae7b36
-ms.sourcegitcommit: e50a39eb97a0b52ce35fd7b1cf16c7a9091d5a2a
+ms.openlocfilehash: a94fcaffc190016a5377fe4b32484f84dc46ed25
+ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74284903"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76701507"
 ---
 # <a name="service-to-service-apps"></a>Приложения для взаимодействия между службами
 
@@ -40,7 +39,7 @@ ms.locfileid: "74284903"
 
 ![Схема "из управляющей программы или серверного приложения в веб-интерфейс API"](./media/authentication-scenarios/daemon_server_app_to_web_api.png)
 
-## <a name="protocol-flow"></a>Поток протокола
+## <a name="protocol-flow"></a>Поток использования протокола
 
 ### <a name="application-identity-with-oauth-20-client-credentials-grant"></a>Удостоверение приложения с предоставлением учетных данных клиента OAuth 2.0
 
@@ -70,7 +69,7 @@ ms.locfileid: "74284903"
 
 Если первое приложение использует свой код авторизации для получения маркера доступа JWT, оно также получает маркер обновления JWT. По истечении срока действия маркера доступа маркер обновления может использоваться для повторной проверки подлинности пользователя без запроса учетных данных. Затем этот маркер обновления используется для проверки подлинности пользователя, в результате чего появляется новый маркер доступа и маркер обновления.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-- См. дополнительные сведения о других [типах приложений и сценариях](app-types.md).
+- Дополнительные сведения см. в статье [о других типах приложений и сценариях](app-types.md)
 - Ознакомьтесь с основными понятиями аутентификации в статье [Сценарии проверки подлинности в Azure AD](v1-authentication-scenarios.md)

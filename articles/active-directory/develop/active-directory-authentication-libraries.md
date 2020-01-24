@@ -13,13 +13,12 @@ ms.date: 12/01/2018
 ms.author: ryanwi
 ms.reviewer: saeeda, jmprieur
 ms.custom: aaddev, identityplatformtop40
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: c391120ccf9fafd4ca51489d7849e838d77a1dbf
-ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
+ms.openlocfilehash: 08b2ddad912fc503e7c555a8f3b35b53a2c33b05
+ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74845507"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76699331"
 ---
 # <a name="azure-active-directory-authentication-libraries"></a>Библиотеки проверки подлинности Azure Active Directory
 
@@ -36,7 +35,7 @@ ms.locfileid: "74845507"
 
 ## <a name="microsoft-supported-client-libraries"></a>Клиентские библиотеки, поддерживаемые корпорацией Майкрософт
 
-| платформа | Библиотека | Download (Скачать) | Исходный код | Пример | Справочные материалы
+| Платформа | Библиотека | Загрузить | Исходный код | Пример | Справочные материалы
 | --- | --- | --- | --- | --- | --- |
 | Клиент .NET, Магазин Windows, UWP, Xamarin iOS и Android |ADAL .NET версии 3 |[NuGet](https://www.nuget.org/packages/Microsoft.IdentityModel.Clients.ActiveDirectory) |[GitHub](https://github.com/AzureAD/azure-activedirectory-library-for-dotnet) | [Классическое приложение](https://docs.microsoft.com/azure/active-directory/active-directory-devquickstarts-dotnet) |[Справочные материалы](https://docs.microsoft.com/dotnet/api/microsoft.identitymodel.clients.activedirectory?view=azure-dotnet) |
 | Клиент .NET, Магазин Windows, Windows Phone 8.1 |ADAL .NET версии 2 |[NuGet](https://www.nuget.org/packages/Microsoft.IdentityModel.Clients.ActiveDirectory/2.28.4) |[GitHub](https://github.com/AzureAD/azure-activedirectory-library-for-dotnet/releases/tag/v2.28.4) | [Классическое приложение](https://github.com/AzureADQuickStarts/NativeClient-DotNet/releases/tag/v2.X) | |
@@ -44,12 +43,12 @@ ms.locfileid: "74845507"
 | iOS, macOS |ADAL |[GitHub](https://github.com/AzureAD/azure-activedirectory-library-for-objc/releases) |[GitHub](https://github.com/AzureAD/azure-activedirectory-library-for-objc) |[Приложение iOS](https://docs.microsoft.com/azure/active-directory/active-directory-devquickstarts-ios) | [Справочные материалы](http://cocoadocs.org/docsets/ADAL/2.5.1/)|
 | Android |ADAL |[Maven](https://search.maven.org/search?q=g:com.microsoft.aad+AND+a:adal&core=gav) |[GitHub](https://github.com/AzureAD/azure-activedirectory-library-for-android) |[Приложение Android](https://docs.microsoft.com/azure/active-directory/active-directory-devquickstarts-android) | [Javadocs](https://javadoc.io/doc/com.microsoft.aad/adal/)|
 | Node.js |ADAL |[npm](https://www.npmjs.com/package/adal-node) |[GitHub](https://github.com/AzureAD/azure-activedirectory-library-for-nodejs) | [Веб-приложение Node.js](https://github.com/Azure-Samples/active-directory-node-webapp-openidconnect)|[Справочные материалы](https://docs.microsoft.com/javascript/api/overview/azure/activedirectory) |
-| Java: |ADAL4J |[Maven](https://search.maven.org/#search%7Cga%7C1%7Ca%3Aadal4j%20g%3Acom.microsoft.azure) |[GitHub](https://github.com/AzureAD/azure-activedirectory-library-for-java) |[Устранение неполадок, а также вопросы и ответы по Application Insights для Java;](https://github.com/Azure-Samples/active-directory-java-webapp-openidconnect) |[Справочные материалы](https://javadoc.io/doc/com.microsoft.azure/adal4j) |
+| Java |ADAL4J |[Maven](https://search.maven.org/#search%7Cga%7C1%7Ca%3Aadal4j%20g%3Acom.microsoft.azure) |[GitHub](https://github.com/AzureAD/azure-activedirectory-library-for-java) |[Веб-приложение Java](https://github.com/Azure-Samples/active-directory-java-webapp-openidconnect) |[Справочные материалы](https://javadoc.io/doc/com.microsoft.azure/adal4j) |
 | Python |ADAL |[GitHub](https://github.com/AzureAD/azure-activedirectory-library-for-python) |[GitHub](https://github.com/AzureAD/azure-activedirectory-library-for-python) |[Веб-приложение Python](https://github.com/Azure-Samples/active-directory-python-webapp-graphapi) |[Справочные материалы](https://adal-python.readthedocs.io/) |
 
 ## <a name="microsoft-supported-server-libraries"></a>Серверные библиотеки, поддерживаемые корпорацией Майкрософт
 
-| платформа | Библиотека | Download (Скачать) | Исходный код | Пример | Справочные материалы
+| Платформа | Библиотека | Загрузить | Исходный код | Пример | Справочные материалы
 | --- | --- | --- | --- | --- | --- |
 | .NET |OWIN для AzureAD|[NuGet](https://www.nuget.org/packages/Microsoft.Owin.Security.ActiveDirectory/) |[GitHub](https://github.com/aspnet/AspNetKatana/tree/dev/src/Microsoft.Owin.Security.ActiveDirectory) |[Приложение MVC](https://docs.microsoft.com/azure/active-directory/active-directory-devquickstarts-webapp-dotnet) | |
 | .NET |OWIN для OpenIDConnect |[NuGet](https://www.nuget.org/packages/Microsoft.Owin.Security.OpenIdConnect) |[GitHub](https://github.com/aspnet/AspNetKatana/tree/dev/src/Microsoft.Owin.Security.OpenIdConnect) |[Веб-приложение](https://github.com/AzureADSamples/WebApp-OpenIDConnect-DotNet) | |
@@ -78,7 +77,7 @@ ADAL упрощает проверку подлинности пользоват
 
 В этом сценарии у разработчика есть запущенное на сервере веб-приложение, которому требуется доступ к удаленному ресурсу, например к веб-API. Веб-API не допускает анонимных вызовов, поэтому он должен быть вызван из службы, прошедшей проверку подлинности, от имени пользователя, прошедшего проверку подлинности. Для веб-API предварительно настроено доверие для маркеров доступа, выданных конкретным клиентом Azure AD. Azure AD предварительно настроен для выдачи маркеров доступа для этого ресурса службе с учетными данными клиента. После того как пользователь прошел проверку подлинности для веб-приложения, оно может получить код проверки подлинности пользователя из Azure AD. Затем веб-приложение может использовать ADAL для получения маркера доступа и обновления маркера от имени пользователя с помощью кода проверки подлинности и учетных данных клиента, связанных с приложением в Azure AD. После получения маркера доступа приложение может обращаться к веб-интерфейсу API до истечения срока действия маркера. После истечения срока действия маркера веб-приложение может использовать ADAL для получения нового маркера доступа с помощью обновления маркера, полученного ранее. Пример кода для такого сценария представлен в описании [собственного клиента для веб-API](https://github.com/Azure-Samples/active-directory-dotnet-webapi-onbehalfof).
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также:
 
 - [Руководство разработчика по Azure Active Directory](v1-overview.md)
 - [Сценарии проверки подлинности в Azure Active Directory](v1-authentication-scenarios.md)

@@ -17,13 +17,12 @@ ms.date: 07/19/2017
 ms.author: ryanwi
 ms.custom: aaddev
 ms.reviewer: hirsin
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: cf512f802e0e4944e6ce949830719b87301adfc4
-ms.sourcegitcommit: bc3a153d79b7e398581d3bcfadbb7403551aa536
+ms.openlocfilehash: cecb78a82eb2925813bdc7f6df2503fae94b6437
+ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68834808"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76701405"
 ---
 # <a name="single-sign-on-saml-protocol"></a>Протокол единого входа SAML
 
@@ -47,14 +46,14 @@ xmlns:samlp="urn:oasis:names:tc:SAML:2.0:protocol">
 </samlp:AuthnRequest>
 ```
 
-| Параметр |  | Описание |
+| Параметр |  | Description |
 | --- | --- | --- |
-| id | Обязательное значение | Azure AD использует этот атрибут для заполнения атрибута `InResponseTo` возвращенного ответа. Идентификатор не должен начинаться с цифры, поэтому общая стратегия предусматривает добавление такой строки, как id, в начало строкового представления GUID. Например, `id6c1c178c166d486687be4aaf5e482730` — допустимый идентификатор. |
-| Version | Обязательное значение | Этот параметр должен иметь значение **2.0**. |
-| IssueInstant | Обязательное значение | Это строка DateTime со значением в формате всемирного времени (UTC) и с [преобразованием без потери данных ("o")](https://msdn.microsoft.com/library/az4se3k1.aspx). Azure AD ожидает значение DateTime этого типа, но не оценивает и не использует его. |
-| AssertionConsumerServiceUrl | Необязательный | Если указан, то он должен соответствовать параметру `RedirectUri` облачной службы в Azure AD. |
-| ForceAuthn | Необязательный | Это логическое значение. Если задано значение true, то это означает, что пользователь должен будет повторно выполнить проверку подлинности, даже если время его сеанса в Azure AD еще не истекло. |
-| IsPassive | Необязательный | Это логическое значение, которое указывает, должна ли служба Azure AD автоматически выполнять аутентификацию пользователя, без прямого его участия, используя файл cookie сеанса (если он существует). Если задано значение true, то Azure AD попытается аутентифицировать пользователя с помощью файла cookie сеанса. |
+| ID | Обязательно для заполнения | Azure AD использует этот атрибут для заполнения атрибута `InResponseTo` возвращенного ответа. Идентификатор не должен начинаться с цифры, поэтому общая стратегия предусматривает добавление такой строки, как id, в начало строкового представления GUID. Например, `id6c1c178c166d486687be4aaf5e482730` — допустимый идентификатор. |
+| Версия | Обязательно для заполнения | Этот параметр должен иметь значение **2.0**. |
+| IssueInstant | Обязательно для заполнения | Это строка DateTime со значением в формате всемирного времени (UTC) и с [преобразованием без потери данных ("o")](https://msdn.microsoft.com/library/az4se3k1.aspx). Azure AD ожидает значение DateTime этого типа, но не оценивает и не использует его. |
+| AssertionConsumerServiceUrl | Необязательно | Если указан, то он должен соответствовать параметру `RedirectUri` облачной службы в Azure AD. |
+| ForceAuthn | Необязательно | Это логическое значение. Если задано значение true, то это означает, что пользователь должен будет повторно выполнить проверку подлинности, даже если время его сеанса в Azure AD еще не истекло. |
+| IsPassive | Необязательно | Это логическое значение, которое указывает, должна ли служба Azure AD автоматически выполнять аутентификацию пользователя, без прямого его участия, используя файл cookie сеанса (если он существует). Если задано значение true, то Azure AD попытается аутентифицировать пользователя с помощью файла cookie сеанса. |
 
 Все остальные атрибуты `AuthnRequest`, включая Consent, Destination, AssertionConsumerServiceIndex, AttributeConsumerServiceIndex и ProviderName, **игнорируются**.
 
@@ -82,28 +81,28 @@ Azure AD также игнорирует элемент `Conditions` в `AuthnRe
 
 Если элемент `NameIDPolicy` указан, можно включить его необязательный атрибут `Format`. У атрибута `Format` может быть только одно из следующих значений, так как любое другое значение приводит к ошибке.
 
-* `urn:oasis:names:tc:SAML:2.0:nameid-format:persistent`. Azure Active Directory выдает утверждение NameID в качестве парного идентификатора.
-* `urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress`. Azure Active Directory выдает утверждение NameID в формате адреса электронной почты.
-* `urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified`. это значение позволяет Azure Active Directory выбирать формат утверждений. Azure Active Directory выдает NameID в качестве парного идентификатора.
-* `urn:oasis:names:tc:SAML:2.0:nameid-format:transient`. Azure Active Directory выдает случайным образом созданное значение утверждения NameID, которое является уникальным для текущей операции единого входа. Это означает, что значение является временным и не может использоваться для идентификации пользователя, выполняющего аутентификацию.
+* `urn:oasis:names:tc:SAML:2.0:nameid-format:persistent`— Azure Active Directory выдает утверждение NameID в качестве парного идентификатора.
+* `urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress`— Azure Active Directory выдает утверждение NameID в формате адреса электронной почты.
+* `urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified`— это значение позволяет Azure Active Directory выбирать формат утверждений. Azure Active Directory выдает NameID в качестве парного идентификатора.
+* `urn:oasis:names:tc:SAML:2.0:nameid-format:transient` — Azure Active Directory выдает случайным образом созданное значение утверждения NameID, которое является уникальным для текущей операции единого входа. Это означает, что значение является временным и не может использоваться для идентификации пользователя, выполняющего аутентификацию.
 
 Azure AD игнорирует атрибут `AllowCreate` .
 
 ### <a name="requestauthncontext"></a>RequestAuthnContext
-Элемент `RequestedAuthnContext` указывает нужные методы проверки подлинности. Он необязателен в элементах `AuthnRequest` , отправленных в Azure AD. Azure AD поддерживает `AuthnContextClassRef` такие значения, `urn:oasis:names:tc:SAML:2.0:ac:classes:Password`как.
+Элемент `RequestedAuthnContext` указывает нужные методы проверки подлинности. Он необязателен в элементах `AuthnRequest` , отправленных в Azure AD. Azure AD поддерживает `AuthnContextClassRef` значения, такие как `urn:oasis:names:tc:SAML:2.0:ac:classes:Password`.
 
 ### <a name="scoping"></a>Scoping
 Элемент `Scoping`, который включает список поставщиков удостоверений, необязателен в элементах `AuthnRequest`, отправленных в Azure AD.
 
 Если он указан, не включайте атрибут `ProxyCount`, а также элемент `IDPListOption` или `RequesterID`, так как они не поддерживаются.
 
-### <a name="signature"></a>Подпись
+### <a name="signature"></a>Сигнатура
 Не включайте элемент `Signature` в элементы `AuthnRequest`, так как Azure AD не поддерживает подписанные запросы проверки подлинности.
 
-### <a name="subject"></a>Subject
+### <a name="subject"></a>Тема
 Azure AD игнорирует элемент `Subject` элементов `AuthnRequest`.
 
-## <a name="response"></a>Отклик
+## <a name="response"></a>Ответ
 После успешного выполнения запрошенного входа Azure AD отправляет ответ в облачную службу. Ответ на успешную попытку входа может выглядеть следующим образом:
 
 ```
@@ -149,16 +148,16 @@ Azure AD игнорирует элемент `Subject` элементов `Authn
 </samlp:Response>
 ```
 
-### <a name="response"></a>Отклик
+### <a name="response"></a>Ответ
 
 Элемент `Response` включает результат запроса на авторизацию. Azure AD устанавливает значения `ID`, `Version` и `IssueInstant` для элемента `Response`. Он также задает следующие атрибуты:
 
-* `Destination`. после успешного входа для этого атрибута задается значение `RedirectUri` поставщика услуг (облачной службы).
-* `InResponseTo`. для этого атрибута задается значение `ID` элемента `AuthnRequest`, инициировавшего ответ.
+* `Destination`. После успешного входа для этого атрибута задается значение `RedirectUri` поставщика услуг (облачной службы).
+* `InResponseTo`. Для этого атрибута задается значение `ID` элемента `AuthnRequest`, инициировавшего ответ.
 
 ### <a name="issuer"></a>Издатель
 
-Azure AD задает `Issuer` для `https://login.microsoftonline.com/<TenantIDGUID>/` элемента, где \<тенантидгуид > — идентификатор клиента клиента Azure AD.
+Azure AD задает элемент `Issuer` для `https://login.microsoftonline.com/<TenantIDGUID>/`, где \<Тенантидгуид > является ИДЕНТИФИКАТОРом клиента Azure AD.
 
 Например, ответ с элементом Issuer может выглядеть следующим образом:
 
@@ -166,7 +165,7 @@ Azure AD задает `Issuer` для `https://login.microsoftonline.com/<Tenant
 <Issuer xmlns="urn:oasis:names:tc:SAML:2.0:assertion"> https://login.microsoftonline.com/82869000-6ad1-48f0-8171-272ed18796e9/</Issuer>
 ```
 
-### <a name="status"></a>Сообщение о состоянии
+### <a name="status"></a>Состояние
 
 Элемент `Status` передает сведения об успешной или неудачной попытке входа. Он включает элемент `StatusCode`, содержащий код или набор блоков вложенного кода, который представляет состояние запроса. Он также включает элемент `StatusMessage` , содержащий настраиваемые сообщения об ошибках, создаваемые во время входа.
 
@@ -193,13 +192,13 @@ Timestamp: 2013-03-18 08:49:24Z</samlp:StatusMessage>
 
 #### <a name="issuer"></a>Издатель
 
-Он имеет значение `https://sts.windows.net/<TenantIDGUID>/`, где \<тенантидгуид > — идентификатор клиента Azure AD.
+Он имеет значение `https://sts.windows.net/<TenantIDGUID>/`, где \<Тенантидгуид > — идентификатор клиента Azure AD.
 
 ```
 <Issuer>https://login.microsoftonline.com/82869000-6ad1-48f0-8171-272ed18796e9/</Issuer>
 ```
 
-#### <a name="signature"></a>Подпись
+#### <a name="signature"></a>Сигнатура
 
 Azure AD подписывает утверждение в ответ на успешный вход. В элементе `Signature` содержится цифровая подпись, которую может использовать облачная служба для проверки подлинности источника, чтобы проверять целостность утверждения.
 
@@ -211,7 +210,7 @@ Azure AD подписывает утверждение в ответ на усп
     </ds:Signature>
 ```
 
-#### <a name="subject"></a>Subject
+#### <a name="subject"></a>Тема
 
 Указывает субъект, который является субъектом операторов в утверждении. Он содержит элемент `NameID`, который представляет пользователя, прошедшего аутентификацию. Значение `NameID` — целевой идентификатор, направляемый только поставщику услуг, который является аудиторией маркера. Оно носит постоянный характер. Это значение можно отменить, но нельзя переназначить. Оно также непрозрачно, так как не раскрывает никаких сведений о пользователе и его нельзя использовать в качестве идентификатора для запросов на атрибуты.
 

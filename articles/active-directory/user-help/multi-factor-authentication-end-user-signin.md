@@ -13,13 +13,12 @@ ms.date: 04/02/2017
 ms.author: lizross
 ms.reviewer: librown
 ms.custom: end-user, seo-update-azuread-jan
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 86c7be7f786a4fcecc39ea9af552a0dc03f2fcac
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: 648de7903a965d477343b974fdd615df45c3adc3
+ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74233234"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76705247"
 ---
 # <a name="sign-in-to-your-work-or-school-account-using-your-two-factor-verification-method"></a>Вход в рабочую или учебную учетную запись с помощью метода двухфакторной проверки подлинности
 
@@ -83,7 +82,7 @@ ms.locfileid: "74233234"
 
    ![Использовать другой метод](./media/multi-factor-authentication-end-user-signin/alt.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - Если у вас возникли проблемы при входе в систему с помощью двухфакторной проверки подлинности, см. статью [Проблемы с использованием Многофакторной идентификации Azure](multi-factor-authentication-end-user-troubleshoot.md).
 
 - Узнайте, как [управлять параметрами двухфакторной проверки подлинности](multi-factor-authentication-end-user-manage-settings.md).

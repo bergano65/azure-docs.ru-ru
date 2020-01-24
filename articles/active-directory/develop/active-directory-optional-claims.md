@@ -12,13 +12,12 @@ ms.date: 12/08/2019
 ms.author: ryanwi
 ms.reviewer: paulgarn, hirsin, keyam
 ms.custom: aaddev
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: f221ed773677c28094d2e5eaecc10a191e84addb
-ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
+ms.openlocfilehash: 1bc2c3a17aef232df184926dca5f70eac61b03ac
+ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75638975"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76698770"
 ---
 # <a name="how-to-provide-optional-claims-to-your-azure-ad-app"></a>Руководство. предоставление необязательных утверждений для приложения Azure AD
 
@@ -241,7 +240,7 @@ ms.locfileid: "75638975"
 2. Выберите **утверждение добавления групп**
 3. Выберите типы групп для возврата (**все группы**, **SecurityGroup**или **DirectoryRole**). Параметр **все группы** включает **SecurityGroup**, **DirectoryRole**и **дистрибутионлист**
 4. Необязательно. Щелкните Свойства определенного типа токена, чтобы изменить значение утверждения групп, чтобы оно содержало атрибуты локальной группы, или чтобы изменить тип утверждения на роль.
-5. Нажмите кнопку **Сохранить**
+5. Щелкните **Сохранить**.
 
 **Настройка групп необязательных утверждений с помощью манифеста приложения:**
 1. Войдите на [портал Azure](https://portal.azure.com)

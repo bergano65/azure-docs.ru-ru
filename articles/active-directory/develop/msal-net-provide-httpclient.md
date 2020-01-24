@@ -13,13 +13,12 @@ ms.date: 04/23/2019
 ms.author: jmprieur
 ms.reviewer: saeeda
 ms.custom: aaddev
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 80822c2a745d7c9c5b3f56b7921fcc83c5c807d1
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.openlocfilehash: dbf08e23b2bc1f657363f69df55763437e6c8a90
+ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74963245"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76695060"
 ---
 # <a name="providing-your-own-httpclient-and-proxy-using-msalnet"></a>Определение собственных HttpClient и прокси-сервера с помощью MSAL.NET
 С помощью `.WithHttpClientFactory method` при [инициализации общедоступного клиентского приложения](msal-net-initializing-client-applications.md) можно указать собственное значение для HttpClient.  Определение собственного HttpClient позволяет использовать более сложные сценарии для точного управления прокси-сервером HTTP, настройки заголовков агентов пользователя или настройки принудительного использования определенного клиента HttpClient в MSAL (например, в веб-приложениях ASP.NET Core или интерфейсах API).

@@ -4,12 +4,12 @@ ms.service: azure-functions
 ms.topic: include
 ms.date: 03/05/2019
 ms.author: cshoe
-ms.openlocfilehash: 2ab07e55606533390f6f3d2da3caf3ceee981e14
-ms.sourcegitcommit: f53cd24ca41e878b411d7787bd8aa911da4bc4ec
+ms.openlocfilehash: 6324fd0e2957aea46fb5876aa8c91f0906205ccc
+ms.sourcegitcommit: 87781a4207c25c4831421c7309c03fce5fb5793f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75840635"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76694496"
 ---
 ## <a name="trigger"></a>Триггер
 
@@ -28,26 +28,15 @@ ms.locfileid: "75840635"
 
 * **Новые экземпляры функций не требуются**: `Function_0` может обрабатывать все события 1 000 до вступления в силу логики масштабирования функций. В этом случае все сообщения 1 000 обрабатываются `Function_0`.
 
-* **Добавлен дополнительный экземпляр функции**: Если логика масштабирования функций определяет, что `Function_0` содержит больше сообщений, чем может обработать, создается новый экземпляр приложения-функции (`Function_1`). Эта новая функция также имеет связанный экземпляр [EventProcessorHost](https://docs.microsoft.com/dotnet/api/microsoft.azure.eventhubs.processor). Так как базовые концентраторы событий обнаруживают, что новый экземпляр узла пытается читать сообщения, он распределяет секции по экземплярам узлов. Например, разделы 0–4 могут быть назначены `Function_0`, а разделы 5–9 — `Function_1`.
+* **Добавлен дополнительный экземпляр функции**: Если логика масштабирования функций определяет, что `Function_0` содержит больше сообщений, чем может обработать, создается новый экземпляр приложения-функции (`Function_1`). Эта новая функция также имеет связанный экземпляр [EventProcessorHost](https://docs.microsoft.com/dotnet/api/microsoft.azure.eventhubs.processor). Так как базовые концентраторы событий обнаруживают, что новый экземпляр узла пытается читать сообщения, он распределяет секции между экземплярами узла. Например, разделы 0–4 могут быть назначены `Function_0`, а разделы 5–9 — `Function_1`.
 
 * **Добавлено больше экземпляров функций**: Если логика масштабирования функций определяет, что `Function_0` и `Function_1` имеют больше сообщений, чем они могут обработать, создаются новые экземпляры приложения `Functions_N` функции.  Приложения создаются в точке, где `N` больше числа разделов концентратора событий. В нашем примере Центры событий снова распределяют нагрузку разделов, в этом случае — по экземплярам `Function_0`...`Functions_9`.
 
-Когда функции масштабируются, `N` экземпляры являются числом, превышающим число разделов концентратора событий. Это делается для того, чтобы обеспечить доступность экземпляров [EventProcessorHost](https://docs.microsoft.com/dotnet/api/microsoft.azure.eventhubs.processor) для получения блокировок на секциях по мере их появления в других экземплярах. Вы платите только за ресурсы, используемые при выполнении экземпляра функции. Иными словами, у вас нет оплаты за эту избыточную подготовку.
+Как только происходит масштабирование, `N` экземпляры — это число, превышающее число разделов в концентраторе событий. Этот шаблон используется, чтобы обеспечить доступность экземпляров [EventProcessorHost](https://docs.microsoft.com/dotnet/api/microsoft.azure.eventhubs.processor) для получения блокировок на секциях по мере их появления в других экземплярах. Вы платите только за ресурсы, используемые при выполнении экземпляра функции. Иными словами, у вас нет оплаты за эту избыточную подготовку.
 
 Когда функция выполнена (с ошибками или без), в связанную учетную запись хранения добавляются контрольные точки. После завершения проверки все сообщения 1 000 никогда не извлекаются снова.
 
-## <a name="trigger---example"></a>Пример триггера
-
-Языковой пример см. в разделах:
-
-* [C#](#trigger---c-example)
-* [Скрипт C# (CSX)](#trigger---c-script-example)
-* [F#](#trigger---f-example)
-* [Java](#trigger---java-example)
-* [JavaScript](#trigger---javascript-example)
-* [Python](#trigger---python-example)
-
-### <a name="trigger---c-example"></a>Пример C# в триггере
+# <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
 В следующем примере показана [функция C#](../articles/azure-functions/functions-dotnet-class-library.md), которая записывает в журнал текст сообщений триггера концентратора событий.
 
@@ -99,7 +88,7 @@ public static void Run([EventHubTrigger("samples-workitems", Connection = "Event
 }
 ```
 
-### <a name="trigger---c-script-example"></a>Пример скрипта C# в триггере
+# <a name="c-scripttabcsharp-script"></a>[C#Индекса](#tab/csharp-script)
 
 В следующем примере показаны привязка триггера концентратора событий в файле *function.json* и [функция сценария C#](../articles/azure-functions/functions-reference-csharp.md), которая использует эту привязку. Эта функция записывает в журнал текст сообщений триггера концентратора событий.
 
@@ -117,7 +106,7 @@ public static void Run([EventHubTrigger("samples-workitems", Connection = "Event
 }
 ```
 
-#### <a name="version-1x"></a>Версия 1.x
+### <a name="version-1x"></a>Версия 1.x
 
 ```json
 {
@@ -180,44 +169,7 @@ public static void Run(string[] eventHubMessages, TraceWriter log)
 }
 ```
 
-### <a name="trigger---f-example"></a>Пример F# в триггере
-
-В следующем примере показаны привязка триггера концентратора событий в файле *function.json* и [функция F#](../articles/azure-functions/functions-reference-fsharp.md), которая использует эту привязку. Эта функция записывает в журнал текст сообщений триггера концентратора событий.
-
-В приведенных ниже примерах показаны данные привязки Центров событий в файле *function.json*. 
-
-#### <a name="version-2x-and-higher"></a>Версии 2. x и выше
-
-```json
-{
-  "type": "eventHubTrigger",
-  "name": "myEventHubMessage",
-  "direction": "in",
-  "eventHubName": "MyEventHub",
-  "connection": "myEventHubReadConnectionAppSetting"
-}
-```
-
-#### <a name="version-1x"></a>Версия 1.x
-
-```json
-{
-  "type": "eventHubTrigger",
-  "name": "myEventHubMessage",
-  "direction": "in",
-  "path": "MyEventHub",
-  "connection": "myEventHubReadConnectionAppSetting"
-}
-```
-
-Ниже показан код F#.
-
-```fsharp
-let Run(myEventHubMessage: string, log: TraceWriter) =
-    log.Log(sprintf "F# eventhub trigger function processed work item: %s" myEventHubMessage)
-```
-
-### <a name="trigger---javascript-example"></a>Пример JavaScript в триггере
+# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
 
 В следующем примере показаны привязка триггера концентратора событий в файле *function.json* и [функция JavaScript](../articles/azure-functions/functions-reference-node.md), которая использует эту привязку. Функция считывает [метаданные события](#trigger---event-metadata) и записывает сообщение в журнал.
 
@@ -235,7 +187,7 @@ let Run(myEventHubMessage: string, log: TraceWriter) =
 }
 ```
 
-#### <a name="version-1x"></a>Версия 1.x
+### <a name="version-1x"></a>Версия 1.x
 
 ```json
 {
@@ -275,7 +227,7 @@ module.exports = function (context, myEventHubMessage) {
 }
 ```
 
-#### <a name="version-1x"></a>Версия 1.x
+### <a name="version-1x"></a>Версия 1.x
 
 ```json
 {
@@ -305,7 +257,7 @@ module.exports = function (context, eventHubMessages) {
 };
 ```
 
-### <a name="trigger---python-example"></a>Пример Python: триггер
+# <a name="pythontabpython"></a>[Python](#tab/python)
 
 В следующем примере показаны привязка триггера концентратора событий в файле *function.json* и [функция Python](../articles/azure-functions/functions-reference-python.md), которая использует эту привязку. Функция считывает [метаданные события](#trigger---event-metadata) и записывает сообщение в журнал.
 
@@ -335,7 +287,7 @@ def main(event: func.EventHubEvent):
     logging.info('  Offset =', event.offset)
 ```
 
-### <a name="trigger---java-example"></a>Пример Java в триггере
+# <a name="javatabjava"></a>[Java](#tab/java)
 
 В следующем примере показана привязка триггера концентратора событий в файле *Function. JSON* и [функция Java](../articles/azure-functions/functions-reference-java.md) , которая использует эту привязку. Эта функция записывает в журнал текст сообщений триггера концентратора событий.
 
@@ -361,9 +313,13 @@ public void eventHubProcessor(
  }
 ```
 
- В [библиотеке среды выполнения функций Java](/java/api/overview/azure/functions/runtime) используйте заметку `EventHubTrigger` для параметров, значения которых будут поступать из концентратора событий. Параметры с этими заметками запускают функцию, когда происходит событие.  Эту аннотацию можно использовать с собственными типами Java, POJO или значениями, допускающими значение null, с помощью необязательного\<T >.
+ В [библиотеке среды выполнения функций Java](/java/api/overview/azure/functions/runtime) используйте заметку `EventHubTrigger` для параметров, значения которых будут поступать из концентратора событий. Параметры с этими заметками запускают функцию, когда происходит событие.  Эта заметка может использоваться с собственными типами Java, объектами POJO или значениями, допускающими значения NULL, используя `Optional<T>`.
 
-## <a name="trigger---attributes"></a>Атрибуты триггера
+ ---
+
+## <a name="trigger---attributes-and-annotations"></a>Атрибуты и заметки триггера
+
+# <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
 В [библиотеках классов C#](../articles/azure-functions/functions-dotnet-class-library.md) используйте атрибут [EventHubTriggerAttribute](https://github.com/Azure/azure-functions-eventhubs-extension/blob/master/src/Microsoft.Azure.WebJobs.Extensions.EventHubs/EventHubTriggerAttribute.cs).
 
@@ -377,7 +333,25 @@ public static void Run([EventHubTrigger("samples-workitems", Connection = "Event
 }
 ```
 
-Полный пример см. в разделе [Пример C# в триггере](#trigger---c-example).
+Полный пример см. в разделе [Пример C# в триггере](#trigger).
+
+# <a name="c-scripttabcsharp-script"></a>[C#Индекса](#tab/csharp-script)
+
+Атрибуты не поддерживаются C# сценарием.
+
+# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+
+Атрибуты не поддерживаются в JavaScript.
+
+# <a name="pythontabpython"></a>[Python](#tab/python)
+
+Атрибуты не поддерживаются в Python.
+
+# <a name="javatabjava"></a>[Java](#tab/java)
+
+В [библиотеке времени выполнения функций](https://docs.microsoft.com/java/api/overview/azure/functions/runtime)Java Используйте заметку [EventHubTrigger](https://docs.microsoft.com/java/api/com.microsoft.azure.functions.annotation.eventhubtrigger) в параметрах, значение которых поступает из концентратора событий. Параметры с этими заметками запускают функцию, когда происходит событие. Эта заметка может использоваться с собственными типами Java, объектами POJO или значениями, допускающими значения NULL, используя `Optional<T>`.
+
+---
 
 ## <a name="trigger---configuration"></a>Конфигурация триггера
 
@@ -398,7 +372,7 @@ public static void Run([EventHubTrigger("samples-workitems", Connection = "Event
 
 ## <a name="trigger---event-metadata"></a>Триггер — метаданные события
 
-Триггер Центров событий предоставляет несколько [свойств метаданных](../articles/azure-functions/./functions-bindings-expressions-patterns.md). Эти свойства можно использовать как часть выражений привязки в других привязках или как параметры в коде. Эти свойства относятся к классу [EventData](https://docs.microsoft.com/dotnet/api/microsoft.servicebus.messaging.eventdata).
+Триггер Центров событий предоставляет несколько [свойств метаданных](../articles/azure-functions/./functions-bindings-expressions-patterns.md). Свойства метаданных можно использовать как часть выражений привязки в других привязках или в качестве параметров в коде. Свойства берутся из класса [EVENTDATA](https://docs.microsoft.com/dotnet/api/microsoft.servicebus.messaging.eventdata) .
 
 |Свойство|Тип|Description|
 |--------|----|-----------|
@@ -410,7 +384,7 @@ public static void Run([EventHubTrigger("samples-workitems", Connection = "Event
 |`SequenceNumber`|`Int64`|Регистрационный номер транзакции события в журнале.|
 |`SystemProperties`|`IDictionary<String,Object>`|Свойства системы, включая данные события.|
 
-См. [примеры кода](#trigger---example), в которых используются эти свойства, в предыдущих разделах этой статьи.
+См. [примеры кода](#trigger), в которых используются эти свойства, в предыдущих разделах этой статьи.
 
 ## <a name="trigger---hostjson-properties"></a>Свойства host.json в триггере
 
@@ -422,20 +396,9 @@ public static void Run([EventHubTrigger("samples-workitems", Connection = "Event
 
 Используйте выходную привязку Центров событий для записи событий в поток событий. Чтобы записывать события в концентратор событий, необходимо иметь разрешение на оправку в него событий.
 
-Прежде чем пытаться реализовать привязку выходные данные, убедитесь, что имеются необходимые ссылки на пакет.
+Прежде чем пытаться реализовать выходную привязку, убедитесь в наличии необходимых ссылок на пакеты.
 
-## <a name="output---example"></a>Пример выходных данных
-
-Языковой пример см. в разделах:
-
-* [C#](#output---c-example)
-* [Скрипт C# (CSX)](#output---c-script-example)
-* [F#](#output---f-example)
-* [Java](#output---java-example)
-* [JavaScript](#output---javascript-example)
-* [Python](#output---python-example)
-
-### <a name="output---c-example"></a>Пример выходных данных C#
+# <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
 В следующем примере показана [функция C#](../articles/azure-functions/functions-dotnet-class-library.md), которая записывает сообщение в концентратор событий, используя возвращаемое значение метода в качестве выходных данных.
 
@@ -469,7 +432,7 @@ public static async Task Run(
 }
 ```
 
-### <a name="output---c-script-example"></a>Пример выходных данных скрипта C#
+# <a name="c-scripttabcsharp-script"></a>[C#Индекса](#tab/csharp-script)
 
 В следующем примере показаны привязка триггера концентратора событий в файле *function.json* и [функция сценария C#](../articles/azure-functions/functions-reference-csharp.md), которая использует эту привязку. Эта функция записывает сообщение в концентратор событий.
 
@@ -521,41 +484,7 @@ public static void Run(TimerInfo myTimer, ICollector<string> outputEventHubMessa
 }
 ```
 
-### <a name="output---f-example"></a>Пример выходных данных F#
-
-В следующем примере показаны привязка триггера концентратора событий в файле *function.json* и [функция F#](../articles/azure-functions/functions-reference-fsharp.md), которая использует эту привязку. Эта функция записывает сообщение в концентратор событий.
-
-В приведенных ниже примерах показаны данные привязки Центров событий в файле *function.json*. Первый пример — для функций 2. x и более поздних, а второй — для функций 1. x. 
-
-```json
-{
-    "type": "eventHub",
-    "name": "outputEventHubMessage",
-    "eventHubName": "myeventhub",
-    "connection": "MyEventHubSendAppSetting",
-    "direction": "out"
-}
-```
-```json
-{
-    "type": "eventHub",
-    "name": "outputEventHubMessage",
-    "path": "myeventhub",
-    "connection": "MyEventHubSendAppSetting",
-    "direction": "out"
-}
-```
-
-Ниже показан код F#.
-
-```fsharp
-let Run(myTimer: TimerInfo, outputEventHubMessage: byref<string>, log: ILogger) =
-    let msg = sprintf "TimerTriggerFSharp1 executed at: %s" DateTime.Now.ToString()
-    log.LogInformation(msg);
-    outputEventHubMessage <- msg;
-```
-
-### <a name="output---javascript-example"></a>Пример выходных данных JavaScript
+# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
 
 В следующем примере показаны привязка триггера концентратора событий в файле *function.json* и [функция JavaScript](../articles/azure-functions/functions-reference-node.md), которая использует эту привязку. Эта функция записывает сообщение в концентратор событий.
 
@@ -607,7 +536,7 @@ module.exports = function(context) {
 };
 ```
 
-### <a name="output---python-example"></a>Пример Python: выходные данные
+# <a name="pythontabpython"></a>[Python](#tab/python)
 
 В следующем примере показаны привязка триггера концентратора событий в файле *function.json* и [функция Python](../articles/azure-functions/functions-reference-python.md), которая использует эту привязку. Эта функция записывает сообщение в концентратор событий.
 
@@ -637,7 +566,7 @@ def main(timer: func.TimerRequest) -> str:
     return 'Message created at: {}'.format(timestamp)
 ```
 
-### <a name="output---java-example"></a>Пример выходных данных Java
+# <a name="javatabjava"></a>[Java](#tab/java)
 
 В следующем примере показана функция Java, которая записывает сообщение, содержащее текущее время, в концентратор событий.
 
@@ -652,7 +581,11 @@ public String sendTime(
 
 В [библиотеке среды выполнения функций Java](/java/api/overview/azure/functions/runtime) используйте заметку `@EventHubOutput` для параметров, значения которых будут опубликованы в концентраторе событий.  Параметр должен быть типа `OutputBinding<T>`, где T — POJO или любой собственный тип Java.
 
-## <a name="output---attributes"></a>Выходные атрибуты
+---
+
+## <a name="output---attributes-and-annotations"></a>Выходные атрибуты и заметки
+
+# <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
 В [библиотеках классов C#](../articles/azure-functions/functions-dotnet-class-library.md) используйте атрибут [EventHubAttribute](https://github.com/Azure/azure-webjobs-sdk/blob/master/src/Microsoft.Azure.WebJobs.ServiceBus/EventHubs/EventHubAttribute.cs).
 
@@ -667,7 +600,25 @@ public static string Run([TimerTrigger("0 */5 * * * *")] TimerInfo myTimer, ILog
 }
 ```
 
-Полный пример см. в разделе [Пример выходных данных C#](#output---c-example).
+Полный пример см. в разделе [Пример выходных данных C#](#output).
+
+# <a name="c-scripttabcsharp-script"></a>[C#Индекса](#tab/csharp-script)
+
+Атрибуты не поддерживаются C# сценарием.
+
+# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+
+Атрибуты не поддерживаются в JavaScript.
+
+# <a name="pythontabpython"></a>[Python](#tab/python)
+
+Атрибуты не поддерживаются в Python.
+
+# <a name="javatabjava"></a>[Java](#tab/java)
+
+В [библиотеке времени выполнения функций Java](https://docs.microsoft.com/java/api/overview/azure/functions/runtime)используйте аннотацию [евенсубаутпут](https://docs.microsoft.com/java/api/com.microsoft.azure.functions.annotation.eventhuboutput) в параметрах, значение которых будет опубликовано в концентраторе событий. Параметр должен иметь тип `OutputBinding<T>`, где `T` является POJO или любым собственным типом Java.
+
+---
 
 ## <a name="output---configuration"></a>Выходная конфигурация
 
@@ -686,9 +637,35 @@ public static string Run([TimerTrigger("0 */5 * * * *")] TimerInfo myTimer, ILog
 
 ## <a name="output---usage"></a>Использование выходной привязки
 
-В коде C# и сценарии C# для отправки сообщений используйте параметр метода, например `out string paramName`. В скрипте C# `paramName` — это значение, заданное в свойстве `name` файла *function.json*. Для записи нескольких сообщений можно использовать `ICollector<string>` или `IAsyncCollector<string>` вместо `out string`.
+# <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
-В JavaScript для доступа к выходному событию можно использовать `context.bindings.<name>`. `<name>` — это значение, заданное в свойстве `name` файла *function.json*.
+Отправка сообщений с помощью параметра метода, например `out string paramName`. В скрипте C# `paramName` — это значение, заданное в свойстве `name` файла *function.json*. Для записи нескольких сообщений можно использовать `ICollector<string>` или `IAsyncCollector<string>` вместо `out string`.
+
+# <a name="c-scripttabcsharp-script"></a>[C#Индекса](#tab/csharp-script)
+
+Отправка сообщений с помощью параметра метода, например `out string paramName`. В скрипте C# `paramName` — это значение, заданное в свойстве `name` файла *function.json*. Для записи нескольких сообщений можно использовать `ICollector<string>` или `IAsyncCollector<string>` вместо `out string`.
+
+# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+
+Получите доступ к выходному событию с помощью `context.bindings.<name>`, где `<name>` — это значение, указанное в свойстве `name` файла *Function. JSON*.
+
+# <a name="pythontabpython"></a>[Python](#tab/python)
+
+Существует два варианта вывода сообщения концентратора событий из функции:
+
+- **Возвращаемое значение**: задайте `$return`для свойства `name` в *Function. JSON* . В этой конфигурации возвращаемое значение функции сохраняется как сообщение концентратора событий.
+
+- **Императив**: передайте значение в метод [Set](https://docs.microsoft.com/python/api/azure-functions/azure.functions.out?view=azure-python#set-val--t-----none) параметра, объявленного как тип [out](https://docs.microsoft.com/python/api/azure-functions/azure.functions.out?view=azure-python) . Значение, передаваемое в `set`, сохраняется как сообщение концентратора событий.
+
+# <a name="javatabjava"></a>[Java](#tab/java)
+
+Существует два варианта вывода сообщения концентратора событий из функции с помощью аннотации [евенсубаутпут](https://docs.microsoft.com/java/api/com.microsoft.azure.functions.annotation.eventhuboutput) :
+
+- **Возвращаемое значение**: применяя заметку к самой функции, возвращаемое значение функции сохраняется как сообщение концентратора событий.
+
+- **Императивное**: чтобы явно задать значение сообщения, примените заметку к конкретному параметру типа [`OutputBinding<T>`](https://docs.microsoft.com/java/api/com.microsoft.azure.functions.OutputBinding), где `T` является POJO или любым собственным типом Java. При такой конфигурации передача значения методу `setValue` сохраняет значение как сообщение концентратора событий.
+
+---
 
 ## <a name="exceptions-and-return-codes"></a>Исключения и коды возврата
 
@@ -722,6 +699,6 @@ public static string Run([TimerTrigger("0 */5 * * * *")] TimerInfo myTimer, ILog
 
 |Свойство  |По умолчанию | Description |
 |---------|---------|---------|
-|maxBatchSize|64|Максимальное число событий, получаемых в цикле получения.|
-|prefetchCount|Н/Д|Значение PrefetchCount по умолчанию, которое будет использоваться базовым узлом EventProcessorHost.|
-|batchCheckpointFrequency|1|Количество пакетов событий, которые необходимо обработать перед созданием контрольной точки курсора EventHub.|
+|`maxBatchSize`|64|Максимальное число событий, получаемых в цикле получения.|
+|`prefetchCount`|Н/Д|Счетчик предварительной выборки по умолчанию, используемый базовым `EventProcessorHost`.|
+|`batchCheckpointFrequency`|1|Количество пакетов событий, которые необходимо обработать перед созданием контрольной точки курсора EventHub.|

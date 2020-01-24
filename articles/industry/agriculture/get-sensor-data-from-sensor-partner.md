@@ -5,12 +5,12 @@ author: uhabiba04
 ms.topic: article
 ms.date: 11/04/2019
 ms.author: v-umha
-ms.openlocfilehash: 745e3f0b6c7bd4e6d984ce2df29b9965d4b8ca21
-ms.sourcegitcommit: 38b11501526a7997cfe1c7980d57e772b1f3169b
+ms.openlocfilehash: 9bf5608a44aa19650a507ada3a0a437d34c13277
+ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76513747"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76705672"
 ---
 # <a name="get-sensor-data-from-sensor-partners"></a>Получение данных датчика от партнеров датчиков
 
@@ -37,9 +37,7 @@ Azure Фармбеатс помогает перенести потоковые 
  - Секрет клиента
  - Строка подключения EventHub
 
-Предыдущая информация предоставляется системным интегратором. При возникновении проблем, которые могут возникнуть при включении интеграции устройств, обратитесь к системному интегратору.
-
-Кроме того, можно создать учетные данные, запустив этот скрипт из Azure Cloud Shell. Выполните следующие действия.
+Вы можете создать приведенные выше сведения, выполнив следующие действия. (Обратите внимание, что эти действия необходимо выполнить в Azure, поэтому вам потребуется доступ к подписке Azure, где развернут Фармбеатс).
 
 1. Скачайте [ZIP-файл](https://aka.ms/farmbeatspartnerscriptv2)и извлеките его на локальный диск. В ZIP-файле будет один файл.
 2. Войдите в https://portal.azure.com/ и перейдите в раздел Azure Active Directory-> Регистрация приложений.

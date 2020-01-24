@@ -13,13 +13,12 @@ ms.date: 01/07/2017
 ms.author: ryanwi
 ms.reviewer: hirsin, dastrock
 ms.custom: aaddev
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: b0da348d87d1dedbdc1f97d3a4d0a1a001871a1d
-ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
+ms.openlocfilehash: 74ce45067dbe2d89d7bb7e267bffa6bbb02defa3
+ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74843790"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76697886"
 ---
 # <a name="federation-metadata"></a>Метаданные федерации
 Azure Active Directory (Azure AD) публикует документ метаданных федерации для служб, который настроен на прием маркеров безопасности, выдаваемых Azure AD. Формат документа метаданных федерации описан в стандарте [Web Services Federation Language (WS-Federation) Version 1.2](https://docs.oasis-open.org/wsfed/federation/v1.2/os/ws-federation-1.2-spec-os.html) (язык федерации веб-служб (WS-Federation) версии 1.2), который является расширением стандарта [Metadata for the OASIS Security Assertion Markup Language (SAML) v2.0](https://docs.oasis-open.org/security/saml/v2.0/saml-metadata-2.0-os.pdf) (метаданные для языка разметки заявлений системы безопасности (SAML) OASIS версии 2.0).
@@ -34,12 +33,12 @@ Azure AD публикует клиентские и общие конечные 
 ## <a name="federation-metadata-endpoints"></a>Конечные точки метаданных федерации
 Azure AD публикует метаданные федерации по адресу `https://login.microsoftonline.com/<TenantDomainName>/FederationMetadata/2007-06/FederationMetadata.xml`.
 
-Для **клиентских конечных точек** `TenantDomainName` может быть одного из следующих типов:
+Для **клиентских конечных точек**`TenantDomainName` может быть одного из следующих типов:
 
 * зарегистрированное доменное имя клиента Azure AD, например `contoso.onmicrosoft.com`;
 * неизменяемый идентификатор клиента для домена, например `72f988bf-86f1-41af-91ab-2d7cd011db45`.
 
-Для **общих конечных точек** `TenantDomainName` является `common`. В этом документе перечислены только те элементы метаданных федерации, которые являются общими для всех клиентов Azure AD, размещенных на login.microsoftonline.com.
+Для **общих конечных точек**`TenantDomainName` является `common`. В этом документе перечислены только те элементы метаданных федерации, которые являются общими для всех клиентов Azure AD, размещенных на login.microsoftonline.com.
 
 Клиентская конечная точка может иметь такой адрес: `https://login.microsoftonline.com/contoso.onmicrosoft.com/FederationMetadata/2007-06/FederationMetadata.xml`. Независимая от клиента конечная точка: [https://login.microsoftonline.com/common/FederationMetadata/2007-06/FederationMetadata.xml](https://login.microsoftonline.com/common/FederationMetadata/2007-06/FederationMetadata.xml). Документ метаданных федерации можно просмотреть, введя этот URL-адрес в браузере.
 

@@ -5,18 +5,18 @@ services: expressroute
 author: jaredr80
 ms.service: expressroute
 ms.topic: conceptual
-ms.date: 05/20/2019
+ms.date: 01/22/2020
 ms.author: jaredro
-ms.openlocfilehash: ba7bddb2f11732f7de5f1dfa68b66be1204722cc
-ms.sourcegitcommit: a22cb7e641c6187315f0c6de9eb3734895d31b9d
+ms.openlocfilehash: c5cb8366465d5983823184c87eb54fad6aaffbd0
+ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74083488"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76705927"
 ---
 # <a name="how-to-configure-expressroute-direct"></a>Настройка Direct для ExpressRoute
 
-ExpressRoute Direct дает возможность подключения непосредственно в глобальной сети корпорации Майкрософт в стратегически распределенных по всему миру расположениях пиринга. Дополнительные сведения см. в разделе [About ExpressRoute Direct](expressroute-erdirect-about.md) (Общие сведения о подключении ExpressRoute Direct).
+ExpressRoute Direct дает возможность подключения непосредственно в глобальной сети корпорации Майкрософт в стратегически распределенных по всему миру расположениях пиринга. См. дополнительные сведения об [ExpressRoute Direct](expressroute-erdirect-about.md).
 
 ## <a name="resources"></a>Создание ресурса
 
@@ -100,7 +100,7 @@ ExpressRoute Direct дает возможность подключения не�
    > Атрибуту инкапсуляции также можно присвоить значение Dot1Q. 
    >
 
-   **Пример выходных данных**
+   **Пример результата:**
 
    ```powershell
    Name                       : Contoso-Direct
@@ -168,7 +168,7 @@ ExpressRoute Direct дает возможность подключения не�
    $ERDirect.Links[1].AdminState = "Enabled"
    Set-AzExpressRoutePort -ExpressRoutePort $ERDirect
    ```
-   **Пример выходных данных**
+   **Пример результата:**
 
    ```powershell
    Name                       : Contoso-Direct
@@ -237,7 +237,7 @@ ExpressRoute Direct дает возможность подключения не�
 
   Другие значения пропускной способности включают в себя: 5.0, 10.0 и 40.0
 
-  **Пример выходных данных**
+  **Пример результата:**
 
   ```powershell
   Name                             : ExpressRoute-Direct-ckt
@@ -269,6 +269,6 @@ ExpressRoute Direct дает возможность подключения не�
   GatewayManagerEtag     
   ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения см. в разделе [About ExpressRoute Direct](expressroute-erdirect-about.md) (Общие сведения о подключении ExpressRoute Direct).

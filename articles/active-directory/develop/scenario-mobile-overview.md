@@ -16,13 +16,12 @@ ms.date: 05/07/2019
 ms.author: jmprieur
 ms.reviwer: brandwe
 ms.custom: aaddev, identityplatformtop40
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: c6ebeed4a7806c013205d01621107ef65655e753
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.openlocfilehash: 0a33b5bb4fc7220a9cf66f40e9805d3fde9fccef
+ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74965472"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76702051"
 ---
 # <a name="scenario-mobile-application-that-calls-web-apis"></a>Сценарий: мобильное приложение, вызывающее веб-API
 
@@ -43,7 +42,7 @@ ms.locfileid: "74965472"
 >
 > [Краткое руководство. получение маркера и вызов Microsoft Graph API из приложения Xamarin iOS & Android](https://github.com/Azure-Samples/active-directory-xamarin-native-v2)
 
-## <a name="overview"></a>Краткое описание
+## <a name="overview"></a>Обзор
 
 Для мобильных приложений очень важно персонализированный и удобный пользовательский интерфейс.  Платформа Microsoft Identity позволяет разработчикам мобильных приложений создавать такие возможности для пользователей iOS и Android. Приложение может выполнять вход Azure Active Directory пользователей (Azure AD), персональные учетная запись Майкрософт пользователей и Azure AD B2C пользователей, а также получать маркеры для вызова веб-API от их имени. Для реализации этих потоков мы будем использовать библиотеку проверки подлинности Майкрософт (MSAL), которая реализует [поток кода авторизации OAuth 2.0](v2-oauth2-auth-code-flow.md)отраслевого стандарта.
 

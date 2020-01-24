@@ -17,13 +17,12 @@ ms.date: 07/19/2017
 ms.author: ryanwi
 ms.custom: aaddev
 ms.reviewer: hirsin
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 66c509b1b901889241d6837611a2c373750fdb3a
-ms.sourcegitcommit: bc3a153d79b7e398581d3bcfadbb7403551aa536
+ms.openlocfilehash: 95d3deff73ce357f012b15a7fc1cfa3decdb4bda
+ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68834793"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76701371"
 ---
 # <a name="single-sign-out-saml-protocol"></a>Протокол единого выхода SAML
 
@@ -47,7 +46,7 @@ Azure Active Directory (Azure AD) поддерживает профиль SAML 2
 Элемент `LogoutRequest` , передаваемый в Azure AD, должен иметь следующие атрибуты.
 
 * `ID` — признак запроса на выход. Значение `ID` не должно начинаться с цифры. Обычно здесь указывается строковое представление идентификатора GUID с добавлением перед ним строки **id** .
-* `Version` — установите для этого элемента значение **2.0**. Это обязательное значение.
+* `Version` — установите для этого элемента значение **2.0**. Это значение обязательно.
 * `IssueInstant` — это строка `DateTime` со значением в формате всемирного времени (UTC) и [форматом кругового пути ("o")](https://msdn.microsoft.com/library/az4se3k1.aspx). Azure AD ожидает значение такого типа, но не требует его.
 
 ### <a name="issuer"></a>Издатель
@@ -72,9 +71,9 @@ Azure AD отправляет `LogoutResponse` в ответ на элемент
 Azure AD устанавливает значения `ID`, `Version` и `IssueInstant` для элемента `LogoutResponse`. Он также задает для элемента `InResponseTo` значение, взятое из атрибута `ID` для `LogoutRequest`, который запрашивал ответ.
 
 ### <a name="issuer"></a>Издатель
-Azure AD задает для `https://login.microsoftonline.com/<TenantIdGUID>/` этого параметра значение, где \<тенантидгуид > — идентификатор клиента клиента Azure AD.
+Azure AD присваивает этому параметру значение `https://login.microsoftonline.com/<TenantIdGUID>/`, где \<Тенантидгуид > является ИДЕНТИФИКАТОРом клиента Azure AD.
 
 Чтобы оценить значение элемента `Issuer` , используйте значение **URI идентификатора приложения** , указанное при регистрации приложения.
 
-### <a name="status"></a>Сообщение о состоянии
-Azure AD использует элемент `StatusCode`, содержащийся в элементе `Status`, чтобы указать, успешно ли выполнен выход. После неудачной попытки выхода элемент `StatusCode` может также содержать пользовательские сообщения об ошибках.
+### <a name="status"></a>Состояние
+Azure AD использует элемент `StatusCode` в элементе `Status`, чтобы указать успешность или неудачу выхода. При неудачной попытке выхода элемент `StatusCode` может также содержать настраиваемые сообщения об ошибках.

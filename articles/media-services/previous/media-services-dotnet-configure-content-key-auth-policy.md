@@ -14,17 +14,18 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/18/2019
 ms.author: juliako
-ms.openlocfilehash: 386b49698ca6b8ded2972aba14c1968620fcbb08
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.openlocfilehash: 58d52cd194ca4391c61f2477189984273df1198a
+ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74974501"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76705706"
 ---
-# <a name="dynamic-encryption-configure-a-content-key-authorization-policy"></a>Динамическое шифрование: настройка политики для авторизации ключа содержимого
+# <a name="configure-a-content-key-authorization-policy"></a>Настройка политики авторизации ключей содержимого
+
 [!INCLUDE [media-services-selector-content-key-auth-policy](../../../includes/media-services-selector-content-key-auth-policy.md)]
 
-## <a name="overview"></a>Краткое описание
+## <a name="overview"></a>Обзор
  Службы мультимедиа Azure позволяют защищать потоковое содержимое MPEG-DASH, Smooth Streaming и HTTP Live Streaming (HLS) с помощью стандарта AES (использующего 128-разрядные ключи шифрования) или технологии [управления цифровыми правами (DRM) PlayReady](https://www.microsoft.com/playready/overview/). Кроме того, Службы мультимедиа позволяют передавать потоки MPEG DASH с шифрованием Widevine DRM. PlayReady и Widevine шифруются согласно спецификации общего шифрования (ISO/IEC 23001-7 CENC).
 
 Службы мультимедиа также включают в себя службы доставки ключей и лицензий, с помощью которых клиенты могут получать ключи AES либо лицензии PlayReady или Widevine для воспроизведения зашифрованного содержимого.
@@ -428,7 +429,7 @@ ms.locfileid: "74974501"
 
 ## <a name="additional-notes"></a>Дополнительные замечания
 
-* Widevine — это служба, предоставляемая Google Inc. и подпадает под условия обслуживания и политики конфиденциальности Google, Inc.
+* Widevine — это служба, которая предоставляется компанией Google Inc. и подпадает под условия предоставления услуг и политику конфиденциальности Google Inc.
 
 ## <a name="media-services-learning-paths"></a>Схемы обучения работе со службами мультимедиа
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]

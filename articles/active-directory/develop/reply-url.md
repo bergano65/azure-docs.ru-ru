@@ -10,13 +10,12 @@ ms.subservice: develop
 ms.custom: aaddev
 ms.service: active-directory
 ms.reviewer: lenalepa, manrath
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: bfc13c1057f74fb1eb5a41210ffaf166e69bb06e
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: 7e289b83daa9c30703d94a7f4c0ff459f96256c0
+ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74920333"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76702527"
 ---
 # <a name="redirect-urireply-url-restrictions-and-limitations"></a>Ограничения для универсального кода ресурса (URI) перенаправления и URL-адреса ответа
 
@@ -26,7 +25,7 @@ URI перенаправления или URL-адрес ответа — это
 
 В следующей таблице показано максимальное число URI перенаправления, которые можно добавить при регистрации приложения.
 
-| Учетные записи для входа | Максимальное число URI перенаправления | Описание |
+| Учетные записи для входа | Максимальное число URI перенаправления | Description |
 |--------------------------|---------------------------------|-------------|
 | Рабочие или учебные учетные записи Майкрософт в клиенте Azure Active Directory (Azure AD) любой организации | 256 | для поля `signInAudience` в манифесте приложения задано значение *азуреадмйорг* или *азуреадмултиплеоргс* |
 | Личные учетные записи Майкрософт, рабочие и учебные учетные записи | 100 | `signInAudience` поле в манифесте приложения имеет значение *азуреадандперсоналмикрософтаккаунт* |

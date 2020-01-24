@@ -11,18 +11,17 @@ ms.topic: conceptual
 ms.date: 03/12/2018
 ms.author: ghogen
 ms.custom: aaddev, vs-azure
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4c4328ea6145d32616f1784d94976dab29216fbc
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: 83717f9a78d80923f020ab699be9ddabbbcc12ef
+ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68852005"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76700011"
 ---
 # <a name="what-happened-to-my-mvc-project-visual-studio-azure-active-directory-connected-service"></a>Что произошло с моим проектом MVC в подключенной службе Visual Studio Azure Active Directory?
 
 > [!div class="op_single_selector"]
-> - [Приступая к работе](vs-active-directory-dotnet-getting-started.md)
+> - [Начало работы](vs-active-directory-dotnet-getting-started.md)
 > - [Что произошло?](vs-active-directory-dotnet-what-happened.md)
 
 В этой статье описаны конкретные изменения, которые вносятся в проекты ASP.NET MVC при добавлении [подключенной службы Azure Active Directory через Visual Studio](vs-active-directory-add-connected-service.md).
@@ -33,7 +32,7 @@ ms.locfileid: "68852005"
 
 Это изменение влияет на файлы проекта (ссылки \*.NET) и `packages.config` (ссылки NuGet).
 
-| Тип | Ссылка |
+| Тип | Справочные материалы |
 | --- | --- |
 | .NET; NuGet | Microsoft.IdentityModel.Protocol.Extensions |
 | .NET; NuGet | Microsoft.Owin |
@@ -48,7 +47,7 @@ ms.locfileid: "68852005"
 
 Дополнительные ссылки, если выбран параметр **Чтение данных каталога**
 
-| Type | Ссылка |
+| Тип | Справочные материалы |
 | --- | --- |
 | .NET; NuGet | EntityFramework |
 | .NET        | EntityFramework.SqlServer (только для Visual Studio 2015) |
@@ -62,7 +61,7 @@ ms.locfileid: "68852005"
 
 Следующие ссылки удалены (только для проектов ASP.NET 4, например в Visual Studio 2015):
 
-| Type | Ссылка |
+| Тип | Справочные материалы |
 | --- | --- |
 | .NET; NuGet | Microsoft.AspNet.Identity.Core |
 | .NET; NuGet | Microsoft.AspNet.Identity.EntityFramework |
@@ -162,7 +161,7 @@ ms.locfileid: "68852005"
 
 [Подробнее об Azure Active Directory](https://azure.microsoft.com/services/active-directory/).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Сценарии аутентификации в Azure Active Directory](authentication-scenarios.md)
 - [Добавление возможности входа в веб-приложение ASP.NET с помощью учетной записи Майкрософт](quickstart-v1-aspnet-webapp.md)

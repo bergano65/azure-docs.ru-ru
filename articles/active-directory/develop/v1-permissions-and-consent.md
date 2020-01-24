@@ -17,13 +17,12 @@ ms.date: 09/24/2018
 ms.author: ryanwi
 ms.reviewer: jesakowi, justhu
 ms.custom: aaddev
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: a467593d16c54e73d58f9cb2b67a4fa31eb0179e
-ms.sourcegitcommit: 38251963cf3b8c9373929e071b50fd9049942b37
+ms.openlocfilehash: c13f4cabfbd996c1d811a8a3e35e69893c51154f
+ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73042326"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76700929"
 ---
 # <a name="permissions-and-consent-in-the-azure-active-directory-v10-endpoint"></a>Разрешения и согласие в конечной точке Azure Active Directory версии 1.0
 
@@ -61,7 +60,7 @@ Azure AD определяет два типа разрешений:
 > (Get-AzureADServicePrincipal -filter "DisplayName eq 'Microsoft Graph'").AppRoles
 > ```
 
-| Имя свойства | Описание | Пример |
+| Имя свойства | Description | Пример |
 | --- | --- | --- |
 | `ID` | Значение GUID, которое уникальным образом идентифицирует это разрешение. | 570282fd-fa5c-430d-a7fd-fc8dc98a9dca |
 | `IsEnabled` | Указывает, доступно ли это разрешение для использования. | true |
