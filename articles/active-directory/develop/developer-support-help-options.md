@@ -13,13 +13,12 @@ ms.date: 05/23/2019
 ms.author: ryanwi
 ms.reviewer: jmprieur, saeeda
 ms.custom: aaddev
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3f1c6d89af1d88be9a241c94462b17edf0c93de2
-ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
+ms.openlocfilehash: e85a768d8e4f11ca3637bc8f0b394cfb1ea9744a
+ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74843195"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76697478"
 ---
 # <a name="support-and-help-options-for-developers"></a>Возможности получения поддержки и справки для разработчиков
 
@@ -32,7 +31,7 @@ ms.locfileid: "74843195"
 > * Если возникла проблема с одной из наших библиотек аутентификации, сообщите об этом на сайте *GitHub*.
 > * И, наконец, если вам требуется консультация, подайте запрос в службу поддержки.
 
-## <a name="search"></a>служба поиска.
+## <a name="search"></a>Поиск
 
 Если у вас есть вопрос по разработке, вы можете найти ответ на него в нашей документации, [примерах на сайте GitHub](https://github.com/azure-samples) или на сайте [Stack Overflow](https://www.stackoverflow.com).
 
@@ -48,7 +47,7 @@ ms.locfileid: "74843195"
 
 ## <a name="use-the-development-support-tools"></a>Использование средств технической поддержки для разработки
 
-| Средство  | Описание  |
+| Средство  | Description  |
 |---------|---------|
 | [jwt.ms](https://jwt.ms) | Вставьте идентификатор или маркер доступа, чтобы декодировать имена и значения утверждений. |
 | [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer)| Средство для выполнения запросов и получения ответов по API Microsoft Graph. |

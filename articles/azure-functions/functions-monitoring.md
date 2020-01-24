@@ -4,12 +4,12 @@ description: Узнайте, как использовать Azure Application I
 ms.assetid: 501722c3-f2f7-4224-a220-6d59da08a320
 ms.topic: conceptual
 ms.date: 04/04/2019
-ms.openlocfilehash: 4a182ddffd4c1ee4d2e71e7d9e6385df23e4260e
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.openlocfilehash: dda62e3041d04d5becc9179fff1c56d0c587ba1e
+ms.sourcegitcommit: 7221918fbe5385ceccf39dff9dd5a3817a0bd807
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74978089"
+ms.lasthandoff: 01/21/2020
+ms.locfileid: "76292932"
 ---
 # <a name="monitor-azure-functions"></a>Мониторинг Функций Azure
 
@@ -74,7 +74,7 @@ ms.locfileid: "74978089"
 
 ![Выполнение в Application Insights](media/functions-monitoring/run-in-ai.png)
 
-Отобразится следующий запрос. Вы видите, что список вызовов ограничен последними 30 днями. В списке отображается не более 20 строк (`where timestamp > ago(30d) | take 20`). Список сведений о вызовах находится за последние 30 дней без ограничений.
+Отобразится следующий запрос. Можно увидеть, что результаты запроса ограничены последними 30 днями (`where timestamp > ago(30d)`). Кроме того, в результатах отображается не более 20 строк (`take 20`). В отличие от этого, список сведений о вызовах для функции — за последние 30 дней без ограничения.
 
 ![Список вызовов в аналитике Application Insights](media/functions-monitoring/ai-analytics-invocation-list.png)
 
@@ -92,13 +92,13 @@ ms.locfileid: "74978089"
 
 Следующие области Application Insights могут быть полезны при оценке поведения, производительности и ошибок в функциях.
 
-| Tab | Описание |
+| Вкладка | Description |
 | ---- | ----------- |
 | **[Сбоев](../azure-monitor/app/asp-net-exceptions.md)** |  Создавайте диаграммы и оповещения на основе ошибок функций и исключений сервера. **Имя операции** обозначает имя функции. Сбои в зависимостях не отображаются, если не реализовать пользовательскую телеметрию для зависимостей. |
 | **[Системного](../azure-monitor/app/performance-counters.md)** | Анализ проблем производительности. |
 | **Серверы** | Просмотр использования ресурсов и пропускной способности для каждого сервера. Эти данные можно использовать для отладки в тех случаях, когда функции создают чрезмерную нагрузку на базовые ресурсы. Серверы здесь называются **экземплярами облачных ролей**. |
 | **[Метрики](../azure-monitor/app/metrics-explorer.md)** | Создание диаграмм и оповещений на основе метрик. Метрики включают число вызовов функций, время выполнения и частоту успешных попыток. |
-| **[Динамический поток метрик: мгновенные метрики для подробного отслеживания](../azure-monitor/app/live-stream.md)** | Просмотр данных метрик по мере их создания в режиме реального времени. |
+| **[Динамический поток метрик: мгновенные метрики для подробного отслеживания](../azure-monitor/app/live-stream.md)** | Просмотр данных метрик по мере их создания практически в реальном времени. |
 
 ## <a name="query-telemetry-data"></a>Запросы к данным телеметрии
 
@@ -119,7 +119,7 @@ requests
 
 Доступные таблицы показаны на вкладке **схема** слева. Данные, создаваемые при вызовах функций, вы найдете в следующих таблицах:
 
-| Таблицы | Описание |
+| Таблицы | Description |
 | ----- | ----------- |
 | **отладоч** | Журналы, созданные средой выполнения и кодом функции. |
 | **requests** | Один запрос для каждого вызова функции. |
@@ -337,7 +337,7 @@ Application Insights имеет функцию [выборки](../azure-monitor
 
 Используйте параметр [ILogger](https://docs.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger) в функциях вместо параметра `TraceWriter`. Журналы, созданные с помощью `TraceWriter` перейдите к Application Insights, но `ILogger` позволяет выполнять [структурированное ведение журнала](https://softwareengineering.stackexchange.com/questions/312197/benefits-of-structured-logging-vs-basic-logging).
 
-Объект `ILogger` позволяет вызывать для создания журналов [методы расширения ILogger](https://docs.microsoft.com/dotnet/api/microsoft.extensions.logging.loggerextensions#methods) `Log<level>`. Следующий код записывает `Information` журналы с функцией Category.
+Используя объект `ILogger`, вы вызываете [методы расширения `Log<level>` в ILogger](https://docs.microsoft.com/dotnet/api/microsoft.extensions.logging.loggerextensions#methods) для создания журналов. Следующий код записывает `Information` журналы с функцией Category. < YOUR_FUNCTION_NAME >. Пользователь».
 
 ```cs
 public static async Task<HttpResponseMessage> Run(HttpRequestMessage req, ILogger logger)
@@ -561,7 +561,7 @@ namespace functionapp0915
 
 Не вызывайте `TrackRequest` или `StartOperation<RequestTelemetry>`, так как вы увидите дублирующиеся запросы на вызов функции.  Среда выполнения Функций Azure автоматически отслеживает запросы.
 
-Не указывайте `telemetryClient.Context.Operation.Id`. Этот глобальный параметр приводит к неправильной корреляции при одновременном выполнении множества функций. Вместо этого создайте экземпляр телеметрии (`DependencyTelemetry`, `EventTelemetry`) и измените его свойство `Context`. Затем передайте экземпляр телеметрии в соответствующий метод `Track` в `TelemetryClient` (`TrackDependency()`, `TrackEvent()`). Этот метод гарантирует, что данные телеметрии будет иметь правильные сведения о корреляции для текущего вызова функции.
+Не указывайте `telemetryClient.Context.Operation.Id`. Этот глобальный параметр приводит к неправильной корреляции при одновременном выполнении множества функций. Вместо этого создайте экземпляр телеметрии (`DependencyTelemetry`, `EventTelemetry`) и измените его свойство `Context`. Затем передайте экземпляр телеметрии соответствующему методу `Track` в `TelemetryClient` (`TrackDependency()`, `TrackEvent()`, `TrackMetric()`). Этот метод гарантирует, что данные телеметрии будет иметь правильные сведения о корреляции для текущего вызова функции.
 
 ## <a name="log-custom-telemetry-in-javascript-functions"></a>Регистрация пользовательской телеметрии в функциях JavaScript
 
@@ -590,7 +590,7 @@ module.exports = function (context, req) {
 
 ## <a name="dependencies"></a>Зависимости
 
-Функции v2 автоматически собирают зависимости для HTTP-запросов, ServiceBus и SQL.
+Функции v2 автоматически собирают зависимости для HTTP-запросов, ServiceBus, EventHub и SQL.
 
 Можно написать пользовательский код для отображения зависимостей. Примеры см. в примере кода в [ C# разделе Custom телеметрии](#log-custom-telemetry-in-c-functions). Пример кода приводит к *отображению схемы приложения* в Application Insights, которая выглядит как на следующем рисунке:
 
@@ -608,11 +608,11 @@ module.exports = function (context, req) {
 
 * **Встроенная потоковая передача журналов**. платформа службы приложений позволяет просматривать поток файлов журнала приложения. Это эквивалентно выходным данным, которые отображаются при отладке функций во время [локальной разработки](functions-develop-local.md) , а также при использовании на портале вкладки " **тестирование** ". Отобразятся все данные на основе журнала. Дополнительные сведения см. в разделе [Streaming Logs](../app-service/troubleshoot-diagnostic-logs.md#stream-logs). Этот потоковый метод поддерживает только один экземпляр и не может использоваться с приложением под управлением Linux в плане потребления.
 
-* **Live Metrics Stream**. Если приложение-функция [подключена к Application Insights](#enable-application-insights-integration), вы можете просматривать данные журнала и другие метрики практически в реальном времени в портал Azure с помощью [Live Metrics Stream](../azure-monitor/app/live-stream.md). Используйте этот метод при мониторинге функций, выполняемых в нескольких экземплярах или в Linux, в плане потребления. Этот метод использует [данные выборки](#configure-sampling).
+* **Live Metrics Stream**: Если приложение-функция [подключено к Application Insights](#enable-application-insights-integration), данные журнала и другие метрики можно просматривать практически в реальном времени в портал Azure с помощью [Live Metrics Stream](../azure-monitor/app/live-stream.md). Используйте этот метод при мониторинге функций, выполняемых в нескольких экземплярах или в Linux, в плане потребления. Этот метод использует [данные выборки](#configure-sampling).
 
 Потоки журнала можно просматривать как на портале, так и в большинстве локальных сред разработки. 
 
-### <a name="portal"></a>Microsoft Azure
+### <a name="portal"></a>Портал
 
 На портале можно просматривать оба типа потоков журналов.
 
@@ -642,7 +642,7 @@ module.exports = function (context, req) {
 
 [!INCLUDE [functions-streaming-logs-core-tools](../../includes/functions-streaming-logs-core-tools.md)]
 
-### <a name="azure-cli"></a>Azure CLI
+### <a name="azure-cli"></a>Интерфейс командной строки Azure
 
 Вы можете включить журналы потоковой передачи с помощью [Azure CLI](/cli/azure/install-azure-cli). Используйте следующие команды для входа в систему, выбора подписки и потоковой передачи файлов журнала:
 
