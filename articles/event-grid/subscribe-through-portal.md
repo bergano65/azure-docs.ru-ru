@@ -1,18 +1,18 @@
 ---
 title: Подписки на службу "Сетка событий Azure" через портал
-description: Описывает, как создать подписку на службу "Сетка событий Azure" через портал.
+description: В этой статье описывается, как создать подписки на сетку событий для поддерживаемых источников, таких как хранилище BLOB-объектов Azure, с помощью портал Azure.
 services: event-grid
 author: spelluru
 ms.service: event-grid
 ms.topic: conceptual
-ms.date: 01/08/2019
+ms.date: 01/23/2020
 ms.author: spelluru
-ms.openlocfilehash: b54bc52a2feaf4646d801265ddb273c2c86158ee
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 3172c92ecae094ab5d978803d2ccac7e6404a5e1
+ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60823564"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76721512"
 ---
 # <a name="subscribe-to-events-through-portal"></a>Подписка на события через портал
 
@@ -28,11 +28,11 @@ ms.locfileid: "60823564"
 
 1. Выполните поиск по словосочетанию **подписки на Сетку событий** и выберите ее из доступных вариантов.
 
-   ![поиска](./media/subscribe-through-portal/search.png)
+   ![Поиск](./media/subscribe-through-portal/search.png)
 
 1. Выберите **+ Event Subscription** (+ Подписка на события).
 
-   ![Добавить подписку](./media/subscribe-through-portal/add-subscription.png)
+   ![Добавление подписки](./media/subscribe-through-portal/add-subscription.png)
 
 1. Выберите тип подписки, которую вы хотите создать. Например, чтобы подписаться на события для вашей подписки Azure, выберите **Подписки Azure** и целевую подписку.
 

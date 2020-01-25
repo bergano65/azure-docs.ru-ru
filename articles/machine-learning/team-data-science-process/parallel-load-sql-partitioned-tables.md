@@ -3,20 +3,20 @@ title: Параллельный массовый импорт данных с и
 description: Создание секционированных таблиц для быстрого параллельного массового импорта данных в базу данных SQL Server.
 services: machine-learning
 author: marktab
-manager: cgronlun
-editor: cgronlun
+manager: marktab
+editor: marktab
 ms.service: machine-learning
 ms.subservice: team-data-science-process
 ms.topic: article
-ms.date: 11/09/2017
+ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
-ms.openlocfilehash: 253f73cc58292778d88417b693c157fcbd7d92bd
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 673a801e218d055bf482dc97972e36584cddd402
+ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61428310"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76721342"
 ---
 # <a name="build-and-optimize-tables-for-fast-parallel-import-of-data-into-a-sql-server-on-an-azure-vm"></a>Создание и оптимизация таблиц для быстрого параллельного импорта данных в SQL Server на виртуальной машине Azure
 
@@ -85,7 +85,7 @@ ms.locfileid: "61428310"
         INNER JOIN sys.partition_range_values prng ON prng.function_id=pfun.function_id
         WHERE pfun.name = <DatetimeFieldPFN>
 
-### <a name="3-create-a-partition-table"></a>3. Создание секционированной таблицы
+### <a name="3-create-a-partition-table"></a>3. Создание таблицы секционирования
 [Создайте секционированные таблицы](https://msdn.microsoft.com/library/ms174979.aspx) в соответствии со схемой данных и укажите схему секционирования и поле ограничений, используемые для секционирования таблицы, например:
   
         CREATE TABLE <table_name> ( [include schema definition here] )
@@ -99,7 +99,7 @@ ms.locfileid: "61428310"
 * [Измените базу данных](https://msdn.microsoft.com/library/bb522682.aspx), изменив схему ведения журнала транзакций на BULK_LOGGED, чтобы минимизовать нагрузку при ведении журнала, например:
   
         ALTER DATABASE <database_name> SET RECOVERY BULK_LOGGED
-* Чтобы ускорить загрузку данных, запустите параллельные операции массового импорта. Советы по ускорению импорта больших данных в базы SQL Server см. в статье [Загрузка данных емкостью 1 ТБ менее чем за час](https://blogs.msdn.com/b/sqlcat/archive/2006/05/19/602142.aspx).
+* Чтобы ускорить загрузку данных, запустите параллельные операции массового импорта. Советы по ускорению выполнения операций с массовым импортом больших данных в SQL Server базы данных см. [в разделе Загрузка 1 ТБ менее 1 часа](https://blogs.msdn.com/b/sqlcat/archive/2006/05/19/602142.aspx).
 
 В следующем сценарии PowerShell приведен пример параллельной загрузки данных с использованием BCP.
 

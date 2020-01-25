@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.subservice: domain-services
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 09/15/2019
+ms.date: 01/22/2020
 ms.author: iainfou
-ms.openlocfilehash: 9fb41b08cb29a68b39fb416b4b7b7bcce9e821dd
-ms.sourcegitcommit: 8074f482fcd1f61442b3b8101f153adb52cf35c9
+ms.openlocfilehash: 1cf1a97ed6350174511d61d924f893bb209736c2
+ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72754349"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76712578"
 ---
 # <a name="join-an-ubuntu-linux-virtual-machine-to-an-azure-ad-domain-services-managed-domain"></a>Присоединение Ubuntu Linux виртуальной машины к управляемому домену доменных служб Azure AD
 
@@ -32,7 +32,7 @@ ms.locfileid: "72754349"
     * Если у вас еще нет подписки Azure, создайте [учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 * Связанный с вашей подпиской клиент Azure Active Directory, синхронизированный с локальным или облачным каталогом.
     * Если потребуется, [создайте клиент Azure Active Directory][create-azure-ad-tenant] или [свяжите подписку Azure со своей учетной записью][associate-azure-ad-tenant].
-* Управляемый домен доменных служб Azure Active Directory, включенный и настроенный в клиенте AAD.
+* Управляемый домен доменных служб Azure Active Directory, включенный и настроенный в клиенте Azure AD.
     * Если потребуется, по инструкциям из первого учебника [создайте и настройте экземпляр доменных служб Azure Active Directory][create-azure-ad-ds-instance].
 * Учетная запись пользователя, входящая в группу *администраторов Azure AD DC* в клиенте Azure AD.
 
@@ -43,7 +43,7 @@ ms.locfileid: "72754349"
 Если необходимо создать Ubuntu Linux ВИРТУАЛЬную машину или создать тестовую виртуальную машину для использования с этой статьей, можно использовать один из следующих методов.
 
 * [Портал Azure](../virtual-machines/linux/quick-create-portal.md)
-* [Azure CLI](../virtual-machines/linux/quick-create-cli.md)
+* [Azure CLI](../virtual-machines/linux/quick-create-cli.md)
 * [Azure PowerShell](../virtual-machines/linux/quick-create-powershell.md)
 
 При создании виртуальной машины Обратите внимание на параметры виртуальной сети, чтобы убедиться, что виртуальная машина может обмениваться данными с управляемым доменом AD DS Azure:
@@ -61,15 +61,15 @@ ms.locfileid: "72754349"
 sudo vi /etc/hosts
 ```
 
-В файле *hosts* обновите адрес *localhost* . В следующем примере:
+В файле *hosts* обновите адрес *localhost* . Рассмотрим следующий пример:
 
-* *contoso.com* — это доменное DNS-имя управляемого домена AD DS Azure.
+* *aadds.contoso.com* — это доменное DNS-имя управляемого домена AD DS Azure.
 * *Ubuntu* — это имя узла виртуальной машины Ubuntu, присоединяемой к управляемому домену.
 
 Обновите эти имена собственными значениями:
 
 ```console
-127.0.0.1 ubuntu.contoso.com ubuntu
+127.0.0.1 ubuntu.aadds.contoso.com ubuntu
 ```
 
 По завершении сохраните и закройте файл *hosts* с помощью команды `:wq` редактора.
@@ -78,7 +78,7 @@ sudo vi /etc/hosts
 
 Виртуальной машине требуются дополнительные пакеты, чтобы присоединить виртуальную машину к управляемому домену Azure AD DS. Чтобы установить и настроить эти пакеты, обновите и установите средства присоединение к домену с помощью `apt-get`
 
-Во время установки Kerberos пакет *krb5-User* запрашивает имя области в верхнем регистре. Например, если имя управляемого домена AD DS Azure — *contoso.com*, введите *contoso.com* в качестве области. При установке `[realm]` и `[domain_realm]` разделы записываются в файл конфигурации */etc/krb5.conf* . Убедитесь, что для области заданы все ПРОПИСные буквы:
+Во время установки Kerberos пакет *krb5-User* запрашивает имя области в верхнем регистре. Например, если имя управляемого домена AD DS Azure — *aadds.contoso.com*, введите *aadds. CONTOSO.COM* в качестве области. При установке `[realm]` и `[domain_realm]` разделы записываются в файл конфигурации */etc/krb5.conf* . Убедитесь, что для области заданы все ПРОПИСные буквы:
 
 ```console
 sudo apt-get update
@@ -95,10 +95,10 @@ sudo apt-get install krb5-user samba sssd sssd-tools libnss-sss libpam-sss ntp n
     sudo vi /etc/ntp.conf
     ```
 
-1. В файле *NTP. conf* создайте строку, чтобы добавить DNS-имя управляемого домена Azure AD DS. В следующем примере добавляется запись для *contoso.com* . Используйте собственное DNS-имя:
+1. В файле *NTP. conf* создайте строку, чтобы добавить DNS-имя управляемого домена Azure AD DS. В следующем примере добавляется запись для *aadds.contoso.com* . Используйте собственное DNS-имя:
 
     ```console
-    server contoso.com
+    server aadds.contoso.com
     ```
 
     По завершении сохраните и закройте файл *NTP. conf* с помощью команды `:wq` редактора.
@@ -113,7 +113,7 @@ sudo apt-get install krb5-user samba sssd sssd-tools libnss-sss libpam-sss ntp n
 
     ```console
     sudo systemctl stop ntp
-    sudo ntpdate contoso.com
+    sudo ntpdate aadds.contoso.com
     sudo systemctl start ntp
     ```
 
@@ -121,30 +121,30 @@ sudo apt-get install krb5-user samba sssd sssd-tools libnss-sss libpam-sss ntp n
 
 Теперь, когда необходимые пакеты установлены на виртуальной машине и настроен NTP, присоедините виртуальную машину к управляемому домену Azure AD DS.
 
-1. Используйте команду `realm discover` для обнаружения управляемого домена AD DS Azure. В следующем примере обнаруживается *contoso.com*области. Укажите собственное имя управляемого домена AD DS Azure в верхнем регистре:
+1. Используйте команду `realm discover` для обнаружения управляемого домена AD DS Azure. В следующем примере обнаруживается *AADDS области. CONTOSO.COM*. Укажите собственное имя управляемого домена AD DS Azure в верхнем регистре:
 
     ```console
-    sudo realm discover CONTOSO.COM
+    sudo realm discover AADDS.CONTOSO.COM
     ```
 
    Если команде `realm discover` не удается найти управляемый домен AD DS Azure, ознакомьтесь со следующими действиями по устранению неполадок.
 
-    * Убедитесь, что домен доступен с виртуальной машины. Попробуйте `ping contoso.com`, чтобы проверить, возвращен ли положительный ответ.
+    * Убедитесь, что домен доступен с виртуальной машины. Попробуйте `ping aadds.contoso.com`, чтобы проверить, возвращен ли положительный ответ.
     * Убедитесь, что виртуальная машина развернута в том же или в одноранговой виртуальной сети, в которой доступен управляемый домен Azure AD DS.
     * Убедитесь, что параметры DNS-сервера для виртуальной сети были обновлены, чтобы они указывали на контроллеры домена управляемого домена AD DS Azure.
 
 1. Теперь инициализируйте Kerberos с помощью команды `kinit`. Укажите пользователя, который принадлежит к группе *администраторов контроллера домена AAD* . При необходимости [добавьте учетную запись пользователя в группу в Azure AD](../active-directory/fundamentals/active-directory-groups-members-azure-portal.md).
 
-    Опять же, имя управляемого домена AD DS Azure необходимо вводить в верхнем регистре. В следующем примере учетная запись с именем `contosoadmin@contoso.com` используется для инициализации Kerberos. Введите собственную учетную запись пользователя, которая является членом группы *администраторов контроллера домена AAD* :
+    Опять же, имя управляемого домена AD DS Azure необходимо вводить в верхнем регистре. В следующем примере учетная запись с именем `contosoadmin@aadds.contoso.com` используется для инициализации Kerberos. Введите собственную учетную запись пользователя, которая является членом группы *администраторов контроллера домена AAD* :
 
     ```console
-    kinit contosoadmin@CONTOSO.COM
+    kinit contosoadmin@AADDS.CONTOSO.COM
     ```
 
-1. Наконец, Присоедините компьютер к управляемому домену Azure AD DS с помощью команды `realm join`. Используйте ту же учетную запись пользователя, которая является членом группы *администраторов контроллера домена AAD* , указанной в предыдущей команде `kinit`, например `contosoadmin@CONTOSO.COM`.
+1. Наконец, Присоедините компьютер к управляемому домену Azure AD DS с помощью команды `realm join`. Используйте ту же учетную запись пользователя, которая является членом группы *администраторов контроллера домена AAD* , указанной в предыдущей команде `kinit`, например `contosoadmin@AADDS.CONTOSO.COM`.
 
     ```console
-    sudo realm join --verbose CONTOSO.COM -U 'contosoadmin@CONTOSO.COM' --install=/
+    sudo realm join --verbose AADDS.CONTOSO.COM -U 'contosoadmin@AADDS.CONTOSO.COM' --install=/
     ```
 
 Присоединение виртуальной машины к управляемому домену Azure AD DS займет несколько секунд. В следующем примере выходных данных показано, что виртуальная машина успешно присоединена к управляемому домену Azure AD DS.
@@ -187,7 +187,7 @@ Successfully enrolled machine in realm
 
 По умолчанию пользователи могут входить в виртуальную машину только с помощью проверки подлинности на основе открытых ключей SSH. Проверка подлинности на основе пароля завершается сбоем. При присоединении виртуальной машины к управляемому домену AD DS Azure эти учетные записи домена должны использовать проверку подлинности на основе пароля. Обновите конфигурацию SSH, чтобы разрешить проверку подлинности на основе пароля, как показано ниже.
 
-1. Откройте файл *sshd_conf* в редакторе:
+1. Откройте файл *sshd_conf* с помощью редактора:
 
     ```console
     sudo vi /etc/ssh/sshd_config
@@ -248,10 +248,10 @@ Successfully enrolled machine in realm
 
 Чтобы убедиться, что виртуальная машина успешно присоединена к управляемому домену Azure AD DS, запустите новое SSH-подключение, используя учетную запись пользователя домена. Убедитесь, что был создан корневой каталог и применяется членство в группе из домена.
 
-1. Создайте новое SSH-подключение из консоли. Используйте учетную запись домена, принадлежащую к управляемому домену, с помощью команды `ssh -l`, например `contosoadmin@contoso.com`, а затем введите адрес виртуальной машины, например *Ubuntu.contoso.com*. При использовании Azure Cloud Shell Используйте общедоступный IP-адрес виртуальной машины, а не внутреннее DNS-имя.
+1. Создайте новое SSH-подключение из консоли. Используйте учетную запись домена, принадлежащую к управляемому домену, с помощью команды `ssh -l`, например `contosoadmin@aadds.contoso.com`, а затем введите адрес виртуальной машины, например *Ubuntu.aadds.contoso.com*. При использовании Azure Cloud Shell Используйте общедоступный IP-адрес виртуальной машины, а не внутреннее DNS-имя.
 
     ```console
-    ssh -l contosoadmin@CONTOSO.com ubuntu.contoso.com
+    ssh -l contosoadmin@AADDS.CONTOSO.com ubuntu.aadds.contoso.com
     ```
 
 1. После успешного подключения к виртуальной машине убедитесь, что корневой каталог был инициализирован правильно:

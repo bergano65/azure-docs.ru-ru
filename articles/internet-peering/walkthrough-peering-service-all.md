@@ -1,21 +1,21 @@
 ---
-title: Пошаговое руководство для партнера по службам пиринга
+title: Пошаговое руководство по Службе пиринга для партнеров
 titleSuffix: Azure
-description: Пошаговое руководство для партнера по службам пиринга
+description: Пошаговое руководство по Службе пиринга для партнеров
 services: internet-peering
 author: prmitiki
 ms.service: internet-peering
 ms.topic: article
 ms.date: 11/27/2019
 ms.author: prmitiki
-ms.openlocfilehash: 28aa9f921de64fcc838935cf65b64a63280ddf16
-ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
+ms.openlocfilehash: d626d98613bd5d988b599d0980c885d7f73bb958
+ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75774631"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76720254"
 ---
-# <a name="peering-service-partner-walkthrough"></a>Пошаговое руководство для партнера по службам пиринга
+# <a name="peering-service-partner-walkthrough"></a>Пошаговое руководство по Службе пиринга для партнеров
 
 В этом разделе описываются действия, которые необходимо выполнить поставщику для включения прямого пиринга для службы пиринга.
 
@@ -25,7 +25,7 @@ ms.locfileid: "75774631"
 1. Следуйте инструкциям по [созданию или изменению прямого пиринга с помощью портала](howto-direct-portal.md). Убедитесь, что оно соответствует требованиям высокого уровня доступности.
 1. Затем выполните действия по [включению службы пиринга на непосредственном одноранговом пиринге с помощью портала](howto-peering-service-portal.md).
 
-## <a name="use-legacy-direct-peering-conection-for-peering-service"></a>Использование устаревшего прямого пиринга выбрав для службы пиринга
+## <a name="use-legacy-direct-peering-connection-for-peering-service"></a>Использовать устаревшее подключение прямого пиринга для службы пиринга
 Если у вас есть устаревший прямой пиринг, который вы хотите использовать для поддержки службы пиринга,
 1. Станьте партнером по службам пиринга, если это еще не сделано.
 1. Следуйте инструкциям по [преобразованию устаревшего прямого пиринга в ресурс Azure с помощью портала](howto-legacy-direct-portal.md). При необходимости закажите дополнительные цепи, чтобы удовлетворить требованиям высокого уровня доступности.

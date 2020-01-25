@@ -5,12 +5,12 @@ author: peterpogorski
 ms.topic: conceptual
 ms.date: 06/08/2018
 ms.author: pepogors
-ms.openlocfilehash: e4050dedeb48b19b6848a95fc904f7f37fb5b04a
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 5efdbd17db20e69ace33b379ddbb99b2c4a20e69
+ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75349391"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76722566"
 ---
 # <a name="multi-container-application-and-service-manifest-examples"></a>Примеры манифестов многоконтейнерных приложений и служб
 Ниже приведены примеры манифестов приложений и служб для многоконтейнерного приложения Service Fabric. Цель этих примеров — показать, какие параметры являются доступными и как их использовать. Эти манифесты приложений и служб основаны на манифестах [контейнера Windows Server 2016](https://github.com/Azure-Samples/service-fabric-containers/tree/master/Windows).
@@ -342,7 +342,7 @@ ms.locfileid: "75349391"
  Дополнительные сведения см. в разделе [Элемент ContainerHost](service-fabric-service-model-schema-elements.md#ContainerHostElementContainerHostEntryPointTypeComplexTypeDefinedInEntryPointDescriptionTypecomplexType).
 
 ### <a name="imagename-element"></a>Элемент ImageName
-Репозиторий и образ по адресу https://hub.docker.com или в Реестре контейнеров Azure. Дополнительные сведения см. в разделе [Элемент ImageName](service-fabric-service-model-schema-elements.md#ImageNameElementxs:stringComplexTypeDefinedInContainerHostEntryPointTypecomplexType).
+Репозиторий и образ на [https://hub.docker.com](https://hub.docker.com) или реестре контейнеров Azure. Дополнительные сведения см. в разделе [Элемент ImageName](service-fabric-service-model-schema-elements.md#ImageNameElementxs:stringComplexTypeDefinedInContainerHostEntryPointTypecomplexType).
 
 ### <a name="environmentvariables-element"></a>Элемент EnvironmentVariables
 Передает переменные среды в контейнер или EXE-файл.  Дополнительные сведения см. в разделе [Элемент EnvironmentVariables](service-fabric-service-model-schema-elements.md#EnvironmentVariablesElementEnvironmentVariablesTypeComplexTypeDefinedInCodePackageTypecomplexType).
@@ -386,7 +386,7 @@ ms.locfileid: "75349391"
 Дополнительные сведения см. в разделе [Элемент ContainerHost](service-fabric-service-model-schema-elements.md#ContainerHostElementContainerHostEntryPointTypeComplexTypeDefinedInEntryPointDescriptionTypecomplexType).
 
 ### <a name="imagename-element"></a>Элемент ImageName
-Репозиторий и образ по адресу https://hub.docker.com или в Реестре контейнеров Azure. Дополнительные сведения см. в разделе [Элемент ImageName](service-fabric-service-model-schema-elements.md#ImageNameElementxs:stringComplexTypeDefinedInContainerHostEntryPointTypecomplexType).
+Репозиторий и образ на [https://hub.docker.com](https://hub.docker.com) или реестре контейнеров Azure. Дополнительные сведения см. в разделе [Элемент ImageName](service-fabric-service-model-schema-elements.md#ImageNameElementxs:stringComplexTypeDefinedInContainerHostEntryPointTypecomplexType).
 
 ### <a name="commands-element"></a>Элемент Commands
 Передает разделенный запятыми список команд контейнеру. Дополнительные сведения см. в разделе [Элемент Commands](service-fabric-service-model-schema-elements.md#CommandsElementxs:stringComplexTypeDefinedInContainerHostEntryPointTypecomplexType).

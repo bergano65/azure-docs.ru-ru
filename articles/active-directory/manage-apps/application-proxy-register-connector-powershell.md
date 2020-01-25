@@ -11,17 +11,17 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 05/17/2018
+ms.date: 01/23/2020
 ms.author: mimart
 ms.reviewer: japere
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0eb3e52dfd02bd7948f1b5ffd908ac1255118008
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 45ca40e9717394690374f5ca289a69e5c22551eb
+ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65782915"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76712009"
 ---
 # <a name="create-an-unattended-installation-script-for-the-azure-ad-application-proxy-connector"></a>Создание скрипта автоматической установки для соединителя прокси приложения Azure AD
 
@@ -34,14 +34,14 @@ ms.locfileid: "65782915"
 * интегрировать установку и регистрацию соединителя в другую процедуру;
 * создать стандартный образ сервера, который содержит биты соединителя, но не зарегистрирован.
 
-Для [соединитель прокси приложения](application-proxy-connectors.md) для работы, он должен быть зарегистрирован в вашем каталоге Azure AD, с помощью приложения администратора и пароль. Обычно эти сведения вводятся во всплывающем окне во время установки соединителя, но для автоматизации этого процесса можно использовать PowerShell.
+Чтобы [соединитель прокси приложения](application-proxy-connectors.md) работал, он должен быть зарегистрирован в каталоге Azure AD с помощью администратора приложения и пароля. Обычно эти сведения вводятся во всплывающем окне во время установки соединителя, но для автоматизации этого процесса можно использовать PowerShell.
 
 Этот процесс состоит из двух этапов. Сначала выполняется установка соединителя, а затем он регистрируется в Azure AD. 
 
 ## <a name="install-the-connector"></a>Установка соединителя
 Чтобы установить соединитель без регистрации, сделайте следующее:
 
-1. Откройте окно командной строки.
+1. Откройте командную строку.
 2. Выполните следующую команду, в которой параметр /q означает, что установка осуществляется в автоматическом режиме и вам не нужно принимать лицензионное соглашение.
    
         AADApplicationProxyConnectorInstaller.exe REGISTERCONNECTOR="false" /q
@@ -49,8 +49,8 @@ ms.locfileid: "65782915"
 ## <a name="register-the-connector-with-azure-ad"></a>Регистрация соединителя в Azure AD
 Существуют два метода регистрации соединителя:
 
-* регистрация соединителя с помощью объекта учетных данных Windows PowerShell;
-* регистрация соединителя с помощью маркера, созданного в автономном режиме.
+* Регистрация соединителя с помощью объекта учетных данных Windows PowerShell
+* Регистрация соединителя с помощью маркера, созданного в автономном режиме
 
 ### <a name="register-the-connector-using-a-windows-powershell-credential-object"></a>Регистрация соединителя с помощью объекта учетных данных Windows PowerShell
 1. Создайте объект учетных данных Windows PowerShell `$cred`, содержащий имя пользователя и пароль администратора для вашего каталога. Выполните следующую команду, заменив *\<username\>* и *\<password\>* на нужные имя пользователя и пароль:
@@ -88,7 +88,7 @@ ms.locfileid: "65782915"
         /// <summary>
         /// The reply address of the connector application in AAD
         /// </summary>
-        static readonly Uri ConnectorRedirectAddress = new Uri("urn:ietf:wg:oauth:2.0:oob");
+        static readonly Uri ConnectorRedirectAddress = new Uri("https://login.microsoftonline.com/common/oauth2/nativeclient");
 
         /// <summary>
         /// The AppIdUri of the registration service in AAD
@@ -141,7 +141,7 @@ ms.locfileid: "65782915"
         [string]$ConnectorAppId = "55747057-9b5d-4bd4-b387-abf52a8bd489"
         
         # The reply address of the connector application in AAD
-        [uri]$ConnectorRedirectAddress = "urn:ietf:wg:oauth:2.0:oob" 
+        [uri]$ConnectorRedirectAddress = "https://login.microsoftonline.com/common/oauth2/nativeclient" 
         
         # The AppIdUri of the registration service in AAD
         [uri]$RegistrationServiceAppIdUri = "https://proxy.cloudwebappproxy.net/registerapp"

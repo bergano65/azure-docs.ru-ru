@@ -5,19 +5,19 @@ author: rachel-msft
 ms.author: raagyema
 ms.service: postgresql
 ms.topic: conceptual
-ms.date: 09/12/2019
-ms.openlocfilehash: fb0803987428ced688e83a37fae36c61b63a28a8
-ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
+ms.date: 01/23/2020
+ms.openlocfilehash: bb2c83757bd86d02a93c52bacdd03ce89186614e
+ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74770124"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76719778"
 ---
 # <a name="create-and-manage-read-replicas-from-the-azure-cli-rest-api"></a>Создание реплик чтения и управление ими из Azure CLI REST API
 
 Из этой статьи вы узнаете, как создавать реплики чтения и управлять ими в базе данных Azure для PostgreSQL с помощью Azure CLI и REST API. Дополнительные сведения о репликах чтения см. в [этой статье](concepts-read-replicas.md).
 
-## <a name="azure-cli"></a>Azure CLI
+## <a name="azure-cli"></a>Интерфейс командной строки Azure
 Вы можете создавать реплики чтения и управлять ими с помощью Azure CLI.
 
 ### <a name="prerequisites"></a>Технические условия
@@ -37,6 +37,11 @@ ms.locfileid: "74770124"
    az postgres server configuration set --resource-group myresourcegroup --server-name mydemoserver --name azure.replication_support --value REPLICA
    ```
 
+> [!NOTE]
+> Если при попытке установить Azure. replication_support из Azure CLI появляется сообщение об ошибке "Недопустимое значение", скорее всего, по умолчанию сервер уже имеет набор реплик. Ошибка препятствует правильному отражению этого параметра на новых серверах, где РЕПЛИКа является внутренней по умолчанию.
+> Вы можете пропустить подготовительные шаги подготовки и перейти к разделу Создание реплики.
+> Если вы хотите подтвердить, что сервер находится в этой категории, перейдите на страницу репликации сервера в портал Azure. "Отключить репликацию" будет неактивен, и на панели инструментов будет активна кнопка "добавить реплику".
+
 2. Перезапустите сервер, чтобы применить изменение.
 
    ```azurecli-interactive
@@ -47,7 +52,7 @@ ms.locfileid: "74770124"
 
 Команда [AZ postgres Server Replica Create](/cli/azure/postgres/server/replica?view=azure-cli-latest#az-postgres-server-replica-create) требует наличия следующих параметров:
 
-| Параметр | Пример значения | Описание  |
+| Параметр | Пример значения | Description  |
 | --- | --- | --- |
 | resource-group | myresourcegroup |  Группа ресурсов, в которой будет создан сервер реплики.  |
 | name | mydemoserver — реплика | Имя нового сервера реплики, который создается. |
@@ -100,7 +105,7 @@ az postgres server replica stop --name mydemoserver-replica --resource-group myr
 az postgres server delete --name myserver --resource-group myresourcegroup
 ```
 
-## <a name="rest-api"></a>REST API
+## <a name="rest-api"></a>REST API
 Вы можете создавать реплики чтения и управлять ими с помощью [REST API Azure](/rest/api/azure/).
 
 ### <a name="prepare-the-master-server"></a>Подготовка главного сервера

@@ -13,19 +13,19 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 10/10/2019
 ms.author: damendo
-ms.openlocfilehash: 856c249b72e9e0ff8667d10821ad14b3432b0775
-ms.sourcegitcommit: 38b11501526a7997cfe1c7980d57e772b1f3169b
+ms.openlocfilehash: 1cc3664ff8472a6b5a73fa89588611f59ac27e6a
+ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76509195"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76720276"
 ---
 # <a name="frequently-asked-questions-faq-about-azure-network-watcher"></a>Часто задаваемые вопросы о наблюдателе за сетями Azure
 Служба [наблюдателя за сетями Azure](https://docs.microsoft.com/azure/network-watcher/network-watcher-monitoring-overview) предоставляет набор средств для мониторинга, диагностики, просмотра метрик и включения или отключения журналов для ресурсов в виртуальной сети Azure. В этой статье содержатся ответы на часто задаваемые вопросы о службе.
 
 ## <a name="general"></a>Общие
 
-### <a name="what-is-network-watcher"></a>Что такое Наблюдатель за сетями?
+### <a name="what-is-network-watcher"></a>Что такое наблюдатель за сетями?
 Наблюдатель за сетями предназначен для отслеживания и восстановления работоспособности сети компонентов IaaS (инфраструктура как услуга), включая виртуальные машины, виртуальные сети, шлюзы приложений, подсистемы балансировки нагрузки и другие ресурсы в виртуальной сети Azure. Это решение не является решением для мониторинга инфраструктуры PaaS (платформа как услуга) или получения веб-или мобильной аналитики.
 
 ### <a name="what-tools-does-network-watcher-provide"></a>Какие средства предоставляет наблюдатель за сетями?
@@ -71,9 +71,9 @@ ms.locfileid: "76509195"
 ### <a name="what-does-nsg-flow-logs-do"></a>Что делают журналы потоков NSG?
 Сетевые ресурсы Azure можно объединять и управлять ими с помощью [групп безопасности сети (группы безопасности сети)](https://docs.microsoft.com/azure/virtual-network/security-overview). Журналы потоков NSG позволяют записывать в журнал сведения о потоке с пятью кортежами по всему трафику через группы безопасности сети. Журналы необработанных потоков записываются в учетную запись хранения Azure, откуда они могут быть обработаны, проанализированы, запрошены или экспортированы по мере необходимости.
 
-### <a name="how-do-i-use-nsg-flow-logs-on-a-storage-account-with-a-firewall"></a>Разделы справки использовать журналы потоков NSG в учетной записи хранения с брандмауэром?
+### <a name="how-do-i-use-nsg-flow-logs-with-a-storage-account-behind-a-firewall"></a>Разделы справки использовать журналы потоков NSG с учетной записью хранения, защищенной брандмауэром?
 
-Чтобы использовать учетную запись хранения с брандмауэром, необходимо предоставить исключение для доступа к учетной записи хранения в доверенных службах Майкрософт:
+Чтобы использовать учетную запись хранения за брандмауэром, необходимо предоставить исключение для доверенных служб Майкрософт, чтобы получить доступ к вашей учетной записи хранения:
 
 * Перейдите к учетной записи хранения, введя имя учетной записи хранения в глобальный поиск на портале или на [странице учетные записи хранения](https://ms.portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.Storage%2FStorageAccounts) .
 * В разделе **параметров** выберите **Брандмауэры и виртуальные сети**.
@@ -83,9 +83,9 @@ ms.locfileid: "76509195"
 
 Через несколько минут можно проверить журналы хранилища. Вы должны увидеть обновленную метку времени или новый файл JSON.
 
-### <a name="how-do-i-use-nsg-flow-logs-with-service-endpoints-for-storage"></a>Разделы справки использовать журналы потоков NSG с конечными точками службы для хранения?
+### <a name="how-do-i-use-nsg-flow-logs-with-a-storage-account-behind-a-service-endpoint"></a>Разделы справки использовать журналы потоков NSG с учетной записью хранения, расположенной за конечной точкой службы?
 
-Ознакомьтесь с [руководством по включению конечных точек службы](https://docs.microsoft.com/azure/virtual-network/tutorial-restrict-network-access-to-resources#enable-a-service-endpoint). 
+Журналы потоков NSG компантибле с конечными точками службы, не требуя дополнительной настройки. Ознакомьтесь с [руководством по включению конечных точек службы](https://docs.microsoft.com/azure/virtual-network/tutorial-restrict-network-access-to-resources#enable-a-service-endpoint) в виртуальной сети.
 
 
 ### <a name="what-is-the-difference-between-flow-logs-versions-1--2"></a>В чем разница между журналами потоков версии 1 & 2?

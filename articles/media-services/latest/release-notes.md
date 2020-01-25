@@ -11,12 +11,12 @@ ms.workload: na
 ms.topic: article
 ms.date: 12/13/2019
 ms.author: juliako
-ms.openlocfilehash: 03674d8fb42d56d6b4b40d8111c1a7bbce7c312b
-ms.sourcegitcommit: 38b11501526a7997cfe1c7980d57e772b1f3169b
+ms.openlocfilehash: e7770a3faef0ccf7ca0f5b8c56f98007b8d89436
+ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76514492"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76719846"
 ---
 # <a name="azure-media-services-v3-release-notes"></a>Заметки о выпуске Служб мультимедиа Azure версии 3
 
@@ -130,7 +130,7 @@ ms.locfileid: "76514492"
 
 ### <a name="azure-monitor-support-for-media-services-diagnostic-logs-and-metrics"></a>Поддержка Azure Monitor для журналов диагностики и метрик в службах мультимедиа
 
-Теперь вы можете использовать Azure Monitor для просмотра данных телеметрии, еммитед с помощью служб мультимедиа.
+Теперь можно использовать Azure Monitor для просмотра данных телеметрии, созданных службами мультимедиа.
 
 * Используйте журналы диагностики Azure Monitor, чтобы отслеживать запросы, отправленные конечной точкой доставки ключей служб мультимедиа. 
 * Отслеживать метрики, созданные [конечными точками потоковой передачи](streaming-endpoint-concept.md)служб мультимедиа.   
