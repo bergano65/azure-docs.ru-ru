@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.workload: infrastructure-services
 ms.date: 01/17/2020
 ms.author: cherylmc
-ms.openlocfilehash: 0eafd090366623919891ff0b03dd85a0d3dbcf88
-ms.sourcegitcommit: 2a2af81e79a47510e7dea2efb9a8efb616da41f0
+ms.openlocfilehash: da84bea51271829e7d3e513ada21c69dbd61916c
+ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76263580"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76719965"
 ---
 # <a name="expressroute-partners-and-peering-locations"></a>Партнеры и одноранговые расположения ExpressRoute
 
@@ -163,7 +163,7 @@ ms.locfileid: "76263580"
 
 ### <a name="national-cloud-environment"></a>Национальная облачная среда
 
-Национальные облака Azure изолированы друг от друга и от глобального коммерческих Azure. ExpressRoute для одного облака Azure не может подключиться к регионам Azure в других. 
+Местные облака Azure изолированы друг от друга и от глобальной коммерческой службы Azure. ExpressRoute для одного облака Azure не может подключиться к регионам Azure в других. 
 
 ### <a name="us-government-cloud"></a>Облако правительства США
 

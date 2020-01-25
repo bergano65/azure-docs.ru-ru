@@ -3,24 +3,24 @@ title: Создание конвейера CI/CD с Azure Pipelines процес
 description: Создание конвейера непрерывной интеграции и непрерывной доставки для приложений искусственного интеллекта (ии) с помощью DOCKER и Kubernetes.
 services: machine-learning
 author: marktab
-manager: cgronlun
-editor: cgronlun
+manager: marktab
+editor: marktab
 ms.service: machine-learning
 ms.subservice: team-data-science-process
 ms.topic: article
-ms.date: 09/06/2019
+ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=jainr, previous-ms.author=jainr
-ms.openlocfilehash: f07ce8e8834a2804b6a5b7668718c8e6bff00fa6
-ms.sourcegitcommit: 55f7fc8fe5f6d874d5e886cb014e2070f49f3b94
+ms.openlocfilehash: 42433ec419ac9e02077cd0359e18b5114206f27d
+ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71260664"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76721835"
 ---
 # <a name="create-cicd-pipelines-for-ai-apps-using-azure-pipelines-docker-and-kubernetes"></a>Создание конвейеров CI/CD для приложений AI с помощью Azure Pipelines, Docker и Kubernetes
 
-Приложение искусственного интеллекта (ии) — это код приложения, внедренный в предварительно обученную модель машинного обучения (ML). Для приложения AI всегда существует два потока работы: Специалисты по обработке и анализу данных создают модель машинного обучения, а разработчики приложений создают приложение и предоставляют его для использования конечными пользователями. В этой статье описывается, как реализовать конвейер непрерывной интеграции и непрерывной поставки (CI/CD) для приложения AI, которое внедряет модель машинного обучения в исходный код приложения. В образце кода и учебнике используется простое веб-приложение Python Flask и извлекается предварительно обученная модель из закрытой учетной записи хранения BLOB-объектов Azure. Вы также можете использовать учетную запись хранения AWS S3.
+Приложение искусственного интеллекта (ии) — это код приложения, внедренный в предварительно обученную модель машинного обучения (ML). Для приложения AI всегда существует два потока работы: специалисты по обработке и анализу данных создают модель машинного обучения, а разработчики приложений создают приложение и предоставляют его для использования конечными пользователями. В этой статье описывается, как реализовать конвейер непрерывной интеграции и непрерывной поставки (CI/CD) для приложения AI, которое внедряет модель машинного обучения в исходный код приложения. В образце кода и учебнике используется веб-приложение Python Flask и извлекается предварительно обученная модель из частной учетной записи хранения больших двоичных объектов Azure. Вы также можете использовать учетную запись хранения AWS S3.
 
 > [!NOTE]
 > Следующий процесс является одним из нескольких способов выполнения CI/CD. Существуют альтернативы этим средствам и предварительным требованиям.
@@ -33,7 +33,7 @@ ms.locfileid: "71260664"
 
 - [Репозиторий исходного кода](https://github.com/Azure/DevOps-For-AI-Apps) , разветвление к учетной записи GitHub
 - [Организация Azure DevOps](/azure/devops/organizations/accounts/create-organization-msa-or-work-student)
-- [Интерфейс командной строки Azure](/cli/azure/install-azure-cli)
+- [Azure CLI](/cli/azure/install-azure-cli)
 - [Кластер службы контейнеров Azure для Kubernetes (AKS)](/azure/container-service/kubernetes/container-service-tutorial-kubernetes-deploy-cluster)
 - [Kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/) для выполнения команд и выбор конфигурации из кластера AKS 
 - [Учетная запись реестра контейнеров Azure (записи контроля доступа)](/azure/container-registry/container-registry-get-started-portal)
@@ -65,4 +65,4 @@ ms.locfileid: "71260664"
 - [Командный процесс обработки и анализа данных (TDSP)](/azure/machine-learning/team-data-science-process/).
 - [Документация по службам машинного обучения Azure (предварительная версия)](/azure/machine-learning/)
 - [Azure DevOps](https://azure.microsoft.com/services/devops/)
-- [Общие сведения о предварительной версии службы Azure Kubernetes (AKS)](/azure/aks/intro-kubernetes)
+- [Службы Azure Kubernetes (AKS)](/azure/aks/intro-kubernetes)

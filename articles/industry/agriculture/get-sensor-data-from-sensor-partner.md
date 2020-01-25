@@ -5,12 +5,12 @@ author: uhabiba04
 ms.topic: article
 ms.date: 11/04/2019
 ms.author: v-umha
-ms.openlocfilehash: 9bf5608a44aa19650a507ada3a0a437d34c13277
-ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
+ms.openlocfilehash: d56504c96c5e039f2563a1bfee577fe9b15e8563
+ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76705672"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76715578"
 ---
 # <a name="get-sensor-data-from-sensor-partners"></a>Получение данных датчика от партнеров датчиков
 
@@ -72,13 +72,16 @@ Azure Фармбеатс помогает перенести потоковые 
 
 ### <a name="integrate-device-data-by-using-the-generated-credentials"></a>Интеграция данных устройства с помощью созданных учетных данных
 
-Перейдите на портал партнера по устройства, чтобы связать Фармбеатс с помощью набора учетных данных, созданных в предыдущем разделе.
-
+Теперь у вас есть следующие сведения, созданные в предыдущем разделе.
  - Конечная точка API
  - Строка подключения EventHub
  - Идентификатор клиента
  - Секрет клиента
  - Tenant ID
+ 
+Это необходимо предоставить партнеру устройства для связывания Фармбеатс. Перейдите на портал партнера по устройствам, чтобы сделать то же самое. Например, если вы используете устройства из Дэвис Instruments, перейдите на следующую страницу:
+
+[Дэвис Instruments](https://weatherlink.github.io/azure-farmbeats/setup)
 
  Поставщик устройства подтверждает успешность интеграции. После подтверждения можно просмотреть все устройства и датчики в Azure Фармбеатс.
 

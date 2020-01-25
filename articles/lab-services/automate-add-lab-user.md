@@ -1,6 +1,6 @@
 ---
 title: Автоматизация добавления пользователя лаборатории в Azure DevTest Labs | Документация Майкрософт
-description: Узнайте, как автоматизировать добавление пользователя лаборатории в лабораторию в Azure DevTest Labs.
+description: В этой статье показано, как автоматизировать добавление пользователя в лабораторию в Azure DevTest Labs с помощью шаблонов Azure Resource Manager, PowerShell и интерфейса командной строки.
 services: devtest-lab,lab-services
 documentationcenter: na
 author: spelluru
@@ -10,14 +10,14 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 05/02/2019
+ms.date: 01/23/2020
 ms.author: spelluru
-ms.openlocfilehash: deec67a2c64a57bbb380b3fd87bf820499e6efed
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.openlocfilehash: 70a6359923734c83590d4677bb2c93966c925d14
+ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75980053"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76718145"
 ---
 # <a name="automate-adding-a-lab-user-to-a-lab-in-azure-devtest-labs"></a>Автоматизация добавления пользователя лаборатории в лабораторию в Azure DevTest Labs
 Azure DevTest Labs позволяет быстро создавать среды самообслуживания для разработки и тестирования с помощью портал Azure. Однако если у вас есть несколько команд и несколько экземпляров DevTest Labs, Автоматизация процесса создания позволит сэкономить время. [Шаблоны Azure Resource Manager](https://github.com/Azure/azure-devtestlab/tree/master/ARMTemplates) позволяют создавать лабораторные и лабораторные виртуальные машины, пользовательские образы, формулы и добавлять пользователей в автоматическом режиме. В этой статье особое внимание уделяется добавлению пользователей в экземпляр DevTest Labs.

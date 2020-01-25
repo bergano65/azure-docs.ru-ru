@@ -6,12 +6,12 @@ ms.custom: vs-azure
 ms.topic: conceptual
 ms.date: 04/25/2019
 ms.author: cotresne
-ms.openlocfilehash: 6c946667befdf34a2ae6769b2c1bb43871111c24
-ms.sourcegitcommit: f34165bdfd27982bdae836d79b7290831a518f12
+ms.openlocfilehash: 39b3a96ddd3a9007600d1fa956c4e2d48f6adae9
+ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/13/2020
-ms.locfileid: "75921020"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76714807"
 ---
 # <a name="deployment-technologies-in-azure-functions"></a>Технологии развертывания в функциях Azure
 
@@ -32,7 +32,7 @@ ms.locfileid: "75921020"
 | URL-адрес внешнего пакета<sup>1</sup> |✔|✔|✔|✔|✔|✔|
 | ZIP-развертывание |✔|✔|✔|✔|✔|✔|
 | Контейнер Docker | | | | |✔|✔|
-| Веб-развертывание |✔|✔|✔| | | |
+| веб-развертывание |✔|✔|✔| | | |
 | Система управления версиями |✔|✔|✔| |✔|✔|
 | Локальный Git<sup>1</sup> |✔|✔|✔| |✔|✔|
 | Синхронизация Cloud<sup>1</sup> |✔|✔|✔| |✔|✔|
@@ -117,7 +117,7 @@ URL-адрес внешнего пакета можно использовать
 >__Как его использовать:__ Создайте приложение-функцию Linux в плане "Премиум" или "выделенный" и укажите образ контейнера для запуска. Это можно сделать двумя способами.
 >
 >* Создайте приложение-функцию Linux в плане службы приложений Azure на портал Azure. Для **публикации**выберите **образ DOCKER**, а затем настройте контейнер. Введите расположение, в котором размещен образ.
->* Создайте приложение-функцию Linux в плане службы приложений с помощью Azure CLI. Дополнительные сведения см. в статье [Создание функции в Linux с помощью пользовательского образа](functions-create-function-linux-custom-image.md#create-a-premium-plan).
+>* Создайте приложение-функцию Linux в плане службы приложений с помощью Azure CLI. Дополнительные сведения см. в статье [Создание функции в Linux с помощью пользовательского образа](functions-create-function-linux-custom-image.md#create-supporting-azure-resources-for-your-function).
 >
 >Чтобы выполнить развертывание в существующем приложении с помощью пользовательского контейнера, в [Azure functions Core Tools](functions-run-local.md)используйте команду [`func deploy`](functions-run-local.md#publish) .
 

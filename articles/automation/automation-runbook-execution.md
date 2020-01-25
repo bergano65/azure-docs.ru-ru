@@ -5,12 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 04/04/2019
 ms.topic: conceptual
-ms.openlocfilehash: 4f9fd3a94cf2b6d6ca077b7363e01085e134babd
-ms.sourcegitcommit: 51ed913864f11e78a4a98599b55bbb036550d8a5
+ms.openlocfilehash: c97e10d2785b7dc1a438c95dca9be94fcef82f94
+ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2020
-ms.locfileid: "75658123"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76714844"
 ---
 # <a name="runbook-execution-in-azure-automation"></a>Выполнение модуля Runbook в службе автоматизации Azure
 
@@ -71,7 +71,7 @@ else
     }
 ```
 
-### <a name="time-dependant-scripts"></a>Зависящие от времени сценарии
+### <a name="time-dependent-scripts"></a>Зависящие от времени скрипты
 
 Процесс разработки модулей Runbook должен быть очень тщательным. Как упоминалось ранее, модули Runbook должны быть разработаны таким образом, чтобы они были надежными и могли обрабатывать временные ошибки, которые могут привести к перезапуску или сбою модуля Runbook. Если Runbook завершается сбоем, выполняется повторная попытка. Если Runbook обычно выполняется в пределах ограничения по времени, логика для проверки времени выполнения должна быть реализована в модуле Runbook, чтобы обеспечить выполнение таких операций, как запуск, завершение работы или масштабирование, выполняется только в определенное время.
 
@@ -173,7 +173,7 @@ catch
 }
 ```
 
-#### <a name="throw"></a>Throw
+#### <a name="throw"></a>Даче
 
 Для создания завершающей ошибки можно использовать [throw](/powershell/module/microsoft.powershell.core/about/about_throw) . Это может быть полезно при определении собственной логики в модуле Runbook. Если выполняются определенные условия, которые должны прерывать выполнение скрипта, можно использовать `throw` для завершения скрипта. В следующем примере показан параметр функции, необходимый для использования `throw`.
 

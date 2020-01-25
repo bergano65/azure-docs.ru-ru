@@ -8,16 +8,16 @@ ms.service: virtual-machines-linux
 ms.topic: article
 ms.date: 12/02/2019
 ms.author: mbaldwin
-ms.openlocfilehash: d6b8cdf43fea63fa4709dd5fc5319bb92ddefc63
-ms.sourcegitcommit: 5aefc96fd34c141275af31874700edbb829436bb
+ms.openlocfilehash: a31894719863b16cc92f7e5bf4d7c85944c8850e
+ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74806979"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76721308"
 ---
 # <a name="key-vault-virtual-machine-extension-for-linux"></a>Расширение виртуальной машины Key Vault для Linux
 
-Расширение Key Vault VM обеспечивает автоматическое обновление сертификатов, хранящихся в хранилище ключей Azure. В частности, расширение отслеживает список наблюдаемых сертификатов, хранящихся в хранилищах ключей.  После обнаружения изменений экстент извлекает и устанавливает соответствующие сертификаты. Расширение Key Vault VM Опубликовано и поддерживается корпорацией Майкрософт в настоящее время на виртуальных машинах Linux. В этом документе описаны поддерживаемые платформы, конфигурации и варианты развертывания для расширения Key Vault VM для Linux. 
+Расширение Key Vault VM обеспечивает автоматическое обновление сертификатов, хранящихся в хранилище ключей Azure. В частности, расширение отслеживает список наблюдаемых сертификатов, хранящихся в хранилищах ключей.  При обнаружении изменения расширение получает и устанавливает соответствующие сертификаты. Расширение Key Vault VM Опубликовано и поддерживается корпорацией Майкрософт в настоящее время на виртуальных машинах Linux. В этом документе описаны поддерживаемые платформы, конфигурации и варианты развертывания для расширения Key Vault VM для Linux. 
 
 ### <a name="operating-system"></a>Операционная система
 
@@ -67,11 +67,11 @@ ms.locfileid: "74806979"
 
 ### <a name="property-values"></a>Значения свойств
 
-| Name | Значение и пример | Тип данных |
+| Имя | Значение и пример | Тип данных |
 | ---- | ---- | ---- |
-| версия_API | 2019-07-01 | date |
+| версия_API | 2019-07-01 | Дата |
 | publisher | Microsoft.Azure.KeyVault | string |
-| Тип | кэйваултфорлинукс | string |
+| type | кэйваултфорлинукс | string |
 | typeHandlerVersion | 1.0 | int |
 | pollingIntervalInS | 3600 | string |
 | certificateStoreName | MY | string |
@@ -202,7 +202,7 @@ Azure CLI можно использовать для развертывания 
 Get-AzVMExtension -VMName <vmName> -ResourceGroupname <resource group name>
 ```
 
-## <a name="azure-cli"></a>Azure CLI
+## <a name="azure-cli"></a>Интерфейс командной строки Azure
 ```azurecli
  az vm get-instance-view --resource-group <resource group name> --name  <vmName> --query "instanceView.extensions"
 ```

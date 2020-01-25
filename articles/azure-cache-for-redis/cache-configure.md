@@ -6,12 +6,12 @@ ms.service: cache
 ms.topic: conceptual
 ms.date: 08/22/2017
 ms.author: yegu
-ms.openlocfilehash: c4d5716c8a31ceccbe23c1f77ad3b88030ff3065
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.openlocfilehash: f10be8efcd2d8e838b4b5f62310eb405f6ed0158
+ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75972130"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76714633"
 ---
 # <a name="how-to-configure-azure-cache-for-redis"></a>Настройка кэша Azure для Redis
 В этом разделе описаны конфигурации, доступные для экземпляров кэша Azure для Redis. В этом разделе также описывается конфигурация сервера Redis по умолчанию для экземпляров кэша Azure для Redis.
@@ -40,8 +40,8 @@ ms.locfileid: "75972130"
     * [Дополнительные параметры](#advanced-settings)
     * [Помощник по кэшу Azure для Redis](#azure-cache-for-redis-advisor)
     * [Масштабирование](#scale)
-    * [Размер кластера Redis](#cluster-size)
-    * [Сохраняемость данных Redis](#redis-data-persistence)
+    * [Размер кластера](#cluster-size)
+    * [Сохраняемость данных](#redis-data-persistence)
     * [Планирование обновлений](#schedule-updates)
     * [Георепликация](#geo-replication)
     * [Виртуальная сеть](#virtual-network)
@@ -92,8 +92,8 @@ ms.locfileid: "75972130"
 * [Дополнительные параметры](#advanced-settings)
 * [Помощник по кэшу Azure для Redis](#azure-cache-for-redis-advisor)
 * [Масштабирование](#scale)
-* [Размер кластера Redis](#cluster-size)
-* [Сохраняемость данных Redis](#redis-data-persistence)
+* [Размер кластера](#cluster-size)
+* [Сохраняемость данных](#redis-data-persistence)
 * [Планирование обновлений](#schedule-updates)
 * [Георепликация](#geo-replication)
 * [Виртуальная сеть](#virtual-network)
@@ -201,14 +201,9 @@ ms.locfileid: "75972130"
 <a name="cluster-size"></a>
 
 ### <a name="redis-cluster-size"></a>Размер кластера Redis
-Щелкните **Размер кластера Redis (предварительная версия)** , чтобы добавить или удалить сегменты работающего кэша категории "Премиум" с включенной кластеризацией.
+Щелкните **Размер кластера** , чтобы изменить размер кластера для работающего кэша уровня "Премиум" с включенной кластеризацией.
 
-> [!NOTE]
-> Обратите внимание, что хотя кэш Azure для Redis категории "Премиум" выпущен для общего доступа, сейчас функция изменения размера кластера Redis находится на этапе предварительной версии.
->
->
-
-![Размер кластера Redis](./media/cache-configure/redis-cache-redis-cluster-size.png)
+![Размер кластера](./media/cache-configure/redis-cache-redis-cluster-size.png)
 
 Чтобы изменить размер кластера, воспользуйтесь ползунком или введите число от 1 до 10 в текстовом поле **Shard count** (Количество сегментов), а затем нажмите кнопку **ОК** для сохранения изменений.
 
@@ -219,7 +214,7 @@ ms.locfileid: "75972130"
 
 
 ### <a name="redis-data-persistence"></a>Сохраняемость данных Redis
-Щелкните **Сохраняемость данных Redis** , чтобы включить, отключить или настроить сохраняемость данных кэша категории «Премиум». Кэш Azure для Redis обеспечивает сохраняемость Redis на основе [RDB](cache-how-to-premium-persistence.md#configure-rdb-persistence) или [AOF](cache-how-to-premium-persistence.md#configure-aof-persistence).
+Щелкните **сохраняемость данных** , чтобы включить, отключить или настроить сохраняемость данных для кэша уровня "Премиум". Кэш Azure для Redis обеспечивает сохраняемость Redis на основе [RDB](cache-how-to-premium-persistence.md#configure-rdb-persistence) или [AOF](cache-how-to-premium-persistence.md#configure-aof-persistence).
 
 Дополнительные сведения см. в статье [How to configure persistence for a Premium Azure Cache for Redis](cache-how-to-premium-persistence.md) (Как настроить сохраняемость для кэша Azure для Redis категории "Премиум").
 

@@ -17,12 +17,12 @@ ms.author: mimart
 ms.reviewer: asteen
 ms.collection: M365-identity-device-management
 ROBOTS: NOINDEX
-ms.openlocfilehash: 8aa8265733128ed3b2ad5ddf16dcebb122b0f054
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 87818066a656aa4bcd6f45f1835ca1512a674a9e
+ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75443423"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76712308"
 ---
 # <a name="how-to-configure-user-provisioning-to-an-azure-ad-gallery-application"></a>Как настроить подготовку пользователей для приложения из коллекции Azure AD
 
@@ -40,19 +40,19 @@ ms.locfileid: "75443423"
 
 ## <a name="configuring-an-application-for-automatic-provisioning"></a>Настройка приложения для автоматической подготовки
 
-*Автоматическая подготовка* означает, что для этого приложения был разработан соединитель для подготовки Azure AD. Дополнительные сведения о службе подготовки Azure AD и о том, как она работает, см. в разделе [Автоматическая подготовка пользователей и отмена подготовки для приложений SaaS в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-app-provisioning).
+*Автоматическая подготовка* означает, что для этого приложения был разработан соединитель для подготовки Azure AD. Дополнительные сведения о службе подготовки Azure AD и о том, как она работает, см. в разделе [Автоматическая подготовка пользователей и отмена подготовки для приложений SaaS в Azure Active Directory](user-provisioning.md).
 
-Дополнительные сведения о подготовке определенных пользователей и групп для приложения см. в статье [Управление подготовкой учетных записей пользователей для корпоративных приложений](https://docs.microsoft.com/azure/active-directory/active-directory-enterprise-apps-manage-provisioning).
+Дополнительные сведения о подготовке определенных пользователей и групп для приложения см. в статье [Управление подготовкой учетных записей пользователей для корпоративных приложений](configure-automatic-user-provisioning-portal.md).
 
 Фактические шаги, необходимые для включения и настройки автоматической подготовки, зависят от приложения.
 
 > [!NOTE]
-> Для начала найдите руководство по настройке подготовки для вашего приложения и выполните инструкции по настройке соединителя для подготовки в приложении и в Azure AD. 
+> Для начала найдите руководство по настройке подготовки для вашего приложения и выполните инструкции по настройке соединителя для подготовки в приложении и в Azure AD.
 
-Руководства по настройке для приложений можно найти в [Списке руководств по интеграции приложений SaaS в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list).
+Руководства по настройке для приложений можно найти в [Списке руководств по интеграции приложений SaaS в Azure Active Directory](../saas-apps/tutorial-list.md).
 
 При настройке подготовки важно просмотреть и настроить сопоставления атрибутов и рабочие процессы, которые определяют, какие свойства пользователя (или группы) передаются из Azure AD в приложение. Сюда входит настройка "соответствующего свойства", которое используется для уникальной идентификации и сопоставления пользователей и групп между двумя системами. Дополнительные сведения о сопоставлении атрибутов см. в описании ссылки в *следующих шагах* .
 
 ## <a name="next-steps"></a>Дальнейшие действия
-[Настройка сопоставлений атрибутов для подготовки пользователей для приложений SaaS в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-customizing-attribute-mappings)
+[Настройка сопоставлений атрибутов для подготовки пользователей для приложений SaaS в Azure Active Directory](customize-application-attributes.md)
 

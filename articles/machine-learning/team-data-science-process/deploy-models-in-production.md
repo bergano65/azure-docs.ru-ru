@@ -2,20 +2,20 @@
 title: Развертывание моделей в рабочей среде — командный процесс обработки и анализа данных
 description: Способы развертывания моделей в рабочей среде для их использовании при принятии бизнес-решений.
 author: marktab
-manager: cgronlun
-editor: cgronlun
+manager: marktab
+editor: marktab
 ms.service: machine-learning
 ms.subservice: team-data-science-process
 ms.topic: article
-ms.date: 11/30/2017
+ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
-ms.openlocfilehash: ed48ab9f85d28bec926120fea87a5ccf8bb6f9af
-ms.sourcegitcommit: ce4a99b493f8cf2d2fd4e29d9ba92f5f942a754c
+ms.openlocfilehash: e3e2ef3340ca836f56176c21cf3d221f0bf172b9
+ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/28/2019
-ms.locfileid: "75526776"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76722243"
 ---
 # <a name="deploy-models-to-production-to-play-an-active-role-in-making-business-decisions"></a>Развертывание моделей в рабочей среде должно играть активную роль в принятии бизнес-решений
 
@@ -39,7 +39,7 @@ ms.locfileid: "75526776"
 
 ## <a name="ab-testing"></a>A/B-тестирование
 
-Если в рабочей среде используется несколько моделей, удобно выполнять [A/B-тестирование](https://en.wikipedia.org/wiki/A/B_testing), чтобы сравнить их эффективность. 
+При работе с несколькими моделями в рабочей среде для сравнения производительности модели можно использовать [тестирование A/B](https://en.wikipedia.org/wiki/A/B_testing) . 
  
 ## <a name="next-steps"></a>Дальнейшие действия
 

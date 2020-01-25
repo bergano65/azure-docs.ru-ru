@@ -1,31 +1,30 @@
 ---
 title: Выполнение операций в хранилище таблиц Azure с помощью PowerShell | Документация Майкрософт
 description: Узнайте, как выполнять общие задачи, такие как создание запросов, удаление данных из учетной записи хранилища таблиц Azure с помощью PowerShell.
-services: cosmos-db
 author: roygara
-ms.service: cosmos-db
+ms.service: storage
 ms.topic: article
 ms.date: 04/05/2019
 ms.author: rogarana
-ms.subservice: cosmosdb-table
-ms.openlocfilehash: 4591cded820bbefb741d55a22d10a91bd4fff383
-ms.sourcegitcommit: 9405aad7e39efbd8fef6d0a3c8988c6bf8de94eb
+ms.subservice: tables
+ms.openlocfilehash: f1846fae4cbf473df688a2b184c307d72ab2f8d0
+ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74868513"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76721478"
 ---
 # <a name="perform-azure-table-storage-operations-with-azure-powershell"></a>Выполнение операций в хранилище таблиц Azure с помощью Azure PowerShell 
 [!INCLUDE [storage-table-cosmos-db-tip-include](../../../includes/storage-table-cosmos-db-langsoon-tip-include.md)]
 
 Хранилище таблиц Azure — хранилище данных NoSQL, которое можно использовать для хранения и запросов огромных наборов структурированных нереляционных данных. Основными компонентами службы являются таблицы, сущности и свойства. Таблица представляет собой коллекцию сущностей. Сущность — это набор свойств. Каждая сущность может иметь до 252 свойств. Все они являются парами "имя — значение". В этой статье предполагается, что вы уже знакомы с понятиями хранилища таблиц Azure. Дополнительные сведения см. в статьях [Understanding the Table Service Data Model](/rest/api/storageservices/Understanding-the-Table-Service-Data-Model) (Общие сведения о модели данных службы таблиц) и [Приступая к работе с хранилищем таблиц Azure с помощью .NET](../../cosmos-db/table-storage-how-to-use-dotnet.md).
 
-В этом практическом руководстве рассматриваются распространенные операции в хранилище таблиц Azure. Вы узнаете, как выполнять такие задачи. 
+В этом практическом руководстве рассматриваются распространенные операции в хранилище таблиц Azure. Вы узнаете, как выполнять следующие задачи: 
 
 > [!div class="checklist"]
 > * Создание таблицы
 > * извлечение таблицы;
-> * добавление сущностей таблицы;
+> * Добавление сущностей таблицы
 > * запрос к таблице;
 > * удаление сущностей таблицы.
 > * Удаление таблицы
@@ -154,7 +153,7 @@ Remove-AzResourceGroup -Name $resourceGroup
 > [!div class="checklist"]
 > * Создание таблицы
 > * извлечение таблицы;
-> * добавление сущностей таблицы;
+> * Добавление сущностей таблицы
 > * запрос к таблице;
 > * удаление сущностей таблицы.
 > * Удаление таблицы

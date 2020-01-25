@@ -2,13 +2,13 @@
 title: Удаление ресурсов в полном режиме
 description: Здесь показано, как происходит удаление ресурсов в полном режиме в шаблонах Azure Resource Manager по типу ресурса.
 ms.topic: conceptual
-ms.date: 11/19/2019
-ms.openlocfilehash: 37d055503b8c9524392bedaa265025554dc4f8ee
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.date: 01/23/2020
+ms.openlocfilehash: b24bf2d8076dbaa1975f5444d597647156a31f4f
+ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75479622"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76715598"
 ---
 # <a name="deletion-of-azure-resources-for-complete-mode-deployments"></a>Удаление ресурсов Azure для развертываний в полном режиме
 
@@ -132,6 +132,7 @@ ms.locfileid: "75479622"
 > - [Microsoft.Portal](#microsoftportal)
 > - [Microsoft.PowerBI](#microsoftpowerbi)
 > - [Microsoft.PowerBIDedicated](#microsoftpowerbidedicated)
+> - [Microsoft. Прожектбабилон](#microsoftprojectbabylon)
 > - [Microsoft.RecoveryServices](#microsoftrecoveryservices)
 > - [Microsoft.Relay](#microsoftrelay)
 > - [Microsoft.RemoteApp](#microsoftremoteapp)
@@ -165,6 +166,7 @@ ms.locfileid: "75479622"
 > - [Microsoft.Subscription](#microsoftsubscription)
 > - [Microsoft.TimeSeriesInsights](#microsofttimeseriesinsights)
 > - [Microsoft.VMwareCloudSimple](#microsoftvmwarecloudsimple)
+> - [Microsoft. Внфманажер](#microsoftvnfmanager)
 > - [Microsoft.Web](#microsoftweb)
 > - [Microsoft.WindowsDefenderATP](#microsoftwindowsdefenderatp)
 > - [Microsoft.WindowsIoT](#microsoftwindowsiot)
@@ -222,7 +224,7 @@ ms.locfileid: "75479622"
 > | алертсметадата | Нет |
 > | alertsSummary | Нет |
 > | alertsSummaryList | Нет |
-> | обратная связь | Нет |
+> | Оставлять | Нет |
 > | smartDetectorAlertRules | Да |
 > | smartDetectorRuntimeEnvironments | Нет |
 > | smartGroups | Нет |
@@ -282,6 +284,7 @@ ms.locfileid: "75479622"
 > | policySetDefinitions | Нет |
 > | providerOperations | Нет |
 > | roleAssignments | Нет |
+> | ролеассигнментсусажеметрикс | Нет |
 > | roleDefinitions | Нет |
 
 ## <a name="microsoftautomation"></a>Microsoft.Automation
@@ -366,6 +369,7 @@ ms.locfileid: "75479622"
 > | Биллингаккаунтс/Биллингпрофилес/Биллингсубскриптионс | Нет |
 > | Биллингаккаунтс/Биллингпрофилес/Креатебиллингролеассигнмент | Нет |
 > | Биллингаккаунтс/Биллингпрофилес/клиенты | Нет |
+> | Биллингаккаунтс/Биллингпрофилес/инструкции | Нет |
 > | Биллингаккаунтс/Биллингпрофилес/счета | Нет |
 > | Биллингаккаунтс/Биллингпрофилес/счета/прайс-лист | Нет |
 > | Биллингаккаунтс/Биллингпрофилес/Инвоицесектионс | Нет |
@@ -493,6 +497,7 @@ ms.locfileid: "75479622"
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
 > | appliedReservations | Нет |
+> | аутокуотаинкреасе | Нет |
 > | калкулатиксчанже | Нет |
 > | calculatePrice | Нет |
 > | калкулатепурчасеприце | Нет |
@@ -509,6 +514,7 @@ ms.locfileid: "75479622"
 > | Ресерватионордерс/Split | Нет |
 > | Ресерватионордерс/swap | Нет |
 > | reservations | Нет |
+> | ресаурцепровидерс | Нет |
 > | ресурсов | Нет |
 > | validateReservationOrder | Нет |
 
@@ -762,7 +768,7 @@ ms.locfileid: "75479622"
 > | Екстерналсубскриптионс и измерения | Нет |
 > | Екстерналсубскриптионс/прогноз | Нет |
 > | Екстерналсубскриптионс/запрос | Нет |
-> | Прогноз | Нет |
+> | Грешно | Нет |
 > | Запрос | Нет |
 > | регистрация | Нет |
 > | Reportconfigs | Нет |
@@ -783,7 +789,7 @@ ms.locfileid: "75479622"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
-> | взаимосвязи | Нет |
+> | связи | Нет |
 > | ресаурцепровидерс | Да |
 
 ## <a name="microsoftdatabox"></a>Microsoft.DataBox
@@ -806,6 +812,8 @@ ms.locfileid: "75479622"
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
 > | workspaces | Да |
+> | рабочие области и Дбворкспацес | Нет |
+> | рабочие области и storageEncryption | Нет |
 > | рабочие области и Виртуалнетворкпирингс | Нет |
 
 ## <a name="microsoftdatacatalog"></a>Microsoft.DataCatalog
@@ -883,6 +891,7 @@ ms.locfileid: "75479622"
 > | ------------- | ----------- |
 > | серверы | Да |
 > | серверы и помощники | Нет |
+> | серверы и ключи | Нет |
 > | серверы и Приватиндпоинтконнектионпроксиес | Нет |
 > | серверы и Приватиндпоинтконнектионс | Нет |
 > | серверы и Привателинкресаурцес | Нет |
@@ -899,6 +908,7 @@ ms.locfileid: "75479622"
 > | ------------- | ----------- |
 > | серверы | Да |
 > | серверы и помощники | Нет |
+> | серверы и ключи | Нет |
 > | серверы и Приватиндпоинтконнектионпроксиес | Нет |
 > | серверы и Приватиндпоинтконнектионс | Нет |
 > | серверы и Привателинкресаурцес | Нет |
@@ -961,8 +971,10 @@ ms.locfileid: "75479622"
 > | ------------- | ----------- |
 > | еластикпулс | Да |
 > | Еластикпулс/Иосубтенантс | Да |
+> | Еластикпулс/Иосубтенантс/securitySettings | Нет |
 > | IotHubs | Да |
 > | IotHubs/Евентгридфилтерс | Нет |
+> | IotHubs/securitySettings | Нет |
 > | ProvisioningServices | Да |
 > | usages | Нет |
 
@@ -1036,6 +1048,12 @@ ms.locfileid: "75479622"
 > | домены и темы | Нет |
 > | eventSubscriptions | Нет |
 > | extensionTopics | Нет |
+> | партнернамеспацес | Да |
+> | Партнернамеспацес/eventChannels | Нет |
+> | партнеррегистратионс | Да |
+> | партнертопикс | Да |
+> | системтопикс | Да |
+> | Системтопикс/eventSubscriptions | Нет |
 > | topics | Да |
 > | topicTypes | Нет |
 
@@ -1091,6 +1109,8 @@ ms.locfileid: "75479622"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
+> | аутоманажедаккаунтс | Да |
+> | аутоманажедвмконфигуратионпрофилес | Да |
 > | конфигуратионпрофилеассигнментс | Нет |
 > | guestConfigurationAssignments | Нет |
 > | software | Нет |
@@ -1202,6 +1222,8 @@ ms.locfileid: "75479622"
 > | кластеры и базы данных | Нет |
 > | кластеры/базы данных/подключения | Нет |
 > | кластеры/базы данных/евенсубконнектионс | Нет |
+> | кластеры/базы данных/принЦипалассигнментс | Нет |
+> | кластеры/принЦипалассигнментс | Нет |
 > | кластеры/шаредидентитиес | Нет |
 
 ## <a name="microsoftlabservices"></a>Microsoft.LabServices
@@ -1292,8 +1314,9 @@ ms.locfileid: "75479622"
 > | Оффертипес/Publishers/предложения, планы и конфигурации | Нет |
 > | Оффертипес/Publishers/Offers/Plans/Configurations/Импортимаже | Нет |
 > | privategalleryitems | Нет |
+> | приватестореклиент | Нет |
 > | products | Нет |
-> | publishers | Нет |
+> | издателя | Нет |
 > | издатели и предложения | Нет |
 > | издатели, предложения и поправки | Нет |
 
@@ -1350,6 +1373,7 @@ ms.locfileid: "75479622"
 > | ------------- | ----------- |
 > | ассессментпрожектс | Да |
 > | migrateprojects | Да |
+> | мовеколлектионс | Да |
 > | projects | Да |
 
 ## <a name="microsoftmixedreality"></a>Microsoft. Микседреалити
@@ -1492,8 +1516,12 @@ ms.locfileid: "75479622"
 > | linkTargets | Нет |
 > | storageInsightConfigs | Нет |
 > | workspaces | Да |
+> | рабочие области и экспорты | Нет |
 > | рабочие области и источники данных | Нет |
 > | рабочие области и linkedServices | Нет |
+> | рабочие области и Приватиндпоинтконнектионпроксиес | Нет |
+> | рабочие области и Приватиндпоинтконнектионс | Нет |
+> | рабочие области и Привателинкресаурцес | Нет |
 > | рабочие области и запросы | Нет |
 
 ## <a name="microsoftoperationsmanagement"></a>Microsoft.OperationsManagement
@@ -1551,6 +1579,13 @@ ms.locfileid: "75479622"
 > | ------------- | ----------- |
 > | capacities | Да |
 
+## <a name="microsoftprojectbabylon"></a>Microsoft. Прожектбабилон
+
+> [!div class="mx-tableFixed"]
+> | Тип ресурса | Удаление ресурсов в полном режиме |
+> | ------------- | ----------- |
+> | accounts | Да |
+
 ## <a name="microsoftrecoveryservices"></a>Microsoft.RecoveryServices
 
 > [!div class="mx-tableFixed"]
@@ -1577,7 +1612,7 @@ ms.locfileid: "75479622"
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
 > | accounts | Нет |
-> | коллекции | Да |
+> | семейства | Да |
 > | коллекции и приложения | Нет |
 > | Collections/секуритипринЦипалс | Нет |
 > | темплатеимажес | Нет |
@@ -1602,6 +1637,7 @@ ms.locfileid: "75479622"
 > | availabilityStatuses | Нет |
 > | childAvailabilityStatuses | Нет |
 > | childResources | Нет |
+> | емергингиссуес | Нет |
 > | события | Нет |
 > | impactedResources | Нет |
 > | метаданные | Нет |
@@ -1620,12 +1656,7 @@ ms.locfileid: "75479622"
 > | notifyResourceJobs | Нет |
 > | providers | Нет |
 > | resourceGroups | Нет |
-> | ресурсов | Нет |
 > | subscriptions | Нет |
-> | подписки и поставщики | Нет |
-> | подписки и ресурсы | Нет |
-> | подписки и имена | Нет |
-> | Subscriptions/имена/Тагвалуес | Нет |
 > | tenants | Нет |
 
 ## <a name="microsoftsaas"></a>Microsoft.SaaS
@@ -1708,7 +1739,7 @@ ms.locfileid: "75479622"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
-> | aggregations | Нет |
+> | Агрегаты | Нет |
 > | alertRules | Нет |
 > | алертрулетемплатес | Нет |
 > | закладки | Нет |
@@ -1862,7 +1893,7 @@ ms.locfileid: "75479622"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Удаление ресурсов в полном режиме |
 > | ------------- | ----------- |
-> | Кэширует | Да |
+> | кэширует | Да |
 > | кэши/Сторажетаржетс | Нет |
 > | усажемоделс | Нет |
 
@@ -1954,6 +1985,16 @@ ms.locfileid: "75479622"
 > | дедикатедклаудсервицес | Да |
 > | virtualMachines | Да |
 
+## <a name="microsoftvnfmanager"></a>Microsoft. Внфманажер
+
+> [!div class="mx-tableFixed"]
+> | Тип ресурса | Удаление ресурсов в полном режиме |
+> | ------------- | ----------- |
+> | устройства | Да |
+> | разработчиков | Нет |
+> | поставщики и номера SKU | Нет |
+> | внфс | Да |
+
 ## <a name="microsoftweb"></a>Microsoft.Web
 
 > [!div class="mx-tableFixed"]
@@ -1975,8 +2016,8 @@ ms.locfileid: "75479622"
 > | connections | Да |
 > | customApis | Да |
 > | deletedSites | Нет |
-> | функции | Нет |
 > | hostingEnvironments | Да |
+> | hostingEnvironments/Евентгридфилтерс | Нет |
 > | hostingEnvironments/Мултиролепулс | Нет |
 > | hostingEnvironments/внешнего размещения | Нет |
 > | publishingUsers | Нет |
@@ -1996,6 +2037,7 @@ ms.locfileid: "75479622"
 > | сайты/слоты/Хостнамебиндингс | Нет |
 > | сайты/слоты/файл networkconfig | Нет |
 > | sourceControls | Нет |
+> | статикситес | Да |
 > | validate | Нет |
 > | verifyHostingEnvironmentVnet | Нет |
 

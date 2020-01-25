@@ -6,12 +6,12 @@ ms.author: yegu
 ms.service: cache
 ms.topic: conceptual
 ms.date: 06/13/2018
-ms.openlocfilehash: ddb44a064090a108f77d6a6f9a270fab8c55ec90
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 761c464730096eba36bc7c04227745cf362e5cc6
+ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75433432"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76714466"
 ---
 # <a name="how-to-configure-redis-clustering-for-a-premium-azure-cache-for-redis"></a>Настройка кластеризации Redis для кэша Azure категории "Премиум" для Redis
 Кэш Azure для Redis предлагает разные варианты кэша, которые позволяют выбирать размер и функции кэша, включая функции ценовой категории "Премиум", такие как кластеризация, постоянное хранение данных и поддержка виртуальной сети. В этой статье описывается как настроить кластеризацию в кэше Azure категории "Премиум" для экземпляра Redis.
@@ -58,12 +58,7 @@ ms.locfileid: "75433432"
 <a name="cluster-size"></a>
 
 ## <a name="change-the-cluster-size-on-a-running-premium-cache"></a>Изменение размера кластера на работающем кэше категории "Премиум"
-Чтобы изменить размер кластера для работающего кэша уровня "Премиум" с включенной кластеризацией, в **меню ресурсов** щелкните **Размер кластера Redis**.
-
-> [!NOTE]
-> Хотя кэш Azure для Redis уровня "Премиум" выпущен в общедоступной версии, сейчас функция "Размер кластера Redis"находится на этапе предварительной версии.
-> 
-> 
+Чтобы изменить размер кластера в работающем кэше уровня "Премиум" с включенной кластеризацией, щелкните **Размер кластера** в **меню ресурсов**.
 
 ![Размер кластера Redis][redis-cache-redis-cluster-size]
 

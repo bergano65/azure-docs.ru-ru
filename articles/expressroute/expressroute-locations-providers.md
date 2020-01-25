@@ -7,12 +7,12 @@ ms.service: expressroute
 ms.topic: conceptual
 ms.date: 01/17/2020
 ms.author: cherylmc
-ms.openlocfilehash: 57a066132cbc8812fac95862bd1b02a3fc59ff2f
-ms.sourcegitcommit: 7221918fbe5385ceccf39dff9dd5a3817a0bd807
+ms.openlocfilehash: cbddd912831247e30f2913414c6dfa13131dde99
+ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/21/2020
-ms.locfileid: "76293901"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76719863"
 ---
 # <a name="expressroute-partners-and-peering-locations"></a>Партнеры и одноранговые расположения ExpressRoute
 
@@ -75,7 +75,7 @@ ms.locfileid: "76293901"
 
 
 ### <a name="global-commercial-azure"></a>Глобальная коммерческая версия Azure
-| **Местоположение** | **Адрес** | **Зона** | **Локальные регионы Azure** | **Прямое обращение к ER** | **Поставщики услуг** |
+| **Расположение** | **Адрес** | **Зона** | **Локальные регионы Azure** | **Прямое обращение к ER** | **Поставщики услуг** |
 | --- | --- | --- | --- | --- | --- |
 | **Амстердам** | [Equinix AM5](https://www.equinix.com/locations/europe-colocation/netherlands-colocation/amsterdam-data-centers/am5/) | 1 | Западная Европа | 10G, 100G | Aryaka Networks, AT & T NetBond, Британская телекоммуникации, Colt, Equinix, Еунетворкс, ГÉАНТ, в облаке, Interxion, КПН, IX REACH, связь уровня 3, Orange, NTT связь, оранжевый, Tata Communications, Телефоника, Telenor, Телиа, Verizon, Zayo |
 | **Амстердам 2** | [Interxion AMS8](https://www.interxion.com/Locations/amsterdam/schiphol/) | 1 | Западная Европа | 10G, 100G | CenturyLink Cloud Connect, Colt, DE-ЦИКС, Еунетворкс, Interxion, оранжевый, Vodafone |
@@ -142,10 +142,10 @@ ms.locfileid: "76293901"
 
 ### <a name="national-cloud-environments"></a>Национальные облачные среды
 
-Национальные облака Azure изолированы друг от друга и от глобального коммерческих Azure. ExpressRoute для одного облака Azure не может подключиться к регионам Azure в других.
+Местные облака Azure изолированы друг от друга и от глобальной коммерческой службы Azure. ExpressRoute для одного облака Azure не может подключиться к регионам Azure в других.
 
 ### <a name="us-government-cloud"></a>Облако правительства США
-| **Местоположение** | **Адрес** | **Локальные регионы Azure**| **Прямое обращение к ER** | **Поставщики услуг** |
+| **Расположение** | **Адрес** | **Локальные регионы Azure**| **Прямое обращение к ER** | **Поставщики услуг** |
 | --- | --- | --- | --- | --- |
 | **Чикаго** | [Equinix CH1](https://www.equinix.com/locations/americas-colocation/united-states-colocation/chicago-data-centers/ch1/) | Н/Д | 10G, 100G | AT&T NetBond, Equinix, Level 3 Communications, Verizon |
 | **Даллас** | [Equinix DA3](https://www.equinix.com/locations/americas-colocation/united-states-colocation/dallas-data-centers/da3/) | Н/Д | 10G, 100G | Equinix, Megaport, Verizon |
@@ -157,7 +157,7 @@ ms.locfileid: "76293901"
 | **Вашингтон, округ Колумбия** | [Equinix DC2](https://www.equinix.com/locations/americas-colocation/united-states-colocation/washington-dc-data-centers/dc2/) | Восточный регион US DoD, US Gov (Вирджиния) | 10G, 100G | AT&T NetBond, CenturyLink Cloud Connect, Equinix, Level 3 Communications, Megaport, Verizon |
 
 ### <a name="china"></a>Китай
-| **Местоположение** | **Поставщики услуг** |
+| **Расположение** | **Поставщики услуг** |
 | --- | --- |
 | **Пекин** |China Telecom |
 | **Пекин 2** | Телекоммуникации в Китае, GDS |
@@ -167,7 +167,7 @@ ms.locfileid: "76293901"
 Дополнительные сведения см. на странице [ExpressRoute в Китае](http://www.windowsazure.cn/home/features/expressroute/).
 
 ### <a name="germany"></a>Германия
-| **Местоположение** | **Поставщики услуг** |
+| **Расположение** | **Поставщики услуг** |
 | --- | --- |
 | **Берлин** |e-shelter, Megaport +, T-Systems |
 | **Франкфурт** |Colt, Equinix, Interxion |
@@ -198,7 +198,7 @@ ms.locfileid: "76293901"
 * [виасат](http://www.directcloud.viasatbusiness.com/)
 
 ## <a name="c1partners"></a>Подключение через дополнительных поставщиков услуг
-| **Местоположение** | **Exchange** | **Поставщики услуг подключения** |
+| **Расположение** | **Exchange** | **Поставщики услуг подключения** |
 | --- | --- | --- |
 | **Амстердам** | Equinix, Interxion, Обмен данными уровня 3 | Бикс, Клаудкспресс, Еурофибер, Фаствеб S. p. A, залива Bridge International, Калаам телекоммуникации Бахрейн B. S. C, Маиноне, Нианет, POST-Люксембург, Проксимус, TDC Ерхверв, телекоммуникационной Italia живы, Telekom Deutschland GmbH, Телиа |
 | **Атланта** | Equinix| Самые Castle

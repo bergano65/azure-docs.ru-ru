@@ -15,12 +15,12 @@ ms.date: 07/23/2019
 ms.author: baselden
 ms.reviewer: zhchia
 ms.collection: active-directory
-ms.openlocfilehash: 74b991fce132c991ebd5fbd3789328e2a500da86
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: e7f60335b3e75d93f408dec3386ca0bdcd6a0388
+ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74232312"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76711455"
 ---
 # <a name="enable-automatic-user-provisioning-for-your-multi-tenant-application"></a>Включение автоматической подготовки пользователей для приложения с несколькими клиентами
 
@@ -56,7 +56,7 @@ ms.locfileid: "74232312"
 
 Azure AD предоставляет несколько путей интеграции, позволяющих включить автоматическую подготовку пользователей для приложения.
 
-* [Служба подготовки Azure AD](https://docs.microsoft.com/azure/active-directory/manage-apps/user-provisioning) управляет подготовкой и отменой подготовки пользователей из Azure AD в ваше приложение (исходящая подготовка) и из приложения в Azure AD (входящая подготовка). Служба подключается к системе для конечных точек API управления пользовательским удостоверением (SCIM), предоставляемых вашим приложением.
+* [Служба подготовки Azure AD](user-provisioning.md) управляет подготовкой и отменой подготовки пользователей из Azure AD в ваше приложение (исходящая подготовка) и из приложения в Azure AD (входящая подготовка). Служба подключается к системе для конечных точек API управления пользовательским удостоверением (SCIM), предоставляемых вашим приложением.
 
 * При использовании [Microsoft Graph](https://docs.microsoft.com/graph/)приложение управляет входящей и исходящей подготовкой пользователей и групп из Azure AD в приложение, запрашивая API Microsoft Graph.
 
@@ -87,9 +87,9 @@ Azure AD предоставляет несколько путей интегра
 
 * [Дополнительные сведения о стандарте SCIM](https://aka.ms/SCIMOverview)
 
-* [Использование системы для управления междоменными удостоверениями (SCIM) для автоматической инициализации пользователей и групп из Azure Active Directory в приложения](https://docs.microsoft.com/azure/active-directory/manage-apps/use-scim-to-provision-users-and-groups)
+* [Использование системы для управления междоменными удостоверениями (SCIM) для автоматической инициализации пользователей и групп из Azure Active Directory в приложения](use-scim-to-provision-users-and-groups.md)
 
-* [Общие сведения о реализации Azure AD SCIM](https://docs.microsoft.com/azure/active-directory/manage-apps/use-scim-to-provision-users-and-groups)
+* [Общие сведения о реализации Azure AD SCIM](use-scim-to-provision-users-and-groups.md)
 
 ## <a name="microsoft-graph-for-provisioning"></a>Microsoft Graph для подготовки
 
@@ -113,9 +113,9 @@ Azure AD предоставляет несколько путей интегра
 
 SAML JIT использует сведения о заявках в токене SAML для создания и обновления сведений о пользователях в приложении. Клиенты могут настроить эти обязательные утверждения в приложении Azure AD по мере необходимости. Иногда необходимо включить JIT-подготовку на стороне приложения, чтобы клиент мог использовать эту функцию. SAML JIT удобен для создания и обновления пользователей, но не может удалять или деактивировать пользователей в приложении.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-* [Включение единого входа для приложения](https://docs.microsoft.com/azure/active-directory/manage-apps/isv-sso-content)
+* [Включение единого входа для приложения](isv-sso-content.md)
 
 * [Отправьте список приложений](https://microsoft.sharepoint.com/teams/apponboarding/Apps/SitePages/Default.aspx) и партнеров корпорации Майкрософт для создания документации на сайте Майкрософт.
 

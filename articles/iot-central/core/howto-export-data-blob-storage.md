@@ -8,18 +8,18 @@ ms.date: 09/26/2019
 ms.topic: conceptual
 ms.service: iot-central
 manager: corywink
-ms.openlocfilehash: b6a437af33e3e85b8dc07de223b6e1fd7ce6cb03
-ms.sourcegitcommit: 98ce5583e376943aaa9773bf8efe0b324a55e58c
+ms.openlocfilehash: 79d578c910c7d08355901308e00db5912d1f3baf
+ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73176247"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76721495"
 ---
 # <a name="export-your-data-to-azure-blob-storage"></a>Экспорт данных в хранилище BLOB-объектов Azure
 
 [!INCLUDE [iot-central-pnp-original](../../../includes/iot-central-pnp-original-note.md)]
 
-*Этот раздел предназначен для администраторов.*
+*Эта статья предназначена для администраторов.*
 
 В этой статье описывается, как использовать функцию непрерывного экспорта данных в Azure IoT Central для периодического экспорта данных в **учетную запись хранения BLOB-объектов Azure** или в **учетную запись хранения Azure Data Lake Storage 2-го поколения**. Вы можете экспортировать **измерения**, **устройства**и **шаблоны устройств** в файлы в формате JSON или Apache Avro. Экспортированные данные можно использовать для анализа холодного пути, например для обучения моделей в службе "Машинное обучение Azure" и долгосрочного анализа тенденций в Microsoft Power BI.
 
@@ -620,7 +620,7 @@ const avro = require('avsc');
 async function parse(filePath) {
     const records = await load(filePath);
     for (const record of records) {
-        // Fetch the template ID and version from the id and verison properties.
+        // Fetch the template ID and version from the id and version properties.
         const templateId = record.id;
         const templateVersion = record.version;
 

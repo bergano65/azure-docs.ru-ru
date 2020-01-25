@@ -5,12 +5,12 @@ ms.date: 01/16/2020
 ms.topic: conceptual
 description: Узнайте, как запускать Azure Dev Spaces в существующем кластере с контейнерами Windows
 keywords: Azure Dev Spaces, пространства разработки, Docker, Kubernetes, Azure, AKS, служба Kubernetes Azure, контейнеры, контейнеры Windows
-ms.openlocfilehash: 886f71dcaaca6a636b385ef6b101f0a893ff7035
-ms.sourcegitcommit: 276c1c79b814ecc9d6c1997d92a93d07aed06b84
+ms.openlocfilehash: 882cdaa8a7b01578b2f04cf939aa14fe4aee7e2e
+ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76157004"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76720373"
 ---
 # <a name="interact-with-windows-containers-using-azure-dev-spaces"></a>Взаимодействие с контейнерами Windows с помощью Azure Dev Spaces
 
@@ -61,7 +61,7 @@ git clone https://github.com/Azure/dev-spaces
 cd dev-spaces/samples/existingWindowsBackend/mywebapi-windows
 ```
 
-Пример приложения использует [Helm][helm-installed] для запуска службы Windows в кластере. Перейдите в каталог `charts` и используйте Helm для запуска службы Windows:
+Пример приложения использует [Helm 3][helm-installed] для запуска службы Windows в кластере. Перейдите в каталог `charts` и используйте Helm для запуска службы Windows:
 
 ```console
 cd charts/
@@ -141,7 +141,7 @@ azds up
 Команда `azds prep --public` создает диаграмму Helm и файлы dockerfile для приложения.
 
 > [!TIP]
-> [Диаграмма Dockerfile и Helm](../how-dev-spaces-works.md#prepare-your-code) для проекта используется Azure dev Spaces для сборки и выполнения кода, но эти файлы можно изменить, если необходимо изменить способ построения и запуска проекта.
+> Azure Dev Spaces использует [Dockerfile и диаграмму Helm](../how-dev-spaces-works.md#prepare-your-code) проекта для сборки и выполнения кода. Но вы можете изменить эти файлы, если нужно определить другой способ сборки и запуска проекта.
 
 Команда `azds up` запускает службу в пространстве имен.
 

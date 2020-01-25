@@ -10,21 +10,21 @@ ms.subservice: design
 ms.date: 11/04/2019
 ms.author: martinle
 ms.reviewer: igorstan
-ms.openlocfilehash: ea9629c63fcab97ba8ba83cd88592c37ae41818a
-ms.sourcegitcommit: 359930a9387dd3d15d39abd97ad2b8cb69b8c18b
+ms.openlocfilehash: 1d808210861d971b2915206e7be0fe9b955616c5
+ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73646392"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76720322"
 ---
 # <a name="azure-synapse-analytics-formerly-sql-dw-architecture"></a>Архитектура Azure синапсе Analytics (ранее — хранилище данных SQL) 
 
-Azure синапсе — это неограниченная служба аналитики, которая объединяет корпоративные хранилища данных и аналитику больших данных. Она дает вам возможность запрашивать данные на своих условиях, используя ненужные или подготовленные ресурсы по запросу (в масштабе). Azure синапсе объединяет эти две возможности вместе с единым интерфейсом для приема, подготовки, управления и обслуживания данных для немедленных потребностей в бизнес-аналитике и машинного обучения.
+Azure Synapse — это служба аналитики без ограничений, которая объединяет корпоративные хранилища данных и аналитику больших данных. Эта служба позволяет вам запрашивать данные на своих условиях, используя бессерверные ресурсы по запросу или подготовленные ресурсы в любом масштабе. Azure Synapse объединяет эти две возможности, предоставляя единый интерфейс для приема, подготовки, контроля и обслуживания данных для насущных потребностей бизнес-аналитики и машинного обучения.
 
- В Azure синапсе есть четыре компонента:
+ В Azure Synapse есть четыре компонента.
 - Аналитика SQL: полная аналитика на основе T-SQL 
     - Пул SQL (оплата по DWU подготовлен) — общедоступная версия
-    - SQL по запросу (оплата за обработанный ТБ) — (Предварительная версия)
+    - SQL по запросу (оплата за обработанные ТБ) — (Предварительная версия)
 - Spark: глубокая интегрированная Apache Spark (Предварительная версия) 
 - Интеграция данных: Гибридная интеграция данных (Предварительная версия)
 - Studio: унифицированное взаимодействие с пользователем.  (предварительная версия)
@@ -37,7 +37,7 @@ Azure синапсе — это неограниченная служба ана
 
 ![Архитектура аналитики SQL](media/massively-parallel-processing-mpp-architecture/massively-parallel-processing-mpp-architecture.png)
 
-В SQL Analytics используется архитектура на основе узлов. Приложения подключаются и выдают команды T-SQL управляющему узлу, который является единственной точкой входа для SQL Analytics. Управляющий узел запускает механизм MPP, оптимизирующий запросы параллельной обработки, а затем перенаправляет операции на вычислительные узлы, чтобы обеспечить таким образом параллельную работу. 
+В SQL Analytics используется архитектура на основе узлов. Приложения подключаются и выдают команды T-SQL управляющему узлу, который является единственной точкой входа для SQL Analytics. Управляющий узел запускает подсистему MPP, которая оптимизирует запросы для параллельной обработки, а затем передает операции вычислительным узлам для параллельной работы. 
 
 Вычислительные узлы хранят все данные пользователей в службе хранилища Azure и выполняют параллельные запросы. Служба перемещения данных (DMS) представляет собой внутреннюю службу на уровне системы, которая перемещает данные между узлами, что необходимо для выполнения параллельных запросов и возвращения точных результатов. 
 
@@ -48,12 +48,12 @@ Azure синапсе — это неограниченная служба ана
 * приостановка вычислений без изменения данных (вы платите только за хранилище);
 * возобновление вычислений во время рабочих часов.
 
-### <a name="azure-storage"></a>Хранилище Azure
+### <a name="azure-storage"></a>Служба хранилища Azure
 
-SQL Analytics использует службу хранилища Azure для защиты данных пользователей.  Так как ваши данные хранятся и управляются службой хранилища Azure, за использование хранилища взимается отдельная плата. Для оптимизации производительности системы сами данные сегментированы в **дистрибутивы**. При определении таблицы вы можете выбрать шаблон сегментирования, который будет использоваться для распределения данных. Поддерживаются следующие шаблоны сегментирования:
+SQL Analytics использует службу хранилища Azure для защиты данных пользователей.  Так как ваши данные хранятся и управляются службой хранилища Azure, за использование хранилища взимается отдельная плата. Данные сегментированы на **распределения** , чтобы оптимизировать производительность системы. При определении таблицы вы можете выбрать шаблон сегментирования, который будет использоваться для распределения данных. Поддерживаются следующие шаблоны сегментирования:
 
 * Хэш
-* Циклический перебор,
+* Циклический перебор
 * Репликация
 
 ### <a name="control-node"></a>Управляющий узел
@@ -93,7 +93,7 @@ SQL Analytics использует службу хранилища Azure для 
 ## <a name="round-robin-distributed-tables"></a>Таблицы с распределением методом циклического перебора
 Таблица с распределением методом циклического перебора — это самая простая таблица для создания и обеспечения высокой производительности, если ее использовать как промежуточную таблицу для нагрузок.
 
-В таблице с распределением методом циклического перебора данные распределяются равномерно, но без какой-либо последующей оптимизации. Распределение сначала выбирается случайным образом, а затем буферы строк назначаются распределениям последовательно. Вы можете быстро загрузить данные в таблицу с распределением методом циклического перебора, но производительность запроса будет лучше, если использовать распределенные хэш-таблицы. Для объединения таблиц с распределением методом циклического перебора требуется перегруппировка данных, что требует дополнительного времени.
+В таблице с распределением методом циклического перебора данные распределяются равномерно, но без какой-либо последующей оптимизации. Распределение сначала выбирается случайным образом, а затем буферы строк назначаются распределениям последовательно. Вы можете быстро загрузить данные в таблицу с распределением методом циклического перебора, но производительность запроса будет лучше, если использовать распределенные хэш-таблицы. Для соединений с таблицами с циклическим перебором требуются данные перегруппировка, что занимает дополнительное время.
 
 
 ## <a name="replicated-tables"></a>Реплицированные таблицы
@@ -106,42 +106,14 @@ SQL Analytics использует службу хранилища Azure для 
 ![Реплицированная таблица](media/sql-data-warehouse-distributed-data/replicated-table.png "Реплицированная таблица") 
 
 ## <a name="next-steps"></a>Дальнейшие действия
-Теперь, когда вы уже знакомы с Azure синапсе, Узнайте, как быстро [создать пул SQL][create a SQL pool] и [загрузить демонстрационные данные][load sample data]. Если вы раньше не работали с Azure, используйте [глоссарий Azure Глоссарий][Azure glossary] , чтобы узнать значение новых терминов. Или просмотрите некоторые из этих ресурсов Azure синапсе.  
+Теперь, когда вы уже знакомы с Azure синапсе, Узнайте, как быстро [создать пул SQL](./sql-data-warehouse-get-started-provision.md) и [загрузить демонстрационные данные](./sql-data-warehouse-load-sample-databases.md). Если вы раньше не работали с Azure, используйте [глоссарий Azure Глоссарий](../azure-glossary-cloud-terminology.md) , чтобы узнать значение новых терминов. Или просмотрите некоторые из этих ресурсов Azure синапсе.  
 
-* [Истории успеха клиентов]
-* [Блоги]
-* [Запросы функций]
-* [Видео]
-* [Блоги группы консультирования клиентов]
-* [Создание запроса в службу поддержки]
-* [Форум MSDN]
-* [Форум Stack Overflow]
-* [Twitter]
+* [Истории успеха клиентов](https://azure.microsoft.com/case-studies/?service=sql-data-warehouse)
+* [Блоги](https://azure.microsoft.com/blog/tag/azure-sql-data-warehouse/)
+* [Запросы функций](https://feedback.azure.com/forums/307516-sql-data-warehouse)
+* [Видео](https://azure.microsoft.com/documentation/videos/index/?services=sql-data-warehouse)
+* [Создание запроса в службу поддержки](./sql-data-warehouse-get-started-create-support-ticket.md)
+* [Форум MSDN](https://social.msdn.microsoft.com/Forums/azure/home?forum=AzureSQLDataWarehouse)
+* [Форум Stack Overflow](https://stackoverflow.com/questions/tagged/azure-sqldw)
+* [Twitter](https://twitter.com/hashtag/SQLDW)
 
-<!--Image references-->
-[1]: ./media/sql-data-warehouse-overview-what-is/dwarchitecture.png
-
-<!--Article references-->
-[Создание запроса в службу поддержки]: ./sql-data-warehouse-get-started-create-support-ticket.md
-[load sample data]: ./sql-data-warehouse-load-sample-databases.md
-[create a SQL pool]: ./sql-data-warehouse-get-started-provision.md
-[Migration documentation]: ./sql-data-warehouse-overview-migrate.md
-[Azure Synapse solution partners]: ./sql-data-warehouse-partner-business-intelligence.md
-[Integrated tools overview]: ./sql-data-warehouse-overview-integrate.md
-[Backup and restore overview]: ./sql-data-warehouse-restore-database-overview.md
-[Azure glossary]: ../azure-glossary-cloud-terminology.md
-
-<!--MSDN references-->
-
-<!--Other Web references-->
-[Истории успеха клиентов]: https://azure.microsoft.com/case-studies/?service=sql-data-warehouse
-[Блоги]: https://azure.microsoft.com/blog/tag/azure-sql-data-warehouse/
-[Блоги группы консультирования клиентов]: https://blogs.msdn.microsoft.com/sqlcat/tag/sql-dw/
-[Запросы функций]: https://feedback.azure.com/forums/307516-sql-data-warehouse
-[Форум MSDN]: https://social.msdn.microsoft.com/Forums/azure/home?forum=AzureSQLDataWarehouse
-[Форум Stack Overflow]: https://stackoverflow.com/questions/tagged/azure-sqldw
-[Twitter]: https://twitter.com/hashtag/SQLDW
-[Видео]: https://azure.microsoft.com/documentation/videos/index/?services=sql-data-warehouse
-[SLA for Azure Synapse]: https://azure.microsoft.com/support/legal/sla/sql-data-warehouse/v1_0/
-[Volume Licensing]: https://www.microsoftvolumelicensing.com/DocumentSearch.aspx?Mode=3&DocumentTypeId=37
-[Service Level Agreements]: https://azure.microsoft.com/support/legal/sla/

@@ -3,18 +3,18 @@ title: Использование PowerShell для архивации Windows S
 description: В этой статье описано, как использовать PowerShell для настройки Azure Backup в Windows Server или клиенте Windows, а также для управления резервным копированием и восстановлением.
 ms.topic: conceptual
 ms.date: 12/2/2019
-ms.openlocfilehash: 54cfbb4a550ff14705d8d02b0589ee023cf9c225
-ms.sourcegitcommit: 48b7a50fc2d19c7382916cb2f591507b1c784ee5
+ms.openlocfilehash: ef5571e6a059eedeba169765785bb0f840c8f256
+ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74689187"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76710860"
 ---
 # <a name="deploy-and-manage-backup-to-azure-for-windows-serverwindows-client-using-powershell"></a>Развертывание резервного копирования в Azure для Windows Server или клиента Windows и управление им с помощью PowerShell
 
 В этой статье описано, как использовать PowerShell для настройки службы архивации Azure на сервере Windows Server или клиенте Windows, а также для управления резервным копированием и восстановлением данных.
 
-## <a name="install-azure-powershell"></a>Установите Azure PowerShell
+## <a name="install-azure-powershell"></a>Установка Azure PowerShell
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
@@ -101,7 +101,7 @@ MARSAgentInstaller.exe /q
 
 ![Агент установлен](./media/backup-client-automation/installed-agent-listing.png)
 
-### <a name="installation-options"></a>Параметры установки
+### <a name="installation-options"></a>Варианты установки
 
 Чтобы просмотреть все параметры, доступные через командную строку, используйте следующую команду:
 
@@ -111,7 +111,7 @@ MARSAgentInstaller.exe /?
 
 Доступны следующие параметры.
 
-| Вариант | Сведения | значение по умолчанию |
+| Вариант | Сведения | По умолчанию |
 | --- | --- | --- |
 | /q |Позволяет выполнить тихую установку. |- |
 | /p:"расположение" |Путь к папке установки для агента архивации Azure. |C:\Program Files\Microsoft Azure Recovery Services Agent |
@@ -203,7 +203,7 @@ Set-OBMachineSetting -NoThrottle
 Server properties updated successfully.
 ```
 
-## <a name="encryption-settings"></a>Параметры шифрования
+## <a name="encryption-settings"></a>Параметры шифрования.
 
 Для защиты конфиденциальности данных резервные копии данных, отправляемые в службу архивации Azure, зашифровываются. Используемая для шифрования парольная фраза является "паролем" для расшифровки данных во время их восстановления.
 

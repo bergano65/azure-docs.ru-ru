@@ -8,14 +8,14 @@ manager: nitinme
 ms.custom: seodec18
 ms.service: cognitive-services
 ms.topic: conceptual
-ms.date: 06/26/2019
+ms.date: 01/23/2020
 ms.author: dapine
-ms.openlocfilehash: 95ec80af88e0b89f61bebed08f4b96a09947f401
-ms.sourcegitcommit: f5075cffb60128360a9e2e0a538a29652b409af9
+ms.openlocfilehash: 54a2aac3db47d60f02a45adae9aaa6077d675a43
+ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68311555"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76716896"
 ---
 # <a name="use-docker-compose-to-deploy-multiple-containers"></a>Развертывание нескольких контейнеров с помощью Docker Compose
 
@@ -25,7 +25,7 @@ ms.locfileid: "68311555"
 
 Может оказаться полезным управлять несколькими образами контейнеров на одном хост-компьютере. В этой статье мы будем объединять контейнеры Распознавание текста и распознавателей форм.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Для этой процедуры требуется несколько средств, которые необходимо установить и запустить локально:
 
@@ -46,7 +46,7 @@ ms.locfileid: "68311555"
 
 ## <a name="docker-compose-file"></a>Файл Docker Compose
 
-Файл YAML определяет все службы для развертывания. Эти службы зависят от `DockerFile` либо существующего образа контейнера. В этом случае мы будем использовать два изображения предварительной версии. Скопируйте и вставьте следующий файл YAML и сохраните его как *DOCKER-сформируйте. YAML*. Укажите соответствующие значения **apiKey**, **выставления счетов**и **EndpointUri** в файле.
+Файл YAML определяет все службы для развертывания. Эти службы используют либо `DockerFile`, либо существующий образ контейнера. В этом случае мы будем использовать два изображения предварительной версии. Скопируйте и вставьте следующий файл YAML и сохраните его как *DOCKER-сформируйте. YAML*. Укажите соответствующие значения **apiKey**, **выставления счетов**и **EndpointUri** в файле.
 
 ```yaml
 version: '3.7'
@@ -172,17 +172,17 @@ IMAGE ID            REPOSITORY                                                  
 
 ### <a name="test-the-recognize-text-container"></a>Тестирование контейнера Распознавание текста
 
-Откройте браузер на главном компьютере и перейдите на узел **localhost** , используя указанный порт из файла DOCKER-сформируйте. YAML, например http://localhost:5021/swagger/index.html. Для проверки конечной точки Распознавание текста можно использовать функцию "попробовать" в API.
+Откройте браузер на главном компьютере и перейдите на узел **localhost** , используя указанный порт из файла DOCKER-Host. YAML, например http://localhost:5021/swagger/index.html. Для проверки конечной точки Распознавание текста можно использовать функцию "попробовать" в API.
 
 ![Контейнер Распознавание текста](media/recognize-text-swagger-page.png)
 
 ### <a name="test-the-form-recognizer-container"></a>Тестирование контейнера распознавателя форм
 
-Откройте браузер на главном компьютере и перейдите на узел **localhost** , используя указанный порт из файла DOCKER-сформируйте. YAML, например http://localhost:5010/swagger/index.html. Для проверки конечной точки распознавателя форм можно использовать функцию "попробовать" в API.
+Откройте браузер на главном компьютере и перейдите на узел **localhost** , используя указанный порт из файла DOCKER-Host. YAML, например http://localhost:5010/swagger/index.html. Для проверки конечной точки распознавателя форм можно использовать функцию "попробовать" в API.
 
 ![Контейнер распознавателя форм](media/form-recognizer-swagger-page.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Контейнеры Cognitive Services](../cognitive-services-container-support.md)
