@@ -7,16 +7,16 @@ manager: craigg
 ms.service: sql-data-warehouse
 ms.topic: conceptual
 ms.subservice: workload-management
-ms.date: 01/13/2020
+ms.date: 01/23/2020
 ms.author: rortloff
 ms.reviewer: jrasnick
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 85987ca1ff7d2dd204d0a501367efffc8277f138
-ms.sourcegitcommit: b5106424cd7531c7084a4ac6657c4d67a05f7068
+ms.openlocfilehash: 86390132be0440b197b680803e5b6032670a7d1c
+ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75939919"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76721036"
 ---
 # <a name="sql-data-warehouse-workload-group-isolation-preview"></a>Изоляция группы рабочей нагрузки хранилища данных SQL (Предварительная версия)
 
@@ -32,7 +32,7 @@ ms.locfileid: "75939919"
 
 Изоляция рабочей нагрузки означает, что ресурсы зарезервированы, исключительно для группы рабочей нагрузки.  Изоляция рабочей нагрузки достигается путем настройки для параметра MIN_PERCENTAGE_RESOURCE значение больше нуля в синтаксисе [CREATE Рабочей группы](/sql/t-sql/statements/create-workload-group-transact-sql?view=azure-sqldw-latest) .  Для рабочих нагрузок непрерывного выполнения, которые должны соответствовать строгим соглашениям об уровне обслуживания, изоляция гарантирует, что ресурсы всегда доступны для группы рабочей нагрузки. 
 
-Настройка изоляции рабочей нагрузки неявно определяет гарантированный уровень параллелизма. Если для параметра MIN_PERCENTAGE_RESOURCE задано значение 30%, а REQUEST_MIN_RESOURCE_GRANT_PERCENT задано значение 2%, то для группы рабочей нагрузки будет гарантировано 15-параллельный уровень параллелизма.  Рассмотрим метод, приведенный ниже, для определения гарантированного параллелизма.
+Настройка изоляции рабочей нагрузки неявно определяет гарантированный уровень параллелизма. Например, группа рабочей нагрузки с `MIN_PERCENTAGE_RESOURCE`, для которой задано значение 30%, а `REQUEST_MIN_RESOURCE_GRANT_PERCENT` равным 2%, гарантируется 15-параллельная.  Уровень параллелизма гарантируется из-за того, что 15-2% ресурсов в группе рабочей нагрузки зарезервированы в любое время (независимо от того, как настроена `REQUEST_*MAX*_RESOURCE_GRANT_PERCENT`).  Если `REQUEST_MAX_RESOURCE_GRANT_PERCENT` больше `REQUEST_MIN_RESOURCE_GRANT_PERCENT`, а `CAP_PERCENTAGE_RESOURCE` больше, чем `MIN_PERCENTAGE_RESOURCE` дополнительные ресурсы добавляются по запросу.  Если `REQUEST_MAX_RESOURCE_GRANT_PERCENT` и `REQUEST_MIN_RESOURCE_GRANT_PERCENT` равны, а `CAP_PERCENTAGE_RESOURCE` больше `MIN_PERCENTAGE_RESOURCE`, то возможна дополнительная одновременность.  Рассмотрим метод, приведенный ниже, для определения гарантированного параллелизма.
 
 [Гарантированный параллелизм] = [`MIN_PERCENTAGE_RESOURCE`]/[`REQUEST_MIN_RESOURCE_GRANT_PERCENT`]
 

@@ -11,12 +11,12 @@ ms.date: 04/17/2018
 ms.author: kevin
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
-ms.openlocfilehash: d928f2392f204baae6cfdbe864938ef0dee1d6ca
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: af505d7614b527d6dc7e1ce54136578d67824cf9
+ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73692656"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76721172"
 ---
 # <a name="load-contoso-retail-data-to-a-sql-analytics-data-warehouse"></a>Загрузка данных Contoso Retail в хранилище данных аналитики SQL
 
@@ -29,15 +29,15 @@ ms.locfileid: "73692656"
 3. выполнять оптимизацию после завершения загрузки.
 
 ## <a name="before-you-begin"></a>Перед началом работы
-Для работы с этим руководством вам потребуется учетная запись Azure, у которой уже есть хранилище данных аналитики SQ. Если у вас нет подготовленного хранилища данных, см. раздел [создание хранилища данных SQL и задание правила брандмауэра на уровне сервера] [создание хранилища данных SQL].
+Для работы с этим руководством вам потребуется учетная запись Azure, у которой уже есть хранилище данных аналитики SQL. Если у вас нет подготовленного хранилища данных, см. раздел [Создание хранилища данных и настройка правила брандмауэра на уровне сервера](create-data-warehouse-portal.md).
 
 ## <a name="1-configure-the-data-source"></a>1. Настройка источника данных
 PolyBase использует внешние объекты T-SQL для определения расположения и атрибутов внешних данных. Определения внешних объектов хранятся в хранилище данных аналитики SQL. Данные хранятся извне.
 
 ### <a name="11-create-a-credential"></a>1.1. Создание учетных данных
-**Пропустите этот шаг** , если вы загружаете общедоступные данные Contoso. Вам не нужен безопасный доступ к общедоступным данным, так как он уже доступен всем.
+**Пропустите этот шаг** , если вы загружаете общедоступные данные contoso. Вам не нужен безопасный доступ к общедоступным данным, так как он уже доступен всем.
 
-**Не пропускайте этот шаг** , если вы используете этот учебник в качестве шаблона для загрузки собственных данных. Для доступа к данным через учетные данные используйте следующий сценарий, чтобы создать учетные данные для базы данных и затем использовать их при определении расположения источника данных.
+**Не пропускайте этот шаг** , если вы используете этот учебник в качестве шаблона для загрузки собственных данных. Чтобы получить доступ к данным через учетные данные, используйте следующий скрипт для создания учетных данных уровня базы данных. Затем используйте его при определении расположения источника данных.
 
 ```sql
 -- A: Create a master key.
@@ -73,7 +73,7 @@ WITH (
 ```
 
 ### <a name="12-create-the-external-data-source"></a>1.2. Создание внешнего источника данных
-Используйте команду [CREATE EXTERNAL DATA SOURCE][CREATE EXTERNAL DATA SOURCE] , чтобы сохранить расположение и тип данных. 
+Используйте команду [создать внешний источник данных](https://docs.microsoft.com/sql/t-sql/statements/create-external-data-source-transact-sql?view=sql-server-ver15) , чтобы сохранить расположение данных и тип данных. 
 
 ```sql
 CREATE EXTERNAL DATA SOURCE AzureStorage_west_public
@@ -90,7 +90,7 @@ WITH
 > 
 
 ## <a name="2-configure-data-format"></a>2. Настройка формата данных
-В хранилище BLOB-объектов Azure данные хранятся в текстовых файлах, где каждое поле отделяется разделителем. В среде SSMS выполните следующую команду [создания внешнего формата файла][CREATE EXTERNAL FILE FORMAT] , чтобы указать формат данных в текстовых файлах. Для примера Contoso используются данные без сжатия с разделением вертикальной чертой.
+В хранилище BLOB-объектов Azure данные хранятся в текстовых файлах, где каждое поле отделяется разделителем. В среде SSMS выполните следующую команду создания внешнего формата файла, чтобы указать формат данных в текстовых файлах. Для примера Contoso используются данные без сжатия с разделением вертикальной чертой.
 
 ```sql
 CREATE EXTERNAL FILE FORMAT TextFileFormat 
@@ -115,7 +115,7 @@ CREATE SCHEMA [asb]
 GO
 ```
 
-### <a name="32-create-the-external-tables"></a>3.2. Создание внешних таблиц
+### <a name="32-create-the-external-tables"></a>3.2. Создайте внешние таблицы.
 Выполните следующий скрипт, чтобы создать внешние таблицы DimProduct и FactOnlineSales. Здесь вы можете определить имена столбцов и типы данных и привязать их к расположению и формату файлов хранилища BLOB-объектов Azure. Определение хранится в хранилище данных аналитики SQL, а данные по-прежнему находятся в Azure Storage Blob.
 
 Параметр **LOCATION** представляет папку в корневой папке в хранилище BLOB-объектов Azure. Все таблицы находятся в разных папках.
@@ -214,7 +214,7 @@ GO
 ```
 
 ### <a name="42-load-the-data-into-new-tables"></a>4.2. Загрузка данных в новые таблицы
-Чтобы загрузить данные из хранилища BLOB-объектов Azure в таблицу хранилища данных, используйте инструкцию [CREATE TABLE как SELECT (Transact-SQL)][CREATE TABLE AS SELECT (Transact-SQL)] . При загрузке с CTAS использует созданные внешние таблицы со строгой типизацией. Чтобы загрузить данные в новые таблицы, используйте одну инструкцию [CTAS][CTAS] для каждой таблицы. 
+Чтобы загрузить данные из хранилища BLOB-объектов Azure в таблицу хранилища данных, используйте инструкцию [CREATE TABLE как SELECT (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse?view=aps-pdw-2016-au7) . При загрузке с [CTAS](sql-data-warehouse-develop-ctas.md) использует созданные внешние таблицы со строгой типизацией. Чтобы загрузить данные в новые таблицы, используйте одну инструкцию CTAS для каждой таблицы. 
  
 Компонент CTAS создает новую таблицу и заполняет ее результатам инструкции Select. CTAS определяет новую таблицу так, чтобы в ней содержались те же столбцы и типы данных, которые были выведены инструкцией Select. Если выбрать все столбцы из внешней таблицы, новая таблица будет репликой столбцов и типов данных такой внешней таблицы.
 
@@ -265,7 +265,7 @@ ORDER BY
 ```
 
 ## <a name="5-optimize-columnstore-compression"></a>5. Оптимизация сжатия columnstore
-По умолчанию хранилище данных аналитики SQL хранит таблицу как кластеризованный индекс columnstore. После завершения загрузки для некоторых строк данных может не выполняться сжатие в индекс columnstore.  Это может произойти по разным причинам. Чтобы узнать больше, ознакомьтесь с [управлением индексами columnstore][manage columnstore indexes].
+По умолчанию хранилище данных аналитики SQL хранит таблицу как кластеризованный индекс columnstore. После завершения загрузки для некоторых строк данных может не выполняться сжатие в индекс columnstore.  Это может произойти по разным причинам. Чтобы узнать больше, ознакомьтесь с [управлением индексами columnstore](sql-data-warehouse-tables-index.md).
 
 Чтобы оптимизировать производительность запросов и сжатие columnstore после загрузки, перестройте таблицу, чтобы настроить принудительное сжатие всех строк таблиц индексом columnstore. 
 
@@ -277,12 +277,12 @@ ALTER INDEX ALL ON [cso].[DimProduct]               REBUILD;
 ALTER INDEX ALL ON [cso].[FactOnlineSales]          REBUILD;
 ```
 
-Дополнительные сведения об обслуживании индексов columnstore см. в статье [Manage columnstore indexes][manage columnstore indexes] .
+Дополнительные сведения об обслуживании индексов columnstore см. в статье [Manage columnstore indexes](sql-data-warehouse-tables-index.md) .
 
 ## <a name="6-optimize-statistics"></a>6. Оптимизация статистики
 Рекомендуется создавать статистические данные по отдельным столбцам сразу после загрузки. Если известно, что некоторые столбцы не будут находиться в предикатах запроса, можно пропустить создание статистики по этим столбцам. При создании статистики по одному столбцу для каждого столбца перестроение всей статистики может занять много времени. 
 
-Если вам потребуется создать одностолбцовую статистику для каждого столбца в каждой таблице, можно использовать пример кода хранимой процедуры `prc_sqldw_create_stats` из статьи, посвященной [статистике][statistics].
+Если вам потребуется создать одностолбцовую статистику для каждого столбца в каждой таблице, можно использовать пример кода хранимой процедуры `prc_sqldw_create_stats` из статьи, посвященной [статистике](sql-data-warehouse-tables-statistics.md).
 
 Следующий пример кода — хорошая отправная точка для создания статистики. Он создает одностолбцовую статистику для каждого столбца в таблице измерения и для каждого соответствующего столбца в таблицах фактов. Одно- или многостолбцовую статистику в другие столбцы таблицы фактов можно добавить позже.
 
@@ -343,27 +343,4 @@ GROUP BY p.[BrandName]
 
 ## <a name="next-steps"></a>Дальнейшие действия
 Чтобы загрузить полный набор данных, выполните пример [Загрузить полное хранилище данных Contoso Retail](https://github.com/Microsoft/sql-server-samples/tree/master/samples/databases/contoso-data-warehouse/readme.md) из репозитория Microsoft SQL Server Samples.
-
-Дополнительные советы по разработке см. в разделе [Общие сведения о разработке хранилища данных SQL] [Общие сведения о разработке хранилища данных SQL].
-
-<!--Image references-->
-
-<!--Article references-->
-[Create a SQL Analytics data warehouse]: sql-data-warehouse-get-started-provision.md
-[Load data into SQL Analytics data warehouse]: sql-data-warehouse-overview-load.md
-[SQL Analytics data warehouse development overview]: sql-data-warehouse-overview-develop.md
-[manage columnstore indexes]: sql-data-warehouse-tables-index.md
-[Statistics]: sql-data-warehouse-tables-statistics.md
-[CTAS]: sql-data-warehouse-develop-ctas.md
-[label]: sql-data-warehouse-develop-label.md
-
-<!--MSDN references-->
-[CREATE EXTERNAL DATA SOURCE]: https://msdn.microsoft.com/library/dn935022.aspx
-[CREATE EXTERNAL FILE FORMAT]: https://msdn.microsoft.com/library/dn935026.aspx
-[CREATE TABLE AS SELECT (Transact-SQL)]: https://msdn.microsoft.com/library/mt204041.aspx
-[sys.dm_pdw_exec_requests]: https://msdn.microsoft.com/library/mt203887.aspx
-[REBUILD]: https://msdn.microsoft.com/library/ms188388.aspx
-
-<!--Other Web references-->
-[Microsoft Download Center]: https://www.microsoft.com/download/details.aspx?id=36433
-[Load the full Contoso Retail Data Warehouse]: https://github.com/Microsoft/sql-server-samples/tree/master/samples/databases/contoso-data-warehouse/readme.md
+Дополнительные советы по разработке см. в разделе [решения по проектированию и приемы программирования для хранилищ данных](sql-data-warehouse-overview-develop.md).

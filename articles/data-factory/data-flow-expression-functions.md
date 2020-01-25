@@ -9,12 +9,12 @@ ms.service: data-factory
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 02/15/2019
-ms.openlocfilehash: 8cbc067326bf77648d242cadaf91b491f50c3848
-ms.sourcegitcommit: 7221918fbe5385ceccf39dff9dd5a3817a0bd807
+ms.openlocfilehash: 68771ee3d2ae2d43245bd217bedcf59b987786f1
+ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/21/2020
-ms.locfileid: "76294275"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76716735"
 ---
 # <a name="data-transformation-expressions-in-mapping-data-flow"></a>Выражения преобразования данных в потоке данных сопоставления 
 
@@ -704,7 +704,7 @@ ___
 ___
 ### <code>toTimestamp</code>
 <code><b>toTimestamp(<i>&lt;string&gt;</i> : any, [<i>&lt;timestamp format&gt;</i> : string], [<i>&lt;time zone&gt;</i> : string]) => timestamp</b></code><br/><br/>
-Преобразует строку в метку времени по указанному необязательному формату метки времени. Для всех возможных форматов используйте Java Симпледатеформат. Если метка времени пропущена, используется шаблон по умолчанию. гггг-[M] M-[d] d чч: мм: СС [. f...]. Можно передать дополнительный часовой пояс в формате "GMT", "PST", "UTC", "America/Кайман". Метка времени поддерживает точность в миллисекундах со значением 999Refer Java Симпледатеформат для доступных форматов. https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html * ``toTimestamp('2016-12-31 00:12:00') -> toTimestamp('2016-12-31 00:12:00')``
+Преобразует строку в метку времени по указанному необязательному формату метки времени. Для всех возможных форматов используйте Java Симпледатеформат. Если метка времени пропущена, используется шаблон по умолчанию. гггг-[M] M-[d] d чч: мм: СС [. f...]. Можно передать дополнительный часовой пояс в формате "GMT", "PST", "UTC", "America/Кайман". Отметка времени поддерживает точность до миллисекунд со значением 999Refer Java Симпледатеформат для доступных форматов. https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html * ``toTimestamp('2016-12-31 00:12:00') -> toTimestamp('2016-12-31 00:12:00')``
 * ``toTimestamp('2016-12-31T00:12:00', 'yyyy-MM-dd\'T\'HH:mm:ss', 'PST') -> toTimestamp('2016-12-31 00:12:00')``
 * ``toTimestamp('12/31/2016T00:12:00', 'MM/dd/yyyy\'T\'HH:mm:ss') -> toTimestamp('2016-12-31 00:12:00')``
 * ``millisecond(toTimestamp('2019-02-03 05:19:28.871', 'yyyy-MM-dd HH:mm:ss.SSS')) -> 871``

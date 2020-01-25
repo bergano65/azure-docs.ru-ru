@@ -4,12 +4,12 @@ ms.service: azure-functions
 ms.topic: include
 ms.date: 03/05/2019
 ms.author: cshoe
-ms.openlocfilehash: 6324fd0e2957aea46fb5876aa8c91f0906205ccc
-ms.sourcegitcommit: 87781a4207c25c4831421c7309c03fce5fb5793f
+ms.openlocfilehash: ec3a7b6420144278df66f693d9fd9933449b3d80
+ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76694496"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76748831"
 ---
 ## <a name="trigger"></a>Триггер
 
@@ -699,6 +699,6 @@ public static string Run([TimerTrigger("0 */5 * * * *")] TimerInfo myTimer, ILog
 
 |Свойство  |По умолчанию | Description |
 |---------|---------|---------|
-|`maxBatchSize`|64|Максимальное число событий, получаемых в цикле получения.|
-|`prefetchCount`|Н/Д|Счетчик предварительной выборки по умолчанию, используемый базовым `EventProcessorHost`.|
+|`maxBatchSize`|10|Максимальное число событий, получаемых в цикле получения.|
+|`prefetchCount`|300|Счетчик предварительной выборки по умолчанию, используемый базовым `EventProcessorHost`.|
 |`batchCheckpointFrequency`|1|Количество пакетов событий, которые необходимо обработать перед созданием контрольной точки курсора EventHub.|

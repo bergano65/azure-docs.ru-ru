@@ -1,16 +1,16 @@
 ---
 author: cynthn
 ms.author: cynthn
-ms.date: 11/25/2019
+ms.date: 01/23/2020
 ms.topic: include
 ms.service: virtual-machines-linux
 manager: gwallace
-ms.openlocfilehash: 2a763bbd50f009ae469be889e6ebae0b0d90848b
-ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
+ms.openlocfilehash: ec1b77118f94501363d950d72a65a67ece79ff77
+ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74795571"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76748927"
 ---
 Стандартизированные образы виртуальных машин позволяют организациям выполнять миграцию в облако и обеспечивать согласованность в развертываниях. Образы обычно включают стандартные параметры безопасности и конфигурации, а значит необходимое программное обеспечение. Для настройки собственного конвейера создания образов требуется время, инфраструктура и настройка, но с помощью построителя образов виртуальных машин Azure вы просто предоставляете простую конфигурацию, описывающую образ, отправляете его в службу, а также строится и распространяется образ.
  
@@ -43,10 +43,12 @@ ms.locfileid: "74795571"
 
 ## <a name="os-support"></a>Поддержка ОС
 AIB будет поддерживать базовые образы ОС Azure Marketplace:
-- Ubuntu 18.04
-- Ubuntu 16.04.
-- RHEL 7,6
-- CentOS 7,6
+- Ubuntu 18.04
+- Ubuntu 16.04
+- RHEL 7,6, 7,7
+- CentOS 7,6, 7,7
+- SLES 12 SP4
+- SLES 15, SLES 15 С ПАКЕТОМ ОБНОВЛЕНИЯ 1
 - Windows 10 RS5 Enterprise/профессиональная/Корпоративная для виртуальных рабочих столов (ЕВД) 
 - Windows 2016
 - Windows 2019
@@ -91,6 +93,13 @@ az role assignment create \
     --role Contributor \
     --scope /subscriptions/$subscriptionID/resourceGroups/<distributeResoureGroupName>
 ```
+
+Вы можете назначить доступ с помощью PowerShell:
+
+```azurePowerShell-interactive
+New-AzRoleAssignment -ObjectId ef511139-6170-438e-a6e1-763dc31bdf74 -Scope /subscriptions/$subscriptionID/resourceGroups/<distributeResoureGroupName> -RoleDefinitionName Contributor
+```
+
 
 Если учетная запись службы не найдена, это может означать, что подписка, в которую добавляется назначение ролей, еще не зарегистрирована для поставщика ресурсов.
 
