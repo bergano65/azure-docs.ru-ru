@@ -13,16 +13,16 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 08/28/2019
+ms.date: 1/24/2020
 ms.author: ryanwi
 ms.reviewer: hirsin
 ms.custom: aaddev
-ms.openlocfilehash: b3d5aa74705d858349eaca543a7fd86e315a63e6
-ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
+ms.openlocfilehash: 15293f6cf5ceafda2dd5727ad85804b432bae54a
+ms.sourcegitcommit: b5d646969d7b665539beb18ed0dc6df87b7ba83d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76703003"
+ms.lasthandoff: 01/26/2020
+ms.locfileid: "76758756"
 ---
 # <a name="whats-new-for-authentication"></a>Новые возможности для проверки подлинности. 
 
@@ -40,7 +40,20 @@ ms.locfileid: "76703003"
 
 ## <a name="upcoming-changes"></a>Предстоящие изменения
 
-Сентябрь 2019: дополнительное применение семантики POST в соответствии с правилами анализа URL-адресов. при дублировании параметров будет вызвана ошибка и [Спецификация](https://www.w3.org/International/questions/qa-byte-order-mark) пропускается.
+Пока не запланировано.  Изменения, которые находятся в рабочей среде или поступают в рабочую среду, см. ниже. 
+
+## <a name="february-2020"></a>Февраль 2020: 
+
+### <a name="empty-fragments-will-be-appended-to-every-http-redirect-from-the-login-endpoint"></a>К каждому перенаправлению HTTP из конечной точки входа будут добавлены пустые фрагменты. 
+
+**Дата вступления в силу**8 февраля 2020 г.
+
+**Затронутые конечные точки**: версии 1.0 и 2.0.
+
+**Затронутый протокол**: в потоках OAuth и OIDC, использующих response_type = Query, в некоторых случаях используется [поток кода авторизации](v2-oauth2-auth-code-flow.md) и [неявный поток](v2-oauth2-implicit-grant-flow.md). 
+
+Когда ответ на проверку подлинности отправляется из login.microsoftonline.com в приложение через перенаправление HTTP, служба Добавляет пустой фрагмент в URL-адрес ответа.  Это не позволяет классу атак перенаправления, гарантируя, что браузер очищает любой существующий фрагмент в запросе проверки подлинности.  Никакие приложения не должны иметь зависимости от этого поведения. 
+
 
 ## <a name="august-2019"></a>Август 2019 г.
 

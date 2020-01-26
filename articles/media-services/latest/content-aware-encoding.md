@@ -1,5 +1,5 @@
 ---
-title: Экспериментальная предустановка для кодирования с поддержкой содержимого в Azure | Документация Майкрософт
+title: Предустановка для кодировки с учетом содержимого — службы мультимедиа Azure |
 description: В этой статье рассматривается кодировка с учетом содержимого в Cлужбы мультимедиа Microsoft Azure v3.
 services: media-services
 documentationcenter: ''
@@ -12,14 +12,14 @@ ms.topic: article
 ms.date: 04/05/2019
 ms.author: juliako
 ms.custom: ''
-ms.openlocfilehash: c2846759a8daa04fc5c1d3b7f69e2c061bacb272
-ms.sourcegitcommit: 014e916305e0225512f040543366711e466a9495
+ms.openlocfilehash: 34b4386d536a9845c8a48e7e54612548367b52bc
+ms.sourcegitcommit: b5d646969d7b665539beb18ed0dc6df87b7ba83d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75933487"
+ms.lasthandoff: 01/26/2020
+ms.locfileid: "76759352"
 ---
-# <a name="experimental-preset-for-content-aware-encoding"></a>Экспериментальная предустановка для кодировки с учетом содержимого
+# <a name="a-preset-for-content-aware-encoding"></a>Предустановка для кодировки с учетом содержимого
 
 Чтобы подготовить содержимое для доставки с помощью [потоковой передачи с адаптивной скоростью](https://en.wikipedia.org/wiki/Adaptive_bitrate_streaming), видео необходимо закодировать на несколько битовых ставок (от высокого до низкого). Чтобы обеспечить плавное ухудшение качества, так как скорость понижается, так что это разрешение видео. Это приводит к последовательному вызову кодировки — таблице разрешений и скорости; см. [встроенные предустановки кодирования](https://docs.microsoft.com/rest/api/media/transforms/createorupdate#encodernamedpreset)служб мультимедиа.
 

@@ -1,6 +1,6 @@
 ---
 title: Управление ресурсами служебной шины Azure с помощью PowerShell | Документация Майкрософт
-description: Создание ресурсов служебной шины и управление ими с помощью модуля PowerShell
+description: В этой статье объясняется, как использовать модуль Azure PowerShell для создания сущностей служебной шины и управления ими (пространства имен, очереди, разделы, подписки).
 services: service-bus-messaging
 documentationcenter: .NET
 author: axisc
@@ -12,14 +12,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 09/21/2018
+ms.date: 01/24/2020
 ms.author: aschhab
-ms.openlocfilehash: 0d15aa4d7b8a922f7606b7c4d1b357a80b3cbfab
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: e333dfb109840538fd5dec8110e1c32adedce989
+ms.sourcegitcommit: b5d646969d7b665539beb18ed0dc6df87b7ba83d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60311052"
+ms.lasthandoff: 01/26/2020
+ms.locfileid: "76759267"
 ---
 # <a name="use-powershell-to-manage-service-bus-resources"></a>Управление ресурсами служебной шины с помощью модуля PowerShell
 
@@ -33,17 +33,17 @@ Microsoft Azure PowerShell — это среда сценариев, котор
 
 Перед началом работы проверьте следующие необходимые компоненты:
 
-* Подписка Azure. Дополнительные сведения о получении подписки см. на страницах [Как приобрести Azure][purchase options], [Предложения для участников][member offers] или [Создайте бесплатную учетную запись Azure уже сегодня][free account].
+* Подписка Azure. Дополнительные сведения о получении подписки см. в разделах о [вариантах приобретения][purchase options], [предложениях для участников][member offers] или [бесплатной учетной записи][free account].
 * Компьютер с Azure PowerShell. Инструкции см. в статье [Приступая к работе с командлетами Azure PowerShell](/powershell/azure/get-started-azureps).
 * Общее представление о сценариях PowerShell, пакетах NuGet и платформе .NET Framework.
 
-## <a name="get-started"></a>Начало работы
+## <a name="get-started"></a>Начать
 
 Сначала мы используем PowerShell для входа в учетную запись Azure и подписку Azure. Выполните инструкции, приведенные в статье [Приступая к работе с командлетами Azure PowerShell](/powershell/azure/get-started-azureps), чтобы войти в учетную запись Azure, а также получить и просмотреть ресурсы в подписке Azure.
 
 ## <a name="provision-a-service-bus-namespace"></a>Подготовка пространства имен Service Bus
 
-При работе с пространствами имен служебной шины, можно использовать [Get-AzServiceBusNamespace](/powershell/module/az.servicebus/get-azservicebusnamespace), [New AzServiceBusNamespace](/powershell/module/az.servicebus/new-azservicebusnamespace), [Remove-AzServiceBusNamespace](/powershell/module/az.servicebus/remove-azservicebusnamespace)и [ SET-AzServiceBusNamespace](/powershell/module/az.servicebus/set-azservicebusnamespace) командлетов.
+При работе с пространствами имен служебной шины можно использовать командлеты [Get-азсервицебуснамеспаце](/powershell/module/az.servicebus/get-azservicebusnamespace), [New-азсервицебуснамеспаце](/powershell/module/az.servicebus/new-azservicebusnamespace), [Remove-азсервицебуснамеспаце](/powershell/module/az.servicebus/remove-azservicebusnamespace)и [Set-азсервицебуснамеспаце](/powershell/module/az.servicebus/set-azservicebusnamespace) .
 
 В этом примере мы создадим несколько локальных переменных в сценарии, в частности `$Namespace` и `$Location`.
 
@@ -83,7 +83,7 @@ Microsoft Azure PowerShell — это среда сценариев, котор
 
 ### <a name="create-a-namespace-authorization-rule"></a>Создание правила авторизации для пространства имен
 
-В следующем примере показано, как управлять правилами авторизации пространства имен с помощью [New AzServiceBusAuthorizationRule](/powershell/module/az.servicebus/new-azservicebusauthorizationrule), [Get-AzServiceBusAuthorizationRule](/powershell/module/az.servicebus/get-azservicebusauthorizationrule), [ SET-AzServiceBusAuthorizationRule](/powershell/module/az.servicebus/set-azservicebusauthorizationrule), и [Remove-AzServiceBusAuthorizationRule](/powershell/module/az.servicebus/remove-azservicebusauthorizationrule) командлетов.
+В следующем примере показано, как управлять правилами авторизации пространства имен с помощью командлетов [New-азсервицебусаусоризатионруле](/powershell/module/az.servicebus/new-azservicebusauthorizationrule), [Get-азсервицебусаусоризатионруле](/powershell/module/az.servicebus/get-azservicebusauthorizationrule), [Set-Азсервицебусаусоризатионруле](/powershell/module/az.servicebus/set-azservicebusauthorizationrule)и [Remove-AzServiceBusAuthorizationRule](/powershell/module/az.servicebus/remove-azservicebusauthorizationrule) .
 
 ```powershell
 # Query to see if rule exists
@@ -147,7 +147,7 @@ else
 
 ### <a name="modify-queue-properties"></a>Изменение свойств очереди
 
-После выполнения сценария в предыдущем разделе, можно использовать [AzServiceBusQueue набора](/powershell/module/az.servicebus/set-azservicebusqueue) командлет для обновления свойства очереди, как показано в следующем примере:
+После выполнения скрипта, описанного в предыдущем разделе, можно использовать командлет [Set-азсервицебускуеуе](/powershell/module/az.servicebus/set-azservicebusqueue) для обновления свойств очереди, как показано в следующем примере:
 
 ```powershell
 $CurrentQ.DeadLetteringOnMessageExpiration = $True

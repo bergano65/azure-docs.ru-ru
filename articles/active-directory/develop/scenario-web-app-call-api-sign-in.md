@@ -14,28 +14,28 @@ ms.workload: identity
 ms.date: 09/30/2019
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: a77bb59afa753fa9d1655e787d4f7a18715ed2ca
-ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
+ms.openlocfilehash: ea18538662dc63876a50f52e9e6a8b3fffb3b35a
+ms.sourcegitcommit: b5d646969d7b665539beb18ed0dc6df87b7ba83d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76701592"
+ms.lasthandoff: 01/26/2020
+ms.locfileid: "76758876"
 ---
-# <a name="remove-accounts-from-the-cache-on-global-sign-out"></a>Удаление учетных записей из кэша при глобальном выходе
+# <a name="a-web-app-that-calls-web-apis-remove-accounts-from-the-token-cache-on-global-sign-out"></a>Веб-приложение, вызывающее веб-API: удаление учетных записей из кэша маркеров при глобальном выходе
 
-Вы уже знакомы с добавлением единого входа в веб-приложение. Вы узнаете, что в [веб-приложении, в котором входят пользователи, — добавление входа в систему](scenario-web-app-sign-user-sign-in.md).
+Вы узнали, как добавить вход в веб-приложение в [веб-приложении, которое входит в систему пользователей: вход и](scenario-web-app-sign-user-sign-in.md)выход.
 
-В этом случае, если пользователь выйдет из этого приложения или из любого приложения, вы хотите удалить его из кэша маркеров, связанных с этим пользователем маркеров.
+Выход отличается для веб-приложения, которое вызывает веб-API. Когда пользователь выходит из приложения или из любого приложения, необходимо удалить маркеры, связанные с этим пользователем, из кэша маркеров.
 
-## <a name="intercepting-the-callback-after-sign-out---single-sign-out"></a>Перехват обратного вызова после выхода — единый выход
+## <a name="intercept-the-callback-after-single-sign-out"></a>Перехват обратного вызова после единого выхода
 
-Приложение может перехватить событие после `logout`, например очистить запись кэша маркеров, связанную с учетной записью, с которой выполнен выход. Веб-приложение будет хранить маркеры доступа для пользователя в кэше. Перехват обратного вызова после `logout` позволяет веб-приложению удалить пользователя из кэша маркеров.
+Чтобы очистить запись кэша маркеров, связанную с учетной записью, в которой выполнен выход из службы, приложение может перехватить событие после `logout`. Веб-приложения хранят маркеры доступа для каждого пользователя в кэше маркеров. Перехватывая обратный вызов после `logout`, веб-приложение может удалить пользователя из кэша.
 
 # <a name="aspnet-coretabaspnetcore"></a>[ASP.NET Core](#tab/aspnetcore)
 
-Этот механизм проиллюстрирован в методе `AddMsal()` [вебаппсервицеколлектионекстенсионс. CS # L151-L157](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/blob/db7f74fd7e65bab9d21092ac1b98a00803e5ceb2/Microsoft.Identity.Web/WebAppServiceCollectionExtensions.cs#L151-L157)
+Для ASP.NET Core механизм перехвата показан в методе `AddMsal()` [вебаппсервицеколлектионекстенсионс. CS # L151-L157](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/blob/db7f74fd7e65bab9d21092ac1b98a00803e5ceb2/Microsoft.Identity.Web/WebAppServiceCollectionExtensions.cs#L151-L157).
 
-**URL-адрес выхода** , зарегистрированный для приложения, позволяет реализовать единый выход. Конечная точка `logout` платформы Microsoft Identity будет вызывать **URL-адрес выхода** , зарегистрированный в приложении. Этот вызов происходит, если выход был инициирован из веб-приложения или из другого веб-приложения или браузера. Дополнительные сведения см. в разделе [единый выход](v2-protocols-oidc.md#single-sign-out).
+URL-адрес выхода, зарегистрированный ранее для приложения, позволяет реализовать единый выход. Конечная точка платформы Microsoft Identity `logout` вызывает URL-адрес выхода. Этот вызов происходит, если выход запускается из веб-приложения или из другого веб-приложения или браузера. Дополнительные сведения см. в разделе [единый выход](v2-protocols-oidc.md#single-sign-out).
 
 ```csharp
 public static class WebAppServiceCollectionExtensions
@@ -48,10 +48,10 @@ public static class WebAppServiceCollectionExtensions
   {
    // Code omitted here
 
-   // Handling the sign-out: removing the account from MSAL.NET cache
+   // Handling the sign-out: Remove the account from MSAL.NET cache.
    options.Events.OnRedirectToIdentityProviderForSignOut = async context =>
    {
-    // Remove the account from MSAL.NET token cache
+    // Remove the account from MSAL.NET token cache.
     var tokenAcquisition = context.HttpContext.RequestServices.GetRequiredService<ITokenAcquisition>();
     await tokenAcquisition.RemoveAccountAsync(context).ConfigureAwait(false);
    };
@@ -61,19 +61,19 @@ public static class WebAppServiceCollectionExtensions
 }
 ```
 
-Код для Ремовеаккаунтасинк доступен в [Microsoft. Identity. Web/токенаккуиситион. CS # L264-L288](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/blob/db7f74fd7e65bab9d21092ac1b98a00803e5ceb2/Microsoft.Identity.Web/TokenAcquisition.cs#L264-L288).
+Код для `RemoveAccountAsync` доступен в [Microsoft. Identity. Web/токенаккуиситион. CS # L264-L288](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/blob/db7f74fd7e65bab9d21092ac1b98a00803e5ceb2/Microsoft.Identity.Web/TokenAcquisition.cs#L264-L288).
 
 # <a name="aspnettabaspnet"></a>[ASP.NET](#tab/aspnet)
 
-Пример ASP.NET не удаляет учетные записи из кэша при глобальном выходе
+Пример ASP.NET не удаляет учетные записи из кэша при глобальном выходе.
 
 # <a name="javatabjava"></a>[Java](#tab/java)
 
-Пример Java не удаляет учетные записи из кэша при глобальном выходе
+Пример Java не удаляет учетные записи из кэша при глобальном выходе.
 
 # <a name="pythontabpython"></a>[Python](#tab/python)
 
-Пример Python не удаляет учетные записи из кэша при глобальном выходе
+Пример Python не удаляет учетные записи из кэша при глобальном выходе.
 
 ---
 

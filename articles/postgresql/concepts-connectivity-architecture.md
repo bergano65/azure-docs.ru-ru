@@ -6,12 +6,12 @@ ms.author: manishku
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 05/23/2019
-ms.openlocfilehash: 6ef7736a50783388b5ec0b32c698a0e747a7fd42
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 956c734214f3ecff532d2a73f069ecaa37396109
+ms.sourcegitcommit: b5d646969d7b665539beb18ed0dc6df87b7ba83d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75458443"
+ms.lasthandoff: 01/26/2020
+ms.locfileid: "76760544"
 ---
 # <a name="connectivity-architecture-in-azure-database-for-postgresql"></a>Архитектура подключения в базе данных Azure для PostgreSQL
 В этой статье описывается архитектура подключения к базе данных Azure для PostgreSQL, а также сведения о том, как трафик направляется в базу данных Azure для экземпляра базы данных PostgreSQL из клиентов как внутри, так и за пределами Azure.
@@ -42,7 +42,7 @@ ms.locfileid: "75458443"
 | Северный Китай 2 | 40.73.50.0     |
 | Восточная Азия | 191.234.2.139, 52.175.33.150, 13.75.33.20, 13.75.33.21     |
 | Восточная часть США | 40.121.158.30, 191.238.6.43  |
-| Восточная часть США 2 |40.79.84.180, 191.239.224.107, 52.167.104.0     |
+| Восточная часть США 2 |40.79.84.180, 191.239.224.107, 52.177.185.181   |
 | Центральная Франция | 40.79.137.0, 40.79.129.1  |
 | Центральная Германия | 51.4.144.100     |
 | Северо-восточная Германия | 51.5.144.179  |

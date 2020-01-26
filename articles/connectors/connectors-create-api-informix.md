@@ -9,12 +9,12 @@ ms.reviewer: klam, logicappspm
 ms.topic: article
 ms.date: 01/07/2020
 tags: connectors
-ms.openlocfilehash: ebedb68f8826642437f53e5c5fa8cd0843e7c20e
-ms.sourcegitcommit: ff9688050000593146b509a5da18fbf64e24fbeb
+ms.openlocfilehash: dccb715c974037b4e3080f3e51576feae34c03df
+ms.sourcegitcommit: b5d646969d7b665539beb18ed0dc6df87b7ba83d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75665864"
+ms.lasthandoff: 01/26/2020
+ms.locfileid: "76757974"
 ---
 # <a name="manage-ibm-informix-database-resources-by-using-azure-logic-apps"></a>Управление ресурсами базы данных IBM Informix с помощью Azure Logic Apps
 
@@ -117,7 +117,7 @@ ms.locfileid: "75665864"
 
 1. Чтобы просмотреть входные данные, в разделе **входные данные**выберите ссылку URL-адрес. Чтобы просмотреть выходные данные, в разделе **выходные данные** ссылки щелкните ссылку URL-адрес. Ниже приведено несколько примеров выходных данных:
 
-   * **Get Tables** содержит список таблиц:
+   * **Get_tables** отображает список таблиц:
 
      ![Выходные данные действия "получение таблиц"](./media/connectors-create-api-informix/InformixconnectorGetTablesLogicAppRunOutputs.png)
 

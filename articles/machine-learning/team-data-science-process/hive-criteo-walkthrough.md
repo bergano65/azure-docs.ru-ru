@@ -11,12 +11,12 @@ ms.topic: article
 ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
-ms.openlocfilehash: 04bc29fb8a89f6e863f7c009e5299d1c702bf976
-ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
+ms.openlocfilehash: 218fb96f6960e194f0fc4a4a3a3e603388b961c8
+ms.sourcegitcommit: b5d646969d7b665539beb18ed0dc6df87b7ba83d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76721410"
+ms.lasthandoff: 01/26/2020
+ms.locfileid: "76760816"
 ---
 # <a name="the-team-data-science-process-in-action---using-an-azure-hdinsight-hadoop-cluster-on-a-1-tb-dataset"></a>Процесс обработки и анализа данных группы в действии — использование кластера Azure HDInsight Hadoop в наборе данных объемом 1 ТБ
 
@@ -56,7 +56,8 @@ ms.locfileid: "76721410"
 2. **Регрессия**— прогнозирует вероятность щелчка рекламного объявления по признакам пользователя.
 
 ## <a name="setup"></a>Настройка кластера HDInsight Hadoop для обработки и анализа данных
-**Примечание.** Этот шаг обычно является задачей **администратора** .
+> [!NOTE]
+> Этот шаг обычно является задачей **администратора** .
 
 Настройте среду обработки и анализа данных Azure, чтобы создавать решения для прогнозной аналитики с помощью кластеров HDInsight, выполнив три шага:
 
@@ -107,10 +108,8 @@ ms.locfileid: "76721410"
 > [!NOTE]
 > Любой запрос Hive всегда можно выполнить с помощью следующих команд:
 >
->
-
-        cd %hive_home%\bin
-        hive
+>        cd %hive_home%\bin
+>        hive
 
 После появления командной строки Hive REPL с символом hive > просто скопируйте и вставьте запрос, чтобы выполнить его.
 

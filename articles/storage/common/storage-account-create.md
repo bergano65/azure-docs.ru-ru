@@ -9,12 +9,12 @@ ms.topic: how-to
 ms.date: 01/17/2020
 ms.author: tamram
 ms.subservice: common
-ms.openlocfilehash: c9d3a876b75e7d3ed8ff43217227db1a524206f2
-ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
+ms.openlocfilehash: 2ef90e1cb883a2d22b355ff4105ae0ce3c73ad6d
+ms.sourcegitcommit: b5d646969d7b665539beb18ed0dc6df87b7ba83d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2020
-ms.locfileid: "76273481"
+ms.lasthandoff: 01/26/2020
+ms.locfileid: "76759861"
 ---
 # <a name="create-an-azure-storage-account"></a>Создание учетной записи хранения Azure
 
@@ -26,7 +26,7 @@ ms.locfileid: "76273481"
 
 ## <a name="prerequisites"></a>Технические условия
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
 # <a name="portaltabazure-portal"></a>[Портал](#tab/azure-portal)
 
@@ -133,6 +133,9 @@ New-AzStorageAccount -ResourceGroupName $resourceGroup `
   -Kind StorageV2
 ```
 
+> [!IMPORTANT]
+> Если вы планируете использовать [Azure Data Lake Storage](https://azure.microsoft.com/services/storage/data-lake-storage/), включите `-EnableHierarchicalNamespace $True` в этот список параметров. 
+
 Чтобы создать учетную запись хранения общего назначения версии 2 с другим вариантом репликации, замените требуемое значение в таблице ниже для параметра **SkuName** .
 
 |Параметр репликации  |Параметр SkuName  |
@@ -172,6 +175,9 @@ az storage account create \
     --sku Standard_RAGRS \
     --kind StorageV2
 ```
+
+> [!IMPORTANT]
+> Если вы планируете использовать [Azure Data Lake Storage](https://azure.microsoft.com/services/storage/data-lake-storage/), включите `--enable-hierarchical-namespace true` в этот список параметров. 
 
 Чтобы создать учетную запись хранения общего назначения версии 2 с другим вариантом репликации, замените требуемое значение в таблице ниже для параметра **SKU** .
 

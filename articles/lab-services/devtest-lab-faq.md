@@ -1,6 +1,6 @@
 ---
 title: Часто задаваемые вопросы об Azure DevTest Labs | Документация Майкрософт
-description: Ответы на часто задаваемые вопросы об Azure DevTest Labs.
+description: В этой статье содержатся ответы на некоторые часто задаваемые вопросы о Azure DevTest Labs.
 services: devtest-lab,virtual-machines,lab-services
 documentationcenter: na
 author: spelluru
@@ -12,14 +12,14 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 07/18/2019
+ms.date: 01/24/2020
 ms.author: spelluru
-ms.openlocfilehash: afd6ded6dc027e118694078f8b8eeadfe8dd80e4
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.openlocfilehash: de99e9b1e4adceaf08beaf8ad3b5ea114b31a586
+ms.sourcegitcommit: b5d646969d7b665539beb18ed0dc6df87b7ba83d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75981482"
+ms.lasthandoff: 01/26/2020
+ms.locfileid: "76760527"
 ---
 # <a name="azure-devtest-labs-faq"></a>Часто задаваемые вопросы об Azure DevTest Labs
 В этой статье содержатся ответы на некоторые самые распространенные вопросы об Azure DevTest Labs.

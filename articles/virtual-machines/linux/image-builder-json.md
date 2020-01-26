@@ -1,18 +1,18 @@
 ---
 title: Создание шаблона Azure Image Builder (Предварительная версия)
 description: Узнайте, как создать шаблон для использования с Azure Image Builder.
-author: cynthn
-ms.author: cynthn
-ms.date: 07/31/2019
+author: danis
+ms.author: danis
+ms.date: 01/23/2020
 ms.topic: article
 ms.service: virtual-machines-linux
 manager: gwallace
-ms.openlocfilehash: 4a411603ca5c3c79da0d596396d8fde80b568af2
-ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
+ms.openlocfilehash: 9183805e2817459ac2c408648981b6989edf4e62
+ms.sourcegitcommit: b5d646969d7b665539beb18ed0dc6df87b7ba83d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75763085"
+ms.lasthandoff: 01/26/2020
+ms.locfileid: "76760017"
 ---
 # <a name="preview-create-an-azure-image-builder-template"></a>Предварительная версия: Создание шаблона Azure Image Builder 
 
@@ -28,11 +28,15 @@ ms.locfileid: "75763085"
     "tags": {
         "<name": "<value>",
         "<name>": "<value>"
-             },
+             }
     "identity":{},           
     "dependsOn": [], 
     "properties": { 
         "buildTimeoutInMinutes": <minutes>, 
+        "vmProfile": 
+            {
+            "vmSize": "<vmSize>"
+            },
         "build": {}, 
         "customize": {}, 
         "distribute": {} 
@@ -64,6 +68,24 @@ ms.locfileid: "75763085"
 
 ```json
     "location": "<region>",
+```
+## <a name="vmprofile"></a>вмпрофиле
+По умолчанию в построителе образов используется виртуальная машина сборки "Standard_D1_v2". это можно переопределить, например, если вы хотите настроить образ для виртуальной машины GPU, потребуется размер виртуальной машины GPU. Водить описание не обязательно.
+
+```json
+ {
+    "vmSize": "Standard_D1_v2"
+ },
+```
+
+## <a name="osdisksizegb"></a>осдисксизегб
+
+По умолчанию построитель образов не изменит размер изображения, он будет использовать размер из исходного изображения. Можно настроить размер диска операционной системы (Win и Linux), обратите внимание, что он не будет слишком мал, чем минимальный объем, необходимый для операционной системы. Это необязательный параметр, а значение 0 означает, что размер исходного изображения не отличается. Водить описание не обязательно.
+
+```json
+ {
+    "osDiskSizeGB": 100
+ },
 ```
 
 ## <a name="tags"></a>Теги
@@ -135,13 +157,7 @@ ms.locfileid: "75763085"
 > Маркеры доступа ссылок обновляются с частыми интервалами, поэтому каждый раз, когда необходимо отправить шаблон, необходимо проверить, изменился ли адрес ссылки RH.
  
 ### <a name="platformimage-source"></a>Источник Платформимаже 
-Построитель образов Azure поддерживает следующие образы Azure Marketplace:
-* Ubuntu 18.04
-* Ubuntu 16.04
-* RHEL 7,6
-* CentOS 7,6
-* Windows 2016
-* Windows 2019
+Построитель образов Azure поддерживает образы Windows Server и клиента и Linux Azure Marketplace. полный список см. [здесь](https://docs.microsoft.com/azure/virtual-machines/windows/image-builder-overview#os-support) . 
 
 ```json
         "source": {
@@ -220,7 +236,8 @@ az vm image list -l westus -f UbuntuServer -p Canonical --output table –-all
             {
                 "type": "Shell",
                 "name": "<name>",
-                "scriptUri": "<path to script>"
+                "scriptUri": "<path to script>",
+                "sha256Checksum": "<sha256 checksum>"
             },
             {
                 "type": "Shell",
@@ -246,7 +263,8 @@ az vm image list -l westus -f UbuntuServer -p Canonical --output table –-all
         { 
             "type": "Shell", 
             "name": "<name>", 
-            "scriptUri": "<link to script>"        
+            "scriptUri": "<link to script>",
+            "sha256Checksum": "<sha256 checksum>"       
         }, 
     ], 
         "customize": [ 
@@ -266,7 +284,12 @@ az vm image list -l westus -f UbuntuServer -p Canonical --output table –-all
 - **Name** — имя для отслеживания настройки. 
 - **скриптури** -URI в расположение файла 
 - **встроенный** массив команд оболочки, разделенных запятыми.
- 
+- **sha256Checksum** — значение контрольной суммы SHA256 файла, создается локально, а затем построитель образов выполнит контрольную сумму и проверит.
+    * Чтобы создать sha256Checksum с помощью терминала в Mac/Linux, выполните команду: `sha256sum <fileName>`
+
+
+Чтобы команды выполнялись с привилегиями суперпользователя, они должны иметь префикс `sudo`.
+
 > [!NOTE]
 > При запуске программы настройки оболочки с использованием источника RHEL ISO необходимо убедиться, что первая оболочка настройки обрабатывает регистрацию с помощью сервера Red Hat, прежде чем выполнять настройку. После завершения настройки сценарий должен отменить регистрацию на сервере обслуживания.
 
@@ -275,12 +298,15 @@ az vm image list -l westus -f UbuntuServer -p Canonical --output table –-all
 
 ```json 
      "customize": [ 
-         {
-            "type": "WindowsRestart", 
-            "restartCommand": "shutdown /r /f /t 0 /c", 
-            "restartCheckCommand": "echo Azure-Image-Builder-Restarted-the-VM  > buildArtifacts/azureImageBuilderRestart.txt",
-            "restartTimeout": "5m"
-         }],
+
+            {
+                "type": "WindowsRestart",
+                "restartCommand": "shutdown /r /f /t 0 /c", 
+                "restartCheckCommand": "echo Azure-Image-Builder-Restarted-the-VM  > c:\\buildArtifacts\\azureImageBuilderRestart.txt",
+                "restartTimeout": "5m"
+            }
+  
+        ],
 ```
 
 Поддержка ОС: Windows
@@ -300,13 +326,16 @@ az vm image list -l westus -f UbuntuServer -p Canonical --output table –-all
         { 
              "type": "PowerShell",
              "name":   "<name>",  
-             "scriptUri": "<path to script>" 
+             "scriptUri": "<path to script>",
+             "runElevated": "<true false>",
+             "sha256Checksum": "<sha256 checksum>" 
         },  
         { 
              "type": "PowerShell", 
              "name": "<name>", 
              "inline": "<PowerShell syntax to run>", 
-             "valid_exit_codes": "<exit code>" 
+             "valid_exit_codes": "<exit code>",
+             "runElevated": "<true or false>" 
          } 
     ], 
 ```
@@ -319,6 +348,10 @@ az vm image list -l westus -f UbuntuServer -p Canonical --output table –-all
 - **скриптури** -URI в расположение файла сценария PowerShell. 
 - **встроенные** встроенные команды для выполнения, разделенные запятыми.
 - **valid_exit_codes** — необязательные, допустимые коды, которые могут быть возвращены из команды script/Inline, это не позволит сообщить о сбое команды script/Inline.
+- **runElevated** — необязательный, логический, поддержка выполнения команд и скриптов с повышенными разрешениями.
+- **sha256Checksum** — значение контрольной суммы SHA256 файла, создается локально, а затем построитель образов выполнит контрольную сумму и проверит.
+    * Создание sha256Checksum с помощью PowerShell в Windows [Get-hash](https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-filehash?view=powershell-6)
+
 
 ### <a name="file-customizer"></a>Настройка файлов
 
@@ -330,7 +363,8 @@ az vm image list -l westus -f UbuntuServer -p Canonical --output table –-all
             "type": "File", 
              "name": "<name>", 
              "sourceUri": "<source location>",
-             "destination": "<destination>" 
+             "destination": "<destination>",
+             "sha256Checksum": "<sha256 checksum>"
          }
      ]
 ```
@@ -398,8 +432,39 @@ while($true) { $imageState = Get-ItemProperty HKLM:\\SOFTWARE\\Microsoft\\Window
 
 Вы можете распространить изображение на оба типа целевого объекта в той же конфигурации. см. [примеры](https://github.com/danielsollondon/azvmimagebuilder/blob/7f3d8c01eb3bf960d8b6df20ecd5c244988d13b6/armTemplates/azplatform_image_deploy_sigmdi.json#L80).
 
-Так как у вас может быть несколько целевых объектов для распространения, построитель образов поддерживает состояние для каждого целевого объекта распределения, доступ к которому можно получить, запросив `runOutputName`.  `runOutputName` — это объект, который можно запросить после распределения, чтобы получить сведения об этом распространении. Например, можно запросить расположение виртуального жесткого диска или регионы, в которые была реплицирована версия образа. Это свойство каждого целевого объекта распределения. `runOutputName` должны быть уникальными для каждого целевого объекта распространения.
- 
+Так как у вас может быть несколько целевых объектов для распространения, построитель образов поддерживает состояние для каждого целевого объекта распределения, доступ к которому можно получить, запросив `runOutputName`.  `runOutputName` — это объект, который можно запросить после распределения, чтобы получить сведения об этом распространении. Например, можно запросить расположение виртуального жесткого диска или регионы, в которых была выполнена репликация версии образа, или созданную версию SIG. Это свойство каждого целевого объекта распределения. `runOutputName` должны быть уникальными для каждого целевого объекта распространения. Ниже приведен пример, в котором запрашиваются дистрибутивы общей коллекции образов.
+
+```bash
+subscriptionID=<subcriptionID>
+imageResourceGroup=<resourceGroup of image template>
+runOutputName=<runOutputName>
+
+az resource show \
+        --ids "/subscriptions/$subscriptionID/resourcegroups/$imageResourceGroup/providers/Microsoft.VirtualMachineImages/imageTemplates/ImageTemplateLinuxRHEL77/runOutputs/$runOutputName"  \
+        --api-version=2019-05-01-preview
+```
+
+Выходные данные:
+```json
+{
+  "id": "/subscriptions/xxxxxx/resourcegroups/rheltest/providers/Microsoft.VirtualMachineImages/imageTemplates/ImageTemplateLinuxRHEL77/runOutputs/rhel77",
+  "identity": null,
+  "kind": null,
+  "location": null,
+  "managedBy": null,
+  "name": "rhel77",
+  "plan": null,
+  "properties": {
+    "artifactId": "/subscriptions/xxxxxx/resourceGroups/aibDevOpsImg/providers/Microsoft.Compute/galleries/devOpsSIG/images/rhel/versions/0.24105.52755",
+    "provisioningState": "Succeeded"
+  },
+  "resourceGroup": "rheltest",
+  "sku": null,
+  "tags": null,
+  "type": "Microsoft.VirtualMachineImages/imageTemplates/runOutputs"
+}
+```
+
 ### <a name="distribute-managedimage"></a>Распространение: Манажедимаже
 
 Выходным изображением будет ресурс управляемого изображения.
@@ -503,13 +568,4 @@ az resource show \
 ## <a name="next-steps"></a>Дальнейшие действия
 
 Существуют образцы JSON-файлов для различных сценариев в GitHub в [Azure Image Builder](https://github.com/danielsollondon/azvmimagebuilder).
- 
- 
- 
- 
- 
- 
- 
- 
- 
  

@@ -1,6 +1,6 @@
 ---
 title: Масштабирование квот и ограничений в лаборатории в Azure DevTest Labs | Документация Майкрософт
-description: Узнайте, как масштабировать лабораторию в Azure DevTest Labs.
+description: В этой статье описывается, как можно масштабировать лабораторию в Azure DevTest Labs. Просмотр квот и ограничений использования, а затем запрос на увеличение.
 services: devtest-lab,virtual-machines,lab-services
 documentationcenter: na
 author: spelluru
@@ -11,14 +11,14 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 04/17/2018
+ms.date: 01/24/2020
 ms.author: spelluru
-ms.openlocfilehash: 231a227cbccaa4cbf74f3b13839c0ba42895cf24
-ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
+ms.openlocfilehash: f3299c24bc751263ccd284a4fddb492fba5dd1e0
+ms.sourcegitcommit: b5d646969d7b665539beb18ed0dc6df87b7ba83d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75644857"
+ms.lasthandoff: 01/26/2020
+ms.locfileid: "76761191"
 ---
 # <a name="scale-quotas-and-limits-in-devtest-labs"></a>Масштабирование квот и ограничений в DevTest Labs
 При работе в DevTest Labs вы, вероятно, замечали, что для некоторых ресурсов Azure существуют определенные ограничения по умолчанию, которые могут влиять на работу службы DevTest Labs. Такие ограничения называют **квотами**.

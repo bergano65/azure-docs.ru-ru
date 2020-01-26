@@ -1,6 +1,6 @@
 ---
-title: Справочник по синтаксису SQLRuleAction в Azure | Документация Майкрософт
-description: Сведения о грамматике SQLRuleAction.
+title: Справочник по синтаксису SQLRuleAction в служебной шине Azure
+description: В этой статье содержится справочник по синтаксису SQLRuleAction. Действия записываются в синтаксисе на основе языка SQL, который выполняется для сообщения, переданного через посредника.
 services: service-bus-messaging
 documentationcenter: na
 author: axisc
@@ -12,16 +12,16 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 09/05/2018
+ms.date: 01/24/2020
 ms.author: aschhab
-ms.openlocfilehash: 0f9365b72da1cec81eed82756097d32b1d72ca71
-ms.sourcegitcommit: 13d5eb9657adf1c69cc8df12486470e66361224e
+ms.openlocfilehash: 37615e39577ef60cccc9df91b61a6aa24ca794d0
+ms.sourcegitcommit: b5d646969d7b665539beb18ed0dc6df87b7ba83d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "60307484"
+ms.lasthandoff: 01/26/2020
+ms.locfileid: "76759634"
 ---
-# <a name="sqlruleaction-syntax"></a>Синтаксис SQLRuleAction
+# <a name="sqlruleaction-syntax-reference-for-azure-service-bus"></a>Справочник по синтаксису SQLRuleAction для служебной шины Azure
 
 *SqlRuleAction* — это экземпляр класса [SqlRuleAction](/dotnet/api/microsoft.servicebus.messaging.sqlruleaction). Он представляет набор действий, написанных по правилам синтаксиса на основе языка SQL, выполняемых с [BrokeredMessage](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage).   
   
@@ -65,13 +65,13 @@ ms.locfileid: "60307484"
   
 ## <a name="arguments"></a>Аргументы  
   
--   `<scope>` — необязательная строка, указывающая область `<property_name>`. Допустимые значения: `sys` и `user`. Значение `sys` указывает область системы, где `<property_name>` — имя общедоступного свойства [класса BrokeredMessage](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage). Значение `user` указывает область пользователя, где `<property_name>` — ключ словаря [класса BrokeredMessage](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage). Область `user` используется по умолчанию, если аргумент `<scope>` не указан.  
+-   `<scope>` — необязательная строка, указывающая область `<property_name>`. Допустимые значения: `sys` или `user`. Значение `sys` указывает область системы, где `<property_name>` — имя общедоступного свойства [класса BrokeredMessage](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage). Значение `user` указывает область пользователя, где `<property_name>` — ключ словаря [класса BrokeredMessage](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage). Область `user` используется по умолчанию, если аргумент `<scope>` не указан.  
   
-### <a name="remarks"></a>Примечания  
+### <a name="remarks"></a>Remarks  
 
 Попытка доступа к несуществующему системному свойству вызывает ошибку, а попытка доступа к несуществующему свойству пользователя — нет. Вместо этого несуществующее свойство пользователя вычисляется внутри системы как неизвестное значение. Неизвестное значение обрабатывается особым образом во время вычисления оператора.  
   
-## <a name="propertyname"></a>property_name  
+## <a name="property_name"></a>property_name  
   
 ```  
 <property_name> ::=  
@@ -119,22 +119,22 @@ ms.locfileid: "60307484"
       <expression>  
 ```  
   
-### <a name="remarks"></a>Примечания
+### <a name="remarks"></a>Remarks
   
  Свойство `<pattern>` должно быть выражением, которое будет вычисляться как строка. Оно используется в качестве шаблона для оператора LIKE.      Оно может содержать следующие подстановочные знаки:  
   
--   `%`.  Любая строка без знаков или с несколькими знаками.  
+-   `%` — любая строка без символов или с несколькими символами.  
   
--   `_`. Любой отдельный знак.  
+-   `_` — любой один символ.  
   
-## <a name="escapechar"></a>escape_char  
+## <a name="escape_char"></a>escape_char  
   
 ```  
 <escape_char> ::=  
       <expression>  
 ```  
   
-### <a name="remarks"></a>Примечания
+### <a name="remarks"></a>Remarks
   
  Свойство `<escape_char>` должно быть выражением, которое будет вычисляться в качестве строки с 1 символом. Оно используется в качестве escape-символа для оператора LIKE.  
   
@@ -176,24 +176,24 @@ ms.locfileid: "60307484"
     0.5E-2  
     ```  
   
-## <a name="booleanconstant"></a>boolean_constant  
+## <a name="boolean_constant"></a>boolean_constant  
   
 ```  
 <boolean_constant> :=  
       TRUE | FALSE  
 ```  
   
-### <a name="remarks"></a>Примечания
+### <a name="remarks"></a>Remarks
   
 Логические константы представлены в виде ключевого слова `TRUE` или `FALSE`. Значения хранятся в виде `System.Boolean`.  
   
-## <a name="stringconstant"></a>string_constant  
+## <a name="string_constant"></a>string_constant  
   
 ```  
 <string_constant>  
 ```  
   
-### <a name="remarks"></a>Примечания
+### <a name="remarks"></a>Remarks
   
 Строковые константы заключаются в одинарные кавычки и включают любые допустимые символы Юникода. Одинарная кавычка, внедренная в строковую константу, представляется в виде двух одинарных кавычек.  
   
@@ -205,7 +205,7 @@ ms.locfileid: "60307484"
       property(name) | p(name)  
 ```  
   
-### <a name="remarks"></a>Примечания  
+### <a name="remarks"></a>Remarks  
 
 Функция `newid()` возвращает значение **System.Guid**, созданное методом `System.Guid.NewGuid()`.  
   
@@ -220,7 +220,7 @@ ms.locfileid: "60307484"
 - Если ссылка указывает на несуществующие свойства пользователя, действие не завершается сбоем.
 - Несуществующее свойство пользователя вычисляется внутри системы как неизвестное значение с использованием той же семантики, что и [SQLFilter](/dotnet/api/microsoft.servicebus.messaging.sqlfilter) при вычислении операторов.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [SQLRuleAction class](/dotnet/api/microsoft.servicebus.messaging.sqlruleaction) (Класс SQLRuleAction)
 - [SQLFilter class](/dotnet/api/microsoft.servicebus.messaging.sqlfilter) (Класс SQLFilter)

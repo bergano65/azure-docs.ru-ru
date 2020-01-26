@@ -1,22 +1,14 @@
 ---
 title: Лимиты и границы —QnA Maker
-titleSuffix: Azure Cognitive Services
 description: Для QnA Maker предусмотрены метаограничения для частей базы знаний и службы. Для тестирования и публикации важно хранить базу знаний, учитывая эти ограничения.
-services: cognitive-services
-author: diberry
-manager: nitinme
-ms.service: cognitive-services
-ms.subservice: qna-maker
 ms.topic: article
-ms.date: 12/10/2019
-ms.author: diberry
-ms.custom: seodec18
-ms.openlocfilehash: ddf2cb5730f123038c5dbde7ab07b4022f021ced
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.date: 01/23/2020
+ms.openlocfilehash: 32e12d9e983795d2fb403a5b6bc304289ece92c2
+ms.sourcegitcommit: b5d646969d7b665539beb18ed0dc6df87b7ba83d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75381126"
+ms.lasthandoff: 01/26/2020
+ms.locfileid: "76760238"
 ---
 # <a name="qna-maker-knowledge-base-limits-and-boundaries"></a>Лимиты и границы базы данных QnA Maker
 
@@ -33,6 +25,15 @@ ms.locfileid: "75381126"
  Например, если для уровня допускается 15 индексов, можно опубликовать 14 баз знаний (1 индекс для каждой опубликованной базы знаний). Пятнадцатый индекс (`testkb`) используется для разработки и тестирования всех баз знаний.
 
 ## <a name="extraction-limits"></a>Ограничения на извлечение
+
+### <a name="file-naming-constraints"></a>Ограничения именования файлов
+
+Имена файлов не могут содержать следующие символы:
+
+|Не использовать символ|
+|--|
+|Одиночная кавычка `'`|
+|`"` двойные кавычки|
 
 ### <a name="maximum-file-size"></a>Максимальный размер файла
 
