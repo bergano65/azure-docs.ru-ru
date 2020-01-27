@@ -160,7 +160,7 @@ ms.locfileid: "75433450"
 | В облаке   | DNS-суффикс для кэша Redis            |
 |---------|---------------------------------|
 | Общедоступные  | *.redis.cache.windows.net       |
-| Государственные организации США  | *.redis.cache.usgovcloudapi.net |
+| US Gov  | *.redis.cache.usgovcloudapi.net |
 | Германия | *.redis.cache.cloudapi.de       |
 | Китай   | *.redis.cache.chinacloudapi.cn  |
 
