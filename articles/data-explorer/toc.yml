@@ -27,9 +27,11 @@
       href: visualize-power-bi.md
 - name: Основные понятия
   items:
-    - name: Общие сведения о приеме данных
-      displayName: 'pipelines, connectors, plugins, Python, .NET, Java, Node, REST'
-      href: ingest-data-overview.md
+    - name: Прием данных
+      items:
+        - name: Общие сведения о приеме данных
+          displayName: 'pipelines, connectors, plugins, Python, .NET, Java, Node, REST'
+          href: ingest-data-overview.md
     - name: Обзор визуализации данных
       href: viz-overview.md
     - name: Общие сведения о безопасности
@@ -84,18 +86,20 @@
           href: ingest-data-one-click.md
         - name: Прием потоковой передачи
           href: ingest-data-streaming.md
+        - name: Использование пакетов SDK
+          items:
+            - name: Python
+              href: python-ingest-data.md
+            - name: Пакет SDK для Node
+              href: node-ingest-data.md
+            - name: Пакет SDK для .NET Standard
+              href: net-standard-ingest-data.md
         - name: Kafka
           href: ingest-data-kafka.md
-        - name: Python
-          href: python-ingest-data.md
-        - name: Пакет SDK для Node
-          href: node-ingest-data.md
-        - name: Пакет SDK для .NET Standard
-          href: net-standard-ingest-data.md
         - name: Logstash
           href: ingest-data-logstash.md
-        - name: Копирование данных с помощью Фабрики данных Azure
-          href: data-factory-load-data.md
+        - name: Данные в формате JSON
+          href: ingest-json-formats.md
     - name: Данные запросов
       items:
         - name: Написание запросов
@@ -204,6 +208,8 @@
           items:
             - name: Интеграция со службой "Фабрика данных"
               href: data-factory-integration.md
+            - name: Копирование данных с помощью Фабрики данных Azure
+              href: data-factory-load-data.md
             - name: Массовое копирование данных с помощью шаблона Фабрики данных Azure
               href: data-factory-template.md
             - name: Выполнение команд управления с использованием Фабрики данных Azure
