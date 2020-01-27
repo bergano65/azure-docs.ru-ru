@@ -2,14 +2,14 @@
 title: Общие вопросы о службе Azure Site Recovery
 description: В этой статье рассматриваются популярные общие вопросы о Azure Site Recovery.
 ms.topic: conceptual
-ms.date: 1/10/2020
+ms.date: 1/24/2020
 ms.author: raynew
-ms.openlocfilehash: 44abe9eafa9aef9e027778470d3f0483f99b0d32
-ms.sourcegitcommit: 12a26f6682bfd1e264268b5d866547358728cd9a
+ms.openlocfilehash: a9d0ae4a6e60a72bbb1148aca1a75c44506b2e9e
+ms.sourcegitcommit: b5d646969d7b665539beb18ed0dc6df87b7ba83d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75863569"
+ms.lasthandoff: 01/26/2020
+ms.locfileid: "76760357"
 ---
 # <a name="general-questions-about-azure-site-recovery"></a>Общие вопросы о Azure Site Recovery
 
@@ -22,7 +22,7 @@ ms.locfileid: "75863569"
 ## <a name="general"></a>Общие
 
 ### <a name="what-does-site-recovery-do"></a>Какие функции выполняет служба Site Recovery?
-Служба Site Recovery помогает реализовать стратегии непрерывности бизнес-процессов и аварийного восстановления (BCDR), автоматизируя процессы репликации виртуальных машин Azure между регионами, локальных виртуальных машин и физических серверов в Azure, а также локальных виртуальных машин в дополнительный центр обработки данных и осуществляя управление ими. [Узнайте больше](site-recovery-overview.md).
+Служба Site Recovery помогает реализовать стратегии непрерывности бизнес-процессов и аварийного восстановления (BCDR), автоматизируя процессы репликации виртуальных машин Azure между регионами, локальных виртуальных машин и физических серверов в Azure, а также локальных виртуальных машин в дополнительный центр обработки данных и осуществляя управление ими. [Подробнее](site-recovery-overview.md).
 
 ### <a name="can-i-protect-a-virtual-machine-that-has-a-docker-disk"></a>Можно ли защитить виртуальную машину с диском DOCKER?
 
@@ -147,7 +147,7 @@ Azure Site Recovery реплицирует данные в учетную зап
 
 ### <a name="why-cant-i-replicate-over-vpn"></a>Почему я не могу выполнить репликацию через VPN?
 
-При репликации в Azure трафик репликации достигает общедоступных конечных точек службы хранилища Azure. Поэтому репликацию можно выполнять только через общедоступный Интернет с ExpressRoute (пиринг Майкрософт или существующий общедоступный пиринг), и VPN не работает.
+При репликации в Azure трафик репликации достигает общедоступных конечных точек службы хранилища Azure. Таким же репликацию можно выполнять только через общедоступный Интернет или через ExpressRoute (пиринг Майкрософт или существующий общедоступный пиринг).
 
 ### <a name="can-i-use-riverbed-steelheads-for-replication"></a>Можно ли использовать Riverbed Стилхеадс для репликации?
 
@@ -195,7 +195,7 @@ Azure Site Recovery реплицирует данные в учетную зап
 ## <a name="failover"></a>Переход на другой ресурс
 ### <a name="if-im-failing-over-to-azure-how-do-i-access-the-azure-vms-after-failover"></a>При отработке отказа в Azure как получить доступ к виртуальным машинам Azure после отработки отказа?
 
-Доступ к виртуальным машинам Azure можно получить через безопасное подключение к Интернету, подключение VPN типа "сеть — сеть" или с помощью Azure ExpressRoute. Для подключения необходимо подготовить ряд действий. [Узнайте больше](site-recovery-test-failover-to-azure.md#prepare-to-connect-to-azure-vms-after-failover).
+Доступ к виртуальным машинам Azure можно получить через безопасное подключение к Интернету, подключение VPN типа "сеть — сеть" или с помощью Azure ExpressRoute. Для подключения необходимо подготовить ряд действий. [Подробнее](site-recovery-test-failover-to-azure.md#prepare-to-connect-to-azure-vms-after-failover).
 
 
 ### <a name="if-i-fail-over-to-azure-how-does-azure-make-sure-my-data-is-resilient"></a>Каким образом среда Azure обеспечивает отказоустойчивость данных при отработке отказа?

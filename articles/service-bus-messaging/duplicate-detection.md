@@ -1,6 +1,6 @@
 ---
 title: Поиск повторяющихся сообщений служебной шины Azure | Документация Майкрософт
-description: Обнаружение повторяющихся сообщений служебной шины
+description: В этой статье объясняется, как можно обнаружить дубликаты в сообщениях служебной шины Azure. Повторяющееся сообщение можно пропустить и удалить.
 services: service-bus-messaging
 documentationcenter: ''
 author: axisc
@@ -11,14 +11,14 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 01/23/2019
+ms.date: 01/24/2020
 ms.author: aschhab
-ms.openlocfilehash: 4cd5fc50c35f4c4adb63c9d91af05dcf8b2dda40
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: c109b9fd310a09e5eb4c6d18cc3536e4d8069c0b
+ms.sourcegitcommit: b5d646969d7b665539beb18ed0dc6df87b7ba83d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74924638"
+ms.lasthandoff: 01/26/2020
+ms.locfileid: "76760374"
 ---
 # <a name="duplicate-detection"></a>Обнаружение дубликатов
 
@@ -62,7 +62,7 @@ ms.locfileid: "74924638"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения об обмене сообщениями через служебную шину см. в следующих разделах:
+Дополнительные сведения об обмене сообщениями через служебную шину см. в следующих статьях:
 
 * [Очереди, разделы и подписки служебной шины](service-bus-queues-topics-subscriptions.md)
 * [Начало работы с очередями служебной шины](service-bus-dotnet-get-started-with-queues.md)

@@ -1,6 +1,6 @@
 ---
-title: Изменение размера виртуальной машины в лаборатории Azure DevTest Labs | Документация Майкрософт
-description: Узнайте, как изменить размер виртуальной машины в Azure DevTest Labs.
+title: Изменение размера виртуальной машины в лаборатории Azure DevTest Labs
+description: Узнайте, как изменить размер виртуальной машины в Azure DevTest Labs в зависимости от потребностей ЦП, сети или производительности диска.
 services: devtest-lab,virtual-machines,lab-services
 documentationcenter: na
 author: spelluru
@@ -12,14 +12,14 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 06/11/2018
+ms.date: 01/24/2020
 ms.author: spelluru
-ms.openlocfilehash: a0bc618a9c0a02aae884d8be359df6bdbf4c0d2a
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: bf7c425766a97aaa1d143133f04502a0aa3c36cb
+ms.sourcegitcommit: b5d646969d7b665539beb18ed0dc6df87b7ba83d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60868092"
+ms.lasthandoff: 01/26/2020
+ms.locfileid: "76756183"
 ---
 # <a name="resize-a-vm-in-a-lab-in-azure-devtest-labs"></a>Изменение размера виртуальной машины в лаборатории Azure DevTest Labs
 Одной из важных особенностей виртуальных машин Azure является возможность изменять размер на основе ваших потребностей в производительности ЦП, сети или диска. Теперь Azure DevTest Labs поддерживает эту функцию для виртуальных машин в лаборатории. Функция изменения размера соответствует политике лаборатории для разрешенных в нем размеров виртуальных машин. То есть размер виртуальной машины можно изменить только на тот, который является допустимым в лаборатории. 
@@ -31,7 +31,7 @@ ms.locfileid: "60868092"
 > [!NOTE]
 > Если вы подключены к виртуальной машине с помощью сеанса удаленного рабочего стола (RDP), сохраните работу и отключитесь от виртуальной машины перед изменением ее размера.
 
-1. Войдите на [портале Azure](https://portal.azure.com).
+1. Войдите на [портал Azure](https://portal.azure.com).
 2. Щелкните **Все службы** и выберите в списке **DevTest Labs**.
 3. Из списка лабораторий выберите то, в котором находится виртуальная машина, размер которой необходимо изменить.  
 4. На левой панели выберите **My virtual machines** (Мои виртуальные машины). 

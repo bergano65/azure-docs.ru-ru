@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 11/04/2019
 ms.author: azcspmt;jonbeck;cynthn
 ms.custom: include file
-ms.openlocfilehash: dd94f29317e703a68ba1b4a78639f635034d4492
-ms.sourcegitcommit: f2149861c41eba7558649807bd662669574e9ce3
+ms.openlocfilehash: 16a0fa29c067262f1794528b16abfce662d05605
+ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75752484"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76748777"
 ---
 <!-- F-series, Fs-series* -->
 
@@ -48,7 +48,7 @@ ACU: 195–210
 - Windows Server 2016 или более поздней версии
 - Ubuntu 16,04 LTS или более поздней версии с настроенным ядром Azure (ядро 4,15 или более поздней версии)
 - SLES 12 SP2 или более поздней версии
-- RHEL или CentOS версии 6,7 по 6,10, с установленным корпорацией Майкрософт пакетом LIS 4.3.1 (или более поздней версии)
+- RHEL или CentOS версии 6,7 – 6,10 с установленным корпорацией Майкрософт пакетом LIS 4.3.1 (или более поздней версии)
 - RHEL или CentOS версии 7,3 с установленным корпорацией Майкрософт пакетом LIS 4.2.1 (или более поздней версии)
 - RHEL или CentOS версии 7,6 или более поздней
 - Oracle Linux с UEK4 или более поздней версии

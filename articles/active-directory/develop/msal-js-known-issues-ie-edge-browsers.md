@@ -13,13 +13,12 @@ ms.date: 05/16/2019
 ms.author: nacanuma
 ms.reviewer: saeeda
 ms.custom: aaddev
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: a3a4e847bc0d297f3aa41551fbf56242ae1a566f
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 5ae2dee68ec0da8e8a00d4f01583461462bc196c
+ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75424332"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76696101"
 ---
 # <a name="known-issues-on-internet-explorer-and-microsoft-edge-browsers-msaljs"></a>Известные проблемы в Internet Explorer и браузерах Microsoft ребр (MSAL. js)
 
@@ -38,10 +37,6 @@ ms.locfileid: "75424332"
     `Error :login_required; Error description:AADSTS50058: A silent sign-in request was sent but no user is signed in. The cookies used to represent the user's session were not sent in the request to Azure AD. This can happen if the user is using Internet Explorer or Edge, and the web app sending the silent sign-in request is in different IE security zone than the Azure AD endpoint (login.microsoftonline.com)`
 
 - **Всплывающее окно не закрывается или зависает при использовании входа с помощью всплывающего окна для проверки подлинности**. При проверке подлинности всплывающего окна в Microsoft пограничном или IE (InPrivate) после ввода учетных данных и входа в систему, если в области навигации участвуют несколько доменов между зонами, всплывающее окно не закрывается, так как MSAL. js теряет этот обработчик. всплывающее окно.  
-
-    Ниже приведены ссылки на эти проблемы в средстве регистрации проблем Microsoft ребра.  
-    - [Ошибка 13861050](https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/13861050/)
-    - [Ошибка 13861663](https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/13861663/)
 
 ### <a name="update-fix-available-in-msaljs-023"></a>Обновление: исправление доступно в MSAL. js 0.2.3
 Исправления для проблем с циклом перенаправления проверки подлинности были выпущены в [MSAL. js 0.2.3](https://github.com/AzureAD/microsoft-authentication-library-for-js/releases). Включите флаг `storeAuthStateInCookie` в конфигурации MSAL. js, чтобы воспользоваться этим исправлением. По умолчанию этот флаг имеет значение false.

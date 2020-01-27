@@ -1,5 +1,5 @@
 ---
-title: Сравнение Индексатора видео и предустановок Служб мультимедиа (версия 3) | Документация Майкрософт
+title: Сравнение индексаторов видео и предварительных установок служб мультимедиа Azure v3
 description: В этой статье сравниваются возможности индексатора видео и предустановки служб мультимедиа Azure версии 3.
 services: media-services
 documentationcenter: ''
@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/15/2019
 ms.author: juliako
-ms.openlocfilehash: 055e210efbb01268654e7823a0fc1320e9c27646
-ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
+ms.openlocfilehash: 2e2abd4ffe5a6d0a6336d811599db687da146f1e
+ms.sourcegitcommit: 38b11501526a7997cfe1c7980d57e772b1f3169b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74892827"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76513190"
 ---
 # <a name="compare-azure-media-services-v3-presets-and-video-indexer"></a>Сравнение предустановок Служб мультимедиа версии 3 и Индексатора видео 
 
@@ -29,7 +29,7 @@ ms.locfileid: "74892827"
 
 ## <a name="compare"></a>Сравнение
 
-|Компонент|API Индексатора видео |Предустановки анализатора видео и звука<br/>в Службах мультимедиа Azure, версия 3|
+|Функция|API Индексатора видео |Предустановки анализатора видео и звука<br/>в Службах мультимедиа Azure, версия 3|
 |---|---|---|
 |Аналитические сведения о мультимедиа|[Расширенный](video-indexer-output-json-v2.md) |[Основы](../latest/intelligence-concept.md)|
 |Возможности|Ознакомьтесь с полным списком поддерживаемых возможностей в следующей статье: <br/> [Обзор](video-indexer-overview.md)|Возвращает только аналитические сведения о видео|

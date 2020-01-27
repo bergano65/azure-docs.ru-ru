@@ -8,12 +8,12 @@ ms.author: vanto
 ms.topic: article
 ms.date: 12/23/2019
 ms.reviewer: ''
-ms.openlocfilehash: f93ab61fcba53ebf39adf8ad56137f4a1df7d5fd
-ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
+ms.openlocfilehash: 82297850bf6d03215963a1f81dda166550f2b0d5
+ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/02/2020
-ms.locfileid: "75615022"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76715174"
 ---
 # <a name="azure-sql-database-security-best-practices-playbook"></a>Рекомендации по обеспечению безопасности базы данных SQL Azure сборник тренировочных заданий
 
@@ -462,7 +462,7 @@ ms.locfileid: "75615022"
 - Защитите симметричные ключи с помощью асимметричных ключей и сертификатов (не паролей), чтобы избежать использования 3DES. 
 
 - Будьте внимательны при переносе базы данных с помощью шифрования на уровне ячейки с помощью экспорта и импорта (файлы BACPAC). 
-  - См. статью [рекомендации по использованию шифрования на уровне ячеек в базе данных SQL Azure](https://blogs.msdn.microsoft.com/sqlsecurity/2015/05/12/recommendations-for-using-cell-level-encryption-in-azure-sql-database/) о том, как предотвратить использование ключей разрыва при переносе данных, а также о других рекомендациях.
+  - См. статью [рекомендации по использованию шифрования на уровне ячеек в базе данных SQL Azure](https://blogs.msdn.microsoft.com/sqlsecurity/2015/05/12/recommendations-for-using-cell-level-encryption-in-azure-sql-database/) и о том, как предотвратить потерю ключей при переносе данных, а также о других рекомендуемых рекомендациях.
 
 При использовании Always Encrypted следует помнить, что Always Encrypted в основном предназначен для защиты конфиденциальных данных, используемых пользователями базы данных SQL Azure с высоким уровнем привилегий (операторы облака, DBA). см. раздел [Защита конфиденциальных данных, используемых с высоким уровнем привилегий и неавторизованными пользователями](#protect-sensitive-data-in-use-from-high-privileged-unauthorized-users). При использовании Always Encrypted для защиты данных от пользователей приложений учитывайте следующие проблемы.
 

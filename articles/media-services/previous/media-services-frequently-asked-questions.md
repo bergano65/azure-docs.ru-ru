@@ -1,5 +1,5 @@
 ---
-title: Часто задаваемые вопросы по службам мультимедиа Azure | Документация Майкрософт
+title: Часто задаваемые вопросы о службах мультимедиа Azure
 description: В этой статье приводятся ответы на часто задаваемые вопросы о службах мультимедиа Azure.
 services: media-services
 documentationcenter: ''
@@ -13,14 +13,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/18/2019
 ms.author: juliako
-ms.openlocfilehash: 3aeff680392fbe966682b57ca1318fac9f0d1d93
-ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
+ms.openlocfilehash: bdb5a43ad6669bfcd6e93ef4e3bf1646314e4606
+ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74895978"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76705876"
 ---
-# <a name="frequently-asked-questions"></a>Часто задаваемые вопросы
+# <a name="media-services-v2-frequently-asked-questions"></a>Часто задаваемые вопросы о службах мультимедиа версии 2
 
 В этой статье рассматриваются часто задаваемые вопросы сообщества пользователей служб мультимедиа Azure (AMS).
 

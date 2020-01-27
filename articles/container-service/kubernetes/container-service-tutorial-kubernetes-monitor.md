@@ -1,20 +1,18 @@
 ---
 title: Руководство по Службе контейнеров Azure. Мониторинг Kubernetes (не рекомендуется)
 description: Руководство по службе контейнеров Azure. Мониторинг Kubernetes с помощью Log Analytics
-services: container-service
 author: iainfoulds
-manager: jeconnoc
 ms.service: container-service
 ms.topic: tutorial
 ms.date: 04/05/2018
 ms.author: iainfou
 ms.custom: mvc
-ms.openlocfilehash: 6f95aa701228730682c0122dc1fd46d8a2537ce1
-ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
+ms.openlocfilehash: 35f7c2fb968ea5285af5f2d597c67b3b22065906
+ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "53001621"
+ms.lasthandoff: 01/19/2020
+ms.locfileid: "76278227"
 ---
 # <a name="deprecated-monitor-a-kubernetes-cluster-with-log-analytics"></a>Мониторинг кластера Kubernetes с помощью Log Analytics (не рекомендуется)
 
@@ -34,7 +32,7 @@ ms.locfileid: "53001621"
 > * настройка агентов Log Analytics на узлах Kubernetes;
 > * доступ к данным мониторинга на портале Log Analytics или на портале Azure.
 
-## <a name="before-you-begin"></a>Перед началом работы
+## <a name="before-you-begin"></a>Перед началом
 
 В предыдущих руководствах приложение было упаковано в образы контейнеров, образы были отправлены в реестр контейнеров Azure и был создан кластер Kubernetes.
 
@@ -148,7 +146,7 @@ omsagent   3         3         3         0            3           <none>        
 
 Просматривать и анализировать данные мониторинга контейнера можно с помощью [решения "Контейнер"](../../azure-monitor/insights/containers.md) на портале Azure или на портале Log Analytics.
 
-Для установки решения "Контейнер" с помощью [портала Log Analytics](https://mms.microsoft.com) перейдите к разделу **Коллекция решений**. Затем добавьте **решение "Контейнер"**. Кроме того, можно добавить решение "Контейнеры" из [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/microsoft.containersoms?tab=Overview).
+Для установки решения "Контейнер" с помощью [портала Log Analytics](https://mms.microsoft.com) перейдите к разделу **Коллекция решений**. Затем добавьте **решение "Контейнер"** . Кроме того, можно добавить решение "Контейнеры" из [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/microsoft.containersoms?tab=Overview).
 
 На портале Log Analytics найдите плитку сводки **Контейнеры** на панели мониторинга. Щелкните плитку, чтобы просмотреть дополнительные сведения, в том числе события контейнера, ошибки, состояние, список образов, использование ЦП и памяти. Более детализированные сведения можно получить, щелкнув строку на одной из плиток или выполнив [поиск по журналам](../../log-analytics/log-analytics-log-searches.md).
 
@@ -158,7 +156,7 @@ omsagent   3         3         3         0            3           <none>        
 
 Подробные сведения о создании запросов и анализе данных мониторинга см. в [документации по Log Analytics](../../azure-monitor/log-query/log-query-overview.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом руководстве вы выполнили мониторинг кластера Kubernetes с помощью Log Analytics, выполнив в частности такие задачи:
 

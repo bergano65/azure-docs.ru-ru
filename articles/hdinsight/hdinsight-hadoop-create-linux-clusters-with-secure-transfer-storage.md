@@ -7,24 +7,26 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: hdinsightactive
-ms.date: 12/04/2019
-ms.openlocfilehash: bcb0e9551f4415b2aac9eb2d641c91df9f692437
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.date: 01/22/2020
+ms.openlocfilehash: a8176cc07296b7de7b6aba5356485280ef5ebde1
+ms.sourcegitcommit: 87781a4207c25c4831421c7309c03fce5fb5793f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75979122"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76548821"
 ---
 # <a name="create-apache-hadoop-cluster-with-secure-transfer-storage-accounts-in-azure-hdinsight"></a>Создание кластера Apache Hadoop с помощью учетных записей хранения с безопасной передачей в Azure HDInsight
 
 Функция [Secure transfer required](../storage/common/storage-require-secure-transfer.md) (Необходима безопасная передача) усиливает безопасность учетной записи хранения Azure путем принудительной передачи всех запросов к вашей учетной записи через безопасное подключение. Эта функция и схема wasbs поддерживаются только кластером HDInsight версии 3.6 или более новым.
+
+**Включение безопасного обмена хранилищами после создания кластера может привести к ошибкам с помощью учетной записи хранения и не рекомендуется. Лучше создать новый кластер с включенным свойством.**
 
 ## <a name="prerequisites"></a>Технические условия
 
 Прежде чем приступать к этой статье, необходимо:
 
 * Подписка Azure. чтобы создать бесплатную пробную учетную запись на один месяц, перейдите по [Azure.Microsoft.com/Free](https://azure.microsoft.com/free).
-* Учетная запись хранения Azure с включенной безопасной переносю. Инструкции см. в статье [Об учетных записях хранения Azure](../storage/common/storage-account-create.md) и [Требование безопасной передачи](../storage/common/storage-require-secure-transfer.md). Включение безопасного обмена хранилищами после создания кластера требует дополнительных действий, не описанных в этой статье.
+* Учетная запись хранения Azure с включенной безопасной переносю. Инструкции см. в статье [Об учетных записях хранения Azure](../storage/common/storage-account-create.md) и [Требование безопасной передачи](../storage/common/storage-require-secure-transfer.md). 
 * Контейнер больших двоичных объектов в учетной записи хранения.
 
 ## <a name="create-cluster"></a>Создание кластера

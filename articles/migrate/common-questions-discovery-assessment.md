@@ -3,12 +3,12 @@ title: 'Распространенные вопросы: обнаружение,
 description: Получите ответы на часто задаваемые вопросы об обнаружении, оценке и анализе зависимостей в службе "миграция Azure".
 ms.topic: conceptual
 ms.date: 12/29/2019
-ms.openlocfilehash: 5afda40f4953b8eb51a757034661eb5a3349cd10
-ms.sourcegitcommit: 7221918fbe5385ceccf39dff9dd5a3817a0bd807
+ms.openlocfilehash: 0132563072ed04a52e4937da7a8df69196f1a91f
+ms.sourcegitcommit: 38b11501526a7997cfe1c7980d57e772b1f3169b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/21/2020
-ms.locfileid: "76292371"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76513292"
 ---
 # <a name="common-questions-about-discovery-assessment-and-dependency-analysis"></a>Распространенные вопросы об обнаружении, оценке и анализе зависимостей
 
@@ -99,7 +99,7 @@ ms.locfileid: "76292371"
 
 Используйте этот [скрипт для установки агента зависимостей](../azure-monitor/insights/vminsights-enable-hybrid-cloud.md#installation-script-examples). Выполните эти [инструкции, чтобы установить MMA](https://docs.microsoft.com/azure/azure-monitor/platform/log-analytics-agent#install-and-configure-agent) с помощью командной строки или службы автоматизации. Для MMA используйте [этот скрипт](https://gallery.technet.microsoft.com/scriptcenter/Install-OMS-Agent-with-2c9c99ab).
 
-Кроме сценариев, для развертывания агентов можно также использовать средства развертывания, такие как System Center Configuration Manager и [Intigua](https://www.intigua.com/getting-started-intigua-for-azure-migration) .
+Кроме сценариев, для развертывания агентов можно также использовать средства развертывания, такие как Microsoft Endpoint Configuration Manager и [Intigua](https://www.intigua.com/getting-started-intigua-for-azure-migration) .
 
 
 ## <a name="what-operating-systems-does-mma-support"></a>Какие операционные системы поддерживает MMA?

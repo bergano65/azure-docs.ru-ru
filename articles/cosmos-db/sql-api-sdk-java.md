@@ -8,12 +8,12 @@ ms.devlang: java
 ms.topic: reference
 ms.date: 03/13/2019
 ms.author: sngun
-ms.openlocfilehash: 3e36aa268286b9127f36859a1fa4402644994a32
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 3a7eaabedd6736c107625204f982a530f2bab73d
+ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75444846"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76718179"
 ---
 # <a name="azure-cosmos-db-java-sdk-for-sql-api-release-notes-and-resources"></a>Azure Cosmos DB: заметки о выпуске и материалы по пакету SDK Java для API-интерфейса SQL
 > [!div class="op_single_selector"]
@@ -42,6 +42,9 @@ ms.locfileid: "75444846"
 |**Минимальная поддерживаемая среда выполнения**|[Пакет средств разработки Java (JDK) 7+](https://aka.ms/azure-jdks)|
 
 ## <a name="release-notes"></a>Заметки о выпуске
+
+### <a name="a-name246246"></a><a name="2.4.6"/>2.4.6
+* Обновлен правильный тег политики реплики на стороне клиента в Датабасеаккаунт и сделал Датабасеаккаунт конфигурацию чтения из кэша.
 
 ### <a name="a-name245245"></a><a name="2.4.5"/>2.4.5
 * Исключение повторных попыток в случае недопустимых ошибок диапазона ключей разделов, если пользователь предоставляет Пкранжеид.

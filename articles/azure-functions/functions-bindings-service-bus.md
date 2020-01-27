@@ -6,12 +6,12 @@ ms.assetid: daedacf0-6546-4355-a65c-50873e74f66b
 ms.topic: reference
 ms.date: 04/01/2017
 ms.author: cshoe
-ms.openlocfilehash: 4deae28d172bf717f527824be4be050975614c7d
-ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
+ms.openlocfilehash: 424d797410c091dc53687284c2b32e2f1f0358e1
+ms.sourcegitcommit: 87781a4207c25c4831421c7309c03fce5fb5793f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2020
-ms.locfileid: "76277401"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76549076"
 ---
 # <a name="azure-service-bus-bindings-for-azure-functions"></a>Привязки служебной шины Azure для службы "Функции Azure"
 
@@ -40,16 +40,7 @@ ms.locfileid: "76277401"
 
 ## <a name="trigger---example"></a>Пример триггера
 
-Языковой пример см. в разделах:
-
-* [C#](#trigger---c-example)
-* [Скрипт C# (CSX)](#trigger---c-script-example)
-* [F#](#trigger---f-example)
-* [Java](#trigger---java-example)
-* [JavaScript](#trigger---javascript-example)
-* [Python](#trigger---python-example)
-
-### <a name="trigger---c-example"></a>Пример C# в триггере
+# <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
 В следующем примере показана [функция C#](functions-dotnet-class-library.md), которая считывает [метаданные сообщения](#trigger---message-metadata) и заносит в журнал сообщение из очереди службы "Служебная шина".
 
@@ -70,7 +61,7 @@ public static void Run(
 }
 ```
 
-### <a name="trigger---c-script-example"></a>Пример скрипта C# в триггере
+# <a name="c-scripttabcsharp-script"></a>[C#Индекса](#tab/csharp-script)
 
 В следующем примере показаны привязка триггера служебной шины в файле *function.json* и [функция сценария C#](functions-reference-csharp.md), которая использует эту привязку. Функция считывает [метаданные сообщения](#trigger---message-metadata) и заносит в журнал сообщение из очереди службы "Служебная шина".
 
@@ -110,90 +101,7 @@ public static void Run(string myQueueItem,
 }
 ```
 
-### <a name="trigger---f-example"></a>Пример F# в триггере
-
-В следующем примере показаны привязка триггера служебной шины в файле *function.json* и [функция F#](functions-reference-fsharp.md), которая использует эту привязку. Эта функция заносит в журнал сообщение очереди служебной шины. 
-
-Данные привязки в файле *function.json*:
-
-```json
-{
-"bindings": [
-    {
-    "queueName": "testqueue",
-    "connection": "MyServiceBusConnection",
-    "name": "myQueueItem",
-    "type": "serviceBusTrigger",
-    "direction": "in"
-    }
-],
-"disabled": false
-}
-```
-
-Ниже приведен код сценария F#.
-
-```fsharp
-let Run(myQueueItem: string, log: ILogger) =
-    log.LogInformation(sprintf "F# ServiceBus queue trigger function processed message: %s" myQueueItem)
-```
-
-### <a name="trigger---java-example"></a>Пример Java в триггере
-
-Следующая функция Java использует заметку `@ServiceBusQueueTrigger` из [библиотеки среды выполнения функций Java](/java/api/overview/azure/functions/runtime) для описания конфигурации триггера очереди служебной шины. Функция извлекает сообщение, помещенное в очередь, и добавляет его в журналы.
-
-```java
-@FunctionName("sbprocessor")
- public void serviceBusProcess(
-    @ServiceBusQueueTrigger(name = "msg",
-                             queueName = "myqueuename",
-                             connection = "myconnvarname") String message,
-   final ExecutionContext context
- ) {
-     context.getLogger().info(message);
- }
-```
-
-Следующая функция Java показывает получение метаданных, определенных в _свойствах пользователя_ сообщения служебной шины: 
-```java
-public class ServiceBusQueueTriggerJava {
-    @FunctionName("ServiceBusQueueTriggerJava")
-    public void run(
-            @ServiceBusQueueTrigger(name = "message", queueName = "myqueue", connection = "AzureWebJobsStorage") String message,
-            @BindingName("UserProperties") UserProperties userProperties,
-            final ExecutionContext context
-    ) {
-        context.getLogger().info("Java Service Bus Queue trigger function executed.");
-        context.getLogger().info(message);
-        context.getLogger().info(userProperties.key1);
-        context.getLogger().info(userProperties.key2);
-    }
-}
-
-public class UserProperties {
-    public String key1;
-    public String key2;
-}
-```
-
-Функции Java также могут быть активированы при добавлении сообщения в раздел служебной шины. В следующем примере используется заметка `@ServiceBusTopicTrigger` для описания конфигурации триггера.
-
-```java
-@FunctionName("sbtopicprocessor")
-    public void run(
-        @ServiceBusTopicTrigger(
-            name = "message",
-            topicName = "mytopicname",
-            subscriptionName = "mysubscription",
-            connection = "ServiceBusConnection"
-        ) String message,
-        final ExecutionContext context
-    ) {
-        context.getLogger().info(message);
-    }
-```
-
-### <a name="trigger---javascript-example"></a>Пример JavaScript в триггере
+# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
 
 В следующем примере показаны привязка триггера служебной шины в файле *function.json* и [функция JavaScript](functions-reference-node.md), которая использует эту привязку. Функция считывает [метаданные сообщения](#trigger---message-metadata) и заносит в журнал сообщение из очереди службы "Служебная шина". 
 
@@ -226,7 +134,7 @@ module.exports = function(context, myQueueItem) {
 };
 ```
 
-### <a name="trigger---python-example"></a>Пример Python: триггер
+# <a name="pythontabpython"></a>[Python](#tab/python)
 
 В следующем примере показано, как считать сообщение очереди служебной шины с помощью триггера.
 
@@ -277,7 +185,44 @@ def main(msg: func.ServiceBusMessage):
     logging.info(result)
 ```
 
-## <a name="trigger---attributes"></a>Атрибуты триггера
+# <a name="javatabjava"></a>[Java](#tab/java)
+
+Следующая функция Java использует заметку `@ServiceBusQueueTrigger` из [библиотеки среды выполнения функций Java](/java/api/overview/azure/functions/runtime) для описания конфигурации триггера очереди служебной шины. Функция извлекает сообщение, помещенное в очередь, и добавляет его в журналы.
+
+```java
+@FunctionName("sbprocessor")
+ public void serviceBusProcess(
+    @ServiceBusQueueTrigger(name = "msg",
+                             queueName = "myqueuename",
+                             connection = "myconnvarname") String message,
+   final ExecutionContext context
+ ) {
+     context.getLogger().info(message);
+ }
+```
+
+Функции Java также могут быть активированы при добавлении сообщения в раздел служебной шины. В следующем примере используется заметка `@ServiceBusTopicTrigger` для описания конфигурации триггера.
+
+```java
+@FunctionName("sbtopicprocessor")
+    public void run(
+        @ServiceBusTopicTrigger(
+            name = "message",
+            topicName = "mytopicname",
+            subscriptionName = "mysubscription",
+            connection = "ServiceBusConnection"
+        ) String message,
+        final ExecutionContext context
+    ) {
+        context.getLogger().info(message);
+    }
+```
+
+---
+
+## <a name="trigger---attributes-and-annotations"></a>Атрибуты и заметки триггера
+
+# <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
 В [библиотеках классов C#](functions-dotnet-class-library.md) используйте следующие атрибуты для настройки триггера службы "Служебная шина":
 
@@ -308,7 +253,7 @@ def main(msg: func.ServiceBusMessage):
   }
   ```
 
-  Полный пример см. в разделе [Пример C# в триггере](#trigger---c-example).
+  Полный пример см. в разделе [пример триггера](#trigger---example).
 
 * [ServiceBusAccountAttribute](https://github.com/Azure/azure-functions-servicebus-extension/blob/master/src/Microsoft.Azure.WebJobs.Extensions.ServiceBus/ServiceBusAccountAttribute.cs)
 
@@ -336,6 +281,28 @@ def main(msg: func.ServiceBusMessage):
 * Атрибут `ServiceBusAccount`, примененный к классу.
 * Параметр приложения AzureWebJobsServiceBus.
 
+# <a name="c-scripttabcsharp-script"></a>[C#Индекса](#tab/csharp-script)
+
+Атрибуты не поддерживаются C# сценарием.
+
+# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+
+Атрибуты не поддерживаются в JavaScript.
+
+# <a name="pythontabpython"></a>[Python](#tab/python)
+
+Атрибуты не поддерживаются в Python.
+
+# <a name="javatabjava"></a>[Java](#tab/java)
+
+`ServiceBusQueueTrigger` Аннотация позволяет создать функцию, которая выполняется при создании сообщения очереди служебной шины. Доступные параметры конфигурации включают имя очереди и имя строки подключения.
+
+Заметка `ServiceBusTopicTrigger` позволяет назначить раздел и подписку, чтобы указать, какие данные активирует функция.
+
+Дополнительные сведения см. в [примере](#trigger---example) триггера.
+
+---
+
 ## <a name="trigger---configuration"></a>Конфигурация триггера
 
 В следующей таблице описываются свойства конфигурации привязки, которые задаются в файле *function.json* и атрибуте `ServiceBusTrigger`.
@@ -356,7 +323,9 @@ def main(msg: func.ServiceBusMessage):
 
 ## <a name="trigger---usage"></a>Использование триггера
 
-В C# и сценарии C# для сообщения очереди или раздела можно использовать параметры следующих типов:
+# <a name="ctabcsharp"></a>[C#](#tab/csharp)
+
+Для сообщения очереди или раздела доступны следующие типы параметров:
 
 * `string`. Если сообщение является текстом.
 * `byte[]`. Используется для двоичных данных.
@@ -365,7 +334,32 @@ def main(msg: func.ServiceBusMessage):
 
 Эти типы параметров предназначены для функций Azure версии 1. x; для 2. x и более поздних версий используйте [`Message`](https://docs.microsoft.com/dotnet/api/microsoft.azure.servicebus.message) вместо `BrokeredMessage`.
 
-В JavaScript доступ к сообщению очереди или раздела осуществляется с помощью `context.bindings.<name from function.json>`. Сообщение служебной шины передается в функцию в качестве строки или объекта JSON.
+# <a name="c-scripttabcsharp-script"></a>[C#Индекса](#tab/csharp-script)
+
+Для сообщения очереди или раздела доступны следующие типы параметров:
+
+* `string`. Если сообщение является текстом.
+* `byte[]`. Используется для двоичных данных.
+* Пользовательский тип. Если сообщение содержит JSON, то служба "Функции Azure" пытается выполнить десериализацию данных JSON.
+* `BrokeredMessage` — выдается десериализованное сообщение с помощью метода [BrokeredMessage. @ body\<t > ()](https://docs.microsoft.com/dotnet/api/microsoft.servicebus.messaging.brokeredmessage.getbody?view=azure-dotnet#Microsoft_ServiceBus_Messaging_BrokeredMessage_GetBody__1) .
+
+Эти параметры предназначены для функций Azure версии 1. x; для 2. x и более поздних версий используйте [`Message`](https://docs.microsoft.com/dotnet/api/microsoft.azure.servicebus.message) вместо `BrokeredMessage`.
+
+# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+
+Доступ к сообщению очереди или раздела с помощью `context.bindings.<name from function.json>`. Сообщение служебной шины передается в функцию в качестве строки или объекта JSON.
+
+# <a name="pythontabpython"></a>[Python](#tab/python)
+
+Сообщение очереди доступно функции через параметр, типизированный как `func.ServiceBusMessage`. Сообщение служебной шины передается в функцию в качестве строки или объекта JSON.
+
+# <a name="javatabjava"></a>[Java](#tab/java)
+
+Входящее сообщение служебной шины доступно через параметр `ServiceBusQueueMessage` или `ServiceBusTopicMessage`.
+
+Дополнительные [сведения см. в примере](#trigger).
+
+---
 
 ## <a name="trigger---poison-messages"></a>Триггеры сообщений о сбое
 
@@ -404,18 +398,9 @@ def main(msg: func.ServiceBusMessage):
 
 Используйте выходную привязку служебной шины Azure для отправки сообщений очереди или раздела.
 
-## <a name="output---example"></a>Пример выходных данных
+### <a name="output---example"></a>Пример выходных данных
 
-Языковой пример см. в разделах:
-
-* [C#](#output---c-example)
-* [Скрипт C# (CSX)](#output---c-script-example)
-* [F#](#output---f-example)
-* [Java](#output---java-example)
-* [JavaScript](#output---javascript-example)
-* [Python](#output---python-example)
-
-### <a name="output---c-example"></a>Пример выходных данных C#
+# <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
 В следующем примере показана [функция C#](functions-dotnet-class-library.md), которая отправляет сообщение из очереди службы "Служебная шина":
 
@@ -429,7 +414,7 @@ public static string ServiceBusOutput([HttpTrigger] dynamic input, ILogger log)
 }
 ```
 
-### <a name="output---c-script-example"></a>Пример выходных данных скрипта C#
+# <a name="c-scripttabcsharp-script"></a>[C#Индекса](#tab/csharp-script)
 
 В следующем примере показаны выходная привязка служебной шины в файле *function.json* и [функция сценария C#](functions-reference-csharp.md), которая использует эту привязку. Функция использует триггер таймера для отправки сообщения очереди каждые 15 секунд.
 
@@ -480,79 +465,7 @@ public static async Task Run(TimerInfo myTimer, ILogger log, IAsyncCollector<str
 }
 ```
 
-### <a name="output---f-example"></a>Пример выходных данных F#
-
-В следующем примере показаны выходная привязка служебной шины в файле *function.json* и [функция сценария F#](functions-reference-fsharp.md), которая использует эту привязку. Функция использует триггер таймера для отправки сообщения очереди каждые 15 секунд.
-
-Данные привязки в файле *function.json*:
-
-```json
-{
-    "bindings": [
-        {
-            "schedule": "0/15 * * * * *",
-            "name": "myTimer",
-            "runsOnStartup": true,
-            "type": "timerTrigger",
-            "direction": "in"
-        },
-        {
-            "name": "outputSbQueue",
-            "type": "serviceBus",
-            "queueName": "testqueue",
-            "connection": "MyServiceBusConnection",
-            "direction": "out"
-        }
-    ],
-    "disabled": false
-}
-```
-
-Ниже приведен код сценария F#, который создает одно сообщение.
-
-```fsharp
-let Run(myTimer: TimerInfo, log: ILogger, outputSbQueue: byref<string>) =
-    let message = sprintf "Service Bus queue message created at: %s" (DateTime.Now.ToString())
-    log.LogInformation(message)
-    outputSbQueue = message
-```
-
-### <a name="output---java-example"></a>Пример выходных данных Java
-
-В следующем примере показана функция Java, которая отправляет сообщение в очередь служебной шины `myqueue` при срабатывании HTTP-запроса.
-
-```java
-@FunctionName("httpToServiceBusQueue")
-@ServiceBusQueueOutput(name = "message", queueName = "myqueue", connection = "AzureServiceBusConnection")
-public String pushToQueue(
-  @HttpTrigger(name = "request", methods = {HttpMethod.POST}, authLevel = AuthorizationLevel.ANONYMOUS)
-  final String message,
-  @HttpOutput(name = "response") final OutputBinding<T> result ) {
-      result.setValue(message + " has been sent.");
-      return message;
- }
-```
-
- В [библиотеке среды выполнения функций Java](/java/api/overview/azure/functions/runtime) используйте заметку `@ServiceBusQueueOutput` для параметров функции, значение которых будут записываться в очередь Служебной шины Microsoft Azure.  Параметр должен быть типа `OutputBinding<T>`, где T — любой собственный тип Java POJO.
-
-Функции Java также могут записывать в раздел служебной шины. В следующем примере используется заметка `@ServiceBusTopicOutput` для описания конфигурации выходной привязки. 
-
-```java
-@FunctionName("sbtopicsend")
-    public HttpResponseMessage run(
-            @HttpTrigger(name = "req", methods = {HttpMethod.GET, HttpMethod.POST}, authLevel = AuthorizationLevel.ANONYMOUS) HttpRequestMessage<Optional<String>> request,
-            @ServiceBusTopicOutput(name = "message", topicName = "mytopicname", subscriptionName = "mysubscription", connection = "ServiceBusConnection") OutputBinding<String> message,
-            final ExecutionContext context) {
-        
-        String name = request.getBody().orElse("Azure Functions");
-
-        message.setValue(name);
-        return request.createResponseBuilder(HttpStatus.OK).body("Hello, " + name).build();
-        
-    }
-```
-
-### <a name="output---javascript-example"></a>Пример выходных данных JavaScript
+# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
 
 В следующем примере показаны выходная привязка служебной шины в файле *function.json* и [функция JavaScript](functions-reference-node.md), которая использует эту привязку. Функция использует триггер таймера для отправки сообщения очереди каждые 15 секунд.
 
@@ -604,7 +517,7 @@ module.exports = function (context, myTimer) {
 };
 ```
 
-### <a name="output---python-example"></a>Пример Python: выходные данные
+# <a name="pythontabpython"></a>[Python](#tab/python)
 
 В следующем примере показано, как выполнить запись в очередь служебной шины в Python.
 
@@ -654,7 +567,46 @@ def main(req: func.HttpRequest, msg: func.Out[str]) -> func.HttpResponse:
     return 'OK'
 ```
 
-## <a name="output---attributes"></a>Выходные атрибуты
+# <a name="javatabjava"></a>[Java](#tab/java)
+
+В следующем примере показана функция Java, которая активируется HTTP-запросом и отправляет сообщение в очередь служебной шины `myqueue`.
+
+```java
+@FunctionName("httpToServiceBusQueue")
+@ServiceBusQueueOutput(name = "message", queueName = "myqueue", connection = "AzureServiceBusConnection")
+public String pushToQueue(
+  @HttpTrigger(name = "request", methods = {HttpMethod.POST}, authLevel = AuthorizationLevel.ANONYMOUS)
+  final String message,
+  @HttpOutput(name = "response") final OutputBinding<T> result ) {
+      result.setValue(message + " has been sent.");
+      return message;
+ }
+```
+
+ В [библиотеке среды выполнения функций Java](/java/api/overview/azure/functions/runtime) используйте заметку `@QueueOutput` для параметров функции, значение которых будут записываться в очередь Служебной шины Microsoft Azure.  Параметр должен быть типа `OutputBinding<T>`, где T — любой собственный тип Java POJO.
+
+Функции Java также могут записывать в раздел служебной шины. В следующем примере используется заметка `@ServiceBusTopicOutput` для описания конфигурации выходной привязки. 
+
+```java
+@FunctionName("sbtopicsend")
+    public HttpResponseMessage run(
+            @HttpTrigger(name = "req", methods = {HttpMethod.GET, HttpMethod.POST}, authLevel = AuthorizationLevel.ANONYMOUS) HttpRequestMessage<Optional<String>> request,
+            @ServiceBusTopicOutput(name = "message", topicName = "mytopicname", subscriptionName = "mysubscription", connection = "ServiceBusConnection") OutputBinding<String> message,
+            final ExecutionContext context) {
+        
+        String name = request.getBody().orElse("Azure Functions");
+
+        message.setValue(name);
+        return request.createResponseBuilder(HttpStatus.OK).body("Hello, " + name).build();
+        
+    }
+```
+
+---
+
+## <a name="output---attributes-and-annotations"></a>Выходные атрибуты и заметки
+
+# <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
 В [библиотеках классов C#](functions-dotnet-class-library.md) используйте [ServiceBusAttribute](https://github.com/Azure/azure-functions-servicebus-extension/blob/master/src/Microsoft.Azure.WebJobs.Extensions.ServiceBus/ServiceBusAttribute.cs).
 
@@ -680,9 +632,27 @@ public static string Run([HttpTrigger] dynamic input, ILogger log)
 }
 ```
 
-Полный пример см. в разделе [Пример выходных данных C#](#output---c-example).
+Полный пример см. в разделе [пример выходных данных](#output---example).
 
-Можно использовать атрибут `ServiceBusAccount`, чтобы указать учетную запись служебной шины для использования на уровне класса, метода или параметра.  Дополнительные сведения см. в разделе [Атрибуты триггера для предкомпилированного кода C#](#trigger---attributes).
+Чтобы указать учетную запись служебной шины для использования на уровне класса, метода или параметра, можно применить атрибут `ServiceBusAccount`.  Дополнительные сведения см. в разделе [Атрибуты триггера для предкомпилированного кода C#](#trigger---attributes-and-annotations).
+
+# <a name="c-scripttabcsharp-script"></a>[C#Индекса](#tab/csharp-script)
+
+Атрибуты не поддерживаются C# сценарием.
+
+# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+
+Атрибуты не поддерживаются в JavaScript.
+
+# <a name="pythontabpython"></a>[Python](#tab/python)
+
+Атрибуты не поддерживаются в Python.
+
+# <a name="javatabjava"></a>[Java](#tab/java)
+
+Заметки `ServiceBusQueueOutput` и `ServiceBusTopicOutput` доступны для записи сообщения в качестве выходных данных функции. Параметр, снабженный этими заметками, должен быть объявлен как `OutputBinding<T>`, где `T` — это тип, соответствующий типу сообщения.
+
+---
 
 ## <a name="output---configuration"></a>Выходная конфигурация
 
@@ -704,7 +674,9 @@ public static string Run([HttpTrigger] dynamic input, ILogger log)
 
 В Функциях Azure версии 1.x среда выполнения создает очередь, если ее не существует, и для параметра `accessRights` необходимо установить значение `manage`. В функциях версии 2. x и более поздних, очередь или раздел должны уже существовать. Если указать очередь или раздел, который не существует, функция завершится ошибкой. 
 
-В C# и сценарии C# для привязки к выходным данным можно использовать параметры следующих типов:
+# <a name="ctabcsharp"></a>[C#](#tab/csharp)
+
+Используйте следующие типы параметров для выходной привязки:
 
 * `out T paramName` - `T` может быть любым сериализуемым в JSON типом. Если при выходе из функции параметр имеет значение NULL, то служба "Функции" создает сообщение с пустым объектом.
 * `out string`. Если при выходе из функции параметр имеет значение NULL, то служба "Функции" не создает сообщение.
@@ -719,9 +691,36 @@ public static string Run([HttpTrigger] dynamic input, ILogger log)
 
 * Чтобы получить доступ к ИДЕНТИФИКАТОРу сеанса, выполните привязку к типу [`Message`](https://docs.microsoft.com/dotnet/api/microsoft.azure.servicebus.message) и используйте свойство `sessionId`.
 
-В JavaScript доступ к очереди или разделу осуществляется с помощью `context.bindings.<name from function.json>`. Для `context.binding.<name>`можно назначить строку, массив байтов или объект JavaScript (десериализовать в JSON).
+# <a name="c-scripttabcsharp-script"></a>[C#Индекса](#tab/csharp-script)
 
-Чтобы отправить сообщение в очередь с поддержкой сеансов наC# языках, отличных от языка, используйте [пакет SDK служебной шины Azure](https://docs.microsoft.com/azure/service-bus-messaging) , а не встроенную выходную привязку.
+Используйте следующие типы параметров для выходной привязки:
+
+* `out T paramName` - `T` может быть любым сериализуемым в JSON типом. Если при выходе из функции параметр имеет значение NULL, то служба "Функции" создает сообщение с пустым объектом.
+* `out string`. Если при выходе из функции параметр имеет значение NULL, то служба "Функции" не создает сообщение.
+* `out byte[]`. Если при выходе из функции параметр имеет значение NULL, то служба "Функции" не создает сообщение.
+* `out BrokeredMessage` — если при выходе из функции значение параметра равно null, функции не создают сообщение (для функций 1. x).
+* `out Message` — если при выходе из функции значение параметра равно null, функции не создают сообщение (для функций 2. x и выше).
+* `ICollector<T>` или `IAsyncCollector<T>`. Используется для создания нескольких сообщений. Сообщение создается при вызове метода `Add` .
+
+При работе с C# функциями:
+
+* Асинхронным функциям требуется возвращаемое значение или `IAsyncCollector` вместо параметра `out`.
+
+* Чтобы получить доступ к ИДЕНТИФИКАТОРу сеанса, выполните привязку к типу [`Message`](https://docs.microsoft.com/dotnet/api/microsoft.azure.servicebus.message) и используйте свойство `sessionId`.
+
+# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+
+Доступ к очереди или разделу с помощью `context.bindings.<name from function.json>`. Для `context.binding.<name>`можно назначить строку, массив байтов или объект JavaScript (десериализовать в JSON).
+
+# <a name="pythontabpython"></a>[Python](#tab/python)
+
+Используйте [пакет SDK служебной шины Azure](https://docs.microsoft.com/azure/service-bus-messaging) , а не встроенную выходную привязку.
+
+# <a name="javatabjava"></a>[Java](#tab/java)
+
+Используйте [пакет SDK служебной шины Azure](https://docs.microsoft.com/azure/service-bus-messaging) , а не встроенную выходную привязку.
+
+---
 
 ## <a name="exceptions-and-return-codes"></a>Исключения и коды возврата
 

@@ -10,12 +10,12 @@ ms.reviewer: larryfr
 ms.author: aashishb
 author: aashishb
 ms.date: 01/13/2020
-ms.openlocfilehash: b647af11e47952656011a06268d4b0f384126ae9
-ms.sourcegitcommit: 2a2af81e79a47510e7dea2efb9a8efb616da41f0
+ms.openlocfilehash: 53644066276aa8e9fb57b4802142bca3fe4b342f
+ms.sourcegitcommit: b5d646969d7b665539beb18ed0dc6df87b7ba83d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76263716"
+ms.lasthandoff: 01/26/2020
+ms.locfileid: "76760863"
 ---
 # <a name="secure-azure-ml-experimentation-and-inference-jobs-within-an-azure-virtual-network"></a>Защита заданий экспериментирования и вывода машинного обучения Azure в виртуальной сети Azure
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -79,7 +79,7 @@ ms.locfileid: "76263716"
 >
 > Учетная запись хранения по умолчанию автоматически подготавливается при создании рабочей области.
 >
-> Для учетных записей хранения, отличных от по умолчанию, параметр `storage_account` в [функции`Workspace.create()`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.workspace(class)?view=azure-ml-py#create-name--auth-none--subscription-id-none--resource-group-none--location-none--create-resource-group-true--sku--basic---friendly-name-none--storage-account-none--key-vault-none--app-insights-none--container-registry-none--default-cpu-compute-target-none--default-gpu-compute-target-none--exist-ok-false--show-output-true-) позволяет указать настраиваемую учетную запись хранения по идентификатору ресурса Azure.
+> Для учетных записей хранения, отличных от по умолчанию, параметр `storage_account` в [функции`Workspace.create()`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.workspace(class)?view=azure-ml-py#create-name--auth-none--subscription-id-none--resource-group-none--location-none--create-resource-group-true--sku--basic---friendly-name-none--storage-account-none--key-vault-none--app-insights-none--container-registry-none--cmk-keyvault-none--resource-cmk-uri-none--hbi-workspace-false--default-cpu-compute-target-none--default-gpu-compute-target-none--exist-ok-false--show-output-true-) позволяет указать настраиваемую учетную запись хранения по идентификатору ресурса Azure.
 
 ## <a name="use-azure-data-lake-storage-gen-2"></a>Использование Azure Data Lake Storage Gen 2
 
@@ -179,11 +179,14 @@ Azure Data Lake Storage Gen 2 — это набор возможностей д�
 
 - Запрет исходящего подключения к Интернету с помощью правил NSG.
 
-- Ограничить исходящий трафик следующими элементами:
-   - Служба хранилища Azure с помощью __тега службы__ __Storage. Region_Name__ (например, Storage. EastUS);
-   - Реестр контейнеров Azure с помощью __тега службы__ __азуреконтаинеррегистри. Region_Name__ (например, азуреконтаинеррегистри. EastUS).
+- Для __вычислительного экземпляра__ или __вычислительного кластера__Ограничьте исходящий трафик следующими элементами:
+   - Служба хранилища Azure с помощью __тега службы__ __хранилища__
+   - Реестр контейнеров Azure с помощью __тега службы__ __азуреконтаинеррегистри__
    - Машинное обучение Azure с помощью __тега службы__ __азуремачинелеарнинг__
-   - В случае с вычислительным экземпляром Azure Cloud с помощью __тега службы__ __AzureResourceManager__
+   
+- Для __вычислительного экземпляра__также добавьте следующие элементы:
+   - Azure Resource Manager с помощью __тега службы__ __AzureResourceManager__
+   - Azure Active Directory с помощью __тега службы__ __AzureActiveDirectory__
 
 Конфигурация правила NSG на портал Azure показана на следующем рисунке:
 
@@ -206,12 +209,12 @@ Azure Data Lake Storage Gen 2 — это набор возможностей д�
 > run_config.environment.python.user_managed_dependencies = True
 > ```
 >
-> Training__ оценщика
+> __Обучение средства оценки__
 > ```python
-> est = Estimator(source_directory='.', 
->                 script_params=script_params, 
->                 compute_target='local', 
->                 entry_script='dummy_train.py', 
+> est = Estimator(source_directory='.',
+>                 script_params=script_params,
+>                 compute_target='local',
+>                 entry_script='dummy_train.py',
 >                 user_managed=True)
 > run = exp.submit(est)
 > ```

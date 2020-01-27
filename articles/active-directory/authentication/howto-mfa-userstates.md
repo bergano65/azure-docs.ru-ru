@@ -11,12 +11,12 @@ author: iainfoulds
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f7fadd974fdc572dddb403c25e90246fd92b1989
-ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
+ms.openlocfilehash: 61d7227c57422cfe2228002750ec29bffa385d44
+ms.sourcegitcommit: b5d646969d7b665539beb18ed0dc6df87b7ba83d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75763238"
+ms.lasthandoff: 01/26/2020
+ms.locfileid: "76756778"
 ---
 # <a name="how-to-require-two-step-verification-for-a-user"></a>Включение двухфакторной проверки подлинности пользователя
 
@@ -63,8 +63,7 @@ ms.locfileid: "75763238"
 
 1. Войдите на [портал Azure](https://portal.azure.com) с использованием учетной записи администратора.
 2. Найдите и выберите *Azure Active Directory*. Выберите **Пользователи** > **Все пользователи**.
-3. Выберите **Многофакторная идентификация**.
-   ![Выберите Многофакторную идентификации](./media/howto-mfa-userstates/selectmfa.png)
+3. Выберите **Многофакторная идентификация**. Чтобы увидеть этот пункт меню, может потребоваться прокрутить экран вправо. Щелкните приведенный ниже снимок экрана, чтобы увидеть полный портал Azure окно и расположение меню:[![](media/howto-mfa-userstates/selectmfa-cropped.png "Выбор многофакторной проверки подлинности в окне "Пользователи" в Azure AD")](media/howto-mfa-userstates/selectmfa.png#lightbox)
 4. Откроется новая страница, где будет показано состояние пользователя.
    ![Состояние пользователя Многофакторной идентификации (снимок экрана)](./media/howto-mfa-userstates/userstate1.png)
 

@@ -1,22 +1,22 @@
 ---
 title: Часто задаваемые вопросы о служебной шине Azure | Документация Майкрософт
-description: Ответы на некоторые часто задаваемые вопросы о служебной шине Azure.
+description: В этой статье содержатся ответы на некоторые часто задаваемые вопросы о служебной шине Azure.
 services: service-bus-messaging
 author: axisc
 manager: timlt
 editor: spelluru
 ms.service: service-bus-messaging
 ms.topic: article
-ms.date: 01/23/2019
+ms.date: 01/24/2020
 ms.author: aschhab
-ms.openlocfilehash: c303e2b691f8e7aa7ea3c8fcc69e39d7970ef54e
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 3cd4e69481fb452391e6dc027cb41fd6dae71b7e
+ms.sourcegitcommit: b5d646969d7b665539beb18ed0dc6df87b7ba83d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75352869"
+ms.lasthandoff: 01/26/2020
+ms.locfileid: "76760255"
 ---
-# <a name="service-bus-faq"></a>Вопросы и ответы о служебной шине
+# <a name="azure-service-bus---frequently-asked-questions-faq"></a>Служебная шина Azure — часто задаваемые вопросы
 
 В этой статье обсуждаются некоторые часто задаваемые вопросы о служебной шине Microsoft Azure. Вы также можете посетить страницу [Часто задаваемые вопросы о поддержке Azure](https://azure.microsoft.com/support/faq/), чтобы получить общие сведения о ценах и поддержке Azure.
 

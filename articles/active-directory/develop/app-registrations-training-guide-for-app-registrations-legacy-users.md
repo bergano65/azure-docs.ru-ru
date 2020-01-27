@@ -12,13 +12,12 @@ ms.date: 10/25/2019
 ms.author: aragra
 ms.reviewer: lenalepa, keyam
 ms.custom: aaddev
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3726ebbe0ebc3725a885c847f33760ebd7e2e8b0
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: b110929051098917d7c3f73161ca8694d4698070
+ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75424661"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76698226"
 ---
 # <a name="new-azure-portal-app-registration-training-guide"></a>Новое учебное руководство по регистрации приложений на портале Azure
 
@@ -55,7 +54,7 @@ ms.locfileid: "75424661"
 
 У устаревшего интерфейса есть страница **свойств** . **Свойства** имели следующие поля:
 
-- **Название**
+- **имя**;
 - **Идентификатор объекта**
 - **Идентификатор приложения**
 - **URI кода приложения**

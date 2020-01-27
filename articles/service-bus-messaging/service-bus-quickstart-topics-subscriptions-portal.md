@@ -1,19 +1,19 @@
 ---
-title: Краткое руководство. Создание раздела служебной шины и подписок на него с помощью портала Azure
+title: Создание раздела служебной шины и подписок на него с помощью портала Azure
 description: Краткое руководство. Из этого краткого руководства вы узнаете, как создать раздел служебной шины и подписки на этот раздел с помощью портала Azure.
 services: service-bus-messaging
 author: spelluru
 manager: timlt
 ms.service: service-bus-messaging
 ms.topic: quickstart
-ms.date: 11/05/2019
+ms.date: 01/16/2020
 ms.author: spelluru
-ms.openlocfilehash: 6788bf43ef97daf5ef2f823a502c223d718abaac
-ms.sourcegitcommit: bc7725874a1502aa4c069fc1804f1f249f4fa5f7
+ms.openlocfilehash: a1e330a62a58daaa3fb2a2e8758d14791a3208c1
+ms.sourcegitcommit: 2a2af81e79a47510e7dea2efb9a8efb616da41f0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73718861"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76260826"
 ---
 # <a name="quickstart-use-the-azure-portal-to-create-a-service-bus-topic-and-subscriptions-to-the-topic"></a>Краткое руководство. Создание раздела служебной шины и подписок на него с помощью портала Azure
 В этом кратком руководстве с помощью портала Azure вы создадите раздел служебной шины, а затем создадите подписки на этот раздел. 
@@ -34,7 +34,7 @@ ms.locfileid: "73718861"
 > [!NOTE]
 > Вы можете управлять ресурсами служебной шины с помощью [обозревателя служебной шины](https://github.com/paolosalvatori/ServiceBusExplorer/). Обозреватель служебной шины позволяет без труда подключаться к пространству имен служебной шины и управлять сущностями обмена сообщениями. Средство предоставляет дополнительные возможности, например функции импорта и экспорта или возможность проверять разделы, очереди, подписки, службы ретрансляции, центры уведомлений и концентраторы событий. 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Чтобы узнать, как отправлять сообщения в раздел и получать эти сообщения с помощью подписки, ознакомьтесь с приведенной ниже статьей (выберите язык программирования в оглавлении). 
 
 > [!div class="nextstepaction"]

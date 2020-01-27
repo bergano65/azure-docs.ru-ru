@@ -1,6 +1,6 @@
 ---
 title: Комплексная трассировка и диагностика в служебной шине Azure | Документация Майкрософт
-description: Общие сведения о диагностике клиента служебной шины и комплексной трассировке.
+description: Общие сведения о диагностике клиентов служебной шины и сквозной трассировке (клиент с помощью всех служб, участвующих в обработке).
 services: service-bus-messaging
 documentationcenter: ''
 author: axisc
@@ -11,14 +11,14 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 01/23/2019
+ms.date: 01/24/2020
 ms.author: aschhab
-ms.openlocfilehash: 6e5895392db1d75a985674bf2f878a84bc8dd926
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: a184e76faa89199d3e13ece3e17f94f73d995a12
+ms.sourcegitcommit: b5d646969d7b665539beb18ed0dc6df87b7ba83d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60311018"
+ms.lasthandoff: 01/26/2020
+ms.locfileid: "76760272"
 ---
 # <a name="distributed-tracing-and-correlation-through-service-bus-messaging"></a>Распределенная трассировка и корреляция путем обмена сообщениями через служебную шину
 
@@ -28,12 +28,12 @@ ms.locfileid: "60311018"
 Когда производитель отправляет сообщение через очередь, это обычно происходит в области какой-нибудь другой логической операции, инициированной другим клиентом или другой службой. При получении сообщения потребитель продолжает выполнять ту же операцию. Производитель и потребитель (и другие службы, обрабатывающие операции), предположительно генерируют события телеметрии для выполнения трассировки потока и результата операции. Чтобы сопоставить эти события и выполнить комплексную трассировку операции, каждая служба, отправляющая отчеты с данными телеметрии, должна помечать каждое событие с контекстом трассировки.
 
 Служебная шина Microsoft Azure для обмена сообщениями имеет определенные свойства полезных данных, которые производитель и потребитель должны использовать для передачи этого контекста трассировки.
-Протокол основан на [протоколе HTTP для корреляции](https://github.com/dotnet/corefx/blob/master/src/System.Diagnostics.DiagnosticSource/src/HttpCorrelationProtocol.md).
+Протокол основан на [протоколе HTTP для корреляции](https://github.com/dotnet/runtime/blob/master/src/libraries/System.Diagnostics.DiagnosticSource/src/HttpCorrelationProtocol.md).
 
-| Имя свойства        | Описание                                                 |
+| Имя свойства        | Description                                                 |
 |----------------------|-------------------------------------------------------------|
-|  Diagnostic-Id       | Уникальный идентификатор внешнего вызова от производителя к очереди. Обоснование, рекомендации и сведения о формате см. в разделе [Request-Id](https://github.com/dotnet/corefx/blob/master/src/System.Diagnostics.DiagnosticSource/src/HttpCorrelationProtocol.md#request-id) протокола HTTP. |
-|  Correlation-Context | Контекст операции, который распространяется на все службы, участвующие в обработке операции. Дополнительные сведения см. в разделе [Correlation-Context](https://github.com/dotnet/corefx/blob/master/src/System.Diagnostics.DiagnosticSource/src/HttpCorrelationProtocol.md#correlation-context) протокола HTTP. |
+|  Diagnostic-Id       | Уникальный идентификатор внешнего вызова от производителя к очереди. Обоснование, рекомендации и сведения о формате см. в разделе [Request-Id](https://github.com/dotnet/runtime/blob/master/src/libraries/System.Diagnostics.DiagnosticSource/src/HttpCorrelationProtocol.md#request-id) протокола HTTP. |
+|  Correlation-Context | Контекст операции, который распространяется на все службы, участвующие в обработке операции. Дополнительные сведения см. в разделе [Correlation-Context](https://github.com/dotnet/runtime/blob/master/src/libraries/System.Diagnostics.DiagnosticSource/src/HttpCorrelationProtocol.md#correlation-context) протокола HTTP. |
 
 ## <a name="service-bus-net-client-auto-tracing"></a>Автоматическая трассировка клиента .NET служебной шины
 
@@ -49,7 +49,7 @@ ms.locfileid: "60311018"
 - [ASP.NET Core](../azure-monitor/app/asp-net-core.md): установите версию 2.2.0-beta2 или более позднюю.
 Эти ссылки содержат подробные сведения об установке пакета SDK, создании ресурсов и настройке пакета SDK (при необходимости). Сведения для приложений без ASP.NET см. в статье [Application Insights for .NET console applications](../azure-monitor/app/console.md) (Application Insights для консольных приложений .NET).
 
-При использовании [шаблона обработчика сообщений](/dotnet/api/microsoft.azure.servicebus.queueclient.registermessagehandler) для обработки отправленных сообщений все вызовы служебной шины, сделанные вашей службой, автоматически отслеживаются и связываются с другими элементами телеметрии. В противном случае ознакомьтесь с указанным ниже примером для отслеживания обработки сообщений вручную.
+Если вы используете [шаблон обработчика сообщений](/dotnet/api/microsoft.azure.servicebus.queueclient.registermessagehandler) для обработки, больше ничего делать не нужно: все вызовы служебной шины, выполненные вашей службой, автоматически отслеживаются и связываются с другими элементами телеметрии. В противном случае ознакомьтесь с указанным ниже примером для отслеживания обработки сообщений вручную.
 
 #### <a name="trace-message-processing"></a>Обработка сообщений трассировки
 
@@ -139,7 +139,7 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerF
 
 В этом примере прослушиватель записывает длительность, результат, уникальный идентификатор и время начала для каждой операции служебной шины.
 
-#### <a name="events"></a>События
+#### <a name="events"></a>Мероприятия
 
 Для каждой операции отправляются два события: Start и Stop. Скорее всего, вас интересуют только события Stop. Они отображают результат операции, а также время начала и длительность в качестве свойств действия.
 

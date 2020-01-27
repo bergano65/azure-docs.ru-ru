@@ -14,19 +14,18 @@ ms.date: 04/13/2019
 ms.author: ryanwi
 ms.custom: aaddev, identityplatformtop40
 ms.reviewer: sureshja
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2cf436881a74cffd0053718413ce83a148fa019d
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: 19085346fb5797245c9f71911f8178df0a1b742a
+ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74918208"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76698430"
 ---
 # <a name="application-and-service-principal-objects-in-azure-active-directory"></a>Объекты приложения и субъекта-службы в Azure Active Directory
 
 Иногда значение термина "приложение" может быть непонятно при использовании в контексте Azure Active Directory (Azure AD). В этой статье разъясняются концептуальные и практические аспекты интеграции приложения Azure AD, а также проиллюстрирована регистрация [мультитенантного приложения](developer-glossary.md#multi-tenant-application) и предоставление соответствующих разрешений.
 
-## <a name="overview"></a>Краткое описание
+## <a name="overview"></a>Обзор
 
 Приложение, интегрированное с Azure AD, это более широкое понятие, чем просто компонент программного обеспечения. "Приложение" — это общий термин, который включает в себя не только программное обеспечение, но и процесс регистрации приложения в Azure AD и роль при обмене данными во время проверки подлинности и авторизации в среде выполнения.
 
@@ -84,7 +83,7 @@ ms.locfileid: "74918208"
 
 Условия в этом примере сценария.
 
-| Шаг | Описание |
+| Шаг | Description |
 |------|-------------|
 | 1    | Это процесс создания объектов приложения и субъекта-службы в главном клиенте приложения. |
 | 2    | При согласии администраторов компании Contoso и Fabrikam в клиенте Azure AD компании создается объект субъекта-службы, и ему назначаются разрешения, предоставленные администратором. Обратите внимание, что приложение по управлению персоналом можно создать или настроить для отдельных пользователей. |

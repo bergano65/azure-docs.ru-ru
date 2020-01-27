@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: 9d2986acc47087c267193eee43136e030abcc422
-ms.sourcegitcommit: 92d42c04e0585a353668067910b1a6afaf07c709
+ms.openlocfilehash: eeced5205b836a15a43fbccfb8c6cb60b4bec29f
+ms.sourcegitcommit: 87781a4207c25c4831421c7309c03fce5fb5793f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2019
-ms.locfileid: "72990320"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76542871"
 ---
 # <a name="set-up-vcenter-identity-sources-to-use-active-directory"></a>Настройка источников удостоверений vCenter для использования Active Directory
 
@@ -33,7 +33,7 @@ VMware vCenter поддерживает различные источники у
 Прежде чем [добавлять источник удостоверений](#add-an-identity-source-on-vcenter), необходимо временно [эскалировать свои привилегии vCenter](escalate-private-cloud-privileges.md).
 
 > [!CAUTION]
-> Новые пользователи должны быть добавлены только в *облако-Owner-Group*, *Cloud-Global-Cluster-Admin-Group*, *Cloud-Global-Storage-* Admin-Group, Cloud-Global- *Network-* Admin-Group или *Cloud-Global-ВМ-Admin-Group*.  Пользователи, добавленные в группу *администраторов* , будут удалены автоматически.  Только учетные записи служб должны быть добавлены в группу *администраторов* .  
+> Новые пользователи должны быть добавлены только в *облако-Owner-Group*, *Cloud-Global-Cluster-Admin-Group*, *Cloud-Global-Storage-* Admin-Group, Cloud-Global- *Network-* Admin-Group или *Cloud-Global-ВМ-Admin-Group*.  Пользователи, добавленные в группу *администраторов* , будут удалены автоматически.  Только учетные записи служб должны быть добавлены в группу *администраторов* , и учетные записи служб не должны использоваться для входа в веб-интерфейс vSphere.   
 
 
 ## <a name="identity-source-options"></a>Параметры источника удостоверений
@@ -53,9 +53,9 @@ VMware vCenter поддерживает различные источники у
 
 | **Параметр** | **Описание** |
 |------------|-----------------|
-| **имя** | Имя источника удостоверений. |
+| **Название** | Имя источника удостоверений. |
 | **Базовое DN для пользователей** | Базовое различающееся имя для пользователей. |
-| **Доменное имя** | FDQN домена, например example.com. В этом текстовом поле не следует указывать IP-адрес. |
+| **Имя домена** | FDQN домена, например example.com. В этом текстовом поле не следует указывать IP-адрес. |
 | **Псевдоним домена** | NetBIOS-имя домена. Если используются проверки подлинности SSPI, добавьте NetBIOS-имя домена Active Directory в качестве псевдонима источника удостоверений. |
 | **Базовое DN для групп** | Базовое различающееся имя для групп. |
 | **URL-адрес основного сервера** | Сервер LDAP основного контроллера домена для домена.<br><br>Используйте формат `ldap://hostname:port` или `ldaps://hostname:port`. Порт обычно 389 для подключений LDAP и 636 для подключений LDAPs. Для Active Directory развертываний нескольких контроллеров домена порт обычно 3268 для LDAP и 3269 для LDAPs.<br><br>Сертификат, устанавливающий отношение доверия для конечной точки LDAPs сервера Active Directory, необходим при использовании `ldaps://` в первичном или дополнительном URL-адресе LDAP. |
@@ -112,7 +112,7 @@ Active Directory, выполняемые в Azure, похожи на Active Dire
 
 3. Выберите **домашняя > администрирование**.
 
-    ![Administration](media/OnPremAD01.png)
+    ![Администрирование](media/OnPremAD01.png)
 
 4. Выберите **конфигурация > единого входа**.
 

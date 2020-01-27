@@ -13,12 +13,12 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 10/01/2019
 ms.author: juliako
-ms.openlocfilehash: d4c8dd4b3a53d484d5240f3514d171231fc93ae0
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.openlocfilehash: 5b1daab724d979206983ee758760790967abc06d
+ms.sourcegitcommit: 38b11501526a7997cfe1c7980d57e772b1f3169b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74968516"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76513428"
 ---
 # <a name="azure-media-services-release-notes"></a>Заметки о выпуске служб мультимедиа Azure
 
@@ -32,7 +32,7 @@ ms.locfileid: "74968516"
 ## <a name="a-idissuesknown-issues"></a><a id="issues"/>известные проблемы
 ### <a name="a-idgeneral_issuesmedia-services-general-issues"></a><a id="general_issues"/>Общие проблемы служб мультимедиа
 
-| Проблема | Описание |
+| Проблема | Description |
 | --- | --- |
 | В API-интерфейсе REST отсутствует ряд стандартных заголовков HTTP. |При разработке приложений служб мультимедиа с использованием API-интерфейса REST замечено, что ряд стандартных полей заголовков HTTP (включая CLIENT-REQUEST-ID, REQUEST-ID и RETURN-CLIENT-REQUEST-ID) не поддерживается. Эти заголовки будут добавлены в следующем обновлении. |
 | URL-кодирование содержимого не допускается. |Службы мультимедиа используют значение свойства IAssetFile.Name при создании URL-адресов для потоковой передачи содержимого (например, `http://{AMSAccount}.origin.mediaservices.windows.net/{GUID}/{IAssetFile.Name}/streamingParameters`). По этой причине кодирование с помощью знака процента не допускается. Значение свойства Name не может содержать такие [зарезервированные знаки, используемые для кодировки URL-адресов](https://en.wikipedia.org/wiki/Percent-encoding#Percent-encoding_reserved_characters): !*'();:@&=+$,/?%#[]". Кроме того, может использоваться только один знак "." для расширения имени файла. |
@@ -50,23 +50,25 @@ ms.locfileid: "74968516"
 
 ### <a name="deprecation-of-media-processors"></a>Устаревшие обработчики мультимедиа
 
-Мы объявляем объявление о нерекомендуемых *Azure Media indexer* и *Azure Media indexer 2 Preview*. [Azure Media Indexerный](media-services-index-content.md) обработчик мультимедиа будет снят с 1 октября по 2020. Процессоры мультимедиа [Azure Media indexer 2 Preview](media-services-process-content-with-indexer2.md) будут сняты с 1 января 2020. [Индексатор видео служб мультимедиа Azure](https://docs.microsoft.com/azure/media-services/video-indexer/) заменяет эти устаревшие обработчики мультимедиа.
+Мы объявляем объявление о нерекомендуемых *Azure Media indexer* и *Azure Media indexer 2 Preview*. [Индексатор видео служб мультимедиа Azure](https://docs.microsoft.com/azure/media-services/video-indexer/) заменяет эти устаревшие обработчики мультимедиа.
 
-Дополнительные сведения см. в статье [Миграция с Azure Media indexer и Azure Media indexer 2 в индексатор видео служб мультимедиа Azure](migrate-indexer-v1-v2.md).
+Сведения о датах выбытия см. в разделе об [устаревших компонентах](legacy-components.md) .
 
-## <a name="august-2019"></a>Август 2019 г.
+См. также раздел [Миграция из Azure Media indexer и Azure Media indexer 2 в индексатор видео служб мультимедиа Azure](migrate-indexer-v1-v2.md).
+
+## <a name="august-2019"></a>Август 2019 г.
 
 ### <a name="deprecation-of-media-processors"></a>Устаревшие обработчики мультимедиа
 
-Мы сообщаем о прекращении использования *Windows Azure Media Encoder* (Ваме) и обработчиков мультимедиа *кодировщика мультимедиа Azure* (\), которые выпускают 31 марта 2020 г.
+Мы сообщаем о прекращении использования *Windows Azure Media Encoder* (Ваме) и обработчиков мультимедиа *кодировщика мультимедиа Azure* (\ Media Encoder), которые выпускают с 1 марта 2020.
 
 Дополнительные сведения см. в статье [Миграция Ваме в Media Encoder Standard](https://go.microsoft.com/fwlink/?LinkId=2101334) и [перенос в Media Encoder Standard](https://go.microsoft.com/fwlink/?LinkId=2101335).
 
-## <a name="march-2019"></a>Март 2019 г.
+## <a name="march-2019"></a>Март 2019 г.
 
 Функция предварительной версии мультимедийных функций служб мультимедиа Azure устарела.
 
-## <a name="december-2018"></a>Декабрь 2018 г.
+## <a name="december-2018"></a>Декабрь 2018 г.
 
 В скором времени функция предварительной версии мультимедиа в службах мультимедиа Azure будет прекращена. Начиная с 19 декабря 2018 г. прекращается внесение изменений и улучшений в компонент Media Hyperlapse Служб мультимедиа. 29 марта 2019 г. этот компонент будет выведен из эксплуатации.
 
@@ -80,11 +82,11 @@ ms.locfileid: "74968516"
 
 Теперь для создания эскизов спрайтов Web VTT можно использовать Службы мультимедиа и API-интерфейсы версии 2. Дополнительные сведения см. в статье [Generate a thumbnail sprite](generate-thumbnail-sprite.md) (Создание спрайта эскиза).
 
-## <a name="july-2018"></a>Июль 2018 г.
+## <a name="july-2018"></a>Июль 2018 г.
 
 В последнем выпуске службы добавлены незначительные изменения форматирования в сообщениях об ошибках, возвращаемых службой при неудачном выполнении задания, которые связаны с разбиением на две или более строк.
 
-## <a name="may-2018"></a>Май 2018 г. 
+## <a name="may-2018"></a>Май 2018 г. 
 
 С 12 мая 2018 г. динамические каналы больше не будут поддерживать протокол приема транспортного потока RTP/MPEG-2. Выполните миграцию из RTP/MPEG-2 в протокол приема RTMP или фрагментированный протокол MP4 (Smooth Streaming).
 
@@ -389,7 +391,7 @@ REST API служб мультимедиа обновлены до версии 
 * Потоковая передача зашифрованных в хранилище ресурсов. Дополнительные сведения см. в статье [Настройка политик доставки ресурсов-контейнеров с помощью пакета SDK для .NET](https://msdn.microsoft.com/library/azure/dn783451.aspx).
 
 ## <a id="august_changes_14"></a>Выпуск: август 2014 г.
-После выполнения задания кодирования ресурса создается выходной ресурс. До этого выпуска кодировщик служб мультимедиа создавал метаданные о выходных ресурсах. Начиная с этого выпуска также создаются метаданные о входных ресурсах. Дополнительные сведения см. в статьях о [входных] и [выходных метаданных].
+После выполнения задания кодирования ресурса создается выходной ресурс. До этого выпуска кодировщик служб мультимедиа создавал метаданные о выходных ресурсах. Начиная с этого выпуска также создаются метаданные о входных ресурсах. Дополнительные сведения см. в статьях о [Входные метаданные] и [Выходные метаданные].
 
 ## <a id="july_changes_14"></a>Выпуск: июль 2014 г.
 Исправлены следующие ошибки приложений Azure Media Services Packager и Encryptor.
@@ -399,7 +401,7 @@ REST API служб мультимедиа обновлены до версии 
 
 ## <a id="may_changes_14"></a>Выпуск: май 2014 г.
 ### <a id="may_14_changes"></a>Общие обновления служб мультимедиа
-Теперь можно использовать [динамическую упаковку] для потоковой передачи HLS версии 3. Для потоковой передачи HLS версии 3 добавьте следующий формат в исходный путь указателя: *.ism/manifest(format=v3-aapl-m3u8). Дополнительные сведения см. в [этой теме форума](https://social.msdn.microsoft.com/Forums/en-US/13b8a776-9519-4145-b9ed-d2b632861fde/dynamic-packaging-to-hls-v3).
+Теперь можно использовать [Динамическая упаковка] для потоковой передачи HLS версии 3. Для потоковой передачи HLS версии 3 добавьте следующий формат в исходный путь указателя: *.ism/manifest(format=v3-aapl-m3u8). Дополнительные сведения см. в [этой теме форума](https://social.msdn.microsoft.com/Forums/en-US/13b8a776-9519-4145-b9ed-d2b632861fde/dynamic-packaging-to-hls-v3).
 
 Динамическая упаковка теперь также поддерживает доставку потоков HLS (версии 3 и 4), зашифрованных с помощью PlayReady на основе Smooth Streaming со статическим шифрованием с использованием PlayReady. Дополнительные сведения о шифровании Smooth Streaming с помощью PlayReady см. в статье [Динамическая упаковка](https://msdn.microsoft.com/library/azure/dn189154.aspx).
 
@@ -521,7 +523,7 @@ REST API служб мультимедиа обновлены до версии 
 ## <a id="november_changes_12"></a>Выпуск: ноябрь 2012 г.
 Изменения, указанные в этом разделе — это обновления, включенные в пакет SDK в ноябре 2012 г. (версия 2.0.0.0). В связи с этими изменениями может потребоваться внести изменения в код, созданный для предварительного выпуска пакета SDK за июнь 2012 г, или переработать его.
 
-* ресурсы
+* Активы
   
     * IAsset.Create(assetName) — *единственная* функция создания ресурсов. IAsset.Create больше не отправляет файлы в составе вызова метода. Для отправки используйте функцию IAssetFile.
     * Метод IAsset.Publish и перечисляемое значение AssetState.Publish удалены из пакета SDK служб. Необходимо переработать код, в котором используется это значение.
@@ -557,7 +559,7 @@ REST API служб мультимедиа обновлены до версии 
 
 ## <a name="additional-notes"></a>Дополнительные замечания
 
-* Widevine — это служба, предоставляемая Google Inc. и подпадает под условия обслуживания и политики конфиденциальности Google, Inc.
+* Widevine — это служба, которая предоставляется компанией Google Inc. и подпадает под условия предоставления услуг и политику конфиденциальности Google Inc.
 
 ## <a name="provide-feedback"></a>Отправить отзыв
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
@@ -570,8 +572,8 @@ REST API служб мультимедиа обновлены до версии 
 [форуме MSDN по службам мультимедиа Azure]: https://social.msdn.microsoft.com/forums/azure/home?forum=MediaServices
 [этой статье]: https://docs.microsoft.com/rest/api/media/operations/azure-media-services-rest-api-reference
 [Media Services pricing details]: https://azure.microsoft.com/pricing/details/media-services/
-[входных]: https://msdn.microsoft.com/library/azure/dn783120.aspx
-[выходных метаданных]: https://msdn.microsoft.com/library/azure/dn783217.aspx
+[Входные метаданные]: https://msdn.microsoft.com/library/azure/dn783120.aspx
+[Выходные метаданные]: https://msdn.microsoft.com/library/azure/dn783217.aspx
 [Deliver content]: https://msdn.microsoft.com/library/azure/hh973618.aspx
 [Index media files with the Azure Media Indexer]: https://msdn.microsoft.com/library/azure/dn783455.aspx
 [StreamingEndpoint]: https://msdn.microsoft.com/library/azure/dn783468.aspx
@@ -582,7 +584,7 @@ REST API служб мультимедиа обновлены до версии 
 [Обзор шаблонов лицензий PlayReady служб мультимедиа]: https://msdn.microsoft.com/library/azure/dn783459.aspx
 [Stream storage-encrypted content]: https://msdn.microsoft.com/library/azure/dn783451.aspx
 [Azure portal]: https://portal.azure.com
-[динамическую упаковку]: https://msdn.microsoft.com/library/azure/jj889436.aspx
+[Динамическая упаковка]: https://msdn.microsoft.com/library/azure/jj889436.aspx
 [Nick Drouin's blog]: http://blog-ndrouin.azurewebsites.net/hls-v3-new-old-thing/
 [Protect Smooth Streaming with PlayReady]: https://msdn.microsoft.com/library/azure/dn189154.aspx
 [Логика повторного выполнения операций в пакете SDK служб мультимедиа для .NET]: https://msdn.microsoft.com/library/azure/dn745650.aspx

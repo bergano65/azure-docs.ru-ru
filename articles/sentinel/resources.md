@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 12/02/2019
 ms.author: rkarlin
-ms.openlocfilehash: 98c76b2be6a5cc801f9e7b31357cbeb158a966fe
-ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
+ms.openlocfilehash: 2ce8b9e82907402538ca2d14b864c02bb8bc2d82
+ms.sourcegitcommit: 87781a4207c25c4831421c7309c03fce5fb5793f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75771297"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76548005"
 ---
 # <a name="useful-resources-for-working-with-azure-sentinel"></a>Полезные ресурсы для работы с Azure Sentinel
 
@@ -46,13 +46,13 @@ ms.locfileid: "75771297"
 |Удалить сохраненный поиск    |Microsoft. OperationalInsights/workspaces/Саведсеарчес|
 |Обновление правил генерации оповещений |Microsoft. Секуритинсигхтс/alertRules|
 |Удаление правил генерации оповещений |Microsoft. Секуритинсигхтс/alertRules|
-|Обновление действий ответа для правила генерации оповещений |Microsoft. Секуритинсигхтс/alertRules|
-|Удаление действий ответа на правило генерации оповещений |Microsoft. Секуритинсигхтс/alertRules|
+|Обновление действий ответа для правила генерации оповещений |Microsoft. Секуритинсигхтс/alertRules/действия|
+|Удаление действий ответа на правило генерации оповещений |Microsoft. Секуритинсигхтс/alertRules/действия|
 |Обновить закладки   |Microsoft. Секуритинсигхтс/закладки|
 |Удалить закладки   |Microsoft. Секуритинсигхтс/закладки|
 |Обновление вариантов   |Microsoft. Секуритинсигхтс/cases|
-|Исследование вариантов обновления  |Microsoft. Секуритинсигхтс/cases|
-|Создание комментариев к вариантам   |Microsoft. Секуритинсигхтс/cases|
+|Исследование вариантов обновления  |Microsoft. Секуритинсигхтс/cases/расследования|
+|Создание комментариев к вариантам   |Microsoft. Секуритинсигхтс/cases/Comments|
 |Обновление соединителей данных |Microsoft. Секуритинсигхтс/Connects|
 |Удаление соединителей данных |Microsoft. Секуритинсигхтс/Connects|
 |Обновить параметры    |Microsoft. Секуритинсигхтс/параметры|

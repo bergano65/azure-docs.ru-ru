@@ -501,6 +501,8 @@
               href: ./hadoop/apache-ambari-troubleshoot-fivezerotwo-error.md
             - name: 'В Apache Ambari отображаются сведения о том, что узлы и службы не работают'
               href: ./hadoop/apache-ambari-troubleshoot-down-hosts-services.md
+            - name: Устаревшие оповещения Apache Ambari
+              href: ./hadoop/apache-ambari-troubleshoot-stale-alerts.md
             - name: Устранение задержки работы или сбоя кластера HDInsight
               href: ./hdinsight-troubleshoot-failed-cluster.md
             - name: Устранение неполадок с Apache Hadoop HDFS
@@ -509,6 +511,8 @@
               href: ./hdinsight-troubleshoot-yarn.md
             - name: Устранение неполадок с файлами Data Lake Store
               href: ./hadoop/hdinsight-troubleshoot-data-lake-files.md
+            - name: Оповещения о каталоге Apache Ambari
+              href: ./hadoop/apache-ambari-troubleshoot-directory-alerts.md
 - name: Apache Kafka
   items:
     - name: Обзор

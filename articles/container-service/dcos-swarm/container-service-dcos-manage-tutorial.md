@@ -1,20 +1,18 @@
 ---
 title: Руководство по Службе контейнеров Azure — управление DC/OS (не рекомендуется)
 description: Учебник по службе контейнеров Azure — управление DC/OS
-services: container-service
 author: iainfoulds
-manager: jeconnoc
 ms.service: container-service
 ms.topic: tutorial
 ms.date: 02/26/2018
 ms.author: iainfou
 ms.custom: mvc
-ms.openlocfilehash: fe943ae5ac7894cdd8d8e104615cea670513b7eb
-ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
+ms.openlocfilehash: 1c9b3bfdbe7aff203efa6b36f0e40cb65aba1175
+ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "53000418"
+ms.lasthandoff: 01/19/2020
+ms.locfileid: "76278339"
 ---
 # <a name="deprecated-azure-container-service-tutorial---manage-dcos"></a>Руководство по Службе контейнеров Azure — управление DC/OS (не рекомендуется)
 
@@ -262,7 +260,7 @@ az acs scale --resource-group myResourceGroup --name myDCOSCluster --new-agent-c
 az group delete --name myResourceGroup --no-wait
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом учебнике изучались базовые задачи управления DC/OS, включая следующие. 
 

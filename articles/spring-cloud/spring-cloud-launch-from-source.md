@@ -1,17 +1,17 @@
 ---
 title: Краткое руководство. Запуск приложения Spring Cloud из исходного кода
 description: В этом кратком руководстве вы узнаете, как запустить приложение Azure Spring Cloud непосредственно из исходного кода
-author: jpconnock
+author: bmitchell287
 ms.service: spring-cloud
 ms.topic: quickstart
 ms.date: 10/30/2019
-ms.author: jeconnoc
-ms.openlocfilehash: f9d7fa5df1f7568aa357abf8b5864344d768cf75
-ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
+ms.author: brendm
+ms.openlocfilehash: 8edadbf946a28239ae4d28d56b3dccd77b451a71
+ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75891767"
+ms.lasthandoff: 01/19/2020
+ms.locfileid: "76277159"
 ---
 # <a name="quickstart-launch-your-spring-cloud-application-from-source-code"></a>Краткое руководство. Запуск приложения Spring Cloud из исходного кода
 
@@ -28,10 +28,10 @@ Azure Spring Cloud позволяет запускать приложение н
 > * развертывание каждой микрослужбы;
 > * назначение общедоступной конечной точки для приложения.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 >[!Note]
-> Azure Spring Cloud в настоящее время предлагается в качестве общедоступной предварительной версии. Предложения общедоступной предварительной версии позволяют клиентам поэкспериментировать с новыми функциями до официального выпуска.  Функции и службы общедоступной предварительной версии не предназначены для использования в рабочей среде.  Чтобы получить дополнительные сведения о поддержке на этапе использования предварительных версий, ознакомьтесь с разделом [Вопросы и ответы](https://azure.microsoft.com/support/faq/) или оформите [запрос на поддержку](https://docs.microsoft.com/azure/azure-portal/supportability/how-to-create-azure-support-request).
+> Сейчас предоставляется общедоступная предварительная версия Azure Spring Cloud. Предложения общедоступной предварительной версии позволяют клиентам экспериментировать с новыми функциями до официального выпуска.  Общедоступные предварительные версии функций и служб не предназначены для использования в рабочей среде.  Чтобы получить дополнительные сведения о поддержке на этапе использования предварительных версий, ознакомьтесь с разделом [Вопросы и ответы](https://azure.microsoft.com/support/faq/) или оформите [запрос на поддержку](https://docs.microsoft.com/azure/azure-portal/supportability/how-to-create-azure-support-request).
 
 Прежде чем начать, убедитесь, что подписка Azure имеет необходимые зависимости:
 
@@ -39,7 +39,7 @@ Azure Spring Cloud позволяет запускать приложение н
 2. [установите JDK версии 8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html);
 3. [установите Maven 3.0 или более поздней версии](https://maven.apache.org/download.cgi);
 4. [Установка Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest)
-5. [зарегистрируйтесь для получения подписки Azure](https://azure.microsoft.com/free/).
+5. [Регистрация для получения подписки Azure](https://azure.microsoft.com/free/)
 
 > [!TIP]
 > Azure Cloud Shell — это бесплатная интерактивная оболочка, с помощью которой можно выполнять действия, описанные в этой статье.  Она содержит предварительно установленные общие инструменты Azure вместе с новейшими версиями Git, JDK, Maven и Azure CLI. Если вы вошли в подписку Azure, запустите [Azure Cloud Shell](https://shell.azure.com) на сайте shell.azure.com.  Дополнительные сведения об Azure Cloud Shell см. в [нашей документации](../cloud-shell/overview.md)

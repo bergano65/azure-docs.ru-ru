@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 18da289f9d364fa79023809324d59b89b8ac898c
-ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
+ms.openlocfilehash: b2c1a088e4c200dcc4a2ff35db942e3eb8480674
+ms.sourcegitcommit: 38b11501526a7997cfe1c7980d57e772b1f3169b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75768118"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76512097"
 ---
 # <a name="controlled-validation-of-hybrid-azure-ad-join"></a>Контролируемая проверка гибридного присоединения к Azure AD
 
@@ -88,7 +88,7 @@ ms.locfileid: "75768118"
 
 Чтобы зарегистрировать устройства Windows нижнего уровня, необходимо установить в организации [Microsoft Workplace Join для компьютеров, на которых не используется Windows 10](https://www.microsoft.com/download/details.aspx?id=53554). Это средство доступно в Центре загрузки Майкрософт.
 
-Развернуть пакет можно с помощью системы распространения программного обеспечения, например  [System Center Configuration Manager](https://www.microsoft.com/cloud-platform/system-center-configuration-manager). Этот пакет поддерживает параметры стандартной автоматической установки с использованием параметра quiet. В текущей ветви System Center Configuration Manager доступны дополнительные преимущества предыдущих версий, такие как возможность отслеживать ход регистрации.
+Пакет можно развернуть с помощью системы распространения программного обеспечения, такой как [Microsoft Endpoint Configuration Manager](https://docs.microsoft.com/configmgr/). Этот пакет поддерживает параметры стандартной автоматической установки с использованием параметра quiet. В текущей ветви System Center Configuration Manager доступны дополнительные преимущества предыдущих версий, такие как возможность отслеживать ход регистрации.
 
 Установщик создает в системе запланированную задачу, которая выполняется в контексте пользователя. Задача запускается в момент входа пользователя в систему Windows. Эта задача автоматически присоединяет устройство к Azure AD, используя учетные данные пользователя, после аутентификации с помощью Azure AD.
 

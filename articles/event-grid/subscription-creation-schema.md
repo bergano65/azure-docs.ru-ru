@@ -1,19 +1,18 @@
 ---
 title: Схема подписки для службы "Сетка событий Azure"
-description: В этой статье описаны свойства для подписки на событие в службе "Сетка событий Azure".
+description: В этой статье описываются свойства подписки на событие с помощью службы "Сетка событий Azure". Схема подписки на сетку событий.
 services: event-grid
 author: banisadr
-manager: timlt
 ms.service: event-grid
 ms.topic: reference
-ms.date: 01/02/2019
+ms.date: 01/23/2020
 ms.author: babanisa
-ms.openlocfilehash: 6129c7f498ce6c52fce4266f693c6a304642f8c3
-ms.sourcegitcommit: adc1072b3858b84b2d6e4b639ee803b1dda5336a
+ms.openlocfilehash: 4bb04d22b762f31a02515549b698030a5267e4cd
+ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70845456"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76720764"
 ---
 # <a name="event-grid-subscription-schema"></a>Схема подписки для службы "Сетка событий"
 
@@ -33,23 +32,23 @@ PUT /subscriptions/{subscription-id}/resourceGroups/examplegroup/providers/Micro
  
 ## <a name="event-subscription-properties"></a>Свойства подписки на события
 
-| Свойство | type | Описание |
+| Свойство | Тип | Description |
 | -------- | ---- | ----------- |
-| destination | object | Объект, который определяет конечную точку. |
-| filter | object | Необязательное поле для фильтрации событий по типам. |
+| ресурс destination | object | Объект, который определяет конечную точку. |
+| фильтр | object | Необязательное поле для фильтрации событий по типам. |
 
 ### <a name="destination-object"></a>Объект destination
 
-| Свойство | type | Описание |
+| Свойство | Тип | Description |
 | -------- | ---- | ----------- |
 | endpointType | string | Тип конечной точки для подписки (веб-перехватчик или HTTP, концентратор событий либо очередь). | 
 | endpointUrl | string | URL-адрес назначения для событий в подписке на событие. | 
 
 ### <a name="filter-object"></a>Объект filter
 
-| Свойство | type | Описание |
+| Свойство | Тип | Description |
 | -------- | ---- | ----------- |
-| includedEventTypes | array | Выполняет сопоставление, если тип события, указанный в сообщении о событии, полностью соответствует одному из этих типов. Вызывает ошибку, если имя события не соответствует зарегистрированному имени типа для источника события. По умолчанию соответствует всем типам событий. |
+| includedEventTypes | массиве | Выполняет сопоставление, если тип события, указанный в сообщении о событии, полностью соответствует одному из этих типов. Вызывает ошибку, если имя события не соответствует зарегистрированному имени типа для источника события. По умолчанию соответствует всем типам событий. |
 | subjectBeginsWith | string | Фильтр соответствия префиксу для поля темы в сообщении о событии. Строка по умолчанию или пустая строка соответствует всем типам. | 
 | subjectEndsWith | string | Фильтр соответствия суффиксу для поля темы в сообщении о событии. Строка по умолчанию или пустая строка соответствует всем типам. |
 | isSubjectCaseSensitive | string | Управляет сопоставлением с учетом регистра в фильтрах. |
@@ -76,6 +75,6 @@ PUT /subscriptions/{subscription-id}/resourceGroups/examplegroup/providers/Micro
 }
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * См. дополнительные сведения о [службе "Сетка событий Azure"](overview.md).

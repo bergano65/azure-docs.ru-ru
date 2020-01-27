@@ -90,7 +90,7 @@
     - name: Упаковка и доставка
       items:
         - name: Динамическая упаковка
-          displayName: 'origin, packager, HLS, DASH, CMAF, Smooth, manifest'
+          displayName: 'origin, packager, HLS, DASH, CMAF, Smooth, manifest, deliver, format, URL, streaming'
           href: dynamic-packaging-overview.md
         - name: Динамические манифесты
           href: filters-dynamic-manifest-overview.md

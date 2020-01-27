@@ -6,16 +6,16 @@ ms.service: azure-monitor
 ms.subservice: logs
 ms.topic: conceptual
 ms.author: bwren
-ms.date: 12/20/2019
-ms.openlocfilehash: 55efdfe2bb1b37e566654b8041f2cf5ed411cc3f
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.date: 01/21/2020
+ms.openlocfilehash: dff4901f1488406ed1259d1411a6b05b949382cb
+ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75977570"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76715848"
 ---
-# <a name="collect-azure-activity-log-with-legacy-settings"></a>Получение журнала действий Azure с устаревшими параметрами
-[Журнал действий Azure](platform-logs-overview.md) — это [Журнал платформы](platform-logs-overview.md) , который позволяет получить представление о событиях уровня подписки, произошедших в Azure. До последнего времени вы создали профиль журнала для отправки записей журнала действий в [концентратор событий или учетную запись хранения](activity-log-export.md) и использовали соединитель для их объединения в [рабочую область log Analytics](activity-log-collect.md). В этой статье описывается различие между методами, работа с существующими устаревшими настройками и очистка устаревших параметров при подготовке к работе с параметрами диагностики.
+# <a name="update-to-azure-activity-log-collection-and-export"></a>Обновление коллекции журналов действий Azure и экспорт
+[Журнал действий Azure](platform-logs-overview.md) — это [Журнал платформы](platform-logs-overview.md) , который позволяет получить представление о событиях уровня подписки, произошедших в Azure. Метод отправки записей журнала действий в [концентратор событий или в учетную запись хранения](activity-log-export.md) или в [log Analytics рабочую область](activity-log-collect.md) изменился для использования [параметров диагностики](diagnostic-settings.md). В этой статье описывается различие между методами и способы очистки устаревших параметров в процессе подготовки для изменения параметров диагностики.
 
 
 ## <a name="differences-between-methods"></a>Различия между методами
@@ -39,14 +39,16 @@ ms.locfileid: "75977570"
 ### <a name="differences-in-data"></a>Различия в данных
 Параметры диагностики собираются те же данные, что и предыдущие методы, используемые для получения журнала действий со следующими текущими различиями:
 
-Удалены следующие свойства:
+Следующие столбцы были удалены. Замена этих столбцов выполняется в другом формате, поэтому может потребоваться изменить запросы к журналу, которые их используют. В схеме можно по-прежнему видеть удаленные столбцы, но они не будут заполнены данными.
 
-- ActivityStatus
-- активитисубстатус
-- OperationName
-- ResourceProvider
+| Удаленный столбец | Столбец замены |
+|:---|:---|
+| ActivityStatus    | ActivityStatusValue    |
+| активитисубстатус | активитисубстатусвалуе |
+| OperationName     | оператионнамевалуе     |
+| ResourceProvider  | ресаурцепровидервалуе  |
 
-Добавлены следующие свойства:
+Добавлен следующий столбец:
 
 - Authorization_d
 - Claims_d

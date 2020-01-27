@@ -1,20 +1,18 @@
 ---
 title: Руководство по службе контейнеров Azure — подготовка приложения (не рекомендуется)
 description: Руководство по службе контейнеров Azure — подготовка приложения
-services: container-service
 author: iainfoulds
-manager: jeconnoc
 ms.service: container-service
 ms.topic: tutorial
 ms.date: 02/26/2018
 ms.author: iainfou
 ms.custom: mvc
-ms.openlocfilehash: 961f09d7581a26596b03e7a2f8e97d98fe83e6aa
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: b67e3008bc2ad681e222af6b9edc4a08875732e4
+ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57995398"
+ms.lasthandoff: 01/19/2020
+ms.locfileid: "76275427"
 ---
 # <a name="deprecated-create-container-images-to-be-used-with-azure-container-service"></a>Создание образов контейнеров для использования со службой контейнеров Azure (не рекомендуется)
 
@@ -36,7 +34,7 @@ ms.locfileid: "57995398"
 
 В последующих руководствах образ контейнера передается в реестр контейнеров Azure, а затем выполняется в кластере Kubernetes, размещенном в Azure.
 
-## <a name="before-you-begin"></a>Перед началом работы
+## <a name="before-you-begin"></a>Перед началом
 
 Для выполнения действий, описанных в этом руководстве, необходимо базовое понимание основных понятий Docker, таких как контейнеры, образы контейнеров и основные команды Docker. При необходимости см. статью о [начале работы с Docker]( https://docs.docker.com/get-started/), чтобы ознакомиться с основами работы с контейнерами. 
 
@@ -125,7 +123,7 @@ docker-compose down
 
 По завершении у вас будет образ контейнера, содержащий приложение Azure Vote.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом руководстве вы протестировали приложение и создали для него образы контейнеров. Были выполнены следующие действия:
 

@@ -8,12 +8,12 @@ ms.author: xshi
 ms.date: 07/22/2019
 ms.topic: conceptual
 ms.service: iot-edge
-ms.openlocfilehash: a94bc4825f70b9858260feaadaeded6c76ba46e2
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 8c174c5c201aecd83fb343a217c7944d503616c3
+ms.sourcegitcommit: 38b11501526a7997cfe1c7980d57e772b1f3169b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75457251"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76509298"
 ---
 # <a name="use-visual-studio-2019-to-develop-and-debug-modules-for-azure-iot-edge"></a>Использование Visual Studio 2019 для разработки и отладки модулей для Azure IoT Edge
 
@@ -30,7 +30,7 @@ ms.locfileid: "75457251"
   
 ## <a name="prerequisites"></a>Технические условия
 
-В этой статье предполагается, что для разработки вы используете компьютер или виртуальную машину под управлением Windows. На компьютерах Windows можно разрабатывать модули Windows или Linux. Для разработки модулей Windows используйте компьютер под управлением Windows версии 1809/Build 17763 или более поздней. Для разработки модулей Linux используйте компьютер Windows, соответствующий [требованиям для работы DOCKER Desktop](https://docs.docker.com/docker-for-windows/install/#what-to-know-before-you-install). 
+В этой статье предполагается, что для разработки вы используете компьютер или виртуальную машину под управлением Windows. На компьютерах Windows можно разрабатывать модули Windows или Linux. Для разработки модулей Windows используйте компьютер под управлением Windows версии 1809/Build 17763 или более поздней. Для разработки модулей Linux используйте компьютер Windows, соответствующий [требованиям для работы DOCKER Desktop](https://docs.docker.com/docker-for-windows/install/#what-to-know-before-you-install).
 
 Поскольку в этой статье в качестве основного средства разработки используется Visual Studio 2019, установите Visual Studio. Убедитесь, что вы включили разработку и **настольные C++**  приложения **Azure** с рабочими нагрузками в установке Visual Studio 2019. Вы можете [изменить Visual Studio 2019](https://docs.microsoft.com/visualstudio/install/modify-visual-studio?view=vs-2019) , добавив необходимые рабочие нагрузки.
 

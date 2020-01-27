@@ -13,13 +13,12 @@ ms.date: 11/11/2019
 ms.author: twhitney
 ms.reviewer: saeeda
 ms.custom: aaddev
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9a71093ee05e032a5df89bb0560b6daa82e2fbf2
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: cba213824cba86b4ea54e852b7e2f1ede83abfea
+ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74916151"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76695813"
 ---
 # <a name="logging-in-msal-applications"></a>Ведение журнала в приложениях MSAL
 
@@ -211,7 +210,7 @@ MSALGlobalConfig.loggerConfig.piiEnabled = NO;
 
 Чтобы задать уровень ведения журнала при использовании MSAL для iOS и macOS, используйте одно из следующих значений:
 
-|уровень  |Описание |
+|Уровень  |Description |
 |---------|---------|
 | `MSALLogLevelNothing`| Отключить ведение журнала |
 | `MSALLogLevelError` | Уровень по умолчанию, выводит сведения только при возникновении ошибок |
@@ -288,7 +287,7 @@ MSALGlobalConfig.loggerConfig.piiEnabled = false
 
 Чтобы задать уровень ведения журнала при использовании MSAL для iOS и macOS, используйте одно из следующих значений:
 
-|уровень  |Описание |
+|Уровень  |Description |
 |---------|---------|
 | `MSALLogLevelNothing`| Отключить ведение журнала |
 | `MSALLogLevelError` | Уровень по умолчанию, выводит сведения только при возникновении ошибок |

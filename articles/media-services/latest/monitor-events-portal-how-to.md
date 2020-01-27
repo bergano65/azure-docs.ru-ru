@@ -1,5 +1,5 @@
 ---
-title: Мониторинг событий Служб мультимедиа Azure с помощью Сетки событий и портала | Документация Майкрософт
+title: Мониторинг событий служб мультимедиа Azure с помощью службы "Сетка событий" с помощью портала
 description: В этой статье показано, как подписаться на Сетку событий для отслеживания событий Служб мультимедиа Azure.
 services: media-services
 documentationcenter: na
@@ -13,14 +13,14 @@ ms.devlang: multiple
 ms.topic: article
 ms.tgt_pltfrm: multiple
 ms.workload: media
-ms.date: 10/15/2018
+ms.date: 01/21/2020
 ms.author: juliako
-ms.openlocfilehash: d4592c93cb7969c45a107d7365a1b9dabf11f412
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 18503e64dc6f38daab61599153cd0e0fb6fadb20
+ms.sourcegitcommit: 38b11501526a7997cfe1c7980d57e772b1f3169b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60326535"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76509229"
 ---
 # <a name="create-and-monitor-media-services-events-with-event-grid-using-the-azure-portal"></a>Создание и мониторинг событий Служб мультимедиа Azure с помощью Сетки событий и портала Azure
 

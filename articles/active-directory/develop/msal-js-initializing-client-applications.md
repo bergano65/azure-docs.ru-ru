@@ -13,13 +13,12 @@ ms.date: 04/12/2019
 ms.author: twhitney
 ms.reviewer: saeeda
 ms.custom: aaddev
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7c5022533cf0db57779bc36bd74cfb38932f10d6
-ms.sourcegitcommit: 5b073caafebaf80dc1774b66483136ac342f7808
+ms.openlocfilehash: e350f4fc3d40b45a1308e1edd9331dc7f71399c5
+ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75777842"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76696135"
 ---
 # <a name="initialize-client-applications-using-msaljs"></a>Инициализация клиентских приложений с помощью MSAL. js
 В этой статье описывается инициализация библиотеки проверки подлинности Майкрософт для JavaScript (MSAL. js) с экземпляром приложения агента пользователя. Приложение агента пользователя — это форма общедоступного клиентского приложения, в котором клиентский код выполняется в агенте пользователя, например в веб-браузере. Эти клиенты не сохраняют секреты, так как контекст браузера открыто доступен. Дополнительные сведения о типах клиентских приложений и параметрах конфигурации приложений см. в [обзоре](msal-client-applications.md).
@@ -129,7 +128,7 @@ export type Configuration = {
 
 - **качелокатион**: необязательный.  Задает для хранилища браузера либо `localStorage`, либо `sessionStorage`. Значение по умолчанию — `sessionStorage`.
 
-- **стореаусстатеинкукие**: необязательный.  Этот флаг появился в MSAL. js v 0.2.2 в качестве исправления для [проблем цикла проверки подлинности](https://github.com/AzureAD/microsoft-authentication-library-for-js/wiki/Known-issues-on-IE-and-Edge-Browser#1-issues-due-to-security-zones) в Microsoft Internet Explorer и Microsoft Edge. Чтобы воспользоваться этим исправлением, установите флаг `storeAuthStateInCookie` в значение true. Если этот параметр включен, MSAL. js сохранит состояние запроса проверки подлинности, необходимое для проверки последовательностей проверки подлинности в файлах cookie браузера. По умолчанию этот флаг имеет значение `false`.
+- **стореаусстатеинкукие**: необязательный.  Этот флаг появился в MSAL. js v 0.2.2 в качестве исправления для [проблем цикла проверки подлинности](https://github.com/AzureAD/microsoft-authentication-library-for-js/wiki/Known-issues-on-IE-and-Edge-Browser#1-issues-due-to-security-zones) в Microsoft Internet Explorer и Microsoft ребр. Чтобы воспользоваться этим исправлением, установите флаг `storeAuthStateInCookie` в значение true. Если этот параметр включен, MSAL. js сохранит состояние запроса проверки подлинности, необходимое для проверки последовательностей проверки подлинности в файлах cookie браузера. По умолчанию этот флаг имеет значение `false`.
 
 - **средство ведения журнала**: необязательно.  Объект средства ведения журнала с экземпляром обратного вызова, который может быть предоставлен разработчиком для использования и публикации журналов особым образом. Дополнительные сведения о передаче объекта средства ведения журнала см. в разделе [ведение журнала с помощью msal. js](msal-logging.md).
 

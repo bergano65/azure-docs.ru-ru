@@ -11,12 +11,12 @@ ms.date: 07/12/2019
 ms.author: anjangsh
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 69eb1221686da61868df8b06ed80664ae76d1627
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: 69ba3ed981a27dfff41ea9ea52e1da769a9366c4
+ms.sourcegitcommit: b5d646969d7b665539beb18ed0dc6df87b7ba83d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73685501"
+ms.lasthandoff: 01/26/2020
+ms.locfileid: "76759641"
 ---
 # <a name="geo-restore-azure-sql-data-warehouse"></a>Географическое восстановление хранилища данных SQL Azure
 
@@ -26,24 +26,24 @@ ms.locfileid: "73685501"
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-**Проверьте ресурсы DTU.** Каждое хранилище данных SQL размещается на сервере SQL Server (например, myserver.database.windows.net), который имеет квоту DTU по умолчанию. Убедитесь, что SQL Server имеет достаточное количество оставшихся квот DTU для восстанавливаемой базы данных. Чтобы узнать, как вычислить необходимое количество DTU или запросить дополнительные единицы DTU, ознакомьтесь с разделом [Создание запроса в службу поддержки для хранилища данных SQL][Request a DTU quota change].
+**Проверьте ресурсы DTU.** Каждое хранилище данных SQL размещается на сервере SQL Server (например, myserver.database.windows.net), который имеет квоту DTU по умолчанию. Убедитесь, что SQL Server имеет достаточное количество оставшихся квот DTU для восстанавливаемой базы данных. Чтобы узнать, как вычислить необходимое количество DTU или запросить дополнительные единицы DTU, ознакомьтесь с разделом [Создание запроса в службу поддержки для хранилища данных SQL](sql-data-warehouse-get-started-create-support-ticket.md).
 
 ## <a name="restore-from-an-azure-geographical-region-through-powershell"></a>Восстановление из географического региона Azure с помощью PowerShell
 
-Чтобы выполнить восстановление из географической резервной копии, используйте командлет [Get-азсклдатабасежеобаккуп][Get-AzSqlDatabaseGeoBackup] и [RESTORE-азсклдатабасе][Restore-AzSqlDatabase] .
+Чтобы выполнить восстановление из географической резервной копии, используйте командлет [Get-азсклдатабасежеобаккуп](https://docs.microsoft.com/powershell/module/az.sql/get-azsqldatabasegeobackup) и [RESTORE-азсклдатабасе](https://docs.microsoft.com/powershell/module/az.sql/restore-azsqldatabase) .
 
 > [!NOTE]
 > Можно выполнить геовосстановление в хранилище 2-го поколения! Для этого в качестве необязательного параметра укажите имя ServiceObjectiveName 2-го поколения (например, DW1000**c**).
 >
 
-1. Перед началом убедитесь, что [установлен Azure PowerShell][Install Azure PowerShell].
+1. Перед началом убедитесь, что [установлен Azure PowerShell](https://docs.microsoft.com/powershell/azure/overview).
 2. Откройте PowerShell.
 2. Подключитесь к своей учетной записи Azure и выведите список всех подписок, связанных с ней.
 3. Выберите подписку, содержащую восстанавливаемое хранилище данных.
 4. Получите хранилище данных, которое необходимо восстановить.
 5. Создайте запрос восстановления для хранилища данных.
 6. Проверьте состояние геовосстановленного хранилища данных.
-7. Чтобы настроить хранилище данных после восстановления, см. раздел [Настройка базы данных после восстановления][Configure your database after recovery].
+7. Чтобы настроить хранилище данных после восстановления, см. раздел [Настройка базы данных после восстановления]( ../sql-database/sql-database-disaster-recovery.md#configure-your-database-after-recovery).
 
 ```Powershell
 $SubscriptionName="<YourSubscriptionName>"
@@ -76,7 +76,7 @@ $GeoRestoredDatabase.status
 
 Выполните действия, описанные ниже, чтобы восстановить хранилище данных SQL Azure из географической резервной копии.
 
-1. Войдите в учетную запись [портал Azure][Azure portal] .
+1. Войдите в учетную запись [портал Azure](https://portal.azure.com/) .
 1. Щелкните **+ создать ресурс** и найдите хранилище данных SQL и нажмите кнопку **создать**.
 
     ![Создать хранилище данных](./media/sql-data-warehouse-restore-from-geo-backup/georestore-new.png)
@@ -88,31 +88,6 @@ $GeoRestoredDatabase.status
    ![backup](./media/sql-data-warehouse-restore-from-geo-backup/georestore-select.png)
 2. После восстановления хранилища данных убедитесь, что **состояние** находится в сети.
 
-## <a name="next-steps"></a>Дальнейшие действия
-- [Восстановление существующего хранилища данных][Restore an existing data warehouse]
-- [Восстановление удаленного хранилища данных][Restore a deleted data warehouse]
-
-<!--Image references-->
-
-<!--Article references-->
-[Install Azure PowerShell]: https://docs.microsoft.com/powershell/azure/overview
-[Azure SQL Database business continuity overview]: ../sql-database/sql-database-business-continuity.md
-[Request a DTU quota change]: ./sql-data-warehouse-get-started-create-support-ticket.md
-[Configure your database after recovery]: ../sql-database/sql-database-disaster-recovery.md#configure-your-database-after-recovery
-[How to install and configure Azure PowerShell]: /powershell/azureps-cmdlets-docs
-[Overview]: ./sql-data-warehouse-restore-database-overview.md
-[Portal]: ./sql-data-warehouse-restore-database-portal.md
-[PowerShell]: ./sql-data-warehouse-restore-database-powershell.md
-[REST]: ./sql-data-warehouse-restore-database-rest-api.md
-[Configure your database after recovery]: ../sql-database/sql-database-disaster-recovery.md#configure-your-database-after-recovery
-[Restore an existing data warehouse]:./sql-data-warehouse-restore-active-paused-dw.md
-[Restore a deleted data warehouse]:./sql-data-warehouse-restore-deleted-dw.md
-[Restore from a geo-backup data warehouse]:./sql-data-warehouse-restore-from-geo-backup.md
-
-
-<!--MSDN references-->
-[Restore-AzSqlDatabase]: https://docs.microsoft.com/powershell/module/az.sql/restore-azsqldatabase
-[Get-AzSqlDatabaseGeoBackup]: https://docs.microsoft.com/powershell/module/az.sql/get-azsqldatabasegeobackup
-
-<!--Other Web references-->
-[Azure Portal]: https://portal.azure.com/
+## <a name="next-steps"></a>Следующие шаги
+- [Восстановление существующего хранилища данных](sql-data-warehouse-restore-active-paused-dw.md)
+- [Восстановление удаленного хранилища данных](sql-data-warehouse-restore-deleted-dw.md)

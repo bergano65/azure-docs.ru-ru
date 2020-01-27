@@ -1,23 +1,23 @@
 ---
 title: Учебник по привязке Кэша Azure для Redis к приложению Azure Spring Cloud
 description: В этом учебнике описано, как привязать Кэш Azure для Redis к приложению Azure Spring Cloud
-author: jpconnock
+author: bmitchell287
 ms.service: spring-cloud
 ms.topic: tutorial
 ms.date: 10/31/2019
-ms.author: jeconnoc
-ms.openlocfilehash: 662d36f8a25f2f0a21d800b7b1a25e94b13908a7
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.author: brendm
+ms.openlocfilehash: 94f7b5a2363b7c53e0f70500e5a0a8cb6f64e611
+ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75461493"
+ms.lasthandoff: 01/19/2020
+ms.locfileid: "76277507"
 ---
 # <a name="bind-azure-cache-for-redis-to-your-azure-spring-cloud-application"></a>Привязка Кэша Azure для Redis к приложению Azure Spring Cloud 
 
 Чтобы не настраивать приложения Spring Boot вручную, вы можете автоматически привязать выбранные службы Azure к приложениям с помощью Azure Spring Cloud. В этой статье показано, как привязать приложение к Кэшу Azure для Redis.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 * Развернутый облачный экземпляр Azure Spring Cloud
 * Экземпляр службы кэша Azure для Redis

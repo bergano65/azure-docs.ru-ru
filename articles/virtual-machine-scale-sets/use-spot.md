@@ -8,12 +8,12 @@ ms.workload: infrastructure-services
 ms.topic: conceptual
 ms.date: 10/23/2019
 ms.author: cynthn
-ms.openlocfilehash: 4f434afdd02d15f98e005b44f5563847f4c5847d
-ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
+ms.openlocfilehash: a7afb80276147c1562a5963a3ae9a319a8b73264
+ms.sourcegitcommit: 87781a4207c25c4831421c7309c03fce5fb5793f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2020
-ms.locfileid: "76278207"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76544792"
 ---
 # <a name="preview-azure-spot-vms-for-virtual-machine-scale-sets"></a>Предварительная версия: виртуальные машины Azure для масштабируемых наборов виртуальных машин 
 
@@ -91,50 +91,20 @@ $vmssConfig = New-AzVmssConfig `
 
 ## <a name="resource-manager-templates"></a>Шаблоны диспетчера ресурсов
 
-Процесс создания масштабируемого набора, использующего плашечные виртуальные машины, аналогичен описанному в статье Приступая к работе для [Linux](quick-create-template-linux.md) или [Windows](quick-create-template-windows.md). Добавьте свойство "Priority" в тип ресурса *Microsoft. COMPUTE/virtualMachineScaleSets/virtualMachineProfile* в шаблоне и укажите в качестве значения *точку* . Обязательно используйте версию API *2019-03-01* или более позднюю. 
+Процесс создания масштабируемого набора, использующего плашечные виртуальные машины, аналогичен описанному в статье Приступая к работе для [Linux](quick-create-template-linux.md) или [Windows](quick-create-template-windows.md). 
 
-Чтобы установить политику вытеснения с действием удаления, добавьте параметр "evictionPolicy" и задайте для него значение *delete*.
-
-В следующем примере создается набор точечных масштабируемых Linux с именем *myScaleSet* в *западной центральной части США*, который *удаляет* виртуальные машины в масштабируемом наборе при вытеснении:
+Для развертываний в плашечных шаблонах используйте`"apiVersion": "2019-03-01"` или более поздней версии. Добавьте свойства `priority`, `evictionPolicy` и `billingProfile` в раздел `"virtualMachineProfile":` шаблона: 
 
 ```json
-{
-  "type": "Microsoft.Compute/virtualMachineScaleSets",
-  "name": "myScaleSet",
-  "location": "East US 2",
-  "apiVersion": "2019-03-01",
-  "sku": {
-    "name": "Standard_DS2_v2",
-    "capacity": "2"
-  },
-  "properties": {
-    "upgradePolicy": {
-      "mode": "Automatic"
-    },
-    "virtualMachineProfile": {
-       "priority": "Spot",
-       "evictionPolicy": "delete",
-       "storageProfile": {
-        "osDisk": {
-          "caching": "ReadWrite",
-          "createOption": "FromImage"
-        },
-        "imageReference":  {
-          "publisher": "Canonical",
-          "offer": "UbuntuServer",
-          "sku": "16.04-LTS",
-          "version": "latest"
-        }
-      },
-      "osProfile": {
-        "computerNamePrefix": "myvmss",
-        "adminUsername": "azureuser",
-        "adminPassword": "P@ssw0rd!"
-      }
-    }
-  }
-}
+                "priority": "Spot",
+                "evictionPolicy": "Deallocate",
+                "billingProfile": {
+                    "maxPrice": -1
+                }
 ```
+
+Чтобы удалить экземпляр после его исключения, измените параметр `evictionPolicy` на `Delete`.
+
 ## <a name="faq"></a>Часто задаваемые вопросы
 
 **Вопрос.** После создания экземпляр будет таким же, как и стандартный экземпляр?

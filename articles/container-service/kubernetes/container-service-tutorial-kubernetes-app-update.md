@@ -1,20 +1,18 @@
 ---
 title: 'Руководство по службе контейнеров Azure: обновление приложения (не рекомендуется)'
 description: 'Руководство по Службе контейнеров Azure: обновление приложения'
-services: container-service
 author: iainfoulds
-manager: jeconnoc
 ms.service: container-service
 ms.topic: tutorial
 ms.date: 02/26/2018
 ms.author: iainfou
 ms.custom: mvc
-ms.openlocfilehash: 3c0be935a4ffb51c03d2f63b14ab7c0c713dd2ae
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: b4b893f185ba7e205ffebd7d939b8a2aa20a3e13
+ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58006264"
+ms.lasthandoff: 01/19/2020
+ms.locfileid: "76275563"
 ---
 # <a name="deprecated-update-an-application-in-kubernetes"></a>Обновление приложения в Kubernetes (не рекомендуется)
 
@@ -35,7 +33,7 @@ ms.locfileid: "58006264"
 
 В последующих руководствах предполагается, что среда Log Analytics настроена для отслеживания кластера Kubernetes.
 
-## <a name="before-you-begin"></a>Перед началом работы
+## <a name="before-you-begin"></a>Перед началом
 
 В предыдущих руководствах приложение было упаковано в образ контейнера, образ был передан в реестр контейнеров Azure и был создан кластер Kubernetes. Затем приложение было запущено в кластере Kubernetes. 
 
@@ -63,7 +61,7 @@ VOTE2VALUE = 'Purple'
 SHOWHOST = 'false'
 ```
 
-Сохраните и закройте файл.
+Сохраните файл и закройте его.
 
 ## <a name="update-container-image"></a>Обновление образа контейнера
 
@@ -160,7 +158,7 @@ kubectl get service azure-vote-front
 
 ![Схема кластера Kubernetes в Аzure](media/container-service-kubernetes-tutorials/vote-app-updated-external.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом руководстве вы обновили приложение и развернули это обновление в кластер Kubernetes. Были выполнены следующие задачи:
 

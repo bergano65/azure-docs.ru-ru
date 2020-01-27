@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.reviewer: menchi
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: e4bf079d46271cadc0176fe5602adcdc3954dee5
-ms.sourcegitcommit: 7221918fbe5385ceccf39dff9dd5a3817a0bd807
+ms.openlocfilehash: 5c44561895bc1905328ec0eb357bee1c68a8eb55
+ms.sourcegitcommit: 38b11501526a7997cfe1c7980d57e772b1f3169b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/21/2020
-ms.locfileid: "76290722"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76510538"
 ---
 # <a name="deploy-azure-iot-edge-modules-from-the-azure-portal"></a>Развертывание модулей IoT Edge Azure с помощью портала Azure
 
@@ -43,9 +43,9 @@ ms.locfileid: "76290722"
 1. В разделе **IOT Edge модули** страницы щелкните **Добавить**.
 1. Взгляните на типы модулей из раскрывающегося меню:
 
-   * **Модуль IOT Edge** . Вы предоставляете имя модуля и URI образа контейнера. Например, URI образа для примера модуля Симулатедтемпературесенсор `mcr.microsoft.com/azureiotedge-simulated-temperature-sensor:1.0`. Если образ модуля хранится в частном реестре контейнеров, добавьте учетные данные на этой странице для доступа к образу. 
+   * **Модуль IOT Edge** . Вы предоставляете имя модуля и URI образа контейнера. Например, URI образа для примера модуля Симулатедтемпературесенсор `mcr.microsoft.com/azureiotedge-simulated-temperature-sensor:1.0`. Если образ модуля хранится в частном реестре контейнеров, добавьте учетные данные на этой странице для доступа к образу.
    * **Модуль Marketplace** — модули, размещенные в Azure Marketplace. Для некоторых модулей Marketplace требуется дополнительная настройка, поэтому ознакомьтесь со сведениями о модуле в списке [модулей IOT Edge Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/category/internet-of-things?page=1&subcategories=iot-edge-modules) .
-   * **Azure Stream Analytics модуля** — модули, созданные из рабочей нагрузки Azure Stream Analytics. 
+   * **Azure Stream Analytics модуля** — модули, созданные из рабочей нагрузки Azure Stream Analytics.
 
 1. После добавления модуля выберите имя модуля из списка, чтобы открыть параметры модуля. При желании заполните необязательные поля. Дополнительные сведения о возможностях при создании контейнера, политике перезапуска и требуемом состоянии см. в разделе [Требуемые свойства EdgeAgent](module-edgeagent-edgehub.md#edgeagent-desired-properties). Подробные сведения о двойниках модулей см. в разделе [Определение или обновление требуемых свойств](module-composition.md#define-or-update-desired-properties).
 1. При необходимости повторите шаги с 5 по 8, чтобы добавить дополнительные модули в развертывание.

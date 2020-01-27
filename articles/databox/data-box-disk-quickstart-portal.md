@@ -9,27 +9,16 @@ ms.topic: quickstart
 ms.date: 09/03/2019
 ms.author: alkohli
 ms.localizationpriority: high
-Customer intent: As an IT admin, I need to quickly deploy Data Box Disk so as to import data into Azure.
-ms.openlocfilehash: b07adc955b7904c6e6a3278480cec5a2be91ec35
-ms.sourcegitcommit: 49c4b9c797c09c92632d7cedfec0ac1cf783631b
+ms.openlocfilehash: fcc7c6ff74e17db2066d97597849c985f5a961e9
+ms.sourcegitcommit: 38b11501526a7997cfe1c7980d57e772b1f3169b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70232915"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76514074"
 ---
 ::: zone target="docs"
 
 # <a name="quickstart-deploy-azure-data-box-disk-using-the-azure-portal"></a>Краткое руководство. Развертывание решения "Диск Azure Data Box" с помощью портала Azure
-
-::: zone-end
-
-::: zone target="chromeless"
-
-## <a name="get-started-with-azure-data-box-disk"></a>Начало работы с Диском Azure Data Box 
-
-::: zone-end
-
-::: zone target="docs"
 
 В этом кратком руководстве описывается развертывание диска Azure Data Box с помощью портала Azure. В этих действиях описано как быстро создать заказ, получить диски, распаковать, подключить и копировать данные на диски, таким образом, чтобы оны отправлялись в Azure.
 
@@ -157,7 +146,7 @@ ms.locfileid: "70232915"
 
     Чтобы удалить заказ, перейдите в раздел **Обзор** и нажмите на панели команд **Удалить**.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом кратком руководстве вы развернули диск Azure Data Box для импорта данных в Azure. Дополнительные сведения об управлении диском Azure Data Box, в следующем руководстве.
 

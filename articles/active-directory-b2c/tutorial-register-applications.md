@@ -11,12 +11,12 @@ ms.topic: article
 ms.date: 10/16/2019
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 2a9e4828428a91c1d1b75fb9d1b9004e52988084
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 214797f187c1812932c00bdf2a39c5ed79e15d4b
+ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75425485"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76712658"
 ---
 # <a name="tutorial-register-an-application-in-azure-active-directory-b2c"></a>Руководство. Регистрация приложения в Azure Active Directory B2C
 
@@ -28,7 +28,7 @@ ms.locfileid: "75425485"
 > * Регистрация веб-приложения
 > * Создание секрета клиента
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 ## <a name="prerequisites"></a>Технические условия
 
@@ -88,7 +88,7 @@ ms.locfileid: "75425485"
 
 ## <a name="create-a-client-secret"></a>Создание секрета клиента
 
-Если приложение обменивается кодом для маркера, необходимо создать секрет приложения.
+Если приложение обменивается кодом авторизации для маркера доступа, необходимо создать секрет приложения.
 
 #### <a name="applicationstabapplications"></a>[Приложения](#tab/applications/)
 

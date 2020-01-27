@@ -1,20 +1,18 @@
 ---
-title: включение файла
-description: включение файла
-services: functions
+title: включить файл
+description: включить файл
 author: ggailey777
-manager: jeconnoc
 ms.service: azure-functions
 ms.topic: include
 ms.date: 10/20/2018
 ms.author: glenga
 ms.custom: include file
-ms.openlocfilehash: 83f3def8f4972f35df25dc98f4b818e703801d2e
-ms.sourcegitcommit: 78ebf29ee6be84b415c558f43d34cbe1bcc0b38a
+ms.openlocfilehash: 21b7226bc82aa8041db6bbd29b4874814e2a47d0
+ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68949990"
+ms.lasthandoff: 01/19/2020
+ms.locfileid: "76279478"
 ---
 ## <a name="create-a-function"></a>Создание функции
 

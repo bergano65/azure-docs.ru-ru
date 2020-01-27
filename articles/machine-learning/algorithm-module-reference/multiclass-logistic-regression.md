@@ -9,16 +9,16 @@ ms.topic: reference
 author: xiaoharper
 ms.author: zhanxia
 ms.date: 10/22/2019
-ms.openlocfilehash: 8d6140e97383fb07e65c87f74a555046f918ac41
-ms.sourcegitcommit: a9b1f7d5111cb07e3462973eb607ff1e512bc407
+ms.openlocfilehash: aba33730d235cc50742cdc86007933e12f763053
+ms.sourcegitcommit: 87781a4207c25c4831421c7309c03fce5fb5793f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76314867"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76548464"
 ---
 # <a name="multiclass-logistic-regression-module"></a>Модуль логистической регрессии из множества классов
 
-В этой статье описывается модуль в конструкторе Машинное обучение Azure.
+В этой статье описывается модуль в Машинное обучение Azure Designer (Предварительная версия).
 
 Этот модуль используется для создания модели логистической регрессии, которая может использоваться для прогнозирования нескольких значений.
 

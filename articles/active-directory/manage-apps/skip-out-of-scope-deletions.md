@@ -15,12 +15,12 @@ ms.workload: identity
 ms.date: 12/10/2019
 ms.author: chmutali
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d5a40b699c01f50ceb1bedbc36e7f1467772336f
-ms.sourcegitcommit: d614a9fc1cc044ff8ba898297aad638858504efa
+ms.openlocfilehash: c0664cbc8097f18ec9722e789ad40d5925781637
+ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74997077"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76711661"
 ---
 # <a name="skip-deletion-of-user-accounts-that-go-out-of-scope"></a>Пропуск удаления учетных записей пользователей, которые выходят за пределы области
 
@@ -37,14 +37,14 @@ ms.locfileid: "74997077"
 1. Запустите [портал Azure](https://portal.azure.com)и перейдите к разделу Properties приложения подготовки. Например, если вы хотите экспортировать *приложение "Workday в службу подготовки пользователей* ", перейдите в раздел свойств этого приложения. 
 1. В разделе "Свойства" вашего приложения подготовки скопируйте значение GUID, связанное с полем *Идентификатор объекта*. Это значение также называется идентификатором **ServicePrincipalId** вашего приложения, и оно будет использоваться в операциях обозревателя Graph.
 
-   ![Идентификатор субъекта-службы приложения Workday](./media/export-import-provisioning-mappings/wd_export_01.png)
+   ![Идентификатор субъекта-службы приложения Workday](media/skip-out-of-scope-deletions/wd_export_01.png)
 
 ## <a name="step-2-sign-into-microsoft-graph-explorer"></a>Шаг 2. вход в Microsoft Graph Explorer
 
 1. Запустите [обозреватель Microsoft Graph](https://developer.microsoft.com/graph/graph-explorer)
 1. Нажмите кнопку "Вход с помощью учетной записи Майкрософт" и войдите, используя учетные данные глобального администратора Azure AD или администратора приложения.
 
-    ![Выполнение входа в Graph](./media/export-import-provisioning-mappings/wd_export_02.png)
+    ![Выполнение входа в Graph](media/skip-out-of-scope-deletions/wd_export_02.png)
 
 1. После выполнения входа вы увидите данные учетной записи пользователя на левой панели.
 
@@ -56,11 +56,11 @@ ms.locfileid: "74997077"
    GET https://graph.microsoft.com/beta/servicePrincipals/[servicePrincipalId]/synchronization/secrets
 ```
 
-   ![ПОЛУЧИТЬ запрос задания](./media/skip-out-of-scope-deletions/skip-03.png)
+   ![ПОЛУЧИТЬ запрос задания](media/skip-out-of-scope-deletions/skip-03.png)
 
 Скопируйте ответ в текстовый файл. Он будет выглядеть как текст JSON, показанный ниже, со значениями, выделенными желтым цветом, относящимся к вашему развертыванию. Добавьте линии, выделенные зеленым цветом, в конец и обновите пароль подключения Workday, выделенный синим цветом. 
 
-   ![ПОЛУЧЕНИЕ ответа задания](./media/skip-out-of-scope-deletions/skip-04.png)
+   ![ПОЛУЧЕНИЕ ответа задания](media/skip-out-of-scope-deletions/skip-04.png)
 
 Ниже приведен блок JSON для добавления к сопоставлению. 
 
@@ -82,22 +82,22 @@ ms.locfileid: "74997077"
 ```
 Скопируйте обновленный текст из шага 3 в текст запроса и задайте для заголовка "Content-Type" значение "Application/JSON" в заголовках запроса. 
 
-   ![запрос PUT](./media/skip-out-of-scope-deletions/skip-05.png)
+   ![Запрос на размещение](media/skip-out-of-scope-deletions/skip-05.png)
 
 Щелкните "выполнить запрос". 
 
 Вы должны получить выходные данные в виде "Success – Code Status 204". 
 
-   ![РАЗМЕСТИТЬ ответ](./media/skip-out-of-scope-deletions/skip-06.png)
+   ![РАЗМЕСТИТЬ ответ](media/skip-out-of-scope-deletions/skip-06.png)
 
 ## <a name="step-5-verify-that-out-of-scope-users-dont-get-disabled"></a>Шаг 5. Убедитесь, что пользователи вне области не отключены
 
 Вы можете проверить, что этот флаг приводит к ожидаемому поведению, обновив правила области, чтобы пропустить определенного пользователя. В приведенном ниже примере мы исключены сотрудник с ИДЕНТИФИКАТОРом 21173 (который ранее находился в области действия), добавив новое правило области. 
 
-   ![Пример области](./media/skip-out-of-scope-deletions/skip-07.png)
+   ![Пример области](media/skip-out-of-scope-deletions/skip-07.png)
 
 В следующем цикле подготовки Служба подготовки Azure AD определит, что пользователь 21173 выходит из области действия, и если свойство Скипаутофскопеделетионс включено, то правило синхронизации для этого пользователя отобразит сообщение, как показано ниже: 
 
-   ![Пример области](./media/skip-out-of-scope-deletions/skip-08.png)
+   ![Пример области](media/skip-out-of-scope-deletions/skip-08.png)
 
 

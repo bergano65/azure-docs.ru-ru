@@ -95,6 +95,10 @@
           href: concepts-data-access-security-private-link.md
         - name: Шифрование данных
           href: concepts-data-encryption-mysql.md
+        - name: Шифрование данных
+          href: concepts-data-encryption-mysql.md
+        - name: "Аутентификация Azure\_AD"
+          href: concepts-azure-ad-authentication.md
     - name: Непрерывность бизнес-процессов
       items:
         - name: Общие сведения о непрерывности бизнес-процессов
@@ -238,6 +242,10 @@
       items:
         - name: Портал Azure
           href: howto-data-encryption-portal.md
+    - name: "Интеграция с Azure\_AD"
+      items:
+        - name: Настройка интеграции Azure AD
+          href: howto-configure-sign-in-azure-ad-authentication.md
     - name: Перезапуск сервера
       items:
         - name: Портал Azure

@@ -12,12 +12,12 @@ ms.date: 10/16/2019
 ms.author: marsma
 ms.subservice: B2C
 ms.custom: fasttrack-edit
-ms.openlocfilehash: feefe7cf6d559360defd7c7f830a9e3f2e583cd6
-ms.sourcegitcommit: 5b9287976617f51d7ff9f8693c30f468b47c2141
+ms.openlocfilehash: e79b2342f481786caf46aeb9454e2961637da335
+ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2019
-ms.locfileid: "74948238"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76712931"
 ---
 # <a name="accessing-azure-ad-b2c-audit-logs"></a>Обращение к журналам аудита Azure AD B2C
 
@@ -32,14 +32,14 @@ Azure Active Directory B2C (Azure AD B2C) выдает журналы аудит
 
 Категория **B2C** в журналах аудита содержит следующие типы действий:
 
-|тип действия; |Описание  |
+|тип действия; |Description  |
 |---------|---------|
 |Авторизация |Действия, касающиеся авторизации пользователя для доступа к ресурсам B2C (например, администратор, обращающийся к списку политик B2C).         |
 |Каталог |Действия, связанные с атрибутами каталога, полученными при входе администратора с помощью портал Azure. |
 |Приложение | Операции создания, чтения, обновления и удаления (CRUD) в приложениях B2C. |
 |Ключ |Операции CRUD с ключами, хранящимися в контейнере ключей B2C. |
 |Ресурс |Операции CRUD с ресурсами B2C. Например, политики и поставщики удостоверений.
-|Authentication |Проверка учетных данных пользователя и выдачи маркера.|
+|Проверка подлинности |Проверка учетных данных пользователя и выдачи маркера.|
 
 Сведения о действиях CRUD для объектов пользователя см. в категории **основного каталога**.
 
@@ -51,12 +51,12 @@ Azure Active Directory B2C (Azure AD B2C) выдает журналы аудит
 
 Панель сведения об активности содержит следующие важные сведения.
 
-|Section|Поле|Описание|
+|Section|Поле|Description|
 |-------|-----|-----------|
-| Действие | Name | Какое действие выполнялось. Например, *выдайте приложению id_token*, которое завершает фактический вход пользователя. |
+| Действие | Имя | Какое действие выполнялось. Например, *выдайте приложению id_token*, которое завершает фактический вход пользователя. |
 | "Кем инициировано (субъект)". | ObjectId | **Идентификатор объекта** приложения B2C, в котором выполняется вход пользователя. Этот идентификатор недоступен в портал Azure, но доступен через API Microsoft Graph. |
 | "Кем инициировано (субъект)". | Имени | **Идентификатор** приложения B2C, в котором выполняется вход пользователя. |
-| "Целевые объекты"; | ObjectId | **Идентификатор объекта** пользователя, который подписывается. |
+| Целевые объекты | ObjectId | **Идентификатор объекта** пользователя, который подписывается. |
 | Дополнительные сведения | TenantId | **Идентификатор клиента** Azure AD B2C клиента. |
 | Дополнительные сведения | PolicyId | **Идентификатор политики** потока пользователя (политики), используемого для входа пользователя. |
 | Дополнительные сведения | ApplicationId | **Идентификатор** приложения B2C, в котором выполняется вход пользователя. |
@@ -102,7 +102,7 @@ Azure Active Directory B2C (Azure AD B2C) выдает журналы аудит
 
 ### <a name="assign-api-access-permissions"></a>Назначение разрешений доступа API
 
-#### <a name="applicationstabapplications"></a>[Приложения](#tab/applications/).
+#### <a name="applicationstabapplications"></a>[Приложения](#tab/applications/)
 
 1. На странице Обзор **зарегистрированного приложения** выберите **Параметры**.
 1. В разделе **доступ через API**выберите **необходимые разрешения**.
@@ -124,7 +124,7 @@ Azure Active Directory B2C (Azure AD B2C) выдает журналы аудит
 1. Выберите **Предоставить согласие администратора для (имя арендатора)** .
 1. Выберите учетную запись, выполнившего вход, если ей назначена роль *глобального администратора* , или выполните вход с помощью учетной записи в клиенте Azure AD B2C, которому назначена роль *глобального администратора* .
 1. Нажмите кнопку **Принять**.
-1. Выберите **Обновить**и убедитесь, что "предоставлено..." отображается в разделе **состояние** разрешения *AuditLog. Read. ALL* . Распространение действия разрешений может занять несколько минут.
+1. Выберите **Обновить**и убедитесь, что "предоставлено..." отображается в разделе **состояние** разрешения *AuditLog. Read. ALL* . Распространение разрешений может занять несколько минут.
 
 * * *
 
@@ -142,7 +142,7 @@ Azure Active Directory B2C (Azure AD B2C) выдает журналы аудит
 https://graph.microsoft.com/v1.0/auditLogs/directoryAudits?$filter=loggedByService eq 'B2C' and activityDateTime gt 2019-09-10T02:28:17Z
 ```
 
-### <a name="powershell-script"></a>Сценарий PowerShell
+### <a name="powershell-script"></a>Скрипт PowerShell
 
 В следующем сценарии PowerShell показан пример запроса к API отчетов Azure AD. После запроса к API-интерфейсу он выводит записанные события в стандартный вывод, а затем записывает выходные данные JSON в файл.
 
@@ -165,7 +165,7 @@ Write-Output "Searching for events starting $7daysago"
 $body       = @{grant_type="client_credentials";resource=$resource;client_id=$ClientID;client_secret=$ClientSecret}
 $oauth      = Invoke-RestMethod -Method Post -Uri $loginURL/$tenantdomain/oauth2/token?api-version=1.0 -Body $body
 
-# Parse audit report items, save output to file(s): auditX.json, where X = 0 thru n for number of nextLink pages
+# Parse audit report items, save output to file(s): auditX.json, where X = 0 through n for number of nextLink pages
 if ($oauth.access_token -ne $null) {
     $i=0
     $headerParams = @{'Authorization'="$($oauth.token_type) $($oauth.access_token)"}

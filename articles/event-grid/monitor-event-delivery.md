@@ -1,19 +1,19 @@
 ---
 title: Мониторинг доставки сообщений Сетки событий Azure
-description: Описаны способы отслеживания доставки сообщений Сетки событий Azure.
+description: В этой статье описывается, как использовать портал Azure для просмотра состояния доставки сообщений службы "Сетка событий Azure".
 services: event-grid
 author: spelluru
 manager: timlt
 ms.service: event-grid
 ms.topic: conceptual
-ms.date: 01/22/2019
+ms.date: 01/23/2020
 ms.author: spelluru
-ms.openlocfilehash: b1035046cc3c3b6cd7bde895e2e779d1c966abe0
-ms.sourcegitcommit: 4821b7b644d251593e211b150fcafa430c1accf0
+ms.openlocfilehash: 16587feaca65aa21836d9be1c44e00faa0f4f8d8
+ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74170010"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76722141"
 ---
 # <a name="monitor-event-grid-message-delivery"></a>Мониторинг доставки сообщений Сетки событий 
 
@@ -76,13 +76,13 @@ ms.locfileid: "74170010"
 
 ![Просмотр метрик событий](./media/monitor-event-delivery/custom-topic-metrics.png)
 
-## <a name="set-alerts"></a>Задайте предупреждения
+## <a name="set-alerts"></a>Задание оповещений
 
 Вы можете настроить оповещения для разделов и метрик уровня домена для пользовательских разделов и доменов событий. В колонке "Обзор" для выберите **оповещения** в левом меню ресурсов, чтобы просматривать, управлять и создавать правила генерации оповещений. [Дополнительные сведения об оповещениях Azure Monitor](../azure-monitor/platform/alerts-overview.md)
 
 ![Просмотр метрик событий](./media/monitor-event-delivery/select-alerts.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * См. дополнительные сведения о [доставке сообщений и повторных попытках в Сетке событий](delivery-and-retry.md).
 * Общие сведения о службе "Сетка событий" см. в разделе [Общие сведения о службе "Сетка событий Azure"](overview.md).

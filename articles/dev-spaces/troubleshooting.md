@@ -2,15 +2,15 @@
 title: Устранение неисправностей
 services: azure-dev-spaces
 ms.date: 09/25/2019
-ms.topic: conceptual
+ms.topic: troubleshooting
 description: Узнайте, как устранить распространенные проблемы, возникающие при включении и использовании Azure Dev Spaces
 keywords: 'Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, service mesh, service mesh routing, kubectl, k8s '
-ms.openlocfilehash: a52d27733168c55f9e34d15f6675dd7bce0f8aad
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 3a2eb98af2c73b5a920f3e3bcedb7ab18e9f0430
+ms.sourcegitcommit: 87781a4207c25c4831421c7309c03fce5fb5793f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75438107"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76548855"
 ---
 # <a name="azure-dev-spaces-troubleshooting"></a>Устранение неполадок Azure Dev Spaces
 
@@ -252,7 +252,7 @@ Failed to build container image.
 Service cannot be started.
 ```
 
-Эта ошибка возникает из-за того, что узлы AKS запускают более раннюю версию DOCKER, которая не поддерживает многоэтапные сборки. Чтобы избежать многоэтапных сборок, повторно создайте Dockerfile.
+Эта ошибка возникает из-за того, что Azure Dev Spaces в настоящее время не поддерживает многоэтапные сборки. Чтобы избежать многоэтапных сборок, повторно создайте Dockerfile.
 
 ### <a name="network-traffic-is-not-forwarded-to-your-aks-cluster-when-connecting-your-development-machine"></a>Сетевой трафик не перенаправляется в кластер AKS при подключении компьютера разработки.
 
@@ -475,3 +475,12 @@ kubectl -n my-namespace delete pod --all
 | gcr.io | HTTP: 443 | Извлечение Helm/с образами|
 | storage.googleapis.com | HTTP: 443 | Извлечение Helm/с образами|
 | аздс —<guid>.<location>. azds.io | HTTPS:443 | Для взаимодействия с Azure Dev Spaces серверных служб для контроллера. Точное полное доменное имя можно найти в "Датапланефкдн" в% USERPROFILE%\.аздс\сеттингс.жсон|
+
+### <a name="error-could-not-find-the-cluster-cluster-in-subscription-subscriptionid"></a>Ошибка "не удалось найти кластер \<\> кластера в подписке \<subscriptionId\>"
+
+Эта ошибка может возникать, если файл kubeconfig предназначен для другого кластера или подписки, чем вы пытаетесь использовать со средствами Azure Dev Spaces на стороне клиента. Azure Dev Spaces клиентское средство реплицирует поведение *kubectl*, которое использует [один или несколько файлов kubeconfig](https://kubernetes.io/docs/tasks/access-application-cluster/configure-access-multiple-clusters/) для выбора и взаимодействия с кластером.
+
+Чтобы устранить эту проблему:
+
+* Для обновления текущего контекста используйте `az aks use-dev-spaces -g <resource group name> -n <cluster name>`. Эта команда также включает Azure Dev Spaces в кластере AKS, если еще не включен. Кроме того, можно использовать `kubectl config use-context <cluster name>` для обновления текущего контекста.
+* Используйте `az account show`, чтобы отобразить текущую целевую подписку Azure и убедиться в ее правильности. Вы можете изменить целевую подписку с помощью `az account set`.

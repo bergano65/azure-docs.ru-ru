@@ -7,12 +7,12 @@ ms.service: application-gateway
 ms.topic: article
 ms.date: 11/15/2019
 ms.author: absha
-ms.openlocfilehash: ce6f07a20044efed43cf24b3f0652691dff8b8aa
-ms.sourcegitcommit: 51ed913864f11e78a4a98599b55bbb036550d8a5
+ms.openlocfilehash: 146dbdbf2f4e107e81515ce83188fa48c52aef36
+ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2020
-ms.locfileid: "75658344"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76714853"
 ---
 # <a name="application-gateway-configuration-overview"></a>Обзор настройки шлюза приложений
 
@@ -53,7 +53,7 @@ Azure также резервирует 5 IP-адресов в каждой по
 - Исходящее подключение к Интернету не может быть заблокировано. Правила исходящего трафика по умолчанию в NSG разрешают подключение к Интернету. Примите во внимание следующие рекомендации.
 
   - Не удаляйте правила исходящего трафика по умолчанию.
-  - Не создавайте другие правила исходящего трафика, которые запрещают исходящее подключение к Интернету.
+  - Не создавайте другие правила исходящего трафика, которые запрещают исходящие подключения.
 
 - Трафик из тега **AzureLoadBalancer** должен быть разрешен.
 

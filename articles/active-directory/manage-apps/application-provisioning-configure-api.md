@@ -16,21 +16,21 @@ ms.date: 11/15/2019
 ms.author: mimart
 ms.reviewer: arvinh
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1ca26c7277f69a817a48884acce116e3a66608ff
-ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
+ms.openlocfilehash: 9a891f87c3d03cf95c8051ee684916bb55441cb0
+ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74275714"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76712222"
 ---
 # <a name="configure-provisioning-using-microsoft-graph-apis"></a>Настройка подготовки с помощью API-интерфейсов Microsoft Graph
 
-Портал Azure — это удобный способ настройки подготовки для отдельных приложений по одному за раз. Но если вы создаете несколько (или даже сотни) экземпляров приложения, проще автоматизировать создание и настройку приложений с помощью Microsoft Graph API. В этой статье описано, как автоматизировать подготовку конфигурации с помощью интерфейсов API. Этот метод обычно используется для таких приложений, как [Amazon Web Services](https://docs.microsoft.com/azure/active-directory/saas-apps/amazon-web-service-tutorial#configure-azure-ad-sso).
+Портал Azure — это удобный способ настройки подготовки для отдельных приложений по одному за раз. Но если вы создаете несколько (или даже сотни) экземпляров приложения, проще автоматизировать создание и настройку приложений с помощью Microsoft Graph API. В этой статье описано, как автоматизировать подготовку конфигурации с помощью интерфейсов API. Этот метод обычно используется для таких приложений, как [Amazon Web Services](../saas-apps/amazon-web-service-tutorial.md#configure-azure-ad-sso).
 
 **Общие сведения о действиях по использованию Microsoft Graph API для автоматизации настройки подготовки**
 
 
-|Шаг  |Подробная информация  |
+|Шаг  |Сведения  |
 |---------|---------|
 |[Шаг 1. Создание приложения коллекции](#step-1-create-the-gallery-application)     |Вход в клиент API <br> Получение шаблона приложения коллекции <br> Создание приложения коллекции         |
 |[Шаг 2. Создание задания подготовки на основе шаблона](#step-2-create-the-provisioning-job-based-on-the-template)     |Получение шаблона для соединителя подготовки <br> Создание задания подготовки         |
@@ -48,7 +48,7 @@ ms.locfileid: "74275714"
 1. Запуск [обозревателя Microsoft Graph](https://developer.microsoft.com/graph/graph-explorer)
 1. Нажмите кнопку "вход с помощью Microsoft" и выполните вход с помощью глобального администратора Azure AD или учетных данных администратора приложения.
 
-    ![Выполнение входа в Graph](./media/export-import-provisioning-mappings/wd_export_02.png)
+    ![Выполнение входа в Graph](media/application-provisioning-configure-api/wd_export_02.png)
 
 1. После успешного входа в систему вы увидите сведения об учетной записи пользователя на панели слева.
 

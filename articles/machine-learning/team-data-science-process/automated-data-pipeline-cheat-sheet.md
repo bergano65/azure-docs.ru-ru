@@ -3,25 +3,25 @@ title: Памятка по конвейеру данных машинного о
 description: Пригодная для печати памятка по настройке автоматического конвейера данных в веб-службу машинного обучения Azure в зависимости от того, хранятся ли данные на локальном компьютере, транслируются в режиме реального времени или находятся в Azure или в независимой облачной службе.
 services: machine-learning
 author: marktab
-manager: cgronlun
-editor: cgronlun
+manager: marktab
+editor: marktab
 ms.service: machine-learning
 ms.subservice: team-data-science-process
 ms.topic: article
-ms.date: 03/14/2017
+ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=garyericson, previous-ms.author=garye
-ms.openlocfilehash: 7c7011991deb632110264233ea0e7aeabe793fbb
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: d09f13a65a72c6c856a7fcd3d943ec116f3da43f
+ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73670473"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76721869"
 ---
 # <a name="cheat-sheet-for-an-automated-data-pipeline-for-azure-machine-learning-predictions"></a>Памятка по работе с автоматическим конвейером данных для создания прогнозов машинного обучения Azure
 **Памятка по работе с автоматическим конвейером данных машинного обучения Microsoft Azure** поможет вам разобраться в технологии, которую вы можете использовать для передачи данных в веб-службу машинного обучения и их последующей оценки с помощью модели прогнозной аналитики.
 
-Выбор способа перемещения данных в конечную точку веб-службы для последующей оценки зависит от того, хранятся ли ваши данные на локальном компьютере, находятся в облаке или транслируются в режиме реального времени.
+В зависимости от того, находятся ли ваши данные в локальной среде, в облаке или потоковой передаче в режиме реального времени, существуют различные механизмы перемещения данных в конечную точку веб-службы для оценки.
 Это памятка рассказывает, какие решения необходимо принять, и содержит ссылки на статьи, которые могут помочь вам в разработке решения.
 
 ## <a name="download-the-machine-learning-automated-data-pipeline-cheat-sheet"></a>Загрузить памятку по работе с автоматическим конвейером данных машинного обучения

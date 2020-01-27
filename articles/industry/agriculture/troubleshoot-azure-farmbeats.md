@@ -5,12 +5,12 @@ author: uhabiba04
 ms.topic: article
 ms.date: 11/04/2019
 ms.author: v-umha
-ms.openlocfilehash: f017b19ef8bd8e4c44d9e2885da6fbaf172808a1
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: fb4b06eca0d6df6848e2e215d8890569701f7596
+ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75485979"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76705621"
 ---
 # <a name="troubleshoot"></a>Устранение неполадок
 
@@ -44,6 +44,38 @@ ms.locfileid: "75485979"
    - Если имеются *Входящие сообщения*, обратитесь в службу farmbeatssupport@microsoft.com. Прикрепите журналы Датахуб и ускорителя и захваченные данные телеметрии.
 
 Чтобы узнать, как скачать журналы, перейдите к разделу ["получение журналов вручную"](#collect-logs-manually) .  
+
+### <a name="cant-view-telemetry-data-after-ingesting-historicalstreaming-data-from-your-sensors"></a>Не удается просмотреть данные телеметрии после приема исторических и потоковых данных от датчиков
+
+**Симптом**: устройства или датчики развернуты, и вы создали устройства и датчики в фармбеатс и принимали данные телеметрии в EventHub, но вы не сможете получать или просматривать телеметрические данных на фармбеатс.
+
+**Корректирующее действие**:
+
+1. Убедитесь, что вы правильно выполнили регистрацию партнера. это можно сделать, перейдя в датахуб Swagger, перейдите к/партнер API, выполните Get и проверьте, зарегистрирован ли партнер. Если это не так, выполните [действия, описанные здесь](get-sensor-data-from-sensor-partner.md#enable-device-integration-with-farmbeats) , чтобы добавить партнера.
+2. Убедитесь, что вы использовали правильный формат сообщений телеметрии:
+
+```json
+{
+"deviceid": "<id of the Device created>",
+"timestamp": "<timestamp in ISO 8601 format>",
+"version" : "1",
+"sensors": [
+    {
+      "id": "<id of the sensor created>",
+      "sensordata": [
+        {
+          "timestamp": "< timestamp in ISO 8601 format >",
+          "<sensor measure name (as defined in the Sensor Model)>": <value>
+        },
+        {
+          "timestamp": "<timestamp in ISO 8601 format>",
+          "<sensor measure name (as defined in the Sensor Model)>": <value>
+        }
+      ]
+    }
+ ]
+}
+```
 
 ### <a name="dont-have-the-azure-event-hubs-connection-string"></a>Нет строки подключения концентраторов событий Azure
 

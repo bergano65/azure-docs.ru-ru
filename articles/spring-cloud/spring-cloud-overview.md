@@ -1,17 +1,17 @@
 ---
 title: Общие сведения об Azure Spring Cloud
 description: Узнайте о преимуществах и возможностях развертывания приложений Java Spring и управления ими в Azure с помощью Azure Spring Cloud.
-author: jpconnock
+author: bmitchell287
 ms.service: spring-cloud
 ms.topic: overview
 ms.date: 11/4/2019
-ms.author: jeconnoc
-ms.openlocfilehash: d05ce8f94862d737b3514bd1116e431bcba5dedd
-ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
+ms.author: brendm
+ms.openlocfilehash: 87b7ac1e9de2087de6e0b9d72fb445ca515a2e32
+ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75891701"
+ms.lasthandoff: 01/19/2020
+ms.locfileid: "76277133"
 ---
 # <a name="what-is-azure-spring-cloud"></a>Что представляет собой Azure Spring Cloud?
 
@@ -19,7 +19,7 @@ Azure Spring Cloud позволяет легко развертывать в Azu
 
 Azure Spring Cloud, как часть экосистемы Azure, позволяет легко добавлять привязки к другим службам Azure, включая хранилище, базы данных, службы мониторинга и многое другое.
 
-Azure Spring Cloud в настоящее время предлагается в качестве общедоступной предварительной версии. Предложения общедоступной предварительной версии позволяют клиентам поэкспериментировать с новыми функциями до официального выпуска.  Функции и службы общедоступной предварительной версии не предназначены для использования в рабочей среде.  Чтобы получить дополнительные сведения о поддержке на этапе использования предварительных версий, ознакомьтесь с разделом [Вопросы и ответы](https://azure.microsoft.com/support/faq/) или оформите [запрос на поддержку](https://docs.microsoft.com/azure/azure-portal/supportability/how-to-create-azure-support-request).
+Сейчас предоставляется общедоступная предварительная версия Azure Spring Cloud. Предложения общедоступной предварительной версии позволяют клиентам экспериментировать с новыми функциями до официального выпуска.  Общедоступные предварительные версии функций и служб не предназначены для использования в рабочей среде.  Чтобы получить дополнительные сведения о поддержке на этапе использования предварительных версий, ознакомьтесь с разделом [Вопросы и ответы](https://azure.microsoft.com/support/faq/) или оформите [запрос на поддержку](https://docs.microsoft.com/azure/azure-portal/supportability/how-to-create-azure-support-request).
 
 Чтобы приступить к работе, ознакомьтесь с кратким руководство по запуску приложений Spring Cloud с помощью [Azure CLI](spring-cloud-quickstart-launch-app-cli.md), [портала Azure](spring-cloud-quickstart-launch-app-portal.md) или [Maven](spring-cloud-quickstart-launch-app-maven.md).
 

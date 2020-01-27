@@ -1,6 +1,6 @@
 ---
 title: Настройка учетных записей лаборатории в службах лаборатории Azure | Документация Майкрософт
-description: Узнайте, как настроить учетную запись лаборатории после ее создания.
+description: В этой статье описывается, как создать учетную запись лаборатории, просмотреть все учетные записи лаборатории или удалить учетную запись лаборатории в службах лаборатории Azure.
 services: lab-services
 documentationcenter: na
 author: spelluru
@@ -11,14 +11,14 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 05/07/2019
+ms.date: 01/23/2020
 ms.author: spelluru
-ms.openlocfilehash: 1a1b1e662a2e9adedfc68f1818f868c0a5318652
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 597bbfdc35c556b5c75968084c01ac222fc468f4
+ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75428963"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76718086"
 ---
 # <a name="configure-lab-accounts-in-azure-lab-services"></a>Настройка учетных записей лаборатории в службах лаборатории Azure 
 В службах лаборатории Azure лабораторная учетная запись — это контейнер для управляемых лабораторных типов, таких как учебные лаборатории. Администратор задает учетную запись лаборатории с помощью Служб лабораторий Azure и предоставляет доступ владельцам лабораторий, которые могут создать лаборатории в учетной записи. В этой статье содержатся подробные сведения о том, как создавать, просматривать и удалять учетные записи лабораторий.

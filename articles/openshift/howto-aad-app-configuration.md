@@ -6,12 +6,12 @@ ms.author: jzim
 ms.service: container-service
 ms.topic: conceptual
 ms.date: 05/13/2019
-ms.openlocfilehash: 09ae896d26d534d3f9d5651834e181d37581c8f3
-ms.sourcegitcommit: 7221918fbe5385ceccf39dff9dd5a3817a0bd807
+ms.openlocfilehash: 6e2437fadb743706d4f4215bbcbab8616817de5f
+ms.sourcegitcommit: 87781a4207c25c4831421c7309c03fce5fb5793f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/21/2020
-ms.locfileid: "76288968"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76545625"
 ---
 # <a name="azure-active-directory-integration-for-azure-red-hat-openshift"></a>Интеграция Azure Active Directory для Azure Red Hat OpenShift
 
@@ -55,6 +55,9 @@ Microsoft Azure Red Hat OpenShift требуются разрешения на �
 
 9. Когда группа будет создана, она появится в списке всех групп. Щелкните новую группу.
 10. На появившейся странице скопируйте **идентификатор объекта**. Мы будем называть это значение `GROUPID` в учебнике [Создание кластера Azure Red Hat OpenShift](tutorial-create-cluster.md) .
+
+> [!IMPORTANT]
+> Чтобы синхронизировать эту группу с группой "OSA — клиент-администраторы OpenShift", создайте кластер с помощью Azure CLI. В портал Azure в настоящее время отсутствует поле для задания этой группы.
 
 ## <a name="create-an-azure-ad-app-registration"></a>Создание регистрации приложения Azure AD
 

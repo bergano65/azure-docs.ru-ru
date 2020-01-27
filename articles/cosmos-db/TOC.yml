@@ -12,6 +12,9 @@
       items:
         - name: Портал Azure
           href: create-cosmosdb-resources-portal.md
+        - name: Шаблон Azure Resource Manager
+          displayName: ARM
+          href: quick-create-template.md
         - name: "Приложение .NET\_— пакет SDK версии\_4"
           href: create-sql-api-dotnet-v4.md
         - name: "Приложение .NET\_— пакет SDK версии\_3"

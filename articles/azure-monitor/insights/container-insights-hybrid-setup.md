@@ -2,13 +2,13 @@
 title: Настройка гибридных кластеров Kubernetes с Azure Monitor для контейнеров | Документация Майкрософт
 description: В этой статье описывается, как настроить Azure Monitor для контейнеров для мониторинга кластеров Kubernetes, размещенных в Azure Stack или в другой среде.
 ms.topic: conceptual
-ms.date: 12/04/2019
-ms.openlocfilehash: d6218550f4b5a3a59b4addc69b19ff11e282d45a
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.date: 01/24/2020
+ms.openlocfilehash: 7796cc7300f34a7a412495754c083b112ba05041
+ms.sourcegitcommit: b5d646969d7b665539beb18ed0dc6df87b7ba83d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75977742"
+ms.lasthandoff: 01/26/2020
+ms.locfileid: "76759898"
 ---
 # <a name="configure-hybrid-kubernetes-clusters-with-azure-monitor-for-containers"></a>Настройка гибридных кластеров Kubernetes с Azure Monitor для контейнеров
 
@@ -39,7 +39,7 @@ Azure Monitor для контейнеров предоставляет широ�
     |*.blob.core.windows.net |Порт 443 |  
     |*. dc.services.visualstudio.com |Порт 443 |
 
-* Контейнерный агент требует, чтобы `cAdvisor port: 10255` открывались на всех узлах кластера для сбора метрик производительности.
+* Контейнерный агент требует, чтобы `cAdvisor secure port: 10250` или `unsecure port :10255` были открыты на всех узлах кластера для сбора метрик производительности. Рекомендуется настроить `secure port: 10250` для cAdvisor Kubelet, если он еще не настроен.
 
 * Контейнерный агент требует, чтобы следующие переменные среды были указаны в контейнере для взаимодействия со службой API Kubernetes в кластере для сбора данных инвентаризации — `KUBERNETES_SERVICE_HOST` и `KUBERNETES_PORT_443_TCP_PORT`.
 
@@ -290,12 +290,12 @@ Azure Monitor для контейнеров предоставляет широ�
 * Служба работоспособности OmsAgent запущена
 * Идентификатор рабочей области Log Analytics и ключ, настроенные на контейнерном агенте, совпадают с рабочей областью, для которой настроена аналитика.
 * Проверьте, что все рабочие узлы Linux имеют `kubernetes.io/role=agent` метку, чтобы запланировать модуль RS. Если он не существует, добавьте его.
-* Проверка `cAdvisor port: 10255` открывается на всех узлах в кластере.
+* Проверка `cAdvisor secure port:10250` или `unsecure port: 10255` открывается на всех узлах в кластере.
 
 Для выполнения с Azure PowerShell используйте следующие команды в папке, содержащей скрипт:
 
 ```powershell
-.\TroubleshootError_nonAzureK8s.ps1 - azureLogAnalyticsWorkspaceResourceId </subscriptions/<subscriptionId>/resourceGroups/<resourcegroupName>/providers/Microsoft.OperationalInsights/workspaces/<workspaceName> -kubeConfig <kubeConfigFile>
+.\TroubleshootError_nonAzureK8s.ps1 - azureLogAnalyticsWorkspaceResourceId </subscriptions/<subscriptionId>/resourceGroups/<resourcegroupName>/providers/Microsoft.OperationalInsights/workspaces/<workspaceName> -kubeConfig <kubeConfigFile> -clusterContextInKubeconfig <clusterContext>
 ```
 
 ## <a name="next-steps"></a>Дальнейшие действия

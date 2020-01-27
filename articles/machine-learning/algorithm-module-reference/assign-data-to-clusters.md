@@ -9,16 +9,16 @@ ms.topic: reference
 author: xiaoharper
 ms.author: zhanxia
 ms.date: 11/19/2019
-ms.openlocfilehash: 1dd88eaa9c92a4f8ff5d491da950f7bb1cc48c20
-ms.sourcegitcommit: a9b1f7d5111cb07e3462973eb607ff1e512bc407
+ms.openlocfilehash: ac99b95e3cece09c5bdeb0986a11a999603707e6
+ms.sourcegitcommit: 87781a4207c25c4831421c7309c03fce5fb5793f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76314510"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76548532"
 ---
 # <a name="module-assign-data-to-clusters"></a>Модуль: назначение данных кластерам
 
-В этой статье описывается использование модуля " *назначение данных в кластерах* " в конструкторе машинное обучение Azure. Модуль создает прогнозы с помощью модели кластеризации, обученной с помощью алгоритма *кластеризации K-средних* .
+В этой статье описывается использование модуля *Assign Data to Clusters* в машинное обучение Azure Designer (Предварительная версия). Модуль создает прогнозы с помощью модели кластеризации, обученной с помощью алгоритма *кластеризации K-средних* .
 
 Модуль назначение данных в кластеры возвращает набор данных, который содержит возможные назначения для каждой новой точки данных. 
 

@@ -191,6 +191,9 @@
         - name: Добавление меток для изображений
           displayName: 'data, dataset, labeling'
           href: how-to-label-images.md
+        - name: Создание наборов данных с метками
+          displayName: 'data, labels, torchvision'
+          href: how-to-use-labeled-dataset.md
     - name: Обучение моделей
       items:
         - name: Использование конструктора

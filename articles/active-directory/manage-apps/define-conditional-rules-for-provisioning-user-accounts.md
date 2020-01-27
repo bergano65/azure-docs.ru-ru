@@ -15,12 +15,12 @@ ms.date: 09/11/2018
 ms.author: mimart
 ms.custom: H1Hack27Feb2017
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1f018edfa7cbb244c57f12c3b83dba086e1590f2
-ms.sourcegitcommit: 5b073caafebaf80dc1774b66483136ac342f7808
+ms.openlocfilehash: a82efda4cf53931dbf81b993b12a2927f02dfa0b
+ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75778351"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76711703"
 ---
 # <a name="attribute-based-application-provisioning-with-scoping-filters"></a>Подготовка приложений на основе атрибутов с использованием фильтров области
 В этой статье объясняется, как с помощью фильтров области задать правила на основе атрибутов, которые управляют подготовкой пользователей для работы с приложением.
@@ -52,7 +52,7 @@ ms.locfileid: "75778351"
 
 Рассмотрим пример фильтра области.
 
-![Фильтр области действия](./media/define-conditional-rules-for-provisioning-user-accounts/scoping-filter.PNG) 
+![Фильтр области действия](media/define-conditional-rules-for-provisioning-user-accounts/scoping-filter.PNG) 
 
 Этот фильтр области определяет, что подготовке подлежат только пользователи, которые отвечают следующим условиям:
 
@@ -102,7 +102,7 @@ ms.locfileid: "75778351"
 
 10. В поле **Название фильтра области** введите имя фильтра области.
 
-11. Нажмите кнопку **ОК**.
+11. Щелкните **ОК**.
 
 12. Нажмите кнопку **ОК** еще раз на экране **Фильтры области**. При необходимости повторите шаги 6–11, чтобы добавить еще один фильтр области.
 
@@ -117,7 +117,7 @@ ms.locfileid: "75778351"
 |----|----|----|----|
 |userPrincipalName|СООТВЕТСТВИЕ РЕГУЛЯРНОГО ВЫРАЖЕНИЯ|.\*@domain.com |Все пользователи с userPrincipal домена @domain.com будут находиться в области подготовки|
 |userPrincipalName|НЕ СОПОСТАВЛЯТЬ РЕГУЛЯРНОЕ ВЫРАЖЕНИЕ|.\*@domain.com|Все пользователи с userPrincipal, которые имеют доменную @domain.com, будут вне области подготовки|
-|department|EQUALS|продажи|Все пользователи из отдела продаж находятся в области подготовки|
+|department|EQUALS|клад|Все пользователи из отдела продаж находятся в области подготовки|
 |воркерид|СООТВЕТСТВИЕ РЕГУЛЯРНОГО ВЫРАЖЕНИЯ|(1[0–9][0–9][0–9][0–9][0–9][0–9]).| Все сотрудники с Воркеридс между 1000000 и 2000000 находятся в области подготовки.|
 
 ## <a name="related-articles"></a>Связанные статьи

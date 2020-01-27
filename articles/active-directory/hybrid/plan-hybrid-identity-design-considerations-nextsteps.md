@@ -16,22 +16,15 @@ ms.date: 07/18/2017
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 41741249e9b1a142d75392025236a4d333b67666
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 378aa35ff4b43f5a268ac3dcd9530783ada6921e
+ms.sourcegitcommit: 38b11501526a7997cfe1c7980d57e772b1f3169b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60295132"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76512969"
 ---
 # <a name="azure-active-directory-hybrid-identity-design-considerations--next-steps"></a>Рекомендации по проектированию решений для гибридной идентификации Azure Active Directory — следующие шаги
 После завершения определения требований и проверки всех вариантов решения управления мобильными устройствами вы готовы к дальнейшим действиям по развертыванию инфраструктуры поддержки, которая идеально подходит вам и вашей организации.
-
-## <a name="hybrid-identity-solutions"></a>Решения для гибридной идентификации
-– Использование конкретных сценариев решений, соответствующих вашим потребностям — отличный способ обзора и планирования детальных шагов по развертыванию инфраструктуры управления мобильными устройствами. Следующие решения описывают некоторые из наиболее распространенных сценариев управления мобильными устройствами:
-
-* [Решение для управления мобильными устройствами и ПК в корпоративных средах](https://technet.microsoft.com/library/dn582037.aspx) помогает управлять мобильными устройствами путем расширения локальной инфраструктуры System Center 2012 Configuration Manager в облако с Microsoft Intune. Эта гибридная инфраструктура помогает ИТ-специалистам в средних и крупных средах разрешить использование собственных устройств (BYOD) и удаленного доступа и при этом упростить администрирование.
-* [Решение для управления мобильными устройствами для Configuration Manager 2007](https://technet.microsoft.com/library/dn508400.aspx) помогает управлять мобильными устройствами, при этом управление инфраструктурой осуществляет System Center Configuration Manager 2007. Это решение показывает, как настроить одиночный сервер под управлением System Center 2012 Configuration Manager, чтобы можно было запустить Microsoft Intune и воспользоваться преимуществами возможности MDM.
-* [Решение для управления мобильными устройствами в небольших средах](https://technet.microsoft.com/library/dn715906.aspx) предназначено для малого бизнеса, которому необходимо поддерживать MDM. Оно объясняет, как с помощью Microsoft Intune расширить текущую инфраструктуру для поддержки управления мобильными устройствами и использования собственных устройств (BYOD). Это решение описывает самый простой поддерживаемый сценарий для использования Microsoft Intune в изолированной облачной конфигурации без локальных серверов.
 
 ## <a name="hybrid-identity-documentation"></a>Документация по гибридной идентификации
 Концептуальное и процедурное планирование, развертывание и администрирование содержимого полезны при реализации решения управления мобильными устройствами:
@@ -46,8 +39,7 @@ ms.locfileid: "60295132"
 * [Блог Microsoft Enterprise Mobility](https://cloudblogs.microsoft.com/ENTERPRISEMOBILITY/)
 * [Блог "Майкрософт в облаке"](https://blogs.technet.com/b/in_the_cloud/)
 * [Блог Microsoft Intune](https://blogs.technet.com/b/microsoftintune/)
-* [Блог Microsoft System Center Configuration Manager](https://blogs.technet.com/b/configurationmgr/)
-* [Блог команды разработчиков Microsoft System Center Configuration Manager](https://blogs.technet.com/b/configmgrteam/)
+* [Блог Microsoft Endpoint Configuration Manager](https://techcommunity.microsoft.com/t5/Configuration-Manager-Blog/bg-p/ConfigurationManagerBlog)
 
 ## <a name="see-also"></a>См. также
 [Обзор рекомендаций по проектированию](plan-hybrid-identity-design-considerations-overview.md)

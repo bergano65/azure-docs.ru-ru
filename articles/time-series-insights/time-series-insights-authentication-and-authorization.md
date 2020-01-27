@@ -12,12 +12,12 @@ ms.workload: big-data
 ms.topic: conceptual
 ms.date: 12/09/2019
 ms.custom: seodec18
-ms.openlocfilehash: b54034dc8828fb8a96f488197e517ef07ed55ab5
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
-ms.translationtype: HT
+ms.openlocfilehash: 960eb9b48a158358a076202db0d435feb918a6c8
+ms.sourcegitcommit: 12a26f6682bfd1e264268b5d866547358728cd9a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75460434"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75863484"
 ---
 # <a name="authentication-and-authorization-for-azure-time-series-insights-api"></a>Проверка подлинности и авторизация для API Azure Time Series Insights
 
@@ -87,7 +87,7 @@ ms.locfileid: "75460434"
 
    1. Используйте **идентификатор приложения** и **секрет клиента** (ключ приложения) из раздела регистрации приложения Azure Active Directory, чтобы получить маркер от имени приложения.
 
-   1. В C#следующий код может получить маркер от имени приложения. Полный пример см. в статье [Запрос данных из среды Azure Time Series Insights с помощью C##](time-series-insights-query-data-csharp.md).
+   1. В C#следующий код может получить маркер от имени приложения. Полный пример см. в статье [запрос данных с C#помощью ](time-series-insights-query-data-csharp.md).
 
         [!code-csharp[csharpquery-example](~/samples-tsi/csharp-tsi-ga-sample/Program.cs?range=170-199)]
 
@@ -107,7 +107,7 @@ ms.locfileid: "75460434"
 Для выполнения запросов с проверкой подлинности к [API-интерфейсам "аналитика временных рядов](https://docs.microsoft.com/rest/api/time-series-insights/)" необходимо передать допустимый токен носителя OAuth 2,0 в [заголовок авторизации](/rest/api/apimanagement/2019-01-01/authorizationserver/createorupdate) с помощью клиента произвольного выбора (POST, JavaScript C#). 
 
 > [!TIP]
-> Ознакомьтесь с [примером визуализации клиентского пакета SDK](https://tsiclientsample.azurewebsites.net/) для службы "аналитика временных рядов Azure", чтобы узнать, как программным способом проверить подлинность с помощью API службы "аналитика временных рядов", используя [клиентский пакет SDK для JavaScript](https://github.com/microsoft/tsiclient/blob/master/docs/API.md) , а также диаграммы и графики.
+> Ознакомьтесь с [примером визуализации клиентского пакета SDK](https://tsiclientsample.azurewebsites.net/) для службы "аналитика временных рядов Azure", чтобы узнать, как программным способом проверить подлинность с помощью API-интерфейсов "аналитика временных рядов", используя [клиентский пакет SDK для JavaScript](https://github.com/microsoft/tsiclient/blob/master/docs/API.md) и диаграммы и графики.
 
 ### <a name="http-headers"></a>HTTP-заголовки
 
@@ -119,7 +119,7 @@ ms.locfileid: "75460434"
 
 > [!IMPORTANT]
 > Маркер должен быть полностью выдан ресурсу `https://api.timeseries.azure.com/` (также известной как "аудитория" маркера).
-> * Таким [](https://www.getpostman.com/) образом, **аусурл** будет: `https://login.microsoftonline.com/microsoft.onmicrosoft.com/oauth2/authorize?resource=https://api.timeseries.azure.com/`
+> * Таким [образом](https://www.getpostman.com/) **аусурл** будет: `https://login.microsoftonline.com/microsoft.onmicrosoft.com/oauth2/authorize?resource=https://api.timeseries.azure.com/`
 > * `https://api.timeseries.azure.com/` является допустимым, но `https://api.timeseries.azure.com` не является.
 
 Дополнительные заголовки запроса описаны ниже.
@@ -161,10 +161,10 @@ ms.locfileid: "75460434"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Пример кода, который вызывает API-интерфейс "аналитика временных рядов", см. в разделе [запрос данных с помощью C# ](./time-series-insights-query-data-csharp.md).
+- Пример кода, который вызывает API-интерфейс "аналитика временных рядов", считывает [данные из C#запросов с помощью ](./time-series-insights-query-data-csharp.md).
 
-- Примеры кода API для аналитики временных рядов см. в статье [Предварительный просмотр данных запросов C#с помощью ](./time-series-insights-update-query-data-csharp.md).
+- Примеры кода API для аналитики временных рядов см. в статье [Предварительный просмотр данных с C#помощью ](./time-series-insights-update-query-data-csharp.md).
 
-- Справочные сведения об API см. в [справочной документации по API запросов](https://docs.microsoft.com/rest/api/time-series-insights/ga-query-api) .
+- Сведения о справочнике по API см. в [справочной документации по API запроса](https://docs.microsoft.com/rest/api/time-series-insights/ga-query-api) .
 
 - Узнайте, как [создать субъект-службу](../active-directory/develop/howto-create-service-principal-portal.md).

@@ -41,7 +41,7 @@
           items:
             - name: Проверка подлинности и авторизация
               href: time-series-insights-authentication-and-authorization.md
-            - name: 'Запрос данных с помощью C#'
+            - name: 'Запрашивание данных с помощью C#'
               href: time-series-insights-query-data-csharp.md
             - name: 'Управление эталонными данными с помощью C#'
               href: time-series-insights-manage-reference-data-csharp.md
@@ -69,7 +69,7 @@
               href: time-series-insights-update-query-data-csharp.md
             - name: Интеграция с Power BI
               href: concepts-power-bi.md
-- name: Руководства
+- name: Практические руководства
   items:
     - name: Предоставление доступа к данным
       href: time-series-insights-data-access.md
@@ -91,7 +91,7 @@
           href: time-series-insights-send-events.md
         - name: Масштабирование среды
           href: time-series-insights-how-to-scale-your-environment.md
-        - name: Использование JSON для запросов
+        - name: Использование JSON для входящего трафика и запросов
           href: how-to-shape-query-json.md
         - name: Устранение регулирования
           href: time-series-insights-environment-mitigate-latency.md
@@ -107,11 +107,11 @@
           href: time-series-insights-update-how-to-troubleshoot.md
         - name: Моделирование данных
           href: time-series-insights-update-how-to-tsm.md
-        - name: Использование JSON для запросов
+        - name: Использование JSON для входящего трафика и запросов
           href: time-series-insights-update-how-to-shape-events.md
         - name: Подключение к Power BI
           href: how-to-connect-power-bi.md
-- name: Справочные материалы
+- name: Справочник
   items:
     - name: Аналитика временных рядов
       items:

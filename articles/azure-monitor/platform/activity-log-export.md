@@ -5,20 +5,21 @@ author: bwren
 services: azure-monitor
 ms.service: azure-monitor
 ms.topic: conceptual
-ms.date: 05/20/2019
+ms.date: 01/23/2020
 ms.author: bwren
 ms.subservice: logs
-ms.openlocfilehash: 0e5780561df121d3d5af3a9b754d774cc7d6cf76
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.openlocfilehash: e46574ae7f8faa67c2cc0c1afef1917270f69175
+ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75969663"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76715895"
 ---
 # <a name="export-azure-activity-log-to-storage-or-azure-event-hubs"></a>Экспорт журнала действий Azure в хранилище или концентраторы событий Azure
 
-> [!WARNING]
-> Теперь можно выполнить сбор журнала действий в Log Analytics рабочую область, используя параметр диагностики, аналогичный сбору журналов ресурсов. См. статью [Получение и анализ журналов действий Azure в log Analytics рабочей области в Azure Monitor](diagnostic-settings-legacy.md).
+> [!IMPORTANT]
+> Метод отправки журнала действий Azure в службу хранилища Azure и концентраторы событий Azure изменился на [параметры диагностики](diagnostic-settings.md). В этой статье описывается устаревший метод, который в настоящее время является устаревшим. См. статью Обновление [коллекции журналов действий Azure и экспорт](diagnostic-settings-legacy.md) для сравнения.
+
 
 [Журнал действий Azure](platform-logs-overview.md) позволяет получить представление о событиях уровня подписки, произошедших в подписке Azure. Помимо просмотра журнала действий в портал Azure или его копирования в Log Analytics рабочую область, где его можно проанализировать с помощью других данных, собранных Azure Monitor, можно создать профиль журнала для архивации журнала действий в учетную запись хранения Azure или потоковой передачи в  Концентратор событий.
 
@@ -72,9 +73,14 @@ ms.locfileid: "75969663"
 
 Создайте или измените профиль журнала с помощью параметра **Экспорт в концентратор событий** в портал Azure.
 
-1. В меню **мониторинг** портал Azure выберите пункт **Экспорт в концентратор событий**.
+1. В меню **Azure Monitor** в портал Azure выберите пункт **Журнал действий**.
+3. Щелкните **Параметры диагностики**.
 
-    ![Кнопка экспорта на портале](media/activity-log-export/portal-export.png)
+   ![Параметры диагностики](media/diagnostic-settings-subscription/diagnostic-settings.png)
+
+4. Щелкните сиреневый баннер для устаревшего интерфейса.
+
+    ![Устаревшие возможности](media/diagnostic-settings-subscription/legacy-experience.png)
 
 3. В появившейся колонке укажите следующее:
    * Регионы с экспортируемыми событиями. Следует выбрать все регионы, чтобы не пропускать ключевые события, так как журнал действий является глобальным (не региональным) журналом, поэтому большинство событий не имеет связанного с ними региона.

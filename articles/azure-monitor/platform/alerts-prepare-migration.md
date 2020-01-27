@@ -1,18 +1,18 @@
 ---
 title: Подготовка к переносу классических оповещений Azure Monitor с помощью обновления приложений логики и модулей Runbook
+author: yanivlavi
 description: Узнайте, как изменить веб-перехватчики, приложения логики и модули Runbook для подготовки к добровольной миграции.
-author: snehithm
 ms.service: azure-monitor
 ms.topic: conceptual
 ms.date: 03/19/2018
-ms.author: snmuvva
+ms.author: yalavi
 ms.subservice: alerts
-ms.openlocfilehash: 5235db5cab39be6e36bdf145d3edc7c73fe9da54
-ms.sourcegitcommit: 3073581d81253558f89ef560ffdf71db7e0b592b
+ms.openlocfilehash: 58ba95ff60ddccf909578a673110c870caf57376
+ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68827389"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76705570"
 ---
 # <a name="prepare-your-logic-apps-and-runbooks-for-migration-of-classic-alert-rules"></a>Подготовка приложений логики и модулей Runbook для миграции классических правил генерации оповещений
 
@@ -25,14 +25,14 @@ ms.locfileid: "68827389"
 
 ## <a name="api-changes"></a>Изменения в API
 
-Интерфейсы API, которые создают классические правила генерации оповещений`microsoft.insights/alertrules`и управляют ими (), отличаются от API-интерфейсов, которые`microsoft.insights/metricalerts`создают новые оповещения метрик () и управляют ими. Если вы программно создаете классические правила генерации оповещений и управляете ими уже сегодня, обновите сценарии развертывания для работы с новыми API.
+API-интерфейсы, которые создают классические правила генерации оповещений и управляют ими (`microsoft.insights/alertrules`), отличаются от API-интерфейсов, которые создают новые оповещения метрик (`microsoft.insights/metricalerts`) и управляют ими. Если вы программно создаете классические правила генерации оповещений и управляете ими уже сегодня, обновите сценарии развертывания для работы с новыми API.
 
 В следующей таблице приведены ссылки на программные интерфейсы для классических и новых оповещений.
 
 |         |Классические оповещения  |Новые оповещения метрик |
 |---------|---------|---------|
 |REST API     | [Microsoft. Insights/alertrules](https://docs.microsoft.com/rest/api/monitor/alertrules)         | [Microsoft. Insights/метрикалертс](https://docs.microsoft.com/rest/api/monitor/metricalerts)       |
-|Azure CLI     | [AZ Monitor оповещение](https://docs.microsoft.com/cli/azure/monitor/alert?view=azure-cli-latest)        | [предупреждение о метриках монитора AZ](https://docs.microsoft.com/cli/azure/monitor/metrics/alert?view=azure-cli-latest)        |
+|Интерфейс командной строки Azure     | [AZ Monitor оповещение](https://docs.microsoft.com/cli/azure/monitor/alert?view=azure-cli-latest)        | [предупреждение о метриках монитора AZ](https://docs.microsoft.com/cli/azure/monitor/metrics/alert?view=azure-cli-latest)        |
 |PowerShell      | [Справочные материалы](https://docs.microsoft.com/powershell/module/az.monitor/add-azmetricalertrule)       |  [Справочные материалы](https://docs.microsoft.com/powershell/module/az.monitor/add-azmetricalertrulev2)    |
 | Шаблон Azure Resource Manager | [Для классических оповещений](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-enable-template)|[Для новых оповещений метрик](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-metric-create-templates)|
 
@@ -51,7 +51,7 @@ ms.locfileid: "68827389"
 | Имя правила генерации оповещений | **context.name** | **data.context.name** |
 | Описание правила генерации оповещений | **context. Description** | **Data. Context. Description** |
 | Условие для правила генерации оповещений | **context. Condition** | **Data. Context. Condition** |
-| Название метрики | **context. Condition. metricName** | **Data. Context. Condition. allOf [0]. metricName** |
+| Имя метрики | **context. Condition. metricName** | **Data. Context. Condition. allOf [0]. metricName** |
 | Статистическая обработка времени (вычисление метрики в окне оценки)| **context. Condition. timeAggregation** | **context. Condition. timeAggregation** |
 | Период оценки | **context. Condition. windowSize** | **Data. Context. Condition. windowSize** |
 | Оператор (как агрегированное значение метрики сравнивается с пороговым значением) | **context. Condition. оператор** | **Data. Context. Condition. оператор** |
@@ -163,7 +163,7 @@ else {
 
 Если вы используете интеграцию с партнером, не указанную здесь, уточните у поставщика интеграции, что интеграция работает с новыми оповещениями метрик.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Как использовать средство миграции](alerts-using-migration-tool.md)
 - [Принцип работы средства миграции](alerts-understand-migration.md)

@@ -1,56 +1,116 @@
-### YamlMime:YamlDocument
-documentType: LandingData
-title: Мониторинг и настройка
+### YamlMime:Landing
+title: Мониторинг и настройка производительности Базы данных SQL Azure
+summary: В службе "База данных SQL Azure" доступны средства сбора метрик и диагностических сведений для мониторинга базы данных и повышения ее производительности.
 metadata:
-  title: База данных SQL Azure. Мониторинг и настройка
-  meta.description: Learn how to monitor and tune your Azure SQL database.
-  services: sql-database
-  ms.subservice: performance
-  author: jovanpop-msft
-  manager: craigg
+  title: Документация по мониторингу и настройке Базы данных SQL Azure
+  description: В службе "База данных SQL Azure" доступны средства сбора метрик и диагностических сведений для мониторинга базы данных и повышения ее производительности.
   ms.service: sql-database
-  ms.tgt_pltfrm: na
-  ms.devlang: null
-  ms.topic: overview
-  ms.date: 02/08/2019
-  ms.author: jovanpop
-sections:
-  - items:
-      - type: paragraph
-        text: База данных SQL Azure позволяет легко контролировать и настраивать рабочую нагрузку базы данных.
-      - type: list
-        style: cards
-        className: cardsM
-        columns: 3
-        items:
-          - title: Сведения о производительности запросов
-            href: /azure/sql-database/sql-database-query-performance
-            html: <p>Встроенные возможности мониторинга на портале Azure позволяют с легкостью отслеживать использование ресурсов в базе данных SQL Azure (отдельной или в пуле).</p>
-          - title: Аналитика SQL Azure
-            href: 'https://docs.microsoft.com/azure/log-analytics/log-analytics-azure-sql?toc=/azure/sql-database/toc.json'
-            html: '<p>Мониторинг Azure SQL Analytics позволяет легко отслеживать большой парк баз данных, эластичных пулов и экземпляров на одной стеклянной панели.</p>'
-          - title: Автоматическая настройка
-            href: /azure/sql-database/sql-database-automatic-tuning
-            html: '<p>Автоматическая настройка дает рекомендации и устраняет проблемы, план запроса, создает и удаляет индексы для повышения производительности.</p>'
-          - title: Сведение об интеллектуальных средствах повышения производительности
-            href: /azure/sql-database/sql-database-intelligent-insights
-            html: '<p>Встроенная интеллектуальная база данных в Базе данных SQL Azure обнаруживает разрушительные события, которые вызывают низкую производительность в ваших базах данных, и по возможности предоставляет рекомендации по их устранению.</p>'
-          - title: Рекомендации по производительности
-            href: /azure/sql-database/sql-database-advisor
-            html: '<p>База данных SQL Azure предоставляет рекомендации, которые помогут оптимизировать базу данных на портале Azure.</p>'
-          - title: Метрики и ведение журнала
-            href: /azure/sql-database/sql-database-metrics-diag-logging
-            html: '<p>Направляют телеметрию диагностики базы данных в Azure SQL Analytics, концентратор событий Azure или хранилище BLOB-объектов Azure для пользовательских интеграций.</p>'
-  - title: Дополнительные ресурсы
-    items:
-      - type: paragraph
-        text: 'Ознакомьтесь с дополнительными функциями, которые помогут вам оптимизировать производительность базы данных.'
-      - type: list
-        style: unordered
-        items:
-          - html: Дополнительные сведения о мониторинге и настройке в Базе данных SQL Azure см. в <a href="sql-database-monitor-tune-overview.md">этой статье</a>.
-          - html: 'См. <a href="https://docs.microsoft.com/sql/relational-databases/performance/intelligent-query-processing?toc=/azure/sql-database/toc.json">здесь</a>, чтобы узнать, как интеллектуальная обработка запросов может повысить производительность вашей базы данных.'
-          - html: 'Настройка и эксплуатация хранилища запросов, базовой технологии SQL Server, позволяющей получать представление о производительности запросов в режиме реального времени, описаны <a href="sql-database-operate-query-store.md">здесь</a>.'
-          - html: Для дополнительных сведений об использовании динамических административных представлений для анализа производительности рабочей нагрузки см. <a href="sql-database-operate-query-store.md">эту статью</a>.
-          - html: 'Узнайте, как отслеживать действия базы данных с помощью <a href="sql-database-xevent-db-diff-from-svr.md">XEvents</a>.'
-          - html: 'Узнайте, как <a href="sql-database-performance-guidance.md">настроить базу данных вручную</a>.'
+  ms.subservice: performance
+  ms.topic: landing-page
+  ms.collection: performance
+  author: CarlRabeler
+  ms.author: carlrab
+  ms.date: 01/24/2020
+  ms.openlocfilehash: 237e9dccb84948b9d60ba6d54367d538b90e1d55
+  ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 01/24/2020
+  ms.locfileid: "76715219"
+landingContent:
+- title: Сведения о мониторинге и настройке производительности
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Мониторинг и настройка производительности
+      url: sql-database-monitor-tune-overview.md
+  - linkListType: learn
+    links:
+    - text: Сборник схем по мониторингу базы данных Microsoft Azure
+      url: https://app.pluralsight.com/library/courses/microsoft-azure-database-playbook-monitoring
+- title: Сбор метрик и журналов
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Метрики и журналы диагностики
+      url: sql-database-metrics-diag-logging.md
+    - text: Общие сведения о журнале диагностики производительности
+      url: sql-database-intelligent-insights-use-diagnostics-log.md
+- title: Ограничения ресурсов
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Ограничения ресурсов виртуального ядра для отдельной базы данных
+      url: sql-database-vcore-resource-limits-single-databases.md
+    - text: Ограничения ресурсов на основе DTU для отдельной базы данных
+      url: sql-database-dtu-resource-limits-single-databases.md
+    - text: Ограничения ресурсов виртуального ядра для эластичного пула
+      url: sql-database-vcore-resource-limits-elastic-pools.md
+    - text: Ограничения ресурсов на основе DTU для эластичного пула
+      url: sql-database-dtu-resource-limits-elastic-pools.md
+    - text: Ограничения ресурсов управляемого экземпляра
+      url: sql-database-managed-instance-resource-limits.md
+    - text: Ограничения ресурсов пулов управляемых экземпляров
+      url: sql-database-instance-pools.md#instance-pools-resource-limitations
+- title: Начало работы с порталом Azure
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Использование технологий искусственного интеллекта на портале Azure для настройки производительности
+      url: sql-database-performance.md
+  - linkListType: concept
+    links:
+    - text: Рекомендации по настройке от Помощника по Базе данных SQL
+      url: sql-database-advisor.md
+    - text: Анализ производительности запросов
+      url: sql-database-query-performance.md
+    - text: Аналитика SQL Azure
+      url: ../azure-monitor/insights/azure-sql.md
+    - text: Intelligent Insights
+      url: sql-database-intelligent-insights.md
+    - text: Выявляемые шаблоны снижения производительности
+      url: sql-database-intelligent-insights-troubleshoot-performance.md
+    - text: Автоматическая настройка
+      url: sql-database-automatic-tuning.md
+  - linkListType: video
+    links:
+    - text: Intelligent Insights
+      url: https://channel9.msdn.com/Shows/Azure-Friday/Get-Intelligent-Insights-for-Improving-Azure-SQL-Database-Performance/player
+    - text: Автоматическая настройка
+      url: https://channel9.msdn.com/Shows/Azure-Friday/Improve-Azure-SQL-Database-Performance-with-Automatic-Tuning/player
+- title: Настройка производительности вручную
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Руководство по настройке производительности вручную
+      url: sql-database-performance-guidance.md
+  - linkListType: concept
+    links:
+    - text: Использование хранилища запросов
+      url: https://docs.microsoft.com/sql/relational-databases/performance/monitoring-performance-by-using-the-query-store
+    - text: Использование представлений DMV
+      url: sql-database-monitoring-with-dmvs.md
+    - text: Использование расширенных событий
+      url: sql-database-xevent-db-diff-from-svr.md
+    - text: Диагностика производительности при гипермасштабировании
+      url: sql-database-hyperscale-performance-diagnostics.md
+- title: Масштабирование ресурсов
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Динамическое масштабирование ресурсов
+      url: sql-database-scale-resources.md
+  - linkListType: concept
+    links:
+    - text: Масштабирование ресурсов отдельной базы данных
+      url: sql-database-single-database-scale.md
+    - text: Масштабирование ресурсов эластичного пула
+      url: sql-database-elastic-pool-scale.md
+    - text: Масштабирование ресурсов управляемого экземпляра
+      url: sql-database-managed-instance.md#managed-instance-management-operations
+    - text: Горизонтальное масштабирование для чтения
+      url: sql-database-read-scale-out.md
+  - linkListType: video
+    links:
+    - text: Динамическая масштабируемость
+      url: https://channel9.msdn.com/Blogs/Azure/Azure-SQL-Database-dynamically-scale-up-or-scale-down/player

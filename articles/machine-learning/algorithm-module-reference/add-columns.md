@@ -9,16 +9,16 @@ ms.topic: reference
 author: xiaoharper
 ms.author: zhanxia
 ms.date: 10/22/2019
-ms.openlocfilehash: e5e1390cb45fc6f659883ddfc8624719e45f99ce
-ms.sourcegitcommit: a9b1f7d5111cb07e3462973eb607ff1e512bc407
+ms.openlocfilehash: 8b882e6fb697d272ddc06e8d263f4c2144ebd017
+ms.sourcegitcommit: 87781a4207c25c4831421c7309c03fce5fb5793f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76314595"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76546934"
 ---
 # <a name="add-columns-module"></a>Модуль добавления столбцов
 
-В этой статье описывается модуль в конструкторе Машинное обучение Azure.
+В этой статье описывается модуль в Машинное обучение Azure Designer (Предварительная версия).
 
 Используйте этот модуль для сцепления двух наборов данных. Все столбцы из двух наборов данных, указанных в качестве входных, объединяются для создания одного набора данных. Если необходимо объединить более двух наборов данных, используйте несколько экземпляров **добавления столбцов**.
 

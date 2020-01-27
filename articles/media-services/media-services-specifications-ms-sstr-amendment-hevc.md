@@ -1,5 +1,5 @@
 ---
-title: Службы мультимедиа Azure. Поправка к протоколу Smooth Streaming (MS-SSTR) для HEVC | Документация Майкрософт
+title: Поправка протокола Smooth Streaming (MS-SSTR) для HEVC — Azure
 description: Эта спецификация описывает протокол и формат потоковой передачи в реальном времени с HEVC на основе фрагментированного формата MP4 для служб мультимедиа Azure. В этой статье указаны только те изменения, которые необходимы для доставки HEVC, за исключением случаев, где сочетание "(Без изменения)" указывает, что текст скопирован только в целях уточнения.
 services: media-services
 documentationcenter: ''
@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/19/2019
 ms.author: johndeu
-ms.openlocfilehash: 6dd7e0dc7e58f33f952aa5531773a84ebd31a163
-ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
+ms.openlocfilehash: be4009d418f2f8f3dff755e2e990efee593f070b
+ms.sourcegitcommit: 38b11501526a7997cfe1c7980d57e772b1f3169b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74887872"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76514227"
 ---
 # <a name="smooth-streaming-protocol-ms-sstr-amendment-for-hevc"></a>Поправка к протоколу Smooth Streaming (MS-SSTR) для HEVC 
 
@@ -50,7 +50,7 @@ ms.locfileid: "74887872"
 
 >   **HEVC:** высокоэффективное видеокодирование в соответствии со спецификацией [ISO/IEC 23008-2]
 > 
->   **Манифест:** метаданные о **презентации**, которые позволяют клиенту выполнять запросы **файлов мультимедиа**. **Мультимедиа:** сжатые аудио-, видео- и текстовые данные, используемые клиентом для воспроизведения **презентации**. **Формат мультимедиа:** четко определенный формат для представления аудио- или видеоданных как сжатого **образца**.
+>   **Манифест:** метаданные о **презентации**, которые позволяют клиенту запрашивать **файлы мультимедиа**. **Мультимедиа:** сжатые аудио-, видео- и текстовые данные, используемые клиентом для воспроизведения **презентации**. **Формат мультимедиа:** четко определенный формат для представления аудио- или видеоданных как сжатого **образца**.
 > 
 >   **Презентация:** набор всех **потоков** и связанных метаданных, необходимых для воспроизведения одного фильма. **запрос:** HTTP-сообщение, отправленное клиентом на сервер, как определено в **ответе** [[rfc2616]](https://go.microsoft.com/fwlink/?LinkId=90372) : HTTP-сообщение, отправленное с сервера клиенту, как определено в [[rfc2616]](https://go.microsoft.com/fwlink/?LinkId=90372)
 > 
@@ -64,7 +64,7 @@ ms.locfileid: "74887872"
 
 ### <a name="121-normative-references"></a>1.2.1. Нормативные ссылки 
 
->  [MS-SSTR]. Протокол Smooth Streaming *v20140502* [https://msdn.microsoft.com/library/ff469518.aspx](https://msdn.microsoft.com/library/ff469518.aspx)
+>  [MS-SSTR] *V20140502* протокола Smooth Streaming [https://msdn.microsoft.com/library/ff469518.aspx](https://msdn.microsoft.com/library/ff469518.aspx)
 > 
 >   [ISO/IEC 14496-12]. Международная организация по стандартизации (ISO). "Information technology -- Coding of audio-visual objects -- Part 12: ISO Base Media File Format" (Информационные технологии. Кодирование аудиовизуальных объектов. Часть 12. Формат базового медиафайла ISO), ISO/IEC 14496-12:2014, издание 4, добавлено исправление 1, поправки 1, 2.
 >   <https://standards.iso.org/ittf/PubliclyAvailableStandards/c061988_ISO_IEC_14496-12_2012.zip>
@@ -78,17 +78,17 @@ ms.locfileid: "74887872"
 > 
 >   [RFC-6381] IETF RFC-6381, “The 'Codecs' and 'Profiles' Parameters for "Bucket" Media Types” (Параметры "кодеков" и "профилей" для типов медиафайлов "контейнеры") <https://tools.ietf.org/html/rfc6381>
 > 
->   [MPEG4-RA] Центр регистрации MP4, "MP4REG", [http://www.mp4ra.org](https://go.microsoft.com/fwlink/?LinkId=327787)
+>   [MPEG4-RA]. Центр регистрации MP4 "MP4REG", [http://www.mp4ra.org](https://go.microsoft.com/fwlink/?LinkId=327787)
 > 
->   RFC2119 Браднер (bradner, S., "Ключевые слова для использования в RFC для указания уровней требований", BCP 14, RFC 2119, 1997 марта [https://www.rfc-editor.org/rfc/rfc2119.txt](https://go.microsoft.com/fwlink/?LinkId=90317)
+>   [RFC2119]. С. Браднер (Bradner, S.) "Key words for use in RFCs to Indicate Requirement Levels" (Ключевые слова для обозначения уровня требований в RFC), BCP 14, RFC 2119, март 1997 г., [https://www.rfc-editor.org/rfc/rfc2119.txt](https://go.microsoft.com/fwlink/?LinkId=90317)
 
 ### <a name="122-informative-references"></a>1.2.2. Справочные ссылки 
 
 >   [MS-GLOS]. Корпорация Майкрософт "*Windows Protocols Master Glossary*" (Главный глоссарий протоколов Windows).
 > 
->   RFC3548 (Josefsson, S., ED., "Base16, base32 и Base64 кодировка данных", RFC 3548, Июль 2003, [https://www.ietf.org/rfc/rfc3548.txt](https://go.microsoft.com/fwlink/?LinkId=90432)
+>   [RFC3548]. С. Юсефссон (Josefsson, S.) "The Base16, Base32, and Base64 Data Encodings" (Кодировки данных Base16, Base32 и Base64), RFC 3548, июль 2003 г., [https://www.ietf.org/rfc/rfc3548.txt](https://go.microsoft.com/fwlink/?LinkId=90432)
 > 
->   RFC5234 Крокер (Crocker, D., ED. и Оверел (overell, P., "дополненные BNF для спецификаций синтаксиса: ABNF", STD 68, RFC 5234, января 2008, [https://www.rfc-editor.org/rfc/rfc5234.txt](https://go.microsoft.com/fwlink/?LinkId=123096)
+>   [RFC5234]. Д. Крокер (Crocker, D.) и П. Оверел (Overell, P.) "Augmented BNF for Syntax Specifications: ABNF" (Расширенный BNF для спецификаций синтаксиса: ABNF), STD 68, RFC 5234, январь 2008 г., [https://www.rfc-editor.org/rfc/rfc5234.txt](https://go.microsoft.com/fwlink/?LinkId=123096)
 
 
 ## <a name="13-overview"></a>1.3. Обзор 
@@ -281,7 +281,7 @@ ms.locfileid: "74887872"
 > * **MajorVersion**
 > * **MinorVersion**
 > * **TimeScale**
-> * **Duration**
+> * **Длительность**
 > * **IsLive**
 > * **LookaheadCount**
 > * **DVRWindowLength**

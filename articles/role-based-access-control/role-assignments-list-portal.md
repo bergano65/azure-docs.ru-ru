@@ -11,15 +11,15 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 01/10/2020
+ms.date: 01/23/2020
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: 6117f22b24887e913ed2f8d3a43e80335121636d
-ms.sourcegitcommit: 014e916305e0225512f040543366711e466a9495
+ms.openlocfilehash: 099cf74dd27f39a4289397d5178511125d9ebf6f
+ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75934476"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76720738"
 ---
 # <a name="list-role-assignments-using-azure-rbac-and-the-azure-portal"></a>Вывод списка назначений ролей с помощью Azure RBAC и портал Azure
 
@@ -125,6 +125,16 @@ ms.locfileid: "75934476"
     ![Назначение ролей для управляемого удостоверения, назначенного системой](./media/role-assignments-list-portal/azure-resources-user-assigned.png)
 
 1. Чтобы изменить подписку, щелкните список **подписки** .
+
+## <a name="list-number-of-role-assignments"></a>Перечисление количества назначений ролей
+
+В каждой подписке может быть до **2000** назначений ролей. Чтобы помочь вам в отслеживании этих ограничений, вкладка **назначения ролей** содержит диаграмму, в которой отображается текущее количество назначений ролей.
+
+![Управление доступом — диаграмма назначений ролей](./media/role-assignments-list-portal/access-control-role-assignments-chart.png)
+
+Если вы получаете близкое к максимальному количеству и пытаетесь добавить дополнительные назначения ролей, вы увидите предупреждение на панели **Добавление назначения ролей** . Количество назначений ролей можно уменьшить, удалив назначения ролей, которые больше не нужны, или назначив роли группам, а не отдельным пользователям.
+
+![Управление доступом — предупреждение о добавлении роли](./media/role-assignments-list-portal/add-role-assignment-warning.png)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

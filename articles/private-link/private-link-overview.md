@@ -7,12 +7,13 @@ ms.service: private-link
 ms.topic: overview
 ms.date: 01/09/2020
 ms.author: allensu
-ms.openlocfilehash: 299cd81c05af385c435eaf3788e3d7e39c486623
-ms.sourcegitcommit: 12a26f6682bfd1e264268b5d866547358728cd9a
+ms.custom: fasttrack-edit
+ms.openlocfilehash: 6e2c1af03d5d6ccfbcb15a2dd33bc2e987be4d48
+ms.sourcegitcommit: 87781a4207c25c4831421c7309c03fce5fb5793f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75867557"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76543126"
 ---
 # <a name="what-is-azure-private-link-preview"></a>Что собой представляет Приватный канал Azure? (предварительная версия)
 Приватный канал Azure обеспечивает доступ к службам Azure PaaS (например, к службе хранилища Azure, Azure Cosmos DB и Базе данных SQL), а также размещенным в Azure службам клиентов или партнеров через [частную конечную точку](private-endpoint-overview.md) виртуальной сети. Трафик между виртуальной сетью и службой проходит через магистральную сеть Майкрософт, что позволяет избежать рисков общедоступного Интернета. Кроме того, вы можете создать в своей виртуальной сети (VNet) собственную службу [Приватный канал](private-link-service-overview.md) и предоставлять ее клиентам в частном порядке. Настройка и потребление с использованием Приватного канала Azure согласованы между службами Azure PaaS, владельцами и общими партнерскими службами.
@@ -41,8 +42,8 @@ ms.locfileid: "75867557"
 |Сценарий  |Поддерживаемые службы  |Доступные регионы | Состояние  |
 |:---------|:-------------------|:-----------------|:--------|
 |Приватный канал для служб, принадлежащих потребителю|Службы Приватный канал за Load Balancer (цен. категория "Стандартный") | Все общедоступные регионы  | Preview (Предварительный просмотр)  |
-|Приватный канал для служб PaaS Azure   | Хранилище Azure        |  Все общедоступные регионы      | Preview (Предварительный просмотр) <br/> [Узнайте больше](/azure/storage/common/storage-private-endpoints).  |
-|  | Azure Data Lake Storage 2-го поколения        |  Все общедоступные регионы      | Preview (Предварительный просмотр) <br/> [Узнайте больше](/azure/storage/common/storage-private-endpoints).  |
+|Приватный канал для служб PaaS Azure   | Хранилище Azure        |  Все общедоступные регионы      | Preview (Предварительный просмотр) <br/> [Подробнее](/azure/storage/common/storage-private-endpoints).  |
+|  | Azure Data Lake Storage 2-го поколения        |  Все общедоступные регионы      | Preview (Предварительный просмотр) <br/> [Подробнее](/azure/storage/common/storage-private-endpoints).  |
 |  |  База данных SQL Azure         | Все общедоступные регионы      |   Preview (Предварительный просмотр)      |
 ||Хранилище данных SQL Azure| Все общедоступные регионы |Preview (Предварительный просмотр)|
 ||Azure Cosmos DB| Центрально-западная часть США, западная часть США, центрально-северная часть США |Preview (Предварительный просмотр)|

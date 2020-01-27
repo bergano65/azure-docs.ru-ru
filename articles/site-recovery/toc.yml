@@ -309,7 +309,7 @@
                   href: vmware-physical-mobility-service-overview.md
                 - name: Подготовка к принудительной установке Службы мобильности
                   href: vmware-azure-install-mobility-service.md
-                - name: Развертывание Службы мобильности с помощью System Center Configuration Manager
+                - name: Развертывание службы "Мобильность" с помощью Configuration Manager
                   href: vmware-azure-mobility-install-configuration-mgr.md
         - name: Отработка отказа и восстановления размещения
           href: physical-to-azure-failover-failback.md

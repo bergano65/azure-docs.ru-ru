@@ -8,12 +8,12 @@ services: iot-edge
 ms.topic: conceptual
 ms.date: 11/19/2019
 ms.author: kgremban
-ms.openlocfilehash: d4d9d2ff899a169ee81544761fe87fed3cca06c4
-ms.sourcegitcommit: f9601bbccddfccddb6f577d6febf7b2b12988911
+ms.openlocfilehash: 23fbbd87230ea0a0147dc9d90c77729f4d531e98
+ms.sourcegitcommit: 38b11501526a7997cfe1c7980d57e772b1f3169b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2020
-ms.locfileid: "75912314"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76511150"
 ---
 # <a name="connect-modbus-tcp-devices-through-an-iot-edge-device-gateway"></a>Подключение устройств Modbus TCP через шлюз устройств IoT Edge
 
@@ -26,6 +26,7 @@ ms.locfileid: "75912314"
 В этой статье предполагается, что вы используете протокол Modbus TCP. Дополнительные сведения о том, как настроить модуль для поддержки Modbus RTU, см. в проекте [модуля Modbus для Azure IoT Edge](https://github.com/Azure/iot-edge-modbus) в GitHub.
 
 ## <a name="prerequisites"></a>Технические условия
+
 * Устройство Azure IoT Edge. Пошаговое руководство по настройке одного из них см. в статье [развертывание Azure IOT EDGE в Windows](quickstart.md) или [Linux](quickstart-linux.md).
 * Строка подключения первичного ключа для устройства IoT Edge.
 * Физическое устройство или имитация устройства, которые поддерживают Modbus TCP. Необходимо знать его IPv4-адрес.
@@ -50,7 +51,7 @@ ms.locfileid: "75912314"
 
    1. Щелкните раскрывающийся список **Добавить** и выберите **модуль Marketplace**.
    2. Найдите `Modbus` и выберите **модуль TCP Modbus** в Майкрософт.
-   3. Модуль автоматически настраивается для центра Интернета вещей и отображается в списке модулей IoT Edge. Маршруты также настраиваются автоматически. Выберите **Review + create** (Просмотреть и создать).
+   3. Модуль автоматически настраивается для центра Интернета вещей и отображается в списке модулей IoT Edge. Маршруты также настраиваются автоматически. Выберите **Review + create** (Просмотреть и создать).
    4. Проверьте манифест развертывания и нажмите кнопку **создать**.
 
 5. Выберите Модуль Modbus `ModbusTCPModule`в списке и перейдите на вкладку **двойника Settings (параметры модуля** ). Обязательный JSON для модуля, двойника требуемые свойства, заполняется автоматически.

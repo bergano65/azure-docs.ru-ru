@@ -3,15 +3,15 @@ title: Руководство. масштабированию приложени
 description: В этом учебнике описано, как масштабировать приложение в Azure Spring Cloud на портале Azure.
 ms.service: spring-cloud
 ms.topic: tutorial
-ms.author: jeconnoc
-author: jpconnock
+ms.author: brendm
+author: bmitchell287
 ms.date: 10/06/2019
-ms.openlocfilehash: eaf7e7ec39555e5b933020835f3bb96429e3aa81
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: f08a3b5d0a03b0e898457bbb783dd5031c4b0f27
+ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75461434"
+ms.lasthandoff: 01/19/2020
+ms.locfileid: "76277478"
 ---
 # <a name="scale-an-application-in-azure-spring-cloud"></a>масштабированию приложения в Azure Spring Cloud
 
@@ -21,11 +21,11 @@ ms.locfileid: "75461434"
 
 По завершении работы с учебником вы узнаете, как быстро вносить изменения в каждое приложение в службе вручную. Масштабирование вступает в силу мгновенно и не требует никакого изменения кода или повторного развертывания.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим учебником необходимы указанные ниже компоненты.
 
-* Подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу. 
+* Подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу. 
 * Развернутый экземпляр службы Azure Spring Cloud.  Чтобы приступить к работе, следуйте инструкциям статьи [Краткое руководство. Запуск приложения Java Spring с помощью Azure CLI](spring-cloud-quickstart-launch-app-cli.md).
 * По крайней мере одно приложение, ранее созданное в этом экземпляре службы.
 

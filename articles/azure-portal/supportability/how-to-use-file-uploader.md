@@ -6,16 +6,17 @@ tags: billing
 ms.assetid: 86697fdf-3499-4cab-ab3f-10d40d3c1f70
 ms.service: azure-supportability
 ms.topic: article
-ms.date: 10/31/2018
+ms.date: 01/23/2020
 ms.author: genli
-ms.openlocfilehash: 8c22ce859aa58aeb8339b16265f6614bd7e723f8
-ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
+ms.openlocfilehash: ac8dffe3b1200f3925478f968170498ee744bb79
+ms.sourcegitcommit: 87781a4207c25c4831421c7309c03fce5fb5793f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75897004"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76548974"
 ---
 # <a name="microsoft-azure-new-support-request-file-upload-utility-guidelines"></a>Microsoft Azure новые рекомендации по отправке файла запроса в службу поддержки
+
 При [создании запроса в службу поддержки](https://portal.azure.com/#create/Microsoft.Support)параметр отправки файла позволяет легко отправлять диагностические файлы или любые другие файлы, которые вы считаете важными для инцидента.  
 
 > [!NOTE]
@@ -25,12 +26,13 @@ ms.locfileid: "75897004"
 
 При использовании параметра отправки файла следуйте приведенным ниже рекомендациям.
 
-* Все файлы должны иметь расширение имени файла, например .docx или .xlsx. Список допустимых расширений см. в таблице.
+* Все файлы должны иметь расширение имени файла, например *docx* или *xlsx*. Допустимые расширения имен файлов см. в таблице.
 * Имя файла должно содержать не больше 110 знаков.
-* Загрузить можно только один файл.
-* Размер файла не должен превышать 4 МБ.
+* Невозможно отправить больше одного файла.
+* Размер файлов не может превышать 4 МБ.
 
 ## <a name="table-of-the-allowed-file-name-extensions"></a>Таблица допустимых расширений имен файлов
+
 | 0-9, A-C    | D-G   | H-M         | N-P   | R-T      | U-W        | X-Z     |
 |-------------|-------|-------------|-------|----------|------------|---------|
 | .7z         | .dat  | .hwl        | .odx  | .rar     | .tdb       | .xlam   |

@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 09/28/2019
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: b7e872f3320a2c72b6e9fb3ffba65510b205ca03
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 9cb23dc11a853401d8d99a750a0c79082adbe036
+ms.sourcegitcommit: 87781a4207c25c4831421c7309c03fce5fb5793f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75425542"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76547597"
 ---
 # <a name="tutorial-create-an-azure-active-directory-b2c-tenant"></a>Руководство по созданию клиента Azure Active Directory B2C
 
@@ -68,6 +68,8 @@ ms.locfileid: "75425542"
     Для параметра **Группа ресурсов** выберите **Создать**. Введите **имя** группы ресурсов, которая будет содержать клиент, выберите **расположение группы ресурсов**и нажмите кнопку **создать**.
 
     ![Ссылка на форму параметров подписки в портал Azure](media/tutorial-create-tenant/portal-06-link-subscription-settings.png)
+    
+    Вы можете связать несколько Azure AD B2C клиентов с одной подпиской Azure для выставления счетов. 
 
 ## <a name="select-your-b2c-tenant-directory"></a>Выберите каталог клиента B2C
 

@@ -6,12 +6,12 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 02/18/2019
 ms.author: glenga
-ms.openlocfilehash: 2d9de5e7294fdca7514989ba009e9dee8985a084
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 83884447e9856b5e3db26e4829ccbd3ab1baed13
+ms.sourcegitcommit: 87781a4207c25c4831421c7309c03fce5fb5793f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75421967"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76549093"
 ---
 # <a name="how-to-use-the-azure-webjobs-sdk-for-event-driven-background-processing"></a>Использование пакета SDK WebJobs Azure для фоновой обработки на основе событий
 
@@ -681,8 +681,8 @@ public static void CreateQueueMessage(
 В документации по функциям Azure содержатся справочные сведения о каждом типе привязки. В каждой справочной статье привязок содержатся следующие сведения. (Этот пример основан на очереди хранилища.)
 
 * [Пакеты](../azure-functions/functions-bindings-storage-queue.md#packages---functions-1x). Пакет, который необходимо установить, включает поддержку привязки в проекте пакета SDK веб-заданий.
-* [Примеры](../azure-functions/functions-bindings-storage-queue.md#trigger---example). Примеры кода. Пример C# библиотеки классов применяется к пакету SDK для веб-заданий. Просто опустите атрибут `FunctionName`.
-* [Атрибуты](../azure-functions/functions-bindings-storage-queue.md#trigger---attributes). Атрибуты, используемые для типа привязки.
+* [Примеры](../azure-functions/functions-bindings-storage-queue.md#trigger). Примеры кода. Пример C# библиотеки классов применяется к пакету SDK для веб-заданий. Просто опустите атрибут `FunctionName`.
+* [Атрибуты](../azure-functions/functions-bindings-storage-queue.md#trigger---attributes-and-annotations). Атрибуты, используемые для типа привязки.
 * [Конфигурация](../azure-functions/functions-bindings-storage-queue.md#trigger---configuration). Пояснения к свойствам атрибута и параметрам конструктора.
 * [Использование](../azure-functions/functions-bindings-storage-queue.md#trigger---usage). Типы, к которым можно выполнить привязку, и сведения о принципах работы привязки. Например: алгоритм опроса, обработка подозрительной очереди.
   

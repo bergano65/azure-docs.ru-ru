@@ -16,6 +16,8 @@
       href: azure-resource-manager-security-controls.md
     - name: Поставщики ресурсов по службам
       href: azure-services-resource-providers.md
+    - name: Типы ресурсов расширения
+      href: extension-resource-types.md
     - name: Ограничение количества экземпляров ресурса
       href: resources-without-resource-group-limit.md
 - name: Практическое руководство
@@ -68,44 +70,44 @@
           href: tag-resources.md
         - name: Поддержка тегов
           href: tag-support.md
-    - name: Управление
+    - name: Управление группами ресурсов
       items:
-        - name: Управление группами ресурсов
-          items:
-            - name: Использование портала Azure
-              displayName: 'create,list,open,delete,deploy,move,lock,tag,export'
-              href: manage-resource-groups-portal.md
-            - name: Использование Azure CLI
-              displayName: 'create,list,open,delete,deploy,move,lock,tag,export'
-              href: manage-resource-groups-cli.md
-            - name: Использование Azure PowerShell
-              displayName: 'create,list,open,delete,deploy,move,lock,tag,export'
-              href: manage-resource-groups-powershell.md
-        - name: Управление ресурсами
-          items:
-            - name: Использование портала Azure
-              displayName: 'open,delete,deploy,move,lock,tag,monitor'
-              href: manage-resources-portal.md
-            - name: Использование Azure CLI
-              displayName: 'open,delete,deploy,move,lock,tag'
-              href: manage-resources-cli.md
-            - name: Использование Azure PowerShell
-              displayName: 'open,delete,deploy,move,lock,tag'
-              href: manage-resources-powershell.md
-        - name: Удаление ресурсов и групп ресурсов
-          href: delete-resource-group.md
-        - name: Блокировка ресурсов
-          href: lock-resources.md
-        - name: Создание подписок EA
+        - name: Портал Azure
+          displayName: 'create,list,open,delete,deploy,move,lock,tag,export'
+          href: manage-resource-groups-portal.md
+        - name: Azure CLI
+          displayName: 'create,list,open,delete,deploy,move,lock,tag,export'
+          href: manage-resource-groups-cli.md
+        - name: Azure PowerShell
+          displayName: 'create,list,open,delete,deploy,move,lock,tag,export'
+          href: manage-resource-groups-powershell.md
+    - name: Управление ресурсами
+      items:
+        - name: Портал Azure
+          displayName: 'open,delete,deploy,move,lock,tag,monitor'
+          href: manage-resources-portal.md
+        - name: Azure CLI
+          displayName: 'open,delete,deploy,move,lock,tag'
+          href: manage-resources-cli.md
+        - name: Azure PowerShell
+          displayName: 'open,delete,deploy,move,lock,tag'
+          href: manage-resources-powershell.md
+    - name: Подписки EA
+      items:
+        - name: Создание
           href: programmatically-create-subscription.md
-        - name: Предоставление доступа для создания подписок EA
+        - name: Предоставление доступа для создания
           href: grant-access-to-create-subscription.md
-        - name: Аутентификация в клиентах
-          href: authenticate-multi-tenant.md
-    - name: Просмотр журналов действий
-      href: view-activity-logs.md
     - name: Поставщики и типы ресурсов
       href: resource-providers-and-types.md
+    - name: Удаление ресурсов и групп ресурсов
+      href: delete-resource-group.md
+    - name: Блокировка ресурсов
+      href: lock-resources.md
+    - name: Аутентификация в клиентах
+      href: authenticate-multi-tenant.md
+    - name: Просмотр журналов действий
+      href: view-activity-logs.md
     - name: Запросы на регулирование
       href: request-limits-and-throttling.md
     - name: Отслеживание асинхронных операций

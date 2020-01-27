@@ -14,12 +14,12 @@ ms.author: curtand
 ms.reviewer: vincesm
 ms.custom: fasttrack-edit
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 84296631e35de759fbb971f5de2d918afa5d17f0
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.openlocfilehash: 3090c0bb809b302f0326d2586d2ce1426e4ace85
+ms.sourcegitcommit: b5d646969d7b665539beb18ed0dc6df87b7ba83d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75967574"
+ms.lasthandoff: 01/26/2020
+ms.locfileid: "76760612"
 ---
 # <a name="administrator-role-permissions-in-azure-active-directory"></a>Разрешения роли администратора в Azure Active Directory
 
@@ -217,7 +217,7 @@ ms.locfileid: "75967574"
 * Azure Active Directory клиентов для сотрудников и партнеров. Добавление Федерации (например, Gmail) немедленно повлияет на все приглашения гостей, которые еще не были активированы. См. статью [Добавление Google в качестве поставщика удостоверений для гостевых пользователей B2B](https://docs.microsoft.com/azure/active-directory/b2b/google-federation).
 * Azure Active Directory B2C клиенты. Добавление Федерации (например, с помощью Facebook или другой организации Azure AD) не влияет на потоки конечных пользователей, пока не будет добавлен поставщик удостоверений в качестве параметра в потоке пользователя (также называемом встроенным Политика). Пример см. [в разделе настройка учетная запись Майкрософт в качестве поставщика удостоверений](https://docs.microsoft.com/azure/active-directory-b2c/active-directory-b2c-setup-msa-app) . Чтобы изменить потоки пользователей, требуется ограниченная роль "B2C User Flow Administrator".
 
-### <a name="global-administrator--company-administratorcompany-administrator-permissions"></a>[Глобальный администратор или администратор компании](#company-administrator-permissions)
+### <a name="global-administrator--company-administratorcompany-administrator-permissions"></a>[Глобальный администратор или администратор Организации](#company-administrator-permissions)
 
 пользователи с этой ролью имеют доступ ко всем административным функциям в Azure Active Directory, а также к службам, использующим идентификаторы Azure Active Directory, например Центр безопасности Microsoft 365, Центр соответствия требованиям Microsoft 365, Exchange Online, SharePoint Online и Skype для бизнеса Online. Пользователь, зарегистрировавший клиент Azure Active Directory, становится глобальным администратором. Только глобальные администраторы могут назначать другие административные роли. В компании может быть несколько глобальных администраторов. Глобальные администраторы могут сбросить пароль любого пользователя и администратора.
 
@@ -375,7 +375,7 @@ EDR и ATP в Защитнике Windows | Назначение ролей<br>У
 
 ### <a name="security-operatorsecurity-operator-permissions"></a>[Оператор безопасности](#security-operator-permissions)
 
-Пользователи с этой ролью могут управлять оповещениями и иметь глобальный доступ только для чтения к компоненту, связанному с безопасностью, включая всю информацию в Microsoft 365 центре безопасности, Azure Active Directory, защиту идентификации, управление привилегированными пользователями и Office 365. Центр безопасности и соответствия требованиям. Дополнительные сведения о разрешениях в Office 365 см. в статье [Разрешения в Центре безопасности и соответствия требованиям Office 365](https://docs.microsoft.com/office365/securitycompliance/permissions-in-the-security-and-compliance-center).
+Пользователи с этой ролью могут управлять оповещениями и иметь глобальный доступ только для чтения к функциям, связанным с безопасностью, включая всю информацию в Microsoft 365 центре безопасности, Azure Active Directory, защиту идентификации, управление привилегированными пользователями и Office 365. Центр безопасности и соответствия требованиям. Дополнительные сведения о разрешениях в Office 365 см. в статье [Разрешения в Центре безопасности и соответствия требованиям Office 365](https://docs.microsoft.com/office365/securitycompliance/permissions-in-the-security-and-compliance-center).
 
 В | Может
 --- | ---
@@ -1703,7 +1703,7 @@ EDR и ATP в Защитнике Windows | Просмотр и анализ оп
 Администратор облачного устройства | Администратор облачного устройства | 7698a772-787b-4ac8-901f-60d6b08affd2
 Администратор организации | Глобальный администратор. | 62e90394-69f5-4237-9190-012177145e10
 Администратор соответствия требованиям | администратор соответствия требованиям. | 17315797-102d-40b4-93e0-432062caca18
-Администратор соответствия данных требованиям | Администратор данных соответствия требованиям | e6d1a23a-da11-4be4-9570-befc86d067a7
+Администратор данных соответствия требованиям | Администратор данных соответствия требованиям | e6d1a23a-da11-4be4-9570-befc86d067a7
 Администратор условного доступа | Администратор условного доступа | b1be1c3e-b65d-4f19-8427-f6fa0d97feb9
 Администратор службы CRM | Администратор Dynamics 365 | 44367163-eba1-44c3-98af-f5787879f96a
 Лицо, утверждающее доступ клиентов к LockBox | Лицо, утверждающее доступ к защищенному хранилищу | 5c4f9dcd-47dc-4cf7-8c9a-9e4207cbfc91

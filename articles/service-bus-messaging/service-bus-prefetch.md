@@ -1,6 +1,6 @@
 ---
 title: Предварительная выборка сообщений служебной шины Azure | Документация Майкрософт
-description: Повышение производительности с помощью предварительной выборки сообщений служебной шины Azure.
+description: Повышение производительности с помощью предварительной выборки сообщений служебной шины Azure. Сообщения можно легко получить локально, прежде чем приложение запросит их.
 services: service-bus-messaging
 documentationcenter: ''
 author: axisc
@@ -11,14 +11,14 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 08/30/2018
+ms.date: 01/24/2020
 ms.author: aschhab
-ms.openlocfilehash: c63e6bf66e4832a1a5b0b5e6fc3dfbbf02d1e490
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 80717ab940d27e9bf108b3740309bcd7d71668fd
+ms.sourcegitcommit: b5d646969d7b665539beb18ed0dc6df87b7ba83d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "62125854"
+ms.lasthandoff: 01/26/2020
+ms.locfileid: "76760663"
 ---
 # <a name="prefetch-azure-service-bus-messages"></a>Предварительная выборка сообщений служебной шины Azure
 

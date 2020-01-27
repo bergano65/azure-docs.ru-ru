@@ -15,13 +15,12 @@ ms.workload: identity
 ms.date: 09/15/2019
 ms.author: jmprieur
 ms.custom: aaddev, identityplatformtop40
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 70a8c97ee1e10d53cd8da9687a9109eb4ce8ae3d
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.openlocfilehash: af4b00a630c2fc7d1b806a98f537e8635807609e
+ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74965574"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76702255"
 ---
 # <a name="scenario-daemon-application-that-calls-web-apis"></a>Сценарий: управляющее приложение, вызывающее веб-API
 
@@ -31,7 +30,7 @@ ms.locfileid: "74965574"
 
 [!INCLUDE [Pre-requisites](../../../includes/active-directory-develop-scenarios-prerequisites.md)]
 
-## <a name="overview"></a>Краткое описание
+## <a name="overview"></a>Обзор
 
 Приложение может получить маркер для вызова веб-API от имени самого себя (не от имени пользователя). Этот сценарий полезен для управляющих приложений. Он использует стандартные [учетные данные клиента](v2-oauth2-client-creds-grant-flow.md) OAuth 2,0.
 

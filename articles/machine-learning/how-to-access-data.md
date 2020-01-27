@@ -11,12 +11,12 @@ author: MayMSFT
 ms.reviewer: nibaccam
 ms.date: 01/15/2020
 ms.custom: seodec18
-ms.openlocfilehash: 4de8b032bd284ce0a2d6d8fd168b9ea3dd4937d3
-ms.sourcegitcommit: 7221918fbe5385ceccf39dff9dd5a3817a0bd807
+ms.openlocfilehash: 6867862c130bf6f0b7cc34098064f6ce6eec282b
+ms.sourcegitcommit: 87781a4207c25c4831421c7309c03fce5fb5793f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/21/2020
-ms.locfileid: "76289056"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76543501"
 ---
 # <a name="access-data-in-azure-storage-services"></a>Доступ к данным в службах хранилища Azure
 [!INCLUDE [aml-applies-to-basic-enterprise-sku](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -47,7 +47,7 @@ ms.locfileid: "76289056"
 
 ## <a name="supported-data-storage-service-types"></a>Поддерживаемые типы служб хранилища данных
 
-В настоящее время хранилища данных поддерживают хранение сведений о подключении к службам хранилища, указанным в следующей матрице.
+В настоящее время хранилища данных поддерживают хранение сведений о подключении к службам хранилища, указанным в следующей матрице. В настоящее время хранилище данных Azure не поддерживается. 
 
 | Тип&nbsp;хранилища | Тип&nbsp;проверки подлинности | [&nbsp;машинного обучения Azure&nbsp;Machine Studio](https://ml.azure.com/) | [&nbsp; пакета SDK для Python&nbsp;машинного обучения Azure&nbsp;](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py) |  [Интерфейс командной строки для&nbsp;машинного обучения Azure&nbsp;](reference-azure-machine-learning-cli.md) | [Azure&nbsp;машинного обучения&nbsp;Learning&nbsp; API-интерфейс для других служб](https://docs.microsoft.com/rest/api/azureml/)
 ---|---|---|---|---|---

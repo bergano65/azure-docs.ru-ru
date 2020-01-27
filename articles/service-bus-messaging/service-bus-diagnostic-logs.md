@@ -1,6 +1,6 @@
 ---
 title: Журналы диагностики служебной шины Azure | Документация Майкрософт
-description: Узнайте, как настроить журналы диагностики для служебной шины в Azure.
+description: В этой статье представлен обзор всех журналов операционных и диагностических операций, доступных для служебной шины Azure.
 keywords: ''
 documentationcenter: .net
 services: service-bus-messaging
@@ -13,14 +13,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: data-services
-ms.date: 01/23/2019
+ms.date: 01/24/2020
 ms.author: aschhab
-ms.openlocfilehash: 5bdda54ef46085cb1f3e33fe1d9f60937da9706f
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: c8eba538a7015648611e6054ce85b381dcfc9105
+ms.sourcegitcommit: b5d646969d7b665539beb18ed0dc6df87b7ba83d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75355208"
+ms.lasthandoff: 01/26/2020
+ms.locfileid: "76761004"
 ---
 # <a name="enable-diagnostics-logs-for-service-bus"></a>Включение журналов диагностики для служебной шины
 
@@ -77,9 +77,9 @@ ms.locfileid: "75355208"
 | Область действия | Операция|
 |-------| -------- |
 | Пространство имен | <ul> <li> Создание пространства имен</li> <li> Обновить пространство имен </li> <li> Удалить пространство имен </li>  </ul> | 
-| Очереди | <ul> <li> Создать очередь</li> <li> Обновление очереди</li> <li> Удаление очереди. </li> </ul> | 
-| Раздел | <ul> <li> Создание раздела </li> <li> Обновление раздела </li> <li> Удалить раздел </li> </ul> |
-| Subscription | <ul> <li> Создавать подписку </li> <li> Обновлять подписку </li> <li> Удалять подписку </li> </ul> |
+| Очереди | <ul> <li> Создать очередь</li> <li> Очередь обновления</li> <li> Удаление очереди. </li> </ul> | 
+| Раздел | <ul> <li> Создать раздел </li> <li> Обновление раздела </li> <li> Удалить раздел </li> </ul> |
+| Подписка | <ul> <li> Создавать подписку </li> <li> Обновлять подписку </li> <li> Удалять подписку </li> </ul> |
 
 > [!NOTE]
 > В настоящее время операции *чтения* не регистрируются в операционных журналах.

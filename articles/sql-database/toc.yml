@@ -86,12 +86,6 @@
               href: sql-database-ssms-mfa-authentication.md
             - name: Настройка многофакторной проверки подлинности
               href: sql-database-ssms-mfa-authentication-configure.md
-            - name: Настройка BYOK для TDE
-              href: transparent-data-encryption-byok-azure-sql-configure.md
-            - name: Смена ключей BYOK для TDE
-              href: transparent-data-encryption-byok-azure-sql-key-rotation.md
-            - name: Удаление предохранителя TDE
-              href: transparent-data-encryption-byok-azure-sql-remove-tde-protector.md
         - name: Защита данных
           items:
             - name: Прозрачное шифрование данных (TDE)
@@ -100,6 +94,12 @@
                   href: transparent-data-encryption-azure-sql.md
                 - name: Прозрачное шифрование данных с созданием собственных ключей
                   href: transparent-data-encryption-byok-azure-sql.md
+                - name: Настройка BYOK для TDE
+                  href: transparent-data-encryption-byok-azure-sql-configure.md
+                - name: Смена ключей BYOK для TDE
+                  href: transparent-data-encryption-byok-azure-sql-key-rotation.md
+                - name: Удаление предохранителя TDE
+                  href: transparent-data-encryption-byok-azure-sql-remove-tde-protector.md
             - name: Динамическое маскирование данных
               href: sql-database-dynamic-data-masking-get-started.md
             - name: Постоянное шифрование

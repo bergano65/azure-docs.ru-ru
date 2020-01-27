@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.custom: mvc
 ms.topic: article
 ms.date: 01/08/2020
-ms.openlocfilehash: fc0bac99aa70d7028412c68563a3024720fa49d9
-ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
+ms.openlocfilehash: 9fdbf3888b4302946fe20259a333842caa122836
+ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75745396"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76717789"
 ---
 # <a name="faq-about-using-azure-database-migration-service"></a>Часто задаваемые вопросы об использовании Azure Database Migration Service
 
@@ -96,7 +96,7 @@ Azure Database Migration Service является предпочтительны
 1. Создаете целевую базу данных.
 2. Оцените базы данных-источники.
     * Для однородных миграций оцените имеющиеся базы данных с помощью [DMA](https://www.microsoft.com/download/details.aspx?id=53595).
-    * Для разнородных миграций (из конкурирующих источников) оцените существующие базы данных с помощью [SSMA](https://aka.ms/get-ssma). Вы также можете использовать SSMA для преобразования объектов базы данных и переноса схемы на целевую платформу.
+    * Для разнородных миграций (от конкурирующих источников) оцените имеющиеся базы данных с помощью [SSMA](https://aka.ms/get-ssma). Вы также можете использовать SSMA для преобразования объектов базы данных и переноса схемы на целевую платформу.
 3. создание экземпляра Azure Database Migration Service;
 4. Создайте проект миграции, указав базы данных-источники, целевые базы данных и таблицы для миграции.
 5. Запустите полную загрузку.

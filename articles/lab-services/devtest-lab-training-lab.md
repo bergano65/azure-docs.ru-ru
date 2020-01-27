@@ -1,6 +1,6 @@
 ---
 title: Использование Azure DevTest Labs для обучения | Документация Майкрософт
-description: Узнайте, как использовать Azure DevTest Labs для сценариев обучения.
+description: В этой статье приведены подробные инструкции по настройке лаборатории для обучения в Azure DevTest Labs.
 services: devtest-lab,virtual-machines,lab-services
 documentationcenter: na
 author: spelluru
@@ -11,14 +11,14 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 04/17/2018
+ms.date: 01/24/2020
 ms.author: spelluru
-ms.openlocfilehash: 0a7ce1640636c6fba246584d098043a91990b9a0
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 8f0a930d6e3c04548ade71f6d4e3294114eb60a2
+ms.sourcegitcommit: b5d646969d7b665539beb18ed0dc6df87b7ba83d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60622850"
+ms.lasthandoff: 01/26/2020
+ms.locfileid: "76759983"
 ---
 # <a name="use-azure-devtest-labs-for-training"></a>Использование Azure DevTest Labs для обучения
 Помимо разработки и тестирования, Azure DevTest Labs можно использовать для реализации множества основных сценариев. Один из таких сценариев — настройка лаборатории для обучения. Azure DevTest Labs позволяет создать лабораторию, куда можно добавить пользовательские шаблоны. Каждый обучаемый может использовать их для создания идентичных изолированных сред для обучения. Путем применения политик можно настроить лабораторию таким образом, чтобы каждый обучаемый мог использовать среды обучения только при необходимости и при достаточном количестве ресурсов, например виртуальных машин, требуемых для обучения. Теперь вы можете с легкостью предоставить обучаемым доступ к лаборатории, которую они могут открыть одним щелчком.

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 01/02/2020
 ms.author: apimpm
-ms.openlocfilehash: a1c514368960d39834125bd497d05b3d9ebeae7c
-ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
+ms.openlocfilehash: 61d43addfdf9008cb7aa8a073dcf3bb702cb55f1
+ms.sourcegitcommit: 38b11501526a7997cfe1c7980d57e772b1f3169b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75640709"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76513377"
 ---
 # <a name="api-import-restrictions-and-known-issues"></a>Ограничения и известные проблемы при импорте API
 
@@ -52,7 +52,6 @@ ms.locfileid: "75640709"
 
 -   Если указано много `servers`, то при управлении API будет предпринята попытка выбрать первый URL-адрес HTTPs. Если нет ни одного URL-адреса с протоколом HTTPS, тогда подходит первый URL-адрес с протоколом HTTP. Если нет ни одного URL-адреса с протоколом HTTP, тогда URL-адрес сервера будет пустым.
 -   `Examples` не поддерживается, но `example`.
--   `Multipart/form-data` не поддерживается.
 
 ## <a name="openapi-import-update-and-export-mechanisms"></a>Механизмы импорта, обновления и экспорта OpenAPI
 

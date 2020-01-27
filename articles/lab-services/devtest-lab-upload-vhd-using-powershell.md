@@ -1,6 +1,6 @@
 ---
 title: Отправка VHD-файла в Azure Labs DevTest с помощью PowerShell | Документация Майкрософт
-description: Отправка VHD-файла в учетную запись хранения лаборатории с помощью PowerShell
+description: Эта статья содержит пошаговое руководство, в котором показано, как отправить VHD-файл в Azure DevTest Labs с помощью PowerShell.
 services: devtest-lab,virtual-machines,lab-services
 documentationcenter: na
 author: spelluru
@@ -12,14 +12,14 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 04/17/2018
+ms.date: 01/24/2020
 ms.author: spelluru
-ms.openlocfilehash: 56a66c3eb1dad93fad3ad1572989dc0c0aa14632
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: a9e5a69cd7840bbaff081a4d47cb60f62a76eda6
+ms.sourcegitcommit: b5d646969d7b665539beb18ed0dc6df87b7ba83d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60622785"
+ms.lasthandoff: 01/26/2020
+ms.locfileid: "76759761"
 ---
 # <a name="upload-vhd-file-to-labs-storage-account-using-powershell"></a>Отправка VHD-файла в учетную запись хранения лаборатории с помощью PowerShell
 
@@ -31,7 +31,7 @@ ms.locfileid: "60622785"
 
 Ниже приведены пошаговые инструкции по отправке VHD-файла в Azure DevTest Labs с помощью PowerShell. 
 
-1. Войдите на [портале Azure](https://go.microsoft.com/fwlink/p/?LinkID=525040).
+1. Войдите на [портал Azure](https://go.microsoft.com/fwlink/p/?LinkID=525040).
 
 1. Щелкните **Все службы** и выберите в списке **DevTest Labs**.
 

@@ -1,17 +1,17 @@
 ---
 title: Сведения о защите доступа к данным в Azure Cosmos DB
 description: Основные понятия управления доступом в Azure Cosmos DB, включая главные ключи, ключи только для чтения, пользователей и разрешения.
-author: markjbrown
-ms.author: mjbrown
+author: thomasweiss
+ms.author: thweiss
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 05/21/2019
-ms.openlocfilehash: ec32dfbe9aac13a9b3c08922b73b9a23d668d744
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.date: 01/21/2020
+ms.openlocfilehash: 448b14168e85e75b7ed19e189600186ce11c2902
+ms.sourcegitcommit: b5d646969d7b665539beb18ed0dc6df87b7ba83d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73152273"
+ms.lasthandoff: 01/26/2020
+ms.locfileid: "76756425"
 ---
 # <a name="secure-access-to-data-in-azure-cosmos-db"></a>Защита доступа к данным в Azure Cosmos DB
 
@@ -26,15 +26,16 @@ ms.locfileid: "73152273"
 
 <a id="master-keys"></a>
 
-## <a name="master-keys"></a>Главные ключи 
+## <a name="master-keys"></a>Главные ключи
 
-Главные ключи предоставляют доступ ко всем административным ресурсам учетной записи базы данных. Главные ключи.  
+Главные ключи предоставляют доступ ко всем административным ресурсам учетной записи базы данных. Главные ключи.
+
 - предоставляют доступ к учетным записям, базам данных, пользователям и разрешениям; 
 - не могут использоваться для предоставления детального доступа к контейнерам и документам;
 - создаются в процессе создания учетной записи;
 - можно создать повторно в любое время.
 
-Каждая учетная запись состоит из двух главных ключей: первичного и вторичного. Двойные ключи позволяют повторно создавать или сменять ключи, обеспечивая постоянный доступ к учетной записи и данным. 
+Каждая учетная запись состоит из двух главных ключей: первичного и вторичного. Двойные ключи позволяют повторно создавать или сменять ключи, обеспечивая постоянный доступ к учетной записи и данным.
 
 Помимо двух главных ключей в учетной записи Cosmos DB существует еще два ключа только для чтения. Эти ключи разрешают только операции чтения в учетной записи. Ключи только для чтения не предоставляют доступ к ресурсам разрешений на чтение.
 
@@ -48,37 +49,29 @@ ms.locfileid: "73152273"
 
 ### <a name="code-sample-to-use-a-master-key"></a>Пример кода для использования главного ключа
 
-В следующем примере кода показано, как использовать конечную точку учетной записи Cosmos DB и главный ключ для создания экземпляра DocumentClient и построения базы данных. 
+В следующем примере кода показано, как использовать конечную точку учетной записи Cosmos DB и главный ключ для создания экземпляра DocumentClient и построения базы данных.
 
 ```csharp
 //Read the Azure Cosmos DB endpointUrl and authorization keys from config.
 //These values are available from the Azure portal on the Azure Cosmos DB account blade under "Keys".
-//NB > Keep these values in a safe and secure location. Together they provide Administrative access to your DocDB account.
+//Keep these values in a safe and secure location. Together they provide Administrative access to your Azure Cosmos DB account.
 
 private static readonly string endpointUrl = ConfigurationManager.AppSettings["EndPointUrl"];
 private static readonly string authorizationKey = ConfigurationManager.AppSettings["AuthorizationKey"];
 
-client = new DocumentClient(new Uri(endpointUrl), authorizationKey);
-
-// Create Database
-Database database = await client.CreateDatabaseAsync(
-    new Database
-    {
-        Id = databaseName
-    });
+CosmosClient client = new CosmosClient(endpointUrl, authorizationKey);
 ```
 
-<a id="resource-tokens"></a>
-
-## <a name="resource-tokens"></a>Маркеры ресурсов
+## Маркеры ресурсов<a id="resource-tokens"></a>
 
 Маркеры ресурсов предоставляют доступ к ресурсам приложения в базе данных. Маркеры ресурсов.
+
 - предоставляют доступ к определенным контейнерам, ключам секции, документам, вложениям, хранимым процедурам, триггерам и определяемым пользователем функциям (UDF);
 - создаются, когда [пользователю](#users) предоставляются [разрешения](#permissions) на доступ к определенному ресурсу;
 - создаются повторно, когда в отношении ресурса разрешения выполняется вызов POST, GET или PUT;
 - используют хэш, который маркер ресурса специально создал для пользователя, ресурса и разрешения;
 - имеют ограничение по времени (настраиваемый срок действия). Допустимый интервал времени по умолчанию составляет один час. Однако продолжительность действия маркера можно задать явным образом. Ее значение не должно превышать пять часов;
-- обеспечивают безопасную альтернативу выдаче главного ключа; 
+- обеспечивают безопасную альтернативу выдаче главного ключа;
 - позволяют клиентам читать, записывать и удалять ресурсы в учетной записи Cosmos DB в соответствии с предоставленными им разрешениями.
 
 Маркер ресурсов можно использовать (создавая пользователей и разрешения Cosmos DB), если доступ к ресурсам в учетной записи Cosmos DB требуется предоставить клиенту, которому нельзя доверять.  
@@ -87,90 +80,69 @@ Database database = await client.CreateDatabaseAsync(
 
 Ниже приведена стандартная схема запроса, создания и отправки маркеров ресурсов клиентам.
 
-1. Служба среднего уровня настроена для обслуживания мобильного приложения по обмену фотографиями. 
+1. Служба среднего уровня настроена для обслуживания мобильного приложения по обмену фотографиями.
 2. Служба среднего уровня обрабатывает главный ключ учетной записи Cosmos DB.
-3. Приложение по обмену фотографиями устанавливается на мобильных устройствах конечных пользователей. 
+3. Приложение по обмену фотографиями устанавливается на мобильных устройствах конечных пользователей.
 4. При входе в систему приложение для обмена фотографиями идентифицирует пользователя службы. Механизм установления личности пользователя реализуется исключительно в приложении.
 5. После установления личности служба среднего уровня запрашивает разрешения на основе удостоверения.
 6. Служба среднего уровня отправляет маркер ресурса обратно в приложение для телефона.
-7. Приложение может по-прежнему использовать маркер ресурса для прямого доступа к ресурсам Cosmos DB с разрешениями, определенными маркером, и в течение интервала времени, разрешенного этим маркером. 
+7. Приложение может по-прежнему использовать маркер ресурса для прямого доступа к ресурсам Cosmos DB с разрешениями, определенными маркером, и в течение интервала времени, разрешенного этим маркером.
 8. По истечении срока действия маркера ресурса последующие запросы получают исключение: 401 — не авторизовано.  На этом этапе приложение для телефона повторно установит личность и запросит новый маркер ресурса.
 
     ![Рабочий процесс маркеров ресурсов Azure Cosmos DB](./media/secure-access-to-data/resourcekeyworkflow.png)
 
-Создание маркеров ресурсов и управление ими осуществляется собственными клиентскими библиотеками Cosmos DB. Однако если используется REST, то необходимо создать заголовки запросов и проверки подлинности. Дополнительные сведения о создании заголовков проверки подлинности для REST см. в статье [Access control in the DocumentDB API](https://docs.microsoft.com/rest/api/cosmos-db/access-control-on-cosmosdb-resources) (Управление доступом в API DocumentDB) или в [репозитории исходного кода для наших пакетов SDK](https://github.com/Azure/azure-documentdb-node/blob/master/source/lib/auth.js).
+Создание маркеров ресурсов и управление ими осуществляется собственными клиентскими библиотеками Cosmos DB. Однако если используется REST, то необходимо создать заголовки запросов и проверки подлинности. Дополнительные сведения о создании заголовков проверки подлинности для RESTFUL см. в статье [Контроль доступа к Cosmos DB ресурсам](https://docs.microsoft.com/rest/api/cosmos-db/access-control-on-cosmosdb-resources) или исходный код [пакета SDK для .NET](https://github.com/Azure/azure-cosmos-dotnet-v3/blob/master/Microsoft.Azure.Cosmos/src/AuthorizationHelper.cs) или [node. js](https://github.com/Azure/azure-cosmos-js/blob/master/src/auth.ts).
 
 Пример службы среднего уровня, используемой для создания маркеров ресурсов или в качестве брокера, см. в [репозитории приложения ResourceTokenBroker](https://github.com/Azure/azure-documentdb-dotnet/tree/master/samples/xamarin/UserItems/ResourceTokenBroker/ResourceTokenBroker/Controllers).
 
-<a id="users"></a>
+## Пользователей<a id="users"></a>
 
-## <a name="users"></a>Пользователи
-Cosmos DB пользователи связаны с базой данных Cosmos.  Каждая база данных может содержать несколько пользователей Cosmos DB или не содержать ни одного.  В следующем примере кода показано, как создать ресурс пользователя Cosmos DB.
+Azure Cosmos DB пользователи связаны с базой данных Cosmos.  Каждая база данных может содержать несколько пользователей Cosmos DB или не содержать ни одного. В следующем примере кода показано, как создать Cosmos DB пользователя с помощью [пакета SDK для Azure Cosmos DB .NET v3](https://github.com/Azure/azure-cosmos-dotnet-v3/tree/master/Microsoft.Azure.Cosmos.Samples/Usage/UserManagement).
 
 ```csharp
 //Create a user.
-User docUser = new User
-{
-    Id = "mobileuser"
-};
+Database database = benchmark.client.GetDatabase("SalesDatabase");
 
-docUser = await client.CreateUserAsync(UriFactory.CreateDatabaseUri("db"), docUser);
+User user = await database.CreateUserAsync("User 1");
 ```
 
 > [!NOTE]
-> Каждый пользователь Cosmos DB обладает свойством PermissionsLink, которое можно использовать для получения списка [разрешений](#permissions), связанных с этим пользователем.
-> 
-> 
+> Каждый Cosmos DB пользователь имеет метод ReadAsync (), который можно использовать для получения списка [разрешений](#permissions) , связанных с пользователем.
 
-<a id="permissions"></a>
+## Чтение<a id="permissions"></a>
 
-## <a name="permissions"></a>Разрешения
-Ресурс разрешения Cosmos DB связан с пользователем Cosmos DB.  Каждый пользователь может иметь несколько разрешений Cosmos DB или не иметь ни одного.  Ресурс разрешения предоставляет доступ к маркеру безопасности, необходимому пользователю при попытке доступа к конкретному ресурсу приложения.
-Существует два уровня доступа, предоставляемых ресурсом разрешения:
+Ресурс разрешения связывается с пользователем и назначается в контейнере, а также на уровне ключа секции. Каждый пользователь может содержать не более одного разрешения. Ресурс разрешения предоставляет доступ к маркеру безопасности, который необходим пользователю при попытке доступа к определенному контейнеру или данным в указанном ключе секции. Существует два уровня доступа, предоставляемых ресурсом разрешения:
 
-* Все. Пользователь имеет полный набор разрешений для ресурса.
-* Чтение. Пользователь может только считывать содержимое ресурса, но не может выполнять на ресурсе операции записи, обновления или удаления.
+- Все. Пользователь имеет полный набор разрешений для ресурса.
+- Чтение. Пользователь может только считывать содержимое ресурса, но не может выполнять на ресурсе операции записи, обновления или удаления.
 
 > [!NOTE]
-> Для выполнения хранимых процедур Cosmos DB пользователь должен иметь полные разрешения на использование контейнера, в котором будут выполняться хранимые процедуры.
-> 
-> 
+> Для выполнения хранимых процедур пользователь должен иметь разрешение ALL на контейнер, в котором будет выполняться хранимая процедура.
 
 ### <a name="code-sample-to-create-permission"></a>Пример кода для создания разрешения
 
 В следующем примере кода показано, как создать ресурс разрешения, прочесть его маркер и связать разрешения с созданным выше [пользователем](#users).
 
 ```csharp
-// Create a permission.
-Permission docPermission = new Permission
-{
-    PermissionMode = PermissionMode.Read,
-    ResourceLink = UriFactory.CreateDocumentCollectionUri("db", "collection"),
-    Id = "readperm"
-};
-  
-docPermission = await client.CreatePermissionAsync(UriFactory.CreateUserUri("db", "user"), docPermission);
-Console.WriteLine(docPermission.Id + " has token of: " + docPermission.Token);
+// Create a permission on a container and specific partition key value
+Container container = client.GetContainer("SalesDatabase", "OrdersContainer");
+user.CreatePermissionAsync(
+    new PermissionProperties(
+        id: "permissionUser1Orders",
+        permissionMode: PermissionMode.All,
+        container: benchmark.container,
+        resourcePartitionKey: new PartitionKey("012345")));
 ```
 
-Если вы указали ключ секции для коллекции, то разрешение для ресурсов коллекции, документа и вложения также должно включать ResourcePartitionKey наряду с ResourceLink.
+### <a name="code-sample-to-read-permission-for-user"></a>Пример кода для разрешения на чтение для пользователя
 
-### <a name="code-sample-to-read-permissions-for-user"></a>Пример кода для чтения разрешений пользователя
-
-Чтобы получить все ресурсы разрешений, связанные с конкретным пользователем, Cosmos DB предоставляет каждому объекту пользователя доступ к каналу разрешений.  В следующем фрагменте кода показано, как получить разрешение, связанное с созданным выше пользователем, сформировать список разрешений и создать новый DocumentClient от имени пользователя.
+В следующем фрагменте кода показано, как получить разрешение, связанное с созданным ранее пользователем, и создать экземпляр нового Космосклиент от имени пользователя с областью действия с одним ключом секции.
 
 ```csharp
-//Read a permission feed.
-FeedResponse<Permission> permFeed = await client.ReadPermissionFeedAsync(
-  UriFactory.CreateUserUri("db", "myUser"));
- List<Permission> permList = new List<Permission>();
+//Read a permission, create user client session.
+PermissionProperties permissionProperties = await user.GetPermission("permissionUser1Orders")
 
-foreach (Permission perm in permFeed)
-{
-    permList.Add(perm);
-}
-
-DocumentClient userClient = new DocumentClient(new Uri(endpointUrl), permList);
+CosmosClient client = new CosmosClient(accountEndpoint: "MyEndpoint", authKeyOrResourceToken: permissionProperties.Token);
 ```
 
 ## <a name="add-users-and-assign-roles"></a>Добавление пользователей и назначение ролей
@@ -183,15 +155,18 @@ DocumentClient userClient = new DocumentClient(new Uri(endpointUrl), permList);
 4. В поле **Назначение доступа** выберите значение **Пользователь, группа или приложение Azure AD**.
 5. В каталоге выберите пользователя, группу или приложение, которым нужно предоставить доступ.  Каталог можно искать по отображаемому имени, адресу электронной почты или идентификатору объектов.
     Выбранный пользователь, группа или приложение появятся в списке выбранных участников.
-6. В нижней части страницы нажмите кнопку **Save**.
+6. Выберите команду **Сохранить**.
 
 Теперь сущность может считывать ресурсы Azure Cosmos DB.
 
 ## <a name="delete-or-export-user-data"></a>Удаление и экспорт сведений о пользователях
+
 Azure Cosmos DB позволяет искать, выбирать, изменять и удалять любые персональные данные, расположенные в базе данных или в коллекциях. Azure Cosmos DB предоставляет интерфейсы API для удаления персональных данных. Однако вы сами должны использовать эти интерфейсы API и определить логику, необходимую для удаления персональных данных. Каждый мультимодельный интерфейс API (SQL, MongoDB, Gremlin, Cassandra и API таблиц) предоставляет различные языковые пакеты SDK, содержащие методы для поиска и удаления персональных данных. Вы также можете включить функцию [срока жизни (TTL)](time-to-live.md) для автоматического удаления данных по истечении указанного периода времени без дополнительных затрат.
 
 [!INCLUDE [GDPR-related guidance](../../includes/gdpr-dsr-and-stp-note.md)]
 
 ## <a name="next-steps"></a>Дальнейшие действия
-* Дополнительные сведения о безопасности базы данных Cosmos см. в разделе [Cosmos DB: безопасность базы данных](database-security.md).
-* Сведения о создании маркеров проверки подлинности Azure Cosmos DB см. в статье [Access control in the DocumentDB API](https://docs.microsoft.com/rest/api/cosmos-db/access-control-on-cosmosdb-resources) (Управление доступом в API DocumentDB).
+
+- Дополнительные сведения о безопасности базы данных Cosmos см. в разделе [Cosmos DB безопасность базы данных](database-security.md).
+- Сведения о создании маркеров проверки подлинности Azure Cosmos DB см. в статье [Access control in the DocumentDB API](https://docs.microsoft.com/rest/api/cosmos-db/access-control-on-cosmosdb-resources) (Управление доступом в API DocumentDB).
+- Примеры управления пользователями с пользователями и разрешениями: [примеры управления пользователями для .NET SDK v3](https://github.com/Azure/azure-cosmos-dotnet-v3/blob/master/Microsoft.Azure.Cosmos.Samples/Usage/UserManagement/UserManagementProgram.cs)

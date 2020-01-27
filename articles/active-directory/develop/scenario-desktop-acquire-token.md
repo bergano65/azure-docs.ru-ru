@@ -15,13 +15,12 @@ ms.workload: identity
 ms.date: 10/30/2019
 ms.author: jmprieur
 ms.custom: aaddev
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: da8d9a43ac5db4cedc8b27910bb838b911f3ebc6
-ms.sourcegitcommit: 7221918fbe5385ceccf39dff9dd5a3817a0bd807
+ms.openlocfilehash: bc00f348e9443384c7799bf227efd7309d6aeac2
+ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/21/2020
-ms.locfileid: "76293153"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76702204"
 ---
 # <a name="desktop-app-that-calls-web-apis-acquire-a-token"></a>Классическое приложение, вызывающее веб-API: получение маркера
 
@@ -525,7 +524,7 @@ static async Task GetATokenForGraph()
 
 # <a name="javatabjava"></a>[Java](#tab/java)
 
-This extract is from the [MSAL Java dev samples](https://github.com/AzureAD/microsoft-authentication-library-for-java/blob/dev/src/samples/public-client/). Here's the class used in MSAL Java dev samples to configure the samples: [TestData](https://github.com/AzureAD/microsoft-authentication-library-for-java/blob/dev/src/samples/public-client/TestData.java).
+Это извлечение из [примеров разработки Java MSAL](https://github.com/AzureAD/microsoft-authentication-library-for-java/blob/dev/src/samples/public-client/). Ниже приведен класс, используемый в примерах разработки Java MSAL для настройки примеров: [TestData](https://github.com/AzureAD/microsoft-authentication-library-for-java/blob/dev/src/samples/public-client/TestData.java).
 
 ```Java
 PublicClientApplication app = PublicClientApplication.builder(TestData.PUBLIC_CLIENT_ID)
@@ -551,7 +550,7 @@ PublicClientApplication app = PublicClientApplication.builder(TestData.PUBLIC_CL
 
 # <a name="macostabmacos"></a>[MacOS](#tab/macOS)
 
-This flow doesn't apply to MacOS.
+Этот поток не применяется к MacOS.
 
 ---
 
@@ -795,7 +794,7 @@ static async Task GetATokenForGraph()
 
 # <a name="javatabjava"></a>[Java](#tab/java)
 
-Приведенные ниже примеры извлекаются из [примеров разработки Java MSAL](https://github.com/AzureAD/microsoft-authentication-library-for-java/blob/dev/src/samples/public-client/). Here's the class used in MSAL Java dev samples to configure the samples: [TestData](https://github.com/AzureAD/microsoft-authentication-library-for-java/blob/dev/src/samples/public-client/TestData.java).
+Приведенные ниже примеры извлекаются из [примеров разработки Java MSAL](https://github.com/AzureAD/microsoft-authentication-library-for-java/blob/dev/src/samples/public-client/). Ниже приведен класс, используемый в примерах разработки Java MSAL для настройки примеров: [TestData](https://github.com/AzureAD/microsoft-authentication-library-for-java/blob/dev/src/samples/public-client/TestData.java).
 
 ```Java
 PublicClientApplication app = PublicClientApplication.builder(TestData.PUBLIC_CLIENT_ID)
@@ -842,7 +841,7 @@ future.handle((res, ex) -> {
 
 # <a name="pythontabpython"></a>[Python](#tab/python)
 
-This extract is from the [MSAL Python dev samples](https://github.com/AzureAD/microsoft-authentication-library-for-python/blob/dev/sample/).
+Это извлечение из примеров для [разработчиков MSAL Python](https://github.com/AzureAD/microsoft-authentication-library-for-python/blob/dev/sample/).
 
 ```Python
 # Create a preferably long-lived app instance which maintains a token cache.
@@ -880,33 +879,33 @@ if not result:
 
 ### <a name="device-code-flow"></a>Поток кода устройства
 
-If you're writing a command-line tool that doesn't have web controls, and you can't or don't want to use the previous flows, you need to use the device code flow.
+Если вы создаете программу командной строки, которая не содержит веб-элементы управления, и вы не можете использовать предыдущие последовательности или не хотите, необходимо использовать поток кода устройства.
 
-Interactive authentication with Azure AD requires a web browser. For more information, see [Usage of web browsers](https://aka.ms/msal-net-uses-web-browser). To authenticate users on devices or operating systems that don't provide a web browser, device code flow lets the user use another device such as a computer or a mobile phone to sign in interactively. By using the device code flow, the application obtains tokens through a two-step process that's designed for these devices or OSes. Examples of such applications are applications that run on iOT or command-line tools (CLI). The idea is that:
+Для интерактивной проверки подлинности в Azure AD требуется веб-браузер. Дополнительные сведения см. в разделе [Использование веб-браузеров](https://aka.ms/msal-net-uses-web-browser). Для проверки подлинности пользователей на устройствах или операционных системах, которые не предоставляют веб-браузер, поток кода устройства позволяет пользователю использовать другое устройство, например компьютер или мобильный телефон, для входа в интерактивном режиме. С помощью потока кода устройства приложение получает маркеры через двухэтапный процесс, предназначенный для этих устройств или ОС. Примерами таких приложений являются приложения, работающие в iOT или в программах командной строки (CLI). Идея состоит в том, что:
 
-1. Whenever user authentication is required, the app provides a code for the user. The user is asked to use another device, such as an internet-connected smartphone, to go to a URL, for instance, `https://microsoft.com/devicelogin`. Then the user is prompted to enter the code. That done, the web page leads the user through a normal authentication experience, which includes consent prompts and multifactor authentication, if necessary.
+1. Каждый раз, когда требуется проверка подлинности пользователя, приложение предоставляет код для пользователя. Пользователю предлагается использовать другое устройство, например смартфон, подключенный к Интернету, для перехода по URL-адресу, например `https://microsoft.com/devicelogin`. Затем пользователю предлагается ввести код. Это сделало то, что на веб-странице пользователь выполняет обычную проверку подлинности, включая запросы согласия и многофакторную проверку подлинности, если это необходимо.
 
-2. Upon successful authentication, the command-line app receives the required tokens through a back channel and uses them to perform the web API calls it needs.
+2. После успешной проверки подлинности приложение командной строки получает необходимые токены через канал обратного вызова и использует их для выполнения необходимых им вызовов веб-API.
 
 ### <a name="use-it"></a>Не следует от этого отказываться.
 
 # <a name="nettabdotnet"></a>[.NET](#tab/dotnet)
 
-`IPublicClientApplication`contains a method named `AcquireTokenWithDeviceCode`.
+`IPublicClientApplication`содержит метод с именем `AcquireTokenWithDeviceCode`.
 
 ```csharp
  AcquireTokenWithDeviceCode(IEnumerable<string> scopes,
                             Func<DeviceCodeResult, Task> deviceCodeResultCallback)
 ```
 
-This method takes as parameters:
+Этот метод принимает в качестве параметров:
 
-- The `scopes` to request an access token for.
-- A callback that receives the `DeviceCodeResult`.
+- `scopes` для запроса маркера доступа.
+- Обратный вызов, получающий `DeviceCodeResult`.
 
-  ![DeviceCodeResult properties](https://user-images.githubusercontent.com/13203188/56024968-7af1b980-5d11-11e9-84c2-5be2ef306dc5.png)
+  ![Свойства Девицекодересулт](https://user-images.githubusercontent.com/13203188/56024968-7af1b980-5d11-11e9-84c2-5be2ef306dc5.png)
 
-The following sample code presents the most current case, with explanations of the kind of exceptions you can get and their mitigation.
+В следующем образце кода представлен наиболее актуальный вариант с описанием типов исключений, которые можно получить, и их устранением.
 
 ```csharp
 private const string ClientId = "<client_guid>";
@@ -997,7 +996,7 @@ private async Task<AuthenticationResult> AcquireByDeviceCodeAsync(IPublicClientA
 ```
 # <a name="javatabjava"></a>[Java](#tab/java)
 
-This extract is from the [MSAL Java dev samples](https://github.com/AzureAD/microsoft-authentication-library-for-java/blob/dev/src/samples/public-client/). Here's the class used in MSAL Java dev samples to configure the samples: [TestData](https://github.com/AzureAD/microsoft-authentication-library-for-java/blob/dev/src/samples/public-client/TestData.java).
+Это извлечение из [примеров разработки Java MSAL](https://github.com/AzureAD/microsoft-authentication-library-for-java/blob/dev/src/samples/public-client/). Ниже приведен класс, используемый в примерах разработки Java MSAL для настройки примеров: [TestData](https://github.com/AzureAD/microsoft-authentication-library-for-java/blob/dev/src/samples/public-client/TestData.java).
 
 ```java
 PublicClientApplication app = PublicClientApplication.builder(TestData.PUBLIC_CLIENT_ID)
@@ -1030,7 +1029,7 @@ future.join();
 
 # <a name="pythontabpython"></a>[Python](#tab/python)
 
-This extract is from the [MSAL Python dev samples](https://github.com/AzureAD/microsoft-authentication-library-for-python/blob/dev/sample/).
+Это извлечение из примеров для [разработчиков MSAL Python](https://github.com/AzureAD/microsoft-authentication-library-for-python/blob/dev/sample/).
 
 ```Python
 # Create a preferably long-lived app instance which maintains a token cache.
@@ -1081,37 +1080,37 @@ if not result:
 
 # <a name="macostabmacos"></a>[MacOS](#tab/macOS)
 
-This flow doesn't apply to MacOS.
+Этот поток не применяется к MacOS.
 
 ---
 
-## <a name="file-based-token-cache"></a>File-based token cache
+## <a name="file-based-token-cache"></a>Кэш маркеров на основе файлов
 
 В MSAL.NET по умолчанию предоставляется кэш маркеров в памяти.
 
-### <a name="serialization-is-customizable-in-windows-desktop-apps-and-web-apps-or-web-apis"></a>Serialization is customizable in Windows desktop apps and web apps or web APIs
+### <a name="serialization-is-customizable-in-windows-desktop-apps-and-web-apps-or-web-apis"></a>Сериализация настраивается в классических приложениях Windows, веб-приложениях или веб-API.
 
-In the case of .NET Framework and .NET Core, if you don't do anything extra, the in-memory token cache lasts for the duration of the application. To understand why serialization isn't provided out of the box, remember that MSAL .NET desktop or .NET Core applications can be console or Windows applications (which would have access to the file system) *but also* web applications or web APIs. These web apps and web APIs might use some specific cache mechanisms like databases, distributed caches, and Redis caches. To have a persistent token cache application in .NET desktop or .NET Core, you'll need to customize the serialization.
+В случае .NET Framework и .NET Core, если не выполнить никаких дополнительных действий, кэш маркеров в памяти продолжается в течение всего времени работы приложения. Чтобы понять, почему сериализация не предоставлялась, следует помнить, что приложения MSAL .NET Desktop или .NET Core могут быть консольными или приложениями Windows (которые могут иметь доступ к файловой системе), *а также* веб-приложениям или веб-API. Эти веб-приложения и веб-API могут использовать некоторые определенные механизмы кэширования, такие как базы данных, распределенные кэши и кэши Redis. Чтобы иметь постоянное приложение кэша маркеров на рабочем столе .NET или .NET Core, необходимо настроить сериализацию.
 
-Classes and interfaces involved in token cache serialization are the following types:
+Классы и интерфейсы, задействованные в сериализации кэша маркеров, имеют следующие типы:
 
-- ``ITokenCache``, which defines events to subscribe to token cache serialization requests, and methods to serialize or deserialize the cache at various formats (ADAL v3.0, MSAL 2.x, and MSAL 3.x = ADAL v5.0).
+- ``ITokenCache``, определяющий события для подписки на запросы сериализации кэша маркеров, а также методы сериализации или десериализации кэша в различных форматах (ADAL v 3.0, MSAL 2. x и MSAL 3. x = ADAL v 5.0).
 - Обратный вызов ``TokenCacheCallback`` передается событиям, что позволяет обрабатывать операции сериализации. Они будут вызываться с аргументами типа ``TokenCacheNotificationArgs``.
-- ``TokenCacheNotificationArgs`` only provides the application ``ClientId`` and a reference to the user for which the token is available.
+- ``TokenCacheNotificationArgs`` предоставляет только ``ClientId`` приложения и ссылку на пользователя, для которого доступен маркер.
 
-  ![Token cache serialization diagram](https://user-images.githubusercontent.com/13203188/56027172-d58d1480-5d15-11e9-8ada-c0292f1800b3.png)
+  ![Схема сериализации кэша маркеров](https://user-images.githubusercontent.com/13203188/56027172-d58d1480-5d15-11e9-8ada-c0292f1800b3.png)
 
 > [!IMPORTANT]
-> MSAL.NET создает кэши маркеров и предоставляет кэш `IToken` при вызове свойств `UserTokenCache` и `AppTokenCache` приложения. You aren't supposed to implement the interface yourself. При реализации пользовательской сериализации для кэша маркеров в вашу зону ответственности входит следующее:
+> MSAL.NET создает кэши маркеров и предоставляет кэш `IToken` при вызове свойств `UserTokenCache` и `AppTokenCache` приложения. Вы не должны реализовывать интерфейс самостоятельно. При реализации пользовательской сериализации для кэша маркеров в вашу зону ответственности входит следующее:
 >
-> - React to `BeforeAccess` and `AfterAccess` events, or their *Async* counterpart. The`BeforeAccess` delegate is responsible for deserializing the cache. The `AfterAccess` delegate is responsible for serializing the cache.
-> - Understand that part of these events store or load blobs, which are passed through the event argument to whatever storage you want.
+> - Реагирование на события `BeforeAccess` и `AfterAccess` или на их *асинхронный* аналог. Делегат`BeforeAccess` отвечает за десериализацию кэша. Делегат `AfterAccess` отвечает за сериализацию кэша.
+> - Следует понимать, что часть этих событий хранит или загружает большие двоичные объекты, которые передаются через аргумент события в любое требуемое хранилище.
 
-The strategies are different depending on if you're writing a token cache serialization for a public client application, such as a desktop, or a confidential client application, such as a web app or web API or a daemon app.
+Стратегии различаются в зависимости от того, что вы создаете сериализацию кэша маркеров для общедоступного клиентского приложения, такого как рабочий стол или конфиденциальное клиентское приложение, например веб-приложение или веб-интерфейс API или управляющее приложение.
 
-Since MSAL v2.x, you have several options. Your choice depends on whether you want to serialize the cache only to the MSAL.NET format, which is a unified format cache that's common with MSAL but also across the platforms. Or, you might also want to support the [legacy](https://github.com/AzureAD/azure-activedirectory-library-for-dotnet/wiki/Token-cache-serialization) token cache serialization of ADAL v3.
+Так как MSAL v2. x, у вас есть несколько вариантов. Выбор зависит от того, хотите ли вы сериализовать кэш только в формате MSAL.NET, который является единым кэшем формата, который является общим для MSAL, но также между платформами. Кроме того, может потребоваться поддержка сериализации кэша маркеров [прежних версий](https://github.com/AzureAD/azure-activedirectory-library-for-dotnet/wiki/Token-cache-serialization) для ADAL v3.
 
-The customization of token cache serialization to share the SSO state between ADAL.NET 3.x, ADAL.NET 5.x, and MSAL.NET is explained in part of the sample [active-directory-dotnet-v1-to-v2](https://github.com/Azure-Samples/active-directory-dotnet-v1-to-v2).
+Настройка сериализации кэша маркеров для совместного использования состояния единого входа между ADAL.NET 3. x, ADAL.NET 5. x и MSAL.NET объясняется в составе примера [Active-Directory-DotNet-v1-to-v2](https://github.com/Azure-Samples/active-directory-dotnet-v1-to-v2).
 
 ### <a name="simple-token-cache-serialization-msal-only"></a>Простая сериализация кэша маркеров (только для MSAL)
 

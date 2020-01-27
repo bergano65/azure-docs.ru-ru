@@ -5,12 +5,12 @@ ms.topic: conceptual
 ms.author: ilahat
 author: ilahat
 ms.date: 11/01/2019
-ms.openlocfilehash: b33366b65fed0042eb3024c2264bce1c4a1c4c1d
-ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
+ms.openlocfilehash: ff058d7b51bd2e5efd80db69e5928d58fc5a7725
+ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75651635"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76715673"
 ---
 # <a name="azure-managed-applications-with-notifications"></a>Управляемые приложения Azure с уведомлениями
 
@@ -189,7 +189,7 @@ provisioningState | Состояние подготовки экземпляра
 
 ## <a name="endpoint-authentication"></a>Проверка подлинности конечной точки
 Чтобы защитить конечную точку веб-перехватчика и убедиться в подлинности уведомления, сделайте следующее:
-1. Укажите параметр запроса поверх URI веб-перехватчика, например: https://your-endpoint.com?sig=Guid. При каждом уведомлении убедитесь, что параметр запроса `sig` имеет ожидаемое значение `Guid`.
+1. Укажите параметр запроса поверх URI веб-перехватчика: HTTPS\://йоур-ендпоинт.ком? SIG = GUID. При каждом уведомлении убедитесь, что параметр запроса `sig` имеет ожидаемое значение `Guid`.
 2. Выдайте GET в экземпляре управляемого приложения с помощью applicationId. Проверьте, что provisioningState соответствует provisioningState уведомления, чтобы обеспечить согласованность.
 
 ## <a name="notification-retries"></a>Повторы уведомлений

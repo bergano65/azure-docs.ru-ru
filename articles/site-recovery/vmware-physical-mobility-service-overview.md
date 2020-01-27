@@ -7,20 +7,20 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 03/25/2019
 ms.author: ramamill
-ms.openlocfilehash: aeb00b84ac254232e0d68fd9631fb539a928e67d
-ms.sourcegitcommit: f3f4ec75b74124c2b4e827c29b49ae6b94adbbb7
+ms.openlocfilehash: b2c59fd6ee925d531a5a5ff3bb26fdebea025b83
+ms.sourcegitcommit: 38b11501526a7997cfe1c7980d57e772b1f3169b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70931892"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76513564"
 ---
 # <a name="about-the-mobility-service-for-vmware-vms-and-physical-servers"></a>Сведения о службе Mobility Service на виртуальных машинах и физических серверах VMware
 
 При настройке аварийного восстановления для виртуальных машин VMware и физических серверов используйте [Azure Site Recovery](site-recovery-overview.md). Требуется установить службу мобильности Site Recovery на каждую локальную виртуальную машину VMware и физический сервер.  Служба Mobility Service фиксирует операции записи данных на компьютере и перенаправляет их на сервер обработки Site Recovery. Вы можете запустить службу Mobility Service одним из следующих способов:
 
-- [Принудительная установка](#push-installation). Site Recovery устанавливает агент мобильности на сервере при включении защиты с помощью портал Azure.
-- Установить вручную: Службу Mobility Service можно установить вручную на каждом компьютере с помощью [пользовательского интерфейса](#install-mobility-agent-through-ui) или [командной строки](#install-mobility-agent-through-command-prompt).
-- [Автоматизированное развертывание](vmware-azure-mobility-install-configuration-mgr.md). Установку можно автоматизировать с помощью инструментов развертывания программного обеспечения, таких как System Center Configuration Manager.
+- [Принудительная установка](#push-installation): Site Recovery устанавливает агент мобильности на сервере при включении защиты с помощью портал Azure.
+- Установка вручную. службу Mobility Service можно установить вручную на каждом компьютере с помощью [пользовательского интерфейса](#install-mobility-agent-through-ui) или [командной строки](#install-mobility-agent-through-command-prompt).
+- [Автоматическое развертывание](vmware-azure-mobility-install-configuration-mgr.md). можно автоматизировать установку с помощью средств развертывания программного обеспечения, таких как Configuration Manager.
 
 ## <a name="anti-virus-on-replicated-machines"></a>Антивирусное ПО на реплицированных компьютерах
 
@@ -44,8 +44,8 @@ ms.locfileid: "70931892"
 3. Azure Site Recovery поставщик VSS устанавливается на сервере в ходе установки агента мобильности. Этот поставщик используется для создания точек, совместимых с приложениями. Если при установке поставщика VSS произойдет сбой, этот шаг будет пропущен и установка агента будет продолжена.
 4. Если установка агента завершилась успешно, но установка поставщика VSS завершается сбоем, то состояние задания помечается как "предупреждение". Это не влияет на создание точек согласованности.
 
-    1\. Чтобы создать точки, связанные с приложениями, см. [рекомендации](vmware-physical-manage-mobility-service.md#install-site-recovery-vss-provider-on-source-machine) по завершению установки Site Recovery поставщика VSS вручную. </br>
-    2\.  Если вы не хотите создавать точки с единообразным применением, [измените политику репликации](vmware-azure-set-up-replication.md#create-a-policy) , чтобы отключить точки, учитывающие состояние приложений.
+    а. Чтобы создать точки, связанные с приложениями, см. [рекомендации](vmware-physical-manage-mobility-service.md#install-site-recovery-vss-provider-on-source-machine) по завершению установки Site Recovery поставщика VSS вручную. </br>
+    b.  Если вы не хотите создавать точки с единообразным применением, [измените политику репликации](vmware-azure-set-up-replication.md#create-a-policy) , чтобы отключить точки, учитывающие состояние приложений.
 
 ### <a name="before-922-versions"></a>До 9,22 версий
 
@@ -55,7 +55,7 @@ ms.locfileid: "70931892"
 
 ## <a name="install-mobility-agent-through-ui"></a>Установка агента мобильности с помощью пользовательского интерфейса
 
-### <a name="prerequisite"></a>Предварительное требование
+### <a name="prerequisite"></a>Необходимое условие
 
 - Убедитесь, что все конфигурации серверов находятся в разделе [Поддержка матрицы VMware в сценарии аварийного восстановления Azure](vmware-physical-azure-support-matrix.md).
 - [Нахождение установщика](#locate-installer-files) на основе операционной системы сервера.
@@ -83,7 +83,7 @@ ms.locfileid: "70931892"
 
 ## <a name="install-mobility-agent-through-command-prompt"></a>Установка агента мобильности с помощью командной строки
 
-### <a name="prerequisite"></a>Предварительное требование
+### <a name="prerequisite"></a>Необходимое условие
 
 - Убедитесь, что все конфигурации серверов находятся в разделе [Поддержка матрицы VMware в сценарии аварийного восстановления Azure](vmware-physical-azure-support-matrix.md).
 - [Нахождение установщика](#locate-installer-files) на основе операционной системы сервера.
@@ -115,20 +115,20 @@ ms.locfileid: "70931892"
 #### <a name="installation-settings"></a>Параметры установки
 **Параметр** | **Сведения**
 --- | ---
-Использование | UnifiedAgent. exe/Role \<MS/MT >/InstallLocation \<расположение установки >/Platform "VMware"/Silent
+Использование | UnifiedAgent. exe/Role \<MS/MT >/InstallLocation \<расположение установки >/Platform "VmWare"/Silent
 журналы установки; | В разделе %ProgramData%\ASRSetupLogs\ASRUnifiedAgentInstaller.log.
 /Role | Параметр, обязательный для установки. Указывает, следует ли устанавливать службу Mobility Service или главный целевой сервер.
 /InstallLocation| Необязательный параметр. Указывает расположение установки (любая папка).
-/Platform | (Обязательный параметр.) Указывает платформу, на которой будет установлена служба Mobility Service. **VMware** используется для физических серверов или виртуальных машин VMware, а **Azure** — для виртуальных машин Azure.<br/><br/> Если виртуальные машины Azure разрабатывается как физические компьютеры, укажите **VMware**.
-/Silent| Необязательный элемент. Указывает, разрешен ли запуск установщика в автоматическом режиме.
+/Platform | Mandatory. Указывает платформу, на которой будет установлена служба Mobility Service. **VMware** используется для физических серверов или виртуальных машин VMware, а **Azure** — для виртуальных машин Azure.<br/><br/> Если виртуальные машины Azure разрабатывается как физические компьютеры, укажите **VMware**.
+/Silent| Необязательный параметр. Указывает, разрешен ли запуск установщика в автоматическом режиме.
 
 #### <a name="registration-settings"></a>Параметры регистрации
 **Параметр** | **Сведения**
 --- | ---
-Использование | Унифиедажентконфигуратор. exe/ксендпоинт \<CSIP >/PassphraseFilePath \<пассфрасефилепас >
+Использование | Унифиедажентконфигуратор. exe/Ксендпоинт \<CSIP >/PassphraseFilePath \<Пассфрасефилепас >
 Журналы конфигурации агента | Журналы находятся в папке %ProgramData%\ASRSetupLogs\ASRUnifiedAgentConfigurator.log.
 /CSEndPoint | Обязательный параметр. Указывает IP-адрес сервера конфигурации. Используйте любой допустимый IP-адрес.
-/PassphraseFilePath |  (Обязательный параметр.) Расположение файла с парольной фразой. Используйте любой допустимый локальный путь к файлу или UNC.
+/PassphraseFilePath |  Mandatory. Расположение файла с парольной фразой. Используйте любой допустимый локальный путь к файлу или UNC.
 
 ### <a name="on-a-linux-machine"></a>На компьютере с Linux
 
@@ -154,23 +154,23 @@ ms.locfileid: "70931892"
 #### <a name="installation-settings"></a>Параметры установки
 **Параметр** | **Сведения**
 --- | ---
-Использование | ./Install-d \<расположение установки >-r \<MS/MT >-v VMware-q
+Использование | ./Install-d \<расположение установки >-r \<MS/MT >-v VmWare-q
 -r | Параметр, обязательный для установки. Указывает, следует ли устанавливать службу Mobility Service или главный целевой сервер.
 -d | Необязательный параметр. Указывает расположение установки службы Mobility Service: /usr/local/ASR.
--v | (Обязательный параметр.) Указывает платформу, на которой будет установлена служба Mobility Service. **VMware** используется для физических серверов или виртуальных машин VMware, а **Azure** — для виртуальных машин Azure.
--q | Необязательный элемент. Указывает, разрешен ли запуск установщика в автоматическом режиме.
+-v | Mandatory. Указывает платформу, на которой будет установлена служба Mobility Service. **VMware** используется для физических серверов или виртуальных машин VMware, а **Azure** — для виртуальных машин Azure.
+-Q | Необязательный параметр. Указывает, разрешен ли запуск установщика в автоматическом режиме.
 
 #### <a name="registration-settings"></a>Параметры регистрации
 **Параметр** | **Сведения**
 --- | ---
-Использование | cd /usr/local/ASR/Vx/bin<br/><br/> UnifiedAgentConfigurator.sh-i \<CSIP >-P \<пассфрасефилепас >
+Использование | cd /usr/local/ASR/Vx/bin<br/><br/> UnifiedAgentConfigurator.sh-i \<CSIP >-P \<Пассфрасефилепас >
 -i | Обязательный параметр. Указывает IP-адрес сервера конфигурации. Используйте любой допустимый IP-адрес.
--P |  (Обязательный параметр.) Полный путь к файлу, в котором хранится парольная фраза. Используйте любую допустимую папку.
+-P |  Mandatory. Полный путь к файлу, в котором хранится парольная фраза. Используйте любую допустимую папку.
 
 ## <a name="azure-virtual-machine-agent"></a>Агент виртуальной машины Azure
 
-- **Для виртуальных машин Windows**: Начиная с версии 9.7.0.0 Mobility Service, [агент виртуальной машины Azure](../virtual-machines/extensions/features-windows.md#azure-vm-agent) устанавливает установщик Mobility Service. Это гарантирует, что когда выполняется отработка отказа устройства в Azure, виртуальная машина Azure отвечает требованиям к установке агента для использования любого расширения виртуальной машины.
-- **Для виртуальных машин Linux**: [WALinuxAgent](https://docs.microsoft.com/azure/virtual-machines/extensions/update-linux-agent) следует установить вручную на виртуальной машине Azure после отработки отказа.
+- **Виртуальные машины Windows**. Начиная с версии 9.7.0.0 Mobility Service, [агент виртуальной машины Azure](../virtual-machines/extensions/features-windows.md#azure-vm-agent) устанавливает установщик Mobility Service. Это гарантирует, что когда выполняется отработка отказа устройства в Azure, виртуальная машина Azure отвечает требованиям к установке агента для использования любого расширения виртуальной машины.
+- **Виртуальные машины Linux**. [WALinuxAgent](https://docs.microsoft.com/azure/virtual-machines/extensions/update-linux-agent) следует установить вручную на виртуальной машине Azure после отработки отказа.
 
 ## <a name="locate-installer-files"></a>Обнаружение файлов установщика
 
@@ -185,11 +185,11 @@ Microsoft-ASR\_UA\*SLES12-64\*release.tar.gz | SUSE Linux Enterprise Server 12 (
 Microsoft-ASR\_UA\*SLES11-SP3-64\*release.tar.gz| SUSE Linux Enterprise Server 11 SP3
 Microsoft-ASR\_UA\*SLES11-SP4-64\*release.tar.gz| SUSE Linux Enterprise Server 11 SP4
 Microsoft-ASR\_UA\*OL6-64\*release.tar.gz | Oracle Enterprise Linux 6.4, 6.5
-Microsoft-ASR\_UA\*UBUNTU-14.04-64\*release.tar.gz | Ubuntu Linux 14.04
+Microsoft-ASR\_UA\*UBUNTU-14.04-64\*release.tar.gz | Ubuntu Linux 14.04
 Microsoft-ASR\_UA\*UBUNTU-16.04-64\*release.tar.gz | Сервер Ubuntu Linux 16.04 LTS
 Microsoft-ASR_UA\*DEBIAN7-64\*release.tar.gz | Debian 7
-Microsoft-ASR_UA\*DEBIAN8-64\*release.tar.gz | Debian 8;
+Microsoft-ASR_UA\*DEBIAN8-64\*release.tar.gz | Debian 8
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Установка службы Mobility Service для аварийного восстановления виртуальных машин VMware и физических серверов](vmware-azure-install-mobility-service.md)

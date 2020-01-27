@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 12/24/2019
-ms.openlocfilehash: 58d6c8d18e03ab248cfbebcf910ae13c5fee439e
-ms.sourcegitcommit: ce4a99b493f8cf2d2fd4e29d9ba92f5f942a754c
+ms.openlocfilehash: 8e563ae095cf39cdce3e671d4099d2bf1592100a
+ms.sourcegitcommit: 38b11501526a7997cfe1c7980d57e772b1f3169b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/28/2019
-ms.locfileid: "75530975"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76513632"
 ---
 # <a name="collect-log-data-with-the-log-analytics-agent"></a>Получение данных журнала с помощью агента Log Analytics
 
@@ -142,9 +142,9 @@ ms.locfileid: "75530975"
 
 |Источник | Метод | Description|
 |-------|-------------|-------------|
-|Виртуальная машина Azure| Расширение виртуальной машины Log Analytics для [Windows](../../virtual-machines/extensions/oms-windows.md) или [Linux](../../virtual-machines/extensions/oms-linux.md) с использованием Azure CLI или шаблона Azure Resource Manager<br>- [вручную из портал Azure](../../azure-monitor/learn/quick-collect-azurevm.md)<br>- [автоматической подготовки центра безопасности Azure](../../security-center/security-center-enable-data-collection.md)| — Расширение устанавливает агент Log Analytics на виртуальных машинах Azure и регистрирует их в существующей Azure Monitor рабочей области.<br>— Центр безопасности Azure может подготавливать агент Log Analytics на всех поддерживаемых виртуальных машинах Azure и всех новых, созданных, если включить его для отслеживания уязвимостей и угроз безопасности. Если этот флажок установлен, будет подготовлена любая новая или Существующая виртуальная машина без установленного агента.|
-| Гибридные компьютеры Windows|- [Установка вручную](agent-windows.md)<br>- [DSC службы автоматизации Azure](agent-windows.md#install-the-agent-using-dsc-in-azure-automation)<br>- [Шаблон Resource Manager с Azure Stack](https://github.com/Azure/AzureStack-QuickStart-Templates/tree/master/MicrosoftMonitoringAgent-ext-win) |Установка агента Microsoft Monitoring Agent из командной строки или автоматически, например с помощью DSC службы автоматизации Azure, [System Center Configuration Manager](https://docs.microsoft.com/sccm/apps/deploy-use/deploy-applications) или шаблона Azure Resource Manager, если Microsoft Azure Stack уже развернут в центре обработки данных.| 
-| Гибридные компьютеры Linux| [Установка вручную](agent-linux.md)|Установите агент для Linux, вызвав скрипт-оболочку, размещенный на GitHub, или вручную Скачайте и установите агент. | 
+|Виртуальная машина Azure| Расширение виртуальной машины Log Analytics для [Windows](../../virtual-machines/extensions/oms-windows.md) или [Linux](../../virtual-machines/extensions/oms-linux.md) с использованием Azure CLI или шаблона Azure Resource Manager<br>- [вручную из портал Azure](../../azure-monitor/learn/quick-collect-azurevm.md?toc=/azure/azure-monitor/toc.json)<br>- [автоматической подготовки центра безопасности Azure](../../security-center/security-center-enable-data-collection.md)| — Расширение устанавливает агент Log Analytics на виртуальных машинах Azure и регистрирует их в существующей Azure Monitor рабочей области.<br>— Центр безопасности Azure может подготавливать агент Log Analytics на всех поддерживаемых виртуальных машинах Azure и всех новых, созданных, если включить его для отслеживания уязвимостей и угроз безопасности. Если этот флажок установлен, будет подготовлена любая новая или Существующая виртуальная машина без установленного агента.|
+| Гибридные компьютеры Windows|- [Установка вручную](agent-windows.md)<br>- [DSC службы автоматизации Azure](agent-windows.md#install-the-agent-using-dsc-in-azure-automation)<br>- [Шаблон Resource Manager с Azure Stack](https://github.com/Azure/AzureStack-QuickStart-Templates/tree/master/MicrosoftMonitoringAgent-ext-win) |Установите Microsoft Monitoring Agent из командной строки или используйте автоматизированный метод, например Azure Automation DSC, [Configuration Manager](https://docs.microsoft.com/configmgr/apps/deploy-use/deploy-applications)или шаблон Azure Resource Manager, если вы развернули Microsoft Azure Stack в центре обработки данных.| 
+| Гибридные компьютеры Linux| [Установка вручную](../../azure-monitor/learn/quick-collect-linux-computer.md)|Установка агента для Linux путем вызова сценария-оболочки, размещенного в GitHub. | 
 | System Center Operations Manager|[Интеграция Operations Manager с Log Analytics](om-agents.md) | Настройте интеграцию между журналами Operations Manager и Azure Monitor, чтобы пересылать собранные данные с компьютеров Windows, отправляют отчеты в группу управления.|  
 
 ## <a name="next-steps"></a>Дальнейшие действия

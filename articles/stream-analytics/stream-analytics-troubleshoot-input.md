@@ -8,12 +8,12 @@ ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 12/07/2018
 ms.custom: seodec18
-ms.openlocfilehash: 20a161ffc82cb8f74cfcac838856434f83c4e258
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: dac3037f82c38980c9ac16685aa7fddac68a2e7b
+ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75354287"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76720305"
 ---
 # <a name="troubleshoot-input-connections"></a>Устранение неполадок с входными подключениями
 
@@ -24,11 +24,13 @@ ms.locfileid: "75354287"
 
 2.  Проверьте входные данные.
 
-    Чтобы убедиться, что входные данные передаются в концентратор событий, с помощью [обозревателя служебной шины](https://code.msdn.microsoft.com/windowsapps/Service-Bus-Explorer-f2abca5a) подключитесь к концентратору событий Azure (если концентратор событий используется как точка ввода).
+    1. Чтобы убедиться, что входные данные передаются в концентратор событий, с помощью [обозревателя служебной шины](https://code.msdn.microsoft.com/windowsapps/Service-Bus-Explorer-f2abca5a) подключитесь к концентратору событий Azure (если концентратор событий используется как точка ввода).
         
-    Нажмите кнопку [**Образцы данных**](stream-analytics-sample-data-input.md) для входных данных и скачайте пример входных данных.
+    1. Используйте кнопку [**Выбор данных**](stream-analytics-sample-data-input.md) для каждого входного аргумента. Скачайте входные образцы данных.
         
-    Проверьте демонстрационные данные, чтобы определить форму данных: схему и [типы данных](https://docs.microsoft.com/stream-analytics-query/data-types-azure-stream-analytics).
+    1. Изучите образец данных, чтобы понять форму данных, то есть схему и [типы данных](https://docs.microsoft.com/stream-analytics-query/data-types-azure-stream-analytics).
+
+3.  Убедитесь, что в предварительной версии входных данных выбран временной диапазон. Выберите **выбрать диапазон времени**, а затем введите длительность выборки перед тестированием запроса.
 
 ## <a name="malformed-input-events-causes-deserialization-errors"></a>Неправильный формат входных событий, который приводит к ошибкам десериализации 
 Если входной поток задания Stream Analytics содержит сообщения неправильного формата, возникают проблемы десериализации. Например, сообщение может иметь неправильный формат из-за отсутствия круглых или фигурных скобок в объекте JSON или неверного формата метки времени в соответствующем поле. 

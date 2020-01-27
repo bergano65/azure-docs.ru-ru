@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: conceptual
 ms.date: 12/06/2018
 ms.author: mlearned
-ms.openlocfilehash: 4629e4e9cfd5c8f9861b692b2aec89057f83587c
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 2377cc2e0824911217fbc2783fdf8e86fd7b9405
+ms.sourcegitcommit: 87781a4207c25c4831421c7309c03fce5fb5793f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75442919"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76549212"
 ---
 # <a name="best-practices-for-cluster-security-and-upgrades-in-azure-kubernetes-service-aks"></a>Рекомендации по безопасности и обновлениям кластера в службах Azure Kubernetes (AKS)
 
@@ -24,7 +24,7 @@ ms.locfileid: "75442919"
 > * использовать Azure Active Directory и средства управления доступом на основе ролей для безопасного доступа к серверу API;
 > * обезопасить доступ контейнера к ресурсам узла;
 > * обновить кластер AKS до последней версии Kubernetes;
-> * обновить узлы и автоматически применить исправления безопасности.
+> * Обновляйте узлы в актуальном состоянии и автоматически примените исправления безопасности
 
 Вы также можете ознакомиться с рекомендациями по [управлению образами контейнеров][best-practices-container-image-management] и [безопасности Pod][best-practices-pod-security].
 

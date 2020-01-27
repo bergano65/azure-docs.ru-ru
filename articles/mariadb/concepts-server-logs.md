@@ -5,13 +5,13 @@ author: ajlam
 ms.author: andrela
 ms.service: mariadb
 ms.topic: conceptual
-ms.date: 12/17/2019
-ms.openlocfilehash: 651094f043162cdc5f6d522c90c7567ae94a4274
-ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
+ms.date: 01/21/2020
+ms.openlocfilehash: b38838c20e4ab18b64cabcb2749ec39163f1b52d
+ms.sourcegitcommit: 38b11501526a7997cfe1c7980d57e772b1f3169b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75746657"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76515060"
 ---
 # <a name="slow-query-logs-in-azure-database-for-mariadb"></a>Журналы запросов в базе данных Azure для MariaDB
 В базе данных Azure для MariaDB пользователям доступен журнал медленных запросов. Доступ к журналам транзакций не поддерживается. Журнал медленных запросов можно использовать для выявления проблем с производительностью при устранении неполадок.
@@ -42,6 +42,10 @@ ms.locfileid: "75746657"
 - **log_queries_not_using_indexes**. Указывает, нужно ли сохранять в журнал slow_query_log запросы, не использующие индексы.
 - **log_throttle_queries_not_using_indexes.** Ограничивает число не использующих индексы запросов, сохраняемых в журнале медленных запросов. Этот параметр применяется, только если log_queries_not_using_indexes имеет значение "ON" (Включено).
 - **log_output**. Если значение — "File", журнал запросов может быть записан как в локальное хранилище сервера, так и в Azure Monitor журналов диагностики. Если задано значение "нет", журнал запросов будет записываться только в Azure Monitor журналы диагностики. 
+
+> [!IMPORTANT]
+> Если таблицы не индексируются, установка параметров `log_queries_not_using_indexes` и `log_throttle_queries_not_using_indexes` в значение ON может повлиять на производительность MariaDB, так как все запросы к этим неиндексированным таблицам будут записываться в журнал медленных запросов.<br><br>
+> Если вы планируете ведение журнала запросов в течение продолжительного периода времени, рекомендуется присвоить параметру `log_output` значение None. Если задано значение "File", эти журналы записываются в хранилище локального сервера и могут повлиять на производительность MariaDB. 
 
 Полное описание параметров журнала медленных запросов см. в [соответствующей документации к MariaDB](https://mariadb.com/kb/en/library/slow-query-log-overview/).
 
@@ -81,5 +85,61 @@ ms.locfileid: "75746657"
 | `thread_id_s` | Идентификатор потока |
 | `\_ResourceId` | Универсальный код ресурса (URI) |
 
-## <a name="next-steps"></a>Дальнейшие действия
-- [Настройка и использование журналов сервера с помощью портала Azure](howto-configure-server-logs-portal.md).
+## <a name="analyze-logs-in-azure-monitor-logs"></a>Анализ журналов в журналах Azure Monitor
+
+После передвижения журналов запросов в Azure Monitor журналов с помощью журналов диагностики можно выполнить дальнейший анализ запросов. Ниже приведены примеры запросов, которые помогут приступить к работе. Обязательно обновите указанные ниже имена серверов.
+
+- Запросы с более чем 10 секундами на определенном сервере
+
+    ```Kusto
+    AzureDiagnostics
+    | where LogicalServerName_s == '<your server name>'
+    | where Category == 'MySqlSlowLogs'
+    | project TimeGenerated, LogicalServerName_s, event_class_s, start_time_t , query_time_d, sql_text_s 
+    | where query_time_d > 10
+    ```
+
+- Вывод списка 5 самых длинных запросов на определенном сервере
+
+    ```Kusto
+    AzureDiagnostics
+    | where LogicalServerName_s == '<your server name>'
+    | where Category == 'MySqlSlowLogs'
+    | project TimeGenerated, LogicalServerName_s, event_class_s, start_time_t , query_time_d, sql_text_s 
+    | order by query_time_d desc
+    | take 5
+    ```
+
+- Суммирование запросов с минимальным, максимальным, средним и стандартным отклонением времени запроса на определенном сервере
+
+    ```Kusto
+    AzureDiagnostics
+    | where LogicalServerName_s == '<your server name>'
+    | where Category == 'MySqlSlowLogs'
+    | project TimeGenerated, LogicalServerName_s, event_class_s, start_time_t , query_time_d, sql_text_s 
+    | summarize count(), min(query_time_d), max(query_time_d), avg(query_time_d), stdev(query_time_d), percentile(query_time_d, 95) by LogicalServerName_s
+    ```
+
+- График распределения скорости запросов на определенном сервере
+
+    ```Kusto
+    AzureDiagnostics
+    | where LogicalServerName_s == '<your server name>'
+    | where Category == 'MySqlSlowLogs'
+    | project TimeGenerated, LogicalServerName_s, event_class_s, start_time_t , query_time_d, sql_text_s 
+    | summarize count() by LogicalServerName_s, bin(TimeGenerated, 5m)
+    | render timechart
+    ```
+
+- Отображение запросов дольше 10 секунд для всех серверов MariaDB с включенными журналами диагностики
+
+    ```Kusto
+    AzureDiagnostics
+    | where Category == 'MySqlSlowLogs'
+    | project TimeGenerated, LogicalServerName_s, event_class_s, start_time_t , query_time_d, sql_text_s 
+    | where query_time_d > 10
+    ```    
+    
+## <a name="next-steps"></a>Следующие шаги
+- [Настройка журналов запросов от портал Azure](howto-configure-server-logs-portal.md)
+- [Настройка журналов запросов от Azure CLI](howto-configure-server-logs-cli.md)

@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 10/16/2018
 ms.author: jeffpatt
 ms.subservice: files
-ms.openlocfilehash: 8b7a743ebcdf74f6ad740e4e4193bbd98da1536d
-ms.sourcegitcommit: 7221918fbe5385ceccf39dff9dd5a3817a0bd807
+ms.openlocfilehash: 9849e8ab918562267e93506771a4c32cf96533a4
+ms.sourcegitcommit: 87781a4207c25c4831421c7309c03fce5fb5793f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/21/2020
-ms.locfileid: "76291130"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76544945"
 ---
 # <a name="troubleshoot-azure-files-problems-in-linux"></a>Устранение неполадок службы файлов Azure в Linux
 
@@ -131,9 +131,8 @@ ms.locfileid: "76291130"
 Если используемый SMB-клиент Linux не поддерживает шифрование, подключите службу файлов Azure с помощью SMB 2.1 с виртуальной машины Linux в Azure, которая расположена в том же центре обработки данных, что и общий файловый ресурс. Убедитесь, что параметр [Требуется безопасное перемещение]( https://docs.microsoft.com/azure/storage/common/storage-require-secure-transfer) отключен в учетной записи хранения. 
 
 <a id="noaaccessfailureportal"></a>
-## <a name="error-no-access-when-browsing-to-an-azure-file-share-in-the-portal"></a>Ошибка "нет доступа" при переходе на общую папку Azure на портале
-
-При переходе к общему файловому ресурсу Azure на портале, может появиться следующая ошибка.
+## <a name="error-no-access-when-you-try-to-access-or-delete-an-azure-file-share"></a>Ошибка "нет доступа" при попытке доступа или удаления файлового ресурса Azure  
+При попытке доступа или удаления файлового ресурса Azure на портале может появиться следующее сообщение об ошибке:
 
 Нет доступа  
 Код ошибки: 403 

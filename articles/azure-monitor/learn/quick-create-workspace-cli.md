@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 03/12/2019
-ms.openlocfilehash: 66850c3871981a537d36c3b2a3a664d8a2f2eee7
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.openlocfilehash: b696d57919383e87f8e5e647b774fc9e4dbdf16b
+ms.sourcegitcommit: 38b11501526a7997cfe1c7980d57e772b1f3169b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75977700"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76513479"
 ---
 # <a name="create-a-log-analytics-workspace-with-azure-cli-20"></a>Создание рабочей области Log Analytics с помощью Azure CLI 2.0
 
@@ -20,7 +20,7 @@ Azure CLI 2.0 используется для создания ресурсов 
 
 * ресурсы Azure в подписке;  
 * локальные компьютеры, которые отслеживает System Center Operations Manager;  
-* коллекции устройств из System Center Configuration Manager;  
+* Коллекции устройств из Configuration Manager  
 * Данные диагностики и журнала из службы хранилища Azure  
 
 Сведения о других источниках, таких как виртуальные машины Azure и виртуальные машины Windows или Linux в вашей среде, см. в статьях ниже.

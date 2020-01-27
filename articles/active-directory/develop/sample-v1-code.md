@@ -17,13 +17,12 @@ ms.date: 07/15/2019
 ms.author: ryanwi
 ms.reviewer: jmprieur
 ms.custom: aaddev
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: a71eaebcc6345d6550d6ddd38350fe709706d740
-ms.sourcegitcommit: ec2b75b1fc667c4e893686dbd8e119e7c757333a
+ms.openlocfilehash: b0b9e8215789936eb4f61900faae552407d01252
+ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72809294"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76702595"
 ---
 # <a name="azure-active-directory-code-samples-v10-endpoint"></a>Примеры кода Azure Active Directory (конечная точка версии 1.0)
 
@@ -44,7 +43,7 @@ ms.locfileid: "72809294"
 
 В этом примере показано, как создать одностраничное приложение, защищенное с помощью Azure AD.
 
- платформа | Вызывает собственный API | Вызывает другой веб-API
+ Платформа | Вызывает собственный API | Вызывает другой веб-API
  -------- |  --------------------- | ------------------ 
 ![На этом рисунке показан логотип JavaScript](media/sample-v2-code/logo_js.png) | [javascript-singlepageapp](https://github.com/Azure-Samples/active-directory-javascript-singlepageapp-dotnet-webapi) |
 ![На этом изображении показан логотип угловой JS](media/sample-v2-code/logo_angular.png) | [angularjs-singlepageapp](https://github.com/Azure-Samples/active-directory-angularjs-singlepageapp) | [angularjs-singlepageapp-cors](https://github.com/Azure-Samples/active-directory-angularjs-singlepageapp-dotnet-webapi)
@@ -55,7 +54,7 @@ ms.locfileid: "72809294"
 
 В следующем примере показаны веб-приложения для входа пользователей. Некоторые из этих приложений также обращаются к Microsoft Graph или к веб-API от имени вошедшего в систему пользователя.
 
- платформа | Только вход пользователей | Вызывает Microsoft Graph или AAD Graph| Вызывает другой веб-API ASP.NET или ASP.NET Core 2.0
+ Платформа | Только вход пользователей | Вызывает Microsoft Graph или AAD Graph| Вызывает другой веб-API ASP.NET или ASP.NET Core 2.0
  -------- | ------------------- | --------------------- | -------------------------
 ![На этом рисунке показан логотип ASP.NET](media/sample-v2-code/logo_NETcore.png)</p>ASP.NET Core 2.0 | [dotnet-webapp-openidconnect-aspnetcore](https://github.com/Azure-Samples/active-directory-dotnet-webapp-openidconnect-aspnetcore) | [webapp-webapi-multitenant-openidconnect-aspnetcore](https://github.com/Azure-Samples/active-directory-webapp-webapi-multitenant-openidconnect-aspnetcore/) </p>(AAD Graph) | [dotnet-webapp-webapi-openidconnect-aspnetcore](https://github.com/Azure-Samples/active-directory-dotnet-webapp-webapi-openidconnect-aspnetcore)
 ![На этом рисунке показан логотип ASP.NET](media/sample-v2-code/logo_NETframework.png)</p> ASP.NET 4.5 | [webApp-openidconnect-dotnet](quickstart-v1-aspnet-webapp.md) </p> [webapp-WSFederation-dotNet](https://github.com/Azure-Samples/active-directory-dotnet-webapp-wsfederation) </p> [dotnet-webapp-webapi-oauth2-useridentity](https://github.com/Azure-Samples/active-directory-dotnet-webapp-webapi-oauth2-useridentity) | [dotnet-webapp-multitenant-openidconnect](https://github.com/Azure-Samples/active-directory-dotnet-webapp-multitenant-openidconnect)</p> (AAD Graph) |
@@ -67,7 +66,7 @@ ms.locfileid: "72809294"
 
 В примерах ниже показано, как реализовать управление доступом на основе ролей (RBAC). RBAC используется, чтобы ограничить разрешения определенных пользователей на доступ к некоторым функциям в веб-приложении. Эти пользователи проходят авторизацию в зависимости от того, принадлежат ли они **группе Azure AD** или имеют определенную **роль** приложения.
 
-платформа | Пример |
+Платформа | Пример |
  -------- | ------------------- |
 ![На этом рисунке показан логотип ASP.NET](media/sample-v2-code/logo_NETframework.png)</p> ASP.NET 4.5 | [dotnet-webapp-groupclaims](https://github.com/Azure-Samples/active-directory-dotnet-webapp-groupclaims) </p>  [dotnet-webapp-roleclaims](https://github.com/Azure-Samples/active-directory-dotnet-webapp-roleclaims) | Веб-приложение MVC .NET 4.5, использующее для проверки подлинности **роли** Azure AD
 
@@ -79,13 +78,13 @@ ms.locfileid: "72809294"
 - В автоматическом режиме (с встроенной проверкой подлинности Windows в Windows или именем пользователя и паролем);
 - Делегируя интерактивный вход на другое устройство (поток кода устройства используется на устройствах, которые не предоставляют веб-элементы управления)
 
-Клиентское приложение | платформа | Поток или предоставление | Вызывает Microsoft Graph | Вызывает веб-API ASP.NET или ASP.NET Core 2.x
+Клиентское приложение | Платформа | Поток или предоставление | Вызывает Microsoft Graph | Вызывает веб-API ASP.NET или ASP.NET Core 2.x
 ------------------ | -------- | ---------- | -------------------- | -------------------------
-Классическое приложение (WPF)           | ![На этом изображении показан .NETC# /Logo](media/sample-v2-code/logo_NET.png)  | Интерактивный режим | Часть [dotnet-native-multitarget](https://github.com/azure-samples/active-directory-dotnet-native-multitarget) | [Dotnet-native-desktop](https://github.com/Azure-Samples/active-directory-dotnet-native-desktop) </p> [dotnet-native-aspnetcore](https://github.com/Azure-Samples/active-directory-dotnet-native-aspnetcore/)</p> [dotnet-webapi-manual-jwt-validation](https://github.com/azure-samples/active-directory-dotnet-webapi-manual-jwt-validation)
-Мобильное приложение (UWP)            | .![На этом рисунке показано .NET/C#/УВП](media/sample-v2-code/logo_Windows.png)   | Интерактивный режим | [dotnet-native-uwp-wam](https://github.com/azure-samples/active-directory-dotnet-native-uwp-wam) </p> В этом примере используется [WAM](/windows/uwp/security/web-account-manager), а не [ADAL.NET](https://aka.ms/adalnet)|  [dotnet-windows-store](https://github.com/Azure-Samples/active-directory-dotnet-windows-store) (приложение UWP, использующее ADAL.NET для обращения к веб-API одного клиента) </p> [dotnet-webapi-multitenant-windows-store](https://github.com/Azure-Samples/active-directory-dotnet-webapi-multitenant-windows-store) (приложение UWP, использующее ADAL.NET для обращения к веб-API нескольких клиентов)|
-Мобильное приложение (Android, iOS, UWP)   | ![На этом рисунке показано .NET/C# (Xamarin)](media/sample-v2-code/logo_xamarin.png) | Интерактивный режим | [dotnet-native-multitarget](https://github.com/azure-samples/active-directory-dotnet-native-multitarget) |
-Мобильное приложение (Android)           | ![На этом рисунке показан логотип Android](media/sample-v2-code/logo_Android.png) | Интерактивный режим |   [android](https://github.com/Azure-Samples/active-directory-android) |
-Мобильное приложение (iOS)           | ![На этом рисунке показана iOS/объектив C или SWIFT](media/sample-v2-code/logo_iOS.png) | Интерактивный режим |   [nativeClient-iOS](https://github.com/azureadquickstarts/nativeclient-ios) |
+Классическое приложение (WPF)           | ![На этом изображении показан .NETC# /Logo](media/sample-v2-code/logo_NET.png)  | Интерактивно | Часть [dotnet-native-multitarget](https://github.com/azure-samples/active-directory-dotnet-native-multitarget) | [Dotnet-native-desktop](https://github.com/Azure-Samples/active-directory-dotnet-native-desktop) </p> [dotnet-native-aspnetcore](https://github.com/Azure-Samples/active-directory-dotnet-native-aspnetcore/)</p> [dotnet-webapi-manual-jwt-validation](https://github.com/azure-samples/active-directory-dotnet-webapi-manual-jwt-validation)
+Мобильное приложение (UWP)            | .![На этом рисунке показано .NET/C#/УВП](media/sample-v2-code/logo_Windows.png)   | Интерактивно | [dotnet-native-uwp-wam](https://github.com/azure-samples/active-directory-dotnet-native-uwp-wam) </p> В этом примере используется [WAM](/windows/uwp/security/web-account-manager), а не [ADAL.NET](https://aka.ms/adalnet)|  [dotnet-windows-store](https://github.com/Azure-Samples/active-directory-dotnet-windows-store) (приложение UWP, использующее ADAL.NET для обращения к веб-API одного клиента) </p> [dotnet-webapi-multitenant-windows-store](https://github.com/Azure-Samples/active-directory-dotnet-webapi-multitenant-windows-store) (приложение UWP, использующее ADAL.NET для обращения к веб-API нескольких клиентов)|
+Мобильное приложение (Android, iOS, UWP)   | ![На этом рисунке показано .NET/C# (Xamarin)](media/sample-v2-code/logo_xamarin.png) | Интерактивно | [dotnet-native-multitarget](https://github.com/azure-samples/active-directory-dotnet-native-multitarget) |
+Мобильное приложение (Android)           | ![На этом рисунке показан логотип Android](media/sample-v2-code/logo_Android.png) | Интерактивно |   [android](https://github.com/Azure-Samples/active-directory-android) |
+Мобильное приложение (iOS)           | ![На этом рисунке показана iOS/объектив C или SWIFT](media/sample-v2-code/logo_iOS.png) | Интерактивно |   [nativeClient-iOS](https://github.com/azureadquickstarts/nativeclient-ios) |
 Классическое приложение (консольное)          | ![На этом изображении показан .NETC# /Logo](media/sample-v2-code/logo_NET.png) | Имя пользователя и пароль </p>  Встроенная проверка подлинности Windows | | [dotnet-native-headless](https://github.com/azure-samples/active-directory-dotnet-native-headless)
 Классическое приложение (консольное)          | ![На этом рисунке показан логотип Java](media/sample-v2-code/logo_Java.png) | Имя пользователя и пароль | | [java-native-headless](https://github.com/Azure-Samples/active-directory-java-native-headless)
 Классическое приложение (консольное)           | ![На этом рисунке показана платформа .NETC# Core/логотип](media/sample-v2-code/logo_NETcore.png) | Поток кода устройства | | [dotnet-deviceprofile](https://github.com/Azure-Samples/active-directory-dotnet-deviceprofile)
@@ -94,7 +93,7 @@ ms.locfileid: "72809294"
 
 В следующих примерах показаны классические приложения и веб-приложения, которые обращаются к Microsoft Graph или веб-API без указания пользователя (с удостоверением приложения).
 
-Клиентское приложение | платформа | Поток или предоставление | Вызывает веб-API ASP.NET или ASP.NET Core 2.0
+Клиентское приложение | Платформа | Поток или предоставление | Вызывает веб-API ASP.NET или ASP.NET Core 2.0
 ------------------ | -------- | ---------- | -------------------- 
 Управляющая программа (консольная)          | ![На этом рисунке показан логотип .NET](media/sample-v2-code/logo_NETframework.png) | Учетные данные клиента с секретом приложения или сертификатом | [dotnet-daemon](https://github.com/azure-samples/active-directory-dotnet-daemon)</p> [dotnet-daemon-certificate-credential](https://github.com/azure-samples/active-directory-dotnet-daemon-certificate-credential)
 Управляющая программа (консольная)         | ![На этом рисунке показан логотип .NET](media/sample-v2-code/logo_NETcore.png) | Учетные данные клиента с сертификатом| [dotnetcore-daemon-certificate-credential](https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-certificate-credential)
@@ -108,7 +107,7 @@ ms.locfileid: "72809294"
 
 В предыдущих разделах этой статьи можно также найти другие примеры, в которых показано клиентское приложение, **обращающееся** к **веб-API** ASP.NET или ASP.NET Core. Эти примеры не упоминаются повторно в этом разделе, но их можно найти в последнем столбце таблиц выше или ниже.
 
-| платформа | Пример |
+| Платформа | Пример |
 |--------|-------------------|
 | ![На этом рисунке показан логотип Node. js](media/sample-v2-code/logo_nodejs.png)  | [node-webapi](https://github.com/Azure-Samples/active-directory-node-webapi) |
 
@@ -116,7 +115,7 @@ ms.locfileid: "72809294"
 
 В следующих примерах показан веб-API, который вызывает другой веб-API. Во втором примере показано, как управлять условным доступом.
 
-| платформа |  Вызывает Microsoft Graph | Вызывает другой веб-API ASP.NET или ASP.NET Core 2.0 |
+| Платформа |  Вызывает Microsoft Graph | Вызывает другой веб-API ASP.NET или ASP.NET Core 2.0 |
 | -------- |  --------------------- | ------------------------- |
 | ![На этом рисунке показан логотип ASP.NET](media/sample-v2-code/logo_NETframework.png)</p> ASP.NET 4.5 | [dotnet-webapi-onbehalfof](https://github.com/azure-samples/active-directory-dotnet-webapi-onbehalfof) </p> [dotnet-webapi-onbehalfof-ca](https://github.com/azure-samples/active-directory-dotnet-webapi-onbehalfof-ca) | [dotnet-webapi-onbehalfof](https://github.com/azure-samples/active-directory-dotnet-webapi-onbehalfof) </p> [dotnet-webapi-onbehalfof-ca](https://github.com/azure-samples/active-directory-dotnet-webapi-onbehalfof-ca) |
 
@@ -124,7 +123,7 @@ ms.locfileid: "72809294"
 
 Дополнительные сведения о примерах и учебниках, в которых приводятся различные шаблоны использования API Microsoft Graph, включая аутентификацию в Azure AD, см. в статье [Примеры и учебники сообщества Microsoft Graph](https://github.com/microsoftgraph/msgraph-community-samples).
 
-## <a name="see-also"></a>Дополнительные материалы
+## <a name="see-also"></a>См. также
 
 [Руководство разработчика по Azure Active Directory](v1-overview.md)
 

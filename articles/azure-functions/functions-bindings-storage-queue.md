@@ -6,12 +6,12 @@ ms.topic: reference
 ms.date: 09/03/2018
 ms.author: cshoe
 ms.custom: cc996988-fb4f-47
-ms.openlocfilehash: 70254e42b5964c7c7a3bf15c396f4c118f68a5ed
-ms.sourcegitcommit: 5bbe87cf121bf99184cc9840c7a07385f0d128ae
+ms.openlocfilehash: ea213921c736bc3b6bf88c0bdd81a96656ecbe5b
+ms.sourcegitcommit: 87781a4207c25c4831421c7309c03fce5fb5793f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76121239"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76547291"
 ---
 # <a name="azure-queue-storage-bindings-for-azure-functions"></a>Привязки хранилища очередей Azure для службы "Функции Azure"
 
@@ -21,7 +21,7 @@ ms.locfileid: "76121239"
 
 ## <a name="packages---functions-1x"></a>Пакеты – Функции 1.x
 
-Привязки служебной шины доступны в пакете NuGet [Microsoft.Azure.WebJobs](https://www.nuget.org/packages/Microsoft.Azure.WebJobs) версии 2.х. Исходный код для пакета находится в репозитории GitHub [azure-webjobs-sdk](https://github.com/Azure/azure-webjobs-sdk/tree/v2.x/src/Microsoft.Azure.WebJobs.Storage/Queue).
+Привязки хранилища очередей предоставляются в пакете NuGet [Microsoft. Azure. веб-заданий](https://www.nuget.org/packages/Microsoft.Azure.WebJobs) версии 2. x. Исходный код для пакета находится в репозитории GitHub [azure-webjobs-sdk](https://github.com/Azure/azure-webjobs-sdk/tree/v2.x/src/Microsoft.Azure.WebJobs.Storage/Queue).
 
 [!INCLUDE [functions-package-auto](../../includes/functions-package-auto.md)]
 
@@ -29,7 +29,7 @@ ms.locfileid: "76121239"
 
 ## <a name="packages---functions-2x-and-higher"></a>Packages — функции 2. x и более поздних версий
 
-Привязки хранилища очередей доступны в пакете NuGet [Microsoft.Azure.WebJobs.Extensions.Storage](https://www.nuget.org/packages/Microsoft.Azure.WebJobs.Extensions.Storage) версии 3.х. Исходный код для пакета находится в репозитории GitHub [azure-webjobs-sdk](https://github.com/Azure/azure-webjobs-sdk/tree/dev/src/Microsoft.Azure.WebJobs.Extensions.Storage/Queues).
+Привязки хранилища очередей предоставляются в пакете NuGet [Microsoft. Azure. веб-заданий. Extensions. Storage](https://www.nuget.org/packages/Microsoft.Azure.WebJobs.Extensions.Storage) , версия 3. x. Исходный код для пакета находится в репозитории GitHub [azure-webjobs-sdk](https://github.com/Azure/azure-webjobs-sdk/tree/dev/src/Microsoft.Azure.WebJobs.Extensions.Storage/Queues).
 
 [!INCLUDE [functions-package-v2](../../includes/functions-package-v2.md)]
 
@@ -40,17 +40,7 @@ ms.locfileid: "76121239"
 
 Используйте триггер очереди для запуска функции при получении нового элемента очереди. Сообщение очереди предоставляется в качестве входных данных функции.
 
-## <a name="trigger---example"></a>Пример триггера
-
-Языковой пример см. в разделах:
-
-* [C#](#trigger---c-example)
-* [Скрипт C# (CSX)](#trigger---c-script-example)
-* [JavaScript](#trigger---javascript-example)
-* [Java](#trigger---java-example)
-* [Python](#trigger---python-example)
-
-### <a name="trigger---c-example"></a>Пример C# в триггере
+# <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
 В следующем примере показана [функция C#](functions-dotnet-class-library.md), которая выполняет опрос очереди `myqueue-items`, а затем делает запись в журнал при каждой обработке элемента очереди.
 
@@ -67,7 +57,7 @@ public static class QueueFunctions
 }
 ```
 
-### <a name="trigger---c-script-example"></a>Пример скрипта C# в триггере
+# <a name="c-scripttabcsharp-script"></a>[C#Индекса](#tab/csharp-script)
 
 В следующем примере показана привязка триггера очереди в файле *function.json* и коде [сценария C# (CSX)](functions-reference-csharp.md), который использует привязку. Эта функция выполняет опрос очереди `myqueue-items`, а затем делает запись в журнал при каждой обработке элемента очереди.
 
@@ -122,7 +112,7 @@ public static void Run(CloudQueueMessage myQueueItem,
 
 В этом [разделе](#trigger---usage) показано свойство `myQueueItem`, имя которому назначает свойство `name` в function.json.  В разделе [Метаданные сообщений](#trigger---message-metadata) показаны все остальные переменные.
 
-### <a name="trigger---javascript-example"></a>Пример JavaScript в триггере
+# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
 
 В следующем примере показана привязка триггера очереди в файле *function.json* и [функция JavaScript](functions-reference-node.md), которая использует привязку. Эта функция выполняет опрос очереди `myqueue-items`, а затем делает запись в журнал при каждой обработке элемента очереди.
 
@@ -167,23 +157,7 @@ module.exports = async function (context, message) {
 
 В этом [разделе](#trigger---usage) показано свойство `myQueueItem`, имя которому назначает свойство `name` в function.json.  В разделе [Метаданные сообщений](#trigger---message-metadata) показаны все остальные переменные.
 
-### <a name="trigger---java-example"></a>Пример Java в триггере
-
-В следующем примере Java показано триггерные функции очереди хранилища, которые регистрируют активированное сообщение, помещенное в очередь `myqueuename`.
-
- ```java
- @FunctionName("queueprocessor")
- public void run(
-    @QueueTrigger(name = "msg",
-                   queueName = "myqueuename",
-                   connection = "myconnvarname") String message,
-     final ExecutionContext context
- ) {
-     context.getLogger().info(message);
- }
- ```
-
-### <a name="trigger---python-example"></a>Пример Python: триггер
+# <a name="pythontabpython"></a>[Python](#tab/python)
 
 В следующем примере показано, как прочитать сообщение очереди, переданное в функцию через триггер.
 
@@ -204,7 +178,7 @@ module.exports = async function (context, message) {
 }
 ```
 
-Код  *_\_init_\_. копировать* объявляет параметр как `func.ServiceBusMessage` который позволяет считывать сообщение очереди в функции.
+Код  *_\_init_\_. копировать* объявляет параметр как `func.ServiceBusMessage`, который позволяет читать сообщение очереди в функции.
 
 ```python
 import logging
@@ -231,7 +205,27 @@ def main(msg: func.QueueMessage):
     logging.info(result)
 ```
 
-## <a name="trigger---attributes"></a>Атрибуты триггера
+# <a name="javatabjava"></a>[Java](#tab/java)
+
+В следующем примере Java показана функция триггера очереди хранилища, которая записывает в журнал активируемое сообщение, помещенное в очередь `myqueuename`.
+
+ ```java
+ @FunctionName("queueprocessor")
+ public void run(
+    @QueueTrigger(name = "msg",
+                   queueName = "myqueuename",
+                   connection = "myconnvarname") String message,
+     final ExecutionContext context
+ ) {
+     context.getLogger().info(message);
+ }
+ ```
+
+ ---
+
+## <a name="trigger---attributes-and-annotations"></a>Атрибуты и заметки триггера
+
+# <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
 В [библиотеках классов C#](functions-dotnet-class-library.md) используйте следующие атрибуты для настройки триггера очереди:
 
@@ -261,7 +255,7 @@ def main(msg: func.QueueMessage):
   }
   ```
 
-  Полный пример см. в разделе [Пример C# в триггере](#trigger---c-example).
+  Полный пример см. в разделе [Пример C# в триггере](#trigger).
 
 * [StorageAccountAttribute](https://github.com/Azure/azure-webjobs-sdk/blob/master/src/Microsoft.Azure.WebJobs/StorageAccountAttribute.cs)
 
@@ -287,6 +281,47 @@ def main(msg: func.QueueMessage):
 * Атрибут `StorageAccount`, примененный к классу.
 * Параметр приложения AzureWebJobsStorage.
 
+# <a name="c-scripttabcsharp-script"></a>[C#Индекса](#tab/csharp-script)
+
+Атрибуты не поддерживаются C# сценарием.
+
+# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+
+Атрибуты не поддерживаются скриптом Java.
+
+# <a name="pythontabpython"></a>[Python](#tab/python)
+
+Атрибуты не поддерживаются в Python.
+
+# <a name="javatabjava"></a>[Java](#tab/java)
+
+Заметка `QueueTrigger` предоставляет доступ к очереди, которая запускает функцию. В следующем примере сообщение очереди становится доступным для функции через параметр `message`.
+
+```java
+package com.function;
+import com.microsoft.azure.functions.annotation.*;
+import java.util.Queue;
+import com.microsoft.azure.functions.*;
+
+public class QueueTriggerDemo {
+    @FunctionName("QueueTriggerDemo")
+    public void run(
+        @QueueTrigger(name = "message", queueName = "messages", connection = "MyStorageConnectionAppSetting") String message,
+        final ExecutionContext context
+    ) {
+        context.getLogger().info("Queue message: " + message);
+    }
+}
+```
+
+| Свойство    | Description |
+|-------------|-----------------------------|
+|`name`       | Объявляет имя параметра в сигнатуре функции. При активации функции значение этого параметра будет иметь содержимое сообщения очереди. |
+|`queueName`  | Объявляет имя очереди в учетной записи хранения. |
+|`connection` | Указывает строку подключения к учетной записи хранения. |
+
+---
+
 ## <a name="trigger---configuration"></a>Конфигурация триггера
 
 В следующей таблице описываются свойства конфигурации привязки, которые задаются в файле *function.json* и атрибуте `QueueTrigger`.
@@ -303,7 +338,9 @@ def main(msg: func.QueueMessage):
 
 ## <a name="trigger---usage"></a>Использование триггера
 
-В коде и сценарии C# для доступа к данным сообщения используйте параметр метода, например `string paramName`. В скрипте C# `paramName` — это значение, заданное в свойстве `name` файла *function.json*. Вы можете выполнить привязку к одному из следующих типов:
+# <a name="ctabcsharp"></a>[C#](#tab/csharp)
+
+Получите доступ к данным сообщения с помощью параметра метода, например `string paramName`. Вы можете выполнить привязку к одному из следующих типов:
 
 * Объект. Среда выполнения службы "Функции" десериализует полезные данные JSON в экземпляр произвольного класса, определенного в коде. 
 * `string`
@@ -312,7 +349,30 @@ def main(msg: func.QueueMessage):
 
 Если при попытке привязать к `CloudQueueMessage` вы получаете сообщение об ошибке, убедитесь, что у вас есть ссылка на [правильную версию пакета SDK для службы хранилища](#azure-storage-sdk-version-in-functions-1x).
 
-В JavaScript используйте `context.bindings.<name>`, чтобы получить доступ к полезным данным элемента очереди. Если полезные данные представлены в виде JSON, они десериализируются в объект. Эти полезные данные также передаются в качестве второго параметра в функцию.
+# <a name="c-scripttabcsharp-script"></a>[C#Индекса](#tab/csharp-script)
+
+Получите доступ к данным сообщения с помощью параметра метода, например `string paramName`. `paramName` — это значение, указанное в свойстве `name` файла *Function. JSON*. Вы можете выполнить привязку к одному из следующих типов:
+
+* Объект. Среда выполнения службы "Функции" десериализует полезные данные JSON в экземпляр произвольного класса, определенного в коде. 
+* `string`
+* `byte[]`
+* [CloudQueueMessage]
+
+Если при попытке привязать к `CloudQueueMessage` вы получаете сообщение об ошибке, убедитесь, что у вас есть ссылка на [правильную версию пакета SDK для службы хранилища](#azure-storage-sdk-version-in-functions-1x).
+
+# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+
+Полезные данные элемента очереди доступны через `context.bindings.<NAME>`, где `<NAME>` совпадает с именем, определенным в *Function. JSON*. Если полезная нагрузка — JSON, значение десериализуется в объект.
+
+# <a name="pythontabpython"></a>[Python](#tab/python)
+
+Доступ к сообщению очереди с помощью параметра, типизированного как [куеуемессаже](https://docs.microsoft.com/python/api/azure-functions/azure.functions.queuemessage?view=azure-python).
+
+# <a name="javatabjava"></a>[Java](#tab/java)
+
+Заметка [QueueTrigger](https://docs.microsoft.com/java/api/com.microsoft.azure.functions.annotation.queuetrigger?view=azure-java-stable) предоставляет доступ к сообщению очереди, вызвавшему функцию.
+
+---
 
 ## <a name="trigger---message-metadata"></a>Метаданные сообщения триггера
 
@@ -365,22 +425,12 @@ def main(msg: func.QueueMessage):
 
 Используйте выходную привязку хранилища очередей Azure, чтобы записать сообщения в очередь.
 
-## <a name="output---example"></a>Пример выходных данных
-
-Языковой пример см. в разделах:
-
-* [C#](#output---c-example)
-* [Скрипт C# (CSX)](#output---c-script-example)
-* [JavaScript](#output---javascript-example)
-* [Java](#output---java-example)
-* [Python](#output---python-example)
-
-### <a name="output---c-example"></a>Пример выходных данных C#
+# <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
 В следующем примере показана [функция C#](functions-dotnet-class-library.md), которая создает сообщения очереди для каждого полученного HTTP-запроса.
 
 ```csharp
-[StorageAccount("AzureWebJobsStorage")]
+[StorageAccount("MyStorageConnectionAppSetting")]
 public static class QueueFunctions
 {
     [FunctionName("QueueOutput")]
@@ -393,7 +443,7 @@ public static class QueueFunctions
 }
 ```
 
-### <a name="output---c-script-example"></a>Пример выходных данных скрипта C#
+# <a name="c-scripttabcsharp-script"></a>[C#Индекса](#tab/csharp-script)
 
 В следующем примере показана привязка триггера HTTP в файле *function.json* и коде [сценария C# (CSX)](functions-reference-csharp.md), который использует привязку. Функция создает элемент очереди с полезными данными объекта **CustomQueueMessage** для каждого полученного HTTP-запроса.
 
@@ -454,7 +504,7 @@ public static void Run(
 }
 ```
 
-### <a name="output---javascript-example"></a>Пример выходных данных JavaScript
+# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
 
 В следующем примере показана привязка триггера HTTP в файле *function.json* и [функция JavaScript](functions-reference-node.md), которая использует привязку. Эта функция создает элемент очереди для каждого полученного HTTP-запроса.
 
@@ -504,25 +554,7 @@ module.exports = function(context) {
 };
 ```
 
-### <a name="output---java-example"></a>Пример выходных данных Java
-
- В следующем примере показана функция Java, которая создает сообщение очереди при срабатывании HTTP-запроса.
-
-```java
-@FunctionName("httpToQueue")
-@QueueOutput(name = "item", queueName = "myqueue-items", connection = "AzureWebJobsStorage")
- public String pushToQueue(
-     @HttpTrigger(name = "request", methods = {HttpMethod.POST}, authLevel = AuthorizationLevel.ANONYMOUS)
-     final String message,
-     @HttpOutput(name = "response") final OutputBinding<String> result) {
-       result.setValue(message + " has been added.");
-       return message;
- }
-```
-
-В [библиотеке среды выполнения функций Java](/java/api/overview/azure/functions/runtime) используйте заметку `@QueueOutput` для параметров, значения которых будут записываться в хранилище очередей.  Параметр должен быть типа `OutputBinding<T>`, где T — любой собственный тип Java POJO.
-
-### <a name="output---python-example"></a>Пример Python: выходные данные
+# <a name="pythontabpython"></a>[Python](#tab/python)
 
 В следующем примере показано, как вывести одно и несколько значений в очереди хранилища. Конфигурация, необходимая для *Function. JSON* , такая же, как и та же.
 
@@ -585,7 +617,29 @@ def main(req: func.HttpRequest, msg: func.Out[typing.List[str]]) -> func.HttpRes
     return 'OK'
 ```
 
-## <a name="output---attributes"></a>Выходные атрибуты
+# <a name="javatabjava"></a>[Java](#tab/java)
+
+ В следующем примере показана функция Java, которая создает сообщение очереди для события, вызванного HTTP-запросом.
+
+```java
+@FunctionName("httpToQueue")
+@QueueOutput(name = "item", queueName = "myqueue-items", connection = "MyStorageConnectionAppSetting")
+ public String pushToQueue(
+     @HttpTrigger(name = "request", methods = {HttpMethod.POST}, authLevel = AuthorizationLevel.ANONYMOUS)
+     final String message,
+     @HttpOutput(name = "response") final OutputBinding<String> result) {
+       result.setValue(message + " has been added.");
+       return message;
+ }
+```
+
+В [библиотеке среды выполнения функций Java](/java/api/overview/azure/functions/runtime) используйте заметку `@QueueOutput` для параметров, значения которых будут записываться в хранилище очередей.  Тип параметра должен быть `OutputBinding<T>`, где `T` является любым собственным типом Java POJO.
+
+---
+
+## <a name="output---attributes-and-annotations"></a>Выходные атрибуты и заметки
+
+# <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
 В [библиотеках классов C#](functions-dotnet-class-library.md) используйте [QueueAttribute](https://github.com/Azure/azure-webjobs-sdk/blob/master/src/Microsoft.Azure.WebJobs/QueueAttribute.cs).
 
@@ -611,9 +665,54 @@ public static string Run([HttpTrigger] dynamic input,  ILogger log)
 }
 ```
 
-Полный пример см. в разделе [Пример выходных данных C#](#output---c-example).
+Полный пример см. в разделе [Пример выходных данных C#](#output).
 
 Чтобы указать учетную запись хранения на уровне класса, метода или параметра, можно использовать атрибут `StorageAccount`. Дополнительные сведения см. в разделе "Атрибуты триггера".
+
+# <a name="c-scripttabcsharp-script"></a>[C#Индекса](#tab/csharp-script)
+
+Атрибуты не поддерживаются C# сценарием.
+
+# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+
+Атрибуты не поддерживаются скриптом Java.
+
+# <a name="pythontabpython"></a>[Python](#tab/python)
+
+Атрибуты не поддерживаются в Python.
+
+# <a name="javatabjava"></a>[Java](#tab/java)
+
+`QueueOutput` заметка позволяет получить доступ к записи вывода функции. В следующем примере показана функция, активируемая по протоколу HTTP, которая создает сообщение очереди.
+
+```java
+package com.function;
+import java.util.*;
+import com.microsoft.azure.functions.annotation.*;
+import com.microsoft.azure.functions.*;
+
+public class HttpTriggerQueueOutput {
+    @FunctionName("HttpTriggerQueueOutput")
+    public HttpResponseMessage run(
+            @HttpTrigger(name = "req", methods = {HttpMethod.GET, HttpMethod.POST}, authLevel = AuthorizationLevel.FUNCTION) HttpRequestMessage<Optional<String>> request,
+            @QueueOutput(name = "message", queueName = "messages", connection = "MyStorageConnectionAppSetting") OutputBinding<String> message,
+            final ExecutionContext context) {
+
+        message.setValue(request.getQueryParameters().get("name"));
+        return request.createResponseBuilder(HttpStatus.OK).body("Done").build();
+    }
+}
+```
+
+| Свойство    | Description |
+|-------------|-----------------------------|
+|`name`       | Объявляет имя параметра в сигнатуре функции. При активации функции значение этого параметра будет иметь содержимое сообщения очереди. |
+|`queueName`  | Объявляет имя очереди в учетной записи хранения. |
+|`connection` | Указывает строку подключения к учетной записи хранения. |
+
+Параметр, связанный с `QueueOutput` заметкой, вводится как экземпляр [аутпутбиндинг\<t\>](https://github.com/Azure/azure-functions-java-library/blob/master/src/main/java/com/microsoft/azure/functions/OutputBinding.java) .
+
+---
 
 ## <a name="output---configuration"></a>Выходная конфигурация
 
@@ -631,7 +730,9 @@ public static string Run([HttpTrigger] dynamic input,  ILogger log)
 
 ## <a name="output---usage"></a>Использование выходной привязки
 
-В коде и скрипте C# запишите одно сообщение очереди с помощью параметра метода, например `out T paramName`. В скрипте C# `paramName` — это значение, заданное в свойстве `name` файла *function.json*. Вы можете использовать этот метод типа возвращаемого значения вместо параметра `out`. `T` может быть любого из следующих типов:
+# <a name="ctabcsharp"></a>[C#](#tab/csharp)
+
+Напишите одно сообщение очереди с помощью параметра метода, например `out T paramName`. Вы можете использовать этот метод типа возвращаемого значения вместо параметра `out`. `T` может быть любого из следующих типов:
 
 * Объект, сериализуемый как JSON
 * `string`
@@ -645,8 +746,43 @@ public static string Run([HttpTrigger] dynamic input,  ILogger log)
 * `ICollector<T>` либо `IAsyncCollector<T>`
 * [CloudQueue](/dotnet/api/microsoft.azure.storage.queue.cloudqueue).
 
-В функциях JavaScript используйте `context.bindings.<name>`, чтобы получить доступ к выходной очереди сообщений. Строку или сериализуемый объект JSON можно использовать для полезных данных элемента очереди.
+# <a name="c-scripttabcsharp-script"></a>[C#Индекса](#tab/csharp-script)
 
+Напишите одно сообщение очереди с помощью параметра метода, например `out T paramName`. `paramName` — это значение, указанное в свойстве `name` файла *Function. JSON*. Вы можете использовать этот метод типа возвращаемого значения вместо параметра `out`. `T` может быть любого из следующих типов:
+
+* Объект, сериализуемый как JSON
+* `string`
+* `byte[]`
+* [CloudQueueMessage] 
+
+Если при попытке привязать к `CloudQueueMessage` вы получаете сообщение об ошибке, убедитесь, что у вас есть ссылка на [правильную версию пакета SDK для службы хранилища](#azure-storage-sdk-version-in-functions-1x).
+
+В коде и скрипте C# запишите несколько сообщений очереди с помощью одного из следующих типов: 
+
+* `ICollector<T>` либо `IAsyncCollector<T>`
+* [CloudQueue](/dotnet/api/microsoft.azure.storage.queue.cloudqueue).
+
+# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+
+Элемент очереди вывода доступен по `context.bindings.<NAME>`, где `<NAME>` совпадает с именем, определенным в *Function. JSON*. Строку или сериализуемый объект JSON можно использовать для полезных данных элемента очереди.
+
+# <a name="pythontabpython"></a>[Python](#tab/python)
+
+Существует два варианта вывода сообщения концентратора событий из функции:
+
+- **Возвращаемое значение**: задайте `$return`для свойства `name` в *Function. JSON* . В этой конфигурации возвращаемое значение функции сохраняется как сообщение хранилища очереди.
+
+- **Императив**: передайте значение в метод [Set](https://docs.microsoft.com/python/api/azure-functions/azure.functions.out?view=azure-python#set-val--t-----none) параметра, объявленного как тип [out](https://docs.microsoft.com/python/api/azure-functions/azure.functions.out?view=azure-python) . Значение, передаваемое в `set`, сохраняется как сообщение хранилища очередей.
+
+# <a name="javatabjava"></a>[Java](#tab/java)
+
+Существует два варианта вывода сообщения концентратора событий из функции с помощью аннотации [куеуеаутпут](https://docs.microsoft.com/java/api/com.microsoft.azure.functions.annotation.queueoutput) :
+
+- **Возвращаемое значение**: применяя заметку к самой функции, возвращаемое значение функции сохраняется как сообщение концентратора событий.
+
+- **Императивное**: чтобы явно задать значение сообщения, примените заметку к конкретному параметру типа [`OutputBinding<T>`](https://docs.microsoft.com/java/api/com.microsoft.azure.functions.OutputBinding), где `T` является POJO или любым собственным типом Java. При такой конфигурации передача значения методу `setValue` сохраняет значение как сообщение концентратора событий.
+
+---
 
 ## <a name="exceptions-and-return-codes"></a>Исключения и коды возврата
 
@@ -679,7 +815,6 @@ public static string Run([HttpTrigger] dynamic input,  ILogger log)
     }
 }
 ```
-
 
 |Свойство  |По умолчанию | Description |
 |---------|---------|---------|

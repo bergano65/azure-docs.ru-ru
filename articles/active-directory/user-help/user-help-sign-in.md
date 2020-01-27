@@ -12,13 +12,12 @@ ms.topic: conceptual
 ms.date: 07/18/2019
 ms.author: lizross
 ms.custom: user-help
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: f595013d5404f0cbcb17a0d24d6395a84fa5b607
-ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
+ms.openlocfilehash: c7dea5acfce9ad964b050b6787f29e5d116a306b
+ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74266987"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76704601"
 ---
 # <a name="sign-in-using-two-step-verification-or-security-info"></a>Вход с помощью двухфакторной проверки подлинности или сведений для защиты
 
@@ -27,7 +26,7 @@ ms.locfileid: "74266987"
 > [!Note]
 > Если вы по-прежнему используете двухфакторную проверку подлинности, необходимо настроить методы проверки, следуя инструкциям в статье [Настройка учетной записи для двухфакторной проверки](multi-factor-authentication-end-user-first-time.md) подлинности.
 >
-> Если администратор включил сведения о безопасности, необходимо настроить методы проверки с помощью этих пошаговых руководств:<ul><li>[Настройка использования приложения проверки подлинности в сведениях для защиты (предварительная версия)](security-info-setup-auth-app.md)</li><li>[Настройка сведений для защиты для использования обмена сообщениями](security-info-setup-text-msg.md)</li><li>[Настройка использования телефонного звонка в сведениях для защиты (предварительная версия)](security-info-setup-phone-number.md)</li><li>[Настройка сведений о безопасности для использования ключа безопасности](security-info-setup-security-key.md)</li></ul>
+> Если администратор включил сведения о безопасности, необходимо настроить методы проверки с помощью этих пошаговых руководств:<ul><li>[Настройка использования приложения проверки подлинности в сведениях для защиты (предварительная версия)](security-info-setup-auth-app.md)</li><li>[Настройка использования обмена текстовыми сообщениями в сведениях для защиты (предварительная версия)](security-info-setup-text-msg.md)</li><li>[Настройка использования телефонного звонка в сведениях для защиты (предварительная версия)](security-info-setup-phone-number.md)</li><li>[Настройка сведений о безопасности для использования ключа безопасности](security-info-setup-security-key.md)</li></ul>
 
 ## <a name="sign-in-using-an-authenticator-app-notification-on-your-mobile-device"></a>Вход с помощью уведомления от приложения проверки подлинности на мобильном устройстве
 
@@ -89,11 +88,11 @@ ms.locfileid: "74266987"
 
 3. При необходимости можно обновить свои методы проверки, как только вы вернетесь в свою учетную запись. Дополнительные сведения о добавлении или изменении методов см. в статье [Управление параметрами двухфакторной проверки подлинности](multi-factor-authentication-end-user-manage-settings.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительную информацию о сведениях для защиты см. в [этой статье](user-help-security-info-overview.md).
 
-- Дополнительные сведения о двухфакторной проверке подлинности см. в [этой статье](user-help-two-step-verification-overview.md).
+- Узнайте больше о двухфакторной проверке подлинности в разделе [Обзор двухфакторной проверки подлинности](user-help-two-step-verification-overview.md).
 
 - Если вы забыли свой пароль, его можно сбросить на [этом портале](https://passwordreset.microsoftonline.com/).
 

@@ -6,12 +6,12 @@ ms.author: raagyema
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 10/25/2019
-ms.openlocfilehash: 87f79f0ed21ec1f6a550c47f9f60d18511883300
-ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
+ms.openlocfilehash: 9d71dd854c9a5059c2d0a48f57ad3ba5bb1eddf9
+ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74768220"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76721325"
 ---
 # <a name="logs-in-azure-database-for-postgresql---single-server"></a>Журналы в базе данных Azure для PostgreSQL — один сервер
 База данных Azure для PostgreSQL позволяет настраивать и получать доступ к стандартным журналам postgres. Журналы могут использоваться для обнаружения, устранения и исправления ошибок конфигурации и неоптимальной производительности. Сведения о ведении журнала, которые можно настроить и получить доступ, включают ошибки, сведения о запросах, записи автоочистки, подключения и контрольные точки. (Доступ к журналам транзакций недоступен).
@@ -29,7 +29,7 @@ ms.locfileid: "74768220"
 Чтобы узнать, как настроить параметры в базе данных Azure для PostgreSQL, см. [документацию по порталу](howto-configure-server-parameters-using-portal.md) или [документации по CLI](howto-configure-server-parameters-using-cli.md). 
 
 > [!NOTE]
-> Настройка большого объема журналов, например ведение журнала инструкций, может значительно увеличить производительности. 
+> Настройка большого объема журналов, например ведение журнала инструкций, может значительно увеличить производительность. 
 
 ## <a name="access-log-files"></a>Файлы Access. log
 Формат журнала по умолчанию в базе данных Azure для PostgreSQL —. log. Пример строки из этого журнала выглядит следующим образом:

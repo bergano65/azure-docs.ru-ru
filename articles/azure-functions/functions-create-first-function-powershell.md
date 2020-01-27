@@ -6,12 +6,12 @@ ms.author: jaiello
 ms.reviewer: glenga
 ms.date: 04/25/2019
 ms.topic: quickstart
-ms.openlocfilehash: 934f3f69d46362e4bef4e713bcee23e9a3e24eb6
-ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
+ms.openlocfilehash: 8cc89805ce53c141ff2c012fccb3c01ff2e9db49
+ms.sourcegitcommit: d29e7d0235dc9650ac2b6f2ff78a3625c491bbbf
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75769359"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76167901"
 ---
 # <a name="create-your-first-powershell-function-in-azure"></a>Создание первой функции PowerShell в Azure
 
@@ -21,12 +21,9 @@ ms.locfileid: "75769359"
 
 Вы используете раздел [Расширение "Функции Azure" для Visual Studio Code], чтобы создать функцию PowerShell локально, а затем развернуть ее в новом приложении-функции Azure. Расширение сейчас доступно в режиме предварительной версии. Дополнительные сведения см. в разделе [Расширение "Функции Azure" для Visual Studio Code].
 
-> [!NOTE]  
-> Поддержка PowerShell для [Расширения "Функции Azure"][расширение "функции azure" для visual studio code] в настоящее время отключена по умолчанию. Включение поддержки PowerShell является одним из шагов в этой статье.
-
 Следующие шаги поддерживаются в операционных системах MacOS, Windows и Linux.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим кратким руководством сделайте следующее:
 

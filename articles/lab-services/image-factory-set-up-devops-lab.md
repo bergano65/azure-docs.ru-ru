@@ -1,6 +1,6 @@
 ---
-title: Запуск фабрики образов из Azure DevOps в Azure DevTest Labs | Документация Майкрософт
-description: Узнайте, как создать настраиваемую фабрику изображений в Azure DevTest Labs.
+title: Запуск фабрики образов из Azure DevOps в Azure DevTest Labs
+description: В этой статье рассматриваются все подготовительные действия, необходимые для запуска фабрики образов из Azure DevOps (ранее Visual Studio Team Services).
 services: devtest-lab, lab-services
 documentationcenter: na
 author: spelluru
@@ -10,14 +10,14 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 03/25/2019
+ms.date: 01/24/2020
 ms.author: spelluru
-ms.openlocfilehash: 101ed792f091a5074b42e3d06eed27d606d3d2a7
-ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
+ms.openlocfilehash: bb67f765684c77ed5f8527226bef578e450579e0
+ms.sourcegitcommit: b5d646969d7b665539beb18ed0dc6df87b7ba83d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75638958"
+ms.lasthandoff: 01/26/2020
+ms.locfileid: "76758688"
 ---
 # <a name="run-an-image-factory-from-azure-devops"></a>Запуск фабрики образов из Azure DevOps
 В этой статье рассматриваются все подготовительные действия, необходимые для запуска фабрики образов из Azure DevOps (ранее Visual Studio Team Services).

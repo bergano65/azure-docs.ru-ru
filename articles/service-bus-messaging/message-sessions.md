@@ -1,6 +1,6 @@
 ---
 title: Сеансы обмена сообщениями служебной шины Azure | Документация Майкрософт
-description: Обработка последовательностей сообщений служебной шины Azure с помощью сеансов.
+description: В этой статье объясняется, как использовать сеансы для обеспечения совместной и упорядоченной обработки непривязанных последовательностей связанных сообщений.
 services: service-bus-messaging
 documentationcenter: ''
 author: axisc
@@ -11,14 +11,14 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 01/23/2019
+ms.date: 01/24/2020
 ms.author: aschhab
-ms.openlocfilehash: 7264b8e5a536c90d106b3bf4a5e26093744327d6
-ms.sourcegitcommit: c79aa93d87d4db04ecc4e3eb68a75b349448cd17
+ms.openlocfilehash: 0338663046c21adad358e8fddec12a3cc8151c79
+ms.sourcegitcommit: b5d646969d7b665539beb18ed0dc6df87b7ba83d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71091812"
+ms.lasthandoff: 01/26/2020
+ms.locfileid: "76759335"
 ---
 # <a name="message-sessions-first-in-first-out-fifo"></a>Сеансы сообщений и обработка в порядке очереди (FIFO) 
 
@@ -82,7 +82,7 @@ ms.locfileid: "71091812"
 
 ## <a name="impact-of-delivery-count"></a>Влияние счетчика доставки
 
-Определение числа доставок для каждого сообщения в контексте сеансов немного отличается от определения в абсенсе сеансов. Ниже приведена таблица, в которой приводится сводка по увеличению числа доставок.
+Определение числа доставок для каждого сообщения в контексте сеансов немного отличается от определения в случае отсутствия сеансов. Ниже приведена таблица, в которой приводится сводка по увеличению числа доставок.
 
 | Сценарий | Увеличивается счетчик доставки сообщений |
 |----------|---------------------------------------------|
@@ -90,7 +90,7 @@ ms.locfileid: "71091812"
 | Сеанс принят, сообщения в сеансе не завершены (даже если они заблокированы) и сеанс закрыт. | Нет |
 | Сеанс принят, сообщения завершаются, а затем сеанс явным образом закрывается | Н/д (это стандартный поток. Здесь сообщения удаляются из сеанса. |
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Пример использования клиента .NET Framework для обработки сообщений, поддерживающих сеанс, см. в [статье примеры Microsoft. Azure. servicebus](https://github.com/Azure/azure-service-bus/tree/master/samples/DotNet/Microsoft.Azure.ServiceBus/Sessions) или [Microsoft. servicebus. Messaging](https://github.com/Azure/azure-service-bus/tree/master/samples/DotNet/Microsoft.ServiceBus.Messaging/Sessions) . 
 

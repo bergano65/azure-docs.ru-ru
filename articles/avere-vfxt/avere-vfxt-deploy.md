@@ -6,16 +6,16 @@ ms.service: avere-vfxt
 ms.topic: conceptual
 ms.date: 01/13/2020
 ms.author: rohogue
-ms.openlocfilehash: d1058125d5bb3912b9561027bbe0a977637d3379
-ms.sourcegitcommit: 276c1c79b814ecc9d6c1997d92a93d07aed06b84
+ms.openlocfilehash: e70d1dfebcf25ee8f4e90a062cee6dd72a663e02
+ms.sourcegitcommit: 87781a4207c25c4831421c7309c03fce5fb5793f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76153605"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76547529"
 ---
 # <a name="deploy-the-vfxt-cluster"></a>Развертывание кластера vFXT
 
-Эта процедура описывает использование мастера развертывания, который предоставляется в Azure Marketplace. Этот мастер автоматически развертывает кластер с помощью шаблона Azure Resource Manager. Когда вы введете в форму параметры и нажмете кнопку **Создать**, Azure автоматически выполнит следующие действия:
+Эта процедура описывает использование мастера развертывания, который предоставляется в Azure Marketplace. Этот мастер автоматически развертывает кластер с помощью шаблона Azure Resource Manager. После ввода параметров в форме и нажатия кнопки **создать**Azure автоматически выполняет следующие задачи:
 
 * Создает контроллер кластера, который представляет собой базовую виртуальную машину, которая содержит программное обеспечение, необходимое для развертывания кластера и управления им.
 * Настраивает группу ресурсов и инфраструктуру виртуальной сети, включая создание новых элементов.
@@ -28,10 +28,10 @@ ms.locfileid: "76153605"
 
 Перед запуском шаблона создания убедитесь, что у вас есть следующие необходимые компоненты:  
 
-1. [Новая подписка](avere-vfxt-prereqs.md#create-a-new-subscription).
-1. [Разрешения владельца подписки](avere-vfxt-prereqs.md#configure-subscription-owner-permissions).
-1. [Квота для кластера vFXT](avere-vfxt-prereqs.md#quota-for-the-vfxt-cluster).
-1. [Конечная точка службы хранилища (при необходимости)](avere-vfxt-prereqs.md#create-a-storage-service-endpoint-in-your-virtual-network-if-needed) — требуется для развертываний, использующих существующую виртуальную сеть и создав хранилище BLOB-объектов.
+* [Новая подписка](avere-vfxt-prereqs.md#create-a-new-subscription).
+* [Разрешения владельца подписки](avere-vfxt-prereqs.md#configure-subscription-owner-permissions).
+* [Квота для кластера vFXT](avere-vfxt-prereqs.md#quota-for-the-vfxt-cluster).
+* [Конечная точка службы хранилища (при необходимости)](avere-vfxt-prereqs.md#create-a-storage-service-endpoint-in-your-virtual-network-if-needed) — требуется для развертываний, использующих существующую виртуальную сеть и создав хранилище BLOB-объектов.
 
 Дополнительные сведения о шагах развертывания кластера и планировании см. в статьях [Plan your Avere vFXT system](avere-vfxt-deploy-plan.md) (Планирование системы Avere vFXT) и [Avere vFXT for Azure - deployment overview](avere-vfxt-deploy-overview.md) (Общие сведения о развертывании Avere vFXT для Azure).
 

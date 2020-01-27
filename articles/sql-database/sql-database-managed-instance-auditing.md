@@ -9,16 +9,16 @@ ms.devlang: ''
 ms.topic: conceptual
 f1_keywords:
 - mi.azure.sqlaudit.general.f1
-author: barmichal
-ms.author: mibar
+author: DavidTrigano
+ms.author: datrigan
 ms.reviewer: vanto
 ms.date: 04/08/2019
-ms.openlocfilehash: 41d632b145a7187dd0aeaab740cd8546a3955e7f
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.openlocfilehash: 9b96969027431f289e366b150fbfc6a62ee6a908
+ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73818998"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76719914"
 ---
 # <a name="get-started-with-azure-sql-database-managed-instance-auditing"></a>Начало работы с аудитом управляемого экземпляра Базы данных SQL Azure
 
@@ -130,7 +130,7 @@ ms.locfileid: "73818998"
 
      1. Войдите в учетную запись Azure (необязательно):
 
-        ![Вход в Azure](./media/sql-managed-instance-auditing/12_mi_SSMS_sign_in_to_azure.png)
+        ![Войдите в Azure](./media/sql-managed-instance-auditing/12_mi_SSMS_sign_in_to_azure.png)
 
      1. Выберите подписку, учетную запись хранения и контейнер больших двоичных объектов из раскрывающихся списков или создайте собственный контейнер, щелкнув **Создать**. Когда вы зададите все необходимые параметры, нажмите кнопку **ОК**:
 
@@ -154,8 +154,8 @@ ms.locfileid: "73818998"
 Дополнительные сведения см. в следующих статьях:
 
 - [Аудит различий между отдельными базами данных, эластичными пулами и управляемыми экземплярами в базе данных SQL Azure и в базах данных SQL Server](#auditing-differences-between-databases-in-azure-sql-database-and-databases-in-sql-server)
-- [CREATE SERVER AUDIT (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/create-server-audit-transact-sql)
-- [ALTER SERVER AUDIT (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/alter-server-audit-transact-sql)
+- [CREATE SERVER AUDIT](https://docs.microsoft.com/sql/t-sql/statements/create-server-audit-transact-sql)
+- [ALTER SERVER AUDIT](https://docs.microsoft.com/sql/t-sql/statements/alter-server-audit-transact-sql)
 
 ## <a name="set-up-auditing-for-your-server-to-event-hub-or-azure-monitor-logs"></a>Настройка аудита сервера для концентратора событий или журналов Azure Monitor
 
@@ -171,7 +171,7 @@ ms.locfileid: "73818998"
 
 5. Выберите назначение для событий аудита — концентратор событий, журналы Azure Monitor или и то, и другое. Настройте необходимые параметры (например, рабочую область Log Analytics) для каждой цели.
 
-6. Щелкните **Сохранить**.
+6. Выберите команду **Сохранить**.
 
     ![Настройка параметров диагностики](./media/sql-managed-instance-auditing/9_mi_configure_diagnostics.png)
 
@@ -233,9 +233,9 @@ ms.locfileid: "73818998"
 
 - Новый синтаксис `TO URL` позволяет указать URL-адрес контейнера в хранилище BLOB-объектов Azure, куда будут помещены файлы `.xel`.
 - `TO EXTERNAL MONITOR` предоставляется новый синтаксис, позволяющий реализовать даже целевые объекты журналов и Azure Monitor.
-- Синтаксис `TO FILE` **не поддерживается**, так как База данных SQL не может использовать файловые ресурсы Windows.
+- Синтаксис `TO FILE`**не поддерживается**, так как База данных SQL не может использовать файловые ресурсы Windows.
 - Параметр завершения работы **не поддерживается**.
-- Значение 0 для `queue_delay` **не поддерживается**.
+- Значение 0 для `queue_delay`**не поддерживается**.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

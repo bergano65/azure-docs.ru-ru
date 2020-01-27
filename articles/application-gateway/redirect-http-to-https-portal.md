@@ -7,12 +7,12 @@ ms.service: application-gateway
 ms.topic: article
 ms.date: 11/13/2019
 ms.author: victorh
-ms.openlocfilehash: dcbc20f768ae80404979d47f23e7e08098757b41
-ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
+ms.openlocfilehash: 51c191a7815bb64243e2324e150c00c2dcb7ec4c
+ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/02/2020
-ms.locfileid: "75613335"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76705332"
 ---
 # <a name="create-an-application-gateway-with-http-to-https-redirection-using-the-azure-portal"></a>Создание шлюза приложений с перенаправлением трафика HTTP в HTTPS с помощью портала Azure
 
@@ -27,7 +27,7 @@ ms.locfileid: "75613335"
 > * добавление прослушивателя и правила перенаправления;
 > * создание масштабируемого набора виртуальных машин с серверным пулом, используемым по умолчанию.
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
@@ -83,7 +83,7 @@ Export-PfxCertificate `
    - *myVNet* — имя виртуальной сети;
    - *10.0.0.0/16* — диапазон адресов виртуальной сети;
    - *myAGSubnet* — имя подсети;
-   - *10.0.1.0/24* — диапазон адресов подсети.
+   - *10.0.0.0/24* — диапазон адресов подсети.
 
      ![Создание виртуальной сети](./media/create-url-route-portal/application-gateway-vnet.png)
 
@@ -146,7 +146,7 @@ Export-PfxCertificate `
 12. В разделе **Сети** убедитесь, что для параметра **Выбрать параметры балансировки нагрузки** установлено значение **Шлюз приложений**.
 13. Убедитесь, что для **шлюза приложений** установлено значение **myAppGateway**.
 14. Убедитесь, что для **подсети** установлено значение **myBackendSubnet**.
-15. Нажмите кнопку **Создать**.
+15. Нажмите кнопку **создания**.
 
 ### <a name="associate-the-scale-set-with-the-proper-backend-pool"></a>Связывание масштабируемого набора с правильным серверным пулом
 

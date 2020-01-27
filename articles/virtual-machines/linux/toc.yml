@@ -43,9 +43,11 @@
       href: tutorial-azure-security.md
     - name: "14a.\_Сборка с помощью Jenkins"
       href: tutorial-jenkins-github-docker-cicd.md
-    - name: "14b.\_Развертывание с использованием Azure Pipelines (классическая версия)"
+    - name: 14б. Интеграция Jenkins с Azure DevOps
       href: tutorial-build-deploy-jenkins.md
-    - name: "15.\_CI/CD с использованием Azure Pipelines (YAML)"
+    - name: 15а. Использование DevOps для IaaS и PaaS в Azure
+      href: tutorial-devops-azure-pipelines-classic.md
+    - name: 15б. Использование CI/CD с Azure Pipelines (YAML)
       href: tutorial-build-deploy-azure-pipelines.md
     - name: "16а.\_Создание стека LAMP"
       href: tutorial-lamp-stack.md

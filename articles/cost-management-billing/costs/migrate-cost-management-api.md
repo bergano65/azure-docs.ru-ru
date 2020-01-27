@@ -5,17 +5,17 @@ services: cost-management
 keywords: ''
 author: bandersmsft
 ms.author: banders
-ms.date: 11/25/2019
+ms.date: 01/21/2020
 ms.topic: conceptual
 ms.service: cost-management-billing
 manager: micflan
 ms.custom: ''
-ms.openlocfilehash: 0dfb7245135097780f027185e4037b6cafbae690
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.openlocfilehash: b0c30cd35efd598767d21dbdafc5100d8896380c
+ms.sourcegitcommit: 38b11501526a7997cfe1c7980d57e772b1f3169b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75989362"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76514720"
 ---
 # <a name="migrate-from-enterprise-agreement-to-microsoft-customer-agreement-apis"></a>Переход с Соглашение Enterprise на API-интерфейсы пользовательского соглашения Майкрософт
 
@@ -81,7 +81,7 @@ API EA используют ключ API для проверки подлинн�
 | Цель | Старое предложение | Новое предложение |
 | --- | --- | --- |
 | Cloudyn | [Cloudyn.com](https://www.cloudyn.com) | [Управление затратами Azure](https://azure.microsoft.com/services/cost-management/) |
-| Power BI | Пакет содержимого и соединитель для [аналитики потребления (Майкрософт](/power-bi/desktop-connect-azure-consumption-insights) ) | [Microsoft Azure Consumption Insights Power BI приложение](https://appsource.microsoft.com/product/power-bi/pbi_azureconsumptioninsights.pbi-azure-consumptioninsights?tab=overview) и [соединитель Azure consumption Insights](/power-bi/desktop-connect-azure-consumption-insights) |
+| Power BI | Пакет содержимого и соединитель для [аналитики потребления (Майкрософт](/power-bi/desktop-connect-azure-consumption-insights) ) |  [Соединитель Azure Consumption Insights](/power-bi/desktop-connect-azure-consumption-insights) |
 
 ## <a name="apis-to-get-balance-and-credits"></a>Интерфейсы API для получения баланса и кредитов
 
@@ -130,7 +130,7 @@ API сведений об использовании, как и для всех 
 | --- | --- |
 | учетная запись выставления счетов; | `/Microsoft.Billing/billingAccounts/{billingAccountId}` |
 | Профиль выставления счетов | `/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}` |
-| Subscription | `/subscriptions/{subscriptionId}` |
+| Подписка | `/subscriptions/{subscriptionId}` |
 | Группа ресурсов | `/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}` |
 
 Используйте следующие параметры строки запроса для обновления кода программирования.
@@ -271,7 +271,7 @@ API сведений об использовании, как и для всех 
 | --- | --- |
 | POST | `https://management.azure.com/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}/pricesheet/default/download?api-version=2018-11-01-preview&startDate=2019-01-01&endDate=2019-01-31&format=json` |
 
-Использование API возвращает прайс-лист для всей учетной записи. Однако можно также получить сокращенную версию прайс-листа в формате PDF. Сводка включает в себя использование Azure и услуги по потреблению рынка, которые выставляются за конкретный счет. Счет определяется с помощью {Инвоицеид}, который совпадает с **номером счета** , отображаемым в PDF-файлах сводки по счетам. Вот пример.
+Использование API возвращает прайс-лист для всей учетной записи. Однако можно также получить сокращенную версию прайс-листа в формате PDF. Сводка включает в себя использование Azure и услуги по потреблению рынка, которые выставляются за конкретный счет. Счет определяется с помощью {Инвоицеид}, который совпадает с **номером счета** , отображаемым в PDF-файлах сводки по счетам. Ниже приведен пример.
 
 ![Пример изображения, в котором показан номер счета, соответствующий Инвоицеид](./media/migrate-cost-management-api/invoicesummary.png)
 

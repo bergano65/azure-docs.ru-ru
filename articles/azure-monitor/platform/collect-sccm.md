@@ -7,22 +7,22 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 08/28/2019
-ms.openlocfilehash: 2262c951b52ef58006bacde4be76dc92468a20ba
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 5b5af034b116ec1cdcefc811630683c9f560c840
+ms.sourcegitcommit: 38b11501526a7997cfe1c7980d57e772b1f3169b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75364056"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76513675"
 ---
 # <a name="connect-configuration-manager-to-azure-monitor"></a>Подключение Configuration Manager к Azure Monitor
-Вы можете подключить среду System Center Configuration Manager, чтобы Azure Monitor синхронизировать данные коллекции устройств и ссылаться на эти коллекции в Azure Monitor и службе автоматизации Azure.  
+Вы можете подключить конечную среду Configuration Manager Майкрософт, чтобы Azure Monitor синхронизировать данные коллекции устройств и ссылаться на эти коллекции в Azure Monitor и службе автоматизации Azure.  
 
 ## <a name="prerequisites"></a>Технические условия
 
-Azure Monitor поддерживает System Center Configuration Manager Current Branch, версии 1606 и выше.
+Azure Monitor поддерживает Configuration Manager Current Branch, версии 1606 и выше.
 
 >[!NOTE]
->Функция для подключения Configuration Manager с рабочей областью Log Analytics является необязательной и не включена по умолчанию. Перед использованием ее необходимо включить. Дополнительные сведения см. в разделе [Включение дополнительных функций из обновлений](https://docs.microsoft.com/sccm/core/servers/manage/install-in-console-updates#bkmk_options).
+>Функция для подключения Configuration Manager с рабочей областью Log Analytics является необязательной и не включена по умолчанию. Перед использованием ее необходимо включить. Дополнительные сведения см. в разделе [Включение дополнительных функций из обновлений](https://docs.microsoft.com/configmgr/core/servers/manage/install-in-console-updates#bkmk_options).
 
 ## <a name="configuration-overview"></a>Общие сведения о настройке
 
@@ -67,7 +67,7 @@ Azure Monitor поддерживает System Center Configuration Manager Curre
 ## <a name="connect-configuration-manager-to-log-analytics-workspace"></a>Подключение Configuration Manager к Log Analytics рабочей области
 
 >[!NOTE]
-> Чтобы добавить Log Analyticsное подключение, в среде Configuration Manager должна быть настроена [точка подключения службы](https://docs.microsoft.com/sccm/core/servers/deploy/configure/about-the-service-connection-point) для режима "в сети".
+> Чтобы добавить Log Analyticsное подключение, в среде Configuration Manager должна быть настроена [точка подключения службы](https://docs.microsoft.com/configmgr/core/servers/deploy/configure/about-the-service-connection-point) для режима "в сети".
 
 > [!NOTE]
 > Для Azure Monitor необходимо подключить сайт верхнего уровня в иерархии. Если вы подключаете автономный первичный сайт к Azure Monitor, а затем добавляете сайт центра администрирования в среду, необходимо удалить и повторно создать подключение в новой иерархии.

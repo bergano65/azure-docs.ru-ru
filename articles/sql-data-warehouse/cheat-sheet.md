@@ -10,12 +10,12 @@ ms.subservice: design
 ms.date: 11/04/2019
 ms.author: martinle
 ms.reviewer: igorstan
-ms.openlocfilehash: 9355ae1522c653924574b94594e894fdaf3f764e
-ms.sourcegitcommit: 359930a9387dd3d15d39abd97ad2b8cb69b8c18b
+ms.openlocfilehash: ea6e5b5ac829c95a0eca328e8f7f40e7d4a9a94d
+ms.sourcegitcommit: 87781a4207c25c4831421c7309c03fce5fb5793f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73646648"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76547988"
 ---
 # <a name="cheat-sheet-for-azure-synapse-analytics-formerly-sql-dw"></a>Памятка по Azure Synapse Analytics (ранее — Хранилище данных SQL)
 
@@ -23,7 +23,7 @@ ms.locfileid: "73646648"
 
 На рисунке ниже показан процесс проектирования хранилища данных.
 
-![Эскиз]
+![Эскиз](media/sql-data-warehouse-cheat-sheet/picture-flow.png)
 
 ## <a name="queries-and-operations-across-tables"></a>Запросы и операции для нескольких таблиц
 
@@ -36,22 +36,22 @@ ms.locfileid: "73646648"
 
 ## <a name="data-migration"></a>Перенос данных
 
-Сначала загрузите данные в [Azure Data Lake Storage](https://docs.microsoft.com/azure/data-factory/connector-azure-data-lake-store) или в хранилище BLOB-объектов Azure. Далее с помощью PolyBase загрузите данные в промежуточных таблицах. Используйте следующую конфигурацию:
+Сначала загрузите данные в [Azure Data Lake Storage](../data-factory/connector-azure-data-lake-store.md) или в хранилище BLOB-объектов Azure. Далее с помощью PolyBase загрузите данные в промежуточных таблицах. Используйте следующую конфигурацию:
 
-| Проектирование | Рекомендации |
+| Конструирование | Рекомендация |
 |:--- |:--- |
-| Дистрибутив | Циклический перебор, |
+| Distribution | Циклический перебор |
 | Индексация | Куча |
-| Секционирование | Нет |
+| Секционирование | None |
 | Класс ресурсов | largerc или xlargerc |
 
-Подробнее о [переносе данных], [загрузке данных], а также о [процессе извлечения, загрузки и преобразования (ELT)](https://docs.microsoft.com/azure/sql-data-warehouse/design-elt-data-loading). 
+Подробнее о [переносе данных](https://blogs.msdn.microsoft.com/sqlcat/20../../migrating-data-to-azure-sql-data-warehouse-in-practice/), [загрузке данных](design-elt-data-loading.md), а также о [процессе извлечения, загрузки и преобразования (ELT)](design-elt-data-loading.md). 
 
 ## <a name="distributed-or-replicated-tables"></a>Распределенные или реплицируемые таблицы
 
 В зависимости от свойств таблицы используйте следующие стратегии:
 
-| type | Подходит...| Не подходит|
+| Тип | Подходит...| Не подходит|
 |:--- |:--- |:--- |
 | Реплицированный | • Малые таблицы измерения в схеме типа "звезда" с хранилищем размером менее 2 ГБ после сжатия (приблизительно в 5 раз) |• Выполняется большое количество транзакций записей для таблицы (таких как вставка, операция upsert, удаление, обновление)<br></br>• Часто меняется подготовка единиц использования хранилища данных (DWU)<br></br>• Используются только 2–3 столбца, в то время как таблица содержит много столбцов<br></br>•  Индексируется реплицированная таблица |
 | Циклический перебор (по умолчанию) | • Временная или промежуточная таблица<br></br> • Нет очевидного ключа соединения или потенциальной колонки |• Производительность снижается из-за перемещения данных |
@@ -62,16 +62,16 @@ ms.locfileid: "73646648"
 * Убедитесь, что общие ключи хэша имеют одинаковый формат данных.
 * Не распределяйте в формате varchar.
 * Таблицы измерений с общим ключом хэша к таблице фактов с частыми операциями объединения могут быть распределены по хэшу.
-* С помощью *[sys.dm_pdw_nodes_db_partition_stats]* анализируйте любую асимметрию в данных.
-* С помощью *[sys.dm_pdw_request_steps]* анализируйте перемещения данных по запросам, контролируйте время трансляции и операций смешения. Это помогает рассмотреть стратегию распределения.
+* С помощью *[sys.dm_pdw_nodes_db_partition_stats](/sql/relational-databases/system-dynamic-management-views/sys-dm-db-partition-stats-transact-sql)* анализируйте любую асимметрию в данных.
+* С помощью *[sys.dm_pdw_request_steps](/sql/relational-databases/system-dynamic-management-views/sys-dm-pdw-request-steps-transact-sql)* анализируйте перемещения данных по запросам, контролируйте время трансляции и операций смешения. Это помогает рассмотреть стратегию распределения.
 
-Подробнее о [реплицированных таблицах] и [распределенных таблицах].
+Подробнее о [реплицированных таблицах](design-guidance-for-replicated-tables.md) и [распределенных таблицах](sql-data-warehouse-tables-distribute.md).
 
 ## <a name="index-your-table"></a>Индексирование таблицы
 
 Индексирование полезно для быстрого чтения таблицы. Существует уникальный набор технологий, которые можно использовать в зависимости от ваших потребностей.
 
-| type | Подходит... | Не подходит|
+| Тип | Подходит... | Не подходит|
 |:--- |:--- |:--- |
 | Куча | • Промежуточная или временная таблица<br></br>• Маленькие таблицы с небольшой областью поиска |• Любой поиск сканирует всю таблицу |
 | Кластеризованный индекс | • Таблицы, содержащие не более 100 млн строк<br></br>• Большие таблицы (более 100 млн строк) с 1–2 используемыми столбцами |• Используется реплицированная таблица<br></br>• Выполняются сложные запросы, включающие несколько операций присоединения и группирования<br></br>• Создаются обновления в индексированных столбцах; это занимает память |
@@ -85,7 +85,7 @@ ms.locfileid: "73646648"
 * С учетом того, как часто добавляется поэтапная нагрузка, а также ее размера при реорганизации и перестройке индексов можно автоматизировать процессы. Всегда можно использовать очистку Spring.
 * Учитывайте различные факторы, когда необходимо обрезать группу строк. Каков размер открытых групп строк? Какой объем данных необходимо загрузить в течение нескольких дней?
 
-Подробнее об [индексах].
+Подробнее об [индексах](sql-data-warehouse-tables-index.md).
 
 ## <a name="partitioning"></a>Секционирование
 Большие таблицы фактов (более 1 млрд строк) можно разделить на секции. В 99 процентах случаев ключ секции должен быть основан на дате. Старайтесь не допускать избыточного секционирования, особенно если у вас кластеризованный индекс columnstore.
@@ -93,22 +93,22 @@ ms.locfileid: "73646648"
 Использовать разделение можно для промежуточных таблиц, которым необходимо извлечение, загрузка и преобразование. Это упрощает управление жизненным циклом данных.
 Старайтесь не допустить избыточного секционирования данных, особенно в кластеризованном индексе columnstore.
 
-Подробнее о [секциях].
+Подробнее о [секциях](sql-data-warehouse-tables-partition.md).
 
 ## <a name="incremental-load"></a>Поэтапная загрузка
 
-Если данные будут загружаться поэтапно, то сначала необходимо убедиться, что для загрузки данных выделены большие классы ресурсов.  Это особенно важно при загрузке данных в таблицы с кластеризованными индексами columnstore.  Дополнительные сведения см. в разделе о [классах ресурсов](https://docs.microsoft.com/azure/sql-data-warehouse/resource-classes-for-workload-management).  
+Если данные будут загружаться поэтапно, то сначала необходимо убедиться, что для загрузки данных выделены большие классы ресурсов.  Это особенно важно при загрузке данных в таблицы с кластеризованными индексами columnstore.  Дополнительные сведения см. в разделе о [классах ресурсов](resource-classes-for-workload-management.md).  
 
 Для автоматизации конвейеров извлечения, загрузки и преобразования в хранилище данных рекомендуем использовать PolyBase и ADF V2.
 
-Для большого пакета обновлений устаревших данных попробуйте использовать [CTAS](https://docs.microsoft.com/azure/sql-data-warehouse/sql-data-warehouse-develop-ctas), чтобы записать в таблицу данные, которые необходимо сохранить, вместо использования операций INSERT, UPDATE и DELETE.
+Для большого пакета обновлений устаревших данных попробуйте использовать [CTAS](sql-data-warehouse-develop-ctas.md), чтобы записать в таблицу данные, которые необходимо сохранить, вместо использования операций INSERT, UPDATE и DELETE.
 
 ## <a name="maintain-statistics"></a>Обеспечение статистики
  Пока автоматическая статистика не станет общедоступной, необходимо вести статистику вручную. Важно также обновлять статистику, так как данные могут быть *существенно* изменены. Это поможет оптимизировать ваши планы запросов. Если ведение статистики занимает слишком много времени, нужно выбирать отдельные столбцы, для которых необходимо создавать статистику. 
 
 Кроме того, вы можете определить частоту обновлений. Например, можно ежедневно обновлять столбцы дат, в которые добавляются новые значения. Статистику рекомендуется вести в столбцах, которые являются частью объединения, используются в предложении WHERE или GROUP BY.
 
-Подробнее о [статистике].
+Подробнее о [статистике](sql-data-warehouse-tables-statistics.md).
 
 ## <a name="resource-class"></a>Класс ресурсов
 Чтобы выделить память для выполнения запросов, используются группы ресурсов. Если для повышения скорости запроса или загрузки вам требуется больше памяти, необходимо выделить более высокие классы ресурсов. С другой стороны, использование больших классов ресурсов влияет на параллелизм. Обратите на это внимание, прежде чем перемещать всех своих пользователей в большой класс ресурсов.
@@ -117,7 +117,7 @@ ms.locfileid: "73646648"
 
 Наконец, при использовании [пула SQL](sql-data-warehouse-overview-what-is.md#sql-analytics-and-sql-pool-in-azure-synapse) уровня Gen2 каждый класс ресурсов получает в 2,5 раза больше памяти, чем на уровне Gen1.
 
-Подробнее о работе с [классами ресурсов и параллелизмом].
+Подробнее о работе с [классами ресурсов и параллелизмом](resource-classes-for-workload-management.md).
 
 ## <a name="lower-your-cost"></a>Сокращение расходов
 Одна из основных функций Azure Synapse — возможность [управлять вычислительными ресурсами](sql-data-warehouse-manage-compute-overview.md). Вы можете приостанавливать работу пула SQL, когда он не используется. Счет выставляется только за используемые вычислительные ресурсы. Вы можете масштабировать ресурсы в соответствии со своими требованиями к производительности. Приостановить выполнение можно на [портале Azure](pause-and-resume-compute-portal.md) или при помощи [PowerShell](pause-and-resume-compute-powershell.md). Для масштабирования используйте [портал Azure](quickstart-scale-compute-portal.md), [Powershell](quickstart-scale-compute-powershell.md), [T-SQL](quickstart-scale-compute-tsql.md), или [REST API](sql-data-warehouse-manage-compute-rest-api.md#scale-compute).
@@ -139,29 +139,3 @@ ms.locfileid: "73646648"
 <a href="https://ms.portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FMicrosoft%2Fsql-data-warehouse-samples%2Fmaster%2Farm-templates%2FsqlDwSpokeDbTemplate%2Fazuredeploy.json" target="_blank">
 <img src="https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/deploytoazure.png"/>
 </a>
-
-
-<!--Image references-->
-[Эскиз]:media/sql-data-warehouse-cheat-sheet/picture-flow.png
-
-<!--Article references-->
-[загрузке данных]:design-elt-data-loading.md
-[deeper guidance]:guidance-for-loading-data.md
-[индексах]:sql-data-warehouse-tables-index.md
-[секциях]:sql-data-warehouse-tables-partition.md
-[статистике]:sql-data-warehouse-tables-statistics.md
-[классами ресурсов и параллелизмом]:resource-classes-for-workload-management.md
-[реплицированных таблицах]:design-guidance-for-replicated-tables.md
-[распределенных таблицах]:sql-data-warehouse-tables-distribute.md
-
-<!--MSDN references-->
-
-
-<!--Other Web references-->
-[typical architectures that take advantage of SQL Data Warehouse]: https://blogs.msdn.microsoft.com/sqlcat/20../../common-isv-application-patterns-using-azure-sql-data-warehouse/
-[is and is not]:https://blogs.msdn.microsoft.com/sqlcat/20../../azure-sql-data-warehouse-workload-patterns-and-anti-patterns/
-[переносе данных]: https://blogs.msdn.microsoft.com/sqlcat/20../../migrating-data-to-azure-sql-data-warehouse-in-practice/
-
-[Azure Data Lake Storage]: ../data-factory/connector-azure-data-lake-store.md
-[sys.dm_pdw_nodes_db_partition_stats]: /sql/relational-databases/system-dynamic-management-views/sys-dm-db-partition-stats-transact-sql
-[sys.dm_pdw_request_steps]:/sql/relational-databases/system-dynamic-management-views/sys-dm-pdw-request-steps-transact-sql

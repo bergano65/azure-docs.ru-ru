@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 08/29/2019
 ms.author: iainfou
-ms.openlocfilehash: cccdb54b89dff7c6a1fc9dac55c63b19d661ab65
-ms.sourcegitcommit: 5b9287976617f51d7ff9f8693c30f468b47c2141
+ms.openlocfilehash: 9980ad7af4a9e5db1d93ffb389ef7b04209b8c43
+ms.sourcegitcommit: 87781a4207c25c4831421c7309c03fce5fb5793f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2019
-ms.locfileid: "74951315"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76544622"
 ---
 # <a name="preview-log-in-to-a-linux-virtual-machine-in-azure-using-azure-active-directory-authentication"></a>Предварительный просмотр. Войдите на виртуальную машину Linux в Azure, используя проверку подлинности Azure Active Directory
 
@@ -72,11 +72,11 @@ ms.locfileid: "74951315"
 
 Чтобы включить аутентификацию Azure AD для виртуальных машин Linux в Azure, необходимо убедиться, что конфигурация сети виртуальных машин разрешает исходящий доступ к следующим конечным точкам через TCP-порт 443:
 
-* https://login.microsoftonline.com
-* https://device.login.microsoftonline.com
-* https://pas.windows.net
-* https://management.azure.com
-* https://packages.microsoft.com
+* https:\//login.microsoftonline.com
+* HTTPS:\//device.login.microsoftonline.com
+* HTTPS:\//pas.windows.net
+* https:\//management.azure.com
+* HTTPS:\//packages.microsoft.com
 
 > [!NOTE]
 > Сейчас нельзя настроить группы безопасности сети Azure для виртуальных машин, включенных с помощью аутентификации Azure AD.

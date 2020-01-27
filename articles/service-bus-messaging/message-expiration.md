@@ -1,6 +1,6 @@
 ---
-title: Срок действия сообщений служебной шины Azure | Документация Майкрософт
-description: Истечение срока действия и срок жизни сообщений служебной шины Azure.
+title: Служебная шина Azure — срок действия сообщения
+description: В этой статье объясняется срок действия сообщений служебной шины Azure и время их жизни. После такого крайнего срока сообщение больше не будет доставлено.
 services: service-bus-messaging
 documentationcenter: ''
 author: axisc
@@ -11,14 +11,14 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 01/23/2019
+ms.date: 01/24/2020
 ms.author: aschhab
-ms.openlocfilehash: 109ecc671b43365c433a626ff8d9fe55a5a626b5
-ms.sourcegitcommit: f5075cffb60128360a9e2e0a538a29652b409af9
+ms.openlocfilehash: e86c92fa1cfb13929d5617502224f479709efdd3
+ms.sourcegitcommit: b5d646969d7b665539beb18ed0dc6df87b7ba83d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68310296"
+ms.lasthandoff: 01/26/2020
+ms.locfileid: "76756340"
 ---
 # <a name="message-expiration-time-to-live"></a>Срок действия сообщения (срок жизни)
 
@@ -82,7 +82,7 @@ ms.locfileid: "68310296"
  
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об обмене сообщениями через служебную шину см. в следующих статьях:
 

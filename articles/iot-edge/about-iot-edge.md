@@ -10,12 +10,12 @@ ms.topic: overview
 ms.date: 10/28/2019
 ms.author: kgremban
 ms.custom: mvc
-ms.openlocfilehash: 1c14d1dd171f9bca6b6bdc61e35c0d541b29cb3c
-ms.sourcegitcommit: d47a30e54c5c9e65255f7ef3f7194a07931c27df
+ms.openlocfilehash: 1ba133acda414d9779e2fb10150bbdd57285e9a5
+ms.sourcegitcommit: 38b11501526a7997cfe1c7980d57e772b1f3169b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73026159"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76511218"
 ---
 # <a name="what-is-azure-iot-edge"></a>Что такое Azure IoT Edge
 
@@ -26,7 +26,7 @@ ms.locfileid: "73026159"
 Azure IoT Edge состоит из трех компонентов:
 
 * **Модули IoT Edge** — это контейнеры, в которых выполняются службы Azure, сторонние службы или ваш собственный код. Модули развертываются на устройства IoT Edge и выполняются на них локально.
-* **Среда выполнения IoT Edge** запускается на каждом устройстве IoT Edge и позволяет управлять модулями, развернутыми на каждом устройстве. 
+* **Среда выполнения IoT Edge** запускается на каждом устройстве IoT Edge и позволяет управлять модулями, развернутыми на каждом устройстве.
 * С помощью **облачного интерфейса** вы можете осуществлять мониторинг устройств IoT Edge и управлять ими удаленно.
 
 >[!NOTE]
@@ -72,6 +72,6 @@ Azure IoT Edge также поддерживает развертывание с
 
 ![Данные телеметрии, аналитики и действия устройств координируются с облаком](./media/about-iot-edge/cloud-interface.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Опробуйте эти основные принципы на практике, [развернув IoT Edge на имитированном устройстве](quickstart.md).

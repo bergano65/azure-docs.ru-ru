@@ -13,13 +13,12 @@ ms.date: 10/10/2018
 ms.author: lizross
 ms.reviewer: jairoc
 ms.custom: user-help, seo-update-azuread-jan
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3d6385343ed26e5043e1491529fd2454caff4d04
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.openlocfilehash: 55a6e9976706cb12a53dd5d540a2b6f2edb9e41b
+ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74028558"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76704635"
 ---
 # <a name="possible-fixes-for-the-you-cant-get-there-from-here-error-message"></a>Возможные исправления для сообщения об ошибке "не удается получить отсюда"
 
@@ -51,7 +50,7 @@ ms.locfileid: "74028558"
 ![Сообщение об ошибке, связанное с подключением к сети](media/user-help-device-remediation/network-version.png)
 
 ### <a name="to-check-whether-your-device-is-joined-to-your-network"></a>Чтобы проверить, подключено ли устройство к сети, сделайте следующее:
-1. Войдите в Windows с помощью рабочей или учебной учетной записи. Пример: alain@contoso.com.
+1. Войдите в Windows с помощью рабочей или учебной учетной записи. Например, alain@contoso.com.
 
 2. Подключитесь к корпоративной сети через виртуальную частную сеть (VPN) или DirectAccess.
 
@@ -68,7 +67,7 @@ ms.locfileid: "74028558"
 
 - **Зарегистрировать личное устройство для работы.** Регистрация персонального устройства (в роли которого может выступать телефон или планшет) в сети организации. После регистрации устройства с него можно получать доступ к ограниченным ресурсам организации. Дополнительные сведения и пошаговые инструкции см. в статье [Регистрация персонального устройства в сети организации](user-help-register-device-on-network.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - [Что такое портал MyApps?](active-directory-saas-access-panel-introduction.md)
 
 - [Вход с использованием телефона вместо ввода пароля](user-help-auth-app-sign-in.md)

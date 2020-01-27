@@ -9,21 +9,20 @@ ms.topic: tutorial
 ms.date: 09/04/2019
 ms.author: alkohli
 ms.localizationpriority: high
-Customer intent: As an IT admin, I need to be able to order Data Box Disk to upload on-premises data from my server onto Azure.
-ms.openlocfilehash: 91baec55cb976a3bc64ac60b1759c80e64fd18a3
-ms.sourcegitcommit: 49c4b9c797c09c92632d7cedfec0ac1cf783631b
+ms.openlocfilehash: ef6f342ec2308897d8c2221250ce92f81ce66863
+ms.sourcegitcommit: 38b11501526a7997cfe1c7980d57e772b1f3169b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70375886"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76514108"
 ---
 ::: zone target="docs"
 
-# <a name="tutorial-unpack-connect-and-unlock-azure-data-box-disk"></a>Руководство по Распаковка, подключение и разблокировка Диска Azure Data Box
+# <a name="tutorial-unpack-connect-and-unlock-azure-data-box-disk"></a>Руководство. Распаковка, подключение и разблокировка Диска Azure Data Box
 
 Это руководство описывает, как распаковать, подключить и разблокировать диск Azure Data Box.
 
-Из этого руководства вы узнаете, как выполнять следующие задачи:
+В этом руководстве описано следующее:
 
 > [!div class="checklist"]
 > * Распаковка диска Data Box.
@@ -282,7 +281,7 @@ ms.locfileid: "70375886"
     > [!div class="nextstepaction"]
     > [Скачать набор средств для диска Data Box для Windows](https://aka.ms/databoxdisktoolswin)
 
-    или
+    или диспетчер конфигурации служб
     > [!div class="nextstepaction"]
     > [Скачать набор средств для диска Data Box для Linux](https://aka.ms/databoxdisktoolslinux) 
 
@@ -320,7 +319,7 @@ ms.locfileid: "70375886"
 
 ::: zone target="docs"
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом руководстве раскрыты следующие сведения о диске Azure Data Box.
 

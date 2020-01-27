@@ -6,12 +6,12 @@ ms.service: azure-migrate
 ms.topic: article
 ms.date: 10/01/2019
 ms.author: hamusa
-ms.openlocfilehash: 1cd1ff83fd706e3474426f6cc2ac99d39e74dc22
-ms.sourcegitcommit: 42748f80351b336b7a5b6335786096da49febf6a
+ms.openlocfilehash: 96d1c44eb9ecb71684e817a89f9376a07dbe3ccb
+ms.sourcegitcommit: 38b11501526a7997cfe1c7980d57e772b1f3169b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72177948"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76514975"
 ---
 # <a name="set-up-dependency-visualization-for-assessment"></a>Настройка визуализации зависимостей для оценки
 
@@ -31,14 +31,14 @@ ms.locfileid: "72177948"
 
 - Убедитесь, что вы [создали](how-to-add-tool-first-time.md) проект "миграция Azure".
 - Если вы уже создали проект, убедитесь, что вы [добавили](how-to-assess.md) средство Azure Migrate: Server для оценки серверов.
-- Убедитесь, что ваши компьютеры обнаружены в службе "миграция Azure". Это можно сделать, настроив устройство миграции Azure для [VMware](how-to-set-up-appliance-vmware.md) или [Hyper-V](how-to-set-up-appliance-hyper-v.md). Устройство обнаруживает локальные компьютеры и отправляет метаданные и данные производительности в службу "миграция Azure": Оценка сервера. [Дополнительные сведения](migrate-appliance.md)
+- Убедитесь, что ваши компьютеры обнаружены в службе "миграция Azure". Это можно сделать, настроив устройство миграции Azure для [VMware](how-to-set-up-appliance-vmware.md) или [Hyper-V](how-to-set-up-appliance-hyper-v.md). Устройство обнаруживает локальные компьютеры и отправляет метаданные и данные производительности в службу "миграция Azure": Оценка сервера. [Подробнее](migrate-appliance.md).
 
 
 **Функции** | **Примечание**
 --- | ---
 Доступность | Визуализация зависимостей недоступна в Azure для государственных организаций.
 Схема услуги | Визуализация зависимостей использует Сопоставление служб решение в Azure Monitor. [Сопоставление служб](../azure-monitor/insights/service-map.md) автоматически обнаруживает и отображает соединения между серверами.
-Агенты | Чтобы использовать визуализацию зависимостей, установите следующие агенты на компьютерах, которые нужно подключить.<br/> Агент [агента - log Analytics](../azure-monitor/platform/log-analytics-agent.md) (ранее он назывался Microsoft MONITORING Agent (MMA).<br/> - [сопоставление служб агент зависимостей](../azure-monitor/insights/vminsights-enable-overview.md#the-microsoft-dependency-agent).<br/><br/> Чтобы автоматизировать установку агента, можно использовать средство развертывания, например System Center Configuration Manager, которое содержит решение для развертывания агентов для службы "миграция Azure".
+Агенты | Чтобы использовать визуализацию зависимостей, установите следующие агенты на компьютерах, которые нужно подключить.<br/> Агент [агента - log Analytics](../azure-monitor/platform/log-analytics-agent.md) (ранее он назывался Microsoft MONITORING Agent (MMA).<br/> - [сопоставление служб агент зависимостей](../azure-monitor/insights/vminsights-enable-overview.md#the-microsoft-dependency-agent).<br/><br/> Чтобы автоматизировать установку агента, можно использовать средство развертывания, например Configuration Manager, которое содержит решение для развертывания агентов для службы "миграция Azure".
 Агент зависимостей | Ознакомьтесь с [поддержкой агента зависимостей](../azure-monitor/insights/vminsights-enable-overview.md#the-microsoft-dependency-agent) для Windows и Linux.<br/><br/> Дополнительные [сведения](../azure-monitor/insights/vminsights-enable-hybrid-cloud.md#installation-script-examples) об использовании скриптов для установки агента зависимостей.
 Агент Log Analytics (MMA) | Дополнительные [сведения](../azure-monitor/platform/log-analytics-agent.md#install-and-configure-agent) о методах установки MMA.<br/><br/> Для компьютеров, отслеживаемых System Center Operations Manager 2012 R2 или более поздней версии, не нужно устанавливать агент MMA. Сопоставление служб интегрируется с Operations Manager. Вы можете включить интеграцию с помощью инструкций, которые находятся [здесь](https://docs.microsoft.com/azure/azure-monitor/insights/service-map-scom#prerequisites). Однако обратите внимание, что на этих компьютерах должен быть установлен агент зависимостей.<br/><br/> [Ознакомьтесь](../azure-monitor/platform/log-analytics-agent.md#supported-linux-operating-systems) с операционными системами Linux, поддерживаемыми агентом log Analytics.
 Группы оценки | Группы, для которых необходимо визуализировать зависимости, должны содержать не более 10 компьютеров. Если у вас более 10 компьютеров, разделите их на группы меньшего размера, чтобы визуализировать зависимости.
@@ -50,7 +50,7 @@ ms.locfileid: "72177948"
 - Рабочую область можно подключить только в подписке на проект "миграция Azure".
 - Можно присоединить существующую рабочую область или создать новую.
 - Вы подключаете рабочую область при первой настройке визуализации зависимостей для компьютера.
-- Вы можете подключить рабочую область только после обнаружения компьютеров в проекте службы "миграция Azure". Это можно сделать, настроив устройство миграции Azure для [VMware](how-to-set-up-appliance-vmware.md) или [Hyper-V](how-to-set-up-appliance-hyper-v.md). Устройство обнаруживает локальные компьютеры и отправляет метаданные и данные производительности в службу "миграция Azure": Оценка сервера. [Дополнительные сведения](migrate-appliance.md)
+- Вы можете подключить рабочую область только после обнаружения компьютеров в проекте службы "миграция Azure". Это можно сделать, настроив устройство миграции Azure для [VMware](how-to-set-up-appliance-vmware.md) или [Hyper-V](how-to-set-up-appliance-hyper-v.md). Устройство обнаруживает локальные компьютеры и отправляет метаданные и данные производительности в службу "миграция Azure": Оценка сервера. [Подробнее](migrate-appliance.md).
 
 Подключите рабочую область следующим образом:
 
@@ -88,7 +88,7 @@ ms.locfileid: "72177948"
 4. В разделе **Параметры установки агента** последовательно выберите **Azure Log Analytics** > **Далее**.
 5. Щелкните **Добавить**, чтобы добавить новую рабочую область Log Analytics. Вставьте идентификатор и ключ рабочей области, скопированные на портале. Щелкните **Далее**.
 
-Агент можно установить из командной строки или с помощью автоматизированного метода, такого как System Center Configuration Manager или [Intigua](https://go.microsoft.com/fwlink/?linkid=2104196). Дополнительные сведения об использовании этих методов для установки агента MMA см. в разделе [Установка и настройка агента](https://docs.microsoft.com/azure/azure-monitor/platform/log-analytics-agent#install-and-configure-agent). Кроме того, агент MMA можно установить с помощью этого [скрипта](https://go.microsoft.com/fwlink/?linkid=2104394).
+Агент можно установить из командной строки или с помощью автоматизированного метода, такого как Configuration Manager или [Intigua](https://go.microsoft.com/fwlink/?linkid=2104196). Дополнительные сведения об использовании этих методов для установки агента MMA см. в разделе [Установка и настройка агента](https://docs.microsoft.com/azure/azure-monitor/platform/log-analytics-agent#install-and-configure-agent). Кроме того, агент MMA можно установить с помощью этого [скрипта](https://go.microsoft.com/fwlink/?linkid=2104394).
 
 Дополнительные [сведения](https://docs.microsoft.com/azure/azure-monitor/platform/log-analytics-agent#supported-windows-operating-systems) о операционных системах Windows, поддерживаемых MMA.
 
@@ -205,6 +205,6 @@ VMConnection
 | summarize sum(BytesSent), sum(BytesReceived) by Computer, Direction, SourceIp, DestinationIp, DestinationPort
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Создание оценки](how-to-create-assessment.md) для группы.

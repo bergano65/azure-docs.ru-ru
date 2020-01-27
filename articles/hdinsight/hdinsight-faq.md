@@ -9,12 +9,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 11/20/2019
-ms.openlocfilehash: d9daefaec33c435ae9f8eceec370c83de4535f8b
-ms.sourcegitcommit: 8b37091efe8c575467e56ece4d3f805ea2707a64
+ms.openlocfilehash: b05b83086cc9d8449d9517897f347b6e2685aa95
+ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75830383"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76720356"
 ---
 # <a name="azure-hdinsight-frequently-asked-questions"></a>Azure HDInsight: часто задаваемые вопросы
 
@@ -233,7 +233,7 @@ ktutil: q
 ### <a name="why-is-llap-available-on-spark-esp-clusters"></a>Почему LLAP доступен в кластерах Spark ESP?
 В кластерах ESP Spark LLAP включен по соображениям безопасности (например, Apache Ranger), а не производительности. Следует использовать виртуальные машины большего размера, чтобы обеспечить использование ресурсов LLAP (например, минимум D13V2). 
 
-### <a name="how-can-i-add-addional-aad-groups-after-creating-an-esp-cluster"></a>Как добавить группы AAD аддионал после создания кластера ESP?
+### <a name="how-can-i-add-additional-aad-groups-after-creating-an-esp-cluster"></a>Как добавить дополнительные группы AAD после создания кластера ESP?
 Это можно сделать двумя способами: 1. Вы можете повторно создать кластер и добавить дополнительную группу во время создания кластера. Если вы используете синхронизацию с заданной областью в AAD-DS, убедитесь, что Группа B включена в синхронизацию с заданной областью.
 2\. Добавьте группу в качестве вложенной подгруппы предыдущей группы, которая использовалась для создания кластера ESP. Например, если вы создали кластер ESP с группой `A`, позже можно будет добавить группу `B` как вложенную подгруппу `A` и через примерно один час синхронизация и доступность в кластере будут выполняться автоматически. 
 

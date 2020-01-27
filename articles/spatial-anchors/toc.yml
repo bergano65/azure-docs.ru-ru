@@ -40,7 +40,7 @@
       href: tutorials/tutorial-new-unity-hololens-app.md
     - name: Запуск нового приложения Android
       href: tutorials/tutorial-new-android-app.md
-- name: Инструкции
+- name: Практическое руководство
   items:
     - name: Создание и поиск привязок
       href: create-locate-anchors-overview.md
@@ -57,7 +57,7 @@
           href: how-tos/create-locate-anchors-cpp-ndk.md
         - name: В C++/WinRT
           href: how-tos/create-locate-anchors-cpp-winrt.md
-    - name: Использование датчиков устройств для обнаружения ближайших привязок
+    - name: Простое уточнение расположения для обнаружения ближайших привязок
       items:
         - name: 'В C# для Unity'
           href: how-tos/set-up-coarse-reloc-unity.md
@@ -87,7 +87,7 @@
       href: concepts/logging-diagnostics.md
     - name: Простое уточнение расположения
       href: concepts/coarse-reloc.md
-- name: Справочники
+- name: Ссылки
   items:
     - name: Пакет SDK для Unity
       href: 'https://docs.microsoft.com/dotnet/api/Microsoft.Azure.SpatialAnchors/'
@@ -105,7 +105,7 @@
       href: 'https://github.com/Azure/azure-spatial-anchors-samples/releases'
     - name: REST API управления ресурсами Смешанной реальности Azure
       href: 'https://docs.microsoft.com/rest/api/mixedreality/'
-    - name: Часто задаваемые вопросы
+    - name: ВОПРОСЫ И ОТВЕТЫ
       href: spatial-anchor-faq.md
     - name: Отзыв о продукте
       href: 'https://feedback.azure.com/forums/919252-azure-spatial-anchors'

@@ -5,13 +5,13 @@ author: ajlam
 ms.author: andrela
 ms.service: mysql
 ms.topic: conceptual
-ms.date: 12/17/2019
-ms.openlocfilehash: 9b661a7fa6a7b9f079a3b24d1b83f27118c4bd23
-ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
+ms.date: 01/21/2020
+ms.openlocfilehash: e0c58c5c3fef41a472fe791f66292c9280531493
+ms.sourcegitcommit: 38b11501526a7997cfe1c7980d57e772b1f3169b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75745852"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76514686"
 ---
 # <a name="slow-query-logs-in-azure-database-for-mysql"></a>Журналы запросов в базе данных Azure для MySQL
 В базе данных Azure для MySQL пользователям доступен журнал медленных запросов. Доступ к журналам транзакций не поддерживается. Журнал медленных запросов можно использовать для выявления проблем с производительностью при устранении неполадок.
@@ -43,8 +43,9 @@ ms.locfileid: "75745852"
 - **log_throttle_queries_not_using_indexes.** Ограничивает число не использующих индексы запросов, сохраняемых в журнале медленных запросов. Этот параметр применяется, только если log_queries_not_using_indexes имеет значение "ON" (Включено).
 - **log_output**. Если значение — "File", журнал запросов может быть записан как в локальное хранилище сервера, так и в Azure Monitor журналов диагностики. Если задано значение "нет", журнал запросов будет записываться только в Azure Monitor журналы диагностики. 
 
-> [!Note]
-> Для `sql_text`журнал будет обрезан, если его длина превышает 2048 символов.
+> [!IMPORTANT]
+> Если таблицы не индексируются, установка параметров `log_queries_not_using_indexes` и `log_throttle_queries_not_using_indexes` в значение ON может повлиять на производительность MySQL, так как все запросы к этим неиндексированным таблицам будут записываться в журнал медленных запросов.<br><br>
+> Если вы планируете ведение журнала запросов в течение продолжительного периода времени, рекомендуется присвоить параметру `log_output` значение None. Если задано значение "File", эти журналы записываются в хранилище локального сервера и могут повлиять на производительность MySQL. 
 
 Полное описание параметров, применимых для журнала медленных запросов, вы найдете в [соответствующем разделе документации по MySQL](https://dev.mysql.com/doc/refman/5.7/en/slow-query-log.html).
 
@@ -84,5 +85,64 @@ ms.locfileid: "75745852"
 | `thread_id_s` | Идентификатор потока |
 | `\_ResourceId` | Универсальный код ресурса (URI) |
 
+> [!Note]
+> Для `sql_text`журнал будет обрезан, если его длина превышает 2048 символов.
+
+## <a name="analyze-logs-in-azure-monitor-logs"></a>Анализ журналов в журналах Azure Monitor
+
+После передвижения журналов запросов в Azure Monitor журналов с помощью журналов диагностики можно выполнить дальнейший анализ запросов. Ниже приведены примеры запросов, которые помогут приступить к работе. Обязательно обновите указанные ниже имена серверов.
+
+- Запросы с более чем 10 секундами на определенном сервере
+
+    ```Kusto
+    AzureDiagnostics
+    | where LogicalServerName_s == '<your server name>'
+    | where Category == 'MySqlSlowLogs'
+    | project TimeGenerated, LogicalServerName_s, event_class_s, start_time_t , query_time_d, sql_text_s 
+    | where query_time_d > 10
+    ```
+
+- Вывод списка 5 самых длинных запросов на определенном сервере
+
+    ```Kusto
+    AzureDiagnostics
+    | where LogicalServerName_s == '<your server name>'
+    | where Category == 'MySqlSlowLogs'
+    | project TimeGenerated, LogicalServerName_s, event_class_s, start_time_t , query_time_d, sql_text_s 
+    | order by query_time_d desc
+    | take 5
+    ```
+
+- Суммирование запросов с минимальным, максимальным, средним и стандартным отклонением времени запроса на определенном сервере
+
+    ```Kusto
+    AzureDiagnostics
+    | where LogicalServerName_s == '<your server name>'
+    | where Category == 'MySqlSlowLogs'
+    | project TimeGenerated, LogicalServerName_s, event_class_s, start_time_t , query_time_d, sql_text_s 
+    | summarize count(), min(query_time_d), max(query_time_d), avg(query_time_d), stdev(query_time_d), percentile(query_time_d, 95) by LogicalServerName_s
+    ```
+
+- График распределения скорости запросов на определенном сервере
+
+    ```Kusto
+    AzureDiagnostics
+    | where LogicalServerName_s == '<your server name>'
+    | where Category == 'MySqlSlowLogs'
+    | project TimeGenerated, LogicalServerName_s, event_class_s, start_time_t , query_time_d, sql_text_s 
+    | summarize count() by LogicalServerName_s, bin(TimeGenerated, 5m)
+    | render timechart
+    ```
+
+- Отображение запросов дольше 10 секунд на всех серверах MySQL с включенными журналами диагностики
+
+    ```Kusto
+    AzureDiagnostics
+    | where Category == 'MySqlSlowLogs'
+    | project TimeGenerated, LogicalServerName_s, event_class_s, start_time_t , query_time_d, sql_text_s 
+    | where query_time_d > 10
+    ```    
+    
 ## <a name="next-steps"></a>Следующие шаги
-- [Configure and access server logs using Azure CLI](howto-configure-server-logs-in-cli.md) (Настройка и использование журналов сервера с помощью Azure CLI)
+- [Настройка журналов запросов от портал Azure](howto-configure-server-logs-in-portal.md)
+- [Настройка журналов запросов от Azure CLI](howto-configure-server-logs-in-cli.md).

@@ -5,18 +5,18 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: conceptual
-ms.date: 06/12/2019
+ms.date: 01/23/2020
 ms.author: mimart
 author: msmimart
 manager: celestedg
 ms.reviewer: elisol
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3e85b0ae298589c0e0e051a24e5db89eae81db62
-ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
+ms.openlocfilehash: f0a71da025b8b2bb571dc9b00e23bc691ecdd44c
+ms.sourcegitcommit: b5d646969d7b665539beb18ed0dc6df87b7ba83d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74272136"
+ms.lasthandoff: 01/26/2020
+ms.locfileid: "76758294"
 ---
 # <a name="azure-active-directory-b2b-collaboration-invitation-redemption"></a>Активация приглашения службы совместной работы Azure Active Directory B2B
 
@@ -73,7 +73,7 @@ ms.locfileid: "74272136"
 
 В каталоге **приглашение гостя принимает** значение **Да**. При создании MSA в **источнике гостевой системы** отображается **учетная запись Майкрософт**. Дополнительные сведения о свойствах учетной записи гостевого пользователя см. в разделе [Свойства пользователя службы совместной работы Azure AD B2B](user-properties.md). 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Что такое служба совместной работы Azure AD B2B?](what-is-b2b.md)
 - [Add Azure Active Directory B2B collaboration users in the Azure portal](add-users-administrator.md) (Добавление пользователей службы совместной работы Azure Active Directory B2B на портале Azure)

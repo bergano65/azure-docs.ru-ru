@@ -9,12 +9,12 @@ ms.date: 10/04/2019
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: c42d13f4d2e00b67a2ef471a07c80e1ef61e9c07
-ms.sourcegitcommit: 57eb9acf6507d746289efa317a1a5210bd32ca2c
+ms.openlocfilehash: 3adefbdf248deaec6170037521ab65890356d184
+ms.sourcegitcommit: 38b11501526a7997cfe1c7980d57e772b1f3169b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2019
-ms.locfileid: "74666330"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76510895"
 ---
 # <a name="create-and-provision-an-iot-edge-device-using-symmetric-key-attestation"></a>Создание и инициализация устройства IoT Edge с помощью аттестации симметричных ключей
 
@@ -43,11 +43,7 @@ ms.locfileid: "74666330"
 
 Уникальный идентификатор регистрации должен быть определен для идентификации каждого устройства. Можно использовать MAC-адрес, серийный номер или любые уникальные сведения устройства.
 
-В этом примере мы используем сочетание MAC-адреса и серийного номера, формирующие следующую строку для идентификатора регистрации.
-
-```
-sn-007-888-abc-mac-a1-b2-c3-d4-e5-f6
-```
+В этом примере мы используем сочетание MAC-адреса и серийного номера, формирующего следующую строку для идентификатора регистрации: `sn-007-888-abc-mac-a1-b2-c3-d4-e5-f6`.
 
 Создайте уникальный идентификатор регистрации для устройства. Допустимые знаки — буквы в нижнем регистре, цифры и дефис ("-").
 
@@ -130,7 +126,7 @@ echo -n $REG_ID | openssl sha256 -mac HMAC -macopt hexkey:$keybytes -binary | ba
 Jsm0lyGpjaVYVP2g3FnmnmG9dI/9qU24wNoykUmermc=
 ```
 
-### <a name="windows-based-workstations"></a>Рабочие станции на основе Windows
+### <a name="windows-based-workstations"></a>Рабочие станции для Windows
 
 Если вы используете рабочую станцию для Windows, можно использовать PowerShell для формирования производного ключа устройства, как показано в следующем примере.
 
@@ -186,7 +182,7 @@ provisioning:
       symmetric_key: "{symmetric_key}"
 ```
 
-Замените значения заполнителей для `{scope_id}`, `{registration_id}`и `{symmetric_key}` данными, собранными ранее.
+Замените значения заполнителей для `{scope_id}`, `{registration_id}`и `{symmetric_key}` данными, собранными ранее. Убедитесь, что **Подготовка:** строка не имеет предшествующих пробелов, а вложенные элементы имеют отступ в два пробела.
 
 ### <a name="windows-device"></a>устройство с Windows;
 
@@ -214,7 +210,7 @@ provisioning:
    Initialize-IoTEdge -Dps -ScopeId {scope ID} -RegistrationId {registration ID} -SymmetricKey {symmetric key}
    ```
 
-## <a name="verify-successful-installation"></a>Проверка успешного выполнения установки
+## <a name="verify-successful-installation"></a>Проверка установки
 
 Если среда выполнения запущена успешно, можете перейти в Центр Интернета вещей и начать развертывание модулей IoT Edge на устройстве. Чтобы убедиться, что среда выполнения установлена и запущена успешно, используйте следующие команды на устройстве:
 

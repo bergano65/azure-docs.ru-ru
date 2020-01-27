@@ -9,12 +9,12 @@ services: iot-edge
 ms.topic: conceptual
 ms.date: 07/09/2019
 ms.author: gregman
-ms.openlocfilehash: 03c517ac80ed42f96cae00001a154e519ec94148
-ms.sourcegitcommit: 2a2af81e79a47510e7dea2efb9a8efb616da41f0
+ms.openlocfilehash: 84dd1b6d657dfe5061f53698114f3dc4e0197571
+ms.sourcegitcommit: 38b11501526a7997cfe1c7980d57e772b1f3169b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76263342"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76510062"
 ---
 # <a name="run-azure-iot-edge-on-ubuntu-virtual-machines"></a>Запуск Azure IoT Edge на виртуальных машинах Ubuntu
 
@@ -22,7 +22,7 @@ ms.locfileid: "76263342"
 
 Дополнительные сведения о работе среды выполнения IoT Edge и ее компонентах см. в статье [Общие сведения о среде выполнения Azure IoT Edge и ее архитектуре](iot-edge-runtime.md).
 
-В этой статье приведены действия по запуску среды выполнения Azure IoT Edge на виртуальной машине Ubuntu 16.04 с помощью предварительно настроенного предложения Azure Marketplace [Azure IoT Edge on Ubuntu](https://aka.ms/azure-iot-edge-ubuntuvm). 
+В этой статье приведены действия по запуску среды выполнения Azure IoT Edge на виртуальной машине Ubuntu 16.04 с помощью предварительно настроенного предложения Azure Marketplace [Azure IoT Edge on Ubuntu](https://aka.ms/azure-iot-edge-ubuntuvm).
 
 При первой загрузке Azure IoT Edge на виртуальной машине Ubuntu выполняется предварительная установка последней версии этой среды выполнения. Кроме того, выполняется сценарий настройки строки подключения, а затем среда выполнения перезапускается. Этот перезапуск можно инициировать удаленно на портале виртуальной машины Azure или с помощью командной строки Azure, что позволяет легко настроить и подключить устройство IoT Edge без запуска сеанса удаленного рабочего стола или SSH. Этот сценарий не начинает настройку строки подключения до полной установки клиента IoT Edge, так что автоматизировать этот процесс не нужно.
 
@@ -52,22 +52,22 @@ ms.locfileid: "76263342"
    ```azurecli-interactive
    az login
    ```
-    
+
 1. Если у вас несколько подписок, выберите ту, которую необходимо использовать:
    1. Отобразите список подписок:
-    
+
       ```azurecli-interactive
       az account list --output table
       ```
-    
+
    1. Скопируйте поле SubscriptionID для подписки, которую вы хотите использовать.
 
    1. Задайте рабочую подписку с только что скопированным ИДЕНТИФИКАТОРом:
-    
-      ```azurecli-interactive 
+
+      ```azurecli-interactive
       az account set -s {SubscriptionId}
       ```
-    
+
 1. Создайте группу ресурсов (или выберите уже имеющуюся на следующих этапах):
 
    ```azurecli-interactive
@@ -93,7 +93,6 @@ ms.locfileid: "76263342"
    ```
 
 Если после завершения установки вы хотите подключиться к этой виртуальной машине по протоколу SSH, укажите общедоступный IP-адрес в следующей команде: `ssh azureuser@{publicIpAddress}`.
-
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
