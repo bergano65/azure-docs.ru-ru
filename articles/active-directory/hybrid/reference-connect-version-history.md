@@ -12,12 +12,12 @@ ms.date: 10/7/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3b03833a3e1dd5ee9a3268e19166891243df1b98
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 6ba7ba4be103beb494c31a844d1871c22c25b8c6
+ms.sourcegitcommit: b5d646969d7b665539beb18ed0dc6df87b7ba83d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75422359"
+ms.lasthandoff: 01/26/2020
+ms.locfileid: "76756306"
 ---
 # <a name="azure-ad-connect-version-release-history"></a>Azure AD Connect. История выпусков версий
 Команда Azure Active Directory (Azure AD) регулярно обновляет службу Azure AD Connect, добавляя новые функции и возможности. Не все эти дополнения применимы для всех пользователей.
@@ -84,6 +84,8 @@ ms.locfileid: "75422359"
 ### <a name="fixed-issues"></a>Исправленные проблемы
 
 При определенных обстоятельствах серверы, которые были автоматически обновлены до версии 1.4.18.0, не повторно включили самостоятельный сброс пароля и обратную запись паролей после завершения обновления. В этом выпуске автоматического обновления решено устранить эту проблему и повторно включить самостоятельный сброс пароля и обратную запись паролей.
+
+Исправлена ошибка в служебной программе сжатия ошибок синхронизации, в которой неправильно обработаны суррогатные символы.
 
 ## <a name="14180"></a>1.4.18.0
 

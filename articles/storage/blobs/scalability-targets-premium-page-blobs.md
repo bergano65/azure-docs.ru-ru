@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 12/18/2019
 ms.author: tamram
 ms.subservice: common
-ms.openlocfilehash: 39153b05b16395cf2dfc0511efa601d1cc4da550
-ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
+ms.openlocfilehash: e134c69f5d602cb4369e9410e3e2b9d3478b11a0
+ms.sourcegitcommit: b5d646969d7b665539beb18ed0dc6df87b7ba83d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75749712"
+ms.lasthandoff: 01/26/2020
+ms.locfileid: "76756255"
 ---
 # <a name="scalability-and-performance-targets-for-premium-page-blob-storage-accounts"></a>Целевые показатели масштабируемости и производительности для учетных записей хранилища BLOB-объектов класса Premium
 
@@ -31,7 +31,7 @@ ms.locfileid: "75749712"
 
 | Общая емкость учетной записи                            | Общая пропускная способность для учетной записи локально избыточного хранилища                     |
 | ------------------------------------------------- | --------------------------------------------------------------------------- |
-| Емкость диска: 35 ТБ <br>Емкость для моментальных снимков: 10 ТБ | До 50 гигабит в секунду для входящих<sup>1</sup> и исходящих подключений<sup>2</sup> |
+| Емкость диска: 4 ТБ (отдельный диск)/35 ТБ (совокупное количество всех дисков) <br>Емкость для моментальных снимков: 10 ТБ | До 50 гигабит в секунду для входящих<sup>1</sup> и исходящих подключений<sup>2</sup> |
 
 <sup>1</sup> Все данные (запросы), отправляемые в учетную запись хранилища.
 
@@ -45,6 +45,6 @@ ms.locfileid: "75749712"
 
 ## <a name="see-also"></a>См. также
 
-- [Целевые показатели масштабируемости и производительности для учетных записей хранения уровня "Стандартный"](../common/scalability-targets-standard-account.md)
+- [Целевые показатели масштабируемости и производительности для учетных записей хранения ценовой категории "Стандартный"](../common/scalability-targets-standard-account.md)
 - [Целевые показатели масштабируемости для учетных записей хранения блочных BLOB-объектов класса Premium](../blobs/scalability-targets-premium-block-blobs.md)
 - [Ограничения и квоты подписки Azure](../../azure-resource-manager/management/azure-subscription-service-limits.md)
