@@ -1,5 +1,5 @@
 ---
-title: Шаблон лицензии PlayReady для Служб мультимедиа Azure
+title: Шаблон лицензии служб мультимедиа Azure v3 с Microsoft PlayReady
 description: В этом разделе содержится обзор шаблонов лицензий PlayReady, которые используются для настройки лицензий PlayReady.
 author: juliako
 manager: femila
@@ -13,14 +13,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/16/2018
 ms.author: juliako
-ms.openlocfilehash: 0ce0d40bfd9d41838573f6355ceffc17761111c2
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 6b12dcee2303632c4ec2ccc3602348a4e17fcd05
+ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61472657"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76705893"
 ---
-# <a name="media-services-playready-license-template-overview"></a>Обзор шаблонов лицензий PlayReady служб мультимедиа 
+# <a name="media-services-v3-with-playready-license-template"></a>Шаблон лицензии служб мультимедиа v3 с PlayReady 
 
 Службы мультимедиа Azure позволяют шифровать содержимое с помощью **Microsoft PlayReady**. Службы мультимедиа также обеспечивают доставку лицензий PlayReady. Интерфейсы API Служб мультимедиа можно использовать для настройки лицензий PlayReady. Когда проигрыватель пытается воспроизвести содержимое, защищенное с помощью PlayReady, в службу доставки лицензий отправляется запрос на получение лицензии. Если служба лицензий утверждает запрос, она выдает лицензию, которая отправляется клиенту и используется для расшифровки и воспроизведения указанного содержимого.
 

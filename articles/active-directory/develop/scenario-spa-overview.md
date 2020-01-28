@@ -14,13 +14,12 @@ ms.workload: identity
 ms.date: 05/07/2019
 ms.author: nacanuma
 ms.custom: aaddev, identityplatformtop40
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6ab7b0f1e59504eae64422fd4bbaf6f9e0804ed4
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: b430778bed811656b5c8aadc75ba3cf35917f737
+ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74919823"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76701881"
 ---
 # <a name="scenario-single-page-application"></a>Сценарий: одностраничное приложение
 
@@ -37,7 +36,7 @@ ms.locfileid: "74919823"
 > [!div class="nextstepaction"]
 > [Краткое руководство. одностраничное приложение](./quickstart-v2-javascript.md)
 
-## <a name="overview"></a>Краткое описание
+## <a name="overview"></a>Обзор
 
 Многие современные веб-приложения создаются как одностраничные приложения на стороне клиента. Разработчики пишут их с помощью JavaScript или платформы SPA, например, под углом, Vue. js и реагируют. js. Эти приложения работают в веб-браузере и имеют различные характеристики проверки подлинности, чем традиционные веб-приложения на стороне сервера. 
 

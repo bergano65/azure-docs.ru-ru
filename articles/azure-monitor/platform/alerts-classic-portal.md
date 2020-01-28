@@ -1,17 +1,17 @@
 ---
 title: Создание, просмотр и управление классическими оповещениями метрик с помощью Azure Monitor
 description: Узнайте, как использовать портал Azure, CLI или PowerShell для создания, просмотра и управления классическими правилами генерации оповещений метрики.
-author: snehithm
+author: yanivlavi
 ms.service: azure-monitor
 ms.topic: conceptual
 ms.date: 09/18/2018
-ms.author: snmuvva
-ms.openlocfilehash: 4a225dbc8e84d65a6ea25f63627599e5bb7d2ced
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: yalavi
+ms.openlocfilehash: fd15d6bb9442d91c672fdd444313880001880e07
+ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66129755"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76705604"
 ---
 # <a name="create-view-and-manage-classic-metric-alerts-using-azure-monitor"></a>Создание и просмотр классических оповещений метрик, а также управление ими с помощью Azure Monitor
 
@@ -35,7 +35,7 @@ ms.locfileid: "66129755"
 
 6. Установите флажок **Владельцы, авторы и читатели электронных писем**, если администраторы и соадминистраторы должны получать уведомления по электронной почте при срабатывании оповещения.
 
-7. Чтобы отправлять уведомления на дополнительные электронные адреса при срабатывании оповещения, добавьте их в поле **Дополнительные адреса электронной почты администратора**. Нескольких электронных адресов разделите их точкой с запятой, в следующем формате: *электронной почты\@contoso.com;email2\@contoso.com*
+7. Чтобы отправлять уведомления на дополнительные электронные адреса при срабатывании оповещения, добавьте их в поле **Дополнительные адреса электронной почты администратора**. Несколько сообщений электронной почты разделяются точкой с запятой в следующем формате: *email\@contoso. com; email2\@contoso.com*
 
 8. Укажите допустимый универсальный код ресурса (URI) в поле **Веб-перехватчик**, если его необходимо вызывать при срабатывании оповещения.
 
@@ -127,7 +127,7 @@ az monitor alert delete --name <alert name> --resource-group <group name>
     Get-AzAlertRule -ResourceGroup montest -TargetResourceId /subscriptions/s1/resourceGroups/montest/providers/Microsoft.Compute/virtualMachines/testconfig
     ```
 
-8. Классические правила генерации оповещений больше не могут создаваться с помощью PowerShell. Чтобы создать правило генерации оповещений, необходимо использовать новый [«Add-AzMetricAlertRule»](/powershell/module/az.monitor/add-azmetricalertrule) команды.
+8. Классические правила генерации оповещений больше не могут создаваться с помощью PowerShell. Чтобы создать правило генерации оповещений, необходимо использовать новую команду [Add-азметрикалертруле](/powershell/module/az.monitor/add-azmetricalertrule) .
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

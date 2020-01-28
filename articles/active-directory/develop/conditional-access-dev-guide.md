@@ -12,19 +12,18 @@ ms.subservice: develop
 ms.custom: aaddev
 ms.topic: conceptual
 ms.workload: identity
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: f6bd060e0c627e8183f8d7f7b449f8d6f19c951b
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.openlocfilehash: b7f9daa61e012a9420702d7df7411d0c07c6e193
+ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74967053"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76697869"
 ---
 # <a name="developer-guidance-for-azure-active-directory-conditional-access"></a>Руководство разработчика по Azure Active Directory условному доступу
 
 Функция условного доступа в Azure Active Directory (Azure AD) предлагает один из нескольких способов, которые можно использовать для защиты приложения и защиты службы. Условный доступ позволяет разработчикам и корпоративным клиентам защищать службы множеством способов, включая:
 
-* Многофакторная Идентификация
+* Многофакторная проверка подлинности
 * разрешение доступа к определенным службам только устройствам, зарегистрированным в Intune;
 * ограничение расположения пользователей и диапазонов IP-адресов.
 
@@ -173,7 +172,7 @@ error_description=AADSTS50076: Due to a configuration change made by your admini
 
 Чтобы проверить этот сценарий, см. [пример кода On-Behalf-Of JS SPA](https://github.com/Azure-Samples/active-directory-dotnet-webapi-onbehalfof-ca). В этом примере кода для демонстрации этого сценария используется политика условного доступа и веб-API, зарегистрированные ранее с помощью JS SPA. По примеру можно узнать, как правильно обрабатывать запросы утверждений и получить маркер доступа, который может использоваться для веб-API. Кроме того ознакомьтесь с общим [примером кода Angular.js](https://github.com/Azure-Samples/active-directory-angularjs-singlepageapp) для получения руководства по Angular SPA.
 
-## <a name="see-also"></a>Дополнительные материалы
+## <a name="see-also"></a>См. также
 
 * Дополнительные сведения о возможностях условного доступа см. в статье об [условном доступе в Azure Active Directory](../active-directory-conditional-access-azure-portal.md).
 * Дополнительные примеры кода Azure AD доступны в [репозитории примеров кода GitHub](https://github.com/azure-samples?utf8=%E2%9C%93&q=active-directory).

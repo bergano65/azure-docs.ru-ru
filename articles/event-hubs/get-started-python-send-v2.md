@@ -8,12 +8,12 @@ ms.workload: core
 ms.topic: article
 ms.date: 01/08/2020
 ms.author: spelluru
-ms.openlocfilehash: 11548ba180a2dd6541240431d670812448c502b8
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.openlocfilehash: d7ab79d49aade7dd6e98cf33ce538174d176c784
+ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75981584"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76705349"
 ---
 # <a name="send-events-to-or-receive-events-from-event-hubs-using-python"></a>Отправка событий или получение событий из концентраторов событий с помощью Python
 
@@ -42,7 +42,7 @@ ms.locfileid: "75981584"
     Установите этот пакет для получения событий с помощью хранилища BLOB-объектов Azure в качестве хранилища контрольных точек.
 
     ```cmd
-    pip install azure-eventhub-checkpointstoreblobaio
+    pip install azure-eventhub-checkpointstoreblob-aio
     ```
 
 ## <a name="send-events"></a>Отправка событий

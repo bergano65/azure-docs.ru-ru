@@ -13,13 +13,12 @@ ms.date: 05/29/2019
 ms.author: twhitney
 ms.reviewer: saeeda
 ms.custom: aaddev
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 04d1ef1f76b1b1a807f48f7c79e41ada68b561fc
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: e68798861d5799a4314bd9cd9b2eeeadb926a90f
+ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74916441"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76696152"
 ---
 # <a name="avoid-page-reloads-when-acquiring-and-renewing-tokens-silently-using-msaljs"></a>Избегайте перезагрузки страниц при автоматическом получении и обновлении маркеров с помощью MSAL. js
 Библиотека проверки подлинности Microsoft для JavaScript (MSAL. js) использует скрытые элементы `iframe` для получения и обновления маркеров в фоновом режиме. Azure AD возвращает маркер обратно в зарегистрированную redirect_uri, указанную в запросе маркера (по умолчанию это корневая страница приложения). Так как ответ является 302, он приводит к возникновению HTML-кода, соответствующего `redirect_uri` загрузки в `iframe`. Обычно `redirect_uri` приложения является корневой страницей, и это приводит к ее перезагрузке.

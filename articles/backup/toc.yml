@@ -178,6 +178,10 @@
           items:
             - name: Резервное копирование
               href: backup-azure-afs-automation.md
+            - name: Восстановить
+              href: restore-afs-powershell.md
+            - name: Управление
+              href: manage-afs-powershell.md
     - name: "Резервное копирование базы данных SAP\_HANA на виртуальной машине Azure"
       items:
         - name: Обзор

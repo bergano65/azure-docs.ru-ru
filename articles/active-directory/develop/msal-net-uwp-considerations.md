@@ -13,13 +13,12 @@ ms.date: 07/16/2019
 ms.author: twhitney
 ms.reviewer: saeeda
 ms.custom: aaddev
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: d14546a63db952119303428140c65ee402010816
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: 549e36099e06d665ecab879ceb3c38987d000852
+ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74921798"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76695098"
 ---
 # <a name="universal-windows-platform-specific-considerations-with-msalnet"></a>Вопросы, связанные с универсальная платформа Windows MSAL.NET
 В UWP существует несколько аспектов, которые необходимо учитывать при использовании MSAL.NET.
@@ -64,7 +63,7 @@ HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execu
 ## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения приведены в следующих примерах.
 
-Пример | платформа | Описание 
+Пример | Платформа | Description 
 |------ | -------- | -----------|
 |[active-directory-dotnet-native-uwp-v2](https://github.com/azure-samples/active-directory-dotnet-native-uwp-v2) | UWP | Универсальная платформа Windows клиентское приложение, использующее msal.net, доступ к Microsoft Graph для пользователя, выполняющего проверку подлинности с помощью конечной точки Azure AD версии 2.0. <br>![Топология](media/msal-net-uwp-considerations/topology-native-uwp.png)|
 |[https://github.com/Azure-Samples/active-directory-xamarin-native-v2](https://github.com/Azure-Samples/active-directory-xamarin-native-v2) | Xamarin iOS, Android, UWP; | Простое приложение Xamarin Forms, в котором показано, как использовать MSAL для проверки подлинности MSA и Azure AD через конечную точку AAD версии 2.0, а также для доступа к Microsoft Graph с результирующим маркером. <br>![Топология](media/msal-net-uwp-considerations/topology-xamarin-native.png)|

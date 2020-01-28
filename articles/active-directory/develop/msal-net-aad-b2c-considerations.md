@@ -13,13 +13,12 @@ ms.date: 10/29/2019
 ms.author: jeferrie
 ms.reviewer: saeeda
 ms.custom: aaddev
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: b8940ca6887e5c37659dd5b8d5a24ba7a2f4b889
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: 0f3aaa2489b94d254d64d5844e1a2e41d5ecc132
+ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74921927"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76695710"
 ---
 # <a name="use-msalnet-to-sign-in-users-with-social-identities"></a>Использование MSAL.NET для входа пользователей с удостоверениями социальных сетей
 
@@ -75,7 +74,7 @@ AuthenticationResult ar = await application .AcquireTokenInteractive(scopes)
                                             .ExecuteAsync();
 ```
 
-на:
+вставьте
 
 - `policy` быть одной из предыдущих строк (например, `PolicySignUpSignIn`).
 - `ParentActivityOrWindow` требуется для Android (действие) и необязательно для других платформ, поддерживающих родительский пользовательский интерфейс, например Windows в Windows и UIViewController в iOS. Дополнительные сведения см. в [диалоговом окне пользовательского интерфейса](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/wiki/Acquiring-tokens-interactively#withparentactivityorwindow).
@@ -183,6 +182,6 @@ MSAL.Net поддерживает [кэш маркеров](/dotnet/api/microsof
 
 Дополнительные сведения о получении маркеров в интерактивном режиме с помощью MSAL.NET для Azure AD B2C приложений приведены в следующем примере.
 
-| Пример | платформа | Описание|
+| Пример | Платформа | Description|
 |------ | -------- | -----------|
 |[Active-Directory-B2C-Xamarin-Native](https://github.com/Azure-Samples/active-directory-b2c-xamarin-native) | Xamarin iOS, Xamarin Android, UWP | Простое приложение Xamarin Forms, демонстрирующие использование MSAL.NET для проверки подлинности пользователей с помощью Azure AD B2C, а также доступа к веб-API с результирующими маркерами.|
