@@ -1,7 +1,7 @@
 ---
-title: Используйте атрибут HeadPose
+title: Использование атрибута HeadPose
 titleSuffix: Azure Cognitive Services
-description: Узнайте, как использовать атрибут HeadPose автоматически повернуть лицо в рамке или обнаружения головной жесты на видео с веб-канала.
+description: Узнайте, как использовать атрибут HeadPose для автоматического вращения прямоугольной рамки вокруг лица или обнаружения жестов головой в видеотрансляции.
 author: PatrickFarley
 manager: nitinme
 ms.service: cognitive-services
@@ -9,26 +9,26 @@ ms.subservice: face-api
 ms.topic: sample
 ms.date: 05/29/2019
 ms.author: pafarley
-ms.openlocfilehash: 168b4fce873206e39a32a83da3dc5509b431d6a1
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
-ms.translationtype: MT
+ms.openlocfilehash: 534846044770d66ec5171ad4f61de921d2d5d194
+ms.sourcegitcommit: d29e7d0235dc9650ac2b6f2ff78a3625c491bbbf
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67058577"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76169789"
 ---
-# <a name="use-the-headpose-attribute"></a>Используйте атрибут HeadPose
+# <a name="use-the-headpose-attribute"></a>Использование атрибута HeadPose
 
-В этом руководстве вы увидите, как можно использовать атрибут HeadPose обнаруженного лица для поддержки некоторых важных сценариев.
+Из этого руководства вы узнаете, как использовать атрибут HeadPose обнаруженного лица для реализации некоторых распространенных сценариев.
 
-## <a name="rotate-the-face-rectangle"></a>Повернуть прямоугольник лиц
+## <a name="rotate-the-face-rectangle"></a>Вращение прямоугольной рамки вокруг лица
 
-Лицо в рамке, возвращенного с каждого обнаруженного лица, отмечает расположение и размер лица на изображении. По умолчанию прямоугольник всегда выравнивается с изображением (его сторон вертикальной и горизонтальной); Это может быть неэффективен для кадрирования наклонный лиц. В ситуациях, где необходимо программно обрезать лиц на изображении лучше иметь возможность поворота прямоугольника обрезки.
+Прямоугольная рамка вокруг лица, которая возвращается вместе с каждым обнаруженным лицом, отмечает расположение и размер этого лица на изображении. По умолчанию прямоугольник всегда выравнивается по изображению (его стороны расположены вертикально и горизонтально), но это не всегда удобно, если лицо повернуто под углом. Если нужно обрезать лицо в изображении с помощью программных средств, полезно иметь возможность поворачивать прямоугольник для обрезки.
 
-[WPF распознавания лиц Cognitive Services](https://github.com/Azure-Samples/cognitive-services-dotnet-sdk-samples/tree/master/app-samples/Cognitive-Services-Face-WPF) пример приложения с помощью атрибута HeadPose повернуть ее прямоугольники обнаруженного лица.
+В примере приложения [Cognitive Services Face WPF](https://github.com/Azure-Samples/cognitive-services-dotnet-sdk-samples/tree/master/app-samples/Cognitive-Services-Face-WPF) применяется атрибут HeadPose, который позволяет вращать прямоугольники для обнаруженных лиц.
 
 ### <a name="explore-the-sample-code"></a>Изучение примера кода
 
-С помощью атрибута HeadPose программными средствами можно поворачивать лицо в рамке. Если этот атрибут задан, при обнаружении лиц (см. в разделе [как обнаружить лица](HowtoDetectFacesinImage.md)), вы сможете запрашивать его позже. Следующий метод из [WPF распознавания лиц Cognitive Services](https://github.com/Azure-Samples/cognitive-services-dotnet-sdk-samples/tree/master/app-samples/Cognitive-Services-Face-WPF) приложение принимает список **DetectedFace** объектов и возвращает список **[лиц](https://github.com/Azure-Samples/cognitive-services-dotnet-sdk-samples/blob/master/app-samples/Cognitive-Services-Face-WPF/Sample-WPF/Controls/Face.cs)** объекты. **Грани** здесь — это пользовательский класс, что магазины сталкиваются с данными, включая обновленные прямоугольными координатами. Новые значения вычисляются для **верхней**, **левой**, **ширины**, и **высота**и новое поле **FaceAngle**указывает поворот.
+Вы можете программно вращать прямоугольную рамку вокруг лица с помощью атрибута HeadPose. Указав этот атрибут при обнаружении лиц (как описано [здесь](HowtoDetectFacesinImage.md)), вы сможете позднее получить его значение. Следующий метод из примера приложения [Cognitive Services Face WPF](https://github.com/Azure-Samples/cognitive-services-dotnet-sdk-samples/tree/master/app-samples/Cognitive-Services-Face-WPF) принимает список объектов **DetectedFace** и возвращает список объектов **[Face](https://github.com/Azure-Samples/cognitive-services-dotnet-sdk-samples/blob/master/app-samples/Cognitive-Services-Face-WPF/Sample-WPF/Controls/Face.cs)** . Здесь **Face** является пользовательским классом, который хранит данные о лицах, в том числе обновленные координаты прямоугольника. Вычисляются новые значения параметров **top** (верхний край), **left** (левый край), **width** (ширина) и **height** (высота), а новое поле **FaceAngle** обозначает вращение.
 
 ```csharp
 /// <summary>
@@ -106,9 +106,9 @@ public static IEnumerable<Face> CalculateFaceRectangleForRendering(IList<Detecte
 }
 ```
 
-### <a name="display-the-updated-rectangle"></a>Отображение обновленных прямоугольника
+### <a name="display-the-updated-rectangle"></a>Отображение обновленного прямоугольника
 
-На этой странице можно использовать возвращенный **лиц** объектов на экране. В следующих строках из [FaceDetectionPage.xaml](https://github.com/Azure-Samples/cognitive-services-dotnet-sdk-samples/blob/master/app-samples/Cognitive-Services-Face-WPF/Sample-WPF/Controls/FaceDetectionPage.xaml) Показать, как новый прямоугольник подготавливается к просмотру из этих данных:
+Здесь вы можете использовать полученные объекты **Face** для отображения на экране. В следующих строках из файла [FaceDetectionPage.xaml](https://github.com/Azure-Samples/cognitive-services-dotnet-sdk-samples/blob/master/app-samples/Cognitive-Services-Face-WPF/Sample-WPF/Controls/FaceDetectionPage.xaml) показано, как отображается новый прямоугольник на основе этих данных:
 
 ```xaml
  <DataTemplate>
@@ -120,17 +120,17 @@ public static IEnumerable<Face> CalculateFaceRectangleForRendering(IList<Detecte
 </DataTemplate>
 ```
 
-## <a name="detect-head-gestures"></a>Обнаружить головной жесты
+## <a name="detect-head-gestures"></a>Обнаружение жестов головой
 
-Вы можете обнаружить головного жестов, таких как nodding и head встряхните, отслеживая изменения HeadPose в режиме реального времени. Эту функцию можно использовать как обнаружения настраиваемые активности.
+Вы можете обнаруживать жесты головой, например кивки и покачивания, отслеживая изменения HeadPose в реальном времени. Эту функцию можно использовать в качестве инструмента для обнаружения активности.
 
-Обнаружение жизнеспособность — задача определения, что субъект — это человек, а не представлением изображение или видео. Детектор головной жестов можно использовать в качестве один из способов для проверки активности, особенно в отличие от представлений изображений человека.
+Задача обнаружения активности нужна для того, чтобы отличить реального человека от фиксированного изображения или видео. Детектор жестов головой может выполнять функцию обнаружения активности, которая наиболее эффективна при отсеве неподвижных изображений человека.
 
 > [!CAUTION]
-> Чтобы обнаружить головной жестов в режиме реального времени, необходимо вызвать API распознавания лиц с высокой скоростью (более одного раза в секунду). Если у вас есть подписка бесплатная уровня (f0), это будет невозможно. Если у вас есть платная уровня подписки, убедитесь, что вычисления затрат на создание быстрой API вызовы для head жестов обнаружения.
+> Для обнаружения жестов головой в режиме реального времени необходимо обращаться к API распознавания лиц с высокой скоростью (более одного раза в секунду). Это невозможно выполнить, используя подписку уровня "Бесплатный" (F0). Для платной подписки не забудьте учесть расходы на частое выполнение вызовов API для обнаружения жестов.
 
-См. в разделе [пример HeadPose API распознавания лиц](https://github.com/Azure-Samples/cognitive-services-dotnet-sdk-samples/tree/master/app-samples/FaceAPIHeadPoseSample) на сайте GitHub рабочий пример головы жестов обнаружения.
+Рабочий пример обнаружения жестов см. в примере [Face HeadPose](https://github.com/Azure-Samples/cognitive-services-dotnet-sdk-samples/tree/master/app-samples/FaceAPIHeadPoseSample) на сайте GitHub.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-См. в разделе [WPF распознавания лиц Cognitive Services](https://github.com/Azure-Samples/cognitive-services-dotnet-sdk-samples/tree/master/app-samples/Cognitive-Services-Face-WPF) приложение на сайте GitHub рабочий пример повернутого лиц прямоугольников. См. в разделе [пример HeadPose API распознавания лиц](https://github.com/Azure-Samples/cognitive-services-dotnet-sdk-samples/tree/master/app-samples) приложение, которое отслеживает атрибут HeadPose в режиме реального времени для обнаружения головной перемещений.
+Рабочий пример с вращением прямоугольных рамок вокруг лица см. в примере приложения [Cognitive Services Face WPF](https://github.com/Azure-Samples/cognitive-services-dotnet-sdk-samples/tree/master/app-samples/Cognitive-Services-Face-WPF) на сайте GitHub. Также вы можете ознакомиться с примером приложения [Face HeadPose](https://github.com/Azure-Samples/cognitive-services-dotnet-sdk-samples/tree/master/app-samples), которое отслеживает атрибут HeadPose в реальном времени для обнаружения движений головой.

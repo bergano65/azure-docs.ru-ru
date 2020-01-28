@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 73104cc1bcd9266cbb9e5b1985dac4a4566f0a74
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: d593e5f27dbcd676e2b42975251778a6c48a7d79
+ms.sourcegitcommit: 38b11501526a7997cfe1c7980d57e772b1f3169b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75423124"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76511881"
 ---
 # <a name="what-is-a-device-identity"></a>Что такое удостоверение устройства?
 
@@ -54,7 +54,7 @@ ms.locfileid: "75423124"
 
 ## <a name="device-management"></a>Управление устройствами
 
-Управлять устройствами в Azure AD можно с помощью таких инструментов управления мобильными устройствами (MDM), как Microsoft Intune, System Center Configuration Manager, групповой политики (гибридное присоединения устройств к Azure AD), инструментов управления мобильными приложениями (MAM) или других сторонних инструментов.
+Управлять устройствами в Azure AD можно с помощью инструментов управления мобильными устройствами (MDM), например Microsoft Intune, Microsoft Endpoint Configuration Manager, групповой политики (гибридное присоединения устройств к Azure AD), инструментов управления мобильными приложениями (MAM) или других сторонних инструментов.
 
 ## <a name="resource-access"></a>Доступ к ресурсам
 

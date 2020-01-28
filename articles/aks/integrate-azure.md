@@ -1,19 +1,17 @@
 ---
 title: Интеграция со службами под управлением Azure с помощью открытого компонента Service Broker для Azure (OSBA)
 description: Интеграция со службами под управлением Azure с помощью открытого компонента Service Broker для Azure (OSBA)
-services: container-service
 author: zr-msft
-manager: jeconnoc
 ms.service: container-service
 ms.topic: overview
 ms.date: 12/05/2017
 ms.author: zarhoads
-ms.openlocfilehash: 7a887905bcb4b09c1b4ae179116b3f08c75caabd
-ms.sourcegitcommit: 563f8240f045620b13f9a9a3ebfe0ff10d6787a2
+ms.openlocfilehash: 131e767daa920f03db5ec9a3aac711fc850c7132
+ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2019
-ms.locfileid: "58758286"
+ms.lasthandoff: 01/19/2020
+ms.locfileid: "76276793"
 ---
 # <a name="integrate-with-azure-managed-services-using-open-service-broker-for-azure-osba"></a>Интеграция со службами под управлением Azure с помощью открытого компонента Service Broker для Azure (OSBA)
 
@@ -28,7 +26,7 @@ ms.locfileid: "58758286"
 
 * Разрешения для создания субъекта-службы с ролью "Участник" для подписки Azure.
 
-* Имеющийся кластер службы Azure Kubernetes (AKS). Если вам нужен кластер службы контейнеров Azure, выполните действия из краткого руководства по [созданию кластера AKS][create-aks-cluster].
+* Имеющийся кластер службы Azure Kubernetes (AKS). Если вам нужен кластер Службы контейнеров Azure, выполните действия из краткого руководства [Развертывание кластера Службы контейнеров Azure (AKS)][create-aks-cluster].
 
 ## <a name="install-service-catalog"></a>Установка каталога услуг
 
@@ -83,7 +81,7 @@ v1beta1.storage.k8s.io               10
 helm repo add azure https://kubernetescharts.blob.core.windows.net/azure
 ```
 
-Создайте [субъект-службу][create-service-principal] с помощью следующей команды Azure CLI:
+Создайте [субъект-службу][create-service-principal] с помощью следующей команды Azure CLI.
 
 ```azurecli-interactive
 az ad sp create-for-rbac
@@ -131,7 +129,7 @@ helm install azure/open-service-broker-azure --name osba --namespace osba \
     --set azure.clientSecret=$AZURE_CLIENT_SECRET
 ```
 
-После развертывания OSBA установите [интерфейс командной строки каталога услуг][service-catalog-cli], простой интерфейс командной строки для обращения к брокерам служб, классам служб, планам обслуживания и т. д.
+После развертывания OSBA установите [интерфейс командной строки каталога услуг][service-catalog-cli], простой интерфейс командной строки для выполнения запроса службы брокеров, классы служб, планы обслуживания и т. д.
 
 Выполните следующие команды для установки двоичных файлов интерфейса командной строки каталога услуг.
 
@@ -146,7 +144,7 @@ chmod +x ./svcat
 ./svcat get brokers
 ```
 
-Вы должны увидеть результат, аналогичный приведенному ниже:
+Выходные данные должны иметь следующий вид.
 
 ```
   NAME                               URL                                STATUS
@@ -187,7 +185,7 @@ helm install azure/wordpress --name wordpress --namespace wordpress --set resour
 kubectl get secrets -n wordpress -o yaml
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Следуя указаниям в этой статье, вы развернули каталог услуг в кластере службы Azure Kubernetes (AKS). Вы использовали открытый компонент Service Broker для Azure, чтобы развернуть установку WordPress, которая использует службы под управлением Azure (в данном случае — базу данных Azure для MySQL).
 

@@ -6,12 +6,12 @@ ms.topic: tutorial
 author: markjbrown
 ms.author: mjbrown
 ms.date: 07/26/2019
-ms.openlocfilehash: 1c352ad5d18f891cd82d90eef7d0a8c6c3d1cdb9
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: bcab5f76b95939b0a9a4232eab2bcf8b2a5fd40b
+ms.sourcegitcommit: a9b1f7d5111cb07e3462973eb607ff1e512bc407
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75441673"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76309988"
 ---
 # <a name="use-the-azure-cosmos-emulator-for-local-development-and-testing"></a>Использование эмулятора Azure Cosmos для разработки и тестирования в локальной среде
 
@@ -283,7 +283,6 @@ table.Execute(TableOperation.Insert(new DynamicTableEntity("partitionKey", "rowK
 При попытке создать контейнер, превышающий ограничение на количество секций, эмулятор генерирует исключение ServiceUnavailable со следующим сообщением:
 
 Sorry, we are currently experiencing high demand in this region, and cannot fulfill your request at this time. We work continuously to bring more and more capacity online, and encourage you to try again.
-Please do not hesitate to email askcosmosdb@microsoft.com at any time or for any reason.
 ActivityId: 12345678-1234-1234-1234-123456789abc. (К сожалению, сейчас в этом регионе отмечается высокий спрос, и мы не можем выполнить ваш запрос. Мы постоянно работаем над повышением доступной емкости и рекомендуем вам попробовать еще раз. Вы можете обратиться к нам на адрес askcosmosdb@microsoft.com в любое время и по любому поводу.)
 
 Чтобы изменить количество доступных для эмулятора Azure Cosmos DB контейнеров, сделайте следующее.
@@ -496,7 +495,7 @@ Microsoft.Azure.Cosmos.Emulator.exe /AllowNetworkAccess /Key=C2y6yDjf5/R+ob0N8A7
 
 - Если установлена новая версия эмулятора и возникли ошибки, убедитесь, что вы сбросили данные. Вы можете сбросить данные, щелкнув правой кнопкой мыши значок эмулятора Azure Cosmos в области уведомлений и выбрав "Сбросить данные". Если это не поможет устранить проблемы, вы можете удалить эмулятор и все его старые версии, затем удалить каталог C:\Program files\Azure Cosmos DB Emulator и повторно установить эмулятор. Инструкции см. в разделе [Удаление локального эмулятора](#uninstall).
 
-- В случае аварийного завершения эмулятора Azure Cosmos DB соберите файлы дампа из папки %LOCALAPPDATA%\CrashDumps, сожмите их, вложите в электронное сообщение и отправьте на адрес [askcosmosdb@microsoft.com](mailto:askcosmosdb@microsoft.com).
+- В случае аварийного завершения эмулятора Azure Cosmos DB соберите файлы резервной копии из папки %LOCALAPPDATA%\CrashDumps, сожмите их и создайте запрос в службу поддержки на портале [Azure](https://portal.azure.com).
 
 - Если в `Microsoft.Azure.Cosmos.ComputeServiceStartupEntryPoint.exe` возникают сбои, это может означать нарушение состояния счетчиков производительности. Обычно такую проблему удается исправить, выполнив следующую команду из командной строки с правами администратора:
 
@@ -504,7 +503,7 @@ Microsoft.Azure.Cosmos.Emulator.exe /AllowNetworkAccess /Key=C2y6yDjf5/R+ob0N8A7
   lodctr /R
    ```
 
-- Если возникли проблемы с подключением, [соберите файлы трассировки](#trace-files), сожмите их, вложите в электронное сообщение и отправьте по адресу [askcosmosdb@microsoft.com](mailto:askcosmosdb@microsoft.com).
+- Если возникли проблемы с подключением, [соберите файлы трассировки](#trace-files), сожмите их и создайте запрос в службу поддержки на портале [Azure](https://portal.azure.com).
 
 - При получении сообщения **Служба недоступна** эмулятор может не инициализировать сетевой стек. Проверьте, установлен ли защищенный клиент Pulse или сетевой клиент Juniper, так как драйверы их сетевого фильтра могут вызвать проблему. Удаление драйверов сетевого фильтра сторонних производителей обычно устраняет проблему. Также можно запустить эмулятор с параметром /DisableRIO, который настраивает для сетевого взаимодействия эмулятора использование Winsock. 
 
@@ -519,9 +518,9 @@ Microsoft.Azure.Cosmos.Emulator.exe /AllowNetworkAccess /Key=C2y6yDjf5/R+ob0N8A7
 3. `Microsoft.Azure.Cosmos.Emulator.exe /startwprtraces`
 4. `Microsoft.Azure.Cosmos.Emulator.exe`
 5. Воспроизведите проблему. Если обозреватель данных не работает, необходимо подождать несколько секунд, чтобы открылся браузер и ошибка возникла снова.
-5. `Microsoft.Azure.Cosmos.Emulator.exe /stopwprtraces`
-6. Перейдите к `%ProgramFiles%\Azure Cosmos DB Emulator` и найдите файл docdbemulator_000001.etl.
-7. Отправьте ETL-файл и описание действий, которые привели к ошибке, на электронный адрес [askcosmosdb@microsoft.com](mailto:askcosmosdb@microsoft.com) для отладки.
+6. `Microsoft.Azure.Cosmos.Emulator.exe /stopwprtraces`
+7. Перейдите к `%ProgramFiles%\Azure Cosmos DB Emulator` и найдите файл docdbemulator_000001.etl.
+8. Создайте запрос в службу поддержки на [портале Azure](https://portal.azure.com) и добавьте ETL-файл вместе с действиями по воспроизведению.
 
 ### <a id="uninstall"></a>Удаление локального эмулятора
 

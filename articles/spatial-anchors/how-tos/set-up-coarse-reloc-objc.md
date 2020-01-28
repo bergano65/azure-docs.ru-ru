@@ -1,6 +1,6 @@
 ---
 title: Простое уточнение расположения в Objective-C
-description: В этой статье подробно рассказывается о том, как создавать и находить привязки с использованием датчиков устройств в Objective-C.
+description: В этой статье подробно объясняется, как создавать и находить привязки с использованием простого уточнения расположения на Objective-C.
 author: bucurb
 manager: dacoghl
 services: azure-spatial-anchors
@@ -8,14 +8,14 @@ ms.author: bobuc
 ms.date: 09/19/2019
 ms.topic: tutorial
 ms.service: azure-spatial-anchors
-ms.openlocfilehash: d60bb9dbb546db1af6f689dbdcb485354fb7174e
-ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
+ms.openlocfilehash: 251f0d8609921bd1d0222d9e30c537ecbb2a04bd
+ms.sourcegitcommit: 87781a4207c25c4831421c7309c03fce5fb5793f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74277241"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76548277"
 ---
-# <a name="how-to-create-and-locate-anchors-using-on-device-sensors-in-objective-c"></a>Создание и поиск привязок с использованием датчиков устройств в Objective-C
+# <a name="how-to-create-and-locate-anchors-using-coarse-relocalization-in-objective-c"></a>Создание и поиск привязок с использованием простого уточнения расположения на Objective-C
 
 > [!div  class="op_single_selector"]
 > * [Unity](set-up-coarse-reloc-unity.md)

@@ -1,6 +1,6 @@
 ---
 title: Примеры Azure CLI. Служба "Сетка событий" | Документация Майкрософт
-description: Примеры Azure CLI для службы "Сетка событий"
+description: В этой статье представлена таблица со ссылками на примеры скриптов для интерфейса командной строки Azure (CLI) службы "Сетка событий".
 services: event-grid
 author: spelluru
 manager: timlt
@@ -8,14 +8,14 @@ ms.service: event-grid
 ms.devlang: na
 ms.topic: sample
 ms.tgt_pltfrm: na
-ms.date: 08/06/2018
+ms.date: 01/21/2020
 ms.author: spelluru
-ms.openlocfilehash: 253086cd655bba87b015fbe41282f6610ace4518
-ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
+ms.openlocfilehash: 0cef3f5ae7c647236d52e4c571e5fc382e1560f4
+ms.sourcegitcommit: 38b11501526a7997cfe1c7980d57e772b1f3169b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54470988"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76514618"
 ---
 # <a name="azure-cli-samples-for-event-grid"></a>Примеры Azure CLI для службы "Сетка событий"
 

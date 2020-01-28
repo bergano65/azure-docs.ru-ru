@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory со SmarterU | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory со SmarterU | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и SmarterU.
 services: active-directory
 documentationCenter: na
@@ -15,14 +15,17 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/19/2019
 ms.author: jeedes
-ms.openlocfilehash: 61d7a2a7e4a60794710d602dab6b54e894bfc475
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: 712e7bcf513592f97950902faff2f7754093b9fc
+ms.sourcegitcommit: 87781a4207c25c4831421c7309c03fce5fb5793f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74232026"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76549297"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-smarteru"></a>Руководство по Интеграция Azure Active Directory со SmarterU
+> [!NOTE]
+> Процесс интеграции SmarterU с Azure Active Directory также задокументирован и поддерживается в [Справочной системе SmarterU](https://help.smarteru.com/ID2053086).
+
+# <a name="tutorial-azure-active-directory-integration-with-smarteru"></a>Руководство. Интеграция Azure Active Directory со SmarterU
 
 В этом учебнике описано, как интегрировать SmarterU с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением SmarterU обеспечивает следующие преимущества.
@@ -38,7 +41,7 @@ ms.locfileid: "74232026"
 
 Чтобы настроить интеграцию Azure AD с SmarterU, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* Подписка Azure AD. (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * подписка SmarterU с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -99,7 +102,7 @@ ms.locfileid: "74232026"
 
 3. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
 
-    ![Правка базовой конфигурации SAML](common/edit-urls.png)
+    ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
 4. В разделе **Базовая конфигурация SAML** выполните приведенные ниже действия.
 
@@ -115,7 +118,7 @@ ms.locfileid: "74232026"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
     b. Идентификатор Azure AD
 
@@ -133,7 +136,7 @@ ms.locfileid: "74232026"
 
     ![Внешняя авторизация](./media/smarteru-tutorial/externalauthorizationconfiguration.png) 
 
-    a. Установите флажок **Включить внешнюю авторизацию**.
+    а. Установите флажок **Включить внешнюю авторизацию**.
   
     b. В разделе **Master Login Control** (Управление универсальным именем для входа) щелкните вкладку **SmarterU**.
   
@@ -141,9 +144,9 @@ ms.locfileid: "74232026"
   
     d. Выберите **Включить SAML**.
   
-    д. Скопируйте содержимое скачанного файла метаданных и вставьте его в текстовое поле **IdP Metadata** (Метаданные IdP).
+    д) Скопируйте содержимое скачанного файла метаданных и вставьте его в текстовое поле **IdP Metadata** (Метаданные IdP).
 
-    Е. Выберите **Identifier Attribute/Claim** (Атрибут или утверждение удостоверения).
+    е) Выберите **Identifier Attribute/Claim** (Атрибут или утверждение удостоверения).
   
     ж. Выберите команду **Сохранить**.
 
@@ -212,7 +215,7 @@ ms.locfileid: "74232026"
 
     ![Новый пользователь](./media/smarteru-tutorial/adduser.png)  
 
-    a. Щелкните **+ Пользователь**.
+    а. Щелкните **+ Пользователь**.
 
     b. Введите значения атрибутов, связанные с учетной записью пользователя Azure Active Directory, в следующие текстовые поля: **Primary Email** (Основной адрес электронной почты), **Employee ID** (Идентификатор сотрудника), **Password** (Пароль), **Verify Password** (Проверьте пароль), **Given Name** (Заданное имя), **Surname** (Фамилия).
 

@@ -5,15 +5,15 @@ services: container-service
 author: mlearned
 ms.service: container-service
 ms.topic: quickstart
-ms.date: 5/31/2019
+ms.date: 01/21/2020
 ms.author: mlearned
 ms.custom: mvc, seo-javascript-october2019
-ms.openlocfilehash: 89bb7014ddb04b63a83dc8c5b520bcf500bdc707
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: b0269a6c710fe16271e333a1e9414208b278a93d
+ms.sourcegitcommit: a9b1f7d5111cb07e3462973eb607ff1e512bc407
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73472682"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76310209"
 ---
 # <a name="quickstart-deploy-an-azure-kubernetes-service-aks-cluster-using-the-azure-portal"></a>Краткое руководство. Развертывание кластера Службы Azure Kubernetes (AKS) с помощью портала Azure
 
@@ -21,9 +21,9 @@ ms.locfileid: "73472682"
 
 ![Изображение перехода к примеру приложения Azure для голосования](media/container-service-kubernetes-walkthrough/azure-voting-application.png)
 
-В этом руководстве предполагается, что у вас есть некоторое представление о функциях Kubernetes. Дополнительные сведения см. в статье о [ключевых концепциях Kubernetes для Службы Azure Kubernetes (AKS)][kubernetes-concepts].
+В этом руководстве предполагается, что у вас есть некоторое представление о функциях Kubernetes. Дополнительные сведения см. в статье [Ключевые концепции Kubernetes для службы Azure Kubernetes (AKS)][kubernetes-concepts].
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 ## <a name="sign-in-to-azure"></a>Вход в Azure
 
@@ -33,7 +33,7 @@ ms.locfileid: "73472682"
 
 Чтобы создать кластеры AKS, выполните следующие действия.
 
-1. На **домашней странице** или в меню портала Azure выберите команду **Создать ресурс**.
+1. На **домашней странице** или в меню портала Azure выберите **Создать ресурс**.
 
 2. Выберите **Контейнеры** >  **Служба Kubernetes**.
 
@@ -75,7 +75,7 @@ ms.locfileid: "73472682"
 az aks get-credentials --resource-group myResourceGroup --name myAKSCluster
 ```
 
-Проверьте подключение к кластеру, выполнив команду [kubectl get][kubectl-get], чтобы просмотреть список узлов кластера.
+Чтобы проверить подключение к кластеру, используйте команду [kubectl get][kubectl-get] для получения списка узлов кластера.
 
 ```azurecli-interactive
 kubectl get nodes
@@ -95,7 +95,7 @@ aks-agentpool-14693408-0   Ready     agent     15m       v1.11.5
 > [!TIP]
 > В этом кратком руководстве вы вручную создадите и развернете манифесты приложений в кластере AKS. В сценариях, более приближенных к реальному использованию, можно использовать [Azure Dev Spaces][azure-dev-spaces] для быстрого итерационного выполнения кода и его отладки непосредственно в кластере AKS. Служба Dev Spaces позволяет использовать различные платформы ОС и среды разработки и работать совместно с другими членами команды.
 
-В Cloud Shell используйте `nano` или `vi` для создания файла с именем `azure-vote.yaml` и скопируйте в следующее определение YAML:
+В Cloud Shell выполните команду `nano azure-vote.yaml` или `vi azure-vote.yaml`, чтобы создать файл с именем `azure-vote.yaml`. Затем скопируйте в него следующее определение YAML:
 
 ```yaml
 apiVersion: apps/v1
@@ -260,7 +260,7 @@ az aks delete --resource-group myResourceGroup --name myAKSCluster --no-wait
 
 [https://github.com/Azure-Samples/azure-voting-app-redis][azure-vote-app]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 С помощью этого краткого руководства мы развернули кластер Kubernetes, а затем развернули в нем многоконтейнерное приложение.
 

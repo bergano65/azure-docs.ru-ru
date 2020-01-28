@@ -8,12 +8,12 @@ ms.date: 11/11/2019
 ms.topic: tutorial
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: 16920a46e64306daa331957df24babba8ac4b731
-ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
+ms.openlocfilehash: a9f9c6ebd55752ea5a3400da8d42b6c6487277df
+ms.sourcegitcommit: 38b11501526a7997cfe1c7980d57e772b1f3169b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/02/2020
-ms.locfileid: "75612876"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76514652"
 ---
 # <a name="tutorial-configure-an-iot-edge-device"></a>Руководство. Настройка устройства IoT Edge
 
@@ -262,7 +262,7 @@ ms.locfileid: "75612876"
       trusted_ca_certs: "/edgeMlCertificates/azure-iot-test-only.root.ca.cert.pem"
     ```
 
-    Убедитесь, что перед строкой certificates: нет пробелов, а перед каждым сертификатом есть по два пробела.
+    Убедитесь, что перед строкой **certificates:** нет пробелов, а перед каждым вложенным сертификатом есть по два пробела.
 
     В редакторе Nano щелкните правой кнопкой мыши, чтобы вставить содержимое буфера обмена в место, где находится курсор. Чтобы заменить строку, перейдите к ней с помощью клавиш со стрелками, удалите ее, а затем щелкните правой кнопкой мыши, чтобы вставить содержимое буфера обмена.
 

@@ -1,5 +1,5 @@
 ---
-title: Пример скрипта Azure CLI. Остановка и удаление виртуальной машины в лаборатории | Документация Майкрософт
+title: Остановка работы и удаление виртуальной машины в лаборатории с помощью Azure CLI
 description: Этот скрипт Azure CLI останавливает и удаляет виртуальную машину в лаборатории.
 services: lab-services
 author: spelluru
@@ -11,15 +11,15 @@ ms.devlang: azurecli
 ms.topic: sample
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 04/12/2018
+ms.date: 01/16/2020
 ms.author: spelluru
 ms.custom: mvc
-ms.openlocfilehash: c89a5c069186a1612161f660d985ff9144c68e64
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 7465770eaeb35772012be2219858ccda512775d6
+ms.sourcegitcommit: d29e7d0235dc9650ac2b6f2ff78a3625c491bbbf
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61084299"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76166413"
 ---
 # <a name="use-azure-cli-to-stop-and-delete-a-virtual-machine-in-a-lab-in-azure-devtest-labs"></a>Остановка и удаление виртуальной машины в лаборатории в Azure DevTest Labs с помощью Azure CLI
 
@@ -37,13 +37,13 @@ ms.locfileid: "61084299"
 
 Этот сценарий использует следующие команды:
 
-| Команда | Примечания |
+| Get-Help | Примечания |
 |---|---|
 | [az lab vm stop](/cli/azure/lab/vm?view=azure-cli-latest#az-lab-vm-stop) | Остановка виртуальной машины в лаборатории. Эта операция может занять некоторое время. |
 | [az lab vm delete](/cli/azure/lab/vm?view=azure-cli-latest#az-lab-vm-delete) | Удаление виртуальной машины в лаборатории. Эта операция может занять некоторое время. |
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об Azure CLI см. в [документации по Azure CLI](https://docs.microsoft.com/cli/azure).
 

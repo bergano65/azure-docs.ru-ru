@@ -11,12 +11,12 @@ ms.subservice: language-understanding
 ms.topic: quickstart
 ms.date: 10/17/2019
 ms.author: diberry
-ms.openlocfilehash: a99dbc594b53d00ae02b2581d149fe7b4573ab7d
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 2ca0f9faf1623df9212072abbc960cba41a6414b
+ms.sourcegitcommit: d29e7d0235dc9650ac2b6f2ff78a3625c491bbbf
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73495221"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76165748"
 ---
 # <a name="quickstart-get-intent-with-a-browser"></a>Краткое руководство. Получение намерения с помощью браузера
 
@@ -26,13 +26,13 @@ ms.locfileid: "73495221"
 
 Чтобы запросить общедоступное приложение, вам потребуется перечисленные ниже средства.
 
-* Ваш ключ Распознавания речи (LUIS). Если у вас еще нет подписки для создания ключа, вы можете зарегистрироваться, чтобы получить [бесплатную учетную запись](https://azure.microsoft.com/free/). Ключ разработки LUIS не будет работать. 
+* Ваш собственный ключ для Распознавания речи (LUIS) разработки или прогнозирования, который можно получить на портале [LUIS Portal (предварительная версия)](https://preview.luis.ai/). Если у вас еще нет подписки для создания ключа, вы можете зарегистрироваться, чтобы получить [бесплатную учетную запись](https://azure.microsoft.com/free/). 
 * Идентификатор общедоступного приложения: `df67dcdb-c37d-46af-88e1-8b97951ca1c2`. 
 
 ## <a name="use-the-browser-to-see-predictions"></a>Использование браузера для просмотра прогнозирования
 
 1. Откройте веб-браузер. 
-1. Используйте полные URL-адреса, приведенные ниже, заменив `YOUR-KEY` своим собственным ключом LUIS. Запросы — это запросы GET, которые включает авторизацию с ключом LUIS в качестве параметра строки запроса.
+1. Используйте полные URL-адреса, приведенные ниже, заменив `YOUR-KEY` своим собственным ключом разработки или прогнозирования LUIS. Запросы — это запросы GET, которые включает авторизацию с ключом разработки или прогнозирования LUIS в качестве параметра строки запроса.
 
     #### <a name="v3-prediction-requesttabv3-1-1"></a>[Запрос на прогнозирование V3](#tab/V3-1-1)
     
@@ -176,7 +176,7 @@ ms.locfileid: "73495221"
 
 <!-- FIX - is the public app getting updated for the new prebuilt domain with entities? -->   
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о [конечной точке прогнозирования V3](luis-migration-api-v3.md).
 

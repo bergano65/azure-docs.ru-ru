@@ -1,5 +1,5 @@
 ---
-title: Изучите выходные данные индексатора видео служб мультимедиа Azure, созданные с помощью API v2.
+title: Изучите выходные данные индексатора видео, созданные с помощью API v2 — Azure.
 titleSuffix: Azure Media Services
 description: В этом разделе рассматриваются выходные данные индексатора видео служб мультимедиа Azure, созданные с помощью API v2.
 services: media-services
@@ -10,12 +10,12 @@ ms.subservice: video-indexer
 ms.topic: article
 ms.date: 12/09/2019
 ms.author: juliako
-ms.openlocfilehash: ab48787edcdd8c28891ca49d0f8b64305ce0e747
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 2fac5e07f9646c4fc0fac7b1be53b5a5ac1ea803
+ms.sourcegitcommit: 38b11501526a7997cfe1c7980d57e772b1f3169b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75454641"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76514397"
 ---
 # <a name="examine-the-video-indexer-output-produced-by-api"></a>Изучите выходные данные индексатора видео, созданные API
 
@@ -94,7 +94,7 @@ ms.locfileid: "75454641"
 |brands| Может содержать или не содержать сведения о торговых марках. Дополнительные сведения см. в разделе [brands](#brands).|
 |статистика | Дополнительные сведения см. в разделе [statistics](#statistics).|
 |emotions| Может содержать или не содержать значения эмоций. Дополнительные сведения см. в разделе [emotions](#emotions).|
-|topics|Может содержать или не содержать значения тем. Полезные [](#topics) сведения.|
+|topics|Может содержать или не содержать значения тем. Полезные [topics](#topics) сведения.|
 
 ## <a name="videos"></a>videos
 
@@ -171,7 +171,7 @@ ms.locfileid: "75454641"
 |visualContentModeration|[Висуалконтентмодератион](#visualcontentmoderation) Insights.|
 |textualContentModeration|[Текстуалконтентмодератион](#textualcontentmoderation) Insights.|
 |emotions| [Эмоции](#emotions) Insights.|
-|topics|Полезные [](#topics) сведения.|
+|topics|Полезные [topics](#topics) сведения.|
 
 Пример:
 

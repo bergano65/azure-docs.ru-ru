@@ -11,14 +11,14 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 787900918035dc8b14d3a173496ab1a23b0f93bb
-ms.sourcegitcommit: c8a102b9f76f355556b03b62f3c79dc5e3bae305
+ms.openlocfilehash: 17bfbc29f38230dc2533c9ccc63cdee4fc776717
+ms.sourcegitcommit: 38b11501526a7997cfe1c7980d57e772b1f3169b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68813087"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76512114"
 ---
-# <a name="tutorial-configure-hybrid-azure-active-directory-join-for-managed-domains"></a>Руководство по Настройка гибридного присоединения к Azure Active Directory для управляемых доменов
+# <a name="tutorial-configure-hybrid-azure-active-directory-join-for-managed-domains"></a>Руководство. Настройка гибридного присоединения к Azure Active Directory для управляемых доменов
 
 Подобно пользователю в вашей организации, устройство — это еще одно основное удостоверение, которое необходимо защитить. Удостоверение устройства можно использовать для защиты ресурсов в любое время и из любого расположения. Для этого разместите удостоверения своих устройств в Azure AD и управляйте ими с помощью одного из следующих методов:
 
@@ -32,13 +32,13 @@ ms.locfileid: "68813087"
 
 Управляемую среду можно развернуть при помощи [синхронизации хэша паролей](../hybrid/whatis-phs.md) или [сквозной аутентификации](../hybrid/how-to-connect-pta.md) с [единым входом](../hybrid/how-to-connect-sso.md). В этих сценариях не требуется настраивать сервер федерации для проверки подлинности.
 
-Из этого руководства вы узнаете, как выполнять следующие задачи:
+В этом руководстве описано следующее:
 
 > [!div class="checklist"]
 > * Настройка гибридного присоединения к Azure AD.
 > * Включение устройств Windows нижнего уровня.
 > * Проверка присоединенных устройств.
-> * Устранение неполадок
+> * Диагностика
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -64,9 +64,9 @@ ms.locfileid: "68813087"
 - `https://enterpriseregistration.windows.net`
 - `https://login.microsoftonline.com`
 - `https://device.login.microsoftonline.com`
-- `https://autologon.microsoftazuread-sso.com` (Если вы используете или планируете использовать простой единый вход)
+- `https://autologon.microsoftazuread-sso.com` (если вы используете или планируете использовать простой единый вход).
 
-Если вашей организации требуется доступ к Интернету через исходящий прокси-сервер, корпорация Майкрософт рекомендует [реализовать автоматическое обнаружение веб-прокси (WPAD)](https://docs.microsoft.com/previous-versions/tn-archive/cc995261(v%3dtechnet.10)), чтобы обеспечить регистрацию устройств в Azure AD на компьютерах Windows 10. Если возникли проблемы при настройке и управлении WPAD, см. раздел [Устранение неполадок автоматического обнаружения](https://docs.microsoft.com/previous-versions/tn-archive/cc302643(v=technet.10)). 
+Если вашей организации требуется доступ к Интернету через исходящий прокси-сервер, корпорация Майкрософт рекомендует [реализовать автоматическое обнаружение веб-прокси (WPAD)](https://docs.microsoft.com/previous-versions/tn-archive/cc995261(v%3dtechnet.10)), чтобы обеспечить регистрацию устройств в Azure AD на компьютерах Windows 10. Если возникли проблемы при настройке и управлении WPAD, обратитесь к статье об [устранении неполадок с автоматическим обнаружением](https://docs.microsoft.com/previous-versions/tn-archive/cc302643(v=technet.10)). 
 
 Если вы не используете WPAD и вам необходимо настроить параметры прокси-сервера на компьютере, это можно сделать, начиная с Windows 10 версии 1709. Дополнительные сведения см. в разделе [Настройка параметров WinHTTP с помощью объекта групповой политики (GPO)](https://blogs.technet.microsoft.com/netgeeks/2018/06/19/winhttp-proxy-settings-deployed-by-gpo/).
 
@@ -81,7 +81,7 @@ ms.locfileid: "68813087"
 
 Чтобы настроить гибридное присоединение к Azure AD с помощью Azure AD Connect, вам потребуется следующее:
 
-- учетные данные глобального администратора для клиента Azure AD;
+- учетные данные глобального администратора для клиента Azure AD;
 - учетные данные администратора предприятия для каждого леса;
 
 **Чтобы настроить гибридное присоединение к Azure AD с помощью Azure AD Connect, сделайте следующее.**
@@ -132,7 +132,10 @@ ms.locfileid: "68813087"
 
 - Настройка параметров локальной интрасети для регистрации устройств.
 - Настройка простого единого входа
-- Установка Microsoft Workplace Join для компьютеров Windows нижнего уровня
+- Установка Microsoft Workplace Join для компьютеров Windows нижнего уровня.
+
+> [!NOTE]
+> Поддержка Windows 7 закончилась 14 января 2020 г. Дополнительные сведения см. в статье о [прекращении поддержки Windows 7](https://support.microsoft.com/en-us/help/4057281/windows-7-support-ended-on-january-14-2020).
 
 ### <a name="configure-the-local-intranet-settings-for-device-registration"></a>Настройка параметров локальной интрасети для регистрации устройств.
 
@@ -151,7 +154,7 @@ ms.locfileid: "68813087"
 
 Чтобы зарегистрировать устройства Windows нижнего уровня, необходимо установить в организации [Microsoft Workplace Join для компьютеров, на которых не используется Windows 10](https://www.microsoft.com/download/details.aspx?id=53554). Microsoft Workplace Join для компьютеров не на базе Windows 10 доступна в центре загрузки Майкрософт.
 
-Развернуть пакет можно с помощью системы распространения программного обеспечения, например  [System Center Configuration Manager](https://www.microsoft.com/cloud-platform/system-center-configuration-manager). Этот пакет поддерживает параметры стандартной автоматической установки с использованием параметра `quiet`. В текущей ветви System Center Configuration Manager доступны дополнительные преимущества предыдущих версий, такие как возможность отслеживать ход регистрации.
+Развернуть пакет можно с помощью системы распространения программного обеспечения, например  [Microsoft Endpoint Configuration Manager](https://docs.microsoft.com/configmgr/). Этот пакет поддерживает параметры стандартной автоматической установки с использованием параметра `quiet`. В текущей ветви System Center Configuration Manager доступны дополнительные преимущества предыдущих версий, такие как возможность отслеживать ход регистрации.
 
 Установщик создает в системе запланированную задачу, которая выполняется в контексте пользователя. Задача запускается в момент входа пользователя в систему Windows. Эта задача автоматически присоединяет устройство к Azure AD, используя учетные данные пользователя, после аутентификации с помощью AD.
 
@@ -163,13 +166,13 @@ ms.locfileid: "68813087"
 
 - Должен существовать объект с **идентификатором устройства**, который совпадает с идентификатором в клиенте Windows.
 - Значением **DeviceTrustType** должно быть **Присоединено к домену**. Этот параметр является эквивалентным состоянию **Гибридные устройства, присоединенные к Azure AD** на странице **Устройства** на портале Azure AD.
-- Для устройств, которые используются при условном доступе, значением **Включено** должно быть **True**, а значением **DeviceTrustLevel** — **Управляемый**.
+- Для устройств, которые используются при условном доступе, значением параметра **Enabled** должно быть **True**, а значением **DeviceTrustLevel** — **Managed**.
 
 **Чтобы просмотреть сведения о службе**:
 
 1. Откройте Windows PowerShell от имени администратора.
 1. Введите `Connect-MsolService`, чтобы подключится к своему клиенту Azure.  
-1. Укажите `get-msoldevice -deviceId <deviceId>`.
+1. Введите `get-msoldevice -deviceId <deviceId>`.
 1. Убедитесь, что параметр **Включено** имеет значение **True**.
 
 ## <a name="troubleshoot-your-implementation"></a>Устранение неполадок реализации
@@ -179,6 +182,6 @@ ms.locfileid: "68813087"
 - [Устранение неполадок на устройствах под управлением Windows 10 и Windows Server 2016 с гибридным присоединением к Azure Active Directory](troubleshoot-hybrid-join-windows-current.md)
 - [Устранение неполадок на устройствах нижнего уровня с гибридным присоединением к Azure Active Directory](troubleshoot-hybrid-join-windows-legacy.md)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте, как [управлять удостоверениями устройств с помощью портала Azure](device-management-azure-portal.md).

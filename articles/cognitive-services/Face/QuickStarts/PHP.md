@@ -1,7 +1,7 @@
 ---
 title: Краткое руководство. Обнаружение лиц на изображении с помощью REST API и PHP
 titleSuffix: Azure Cognitive Services
-description: В этом кратком руководстве вы узнаете, как обнаруживать лица на изображениях, используя API распознавания лиц и PHP.
+description: Из этого краткого руководстве вы узнаете, как обнаруживать лица на изображениях, используя REST API "Распознавание лиц" и PHP.
 services: cognitive-services
 author: PatrickFarley
 manager: nitinme
@@ -10,12 +10,12 @@ ms.subservice: face-api
 ms.topic: quickstart
 ms.date: 12/05/2019
 ms.author: pafarley
-ms.openlocfilehash: fb9539c8aa0477cbfbf11ce08635e4e9ccebb2ce
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.openlocfilehash: 0f76ec4ce1072b247be7f46610d37190cd282a22
+ms.sourcegitcommit: d29e7d0235dc9650ac2b6f2ff78a3625c491bbbf
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74977936"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76169741"
 ---
 # <a name="quickstart-detect-faces-in-an-image-using-the-rest-api-and-php"></a>Краткое руководство. Обнаружение лиц на изображении с помощью REST API и PHP
 
@@ -23,7 +23,7 @@ ms.locfileid: "74977936"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-- Ключ подписки на API распознавания лиц. Вы можете получить ключ бесплатной пробной подписки на странице [Пробная версия Cognitive Services](https://azure.microsoft.com/try/cognitive-services/?api=face-api). Или следуйте инструкциям в руководстве по [созданию учетной записи Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account), чтобы получить подписку на API распознавания лиц и свой ключ.
+- Ключ подписки на службу "Распознавание лиц". Вы можете получить ключ бесплатной пробной подписки на странице [Пробная версия Cognitive Services](https://azure.microsoft.com/try/cognitive-services/?api=face-api). Или следуйте инструкциям в руководстве по [созданию учетной записи Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account), чтобы получить подписку на службу "Распознавание лиц" и свой ключ.
 - Редактор кода, например [Visual Studio Code](https://code.visualstudio.com/download).
 - PHP-пакет [HTTP_Request2](https://pear.php.net/package/HTTP_Request2).
 - Веб-браузер с поддержкой PHP. Если вы еще не настроили его, вы можете сделать это, установив и настроив [XAMPP](https://www.apachefriends.org/) на своем компьютере.
@@ -103,7 +103,7 @@ catch (HttpException $ex)
 
 [!INCLUDE [subdomains-note](../../../../includes/cognitive-services-custom-subdomains-note.md)]
 
-## <a name="run-the-script"></a>Запуск сценария
+## <a name="run-the-script"></a>Выполнение скрипта
 
 Откройте файл в веб-браузере с поддержкой PHP. Вы должны получить такого вида строку JSON с данными распознавания лица.
 
@@ -286,9 +286,9 @@ catch (HttpException $ex)
 ]
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-Ознакомьтесь с API-интерфейсами распознавания лиц, которые используются для обнаружения лиц, обозначения их границ и возврата таких атрибутов, как возраст и пол.
+Ознакомьтесь с интерфейсом API "Распознавание лиц", который используется для обнаружения лиц на изображении, обозначения их границ и возврата таких атрибутов, как возраст и пол.
 
 > [!div class="nextstepaction"]
 > [API-интерфейсы распознавания лиц](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236)

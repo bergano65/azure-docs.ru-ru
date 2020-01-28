@@ -1,6 +1,6 @@
 ---
-title: включение файла
-description: включение файла
+title: включить файл
+description: включить файл
 services: cognitive-services
 author: diberry
 manager: nitinme
@@ -10,12 +10,12 @@ ms.topic: include
 ms.custom: include file
 ms.date: 11/20/2019
 ms.author: diberry
-ms.openlocfilehash: e4147fbb27c8538f801f6c49f8b535a283faf50f
-ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
+ms.openlocfilehash: c81aaa02af0895e6c3a851fe15273d85de9b55bc
+ms.sourcegitcommit: 2a2af81e79a47510e7dea2efb9a8efb616da41f0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74325910"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76262760"
 ---
 Клиентскому приложению необходимо определить, имеет ли смысл высказывание и подходит ли оно для приложения. Намерение **None** (Отсутствует) добавляется к каждому приложению как часть процесса создания для определения возможности ответа клиентского приложения речевому фрагменту.
 
@@ -30,7 +30,6 @@ ms.locfileid: "74325910"
     |`None` Примеры высказываний|
     |--|
     |`Barking dogs are annoying`|
-    |`Order a pizza for me`|
     |`Penguins in the ocean`|
 
     В этих примерах не должно быть слов, которые характерны для этой предметной области, например `pizza`, `cheese`, `crust`, `pickup` и `deliver`.

@@ -10,12 +10,12 @@ ms.subservice: face-api
 ms.topic: quickstart
 ms.date: 12/05/2019
 ms.author: pafarley
-ms.openlocfilehash: 3946f6d034baee528f9cd5abd6467b8c393e73de
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.openlocfilehash: 1941cca7c13cb3d84b623222e11c13e793cee0f9
+ms.sourcegitcommit: d29e7d0235dc9650ac2b6f2ff78a3625c491bbbf
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74977987"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76169301"
 ---
 # <a name="quickstart-detect-faces-in-an-image-using-the-rest-api-and-javascript"></a>Краткое руководство. Обнаружение лиц на изображении с помощью REST API и JavaScript
 
@@ -23,7 +23,7 @@ ms.locfileid: "74977987"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-- Ключ подписки на API распознавания лиц. Вы можете получить ключ бесплатной пробной подписки на странице [Пробная версия Cognitive Services](https://azure.microsoft.com/try/cognitive-services/?api=face-api). Или следуйте инструкциям в руководстве по [созданию учетной записи Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account), чтобы получить подписку на API распознавания лиц и свой ключ.
+- Ключ подписки на службу "Распознавание лиц". Вы можете получить ключ бесплатной пробной подписки на странице [Пробная версия Cognitive Services](https://azure.microsoft.com/try/cognitive-services/?api=face-api). Или следуйте инструкциям в руководстве по [созданию учетной записи Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account), чтобы получить подписку на службу "Распознавание лиц" и свой ключ.
 - Редактор кода, например [Visual Studio Code](https://code.visualstudio.com/download).
 
 ## <a name="initialize-the-html-file"></a>Инициализация HTML-файла
@@ -128,7 +128,7 @@ Image to analyze: <input type="text" name="inputImage" id="inputImage"
 
 [!INCLUDE [subdomains-note](../../../../includes/cognitive-services-custom-subdomains-note.md)]
 
-## <a name="run-the-script"></a>Запуск сценария
+## <a name="run-the-script"></a>Выполнение скрипта
 
 Откройте файл *detectFaces.html* в браузере. При нажатии кнопки **анализа лиц** приложение должно отобразить изображение, находящееся по заданному URL-адресу, и возвратить строку JSON с данными распознавания лица.
 
@@ -228,9 +228,9 @@ Image to analyze: <input type="text" name="inputImage" id="inputImage"
 ]
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-В этом кратком руководстве вы написали скрипт JavaScript, который вызывает API распознавания лиц Azure для обнаружения лиц на изображении и возвращения их атрибутов. Ознакомьтесь со справочной документацией по API распознавания лиц, чтобы узнать больше.
+В этом кратком руководстве вы написали скрипт JavaScript, который вызывает службу "Распознавание лиц" Azure для обнаружения лиц на изображении и возвращения их атрибутов. Ознакомьтесь со справочной документацией по API распознавания лиц, чтобы узнать больше.
 
 > [!div class="nextstepaction"]
 > [API Распознавания лиц](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236)

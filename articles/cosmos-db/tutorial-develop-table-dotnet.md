@@ -8,12 +8,12 @@ ms.subservice: cosmosdb-table
 ms.devlang: dotnet
 ms.topic: sample
 ms.date: 12/03/2019
-ms.openlocfilehash: 7341d86e68986a2e502f714a4dcf1f882200d384
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: b3497df8acdb2e7d184dba54e93506146d842348
+ms.sourcegitcommit: a9b1f7d5111cb07e3462973eb607ff1e512bc407
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75441069"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76314391"
 ---
 # <a name="get-started-with-azure-cosmos-db-table-api-and-azure-table-storage-using-the-net-sdk"></a>Начало работы с API таблиц Azure Cosmos DB и хранилищем таблиц Azure с помощью пакета SDK для .NET
 
@@ -25,7 +25,7 @@ API таблиц Azure Cosmos DB или хранилище таблиц Azure �
 
 В этом учебнике описано, как использовать [библиотеки таблиц Azure Cosmos DB для .NET](https://www.nuget.org/packages/Microsoft.Azure.Cosmos.Table) в сценариях работы с API таблиц Azure Cosmos DB и Хранилищем таблиц Azure. Необходимо использовать подключение, связанное с определенной службой Azure. Эти сценарии рассматриваются с использованием примеров на C#, которые демонстрируют методы создания таблиц, вставки и обновления данных, запроса данных и удаления таблиц.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим примером требуются следующие компоненты:
 
@@ -49,7 +49,7 @@ API таблиц Azure Cosmos DB или хранилище таблиц Azure �
 
 1. В поле **Имя проекта** введите имя для приложения, например **CosmosTableSamples**. (При необходимости можно указать другое имя).
 
-1. Нажмите кнопку **Создать**.
+1. Нажмите кнопку **создания**.
 
 Все примеры кода из этого примера можно добавить в метод Main() в файле **Program.cs** консольного приложения.
 
@@ -59,7 +59,7 @@ API таблиц Azure Cosmos DB или хранилище таблиц Azure �
 
 1. Щелкните правой кнопкой мыши проект в **обозревателе решений** и выберите **Управление пакетами NuGet**.
 
-1. Выполните поиск в Интернете по запросу `Microsoft.Azure.Cosmos.Table`, `Microsoft.Extensions.Configuration`, `Microsoft.Extensions.Configuration.Json`, `Microsoft.Extensions.Configuration.Binder` и выберите **Установить**, чтобы установить библиотеку таблиц Microsoft Azure Cosmos DB.
+1. Выполните поиск в Интернете по запросу [`Microsoft.Azure.Cosmos.Table`](https://www.nuget.org/packages/Microsoft.Azure.Cosmos.Table), [`Microsoft.Extensions.Configuration`](https://www.nuget.org/packages/Microsoft.Extensions.Configuration), [`Microsoft.Extensions.Configuration.Json`](https://www.nuget.org/packages/Microsoft.Extensions.Configuration.Json), [`Microsoft.Extensions.Configuration.Binder`](https://www.nuget.org/packages/Microsoft.Extensions.Configuration.Binder) и выберите **Установить**, чтобы установить библиотеку таблиц Microsoft Azure Cosmos DB.
 
 ## <a name="configure-your-storage-connection-string"></a>Настройка строки подключения хранилища
 

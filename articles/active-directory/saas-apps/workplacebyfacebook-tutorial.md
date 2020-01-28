@@ -1,5 +1,5 @@
 ---
-title: Руководство по интеграции единого входа Azure Active Directory с Workplace by Facebook | Документация Майкрософт
+title: Руководство. интеграции единого входа Azure Active Directory с Workplace by Facebook | Документация Майкрософт
 description: Сведения о настройке единого входа между Azure Active Directory и Workplace by Facebook.
 services: active-directory
 documentationCenter: na
@@ -11,19 +11,18 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
-ms.date: 10/21/2019
+ms.date: 01/16/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6fc55130bd840de3960a44ddc1bd0617af185148
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.openlocfilehash: edb543a85779fb083b6990a58dc5ec0b8ef3eb9c
+ms.sourcegitcommit: 7221918fbe5385ceccf39dff9dd5a3817a0bd807
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74969740"
+ms.lasthandoff: 01/21/2020
+ms.locfileid: "76291419"
 ---
-# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-workplace-by-facebook"></a>Руководство по интеграции единого входа Azure Active Directory с Workplace by Facebook
+# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-workplace-by-facebook"></a>Руководство. интеграции единого входа Azure Active Directory с Workplace by Facebook
 
 В этом руководстве описано, как интегрировать Workplace by Facebook с Azure Active Directory (Azure AD). Интеграция Workplace by Facebook с Azure AD позволяет:
 
@@ -35,9 +34,9 @@ ms.locfileid: "74969740"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы приступить к работе, потребуется следующее:
+Чтобы приступить к работе, потребуется следующее.
 
-* подписка Azure AD Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
+* Подписка Azure AD. Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
 * подписка Workplace by Facebook с поддержкой единого входа.
 
 > [!NOTE]
@@ -48,9 +47,10 @@ ms.locfileid: "74969740"
 В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде.
 
 * Workplace by Facebook поддерживает единый вход, инициированный **поставщиком услуг**.
-* Workplace by Facebook поддерживает **[автоматическую подготовку пользователей и ее отмену (рекомендуется)](workplacebyfacebook-provisioning-tutorial.md)** .
 * Workplace by Facebook поддерживает **JIT-подготовку**.
+* Workplace by Facebook поддерживает **[автоматическую подготовку пользователей](workplacebyfacebook-provisioning-tutorial.md)** .
 * Теперь для приложения Workplace by Facebook можно настроить Azure AD для обеспечения единого входа. В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде.
+* После настройки на рабочем месте с помощью Facebook можно применять элементы управления сеансами, которые защищают от хищения и несанкционированного доступа к конфиденциальным данным вашей организации в режиме реального времени. Элементы управления сеансом являются расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-aad).
 
 ## <a name="adding-workplace-by-facebook-from-the-gallery"></a>Добавление Workplace by Facebook из коллекции
 
@@ -74,7 +74,7 @@ ms.locfileid: "74969740"
     * **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить пользователю B.Simon использовать единый вход Azure AD.
 2. **[Настройка единого входа в Workplace by Facebook](#configure-workplace-by-facebook-sso)** необходима, чтобы настроить параметры единого входа на стороне приложения.
     * **[Создание тестового пользователя Workplace by Facebook](#create-workplace-by-facebook-test-user)** требуется для того, чтобы в Workplace by Facebook существовал пользователь B. Simon, связанный с одноименным пользователем в Azure AD.
-3. **[Проверка единого входа](#test-sso)** необходима, чтобы убедиться в корректной работе конфигурации.
+3. **[Проверка единого входа](#test-sso)** позволяет убедиться в правильности конфигурации.
 
 ## <a name="configure-azure-ad-sso"></a>Настройка единого входа Azure AD
 
@@ -84,16 +84,18 @@ ms.locfileid: "74969740"
 1. На странице **Выбрать метод единого входа** выберите **SAML**.
 1. На странице **Настройка единого входа с помощью SAML** щелкните значок "Изменить" (значок пера), чтобы открыть диалоговое окно **Базовая конфигурация SAML** и изменить параметры.
 
-   ![Правка базовой конфигурации SAML](common/edit-urls.png)
+   ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
 1. На странице **Базовая конфигурация SAML** введите значения следующих полей.
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<instancename>.facebook.com`.
+    а. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<instancename>.facebook.com`.
 
     b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://www.facebook.com/company/<instanceID>`.
 
-    > [!NOTE] 
-    > Эти значения приведены в качестве примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Правильные значения для своего сообщества Workplace см. на странице аутентификации панели мониторинга компании Workplace.
+    c. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://www.facebook.com/company/<instanceID>`.
+
+    > [!NOTE]
+    > Эти значения приведены в качестве примера. Укажите вместо них фактические значения URL-адреса для входа, идентификатора и URL-адреса ответа. Правильные значения для сообщества Workplace см. на странице аутентификации панели мониторинга компании Workplace, это объяснено далее в учебнике.
 
 1. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** найдите пункт **Сертификат (Base64)** и щелкните **Скачать**, чтобы скачать сертификат. Сохраните этот сертификат на компьютере.
 
@@ -119,7 +121,7 @@ ms.locfileid: "74969740"
 
 В этом разделе описано, как включить единый вход Azure для пользователя B. Simon, предоставив этому пользователю доступ к Workplace by Facebook.
 
-1. На портале Azure выберите **Корпоративные приложения**, а затем —**Все приложения**.
+1. На портале Azure выберите **Корпоративные приложения**, а затем — **Все приложения**.
 1. Из списка приложений выберите **Workplace by Facebook**.
 1. На странице "Обзор" приложения найдите раздел **Управление** и выберите **Пользователи и группы**.
 
@@ -152,7 +154,7 @@ ms.locfileid: "74969740"
 
     ![Панель администрирования](./media/workplacebyfacebook-tutorial/tutorial-workplace-by-facebook-configure01.png)
 
-    a. Установите флажок **Единый вход (SSO)** .
+    а. Установите флажок **Единый вход (SSO)** .
     
     b. Щелкните **+Add new SSO Provider** (+Добавить нового поставщика единого входа).
 
@@ -160,7 +162,7 @@ ms.locfileid: "74969740"
 
     ![Вкладка "Authentication" (Аутентификация)](./media/workplacebyfacebook-tutorial/tutorial-workplace-by-facebook-configure02.png)
 
-    a. В поле **Name of the SSO Provider** (Имя поставщика единого входа) введите имя экземпляра единого входа, например Azureadsso.
+    а. В поле **Name of the SSO Provider** (Имя поставщика единого входа) введите имя экземпляра единого входа, например Azureadsso.
 
     b. В текстовое поле **SAML URL** (URL-адрес SAML) вставьте **URL-адрес SAML**, скопированный на портале Azure.
 
@@ -168,17 +170,19 @@ ms.locfileid: "74969740"
 
     d. Откройте в Блокноте **сертификат в кодировке Base64**, скачанный с портала Azure, скопируйте его содержимое в буфер обмена и вставьте в текстовое поле **SAML Certificate** (Сертификат SAML).
 
-    д. Скопируйте **URL-адрес аудитории** и вставьте его в текстовое поле **Идентификатор (сущности)** в разделе**Базовая конфигурации SAML** на портале Azure.
+    д) Скопируйте **URL-адрес аудитории** и вставьте его в текстовое поле **Идентификатор (сущности)** в разделе**Базовая конфигурации SAML** на портале Azure.
 
-    Е. Скопируйте **URL-адрес получателя** и вставьте его в текстовое поле **URL-адрес для входа** в разделе**Базовая конфигурации SAML** на портале Azure.
+    е) Скопируйте **URL-адрес получателя** и вставьте его в текстовое поле **URL-адрес для входа** в разделе**Базовая конфигурации SAML** на портале Azure.
 
-    ж. Прокрутите страницу до конца раздела и нажмите кнопку **Test SSO** (Проверить единый вход). Появится всплывающее окно со страницей входа в Azure AD. Введите учетные данные, как при обычной аутентификации.
+    ж. Скопируйте **URL-адрес ACS (службы обработчика утверждений)** для своего экземпляра, и вставьте его в текстовое поле **URL-адрес ответа** в разделе **Базовая конфигурация SAML** на портале Azure.
+
+    h. Прокрутите страницу до конца раздела и нажмите кнопку **Test SSO** (Проверить единый вход). Появится всплывающее окно со страницей входа в Azure AD. Введите учетные данные, как при обычной аутентификации.
 
     **Устранение неполадок**. Убедитесь в том, что адрес электронной почты, возвращаемый из Azure AD, совпадает с учетной записью Workplace, которая использовалась для входа.
 
-    h. После успешного прохождения проверки прокрутите страницу до конца и нажмите кнопку **Save** (Сохранить).
+    i. После успешного прохождения проверки прокрутите страницу до конца и нажмите кнопку **Save** (Сохранить).
 
-    i. Теперь для аутентификации всех пользователей Workplace будет отображаться страница входа в Azure AD.
+    j. Теперь для аутентификации всех пользователей Workplace будет отображаться страница входа в Azure AD.
 
 1. **Перенаправление для выхода SAML (необязательно)**  -
 
@@ -232,12 +236,16 @@ ms.locfileid: "74969740"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 
 - [Руководство по настройке Google Apps для автоматической подготовки пользователей](workplacebyfacebook-provisioning-tutorial.md)
 
 - [Проверьте работу Workplace by Facebook с Azure Active Directory](https://aad.portal.azure.com)
+
+- [Что такое управление сеансами в Microsoft Cloud App Security?](https://docs.microsoft.com/cloud-app-security/proxy-intro-aad)
+
+- [Защита приложений с помощью функции управления настройками условного доступа для приложений в Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-intro-aad)

@@ -6,12 +6,12 @@ ms.topic: quickstart
 description: В этом кратком руководстве описано, как использовать Azure Dev Spaces и Visual Studio Code для отладки и быстрого выполнения итерации приложения Node.js в службе Azure Kubernetes.
 keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, service mesh, service mesh routing, kubectl, k8s
 manager: gwallace
-ms.openlocfilehash: f96806828b2169e9022b1eaf2ec1819879c729ab
-ms.sourcegitcommit: 12a26f6682bfd1e264268b5d866547358728cd9a
+ms.openlocfilehash: 557e5a541b175f1641142779de23bb83ab212831
+ms.sourcegitcommit: 7221918fbe5385ceccf39dff9dd5a3817a0bd807
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75867701"
+ms.lasthandoff: 01/21/2020
+ms.locfileid: "76290515"
 ---
 # <a name="quickstart-debug-and-iterate-on-kubernetes-with-visual-studio-code-and-nodejs---azure-dev-spaces"></a>Краткое руководство. Отладка и итерация с помощью Visual Studio Code, Node.js и Azure Dev Spaces в Kubernetes
 
@@ -21,12 +21,12 @@ ms.locfileid: "75867701"
 - Итеративная разработка кода в контейнерах с помощью Visual Studio Code.
 - Отладка кода в среде разработки с помощью Visual Studio Code.
 
-Azure Dev Spaces также позволяет выполнять отладку и итерацию с помощью:
+Azure Dev Spaces также позволяет выполнять отладку и итерацию с помощью таких средств:
 - [Java и Visual Studio Code](quickstart-java.md);
 - [.NET Core и Visual Studio Code](quickstart-netcore.md);
 - [.NET Core и Visual Studio](quickstart-netcore-visualstudio.md).
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 - Подписка Azure. Если у вас нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free).
 - [Средство Visual Studio Code](https://code.visualstudio.com/download).

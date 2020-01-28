@@ -1,5 +1,5 @@
 ---
-title: Руководство по интеграции Azure Active Directory с консолью Oracle Cloud Infrastructure Console | Документация Майкрософт
+title: Руководство. интеграции Azure Active Directory с консолью Oracle Cloud Infrastructure Console | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Oracle Cloud Infrastructure Console.
 services: active-directory
 documentationCenter: na
@@ -11,19 +11,18 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
-ms.date: 07/26/2019
+ms.date: 01/16/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 579a553f151cf34215af3188cfddada6da42e691
-ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
+ms.openlocfilehash: 64cae5812a380725d612d27190042797542ee255
+ms.sourcegitcommit: 7221918fbe5385ceccf39dff9dd5a3817a0bd807
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2019
-ms.locfileid: "68943629"
+ms.lasthandoff: 01/21/2020
+ms.locfileid: "76289107"
 ---
-# <a name="tutorial-integrate-oracle-cloud-infrastructure-console-with-azure-active-directory"></a>Руководство по интеграции консоли Oracle Cloud Infrastructure Console с Azure Active Directory
+# <a name="tutorial-integrate-oracle-cloud-infrastructure-console-with-azure-active-directory"></a>Руководство. интеграции консоли Oracle Cloud Infrastructure Console с Azure Active Directory
 
 В этом учебнике описано, как интегрировать консоль Oracle Cloud Infrastructure Console с Azure Active Directory (Azure AD). Интеграция консоли Oracle Cloud Infrastructure Console с Azure AD обеспечивает следующие преимущества:
 
@@ -35,14 +34,17 @@ ms.locfileid: "68943629"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы приступить к работе, потребуется следующее:
+Чтобы приступить к работе, потребуется следующее.
 
-* подписка Azure AD Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
+* Подписка Azure AD. Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
 * Подписка Oracle Cloud Infrastructure Console с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
 
-В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде. Консоль Oracle Cloud Infrastructure Console поддерживает единый вход, инициированный **поставщиком услуг**.
+В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде.
+
+* Консоль Oracle Cloud Infrastructure Console поддерживает единый вход, инициированный **поставщиком услуг**.
+* После настройки Oracle Cloud Infrastructure Console можно применять элементы управления сеансами, которые защищают от хищения и несанкционированного доступа к конфиденциальным данным вашей организации в режиме реального времени. Элементы управления сеансом являются расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-aad).
 
 ## <a name="adding-oracle-cloud-infrastructure-console-from-the-gallery"></a>Добавление консоли Oracle Cloud Infrastructure Console из коллекции
 
@@ -62,10 +64,10 @@ ms.locfileid: "68943629"
 Чтобы настроить и проверить единый вход Azure AD в Oracle Cloud Infrastructure Console, вам потребуется выполнить действия в следующих стандартных блоках:
 
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-sso)** необходима, чтобы пользователи могли использовать эту функцию.
+    1. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя B. Simon.
+    1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить B. Simon использовать единый вход Azure AD.
 1. **[Настройка Oracle Cloud Infrastructure Console](#configure-oracle-cloud-infrastructure-console)** требуется, чтобы настроить параметры единого входа на стороне приложения.
-1. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя B. Simon.
-1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить B. Simon использовать единый вход Azure AD.
-1. **[Создание тестового пользователя Оracle Cloud Infrastructure Console](#create-oracle-cloud-infrastructure-console-test-user)** требуется для того, чтобы в консоли Oracle Cloud Infrastructure Console существовал пользователь Britta Simon, связанный с представлением этого же пользователя в Azure AD.
+    1. **[Создание тестового пользователя Оracle Cloud Infrastructure Console](#create-oracle-cloud-infrastructure-console-test-user)** требуется для того, чтобы в консоли Oracle Cloud Infrastructure Console существовал пользователь Britta Simon, связанный с представлением этого же пользователя в Azure AD.
 1. **[Проверка единого входа](#test-sso)** необходима, чтобы убедиться в корректной работе конфигурации.
 
 ### <a name="configure-azure-ad-sso"></a>Настройка единого входа Azure AD
@@ -76,7 +78,7 @@ ms.locfileid: "68943629"
 1. На странице **Выбрать метод единого входа** выберите **SAML**.
 1. На странице **Настройка единого входа с помощью SAML** щелкните значок "Изменить" (значок пера), чтобы открыть диалоговое окно **Базовая конфигурация SAML** и изменить параметры.
 
-   ![Правка базовой конфигурации SAML](common/edit-urls.png)
+   ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
 1. На странице **Базовая конфигурация SAML** введите значения для следующих полей.
 
@@ -103,7 +105,7 @@ ms.locfileid: "68943629"
 
 1. Приложение Oracle Cloud Infrastructure Console ожидает проверочные утверждения SAML в определенном формате, который требует добавить сопоставления настраиваемых атрибутов в вашу конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию. Нажмите кнопку **Изменить**, чтобы открыть диалоговое окно "Атрибуты пользователя".
 
-   ![image](common/edit-attribute.png)
+   ![Изображение](common/edit-attribute.png)
 
 1. В дополнение к описанному выше приложение Oracle Cloud Infrastructure Console ожидает несколько дополнительных атрибутов в ответе SAML. В разделе**Утверждения и атрибуты пользователя** в диалоговом окне **Утверждения групп (предварительная версия)** выполните следующие действия:
 
@@ -113,9 +115,9 @@ ms.locfileid: "68943629"
  
    1. Выберите команду **Сохранить**.
 
-      ![image](./media/oracle-cloud-tutorial/config07.png)
+      ![Изображение](./media/oracle-cloud-tutorial/config07.png)
     
-      ![image](./media/oracle-cloud-tutorial/config11.png)
+      ![Изображение](./media/oracle-cloud-tutorial/config11.png)
 
    1. Щелкните **значок ручки** рядом с параметром **Группы, возвращенные в утверждении**.
 
@@ -131,13 +133,45 @@ ms.locfileid: "68943629"
 
    1. Выберите команду **Сохранить**.
 
-      ![image](./media/oracle-cloud-tutorial/config08.png)
+      ![Изображение](./media/oracle-cloud-tutorial/config08.png)
 
 1. Скопируйте требуемый URL-адрес из раздела **Настройка Oracle Cloud Infrastructure Console**.
 
    ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-### <a name="configure-oracle-cloud-infrastructure-console"></a>Настройка Oracle Cloud Infrastructure Console
+
+
+### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
+
+В этом разделе описано, как на портале Azure создать тестового пользователя с именем B. Simon.
+
+1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
+1. В верхней части экрана выберите **Новый пользователь**.
+1. В разделе **Свойства пользователя** выполните следующие действия.
+   1. В поле **Имя** введите `B. Simon`.  
+   1. В поле **Имя пользователя** введите username@companydomain.extension. Например, `B. Simon@contoso.com`.
+   1. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
+   1. Нажмите кнопку **Создать**.
+
+### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
+
+В этом разделе описано, как включить единый вход Azure для пользователя B. Simon и как предоставить такому пользователю доступ к Oracle Cloud Infrastructure Console.
+
+1. На портале Azure выберите **Корпоративные приложения**, а затем — **Все приложения**.
+1. В списке приложений выберите **Oracle Cloud Infrastructure Console**.
+1. На странице "Обзор" приложения найдите раздел **Управление** и выберите **Пользователи и группы**.
+
+   ![Ссылка "Пользователи и группы"](common/users-groups-blade.png)
+
+1. Выберите **Добавить пользователя**, а в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
+
+   ![Ссылка "Добавить пользователя"](common/add-assign-user.png)
+
+1. В диалоговом окне **Пользователи и группы** выберите **B. Simon** из списка пользователей, а затем в нижней части экрана нажмите кнопку **Выбрать**.
+1. Если ожидается, что в утверждении SAML будет получено какое-либо значение роли, то в диалоговом окне **Выбор роли** нужно выбрать соответствующую роль для пользователя из списка и затем нажать кнопку **Выбрать**, расположенную в нижней части экрана.
+1. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
+
+## <a name="configure-oracle-cloud-infrastructure-console"></a>Настройка Oracle Cloud Infrastructure Console
 
 1. В другом окне веб-браузера войдите в консоль Oracle Cloud Infrastructure Console от имени администратора.
 
@@ -169,38 +203,8 @@ ms.locfileid: "68943629"
 
    1. Вы можете сопоставить несколько групп в соответствии с настройками на портале Azure и потребностями вашей организации. Щелкните **+ Add mapping** (+ Добавить сопоставление), чтобы добавить столько групп, сколько вам требуется.
 
-   1. Нажмите кнопку **Submit**(Отправить).
-
-### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
-
-В этом разделе описано, как на портале Azure создать тестового пользователя с именем B. Simon.
-
-1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
-1. В верхней части экрана выберите **Новый пользователь**.
-1. В разделе **Свойства пользователя** выполните следующие действия.
-   1. В поле **Имя** введите `B. Simon`.  
-   1. В поле **Имя пользователя** введите username@companydomain.extension. Например, `B. Simon@contoso.com`.
-   1. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
-   1. Нажмите кнопку **Создать**.
-
-### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
-
-В этом разделе описано, как включить единый вход Azure для пользователя B. Simon и как предоставить такому пользователю доступ к Oracle Cloud Infrastructure Console.
-
-1. На портале Azure выберите **Корпоративные приложения**, а затем —**Все приложения**.
-1. В списке приложений выберите **Oracle Cloud Infrastructure Console**.
-1. На странице "Обзор" приложения найдите раздел **Управление** и выберите **Пользователи и группы**.
-
-   ![Ссылка "Пользователи и группы"](common/users-groups-blade.png)
-
-1. Выберите **Добавить пользователя**, а в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
-
-   ![Ссылка "Добавить пользователя"](common/add-assign-user.png)
-
-1. В диалоговом окне **Пользователи и группы** выберите **B. Simon** из списка пользователей, а затем в нижней части экрана нажмите кнопку **Выбрать**.
-1. Если ожидается, что в утверждении SAML будет получено какое-либо значение роли, то в диалоговом окне **Выбор роли** нужно выбрать соответствующую роль для пользователя из списка и затем нажать кнопку **Выбрать**, расположенную в нижней части экрана.
-1. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
-
+   1. Щелкните **Отправить**.
+   
 ### <a name="create-oracle-cloud-infrastructure-console-test-user"></a>Создание тестового пользователя в Oracle Cloud Infrastructure Console
 
  Oracle Cloud Infrastructure Console поддерживает JIT-подготовку. Эта функция включена по умолчанию. В этом разделе никакие действия с вашей стороны не требуются. Новый пользователь не создается при попытке доступа, и вам не нужно создавать пользователя.
@@ -218,3 +222,5 @@ ms.locfileid: "68943629"
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+
+- [Защита приложений с помощью функции управления настройками условного доступа для приложений в Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-intro-aad)

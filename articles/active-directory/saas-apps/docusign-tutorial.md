@@ -1,5 +1,5 @@
 ---
-title: Руководство по интеграции единого входа Azure Active Directory с DocuSign | Документация Майкрософт
+title: Руководство. интеграции единого входа Azure Active Directory с DocuSign | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и DocuSign.
 services: active-directory
 documentationCenter: na
@@ -11,19 +11,18 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
-ms.date: 09/02/2019
+ms.date: 01/16/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8f02492dd7c9563c8c0002a63f0b105bd0be8b14
-ms.sourcegitcommit: 7f6d986a60eff2c170172bd8bcb834302bb41f71
+ms.openlocfilehash: 3022303f319ba7955f80ae0b52783fa9b5d411f2
+ms.sourcegitcommit: 7221918fbe5385ceccf39dff9dd5a3817a0bd807
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71345570"
+ms.lasthandoff: 01/21/2020
+ms.locfileid: "76290076"
 ---
-# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-docusign"></a>Руководство по интеграции единого входа Azure Active Directory с DocuSign
+# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-docusign"></a>Руководство. интеграции единого входа Azure Active Directory с DocuSign
 
 В этом учебнике описано, как интегрировать DocuSign с Microsoft Azure Active Directory (Azure AD). Интеграция DocuSign с Azure AD обеспечивает следующие возможности:
 
@@ -35,9 +34,9 @@ ms.locfileid: "71345570"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы приступить к работе, потребуется следующее:
+Чтобы приступить к работе, потребуется следующее.
 
-* подписка Azure AD Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
+* Подписка Azure AD. Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
 * Подписка на DocuSign с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -49,6 +48,7 @@ ms.locfileid: "71345570"
 * DocuSign поддерживает *JIT*-подготовку пользователей.
 
 * DocuSign поддерживает [автоматическую подготовку пользователей](https://docs.microsoft.com/azure/active-directory/saas-apps/docusign-provisioning-tutorial).
+* После настройки DocuSign можно применять элементы управления сеансами, которые защищают от хищения и несанкционированного доступа к конфиденциальным данным вашей организации в режиме реального времени. Элементы управления сеансом являются расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-aad).
 
 ## <a name="adding-docusign-from-the-gallery"></a>Добавление DocuSign из коллекции
 
@@ -72,7 +72,7 @@ ms.locfileid: "71345570"
     1. [Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user) требуется для проверки работы единого входа Azure AD от имени пользователя B.Simon.
     1. [Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user) необходимо, чтобы разрешить B.Simon использовать единый вход Azure AD.
 1. [Настройка единого входа в DocuSign](#configure-docusign-sso) необходима, чтобы настроить параметры единого входа на стороне приложения.
-1. [Создание тестового пользователя DocuSign](#create-docusign-test-user) требуется для того, чтобы создать в DocuSign пользователя B.Simon, связанного с одноименным пользователем в Azure AD.
+    1. [Создание тестового пользователя DocuSign](#create-docusign-test-user) требуется для того, чтобы создать в DocuSign пользователя B.Simon, связанного с одноименным пользователем в Azure AD.
 1. [Проверьте единый вход](#test-sso), чтобы убедиться, что конфигурация работает правильно.
 
 ## <a name="configure-azure-ad-sso"></a>Настройка единого входа Azure AD
@@ -83,11 +83,11 @@ ms.locfileid: "71345570"
 1. На странице **Выбрать метод единого входа** выберите **SAML**.
 1. На странице **Настройка единого входа с помощью SAML** щелкните значок пера, чтобы открыть диалоговое окно **Базовая конфигурация SAML** и изменить эти параметры.
 
-   ![Правка базовой конфигурации SAML](common/edit-urls.png)
+   ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
 1. В разделе **Базовая конфигурация SAML** выполните следующие действия:
 
-    a. В поле **URL-адрес для входа** введите URL-адрес в формате `https://<subdomain>.docusign.com/organizations/<OrganizationID>/saml2/login/sp/<IDPID>`.
+    а. В поле **URL-адрес для входа** введите URL-адрес в формате `https://<subdomain>.docusign.com/organizations/<OrganizationID>/saml2/login/sp/<IDPID>`.
 
     b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в формате `https://<subdomain>.docusign.com/organizations/<OrganizationID>/saml2`.
 
@@ -110,15 +110,15 @@ ms.locfileid: "71345570"
 1. В верхней части экрана щелкните **Новый пользователь**.
 1. В разделе **Свойства пользователя** выполните следующие действия.
    1. В поле **Имя** введите **B.Simon**.  
-   1. В поле **Имя пользователя** введите `<username>@<companydomain>.<extension>`. Например, `B.Simon@contoso.com`.
+   1. В поле **Имя пользователя** введите `<username>@<companydomain>.<extension>`. Например: `B.Simon@contoso.com`.
    1. Установите флажок **Показать пароль** и сохраните значение, которое отображается в поле **Пароль**.
-   1. Нажмите кнопку **Создать**.
+   1. Нажмите кнопку **создания**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
 В этом разделе вы предоставите пользователю "B.Simon" доступ к DocuSign, чтобы этот пользователь мог использовать единый вход Azure.
 
-1. На портале Azure выберите **Корпоративные приложения**, а затем —**Все приложения**.
+1. На портале Azure выберите **Корпоративные приложения**, а затем — **Все приложения**.
 1. В списке приложений выберите **DocuSign**.
 1. На странице сводных сведений о приложении откройте раздел **Управление** и выберите **Пользователи и группы**.
 
@@ -172,7 +172,7 @@ ms.locfileid: "71345570"
 
     ![Поля "Параметры поставщика удостоверений"][56]
 
-    a. В поле **Имя** введите уникальное имя конфигурации. Не используйте пробелы.
+    а. В поле **Имя** введите уникальное имя конфигурации. Не используйте пробелы.
 
     b. В поле **Identity Provider Issuer** (Издатель поставщика удостоверений) вставьте значение **идентификатора Azure AD**, скопированное на портале Azure.
 
@@ -180,9 +180,9 @@ ms.locfileid: "71345570"
 
     d. В поле **Identity Provider Logout URL** (URL-адрес выхода поставщика удостоверений) вставьте значение **URL-адреса выхода**, скопированное на портале Azure.
 
-    д. Выберите **Sign AuthN Request** (Подпись запроса авторизации).
+    д) Выберите **Sign AuthN Request** (Подпись запроса авторизации).
 
-    Е. Для параметра **Send AuthN request by** (Как отправлять запрос авторизации) выберите значение **POST**.
+    е) Для параметра **Send AuthN request by** (Как отправлять запрос авторизации) выберите значение **POST**.
 
     ж. Для параметра **Send logout request by** (Как отправлять запрос на выход) выберите значение **GET**.
 
@@ -210,7 +210,7 @@ ms.locfileid: "71345570"
 
        1. Скопируйте значение **Service Provider Login URL** (URL-адрес для входа поставщика службы), а затем вставьте его в поле **URL-адрес для входа** в разделе **Базовая конфигурация SAML** на портале Azure.
 
-       1. Нажмите кнопку **Закрыть**.
+       1. Выберите **Закрыть**.
 
        ![Просмотр конечных точек SAML 2.0][60]
 
@@ -236,6 +236,10 @@ ms.locfileid: "71345570"
 - [Условный доступ в Azure AD](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 
 - [Попробуйте использовать DocuSign с Azure AD](https://aad.portal.azure.com/)
+
+- [Что такое управление сеансами в Microsoft Cloud App Security?](https://docs.microsoft.com/cloud-app-security/proxy-intro-aad)
+
+- [Защита приложений с помощью функции управления настройками условного доступа для приложений в Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-intro-aad)
 
 <!--Image references-->
 

@@ -1,17 +1,17 @@
 ---
-title: Общие сведения о встроенной поддержке записных книжек Jupyter в Azure Cosmos DB
+title: Общие сведения о встроенной поддержке записных книжек Jupyter в Azure Cosmos DB (предварительная версия)
 description: Узнайте, как использовать встроенную поддержку записных книжек Jupyter в Azure Cosmos DB для интерактивного выполнения запросов.
 ms.service: cosmos-db
 ms.topic: overview
 ms.date: 09/22/2019
 author: markjbrown
 ms.author: mjbrown
-ms.openlocfilehash: 8026140a07ce8ed03a7bec57f03a1ca1708f85ac
-ms.sourcegitcommit: 8074f482fcd1f61442b3b8101f153adb52cf35c9
+ms.openlocfilehash: 5c6d7ae458c30d462c599042e254f4243daf474c
+ms.sourcegitcommit: 2a2af81e79a47510e7dea2efb9a8efb616da41f0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72756979"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76260877"
 ---
 # <a name="built-in-jupyter-notebooks-support-in-azure-cosmos-db"></a>Встроенная поддержка записных книжек Jupyter в Azure Cosmos DB
 
@@ -54,7 +54,7 @@ ms.locfileid: "72756979"
 
 * **Данные:** Данные из контейнеров Azure Cosmos и результаты запросов можно программно импортировать в записную книжку Jupyter. Например, включив код в записную книжку для запроса данных с помощью любого API Cosmos DB или встроенной Apache Spark.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы приступить к работе со встроенными записными книжками Jupyter в Azure Cosmos DB см. следующие статьи:
 

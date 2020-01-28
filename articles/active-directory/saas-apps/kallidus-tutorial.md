@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Kallidus | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Kallidus | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Kallidus.
 services: active-directory
 documentationCenter: na
@@ -16,14 +16,14 @@ ms.topic: tutorial
 ms.date: 07/05/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 734df138bc58deb0c96916ba5178c84a63f3c53a
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: e3caa48e1461552f2999aa2fd91447a41d146379
+ms.sourcegitcommit: 5bbe87cf121bf99184cc9840c7a07385f0d128ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67711162"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76120322"
 ---
-# <a name="tutorial-integrate-kallidus-with-azure-active-directory"></a>Руководство по Интеграция Kallidus с Azure Active Directory
+# <a name="tutorial-integrate-kallidus-with-azure-active-directory"></a>Руководство. Интеграция Kallidus с Azure Active Directory
 
 В этом руководстве описано, как интегрировать Kallidus с Azure Active Directory (Azure AD). При интеграции Kallidus с Azure AD вам доступны следующие возможности.
 
@@ -35,9 +35,9 @@ ms.locfileid: "67711162"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы приступить к работе, потребуется следующее:
+Чтобы приступить к работе, потребуется следующее.
 
-* подписка Azure AD Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
+* Подписка Azure AD. Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
 * Подписка Kallidus с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -76,7 +76,7 @@ ms.locfileid: "67711162"
 1. На странице **Выбрать метод единого входа** выберите **SAML**.
 1. На странице **Настройка единого входа с помощью SAML** щелкните значок "Изменить" (значок пера), чтобы открыть диалоговое окно **Базовая конфигурация SAML** и изменить параметры.
 
-   ![Правка базовой конфигурации SAML](common/edit-urls.png)
+   ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
 4. В разделе **Базовая конфигурация SAML** выполните приведенные ниже действия.
 
@@ -91,7 +91,7 @@ ms.locfileid: "67711162"
 
 ### <a name="configure-kallidus"></a>Настройка Kallidus
 
-Чтобы настроить единый вход на стороне **Kallidus**, необходимо отправить **URL-адрес метаданных федерации приложения** в [группу поддержки Kallidus](https://kallidus.zendesk.com). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+Чтобы настроить единый вход на стороне **Kallidus**, необходимо отправить **URL-адрес метаданных федерации приложения** и копию **сертификата для подписи (общедоступный)** в службу поддержки [Kallidus](https://kallidus.zendesk.com). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
@@ -109,7 +109,7 @@ ms.locfileid: "67711162"
 
 В этом разделе описано, как включить единый вход в Azure для пользователя B.Simon, предоставив этому пользователю доступ к Kallidus.
 
-1. На портале Azure выберите **Корпоративные приложения**, а затем —**Все приложения**.
+1. На портале Azure выберите **Корпоративные приложения**, а затем — **Все приложения**.
 1. Из списка приложений выберите **Kallidus**.
 1. На странице "Обзор" приложения найдите раздел **Управление** и выберите **Пользователи и группы**.
 

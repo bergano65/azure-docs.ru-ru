@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b1f5c837f1912df407960fca41387eb84986381e
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 28d6e5362df9f41822525af0d256cfd99568d6de
+ms.sourcegitcommit: 38b11501526a7997cfe1c7980d57e772b1f3169b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75423156"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76512136"
 ---
 # <a name="tutorial-configure-hybrid-azure-active-directory-join-for-federated-domains"></a>Руководство. Настройка гибридного присоединения к Azure Active Directory для федеративных доменов
 
@@ -52,7 +52,7 @@ ms.locfileid: "75423156"
 > * Проверка регистрации
 > * Диагностика
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 В данном руководстве предполагается, что вы ознакомлены со следующими статьями:
 
@@ -155,6 +155,9 @@ ms.locfileid: "75423156"
 - Настройка параметров локальной интрасети для регистрации устройств.
 - Установка Microsoft Workplace Join для компьютеров Windows нижнего уровня.
 
+> [!NOTE]
+> Поддержка Windows 7 закончилась 14 января 2020 г. Дополнительные сведения см. в статье о [прекращении поддержки Windows 7](https://support.microsoft.com/en-us/help/4057281/windows-7-support-ended-on-january-14-2020).
+
 ### <a name="configure-the-local-intranet-settings-for-device-registration"></a>Настройка параметров локальной интрасети для регистрации устройств.
 
 Чтобы успешно выполнить гибридное присоединение устройств Windows нижнего уровня к Azure AD и избежать запросов на предоставление сертификатов при аутентификации этих устройств в Azure AD, можно отправить на присоединенные к домену устройства политику для добавления следующих URL-адресов в зону локальной интрасети в Internet Explorer:
@@ -169,7 +172,7 @@ ms.locfileid: "75423156"
 
 Чтобы зарегистрировать устройства Windows нижнего уровня, необходимо установить в организации [Microsoft Workplace Join для компьютеров, на которых не используется Windows 10](https://www.microsoft.com/download/details.aspx?id=53554). Microsoft Workplace Join для компьютеров не на базе Windows 10 доступна в центре загрузки Майкрософт.
 
-Развернуть пакет можно с помощью системы распространения программного обеспечения, например  [System Center Configuration Manager](https://www.microsoft.com/cloud-platform/system-center-configuration-manager). Этот пакет поддерживает параметры стандартной автоматической установки с использованием параметра `quiet`. В текущей ветви System Center Configuration Manager доступны дополнительные преимущества предыдущих версий, такие как возможность отслеживать ход регистрации.
+Развернуть пакет можно с помощью системы распространения программного обеспечения, например  [Microsoft Endpoint Configuration Manager](https://docs.microsoft.com/configmgr/). Этот пакет поддерживает параметры стандартной автоматической установки с использованием параметра `quiet`. В текущей ветви System Center Configuration Manager доступны дополнительные преимущества предыдущих версий, такие как возможность отслеживать ход регистрации.
 
 Установщик создает в системе запланированную задачу, которая выполняется в контексте пользователя. Задача запускается в момент входа пользователя в систему Windows. Эта задача автоматически присоединяет устройство к Azure AD, используя учетные данные пользователя, после аутентификации с помощью AD.
 

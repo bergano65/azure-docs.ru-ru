@@ -1,21 +1,19 @@
 ---
-title: Руководство по масштабированию кластера Azure Red Hat OpenShift | Документация Майкрософт
+title: Руководство. Масштабирование кластера Azure Red Hat OpenShift
 description: Узнайте, как выполнить масштабирование кластера Microsoft Azure Red Hat OpenShift с помощью Azure CLI.
-services: container-service
 author: jimzim
 ms.author: jzim
-manager: jeconnoc
 ms.topic: tutorial
 ms.service: container-service
 ms.date: 05/06/2019
-ms.openlocfilehash: deb136a70c24cb7bd1b6c60505cc6ab0376a7b02
-ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
+ms.openlocfilehash: bf9172f0c84834c951446520ff0bfcc3ef756c9c
+ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67672436"
+ms.lasthandoff: 01/19/2020
+ms.locfileid: "76278310"
 ---
-# <a name="tutorial-scale-an-azure-red-hat-openshift-cluster"></a>Руководство по масштабированию кластера Azure Red Hat OpenShift
+# <a name="tutorial-scale-an-azure-red-hat-openshift-cluster"></a>Руководство. масштабированию кластера Azure Red Hat OpenShift
 
 Это руководство представляет собой вторую часть цикла. Из него вы узнаете, как создать кластер Microsoft Azure Red Hat OpenShift с помощью Azure CLI, выполнить его масштабирование, а затем удалить, чтобы очистить ресурсы.
 
@@ -27,7 +25,7 @@ ms.locfileid: "67672436"
 Из этого цикла руководств вы узнаете, как выполнять следующие задачи:
 > [!div class="checklist"]
 > * [Создание кластера Azure Red Hat OpenShift](tutorial-create-cluster.md)
-> * Масштабирование кластера Azure Red Hat OpenShift
+> * масштабированию кластера Azure Red Hat OpenShift
 > * [Удаление кластера Azure Red Hat OpenShift](tutorial-delete-cluster.md)
 
 ## <a name="prerequisites"></a>Предварительные требования
@@ -44,7 +42,7 @@ ms.locfileid: "67672436"
 az login
 ```
 
-Если у вас есть доступ к нескольким подпискам, выполните командлет `az account set -s {subscription ID}`, заменив `{subscription ID}` необходимой подпиской.
+Если у вас есть доступ к нескольким подпискам, выполните команду `az account set -s {subscription ID}`, заменив `{subscription ID}` необходимой подпиской.
 
 ## <a name="step-2-scale-the-cluster-with-additional-nodes"></a>Шаг 2. Масштабирование кластера с добавлением дополнительных узлов
 
@@ -62,12 +60,12 @@ az openshift scale --resource-group $CLUSTER_NAME --name $CLUSTER_NAME --compute
 
 Через несколько минут выполнение командлета `az openshift scale` завершится и возвратится документ JSON, содержащий сведения о масштабируемом кластере.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой части руководства вы узнали, как выполнить следующие действия:
 
 > [!div class="checklist"]
-> * Масштабирование кластера Azure Red Hat OpenShift
+> * масштабированию кластера Azure Red Hat OpenShift
 
 Перейдите к следующему руководству:
 > [!div class="nextstepaction"]

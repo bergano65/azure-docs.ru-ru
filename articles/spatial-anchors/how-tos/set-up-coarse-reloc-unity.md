@@ -1,6 +1,6 @@
 ---
 title: Простое уточнение расположения в Unity
-description: В этой статье подробно рассказывается о том, как создавать и находить привязки с использованием датчиков устройств на C#.
+description: В этой статье подробно объясняется, как создавать и находить привязки с использованием простого уточнения расположения на C#.
 author: bucurb
 manager: dacoghl
 services: azure-spatial-anchors
@@ -8,14 +8,14 @@ ms.author: bobuc
 ms.date: 09/19/2019
 ms.topic: tutorial
 ms.service: azure-spatial-anchors
-ms.openlocfilehash: 8b960ee168a1af66cafc52082138097cda240c9a
-ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
+ms.openlocfilehash: 5c976bd020d37672c44c89113bf7786e1ccf141b
+ms.sourcegitcommit: 87781a4207c25c4831421c7309c03fce5fb5793f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74277164"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76548260"
 ---
-# <a name="how-to-create-and-locate-anchors-using-on-device-sensors-in-c"></a>Создание и поиск привязок с использованием датчиков устройств на C#
+# <a name="how-to-create-and-locate-anchors-using-coarse-relocalization-in-c"></a>Создание и поиск привязок с использованием простого уточнения расположения на C#
 
 > [!div  class="op_single_selector"]
 > * [Unity](set-up-coarse-reloc-unity.md)

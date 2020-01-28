@@ -14,14 +14,14 @@ ms.topic: tutorial
 ms.date: 04/19/2019
 ms.author: yegu
 ms.custom: mvc
-ms.openlocfilehash: 99559c0c77c3e4b29badec1c0be2d741df1f0621
-ms.sourcegitcommit: 66237bcd9b08359a6cce8d671f846b0c93ee6a82
+ms.openlocfilehash: 4fe49c25ad71c48103f044915d187099b75b3d04
+ms.sourcegitcommit: 5bbe87cf121bf99184cc9840c7a07385f0d128ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67798378"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76121256"
 ---
-# <a name="tutorial-use-feature-flags-in-an-aspnet-core-app"></a>Руководство по использованию флагов функций в приложении ASP.NET Core
+# <a name="tutorial-use-feature-flags-in-an-aspnet-core-app"></a>Руководство. использованию флагов функций в приложении ASP.NET Core
 
 Библиотеки управления функциями .NET Core обеспечивают идиоматическую поддержку реализации флагов функций в приложении .NET или ASP.NET Core. Эти библиотеки позволяют декларативно добавлять флаги функций в код, чтобы вам не пришлось записывать все операторы `if` для них вручную.
 
@@ -29,7 +29,7 @@ ms.locfileid: "67798378"
 
 В [кратком руководстве по добавлению флагов функций в приложение ASP.NET Core](./quickstart-feature-flag-aspnet-core.md) описано несколько использующихся при этом методов. В нашем руководстве такие методы рассматриваются более подробно. Полную справочную документацию см. в [документации по управлению функциями ASP.NET Core](https://go.microsoft.com/fwlink/?linkid=2091410).
 
-Из этого учебника вы узнаете следующее:
+В этом учебнике рассматривается следующее.
 
 > [!div class="checklist"]
 > * Добавить флаги функций в ключевых частях приложения для управления доступностью функций.
@@ -153,8 +153,8 @@ config.AddAzureAppConfiguration(options => {
 
 В соответствии с соглашением раздел `FeatureManagement` этого JSON-документа используется для параметров флагов функций. Предыдущий пример показывает три флага функций с фильтрами, определенными в свойстве `EnabledFor`:
 
-* Флаг `FeatureA` *включен*.
-* Флаг `FeatureB` *отключен*.
+* Флаг `FeatureA`*включен*.
+* Флаг `FeatureB`*отключен*.
 * `FeatureC` указывает фильтр с именем `Percentage` и свойством `Parameters`. `Percentage` — это настраиваемый фильтр. В этом примере `Percentage` задает 50-процентную вероятность того, что флаг `FeatureC` может быть *включен*.
 
 ## <a name="feature-flag-references"></a>Ссылки на флаги функций
@@ -172,12 +172,12 @@ public enum MyFeatureFlags
 
 ## <a name="feature-flag-checks"></a>Проверка флага функции
 
-В базовой схеме управления функциями сначала проверяется, *включен* ли флаг функции. Если это так, диспетчер функций выполняет действия, содержащиеся в функции. Например:
+В базовой схеме управления функциями сначала проверяется, *включен* ли флаг функции. Если это так, диспетчер функций выполняет действия, содержащиеся в функции. Пример:
 
 ```csharp
 IFeatureManager featureManager;
 ...
-if (featureManager.IsEnabled(nameof(MyFeatureFlags.FeatureA)))
+if (await featureManager.IsEnabledAsync(nameof(MyFeatureFlags.FeatureA)))
 {
     // Run the following code
 }
@@ -254,7 +254,7 @@ public IActionResult Index()
 
 ## <a name="mvc-filters"></a>Фильтры MVC
 
-Фильтры MVC можно настроить таким образом, чтобы они активировались в зависимости от состояния флага функции. С помощью приведенного ниже кода добавляется фильтр MVC с именем `SomeMvcFilter`. Этот фильтр активируется в пределах конвейера MVC, только если флаг `FeatureA` включен.
+Фильтры MVC можно настроить таким образом, чтобы они активировались в зависимости от состояния флага функции. С помощью приведенного ниже кода добавляется фильтр MVC с именем `SomeMvcFilter`. Этот фильтр активируется в пределах конвейера MVC, только если флаг `FeatureA` включен. Эта возможность ограничена `IAsyncActionFilter`. 
 
 ```csharp
 using Microsoft.FeatureManagement.FeatureFilters;
@@ -267,16 +267,6 @@ public void ConfigureServices(IServiceCollection services)
         options.Filters.AddForFeature<SomeMvcFilter>(nameof(MyFeatureFlags.FeatureA));
     });
 }
-```
-
-## <a name="routes"></a>Маршруты
-
-Флаги функций позволяют динамически предоставлять маршруты. С помощью приведенного ниже кода добавляется маршрут, который задает `Beta` в качестве контроллера по умолчанию, только если флаг `FeatureA` включен.
-
-```csharp
-app.UseMvc(routes => {
-    routes.MapRouteForFeature(nameof(MyFeatureFlags.FeatureA), "betaDefault", "{controller=Beta}/{action=Index}/{id?}");
-});
 ```
 
 ## <a name="middleware"></a>ПО промежуточного слоя
@@ -295,10 +285,10 @@ app.UseForFeature(featureName, appBuilder => {
 });
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из этого руководства вы узнали, как с помощью библиотек `Microsoft.FeatureManagement` реализовать флаги функций в приложении ASP.NET Core. Подробные сведения о поддержке управления функциями в службе "Конфигурация приложений" и ASP.NET Core см. по следующим ссылкам:
 
 * [Пример кода для флага функции ASP.NET Core](/azure/azure-app-configuration/quickstart-feature-flag-aspnet-core)
 * [Документация по Microsoft.FeatureManagement](https://docs.microsoft.com/dotnet/api/microsoft.featuremanagement)
-* [Руководство по управлению флагами функций](./manage-feature-flags.md)
+* [Управление флагами компонентов](./manage-feature-flags.md)

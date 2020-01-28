@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграции единого входа Azure Active Directory с SuccessFactors | Документация Майкрософт
+title: Руководство. Интеграции единого входа Azure Active Directory с SuccessFactors | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и SuccessFactors.
 services: active-directory
 documentationCenter: na
@@ -11,19 +11,18 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
-ms.date: 08/13/2019
+ms.date: 01/16/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 38d40a2f72e73dde0f99ebbc9701e02c8d03738b
-ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
+ms.openlocfilehash: d49915271580b5665981bf7e212f3d5712c86456
+ms.sourcegitcommit: 7221918fbe5385ceccf39dff9dd5a3817a0bd807
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68989491"
+ms.lasthandoff: 01/21/2020
+ms.locfileid: "76292985"
 ---
-# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-successfactors"></a>Руководство по Интеграции единого входа Azure Active Directory с SuccessFactors
+# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-successfactors"></a>Руководство. Интеграции единого входа Azure Active Directory с SuccessFactors
 
 В этом руководстве описано, как интегрировать SuccessFactors с Azure Active Directory (Azure AD). Интеграция SuccessFactors с Azure AD обеспечивает приведенные ниже возможности.
 
@@ -35,18 +34,19 @@ ms.locfileid: "68989491"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы приступить к работе, потребуется следующее:
+Чтобы приступить к работе, потребуется следующее.
 
-* подписка Azure AD Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
+* Подписка Azure AD. Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
 * Подписка SuccessFactors с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
 
 В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде.
 
-* SuccessFactors поддерживает единый вход инициированного **пакета обновления**.
+* SuccessFactors поддерживает единый вход, инициированный **пакетом обновления**.
+* После настройки SuccessFactors можно применять элементы управления сеансами, которые защищают от хищения и несанкционированного доступа к конфиденциальным данным вашей организации в режиме реального времени. Элементы управления сеансом являются расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-aad).
 
-## <a name="adding-successfactors-from-the-gallery"></a>Добавление SuccessFactors из коллекции.
+## <a name="adding-successfactors-from-the-gallery"></a>Добавление SuccessFactors из коллекции
 
 Чтобы настроить интеграцию SuccessFactors с Azure AD, необходимо добавить SuccessFactors из коллекции в список управляемых приложений SaaS.
 
@@ -69,7 +69,7 @@ ms.locfileid: "68989491"
     1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить пользователю B.Simon использовать единый вход Azure AD.
 2. **[Настройка единого входа в SuccessFactors](#configure-successfactors-sso)** необходима для настройки параметров единого входа на стороне приложения.
     1. **[Создание тестового пользователя SuccessFactors](#create-successfactors-test-user)** требуется для создания пользователя B.Simon в SuccessFactors, связанного с одноименным пользователем в Azure AD.
-3. **[Проверка единого входа](#test-sso)** необходима, чтобы убедиться в корректной работе конфигурации.
+3. **[Проверка единого входа](#test-sso)** позволяет убедиться в правильности конфигурации.
 
 ## <a name="configure-azure-ad-sso"></a>Настройка единого входа Azure AD
 
@@ -79,11 +79,11 @@ ms.locfileid: "68989491"
 1. На странице **Выбрать метод единого входа** выберите **SAML**.
 1. На странице **Настройка единого входа с помощью SAML** щелкните значок "Изменить" (значок пера), чтобы открыть диалоговое окно **Базовая конфигурация SAML** и изменить параметры.
 
-   ![Правка базовой конфигурации SAML](common/edit-urls.png)
+   ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
 1. В разделе **Базовая конфигурация SAML** выполните приведенные ниже действия.
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате:
+    а. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате:
 
     | |
     |--|
@@ -148,7 +148,7 @@ ms.locfileid: "68989491"
 
 В этом разделе описано, как включить единый вход в Azure для пользователя B.Simon, предоставив этому пользователю доступ к SuccessFactors.
 
-1. На портале Azure выберите **Корпоративные приложения**, а затем —**Все приложения**.
+1. На портале Azure выберите **Корпоративные приложения**, а затем — **Все приложения**.
 1. Из списка приложений выберите **SuccessFactors**.
 1. На странице "Обзор" приложения найдите раздел **Управление** и выберите **Пользователи и группы**.
 
@@ -179,7 +179,7 @@ ms.locfileid: "68989491"
 
     ![Настройка единого входа на стороне приложения][12]
   
-    a. Установите переключатель **SAML v2 SSO** (Единый вход SAML версии 2).
+    а. Установите переключатель **SAML v2 SSO** (Единый вход SAML версии 2).
   
     b. Задайте **имя утверждающей стороны SAML** (например, "Издатель SAML + название компании").
 
@@ -187,9 +187,9 @@ ms.locfileid: "68989491"
 
     d. Выберите **Assertion** (Утверждение) в качестве значения **Require Mandatory Signature** (Требуется обязательная подпись).
 
-    д. Выберите значение **Enabled** (Включено) для параметра **Enable SAML Flag** (Включить флаг SAML).
+    д) Выберите значение **Enabled** (Включено) для параметра **Enable SAML Flag** (Включить флаг SAML).
 
-    Е. Выберите значение **No** (Нет) для параметра **Login Request Signature (SF Generated/SP/RP)** (Подпись запроса на вход (создается SF/SP/RP)).
+    е) Выберите значение **No** (Нет) для параметра **Login Request Signature (SF Generated/SP/RP)** (Подпись запроса на вход (создается SF/SP/RP)).
 
     ж. Выберите значение **Browser/Post Profile** (Браузер/пост-профилирование) для параметра **SAML Profile** (Профиль SAML).
 
@@ -204,7 +204,7 @@ ms.locfileid: "68989491"
 
     ![Настройка единого входа на стороне приложения][13]
 
-    a. Выберите значение **Yes** (Да) для параметра **Support SP-initiated Global Logout** (Поддержка глобального выхода, инициированного SP).
+    а. Выберите значение **Yes** (Да) для параметра **Support SP-initiated Global Logout** (Поддержка глобального выхода, инициированного SP).
 
     b. В текстовое поле **Global Logout Service URL (LogoutRequest destination)** (URL-адрес службы глобального выхода) вставьте значение **URL-адреса выхода**, скопированное с портала Azure.
 
@@ -212,15 +212,15 @@ ms.locfileid: "68989491"
 
     d. Выберите значение **unspecified** (Не определено) для параметра **NameID Format** (Формат идентификатора имени).
 
-    д. Выберите значение **Yes** (Да) для параметра **Enable sp initiated login (AuthnRequest)** (Включить вход по требованию SP).
+    д) Выберите значение **Yes** (Да) для параметра **Enable sp initiated login (AuthnRequest)** (Включить вход по требованию SP).
 
-    Е. В текстовое поле **Send request as Company-Wide issuer** (Отправлять запрос как издатель в пределах компании) вставьте значение **URL-адрес входа**, скопированное на портале Azure.
+    е) В текстовое поле **Send request as Company-Wide issuer** (Отправлять запрос как издатель в пределах компании) вставьте значение **URL-адрес входа**, скопированное на портале Azure.
 
 6. Чтобы в именах для входа не учитывался регистр, сделайте следующее.
 
     ![Настройка единого входа][29]
 
-    a. Найдите в нижней части экрана раздел **Company Settings**(Параметры компании).
+    а. Найдите в нижней части экрана раздел **Company Settings**(Параметры компании).
 
     b. Установите флажок **Enable Non-Case-Sensitive Username** (Разрешить имя пользователя без учета регистра).
 
@@ -243,13 +243,17 @@ ms.locfileid: "68989491"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 
 - [Пробное использование SuccessFactors с помощью Azure AD](https://aad.portal.azure.com)
+
+- [Что такое управление сеансами в Microsoft Cloud App Security?](https://docs.microsoft.com/cloud-app-security/proxy-intro-aad)
+
+- [Защита приложений с помощью функции управления настройками условного доступа для приложений в Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-intro-aad)
 
 <!--Image references-->
 

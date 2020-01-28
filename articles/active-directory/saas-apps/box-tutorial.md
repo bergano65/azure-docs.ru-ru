@@ -1,5 +1,5 @@
 ---
-title: Руководство по интеграции единого входа Azure Active Directory с Box | Документация Майкрософт
+title: Руководство. интеграции единого входа Azure Active Directory с Box | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Box.
 services: active-directory
 documentationCenter: na
@@ -11,19 +11,18 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
-ms.date: 08/13/2019
+ms.date: 01/16/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: aceec8ad6ca23a1bd89b93a6442d48aa81597e55
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.openlocfilehash: ecd4ad3e2e3da9dce3a5bab36137ce65807b6a9a
+ms.sourcegitcommit: 7221918fbe5385ceccf39dff9dd5a3817a0bd807
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74964180"
+ms.lasthandoff: 01/21/2020
+ms.locfileid: "76293731"
 ---
-# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-box"></a>Руководство по интеграции единого входа Azure Active Directory с Box
+# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-box"></a>Руководство. интеграции единого входа Azure Active Directory с Box
 
 В этом учебнике описано, как интегрировать Box с Azure Active Directory (Azure AD). Интеграция Box с Azure AD обеспечивает следующие возможности:
 
@@ -35,9 +34,9 @@ ms.locfileid: "74964180"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы приступить к работе, потребуется следующее:
+Чтобы приступить к работе, потребуется следующее.
 
-* подписка Azure AD Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
+* Подписка Azure AD. Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
 * Подписка Box с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -47,6 +46,7 @@ ms.locfileid: "74964180"
 * Box поддерживает запущенный единый вход **пакета обновления**
 * Box поддерживает [**автоматическую** подготовку пользователей и ее отмену](https://docs.microsoft.com/azure/active-directory/saas-apps/box-userprovisioning-tutorial) (рекомендуется).
 * Box поддерживает **JIT**-подготовку пользователей
+* После настройки Box можно применять элементы управления сеансами, которые защищают от хищения и несанкционированного доступа к конфиденциальным данным вашей организации в режиме реального времени. Элементы управления сеансом являются расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-aad).
 
 ## <a name="adding-box-from-the-gallery"></a>Добавление Box из коллекции
 
@@ -70,7 +70,7 @@ ms.locfileid: "74964180"
     1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить пользователю B.Simon использовать единый вход Azure AD.
 1. **[Настройка единого входа в Box](#configure-box-sso)** необходима, чтобы настроить параметры единого входа на стороне приложения.
     1. **[Создание тестового пользователя Box](#create-box-test-user)** требуется для того, чтобы в Box существовал пользователь B. Simon, связанный с одноименным пользователем в Azure AD.
-1. **[Проверка единого входа](#test-sso)** необходима, чтобы убедиться в корректной работе конфигурации.
+1. **[Проверка единого входа](#test-sso)** позволяет убедиться в правильности конфигурации.
 
 ## <a name="configure-azure-ad-sso"></a>Настройка единого входа Azure AD
 
@@ -80,11 +80,11 @@ ms.locfileid: "74964180"
 1. На странице **Выбрать метод единого входа** выберите **SAML**.
 1. На странице **Настройка единого входа с помощью SAML** щелкните значок "Изменить" (значок пера), чтобы открыть диалоговое окно **Базовая конфигурация SAML** и изменить параметры.
 
-   ![Правка базовой конфигурации SAML](common/edit-urls.png)
+   ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
 1. На странице **Базовая конфигурация SAML** введите значения следующих полей.
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<SUBDOMAIN>.account.box.com`.
+    а. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<SUBDOMAIN>.account.box.com`.
 
     b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес следующим образом: `box.net`
 
@@ -111,7 +111,7 @@ ms.locfileid: "74964180"
 
 В этом разделе описано, как предоставить пользователю B. Simon доступ к Box, чтобы он мог использовать единый вход Azure.
 
-1. На портале Azure выберите **Корпоративные приложения**, а затем —**Все приложения**.
+1. На портале Azure выберите **Корпоративные приложения**, а затем — **Все приложения**.
 1. В списке приложений выберите **Box**.
 1. На странице "Обзор" приложения найдите раздел **Управление** и выберите **Пользователи и группы**.
 
@@ -130,7 +130,7 @@ ms.locfileid: "74964180"
 Чтобы настроить единый вход для приложения, выполните процедуру из раздела [о самостоятельной настройке единого входа](https://community.box.com/t5/How-to-Guides-for-Admins/Setting-Up-Single-Sign-On-SSO-for-your-Enterprise/ta-p/1263#ssoonyourown).
 
 > [!NOTE]
-> Если вам не удалось настроить параметры единого входа для учетной записи Box, нужно отправить скачанный **XML-файл метаданных федерации** [группе поддержки Box](https://community.box.com/t5/custom/page/page-id/submit_sso_questionaire). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+> Если вам не удалось настроить параметры единого входа для учетной записи Box, нужно отправить скачанный **XML-файл метаданных федерации**[группе поддержки Box](https://community.box.com/t5/custom/page/page-id/submit_sso_questionaire). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 ### <a name="create-box-test-user"></a>Создание тестового пользователя Box
 
@@ -147,10 +147,14 @@ ms.locfileid: "74964180"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 
 - [Попробуйте использовать Box с Azure AD](https://aad.portal.azure.com/)
+
+- [Что такое управление сеансами в Microsoft Cloud App Security?](https://docs.microsoft.com/cloud-app-security/protect-box)
+
+- [Защита приложений с помощью функции управления настройками условного доступа для приложений в Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-intro-aad)

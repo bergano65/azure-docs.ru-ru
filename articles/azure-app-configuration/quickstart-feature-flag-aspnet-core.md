@@ -1,29 +1,21 @@
 ---
-title: Краткое руководство по добавлению флагов функций в ASP.NET Core | Документация Майкрософт
-description: Краткое руководство по добавлению флагов функций в приложения ASP.NET Core и управлению ими в Конфигурации приложений Azure.
-services: azure-app-configuration
-documentationcenter: ''
-author: yegu-ms
-manager: maiye
-editor: ''
-ms.assetid: ''
+title: Краткое руководство по добавлению флагов функций в ASP.NET Core
+description: Добавление флагов функций в приложения ASP.NET Core и управление ими с помощью Конфигурации приложений Azure
+author: jpconnock
 ms.service: azure-app-configuration
-ms.devlang: csharp
 ms.topic: quickstart
-ms.tgt_pltfrm: ASP.NET Core
-ms.workload: tbd
-ms.date: 04/19/2019
-ms.author: yegu
-ms.openlocfilehash: 1b36bc1b1f28c687450acad4cc61fa5442cff082
-ms.sourcegitcommit: dbde4aed5a3188d6b4244ff7220f2f75fce65ada
+ms.date: 01/14/2020
+ms.author: jeconnoc
+ms.openlocfilehash: 6858648bc07546f30d4ebb92150c52f8c7729acd
+ms.sourcegitcommit: 2a2af81e79a47510e7dea2efb9a8efb616da41f0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74184985"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76260295"
 ---
 # <a name="quickstart-add-feature-flags-to-an-aspnet-core-app"></a>Краткое руководство. Добавление флагов функций в приложение ASP.NET Core
 
-В этом кратком руководстве описано, как внедрить Конфигурацию приложений Azure в веб-приложение ASP.NET Core, чтобы реализовать комплексное управление функциями. Вы можете использовать службу "Конфигурация приложений" для централизованного хранения всех флагов функций и управления их состояниями. 
+В этом кратком руководстве вы создадите комплексную реализацию управления функциями в приложении ASP.NET Core с помощью Конфигурации приложения Azure. Вы сможете использовать службу "Конфигурация приложений" для централизованного хранения всех флагов функций и управления их состояниями. 
 
 Библиотеки управления функциями .NET Core расширяют возможности платформы за счет всесторонней поддержки флагов функций. Эти библиотеки создаются на основе системы конфигурации .NET Core. Они легко интегрируются с Конфигурацией приложений посредством поставщика конфигураций .NET Core.
 
@@ -36,11 +28,12 @@ ms.locfileid: "74184985"
 
 [!INCLUDE [azure-app-configuration-create](../../includes/azure-app-configuration-create.md)]
 
-6. Выберите **Диспетчер компонентов** >  **+Добавить**, чтобы добавить следующие флаги функций.
+6. Выберите **Диспетчер компонентов** >  **+Добавить**, чтобы добавить флаг функции `Beta`.
 
-    | Ключ | Состояние |
-    |---|---|
-    | Beta | Отключить |
+    > [!div class="mx-imgBorder"]
+    > ![Включение флага функции с именем Beta](media/add-beta-feature-flag.png)
+
+    Не определяйте `label` сейчас.
 
 ## <a name="create-an-aspnet-core-web-app"></a>Создание веб-приложения ASP.NET Core
 
@@ -58,9 +51,13 @@ ms.locfileid: "74184985"
 
 Добавьте в проект [инструмент "Диспетчер секретов"](https://docs.microsoft.com/aspnet/core/security/app-secrets). Инструмент "Диспетчер секретов" хранит конфиденциальные данные для разработки вне вашего дерева проектов. Этот подход помогает предотвратить случайный обмен секретами приложений в исходном коде.
 
+> [!IMPORTANT]
+> Между .NET Core 2. x и 3. x существуют значительные различия.  Выберите правильный синтаксис в зависимости от среды.
+
 1. Откройте *CSPROJ*-файл.
 1. Добавьте элемент `UserSecretsId`, как показано в примере ниже, и замените его значение своим значением, которое обычно является идентификатором GUID.
 
+    #### <a name="net-core-2xtabcore2x"></a>[.NET Core 2.x](#tab/core2x).
     ```xml
     <Project Sdk="Microsoft.NET.Sdk.Web">
 
@@ -76,16 +73,25 @@ ms.locfileid: "74184985"
 
     </Project>
     ```
-
-1. Сохраните файл.
+    #### <a name="net-core-3xtabcore3x"></a>[.NET Core 3.x](#tab/core3x).
+    ```xml
+    <Project Sdk="Microsoft.NET.Sdk.Web">
+    
+        <PropertyGroup>
+            <TargetFramework>netcoreapp3.1</TargetFramework>
+            <UserSecretsId>79a3edd0-2092-40a2-a04d-dcb46d5ca9ed</UserSecretsId>
+        </PropertyGroup>
+    </Project>
+    ```
+    ---
 
 ## <a name="connect-to-an-app-configuration-store"></a>Подключение к хранилищу Конфигурации приложений
 
 1. Добавьте ссылку на пакеты NuGet `Microsoft.Azure.AppConfiguration.AspNetCore` и `Microsoft.FeatureManagement.AspNetCore`, выполнив следующие команды.
 
     ```
-    dotnet add package Microsoft.Azure.AppConfiguration.AspNetCore --version 2.0.0-preview-009470001-12
-    dotnet add package Microsoft.FeatureManagement.AspNetCore --version 1.0.0-preview-009000001-1251
+    dotnet add package Microsoft.Azure.AppConfiguration.AspNetCore --version 3.0.0-preview-011100002-1192
+    dotnet add package Microsoft.FeatureManagement.AspNetCore --version 2.0.0-preview-010610001-1263
     ```
 
 1. Выполните следующую команду, чтобы восстановить пакеты проекта:
@@ -108,19 +114,13 @@ ms.locfileid: "74184985"
 
     Этот секрет можно получить с помощью API Конфигурации приложений. Двоеточие (:) используется в имени конфигурации при работе с API Конфигурации приложений на всех поддерживаемых платформах. Дополнительные сведения см. в статье [Конфигурация в .NET Core](https://docs.microsoft.com/aspnet/core/fundamentals/configuration).
 
-1. Откройте файл *Program.cs* и добавьте в него ссылку на поставщик Конфигурации приложений .NET Core.
-
-    ```csharp
-    using Microsoft.Extensions.Configuration.AzureAppConfiguration;
-    ```
-
 1. Обновите метод `CreateWebHostBuilder`, чтобы использовать службу "Конфигурация приложений", путем вызова метода `config.AddAzureAppConfiguration()`.
     
     > [!IMPORTANT]
     > `CreateHostBuilder` заменяет `CreateWebHostBuilder` в .NET Core 3.0.  Выберите правильный синтаксис в зависимости от среды.
 
-    ### <a name="update-createwebhostbuilder-for-net-core-2x"></a>Обновите `CreateWebHostBuilder` для .NET Core 2.x
-
+    #### <a name="net-core-2xtabcore2x"></a>[.NET Core 2.x](#tab/core2x).
+    
     ```csharp
     public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
         WebHost.CreateDefaultBuilder(args)
@@ -135,8 +135,8 @@ ms.locfileid: "74184985"
             .UseStartup<Startup>();
     ```
 
-    ### <a name="update-createhostbuilder-for-net-core-3x"></a>Обновите `CreateHostBuilder` для .NET Core 3.x
-
+    #### <a name="net-core-3xtabcore3x"></a>[.NET Core 3.x](#tab/core3x).
+    
     ```csharp
     public static IHostBuilder CreateHostBuilder(string[] args) =>
         Host.CreateDefaultBuilder(args)
@@ -151,7 +151,7 @@ ms.locfileid: "74184985"
         })
         .UseStartup<Startup>());
     ```
-
+    ---
 
 1. Откройте файл *Startup.cs* и добавьте в него ссылки на диспетчер функций .NET Core.
 
@@ -161,22 +161,75 @@ ms.locfileid: "74184985"
 
 1. Обновите метод `ConfigureServices`, добавив поддержку флагов функций с помощью вызова метода `services.AddFeatureManagement()`. При необходимости можно добавить любой фильтр для флагов функций, вызвав `services.AddFeatureFilter<FilterType>()`.
 
+    #### <a name="net-core-2xtabcore2x"></a>[.NET Core 2.x](#tab/core2x).
     ```csharp
     public void ConfigureServices(IServiceCollection services)
     {
+        services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);        
         services.AddFeatureManagement();
     }
     ```
+    #### <a name="net-core-3xtabcore3x"></a>[.NET Core 3.x](#tab/core3x).
+    ```csharp    
+    public void ConfigureServices(IServiceCollection services)
+    {
+        services.AddControllersWithViews();
+        services.AddFeatureManagement();
+    }
+    ```
+    ---
 
 1. Обновите метод `Configure`, чтобы добавить ПО промежуточного слоя. Оно позволит периодически обновлять значения флагов функций, пока веб-приложение ASP.NET Core продолжает получать запросы.
-
+    
+    #### <a name="net-core-2xtabcore2x"></a>[.NET Core 2.x](#tab/core2x).
     ```csharp
     public void Configure(IApplicationBuilder app, IHostingEnvironment env)
     {
-        app.UseAzureAppConfiguration();
-        app.UseMvc();
+            if (env.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+            }
+            else
+            {
+                app.UseExceptionHandler("/Home/Error");
+            }
+            
+            app.UseStaticFiles();
+            app.UseCookiePolicy();
+            app.UseAzureAppConfiguration();
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute(
+                    name: "default",
+                    template: "{controller=Home}/{action=Index}/{id?}");
+            });
     }
     ```
+    #### <a name="net-core-3xtabcore3x"></a>[.NET Core 3.x](#tab/core3x).
+    ```csharp
+    public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+    {
+            if (env.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+            }
+            else
+            {
+                app.UseExceptionHandler("/Home/Error");
+            }
+            app.UseStaticFiles();
+            app.UseRouting();
+            app.UseAuthorization();
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
+            });
+            app.UseAzureAppConfiguration();
+    }
+    ```
+    ---
 
 1. Добавьте файл *MyFeatureFlags.cs*.
 
@@ -278,19 +331,19 @@ ms.locfileid: "74184985"
     dotnet run
     ```
 
-1. Откройте окно браузера и перейдите по адресу `https://localhost:5001`, который является URL-адресом по умолчанию для веб-приложения, размещенного локально.
+1. Откройте окно браузера и перейдите по адресу `https://localhost:5000`, который является URL-адресом по умолчанию для веб-приложения, размещенного локально.
+    Если вы работаете в Azure Cloud Shell, нажмите кнопку *Просмотр в Интернете*, а затем — *Настроить*.  При появлении запроса выберите порт 5000.
 
-    ![Краткое руководство. Запуск приложения, размещенного локально](./media/quickstarts/aspnet-core-feature-flag-local-before.png)
+    ![Найдите кнопку "Просмотр в Интернете"](./media/quickstarts/cloud-shell-web-preview.png)
 
-1. Войдите на [портале Azure](https://portal.azure.com). Щелкните **Все ресурсы** и выберите экземпляр хранилища Конфигурации приложений, который вы создали по инструкциям из краткого руководства.
+    Браузер должен отображать страницу, похожую на изображение ниже.
+    ![Локальный быстрый запуск приложения ](./media/quickstarts/aspnet-core-feature-flag-local-before.png)
 
-1. Выберите **Feature Manager** (Диспетчер функций) и измените состояние ключа **Beta** на **On** (Включен).
+1. Войдите на [портал Azure](https://portal.azure.com). Щелкните **Все ресурсы** и выберите экземпляр хранилища Конфигурации приложений, который вы создали по инструкциям из краткого руководства.
 
-    | Ключ | Состояние |
-    |---|---|
-    | Beta | С |
+1. Выберите **Диспетчер компонентов** и измените состояние ключа **Beta** на **Вкл**.
 
-1. Перезапустите приложение, перейдя в командную строку и нажав `Ctrl-C`, чтобы отменить выполняющийся процесс `dotnet` и снова запустить `dotnet run`.
+1. Вернитесь в командную строку и отмените запущенный процесс `dotnet`, нажатием кнопки `Ctrl-C`.  Перезапустите приложение, используя `dotnet run`.
 
 1. Обновите страницу браузера, чтобы просмотреть новые параметры конфигурации.
 
@@ -300,7 +353,7 @@ ms.locfileid: "74184985"
 
 [!INCLUDE [azure-app-configuration-cleanup](../../includes/azure-app-configuration-cleanup.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом кратком руководстве вы создали хранилище Конфигурации приложений и использовали его для управления функциями веб-приложения ASP.NET Core с помощью [библиотек управления функциями](https://go.microsoft.com/fwlink/?linkid=2074664).
 

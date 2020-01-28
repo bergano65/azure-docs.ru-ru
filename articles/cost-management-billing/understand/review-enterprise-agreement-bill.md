@@ -9,14 +9,14 @@ ms.devlang: na
 ms.topic: tutorial
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 01/02/2020
+ms.date: 01/17/2020
 ms.author: banders
-ms.openlocfilehash: 2beb1d3e4468ff96f629dd6ec7015376a7f3a904
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.openlocfilehash: 75b6dd1b2d76d12087270e155551402d1bcd4965
+ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75984009"
+ms.lasthandoff: 01/19/2020
+ms.locfileid: "76274030"
 ---
 # <a name="understand-your-azure-enterprise-agreement-bill"></a>Общие сведения о счете по соглашению Azure Enterprise
 
@@ -127,7 +127,7 @@ ms.locfileid: "75984009"
 
 ![Снимок экрана с параметром для переключения M и C на вкладке сводных данных об использовании.](./media/review-enterprise-agreement-bill/ea-portal-usage-sumary-cm-option.png)  
 
-Общая сумма для **Azure Marketplace** должна совпадать с полем **Сумма продаж** в счете Marketplace. Дополнительные сведения о суммах за использование можно найти в разделе **Скачать сведения об использовании**. В разделе **Marketplace Charges** (Расходы в Marketplace) щелкните **Скачать**. Этот отчет не включает налоги и не отображает одноразовые покупки.  
+Общая сумма для **Azure Marketplace** должна совпадать с полем **Сумма продаж** в счете Marketplace. Дополнительные сведения о суммах за использование можно найти в разделе **Скачать сведения об использовании**. В разделе **Marketplace Charges** (Расходы в Marketplace) щелкните **Скачать**. Цена Marketplace включает налог, определяемый издателем. Клиенты не будут получать отдельный счет от издателя для получения налога на транзакцию.
 
 ![Снимок экрана с функцией скачивания в разделе платежей в Marketplace.](./media/review-enterprise-agreement-bill/ea-portal-download-usage-marketplace.png)
 

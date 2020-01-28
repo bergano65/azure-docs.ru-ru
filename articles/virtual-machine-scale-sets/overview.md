@@ -1,27 +1,19 @@
 ---
-title: Обзор масштабируемых наборов виртуальных машин Azure | Документация Майкрософт
+title: Общие сведения о масштабируемых наборах виртуальных машин в Azure
 description: Обзор масштабируемых наборов виртуальных машин Azure и сведения о том, как автоматически масштабировать приложения
-services: virtual-machine-scale-sets
-documentationcenter: ''
 author: mayanknayar
-manager: drewm
-editor: ''
 tags: azure-resource-manager
-ms.assetid: ''
 ms.service: virtual-machine-scale-sets
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: overview
 ms.custom: mvc
 ms.date: 09/26/2019
 ms.author: manayar
-ms.openlocfilehash: 73580814dcfe8f967684aca4ce433a40e7bbedc0
-ms.sourcegitcommit: 5f0f1accf4b03629fcb5a371d9355a99d54c5a7e
+ms.openlocfilehash: e6201f9ac2e9b813de5a4622fc7996eb1202a164
+ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2019
-ms.locfileid: "71679387"
+ms.lasthandoff: 01/19/2020
+ms.locfileid: "76273691"
 ---
 # <a name="what-are-virtual-machine-scale-sets"></a>Что такое наборы масштабирования виртуальных машин?
 Масштабируемые наборы виртуальных машин Azure позволяют создавать и администрировать группы идентичных виртуальных машин с балансировкой нагрузки. Число экземпляров виртуальных машин может автоматически увеличиваться или уменьшаться в зависимости от спроса или по определенному расписанию. Масштабируемые наборы обеспечивают высокий уровень доступности приложений и позволяют централизовать управление, настройку и обновление большого числа виртуальных машин. С помощью масштабируемых наборов виртуальных машин можно создавать крупномасштабные службы для таких областей, как вычисления, большие данные и контейнерные рабочие нагрузки.
@@ -68,7 +60,7 @@ ms.locfileid: "71679387"
 
 Включите мониторинг для [приложения масштабируемого набора виртуальных машин](../azure-monitor/app/azure-vm-vmss-apps.md), чтобы служба Application Insights могла собирать подробные сведения о приложении, включая просмотры страниц, запросы приложений и исключения. Проверьте доступность приложения, настроив [тест доступности](../azure-monitor/app/monitor-web-app-availability.md) для имитации пользовательского трафика.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Чтобы приступить к работе, создайте первый масштабируемый набор виртуальных машин на портале Azure.
 
 > [!div class="nextstepaction"]

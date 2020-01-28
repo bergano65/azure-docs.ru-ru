@@ -8,12 +8,12 @@ ms.topic: overview
 author: j-martens
 ms.author: jmartens
 ms.date: 11/04/2019
-ms.openlocfilehash: cd94001cfe795e7aa78a1332325052afce6b8ec6
-ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
+ms.openlocfilehash: 4c6a9a2b5991c9f99bf728ecfed144cc77e4c49a
+ms.sourcegitcommit: a9b1f7d5111cb07e3462973eb607ff1e512bc407
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75762813"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76314340"
 ---
 # <a name="what-is-azure-machine-learning"></a>Что такое служба "Машинное обучение Microsoft Azure"?
 
@@ -46,7 +46,7 @@ ms.locfileid: "75762813"
 
 + Скрипты R или записные книжки, в которых используется <a href="https://azure.github.io/azureml-sdk-for-r/reference/index.html" target="_blank">пакет SDK для R</a> для написания собственного кода, или модули R в конструкторе.
 
-+ [Расширение Visual Studio Code](how-to-vscode-tools.md)
++ [Расширение Visual Studio Code](tutorial-setup-vscode-extension.md)
 
 + [Интерфейс командной строки для машинного обучения](reference-azure-machine-learning-cli.md)
 
@@ -66,7 +66,7 @@ ms.locfileid: "75762813"
 
 Для обучения и развертывания без кода или с минимальным созданием кода попробуйте использовать:
 
-+ **Конструктор Машинного обучения Azure (предварительная версия).**
++ **Конструктор Машинного обучения Azure**
 
   Используйте конструктор для подготовки данных, обучения, тестирования, развертывания, мониторинга моделей машинного обучения и управления ими без написания кода. Никакое программирование не требуется. Выполните визуальное соединение наборов данных и модулей, чтобы создать модель. Ознакомьтесь с [учебником по конструктору](tutorial-designer-automobile-price-train-score.md).
 
@@ -85,7 +85,7 @@ ms.locfileid: "75762813"
 
 Для управления развернутыми моделями можно использовать [пакет SDK Машинного обучения Azure для Python](https://aka.ms/aml-sdk), [Студию машинного обучения Azure](https://ml.azure.com) или [CLI машинного обучения](reference-azure-machine-learning-cli.md).
 
-Эти модели могут использоваться, а также они могут возвращать прогнозы [в реальном времени](how-to-consume-web-service.md) или [асинхронно](how-to-run-batch-predictions.md) на больших объемах данных.
+Эти модели могут использоваться, а также они могут возвращать прогнозы [в реальном времени](how-to-consume-web-service.md) или [асинхронно](how-to-use-parallel-run-step.md) на больших объемах данных.
 
 С расширенными [конвейерами машинного обучения](concept-ml-pipelines.md) можно совместно работать на каждом из этапов подготовки данных, обучения и оценки моделей с помощью развертывания. Конвейеры позволяют выполнять следующие задачи:
 

@@ -12,15 +12,15 @@ ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.topic: tutorial
-ms.date: 01/03/2020
+ms.date: 01/16/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 841c2b7067427b703d2aa7647e0c0c3ef2287c6e
-ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
+ms.openlocfilehash: 74b56e30eb8851913f91cbee377204a575311375
+ms.sourcegitcommit: 7221918fbe5385ceccf39dff9dd5a3817a0bd807
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75773588"
+ms.lasthandoff: 01/21/2020
+ms.locfileid: "76293680"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-ssogen---azure-ad-sso-gateway-for-oracle-e-business-suite---ebs-peoplesoft-and-jde"></a>Учебник. Интеграция единого входа Azure Active Directory с приложением "Шлюз единого входа Azure AD SSOGEN для Oracle E-Business Suite (EBS), PeopleSoft и JDE"
 
@@ -41,9 +41,10 @@ ms.locfileid: "75773588"
 
 ## <a name="scenario-description"></a>Описание сценария
 
-В рамках этого учебника вы настроите и проверите единый вход Azure AD в тестовой среде.
+В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде.
 
-* Шлюз единого входа Azure AD SSOGEN для Oracle E-Business Suite (EBS), PeopleSoft и JDE поддерживает вход, инициированный **поставщиком услуг или поставщиком удостоверений**.
+* Шлюз единого входа Azure AD SSOGEN для Oracle E-Business Suite (EBS), PeopleSoft и JDE поддерживает вход, инициированный **поставщиком услуг или поставщиком удостоверений**.
+* После настройки SSOGEN — шлюза единого входа Azure AD для Oracle E-Business Suite — EBS, PeopleSoft и JDE, вы сможете применять средства управления сеансами, которые защищают от хищения и несанкционированного доступа к конфиденциальным данным вашей организации в режиме реального времени. Элементы управления сеансом являются расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-aad).
 
 > [!NOTE]
 > Идентификатор этого приложения — фиксированное строковое значение, поэтому в одном клиенте можно настроить только один экземпляр.
@@ -161,3 +162,7 @@ ms.locfileid: "75773588"
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 
 - [Проверка работы приложения "Шлюз единого входа Azure AD SSOGEN для Oracle E-Business Suite (EBS), PeopleSoft и JDE" с Azure Active Directory](https://aad.portal.azure.com/)
+
+- [Что такое управление сеансами в Microsoft Cloud App Security?](https://docs.microsoft.com/cloud-app-security/proxy-intro-aad)
+
+- [Защита приложений с помощью функции управления настройками условного доступа для приложений в Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-intro-aad)

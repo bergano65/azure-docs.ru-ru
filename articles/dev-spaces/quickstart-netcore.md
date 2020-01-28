@@ -6,12 +6,12 @@ ms.topic: quickstart
 description: В этом кратком руководстве описано, как использовать Azure Dev Spaces и Visual Studio Code для отладки и быстрого выполнения итерации приложения .NET Core в службе Azure Kubernetes
 keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, service mesh, service mesh routing, kubectl, k8s
 manager: gwallace
-ms.openlocfilehash: 0025f395c89a8a9f2eff4204ed0859cda0fa86fc
-ms.sourcegitcommit: 12a26f6682bfd1e264268b5d866547358728cd9a
+ms.openlocfilehash: fe2bb61ccfc7285dc5f4a5c21f3c62abfecca343
+ms.sourcegitcommit: 7221918fbe5385ceccf39dff9dd5a3817a0bd807
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75867525"
+ms.lasthandoff: 01/21/2020
+ms.locfileid: "76290603"
 ---
 # <a name="quickstart-debug-and-iterate-on-kubernetes-visual-studio-code-and-net-core---azure-dev-spaces"></a>Краткое руководство. Отладка и итерация в Kubernetes: Использование Visual Studio Code и .NET Core в Azure Dev Spaces
 
@@ -21,12 +21,12 @@ ms.locfileid: "75867525"
 - Итеративная разработка кода в контейнерах с помощью Visual Studio Code.
 - Отладка кода в среде разработки с помощью Visual Studio Code.
 
-Azure Dev Spaces также позволяет выполнять отладку и итерацию с помощью:
+Azure Dev Spaces также позволяет выполнять отладку и итерацию с помощью таких средств:
 - [Java и Visual Studio Code](quickstart-java.md);
 - [Node.js и Visual Studio Code](quickstart-nodejs.md);
 - [.NET Core и Visual Studio](quickstart-netcore-visualstudio.md).
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 - Подписка Azure. Если ее нет, можно создать [бесплатную учетную запись](https://azure.microsoft.com/free).
 - [Средство Visual Studio Code](https://code.visualstudio.com/download).
@@ -96,13 +96,13 @@ git clone https://github.com/Azure/dev-spaces
 > [!TIP]
 > Azure Dev Spaces использует [Dockerfile и диаграмму Helm](how-dev-spaces-works.md#prepare-your-code) проекта для сборки и выполнения кода. Но вы можете изменить эти файлы, если нужно определить другой способ сборки и запуска проекта.
 
-## <a name="build-and-run-code-in-kubernetes-from-visual-studio"></a>Сборка и запуск кода в Kubernetes из Visual Studio
+## <a name="build-and-run-code-in-kubernetes-from-visual-studio-code"></a>Сборка и запуск кода в Kubernetes из Visual Studio Code
 
 Щелкните значок *Отладка* слева, а затем *.NET Core Launch (AZDS)* (Запуск .NET Core (AZDS)) вверху.
 
 ![](media/get-started-netcore/debug-configuration.png)
 
-Эта команда создает службы в Azure Dev Spaces и запускает их в режиме отладки. Окно *Терминал* внизу показывает выходные данные сборки и URL-адрес для службы, запущенной в Azure Dev Spaces. В *консоли отладки* показаны выходные данные журнала.
+Эта команда создает службы в Azure Dev Spaces и запускает их в режиме отладки. В окне *Терминал* внизу показаны выходные данные сборки и URL-адрес для службы, запущенной в Azure Dev Spaces. В *консоли отладки* показаны выходные данные журнала.
 
 > [!Note]
 > Если вы не видите никаких команд Azure Dev Spaces в *палитре команд*, убедитесь, что вы установили расширение [Visual Studio Code для Azure Dev Spaces](https://marketplace.visualstudio.com/items?itemName=azuredevspaces.azds). Кроме того, убедитесь, что вы открыли каталог *dev-spaces/samples/dotnetcore/getting-started/webfrontend* в Visual Studio Code.

@@ -1,27 +1,19 @@
 ---
-title: Руководство. Автомасштабирование масштабируемого набора с помощью Azure CLI | Документация Майкрософт
+title: Руководство. Автомасштабирование масштабируемого набора с помощью Azure CLI
 description: Узнайте, как использовать Azure CLI для автомасштабирования масштабируемого набора виртуальных машин по мере увеличения и уменьшения нагрузки на ЦП.
-services: virtual-machine-scale-sets
-documentationcenter: ''
 author: cynthn
-manager: jeconnoc
-editor: ''
 tags: azure-resource-manager
-ms.assetid: ''
 ms.service: virtual-machine-scale-sets
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 05/18/2018
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: 4064816ae932a0f26fd3478420c69f3e8fba8732
-ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
+ms.openlocfilehash: 9ede78933e6b9e6933b0c5dabce395eb10713c88
+ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55751282"
+ms.lasthandoff: 01/19/2020
+ms.locfileid: "76278450"
 ---
 # <a name="tutorial-automatically-scale-a-virtual-machine-scale-set-with-the-azure-cli"></a>Руководство. Автоматическое масштабирование масштабируемых наборов виртуальных машин с помощью Azure CLI
 
@@ -214,7 +206,7 @@ Every 2.0s: az vmss list-instances --resource-group myResourceGroup --name mySca
 az group delete --name myResourceGroup --yes --no-wait
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из этого руководства вы узнали, как выполнять автомасштабирование масштабируемого набора с помощью Azure CLI:
 

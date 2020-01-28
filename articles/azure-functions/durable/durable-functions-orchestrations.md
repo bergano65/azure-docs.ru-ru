@@ -5,12 +5,12 @@ author: cgillum
 ms.topic: overview
 ms.date: 09/08/2019
 ms.author: azfuncdf
-ms.openlocfilehash: 54e1eb0be18de8e5ed420e96629d6f23473272fe
-ms.sourcegitcommit: a678f00c020f50efa9178392cd0f1ac34a86b767
+ms.openlocfilehash: caa62483373a240991cfec96437cea7849d9b19c
+ms.sourcegitcommit: 2a2af81e79a47510e7dea2efb9a8efb616da41f0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74545714"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76261557"
 ---
 # <a name="durable-orchestrations"></a>Устойчивые оркестрации
 
@@ -55,7 +55,9 @@ ms.locfileid: "74545714"
 
 ## <a name="orchestration-history"></a>Журнал оркестраций
 
-Поведение источника событий в платформе устойчивых задач тесно связано с написанным кодом функции оркестратора. Предположим, у вас есть функция связывания действий оркестратора, например, следующая функция C#:
+Поведение источника событий в платформе устойчивых задач тесно связано с написанным кодом функции оркестратора. Предположим, у вас есть функция связывания действий оркестратора, например, следующая функция:
+
+# <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
 ```csharp
 [FunctionName("E1_HelloSequence")]
@@ -73,7 +75,7 @@ public static async Task<List<string>> Run(
 }
 ```
 
-Если вы пишете код на JavaScript, ваша функция связывания действий оркестратора может выглядеть следующим образом:
+# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
 
 ```javascript
 const df = require("durable-functions");
@@ -88,6 +90,8 @@ module.exports = df.orchestrator(function*(context) {
     return output;
 });
 ```
+
+---
 
 В каждой инструкции `await` (C#) или `yield` (JavaScript) платформа устойчивых задач создает контрольные точки состояния выполнения функции в некоторых устойчивых внутренних частях хранилища (обычно это хранилище таблиц Azure). Это состояние также называется *журналом оркестрации*.
 
@@ -106,7 +110,7 @@ module.exports = df.orchestrator(function*(context) {
 
 По завершении приведенный выше журнал функций будет выглядеть примерно как в следующей таблице в хранилище таблиц Azure (следующий пример приведен в сокращенном виде):
 
-| PartitionKey (InstanceId)                     | EventType             | Timestamp               | Входные данные | ИМЯ             | Результат                                                    | Status |
+| PartitionKey (InstanceId)                     | EventType             | Отметка времени               | Входные данные | Имя             | Результат                                                    | Состояние |
 |----------------------------------|-----------------------|----------|--------------------------|-------|------------------|-----------------------------------------------------------|
 | eaee885b | ExecutionStarted      | 2017-05-05T18:45:28.852Z | null  | E1_HelloSequence |                                                           |                     |
 | eaee885b | OrchestratorStarted   | 2017-05-05T18:45:32.362Z |       |                  |                                                           |                     |
@@ -139,8 +143,8 @@ module.exports = df.orchestrator(function*(context) {
   * **OrchestratorCompleted.** Функция оркестратора находится в состоянии ожидания.
   * **ContinueAsNew.** Функция оркестратора выполнена и автоматически перезапущена с новым состоянием. Столбец `Result` содержит значение, которое используется в качестве входных данных в перезапущенном экземпляре.
   * **ExecutionCompleted.** Функция оркестратора выполнена (или завершилась сбоем). Выходные данные функции или сведения об ошибке хранятся в столбце `Result`.
-* **Timestamp.** Метка времени события журнала в формате UTC.
-* **Name**. Имя вызванной функции.
+* **Метка времени**: Метка времени события журнала в формате UTC.
+* **Name** (Имя). Имя вызванной функции.
 * **Входные данные** Входные данные функции в формате JSON.
 * **Result.** Выходные данные функции (то есть ее возвращаемое значение).
 
@@ -182,7 +186,7 @@ module.exports = df.orchestrator(function*(context) {
 
 Дополнительные сведения и примеры см. в статье [Handling errors in Durable Functions (Azure Functions)](durable-functions-error-handling.md) (Обработка ошибок в устойчивых функциях (Функции Azure)).
 
-### <a name="critical-sections-durable-functions-2x"></a>Критические разделы (Устойчивые функции 2.x)
+### <a name="critical-sections-durable-functions-2x-currently-net-only"></a>Критические разделы (Устойчивые функции 2.x сейчас поддерживается только .NET)
 
 Экземпляры оркестрации являются однопотоковыми, поэтому нет необходимости беспокоиться о состоянии гонки *внутри* оркестрации. Однако условия гонки возможны, когда оркестрации взаимодействуют с внешними системами. Чтобы устранить состояние гонки при взаимодействии с внешними системами, функции оркестратора могут определять *критические секции* с помощью метода `LockAsync` в .NET.
 
@@ -212,7 +216,9 @@ public static async Task Synchronize(
 
 Функциям оркестратора не разрешено выполнять операции ввода-вывода, как описано в [ограничениях кода функции оркестратора](durable-functions-code-constraints.md). Типичным обходным решением для этого ограничения является перенос любого кода, который должен выполнять операции ввода-вывода, в функцию действия. Оркестрации, которые взаимодействуют с внешними системами, часто используют функции действий для выполнения вызовов HTTP и возврата результата в оркестрацию.
 
-Чтобы упростить этот распространенный шаблон, функции оркестратора могут использовать метод `CallHttpAsync` в .NET для вызова API-интерфейсов HTTP напрямую. Помимо поддержки базовых шаблонов запросов/ответов, метод `CallHttpAsync` поддерживает автоматическую обработку общих асинхронных шаблонов опроса HTTP 202, а также проверку подлинности с помощью внешних служб с использованием [Управляемых удостоверений](../../active-directory/managed-identities-azure-resources/overview.md).
+# <a name="ctabcsharp"></a>[C#](#tab/csharp)
+
+Чтобы упростить этот распространенный шаблон, функции оркестратора могут использовать метод `CallHttpAsync` для вызова API-интерфейсов HTTP напрямую.
 
 ```csharp
 [FunctionName("CheckSiteAvailable")]
@@ -232,6 +238,8 @@ public static async Task CheckSiteAvailable(
 }
 ```
 
+# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+
 ```javascript
 const df = require("durable-functions");
 
@@ -244,6 +252,10 @@ module.exports = df.orchestrator(function*(context) {
 });
 ```
 
+---
+
+Помимо поддержки базовых шаблонов запросов/ответов, метод поддерживает автоматическую обработку общих асинхронных шаблонов опроса HTTP 202, а также проверку подлинности с помощью внешних служб с использованием [Управляемых удостоверений](../../active-directory/managed-identities-azure-resources/overview.md).
+
 Дополнительные сведения и подробные примеры см. в статье [HTTP Features](durable-functions-http-features.md) (Функции HTTP).
 
 > [!NOTE]
@@ -251,9 +263,11 @@ module.exports = df.orchestrator(function*(context) {
 
 ### <a name="passing-multiple-parameters"></a>Передача нескольких параметров
 
-Передать несколько параметров непосредственно в функцию действия нельзя. Мы рекомендуем передать массив объектов или использовать объекты [ValueTuples](https://docs.microsoft.com/dotnet/csharp/tuples) в .NET.
+Передать несколько параметров непосредственно в функцию действия нельзя. Мы рекомендуем передать массив объектов или составные объектов.
 
-В следующем примере используются новые функции [ValueTuples](https://docs.microsoft.com/dotnet/csharp/tuples), добавленные в [C# 7](https://docs.microsoft.com/dotnet/csharp/whats-new/csharp-7#tuples):
+# <a name="ctabcsharp"></a>[C#](#tab/csharp)
+
+В .NET можно также использовать объекты [ValueTuples](https://docs.microsoft.com/dotnet/csharp/tuples). В следующем примере используются новые функции [ValueTuples](https://docs.microsoft.com/dotnet/csharp/tuples), добавленные в [C# 7](https://docs.microsoft.com/dotnet/csharp/whats-new/csharp-7#tuples):
 
 ```csharp
 [FunctionName("GetCourseRecommendations")]
@@ -290,7 +304,37 @@ public static async Task<object> Mapper([ActivityTrigger] IDurableActivityContex
 }
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+
+#### <a name="orchestrator"></a>Оркестратор:
+
+```javascript
+const df = require("durable-functions");
+
+module.exports = df.orchestrator(function*(context) {
+    const location = {
+        city: "Seattle",
+        state: "WA"
+    };
+    const weather = yield context.df.callActivity("GetWeather", location);
+
+    // ...
+};
+```
+
+#### <a name="activity"></a>Действие
+
+```javascript
+module.exports = async function (context, location) {
+    const {city, state} = location; // destructure properties into variables
+
+    // ...
+};
+```
+
+---
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Ограничения кода оркестратора](durable-functions-code-constraints.md)

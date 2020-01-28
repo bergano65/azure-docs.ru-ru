@@ -1,5 +1,5 @@
 ---
-title: 'Пример: изучение приложения для обработки изображений на C#'
+title: Образец. изучение приложения для обработки изображений на C#
 titleSuffix: Azure Cognitive Services
 description: Изучите базовое приложение для Windows, в котором используется API компьютерного зрения в Azure Cognitive Services. Узнайте, как выполнять распознавание текста, создавать эскизы и работать с визуальными компонентами в изображении.
 services: cognitive-services
@@ -11,14 +11,14 @@ ms.topic: sample
 ms.date: 04/17/2019
 ms.author: pafarley
 ms.custom: seodec18
-ms.openlocfilehash: 01e932caf5edc91d5556b60d33e4d100574f93f5
-ms.sourcegitcommit: f2771ec28b7d2d937eef81223980da8ea1a6a531
+ms.openlocfilehash: b492d8e3bdcf6d9a41df3eb79ef159985cc715cf
+ms.sourcegitcommit: d29e7d0235dc9650ac2b6f2ff78a3625c491bbbf
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/20/2019
-ms.locfileid: "71170049"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76168879"
 ---
-# <a name="sample-explore-an-image-processing-app-with-c"></a>Пример: изучение приложения для обработки изображений с использованием C#
+# <a name="sample-explore-an-image-processing-app-with-c"></a>Образец. изучение приложения для обработки изображений с использованием C#
 
 Изучите базовое приложение Windows, в котором используется API компьютерного зрения для оптического распознавания символов и создания интеллектуально обрезанных эскизов, а также для обнаружения, классификации, добавления тегов и описания визуальных признаков изображения, включая лица. Приведенный ниже пример позволяет отправить URL-адрес изображения или локально хранящийся файл. Вы можете использовать этот пример с открытым кодом в качестве шаблона для создания собственного приложения для Windows с использованием API компьютерного зрения и Windows Presentation Foundation (WPF), входящего в состав .NET Framework.
 
@@ -89,7 +89,7 @@ git clone --recurse-submodules https://github.com/Microsoft/Cognitive-Face-Windo
 
 1. В разделе **Выбрать сценарий** на панели навигации выберите один из сценариев, включенных в пример приложения:  
 
-   | Сценарий | ОПИСАНИЕ |
+   | Сценарий | Описание |
    |----------|-------------|
    |Анализ изображения | Использует операцию [Анализ изображения](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa) для анализа локальных или удаленных изображений. Вы можете выбрать визуальные характеристики и язык для анализа и просмотреть изображение и результаты.  |
    |Анализ изображения с помощью модели предметной области | Использует операцию [Список моделей для предметной области](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fd), чтобы получить список моделей предметной области, из которых можно выбирать, и операцию [Распознавание содержимого предметной области](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e200) для анализа локальных или удаленных изображений с помощью выбранной модели предметной области. Вы также можете выбрать язык для анализа. |
@@ -308,7 +308,7 @@ using Microsoft.Azure.CognitiveServices.Vision.ComputerVision.Models;
 
 Удалите папку, куда вы клонировали репозиторий `Microsoft/Cognitive-Vision-Windows`, если она вам больше не нужна. Если вы решили использовать примеры изображений, также удалите папку, в которую вы клонировали репозиторий `Microsoft/Cognitive-Face-Windows`.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Приступая к работе с API распознавания лиц](../../Face/Tutorials/FaceAPIinCSharpTutorial.md)
+> [Начало работы с API Распознавания лиц](../../Face/Tutorials/FaceAPIinCSharpTutorial.md)

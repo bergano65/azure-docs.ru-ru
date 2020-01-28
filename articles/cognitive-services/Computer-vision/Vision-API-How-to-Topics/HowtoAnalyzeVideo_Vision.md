@@ -11,12 +11,12 @@ ms.topic: sample
 ms.date: 09/09/2019
 ms.author: kefre
 ms.custom: seodec18
-ms.openlocfilehash: 4855451136edfe86baaace48e2582fc7080a9b12
-ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
+ms.openlocfilehash: 18b158b7a4881619b93ab404de67f7bb25f92b6a
+ms.sourcegitcommit: d29e7d0235dc9650ac2b6f2ff78a3625c491bbbf
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75770379"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76166831"
 ---
 # <a name="analyze-videos-in-near-real-time"></a>Анализ видео в режиме почти реального времени
 
@@ -148,7 +148,7 @@ while (true)
 
 Для иллюстрации некоторых возможностей мы предоставили два примера приложений, использующих библиотеку. 
 
-Первый пример приложения представляет собой простое консольное приложение, которое захватывает кадры с веб-камеры по умолчанию, а затем передает их в API распознавания лиц для определения лиц. Упрощенная версия приложения воспроизведена в следующем коде:
+Первый пример приложения представляет собой простое консольное приложение, которое захватывает кадры с веб-камеры по умолчанию, а затем передает их службе "Распознавание лиц" для определения лиц. Упрощенная версия приложения воспроизведена в следующем коде:
 
 ```csharp
 using System;
@@ -169,7 +169,7 @@ namespace BasicConsoleSample
             // Create grabber.
             FrameGrabber<DetectedFace[]> grabber = new FrameGrabber<DetectedFace[]>();
 
-            // Create Face API Client.
+            // Create Face Client.
             FaceClient faceClient = new FaceClient(new ApiKeyServiceClientCredentials(ApiKey))
             {
                 Endpoint = Endpoint
@@ -185,7 +185,7 @@ namespace BasicConsoleSample
             grabber.AnalysisFunction = async frame =>
             {
                 Console.WriteLine($"Submitting frame acquired at {frame.Metadata.Timestamp}");
-                // Encode image and submit to Face API.
+                // Encode image and submit to Face service.
                 return (await faceClient.Face.DetectWithStreamAsync(frame.Image.ToMemoryStream(".jpg"))).ToArray();
             };
 
@@ -230,13 +230,13 @@ namespace BasicConsoleSample
 
 Чтобы приступить к работе с этим примером, сделайте следующее:
 
-1. Получите ключи API-интерфейсов зрения в разделе [Подписки](https://azure.microsoft.com/try/cognitive-services/). Для анализа кадров видео можно использовать следующие API-интерфейсы:
-    - [API Компьютерного зрения](https://docs.microsoft.com/azure/cognitive-services/computer-vision/home)
-    - [API Распознавания лиц](https://docs.microsoft.com/azure/cognitive-services/face/overview)
+1. Получите ключи API-интерфейсов зрения в разделе [Подписки](https://azure.microsoft.com/try/cognitive-services/). Для анализа кадров видео можно использовать следующие службы:
+    - [Компьютерное зрение](https://docs.microsoft.com/azure/cognitive-services/computer-vision/home)
+    - [Распознавание лиц](https://docs.microsoft.com/azure/cognitive-services/face/overview)
 2. Клонируйте репозиторий GitHub [Cognitive-Samples-VideoFrameAnalysis](https://github.com/Microsoft/Cognitive-Samples-VideoFrameAnalysis/).
 
 3. Откройте пример в Visual Studio 2015 или последующей версии, а затем выполните сборку и запуск примеров приложений.
-    - Для примера BasicConsoleSample ключ API распознавания лиц содержится непосредственно в коде [BasicConsoleSample/Program.cs](https://github.com/Microsoft/Cognitive-Samples-VideoFrameAnalysis/blob/master/Windows/BasicConsoleSample/Program.cs).
+    - Для примера BasicConsoleSample ключ распознавания лиц содержится непосредственно в коде [BasicConsoleSample/Program.cs](https://github.com/Microsoft/Cognitive-Samples-VideoFrameAnalysis/blob/master/Windows/BasicConsoleSample/Program.cs).
     - Для LiveCameraSample введите ключи в область **Параметры** приложения. Ключи будут сохраняться во всех сеансах как пользовательские данные.
 
 Когда все будет готово к интеграции примеров, просто создайте ссылку на библиотеку VideoFrameAnalyzer из собственных проектов.
@@ -245,7 +245,7 @@ namespace BasicConsoleSample
 
 ## <a name="summary"></a>Сводка
 
-Из этой статьи вы узнали, как выполнить анализ практически в реальном времени по потоковому видео с помощью API распознавания лиц и API компьютерного зрения. Вы также узнали, как можно использовать пример кода, чтобы приступить к работе. Чтобы приступить к созданию приложения, используя бесплатные ключи API, перейдите на [страницу регистрации Azure Cognitive Services](https://azure.microsoft.com/try/cognitive-services/).
+Из этой статьи вы узнали, как выполнить анализ практически в режиме реального времени по потоковому видео с помощью службы "Распознавание лиц" и "Компьютерное зрение". Вы также узнали, как можно использовать пример кода, чтобы приступить к работе. Чтобы приступить к созданию приложения, используя бесплатные ключи API, перейдите на [страницу регистрации Azure Cognitive Services](https://azure.microsoft.com/try/cognitive-services/).
 
 Отправляйте отзывы и предложения в [репозиторий GitHub](https://github.com/Microsoft/Cognitive-Samples-VideoFrameAnalysis/). Чтобы предоставить более подробные отзывы об API, перейдите на наш [сайт UserVoice](https://cognitive.uservoice.com/).
 

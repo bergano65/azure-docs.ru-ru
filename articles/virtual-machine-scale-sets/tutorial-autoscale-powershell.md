@@ -1,29 +1,21 @@
 ---
-title: Руководство. Автомасштабирование масштабируемого набора с помощью Azure PowerShell | Документация Майкрософт
+title: Руководство. Автомасштабирование масштабируемого набора с помощью Azure PowerShell
 description: Узнайте, как автоматически масштабировать масштабируемый набор виртуальных машин с помощью Azure PowerShell по мере увеличения и уменьшения нагрузки на ЦП
-services: virtual-machine-scale-sets
-documentationcenter: ''
 author: cynthn
-manager: jeconnoc
-editor: ''
 tags: azure-resource-manager
-ms.assetid: ''
 ms.service: virtual-machine-scale-sets
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/27/2018
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: 2d743b53f5ca74299c865d381f0832729fc956f4
-ms.sourcegitcommit: 13d5eb9657adf1c69cc8df12486470e66361224e
+ms.openlocfilehash: 50fb0c1c13ceba88b1894fa0f3165dd40b8e23cf
+ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68677594"
+ms.lasthandoff: 01/19/2020
+ms.locfileid: "76278413"
 ---
-# <a name="tutorial-automatically-scale-a-virtual-machine-scale-set-with-azure-powershell"></a>Руководство по Автоматическое масштабирование масштабируемых наборов виртуальных машин с помощью Azure PowerShell
+# <a name="tutorial-automatically-scale-a-virtual-machine-scale-set-with-azure-powershell"></a>Руководство. Автоматическое масштабирование масштабируемых наборов виртуальных машин с помощью Azure PowerShell
 
 [!INCLUDE [requires-azurerm](../../includes/requires-azurerm.md)]
 
@@ -35,7 +27,7 @@ ms.locfileid: "68677594"
 > * нагрузочное тестирование экземпляров виртуальных машин и активация правил автомасштабирования;
 > * обратное автомасштабирование при уменьшении потребности в ресурсах.
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 Существует известная проблема, которая влияет на работу модуля Azure PowerShell 6.8.1 или более поздних версий, а также на текущую версию Azure Cloud Shell. Для работы с этим руководством можно использовать модуль Azure PowerShell только версий 6.0.0–6.8.0. Чтобы узнать версию, выполните команду `Get-Module -ListAvailable AzureRM`. Если модуль PowerShell запущен локально, необходимо также выполнить командлет `Connect-AzureRmAccount`, чтобы создать подключение к Azure.
 
@@ -72,14 +64,14 @@ New-AzureRmVmss `
 
 Ниже приведены параметры, используемые для этого правила.
 
-| Параметр               | Пояснение                                                                                                         | Значение          |
+| Параметр               | Объяснение                                                                                                         | Значение          |
 |-------------------------|---------------------------------------------------------------------------------------------------------------------|----------------|
 | *-MetricName*           | Метрика производительности для мониторинга и применения действий в масштабируемом наборе.                                                   | Percentage CPU |
 | *-TimeGrain*            | Определяет, как часто собираются показатели для анализа.                                                                   | 1 минута       |
-| *-MetricStatistic*      | Определяет способ вычисления собранных метрик для анализа.                                                | Средняя        |
+| *-MetricStatistic*      | Определяет способ вычисления собранных метрик для анализа.                                                | Среднее        |
 | *-TimeWindow*           | Количество времени, в течение которого выполняется отслеживание перед сравнением значений метрик и пороговых значений.                                   | 5 мин      |
 | *-Operator*             | Оператор для сравнения данных метрики с пороговым значением.                                                     | Больше чем   |
-| *-Threshold*            | Значение, при достижении которого правило автомасштабирования запускает действие.                                                      | 70 %            |
+| *-Threshold*            | Значение, при достижении которого правило автомасштабирования запускает действие.                                                      | 70 %            |
 | *-ScaleActionDirection* | Определяет действие, применяемое к масштабируемому набору при выполнении условий правила: увеличение или уменьшение числа экземпляров.                                             | Увеличить       |
 | *-ScaleActionScaleType* | Указывает, что количество экземпляров виртуальных машин необходимо изменить, использовав определенное значение.                                    | Изменение количества   |
 | *-ScaleActionValue*     | При активации правила должен измениться процент экземпляров виртуальных машин.                                            | 3              |
@@ -97,7 +89,7 @@ $myRuleScaleOut = New-AzureRmAutoscaleRule `
   -Operator "GreaterThan" `
   -Threshold 70 `
   -ScaleActionDirection "Increase" `
-  –ScaleActionScaleType "ChangeCount" `
+  -ScaleActionScaleType "ChangeCount" `
   -ScaleActionValue 3 `
   -ScaleActionCooldown 00:05:00
 ```
@@ -119,7 +111,7 @@ $myRuleScaleIn = New-AzureRmAutoscaleRule `
   -TimeWindow 00:05:00 `
   -ScaleActionCooldown 00:05:00 `
   -ScaleActionDirection "Decrease" `
-  –ScaleActionScaleType "ChangeCount" `
+  -ScaleActionScaleType "ChangeCount" `
   -ScaleActionValue 1
 ```
 
@@ -254,7 +246,7 @@ Remove-AzureRmResourceGroup -Name "myResourceGroup" -Force -AsJob
 ```
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Из этого руководства вы узнали, как выполнять автомасштабирование масштабируемого набора с помощью Azure PowerShell.
 
 > [!div class="checklist"]

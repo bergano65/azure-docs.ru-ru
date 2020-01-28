@@ -1,7 +1,7 @@
 ---
 title: Руководство. развертыванию модели машинного обучения с помощью конструктора
 titleSuffix: Azure Machine Learning
-description: Сведения о том, как создавать решения для прогнозной аналитики в конструкторе Машинного обучения Azure (предварительная версия). Обучение, оценка и развертывание модели машинного обучения с помощью модулей перетаскивания.
+description: Сведения о том, как создавать решения для прогнозной аналитики в конструкторе Машинного обучения Azure. Обучение, оценка и развертывание модели машинного обучения с помощью модулей перетаскивания.
 author: peterclu
 ms.author: peterlu
 services: machine-learning
@@ -9,14 +9,14 @@ ms.service: machine-learning
 ms.subservice: core
 ms.topic: tutorial
 ms.date: 11/04/2019
-ms.openlocfilehash: 904e6bf7446ec865bfbd88b87ac3e01036438682
-ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
+ms.openlocfilehash: 89fdac5e59b59c60d7e20b94799d78b029d236d6
+ms.sourcegitcommit: a9b1f7d5111cb07e3462973eb607ff1e512bc407
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75647277"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76315003"
 ---
-# <a name="tutorial-deploy-a-machine-learning-model-with-the-designer-preview"></a>Руководство. развертыванию модели машинного обучения с помощью конструктора (предварительная версия)
+# <a name="tutorial-deploy-a-machine-learning-model-with-the-designer"></a>Руководство. развертыванию модели машинного обучения с помощью конструктора
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-enterprise-sku.md)]
 
 Чтобы другие пользователи могли применить модель прогнозирования, которую вы создали по инструкциям из [первой части этого руководства](tutorial-designer-automobile-price-train-score.md), разверните модель. В первой части вы обучили модель. Теперь пора создать прогнозы на основе вводимых пользователем данных. В этой части руководства вы выполните следующее:
@@ -27,7 +27,7 @@ ms.locfileid: "75647277"
 > * Развертывание конечной точки в режиме реального времени.
 > * Тестирование конечной точки в режиме реального времени.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Изучите [первую часть учебника](tutorial-designer-automobile-price-train-score.md), чтобы узнать, как обучать и оценивать модель машинного обучения в конструкторе.
 
@@ -78,7 +78,7 @@ ms.locfileid: "75647277"
     
 1. Выберите ближайший регион, доступный для модуля **Регион**.
 
-1. Нажмите кнопку **Создать**.
+1. Нажмите кнопку **создания**.
 
     > [!NOTE]
     > Создание службы AKS занимает около 15 минут. Состояние подготовки можно проверить на странице **Inference Clusters** (Кластеры вывода).

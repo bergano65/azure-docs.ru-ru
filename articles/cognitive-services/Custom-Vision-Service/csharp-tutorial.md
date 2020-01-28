@@ -10,12 +10,12 @@ ms.subservice: custom-vision
 ms.topic: quickstart
 ms.date: 12/05/2019
 ms.author: anroth
-ms.openlocfilehash: db98464ecefaaf177161a1e417496ee7c994cff0
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.openlocfilehash: 158e4dcd07f6ba31ad0efdd88f030f8db99fcfdd
+ms.sourcegitcommit: d29e7d0235dc9650ac2b6f2ff78a3625c491bbbf
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74978651"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76170034"
 ---
 # <a name="quickstart-create-an-image-classification-project-with-the-custom-vision-net-sdk"></a>Краткое руководство. Создание проекта классификации изображений с помощью пакета SDK Пользовательской службы визуального распознавания для .NET
 
@@ -69,7 +69,7 @@ ms.locfileid: "74978651"
 
 ### <a name="train-the-classifier-and-publish"></a>Обучение и публикация классификатора
 
-Этот код создает первую итерацию в проекте и публикует ее в конечной точке прогнозирования. Для отправки запросов на прогнозирование можно использовать имя итерации. Итерация будет недоступной в конечной точке прогнозирования, пока она не будет опубликована.
+Этот код создает первую итерацию модели прогнозирования и публикует итерацию в конечной точке прогнозирования. Для отправки запросов на прогнозирование можно использовать имя итерации. Итерация будет недоступной в конечной точке прогнозирования, пока она не будет опубликована.
 
 [!code-csharp[](~/cognitive-services-dotnet-sdk-samples/CustomVision/ImageClassification/Program.cs?name=snippet_train)]
 
@@ -104,7 +104,7 @@ Making a prediction:
 
 [!INCLUDE [clean-ic-project](includes/clean-ic-project.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь вы знаете, как выполнять в коде все этапы процесса классификатора изображений. В этом примере выполняется одна итерация обучения, но часто нужно несколько раз обучать и тестировать модель, чтобы сделать ее более точной.
 

@@ -11,12 +11,12 @@ author: iainfoulds
 manager: daveba
 ms.reviewer: sahenry
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a168f9bf58c4942fc0b76b9ffefc2b32b5bfbe5a
-ms.sourcegitcommit: ec2eacbe5d3ac7878515092290722c41143f151d
+ms.openlocfilehash: dd178f52665c77f03a48d87a9e73c9019390bb21
+ms.sourcegitcommit: 276c1c79b814ecc9d6c1997d92a93d07aed06b84
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75549369"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76154862"
 ---
 # <a name="quickstart-configure-azure-active-directory-self-service-password-reset"></a>Краткое руководство. Настройка самостоятельного сброса пароля в Azure Active Directory
 
@@ -27,7 +27,7 @@ ms.locfileid: "75549369"
 >
 > Если ваша группа ИТ пока не включила возможность самостоятельно сбрасывать пароль, обратитесь за помощью в службу поддержки.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 * Рабочий клиент Azure AD с как минимум включенной бесплатной пробной лицензией.
     * [Создайте ее бесплатно](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), если нужно.
@@ -71,7 +71,7 @@ ms.locfileid: "75549369"
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Чтобы отключить самостоятельный сброс пароля, найдите и выберите **Azure Active Directory** на портале Azure. Щелкните **Свойства** > **Сброс пароля**, а затем выберите **Нет** для параметра **Разрешен самостоятельный сброс пароля**. Когда все будет готово, щелкните **Сохранить**.
+Чтобы отключить самостоятельный сброс пароля, найдите и выберите **Azure Active Directory** на портале Azure. Щелкните **Сброс пароля**, а затем выберите **Нет** для параметра **Разрешен самостоятельный сброс пароля**. Когда все будет готово, щелкните **Сохранить**.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

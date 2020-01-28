@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Клиентская библиотека Анализа текста | Документация Майкрософт
+title: Краткое руководство. Клиентская библиотека Анализа текста версии 3 | Документация Майкрософт
 titleSuffix: Azure Cognitive Services
 description: В этом кратком руководстве описывается, как определить язык с помощью API Анализа текста из Azure Cognitive Services.
 services: cognitive-services
@@ -8,54 +8,48 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: quickstart
-ms.date: 12/17/2019
+ms.date: 01/15/2020
 ms.author: aahi
-zone_pivot_groups: programming-languages-set-five
-ms.openlocfilehash: edd4c09bb8cf724e293f1f947eab81f0f9f7a7c8
-ms.sourcegitcommit: f53cd24ca41e878b411d7787bd8aa911da4bc4ec
+zone_pivot_groups: programming-languages-set-six
+ms.openlocfilehash: 41e6828f03533bfd239f6408a580150e614eb5e7
+ms.sourcegitcommit: d9ec6e731e7508d02850c9e05d98d26c4b6f13e6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75832209"
+ms.lasthandoff: 01/20/2020
+ms.locfileid: "76281192"
 ---
-# <a name="quickstart-use-the-text-analytics-client-library"></a>Краткое руководство. Использование клиентской библиотеки Анализа текста
+# <a name="quickstart-use-the-text-analytics-client-library-v3"></a>Краткое руководство. Использование клиентской библиотеки Анализа текста версии 3
 
 Начните работу с клиентской библиотекой Анализа текста. Выполните приведенные здесь действия, чтобы установить пакет и протестировать пример кода для выполнения базовых задач.
 
-Используйте клиентскую библиотеку Анализа текста для выполнения следующих действий:
+Используйте клиентскую библиотеку Анализа текста версии `3.0-preview` для выполнения следующих действий.
 
-* Анализ мнений
+* Анализ тональности (общедоступная предварительная версия)
 * Определение языка
-* Распознавание сущностей
+* Распознавание именованных сущностей (общедоступная предварительная версия)
 * Извлечение ключевой фразы
 
 ::: zone pivot="programming-language-csharp"
 
-[!INCLUDE [C# quickstart](../includes/quickstarts/csharp.md)]
+[!INCLUDE [C# quickstart](../includes/quickstarts/v3/csharp.md)]
 
 ::: zone-end
 
 ::: zone pivot="programming-language-python"
 
-[!INCLUDE [Python quickstart](../includes/quickstarts/python-sdk.md)]
+[!INCLUDE [Python quickstart](../includes/quickstarts/v3/python-sdk.md)]
+
+::: zone-end
+
+::: zone pivot="programming-language-java"
+
+[!INCLUDE [Java quickstart](../includes/quickstarts/v3/java-sdk.md)]
 
 ::: zone-end
 
 ::: zone pivot="programming-language-nodejs"
 
-[!INCLUDE [NodeJS quickstart](../includes/quickstarts/nodejs-sdk.md)]
-
-::: zone-end
-
-::: zone pivot="programming-language-go"
-
-[!INCLUDE [Go quickstart](../includes/quickstarts/go-sdk.md)]
-
-::: zone-end
-
-::: zone pivot="programming-language-ruby"
-
-[!INCLUDE [Ruby quickstart](../includes/quickstarts/ruby-sdk.md)]
+[!INCLUDE [NodeJS quickstart](../includes/quickstarts/v3/nodejs-sdk.md)]
 
 ::: zone-end
 
@@ -70,7 +64,6 @@ ms.locfileid: "75832209"
 
 > [!div class="nextstepaction"]
 > [Изучение решения](../text-analytics-user-scenarios.md#analyze-recorded-inbound-customer-calls)
-
 
 * [Text Analytics overview](../overview.md) (Общие сведения об анализе текста)
 * [Пример. Как определить тональность с помощью Анализа текста](../how-tos/text-analytics-how-to-sentiment-analysis.md)

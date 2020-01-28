@@ -9,18 +9,18 @@ ms.date: 04/23/2019
 ms.topic: tutorial
 ms.service: iot-edge
 ms.custom: mvc
-ms.openlocfilehash: 8ed622ff928fa612e6d33ba0647ce258bf4c1c21
-ms.sourcegitcommit: 2c59a05cb3975bede8134bc23e27db5e1f4eaa45
+ms.openlocfilehash: c9a5138146897fdfed4661b85198cbff6b74bf5a
+ms.sourcegitcommit: 7221918fbe5385ceccf39dff9dd5a3817a0bd807
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/05/2020
-ms.locfileid: "75665208"
+ms.lasthandoff: 01/21/2020
+ms.locfileid: "76293867"
 ---
 # <a name="tutorial-develop-a-c-iot-edge-module-for-windows-devices"></a>Руководство. Разработка модулей IoT Edge на языке C# для устройств Windows
 
 Для разработки и развертывания кода C# на устройствах Windows с Azure IoT Edge используйте Visual Studio. 
 
-Вы можете использовать модули Azure IoT Edge для развертывания кода, который реализует бизнес-логику непосредственно на устройствах IoT Edge. В этом руководстве рассматриваются создание и развертывание модуля IoT Edge, который фильтрует данные датчика. В этом руководстве описано следующее.    
+Вы можете использовать модули Azure IoT Edge для развертывания кода, который реализует бизнес-логику непосредственно на устройствах IoT Edge. В этом руководстве рассматриваются создание и развертывание модуля IoT Edge, который фильтрует данные датчика. В этом руководстве описано следующее:    
 
 > [!div class="checklist"]
 > * Создать модуль IoT Edge на основе пакета SDK C# с помощью Visual Studio.
@@ -43,7 +43,7 @@ ms.locfileid: "75665208"
 | **Разработка Windows AMD64** | ![Разработка модулей C# для WinAMD64 в VS Code](./media/tutorial-c-module/green-check.png) | ![Разработка модулей C# для WinAMD64 в Visual Studio](./media/tutorial-c-module/green-check.png) |
 | **Отладка Windows AMD64** |   | ![Отладка модулей C# для WinAMD64 в Visual Studio](./media/tutorial-c-module/green-check.png) |
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Перед началом работы с этим руководством вам нужно настроить среду разработки, выполнив инструкции, приведенные в статье о [разработке модуля IoT Edge для устройств Windows](tutorial-develop-for-windows.md). После работы с этим руководством у вас должны быть готовы все необходимые компоненты: 
 
@@ -102,20 +102,21 @@ ms.locfileid: "75665208"
        "address": "<registry name>.azurecr.io"
      }
    }
+   ```
 
-3. Open the **.env** file in your module solution. (It's hidden by default in the Solution Explorer, so you might need to select the **Show All Files** button to display it.) The .env file should contain the same username and password variables that you saw in the deployment.template.json file. 
+3. Откройте **ENV**-файл в модуле решения. (Он скрыт по умолчанию в обозревателе решений. Чтобы отобразить его, следует нажать кнопку **Показать все файлы**.) ENV-файл должен содержать те же переменные имени пользователя и пароля, которые вы видели в файле deployment.template.json. 
 
-4. Add the **Username** and **Password** values from your Azure container registry. 
+4. Добавьте значения **имени пользователя** и **пароля**, скопированные из реестра контейнеров Azure. 
 
-5. Save your changes to the .env file.
+5. Сохраните изменения в ENV-файле.
 
-### Update the module with custom code
+### <a name="update-the-module-with-custom-code"></a>Обновление модуля с помощью пользовательского кода
 
-The default module code receives messages on an input queue and passes them along through an output queue. Let's add some additional code so that the module processes the messages at the edge before forwarding them to IoT Hub. Update the module so that it analyzes the temperature data in each message, and only sends the message to IoT Hub if the temperature exceeds a certain threshold. 
+Код стандартного модуля получает сообщения из очереди входящих сообщений и передает их через очередь исходящих сообщений. Давайте добавим еще немного кода, чтобы модуль обрабатывал сообщения на границе до передачи в Центр Интернета вещей. Обновите модуль таким образом, чтобы он анализировал данные о температуре, получаемые в каждом сообщении, и отправлял в Центр Интернета вещей только сообщения со сведениями о том, что температура превышает определенный порог. 
 
-1. In Visual Studio, open **CSharpModule** > **Program.cs**.
+1. В Visual Studio откройте **CSharpModule** > **Program.cs**.
 
-2. At the top of the **CSharpModule** namespace, add three **using** statements for types that are used later:
+2. В верхней части пространства имен **CSharpModule** добавьте три **инструкции** для типов, которые будут использоваться позже.
 
     ```csharp
     using System.Collections.Generic;     // For KeyValuePair<>

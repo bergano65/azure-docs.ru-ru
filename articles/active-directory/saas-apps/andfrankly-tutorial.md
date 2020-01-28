@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с &frankly | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с &frankly | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в приложении &frankly.
 services: active-directory
 documentationCenter: na
@@ -16,14 +16,14 @@ ms.topic: tutorial
 ms.date: 01/17/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c097c1f08bd72ed5795e4274c41e4eb48dbe34ad
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.openlocfilehash: 736cca668057f38431f91e36ff8fa97840274a38
+ms.sourcegitcommit: 5bbe87cf121bf99184cc9840c7a07385f0d128ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73152959"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76120729"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-frankly"></a>Руководство по Интеграция Azure Active Directory с &frankly
+# <a name="tutorial-azure-active-directory-integration-with-frankly"></a>Руководство. Интеграция Azure Active Directory с &frankly
 
 В этом руководстве описано, как интегрировать &frankly с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением &frankly обеспечивает следующие преимущества.
@@ -39,7 +39,7 @@ ms.locfileid: "73152959"
 
 Чтобы настроить интеграцию Azure AD с приложением &frankly, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* Подписка Azure AD. (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * подписка &frankly с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -100,15 +100,15 @@ ms.locfileid: "73152959"
 
 3. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
 
-    ![Правка базовой конфигурации SAML](common/edit-urls.png)
+    ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
 4. Если вы хотите настроить приложение в режиме, инициируемом **поставщиком удостоверений**, в разделе **Базовая конфигурация SAML** выполните следующие действия.
 
     ![Сведения о домене и URL-адресах для единого входа в приложение &frankly](common/idp-intiated.png)
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://andfrankly.com/saml/simplesaml/www/module.php/saml/sp/metadata.php/<tenant id>`.
+    а. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://andfrankly.com/saml/simplesaml/www/module.php/saml/sp/metadata.php/<tenant id>`.
 
-    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://andfrankly.com/saml/simplesaml/www/module.php/saml/sp/saml2-acs.php/<tenant id>`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://andfrankly.com/saml/simplesaml/www/module.php/saml/sp/saml2-acs.php/<tenant id>`.
 
 5. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
@@ -123,19 +123,15 @@ ms.locfileid: "73152959"
 
     ![Ссылка для скачивания сертификата](common/metadataxml.png)
 
-7. Скопируйте требуемый URL-адрес из раздела **Настройка &frankly**.
-
-    ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
-
-    а) URL-адрес входа.
-
-    б) Идентификатор Azure AD.
-
-    в) URL-адрес выхода.
 
 ### <a name="configure-frankly-single-sign-on"></a>Настройка единого входа в &frankly
 
-Чтобы настроить единый вход на стороне **&frankly**, нужно отправить скачанный **XML-файл метаданных федерации** и соответствующие URL-адреса, скопированные на портале Azure, [группе поддержки &frankly](mailto:help@andfrankly.com). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+Чтобы включить единый вход в &frankly:
+
+1. Войдите в &frankly. Перейдите в раздел **Учетная запись** > **Управление пользователями**.
+1. Измените механизм проверки подлинности с "по умолчанию" на **Корпоративный вход (SAML)** .
+1. Передайте **XML-файл метаданных федерации**, скачанный на шаге 6 в предыдущем разделе.
+1. Щелкните **Сохранить**.
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 

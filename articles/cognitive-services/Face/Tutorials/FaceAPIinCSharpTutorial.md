@@ -1,7 +1,7 @@
 ---
-title: Руководство по Определение лиц и отображение данных о них на изображении с использованием пакета SDK для .NET
+title: Руководство. Определение лиц и отображение данных о них на изображении с использованием пакета SDK для .NET
 titleSuffix: Azure Cognitive Services
-description: С помощью этого руководства вы создадите простое приложение Windows, которое использует API распознавания лиц для определения и выделения лиц на изображении.
+description: С помощью этого руководства вы создадите простое приложение Windows, которое использует службу "Распознавание лиц" для определения и выделения лиц на изображении.
 services: cognitive-services
 author: PatrickFarley
 manager: nitinme
@@ -10,22 +10,22 @@ ms.subservice: face-api
 ms.topic: tutorial
 ms.date: 12/05/2019
 ms.author: pafarley
-ms.openlocfilehash: a444294497b82f316e7407999f5203cd13878928
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.openlocfilehash: ab0ed56b953cf2c0d96fd2d91d9a3b09fddace72
+ms.sourcegitcommit: d29e7d0235dc9650ac2b6f2ff78a3625c491bbbf
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74977970"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76165922"
 ---
-# <a name="tutorial-create-a-windows-presentation-framework-wpf-app-to-display-face-data-in-an-image"></a>Руководство по созданию приложения Windows Presentation Framework (WPF) для отображения данных о лицах на изображении
+# <a name="tutorial-create-a-windows-presentation-framework-wpf-app-to-display-face-data-in-an-image"></a>Руководство. созданию приложения Windows Presentation Framework (WPF) для отображения данных о лицах на изображении
 
-Из этого руководства вы узнаете, как с помощью API Распознавания лиц Azure, поставляемого через клиентский пакет SDK для .NET, распознавать лица на изображении, а затем представлять эти данные в пользовательском интерфейсе. Вы создадите приложение WPF, которое распознает лица, рисует рамку вокруг них и отображает описание лица в строке состояния. 
+Из этого руководства вы узнаете, как с помощью службы "Распознавание лиц" Azure, поставляемого через клиентский пакет SDK для .NET, распознавать лица на изображении, а затем представлять эти данные в пользовательском интерфейсе. Вы создадите приложение WPF, которое распознает лица, рисует рамку вокруг них и отображает описание лица в строке состояния. 
 
 В этом учебнике описаны следующие процедуры.
 
 > [!div class="checklist"]
 > - создание приложения WPF;
-> - установка клиентской библиотеки API распознавания лиц;
+> - установка клиентской библиотеки службы Распознавания лиц;
 > - использование клиентской библиотеки для обнаружения лиц на изображении;
 > - выделение рамкой каждого обнаруженного лица;
 > - отображение описания выделенного лица в строке состояния.
@@ -34,12 +34,12 @@ ms.locfileid: "74977970"
 
 Полный пример кода доступен в репозитории [Cognitive Face CSharp sample](https://github.com/Azure-Samples/Cognitive-Face-CSharp-sample) на сайте GitHub.
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу. 
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/), прежде чем начинать работу. 
 
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-- Ключ подписки на API распознавания лиц. Вы можете получить ключ бесплатной пробной подписки на странице [Пробная версия Cognitive Services](https://azure.microsoft.com/try/cognitive-services/?api=face-api). Или следуйте инструкциям в руководстве по [созданию учетной записи Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account), чтобы получить подписку на API распознавания лиц и свой ключ. Затем [создайте переменные среды](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account#configure-an-environment-variable-for-authentication) для строки ключа и конечной точки службы с именами `FACE_SUBSCRIPTION_KEY` и `FACE_ENDPOINT` соответственно.
+- Ключ подписки на службу "Распознавание лиц". Вы можете получить ключ бесплатной пробной подписки на странице [Пробная версия Cognitive Services](https://azure.microsoft.com/try/cognitive-services/?api=face-api). Или следуйте инструкциям в руководстве по [созданию учетной записи Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account), чтобы получить подписку на службу "Распознавание лиц" и свой ключ. Затем [создайте переменные среды](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account#configure-an-environment-variable-for-authentication) для строки ключа и конечной точки службы с именами `FACE_SUBSCRIPTION_KEY` и `FACE_ENDPOINT` соответственно.
 - Любой выпуск [Visual Studio 2015 или 2017](https://www.visualstudio.com/downloads/).
 
 ## <a name="create-the-visual-studio-project"></a>Создание проекта Visual Studio
@@ -61,7 +61,7 @@ ms.locfileid: "74977970"
 
 [!code-xaml[](~/Cognitive-Face-CSharp-sample/FaceTutorialCS/FaceTutorialCS/MainWindow.xaml?name=snippet_xaml)]
 
-### <a name="create-the-main-class"></a>Создание главного класса
+### <a name="create-the-main-class"></a>Создание основного класса
 
 Откройте файл *MainWindow.xaml.cs* и добавьте пространства имен клиентской библиотеки, а также другие необходимые пространства имен. 
 
@@ -75,7 +75,7 @@ ms.locfileid: "74977970"
 
 [!code-csharp[](~/Cognitive-Face-CSharp-sample/FaceTutorialCS/FaceTutorialCS/MainWindow.xaml.cs?name=snippet_mainwindow_constructor)]
 
-Наконец, добавьте методы **BrowseButton_Click** и **FacePhoto_MouseMove** в класс. Они соответствуют обработчикам событий, объявленным в файле *MainWindow.xaml*. Метод **BrowseButton_Click** создает объект **OpenFileDialog**, что позволяет пользователю выбрать изображение в формате JPG. В главном окне будет выведено событие. Вы вставите оставшийся код для **BrowseButton_Click** и **FacePhoto_MouseMove** на последующих шагах. Обратите также внимание на ссылку `faceList` &mdash;список объектов **DetectedFace**. Здесь ваше приложение будет хранить и вызывать фактические данные о лицах.
+Наконец, добавьте методы **BrowseButton_Click** и **FacePhoto_MouseMove** в класс. Они соответствуют обработчикам событий, объявленным в файле *MainWindow.xaml*. Метод **BrowseButton_Click** создает объект **OpenFileDialog**, что позволяет пользователю выбрать изображение в формате JPG. В главном окне будет выведено событие. Вы вставите оставшийся код для **BrowseButton_Click** и **FacePhoto_MouseMove** на последующих шагах. Обратите также внимание на ссылку `faceList`&mdash;список объектов **DetectedFace**. Здесь ваше приложение будет хранить и вызывать фактические данные о лицах.
 
 [!code-csharp[](~/Cognitive-Face-CSharp-sample/FaceTutorialCS/FaceTutorialCS/MainWindow.xaml.cs?name=snippet_browsebuttonclick_start)]
 
@@ -117,14 +117,14 @@ ms.locfileid: "74977970"
 
 [!code-csharp[](~/Cognitive-Face-CSharp-sample/FaceTutorialCS/FaceTutorialCS/MainWindow.xaml.cs?name=snippet_mousemove_mid)]
 
-## <a name="run-the-app"></a>Запуск приложения
+## <a name="run-the-app"></a>Запустите приложение
 
 Запустите приложение и с помощью обзора найдите изображение, содержащее лицо. Подождите несколько секунд, чтобы служба распознавания лиц смогла ответить. На каждом лице на изображении отобразится красный прямоугольник. При наведении указателя мыши на прямоугольник вокруг лица в строке состояния появится описание лица.
 
 ![Снимок экрана, на котором обнаруженные лица выделены прямоугольниками](../Images/getting-started-cs-detected.png)
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 С помощью этого руководства вы изучили базовый процесс использования пакета SDK NET для службы распознавания лиц и создали приложение, в котором лица на изображениях отображаются и выделяются рамкой. Ознакомьтесь с дополнительными сведениями об определении лиц.
 

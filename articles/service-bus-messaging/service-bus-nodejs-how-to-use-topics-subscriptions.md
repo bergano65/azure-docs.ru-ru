@@ -1,6 +1,6 @@
 ---
-title: Использование разделов и подписок Служебной шины Azure с пакетом Node.js azure/service-bus
-description: Краткое руководство. Узнайте, как использовать разделы и подписки служебной шины в Azure в приложении Node.js.
+title: Использование разделов Служебной шины Azure с пакетом Node.js azure/service-bus
+description: Сведения о том, как использовать разделы и подписки Служебной шины в Azure в приложении Node.js с помощью пакета azure/service-bus.
 services: service-bus-messaging
 documentationcenter: nodejs
 author: axisc
@@ -12,14 +12,14 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: nodejs
 ms.topic: quickstart
-ms.date: 11/05/2019
+ms.date: 01/16/2020
 ms.author: aschhab
-ms.openlocfilehash: 3955b67bd0fd40eb903543a240795ed8bc36b3b0
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: e6ac3c74a0a8346ad8a6820c676224bfcba0e8b4
+ms.sourcegitcommit: 2a2af81e79a47510e7dea2efb9a8efb616da41f0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75462114"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76264447"
 ---
 # <a name="quickstart-how-to-use-service-bus-topics-and-subscriptions-with-nodejs-and-the-azure-sb-package"></a>Краткое руководство. Использование разделов и подписок служебной шины с Node.js и пакетом azure/sb
 > [!div class="op_multi_selector" title1="Язык программирования" title2="Пакет Node.js"]
@@ -40,7 +40,7 @@ ms.locfileid: "75462114"
 
 Дополнительные сведения о разделах и подписках см. в разделе [Дальнейшие действия](#next-steps).
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 - Подписка Azure. Для работы с этим учебником требуется учетная запись Azure. Вы можете активировать [преимущества подписчика Visual Studio или MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A85619ABF) или зарегистрироваться для получения [бесплатной учетной записи](https://azure.microsoft.com/free/?WT.mc_id=A85619ABF).
 - Выполните шаги из [краткого руководства по созданию раздела Служебной шины и подписок на него с помощью портала Azure](service-bus-quickstart-topics-subscriptions-portal.md), чтобы создать **пространство имен** Служебной шины и получить **строку подключения**.
 

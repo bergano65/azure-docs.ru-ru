@@ -1,7 +1,7 @@
 ---
-title: 'Пример: Добавление лиц в PersonGroup — API распознавания лиц'
+title: Пример Добавление лиц в PersonGroup (Распознавание лиц)
 titleSuffix: Azure Cognitive Services
-description: В этом руководстве показано, как добавить большое число людей и лиц в объект PersonGroup с помощью API "Распознавание лиц" в Azure Cognitive Services.
+description: В этом руководстве показано, как добавить большое число людей и лиц в объект PersonGroup с помощью службы "Распознавание лиц" в Azure Cognitive Services.
 services: cognitive-services
 author: SteveMSFT
 manager: nitinme
@@ -10,16 +10,16 @@ ms.subservice: face-api
 ms.topic: sample
 ms.date: 04/10/2019
 ms.author: sbowles
-ms.openlocfilehash: 2f8a6272b02aea5948be79ddf72d105c4f72bb33
-ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
+ms.openlocfilehash: 240905d538afc5c0f4b7f0e0bf400fac23c3183f
+ms.sourcegitcommit: d29e7d0235dc9650ac2b6f2ff78a3625c491bbbf
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73744244"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76169833"
 ---
 # <a name="add-faces-to-a-persongroup"></a>Добавление лиц в PersonGroup
 
-В этом руководстве показано, как добавить большое число людей и лиц в объект PersonGroup. Эта же стратегия применяется к объектам LargePersonGroup, FaceList и LargeFaceList. Пример написан на языке C# с использованием клиентской библиотеки .NET для API распознавания лиц службы Azure Cognitive Services.
+В этом руководстве показано, как добавить большое число людей и лиц в объект PersonGroup. Эта же стратегия применяется к объектам LargePersonGroup, FaceList и LargeFaceList. Пример написан на языке C# с использованием клиентской библиотеки .NET для службы "Распознавание лиц" в Azure Cognitive Services.
 
 ## <a name="step-1-initialization"></a>Шаг 1. Инициализация
 
@@ -60,7 +60,7 @@ static async Task WaitCallLimitPerSecondAsync()
 
 ## <a name="step-2-authorize-the-api-call"></a>Шаг 2. Авторизация вызова API
 
-Если вы используете клиентскую библиотеку, вы должны передать в конструктор класса **FaceClient** ключ подписки. Например:
+Если вы используете клиентскую библиотеку, вы должны передать в конструктор класса **FaceClient** ключ подписки. Пример:
 
 ```csharp
 private readonly IFaceClient faceClient = new FaceClient(
@@ -87,7 +87,7 @@ await faceClient.LargePersonGroup.CreateAsync(personGroupId, personGroupName);
 Данные людей создаются одновременно. Кроме того, во избежание превышения предельного количества вызовов применяется `await WaitCallLimitPerSecondAsync()`.
 
 ```csharp
-CreatePersonResult[] persons = new CreatePersonResult[PersonCount];
+Person[] persons = new Person[PersonCount];
 Parallel.For(0, PersonCount, async i =>
 {
     await WaitCallLimitPerSecondAsync();

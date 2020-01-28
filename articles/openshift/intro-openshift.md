@@ -1,20 +1,18 @@
 ---
-title: Общие сведения об Azure Red Hat OpenShift | Документация Майкрософт
+title: Общие сведения об Azure Red Hat OpenShift
 description: Узнайте о возможностях и преимуществах службы Microsoft Azure Red Hat OpenShift при развертывании и администрировании контейнерных приложений.
-services: container-service
 author: jimzim
 ms.author: jzim
 ms.service: container-service
-manager: jeconnoc
 ms.topic: overview
 ms.date: 05/08/2019
 ms.custom: mvc
-ms.openlocfilehash: f76f5d4dc84d1f8827248ab8399c1ae450a643a0
-ms.sourcegitcommit: 08d3a5827065d04a2dc62371e605d4d89cf6564f
+ms.openlocfilehash: 4be388eec3851154fd0f6af37d03a468fc52197b
+ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68620154"
+ms.lasthandoff: 01/19/2020
+ms.locfileid: "76276072"
 ---
 # <a name="azure-red-hat-openshift"></a>Azure Red Hat OpenShift
 
@@ -46,7 +44,7 @@ Azure Red Hat OpenShift расширяет платформу [Kubernetes](https
 
 Служба Azure Red Hat OpenShift была сертифицирована Cloud Native Computing Foundation (CNCF) в качестве согласованной с Kubernetes.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Ознакомьтесь с необходимыми условиями для Azure Red Hat OpenShift:
 

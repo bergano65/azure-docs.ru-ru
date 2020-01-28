@@ -12,15 +12,15 @@ ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.topic: tutorial
-ms.date: 12/27/2019
+ms.date: 01/16/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c8a8f3895f41ac987b934b86f8d646b281c37c93
-ms.sourcegitcommit: 5925df3bcc362c8463b76af3f57c254148ac63e3
+ms.openlocfilehash: 79f5284f95f6157c70461179177179a9fbee4fe0
+ms.sourcegitcommit: 7221918fbe5385ceccf39dff9dd5a3817a0bd807
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75561998"
+ms.lasthandoff: 01/21/2020
+ms.locfileid: "76293697"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-servicenow"></a>Руководство. интеграции единого входа Azure Active Directory с приложением ServiceNow
 
@@ -30,13 +30,13 @@ ms.locfileid: "75561998"
 * Включение автоматического входа пользователей в ServiceNow с помощью учетных записей Azure AD.
 * Централизованное управление учетными записями через портал Azure.
 
-Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
+Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье о [едином входе в приложения с помощью Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы приступить к работе, потребуется следующее:
+Чтобы приступить к работе, потребуется следующее.
 
-* подписка Azure AD; Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
+* Подписка Azure AD. Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
 * Подписка ServiceNow с поддержкой единого входа.
 * Экземпляр или клиент ServiceNow версии Calgary или более поздней (для ServiceNow).
 * Экземпляр ServiceNow Express версии Helsinki или более поздней (для ServiceNow Express).
@@ -46,9 +46,15 @@ ms.locfileid: "75561998"
 
 ## <a name="scenario-description"></a>Описание сценария
 
-В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде. ServiceNow поддерживает единый вход, инициируемый **поставщиком услуг**, и [автоматическую подготовку пользователей](servicenow-provisioning-tutorial.md).
+В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде. 
 
-Теперь для мобильного приложения ServiceNow Classic (Mobile) можно настроить Azure AD для обеспечения единого входа. Поддерживаются пользователи Android и iOS. В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде.
+* ServiceNow поддерживает единый вход, инициированный **пакетом обновления**.
+
+* ServiceNow поддерживает [автоматическую подготовку пользователей](servicenow-provisioning-tutorial.md).
+
+* После настройки ServiceNow можно применять элементы управления сеансами, которые защищают от хищения и несанкционированного доступа к конфиденциальным данным вашей организации в режиме реального времени. Элементы управления сеансом являются расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-aad).
+
+* Теперь для мобильного приложения ServiceNow Classic (Mobile) можно настроить Azure AD для обеспечения единого входа. Поддерживаются пользователи Android и iOS. В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде.
 
 ## <a name="add-servicenow-from-the-gallery"></a>Добавление ServiceNow из коллекции.
 
@@ -118,7 +124,7 @@ ms.locfileid: "75561998"
    1. Для параметра **Имя** введите `B.Simon`.  
    1. В поле **Имя пользователя** введите значение username@companydomain.extension. Например, `B.Simon@contoso.com`.
    1. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
-   1. Нажмите кнопку **Создать**.
+   1. Нажмите кнопку **создания**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -460,3 +466,7 @@ ms.locfileid: "75561998"
 - [Настройка подготовки пользователей](servicenow-provisioning-tutorial.md)
 
 - [Попробуйте использовать ServiceNow с Azure AD](https://aad.portal.azure.com)
+
+- [Что такое управление сеансами в Microsoft Cloud App Security?](https://docs.microsoft.com/cloud-app-security/protect-servicenow)
+
+- [Защита приложений с помощью функции управления настройками условного доступа для приложений в Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-intro-aad)

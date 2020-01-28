@@ -3,18 +3,18 @@ title: Краткое руководство. Реализация интера�
 description: Узнайте, как создать демонстрационное веб-приложение для интерактивного поиска на карте с помощью веб-пакета SDK для Microsoft Azure Maps.
 author: walsehgal
 ms.author: v-musehg
-ms.date: 11/08/2019
+ms.date: 1/14/2020
 ms.topic: quickstart
 ms.service: azure-maps
 services: azure-maps
 manager: timlt
 ms.custom: mvc
-ms.openlocfilehash: 5f11fa4fce38b125e21564b4cfbe4582e55a7b64
-ms.sourcegitcommit: f9601bbccddfccddb6f577d6febf7b2b12988911
+ms.openlocfilehash: 4081dd383fc0e7378bc8c8438781c13e6a34e075
+ms.sourcegitcommit: 276c1c79b814ecc9d6c1997d92a93d07aed06b84
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2020
-ms.locfileid: "75910679"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76156443"
 ---
 # <a name="quickstart-create-an-interactive-search-map-by-using-azure-maps"></a>Краткое руководство. Создание карты с интерактивным поиском с помощью службы Azure Maps
 
@@ -22,7 +22,7 @@ ms.locfileid: "75910679"
 * создание учетной записи службы Azure Maps;
 * получение ключа учетной записи для демоверсии веб-приложения.
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 ## <a name="sign-in-to-the-azure-portal"></a>Вход на портал Azure
 
@@ -61,7 +61,7 @@ ms.locfileid: "75910679"
 
 ## <a name="download-the-application"></a>Скачивание приложения
 
-1. Скачайте файл [interactiveSearch.html](https://github.com/Azure-Samples/AzureMapsCodeSamples/blob/master/AzureMapsCodeSamples/Tutorials/interactiveSearch.html) или скопируйте его содержимое.
+1. Перейдите в [interactiveSearch.html](https://github.com/Azure-Samples/AzureMapsCodeSamples/blob/master/AzureMapsCodeSamples/Tutorials/interactiveSearch.html) и щелкните его, чтобы просмотреть содержимое в пользовательском интерфейсе GitHub. Щелкните правой кнопкой мыши **Необработанный** и скопируйте содержимое файла или нажмите кнопку "Сохранить как", чтобы скачать файл.
 2. Сохраните его локально как файл **AzureMapDemo.html**. Откройте в текстовом редакторе.
 3. Найдите строку `<Your Azure Maps Key>`. Замените ее значением **Первичный ключ**, полученным в предыдущем разделе.
 

@@ -11,13 +11,13 @@ ms.service: dms
 ms.workload: data-services
 ms.custom: seo-lt-2019
 ms.topic: quickstart
-ms.date: 12/17/2019
-ms.openlocfilehash: 64d4998e287f9981c666dee54fc3b67886791bbf
-ms.sourcegitcommit: f2149861c41eba7558649807bd662669574e9ce3
+ms.date: 01/21/2019
+ms.openlocfilehash: 81039aa4aa37f9587db887beadcdb6d263ec6a74
+ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75708297"
+ms.lasthandoff: 01/19/2020
+ms.locfileid: "76274809"
 ---
 # <a name="quickstart-create-a-hybrid-mode-instance-with-azure-portal--azure-database-migration-service"></a>Краткое руководство. Создание экземпляра в гибридном режиме с помощью портала Azure и Azure Database Migration Service
 
@@ -73,9 +73,9 @@ ms.locfileid: "75708297"
     - Выберите **расположение**, наиболее близкое к исходному или целевому серверу.
     - Для параметра **Режим службы** выберите **Гибридная служба (предварительная версия)** .
 
-           ![Create migration service - basics](media/quickstart-create-data-migration-service-hybrid-portal/dms-create-service-basics.png)
+         ![Создание службы миграции: основы](media/quickstart-create-data-migration-service-hybrid-portal/dms-create-service-basics.png)
 
-4. Выберите **Review + create** (Просмотреть и создать).
+4. Выберите **Review + create** (Просмотреть и создать).
 
 5. На вкладке **Просмотр и создание** просмотрите условия, проверьте другие предоставленные сведения, а затем выберите **Создать**.
 
@@ -186,7 +186,7 @@ ms.locfileid: "75708297"
 > [!IMPORTANT]
 > В этом сценарии предполагается, что у вас есть экземпляр Azure Database Migration Service в гибридном режиме и что используемая учетная запись Azure имеет права на создание AdApp в клиенте и изменение RBAC в подписке.
 
-Просто заполните параметры в верхней части скрипта, а затем выполните скрипт из экземпляра Администратора PowerShell.
+Заполните параметры в верхней части скрипта, а затем выполните скрипт из экземпляра Администратора PowerShell.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory со Snowflake | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory со Snowflake | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Snowflake.
 services: active-directory
 documentationCenter: na
@@ -16,14 +16,14 @@ ms.topic: tutorial
 ms.date: 12/27/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7acd4b8014aad7b70f1a67c91368477599a97901
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.openlocfilehash: fda662d7de66bfb56feba8f405bd0e52c4cf3e76
+ms.sourcegitcommit: 5bbe87cf121bf99184cc9840c7a07385f0d128ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74972568"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76121460"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-snowflake"></a>Руководство по Интеграция Azure Active Directory со Snowflake
+# <a name="tutorial-azure-active-directory-integration-with-snowflake"></a>Руководство. Интеграция Azure Active Directory со Snowflake
 
 В этом руководстве описано, как интегрировать Snowflake с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Snowflake обеспечивает следующие преимущества.
@@ -39,7 +39,7 @@ ms.locfileid: "74972568"
 
 Чтобы настроить интеграцию Azure AD с Snowflake, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* Подписка Azure AD. (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * Подписка Snowflake с поддержкой единого входа
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -101,21 +101,23 @@ ms.locfileid: "74972568"
 
 3. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
 
-    ![Правка базовой конфигурации SAML](common/edit-urls.png)
+    ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
 4. Если вы хотите настроить приложение в режиме, инициируемом **поставщиком удостоверений**, в разделе **Базовая конфигурация SAML** выполните следующие действия.
 
     ![Сведения о домене и URL-адресах единого входа приложения Snowflake](common/idp-intiated.png)
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<SNOWFLAKE-URL>.snowflakecomputing.com`.
+    а. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<SNOWFLAKE-URL>.snowflakecomputing.com`.
 
-    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<SNOWFLAKE-URL>.snowflakecomputing.com/fed/login`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<SNOWFLAKE-URL>.snowflakecomputing.com/fed/login`.
 
     c. Чтобы настроить приложение для работы в режиме, инициируемом пакетом обновления, щелкните **Задать дополнительные URL-адреса** и выполните следующее действие.
 
     ![Сведения о домене и URL-адресах единого входа приложения Snowflake](common/metadata-upload-additional-signon.png)
 
     В текстовом поле **URL-адрес входа** введите URL-адрес в формате `https://<SNOWFLAKE-URL>.snowflakecomputing.com`.
+    
+    В текстовом поле **URL-адрес выхода** введите URL-адрес в следующем формате: `https://<SNOWFLAKE-URL>.snowflakecomputing.com/fed/logout`
 
     > [!NOTE]
     > Эти значения приведены для примера. Замените их фактическими значениями идентификатора, URL-адреса ответа и URL-адреса входа. Чтобы получить их, обратитесь к [группе поддержки клиентов Snowflake](https://support.snowflake.net/s/). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
@@ -128,11 +130,11 @@ ms.locfileid: "74972568"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
-    б) Идентификатор Azure AD.
+    b. Идентификатор Azure AD.
 
-    в) URL-адрес выхода.
+    c. URL-адрес выхода.
 
 ### <a name="configure-snowflake-single-sign-on"></a>Настройка единого входа в Snowflake
 

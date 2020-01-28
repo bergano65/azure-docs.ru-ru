@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 02/15/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e03aa99e53f4aa2c646dc425a18d848539d537b0
-ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
+ms.openlocfilehash: effd0593384190eb1a1cf261305dd61818c3d0b0
+ms.sourcegitcommit: 5bbe87cf121bf99184cc9840c7a07385f0d128ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75768339"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76120841"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-hackerone"></a>Руководство. Интеграция Azure Active Directory с HackerOne
 
@@ -35,11 +35,11 @@ ms.locfileid: "75768339"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с HackerOn, вам потребуется:
 
-* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* Подписка Azure AD. (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * подписка на HackerOne с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -101,13 +101,13 @@ ms.locfileid: "75768339"
 
 3. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
 
-    ![Правка базовой конфигурации SAML](common/edit-urls.png)
+    ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
 4. В разделе **Базовая конфигурация SAML** выполните приведенные ниже действия.
 
     ![Сведения о домене и URL-адресах единого входа приложения HackerOne](common/sp-identifier.png)
 
-    а. Введите в текстовое поле **URL-адрес для входа** следующий текст: `https://hackerone.com/users/saml/auth`.
+    а. Введите в текстовое поле **URL-адрес для входа** следующий текст: `https://hackerone.com/users/saml/sign_in?email=<configured domain>`.
 
     b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес следующего вида: `hackerone.com`.
 
@@ -155,7 +155,13 @@ ms.locfileid: "75768339"
 
     а. Щелкните **Run test**(Выполнить проверку).
 
-    b. Если поле **Status** (Состояние) имеет значение **Last test status: created** (Состояние при последней проверке: создан), обратитесь в [службу поддержки HackerOne](mailto:support@hackerone.com), чтобы запросить проверку своей конфигурации.
+6. Если тест завершился успешно, а в поле **Состояние** отображается **Состояние последнего теста: успешно выполнено**, нажмите кнопку **Запрос проверки**, чтобы отправить в HackerOne для утверждения.
+
+    ![Отправка в HackerOne для утверждения](./media/hackerone-tutorial/tutorial-hackerone-006.png)
+
+7. После того как HackerOne утвердит параметры, можно нажать кнопку **Миграция пользователей**, чтобы требовать проверку подлинности единого входа для всех пользователей.
+
+    ![Включение SAML](./media/hackerone-tutorial/tutorial-hackerone-007.png)
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
@@ -174,7 +180,7 @@ ms.locfileid: "75768339"
     ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
     а. В поле **Имя** введите **BrittaSimon**.
-  
+
     b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.
 

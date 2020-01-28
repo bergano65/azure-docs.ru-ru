@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция единого входа Azure Active Directory с Concur | Документация Майкрософт
+title: Руководство. Интеграция единого входа Azure Active Directory с Concur | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Concur.
 services: active-directory
 documentationCenter: na
@@ -11,19 +11,18 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
-ms.date: 08/13/2019
+ms.date: 01/16/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: de806e764b4a73414604fe6ea64b03aa96666f5f
-ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
+ms.openlocfilehash: 0cfe569fde8f290c9272520630c2e903e770f223
+ms.sourcegitcommit: 7221918fbe5385ceccf39dff9dd5a3817a0bd807
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68988406"
+ms.lasthandoff: 01/21/2020
+ms.locfileid: "76293714"
 ---
-# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-concur"></a>Руководство по Интеграция единого входа Azure Active Directory с Concur
+# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-concur"></a>Руководство. Интеграция единого входа Azure Active Directory с Concur
 
 В этом руководстве описано, как интегрировать Concur с Azure Active Directory (Azure AD). Интеграция Concur с Azure AD обеспечивает следующие возможности.
 
@@ -35,9 +34,9 @@ ms.locfileid: "68988406"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы приступить к работе, потребуется следующее:
+Чтобы приступить к работе, потребуется следующее.
 
-* подписка Azure AD Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
+* Подписка Azure AD. Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
 * Подписка Concur с поддержкой единого входа
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -46,6 +45,7 @@ ms.locfileid: "68988406"
 
 * Concur поддерживает единый вход, инициированный **поставщиком услуг**.
 * Concur поддерживает **JIT**-подготовку пользователей.
+* После настройки Concur можно применять элементы управления сеансами, которые защищают от хищения и несанкционированного доступа к конфиденциальным данным вашей организации в режиме реального времени. Элементы управления сеансом являются расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-aad).
 
 ## <a name="adding-concur-from-the-gallery"></a>Добавление Concur из коллекции
 
@@ -69,7 +69,7 @@ ms.locfileid: "68988406"
     1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить пользователю B.Simon использовать единый вход Azure AD.
 2. **[Настройка единого входа в Concur](#configure-concur-sso)** необходима, чтобы настроить параметры единого входа на стороне приложения.
     1. **[Создание тестового пользователя Concur](#create-concur-test-user)** требуется для того, чтобы в Concur существовал пользователь B.Simon, связанный с одноименным пользователем в Azure AD.
-3. **[Проверка единого входа](#test-sso)** необходима, чтобы убедиться в корректной работе конфигурации.
+3. **[Проверка единого входа](#test-sso)** позволяет убедиться в правильности конфигурации.
 
 ## <a name="configure-azure-ad-sso"></a>Настройка единого входа Azure AD
 
@@ -79,11 +79,11 @@ ms.locfileid: "68988406"
 1. На странице **Выбрать метод единого входа** выберите **SAML**.
 1. На странице **Настройка единого входа с помощью SAML** щелкните значок "Изменить" (значок пера), чтобы открыть диалоговое окно **Базовая конфигурация SAML** и изменить параметры.
 
-   ![Правка базовой конфигурации SAML](common/edit-urls.png)
+   ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
 1. В разделе **Базовая конфигурация SAML** выполните приведенные ниже действия.
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://www.concursolutions.com/UI/SSO/<OrganizationId>`.
+    а. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://www.concursolutions.com/UI/SSO/<OrganizationId>`.
 
     b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://<customer-domain>.concursolutions.com`.
 
@@ -114,7 +114,7 @@ ms.locfileid: "68988406"
 
 В этом разделе описано, как включить единый вход в Azure для пользователя B.Simon, предоставив этому пользователю доступ к Concur.
 
-1. На портале Azure выберите **Корпоративные приложения**, а затем —**Все приложения**.
+1. На портале Azure выберите **Корпоративные приложения**, а затем — **Все приложения**.
 1. В списке приложений выберите **Concur**.
 1. На странице "Обзор" приложения найдите раздел **Управление** и выберите **Пользователи и группы**.
 
@@ -147,11 +147,14 @@ ms.locfileid: "68988406"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 
 - [Попробуйте возможности Concur с помощью Azure AD](https://aad.portal.azure.com)
 
+- [Что такое управление сеансами в Microsoft Cloud App Security?](https://docs.microsoft.com/cloud-app-security/proxy-intro-aad)
+
+- [Защита приложений с помощью функции управления настройками условного доступа для приложений в Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-intro-aad)

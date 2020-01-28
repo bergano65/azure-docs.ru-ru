@@ -1,5 +1,5 @@
 ---
-title: 'Пример: Использование функции увеличения масштаба (API распознавания лиц)'
+title: Пример Использование функции увеличения масштаба (Распознавание лиц)
 titleSuffix: Azure Cognitive Services
 description: В этом руководстве описывается, как перейти от существующих объектов PersonGroup и FaceList к более крупным объектам LargePersonGroup и LargeFaceList.
 services: cognitive-services
@@ -10,27 +10,27 @@ ms.subservice: face-api
 ms.topic: sample
 ms.date: 05/01/2019
 ms.author: sbowles
-ms.openlocfilehash: 976baaef11251715218ecea71986f08ec5f72996
-ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
+ms.openlocfilehash: dc0964e40e9214e414d865c06006f1d36e97eeb2
+ms.sourcegitcommit: d29e7d0235dc9650ac2b6f2ff78a3625c491bbbf
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73743728"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76169785"
 ---
-# <a name="example-use-the-large-scale-feature"></a>Пример: Использование функции для увеличения масштаба
+# <a name="example-use-the-large-scale-feature"></a>Пример Использование функции для увеличения масштаба
 
 Это руководство содержит подробное описание процессов, позволяющих перейти от существующих объектов PersonGroup и FaceList к крупным объектам LargePersonGroup и LargeFaceList соответственно. Здесь мы продемонстрируем весь процесс миграции. Для его понимания вам потребуется знакомство с объектами PersonGroup и FaceList, операцией [Train](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/599ae2d16ac60f11b48b5aa4) и функциями распознавания лиц. Чтобы получить дополнительные сведения по этим темам, обратитесь к концептуальному руководству по [распознаванию лиц](../concepts/face-recognition.md).
 
 LargePersonGroup и LargeFaceList вместе называются крупномасштабными операциями. LargePersonGroup может охватывать до миллиона человек и до 248 лиц для каждого из них. LargeFaceList может охватывать до 1 млн лиц. Крупномасштабные операции аналогичны обычным PersonGroup и FaceList, но имеют ряд отличий из-за новой архитектуры. 
 
-Примеры написаны на языке C# с использованием клиентской библиотеки API Распознавания лиц службы Azure Cognitive Services.
+Примеры написаны на языке C# с использованием клиентской библиотеки службы "Распознавание лиц" в Azure Cognitive Services.
 
 > [!NOTE]
 > Чтобы обеспечить производительность поиска лиц для операций Identification и FindSimilar в больших масштабах, добавьте операцию Train для предварительной обработки LargeFaceList и LargePersonGroup. Время обучения составляет от нескольких секунд до получаса в зависимости от фактического размера. В период обучения можно выполнять операции Identification и FindSimilar, если перед этим уже была выполнена успешная операция обучения. Недостаток заключается в том, что новые данные добавленных людей и лиц не появятся в результатах, пока не будет завершено обучение после перехода на крупномасштабные операции.
 
 ## <a name="step-1-initialize-the-client-object"></a>Шаг 1. Инициализация объекта клиента
 
-Если вы используете клиентскую библиотеку API "Распознавание лиц", ключ и конечная точка подписки передаются через конструктор класса FaceClient. Например:
+Если вы используете клиентскую библиотеку службы "Распознавание лиц", ключ и конечная точка подписки передаются через конструктор класса FaceClient. Пример:
 
 ```csharp
 string SubscriptionKey = "<Subscription Key>";
@@ -64,10 +64,10 @@ faceClient.Endpoint = SubscriptionEndpoint
 | Интерфейсы API FaceList | Интерфейсы API LargeFaceList |
 |:---:|:---:|
 | Создание | Создание |
-| Удаление | Удаление |
+| DELETE | DELETE |
 | Получить | Получить |
-| список | список |
-| Обновление | Обновление |
+| Список | Список |
+| Update | Update |
 | - | Обучение |
 | - | Get Training Status |
 
@@ -268,7 +268,7 @@ private static void TrainTimerOnElapsed(string largePersonGroupId, int timeInter
 - LargePersonGroup и LargeFaceList работают аналогично PersonGroup и FaceList, за исключением того, что перед операцией LargeFaceList нужно выполнять операцию Train.
 - Выберите стратегию обучения, соответствующую сценарию динамического обновления данных в крупномасштабных наборах данных.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Следуйте руководству, чтобы узнать, как добавить лица в PersonGroup или выполнить операцию Identify для PersonGroup.
 

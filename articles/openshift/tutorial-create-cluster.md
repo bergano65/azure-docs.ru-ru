@@ -1,19 +1,17 @@
 ---
-title: Руководство по созданию кластера Azure Red Hat OpenShift | Документация Майкрософт
+title: Руководство. Создание кластера Azure Red Hat OpenShift
 description: Узнайте, как создать кластер Microsoft Azure Red Hat OpenShift с помощью Azure CLI.
-services: container-service
 author: jimzim
 ms.author: jzim
-manager: jeconnoc
 ms.topic: tutorial
 ms.service: container-service
 ms.date: 11/04/2019
-ms.openlocfilehash: 813d3115d8df7227bde89a73a73bcae270f09bbb
-ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
+ms.openlocfilehash: 0e6aecccc19572ee980feb4d816fae1f2b0101b7
+ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75771348"
+ms.lasthandoff: 01/19/2020
+ms.locfileid: "76274887"
 ---
 # <a name="tutorial-create-an-azure-red-hat-openshift-cluster"></a>Руководство. Создание кластера Azure Red Hat OpenShift
 
@@ -30,7 +28,7 @@ ms.locfileid: "75771348"
 > * [Масштабирование кластера Azure Red Hat OpenShift](tutorial-scale-cluster.md)
 > * [Удаление кластера Azure Red Hat OpenShift](tutorial-delete-cluster.md)
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 > [!IMPORTANT]
 > Для этого учебника требуется Azure CLI 2.0.65.
@@ -190,7 +188,7 @@ URL-адрес входа для кластера будет `https://`, за к
 2. Щелкните объект регистрации своего приложения.
 3. Щелкните **Добавить URI перенаправления**.
 4. Убедитесь, что для параметра **Тип** установлено значение **Веб** и задайте **URI перенаправления**, используя следующий шаблон: `https://<public host name>/oauth2callback/Azure%20AD`. Например: `https://openshift.xxxxxxxxxxxxxxxxxxxx.eastus.azmosa.io/oauth2callback/Azure%20AD`
-5. Нажмите кнопку **Сохранить**
+5. Щелкните **Сохранить**.
 
 ## <a name="step-4-sign-in-to-the-openshift-console"></a>Шаг 4. Войдите в консоль OpenShift
 

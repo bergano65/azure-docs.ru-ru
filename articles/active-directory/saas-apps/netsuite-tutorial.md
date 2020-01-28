@@ -12,15 +12,15 @@ ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.topic: tutorial
-ms.date: 01/10/2020
+ms.date: 01/16/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ad7065ba6378bcb383e67b4a58d7c195e88679ca
-ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
+ms.openlocfilehash: a9be353e6a030708ea0b9939689d8669506d3b80
+ms.sourcegitcommit: 7221918fbe5385ceccf39dff9dd5a3817a0bd807
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75890680"
+ms.lasthandoff: 01/21/2020
+ms.locfileid: "76289039"
 ---
 # <a name="tutorial-integrate-azure-ad-single-sign-on-sso-with-netsuite"></a>Руководство. Интеграция единого входа Azure AD с NetSuite
 
@@ -32,11 +32,11 @@ ms.locfileid: "75890680"
 
 Чтобы узнать больше об интеграции приложений SaaS с Azure AD, прочитайте статью [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы приступить к работе, потребуется следующее:
+Чтобы приступить к работе, потребуется следующее.
 
-* подписка Azure AD; Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
+* Подписка Azure AD. Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
 * Подписка NetSuite с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -48,6 +48,7 @@ NetSuite поддерживает следующие технологии:
 * единый вход, инициированный поставщиком удостоверений;
 * JIT-подготовка пользователей;
 * [автоматическая подготовка пользователей](NetSuite-provisioning-tutorial.md).
+* После настройки NetSuite можно применять элементы управления сеансами, которые защищают от хищения и несанкционированного доступа к конфиденциальным данным вашей организации в режиме реального времени. Элементы управления сеансом являются расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-aad).
 
 > [!NOTE]
 > Так как идентификатор этого приложения является фиксированным строковым значением, в одном клиенте можно настроить только один экземпляр.
@@ -84,7 +85,7 @@ NetSuite поддерживает следующие технологии:
 1. В области **Выбрать метод единого входа** выберите **SAML**.
 1. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить** (значок карандаша) рядом с областью **Базовая конфигурация SAML**.
 
-   ![Правка базовой конфигурации SAML](common/edit-urls.png)
+   ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
 1. В разделе **Базовая конфигурация SAML** введите в текстовое поле **URL-адрес ответа** URL-адрес в одном из следующих форматов:
 
@@ -102,7 +103,7 @@ NetSuite поддерживает следующие технологии:
 
 1. Приложение NetSuite ожидает проверочные утверждения SAML в определенном формате, который требует добавить настраиваемые сопоставления атрибутов в конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию.
 
-    ![image](common/default-attributes.png)
+    ![Изображение](common/default-attributes.png)
 
 1. В дополнение к описанному выше приложение NetSuite ожидает несколько дополнительных атрибутов в ответе SAML, как показано ниже. Эти атрибуты также заранее заполнены, но вы можете изменить их в соответствии со своими требованиями.
 
@@ -134,13 +135,13 @@ NetSuite поддерживает следующие технологии:
    а. В поле **Имя** введите **B.Simon**.  
    b. В поле **Имя пользователя** введите username@companydomain.extension (например, B.Simon@contoso.com).  
    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.  
-   d. Нажмите кнопку **Создать**.
+   d. Нажмите кнопку **создания**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
 В этом разделе описано, как разрешить пользователю B.Simon использовать единый вход Azure, предоставив этому пользователю доступ к NetSuite.
 
-1. На портале Azure выберите **Корпоративные приложения**, а затем —**Все приложения**.
+1. На портале Azure выберите **Корпоративные приложения**, а затем — **Все приложения**.
 1. В списке приложений выберите **NetSuite**.
 1. На панели обзора найдите раздел **Управление** и щелкните ссылку **Пользователи и группы**.
 
@@ -265,3 +266,6 @@ NetSuite поддерживает следующие технологии:
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 - [Попробуйте использовать NetSuite с Azure AD](https://aad.portal.azure.com/)
+- [Что такое управление сеансами в Microsoft Cloud App Security?](https://docs.microsoft.com/cloud-app-security/proxy-intro-aad)
+
+- [Защита приложений с помощью функции управления настройками условного доступа для приложений в Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-intro-aad)

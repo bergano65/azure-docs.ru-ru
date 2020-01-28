@@ -1,5 +1,5 @@
 ---
-title: Что такое подготовка удостоверений в Azure AD? | Документация Майкрософт
+title: Что такое подготовка удостоверений в Azure AD? | Документы Майкрософт
 description: В этой статье приведены рекомендации по подготовке удостоверений.
 services: active-directory
 author: billmath
@@ -11,12 +11,12 @@ ms.date: 12/05/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 166fb9320672e63b8c53717133dc61aa93f57a62
-ms.sourcegitcommit: 9405aad7e39efbd8fef6d0a3c8988c6bf8de94eb
+ms.openlocfilehash: 305108e576ad4e60089c929c9b780e8cee559540
+ms.sourcegitcommit: d29e7d0235dc9650ac2b6f2ff78a3625c491bbbf
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74868649"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76167628"
 ---
 # <a name="what-is-identity-provisioning"></a>Что такое подготовка удостоверений?
 
@@ -50,9 +50,7 @@ ms.locfileid: "74868649"
 
 ![подготовка облака](media/what-is-provisioning/cloud3.png)
 
-Подготовка приложений включает подготовку пользователей и ролей в приложениях, к которым пользователю необходим доступ.  
-
-Самый распространенный сценарий — подготовка пользователя в Azure AD к работе в O365 или Salesforce.
+В Azure Active Directory (Azure AD) термин **[подготовка приложений](https://docs.microsoft.com/azure/active-directory/manage-apps/user-provisioning)** относится к автоматическому созданию удостоверений и ролей пользователей в облачных приложениях, к которым пользователям требуется доступ. Кроме создания удостоверений пользователей, автоматическая подготовка включает в себя обслуживание и удаление удостоверений пользователей по мере изменения их статуса или ролей. Типичные сценарии включают подготовку пользователя Azure AD к таким приложениям, как [Dropbox](https://docs.microsoft.com/azure/active-directory/saas-apps/dropboxforbusiness-provisioning-tutorial), [Salesforce](https://docs.microsoft.com/azure/active-directory/saas-apps/salesforce-provisioning-tutorial), [ServiceNow](https://docs.microsoft.com/azure/active-directory/saas-apps/servicenow-provisioning-tutorial), и других.
 
 ## <a name="directory-provisioning"></a>Подготовка каталога
 
@@ -64,7 +62,7 @@ ms.locfileid: "74868649"
 
 Это достигается за счет синхронизации Azure AD Connect, подготовки облака Azure AD Connect и Microsoft Identity Manager. 
  
-## <a name="next-steps"></a>Дополнительная информация 
+## <a name="next-steps"></a>Дальнейшие действия 
 
 - [What is Azure AD Connect cloud provisioning?](what-is-cloud-provisioning.md) (Что такое подготовка облака Azure AD Connect?)
 - [Установка средства подготовки облака](how-to-install.md)

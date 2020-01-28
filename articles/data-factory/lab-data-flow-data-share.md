@@ -7,12 +7,12 @@ ms.service: data-factory
 ms.topic: tutorial
 ms.custom: seo-lt-2019
 ms.date: 01/08/2020
-ms.openlocfilehash: f5e36095c506918298404758523642073dfd19c7
-ms.sourcegitcommit: 12a26f6682bfd1e264268b5d866547358728cd9a
+ms.openlocfilehash: 6c501205812ac72da8cd970b61b71e493888cef1
+ms.sourcegitcommit: 276c1c79b814ecc9d6c1997d92a93d07aed06b84
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75865226"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76156732"
 ---
 # <a name="data-integration-using-azure-data-factory-and-azure-data-share"></a>Интеграция данных с помощью Фабрики данных Azure и Azure Data Share
 
@@ -22,7 +22,7 @@ ms.locfileid: "75865226"
 
 В этой тестовой службе используются данные такси Нью-Йорка. Чтобы импортировать их в базу данных Azure SQL, скачайте [BACPAC-файл данных такси](https://github.com/djpmsft/ADF_Labs/blob/master/sample-data/taxi-data.bacpac).
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 * **Подписка Azure**: Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
@@ -99,7 +99,7 @@ ms.locfileid: "75865226"
 
 ![Портал](media/lab-data-flow-data-share/configure10.png)
 
-## <a name="ingest-data-from-azure-sql-db-into-adls-gen2-using-the-copy-activity"></a>Передача данных из базы данных SQL Azure в ADLS 2-го поколения, используя действие копирования
+## <a name="ingest-data-using-the-copy-activity"></a>Прием данных с помощью действия копирования
 
 В этом разделе вы создадите конвейер с действием копирования, который загрузит одну таблицу из базы данных SQL Azure в учетную запись хранилища ADLS 2-го поколения. Вы узнаете, как добавлять конвейер, настраивать набор данных и отлаживать конвейер через пользовательский интерфейс ADF. Шаблон конфигурации, используемый в этом разделе применяется к копированию из реляционного в файловое хранилище данных.
 
@@ -332,7 +332,7 @@ ms.locfileid: "75865226"
 
     ![Предоставление сведений](media/lab-data-flow-data-share/ads-details.png)
 
-1. Выберите **Продолжить**. 
+1. Выберите **Continue** (Продолжить). 
 
 1. Выберите **Добавить наборы данных** 
 
@@ -392,7 +392,7 @@ ms.locfileid: "75865226"
 
 1. Проверьте параметр **Расписание моментальных снимков** и настройте почасовое обновление данных с помощью раскрывающегося списка *Повторение*.  
 
-1. Нажмите кнопку **Создать**.
+1. Нажмите кнопку **создания**.
 
     Теперь вы имеете активный общий ресурс данных. Просмотрим, что выступает поставщиком данных при создании общего ресурса данных. 
 

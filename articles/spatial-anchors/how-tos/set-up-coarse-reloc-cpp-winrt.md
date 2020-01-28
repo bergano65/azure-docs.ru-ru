@@ -1,6 +1,6 @@
 ---
 title: Простое уточнение расположения в C++/WinRT
-description: В этой статье подробно рассказывается о том, как создавать и находить привязки с использованием датчиков устройств на C++/WinRT.
+description: В этой статье подробно объясняется, как создавать и находить привязки с использованием простого уточнения расположения на C++/WinRT.
 author: bucurb
 manager: dacoghl
 services: azure-spatial-anchors
@@ -8,14 +8,14 @@ ms.author: bobuc
 ms.date: 09/19/2019
 ms.topic: tutorial
 ms.service: azure-spatial-anchors
-ms.openlocfilehash: dd759ed4cbda936b00ce2ac0946184f9f6581c78
-ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
+ms.openlocfilehash: 6d2bb4c563bd7bae186ce9832ff0472f17a8afd3
+ms.sourcegitcommit: 87781a4207c25c4831421c7309c03fce5fb5793f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74790368"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76548294"
 ---
-# <a name="how-to-create-and-locate-anchors-using-on-device-sensors-in-cwinrt"></a>Создание и поиск привязок с использованием датчиков устройств на C++/WinRT
+# <a name="how-to-create-and-locate-anchors-using-coarse-relocalization-in-cwinrt"></a>Создание и поиск привязок с использованием простого уточнения расположения на C++/WinRT
 
 > [!div  class="op_single_selector"]
 > * [Unity](set-up-coarse-reloc-unity.md)
