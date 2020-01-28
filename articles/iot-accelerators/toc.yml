@@ -62,7 +62,7 @@
   items:
     - name: удаленный мониторинг;
       items:
-        - name: Архитектура
+        - name: Architecture
           href: iot-accelerators-remote-monitoring-architectural-choices.md
         - name: Схема модели устройства
           href: iot-accelerators-remote-monitoring-device-schema.md
@@ -74,7 +74,7 @@
           href: overview-opc-twin-architecture.md
         - name: Архитектура хранилища OPC
           href: overview-opc-vault-architecture.md
-- name: Руководства
+- name: Практические руководства
   items:
     - name: удаленный мониторинг;
       items:
@@ -221,6 +221,8 @@
           href: '/azure/iot-hub/iot-hub-devguide-sdks#azure-iot-device-sdks'
 - name: Ресурсы
   items:
+    - name: Возможности получения поддержки и справки
+      href: /azure/iot-fundamentals/iot-support-help
     - name: удаленный мониторинг;
       items:
         - name: Справочник разработчика (.NET)
@@ -262,7 +264,7 @@
               href: 'https://www.azureiotsolutions.com/Accelerators#description/edge-dynamometer-analysis'
             - name: Digital Signage Solution
               href: 'https://www.azureiotsolutions.com/Accelerators#description/digital-signage-solution'
-    - name: Часто задаваемые вопросы
+    - name: ВОПРОСЫ И ОТВЕТЫ
       href: iot-accelerators-faq.md
     - name: Stack Overflow
       href: 'https://stackoverflow.com/questions/tagged/azure-iot-suite'
