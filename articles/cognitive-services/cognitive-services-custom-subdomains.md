@@ -71,30 +71,30 @@ Cognitive Services ресурсов, созданных до 1 июля, 2019 б
 | Тип конечной точки | Регион | Конечная точка |
 |---------------|--------|----------|
 | Общедоступные | Глобальный (Перевод текстов & Bing) | `https://api.cognitive.microsoft.com` |
-| | Восточная часть Австралии | `https://australiaeast.api.cognitive.microsoft.com` |
+| | Восточная Австралия | `https://australiaeast.api.cognitive.microsoft.com` |
 | | Южная Бразилия | `https://brazilsouth.api.cognitive.microsoft.com` |
 | | Центральная Канада | `https://canadacentral.api.cognitive.microsoft.com` |
-| | Центральный регион США | `https://centralus.api.cognitive.microsoft.com` |
+| | Центральная часть США | `https://centralus.api.cognitive.microsoft.com` |
 | | Восточная Азия | `https://eastasia.api.cognitive.microsoft.com` |
 | | Восток США | `https://eastus.api.cognitive.microsoft.com` |
-| | Восток США 2 | `https://eastus2.api.cognitive.microsoft.com` |
+| | восточная часть США 2 | `https://eastus2.api.cognitive.microsoft.com` |
 | | Центральная Франция | `https://francecentral.api.cognitive.microsoft.com` |
 | | Центральная Индия | `https://centralindia.api.cognitive.microsoft.com` |
-| | Восточная часть Японии | `https://japaneast.api.cognitive.microsoft.com` |
-| | Центральная Корея | `https://koreacentral.api.cognitive.microsoft.com` |
+| | Восточная Япония | `https://japaneast.api.cognitive.microsoft.com` |
+| | Республика Корея, центральный регион | `https://koreacentral.api.cognitive.microsoft.com` |
 | | Центрально-северная часть США | `https://northcentralus.api.cognitive.microsoft.com` |
 | | Северная Европа | `https://northeurope.api.cognitive.microsoft.com` |
 | | Северная часть ЮАР | `https://southafricanorth.api.cognitive.microsoft.com` |
 | | Центрально-южная часть США | `https://southcentralus.api.cognitive.microsoft.com` |
 | | Юго-Восточная Азия | `https://southeastasia.api.cognitive.microsoft.com` |
-| | Южная часть Великобритании | `https://uksouth.api.cognitive.microsoft.com` |
-| | Западно-центральная часть США | `https://westcentralus.api.cognitive.microsoft.com` |
+| | южная часть Соединенного Королевства | `https://uksouth.api.cognitive.microsoft.com` |
+| | центрально-западная часть США | `https://westcentralus.api.cognitive.microsoft.com` |
 | | Западная Европа | `https://westeurope.api.cognitive.microsoft.com` |
-| | Запад США | `https://westus.api.cognitive.microsoft.com` |
-| | Западный регион США 2 | `https://westus2.api.cognitive.microsoft.com` |
-| Штат в США (для обслуживания государственных организаций США) | Правительство штата Вирджиния | `https://virginia.api.cognitive.microsoft.us` |
+| | западная часть США | `https://westus.api.cognitive.microsoft.com` |
+| | западная часть США 2 | `https://westus2.api.cognitive.microsoft.com` |
+| US Gov | US Gov (Вирджиния) | `https://virginia.api.cognitive.microsoft.us` |
 | Китай | Восточный Китай 2 | `https://chinaeast2.api.cognitive.azure.cn` |
-| | Север Китая | `https://chinanorth.api.cognitive.azure.cn` |
+| | Северный Китай | `https://chinanorth.api.cognitive.azure.cn` |
 
 ## <a name="see-also"></a>Дополнительные материалы
 

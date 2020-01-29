@@ -6,7 +6,7 @@ ms.date: 11/25/2018
 ms.author: cynthn
 ms.openlocfilehash: 984b6aed6ae1b36432b932afb7d0f9dfb0b2dc15
 ms.sourcegitcommit: 8074f482fcd1f61442b3b8101f153adb52cf35c9
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/22/2019
 ms.locfileid: "72783600"
@@ -52,7 +52,7 @@ ms.locfileid: "72783600"
 | Центральная Австралия   | 2                       |
 | Центральная Австралия 2 | 2                       |
 |                     |                         |
-| Южная часть Бразилии        | 2                       |
+| Южная Бразилия        | 2                       |
 |                     |                         |
 | US Gov (Вирджиния)     | 2                       |
 | US Gov (Техас)        | 2                       |

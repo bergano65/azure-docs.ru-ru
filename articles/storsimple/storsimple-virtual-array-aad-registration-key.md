@@ -41,7 +41,7 @@ ms.locfileid: "76273809"
 | Шаблон URL-адреса                         | В облаке | Компонент или функция         |
 |------------------------------------|-------|---------------------------------|
 | `https://login.windows.net`        | Azure Public |Служба аутентификации AAD      |
-| `https://login.microsoftonline.us` | Правительство США |Служба аутентификации AAD      |
+| `https://login.microsoftonline.us` | US (США) |Служба аутентификации AAD      |
 
 Полный список шаблонов URL-адресов для виртуальных массивов StorSimple см. в разделе [Шаблоны URL-адресов для правил брандмауэра](storsimple-ova-system-requirements.md#url-patterns-for-firewall-rules).
 

@@ -44,7 +44,7 @@ REST API преобразования текста в речь поддержи�
 | Регион | Конечная точка |
 |--------|----------|
 | Восточная Австралия | `https://australiaeast.tts.speech.microsoft.com/cognitiveservices/voices/list` |
-| Южная часть Бразилии | `https://brazilsouth.tts.speech.microsoft.com/cognitiveservices/voices/list` |
+| Южная Бразилия | `https://brazilsouth.tts.speech.microsoft.com/cognitiveservices/voices/list` |
 | Центральная Канада | `https://canadacentral.tts.speech.microsoft.com/cognitiveservices/voices/list` |
 | Центральная часть США | `https://centralus.tts.speech.microsoft.com/cognitiveservices/voices/list` |
 | Восточная Азия | `https://eastasia.tts.speech.microsoft.com/cognitiveservices/voices/list` |

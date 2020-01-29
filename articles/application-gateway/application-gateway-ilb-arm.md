@@ -106,7 +106,7 @@ $subnetconfig = New-AzVirtualNetworkSubnetConfig -Name subnet01 -AddressPrefix 1
 $vnet = New-AzVirtualNetwork -Name appgwvnet -ResourceGroupName appgw-rg -Location "West US" -AddressPrefix 10.0.0.0/16 -Subnet $subnetconfig
 ```
 
-На этом шаге создается виртуальная сеть appgwvnet в группе ресурсов appgw-rg для региона West US с помощью префикса 10.0.0.0/16 с подсетью 10.0.0.0/24.
+На этом шаге создается виртуальная сеть appgwvnet в группе ресурсов appgw-rg для региона западная часть США с помощью префикса 10.0.0.0/16 с подсетью 10.0.0.0/24.
 
 ### <a name="step-3"></a>Шаг 3.
 

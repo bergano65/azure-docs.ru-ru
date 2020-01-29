@@ -171,27 +171,27 @@ ms.locfileid: "73669161"
 |Регион Azure |Префикс региональной конечной точки|
 |---|---|
 | **США и Канада** | |
-|Западно-центральная часть США | HTTPS:\//westcentralus.monitoring.azure.com/ |
-|Западный регион США 2       | HTTPS:\//westus2.monitoring.azure.com/ |
+|центрально-западная часть США | HTTPS:\//westcentralus.monitoring.azure.com/ |
+|западная часть США 2       | HTTPS:\//westus2.monitoring.azure.com/ |
 |Центрально-северная часть США | HTTPS:\//northcentralus.monitoring.azure.com
 |Центрально-южная часть США| HTTPS:\//southcentralus.monitoring.azure.com/ |
-|Центральный регион США      | HTTPS:\//centralus.monitoring.azure.com |
+|Центральная часть США      | HTTPS:\//centralus.monitoring.azure.com |
 |Центральная Канада | HTTPS:\//канадацентрал.Мониторинг.Азуре.КОМК
 |Восток США| HTTPS:\//eastus.monitoring.azure.com/ |
 | **Европа** | |
 |Северная Европа    | HTTPS:\//northeurope.monitoring.azure.com/ |
 |Западная Европа     | HTTPS:\//westeurope.monitoring.azure.com/ |
-|Южная часть Великобритании | HTTPS:\//uksouth.monitoring.azure.com
+|южная часть Соединенного Королевства | HTTPS:\//uksouth.monitoring.azure.com
 |Центральная Франция | HTTPS:\//francecentral.monitoring.azure.com |
 | **Африка** | |
 |Северная часть ЮАР | HTTPS:\//southafricanorth.monitoring.azure.com
 | **Азия** | |
 |Центральная Индия | HTTPS:\//centralindia.monitoring.azure.com
-|Восточная часть Австралии | HTTPS:\//australiaeast.monitoring.azure.com
-|Восточная часть Японии | HTTPS:\//japaneast.monitoring.azure.com
+|Восточная Австралия | HTTPS:\//australiaeast.monitoring.azure.com
+|Восточная Япония | HTTPS:\//japaneast.monitoring.azure.com
 |Юго-Восточная Азия  | HTTPS:\//southeastasia.monitoring.azure.com |
 |Восточная Азия | HTTPS:\//eastasia.monitoring.azure.com
-|Центральная Корея   | HTTPS:\//koreacentral.monitoring.azure.com
+|Республика Корея, центральный регион   | HTTPS:\//koreacentral.monitoring.azure.com
 
 
 ## <a name="quotas-and-limits"></a>Квоты и ограничения

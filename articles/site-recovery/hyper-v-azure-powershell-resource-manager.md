@@ -9,7 +9,7 @@ ms.date: 01/10/2020
 ms.author: sutalasi
 ms.openlocfilehash: 548fa8181c4841d8f57de485c0a4e714b5e9321a
 ms.sourcegitcommit: 12a26f6682bfd1e264268b5d866547358728cd9a
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 01/10/2020
 ms.locfileid: "75863916"
@@ -68,7 +68,7 @@ Azure PowerShell предоставляет командлеты для упра
 
 ## <a name="step-2-set-up-the-vault"></a>Шаг 2. Настройка хранилища
 
-1. Создайте группу ресурсов для Azure Resource Manager, которой необходимо создать хранилища, или воспользуйтесь существующими группами ресурсов. Создайте группу ресурсов следующим образом. Переменная $ResourceGroupName содержит имя создаваемой группы ресурсов, а переменная $Geo — регион Azure, в котором ее необходимо создать (например, Южная часть Бразилии).
+1. Создайте группу ресурсов для Azure Resource Manager, которой необходимо создать хранилища, или воспользуйтесь существующими группами ресурсов. Создайте группу ресурсов следующим образом. Южная Бразилия
 
     `New-AzResourceGroup -Name $ResourceGroupName -Location $Geo`
 

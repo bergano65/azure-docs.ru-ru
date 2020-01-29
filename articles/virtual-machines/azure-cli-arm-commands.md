@@ -321,7 +321,7 @@ ms.locfileid: "75355932"
 **Команды для управления виртуальными сетями**
 
     network vnet create [options] <resource-group> <name> <location>
-Создает виртуальную сеть. В следующем примере мы создаем виртуальную сеть newvnet для группы ресурсов myresourcegroup в регионе West US.
+Создает виртуальную сеть. В следующем примере мы создаем виртуальную сеть newvnet для группы ресурсов myresourcegroup в регионе западная часть США.
 
     azure network vnet create myresourcegroup newvnet "west us"
     info:    Executing command network vnet create

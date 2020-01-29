@@ -40,7 +40,7 @@ ms.locfileid: "76698022"
 
 | Национальное облако | Конечная точка портала Azure AD |
 |----------------|--------------------------|
-| Azure AD для государственных организаций США | `https://portal.azure.us` |
+| Azure AD для US Gov организаций | `https://portal.azure.us` |
 | Azure AD для Германии | `https://portal.microsoftazure.de` |
 | Azure AD для Китая через 21Vianet | `https://portal.azure.cn` |
 | Azure AD (глобальная служба) |`https://portal.azure.com` |
@@ -53,7 +53,7 @@ ms.locfileid: "76698022"
 
 | Национальное облако | Конечная точка проверки подлинности Azure AD |
 |----------------|-------------------------|
-| Azure AD для государственных организаций США | `https://login.microsoftonline.us` |
+| Azure AD для US Gov организаций | `https://login.microsoftonline.us` |
 | Azure AD для Германии| `https://login.microsoftonline.de` |
 | Azure AD для Китая через 21Vianet | `https://login.chinacloudapi.cn` |
 | Azure AD (глобальная служба)| `https://login.microsoftonline.com` |

@@ -42,7 +42,7 @@ ms.locfileid: "76276947"
 | Шаблон URL-адреса                         | В облаке | Компонент или функция         |
 |------------------------------------|-------|----------------------------------|
 | `https://login.windows.net`        | Azure Public |Служба аутентификации AAD      |
-| `https://login.microsoftonline.us` | Правительство США |Служба аутентификации AAD      |
+| `https://login.microsoftonline.us` | US (США) |Служба аутентификации AAD      |
 
 Полный список шаблонов URL-адресов для устройств StorSimple серии 8000 см. в разделе [Шаблоны URL-адресов для правил брандмауэра](storsimple-8000-system-requirements.md#url-patterns-for-firewall-rules).
 

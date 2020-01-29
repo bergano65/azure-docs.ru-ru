@@ -42,7 +42,7 @@ IP-адрес сервера управления ключами для глоб
 |------|-------|-------|
 |Azure (глобальный)|kms.core.windows.net|23.102.135.246|
 |Azure для Германии|kms.core.cloudapi.de|51.4.143.248|
-|Azure для государственных организаций США|kms.core.usgovcloudapi.net|23.97.0.13|
+|Azure для US Gov организаций|kms.core.usgovcloudapi.net|23.97.0.13|
 |Azure China 21Vianet|kms.core.chinacloudapi.cn|42.159.7.249|
 
 
