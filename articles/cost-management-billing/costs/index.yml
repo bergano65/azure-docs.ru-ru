@@ -9,14 +9,13 @@ metadata:
   ms.collection: collection
   author: bandersmsft
   ms.author: banders
-  ms.manager: dougeby
-  ms.date: 12/18/2019
-  ms.openlocfilehash: 33821c027d242da1a9361a796280213b5265dcde
-  ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+  ms.date: 01/24/2020
+  ms.openlocfilehash: 274d4f6b88923fc0c6d3cda03a4ffa73535e13b1
+  ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 01/15/2020
-  ms.locfileid: "75983228"
+  ms.lasthandoff: 01/28/2020
+  ms.locfileid: "76769657"
 landingContent:
 - title: Сведения об Управлении затратами
   linkLists:
@@ -32,6 +31,10 @@ landingContent:
       url: understand-cost-mgt-data.md
     - text: Общие сведения об областях и работа с ними
       url: understand-work-scopes.md
+  - linkListType: video
+    links:
+    - text: Видео о службе "Управление затратами Azure"
+      url: https://www.youtube.com/c/AzureCostManagement
 - title: Анализ затрат и управление ими в Azure
   linkLists:
   - linkListType: quickstart
@@ -58,14 +61,6 @@ landingContent:
       url: get-started-partners.md
     - text: Подключение с помощью Power BI Desktop
       url: /power-bi/desktop-connect-azure-cost-management
-- title: Анализ затрат и управление ими в AWS
-  linkLists:
-  - linkListType: how-to-guide
-    links:
-    - text: Установка и настройка интеграции AWS
-      url: aws-integration-set-up-configure.md
-    - text: Управление затратами и использованием AWS
-      url: aws-integration-manage.md
 - title: API-интерфейсы Управления затратами
   linkLists:
   - linkListType: concept
@@ -82,3 +77,19 @@ landingContent:
       url: /azure/templates/microsoft.consumption/budgets
     - text: Примеры REST API службы "Управление затратами"
       url: https://github.com/Azure-Samples/Cost-Management-Samples
+- title: Новые возможности
+  linkLists:
+  - linkListType: whats-new
+    links:
+    - text: Ежемесячные обновления
+      url: https://azure.microsoft.com/blog/tag/cost-management/
+    - text: Обновления компонентов
+      url: https://azure.microsoft.com/updates/?product=cost-management
+- title: Анализ затрат и управление ими в AWS
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Установка и настройка интеграции AWS
+      url: aws-integration-set-up-configure.md
+    - text: Управление затратами и использованием AWS
+      url: aws-integration-manage.md

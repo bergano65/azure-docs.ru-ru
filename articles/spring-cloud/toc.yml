@@ -34,8 +34,6 @@
       href: spring-cloud-tutorial-bind-redis.md
     - name: Привязка приложения к Azure MySQL
       href: spring-cloud-tutorial-bind-mysql.md
-    - name: Развертывание приложений в Azure Spring Cloud с помощью Jenkins и Azure CLI
-      href: /azure/jenkins/tutorial-jenkins-deploy-cli-spring-cloud-service
 - name: Основные понятия
   items:
     - name: Основные сведения о квотах и ограничениях Azure Spring Cloud
@@ -56,10 +54,18 @@
       href: diagnostic-services.md
     - name: Потоковая передача журналов приложения в Azure Spring Cloud в реальном времени
       href: spring-cloud-howto-log-streaming.md
-    - name: Автоматизация конвейера CI/CD в Azure Spring Cloud
-      href: spring-cloud-howto-cicd.md
     - name: Использование постоянного хранилища в Azure Spring Cloud
       href: spring-cloud-howto-persistent-storage.md
+- name: Развертывание DevOps в Azure Spring Cloud
+  items:
+    - name: CI/CD и Azure DevOps
+      href: spring-cloud-howto-cicd.md
+    - name: CI/CD и GitHub Actions
+      href: spring-cloud-howto-github-actions.md
+    - name: Аутентификация Azure Spring Cloud с помощью Key Vault в GitHub Actions
+      href: spring-cloud-github-actions-key-vault.md
+    - name: Использование CI/CD с Jenkins
+      href: /azure/jenkins/tutorial-jenkins-deploy-cli-spring-cloud-service
 - name: Справочник
   items:
     - name: "Подключаемый модуль Azure\_CLI"

@@ -503,16 +503,20 @@
               href: ./hadoop/apache-ambari-troubleshoot-down-hosts-services.md
             - name: Устаревшие оповещения Apache Ambari
               href: ./hadoop/apache-ambari-troubleshoot-stale-alerts.md
+            - name: Оповещения о каталоге Apache Ambari
+              href: ./hadoop/apache-ambari-troubleshoot-directory-alerts.md
             - name: Устранение задержки работы или сбоя кластера HDInsight
               href: ./hdinsight-troubleshoot-failed-cluster.md
             - name: Устранение неполадок с Apache Hadoop HDFS
               href: ./hdinsight-troubleshoot-hdfs.md
             - name: Устранение неполадок с Apache Hadoop YARN
               href: ./hdinsight-troubleshoot-yarn.md
+            - name: Недопустимая ошибка BCFile из журнала Yarn
+              href: ./hadoop/troubleshoot-yarn-log-invalid-bcfile.md
             - name: Устранение неполадок с файлами Data Lake Store
               href: ./hadoop/hdinsight-troubleshoot-data-lake-files.md
-            - name: Оповещения о каталоге Apache Ambari
-              href: ./hadoop/apache-ambari-troubleshoot-directory-alerts.md
+            - name: Конфликт портов при запуске служб
+              href: ./hadoop/troubleshoot-port-conflict.md
 - name: Apache Kafka
   items:
     - name: Обзор
@@ -870,5 +874,5 @@
           items:
             - name: Проблемы с аутентификацией ESP
               href: ./domain-joined/domain-joined-authentication-issues.md
-            - name: Не удается войти в Zeppelin с использованием ESP
-              href: ./domain-joined/domain-joined-zeppelin-signin.md
+            - name: Ошибка DomainNotFound при создании кластера
+              href: ./domain-joined/troubleshoot-domainnotfound.md

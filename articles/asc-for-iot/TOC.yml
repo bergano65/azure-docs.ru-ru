@@ -37,6 +37,8 @@
       href: concept-security-module.md
     - name: Оповещения безопасности
       href: concept-security-alerts.md
+    - name: Настраиваемые оповещения системы безопасности
+      href: concept-customizable-security-alerts.md
     - name: Рекомендации по обеспечению безопасности
       href: concept-recommendations.md
     - name: Базовый
@@ -45,7 +47,7 @@
       href: event-aggregation.md
     - name: Цены и связанные затраты
       href: concept-pricing.md
-- name: Руководства
+- name: Практические руководства
   items:
     - name: Какой агент нужно развернуть?
       items:

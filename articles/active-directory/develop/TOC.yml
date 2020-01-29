@@ -404,6 +404,8 @@
               href: active-directory-optional-claims.md
             - name: Настройка времени существования маркеров
               href: active-directory-configurable-token-lifetimes.md
+            - name: Обработка изменений свойства SameSite в файлах cookie в браузере Chrome
+              href: howto-handle-samesite-cookie-changes-chrome-browser.md
         - name: Конфигурация приложений
           items:
             - name: Новое учебное руководство по регистрации приложений на портале Azure

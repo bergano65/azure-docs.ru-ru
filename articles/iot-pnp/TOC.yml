@@ -105,9 +105,13 @@
           href: /azure/azure-maps
         - name: Аналитика временных рядов
           href: /azure/time-series-insights
-    - name: IoT Edge
+    - name: Решения с Edge
       items:
         - name: Azure IoT Edge
           href: /azure/iot-edge
         - name: Пакеты SDK для устройств Интернета вещей
           href: '/azure/iot-hub/iot-hub-devguide-sdks#azure-iot-device-sdks'
+- name: Ресурсы
+  items:
+    - name: Возможности получения поддержки и справки
+      href: /azure/iot-fundamentals/iot-support-help

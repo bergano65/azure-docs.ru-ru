@@ -33,9 +33,9 @@
       href: concepts-events-routing.md
     - name: Ограничения в общедоступной предварительной версии службы
       href: concepts-service-limits.md
-    - name: Безопасность
+    - name: безопасность
       items:
-        - name: Рекомендации по обеспечению безопасности
+        - name: Лучшие методики обеспечения безопасности
           href: security-best-practices.md
         - name: Управление доступом на основе ролей
           href: security-role-based-access-control.md
@@ -43,7 +43,7 @@
           href: security-create-manage-role-assignments.md
         - name: Управление аутентификацией API
           href: security-authenticating-apis.md
-- name: Руководства
+- name: Практические руководства
   items:
     - name: Включение мультитенантных приложений
       href: how-to-multitenant-applications.md
@@ -67,12 +67,14 @@
           href: how-to-navigate-apis.md
         - name: Стандартные шаблоны запросов
           href: how-to-query-common-apis.md
-- name: Справочные материалы
+- name: Справочник
   items:
     - name: Клиентская библиотека определяемых пользователем функций
       href: reference-user-defined-functions-client-library.md
 - name: Ресурсы
   items:
+    - name: Возможности получения поддержки и справки
+      href: /azure/iot-fundamentals/iot-support-help
     - name: 'Примеры Azure Digital Twins для C# (.NET)'
       href: 'https://github.com/Azure-Samples/digital-twins-samples-csharp'
     - name: REST API для Azure Digital Twins
@@ -93,3 +95,31 @@
       href: 'https://azure.microsoft.com/roadmap/?category=iot'
     - name: Видео
       href: 'https://channel9.msdn.com/Search?term=%22Azure%20Digital%20Twins%22&lang-en=true'
+- name: Сопутствующие материалы
+  items:
+    - name: Решения
+      items:
+        - name: Акселераторы решений для Интернета вещей
+          href: /azure/iot-suite
+        - name: IoT Central
+          href: /azure/iot-central/iot-support-help
+    - name: Службы платформы
+      items:
+        - name: Центр Интернета вещей
+          href: /azure/iot-hub
+        - name: IoT Plug and Play
+          href: /azure/iot-pnp
+        - name: Служба подготовки устройств к добавлению в Центр Интернета вещей
+          href: /azure/iot-dps
+        - name: Maps
+          href: /azure/azure-maps
+        - name: Пакеты SDK службы
+          href: '/azure/iot-hub/iot-hub-devguide-sdks#azure-iot-service-sdks'
+        - name: Аналитика временных рядов
+          href: /azure/time-series-insights
+    - name: Решения с Edge
+      items:
+        - name: IoT Edge
+          href: /azure/iot-edge
+        - name: Пакеты SDK для устройств Интернета вещей
+          href: '/azure/iot-hub/iot-hub-devguide-sdks#azure-iot-device-sdks'

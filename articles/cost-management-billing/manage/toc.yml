@@ -75,6 +75,8 @@
           href: pay-by-invoice.md
         - name: Создание дополнительных подписок
           href: create-subscription.md
+        - name: Передача подписок CSP
+          href: transfer-subscriptions-subscribers-csp.md
         - name: Экспорт сведений о подписке
           href: export-subscriptions.md
     - name: Управление подписками в рамках Соглашения Enterprise

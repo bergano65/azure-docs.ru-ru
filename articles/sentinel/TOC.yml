@@ -110,6 +110,8 @@
           href: connect-azure-stack.md
     - name: Использование нескольких клиентов (MSSP)
       href: multiple-tenants-service-providers.md
+    - name: Настройка управляемых клиентом ключей (CMK)
+      href: customer-managed-keys.md
     - name: Создание инцидентов на основе оповещений
       href: create-incidents-from-alerts.md
     - name: Поиск

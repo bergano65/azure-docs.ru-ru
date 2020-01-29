@@ -342,6 +342,9 @@
           href: how-to-schedule-pipelines.md
         - name: Отладка конвейеров и устранение возникающих с ними неполадок
           href: how-to-debug-pipelines.md
+        - name: Отладка конвейеров в Application Insights
+          displayname: 'pipelines, log, monitor'
+          href: how-to-debug-pipelines-application-insights.md
         - name: Azure Pipelines для CI/CD
           displayName: 'continuous, integration, delivery'
           href: /azure/devops/pipelines/targets/azure-machine-learning?context=azure/machine-learning/service/context/ml-context

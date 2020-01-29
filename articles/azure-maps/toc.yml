@@ -131,7 +131,7 @@
               href: map-add-image-layer.md
             - name: Добавление слоев фрагмента карты
               href: map-add-tile-layer.md
-            - name: Отображение трафика
+            - name: Отображение данных дорожного движения
               href: map-show-traffic.md
             - name: Данные точек кластера
               href: clustering-point-data-web-sdk.md
@@ -233,6 +233,8 @@
       href: /azure/templates/microsoft.maps/accounts
 - name: Ресурсы
   items:
+    - name: Возможности получения поддержки и справки
+      href: /azure/iot-fundamentals/iot-support-help
     - name: Условия использования Azure Maps
       href: 'https://azure.microsoft.com/support/legal/'
     - name: Цены на Azure Maps
@@ -268,7 +270,7 @@
         - name: Акселераторы решений для Интернета вещей
           href: /azure/iot-suite
         - name: IoT Central
-          href: 'https://docs.microsoft.com/microsoft-iot-central/'
+          href: /azure/iot-central/iot-support-help
     - name: Службы платформы
       items:
         - name: Центр Интернета вещей
@@ -283,7 +285,7 @@
           href: '/azure/iot-hub/iot-hub-devguide-sdks#azure-iot-service-sdks'
         - name: Аналитика временных рядов
           href: /azure/time-series-insights
-    - name: IoT Edge
+    - name: Решения с Edge
       items:
         - name: IoT Edge
           href: /azure/iot-edge
