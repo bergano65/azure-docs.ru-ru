@@ -7,18 +7,18 @@ ms.reviewer: gabil
 ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: 8bb8711bc4a6134ec740a55d9f5d5794b2de77ca
-ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
+ms.openlocfilehash: 0380689ae6ca81e3f31a07f1e205c7773fdea8c6
+ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73588594"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76773958"
 ---
 # <a name="visualize-data-from-azure-data-explorer-in-redash"></a>Визуализация данных из обозреватель данных Azure в перештрихе
 
-[Перештрихи](https://www.redash.io/) соединяют и запрашивают источники данных, строит панели мониторинга для визуализации данных и совместно используют их с одноранговыми узлами. Из этой статьи вы узнаете, как настроить обозреватель данных Azure в качестве источника данных для перештриха, а затем визуализировать данные.
+[Перештрихи](https://redash.io/) соединяют и запрашивают источники данных, строит панели мониторинга для визуализации данных и совместно используют их с одноранговыми узлами. Из этой статьи вы узнаете, как настроить обозреватель данных Azure в качестве источника данных для перештриха, а затем визуализировать данные.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 1. [Создание кластера и базы данных](create-cluster-database-portal.md).
 1. Прием данных, как описано в разделе прием [демонстрационных данных в Azure обозреватель данных](ingest-sample-data.md). Дополнительные параметры приема см. в разделе [Обзор приема](ingest-data-overview.md).

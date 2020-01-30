@@ -15,12 +15,12 @@ ms.workload: identity
 ms.date: 05/07/2019
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: 5673465c9ff1afe83c5d9d549a78e1547a59b72f
-ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
+ms.openlocfilehash: 229f49255fbc72f74f07b1e7098417d136f35c27
+ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76701966"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76775177"
 ---
 # <a name="protected-web-api---move-to-production"></a>Защищенный веб-API — переместить в рабочую среду
 
@@ -30,14 +30,12 @@ ms.locfileid: "76701966"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Узнайте, как вызывать нисходящие API:
+Узнайте, как вызывать нисходящий API.
 
 > [!div class="nextstepaction"]
 > [Сценарий. веб-API вызывает нисходящие API](scenario-web-api-call-api-overview.md)
 
-
-Дополнительные сведения см. в руководствах и образцах:
-
+Дополнительные сведения см. в руководствах и примерах.
 
 > [!div class="nextstepaction"]
 > [Вызов защищенного API с помощью управляющей программы](https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-v2/tree/master/2-Call-OwnApi)

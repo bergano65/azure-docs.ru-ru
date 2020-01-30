@@ -11,16 +11,16 @@ ms.workload: identity
 ms.topic: conceptual
 ms.date: 11/26/2019
 ms.author: iainfou
-ms.openlocfilehash: 8860f2bea2877e7775db20be79181352d8cd55c8
-ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
+ms.openlocfilehash: 6737b75a955bb12072722f274ac589cb6d525ffb
+ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74705281"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76772538"
 ---
 # <a name="configure-kerberos-constrained-delegation-kcd-in-azure-active-directory-domain-services"></a>Настройка ограниченного делегирования Kerberos (KCD) в доменных службах Azure Active Directory
 
-При запуске приложений может потребоваться, чтобы эти приложения могли обращаться к ресурсам в контексте другого пользователя. Домен Active Directory Services (AD DS) поддерживает механизм, именуемый *делегированием Kerberos* , который позволяет использовать этот вариант. Затем *ограниченное* делегирование Kerberos (KCD) создает этот механизм для определения определенных ресурсов, к которым можно получить доступ в контексте пользователя. Azure Active Directory управляемые домены доменных служб (Azure AD DS) более безопасно блокируются в традиционных локальных средах AD DS, поэтому используйте более безопасные KCD *на основе ресурсов* .
+При запуске приложений может потребоваться, чтобы эти приложения могли обращаться к ресурсам в контексте другого пользователя. Домен Active Directory Services (AD DS) поддерживает механизм, именуемый *делегированием Kerberos* , который позволяет использовать этот вариант. Затем *ограниченное* делегирование Kerberos (KCD) создает этот механизм для определения определенных ресурсов, к которым можно получить доступ в контексте пользователя. Azure Active Directory управляемые домены доменных служб (Azure AD DS) более безопасно заблокированы, чем традиционные локальные среды AD DS, поэтому используйте более безопасные KCD *на основе ресурсов* .
 
 В этой статье показано, как настроить ограниченное делегирование Kerberos на основе ресурсов в управляемом домене Azure AD DS.
 
@@ -32,7 +32,7 @@ ms.locfileid: "74705281"
     * Если у вас еще нет подписки Azure, создайте [учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 * Связанный с вашей подпиской клиент Azure Active Directory, синхронизированный с локальным или облачным каталогом.
     * Если потребуется, [создайте клиент Azure Active Directory][create-azure-ad-tenant] или [свяжите подписку Azure со своей учетной записью][associate-azure-ad-tenant].
-* Управляемый домен доменных служб Azure Active Directory, включенный и настроенный в клиенте AAD.
+* Управляемый домен доменных служб Azure Active Directory, включенный и настроенный в клиенте Azure AD.
     * Если потребуется, [создайте и настройте экземпляр доменных служб Azure Active Directory][create-azure-ad-ds-instance].
 * Виртуальная машина управления Windows Server, присоединенная к управляемому домену AD DS Azure.
     * При необходимости выполните инструкции из руководства по [созданию виртуальной машины Windows Server и ее присоединению к управляемому домену][create-join-windows-vm] , а затем [установите средства управления AD DS][tutorial-create-management-vm].

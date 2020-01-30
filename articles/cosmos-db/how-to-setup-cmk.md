@@ -7,17 +7,17 @@ ms.topic: conceptual
 ms.date: 01/14/2020
 ms.author: thweiss
 ROBOTS: noindex, nofollow
-ms.openlocfilehash: c77e89c509f10155ddc27e92f09465959b629f67
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.openlocfilehash: 7a77a54dc59ec427bf6abdf8fc1d410533b5be44
+ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75979204"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76771899"
 ---
 # <a name="configure-customer-managed-keys-for-your-azure-cosmos-account-with-azure-key-vault"></a>Настройка ключей, управляемых клиентом, для учетной записи Azure Cosmos с помощью Azure Key Vault
 
 > [!NOTE]
-> В настоящее время необходимо запросить доступ, чтобы использовать эту возможность. Для этого обратитесь в [cosmosdbpm@microsoft.com](mailto:cosmosdbpm@microsoft.com).
+> В настоящее время необходимо запросить доступ, чтобы использовать эту возможность. Для этого обратитесь в [azurecosmosdbcmk@service.microsoft.com](mailto:azurecosmosdbcmk@service.microsoft.com).
 
 Данные, хранящиеся в учетной записи Azure Cosmos, автоматически и легко шифруются. Azure Cosmos DB предлагает два варианта управления ключами, используемыми для шифрования неактивных данных:
 

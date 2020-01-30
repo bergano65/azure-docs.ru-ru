@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 09/21/2018
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: 7af4f68417b25b480ea5422eb13d6b2a5748212c
-ms.sourcegitcommit: b5d646969d7b665539beb18ed0dc6df87b7ba83d
+ms.openlocfilehash: fea9cebc5199fc7c1fc5c081aa45f08044c21e44
+ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2020
-ms.locfileid: "76759709"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76768212"
 ---
 # <a name="cloud-tiering-overview"></a>Общие сведения о распределении по уровням в облаке
 Распределение по уровням в облаке — дополнительная функция Синхронизации файлов Azure, в которой часто используемые файлы кэшируются локально на сервере, а все другие файлы распределяются по уровням в файлах Azure на основе параметров политики. При распределении файла фильтр файловой системы службы синхронизации файлов Azure (StorageSync.sys) локально заменяет файл указателем или точкой повторного анализа. Точка повторного анализа представляет URL-адрес к файлу в службе "Файлы Azure". Распределенный по уровням файл имеет автономный атрибут и набор атрибутов FILE_ATTRIBUTE_RECALL_ON_DATA_ACCESS в NTFS, чтобы сторонние приложения могли идентифицировать такие файлы.
@@ -103,11 +103,10 @@ ms.locfileid: "76759709"
     
 ```powershell
 Import-Module "C:\Program Files\Azure\StorageSyncAgent\StorageSync.Management.ServerCmdlets.dll"
-Invoke-StorageSyncFileRecall -Path <path-to-to-your-server-endpoint> -Order CloudTieringPolicy
+Invoke-StorageSyncFileRecall -Path <path-to-to-your-server-endpoint>
 ```
-
-При указании `-Order CloudTieringPolicy` сначала будут отозваны недавно измененные файлы.
-Другие необязательные параметры:
+Необязательные параметры:
+* `-Order CloudTieringPolicy` будет сначала вспомнить последние измененные файлы.  
 * `-ThreadCount` определяет, сколько файлов можно вызвать параллельно.
 * `-PerFileRetryCount`определяет, как часто будет пытаться отозвать заблокированный файл.
 * `-PerFileRetryDelaySeconds`определяет время в секундах между повторными попытками вызова и всегда используется в сочетании с предыдущим параметром.

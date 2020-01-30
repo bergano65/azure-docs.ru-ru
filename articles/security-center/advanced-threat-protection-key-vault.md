@@ -8,21 +8,18 @@ ms.service: security-center
 ms.topic: conceptual
 ms.date: 11/04/2019
 ms.author: memildin
-ms.openlocfilehash: 2375d8ee92d9c04c287b7fca793fcdc236e1e8f4
-ms.sourcegitcommit: 02160a2c64a5b8cb2fb661a087db5c2b4815ec04
+ms.openlocfilehash: f7f716734875d652de575991a4dc1b7bfe948ae3
+ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75720044"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76773532"
 ---
 # <a name="set-up-advanced-threat-protection-for-azure-key-vault-preview"></a>Настройка расширенной защиты от угроз для Azure Key Vault (Предварительная версия)
 
 Расширенная защита от угроз для Azure Key Vault предоставляет дополнительный уровень анализа безопасности. Это средство обнаруживает потенциально опасные попытки доступа или использования учетных записей Key Vault. Используя собственную расширенную защиту от угроз в центре безопасности Azure, можно решать угрозы без эксперта по безопасности и без изучения дополнительных систем мониторинга безопасности.
 
 Когда центр безопасности обнаруживает аномальные действия, он отображает предупреждения. Он также отправляет администратору подписки сведения о подозрительной активности и рекомендации по исследованию и исправлению обнаруженных угроз.
-
-> [!NOTE]
-> Расширенная защита от угроз для Azure Key Vault в настоящее время доступна только в регионах Северная Америка.
 
 ## <a name="set-up-advanced-threat-protection-from-azure-security-center"></a>Настройка расширенной защиты от угроз из центра безопасности Azure
 

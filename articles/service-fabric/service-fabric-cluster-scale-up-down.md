@@ -3,12 +3,12 @@ title: Масштабирование Service Fabricного кластера
 description: Масштабировать Service Fabric кластер в или в соответствии с потребностями, задавая правила автомасштабирования для каждого типа узла или масштабируемого набора виртуальных машин. Добавление узлов в кластер Service Fabric
 ms.topic: conceptual
 ms.date: 03/12/2019
-ms.openlocfilehash: ef7d4c3d3d48bed790851834d848f05060243636
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 42193ee06eda3f1d8c56b4db3251763b9dc52076
+ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75451943"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76774464"
 ---
 # <a name="scale-a-cluster-in-or-out"></a>увеличение или уменьшение масштаба кластера;
 
@@ -101,7 +101,7 @@ az vmss scale -g sfclustertutorialgroup -n nt1vm --new-capacity 6
 Чтобы обеспечить равномерное распределение узлов кластера между доменами сбоя и обновления, включив тем самым их сбалансированное использование, необходимо сначала удалить последний созданный узел. Другими словами, необходимо удалить узлы в порядке, обратном порядку их создания. Последний созданный узел — это узел с максимальным значением свойства `virtual machine scale set InstanceId`. В примерах кода ниже возвращается последний созданный узел.
 
 ```powershell
-Get-ServiceFabricNode | Sort-Object { $_.NodeName.Substring($_.NodeName.LastIndexOf('_') + 1) } -Descending | Select-Object -First 1
+Get-ServiceFabricNode | Sort-Object NodeInstanceId -Descending | Select-Object -First 1
 ```
 
 ```azurecli

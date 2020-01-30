@@ -1,21 +1,21 @@
 ---
 title: Пакет SDK для .NET и ресурсы API таблиц для базы данных Azure Cosmos DB
 description: Сведения об API таблиц Azure Cosmos DB, в том числе даты выпуска и даты вывода из эксплуатации, а также изменения, внесенные в каждую версию.
-author: wmengmsft
-ms.author: wmeng
+author: sakash279
+ms.author: akshanka
 ms.service: cosmos-db
 ms.subservice: cosmosdb-table
 ms.devlang: dotnet
 ms.topic: reference
 ms.date: 08/17/2018
-ms.openlocfilehash: 5e98c40384207c77b4ea7e9557a7d1ebebd95e47
-ms.sourcegitcommit: ca359c0c2dd7a0229f73ba11a690e3384d198f40
+ms.openlocfilehash: 5a5305ffd388d2573d250d93131c1fed236008b7
+ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71058590"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76771617"
 ---
-# <a name="azure-cosmos-db-table-net-api-download-and-release-notes"></a>API таблиц .NET для базы данных Azure Cosmos DB: скачивание и заметки о выпуске
+# <a name="azure-cosmos-db-table-net-api-download-and-release-notes"></a>API таблицы .NET для базы данных Azure Cosmos DB. Скачивание и заметки о выпуске
 
 > [!div class="op_single_selector"]
 > * [.NET](table-sdk-dotnet.md)
@@ -27,8 +27,8 @@ ms.locfileid: "71058590"
 |   |   |
 |---|---|
 |**Скачивание пакета SDK**|[NuGet](https://aka.ms/acdbtablenuget)|
-|**Краткое руководство**|[Краткое руководство. Создание приложения API таблиц с помощью .NET и Azure Cosmos DB](create-table-dotnet.md)|
-|**Руководство**|[Разработка с помощью API таблиц Azure Cosmos DB с использованием пакета SDK для .NET](tutorial-develop-table-dotnet.md)|
+|**Краткое руководство**|[Azure Cosmos DB: Build a .NET application using the Table API](create-table-dotnet.md) (Создание приложения .NET с помощью API таблицы Azure Cosmos DB)|
+|**Руководство**|[Разработка с помощью API таблицы базы данных Azure Cosmos DB на языке .NET](tutorial-develop-table-dotnet.md)|
 |**Текущая поддерживаемая платформа**|[Microsoft .NET Framework 4.5.1](https://www.microsoft.com/en-us/download/details.aspx?id=40779)|
 
 > [!IMPORTANT]
@@ -80,25 +80,25 @@ ms.locfileid: "71058590"
 
 Корпорация Майкрософт отправляет уведомление минимум за **12 месяцев** до вывода пакета SDK из эксплуатации, чтобы обеспечить более плавный переход на новую или поддерживаемую версию.
 
-`Microsoft.Azure.CosmosDB.Table` Библиотека в настоящее время доступна только для .NET Framework и находится в режиме обслуживания и скоро будет считаться устаревшей. Новые функции и возможности и оптимизации добавляются только в библиотеку .NET Standard [Microsoft. Azure. Cosmos. Table](https://www.nuget.org/packages/Microsoft.Azure.Cosmos.Table), поэтому рекомендуется выполнить обновление до [Microsoft. Azure. Cosmos. Table](https://www.nuget.org/packages/Microsoft.Azure.Cosmos.Table).
+Библиотека `Microsoft.Azure.CosmosDB.Table` в настоящее время доступна только для .NET Framework и находится в режиме обслуживания и скоро будет считаться устаревшей. Новые функции и возможности и оптимизации добавляются только в библиотеку .NET Standard [Microsoft. Azure. Cosmos. Table](https://www.nuget.org/packages/Microsoft.Azure.Cosmos.Table), поэтому рекомендуется выполнить обновление до [Microsoft. Azure. Cosmos. Table](https://www.nuget.org/packages/Microsoft.Azure.Cosmos.Table).
 
 Пакет предварительной версии [WindowsAzure. Storage-PremiumTable](https://www.nuget.org/packages/WindowsAzure.Storage-PremiumTable/0.1.0-preview) является устаревшим. Поддержка пакета SDK WindowsAzure.Storage PremiumTable будет прекращена 15 ноября 2018 г. С этого времени запросы к устаревшему пакету SDK будут запрещены. 
 
 Любые запросы к базе данных Azure Cosmos DB с помощью выведенного из эксплуатации пакета SDK отклоняются службой.
 <br/>
 
-| Version | Дата выпуска | Дата вывода |
+| Версия | Дата выпуска | Дата вывода |
 | --- | --- | --- |
 | [2.1.2](#2.1.2) |16 сентября 2019 г.| |
 | [2.1.0](#2.1.0) |22 января 2019 г.|01 апреля, 2020 |
 | [2.0.0](#2.0.0) |26 сентября 2018 г.|01 марта 2020 г. |
 | [1.1.3](#1.1.3) |17 июля 2018 г.|01 декабря 2019 г. |
 | [1.1.1](#1.1.1) |26 марта 2018 г.|01 декабря 2019 г. |
-| [1.1.0](#1.1.0) |21 февраля 2018 г.|01 декабря 2019 г. |
-| [1.0.0](#1.0.0) |15 ноября 2017 г.|15 ноября 2019 г. |
+| [1.1.0](#1.1.0) |21 февраля 2018 г.|01 декабря 2019 г. |
+| [1.0.0](#1.0.0) |15 ноября 2017 г.|15 ноября 2019 г. |
 | 0.9.0 (предварительная версия) |11 ноября 2017 г. |11 ноября 2019 г. |
 
-## <a name="troubleshooting"></a>Устранение неполадок
+## <a name="troubleshooting"></a>Устранение неисправностей
 
 Если возникает ошибка 
 

@@ -14,12 +14,12 @@ ms.workload: identity
 ms.date: 09/17/2019
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: 88ad32a289d499cd385f8f3095113a4b329b80f4
-ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
+ms.openlocfilehash: 6c486e59f32afd09a9934ae2298172ccb4ee2414
+ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76701541"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76768108"
 ---
 # <a name="web-app-that-signs-in-users-move-to-production"></a>Веб-приложение, которое входит в систему пользователей: перейти в рабочую среду
 
@@ -29,6 +29,13 @@ ms.locfileid: "76701541"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
+### <a name="same-site"></a>Тот же сайт
+
+Убедитесь, что вы понимаете возможные проблемы с новыми версиями браузера Chrome.
+
+> [!div class="nextstepaction"]
+> [Как управлять изменениями файлов cookie SameSite в браузере Chrome](howto-handle-samesite-cookie-changes-chrome-browser.md)
+
 ### <a name="scenario-for-calling-web-apis"></a>Сценарий для вызова веб-API
 
 После того как веб-приложение подписывает пользователей, оно может вызывать веб-API от имени вошедших в систему пользователей. Вызов веб-API из веб-приложения является объектом следующего сценария:
@@ -36,7 +43,7 @@ ms.locfileid: "76701541"
 > [!div class="nextstepaction"]
 > [Веб-приложение, которое вызывает веб-API](scenario-web-app-call-api-overview.md)
 
-### <a name="deep-dive-aspnet-core-web-app-tutorial"></a>Глубокое углубление: учебник по веб-приложениям ASP.NET Core
+## <a name="deep-dive-aspnet-core-web-app-tutorial"></a>Глубокое углубление: учебник по веб-приложениям ASP.NET Core
 
 Узнайте о других способах входа пользователей с помощью этого ASP.NET Core учебнике: 
 
@@ -49,9 +56,9 @@ ms.locfileid: "76701541"
 - Несколько организаций
 - Рабочие или учебные учетные записи или личные учетные записи Майкрософт
 - [Azure AD B2C](https://aka.ms/aadb2c)
-- Национальные облака
+- Местные облака
 
-### <a name="sample-code-java-web-app"></a>Пример кода: веб-приложение Java
+## <a name="sample-code-java-web-app"></a>Пример кода: веб-приложение Java
 
 Дополнительные сведения о веб-приложении Java из этого примера на сайте GitHub: 
 

@@ -8,12 +8,12 @@ ms.date: 08/09/2019
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: 58959310a0daec3835585f64c53f2b8853eb553e
-ms.sourcegitcommit: 87781a4207c25c4831421c7309c03fce5fb5793f
+ms.openlocfilehash: bb31a10623bd5e8ea9a406b37acf84995774045c
+ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76548600"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76772307"
 ---
 # <a name="prepare-to-deploy-your-iot-edge-solution-in-production"></a>Подготовка к развертыванию решения IoT Edge в рабочей среде
 
@@ -39,7 +39,7 @@ ms.locfileid: "76548600"
 
 Сведения о роли сертификатов ЦС для устройств см. в статье [Сведения об использовании сертификатов Azure IoT Edge](iot-edge-certs.md).
 
-Дополнительные сведения об установке сертификатов на устройстве IoT Edge и о ссылках на них из файла config. YAML см. в [статье Установка рабочих сертификатов на устройстве IOT Edge](how-to-create-transparent-gateway.md).
+Дополнительные сведения об установке сертификатов на устройстве IoT Edge и о ссылках на них из файла config. YAML см. в [статье Установка рабочих сертификатов на устройстве IOT Edge](how-to-install-production-certificates.md).
 
 ### <a name="have-a-device-management-plan"></a>Составление плана управления устройствами
 

@@ -5,13 +5,13 @@ author: rachel-msft
 ms.author: raagyema
 ms.service: postgresql
 ms.topic: conceptual
-ms.date: 12/03/2019
-ms.openlocfilehash: 35d568afa0c45529b33b7918fd453213f432ba06
-ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
+ms.date: 01/23/2020
+ms.openlocfilehash: fd6d3e24adfc22d2f6ea17f09b8dea4638a054b6
+ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74792303"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76769045"
 ---
 # <a name="read-replicas-in-azure-database-for-postgresql---single-server"></a>Чтение реплик в базе данных Azure для PostgreSQL — один сервер
 
@@ -59,8 +59,6 @@ ms.locfileid: "74792303"
 
 
 ## <a name="create-a-replica"></a>Создание реплики
-На главном сервере задайте для параметра `azure.replication_support` значение **REPLICA**. После изменения значения этого параметра сервер необходимо перезапустить, чтобы изменения вступили в силу. (Параметр `azure.replication_support` применяется только к уровням "Общего назначения" и "Оптимизированный для операций в памяти".)
-
 При запуске рабочего процесса создания реплики создается пустой сервер службы "База данных Azure для PostgreSQL". Этот сервер заполняется данными, которые были на главном сервере. Время создания зависит от объема данных на главном сервере и времени, прошедшего с момента последнего еженедельного полного резервного копирования. Время может варьироваться от нескольких минут до нескольких часов.
 
 Для каждой реплики включено [Автоматическое увеличение](concepts-pricing-tiers.md#storage-auto-grow)хранилища. Функция автоматического увеличения позволяет реплике хранить данные, реплицированные на нее, и предотвращать перерыв в репликации из-за ошибок, вызванных нехваткой хранилища.

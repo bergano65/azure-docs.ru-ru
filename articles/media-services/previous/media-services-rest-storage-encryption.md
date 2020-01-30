@@ -14,17 +14,17 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/20/2019
 ms.author: juliako
-ms.openlocfilehash: 30ac6a94142c9b9d987fb3fd32b3483cc6dc130c
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 2a5ef1837375cc395a871f9a9860fa8bde572a94
+ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64867593"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76773599"
 ---
 # <a name="encrypting-your-content-with-storage-encryption"></a>Шифрование содержимого с помощью шифрования хранилища 
 
 > [!NOTE]
-> Для работы с этим учебником требуется учетная запись Azure. Дополнительные сведения см. в разделе [Бесплатная пробная версия Azure](https://azure.microsoft.com/pricing/free-trial/).   > Не новые компоненты или функциональные возможности добавляются в службы мультимедиа v2. <br/>Ознакомьтесь с новейшей версией Служб мультимедиа — [версией 3](https://docs.microsoft.com/azure/media-services/latest/). Кроме того, см. в разделе [руководство по миграции из версии 2 версии 3](../latest/migrate-from-v2-to-v3.md)
+> Для работы с этим учебником требуется учетная запись Azure. Дополнительные сведения см. в разделе [Бесплатная пробная версия Azure](https://azure.microsoft.com/pricing/free-trial/).   > Новые функции или функции не добавляются в службы мультимедиа версии 2. <br/>Ознакомьтесь с новейшей версией Служб мультимедиа — [версией 3](https://docs.microsoft.com/azure/media-services/latest/). См. также [руководство по миграции из v2 в версии 3](../latest/migrate-from-v2-to-v3.md) .
 >   
 
 Мы настоятельно рекомендуем шифровать содержимое локально, используя 256-битное шифрование AES, а затем передавать его в службу хранилища Azure, где оно будет храниться в зашифрованном виде.
@@ -46,10 +46,10 @@ ms.locfileid: "64867593"
 
 ### <a name="storage-side-encryption"></a>Шифрование на стороне хранилища
 
-|Вариант шифрования|Описание|Службы мультимедиа версии 2|Службы мультимедиа версии 3|
+|Вариант шифрования|Description|Службы мультимедиа версии 2|Службы мультимедиа версии 3|
 |---|---|---|---|
 |Шифрование хранилища Служб мультимедиа|Шифрование AES-256. Ключами управляют Службы мультимедиа|Поддерживается<sup>(1)</sup>|Не поддерживается<sup>(2)</sup>|
-|[Шифрование службы хранилища для неактивных данных](https://docs.microsoft.com/azure/storage/common/storage-service-encryption)|Шифрование на стороне сервера, предоставляемое службой хранилища Azure. Ключами управляет Azure или клиент|Поддерживаются|Поддерживаются|
+|[Шифрование службы хранилища для неактивных данных](https://docs.microsoft.com/azure/storage/common/storage-service-encryption)|Шифрование на стороне сервера, предоставляемое службой хранилища Azure. Ключами управляет Azure или клиент|Поддерживается|Поддерживается|
 |[Шифрование хранилища на стороне клиента](https://docs.microsoft.com/azure/storage/common/storage-client-side-encryption)|Шифрование на стороне клиента, предоставляемое службой хранилища Azure. Ключами управляет клиент в Key Vault|Не поддерживается|Не поддерживается|
 
 <sup>1</sup>Хотя Службы мультимедиа поддерживают обработку содержимого в чистом, незашифрованном виде, мы не рекомендуем ее использовать.
@@ -113,14 +113,14 @@ ms.locfileid: "64867593"
 
     Для шифрования хранилища в текст запроса необходимо включить указанные ниже свойства.
 
-    Свойство текста запроса    | Описание
+    Свойство текста запроса    | Description
     ---|---
-    Идентификатор | Идентификатор ContentKey создается в следующем формате «nb:kid:UUID:\<новый GUID >».
+    Идентификатор | Идентификатор ContentKey создается в следующем формате: ">\<имена", ".
     ContentKeyType | Тип ключа содержимого — это целое число, которое определяет ключ. Для формата шифрования хранилища установлено значение 1.
     EncryptedContentKey | Мы создаем значение ключа содержимого, которое представляет собой 256-битное (32-байтное) значение. Ключ шифруется с помощью сертификата шифрования хранилища X.509, полученного из Служб мультимедиа Microsoft Azure с помощью HTTP-запроса GET для методов GetProtectionKeyId и GetProtectionKey. Например, см. следующий код .NET: метод **EncryptSymmetricKeyData**, определенный [здесь](https://github.com/Azure/azure-sdk-for-media-services/blob/dev/src/net/Client/Common/Common.FileEncryption/EncryptionUtils.cs).
     ProtectionKeyId | Идентификатор ключа защиты для сертификата шифрования хранилища X.509, который использовался для шифрования ключа содержимого.
     ProtectionKeyType | Тип шифрования для защиты ключа, который использовался для шифрования ключа содержимого. В нашем примере этим значением является StorageEncryption(1).
-    Checksum |Контрольная сумма, рассчитанная для ключа содержимого с помощью MD5. Она вычисляется путем шифрования идентификатора содержимого с использованием ключа содержимого. В примере кода показано, как вычислить контрольную сумму.
+    Контрольная сумма |Контрольная сумма, рассчитанная для ключа содержимого с помощью MD5. Она вычисляется путем шифрования идентификатора содержимого с использованием ключа содержимого. В примере кода показано, как вычислить контрольную сумму.
 
 
 ### <a name="retrieve-the-protectionkeyid"></a>Получение ProtectionKeyId
@@ -134,7 +134,7 @@ ms.locfileid: "64867593"
     Accept-Charset: UTF-8
     User-Agent: Microsoft ADO.NET Data Services
     Authorization: Bearer <ENCODED JWT TOKEN>
-    x-ms-version: 2.17
+    x-ms-version: 2.19
     Host: media.windows.net
 
 Ответ:
@@ -165,7 +165,7 @@ ms.locfileid: "64867593"
     Accept-Charset: UTF-8
     User-Agent: Microsoft ADO.NET Data Services
     Authorization: Bearer <ENCODED JWT TOKEN> 
-    x-ms-version: 2.17
+    x-ms-version: 2.19
     x-ms-client-request-id: 78d1247a-58d7-40e5-96cc-70ff0dfa7382
     Host: media.windows.net
 
@@ -205,7 +205,7 @@ ms.locfileid: "64867593"
     Accept-Charset: UTF-8
     User-Agent: Microsoft ADO.NET Data Services
     Authorization: Bearer <ENCODED JWT TOKEN>
-    x-ms-version: 2.17
+    x-ms-version: 2.19
     Host: media.windows.net
     {
     "Name":"ContentKey",
@@ -254,7 +254,7 @@ ms.locfileid: "64867593"
     Accept: application/json
     Accept-Charset: UTF-8
     Authorization: Bearer <ENCODED JWT TOKEN>
-    x-ms-version: 2.17
+    x-ms-version: 2.19
     Host: media.windows.net
 
     {"Name":"BigBuckBunny" "Options":1}
@@ -301,7 +301,7 @@ ms.locfileid: "64867593"
     Accept-Charset: UTF-8
     Content-Type: application/json
     Authorization: Bearer <ENCODED JWT TOKEN>
-    x-ms-version: 2.17
+    x-ms-version: 2.19
     Host: media.windows.net
 
     {"uri":"https://wamsbayclus001rest-hs.cloudapp.net/api/ContentKeys('nb%3Akid%3AUUID%3A01e6ea36-2285-4562-91f1-82c45736047c')"}
@@ -326,7 +326,7 @@ ms.locfileid: "64867593"
     Accept: application/json
     Accept-Charset: UTF-8
     Authorization: Bearer <ENCODED JWT TOKEN>
-    x-ms-version: 2.17
+    x-ms-version: 2.19
     Host: media.windows.net
     Content-Length: 164
 

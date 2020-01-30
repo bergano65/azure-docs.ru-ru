@@ -5,12 +5,12 @@ author: craigshoemaker
 ms.topic: reference
 ms.date: 07/08/2019
 ms.author: cshoe
-ms.openlocfilehash: 599becae0225bea623c383ead49cd9abcea6fff2
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: 35df4c6c20345053bcc39a267a90a7bb1b227241
+ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74231114"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76766235"
 ---
 # <a name="register-azure-functions-binding-extensions"></a>Регистрация расширений привязки функций Azure
 
@@ -26,10 +26,10 @@ ms.locfileid: "74231114"
 
 | Среда разработки |Регистрация<br/> в службе "Функции" версии 1.x  |Регистрация<br/> в службе "Функции" версии 2.x  |
 |-------------------------|------------------------------------|------------------------------------|
-|портале Azure|Автоматический|Автоматический|
-|Разработка Non-.NET языков или локальных средств Azure Core Tools|Автоматический|[Использование Azure Functions Core Tools и пакетов расширений](#extension-bundles)|
+|Портал Azure|Автоматически|Автоматически|
+|Разработка Non-.NET языков или локальных средств Azure Core Tools|Автоматически|[Использование Azure Functions Core Tools и пакетов расширений](#extension-bundles)|
 |C#Библиотека классов с помощью Visual Studio|[С помощью средств NuGet](#vs)|[С помощью средств NuGet](#vs)|
-|Библиотека классов C# с использованием Visual Studio Code|Недоступно|[С помощью .NET Core CLI](#vs-code)|
+|Библиотека классов C# с использованием Visual Studio Code|Н/Д|[С помощью .NET Core CLI](#vs-code)|
 
 ## <a name="extension-bundles"></a>Пакеты расширений для локальной разработки
 
@@ -63,9 +63,6 @@ Install-Package Microsoft.Azure.WebJobs.Extensions.ServiceBus -Version <TARGET_V
 
 ## <a name="vs-code"></a>C# библиотека классов с Visual Studio Code
 
-> [!NOTE]
-> Мы рекомендуем использовать [пакеты расширений](#extension-bundles) , чтобы функции автоматически установили совместимый набор пакетов расширений привязки. 
-
 В **Visual Studio Code**установите пакеты для проекта библиотеки C# классов из командной строки с помощью команды [DotNet Add Package](https://docs.microsoft.com/dotnet/core/tools/dotnet-add-package) в .NET Core CLI. В следующем примере показано, как добавить привязку:
 
 ```terminal
@@ -78,6 +75,6 @@ dotnet add package Microsoft.Azure.WebJobs.Extensions.<BINDING_TYPE_NAME> --vers
 
 Замените `<TARGET_VERSION>` в этом примере определенной версией пакета, например `3.0.0-beta5`. Допустимые версии перечислены на отдельных страницах пакета по адресу [NuGet.org](https://nuget.org). Основные версии, соответствующие функциям среды выполнения 1. x или 2. x, указаны в справочной статье для привязки.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 > [!div class="nextstepaction"]
 > [Пример триггера и привязки функции Azure](./functions-bindings-example.md)

@@ -9,14 +9,14 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: conceptual
-ms.date: 01/23/2020
+ms.date: 01/27/2020
 ms.author: diberry
-ms.openlocfilehash: ed0b9450217b06ff145641d9e268ccee28ee49b2
-ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
+ms.openlocfilehash: 95b7c7446a47fafd26d00b0da4d880786340fcd0
+ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76710587"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76775120"
 ---
 # <a name="how-to-improve-the-luis-app-by-reviewing-endpoint-utterances"></a>Как улучшить приложение LUIS, просмотрев конечную точку фразы продолжительностью
 
@@ -27,6 +27,22 @@ ms.locfileid: "76710587"
 ## <a name="enable-active-learning"></a>Включить активное обучение
 
 Чтобы включить активное обучение, необходимо вести журнал запросов пользователей. Это достигается путем вызова [запроса к конечной точке](luis-get-started-create-app.md#query-the-v3-api-prediction-endpoint) с параметром строки запроса `log=true` и значением.
+
+Используйте портал LUIS для создания правильного запроса конечной точки.
+
+1. На [портале предварительной версии Luis](https://preview.luis.ai/)выберите свое приложение в списке приложений.
+1. Перейдите к разделу **Управление** и выберите **ресурсы Azure**.
+1. Для назначенного прогнозирующего ресурса выберите **изменить параметры запроса**.
+
+    > [!div class="mx-imgBorder"]
+    > ![использовать портал LUIS для сохранения журналов, необходимых для активного обучения.](./media/luis-tutorial-review-endpoint-utterances/azure-portal-change-query-url-settings.png)
+
+1. Переключите параметр **сохранить журналы** , а затем сохраните, выбрав **Готово**.
+
+    > [!div class="mx-imgBorder"]
+    > ![использовать портал LUIS для сохранения журналов, необходимых для активного обучения.](./media/luis-tutorial-review-endpoint-utterances/luis-portal-manage-azure-resource-save-logs.png)
+
+     Это действие изменяет URL-адрес примера, добавляя параметр `log=true` QueryString. Скопируйте и используйте URL-адрес измененного примера запроса при выполнении прогнозирующих запросов к конечной точке среды выполнения.
 
 ## <a name="correct-intent-predictions-to-align-utterances"></a>Исправьте прогнозы намерения, чтобы выстроить фразы продолжительностью
 

@@ -11,12 +11,12 @@ author: anosov1960
 ms.author: sashan
 ms.reviewer: mathoma, carlrab
 ms.date: 1/05/2020
-ms.openlocfilehash: 7b45ddce0435a903c63855dea8a01353a7ab36ec
-ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
+ms.openlocfilehash: 9b838edea4b5f47fe57305c593944ef5fa93a63c
+ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76722549"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76768662"
 ---
 # <a name="use-auto-failover-groups-to-enable-transparent-and-coordinated-failover-of-multiple-databases"></a>Использование групп автоматической отработки отказа для включения прозрачной и согласованной отработки отказа в нескольких базах данных
 
@@ -326,8 +326,8 @@ ms.locfileid: "76722549"
 Если для плана обеспечения непрерывности бизнес-процессов требуется отработка отказа с помощью групп с автоматической отработкой отказа, можно ограничить доступ к базе данных SQL с помощью традиционных правил брандмауэра. Для поддержки автоматического перехода на другой ресурс выполните следующие действия:
 
 1. [создайте общедоступный IP-адрес](../virtual-network/virtual-network-public-ip-address.md#create-a-public-ip-address);
-2. [создайте общедоступный балансировщик нагрузки](../load-balancer/quickstart-create-basic-load-balancer-portal.md#create-a-basic-load-balancer) и назначьте ему общедоступный IP-адрес;
-3. [создайте виртуальную сеть и виртуальные машины](../load-balancer/quickstart-create-basic-load-balancer-portal.md#create-back-end-servers) для интерфейсных компонентов;
+2. [создайте общедоступный балансировщик нагрузки](../load-balancer/quickstart-load-balancer-standard-public-portal.md) и назначьте ему общедоступный IP-адрес;
+3. [создайте виртуальную сеть и виртуальные машины](../load-balancer/quickstart-load-balancer-standard-public-portal.md) для интерфейсных компонентов;
 4. [создайте группу безопасности сети](../virtual-network/security-overview.md) и настройте входящие подключения.
 5. Убедитесь, что исходящие подключения открыты для базы данных SQL Azure с помощью [тега службы](../virtual-network/security-overview.md#service-tags) "Sql".
 6. Создайте [правило брандмауэра базы данных SQL](sql-database-firewall-configure.md), чтобы разрешить входящий трафик из общедоступного IP-адреса, созданного на этапе 1.

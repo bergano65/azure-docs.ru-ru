@@ -17,12 +17,12 @@ ms.date: 04/12/2019
 ms.author: ryanwi
 ms.reviewer: hirsin
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: 97f05afadf38063a58e15e16cbf2e2c3d3e781ca
-ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
+ms.openlocfilehash: 0ed1cb6a080a35fa81c6a859f88d987020c8504c
+ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76700266"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76773326"
 ---
 # <a name="microsoft-identity-platform-and-openid-connect-protocol"></a>Платформа Microsoft Identity и протокол OpenID Connect Connect
 
@@ -75,7 +75,7 @@ https://login.microsoftonline.com/{tenant}/v2.0/.well-known/openid-configuration
 }
 ```
 
-Если в приложении есть пользовательские ключи подписывания в результате использования функции [сопоставления утверждений](active-directory-claims-mapping.md) , необходимо добавить `appid` параметр запроса, содержащий идентификатор приложения, чтобы получить `jwks_uri`, указывающую на сведения о ключе подписывания приложения. Например: `https://login.microsoftonline.com/{tenant}/.well-known/v2.0/openid-configuration?appid=6731de76-14a6-49ae-97bc-6eba6914391e` содержит `jwks_uri` `https://login.microsoftonline.com/{tenant}/discovery/v2.0/keys?appid=6731de76-14a6-49ae-97bc-6eba6914391e`.
+Если в приложении есть пользовательские ключи подписывания в результате использования функции [сопоставления утверждений](active-directory-claims-mapping.md) , необходимо добавить `appid` параметр запроса, содержащий идентификатор приложения, чтобы получить `jwks_uri`, указывающую на сведения о ключе подписывания приложения. Например: `https://login.microsoftonline.com/{tenant}/v2.0/.well-known/openid-configuration?appid=6731de76-14a6-49ae-97bc-6eba6914391e` содержит `jwks_uri` `https://login.microsoftonline.com/{tenant}/discovery/v2.0/keys?appid=6731de76-14a6-49ae-97bc-6eba6914391e`.
 
 Как правило, этот документ метаданных используется для настройки библиотеки OpenID Connect или пакета SDK. Метаданные будут использоваться для работы библиотеки. Однако если вы не используете предварительно созданную библиотеку OpenID Connect Connect, вы можете выполнить действия, описанные в оставшейся части этой статьи, чтобы выполнить вход в веб-приложение с помощью конечной точки платформы Microsoft Identity.
 

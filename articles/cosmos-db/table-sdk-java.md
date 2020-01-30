@@ -6,16 +6,16 @@ ms.subservice: cosmosdb-table
 ms.devlang: java
 ms.topic: reference
 ms.date: 11/20/2018
-author: wmengmsft
-ms.author: wmeng
-ms.openlocfilehash: c98cd6054b2e48f4c0c886528653e6d3fda96a34
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+author: sakash279
+ms.author: akshanka
+ms.openlocfilehash: b9b5d51d0d35284d9854bd048396df84881266d2
+ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66480195"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76771424"
 ---
-# <a name="azure-cosmos-db-table-api-for-java-release-notes-and-resources"></a>API таблиц Azure Cosmos DB для Java. Заметки о выпуске и материалы
+# <a name="azure-cosmos-db-table-api-for-java-release-notes-and-resources"></a>API таблиц Azure Cosmos DB на Java: заметки о выпуске и ресурсы
 > [!div class="op_single_selector"]
 > * [.NET](table-sdk-dotnet.md)
 > * [.NET Standard](table-sdk-dotnet-standard.md)
@@ -44,7 +44,7 @@ ms.locfileid: "66480195"
 
 Новые функции, возможности и оптимизации добавляются только в текущую версию пакета SDK, поэтому рекомендуется как можно раньше обновлять пакет SDK до последней версии. 
 
-| Version | Дата выпуска | Дата вывода |
+| Версия | Дата выпуска | Дата вывода |
 | --- | --- | --- |
 | [1.0.0](#1.0.0) |15 ноября 2017 г. |--- |
 

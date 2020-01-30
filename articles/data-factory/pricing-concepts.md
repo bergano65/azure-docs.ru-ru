@@ -10,12 +10,12 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 12/27/2019
-ms.openlocfilehash: 247e41faa39520089dc5c95a34b4fb4b6b618761
-ms.sourcegitcommit: ec2eacbe5d3ac7878515092290722c41143f151d
+ms.openlocfilehash: ee5acc97e4b05a0e93f4ceee8c04b400da211b49
+ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75552140"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76769490"
 ---
 # <a name="understanding-data-factory-pricing-through-examples"></a>Изучение ценообразования Фабрики данных Azure посредством примеров
 
@@ -156,7 +156,7 @@ ms.locfileid: "75552140"
 | Предположения потока данных: время выполнения = 10 мин + 10 мин TTL | 10 \* 16 ядер общего вычислений с TTL 10 |
 | Допущение отслеживания конвейера: произошло только 1 выполнение | 2 Повторное отслеживание записей о выполнении (1 для выполнения конвейера, 1 для запуска действия) |
 
-**Общая стоимость сценария: $0,3011**
+**Общая стоимость сценария: $1,4631**
 
 - Операции Фабрики данных = **0,0001 долл. США**
   - Чтение и запись = 10\*00001 = 0,0001 долл. США [1 R/W = 0,50/50 000 долл. США = 0.00001]

@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: mrbullwinkle
 ms.author: mbullwin
 ms.date: 05/22/2019
-ms.openlocfilehash: 52314f0802acd6a296177d53ee9babb133172761
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 5f54605dd5b43236a75fe73aa3b47a4e619530a1
+ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75407506"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76765809"
 ---
 # <a name="application-insights-for-aspnet-core-applications"></a>Application Insights для ASP.NET Core приложений
 
@@ -416,7 +416,7 @@ public class HomeController : Controller
 
 Да. Поддержка функций для пакета SDK одинакова на всех платформах, за исключением следующих:
 
-* Счетчики производительности поддерживаются только в Windows.
+* Пакет SDK собирает [счетчики событий](https://docs.microsoft.com/azure/azure-monitor/app/eventcounters) в Linux, так как [счетчики производительности](https://docs.microsoft.com/azure/azure-monitor/app/performance-counters) поддерживаются только в Windows. Большинство метрик одинаковы.
 * Хотя `ServerTelemetryChannel` включен по умолчанию, если приложение выполняется в Linux или MacOS, канал не создает папку локального хранилища, чтобы временно сохранять данные телеметрии в случае проблем с сетью. Из-за этого ограничения данные телеметрии теряются при наличии временных проблем с сетью или сервером. Чтобы обойти эту ошибку, настройте локальную папку для канала:
 
 ```csharp

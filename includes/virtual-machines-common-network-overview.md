@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 11/01/2018
 ms.author: cynthn
 ms.custom: include file
-ms.openlocfilehash: 93e53362257126130438d75da1c9b7ee5cac8e68
-ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
+ms.openlocfilehash: 879202fe89aee6e8db2b7916aea7f33104e6510f
+ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75663177"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76776726"
 ---
 При создании виртуальной машины Azure вам потребуется [виртуальная сеть](../articles/virtual-network/virtual-networks-overview.md). Вы можете создать ее или использовать уже готовую. Кроме того, необходимо решить, как в этой виртуальной сети будет предоставляться доступ к виртуальным машинам. Очень важно [спланировать это перед созданием ресурсов](../articles/virtual-network/virtual-network-vnet-plan-design-arm.md), а также ознакомиться с [ограничениями, применяемыми к сетевым ресурсам](../articles/azure-resource-manager/management/azure-subscription-service-limits.md#networking-limits).
 
@@ -134,7 +134,7 @@ ms.locfileid: "75663177"
 | Портал Azure |  [Для балансировки нагрузки трафика Интернета на виртуальные машины можно использовать портал Azure](../articles/load-balancer/tutorial-load-balancer-standard-manage-portal.md). |
 | [Azure PowerShell](../articles/load-balancer/load-balancer-get-started-internet-arm-ps.md) | Используйте командлет [New-AzLoadBalancerFrontendIpConfig](https://docs.microsoft.com/powershell/module/az.network/new-azloadbalancerfrontendipconfig) с параметром **-PublicIpAddress**, чтобы указать идентификатор созданного ранее общедоступного IP-адреса. Используйте командлет [New-AzLoadBalancerBackendAddressPoolConfig](https://docs.microsoft.com/powershell/module/az.network/new-azloadbalancerbackendaddresspoolconfig), чтобы создать конфигурацию пула внутренних адресов. Используйте командлет [New-AzLoadBalancerInboundNatRuleConfig](https://docs.microsoft.com/powershell/module/az.network/new-azloadbalancerinboundnatruleconfig), чтобы создать правила преобразования сетевых адресов для входящих подключений, связанные с созданной конфигурацией внешних IP-адресов. Используйте командлет [New-AzLoadBalancerProbeConfig](https://docs.microsoft.com/powershell/module/az.network/new-azloadbalancerprobeconfig), чтобы создать необходимые пробы. Используйте командлет [New-AzLoadBalancerRuleConfig](https://docs.microsoft.com/powershell/module/az.network/new-azloadbalancerruleconfig), чтобы создать конфигурацию балансировщика нагрузки. Используйте командлет [New-AzLoadBalancer](https://docs.microsoft.com/powershell/module/az.network/new-azloadbalancer), чтобы создать балансировщик нагрузки.|
 | [Azure CLI](../articles/load-balancer/load-balancer-get-started-internet-arm-cli.md) | Используйте команду [az network lb create](https://docs.microsoft.com/cli/azure/network/lb), чтобы создать начальную конфигурацию балансировщика нагрузки. Команда [az network lb frontend-ip create](https://docs.microsoft.com/cli/azure/network/lb/frontend-ip) позволяет добавить созданный ранее общедоступный IP-адрес, Команда [az network lb address-pool create](https://docs.microsoft.com/cli/azure/network/lb/address-pool) позволяет добавить конфигурацию пула внутренних адресов, команда [az network lb inbound-nat-rule create](https://docs.microsoft.com/cli/azure/network/lb/inbound-nat-rule) — правила преобразования сетевых адресов, команда [az network lb rule create](https://docs.microsoft.com/cli/azure/network/lb/rule) — правила балансировщика нагрузки, а команда [az network lb probe create](https://docs.microsoft.com/cli/azure/network/lb/probe) — пробы. |
-| [Шаблон](../articles/load-balancer/load-balancer-get-started-internet-arm-template.md) | Используйте шаблон [2 VMs in a Load Balancer and configure NAT rules on the LB](https://github.com/Azure/azure-quickstart-templates/tree/master/201-2-vms-loadbalancer-natrules) (2 виртуальные машины в балансировщике нагрузки и настройка правил преобразования сетевых адресов для балансировки нагрузки) в качестве руководства по развертыванию балансировщика нагрузки с помощью шаблона. |
+| [Шаблон](../articles/load-balancer/quickstart-load-balancer-standard-public-template.md) | Используйте шаблон [2 VMs in a Load Balancer and configure NAT rules on the LB](https://github.com/Azure/azure-quickstart-templates/tree/master/101-load-balancer-standard-create) (2 виртуальные машины в балансировщике нагрузки и настройка правил преобразования сетевых адресов для балансировки нагрузки) в качестве руководства по развертыванию балансировщика нагрузки с помощью шаблона. |
     
 В таблице ниже перечислены методы создания внутреннего балансировщика нагрузки.
 

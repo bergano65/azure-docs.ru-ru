@@ -1,5 +1,5 @@
 ---
-title: Перемещение приложения управляющей программы, вызывающего веб-API, в рабочую среду — платформа Microsoft Identity | Службы
+title: Перемещение управляющего приложения, вызывающего веб-API, в рабочую среду — платформа Microsoft Identity | Службы
 description: Узнайте, как переместить управляющее приложение, которое вызывает веб-API в рабочую среду.
 services: active-directory
 documentationcenter: dev-center-name
@@ -15,23 +15,23 @@ ms.workload: identity
 ms.date: 10/30/2019
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: 990273e84bfceb9f4a19eae8bf5890e8303a5857
-ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
+ms.openlocfilehash: db5f52c95daf4e93c140b4c93f39dad19971319d
+ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76702272"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76775205"
 ---
 # <a name="daemon-app-that-calls-web-apis---move-to-production"></a>Приложение управляющей программы, вызывающее веб-API — переместить в рабочую среду
 
 Теперь, когда вы узнали, как получить и использовать маркер для вызова между службами, Узнайте, как переместить приложение в рабочую среду.
 
-## <a name="deployment---case-of-multi-tenant-daemon-apps"></a>Развертывание — случаи использования приложений управляющей программы с несколькими клиентами
+## <a name="deployment---multitenant-daemon-apps"></a>Развертывание — многоклиентские приложения управляющей программы
 
-Если вы являетесь независимым поставщиком программного обеспечения, создающим управляющее приложение, которое может работать в нескольких клиентах, необходимо убедиться в том, что администраторы клиента:
+Если вы являетесь независимым поставщиком программного обеспечения, создающим управляющее приложение, которое может работать в нескольких клиентах, необходимо убедиться в том, что администратор клиента выполняет следующие действия.
 
-- Подготовка субъекта-службы для приложения
-- Предоставление согласия для приложения
+- Подготавливает субъект-службу для приложения.
+- Предоставляет согласие для приложения.
 
 Вам необходимо объяснить своим заказчикам, как выполнять эти операции. Дополнительные сведения см. в разделе [запрос согласия для всего клиента](v2-permissions-and-consent.md#requesting-consent-for-an-entire-tenant).
 
@@ -39,24 +39,24 @@ ms.locfileid: "76702272"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Вот несколько ссылок для получения дополнительных сведений:
+Вот несколько ссылок, которые помогут вам получить дополнительные сведения:
 
 # <a name="nettabdotnet"></a>[.NET](#tab/dotnet)
 
-- Если вы еще не сделали это, попробуйте [получить маркер и вызовите Microsoft Graph API из консольного приложения, используя удостоверение приложения](./quickstart-v2-netcore-daemon.md).
+- Краткое руководство. [Получение маркера и вызов Microsoft Graph API из консольного приложения с помощью удостоверения приложения](./quickstart-v2-netcore-daemon.md).
 - Справочная документация по:
-  - Создание экземпляра [конфидентиалклиентаппликатион](https://docs.microsoft.com/dotnet/api/microsoft.identity.client.confidentialclientapplicationbuilder)
-  - Вызов [аккуиретокенфорклиент](https://docs.microsoft.com/dotnet/api/microsoft.identity.client.acquiretokenforclientparameterbuilder)
+  - Создание экземпляра [конфидентиалклиентаппликатион](https://docs.microsoft.com/dotnet/api/microsoft.identity.client.confidentialclientapplicationbuilder).
+  - Вызов [аккуиретокенфорклиент](https://docs.microsoft.com/dotnet/api/microsoft.identity.client.acquiretokenforclientparameterbuilder).
 - Другие примеры и учебники:
-  - [Microsoft-Identity-Platform-Console-DAEMON —](https://github.com/Azure-Samples/microsoft-identity-platform-console-daemon) это простое консольное приложение управляющей программы .NET Core, в котором отображаются пользователи клиента, которые запрашивают Microsoft Graph.
+  - [Microsoft-Identity-Platform-Console-DAEMON —](https://github.com/Azure-Samples/microsoft-identity-platform-console-daemon) это простое консольное приложение управляющей программы .NET Core, в котором отображаются пользователи запросов клиентов Microsoft Graph.
 
-    ![Топология](media/scenario-daemon-app/daemon-app-sample.svg)
+    ![Пример топологии приложения управляющей программы](media/scenario-daemon-app/daemon-app-sample.svg)
 
-    В этом же примере также иллюстрируется вариант с сертификатами.
+    В этом же примере также показан вариант с сертификатами:
 
-    ![Топология](media/scenario-daemon-app/daemon-app-sample-with-certificate.svg)
+    ![Пример топологии приложения управляющей программы — сертификаты](media/scenario-daemon-app/daemon-app-sample-with-certificate.svg)
 
-  - [Microsoft-Identity-Platform-ASPNET-webapp-DAEMON](https://github.com/Azure-Samples/microsoft-identity-platform-aspnet-webapp-daemon) включает в себя веб-приложение ASP.NET MVC, которое синхронизирует данные из Microsoft Graph с помощью удостоверения приложения, а не от имени пользователя. В этом примере также иллюстрируется процесс согласия администратора.
+  - [Microsoft-Identity-Platform-ASPNET-webapp-DAEMON](https://github.com/Azure-Samples/microsoft-identity-platform-aspnet-webapp-daemon) включает в себя веб-приложение ASP.NET MVC, которое синхронизирует данные из Microsoft Graph с помощью удостоверения приложения, а не от имени пользователя. Этот пример также иллюстрирует процесс согласия администратора.
 
     ![Топология](media/scenario-daemon-app/damon-app-sample-web.svg)
 

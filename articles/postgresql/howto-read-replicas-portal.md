@@ -5,13 +5,13 @@ author: rachel-msft
 ms.author: raagyema
 ms.service: postgresql
 ms.topic: conceptual
-ms.date: 09/04/2019
-ms.openlocfilehash: 5e031354d4695a1d7eb6f199e23e74b796273230
-ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
+ms.date: 01/24/2020
+ms.openlocfilehash: dd79618b8d9f016c92166edb9ecdb0bfb113947e
+ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74770226"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76768946"
 ---
 # <a name="create-and-manage-read-replicas-in-azure-database-for-postgresql---single-server-from-the-azure-portal"></a>Создание реплик чтения и управление ими в базе данных Azure для PostgreSQL — один сервер из портал Azure
 
@@ -27,6 +27,9 @@ ms.locfileid: "74770226"
 1. На портале Azure выберите имеющийся сервер службы "База данных Azure для PostgreSQL", который будет главным.
 
 2. На боковой панели сервера в разделе **Параметры**выберите **репликация**.
+
+> [!NOTE] 
+> Если вы видите параметр **Отключить поддержку репликации** неактивен, параметры репликации по умолчанию уже установлены на сервере. Вы можете пропустить следующие шаги и перейти к разделу Создание реплики чтения. 
 
 3. Выберите **включить поддержку репликации**. 
 
@@ -116,7 +119,7 @@ ms.locfileid: "74770226"
 
 1. На портале Azure выберите главный сервер Базы данных Azure для PostgreSQL.
 
-2. Откройте страницу **Обзор** сервера. Нажмите кнопку **Удалить**.
+2. Откройте страницу **Обзор** сервера. Выберите команду **Удалить**.
 
    ![Удаление главного сервера на странице "Обзор"](./media/howto-read-replicas-portal/delete-server.png)
  
@@ -128,7 +131,7 @@ ms.locfileid: "74770226"
 ## <a name="delete-a-replica"></a>Удаление реплики
 Чтобы удалить реплику чтения, выполните те же действия, что и для удаления главного сервера
 
-- На портале Azure откройте страницу **Обзор** реплики чтения. Нажмите кнопку **Удалить**.
+- На портале Azure откройте страницу **Обзор** реплики чтения. Выберите команду **Удалить**.
 
    ![Удаление реплики на странице "Обзор"](./media/howto-read-replicas-portal/delete-replica.png)
  

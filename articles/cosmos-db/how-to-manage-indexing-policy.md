@@ -6,12 +6,12 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 12/02/2019
 ms.author: thweiss
-ms.openlocfilehash: 3b98975df194af4625087e1beb556efb2a347f43
-ms.sourcegitcommit: 9405aad7e39efbd8fef6d0a3c8988c6bf8de94eb
+ms.openlocfilehash: 58e8767de786ed2ae92d19c01287aa05c8b63fbb
+ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74872066"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76767990"
 ---
 # <a name="manage-indexing-policies-in-azure-cosmos-db"></a>Управление политиками индексирования в Azure Cosmos DB
 
@@ -346,7 +346,7 @@ WHERE c.name = "Tim" AND c.age > 18
 
 Контейнеры Azure Cosmos хранят используемую политику индексирования в виде документа JSON, который можно непосредственно редактировать на портале Azure.
 
-1. Войдите на [портале Azure](https://portal.azure.com/).
+1. Войдите на [портал Azure](https://portal.azure.com/).
 
 1. Создайте новую учетную запись Azure Cosmos или выберите имеющуюся.
 
@@ -607,9 +607,9 @@ const containerResponse = await client.database('database').container('container
 const indexTransformationProgress = replaceResponse.headers['x-ms-documentdb-collection-index-transformation-progress'];
 ```
 
-## <a name="use-the-python-sdk"></a>Использование пакета SDK для Python
+## <a name="use-the-python-sdk-v3"></a>Использование пакета SDK для Python v3
 
-При использовании [пакета SDK для Python](https://pypi.org/project/azure-cosmos/) (его использование описано в [этом кратком руководстве](create-sql-api-python.md)) управление конфигурацией контейнера осуществляется как управление словарем. Из этого словаря можно осуществлять доступ к политике индексации и всем ее атрибутам.
+При использовании [пакета SDK версии 3 для Python](https://pypi.org/project/azure-cosmos/) (см. [это краткое руководство](create-sql-api-python.md) по использованию) конфигурация контейнера управляется как словарь. Из этого словаря можно осуществлять доступ к политике индексации и всем ее атрибутам.
 
 Получение сведений о контейнере
 
@@ -671,9 +671,75 @@ container['indexingPolicy']['compositeIndexes'] = [
 response = client.ReplaceContainer(containerPath, container)
 ```
 
+## <a name="use-the-python-sdk-v4"></a>Использование пакета SDK для Python v4
+
+При использовании [пакета SDK для Python v4](https://pypi.org/project/azure-cosmos/)конфигурация контейнеров управляется как словарь. Из этого словаря можно осуществлять доступ к политике индексации и всем ее атрибутам.
+
+Получение сведений о контейнере
+
+```python
+database_client = cosmos_client.get_database_client('database')
+container_client = database_client.get_container_client('container')
+container = container_client.read()
+```
+
+Установить режим индексирования "последовательный"
+
+```python
+indexingPolicy = {
+    'indexingMode': 'consistent'
+}
+```
+
+Определение политики индексации с помощью включаемого пути и пространственного индекса
+
+```python
+indexingPolicy = {
+    "indexingMode":"consistent",
+    "spatialIndexes":[
+        {"path":"/location/*","types":["Point"]}
+    ],
+    "includedPaths":[{"path":"/age/*","indexes":[]}],
+    "excludedPaths":[{"path":"/*"}]
+}
+```
+
+Определение политики индексации с исключенным путем
+
+```python
+indexingPolicy = {
+    "indexingMode":"consistent",
+    "includedPaths":[{"path":"/*","indexes":[]}],
+    "excludedPaths":[{"path":"/name/*"}]
+}
+```
+
+Добавление составного индекса
+
+```python
+indexingPolicy['compositeIndexes'] = [
+    [
+        {
+            "path": "/name",
+            "order": "ascending"
+        },
+        {
+            "path": "/age",
+            "order": "descending"
+        }
+    ]
+]
+```
+
+Обновление контейнера с изменениями
+
+```python
+response = database_client.replace_container(container_client, container['partitionKey'], indexingPolicy)
+```
+
 ## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об индексировании см. по следующим ссылкам:
 
 - [Общие сведения об индексировании](index-overview.md)
-- [Политика индексирования в Azure Cosmos DB](index-policy.md)
+- [Политика индексирования](index-policy.md)

@@ -8,16 +8,16 @@ ms.topic: conceptual
 ms.tgt_pltfrm: arduino
 ms.date: 05/31/2019
 ms.author: robinsh
-ms.openlocfilehash: 073a766662b2ead4b816276fa7fda6dc5e6caca7
-ms.sourcegitcommit: 44c2a964fb8521f9961928f6f7457ae3ed362694
+ms.openlocfilehash: 6c7981d15acf2b2b71dfb4234f85b738efe62ce0
+ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73954644"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76767948"
 ---
 # <a name="visualize-real-time-sensor-data-from-your-azure-iot-hub-in-a-web-application"></a>Визуализация данных датчика в реальном времени из центра Интернета вещей Azure в веб-приложении
 
-![Сквозная схема](./media/iot-hub-live-data-visualization-in-web-apps/1_iot-hub-end-to-end-diagram.png)
+![Комплексная схема](./media/iot-hub-live-data-visualization-in-web-apps/1_iot-hub-end-to-end-diagram.png)
 
 [!INCLUDE [iot-hub-get-started-note](../../includes/iot-hub-get-started-note.md)]
 
@@ -165,10 +165,10 @@ set EventHubConsumerGroup=YourConsumerGroupName
    az appservice plan create --name <app service plan name> --resource-group <your resource group name> --sku FREE
    ```
 
-2. Теперь подготавливайте веб-приложение в плане службы приложений. Параметр `--deployment-local-git` позволяет отправлять и развертывать код веб-приложения из репозитория Git на локальном компьютере. Имя веб-приложения должно быть глобально уникальным и может содержать буквы верхнего и нижнего регистра, цифры и дефисы.
+2. Теперь подготавливайте веб-приложение в плане службы приложений. Параметр `--deployment-local-git` позволяет отправлять и развертывать код веб-приложения из репозитория Git на локальном компьютере. Имя веб-приложения должно быть глобально уникальным и может содержать буквы верхнего и нижнего регистра, цифры и дефисы. Убедитесь, что для параметра `--runtime` указана версия node 10,6 или более поздняя, в зависимости от используемой версии среды выполнения Node. js. Для получения списка поддерживаемых сред выполнения можно использовать команду `az webapp list-runtimes`.
 
    ```azurecli-interactive
-   az webapp create -n <your web app name> -g <your resource group name> -p <your app service plan name> --deployment-local-git
+   az webapp create -n <your web app name> -g <your resource group name> -p <your app service plan name> --runtime "node|10.6" --deployment-local-git
    ```
 
 3. Теперь добавьте параметры приложения для переменных среды, которые указывают строку подключения центра Интернета вещей и группу потребителей концентратора событий. Отдельные параметры разделяются пробелами в параметре `-settings`. Используйте строку подключения службы для центра Интернета вещей и группу потребителей, созданную ранее в этом руководстве. Не заключайте значения в кавычки.
@@ -229,7 +229,7 @@ set EventHubConsumerGroup=YourConsumerGroupName
 
 11. Откройте браузер и перейдите по адресу `https://<your web app name>.azurewebsites.net`. Веб-страница, похожая на ту, которая была показана при локальном запуске веб-приложения. При условии, что устройство работает и отправляет данные, вы увидите график с 50 последними считываниями температуры и влажности, отправленными устройством.
 
-## <a name="troubleshooting"></a>Устранение неполадок
+## <a name="troubleshooting"></a>Устранение неисправностей
 
 При возникновении каких либо проблем с этим примером выполните действия, описанные в следующих разделах. Если у вас по-прежнему возникают проблемы, отправьте нам отзыв в конце этого раздела.
 
@@ -255,7 +255,7 @@ set EventHubConsumerGroup=YourConsumerGroupName
 
 * Если появится сообщение об ошибке "не удается найти пакет", то вы могли выполнить шаги в неопределенном порядке. При развертывании сайта (с `git push`) служба приложений запускается `npm install`, которая выполняется на основе текущей версии узла, которая была настроена. Если это позднее изменилось в конфигурации, необходимо внести небессмысленные изменения в код и отправить его снова.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Вы успешно использовали веб-приложение для визуализации данных датчика, полученных в реальном времени, из Центра Интернета вещей.
 

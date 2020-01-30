@@ -7,12 +7,12 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 12/02/2019
 ms.author: sngun
-ms.openlocfilehash: 1ac4d12f58977497642cdb0706ab7e85e9a4db64
-ms.sourcegitcommit: e9776e6574c0819296f28b43c9647aa749d1f5a6
+ms.openlocfilehash: d06afb3670b1c3af3f1acf0bd690c1e3e266a11c
+ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/13/2020
-ms.locfileid: "75913088"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76771793"
 ---
 # <a name="security-controls-for-azure-cosmos-db"></a>Элементы управления безопасностью для Azure Cosmos DB
 
@@ -52,7 +52,7 @@ ms.locfileid: "75913088"
 | Шифрование неактивных на стороне сервера: ключи, управляемые клиентом (BYOK) | Да | См. [раздел Настройка ключей, управляемых клиентом, для учетной записи Azure Cosmos DB](how-to-setup-cmk.md) .  |
 | Шифрование на уровне столбцов (службы данных Azure)| Да | Только в API таблиц уровня "Премиум". Эта функция поддерживается не всеми API-интерфейсами. См. статью [Введение в Azure Cosmos DB: API таблиц](table-introduction.md). |
 | Шифрование при передаче (например, шифрование ExpressRoute, Шифрование виртуальной сети и шифрование виртуальной сети)| Да | Все Azure Cosmos DB данные шифруются при передаче. |
-| Вызовы API в зашифрованном виде| Да | Все подключения к Azure Cosmos DB поддерживают протокол HTTPS. Azure Cosmos DB также поддерживает TLS 1,2.<br>Можно применить минимальную версию протокола TLS на стороне сервера. Для этого обратитесь в [cosmosdbpm@microsoft.com](maito:cosmosdbpm@microsoft.com]). |
+| Вызовы API в зашифрованном виде| Да | Все подключения к Azure Cosmos DB поддерживают протокол HTTPS. Azure Cosmos DB также поддерживает TLS 1,2.<br>Можно применить минимальную версию протокола TLS на стороне сервера. Для этого обратитесь в [azurecosmosdbtls@service.microsoft.com](mailto:azurecosmosdbtls@service.microsoft.com). |
 
 ## <a name="configuration-management"></a>Управление конфигурацией
 

@@ -1,10 +1,9 @@
 ---
 title: Общие сведения об интеграции служебной шины Azure со службой "Сетка событий" | Документация Майкрософт
-description: Описание обмена сообщениями служебной шины и интеграции со службой "Сетка событий"
+description: В этой статье содержится описание интеграции обмена сообщениями служебной шины Azure со службой "Сетка событий Azure".
 services: service-bus-messaging
 documentationcenter: .net
 author: axisc
-manager: timlt
 editor: spelluru
 ms.assetid: f99766cb-8f4b-4baf-b061-4b1e2ae570e4
 ms.service: service-bus-messaging
@@ -12,14 +11,14 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: multiple
 ms.topic: conceptual
-ms.date: 09/15/2018
+ms.date: 01/27/2020
 ms.author: aschhab
-ms.openlocfilehash: 5d4ece6b631882200c6f98f6de5daa543fdf7ce4
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 1e514e2856afae4ff6f877bb193935da1bc5d623
+ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67072133"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76773479"
 ---
 # <a name="azure-service-bus-to-event-grid-integration-overview"></a>Общие сведения об интеграции служебной шины Azure со службой "Сетка событий"
 
@@ -39,7 +38,7 @@ ms.locfileid: "67072133"
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 ### <a name="verify-that-you-have-contributor-access"></a>Проверка наличия доступа с правами участника
-Перейдите к пространству имен служебной шины, выберите **Управление доступом (IAM)** и перейдите на вкладку **Назначение ролей**. Убедитесь, что у вас есть доступ участника к пространству имен. 
+Перейдите к пространству имен служебной шины, выберите **Управление доступом (IAM)** и перейдите на вкладку **назначения ролей** . Убедитесь, что у вас есть доступ к пространству имен. 
 
 ### <a name="events-and-event-schemas"></a>События и схемы событий
 

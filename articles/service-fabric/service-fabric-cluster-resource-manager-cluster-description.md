@@ -5,12 +5,12 @@ author: masnider
 ms.topic: conceptual
 ms.date: 08/18/2017
 ms.author: masnider
-ms.openlocfilehash: 56765fa16bc1ea96f1429b72fded38c4385e65ec
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 7142e3f9aaa25e7ba327194c04ad6a9b5f4e3ad1
+ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75452125"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76774475"
 ---
 # <a name="describe-a-service-fabric-cluster-by-using-cluster-resource-manager"></a>Описание кластера Service Fabric с помощью диспетчер ресурсов кластера
 Функция диспетчер ресурсов кластера Service Fabric Azure предоставляет несколько механизмов описания кластера.
@@ -472,7 +472,7 @@ Update-ServiceFabricService -Stateful -ServiceName $serviceName -PlacementConstr
 
 Во вторых, существует балансировка и оптимизация, которые важны для эффективного выполнения служб. Экономичные или зависящие от производительности предложения служб не могут позволить некоторым узлам быть горячими, а другие — холодными. Критические узлы ведут к состязанию за ресурсы и низкой производительности. Холодные узлы представляют нерасходные ресурсы и увеличивают затраты. 
 
-Service Fabric представляет ресурсы в виде *метрик*. Метрики — это любые логические или физические ресурсы, которые нужно описать в Service Fabric. Примерами метрик являются "WorkQueueDepth" или "MemoryInMb". Сведения о физических ресурсах, которые Service Fabric могут управлять узлами, см. в разделе [Управление ресурсами](service-fabric-resource-governance.md). Сведения о настройке пользовательских метрик и их использовании см. в [этой статье](service-fabric-cluster-resource-manager-metrics.md).
+Service Fabric представляет ресурсы в виде *метрик*. Метрики — это любые логические или физические ресурсы, которые нужно описать в Service Fabric. Примерами метрик являются "WorkQueueDepth" или "MemoryInMb". Сведения о физических ресурсах, которые Service Fabric могут управлять узлами, см. в разделе [Управление ресурсами](service-fabric-resource-governance.md). Сведения о метриках по умолчанию, используемых кластерной диспетчер ресурсов и о настройке пользовательских метрик, см. в [этой статье](service-fabric-cluster-resource-manager-metrics.md).
 
 Метрики отличаются от ограничений на размещение и свойств узла. Свойства узлов — это статические дескрипторы самих узлов. Метрики описывают ресурсы, которые имеются у узлов и используются службами при их запуске на узле. Свойство Node может быть **HasSSD** и может иметь значение true или false. Объем пространства, доступного на этом SSD, и объем памяти, потребляемой службами, будет такой же, как «DriveSpaceInMb». 
 

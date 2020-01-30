@@ -8,12 +8,12 @@ ms.service: digital-twins
 services: digital-twins
 ms.topic: conceptual
 ms.date: 01/10/2020
-ms.openlocfilehash: 3d0220f23c8098222b93473dc6c7aa7a4f2dd791
-ms.sourcegitcommit: 014e916305e0225512f040543366711e466a9495
+ms.openlocfilehash: 42b697babe2bc004663c80e6e2f71f90ba1e5e5b
+ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75933444"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76765397"
 ---
 # <a name="how-to-configure-postman-for-azure-digital-twins"></a>Настройка Postman для Azure Digital Twins
 
@@ -79,7 +79,6 @@ ms.locfileid: "75933444"
 
 Настройте и настройте POST, чтобы получить маркер Azure Active Directory. После этого выполните HTTP-запрос с проверкой подлинности к Azure Digital Twins, используя полученный токен:
 
-1. Скачайте приложение, перейдя по адресу [www.getpostman.com](https://www.getpostman.com/).
 1. Убедитесь, что ваш **URL-адрес авторизации** указан правильно. Его формат должен быть следующим:
 
     ```plaintext
@@ -88,9 +87,13 @@ ms.locfileid: "75933444"
 
     | Имя  | Заменить на | Пример |
     |---------|---------|---------|
-    | YOUR_AZURE_TENANT | Имя вашего клиента или название организации | `microsoft` |
+    | YOUR_AZURE_TENANT | Имя клиента или организации. Используйте понятное имя вместо буквенно-цифрового **идентификатора клиента** регистрации Azure Active Directory приложения. | `microsoft` |
 
-1. Последовательно выберите вкладку **Авторизация**, затем **OAuth 2.0** и **Get New Access Token** (Получить новый маркер доступа).
+1. Скачайте приложение, перейдя по адресу [www.getpostman.com](https://www.getpostman.com/).
+
+1. Откройте приложение Postman и в раскрывающемся списке "New" (Новый) щелкните "Create New" (Создать новый) и выберите "Request" (Запрос). Введите имя запроса. Выберите коллекцию или папку для сохранения, а затем нажмите кнопку Сохранить. 
+
+1. Мы хотим сделать запрос GET. Перейдите на вкладку **авторизация** , выберите OAuth 2,0 и щелкните **получить новый маркер доступа**.
 
     | Поле  | Значение |
     |---------|---------|

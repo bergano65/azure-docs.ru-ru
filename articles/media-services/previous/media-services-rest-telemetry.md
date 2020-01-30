@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/20/2019
 ms.author: juliako
-ms.openlocfilehash: 9c654c65577c44b1773ff98cb1206beeb5206ba4
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 4cf2bc919ecb8b39a23b23df95a6f37396f50603
+ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60761783"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76774869"
 ---
 # <a name="configuring-azure-media-services-telemetry-with-rest"></a>Настройка телеметрии служб мультимедиа Azure с использованием REST
 
@@ -34,7 +34,7 @@ ms.locfileid: "60761783"
 - Получение конечных точек уведомления.
 - Создание конечной точки уведомления для мониторинга. 
 
-    Чтобы создать конечную точку уведомления, задайте для EndPointType значение AzureTable (2) а в endPontAddress таблицу хранилища (например, https:\//telemetryvalidationstore.table.core.windows.net/).
+    Чтобы создать конечную точку уведомления, задайте для параметра EndPointType значение AzureTable (2), а для Endpontaddress — таблицу — таблицу хранилища (например, HTTPS:\//telemetryvalidationstore.table.core.windows.net/).
   
 - Получение конфигураций мониторинга
 
@@ -49,7 +49,7 @@ ms.locfileid: "60761783"
 ### <a name="request"></a>Запрос
 
     GET https://wamsbnp1clus001rest-hs.cloudapp.net/api/StorageAccounts HTTP/1.1
-    x-ms-version: 2.13
+    x-ms-version: 2.19
     DataServiceVersion: 3.0
     MaxDataServiceVersion: 3.0
     Accept: application/json; odata=verbose
@@ -77,7 +77,7 @@ ms.locfileid: "60761783"
 ### <a name="request"></a>Запрос
 
     GET https://wamsbnp1clus001rest-hs.cloudapp.net/api/NotificationEndPoints HTTP/1.1
-    x-ms-version: 2.13
+    x-ms-version: 2.19
     DataServiceVersion: 3.0
     MaxDataServiceVersion: 3.0
     Accept: application/json; odata=verbose
@@ -110,7 +110,7 @@ ms.locfileid: "60761783"
 ### <a name="request"></a>Запрос
 
     POST https://wamsbnp1clus001rest-hs.cloudapp.net/api/NotificationEndPoints HTTP/1.1
-    x-ms-version: 2.13
+    x-ms-version: 2.19
     DataServiceVersion: 3.0
     MaxDataServiceVersion: 3.0
     Accept: application/json; odata=verbose
@@ -126,7 +126,7 @@ ms.locfileid: "60761783"
     }
 
 > [!NOTE]
-> Не забудьте изменить «https:\//telemetryvalidationstore.table.core.windows.net» значение для вашей учетной записи хранения.
+> Не забудьте изменить значение "https:\//telemetryvalidationstore.table.core.windows.net" в учетной записи хранения.
 
 ### <a name="response"></a>Ответ
 
@@ -152,7 +152,7 @@ ms.locfileid: "60761783"
 ### <a name="request"></a>Запрос
 
     GET https://wamsbnp1clus001rest-hs.cloudapp.net/api/MonitoringConfigurations HTTP/1.1
-    x-ms-version: 2.13
+    x-ms-version: 2.19
     DataServiceVersion: 3.0
     MaxDataServiceVersion: 3.0
     Accept: application/json; odata=verbose
@@ -182,7 +182,7 @@ ms.locfileid: "60761783"
 ### <a name="request"></a>Запрос
 
     POST https://wamsbnp1clus001rest-hs.cloudapp.net/api/MonitoringConfigurations HTTP/1.1
-    x-ms-version: 2.13
+    x-ms-version: 2.19
     DataServiceVersion: 3.0
     MaxDataServiceVersion: 3.0
     Accept: application/json; odata=verbose
@@ -225,7 +225,7 @@ ms.locfileid: "60761783"
 ### <a name="request"></a>Запрос
 
     DELETE https://wamsbnp1clus001rest-hs.cloudapp.net/api/MonitoringConfigurations('nb%3Amcid%3AUUID%3A1a8931ae-799f-45fd-8aeb-9641740295c2')
-    x-ms-version: 2.13
+    x-ms-version: 2.19
     DataServiceVersion: 3.0
     MaxDataServiceVersion: 3.0
     Accept: application/json; odata=verbose
@@ -241,6 +241,6 @@ ms.locfileid: "60761783"
 
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Отзывы
+## <a name="provide-feedback"></a>Отправить отзыв
 
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]

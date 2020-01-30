@@ -1,5 +1,5 @@
 ---
-title: Проверка областей & защищенных ролей приложений веб-API | Службы
+title: Проверка областей и защищенных ролей приложений веб-API | Службы
 titleSuffix: Microsoft identity platform
 description: Узнайте, как создать защищенный веб-API и настроить код приложения.
 services: active-directory
@@ -16,12 +16,12 @@ ms.workload: identity
 ms.date: 05/07/2019
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: e7bf7464411aa85bd89ef8e186d2fe526bd8b17d
-ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
+ms.openlocfilehash: 816a9620a3486b534f9293084b7c4f5b4f748033
+ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76701949"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76768119"
 ---
 # <a name="protected-web-api-verify-scopes-and-app-roles"></a>Защищенный веб-API: Проверка областей и ролей приложений
 
@@ -31,12 +31,12 @@ ms.locfileid: "76701949"
 - Управляющие приложения, имеющие правильные роли приложений.
 
 > [!NOTE]
-> Фрагменты кода из этой статьи извлекаются из следующих примеров, которые полностью функционируют
+> Фрагменты кода из этой статьи извлекаются из следующих примеров, которые полностью функционируют:
 >
 > - [ASP.NET Core добавочный учебник по веб-API на сайте](https://github.com/Azure-Samples/active-directory-dotnet-native-aspnetcore-v2/blob/02352945c1c4abb895f0b700053506dcde7ed04a/1.%20Desktop%20app%20calls%20Web%20API/TodoListService/Controllers/TodoListController.cs#L37) GitHub
 > - [Пример веб-API ASP.NET](https://github.com/Azure-Samples/ms-identity-aspnet-webapi-onbehalfof/blob/dfd0115533d5a230baff6a3259c76cf117568bd9/TodoListService/Controllers/TodoListController.cs#L48)
 
-Чтобы защитить веб-API ASP.NET/ASP.NET Core, необходимо добавить атрибут `[Authorize]` в одном из следующих:
+Чтобы защитить веб-API ASP.NET или ASP.NET Core, необходимо добавить атрибут `[Authorize]` в один из следующих элементов:
 
 - Сам контроллер, если требуется защитить все действия контроллера
 - Действие отдельного контроллера для API
@@ -49,14 +49,14 @@ ms.locfileid: "76701949"
     }
 ```
 
-Но эта защита недостаточно. Гарантируется, что маркер будет проверяться только тем, что ASP.NET/ASP.NET Core. Ваш API должен проверить, что маркер, используемый для вызова веб-API, запрашивал ожидаемые утверждения, в частности:
+Но эта защита недостаточно. Он гарантирует только то, что ASP.NET и ASP.NET Core проверить маркер. Ваш API должен проверить, что маркер, используемый для вызова API, запрашивается с ожидаемыми утверждениями. Эти утверждения в частности требуют проверки:
 
-- *Области*, если API вызывается от имени пользователя.
-- *Роли приложения*, если API можно вызывать из управляющего приложения.
+- *Области* , если API вызывается от имени пользователя.
+- *Роли приложения* , если API можно вызывать из управляющего приложения.
 
-## <a name="verifying-scopes-in-apis-called-on-behalf-of-users"></a>Проверка областей в интерфейсах API, вызываемых от имени пользователей
+## <a name="verify-scopes-in-apis-called-on-behalf-of-users"></a>Проверка областей в интерфейсах API, вызываемых от имени пользователей
 
-Если API вызывается клиентским приложением от имени пользователя, ему необходимо запросить токен носителя с конкретными областями для API. (См. раздел [Конфигурация кода | Токен носителя](scenario-protected-web-api-app-configuration.md#bearer-token).)
+Если клиентское приложение вызывает API от имени пользователя, API-интерфейс должен запросить токен носителя с конкретными областями для API. Дополнительные сведения см. в разделе [Конфигурация кода | Токен носителя](scenario-protected-web-api-app-configuration.md#bearer-token).
 
 ```csharp
 [Authorize]
@@ -80,14 +80,14 @@ public class TodoListController : Controller
 }
 ```
 
-Метод `VerifyUserHasAnyAcceptedScope` делает следующее:
+Метод `VerifyUserHasAnyAcceptedScope` выполняет действия, аналогичные приведенным ниже.
 
-- Убедитесь в наличии утверждения с именем `http://schemas.microsoft.com/identity/claims/scope` или `scp`.
+- Убедитесь, что имеется утверждение с именем `http://schemas.microsoft.com/identity/claims/scope` или `scp`.
 - Убедитесь, что утверждение имеет значение, которое содержит область, ожидаемую API.
 
 ```csharp
     /// <summary>
-    /// When applied to a <see cref="HttpContext"/>, verifies that the user authenticated in the 
+    /// When applied to a <see cref="HttpContext"/>, verifies that the user authenticated in the
     /// web API has any of the accepted scopes.
     /// If the authenticated user doesn't have any of these <paramref name="acceptedScopes"/>, the
     /// method throws an HTTP Unauthorized error with a message noting which scopes are expected in the token.
@@ -113,12 +113,13 @@ public class TodoListController : Controller
     }
 ```
 
-Этот [пример кода](https://github.com/Azure-Samples/active-directory-dotnet-native-aspnetcore-v2/blob/02352945c1c4abb895f0b700053506dcde7ed04a/Microsoft.Identity.Web/Resource/ScopesRequiredByWebAPIExtension.cs#L47) предназначен для ASP.NET Core. Для ASP.NET просто замените `HttpContext.User` `ClaimsPrincipal.Current`и замените тип утверждения `"http://schemas.microsoft.com/identity/claims/scope"` `"scp"`. (См. также фрагмент кода далее в этой статье.)
+Предыдущий [пример кода](https://github.com/Azure-Samples/active-directory-dotnet-native-aspnetcore-v2/blob/02352945c1c4abb895f0b700053506dcde7ed04a/Microsoft.Identity.Web/Resource/ScopesRequiredByWebAPIExtension.cs#L47) предназначен для ASP.NET Core. Для ASP.NET просто замените `HttpContext.User` `ClaimsPrincipal.Current`и замените тип утверждения `"http://schemas.microsoft.com/identity/claims/scope"` `"scp"`. См. также фрагмент кода ниже в этой статье.
 
-## <a name="verifying-app-roles-in-apis-called-by-daemon-apps"></a>Проверка ролей приложений в интерфейсах API, вызванных приложениями управляющей программы
+## <a name="verify-app-roles-in-apis-called-by-daemon-apps"></a>Проверка ролей приложения в интерфейсах API, которые вызываются приложениями управляющей программы
 
-Если веб-API вызывается с помощью [управляющего приложения](scenario-daemon-overview.md), ему должно быть назначено разрешение приложения для веб-API. Мы видели [разрешения приложений (роли приложений)](https://docs.microsoft.com/azure/active-directory/develop/scenario-protected-web-api-app-registration#exposing-application-permissions-app-roles) , которые API предоставляет для доступа к таким разрешениям (например, роль приложения `access_as_application`).
-Теперь интерфейсы API должны проверять, что полученный маркер содержит утверждение `roles` и что это утверждение имеет ожидаемое значение. Код, выполняющий эту проверку, аналогичен коду, который проверяет делегированные разрешения, за исключением того, что вместо проверки `scopes`, действие контроллера будет проверять наличие `roles`:
+Если веб-API вызывается с помощью [управляющего приложения](scenario-daemon-overview.md), ему должно быть назначено разрешение приложения для веб-API. Как показано в окне [предоставление разрешений приложению (роли приложений)](https://docs.microsoft.com/azure/active-directory/develop/scenario-protected-web-api-app-registration#exposing-application-permissions-app-roles), API предоставляет такие разрешения. Одним из примеров является роль приложения `access_as_application`.
+
+Теперь необходимо, чтобы ваш API проверял, что полученный маркер содержит утверждение `roles` и что это утверждение имеет ожидаемое значение. Код проверки аналогичен коду, который проверяет делегированные разрешения, за исключением того, что действие контроллера проверяет роли, а не области.
 
 ```csharp
 [Authorize]
@@ -131,7 +132,7 @@ public class TodoListController : ApiController
     }
 ```
 
-Метод `ValidateAppRole()` может выглядеть следующим образом:
+Метод `ValidateAppRole` может выглядеть следующим образом:
 
 ```csharp
 private void ValidateAppRole(string appRole)
@@ -143,22 +144,22 @@ private void ValidateAppRole(string appRole)
     Claim roleClaim = ClaimsPrincipal.Current.FindFirst("roles");
     if (roleClaim == null || !roleClaim.Value.Split(' ').Contains(appRole))
     {
-        throw new HttpResponseException(new HttpResponseMessage 
-        { StatusCode = HttpStatusCode.Unauthorized, 
-            ReasonPhrase = $"The 'roles' claim does not contain '{appRole}' or was not found" 
+        throw new HttpResponseException(new HttpResponseMessage
+        { StatusCode = HttpStatusCode.Unauthorized,
+            ReasonPhrase = $"The 'roles' claim does not contain '{appRole}' or was not found"
         });
     }
 }
 }
 ```
 
-На этот раз фрагмент кода предназначен для ASP.NET. Для ASP.NET Core просто замените `ClaimsPrincipal.Current` на `HttpContext.User`и замените имя утверждения `"roles"` на `"http://schemas.microsoft.com/identity/claims/roles"`. (См. также фрагмент кода, приведенный выше в этой статье.)
+На этот раз фрагмент кода предназначен для ASP.NET. Для ASP.NET Core просто замените `ClaimsPrincipal.Current` на `HttpContext.User`и замените имя утверждения `"roles"` на `"http://schemas.microsoft.com/identity/claims/roles"`. См. также фрагмент кода, приведенный ранее в этой статье.
 
 ### <a name="accepting-app-only-tokens-if-the-web-api-should-be-called-only-by-daemon-apps"></a>Принимаются маркеры только для приложений, если веб-API должен вызываться только управляющими приложениями
 
-Утверждение `roles` также используется для пользователей в шаблонах назначения пользователей. (См. раздел [как добавить роли приложения в приложение и получить их в токене](howto-add-app-roles-in-azure-ad-apps.md).) Поэтому только проверка ролей позволит приложениям входить в систему как пользователей и наоборот, если роли могут быть назначены обоим пользователям. Для предотвращения этой путаницы рекомендуется объявлять разные роли для пользователей и приложений.
+Пользователи также могут использовать утверждения ролей в шаблонах назначения пользователей, как показано в [этой статьи: Добавление ролей приложения в приложение и их получение в токене](howto-add-app-roles-in-azure-ad-apps.md). Если роли могут быть назначены обоим, проверка ролей позволит приложениям входить в систему как пользователи и пользователи для входа в качестве приложений. Для предотвращения этой путаницы рекомендуется объявлять разные роли для пользователей и приложений.
 
-Если вы хотите разрешить только приложениям управляющей программы вызывать веб-API, добавьте условие при проверке роли приложения, чтобы маркер был маркером только для приложения:
+Если вы хотите, чтобы только управляющие приложения вызывали веб-API, добавьте условие, которое маркер является маркером только для приложения при проверке роли приложения.
 
 ```csharp
 string oid = ClaimsPrincipal.Current.FindFirst("oid")?.Value;
@@ -166,7 +167,7 @@ string sub = ClaimsPrincipal.Current.FindFirst("sub")?.Value;
 bool isAppOnlyToken = oid == sub;
 ```
 
-Проверка обратного условия позволит только приложениям, которые входят в систему пользователя, вызывать ваш API.
+Проверка обратного условия позволяет только приложениям, которые входят в систему пользователя, вызывать ваш API.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
