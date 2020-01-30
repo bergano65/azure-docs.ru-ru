@@ -14,12 +14,12 @@ ms.author: curtand
 ms.reviewer: krbain
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8ff2ff69ca00a9ed9c48ebd6f1704fac0b16d068
-ms.sourcegitcommit: b5106424cd7531c7084a4ac6657c4d67a05f7068
+ms.openlocfilehash: 1df823776208418eae3e465693dd51e108c5a8bb
+ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75940994"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76841035"
 ---
 # <a name="dynamic-membership-rules-for-groups-in-azure-active-directory"></a>Правила динамического членства в группах для Azure Active Directory
 
@@ -370,7 +370,7 @@ user.extension_c272a57b722d4eb29bfe327874ae79cb_OfficeNumber -eq "123"
 > [!NOTE]
 > системлабелс — это атрибут, предназначенный только для чтения и не может быть установлен в Intune.
 >
-> Для Windows 10 правильный формат атрибута deviceOSVersion выглядит следующим образом: (Device. deviceOSVersion-EQ "10,0 (17763)"). Форматирование можно проверить с помощью командлета PowerShell Get-MsolDevice.
+> Для Windows 10 правильный формат атрибута deviceOSVersion выглядит следующим образом: (Device. deviceOSVersion-EQ "10.0.17763"). Форматирование можно проверить с помощью командлета PowerShell Get-MsolDevice.
 
 Можно использовать следующие атрибуты устройства.
 
@@ -389,7 +389,7 @@ user.extension_c272a57b722d4eb29bfe327874ae79cb_OfficeNumber -eq "123"
  managementType | MDM (для мобильных устройств).<br>PC (для компьютеров, управляемых агентом Intune PC). | (device.managementType -eq "MDM")
  deviceId | Допустимый идентификатор устройства Azure AD. | (device.deviceId -eq "d4fe7726-5966-431c-b3b8-cddc8fdb717d")
  objectId | Допустимый идентификатор объекта Azure AD. |  (device.objectId -eq "76ad43c9-32c5-45e8-a272-7b58b58f596d")
- devicePhysicalIds | любое строковое значение, используемое автопилотом, например все устройства автопилота, OrderID или PurchaseOrderID  | (Device. Девицефисикалидс-Any _-содержит "[Зтдид]") (Device. Девицефисикалидс-Any _-EQ "[OrderID]: 179887111881") (Device. Девицефисикалидс-Any _-EQ "[PurchaseOrderId]: 76222342342")
+ девицефисикалидс | любое строковое значение, используемое автопилотом, например все устройства автопилота, OrderID или PurchaseOrderID  | (Device. Девицефисикалидс-Any _-содержит "[Зтдид]") (Device. Девицефисикалидс-Any _-EQ "[OrderID]: 179887111881") (Device. Девицефисикалидс-Any _-EQ "[PurchaseOrderId]: 76222342342")
  systemLabels | Любая строка, соответствующая свойству устройства Intune, для добавления тегов устройств в Modern Workplace. | (Device. Системлабелс — содержит "M365Managed")
 
 > [!Note]  

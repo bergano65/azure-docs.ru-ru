@@ -5,13 +5,13 @@ author: rachel-msft
 ms.author: raagyema
 ms.service: postgresql
 ms.topic: conceptual
-ms.date: 10/14/2019
-ms.openlocfilehash: c0ce1648d7b5f7c25044ed8f66eafcca7b0009f4
-ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
+ms.date: 01/28/2020
+ms.openlocfilehash: 45490e398abd8b5bd3c10adb95b56e1019d2bb94
+ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75747339"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76842475"
 ---
 # <a name="audit-logging-in-azure-database-for-postgresql---single-server"></a>Ведение журнала аудита в базе данных Azure для PostgreSQL — один сервер
 
@@ -23,7 +23,7 @@ ms.locfileid: "75747339"
 
 Если вы хотите, чтобы журналы уровня ресурсов Azure для таких операций, как вычисление и масштабирование хранилища, см. в [журнале действий Azure](../azure-monitor/platform/platform-logs-overview.md).
 
-## <a name="usage-considerations"></a>Особенности использования
+## <a name="usage-considerations"></a>Рекомендации по использованию
 По умолчанию выписки из журналов pgAudit создаются вместе с регулярными выписками с использованием стандартного средства ведения журнала Postgres. В Базе данных Azure для PostgreSQL эти файлы журнала можно скачать на портале Azure или с помощью интерфейса командной строки. Максимальный объем хранилища для коллекции файлов составляет 1 ГБ, а каждый файл доступен не более семи дней (по умолчанию — три дня). Эта служба является краткосрочным хранилищем.
 
 Кроме того, можно настроить все журналы для передачи в службу журналов диагностики Azure Monitor. Если включить ведение журнала диагностики Azure Monitor, журналы автоматически отправляются (в формате JSON) в службу хранилища Azure, концентраторы событий и (или) Azure Monitor журналы в зависимости от вашего выбора.
@@ -65,10 +65,8 @@ ms.locfileid: "75747339"
 После [установки пгаудит](#installing-pgaudit)можно настроить его параметры, чтобы начать ведение журнала. В [документации по пгаудит](https://github.com/pgaudit/pgaudit/blob/master/README.md#settings) содержится определение каждого параметра. Сначала проверьте параметры и убедитесь, что вы получаете ожидаемое поведение.
 
 > [!NOTE]
-> Если задать для параметра `pgaudit.log_client` значение ON, журналы будут перенаправляться в процесс клиента (например, psql) вместо записи в файл. Этот параметр обычно следует отключать.
-
-> [!NOTE]
-> `pgaudit.log_level` включается только при включенном `pgaudit.log_client`. Кроме того, в портал Azure в настоящее время есть ошибка `pgaudit.log_level`: поле со списком отображается, что означает, что можно выбрать несколько уровней. Однако должен быть выбран только один уровень. 
+> Если задать для параметра `pgaudit.log_client` значение ON, журналы будут перенаправляться в процесс клиента (например, psql) вместо записи в файл. Этот параметр обычно следует отключать. <br> <br>
+> `pgaudit.log_level` включается только при включенном `pgaudit.log_client`.
 
 > [!NOTE]
 > В базе данных Azure для PostgreSQL нельзя задать `pgaudit.log` с помощью ярлыка `-` (минус), как описано в документации по Пгаудит. Все необходимые классы операторов (READ, WRITE и т. д.) должны быть указаны отдельно.
@@ -87,6 +85,22 @@ t=%m u=%u db=%d pid=[%p]:
 ### <a name="getting-started"></a>Начало работы
 Чтобы быстро приступить к работе, присвойте параметру `pgaudit.log` значение `WRITE`и откройте журналы, чтобы просмотреть выходные данные. 
 
+## <a name="viewing-audit-logs"></a>Просмотр журналов аудита
+Если вы используете файлы. log, журналы аудита будут включены в тот же файл, что и журналы ошибок PostgreSQL. Файлы журнала можно загрузить с [портала](howto-configure-server-logs-in-portal.md) Azure или с помощью [интерфейса командной строки](howto-configure-server-logs-using-cli.md). 
+
+Если вы используете ведение журнала диагностики Azure, то способ доступа к журналам зависит от выбранной конечной точки. Сведения о службе хранилища Azure см. в статье [учетная запись хранения журналов](../azure-monitor/platform/resource-logs-collect-storage.md) . Сведения о концентраторах событий см. в статье [Streaming Azure Logs](../azure-monitor/platform/resource-logs-stream-event-hubs.md) .
+
+Для журналов Azure Monitor журналы отправляются в выбранную рабочую область. Журналы postgres используют режим сбора **AzureDiagnostics** , поэтому их можно запрашивать из таблицы AzureDiagnostics. Поля в таблице описаны ниже. Дополнительные сведения о запросах и предупреждениях см. в статье о [запросах Azure Monitor журналов](../azure-monitor/log-query/log-query-overview.md) .
+
+Этот запрос можно использовать для начала работы. Можно настроить оповещения на основе запросов.
+
+Поиск всех журналов postgres для определенного сервера за последний день
+```
+AzureDiagnostics
+| where LogicalServerName_s == "myservername"
+| where TimeGenerated > ago(1d) 
+| where Message contains "AUDIT:"
+```
 
 ## <a name="next-steps"></a>Дальнейшие действия
 - [Сведения о ведении журнала в базе данных Azure для PostgreSQL](concepts-server-logs.md)

@@ -8,12 +8,12 @@ ms.author: luisca
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: f419b19b576ebf6f7f853b41128908487f047df6
-ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
+ms.openlocfilehash: 4f0975aceeb55c8f184ebe4e6a44d819b4a8bf38
+ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74113378"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76837866"
 ---
 # <a name="built-in-cognitive-skills-for-text-and-image-processing-during-indexing-azure-cognitive-search"></a>Встроенные профессиональные навыки для обработки текста и изображений во время индексирования (Когнитивный поиск Azure)
 
@@ -29,12 +29,13 @@ ms.locfileid: "74113378"
 
 Некоторые навыки позволяют гибко регулировать свои входные и выходные данные. Как правило, большинство навыков основано на предварительно обученных моделях, поэтому вы не можете обучить модель, используя собственные обучающие данные. Приведенная ниже таблица перечисляет и описывает навыки, предоставляемые корпорацией Майкрософт. 
 
-| Навык | ОПИСАНИЕ |
+| Навык | Description |
 |-------|-------------|
 | [Microsoft.Skills.Text.KeyPhraseSkill](cognitive-search-skill-keyphrases.md) | Этот навык использует предварительно обученную модель для выявления важных фраз в зависимости от расположения терминов, лингвистических правил, близости к другим терминам и того, насколько необычным является термин в исходных данных. |
 | [Microsoft.Skills.Text.LanguageDetectionSkill](cognitive-search-skill-language-detection.md)  | Этот навык использует предварительно обученную модель, чтобы определить используемый язык (один идентификатор языка на документ). Если в одних сегментах текста используется несколько языков, выводится код основного используемого языка.|
 | [Microsoft.Skills.Text.MergeSkill](cognitive-search-skill-textmerger.md) | Объединяет текст из коллекции полей в одном поле.  |
 | [Microsoft.Skills.Text.EntityRecognitionSkill](cognitive-search-skill-entity-recognition.md) | Этот навык использует предварительно обученную модель, чтобы установить сущности для фиксированного набора категорий: пользователей, расположений, организаций, электронных адресов, URL-адресов, полей даты и времени. |
+| [Microsoft. Skills. Text. Пиидетектионскилл](cognitive-search-skill-pii-detection.md)  | Этот навык использует предварительно обученную модель для извлечения личных сведений из заданного текста. Навык также предоставляет различные варианты маскирования обнаруженных сущностей PII в тексте.  |
 | [Microsoft.Skills.Text.SentimentSkill](cognitive-search-skill-sentiment.md)  | Этот навык использует предварительно обученную модель, чтобы оценить положительную или отрицательную тональность отдельных записей. Оценка находится в пределах от 0 до 1. Нейтральные оценки применяются в неопределенных случаях, когда установить тональность не удается, а также для текста, считающегося нейтральным.  |
 | [Microsoft.Skills.Text.SplitSkill](cognitive-search-skill-textsplit.md) | Разбивает текст на страницы, чтобы можно было постепенно обогатить или дополнить содержимое. |
 | [Microsoft.Skills.Text.TranslationSkill](cognitive-search-skill-text-translation.md) | Этот навык использует предварительно обученную модель для перевода входного текста на различные языки для нормализации или использования при локализации. |

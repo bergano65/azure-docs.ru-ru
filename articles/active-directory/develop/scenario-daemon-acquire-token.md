@@ -15,20 +15,20 @@ ms.workload: identity
 ms.date: 10/30/2019
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: 38df99f0a4932f477e900382c7ff1ae7b50febe9
-ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
+ms.openlocfilehash: b2d388160c6ca744b10c17bda17c59e22940f98b
+ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76702476"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76775245"
 ---
 # <a name="daemon-app-that-calls-web-apis---acquire-a-token"></a>Управляющее приложение, вызывающее веб-API — получение маркера
 
-После создания конфиденциального клиентского приложения можно получить маркер для приложения путем вызова ``AcquireTokenForClient``, передачи области и принудительного или необновления маркера.
+После создания конфиденциального клиентского приложения можно получить маркер для приложения путем вызова `AcquireTokenForClient`, передачи области и, при необходимости, принудительного обновления маркера.
 
 ## <a name="scopes-to-request"></a>Области для запроса
 
-Область запроса учетных данных клиента — это имя ресурса, за которым следует `/.default`. Эта нотация указывает, что Azure AD будет использовать **разрешения уровня приложения** , объявленные статически во время регистрации приложения. Кроме того, как было показано ранее, эти разрешения API должны быть предоставлены администратором клиента.
+Область запроса учетных данных клиента — это имя ресурса, за которым следует `/.default`. Эта нотация указывает Azure Active Directory (Azure AD) использовать *разрешения уровня приложения* , объявленные статически во время регистрации приложения. Кроме того, эти разрешения API должны быть предоставлены администратором клиента.
 
 # <a name="nettabdotnet"></a>[.NET](#tab/dotnet)
 
@@ -39,7 +39,7 @@ var scopes = new [] {  ResourceId+"/.default"};
 
 # <a name="pythontabpython"></a>[Python](#tab/python)
 
-В MSAL Python файл конфигурации будет выглядеть так, как в следующем фрагменте кода:
+В MSAL Python файл конфигурации выглядит как следующий фрагмент кода:
 
 ```Json
 {
@@ -55,26 +55,26 @@ final static String GRAPH_DEFAULT_SCOPE = "https://graph.microsoft.com/.default"
 
 ---
 
-### <a name="case-of-azure-ad-v10-resources"></a>Ресурсы Azure AD (v 1.0)
+### <a name="azure-ad-v10-resources"></a>Ресурсы по Azure AD (v 1.0)
 
-Область, используемая для учетных данных клиента, всегда должна быть resourceId + "/.дефаулт"
+Областью, используемой для учетных данных клиента, всегда должен быть идентификатор ресурса, за которым следует `/.default`.
 
 > [!IMPORTANT]
-> Для MSAL с запросом маркера доступа для ресурса, принимающего маркер доступа v 1.0, Azure AD анализирует нужную аудиторию из запрошенной области, принимая все перед последней косой чертой и используя ее в качестве идентификатора ресурса.
-> Поэтому, если, например, Azure SQL ( **https://database.windows.net** ), ресурс ожидает, что аудитория заканчивается косой чертой (для Azure SQL: `https://database.windows.net/` ), необходимо запросить область `https://database.windows.net//.default` (Обратите внимание на двойную косую черту). См. также MSAL.NET проблема [#747](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/issues/747): пропущена Конечная косая черта URL-адреса ресурса, что привело к сбою проверки подлинности SQL.
+> Когда MSAL запрашивает маркер доступа для ресурса, который принимает маркер доступа версии 1,0, Azure AD анализирует нужную аудиторию из запрошенной области, принимая все до последней косой черты и используя ее в качестве идентификатора ресурса.
+> Поэтому, если, как и база данных SQL Azure (**https:\//Database.Windows.NET**), ресурс ожидает аудиторию, которая заканчивается косой чертой (для базы данных SQL Azure `https://database.windows.net/`) необходимо запросить область `https://database.windows.net//.default`. (Обратите внимание на двойную косую черту.) См. также MSAL.NET проблема [#747: пропущена Конечная косая черта URL-адреса ресурса, что привело к сбою проверки подлинности SQL](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/issues/747).
 
 ## <a name="acquiretokenforclient-api"></a>API Аккуиретокенфорклиент
 
-Чтобы получить маркер для приложения, используйте `AcquireTokenForClient` или эквивалент в зависимости от платформ.
+Чтобы получить маркер для приложения, вы будете использовать `AcquireTokenForClient` или его эквивалент в зависимости от платформы.
 
 # <a name="nettabdotnet"></a>[.NET](#tab/dotnet)
 
 ```csharp
 using Microsoft.Identity.Client;
 
-// With client credentials flows the scopes is ALWAYS of the shape "resource/.default", as the
+// With client credentials flows, the scope is always of the shape "resource/.default" because the
 // application permissions need to be set statically (in the portal or by PowerShell), and then granted by
-// a tenant administrator
+// a tenant administrator.
 string[] scopes = new string[] { "https://graph.microsoft.com/.default" };
 
 AuthenticationResult result = null;
@@ -85,14 +85,14 @@ try
 }
 catch (MsalUiRequiredException ex)
 {
-    // The application does not have sufficient permissions
-    // - did you declare enough app permissions in during the app creation?
-    // - did the tenant admin needs to grant permissions to the application.
+    // The application doesn't have sufficient permissions.
+    // - Did you declare enough app permissions during app creation?
+    // - Did the tenant admin grant permissions to the application?
 }
 catch (MsalServiceException ex) when (ex.Message.Contains("AADSTS70011"))
 {
-    // Invalid scope. The scope has to be of the form "https://resourceurl/.default"
-    // Mitigation: change the scope to be as expected !
+    // Invalid scope. The scope has to be in the form "https://resourceurl/.default"
+    // Mitigation: Change the scope to be as expected.
 }
 ```
 
@@ -102,9 +102,9 @@ catch (MsalServiceException ex) when (ex.Message.Contains("AADSTS70011"))
 # The pattern to acquire a token looks like this.
 result = None
 
-# Firstly, looks up a token from cache
-# Since we are looking for token for the current app, NOT for an end user,
-# notice we give account parameter as None.
+# First, the code looks up a token from the cache.
+# Because we're looking for a token for the current app, not for a user,
+# use None for the account parameter.
 result = app.acquire_token_silent(config["scope"], account=None)
 
 if not result:
@@ -112,17 +112,17 @@ if not result:
     result = app.acquire_token_for_client(scopes=config["scope"])
 
 if "access_token" in result:
-    # Call a protected API with the access token
+    # Call a protected API with the access token.
     print(result["token_type"])
 else:
     print(result.get("error"))
     print(result.get("error_description"))
-    print(result.get("correlation_id"))  # You may need this when reporting a bug
+    print(result.get("correlation_id"))  # You might need this when reporting a bug.
 ```
 
 # <a name="javatabjava"></a>[Java](#tab/java)
 
-Это извлечение из [примеров разработки Java MSAL](https://github.com/AzureAD/microsoft-authentication-library-for-java/blob/dev/src/samples/confidential-client/).
+Этот код извлекается из [примеров разработки Java MSAL](https://github.com/AzureAD/microsoft-authentication-library-for-java/blob/dev/src/samples/confidential-client/).
 
 ```Java
 ClientCredentialParameters clientCredentialParam = ClientCredentialParameters.builder(
@@ -138,7 +138,7 @@ BiConsumer<IAuthenticationResult, Throwable> processAuthResult = (res, ex) -> {
     System.out.println("Returned ok - " + res);
     System.out.println("ID Token - " + res.idToken());
 
-    /* call a protected API with res.accessToken() */
+    /* Call a protected API with res.accessToken() */
 };
 
 future.whenCompleteAsync(processAuthResult);
@@ -149,12 +149,12 @@ future.join();
 
 ### <a name="protocol"></a>Протокол
 
-Если вы еще не создали библиотеку для выбранного языка, вы можете использовать протокол напрямую:
+Если у вас еще нет библиотеки для выбранного языка, вы можете использовать протокол напрямую:
 
-#### <a name="first-case-access-token-request-with-a-shared-secret"></a>Первый сценарий: запрос маркера доступа с помощью общего секрета
+#### <a name="first-case-access-the-token-request-by-using-a-shared-secret"></a>Первый случай: доступ к запросу маркера с помощью общего секрета
 
 ```Text
-POST /{tenant}/oauth2/v2.0/token HTTP/1.1           //Line breaks for clarity
+POST /{tenant}/oauth2/v2.0/token HTTP/1.1           //Line breaks for clarity.
 Host: login.microsoftonline.com
 Content-Type: application/x-www-form-urlencoded
 
@@ -164,10 +164,10 @@ client_id=535fb089-9ff3-47b6-9bfb-4f1264799865
 &grant_type=client_credentials
 ```
 
-#### <a name="second-case-access-token-request-with-a-certificate"></a>Второй сценарий: запрос маркера доступа с помощью сертификата
+#### <a name="second-case-access-the-token-request-by-using-a-certificate"></a>Второй случай: доступ к запросу маркера с помощью сертификата.
 
 ```Text
-POST /{tenant}/oauth2/v2.0/token HTTP/1.1               // Line breaks for clarity
+POST /{tenant}/oauth2/v2.0/token HTTP/1.1               // Line breaks for clarity.
 Host: login.microsoftonline.com
 Content-Type: application/x-www-form-urlencoded
 
@@ -182,7 +182,7 @@ scope=https%3A%2F%2Fgraph.microsoft.com%2F.default
 
 ## <a name="application-token-cache"></a>Кэш маркеров приложений
 
-В MSAL.NET, `AcquireTokenForClient` использует **кэш маркеров приложений** (все остальные методы аккуиретокенкскс используют кэш пользовательских маркеров), не вызывайте `AcquireTokenSilent` перед вызовом `AcquireTokenForClient`, так как `AcquireTokenSilent` использует кэш маркеров **пользователя** . `AcquireTokenForClient` проверяет сам кэш маркера **приложения** и обновляет его.
+В MSAL.NET `AcquireTokenForClient` использует кэш маркеров приложений. (Все остальные методы AcquireToken*XX* используют кэш пользовательских маркеров.) Не вызывайте `AcquireTokenSilent` перед вызовом `AcquireTokenForClient`, так как `AcquireTokenSilent` использует кэш маркеров *пользователя* . `AcquireTokenForClient` проверяет сам кэш маркера *приложения* и обновляет его.
 
 ## <a name="troubleshooting"></a>Устранение неисправностей
 
@@ -192,8 +192,8 @@ scope=https%3A%2F%2Fgraph.microsoft.com%2F.default
 
 ### <a name="did-you-forget-to-provide-admin-consent-daemon-apps-need-it"></a>Вы забыли предоставить согласие администратора? Требуются приложения управляющей программы!
 
-Если при вызове API **недостаточно прав для выполнения операции**возникает ошибка, администратор клиента должен предоставить приложению разрешения. См. шаг 6 в разделе Регистрация клиентского приложения выше.
-Как правило, отображается сообщение об ошибке, похожее на следующее описание ошибки:
+Если у вас возникли **недостаточные привилегии для выполнения операции** при вызове API, администратор клиента должен предоставить приложению разрешения. См. шаг 6 в разделе Регистрация клиентского приложения выше.
+Как правило, отображается сообщение об ошибке, похожее на следующее:
 
 ```JSon
 Failed to call the web API: Forbidden

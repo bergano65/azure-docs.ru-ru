@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 11/05/2019
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: a627b0eebc3aa4a19b0670f899d3032d8df58da4
-ms.sourcegitcommit: 6c2c97445f5d44c5b5974a5beb51a8733b0c2be7
+ms.openlocfilehash: f9573f4d226df4eb6068af679f2eb45dc87c7e40
+ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73620459"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76840066"
 ---
 # <a name="overview-of-user-accounts-in-azure-active-directory-b2c"></a>Общие сведения об учетных записях пользователей в Azure Active Directory B2C
 
@@ -49,39 +49,39 @@ ms.locfileid: "73620459"
 
 Для создания новой рабочей учетной записи перейдите по следующим ссылкам:
 
-- [портал Azure](../active-directory/fundamentals/add-users-azure-active-directory.md)
+- [Портал Azure](../active-directory/fundamentals/add-users-azure-active-directory.md)
 - [Microsoft Graph](https://docs.microsoft.com/graph/api/user-post-users?view=graph-rest-1.0)
 
 ### <a name="update-a-user-profile"></a>Обновление профиля пользователя
 
 Чтобы обновить профиль пользователя, перейдите по следующим ссылкам:
 
-- [портал Azure](../active-directory/fundamentals/active-directory-users-profile-azure-portal.md)
+- [Портал Azure](../active-directory/fundamentals/active-directory-users-profile-azure-portal.md)
 - [Microsoft Graph](https://docs.microsoft.com/graph/api/user-update?view=graph-rest-1.0)
 
 ### <a name="reset-a-password-for-a-user"></a>Сброс пароля для пользователя
 
 Чтобы сбросить пароль пользователя, перейдите по следующим ссылкам:
 
-- [портал Azure](../active-directory/fundamentals/active-directory-users-reset-password-azure-portal.md)
+- [Портал Azure](../active-directory/fundamentals/active-directory-users-reset-password-azure-portal.md)
 - [Microsoft Graph](https://docs.microsoft.com/graph/api/user-update?view=graph-rest-1.0)
 
 ## <a name="guest-user"></a>Гостевой пользователь
 
 Внешних пользователей можно приглашать в свой клиент в качестве гостевого пользователя. Типичный сценарий приглашения гостевого пользователя в клиент Azure AD B2C — для совместного выполнения обязанностей администрирования. Пример использования гостевой учетной записи см. в статье [Свойства пользователя службы совместной работы Azure Active Directory B2B](../active-directory/b2b/user-properties.md).
 
-Приглашая гостевого пользователя в клиент, необходимо предоставить адрес электронной почты получателя и сообщение, описывающее приглашение. Ссылка для приглашения перенаправляет пользователя на страницу предоставления согласия, где он может нажать кнопку **Начать работу** и принять разрешения. Если папка "Входящие" не подключена к адресу электронной почты, пользователь может перейти на страницу предоставления согласия, открыв страницу Майкрософт, используя учетные данные из приглашения. Затем пользователь вынужден активировать приглашение так же, как щелкнуть ссылку в сообщении электронной почты. Например, `https://myapps.microsoft.com/B2CTENANTNAME`.
+Приглашая гостевого пользователя в клиент, необходимо предоставить адрес электронной почты получателя и сообщение, описывающее приглашение. Ссылка для приглашения перенаправляет пользователя на страницу предоставления согласия, где он может нажать кнопку **Начать работу** и принять разрешения. Если папка "Входящие" не подключена к адресу электронной почты, пользователь может перейти на страницу предоставления согласия, открыв страницу Майкрософт, используя учетные данные из приглашения. Затем пользователь вынужден активировать приглашение так же, как щелкнуть ссылку в сообщении электронной почты. Например: `https://myapps.microsoft.com/B2CTENANTNAME`.
 
 [API Microsoft Graph](https://docs.microsoft.com/graph/api/invitation-post?view=graph-rest-beta) также можно использовать, чтобы приглашать гостевых пользователей.
 
 ## <a name="consumer-user"></a>Потребитель
 
-Потребитель может входить в приложение, защищенное Azure AD B2C, однако не имеет доступа к таким ресурсам Azure, как портал Azure. Потребитель может использовать локальную учетную запись или федеративную учетную запись, такую как Facebook или Twitter. Учетная запись потребителя создается с помощью [пользовательского потока регистрации или входа](../active-directory-b2c/active-directory-b2c-reference-policies.md), с помощью API Graph Azure AD или с помощью портал Azure.
+Потребитель может входить в приложение, защищенное Azure AD B2C, однако не имеет доступа к таким ресурсам Azure, как портал Azure. Потребитель может использовать локальную учетную запись или федеративную учетную запись, такую как Facebook или Twitter. Учетная запись потребителя создается с помощью [пользовательского потока регистрации или входа](user-flow-overview.md), с помощью API Graph Azure AD или с помощью портал Azure.
 
-Укажите данные, получаемые при создании учетной записи потребителя, с использованием настраиваемых атрибутов пользователя. Дополнительные сведения см. в статье [Определение настраиваемых атрибутов в Azure Active Directory B2C](../active-directory-b2c/active-directory-b2c-reference-custom-attr.md).
+Укажите данные, получаемые при создании учетной записи потребителя, с использованием настраиваемых атрибутов пользователя. Дополнительные сведения см. в статье [Определение настраиваемых атрибутов в Azure Active Directory B2C](user-flow-custom-attributes.md).
 
-Дополнительные сведения по созданию учетной записи потребителя Azure AD B2C см. в разделе **Создание учетных записей пользователей-клиентов** статьи [Azure AD B2C. Использование API Graph Azure AD](active-directory-b2c-devquickstarts-graph-dotnet.md). Сведения из раздела **Обновление учетных записей пользователей-клиентов** той же статьи можно использовать для управления свойствами учетной записи.
+Дополнительные сведения по созданию учетной записи потребителя Azure AD B2C см. в разделе **Создание учетных записей пользователей-клиентов** статьи [Azure AD B2C. Использование API Graph Azure AD](manage-user-accounts-graph-api.md). Сведения из раздела **Обновление учетных записей пользователей-клиентов** той же статьи можно использовать для управления свойствами учетной записи.
 
 ### <a name="migrate-consumer-user-accounts"></a>Миграция учетных записей потребителей
 
-Возможно, вам потребуется перенести существующие учетные записи потребителей из любого поставщика удостоверений в Azure AD B2C. Дополнительные сведения см. в статье [Azure Active Directory B2C. Миграция пользователей](active-directory-b2c-user-migration.md) или [Azure Active Directory B2C. Перемещение пользователей с удостоверениями социальных сетей](active-directory-b2c-social-migration.md).
+Возможно, вам потребуется перенести существующие учетные записи потребителей из любого поставщика удостоверений в Azure AD B2C. Дополнительные сведения см. в статье [Azure Active Directory B2C. Миграция пользователей](user-migration.md) или [Azure Active Directory B2C. Перемещение пользователей с удостоверениями социальных сетей](migrate-social-identities.md).

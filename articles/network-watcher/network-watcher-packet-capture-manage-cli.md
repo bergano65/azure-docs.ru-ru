@@ -3,9 +3,7 @@ title: Управление записью пакетов с помощью На
 description: В этой статье объясняется, как с помощью Azure CLI управлять функцией записи пакетов в службе "Наблюдатель за сетями".
 services: network-watcher
 documentationcenter: na
-author: KumudD
-manager: twooley
-editor: ''
+author: damendo
 ms.assetid: cb0c1d10-f7f2-4c34-b08c-f73452430be8
 ms.service: network-watcher
 ms.devlang: na
@@ -13,20 +11,20 @@ ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/22/2017
-ms.author: kumud
-ms.openlocfilehash: 7e6b1d77d002b8c1ed32a4e7adbdd1a46cf65668
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: damendo
+ms.openlocfilehash: 7eea4c05a48c5e055766f942cc44ee4cf189de5d
+ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64687093"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76840867"
 ---
 # <a name="manage-packet-captures-with-azure-network-watcher-using-the-azure-cli"></a>Управление записью пакетов с помощью службы "Наблюдатель за сетями Azure" посредством Azure CLI
 
 > [!div class="op_single_selector"]
-> - [портал Azure](network-watcher-packet-capture-manage-portal.md)
+> - [Портал Azure](network-watcher-packet-capture-manage-portal.md)
 > - [PowerShell](network-watcher-packet-capture-manage-powershell.md)
-> - [Интерфейс командной строки Azure](network-watcher-packet-capture-manage-cli.md)
+> - [Azure CLI](network-watcher-packet-capture-manage-cli.md)
 > - [Azure REST API](network-watcher-packet-capture-manage-rest.md)
 
 Возможность записи пакетов Наблюдателя за сетями позволяет создавать сеансы записи для отслеживания входящего и исходящего трафика виртуальной машины. Для сеанса записи предоставляются фильтры, которые позволяют убедиться, что записывается только требуемый трафик. Записи пакетов помогают выявить аномалии в работе сети по факту или заранее. Они также помогают выполнять сбор сетевой статистики, получать сведения о сетевых вторжениях, выполнять отладку передачи данных между клиентом и сервером и многое другое. Так как запись пакетов активируется удаленно, ее не нужно запускать вручную. К тому же она сразу выполняется на требуемой виртуальной машине, что также позволяет сэкономить ценное время.
@@ -52,7 +50,7 @@ ms.locfileid: "64687093"
 
 ## <a name="install-vm-extension"></a>Установка расширения виртуальной машины
 
-### <a name="step-1"></a>Шаг 1
+### <a name="step-1"></a>Шаг 1
 
 Выполните командлет `az vm extension set`, чтобы установить агент записи пакетов на гостевой виртуальной машине.
 
@@ -68,7 +66,7 @@ az vm extension set --resource-group resourceGroupName --vm-name virtualMachineN
 az vm extension set --resource-group resourceGroupName --vm-name virtualMachineName --publisher Microsoft.Azure.NetworkWatcher --name NetworkWatcherAgentLinux--version 1.4
 ```
 
-### <a name="step-2"></a>Шаг 2
+### <a name="step-2"></a>Шаг 2
 
 Чтобы убедиться, что агент установлен, выполните командлет `vm extension show` и передайте ему имя группы ресурсов и виртуальной машины. Проверьте итоговый список, чтобы убедиться, что агент установлен.
 
@@ -102,7 +100,7 @@ az vm extension show --resource-group resourceGroupName --vm-name virtualMachine
 
 После выполнения предыдущих шагов на виртуальной машине будет установлен агент записи пакетов.
 
-### <a name="step-1"></a>Шаг 1
+### <a name="step-1"></a>Шаг 1
 
 Далее необходимо извлечь экземпляр Наблюдателя за сетями. Имя Наблюдателя за сетью передается в командлет `az network watcher show` на шаге 4.
 
@@ -110,7 +108,7 @@ az vm extension show --resource-group resourceGroupName --vm-name virtualMachine
 az network watcher show --resource-group resourceGroup --name networkWatcherName
 ```
 
-### <a name="step-2"></a>Шаг 2
+### <a name="step-2"></a>Шаг 2
 
 Получите учетную запись хранения. Она используется для хранения файла записи пакетов.
 
@@ -118,7 +116,7 @@ az network watcher show --resource-group resourceGroup --name networkWatcherName
 azure storage account list
 ```
 
-### <a name="step-3"></a>Шаг 3.
+### <a name="step-3"></a>Шаг 3
 
 С помощью фильтров можно ограничить данные, которые сохраняются при записи пакетов. В следующем примере настраивается запись пакетов с несколькими фильтрами.  Первые три фильтра собирают исходящий TCP-трафик только с локального IP-адреса 10.0.0.3 на порты назначения 20, 80 и 443.  Последний фильтр собирает только трафик, передаваемый по протоколу UDP.
 

@@ -4,23 +4,20 @@ titleSuffix: Azure Network Watcher
 description: Узнайте, какие разрешения на управление доступом на основе ролей доступны для работы с возможностями Наблюдателя за сетями.
 services: network-watcher
 documentationcenter: ''
-author: KumudD
-manager: twooley
-editor: ''
-ms.assetid: ''
+author: damendo
 ms.service: network-watcher
 ms.workload: ''
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 05/10/2018
-ms.author: kumud
-ms.openlocfilehash: 9d56865a558f027a044e990a2da697dc53e7a311
-ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
+ms.author: damendo
+ms.openlocfilehash: f8743f19d6cd262ad140659be55a4fc57e842564
+ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74277707"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76840559"
 ---
 # <a name="role-based-access-control-permissions-required-to-use-network-watcher-capabilities"></a>Разрешения на управление доступом на основе ролей, необходимые для использования возможностей Наблюдателя за сетями
 
@@ -28,7 +25,7 @@ ms.locfileid: "74277707"
 
 ## <a name="network-watcher"></a>Наблюдатель за сетями
 
-| Действие                                                              | ОПИСАНИЕ                                                           |
+| Действия                                                              | Description                                                           |
 | ---------                                                           | -------------                                                  |
 | Microsoft.Network/networkWatchers/read                              | Получение Наблюдателя за сетями                                          |
 | Microsoft.Network/networkWatchers/write                             | Создание или обновление Наблюдателя за сетями                             |
@@ -36,14 +33,14 @@ ms.locfileid: "74277707"
 
 ## <a name="nsg-flow-logs"></a>Журналы потоков NSG
 
-| Действие                                                              | ОПИСАНИЕ                                                           |
+| Действия                                                              | Description                                                           |
 | ---------                                                           | -------------                                                  |
 | Microsoft.Network/networkWatchers/configureFlowLog/action           | Настройка журнала потока                                           |
 | Microsoft.Network/networkWatchers/queryFlowLogStatus/action         | Запрос состояния для журнала потока                                    |
 
 ## <a name="connection-troubleshoot"></a>Устранение неполадок подключения
 
-| Действие                                                              | ОПИСАНИЕ                                                           |
+| Действия                                                              | Description                                                           |
 | ---------                                                           | -------------                                                  |
 | Microsoft.Network/networkWatchers/connectivityCheck/action          | Инициирование теста на устранение неполадок подключения
 | Microsoft.Network/networkWatchers/queryTroubleshootResult/action    | Запрос результатов теста устранения неполадок подключения                |
@@ -51,7 +48,7 @@ ms.locfileid: "74277707"
 
 ## <a name="connection-monitor"></a>Монитор подключения
 
-| Действие                                                              | ОПИСАНИЕ                                                           |
+| Действия                                                              | Description                                                           |
 | ---------                                                           | -------------                                                  |
 | Microsoft.Network/networkWatchers/connectionMonitors/start/action   | Запуск монитора подключения                                     |
 | Microsoft.Network/networkWatchers/connectionMonitors/stop/action    | Остановка монитора подключения                                      |
@@ -62,41 +59,41 @@ ms.locfileid: "74277707"
 
 ## <a name="packet-capture"></a>Запись пакетов
 
-| Действие                                                              | ОПИСАНИЕ                                                           |
+| Действия                                                              | Description                                                           |
 | ---------                                                           | -------------                                                  |
 | Microsoft.Network/networkWatchers/packetCaptures/queryStatus/action | Запрос состояния записи пакета                           |
-| Microsoft.Network/networkWatchers/packetCaptures/stop/action        | Остановка записи пакетов                                          |
+| Microsoft.Network/networkWatchers/packetCaptures/stop/action        | Прекращение записи пакета                                          |
 | Microsoft.Network/networkWatchers/packetCaptures/read               | Получение записи пакета                                           |
 | Microsoft.Network/networkWatchers/packetCaptures/write              | Создание записи пакетов                                        |
 | Microsoft.Network/networkWatchers/packetCaptures/delete             | Удаление записи пакета                                        |
 
 ## <a name="ip-flow-verify"></a>Проверка IP-потока
 
-| Действие                                                              | ОПИСАНИЕ                                                           |
+| Действия                                                              | Description                                                           |
 | ---------                                                           | -------------                                                  |
 | Microsoft.Network/networkWatchers/ipFlowVerify/action               | Проверка IP-потока                                              |
 
 ## <a name="next-hop"></a>Следующий прыжок
 
-| Действие                                                              | ОПИСАНИЕ                                                           |
+| Действия                                                              | Description                                                           |
 | ---------                                                           | -------------                                                  |
 | Microsoft.Network/networkWatchers/nextHop/action                    | Получение следующего прыжка с виртуальной машины                                     |
 
 ## <a name="network-security-group-view"></a>Представление группы безопасности сети
 
-| Действие                                                              | ОПИСАНИЕ                                                           |
+| Действия                                                              | Description                                                           |
 | ---------                                                           | -------------                                                  |
 | Microsoft.Network/networkWatchers/securityGroupView/action          | Просмотр групп безопасности                                           |
 
 ## <a name="topology"></a>Топология
 
-| Действие                                                              | ОПИСАНИЕ                                                           |
+| Действия                                                              | Description                                                           |
 | ---------                                                           | -------------                                                  |
 | Microsoft.Network/networkWatchers/topology/action                   | Получение топологии                                                   |
 
 ## <a name="reachability-report"></a>Отчет о возможности доступа
 
-| Действие                                                              | ОПИСАНИЕ                                                           |
+| Действия                                                              | Description                                                           |
 | ---------                                                           | -------------                                                  |
 | Microsoft.Network/networkWatchers/azureReachabilityReport/action    | Получение отчета о возможности доступа Azure                               |
 
@@ -105,7 +102,7 @@ ms.locfileid: "74277707"
 
 Возможностям Наблюдателя за сетью также требуются следующие действия:
 
-| Действия                                                           | ОПИСАНИЕ                                                    |
+| Действия                                                           | Description                                                    |
 | ---------                                                           | -------------                                                  |
 | Microsoft.Authorization/\*/Read                                     | Используется для выборки назначений ролей RBAC и определений политик          |
 | Microsoft.Resources/subscriptions/resourceGroups/Read;               | Используется для перечисления всех групп ресурсов в подписке    |

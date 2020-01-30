@@ -7,12 +7,12 @@ ms.service: private-link
 ms.topic: conceptual
 ms.date: 01/09/2020
 ms.author: allensu
-ms.openlocfilehash: 38f424287788537cc5711bab8da60b5798a84b3a
-ms.sourcegitcommit: 12a26f6682bfd1e264268b5d866547358728cd9a
+ms.openlocfilehash: cd06d4cbf62078c2c7a5def4a0032ddce97d67f0
+ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75867684"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76842458"
 ---
 # <a name="what-is-azure-private-endpoint"></a>Что такое частная конечная точка Azure?
 
@@ -50,13 +50,13 @@ ms.locfileid: "75867684"
 ## <a name="private-link-resource"></a>Ресурс частной ссылки 
 Ресурс частной ссылки является целевым объектом назначения заданной закрытой конечной точки. Ниже приведен список доступных типов ресурсов частной ссылки. 
  
-|Имя ресурса частной ссылки  |Тип ресурса   |Подресурсы  |
+|Имя ресурса частной ссылки  |Тип ресурса   |Подресурсов  |
 |---------|---------|---------|
 |**Служба частной связи** (собственная служба)   |  Microsoft. Network/Привателинксервицес       | empty |
 |**База данных SQL Azure** | Microsoft.Sql/servers    |  SQL Server (sqlServer)        |
 |**Хранилище данных SQL Azure** | Microsoft.Sql/servers    |  SQL Server (sqlServer)        |
 |**Хранилище Azure**  | Microsoft.Storage/storageAccounts    |  Большой двоичный объект (BLOB-объект, blob_secondary)<BR> Таблица (таблица, table_secondary)<BR> Очередь (очередь, queue_secondary)<BR> Файл (файл, file_secondary)<BR> Интернет (веб, web_secondary)        |
-|**Azure Data Lake Storage 2-го поколения**  | Microsoft.Storage/storageAccounts    |  Большой двоичный объект (BLOB-объект, blob_secondary)       |
+|**Azure Data Lake Storage 2-го поколения**  | Microsoft.Storage/storageAccounts    |  Большой двоичный объект (BLOB-объект, blob_secondary)<BR> Data Lake файловой системы Gen2 (DFS, dfs_secondary)       |
 |**Azure Cosmos DB** | Microsoft. Азурекосмосдб/databaseAccounts | SQL, MongoDB, Cassandra, Gremlin, Table|
 |**База данных Azure для PostgreSQL — один сервер** | Microsoft.DBforPostgreSQL/servers   | постгресклсервер |
 |**База данных Azure для MySQL** | Microsoft.DBforMySQL/servers    | mysqlServer |
@@ -101,7 +101,7 @@ ms.locfileid: "75867684"
  
 Для служб Azure используйте Рекомендуемые имена зон, как описано в следующей таблице.
 
-|Тип ресурса частной ссылки   |Подресурс  |Имя зоны  |
+|Тип ресурса частной ссылки   |Subresource  |Имя зоны  |
 |---------|---------|---------|
 |SQL DB/DW (Microsoft. SQL/Servers)    |  SQL Server (sqlServer)        |   privatelink.database.windows.net       |
 |Учетная запись хранения (Microsoft. Storage/storageAccounts)    |  Большой двоичный объект (BLOB-объект, blob_secondary)        |    privatelink.blob.core.windows.net      |

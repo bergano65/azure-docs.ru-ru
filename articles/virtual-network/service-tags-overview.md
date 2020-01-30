@@ -13,12 +13,12 @@ ms.workload: infrastructure-services
 ms.date: 10/22/2019
 ms.author: jispar
 ms.reviewer: kumud
-ms.openlocfilehash: dc64570ccf69c321f33b9689362def8c9caf975e
-ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
+ms.openlocfilehash: 8d5377f7ec8de14f3d7d55bc109f6be731991051
+ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76715410"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76775263"
 ---
 # <a name="virtual-network-service-tags"></a>Теги службы виртуальной сети 
 <a name="network-service-tags"></a>
@@ -79,7 +79,7 @@ ms.locfileid: "76715410"
 | **еластикафд** | Передняя дверца Azure для эластичных баз данных. | Оба варианта | Нет | Нет |
 | **EventHub** | Концентраторы событий Azure. | Исход. | Да | Да |
 | **гатевайманажер** | Трафик управления для развертываний, выделенных для VPN-шлюза Azure и шлюза приложений. | Вход. | Нет | Нет |
-| **гуестандхибридманажемент** | Служба автоматизации Azure и гостевая конфигурация. | Оба варианта | Нет | Да |
+| **гуестандхибридманажемент** | Служба автоматизации Azure и гостевая конфигурация. | Исход. | Нет | Да |
 | **HDInsight** | Azure HDInsight; | Вход. | Да | Нет |
 | **Интернет**; | Пространство IP-адресов, расположенное за пределами виртуальной сети и доступное через общедоступный Интернет.<br/><br/>Диапазон адресов включает [пространство общедоступных IP-адресов, принадлежащих Azure](https://www.microsoft.com/download/details.aspx?id=41653). | Оба варианта | Нет | Нет |
 | **микрософтклаудаппсекурити** | Microsoft Cloud App Security. | Исход. | Нет | Нет |

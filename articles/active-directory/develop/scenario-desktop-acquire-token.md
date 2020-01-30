@@ -15,12 +15,12 @@ ms.workload: identity
 ms.date: 10/30/2019
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: bc00f348e9443384c7799bf227efd7309d6aeac2
-ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
+ms.openlocfilehash: 50ac62ded92b69f44324f4f9c5eacee939159449
+ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76702204"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76834133"
 ---
 # <a name="desktop-app-that-calls-web-apis-acquire-a-token"></a>Классическое приложение, вызывающее веб-API: получение маркера
 
@@ -413,7 +413,7 @@ application.acquireToken(with: interactiveParameters, completionBlock: { (result
 
 - Центр, переданный `PublicClientApplicationBuilder`, должен быть следующим:
   - Клиент формы `https://login.microsoftonline.com/{tenant}/`, где `tenant` является либо идентификатором GUID, представляющим идентификатор клиента, либо доменом, связанным с клиентом.
-  - Для всех [рабочих и учебных учетных записей](`https://login.microsoftonline.com/organizations/`).
+  - Для любой рабочей или учебной учетной записи: `https://login.microsoftonline.com/organizations/`.
   - Личные учетные записи Майкрософт не поддерживаются. Нельзя использовать клиенты "/Common" или/консумерс.
 
 - Поскольку встроенная проверка подлинности Windows является продвижением в автоматическом режиме:
@@ -581,7 +581,7 @@ PublicClientApplication app = PublicClientApplication.builder(TestData.PUBLIC_CL
 
 Дополнительные сведения см. [в разделе Учетные данные владельца ресурса (ропк) с помощью B2C](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/wiki/AAD-B2C-specifics#resource-owner-password-credentials-ropc-with-b2c).
 
-### <a name="use-it"></a>Не следует от этого отказываться.
+### <a name="use-it"></a>Используйте его
 
 # <a name="nettabdotnet"></a>[.NET](#tab/dotnet)
 
@@ -887,7 +887,7 @@ if not result:
 
 2. После успешной проверки подлинности приложение командной строки получает необходимые токены через канал обратного вызова и использует их для выполнения необходимых им вызовов веб-API.
 
-### <a name="use-it"></a>Не следует от этого отказываться.
+### <a name="use-it"></a>Используйте его
 
 # <a name="nettabdotnet"></a>[.NET](#tab/dotnet)
 

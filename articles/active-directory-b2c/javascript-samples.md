@@ -10,18 +10,18 @@ ms.topic: conceptual
 ms.date: 04/25/2019
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 996893f95b11d716feb4253688d3ab1d62d140ee
-ms.sourcegitcommit: 51ed913864f11e78a4a98599b55bbb036550d8a5
+ms.openlocfilehash: 42dc09ef4518bfda8c63ee183499b1b2e8c22991
+ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2020
-ms.locfileid: "75659531"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76841937"
 ---
 # <a name="javascript-samples-for-use-in-azure-active-directory-b2c"></a>Примеры JavaScript для Azure Active Directory B2C
 
 [!INCLUDE [active-directory-b2c-public-preview](../../includes/active-directory-b2c-public-preview.md)]
 
-Вы можете добавить собственный код на стороне клиента JavaScript в приложения Azure Active Directory B2C (Azure AD B2C). Чтобы включить JavaScript для приложений, необходимо добавить элемент в [настраиваемую политику](active-directory-b2c-overview-custom.md), выбрать [Макет страницы](page-layout.md)и использовать [b2clogin.com](b2clogin.md) в запросах. В этой статье описывается, как изменить пользовательскую политику, чтобы включить выполнение скрипта.
+Вы можете добавить собственный код на стороне клиента JavaScript в приложения Azure Active Directory B2C (Azure AD B2C). Чтобы включить JavaScript для приложений, необходимо добавить элемент в [настраиваемую политику](custom-policy-overview.md), выбрать [Макет страницы](page-layout.md)и использовать [b2clogin.com](b2clogin.md) в запросах. В этой статье описывается, как изменить пользовательскую политику, чтобы включить выполнение скрипта.
 
 > [!NOTE]
 > Если вы хотите включить JavaScript для потоков пользователей, см. раздел [версии JavaScript и страницы в Azure Active Directory B2C](user-flow-javascript-overview.md).
@@ -151,4 +151,4 @@ function addTermsOfUseLink() {
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о настройке пользовательского интерфейса приложений см. в статье [Настройка пользовательского интерфейса приложения с помощью настраиваемой политики в Azure Active Directory B2C](active-directory-b2c-ui-customization-custom.md).
+Дополнительные сведения о настройке пользовательского интерфейса приложений см. в статье [Настройка пользовательского интерфейса приложения с помощью настраиваемой политики в Azure Active Directory B2C](custom-policy-ui-customization.md).

@@ -9,12 +9,12 @@ ms.date: 10/06/2019
 ms.topic: article
 ms.service: event-grid
 services: event-grid
-ms.openlocfilehash: 7d6b83354baf3db5ddb65f94fee1c3dce2dcca94
-ms.sourcegitcommit: 92d42c04e0585a353668067910b1a6afaf07c709
+ms.openlocfilehash: a6f033af34088081090251f2e5e7cd4a07ce43cc
+ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2019
-ms.locfileid: "72992461"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76841753"
 ---
 # <a name="output-batching"></a>Пакетная обработка выходных данных
 
@@ -77,16 +77,16 @@ ms.locfileid: "72992461"
 
 Следующие параметры времени развертывания контролируют максимальное значение, допустимое при создании подписки на события.
 
-| Имя свойства | Описание |
+| Имя свойства | Description |
 | ------------- | ----------- | 
-| `api:deliveryPolicyLimits:maxpreferredBatchSizeInKilobytes` | Максимальное значение, допустимое для `PreferredBatchSizeInKilobytes`ного регулятора. `1033`по умолчанию.
-| `api:deliveryPolicyLimits:maxEventsPerBatch` | Максимальное значение, допустимое для `MaxEventsPerBatch`ного регулятора. `50`по умолчанию.
+| `api__deliveryPolicyLimits__maxpreferredBatchSizeInKilobytes` | Максимальное значение, допустимое для `PreferredBatchSizeInKilobytes`ного регулятора. `1033`по умолчанию.
+| `api__deliveryPolicyLimits__maxEventsPerBatch` | Максимальное значение, допустимое для `MaxEventsPerBatch`ного регулятора. `50`по умолчанию.
 
 ## <a name="configuring-runtime-default-values"></a>Настройка значений времени выполнения по умолчанию
 
 Следующие параметры времени развертывания управляют значением времени выполнения по умолчанию для каждого регулятора, если он не указан в подписке на события. Для выполнения итерации необходимо установить по крайней мере один регулятор для подписки на события, чтобы включить пакетную обработку.
 
-| Имя свойства | Описание |
+| Имя свойства | Description |
 | ------------- | ----------- |
-| `broker:defaultMaxBatchSizeInBytes` | Максимальный размер запроса на доставку, если указан только `MaxEventsPerBatch`. `1_058_576`по умолчанию.
-| `broker:defaultMaxEventsPerBatch` | Максимальное число событий, добавляемых в пакет, если указано только `MaxBatchSizeInBytes`. `10`по умолчанию.
+| `broker__defaultMaxBatchSizeInBytes` | Максимальный размер запроса на доставку, если указан только `MaxEventsPerBatch`. `1_058_576`по умолчанию.
+| `broker__defaultMaxEventsPerBatch` | Максимальное число событий, добавляемых в пакет, если указано только `MaxBatchSizeInBytes`. `10`по умолчанию.

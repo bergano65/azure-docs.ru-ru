@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 12/17/2019
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 96bf088e6db29817d1ae4276c254a84723e5d03d
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 8cb0340d9e04db2bfbf088bce9505351d7588cd9
+ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75480194"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76840338"
 ---
 # <a name="set-up-phone-sign-up-and-sign-in-with-custom-policies-in-azure-ad-b2c"></a>Настройка регистрации телефона и входа в систему с помощью пользовательских политик в Azure AD B2C
 
@@ -30,7 +30,7 @@ ms.locfileid: "75480194"
 
 * [клиент Azure AD B2C](tutorial-create-tenant.md);
 * [Веб-приложение, зарегистрированное](tutorial-register-applications.md) в клиенте
-* [Пользовательские политики](active-directory-b2c-get-started-custom.md) , отправленные в клиент
+* [Пользовательские политики](custom-policy-get-started.md) , отправленные в клиент
 
 ## <a name="get-the-phone-sign-up--sign-in-starter-pack"></a>Получение телефонного входа & начальный пакет входа в систему
 
@@ -44,7 +44,7 @@ ms.locfileid: "75480194"
 
 1. В каждом файле замените строку `yourtenant` именем клиента Azure AD B2C. Например, если имя клиента B2C — *contosob2c*, все экземпляры `yourtenant.onmicrosoft.com` становятся `contosob2c.onmicrosoft.com`.
 
-1. Выполните действия, описанные в разделе [Добавление идентификаторов приложений в пользовательскую политику](active-directory-b2c-get-started-custom.md#add-application-ids-to-the-custom-policy) статьи [Приступая к работе с пользовательскими политиками в Azure Active Directory B2C](active-directory-b2c-get-started-custom.md). В этом случае обновите `/phone-number-passwordless/` **`Phone_Email_Base.xml`** с **идентификаторами приложения (клиента)** двух приложений, зарегистрированных при выполнении необходимых условий, *IdentityExperienceFramework* и *ProxyIdentityExperienceFramework*.
+1. Выполните действия, описанные в разделе [Добавление идентификаторов приложений в пользовательскую политику](custom-policy-get-started.md#add-application-ids-to-the-custom-policy) статьи [Приступая к работе с пользовательскими политиками в Azure Active Directory B2C](custom-policy-get-started.md). В этом случае обновите `/phone-number-passwordless/` **`Phone_Email_Base.xml`** с **идентификаторами приложения (клиента)** двух приложений, зарегистрированных при выполнении необходимых условий, *IdentityExperienceFramework* и *ProxyIdentityExperienceFramework*.
 
 ## <a name="upload-the-policy-files"></a>Отправка файлов политики
 

@@ -9,16 +9,16 @@ ms.date: 10/03/2019
 ms.topic: article
 ms.service: event-grid
 services: event-grid
-ms.openlocfilehash: b5456130e89bf77e2c2ba41880323e38f6b27f4c
-ms.sourcegitcommit: 92d42c04e0585a353668067910b1a6afaf07c709
+ms.openlocfilehash: 3363db4557dd19e8d72747ccd62bb535abb7b1e2
+ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2019
-ms.locfileid: "72992513"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76841797"
 ---
 # <a name="configure-client-authentication-of-incoming-calls"></a>Настройка проверки подлинности входящих вызовов клиента
 
-В этом разделе приведены примеры возможных конфигураций проверки подлинности клиента для модуля "Сетка событий". Модуль "Сетка событий" поддерживает два типа проверки подлинности клиента:-
+В этом разделе приведены примеры возможных конфигураций проверки подлинности клиента для модуля "Сетка событий". Модуль "Сетка событий" поддерживает два типа проверки подлинности клиента:
 
 * Подпись общего доступа (SAS) на основе ключей
 * на основе сертификата
@@ -30,10 +30,10 @@ ms.locfileid: "72992513"
 ```json
  {
   "Env": [
-    "inbound:clientAuth:sasKeys:enabled=false",
-    "inbound:clientAuth:clientCert:enabled=true",
-    "inbound:clientAuth:clientCert:source=IoTEdge",
-    "inbound:clientAuth:clientCert:allowUnknownCA=false"
+    "inbound__clientAuth__sasKeys__enabled=false",
+    "inbound__clientAuth__clientCert__enabled=true",
+    "inbound__clientAuth__clientCert__source=IoTEdge",
+    "inbound__clientAuth__clientCert__allowUnknownCA=false"
   ]
 }
  ```
@@ -43,28 +43,28 @@ ms.locfileid: "72992513"
 ```json
  {
   "Env": [
-    "inbound:clientAuth:sasKeys:enabled=false",
-    "inbound:clientAuth:clientCert:enabled=true",
-    "inbound:clientAuth:clientCert:source=IoTEdge",
-    "inbound:clientAuth:clientCert:allowUnknownCA=true"
+    "inbound__clientAuth__sasKeys__enabled=false",
+    "inbound__clientAuth__clientCert__enabled=true",
+    "inbound__clientAuth__clientCert__source=IoTEdge",
+    "inbound__clientAuth__clientCert__allowUnknownCA=true"
   ]
 }
 ```
 
 >[!NOTE]
->Задайте для свойства **Inbound: клиентаус: клиентцерт: алловункновнка** **значение true** только в тестовых средах, так как обычно можно использовать самозаверяющие сертификаты. Для рабочих нагрузок рекомендуется присвоить этому свойству **значение false** и сертификаты из центра сертификации (ЦС).
+>Присвойте свойству **inbound__clientAuth__clientCert__allowUnknownCA** **значение true** только в тестовых средах, так как обычно можно использовать самозаверяющие сертификаты. Для рабочих нагрузок рекомендуется присвоить этому свойству **значение false** и сертификаты из центра сертификации (ЦС).
 
 ## <a name="enable-certificate-based-and-sas-key-based-client-authentication"></a>Включение проверки подлинности клиента на основе сертификата и SAS-ключа
 
 ```json
  {
   "Env": [
-    "inbound:clientAuth:sasKeys:enabled=true",
-    "inbound:clientAuth:sasKeys:key1=<some-secret1-here>",
-    "inbound:clientAuth:sasKeys:key2=<some-secret2-here>",
-    "inbound:clientAuth:clientCert:enabled=true",
-    "inbound:clientAuth:clientCert:source=IoTEdge",
-    "inbound:clientAuth:clientCert:allowUnknownCA=true"
+    "inbound__clientAuth__sasKeys__enabled=true",
+    "inbound__clientAuth__sasKeys__key1=<some-secret1-here>",
+    "inbound__clientAuth__sasKeys__key2=<some-secret2-here>",
+    "inbound__clientAuth__clientCert__enabled=true",
+    "inbound__clientAuth__clientCert__source=IoTEdge",
+    "inbound__clientAuth__clientCert__allowUnknownCA=true"
   ]
 }
  ```

@@ -11,18 +11,18 @@ ms.topic: conceptual
 ms.date: 08/17/2019
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 8f7122035f8d70cb91f4ec4f64e1dd4f7b2842b8
-ms.sourcegitcommit: 5b9287976617f51d7ff9f8693c30f468b47c2141
+ms.openlocfilehash: 697c904f98ea29395d5c4e95abe27556c06bb479
+ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2019
-ms.locfileid: "74949846"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76839097"
 ---
 # <a name="pass-an-access-token-through-a-custom-policy-to-your-application-in-azure-active-directory-b2c"></a>Передача маркера доступа с помощью пользовательской политики в приложение в Azure Active Directory B2C
 
-[Настраиваемая политика](active-directory-b2c-get-started-custom.md) в Azure Active Directory B2C (Azure AD B2C) предоставляет пользователям приложения возможность зарегистрироваться или войти в систему с помощью поставщика удостоверений. При этом Azure AD B2C получает [маркер доступа](active-directory-b2c-reference-tokens.md) от поставщика удостоверений. Azure AD B2C использует этот маркер для извлечения сведений о пользователе. Вы добавляете тип утверждения и исходящее утверждение в пользовательскую политику для передачи маркера приложениям, зарегистрированным в Azure AD B2C.
+[Настраиваемая политика](custom-policy-get-started.md) в Azure Active Directory B2C (Azure AD B2C) предоставляет пользователям приложения возможность зарегистрироваться или войти в систему с помощью поставщика удостоверений. При этом Azure AD B2C получает [маркер доступа](tokens-overview.md) от поставщика удостоверений. Azure AD B2C использует этот маркер для извлечения сведений о пользователе. Вы добавляете тип утверждения и исходящее утверждение в пользовательскую политику для передачи маркера приложениям, зарегистрированным в Azure AD B2C.
 
-Azure AD B2C поддерживает передачу маркеров доступа от поставщиков удостоверений по протоколу [OAuth 2.0](active-directory-b2c-reference-oauth-code.md) и стандарту [Подключение OpenID](active-directory-b2c-reference-oidc.md). Для остальных поставщиков удостоверений утверждение возвращается пустым.
+Azure AD B2C поддерживает передачу маркеров доступа от поставщиков удостоверений по протоколу [OAuth 2.0](authorization-code-flow.md) и стандарту [Подключение OpenID](openid-connect.md). Для остальных поставщиков удостоверений утверждение возвращается пустым.
 
 ## <a name="prerequisites"></a>Технические условия
 
@@ -84,7 +84,7 @@ Azure AD B2C поддерживает передачу маркеров дост
 
 ### <a name="upload-the-files"></a>Передача файлов
 
-1. Войдите на [портале Azure](https://portal.azure.com/).
+1. Войдите на [портал Azure](https://portal.azure.com/).
 2. Убедитесь, что вы используете каталог, содержащий клиент Azure AD B2C, щелкнув фильтр **каталогов и подписок** в верхнем меню и выбрав Каталог, содержащий ваш клиент.
 3. Выберите **Все службы** в левом верхнем углу окна портала Azure, а затем найдите и выберите **Azure AD B2C**.
 4. Выберите **Инфраструктура процедур идентификации**.
@@ -105,4 +105,4 @@ Azure AD B2C поддерживает передачу маркеров дост
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о токенах см. в [справочнике по маркеру Azure Active Directory B2C](active-directory-b2c-reference-tokens.md).
+Дополнительные сведения о токенах см. в [справочнике по маркеру Azure Active Directory B2C](tokens-overview.md).

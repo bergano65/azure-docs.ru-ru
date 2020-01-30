@@ -11,18 +11,18 @@ ms.topic: conceptual
 ms.date: 04/25/2019
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 92925dc32d7f26b224811aa852112a275f112b35
-ms.sourcegitcommit: 5b9287976617f51d7ff9f8693c30f468b47c2141
+ms.openlocfilehash: 3f6d4849b02f320c7479469b4ee56be50e4f8dee
+ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2019
-ms.locfileid: "74950839"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76840100"
 ---
 # <a name="javascript-and-page-layout-versions-in-azure-active-directory-b2c"></a>Версии JavaScript и макета страницы в Azure Active Directory B2C
 
 [!INCLUDE [active-directory-b2c-public-preview](../../includes/active-directory-b2c-public-preview.md)]
 
-Azure AD B2C предоставляет набор упакованного содержимого, содержащего HTML, CSS и JavaScript для элементов пользовательского интерфейса в потоках пользователя и пользовательских политик. Чтобы включить JavaScript для приложений, необходимо добавить элемент в [настраиваемую политику](active-directory-b2c-overview-custom.md) или включить его на портале для потоков пользователей, выбрать макет страницы и использовать [b2clogin.com](b2clogin.md) в запросах.
+Azure AD B2C предоставляет набор упакованного содержимого, содержащего HTML, CSS и JavaScript для элементов пользовательского интерфейса в потоках пользователя и пользовательских политик. Чтобы включить JavaScript для приложений, необходимо добавить элемент в [настраиваемую политику](custom-policy-overview.md) или включить его на портале для потоков пользователей, выбрать макет страницы и использовать [b2clogin.com](b2clogin.md) в запросах.
 
 Если вы планируете включить код на стороне клиента [JavaScript](javascript-samples.md) , необходимо убедиться, что элементы, на которых основан JavaScript, являются неизменяемыми. В противном случае любые изменения могут привести к непредвиденному поведению пользовательских страниц. Чтобы избежать этих проблем, можно принудительно применить макет страницы и указать версию макета страницы. Это гарантирует, что все определения содержимого, основанные на JavaScript, будут неизменными. Даже если вы не планируете включать JavaScript, можно указать версию макета страницы для страниц.
 

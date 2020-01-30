@@ -1,14 +1,14 @@
 ---
 title: Внешняя проверка подлинности из задачи контроля доступа
-description: Включите управляемое удостоверение для ресурсов Azure в задаче реестра контейнеров Azure (запись контроля доступа), чтобы разрешить задачам считывать учетные данные DOCKER Hub, хранящиеся в хранилище ключей Azure.
+description: Настройте задачу реестра контейнеров Azure (запись контроля доступа) для чтения учетных данных центра DOCKER, хранящихся в хранилище ключей Azure, с помощью управляемого удостоверения для ресурсов Azure.
 ms.topic: article
-ms.date: 07/12/2019
-ms.openlocfilehash: a7086050a4aef380f11298c819817692396216b2
-ms.sourcegitcommit: 12d902e78d6617f7e78c062bd9d47564b5ff2208
+ms.date: 01/14/2020
+ms.openlocfilehash: 47d3d643ee1287ef4f444095a2c6cfe6dcab294b
+ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2019
-ms.locfileid: "74456218"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76842526"
 ---
 # <a name="external-authentication-in-an-acr-task-using-an-azure-managed-identity"></a>Внешняя проверка подлинности в задаче контроля доступа с помощью удостоверения, управляемого Azure 
 
@@ -20,13 +20,13 @@ ms.locfileid: "74456218"
 
 ## <a name="scenario-overview"></a>Обзор сценария
 
-В примере задачи считываются учетные данные концентратора DOCKER, хранящиеся в хранилище ключей Azure. Учетные данные предназначены для учетной записи центра DOCKER с разрешениями на запись (Push) в частном репозитории в центре DOCKER. Чтобы считать учетные данные, необходимо настроить задачу с помощью управляемого удостоверения и назначить ей соответствующие разрешения. Задача, связанная с удостоверением, создает образ и выполняет вход в центр DOCKER для отправки образа в частный репозиторий. 
+В примере задачи считываются учетные данные концентратора DOCKER, хранящиеся в хранилище ключей Azure. Учетные данные предназначены для учетной записи центра DOCKER с разрешениями на запись (Push) в частном репозитории DOCKER Hub. Чтобы считать учетные данные, необходимо настроить задачу с помощью управляемого удостоверения и назначить ей соответствующие разрешения. Задача, связанная с удостоверением, создает образ и выполняет вход в центр DOCKER для отправки образа в частный репозиторий. 
 
 В этом примере показаны действия, использующие назначенное пользователем или управляемое системой удостоверение. Выбор удостоверения зависит от потребностей Организации.
 
 В реальном сценарии компания может публиковать образы в частном репозитории в центре DOCKER в рамках процесса сборки. 
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Технические условия
 
 Вам понадобится реестр контейнеров Azure, в котором выполняется задача. В этой статье этот реестр называется *myregistry*. Замените на собственное имя реестра в последующих шагах.
 
@@ -71,7 +71,7 @@ az keyvault secret set \
 Шаги для этого примера задачи определяются в [файле YAML](container-registry-tasks-reference-yaml.md). Создайте файл с именем `dockerhubtask.yaml` в локальном рабочем каталоге и вставьте следующее содержимое. Не забудьте заменить имя хранилища ключей в файле именем хранилища ключей.
 
 ```yml
-version: v1.0.0
+version: v1.1.0
 # Replace mykeyvault with the name of your key vault
 secrets:
   - id: username
@@ -80,12 +80,12 @@ secrets:
     keyvault: https://mykeyvault.vault.azure.net/secrets/Password
 steps:
 # Log in to Docker Hub
-  - cmd: docker login --username '{{.Secrets.username}}' --password '{{.Secrets.password}}'
+  - cmd: bash echo '{{.Secrets.password}}' | docker login --username '{{.Secrets.username}}' --password-stdin 
 # Build image
-  - build: -t {{.Values.PrivateRepo}}:{{.Run.ID}} https://github.com/Azure-Samples/acr-tasks.git -f hello-world.dockerfile
+  - build: -t {{.Values.PrivateRepo}}:$ID https://github.com/Azure-Samples/acr-tasks.git -f hello-world.dockerfile
 # Push image to private repo in Docker Hub
   - push:
-    - {{.Values.PrivateRepo}}:{{.Run.ID}}
+    - {{.Values.PrivateRepo}}:$ID
 ```
 
 Шаги задачи выполняют следующие действия.
@@ -94,6 +94,7 @@ steps:
 * Проверяйте подлинность с помощью DOCKER Hub, передав секреты команде `docker login`.
 * Создайте образ, используя пример Dockerfile в репозитории [Azure-Samples/контроля доступа к задачам](https://github.com/Azure-Samples/acr-tasks.git) .
 * Отправьте образ в частный репозиторий концентратора DOCKER.
+
 
 ## <a name="option-1-create-task-with-user-assigned-identity"></a>Вариант 1. Создание задачи с назначенным пользователем удостоверением
 
@@ -140,7 +141,10 @@ az acr task create \
 Выполните следующую команду [AZ keyvault Set-Policy][az-keyvault-set-policy] , чтобы задать политику доступа для хранилища ключей. В следующем примере удостоверение позволяет считывать секреты из хранилища ключей. 
 
 ```azurecli
-az keyvault set-policy --name mykeyvault --resource-group myResourceGroup --object-id $principalID --secret-permissions get
+az keyvault set-policy --name mykeyvault \
+  --resource-group myResourceGroup \
+  --object-id $principalID \
+  --secret-permissions get
 ```
 
 ## <a name="manually-run-the-task"></a>Запуск задачи вручную
@@ -148,7 +152,7 @@ az keyvault set-policy --name mykeyvault --resource-group myResourceGroup --obje
 Чтобы убедиться, что задача, в которой вы включили управляемое удостоверение, запущена успешно, вручную активируйте задачу с помощью команды [AZ контроля][az-acr-task-run] доступа для запуска. Параметр `--set` используется для передачи имени частного репозитория задаче. В этом примере имя репозитория-заполнителя — *хубусер/хубрепо*.
 
 ```azurecli
-az acr task run --name dockerhubtask --registry myregistry --set PrivateRepo=hubuser/hubrepo 
+az acr task run --name dockerhubtask --registry myregistry --set PrivateRepo=hubuser/hubrepo
 ```
 
 При успешном выполнении задачи выходные данные показывают успешную проверку подлинности в DOCKER Hub, и образ успешно создается и передается в частный репозиторий:
@@ -200,7 +204,7 @@ Run ID: cf24 was successful after 15s
 
 Чтобы убедиться, что образ отправлен, проверьте наличие тега (`cf24` в этом примере) в частном репозитории DOCKER Hub.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения о [включении управляемого удостоверения в задаче контроля](container-registry-tasks-authentication-managed-identity.md)доступа.
 * См. раздел [YAML Tasks Reference](container-registry-tasks-reference-yaml.md)

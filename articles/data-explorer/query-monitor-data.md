@@ -7,26 +7,26 @@ ms.author: orspodek
 ms.reviewer: rkarlin
 ms.service: data-explorer
 ms.topic: conceptual
-ms.date: 07/10/2019
-ms.openlocfilehash: 43d91bff6b8b67e79a9549c1524f918166c9adc4
-ms.sourcegitcommit: f3f4ec75b74124c2b4e827c29b49ae6b94adbbb7
+ms.date: 01/28/2020
+ms.openlocfilehash: d39ffa05448600fe3bd09baf6080aa1565ae19ba
+ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70933994"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76843597"
 ---
 # <a name="query-data-in-azure-monitor-using-azure-data-explorer-preview"></a>Запрос данных в Azure Monitor с помощью обозреватель данных Azure (Предварительная версия)
 
-Кластер Azure обозреватель данных Proxy (прокси-сервер ADX) — это сущность, которая позволяет выполнять перекрестные запросы между Azure обозреватель данных, [Application Insights (AI)](/azure/azure-monitor/app/app-insights-overview)и [log Analytics (La)](/azure/azure-monitor/platform/data-platform-logs) в службе [Azure Monitor](/azure/azure-monitor/) . Вы можете сопоставлять Azure Monitor Log Analytics рабочие области или приложения Application Insights в качестве кластера прокси-сервера. Затем можно выполнить запрос к кластеру прокси-сервера с помощью средств обозреватель данных Azure и обратиться к нему в межкластерном запросе. В этой статье показано, как подключиться к кластеру прокси-сервера, добавить прокси-кластер в Azure обозреватель данных Web UI и выполнить запросы к приложениям ии или LA рабочей области из Azure обозреватель данных.
+Кластер Azure обозреватель данных Proxy (прокси-сервер ADX) — это сущность, которая позволяет выполнять перекрестные запросы между Azure обозреватель данных, [Application Insights (AI)](/azure/azure-monitor/app/app-insights-overview)и [log Analytics (La)](/azure/azure-monitor/platform/data-platform-logs) в службе [Azure Monitor](/azure/azure-monitor/) . Вы можете сопоставлять Azure Monitor Log Analytics рабочие области или приложения Application Insights в качестве кластерных прокси-серверов. Затем можно выполнить запрос к кластеру прокси-сервера с помощью средств обозреватель данных Azure и обратиться к нему в межкластерном запросе. В этой статье показано, как подключиться к кластеру прокси-сервера, добавить прокси-кластер в Azure обозреватель данных Web UI и выполнить запросы к приложениям ии или LA рабочей области из Azure обозреватель данных.
 
 Поток прокси-сервера Azure обозреватель данных: 
 
 ![Поток прокси-сервера ADX](media/adx-proxy/adx-proxy-flow.png)
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 > [!NOTE]
-> Прокси-сервер ADX находится в режиме предварительного просмотра. Чтобы включить эту функцию, обратитесь к команде [адкспрокси](mailto:adxproxy@microsoft.com) .
+> Прокси-сервер ADX находится в режиме предварительного просмотра. [Подключитесь к прокси-](#connect-to-the-proxy) серверу, чтобы включить функцию прокси-сервера ADX для кластеров. Свяжитесь с командой [адкспрокси](mailto:adxproxy@microsoft.com) с любыми вопросами.
 
 ## <a name="connect-to-the-proxy"></a>Подключение к прокси-серверу
 
@@ -34,11 +34,12 @@ ms.locfileid: "70933994"
 
     ![ADX собственный кластер](media/adx-proxy/web-ui-help-cluster.png)
 
-1. В пользовательском интерфейсе Azure обозреватель данных https://dataexplorer.azure.com/clusters) (выберите **Добавить кластер**.
+1. В пользовательском интерфейсе Azure обозреватель данных (https://dataexplorer.azure.com/clusters) выберите **Добавить кластер**.
 
-1. В окне **Добавление кластера** :
-
-    * Добавьте URL-адрес в LA или ИСКУССТВЕНный кластер. Например: `https://ade.loganalytics.io/subscriptions/<subscription-id>/resourcegroups/<resource-group-name>/providers/microsoft.operationalinsights/workspaces/<workspace-name>`
+1. В окне **Добавление кластера** добавьте URL-адрес для кластера La или искусственного интеллекта. 
+    
+    * Для LA: `https://ade.loganalytics.io/subscriptions/<subscription-id>/resourcegroups/<resource-group-name>/providers/microsoft.operationalinsights/workspaces/<workspace-name>`
+    * Для AI: `https://ade.applicationinsights.io/subscriptions/<subscription-id>/resourcegroups/<resource-group-name>/providers/microsoft.insights/components/<ai-app-name>`
 
     * Выберите **Добавить**.
 
@@ -52,27 +53,17 @@ ms.locfileid: "70933994"
 
 ## <a name="run-queries"></a>Выполнение запросов
 
-Для запроса кластеров прокси-серверов можно использовать Kusto Explorer, ADX Web Explorer, Jupyter Кклмагик или REST API. 
+Запросы можно выполнять с помощью клиентских средств, поддерживающих запросы Kusto, таких как Kusto Explorer, ADX Web UI, Jupyter Кклмагик, Flow, PowerQuery, PowerShell, Джарвис, линз, REST API.
 
 > [!TIP]
 > * Имя базы данных должно совпадать с именем ресурса, указанного в кластере прокси. В именах учитывается регистр.
 > * В запросах между кластерами убедитесь в правильности именования Application Insights приложений и Log Analytics рабочих областей.
 >     * Если имена содержат специальные символы, они заменяются на кодировку URL-адресов в имени кластера прокси-сервера. 
->     * Если имена содержат символы, которые не соответствуют [правилам именования идентификаторов ККЛ](/azure/kusto/query/schema-entities/entity-names), они заменяются символом дефиса **-** .
+>     * Если имена содержат символы, которые не соответствуют [правилам именования идентификаторов ККЛ](/azure/kusto/query/schema-entities/entity-names), они заменяются дефисом **-** символа.
 
-### <a name="query-against-the-native-azure-data-explorer-cluster"></a>Запрос к собственному кластеру Azure обозреватель данных 
+### <a name="direct-query-from-your-la-or-ai-adx-proxy-cluster"></a>Прямой запрос из кластера Ла или ИСКУССТВЕНного прокси-сервера ADX
 
-Выполнение запросов в кластере Azure обозреватель данных (например, в таблице *стормевентс* в *справочном* кластере). При выполнении запроса убедитесь, что на левой панели выбран собственный кластер Azure обозреватель данных.
-
-```kusto
-StormEvents | take 10 // Demonstrate query through the native ADX cluster
-```
-
-![Таблица Стормевентс запросов](media/adx-proxy/query-adx.png)
-
-### <a name="query-against-your-la-or-ai-cluster"></a>Запрос к кластеру LA или искусственного интеллекта
-
-При выполнении запросов в кластере LA или AL убедитесь, что на левой панели выбран кластер LA или ИСКУССТВЕНный. 
+Выполнение запросов в кластере LA или искусственного интеллекта. Убедитесь, что кластер выбран в левой области. 
 
 ```kusto
 Perf | take 10 // Demonstrate query through the proxy on the LA workspace
@@ -80,20 +71,9 @@ Perf | take 10 // Demonstrate query through the proxy on the LA workspace
 
 ![Запрос LA Workspace](media/adx-proxy/query-la.png)
 
-### <a name="query-your-la-or-ai-cluster-from-the-adx-proxy"></a>Запрос к кластеру LA или искусственного интеллекта от прокси-сервера ADX  
+### <a name="cross-query-of-your-la-or-ai-adx-proxy-cluster-and-the-adx-native-cluster"></a>Перекрестный запрос кластера прокси-сервера LA или ИСКУССТВЕНного ADX и собственного кластера ADX 
 
-При выполнении запросов в кластере LA или AI от прокси-сервера убедитесь, что на левой панели выбран собственный кластер ADX. В следующем примере показан запрос LA рабочей области с помощью собственного кластера ADX.
-
-```kusto
-cluster('https://ade.loganalytics.io/subscriptions/<subscription-id>/resourcegroups/<resource-group-name>/providers/microsoft.operationalinsights/workspaces/<workspace-name>').database('<workspace-name').Perf
-| take 10 
-```
-
-![Запрос из прокси-сервера Azure обозреватель данных](media/adx-proxy/query-adx-proxy.png)
-
-### <a name="cross-query-of-la-or-ai-cluster-and-the-adx-cluster-from-the-adx-proxy"></a>Перекрестный запрос к кластеру LA или искусственного интеллекта и кластеру ADX из прокси-сервера ADX 
-
-При выполнении запросов между кластерами от прокси-сервера убедитесь, что на левой панели выбран собственный кластер ADX. В следующих примерах демонстрируется объединение таблиц кластера ADX `union`(с помощью) с La Workspace.
+При выполнении запросов между кластерами от прокси-сервера убедитесь, что на левой панели выбран собственный кластер ADX. В следующих примерах демонстрируется объединение таблиц кластера ADX (с помощью `union`) с LA Workspace.
 
 ```kusto
 union StormEvents, cluster('https://ade.loganalytics.io/subscriptions/<subscription-id>/resourcegroups/<resource-group-name>/providers/microsoft.operationalinsights/workspaces/<workspace-name>').database('<workspace-name>').Perf
@@ -105,9 +85,9 @@ let CL1 = 'https://ade.loganalytics.io/subscriptions/<subscription-id>/resourceg
 union <ADX table>, cluster(CL1).database(<workspace-name>).<table name>
 ```
 
-![Перекрестный запрос от прокси-сервера Azure обозреватель данных](media/adx-proxy/cross-query-adx-proxy.png)
+   [![перекрестный запрос от прокси-сервера Azure обозреватель данных](media/adx-proxy/cross-query-adx-proxy.png)](media/adx-proxy/cross-query-adx-proxy.png#lightbox)
 
-При использовании [`hint`](/azure/kusto/query/joinoperator#join-hints) оператора вместо объединения, может потребоваться, чтобы запустить его в собственном кластере Azure обозреватель данных (а не на прокси-сервере). [ `join` ](/azure/kusto/query/joinoperator) 
+При использовании [оператора`join`](/azure/kusto/query/joinoperator)вместо Union может потребоваться [`hint`](/azure/kusto/query/joinoperator#join-hints) для его запуска в собственном кластере Azure обозреватель данных (а не на прокси-сервере). 
 
 ## <a name="additional-syntax-examples"></a>Дополнительные примеры синтаксиса
 
@@ -120,6 +100,6 @@ union <ADX table>, cluster(CL1).database(<workspace-name>).<table name>
 |Кластер, содержащий все приложения и рабочие области в подписке и входящие в эту группу ресурсов    |   кластер (`https://ade.applicationinsights.io/subscriptions/<subscription-id>/resourcegroups/<resource-group-name>`)      |    кластер (`https://ade.loganalytics.io/subscriptions/<subscription-id>/resourcegroups/<resource-group-name>`)      |
 |Кластер, содержащий только определенный ресурс в этой подписке      |    кластер (`https://ade.applicationinsights.io/subscriptions/<subscription-id>/resourcegroups/<resource-group-name>/providers/microsoft.insights/components/<ai-app-name>`)    |  кластер (`https://ade.loganalytics.io/subscriptions/<subscription-id>/resourcegroups/<resource-group-name>/providers/microsoft.operationalinsights/workspaces/<workspace-name>`)     |
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Написание запросов](write-queries.md)

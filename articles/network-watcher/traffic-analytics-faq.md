@@ -3,22 +3,20 @@ title: Вопросы и ответы об Аналитике трафика Azu
 description: Ответы на некоторые вопросы об Аналитике трафика Azure.
 services: network-watcher
 documentationcenter: na
-author: KumudD
-manager: twooley
-editor: ''
+author: damendo
 ms.service: network-watcher
 ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/08/2018
-ms.author: kumud
-ms.openlocfilehash: 991bb91c5bc1f6d695d5b363cdb08268f1ee83df
-ms.sourcegitcommit: 6dec090a6820fb68ac7648cf5fa4a70f45f87e1a
-ms.translationtype: HT
+ms.author: damendo
+ms.openlocfilehash: 5e31ed905f05070c8715a63ef3386b0006df0a75
+ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/11/2019
-ms.locfileid: "73907099"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76840627"
 ---
 # <a name="traffic-analytics-frequently-asked-questions"></a>Часто задаваемые вопросы по Аналитике трафика Azure
 
@@ -67,22 +65,22 @@ ms.locfileid: "73907099"
 
 Можно использовать аналитику трафика для групп безопасности сети в любом из следующих поддерживаемых регионов:
 - Центральная Канада
-- центрально-западная часть США
+- Центрально-западная часть США
 - Восточная часть США
-- восточная часть США 2
+- Восточная часть США 2
 - Центрально-северная часть США
 - Центрально-южная часть США
-- Central US
-- западная часть США
-- западная часть США 2
+- Центральная часть США
+- Западная часть США
+- Западная часть США 2
 - Центральная Франция
 - Западная Европа
 - Северная Европа
 - Южная Бразилия
-- западная часть Соединенного Королевства
-- южная часть Соединенного Королевства
+- Западная часть Соединенного Королевства
+- Южная часть Соединенного Королевства
 - Восточная Австралия
-- Юго-Восточная часть Австралии 
+- Юго-Восточная Австралия 
 - Восточная Азия
 - Юго-Восточная Азия
 - Республика Корея, центральный регион
@@ -91,32 +89,32 @@ ms.locfileid: "73907099"
 - Восточная Япония
 - Западная Япония
 - US Gov (Вирджиния)
-- Восточный Китай 2
+- Восточный Китай 2
 
 Рабочая область Log Analytics должна присутствовать в следующих регионах:
 - Центральная Канада
-- центрально-западная часть США
+- Центрально-западная часть США
 - Восточная часть США
-- восточная часть США 2
+- Восточная часть США 2
 - Центрально-северная часть США
 - Центрально-южная часть США
-- Central US
-- западная часть США
-- западная часть США 2
+- Центральная часть США
+- Западная часть США
+- Западная часть США 2
 - Центральная Франция
 - Западная Европа
 - Северная Европа
-- западная часть Соединенного Королевства
-- южная часть Соединенного Королевства
+- Западная часть Соединенного Королевства
+- Южная часть Соединенного Королевства
 - Восточная Австралия
-- Юго-Восточная часть Австралии
+- Юго-Восточная Австралия
 - Восточная Азия
 - Юго-Восточная Азия 
 - Республика Корея, центральный регион
 - Центральная Индия
 - Восточная Япония
 - US Gov (Вирджиния)
-- Восточный Китай 2
+- Восточный Китай 2
 
 ## <a name="can-the-nsgs-i-enable-flow-logs-for-be-in-different-regions-than-my-workspace"></a>Возможен ли сценарий, когда регион NSG, для которой записываются журналы потоков, и регион рабочей области отличаются?
 
@@ -136,7 +134,7 @@ ms.locfileid: "73907099"
 
 ## <a name="can-i-store-raw-logs-in-a-different-subscription"></a>Можно ли хранить необработанные журналы в другой подписке?
 
-Нет Необработанные журналы можно хранить в любой учетной записи хранения, в которой группа безопасности сети включена для журналов потоков. Однако и учетная запись хранения, и необработанные журналы должны относиться к той же подписке и тому же региону.
+Нет. Необработанные журналы можно хранить в любой учетной записи хранения, в которой группа безопасности сети включена для журналов потоков. Однако и учетная запись хранения, и необработанные журналы должны относиться к той же подписке и тому же региону.
 
 ## <a name="what-if-i-cant-configure-an-nsg-for-traffic-analytics-due-to-a-not-found-error"></a>Что делать, если я не могу настроить NSG для Аналитики трафика из-за ошибки "Не найдено"?
 
@@ -266,6 +264,62 @@ armclient post "https://management.azure.com/subscriptions/<NSG subscription id>
 - Щелкните "создать правило генерации оповещений", чтобы создать оповещение.
 - Сведения о создании оповещения см. в [документации по оповещениям журнала](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-log) .
 
+## <a name="how-do-i-check-which-vms-are-receiving-most-on-premise-traffic"></a>Разделы справки проверить, какие виртуальные машины получают наибольший объем локального трафика
+
+            AzureNetworkAnalytics_CL
+            | where SubType_s == "FlowLog" and FlowType_s == "S2S" 
+            | where <Scoping condition>
+            | mvexpand vm = pack_array(VM1_s, VM2_s) to typeof(string)
+            | where isnotempty(vm) 
+             | extend traffic = AllowedInFlows_d + DeniedInFlows_d + AllowedOutFlows_d + DeniedOutFlows_d // For bytes use: | extend traffic = InboundBytes_d + OutboundBytes_d 
+            | make-series TotalTraffic = sum(traffic) default = 0 on FlowStartTime_t from datetime(<time>) to datetime(<time>) step 1m by vm
+            | render timechart
+
+  Для IP-адресов:
+
+            AzureNetworkAnalytics_CL
+            | where SubType_s == "FlowLog" and FlowType_s == "S2S" 
+            //| where <Scoping condition>
+            | mvexpand IP = pack_array(SrcIP_s, DestIP_s) to typeof(string)
+            | where isnotempty(IP) 
+            | extend traffic = AllowedInFlows_d + DeniedInFlows_d + AllowedOutFlows_d + DeniedOutFlows_d // For bytes use: | extend traffic = InboundBytes_d + OutboundBytes_d 
+            | make-series TotalTraffic = sum(traffic) default = 0 on FlowStartTime_t from datetime(<time>) to datetime(<time>) step 1m by IP
+            | render timechart
+
+Для времени используйте формат: гггг-мм-дд 00:00:00
+
+## <a name="how-do-i-check-standard-deviation-in-traffic-recieved-by-my-vms-from-on-premise-machines"></a>Разделы справки проверить стандартное отклонение в трафике, получаемом из виртуальных машин с локальных компьютеров
+
+            AzureNetworkAnalytics_CL
+            | where SubType_s == "FlowLog" and FlowType_s == "S2S" 
+            //| where <Scoping condition>
+            | mvexpand vm = pack_array(VM1_s, VM2_s) to typeof(string)
+            | where isnotempty(vm) 
+            | extend traffic = AllowedInFlows_d + DeniedInFlows_d + AllowedOutFlows_d + DeniedOutFlows_d // For bytes use: | extend traffic = InboundBytes_d + OutboundBytes_d
+            | summarize deviation = stdev(traffic)  by vm
+
+
+Для IP-адресов:
+
+            AzureNetworkAnalytics_CL
+            | where SubType_s == "FlowLog" and FlowType_s == "S2S" 
+            //| where <Scoping condition>
+            | mvexpand IP = pack_array(SrcIP_s, DestIP_s) to typeof(string)
+            | where isnotempty(IP) 
+            | extend traffic = AllowedInFlows_d + DeniedInFlows_d + AllowedOutFlows_d + DeniedOutFlows_d // For bytes use: | extend traffic = InboundBytes_d + OutboundBytes_d
+            | summarize deviation = stdev(traffic)  by IP
+            
+## <a name="how-do-i-check-which-ports-are-reachable-or-bocked-between-ip-pairs-with-nsg-rules"></a>Разделы справки проверить, какие порты доступны (или боккед) между парами IP-адресов и правилами NSG
+
+            AzureNetworkAnalytics_CL
+            | where SubType_s == "FlowLog" and TimeGenerated between (startTime .. endTime)
+            | extend sourceIPs = iif(isempty(SrcIP_s), split(SrcPublicIPs_s, " ") , pack_array(SrcIP_s)),
+            destIPs = iif(isempty(DestIP_s), split(DestPublicIPs_s," ") , pack_array(DestIP_s))
+            | mvexpand SourceIp = sourceIPs to typeof(string)
+            | mvexpand DestIp = destIPs to typeof(string)
+            | project SourceIp = tostring(split(SourceIp, "|")[0]), DestIp = tostring(split(DestIp, "|")[0]), NSGList_s, NSGRule_s, DestPort_d, L4Protocol_s, FlowStatus_s 
+            | summarize DestPorts= makeset(DestPort_d) by SourceIp, DestIp, NSGList_s, NSGRule_s, L4Protocol_s, FlowStatus_s
+
 ## <a name="how-can-i-navigate-by-using-the-keyboard-in-the-geo-map-view"></a>Как перемещаться в представлении географической карты с помощью клавиатуры?
 
 На странице географической карты есть два основных раздела:
@@ -282,13 +336,13 @@ armclient post "https://management.azure.com/subscriptions/<NSG subscription id>
         
 ### <a name="keyboard-navigation-on-the-map"></a>Навигация по карте с помощью клавиатуры
     
-- Чтобы переместиться от одного выделенного узла (`Ctrl+F6`Azure datacenter **(Центр обработки данных Azure) или**Страна/регион **) в представлении карты, выберите любой фильтр на баннере и нажмите клавиши** .
+- Чтобы переместиться от одного выделенного узла (**Azure datacenter** (Центр обработки данных Azure) или **Страна/регион**) в представлении карты, выберите любой фильтр на баннере и нажмите клавиши `Ctrl+F6`.
 - Чтобы перейти к другим выделенным узлам на карте, используйте клавишу `Tab` или `Right arrow` для перемещения вперед. Используйте клавиши `Shift+Tab` и `Left arrow`, чтобы переместиться назад.
 - Чтобы выбрать любой выделяемый узел карты, используйте клавишу `Enter` или `Down arrow`.
 - При выборе любого такого узла фокус перемещается на **панель элементов "Информация"** для этого узла. По умолчанию фокус перемещается на кнопку закрытия **панели элементов "Информация"** . Для дальнейшего перемещения в представлении **панели** используйте клавиши `Right arrow` и `Left arrow`, чтобы переходить вперед и назад соответственно. Нажатие клавиши `Enter` действует так же, как кнопка с фокусом на **панели элементов "Информация"** .
 - Если нажать клавишу `Tab`, когда фокус на **панели элементов "Информация"** , фокус переместится к конечным точкам, которые находятся на том же континенте, что и выбранный узел. Для перемещения между этими конечными точками можно использовать клавиши `Right arrow` и `Left arrow`.
 - Для перемещения к конечным точкам или кластеру континента другого потока используйте клавишу `Tab`, чтобы переходить вперед, и клавиши `Shift+Tab`, чтобы перейти назад.
-- Чтобы выделить конечные точки, нажмите клавишу **или**, когда фокус находится на `Enter`кластере континента`Down`. Для перехода между конечными точками и к кнопке закрытия на панели "Информация" для кластера континента используйте клавишу `Right arrow` или `Left arrow`, чтобы перемещаться вперед и назад соответственно. Чтобы перейти к строке подключения выбранного узла к строке конечной точки, нажмите клавиши `Shift+L` для любой такой точки. Нажмите клавиши `Shift+L` еще раз, чтобы перейти к выбранной конечной точке.
+- Чтобы выделить конечные точки, нажмите клавишу `Enter` или `Down`, когда фокус находится на **кластере континента**. Для перехода между конечными точками и к кнопке закрытия на панели "Информация" для кластера континента используйте клавишу `Right arrow` или `Left arrow`, чтобы перемещаться вперед и назад соответственно. Чтобы перейти к строке подключения выбранного узла к строке конечной точки, нажмите клавиши `Shift+L` для любой такой точки. Нажмите клавиши `Shift+L` еще раз, чтобы перейти к выбранной конечной точке.
         
 ### <a name="keyboard-navigation-at-any-stage"></a>Навигация с помощью клавиатуры на любом этапе
     
@@ -312,7 +366,7 @@ armclient post "https://management.azure.com/subscriptions/<NSG subscription id>
         
 ### <a name="keyboard-navigation-on-the-topology"></a>Навигация по топологии с помощью клавиатуры
     
-- Чтобы переместиться от одного выделенного узла (`Ctrl+F6`Виртуальная сеть **) в представлении топологии, выберите любой фильтр на баннере и нажмите клавиши** .
+- Чтобы переместиться от одного выделенного узла (**Виртуальная сеть**) в представлении топологии, выберите любой фильтр на баннере и нажмите клавиши `Ctrl+F6`.
 - Чтобы перейти к другим выделенным узлам в представлении топологии, используйте клавиши `Shift+Right arrow` для перемещения вперед. 
 - На выделенных узлах фокус перемещается на **панель элементов "Информация"** для этого узла. По умолчанию фокус перемещается на кнопку **Дополнительные сведения** **панели элементов "Информация"** . Для дальнейшего перемещения в представлении **панели** используйте клавиши `Right arrow` и `Left arrow`, чтобы переходить вперед и назад соответственно. Нажатие клавиши `Enter` действует так же, как кнопка с фокусом на **панели элементов "Информация"** .
 - При выборе любых подобных узлов можно просмотреть все их подключения, одно за одним, нажимая клавиши `Shift+Left arrow`. Фокус перемещается на **панель элементов "Информация"** этого подключения. В любой момент фокус можно сдвинуть обратно на узел, нажав клавиши `Shift+Right arrow` еще раз.
@@ -334,7 +388,7 @@ armclient post "https://management.azure.com/subscriptions/<NSG subscription id>
         
 ### <a name="keyboard-navigation-on-the-topology"></a>Навигация по топологии с помощью клавиатуры
     
-- Чтобы переместиться от одного выделенного узла (`Ctrl+F6`Подсеть **) в представлении топологии, выберите любой фильтр на баннере и нажмите клавиши** .
+- Чтобы переместиться от одного выделенного узла (**Подсеть**) в представлении топологии, выберите любой фильтр на баннере и нажмите клавиши `Ctrl+F6`.
 - Чтобы перейти к другим выделенным узлам в представлении топологии, используйте клавиши `Shift+Right arrow` для перемещения вперед. 
 - На выделенных узлах фокус перемещается на **панель элементов "Информация"** для этого узла. По умолчанию фокус перемещается на кнопку **Дополнительные сведения** **панели элементов "Информация"** . Для дальнейшего перемещения в представлении **панели** используйте клавиши `Right arrow` и `Left arrow`, чтобы переходить вперед и назад соответственно. Нажатие клавиши `Enter` действует так же, как кнопка с фокусом на **панели элементов "Информация"** .
 - При выборе любых подобных узлов можно просмотреть все их подключения, одно за одним, нажимая клавиши `Shift+Left arrow`. Фокус перемещается на **панель элементов "Информация"** этого подключения. В любой момент фокус можно сдвинуть обратно на узел, нажав клавиши `Shift+Right arrow` еще раз.    

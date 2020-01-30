@@ -15,12 +15,12 @@ ms.date: 11/25/2019
 ms.author: mimart
 ms.reviewer: arvinh
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: eefdb42cebad2b7f532392254b652742527ed862
-ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
+ms.openlocfilehash: 9848e686188288b507a0a74d0f9fa16f8f0e4253
+ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76711473"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76841205"
 ---
 # <a name="automate-user-provisioning-and-deprovisioning-to-applications-with-azure-active-directory"></a>Автоматизируйте подготовку пользователей и отменяйте подготовку приложений с помощью Azure Active Directory
 
@@ -67,7 +67,7 @@ ms.locfileid: "76711473"
 
 * **Приложения, поддерживающие SCIM 2,0**. Сведения о универсальных способах подключения приложений, реализующих API-интерфейсы управления пользователями на основе SCIM 2,0, см. в статьях [Создание конечной точки scim и Настройка подготовки пользователей](use-scim-to-provision-users-and-groups.md).
 
-## <a name="what-is-scim"></a>Что такое SCIM?
+## <a name="what-is-system-for-cross-domain-identity-management-scim"></a>Что такое система для управления междоменными удостоверениями (SCIM)?
 
 Чтобы помочь автоматизировать подготовку и отмену подготовки, приложения предоставляют собственные интерфейсы API пользователей и групп. Однако все, кто пытается управлять пользователями в нескольких приложениях, покажет, что каждое приложение пытается выполнить одни и те же простые действия, такие как создание или обновление пользователей, Добавление пользователей в группы или отменяется предоставление пользователям. Но все эти простые действия реализуются немного по-разному, используя разные пути к конечным точкам, различные методы для указания сведений о пользователе и другая схема для представления каждого элемента информации.
 

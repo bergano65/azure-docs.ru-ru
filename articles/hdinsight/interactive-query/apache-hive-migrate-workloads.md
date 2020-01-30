@@ -7,12 +7,12 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 11/13/2019
-ms.openlocfilehash: 9f49a9224ed123b76f4d300c27a8dd5822e50ea3
-ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
+ms.openlocfilehash: eceb4b312476d701ec8ce4eb0ce4886621824b3a
+ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74706017"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76841597"
 ---
 # <a name="migrate-azure-hdinsight-36-hive-workloads-to-hdinsight-40"></a>Перенос рабочих нагрузок Hive Azure HDInsight 3,6 в HDInsight 4,0
 
@@ -73,10 +73,10 @@ ms.locfileid: "74706017"
 
 Используйте значения в таблице ниже. Замените `SQLSERVERNAME DATABASENAME USERNAME PASSWORD` соответствующими значениями **копируемых** хранилище метаданных Hive, разделенных пробелами. При указании имени SQL Server не включайте ". database.windows.net".
 
-|Свойство | Value |
+|Свойство | Значение |
 |---|---|
 |Тип скрипта|- Custom|
-|Name|Обновление Hive|
+|Имя|Обновление Hive|
 |URI bash-скрипта|`https://hdiconfigactions.blob.core.windows.net/hivemetastoreschemaupgrade/launch-schema-upgrade.sh`|
 |Типы узлов|Head|
 |Параметры|SQLSERVERNAME ИМЯ ПОЛЬЗОВАТЕЛЯ, ПАРОЛЬ|
@@ -176,14 +176,16 @@ alter table myacidtable compact 'major';
 
 В HDInsight 3,6 клиент GUI для взаимодействия с сервером Hive является представлением Hive Ambari. HDInsight 4,0 не поставляется с Ambari представлением. Мы предоставили нашим клиентам способ использования Data Analytics Studio (DAS), который не является основной службой HDInsight. DAS не поставляется с кластерами HDInsight и не является официально поддерживаемым пакетом. Однако DAS можно установить в кластере с помощью [действия сценария](../hdinsight-hadoop-customize-cluster-linux.md) следующим образом:
 
-|Свойство | Value |
+|Свойство | Значение |
 |---|---|
 |Тип скрипта|- Custom|
-|Name|DAS|
+|Имя|DAS|
 |URI bash-скрипта|`https://hdiconfigactions.blob.core.windows.net/dasinstaller/LaunchDASInstaller.sh`|
 |Типы узлов|Head|
 
-Подождите 5 – 10 минут, а затем запустите Data Analytics Studio с помощью этого URL-адреса: `https://CLUSTERNAME.azurehdinsight.net/das/`.
+Подождите 10 – 15 минут, а затем запустите Data Analytics Studio с помощью этого URL-адреса: `https://CLUSTERNAME.azurehdinsight.net/das/`.
+
+Перед доступом к DAS может потребоваться обновить пользовательский интерфейс Ambari и (или) перезапустить все компоненты Ambari.
 
 После установки DAS, если вы не видите запросы, которые вы выполняли в средстве просмотра запросов, выполните следующие действия.
 

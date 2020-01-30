@@ -11,27 +11,27 @@ ms.topic: article
 ms.date: 07/08/2019
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: a49eae95628645f6586a637c103433b122b5d287
-ms.sourcegitcommit: 5b9287976617f51d7ff9f8693c30f468b47c2141
+ms.openlocfilehash: 2bc02433be9ee7955b0e10ac659ee40e315e5a5e
+ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2019
-ms.locfileid: "74950958"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76840168"
 ---
 # <a name="tutorial-add-identity-providers-to-your-applications-in-azure-active-directory-b2c"></a>Учебник. Добавление поставщиков удостоверений в приложения в Azure Active Directory B2C
 
-В своих приложениях вы можете разрешить пользователям входить с разными поставщиками удостоверений. *Поставщик удостоверений* создает, поддерживает и управляет сведениями об удостоверении, одновременно предоставляя приложениям службы проверки подлинности. Поставщики удостоверений, поддерживаемые Azure Active Directory B2C (Azure AD B2C), можно добавить в [пользовательские потоки](active-directory-b2c-reference-policies.md) с помощью портал Azure.
+В своих приложениях вы можете разрешить пользователям входить с разными поставщиками удостоверений. *Поставщик удостоверений* создает, поддерживает и управляет сведениями об удостоверении, одновременно предоставляя приложениям службы проверки подлинности. Поставщики удостоверений, поддерживаемые Azure Active Directory B2C (Azure AD B2C), можно добавить в [пользовательские потоки](user-flow-overview.md) с помощью портал Azure.
 
-В этой статье раскрываются следующие темы:
+Вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 > * Создание приложений поставщика удостоверений
 > * Добавление поставщиков удостоверений для вашего клиента
 > * Добавление поставщиков удостоверений для вашего потока пользователя
 
-Обычно в приложениях используется только один поставщик удостоверений, но у вас есть возможность добавить еще. В этом руководстве показано, как добавить поставщик удостоверений Azure AD и Facebook в приложение. Добавление обоих этих поставщиков удостоверений в приложение является необязательным. Вы также можете добавить других поставщиков удостоверений, таких как [Amazon](active-directory-b2c-setup-amzn-app.md), [GitHub](active-directory-b2c-setup-github-app.md), [Google](active-directory-b2c-setup-goog-app.md), [LinkedIn](active-directory-b2c-setup-li-app.md), [Microsoft](active-directory-b2c-setup-msa-app.md)или [Twitter](active-directory-b2c-setup-twitter-app.md).
+Обычно в приложениях используется только один поставщик удостоверений, но у вас есть возможность добавить еще. В этом руководстве показано, как добавить поставщик удостоверений Azure AD и Facebook в приложение. Добавление обоих этих поставщиков удостоверений в приложение является необязательным. Вы также можете добавить других поставщиков удостоверений, таких как [Amazon](identity-provider-amazon.md), [GitHub](identity-provider-github.md), [Google](identity-provider-google.md), [LinkedIn](identity-provider-linkedin.md), [Microsoft](identity-provider-microsoft-account.md)или [Twitter](identity-provider-twitter.md).
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 ## <a name="prerequisites"></a>Технические условия
 
@@ -45,11 +45,11 @@ ms.locfileid: "74950958"
 
 Чтобы включить вход для пользователей из Azure AD, вам необходимо зарегистрировать приложение в клиенте Azure AD. Клиент Azure AD отличается от клиента Azure AD B2C.
 
-1. Войдите на [портале Azure](https://portal.azure.com).
+1. Войдите на [портал Azure](https://portal.azure.com).
 1. Убедитесь, что вы используете каталог, содержащий клиент Azure AD, выбрав фильтр " **каталог и подписка** " в верхнем меню и выбрав Каталог, содержащий ваш клиент Azure AD.
 1. Выберите **Все службы** в левом верхнем углу окна портала Azure, а затем найдите и выберите **Регистрация приложений**.
 1. Выберите **Новая регистрация**.
-1. Введите имя приложения. Пример: `Azure AD B2C App`.
+1. Введите имя приложения. Например, `Azure AD B2C App`.
 1. Примите выбранные **учетные записи в этом каталоге организации только** для этого приложения.
 1. Для **URI перенаправления**оставьте значение **Web** и введите следующий URL-адрес в строчных буквах, заменив `your-B2C-tenant-name` именем клиента Azure AD B2C.
 
@@ -57,13 +57,13 @@ ms.locfileid: "74950958"
     https://your-B2C-tenant-name.b2clogin.com/your-B2C-tenant-name.onmicrosoft.com/oauth2/authresp
     ```
 
-    Пример: `https://contoso.b2clogin.com/contoso.onmicrosoft.com/oauth2/authresp`.
+    Например, `https://contoso.b2clogin.com/contoso.onmicrosoft.com/oauth2/authresp`.
 
     Всем URL-адресам следует использовать [b2clogin.com](b2clogin.md).
 
 1. Выберите **зарегистрировать**, а затем запишите **идентификатор приложения (клиента)** , который вы используете на следующем шаге.
 1. В разделе **Управление** в меню приложение выберите **Сертификаты & секреты**, а затем выберите **новый секрет клиента**.
-1. Введите **Описание** секрета клиента. Пример: `Azure AD B2C App Secret`.
+1. Введите **Описание** секрета клиента. Например, `Azure AD B2C App Secret`.
 1. Выберите срок действия. Для этого приложения Примите выбор **в течение 1 года**.
 1. Выберите **Добавить**, а затем запишите значение нового секрета клиента, который вы используете на следующем шаге.
 
@@ -105,7 +105,7 @@ ms.locfileid: "74950958"
     https://login.microsoftonline.com/your-AD-tenant-domain/.well-known/openid-configuration
     ```
 
-    Пример: `https://login.microsoftonline.com/contoso.onmicrosoft.com/.well-known/openid-configuration`.
+    Например, `https://login.microsoftonline.com/contoso.onmicrosoft.com/.well-known/openid-configuration`.
 
 1. В поле **идентификатор клиента**введите ранее записанный идентификатор приложения.
 1. В поле **секрет клиента**введите секрет клиента, который вы записали ранее.

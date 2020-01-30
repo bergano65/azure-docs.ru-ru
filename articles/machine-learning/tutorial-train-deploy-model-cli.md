@@ -9,12 +9,12 @@ ms.service: machine-learning
 ms.subservice: core
 ms.topic: conceptual
 ms.date: 01/08/2019
-ms.openlocfilehash: f920df20a8dc1cace76f641ce1c71f9b91a30bf4
-ms.sourcegitcommit: 12a26f6682bfd1e264268b5d866547358728cd9a
+ms.openlocfilehash: 70253e66903916bde05f9e6e55e3c0609cb4a146
+ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75867671"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76841120"
 ---
 # <a name="tutorial-train-and-deploy-a-model-from-the-cli"></a>Учебник. обучение и развертывание модели с помощью интерфейса командной строки
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -246,7 +246,7 @@ az ml dataset register -f dataset.json --skip-validation
 > [!IMPORTANT]
 > Скопируйте значение записи `id`, так как оно используется в следующем разделе.
 
-Чтобы узнать более полный шаблон JSON-файла, описывающего набор данных, используйте следующую команду:
+Чтобы просмотреть более полный шаблон для набора данных, используйте следующую команду:
 ```azurecli-interactive
 az ml dataset register --show-template
 ```
@@ -288,7 +288,7 @@ data:
 
 Измените значение записи `id` в соответствии со значением, возвращаемым при регистрации набора данных. Это значение используется для загрузки данных в целевой объект вычислений во время обучения.
 
-Этот YAML выполняет следующие действия:
+Это YAML приводит к следующим действиям во время обучения:
 
 * Подключает набор данных (на основе идентификатора набора данных) в среде обучения и сохраняет путь к точке подключения в переменной среды `mnist`.
 * Передает расположение данных (точку подключения) в среде обучения в скрипт, используя аргумент `--data-folder`.
@@ -298,7 +298,7 @@ data:
 > [!TIP]
 > Хотя можно вручную создать файл runconfig, в этом примере он был создан с помощью файла `generate-runconfig.py`, включенного в репозиторий. Этот файл получает ссылку на зарегистрированный набор данных, создает конфигурацию запуска программно, а затем сохраняет ее в файле.
 
-Дополнительные сведения о файлах конфигурации запуска см. в разделе [Установка и использование целевых объектов вычислений для обучения модели](how-to-set-up-training-targets.md#create-run-configuration-and-submit-run-using-azure-machine-learning-cli)или ссылка на этот [JSON-файл](https://github.com/microsoft/MLOps/blob/b4bdcf8c369d188e83f40be8b748b49821f71cf2/infra-as-code/runconfigschema.json) , чтобы просмотреть полную схему для runconfig.
+Дополнительные сведения о файлах конфигурации запуска см. в разделе [Установка и использование целевых объектов вычислений для обучения модели](how-to-set-up-training-targets.md#create-run-configuration-and-submit-run-using-azure-machine-learning-cli). Полный справочник по JSON см. в разделе [рунконфигсчема. JSON](https://github.com/microsoft/MLOps/blob/b4bdcf8c369d188e83f40be8b748b49821f71cf2/infra-as-code/runconfigschema.json).
 
 ## <a name="submit-the-training-run"></a>Отправить обучающий запуск
 
@@ -379,7 +379,9 @@ az ml model deploy -n myservice -m "mymodel:1" --ic inferenceConfig.yml --dc aci
 
 Эта команда развертывает новую службу с именем `myservice`, используя версию 1 модели, которая была зарегистрирована ранее.
 
-Файл `inferenceConfig.yml` содержит сведения о том, как выполнять вывод, например сценарий записи (`score.py`) и зависимости программного обеспечения. Дополнительные сведения о структуре этого файла см. в статье [Схема конфигурации вывода](reference-azure-machine-learning-cli.md#inference-configuration-schema). Дополнительные сведения о скриптах ввода см. в разделе [Развертывание моделей с помощью машинное обучение Azure](how-to-deploy-and-where.md#prepare-to-deploy).
+Файл `inferenceConfig.yml` содержит сведения об использовании модели для вывода. Например, он ссылается на скрипт записи (`score.py`) и зависимости программного обеспечения. 
+
+Дополнительные сведения о структуре этого файла см. в статье [Схема конфигурации вывода](reference-azure-machine-learning-cli.md#inference-configuration-schema). Дополнительные сведения о скриптах ввода см. в разделе [Развертывание моделей с помощью машинное обучение Azure](how-to-deploy-and-where.md#prepare-to-deploy).
 
 `aciDeploymentConfig.yml` описывает среду развертывания, используемую для размещения службы. Конфигурация развертывания зависит от типа вычислений, используемого для развертывания. В этом случае используется экземпляр контейнера Azure. Дополнительные сведения см. в статье [Схема конфигурации развертывания](reference-azure-machine-learning-cli.md#deployment-configuration-schema).
 

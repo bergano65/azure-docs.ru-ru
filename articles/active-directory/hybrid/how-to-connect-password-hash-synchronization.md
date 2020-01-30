@@ -15,12 +15,12 @@ ms.author: billmath
 search.appverid:
 - MET150
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9c4f0a72cb598a8e38fc69f23f62f0f456cccb04
-ms.sourcegitcommit: 87781a4207c25c4831421c7309c03fce5fb5793f
+ms.openlocfilehash: 165bd93f2d35425965df9358c8d85f79ce557d66
+ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76543925"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76833370"
 ---
 # <a name="implement-password-hash-synchronization-with-azure-ad-connect-sync"></a>Реализация синхронизации хэшированных паролей в службе синхронизации Azure AD Connect
 В этой статье содержатся сведения о том, как синхронизировать пароли пользователей локального экземпляра службы Active Directory (AD) и облачного экземпляра службы Azure Active Directory (Azure AD).
@@ -130,9 +130,9 @@ Azure AD поддерживает отдельную политику срока
   
 Функция временного пароля позволяет гарантировать, что перенаправление владения учетными данными выполняется при первом использовании, чтобы снизить время, в течение которого несколько человек имеют знания об этих учетных данных.
 
-Для поддержки временных паролей в Azure AD для синхронизированных пользователей можно включить функцию *форцепассвордресетонлогонфеатуре* , выполнив следующую команду на сервере Azure AD Connect:
+Для поддержки временных паролей в Azure AD для синхронизированных пользователей можно включить функцию *форцепассвордчанжеонлогон* , выполнив следующую команду на сервере Azure AD Connect:
 
-`Set-ADSyncAADCompanyFeature  -ForcePasswordResetOnLogonFeature $true`
+`Set-ADSyncAADCompanyFeature  -ForcePasswordChangeOnLogOn $true`
 
 > [!NOTE]
 > Принудительное изменение пароля пользователем при следующем входе в систему требует смены пароля.  AD Connect не установит флаг принудительного изменения пароля самостоятельно. это дополнение к обнаруженным изменениям паролей, происходящим во время синхронизации хэша паролей.

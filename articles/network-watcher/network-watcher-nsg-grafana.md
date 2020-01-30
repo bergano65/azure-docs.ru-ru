@@ -4,9 +4,7 @@ titleSuffix: Azure Network Watcher
 description: Управляйте журналами потоков для групп безопасности сети и анализируйте их с помощью наблюдателя за сетями и Grafana.
 services: network-watcher
 documentationcenter: na
-author: mattreatMSFT
-manager: vitinnan
-editor: ''
+author: damendo
 tags: azure-resource-manager
 ms.assetid: ''
 ms.service: network-watcher
@@ -15,13 +13,13 @@ ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/15/2017
-ms.author: mareat
-ms.openlocfilehash: e92f4db575e4b318af8dc7bf3ba2eb4b69a3a2d9
-ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
+ms.author: damendo
+ms.openlocfilehash: c48d5a02cdb8ef63904642c6c2c76cb5d61e1f9d
+ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74277941"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76840916"
 ---
 # <a name="manage-and-analyze-network-security-group-flow-logs-using-network-watcher-and-grafana"></a>Управление журналами потоков для групп безопасности сети и их анализ с помощью наблюдателя за сетями и Grafana
 
@@ -52,7 +50,7 @@ ms.locfileid: "74277941"
 
 Logstash позволяет преобразовать формат журналов потоков из JSON в плоскую структуру на уровне кортежей потока.
 
-1. Выполните команды ниже, чтобы установить Logstash.
+1. Введите следующие команды, чтобы установить Logstash.
 
     ```bash
     curl -L -O https://artifacts.elastic.co/downloads/logstash/logstash-5.2.0.deb
@@ -65,7 +63,7 @@ Logstash позволяет преобразовать формат журнал
     sudo touch /etc/logstash/conf.d/logstash.conf
     ```
 
-3. Добавьте в этот файл приведенное ниже содержимое. Измените имя учетной записи хранения и ключ доступа, введя значения для своей учетной записи хранения:
+3. Добавьте в этот файл содержимое ниже. Измените имя учетной записи хранения и ключ доступа, введя значения для своей учетной записи хранения:
 
    ```bash
     input {
@@ -205,7 +203,7 @@ sudo service grafana-server start
 
 Интеграция наблюдателя за сетями с ElasticSearch и Grafana обеспечивает удобное централизованное управление журналами потоков для групп безопасности сети и другими данными, а также возможность их визуализации. Grafana располагает рядом других мощных графических возможностей, которые можно использовать для дальнейшего управления журналами потоков, а также анализа сетевого трафика. Теперь, когда вы настроили экземпляр Grafana и подключили его к Azure, можно продолжить изучение других функций, предлагаемых Grafana.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте больше об использовании [наблюдателя за сетями](network-watcher-monitoring-overview.md).
 

@@ -10,18 +10,18 @@ ms.topic: conceptual
 ms.date: 04/16/2019
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 83f8051fa31b6431d4a8515e2c0912cc1872a402
-ms.sourcegitcommit: f209d0dd13f533aadab8e15ac66389de802c581b
+ms.openlocfilehash: d6b18596082df6f1cfbe2a47627712b8b69cb355
+ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71064390"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76836615"
 ---
 # <a name="configure-tokens-in-azure-active-directory-b2c"></a>Настройка маркеров в Azure Active Directory B2C
 
-Из этой статьи вы узнаете, как настроить [время существования и совместимость маркера](active-directory-b2c-reference-tokens.md) в Azure Active Directory B2C (Azure AD B2C).
+Из этой статьи вы узнаете, как настроить [время существования и совместимость маркера](tokens-overview.md) в Azure Active Directory B2C (Azure AD B2C).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 [Создайте поток пользователя](tutorial-create-user-flows.md), чтобы пользователи могли зарегистрироваться и войти в ваше приложение.
 
@@ -29,7 +29,7 @@ ms.locfileid: "71064390"
 
 Время существования маркера можно настроить в любом потоке пользователя.
 
-1. Войдите на [портале Azure](https://portal.azure.com).
+1. Войдите на [портал Azure](https://portal.azure.com).
 2. Убедитесь, что вы используете каталог, содержащий клиент Azure AD B2C. В верхнем меню выберите фильтр **каталог и подписка** и выберите каталог, содержащий клиент Azure AD B2C.
 3. Выберите **Все службы** в левом верхнем углу окна портала Azure, а затем найдите и выберите **Azure AD B2C**.
 4. Выберите **потоки пользователя (политики)** .
@@ -39,7 +39,7 @@ ms.locfileid: "71064390"
 
     ![Параметры свойства "время существования токена" в портал Azure](./media/configure-tokens/token-lifetime.png)
 
-8. Нажмите кнопку **Сохранить**.
+8. Выберите команду **Сохранить**.
 
 ## <a name="configure-token-compatibility"></a>Настройка совместимости токенов
 
@@ -50,11 +50,11 @@ ms.locfileid: "71064390"
 
     ![Параметры свойств совместимости маркеров в портал Azure](./media/configure-tokens/token-compatibility.png)
 
-5. Нажмите кнопку **Сохранить**.
+5. Выберите команду **Сохранить**.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-Узнайте больше о том, как [использовать маркеры доступа](active-directory-b2c-access-tokens.md).
+Узнайте больше о том, как [использовать маркеры доступа](access-tokens.md).
 
 
 

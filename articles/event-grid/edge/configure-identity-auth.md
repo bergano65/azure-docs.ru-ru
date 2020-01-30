@@ -9,16 +9,16 @@ ms.date: 10/05/2019
 ms.topic: article
 ms.service: event-grid
 services: event-grid
-ms.openlocfilehash: 336b6157128468169264d6ffa9564da4d9338aae
-ms.sourcegitcommit: 92d42c04e0585a353668067910b1a6afaf07c709
+ms.openlocfilehash: 0aedeea2a6ad08e1627c2d1a6ebde6c91a4d02d9
+ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2019
-ms.locfileid: "72992448"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76841771"
 ---
 # <a name="configure-identity-for-the-event-grid-module"></a>Настройка удостоверения для модуля "Сетка событий"
 
-В этой статье приводятся примеры возможных конфигураций удостоверений для модуля сетки событий. По умолчанию модуль "Сетка событий" будет представлять свой сертификат удостоверений, настроенный управляющей программой IoT. Сертификат удостоверения представляется модулем сетки событий в исходящих вызовах, т. е. при доходе доставки событий. После этого подписчик на событие сетки событий может проверить, что это действительно модуль сетки событий, который отправил событие перед принятием события.
+В этой статье показано, как настроить удостоверение для сетки на границе. По умолчанию модуль "Сетка событий" представляет свой сертификат удостоверений, настроенный управляющей программой IoT. Сетка событий на границе представляет сертификат удостоверения с исходящими вызовами при доходе доставки событий. Затем подписчик может проверить модуль сетки событий, который отправил событие перед принятием.
 
 Все возможные конфигурации см. в разделе руководств по [безопасности и проверке подлинности](security-authentication.md) .
 
@@ -28,8 +28,8 @@ ms.locfileid: "72992448"
 ```json
  {
   "Env": [
-    "outbound:clientAuth:clientCert:enabled=true",
-    "outbound:clientAuth:clientCert:source=IoTEdge"
+    "outbound__clientAuth__clientCert__enabled=true",
+    "outbound__clientAuth__clientCert__source=IoTEdge"
   ]
 }
  ```
@@ -40,7 +40,7 @@ ms.locfileid: "72992448"
 ```json
  {
   "Env": [
-    "outbound:clientAuth:clientCert:enabled=false"
+    "outbound__clientAuth__clientCert__enabled=false"
   ]
 }
  ```

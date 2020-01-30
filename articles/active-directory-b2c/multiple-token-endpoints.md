@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 07/31/2019
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: f07eb65243b4f797a2955e33aca50ed8c46d256e
-ms.sourcegitcommit: 5b9287976617f51d7ff9f8693c30f468b47c2141
+ms.openlocfilehash: e6a92d12e7f2f24289aafa7e4a9acc9edccbd34c
+ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2019
-ms.locfileid: "74950992"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76840406"
 ---
 # <a name="migrate-an-owin-based-web-api-to-b2clogincom"></a>Перенос веб-API на основе OWIN в b2clogin.com
 
@@ -33,7 +33,7 @@ ms.locfileid: "74950992"
 
 Перед продолжением действий, описанных в этой статье, необходимо выполнить следующие Azure AD B2C ресурсы.
 
-* [Потоки пользователей](tutorial-create-user-flows.md) или [пользовательские политики](active-directory-b2c-get-started-custom.md) , созданные в клиенте
+* [Потоки пользователей](tutorial-create-user-flows.md) или [пользовательские политики](custom-policy-get-started.md) , созданные в клиенте
 
 ## <a name="get-token-issuer-endpoints"></a>Получение конечных точек издателя маркера
 
@@ -127,7 +127,7 @@ app.UseOAuthBearerAuthentication(new OAuthBearerAuthenticationOptions
 
 Измените значение `ida:AadInstance` в *файле Web. config* для TaskWebApp, чтобы оно ссылалось `{your-b2c-tenant-name}.b2clogin.com` вместо `login.microsoftonline.com`.
 
-До:
+Перед следующей операцией.
 
 ```xml
 <!-- Old value -->
@@ -147,7 +147,7 @@ app.UseOAuthBearerAuthentication(new OAuthBearerAuthenticationOptions
 
 В этой статье представлен метод настройки веб-API, реализующий по промежуточного слоя Microsoft OWIN (Katana), для приема маркеров из нескольких конечных точек поставщика. Как вы можете заметить, в файлах *Web. config* для проектов TaskService и TaskWebApp есть несколько других строк, которые необходимо изменить, если требуется собрать и запустить эти проекты для собственного клиента. Вы можете соответствующим образом изменить проекты, если вы хотите увидеть их в действии, но полное пошаговое руководство выходит за рамки этой статьи.
 
-Дополнительные сведения о различных типах маркеров безопасности, порожденных Azure AD B2C, см. [в разделе Обзор маркеров в Azure Active Directory B2C](active-directory-b2c-reference-tokens.md).
+Дополнительные сведения о различных типах маркеров безопасности, порожденных Azure AD B2C, см. [в разделе Обзор маркеров в Azure Active Directory B2C](tokens-overview.md).
 
 <!-- LINKS - External -->
 [sample-archive]: https://github.com/Azure-Samples/active-directory-b2c-dotnet-webapp-and-webapi/archive/master.zip

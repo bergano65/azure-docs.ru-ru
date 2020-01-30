@@ -3,12 +3,12 @@ title: Планирование развертывания кластера Azur
 description: Узнайте, как планировать и подготавливать рабочую Service Fabric развертывание кластера в Azure.
 ms.topic: conceptual
 ms.date: 03/20/2019
-ms.openlocfilehash: 69fb97e4e679b3ce5817a51d619799a3384fd753
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 32d48f9ffa056d252bdf762304340f245d80fd26
+ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75463318"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76834456"
 ---
 # <a name="plan-and-prepare-for-a-cluster-deployment"></a>Планирование и подготовка к развертыванию кластера
 
@@ -37,9 +37,59 @@ Service Fabric позволяет создавать кластеры Service Fa
 
 Минимальное число виртуальных машин для типа первичного узла определяется выбранным [уровнем надежности][reliability] .
 
-Ознакомьтесь с минимальными рекомендациями для типов [первичных узлов](service-fabric-cluster-capacity.md#primary-node-type---capacity-guidance), [рабочих нагрузок с отслеживанием состояния на типах узлов, не являющихся первичными](service-fabric-cluster-capacity.md#non-primary-node-type---capacity-guidance-for-stateful-workloads), и [рабочих нагрузок без отслеживания состояния на типах узлов, не являющихся первичными](service-fabric-cluster-capacity.md#non-primary-node-type---capacity-guidance-for-stateless-workloads). 
+Ознакомьтесь с минимальными рекомендациями для типов [первичных узлов](service-fabric-cluster-capacity.md#primary-node-type---capacity-guidance), [рабочих нагрузок с отслеживанием состояния на типах узлов, не являющихся первичными](service-fabric-cluster-capacity.md#non-primary-node-type---capacity-guidance-for-stateful-workloads), и [рабочих нагрузок без отслеживания состояния на типах узлов, не являющихся первичными](service-fabric-cluster-capacity.md#non-primary-node-type---capacity-guidance-for-stateless-workloads).
 
 Количество узлов, превышающее минимальное, должно быть основано на количестве реплик приложения или служб, которые необходимо выполнить в этом типе узла.  [Планирование ресурсов для Service Fabric приложений](service-fabric-capacity-planning.md) помогает оценить ресурсы, необходимые для выполнения приложений. Вы всегда можете увеличить или уменьшить масштаб кластера позже, чтобы изменить рабочую нагрузку приложения. 
+
+#### <a name="use-ephemeral-os-disks-for-virtual-machine-scale-sets"></a>Использование временных дисков ОС для масштабируемых наборов виртуальных машин
+
+*Временные диски ОС* — это хранилище, созданное на локальной виртуальной машине и не сохраненное в удаленном хранилище Azure. Они рекомендуются для всех типов узлов Service Fabric (основной и дополнительный), так как по сравнению с традиционными дисками с постоянными ОС, временными дисками ОС:
+
+* Уменьшение задержки чтения и записи на диск ОС
+* Включить более быстрые операции по управлению узлами для сброса и повторного создания образа
+* Сократите общие затраты (диски бесплатно и не требуют дополнительных затрат на хранение).
+
+Временные диски ОС не являются определенной Service Fabricой функцией, а представляют собой функцию *масштабируемых наборов виртуальных машин* Azure, сопоставленных с типами узлов Service Fabric. Для их использования с Service Fabric требуется следующее в шаблоне Azure Resource Manager кластера:
+
+1. Убедитесь, что типы узлов задают [Поддерживаемые размеры виртуальных машин Azure](../virtual-machines/windows/ephemeral-os-disks.md) для временных дисков ОС, и что размер кэша виртуальной машины достаточен для поддержки размера диска ОС (см. *Примечание* ниже). Например:
+
+    ```xml
+    "vmNodeType1Size": {
+        "type": "string",
+        "defaultValue": "Standard_DS3_v2"
+    ```
+
+    > [!NOTE]
+    > Не забудьте выбрать размер виртуальной машины с размером кэша, равным или превышающим размер диска ОС самой виртуальной машины. в противном случае развертывание Azure может привести к ошибке (даже если изначально оно принято).
+
+2. Укажите версию масштабируемого набора виртуальных машин (`vmssApiVersion`) `2018-06-01` или более поздней версии.
+
+    ```xml
+    "variables": {
+        "vmssApiVersion": "2018-06-01",
+    ```
+
+3. В разделе масштабируемый набор виртуальных машин шаблона развертывания укажите параметр `Local` для `diffDiskSettings`.
+
+    ```xml
+    "apiVersion": "[variables('vmssApiVersion')]",
+    "type": "Microsoft.Compute/virtualMachineScaleSets",
+        "virtualMachineProfile": {
+            "storageProfile": {
+                "osDisk": {
+                        "vhdContainers": ["[concat(reference(concat('Microsoft.Storage/storageAccounts/', parameters('vmStorageAccountName')), variables('storageApiVersion')).primaryEndpoints.blob, parameters('vmStorageAccountContainerName'))]"],
+                        "caching": "ReadOnly",
+                        "createOption": "FromImage",
+                        "diffDiskSettings": {
+                            "option": "Local"
+                        },
+                }
+            }
+        }
+    ```
+
+Дополнительные сведения и дополнительные параметры конфигурации см. в статье [диски с временными ОС для виртуальных машин Azure](../virtual-machines/windows/ephemeral-os-disks.md) . 
+
 
 ### <a name="select-the-durability-and-reliability-levels-for-the-cluster"></a>Выбор уровней устойчивости и надежности для кластера
 Уровень устойчивости используется, чтобы указать системе привилегии, имеющиеся у виртуальных машин в базовой инфраструктуре Azure. Для типа первичного узла эта привилегия позволяет Service Fabric приостановить любой запрос инфраструктуры на уровне виртуальной машины (например, перезагрузку, переустановку из образа или перенос виртуальной машины), который влияет на требования к кворуму, установленные для системных служб и ваших служб с отслеживанием состояния. Для типов вторичных узлов эта привилегия позволяет Service Fabric приостановить любой запрос инфраструктуры на уровне виртуальной машины (например, перезагрузку, переустановку из образа и перенос виртуальной машины), который влияет на требования к кворуму, установленные для ваших служб с отслеживанием состояния.  Преимущества различных уровней и рекомендаций по уровню [надежности кластера][durability]и рекомендации по их использованию.

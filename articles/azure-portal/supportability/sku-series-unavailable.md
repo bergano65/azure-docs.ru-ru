@@ -1,25 +1,27 @@
 ---
-title: Серия SKU недоступна | Документация Майкрософт
-description: Некоторые серии SKU могут быть недоступны для выбранной подписки в определенном регионе.
+title: Серия регионов или номеров SKU недоступна — Azure
+description: Некоторые серии номеров SKU недоступны для выбранной подписки в этом регионе, что может потребовать запроса на поддержку по управлению подписками.
 services: Azure Supportability
 author: stevendotwang
 ms.service: azure-supportability
 ms.topic: article
-ms.date: 11/09/2017
+ms.date: 01/27/2020
 ms.author: xingwan
-ms.openlocfilehash: e317ae1ad88cf162f1d55a06d19e7b3b0b88ce60
-ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
+ms.openlocfilehash: b0f0762ded6804c0b0d90a19223c082f0fb8fd49
+ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75896731"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76843650"
 ---
 # <a name="region-or-sku-unavailable"></a>Регион или номер SKU недоступен
+
 В этой статье описывается, как устранить проблему с подпиской Azure, если для нее недоступен какой-либо регион или номер SKU виртуальной машины.
 
 ## <a name="symptoms"></a>Симптомы
 
-### <a name="when-deploying-a-virtual-machine-you-receive-one-of-the-following-error-messages"></a>При развертывании виртуальной машины появляется одно из приведенных ниже сообщений об ошибке.
+При развертывании виртуальной машины появляется одно из приведенных ниже сообщений об ошибке.
+
 ```
 Code: SkuNotAvailable
 Message: The requested size for resource '<resource>' is currently not available in location 
@@ -37,7 +39,7 @@ Code: NotAvailableForSubscription
 Message: This size is currently unavailable in this location for this subscription
 ```
 
-### <a name="when-purchasing-reserved-virtual-machine-instances-you-receive-one-of-the-following-error-messages"></a>При покупке зарезервированных экземпляров виртуальных машин появляется одно из приведенных ниже сообщений об ошибке.
+При покупке зарезервированных экземпляров виртуальных машин появляется одно из приведенных ниже сообщений об ошибке.
 
 ```
 Message: Your subscription doesn’t support virtual machine reservation in <location>. Choose a 
@@ -48,32 +50,38 @@ different location. Supported locations are: <list of locations>
 Message: This size is currently unavailable in this location for this subscription
 ```
 
-### <a name="when-creating-a-support-request-to-increase-compute-core-quota-a-region-or-a-sku-family-is-not-available-for-selection"></a>При создании запроса в службу поддержки для увеличения квоты вычислительных ядер регион или семейство номеров SKU недоступны для выбора.
+При создании запроса в службу поддержки для увеличения квоты вычислений для базовой среды регион или семейство SKU недоступны для выбора.
 
 ## <a name="solution"></a>Решение
-Во-первых, рекомендуется рассмотреть альтернативный регион или номер SKU, который соответствует потребностям бизнеса. Если вам не удалось найти подходящий регион или номер SKU, создайте [запрос в службу поддержки](https://ms.portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest) типа "Управление подпиской", выполнив следующие действия.
 
+Во-первых, рекомендуется рассмотреть альтернативный регион или номер SKU, который соответствует потребностям бизнеса.
 
-- На странице "Основные данные" выберите тип проблемы "Управление подпиской", выберите подписку и нажмите кнопку "Далее".
+Если вы не можете найти подходящий регион или номер SKU, создайте [запрос в службу поддержки](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest) по **управлению подписками** , выполнив следующие действия.
 
-![Колонка «Основные»](./media/SKU-series-unavailable/BasicsSubMgmt.png)
+1. В меню [портал Azure](https://portal.azure.com) выберите пункт **Справка и поддержка**. Затем выберите **Новый запрос в службу поддержки**.
 
+1. В статье **основные**сведения для **типа проблемы**выберите **Управление подписками**.
 
--   На странице "Проблема" выберите тип проблемы "Other General Questions" (Другие общие вопросы).
-- В разделе "Сведения" сделайте следующее.
-  - Укажите, если хотите ли вы развернуть виртуальные машины или приобрести зарезервированные экземпляры виртуальных машин.
-  - Укажите регион, номер SKU и количество экземпляров виртуальной машины, которые вы планируете развернуть или купить.
+1. Выберите **подписку** и введите краткое описание в **сводке**.
 
+   ![Вкладка "Основные сведения" нового запроса на поддержку](./media/SKU-series-unavailable/support-request-basics.png)
 
-![Проблема](./media/SKU-series-unavailable/ProblemSubMgmt.png)
+1. В качестве **типа проблемы**выберите **выбрать тип проблемы**.
 
--   Введите контактные сведения и нажмите кнопку "Создать".
+1. Для параметра **выбрать тип проблемы**выберите вариант, например, **не удается получить доступ к подписке или ресурсу** > **проблема отсутствует в списке выше**. Щелкните **Сохранить**.
 
-![Контактные данные](./media/SKU-series-unavailable/ContactInformation.png)
+   ![Укажите проблему для запроса](./media/SKU-series-unavailable/support-request-select-problem-type.png)
 
-## <a name="feedback"></a>Обратная связь
-Мы всегда рады вашим отзывам и предложениям! Отправьте нам свои [предложения](https://feedback.azure.com/forums/266794-support-feedback). Кроме того, с нами можно связаться через [Twitter](https://twitter.com/azuresupport) или [форумы MSDN](https://social.msdn.microsoft.com/Forums/azure).
+1. Выберите **Далее: решения** для просмотра возможных решений. При необходимости нажмите кнопку **Далее: подробности** , чтобы продолжить.
+
+1. Введите любые дополнительные сведения, которые вы можете предоставить, а также контактные данные.
+
+1. Выберите **Review + create** (Просмотреть и создать). После проверки сведений выберите **создать** , чтобы создать запрос.
+
+## <a name="send-us-your-suggestions"></a>Отправьте нам свои предложения
+
+Мы всегда будем открывать Отзывы и предложения! Отправьте нам свои [предложения](https://feedback.azure.com/forums/266794-support-feedback). Кроме того, вы можете привлекать нас к нам на [форумах](https://social.msdn.microsoft.com/Forums/azure) [Twitter](https://twitter.com/azuresupport) или MSDN.
 
 ## <a name="learn-more"></a>Подробнее…
-[Часто задаваемые вопросы о поддержке Azure](https://azure.microsoft.com/support/faq)
 
+[Часто задаваемые вопросы о поддержке Azure](https://azure.microsoft.com/support/faq)

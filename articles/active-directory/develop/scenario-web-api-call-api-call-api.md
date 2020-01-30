@@ -14,18 +14,20 @@ ms.workload: identity
 ms.date: 05/07/2019
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: c7c54c7c4718cea479a812574e961ef2338a6be6
-ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
+ms.openlocfilehash: d66a08d4e84a3771d6c3fa46b96c975869435452
+ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76701762"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76833385"
 ---
 # <a name="a-web-api-that-calls-web-apis-call-an-api"></a>Веб-API, вызывающий веб-API: вызов API
 
-После создания маркера можно вызвать защищенный веб-API. Это можно сделать с помощью контроллера веб-API ASP.NET или ASP.NET Core.
+После создания маркера можно вызвать защищенный веб-API. Это можно сделать с помощью контроллера веб-API.
 
 ## <a name="controller-code"></a>Код контроллера
+
+# <a name="aspnet-coretabaspnetcore"></a>[ASP.NET Core](#tab/aspnetcore)
 
 Следующий код продолжит пример кода, показанного в [веб-API, который вызывает веб-API: получение маркера для приложения](scenario-web-api-call-api-acquire-token.md). Код вызывается в действиях контроллеров API. Он вызывает нисходящий API с именем *ToDoList*.
 
@@ -56,6 +58,35 @@ HttpResponseMessage response = await _httpClient.GetAsync(TodoListBaseAddress + 
 ...
 }
 ```
+
+# <a name="javatabjava"></a>[Java](#tab/java)
+
+Следующий код продолжит пример кода, показанного в [веб-API, который вызывает веб-API: получение маркера для приложения](scenario-web-api-call-api-acquire-token.md). Код вызывается в действиях контроллеров API. Он вызывает нисходящий API MS Graph.
+
+После получения маркера используйте его в качестве токена носителя для вызова подчиненного API.
+
+```Java
+private String callMicrosoftGraphMeEndpoint(String accessToken){
+    RestTemplate restTemplate = new RestTemplate();
+
+    HttpHeaders headers = new HttpHeaders();
+    headers.setContentType(MediaType.APPLICATION_JSON);
+
+    headers.set("Authorization", "Bearer " + accessToken);
+
+    HttpEntity<String> entity = new HttpEntity<>(null, headers);
+
+    String result = restTemplate.exchange("https://graph.microsoft.com/v1.0/me", HttpMethod.GET,
+            entity, String.class).getBody();
+
+    return result;
+}
+```
+
+# <a name="pythontabpython"></a>[Python](#tab/python)
+Пример, демонстрирующий этот поток с помощью MSAL Python, пока недоступен.
+
+---
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -11,12 +11,12 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 1/10/2020
-ms.openlocfilehash: 593ceb884e751ca3115b08baf0c9c7e802057f54
-ms.sourcegitcommit: 12a26f6682bfd1e264268b5d866547358728cd9a
+ms.openlocfilehash: 065610a9de4898d012cef8a16849c09a81f0774c
+ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75864990"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76841103"
 ---
 # <a name="configure-an-azure-sql-server-integration-services-ssis-integration-runtime-ir-to-join-a-virtual-network"></a>Настройка среды выполнения интеграции Azure-SQL Server Integration Services (SSIS) для приподключения к виртуальной сети
 
@@ -44,7 +44,7 @@ ms.locfileid: "75864990"
     
         Среда выполнения интеграции Azure SSIS должна создать определенные сетевые ресурсы в той же группе ресурсов, в которой находится виртуальная сеть. К этим ресурсам относятся:
         - Балансировщик нагрузки Azure с именем *\<Guid >-azurebatch-клаудсервицелоадбаланцер*
-        - Группа безопасности рабочей сети с именем *\<GUID >-azurebatch-клаудсервиценетворксекуритиграуп
+        - Группа безопасности сети с именем *\<GUID >-azurebatch-клаудсервиценетворксекуритиграуп
         - Общедоступный IP-адрес Azure с именем-azurebatch-клаудсервицепублиЦип
     
         Эти ресурсы будут созданы при запуске Azure-SSIS IR. Они будут удалены после прекращения Azure-SSIS IR. Чтобы предотвратить блокировку Azure-SSIS IR, не используйте эти сетевые ресурсы в других ресурсах.
@@ -66,7 +66,7 @@ ms.locfileid: "75864990"
 
 ## <a name="configure-a-virtual-network"></a>Настройка виртуальной сети
 
-Используйте портал Azure в виртуальной сети, прежде чем пытаться присоединить к ней Azure-SSIS IR.
+Используйте портал Azure, чтобы настроить виртуальную сеть, прежде чем пытаться присоединить к ней Azure-SSIS IR.
 
 1. Запустите Microsoft Edge или Google Chrome. В настоящее время пользовательский интерфейс фабрики данных поддерживается только в этих веб-браузерах.
 

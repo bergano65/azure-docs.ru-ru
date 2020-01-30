@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 07/24/2018
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: e0fc09ca77e4fb0c3666478873d5d09a13d23ec8
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 90be5b407708f6cca3748dd6d6fa09c28ab7fcdc
+ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75367116"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76840440"
 ---
 # <a name="manage-user-access-in-azure-active-directory-b2c"></a>Управление доступом пользователей в Azure Active Directory B2C
 
@@ -56,7 +56,7 @@ ms.locfileid: "75367116"
 
 5. Если несовершеннолетний или взрослый отменяет согласие, можно использовать API Graph Azure AD для изменения значения параметра **consetProvidedForMinor** на **Отказано**. Кроме того, приложение может удалить учетную запись несовершеннолетнего при отзыве разрешения. Также есть возможность настроить потока пользователя так, чтобы прошедший аутентификацию несовершеннолетний (или его родитель, войдя с учетной записью несовершеннолетнего) мог отозвать согласие. Azure AD B2C сохраняет для параметра **consentProvidedForMinor** значение **denied**.
 
-Дополнительные сведения об утверждениях **legalAgeGroupClassification**, **consentProvidedForMinor** и **ageGroup** см. в разделе [User resource type](https://developer.microsoft.com/graph/docs/api-reference/beta/resources/user) (Типы ресурсов пользователя). Дополнительные сведения о пользовательских атрибутах см. в статье [Azure Active Directory B2C: использование настраиваемых атрибутов для сбора данных о потребителях](active-directory-b2c-reference-custom-attr.md). При обращении к дополнительным атрибутам с помощью API Graph Azure AD необходимо использовать полную версию атрибута, например *extension_18b70cf9bb834edd8f38521c2583cd86_dateOfBirth*: *2011-01-01T00:00:00Z*.
+Дополнительные сведения об утверждениях **legalAgeGroupClassification**, **consentProvidedForMinor** и **ageGroup** см. в разделе [User resource type](https://developer.microsoft.com/graph/docs/api-reference/beta/resources/user) (Типы ресурсов пользователя). Дополнительные сведения о пользовательских атрибутах см. в статье [Azure Active Directory B2C: использование настраиваемых атрибутов для сбора данных о потребителях](user-flow-custom-attributes.md). При обращении к дополнительным атрибутам с помощью API Graph Azure AD необходимо использовать полную версию атрибута, например *extension_18b70cf9bb834edd8f38521c2583cd86_dateOfBirth*: *2011-01-01T00:00:00Z*.
 
 ## <a name="gather-date-of-birth-and-countryregion-data"></a>Сбор данных о дате рождения и стране или регионе
 

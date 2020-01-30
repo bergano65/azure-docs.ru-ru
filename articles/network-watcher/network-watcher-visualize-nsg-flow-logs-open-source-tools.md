@@ -4,23 +4,20 @@ titleSuffix: Azure Network Watcher
 description: Управляйте журналами потоков для групп безопасности сети и анализируйте их в Azure с помощью Наблюдателя за сетями и Elastic Stack.
 services: network-watcher
 documentationcenter: na
-author: mattreatMSFT
-manager: vitinnan
-editor: ''
-ms.assetid: e9b2dcad-4da4-4d6b-aee2-6d0afade0cb8
+author: damendo
 ms.service: network-watcher
 ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/22/2017
-ms.author: mareat
-ms.openlocfilehash: 53cbfe08d310f7244134e1ae31b18644a83c63d3
-ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
+ms.author: damendo
+ms.openlocfilehash: e567994038fb4f71ef86dc577760ecf4699a0b1d
+ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74277744"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76840644"
 ---
 # <a name="visualize-azure-network-watcher-nsg-flow-logs-using-open-source-tools"></a>Визуализация журналов потоков для групп безопасности сети Наблюдателя за сетями Azure с помощью инструментов с открытым кодом
 
@@ -91,7 +88,7 @@ ms.locfileid: "74277744"
     curl -L -O https://artifacts.elastic.co/downloads/logstash/logstash-5.2.0.deb
     sudo dpkg -i logstash-5.2.0.deb
     ```
-2. Далее необходимо настроить Logstash для получения и анализа журналов потоков. Создайте файл logstash.conf следующим образом:
+2. Далее необходимо настроить Logstash для получения и анализа журналов потоков. Создайте файл logstash.conf следующим образом.
 
     ```bash
     sudo touch /etc/logstash/conf.d/logstash.conf
@@ -170,7 +167,7 @@ ms.locfileid: "74277744"
 logstash-plugin install logstash-input-azureblob
 ```
 
-Чтобы запустить Logstash, выполните команду:
+Чтобы запустить Logstash, выполните приведенную ниже команду.
 
 ```bash
 sudo /etc/init.d/logstash start
@@ -194,9 +191,9 @@ sudo /etc/init.d/logstash start
    ./bin/kibana
    ```
 
-3. Чтобы открыть веб-интерфейс Kibana, перейдите к разделу `http://localhost:5601`.
+3. Чтобы открыть веб-интерфейс Kibana, перейдите по адресу `http://localhost:5601`.
 4. В нашем сценарии для журналов потоков используется шаблон индексирования nsg-flow-logs. Его можно изменить в разделе output файла logstash.conf.
-5. Чтобы просматривать панель мониторинга Kibana удаленно, создайте правило NSG для доступа к **порту 5601**.
+5. Чтобы получить возможность просматривать панель мониторинга Kibana удаленно, создайте правило NSG для доступа к **порту 5601**.
 
 ### <a name="create-a-kibana-dashboard"></a>Создание панели мониторинга Kibana
 
@@ -244,7 +241,7 @@ sudo /etc/init.d/logstash start
 
 Сочетая журналы потоков для групп безопасности сети с Elastic Stack, мы получили эффективный и настраиваемый способ визуализации сетевого трафика. Эти панели мониторинга позволяют быстро получить и предоставить информацию о сетевом трафике, а также отфильтровать ее и проверить на наличие каких-либо потенциальных нарушений. С помощью Kibana эти панели мониторинга можно адаптировать, чтобы создать определенные визуализации, соответствующие требованиям безопасности, аудита и соответствия.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Ознакомьтесь со статьей [Visualizing Network Security Group flow logs with Power BI](network-watcher-visualize-nsg-flow-logs-power-bi.md) (Визуализация журналов потоков для групп безопасности сети с помощью Power BI).
 

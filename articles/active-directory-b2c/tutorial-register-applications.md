@@ -11,16 +11,16 @@ ms.topic: article
 ms.date: 10/16/2019
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 214797f187c1812932c00bdf2a39c5ed79e15d4b
-ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
+ms.openlocfilehash: dbb689182a45367061ae129304a98a8ee9962051
+ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76712658"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76840117"
 ---
 # <a name="tutorial-register-an-application-in-azure-active-directory-b2c"></a>Руководство. Регистрация приложения в Azure Active Directory B2C
 
-Прежде чем [приложения](active-directory-b2c-apps.md) смогут взаимодействовать с Azure Active Directory B2C (Azure AD B2C), они должны быть зарегистрированы в управляемом клиенте. В этом руководстве показано, как зарегистрировать веб-приложение с помощью портала Azure.
+Прежде чем [приложения](application-types.md) смогут взаимодействовать с Azure Active Directory B2C (Azure AD B2C), они должны быть зарегистрированы в управляемом клиенте. В этом руководстве показано, как зарегистрировать веб-приложение с помощью портала Azure.
 
 Вы узнаете, как выполнять следующие задачи:
 

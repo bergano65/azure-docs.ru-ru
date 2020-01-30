@@ -3,8 +3,7 @@ title: Анализ журналов потоков для групп безоп
 description: Узнайте, как анализировать журналы потоков для групп безопасности сети и управлять ими в Azure с помощью Наблюдателя за сетями и Graylog.
 services: network-watcher
 documentationcenter: na
-author: mattreatMSFT
-manager: vitinnan
+author: damendo
 editor: ''
 tags: azure-resource-manager
 ms.assetid: ''
@@ -14,13 +13,13 @@ ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/19/2017
-ms.author: mareat
-ms.openlocfilehash: a5fadcfce154740a79a8764f44f08b21ad18f4d8
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.author: damendo
+ms.openlocfilehash: 1e597a81967a8fb6be2959d53e65ad01135e5e25
+ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60625283"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76842909"
 ---
 # <a name="manage-and-analyze-network-security-group-flow-logs-in-azure-using-network-watcher-and-graylog"></a>Анализ журналов потоков для групп безопасности сети и управление ими в Azure с помощью Наблюдателя за сетями и Graylog
 
@@ -37,7 +36,7 @@ ms.locfileid: "60625283"
 
 ![Рабочий процесс Graylog](./media/network-watcher-analyze-nsg-flow-logs-graylog/workflow.png)
 
-## <a name="installation-steps"></a>Процесс установки
+## <a name="installation-steps"></a>Шаги установки
 
 ### <a name="enable-network-security-group-flow-logging"></a>Включение журналов потоков для групп безопасности сети
 
@@ -62,7 +61,7 @@ ms.locfileid: "60625283"
 
 Logstash позволяет преобразовать формат журналов потоков из JSON в плоскую структуру на уровне кортежей потока. Такое преобразование упрощает размещение журналов в Graylog и поиск по ним.
 
-1. Выполните команды ниже, чтобы установить Logstash.
+1. Введите следующие команды, чтобы установить Logstash.
 
    ```bash
    curl -L -O https://artifacts.elastic.co/downloads/logstash/logstash-5.2.0.deb
@@ -75,7 +74,7 @@ Logstash позволяет преобразовать формат журнал
    sudo touch /etc/logstash/conf.d/logstash.conf
    ```
 
-3. Добавьте в этот файл приведенное ниже содержимое. Замените выделенные значения информацией об используемой учетной записи хранения.
+3. Добавьте в этот файл содержимое ниже. Замените выделенные значения информацией об используемой учетной записи хранения.
 
    ```
     input {
@@ -181,7 +180,7 @@ sudo ./logstash-plugin install logstash-input-azureblob
 2. Чтобы перейти к странице настройки, откройте раскрывающееся меню **System** (Система) на верхней панели навигации справа и нажмите кнопку **Inputs** (Входы).
    Также можно использовать элемент `http://<graylog-server-ip>:9000/system/inputs`
 
-   ![Приступая к работе](./media/network-watcher-analyze-nsg-flow-logs-graylog/getting-started.png)
+   ![Начало работы](./media/network-watcher-analyze-nsg-flow-logs-graylog/getting-started.png)
 
 3. Чтобы активировать новый вход, выберите *GELF UDP* в раскрывающемся списке **Select Input** (Выбор входа) и заполните предложенную форму. GELF расшифровывается как "Graylog Extended Log Format" (расширенный формат журнала Greylog). Этот формат собственной разработки Graylog. Дополнительные сведения о преимуществах формата можно найти в [документации](https://docs.graylog.org/en/2.2/pages/gelf.html) Greylog.
 

@@ -3,22 +3,20 @@ title: Общие сведения об устранении неполадок 
 description: Эта страница содержит обзор возможностей службы "Наблюдатель за сетями" по устранению неполадок подключения.
 services: network-watcher
 documentationcenter: na
-author: KumudD
-manager: twooley
-editor: ''
+author: damendo
 ms.service: network-watcher
 ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 07/11/2017
-ms.author: kumud
-ms.openlocfilehash: 9510905f67ee943b4b1dfa5a14c2753efac39da7
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: damendo
+ms.openlocfilehash: cae3072a3468b232e95d7c1949948b71059695ea
+ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64705818"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76842875"
 ---
 # <a name="introduction-to-connection-troubleshoot-in-azure-network-watcher"></a>Общие сведения об устранении неполадок подключения в службе "Наблюдатель за сетями Azure"
 
@@ -31,7 +29,7 @@ ms.locfileid: "64705818"
 
 В таблице ниже приведены свойства, возвращаемые после устранения неполадок подключения.
 
-|Свойство  |Описание  |
+|Свойство  |Description  |
 |---------|---------|
 |ConnectionStatus     | Состояние проверки подключения. Возможные результаты: **Reachable** и **Unreachable**.        |
 |AvgLatencyInMs     | Среднее время задержки при проверке подключения в миллисекундах. (Возвращается, только если подключение доступно.)        |
@@ -46,9 +44,9 @@ ms.locfileid: "64705818"
 |Hops[].ResourceId | ResourceID прыжка, если прыжок — это ресурс Azure. Если это ресурс интернета, ResourceID — это **Интернет**. |
 |Hops[].NextHopIds | Уникальный идентификатор следующего выполненного прыжка.|
 |Hops[].Issues | Набор проблем, возникших во время проверки этого прыжка. Если проблем не обнаружено, значение будет пустым.|
-|Hops[].Issues[].Origin | Текущий прыжок, где возникла проблем. Возможные значения:<br/> **Inbound**. Проблема обнаружена в пути от предыдущего прыжка к текущему.<br/>**Outbound**. Проблема обнаружена в пути от текущего прыжка к следующему.<br/>**Local**. Проблема возникла на текущем прыжке.|
+|Hops[].Issues[].Origin | Текущий прыжок, где возникла проблем. Возможны следующие значения:<br/> **Inbound**. Проблема обнаружена в пути от предыдущего прыжка к текущему.<br/>**Outbound**. Проблема обнаружена в пути от текущего прыжка к следующему.<br/>**Local**. Проблема возникла на текущем прыжке.|
 |Hops[].Issues[].Severity | Степень серьезности обнаруженной проблемы. Возможные значения: **Error** и **Warning**. |
-|Hops[].Issues[].Type |Тип обнаруженной проблемы. Возможные значения: <br/>**CPU**<br/>**Память**<br/>**GuestFirewall**<br/>**DnsResolution**<br/>**NetworkSecurityRule**<br/>**UserDefinedRoute** |
+|Hops[].Issues[].Type |Тип обнаруженной проблемы. Возможны следующие значения: <br/>**ЦП**<br/>**Память**<br/>**GuestFirewall**<br/>**DnsResolution**<br/>**NetworkSecurityRule**<br/>**UserDefinedRoute** |
 |Hops[].Issues[].Context |Сведения об обнаруженной проблеме.|
 |Hops[].Issues[].Context[].key |Возвращенный ключ из пары "ключ — значение".|
 |Hops[].Issues[].Context[].value |Возвращенное значение из пары "ключ — значение".|
@@ -74,7 +72,7 @@ ms.locfileid: "64705818"
 
 Устранение неполадок подключения возвращает типы ошибок подключения. Следующая таблица предоставляет список возвращаемых типов текущих ошибок.
 
-|type  |Описание  |
+|Тип  |Description  |
 |---------|---------|
 |ЦП     | Высокая загрузка ЦП.       |
 |Память     | Высокий уровень использования памяти.       |

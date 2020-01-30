@@ -13,12 +13,12 @@ ms.date: 10/29/2019
 ms.author: jeferrie
 ms.reviewer: saeeda
 ms.custom: aaddev
-ms.openlocfilehash: 0f3aaa2489b94d254d64d5844e1a2e41d5ecc132
-ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
+ms.openlocfilehash: f28b7abc2b3a9ba753a2f7923c9cfed1897c8522
+ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76695710"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76834201"
 ---
 # <a name="use-msalnet-to-sign-in-users-with-social-identities"></a>Использование MSAL.NET для входа пользователей с удостоверениями социальных сетей
 
@@ -176,7 +176,7 @@ MSAL.Net поддерживает [кэш маркеров](/dotnet/api/microsof
 Кроме того, можно использовать утверждение `tid`, если вы используете [пользовательские политики B2C](https://aka.ms/ief), так как оно предоставляет возможность возврата дополнительных утверждений приложению. Дополнительные сведения о [преобразовании утверждений](/azure/active-directory-b2c/claims-transformation-technical-profile)
 
 #### <a name="mitigation-for-missing-from-the-token-response"></a>Устранение рисков "отсутствует в ответе маркера"
-Один из вариантов — использовать утверждение Name в качестве предпочтительного имени пользователя. Этот процесс упоминается в этом [документе B2C doc](../../active-directory-b2c/active-directory-b2c-reference-policies.md) -> "в столбце" Заявка на возврат "выберите утверждения, которые должны возвращаться в маркерах авторизации, отправляемых обратно в приложение после успешного редактирования профиля. Например, выберите отображаемое имя, почтовый индекс.
+Один из вариантов — использовать утверждение Name в качестве предпочтительного имени пользователя. Этот процесс упоминается в этом [документе B2C doc](../../active-directory-b2c/user-flow-overview.md) -> "в столбце" Заявка на возврат "выберите утверждения, которые должны возвращаться в маркерах авторизации, отправляемых обратно в приложение после успешного редактирования профиля. Например, выберите отображаемое имя, почтовый индекс.
 
 ## <a name="next-steps"></a>Дальнейшие действия 
 

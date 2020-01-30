@@ -4,23 +4,20 @@ titleSuffix: Azure Network Watcher
 description: В этой статье объясняется, как использовать возможности журналов потоков NSG, доступные в Наблюдателе за сетями Azure.
 services: network-watcher
 documentationcenter: na
-author: KumudD
-manager: twooley
-editor: ''
-ms.assetid: 47d91341-16f1-45ac-85a5-e5a640f5d59e
+author: damendo
 ms.service: network-watcher
 ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/22/2017
-ms.author: kumud
-ms.openlocfilehash: 509545443bc08e8613d5f7a9ba7f33d2a90684b8
-ms.sourcegitcommit: 8b37091efe8c575467e56ece4d3f805ea2707a64
+ms.author: damendo
+ms.openlocfilehash: f231a5339b9c696b2a427b0713118d4b46e30277
+ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75830519"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76841001"
 ---
 # <a name="introduction-to-flow-logging-for-network-security-groups"></a>Общие сведения о ведении журнала потоков для групп безопасности сети
 

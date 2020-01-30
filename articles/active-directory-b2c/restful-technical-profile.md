@@ -11,12 +11,12 @@ ms.topic: reference
 ms.date: 12/10/2019
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 00d5ba6fd86ea722270dfbe73324323bd831a529
-ms.sourcegitcommit: 2a2af81e79a47510e7dea2efb9a8efb616da41f0
+ms.openlocfilehash: 8a562345caf47540321528560a5ee0b4854c42a9
+ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76263376"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76840287"
 ---
 # <a name="define-a-restful-technical-profile-in-an-azure-active-directory-b2c-custom-policy"></a>Определение технического профиля RESTful в пользовательской политике Azure Active Directory B2C
 
@@ -260,7 +260,7 @@ public class ResponseContent
 
 Примеры использования технического профиля RESTFUL см. в следующих статьях:
 
-- [Интеграция обмена утверждениями REST API в путях взаимодействия пользователей Azure AD B2C как проверка входных данных](active-directory-b2c-custom-rest-api-netfw.md)
-- [Защита служб RESTful с использованием обычной проверки подлинности HTTP](active-directory-b2c-custom-rest-api-netfw-secure-basic.md)
-- [Защита служб RESTful с помощью сертификатов клиента](active-directory-b2c-custom-rest-api-netfw-secure-cert.md)
-- [Пошаговое руководство. Интеграция обмена утверждениями REST API в путях взаимодействия пользователей Azure AD B2C как проверка входных данных](active-directory-b2c-rest-api-validation-custom.md)
+- [Интеграция обмена утверждениями REST API в путях взаимодействия пользователей Azure AD B2C как проверка входных данных](rest-api-claims-exchange-dotnet.md)
+- [Защита служб RESTful с использованием обычной проверки подлинности HTTP](secure-rest-api-dotnet-basic-auth.md)
+- [Защита служб RESTful с помощью сертификатов клиента](secure-rest-api-dotnet-certificate-auth.md)
+- [Пошаговое руководство. Интеграция обмена утверждениями REST API в путях взаимодействия пользователей Azure AD B2C как проверка входных данных](custom-policy-rest-api-claims-validation.md)

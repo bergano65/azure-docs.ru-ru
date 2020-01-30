@@ -12,14 +12,14 @@ ms.service: batch
 ms.topic: article
 ms.tgt_pltfrm: ''
 ms.workload: big-compute
-ms.date: 08/15/2019
+ms.date: 01/28/2020
 ms.author: jushiman
-ms.openlocfilehash: 56fcd5a8a02e292fdf43f9d22f3987813bce0743
-ms.sourcegitcommit: dbcc4569fde1bebb9df0a3ab6d4d3ff7f806d486
+ms.openlocfilehash: ce3582539d6130e13ef205806d780164ba70c4fe
+ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76029826"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76842543"
 ---
 # <a name="authenticate-batch-service-solutions-with-active-directory"></a>Аутентификация решений пакетной службы с помощью Active Directory
 
@@ -143,6 +143,67 @@ ms.locfileid: "76029826"
 После этого приложение с назначенной ролью RBAC должно появиться в параметрах контроля доступа.
 
 ![Назначение приложению роли RBAC](./media/batch-aad-auth/app-rbac-role.png)
+
+### <a name="assign-a-custom-role"></a>Назначение настраиваемой роли
+
+Пользовательская роль предоставляет детализированное разрешение пользователю на отправку заданий, задач и т. д. Это дает возможность запретить пользователям выполнять операции, влияющие на стоимость, например создание пулов или изменение узлов.
+
+Пользовательскую роль можно использовать для предоставления разрешений пользователю Azure AD, группе или субъекту-службе для следующих операций RBAC:
+
+- Microsoft.Batch/batchAccounts/pools/write
+- Microsoft.Batch/batchAccounts/pools/delete
+- Microsoft.Batch/batchAccounts/pools/read
+- Microsoft. Batch/Батчаккаунтс/Жобсчедулес/запись
+- Microsoft. Batch/Батчаккаунтс/Жобсчедулес/удаление
+- Microsoft. Batch/Батчаккаунтс/Жобсчедулес/чтение
+- Microsoft. Batch/Батчаккаунтс/задания/запись
+- Microsoft. Batch/Батчаккаунтс/задания/Удаление
+- Microsoft. Batch/Батчаккаунтс/задания/чтение
+- Microsoft.Batch/batchAccounts/certificates/write
+- Microsoft.Batch/batchAccounts/certificates/delete
+- Microsoft.Batch/batchAccounts/certificates/read
+- Microsoft. Batch/Батчаккаунтс/Read (для любой операции чтения)
+- Microsoft. Batch/Батчаккаунтс/listKeys/действие (для любой операции)
+
+Пользовательские роли предназначены для пользователей, прошедших проверку подлинности в Azure AD, а не учетных данных учетной записи пакетной службы (общий ключ). Обратите внимание, что учетная запись пакетной службы предоставляет полный доступ к учетной записи пакетной службы. Также обратите внимание, что для заданий, использующих автопул, требуются разрешения уровня пула.
+
+Ниже приведен пример пользовательского определения роли.
+
+```json
+{
+ "properties":{
+    "roleName":"Azure Batch Custom Job Submitter",
+    "type":"CustomRole",
+    "description":"Allows a user to submit jobs to Azure Batch but not manage pools",
+    "assignableScopes":[
+      "/subscriptions/88888888-8888-8888-8888-888888888888"
+    ],
+    "permissions":[
+      {
+        "actions":[
+          "Microsoft.Batch/*/read",
+          "Microsoft.Authorization/*/read",
+          "Microsoft.Resources/subscriptions/resourceGroups/read",
+          "Microsoft.Support/*",
+          "Microsoft.Insights/alertRules/*"
+        ],
+        "notActions":[
+
+        ],
+        "dataActions":[
+          "Microsoft.Batch/batchAccounts/jobs/*",
+          "Microsoft.Batch/batchAccounts/jobSchedules/*"
+        ],
+        "notDataActions":[
+
+        ]
+      }
+    ]
+  }
+}
+```
+
+Общие сведения о создании настраиваемой роли см. в статье [пользовательские роли для ресурсов Azure](../role-based-access-control/custom-roles.md).
 
 ### <a name="get-the-tenant-id-for-your-azure-active-directory"></a>Получение идентификатора клиента для Azure Active Directory
 

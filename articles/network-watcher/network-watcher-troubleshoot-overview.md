@@ -4,23 +4,20 @@ titleSuffix: Azure Network Watcher
 description: Эта страница содержит обзор возможностей Наблюдателя за сетями по устранению неполадок.
 services: network-watcher
 documentationcenter: na
-author: KumudD
-manager: twooley
-editor: ''
-ms.assetid: c1145cd6-d1cf-4770-b1cc-eaf0464cc315
+author: damendo
 ms.service: network-watcher
 ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 06/19/2017
-ms.author: kumud
-ms.openlocfilehash: 736bbd16456dd0abda3292b9b9e73ea5b941e7ed
-ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
+ms.author: damendo
+ms.openlocfilehash: 199b4fc762919c2e3988f477c14d09fc23b0136b
+ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74277775"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76840695"
 ---
 # <a name="introduction-to-resource-troubleshooting-in-azure-network-watcher"></a>Общие сведения об устранении неполадок ресурсов в Наблюдателе за сетями Azure
 
@@ -48,11 +45,11 @@ ms.locfileid: "74277775"
 
 В следующих таблицах показаны различные типы ошибок (идентификатор в результатах из приведенного выше списка), которые могут произойти, и указано, приводит ли ошибка к созданию журналов.
 
-### <a name="gateway"></a>gateway
+### <a name="gateway"></a>Шлюз
 
 | Тип ошибки | Причина | Журнал|
 |---|---|---|
-| NoFault | Ошибка не обнаружена |Yes|
+| NoFault | Ошибка не обнаружена |Да|
 | GatewayNotFound | Не удается найти шлюз или шлюз не подготовлен |Нет|
 | PlannedMaintenance |  Выполняется обслуживание экземпляра шлюза  |Нет|
 | UserDrivenUpdate | Эта ошибка возникает, когда выполняется обновление, инициированное пользователем. Обновление может быть операцией изменения размера. | Нет |
@@ -60,26 +57,26 @@ ms.locfileid: "74277775"
 | PlatformInActive | Существует проблема с платформой. | Нет|
 | ServiceNotRunning | Базовая служба не выполняется. | Нет|
 | NoConnectionsFoundForGateway | Для шлюза не установлены подключения. Эта ошибка — всего лишь предупреждение.| Нет|
-| ConnectionsNotConnected | Подключения не установлены. Эта ошибка — всего лишь предупреждение.| Yes|
-| GatewayCPUUsageExceeded | Текущий показатель использования ЦП для шлюза превышает 95 %. | Yes |
+| ConnectionsNotConnected | Подключения не установлены. Эта ошибка — всего лишь предупреждение.| Да|
+| GatewayCPUUsageExceeded | Текущий показатель использования ЦП для шлюза превышает 95 %. | Да |
 
 ### <a name="connection"></a>Подключение
 
 | Тип ошибки | Причина | Журнал|
 |---|---|---|
-| NoFault | Ошибка не обнаружена |Yes|
+| NoFault | Ошибка не обнаружена |Да|
 | GatewayNotFound | Не удается найти шлюз или шлюз не подготовлен |Нет|
 | PlannedMaintenance | Выполняется обслуживание экземпляра шлюза  |Нет|
 | UserDrivenUpdate | Эта ошибка возникает, когда выполняется обновление, инициированное пользователем. Обновление может быть операцией изменения размера.  | Нет |
 | VipUnResponsive | Эта ошибка возникает, когда основной экземпляр шлюза недоступен из-за сбоя зонда работоспособности. | Нет |
 | ConnectionEntityNotFound | Отсутствует конфигурация подключения | Нет |
 | ConnectionIsMarkedDisconnected | Подключение отмечено как "разъединенное" |Нет|
-| ConnectionNotConfiguredOnGateway | Для базовой службы не настроено подключение. | Yes |
-| ConnectionMarkedStandby | Базовая служба помечена как ждущая.| Yes|
-| Проверка подлинности | Несоответствие предварительного ключа | Yes|
-| PeerReachability | Одноранговый шлюз недоступен. | Yes|
-| IkePolicyMismatch | У однорангового шлюза имеются политики IKE, которые не поддерживаются в Azure. | Yes|
-| WfpParse Error | Ошибка при анализе журнала WFP. |Yes|
+| ConnectionNotConfiguredOnGateway | Для базовой службы не настроено подключение. | Да |
+| ConnectionMarkedStandby | Базовая служба помечена как ждущая.| Да|
+| Проверка подлинности | Несоответствие предварительного ключа | Да|
+| PeerReachability | Одноранговый шлюз недоступен. | Да|
+| IkePolicyMismatch | У однорангового шлюза имеются политики IKE, которые не поддерживаются в Azure. | Да|
+| WfpParse Error | Ошибка при анализе журнала WFP. |Да|
 
 ## <a name="supported-gateway-types"></a>Поддерживаемые типы шлюзов
 
@@ -88,14 +85,14 @@ ms.locfileid: "74277775"
 |  |  |
 |---------|---------|
 |**Типы шлюзов**   |         |
-|Виртуальная частная сеть      | Поддерживаются        |
+|VPN      | Поддерживается        |
 |ExpressRoute | Не поддерживается |
 |**Типы VPN** | |
-|На основе маршрутов | Поддерживаются|
+|На основе маршрутов | Поддерживается|
 |На основе политик | Не поддерживается|
 |**Типы подключений**||
-|IPsec| Поддерживаются|
-|Vnet2Vnet| Поддерживаются|
+|IPsec| Поддерживается|
+|Vnet2Vnet| Поддерживается|
 |ExpressRoute| Не поддерживается|
 |VPNClient| Не поддерживается|
 
@@ -108,7 +105,7 @@ ms.locfileid: "74277775"
 > [!NOTE]
 > В некоторых случаях только подмножество файлов журналов записывается в хранилище.
 
-Инструкции по скачиванию файлов из учетных записей хранения Azure см. в статье [Приступая к работе с хранилищем BLOB-объектов Azure с помощью .NET](../storage/blobs/storage-dotnet-how-to-use-blobs.md). Кроме того, можно использовать такое средство, как Storage Explorer. Дополнительные сведения об обозревателе хранилищ см. [здесь](https://storageexplorer.com/).
+Инструкции по скачиванию файлов из учетных записей хранения Azure см. в статье [Приступая к работе с хранилищем BLOB-объектов Azure с помощью .NET](../storage/blobs/storage-dotnet-how-to-use-blobs.md). Кроме того, можно использовать такое средство, как Storage Explorer. Дополнительные сведения об обозревателе хранилищ см. на [этой странице](https://storageexplorer.com/).
 
 ### <a name="connectionstatstxt"></a>ConnectionStats.txt
 
@@ -211,7 +208,7 @@ Elapsed Time            330 sec
 |        12    ikeext               ike_sa_management_c3307  7857a320-42ee-6e90-d5d9-3f414e3ea2d3|
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Сведения о диагностике проблемы со шлюзом или подключением к нему см. в статье о [диагностике проблем обмена данными между сетями](diagnose-communication-problem-between-networks.md).
 <!--Image references-->

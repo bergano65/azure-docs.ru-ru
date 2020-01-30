@@ -14,12 +14,12 @@ ms.workload: big-compute
 ms.date: 11/14/2018
 ms.author: jushiman
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: cf9372cfc89aca3285128c96c1b7e6756ba42cda
-ms.sourcegitcommit: dbcc4569fde1bebb9df0a3ab6d4d3ff7f806d486
+ms.openlocfilehash: 306407252a6f5bc4071947b6aafa2d50bccc97a8
+ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76026220"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76842739"
 ---
 # <a name="persist-job-and-task-data-to-azure-storage-with-the-batch-file-conventions-library-for-net"></a>Сохранение данных заданий и задач в службе хранилища Azure с помощью библиотеки соглашений о пакетных файлах для .NET
 
@@ -46,7 +46,7 @@ ms.locfileid: "76026220"
 
 ## <a name="what-is-the-batch-file-conventions-standard"></a>Что из себя представляет стандарт соглашений о пакетных файлах?
 
-[Стандарт соглашений о пакетных файлах](https://github.com/Azure/azure-sdk-for-net/tree/psSdkJson6/src/SDKs/Batch/Support/FileConventions#conventions) предоставляет схему именования путей к целевым контейнерам и большим двоичным объектам, в которые записываются выходные файлы. Файлы, сохраненные в службе хранилища Azure, которые соответствуют стандарту соглашений об именовании файлов, автоматически становятся доступны для просмотра на портале Azure. Портал учитывает соглашение об именовании и поэтому может отображать те файлы, которые ему соответствуют.
+[Стандарт соглашений о пакетных файлах](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/batch/Microsoft.Azure.Batch.Conventions.Files) предоставляет схему именования путей к целевым контейнерам и большим двоичным объектам, в которые записываются выходные файлы. Файлы, сохраненные в службе хранилища Azure, которые соответствуют стандарту соглашений об именовании файлов, автоматически становятся доступны для просмотра на портале Azure. Портал учитывает соглашение об именовании и поэтому может отображать те файлы, которые ему соответствуют.
 
 Библиотека соглашений об именовании файлов для .NET автоматически именует ваши контейнеры хранилища и выходных файлов задач в соответствии со стандартом соглашений об именовании файлов. Библиотека соглашений об именовании файлов также поддерживает методы запроса выходных файлов в службе хранилища Azure в соответствии с идентификатором задания, идентификатором задачи или назначением.
 
@@ -228,15 +228,15 @@ foreach (CloudTask task in myJob.ListTasks())
 - Сведения о том, как использовать API пакетной службы для сохранения выходных данных, см. в разделе [Сохранение данных задачи в службе хранилища Azure с помощью API пакетной службы](batch-task-output-files.md).
 
 [forum_post]: https://social.msdn.microsoft.com/Forums/en-US/87b19671-1bdf-427a-972c-2af7e5ba82d9/installing-applications-and-staging-data-on-batch-compute-nodes?forum=azurebatch
-[github_file_conventions]: https://github.com/Azure/azure-sdk-for-net/tree/AutoRest/src/Batch/FileConventions
-[github_file_conventions_readme]: https://github.com/Azure/azure-sdk-for-net/blob/AutoRest/src/Batch/FileConventions/README.md
+[github_file_conventions]: https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/batch/Microsoft.Azure.Batch.Conventions.Files
+[github_file_conventions_readme]: https://github.com/Azure/azure-sdk-for-net/blob/master/sdk/batch/Microsoft.Azure.Batch.Conventions.Files/README.md
 [github_persistoutputs]: https://github.com/Azure/azure-batch-samples/tree/master/CSharp/ArticleProjects/PersistOutputs
 [github_samples]: https://github.com/Azure/azure-batch-samples
 [net_batchclient]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.batchclient.aspx
 [net_cloudjob]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.cloudjob.aspx
 [net_cloudstorageaccount]: https://docs.microsoft.com/java/api/com.microsoft.azure.storage._cloud_storage_account
 [net_cloudtask]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.cloudtask.aspx
-[net_fileconventions_readme]: https://github.com/Azure/azure-sdk-for-net/blob/AutoRest/src/Batch/FileConventions/README.md
+[net_fileconventions_readme]: https://github.com/Azure/azure-sdk-for-net/blob/master/sdk/batch/Microsoft.Azure.Batch.Conventions.Files/README.md
 [net_joboutputkind]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.conventions.files.joboutputkind.aspx
 [net_joboutputstorage]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.conventions.files.joboutputstorage.aspx
 [net_joboutputstorage_saveasync]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.conventions.files.joboutputstorage.saveasync.aspx

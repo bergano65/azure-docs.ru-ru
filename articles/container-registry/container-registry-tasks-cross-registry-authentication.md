@@ -2,19 +2,19 @@
 title: Проверка подлинности между реестрами из задачи контроля доступа
 description: Настройка задачи реестра контейнеров Azure (задача контроля доступа) для доступа к другому частному реестру контейнеров Azure с помощью управляемого удостоверения для ресурсов Azure
 ms.topic: article
-ms.date: 07/12/2019
-ms.openlocfilehash: 3dc4792f196ab7553f3167983ce34850669fa5bc
-ms.sourcegitcommit: 12d902e78d6617f7e78c062bd9d47564b5ff2208
+ms.date: 01/14/2020
+ms.openlocfilehash: 47b2a50784cf56b089fea0981e5a06d581b8ba3a
+ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2019
-ms.locfileid: "74456193"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76842505"
 ---
 # <a name="cross-registry-authentication-in-an-acr-task-using-an-azure-managed-identity"></a>Проверка подлинности между реестром в задаче контроля доступа с помощью удостоверения, управляемого Azure 
 
 В [задаче контроля](container-registry-tasks-overview.md)доступа можно [Включить управляемое удостоверение для ресурсов Azure](container-registry-tasks-authentication-managed-identity.md). Эта задача может использовать удостоверение для доступа к другим ресурсам Azure без необходимости предоставлять учетные данные или управлять ими. 
 
-Из этой статьи вы узнаете, как включить управляемое удостоверение в задаче, которая извлекает образ из реестра, отличающегося от используемого для выполнения задачи.
+Из этой статьи вы узнаете, как включить управляемое удостоверение в задаче для извлечения образа из реестра, отличающегося от того, который использовался для выполнения задачи.
 
 Для создания ресурсов Azure в этой статье необходимо запустить Azure CLI версии 2.0.68 или более поздней. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0][azure-cli].
 
@@ -26,7 +26,7 @@ ms.locfileid: "74456193"
 
 В реальной ситуации Организация может поддерживать набор базовых образов, используемых всеми группами разработчиков для создания приложений. Эти базовые образы хранятся в корпоративном реестре, и каждая группа разработчиков имеет только права на вытягивание. 
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Технические условия
 
 В этой статье вам понадобятся два реестра контейнеров Azure:
 
@@ -52,14 +52,14 @@ az acr build --image baseimages/node:9-alpine --registry mybaseregistry --file D
 
 ## <a name="define-task-steps-in-yaml-file"></a>Определение шагов задачи в файле YAML
 
-Шаги для этого примера [многошаговой задачи](container-registry-tasks-multi-step.md) определяются в [файле YAML](container-registry-tasks-reference-yaml.md). Создайте файл с именем `helloworldtask.yaml` в локальном рабочем каталоге и вставьте в него следующее содержимое. Обновите значение `REGISTRY_NAME` на шаге сборки, указав имя сервера в базовом реестре.
+Шаги для этого примера [многошаговой задачи](container-registry-tasks-multi-step.md) определяются в [файле YAML](container-registry-tasks-reference-yaml.md). Создайте файл с именем `helloworldtask.yaml` в локальном рабочем каталоге и вставьте следующее содержимое. Обновите значение `REGISTRY_NAME` на шаге сборки, указав имя сервера в базовом реестре.
 
 ```yml
-version: v1.0.0
+version: v1.1.0
 steps:
 # Replace mybaseregistry with the name of your registry containing the base image
-  - build: -t {{.Run.Registry}}/hello-world:{{.Run.ID}}  https://github.com/Azure-Samples/acr-build-helloworld-node.git -f Dockerfile-app --build-arg REGISTRY_NAME=mybaseregistry.azurecr.io
-  - push: ["{{.Run.Registry}}/hello-world:{{.Run.ID}}"]
+  - build: -t $Registry/hello-world:$ID  https://github.com/Azure-Samples/acr-build-helloworld-node.git -f Dockerfile-app --build-arg REGISTRY_NAME=mybaseregistry.azurecr.io
+  - push: ["$Registry/hello-world:$ID"]
 ```
 
 Для создания образа на этапе сборки используется файл `Dockerfile-app` в репозитории [Azure-Samples/контроля учетных записей — сборка-HelloWorld-node](https://github.com/Azure-Samples/acr-build-helloworld-node.git) . `--build-arg` ссылается на базовый реестр для извлечения базового образа. После успешной сборки образ помещается в реестр, используемый для выполнения задачи.
@@ -116,12 +116,15 @@ baseregID=$(az acr show --name mybaseregistry --query id --output tsv)
 Чтобы назначить удостоверение роли `acrpull` базовому реестру, используйте команду [AZ Role назначение Create][az-role-assignment-create] . Эта роль имеет разрешения только на извлечение изображений из реестра.
 
 ```azurecli
-az role assignment create --assignee $principalID --scope $baseregID --role acrpull
+az role assignment create \
+  --assignee $principalID \
+  --scope $baseregID \
+  --role acrpull
 ```
 
 ## <a name="add-target-registry-credentials-to-task"></a>Добавление учетных данных целевого реестра в задачу
 
-Теперь используйте команду [AZ запись контроля учетных данных][az-acr-task-credential-add] для добавления учетных данных удостоверения в задачу, чтобы она могла проходить проверку подлинности в основном реестре. Выполните команду, соответствующую типу управляемого удостоверения, включенного в задаче. Если вы включили назначенное пользователем удостоверение, передайте `--use-identity` с ИДЕНТИФИКАТОРом клиента удостоверения. Если вы включили назначенное системой удостоверение, передайте `--use-identity [system]`.
+Теперь используйте команду [AZ запись контроля учетных данных][az-acr-task-credential-add] , чтобы разрешить задачам проходить проверку подлинности в основном реестре, используя учетные данные удостоверения. Выполните команду, соответствующую типу управляемого удостоверения, включенного в задаче. Если вы включили назначенное пользователем удостоверение, передайте `--use-identity` с ИДЕНТИФИКАТОРом клиента удостоверения. Если вы включили назначенное системой удостоверение, передайте `--use-identity [system]`.
 
 ```azurecli
 # Add credentials for user-assigned identity to the task
@@ -210,7 +213,7 @@ az acr repository show-tags --name myregistry --repository hello-world --output 
 cf10
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения о [включении управляемого удостоверения в задаче контроля](container-registry-tasks-authentication-managed-identity.md)доступа.
 * См. раздел [YAML Tasks Reference](container-registry-tasks-reference-yaml.md)

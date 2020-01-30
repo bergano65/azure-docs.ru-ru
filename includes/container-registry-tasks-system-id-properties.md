@@ -1,6 +1,6 @@
 ---
-title: включение файла
-description: включение файла
+title: включить файл
+description: включить файл
 services: container-registry
 author: dlepow
 ms.service: container-registry
@@ -8,14 +8,14 @@ ms.topic: include
 ms.date: 07/12/2019
 ms.author: danlep
 ms.custom: include file
-ms.openlocfilehash: 5cca18b881250ce99df35d681bec6091ea4a27b9
-ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
+ms.openlocfilehash: 94adac6ba232f8931d00083432c027ddccb2ce64
+ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68642102"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76842506"
 ---
-В выходных данных команды в `identity` разделе показано, что в задаче задано удостоверение типа. `SystemAssigned` `principalId` — Идентификатор субъекта-службы для удостоверения:
+В выходных данных команды в разделе `identity` показано удостоверение типа `SystemAssigned` задается в задаче. `principalId` — идентификатор субъекта-службы для удостоверения:
 
 ```console
 [...]
@@ -28,10 +28,10 @@ ms.locfileid: "68642102"
   "location": "eastus",
 [...]
 ``` 
-Используйте команду [AZ запись контроля][az-acr-task-show] доступа, чтобы сохранить principalId в переменной для использования в последующих командах:
+Используйте команду [AZ запись контроля][az-acr-task-show] доступа, чтобы сохранить principalId в переменной для использования в последующих командах. Замените имя задачи и реестра в следующей команде:
 
 ```azurecli
-principalID=$(az acr task show --name dockerhubtask --registry myregistry --query identity.principalId --output tsv)
+principalID=$(az acr task show --name mytask --registry myregistry --query identity.principalId --output tsv)
 ```
 
 <!-- LINKS - Internal -->

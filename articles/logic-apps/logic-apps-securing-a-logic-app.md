@@ -6,12 +6,12 @@ ms.suite: integration
 ms.reviewer: klam, logicappspm
 ms.topic: conceptual
 ms.date: 10/11/2019
-ms.openlocfilehash: 753977ed0516e934f661d81904b60ff9935aa423
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.openlocfilehash: 4f8c20534cdd5abdf5ae97bb097238cf508480c7
+ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75981180"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76843554"
 ---
 # <a name="secure-access-and-data-in-azure-logic-apps"></a>Безопасный доступ и данные в Azure Logic Apps
 
@@ -620,9 +620,9 @@ POST /subscriptions/<Azure-subscription-ID>/resourceGroups/<Azure-resource-group
 
 ### <a name="basic-authentication"></a>обычная проверка подлинности
 
-Если доступен [базовый](../active-directory-b2c/active-directory-b2c-custom-rest-api-netfw-secure-basic.md) параметр, укажите следующие значения свойств.
+Если доступен [базовый](../active-directory-b2c/secure-rest-api-dotnet-basic-auth.md) параметр, укажите следующие значения свойств.
 
-| Свойство (конструктор) | Property (JSON) | Обязательно для заполнения | Значение | Description |
+| Свойство (конструктор) | Свойство (JSON) | Обязательно для заполнения | Значение | Description |
 |---------------------|-----------------|----------|-------|-------------|
 | **Аутентификация** | `type` | Да | "Базовый" | Используемый тип проверки подлинности |
 | **Имя пользователя** | `username` | Да | <*имя пользователя*>| Имя пользователя для аутентификации доступа к целевой конечной точке службы |
@@ -653,7 +653,7 @@ POST /subscriptions/<Azure-subscription-ID>/resourceGroups/<Azure-resource-group
 
 Если доступен параметр [сертификат клиента](../active-directory/authentication/active-directory-certificate-based-authentication-get-started.md) , укажите следующие значения свойств.
 
-| Свойство (конструктор) | Property (JSON) | Обязательно для заполнения | Значение | Description |
+| Свойство (конструктор) | Свойство (JSON) | Обязательно для заполнения | Значение | Description |
 |---------------------|-----------------|----------|-------|-------------|
 | **Аутентификация** | `type` | Да | **Сертификат клиента** <br>или <br>`ClientCertificate` | Тип аутентификации, используемый для сертификатов клиента Secure Sockets Layer (SSL). Хотя самозаверяющие сертификаты поддерживаются, они не допускаются для SSL. |
 | **Сохраняется** | `pfx` | Да | <*с кодировкой-PFX-File-содержимое*> | Содержимое файла обмена личной информацией (PFX-файла) с кодировкой base64. <p><p>Чтобы преобразовать PFX-файл в формат в кодировке Base64, можно использовать PowerShell, выполнив следующие действия. <p>1. Сохраните содержимое сертификата в переменную: <p>   `$pfx_cert = get-content 'c:\certificate.pfx' -Encoding Byte` <p>2. Преобразуйте содержимое сертификата с помощью функции `ToBase64String()` и сохраните содержимое в текстовый файл: <p>   `[System.Convert]::ToBase64String($pfx_cert) | Out-File 'pfx-encoded-bytes.txt'` |
@@ -682,7 +682,7 @@ POST /subscriptions/<Azure-subscription-ID>/resourceGroups/<Azure-resource-group
 
 * [Защита API с помощью проверки подлинности на основе сертификата клиента в службе управления API Azure](../api-management/api-management-howto-mutual-certificates-for-clients.md)
 * [Защита серверных служб с помощью проверки подлинности сертификата клиента в службе управления API Azure](../api-management/api-management-howto-mutual-certificates.md)
-* [Защита службы RESTFUL с помощью сертификатов клиентов](../active-directory-b2c/active-directory-b2c-custom-rest-api-netfw-secure-cert.md)
+* [Защита службы RESTFUL с помощью сертификатов клиентов](../active-directory-b2c/secure-rest-api-dotnet-certificate-auth.md)
 * [Учетные данные сертификата для проверки подлинности приложения](../active-directory/develop/active-directory-certificate-credentials.md)
 * [Использование SSL-сертификата в коде приложения службы приложений Azure](../app-service/configure-ssl-certificate-in-code.md)
 
@@ -692,10 +692,10 @@ POST /subscriptions/<Azure-subscription-ID>/resourceGroups/<Azure-resource-group
 
 Если доступен параметр [Active Directory OAuth](../active-directory/develop/about-microsoft-identity-platform.md) , укажите следующие значения свойств:
 
-| Свойство (конструктор) | Property (JSON) | Обязательно для заполнения | Значение | Description |
+| Свойство (конструктор) | Свойство (JSON) | Обязательно для заполнения | Значение | Description |
 |---------------------|-----------------|----------|-------|-------------|
 | **Аутентификация** | `type` | Да | **Active Directory OAuth** <br>или <br>`ActiveDirectoryOAuth` | Тип проверки подлинности. Logic Apps в настоящее время соответствует [протоколу OAuth 2,0](../active-directory/develop/v2-overview.md). |
-| **Клиент** | `tenant` | Да | <*ИД клиента*> | Идентификатор клиента Azure Active Directory. |
+| **Клиентом** | `tenant` | Да | <*ИД клиента*> | Идентификатор клиента Azure Active Directory. |
 | **Аудитория** | `audience` | Да | <*ресурс для авторизации*> | Ресурс, который нужно использовать для авторизации, например `https://management.core.windows.net/`. |
 | **Идентификатор клиента** | `clientId` | Да | <*ИД клиента*> | Идентификатор клиента для приложения, запрашивающего авторизацию. |
 | **Тип учетных данных** | `credentialType` | Да | Сертификат <br>или <br>Секрет | Тип учетных данных, используемый клиентом для запроса авторизации. Это свойство и значение не отображаются в базовом определении приложения логики, но определяют свойства, отображаемые для выбранного типа учетных данных. |
@@ -746,10 +746,10 @@ Authorization: OAuth realm="Photos",
 
 В триггере или действии, поддерживающем необработанную проверку подлинности, укажите следующие значения свойств:
 
-| Свойство (конструктор) | Property (JSON) | Обязательно для заполнения | Значение | Description |
+| Свойство (конструктор) | Свойство (JSON) | Обязательно для заполнения | Значение | Description |
 |---------------------|-----------------|----------|-------|-------------|
 | **Аутентификация** | `type` | Да | Raw | Используемый тип проверки подлинности |
-| **Value** | `value` | Да | <" *авторизация — значение заголовка* "> | Значение заголовка авторизации, используемое для проверки подлинности |
+| **Значение** | `value` | Да | <" *авторизация — значение заголовка* "> | Значение заголовка авторизации, используемое для проверки подлинности |
 ||||||
 
 При использовании [защищенных параметров](#secure-action-parameters) для управления конфиденциальной информацией, например, в [шаблоне Azure Resource Manager для автоматизации развертывания](../logic-apps/logic-apps-azure-resource-manager-templates-overview.md), можно использовать выражения для доступа к этим значениям параметров во время выполнения. В этом примере определение действия HTTP определяет `type` проверки подлинности как `Raw`и использует [функцию Parameters ()](../logic-apps/workflow-definition-language-functions-reference.md#parameters) для получения значений параметров:
@@ -781,7 +781,7 @@ Authorization: OAuth realm="Photos",
 
 3. В триггере или действии, где вы хотите использовать управляемое удостоверение, укажите следующие значения свойств.
 
-   | Свойство (конструктор) | Property (JSON) | Обязательно для заполнения | Значение | Description |
+   | Свойство (конструктор) | Свойство (JSON) | Обязательно для заполнения | Значение | Description |
    |---------------------|-----------------|----------|-------|-------------|
    | **Аутентификация** | `type` | Да | **Управляемое удостоверение** <br>или <br>`ManagedServiceIdentity` | Используемый тип проверки подлинности |
    | **Аудитория** | `audience` | Да | <" *целевой объект-ресурса-идентификатор*>" | Идентификатор ресурса для целевого ресурса, к которому требуется получить доступ. <p>Например, `https://storage.azure.com/` делает маркеры доступа для проверки подлинности действительными для всех учетных записей хранения. Однако можно также указать URL-адрес корневой службы, например `https://fabrikamstorageaccount.blob.core.windows.net` для конкретной учетной записи хранения. <p>**Примечание**. это свойство может быть скрыто в некоторых триггерах или действиях. Чтобы сделать это свойство видимым, в триггере или действии откройте список **Добавить новый параметр** и выберите пункт **аудитория**. <p><p>**Важно**. Убедитесь, что этот идентификатор целевого ресурса точно соответствует значению, которое требуется Azure AD, включая все обязательные символы косой черты. Таким образом, для идентификатора ресурса `https://storage.azure.com/` для всех учетных записей хранилища BLOB-объектов Azure требуется завершающая косая черта. Однако для идентификатора ресурса конкретной учетной записи хранения не требуется завершающая косая черта. Чтобы найти эти идентификаторы ресурсов, см. статью [службы Azure, поддерживающие Azure AD](../active-directory/managed-identities-azure-resources/services-support-managed-identities.md#azure-services-that-support-azure-ad-authentication). |

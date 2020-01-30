@@ -8,12 +8,12 @@ ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 12/07/2018
 ms.custom: seodec18
-ms.openlocfilehash: cda02408f9e90cb9f19a4f7d806a34e5cff9c33c
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: f2876ea32bdcd900a454ae6b7ac58c11b8ec67c3
+ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75426033"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76840491"
 ---
 # <a name="test-live-data-locally-using-azure-stream-analytics-tools-for-visual-studio-preview"></a>Тестирование реальных данных в локальной среде с помощью инструментов Azure Stream Analytics для Visual Studio (предварительная версия)
 
@@ -38,7 +38,6 @@ ms.locfileid: "75426033"
 2. Чтобы протестировать реальные данные, из раскрывающегося списка выберите **Use Cloud Input** (Использовать облачные входные данные).
 
    ![Реальные облачные входные данные Azure Stream Analytics в Visual Studio](./media/stream-analytics-live-data-local-testing/stream-analytics-local-testing-cloud-input.png)
-
 
 3. Задайте **время начала**, чтобы определить, когда задание начнет обработку входных данных. Заданию может потребоваться считать входные данные заранее, чтобы обеспечить точные результаты. Время по умолчанию составляет 30 минут с текущего момента.
 
@@ -65,6 +64,5 @@ ms.locfileid: "75426033"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * [Создание задания Stream Analytics с использованием инструментов Azure Stream Analytics для Visual Studio](stream-analytics-quick-create-vs.md)
-* [Установка инструментов Azure Stream Analytics для Visual Studio](stream-analytics-tools-for-visual-studio-install.md)
 * [Локальное тестирование запросов Stream Analytics с помощью Visual Studio](stream-analytics-vs-tools-local-run.md)
 * [Просмотр заданий Azure Stream Analytics с помощью Visual Studio](stream-analytics-vs-tools.md)

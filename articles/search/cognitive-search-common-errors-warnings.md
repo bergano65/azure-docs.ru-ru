@@ -8,12 +8,12 @@ ms.author: abmotley
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: 9cf3bcc514118c7f8052981c39023d6cac361d22
-ms.sourcegitcommit: a9b1f7d5111cb07e3462973eb607ff1e512bc407
+ms.openlocfilehash: 2da009189e0265aafcb26b7ec96837965f1ea0c5
+ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76314731"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76838553"
 ---
 # <a name="troubleshooting-common-indexer-errors-and-warnings-in-azure-cognitive-search"></a>Устранение распространенных ошибок индексатора и предупреждений в Azure Когнитивный поиск
 
@@ -249,7 +249,7 @@ ms.locfileid: "76314731"
 ```
 
 Ниже приведены некоторые ссылки на языки, поддерживаемые в настоящее время для каждого из навыков, которые могут вызвать это сообщение об ошибке:
-* [Анализ текста поддерживаемых языков](https://docs.microsoft.com/azure/cognitive-services/text-analytics/text-analytics-supported-languages) (для [кэйфрасикстрактионскилл](cognitive-search-skill-keyphrases.md), [ентитирекогнитионскилл](cognitive-search-skill-entity-recognition.md)и [сентиментскилл](cognitive-search-skill-sentiment.md))
+* [Анализ текста поддерживаемых языков](https://docs.microsoft.com/azure/cognitive-services/text-analytics/text-analytics-supported-languages) (для [кэйфрасикстрактионскилл](cognitive-search-skill-keyphrases.md), [ентитирекогнитионскилл](cognitive-search-skill-entity-recognition.md), [сентиментскилл](cognitive-search-skill-sentiment.md)и [пиидетектионскилл](cognitive-search-skill-pii-detection.md))
 * [Языки, поддерживаемые переводчиками](https://docs.microsoft.com/azure/cognitive-services/translator/language-support) (для [текста транслатионскилл](cognitive-search-skill-text-translation.md))
 * [Сплитскилл текста](cognitive-search-skill-textsplit.md) Поддерживаемые языки: `da, de, en, es, fi, fr, it, ko, pt`
 
@@ -303,7 +303,7 @@ ms.locfileid: "76314731"
 <a name="truncated-extracted-text-to-x-characters"/>
 
 ## <a name="warning-truncated-extracted-text-to-x-characters"></a>Предупреждение: усеченный извлеченный текст с символами X
-Индексаторы ограничивают объем текста, который можно извлечь из одного документа. Это ограничение зависит от ценовой категории: 32 000 символов для уровня Free, 64 000 для Basic и 4 000 000 для уровней Standard, Standard S2 и Standard уровня S3. Текст, который был усечен, не будет индексироваться. Чтобы избежать этого предупреждения, попробуйте разбить документы с большим объемом текста на несколько небольших документов. 
+Индексаторы ограничивают объем текста, который можно извлечь из одного документа. Это ограничение зависит от ценовой категории: 32 000 символов для уровня Free, 64 000 для Basic, 4 000 000 для Standard, 8 000 000 для Standard S2 и 16 000 000 для уровня Standard S3. Текст, который был усечен, не будет индексироваться. Чтобы избежать этого предупреждения, попробуйте разбить документы с большим объемом текста на несколько небольших документов. 
 
 Дополнительные сведения см. в разделе [ограничения индексатора](search-limits-quotas-capacity.md#indexer-limits).
 
