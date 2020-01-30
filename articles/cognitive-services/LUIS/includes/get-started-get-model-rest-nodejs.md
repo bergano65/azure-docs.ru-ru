@@ -8,12 +8,12 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 10/18/2019
 ms.author: diberry
-ms.openlocfilehash: cc8f01d5608b36521185695cd5f7be531ba7aeaf
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: a262db04e51015edb760a8b04952dfa24b2ad63a
+ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73505862"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76748848"
 ---
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -89,8 +89,8 @@ ms.locfileid: "73505862"
             body: utterances
         };
     
-        const reponse = await requestpromise(options)
-        console.log(reponse.body);
+        const response = await requestpromise(options)
+        console.log(response.body);
     }
     const train = async (verb) => {
     
@@ -104,14 +104,14 @@ ms.locfileid: "73505862"
             body: null // The body can be empty for a training request
         };
     
-        const reponse = await requestpromise(options)
-        console.log(reponse.body);
+        const response = await requestpromise(options)
+        console.log(response.body);
     }
     
     // MAIN
     main().then(() => console.log("done")).catch((err)=> console.log(err returned));
     ```
-1. Замените следующие значения:
+1. Измените следующие значения:
 
     * `YOUR-KEY` на ключ для начала работы.
     * `YOUR-ENDPOINT` на конечную точку, например `westus2.api.cognitive.microsoft.com`.
@@ -131,7 +131,7 @@ ms.locfileid: "73505862"
 
 По завершении работы с этим кратким руководством удалите файл из файловой системы. 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Рекомендации для приложения](../luis-concept-best-practices.md)

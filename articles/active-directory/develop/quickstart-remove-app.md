@@ -12,13 +12,12 @@ ms.date: 05/08/2019
 ms.author: ryanwi
 ms.custom: aaddev
 ms.reviewer: aragra, lenalepa, sureshja
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: fff6d07bd0e353541dec23fd8c3edf7407ef6d68
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.openlocfilehash: 3cc9e4458f14a63bad7f484bc16683248895ede9
+ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74963296"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76704091"
 ---
 # <a name="quickstart-remove-an-application-registered-with-the-microsoft-identity-platform"></a>Краткое руководство. Удаление приложения, зарегистрированного с помощью платформы удостоверений Майкрософт
 
@@ -54,7 +53,7 @@ ms.locfileid: "74963296"
 
 Чтобы удалить доступ к каталогу для приложения (после предоставления согласия), администратору организации необходимо удалить субъект-службу. Чтобы удалить доступ, у администратора должен быть доступ глобального администратора и возможность удалить приложение с помощью портала Azure или [командлетов Azure AD PowerShell](https://go.microsoft.com/fwlink/?LinkId=294151).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о других кратких руководствах по управлению приложениями см. в следующих ресурсах:
 

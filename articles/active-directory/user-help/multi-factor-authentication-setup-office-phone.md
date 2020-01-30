@@ -10,13 +10,12 @@ ms.workload: identity
 ms.topic: overview
 ms.date: 08/12/2019
 ms.author: lizross
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1adbb913fc8ec6376f1c5f47708da4fd7df740ff
-ms.sourcegitcommit: e42c778d38fd623f2ff8850bb6b1718cdb37309f
+ms.openlocfilehash: 32d58a5536cda5a5a446eee15401dabc0c936304
+ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69619855"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76705230"
 ---
 # <a name="set-up-an-office-phone-as-your-two-factor-verification-method"></a>Настройка рабочего телефона в качестве метода двухфакторной проверки подлинности
 
@@ -44,7 +43,7 @@ ms.locfileid: "69619855"
 
 4. Нажмите кнопку **Готово**.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 После настройки метода двухфакторной проверки подлинности можно добавить дополнительные методы, управлять параметрами и паролями приложений, входить в систему или получить справку по некоторым распространенным проблемам, связанным с двухфакторной проверкой подлинности.
 
@@ -54,4 +53,4 @@ ms.locfileid: "69619855"
 
 - [Варианты входа с помощью Многофакторной идентификации Azure](multi-factor-authentication-end-user-signin.md)
 
-- [Получить справку о двухфакторной проверке](multi-factor-authentication-end-user-troubleshoot.md)
+- [Устранение распространенных проблем с двухфакторной проверкой подлинности](multi-factor-authentication-end-user-troubleshoot.md)

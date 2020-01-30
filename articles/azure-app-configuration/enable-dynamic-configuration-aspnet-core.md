@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 02/24/2019
 ms.author: lcozzens
 ms.custom: mvc
-ms.openlocfilehash: 1c08b42d8217bf16dfcd8af17fa3c4627b95ffc3
-ms.sourcegitcommit: dbcc4569fde1bebb9df0a3ab6d4d3ff7f806d486
+ms.openlocfilehash: 8032a9b206be4a5eb70a1f40fd33667a1dbdfaa7
+ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76028222"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76714730"
 ---
 # <a name="tutorial-use-dynamic-configuration-in-an-aspnet-core-app"></a>Руководство. Использование динамической конфигурации в приложении ASP.NET Core
 
@@ -34,13 +34,13 @@ ASP.NET Core имеет подключаемую систему конфигур
 
 Вы можете выполнять шаги в этом учебнике с помощью любого редактора кода. [Visual Studio Code](https://code.visualstudio.com/) является отличным вариантом, который доступен на платформах Windows, macOS и Linux.
 
-В этом руководстве описано следующее.
+В этом руководстве описано следующее:
 
 > [!div class="checklist"]
 > * настройка приложения на обновление конфигурации при изменении данных в хранилище конфигураций приложений;
 > * внедрение последней конфигурации в контроллеры приложения.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим учебником установите [пакет SDK для .NET Core](https://dotnet.microsoft.com/download).
 
@@ -53,7 +53,7 @@ ASP.NET Core имеет подключаемую систему конфигур
 1. Добавьте ссылку на пакет NuGet `Microsoft.Azure.AppConfiguration.AspNetCore`, выполнив следующую команду:
 
     ```CLI
-    dotnet add package Microsoft.Azure.AppConfiguration.AspNetCore --version 3.0.0-preview-010560002-1165
+    dotnet add package Microsoft.Azure.AppConfiguration.AspNetCore --version 3.0.0-preview-011100002-1192
     ```
 
 1. Откройте файл *Program.cs* и обновите метод `CreateWebHostBuilder`, чтобы добавить метод `config.AddAzureAppConfiguration()`.

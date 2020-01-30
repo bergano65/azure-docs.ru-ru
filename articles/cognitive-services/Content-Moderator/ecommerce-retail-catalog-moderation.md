@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: content-moderator
 ms.topic: tutorial
-ms.date: 10/24/2019
+ms.date: 01/27/2020
 ms.author: pafarley
-ms.openlocfilehash: 5ee96cd0cf8ca33cae785bc15eb824332dcb3c9e
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 5e74eda9e30c536c0eba4e847019344c87e10cce
+ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75382163"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76774335"
 ---
 # <a name="tutorial-moderate-e-commerce-product-images-with-azure-content-moderator"></a>Руководство. Модерация изображений товаров для электронной коммерции с помощью Azure Content Moderator
 
@@ -34,7 +34,7 @@ ms.locfileid: "75382163"
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 - Ключ подписки Content Moderator. Следуйте инструкциям в руководстве по [созданию учетной записи Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account), чтобы получить подписку и ключ для службы Content Moderator.
 - Ключ подписки Компьютерного зрения (см. те же инструкции).

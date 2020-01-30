@@ -10,18 +10,18 @@ ms.subservice: bing-entity-search
 ms.topic: quickstart
 ms.date: 12/11/2019
 ms.author: aahi
-ms.openlocfilehash: b907b1ed945cd72d51d0b1acd037dbfc93be4873
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 49e3492bae1dfe248e07227caff11a6d00e59c08
+ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75448645"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76716477"
 ---
 # <a name="quickstart-send-a-search-request-with-the-bing-entity-search-sdk-for-java"></a>Краткое руководство. Отправка запросов для поиска в пакете SDK для Поиска сущностей Bing для Java
 
 Используйте это краткое руководство, чтобы начать поиск сущностей с помощью пакета SDK для Поиска сущностей Bing для Java. Так как для Поиска сущностей Bing имеется REST API, совместимый с большинством языков программирования, пакет SDK обеспечивает простой способ интеграции службы в ваши приложения. Исходный код для этого шаблона можно найти на портале [GitHub](https://github.com/Azure-Samples/cognitive-services-java-sdk-samples/tree/master/Search/BingEntitySearch).
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 * [Комплект разработчика Java (JDK)](https://www.oracle.com/technetwork/java/javase/downloads/).
 
@@ -135,9 +135,9 @@ ms.locfileid: "75448645"
     ```java
     if (entityData.entities().value().size() > 0){
         // Find the entity that represents the dominant entity
-        List<Thing> entrys = entityData.entities().value();
+        List<Thing> entries = entityData.entities().value();
         Thing dominateEntry = null;
-        for(Thing thing : entrys) {
+        for(Thing thing : entries) {
             if(thing.entityPresentationInfo().entityScenario() == EntityScenario.DOMINANT_ENTITY) {
                 System.out.println("\r\nSearched for \"Satya Nadella\" and found a dominant entity with this description:");
                 System.out.println(thing.description());

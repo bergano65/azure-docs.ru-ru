@@ -12,13 +12,12 @@ ms.workload: identity
 ms.date: 04/11/2019
 ms.author: jmprieur
 ms.custom: aaddev, identityplatformtop40, scenarios:getting-started, languages:ASP.NET
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4ab2b3c1872de25c2d78198a0e23c0067ef0c9ea
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.openlocfilehash: deeecbe96a0809435ae1f805d35cb4a0bd34d8ef
+ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74968091"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76703548"
 ---
 # <a name="quickstart-add-microsoft-identity-platform-sign-in-to-an-aspnet-web-app"></a>Краткое руководство. Добавление функции входа платформы Microsoft Identity в веб-приложение ASP.NET
 
@@ -42,7 +41,7 @@ ms.locfileid: "74968091"
 >
 > ### <a name="option-2-register-and-manually-configure-your-application-and-code-sample"></a>Вариант 2. Регистрация и настройка приложения и примера кода вручную
 >
-> #### <a name="step-1-register-your-application"></a>Шаг 1. Регистрация приложения
+> #### <a name="step-1-register-your-application"></a>Шаг 1. Регистрация приложения
 > Чтобы зарегистрировать приложение и добавить сведения о его регистрации в решение вручную, сделайте следующее:
 >
 > 1. Войдите на [портал Azure](https://portal.azure.com) с помощью личной учетной записи Майкрософт либо рабочей или учебной учетной записи.
@@ -65,7 +64,7 @@ ms.locfileid: "74968091"
 > > [!div id="appconfigured" class="alert alert-info"]
 > > ![Уже настроено](media/quickstart-v2-aspnet-webapp/green-check.png) Ваше приложение настроено с использованием этого атрибута
 
-#### <a name="step-2-download-your-project"></a>Шаг 2. Скачивание проекта
+#### <a name="step-2-download-your-project"></a>Шаг 2. Скачивание проекта
 
 [Скачайте решение Visual Studio 2019](https://github.com/AzureADQuickStarts/AppModelv2-WebApp-OpenIDConnect-DotNet/archive/master.zip)
 
@@ -86,7 +85,7 @@ ms.locfileid: "74968091"
 > > В этом кратком руководстве поддерживается Enter_the_Supported_Account_Info_Here. 
 
 > [!div renderon="docs"]
-> Описание
+> Где:
 > - `Enter_the_Application_Id_here` — идентификатор регистрируемого приложения.
 > - `Enter_the_Tenant_Info_Here` — один из следующих вариантов:
 >   - Если ваше приложение поддерживает вариант **Только моя организация**, замените это значение на **идентификатор клиента** или **имя клиента** (например contoso.onmicrosoft.com).
@@ -189,11 +188,11 @@ public void SignIn()
 
 Контроллер или его действия можно защитить с помощью атрибута `[Authorize]`. Этот атрибут ограничивает доступ к контроллеру или действиям, разрешив доступ к действиям в контроллере только прошедшим проверку подлинности пользователям. Это означает, что запрос проверки подлинности будет выполняться автоматически, если пользователь, *не прошедший проверку подлинности*, попытается получить доступ к одному из действий или контроллеру с указанным атрибутом `[Authorize]`.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В руководстве по ASP.NET вы найдете пошаговые инструкции по созданию приложений и функций, а также полное описание того, о чем говорится в этом кратком руководстве.
 
-### <a name="learn-the-steps-to-create-the-application-used-in-this-quickstart"></a>Изучите инструкции, чтобы создать приложение, используемое в этом кратком руководстве.
+### <a name="learn-the-steps-to-create-the-application-used-in-this-quickstart"></a>Изучите этапы создания приложения, используемые в этом кратком руководстве
 
 > [!div class="nextstepaction"]
 > [Добавление возможности входа в веб-приложение ASP.NET с помощью учетной записи Майкрософт](./tutorial-v2-asp-webapp.md)

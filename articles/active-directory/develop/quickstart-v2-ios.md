@@ -12,13 +12,12 @@ ms.date: 09/24/2019
 ms.author: twhitney
 ms.reviewer: jmprieur, saeeda
 ms.custom: aaddev, identityplatformtop40, scenarios:getting-started, languages:iOS
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 10225efb1dcd870f5922a6521b0bd6ec44965152
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: 25e37d27805adb47fae19bdcc0e94253f8c4ccf2
+ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74920690"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76703462"
 ---
 # <a name="quickstart-sign-in-users-and-call-the-microsoft-graph-api-from-an-ios-or-macos-app"></a>Краткое руководство. Вход пользователей и вызов Microsoft API Graph из приложения iOS или macOS
 
@@ -40,16 +39,16 @@ ms.locfileid: "74920690"
 > * [Экспресс-способ] [Вариант 1. Регистрация и автоматическая настройка приложения, а затем скачивание примера кода](#option-1-register-and-auto-configure-your-app-and-then-download-the-code-sample)
 > * [Вручную] [Вариант 2. Регистрация и настройка приложения и примера кода вручную](#option-2-register-and-manually-configure-your-application-and-code-sample)
 >
-> ### <a name="option-1-register-and-auto-configure-your-app-and-then-download-the-code-sample"></a>Вариант 1. Регистрация и автоматическая настройка приложения, а затем скачивание примера кода.
+> ### <a name="option-1-register-and-auto-configure-your-app-and-then-download-the-code-sample"></a>Вариант 1. Регистрация и автоматическая настройка приложения, а затем скачивание примера кода.
 > #### <a name="step-1-register-your-application"></a>Шаг 1. Регистрация приложения
 > Регистрация приложения:
 > 1. Откройте на [портале Azure новую панель регистрации приложений](https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/applicationsListBlade/quickStartType/IosQuickstartPage/sourceType/docs).
 > 1. Введите имя приложения и нажмите кнопку **Зарегистрировать**.
 > 1. Следуйте инструкциям, чтобы быстро скачать и автоматически настроить новое приложение.
 >
-> ### <a name="option-2-register-and-manually-configure-your-application-and-code-sample"></a>Вариант 2. Регистрация и настройка приложения и примера кода вручную
+> ### <a name="option-2-register-and-manually-configure-your-application-and-code-sample"></a>Вариант 2. Регистрация и настройка приложения и примера кода вручную
 >
-> #### <a name="step-1-register-your-application"></a>Шаг 1. Регистрация приложения
+> #### <a name="step-1-register-your-application"></a>Шаг 1. Регистрация приложения
 > Чтобы зарегистрировать приложение и добавить сведения о его регистрации в решение вручную, сделайте следующее:
 >
 > 1. Перейдите на страницу [Регистрация приложений](https://aka.ms/MobileAppReg) Платформы удостоверений Майкрософт для разработчиков.
@@ -180,7 +179,7 @@ let msalConfiguration = MSALPublicClientApplicationConfig(clientId: kClientID, r
 self.applicationContext = try MSALPublicClientApplication(configuration: msalConfiguration)
 ```
 
-> |Описание ||
+> |Где: ||
 > |---------|---------|
 > | `clientId` | Идентификатор зарегистрированного приложения на *portal.azure.com* |
 > | `authority` | Конечная точка платформы удостоверений Майкрософт. В большинстве случаев это будет *https<span/>://login.microsoftonline.com/common* |
@@ -244,7 +243,7 @@ let parameters = MSALInteractiveTokenParameters(scopes: kScopes, webviewParamete
 self.applicationContext!.acquireToken(with: parameters) { (result, error) in /* Add your handling logic */}
 ```
 
-> |Описание||
+> |Где:||
 > |---------|---------|
 > | `scopes` | Содержит запрашиваемые области (то есть `[ "user.read" ]` для Microsoft Graph или `[ "<Application ID URL>/scope" ]` для пользовательских веб-API (`api://<Application ID>/access_as_user`)). |
 
@@ -259,12 +258,12 @@ let silentParams = MSALSilentTokenParameters(scopes: kScopes, account: account)
 self.applicationContext!.acquireTokenSilent(with: silentParams) { (result, error) in /* Add your handling logic */}
 ```
 
-> |Описание ||
+> |Где: ||
 > |---------|---------|
 > | `scopes` | Содержит запрашиваемые области (то есть `[ "user.read" ]` для Microsoft Graph или `[ "<Application ID URL>/scope" ]` для пользовательских веб-API (`api://<Application ID>/access_as_user`)). |
 > | `account` | Учетная запись, для которой запрашивается токен. В этом кратком руководстве рассматривается приложение с одной учетной записью. Если вы хотите создать приложение с несколькими учетными записями, нужно определить логику для выбора учетной записи, которая будет использоваться для запросов токенов, с помощью `applicationContext.account(forHomeAccountId: self.homeAccountId)`. |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В руководстве по iOS вы найдете пошаговые инструкции по созданию приложений, а также полное описание того, о чем говорится в этом кратком руководстве.
 

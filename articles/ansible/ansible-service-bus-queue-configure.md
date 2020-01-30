@@ -4,14 +4,14 @@ description: Узнайте, как создать очередь Служебн
 keywords: ansible, azure, devops, bash, playbook, service bus, queue
 ms.topic: tutorial
 ms.date: 04/30/2019
-ms.openlocfilehash: 9903419a52be61cd7ec74214858bce81df7e727e
-ms.sourcegitcommit: 28688c6ec606ddb7ae97f4d0ac0ec8e0cd622889
+ms.openlocfilehash: 8ba4c2296d903c4f35aa36eb92dfbc3b56ec4b18
+ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2019
-ms.locfileid: "74155812"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76713224"
 ---
-# <a name="tutorial-configure-queues-in-azure-service-bus-using-ansible"></a>Руководство по Настройка очередей в Служебной шине Azure с помощью Ansible
+# <a name="tutorial-configure-queues-in-azure-service-bus-using-ansible"></a>Руководство. Настройка очередей в Служебной шине Azure с помощью Ansible
 
 [!INCLUDE [ansible-28-note.md](../../includes/ansible-28-note.md)]
 
@@ -34,7 +34,7 @@ ms.locfileid: "74155812"
 
 ## <a name="create-the-service-bus-queue"></a>Создание очереди Служебной шины
 
-Код из сборника схем создает следующие ресурсы:
+Код из примера сборника схем создает следующие ресурсы:
 - Группа ресурсов Azure
 - пространство имен Служебной шины в группе ресурсов;
 - очередь Служебной шины с пространством имен.
@@ -90,7 +90,7 @@ ansible-playbook servicebus_queue.yml
       namespace: servicebustestns
       queue: servicebustestqueue
   tasks:
-    - name: Create a policy with send and listen priviledge
+    - name: Create a policy with send and listen privilege
       azure_rm_servicebussaspolicy:
           name: "{{ queue }}-policy"
           queue: "{{ queue }}"
@@ -102,10 +102,10 @@ ansible-playbook servicebus_queue.yml
           var: policy
 ```
 
-Перед выполнением сборника схем учтите следующее:
+Перед выполнением сборника схем ознакомьтесь со следующими указаниями.
 - Значение `rights` представляет привилегию пользователя при использовании очереди. Укажите одно из следующих значений: `manage`, `listen`, `send` или `listen_send`.
 
-Запустите сборник схем с помощью команды `ansible-playbook`:
+Запустите сборник схем с помощью команды `ansible-playbook`.
 
 ```bash
 ansible-playbook servicebus_queue_policy.yml
@@ -138,7 +138,7 @@ ansible-playbook servicebus_queue_policy.yml
 Перед выполнением сборника схем ознакомьтесь со следующими указаниями.
 - Значение `show_sas_policies` указывает, следует ли отображать политики SAS в указанном пространстве имен. Используется значение по умолчанию `False`, чтобы избежать дополнительных сетевых издержек.
 
-Запустите сборник схем с помощью команды `ansible-playbook`:
+Запустите сборник схем с помощью команды `ansible-playbook`.
 
 ```bash
 ansible-playbook servicebus_namespace_info.yml
@@ -193,7 +193,7 @@ ansible-playbook servicebus_queue_info.yml
       namespace: servicebustestns
       queue: servicebustestqueue
   tasks:
-    - name: Create a policy with send and listen priviledge
+    - name: Create a policy with send and listen privilege
       azure_rm_servicebussaspolicy:
           name: "{{ queue }}-policy"
           queue: "{{ queue }}"
@@ -246,6 +246,6 @@ ansible-playbook servicebus_queue_policy_delete.yml
 ansible-playbook cleanup.yml
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 > [!div class="nextstepaction"] 
 > [Руководство. Настройка раздела в Служебной шине Azure с помощью Ansible](ansible-service-bus-topic-configure.md)

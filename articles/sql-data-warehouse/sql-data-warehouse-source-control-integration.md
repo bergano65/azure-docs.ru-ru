@@ -10,18 +10,18 @@ ms.subservice: integration
 ms.date: 08/23/2019
 ms.author: kevin
 ms.reviewer: igorstan
-ms.openlocfilehash: 82d366b3f807e21e3531da00da78520fed90bc66
-ms.sourcegitcommit: 359930a9387dd3d15d39abd97ad2b8cb69b8c18b
+ms.openlocfilehash: fc1fdddc7a157828fcc4770c4e8237af9a45fdc3
+ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73645260"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76720033"
 ---
 # <a name="source-control-integration-for-azure-sql-data-warehouse"></a>Интеграция системы управления версиями для Хранилища данных SQL Azure
 
 Из этого руководства вы узнаете, как интегрировать проект базы данных SQL Server Data Tools (SSDT) с системой управления версиями.  Интеграция системы управления версиями — это первый шаг в создании конвейера непрерывной интеграции и развертывания с помощью Хранилища данных SQL. 
 
-## <a name="before-you-begin"></a>Перед началом работы
+## <a name="before-you-begin"></a>Перед началом
 
 - Зарегистрируйтесь в [организации Azure DevOps](https://azure.microsoft.com/services/devops/).
 - Выполните инструкции из руководства по [созданию и подключению](https://docs.microsoft.com/azure/sql-data-warehouse/create-data-warehouse-portal).
@@ -37,7 +37,7 @@ ms.locfileid: "73645260"
 
    ![Управление подключениями](media/sql-data-warehouse-source-control-integration/2-manage-connections.png "Управление подключениями")
 
-   ![Подключение](media/sql-data-warehouse-source-control-integration/3-connect.png "Подключение")
+   ![Подключить](media/sql-data-warehouse-source-control-integration/3-connect.png "Подключение")
 
 3. Клонируйте репозиторий Azure Repo из проекта на локальный компьютер.
 
@@ -55,7 +55,7 @@ ms.locfileid: "73645260"
 
 3. В Team Explorer в Visual Studio зафиксируйте все изменения в локальном репозитории Git. 
 
-   ![Фиксация](media/sql-data-warehouse-source-control-integration/6.5-commit-push-changes.png "Фиксация")  
+   ![Фиксация](media/sql-data-warehouse-source-control-integration/6.5-commit-push-changes.png "Commit")  
 
 4. Теперь, когда изменения локально зафиксированы в клонированном репозитории, синхронизируйте и отправьте изменения в репозиторий Azure Repos в проекте Azure DevOps.
 
@@ -79,16 +79,6 @@ ms.locfileid: "73645260"
 
 4. (**Необязательно**.) Используйте сравнение схем и обновите изменения в целевом хранилище данных с помощью SSDT, чтобы определения объектов в репозитории Azure в Azure Repos и локальном репозитории отражали изменения в хранилище данных.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Разработка для Хранилища данных SQL Azure](sql-data-warehouse-overview-develop.md)
-
-<!--Image references-->
-
-<!--Article references-->
-
-
-<!--MSDN references-->
-
-<!--Other Web references-->
-

@@ -13,13 +13,12 @@ ms.topic: quickstart
 ms.date: 10/25/2019
 ms.author: ryanwi
 ms.custom: seo-javascript-september2019
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9ab52cd2cb7e81e8cd00c4b619bf8e8a37781248
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: da5f17511ff9b6cd2cb6f5bd6883f127907a204c
+ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74920928"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76703768"
 ---
 # <a name="quickstart-secure-a-web-api-with-azure-active-directory"></a>Краткое руководство. Защита веб-API с помощью Azure Active Directory
 
@@ -27,6 +26,6 @@ ms.locfileid: "74920928"
 
 [Платформа удостоверений Майкрософт](v2-overview.md) — это решение на основе платформы для разработчиков Azure Active Directory (Azure AD). С ее помощью разработчики могут создавать приложения, которые обеспечивают вход с использованием любых удостоверений Майкрософт и получение маркеров для вызова таких программных API-интерфейсов Майкрософт, как Microsoft Graph или других программных интерфейсов, созданных разработчиками.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 См. веб-пример [OIDC Node.js Azure Active Directory](https://github.com/azureadquickstarts/appmodelv2-webapp-openidconnect-nodejs), демонстрирующий настройку проверки подлинности OpenID Connect с помощью Azure AD версии 2.0 в веб-приложении, созданном с использованием Node.js и Express. Он предназначен для работы на любой платформе.

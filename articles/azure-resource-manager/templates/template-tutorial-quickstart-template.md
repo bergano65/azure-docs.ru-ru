@@ -5,18 +5,18 @@ author: mumian
 ms.date: 10/04/2019
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: 99eb1581c03732691af5eaf9f482ca4ba0605863
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 0feb0a1a682328f1e23a7d800eb4f5653a6acdd1
+ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75471139"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76765415"
 ---
 # <a name="tutorial-use-azure-quickstart-templates"></a>Руководство. Tutorial: Use Azure Quickstart templates (Учебник. Использование шаблонов быстрого запуска)
 
 [Шаблоны быстрого запуска Azure](https://azure.microsoft.com/resources/templates/) — это репозиторий шаблонов, наполняемый силами сообщества. Примеры шаблонов можно использовать при разработке шаблонов. В этом руководстве вы найдете определение ресурса веб-сайта и добавите его в собственный шаблон. Это занимает около **12 минут**.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Советуем выполнить инструкции из [учебника по экспортированным шаблонам](template-tutorial-export-template.md), но это необязательно.
 
@@ -26,7 +26,7 @@ ms.locfileid: "75471139"
 
 В конце предыдущего учебника шаблон содержал следующий код JSON:
 
-[!code-json[](~/resourcemanager-templates/get-started-with-templates/export-template/azuredeploy.json)]
+:::code language="json" source="~/resourcemanager-templates/get-started-with-templates/export-template/azuredeploy.json":::
 
 Этот шаблон подходит для развертывания учетных записей хранения и планов службы приложений, но может потребоваться добавить в него веб-сайт. Вы можете использовать готовые шаблоны для быстрого обнаружения JSON, необходимого для развертывания ресурса.
 
@@ -45,7 +45,7 @@ ms.locfileid: "75471139"
 
 Объедините шаблон быстрого запуска с существующим шаблоном:
 
-[!code-json[](~/resourcemanager-templates/get-started-with-templates/quickstart-template/azuredeploy.json?range=1-108&highlight=32-45,49,85-100)]
+:::code language="json" source="~/resourcemanager-templates/get-started-with-templates/quickstart-template/azuredeploy.json" range="1-108" highlight="32-45,49,85-100":::
 
 Имя веб-приложения должно быть уникальным в Azure. Чтобы предотвратить дублирование имен, переменная **webAppPortalName** была обновлена с **"webAppPortalName": "[concat(parameters('webAppName'), '-webapp')]"** на **"webAppPortalName": "[concat(parameters('webAppName'), uniqueString(resourceGroup().id))]"** .
 

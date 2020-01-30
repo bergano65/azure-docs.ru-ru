@@ -10,14 +10,14 @@ ms.date: 01/02/2020
 ms.topic: include
 ms.author: erhopf
 zone_pivot_groups: programming-languages-set-two
-ms.openlocfilehash: 7654d952469e35c3b45af252e910cb0e36693029
-ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
+ms.openlocfilehash: c5d70bba32df5940d929482e37317d40bd496676
+ms.sourcegitcommit: b5d646969d7b665539beb18ed0dc6df87b7ba83d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75773034"
+ms.lasthandoff: 01/26/2020
+ms.locfileid: "76761439"
 ---
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Необходимые условия:
 
@@ -37,7 +37,7 @@ ms.locfileid: "75773034"
 
 Добавим код, который выступает в качестве основы для нашего проекта.
 
-[!code-java[](~/samples-cognitive-services-speech-sdk/quickstart/java/jre/intent-recognition/src/speechsdk/quickstart/Main.java?range=6-20,69-76)]
+[!code-java[](~/samples-cognitive-services-speech-sdk/quickstart/java/jre/intent-recognition/src/speechsdk/quickstart/Main.java?range=6-20,68-75)]
 
 ## <a name="create-a-speech-configuration"></a>Создание конфигурации службы "Речь"
 
@@ -45,8 +45,8 @@ ms.locfileid: "75773034"
 
 Вставьте этот код в блок try / catch в `main()`. Обязательно обновите следующие значения:
 
-* Замените `"YourLanguageUnderstandingSubscriptionKey"` ключом прогнозирования LUIS. 
-* Замените `"YourLanguageUnderstandingServiceRegion"` расположением LUIS. 
+* Замените `"YourLanguageUnderstandingSubscriptionKey"` ключом прогнозирования LUIS.
+* Замените `"YourLanguageUnderstandingServiceRegion"` расположением LUIS.
 
 >[!TIP]
 > Если вам нужна помощь с поиском этих значений, перейдите к разделу [Создание приложения LUIS для распознавания намерений](#create-a-luis-app-for-intent-recognition).
@@ -65,14 +65,14 @@ ms.locfileid: "75773034"
 
 ## <a name="add-a-languageunderstandingmodel-and-intents"></a>Добавление модели LanguageUnderstandingModel и намерений
 
-Необходимо сопоставить объект `LanguageUnderstandingModel` с распознавателем намерений и добавить намерения, которые необходимо распознать. Мы будем использовать намерения из предварительно созданной предметной области для системы домашней автоматики. 
+Необходимо сопоставить объект `LanguageUnderstandingModel` с распознавателем намерений и добавить намерения, которые необходимо распознать. Мы будем использовать намерения из предварительно созданной предметной области для системы домашней автоматики.
 
-Вставьте приведенный ниже код под строкой вашего `IntentRecognizer`. Обязательно замените `"YourLanguageUnderstandingAppId"` идентификатором приложения LUIS. 
+Вставьте приведенный ниже код под строкой вашего `IntentRecognizer`. Обязательно замените `"YourLanguageUnderstandingAppId"` идентификатором приложения LUIS.
 
 >[!TIP]
 > Если вам нужна помощь с поиском этих значений, перейдите к разделу [Создание приложения LUIS для распознавания намерений](#create-a-luis-app-for-intent-recognition).
 
-[!code-java[](~/samples-cognitive-services-speech-sdk/quickstart/java/jre/intent-recognition/src/speechsdk/quickstart/Main.java?range=33-36)]
+[!code-java[](~/samples-cognitive-services-speech-sdk/quickstart/java/jre/intent-recognition/src/speechsdk/quickstart/Main.java?range=33-35)]
 
 ## <a name="recognize-an-intent"></a>Распознавание намерения
 
@@ -80,19 +80,19 @@ ms.locfileid: "75773034"
 
 Вставьте приведенный ниже код под строкой модели:
 
-[!code-java[](~/samples-cognitive-services-speech-sdk/quickstart/java/jre/intent-recognition/src/speechsdk/quickstart/Main.java?range=41)]
+[!code-java[](~/samples-cognitive-services-speech-sdk/quickstart/java/jre/intent-recognition/src/speechsdk/quickstart/Main.java?range=40)]
 
 ## <a name="display-the-recognition-results-or-errors"></a>Отображение результатов распознавания (или ошибок)
 
 Когда служба "Речь" возвращает результат распознавания, необходимо с ним что-то сделать. Мы оставим его как есть и выведем результат в консоли.
 
-Вставьте приведенный ниже код под вызовом `recognizeOnceAsync()`: [!code-java[](~/samples-cognitive-services-speech-sdk/quickstart/java/jre/intent-recognition/src/speechsdk/quickstart/Main.java?range=44-65)]
+Вставьте приведенный ниже код под вызовом `recognizeOnceAsync()`: [!code-java[](~/samples-cognitive-services-speech-sdk/quickstart/java/jre/intent-recognition/src/speechsdk/quickstart/Main.java?range=43-64)]
 
 ## <a name="release-resources"></a>Высвобождение ресурсов
 
 После завершения работы с речевыми ресурсами необходимо высвободить их. Вставьте следующий код в конце блока try/catch:
 
-[!code-java[](~/samples-cognitive-services-speech-sdk/quickstart/java/jre/intent-recognition/src/speechsdk/quickstart/Main.java?range=67-68)]
+[!code-java[](~/samples-cognitive-services-speech-sdk/quickstart/java/jre/intent-recognition/src/speechsdk/quickstart/Main.java?range=66-67)]
 
 ## <a name="check-your-code"></a>Проверка кода
 
@@ -101,7 +101,7 @@ ms.locfileid: "75773034"
 > [!NOTE]
 > Мы добавили несколько комментариев к этой версии.
 
-[!code-java[](~/samples-cognitive-services-speech-sdk/quickstart/java/jre/intent-recognition/src/speechsdk/quickstart/Main.java?range=6-76)]
+[!code-java[](~/samples-cognitive-services-speech-sdk/quickstart/java/jre/intent-recognition/src/speechsdk/quickstart/Main.java?range=6-75)]
 
 ## <a name="build-and-run-your-app"></a>Создание и запуск приложения
 

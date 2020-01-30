@@ -2,18 +2,18 @@
 author: aahill
 ms.service: cognitive-services
 ms.topic: include
-ms.date: 10/28/2019
+ms.date: 01/22/2020
 ms.author: aahi
-ms.openlocfilehash: 7cb3dce31592771deb5c57b9d73670465f7424fe
-ms.sourcegitcommit: d9ec6e731e7508d02850c9e05d98d26c4b6f13e6
+ms.openlocfilehash: d5197cfe749ae27b9f8807ba62825c8a73371c85
+ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/20/2020
-ms.locfileid: "76281430"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76748775"
 ---
 <a name="HOLTop"></a>
 
-[Справочная документация](https://docs.microsoft.com/javascript/api/@azure/cognitiveservices-textanalytics) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-node/tree/master/lib/services/cognitiveServicesTextAnalytics) | [Пакет (NPM)](https://www.npmjs.com/package/azure-cognitiveservices-textanalytics) | [Примеры](https://github.com/Azure-Samples/cognitive-services-node-sdk-samples/)
+[Справочная документация](https://docs.microsoft.com/javascript/api/@azure/cognitiveservices-textanalytics) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-node/tree/master/lib/services/cognitiveServicesTextAnalytics) | [Пакет (NPM)](https://www.npmjs.com/package/@azure/cognitiveservices-textanalytics) | [Примеры](https://github.com/Azure-Samples/cognitive-services-node-sdk-samples/)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -28,13 +28,13 @@ ms.locfileid: "76281430"
 
 ### <a name="create-a-new-nodejs-application"></a>создание приложения Node.js;
 
-В окне консоли (например, cmd, PowerShell или Bash) создайте новый каталог для приложения и перейдите в него. 
+В окне консоли (например, cmd, PowerShell или Bash) создайте новый каталог для приложения и перейдите в него.
 
 ```console
 mkdir myapp && cd myapp
 ```
 
-Выполните команду `npm init`, чтобы создать приложение узла с помощью файла `package.json`. 
+Выполните команду `npm init`, чтобы создать приложение узла с помощью файла `package.json`.
 
 ```console
 npm init
@@ -67,9 +67,9 @@ npm install @azure/cognitiveservices-textanalytics @azure/ms-rest-js
 
 Клиент Анализа текста — это объект [TextAnalyticsClient](https://docs.microsoft.com/javascript/api/@azure/cognitiveservices-textanalytics/textanalyticsclient), который выполняет проверку подлинности в Azure с использованием ключа. Этот клиент предоставляет несколько методов для анализа текста по отдельным строкам или пакетам строк.
 
-Текст отправляется в API в формате списка `documents` объектов `dictionary`, содержащих комбинации атрибутов `id`, `text` и `language` в зависимости от используемого метода. Атрибут `text` содержит текст для анализа в источнике `language`, а `id` может иметь любое значение. 
+Текст отправляется в API в формате списка `documents` объектов `dictionary`, содержащих комбинации атрибутов `id`, `text` и `language` в зависимости от используемого метода. Атрибут `text` содержит текст для анализа в источнике `language`, а `id` может иметь любое значение.
 
-Объект в ответе — это список, содержащий аналитику по каждому документу. 
+Объект в ответе — это список, содержащий аналитику по каждому документу.
 
 ## <a name="code-examples"></a>Примеры кода
 

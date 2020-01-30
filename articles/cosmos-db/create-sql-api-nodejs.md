@@ -8,12 +8,12 @@ ms.devlang: nodejs
 ms.topic: quickstart
 ms.date: 11/19/2019
 ms.author: dech
-ms.openlocfilehash: 44cdd4307be56d864afb45d619958cc59a3fa978
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: 8df78df27ffb7e8bb8fc88567bd0b3d37be20488
+ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74220519"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76719506"
 ---
 # <a name="quickstart-use-nodejs-to-connect-and-query-data-from-azure-cosmos-db-sql-api-account"></a>Краткое руководство. Подключение и выполнение запроса к данным из учетной записи API SQL для Azure Cosmos DB с помощью Node.js
 
@@ -32,9 +32,9 @@ ms.locfileid: "74220519"
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)] 
 [!INCLUDE [cosmos-db-emulator-docdb-api](../../includes/cosmos-db-emulator-docdb-api.md)]
 
-* Кроме того, сделайте следующее:
+* Кроме того, примите во внимание:
     * [Node.js](https://nodejs.org/en/) версии 6.0.0 или более поздней.
-    * [Git](https://git-scm.com/)
+    * [Git](https://git-scm.com/);
 
 ## <a name="create-a-database"></a>Создание базы данных 
 
@@ -76,7 +76,7 @@ ms.locfileid: "74220519"
 
 ## <a name="review-the-code"></a>Просмотр кода
 
-Этот шаг не является обязательным. Если вы хотите узнать, как создать в коде ресурсы базы данных Azure Cosmos, изучите приведенные ниже фрагменты кода. Если вас это не интересует, можете сразу переходить к разделу [Обновление строки подключения](#update-your-connection-string). 
+Это необязательный шаг. Если вы хотите узнать, как создать в коде ресурсы базы данных Azure Cosmos, изучите приведенные ниже фрагменты кода. Если вас это не интересует, можете сразу переходить к разделу [Обновление строки подключения](#update-your-connection-string). 
 
 Обратите внимание, что если вам знакома предыдущая версия пакета SDK для JavaScript, вы уже видели термины "коллекция" и "документ". Так как Azure Cosmos DB поддерживает [несколько моделей API](https://docs.microsoft.com/azure/cosmos-db/introduction), пакет SDK для JavaScript версии 2.0+ использует общий термин "контейнер", который может быть коллекцией, графом или таблицей, и термин "элемент" для описания содержимого контейнера.
 
@@ -142,13 +142,13 @@ ms.locfileid: "74220519"
 
 3. Скопируйте значение универсального кода ресурса (URI) на портале (с помощью кнопки копирования) и добавьте его в качестве значения параметра ключа конечной точки в файле `config.js`. 
 
-    `config.endpoint = "https://FILLME.documents.azure.com"`
+    `config.endpoint = "<Your Azure Cosmos account URI>"`
 
 4. Затем скопируйте значение первичного ключа с портала и добавьте его в качестве значения параметра `config.key` в файле `config.js`. Теперь приложение со всеми сведениями, необходимыми для взаимодействия с Azure Cosmos DB, обновлено. 
 
-    `config.key = "FILLME"`
+    `config.key = "<Your Azure Cosmos account key>"`
     
-## <a name="run-the-app"></a>Запуск приложения
+## <a name="run-the-app"></a>Запустите приложение
 
 1. В окне терминала запустите `npm install`, чтобы установить необходимые модули npm.
 
@@ -164,7 +164,7 @@ ms.locfileid: "74220519"
 
 [!INCLUDE [cosmosdb-delete-resource-group](../../includes/cosmos-db-delete-resource-group.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом кратком руководстве описано, как создать учетную запись Azure Cosmos и контейнер с помощью обозревателя данных, а также как запустить приложение. Теперь вы можете импортировать дополнительные данные в базу данных Azure Cosmos. 
 

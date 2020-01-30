@@ -5,18 +5,18 @@ author: mumian
 ms.date: 10/04/2019
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: 540e037e83d359dc67cb32f98dec0319bf490707
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 381f9f54a95b6d457aa65c7e8ef6abe49fe9eeea
+ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75471709"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76765745"
 ---
 # <a name="tutorial-add-outputs-to-your-resource-manager-template"></a>Руководство. добавлению выходных данных в шаблон Azure Resource Manager
 
 В этом учебнике вы узнаете, как вернуть значение из шаблона. Если требуется значение из развернутого ресурса, используются выходные данные. Для выполнения инструкций из этого учебника требуется **7 минут**.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Советуем выполнить инструкции из [учебника по переменным](template-tutorial-add-variables.md), но это необязательно.
 
@@ -26,7 +26,7 @@ ms.locfileid: "75471709"
 
 В конце предыдущего учебника шаблон содержал следующий код JSON:
 
-[!code-json[](~/resourcemanager-templates/get-started-with-templates/add-variable/azuredeploy.json)]
+:::code language="json" source="~/resourcemanager-templates/get-started-with-templates/add-variable/azuredeploy.json":::
 
 Он развертывает учетную запись хранения, но не возвращает никаких сведений о ней. Возможно, потребуется записать свойства из нового ресурса, чтобы они были доступны позже для справки.
 
@@ -36,7 +36,7 @@ ms.locfileid: "75471709"
 
 В следующем примере демонстрируется изменение шаблона для добавления выходного значения. Скопируйте весь файл и замените шаблон на его содержимое.
 
-[!code-json[](~/resourcemanager-templates/get-started-with-templates/add-outputs/azuredeploy.json?range=1-53&highlight=47-52)]
+:::code language="json" source="~/resourcemanager-templates/get-started-with-templates/add-outputs/azuredeploy.json" range="1-53" highlight="47-52":::
 
 Обратите внимание на некоторые важные элементы добавленного выходного значения.
 

@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: computer-vision
 ms.topic: quickstart
-ms.date: 10/22/2019
+ms.date: 01/27/2020
 ms.author: pafarley
-ms.openlocfilehash: d9d68f018b34c13f6570bf83c408bd436f0cc8c6
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: e4ac76f83ad4bedb420c52606598095c66747f2d
+ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75382315"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76765302"
 ---
 # <a name="quickstart-computer-vision-client-library-for-go"></a>Краткое руководство. Клиентская библиотека службы "Компьютерное зрение" для Go
 
@@ -28,7 +28,7 @@ ms.locfileid: "75382315"
 
 [Справочная документация](https://godoc.org/github.com/Azure/azure-sdk-for-go/services/cognitiveservices/v2.1/computervision) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-go/tree/master/services/cognitiveservices/v2.1/computervision) | [Пакет](https://github.com/Azure/azure-sdk-for-go).
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 * Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/).
 * Последняя версия [Go](https://golang.org/dl/).
@@ -99,7 +99,7 @@ touch sample-app.go
 
 Следующие классы и интерфейсы обрабатывают некоторые основные функции пакета SDK Go для службы "Компьютерное зрение".
 
-|Имя|Description|
+|Имя|Описание|
 |---|---|
 | [BaseClient](https://godoc.org/github.com/Azure/azure-sdk-for-go/services/cognitiveservices/v2.1/computervision#BaseClient) | Этот класс необходим для всех функций службы "Компьютерное зрение", как, например, анализ изображений и чтение текста. Вы создаете его экземпляр с информацией о подписке и используете его для выполнения большинства операций с образами.|
 |[ImageAnalysis](https://godoc.org/github.com/Azure/azure-sdk-for-go/services/cognitiveservices/v2.1/computervision#ImageAnalysis)| Этот тип содержит результаты вызова функции **AnalyzeImage**. Для каждой из функций, связанных с категорией, существуют похожие типы.|
@@ -263,5 +263,5 @@ go run sample-app.go
 > [!div class="nextstepaction"]
 > [Справочник по API службы "Компьютерное зрение" (Go)](https://godoc.org/github.com/Azure/azure-sdk-for-go/services/cognitiveservices/v2.1/computervision)
 
-* [Что представляет собой API службы "Компьютерное зрение"?](../Home.md)
+* [Что собой представляет Компьютерное зрение](../Home.md)
 * Исходный код для этого шаблона можно найти на портале [GitHub](https://github.com/Azure-Samples/cognitive-services-quickstart-code/blob/master/go/ComputerVision/ComputerVisionQuickstart.go).

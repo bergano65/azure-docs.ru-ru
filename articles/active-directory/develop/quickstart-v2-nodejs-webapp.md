@@ -11,13 +11,12 @@ ms.workload: identity
 ms.date: 10/28/2019
 ms.author: jmprieur
 ms.custom: aaddev, identityplatformtop40, scenarios:getting-started, languages:ASP.NET
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: a2869333fe0e9103724b9b1075270a5c3301c472
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.openlocfilehash: 0d69f762cea53f2a4c022ad6dddb52faeced1adf
+ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74968023"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76703343"
 ---
 # <a name="quickstart-add-sign-in-using-openid-connect-to-a-nodejs-web-app"></a>Краткое руководство. Добавление входа с помощью OpenID Connect в веб-приложение Node.js
 
@@ -44,7 +43,7 @@ ms.locfileid: "74968023"
 1. Выберите **Новая регистрация.**
 
 1. Когда откроется страница **Регистрация приложения**, введите сведения о регистрации приложения.
-    - В разделе **Имя** введите понятное имя, которое будет отображаться пользователям приложения. Например:  MyWebApp
+    - В разделе **Имя** введите понятное имя, которое будет отображаться пользователям приложения. Пример: MyWebApp
     - В разделе **Поддерживаемые типы учетных записей** выберите **Учетные записи в любом каталоге организации и личные учетные записи Майкрософт (например, Skype, Xbox, Outlook.com)** .
 
     При наличии нескольких URI перенаправления, их необходимо будет добавить на вкладке **Аутентификация** после успешного создания приложения.
@@ -75,7 +74,7 @@ ms.locfileid: "74968023"
 
 `$ git clone git@github.com:AzureADQuickStarts/AppModelv2-WebApp-OpenIDConnect-nodejs.git`
 
-или
+или диспетчер конфигурации служб
 
 `$ git clone https://github.com/AzureADQuickStarts/AppModelv2-WebApp-OpenIDConnect-nodejs.git`
 
@@ -127,7 +126,7 @@ $ node app.js | bunyan
 
 [!INCLUDE [Help and support](../../../includes/active-directory-develop-help-support-include.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о сценарии веб-приложений, поддерживаемом Платформой удостоверений Майкрософт:
 > [!div class="nextstepaction"]
 > [Scenario: Web app that signs in users](scenario-web-app-sign-user-overview.md) (Сценарий: веб-приложение, которое входит в систему пользователей)

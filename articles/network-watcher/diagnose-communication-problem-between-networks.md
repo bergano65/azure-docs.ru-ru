@@ -4,9 +4,7 @@ titleSuffix: Azure Network Watcher
 description: В этом учебнике вы узнаете о диагностике проблем с обменом данными между виртуальной сетью Azure, подключенной к локальной или другой виртуальной сети через шлюз виртуальной сети Azure, с помощью функции диагностики VPN службы "Наблюдатель за сетями".
 services: network-watcher
 documentationcenter: na
-author: KumudD
-manager: twooley
-editor: ''
+author: damendo
 Customer intent: I need to determine why resources in a virtual network can't communicate with resources in a different network.
 ms.service: network-watcher
 ms.devlang: na
@@ -14,25 +12,25 @@ ms.topic: tutorial
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 04/27/2018
-ms.author: kumud
+ms.author: damendo
 ms.custom: mvc
-ms.openlocfilehash: e2ec59cf609fcde79d289e321331ca5018401a5e
-ms.sourcegitcommit: 4c831e768bb43e232de9738b363063590faa0472
+ms.openlocfilehash: 974e45b761fb45e4bc1c451fa6755e16cab49e11
+ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74419734"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76834694"
 ---
-# <a name="tutorial-diagnose-a-communication-problem-between-networks-using-the-azure-portal"></a>Руководство по Диагностика проблем с обменом данными между сетями на портале Azure
+# <a name="tutorial-diagnose-a-communication-problem-between-networks-using-the-azure-portal"></a>Руководство. Диагностика проблем с обменом данными между сетями на портале Azure
 
-Шлюз виртуальной сети соединяет виртуальную сеть Azure с локальной или другой виртуальной сетью. Из этого руководства вы узнаете, как выполнять следующие задачи:
+Шлюз виртуальной сети соединяет виртуальную сеть Azure с локальной или другой виртуальной сетью. В этом руководстве описано следующее:
 
 > [!div class="checklist"]
 > * Выполнение диагностики проблемы с помощью шлюза виртуальной сети с возможностью диагностики VPN службы "Наблюдатель за сетями".
 > * Выполнение диагностики проблем путем подключения шлюза.
 > * Устранение проблемы со шлюзом.
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
@@ -47,7 +45,7 @@ ms.locfileid: "74419734"
 
 ## <a name="sign-in-to-azure"></a>Вход в Azure
 
-Войдите на [портале Azure](https://portal.azure.com).
+Войдите на [портал Azure](https://portal.azure.com).
 
 ## <a name="enable-network-watcher"></a>Включение Наблюдателя за сетями
 
@@ -75,7 +73,7 @@ ms.locfileid: "74419734"
 8. Во время выполнения теста отображается состояние **Выполняется** в столбце **Состояние устранения неполадок** (где на предыдущем изображении отображалось состояние **Не запущено**). Выполнение этого теста может занять несколько минут.
 9. Просмотрите состояние завершенного теста. На следующем изображении показаны результаты состояния завершенного теста диагностики.
 
-    ![Status](./media/diagnose-communication-problem-between-networks/status.png)
+    ![Состояние](./media/diagnose-communication-problem-between-networks/status.png)
 
     На изображении видно, что в столбце **Состояние устранения неполадок** отображается значение **Неработоспособно**, а также **сводка** и **сведения** о проблеме на вкладке **Status** (Состояние).
 10. Если перейти на вкладку **Действие**, диагностика VPN предоставит дополнительные сведения. В примере, показанном на следующем изображении, из VPN-диагностики можно понять, что следует проверить работоспособность каждого подключения.
@@ -88,7 +86,7 @@ ms.locfileid: "74419734"
 
 1. Выполите шаг 7 из раздела о [диагностике шлюза](#diagnose-a-gateway) еще раз. На этот раз выберите подключение. В следующем примере тестируется подключение с именем **VNet1toSite1**.
 
-    ![Подключение](./media/diagnose-communication-problem-between-networks/connection.png)
+    ![Соединение](./media/diagnose-communication-problem-between-networks/connection.png)
 
     Выполнение теста занимает несколько минут.
 2. После завершения тестирования подключения появляются результаты, аналогичные результатам, показанным на следующих изображениях вкладок **Состояние** и **Действие**.
@@ -111,7 +109,7 @@ ms.locfileid: "74419734"
 2. Выберите **Удалить группу ресурсов**.
 3. Введите *TestRG1* в поле **Введите имя группы ресурсов:** и щелкните **Удалить**.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из этого руководства вы узнали, как выполнить диагностику проблемы с помощью шлюза виртуальной сети. Вы можете сделать запись о сетевом обмене данными с виртуальной машиной, чтобы иметь возможность проверить журнал на наличие аномалий. Чтобы узнать, как сделать это, перейдите к изучению следующего руководства.
 

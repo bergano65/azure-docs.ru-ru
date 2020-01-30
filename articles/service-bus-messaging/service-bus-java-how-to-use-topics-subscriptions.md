@@ -1,6 +1,6 @@
 ---
-title: Краткое руководство. Использование разделов и подписок Служебной шины Azure с Java
-description: Краткое руководство. Использование разделов и подписок служебной шины в Azure.
+title: Использование разделов и подписок Служебной шины Azure с Java
+description: В этом кратком руководстве описано, как создать код Java для отправки сообщений в раздел Служебной шины Azure и их последующего получения из подписок в этот раздел.
 services: service-bus-messaging
 documentationcenter: java
 author: axisc
@@ -12,15 +12,15 @@ ms.workload: tbd
 ms.tgt_pltfrm: na
 ms.devlang: Java
 ms.topic: quickstart
-ms.date: 11/05/2019
+ms.date: 01/24/2020
 ms.author: aschhab
 ms.custom: seo-java-july2019, seo-java-august2019, seo-java-september2019
-ms.openlocfilehash: 8a721d929ff89fd644c78296ae54cee757bf9610
-ms.sourcegitcommit: bc7725874a1502aa4c069fc1804f1f249f4fa5f7
+ms.openlocfilehash: 9b75b5cd5e674020f41897309a3c69b9371cc768
+ms.sourcegitcommit: b5d646969d7b665539beb18ed0dc6df87b7ba83d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73720003"
+ms.lasthandoff: 01/26/2020
+ms.locfileid: "76759301"
 ---
 # <a name="quickstart-use-service-bus-topics-and-subscriptions-with-java"></a>Краткое руководство. Использование разделов и подписок Служебной шины с Java
 
@@ -458,7 +458,7 @@ Message sending: Id = 9
 > [!NOTE]
 > Вы можете управлять ресурсами служебной шины с помощью [обозревателя служебной шины](https://github.com/paolosalvatori/ServiceBusExplorer/). Обозреватель служебной шины позволяет без труда подключаться к пространству имен служебной шины и управлять сущностями обмена сообщениями. Средство предоставляет дополнительные возможности, например функции импорта и экспорта или возможность проверять разделы, очереди, подписки, службы ретрансляции, центры уведомлений и концентраторы событий. 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 См. сведения об [очередях, разделах и подписках Служебной шины][Service Bus queues, topics, and subscriptions].
 
 [Azure SDK for Java]: https://docs.microsoft.com/java/api/overview/azure/

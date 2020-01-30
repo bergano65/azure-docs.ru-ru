@@ -5,18 +5,18 @@ author: mumian
 ms.date: 10/04/2019
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: a27022f8c06449d8b05f90f78055b983bc88c01c
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 881d91d5b8ca06a9591b8752af0a73da7f00b0c1
+ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75471529"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76765508"
 ---
 # <a name="tutorial-add-variables-to-your-resource-manager-template"></a>Руководство. добавлению переменных в шаблон Azure Resource Manager
 
 В этом учебнике вы узнаете, как добавить переменную в шаблон. Переменные упрощают работу с шаблонами, позволяя записывать выражение один раз и повторно использовать его во всем шаблоне. Для выполнения инструкций из этого учебника требуется **7 минут**.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Советуем выполнить инструкции из [руководства о функциях](template-tutorial-add-functions.md), но это необязательно.
 
@@ -26,7 +26,7 @@ ms.locfileid: "75471529"
 
 В конце предыдущего учебника шаблон содержал следующий код JSON:
 
-[!code-json[](~/resourcemanager-templates/get-started-with-templates/add-location/azuredeploy.json)]
+:::code language="json" source="~/resourcemanager-templates/get-started-with-templates/add-location/azuredeploy.json":::
 
 Параметр для имени учетной записи хранения сложен в использовании, так как необходимо указать уникальное имя. Если вы работали с предыдущими учениками в этой серии, вы, вероятно, устали подбирать уникальные имена. Эту проблему можно решить, добавив переменную, создающую уникальное имя для учетной записи хранения.
 
@@ -34,7 +34,7 @@ ms.locfileid: "75471529"
 
 В следующем примере показаны изменения для добавления переменной в шаблон, создающей уникальное имя учетной записи хранения. Скопируйте весь файл и замените шаблон на его содержимое.
 
-[!code-json[](~/resourcemanager-templates/get-started-with-templates/add-variable/azuredeploy.json?range=1-47&highlight=5-9,29-31,36)]
+:::code language="json" source="~/resourcemanager-templates/get-started-with-templates/add-variable/azuredeploy.json" range="1-47" highlight="5-9,29-31,36":::
 
 Обратите внимание, что он включает переменную с именем **uniqueStorageName**. Эта переменная использует четыре функции для создания строкового значения.
 

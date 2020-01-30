@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: content-moderator
 ms.topic: quickstart
-ms.date: 10/25/2019
+ms.date: 01/27/2020
 ms.author: pafarley
-ms.openlocfilehash: 931e6e35df520f4a0ab35dfb6067654f9d08ed9d
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 31cdc9663283b580acc10e7ac8d5a77f9036a7a8
+ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75448276"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76772357"
 ---
 # <a name="quickstart-content-moderator-client-library-for-python"></a>Краткое руководство. Клиентская библиотека Content Moderator для Python
 
@@ -31,7 +31,7 @@ ms.locfileid: "75448276"
 
 [Справочная документация](https://docs.microsoft.com/python/api/overview/azure/cognitiveservices/contentmoderator?view=azure-python) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/cognitiveservices/azure-cognitiveservices-vision-contentmoderator) | [Пакет (PiPy)](https://pypi.org/project/azure-cognitiveservices-vision-contentmoderator/) | [Примеры](https://github.com/Azure-Samples/cognitive-services-python-sdk-samples)
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 * Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/).
 * [Python 3.x](https://www.python.org/)
@@ -72,7 +72,7 @@ pip install --upgrade azure-cognitiveservices-vision-contentmoderator
 
 Следующие классы обрабатывают некоторые основные функции пакета SDK Python для Content Moderator.
 
-|Имя|Description|
+|Имя|Описание|
 |---|---|
 |[ContentModeratorClient](https://docs.microsoft.com/python/api/azure-cognitiveservices-vision-contentmoderator/azure.cognitiveservices.vision.contentmoderator.content_moderator_client.contentmoderatorclient?view=azure-python)|Этот класс требуется для всех функций Content Moderator. Вы создаете его экземпляр с информацией о подписке и используете его для создания экземпляров других классов.|
 |[ImageModerationOperations](https://docs.microsoft.com/python/api/azure-cognitiveservices-vision-contentmoderator/azure.cognitiveservices.vision.contentmoderator.operations.imagemoderationoperations?view=azure-python)|Этот класс предоставляет функции для анализа изображений на наличие содержимого для взрослых, личной информации или лиц людей.|

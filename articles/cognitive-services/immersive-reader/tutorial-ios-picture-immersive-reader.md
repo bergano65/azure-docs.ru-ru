@@ -7,14 +7,14 @@ author: metanMSFT
 ms.service: cognitive-services
 ms.subservice: immersive-reader
 ms.topic: tutorial
-ms.date: 08/01/2019
+ms.date: 01/14/2020
 ms.author: metan
-ms.openlocfilehash: 48e74f7dd6fa6f2c7fafe10797a301b3d4cc7f1d
-ms.sourcegitcommit: 05cdbb71b621c4dcc2ae2d92ca8c20f216ec9bc4
+ms.openlocfilehash: 69ff58d6cdabe49000b00afecfc6b4ad1a3f2daa
+ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76045240"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76841852"
 ---
 # <a name="tutorial-create-an-ios-app-that-launches-the-immersive-reader-with-content-from-a-photo-swift"></a>Руководство. Созданию приложения для iOS, которое запускает иммерсивное средство чтения с содержимым из фотографии (Swift)
 
@@ -24,9 +24,9 @@ ms.locfileid: "76045240"
 
 В этом руководстве вы создадите приложение для iOS с нуля, интегрируете API чтения, а также Иммерсивное средство чтения с помощью пакета SDK Ииммерсивного средства чтения. Полностью рабочий пример этого руководства доступен [здесь](https://github.com/microsoft/immersive-reader-sdk/tree/master/iOS/samples/picture-to-immersive-reader-swift).
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 * [Xcode](https://apps.apple.com/us/app/xcode/id497799835?mt=12)
 * Ресурс "Иммерсивное средство чтения", настроенный для проверки подлинности Azure Active Directory. Инструкции по настройке см. [здесь](./how-to-create-immersive-reader.md). Некоторые из этих созданных значений потребуются вам при настройке свойств примера проекта. Сохраните результаты своего сеанса в текстовом файле для использования в будущем.

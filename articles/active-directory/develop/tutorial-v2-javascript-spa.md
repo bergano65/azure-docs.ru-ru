@@ -15,13 +15,12 @@ ms.workload: identity
 ms.date: 03/20/2019
 ms.author: nacanuma
 ms.custom: aaddev, identityplatformtop40
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 995210e720040448927b2aaac2c2eb590e3de981
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 33e1037a0fe261f9fb0d06a9ebb0b3b323fe8d5f
+ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75423374"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76701269"
 ---
 # <a name="sign-in-users-and-call-the-microsoft-graph-api-from-a-javascript-single-page-application-spa"></a>Вход пользователей и вызов API Microsoft Graph из одностраничного приложения JavaScript (SPA)
 
@@ -46,7 +45,7 @@ ms.locfileid: "75423374"
 
 В этом руководстве используется следующая библиотека:
 
-|Библиотека|Description|
+|Библиотека|Описание|
 |---|---|
 |[msal.js](https://github.com/AzureAD/microsoft-authentication-library-for-js)|Библиотека аутентификации Майкрософт для JavaScript (предварительная версия)|
 
@@ -66,7 +65,7 @@ ms.locfileid: "75423374"
 >
 > Перейдите к [настройке](#register-your-application), чтобы настроить пример кода перед выполнением.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 * Для работы с этим учебником требуется локальный веб-сервер, например [Node.js](https://nodejs.org/en/download/) или [.NET Core](https://www.microsoft.com/net/core), либо интеграция IIS Express с [Visual Studio 2017](https://www.visualstudio.com/downloads/).
 

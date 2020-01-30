@@ -5,18 +5,18 @@ author: mumian
 ms.date: 10/04/2019
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: abafa00febe0431acf5c678cc179c6c114fa9179
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 6a12d92c0cfb9d86ebf4c335c351944997f79b4e
+ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75470839"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76773146"
 ---
 # <a name="tutorial-use-parameter-files-to-deploy-your-resource-manager-template"></a>Руководство. использованию файлов параметров для развертывания шаблона Resource Manager
 
 В этом учебнике вы узнаете, как использовать [файлы параметров](parameter-files.md) для хранения значений, передаваемых во время развертывания. В предыдущих учебниках вы использовали встроенные параметры с помощью команды развертывания. Этот подход сработал для тестирования шаблона, но при автоматизации развертываний может быть проще передать набор значений для вашей среды. Файлы параметров упрощают упаковку значений параметров для конкретной среды. В этом учебнике вы создадите файлы параметров для среды разработки и рабочей среды. Это занимает около **12 минут**.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Советуем выполнить инструкции из [руководства о тегах](template-tutorial-add-tags.md), но это необязательно.
 
@@ -26,7 +26,7 @@ ms.locfileid: "75470839"
 
 Шаблон содержит множество параметров, которые можно указать во время развертывания. В конце предыдущего учебника шаблон выглядел следующим образом:
 
-[!code-json[](~/resourcemanager-templates/get-started-with-templates/add-tags/azuredeploy.json)]
+:::code language="json" source="~/resourcemanager-templates/get-started-with-templates/add-tags/azuredeploy.json":::
 
 Этот шаблон хорошо работает, но теперь вам нужно упростить управление параметрами, передаваемыми для шаблона.
 
@@ -36,13 +36,13 @@ ms.locfileid: "75470839"
 
 В VS Code создайте файл со следующим содержимым. Сохраните файл с именем **azuredeploy.parameters.dev.json**.
 
-[!code-json[](~/resourcemanager-templates/get-started-with-templates/add-tags/azuredeploy.parameters.dev.json)]
+:::code language="json" source="~/resourcemanager-templates/get-started-with-templates/add-tags/azuredeploy.parameters.dev.json":::
 
 Это файл параметров для среды разработки. Обратите внимание, что он использует Standard_LRS для учетной записи хранения, именует ресурсы с использованием префикса **dev** и задает для тега **Environment** значение **Dev**.
 
 Опять же, создайте файл со следующим содержимым. Сохраните файл с именем **azuredeploy.parameters.prod.json**.
 
-[!code-json[](~/resourcemanager-templates/get-started-with-templates/add-tags/azuredeploy.parameters.prod.json)]
+:::code language="json" source="~/resourcemanager-templates/get-started-with-templates/add-tags/azuredeploy.parameters.prod.json":::
 
 Это файл параметров для рабочей среды. Обратите внимание, что он использует Standard_GRS для учетной записи хранения, именует ресурсы с применением префикса **contoso** и задает для тега **Environment** значение **Production**. В реальной рабочей среде также необходимо использовать службу приложений с номером SKU, отличным от "Бесплатный", но мы продолжим использовать его в рамках этого учебника.
 

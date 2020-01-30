@@ -5,18 +5,18 @@ author: mumian
 ms.date: 10/04/2019
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: ed5e5c63bed90136e498491a6735cbaa127cf1f9
-ms.sourcegitcommit: 2f8ff235b1456ccfd527e07d55149e0c0f0647cc
+ms.openlocfilehash: d7853d388b9159328a515818697ba9ddd5b95637
+ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75689685"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76773181"
 ---
 # <a name="tutorial-add-tags-in-your-resource-manager-template"></a>Руководство. Добавление тегов в шаблон Resource Manager
 
 В этом учебнике вы узнаете, как добавлять теги к ресурсам в шаблоне. [Теги](../management/tag-resources.md) помогают логически упорядочивать ресурсы. Значения тегов отображаются в отчетах о затратах. Для выполнения инструкций из этого учебника требуется **8 минут**.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Советуем выполнить инструкции из [учебника по шаблонам быстрого запуска](template-tutorial-quickstart-template.md), но это необязательно.
 
@@ -26,7 +26,7 @@ ms.locfileid: "75689685"
 
 Предыдущий шаблон развернул учетную запись хранения, план службы приложений и веб-приложение.
 
-[!code-json[](~/resourcemanager-templates/get-started-with-templates/quickstart-template/azuredeploy.json)]
+:::code language="json" source="~/resourcemanager-templates/get-started-with-templates/quickstart-template/azuredeploy.json":::
 
 После развертывания этих ресурсов может потребоваться мониторинг затрат и поиск ресурсов, принадлежащих категории. Для решения этих задач можно добавить теги.
 
@@ -36,7 +36,7 @@ ms.locfileid: "75689685"
 
 В следующем примере показаны изменения шаблона. Скопируйте весь файл и замените шаблон на его содержимое.
 
-[!code-json[](~/resourcemanager-templates/get-started-with-templates/add-tags/azuredeploy.json?range=1-118&highlight=46-52,64,86,103)]
+:::code language="json" source="~/resourcemanager-templates/get-started-with-templates/add-tags/azuredeploy.json" range="1-118" highlight="46-52,64,78,102":::
 
 ## <a name="deploy-template"></a>Развертывание шаблона
 

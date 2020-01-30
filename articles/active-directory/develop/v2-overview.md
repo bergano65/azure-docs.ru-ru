@@ -16,13 +16,12 @@ ms.date: 05/08/2019
 ms.author: ryanwi
 ms.reviewer: agirling, saeeda, benv
 ms.custom: aaddev, identityplatformtop40
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: fbbcd854434bcc085f1b63fb864755dd0e928fc9
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: 8bf4039ac968883628a72974b64d90faf707c9af
+ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68852167"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76700300"
 ---
 # <a name="microsoft-identity-platform-v20-overview"></a>Общие сведения о платформе удостоверений Майкрософт версии 2.0
 
@@ -58,7 +57,7 @@ ms.locfileid: "68852167"
 
 [![Сценарии использования приложений с платформой удостоверений Майкрософт](./media/v2-overview/application-scenarios-identity-platform.png)](./media/v2-overview/application-scenarios-identity-platform.svg#lightbox)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 См. подробнее об основных понятиях, связанных с аутентификацией:
 
@@ -78,6 +77,6 @@ ms.locfileid: "68852167"
 - Включите [прокси и настройте HTTP-клиенты](msal-net-provide-httpclient.md).
 - Протестируйте интеграцию согласно [контрольному списку для интеграции платформы удостоверений Майкрософт](identity-platform-integration-checklist.md).
 
-## <a name="learn-more"></a>Подробнее
+## <a name="learn-more"></a>Дополнительные сведения
 
 Если вы планируете создать приложение для клиентов, которое поддерживает вход с использованием удостоверений социальных сетей и локальных удостоверений, см. [общие сведения об Azure AD B2C](https://docs.microsoft.com/azure/active-directory-b2c/tutorial-add-identity-providers).

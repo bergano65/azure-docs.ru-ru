@@ -6,15 +6,15 @@ ms.subservice: cosmosdb-table
 ms.devlang: python
 ms.topic: sample
 ms.date: 04/05/2018
-author: wmengmsft
-ms.author: wmeng
+author: sakash279
+ms.author: akshanka
 ms.reviewer: sngun
-ms.openlocfilehash: 1bb09ec4a7cc2a64edabfa2014ea7c1cf48ad835
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.openlocfilehash: b3a6f4397ca1b8c56f06f6d967804c94096ee308
+ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75972920"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76770987"
 ---
 # <a name="get-started-with-azure-table-storage-and-the-azure-cosmos-db-table-api-using-python"></a>Начало работы с хранилищем таблиц Azure и API таблиц Azure Cosmos DB с помощью Python
 
@@ -33,7 +33,7 @@ ms.locfileid: "75972920"
 
 Работая над сценариями в этом примере, можно использовать [справочные материалы по пакету SDK Azure Cosmos DB для API Python](https://docs.microsoft.com/python/api/overview/azure/cosmosdb?view=azure-python).
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим примером требуются следующие компоненты:
 

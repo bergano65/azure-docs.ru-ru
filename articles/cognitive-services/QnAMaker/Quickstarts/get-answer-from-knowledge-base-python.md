@@ -1,29 +1,24 @@
 ---
 title: Краткое руководство. Получение ответа из базы знаний в QnA Maker с помощью REST (Python)
-titleSuffix: Azure Cognitive Services
 description: В этом кратком руководстве по Python для REST описывается, как программным способом получить ответ из базы знаний.
-services: cognitive-services
-author: diberry
-manager: nitinme
-ms.service: cognitive-services
-ms.subservice: qna-maker
 ms.topic: quickstart
-ms.date: 12/16/2019
-ms.author: diberry
-ms.openlocfilehash: 58cdf5dc8a5bb952f24318dfce020ca052c48863
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.date: 01/28/2020
+ROBOTS: NOINDEX,NOFOLLOW
+ms.custom: RESTCHANGE-20200128
+ms.openlocfilehash: f439a492e2e63e3f99f80004b387d9cfc415e4b0
+ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75447466"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76842960"
 ---
 # <a name="quickstart-get-answers-to-a-question-from-a-knowledge-base-with-python"></a>Краткое руководство. Получение ответов на вопрос из базы знаний с помощью Python
 
-В этом кратком руководстве объясняется, как получить ответ из базы знаний QnA Maker программными средствами. База знаний содержит вопросы и ответы из [источника данных](../Concepts/data-sources-supported.md), например часто задаваемые вопросы. [Вопросы](../how-to/metadata-generateanswer-usage.md#generateanswer-request-configuration) отправляются в службу QnA Maker. Результат содержит прогнозируемый [ответ](../how-to/metadata-generateanswer-usage.md#generateanswer-response-properties).
+В этом кратком руководстве объясняется, как получить ответ из базы знаний QnA Maker программными средствами. База знаний содержит вопросы и ответы из [источника данных](../Concepts/knowledge-base.md), например часто задаваемые вопросы. [Вопросы](../how-to/metadata-generateanswer-usage.md#generateanswer-request-configuration) отправляются в службу QnA Maker. Результат содержит прогнозируемый [ответ](../how-to/metadata-generateanswer-usage.md#generateanswer-response-properties).
 
 [Справочная документация](https://docs.microsoft.com/rest/api/cognitiveservices/qnamakerruntime/runtime) | [Пример](https://github.com/Azure-Samples/cognitive-services-qnamaker-python/blob/master/documentation-samples/quickstarts/get-answer/get-answer-3x.py)
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 * [Python версии 3.6 или выше](https://www.python.org/downloads/)
 * [Visual Studio Code](https://code.visualstudio.com/)

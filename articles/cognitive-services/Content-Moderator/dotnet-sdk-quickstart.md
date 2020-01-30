@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: content-moderator
 ms.topic: quickstart
-ms.date: 10/25/2019
+ms.date: 01/27/2020
 ms.author: pafarley
-ms.openlocfilehash: 52f00b1c35daab142e4131c60110aa0ed686a6bd
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: dccd2ebb6ac2c11e19e986d39eabda5f0ab6a8fc
+ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75382061"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76774290"
 ---
 # <a name="quickstart-content-moderator-client-library-for-net"></a>Краткое руководство. Клиентская библиотека Content Moderator для .NET
 
@@ -29,7 +29,7 @@ ms.locfileid: "75382061"
 
 [Справочная документация](https://docs.microsoft.com/dotnet/api/overview/azure/cognitiveservices/client/contentmoderator?view=azure-dotnet) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/cognitiveservices/Vision.ContentModerator) | [Пакет (NuGet)](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.ContentModerator/) | [Примеры](https://docs.microsoft.com/azure/cognitive-services/content-moderator/samples-dotnet)
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 * Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/).
 * Текущая версия [.NET Core](https://dotnet.microsoft.com/download/dotnet-core).
@@ -96,7 +96,7 @@ dotnet add package Microsoft.Azure.CognitiveServices.ContentModerator --version 
 
 Следующие классы обрабатывают некоторые основные функции пакета SDK .NET для Content Moderator.
 
-|Имя|Description|
+|Имя|Описание|
 |---|---|
 |[ContentModeratorClient](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.contentmoderator.contentmoderatorclient?view=azure-dotnet)|Этот класс требуется для всех функций Content Moderator. Вы создаете его экземпляр с информацией о подписке и используете его для создания экземпляров других классов.|
 |[ImageModeration](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.contentmoderator.imagemoderation?view=azure-dotnet)|Этот класс предоставляет функции для анализа изображений на наличие содержимого для взрослых, личной информации или лиц людей.|
@@ -274,7 +274,6 @@ dotnet run
 * [Azure CLI](../cognitive-services-apis-create-account-cli.md#clean-up-resources)
 
 ## <a name="next-steps"></a>Дальнейшие действия
-
 
 Из этого краткого руководстве вы узнали, как модерировать содержимое с помощью библиотеки .NET для Content Moderator. Теперь узнайте больше о модерации изображений или другого мультимедиа, прочитав концептуальное руководство.
 

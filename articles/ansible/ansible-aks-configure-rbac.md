@@ -4,14 +4,14 @@ description: Узнайте, как с помощью Ansible настроить
 keywords: ansible, azure, devops, bash, cloudshell, сборник схем, aks, контейнер, aks, kubernetes, azure active directory, rbac
 ms.topic: tutorial
 ms.date: 04/30/2019
-ms.openlocfilehash: 1be123eb06bd2679169478daf27a7148d2a8b055
-ms.sourcegitcommit: 28688c6ec606ddb7ae97f4d0ac0ec8e0cd622889
+ms.openlocfilehash: 5fac42383ee56318cc4b8f39323c02d05853dbb6
+ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2019
-ms.locfileid: "74156868"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76836972"
 ---
-# <a name="tutorial-configure-role-based-access-control-rbac-roles-in-azure-kubernetes-service-aks-using-ansible"></a>Руководство по настройке ролей RBAC (управление доступом на основе ролей) в Службе Azure Kubernetes (AKS) с помощью Ansible
+# <a name="tutorial-configure-role-based-access-control-rbac-roles-in-azure-kubernetes-service-aks-using-ansible"></a>Руководство. настройке ролей RBAC (управление доступом на основе ролей) в Службе Azure Kubernetes (AKS) с помощью Ansible
 
 [!INCLUDE [ansible-28-note.md](../../includes/ansible-28-note.md)]
 
@@ -119,11 +119,11 @@ ms.locfileid: "74156868"
 
 Чтобы создать привязку RBAC, сначала необходимо получить идентификатор объекта Azure AD. 
 
-1. Войдите на [портале Azure](https://go.microsoft.com/fwlink/p/?LinkID=525040).
+1. Войдите на [портал Azure](https://go.microsoft.com/fwlink/p/?LinkID=525040).
 
 1. В поле поиска в верхней части страницы введите `Azure Active Directory`. 
 
-1. Щелкните `Enter`.
+1. Нажмите кнопку `Enter`.
 
 1. В меню **Управление** выберите **Пользователи**.
 
@@ -156,7 +156,7 @@ subjects:
   name: <your-aad-account>
 ```
 
-Замените заполнитель `&lt;your-aad-account>` [идентификатором объекта](#get-the-azure-ad-object-id) клиента Azure AD.
+Замените заполнитель `<your-aad-account>`[идентификатором объекта](#get-the-azure-ad-object-id) клиента Azure AD.
 
 Сохраните приведенный ниже сборник схем, который развертывает новые роли в AKS, как `aks-kube-deploy.yml`.
 
@@ -263,7 +263,7 @@ aks-nodepool1-33413200-2   Ready    agent   49m   v1.12.6
 ansible-playbook cleanup.yml
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Документация по Ansible в Azure](/azure/ansible/)

@@ -13,13 +13,12 @@ ms.workload: identity
 ms.date: 07/16/2019
 ms.author: jmprieur
 ms.custom: aaddev, identityplatformtop40
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: edcfe4d7dff5d84ceaf07a8aafd5f9b485308bd5
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: 6f7e2380bff7d6d3e6fafd1b3d44b65de972e57d
+ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74920673"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76703394"
 ---
 # <a name="quickstart-acquire-a-token-and-call-microsoft-graph-api-using-console-apps-identity"></a>Краткое руководство. Получение маркера безопасности и вызов API Microsoft Graph из консольного приложения с помощью удостоверения приложения
 
@@ -38,16 +37,16 @@ ms.locfileid: "74920673"
 >
 > У вас есть два варианта запуска приложения, используемого в этом кратком руководстве: оперативно (вариант 1) и вручную (вариант 2).
 >
-> ### <a name="option-1-register-and-auto-configure-your-app-and-then-download-your-code-sample"></a>Вариант 1. Регистрация и автоматическая настройка приложения, а затем скачивание примера кода
+> ### <a name="option-1-register-and-auto-configure-your-app-and-then-download-your-code-sample"></a>Вариант 1. Регистрация и автоматическая настройка приложения, а затем скачивание примера кода
 >
 > 1. Откройте на [портале Azure новую панель регистрации приложений](https://portal.azure.com/?Microsoft_AAD_RegisteredApps=true#blade/Microsoft_AAD_RegisteredApps/applicationsListBlade/quickStartType/DotNetCoreDaemonQuickstartPage/sourceType/docs).
 > 1. Введите имя приложения и нажмите кнопку **Зарегистрировать**.
 > 1. Следуйте инструкциям, чтобы быстро скачать и автоматически настроить новое приложение.
 >
-> ### <a name="option-2-register-and-manually-configure-your-application-and-code-sample"></a>Вариант 2. Регистрация и настройка приложения и примера кода вручную
+> ### <a name="option-2-register-and-manually-configure-your-application-and-code-sample"></a>Вариант 2. Регистрация и настройка приложения и примера кода вручную
 
 > [!div renderon="docs"]
-> #### <a name="step-1-register-your-application"></a>Шаг 1. Регистрация приложения
+> #### <a name="step-1-register-your-application"></a>Шаг 1. Регистрация приложения
 > Чтобы зарегистрировать приложение и добавить сведения о его регистрации в решение вручную, сделайте следующее:
 >
 > 1. Войдите на [портал Azure](https://portal.azure.com) с помощью личной учетной записи Майкрософт либо рабочей или учебной учетной записи.
@@ -96,7 +95,7 @@ ms.locfileid: "74920673"
     > > В этом кратком руководстве поддерживается Enter_the_Supported_Account_Info_Here.
     
     > [!div renderon="docs"]
-    >> Описание
+    >> Где:
     >> * `Enter_the_Application_Id_Here` — это **идентификатор приложения (клиента)** , которое вы зарегистрировали.
     >> * `Enter_the_Tenant_Id_Here` — замените это значение на **идентификатор клиента** или **имя клиента** (например, contoso.microsoft.com).
     >> * `Enter_the_Client_Secret_Here` — замените это значение на секрет клиента, созданный на шаге 1.
@@ -128,7 +127,7 @@ https://login.microsoftonline.com/Enter_the_Tenant_Id_Here/adminconsent?client_i
 ```
 
 > [!div renderon="docs"]
->> Описание
+>> Где:
 >> * `Enter_the_Tenant_Id_Here` — замените это значение на **идентификатор клиента** или **имя клиента** (например, contoso.microsoft.com).
 >> * `Enter_the_Application_Id_Here` — это **идентификатор приложения (клиента)** , которое вы зарегистрировали.
 
@@ -144,7 +143,7 @@ cd {ProjectFolder}\daemon-console\1-Call-Graph
 dotnet run
 ```
 
-> Описание
+> Где:
 > * *{ProjectFolder}* — это папка, куда вы извлекли ZIP-файл. Например, **C:\Azure-Samples\active-directory-dotnetcore-daemon-v2**.
 
 В результате вы увидите список пользователей в каталоге Azure AD.
@@ -189,7 +188,7 @@ app = ConfidentialClientApplicationBuilder.Create(config.ClientId)
 );
 ```
 
-> | Описание ||
+> | Где: ||
 > |---------|---------|
 > | `config.ClientSecret` | Секрет клиента, созданный для приложения на портале Azure. |
 > | `config.ClientId` | **Идентификатор приложения (клиента)** , зарегистрированного на портале Azure. Это значение можно найти на странице приложения **Обзор** на портале Azure. |
@@ -206,7 +205,7 @@ result = await app.AcquireTokenForClient(scopes)
                   .ExecuteAsync();
 ```
 
-> |Описание| |
+> |Где:| |
 > |---------|---------|
 > | `scopes` | Содержит запрошенные области. Для конфиденциальных клиентов следует использовать формат, аналогичный `{Application ID URI}/.default`, который указывает, что запрашиваемые области — это те, которые статически определены в объекте приложения, заданном на портале Azure (для Microsoft Graph `{Application ID URI}` указывает на `https://graph.microsoft.com`). Для пользовательских веб-API `{Application ID URI}` определяется в разделе **Предоставление API** в разделе регистрации приложения (предварительная версия) на портале Azure. |
 
@@ -214,7 +213,7 @@ result = await app.AcquireTokenForClient(scopes)
 
 [!INCLUDE [Help and support](../../../includes/active-directory-develop-help-support-include.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об управляющих программы см. на главной странице сценария.
 

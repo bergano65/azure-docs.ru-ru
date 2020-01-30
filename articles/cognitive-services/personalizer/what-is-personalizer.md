@@ -10,12 +10,12 @@ ms.subservice: personalizer
 ms.topic: overview
 ms.date: 01/21/2020
 ms.author: diberry
-ms.openlocfilehash: 756363d0c46dee6f7d0037fda48ab22dbdaeb0b0
-ms.sourcegitcommit: 38b11501526a7997cfe1c7980d57e772b1f3169b
+ms.openlocfilehash: 685e4f841ba077c81f46a27af8040fa6c57c0021
+ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76514311"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76846216"
 ---
 # <a name="what-is-personalizer"></a>Что такое служба "Персонализатор"?
 
@@ -99,6 +99,6 @@ ms.locfileid: "76514311"
 * [Что такое обучение с подкреплением?](concepts-reinforcement-learning.md)
 * [Сведения о функциях и действиях для запроса ранжирования](concepts-features.md)
 * [Определение оценки для запроса вознаграждения](concept-rewards.md)
-* [Краткие руководства]()
-* [Руководство]()
+* [Краткие руководства](sdk-learning-loop.md)
+* [Руководство](tutorial-use-azure-notebook-generate-loop-data.md)
 * [Использование интерактивной демонстрации](https://personalizationdemo.azurewebsites.net/)

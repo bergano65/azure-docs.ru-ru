@@ -1,6 +1,6 @@
 ---
-title: Краткое руководство. Как использовать очереди Служебной шины Azure с Ruby
-description: Краткое руководство. Узнайте, как использовать очереди служебной шины в Azure. Примеры кода написаны на Ruby.
+title: Как использовать очереди Служебной шины Azure с Ruby
+description: В этом руководстве описано, как создавать приложения Ruby для отправки и получения сообщений через очередь Служебной шины.
 services: service-bus-messaging
 documentationcenter: ruby
 author: axisc
@@ -12,14 +12,14 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: ruby
 ms.topic: quickstart
-ms.date: 11/05/2019
+ms.date: 01/24/2020
 ms.author: aschhab
-ms.openlocfilehash: 09fdc58254d260b6ffeff958b6bbda50332adfac
-ms.sourcegitcommit: bc7725874a1502aa4c069fc1804f1f249f4fa5f7
+ms.openlocfilehash: a699543bb442e7c57d57e72acb2cdf6ac40159c1
+ms.sourcegitcommit: b5d646969d7b665539beb18ed0dc6df87b7ba83d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73718772"
+ms.lasthandoff: 01/26/2020
+ms.locfileid: "76760595"
 ---
 # <a name="quickstart-how-to-use-service-bus-queues-with-ruby"></a>Краткое руководство. Как использовать очереди служебной шины с Ruby
 
@@ -100,7 +100,7 @@ azure_service_bus_service.delete_queue_message(message)
 > [!NOTE]
 > Вы можете управлять ресурсами служебной шины с помощью [обозревателя служебной шины](https://github.com/paolosalvatori/ServiceBusExplorer/). Обозреватель служебной шины позволяет без труда подключаться к пространству имен служебной шины и управлять сущностями обмена сообщениями. Средство предоставляет дополнительные возможности, например функции импорта и экспорта или возможность проверять разделы, очереди, подписки, службы ретрансляции, центры уведомлений и концентраторы событий. 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Вы узнали основные сведения об очередях служебной шины. Для получения дополнительных сведений используйте следующие ссылки.
 
 * Обзор [очередей, разделов и подписок](service-bus-queues-topics-subscriptions.md).

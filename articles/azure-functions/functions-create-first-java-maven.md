@@ -5,12 +5,12 @@ author: rloutlaw
 ms.topic: quickstart
 ms.date: 08/10/2018
 ms.custom: mvc, devcenter, seo-java-july2019, seo-java-august2019, seo-java-september2019
-ms.openlocfilehash: ef81ff1d3d42e3c9e2ba5d4187f5b5805d35d900
-ms.sourcegitcommit: 5925df3bcc362c8463b76af3f57c254148ac63e3
+ms.openlocfilehash: 813e65eadf9f54f7a0ac148681b25988ed6950b9
+ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75562040"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76845451"
 ---
 # <a name="quickstart-use-java-and-maven-to-create-and-publish-a-function-to-azure"></a>Краткое руководство. Создание и публикация функции в Azure с помощью Java и Maven
 
@@ -21,7 +21,7 @@ ms.locfileid: "75562040"
 > You can also create a Kotlin-based Azure Functions project by using the azure-functions-kotlin-archetype instead. Visit the [GitHub repository](https://github.com/microsoft/azure-maven-archetypes/tree/develop/azure-functions-kotlin-archetype) for more information.
 -->
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Для разработки функций с помощью Java, должны быть установлены следующие компоненты:
 
@@ -29,9 +29,8 @@ ms.locfileid: "75562040"
 - [Apache Maven](https://maven.apache.org) 3.0 или более поздней версии.
 - [Azure CLI]
 - [Azure Functions Core Tools](./functions-run-local.md#v2) 2.6.666 или более поздней версии.
-- Подписка Azure.
 
-[!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
+Вам также потребуется действующая подписка Azure. [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
 
 > [!IMPORTANT]
@@ -68,7 +67,7 @@ mvn archetype:generate ^
 
 Maven запрашивает значения, которые позволят завершить создание проекта развертывания. Предоставьте следующие значения в ответ на соответствующие запросы:
 
-| Значение | Description |
+| Значение | Описание |
 | ----- | ----------- |
 | **groupId** | Это значение уникально идентифицирует проект среди всех остальных. Оно должно соответствовать [правилам именования пакетов](https://docs.oracle.com/javase/specs/jls/se6/html/packages.html#7.7) для Java. В примерах, приведенных в этом кратком руководстве, используется `com.fabrikam.functions`. |
 | **artifactId** | Это значение содержит имя JAR-файла, без номера версии. В примерах, приведенных в этом кратком руководстве, используется `fabrikam-functions`. |

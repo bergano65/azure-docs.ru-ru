@@ -2,14 +2,15 @@
 title: Настройка аварийного восстановления виртуальной машины Azure с помощью Azure Site Recovery
 description: Сведения о том, как настроить аварийное восстановление виртуальных машин Azure в другой регион Azure с помощью службы Azure Site Recovery.
 ms.topic: tutorial
-ms.date: 01/16/2020
+ms.date: 1/24/2020
+ms.author: raynew
 ms.custom: mvc
-ms.openlocfilehash: 7d78064285057f6abd91c3ca95e01ec86f1a1a39
-ms.sourcegitcommit: d29e7d0235dc9650ac2b6f2ff78a3625c491bbbf
+ms.openlocfilehash: 979b390f65363b43f33ce2f09d26844c3cc1a2e8
+ms.sourcegitcommit: b5d646969d7b665539beb18ed0dc6df87b7ba83d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76169334"
+ms.lasthandoff: 01/26/2020
+ms.locfileid: "76759795"
 ---
 # <a name="set-up-disaster-recovery-for-azure-vms"></a>Настройка аварийного восстановления для виртуальных машин Azure
 
@@ -75,17 +76,6 @@ ms.locfileid: "76169334"
 ### <a name="outbound-connectivity-for-ip-address-ranges"></a>Исходящие подключения для диапазонов IP-адресов
 
 Если вы используете группу безопасности сети (NSG), создайте правила NSG с тегом службы для доступа к службе хранилища Azure, Azure Active Directory, службе Site Recovery и ее данным мониторинга. [Подробнее](azure-to-azure-about-networking.md#outbound-connectivity-for-ip-address-ranges).
-
-> [!NOTE]
-> Рекомендуется всегда настраивать правила NSG с использованием тегов службы для исходящего доступа.
-
-Для управления исходящими подключениями по IP-адресу разрешите эти адреса в брандмауэре или прокси-сервере на основе IP-адресов, либо в правилах группы безопасности сети.
-
-- [Диапазоны IP-адресов центра обработки данных Microsoft Azure](https://www.microsoft.com/download/details.aspx?id=41653)
-- [Диапазоны IP-адресов центра обработки данных Microsoft Azure в Германии](https://www.microsoft.com/download/details.aspx?id=54770)
-- [Диапазоны IP-адресов центра обработки данных Microsoft Azure в Китае](https://www.microsoft.com/download/details.aspx?id=42064)
-- [URL-адреса и диапазоны IP-адресов Office 365](https://support.office.com/article/Office-365-URLs-and-IP-address-ranges-8548a211-3fe7-47cb-abb1-355ea5aa88a2#bkmk_identity)
-- [IP-адреса конечных точек службы Site Recovery](https://aka.ms/site-recovery-public-ips)
 
 ## <a name="verify-azure-vm-certificates"></a>Проверка сертификатов виртуальной машины Azure
 

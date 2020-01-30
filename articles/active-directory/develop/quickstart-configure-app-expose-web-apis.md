@@ -12,13 +12,12 @@ ms.date: 08/14/2019
 ms.author: ryanwi
 ms.custom: aaddev
 ms.reviewer: aragra, lenalepa, sureshja
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: a45b3ee9bf9cea71255ac9a83f970d2b6c72b67f
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.openlocfilehash: e005ba9c5458849863bd4668ffde1e0f6fb4bf91
+ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74966118"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76704227"
 ---
 # <a name="quickstart-configure-an-application-to-expose-web-apis"></a>Краткое руководство. Настройка приложения для предоставления интерфейсов веб-API
 
@@ -60,7 +59,7 @@ ms.locfileid: "74966118"
 
 1. Когда откроется страница **Добавить группу**, введите сведения данной области:
 
-    | Поле | ОПИСАНИЕ |
+    | Поле | Описание |
     |-------|-------------|
     | **Имя области** | Введите понятное имя для области.<br><br>Например, `Employees.Read.All`. |
     | **Кто может давать согласие** | Выберите, могут ли пользователи предоставлять согласие этой области или требуется согласие администратора. Выберите **Admins only** (Только администраторы) для более высокого уровня разрешений. |
@@ -69,7 +68,7 @@ ms.locfileid: "74966118"
 
     Если пользователи могут предоставлять согласие для области, также добавьте значения для следующих полей:
 
-    | Поле | ОПИСАНИЕ |
+    | Поле | Описание |
     |-------|-------------|
     | **Отображаемое имя согласия пользователя** | Введите понятное имя для области, которое увидят пользователи.<br><br>Например `Read-only access to your Employee records`. |
     | **Описание согласия пользователя** | Введите понятное описание области, которое увидят пользователи.<br><br>Например `Allow the application to have read-only access to your Employee data.`. |
@@ -125,7 +124,7 @@ ms.locfileid: "74966118"
 
 Дополнительные сведения о концепции манифеста приложения см. в статье [Основные сведения о манифесте приложения Azure Active Directory](reference-app-manifest.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о других кратких руководствах по управлению приложениями см. в следующих ресурсах:
 

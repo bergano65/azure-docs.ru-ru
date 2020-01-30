@@ -7,16 +7,16 @@ ms.subservice: security
 ms.custom: security
 ms.devlang: PowerShell
 ms.topic: sample
-author: ronitr
-ms.author: ronitr
+author: DavidTrigano
+ms.author: datrigan
 ms.reviewer: carlrab, vanto
 ms.date: 08/05/2019
-ms.openlocfilehash: 1dee8031b00e7d291844790fb86efd4d00075d87
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: f5e107058f983df98f7d14dbe1b41ce5a66f2535
+ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73691747"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76719982"
 ---
 # <a name="use-powershell-to-configure-sql-database-auditing-and-advanced-threat-protection"></a>Узнайте, как настроить аудит и Расширенную защита от угроз для Базы данных SQL с помощью PowerShell.
 
@@ -44,7 +44,7 @@ Remove-AzResourceGroup -ResourceGroupName $resourcegroupname
 
 Этот скрипт использует следующие команды. Для каждой команды в таблице приведены ссылки на соответствующую документацию.
 
-| Команда | Примечания |
+| Get-Help | Примечания |
 |---|---|
 | [New-AzResourceGroup](/powershell/module/az.resources/new-azresourcegroup) | Создает группу ресурсов, в которой хранятся все ресурсы. |
 | [New-AzSqlServer](/powershell/module/az.sql/new-azsqlserver) | Создает сервер Базы данных SQL, на котором размещена отдельная база данных или пул эластичных баз данных. |
@@ -55,7 +55,7 @@ Remove-AzResourceGroup -ResourceGroupName $resourcegroupname
 | [Remove-AzResourceGroup](/powershell/module/az.resources/remove-azresourcegroup) | Удаляет группу ресурсов со всеми вложенными ресурсами. |
 |||
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о Azure PowerShell см. в [документации по Azure PowerShell](/powershell/azure/overview).
 

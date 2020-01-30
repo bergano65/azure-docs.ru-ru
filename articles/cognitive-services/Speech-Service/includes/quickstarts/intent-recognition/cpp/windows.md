@@ -10,14 +10,14 @@ ms.date: 01/02/2020
 ms.topic: include
 ms.author: erhopf
 zone_pivot_groups: programming-languages-set-two
-ms.openlocfilehash: d421de69f856790b89c866a6c8b7221e9214aef4
-ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
+ms.openlocfilehash: b141fcdb2aacc8654999d023c4174c7eb9bc177f
+ms.sourcegitcommit: b5d646969d7b665539beb18ed0dc6df87b7ba83d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75772890"
+ms.lasthandoff: 01/26/2020
+ms.locfileid: "76761455"
 ---
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Необходимые условия:
 
@@ -39,19 +39,19 @@ ms.locfileid: "75772890"
 
 Добавим код, который выступает в качестве основы для нашего проекта. Имейте в виду, что вы создали асинхронный метод `recognizeIntent()`.
 
-[!code-cpp[](~/samples-cognitive-services-speech-sdk/quickstart/cpp/windows/intent-recognition/helloworld/helloworld.cpp?range=6-16,73-81)]
+[!code-cpp[](~/samples-cognitive-services-speech-sdk/quickstart/cpp/windows/intent-recognition/helloworld/helloworld.cpp?range=6-16,72-80)]
 
 ## <a name="create-a-speech-configuration"></a>Создание конфигурации службы "Речь"
 
-Прежде чем инициализировать объект `IntentRecognizer`, необходимо создать конфигурацию, использующую ключ и расположение ресурса прогнозирования LUIS. 
+Прежде чем инициализировать объект `IntentRecognizer`, необходимо создать конфигурацию, использующую ключ и расположение ресурса прогнозирования LUIS.
 
 > [!IMPORTANT]
-> Ключ для начала работы и ключ разработки не будут работать. Необходимо использовать ранее созданные ключ прогнозирования и расположение. Дополнительные сведения см. в разделе [Создание приложения LUIS для распознавания намерений](#create-a-luis-app-for-intent-recognition). 
+> Ключ для начала работы и ключ разработки не будут работать. Необходимо использовать ранее созданные ключ прогнозирования и расположение. Дополнительные сведения см. в разделе [Создание приложения LUIS для распознавания намерений](#create-a-luis-app-for-intent-recognition).
 
 Вставьте код в метод `recognizeIntent()`. Обязательно обновите следующие значения:
 
-* Замените `"YourLanguageUnderstandingSubscriptionKey"` ключом прогнозирования LUIS. 
-* Замените `"YourLanguageUnderstandingServiceRegion"` расположением LUIS. 
+* Замените `"YourLanguageUnderstandingSubscriptionKey"` ключом прогнозирования LUIS.
+* Замените `"YourLanguageUnderstandingServiceRegion"` расположением LUIS.
 
 >[!TIP]
 > Если вам нужна помощь с поиском этих значений, перейдите к разделу [Создание приложения LUIS для распознавания намерений](#create-a-luis-app-for-intent-recognition).
@@ -70,14 +70,14 @@ ms.locfileid: "75772890"
 
 ## <a name="add-a-languageunderstandingmodel-and-intents"></a>Добавление модели LanguageUnderstandingModel и намерений
 
-Необходимо сопоставить объект `LanguageUnderstandingModel` с распознавателем намерений и добавить намерения, которые необходимо распознать. Мы будем использовать намерения из предварительно созданной предметной области для системы домашней автоматики. 
+Необходимо сопоставить объект `LanguageUnderstandingModel` с распознавателем намерений и добавить намерения, которые необходимо распознать. Мы будем использовать намерения из предварительно созданной предметной области для системы домашней автоматики.
 
-Вставьте приведенный ниже код под строкой вашего `IntentRecognizer`. Обязательно замените `"YourLanguageUnderstandingAppId"` идентификатором приложения LUIS. 
+Вставьте приведенный ниже код под строкой вашего `IntentRecognizer`. Обязательно замените `"YourLanguageUnderstandingAppId"` идентификатором приложения LUIS.
 
 >[!TIP]
 > Если вам нужна помощь с поиском этих значений, перейдите к разделу [Создание приложения LUIS для распознавания намерений](#create-a-luis-app-for-intent-recognition).
 
-[!code-cpp[](~/samples-cognitive-services-speech-sdk/quickstart/cpp/windows/intent-recognition/helloworld/helloworld.cpp?range=31-34)]
+[!code-cpp[](~/samples-cognitive-services-speech-sdk/quickstart/cpp/windows/intent-recognition/helloworld/helloworld.cpp?range=31-33)]
 
 ## <a name="recognize-an-intent"></a>Распознавание намерения
 
@@ -85,7 +85,7 @@ ms.locfileid: "75772890"
 
 Вставьте приведенный ниже код под строкой модели:
 
-[!code-cpp[](~/samples-cognitive-services-speech-sdk/quickstart/cpp/windows/intent-recognition/helloworld/helloworld.cpp?range=44)]
+[!code-cpp[](~/samples-cognitive-services-speech-sdk/quickstart/cpp/windows/intent-recognition/helloworld/helloworld.cpp?range=43)]
 
 ## <a name="display-the-recognition-results-or-errors"></a>Отображение результатов распознавания (или ошибок)
 
@@ -93,7 +93,7 @@ ms.locfileid: "75772890"
 
 Вставьте код ниже под строкой `auto result = recognizer->RecognizeOnceAsync().get();`.
 
-[!code-cpp[](~/samples-cognitive-services-speech-sdk/quickstart/cpp/windows/intent-recognition/helloworld/helloworld.cpp?range=47-72)]
+[!code-cpp[](~/samples-cognitive-services-speech-sdk/quickstart/cpp/windows/intent-recognition/helloworld/helloworld.cpp?range=46-71)]
 
 ## <a name="check-your-code"></a>Проверка кода
 
@@ -102,7 +102,7 @@ ms.locfileid: "75772890"
 > [!NOTE]
 > Мы добавили несколько комментариев к этой версии.
 
-[!code-cpp[](~/samples-cognitive-services-speech-sdk/quickstart/cpp/windows/intent-recognition/helloworld/helloworld.cpp?range=6-81)]
+[!code-cpp[](~/samples-cognitive-services-speech-sdk/quickstart/cpp/windows/intent-recognition/helloworld/helloworld.cpp?range=6-79)]
 
 ## <a name="build-and-run-your-app"></a>Создание и запуск приложения
 

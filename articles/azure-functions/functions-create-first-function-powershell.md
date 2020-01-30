@@ -6,12 +6,12 @@ ms.author: jaiello
 ms.reviewer: glenga
 ms.date: 04/25/2019
 ms.topic: quickstart
-ms.openlocfilehash: 8cc89805ce53c141ff2c012fccb3c01ff2e9db49
-ms.sourcegitcommit: d29e7d0235dc9650ac2b6f2ff78a3625c491bbbf
+ms.openlocfilehash: b1a1caf985e9693e261684c1edb21184071ebfc8
+ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76167901"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76845904"
 ---
 # <a name="create-your-first-powershell-function-in-azure"></a>Создание первой функции PowerShell в Azure
 
@@ -67,36 +67,7 @@ ms.locfileid: "76167901"
 
 Visual Studio Code создает проект приложение-функция PowerShell в новой рабочей области. Этот проект содержит файлы конфигурации [host.json](functions-host-json.md) и [local.settings.json](functions-run-local.md#local-settings-file), которые применяются ко всем функциям в проекте. [Проект PowerShell](functions-reference-powershell.md#folder-structure) — аналогичен приложению-функции, работающему в Azure.
 
-## <a name="run-the-function-locally"></a>Локальное выполнение функции
-
-Основные инструменты Функций Azure интегрируются с Visual Studio Code, что дает возможность запускать и отлаживать проект Функций Azure локально.  
-
-1. Чтобы отладить свою функцию, вставьте вызов командлета [`Wait-Debugger`] в код функции, прежде чем подключить отладчик, затем нажмите клавишу F5, чтобы запустить проект приложения-функции и подключить отладчик. Выходные данные основных инструментов отображаются на панели **Terminal** (Терминал).
-
-1. На панели **Terminal** (Терминал) скопируйте URL-адрес конечной точки функции, активируемой HTTP-запросом.
-
-    ![Локальные выходные данные в Azure](./media/functions-create-first-function-powershell/functions-vscode-f5.png)
-
-1. Добавьте строку запроса `?name=<yourname>` к этому URL-адресу, а затем используйте `Invoke-RestMethod` для выполнения запроса, как показано ниже.
-
-    ```powershell
-    PS > Invoke-RestMethod -Method Get -Uri http://localhost:7071/api/HttpTrigger?name=PowerShell
-    Hello PowerShell
-    ```
-
-    Вы также можете выполнить запрос GET в браузере.
-
-    Когда вы вызываете конечную точку HttpTrigger, не передавая `name` в качестве параметра запроса или в теле, функция возвращает ошибку [HttpStatusCode]::BadRequest. Когда вы просматриваете код в run.ps1, вы поймете, что эта ошибка возникла намеренно.
-
-1. Нажмите клавиши SHIFT+F5, чтобы остановить отладку.
-
-Убедившись, что функция выполняется правильно на локальном компьютере, опубликуйте проект в Azure.
-
-> [!NOTE]
-> Не забудьте удалить все вызовы `Wait-Debugger` перед публикацией своих функций в Azure. 
->
-> При создании приложения-функции в Azure будет запрашиваться только его имя. Другие значения определяются пользователем.
-> Задайте для параметра `azureFunctions.advancedCreation` значение `true`, чтобы получать запрос на ввод всех других значений.
+[!INCLUDE [functions-run-function-test-local-vs-code-ps](../../includes/functions-run-function-test-local-vs-code-ps.md)]
 
 [!INCLUDE [functions-publish-project-vscode](../../includes/functions-publish-project-vscode.md)]
 

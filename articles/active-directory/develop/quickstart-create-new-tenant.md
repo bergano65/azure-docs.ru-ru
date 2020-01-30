@@ -13,13 +13,12 @@ ms.date: 02/05/2019
 ms.author: ryanwi
 ms.reviewer: jmprieur
 ms.custom: aaddev, identityplatformtop40
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: b9d4e51e6242da90a1e7044e0c3a182ea59ad187
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: 860577938eab0f7561e9b66d0f58c9fc0d077b26
+ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74915107"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76704159"
 ---
 # <a name="quickstart-set-up-a-tenant"></a>Краткое руководство. Настройка клиента
 
@@ -71,7 +70,7 @@ ms.locfileid: "74915107"
 
 Чтобы приступить к созданию приложений, в которые выполняется вход под учетными записями социальных сетей и локальных учетных записей, необходимо создать клиент Azure AD B2C. Чтобы начать, перейдите к [созданию клиента Azure AD B2C](../../active-directory-b2c/tutorial-create-tenant.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Изучите краткое руководство по кодированию и начните выполнять проверку подлинности пользователей. 
 * Чтобы просмотреть более подробные примеры кода, ознакомьтесь с разделом документации **Руководства**.

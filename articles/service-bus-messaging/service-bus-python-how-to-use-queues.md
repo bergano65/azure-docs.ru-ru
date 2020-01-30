@@ -1,10 +1,9 @@
 ---
 title: Краткое руководство. Использование очередей Служебной шины Azure с Python
-description: Узнайте, как использовать очереди Служебной шины Azure с Python.
+description: Из этой статьи вы узнаете, как с помощью Python создавать очереди Служебной шины Azure, отправлять в них сообщения и получать сообщения из них.
 services: service-bus-messaging
 documentationcenter: python
 author: axisc
-manager: timlt
 editor: spelluru
 ms.assetid: b95ee5cd-3b31-459c-a7f3-cf8bcf77858b
 ms.service: service-bus-messaging
@@ -12,15 +11,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: python
 ms.topic: quickstart
-ms.date: 11/05/2019
+ms.date: 01/27/2020
 ms.author: aschhab
 ms.custom: seo-python-october2019
-ms.openlocfilehash: d0f579fcd82860380f1aaa651a61c0259d075a0d
-ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
+ms.openlocfilehash: aa9ffc48d9b1374fa510f450bab2c66641421446
+ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73748528"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76773492"
 ---
 # <a name="quickstart-use-azure-service-bus-queues-with-python"></a>Краткое руководство. Использование очередей Служебной шины Azure с Python
 
@@ -31,7 +30,7 @@ ms.locfileid: "73748528"
 Дополнительные сведения о библиотеках Служебной шины Azure для Python см. в [этой статье](/python/api/overview/azure/servicebus?view=azure-python).
 
 ## <a name="prerequisites"></a>Предварительные требования
-- Подписка Azure. Вы можете активировать [преимущества подписчика Visual Studio или MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A85619ABF) либо зарегистрироваться для получения [бесплатной учетной записи](https://azure.microsoft.com/free/?WT.mc_id=A85619ABF).
+- Подписка Azure. Вы можете активировать [преимущества подписчика Visual Studio или MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A85619ABF) или зарегистрироваться для получения [бесплатной учетной записи](https://azure.microsoft.com/free/?WT.mc_id=A85619ABF).
 - Пространство имен Служебной шины Azure, созданное с помощью инструкций в [руководстве по созданию раздела и подписок Служебной шины с помощью портала Azure](service-bus-quickstart-topics-subscriptions-portal.md). Скопируйте основную строку подключения из экрана **Политики общего доступа**. Она понадобится далее в этой статье. 
 - Python 3.4x или более поздней версии с установленным пакетом [Служебной шины Azure для Python][Python Azure Service Bus package]. Дополнительные сведения см. в [руководстве по установке Python](/azure/python/python-sdk-azure-install). 
 
@@ -120,7 +119,7 @@ with queue_client.get_receiver() as queue_receiver:
 > [!TIP]
 > Вы можете управлять ресурсами служебной шины с помощью [обозревателя служебной шины](https://github.com/paolosalvatori/ServiceBusExplorer/). Обозреватель Служебной шины позволяет без труда подключаться к пространству имен Служебной шины и управлять сущностями обмена сообщениями. Средство предоставляет дополнительные возможности, например функции импорта и экспорта и возможность проверять разделы, очереди, подписки, службы ретрансляции, центры уведомлений и концентраторы событий.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Вы ознакомились с основами использования очередей Служебной шины. Дополнительные сведения см. в статье [Очереди, разделы и подписки служебной шины][Queues, topics, and subscriptions].
 

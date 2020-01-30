@@ -10,18 +10,18 @@ ms.topic: quickstart
 ms.custom: mvc, seo-javascript-september2019, seo-javascript-october2019
 ms.date: 09/03/2019
 ms.author: mbaldwin
-ms.openlocfilehash: f005266b6e2e12a13f79b3f2007b1bbbafb4acef
-ms.sourcegitcommit: 9dec0358e5da3ceb0d0e9e234615456c850550f6
+ms.openlocfilehash: 1b5ebbcd3a891149a72b3dbe8cb19b3c8de528a1
+ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2019
-ms.locfileid: "72311559"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76773768"
 ---
 # <a name="quickstart-set-and-retrieve-a-secret-from-azure-key-vault-using-azure-cli"></a>Краткое руководство. Настройка и получение секрета из Azure Key Vault с помощью Azure CLI
 
 Из этого краткого руководства вы узнаете, как создать хранилище ключей в Azure Key Vault с помощью Azure CLI. Azure Key Vault — это облачная служба, которая работает как защищенное хранилище секретов. Вы можете безопасно хранить ключи, пароли, сертификаты и другие секреты. Дополнительные сведения о хранилище ключей см. в статье [обзора](key-vault-overview.md). Azure CLI используется для создания ресурсов Azure и управления ими с помощью скриптов и команд. После этого вы сохраните в нем секрет.
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
@@ -58,7 +58,7 @@ az keyvault create --name "Contoso-Vault2" --resource-group "ContosoResourceGrou
 
 В выходных данных командлета будут показаны свойства созданного Key Vault. Запишите значения двух указанных ниже свойств.
 
-- **Имя хранилища.** В этом примере используется имя **Contoso-Vault2**. Вы будете использовать это имя для выполнения других команд Key Vault.
+- **Имя хранилища.** В нашем примере это **Contoso-Vault2**. Вы будете использовать это имя для выполнения других команд Key Vault.
 - **URI хранилища**. В нашем примере это https://contoso-vault2.vault.azure.net/. Необходимо, чтобы приложения, использующие ваше хранилище через REST API, использовали этот URI.
 
 На этом этапе любые операции в этом хранилище ключей может выполнять только учетная запись Azure.
@@ -73,7 +73,7 @@ az keyvault create --name "Contoso-Vault2" --resource-group "ContosoResourceGrou
 az keyvault secret set --vault-name "Contoso-Vault2" --name "ExamplePassword" --value "hVFkk965BuUv"
 ```
 
-Теперь пароль, добавленный в Azure Key Vault, можно вызвать, используя его URI. Используйте **https://ContosoVault.vault.azure.net/secrets/ExamplePassword** , чтобы получить текущую версию. 
+Теперь пароль, добавленный в Azure Key Vault, можно вызвать, используя его URI. Используйте **https://Contoso-Vault2.vault.azure.net/secrets/ExamplePassword** , чтобы получить текущую версию. 
 
 Чтобы просмотреть содержащееся в секрете значение в виде обычного текста, введите следующее:
 
@@ -92,7 +92,7 @@ az keyvault secret show --name "ExamplePassword" --vault-name "Contoso-Vault2"
 az group delete --name ContosoResourceGroup
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 С помощью этого краткого руководства вы создали Key Vault и сохранили в нем секрет. Дополнительные сведения о Key Vault и его интеграции в приложения см. в следующих статьях.
 

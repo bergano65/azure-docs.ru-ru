@@ -9,12 +9,12 @@ ms.custom: mvc
 ms.service: iot-pnp
 services: iot-pnp
 manager: philmea
-ms.openlocfilehash: 209c63207653e98967a5a66e36c0cae53b7e044f
-ms.sourcegitcommit: ec2eacbe5d3ac7878515092290722c41143f151d
+ms.openlocfilehash: 720b3e56e1dd45bd2940b337adefa6ebdaa2e5a1
+ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75550338"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76719727"
 ---
 # <a name="tutorial-create-and-test-a-device-capability-model-using-visual-studio-code"></a>Руководство. созданию и тестированию модели возможностей устройства с помощью Visual Studio Code
 
@@ -22,7 +22,7 @@ ms.locfileid: "75550338"
 
 В разделе этого руководства, посвященном созданию каркаса кода, предполагается работа с ОС Windows.
 
-В этом руководстве описано следующее.
+В этом руководстве описано следующее:
 
 > [!div class="checklist"]
 > * создание модели возможностей устройства;
@@ -30,7 +30,7 @@ ms.locfileid: "75550338"
 > * реализация заглушек в созданном коде;
 > * выполнение кода для проверки взаимодействия с центром Интернета вещей.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с моделью возможностей устройства в этом учебнике вам потребуется следующее.
 
@@ -44,13 +44,13 @@ ms.locfileid: "75550338"
 Для создания кода на языке C для этого учебника в среде ОС Windows вам потребуется следующее.
 
 * [Средства сборки для Visual Studio](https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=BuildTools&rel=16) с рабочими нагрузками **средств сборки C++** и **компонентов диспетчера пакетов NuGet**. Допускается также [Visual Studio 2019, Visual Studio 2017 или Visual Studio 2015 (выпуски Community, Professional или Enterprise)](https://visualstudio.microsoft.com/downloads/) с теми же рабочими нагрузками.
-* [Git](https://git-scm.com/download)
+* [Git](https://git-scm.com/download);
 * [CMake](https://cmake.org/download/).
 
 Для проверки кода устройства в этом руководстве вам потребуется следующее.
 
 * [Обозреватель Azure IoT](https://github.com/Azure/azure-iot-explorer/releases).
-* Подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+* Подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
@@ -233,7 +233,7 @@ ms.locfileid: "75550338"
           "name": "deviceinfo"
         }
       ],
-      "@context": "http://azureiot.com/v1/contexts/CapabilityModel.json"
+      "@context": "http://azureiot.com/v1/contexts/IoTModel.json"
     }
     ```
 

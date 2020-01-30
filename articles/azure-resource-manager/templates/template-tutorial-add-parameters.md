@@ -5,18 +5,18 @@ author: mumian
 ms.date: 10/04/2019
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: 28c171dfa067ec9b3eff2e0d7e5d5dd0a0c274c0
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 89101a96f4fc228e2d5c45d67e10b52ac5d8aa11
+ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75471689"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76773206"
 ---
 # <a name="tutorial-add-parameters-to-your-resource-manager-template"></a>Руководство. добавлению параметров в шаблон Resource Manager
 
 Из [предыдущего учебника](template-tutorial-add-resource.md) вы узнали, как добавлять учетную запись хранения в шаблон и развертывать ее. Из этого учебника вы узнаете, как улучшить шаблон, добавив в него параметры. Для работы с этим учебником потребуется около **14 минут**.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Советуем выполнить инструкции из [учебника по ресурсам](template-tutorial-add-resource.md), но это необязательно.
 
@@ -26,7 +26,7 @@ ms.locfileid: "75471689"
 
 В конце предыдущего учебника шаблон содержал следующий код JSON:
 
-[!code-json[](~/resourcemanager-templates/get-started-with-templates/add-storage/azuredeploy.json)]
+:::code language="json" source="~/resourcemanager-templates/get-started-with-templates/add-storage/azuredeploy.json":::
 
 Возможно, вы заметили, что существует проблема с этим шаблоном. Имя учетной записи хранения жестко запрограммировано. Этот шаблон можно использовать только для развертывания одной и той же учетной записи хранения каждый раз. Чтобы развернуть учетную запись хранения с другим именем, вам нужно будет создать шаблон. Это, очевидно, не практичный способ автоматизации развертываний.
 
@@ -36,7 +36,7 @@ ms.locfileid: "75471689"
 
 Скопируйте весь файл и замените шаблон на его содержимое.
 
-[!code-json[](~/resourcemanager-templates/get-started-with-templates/add-name/azuredeploy.json?range=1-26&highlight=4-10,15)]
+:::code language="json" source="~/resourcemanager-templates/get-started-with-templates/add-name/azuredeploy.json" range="1-26" highlight="4-10,15":::
 
 ## <a name="deploy-template"></a>Развертывание шаблона
 
@@ -80,7 +80,7 @@ az group deployment create \
 
 Предыдущий шаблон всегда развертывал учетную запись хранения Standard_LRS. Возможно, вам потребуется гибкость для развертывания различных номеров SKU в зависимости от среды. В следующем примере показаны изменения для добавления параметра для номера SKU. Скопируйте весь файл и вставьте в шаблон.
 
-[!code-json[](~/resourcemanager-templates/get-started-with-templates/add-sku/azuredeploy.json?range=1-40&highlight=10-23,32)]
+:::code language="json" source="~/resourcemanager-templates/get-started-with-templates/add-sku/azuredeploy.json" range="1-40" highlight="10-23,32":::
 
 Параметр **storageSKU** имеет значение по умолчанию. Оно используется, если во время развертывания не указано значение. В нем также содержится список допустимых значений. Они соответствуют значениям, требуемым для создания учетной записи хранения. Вы не хотите, чтобы пользователи шаблона передавали не рабочие номера SKU.
 

@@ -14,13 +14,12 @@ ms.date: 07/17/2019
 ms.author: ryanwi
 ms.reviewer: jmprieur
 ms.custom: aaddev
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0f1aca48c547fc8c298128b35d9c571512fcbdf8
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.openlocfilehash: c35e44dff321c4a2f568855dacd827001a57f64a
+ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74965948"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76703819"
 ---
 # <a name="quickstart-sign-in-users-and-call-the-microsoft-graph-api-from-a-net-desktop-wpf-app"></a>Краткое руководство. Вход пользователей и вызов API Microsoft Graph из классического приложения .NET (WPF)
 
@@ -28,4 +27,4 @@ ms.locfileid: "74965948"
 
 [Библиотека аутентификации Майкрософт (MSAL)](msal-overview.md) позволяет разработчикам получать маркеры из конечной точки платформы удостоверений Майкрософт, чтобы получить доступ к защищенным веб-API. Библиотека проверки подлинности Active Directory (ADAL) интегрируется с конечной точкой Azure AD для разработчиков (версия 1.0), а MSAL интегрируется с конечной точкой платформы удостоверений Майкрософт (версия 2.0).
 
-С новыми классическими приложениями мы рекомендуем использовать платформу удостоверений Майкрософт (версия 2.0) и MSAL для получения маркеров и доступа к защищенным веб-API: [Краткое руководство Получение маркера безопасности и вызов API Microsoft Graph из классического приложения Windows](quickstart-v2-windows-desktop.md)
+С новыми классическими приложениями мы рекомендуем использовать платформу удостоверений Майкрософт (версия 2.0) и MSAL для получения маркеров и доступа к защищенным веб-API: [Краткое руководство. Получение маркера безопасности и вызов API Microsoft Graph из классического приложения Windows](quickstart-v2-windows-desktop.md)

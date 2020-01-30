@@ -13,13 +13,12 @@ ms.date: 08/30/2019
 ms.author: jmprieur
 ms.reviewer: oldalton
 ms.custom: aaddev, identityplatformtop40
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: a0aa97f2cb54295d9403ec332eb9c0ada684df12
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: a3a1b424cdf3c1897efce36b4499de967f85bb1e
+ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75423407"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76701218"
 ---
 # <a name="sign-in-users-and-call-the-microsoft-graph-from-an-ios-or-macos-app"></a>Вход пользователей и вызов Microsoft Graph из приложения iOS или macOS
 
@@ -45,7 +44,7 @@ ms.locfileid: "75423407"
 
 Этот учебник применим к приложениям iOS и macOS. Обратите внимание, что некоторые шаги для этих двух платформ отличаются. 
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 - Для сборки приложения в этом руководстве требуется XCode версии 10.x или более поздней. Скачать XCode можно с [сайта iTunes](https://geo.itunes.apple.com/us/app/xcode/id497799835?mt=12 "URL-адрес скачивания XCode").
 - Библиотека проверки подлинности Майкрософт ([MSAL.framework](https://github.com/AzureAD/microsoft-authentication-library-for-objc)). Вы можете использовать диспетчер зависимостей или добавить библиотеку вручную. В инструкциях ниже описано как это сделать.

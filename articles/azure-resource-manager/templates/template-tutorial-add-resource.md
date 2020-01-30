@@ -5,18 +5,18 @@ author: mumian
 ms.date: 10/04/2019
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: 924c369465bf53ea5f58de906bd0894ce822cac3
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 8686b15501e267ab23efe654d28a3e67369a8d03
+ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75471679"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76765593"
 ---
 # <a name="tutorial-add-a-resource-to-your-resource-manager-template"></a>Руководство. добавлению ресурсов в шаблон Azure Resource Manager
 
 Из [предыдущего учебника](template-tutorial-create-first-template.md) вы узнали, как создавать пустой шаблон и развертывать его. Теперь все готово для развертывания ресурса. В этом учебнике вы узнаете, как добавить учетную запись хранения. Для работы с этим учебником потребуется около **9 минут**.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Советуем выполнить инструкции из [ознакомительного учебника по шаблонам](template-tutorial-create-first-template.md), но это необязательно.
 
@@ -28,7 +28,7 @@ ms.locfileid: "75471679"
 
 Замените **{provide-unique-name}** на уникальное имя учетной записи хранения. Имя учетной записи хранения должно быть уникальным в среде Azure. Имя должно содержать только строчные буквы или цифры. Оно должно содержать не больше 24 знаков. Вы можете попробовать использовать шаблон именования (например, **store1**) в качестве префикса, а затем добавить свои инициалы и сегодняшнюю дату. Например, имя, которое вы используете, может выглядеть таким образом: **store1abc09092019**.
 
-[!code-json[](~/resourcemanager-templates/get-started-with-templates/add-storage/azuredeploy.json?range=1-19&highlight=5-17)]
+:::code language="json" source="~/resourcemanager-templates/get-started-with-templates/add-storage/azuredeploy.json" range="1-19" highlight="5-17":::
 
 Подобрать уникальное имя для учетной записи хранения не так просто и не подходит для автоматизации больших развертываний. Далее в этой серии учебников вы будете использовать функции шаблонов, которые облегчат создание уникального имени.
 

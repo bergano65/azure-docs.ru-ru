@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: immersive-reader
 ms.topic: overview
-ms.date: 06/20/2019
+ms.date: 01/4/2020
 ms.author: metan
-ms.openlocfilehash: 3e6889cd5d26b88cedd6b110510cb89777252f54
-ms.sourcegitcommit: bc193bc4df4b85d3f05538b5e7274df2138a4574
+ms.openlocfilehash: 5acd6e4be178c7e645eb6855a79cd0f58303ba9a
+ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2019
-ms.locfileid: "73904365"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76846422"
 ---
 # <a name="what-is-immersive-reader"></a>Что собой представляет Иммерсивное средство чтения?
 
@@ -55,7 +55,7 @@ ms.locfileid: "73904365"
 
 Иммерсивное средство чтения — это автономное веб-приложение, которое при вызове с помощью пакета SDK иммерсивного средства чтения для JavaScript отображается поверх имеющегося веб-приложения с помощью `iframe`. При вызове API для запуска иммерсивного средства чтения вы указываете содержимое, которое необходимо отобразить в иммерсивном средстве чтения. Наш пакет SDK выполняет создание и стилизацию `iframe`, а также обмен данными с внутренней службой иммерсивного средства чтения, которая обрабатывает содержимое частей речи, преобразования текста в речь, перевода и т. д.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Начало работы с Иммерсивным средством чтения:
 

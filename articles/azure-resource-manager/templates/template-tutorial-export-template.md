@@ -5,18 +5,18 @@ author: mumian
 ms.date: 10/04/2019
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: 6c22a8e2b479ed7d3a225bc649d89f5302d0f536
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 0680309b13bf4499f0d153f44e575c1762b54d79
+ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75471129"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76773177"
 ---
 # <a name="tutorial-use-exported-template-from-the-azure-portal"></a>Руководство. использованию экспортированного шаблона из портала Azure
 
 В рамках этой серии учебников вы создали шаблон для развертывания учетной записи хранения Azure. В следующих двух учебниках вы добавите *план службы приложений* и *веб-сайт*. Вместо создания шаблонов с нуля вы узнаете, как экспортировать шаблоны с портала Azure и как использовать примеры шаблонов из [шаблонов быстрого запуска Azure](https://azure.microsoft.com/resources/templates/). Вы настроите эти шаблоны для своего варианта использования. В этом учебнике будет рассмотрен экспорт шаблонов и настройка результатов для шаблона. Это займет около **14 минут**.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Советуем выполнить инструкции из [учебника по выходным данным](template-tutorial-add-outputs.md), но это необязательно.
 
@@ -26,7 +26,7 @@ ms.locfileid: "75471129"
 
 В конце предыдущего учебника шаблон содержал следующий код JSON:
 
-[!code-json[](~/resourcemanager-templates/get-started-with-templates/add-outputs/azuredeploy.json)]
+:::code language="json" source="~/resourcemanager-templates/get-started-with-templates/add-outputs/azuredeploy.json":::
 
 Этот шаблон хорошо подходит для развертывания учетных записей хранения, но вы можете добавить к нему больше ресурсов. Вы можете экспортировать шаблон из имеющегося ресурса, чтобы быстро получить JSON для этого ресурса.
 
@@ -35,7 +35,7 @@ ms.locfileid: "75471129"
 1. Войдите на [портал Azure](https://portal.azure.com).
 1. Выберите **Создать ресурс**.
 1. В поле **Поиск по Marketplace** введите **План службы приложений**, а затем выберите **План службы приложений**.  Не выбирайте параметр **План службы приложений (классический)** .
-1. Нажмите кнопку **Создать**.
+1. Нажмите кнопку **создания**.
 1. Введите:
 
     - **Подписка**. Выберите подписку Azure.
@@ -47,7 +47,7 @@ ms.locfileid: "75471129"
 
     ![Портал экспортирования шаблона Resource Manager](./media/template-tutorial-export-template/resource-manager-template-export.png)
 1. Выберите **Просмотреть и создать**.
-1. Нажмите кнопку **Создать**. Создание ресурса занимает несколько секунд.
+1. Нажмите кнопку **создания**. Создание ресурса занимает несколько секунд.
 
 ## <a name="export-template"></a>Экспорт шаблона
 
@@ -76,7 +76,7 @@ ms.locfileid: "75471129"
 
 Скопируйте весь файл и замените шаблон на его содержимое.
 
-[!code-json[](~/resourcemanager-templates/get-started-with-templates/export-template/azuredeploy.json?range=1-77&highlight=28-31,50-69)]
+:::code language="json" source="~/resourcemanager-templates/get-started-with-templates/export-template/azuredeploy.json" range="1-77" highlight="28-31,50-69":::
 
 ## <a name="deploy-template"></a>Развертывание шаблона
 

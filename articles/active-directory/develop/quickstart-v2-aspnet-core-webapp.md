@@ -12,13 +12,12 @@ ms.workload: identity
 ms.date: 04/11/2019
 ms.author: jmprieur
 ms.custom: aaddev, identityplatformtop40
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: b86c8f79902c0234e35e4d195e4680b6e9b3f3c2
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.openlocfilehash: 58fce1ca2401ecf79e478377e7547a6c5785f7d1
+ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74963551"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76703649"
 ---
 # <a name="quickstart-add-sign-in-with-microsoft-to-an-aspnet-core-web-app"></a>Краткое руководство. Добавление возможности входа в веб-приложение ASP.NET Core с помощью учетной записи Майкрософт
 
@@ -42,7 +41,7 @@ ms.locfileid: "74963551"
 >
 > ### <a name="option-2-register-and-manually-configure-your-application-and-code-sample"></a>Вариант 2. Регистрация и настройка приложения и примера кода вручную
 >
-> #### <a name="step-1-register-your-application"></a>Шаг 1. Регистрация приложения
+> #### <a name="step-1-register-your-application"></a>Шаг 1. Регистрация приложения
 > Чтобы зарегистрировать приложение и добавить сведения о его регистрации в решение вручную, сделайте следующее:
 >
 > 1. Войдите на [портал Azure](https://portal.azure.com) с помощью личной учетной записи Майкрософт либо рабочей или учебной учетной записи.
@@ -59,7 +58,7 @@ ms.locfileid: "74963551"
 >    - Щелкните **Сохранить**.
 
 > [!div class="sxs-lookup" renderon="portal"]
-> #### <a name="step-1-configure-your-application-in-the-azure-portal"></a>Шаг 1. Настройка приложения на портале Azure
+> #### <a name="step-1-configure-your-application-in-the-azure-portal"></a>Шаг 1. Настройка приложения на портале Azure
 > Чтобы пример кода для этого краткого руководства работал, необходимо добавить URL-адреса ответа `https://localhost:44321/` и `https://localhost:44321/signin-oidc`, URL-адрес выхода `https://localhost:44321/signout-oidc` и запросить выдачу токенов идентификации конечной точкой авторизации.
 > > [!div renderon="portal" id="makechanges" class="nextstepaction"]
 > > [Внести это изменение для меня]()
@@ -67,7 +66,7 @@ ms.locfileid: "74963551"
 > > [!div id="appconfigured" class="alert alert-info"]
 > > ![Уже настроено](media/quickstart-v2-aspnet-webapp/green-check.png). Ваше приложение настроено с помощью этих атрибутов.
 
-#### <a name="step-2-download-your-aspnet-core-project"></a>Шаг 2. Скачивание проекта ASP.NET Core
+#### <a name="step-2-download-your-aspnet-core-project"></a>Шаг 2. Скачивание проекта ASP.NET Core
 
 - [Скачайте решение Visual Studio 2019](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/archive/aspnetcore2-2.zip)
 
@@ -87,7 +86,7 @@ ms.locfileid: "74963551"
 > > В этом кратком руководстве поддерживается Enter_the_Supported_Account_Info_Here.
 
 > [!div renderon="docs"]
-> Описание
+> Где:
 > - `Enter_the_Application_Id_here` — **идентификатор приложения (клиента)** , зарегистрированного на портале Azure. **Идентификатор приложения (клиента)** можно найти на странице **Обзор** приложения.
 > - `Enter_the_Tenant_Info_Here` — один из следующих вариантов:
 >   - Если приложение поддерживает **учетные записи только в этом каталоге организации**, замените это значение **идентификатором клиента** или **именем клиента** (например, contoso.microsoft.com).
@@ -157,7 +156,7 @@ public void ConfigureServices(IServiceCollection services)
 
 [!INCLUDE [Help and support](../../../includes/active-directory-develop-help-support-include.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Извлеките репозиторий GitHub для работы с этим руководством по ASP.NET Core. Вы узнаете, как добавлять аутентификацию для нового веб-приложения ASP.NET Core, вызывать API Microsoft Graph и другие API Майкрософт, вызывать собственные API, добавлять авторизацию, реализовать вход пользователей в национальных облаках или с использованием удостоверений социальных сетей и многое другое:
 

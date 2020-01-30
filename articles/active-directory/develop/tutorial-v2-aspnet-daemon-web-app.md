@@ -16,13 +16,12 @@ ms.workload: identity
 ms.date: 12/10/2019
 ms.author: jmprieur
 ms.custom: aaddev, identityplatformtop40, scenarios:getting-started, languages:ASP.NET
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: d884987ed5fb00d4078a38aa37d463a81630ca7e
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: ec6664e7c55057c29c5b741203b326ce460c6e91
+ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75423395"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76701235"
 ---
 # <a name="tutorial-build-a-multitenant-daemon-that-uses-the-microsoft-identity-platform-endpoint"></a>Руководство. Создание мультитенантной управляющей программы, которая использует конечную точку платформы удостоверений Майкрософт
 
@@ -50,7 +49,7 @@ ms.locfileid: "75423395"
 
 Дополнительные сведения об основных понятиях, используемых в этом примере, см. в [документации по протоколу учетных данных клиента для конечной точки платформы удостоверений](v2-oauth2-client-creds-grant-flow.md).
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы запустить пример в этом кратком руководстве, вам потребуется:
 

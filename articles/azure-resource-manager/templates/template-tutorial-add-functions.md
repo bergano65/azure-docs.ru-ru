@@ -5,18 +5,18 @@ author: mumian
 ms.date: 10/04/2019
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: b32b0377502697e32e56e5c8324ca287c9a3cf69
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 1db391f42aeb4fdf80baf001150f845daef3bf4f
+ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75471809"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76773226"
 ---
 # <a name="tutorial-add-template-functions-to-your-resource-manager-template"></a>Руководство. добавлению функций шаблона в шаблон Azure Resource Manager
 
 В этом учебнике вы узнаете, как добавить в шаблон [функции шаблона](template-functions.md). Функции используются для динамического создания значений. Помимо этих системных функций шаблонов можно также создать [функции, определяемые пользователем](./template-user-defined-functions.md). Для выполнения инструкций из этого учебника требуется **7 минут**.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Советуем выполнить инструкции из [руководства о параметрах](template-tutorial-add-parameters.md), но это необязательно.
 
@@ -26,7 +26,7 @@ ms.locfileid: "75471809"
 
 В конце предыдущего учебника шаблон содержал следующий код JSON:
 
-[!code-json[](~/resourcemanager-templates/get-started-with-templates/add-sku/azuredeploy.json)]
+:::code language="json" source="~/resourcemanager-templates/get-started-with-templates/add-sku/azuredeploy.json":::
 
 Расположение учетной записи хранения жестко задано к значению **Восточная часть США**. Однако может потребоваться развернуть учетную запись хранения в других регионах. У вас вновь возникают проблемы с отсутствием гибкости в шаблоне. Вы можете добавить параметр для расположения, но было бы замечательно, если бы его значение по умолчанию имело больше смысла, чем просто жестко заданное значение.
 
@@ -40,7 +40,7 @@ ms.locfileid: "75471809"
 
 Скопируйте весь файл и замените шаблон на его содержимое.
 
-[!code-json[](~/resourcemanager-templates/get-started-with-templates/add-location/azuredeploy.json?range=1-44&highlight=24-27,34)]
+:::code language="json" source="~/resourcemanager-templates/get-started-with-templates/add-location/azuredeploy.json" range="1-44" highlight="24-27,34":::
 
 ## <a name="deploy-template"></a>Развертывание шаблона
 

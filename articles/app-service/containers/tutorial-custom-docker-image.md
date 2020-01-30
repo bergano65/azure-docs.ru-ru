@@ -1,5 +1,5 @@
 ---
-title: Руководство по сборке и запуску пользовательского образа
+title: Руководство. сборке и запуску пользовательского образа
 description: Сведения о создании пользовательского образа Linux, который можно запустить в Службе приложений Azure, развернуть в Реестры контейнеров Azure и запустить в Службе приложений.
 keywords: служба приложений azure, веб-приложение, docker, контейнер
 author: msangapu-msft
@@ -8,18 +8,18 @@ ms.topic: tutorial
 ms.date: 03/27/2019
 ms.author: msangapu
 ms.custom: seodec18
-ms.openlocfilehash: d960af01eed9fae0fec2566772799e4972053d7b
-ms.sourcegitcommit: 48b7a50fc2d19c7382916cb2f591507b1c784ee5
+ms.openlocfilehash: 965897afc8e23c123575de0c497d4071ff4ca85a
+ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74687502"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76767097"
 ---
-# <a name="tutorial-build-a-custom-image-and-run-in-app-service-from-a-private-registry"></a>Руководство по созданию и запуску настраиваемого образа в Службе приложений из частного реестра
+# <a name="tutorial-build-a-custom-image-and-run-in-app-service-from-a-private-registry"></a>Руководство. созданию и запуску настраиваемого образа в Службе приложений из частного реестра
 
 [Служба приложений](app-service-linux-intro.md) предоставляет встроенные образы Docker на основе Linux с поддержкой определенных версий, включая PHP 7.3 и Node.js 10.14. Служба приложений использует технологию контейнеров Docker для размещения встроенных и настраиваемых образов в качестве платформы как услуги. В этом руководстве вы узнаете, как создать настраиваемый образ и запустить его в Службе приложений. Этот шаблон используется, если встроенные образы не содержат нужный язык или для приложения требуется определенная конфигурация, которую не предоставляют встроенные образы.
 
-Из этого руководства вы узнаете, как выполнять следующие задачи:
+В этом руководстве описано следующее:
 
 > [!div class="checklist"]
 > * Развертывание настраиваемого образа в частном реестре контейнеров.
@@ -35,7 +35,7 @@ ms.locfileid: "74687502"
 
 Для работы с этим учебником необходимы указанные ниже компоненты.
 
-* [Git](https://git-scm.com/downloads)
+* [Git](https://git-scm.com/downloads);
 * [Docker](https://docs.docker.com/get-started/#setup)
 
 ## <a name="download-the-sample"></a>Скачивание примера приложения
@@ -122,7 +122,7 @@ az acr credential show --name <azure-container-registry-name>
 Выходные данные этой команды содержат два пароля и имя пользователя.
 
 ```json
-<
+{
   "passwords": [
     {
       "name": "password",
@@ -147,7 +147,7 @@ docker login <azure-container-registry-name>.azurecr.io --username <registry-use
 
 ### <a name="push-image-to-azure-container-registry"></a>Передача образа в реестр контейнеров Azure
 
-Пометьте локальный образ тегом для Реестра контейнеров Azure. Например:
+Пометьте локальный образ тегом для Реестра контейнеров Azure. Пример:
 ```bash
 docker tag mydockerimage <azure-container-registry-name>.azurecr.io/mydockerimage:v1.0.0
 ```
@@ -324,7 +324,7 @@ PID USER      PR  NI    VIRT    RES    SHR S %CPU %MEM     TIME+ COMMAND
 
 [!INCLUDE [Clean-up section](../../../includes/cli-script-clean-up.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Вы научились выполнять следующие задачи:
 
@@ -344,7 +344,7 @@ PID USER      PR  NI    VIRT    RES    SHR S %CPU %MEM     TIME+ COMMAND
 Также ознакомьтесь с другими ресурсами:
 
 > [!div class="nextstepaction"]
-> [Настройка настраиваемого контейнера](configure-custom-container.md)
+> [Настройка пользовательского контейнера](configure-custom-container.md)
 
 > [!div class="nextstepaction"]
 > [Руководство. по приложению WordPress с несколькими контейнерами](tutorial-multi-container-app.md)

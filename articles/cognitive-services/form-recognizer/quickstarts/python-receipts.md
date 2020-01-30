@@ -7,25 +7,25 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: forms-recognizer
 ms.topic: quickstart
-ms.date: 10/03/2019
+ms.date: 01/27/2020
 ms.author: pafarley
-ms.openlocfilehash: 1f9272ed498401b2f9fa9f559d77d4922f89ac84
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 6b6fa03337e857c6dda43f8c6ae41713d8c3dbe0
+ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75446454"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76774190"
 ---
 # <a name="quickstart-extract-receipt-data-using-the-form-recognizer-rest-api-with-python"></a>Краткое руководство. Извлечение данных квитанции с помощью REST API Распознавателя документов и Python
 
 В этом кратком руководстве вы используете REST API Распознавателя документов Azure и Python для извлечения и определения соответствующей информации из квитанций США.
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 > [!IMPORTANT]
 > В этом кратком руководстве используется API Распознавателя документов версии 2.0. Если ваша подписка не находится в регионе `West US 2` или `West Europe`, необходимо использовать API версии 1.0. Следуйте инструкциям [краткого руководства для версии 1.0](./curl-train-extract-v1.md).
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим кратким руководством требуется следующее:
 - Доступ к предварительной версии Распознавателя документов с ограниченным доступом. Чтобы получить доступ к предварительной версии, заполните и отправьте [форму запроса на доступ к Распознавателю документов](https://aka.ms/FormRecognizerRequestAccess).

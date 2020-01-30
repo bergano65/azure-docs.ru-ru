@@ -9,12 +9,12 @@ ms.service: key-vault
 ms.topic: tutorial
 ms.date: 11/11/2019
 ms.author: mbaldwin
-ms.openlocfilehash: 7ccc4aaed8e5827fbc06b252c8c88b814d9a31fb
-ms.sourcegitcommit: 2d3740e2670ff193f3e031c1e22dcd9e072d3ad9
+ms.openlocfilehash: c2a15393c5c8e685e9a565f1099eeee935c0d5da
+ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/16/2019
-ms.locfileid: "74134001"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76845846"
 ---
 # <a name="use-logic-apps-to-receive-email-about-status-changes-of-key-vault-secrets"></a>Настройка отправки сообщений об изменении состояния секретов в хранилище ключей с помощью Logic Apps
 
@@ -25,7 +25,7 @@ ms.locfileid: "74134001"
 ## <a name="prerequisites"></a>Предварительные требования
 
 - Учетная запись электронной почты любого поставщика услуг электронной почты, поддерживаемого Azure Logic Apps (например, Office 365 Outlook). Такая учетная запись используется для отправки уведомлений о событиях. Полный список поддерживаемых соединителей для приложения логики см. в статье [Соединители](/connectors).
-- Подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+- Подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 - Хранилище ключей в подписке Azure. Вы можете быстро создать хранилище ключей, выполнив действия, описанные в статье [Краткое руководство. Настройка и получение секрета из Azure Key Vault с помощью Azure CLI](quick-create-cli.md).
 
 ## <a name="create-a-logic-app-via-event-grid"></a>Создание приложения логики с помощью службы "Сетка событий"
@@ -34,7 +34,6 @@ ms.locfileid: "74134001"
 
 Чтобы создать подписку на Сетку событий Azure, сделайте следующее:
 
-1. Откройте портал Azure, используя следующую ссылку: https://portal.azure.com/?Microsoft_Azure_KeyVault_ShowEvents=true&Microsoft_Azure_EventGrid_publisherPreview=true 
 1. На портале Azure перейдите в хранилище ключей, выберите **События > Приступая к работе** и щелкните **Logic Apps**.
 
     
@@ -84,10 +83,10 @@ ms.locfileid: "74134001"
 
 При создании секрета по настроенным адресам будет отправлено сообщение электронной почты.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-- Рассматриваемые действия: [Мониторинг Key Vault с помощью службы "Сетка событий Azure" (предварительная версия)](event-grid-overview.md)
-- Практическое руководство: [Получение уведомлений хранилища ключей и реагирование на них с помощью Сетки событий Azure (предварительная версия)](event-grid-tutorial.md)
+- Общие сведения. [Мониторинг Key Vault с помощью службы "Сетка событий Azure" (предварительная версия)](event-grid-overview.md)
+- Руководство. [Получение уведомлений хранилища ключей и реагирование на них с помощью Сетки событий Azure (предварительная версия)](event-grid-tutorial.md)
 - [Схема событий службы "Сетка событий Azure" для Azure Key Vault (предварительная версия)](../event-grid/event-schema-key-vault.md)
 - Дополнительные сведения о службе "Сетка событий" Azure см. [здесь](../event-grid/index.yml).
 - Дополнительные сведения о компоненте Logic Apps службы приложений Azure см. [здесь](../logic-apps/index.yml).

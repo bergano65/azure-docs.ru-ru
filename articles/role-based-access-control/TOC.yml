@@ -40,8 +40,6 @@
           href: role-definitions.md
         - name: Вывод списка определений роли
           href: role-definitions-list.md
-        - name: Встроенные роли
-          href: built-in-roles.md
     - name: Список назначений ролей
       items:
         - name: Портал
@@ -96,6 +94,8 @@
       href: troubleshooting.md
 - name: Справочник
   items:
+    - name: Встроенные роли
+      href: built-in-roles.md
     - name: Операции с поставщиками ресурсов
       href: resource-provider-operations.md
     - name: Ограничения доступа на основе ролей

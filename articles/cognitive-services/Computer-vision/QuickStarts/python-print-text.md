@@ -11,12 +11,12 @@ ms.topic: quickstart
 ms.date: 12/16/2019
 ms.author: pafarley
 ms.custom: seodec18
-ms.openlocfilehash: 76e83d8fcff9ec74f8c90ded366b07fb16361ec8
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: d89c50867b8c66c0dfb40021982b201078fa67d1
+ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75448329"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76774306"
 ---
 # <a name="quickstart-extract-printed-text-ocr-using-the-computer-vision-rest-api-and-python"></a>Краткое руководство. Извлечение печатного текста (OCR) с помощью REST API "Компьютерное зрение" и Python
 
@@ -29,9 +29,9 @@ ms.locfileid: "75448329"
 
 [![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/Microsoft/cognitive-services-notebooks/master?filepath=VisionAPI.ipynb)
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/try/cognitive-services/), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/try/cognitive-services/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 - Установите [Python](https://www.python.org/downloads/), если хотите выполнить этот пример кода в локальной среде.
 - У вас должен быть ключ подписки для Компьютерного зрения. На странице [Try Cognitive Services](https://azure.microsoft.com/try/cognitive-services/?api=computer-vision) (Пробная версия Cognitive Services) можно получить ключ бесплатной пробной версии. Или следуйте инструкциям из статьи [Create a Cognitive Services account](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) (Создание учетной записи Cognitive Services), чтобы получить подписку Content Moderator и свой ключ. Затем [создайте переменные среды](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account#configure-an-environment-variable-for-authentication) для строки ключа и конечной точки службы с именами `COMPUTER_VISION_SUBSCRIPTION_KEY` и `COMPUTER_VISION_ENDPOINT` соответственно.
@@ -100,6 +100,7 @@ for word in word_infos:
                       fill=False, linewidth=2, color='y')
     ax.axes.add_patch(patch)
     plt.text(origin[0], origin[1], text, fontsize=20, weight="bold", va="top")
+plt.show()
 plt.axis("off")
 ```
 

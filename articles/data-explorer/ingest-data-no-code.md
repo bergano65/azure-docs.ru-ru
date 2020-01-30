@@ -1,20 +1,20 @@
 ---
-title: Руководство по приему данных мониторинга в Azure Data Explorer без необходимости написания кода
+title: Руководство. приему данных мониторинга в Azure Data Explorer без необходимости написания кода
 description: В этом учебнике описано, как принимать данные мониторинга в Azure Data Explorer без необходимости написания кода, а также как создавать к ним запросы.
 author: orspod
 ms.author: orspodek
 ms.reviewer: kerend
 ms.service: data-explorer
 ms.topic: tutorial
-ms.date: 11/17/2019
-ms.openlocfilehash: 2574f27b4b86bab276a56f95fda9fa2a1434c095
-ms.sourcegitcommit: d614a9fc1cc044ff8ba898297aad638858504efa
+ms.date: 01/29/2020
+ms.openlocfilehash: c160f04ef7120a6c90991d8e6ecdf98b2f0d348e
+ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74995938"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76836565"
 ---
-# <a name="tutorial-ingest-and-query-monitoring-data-in-azure-data-explorer"></a>Руководство по приему данных мониторинга и созданию к ним запросов в Azure Data Explorer 
+# <a name="tutorial-ingest-and-query-monitoring-data-in-azure-data-explorer"></a>Руководство. приему данных мониторинга и созданию к ним запросов в Azure Data Explorer 
 
 Из этого руководства вы узнаете, как принимать данные из журналов диагностики и действий в кластер Azure Data Explorer без необходимости писать код. Этот простой метод приема позволяет вам оперативно начать отправку запросов в Azure Data Explorer для анализа данных.
 
@@ -330,7 +330,7 @@ ms.locfileid: "74995938"
 2. Добавьте [политику обновления](/azure/kusto/concepts/updatepolicy) для целевой таблицы. Эта политика будет автоматически выполнять запрос для новых данных, принятых в промежуточную таблицу данных *DiagnosticRawRecords*, и вставлять результаты запроса в таблицу *DiagnosticMetrics*:
 
     ```kusto
-    .alter table DiagnosticMetrics policy update @'[{"Source": "DiagnosticRawRecords", "Query": "DiagnosticMetricsExpand()", "IsEnabled": "True"}]'
+    .alter table DiagnosticMetrics policy update @'[{"Source": "DiagnosticRawRecords", "Query": "DiagnosticMetricsExpand()", "IsEnabled": "True", "IsTransactional": true}]'
     ```
 
 # <a name="diagnostic-logstabdiagnostic-logs"></a>[Журналы диагностики](#tab/diagnostic-logs)
@@ -344,7 +344,7 @@ ms.locfileid: "74995938"
         | mv-expand events = Records
         | where isnotempty(events.operationName)
         | project
-            Timestamp = todatetime(events.time),
+            Timestamp = todatetime(events['time']),
             ResourceId = tostring(events.resourceId),
             OperationName = tostring(events.operationName),
             Result = tostring(events.resultType),
@@ -363,7 +363,7 @@ ms.locfileid: "74995938"
 2. Добавьте [политику обновления](/azure/kusto/concepts/updatepolicy) для целевой таблицы. Эта политика будет автоматически выполнять запрос для новых данных, принятых в промежуточную таблицу данных *DiagnosticRawRecords*, и вставлять результаты запроса в таблицу *DiagnosticLogs*:
 
     ```kusto
-    .alter table DiagnosticLogs policy update @'[{"Source": "DiagnosticRawRecords", "Query": "DiagnosticLogsExpand()", "IsEnabled": "True"}]'
+    .alter table DiagnosticLogs policy update @'[{"Source": "DiagnosticRawRecords", "Query": "DiagnosticLogsExpand()", "IsEnabled": "True", "IsTransactional": true}]'
     ```
 
 # <a name="activity-logstabactivity-logs"></a>[Журналы действий](#tab/activity-logs)
@@ -376,7 +376,7 @@ ms.locfileid: "74995938"
         ActivityLogsRawRecords
         | mv-expand events = Records
         | project
-            Timestamp = todatetime(events.time),
+            Timestamp = todatetime(events['time']),
             ResourceId = tostring(events.resourceId),
             OperationName = tostring(events.operationName),
             Category = tostring(events.category),
@@ -393,7 +393,7 @@ ms.locfileid: "74995938"
 2. Добавьте [политику обновления](/azure/kusto/concepts/updatepolicy) для целевой таблицы. Эта политика будет автоматически выполнять запрос для новых данных, принятых в промежуточную таблицу данных *ActivityLogsRawRecords*, и вставлять результаты запроса в таблицу *ActivityLogs*:
 
     ```kusto
-    .alter table ActivityLogs policy update @'[{"Source": "ActivityLogsRawRecords", "Query": "ActivityLogRecordsExpand()", "IsEnabled": "True"}]'
+    .alter table ActivityLogs policy update @'[{"Source": "ActivityLogsRawRecords", "Query": "ActivityLogRecordsExpand()", "IsEnabled": "True", "IsTransactional": true}]'
     ```
 ---
 
@@ -413,9 +413,9 @@ ms.locfileid: "74995938"
 
     **Параметр** | **Рекомендуемое значение** | **Описание**
     |---|---|---|
-    | **подписка** | *Ваша подписка* | Выберите подписку Azure, которую нужно использовать для своего концентратора событий.|
-    | **группа ресурсов** | *test-resource-group* | Создайте новую группу ресурсов. |
-    | **Местоположение.** | Выберите регион в соответствии со своими потребностями. | Создайте пространство имен концентратора событий в том же расположении, в котором находятся другие ресурсы.
+    | **Подписка** | *Ваша подписка* | Выберите подписку Azure, которую нужно использовать для своего концентратора событий.|
+    | **Группа ресурсов** | *test-resource-group* | Создайте новую группу ресурсов. |
+    | **Расположение** | Выберите регион в соответствии со своими потребностями. | Создайте пространство имен концентратора событий в том же расположении, в котором находятся другие ресурсы.
     | **Имя пространства имен** | *AzureMonitoringData* | Выберите уникальное имя, идентифицирующее пространство имен.
     | **Имя концентратора событий** | *DiagnosticData* | Концентратор событий находится в пространстве имен, предоставляющем уникальный контейнер области. |
     | **Имя группы потребителей** | *adxpipeline* | Создайте имя группы потребителей. Группы получателей событий позволяют каждому из нескольких получающих события приложений иметь отдельное представление потока событий. |
@@ -448,7 +448,7 @@ ms.locfileid: "74995938"
     1. В списке **Выбрать пространство имен концентратора событий** выберите *AzureMonitoringData*.
     1. В списке **Выберите имя концентратора событий** выберите *DiagnosticData*.
     1. В списке **Выбрать имя политики концентратора событий** выберите **RootManagerSharedAccessKey**.
-    1. Нажмите кнопку **ОК**.
+    1. Щелкните **ОК**.
 
 1. Щелкните **Сохранить**.
 
@@ -472,7 +472,7 @@ ms.locfileid: "74995938"
       1. На панели **Выбор концентратора событий** выберите нужную подписку.
       1. В списке **Выбрать пространство имен концентратора событий** выберите *AzureMonitoringData*.
       1. В списке **Выбрать имя политики концентратора событий** выберите имя политики концентратора событий по умолчанию.
-      1. Нажмите кнопку **ОК**.
+      1. Щелкните **ОК**.
       1. В левом верхнем углу этого окна выберите **Сохранить**.
    Будет создан концентратор событий с именем *insights-operational-logs*.
 ---
@@ -526,7 +526,7 @@ ms.locfileid: "74995938"
     | **Сопоставление столбцов** | *DiagnosticRawRecordsMapping* | Сопоставление, которое вы создали в базе данных *TestDatabase* между входящими данными JSON и именами столбцов и типами данных в таблице *DiagnosticRawRecords*.|
     | | |
 
-1. Нажмите кнопку **Создать**.  
+1. Нажмите кнопку **создания**.  
 
 # <a name="activity-logstabactivity-logs"></a>[Журналы действий](#tab/activity-logs)
 
@@ -553,7 +553,7 @@ ms.locfileid: "74995938"
     | **Сопоставление столбцов** | *ActivityLogsRawRecordsMapping* | Сопоставление, которое вы создали в базе данных *TestDatabase* между входящими данными JSON и именами столбцов и типами данных в таблице *ActivityLogsRawRecords*.|
     | | |
 
-1. Нажмите кнопку **Создать**.  
+1. Нажмите кнопку **создания**.  
 ---
 
 ## <a name="query-the-new-tables"></a>Отправка запросов новым таблицам
@@ -621,7 +621,7 @@ ActivityLogs
 
 ---
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Чтобы узнать, как создавать многие другие запросы к данным, которые вы извлекли из Azure Data Explorer, изучите статью [Write queries for Azure Data Explorer](write-queries.md) (Написание запросов для Azure Data Explorer).
 * [Monitor Azure Data Explorer ingestion operations using diagnostic logs (Preview)](using-diagnostic-logs.md) (Мониторинг операций приема Azure Data Explorer с помощью журналов диагностики (предварительная версия))

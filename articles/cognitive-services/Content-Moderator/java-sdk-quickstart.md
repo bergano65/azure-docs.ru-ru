@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: content-moderator
 ms.topic: quickstart
-ms.date: 10/25/2019
+ms.date: 01/27/2020
 ms.author: pafarley
-ms.openlocfilehash: 53ac5c10672c433cb16d9ad326d936affe82a8c6
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 5dd1c1bb2b321e617efc430ce48745c06a827305
+ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75381942"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76772463"
 ---
 # <a name="quickstart-content-moderator-client-library-for-java"></a>Краткое руководство. Клиентская библиотека Content Moderator для Java
 
@@ -27,7 +27,7 @@ ms.locfileid: "75381942"
 
 [Справочная документация](https://docs.microsoft.com/java/api/overview/azure/cognitiveservices/client/contentmoderator?view=azure-java-stable) | [Артефакт (Maven)](https://mvnrepository.com/artifact/com.microsoft.azure.cognitiveservices/azure-cognitiveservices-contentmoderator) | [Примеры](https://docs.microsoft.com/samples/browse/?products=azure&term=content-moderator)
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 * Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/).
 * Текущая версия [пакета средств разработки Java (JDK)](https://www.oracle.com/technetwork/java/javase/downloads/index.html).
@@ -95,7 +95,7 @@ mkdir -p src/main/java
 
 Следующие классы обрабатывают некоторые основные функции пакета SDK Java для Content Moderator.
 
-|Имя|Description|
+|Имя|Описание|
 |---|---|
 |[ContentModeratorClient](https://docs.microsoft.com/java/api/com.microsoft.azure.cognitiveservices.vision.contentmoderator.contentmoderatorclient?view=azure-java-stable)|Этот класс требуется для всех функций Content Moderator. Вы создаете его экземпляр с информацией о подписке и используете его для создания экземпляров других классов.|
 |[ImageModeration](https://docs.microsoft.com/java/api/com.microsoft.azure.cognitiveservices.vision.contentmoderator.imagemoderations?view=azure-java-stable)|Этот класс предоставляет функции для анализа изображений на наличие содержимого для взрослых, личной информации или лиц людей.|

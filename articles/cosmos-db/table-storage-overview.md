@@ -6,15 +6,15 @@ ms.subservice: cosmosdb-table
 ms.devlang: dotnet
 ms.topic: overview
 ms.date: 05/20/2019
-author: wmengmsft
-ms.author: wmeng
+author: sakash279
+ms.author: akshanka
 ms.reviewer: sngun
-ms.openlocfilehash: 37249d904343a4eddb0d1e82f451c3b9e95a479d
-ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
+ms.openlocfilehash: 20c799f89394dd8978f120097b054a9adf9f1280
+ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65953503"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76770738"
 ---
 # <a name="azure-table-storage-overview"></a>Обзор табличного хранилища
 
@@ -26,7 +26,7 @@ ms.locfileid: "65953503"
 
 [!INCLUDE [storage-table-concepts-include](../../includes/storage-table-concepts-include.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Обозреватель хранилищ Microsoft Azure](../vs-azure-tools-storage-manage-with-storage-explorer.md) — это бесплатное автономное приложение от корпорации Майкрософт, позволяющее визуализировать данные из службы хранилища Azure на платформе Windows, macOS и Linux.
 

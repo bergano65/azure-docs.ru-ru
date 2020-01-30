@@ -7,25 +7,25 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: forms-recognizer
 ms.topic: quickstart
-ms.date: 10/03/2019
+ms.date: 01/27/2020
 ms.author: pafarley
-ms.openlocfilehash: b95c5511b2f64414fcf165a4346dbb06b1f02435
-ms.sourcegitcommit: f53cd24ca41e878b411d7787bd8aa911da4bc4ec
+ms.openlocfilehash: 961a5cc3d8c90007e314f40ba98693d978fe8888
+ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75833855"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76771945"
 ---
 # <a name="quickstart-train-a-form-recognizer-model-and-extract-form-data-by-using-the-rest-api-with-curl"></a>Краткое руководство. Обучение модели Распознавателя документов и извлечение данных форм с помощью REST API и cURL
 
 В этом кратком руководстве для обучения и оценки документов с последующим извлечением пары "ключ — значение" и таблиц используется REST API и cURL в Распознавателе документов Azure.
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 > [!IMPORTANT]
 > В этом кратком руководстве используется API Распознавателя документов версии 2.0. Если ваша подписка не находится в регионе `West US 2` или `West Europe`, необходимо использовать API версии 1.0. Следуйте инструкциям [краткого руководства для версии 1.0](./curl-train-extract-v1.md).
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим кратким руководством требуется следующее:
 - Доступ к предварительной версии Распознавателя документов с ограниченным доступом. Чтобы получить доступ к предварительной версии, заполните и отправьте [форму запроса на доступ к Распознавателю документов](https://aka.ms/FormRecognizerRequestAccess).

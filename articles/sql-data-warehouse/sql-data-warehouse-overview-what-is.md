@@ -10,12 +10,12 @@ ms.subservice: design
 ms.date: 11/04/2019
 ms.author: martinle
 ms.reviewer: igorstan
-ms.openlocfilehash: 07bf3070e42af8a03ce1fd7ea4445fc76557e8a3
-ms.sourcegitcommit: 359930a9387dd3d15d39abd97ad2b8cb69b8c18b
+ms.openlocfilehash: 40f779fa5545e0e9c8fd1aa2cc2689b29dffdb82
+ms.sourcegitcommit: b5d646969d7b665539beb18ed0dc6df87b7ba83d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73645513"
+ms.lasthandoff: 01/26/2020
+ms.locfileid: "76760765"
 ---
 # <a name="what-is-azure-synapse-analytics-formerly-sql-dw"></a>Что такое Azure Synapse Analytics (ранее — Хранилище данных SQL)?
 
@@ -52,45 +52,16 @@ SQL Analytics сохраняет данные в реляционных табл
 
 Результаты анализа можно передать в базы данных и приложения отчетности по всему миру. Специалисты по бизнес-аналитике могут получить данные для принятия обоснованных бизнес-решений.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-- Знакомство с [архитектурой Azure Synapse](/azure/sql-data-warehouse/massively-parallel-processing-mpp-architecture)
+- Знакомство с [архитектурой Azure Synapse](massively-parallel-processing-mpp-architecture.md)
 - Быстрое создание [пула SQL](create-data-warehouse-portal.md)
-- [Загрузите демонстрационные данные][load sample data].
-- Просмотрите [видео](/azure/sql-data-warehouse/sql-data-warehouse-videos).
+- [Загрузите демонстрационные данные](sql-data-warehouse-load-sample-databases.md).
+- Просмотрите [видео](https://azure.microsoft.com/documentation/videos/index/?services=sql-data-warehouse).
 
 Или ознакомьтесь со следующими ресурсами, посвященными SQL Analytics.  
-* Ищите информацию в [Блоги].
-* Отправьте [Запросы функций].
-* Ищите информацию в [Блоги группы консультирования клиентов].
-* [Создание запроса в службу поддержки]
-* Ищите информацию на [Форум MSDN].
-* Ищите информацию на [Форум Stack Overflow].
-
-
-<!--Image references-->
-[1]: ./media/sql-data-warehouse-overview-what-is/dwarchitecture.png
-
-<!--Article references-->
-[Создание запроса в службу поддержки]: ./sql-data-warehouse-get-started-create-support-ticket.md
-[load sample data]: ./sql-data-warehouse-load-sample-databases.md
-[create a data warehouse]: ./sql-data-warehouse-get-started-provision.md
-[Migration documentation]: ./sql-data-warehouse-overview-migrate.md
-[Azure Synapse Analytics solution partners]: ./sql-data-warehouse-partner-business-intelligence.md
-[Integrated tools overview]: ./sql-data-warehouse-overview-integrate.md
-[Backup and restore overview]: ./sql-data-warehouse-restore-database-overview.md
-[Azure glossary]: ../azure-glossary-cloud-terminology.md
-
-<!--MSDN references-->
-
-<!--Other Web references-->
-[Блоги]: https://azure.microsoft.com/blog/tag/azure-sql-data-warehouse/
-[Блоги группы консультирования клиентов]: https://blogs.msdn.microsoft.com/sqlcat/tag/sql-dw/
-[Запросы функций]: https://feedback.azure.com/forums/307516-sql-data-warehouse
-[Форум MSDN]: https://social.msdn.microsoft.com/Forums/azure/en-US/home?forum=AzureSQLDataWarehouse
-[Форум Stack Overflow]: https://stackoverflow.com/questions/tagged/azure-sqldw
-[Twitter]: https://twitter.com/hashtag/SQLDW
-[Videos]: https://azure.microsoft.com/documentation/videos/index/?services=sql-data-warehouse
-[SLA for Azure Synapse Analytics]: https://azure.microsoft.com/support/legal/sla/sql-data-warehouse/v1_0/
-[Volume Licensing]: https://www.microsoftvolumelicensing.com/DocumentSearch.aspx?Mode=3&DocumentTypeId=37
-[Service Level Agreements]: https://azure.microsoft.com/support/legal/sla/
+* Ищите информацию в [блогах](https://azure.microsoft.com/blog/tag/azure-sql-data-warehouse/).
+* Отправьте [запрос на функцию](https://feedback.azure.com/forums/307516-sql-data-warehouse).
+* [Создание запроса в службу поддержки](sql-data-warehouse-get-started-create-support-ticket.md)
+* Ищите информацию на [форуме MSDN](https://social.msdn.microsoft.com/Forums/azure/home?forum=AzureSQLDataWarehouse).
+* Ищите информацию на [форуме Stack Overflow](https://stackoverflow.com/questions/tagged/azure-sqldw).

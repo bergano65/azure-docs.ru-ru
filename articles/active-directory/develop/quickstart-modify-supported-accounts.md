@@ -12,13 +12,12 @@ ms.date: 05/08/2019
 ms.author: ryanwi
 ms.custom: aaddev
 ms.reviewer: aragra, lenalepa, sureshja
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 439d2c06f05aa8824afa4a4aec3990ecba1aa8da
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: 59c1b7dbb4c47b6963cd4bbcfdeb1b2b9a2d3bb6
+ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74921349"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76704125"
 ---
 # <a name="quickstart-modify-the-accounts-supported-by-an-application"></a>Краткое руководство. Изменение учетных записей, поддерживаемых приложением
 
@@ -75,7 +74,7 @@ ms.locfileid: "74921349"
 1. Выберите **Токен идентификатора**, **Маркеры доступа** или и то, и другое.
 1. Щелкните **Сохранить**.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о других кратких руководствах по управлению приложениями см. в следующих ресурсах:
 

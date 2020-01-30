@@ -8,30 +8,30 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: immersive-reader
 ms.topic: tutorial
-ms.date: 08/02/2019
+ms.date: 01/14/2020
 ms.author: dylankil
-ms.openlocfilehash: 3293c4ea76010e5f39c793a1faee14d9a74226a0
-ms.sourcegitcommit: 49e14e0d19a18b75fd83de6c16ccee2594592355
+ms.openlocfilehash: a252afae0a007ee0b791b56d19ffb0685848d30a
+ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75945231"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76844366"
 ---
 # <a name="tutorial-launch-the-immersive-reader-using-the-python-sample-project"></a>Руководство. запуска иммерсивного средства чтения с помощью тестового проекта Python
 
-В [обзорной статье](./overview.md) вы узнали о том, что представляет собой иммерсивное средство чтения и каким образом в нем реализованы проверенные методы, улучшающие понимание прочитанного для начинающих, тех, кто изучает язык, и учащихся с особыми потребностями. В этом учебнике описано, как создать веб-приложение Python, которое запускает иммерсивное средство чтения. В этом руководстве описано следующее.
+В [обзорной статье](./overview.md) вы узнали о том, что представляет собой иммерсивное средство чтения и каким образом в нем реализованы проверенные методы, улучшающие понимание прочитанного для начинающих, тех, кто изучает язык, и учащихся с особыми потребностями. В этом учебнике описано, как создать веб-приложение Python, которое запускает иммерсивное средство чтения. В этом руководстве описано следующее:
 
 > [!div class="checklist"]
 > * создание веб-приложения Python с поддержкой PIP, Flask, Jinja и virtualenv на основе примера проекта;
 > * Получение маркера доступа
 > * Запуск иммерсивного средства чтения с примером содержимого
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
-* Ресурс иммерсивного средства чтения, настроенный для проверки подлинности Azure Active Directory. Инструкции по настройке см. [здесь](./how-to-create-immersive-reader.md). Вам потребуются некоторые значения, созданные здесь при настройке свойств среды. Сохраните результаты своего сеанса в текстовом файле для использования в будущем.
-* [Git](https://git-scm.com/)
+* Ресурс "Иммерсивное средство чтения", настроенный для проверки подлинности Azure Active Directory. Инструкции по настройке см. [здесь](./how-to-create-immersive-reader.md). Вам потребуются некоторые значения, созданные здесь при настройке свойств среды. Сохраните результаты своего сеанса в текстовом файле для использования в будущем.
+* [Git](https://git-scm.com/);
 * [Пакет SDK иммерсивного средства чтения](https://github.com/microsoft/immersive-reader-sdk)
 * [Python](https://www.python.org/downloads/) и [pip](https://docs.python.org/3/installing/index.html) Начиная с Python 3.4, pip включается по умолчанию с двоичными установщиками Python.
 * [Flask](https://flask.palletsprojects.com/en/1.0.x/)

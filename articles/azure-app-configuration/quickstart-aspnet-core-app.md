@@ -6,20 +6,20 @@ author: jpconnock
 ms.service: azure-app-configuration
 ms.devlang: csharp
 ms.topic: quickstart
-ms.date: 01/04/2020
+ms.date: 01/21/2020
 ms.author: jeconnoc
-ms.openlocfilehash: f625135f036ec8fc816bc3c3eb6c76c635c51fe9
-ms.sourcegitcommit: 2f8ff235b1456ccfd527e07d55149e0c0f0647cc
+ms.openlocfilehash: 782c18344732362dee96842bcc7c9a6c4ed14a68
+ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75690217"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76711236"
 ---
 # <a name="quickstart-create-an-aspnet-core-app-with-azure-app-configuration"></a>Краткое руководство. Создание приложения ASP.NET Core с помощью службы "Конфигурация приложений Azure"
 
 В этом кратком руководстве описано, как использовать Конфигурацию приложений Azure, чтобы обеспечить централизованное хранение параметров приложения ASP.NET Core и управление ими. ASP.NET Core создает один объект конфигурации на основе пары "ключ — значение" с использованием параметров из одного или нескольких источников данных, указанных приложением. Эти источники данных называются *поставщиками конфигурации*. Так как в качестве поставщика конфигурации реализован клиент .NET Core службы "Конфигурация приложений", служба выглядит как другой источник данных.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 - Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/).
 - [Базовый пакет SDK для .NET](https://dotnet.microsoft.com/download)
@@ -102,13 +102,15 @@ dotnet new mvc --no-https
 1. Добавьте ссылку на пакет NuGet `Microsoft.Azure.AppConfiguration.AspNetCore`, выполнив следующую команду:
 
     ```dotnetcli
-    dotnet add package Microsoft.Azure.AppConfiguration.AspNetCore --version 3.0.0-preview-010560002-1165
+    dotnet add package Microsoft.Azure.AppConfiguration.AspNetCore --version 3.0.0-preview-011100002-1192
     ```
+
 1. Выполните следующую команду, чтобы восстановить пакеты проекта:
 
     ```dotnetcli
     dotnet restore
     ```
+
 1. Добавьте секрет с именем *ConnectionStrings:AppConfig* в диспетчер секретов.
 
     Этот секрет содержит строку подключения для получения доступа к хранилищу Конфигурации приложений. Замените значение в следующей команде строкой подключения к своему хранилищу Конфигурации приложений.
@@ -133,7 +135,7 @@ dotnet new mvc --no-https
     ```
 
 1. Обновите метод `CreateWebHostBuilder`, чтобы использовать службу "Конфигурация приложений", путем вызова метода `config.AddAzureAppConfiguration()`.
-    
+
     > [!IMPORTANT]
     > `CreateHostBuilder` заменяет `CreateWebHostBuilder` в .NET Core 3.0.  Выберите правильный синтаксис в зависимости от среды.
 
@@ -151,7 +153,7 @@ dotnet new mvc --no-https
     ```
 
     #### <a name="net-core-3xtabcore3x"></a>[.NET Core 3.x](#tab/core3x).
-    
+
     ```csharp
     public static IHostBuilder CreateHostBuilder(string[] args) =>
         Host.CreateDefaultBuilder(args)
@@ -163,6 +165,7 @@ dotnet new mvc --no-https
         })
         .UseStartup<Startup>());
     ```
+
     ---
 
 1. Перейдите в каталог *<app root>/Views/Home* и откройте файл *Index.cshtml*. Замените содержимое приведенным ниже кодом:

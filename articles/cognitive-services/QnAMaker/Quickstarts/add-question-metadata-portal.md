@@ -10,12 +10,12 @@ ms.subservice: qna-maker
 ms.topic: quickstart
 ms.date: 11/22/2019
 ms.author: diberry
-ms.openlocfilehash: ae5e3481d51a27b05afdb334e6e04c785a68c01a
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 664d6006ab78f91a8ed0e199cf78fae9512efd73
+ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75447679"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76843045"
 ---
 # <a name="quickstart-add-questions-and-answer-with-qna-maker-portal"></a>Краткое руководство. Добавление вопросов и ответов с помощью портала QnA Maker
 
@@ -38,9 +38,9 @@ ms.locfileid: "75447679"
 * запрашивать ответы с определенными значениями метаданных;
 * получать все ответы и дополнительно обрабатывать их с учетом метаданных каждого ответа.
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 * Служба QnA Maker
 * База знаний, созданная в этой службе QnA Maker
@@ -86,7 +86,7 @@ ms.locfileid: "75447679"
 
 ## <a name="add-metadata-to-filter-the-answers"></a>Добавление метаданных для фильтрации ответов
 
-Добавление метаданных в набор вопросов и ответов позволяет клиентскому приложению получать ответы с фильтрацией. Фильтр применяется перед применением [первого и второго ранжирования](../concepts/knowledge-base.md#ranker-process).
+Добавление метаданных в набор вопросов и ответов позволяет клиентскому приложению получать ответы с фильтрацией. Фильтр применяется перед применением [первого и второго ранжирования](../concepts/query-knowledge-base.md#ranker-process).
 
 1. Добавьте второй набор вопросов и ответов без метаданных из [первой таблицы в этом кратком руководстве](#qna-table), а затем выполните следующие действия.
 

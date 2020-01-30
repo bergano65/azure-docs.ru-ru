@@ -15,13 +15,12 @@ ms.workload: identity
 ms.date: 12/12/2019
 ms.author: jmprieur
 ms.custom: aaddev, identityplatformtop40
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: c29a06496bb1303849250f049e4e7444a5a5ddf3
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 1864b4867b8e1367a2397c5ed2ed9a77001dadb4
+ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75423363"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76701201"
 ---
 # <a name="call-the-microsoft-graph-api-from-a-windows-desktop-app"></a>Вызов API Microsoft Graph из классического приложения для Windows
 
@@ -50,7 +49,7 @@ MSAL управляет кэшированием и обновлением ма�
 
 В этом руководстве используются следующие пакеты NuGet:
 
-|Библиотека|Description|
+|Библиотека|Описание|
 |---|---|
 |[Microsoft.Identity.Client](https://www.nuget.org/packages/Microsoft.Identity.Client)|Библиотека аутентификации Майкрософт (MSAL)|
 

@@ -12,13 +12,12 @@ ms.date: 12/09/2019
 ms.author: ryanwi
 ms.reviewer: agirling, saeeda, benv
 ms.custom: aaddev
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7e5faf9db9a6ba97f353b54a4fb8123fde072574
-ms.sourcegitcommit: d614a9fc1cc044ff8ba898297aad638858504efa
+ms.openlocfilehash: 78e18998d6e6096b045cc8328ca5adacb1342e68
+ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74996992"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76699535"
 ---
 # <a name="evolution-of-microsoft-identity-platform"></a>Развитие платформы удостоверений Майкрософт
 
@@ -64,7 +63,7 @@ ms.locfileid: "74996992"
 
 Конечная точка платформы удостоверений Майкрософт (версии 2.0) теперь получила сертификат OIDC. Ее можно использовать с библиотеками аутентификации Майкрософт (MSAL) или любой другой библиотекой, соответствующей стандартам. Она реализует доступные для чтения области в соответствии с отраслевыми стандартами.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте больше о версиях 1.0 и 2.0.
 

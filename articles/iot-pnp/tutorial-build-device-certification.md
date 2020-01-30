@@ -9,12 +9,12 @@ ms.custom: mvc
 ms.service: iot-pnp
 services: iot-pnp
 manager: philmea
-ms.openlocfilehash: 2dae0a31ad53a777f5ae88c1c12f988d2f80630a
-ms.sourcegitcommit: 12a26f6682bfd1e264268b5d866547358728cd9a
+ms.openlocfilehash: ce7d3ee8a0d05d837bc0049cba688cffe14d8a8c
+ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75867425"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76721648"
 ---
 # <a name="build-an-iot-plug-and-play-preview-device-thats-ready-for-certification"></a>Создание готового к сертификации устройства IoT Plug and Play (предварительная версия)
 
@@ -71,7 +71,7 @@ ms.locfileid: "75867425"
     "urn:yourcompanyname:sample:Thermostat:1",
     "urn:azureiot:DeviceManagement:DeviceInformation:1"
   ],
-  "@context": "http://azureiot.com/v1/contexts/CapabilityModel.json"
+  "@context": "http://azureiot.com/v1/contexts/IoTModel.json"
 }
 ```
 
@@ -121,7 +121,7 @@ ms.locfileid: "75867425"
 
 ## <a name="build-and-run-the-code"></a>Сборка и выполнение кода
 
-Вы используете пакет Vcpkg для сборки созданной заглушки кода устройства. Создаваемое приложение имитирует устройство, которое подключается к Центру Интернета вещей. Оно отправляет данные телеметрии и свойства, а также получает команды.
+Используйте пакет Vcpkg для сборки созданной заглушки кода устройства. Создаваемое приложение имитирует устройство, которое подключается к Центру Интернета вещей. Оно отправляет данные телеметрии и свойства, а также получает команды.
 
 1. Создайте подкаталог `cmake` в папке `sample_device` и перейдите в эту папку.
 

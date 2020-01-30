@@ -16,13 +16,12 @@ ms.workload: identity
 ms.date: 08/28/2019
 ms.author: jmprieur
 ms.custom: aaddev, identityplatformtop40
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: cf1abc42fd3639bf76f752e5fe6a8f62c7d9e66d
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 50eb88373b05d979d7f4b67b317e98c2a944459b
+ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75423471"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76701336"
 ---
 # <a name="add-sign-in-to-microsoft-to-an-aspnet-web-app"></a>Реализация входа в веб-приложение ASP.NET с использованием учетной записи Майкрософт.
 
@@ -42,7 +41,7 @@ ms.locfileid: "75423471"
 
 В этом руководстве используются следующие библиотеки:
 
-|Библиотека|Description|
+|Библиотека|Описание|
 |---|---|
 |[Microsoft.Owin.Security.OpenIdConnect](https://www.nuget.org/packages/Microsoft.Owin.Security.OpenIdConnect/)|Промежуточный слой, который позволяет приложению использовать OpenIDConnect для проверки подлинности.|
 |[Microsoft.Owin.Security.Cookies](https://www.nuget.org/packages/Microsoft.Owin.Security.Cookies)|ПО промежуточного слоя, которое позволяет приложению поддерживать пользовательский сеанс с помощью файлов cookie.|
@@ -426,9 +425,9 @@ ms.locfileid: "75423471"
 
 После перехода к представлению контроллера отобразится таблица, содержащая основные свойства пользователя:
 
-|Свойство |Значение |Description |
+|Свойство |Значение |Описание |
 |---|---|---|
-|**Название** |Полное имя пользователя | Имя и фамилия пользователя
+|**имя**; |Полное имя пользователя | Имя и фамилия пользователя
 |**Имя пользователя** |user<span>@domain.com</span> | Имя пользователя, которое используется для идентификации пользователя.|
 |**Тема** |Тема |Строка, уникально идентифицирующая пользователя в Интернете.|
 |**Идентификатор клиента** |Guid | **Уникальный идентификатор**, который представляет организацию Azure AD пользователя.|

@@ -3,25 +3,25 @@ title: Руководство. использованию приложения P
 description: Узнайте, как создать приложение Python в Linux, работающее в Службе приложений Azure, с подключением к базе данных PostgreSQL в Azure. В этом учебнике используется Django.
 ms.devlang: python
 ms.topic: tutorial
-ms.date: 12/14/2019
+ms.date: 01/23/2020
 ms.custom:
 - mvc
 - seodec18
 - seo-python-october2019
-ms.openlocfilehash: e0880cd1c16a8a0080551bbeaefe04f2f8dd705b
-ms.sourcegitcommit: a100e3d8b0697768e15cbec11242e3f4b0e156d3
+ms.openlocfilehash: 3aa5b5085a6120ca513f0aeba344e7f541f0fd72
+ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75681062"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76713409"
 ---
 # <a name="tutorial-run-a-python-django-web-app-with-postgresql-in-azure-app-service"></a>Руководство. Запуск веб-приложения Python (Django) с PostgreSQL в Службе приложений Azure
 
-[Служба приложений Azure](app-service-linux-intro.md) — это служба веб-размещения с самостоятельной установкой исправлений и высоким уровнем масштабируемости. Узнайте, как подключить управляемое данными веб-приложение Python (Django) к Базе данных Azure для PostgreSQL, а также как развернуть и запустить приложение в Службе приложений Azure.
+[Служба приложений Azure](app-service-linux-intro.md) — это служба веб-размещения с самостоятельной установкой исправлений и высоким уровнем масштабируемости. Узнайте, как подключить управляемое данными веб-приложение Python (Django) к Базе данных Azure для PostgreSQL, а также как развернуть и запустить приложение в Службе приложений Azure.
 
 ![Веб-приложение Python Django в Службе приложений Azure](./media/tutorial-python-postgresql-app/run-python-django-app-in-azure.png)
 
-В этом руководстве описано следующее.
+В этом руководстве описано следующее:
 
 > [!div class="checklist"]
 > * создание Базы данных Azure для PostgreSQL и подключение к ней веб-приложения;
@@ -31,7 +31,7 @@ ms.locfileid: "75681062"
 
 Инструкции из этой статьи вы можете выполнять в операционных системах macOS, Linux или Windows. Большинство действий выполняются одинаково, но есть небольшие отличия, которые не описаны в этом руководстве. В большинстве приведенных ниже примеров используется окно терминала `bash` в ОС Linux. 
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Перед началом работы с этим руководством сделайте следующее:
 
@@ -47,6 +47,11 @@ ms.locfileid: "75681062"
 В окне локального терминала выполните команду `psql`, чтобы подключиться к локальному серверу PostgreSQL с использованием встроенной учетной записи пользователя `postgres`.
 
 ```bash
+sudo su - postgres
+psql
+```
+или диспетчер конфигурации служб
+```PowerShell
 psql -U postgres
 ```
 
@@ -166,7 +171,7 @@ Quit the server with CONTROL-C.
 Замените *\<resourcegroup-name>* и *\<region>* именем используемой группы ресурсов и регионом, в котором она расположена. Для значений *\<admin-username>* и *\<admin-password>* создайте учетные данные пользователя с правами администратора базы данных. Запишите значения *\<admin-username>* и *\<admin-password>* . Они потребуются позже для входа на сервер PostgreSQL и в базы данных.
 
 ```azurecli-interactive
-az postgres server create --resource-group <resourcegroup-name> --name <postgresql-name> --location "<region>" --admin-user <admin-username> --admin-password <admin-password> --sku-name B_Gen4_1
+az postgres server create --resource-group <resourcegroup-name> --name <postgresql-name> --location "<region>" --admin-user <admin-username> --admin-password <admin-password> --sku-name B_Gen5_1
 ```
 
 После создания сервера Базы данных Azure для PostgreSQL в Azure CLI отображается код JSON примерно такого содержания:
@@ -174,15 +179,19 @@ az postgres server create --resource-group <resourcegroup-name> --name <postgres
 ```json
 {
   "administratorLogin": "myusername",
+  "earliestRestoreDate": "2020-01-22T19:02:15.727000+00:00",
   "fullyQualifiedDomainName": "myservername.postgres.database.azure.com",
   "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myresourcegroup/providers/Microsoft.DBforPostgreSQL/servers/myservername",
-  "location": "westus",
+  "location": "westeurope",
+  "masterServerId": "",
   "name": "myservername",
+  "replicaCapacity": 5,
+  "replicationRole": "None",
   "resourceGroup": "myresourcegroup",
   "sku": {
     "capacity": 1,
-    "family": "Gen4",
-    "name": "B_Gen4_1",
+    "family": "Gen5",
+    "name": "B_Gen5_1",
     "size": null,
     "tier": "Basic"
   },
@@ -276,6 +285,8 @@ python manage.py runserver
 
 Снова перейдите по адресу *http:\//localhost:8000*. Отобразится вопрос. Итак, ваше приложение сохраняет данные в базу данных в Базе данных Azure для PostgreSQL.
 
+Вы можете в любой момент остановить сервер Django, нажав клавиши CTRL+C в окне терминала.
+
 ## <a name="deploy-the-web-app-to-azure-app-service"></a>Развертывание веб-приложения в Службе приложений Azure
 
 На этом шаге вы развернете в Службе приложений Azure приложение Python, подключенное к базе данных в Базе данных Azure для PostgreSQL.
@@ -353,25 +364,29 @@ az webapp config appsettings set --name <app-name> --resource-group <resourcegro
 [!INCLUDE [app-service-plan-no-h](../../../includes/app-service-web-git-push-to-azure-no-h.md)]
 
 ```bash 
-Counting objects: 7, done.
+Counting objects: 60, done.
 Delta compression using up to 8 threads.
-Compressing objects: 100% (7/7), done.
-Writing objects: 100% (7/7), 775 bytes | 0 bytes/s, done.
-Total 7 (delta 4), reused 0 (delta 0)
+Compressing objects: 100% (51/51), done.
+Writing objects: 100% (60/60), 15.37 KiB | 749.00 KiB/s, done.
+Total 60 (delta 9), reused 0 (delta 0)
+remote: Deploy Async
 remote: Updating branch 'master'.
 remote: Updating submodules.
-remote: Preparing deployment for commit id '6520eeafcc'.
-remote: Generating deployment script.
-remote: Running deployment command...
-remote: Python deployment.
-remote: Kudu sync from: '/home/site/repository' to: '/home/site/wwwroot'
+remote: Preparing deployment for commit id '06f3f7c0cb'.
+remote: Repository path is /home/site/repository
+remote: Running oryx build...
+remote: Build orchestrated by Microsoft Oryx, https://github.com/Microsoft/Oryx
+remote: You can report issues at https://github.com/Microsoft/Oryx/issues
 . 
 . 
 . 
+remote: Done in 100 sec(s).
+remote: Running post deployment command(s)...
+remote: Triggering recycle (preview mode disabled).
 remote: Deployment successful.
-remote: App container will begin restart within 10 seconds.
+remote: Deployment Logs : 'https://<app-name>.scm.azurewebsites.net/newui/jsonviewer?view_url=/api/deployments/06f3f7c0cb52ce3b4aff85c2b5099fbacb65ab94/log'
 To https://<app-name>.scm.azurewebsites.net/<app-name>.git 
-   06b6df4..6520eea  master -> master
+ * [new branch]      master -> master
 ```  
 
 Сервер развертывания Службы приложений в корневой папке репозитория видит *requirements.txt* и, выполнив `git push`, запускает автоматическое управление пакетами Python.

@@ -9,17 +9,17 @@ author: MashaMSFT
 ms.author: mathoma
 ms.reviewer: carlrab
 ms.date: 11/21/2019
-ms.openlocfilehash: e1ee616adadcabb2deb3fa08a5f3d4f768fddfd5
-ms.sourcegitcommit: 05cdbb71b621c4dcc2ae2d92ca8c20f216ec9bc4
+ms.openlocfilehash: fa6e393500e9deeb91ee84aa5255320003817f08
+ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76045651"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76719897"
 ---
 # <a name="tutorial-configure-transactional-replication-between-two-managed-instances-and-sql-server"></a>Руководство. Настройка репликации транзакций между двумя управляемыми экземплярами и SQL Server
 
 
-В этом руководстве описано следующее.
+В этом руководстве описано следующее:
 
 > [!div class="checklist"]
 > - Настройка управляемого экземпляра в качестве издателя репликации. 
@@ -34,7 +34,7 @@ ms.locfileid: "76045651"
 
 См. сведения о том, как [настроить репликацию между издателем управляемого экземпляра и подписчиком управляемого экземпляра](replication-with-sql-database-managed-instance.md). 
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с руководством требуется наличие следующих компонентов:
 
@@ -144,7 +144,7 @@ Get-AzVirtualNetworkPeering `
 
    ![Создание частной зоны DNS](media/sql-database-managed-instance-configure-replication-tutorial/create-private-dns-zone.png)
 
-1. Выберите **Review + create** (Просмотреть и создать). Просмотрите параметры частной зоны DNS и щелкните **Создать**, чтобы создать этот ресурс. 
+1. Выберите **Review + create** (Просмотреть и создать). Просмотрите параметры частной зоны DNS и щелкните **Создать**, чтобы создать этот ресурс. 
 
 ### <a name="create-a-record"></a>Создание записи A
 
@@ -176,11 +176,11 @@ Get-AzVirtualNetworkPeering `
 
 Скопируйте путь к общей папке в формате `\\storage-account-name.file.core.windows.net\file-share-name`.   
 
-Пример: `\\replstorage.file.core.windows.net\replshare`
+Например, `\\replstorage.file.core.windows.net\replshare`.
 
 Скопируйте строку подключения к ключом доступа к хранилищу в формате `DefaultEndpointsProtocol=https;AccountName=<Storage-Account-Name>;AccountKey=****;EndpointSuffix=core.windows.net`.   
 
-Пример: `DefaultEndpointsProtocol=https;AccountName=replstorage;AccountKey=dYT5hHZVu9aTgIteGfpYE64cfis0mpKTmmc8+EP53GxuRg6TCwe5eTYWrQM4AmQSG5lb3OBskhg==;EndpointSuffix=core.windows.net`
+Например, `DefaultEndpointsProtocol=https;AccountName=replstorage;AccountKey=dYT5hHZVu9aTgIteGfpYE64cfis0mpKTmmc8+EP53GxuRg6TCwe5eTYWrQM4AmQSG5lb3OBskhg==;EndpointSuffix=core.windows.net`.
 
 
 См. сведения о том, как [управлять ключами доступа к учетной записи хранения](../storage/common/storage-account-keys-manage.md). 
@@ -385,7 +385,7 @@ INSERT INTO ReplTest (ID, c1) VALUES (15, 'pub')
 
 При добавлении новой подписки с помощью мастера **Новые подписки** на странице **Публикация** вы можете заметить, что там не указано ни одной доступной базы данных и или публикации, и получить следующее сообщение об ошибке:
 
-`There are no publications to which yuo can subscribe, either because this server has no publications or because you do not have sufficient privileges to access the publications.`
+`There are no publications to which you can subscribe, either because this server has no publications or because you do not have sufficient privileges to access the publications.`
  
 Такое сообщение может означать, что в издателе, к которому вы подключились, действительно отсутствуют доступные публикации или у вас нет для них достаточных разрешений. Но эта ошибка может быть вызвана и использованием устаревшей версии SQL Server Management Studio. Попробуйте выполнить обновление до SQL Server Management Studio 18.0 или более поздней версии, чтобы исключить эту причину. 
 

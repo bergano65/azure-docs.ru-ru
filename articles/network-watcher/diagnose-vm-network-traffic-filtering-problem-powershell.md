@@ -4,8 +4,7 @@ titleSuffix: Azure Network Watcher
 description: Из этого краткого руководства вы узнаете, как диагностировать проблему с фильтром сетевого трафика на виртуальной машине с помощью функции проверки IP-потока в Наблюдателе за сетями Azure.
 services: network-watcher
 documentationcenter: network-watcher
-author: KumudD
-manager: twooley
+author: damendo
 editor: ''
 tags: azure-resource-manager
 Customer intent: I need to diagnose a virtual machine (VM) network traffic filter problem that prevents communication to and from a VM.
@@ -16,20 +15,20 @@ ms.topic: quickstart
 ms.tgt_pltfrm: network-watcher
 ms.workload: infrastructure
 ms.date: 04/20/2018
-ms.author: kumud
+ms.author: damendo
 ms.custom: mvc
-ms.openlocfilehash: 756c8d4d7e227d477c3031aab0d0a478454c35bf
-ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
+ms.openlocfilehash: 5438cc07670393cab69344544ea1b68c46c42bd6
+ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74276054"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76844030"
 ---
 # <a name="quickstart-diagnose-a-virtual-machine-network-traffic-filter-problem---azure-powershell"></a>Краткое руководство. Диагностика проблемы с фильтром трафика на виртуальной машине с помощью Azure PowerShell
 
 С помощью этого краткого руководства вы развернете виртуальную машину (VM) и проверите доступ к IP-адресу и URL-адресу, а также доступ с IP-адреса. Затем вы определите причину проблемы с подключением и найдете способ ее устранения.
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
@@ -246,7 +245,7 @@ Get-AzEffectiveNetworkSecurityGroup `
 Remove-AzResourceGroup -Name myResourceGroup -Force
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 С помощью этого краткого руководства вы создали виртуальную машину и проверили работу фильтров входящего и исходящего трафика. Вы узнали, что правила групп безопасности сети могут разрешать или запрещать исходящий и входящий трафик виртуальной машины. Изучите дополнительные сведения о [правилах безопасности](../virtual-network/security-overview.md?toc=%2fazure%2fnetwork-watcher%2ftoc.json) и [создании правил безопасности](../virtual-network/manage-network-security-group.md?toc=%2fazure%2fnetwork-watcher%2ftoc.json#create-a-security-rule).
 

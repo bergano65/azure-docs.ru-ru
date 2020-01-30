@@ -7,25 +7,25 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: computer-vision
 ms.topic: quickstart
-ms.date: 12/05/2019
+ms.date: 01/22/2020
 ms.author: pafarley
-ms.openlocfilehash: 95b15924db7e5b1b788656d7592bb4ad87e07ce2
-ms.sourcegitcommit: d29e7d0235dc9650ac2b6f2ff78a3625c491bbbf
+ms.openlocfilehash: 530665168cc1ed21f1664e3012bbf37e52d96fbf
+ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76166753"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76716168"
 ---
 # <a name="quickstart-computer-vision-client-library-for-nodejs"></a>Краткое руководство. Клиентская библиотека службы "Компьютерное зрение" для Node.js
 
-Начало работы с клиентской библиотекой службы "Компьютерное зрение" для Node.js. Выполните приведенные здесь действия, чтобы установить пакет и протестировать пример кода для выполнения базовых задач. 
+Начало работы с клиентской библиотекой службы "Компьютерное зрение" для Node.js. Выполните приведенные здесь действия, чтобы установить пакет и протестировать пример кода для выполнения базовых задач.
 
 С помощью клиентской библиотеки службы "Компьютерное зрение" для Node.js можно выполнять следующие операции:
 
 * [Анализ изображения](#analyze-an-image)
 * [Чтение печатного и рукописного текста](#read-printed-and-handwritten-text).
 
-[Справочная документация](https://docs.microsoft.com/javascript/api/@azure/cognitiveservices-computervision/?view=azure-node-latest) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/cognitiveservices/cognitiveservices-computervision) | [Пакет (npm)](https://www.npmjs.com/package/azure-cognitiveservices-computervision) | [Примеры](https://azure.microsoft.com/resources/samples/?service=cognitive-services&term=vision&sort=0)
+[Справочная документация](https://docs.microsoft.com/javascript/api/@azure/cognitiveservices-computervision/?view=azure-node-latest) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/cognitiveservices/cognitiveservices-computervision) | [Пакет (npm)](https://www.npmjs.com/package/@azure/cognitiveservices-computervision) | [Примеры](https://azure.microsoft.com/resources/samples/?service=cognitive-services&term=vision&sort=0)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -38,20 +38,20 @@ ms.locfileid: "76166753"
 
 Ресурсами Azure, на которые вы подписаны, будет представлено семейство служб Azure Cognitive Services. Создайте ресурс для Компьютерного зрения с помощью [портала Azure](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) или [интерфейса командной строки Azure (CLI)](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account-cli) на локальном компьютере. Кроме того, вы можете сделать следующее:
 
-* Получить бесплатный [ключ пробной версии](https://azure.microsoft.com/try/cognitive-services/#decision) на 7 дней. После регистрации он будет доступен на [веб-сайте Azure](https://azure.microsoft.com/try/cognitive-services/my-apis/).  
+* Получить бесплатный [ключ пробной версии](https://azure.microsoft.com/try/cognitive-services/#decision) на 7 дней. После регистрации он будет доступен на [веб-сайте Azure](https://azure.microsoft.com/try/cognitive-services/my-apis/).
 * Просмотреть этот ресурс на [портале Azure](https://portal.azure.com/).
 
 После получения ключа из своего ресурса или пробной подписки [задайте переменные среды](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account#configure-an-environment-variable-for-authentication) для ключа и URL-адреса конечной точки с именами `COMPUTER_VISION_SUBSCRIPTION_KEY` и `COMPUTER_VISION_ENDPOINT` соответственно.
- 
+
 ### <a name="create-a-new-nodejs-application"></a>создание приложения Node.js;
 
-В окне консоли (например, cmd, PowerShell или Bash) создайте новый каталог для приложения и перейдите в него. 
+В окне консоли (например, cmd, PowerShell или Bash) создайте новый каталог для приложения и перейдите в него.
 
 ```console
 mkdir myapp && cd myapp
 ```
 
-Выполните команду `npm init`, чтобы создать приложение узла с помощью файла `package.json`. 
+Выполните команду `npm init`, чтобы создать приложение узла с помощью файла `package.json`.
 
 ```console
 npm init
@@ -59,7 +59,7 @@ npm init
 
 ### <a name="install-the-client-library"></a>Установка клиентской библиотеки
 
-Установите пакеты NPM: `ms-rest-azure` и `azure-cognitiveservices-computervision`.
+Установите пакеты NPM: `ms-rest-azure` и `@azure/cognitiveservices-computervision`.
 
 ```console
 npm install @azure/cognitiveservices-computervision
@@ -177,11 +177,11 @@ npm install @azure/cognitiveservices-computervision
 
 Укажите URL-адрес для изображения, которое необходимо использовать:
 
-[!code-javascript[](~/cognitive-services-quickstart-code/javascript/ComputerVision/ComputerVisionQuickstart.js?name=snippet_adult_image)] 
+[!code-javascript[](~/cognitive-services-quickstart-code/javascript/ComputerVision/ComputerVisionQuickstart.js?name=snippet_adult_image)]
 
 Затем добавьте следующий код для обнаружения содержимого для взрослых и вывода результатов на консоль.
 
-[!code-javascript[](~/cognitive-services-quickstart-code/javascript/ComputerVision/ComputerVisionQuickstart.js?name=snippet_adult)] 
+[!code-javascript[](~/cognitive-services-quickstart-code/javascript/ComputerVision/ComputerVisionQuickstart.js?name=snippet_adult)]
 
 ### <a name="get-image-color-scheme"></a>Получение цветовой схемы изображения
 
@@ -195,7 +195,7 @@ npm install @azure/cognitiveservices-computervision
 
 ### <a name="get-domain-specific-content"></a>Получение содержимого, связанного с определенной предметной областью
 
-Компьютерное зрение может использовать специализированную модель для дальнейшего анализа изображений. Дополнительные сведения см. в статье [Обнаружение содержимого, связанного с определенными предметными областями](../concept-detecting-domain-content.md). 
+Компьютерное зрение может использовать специализированную модель для дальнейшего анализа изображений. Дополнительные сведения см. в статье [Обнаружение содержимого, связанного с определенными предметными областями](../concept-detecting-domain-content.md).
 
 Сначала определите URL-адрес изображения для анализа:
 
