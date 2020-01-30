@@ -9,12 +9,12 @@ ms.date: 10/29/2019
 ms.topic: article
 ms.service: event-grid
 services: event-grid
-ms.openlocfilehash: 502a495bad4115daf9f0f4ffed276a307adf1fc4
-ms.sourcegitcommit: b45ee7acf4f26ef2c09300ff2dba2eaa90e09bc7
+ms.openlocfilehash: 7184fb5c45ce41de2bd63b55fb67cbd9ba6361e3
+ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73100653"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76844723"
 ---
 # <a name="tutorial-forward-events-to-event-grid-cloud"></a>Учебник. Пересылка событий в облако сетки событий
 
@@ -23,7 +23,7 @@ ms.locfileid: "73100653"
 * Реагирование на события пограничных событий в облаке.
 * Пересылка событий в службу "Сетка событий" в облаке и использование концентраторов событий Azure или очередей службы хранилища Azure для буферизации событий перед их обработкой в облаке.
 
-Для работы с этим руководством необходимо иметь представление о концепциях службы "Сетка событий" в [пограничных](concepts.md) и [Azure](../concepts.md).
+ Для работы с этим руководством необходимо иметь представление о концепциях службы "Сетка событий" в [пограничных](concepts.md) и [Azure](../concepts.md). Дополнительные типы назначения см. в разделе [обработчики событий](event-handlers.md). 
 
 ## <a name="prerequisites"></a>Технические условия 
 Для работы с этим руководством вам потребуется:
@@ -65,7 +65,7 @@ ms.locfileid: "73100653"
     curl -k -H "Content-Type: application/json" -X GET -g https://<your-edge-device-public-ip-here>:4438/topics/sampleTopic3?api-version=2019-01-01-preview
     ```
 
-   Пример выходных данных:
+   Образец вывода:
 
    ```json
         [
@@ -83,6 +83,7 @@ ms.locfileid: "73100653"
   
 ## <a name="create-event-grid-subscription-at-the-edge"></a>Создать подписку на сетку событий на границе
 
+[!INCLUDE [event-grid-deploy-iot-edge](../../../includes/event-grid-edge-persist-event-subscriptions.md)]
 
 1. Создайте subscription3. JSON со следующим содержимым. Дополнительные сведения о полезных данных см. в [документации по API](api.md) .
 
@@ -133,7 +134,7 @@ ms.locfileid: "73100653"
     curl -k -H "Content-Type: application/json" -X GET -g https://<your-edge-device-public-ip-here>:4438/topics/sampleTopic3/eventSubscriptions/sampleSubscription3?api-version=2019-01-01-preview
     ```
 
-    Пример выходных данных:
+    Образец вывода:
 
     ```json
          {
@@ -201,3 +202,4 @@ ms.locfileid: "73100653"
 * Сведения об устранении неполадок с использованием службы "Сетка событий Azure" на IoT Edge см. в разделе [руководство по устранению неполадок](troubleshoot.md).
 * Пересылать события в IoTHub, следуя этому [учебнику](forward-events-iothub.md)
 * Пересылка событий в веб-перехватчик в облаке с помощью этого [руководства](pub-sub-events-webhook-cloud.md)
+* [Мониторинг разделов и подписок на границе](monitor-topics-subscriptions.md)

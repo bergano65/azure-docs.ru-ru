@@ -8,12 +8,12 @@ ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 12/07/2018
 ms.custom: seodec18
-ms.openlocfilehash: 5534a46ba99d1536d331b5852ef47588f03d73a4
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.openlocfilehash: bf0740bbdd4754aeba43e64f1076a1bea33cffc6
+ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75980279"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76844431"
 ---
 # <a name="troubleshoot-azure-stream-analytics-queries"></a>Устранение неполадок з запросами в службе Azure Stream Analytics
 
@@ -21,21 +21,24 @@ ms.locfileid: "75980279"
 
 ## <a name="query-is-not-producing-expected-output"></a>Запрос не создает ожидаемых выходных данных
 1.  Изучите ошибки с помощью локального тестирования:
-    - На вкладке **Запрос** выберите **Тест**. Для [проверки запроса](stream-analytics-test-query.md) используйте загруженные демонстрационные данные. Проанализируйте все ошибки и попытайтесь исправить их.   
-    - Кроме того, вы можете [проверить запрос, используя реальные входные данные](stream-analytics-live-data-local-testing.md), с помощью инструментов Stream Analytics для Visual Studio.
+    - На портал Azure на вкладке **запрос** выберите **тест**. Для [проверки запроса](stream-analytics-test-query.md) используйте загруженные демонстрационные данные. Проанализируйте все ошибки и попытайтесь исправить их.   
+    - Вы также можете [проверить запрос локально](stream-analytics-live-data-local-testing.md) с помощью средств Azure Stream Analytics для Visual Studio или [Visual Studio Code](visual-studio-code-local-run-live-input.md). 
 
-2.  Если используются [**метки времени**](https://docs.microsoft.com/stream-analytics-query/timestamp-by-azure-stream-analytics), убедитесь, что они зарегистрированы для событий после [начала выполнения задания](stream-analytics-out-of-order-and-late-events.md).
+2.  Пошаговая [Отладка запросов с помощью схемы заданий](debug-locally-using-job-diagram.md) в средствах Azure Stream Analytics для Visual Studio. Схема задания показывает, как потоки данных из источников ввода (концентратор событий, центр Интернета вещей и т. д.) выполняются с помощью нескольких шагов запроса и, наконец, выводятся в приемники. Каждый шаг запроса сопоставляется с временным результирующим набором, определенным в скрипте с помощью инструкции WITH. Вы можете просмотреть данные и метрики на каждом шаге запроса в каждом промежуточном результирующем наборе, чтобы найти источник проблемы.
+    ](./media/debug-locally-using-job-diagram/preview-result.png) результатов предварительной версии диаграммы заданий ![
 
-3.  Исключите типичные проблемы, например:
+3.  Если используются [**метки времени**](https://docs.microsoft.com/stream-analytics-query/timestamp-by-azure-stream-analytics), убедитесь, что они зарегистрированы для событий после [начала выполнения задания](stream-analytics-out-of-order-and-late-events.md).
+
+4.  Исключите типичные проблемы, например:
     - Предложение [**WHERE**](https://docs.microsoft.com/stream-analytics-query/where-azure-stream-analytics) в запросе фильтрует все события, предотвращая создание выходных данных.
     - Выполнение функции [**CAST**](https://docs.microsoft.com/stream-analytics-query/cast-azure-stream-analytics) завершается ошибкой, что приводит к сбою всего задания. Чтобы избежать сбоев приведения типов, используйте функцию [**TRY_CAST**](https://docs.microsoft.com/stream-analytics-query/try-cast-azure-stream-analytics).
     - При использовании оконных функций подождите до завершения окна для вывода выходных данных из запроса.
     - Метка времени для событий предшествует времени запуска задания, поэтому события сбрасываются.
 
-4.  Убедитесь, что политики упорядочения событий настроены надлежащим образом. Перейдите к **параметрам** и выберите [**Упорядочение событий**](stream-analytics-out-of-order-and-late-events.md). Эта политика *НЕ* применяется при проверке запроса по нажатию кнопки **Тест**. В результате тестирования в браузере и при выполнении задания в рабочей среде отличаются одним компонентом.
+5.  Убедитесь, что политики упорядочения событий настроены надлежащим образом. Перейдите к **параметрам** и выберите [**Упорядочение событий**](stream-analytics-out-of-order-and-late-events.md). Эта политика *НЕ* применяется при проверке запроса по нажатию кнопки **Тест**. В результате тестирования в браузере и при выполнении задания в рабочей среде отличаются одним компонентом. 
 
-5. Выполните отладку с помощью журналов аудита и диагностики:
-    - Используйте [журналы аудита](../azure-resource-manager/management/view-activity-logs.md) и фильтр для диагностики и устранения ошибок.
+6. Выполните отладку с помощью журналов аудита и диагностики:
+    - Используйте [журналы аудита](../azure-resource-manager/resource-group-audit.md) и фильтр для диагностики и устранения ошибок.
     - Используйте [журналы диагностики заданий](stream-analytics-job-diagnostic-logs.md) для диагностики и устранения ошибок.
 
 ## <a name="job-is-consuming-too-many-streaming-units"></a>Задание потребляет слишком много единиц потоковой передачи

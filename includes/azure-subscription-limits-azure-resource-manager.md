@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 07/22/2019
 ms.author: jroth
 ms.custom: include file
-ms.openlocfilehash: 2c5312c2e0a7121237c4d11197d90a2a5638557c
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.openlocfilehash: d94937a738034904413eac8b256121f14221d1ac
+ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76021180"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76845964"
 ---
 | Ресурс | Ограничение по умолчанию | Максимальное ограничение |
 | --- | --- | --- |
@@ -21,16 +21,17 @@ ms.locfileid: "76021180"
 | Общее количество ядер виртуальных машин на [подписку](../articles/billing-buy-sign-up-azure-subscription.md) |20<sup>1</sup> на регион. | Обратитесь в службу поддержки. |
 | Общее число ядер виртуальной машины Azure на [подписку](../articles/billing-buy-sign-up-azure-subscription.md) |20<sup>1</sup> на регион. | Обратитесь в службу поддержки. |
 | Виртуальная машина на ряд, например Dv2 и F, количество ядер на [подписку](../articles/billing-buy-sign-up-azure-subscription.md) |20<sup>1</sup> на регион. | Обратитесь в службу поддержки. |
-| [Соадминистраторов](../articles/cost-management-billing/manage/add-change-subscription-administrator.md) на подписку |Без ограничений. |Без ограничений. |
 | [Учетные записи хранения](../articles/storage/common/storage-account-create.md) на подписку в каждом регионе |250 |250 |
-| [Групп ресурсов](../articles/azure-resource-manager/management/overview.md) на подписку |980 |980 |
 | [Групп доступности](../articles/virtual-machines/windows/manage-availability.md#configure-multiple-virtual-machines-in-an-availability-set-for-redundancy) на подписку |2 000. США за регион. |2 000. США за регион. |
+| [Территориальные группы](../articles/virtual-network/virtual-networks-migrate-to-regional-vnet.md) на подписку |Н/д<sup>3</sup> |Н/д<sup>3</sup> |
+| [Облачные службы](../articles/cloud-services/cloud-services-choose-me.md) на подписку |Н/д<sup>3</sup> |Н/д<sup>3</sup> |
+| [Групп ресурсов](../articles/azure-resource-manager/management/overview.md) на подписку |980 |980 |
 | Размер запроса API Azure Resource Manager |4 194 304 байт. |4 194 304 байт. |
 | Теги на подписку<sup>2</sup> |Без ограничений. |Без ограничений. |
 | Вычисление уникальных тегов на подписку<sup>2</sup> | 10 000 | 10 000 |
-| [Облачные службы](../articles/cloud-services/cloud-services-choose-me.md) на подписку |N/A<sup>3</sup> |N/A<sup>3</sup> |
-| [Территориальные группы](../articles/virtual-network/virtual-networks-migrate-to-regional-vnet.md) на подписку |N/A<sup>3</sup> |N/A<sup>3</sup> |
 | [Развертывания на уровне подписки](../articles/azure-resource-manager/templates/deploy-to-subscription.md) на расположение | 800<sup>4</sup> | 800 |
+| Подписки на Azure Active Directory клиент | Без ограничений. | Без ограничений. |
+| [Соадминистраторов](../articles/cost-management-billing/manage/add-change-subscription-administrator.md) на подписку |Без ограничений. |Без ограничений. |
 
 <sup>1</sup> Ограничения по умолчанию зависят от типа категории предложения, например бесплатной пробной версии и оплаты по мере использования, а также ряда, таких как Dv2, F и G. Например, значение по умолчанию для подписок Соглашение Enterprise — 350.
 

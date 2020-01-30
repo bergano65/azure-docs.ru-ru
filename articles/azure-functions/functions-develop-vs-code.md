@@ -3,12 +3,12 @@ title: Разрабатывайте функции Azure с помощью Visua
 description: Узнайте, как разрабатывать и тестировать функции Azure с помощью расширения "функции Azure" для Visual Studio Code.
 ms.topic: conceptual
 ms.date: 08/21/2019
-ms.openlocfilehash: 4a5f60c2da8a77f385dba40dcd4d342583e989c1
-ms.sourcegitcommit: 87781a4207c25c4831421c7309c03fce5fb5793f
+ms.openlocfilehash: 59c350b267583a2bccfdd66996aa6c1f97954218
+ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76547427"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76845396"
 ---
 # <a name="develop-azure-functions-by-using-visual-studio-code"></a>Разрабатывайте функции Azure с помощью Visual Studio Code
 
@@ -65,11 +65,13 @@ ms.locfileid: "76547427"
 
 1. Выберите папку для проекта приложения-функции, а затем **выберите язык для проекта функции**.
 
+1. Если вы еще не установили основные средства, вам будет предложено **выбрать версию** основных средств для установки. Выберите версию 2. x или более позднюю версию. 
+
 1. Выберите шаблон функции **триггера HTTP** или нажмите кнопку **пропустить пока** , чтобы создать проект без функции. Вы всегда можете [Добавить функцию в проект](#add-a-function-to-your-project) позже.
 
     ![Выбор шаблона функции, активируемой HTTP-запросом](./media/functions-develop-vs-code/create-function-choose-template.png)
 
-1. Введите **HTTPTrigger** в качестве имени функции и нажмите клавишу ВВОД, а затем выберите авторизация **функции** . Этот уровень авторизации требует предоставления [ключа функции](functions-bindings-http-webhook.md#authorization-keys) при вызове конечной точки функции.
+1. Введите **хттпексампле** в качестве имени функции и нажмите клавишу ВВОД, а затем выберите авторизация **функции** . Этот уровень авторизации требует предоставления [ключа функции](functions-bindings-http-webhook.md#authorization-keys) при вызове конечной точки функции.
 
     ![Выбор авторизации функции](./media/functions-develop-vs-code/create-function-auth.png)
 
@@ -189,6 +191,8 @@ context.bindings.msg = "Name passed to the function: " req.query.name;
 ---
 
 [!INCLUDE [Supported triggers and bindings](../../includes/functions-bindings.md)]
+
+[!INCLUDE [functions-sign-in-vs-code](../../includes/functions-sign-in-vs-code.md)]
 
 ## <a name="publish-to-azure"></a>Публикация в Azure
 

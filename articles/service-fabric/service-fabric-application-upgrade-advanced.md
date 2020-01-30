@@ -2,21 +2,87 @@
 title: Разделы, посвященные расширенному обновлению приложений
 description: В этой статье рассматриваются некоторые дополнительные темы, относящиеся к обновлению приложения Service Fabric.
 ms.topic: conceptual
-ms.date: 2/23/2018
-ms.openlocfilehash: bd95d651e02cb61bcbe7a108db92afce8b5484bd
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.date: 1/28/2020
+ms.openlocfilehash: 09f3fdf1f26a13c6722eb039e132256f33be38ff
+ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75457530"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76845428"
 ---
-# <a name="service-fabric-application-upgrade-advanced-topics"></a>Обновление приложений Service Fabric: дополнительные разделы
-## <a name="adding-or-removing-service-types-during-an-application-upgrade"></a>Добавление или удаление типов служб во время обновления приложения
+# <a name="service-fabric-application-upgrade-advanced-topics"></a>Обновление приложения Service Fabric: дополнительные разделы
+
+## <a name="add-or-remove-service-types-during-an-application-upgrade"></a>Добавление или удаление типов служб во время обновления приложения
+
 Если в приложение, которое опубликовано как обновление, добавляется новый тип службы, то он добавляется в развернутое приложение. Подобное обновление не влияет на какие-либо экземпляры служб, которые уже были частью приложения. Однако чтобы активировать новый тип службы, необходимо создать экземпляр типа службы, который был добавлен (см. статью о командлете [New-ServiceFabricService](https://docs.microsoft.com/powershell/module/servicefabric/new-servicefabricservice?view=azureservicefabricps)).
 
 Точно так же типы служб могут быть удалены из приложения. Но в этом случае перед продолжением обновления все текущие экземпляры удаляемой службы должны быть удалены (см. статью о командлете [Remove-ServiceFabricService](https://docs.microsoft.com/powershell/module/servicefabric/remove-servicefabricservice?view=azureservicefabricps)).
 
+## <a name="avoid-connection-drops-during-stateless-service-planned-downtime-preview"></a>Предотвращение неразрывов подключений во время запланированного простоя службы без отслеживания состояния (Предварительная версия)
+
+Для запланированных простоев экземпляров без отслеживания состояния, таких как обновление приложения или кластера или деактивация узла, подключения могут быть удалены из-за удаления видимой конечной точки после ее выхода.
+
+Чтобы избежать этого, настройте функцию *рекуестдраин* (Предварительная версия), добавив в конфигурацию службы *Длительность задержки закрытия экземпляра* реплики. Это гарантирует удаление конечной точки, объявленной экземпляром без отслеживания состояния, *перед* запуском таймера задержки для закрытия экземпляра. Эта задержка позволяет корректно завершать существующие запросы до того, как экземпляр будет действительно остановлен. Клиенты получают уведомления о смене конечных точек функцией обратного вызова, поэтому они могут повторно разрешить конечную точку и избежать отправки новых запросов экземпляру.
+
+### <a name="service-configuration"></a>Конфигурация службы
+
+Существует несколько способов настройки задержки на стороне службы.
+
+ * **При создании новой службы**укажите `-InstanceCloseDelayDuration`:
+
+    ```powershell
+    New-ServiceFabricService -Stateless [-ServiceName] <Uri> -InstanceCloseDelayDuration <TimeSpan>`
+    ```
+
+ * **При определении службы в разделе по умолчанию манифеста приложения**назначьте свойство `InstanceCloseDelayDurationSeconds`:
+
+    ```xml
+          <StatelessService ServiceTypeName="Web1Type" InstanceCount="[Web1_InstanceCount]" InstanceCloseDelayDurationSeconds="15">
+              <SingletonPartition />
+          </StatelessService>
+    ```
+
+ * **При обновлении существующей службы**укажите `-InstanceCloseDelayDuration`:
+
+    ```powershell
+    Update-ServiceFabricService [-Stateless] [-ServiceName] <Uri> [-InstanceCloseDelayDuration <TimeSpan>]`
+    ```
+
+### <a name="client-configuration"></a>Настройка клиента
+
+Чтобы получить уведомление об изменении конечной точки, клиенты могут зарегистрировать обратный вызов (`ServiceManager_ServiceNotificationFilterMatched`) следующим образом: 
+
+```csharp
+    var filterDescription = new ServiceNotificationFilterDescription
+    {
+        Name = new Uri(serviceName),
+        MatchNamePrefix = true
+    };
+    fbClient.ServiceManager.ServiceNotificationFilterMatched += ServiceManager_ServiceNotificationFilterMatched;
+    await fbClient.ServiceManager.RegisterServiceNotificationFilterAsync(filterDescription);
+
+private static void ServiceManager_ServiceNotificationFilterMatched(object sender, EventArgs e)
+{
+      // Resolve service to get a new endpoint list
+}
+```
+
+Уведомление об изменении указывает на то, что конечные точки изменились, клиент должен повторно разрешить конечные точки, а не использовать конечные точки, которые больше не объявлены, так как они скоро выйдут.
+
+### <a name="optional-upgrade-overrides"></a>Необязательные переопределения обновления
+
+Помимо задания длительности задержки по умолчанию для каждой службы, можно также переопределить задержку при обновлении приложения или кластера с помощью того же параметра (`InstanceCloseDelayDurationSec`):
+
+```powershell
+Start-ServiceFabricApplicationUpgrade [-ApplicationName] <Uri> [-ApplicationTypeVersion] <String> [-InstanceCloseDelayDurationSec <UInt32>]
+
+Start-ServiceFabricClusterUpgrade [-CodePackageVersion] <String> [-ClusterManifestVersion] <String> [-InstanceCloseDelayDurationSec <UInt32>]
+```
+
+Длительность задержки применяется только к вызываемому экземпляру обновления и не изменяет индивидуальные конфигурации задержки службы. Например, это можно использовать для указания задержки `0`, чтобы пропустить все предварительно настроенные задержки обновления.
+
 ## <a name="manual-upgrade-mode"></a>Ручной режим обновления
+
 > [!NOTE]
 > Для всех обновлений Service Fabric рекомендуется использовать *отслеживаемый* (Monitored) режим обновления.
 > Режим *UnmonitoredManual* (неотслеживаемый, ручной) следует использовать только для сбойных или отложенных обновлений. 
@@ -30,6 +96,7 @@ ms.locfileid: "75457530"
 Наконец, режим *UnmonitoredAuto* (неотслеживаемый, автоматический) подходит для выполнения быстрых итераций обновления во время разработки или тестирования служб, так как пользовательский ввод не требуется, а политики работоспособности приложения не оцениваются.
 
 ## <a name="upgrade-with-a-diff-package"></a>Обновление при помощи пакета diff
+
 Обновления могут выполняться путем подготовки пакетов разностных изменений (вместо полных пакетов приложений), содержащих только обновленные пакеты кода, конфигурации или данных, а также полные манифесты приложений и служб. Для первичной установки приложений в кластер необходимы полные пакеты приложений. При последующих обновлениях могут использоваться либо полные пакеты приложений, либо пакеты разностных изменений (diff).  
 
 Любая ссылка в манифесте приложения или манифесте служб пакета diff, которую невозможно найти в пакете приложения, автоматически заменяется текущей подготовленной версией.
@@ -113,7 +180,7 @@ HealthState            : Ok
 ApplicationParameters  : { "ImportantParameter" = "2"; "NewParameter" = "testAfter" }
 ```
 
-## <a name="rolling-back-application-upgrades"></a>Откат обновлений приложений
+## <a name="roll-back-application-upgrades"></a>Откат обновлений приложения
 
 Хотя обновления можно выполнить в одном из трех режимов (*Monitored*, *UnmonitoredAuto* или *UnmonitoredManual*), откатить их можно только в режиме *UnmonitoredAuto* или *UnmonitoredManual*. Откат в режиме *UnmonitoredAuto* работает так же, как накат. Единственное исключение: другое значение по умолчанию *UpgradeReplicaSetCheckTimeout* (см. статью [Параметры обновления приложений](service-fabric-application-upgrade-parameters.md)). Откат в режиме *UnmonitoredManual* работает так же, как и накат. Он приостанавливается после завершения работы с каждым доменом обновления. Возобновить его можно с помощью командлета [ Resume-ServiceFabricApplicationUpgrade ](https://docs.microsoft.com/powershell/module/servicefabric/resume-servicefabricapplicationupgrade?view=azureservicefabricps).
 

@@ -5,14 +5,14 @@ services: firewall
 author: vhorne
 ms.service: firewall
 ms.topic: conceptual
-ms.date: 11/19/2019
+ms.date: 01/29/2020
 ms.author: victorh
-ms.openlocfilehash: ac8ec9a86c388f41493d60d79a21db28fbf2aa95
-ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
+ms.openlocfilehash: 8b55f31f12ab1057ac2e0f625a0285b6518cc44a
+ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75646217"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76845767"
 ---
 # <a name="azure-firewall-faq"></a>Часто задаваемые вопросы о службе "Брандмауэр Azure"
 
@@ -54,7 +54,7 @@ ms.locfileid: "75646217"
 
 ## <a name="does-azure-firewall-support-inbound-traffic-filtering"></a>Поддерживает ли служба "Брандмауэр Azure" фильтрацию входящего трафика?
 
-Брандмауэр Azure поддерживает фильтрацию входящего и исходящего трафика. Реализована защита входящего трафика, использующего протоколы, отличные от HTTP/S. Например, RDP, SSH, FTP.
+Брандмауэр Azure поддерживает фильтрацию входящего и исходящего трафика. Защита для входящего трафика обычно используется для протоколов, отличных от HTTP и S. Например, RDP, SSH, FTP. Для получения наилучшей входящей защиты HTTP/S используйте брандмауэр веб-приложения, например [брандмауэр веб-приложения Azure, в шлюзе приложений Azure](../web-application-firewall/ag/ag-overview.md).
 
 ## <a name="which-logging-and-analytics-services-are-supported-by-the-azure-firewall"></a>Какие службы ведения журнала и аналитики поддерживаются в службе "Брандмауэр Azure"?
 

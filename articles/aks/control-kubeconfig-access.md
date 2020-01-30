@@ -5,14 +5,14 @@ services: container-service
 author: mlearned
 ms.service: container-service
 ms.topic: article
-ms.date: 05/31/2019
+ms.date: 01/28/2020
 ms.author: mlearned
-ms.openlocfilehash: cbc653b86ed83f9d6a7348d39f51dc7cd49c6892
-ms.sourcegitcommit: 0f54f1b067f588d50f787fbfac50854a3a64fff7
+ms.openlocfilehash: d1fdd17b0f6b8ed91d4496f7e9e5a578e53556fe
+ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "67615672"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76845230"
 ---
 # <a name="use-azure-role-based-access-controls-to-define-access-to-the-kubernetes-configuration-file-in-azure-kubernetes-service-aks"></a>Чтобы определить доступ к файлу конфигурации Kubernetes в службе Azure Kubernetes (AKS), используйте элементы управления доступом на основе ролей.
 
@@ -28,28 +28,32 @@ ms.locfileid: "67615672"
 
 ## <a name="available-cluster-roles-permissions"></a>Доступные разрешения ролей кластера
 
-При взаимодействии с кластером AKS с помощью инструмента `kubectl` используется файл конфигурации, который определяет сведения о подключении кластера. Этот файл конфигурации обычно хранится в расположении *~/.kube/config*. В файле *kubeconfig* можно определить несколько кластеров. Переключение между кластерами выполняется с помощью команды [kubectl config use-context][kubectl-config-use-context] .
+При взаимодействии с кластером AKS с помощью инструмента `kubectl` используется файл конфигурации, который определяет сведения о подключении кластера. Этот файл конфигурации обычно хранится в *~/.KUBE/config.* . В этом файле *kubeconfig* можно определить несколько кластеров. Переключение между кластерами выполняется с помощью команды [kubectl config use-context][kubectl-config-use-context] .
 
 Команда [AZ AKS Get-Credential][az-aks-get-credentials] позволяет получить учетные данные для доступа к кластеру AKS и объединяет их в файл *kubeconfig* . Доступ к этим учетным данным также можно контролировать с помощью управления доступом Azure на основе ролей (RBAC). Эти роли Azure RBAC позволяют определить, кто может получить файл *kubeconfig* и какие он получит разрешения в пределах кластера.
 
 Ниже описаны две встроенные роли:
 
 * **Роль администратора кластера в Службе Azure Kubernetes**  
-    * Разрешение доступа к вызову API *Microsoft.ContainerService/managedClusters/listClusterAdminCredential/action*. Этот вызов API [перечисляет учетные данные администратора кластера][api-cluster-admin].
-    * Скачивание файла *kubeconfig* для роли *clusterAdmin*.
+  * Разрешение доступа к вызову API *Microsoft.ContainerService/managedClusters/listClusterAdminCredential/action*. Этот вызов API [перечисляет учетные данные администратора кластера][api-cluster-admin].
+  * Скачивание файла *kubeconfig* для роли *clusterAdmin*.
 * **Роль пользователя кластера в Службе Azure Kubernetes**
-    * Разрешение доступа к вызову API *Microsoft.ContainerService/managedClusters/listClusterUserCredential/action*. Этот вызов API [перечисляет учетные данные пользователя кластера][api-cluster-user].
-    * Скачивание файла *kubeconfig* для роли *clusterUser*.
+  * Разрешение доступа к вызову API *Microsoft.ContainerService/managedClusters/listClusterUserCredential/action*. Этот вызов API [перечисляет учетные данные пользователя кластера][api-cluster-user].
+  * Скачивание файла *kubeconfig* для роли *clusterUser*.
 
 Эти роли RBAC можно применять к пользователю или группе Azure Active Directory (AD).
+
+> ! МЕТИМ В кластерах, использующих Azure AD, пользователи с ролью *клустерусер* имеют пустой файл *kubeconfig* , который запрашивает вход в систему. После входа пользователи получают доступ на основе параметров пользователя или группы Azure AD. Пользователи с ролью *клустерадмин* имеют доступ администратора.
+>
+> Кластеры, не использующие Azure AD, используют только роль *клустерадмин* .
 
 ## <a name="assign-role-permissions-to-a-user-or-group"></a>Назначение разрешений роли пользователю или группе
 
 Чтобы назначить одну из доступных ролей, необходимо получить идентификатор ресурса кластера AKS и идентификатор учетной записи пользователя или группы Azure AD. В следующих примерах команд:
 
 * Получите идентификатор ресурса кластера с помощью команды [AZ AKS показывать][az-aks-show] для кластера с именем *myAKSCluster* в группе ресурсов *myResourceGroup* . При необходимости укажите имя вашей группы ресурсов и кластера.
-* Использует команды [AZ Account шоу][az-account-show] и [AZ AD user демонстрация][az-ad-user-show] для получения идентификатора пользователя.
-* Наконец, назначает роль с помощью команды [AZ Role назначение Create][az-role-assignment-create] .
+* Используйте команды [AZ Account шоу][az-account-show] и [AZ AD user демонстрация][az-ad-user-show] , чтобы получить идентификатор пользователя.
+* Наконец, назначьте роль с помощью команды [AZ Role назначение Create][az-role-assignment-create] .
 
 В следующем примере *роль администратора кластера Azure Kubernetes* назначается отдельной учетной записи пользователя:
 
@@ -69,7 +73,7 @@ az role assignment create \
 ```
 
 > [!TIP]
-> Если вы хотите назначить разрешения для группы Azure AD, измените `--assignee` параметр, показанный в предыдущем примере, на идентификатор объекта для *группы* , а не для *пользователя*. Чтобы получить идентификатор объекта для группы, используйте команду [AZ AD Group показ][az-ad-group-show] . В следующем примере возвращается идентификатор объекта для группы Azure AD с именем *AppDev*:`az ad group show --group appdev --query objectId -o tsv`
+> Если вы хотите назначить разрешения группе Azure AD, обновите параметр `--assignee`, показанный в предыдущем примере, с ИДЕНТИФИКАТОРом объекта для *группы* , а не с *пользователем*. Чтобы получить идентификатор объекта для группы, используйте команду [AZ AD Group показ][az-ad-group-show] . В следующем примере возвращается идентификатор объекта для группы Azure AD с именем *AppDev*: `az ad group show --group appdev --query objectId -o tsv`
 
 При необходимости можно изменить предыдущее назначение на *роль пользователя кластера*.
 
@@ -125,13 +129,13 @@ users:
 
 ## <a name="remove-role-permissions"></a>Удаление разрешений ролей
 
-Чтобы удалить назначения ролей, используйте команду [AZ Role назначение Delete][az-role-assignment-delete] . Укажите идентификатор учетной записи и идентификатор ресурса кластера, полученные в предыдущих командах. Если роль назначается группе, а не пользователю, укажите соответствующий идентификатор объекта группы, а не идентификатор объекта учетной записи для `--assignee` параметра:
+Чтобы удалить назначения ролей, используйте команду [AZ Role назначение Delete][az-role-assignment-delete] . Укажите идентификатор учетной записи и идентификатор ресурса кластера, полученные в предыдущих командах. Если роль назначается группе, а не пользователю, укажите соответствующий идентификатор объекта группы, а не идентификатор объекта учетной записи для параметра `--assignee`.
 
 ```azurecli-interactive
 az role assignment delete --assignee $ACCOUNT_ID --scope $AKS_CLUSTER
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы обеспечить повышенную безопасность доступа к кластерам AKS, [Интегрируйте проверку подлинности Azure Active Directory][aad-integration].
 

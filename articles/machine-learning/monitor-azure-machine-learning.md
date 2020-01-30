@@ -9,12 +9,12 @@ ms.reviewer: larryfr
 ms.author: aashishb
 author: aashishb
 ms.date: 11/04/2019
-ms.openlocfilehash: 1c5b2879659305e55bb01e4cfab27c7a1b343155
-ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
+ms.openlocfilehash: c35afe6e3d6ec74e8fc7cd134f533d1e618c820e
+ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75894852"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76845737"
 ---
 # <a name="monitoring-azure-machine-learning"></a>Мониторинг Машинное обучение Azure
 
@@ -32,7 +32,7 @@ ms.locfileid: "75894852"
 
 Машинное обучение Azure записывает данные мониторинга с помощью Azure Monitor, который представляет собой полную службу мониторинга стека в Azure. Azure Monitor предоставляет полный набор функций для мониторинга ресурсов Azure. Он также может отслеживать ресурсы в других облаках и в локальной среде.
 
-Начните с статьи [Azure Monitor обзор](/azure/azure-monitor/overview), в которой представлен обзор возможностей мониторинга. Следующие разделы посвящены этой информации путем предоставления конкретных ОО с помощью Azure Monitor с Машинное обучение Azure.
+Начните с статьи [Azure Monitor обзор](/azure/azure-monitor/overview), в которой представлен обзор возможностей мониторинга. Следующие разделы посвящены этим сведениям, предоставляя особенности использования Azure Monitor с Машинное обучение Azure.
 
 Сведения о затратах, связанных с Azure Monitor, см. в разделе [использование и оценка затрат](/azure/azure-monitor/platform/usage-estimated-costs). Сведения о времени, которое требуется для отображения данных в Azure Monitor, см. в разделе [время приема данных журнала](/azure/azure-monitor/platform/data-ingestion-time).
 

@@ -4,22 +4,20 @@ titleSuffix: Azure Network Watcher
 description: В этой статье описывается, как диагностировать локальное подключение с помощью службы автоматизации Azure и Наблюдателя за сетями.
 services: network-watcher
 documentationcenter: na
-author: KumudD
-manager: twooley
-editor: ''
+author: damendo
 ms.service: network-watcher
 ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/22/2017
-ms.author: kumud
-ms.openlocfilehash: 07847289c156aaa48b9d15c40d4135ce2cf39c10
-ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
+ms.author: damendo
+ms.openlocfilehash: 74c9f44ff5fbbbb50bba1594d371633fd49857eb
+ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74275910"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76845037"
 ---
 # <a name="monitor-vpn-gateways-with-network-watcher-troubleshooting"></a>Мониторинг VPN-шлюзов с помощью средства устранения неполадок Наблюдателя за сетями
 
@@ -55,25 +53,25 @@ ms.locfileid: "74275910"
 
 Чтобы настроить пример, сначала нужно создать модуль runbook. В этом примере используется учетная запись запуска от имени. Сведения об учетных записях запуска от имени см. в разделе [Создание учетной записи службы автоматизации на портале Azure](../automation/automation-create-runas-account.md).
 
-### <a name="step-1"></a>Шаг 1.
+### <a name="step-1"></a>Шаг 1
 
 Перейдите к службе автоматизации Azure на [портале Azure](https://portal.azure.com) и нажмите кнопку **Модули Runbook**.
 
 ![Обзор учетной записи службы автоматизации][1]
 
-### <a name="step-2"></a>Шаг 2
+### <a name="step-2"></a>Шаг 2
 
 Нажмите кнопку **Добавить Runbook**, чтобы начать создание модуля Runbook.
 
 ![Колонка модулей runbook][2]
 
-### <a name="step-3"></a>Шаг 3.
+### <a name="step-3"></a>Шаг 3
 
 В разделе **Быстрое создание**, нажмите кнопку **Создать новый Runbook**, чтобы создать модуль runbook.
 
 ![Колонка добавления модуля runbook][3]
 
-### <a name="step-4"></a>Шаг 4.
+### <a name="step-4"></a>Шаг 4.
 
 На этом этапе присвойте модулю runbook имя. В этом примере он называется **Get-VPNGatewayStatus**. Необходимо указать описательное имя модуля runbook. Кроме того, рекомендуется присвоить ему имя, которое соответствует стандартам именования PowerShell. Тип модуля runbook в этом примере — **PowerShell**. Другие варианты: графический, рабочий процесс PowerShell и графический рабочий процесс PowerShell.
 
@@ -157,13 +155,13 @@ else
 
 ![Шаг 7][7]
 
-### <a name="step-1"></a>Шаг 1.
+### <a name="step-1"></a>Шаг 1
 
 В колонке **Расписание** щелкните **Создать новое расписание**.
 
 ![Шаг 8][8]
 
-### <a name="step-2"></a>Шаг 2
+### <a name="step-2"></a>Шаг 2
 
 В колонке **Новое расписание** заполните сведения о расписании. Вы можете указать значения, перечисленные ниже.
 
@@ -179,13 +177,13 @@ else
 
 ![Шаг 9.][9]
 
-### <a name="step-3"></a>Шаг 3.
+### <a name="step-3"></a>Шаг 3
 
 Нажмите кнопку "Сохранить", чтобы сохранить расписание для модуля runbook.
 
 ![Шаг 10][10]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы узнать, как интегрировать средство устранения неполадок Наблюдателя за сетями со службой автоматизации Azure, научитесь активировать захват пакетов на основе предупреждений виртуальной машины. Инструкции см. в статье о том, как [с помощью Наблюдателя за сетями Azure создать захват пакетов, который активируется оповещениями](network-watcher-alert-triggered-packet-capture.md).
 

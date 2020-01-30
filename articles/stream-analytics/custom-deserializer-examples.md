@@ -6,13 +6,13 @@ ms.author: mamccrea
 ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
-ms.date: 12/30/2019
-ms.openlocfilehash: a64912921e5ce8c0dc76fbf2ae0be8fb34bacf1a
-ms.sourcegitcommit: ec2eacbe5d3ac7878515092290722c41143f151d
+ms.date: 1/28/2020
+ms.openlocfilehash: 270e9a31c28e7209cfe43ea8307b928ed3257a35
+ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75553024"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76845262"
 ---
 # <a name="read-input-in-any-format-using-net-custom-deserializers"></a>Чтение входных данных в любом формате с помощью пользовательских десериализаторов .NET
 
@@ -80,7 +80,7 @@ ms.locfileid: "75553024"
 
 ## <a name="deserializer-examples"></a>Примеры десериализатора
 
-В этом разделе показано, как создавать пользовательские десериализаторы для protobuf и CSV. Дополнительные примеры см. [Azure Stream Analytics на сайте GitHub](https://github.com/Azure/azure-stream-analytics/tree/master/CustomDeserializers).
+В этом разделе показано, как создавать пользовательские десериализаторы для protobuf и CSV. Дополнительные примеры, например формат AVRO для записи концентратора событий, см. [на Azure Stream Analytics на сайте GitHub](https://github.com/Azure/azure-stream-analytics/tree/master/CustomDeserializers).
 
 ### <a name="protocol-buffer-protobuf-format"></a>Формат буфера протокола (protobuf)
 

@@ -1,6 +1,6 @@
 ---
-title: включение файла
-description: включение файла
+title: включить файл
+description: включить файл
 services: event-grid
 author: tfitzmac
 ms.service: event-grid
@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 05/22/2019
 ms.author: tomfitz
 ms.custom: include file
-ms.openlocfilehash: 890095718833c90a6764d0799d2081b393b1d0bd
-ms.sourcegitcommit: 7efb2a638153c22c93a5053c3c6db8b15d072949
+ms.openlocfilehash: ee80c04a6365c2cf337c4033a90df8d2993c299d
+ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72887832"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76845975"
 ---
 Следующие ограничения относятся к системным разделам службы "Сетка событий Azure" и пользовательским темам, а *не* к доменам событий.
 
@@ -23,7 +23,7 @@ ms.locfileid: "72887832"
 | Количество подписок на события на раздел | 500 |
 | Скорость публикации пользовательского раздела (входящий трафик) | 5000 событий на раздел в секунду |
 | Публиковать запросы | 250 в секунду |
-| Размер события | Поддержка 64 КБ в общедоступной версии. Поддержка 1 МБ сейчас доступна в предварительной версии. |
+| Размер события | 1 МБ (начислено несколько событий 64 КБ) |
 
 Следующие ограничения применяются только к доменам событий.
 

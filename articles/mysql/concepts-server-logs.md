@@ -5,13 +5,13 @@ author: ajlam
 ms.author: andrela
 ms.service: mysql
 ms.topic: conceptual
-ms.date: 01/21/2020
-ms.openlocfilehash: e0c58c5c3fef41a472fe791f66292c9280531493
-ms.sourcegitcommit: 38b11501526a7997cfe1c7980d57e772b1f3169b
+ms.date: 01/28/2020
+ms.openlocfilehash: 9a3a58cab2d9673a4660967e3a11d7f88900e718
+ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76514686"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76844961"
 ---
 # <a name="slow-query-logs-in-azure-database-for-mysql"></a>Журналы запросов в базе данных Azure для MySQL
 В базе данных Azure для MySQL пользователям доступен журнал медленных запросов. Доступ к журналам транзакций не поддерживается. Журнал медленных запросов можно использовать для выявления проблем с производительностью при устранении неполадок.
@@ -51,9 +51,6 @@ ms.locfileid: "76514686"
 
 ## <a name="diagnostic-logs"></a>Журналы диагностики
 База данных Azure для MySQL интегрирована с журналами диагностики Azure Monitor. Включив журналы запросов на сервере MySQL, вы можете включить их в Azure Monitor журналы, концентраторы событий или службу хранилища Azure. Дополнительные сведения о том, как включить журналы диагностики, см. в статье [Сбор и использование данных журнала из ресурсов Azure](../azure-monitor/platform/platform-logs-overview.md).
-
-> [!IMPORTANT]
-> Эта диагностическая функция для журналов сервера доступна только в общего назначения и оптимизированных для памяти [ценовых категориях](concepts-pricing-tiers.md).
 
 В приведенной ниже таблице описывается содержимое каждого журнала. Порядок появления выбранных полей зависит от выбранного метода вывода.
 

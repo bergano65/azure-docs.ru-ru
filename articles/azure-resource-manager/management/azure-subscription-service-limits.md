@@ -3,13 +3,13 @@ title: Ограничения и квоты подписки Azure
 description: В этой статье приводится перечень наиболее распространенных ограничений, относящихся к подписке Azure и различным службам, квот и границ. Эта статья содержит сведения о том, как увеличить пределы и максимальное значение.
 tags: billing
 ms.topic: conceptual
-ms.date: 01/02/2020
-ms.openlocfilehash: ebfa1139ba0649280634bc0fd18627ba74f0c3cc
-ms.sourcegitcommit: 7221918fbe5385ceccf39dff9dd5a3817a0bd807
+ms.date: 01/28/2020
+ms.openlocfilehash: c6661ce6d3e0f62c47b1f234898dbf47de36f3ee
+ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/21/2020
-ms.locfileid: "76294122"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76846001"
 ---
 # <a name="azure-subscription-and-service-limits-quotas-and-constraints"></a>Подписка Azure и лимиты службы, квоты и ограничения
 
@@ -96,7 +96,7 @@ ms.locfileid: "76294122"
   * [Виртуальная сеть](#networking-limits)
   * [Виртуальная глобальная сеть](#virtual-wan-limits)
 * [Центры уведомлений](#notification-hubs-limits)
-* [группа ресурсов](#resource-group-limits)
+* [Группа ресурсов](#resource-group-limits)
 * [Контроль доступа на основе ролей](#role-based-access-control-limits)
 * [Планировщик](#scheduler-limits)
 * [Служебная шина](#service-bus-limits)
@@ -106,7 +106,7 @@ ms.locfileid: "76294122"
 * [Память](#storage-limits)
 * [StorSimple System](#storsimple-system-limits)
 * [Stream Analytics](#stream-analytics-limits)
-* [подписка](#subscription-limits)
+* [Подписка](#subscription-limits)
 * [Виртуальные машины](#virtual-machines-limits)
 * [Масштабируемые наборы виртуальных машин](#virtual-machine-scale-sets-limits)
 

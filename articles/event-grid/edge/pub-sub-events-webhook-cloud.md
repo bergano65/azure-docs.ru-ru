@@ -9,16 +9,16 @@ ms.date: 10/29/2019
 ms.topic: article
 ms.service: event-grid
 services: event-grid
-ms.openlocfilehash: 5fb6cab4bfeea4308873210fb5f9122b37b61dcd
-ms.sourcegitcommit: b45ee7acf4f26ef2c09300ff2dba2eaa90e09bc7
+ms.openlocfilehash: c82f1edfc3acd73c1d38425f963aaaf2976a1cc5
+ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73100323"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76844601"
 ---
 # <a name="tutorial-publish-subscribe-to-events-in-cloud"></a>Учебник. Публикация, подписка на события в облаке
 
-В этой статье рассматриваются все шаги, необходимые для публикации и подписки на события с помощью сетки событий на IoT Edge.
+В этой статье рассматриваются все шаги, необходимые для публикации и подписки на события с помощью сетки событий на IoT Edge. В этом руководстве используется и функция Azure в качестве обработчика событий. Дополнительные типы назначения см. в разделе [обработчики событий](event-handlers.md).
 
 Прежде чем продолжать, ознакомьтесь со статьей [Основные понятия сетки событий](concepts.md) .
 
@@ -88,7 +88,7 @@ public static async Task<IActionResult> Run(HttpRequest req, ILogger log)
     curl -k -H "Content-Type: application/json" -X GET -g https://<your-edge-device-public-ip-here>:4438/topics/sampleTopic2?api-version=2019-01-01-preview
     ```
 
-   Пример выходных данных:
+   Образец вывода:
 
    ```json
         [
@@ -107,6 +107,8 @@ public static async Task<IActionResult> Run(HttpRequest req, ILogger log)
 ## <a name="create-an-event-subscription"></a>Создание подписки на событие
 
 Подписчики могут регистрироваться для событий, опубликованных в разделе. Чтобы получить любое событие, подписчикам нужно будет создать подписку на сетку событий в интересующей теме.
+
+[!INCLUDE [event-grid-deploy-iot-edge](../../../includes/event-grid-edge-persist-event-subscriptions.md)]
 
 1. Создайте subscription2. JSON со следующим содержимым. Дополнительные сведения о полезных данных см. в [документации по API](api.md) .
 
@@ -136,7 +138,7 @@ public static async Task<IActionResult> Run(HttpRequest req, ILogger log)
     curl -k -H "Content-Type: application/json" -X GET -g https://<your-edge-device-public-ip-here>:4438/topics/sampleTopic2/eventSubscriptions/sampleSubscription2?api-version=2019-01-01-preview
     ```
 
-    Пример выходных данных:
+    Образец вывода:
 
    ```json
         {
@@ -203,3 +205,4 @@ public static async Task<IActionResult> Run(HttpRequest req, ILogger log)
 * Настройка сохраняемости модуля службы "Сетка событий" в [Linux](persist-state-linux.md) или [Windows](persist-state-windows.md)
 * Следуйте инструкциям [по](configure-client-auth.md) настройке проверки подлинности клиента
 * Пересылка событий в службу "Сетка событий Azure" в облаке, следуя этому [учебнику](forward-events-event-grid-cloud.md)
+* [Мониторинг разделов и подписок на границе](monitor-topics-subscriptions.md)

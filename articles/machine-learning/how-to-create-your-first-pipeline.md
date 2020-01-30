@@ -11,12 +11,12 @@ ms.author: sanpil
 author: sanpil
 ms.date: 12/05/2019
 ms.custom: seodec18
-ms.openlocfilehash: 5b2fa550029c35ca989d6746254298cf1e92992d
-ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
+ms.openlocfilehash: 01ab09383a29db38d2ce8c7c513bed76aafcc44a
+ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75764581"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76845938"
 ---
 # <a name="create-and-run-machine-learning-pipelines-with-azure-machine-learning-sdk"></a>Создание и запуск конвейеров машинного обучения с помощью пакета SDK для Машинное обучение Azure
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -40,7 +40,7 @@ ms.locfileid: "75764581"
 * [Настройте среду разработки](how-to-configure-environment.md) , чтобы установить пакет sdk для машинное обучение Azure, или используйте [машинное обучение Azure вычислительный экземпляр (Предварительная версия)](concept-compute-instance.md) с уже установленным пакетом SDK.
 
 > [!NOTE]
-> Экземпляры для вычислений доступны только для рабочих областей с регионом **Северо-центральная часть США** или **Южная часть Соединенного Королевства**.
+> Экземпляры вычислений доступны только для рабочих областей с северо- **Центральная часть США**, * * Восточная часть США 2 * *, **северная Европа** или **Южная часть Соединенного Королевства**.
 >Если ваша рабочая область находится в другом регионе, можно продолжить, выбрав создание и использование [Виртуальной машины записной книжки](concept-compute-instance.md#notebookvm). 
 
 Начните с подключения рабочей области:

@@ -8,15 +8,15 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 01/23/2020
+ms.date: 01/28/2020
 ms.author: dapine
 ms.custom: seodec18
-ms.openlocfilehash: 34d362a4b28ade5116c68e2243a2341bab9fca9d
-ms.sourcegitcommit: b5d646969d7b665539beb18ed0dc6df87b7ba83d
+ms.openlocfilehash: 008f0b1b83e8ba856fae2fe40b026dcc645e46ab
+ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2020
-ms.locfileid: "76760629"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76845331"
 ---
 # <a name="language-and-region-support-for-the-speech-service"></a>Поддержка языков и регионов для службы речи
 
@@ -72,7 +72,7 @@ https://cris.ai -> Click on Adaptation Data -> scroll down to section "Pronuncia
 `ta-IN` | Тамильский (Индия) | Да | Языковая модель
 `te-IN` | Телугу (Индия) | Да | Нет
 `th-TH` | Тайский (Таиланд) | Да | Нет
-`tr-TR` | Турция | Да | Нет
+`tr-TR` | Турецкий (Турция) | Да | Нет
 `zh-CN` | китайский (мандаринский, упрощенное письмо) | Да | Акустическая модель<br>Языковая модель
 `zh-HK` | Китайский (кантонский, традиционный) | Да | Языковая модель
 `zh-TW` | Китайский (тайваньский, мандаринский диалект) | Да | Языковая модель
@@ -111,7 +111,7 @@ https://cris.ai -> Click on Adaptation Data -> scroll down to section "Pronuncia
 
 Язык | Язык | Пол | Полное сопоставление имени службы | короткое имя;
 -------|----------|---------|----------|----------
-<sup>**1**</sup>`ar-EG` | Арабский (Египет) | Женский | "Голос для преобразования текста в речь службы распознавания речи Microsoft Server (ar-EG, Hoda)" | "ar-EG-хода"
+<sup>1</sup>`ar-EG` | Арабский (Египет) | Женский | "Голос для преобразования текста в речь службы распознавания речи Microsoft Server (ar-EG, Hoda)" | "ar-EG-хода"
 `ar-SA` | Арабский (Саудовская Аравия) | Мужской | "Голос для преобразования текста в речь службы распознавания речи Microsoft Server (ar-SA, Naayf)" | "AR-SA-Наайф"
 `bg-BG` | Болгарский | Мужской | "Голос для преобразования текста в речь службы распознавания речи Microsoft Server (bg-BG, Ivan)" | "bg-BG-Иван"
 `ca-ES` | каталанский (Испания) | Женский | "Голос для преобразования текста в речь службы распознавания речи Microsoft Server (ca-ES, HerenaRUS)" | "CA-ES-Херенарус"
@@ -181,7 +181,7 @@ https://cris.ai -> Click on Adaptation Data -> scroll down to section "Pronuncia
 `ta-IN` | Тамильский (Индия) | Мужской | "Голос для преобразования текста в речь службы распознавания речи Microsoft Server (ta-IN, Valluvar)" | "TA-IN-Валлувар"
 `te-IN` | Телугу (Индия) | Женский | "Голос для преобразования текста в речь службы распознавания речи Microsoft Server (te-IN, Chitra)" | "Te-IN-Читра"
 `th-TH` | Тайский | Мужской | "Голос для преобразования текста в речь службы распознавания речи Microsoft Server (th-TH, Pattara)" | "th-TH-Паттара"
-`tr-TR` | Турецкий | Женский | "Голос для преобразования текста в речь службы распознавания речи Microsoft Server (tr-TR, SedaRUS)" | "tr-TR-Седарус"
+`tr-TR` | Турецкий (Турция) | Женский | "Голос для преобразования текста в речь службы распознавания речи Microsoft Server (tr-TR, SedaRUS)" | "tr-TR-Седарус"
 `vi-VN` | Вьетнамский | Мужской | "Голос для преобразования текста в речь службы распознавания речи Microsoft Server (vi-VN, An)" | "vi-VN-an"
 `zh-CN` | Китайский (континентальная часть) | Женский | "Голос для преобразования текста в речь службы распознавания речи Microsoft Server (zh-CN, HuihuiRUS)" | "zh-CN-Хуихуирус"
 | | | Женский | "Голос для преобразования текста в речь службы распознавания речи Microsoft Server (zh-CN, Yaoyao, Apollo)" | "zh-CN-Яойао-Apollo"

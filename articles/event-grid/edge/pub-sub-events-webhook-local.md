@@ -9,12 +9,12 @@ ms.date: 10/29/2019
 ms.topic: article
 ms.service: event-grid
 services: event-grid
-ms.openlocfilehash: 169b0c8084259ac27b466dbfd3606e465da35d99
-ms.sourcegitcommit: b45ee7acf4f26ef2c09300ff2dba2eaa90e09bc7
+ms.openlocfilehash: e403d690470f3c4f1d0c8e565e90641d9c114a80
+ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73098623"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76844562"
 ---
 # <a name="tutorial-publish-subscribe-to-events-locally"></a>Учебник. Публикация, подписка на события локально
 
@@ -59,11 +59,13 @@ ms.locfileid: "73098623"
    * **URI изображения**: `mcr.microsoft.com/azure-event-grid/iotedge:latest`
    * **Параметры создания контейнера.**
 
+   [!INCLUDE [event-grid-edge-module-version-update](../../../includes/event-grid-edge-module-version-update.md)]
+
     ```json
         {
           "Env": [
-            "inbound:clientAuth:clientCert:enabled=false",
-            "outbound:webhook:httpsOnly=false"
+            "inbound__clientAuth__clientCert__enabled=false",
+            "outbound__webhook__httpsOnly=false"
           ],
           "HostConfig": {
             "PortBindings": {
@@ -76,7 +78,7 @@ ms.locfileid: "73098623"
           }
         }
     ```    
- 1. Нажмите кнопку **Сохранить**
+ 1. Щелкните **Сохранить**.
  1. Перейдите к следующему разделу, чтобы добавить модуль функций Azure, прежде чем развертывать их вместе.
 
     >[!IMPORTANT]
@@ -117,7 +119,7 @@ ms.locfileid: "73098623"
             }
        ```
 
-1. Нажмите кнопку **Сохранить**
+1. Щелкните **Сохранить**.
 1. Нажмите кнопку " **Далее** ", чтобы перейти к разделу "маршруты"
 
  ### <a name="setup-routes"></a>Настройка маршрутов
@@ -159,7 +161,7 @@ ms.locfileid: "73098623"
     curl -k -H "Content-Type: application/json" -X GET -g https://<your-edge-device-public-ip-here>:4438/topics/sampleTopic1?api-version=2019-01-01-preview
     ```
 
-   Пример выходных данных:
+   Образец вывода:
 
    ```json
         [
@@ -178,6 +180,8 @@ ms.locfileid: "73098623"
 ## <a name="create-an-event-subscription"></a>Создание подписки на событие
 
 Подписчики могут регистрироваться для событий, опубликованных в разделе. Чтобы получить любое событие, необходимо создать подписку на сетку событий для интересующей темы.
+
+[!INCLUDE [event-grid-deploy-iot-edge](../../../includes/event-grid-edge-persist-event-subscriptions.md)]
 
 1. Создайте объект Subscription. JSON со следующим содержимым. Дополнительные сведения о полезных данных см. в [документации по API](api.md) .
 
@@ -207,7 +211,7 @@ ms.locfileid: "73098623"
     curl -k -H "Content-Type: application/json" -X GET -g https://<your-edge-device-public-ip-here>:4438/topics/sampleTopic1/eventSubscriptions/sampleSubscription1?api-version=2019-01-01-preview
     ```
 
-    Пример выходных данных:
+    Образец вывода:
 
    ```json
         {
@@ -268,7 +272,7 @@ ms.locfileid: "73098623"
     sudo docker logs subscriber
     ```
 
-    Пример выходных данных:
+    Образец вывода:
 
     ```sh
         Received event data [
@@ -307,4 +311,5 @@ ms.locfileid: "73098623"
 - Следуйте инструкциям [по](configure-client-auth.md) настройке проверки подлинности клиента
 - Пересылка событий в функции Azure в облаке с помощью этого [руководства](pub-sub-events-webhook-cloud.md)
 - [Реагирование на события хранилища BLOB-объектов в IoT Edge](react-blob-storage-events-locally.md)
+- [Мониторинг разделов и подписок на границе](monitor-topics-subscriptions.md)
 

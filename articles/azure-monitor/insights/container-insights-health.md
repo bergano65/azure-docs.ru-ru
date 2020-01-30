@@ -3,12 +3,12 @@ title: Мониторинг работоспособности кластера 
 description: В этой статье описывается, как просмотреть и проанализировать работоспособность AKS и AKS кластеров с помощью Azure Monitor для контейнеров.
 ms.topic: conceptual
 ms.date: 12/01/2019
-ms.openlocfilehash: 9ee710eb916923756633e65f3287751ba9a9dde3
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: f50ef13efca78bbb5285b99759b8111dc1915ad0
+ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75405096"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76843996"
 ---
 # <a name="understand-kubernetes-cluster-health-with-azure-monitor-for-containers"></a>Общие сведения о производительности кластера Kubernetes с Azure Monitor для контейнеров
 
@@ -23,7 +23,7 @@ ms.locfileid: "75405096"
 >[!NOTE]
 >Для поддержки кластеров AKS Engine убедитесь, что он соответствует следующим требованиям.
 >- Он использует последнюю версию [клиента Helm](https://helm.sh/docs/using_helm/).
->- Контейнерная версия агента — *Microsoft/OMS: ciprod11012019*. Сведения об обновлении агента см. в статье [обновление агента в кластере Kubernetes](container-insights-manage-agent.md#upgrading-agent-on-monitored-kubernetes-cluster).
+>- Контейнерная версия агента — *Microsoft/OMS: ciprod11012019*. Сведения об обновлении агента см. в статье [обновление агента в кластере Kubernetes](container-insights-manage-agent.md#upgrade-agent-on-monitored-kubernetes-cluster).
 >
 
 ## <a name="overview"></a>Обзор
@@ -48,13 +48,13 @@ ms.locfileid: "75405096"
 * Оцените использование памяти на узле и в контейнере.
 * Состояние модулей Pod и узлов на основе вычисления состояния готовности, сообщаемого Kubernetes.
 
-Для обозначения состояния используются перечисленные ниже значки.
+Для обозначения состояния используются следующие значки:
 
 |Значок|Значение|  
 |--------|-----------|  
-|![Зеленая галочка обозначает работоспособное состояние](./media/container-insights-health/healthyicon.png)|Успешно, работоспособное состояние (зеленый)|  
-|![Желтый треугольник и восклицательный знак обозначают предупреждение](./media/container-insights-health/warningicon.png)|Предупреждение (желтый)|  
-|![Красная кнопка с белым знаком X обозначает критическое состояние](./media/container-insights-health/criticalicon.png)|Критическое состояние (красный)|  
+|![Зеленый значок галочки указывает на работоспособность](./media/container-insights-health/healthyicon.png)|Успешно, работоспособность — нормальное состояние (зеленый)|  
+|![Желтый треугольник и восклицательный знак — предупреждение](./media/container-insights-health/warningicon.png)|Предупреждение (желтый)|  
+|![Красная кнопка с белым крестиком означает критическое состояние](./media/container-insights-health/criticalicon.png)|Критический (красный)|  
 |![Значок серого цвета](./media/container-insights-health/grayicon.png)|Неизвестно (серый)|  
 
 ## <a name="monitor-configuration"></a>Конфигурация монитора

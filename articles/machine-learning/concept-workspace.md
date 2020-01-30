@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.author: sgilley
 author: sdgilley
 ms.date: 12/27/2019
-ms.openlocfilehash: 4891ec0ae87f0d7b0cd7e5d5d550f955a8fde1db
-ms.sourcegitcommit: a9b1f7d5111cb07e3462973eb607ff1e512bc407
+ms.openlocfilehash: d013fc257bc03d7961a4f2d5ae52d0fde12c83bb
+ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76312385"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76844081"
 ---
 # <a name="what-is-an-azure-machine-learning-workspace"></a>Что такое Рабочая область Машинное обучение Azure?
 
@@ -49,7 +49,7 @@ ms.locfileid: "76312385"
 
 + В Интернете:
     + [Машинное обучение Azure Studio](https://ml.azure.com) 
-    + [Конструктор машинное обучение Azure](concept-designer.md) доступен только в рабочих областях [Enterprise Edition](overview-what-is-azure-ml.md#sku) .
+    + [Конструктор машинное обучение Azure (Предварительная версия)](concept-designer.md) доступен только в рабочих областях [Enterprise Edition](overview-what-is-azure-ml.md#sku) .
 + В любой среде Python с [пакетом SDK для машинное обучение Azure для Python](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py).
 + В любой среде R с [машинное обучение Azureным пакетом SDK для r](https://azure.github.io/azureml-sdk-for-r/reference/index.html).
 + В командной строке с помощью [расширения CLI](https://docs.microsoft.com/azure/machine-learning/reference-azure-machine-learning-cli) машинное обучение Azure
@@ -79,7 +79,7 @@ ms.locfileid: "76312385"
 | Создание виртуальной машины записной книжки |   | **&check;** | |     |
 
 > [!NOTE]
-> Экземпляры для вычислений доступны только для рабочих областей с регионом **Северо-центральная часть США** или **Южная часть Соединенного Королевства**.
+> Экземпляры вычислений доступны только для рабочих областей с северо- **Центральная часть США**, * * Восточная часть США 2 * *, **северная Европа** или **Южная часть Соединенного Королевства**.
 >Если ваша рабочая область находится в другом регионе, можно продолжить, выбрав создание и использование [Виртуальной машины записной книжки](concept-compute-instance.md#notebookvm).
 
 ## <a name='create-workspace'></a>Создание рабочей области

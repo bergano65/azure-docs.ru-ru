@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 05/16/2018
 ms.author: kumud
-ms.openlocfilehash: 3624c8fd8b15f6d35917f4ead676221d93a26ddc
-ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
+ms.openlocfilehash: dfa7681b43bd18e15ee929156ab9a45bb9790c5b
+ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75646495"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76845587"
 ---
 # <a name="plan-virtual-networks"></a>Планирование виртуальных сетей
 
@@ -39,7 +39,7 @@ ms.locfileid: "75646495"
 
 ## <a name="subscriptions"></a>Подписки
 
-Вы можете развернуть любое количество виртуальных сетей, требуемых в рамках подписки, вплоть до [предела](../azure-resource-manager/management/azure-subscription-service-limits.md?toc=%2fazure%2fvirtual-network%2ftoc.json#networking-limits). Например, некоторые организации используют разные подписки в разных отделах. Дополнительные сведения и рекомендации, связанные с подписками, см. в разделе [Определение иерархии](/azure/architecture/cloud-adoption-guide/subscription-governance#define-your-hierarchy).
+Вы можете развернуть любое количество виртуальных сетей, требуемых в рамках подписки, вплоть до [предела](../azure-resource-manager/management/azure-subscription-service-limits.md?toc=%2fazure%2fvirtual-network%2ftoc.json#networking-limits). Например, некоторые организации используют разные подписки в разных отделах. Дополнительные сведения и рекомендации, связанные с подписками, см. в разделе [Определение иерархии](/azure/cloud-adoption-framework/reference/migration-with-enterprise-scaffold#define-your-hierarchy).
 
 ## <a name="segmentation"></a>Сегментация
 

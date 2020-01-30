@@ -3,12 +3,12 @@ title: Резервное копирование файловых ресурсо
 description: Узнайте, как использовать Azure CLI для резервного копирования файловых ресурсов Azure в хранилище служб восстановления.
 ms.topic: conceptual
 ms.date: 01/14/2020
-ms.openlocfilehash: 10ae6d88e8a40ba4175e664ed338f0a02be7a7ca
-ms.sourcegitcommit: 7221918fbe5385ceccf39dff9dd5a3817a0bd807
+ms.openlocfilehash: ff1d8c6245521d2d0262b0440177d65713058742
+ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/21/2020
-ms.locfileid: "76294491"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76844047"
 ---
 # <a name="back-up-azure-file-shares-with-cli"></a>Резервное копирование файловых ресурсов Azure с помощью интерфейса командной строки
 
@@ -104,7 +104,7 @@ Name                                  ResourceGroup
 
 Чтобы активировать резервное копирование по запросу, необходимо определить следующие параметры:
 
-* **--Container-Name** — это имя учетной записи хранения, в которой размещена общая папка. Чтобы получить **имя** или **понятное имя** контейнера, используйте команду [AZ Backup Container List](https://docs.microsoft.com/azure/backup/container?view=azure-cli-latest#az-backup-container-list) .
+* **--Container-Name** — это имя учетной записи хранения, в которой размещена общая папка. Чтобы получить **имя** или **понятное имя** контейнера, используйте команду [AZ Backup Container List](/cli/azure/backup/container?view=azure-cli-latest#az-backup-container-list) .
 * **--Item-Name** — это имя общего файлового ресурса, для которого требуется активировать резервное копирование по запросу. Чтобы получить **имя** или **понятное имя** архивированного элемента, используйте команду [AZ Backup Item List](https://docs.microsoft.com/cli/azure/backup/item?view=azure-cli-latest#az-backup-item-list) .
 * **--Сохранение** до указывает дату до тех пор, пока не будет храниться точка восстановления. Значение должно быть задано в формате времени в формате UTC (дд-мм-гггг).
 

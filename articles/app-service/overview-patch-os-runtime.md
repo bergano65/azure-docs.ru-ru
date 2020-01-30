@@ -4,12 +4,12 @@ description: Узнайте, как служба приложений Azure об
 ms.topic: article
 ms.date: 02/02/2018
 ms.custom: seodec18
-ms.openlocfilehash: 1a56fed04399325be315d8d977e5a72223bddac5
-ms.sourcegitcommit: 48b7a50fc2d19c7382916cb2f591507b1c784ee5
+ms.openlocfilehash: 02fa89305c19ee4ec5e151ad36f7f5fa3e130f63
+ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74688575"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76846244"
 ---
 # <a name="os-and-runtime-patching-in-azure-app-service"></a>Установка исправлений для ОС и среды выполнения в Службе приложений Azure
 
@@ -83,6 +83,7 @@ az webapp config set --java-version 1.8 --java-container Tomcat --java-container
 | Версия PHP | Откройте `https://<appname>.scm.azurewebsites.net/DebugConsole` и выполните следующую команду в командной строке: <br> `php --version` |
 | Версия Node.js по умолчанию | В [Cloud Shell](../cloud-shell/overview.md) введите следующую команду: <br> `az webapp config appsettings list --resource-group <groupname> --name <appname> --query "[?name=='WEBSITE_NODE_DEFAULT_VERSION']"` |
 | Версия Python | Откройте `https://<appname>.scm.azurewebsites.net/DebugConsole` и выполните следующую команду в командной строке: <br> `python --version` |  
+| Версия Java | Откройте `https://<appname>.scm.azurewebsites.net/DebugConsole` и выполните следующую команду в командной строке: <br> `java -version` |  
 
 > [!NOTE]  
 > Доступ к расположению реестра `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Component Based Servicing\Packages`, где хранятся сведения об [исправлениях (номер в базе знаний)](https://docs.microsoft.com/security-updates/SecurityBulletins/securitybulletins), заблокирован.

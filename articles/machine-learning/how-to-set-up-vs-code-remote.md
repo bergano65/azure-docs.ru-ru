@@ -9,19 +9,19 @@ ms.topic: conceptual
 ms.author: jmartens
 author: j-martens
 ms.date: 12/09/2019
-ms.openlocfilehash: 9798cbd2b1c9dca489e843a7102f213757e4de75
-ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
+ms.openlocfilehash: 27243f47df7da22ab4adda088bdf631c1030dd6c
+ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75771825"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76845201"
 ---
 # <a name="debug-interactively-on-an-azure-machine-learning-compute-instance-with-vs-code-remote"></a>Отладка в интерактивном режиме на Машинное обучение Azure вычислительного экземпляра с VS Code удаленно
 
 В этой статье вы узнаете, как настроить Visual Studio Code удаленно на Машинное обучение Azure вычислительного экземпляра, чтобы можно было выполнять **интерактивную отладку кода** из VS Code. 
 
 > [!NOTE]
-> Экземпляры для вычислений доступны только для рабочих областей с регионом **Северо-центральная часть США** или **Южная часть Соединенного Королевства**.
+> Экземпляры вычислений доступны только для рабочих областей с северо- **Центральная часть США**, * * Восточная часть США 2 * *, **северная Европа** или **Южная часть Соединенного Королевства**.
 
 + [Вычислительный экземпляр машинное обучение Azure](concept-compute-instance.md) — это полностью управляемая облачная Рабочая станция для специалистов по обработке и анализу данных, которая предоставляет ИТ-администраторам возможности управления и готовности предприятия. 
 

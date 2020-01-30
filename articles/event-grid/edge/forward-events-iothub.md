@@ -9,12 +9,12 @@ ms.date: 10/29/2019
 ms.topic: article
 ms.service: event-grid
 services: event-grid
-ms.openlocfilehash: 073205b5bdc3f6de80bd7e347469c3f06aeb515b
-ms.sourcegitcommit: b45ee7acf4f26ef2c09300ff2dba2eaa90e09bc7
+ms.openlocfilehash: d0034810ff86de2a40e275ca54a2f0f9cbc856c2
+ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73098676"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76844706"
 ---
 # <a name="tutorial-forward-events-to-iothub"></a>Учебник. Пересылка событий в IoTHub
 
@@ -62,7 +62,7 @@ ms.locfileid: "73098676"
     curl -k -H "Content-Type: application/json" -X GET -g https://<your-edge-device-public-ip-here>:4438/topics/sampleTopic4?api-version=2019-01-01-preview
     ```
 
-   Пример выходных данных:
+   Образец вывода:
 
    ```json
         [
@@ -81,6 +81,8 @@ ms.locfileid: "73098676"
 ## <a name="create-event-subscription"></a>Создание подписки на события
 
 Подписчики могут регистрироваться для событий, опубликованных в разделе. Чтобы получить любое событие, им потребуется создать подписку на сетку событий в интересующей теме.
+
+[!INCLUDE [event-grid-deploy-iot-edge](../../../includes/event-grid-edge-persist-event-subscriptions.md)]
 
 1. Создайте subscription4. JSON со следующим содержимым. Дополнительные сведения о полезных данных см. в [документации по API](api.md) .
 
@@ -110,7 +112,7 @@ ms.locfileid: "73098676"
     curl -k -H "Content-Type: application/json" -X GET -g https://<your-edge-device-public-ip-here>:4438/topics/sampleTopic4/eventSubscriptions/sampleSubscription4?api-version=2019-01-01-preview
     ```
 
-    Пример выходных данных:
+    Образец вывода:
 
    ```json
         {
@@ -212,3 +214,4 @@ ms.locfileid: "73098676"
 * Настройка сохраняемости модуля службы "Сетка событий" в [Linux](persist-state-linux.md) или [Windows](persist-state-windows.md)
 * Следуйте инструкциям [по](configure-client-auth.md) настройке проверки подлинности клиента
 * Пересылка событий в службу "Сетка событий Azure" в облаке, следуя этому [учебнику](forward-events-event-grid-cloud.md)
+* [Мониторинг разделов и подписок на границе](monitor-topics-subscriptions.md)

@@ -13,17 +13,17 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 03/22/2019
 ms.author: apimpm
-ms.openlocfilehash: e9e6eff4c527ff2e22be57ebc1eb3dcdb3c4e0ab
-ms.sourcegitcommit: 824e3d971490b0272e06f2b8b3fe98bbf7bfcb7f
+ms.openlocfilehash: 6614e70d130abe46067c657bda3ccdd7000caddc
+ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72241978"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76845276"
 ---
 # <a name="api-management-policy-expressions"></a>Выражения политики в службе управления API
-В этой статье описывается синтаксис выражений политики C# 7. У каждого выражения есть доступ к неявно заданной переменной [контекста](api-management-policy-expressions.md#ContextVariables) и разрешенному [подмножеству](api-management-policy-expressions.md#CLRTypes) типов .NET Framework.
+В этой статье рассматривается синтаксис выражений политики в C# 7. У каждого выражения есть доступ к неявно заданной переменной [контекста](api-management-policy-expressions.md#ContextVariables) и разрешенному [подмножеству](api-management-policy-expressions.md#CLRTypes) типов .NET Framework.
 
-Дополнительные сведения
+Дополнительные сведения см. здесь:
 
 - Способы передачи сведений о контексте во внутреннюю службу. Используйте политики [настройки параметра строки запроса](api-management-transformation-policies.md#SetQueryStringParameter) и [настройки HTTP-заголовка](api-management-transformation-policies.md#SetHTTPheader), чтобы передать эти сведения.
 - Использование политики [проверки JWT](api-management-access-restriction-policies.md#ValidateJWT) для предварительной авторизации доступа к операциям на основе утверждений маркеров.
@@ -74,7 +74,7 @@ ms.locfileid: "72241978"
 ## <a name="CLRTypes"></a> Типы .NET Framework, допустимые в выражениях политики
 В следующей таблице перечислены типы .NET Framework и их члены, допустимые в выражениях политики.
 
-|введите|Поддерживаемые члены|
+|Тип|Поддерживаемые члены|
 |--------------|-----------------------|
 |Newtonsoft. JSON. форматирование|Все|
 |Newtonsoft. JSON. JsonConvert|Для SerializeObject, методов DeserializeObject|
@@ -156,7 +156,7 @@ ms.locfileid: "72241978"
 |System. Security. Cryptography. SymmetricAlgorithm|Все|
 |System. Security. Cryptography. X509Certificates. PublicKey|Все|
 |System. Security. Cryptography. X509Certificates. Рсацертификатикстенсионс|Все|
-|System. Security. Cryptography. X509Certificates. X500DistinguishedName|Name|
+|System. Security. Cryptography. X509Certificates. X500DistinguishedName|Имя|
 |System. Security. Cryptography. X509Certificates. X509Certificate|Все|
 |System.Security.Cryptography.X509Certificates.X509Certificate2|Все|
 |System. Security. Cryptography. X509Certificates. X509ContentType|Все|
@@ -179,7 +179,7 @@ ms.locfileid: "72241978"
 |System. TimeZone|Все|
 |System. TimeZoneInfo. массива AdjustmentRule|Все|
 |System. TimeZoneInfo. Транситионтиме|Все|
-|System. TimeZoneInfo|Все|
+|System.TimeZoneInfo|Все|
 |System.Tuple|Все|
 |System.UInt16|Все|
 |System.UInt32|Все|
@@ -210,7 +210,7 @@ ms.locfileid: "72241978"
 
 |Переменная контекста|Допустимые методы, свойства и значения параметров|
 |----------------------|-------------------------------------------------------|
-|context|[API](#ref-context-api): [иапи](#ref-iapi)<br /><br /> [Развертывание](#ref-context-deployment)<br /><br /> Elapsed: TimeSpan — интервал времени между значением Timestamp и текущим временем<br /><br /> [LastError](#ref-context-lasterror)<br /><br /> [операции](#ref-context-operation)<br /><br /> [Продукт](#ref-context-product)<br /><br /> [Запрос](#ref-context-request)<br /><br /> RequestId: Guid — уникальный идентификатор запроса<br /><br /> [Ответ](#ref-context-response)<br /><br /> [Подписка](#ref-context-subscription)<br /><br /> Timestamp: DateTime — время получения запроса<br /><br /> Tracing: логическое значение — указывает, включена ли трассировка <br /><br /> [User](#ref-context-user)<br /><br /> [Переменные](#ref-context-variables): строка < IReadOnlyDictionary, объект ><br /><br /> void Trace(message: строка)|
+|контекст|[API](#ref-context-api): [иапи](#ref-iapi)<br /><br /> [Deployment](#ref-context-deployment)<br /><br /> Elapsed: TimeSpan — интервал времени между значением Timestamp и текущим временем<br /><br /> [LastError](#ref-context-lasterror)<br /><br /> [Операция](#ref-context-operation)<br /><br /> [Продукт](#ref-context-product)<br /><br /> [Запрос](#ref-context-request)<br /><br /> RequestId: Guid — уникальный идентификатор запроса<br /><br /> [Ответ](#ref-context-response)<br /><br /> [Подписка](#ref-context-subscription)<br /><br /> Timestamp: DateTime — время получения запроса<br /><br /> Tracing: логическое значение — указывает, включена ли трассировка <br /><br /> [Пользователь](#ref-context-user)<br /><br /> [Переменные](#ref-context-variables): строка < IReadOnlyDictionary, объект ><br /><br /> void Trace(message: строка)|
 |<a id="ref-context-api"></a>локального. API|Id: строка<br /><br /> IsCurrentRevision: bool<br /><br />  Name: строка<br /><br /> Path: строка<br /><br /> Revision: строка<br /><br /> ServiceUrl: [иурл](#ref-iurl)<br /><br /> Version: строка |
 |<a id="ref-context-deployment"></a>локального. Развертывания|Region: строка<br /><br /> ServiceName: строка<br /><br /> Certificates: IReadOnlyDictionary<строка, X509Certificate2>|
 |<a id="ref-context-lasterror"></a>локального. LastError|Source: строка<br /><br /> Reason: строка<br /><br /> Message: строка<br /><br /> Scope: строка<br /><br /> Section: строка<br /><br /> Path: строка<br /><br /> PolicyId: строка<br /><br /> Дополнительные сведения о переменной context.LastError см. в разделе [Error handling](api-management-error-handling-policies.md) (Обработка ошибок).|
@@ -246,7 +246,7 @@ ms.locfileid: "72241978"
 |bool Верифиноревокатион (входные данные: Этот системный. Security. Cryptography. X509Certificates. X509Certificate2)|Выполняет проверку цепочки X. 509 без проверки состояния отзыва сертификата.<br /><br />input-Certificate, объект<br /><br />Возвращает `true`, если проверка прошла успешнее; `false`, если проверка завершается неудачно.|
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о работе с политиками см. в следующих статьях:
 

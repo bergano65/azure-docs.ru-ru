@@ -4,9 +4,7 @@ titleSuffix: Azure Network Watcher
 description: В этой статье описывается, как использовать службу наблюдения за сетями Azure и средства с открытым исходным кодом для обнаружения сетевого вторжения
 services: network-watcher
 documentationcenter: na
-author: KumudD
-manager: twooley
-editor: ''
+author: damendo
 ms.assetid: 0f043f08-19e1-4125-98b0-3e335ba69681
 ms.service: network-watcher
 ms.devlang: na
@@ -14,13 +12,13 @@ ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/22/2017
-ms.author: kumud
-ms.openlocfilehash: 8a0b4ff4fc985355d8dc76f2f3fd7fb35da55ec0
-ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
+ms.author: damendo
+ms.openlocfilehash: 781f3788c9001276315a2baed7060450fa00d77a
+ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74275921"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76845029"
 ---
 # <a name="perform-network-intrusion-detection-with-network-watcher-and-open-source-tools"></a>Обнаружение сетевого вторжения с помощью Наблюдателя за сетями Azure и средств с открытым исходным кодом
 
@@ -127,7 +125,7 @@ tail -f /var/log/suricata/fast.log
     curl -L -O https://artifacts.elastic.co/downloads/logstash/logstash-5.2.0.deb
     sudo dpkg -i logstash-5.2.0.deb
     ```
-1. Теперь нужно настроить Logstash для чтения выходного файла eve.json. Создайте файл logstash.conf следующим образом:
+1. Теперь нужно настроить Logstash для чтения выходного файла eve.json. Создайте файл logstash.conf следующим образом.
 
     ```
     sudo touch /etc/logstash/conf.d/logstash.conf
@@ -211,7 +209,7 @@ tail -f /var/log/suricata/fast.log
     sudo chmod 775 /var/log/suricata/eve.json
     ```
 
-1. Чтобы запустить Logstash, выполните команду:
+1. Чтобы запустить Logstash, выполните приведенную ниже команду.
 
     ```
     sudo /etc/init.d/logstash start
@@ -235,16 +233,16 @@ tail -f /var/log/suricata/fast.log
     ./bin/kibana
     ```
 
-1. Чтобы открыть веб-интерфейс Kibana, перейдите к разделу `http://localhost:5601`.
+1. Чтобы открыть веб-интерфейс Kibana, перейдите по адресу `http://localhost:5601`.
 1. В нашем примере для журналов Suricata используется шаблон индексирования logstash-*.
 
-1. Чтобы просматривать панель мониторинга Kibana удаленно, создайте правило NSG для доступа к **порту 5601**.
+1. Чтобы получить возможность просматривать панель мониторинга Kibana удаленно, создайте правило NSG для доступа к **порту 5601**.
 
 ### <a name="create-a-kibana-dashboard"></a>Создание панели мониторинга Kibana
 
 Для этой статьи мы подготовили пример панели мониторинга для просмотра тенденций и подробных сведений об оповещениях.
 
-1. Файл панели мониторинга вы можете скачать [здесь](https://aka.ms/networkwatchersuricatadashboard), файл визуализации — [здесь](https://aka.ms/networkwatchersuricatavisualization), а сохраненный файл поиска — [здесь](https://aka.ms/networkwatchersuricatasavedsearch).
+1. Файл панели мониторинга вы можете скачать [отсюда](https://aka.ms/networkwatchersuricatadashboard), файл визуализации — [отсюда](https://aka.ms/networkwatchersuricatavisualization), а сохраненный файл поиска — [отсюда](https://aka.ms/networkwatchersuricatasavedsearch).
 
 1. На вкладке **Management** (Управление) в Kibana перейдите к элементу **Saved Objects** (Сохраненные объекты) и импортируйте все три файла. Затем откройте вкладку **Dashboard** (Панель мониторинга) и загрузите пример панели мониторинга.
 
@@ -282,7 +280,7 @@ tail -f /var/log/suricata/fast.log
 
 Сочетая возможность записи пакетов, реализованную в Наблюдателе за сетями, и функции таких средств с открытым исходным кодом, как Suricata, вы можете определять сетевые вторжения самого разного толка. Такие панели мониторинга позволяют быстро выявлять тенденции и аномалии в сети, а также подробно изучать данные для анализа основных причин оповещений, включая активность злоумышленников или уязвимость портов. На основе полученных данных вы сможете принять взвешенные решения о методах реагирования и защиты сети от вредоносных попыток вторжения, а также создать новые правила для предотвращения будущих сетевых вторжений.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о функции записи пакетов на основе оповещений см. в статье [Use packet capture to do proactive network monitoring with Azure Functions](network-watcher-alert-triggered-packet-capture.md) (Использование записи пакетов для упреждающего мониторинга сети с помощью функций Azure).
 

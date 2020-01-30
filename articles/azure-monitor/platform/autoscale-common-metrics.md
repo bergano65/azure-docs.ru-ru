@@ -4,12 +4,12 @@ description: Узнайте, какие метрики обычно исполь
 ms.topic: conceptual
 ms.date: 12/6/2016
 ms.subservice: autoscale
-ms.openlocfilehash: 7b9c19ba3b85813eb12f6b906427f3cfdc9a0f67
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 2c335168683212337876c963a7cfdb441d0ac69a
+ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75364600"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76845566"
 ---
 # <a name="azure-monitor-autoscaling-common-metrics"></a>Общие метрики автомасштабирования Azure Monitor
 
@@ -36,7 +36,7 @@ ms.locfileid: "75364600"
 - [Метрики уровня узла для виртуальных машин под управлением Windows и Linux, развернутых с помощью Resource Manager](../../azure-monitor/platform/metrics-supported.md#microsoftcomputevirtualmachines)
 - [Метрики уровня узла для масштабируемых наборов виртуальных машин под управлением Windows и Linux, развернутых с помощью Resource Manager](../../azure-monitor/platform/metrics-supported.md#microsoftcomputevirtualmachinescalesets)
 
-### <a name="guest-os-metrics-resource-manager-based-windows-vms"></a>Метрики гостевой ОС для виртуальных машин под управлением Windows, развернутых с помощью Resource Manager
+### <a name="guest-os-metrics-for-resource-manager-based-windows-vms"></a>Метрики гостевой ОС для виртуальных машин Windows на основе диспетчер ресурсов
 При создании виртуальной машины в Azure система диагностики включается с помощью расширения диагностики. Расширение диагностики генерирует набор метрик, полученных из виртуальной машины. Это означает, что вы можете отключить автомасштабирование метрик, которые не генерируются по умолчанию.
 
 Вы можете создать список метрик с помощью следующей команды PowerShell:
@@ -71,7 +71,7 @@ Get-AzMetricDefinition -ResourceId <resource_id> | Format-Table -Property Name,U
 | \Физический диск(_общий объем ресурсов)\скорость передачи данных (в байтах)/с |Байт/с |
 | \Физический диск(_общий объем ресурсов)\скорость чтения с диска (в байтах)/с |Байт/с |
 | \Физический диск(_общий объем ресурсов)\скорость записи на диск (в байтах)/с |Байт/с |
-| \PhysicalDisk(_Total)\Средняя длина очереди диска |Количество |
+| \ Физический диск (_Total) \Logicaldisk длина очереди диска |Количество |
 | \ Физический диск (_Total) \Logicaldisk длина очереди чтения диска |Количество |
 | \ Физический диск (_Total) \Logicaldisk длина очереди записи на диск |Количество |
 | \Физический диск(_общий объем ресурсов)\% свободного места |Процент |
@@ -129,8 +129,8 @@ Get-AzMetricDefinition -ResourceId <resource_id> | Format-Table -Property Name,U
 | \Сетевой интерфейс\Всего ошибок TX |Количество |
 | \Сетевой интерфейс\Всего конфликтов |Количество |
 
-## <a name="commonly-used-web-server-farm-metrics"></a>Часто используемые метрики веб-приложений (фермы серверов)
-Можно также выполнить автомасштабирование на основе общих метрик веб-сервера, таких как длина очереди HTTP. Имя метрики — **HttpQueueLength**.  В следующем разделе перечислены доступные метрики фермы серверов (веб-приложений).
+## <a name="commonly-used-app-service-server-farm-metrics"></a>Часто используемые метрики службы приложений (фермы серверов)
+Можно также выполнить автомасштабирование на основе общих метрик веб-сервера, таких как длина очереди HTTP. Ее имя метрики — **хттпкуеуеленгс**.  В следующем разделе перечислены доступные метрики фермы серверов (службы приложений).
 
 ### <a name="web-apps-metrics"></a>Метрики веб-приложений
 Список метрик веб-приложений можно создать с помощью следующей команды PowerShell:
@@ -159,8 +159,8 @@ Get-AzMetricDefinition -ResourceId <resource_id> | Format-Table -Property Name,U
 
 ```
 "metricName": "ApproximateMessageCount",
- "metricNamespace": "",
- "metricResourceUri": "/subscriptions/SUBSCRIPTION_ID/resourceGroups/RES_GROUP_NAME/providers/Microsoft.ClassicStorage/storageAccounts/STORAGE_ACCOUNT_NAME/services/queue/queues/QUEUE_NAME"
+"metricNamespace": "",
+"metricResourceUri": "/subscriptions/SUBSCRIPTION_ID/resourceGroups/RES_GROUP_NAME/providers/Microsoft.ClassicStorage/storageAccounts/STORAGE_ACCOUNT_NAME/services/queue/queues/QUEUE_NAME"
  ```
 
 В обычной учетной записи хранения (неклассической) metricTrigger включает следующие данные:
@@ -177,7 +177,7 @@ Get-AzMetricDefinition -ResourceId <resource_id> | Format-Table -Property Name,U
 Для масштабируемых наборов виртуальных машин можно настроить параметр автомасштабирования в шаблоне Resource Manager так, чтобы для параметра *metricName* использовалось значение *ApproximateMessageCount*, а идентификатор очереди хранилища передавался в параметре *metricResourceUri*.
 
 ```
-"metricName": "MessageCount",
+"metricName": "ApproximateMessageCount",
  "metricNamespace": "",
 "metricResourceUri": "/subscriptions/SUBSCRIPTION_ID/resourceGroups/RES_GROUP_NAME/providers/Microsoft.ServiceBus/namespaces/SB_NAMESPACE/queues/QUEUE_NAME"
 ```

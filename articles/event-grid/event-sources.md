@@ -7,12 +7,12 @@ ms.service: event-grid
 ms.topic: conceptual
 ms.date: 02/12/2019
 ms.author: spelluru
-ms.openlocfilehash: 3a87475146e2b23c4a824e568ea3da33e1f4abf0
-ms.sourcegitcommit: 38b11501526a7997cfe1c7980d57e772b1f3169b
+ms.openlocfilehash: 3a52d906d958fdfd1d7e09c6229b12af3204bc52
+ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76512952"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76846383"
 ---
 # <a name="event-sources-in-azure-event-grid"></a>Источники событий в службе "Сетка событий Azure"
 
@@ -132,6 +132,9 @@ ms.locfileid: "76512952"
 ## <a name="storage"></a>Хранилище
 
 Подпишитесь на события в хранилище BLOB-объектов, чтобы реагировать на события создания и удаления большого двоичного объекта.
+
+>[!NOTE]
+> Только учетные записи хранения типа **StorageV2 (общего назначения v2)** и **блобстораже** поддерживают интеграцию событий. **Хранилище (женрал цель v1)** не *поддерживает интеграцию со службой "* сетка событий".
 
 |Title  |Description  |
 |---------|---------|

@@ -10,12 +10,12 @@ services: time-series-insights
 ms.topic: conceptual
 ms.date: 12/16/2019
 ms.custom: seodec18
-ms.openlocfilehash: 567770c00c645aeb79e1efb0e9119b9ac829f3fe
-ms.sourcegitcommit: 12a26f6682bfd1e264268b5d866547358728cd9a
+ms.openlocfilehash: fd744e6283b00b0dfdd50805cb628f5bc40ab8d6
+ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75861665"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76846139"
 ---
 # <a name="shape-events-with-azure-time-series-insights-preview"></a>Формирование событий с помощью предварительной версии службы "Аналитика временных рядов Azure"
 
@@ -156,5 +156,4 @@ ms.locfileid: "75861665"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Чтобы приложить эти рекомендации, ознакомьтесь с [синтаксисом запроса предварительной версии службы "аналитика временных рядов Azure](./time-series-insights-query-data-csharp.md)". Дополнительные сведения о синтаксисе запросов для предварительной версии "аналитика временных рядов" REST API для доступа к данным.
-- Дополнительные сведения о поддерживаемых фигурах JSON см. в статье [поддерживаемые фигуры JSON](./time-series-insights-send-events.md#supported-json-shapes).
+Чтобы приложить эти рекомендации, ознакомьтесь с [синтаксисом запроса предварительной версии службы "аналитика временных рядов Azure](./time-series-insights-query-data-csharp.md)". Дополнительные сведения о синтаксисе запросов для предварительной версии "аналитика временных рядов" REST API для доступа к данным.

@@ -9,16 +9,18 @@ ms.date: 10/06/2019
 ms.topic: article
 ms.service: event-grid
 services: event-grid
-ms.openlocfilehash: 485c6d4a92539a2ba67aece319c68d31649e8045
-ms.sourcegitcommit: 92d42c04e0585a353668067910b1a6afaf07c709
+ms.openlocfilehash: 42f7b5315cecd75e2aaf67145c57982872f43550
+ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2019
-ms.locfileid: "72992266"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76844621"
 ---
 # <a name="persist-state-in-windows"></a>Сохранение состояния в Windows
 
-Разделы и подписки, созданные в модуле сетки событий, по умолчанию хранятся в файловой системе контейнера. Без сохранения при повторном развертывании модуля все созданные метаданные будут потеряны. Чтобы сохранить данные в разных развертываниях, необходимо сохранить данные вне файловой системы контейнера. В настоящее время сохраняются только метаданные. События хранятся в памяти. Если модуль сетки событий повторно развернут или перезапущен, все недоставленные события будут потеряны.
+Разделы и подписки, созданные в модуле сетки событий, по умолчанию хранятся в файловой системе контейнера. Без сохранения при повторном развертывании модуля все созданные метаданные будут потеряны. Чтобы сохранить данные между развертываниями и перезапусками, необходимо сохранить данные вне файловой системы контейнера. 
+
+По умолчанию сохраняются только метаданные, и события по-прежнему хранятся в памяти для повышения производительности. Чтобы включить сохраняемость событий, следуйте разделу материализованные события.
 
 В этой статье описаны шаги, необходимые для развертывания модуля службы "Сетка событий" с сохраняемостью в развертываниях Windows.
 
@@ -27,7 +29,7 @@ ms.locfileid: "72992266"
 
 ## <a name="persistence-via-volume-mount"></a>Сохраняемость через подключение тома
 
-[Тома DOCKER](https://docs.docker.com/storage/volumes/) используются для сохранения данных в разных развертываниях. Чтобы подключить том, необходимо создать его с помощью команд DOCKER, предоставить разрешения, чтобы контейнер мог читать, записывать в него, а затем развертывать модуль. Автоматическое создание тома с необходимыми разрешениями в Windows не предусмотрено. Его необходимо создать перед развертыванием.
+[Тома DOCKER](https://docs.docker.com/storage/volumes/) используются для сохранения данных в разных развертываниях. Чтобы подключить том, необходимо создать его с помощью команд DOCKER, предоставить разрешения, чтобы контейнер мог читать, записывать в него, а затем развертывать модуль.
 
 1. Создайте том, выполнив следующую команду:
 
@@ -82,17 +84,17 @@ ms.locfileid: "72992266"
     ```json
         {
               "Env": [
-                "inbound:serverAuth:tlsPolicy=strict",
-                "inbound:serverAuth:serverCert:source=IoTEdge",
-                "inbound:clientAuth:sasKeys:enabled=false",
-                "inbound:clientAuth:clientCert:enabled=true",
-                "inbound:clientAuth:clientCert:source=IoTEdge",
-                "inbound:clientAuth:clientCert:allowUnknownCA=true",
-                "outbound:clientAuth:clientCert:enabled=true",
-                "outbound:clientAuth:clientCert:source=IoTEdge",
-                "outbound:webhook:httpsOnly=true",
-                "outbound:webhook:skipServerCertValidation=false",
-                "outbound:webhook:allowUnknownCA=true"
+                "inbound__serverAuth__tlsPolicy=strict",
+                "inbound__serverAuth__serverCert__source=IoTEdge",
+                "inbound__clientAuth__sasKeys__enabled=false",
+                "inbound__clientAuth__clientCert__enabled=true",
+                "inbound__clientAuth__clientCert__source=IoTEdge",
+                "inbound__clientAuth__clientCert__allowUnknownCA=true",
+                "outbound__clientAuth__clientCert__enabled=true",
+                "outbound__clientAuth__clientCert__source=IoTEdge",
+                "outbound__webhook__httpsOnly=true",
+                "outbound__webhook__skipServerCertValidation=false",
+                "outbound__webhook__allowUnknownCA=true"
               ],
               "HostConfig": {
                 "Binds": [
@@ -118,21 +120,22 @@ ms.locfileid: "72992266"
     ```json
     {
         "Env": [
-            "inbound:serverAuth:tlsPolicy=strict",
-            "inbound:serverAuth:serverCert:source=IoTEdge",
-            "inbound:clientAuth:sasKeys:enabled=false",
-            "inbound:clientAuth:clientCert:enabled=true",
-            "inbound:clientAuth:clientCert:source=IoTEdge",
-            "inbound:clientAuth:clientCert:allowUnknownCA=true",
-            "outbound:clientAuth:clientCert:enabled=true",
-            "outbound:clientAuth:clientCert:source=IoTEdge",
-            "outbound:webhook:httpsOnly=true",
-            "outbound:webhook:skipServerCertValidation=false",
-            "outbound:webhook:allowUnknownCA=true"
+            "inbound__serverAuth__tlsPolicy=strict",
+            "inbound__serverAuth__serverCert__source=IoTEdge",
+            "inbound__clientAuth__sasKeys__enabled=false",
+            "inbound__clientAuth__clientCert__enabled=true",
+            "inbound__clientAuth__clientCert__source=IoTEdge",
+            "inbound__clientAuth__clientCert__allowUnknownCA=true",
+            "outbound__clientAuth__clientCert__enabled=true",
+            "outbound__clientAuth__clientCert__source=IoTEdge",
+            "outbound__webhook__httpsOnly=true",
+            "outbound__webhook__skipServerCertValidation=false",
+            "outbound__webhook__allowUnknownCA=true"
          ],
          "HostConfig": {
             "Binds": [
-                "myeventgridvol:C:\\app\\metadataDb"
+                "myeventgridvol:C:\\app\\metadataDb",
+                "C:\\myhostdir2:C:\\app\\eventsDb"
              ],
              "PortBindings": {
                     "4438/tcp": [
@@ -147,7 +150,7 @@ ms.locfileid: "72992266"
 
 ## <a name="persistence-via-host-directory-mount"></a>Сохранение с помощью подключения к каталогу узлов
 
-Кроме того, можно выбрать создание каталога в главной системе и подключение этого каталога.
+Вместо подключения тома можно создать каталог в главной системе и подключить этот каталог.
 
 1. Создайте каталог в файловой системе узла, выполнив следующую команду.
 
@@ -180,21 +183,22 @@ ms.locfileid: "72992266"
     ```json
     {
         "Env": [
-            "inbound:serverAuth:tlsPolicy=strict",
-            "inbound:serverAuth:serverCert:source=IoTEdge",
-            "inbound:clientAuth:sasKeys:enabled=false",
-            "inbound:clientAuth:clientCert:enabled=true",
-            "inbound:clientAuth:clientCert:source=IoTEdge",
-            "inbound:clientAuth:clientCert:allowUnknownCA=true",
-            "outbound:clientAuth:clientCert:enabled=true",
-            "outbound:clientAuth:clientCert:source=IoTEdge",
-            "outbound:webhook:httpsOnly=true",
-            "outbound:webhook:skipServerCertValidation=false",
-            "outbound:webhook:allowUnknownCA=true"
+            "inbound__serverAuth__tlsPolicy=strict",
+            "inbound__serverAuth__serverCert__source=IoTEdge",
+            "inbound__clientAuth__sasKeys__enabled=false",
+            "inbound__clientAuth__clientCert__enabled=true",
+            "inbound__clientAuth__clientCert__source=IoTEdge",
+            "inbound__clientAuth__clientCert__allowUnknownCA=true",
+            "outbound__clientAuth__clientCert__enabled=true",
+            "outbound__clientAuth__clientCert__source=IoTEdge",
+            "outbound__webhook__httpsOnly=true",
+            "outbound__webhook__skipServerCertValidation=false",
+            "outbound__webhook__allowUnknownCA=true"
          ],
          "HostConfig": {
             "Binds": [
-                "C:\\myhostdir:C:\\app\\metadataDb"
+                "C:\\myhostdir:C:\\app\\metadataDb",
+                "C:\\myhostdir2:C:\\app\\eventsDb"
              ],
              "PortBindings": {
                     "4438/tcp": [
@@ -206,3 +210,30 @@ ms.locfileid: "72992266"
          }
     }
     ```
+## <a name="persist-events"></a>Сохранить события
+
+Чтобы включить сохраняемость событий, необходимо сначала включить сохранение метаданных с помощью подключения тома или подключения к каталогу узла, используя приведенные выше разделы.
+
+Важные моменты, которые следует учитывать при сохранении событий:
+
+* Сохранение событий включено для каждой подписки на события и является явной присоединением тома или каталога.
+* Сохраняемость событий настраивается в подписке на событие во время создания и не может быть изменена после создания подписки на события. Чтобы переключить сохраняемость событий, необходимо удалить и повторно создать подписку на события.
+* Сохранение событий почти всегда выполняется медленнее, чем в операциях с памятью, однако разница в скорости сильно зависит от характеристик диска. Компромисс между скоростью и надежностью относится ко всем системам обмена сообщениями, но становится нотиЦиблем в крупном масштабе.
+
+Чтобы включить сохраняемость событий в подписке на события, задайте для `persistencePolicy` значение `true`.
+
+ ```json
+        {
+          "properties": {
+            "persistencePolicy": {
+              "isPersisted": "true"
+            },
+            "destination": {
+              "endpointType": "WebHook",
+              "properties": {
+                "endpointUrl": "<your-webhook-url>"
+              }
+            }
+          }
+        }
+ ```

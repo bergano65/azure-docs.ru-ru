@@ -5,14 +5,14 @@ services: expressroute
 author: cherylmc
 ms.service: expressroute
 ms.topic: conceptual
-ms.date: 01/17/2020
+ms.date: 01/28/2020
 ms.author: cherylmc
-ms.openlocfilehash: cbddd912831247e30f2913414c6dfa13131dde99
-ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
+ms.openlocfilehash: 02e2c0472a6ba7449229a5de5c6d8948be064644
+ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76719863"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76845791"
 ---
 # <a name="expressroute-partners-and-peering-locations"></a>Партнеры и одноранговые расположения ExpressRoute
 
@@ -48,7 +48,7 @@ ms.locfileid: "76719863"
 | **Индия** | Западная Индия, Центральная Индия, Южная Индия |Ченнаи, Ченнаи 2, Мумбаи, Мумбаи 2 |
 | **Япония** | Западная Япония, Восточная Япония |Осака, Токио |
 | **Океания** | Восточная Австралия, Юго-Восточная Австралия |Г., Мельбурн, Перт, Сидней, Sydney2 | 
-| **Южная Корея** | Республика Корея, центральный регион, Республика Корея, южный регион |Пусан, Сеул|
+| **Южная Корея** | Центральная Корея, Южная Корея |Пусан, Сеул|
 | **ЧАСТЬ ОАЭ** | Центральная часть ОАЭ, Север ОАЭ | Дубаи, Dubai2 |
 | **ЮАР** | Южно-Африканская Республика, Юго-Африканская Республика, Северная Африка |Кейптаун, Йоханнесбург |
 | **Южная Америка** | Южная Бразилия |Сан-Паулу |
@@ -95,7 +95,7 @@ ms.locfileid: "76719863"
 | **Dubai2** | [Du датамена](http://datamena.com/solutions/data-centre) | 3 | Северная часть ОАЭ | Н/Д | Du датамена, Orange, оранжевый, Орикском |
 | **Дублин** | [Equinix DB3](https://www.equinix.com/locations/europe-colocation/ireland-colocation/dublin-data-centers/db3/) | 1 | Северная Европа | 10G, 100G | Colt, eir, Equinix, Interxion, Megaport |
 | **Франкфурт** | [Interxion FRA11](https://www.interxion.com/Locations/frankfurt/) | 1 | Центрально-Западная Германия | 10G, 100G | Colt, DE-ЦИКС, ЖЕАНТ, Interxion, Orange, оранжевый, Телиа |
-| **Geneva** | [Equinix GV2](https://www.equinix.com/locations/europe-colocation/switzerland-colocation/geneva-data-centers/gv2/) | 1 | Западная Швейцария | 10G, 100G | Equinix |
+| **Geneva** | [Equinix GV2](https://www.equinix.com/locations/europe-colocation/switzerland-colocation/geneva-data-centers/gv2/) | 1 | Западная Швейцария | 10G, 100G | Equinix, Megaport |
 | **Гонконг, САР** | [Equinix HK1](https://www.equinix.com/locations/asia-colocation/hong-kong-colocation/hong-kong-data-center/hk1/) | 2 | Восточная Азия | Н/Д | Aryaka сети, Британская телекоммуникации, CenturyLink Cloud Connect, главный телекоммуникации, Международная телекоммуникации, Глобальная, Equinix, взаимосвязь, Orange, NTT Communications, оранжевый, ПККВ глобально ограниченный, Tata связи, Телиа, Verizon |
 | **Джакарта** | Для абонентов Telkom Индонезия | 4 | Н/Д | 10 | |
 | **Йоханнесбург** | [Терако JB1](https://www.teraco.co.za/data-centre-locations/johannesburg/#jb1) | 3 | Северная часть ЮАР | 10 | Британская телекоммуникации, Интернет-решения — Cloud Connect, жидкостный телекоммуникации, оранжевый, Терако |
@@ -108,7 +108,7 @@ ms.locfileid: "76719863"
 | **Мельбурн** | [Некстдк M1](https://www.nextdc.com/data-centres/m1-melbourne-data-centre) | 2 | Юго-Восточная Австралия | 10G, 100G | Аарнет, Деволи, Equinix, Orange, НЕКСТДК, ОПТУС, Телстра Corporation, ТПГ телекоммуникации |
 | **Майами** | [Equinix MI1](https://www.equinix.com/locations/americas-colocation/united-states-colocation/miami-data-centers/mi1/) | 1 | Н/Д | 10 | C3ntro, Equinix, Orange, Неутрона сетей |
 | **Милан** | [иридеос](https://irideos.it/en/data-centers/) | 1 | Н/Д | 10 | |
-| **Монреаль** | [Кологикс MTL3](https://www.cologix.com/data-centers/montreal/mtl3/) | 1 | Н/Д | Н/Д | Bell для Канады, Кологикс, Orange, Телус, Zayo |
+| **Монреаль** | [Кологикс MTL3](https://www.cologix.com/data-centers/montreal/mtl3/) | 1 | Н/Д | 10G, 100G | Bell для Канады, Кологикс, Orange, Телус, Zayo |
 | **Мумбай** | Tata Communications | 2 | Западная Индия | Н/Д | Global Клаудксчанже (ГККС), зависимость ЖИО, Сифи, Tata Communications, Verizon |
 | **Мумбаи 2** | Airtel | 2 | Западная Индия | Н/Д | Airtel, Sify, Vodafone Idea |
 | **Мюнхене** | [еджеконнекс](https://www.edgeconnex.com/locations/europe/) | 1 | Н/Д | 10G, 100G | |
@@ -144,7 +144,7 @@ ms.locfileid: "76719863"
 
 Местные облака Azure изолированы друг от друга и от глобальной коммерческой службы Azure. ExpressRoute для одного облака Azure не может подключиться к регионам Azure в других.
 
-### <a name="us-government-cloud"></a>Облако US Gov
+### <a name="us-government-cloud"></a>Облако правительства США
 | **Расположение** | **Адрес** | **Локальные регионы Azure**| **Прямое обращение к ER** | **Поставщики услуг** |
 | --- | --- | --- | --- | --- |
 | **Чикаго** | [Equinix CH1](https://www.equinix.com/locations/americas-colocation/united-states-colocation/chicago-data-centers/ch1/) | Н/Д | 10G, 100G | AT&T NetBond, Equinix, Level 3 Communications, Verizon |
@@ -160,7 +160,7 @@ ms.locfileid: "76719863"
 | **Расположение** | **Поставщики услуг** |
 | --- | --- |
 | **Пекин** |China Telecom |
-| **Пекин 2** | Телекоммуникации в Китае, GDS |
+| **Пекин 2** | Телекоммуникационные, Китайская, Уником, GDS |
 | **Шанхай** |China Telecom |
 | **Шанхай 2** | Телекоммуникации в Китае, GDS |
 

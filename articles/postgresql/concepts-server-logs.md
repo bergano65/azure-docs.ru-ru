@@ -6,12 +6,12 @@ ms.author: raagyema
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 10/25/2019
-ms.openlocfilehash: 9d71dd854c9a5059c2d0a48f57ad3ba5bb1eddf9
-ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
+ms.openlocfilehash: 2636e9a225002148e4cd79bb2176e0883aed623a
+ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76721325"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76844944"
 ---
 # <a name="logs-in-azure-database-for-postgresql---single-server"></a>Журналы в базе данных Azure для PostgreSQL — один сервер
 База данных Azure для PostgreSQL позволяет настраивать и получать доступ к стандартным журналам postgres. Журналы могут использоваться для обнаружения, устранения и исправления ошибок конфигурации и неоптимальной производительности. Сведения о ведении журнала, которые можно настроить и получить доступ, включают ошибки, сведения о запросах, записи автоочистки, подключения и контрольные точки. (Доступ к журналам транзакций недоступен).
@@ -69,7 +69,7 @@ ms.locfileid: "76721325"
 
 ### <a name="access-diagnostic-logs"></a>Доступ к журналам диагностики
 
-Способ доступа к журналам зависит от выбранной конечной точки. Схема для службы хранилища Azure описана в статье [учетная запись хранения журналов](../azure-monitor/platform/resource-logs-collect-storage.md) . Сведения о концентраторах событий см. в статье [Streaming Azure Logs](../azure-monitor/platform/resource-logs-stream-event-hubs.md) .
+Способ доступа к журналам зависит от выбранной конечной точки. Сведения о службе хранилища Azure см. в статье [учетная запись хранения журналов](../azure-monitor/platform/resource-logs-collect-storage.md) . Сведения о концентраторах событий см. в статье [Streaming Azure Logs](../azure-monitor/platform/resource-logs-stream-event-hubs.md) .
 
 Для журналов Azure Monitor журналы отправляются в выбранную рабочую область. Журналы postgres используют режим сбора **AzureDiagnostics** , поэтому их можно запрашивать из таблицы AzureDiagnostics. Поля в таблице описаны ниже. Дополнительные сведения о запросах и предупреждениях см. в статье о [запросах Azure Monitor журналов](../azure-monitor/log-query/log-query-overview.md) .
 
@@ -78,7 +78,7 @@ ms.locfileid: "76721325"
 Поиск всех журналов postgres для определенного сервера за последний день
 ```
 AzureDiagnostics
-| where LogicalServerName_s == 'myservername'
+| where LogicalServerName_s == "myservername"
 | where TimeGenerated > ago(1d) 
 ```
 

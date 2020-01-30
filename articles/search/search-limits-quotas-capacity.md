@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 12/17/2019
-ms.openlocfilehash: 690a9751111ca4c86ebb34825f2845ea59d6f186
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 6ee339cb709a5d825b39b4accf294761c99ee41a
+ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75462491"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76846290"
 ---
 # <a name="service-limits-in-azure-cognitive-search"></a>Ограничения службы в Azure Когнитивный поиск
 
@@ -117,7 +117,7 @@ ms.locfileid: "75462491"
 | Максимальное время выполнения<sup>5</sup> | 1–3 мин |24 часа |24 часа |24 часа |24 часа |Н/Д  |24 часа |24 часа |
 | Максимальное время выполнения наборов квалификационных навыков когнитивного поиска или индексирования больших двоичных объектов с помощью анализа образов<sup>5</sup> | 3–10 минут |2 часа |2 часа |2 часа |2 часа |Н/Д  |2 часа |2 часа |
 | Индексатор BLOB-объектов: максимальный размер BLOB-объектов в МБ |16 |16 |128 |256 |256 |Н/Д  |256 |256 |
-| Индексатор BLOB-объектов: максимальное число символов в содержимом, извлеченном из BLOB-объекта |32 000 |64 000 |4&nbsp;млн |4&nbsp;млн |4&nbsp;млн |Н/Д |4&nbsp;млн |4&nbsp;млн |
+| Индексатор BLOB-объектов: максимальное число символов в содержимом, извлеченном из BLOB-объекта |32 000 |64 000 |4&nbsp;млн |8&nbsp;миллион |16&nbsp;млн |Н/Д |4&nbsp;млн |4&nbsp;млн |
 
 <sup>1</sup> Максимальное время выполнения индексатора для служб уровня "Бесплатный" составляет 3 минуты для источников больших двоичных объектов или 1 минуту для прочих источников данных. Для индексирования искусственного интеллекта, которое вызывает Cognitive Services, бесплатные службы ограничены 20 свободными транзакциями в день, где транзакция определяется как документ, успешно прошедший через конвейер обогащения.
 
@@ -151,7 +151,7 @@ ms.locfileid: "75462491"
 
 ## <a name="data-limits-ai-enrichment"></a>Ограничения данных (обогащение искусственного интеллекта)
 
-[Конвейер обогащения искусственного интеллекта](cognitive-search-concept-intro.md) , который обращается к анализ текста ресурсу для [распознавания сущностей](cognitive-search-skill-entity-recognition.md), [извлечения ключевых фраз](cognitive-search-skill-keyphrases.md), [анализа тональности](cognitive-search-skill-sentiment.md)и [определения языка](cognitive-search-skill-language-detection.md) , зависит от ограничений данных. Максимальный размер записи должен составлять 50 000 символов, измеряемый [`String.Length`](https://docs.microsoft.com/dotnet/api/system.string.length). Если вам нужно разбить данные перед отправкой в анализатор тональности, можно воспользоваться [навыком разделения текста](cognitive-search-skill-textsplit.md).
+[Конвейер обогащения искусственного интеллекта](cognitive-search-concept-intro.md) , который обращается к анализ текста ресурсу для [распознавания сущностей](cognitive-search-skill-entity-recognition.md), [извлечения ключевых фраз](cognitive-search-skill-keyphrases.md), [анализа тональности](cognitive-search-skill-sentiment.md), [определения языка](cognitive-search-skill-language-detection.md)и [обнаружения](cognitive-search-skill-pii-detection.md) персональных данных, ограничивается данными. Максимальный размер записи должен составлять 50 000 символов, измеряемый [`String.Length`](https://docs.microsoft.com/dotnet/api/system.string.length). Если вам нужно разбить данные перед отправкой в анализатор тональности, можно воспользоваться [навыком разделения текста](cognitive-search-skill-textsplit.md).
 
 ## <a name="throttling-limits"></a>Ограничения регулирования
 

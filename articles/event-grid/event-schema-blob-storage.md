@@ -7,18 +7,21 @@ ms.service: event-grid
 ms.topic: reference
 ms.date: 01/17/2019
 ms.author: spelluru
-ms.openlocfilehash: 9c5b7b4301eb9cf019399795fc45b69fe152061d
-ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
+ms.openlocfilehash: 4a71f50a130bd9b22965d39fa942b47c70857a86
+ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76722328"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76844485"
 ---
 # <a name="azure-event-grid-event-schema-for-blob-storage"></a>Схема событий службы "Сетка событий Azure" для хранилища BLOB-объектов
 
 В этой статье описаны свойства и схема событий хранилища BLOB-объектов. Общие сведения о схемах событий см. в статье [схема событий службы "Сетка событий Azure](event-schema.md)".
 
 Список примеров сценариев и руководств см. в статье [Источники событий в службе "Сетка событий Azure"](event-sources.md#storage).
+
+>[!NOTE]
+> Только учетные записи хранения типа **StorageV2 (общего назначения v2)** и **блобстораже** поддерживают интеграцию событий. **Хранилище (женрал цель v1)** не *поддерживает интеграцию со службой "* сетка событий".
 
 ## <a name="list-of-events-for-blob-rest-apis"></a>Список событий для API-интерфейсов RESTFUL для BLOB-объектов
 
