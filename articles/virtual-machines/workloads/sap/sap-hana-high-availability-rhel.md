@@ -3,21 +3,21 @@ title: Настройка системной репликации SAP HANA на 
 description: Обеспечение высокого уровня доступности SAP HANA на виртуальных машинах Azure.
 services: virtual-machines-linux
 documentationcenter: ''
-author: MSSedusch
-manager: gwallace
+author: rdeltcheva
+manager: juergent
 editor: ''
 ms.service: virtual-machines-linux
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
-ms.date: 03/15/2019
-ms.author: sedusch
-ms.openlocfilehash: 62bb00c05359682503d2e99ef282f2523871147d
-ms.sourcegitcommit: bc7725874a1502aa4c069fc1804f1f249f4fa5f7
+ms.date: 01/28/2020
+ms.author: radeltch
+ms.openlocfilehash: fe4c3d8ea7aee0922ca29b9c0f475bfd9fa3c67a
+ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73721540"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76837040"
 ---
 # <a name="high-availability-of-sap-hana-on-azure-vms-on-red-hat-enterprise-linux"></a>Обеспечение высокого уровня доступности SAP HANA в виртуальных машинах Azure в Red Hat Enterprise Linux
 
@@ -129,7 +129,7 @@ ms.locfileid: "73721540"
       1. Откройте подсистему балансировки нагрузки, выберите **пул интерфейсных IP-адресов** и щелкните **Добавить**.
       1. Введите имя нового пула интерфейсных IP-адресов (например, **hana-frontend**).
       1. Для параметра **Назначение** выберите значение **Статическое** и введите IP-адрес (например, **10.0.0.13**).
-      1. Нажмите кнопку **ОК**.
+      1. Щелкните **ОК**.
       1. Когда пул интерфейсных IP-адресов будет создан, запишите его IP-адрес.
 
    1. Теперь создайте серверный пул.
@@ -146,7 +146,7 @@ ms.locfileid: "73721540"
       1. Откройте подсистему балансировки нагрузки, выберите **Зонды работоспособности** и щелкните **Добавить**.
       1. Введите имя нового зонда работоспособности (например, **hana-hp**).
       1. Выберите протокол **TCP** и порт 625**03**. Сохраните значение "5" для параметра **Интервал** и значение "2" для параметра **Порог состояния неработоспособности**.
-      1. Нажмите кнопку **ОК**.
+      1. Щелкните **ОК**.
 
    1. Затем создайте правила балансировки нагрузки.
    
@@ -156,7 +156,7 @@ ms.locfileid: "73721540"
       1. Выберите **порты высокой доступности**.
       1. Увеличьте **время ожидания** до 30 минут.
       1. Не забудьте **включить плавающий IP-адрес**.
-      1. Нажмите кнопку **ОК**.
+      1. Щелкните **ОК**.
 
    > [!Note]
    > Если виртуальные машины без общедоступных IP-адресов помещаются во внутренний пул внутреннего (без общедоступного IP-адреса) стандартного балансировщика нагрузки Azure, то исходящее подключение к Интернету будет отсутствовать, если не выполнить дополнительную настройку, чтобы разрешить маршрутизацию в общедоступные конечные точки. Дополнительные сведения о том, как добиться исходящего подключения, см. в статье подключение к общедоступной [конечной точке для виртуальных машин с помощью Load Balancer (цен. Категория "Стандартный") Azure в сценариях высокого уровня доступности SAP](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/high-availability-guide-standard-load-balancer-outbound-connections).  
@@ -167,7 +167,7 @@ ms.locfileid: "73721540"
       1. Откройте подсистему балансировки нагрузки, выберите **пул интерфейсных IP-адресов** и щелкните **Добавить**.
       1. Введите имя нового пула интерфейсных IP-адресов (например, **hana-frontend**).
       1. Для параметра **Назначение** выберите значение **Статическое** и введите IP-адрес (например, **10.0.0.13**).
-      1. Нажмите кнопку **ОК**.
+      1. Щелкните **ОК**.
       1. Когда пул интерфейсных IP-адресов будет создан, запишите его IP-адрес.
 
    1. Теперь создайте серверный пул.
@@ -177,14 +177,14 @@ ms.locfileid: "73721540"
       1. Щелкните **Добавить виртуальную машину**.
       1. Выберите группу доступности, созданную на шаге 3.
       1. Выберите виртуальные машины кластера SAP HANA.
-      1. Нажмите кнопку **ОК**.
+      1. Щелкните **ОК**.
 
    1. Создайте зонд работоспособности.
 
       1. Откройте подсистему балансировки нагрузки, выберите **Зонды работоспособности** и щелкните **Добавить**.
       1. Введите имя нового зонда работоспособности (например, **hana-hp**).
       1. Выберите протокол **TCP** и порт 625**03**. Сохраните значение "5" для параметра **Интервал** и значение "2" для параметра **Порог состояния неработоспособности**.
-      1. Нажмите кнопку **ОК**.
+      1. Щелкните **ОК**.
 
    1. Если используется SAP HANA 1.0, создайте правила балансировки нагрузки.
 
@@ -194,7 +194,7 @@ ms.locfileid: "73721540"
       1. Для параметра **Протокол** сохраните значение **TCP** и введите порт 3**03**15.
       1. Увеличьте **время ожидания** до 30 минут.
       1. Не забудьте **включить плавающий IP-адрес**.
-      1. Нажмите кнопку **ОК**.
+      1. Щелкните **ОК**.
       1. Повторите эти шаги для порта 3**03**17.
 
    1. Если используется SAP HANA 2.0, создайте правила балансировки нагрузки для системной базы данных.
@@ -205,7 +205,7 @@ ms.locfileid: "73721540"
       1. Для параметра **Протокол** сохраните значение **TCP** и введите порт 3**03**13.
       1. Увеличьте **время ожидания** до 30 минут.
       1. Не забудьте **включить плавающий IP-адрес**.
-      1. Нажмите кнопку **ОК**.
+      1. Щелкните **ОК**.
       1. Повторите эти шаги для порта 3**03**14.
 
    1. Если используется SAP HANA 2.0, создайте правила балансировки нагрузки для базы данных клиента.
@@ -216,7 +216,7 @@ ms.locfileid: "73721540"
       1. Для параметра **Протокол** сохраните значение **TCP** и введите порт 3**03**40.
       1. Увеличьте **время ожидания** до 30 минут.
       1. Не забудьте **включить плавающий IP-адрес**.
-      1. Нажмите кнопку **ОК**.
+      1. Щелкните **ОК**.
       1. Повторите эти шаги для портов 3**03**41 и 3**03**42.
 
 Дополнительные сведения о портах, требуемых для SAP HANA, см. в разделе [подключения к базам данных клиента](https://help.sap.com/viewer/78209c1d3a9b41cd8624338e42a12bf6/latest/en-US/7a9343c9f2a2436faa3cfdb5ca00c052.html) в руководству по [базам данных клиента SAP HANA](https://help.sap.com/viewer/78209c1d3a9b41cd8624338e42a12bf6) или в статье о [SAP 2388694][2388694].
@@ -560,14 +560,21 @@ sudo yum install -y resource-agents-sap-hana
 <pre><code>sudo pcs property set maintenance-mode=true
 
 # Replace the bold string with your instance number and HANA system ID
-sudo pcs resource create SAPHanaTopology_<b>HN1</b>_<b>03</b> SAPHanaTopology SID=<b>HN1</b> InstanceNumber=<b>03</b> --clone clone-max=2 clone-node-max=1 interleave=true
+sudo pcs resource create SAPHanaTopology_<b>HN1</b>_<b>03</b> SAPHanaTopology SID=<b>HN1</b> InstanceNumber=<b>03</b> \
+op start timeout=600 op stop timeout=300 op monitor interval=10 timeout=600 \
+--clone clone-max=2 clone-node-max=1 interleave=true
 </code></pre>
 
 Теперь создайте ресурсы HANA.
 
 <pre><code># Replace the bold string with your instance number, HANA system ID, and the front-end IP address of the Azure load balancer.
 
-sudo pcs resource create SAPHana_<b>HN1</b>_<b>03</b> SAPHana SID=<b>HN1</b> InstanceNumber=<b>03</b> PREFER_SITE_TAKEOVER=true DUPLICATE_PRIMARY_TIMEOUT=7200 AUTOMATED_REGISTER=false master notify=true clone-max=2 clone-node-max=1 interleave=true
+sudo pcs resource create SAPHana_<b>HN1</b>_<b>03</b> SAPHana SID=<b>HN1</b> InstanceNumber=<b>03</b> PREFER_SITE_TAKEOVER=true DUPLICATE_PRIMARY_TIMEOUT=7200 AUTOMATED_REGISTER=false \
+op start timeout=3600 op stop timeout=3600 \
+op monitor interval=61 role="Slave" timeout=700 \
+op monitor interval=59 role="Master" timeout=700 \
+op promote timeout=3600 op demote timeout=3600 \
+master notify=true clone-max=2 clone-node-max=1 interleave=true
 
 sudo pcs resource create vip_<b>HN1</b>_<b>03</b> IPaddr2 ip="<b>10.0.0.13</b>"
 
@@ -583,6 +590,9 @@ sudo pcs property set maintenance-mode=false
 </code></pre>
 
 Убедитесь, что состоянию кластера соответствует значение ОК и все ресурсы запущены. Не важно, на каком узле выполняются ресурсы.
+
+> [!NOTE]
+> Время ожидания в приведенной выше конфигурации является просто примерами и может потребоваться адаптироваться к конкретной установке HANA. Например, может потребоваться увеличить время ожидания начала, если требуется больше времени для запуска SAP HANA базы данных.  
 
 <pre><code>sudo pcs status
 
@@ -608,7 +618,7 @@ sudo pcs property set maintenance-mode=false
 <pre><code>[root@hn1-db-0 ~]# sudo su - hn1adm -c "python /usr/sap/HN1/HDB03/exe/python_support/systemReplicationStatus.py"
 </code></pre>
 
-### <a name="test-the-migration"></a>Тестирование миграции
+### <a name="test-the-migration"></a>Проверка миграции
 
 Состояние ресурсов перед запуском теста:
 
@@ -766,7 +776,7 @@ Resource Group: g_ip_HN1_03
     vip_HN1_03 (ocf::heartbeat:IPaddr2):       Started hn1-db-1
 </code></pre>
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Планирование и реализация виртуальных машин Azure для SAP][planning-guide]
 * [Развертывание виртуальных машин Azure для SAP][deployment-guide]
