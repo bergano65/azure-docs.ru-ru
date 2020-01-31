@@ -67,23 +67,37 @@
       href: Tutorials/create-qna-bot.md
 - name: Основные понятия
   items:
-    - name: База знаний
-      href: Concepts/knowledge-base.md
-      displayName: 'metadata, pair'
-    - name: Использование LUIS и QnA Maker
-      href: ../luis/choose-natural-language-processing-service.md?toc=/azure/cognitive-services/qnamaker/toc.json
-    - name: Жизненный цикл разработки базы знаний
-      href: Concepts/development-lifecycle-knowledge-base.md
-      displayName: 'version control, test, index, publish, monitor usage, create'
+    - name: Ресурсы Azure
+      href: Concepts/azure-resources.md
+    - name: Разработка базы знаний
+      items:
+        - name: Для языков
+          href: Concepts/design-language-culture.md
+        - name: Для клиентских приложений
+          href: Concepts/integration-with-other-applications.md
+    - name: Источники данных и контекст
+      items:
+        - name: Импорт из источников данных
+          href: Concepts/knowledge-base.md
+        - name: Импортированные типы содержимого
+          href: Concepts/content-types.md
+        - name: Наборы вопросов и ответов
+          href: Concepts/question-answer-set.md
+    - name: Жизненный цикл базы знаний
+      items:
+        - name: Жизненный цикл разработки
+          href: Concepts/development-lifecycle-knowledge-base.md
+          displayName: 'version control, test, index, publish, monitor usage, create'
+    - name: Обращение к базе знаний
+      items:
+        - name: Получение ответов
+          displayName: 'DefaultAnswer, Default answer'
+          href: Concepts/query-knowledge-base.md
+        - name: Оценка надежности
+          href: Concepts/confidence-score.md
     - name: Рекомендации
       href: Concepts/best-practices.md
       displayName: 'tag, rank, score, threshold, question, alternate, filter, synonym, answer, active learning, collaborate, alteration, metadata, bot, personality, extraction, chit-chat'
-    - name: Оценка надежности
-      displayName: 'DefaultAnswer, Default answer'
-      href: Concepts/confidence-score.md
-    - name: Поддерживаемые источники данных
-      href: Concepts/data-sources-supported.md
-      displayName: 'metadata, pair, sharepoint, authentication, permissions, faq, pdf, excel, xls, rtf, html, txt, tsv, url, end of line, new line, carriage return, markdown, commonmark, format, standard'
 - name: Практические руководства
   items:
     - name: Редактирование базы знаний
@@ -106,6 +120,8 @@
         - name: Получение ответа с помощью метаданных
           href: How-To/metadata-generateanswer-usage.md
           displayName: 'isTest, test, route, request, http, post, body, header, json, metadata, top, strictFilters, GenerateAnswer, API, answer, RankerType, id, text, question, context, 200, 2xx, 400, 401, 403, 404'
+        - name: Выбор ответа по умолчанию
+          href: How-to/change-default-answer.md
         - name: Создание бота с помощью QnA Maker и LUIS
           href: Tutorials/integrate-qnamaker-luis.md
         - name: Выбор языка

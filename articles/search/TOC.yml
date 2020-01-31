@@ -400,6 +400,8 @@
           href: cognitive-search-skill-conditional.md
         - name: Извлечение документа
           href: cognitive-search-skill-document-extraction.md
+        - name: Обнаружение PII
+          href: cognitive-search-skill-pii-detection.md
     - name: Пользовательские навыки
       items:
         - name: Пользовательские веб-API

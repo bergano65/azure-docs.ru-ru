@@ -44,6 +44,8 @@
           href: class-type-database-management.md
         - name: Использование Python с Jupyter Notebook
           href: class-type-jupyter-notebook.md
+        - name: Разработка мобильных приложений с помощью Android Studio
+          href: class-type-mobile-dev-android-studio.md
     - name: Создание и настройка учетных записей лаборатории (владелец учетной записи лаборатории)
       items:
         - name: Создание и администрирование учетных записей лаборатории

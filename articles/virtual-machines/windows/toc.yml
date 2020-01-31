@@ -232,6 +232,8 @@
           href: disks-types.md
         - name: Шифрование
           href: disk-encryption.md
+        - name: Резервирования Хранилища дисков
+          href: ../../cost-management-billing/reservations/understand-disk-reservations.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json
         - name: Проектирование для обеспечения высокой производительности
           href: premium-storage-performance.md
         - name: Всплеск активности диска
@@ -551,6 +553,8 @@
           href: disks-use-storage-explorer-managed-disks.md
         - name: Моментальный снимок диска
           href: snapshot-copy-managed-disk.md
+        - name: Зарезервировать Хранилище дисков
+          href: disks-reserved-capacity.md
         - name: Создание добавочного моментального снимка
           href: disks-incremental-snapshots.md
         - name: Резервное копирование неуправляемых дисков

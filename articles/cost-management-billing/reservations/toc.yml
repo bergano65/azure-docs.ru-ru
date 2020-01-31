@@ -12,6 +12,8 @@
           href: prepay-sql-data-warehouse-charges.md
         - name: Приобретение резервирования виртуальной машины
           href: ../../virtual-machines/windows/prepay-reserved-vm-instances.md?toc=/azure/billing/TOC.json
+        - name: Хранилище дисков Azure
+          href: ../../virtual-machines/linux/disks-reserved-capacity.md?toc=/azure/billing/TOC.json
         - name: Приобретение резервирования службы хранилища Azure
           href: ../../storage/blobs/storage-blob-reserved-capacity.md?toc=/azure/billing/TOC.json
         - name: "Приобретение резервирования Cosmos\_DB"
@@ -40,8 +42,12 @@
       items:
         - name: Скидки на зарезервированный экземпляр виртуальной машины
           href: ../manage/understand-vm-reservation-charges.md
+        - name: Создание рекомендаций по резервированию
+          href: reserved-instance-purchase-recommendations.md
         - name: Скидки на зарезервированную емкость службы хранилища Azure
           href: understand-storage-charges.md
+        - name: Скидки на резервирование Хранилища дисков Azure
+          href: understand-disk-reservations.md
         - name: "Скидки на зарезервированную емкость Cosmos\_DB"
           href: understand-cosmosdb-reservation-charges.md
         - name: "Скидки на зарезервированную емкость Базы данных\_SQL"
