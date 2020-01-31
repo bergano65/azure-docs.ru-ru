@@ -13,7 +13,7 @@
       href: create-notification-hub-portal.md
     - name: Настройка центра уведомлений на портале Azure
       href: configure-notification-hub-portal-pns-settings.md
-- name: Руководства
+- name: Учебники
   items:
     - name: Android
       items:
@@ -79,6 +79,8 @@
       href: samples-powershell.md
 - name: Основные понятия
   items:
+    - name: Протокол TLS
+      href: notification-hubs-tls12.md
     - name: Руководство по корпоративной архитектуре push-уведомлений
       href: notification-hubs-enterprise-push-notification-architecture.md
     - name: Регистрация устройств
@@ -90,7 +92,7 @@
           href: notification-hubs-templates-cross-platform-push-messages.md
     - name: Модель безопасности
       href: notification-hubs-push-notification-security.md
-- name: Инструкции
+- name: Практические руководства
   items:
     - name: Смена ценовой категории
       href: change-pricing-tier.md
@@ -138,7 +140,7 @@
       href: notification-hubs-push-notification-fixer.md
     - name: Отправка push-уведомлений с помощью службы push-уведомлений облака Baidu
       href: notification-hubs-baidu-china-android-notifications-get-started.md
-- name: Справочные материалы
+- name: Справочник
   items:
     - name: .NET
       href: /dotnet/api/microsoft.azure.notificationhubs
@@ -150,7 +152,7 @@
       href: /azure/templates/microsoft.notificationhubs/allversions
 - name: Ресурсы
   items:
-    - name: Вопросы и ответы
+    - name: ВОПРОСЫ И ОТВЕТЫ
       href: notification-hubs-push-notification-faq.md
     - name: Миграция из Google GCM в FCM
       href: notification-hubs-gcm-to-fcm.md

@@ -17,36 +17,20 @@
       items:
         - name: Обучение и использование настраиваемой модели без меток
           items:
-            - name: Версия 2.0
-              items:
-                - name: cURL
-                  href: quickstarts/curl-train-extract.md
-                - name: Python
-                  href: quickstarts/python-train-extract.md
-            - name: Версия 1.0
-              items:
-                - name: cURL
-                  href: quickstarts/curl-train-extract-v1.md
-                - name: Python
-                  href: quickstarts/python-train-extract-v1.md
+            - name: cURL
+              href: quickstarts/curl-train-extract.md
+            - name: Python
+              href: quickstarts/python-train-extract.md
         - name: Обучение и использование настраиваемой модели с помощью меток
           items:
             - name: Python
               href: quickstarts/python-labeled-data.md
         - name: Использование предварительно созданной модели для обработки товарных чеков
           items:
-            - name: Версия 2.0
-              items:
-                - name: cURL
-                  href: quickstarts/curl-receipts.md
-                - name: Python
-                  href: quickstarts/python-receipts.md
-            - name: Версия 1.0
-              items:
-                - name: cURL
-                  href: quickstarts/curl-receipts-v1.md
-                - name: Python
-                  href: quickstarts/python-receipts-v1.md
+            - name: cURL
+              href: quickstarts/curl-receipts.md
+            - name: Python
+              href: quickstarts/python-receipts.md
         - name: Получение сведений о структуре текста
           items:
             - name: Python

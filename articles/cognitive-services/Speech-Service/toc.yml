@@ -459,6 +459,8 @@
           href: speech-sdk.md
         - name: Доступность сценариев
           href: scenario-availability.md
+        - name: Доставка приложения
+          href: ship-application.md
     - name: Краткие руководства
       items:
         - name: Создание проекта

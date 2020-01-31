@@ -196,7 +196,7 @@ Azure PowerShell 1.0.
 Get-AzStreamAnalyticsQuota �Location "Central US" 
 ```
 
-Эта команда PowerShell возвращает сведения о квоте и использовании единиц потоковой передачи в центральном регионе США.
+Эта команда PowerShell возвращает сведения о квоте и использовании единиц потоковой передачи в центральной части США.
 
 ### <a name="get-azurestreamanalyticstransformation--get-azstreamanalyticstransformation"></a>Get-Азурестреаманалитикстрансформатион | Get-Азстреаманалитикстрансформатион
 Возвращает сведения о конкретном преобразовании, определенном в задании Stream Analytics.

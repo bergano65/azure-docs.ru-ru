@@ -4,9 +4,9 @@ title: Документация по предварительной версии
 metadata:
   title: 'Документация по службе "Конфигурация приложений Azure": руководства и справочник по API'
   description: "Конфигурация приложений Azure\_— это управляемая служба, которая обеспечивает простую и безопасную централизацию параметров приложений и функций для разработчиков."
-  author: yegu-ms
+  author: lisaguthrie
   manager: maiye
-  ms.author: yegu
+  ms.author: lcozzens
   ms.service: azure-app-configuration
   ms.topic: landing-page
   ms.date: 04/19/2019
