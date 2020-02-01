@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 11/06/2019
 ms.author: jonbeck
-ms.openlocfilehash: 5e10c0905237f3cc28dd0ac113dfaf844e781bac
-ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
+ms.openlocfilehash: c16ff8fed19340811578ccb39cbac7242b7c5861
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75646665"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76905745"
 ---
 # <a name="sizes-for-linux-virtual-machines-in-azure"></a>Размеры виртуальных машин Linux в Azure
 В этой статье описаны доступные размеры и разновидности виртуальных машин Azure, которые можно использовать для запуска приложений и рабочих нагрузок Linux. Здесь также предоставлены рекомендации по развертыванию, которые нужно учитывать при планировании использования этих ресурсов. Также доступна версия этой статьи для [виртуальных машин Windows](../windows/sizes.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
@@ -67,7 +67,7 @@ ms.locfileid: "75646665"
 - [Оптимизированные для хранилища](sizes-storage.md)
 - [GPU](sizes-gpu.md)
 - [Для высокопроизводительных вычислений](sizes-hpc.md)
-- Описание серий A Standard, Dv1 (D1–4 и D11–14 v1) и A8–A11 приведено на странице [Предыдущее поколение](sizes-previous-gen.md).
+- Просмотрите [предыдущую страницу поколения](sizes-previous-gen.md) для базовых и стандартных, высокопроизводительных A8-A11, D/DSv1 (D1-4 и D11-14 v1), F/Fsv1, G/GS, Lsv1 и NVv2.
 
 
 

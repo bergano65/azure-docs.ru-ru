@@ -7,12 +7,12 @@ ms.date: 01/23/2020
 ms.topic: article
 ms.service: virtual-machines-linux
 manager: gwallace
-ms.openlocfilehash: 9183805e2817459ac2c408648981b6989edf4e62
-ms.sourcegitcommit: b5d646969d7b665539beb18ed0dc6df87b7ba83d
+ms.openlocfilehash: 4ac2c1266933716697a658b1ba88efd8c2f05d34
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2020
-ms.locfileid: "76760017"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76905761"
 ---
 # <a name="preview-create-an-azure-image-builder-template"></a>Предварительная версия: Создание шаблона Azure Image Builder 
 
@@ -317,6 +317,8 @@ az vm image list -l westus -f UbuntuServer -p Canonical --output table –-all
 - **рестартчекккомманд** — команда для проверки успешности перезапуска (необязательно). 
 - **рестарттимеаут** — время ожидания перезапуска указано как строка величины и единица измерения. Например, `5m` (5 минут) или `2h` (2 часа). Значение по умолчанию: "5 мин"
 
+### <a name="linux-restart"></a>Перезапуск Linux  
+Настройка перезапуска Linux отсутствует. Однако если вы устанавливаете драйверы или компоненты, требующие перезагрузки, вы можете установить их и вызвать перезагрузку с помощью средства настройки оболочки. для виртуальной машины сборки существует тайм-аут 20min SSH.
 
 ### <a name="powershell-customizer"></a>Настройка PowerShell 
 Программа настройки оболочки поддерживает выполнение скриптов PowerShell и встроенных команд, поэтому сценарии должны быть общедоступными для доступа к ним.

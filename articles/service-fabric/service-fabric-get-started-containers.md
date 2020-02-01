@@ -1,14 +1,14 @@
 ---
 title: Создание приложения контейнера Service Fabric Azure
-description: Создание первого приложения-контейнера Windows в Azure Service Fabric. Создание образа Docker с приложением Python, отправка образа в реестр контейнеров, сборка и развертывание приложения-контейнера Service Fabric.
+description: Создание первого приложения-контейнера Windows в Azure Service Fabric. Создайте образ DOCKER с помощью приложения Python, отправьте образ в реестр контейнеров, а затем выполните сборку и развертывание контейнера в Azure Service Fabric.
 ms.topic: conceptual
 ms.date: 01/25/2019
-ms.openlocfilehash: 6ff3fb3057b21f389d42ad98fe4ebb2803f5fc8e
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 8e1de48874655721f708bfd1dfdda8d975f94c4b
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75458011"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76906248"
 ---
 # <a name="create-your-first-service-fabric-container-application-on-windows"></a>Создание первого контейнера-приложения Service Fabric в Windows
 
@@ -16,7 +16,7 @@ ms.locfileid: "75458011"
 > * [Windows](service-fabric-get-started-containers.md)
 > * [Linux](service-fabric-get-started-containers-linux.md)
 
-Чтобы запустить существующее приложение в контейнере Windows кластера Service Fabric, не требуется вносить изменения в приложение. В этой статье описано создание образа Docker, содержащего веб-приложение [Flask](http://flask.pocoo.org/) Python, и его развертывание в кластер Service Fabric, работающий на локальном компьютере. Кроме того, вы предоставите общий доступ к контейнерному приложению через [реестр контейнеров Azure](/azure/container-registry/). Для работы с этой статьей необходимо знание основных понятий Docker. Чтобы ознакомиться с Docker, см. этот [обзор Docker](https://docs.docker.com/engine/understanding-docker/).
+Чтобы запустить существующее приложение в контейнере Windows кластера Service Fabric, не требуется вносить изменения в приложение. В этой статье описывается создание образа DOCKER, содержащего веб-приложение Python [Flask](http://flask.pocoo.org/) , и его развертывание в кластере Azure Service Fabric. Кроме того, вы предоставите общий доступ к контейнерному приложению через [реестр контейнеров Azure](/azure/container-registry/). Для работы с этой статьей необходимо знание основных понятий Docker. Чтобы ознакомиться с Docker, см. этот [обзор Docker](https://docs.docker.com/engine/understanding-docker/).
 
 > [!NOTE]
 > Эта статья касается среды разработки Windows.  Среда выполнения кластера Service Fabric и среда выполнения Docker должны работать под управлением одной операционной системы.  Контейнеры Windows нельзя запускать в кластере Linux.

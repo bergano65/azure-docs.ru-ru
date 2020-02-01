@@ -3,17 +3,17 @@ title: Azure Service Fabric CLI — sfctl
 description: Сведения о sfctl, интерфейсе командной строки Azure Service Fabric. Содержит список команд и подгрупп.
 author: jeffj6123
 ms.topic: reference
-ms.date: 9/17/2019
+ms.date: 1/16/2020
 ms.author: jejarry
-ms.openlocfilehash: 518e60ee92a637533fdf5ab44053d1a1c8757bbe
-ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
+ms.openlocfilehash: 56efa15a7de3414f9c535e66bd80c94594cd5038
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75645248"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76906221"
 ---
 # <a name="sfctl"></a>sfctl
-Команды для управления кластерами и сущностями Service Fabric. Эта версия совместима со средой выполнения Service Fabric 6,5.
+Команды для управления кластерами и сущностями Service Fabric. Эта версия совместима со средой выполнения Service Fabric 7,0.
 
 В командах используется шаблон "существительное — глагол". Дополнительные сведения см. в подгруппах.
 

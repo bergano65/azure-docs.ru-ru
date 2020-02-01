@@ -8,15 +8,15 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: conceptual
-ms.date: 09/13/2019
+ms.date: 01/28/2020
 ms.author: diberry
 ms.custom: seodec18
-ms.openlocfilehash: dc3bb6882963205e17e37f52ec9dcdffecdf9e21
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: 00b8e6d44ed8449aa4ddf8716039c8c85c558b8f
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76843196"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76901753"
 ---
 # <a name="manage-qna-maker-resources"></a>Управление ресурсами QnA Maker
 
@@ -97,7 +97,8 @@ ms.locfileid: "76843196"
 
 2. Просмотр или сброс ключей:
 
-    ![Диспетчер ключей конечных точек](../media/qnamaker-how-to-key-management/Endpoint-keys1.png)
+    > [!div class="mx-imgBorder"]
+    > [![отобразить, скопировать или задать ключ конечной точки в параметрах службы](../media/qnamaker-how-to-key-management/Endpoint-keys1.png)](../media/qnamaker-how-to-key-management/Endpoint-keys1.png#lightbox)
 
     >[!NOTE]
     >Обновите ключи, если считаете, что они скомпрометированы. Для этого может потребоваться внести соответствующие изменения в код клиентского приложения или бота.
@@ -136,7 +137,7 @@ QnA Maker создает несколько ресурсов Azure. Чтобы �
 1. Выберите **Параметры**, а затем **Конфигурация**. Отобразятся все существующие параметры для службы приложений QnA Maker.
 
     > [!div class="mx-imgBorder"]
-    > ![снимок экрана портал Azure с параметрами конфигурации службы приложений](../media/qnamaker-how-to-upgrade-qnamaker/change-search-service-app-service-configuration.png)
+    > [Снимок экрана ![портал Azure отображение параметров конфигурации службы приложений](../media/qnamaker-how-to-upgrade-qnamaker/change-search-service-app-service-configuration.png)](../media/qnamaker-how-to-upgrade-qnamaker/change-search-service-app-service-configuration.png#lightbox)
 
 1. Измените значения для следующих ключей:
 
@@ -146,7 +147,7 @@ QnA Maker создает несколько ресурсов Azure. Чтобы �
 1. Чтобы использовать новые параметры, необходимо перезапустить службу приложений. Выберите **Обзор**, а затем щелкните **перезапустить**.
 
     > [!div class="mx-imgBorder"]
-    > ![снимок экрана портал Azure перезапуска службы приложений после изменения параметров конфигурации](../media/qnamaker-how-to-upgrade-qnamaker/screenshot-azure-portal-restart-app-service.png)
+    > [![снимок экрана портал Azure перезапуска службы приложений после изменения параметров конфигурации](../media/qnamaker-how-to-upgrade-qnamaker/screenshot-azure-portal-restart-app-service.png)](../media/qnamaker-how-to-upgrade-qnamaker/screenshot-azure-portal-restart-app-service.png)
 
 При создании службы QnA с помощью шаблонов Azure Resource Manager можно создать все ресурсы и управлять созданием службы приложений для использования существующей службы поиска.
 

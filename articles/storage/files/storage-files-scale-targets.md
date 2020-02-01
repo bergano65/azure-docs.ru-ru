@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 10/16/2019
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: 211dafd1ad3e30d37cfee926a7c93ba541037f62
-ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
+ms.openlocfilehash: 2e05f0cb46e1e54ced5911c0a78dd026dbb7f4fa
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75749503"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76905584"
 ---
 # <a name="azure-files-scalability-and-performance-targets"></a>Целевые показатели масштабируемости и производительности службы файлов Azure
 
@@ -51,7 +51,7 @@ ms.locfileid: "75749503"
 ### <a name="file-share-and-file-scale-targets"></a>Целевые объекты общей папки и масштабирования файлов
 
 > [!NOTE]
-> Стандартные общие файловые ресурсы, размер которых превышает 5 Тиб, имеют определенные ограничения и региональные ограничения.
+> Стандартные общие файловые ресурсы, размер которых превышает 5 Тиб, имеют определенные ограничения.
 > Список ограничений, региональных сведений и инструкций по включению этих больших размеров файловых ресурсов см. в разделе подключение [к большим файловым ресурсам](storage-files-planning.md#onboard-to-larger-file-shares-standard-tier) в статье Планирование.
 
 [!INCLUDE [storage-files-scale-targets](../../../includes/storage-files-scale-targets.md)]

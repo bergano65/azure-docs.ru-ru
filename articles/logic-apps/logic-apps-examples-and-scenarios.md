@@ -6,12 +6,12 @@ ms.suite: integration
 ms.reviewer: klam, logicappspm
 ms.topic: conceptual
 ms.date: 07/31/2019
-ms.openlocfilehash: ff6136dea8a25a39e045665d61bdd5d93eeb58a5
-ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
+ms.openlocfilehash: 5b72ee02c2bbf811293a2bcdb15590e16e300a02
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74792136"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76906674"
 ---
 # <a name="common-scenarios-examples-tutorials-and-walkthroughs-for-azure-logic-apps"></a>Распространенные сценарии, примеры, учебники и пошаговые руководства для Azure Logic Apps
 
@@ -75,15 +75,15 @@ ms.locfileid: "74792136"
 * [Группировка действий с использованием областей](../logic-apps/logic-apps-control-flow-run-steps-group-scopes.md).
 * [Реализация обработки ошибок и исключений в рабочем процессе](../logic-apps/logic-apps-exception-handling.md)
 * [Вариант использования. Как компания в сфере здравоохранения использует обработку исключений в приложении логики для рабочих процессов HL7 FHIR](../logic-apps/logic-apps-scenario-error-and-exception-handling.md)
-* [Включение мониторинга, ведения журнала и оповещений для существующих приложений логики](../logic-apps/logic-apps-monitor-your-logic-apps.md)
-* [Включение мониторинга и ведения журнала диагностики при создании приложений логики](../logic-apps/logic-apps-monitor-your-logic-apps-oms.md)
+* [Включение мониторинга, ведения журнала и оповещений для существующих приложений логики](../logic-apps/monitor-logic-apps.md)
+* [Включение мониторинга и ведения журнала диагностики при создании приложений логики](../logic-apps/monitor-logic-apps-log-analytics.md)
 
 ## <a name="deploy-and-manage-logic-apps"></a>Развертывание приложений логики и управление ими
 
 Можно полностью разработать и развернуть приложения логики с помощью Visual Studio, Azure DevOps или любых других инструментов системы управления версиями и автоматической сборки. Для поддержки развертывания рабочих процессов и зависимых подключений в шаблоне ресурсов приложения логики используют шаблоны развертывания ресурсов Azure. Средства Visual Studio автоматически создают эти шаблоны, которые можно записать после изменения в систему управления версиями для управления версиями.
 
 * [Создание и развертывание приложений логики в Visual Studio](../logic-apps/quickstart-create-logic-apps-with-visual-studio.md)
-* [Включение мониторинга, ведения журнала и оповещений для существующих приложений логики](../logic-apps/logic-apps-monitor-your-logic-apps.md)
+* [Включение мониторинга, ведения журнала и оповещений для существующих приложений логики](../logic-apps/monitor-logic-apps.md)
 * [Автоматизация развертывания приложений логики](../logic-apps/logic-apps-azure-resource-manager-templates-overview.md)
 * [Пример. подключение к очередям служебной шины Azure из Azure Logic Apps и развертывание с помощью Azure Pipelines в Azure DevOps](https://docs.microsoft.com/samples/azure-samples/azure-logic-apps-deployment-samples/connect-to-azure-service-bus-queues-from-azure-logic-apps-and-deploy-with-azure-devops-pipelines/)
 * [Пример. подключение к учетным записям хранения Azure из Azure Logic Apps и развертывание с помощью Azure Pipelines в Azure DevOps](https://docs.microsoft.com/samples/azure-samples/azure-logic-apps-deployment-samples/connect-to-azure-storage-accounts-from-azure-logic-apps-and-deploy-with-azure-devops-pipelines/)

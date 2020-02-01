@@ -1,6 +1,6 @@
 ---
-title: Поиск расположений с помощью Azure Maps Служба поиска | Карты Microsoft Azure
-description: В этой статье вы узнаете, как найти расположение с помощью Microsoft Azure карт Служба поиска.
+title: Поиск расположения с помощью служб поиска Azure Maps | Карты Microsoft Azure
+description: В этой статье вы узнаете, как искать расположение с помощью Microsoft Azure карт Служба поиска для геокодирования и отмены геокодирования.
 author: walsehgal
 ms.author: v-musehg
 ms.date: 01/15/2020
@@ -8,18 +8,18 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: philmea
-ms.openlocfilehash: 20a2c18875096680cd1eba7601e88965fcbcc568
-ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
+ms.openlocfilehash: 3b5da7eab9cff5c5e051fc4d5ab7ff582a95c20d
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76715356"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76899228"
 ---
-# <a name="using-azure-maps-search-services-for-geocoding-and-reverse-geocoding"></a>Использование служб поиска Azure Maps для геокодирования и инверсии геокодирования
+# <a name="search-for-a-location-using-azure-maps-search-services"></a>Поиск расположения с помощью служб поиска Azure Maps
 
 Azure Maps [Служба поиска](https://docs.microsoft.com/rest/api/maps/search) — это набор интерфейсов API RESTful, предназначенных для облегчения поиска адресов, мест, Бизнес-вхождений по имени или категории, а также других географических данных. Кроме поддержки традиционной геокодирования, службы также могут обращаться к геокодированным адресам и перекрестным улицы на основе широт и долгот. Значения широты и долготы, возвращаемые функцией поиска, можно использовать в качестве параметров в других Azure Maps службах, таких как [Route](https://docs.microsoft.com/rest/api/maps/route) и [weather](https://docs.microsoft.com/rest/api/maps/weather) Services.
 
-Давайте изученим:
+В этой статье вы узнаете, как:
 
 * Запрос координат широты и долготы для адреса (расположение геокода адреса) с помощью [API адреса поиска]( https://docs.microsoft.com/rest/api/maps/search/getsearchaddress)
 * Поиск адреса или точки интересов (достопримечательности) с помощью [API нечеткого поиска](https://docs.microsoft.com/rest/api/maps/search/getsearchfuzzy)
@@ -29,7 +29,7 @@ Azure Maps [Служба поиска](https://docs.microsoft.com/rest/api/maps/
 
 ## <a name="prerequisites"></a>Технические условия
 
-Для выполнения действий, описанных в этой статье, необходимо сначала создать учетную запись Azure Maps и сопоставить ключ подписки учетной записи. Следуйте инструкциям в разделе [Создание учетной записи](quick-demo-map-app.md#create-an-account-with-azure-maps) для создания подписки на учетную запись Azure Maps и выполните действия, описанные в разделе [Получение первичного ключа](quick-demo-map-app.md#get-the-primary-key-for-your-account) , чтобы получить первичный ключ для вашей учетной записи. Дополнительные сведения о проверке подлинности в Azure Maps см. в разделе [Управление проверкой подлинности в Azure Maps](./how-to-manage-authentication.md).
+Для выполнения действий, описанных в этой статье, необходимо сначала создать учетную запись Azure Maps и сопоставить ключ подписки учетной записи. Следуйте инструкциям в разделе [Создание учетной записи](quick-demo-map-app.md#create-an-account-with-azure-maps) для создания подписки на учетную запись Azure Maps и выполните действия, описанные в разделе [Получение первичного ключа](quick-demo-map-app.md#get-the-primary-key-for-your-account) , чтобы получить первичный ключ для вашей учетной записи. Дополнительные сведения о проверке подлинности в Azure Maps см. в [этой статье](./how-to-manage-authentication.md).
 
 В этой статье для создания вызовов REST используется [приложение Postman](https://www.getpostman.com/apps). Вы можете использовать любую среду разработки API.
 
@@ -79,7 +79,7 @@ Azure Maps [Служба поиска](https://docs.microsoft.com/rest/api/maps/
 
 Флажок **typeahead** сообщает API поиска адреса, что нужно обработать запрос как частичные входные данные и вернуть массив прогнозных значений.
 
-## <a name="search-for-an-address-using-fuzzy-search-api"></a>Поиск адреса с помощью API нечеткого поиска
+## <a name="using-fuzzy-search-api"></a>Использование API нечеткого поиска
 
 Azure Maps[ API нечеткого поиска](https://docs.microsoft.com/rest/api/maps/search/getsearchfuzzy) рекомендуется использовать, если неизвестно, какие данные пользователь вводит для поискового запроса. API сочетает в себе ДОСТОПРИМЕЧАТЕЛЬНОСТИный Поиск и геокодирование в каноническом "однострочном поиске". Например, API-интерфейс может обрабатывать входные данные любой комбинации адреса или токена POI. Ему также можно назначить взвешенное значение с помощью контекстно-зависимой позиции (пары широты или долготы), полностью ограничить с помощью координат и радиуса, а также выполнить без точки привязки геосмещения.
 
@@ -136,49 +136,12 @@ Azure Maps[ API нечеткого поиска](https://docs.microsoft.com/rest
     | lat | 47,620525 |
     | lon | –122,349274 |
 
-## <a name="search-for-address-properties-and-coordinates"></a>Поиск координат и свойств адреса
 
-В API поискового адреса можно передать полный или частичный адрес. Вы по-прежнему получаете ответ, включающий подробные свойства адреса. Подробные свойства адреса — это значения, такие как позиционированные значения по высоте, долготе, органу или подразделению.
+## <a name="search-for-a-street-address-using-reverse-address-search"></a>Поиск улицы и номера дома с использованием обратного поиска адреса
 
-1. В раскрывающемся списке Postman щелкните **New Request** (Создать запрос)  | , **GET request** (Запрос GET) и назовите его **Поиск адреса**.
-2. На вкладке Builder (Конструктор) выберите метод HTTP **GET**, введите URL-адрес запроса для конечной точки API и выберите протокол авторизации, если он используется.
+Azure Maps [получения поискового интерфейса обратный API]( https://docs.microsoft.com/rest/api/maps/search/getsearchaddressreverse) позволяет переводить координаты (например, 37,786505,-122,3862) в адрес улицы, понятный человеку. Чаще всего это необходимо для отслеживания приложений, в которых вы получаете канал GPS с устройства или ресурса и хотите узнать, в каком адресе находится координата.
+Если у вас есть набор координатных расположений для обратного геокодирования, можно использовать [обратный поиск адреса API](https://docs.microsoft.com/rest/api/maps/search/postsearchaddressreversebatch) для отправки пакета запросов в одном вызове API.
 
-    ![Поиск адреса](./media/how-to-search-for-address/address_search_url.png)
-  
-    | Параметр | Рекомендуемое значение |
-    |---------------|------------------------------------------------|
-    | Метод HTTP | GET |
-    | Request URL (URL-адрес запроса) | [https://atlas.microsoft.com/search/address/json?](https://atlas.microsoft.com/search/address/json?) |
-    | Авторизация | No Auth (Без авторизации) |
-
-3. Щелкните **Params** (Параметры) и введите следующие пары "ключ — значение", которые будут использоваться в качестве параметров запроса или пути в URL-адресе запроса:
-  
-    ![Поиск адреса](./media/how-to-search-for-address/address_search_params.png)
-  
-    | Ключ | Значение |
-    |------------------|-------------------------|
-    | api-version | 1.0 |
-    | subscription-key | \<Ваш ключ службы "Карты Azure"\> |
-    | query | Броад Стрит 400, Сиэтл, штат Вашингтон, 98109 |
-  
-4. Щелкните **Send** (Отправить), а затем просмотрите текст ответа.
-  
-    В этом случае указан запрос с полным адресом и получен один результат в тексте ответа.
-  
-5. В разделе Params (Параметры) замените строку запроса следующим значением.
-    ```plaintext
-        400 Broad, Seattle
-    ```
-
-6. Добавьте следующую пару "ключ-значение" в раздел **Параметры** и нажмите кнопку **Отправить**:
-
-    | Ключ | Значение |
-    |-----|------------|
-    | typeahead | true |
-
-    Флажок **typeahead** сообщает API поиска адреса, что нужно обработать запрос как частичные входные данные и вернуть массив прогнозных значений.
-
-## <a name="make-a-reverse-address-search"></a>Выполнить обратный поиск адреса
 
 1. В Postman щелкните **New Request** (Создать запрос) | **GET request** (Запрос GET). Назовите его **Обратный поиск адреса**.
 
@@ -265,3 +228,4 @@ Azure Maps[ API нечеткого поиска](https://docs.microsoft.com/rest
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - Ознакомьтесь с документацией по API [службы поиска Azure Maps](https://docs.microsoft.com/rest/api/maps/search).
+- Ознакомьтесь с [рекомендациями](https://docs.microsoft.com/azure/azure-maps/how-to-use-best-practices-for-search).

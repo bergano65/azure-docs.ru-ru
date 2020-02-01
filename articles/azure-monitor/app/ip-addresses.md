@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: lgayhardt
 ms.author: lagayhar
 ms.date: 12/19/2019
-ms.openlocfilehash: c571a4f36372b250a05564182b240bc4007240a1
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.openlocfilehash: 02f1e5e3f3252ffa026d8dffe9fe83c9e5abe65b
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75977809"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76899130"
 ---
 # <a name="ip-addresses-used-by-application-insights-and-log-analytics"></a>IP-адреса, используемые Application Insights и Log Analytics
 Служба [Azure Application Insights](../../azure-monitor/app/app-insights-overview.md) использует несколько IP-адресов. Вам могут понадобиться эти адреса, если отслеживаемое приложение расположено за брандмауэром.
@@ -56,6 +56,14 @@ ms.locfileid: "75977809"
 
 ## <a name="availability-tests"></a>Тесты доступности
 Ниже приведен список адресов, которые используются для [проверки доступности веб-сайтов](../../azure-monitor/app/monitor-web-app-availability.md) . Если вам нужно запустить веб-тесты в приложении, а веб-сервер обслуживает только определенные клиенты, следует разрешить входящий трафик от наших серверов тестирования доступности.
+
+Если вы используете группы безопасности сети Azure, просто добавьте правило для **входящих портов** , чтобы разрешить трафик от Application Insights тестов доступности, выбрав **тег службы** в качестве **источника** и **аппликатионинсигхтсаваилабилити** в качестве **тега исходной службы**.
+
+>[!div class="mx-imgBorder"]
+>![в разделе Параметры выберите правила безопасности для входящего трафика, а затем щелкните Добавить в верхней части вкладки ](./media/ip-addresses/add-inbound-security-rule.png)
+
+>[!div class="mx-imgBorder"]
+>![вкладка Добавление правила безопасности для входящего трафика](./media/ip-addresses/add-inbound-security-rule2.png)
 
 Откройте порты 80 (HTTP) и 443 (HTTPS) для входящего трафика с этих адресов (IP-адреса сгруппированы по расположению):
 

@@ -1,5 +1,5 @@
 ---
-title: Работа с API интегрированных запросов JavaScript в Azure Cosmos DB
+title: Работа с API интегрированных запросов JavaScript в Azure Cosmos DB хранимых процедурах и триггерах
 description: В этой статье рассматриваются понятия, связанные с API запросов на основе языка JavaScript и необходимые, чтобы создать хранимые процедуры и триггеры в Azure Cosmos DB.
 author: markjbrown
 ms.service: cosmos-db
@@ -7,16 +7,16 @@ ms.topic: conceptual
 ms.date: 08/01/2019
 ms.author: mjbrown
 ms.reviewer: sngun
-ms.openlocfilehash: 8396608cdbc5638a3640f94c94b44ad7c5f52a73
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 7b7ad470b3330224e80a7160fc1a37bb5ee1cde8
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75445310"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76901839"
 ---
 # <a name="javascript-query-api-in-azure-cosmos-db"></a>API для выполнения запросов JavaScript в Azure Cosmos DB
 
-Кроме выдачи запросов с использованием API SQL в Azure Cosmos DB, [серверный пакет SDK Cosmos DB](https://azure.github.io/azure-cosmosdb-js-server/) позволяет выполнять оптимизированные запросы с помощью интерфейса JavaScript. Не обязательно знать язык SQL для использования этого интерфейса JavaScript. API запросов в JavaScript позволяет программно создавать запросы, передавая предикатные функции в образующие последовательность вызовы функций. Для этого используется синтаксис, который понимают встроенные элементы массива ECMAScript5 и популярные библиотеки JavaScript, например Lodash. Чтобы запросы были эффективно выполнены с помощью индексов Azure Cosmos DB, их анализирует среда выполнения JavaScript.
+Помимо выдачи запросов с помощью API SQL в Azure Cosmos DB, [Cosmos DB серверный пакет SDK](https://azure.github.io/azure-cosmosdb-js-server/) предоставляет интерфейс JavaScript для выполнения оптимизированных запросов в Cosmos DB хранимых процедурах и триггерах. Не обязательно знать язык SQL для использования этого интерфейса JavaScript. API запросов в JavaScript позволяет программно создавать запросы, передавая предикатные функции в образующие последовательность вызовы функций. Для этого используется синтаксис, который понимают встроенные элементы массива ECMAScript5 и популярные библиотеки JavaScript, например Lodash. Чтобы запросы были эффективно выполнены с помощью индексов Azure Cosmos DB, их анализирует среда выполнения JavaScript.
 
 ## <a name="supported-javascript-functions"></a>Поддерживаемые функции JavaScript
 

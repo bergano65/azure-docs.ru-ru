@@ -10,12 +10,12 @@ ms.date: 01/23/2020
 ms.author: tamram
 ms.reviewer: artek
 ms.subservice: common
-ms.openlocfilehash: bca780eb31a16d3854a2e4dfac821d5a68e9ca43
-ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
+ms.openlocfilehash: 40a7f49cbb2d74b55ccb85dce64eea936a20801e
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76719353"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76905527"
 ---
 # <a name="disaster-recovery-and-account-failover-preview"></a>Аварийное восстановление и переключение учетных записей (Предварительная версия)
 
@@ -126,21 +126,6 @@ ms.locfileid: "76719353"
 - Западная часть США 2
 
 Эта предварительная версия не предназначена для использования в рабочей среде. Соглашения об уровне обслуживания (SLA) для рабочих сред сейчас недоступны.
-
-### <a name="register-for-the-preview"></a>Зарегистрируйтесь для использования предварительной версии
-
-Чтобы зарегистрироваться для использования предварительной версии, выполните в PowerShell следующую команду. Обязательно замените заполнитель в скобках реальным идентификатором подписки:
-
-```powershell
-Connect-AzAccount -SubscriptionId <subscription-id>
-Register-AzProviderFeature -FeatureName CustomerControlledFailover -ProviderNamespace Microsoft.Storage
-```
-
-Получение утверждения для предварительной версии может занять 5-7 дней. Чтобы проверить подтверждение регистрации, выполните следующую команду:
-
-```powershell
-Get-AzProviderFeature -FeatureName CustomerControlledFailover -ProviderNamespace Microsoft.Storage
-```
 
 ### <a name="additional-considerations"></a>Дополнительные сведения
 

@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 01/22/2020
 ms.author: mlearned
-ms.openlocfilehash: 6ea1bce6c14d7266b5ce49b94e39d661bfc57717
-ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
+ms.openlocfilehash: 62be78df28d65c2ed16a9f45295edec8c5c360c4
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76713311"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76901529"
 ---
 # <a name="create-and-manage-multiple-node-pools-for-a-cluster-in-azure-kubernetes-service-aks"></a>Создание нескольких пулов узлов для кластера в службе Kubernetes Azure (AKS) и управление ими
 
@@ -397,7 +397,7 @@ aks-nodepool1-28993262-vmss000000    Ready    agent   115m    v1.15.7
 В этом примере примените таинт к узлу на основе GPU с помощью команды--node-таинтс. Укажите имя узла на основе GPU из выходных данных предыдущей команды `kubectl get nodes`. Таинт применяется в качестве *ключа: value* , а затем — параметра планирования. В следующем примере используется пара *SKU = GPU* и определяются модули Pod, в противном случае — возможность *непланирования* :
 
 ```console
-az aks nodepool --node-taints aks-gpunodepool-28993262-vmss000000 sku=gpu:NoSchedule
+az aks nodepool add --node-taints aks-gpunodepool-28993262-vmss000000 sku=gpu:NoSchedule
 ```
 
 В следующем примере манифеста YAML используется отклонения, позволяющие планировщику Kubernetes запускать модуль NGINX на узле на основе GPU. Более подходящий, но пример с большим временем выполнения задания Tensorflow для набора данных MNIST см. [в разделе Использование GPU для рабочих нагрузок с большим количеством вычислений в AKS][gpu-cluster].

@@ -7,12 +7,12 @@ ms.subservice: blobs
 ms.topic: conceptual
 ms.author: normesta
 ms.date: 05/28/2019
-ms.openlocfilehash: d5b8121c7888903f3e4552a21a6ddc175ecc5176
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 4214c4eb9fbe1d3e39d1ee16289f30b893b94653
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73489088"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76906601"
 ---
 # <a name="host-a-static-website-in-azure-storage"></a>Размещение статического веб-сайта в службе хранилища Azure
 
@@ -38,7 +38,7 @@ ms.locfileid: "73489088"
 
 <a id="cli" />
 
-## <a name="azure-clitabazure-cli"></a>[Интерфейс командной строки Azure](#tab/azure-cli)
+## <a name="azure-clitabazure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 Включить размещение статического веб-сайта можно с помощью [интерфейс командной строки Azure (CLI)](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest).
 
@@ -221,10 +221,5 @@ Write-Output $storageAccount.PrimaryEndpoints.Web
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Размещение статических веб-сайтов в службе хранилища Azure](storage-blob-static-website.md)
-* [Использование Azure CDN для доступа к BLOB-объектам с пользовательскими доменами по протоколу HTTPS](storage-https-custom-domain-cdn.md)
-* [Настройка имени личного домена для конечной точки хранилища BLOB-объектов](storage-custom-domain-name.md)
-* [Функции Azure](/azure/azure-functions/functions-overview)
-* [службе приложений Azure](/azure/app-service/overview)
-* [Создание первого бессерверного веб-приложения](https://docs.microsoft.com/azure/functions/tutorial-static-website-serverless-api-with-database)
-* [Руководство. Размещение домена в Azure DNS](../../dns/dns-delegate-domain-azure-dns.md)
+* Узнайте, как настроить личный домен со статическим веб-сайтом. См. раздел [сопоставьте личный домен с конечной точкой хранилища BLOB-объектов Azure](storage-custom-domain-name.md).
+

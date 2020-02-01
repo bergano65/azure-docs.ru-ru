@@ -8,12 +8,12 @@ ms.author: deli
 ms.reviewer: klam, estfan, logicappspm
 ms.date: 01/11/2020
 ms.topic: article
-ms.openlocfilehash: 21314d3c80832c14538130ce373ccf6d2dd19f18
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.openlocfilehash: 73b116117530e5a2103b604efbf757d691006508
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75965937"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76906698"
 ---
 # <a name="handle-errors-and-exceptions-in-azure-logic-apps"></a>Обработка ошибок и исключений в Azure Logic Apps
 
@@ -360,9 +360,9 @@ ms.locfileid: "75965937"
 
 Выражения, описанные в этой статье, можно использовать для выполнения различных шаблонов обработки исключений. Вы можете выполнить одно действие обработки исключений вне области, которое принимает весь отфильтрованный массив сбоев, и удалить действие `For_each`. Можно также включить другие полезные свойства из ответа `\@result()`, как описано выше.
 
-## <a name="azure-diagnostics-and-metrics"></a>Диагностика и метрики Azure
+## <a name="set-up-azure-monitor-logs"></a>настройка журналов Azure Monitor;
 
-Приведенные выше шаблоны — эффективный способ обработки ошибок и исключений в выполнении. Однако можно также обнаруживать отдельные ошибки и реагировать на них независимо от выполнения. [Система диагностики Azure](../logic-apps/logic-apps-monitor-your-logic-apps.md) предоставляет простой способ отправки всех событий рабочего процесса, включая все состояния выполнения и действий, в учетную запись хранения Azure или концентратор событий, созданный с помощью [концентраторов событий Azure](../event-hubs/event-hubs-about.md).
+Приведенные выше шаблоны — эффективный способ обработки ошибок и исключений в выполнении. Однако можно также обнаруживать отдельные ошибки и реагировать на них независимо от выполнения. [Azure Monitor](../azure-monitor/overview.md) предоставляет простой способ отправки всех событий рабочего процесса, включая все состояния выполнения и действий, в [log Analytics рабочую область](../azure-monitor/platform/data-platform-logs.md), [учетную запись хранения Azure](../storage/blobs/storage-blobs-overview.md)или [концентраторы событий Azure](../event-hubs/event-hubs-about.md).
 
 Вы можете отслеживать журналы и метрики или публиковать их в любом средстве мониторинга для оценки состояния выполнения. К примеру, можно направлять поток всех событий через Центры событий в [Azure Stream Analytics](https://azure.microsoft.com/services/stream-analytics/). В Stream Analytics можно написать активные запросы для получения сведений об отклонении на основе средних показателей или сбоев из журналов диагностики. Stream Analytics можно использовать для отправки информации в другие источники данных, такие как очереди, разделы, SQL, Azure Cosmos DB или Power BI.
 

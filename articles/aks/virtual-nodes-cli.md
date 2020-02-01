@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.service: container-service
 ms.date: 05/06/2019
 ms.author: mlearned
-ms.openlocfilehash: 423f0866494054702330c8e51fb1ef45e74a0650
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: 2133d1aefe3363a2fb2af73c004e22ba0a0239ca
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76845709"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76901503"
 ---
 # <a name="create-and-configure-an-azure-kubernetes-services-aks-cluster-to-use-virtual-nodes-using-the-azure-cli"></a>Создание и настройка кластера Службы Azure Kubernetes (AKS) для использования виртуальных узлов с помощью Azure CLI
 
@@ -318,10 +318,6 @@ az aks disable-addons --resource-group myResourceGroup --name myAKSCluster --add
 ```
 
 Теперь удалите ресурсы виртуальной сети и группу ресурсов:
-
-
-> [!NOTE]
-> Если при попытке удаления сетевого профиля появляется сообщение об ошибке, подождите 3-4 дней, чтобы платформа автоматически воспринимала ошибку, и повторите попытку удаления. Если вам нужно немедленно удалить сетевой профиль, отправьте запрос в службу [поддержки](https://azure.microsoft.com/support/create-ticket/) , указав ссылку службы "экземпляры контейнеров Azure".
 
 ```azurecli-interactive
 # Change the name of your resource group, cluster and network resources as needed

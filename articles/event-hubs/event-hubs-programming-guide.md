@@ -1,5 +1,5 @@
 ---
-title: Инструкции по программированию .NET для концентраторов событий Azure | Документация Майкрософт
+title: Руководством по программированию для .NET — концентраторы событий Azure (устаревший) | Документация Майкрософт
 description: В этой статье приводятся сведения о том, как писать код для службы "Центры событий Azure" с помощью пакета Azure SDK для .NET.
 services: event-hubs
 documentationcenter: na
@@ -7,17 +7,21 @@ author: ShubhaVijayasarathy
 ms.service: event-hubs
 ms.custom: seodec18
 ms.topic: article
-ms.date: 09/25/2019
+ms.date: 01/15/2020
 ms.author: shvija
-ms.openlocfilehash: c2e23c38abbec5fd0e6010bdfc0feca882a6180d
-ms.sourcegitcommit: 0486aba120c284157dfebbdaf6e23e038c8a5a15
+ms.openlocfilehash: afd466e0266cf2d95f95eb8536943f5856c26a58
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71309820"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76899906"
 ---
-# <a name="net-programming-guide-for-azure-event-hubs"></a>Инструкции по программированию .NET для концентраторов событий Azure
+# <a name="net-programming-guide-for-azure-event-hubs-legacy-microsoftazureeventhubs-package"></a>Руководством по программированию .NET для концентраторов событий Azure (устаревший пакет Microsoft. Azure. EventHubs)
 В данной статье обсуждаются некоторые распространенные сценарии написания кодов с помощью Центров событий Azure. Предполагается, что вы уже имеете представление о Центрах событий. Общие сведения о Центрах событий см. в статье [Общие сведения о Центрах событий Azure](event-hubs-what-is-event-hubs.md).
+
+> [!WARNING]
+> Это краткое справочное по для старого пакета **Microsoft. Azure. EventHubs** . Мы рекомендуем [перенести](https://github.com/Azure/azure-sdk-for-net/blob/master/sdk/eventhub/Azure.Messaging.EventHubs/MIGRATIONGUIDE.md) код, чтобы использовать последний пакет [Azure. Messaging. EventHubs](get-started-dotnet-standard-send-v2.md) .  
+
 
 ## <a name="event-publishers"></a>Издатели событий
 
@@ -25,7 +29,7 @@ ms.locfileid: "71309820"
 
 При использовании управляемых API .NET основными конструктивными элементами для публикации данных в Центрах событий являются классы [EventHubClient][] и [EventData][]. [EventHubClient][] обеспечивает канал связи AMQP, по которому события отправляются в концентратор событий. Класс [EventData][] представляет собой событие и используется для публикации сообщений в концентраторе событий. Этот класс включает тело, некоторые метаданные (свойства) и сведения о заголовке (Системпропертиес) о событии. По мере перемещения объекта [EventData][] через концентратор событий к объекту добавляются другие свойства.
 
-## <a name="get-started"></a>Начало работы
+## <a name="get-started"></a>Начать
 Классы .NET, поддерживающие Центры событий, входят в пакет NuGet [Microsoft.Azure.EventHubs](https://www.nuget.org/packages/Microsoft.Azure.EventHubs/). Центр событий можно установить с помощью обозревателя решений Visual Studio или [консоли диспетчера пакетов](https://docs.nuget.org/docs/start-here/using-the-package-manager-console) в Visual Studio. Для этого выполните следующую команду в окне [консоли диспетчера пакетов](https://docs.nuget.org/docs/start-here/using-the-package-manager-console) :
 
 ```shell
@@ -58,7 +62,7 @@ eventHubClient = EventHubClient.CreateFromConnectionString(connectionStringBuild
 
 ## <a name="event-serialization"></a>Сериализация событий
 
-Класс [EventData][] имеет [два перегруженных конструктора](/dotnet/api/microsoft.azure.eventhubs.eventdata.-ctor), которые принимают различные параметры, байты или массив байтов, которые представляют полезные данные событий. При использовании JSON совместно с [EventData][]можно применить метод **Encoding.UTF8.GetBytes()** для получения массива байтов для строки в кодировке JSON. Пример:
+Класс [EventData][] имеет [два перегруженных конструктора](/dotnet/api/microsoft.azure.eventhubs.eventdata.-ctor), которые принимают различные параметры, байты или массив байтов, которые представляют полезные данные событий. При использовании JSON совместно с [EventData][]можно применить метод **Encoding.UTF8.GetBytes()** для получения массива байтов для строки в кодировке JSON. Пример.
 
 ```csharp
 for (var i = 0; i < numMessagesToSend; i++)
@@ -110,7 +114,7 @@ for (var i = 0; i < numMessagesToSend; i++)
 * [ProcessEventsAsync](/dotnet/api/microsoft.azure.eventhubs.processor.ieventprocessor.processeventsasync)
 * [ProcessErrorAsync](/dotnet/api/microsoft.azure.eventhubs.processor.ieventprocessor.processerrorasync);
 
-Чтобы начать обработку событий, следует создать [EventProcessorHost][], указав соответствующие параметры для концентратора событий. Пример:
+Чтобы начать обработку событий, следует создать [EventProcessorHost][], указав соответствующие параметры для концентратора событий. Пример.
 
 > [!NOTE]
 > EventProcessorHost и связанные с ним классы предоставляются в пакете **Microsoft. Azure. EventHubs. Processor** . Добавьте пакет в проект Visual Studio, следуя инструкциям в [этой статье](event-hubs-dotnet-framework-getstarted-send.md#add-the-event-hubs-nuget-package) или выполнив следующую команду в окне [консоли диспетчера пакетов](https://docs.nuget.org/docs/start-here/using-the-package-manager-console) :`Install-Package Microsoft.Azure.EventHubs.Processor`.
@@ -147,7 +151,7 @@ await eventProcessorHost.RegisterEventProcessorAsync<SimpleEventProcessor>();
 
 Дополнительные сведения об отзыве издателя и отправке в Центры событий в качестве издателя см. в примере, приведенном в статье [Event Hubs Large Scale Secure Publishing](https://code.msdn.microsoft.com/Service-Bus-Event-Hub-99ce67ab) (Крупномасштабная безопасная публикация Центров событий).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о сценариях Центров событий см. в разделах, ссылки на которые указаны ниже.
 

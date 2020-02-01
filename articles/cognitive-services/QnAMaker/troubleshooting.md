@@ -8,15 +8,15 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: article
-ms.date: 01/23/2020
+ms.date: 01/28/2020
 ms.author: diberry
 ms.custom: seodec18
-ms.openlocfilehash: 159b00f9417f4a572655f1f93208dbc755012922
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: 18d7e02689cc9c5fe9282a6a2456b8b1574ec85e
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76844859"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76901643"
 ---
 # <a name="troubleshooting-for-qna-maker"></a>Устранение неполадок для QnA Maker
 
@@ -39,13 +39,6 @@ ms.locfileid: "76844859"
 1. URL-адрес конечной точки доступен в разделе "Обзор"
 
     ![Конечная точка QnAMaker](./media/qnamaker-how-to-troubleshoot/qnamaker-azure-gethostname.png)
-
-
-## <a name="use-the-help-bot-in-the-qna-maker-portal"></a>Использование программы-робота Help на портале QnA Maker
-
-QnA Maker предоставляет командную **программу для помощи** в портале QnA Maker. Программа Help Bot доступна на каждой веб-странице. Bot использует QnA Maker для предоставления ответов и предоставляет [ C# проект кода Bot Framework для программы](https://github.com/microsoft/BotBuilder-Samples/tree/master/experimental/qnamaker-support) -робота, чтобы вы могли быстро приступить к работе с собственной программой-роботом ответов.
-
-![! [QnA Maker на портале QnA Maker предоставляет справку * * Help * *.] (./медиа/кнамакер-фак/усе-КНА-Макер-Хелп-бот-то-леарн-КНА-Макер-сервице.ПНГ)](./media/qnamaker-faq/use-qna-maker-help-bot-to-learn-qna-maker-service.png#lightbox)
 
 ## <a name="manage-the-knowledge-base"></a>Управление базой знаний
 

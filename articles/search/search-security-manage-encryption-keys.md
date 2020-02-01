@@ -8,12 +8,12 @@ ms.author: natinimn
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 01/08/2020
-ms.openlocfilehash: 6c7be7d92cae992e54ca6e9f50dda6342c57856b
-ms.sourcegitcommit: 49e14e0d19a18b75fd83de6c16ccee2594592355
+ms.openlocfilehash: cb17fe24339ad618229b3456ece15c206f79bdb7
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75945719"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76899948"
 ---
 # <a name="encryption-at-rest-of-content-in-azure-cognitive-search-using-customer-managed-keys-in-azure-key-vault"></a>Шифрование неактивных содержимого в Azure Когнитивный поиск с помощью ключей, управляемых клиентом, в Azure Key Vault
 
@@ -26,13 +26,13 @@ ms.locfileid: "75945719"
 Ключи не должны находиться в одном Key Vault. Одна служба поиска может размещать несколько зашифрованных индексов или сопоставлений синонимов, каждый из которых шифруется с помощью собственных ключей шифрования, управляемых клиентом, хранящихся в разных хранилищах ключей.  Индексы и карты синонимов можно также использовать в той же службе, которая не зашифрована с помощью управляемых клиентом ключей. 
 
 > [!IMPORTANT] 
-> Эта функция доступна на [REST API версии 2019-05-06](https://docs.microsoft.com/rest/api/searchservice/) и [пакете SDK для .NET версии 8,0-Preview](search-dotnet-sdk-migration-version-9.md). Сейчас не поддерживается настройка ключей шифрования, управляемых клиентом, в портал Azure.
+> Эта функция доступна на [REST API версии 2019-05-06](https://docs.microsoft.com/rest/api/searchservice/) и [пакете SDK для .NET версии 8,0-Preview](search-dotnet-sdk-migration-version-9.md). Сейчас не поддерживается настройка ключей шифрования, управляемых клиентом, в портал Azure. Служба поиска должна быть создана после января 2019 и не может быть бесплатной (общей) службой.
 
 ## <a name="prerequisites"></a>Технические условия
 
 В этом примере используются следующие службы. 
 
-+ [Создайте службу "Когнитивный поиск Azure"](search-create-service-portal.md) или [найдите имеющуюся службу](https://ms.portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.Search%2FsearchServices) в рамках текущей подписки. Служба поиска должна быть создана после января 2019 и не может быть бесплатной (общей) службой.
++ [Создайте службу "Когнитивный поиск Azure"](search-create-service-portal.md) или [найдите имеющуюся службу](https://ms.portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.Search%2FsearchServices) в рамках текущей подписки. 
 
 + [Создайте Azure Key Vault ресурс](https://docs.microsoft.com/azure/key-vault/quick-create-portal#create-a-vault) или найдите существующее хранилище в подписке.
 

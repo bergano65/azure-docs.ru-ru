@@ -9,12 +9,12 @@ ms.author: mbullwin
 ms.date: 01/17/2020
 ms.reviewer: vitalyg
 ms.custom: fasttrack-edit
-ms.openlocfilehash: e30c4812ad11d7b39197062da30c90b2d8b1649b
-ms.sourcegitcommit: d9ec6e731e7508d02850c9e05d98d26c4b6f13e6
+ms.openlocfilehash: c851978ea1b5af3006f1835f022c30aa7e7128f7
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/20/2020
-ms.locfileid: "76281076"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76899074"
 ---
 # <a name="sampling-in-application-insights"></a>Выборка в Application Insights
 
@@ -531,7 +531,7 @@ union requests,dependencies,pageViews,browserTimings,exceptions,traces
 
 *Есть определенные редкие события, которые я всегда хочу просматривать. Как сделать так, чтобы модуль выборки не отфильтровывал их?*
 
-* Лучший способ добиться этого — написать пользовательский [TelemetryInitializer](../../azure-monitor/app/api-filtering-sampling.md#addmodify-properties-itelemetryinitializer), который задает для `SamplingPercentage` значение 100 в элементе телеметрии, который необходимо сохранить, как показано ниже. Так как инициализаторы гарантированно выполняются до обработчиков данных телеметрии (включая выборку), это гарантирует, что все методы выборки будут игнорировать этот элемент из соображений выборки.
+* Лучший способ добиться этого — написать пользовательский [TelemetryInitializer](../../azure-monitor/app/api-filtering-sampling.md#addmodify-properties-itelemetryinitializer), который задает для `SamplingPercentage` значение 100 в элементе телеметрии, который необходимо сохранить, как показано ниже. Так как инициализаторы гарантированно выполняются до обработчиков данных телеметрии (включая выборку), это гарантирует, что все методы выборки будут игнорировать этот элемент из соображений выборки. Пользовательские инициализаторы телеметрии доступны в пакете SDK для ASP.NET, ASP.NET Core пакете SDK, пакете SDK для JavaScript и пакете SDK для Java. Например, можно настроить инициализатор телеметрии с помощью пакета SDK для ASP.NET:
 
     ```csharp
     public class MyTelemetryInitializer : ITelemetryInitializer
