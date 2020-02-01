@@ -7,21 +7,21 @@ author: curtand
 manager: daveba
 editor: ''
 ms.service: active-directory
+ms.subservice: pim
 ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.subservice: pim
 ms.date: 11/12/2019
 ms.author: curtand
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 05e69bad41391be5153eca0fb1930ffc59da453b
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 8bc4b518cd2400cf3826b31a590d499c1ad031e7
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75429943"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76896534"
 ---
 # <a name="approve-or-deny-requests-for-azure-ad-roles-in-privileged-identity-management"></a>Утверждение или отклонение запросов ролей Azure AD в управление привилегированными пользователями
 
@@ -110,7 +110,7 @@ ms.locfileid: "75429943"
 
 1. В поле **обоснование** введите коммерческое обоснование.
 
-1. Щелкните **Утвердить**. Вы получите уведомление Azure об утверждении.
+1. Выберите **утвердить**. Вы получите уведомление Azure об утверждении.
 
     ![Утверждение уведомления с отображением запроса утверждено](./media/pim-resource-roles-approval-workflow/resources-approve-notification.png)
 

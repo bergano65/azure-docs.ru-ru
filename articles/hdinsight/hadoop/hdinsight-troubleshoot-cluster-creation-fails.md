@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: troubleshooting
 ms.date: 08/26/2019
-ms.openlocfilehash: ea60faf5b5689fa674095201d3db18422d3e0f1b
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.openlocfilehash: 093bfbd976ace41f635976ff27fa4292e5c4df3c
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75980499"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76905152"
 ---
 # <a name="troubleshoot-cluster-creation-failures-with-azure-hdinsight"></a>Устранение сбоев при создании кластера с помощью Azure HDInsight
 
@@ -78,7 +78,7 @@ ms.locfileid: "75980499"
 
 ## <a name="service-outages"></a>Простои службы
 
-Проверьте [состояние Azure](https://status.azure.com/status) на наличие потенциальных сбоев или проблем со службой.
+Проверьте [состояние Azure](https://status.azure.com) на наличие потенциальных сбоев или проблем со службой.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

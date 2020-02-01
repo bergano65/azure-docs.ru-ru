@@ -1,25 +1,23 @@
 ---
 title: Пользовательские схемы отслеживания для сообщений B2B
-description: Создайте настраиваемую схему отслеживания, которая выполняет мониторинг сообщений B2B в учетных записях интеграции Azure Logic Apps с пакетом интеграции Enterprise.
+description: Создание настраиваемых схем отслеживания для отслеживания сообщений B2B в Azure Logic Apps
 services: logic-apps
 ms.suite: integration
 author: divyaswarnkar
 ms.author: divswa
 ms.reviewer: jonfan, estfan, logicappspm
 ms.topic: article
-ms.date: 01/27/2017
-ms.openlocfilehash: 7d7c5ef9e9a86c8b061a56fe41c0c8bbfc5ddbb3
-ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
+ms.date: 01/01/2020
+ms.openlocfilehash: c82f9cbfaf2e23ddaa5e4b05f4aac4795d3e16a9
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74792798"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76903054"
 ---
-# <a name="create-custom-tracking-schemas-that-monitor-end-to-end-workflows-in-azure-logic-apps"></a>Создание настраиваемых схем отслеживания, которые отслеживают законченное решение рабочих процессов в Azure Logic Apps
+# <a name="create-custom-tracking-schemas-that-monitor-end-to-end-workflows-in-azure-logic-a"></a>Создание настраиваемых схем отслеживания, отслеживающих сквозные рабочие процессы в Azure Logic A
 
-Доступна встроенная функция отслеживания, которую можно включить для различных частей рабочего процесса B2B, например для отслеживания сообщений AS2 или X12. При создании рабочих процессов, содержащих приложение логики, BizTalk Server, SQL Server или любой другой уровень, можно включить настраиваемое отслеживание, которое ведет журнал событий от начала до конца рабочего процесса. 
-
-В этой статье приведен настраиваемый код, который можно использовать в уровнях за пределами приложения логики. 
+Azure Logic Apps имеет встроенные возможности отслеживания, которые можно включить для частей рабочего процесса. Однако можно настроить пользовательское отслеживание, которое регистрирует события от начала до конца рабочих процессов, например рабочие процессы, которые включают приложение логики, BizTalk Server, SQL Server или любой другой слой. В этой статье приведен настраиваемый код, который можно использовать в уровнях за пределами приложения логики.
 
 ## <a name="custom-tracking-schema"></a>Настраиваемая схема отслеживания
 
@@ -36,7 +34,7 @@ ms.locfileid: "74792798"
       "operation": {
          "operationName": "",
          "repeatItemScopeName": "",
-         "repeatItemIndex": "",
+         "repeatItemIndex": ,
          "trackingId": "",
          "correlationId": "",
          "clientRequestId": ""
@@ -47,39 +45,37 @@ ms.locfileid: "74792798"
          "eventLevel": "",
          "eventTime": "",
          "recordType": "",
-         "record": {                
-         }
+         "record": {}
       }
    ]
 }
 ```
 
-| Свойство | Обязательно для заполнения | Тип | Описание |
-| --- | --- | --- | --- |
-| sourceType | ДА |   | Тип источника выполнения. Допустимые значения — **Microsoft.Logic/workflows** или **custom**. |
-| source | ДА |   | Если тип источника — **Microsoft.Logic/workflows**, то сведения источника должны следовать этой схеме. Если тип источника — **custom**, то используется схема JToken. |
-| systemId | ДА | Строка | Системный идентификатор приложения логики. |
-| runId | ДА | Строка | Идентификатор выполнения приложения логики. |
-| operationName | ДА | Строка | Имя операции (например, действие или триггер). |
-| repeatItemScopeName | ДА | Строка | Повторяет имя элемента, если действие находится внутри цикла `foreach`/ или `until`. |
-| repeatItemIndex | ДА | Целое число | Определяет, находится ли действие внутри цикла `foreach`/ или `until`. Указывает индекс повторяющегося элемента. |
-| trackingId | Нет | Строка | Идентификатор отслеживания для корреляции сообщений. |
-| correlationId | Нет | Строка | Идентификатор корреляции для корреляции сообщений. |
-| clientRequestId | Нет | Строка | Клиент может включить его для корреляции сообщений. |
-| eventLevel | ДА |   | Уровень события. |
-| eventTime | ДА |   | Время события в формате UTC (ГГГГ-ММ-ДДTЧЧ:ММ:СС.00000Z). |
-| recordType | ДА |   | Тип записи отслеживания. Допустимое значение — **custom**. |
-| record | ДА |   | Настраиваемый тип записи. Разрешен формат JToken. |
-||||
+| Свойство | Обязательно для заполнения | Тип | Description |
+|----------|----------|------|-------------|
+| sourceType | Да | String | Тип источника запуска с допустимыми значениями: `Microsoft.Logic/workflows`, `custom` |
+| source | Да | String или JToken | Если тип источника — `Microsoft.Logic/workflows`, сведения об источнике должны следовать этой схеме. Если тип источника — `custom`, схема является JToken. |
+| systemId | Да | String | Идентификатор системы приложения логики |
+| runId | Да | String | Идентификатор запуска приложения логики |
+| operationName | Да | String | Имя операции, например действие или триггер |
+| repeatItemScopeName | Да | String | Повторение имени элемента, если действие находится внутри `foreach`или цикла `until` |
+| repeatItemIndex | Да | Целое число | Указывает, что действие находится в цикле `foreach` или `until` и является повторяющимся индексом элемента. |
+| trackingId | Нет | String | ИДЕНТИФИКАТОР отслеживания для корреляции сообщений |
+| correlationId | Нет | String | Идентификатор корреляции для корреляции сообщений |
+| clientRequestId | Нет | String | Клиент может заполнить это свойство для корреляции сообщений. |
+| eventLevel | Да | String | Уровень события |
+| eventTime | Да | Дата и время | Время события в формате UTC: *гггг-мм-ddThh: mm: SS. 00000z)* |
+| recordType | Да | String | Тип записи Track только с этим разрешенным значением: `custom` |
+| запись | Да | JToken | Пользовательский тип записи только с форматом JToken |
+|||||
 
 ## <a name="b2b-protocol-tracking-schemas"></a>Схемы отслеживания для протоколов B2B
 
 Сведения о схемах отслеживания для протоколов B2B см. в следующих статьях:
 
-* [Схемы отслеживания AS2](../logic-apps/logic-apps-track-integration-account-as2-tracking-schemas.md)   
+* [Схемы отслеживания AS2](../logic-apps/logic-apps-track-integration-account-as2-tracking-schemas.md)
 * [Схемы отслеживания X12](logic-apps-track-integration-account-x12-tracking-schema.md)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* Дополнительные сведения о [мониторинге сообщений B2B](logic-apps-monitor-b2b-message.md)
-* Дополнительные сведения об [отслеживании сообщений B2B в журналах Azure Monitor](../logic-apps/logic-apps-track-b2b-messages-omsportal.md)
+* Дополнительные сведения о [мониторинге сообщений B2B с помощью журналов Azure Monitor](../logic-apps/monitor-b2b-messages-log-analytics.md)

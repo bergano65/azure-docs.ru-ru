@@ -7,6 +7,7 @@ author: zhiweiwangmsft
 manager: daveba
 ms.assetid: 1dfbeaba-bda2-4f68-ac89-1dbfaf5b4015
 ms.service: active-directory
+ms.subservice: hybrid
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,12 +16,12 @@ ms.date: 07/18/2017
 ms.author: billmath
 ms.custom: H1Hack27Feb2017
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: abed56ee64cbca8646c1aa1d24fea292aa4d8de3
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 61490f75d12967f7f396d5f767f2d2e696474572
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60245418"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76897207"
 ---
 # <a name="monitor-azure-ad-connect-sync-with-azure-ad-connect-health"></a>Мониторинг синхронизации Azure AD Connect с помощью Azure AD Connect Health
 Приведенная ниже документация относится к мониторингу синхронизации Azure AD Connect с помощью Azure AD Connect Health.  Сведения о мониторинге AD FS с помощью Azure AD Connect Health см. в [этой статье](how-to-connect-health-adfs.md). Кроме того, сведения о мониторинге доменных служб Active Directory с помощью Azure AD Connect Health можно найти [здесь](how-to-connect-health-adds.md).
@@ -69,10 +70,10 @@ ms.locfileid: "60245418"
 * В отчете содержатся ошибки, записанные клиентом синхронизации (Azure AD Connect версии 1.1.281.0 или выше).
 * В отчете приводятся ошибки, произошедшие в течение последней операции синхронизации в модуле синхронизации (операция "Экспорт" в соединителе Azure AD).
 * Агент Azure AD Connect Health для синхронизации должен иметь исходящее подключение к необходимым конечным точкам. Таким образом, отчет будет содержать актуальные данные.
-* Отчет **обновляется каждые 30 минут** на основе данных, полученных от агента Azure AD Connect Health для синхронизации. Этот отчет отличается следующими основными преимуществами:
+* Отчет **обновляется через каждые 30 минут** , используя данные, отправленные агентом Azure AD Connect Health для синхронизации. Он предоставляет следующие основные возможности.
 
   * классификация ошибок;
-  * вывод списка объектов с ошибками по категориям;
+  * Вывод списка объектов с ошибками по категориям
   * хранение данных об ошибках в одном месте;
   * параллельное сравнение объектов с ошибкой, возникшей в результате конфликта;
   * Скачивание отчета об ошибках в формате CVS
@@ -80,14 +81,14 @@ ms.locfileid: "60245418"
 ### <a name="categorization-of-errors"></a>Классификация ошибок
 Имеющиеся ошибки синхронизации группируются в отчете по следующим категориям.
 
-| Категория | Описание |
+| Категория | Description |
 | --- | --- |
 | Повторяющийся атрибут |Ошибки при попытках Azure AD Connect создать или обновить объекты с повторяющимися значениями одного или нескольких атрибутов в Azure AD, которые должны быть уникальными в клиенте, такие как proxyAddresses, UserPrincipalName. |
 | Несоответствие данных |Ошибки синхронизации, возникшие в результате сбоя мягкого сопоставления объектов. |
 | Сбой проверки данных |Ошибки, возникшие из-за недопустимых данных, таких как неподдерживаемые символы в важных атрибутах (например, UserPrincipalName), ошибки формата, не проходящие проверку перед записью в Azure AD. |
 | Смена федеративного домена | Ошибки, которые возникают, когда в учетных записях используются разные федеративные домены. |
 | Большой атрибут |Ошибки, возникающие, если размер, длина и количество атрибутов превышают установленный предел. |
-| Другие |Все другие ошибки, не входящие в категории выше. На основе отзывов эти категории будут разделены на подкатегории. |
+| Прочее |Все другие ошибки, не входящие в категории выше. На основе отзывов эти категории будут разделены на подкатегории. |
 
 ![Сводка по отчету об ошибках синхронизации](./media/how-to-connect-health-sync/errorreport01.png)
 ![Категории отчета об ошибках синхронизации](./media/how-to-connect-health-sync/SyncErrorByTypes.PNG)
@@ -119,6 +120,6 @@ ms.locfileid: "60245418"
 * [Установка агента Azure AD Connect Health](how-to-connect-health-agent-install.md)
 * [Операции Azure AD Connect Health](how-to-connect-health-operations.md)
 * [Использование Azure AD Connect Health с AD FS](how-to-connect-health-adfs.md)
-* [Using Azure AD Connect Health with AD DS (Использование Azure AD Connect Health с AD DS)](how-to-connect-health-adds.md)
+* [Использование Azure AD Connect Health с AD DS](how-to-connect-health-adds.md)
 * [Часто задаваемые вопросы об Azure AD Connect Health](reference-connect-health-faq.md)
 * [Azure AD Connect Health: история версий](reference-connect-health-version-history.md)

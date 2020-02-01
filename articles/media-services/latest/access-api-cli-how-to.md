@@ -12,12 +12,12 @@ ms.topic: article
 ms.custom: mvc
 ms.date: 05/15/2019
 ms.author: juliako
-ms.openlocfilehash: d66b3e1b6ed2c8eef9f5cd21c0657648ad550ebe
-ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
+ms.openlocfilehash: 06ca26ee9a8af7f49aba6a48a1831d30d5886851
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74896157"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76896322"
 ---
 # <a name="access-azure-media-services-api-with-the-azure-cli"></a>Доступ к API Служб мультимедиа Azure с помощью Azure CLI
  
@@ -28,7 +28,8 @@ ms.locfileid: "74896157"
 * Универсальный код ресурса (URI) для ресурса REST служб мультимедиа.
 * Значения приложения Azure AD: идентификатор и секрет клиента.
 
-Подробное описание см. в разделе [доступ к API служб мультимедиа v3](media-services-apis-overview.md#accessing-the-azure-media-services-api).
+> [!IMPORTANT]
+> Подробное описание см. в подразделах [доступ к API служб мультимедиа v3](media-services-apis-overview.md#accessing-the-azure-media-services-api).
 
 В этой статье показано, как с помощью Azure CLI создать приложение Azure AD и субъект-службу, а также получить значения, необходимые при доступе к ресурсам Служб мультимедиа Azure.
 
@@ -42,7 +43,7 @@ ms.locfileid: "74896157"
 
 [!INCLUDE [media-services-v3-cli-access-api-include](../../../includes/media-services-v3-cli-access-api-include.md)]
 
-## <a name="see-also"></a>Дополнительные материалы
+## <a name="see-also"></a>См. также
 
 - [Масштабирование зарезервированных единиц мультимедиа с помощью CLI](media-reserved-units-cli-how-to.md)
 - [Создание учетной записи Служб мультимедиа с помощью CLI](create-account-cli-how-to.md) 
@@ -55,7 +56,7 @@ ms.locfileid: "74896157"
 - [Создание сетки событий с помощью CLI](job-state-events-cli-how-to.md)
 - [Публикация ресурса с помощью CLI](cli-publish-asset.md)
 - [Фильтрация с помощью CLI](filters-dynamic-manifest-cli-howto.md)
-- [Azure CLI](https://docs.microsoft.com/cli/azure/ams?view=azure-cli-latest)
+- [Azure CLI](https://docs.microsoft.com/cli/azure/ams?view=azure-cli-latest)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

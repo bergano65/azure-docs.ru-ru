@@ -5,14 +5,14 @@ services: container-service
 author: mlearned
 ms.service: container-service
 ms.topic: article
-ms.date: 01/15/2020
+ms.date: 01/29/2020
 ms.author: mlearned
-ms.openlocfilehash: 5df7a8a639c87f90df0d3d22f84c4e93ac81e3a2
-ms.sourcegitcommit: dbcc4569fde1bebb9df0a3ab6d4d3ff7f806d486
+ms.openlocfilehash: 661ed72265b81f47cbe8e9cf26595632360ec352
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76028310"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76898809"
 ---
 # <a name="create-an-https-ingress-controller-on-azure-kubernetes-service-aks"></a>Создание контроллера входящего трафика HTTPS в Службе Azure Kubernetes (AKS)
 
@@ -92,7 +92,7 @@ az network dns record-set a add-record \
 ```
 
 > [!NOTE]
-> При необходимости можно настроить полное доменное имя для IP-адреса контроллера входящего трафика вместо личного домена.
+> При необходимости можно настроить полное доменное имя для IP-адреса контроллера входящего трафика вместо личного домена. Обратите внимание, что этот пример предназначен для оболочки bash.
 > 
 > ```azurecli-interactive
 > # Public IP address of your ingress controller

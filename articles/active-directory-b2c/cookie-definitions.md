@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 01/23/2020
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 399b63cab2594610260997f8e5ecef9c3c05318f
-ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
+ms.openlocfilehash: c6e48a663e4d1702851e11bc5124e56c52309d08
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76712826"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76908876"
 ---
 # <a name="cookies-definitions-for-azure-ad-b2c"></a>Определения файлов cookie для Azure AD B2C
 
@@ -30,7 +30,10 @@ ms.locfileid: "76712826"
 
 Чтобы назначить файлы cookie для межсайтового доступа, разработчики должны использовать новый параметр "файл cookie" `SameSite=None`. При наличии атрибута `SameSite=None` необходимо использовать дополнительный атрибут `Secure`, чтобы межсайтовые файлы cookie могли быть доступны только через HTTPS-соединения. Проверка и тестирование всех приложений, в том числе приложений, использующих Azure AD B2C.
 
-Дополнительные сведения см. [в разделе воздействие на веб-сайты клиентов, службы и продукты Майкрософт в Chrome версии 80 или более поздней](https://support.microsoft.com/help/4522904/potential-disruption-to-customer-websites-in-latest-chrome).
+Дополнительные сведения см. здесь:
+
+* [Обработку изменений файла cookie SameSite в браузере Chrome](../active-directory/develop/howto-handle-samesite-cookie-changes-chrome-browser.md)
+* [Воздействие на веб-сайты клиентов и службы Майкрософт и продукты в Chrome версии 80 или более поздней](https://support.microsoft.com/help/4522904/potential-disruption-to-customer-websites-in-latest-chrome)
 
 ## <a name="cookies"></a>Файлы cookie
 

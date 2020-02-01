@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/22/2019
 ms.author: johndeu
-ms.openlocfilehash: e686328464ac88abf28a0a8985d338838abca3d0
-ms.sourcegitcommit: 38b11501526a7997cfe1c7980d57e772b1f3169b
+ms.openlocfilehash: 03b40dea4949bb50c30f7755b56294ac53107403
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76514244"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76905252"
 ---
 # <a name="signaling-timed-metadata-in-live-streaming"></a>Сигнализация метаданных времени в потоковой трансляции 
 
@@ -47,7 +47,7 @@ ms.locfileid: "76514244"
 | AD Break            | Расположение или момент времени, в течение которого можно запланировать доставку одной или нескольких рекламных объявлений; то же, что и возможность наличия и возможности размещения.                                                                                                                     |
 | Служба принятия решений AD | Внешняя служба, которая определяет, какие AD (s) и длительности будут отображаться для пользователя. Службы обычно предоставляются партнером и выходят за рамки этого документа.                                                                    |
 | Сказк                 | Указание времени и параметров предстоящего разрыва рекламы. Обратите внимание, что подсказки могут указывать на незавершенный переход на AD-Break, ожидание переключения на следующее рекламное объявление в случае разрыва рекламы и ожидающего переключения из рекламного объявления на основное содержимое.           |
-| Упаковщик            | Службы мультимедиа Azure "конечная точка потоковой передачи" предоставляют динамические возможности упаковки для ТИРЕ и HLS и называются "упаковщиком" в индустрии мультимедиа.                                                                              |
+| Обусловлен            | Службы мультимедиа Azure "конечная точка потоковой передачи" предоставляют динамические возможности упаковки для ТИРЕ и HLS и называются "упаковщиком" в индустрии мультимедиа.                                                                              |
 | Время презентации   | Время, когда событие демонстрируется зрителю. Это момент на временной шкале мультимедийного содержимого, когда зритель увидит событие. Например, время презентации командного сообщения SCTE-35 splice_info() — splice_time(). |
 | Время получения        | Время поступления сообщения о событии. Обычно это время отличается от времени презентации события, так как сообщения о событии отправляются до его начала.                                                    |
 | Разреженная дорожка        | Дорожка мультимедиа, которая не является непрерывной и синхронизируется по времени с родительской или контрольной дорожкой.                                                                                                                                                  |
@@ -249,7 +249,7 @@ ms.locfileid: "76514244"
  
 #### <a name="example-mpeg-dash-manifest-output-when-using-adobe-rtmp-simple-mode"></a>Пример выходных данных манифеста MPEG при использовании простого режима Adobe RTMP
 
-См [. Пример 3.3.2.1 для MPEG тире. mpd EventStream с помощью простого режима Adobe](#3321-example-mpeg-dash-mpd-manifest-signaling-of-rtmp-streaming-using-adobe-simple-mode) .
+См [. Пример 3.3.2.1 MPEG тире. mpd EventStream с помощью простого режима Adobe](#3321-example-mpeg-dash-mpd-manifest-signaling-of-rtmp-streaming-using-adobe-simple-mode) .
 
 См. пример [3.3.3.1 тире manifest с единственной точкой и простым режимом Adobe](#3331-example-mpeg-dash-manifest-mpd-with-single-period-eventstream-using-adobe-simple-mode-signals)
 
@@ -280,7 +280,7 @@ ms.locfileid: "76514244"
 См. [раздел 3.3.3.2 Пример тире manifest с SCTE-35](#3332-example-mpeg-dash-manifest-mpd-with-multi-period-eventstream-using-adobe-scte35-mode-signaling)
 
 #### <a name="example-hls-manifest-m3u8-with-scte-35-mode-signal"></a>Пример HLS. m3u8 с сигналом режима SCTE-35
-См. [Пример 3.3.1.1 пример манифеста HLS с SCTE-35](#3211-example-hls-manifest-m3u8-showing-ext-x-daterange-signaling-of-scte-35)
+См. [раздел 3.2.1.1 пример манифеста HLS с SCTE-35](#3211-example-hls-manifest-m3u8-showing-ext-x-daterange-signaling-of-scte-35)
 
 ## <a name="215-rtmp-ad-signaling-with-oncuepoint-for-elemental-live"></a>2.1.5 RTMP AD с "Онкуепоинт" для интерактивного динамического
 

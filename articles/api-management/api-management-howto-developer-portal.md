@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 11/22/2019
 ms.author: apimpm
-ms.openlocfilehash: 81daada7a62da86772d4657a1a8aaff91f27b673
-ms.sourcegitcommit: 05cdbb71b621c4dcc2ae2d92ca8c20f216ec9bc4
+ms.openlocfilehash: 4dd026377d5824853dd713a59a86ed742990bade
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76045583"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76898845"
 ---
 # <a name="azure-api-management-developer-portal-overview"></a>Обзор портала разработчика управления API Azure
 
@@ -68,7 +68,7 @@ ms.locfileid: "76045583"
 
 Портал построен на основе адаптированной вилки [папербитс Framework](https://paperbits.io/). Первоначальная функциональность Папербитс была расширена для предоставления мини-приложений для управления API (например, списка интерфейсов API, списка продуктов) и соединителя со службой управления API для сохранения и извлечения содержимого.
 
-## <a name="faq"></a> Часто задаваемые вопросы
+## <a name="faq"></a>Часто задаваемые вопросы
 
 В этом разделе мы будем отвечать на часто задаваемые вопросы о новом портале разработчика, который является общим характером. Вопросы, относящиеся к локальной версии, см. в [разделе Wiki репозитория GitHub](https://github.com/Azure/api-management-developer-portal/wiki).
 
@@ -213,6 +213,18 @@ New-AzRoleAssignment -SignInName "user1@contoso.com" -RoleDefinitionName "APIM N
 Если служба управления API находится в виртуальной сети, см. описанный выше вопрос о подключении к виртуальной сети.
 
 Сбой вызова также может быть вызван сертификатом SSL, который назначается пользовательскому домену и не является доверенным для браузера. Для устранения этой проблемы можно удалить пользовательскую конечную точку управления. Управление доменными API будет возвращаться к конечной точке по умолчанию с доверенным сертификатом.
+
+### <a name="whats-the-browser-support-for-the-portal"></a>Что такое поддержка браузера для портала?
+
+| Браузер                     | Поддерживается       |
+|-----------------------------|-----------------|
+| Apple Safari;                | Да<sup>1</sup> |
+| Google Chrome               | Да<sup>1</sup> |
+| Microsoft Edge              | Да<sup>1</sup> |
+| Microsoft Internet Explorer | Нет              |
+| Mozilla Firefox             | Да<sup>1</sup> |
+
+ <small><sup>1</sup> поддерживается в двух последних рабочих версиях.</small>
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -7,6 +7,7 @@ author: zhiweiwangmsft
 manager: daveba
 ms.assetid: 86cc3840-60fb-43f9-8b2a-8598a9df5c94
 ms.service: active-directory
+ms.subservice: hybrid
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -14,12 +15,12 @@ ms.topic: conceptual
 ms.date: 07/18/2017
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 57bc60cab7e6980f7051af6fc4685bd2a426f4ce
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: ef908429d359020282920d73480a472bfde0aa60
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75422416"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76897159"
 ---
 # <a name="azure-active-directory-connect-health-operations"></a>Операции Azure Active Directory Connect Health
 В этой статье описаны различные операции, которые можно выполнить с помощью Azure Active Directory (Azure AD) Connect Health.
@@ -137,7 +138,7 @@ Azure AD Connect Health поддерживает управление досту
    ![Снимок экрана окна "Пользователи" компонента управления доступом на основе ролей в Azure AD Connect Health](./media/how-to-connect-health-operations/RBAC_add.png)
 4. Введите имя или идентификатор целевого пользователя или целевой группы. Одновременно можно выбрать сразу несколько пользователей или групп. Нажмите кнопку **Выбрать**.
    ![Снимок экрана окна "Пользователи" компонента управления доступом на основе ролей в Azure AD Connect Health](./media/how-to-connect-health-operations/RBAC_select_users.png)
-5. Нажмите кнопку **ОК**.<br>
+5. Щелкните **ОК**.<br>
 6. После назначения ролей пользователи и группы отобразятся в списке.<br>
    ![Снимок экрана окна "Пользователи" компонента управления доступом на основе ролей в Azure AD Connect Health с выделенными новыми пользователями](./media/how-to-connect-health-operations/RBAC_user_list.png)
 

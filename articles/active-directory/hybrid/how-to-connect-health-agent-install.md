@@ -8,6 +8,7 @@ manager: daveba
 editor: curtand
 ms.assetid: 1cc8ae90-607d-4925-9c30-6770a4bd1b4e
 ms.service: active-directory
+ms.subservice: hybrid
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,12 +16,12 @@ ms.topic: conceptual
 ms.date: 07/18/2017
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 68249fc9a599ab49e8d5fd231fa63e91a6e3a21f
-ms.sourcegitcommit: 1d0b37e2e32aad35cc012ba36200389e65b75c21
+ms.openlocfilehash: 4e9468c0a0f6844c7522ff43761cf58f4beea27e
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72330112"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76897360"
 ---
 # <a name="azure-ad-connect-health-agent-installation"></a>Установка агента Azure AD Connect Health
 
@@ -30,7 +31,7 @@ ms.locfileid: "72330112"
 
 В таблице ниже приведен список предварительных требований для использования Azure AD Connect Health.
 
-| Требование | Описание |
+| Требование | Description |
 | --- | --- |
 | Azure AD Premium |Служба Azure AD Connect Health относится к Azure AD Premium и требует наличия выпуска Azure AD Premium. <br /><br />Дополнительные сведения см. в статье [Приступая к работе с Azure Active Directory Premium](../fundamentals/active-directory-get-started-premium.md). <br />Чтобы получить бесплатную 30-дневную пробную версию, перейдите [по этой ссылке](https://azure.microsoft.com/trial/get-started-active-directory/). |
 | Для начала работы с Azure AD Connect Health требуются права глобального администратора Azure AD |По умолчанию только глобальный администратор может установить и настроить агенты работоспособности, чтобы приступить к работе, получить доступ к порталу и начать выполнять любые операции в Azure AD Connect Health. Дополнительные сведения см. в статье [Администрирование каталога Azure AD](../fundamentals/active-directory-administer.md). <br /><br /> С помощью управления доступом на основе ролей можно разрешить доступ к Azure AD Connect Health другим пользователям в организации. Дополнительные сведения см. в разделе [Управление доступом с помощью контроля доступа на основе ролей](how-to-connect-health-operations.md#manage-access-with-role-based-access-control). <br /><br />**Важно!** Учетная запись, которая используется во время установки агентов, должна быть рабочей или учебной. Учетную запись Майкрософт для этого использовать нельзя. Дополнительные сведения см. в статье [Подпишитесь на Azure как организация](../fundamentals/sign-up-organization.md). |
@@ -39,7 +40,7 @@ ms.locfileid: "72330112"
 |Исходящие подключения на основе IP-адресов | Дополнительные сведения о фильтрации на основе IP-адресов в брандмауэрах см. в статье о [диапазонах IP-адресов Azure](https://www.microsoft.com/download/details.aspx?id=41653).|
 | Проверка SSL для исходящего трафика отфильтрована или отключена | Операции отправки данных или регистрация агента могут завершиться ошибкой в случае проверки SSL или завершения исходящего трафика на уровне сети. Ознакомьтесь с дополнительными сведениями о том, [как настроить проверку SSL](https://technet.microsoft.com/library/ee796230.aspx). |
 | Порты брандмауэра на сервере с агентом |Агент требует открытия следующих портов брандмауэра для обмена данными с конечными точками службы Azure AD Health.<br /><br /><li>TCP-порт 443</li><li>TCP-порт 5671</li> <br />Обратите внимание на то, что для последней версии агента больше не нужен порт 5671. Для обновления до последней версии требуется только порт 443. Ознакомьтесь с дополнительными сведениями о [включении портов брандмауэра](https://technet.microsoft.com/library/ms345310(v=sql.100).aspx). |
-| Внесите следующие веб-сайты в список разрешенных, если включена политика усиленной безопасности IE |Если на сервере, на котором будет установлен агент, включена конфигурация усиленной безопасности, потребуется открыть доступ для следующих веб-сайтов:<br /><br /><li>https:\//login.microsoftonline.com</li><li>https:\//secure.aadcdn.microsoftonline-p.com</li><li>https:\//login.windows.net</li><li>HTTPS: \//аадкдн. мсфтаус. NET</li><li>Сервер федерации вашей организации должен быть доверенным для Azure Active Directory. Например: https:\//sts.contoso.com.</li> Дополнительные сведения о [настройке IE см. в](https://support.microsoft.com/help/815141/internet-explorer-enhanced-security-configuration-changes-the-browsing)этой статье. Если у вас есть прокси-сервер в вашей сети, см. Примечание ниже.|
+| Внесите следующие веб-сайты в список разрешенных, если включена политика усиленной безопасности IE |Если на сервере, на котором будет установлен агент, включена конфигурация усиленной безопасности, потребуется открыть доступ для следующих веб-сайтов:<br /><br /><li>https:\//login.microsoftonline.com</li><li>https:\//secure.aadcdn.microsoftonline-p.com</li><li>https:\//login.windows.net</li><li>HTTPS:\//aadcdn.msftauth.net</li><li>Сервер федерации вашей организации должен быть доверенным для Azure Active Directory. Например: https:\//sts.contoso.com.</li> Дополнительные сведения о [настройке IE см. в](https://support.microsoft.com/help/815141/internet-explorer-enhanced-security-configuration-changes-the-browsing)этой статье. Если у вас есть прокси-сервер в вашей сети, см. Примечание ниже.|
 | Установлена служба PowerShell 4.0 или более поздней версии | <li>Windows Server 2008 R2 поставляется вместе с PowerShell версии 2.0, что недостаточно для агента. Обновите PowerShell, как описано ниже в разделе [Установка агента на серверах Windows Server 2008 R2](#agent-installation-on-windows-server-2008-r2-servers).</li><li>Windows Server 2012 поставляется вместе с PowerShell версии 3.0, что недостаточно для агента.  [Обновите](https://www.microsoft.com/download/details.aspx?id=40855) Windows Management Framework.</li><li>Windows Server 2012 R2 и более поздней версии поставляется с последней версией PowerShell.</li>|
 |Отключение FIPS|FIPS не поддерживается агентами Azure Active Directory Connect Health.|
 
@@ -54,9 +55,9 @@ ms.locfileid: "72330112"
 
 | Доменная среда | Требуемые конечные точки службы Azure |
 | --- | --- |
-| Общедоступная сеть | <li>&#42;.blob.core.windows.net </li><li>&#42;.aadconnecthealth.azure.com </li><li>&#42;.servicebus.windows.net, порт 5671; </li><li>&#42;.adhybridhealth.azure.com/;</li><li>https:\//management.azure.com </li><li>https:\//policykeyservice.dc.ad.msft.net/</li><li>https:\//login.windows.net</li><li>https:\//login.microsoftonline.com</li><li>https:\//secure.aadcdn.microsoftonline-p.com </li><li>https:\//www.Office.com. *Эта конечная точка используется только для обнаружения во время регистрации.</li> |
+| Общедоступная сеть | <li>&#42;.blob.core.windows.net </li><li>&#42;.aadconnecthealth.azure.com </li><li>&#42;.servicebus.windows.net, порт 5671; </li><li>&#42;.adhybridhealth.azure.com/;</li><li>https:\//management.azure.com </li><li>https:\//policykeyservice.dc.ad.msft.net/</li><li>https:\//login.windows.net</li><li>https:\//login.microsoftonline.com</li><li>https:\//secure.aadcdn.microsoftonline-p.com </li><li>https:\//www.office.com. *Эта конечная точка используется только для обнаружения во время регистрации.</li> |
 | Azure для Германии | <li>*.blob.core.cloudapi.de; </li><li>*.servicebus.cloudapi.de; </li> <li>*.aadconnecthealth.microsoftazure.de; </li><li>https:\//management.microsoftazure.de </li><li>https:\//policykeyservice.aadcdi.microsoftazure.de </li><li>https:\//login.microsoftonline.de </li><li>https:\//secure.aadcdn.microsoftonline-p.de </li><li>https:\//www.office.de. *Эта конечная точка используется только для обнаружения во время регистрации.</li> |
-| Azure для государственных организаций | <li>&#42;.blob.core.usgovcloudapi.net </li> <li>&#42;.servicebus.usgovcloudapi.net </li> <li>&#42;.aadconnecthealth.microsoftazure.us </li> <li>https:\//management.usgovcloudapi.net </li><li>https:\//policykeyservice.aadcdi.azure.us </li><li>https:\//login.microsoftonline.us </li><li>https:\//secure.aadcdn.microsoftonline-p.com </li><li>https:\//www.Office.com. *Эта конечная точка используется только для обнаружения во время регистрации.</li> |
+| Azure для государственных организаций | <li>&#42;.blob.core.usgovcloudapi.net </li> <li>&#42;.servicebus.usgovcloudapi.net </li> <li>&#42;.aadconnecthealth.microsoftazure.us </li> <li>https:\//management.usgovcloudapi.net </li><li>https:\//policykeyservice.aadcdi.azure.us </li><li>https:\//login.microsoftonline.us </li><li>https:\//secure.aadcdn.microsoftonline-p.com </li><li>https:\//www.office.com. *Эта конечная точка используется только для обнаружения во время регистрации.</li> |
 
 
 ## <a name="download-and-install-the-azure-ad-connect-health-agent"></a>Скачивание и установка агента Azure AD Connect Health
@@ -71,7 +72,7 @@ ms.locfileid: "72330112"
     * [Скачайте агент Azure AD Connect Health для AD FS.](https://go.microsoft.com/fwlink/?LinkID=820540)
     * [Ознакомьтесь с инструкциями по установке.](#installing-the-azure-ad-connect-health-agent-for-ad-ds)
 
-## <a name="installing-the-azure-ad-connect-health-agent-for-ad-fs"></a>Установка агента Azure AD Connect Health для AD FS
+## <a name="installing-the-azure-ad-connect-health-agent-for-ad-fs"></a>Установка агента Azure AD Connect Health для AD FS
 
 > [!NOTE]
 > Сервер AD FS должен отличаться от сервера синхронизации. Не устанавливайте агент AD FS на сервере синхронизации.
@@ -139,7 +140,7 @@ ms.locfileid: "72330112"
 7. На панели **действий** выберите действие **Изменить свойства службы федерации**.
 8. В диалоговом окне **Свойства службы федерации** откройте вкладку **События**.
 9. Установите флажки **Success audits** (Успешные события аудита) и **Failure audits** (Неудачные события аудита).
-10. Последовательно выберите **ОК**.
+10. Нажмите кнопку **ОК**.
 
 #### <a name="to-enable-auditing-for-ad-fs-on-windows-server-2012-r2"></a>Включение аудита для AD FS на Windows Server 2012 R2
 

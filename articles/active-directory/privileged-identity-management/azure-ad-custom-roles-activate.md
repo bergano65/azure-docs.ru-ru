@@ -7,6 +7,7 @@ author: curtand
 manager: mtillman
 ms.assetid: ''
 ms.service: active-directory
+ms.subservice: pim
 ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
@@ -15,12 +16,12 @@ ms.date: 08/06/2019
 ms.author: curtand
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 92ea116414e12cb231fdbaa5ec9ad375d2c0eea9
-ms.sourcegitcommit: 5cfe977783f02cd045023a1645ac42b8d82223bd
+ms.openlocfilehash: 06ceb2d2c98c3f9b6b184b98ddaadea610d525d2
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2019
-ms.locfileid: "74145000"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76896554"
 ---
 # <a name="activate-an-azure-ad-custom-role-in-privileged-identity-management"></a>Активация настраиваемой роли AAD через Privileged Identity Management
 
@@ -59,9 +60,9 @@ Privileged Identity Management (PIM) в Azure Active Directory (AAD) тепер�
 
 Если роль требует утверждения для вы получите уведомление Azure о том, что запрос ожидает утверждения.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Назначение настраиваемой роли Azure AD](azure-ad-custom-roles-assign.md)
 - [Update or remove an assigned Azure AD custom role in Privileged Identity Management](azure-ad-custom-roles-update-remove.md) (Обновление или удаление назначенной настраиваемой роли AAD в Privileged Identity Management)
-- [Configure Azure AD custom roles in Privileged Identity Management](azure-ad-custom-roles-configure.md) (Настройка настраиваемых ролей AAD в Privileged Identity Management)
+- [Настройка назначения настраиваемой роли Azure AD](azure-ad-custom-roles-configure.md)
 - [Administrator role permissions in Azure Active Directory](../users-groups-roles/directory-assign-admin-roles.md) (Разрешения роли администратора в Azure Active Directory)

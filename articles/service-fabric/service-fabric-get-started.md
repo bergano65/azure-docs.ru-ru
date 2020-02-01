@@ -3,14 +3,14 @@ title: Настройка среды разработки Windows
 description: Установите среду выполнения, пакет SDK и инструменты и создайте локальный кластер разработки. После завершения установки вы сможете создавать приложения на базе Windows.
 author: peterpogorski
 ms.topic: conceptual
-ms.date: 01/07/2020
+ms.date: 01/28/2020
 ms.custom: sfrev
-ms.openlocfilehash: e65ba228540529ec1f852442ebc838a60631fa5c
-ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
+ms.openlocfilehash: 70a819636b786cedce5bbd0abd0d2594738cbfb9
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75750218"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76904113"
 ---
 # <a name="prepare-your-development-environment-on-windows"></a>Настройка среды разработки для Windows
 
@@ -68,8 +68,8 @@ ms.locfileid: "75750218"
 
 Текущие версии:
 
-* Service Fabric SDK и средства 4.0.457
-* 7\.0.457 среды выполнения Service Fabric
+* Service Fabric SDK и средства 4.0.464
+* 7\.0.464 среды выполнения Service Fabric
 
 Список поддерживаемых версий см. в статье [Поддерживаемые версии Service Fabric](service-fabric-versions.md).
 

@@ -8,20 +8,18 @@ ms.topic: article
 ms.date: 02/25/2019
 ms.author: msangapu
 ms.custom: seodec18
-ms.openlocfilehash: 299bbfbc50e9ba779898ab0e0e9dec060bf6541d
-ms.sourcegitcommit: 48b7a50fc2d19c7382916cb2f591507b1c784ee5
+ms.openlocfilehash: 3173fe010106963b9079bf151c92957735253e84
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74687576"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76898779"
 ---
 # <a name="ssh-support-for-azure-app-service-on-linux"></a>Поддержка SSH для службы приложений Azure в Linux
 
-[Secure Shell (SSH)](https://wikipedia.org/wiki/Secure_Shell) широко используется для удаленного выполнения административных команд из терминала командной строки. Служба приложений на платформе Linux предоставляет поддержку SSH в контейнере приложения в каждом из встроенных образов Docker, которые используются для стека времени выполнения новых веб-приложений. 
+[Secure Shell (SSH)](https://wikipedia.org/wiki/Secure_Shell) широко используется для удаленного выполнения административных команд из терминала командной строки. Служба приложений в Linux обеспечивает поддержку SSH в контейнере приложения. 
 
-![Стеки времени выполнения](./media/app-service-linux-ssh-support/app-service-linux-runtime-stack.png)
-
-В пользовательских образах Docker необходимо настроить сервер SSH.
+![SSH службы приложений Linux](./media/app-service-linux-ssh-support/app-service-linux-ssh.png)
 
 Вы также можете подключиться к контейнеру непосредственно из локального компьютера, где ведется разработка, используя SSH и SFTP.
 
@@ -121,6 +119,6 @@ Load average: 0.07 0.04 0.08 4/765 45738
 
 * [Общие сведения об удаленной отладке приложений Node.js в службе приложений Azure из VS Code](https://medium.com/@auchenberg/introducing-remote-debugging-of-node-js-apps-on-azure-app-service-from-vs-code-in-public-preview-9b8d83a6e1f0)
 * [Использование пользовательского образа Docker для платформы "Веб-приложения для контейнеров"](quickstart-docker-go.md).
-* [Использование .NET Core в службе приложений Azure на платформе Linux](quickstart-dotnetcore.md)
+* [Использование .NET Core в службе приложений Azure на платформе Linux](quickstart-dotnetcore.md).
 * [Использование Ruby в службе приложений Azure на платформе Linux](quickstart-ruby.md).
 * [Вопросы и ответы о платформе "Веб-приложения для контейнеров" в службе приложений Azure](app-service-linux-faq.md)

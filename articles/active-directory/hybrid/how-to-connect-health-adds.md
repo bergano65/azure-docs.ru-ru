@@ -8,6 +8,7 @@ manager: daveba
 editor: curtand
 ms.assetid: 19e3cf15-f150-46a3-a10c-2990702cd700
 ms.service: active-directory
+ms.subservice: hybrid
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,15 +16,15 @@ ms.topic: conceptual
 ms.date: 07/18/2017
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 73f30f4f16ad879468a424d6e5cbe81e68b7c33d
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: e27287a414a2a4edef3e9090b7d91beb1c70f554
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60350684"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76897323"
 ---
 # <a name="using-azure-ad-connect-health-with-ad-ds"></a>Использование Azure AD Connect Health с AD DS
-Приведенная ниже документация относится к мониторингу доменных служб Active Directory с помощью Azure AD Connect Health. Поддерживаемые версии доменных служб Active Directory: Windows Server 2008 R2, Windows Server 2012, Windows Server 2012 R2 и Windows Server 2016.
+Приведенная ниже документация относится к мониторингу доменных служб Active Directory с помощью Azure AD Connect Health. Поддерживаемые версии AD DS: Windows Server 2008 R2, Windows Server 2012, Windows Server 2012 R2 и Windows Server 2016.
 
 Дополнительные сведения о мониторинге AD FS с помощью Azure AD Connect Health см. в статье [Использование Azure AD Connect Health с AD FS](how-to-connect-health-adfs.md). Сведения о мониторинге синхронизации Azure AD Connect с помощью Azure AD Connect Health см. в статье [Использование Azure AD Connect Health для синхронизации](how-to-connect-health-sync.md).
 

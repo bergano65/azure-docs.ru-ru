@@ -6,12 +6,12 @@ ms.suite: integration
 ms.reviewer: klam, logicappspm
 ms.topic: conceptual
 ms.date: 10/11/2019
-ms.openlocfilehash: 4f8c20534cdd5abdf5ae97bb097238cf508480c7
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: 73b8a559eddec51dbc01f1d55f70414360ff2956
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76843554"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76898427"
 ---
 # <a name="secure-access-and-data-in-azure-logic-apps"></a>Безопасный доступ и данные в Azure Logic Apps
 
@@ -324,7 +324,7 @@ POST /subscriptions/<Azure-subscription-ID>/resourceGroups/<Azure-resource-group
 
 #### <a name="considerations-when-hiding-inputs-and-outputs"></a>Рекомендации по скрытию входных и выходных данных
 
-* При защите входных или выходных данных триггера или действия Logic Apps не отправляет защищенные данные в Azure Log Analytics. Кроме того, вы не можете добавлять [отслеживаемые свойства](logic-apps-monitor-your-logic-apps.md#azure-diagnostics-event-settings-and-details) к этому триггеру или действию для мониторинга.
+* При защите входных или выходных данных триггера или действия Logic Apps не отправляет защищенные данные в Azure Log Analytics. Кроме того, вы не можете добавлять [отслеживаемые свойства](../logic-apps/monitor-logic-apps-log-analytics.md#extend-data) к этому триггеру или действию для мониторинга.
 
 * [API Logic Apps для обработки журнала рабочего процесса](https://docs.microsoft.com/rest/api/logic/) не возвращает защищенные выходные данные.
 
@@ -806,7 +806,7 @@ Authorization: OAuth realm="Photos",
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Автоматизация развертывания для Azure Logic Apps](logic-apps-azure-resource-manager-templates-overview.md)  
-* [См. статью Мониторинг приложений логики.](logic-apps-monitor-your-logic-apps.md)  
-* [Диагностика и устранение сбоев рабочих процессов в Azure Logic Apps](logic-apps-diagnosing-failures.md)  
-* [Автоматизация развертывания приложений логики](logic-apps-azure-resource-manager-templates-overview.md)
+* [Автоматизация развертывания для Azure Logic Apps](../logic-apps/logic-apps-azure-resource-manager-templates-overview.md)  
+* [Мониторинг приложений логики](../logic-apps/monitor-logic-apps-log-analytics.md)  
+* [Диагностика и устранение сбоев рабочих процессов в Azure Logic Apps](../logic-apps/logic-apps-diagnosing-failures.md)  
+* [Автоматизация развертывания приложений логики](../logic-apps/logic-apps-azure-resource-manager-templates-overview.md)

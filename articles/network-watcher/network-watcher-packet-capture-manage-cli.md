@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/22/2017
 ms.author: damendo
-ms.openlocfilehash: 7eea4c05a48c5e055766f942cc44ee4cf189de5d
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: f83fb2377f2db1deaed453131a61e26677b3d87d
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76840867"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76896400"
 ---
 # <a name="manage-packet-captures-with-azure-network-watcher-using-the-azure-cli"></a>Управление записью пакетов с помощью службы "Наблюдатель за сетями Azure" посредством Azure CLI
 
@@ -52,7 +52,7 @@ ms.locfileid: "76840867"
 
 ### <a name="step-1"></a>Шаг 1
 
-Выполните командлет `az vm extension set`, чтобы установить агент записи пакетов на гостевой виртуальной машине.
+Выполните команду `az vm extension set`, чтобы установить агент записи пакетов на гостевой виртуальной машине.
 
 Для виртуальных машин Windows:
 
@@ -63,15 +63,21 @@ az vm extension set --resource-group resourceGroupName --vm-name virtualMachineN
 Для виртуальных машин Linux:
 
 ```azurecli
-az vm extension set --resource-group resourceGroupName --vm-name virtualMachineName --publisher Microsoft.Azure.NetworkWatcher --name NetworkWatcherAgentLinux--version 1.4
+az vm extension set --resource-group resourceGroupName --vm-name virtualMachineName --publisher Microsoft.Azure.NetworkWatcher --name NetworkWatcherAgentLinux --version 1.4
 ```
 
 ### <a name="step-2"></a>Шаг 2
 
-Чтобы убедиться, что агент установлен, выполните командлет `vm extension show` и передайте ему имя группы ресурсов и виртуальной машины. Проверьте итоговый список, чтобы убедиться, что агент установлен.
+Чтобы убедиться, что агент установлен, выполните команду `vm extension show` и передайте ей имя группы ресурсов и виртуальной машины. Проверьте итоговый список, чтобы убедиться, что агент установлен.
 
+Для виртуальных машин Windows:
 ```azurecli
 az vm extension show --resource-group resourceGroupName --vm-name virtualMachineName --name NetworkWatcherAgentWindows
+```
+
+Для виртуальных машин Linux:
+```azurecli
+az vm extension show --resource-group resourceGroupName --vm-name virtualMachineName --name AzureNetworkWatcherExtension
 ```
 
 Ниже приведен пример ответа после выполнения операции `az vm extension show`.
@@ -100,31 +106,24 @@ az vm extension show --resource-group resourceGroupName --vm-name virtualMachine
 
 После выполнения предыдущих шагов на виртуальной машине будет установлен агент записи пакетов.
 
+
 ### <a name="step-1"></a>Шаг 1
-
-Далее необходимо извлечь экземпляр Наблюдателя за сетями. Имя Наблюдателя за сетью передается в командлет `az network watcher show` на шаге 4.
-
-```azurecli
-az network watcher show --resource-group resourceGroup --name networkWatcherName
-```
-
-### <a name="step-2"></a>Шаг 2
 
 Получите учетную запись хранения. Она используется для хранения файла записи пакетов.
 
 ```azurecli
-azure storage account list
+az storage account list
 ```
 
-### <a name="step-3"></a>Шаг 3
+### <a name="step-2"></a>Шаг 2
 
-С помощью фильтров можно ограничить данные, которые сохраняются при записи пакетов. В следующем примере настраивается запись пакетов с несколькими фильтрами.  Первые три фильтра собирают исходящий TCP-трафик только с локального IP-адреса 10.0.0.3 на порты назначения 20, 80 и 443.  Последний фильтр собирает только трафик, передаваемый по протоколу UDP.
+На этом этапе можно приступать к созданию записи пакетов.  Сначала давайте рассмотрим параметры, которые можно настроить. Фильтры — это один из таких параметров, который можно использовать для ограничения данных, хранящихся в записи пакета. В следующем примере настраивается запись пакетов с несколькими фильтрами.  Первые три фильтра собирают исходящий TCP-трафик только с локального IP-адреса 10.0.0.3 на порты назначения 20, 80 и 443.  Последний фильтр собирает только трафик, передаваемый по протоколу UDP.
 
 ```azurecli
 az network watcher packet-capture create --resource-group {resourceGroupName} --vm {vmName} --name packetCaptureName --storage-account {storageAccountName} --filters "[{\"protocol\":\"TCP\", \"remoteIPAddress\":\"1.1.1.1-255.255.255\",\"localIPAddress\":\"10.0.0.3\", \"remotePort\":\"20\"},{\"protocol\":\"TCP\", \"remoteIPAddress\":\"1.1.1.1-255.255.255\",\"localIPAddress\":\"10.0.0.3\", \"remotePort\":\"80\"},{\"protocol\":\"TCP\", \"remoteIPAddress\":\"1.1.1.1-255.255.255\",\"localIPAddress\":\"10.0.0.3\", \"remotePort\":\"443\"},{\"protocol\":\"UDP\"}]"
 ```
 
-Ниже приведен пример ожидаемого результата выполнения командлета `az network watcher packet-capture create`.
+Ниже приведен пример ожидаемого результата выполнения команды `az network watcher packet-capture create`.
 
 ```json
 {
@@ -179,13 +178,13 @@ roviders/microsoft.compute/virtualmachines/{vmName}/2017/05/25/packetcapture_16_
 
 ## <a name="get-a-packet-capture"></a>Получение записи пакета
 
-При выполнении командлета `az network watcher packet-capture show-status` вы получаете сведения о состоянии выполняющейся или завершенной записи пакетов.
+Выполнение команды `az network watcher packet-capture show-status`, получение состояния выполняемой в данный момент или завершенной записи пакетов.
 
 ```azurecli
 az network watcher packet-capture show-status --name packetCaptureName --location {networkWatcherLocation}
 ```
 
-Ниже представлен пример выходных данных командлета `az network watcher packet-capture show-status`, Следующий пример можно получить, когда для остановки указано значение Stopped, а для параметра StopReason задано значение TimeExceeded. 
+Ниже приведен пример выходных данных команды `az network watcher packet-capture show-status`. Следующий пример можно получить, когда для остановки указано значение Stopped, а для параметра StopReason задано значение TimeExceeded. 
 
 ```
 {
@@ -204,14 +203,14 @@ cketCaptures/packetCaptureName",
 
 ## <a name="stop-a-packet-capture"></a>Прекращение записи пакета
 
-Если выполнить командлет `az network watcher packet-capture stop` во время сеанса записи пакета, он будет остановлен.
+Выполнение команды `az network watcher packet-capture stop`, если сеанс записи выполняется, он останавливается.
 
 ```azurecli
 az network watcher packet-capture stop --name packetCaptureName --location westcentralus
 ```
 
 > [!NOTE]
-> При выполнении во время текущего сеанса записи или в имеющемся остановленном сеансе командлет не возвратит ответ.
+> Команда не возвращает ответ при выполнении в запущенном в данный момент сеансе записи или существующем сеансе, который уже остановлен.
 
 ## <a name="delete-a-packet-capture"></a>Удаление записи пакета
 

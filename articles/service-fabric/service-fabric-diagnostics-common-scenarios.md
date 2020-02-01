@@ -1,16 +1,14 @@
 ---
 title: Azure Service Fabric диагностировать распространенные сценарии
 description: Сведения об устранении распространенных сценариев мониторинга и диагностики в приложениях Service Fabric Azure.
-author: srrengar
 ms.topic: article
 ms.date: 02/25/2019
-ms.author: srrengar
-ms.openlocfilehash: b012e37bef7fe21e869fc3af415ca57b74c61dd8
-ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
+ms.openlocfilehash: 3c7f027bad71d48db5fba002f778f23db8225fa5
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75645792"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76906954"
 ---
 # <a name="diagnose-common-scenarios-with-service-fabric"></a>Диагностика распространенных сценариев с помощью Service Fabric
 
@@ -134,6 +132,7 @@ ms.locfileid: "75645792"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
+* [Поиск распространенных ошибок активации пакетов кода](./service-fabric-diagnostics-code-package-errors.md)
 * [Настройте оповещения в Application Insights](../azure-monitor/app/alerts.md), чтобы узнавать об изменениях в производительности или характере использования.
 * [Интеллектуальное обнаружение в Application Insights](../azure-monitor/app/proactive-diagnostics.md) осуществляет упреждающий анализ данных телеметрии, отправляемых в Application Insights, и предупреждает о потенциальных проблемах с производительностью.
 * Узнайте больше о Azure Monitor журналов [оповещений](../log-analytics/log-analytics-alerts.md) , помогающих в обнаружении и диагностике.

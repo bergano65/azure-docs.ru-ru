@@ -7,13 +7,13 @@ ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.service: hdinsight
 ms.topic: conceptual
-ms.date: 01/24/2020
-ms.openlocfilehash: 9d484afb1d80ee6b110438cc3ddea1d3d67ad999
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.date: 01/29/2020
+ms.openlocfilehash: 091ca4d632d89405d85c66e264aff9867979fcd4
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76844689"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76905231"
 ---
 # <a name="release-notes"></a>Заметки о выпуске
 
@@ -68,7 +68,7 @@ HDInsight продолжит повысить надежность и произ
 
 ## <a name="known-issues"></a>Известные проблемы
 
-По состоянию на 24 января 2020 г. есть активная ошибка, при которой при попытке использования записной книжки Jupyter может появиться сообщение об ошибке. Чтобы устранить проблему, выполните описанные ниже действия. Вы также можете обратиться к этой [публикации MSDN](https://social.msdn.microsoft.com/Forums/en-us/8c763fb4-79a9-496f-a75c-44a125e934ac/hdinshight-create-not-create-jupyter-notebook?forum=hdinsight) или [StackOverflow](https://stackoverflow.com/questions/59687614/azure-hdinsight-jupyter-notebook-not-working/59831103) , чтобы получить последние сведения или задать дополнительные вопросы. Эта страница будет обновлена после устранения проблемы.
+По состоянию на 29 января 2020 есть активная ошибка, при которой при попытке использования записной книжки Jupyter может появиться сообщение об ошибке. Чтобы устранить проблему, выполните описанные ниже действия. Вы также можете обратиться к этой [публикации MSDN](https://social.msdn.microsoft.com/Forums/en-us/8c763fb4-79a9-496f-a75c-44a125e934ac/hdinshight-create-not-create-jupyter-notebook?forum=hdinsight) или [StackOverflow](https://stackoverflow.com/questions/59687614/azure-hdinsight-jupyter-notebook-not-working/59831103) , чтобы получить последние сведения или задать дополнительные вопросы. Эта страница будет обновлена после устранения проблемы.
 
 **ошибки**
 
@@ -77,22 +77,26 @@ HDInsight продолжит повысить надежность и произ
 
 **Причина** 
 
-Файл _version. корректировка в кластере был обновлен до версии 5. x. x вместо 4.4. x. # #.
+Файл _version. корректировка в кластере был обновлен до 5. x. x вместо 4.4. x. # # или Ambari необходимо перезапустить.
 
 **Решение**
 
 Если вы создаете записную книжку Jupyter и получаете одну из перечисленных выше ошибок, выполните следующие действия, чтобы устранить проблему.
 
-1. Откройте Ambari в веб-браузере, перейдя в https://CLUSTERNAME.azurehdinsight.net, где ИМЯ_КЛАСТЕРА — это имя кластера.
+1. Откройте Ambari в веб-браузере, перейдя в `https://CLUSTERNAME.azurehdinsight.net`, где ИМЯ_КЛАСТЕРА — это имя кластера.
 1. В Ambari в меню слева щелкните **Jupyter**, а затем на странице **действия службы**нажмите кнопку **прерывать**.
 1. Подключитесь по протоколу SSH к кластеру головного узла, где запущена служба Jupyter.
 1. Откройте следующий файл/usr/bin/Anaconda/lib/python2.7/site-Packages/nbformat/_version. корректировка в режиме sudo.
-1. Существующая запись должна показывать примерно следующий код: 
+1. Проверьте значение version_info.
+1. Если для параметра version_info задано значение: 
 
     version_info = (5, 0, 3)
 
-    Измените запись на: 
+    Затем измените запись на: 
     
     version_info = (4, 4, 0)
-1. Сохраните файл.
+
+    И сохраните файл. 
+
+    Если для version_info уже задано значение (4, 4, 0), переходите к следующему шагу, так как необходимо перезапустить только Ambari, дополнительные изменения не требуются.
 1. Вернитесь к Ambari и в **действиях службы**щелкните **перезапустить все**.

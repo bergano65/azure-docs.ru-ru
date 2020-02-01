@@ -14,12 +14,12 @@ ms.author: curtand
 ms.reviewer: vincesm
 ms.custom: fasttrack-edit
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b606566fa2b8154eb9ac8fda97d3c3ae81cd3447
-ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
+ms.openlocfilehash: 4b5ac2e899de33614fa30b1f4baf0e85efec26bb
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76767420"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76898856"
 ---
 # <a name="administrator-role-permissions-in-azure-active-directory"></a>Разрешения роли администратора в Azure Active Directory
 
@@ -194,7 +194,7 @@ ms.locfileid: "76767420"
 
 ### <a name="directory-writersdirectory-writers-permissions"></a>[Модули записи каталога](#directory-writers-permissions)
 
-Это устаревшая роль, которая должна быть назначена приложениям, не поддерживающим [инфраструктуру согласия](../develop/quickstart-v1-integrate-apps-with-azure-ad.md). Ее не следует назначать пользователям.
+Это устаревшая роль, которая должна быть назначена приложениям, не поддерживающим [инфраструктуру согласия](../develop/quickstart-register-app.md). Ее не следует назначать пользователям.
 
 ### <a name="dynamics-365-administrator--crm-administratorcrm-service-administrator-permissions"></a>[Администратор Dynamics 365 или администратор CRM](#crm-service-administrator-permissions)
 

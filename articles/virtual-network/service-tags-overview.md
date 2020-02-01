@@ -13,12 +13,12 @@ ms.workload: infrastructure-services
 ms.date: 10/22/2019
 ms.author: jispar
 ms.reviewer: kumud
-ms.openlocfilehash: 8d5377f7ec8de14f3d7d55bc109f6be731991051
-ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
+ms.openlocfilehash: 1fec2778ce8c839c5bac0c1d74085db0f8b283ce
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76775263"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76903008"
 ---
 # <a name="virtual-network-service-tags"></a>Теги службы виртуальной сети 
 <a name="network-service-tags"></a>
@@ -43,7 +43,7 @@ ms.locfileid: "76775263"
 | Тег | Цель | Может ли использовать входящий или исходящий трафик? | Может быть региональным? | Можно ли использовать с брандмауэром Azure? |
 | --- | -------- |:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 | **ApiManagement** | Трафик управления для управления API Azure — выделенные развертывания. | Оба варианта | Нет | Да |
-| **аппликатионинсигхтсаваилабилити** | Доступность Application Insights. | Оба варианта | Нет | Нет |
+| **аппликатионинсигхтсаваилабилити** | Доступность Application Insights. | Вход. | Нет | Нет |
 | **AppService**    | служба приложений Azure; Этот тег рекомендуется для исходящих правил безопасности для внешних интерфейсов веб-приложений. | Исход. | Да | Да |
 | **аппсервицеманажемент** | Трафик управления для развертываний, выделенных для Среда службы приложений. | Оба варианта | Нет | Да |
 | **AzureActiveDirectory** | Azure Active Directory. | Исход. | Нет | Да |
@@ -124,7 +124,7 @@ ms.locfileid: "76775263"
 Вы можете скачать JSON-файлы, которые содержат текущий список тегов служб, вместе со сведениями о диапазоне адресов IP. Эти списки обновляются и публикуются еженедельно. Расположения для каждого облака:
 
 - [Общедоступная служба Azure](https://www.microsoft.com/download/details.aspx?id=56519)
-- [Azure для государственных организаций США.](https://www.microsoft.com/download/details.aspx?id=57063)  
+- [Azure для US Gov организаций.](https://www.microsoft.com/download/details.aspx?id=57063)  
 - [Azure для Китая](https://www.microsoft.com/download/details.aspx?id=57062) 
 - [Azure для Германии](https://www.microsoft.com/download/details.aspx?id=57064)   
 

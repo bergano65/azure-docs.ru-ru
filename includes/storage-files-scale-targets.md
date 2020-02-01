@@ -4,12 +4,12 @@ ms.service: storage
 ms.topic: include
 ms.date: 05/06/2019
 ms.author: rogarana
-ms.openlocfilehash: d76338ccd4dcdf7a9a9a96baa1fb47ed5272d5ff
-ms.sourcegitcommit: 8e271271cd8c1434b4254862ef96f52a5a9567fb
+ms.openlocfilehash: 8a8619da831dfa5b240bd93d3a046c49cc30affa
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72822028"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76901406"
 ---
 | Ресурс | Общие файлы уровня "Стандарт" | Общие файловые ресурсы уровня "Премиум" |
 |----------|---------------|------------------------------------------|
@@ -27,4 +27,4 @@ ms.locfileid: "72822028"
 | Максимальная длина имени объекта максимальное (папок и файлов) | 2 048 символов | 2 048 символов |
 | Максимальное количество компонентов в имени пути (в пути \A\B\C\D каждая буква обозначает компонент) | 255 символов | 255 символов |
 
-\* недоступно во всех регионах, см. сведения о [региональной доступности](../articles/storage/files/storage-files-planning.md#regional-availability) для списка доступных регионов.
+\*, доступных в большинстве регионов, см. в разделе региональные сведения о [доступности](../articles/storage/files/storage-files-planning.md#regional-availability) в доступных регионах.

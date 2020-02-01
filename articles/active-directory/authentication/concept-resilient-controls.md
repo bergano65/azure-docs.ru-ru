@@ -6,17 +6,18 @@ author: martincoetzer
 manager: daveba
 tags: azuread
 ms.service: active-directory
+ms.subservice: authentication
 ms.topic: conceptual
 ms.workload: identity
-ms.date: 12/19/2018
+ms.date: 01/29/2020
 ms.author: martinco
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 478cccb3a8235291a4c4f0566cd130b4b75dbe6b
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: 0ca5817e744ff81efcd549bc328d7ce5eeedb2d2
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74208555"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76908740"
 ---
 # <a name="create-a-resilient-access-control-management-strategy-with-azure-active-directory"></a>Создание устойчивой стратегии управления доступом с помощью Azure Active Directory
 
@@ -117,7 +118,7 @@ ms.locfileid: "74208555"
 * Настройте набор резервных политик, если нарушение доступа к одному типу учетных данных или одному механизму контроля доступа влияет на доступ к вашим приложениям. Настройте политику в отключенном состоянии, которая требует присоединения к домену в качестве элемента управления, в качестве резервной копии для активной политики, для которой требуется сторонний поставщик MFA.
 * Снизьте риск того, что плохие субъекты будут угадывать пароли, когда не требуется MFA, следуя рекомендациям, изложенным в руководстве по паролями [здесь](https://aka.ms/passwordguidance).
 * Разверните [Самостоятельный сброс пароля (SSPR) в Azure AD](https://docs.microsoft.com/azure/active-directory/authentication/quickstart-sspr) и [Защита паролем Azure AD](https://docs.microsoft.com/azure/active-directory/authentication/howto-password-ban-bad-on-premises-deploy), чтобы убедиться, что пользователи не используют простой пароль и условия, которые вы запретили.
-* Если не достигнут определенный уровень проверки подлинности, используйте политики, которые ограничивают доступ в рамках приложения, вместо простого возврата к полному доступу. Например,
+* Если не достигнут определенный уровень проверки подлинности, используйте политики, которые ограничивают доступ в рамках приложения, вместо простого возврата к полному доступу. Пример.
   * Настройте политику резервного копирования, которая отправляет утверждение ограниченного сеанса в Exchange и SharePoint.
   * Если ваша организация использует Microsoft Cloud App Security, рассмотрите возможность использования политики MCAS, и тогда MCAS разрешит доступ только для чтения, но не для передачи.
 * Присвойте имена политикам, чтобы их легко было найти во время сбоя. Включите следующие элементы в название политики.
@@ -259,7 +260,7 @@ EMnnn - ENABLE IN EMERGENCY: [Disruption][i/n] - [Apps] - [Controls] [Conditions
 >[!NOTE]
  > Настройка [доверенных IP-адресов](https://docs.microsoft.com/azure/active-directory/authentication/howto-mfa-mfasettings) для MFA Azure доступна только с [лицензиями Azure AD Premium](https://docs.microsoft.com/azure/active-directory/authentication/concept-mfa-licensing).
 
-## <a name="learn-more"></a>Подробнее
+## <a name="learn-more"></a>Подробнее…
 
 * [Настройка сервера Многофакторной идентификации Azure для веб-приложений IIS](https://docs.microsoft.com/azure/active-directory/authentication/howto-mfaserver-iis)
 * [Управление учетными записями администратора для аварийного доступа в Azure AD](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-emergency-access)

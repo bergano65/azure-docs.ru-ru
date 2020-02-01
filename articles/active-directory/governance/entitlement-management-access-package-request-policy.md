@@ -16,12 +16,12 @@ ms.date: 10/15/2019
 ms.author: ajburnle
 ms.reviewer: ''
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 649a4a50766d26f73584dae4481652c8007b2e9e
-ms.sourcegitcommit: 98ce5583e376943aaa9773bf8efe0b324a55e58c
+ms.openlocfilehash: 493ba6396a7ceb11b917fbda5dd6c37c070f2fee
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73174680"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76897613"
 ---
 # <a name="change-request-and-approval-settings-for-an-access-package-in-azure-ad-entitlement-management"></a>Изменение параметров запросов и утверждений для пакета Access в управлении назначениями Azure AD
 
@@ -42,6 +42,9 @@ ms.locfileid: "73174680"
 | Я хочу разрешить пользователям в моем каталоге, а также пользователям вне каталога запрашивать пакет Access | Несколько |
 | Я хочу указать разные параметры утверждения для некоторых пользователей | Несколько |
 | Я хочу, чтобы некоторые пользователи могли получить доступ к назначениям пакетов, в то время как другие пользователи могут расширить свои права доступа. | Несколько |
+
+Сведения о логике приоритета, используемой при применении нескольких политик, см. в разделе [несколько политик](entitlement-management-troubleshoot.md#multiple-policies
+).
 
 ### <a name="open-an-existing-policy-of-request-and-approval-settings"></a>Открытие существующей политики параметров запросов и утверждений
 
@@ -83,7 +86,7 @@ ms.locfileid: "73174680"
 
     ![Создание политики с именем и описанием](./media/entitlement-management-access-package-request-policy/policy-name-description.png)
 
-1. Нажмите кнопку **Далее** , чтобы открыть вкладку **запросы** .
+1. Щелкните **Далее**, чтобы открыть вкладку **Запросы**.
 
 1. Выполните действия, описанные в одном из следующих разделов запроса.
 

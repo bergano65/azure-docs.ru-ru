@@ -3,12 +3,12 @@ title: Ресурсы Azure — QnA Maker
 description: QnA Maker использует несколько источников Azure, каждый из которых имеет другую цель. Понимание того, как они используются отдельно, позволяет планировать и выбирать правильную ценовую категорию или знать, когда нужно изменить ценовую категорию. Понимание того, как они используются в сочетании, позволяет находить и устранять проблемы при их возникновении.
 ms.topic: conceptual
 ms.date: 01/27/2020
-ms.openlocfilehash: 2b3a06122ce6123cd8edcedf5dfbf38c3c12218a
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: 77aced459c7731a2cac432538cfc66ed9ce83f9d
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76843513"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76902064"
 ---
 # <a name="azure-resources-for-qna-maker"></a>Ресурсы Azure для QnA Maker
 
@@ -111,6 +111,10 @@ QnA Maker использует несколько источников Azure, к
 Ресурс QnA Maker предоставляет доступ к API-интерфейсам создания и публикации, а также по второму уровню ранжирования (#2 ранжирования) наборов QnA во время выполнения.
 
 Второй рейтинг применяет интеллектуальные фильтры, которые могут включать метаданные и дальнейшие подсказки.
+
+#### <a name="qna-maker-resource-configuration-settings"></a>QnA Maker параметры конфигурации ресурсов
+
+При создании новой базы знаний на [портале QnA Maker](https://qnamaker.ai)параметр **языка** является единственным параметром, который применяется на уровне ресурса. Язык выбирается при создании первой базы знаний для ресурса. 
 
 ### <a name="app-service-and-app-service-plan"></a>Служба приложений и план службы приложений
 

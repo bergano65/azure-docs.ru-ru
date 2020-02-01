@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 01/14/2020
-ms.openlocfilehash: fabb2524547bd7837d3644d79f0023311ddccdfc
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: 038cfe04193b734bd26ed0ffd4dec5ae9b267c22
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76845551"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76901271"
 ---
 # <a name="delete-and-restore-azure-log-analytics-workspace"></a>Удаление и восстановление рабочей области Azure Log Analytics
 
@@ -23,7 +23,7 @@ ms.locfileid: "76845551"
 При удалении рабочей области Log Analytics выполняется операция обратимого удаления, позволяющая восстановить рабочую область, включая ее данные и подключенные агенты, в течение 14 дней, независимо от того, было ли удаление случайным или умышленно. После периода обратимого удаления ресурс рабочей области и его данные не могут быть восстановлены — данные помещаются в очередь для постоянного удаления и полностью очищаются в течение 30 дней. Имя рабочей области — "releaseed", и его можно использовать для создания новой рабочей области.
 
 > [!NOTE]
-> Если вы хотите переопределить поведение обратимого удаления и окончательно удалить рабочую область, выполните действия, описанные в статье [Удаление постоянной рабочей области](#Permanent workspace delete).
+> Если вы хотите переопределить поведение обратимого удаления и окончательно удалить рабочую область, выполните действия, описанные в статье [Удаление постоянной рабочей области](#permanent-workspace-delete).
 
 При удалении рабочей области необходимо соблюдать осторожность, так как могут возникать важные данные и конфигурация, которые могут негативно повлиять на работу службы. Проверьте, какие агенты, решения и другие службы и источники Azure хранят свои данные в Log Analytics, например:
 
@@ -63,7 +63,7 @@ PS C:\>Remove-AzOperationalInsightsWorkspace -ResourceGroupName "resource-group-
 
 
 > [!IMPORTANT]
-> Будьте внимательны при окончательном удалении рабочей области, так как эта операция необратима, и ваша рабочая область и ее данные не будут восстановлены.
+> Используйте постоянную операцию удаления рабочей области с осторожностью, так как она необратима и вы не сможете восстановить рабочую область и ее данные.
 
 В настоящее время можно выполнить удаление постоянной рабочей области с помощью REST API.
 
@@ -80,6 +80,7 @@ PS C:\>Remove-AzOperationalInsightsWorkspace -ResourceGroupName "resource-group-
 > DELETE https://management.azure.com/subscriptions/<subscription-id>/resourcegroups/<resource-group-name>/providers/Microsoft.OperationalInsights/workspaces/<workspace-name>?api-version=2015-11-01-preview&force=true
 > Authorization: Bearer eyJ0eXAiOiJKV1Qi….
 > ```
+Где "eyJ0eXAiOiJKV1Qi..." представляет маркер полной авторизации.
 
 ## <a name="recover-workspace"></a>Восстановить рабочую область
 

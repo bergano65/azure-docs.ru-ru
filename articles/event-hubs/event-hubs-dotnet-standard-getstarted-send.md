@@ -1,10 +1,9 @@
 ---
-title: Отправка и получение событий с помощью .NET Core в концентраторах событий Azure | Документация Майкрософт
-description: В статье описано, как создать приложение .NET Core, которое отправляет сообщения в Центры событий Azure.
+title: Отправка и получение событий из концентраторов событий Azure с помощью .NET (старый)
+description: В этой статье представлено пошаговое руководство по созданию приложения .NET Core, которое отправляет и получает события в концентраторы событий Azure, используя старый пакет Microsoft. Azure. EventHubs.
 services: event-hubs
 documentationcenter: na
-author: ShubhaVijayasarathy
-manager: timlt
+author: spelluru
 editor: ''
 ms.assetid: ''
 ms.service: event-hubs
@@ -12,36 +11,40 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.custom: seodec18
-ms.date: 04/15/2019
-ms.author: shvija
-ms.openlocfilehash: 1d3f6357faa8626d48e2aac0efe86e22222c9ba6
-ms.sourcegitcommit: 16c5374d7bcb086e417802b72d9383f8e65b24a7
+ms.date: 01/15/2020
+ms.author: spelluru
+ms.openlocfilehash: a58c344f644f91634fba267ff157bd56a18f40d3
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73846671"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76900113"
 ---
-# <a name="send-events-to-or-receive-events-from-azure-event-hubs-using-net-core"></a>Отправка событий или получение событий из концентраторов событий Azure с помощью .NET Core
+# <a name="send-events-to-or-receive-events-from-azure-event-hubs-using-net-core-microsoftazureeventhubs"></a>Отправка событий или получение событий из концентраторов событий Azure с помощью .NET Core (Microsoft. Azure. EventHubs)
 Центры событий — это служба, которая обрабатывает большие объемы данных телеметрии о событиях, поступающих от подключенных устройств и приложений. После сбора дынных в Центрах событий их можно сохранить с помощью кластера хранилища или преобразовать с помощью поставщика аналитики в реальном времени. Эта возможность сбора и обработки большого объема данных о событиях является ключевым компонентом в современных архитектурах приложений, включая "Интернет вещей". Подробный обзор Центров событий см. в статьях [Что такое Центры событий Azure?](event-hubs-about.md) и [Обзор функций Центров событий](event-hubs-features.md).
 
 В этом руководстве показано, как создавать приложения .NET Core C# в для отправки событий в концентратор событий или получения событий из него. 
 
-> [!NOTE]
-> Вы можете скачать это краткое руководство в качестве примера с сайта [GitHub](https://github.com/Azure/azure-event-hubs/tree/master/samples/DotNet/Microsoft.Azure.EventHubs/SampleSender), заменить строки `EventHubConnectionString` и `EventHubName` значениями для своего концентратора событий и выполнить этот пример. Или следуйте инструкциям из этого руководства, чтобы создать собственное решение.
+> [!WARNING]
+> В этом кратком руководстве используется старый пакет **Microsoft. Azure. EventHubs** . Мы рекомендуем [перенести](https://github.com/Azure/azure-sdk-for-net/blob/master/sdk/eventhub/Azure.Messaging.EventHubs/MIGRATIONGUIDE.md) код, чтобы использовать последний пакет [Azure. Messaging. EventHubs](get-started-dotnet-standard-send-v2.md) .  
 
-## <a name="prerequisites"></a>Предварительные требования
+
+## <a name="prerequisites"></a>Технические условия
 
 - [Microsoft Visual Studio 2019](https://www.visualstudio.com).
 - [Инструментарий Visual Studio 2015 или Visual Studio 2017 для .NET Core](https://www.microsoft.com/net/core). 
-- **Создайте пространство имен концентраторов событий и концентратор событий**. Первым шагом является использование [портала Azure](https://portal.azure.com) для создания пространства имен типа Центров событий и получение учетных данных управления, необходимых приложению для взаимодействия с концентратором событий. Чтобы создать пространство имен и концентратор событий, [выполните эти инструкции](event-hubs-create.md). Затем получите **строку подключения для пространства имен концентратора событий** , следуя инструкциям из статьи: [Получение строки подключения](event-hubs-get-connection-string.md#get-connection-string-from-the-portal). Строка подключения понадобится нам позже.
+- **Создайте пространство имен Центров событий и концентратор событий**. Первым шагом является использование [портала Azure](https://portal.azure.com) для создания пространства имен типа Центров событий и получение учетных данных управления, необходимых приложению для взаимодействия с концентратором событий. Чтобы создать пространство имен и концентратор событий, выполните инструкции из [этой статьи](event-hubs-create.md). Затем получите **строку подключения для пространства имен концентратора событий** , следуя инструкциям из статьи: [Получение строки подключения](event-hubs-get-connection-string.md#get-connection-string-from-the-portal). Строка подключения понадобится нам позже.
 
 ## <a name="send-events"></a>Отправка событий 
 В этом разделе показано, как создать консольное приложение .NET Core для отправки событий в концентратор событий. 
 
+> [!NOTE]
+> Вы можете скачать это краткое руководство в качестве примера с сайта [GitHub](https://github.com/Azure/azure-event-hubs/tree/master/samples/DotNet/Microsoft.Azure.EventHubs/SampleSender), заменить строки `EventHubConnectionString` и `EventHubName` значениями для своего концентратора событий и выполнить этот пример. Или следуйте инструкциям из этого руководства, чтобы создать собственное решение.
+
+
 ### <a name="create-a-console-application"></a>Создание консольного приложение
 
-Запустите Visual Studio. В меню **Файл** выберите команду **Создать**, а затем — **Проект**. Создайте консольное приложение .NET Core.
+Запустите среду Visual Studio. В меню **Файл** выберите команду **Создать**, а затем — **Проект**. Создайте консольное приложение .NET Core.
 
 ![Новый проект](./media/event-hubs-dotnet-standard-getstarted-send/netcoresnd.png)
 
@@ -203,7 +206,7 @@ ms.locfileid: "73846671"
 
 ### <a name="create-a-console-application"></a>Создание консольного приложение
 
-Запустите Visual Studio. В меню **Файл** выберите команду **Создать**, а затем — **Проект**. Создайте консольное приложение .NET Core.
+Запустите среду Visual Studio. В меню **Файл** выберите команду **Создать**, а затем — **Проект**. Создайте консольное приложение .NET Core.
 
 ![Новый проект](./media/event-hubs-dotnet-standard-getstarted-receive-eph/netcorercv.png)
 

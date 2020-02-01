@@ -5,6 +5,7 @@ services: active-directory
 author: msaburnley
 manager: daveba
 ms.service: active-directory
+ms.subservice: fundamentals
 ms.workload: identity
 ms.topic: conceptual
 ms.date: 04/17/2018
@@ -12,12 +13,12 @@ ms.author: ajburnle
 ms.reviewer: bpham
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0a2397662112bda6c6789b25691848344a4e611b
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 95f1877ae630919ba7da5a851b5f8291ade2d165
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68561812"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76897581"
 ---
 # <a name="add-your-organizations-privacy-info-using-azure-active-directory"></a>Добавление сведений о конфиденциальности организации в Azure Active Directory
 В этой статье объясняется, как администратор клиента может добавить сведения о конфиденциальности в клиент организации Azure Active Directory (Azure AD) на портале Azure.
@@ -54,6 +55,6 @@ ms.locfileid: "68561812"
 
 4.  Щелкните **Сохранить**.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - [Azure Active Directory B2B collaboration invitation redemption](https://aka.ms/b2bredemption) (Активация приглашения службы совместной работы Azure Active Directory B2B)
 - [Добавление или изменение данных профиля пользователя в Azure Active Directory](active-directory-users-profile-azure-portal.md)

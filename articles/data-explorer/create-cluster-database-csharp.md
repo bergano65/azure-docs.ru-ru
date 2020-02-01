@@ -7,12 +7,12 @@ ms.reviewer: orspodek
 ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 06/03/2019
-ms.openlocfilehash: 7dc032d52a8cb3c5c54cf57c7ae7bf697796b5cc
-ms.sourcegitcommit: f9601bbccddfccddb6f577d6febf7b2b12988911
+ms.openlocfilehash: 2d800dc401b0d85b26a71817a1a70d66539203ae
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2020
-ms.locfileid: "75910604"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76902120"
 ---
 # <a name="create-an-azure-data-explorer-cluster-and-database-by-using-c"></a>Создание кластера и базы данных Azure Data Explorer с помощью C#
 
@@ -75,7 +75,7 @@ Azure Data Explorer — это быстрая и полностью управ�
    | clusterName | *mykustocluster* | Необходимое имя кластера.|
    | skuName | *Standard_D13_v2* | Номер SKU, который будет использоваться для кластера. |
    | Уровень | *Standard Edition* | Уровень SKU. |
-   | Емкость | *number* | Число экземпляров кластера. |
+   | ресурсов | *number* | Число экземпляров кластера. |
    | имя_группы_ресурсов | *testrg* | Имя группы ресурсов, в которой будет создан кластер. |
 
     > [!NOTE]
@@ -97,10 +97,13 @@ Azure Data Explorer — это быстрая и полностью управ�
     var hotCachePeriod = new TimeSpan(3650, 0, 0, 0);
     var softDeletePeriod = new TimeSpan(3650, 0, 0, 0);
     var databaseName = "mykustodatabase";
-    var database = new Database(location: location, softDeletePeriod: softDeletePeriod, hotCachePeriod: hotCachePeriod);
+    var database = new ReadWriteDatabase(location: location, softDeletePeriod: softDeletePeriod, hotCachePeriod: hotCachePeriod);
 
     await kustoManagementClient.Databases.CreateOrUpdateAsync(resourceGroupName, clusterName, databaseName, database);
     ```
+
+        [!NOTE]
+        If you are using C# version 2.0.0 or below, use Database instead of ReadWriteDatabase.
 
    |**Параметр** | **Рекомендуемое значение** | **Описание поля**|
    |---|---|---|
@@ -113,7 +116,7 @@ Azure Data Explorer — это быстрая и полностью управ�
 2. Выполните следующую команду, чтобы просмотреть созданную базу данных:
 
     ```csharp
-    kustoManagementClient.Databases.Get(resourceGroupName, clusterName, databaseName);
+    kustoManagementClient.Databases.Get(resourceGroupName, clusterName, databaseName) as ReadWriteDatabase;
     ```
 
 Теперь у вас есть кластер и база данных.

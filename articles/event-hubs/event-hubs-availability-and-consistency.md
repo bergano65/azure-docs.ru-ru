@@ -4,7 +4,6 @@ description: Узнайте, как обеспечить максимальну�
 services: event-hubs
 documentationcenter: na
 author: ShubhaVijayasarathy
-manager: timlt
 editor: ''
 ms.assetid: 8f3637a1-bbd7-481e-be49-b3adf9510ba1
 ms.service: event-hubs
@@ -12,15 +11,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.custom: seodec18
-ms.date: 12/06/2018
+ms.date: 01/29/2020
 ms.author: shvija
-ms.openlocfilehash: 425f4d9dbd6478af834bee6c88d0f13bdaa45b16
-ms.sourcegitcommit: a52d48238d00161be5d1ed5d04132db4de43e076
+ms.openlocfilehash: 808e813ad90626acec893a021634566f091c895f
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67273687"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76904479"
 ---
 # <a name="availability-and-consistency-in-event-hubs"></a>Доступность и согласованность в Центрах событий
 
@@ -42,23 +40,60 @@ ms.locfileid: "67273687"
 
 Для вариантов использования, требующих максимального времени работы, эта модель является предпочтительной.
 
-## <a name="consistency"></a>Целостность
+## <a name="consistency"></a>Согласованность
 В некоторых сценариях важным может быть упорядочение событий. Например, вам может потребоваться, чтобы серверная система обрабатывала команду обновления перед командой удаления. В данном случае можно задать ключ секции для события или использовать объект `PartitionSender`, чтобы отправлять события только в определенную секцию. Такое действие гарантирует, что при считывании этих события из секции они будут считываться по порядку.
 
 Применяя такую конфигурацию, учитывайте, что в случае недоступности определенной секции, в которую выполняется отправка, вы получите сообщение об ошибке. Для сравнения: если не привязывать отправку к одной секции, то служба Центров событий отправляет событие в следующую доступную секцию.
 
 Одно из возможных решений для обеспечения упорядочения с максимальным увеличением времени бесперебойной работы — объединение событий в рамках приложения обработки событий. Самый простой способ это сделать — пометить событие пользовательским свойством SequenceNumber (Порядковый номер). Пример кода приведен ниже.
 
+#### <a name="azuremessagingeventhubs-500-or-latertablatest"></a>[Azure. Messaging. EventHubs (5.0.0 или более поздней версии)](#tab/latest)
+
 ```csharp
-// Get the latest sequence number from your application
+// create a producer client that you can use to send events to an event hub
+await using (var producerClient = new EventHubProducerClient(connectionString, eventHubName))
+{
+    // get the latest sequence number from your application
+    var sequenceNumber = GetNextSequenceNumber();
+
+    // create a batch of events 
+    using EventDataBatch eventBatch = await producerClient.CreateBatchAsync();
+
+    // create a new EventData object by encoding a string as a byte array
+    var data = new EventData(Encoding.UTF8.GetBytes("This is my message..."));
+
+    // set a custom sequence number property
+    data.Properties.Add("SequenceNumber", sequenceNumber);
+
+    // add events to the batch. An event is a represented by a collection of bytes and metadata. 
+    eventBatch.TryAdd(data);
+
+    // use the producer client to send the batch of events to the event hub
+    await producerClient.SendAsync(eventBatch);
+}
+```
+
+#### <a name="microsoftazureeventhubs-410-or-earliertabold"></a>[Microsoft. Azure. EventHubs (4.1.0 или более ранняя версия)](#tab/old)
+```csharp
+// Create an Event Hubs client
+var client = new EventHubClient(connectionString, eventHubName);
+
+//Create a producer to produce events
+EventHubProducer producer = client.CreateProducer();
+
+// Get the latest sequence number from your application 
 var sequenceNumber = GetNextSequenceNumber();
+
 // Create a new EventData object by encoding a string as a byte array
 var data = new EventData(Encoding.UTF8.GetBytes("This is my message..."));
+
 // Set a custom sequence number property
 data.Properties.Add("SequenceNumber", sequenceNumber);
+
 // Send single message async
-await eventHubClient.SendAsync(data);
+await producer.SendAsync(data);
 ```
+---
 
 В этом примере событие отправляется в одну из доступных секций в концентраторе событий, и ему задается соответствующий порядковый номер из приложения. Для этого решения требуется, чтобы обрабатывающее приложение сохраняло состояние, но отправителям предоставлялась конечная точка, которая скорее всего будет доступна.
 

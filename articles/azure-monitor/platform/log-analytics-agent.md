@@ -6,13 +6,13 @@ ms.subservice: logs
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
-ms.date: 12/24/2019
-ms.openlocfilehash: 8e563ae095cf39cdce3e671d4099d2bf1592100a
-ms.sourcegitcommit: 38b11501526a7997cfe1c7980d57e772b1f3169b
+ms.date: 01/29/2020
+ms.openlocfilehash: d43b580f60f5ae8d2782cf9762b02aa1360e5a40
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76513632"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76901204"
 ---
 # <a name="collect-log-data-with-the-log-analytics-agent"></a>Получение данных журнала с помощью агента Log Analytics
 
@@ -81,7 +81,7 @@ ms.locfileid: "76513632"
 >OpenSSL 1.1.0 поддерживается только на платформах x86_x64 (64-разрядная версия), а OpenSSL версии более ранней, чем 1.x, не поддерживается ни на каких платформах.
 >
 
-### <a name="agent-prerequisites"></a>Предварительные требования к агенту
+### <a name="agent-prerequisites"></a>Предварительные требования для агента
 
 В следующей таблице перечислены пакеты, необходимые для поддерживаемых дистрибутивов Linux, на которых будет установлен агент.
 
@@ -106,6 +106,7 @@ ms.locfileid: "76513632"
 
 |Ресурс агента|порты; |Направление |Обход проверки HTTPS|
 |------|---------|--------|--------|   
+|OMS *. Azure. com |Порт 443 |Исход. |Да |
 |*.ods.opinsights.azure.com |Порт 443 |Исход.|Да |  
 |*.oms.opinsights.azure.com |Порт 443 |Исход.|Да |  
 |*.blob.core.windows.net |Порт 443 |Исход.|Да |  

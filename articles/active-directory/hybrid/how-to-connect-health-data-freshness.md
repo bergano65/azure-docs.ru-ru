@@ -7,6 +7,7 @@ author: zhiweiwangmsft
 manager: SamuelD
 editor: ''
 ms.service: active-directory
+ms.subservice: hybrid
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -14,12 +15,12 @@ ms.topic: conceptual
 ms.date: 02/26/2018
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 41c1c102e88e1712d561874aef87a6f22ed250a9
-ms.sourcegitcommit: 77bfc067c8cdc856f0ee4bfde9f84437c73a6141
+ms.openlocfilehash: a94bd07cf5020981cdf028ec0eccfa8fa531d240
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72430216"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76897182"
 ---
 # <a name="health-service-data-is-not-up-to-date-alert"></a>Оповещение "Данные службы работоспособности неактуальны"
 
@@ -40,7 +41,7 @@ ms.locfileid: "72430216"
  
 Следующая таблица сопоставляет типы служб с соответствующими обязательными типами данных:
 
-| Service type (Тип службы) | Агент (имя службы Windows) | Назначение | Тип данных, созданный  |
+| Тип службы | Агент (имя службы Windows) | Цель | Тип данных, созданный  |
 | --- | --- | --- | --- |  
 | Azure AD Connect (синхронизация) | Служба Sync Insights Azure AD Connect Health | Получение сведений о подключении AAD (соединители, правила синхронизации и т. д.) | -Аадсинксервице-Синчронизатионрулес <br />  -Аадсинксервице — соединители <br /> -Аадсинксервице-Глобалконфигуратионс  <br />  -Аадсинксервице-Рунпрофилересултс <br /> -Аадсинксервице-Сервицеконфигуратионс <br /> -Аадсинксервице-Сервицестатус   |
 |  | Служба Sync Monitoring Azure AD Connect Health | Получение счетчиков производительности, относящихся к AAD Connect, трассировки ETW, файлы | Счетчик производительности |
@@ -66,7 +67,7 @@ ms.locfileid: "72430216"
 * Если вы используете прокси-сервер HTTP, следуйте этим [этапам конфигурации](how-to-connect-health-agent-install.md#configure-azure-ad-connect-health-agents-to-use-http-proxy). 
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Если какой либо из описанных выше шагов обнаружил проблему, исправьте ее и дождитесь, пока не будет устранено предупреждение. Фоновый процесс предупреждения выполняется каждые 2 часа, поэтому разрешение предупреждения займет до 2 часов. 
 
 * [Azure AD Connect Health политики хранения данных](reference-connect-health-user-privacy.md#data-retention-policy)

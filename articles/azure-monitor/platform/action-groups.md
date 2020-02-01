@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.date: 8/19/2019
 ms.author: dukek
 ms.subservice: alerts
-ms.openlocfilehash: a954898a334ead15d8ffdf6dab6e6a309bd57089
-ms.sourcegitcommit: 51ed913864f11e78a4a98599b55bbb036550d8a5
+ms.openlocfilehash: cc01145423d2961e32bf17313a2873633399d21a
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2020
-ms.locfileid: "75659837"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76901468"
 ---
 # <a name="create-and-manage-action-groups-in-the-azure-portal"></a>Создание групп действий и управление ими на портале Azure
 Группа действий — это коллекция параметров уведомлений, которые определены владельцем подписки Azure. Оповещения служб Azure Monitor и "Работоспособность служб" используют группы действий для уведомления пользователей о том, что оповещение активировано. Для разных оповещений может использоваться как одна группа действий, так разные. Это зависит от требований пользователя. В подписке можно настроить до 2000 групп действий.
@@ -72,7 +72,7 @@ ms.locfileid: "75659837"
 > [!NOTE]
 > См. раздел [ограничения службы подписки для наблюдения](https://docs.microsoft.com/azure/azure-resource-manager/management/azure-subscription-service-limits#azure-monitor-limits) за числовыми ограничениями для каждого из указанных ниже элементов.  
 
-### <a name="automation-runbook"></a>Runbook автоматизации
+### <a name="automation-runbook"></a>Модуль Runbook службы автоматизации
 Ограничения на полезные данные Runbook см. в разделе [ограничения службы подписки Azure](../../azure-resource-manager/management/azure-subscription-service-limits.md) .
 
 У вас может быть ограниченное количество действий Runbook в группе действий. 
@@ -88,13 +88,13 @@ ms.locfileid: "75659837"
 
 У вас может быть ограниченное количество действий электронной почты в группе действий. См. статью [сведения о ограничении скорости](./../../azure-monitor/platform/alerts-rate-limiting.md) .
 
-### <a name="email-azure-resource-manager-role"></a>Отправить роль Azure Resource Manager по эл. почте
+### <a name="email-azure-resource-manager-role"></a>Роль Azure Resource Manager электронной почты
 Отправьте сообщение электронной почты членам роли подписки.
 
 У вас может быть ограниченное количество действий электронной почты в группе действий. См. статью [сведения о ограничении скорости](./../../azure-monitor/platform/alerts-rate-limiting.md) .
 
 ### <a name="function"></a>Компонент
-Функциональные ключи для приложений-функций, настроенных как действия, считываются через API функций, который в настоящее время требует приложений-функций версии 2, чтобы настроить параметр приложения "Азуревебжобссекретсторажетипе" на "Files". Дополнительные сведения см. [в разделе изменения в управлении ключами в функциях версии 2]( https://aka.ms/funcsecrets).
+Вызывает существующую конечную точку триггера HTTP в [функциях Azure](../../azure-functions/functions-create-first-azure-function.md#create-a-function-app).
 
 У вас может быть ограниченное число действий функций в группе действий.
 

@@ -9,12 +9,12 @@ manager: ''
 ms.topic: conceptual
 ms.date: 08/22/2019
 ms.author: spelluru
-ms.openlocfilehash: cbd7de7d526e1954aaad60f7d71e5cdf202f6a29
-ms.sourcegitcommit: 007ee4ac1c64810632754d9db2277663a138f9c4
+ms.openlocfilehash: 0c5d3eca4a01488f521f9a85fa129eb0ac72c363
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "69992839"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76904554"
 ---
 # <a name="authenticate-a-managed-identity-with-azure-active-directory-to-access-event-hubs-resources"></a>Проверка подлинности управляемого удостоверения с Azure Active Directory для доступа к ресурсам концентраторов событий
 Концентраторы событий Azure поддерживают проверку подлинности Azure Active Directory (Azure AD) с помощью [управляемых удостоверений для ресурсов Azure](../active-directory/managed-identities-azure-resources/overview.md). Управляемые удостоверения для ресурсов Azure могут авторизовать доступ к ресурсам концентраторов событий с помощью учетных данных Azure AD из приложений, работающих на виртуальных машинах Azure, приложений-функций, масштабируемых наборов виртуальных машин и других служб. Используя управляемые удостоверения для ресурсов Azure вместе с проверкой подлинности Azure AD, можно избежать хранения учетных данных в приложениях, выполняемых в облаке.
@@ -24,9 +24,9 @@ ms.locfileid: "69992839"
 ## <a name="enable-managed-identities-on-a-vm"></a>Включение управляемых удостоверений на виртуальной машине
 Прежде чем вы сможете использовать управляемые удостоверения для ресурсов Azure для авторизации ресурсов концентраторов событий из виртуальной машины, сначала необходимо включить управляемые удостоверения для ресурсов Azure на виртуальной машине. Сведения о включении управляемых удостоверений для ресурсов Azure см. в одной из следующих статей.
 
-- [портал Azure](../active-directory/managed-service-identity/qs-configure-portal-windows-vm.md)
+- [Портал Azure](../active-directory/managed-service-identity/qs-configure-portal-windows-vm.md)
 - [Azure PowerShell](../active-directory/managed-identities-azure-resources/qs-configure-powershell-windows-vm.md)
-- [Интерфейс командной строки Azure](../active-directory/managed-identities-azure-resources/qs-configure-cli-windows-vm.md)
+- [Azure CLI](../active-directory/managed-identities-azure-resources/qs-configure-cli-windows-vm.md)
 - [Шаблон Azure Resource Manager](../active-directory/managed-identities-azure-resources/qs-configure-template-windows-vm.md)
 - [Клиентские библиотеки Azure Resource Manager](../active-directory/managed-identities-azure-resources/qs-configure-sdk-windows-vm.md)
 
@@ -72,6 +72,62 @@ ms.locfileid: "69992839"
 После назначения роли веб-приложение будет иметь доступ к ресурсам концентраторов событий в определенной области. 
 
 ### <a name="test-the-web-application"></a>Тестирование веб-приложения
+1. Создайте пространство имен концентраторов событий и концентратор событий. 
+2. Разверните веб-приложение в Azure. Ссылки на веб-приложение на сайте GitHub см. в следующем разделе с вкладками. 
+3. Убедитесь, что Сендрецеиве. aspx задан в качестве документа по умолчанию для веб-приложения. 
+3. Включите **удостоверение** для веб-приложения. 
+4. Назначьте это удостоверение роли **владельца данных концентраторов событий** на уровне пространства имен или концентратора событий. 
+5. Запустите веб-приложение, введите имя пространства имен и имя концентратора событий, сообщение и нажмите кнопку **Отправить**. Чтобы получить событие, выберите **получить**. 
+
+#### <a name="azuremessagingeventhubs-latesttablatest"></a>[Azure. Messaging. EventHubs (последняя версия)](#tab/latest)
+Теперь вы можете запустить веб-приложение и указать в браузере страницу с примером страницы ASPX. Вы можете найти пример веб-приложения, которое отправляет и получает данные из ресурсов концентраторов событий в [репозитории GitHub](https://github.com/Azure/azure-event-hubs/tree/master/samples/DotNet/Azure.Messaging.EventHubs/ManagedIdentityWebApp).
+
+Установите последний пакет из [NuGet](https://www.nuget.org/packages/Azure.Messaging.EventHubs/)и приступите к отправке событий в концентраторы событий с помощью **евенсубпродуцерклиент** и получения событий с помощью **евенсубконсумерклиент**.  
+
+```csharp
+protected async void btnSend_Click(object sender, EventArgs e)
+{
+    await using (EventHubProducerClient producerClient = new EventHubProducerClient(txtNamespace.Text, txtEventHub.Text, new DefaultAzureCredential()))
+    {
+        // create a batch
+        using (EventDataBatch eventBatch = await producerClient.CreateBatchAsync())
+        {
+
+            // add events to the batch. only one in this case. 
+            eventBatch.TryAdd(new EventData(Encoding.UTF8.GetBytes(txtData.Text)));
+
+            // send the batch to the event hub
+            await producerClient.SendAsync(eventBatch);
+        }
+
+        txtOutput.Text = $"{DateTime.Now} - SENT{Environment.NewLine}{txtOutput.Text}";
+    }
+}
+protected async void btnReceive_Click(object sender, EventArgs e)
+{
+    await using (var consumerClient = new EventHubConsumerClient(EventHubConsumerClient.DefaultConsumerGroupName, $"{txtNamespace.Text}.servicebus.windows.net", txtEventHub.Text, new DefaultAzureCredential()))
+    {
+        int eventsRead = 0;
+        try
+        {
+            using CancellationTokenSource cancellationSource = new CancellationTokenSource();
+            cancellationSource.CancelAfter(TimeSpan.FromSeconds(5));
+
+            await foreach (PartitionEvent partitionEvent in consumerClient.ReadEventsAsync(cancellationSource.Token))
+            {
+                txtOutput.Text = $"Event Read: { Encoding.UTF8.GetString(partitionEvent.Data.Body.ToArray()) }{ Environment.NewLine}" + txtOutput.Text;
+                eventsRead++;
+            }
+        }
+        catch (TaskCanceledException ex)
+        {
+            txtOutput.Text = $"Number of events read: {eventsRead}{ Environment.NewLine}" + txtOutput.Text;
+        }
+    }
+}
+```
+
+#### <a name="microsoftazureeventhubs-legacytabold"></a>[Microsoft. Azure. EventHubs (устаревшая)](#tab/old)
 Теперь вы можете запустить веб-приложение и указать в браузере страницу с примером страницы ASPX. Вы можете найти пример веб-приложения, которое отправляет и получает данные из ресурсов концентраторов событий в [репозитории GitHub](https://github.com/Azure/azure-event-hubs/tree/master/samples/DotNet/Microsoft.Azure.EventHubs/Rbac/ManagedIdentityWebApp).
 
 Установите последний пакет из [NuGet](https://www.nuget.org/packages/Microsoft.Azure.EventHubs/)и начните отправлять и получать данные из концентраторов событий с помощью EventHubClient, как показано в следующем коде: 
@@ -79,10 +135,10 @@ ms.locfileid: "69992839"
 ```csharp
 var ehClient = EventHubClient.CreateWithManagedIdentity(new Uri($"sb://{EventHubNamespace}/"), EventHubName);
 ```
+---
 
-## <a name="next-steps"></a>Следующие шаги
-- Скачайте [Пример](https://github.com/Azure/azure-event-hubs/tree/master/samples/DotNet/Microsoft.Azure.EventHubs/Rbac/ManagedIdentityWebApp) с сайта GitHub.
-- Сведения об управляемых удостоверениях для ресурсов Azure см. в следующей статье: [Что такое управляемые удостоверения для ресурсов Azure?](../active-directory/managed-identities-azure-resources/overview.md)
+## <a name="next-steps"></a>Дальнейшие действия
+- Сведения об управляемых удостоверениях для ресурсов Azure см. в следующей статье: [что такое управляемые удостоверения для ресурсов Azure?](../active-directory/managed-identities-azure-resources/overview.md)
 - См. следующие статьи:
     - [Проверка подлинности запросов к концентраторам событий Azure из приложения с помощью Azure Active Directory](authenticate-application.md)
     - [Проверка подлинности запросов к концентраторам событий Azure с помощью подписанных URL](authenticate-shared-access-signature.md)

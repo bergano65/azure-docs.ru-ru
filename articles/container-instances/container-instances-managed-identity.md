@@ -2,13 +2,13 @@
 title: Включение управляемого удостоверения в группе контейнеров
 description: Узнайте, как включить управляемое удостоверение в службе "экземпляры контейнеров Azure", которое может проходить проверку подлинности в других службах Azure
 ms.topic: article
-ms.date: 10/22/2018
-ms.openlocfilehash: ccf754fac0d884c8a2af9db01578f97b73d54ac4
-ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
+ms.date: 01/29/2020
+ms.openlocfilehash: 003055d5021dd8ad7c3bab6d2900298ffd13b222
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74776529"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76901936"
 ---
 # <a name="how-to-use-managed-identities-with-azure-container-instances"></a>Использование управляемых удостоверений для службы "Экземпляры контейнеров Azure"
 
@@ -18,8 +18,8 @@ ms.locfileid: "74776529"
 
 > [!div class="checklist"]
 > * применение к группе контейнеров удостоверения, назначаемого пользователем или системой;
-> * предоставление удостоверению доступа к Azure Key Vault;
-> * применение управляемого удостоверения для доступа к Key Vault из запущенного контейнера.
+> * Предоставление удостоверениям доступа к хранилищу ключей Azure
+> * Использование управляемого удостоверения для доступа к хранилищу ключей из работающего контейнера
 
 Вы можете адаптировать эти примеры, чтобы применить собственные удостоверения в службе "Экземпляры контейнеров Azure" для доступа к другим службам Azure. Это интерактивные примеры. Но на практике для доступа к службам Azure в образах контейнеров будет выполняться код.
 
@@ -28,7 +28,7 @@ ms.locfileid: "74776529"
 
 ## <a name="why-use-a-managed-identity"></a>Для чего нужны управляемые удостоверения?
 
-Управляемое удостоверение в запущенном контейнере можно использовать для проверки подлинности в любой [службе, которая поддерживает проверку подлинности Azure AD](../active-directory/managed-identities-azure-resources/services-support-managed-identities.md#azure-services-that-support-azure-ad-authentication), без необходимости управлять учетными данными в коде. Для служб, которые не поддерживают проверку подлинности AD, можно сохранить секреты в Azure Key Vault и с помощью управляемого удостоверения обращаться к Key Vault для извлечения этих учетных данных. Дополнительные сведения об использовании управляемых удостоверений см. в статье [Что такое управляемые удостоверения для ресурсов Azure?](../active-directory/managed-identities-azure-resources/overview.md)
+Управляемое удостоверение в запущенном контейнере можно использовать для проверки подлинности в любой [службе, которая поддерживает проверку подлинности Azure AD](../active-directory/managed-identities-azure-resources/services-support-managed-identities.md#azure-services-that-support-azure-ad-authentication), без необходимости управлять учетными данными в коде. Для служб, которые не поддерживают проверку подлинности Active Directory, вы можете хранить секреты в хранилище ключей Azure и использовать управляемое удостоверение для доступа к хранилищу ключей для получения учетных данных. Дополнительные сведения об использовании управляемых удостоверений см. в статье [Что такое управляемые удостоверения для ресурсов Azure?](../active-directory/managed-identities-azure-resources/overview.md)
 
 > [!IMPORTANT]
 > Эта функция в настоящее время находится на стадии предварительной версии. Предварительные версии предоставляются при условии, что вы принимаете [дополнительные условия использования](https://azure.microsoft.com/support/legal/preview-supplemental-terms/). Некоторые аспекты этой функции могут быть изменены до выхода общедоступной версии. В настоящее время управляемые удостоверения в службе "экземпляры контейнеров Azure" поддерживаются только в контейнерах Linux, но не в контейнерах Windows.
@@ -36,7 +36,7 @@ ms.locfileid: "74776529"
 
 ### <a name="enable-a-managed-identity"></a>Включение управляемого удостоверения
 
- Служба "Экземпляры контейнеров Azure" поддерживает управляемые удостоверения для ресурсов Azure, начиная с REST API версии 2018-10-01 и соответствующих версий пакетов SDK и средств. При создании группы контейнеров вы можете включить одно или несколько управляемых удостоверений, задав свойство [ContainerGroupIdentity](/rest/api/container-instances/containergroups/createorupdate#containergroupidentity). Также вы можете включить или обновить управляемые удостоверения уже после запуска группы контейнеров, но оба эти действия приводят к перезапуску группы контейнеров. Настроить удостоверения для новой или существующей группы контейнеров можно с помощью Azure CLI, шаблона Resource Manager или файла YAML. 
+ Служба "Экземпляры контейнеров Azure" поддерживает управляемые удостоверения для ресурсов Azure, начиная с REST API версии 2018-10-01 и соответствующих версий пакетов SDK и средств. При создании группы контейнеров вы можете включить одно или несколько управляемых удостоверений, задав свойство [ContainerGroupIdentity](/rest/api/container-instances/containergroups/createorupdate#containergroupidentity). Вы также можете включить или обновить управляемые удостоверения после того, как группа контейнеров выполняет любое действие, приводит к перезапуску группы контейнеров. Настроить удостоверения для новой или существующей группы контейнеров можно с помощью Azure CLI, шаблона Resource Manager или файла YAML. 
 
 Служба "Экземпляры контейнеров Azure" поддерживает оба типа управляемых удостоверений Azure: назначаемые пользователем и назначаемые системой. Для группы контейнеров вы можете указать назначаемое системой удостоверение, одно или несколько назначаемых пользователей удостоверений или даже удостоверения обоих типов. 
 
@@ -46,7 +46,7 @@ ms.locfileid: "74776529"
 
 ### <a name="use-a-managed-identity"></a>Использование управляемого удостоверения
 
-Чтобы использовать управляемое удостоверение, ему необходимо предоставить доступ к одному или нескольким ресурсам служб Azure (веб-приложение, Key Vault, учетная запись хранения и т. п.) в подписке. Для доступа к ресурсам Azure из запущенного контейнера следует из кода получить *маркер доступа* от конечной точки Azure AD. Затем код отправляет маркер доступа в вызов службы, которая поддерживает проверку подлинности Azure AD. 
+Чтобы использовать управляемое удостоверение, удостоверению сначала необходимо предоставить доступ к одному или нескольким ресурсам службы Azure (например, к веб-приложению, хранилищу ключей или учетной записи хранения) в подписке. Для доступа к ресурсам Azure из запущенного контейнера следует из кода получить *маркер доступа* от конечной точки Azure AD. Затем код отправляет маркер доступа в вызов службы, которая поддерживает проверку подлинности Azure AD. 
 
 Использование управляемого удостоверения в запущенном контейнере по сути ничем не отличается от использования удостоверений на виртуальной машине Azure. Ознакомьтесь с документацией по виртуальным машинам, где описано использование [маркера](../active-directory/managed-identities-azure-resources/how-to-use-vm-token.md), [Azure PowerShell или Azure CLI](../active-directory/managed-identities-azure-resources/how-to-use-vm-sign-in.md) либо [пакетов SDK для Azure](../active-directory/managed-identities-azure-resources/how-to-use-vm-sdk.md).
 
@@ -54,9 +54,9 @@ ms.locfileid: "74776529"
 
 Если вы решили установить и использовать CLI локально, для работы с этой статьей вам понадобится Azure CLI 2.0.49 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](/cli/azure/install-azure-cli).
 
-## <a name="create-an-azure-key-vault"></a>создать Azure Key Vault;
+## <a name="create-an-azure-key-vault"></a>Создание хранилища ключей Azure
 
-В примерах в этой статье управляемое удостоверение в службе "Экземпляры контейнеров Azure" используется для доступа к секрету, сохраненному в Azure Key Vault. 
+В примерах, приведенных в этой статье, для доступа к секрету хранилища ключей Azure используется управляемое удостоверение в службе "экземпляры контейнеров Azure". 
 
 Для начала создайте группу ресурсов с именем *myResourceGroup* в регионе *eastus* с помощью следующей команды [az group create](/cli/azure/group?view=azure-cli-latest#az-group-create):
 
@@ -64,28 +64,36 @@ ms.locfileid: "74776529"
 az group create --name myResourceGroup --location eastus
 ```
 
-Чтобы создать Key Vault, используйте команду [az keyvault create](/cli/azure/keyvault?view=azure-cli-latest#az-keyvault-create). Обязательно укажите уникальное имя Key Vault. 
+Чтобы создать хранилище ключей, используйте команду [AZ keyvault Create](/cli/azure/keyvault?view=azure-cli-latest#az-keyvault-create) . Не забудьте указать уникальное имя хранилища ключей. 
 
 ```azurecli-interactive
-az keyvault create --name mykeyvault --resource-group myResourceGroup --location eastus
+az keyvault create \
+  --name mykeyvault \
+  --resource-group myResourceGroup \ 
+  --location eastus
 ```
 
-Сохраните пример секрета в Key Vault с помощью команды [az keyvault secret set](/cli/azure/keyvault/secret?view=azure-cli-latest#az-keyvault-secret-set):
+Сохраните пример секрета в хранилище ключей с помощью команды [AZ keyvault Secret Set](/cli/azure/keyvault/secret?view=azure-cli-latest#az-keyvault-secret-set) :
 
 ```azurecli-interactive
-az keyvault secret set --name SampleSecret --value "Hello Container Instances!" --description ACIsecret  --vault-name mykeyvault
+az keyvault secret set \
+  --name SampleSecret \
+  --value "Hello Container Instances" \
+  --description ACIsecret --vault-name mykeyvault
 ```
 
-Переходите к следующим примерам, в которых описан доступ к Key Vault из службы "Экземпляры контейнеров Azure" с использованием назначаемого пользователем или системой управляемого удостоверения.
+Перейдите к следующим примерам, чтобы получить доступ к хранилищу ключей с помощью назначенного пользователем или управляемого системой удостоверения в службе "экземпляры контейнеров Azure".
 
-## <a name="example-1-use-a-user-assigned-identity-to-access-azure-key-vault"></a>Пример 1. Использование назначаемого пользователем удостоверения для доступа к Azure Key Vault
+## <a name="example-1-use-a-user-assigned-identity-to-access-azure-key-vault"></a>Пример 1. Использование назначенного пользователем удостоверения для доступа к хранилищу ключей Azure
 
 ### <a name="create-an-identity"></a>Создание удостоверения
 
-Первым делом создайте в подписке удостоверение, используя команду [az identity create](/cli/azure/identity?view=azure-cli-latest#az-identity-create). Вы можете использовать ту же группу ресурсов, что и для создания Key Vault, или любую другую.
+Первым делом создайте в подписке удостоверение, используя команду [az identity create](/cli/azure/identity?view=azure-cli-latest#az-identity-create). Вы можете использовать ту же группу ресурсов, которая использовалась для создания хранилища ключей, или использовать другое.
 
 ```azurecli-interactive
-az identity create --resource-group myResourceGroup --name myACIId
+az identity create \
+  --resource-group myResourceGroup \
+  --name myACIId
 ```
 
 Чтобы применить это удостоверение на следующих шагах, выполните команду [az identity show](/cli/azure/identity?view=azure-cli-latest#az-identity-show) для сохранения идентификатора субъекта-службы и идентификатора ресурса в переменных.
@@ -100,22 +108,31 @@ resourceID=$(az identity show --resource-group myResourceGroup --name myACIId --
 
 ### <a name="enable-a-user-assigned-identity-on-a-container-group"></a>Применение к группе контейнеров удостоверения, назначаемого пользователем
 
-Выполните следующую команду [az container create](/cli/azure/container?view=azure-cli-latest#az-container-create), чтобы создать экземпляр контейнера на основе Ubuntu Server. Этот пример создает группу с одним контейнером, которая позволяет организовать интерактивный доступ к другим службам Azure. Параметр `--assign-identity` передает группе назначаемое пользователем управляемое удостоверение. Длительно выполняющаяся команда поддерживает выполнение контейнера. В этом примере используется та же группа ресурсов, что и для создания Key Vault, но вы можете указать любую другую.
+Выполните следующую команду [AZ Container Create](/cli/azure/container?view=azure-cli-latest#az-container-create) , чтобы создать экземпляр контейнера на основе образа `azure-cli` Майкрософт. В этом примере представлена группа из одного контейнера, которую можно использовать в интерактивном режиме для запуска Azure CLI для доступа к другим службам Azure. В этом разделе используется только базовая операционная система Ubuntu. 
+
+Параметр `--assign-identity` передает группе назначаемое пользователем управляемое удостоверение. Длительно выполняющаяся команда поддерживает выполнение контейнера. В этом примере используется та же группа ресурсов, которая использовалась для создания хранилища ключей, но можно указать другой.
 
 ```azurecli-interactive
-az container create --resource-group myResourceGroup --name mycontainer --image microsoft/azure-cli --assign-identity $resourceID --command-line "tail -f /dev/null"
+az container create \
+  --resource-group myResourceGroup \
+  --name mycontainer \
+  --image mcr.microsoft.com/azure-cli \
+  --assign-identity $resourceID \
+  --command-line "tail -f /dev/null"
 ```
 
 Через несколько секунд вы должны получить ответ из интерфейса командной строки Azure, указывающий, что развертывание завершено. Проверьте состояние с помощью команды [az container show](/cli/azure/container?view=azure-cli-latest#az-container-show).
 
 ```azurecli-interactive
-az container show --resource-group myResourceGroup --name mycontainer
+az container show \
+  --resource-group myResourceGroup \
+  --name mycontainer
 ```
 
 Раздел `identity` в выходных данных выглядит примерно так, как показано ниже, и подтверждает, что удостоверение настроено в группе контейнеров. Параметр `principalID` под `userAssignedIdentities` обозначает субъект-службу удостоверения, которое вы создали в Azure Active Directory:
 
 ```console
-...
+[...]
 "identity": {
     "principalId": "null",
     "tenantId": "xxxxxxxx-f292-4e60-9122-xxxxxxxxxxxx",
@@ -127,26 +144,33 @@ az container show --resource-group myResourceGroup --name mycontainer
       }
     }
   },
-...
+[...]
 ```
 
-### <a name="grant-user-assigned-identity-access-to-the-key-vault"></a>Предоставление назначаемому пользователем удостоверению доступа к Key Vault
+### <a name="grant-user-assigned-identity-access-to-the-key-vault"></a>Предоставление пользователю доступа к хранилищу ключей
 
-Выполните следующую команду [az keyvault set-policy](/cli/azure/keyvault?view=azure-cli-latest), чтобы задать политику доступа для Key Vault. Следующий пример предоставляет назначаемому пользователем удостоверению доступ для получения секретов из Key Vault:
+Выполните следующую команду [AZ keyvault Set-Policy](/cli/azure/keyvault?view=azure-cli-latest) , чтобы задать политику доступа для хранилища ключей. В следующем примере можно назначить пользователю удостоверение для получения секретов из хранилища ключей:
 
 ```azurecli-interactive
- az keyvault set-policy --name mykeyvault --resource-group myResourceGroup --object-id $spID --secret-permissions get
+ az keyvault set-policy \
+    --name mykeyvault \
+    --resource-group myResourceGroup \
+    --object-id $spID \
+    --secret-permissions get
 ```
 
-### <a name="use-user-assigned-identity-to-get-secret-from-key-vault"></a>Использование назначаемого пользователем удостоверения для получения секрета из Key Vault
+### <a name="use-user-assigned-identity-to-get-secret-from-key-vault"></a>Использовать назначенное пользователем удостоверение для получения секрета из хранилища ключей
 
-Теперь вы можете применить управляемое удостоверение для доступа к Key Vault из запущенного экземпляра контейнера. Для нашего примера прежде всего запустите оболочку bash в контейнере:
+Теперь вы можете использовать управляемое удостоверение в работающем экземпляре контейнера для доступа к хранилищу ключей. Сначала запустите оболочку Bash в контейнере:
 
 ```azurecli-interactive
-az container exec --resource-group myResourceGroup --name mycontainer --exec-command "/bin/bash"
+az container exec \
+  --resource-group myResourceGroup \
+  --name mycontainer \
+  --exec-command "/bin/bash"
 ```
 
-Выполните приведенные ниже команды в этой оболочке bash в контейнере. Чтобы получить маркер доступа, позволяющий использовать Azure Active Directory для проверки подлинности в Key Vault, выполните следующую команду:
+Выполните приведенные ниже команды в этой оболочке bash в контейнере. Чтобы получить маркер доступа для использования Azure Active Directory для проверки подлинности в хранилище ключей, выполните следующую команду:
 
 ```bash
 curl 'http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&resource=https%3A%2F%2Fvault.azure.net' -H Metadata:true -s
@@ -165,7 +189,7 @@ token=$(curl 'http://169.254.169.254/metadata/identity/oauth2/token?api-version=
 
 ```
 
-Теперь примените маркер доступа для проверки подлинности в Key Vault и получения секрета. Не забудьте подставить имя хранилища ключей в URL-адрес ( *https://mykeyvault.vault.azure.net/...* ):
+Теперь используйте маркер доступа для проверки подлинности в хранилище ключей и чтения секрета. Не забудьте подставить имя хранилища ключей в URL-адрес ( *https://mykeyvault.vault.azure.net/...* ):
 
 ```bash
 curl https://mykeyvault.vault.azure.net/secrets/SampleSecret/?api-version=2016-10-01 -H "Authorization: Bearer $token"
@@ -174,36 +198,49 @@ curl https://mykeyvault.vault.azure.net/secrets/SampleSecret/?api-version=2016-1
 Ответ с полученным значением секрета выглядит примерно так: Для получения секрета в коде необходимо выполнить синтаксический анализ этих выходных данных. Далее этот секрет применяется в последующих операциях для доступа к другому ресурсу Azure.
 
 ```bash
-{"value":"Hello Container Instances!","contentType":"ACIsecret","id":"https://mykeyvault.vault.azure.net/secrets/SampleSecret/xxxxxxxxxxxxxxxxxxxx","attributes":{"enabled":true,"created":1539965967,"updated":1539965967,"recoveryLevel":"Purgeable"},"tags":{"file-encoding":"utf-8"}}
+{"value":"Hello Container Instances","contentType":"ACIsecret","id":"https://mykeyvault.vault.azure.net/secrets/SampleSecret/xxxxxxxxxxxxxxxxxxxx","attributes":{"enabled":true,"created":1539965967,"updated":1539965967,"recoveryLevel":"Purgeable"},"tags":{"file-encoding":"utf-8"}}
 ```
 
-## <a name="example-2-use-a-system-assigned-identity-to-access-azure-key-vault"></a>Пример 2. Использование назначаемого пользователем удостоверения для доступа к Azure Key Vault
+## <a name="example-2-use-a-system-assigned-identity-to-access-azure-key-vault"></a>Пример 2. Использование назначенного системой удостоверения для доступа к хранилищу ключей Azure
 
 ### <a name="enable-a-system-assigned-identity-on-a-container-group"></a>Применение к группе контейнеров удостоверения, назначаемого системой
 
-Выполните следующую команду [az container create](/cli/azure/container?view=azure-cli-latest#az-container-create), чтобы создать экземпляр контейнера на основе Ubuntu Server. Этот пример создает группу с одним контейнером, которая позволяет организовать интерактивный доступ к другим службам Azure. Параметр `--assign-identity` без дополнительных значений включает для группы назначаемое системой управляемое удостоверение. Длительно выполняющаяся команда поддерживает выполнение контейнера. В этом примере используется та же группа ресурсов, что и для создания Key Vault, но вы можете указать любую другую.
+Выполните следующую команду [AZ Container Create](/cli/azure/container?view=azure-cli-latest#az-container-create) , чтобы создать экземпляр контейнера на основе образа `azure-cli` Майкрософт. В этом примере представлена группа из одного контейнера, которую можно использовать в интерактивном режиме для запуска Azure CLI для доступа к другим службам Azure. 
+
+Параметр `--assign-identity` без дополнительных значений включает для группы назначаемое системой управляемое удостоверение. Удостоверение ограничивается группой ресурсов группы контейнеров. Длительно выполняющаяся команда поддерживает выполнение контейнера. В этом примере используется та же группа ресурсов, которая использовалась для создания хранилища ключей, но можно указать другой.
 
 ```azurecli-interactive
-az container create --resource-group myResourceGroup --name mycontainer --image microsoft/azure-cli --assign-identity --command-line "tail -f /dev/null"
+# Get the resource ID of the resource group
+rgID=$(az group show --name myResourceGroup --query id --output tsv)
+
+# Create container group with system-managed identity
+az container create \
+  --resource-group myResourceGroup \
+  --name mycontainer \
+  --image mcr.microsoft.com/azure-cli \
+  --assign-identity --scope $rgID \
+  --command-line "tail -f /dev/null"
 ```
 
 Через несколько секунд вы должны получить ответ из интерфейса командной строки Azure, указывающий, что развертывание завершено. Проверьте состояние с помощью команды [az container show](/cli/azure/container?view=azure-cli-latest#az-container-show).
 
 ```azurecli-interactive
-az container show --resource-group myResourceGroup --name mycontainer
+az container show \
+  --resource-group myResourceGroup \
+  --name mycontainer
 ```
 
 Раздел `identity` в выходных данных выглядит примерно так, как показано ниже, и подтверждает создание назначаемого системой удостоверения в Azure Active Directory:
 
 ```console
-...
+[...]
 "identity": {
     "principalId": "xxxxxxxx-528d-7083-b74c-xxxxxxxxxxxx",
     "tenantId": "xxxxxxxx-f292-4e60-9122-xxxxxxxxxxxx",
     "type": "SystemAssigned",
     "userAssignedIdentities": null
 },
-...
+[...]
 ```
 
 Присвойте переменной значение `principalId` (идентификатор субъекта-службы), чтобы использовать его в последующих шагах.
@@ -212,56 +249,52 @@ az container show --resource-group myResourceGroup --name mycontainer
 spID=$(az container show --resource-group myResourceGroup --name mycontainer --query identity.principalId --out tsv)
 ```
 
-### <a name="grant-container-group-access-to-the-key-vault"></a>Предоставление группе контейнеров доступа к Key Vault
+### <a name="grant-container-group-access-to-the-key-vault"></a>Предоставление группе контейнеров доступа к хранилищу ключей
 
-Выполните следующую команду [az keyvault set-policy](/cli/azure/keyvault?view=azure-cli-latest), чтобы задать политику доступа для Key Vault. Следующий пример предоставляет управляемому системой удостоверению доступ для получения секретов из Key Vault:
-
-```azurecli-interactive
- az keyvault set-policy --name mykeyvault --resource-group myResourceGroup --object-id $spID --secret-permissions get
-```
-
-### <a name="use-container-group-identity-to-get-secret-from-key-vault"></a>Использование удостоверения группы контейнеров для получения секрета из Key Vault
-
-Теперь вы можете применить управляемое удостоверение для доступа к Key Vault из запущенного экземпляра контейнера. Для нашего примера прежде всего запустите оболочку bash в контейнере:
+Выполните следующую команду [AZ keyvault Set-Policy](/cli/azure/keyvault?view=azure-cli-latest) , чтобы задать политику доступа для хранилища ключей. В следующем примере управляемое системой удостоверение позволяет получить секреты из хранилища ключей:
 
 ```azurecli-interactive
-az container exec --resource-group myResourceGroup --name mycontainer --exec-command "/bin/bash"
+ az keyvault set-policy \
+   --name mykeyvault \
+   --resource-group myResourceGroup \
+   --object-id $spID \
+   --secret-permissions get
 ```
 
-Выполните приведенные ниже команды в этой оболочке bash в контейнере. Чтобы получить маркер доступа, позволяющий использовать Azure Active Directory для проверки подлинности в Key Vault, выполните следующую команду:
+### <a name="use-container-group-identity-to-get-secret-from-key-vault"></a>Использовать удостоверение группы контейнеров для получения секрета из хранилища ключей
 
-```bash
-curl 'http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&resource=https%3A%2F%2Fvault.azure.net%2F' -H Metadata:true -s
+Теперь можно использовать управляемое удостоверение для доступа к хранилищу ключей в работающем экземпляре контейнера. Сначала запустите оболочку Bash в контейнере:
+
+```azurecli-interactive
+az container exec \
+  --resource-group myResourceGroup \
+  --name mycontainer \
+  --exec-command "/bin/bash"
 ```
 
-Выходные данные:
+Выполните приведенные ниже команды в этой оболочке bash в контейнере. Сначала войдите в Azure CLI с помощью управляемого удостоверения:
 
 ```bash
-{"access_token":"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Imk2bEdrM0ZaenhSY1ViMkMzbkVRN3N5SEpsWSIsImtpZCI6Imk2bEdrM0ZaenhSY1ViMkMzbkVRN3N5SEpsWSJ9......xxxxxxxxxxxxxxxxx","refresh_token":"","expires_in":"28799","expires_on":"1539927532","not_before":"1539898432","resource":"https://vault.azure.net/","token_type":"Bearer"}
+az login --identity
 ```
 
-Чтобы сохранить маркер доступа в переменной для проверки подлинности в последующих командах, выполните такую команду:
+Из работающего контейнера извлеките секрет из хранилища ключей:
 
 ```bash
-token=$(curl 'http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&resource=https%3A%2F%2Fvault.azure.net' -H Metadata:true | jq -r '.access_token')
-
+az keyvault secret show \
+  --name SampleSecret \
+  --vault-name mykeyvault --query value
 ```
 
-Теперь примените маркер доступа для проверки подлинности в Key Vault и получения секрета. Обязательно замените имя хранилища ключей URL-адресом (*https:\//mykeyvault.Vault.Azure.NET/...* ):
+Значение секрета извлекается:
 
 ```bash
-curl https://mykeyvault.vault.azure.net/secrets/SampleSecret/?api-version=2016-10-01 -H "Authorization: Bearer $token"
-```
-
-Ответ с полученным значением секрета выглядит примерно так: Для получения секрета в коде необходимо выполнить синтаксический анализ этих выходных данных. Далее этот секрет применяется в последующих операциях для доступа к другому ресурсу Azure.
-
-```bash
-{"value":"Hello Container Instances!","contentType":"ACIsecret","id":"https://mykeyvault.vault.azure.net/secrets/SampleSecret/xxxxxxxxxxxxxxxxxxxx","attributes":{"enabled":true,"created":1539965967,"updated":1539965967,"recoveryLevel":"Purgeable"},"tags":{"file-encoding":"utf-8"}}
+"Hello Container Instances"
 ```
 
 ## <a name="enable-managed-identity-using-resource-manager-template"></a>Включение управляемого удостоверения с помощью шаблона Resource Manager
 
-Чтобы включить управляемое удостоверение для группы контейнеров с помощью [шаблона Resource Manager](container-instances-multi-container-group.md), присвойте свойству `identity` объекта `Microsoft.ContainerInstance/containerGroups` значение объекта `ContainerGroupIdentity`. В следующих фрагментах кода показана настройка свойства `identity` для разных сценариев. Подробные сведения см. в [справочнике по шаблонам Resource Manager](/azure/templates/microsoft.containerinstance/containergroups). Укажите версию `apiVersion` от `2018-10-01`.
+Чтобы включить управляемое удостоверение для группы контейнеров с помощью [шаблона Resource Manager](container-instances-multi-container-group.md), присвойте свойству `identity` объекта `Microsoft.ContainerInstance/containerGroups` значение объекта `ContainerGroupIdentity`. В следующих фрагментах кода показана настройка свойства `identity` для разных сценариев. Подробные сведения см. в [справочнике по шаблонам Resource Manager](/azure/templates/microsoft.containerinstance/containergroups). Укажите Минимальное `apiVersion` `2018-10-01`.
 
 ### <a name="user-assigned-identity"></a>Назначаемое пользователем удостоверение
 
@@ -309,7 +342,7 @@ curl https://mykeyvault.vault.azure.net/secrets/SampleSecret/?api-version=2016-1
 ## <a name="enable-managed-identity-using-yaml-file"></a>Включение управляемого удостоверения с помощью YAML-файла
 
 Чтобы включить управляемое удостоверение в группе контейнеров, развернутой с помощью [YAML-файла](container-instances-multi-container-yaml.md), добавьте следующий YAML-файл.
-Укажите версию `apiVersion` от `2018-10-01`.
+Укажите Минимальное `apiVersion` `2018-10-01`.
 
 ### <a name="user-assigned-identity"></a>Назначаемое пользователем удостоверение
 
@@ -352,9 +385,9 @@ identity:
 
 > [!div class="checklist"]
 > * применение к группе контейнеров удостоверения, назначаемого пользователем или системой;
-> * предоставление удостоверению доступа к Azure Key Vault;
-> * применение управляемого удостоверения для доступа к Key Vault из запущенного контейнера.
+> * Предоставление удостоверениям доступа к хранилищу ключей Azure
+> * Использование управляемого удостоверения для доступа к хранилищу ключей из работающего контейнера
 
 * Дополнительные сведения см. в статье [Использование управляемых удостоверений в Службе приложений и Функциях Azure](/azure/active-directory/managed-identities-azure-resources/).
 
-* Изучите [пример для пакета SDK Azure Go](https://medium.com/@samkreter/c98911206328), где демонстрируется получение доступа к Key Vault из службы "Экземпляры контейнеров Azure" с помощью управляемого удостоверения.
+* См. Пример использования управляемого удостоверения для доступа к хранилищу ключей из службы "экземпляры контейнеров Azure [" в пакете SDK для Azure Go](https://medium.com/@samkreter/c98911206328) .

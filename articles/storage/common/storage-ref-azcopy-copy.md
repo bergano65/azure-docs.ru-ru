@@ -8,12 +8,12 @@ ms.date: 10/16/2019
 ms.author: normesta
 ms.subservice: common
 ms.reviewer: zezha-msft
-ms.openlocfilehash: 0c1b09fbc425a80fe1f8d075c5a83455167073c3
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.openlocfilehash: b9ac15e6909498c38f618a24be6b010dc2774b07
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74029988"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76905508"
 ---
 # <a name="azcopy-copy"></a>azcopy copy
 
@@ -147,25 +147,25 @@ azcopy copy [source] [destination] [flags]
 
 Копирование одного объекта в хранилище BLOB-объектов из Amazon Web Services (AWS) S3 с помощью ключа доступа и маркера SAS. Сначала задайте переменную среды AWS_ACCESS_KEY_ID и AWS_SECRET_ACCESS_KEY для источника S3 AWS.
   
-- azcopy CP "https://s3.amazonaws.com/[сегмент]/[объект]" "https://[дестаккаунт]. BLOB. Core. Windows. NET/[контейнер]/[путь/к/большой двоичный объект]? [SAS] "
+- azcopy CP "https://s3.amazonaws.com/ [сегмент]/[объект]" "https://[дестаккаунт]. BLOB. Core. Windows. NET/[контейнер]/[путь/к/большой двоичный объект]? [SAS] "
 
 Скопируйте весь каталог в хранилище BLOB-объектов из AWS S3 с помощью ключа доступа и маркера SAS. Сначала задайте переменную среды AWS_ACCESS_KEY_ID и AWS_SECRET_ACCESS_KEY для источника S3 AWS.
 
-- azcopy CP "https://s3.amazonaws.com/[контейнер]/[Папка]" "https://[дестаккаунт]. BLOB. Core. Windows. NET/[контейнер]/[путь/папка]? [SAS] "--recursive = true
+- azcopy CP "https://s3.amazonaws.com/ [контейнер]/[Папка]" "https://[дестаккаунт]. BLOB. Core. Windows. NET/[контейнер]/[путь/папка]? [SAS] "--recursive = true
 
 Дополнительные сведения о заполнителье [Folder] см. в https://docs.aws.amazon.com/AmazonS3/latest/user-guide/using-folders.html.
 
 Скопируйте все контейнеры в хранилище BLOB-объектов из Amazon Web Services (AWS) с помощью ключа доступа и маркера SAS. Сначала задайте переменную среды AWS_ACCESS_KEY_ID и AWS_SECRET_ACCESS_KEY для источника S3 AWS.
 
-- azcopy CP "https://s3.amazonaws.com/" "https://[дестаккаунт]. BLOB. Core. Windows. NET? [SAS] "--recursive = true
+- azcopy CP "https://s3.amazonaws.com/ " "https://[дестаккаунт]. BLOB. Core. Windows. NET? [SAS] "--recursive = true
 
 Скопируйте все контейнеры в хранилище BLOB-объектов из области Amazon Web Services (AWS) с помощью ключа доступа и маркера SAS. Сначала задайте переменную среды AWS_ACCESS_KEY_ID и AWS_SECRET_ACCESS_KEY для источника S3 AWS.
 
-- azcopy CP "https://s3-[регион]. амазонавс. com/" "https://[дестаккаунт]. BLOB. Core. Windows. NET? [SAS] "--recursive = true
+- azcopy CP "https://s3- [регион]. амазонавс. com/" "https://[дестаккаунт]. BLOB. Core. Windows. NET? [SAS] "--recursive = true
 
 Скопируйте подмножество контейнеров, используя символ-шаблон (*) в имени контейнера. Как и в предыдущих примерах, вам потребуется ключ доступа и маркер SAS. Убедитесь, что задана переменная среды AWS_ACCESS_KEY_ID и AWS_SECRET_ACCESS_KEY для источника S3 AWS.
 
-- azcopy CP "https://s3.amazonaws.com/[имя контейнера]/" "https://[дестаккаунт]. BLOB. Core. Windows. NET? [SAS] "--recursive = true
+- azcopy CP "https://s3.amazonaws.com/ [имя контейнера]/" "https://[дестаккаунт]. BLOB. Core. Windows. NET? [SAS] "--recursive = true
 
 ## <a name="options"></a>Параметры
 
@@ -217,7 +217,7 @@ azcopy copy [source] [destination] [flags]
 
 **--No-Guess-MIME-тип**                   Предотвращает обнаружение типа содержимого в AzCopy на основе расширения или содержимого файла.
 
-**--Перезаписать** строку перезаписать конфликтующие файлы и большие двоичные объекты в назначении, если этот флаг установлен в значение true. Возможные значения: "true", "false" и "prompt". (по умолчанию "true")
+**--Перезаписать** строку перезаписать конфликтующие файлы и большие двоичные объекты в назначении, если этот флаг установлен в значение true. Возможные значения: "true", "false", "Ифсаурценевер" и "prompt". (по умолчанию "true")
 
 **--Page-BLOB —** страничный BLOB-объект, отправляемый в службу хранилища Azure с помощью этого уровня больших двоичных объектов. (по умолчанию "нет")
 

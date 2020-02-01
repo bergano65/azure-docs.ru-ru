@@ -11,12 +11,12 @@ ms.author: anjangsh
 ms.reviewer: jrasnick
 manager: craigg
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 6d51213402f852daee8fe4a6b5dbbd473afda659
-ms.sourcegitcommit: 5bbe87cf121bf99184cc9840c7a07385f0d128ae
+ms.openlocfilehash: 917a698840850182d2d41ef780ba01d948e11c2f
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76122463"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76896371"
 ---
 # <a name="azure-sql-data-warehouse-release-notes"></a>Заметки о выпуске для Хранилища данных SQL Azure
 
@@ -38,6 +38,7 @@ ms.locfileid: "76122463"
 | --- | --- |
 |**Метрики портал управления рабочей нагрузки (Предварительная версия)**|С выпуском [изоляции рабочей нагрузки](/azure/sql-data-warehouse/sql-data-warehouse-workload-isolation) для предварительного просмотра в октябре пользователи могут создавать собственные [группы рабочей нагрузки](/sql/t-sql/statements/create-workload-group-transact-sql?view=azure-sqldw-latest) для эффективного управления системными ресурсами и обеспечения соответствия требованиям бизнес-соглашения.  В рамках общих улучшений [управления рабочей нагрузкой](/azure/sql-data-warehouse/sql-data-warehouse-workload-management) для Azure синапсе Analytics теперь доступны новые [метрики мониторинга управления рабочей нагрузкой](/azure/sql-data-warehouse/sql-data-warehouse-workload-management-portal-monitor) .</br> </br> Мониторинг рабочей нагрузки теперь имеет более подробные сведения со следующими метриками: </br> — Процент эффективных ресурсов Cap  </br> -Эффективный минимальный процент ресурсов </br> — Активные запросы группы рабочей нагрузки </br> — Распределение группы рабочей нагрузки по максимальному проценту ресурсов </br> — Распределение группы рабочей нагрузки по системным процентам </br> — Время ожидания запросов группы рабочей нагрузки </br> — Группа рабочей нагрузки запросы в очереди </br></br> Используйте эти метрики для выявления [узких мест группы рабочей нагрузки](/azure/sql-data-warehouse/sql-data-warehouse-workload-management-portal-monitor#workload-group-bottleneck) или групп рабочей нагрузки, для которых настроена [недостаточная изоляция рабочей нагрузки](/azure/sql-data-warehouse/sql-data-warehouse-workload-management-portal-monitor#underutilized-workload-isolation).  Эти метрики можно использовать на портале Azure, что позволяет выполнять разбиение по группам рабочей нагрузки.  Фильтрация и закрепление избранных графиков на панели мониторинга для быстрого доступа к ценным сведениям.|
 |**Метрики мониторинга портала**| Следующие метрики были добавлены на портал для наблюдения за общими операциями запроса: </br> — Активные запросы </br> — Запросы в очереди </br> </br>Эти метрики описаны вместе с имеющимися метриками в [документации по использованию ресурсов и активности запросов](/azure/sql-data-warehouse/sql-data-warehouse-concept-resource-utilization-query-activity).|
+|**Название продукта**|По июнь 2020. имя продукта, возвращенное SELECT @@VERSION, изменится с Хранилище данных SQL Microsoft Azure на Azure синапсе Analytics. Расписание будет опубликовано в заметках о выпуске. Это изменение относится к клиентам, которые анализируют название продукта из результата SELECT @@VERSION в коде приложения. Чтобы избежать изменений в коде приложения из-за перефирменной символики продукта, используйте эти команды, чтобы запросить имя и версию продукта для базы данных SERVERPROPERTY. </br> Для возврата хранилища данных версии XX. X. XXXXX. X (без названия продукта) используйте следующую команду: SELECT SERVERPROPERTY (' ProductVersion ') </br> Чтобы вернуть выпуск Engine, используйте эту команду, которая возвращает 6 для Azure синапсе Analytics (ранее — хранилище данных SQL): SELECT SERVERPROPERTY (' Енгинидитион ').|
 
 ## <a name="october-2019"></a>Октябрь 2019 г.
 

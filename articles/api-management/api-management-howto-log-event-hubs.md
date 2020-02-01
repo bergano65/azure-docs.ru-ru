@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 01/29/2018
 ms.author: apimpm
-ms.openlocfilehash: 646d9206ec82d5f35ccab9365e76276ff779d225
-ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
+ms.openlocfilehash: 2f07f6a27e78ee4df8c64a09918758d02c28c6d4
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70073485"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76898790"
 ---
 # <a name="how-to-log-events-to-azure-event-hubs-in-azure-api-management"></a>Как регистрировать события в Центрах событий Azure при использовании службы управления API Azure
 Центры событий Azure — это высокомасштабируемая служба приема данных, которая может обрабатывать миллионы событий в секунду, позволяя вам обрабатывать и анализировать огромное количество данных, создаваемых подключенными устройствами и приложениями. Центры событий выступают в качестве "главного входа"для событий конвейера. После того как данные поступили в концентратор событий, они могут быть преобразованы и сохранены с использованием любого поставщика аналитики в режиме реального времени или адаптера пакетной обработки или хранения. Центры событий отделяют создание потока событий от потребления этих событий, чтобы потребители событий могли обращаться к событиям по собственному расписанию.
@@ -30,60 +30,9 @@ ms.locfileid: "70073485"
 Подробные инструкции о том, как создать концентратор событий и получить строки подключения, необходимые для отправки событий в концентратор и получения событий из него, см. в статье [Создание пространства имен Центров событий и концентратора событий с помощью портала Azure](https://docs.microsoft.com/azure/event-hubs/event-hubs-create).
 
 ## <a name="create-an-api-management-logger"></a>Создание средства ведения журнала для управления API
-Теперь, когда концентратор событий создан, нужно настроить [средство ведения журнала](https://docs.microsoft.com/rest/api/apimanagement/apimanagementrest/azure-api-management-rest-api-logger-entity) в службе управления API, которое сможет регистрировать события в концентраторе событий.
+Теперь, когда концентратор событий создан, нужно настроить [средство ведения журнала](https://docs.microsoft.com/rest/api/apimanagement/2019-01-01/logger) в службе управления API, которое сможет регистрировать события в концентраторе событий.
 
-Средства ведения журнала службы управления API настраиваются с помощью [REST API службы управления API](https://aka.ms/smapi). Прежде чем использовать REST API впервые, просмотрите информацию о [необходимых компонентах](https://docs.microsoft.com/rest/api/apimanagement/apimanagementrest/api-management-rest) и убедитесь, что [включен доступ к REST API](https://docs.microsoft.com/rest/api/apimanagement/apimanagementrest/api-management-rest#EnableRESTAPI).
-
-Чтобы создать средство ведения журнала, выполните HTTP-запрос PUT, используя следующий шаблон URL-адреса:
-
-`https://{your service}.management.azure-api.net/loggers/{new logger name}?api-version=2017-03-01`
-
-* Замените `{your service}` именем экземпляра службы управления API.
-* Замените `{new logger name}` требуемым именем нового средства ведения журнала. Вы укажете это имя при настройке политики [log-to-eventhub](/azure/api-management/api-management-advanced-policies#log-to-eventhub).
-
-Добавьте в запрос следующие заголовки:
-
-* тип содержимого: «application/json»;
-* Авторизация: SharedAccessSignature 58...
-  * указания по созданию `SharedAccessSignature` см. в [справочнике по REST API Azure](https://docs.microsoft.com/rest/api/apimanagement/apimanagementrest/azure-api-management-rest-api-authentication).
-
-Укажите текст запроса, используя следующий шаблон:
-
-```json
-{
-  "loggerType" : "AzureEventHub",
-  "description" : "Sample logger description",
-  "credentials" : {
-    "name" : "Name of the Event Hub from the portal",
-    "connectionString" : "Endpoint=Event Hub Sender connection string"
-    }
-}
-```
-
-* Для параметра `loggerType` нужно задать значение `AzureEventHub`.
-* `description` предоставляет дополнительное описание средства ведения журнала. При желании эту строку можно оставить пустой.
-* `credentials` содержит `name` и `connectionString` концентратора событий Azure.
-
-Если средство ведения журнала уже создано, по запросу возвращается код состояния `201 Created`. Ниже приведен пример ответа на пример запроса, представленный выше.
-
-```json
-{
-    "id": "/loggers/{new logger name}",
-    "loggerType": "azureEventHub",
-    "description": "Sample logger description",
-    "credentials": {
-        "name": "Name of the Event Hub from the Portal",
-        "connectionString": "{{Logger-Credentials-xxxxxxxxxxxxxxx}}"
-    },
-    "isBuffered": true,
-    "resourceId": null
-}
-```
-
-> [!NOTE]
-> Другие возможные коды возврата и их причины см. в статье, посвященной [созданию средств ведения журнала](https://docs.microsoft.com/rest/api/apimanagement/apimanagementrest/azure-api-management-rest-api-logger-entity#PUT). Чтобы узнать, как выполнять другие операции, такие как перечисление, обновление и удаление, см. документацию по [средству ведения журнала](https://docs.microsoft.com/rest/api/apimanagement/apimanagementrest/azure-api-management-rest-api-logger-entity).
->
->
+Средства ведения журнала службы управления API настраиваются с помощью [REST API службы управления API](https://aka.ms/apimapi). Подробные примеры запросов см. [в разделе Создание средств ведения журнала](https://docs.microsoft.com/rest/api/apimanagement/2019-01-01/logger/createorupdate).
 
 ## <a name="configure-log-to-eventhubs-policies"></a>Настройка политик регистрации в концентраторах событий
 
@@ -110,13 +59,13 @@ ms.locfileid: "70073485"
 
 Нажмите кнопку **Сохранить** , чтобы сохранить конфигурацию обновленной политики. Сразу же после сохранения политика становится активной, а события регистрируются в указанном концентраторе событий.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Дополнительная информация о Центрах событий Azure
   * [Приступая к работе с Центрами событий Azure](../event-hubs/event-hubs-c-getstarted-send.md)
   * [Прием сообщений через EventProcessorHost](../event-hubs/event-hubs-dotnet-standard-getstarted-receive-eph.md)
   * [Руководство по программированию Центров событий](../event-hubs/event-hubs-programming-guide.md)
 * Дополнительные сведения об интеграции службы управления API и Центров событий
-  * [Справочник по сущности "Средство ведения журнала"](https://docs.microsoft.com/rest/api/apimanagement/apimanagementrest/azure-api-management-rest-api-logger-entity)
+  * [Справочник по сущности "Средство ведения журнала"](https://docs.microsoft.com/rest/api/apimanagement/2019-01-01/logger)
   * [Справочник по политике регистрации в концентраторе событий](https://docs.microsoft.com/azure/api-management/api-management-advanced-policies#log-to-eventhub)
   * [Мониторинг API-интерфейсов с помощью Управления API Azure, Центров событий и Moesif](api-management-log-to-eventhub-sample.md)  
 * Узнайте больше об интеграции с [Azure Application Insights](api-management-howto-app-insights.md).

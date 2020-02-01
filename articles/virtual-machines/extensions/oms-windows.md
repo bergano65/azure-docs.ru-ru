@@ -12,14 +12,14 @@ ms.service: virtual-machines-windows
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
-ms.date: 08/12/2019
+ms.date: 01/30/2020
 ms.author: akjosh
-ms.openlocfilehash: 072e30baa4ebb976a662019e5213f7eb26808a93
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.openlocfilehash: 604be42ec74f75e3aa9c790092ed83aee4ad25e1
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75969947"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76907023"
 ---
 # <a name="azure-monitor-virtual-machine-extension-for-windows"></a>Расширение виртуальной машины Azure Monitor для Windows
 
@@ -38,6 +38,7 @@ ms.locfileid: "75969947"
 
 | Log Analytics версии пакета агента Windows | Версия расширения виртуальной машины Windows Azure Monitor | Дата выпуска | Заметки о выпуске |
 |--------------------------------|--------------------------|--------------------------|--------------------------|
+| 10.20.18018 | 1.0.18018 | Октябрь 2019 г. | <ul><li> Исправления незначительных ошибок и усовершенствования стабилизации </li></ul> |
 | 10.20.18011 | 1.0.18011 | Июль 2019 г. | <ul><li> Исправления незначительных ошибок и усовершенствования стабилизации </li><li> Увеличено Максекспрессиондепс до 10000 </li></ul> |
 | 10.20.18001 | 1.0.18001 | Июнь 2019 г. | <ul><li> Исправления незначительных ошибок и усовершенствования стабилизации </li><li> Добавлена возможность отключения учетных данных по умолчанию при подключении прокси-сервера (поддержка WINHTTP_AUTOLOGON_SECURITY_LEVEL_HIGH). </li></ul>|
 | 10.19.13515 | 1.0.13515 | Март 2019 г. | <ul><li>Незначительные исправления стабилизации </li></ul> |
@@ -46,7 +47,7 @@ ms.locfileid: "75969947"
 | 8.0.11103 | Н/Д |  Апрель 2018 г. | |
 | 8.0.11081 | 1.0.11081 | 2017 ноября | | 
 | 8.0.11072 | 1.0.11072 | Сентябрь 2017 | |
-| 8.0.11049 | 1.0.11049 | Февраль 2017 г. | |
+| 8.0.11049 | 1.0.11049 | Фев 2017 | |
 
 ### <a name="azure-security-center"></a>Центр безопасности Azure
 

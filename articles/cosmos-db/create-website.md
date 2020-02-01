@@ -6,12 +6,12 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 05/28/2019
 ms.author: sngun
-ms.openlocfilehash: feab221c24034fe29df420b4f9eb6d84e06a90b5
-ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
+ms.openlocfilehash: 11b84877171fae8e788d3298973fd74645b35480
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76719342"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76901913"
 ---
 # <a name="deploy-azure-cosmos-db-and-azure-app-service-web-apps-using-an-azure-resource-manager-template"></a>Развертывание Azure Cosmos DB и веб-приложений службы приложений Azure с помощью шаблона Azure Resource Manager
 В этом руководстве показано, как использовать шаблон Azure Resource Manager для развертывания и интеграции [Microsoft Azure Cosmos DB](https://azure.microsoft.com/services/cosmos-db/), веб-приложения [службы приложений Azure](https://go.microsoft.com/fwlink/?LinkId=529714), а также примера веб-приложения.
@@ -69,7 +69,7 @@ ms.locfileid: "76719342"
    ![Снимок экрана пользовательского интерфейса развертывания шаблона](./media/create-website/TemplateDeployment6.png)
 7. По завершении развертывания откроется область группы ресурсов.
    ![Снимок экрана области группы ресурсов](./media/create-website/TemplateDeployment7.png)  
-8. Чтобы использовать приложение, перейдите по URL-адресу веб-приложения (в приведенном выше примере URL-адрес будет иметь вид http://mydemodocdbwebapp.azurewebsites.net) ).  Вы увидите следующее веб-приложение.
+8. Чтобы использовать приложение, перейдите по URL-адресу Web App (в приведенном выше примере URL-адрес будет `http://mydemodocdbwebapp.azurewebsites.net`).  Вы увидите следующее веб-приложение.
    
    ![Пример приложения Todo](./media/create-website/image2.png)
 9. Теперь создайте несколько задач в веб-приложении и вернитесь в область группы ресурсов на портале Azure. Выберите ресурс учетной записи Azure Cosmos DB в списке ресурсов и нажмите кнопку **Обозреватель данных**.

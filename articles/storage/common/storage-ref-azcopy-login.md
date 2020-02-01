@@ -8,12 +8,12 @@ ms.date: 10/16/2019
 ms.author: normesta
 ms.subservice: common
 ms.reviewer: zezha-msft
-ms.openlocfilehash: e7998ea0753ba7ab5d97142c34dc9e333f8b4f5d
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.openlocfilehash: d6b2fbe28aae8e8233aaeb75bc9b43a35a9ab588
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74034080"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76905288"
 ---
 # <a name="azcopy-login"></a>azcopy login
 
@@ -99,8 +99,10 @@ azcopy login --service-principal --certificate-path /path/to/my/cert
 
 ## <a name="options"></a>Параметры
 
-|Параметр|ОПИСАНИЕ|
+|Вариант|Description|
 |--|--|
+|--AAD-Endpoint|Используемая конечная точка Azure Active Directory. Значение по умолчанию (https://login.microsoftonline.com) верно для общедоступного облака Azure. Задайте этот параметр при проверке подлинности в национальном облаке. См. раздел [конечные точки проверки подлинности Azure AD](https://docs.microsoft.com/azure/active-directory/develop/authentication-national-cloud#azure-ad-authentication-endpoints).
+Этот флаг не требуется для Управляемое удостоверение службы.|
 |--Строка идентификатора приложения|Идентификатор приложения, которому назначено пользовательское удостоверение. Требуется для проверки подлинности субъекта-службы.|
 |--Строка сертификата-путь|Путь к сертификату для проверки подлинности имени участника-службы. Требуется для проверки подлинности субъекта-службы на основе сертификата.|
 |-h, --help|Отображение содержимого справки для команды login.|
@@ -113,7 +115,7 @@ azcopy login --service-principal --certificate-path /path/to/my/cert
 
 ## <a name="options-inherited-from-parent-commands"></a>Параметры, унаследованные от родительских команд
 
-|Параметр|ОПИСАНИЕ|
+|Вариант|Description|
 |---|---|
 |--Cap-Мбит/с UInt32|Скорость передачи с прописными буквами в мегабит в секунду. Посекундная пропускная способность может немного отличаться от ограничения. Если этот параметр имеет значение 0 или пропущен, пропускная способность не ограничена.|
 |--строка выходного типа|Формат вывода команды. Среди вариантов: Text, JSON. Значение по умолчанию — "Text".|

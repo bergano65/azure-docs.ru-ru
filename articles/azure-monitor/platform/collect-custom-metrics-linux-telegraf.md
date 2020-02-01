@@ -1,6 +1,6 @@
 ---
 title: Получение пользовательских метрик для виртуальной машины Linux с помощью агента Инфлуксдата Telegraf
-description: инструкции по развертыванию агента Инфлуксдата Telegraf на виртуальной машине Linux в Azure и настройке агента для публикации метрик в Azure Monitor.
+description: Инструкции по развертыванию агента Инфлуксдата Telegraf на виртуальной машине Linux в Azure и настройке агента для публикации метрик в Azure Monitor.
 author: anirudhcavale
 services: azure-monitor
 ms.service: azure-monitor
@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 09/24/2018
 ms.author: ancav
 ms.subservice: metrics
-ms.openlocfilehash: b4cf5dc53c0fe256c9ecab5a844300224b860e44
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: 365330aa445bcf8e5b1aec575d5e646d533ceaf7
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74926749"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76901323"
 ---
 # <a name="collect-custom-metrics-for-a-linux-vm-with-the-influxdata-telegraf-agent"></a>Сбор пользовательских метрик для виртуальной машины Linux с помощью агента Telegraf InfluxData
 
@@ -21,7 +21,7 @@ Azure Monitor позволяет собирать пользовательски
 
 ## <a name="influxdata-telegraf-agent"></a>Агент Telegraf InfluxData 
 
-[Telegraf](https://docs.influxdata.com/telegraf/v1.7/) — это агент, управляемый подключаемым модулем, который позволяет собирать метрики из более чем 150 различных источников. В зависимости от рабочих нагрузок вашей виртуальной машины можно настроить использование специализированных входных подключаемых модулей для сбора метрик. К примеру MySQL, NGINX и Apache. Использование выходных подключаемых модулей позволяет агенту выполнять запись в места назначения на ваш выбор. Агент Telegraf интегрирован непосредственно с REST API пользовательских метрик Azure Monitor. Он также поддерживает выходной подключаемый модуль Azure Monitor. Использование этого модуля позволит агенту собирать метрики конкретной рабочей нагрузки на виртуальной машине Linux и отправлять их в качестве пользовательских метрик в Azure Monitor. 
+[Telegraf](https://docs.influxdata.com/telegraf/) — это агент, управляемый подключаемым модулем, который позволяет собирать метрики из более чем 150 различных источников. В зависимости от рабочих нагрузок вашей виртуальной машины можно настроить использование специализированных входных подключаемых модулей для сбора метрик. К примеру MySQL, NGINX и Apache. Использование выходных подключаемых модулей позволяет агенту выполнять запись в места назначения на ваш выбор. Агент Telegraf интегрирован непосредственно с REST API пользовательских метрик Azure Monitor. Он также поддерживает выходной подключаемый модуль Azure Monitor. Использование этого модуля позволит агенту собирать метрики конкретной рабочей нагрузки на виртуальной машине Linux и отправлять их в качестве пользовательских метрик в Azure Monitor. 
 
  ![Обзор агента Telegraph](./media/collect-custom-metrics-linux-telegraf/telegraf-agent-overview.png)
 
@@ -29,7 +29,7 @@ Azure Monitor позволяет собирать пользовательски
 
 В этом руководстве мы развернем виртуальную машину Linux под управлением операционной системы Ubuntu 16.04 LTS. Агент Telegraf поддерживается для большинства операционных систем Linux. Пакеты Debian и RPM с распакованными двоичными файлами Linux доступны на [портале загрузки InfluxData](https://portal.influxdata.com/downloads). Дополнительные инструкции по установке и доступные варианты установки Telegraf см. в этом [руководстве по установке Telegraf](https://docs.influxdata.com/telegraf/v1.8/introduction/installation/). 
 
-Войдите на [портале Azure](https://portal.azure.com).
+Войдите на [портал Azure](https://portal.azure.com).
 
 Создайте новую виртуальную машину Linux. 
 
@@ -120,7 +120,7 @@ sudo systemctl start telegraf
 
      ![Выбор пространства имен и метрики](./media/collect-custom-metrics-linux-telegraf/VM-resource-selector.png)
 
-## <a name="additional-configuration"></a>Дополнительная конфигурация 
+## <a name="additional-configuration"></a>Дополнительная настройка 
 
 В предыдущем пошаговом руководстве содержатся сведения о настройке агента Telegraf для сбора метрик из нескольких базовых подключаемых модулей ввода. Агент Telegraf поддерживает более 150 подключаемых модулей ввода с дополнительными параметрами конфигурации. Компания InfluxData опубликовала [список поддерживаемых подключаемых модулей](https://docs.influxdata.com/telegraf/v1.7/plugins/inputs/) и инструкции по [их настройке](https://docs.influxdata.com/telegraf/v1.7/administration/configuration/).  
 

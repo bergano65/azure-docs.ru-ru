@@ -1,5 +1,5 @@
 ---
-title: Разработка приложений видеопроигрывателя
+title: Разработка приложений для воспроизведения видео
 description: В этом разделе приведены ссылки на платформы проигрывателей и подключаемые модули, которые можно использовать для разработки собственных клиентских приложений, способных использовать потоковое мультимедийное содержимое из служб мультимедиа.
 author: Juliako
 manager: femila
@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/18/2019
 ms.author: juliako
-ms.openlocfilehash: b8d4ff3e833dcbe92802845796e3b826735b68ce
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 39459267919747ed49e9fa3f05746294eaf741dc
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61465649"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76906827"
 ---
-# <a name="develop-video-player-applications"></a>Разработка приложений видеопроигрывателя
+# <a name="develop-video-player-applications"></a>Разработка приложений для воспроизведения видео
 ## <a name="overview"></a>Обзор
 Службы мультимедиа Azure предоставляют средства, необходимые для создания динамических многофункциональных клиентских приложений проигрывателя для большинства платформ, включая: устройства iOS, устройства Android, Windows, Windows Phone, Xbox и абонентские приставки. В этом разделе приведены также ссылки на пакеты SDK и платформы проигрывателей, которые можно использовать для разработки собственных клиентских приложений, способных использовать потоковое мультимедийное содержимое из служб мультимедиа Azure.
 
@@ -33,7 +33,7 @@ ms.locfileid: "61465649"
 
 Службы мультимедиа Microsoft Azure поддерживают форматы потоковой передачи DASH, Smooth Streaming и HLS для воспроизведения содержимого. Проигрыватель мультимедиа Azure учитывает эти различные форматы и автоматически воспроизводит наиболее подходящую ссылку в зависимости от возможностей платформы или браузера. Службы мультимедиа Microsoft Azure также позволяют динамически шифровать ресурсы с использованием PlayReady или 128-битного шифрования AES. Проигрыватель мультимедиа Azure поддерживает расшифровку содержимого, зашифрованного с помощью PlayReady и 128-битного алгоритма шифрования AES, если заданы соответствующие параметры. 
 
-Дополнительные сведения
+Дополнительные сведения см. здесь:
 
 * [Проигрыватель мультимедиа Azure](https://aka.ms/ampinfo)
 * [Документация по Проигрывателю мультимедиа Azure](https://aka.ms/ampdocs) 
@@ -46,11 +46,11 @@ ms.locfileid: "61465649"
 
 * [клиентский пакет SDK Smooth Streaming;](https://www.iis.net/downloads/microsoft/smooth-streaming) 
 * [приложение магазина Windows с потоковой передачей Smooth Streaming;](media-services-build-smooth-streaming-apps.md)
-* [Microsoft Media Platform: Player Framework](https://playerframework.codeplex.com/) 
+* [платформа проигрывателя Microsoft Media Platform;](https://playerframework.codeplex.com/) 
 * [документация по платформе проигрывателя HTML5;](https://playerframework.codeplex.com/wikipage?title=HTML5%20Player&referringTitle=Documentation) 
 * [подключаемый модуль Microsoft Smooth Streaming для OSMF;](https://www.microsoft.com/download/details.aspx?id=36057) 
 * [Лицензирование пакета для портирования клиента бесперебойной потоковой передачи Microsoft® Smooth Streaming](https://aka.ms/sspk) 
-* [Разработка приложений для воспроизведения видео на XBOX](https://xbox.create.msdn.com/) 
+* [Разработка приложений для воспроизведения видео на XBOX](https://www.xbox.com/en-US/developers) 
 
 ## <a name="advertising"></a>Реклама
 Службы мультимедиа Azure поддерживают вставку рекламы с помощью платформ проигрывателя Windows Media. Платформы проигрывателя с поддержкой рекламы доступны для устройств Windows 8, Silverlight, Windows Phone 8 и iOS. Каждая платформа проигрывателя содержит образец кода, в котором демонстрируется реализация приложения проигрывателя. В мультимедиасодержимое можно вставить три вида рекламы:
@@ -68,10 +68,10 @@ ms.locfileid: "61465649"
 ## <a name="media-services-learning-paths"></a>Схемы обучения работе со службами мультимедиа
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Отзывы
+## <a name="provide-feedback"></a>Отправить отзыв
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также:
 [Встраивание адаптивного потокового видео MPEG-DASH в приложение HTML5 с помощью DASH.js](media-services-embed-mpeg-dash-in-html5.md)
 
 [Репозиторий dash.js на GitHub](https://github.com/Dash-Industry-Forum/dash.js)

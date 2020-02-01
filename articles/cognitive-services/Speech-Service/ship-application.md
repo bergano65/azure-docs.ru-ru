@@ -3,20 +3,20 @@ title: Разработка приложений с помощью речево�
 titleSuffix: Azure Cognitive Services
 description: Узнайте, как развернуть приложение, использующее пакет SDK для распознавания речи, на поддерживаемых платформах.
 services: cognitive-services
-author: jhakulin
+author: IEvangelist
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 07/23/2019
-ms.author: jhakulin
+ms.date: 01/30/2020
+ms.author: dapine
 ms.custom: seodec18
-ms.openlocfilehash: f4200a0a43507a335f0e4e59e5a794d2bc4d6142
-ms.sourcegitcommit: 6c01e4f82e19f9e423c3aaeaf801a29a517e97a0
+ms.openlocfilehash: 4f75adba27c8173f918fa1afbd44f307d50eb995
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74816554"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76902027"
 ---
 # <a name="ship-an-application"></a>Доставка приложения
 
@@ -39,7 +39,7 @@ ms.locfileid: "74816554"
 
 Необходимые файлы пакета SDK для службы "Речь" можно развернуть в том же каталоге, что и приложение. Таким образом, приложение сможет получать прямой доступ к библиотекам. Убедитесь, что выбрана правильная версия (Win32/x64), соответствующая приложению.
 
-| Name | Функция |
+| Имя | Компонент |
 | :--- | :------- |
 | `Microsoft.CognitiveServices.Speech.core.dll`   | Основной пакет SDK, необходимый для развертывания управляемого и машинного кода |
 | `Microsoft.CognitiveServices.Speech.csharp.dll` | Требуется для развертывания управляемого кода                      |

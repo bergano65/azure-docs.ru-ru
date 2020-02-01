@@ -3,14 +3,14 @@ title: Azure Service Fabric CLI — sfctl RPM
 description: Сведения о sfctl, интерфейсе командной строки Azure Service Fabric. Содержит список команд для службы Repair Manager.
 author: jeffj6123
 ms.topic: reference
-ms.date: 9/17/2019
+ms.date: 1/16/2020
 ms.author: jejarry
-ms.openlocfilehash: 674970276046034d13801db7c1bb4ab5175385fb
-ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
+ms.openlocfilehash: 1787c0c8a8d5994ce1f1e9e4c55f155bbca6934c
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75639094"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76904943"
 ---
 # <a name="sfctl-rpm"></a>sfctl rpm
 Запрос службы диспетчера восстановления и отправка команд для нее.
@@ -77,7 +77,7 @@ ms.locfileid: "75639094"
 |Аргумент|Description|
 | --- | --- |
 | --executor-filter | Имя исполнителя исправления, запрошенные задачи которого должны быть включены в список. |
-| --state-filter | Битовая операция "ИЛИ" с приведенными ниже значениями, результат которой указывает, какие задачи должны быть включены в список результатов. <br> 1 — Created <br>2 — Claimed  <br>4 — Preparing  <br>8 — Approved  <br>16 — Executing  <br>32 — Restoring  <br>64 — Completed |
+| --state-filter | Битовая операция "ИЛИ" с приведенными ниже значениями, результат которой указывает, какие задачи должны быть включены в список результатов. <ul><li>1 — Created</li><li>2 — затребовано</li><li>4\. Подготовка</li><li>8 — утверждено</li><li>16. исполнение</li><li>32 — восстановление</li><li>64 — Completed</li></ul>
 | --task-id-filter | Префикс идентификатора задачи исправления для сравнения. |
 
 ### <a name="global-arguments"></a>Глобальные аргументы

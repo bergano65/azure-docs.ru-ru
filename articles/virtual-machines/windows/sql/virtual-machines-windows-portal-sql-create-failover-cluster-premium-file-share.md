@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 10/09/2019
 ms.author: mathoma
-ms.openlocfilehash: 3bd13a63c3f4fa275f7e4789c184802445519388
-ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
+ms.openlocfilehash: 57dc7bb98bf4c2f733be0f2c94e17481a429be6d
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76772610"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76906802"
 ---
 # <a name="configure-a-sql-server-failover-cluster-instance-with-premium-file-share-on-azure-virtual-machines"></a>Настройка SQL Server экземпляра отказоустойчивого кластера с общей папкой Premium на виртуальных машинах Azure
 
@@ -185,7 +185,7 @@ FILESTREAM не поддерживается для отказоустойчив
   > - Рассмотрите возможность использования отдельной общей папки для файлов резервных копий, чтобы сохранить операции ввода-вывода в секунду и место, занимаемое этой общей папкой, для файлов данных и журналов. Для файлов резервных копий можно использовать файловый ресурс уровня "Премиум" или "Стандартный".
   > - Если вы используете Windows 2012 R2 и более ранних версий, выполните те же действия, чтобы подключить общую папку, которую планируется использовать в качестве файлового ресурса-свидетеля. 
 
-## <a name="step-3-configure-the-failover-cluster-with-the-file-share"></a>Шаг 3. Настройка отказоустойчивого кластера с общей папкой
+## <a name="step-3-configure-the-failover-cluster"></a>Шаг 3. Настройка отказоустойчивого кластера
 
 Следующим шагом является настройка отказоустойчивого кластера. На этом шаге вы выполните следующие шаги:
 

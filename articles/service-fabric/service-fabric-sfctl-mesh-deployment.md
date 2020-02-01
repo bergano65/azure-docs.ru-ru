@@ -3,14 +3,14 @@ title: Azure Service Fabric CLI — развертывание сетки sfctl
 description: Сведения о sfctl, интерфейсе командной строки Azure Service Fabric. Содержит список команд для создания Service Fabricных ресурсов сетки.
 author: jeffj6123
 ms.topic: reference
-ms.date: 9/17/2019
+ms.date: 1/16/2020
 ms.author: jejarry
-ms.openlocfilehash: 6512cce075906fc8708a39fa0747ec27be33e961
-ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
+ms.openlocfilehash: 108389407221779ed20e81310f084b7b5c23b8c7
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75645367"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76906026"
 ---
 # <a name="sfctl-mesh-deployment"></a>sfctl mesh deployment
 Создание ресурсов службы "Сетка Service Fabric".
@@ -28,7 +28,7 @@ ms.locfileid: "75645367"
 
 |Аргумент|Description|
 | --- | --- |
-| --input-yaml-files [обязательный] | Относительные и абсолютные пути к файлам всех файлов YAML или относительный или абсолютный путь к каталогу (с рекурсией), который содержит файлы YAML. |
+| --input-yaml-files [обязательный] | Относительные или абсолютные пути к файлам всех файлов YAML или относительный или абсолютный путь к каталогу (с рекурсией), который содержит файлы YAML. |
 | --parameters | Относительный или абсолютный путь к YAML-файлу или объекту JSON, который содержит параметры, которые необходимо переопределить. |
 
 ### <a name="global-arguments"></a>Глобальные аргументы
