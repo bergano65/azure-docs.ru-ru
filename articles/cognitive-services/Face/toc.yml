@@ -13,6 +13,8 @@
           href: Quickstarts/csharp-sdk.md
         - name: Пакет SDK для Python
           href: QuickStarts/python-sdk.md
+        - name: Пакет SDK для GO
+          href: QuickStarts/go-sdk.md
     - name: Использование REST API
       items:
         - name: Определение лиц на изображении

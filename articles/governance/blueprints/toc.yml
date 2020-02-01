@@ -63,6 +63,17 @@
         - name: Инструкции по развертыванию
           displayName: 'standards, fedramp, moderate'
           href: ./samples/fedramp-m/deploy.md
+    - name: FedRAMP — высокий уровень
+      items:
+        - name: Обзор
+          displayName: 'standards, fedramp, high'
+          href: ./samples/fedramp-h/index.md
+        - name: Сопоставление элементов управления
+          displayName: 'standards, fedramp, high'
+          href: ./samples/fedramp-h/control-mapping.md
+        - name: Инструкции по развертыванию
+          displayName: 'standards, fedramp, high'
+          href: ./samples/fedramp-h/deploy.md
     - name: HIPAA HITRUST
       items:
         - name: Обзор
