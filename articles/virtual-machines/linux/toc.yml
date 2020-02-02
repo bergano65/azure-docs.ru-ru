@@ -423,6 +423,8 @@
           href: ../../virtual-machine-scale-sets/virtual-machine-scale-sets-overview.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
         - name: Высокий уровень доступности
           href: manage-availability.md
+        - name: Изменение группы доступности
+          href: ../windows/change-availability-set.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
         - name: Создание группы размещения близкого взаимодействия
           items:
             - name: CLI
