@@ -2,14 +2,15 @@
 title: Шифрование данных развертывания
 description: Узнайте о шифровании данных, сохраненных для ресурсов экземпляра контейнера, и о том, как шифровать данные с помощью ключа, управляемого клиентом.
 ms.topic: article
-ms.date: 01/10/2020
-ms.author: danlep
-ms.openlocfilehash: 146effd7f1a7ad1ddd94886d1a79e2914bd1c94b
-ms.sourcegitcommit: 3eb0cc8091c8e4ae4d537051c3265b92427537fe
+ms.date: 01/17/2020
+author: dkkapur
+ms.author: dekapur
+ms.openlocfilehash: 14a51ce103d831bcf1dfd52c892102f72531a4c8
+ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75904215"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76934307"
 ---
 # <a name="encrypt-deployment-data"></a>Шифрование данных развертывания
 
@@ -80,22 +81,25 @@ az ad sp create --id 6bb8e274-af5d-4df2-98a3-4fd78b4cafd9
 
 Политика доступа должна отобразиться в политиках доступа в хранилище ключей.
 
-![Новая политика доступа](./media/container-instances-encrypt-data/access-policy.png)
+![Создать политику доступа](./media/container-instances-encrypt-data/access-policy.png)
 
 ### <a name="modify-your-json-deployment-template"></a>Изменение шаблона развертывания JSON
 
 > [!IMPORTANT]
 > Шифрование данных развертывания с помощью управляемого клиентом ключа доступно в последней версии API (2019-12-01), которая в настоящее время истекает. Укажите версию API в шаблоне развертывания. Если у вас возникли проблемы, обратитесь в службу поддержки Azure.
 
-После настройки ключа и политики доступа к хранилищу ключей добавьте следующее свойство в шаблон развертывания ACI. Дополнительные сведения о развертывании ресурсов ACI с помощью шаблона см. в [руководстве по развертыванию группы с несколькими контейнерами с использованием шаблона диспетчер ресурсов](https://docs.microsoft.com/azure/container-instances/container-instances-multi-container-group). 
+После настройки ключа и политики доступа к хранилищу ключей добавьте следующие свойства в шаблон развертывания ACI. Дополнительные сведения о развертывании ресурсов ACI с помощью шаблона см. в [руководстве по развертыванию группы с несколькими контейнерами с использованием шаблона диспетчер ресурсов](https://docs.microsoft.com/azure/container-instances/container-instances-multi-container-group). 
+* В разделе `resources`задайте для `apiVersion` значение `2012-12-01`.
+* В разделе Свойства группы контейнеров шаблона развертывания добавьте `encryptionProperties`, который содержит следующие значения:
+  * `vaultBaseUrl`. DNS-имя хранилища ключей можно найти в колонке "Обзор" ресурса хранилища ключей на портале.
+  * `keyName`: имя созданного ранее ключа.
+  * `keyVersion`: Текущая версия ключа. Это можно найти, щелкнув сам ключ (в разделе "ключи" в разделе "Параметры" вашего ресурса хранилища ключей).
+* В свойствах группы контейнеров добавьте `sku` свойство со значением `Standard`. Свойство `sku` является обязательным в API версии 2019-12-01.
 
-В частности, в разделе Свойства группы контейнеров шаблона развертывания добавьте "Енкриптионпропертиес", который содержит следующие значения:
-* Ваултбасеурл. DNS-имя хранилища ключей можно найти в колонке "Обзор" ресурса хранилища ключей на портале.
-* keyName: имя созданного ранее ключа.
-* Кэйверсион: Текущая версия ключа. Это можно найти, щелкнув сам ключ (в разделе "ключи" в разделе "Параметры" вашего ресурса хранилища ключей).
-
+В следующем фрагменте шаблона показаны эти дополнительные свойства для шифрования данных развертывания.
 
 ```json
+[...]
 "resources": [
     {
         "name": "[parameters('containerGroupName')]",
@@ -108,12 +112,107 @@ az ad sp create --id 6bb8e274-af5d-4df2-98a3-4fd78b4cafd9
                 "keyName": "acikey",
                 "keyVersion": "xxxxxxxxxxxxxxxx"
             },
+            "sku": "Standard",
             "containers": {
                 [...]
             }
         }
     }
 ]
+```
+
+Ниже приведен полный шаблон, адаптированный из шаблона в [учебнике развертывание многоконтейнерной группы с помощью шаблона диспетчер ресурсов](https://docs.microsoft.com/azure/container-instances/container-instances-multi-container-group). 
+
+```json
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "containerGroupName": {
+      "type": "string",
+      "defaultValue": "myContainerGroup",
+      "metadata": {
+        "description": "Container Group name."
+      }
+    }
+  },
+  "variables": {
+    "container1name": "aci-tutorial-app",
+    "container1image": "mcr.microsoft.com/azuredocs/aci-helloworld:latest",
+    "container2name": "aci-tutorial-sidecar",
+    "container2image": "mcr.microsoft.com/azuredocs/aci-tutorial-sidecar"
+  },
+  "resources": [
+    {
+      "name": "[parameters('containerGroupName')]",
+      "type": "Microsoft.ContainerInstance/containerGroups",
+      "apiVersion": "2019-12-01",
+      "location": "[resourceGroup().location]",
+      "properties": {
+        "encryptionProperties": {
+            "vaultBaseUrl": "https://example.vault.azure.net",
+            "keyName": "acikey",
+            "keyVersion": "xxxxxxxxxxxxxxxx"
+        },
+        "sku": "Standard",  
+        "containers": [
+          {
+            "name": "[variables('container1name')]",
+            "properties": {
+              "image": "[variables('container1image')]",
+              "resources": {
+                "requests": {
+                  "cpu": 1,
+                  "memoryInGb": 1.5
+                }
+              },
+              "ports": [
+                {
+                  "port": 80
+                },
+                {
+                  "port": 8080
+                }
+              ]
+            }
+          },
+          {
+            "name": "[variables('container2name')]",
+            "properties": {
+              "image": "[variables('container2image')]",
+              "resources": {
+                "requests": {
+                  "cpu": 1,
+                  "memoryInGb": 1.5
+                }
+              }
+            }
+          }
+        ],
+        "osType": "Linux",
+        "ipAddress": {
+          "type": "Public",
+          "ports": [
+            {
+              "protocol": "tcp",
+              "port": "80"
+            },
+            {
+                "protocol": "tcp",
+                "port": "8080"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "outputs": {
+    "containerIPv4Address": {
+      "type": "string",
+      "value": "[reference(resourceId('Microsoft.ContainerInstance/containerGroups/', parameters('containerGroupName'))).ipAddress.ip]"
+    }
+  }
+}
 ```
 
 ### <a name="deploy-your-resources"></a>Развертывание ресурсов

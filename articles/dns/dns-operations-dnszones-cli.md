@@ -3,7 +3,7 @@ title: Управление зонами DNS в службе DNS Azure с пом
 description: Зонами DNS можно управлять с помощью Azure CLI. В этой статье показано, как обновлять, удалять и создавать зоны DNS в службе DNS Azure.
 services: dns
 documentationcenter: na
-author: asudbring
+author: rohinkoul
 manager: timlt
 ms.assetid: 8ab63bc4-5135-4ed8-8c0b-5f0712b9afed
 ms.service: dns
@@ -12,27 +12,27 @@ ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/27/2017
-ms.author: allensu
-ms.openlocfilehash: e1a3c401de32beb9757011ac306443334da8b867
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.author: rohink
+ms.openlocfilehash: 413c2ab3ee04249c2bb52bf42ca6a31a58fb9082
+ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74211925"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76936926"
 ---
 # <a name="how-to-manage-dns-zones-in-azure-dns-using-the-azure-cli"></a>Как управлять зонами DNS в службе DNS Azure с помощью интерфейса командной строки Azure
 
 > [!div class="op_single_selector"]
 > * [Портал](dns-operations-dnszones-portal.md)
 > * [PowerShell](dns-operations-dnszones.md)
-> * [Интерфейс командной строки Azure](dns-operations-dnszones-cli.md)
+> * [Azure CLI](dns-operations-dnszones-cli.md)
 
 
 В этом руководстве показано, как управлять зонами DNS с помощью кроссплатформенного интерфейса командной строки Azure, доступного для Windows, Mac и Linux. Зонами DNS также можно управлять с помощью [Azure PowerShell](dns-operations-dnszones.md) или портала Azure.
 
 В этом руководстве рассматриваются именно общедоступные зоны DNS. Сведения об использовании Azure PowerShell для управления частным зонами в Azure DNS см. в статье о [начале работы с Частными зонами Azure DNS с помощью Azure CLI](private-dns-getstarted-cli.md).
 
-## <a name="introduction"></a>Введение
+## <a name="introduction"></a>Общие сведения
 
 [!INCLUDE [dns-create-zone-about](../../includes/dns-create-zone-about-include.md)]
 
@@ -62,7 +62,7 @@ az login
 az account list
 ```
 
-Выберите подписку Azure.
+Выберите, какие подписки Azure будут использоваться.
 
 ```azurecli
 az account set --subscription "subscription name"
@@ -76,7 +76,7 @@ az extension add --name dns
 
 ### <a name="create-a-resource-group"></a>Создание группы ресурсов
 
-В диспетчере ресурсов Azure для всех групп ресурсов должно быть указано расположение. Оно используется по умолчанию для ресурсов в этой группе. Но так как все ресурсы DNS глобальные, а не региональные, выбор расположения группы ресурсов не влияет на Azure DNS.
+Диспетчер ресурсов Azure требует, чтобы все группы ресурсов указывали расположение. Оно используется в качестве расположения по умолчанию для всех ресурсов данной группы. Но так как все ресурсы DNS глобальные, а не региональные, выбор расположения группы ресурсов не влияет на Azure DNS.
 
 Если используется существующая группа ресурсов, можно пропустить этот шаг.
 
@@ -86,7 +86,7 @@ az group create --name myresourcegroup --location "West US"
 
 ## <a name="getting-help"></a>Получение справки
 
-Все команды Azure CLI, относящиеся к Azure DNS, начинаются с `az network dns`. Справку для каждой команды можно отобразить с помощью параметра `--help` (краткая форма: `-h`).  Например,
+Все команды Azure CLI, относящиеся к Azure DNS, начинаются с `az network dns`. Справку для каждой команды можно отобразить с помощью параметра `--help` (краткая форма: `-h`).  Пример.
 
 ```azurecli
 az network dns --help
@@ -180,7 +180,7 @@ az network dns zone update --resource-group myresourcegroup --name contoso.com -
 Зоны DNS можно удалить с помощью команды `az network dns zone delete`. Чтобы получить справку, см. `az network dns zone delete --help`.
 
 > [!NOTE]
-> При удалении зоны DNS также удаляются все записи DNS в этой зоне. Эту операцию нельзя отменить. Если зона DNS используется, то после ее удаления произойдет сбой служб, которые ее используют.
+> При удалении зоны DNS также удаляются все записи DNS в этой зоне. Отменить эту операцию невозможно. Если зона DNS используется, то после ее удаления произойдет сбой служб, которые ее используют.
 >
 >Сведения о защите от случайного зоны удаления см. в разделе [How to protect DNS zones and records](dns-protect-zones-recordsets.md) (Как защитить зоны и записи DNS).
 
@@ -192,7 +192,7 @@ az network dns zone update --resource-group myresourcegroup --name contoso.com -
 az network dns zone delete --resource-group myresourcegroup --name contoso.com
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте, как [управлять наборами записей и записями](dns-getstarted-create-recordset-cli.md) в зоне DNS.
 

@@ -2,17 +2,17 @@
 title: Общие сведения о записях псевдонимов — Azure DNS
 description: В этой статье вы узнаете о поддержке записей псевдонимов в Microsoft Azure DNS.
 services: dns
-author: asudbring
+author: rohinkoul
 ms.service: dns
 ms.topic: article
 ms.date: 08/09/2019
-ms.author: allensu
-ms.openlocfilehash: da396d3e3db4acd1a9843977b8b3e3d51c33f021
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.author: rohink
+ms.openlocfilehash: 085e5fc20a6b5356e012eb2f674fafc00cef828f
+ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74212325"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76937326"
 ---
 # <a name="azure-dns-alias-records-overview"></a>Обзор записей псевдонимов Azure DNS
 
@@ -20,7 +20,7 @@ ms.locfileid: "74212325"
 
 Набор записей псевдонимов поддерживается для следующих типов записей в зоне DNS Azure: 
 
-- Файл ,
+- A
 - AAAA
 - CNAME
 
@@ -73,7 +73,7 @@ ms.locfileid: "74212325"
 > [!NOTE]
 > Указание зоны, вершине в конечные точки CDN для Azure CDN из Akamai, в настоящее время не поддерживается.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о записях псевдонима см. в следующих статьях:
 

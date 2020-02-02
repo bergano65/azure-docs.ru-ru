@@ -1,6 +1,6 @@
 ---
-title: Аутентификация решений по управлению пакетной службой с помощью Azure Active Directory | Документация Майкрософт
-description: Приложения, созданные с помощью Azure Resource Manager и поставщика ресурсов пакетной службы, проходят аутентификацию в Azure AD.
+title: Использование Azure Active Directory для проверки подлинности решений по управлению пакетной службой
+description: Изучите использование Azure Active Directory для проверки подлинности в приложениях, использующих библиотеку .NET для управления пакетной службой.
 services: batch
 documentationcenter: .net
 author: ju-shim
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: ''
 ms.workload: big-compute
 ms.date: 04/27/2017
 ms.author: jushiman
-ms.openlocfilehash: 19aac0e25f9a036ce52d72a51e1ab7270eaaf3e5
-ms.sourcegitcommit: dbcc4569fde1bebb9df0a3ab6d4d3ff7f806d486
+ms.openlocfilehash: 1dce5118040e6164a468b0d5470d28e5cd06d8c5
+ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76029834"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76938259"
 ---
 # <a name="authenticate-batch-management-solutions-with-active-directory"></a>Аутентификация решений по управлению пакетной службой с помощью Active Directory
 

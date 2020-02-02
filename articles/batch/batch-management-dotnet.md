@@ -1,5 +1,5 @@
 ---
-title: Управление ресурсами учетной записи с помощью клиентской библиотеки для .NET в пакетной службе Azure | Документация Майкрософт
+title: Управление ресурсами учетной записи с помощью библиотеки .NET для управления пакетной службой
 description: Создание, удаление и изменение ресурсов учетных записей пакетной службы Azure с помощью библиотеки .NET для управления пакетной службой.
 services: batch
 documentationcenter: .net
@@ -15,12 +15,12 @@ ms.workload: big-compute
 ms.date: 04/24/2017
 ms.author: jushiman
 ms.custom: seodec18
-ms.openlocfilehash: 233081b43fa5dd83c88619007d4d6fbe27f24e30
-ms.sourcegitcommit: dbcc4569fde1bebb9df0a3ab6d4d3ff7f806d486
+ms.openlocfilehash: ab78f12e7d1424ebd2528af188891c5403c95e17
+ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76027046"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76933051"
 ---
 # <a name="manage-batch-accounts-and-quotas-with-the-batch-management-client-library-for-net"></a>Управление учетными записями и квотами пакетной службы с помощью клиентской библиотеки .NET для управления пакетной службой
 

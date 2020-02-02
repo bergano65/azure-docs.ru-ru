@@ -1,6 +1,6 @@
 ---
-title: Событие завершения удаления пула пакетной службы Azure | Документы Майкрософт
-description: Справочник по событию завершения удаления пула пакетной службы.
+title: Событие завершения удаления пула пакетной службы Azure
+description: Справочник по событию завершения удаления пула пакетной службы. Это событие создается при завершении операции удаления пула.
 services: batch
 author: ju-shim
 manager: gwallace
@@ -11,12 +11,12 @@ ms.tgt_pltfrm: ''
 ms.workload: big-compute
 ms.date: 04/20/2017
 ms.author: jushiman
-ms.openlocfilehash: bcbfe009e2880c0155a067305cc28317678cbfa6
-ms.sourcegitcommit: dbcc4569fde1bebb9df0a3ab6d4d3ff7f806d486
+ms.openlocfilehash: 56dc4c91566cc5c41de6c91618d09e7a0ebb7172
+ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76026689"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76929868"
 ---
 # <a name="pool-delete-complete-event"></a>Событие завершения удаления пула
 

@@ -2,17 +2,17 @@
 title: Делегирование поддомена — Azure DNS
 description: По этой схеме обучения приступайте к делегированию поддомена Azure DNS.
 services: dns
-author: asudbring
+author: rohinkoul
 ms.service: dns
 ms.topic: article
 ms.date: 2/7/2019
-ms.author: allensu
-ms.openlocfilehash: 462282e9674e7a253f61c96338b54174c80fb03f
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.author: rohink
+ms.openlocfilehash: cd1443a9ca8ccf7172072078734f21d789d36194
+ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74212377"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76937430"
 ---
 # <a name="delegate-an-azure-dns-subdomain"></a>Делегирование поддомена Azure DNS
 
@@ -20,7 +20,7 @@ ms.locfileid: "74212377"
 
 При необходимости вы можете делегировать поддомен с помощью [Azure PowerShell](delegate-subdomain-ps.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы делегировать поддомен Azure DNS, сначала вам следует делегировать общедоступный домен службе Azure DNS. Дополнительные сведения о настройке делегирования в серверах имен см. в статье [Руководство. Размещение домена в Azure DNS](./dns-delegate-domain-azure-dns.md). После делегирования домена в зону Azure DNS вы можете делегировать поддомен.
 
@@ -33,7 +33,7 @@ ms.locfileid: "74212377"
 
 1. Выберите **Создать ресурс** на портале Azure.
 2. В поле поиска введите **DNS** и выберите **зону DNS**.
-3. Нажмите кнопку **Создать**.
+3. Щелкните **Создать**.
 4. В области **Создание зоны DNS** введите **engineering.contoso.com** в текстовое поле **Имя**.
 5. Выберите группу ресурсов для своей зоны. Вам может потребоваться использовать ту же группу ресурсов, что и в родительской зоне, для размещения одинаковых ресурсов вместе.
 6. Нажмите кнопку **Создать**.
@@ -68,6 +68,6 @@ ms.locfileid: "74212377"
 2. В командной строке введите `nslookup www.engineering.contoso.com.`
 3. Вы должны получить ответ, исходящий не из полномочного источника и содержащий адрес **10.10.10.10**.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте, как [настроить обратный просмотр DNS для размещенных в Azure служб](dns-reverse-dns-for-azure-services.md).

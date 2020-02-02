@@ -9,34 +9,76 @@ manager: cshankar
 ms.devlang: csharp
 ms.workload: big-data
 ms.topic: conceptual
-ms.date: 12/02/2019
+ms.date: 01/31/2020
 ms.custom: seodec18
-ms.openlocfilehash: 3729bedf7591ffecc558b88660486f7e336fa717
-ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
+ms.openlocfilehash: a5cb435b38a776ba652854592bdc7d3e833742d1
+ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74705908"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76935081"
 ---
 # <a name="query-data-from-the-azure-time-series-insights-ga-environment-using-c"></a>Запрос данных из общедоступной среды службы "аналитика временных рядов Azure" с помощьюC#
 
-В C# этом примере показано, как запросить данные из среды "аналитика временных рядов Azure".
+В C# этом примере показано, как использовать [API-интерфейсы](https://docs.microsoft.com/rest/api/time-series-insights/ga-query) общедоступных запросов для запроса данных из сред "аналитика временных рядов Azure".
 
-В нем показано несколько простых способов использования API запроса:
+## <a name="summary"></a>Сводка
 
-1. На этапе подготовки следует получить маркер доступа через API Azure Active Directory. Передавайте этот маркер в заголовке `Authorization` каждого запроса API запроса. Сведения о настройке неинтерактивных приложений см. в статье [Проверка подлинности и авторизация для API Azure Time Series Insights](time-series-insights-authentication-and-authorization.md). Кроме того, убедитесь, что все константы, определенные в начале примера, указаны правильно.
-1. Запрашивается список сред, к которым у пользователя есть доступ. Выбирается одна из этих сред, и последующие данные запрашиваются для этой среды.
-1. В качестве примера HTTPS-запроса для выбранной среды запрашиваются данные о доступности.
-1. В качестве примера запроса веб-сокета для выбранной среды запрашиваются объединенные данные событий. Данные запрашиваются для всего диапазона времени доступности.
+Приведенный ниже пример кода демонстрирует следующие возможности.
+
+* Получение маркера доступа с помощью Azure Active Directory с помощью [Microsoft. IdentityModel. Clients. ActiveDirectory](https://www.nuget.org/packages/Microsoft.IdentityModel.Clients.ActiveDirectory/).
+
+* Как передать полученный маркер доступа в заголовке `Authorization` последующих запросов API запросов. 
+
+* В примере вызывается каждый из общедоступных интерфейсов API запроса, демонстрирующих, как выполняются HTTP-запросы к:
+    * [Получение API сред](https://docs.microsoft.com/rest/api/time-series-insights/ga-query-api#get-environments-api) для возврата сред, к которым у пользователя есть доступ
+    * [Получить API доступности среды](https://docs.microsoft.com/rest/api/time-series-insights/ga-query-api#get-environment-availability-api)
+    * [Получение API метаданных среды](https://docs.microsoft.com/rest/api/time-series-insights/ga-query-api#get-environment-metadata-api) для получения метаданных среды
+    * [Получение API событий среды](https://docs.microsoft.com/rest/api/time-series-insights/ga-query-api#get-environment-events-api)
+    * [Получение API для агрегатов среды](https://docs.microsoft.com/rest/api/time-series-insights/ga-query-api#get-environment-aggregates-api)
+    
+* Как взаимодействовать с API-интерфейсами общедоступных запросов с помощью WSS для сообщения:
+
+   * [Получение потоковых API событий среды](https://docs.microsoft.com/rest/api/time-series-insights/ga-query-api#get-environment-events-streamed-api)
+   * [Получить статистические данные о среде потоковый API](https://docs.microsoft.com/rest/api/time-series-insights/ga-query-api#get-environment-aggregates-streamed-api)
 
 > [!NOTE]
 > Пример кода доступен по адресу [https://github.com/Azure-Samples/Azure-Time-Series-Insights](https://github.com/Azure-Samples/Azure-Time-Series-Insights/tree/master/csharp-tsi-ga-sample).
 
-## <a name="project-dependencies"></a>Зависимости проекта
+## <a name="prerequisites-and-setup"></a>Предварительные требования и установка
 
-Добавьте пакеты NuGet `Microsoft.IdentityModel.Clients.ActiveDirectory` и `Newtonsoft.Json`.
+Перед компиляцией и запуском примера кода выполните следующие шаги.
 
-## <a name="c-example"></a>Пример C#
+1. Подготавливает общедоступную среду службы " [аналитика временных рядов Azure](https://docs.microsoft.com/azure/time-series-insights/time-series-insights-get-started) ".
+
+1. Настройте среду службы "аналитика временных рядов Azure" для Azure Active Directory, как описано в статье [Проверка подлинности и авторизация](time-series-insights-authentication-and-authorization.md). 
+
+1. Установите необходимые зависимости проекта.
+
+1. Измените приведенный ниже пример кода, заменив каждый **#DUMMY #** на соответствующий идентификатор среды.
+
+1. Выполните код в Visual Studio.
+
+> [!TIP]
+> * Просмотрите другие примеры C# кода в общедоступной версии на [https://github.com/Azure-Samples/Azure-Time-Series-Insights](https://github.com/Azure-Samples/Azure-Time-Series-Insights/tree/master/csharp-tsi-ga-sample).
+
+## <a name="project-dependencies"></a>Зависимости проектов
+
+Рекомендуется использовать последнюю версию Visual Studio:
+
+* [Visual Studio 2019](https://visualstudio.microsoft.com/vs/) — версия 16.4.2 +
+
+Образец кода имеет две необходимые зависимости:
+
+* Пакет [Microsoft. IdentityModel. Clients. ActiveDirectory](https://www.nuget.org/packages/Microsoft.IdentityModel.Clients.ActiveDirectory/) -3.13.9.
+* [Newtonsoft. JSON](https://www.nuget.org/packages/Newtonsoft.Json) — пакет 9.0.1.
+
+Добавьте пакеты с помощью [NuGet 2.12 +](https://www.nuget.org/):
+
+* `dotnet add package Newtonsoft.Json --version 9.0.1`
+* `dotnet add package Microsoft.IdentityModel.Clients.ActiveDirectory --version 3.13.9`
+
+## <a name="c-sample-code"></a>Пример кода C#
 
 [!code-csharp[csharpquery-example](~/samples-tsi/csharp-tsi-ga-sample/Program.cs)]
 

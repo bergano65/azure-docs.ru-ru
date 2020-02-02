@@ -8,16 +8,16 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: timlt
-ms.openlocfilehash: 6652ca30d9f38eb6184fce5f1ff5428d29c271a6
-ms.sourcegitcommit: f9601bbccddfccddb6f577d6febf7b2b12988911
+ms.openlocfilehash: e2ad8eb181685d3ac3de8b1e0ed7ef8ddfa4e224
+ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2020
-ms.locfileid: "75911273"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76933283"
 ---
 # <a name="add-controls-to-a-map"></a>Добавление элементов управления на карту
 
-В этой статье показано, как добавить элементы управления на карту. Вы также узнаете, как создать карту со всеми элементами управления и [средством выбора стиля](https://docs.microsoft.com/azure/azure-maps/choose-map-style).
+В этой статье показано, как добавить элементы управления на карту. Вы также узнаете, как создать карту со всеми элементами управления и [выбором стиля](https://docs.microsoft.com/azure/azure-maps/choose-map-style).
 
 ## <a name="add-zoom-control"></a>Добавление элемента управления масштабом
 
@@ -39,7 +39,7 @@ map.controls.add(new atlas.control.ZoomControl(), {
 
 ## <a name="add-pitch-control"></a>Добавление элемента управления наклоном
 
-Элемент управления "тон" добавляет кнопки для наклона высоты для отображения относительно горизонта. В следующем примере кода создается экземпляр класса [питчконтрол](/javascript/api/azure-maps-control/atlas.control.pitchcontrol) , который добавляется в правый верхний угол сопоставлений.
+Элемент управления "тон" добавляет кнопки для наклона высоты для отображения относительно горизонта. В следующем примере кода создается экземпляр класса [питчконтрол](/javascript/api/azure-maps-control/atlas.control.pitchcontrol) . Он добавляет Питчконтрол в правый верхний угол на карте.
 
 ```javascript
 //Construct a pitch control and add it to the map.

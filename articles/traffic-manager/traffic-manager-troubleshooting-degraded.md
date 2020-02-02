@@ -3,7 +3,7 @@ title: Устранение неполадок с состоянием "Дегр
 description: Устранение неполадок с профилями диспетчера трафика при отображении состояния "Деградация".
 services: traffic-manager
 documentationcenter: ''
-author: asudbring
+author: rohinkoul
 manager: kumudD
 ms.service: traffic-manager
 ms.devlang: na
@@ -11,13 +11,13 @@ ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 05/03/2017
-ms.author: allensu
-ms.openlocfilehash: 8b8fbdf55e408874f6a6e83d6333583238865b5c
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.author: rohink
+ms.openlocfilehash: c398763405472c9018a5c30d34fbd3963ecb93b7
+ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74227714"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76938362"
 ---
 # <a name="troubleshooting-degraded-state-on-azure-traffic-manager"></a>Устранение неполадок, связанных со сбоем диспетчера трафика
 
@@ -38,7 +38,7 @@ ms.locfileid: "74227714"
 * Рекомендуется установить путь пробы на что-то, имеющее достаточное количество логики, чтобы определить, что сайт работает. В предыдущем примере, указав путь к /favicon.ico, вы проверяли, отвечает ли w3wp.exe. Эта проверка может не показать, работоспособно ли веб-приложение. Лучше было бы задать путь к элементу, например /Probe.aspx, содержащему логику для определения работоспособности сайта. Например, можно использовать счетчики производительности для определения загрузки ЦП или определить число неудачных запросов. Кроме того, можно попытаться получить доступ к ресурсам базы данных или состоянию сеанса, чтобы убедиться, что веб-приложение работает.
 * Если функциональность всех конечных точек в профиле снижена, то диспетчер трафика будет считать их работоспособными и будет перенаправлять трафик во все конечные точки. Такое поведение гарантирует, что проблемы с механизмом проверки не приведут к сбою службы.
 
-## <a name="troubleshooting"></a>Устранение неполадок
+## <a name="troubleshooting"></a>Устранение неисправностей
 
 Чтобы устранить сбой проверки, необходимо средство, позволяющее просмотреть код состояния HTTP, возвращаемый после проверки URL-адреса. Существует множество средств, позволяющих просмотреть необработанный ответ HTTP:
 
@@ -79,7 +79,7 @@ public class TrustAllCertsPolicy : ICertificatePolicy {
 [System.Net.ServicePointManager]::CertificatePolicy = New-Object TrustAllCertsPolicy
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 [О методах маршрутизации трафика в диспетчере трафика](traffic-manager-routing-methods.md)
 
@@ -87,7 +87,7 @@ public class TrustAllCertsPolicy : ICertificatePolicy {
 
 [Облачные службы](https://go.microsoft.com/fwlink/?LinkId=314074)
 
-[службы приложений Azure](https://azure.microsoft.com/documentation/services/app-service/web/)
+[Служба приложений Azure](https://azure.microsoft.com/documentation/services/app-service/web/)
 
 [Операции с диспетчером трафика (справочник по REST API)](https://go.microsoft.com/fwlink/?LinkId=313584)
 

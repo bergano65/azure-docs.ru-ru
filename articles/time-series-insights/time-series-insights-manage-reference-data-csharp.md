@@ -9,20 +9,30 @@ manager: cshankar
 ms.devlang: csharp
 ms.workload: big-data
 ms.topic: conceptual
-ms.date: 01/27/2020
+ms.date: 01/31/2020
 ms.custom: seodec18
-ms.openlocfilehash: 2bdd11c3b53b650e636d53942fcb94142de556b2
-ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
+ms.openlocfilehash: 079cfcee543cf1ce36c4a1394479a622b3658789
+ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76772830"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76935126"
 ---
 # <a name="manage-ga-reference-data-for-an-azure-time-series-insights-environment-using-c"></a>Управление эталонными данными на основе общедоступной версии для среды службы "аналитика временных рядов Azure" с помощьюC#
 
 В этой статье показано, как C#объединить, [MSAL.NET](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet)и Azure Active Directory, чтобы программные запросы API были предоставлены в общедоступной [Управление данными API](https://docs.microsoft.com/rest/api/time-series-insights/ga-reference-data-api)Azure Time Series Insights.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="summary"></a>Сводка
+
+Приведенный ниже пример кода демонстрирует следующие возможности.
+
+* Получение маркера доступа с помощью [MSAL.NET](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet) **публикклиентаппликатион**.
+* Последовательные операции создания, чтения, обновления и удаления в общедоступной [справочной управление данными API](https://docs.microsoft.com/rest/api/time-series-insights/ga-reference-data-api).
+* Общие коды ответов, включая [распространенные коды ошибок](https://docs.microsoft.com/rest/api/time-series-insights/ga-reference-data-api#validation-and-error-handling).
+    
+    Справочник по Управление данными API обрабатывает каждый элемент по отдельности, а ошибка с одним элементом не мешает успешному выполнению других. Например, если запрос содержит 100 элементов, а один элемент содержит ошибку, то 99 элементов записывается, а один — отклоняется.
+
+## <a name="prerequisites-and-setup"></a>Предварительные требования и установка
 
 Перед компиляцией и запуском примера кода выполните следующие шаги.
 
@@ -296,16 +306,6 @@ namespace CsharpTsiMsalGaSample
     }
 }
 ```
-
-## <a name="summary"></a>Сводка
-
-В приведенном выше примере кода демонстрируются следующие возможности.
-
-* Получение маркера доступа с помощью [MSAL.NET](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet) **публикклиентаппликатион**.
-* Последовательные операции создания, чтения, обновления и удаления в общедоступной [справочной управление данными API](https://docs.microsoft.com/rest/api/time-series-insights/ga-reference-data-api).
-* Общие коды ответов, включая [распространенные коды ошибок](https://docs.microsoft.com/rest/api/time-series-insights/ga-reference-data-api#validation-and-error-handling).
-    
-    Справочник по Управление данными API обрабатывает каждый элемент по отдельности, а ошибка с одним элементом не мешает успешному выполнению других. Например, если запрос содержит 100 элементов, а один элемент содержит ошибку, то 99 элементов записывается, а один — отклоняется.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

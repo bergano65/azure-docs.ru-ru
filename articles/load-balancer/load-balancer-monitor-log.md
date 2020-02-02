@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/27/2018
 ms.author: allensu
-ms.openlocfilehash: 7ed58201fa7aa1e608cba6d64ac95740cf9a60dc
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.openlocfilehash: 0a21af683d9fa7849d3e96c545983c9f40a8d4c6
+ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75965921"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76935320"
 ---
 # <a name="azure-monitor-logs-for-public-basic-load-balancer"></a>Azure Monitor журналов для общедоступного базового Load Balancer
 
@@ -156,11 +156,11 @@ ms.locfileid: "75965921"
 
 В выходных данных JSON в поле свойств отображаются основные сведения о состоянии проверки работоспособности. Свойство *дипдовнкаунт* показывает общее количество экземпляров на серверной части, которые не получают сетевой трафик из-за неудачных ответов проверки.
 
-### <a name="view-and-analyze-the-audit-log"></a>Просмотр и анализ журнала аудита
+### <a name="view-and-analyze-the-activity-log"></a>Просмотр и анализ журнала действий
 
-Данные журнала аудита можно просматривать и анализировать с помощью любого из следующих методов.
+Данные журнала действий можно просматривать и анализировать с помощью любого из следующих методов:
 
-* **Средства Azure:** Получите сведения из журналов аудита с помощью Azure PowerShell, интерфейса командной строки Azure (CLI), REST API Azure или портал Azure. Пошаговые инструкции для каждого метода подробно описаны в статье [Операции аудита с помощью диспетчера ресурсов](../azure-resource-manager/management/view-activity-logs.md) .
+* **Средства Azure:** Получите сведения из журнала действий с помощью Azure PowerShell, интерфейса командной строки Azure (CLI), REST API Azure или портал Azure. Пошаговые инструкции для каждого метода подробно описаны в статье [Операции аудита с помощью диспетчера ресурсов](../azure-resource-manager/management/view-activity-logs.md) .
 * **Power BI.** Если у вас еще нет учетной записи [Power BI](https:// .microsoft.com/pricing) , ее можно опробовать бесплатно. Используя [пакет содержимого "Журналы аудита Azure" для Power BI](https:// .microsoft.com/documentation/ -content-pack-azure-audit-logs), можно анализировать данные с помощью предварительно настроенных панелей мониторинга или дополнительно настроить представление данных в зависимости от своих потребностей.
 
 ### <a name="view-and-analyze-the-health-probe-and-event-log"></a>Просмотр и анализ журналов событий и проверки работоспособности

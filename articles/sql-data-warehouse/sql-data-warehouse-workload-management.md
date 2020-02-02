@@ -11,12 +11,12 @@ ms.date: 01/13/2020
 ms.author: rortloff
 ms.reviewer: jrasnick
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 66edde9591d4491fa630772f99372f9901319b2f
-ms.sourcegitcommit: b5106424cd7531c7084a4ac6657c4d67a05f7068
+ms.openlocfilehash: 287ad5467f9f3aac7eb8c9d7c19ea15c380c6879
+ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75940583"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76935417"
 ---
 # <a name="what-is-workload-management"></a>Что такое управление рабочей нагрузкой?
 
@@ -31,7 +31,7 @@ ms.locfileid: "75940583"
 - Экспорт данных из хранилища данных
 
 Производительность хранилища данных зависит от [единиц использования хранилища данных](what-is-a-data-warehouse-unit-dwu-cdwu.md).
-- Чтобы просмотреть ресурсы, выделенные для всех профилей производительности, см. раздел [ограничения памяти и параллелизма] память-параллелизм — limits.md).
+- Чтобы просмотреть ресурсы, выделенные для всех профилей производительности, см. раздел [ограничения памяти и параллелизма](memory-concurrency-limits.md).
 - Чтобы настроить емкость, можно [увеличить или уменьшить масштаб](quickstart-scale-compute-portal.md).
 
 

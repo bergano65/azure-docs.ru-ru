@@ -10,12 +10,12 @@ ms.subservice: face-api
 ms.topic: conceptual
 ms.date: 12/03/2019
 ms.author: longl
-ms.openlocfilehash: 44392b807659ff8f13511b48d0afd33db080e4f6
-ms.sourcegitcommit: d29e7d0235dc9650ac2b6f2ff78a3625c491bbbf
+ms.openlocfilehash: da9ad5576d146c007e45124668875e9681860ce6
+ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76166456"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76938821"
 ---
 # <a name="specify-a-face-recognition-model"></a>Указание модели распознавания лиц
 
@@ -109,6 +109,7 @@ API [Лицо — проверка] проверяет, принадлежат �
 
 * [Пакет SDK для .NET для лиц](../Quickstarts/csharp-sdk.md)
 * [Пакет SDK для Python для лиц](../Quickstarts/python-sdk.md)
+* [Пакет SDK для лиц Go](../Quickstarts/go-sdk.md)
 
 [Обнаружение лиц]: https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d
 [Похожее лицо — Поиск похожих]: https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395237

@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: troubleshooting
 ms.date: 08/26/2019
-ms.openlocfilehash: 093bfbd976ace41f635976ff27fa4292e5c4df3c
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: 1e13c7ef8eae81ef2a12a8761b0596f6329f94dc
+ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "76905152"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76937910"
 ---
 # <a name="troubleshoot-cluster-creation-failures-with-azure-hdinsight"></a>Устранение сбоев при создании кластера с помощью Azure HDInsight
 
@@ -64,7 +64,7 @@ ms.locfileid: "76905152"
 
 ## <a name="resources-locks"></a>Блокировки ресурсов  
 
-Убедитесь, что [в виртуальной сети и группе ресурсов нет блокировок](../../azure-resource-manager/management/lock-resources.md).  
+Убедитесь, что [в виртуальной сети и группе ресурсов нет блокировок](../../azure-resource-manager/management/lock-resources.md). Кластеры не могут быть созданы или удалены, если группа ресурсов заблокирована. 
 
 ## <a name="unsupported-component-versions"></a>Неподдерживаемые версии компонентов
 

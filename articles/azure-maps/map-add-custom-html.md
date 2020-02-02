@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: ''
 ms.custom: codepen
-ms.openlocfilehash: 5a15b3b9e51772d8c7e5312968fecb180069e2a7
-ms.sourcegitcommit: f9601bbccddfccddb6f577d6febf7b2b12988911
+ms.openlocfilehash: 4cc3b1789ef2f7ef44e5421cbacb5a93c2a0a1ff
+ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2020
-ms.locfileid: "75911252"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76933610"
 ---
 # <a name="add-html-markers-to-the-map"></a>Добавление маркеров HTML на карту
 
@@ -24,7 +24,7 @@ ms.locfileid: "75911252"
 > Маркеры HTML не подключаются к источникам данных. Вместо этого сведения о положении добавляются непосредственно к маркеру, который добавляется в свойство карт `markers` — [HtmlMarkerManager](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.htmlmarkermanager?view=azure-iot-typescript-latest).
 
 > [!IMPORTANT]
-> В отличие от большинства слоев в веб-элементе управления Azure Maps, использующих WebGL для отрисовки, маркеры HTML используют традиционные элементы модели DOM для отрисовки. Таким образом, чем больше дополнительных маркеров HTML добавлено на страницу, тем больше элементов модели DOM. Производительность может снизиться после добавления нескольких сотен маркеров HTML. Для более крупных наборов данных рекомендуется кластеризация данных или использование слоя символа или пузырьков.
+> В отличие от большинства слоев в веб-элементе управления Azure Maps, использующих WebGL для отрисовки, маркеры HTML используют традиционные элементы модели DOM для отрисовки. Таким образом, чем больше маркеров HTML добавляется на страницу, тем больше элементов DOM есть. Производительность может снизиться после добавления нескольких сотен маркеров HTML. Для более крупных наборов данных рекомендуется кластеризация данных или использование слоя символа или пузырьков.
 
 ## <a name="add-an-html-marker"></a>Добавление маркера HTML
 
@@ -33,7 +33,7 @@ ms.locfileid: "75911252"
 Следующий код создает HTML-маркер и присваивает свойству Color значение «Доджерблуе», а свойству Text — значение «10». К маркеру прикрепляется всплывающее окно, а для переключения видимости всплывающего окна используется событие `click`.
 
 ```javascript
-//Create a HTML marker and add it to the map.
+//Create an HTML marker and add it to the map.
 var marker = new atlas.HtmlMarker({
     color: 'DodgerBlue',
     text: '10',

@@ -3,7 +3,7 @@ title: Управление записями DNS в службе DNS Azure с п
 description: Управляйте наборами записей и записями DNS в службе Azure DNS при размещении вашего домена в Azure DNS. Все команды PowerShell для операций с наборами записей и записями.
 services: dns
 documentationcenter: na
-author: asudbring
+author: rohinkoul
 manager: timlt
 ms.assetid: 7136a373-0682-471c-9c28-9e00d2add9c2
 ms.service: dns
@@ -13,20 +13,20 @@ ms.tgt_pltfrm: na
 ms.custom: H1Hack27Feb2017
 ms.workload: infrastructure-services
 ms.date: 12/21/2016
-ms.author: allensu
-ms.openlocfilehash: c11a5c4a3cfe18fbc203ad641ab1de866915bcc4
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.author: rohink
+ms.openlocfilehash: b9244d9b2bdc9cb20195bbc103c0b1eb48a9de63
+ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74211690"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76932531"
 ---
 # <a name="manage-dns-records-and-recordsets-in-azure-dns-using-azure-powershell"></a>Управление записями и наборами записей DNS в службе DNS Azure с помощью Azure PowerShell
 
 > [!div class="op_single_selector"]
-> * [портал Azure](dns-operations-recordsets-portal.md)
+> * [портале Azure](dns-operations-recordsets-portal.md)
 > * [Классический Azure CLI](dns-operations-recordsets-cli-nodejs.md)
-> * [Интерфейс командной строки Azure](dns-operations-recordsets-cli.md)
+> * [Azure CLI](dns-operations-recordsets-cli.md)
 > * [PowerShell](dns-operations-recordsets.md)
 
 В этой статье описывается, как управлять записями DNS для зоны DNS с помощью Azure PowerShell. Записями DNS также можно управлять с помощью кроссплатформенного [интерфейса командной строки Azure](dns-operations-recordsets-cli.md) или [портала Azure](dns-operations-recordsets-portal.md).
@@ -35,7 +35,7 @@ ms.locfileid: "74211690"
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-## <a name="introduction"></a>Введение
+## <a name="introduction"></a>Общие сведения
 
 Чтобы создавать записи DNS в Azure DNS, нужно понимать, как Azure DNS организует записи DNS в соответствующие наборы записей.
 
@@ -50,7 +50,7 @@ ms.locfileid: "74211690"
 
 ### <a name="create-a-records-in-a-new-record-set"></a>Создание записей А в новом наборе записей
 
-Для создания наборов записей используется командлет `New-AzDnsRecordSet` . Создавая набор записей, вам нужно определить для него имя, зону, срок жизни (TTL), тип записей и сами создаваемые записи.
+Для создания наборов записей используется командлет `New-AzDnsRecordSet`. Создавая набор записей, вам нужно определить для него имя, зону, срок жизни (TTL), тип записей и сами создаваемые записи.
 
 Параметры для добавления записей в набор записей зависят от типа набора записей. Например, при использовании набора записей типа A вам нужно указать IP-адрес с использованием параметра `-IPv4Address`. Другие параметры используются для других типов записей (подробные сведения см. в разделе с примерами других типов записей).
 
@@ -136,7 +136,7 @@ New-AzDnsRecordSet -Name "test-ns" -RecordType NS -ZoneName "contoso.com" -Resou
 
 ### <a name="create-a-ptr-record-set-with-a-single-record"></a>Создание набора записей типа PTR с одной записью
 
-В этом случае my-arpa-zone.com представляет зону обратного просмотра ARPA вашего диапазона IP-адресов. Каждая запись типа PTR в этой зоне соответствует IP-адресу в этом диапазоне. Имя записи 10 — это последний октет IP-адреса в этом диапазоне IP-адресов, представленном данной записью.
+В этом случае my-arpa-zone.com представляет зону обратного просмотра ARPA вашего диапазона IP-адресов. Каждая запись PTR в этой зоне соответствует IP-адресу в этом диапазоне. Имя записи 10 — это последний октет IP-адреса в этом диапазоне IP-адресов, представленном данной записью.
 
 ```powershell
 New-AzDnsRecordSet -Name 10 -RecordType PTR -ZoneName "my-arpa-zone.com" -ResourceGroupName "MyResourceGroup" -Ttl 3600 -DnsRecords (New-AzDnsRecordConfig -Ptrdname "myservice.contoso.com") 
@@ -230,7 +230,7 @@ $recordsets = Get-AzDnsRecordSet -Zone $zone
     Set-AzDnsRecordSet -RecordSet $rs
     ```
 
-С помощью `Set-AzDnsRecordSet` существующий набор записей в Azure DNS (и все записи, которые он содержит) *будет заменен* указанным набором записей. [Проверки Etag](dns-zones-records.md#etags) помогают избежать перезаписи параллельных изменений. Чтобы отменить эти проверки, укажите необязательный параметр `-Overwrite`.
+Использование `Set-AzDnsRecordSet` *заменяет* существующий набор записей в Azure DNS (и всех содержащихся в нем записях) заданным набором записей. [Проверки Etag](dns-zones-records.md#etags) помогают избежать перезаписи параллельных изменений. Чтобы отменить эти проверки, укажите необязательный параметр `-Overwrite`.
 
 Последовательность операций также можно *направить в конвейер*. Это значит, что объект набора записей передается с помощью конвейера, а не как параметр:
 
@@ -238,7 +238,7 @@ $recordsets = Get-AzDnsRecordSet -Zone $zone
 Get-AzDnsRecordSet -Name "www" –ZoneName "contoso.com" -ResourceGroupName "MyResourceGroup" -RecordType A | Add-AzDnsRecordConfig -Ipv4Address "5.6.7.8" | Set-AzDnsRecordSet
 ```
 
-Приведенные выше примеры иллюстрируют добавление записи типа А в существующий набор записей типа A. Аналогичная последовательность операций используется и для добавления записей в наборы записей других типов. Для этого в `-Ipv4Address` нужно просто заменить параметр `Add-AzDnsRecordConfig` параметром, соответствующим нужному типу записи. Как видно в примерах с другими типами записей (см. выше), используемые для каждого типа записи параметры соответствуют параметрам в командлете `New-AzDnsRecordConfig`.
+Приведенные выше примеры иллюстрируют добавление записи типа А в существующий набор записей типа A. Аналогичная последовательность операций используется и для добавления записей в наборы записей других типов. Для этого в `Add-AzDnsRecordConfig` нужно просто заменить параметр `-Ipv4Address` параметром, соответствующим нужному типу записи. Как видно в примерах с другими типами записей (см. выше), используемые для каждого типа записи параметры соответствуют параметрам в командлете `New-AzDnsRecordConfig`.
 
 Наборы записей типа CNAME или SOA не могут содержать более одной записи. Это ограничение определяется общими стандартами DNS, а не Azure DNS.
 
@@ -258,7 +258,7 @@ Get-AzDnsRecordSet -Name "www" –ZoneName "contoso.com" -ResourceGroupName "MyR
     Remove-AzDnsRecordConfig -RecordSet $rs -Ipv4Address "5.6.7.8"
     ```
 
-3. Зафиксируйте изменения в службе Azure DNS. Чтобы отменить `-Overwrite`проверки Etag[ (проверки перезаписи параллельных изменений), используйте необязательный параметр ](dns-zones-records.md#etags).
+3. Зафиксируйте изменения в службе Azure DNS. Чтобы отменить [проверки Etag](dns-zones-records.md#etags) (проверки перезаписи параллельных изменений), используйте необязательный параметр `-Overwrite`.
 
     ```powershell
     Set-AzDnsRecordSet -RecordSet $Rs
@@ -392,7 +392,7 @@ Get-AzDnsRecordSet -Name www -RecordType A -ZoneName "contoso.com" -ResourceGrou
 
 Дополнительные сведения об элементах `-Confirm` и `$ConfirmPreference` см. в статье о [привилегированных переменных](/powershell/module/microsoft.powershell.core/about/about_preference_variables).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 См. дополнительные сведения о [зонах и записях в Azure DNS](dns-zones-records.md).
 <br>

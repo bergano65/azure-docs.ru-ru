@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/12/2019
 ms.author: terrylan
-ms.openlocfilehash: a936fb4a0a6eadc2840fc6d642428091a6b0fe9e
-ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
+ms.openlocfilehash: 11bf7c0ae05c2e52d59efb32be47ce6bd96fac4f
+ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75771280"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76937981"
 ---
 # <a name="develop-secure-app-for-an-azure-ad-app"></a>Разработка защищенного приложения для приложения Azure AD
 ## <a name="overview"></a>Обзор
@@ -55,7 +55,7 @@ ms.locfileid: "75771280"
 - [Система доменных имен Azure](../../dns/dns-overview.md). Укажите службу для размещения домена.
 - [Azure Load Balancer.](../../load-balancer/load-balancer-overview.md) Позволяет масштабировать приложения и создавать высокий уровень доступности для служб.
 - [Веб-приложение Azure](../../app-service/overview.md).  Предоставляет службу на основе HTTP для размещения веб-приложений.
-- [Центре безопасности Azure](../../security-center/index.yml). обеспечивает расширенную защиту от угроз для гибридных рабочих нагрузок в облаке.
+- [Центр безопасности Azure](../../security-center/index.yml). обеспечивает расширенную защиту от угроз для гибридных рабочих нагрузок в облаке.
 - [Политика Azure](../../governance/policy/overview.md). Обеспечивает оценку ресурсов для несоответствия назначенным политикам.
 
 ## <a name="threat-model"></a>Модель рисков
@@ -185,7 +185,7 @@ $gwSubnet = New-AzVirtualNetworkSubnetConfig -Name 'appgwsubnet' -AddressPrefix 
 
 #Assign an address range to be used for the back-end address pool.
 
-$nicSubnet = New-AzVirtualNetworkSubnetConfig  -Name 'appsubnet' -AddressPrefix 10.0.0.0/24
+$nicSubnet = New-AzVirtualNetworkSubnetConfig  -Name 'appsubnet' -AddressPrefix 10.0.2.0/24
 
 #Create a virtual network with the subnets defined in the preceding steps.
 
@@ -212,7 +212,7 @@ $fipconfig = New-AzApplicationGatewayFrontendIPConfig -Name 'fip01' -PublicIPAdd
 
 #Configure the back-end IP address pool with the IP addresses of the back-end web servers
 
-$pool = New-AzApplicationGatewayBackendAddressPool -Name 'pool01' -BackendIPAddresses 10.0.0.0
+$pool = New-AzApplicationGatewayBackendAddressPool -Name 'pool01' -BackendIPAddresses 10.0.3.11
 
 #Configure the front-end IP port for the public IP endpoint
 
@@ -222,6 +222,7 @@ $fp = New-AzApplicationGatewayFrontendPort -Name 'port01'  -Port 443
 
 $passwd = ConvertTo-SecureString  "P@ssword!1" -AsPlainText -Force 
 $cert = New-AzApplicationGatewaySSLCertificate -Name cert01 -CertificateFile "C:\AAD\Securities\Certificates\sslcert.com.cer" -Password $passwd 
+
 
 #Create the HTTP listener for the application gateway
 
@@ -334,7 +335,7 @@ $appgw = New-AzApplicationGateway -Name appgateway -SSLCertificates $cert -Resou
 
 5. В колонке подсети NSG выберите **сопоставить**, выберите виртуальную сеть, созданную в развертывании, и выберите подсеть шлюза с именем **GW-Subnet**. NSG применяется к подсети.
 
-6. Создайте еще один NSG, как на предыдущем шаге, на этот раз для экземпляра службы приложений. Введите имя определения. Добавьте правило входящего трафика для порта 443, как и для шлюза приложений NSG.
+6. Создайте еще один NSG, как на предыдущем шаге, на этот раз для экземпляра службы приложений. Присвойте ему имя. Добавьте правило входящего трафика для порта 443, как и для шлюза приложений NSG.
 
    При наличии экземпляра службы приложений, развернутого на Среда службы приложений экземпляре, который не используется для этого приложения, можно добавить правила для входящего трафика, чтобы разрешить проверки работоспособности служб Azure, открыв порты 454-455 в группах безопасности входящих данных службы приложений NSG. Ниже приведена конфигурация.
 
@@ -465,7 +466,7 @@ Azure создает политику по умолчанию, указываю�
    1. Перейдите на вкладку **Azure Active Directory** в портал Azure
    2. В категории Безопасность выберите условный доступ. Вы видите этот экран
 
-       ![Условный доступ — политики](./media/secure-aad-app/ad-mfa-conditional-add.png)
+       ![Условный доступ — политики](./media/secure-aad-app/ad-mfa-conditional-add.png)
 
 Если не удается создать новую политику
 
@@ -518,7 +519,7 @@ Azure создает политику по умолчанию, указываю�
 
    3. Используйте поле поиска, чтобы найти **метку Azure**.
 
-   ![Поиск по фразе "Azure Sentinel"](./media/secure-aad-app/sentinel-add.png)
+   ![Поиск Sentinel Azure](./media/secure-aad-app/sentinel-add.png)
 
    *Поиск Sentinel Azure*
 

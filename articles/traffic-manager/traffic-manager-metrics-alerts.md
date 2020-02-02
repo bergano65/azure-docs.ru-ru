@@ -2,20 +2,20 @@
 title: Метрики и оповещения в диспетчере трафика Azure
 description: В этой статье вы узнаете о метриках и оповещениях, доступных для диспетчера трафика в Azure.
 services: traffic-manager
-author: asudbring
+author: rohinkoul
 ms.service: traffic-manager
 ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 06/11/2018
-ms.author: allensu
-ms.openlocfilehash: 7e374e11053f0a1baabed72fdb240b34e2107b2a
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.author: rohink
+ms.openlocfilehash: 521e6ac605d187c0f95545611a17a86cfda6e1dd
+ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74038066"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76938585"
 ---
 # <a name="traffic-manager-metrics-and-alerts"></a>Метрики и оповещения диспетчера трафика
 
@@ -63,6 +63,6 @@ ms.locfileid: "74038066"
 ## <a name="alerts-on-traffic-manager-metrics"></a>Оповещения о метриках диспетчера трафика
 Помимо обработки и отображения метрик из диспетчера трафика, Azure Monitor позволяет клиентам настроить и получать оповещения, связанные с этими метриками. Вы можете выбрать для метрик условия, при выполнении которых будет отправляться оповещение, частоту мониторинга этих условий и способ отправки оповещений. Дополнительные сведения см. в [документации по оповещениям Azure Monitor](../monitoring-and-diagnostics/monitor-alerts-unified-usage.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - Узнайте больше о службе [Azure Monitor](../azure-monitor/platform/metrics-supported.md).
 - См. [здесь](../azure-monitor/platform/metrics-getting-started.md#create-your-first-metric-chart), чтобы узнать, как создать диаграмму с помощью Azure Monitor.

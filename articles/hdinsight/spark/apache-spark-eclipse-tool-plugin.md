@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 12/13/2019
-ms.openlocfilehash: ceeea809232909a196895e11601ad01d3407f763
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: 07ed22879180d8126711eba9af0a2cac5b7b2953
+ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "76905390"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76936499"
 ---
 # <a name="use-azure-toolkit-for-eclipse-to-create-apache-spark-applications-for-an-hdinsight-cluster"></a>Создание приложений Apache Spark для кластера HDInsight с помощью Azure Toolkit for Eclipse
 
@@ -242,7 +242,7 @@ ms.locfileid: "76905390"
 
 При запуске локального приложения Spark Scala на компьютере с Windows может возникнуть исключение, описанное в [SPARK-2356](https://issues.apache.org/jira/browse/SPARK-2356). Это исключение возникает, так как в Windows отсутствует файл **WinUtils.exe**.
 
-Чтобы устранить эту ошибку, необходимо `https://public-repo-1.hortonworks.com/hdp-win-alpha/winutils.exe` в расположение, например **C:\WinUtils\bin**, а затем добавить переменную среды **HADOOP_HOME** и присвоить переменной значение **C\WinUtils**.
+Чтобы устранить эту ошибку, необходимо [Winutils. exe](https://github.com/steveloughran/winutils) в расположение, например **C:\WinUtils\bin**, а затем добавить переменную среды **HADOOP_HOME** и присвоить переменной значение **C\WinUtils**.
 
 ### <a name="run-a-local-spark-scala-application"></a>Запуск локального приложения Spark Scala
 

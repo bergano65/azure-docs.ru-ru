@@ -3,7 +3,7 @@ title: Типы конечных точек диспетчера трафика 
 description: В этой статье описываются разные типы конечных точек, которые можно использовать с диспетчером трафика Azure
 services: traffic-manager
 documentationcenter: ''
-author: asudbring
+author: rohinkoul
 manager: twooley
 ms.service: traffic-manager
 ms.devlang: na
@@ -11,13 +11,13 @@ ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/29/2017
-ms.author: allensu
-ms.openlocfilehash: 9de5b161c6bb1897058898dddd620ad093f148be
-ms.sourcegitcommit: 6d2a147a7e729f05d65ea4735b880c005f62530f
+ms.author: rohink
+ms.openlocfilehash: 3d8f899a7899243129d31c2620a51dc764a8e917
+ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69981050"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76938665"
 ---
 # <a name="traffic-manager-endpoints"></a>Конечные точки диспетчера трафика
 
@@ -103,7 +103,7 @@ PublicIPAddress — это ресурсы Azure Resource Manager. Они отс
 
 * [Разделы справки переместить конечные точки Azure профиля диспетчера трафика в другую группу ресурсов?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#how-do-i-move-my-traffic-manager-profiles-azure-endpoints-to-a-different-resource-group-or-subscription)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Узнайте больше о том, [как работает диспетчер трафика](traffic-manager-how-it-works.md).
 * Узнайте больше о [мониторинге конечных точек и автоматической отработке отказов](traffic-manager-monitoring.md)диспетчера трафика.

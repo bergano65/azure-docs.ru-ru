@@ -2,20 +2,20 @@
 title: Проверка параметров диспетчера трафика Azure
 description: В этой статье вы узнаете, как проверить параметры диспетчера трафика и протестировать метод маршрутизации трафика.
 services: traffic-manager
-author: asudbring
+author: rohinkoul
 ms.service: traffic-manager
 ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/16/2017
-ms.author: allensu
-ms.openlocfilehash: ad74e5c51d5939218ebb546993d416b3df1cd04b
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.author: rohink
+ms.openlocfilehash: 94ab5e550f0053fa19b9b93f1d67690211543325
+ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74023524"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76938383"
 ---
 # <a name="verify-traffic-manager-settings"></a>Проверка параметров диспетчера трафика
 
@@ -66,7 +66,7 @@ ms.locfileid: "74023524"
 
 Кроме того, есть бесплатные веб-службы поиска и проверки DNS. Некоторые из этих инструментов предоставляют возможность проверить разрешение DNS-имен из различных расположений по всему миру. Например, выполните поиск по запросу "поиск DNS". Сторонние службы типа Gomez или Keynote можно использовать, чтобы убедиться в том, что ваши профили распределяют трафик надлежащим образом.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [О методах маршрутизации трафика в диспетчере трафика](traffic-manager-routing-methods.md)
 * [Рекомендации по безопасности для диспетчера трафика](traffic-manager-performance-considerations.md)

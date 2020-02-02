@@ -3,21 +3,21 @@ title: Измерения на стороне пользователей в ди
 description: В этом обзоре вы узнаете, как работает диспетчер трафика Azure Измерения на стороне пользователей.
 services: traffic-manager
 documentationcenter: traffic-manager
-author: asudbring
+author: rohinkoul
 ms.service: traffic-manager
 ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: ''
 ms.workload: infrastructure
 ms.date: 03/16/2018
-ms.author: allensu
+ms.author: rohink
 ms.custom: ''
-ms.openlocfilehash: 1cb3bd1f4a665da4422d296641b193b1e45e45a2
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.openlocfilehash: e38e1255b1a84ab5d3fd37e16eb65c76001dbfa1
+ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74037953"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76938433"
 ---
 # <a name="traffic-manager-real-user-measurements-overview"></a>Общие сведения об измерениях на стороне пользователей в диспетчере трафика
 
@@ -75,7 +75,7 @@ ms.locfileid: "74037953"
 
 * [Увеличится ли использование пропускной способности Azure при использовании Измерения на стороне пользователей?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#will-my-azure-bandwidth-usage-increase-when-i-use-real-user-measurements)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - Узнайте об использовании [измерений на стороне пользователей с веб-страницами](traffic-manager-create-rum-web-pages.md).
 - Узнайте о том, [как работает диспетчер трафика](traffic-manager-overview.md)
 - Дополнительные сведения о Mobile Center см. [здесь](https://docs.microsoft.com/mobile-center/).

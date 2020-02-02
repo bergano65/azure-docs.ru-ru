@@ -17,12 +17,12 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.custom: seohack1
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f1a7b740a6b248a12fa3d95f85f602ef7a8b2fa5
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 0af1c42e7e2c163e7f9e7407d0236e35bfacf8e8
+ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60242379"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76931010"
 ---
 # <a name="user-privacy-and-azure-active-directory-pass-through-authentication"></a>Конфиденциальность пользователей и сквозная аутентификация Azure Active Directory
 
@@ -73,7 +73,7 @@ Foreach ($file in $Files) {
 
 ### <a name="delete-authentication-agent-trace-log-files"></a>Удаление файлов журнала трассировки агента проверки подлинности
 
-Следует регулярно проверять содержимое каталога <strong>%ProgramData%\Microsoft\Azure AD Connect Authentication Agent\Trace\</strong> и очищать его каждые 48 часов. 
+Следует регулярно проверять содержимое **%ProgramData%\MICROSOFT\AZURE AD Connect Authentication Agent\Trace** и удалять содержимое этой папки каждые 48 часов. 
 
 >[!IMPORTANT]
 >Если запущена служба агента аутентификации, вы не сможете удалить текущий файл журнала в этой папке. Остановите службу и повторите попытку. Чтобы избежать ошибок со входом пользователей, следует заранее настроить [высокий уровень доступности](how-to-connect-pta-quick-start.md#step-4-ensure-high-availability) для сквозной аутентификации.
@@ -90,7 +90,7 @@ Foreach ($file in $files) {
 
 Запланируйте выполнение этого сценария через каждые 48 часов, используя следующие шаги:
 
-1.  Сохраните скрипт в файл с расширением .PS1.
+1.  Сохраните скрипт в файле с расширением PS1.
 2.  Откройте **Панель управления** и выберите элемент **Система и безопасность**.
 3.  В разделе **Администрирование** щелкните **Расписание выполнения задач**.
 4.  В **планировщике задач** нажмите правой кнопкой мыши команду **Библиотека расписания задач** и щелкните **Создать простую задачу**.

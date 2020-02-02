@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: philmea
-ms.openlocfilehash: 553dffd14182c93a52ed076e742830c68130551b
-ms.sourcegitcommit: f9601bbccddfccddb6f577d6febf7b2b12988911
+ms.openlocfilehash: 4c89765a3bc59a37a182a2dfabf0727f95b575b8
+ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2020
-ms.locfileid: "75911237"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76933231"
 ---
 # <a name="add-a-drawing-tools-toolbar-to-a-map"></a>Добавление панели инструментов средств рисования на карту
 
@@ -68,7 +68,7 @@ drawingManager = new atlas.drawing.DrawingManager(map, {
 
 ## <a name="change-drawing-rendering-style"></a>Изменить стиль отрисовки изображения
 
-Следующий код получает слои подготовки отчетов из диспетчера рисунков и изменяет их параметры, чтобы изменить стиль отрисовки для рисования. В этом случае точки будут отображены синим значком маркера, линии будут красными и четыре пикселя в ширину, многоугольники будут иметь зеленый цвет заливки и оранжевый контур.
+Следующий код получает слои подготовки отчетов из диспетчера рисунков и изменяет их параметры, чтобы изменить стиль отрисовки для рисования. В этом случае точки отображаются с синим значком маркера. Линии будут иметь красный и четыре пиксела в ширину. Многоугольники будут иметь зеленый цвет заливки и оранжевый контур.
 
 ```Javascript
 var layers = drawingManager.getLayers();

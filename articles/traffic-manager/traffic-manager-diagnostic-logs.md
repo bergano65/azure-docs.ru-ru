@@ -2,7 +2,7 @@
 title: Включение журнала ведения диагностики диспетчера трафика Azure
 description: Сведения о включении журнала ведения диагностики для профиля диспетчера трафика и получения доступа к созданным в результате файлам журнала.
 services: traffic-manager
-author: asudbring
+author: rohinkoul
 manager: twooley
 ms.service: traffic-manager
 ms.devlang: na
@@ -10,13 +10,13 @@ ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 01/25/2019
-ms.author: allensu
-ms.openlocfilehash: b2ebeb41e69b7edfd43c38cc3b828069a1b3401a
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.author: rohink
+ms.openlocfilehash: 0ed2ecef86795f62aa3fe5798dcd0d07adbaf9cc
+ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67071231"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76938672"
 ---
 # <a name="enable-diagnostic-logging-in-azure-traffic-manager"></a>Включение журнала ведения диагностики диспетчера трафика Azure
 
@@ -24,7 +24,7 @@ ms.locfileid: "67071231"
 
 Журналы диагностики диспетчера трафика Azure могут помочь понять поведение ресурса профиля диспетчера трафика. Например, данные журнала профиля можно использовать, чтобы определить, почему для конечной точки истекло время ожидания отдельных проб.
 
-## <a name="enable-diagnostic-logging"></a>Включение ведения журналов диагностики
+## <a name="enable-diagnostic-logging"></a>Включение ведения журнала диагностики
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
@@ -55,7 +55,7 @@ ms.locfileid: "67071231"
       Убедитесь, что все категории журнала, связанные с ресурсом профиля диспетчера трафика, отображаются как включенные. Проверьте также, правильно ли настроена учетная запись хранения.
 
 ## <a name="access-log-files"></a>Файлы журнала доступа
-1. Войдите на [портале Azure](https://portal.azure.com). 
+1. Войдите на [портал Azure](https://portal.azure.com). 
 1. Войдите в свою учетную запись службы хранилища Azure на портале.
 2. На странице **Обзор** учетной записи хранения Azure в разделе **Службы** выберите **Большие двоичные объекты**.
 3. Для **контейнеров**выберите **insights-logs-probehealthstatusevents**, перейдите вниз к файлу PT1H.json и щелкните **Загрузка**, чтобы скачать и сохранить копию этого файла журнала.
@@ -73,7 +73,7 @@ ms.locfileid: "67071231"
 |----|----|---|---|
 |**Имя поля**|**Тип поля**|**Определение**|**Пример**|
 |EndpointName|String|Имя конечной точки диспетчера трафика, для которой выполняется запись состояния работоспособности.|*myPrimaryEndpoint*|
-|Status|String|Состояние работоспособности проверенной конечной точки диспетчера трафика. Состояние может иметь значение **Работает** или **Не работает**.|**Работает**.|
+|Состояние|String|Состояние работоспособности проверенной конечной точки диспетчера трафика. Состояние может иметь значение **Работает** или **Не работает**.|**Работает**.|
 |||||
 
 ## <a name="next-steps"></a>Дальнейшие действия

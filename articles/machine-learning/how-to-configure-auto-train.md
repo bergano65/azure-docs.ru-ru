@@ -11,12 +11,12 @@ ms.subservice: core
 ms.topic: conceptual
 ms.date: 11/04/2019
 ms.custom: seodec18
-ms.openlocfilehash: c1ebedcf93d66c01c80f7f40171a7aa27441488d
-ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
+ms.openlocfilehash: 03f01e4c69e92f62774c9b128c960ec2190c9937
+ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76722158"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76937895"
 ---
 # <a name="configure-automated-ml-experiments-in-python"></a>Настройка автоматизированных экспериментов машинного обучения в Python
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -172,7 +172,7 @@ automl_config = AutoMLConfig(task = "classification")
         n_cross_validations=5)
     ```
 
-Три разных значения параметра `task` (Третий тип задачи — `forecasting`, и использует аналогичный пул алгоритмов в качестве `regression` задач), определяющий список применяемых моделей. Используйте параметры `whitelist` или `blacklist`, чтобы дополнительно изменить итерации с помощью доступных моделей для включения или исключения. Список поддерживаемых моделей можно найти в [классе суппортедмоделс](https://docs.microsoft.com/python/api/azureml-train-automl-client/azureml.train.automl.constants.supportedmodels).
+Три разных значения параметра `task` (Третий тип задачи — `forecasting`, и использует аналогичный пул алгоритмов в качестве `regression` задач), определяющий список применяемых моделей. Используйте параметры `whitelist` или `blacklist`, чтобы дополнительно изменить итерации с помощью доступных моделей для включения или исключения. Список поддерживаемых моделей можно найти в [классе суппортедмоделс](https://docs.microsoft.com/python/api/azureml-train-automl-client/azureml.train.automl.constants.supportedmodels) для [Classification] (https://docs.microsoft.com/python/api/azureml-train-automl-client/azureml.train.automl.constants.supportedmodels.classification) , [прогнозирование] (https://docs.microsoft.com/python/api/azureml-train-automl-client/azureml.train.automl.constants.supportedmodels.forecasting) и [регрессия] (https://docs.microsoft.com/python/api/azureml-train-automl-client/azureml.train.automl.constants.supportedmodels.regression).
 
 ### <a name="primary-metric"></a>Основная метрика
 Основная метрика определяет метрику, используемую во время обучения модели для оптимизации. Доступные метрики, которые можно выбрать, определяются выбранным типом задачи, а в следующей таблице показаны допустимые основные метрики для каждого типа задачи.

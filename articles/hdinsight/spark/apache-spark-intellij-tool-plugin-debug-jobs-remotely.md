@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 11/28/2017
-ms.openlocfilehash: 2624f9fafd82aad9613d6940eca69486d897aa08
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: 393356bd8604f6e7622acd778817681aad31f1f9
+ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "76905333"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76935022"
 ---
 # <a name="use-azure-toolkit-for-intellij-to-debug-apache-spark-applications-remotely-in-hdinsight-through-vpn"></a>Удаленная отладка приложений Apache Spark в HDInsight через VPN с помощью Azure Toolkit for IntelliJ
 
@@ -35,7 +35,7 @@ ms.locfileid: "76905333"
 * **IntelliJ IDEA**. В этой статье используется версия 2017.1. Ее можно установить с [веб-сайта JetBrains](https://www.jetbrains.com/idea/download/).
 * **Средства HDInsight из набора средств Azure для IntelliJ**. Средства HDInsight для IntelliJ доступны в составе набора средств Azure для IntelliJ. Инструкции по установке набора средств Azure см. в статье [Установка набора средств Azure для IntelliJ](https://docs.microsoft.com/java/azure/intellij/azure-toolkit-for-intellij-installation).
 * **Войдите в подписку Azure из IntelliJ IDEA**. Следуйте указаниям в разделе [Создание приложений Apache Spark для кластера HDInsight с помощью набора средств Azure Toolkit for IntelliJ](apache-spark-intellij-tool-plugin.md).
-* **Обработка исключений**. При запуске приложения Spark Scala для удаленной отладки на компьютере Windows может возникнуть исключение. Это исключение описывается в [SPARK-2356](https://issues.apache.org/jira/browse/SPARK-2356) и порождается из-за отсутствия файла WinUtils.exe в Windows. Чтобы обойти эту ошибку, необходимо загрузить `https://public-repo-1.hortonworks.com/hdp-win-alpha/winutils.exe` в расположение, например **C:\WinUtils\bin**. Добавьте переменную среды **HADOOP_HOME** и присвойте ей значение **C\WinUtils**.
+* **Обработка исключений**. При запуске приложения Spark Scala для удаленной отладки на компьютере Windows может возникнуть исключение. Это исключение описывается в [SPARK-2356](https://issues.apache.org/jira/browse/SPARK-2356) и порождается из-за отсутствия файла WinUtils.exe в Windows. Чтобы обойти эту ошибку, необходимо загрузить [Winutils. exe](https://github.com/steveloughran/winutils) в расположение, например **C:\WinUtils\bin**. Добавьте переменную среды **HADOOP_HOME** и присвойте ей значение **C\WinUtils**.
 
 ## <a name="step-1-create-an-azure-virtual-network"></a>Шаг 1. Создание виртуальной сети Azure
 

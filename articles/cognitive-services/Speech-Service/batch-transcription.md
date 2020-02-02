@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 12/17/2019
 ms.author: panosper
-ms.openlocfilehash: 5732df2551eafa74b81f9a918a1cb7cf5ac1395c
-ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
+ms.openlocfilehash: 8a53f1cfbde2f518848e7ef1104bf41ba4996961
+ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76768041"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76936390"
 ---
 # <a name="how-to-use-batch-transcription"></a>Использование записи пакетов
 
@@ -78,7 +78,7 @@ API пакетного транскрибирования поддерживае
     "AddWordLevelTimestamps" : "True | False",
     "AddSentiment" : "True | False",
     "AddDiarization" : "True | False",
-    "TranscriptionResultsContainerUrl" : "<SAS to Azure container to store results into (write permission required)>"
+    "TranscriptionResultsContainerUrl" : "<service SAS URI to Azure container to store results into (write permission required)>"
   }
 }
 ```
@@ -94,7 +94,7 @@ API пакетного транскрибирования поддерживае
 | `AddWordLevelTimestamps` | Указывает, следует ли добавлять к выводимым данным метки времени на уровне слова. Допустимые значения: `true` — включает метки времени на уровне слова, `false` — (значение по умолчанию) отключает их. |
 | `AddSentiment` | Указывает, что тональности должен быть добавлен в utterance. Допустимые значения: `true`, которые позволяют тональности на utterance и `false` (значение по умолчанию), чтобы отключить его. |
 | `AddDiarization` | Указывает, что необходимо выполнить анализ диаризатион на входе, который должен быть каналом Mono, содержащим два голоса. Допустимые значения: `true`, которые позволяют диаризатион и `false` (значение по умолчанию) отключить его. Также требуется, чтобы `AddWordLevelTimestamps` было установлено значение true.|
-|`TranscriptionResultsContainerUrl`|Необязательный маркер SAS для записываемого контейнера в Azure. Результат будет сохранен в этом контейнере.
+|`TranscriptionResultsContainerUrl`|Необязательный URL-адрес со [службой SAS](../../storage/common/storage-sas-overview.md) для записываемого контейнера в Azure. Результат будет сохранен в этом контейнере.
 
 ### <a name="storage"></a>Хранилище
 

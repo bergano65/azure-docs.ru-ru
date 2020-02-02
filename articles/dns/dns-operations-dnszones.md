@@ -3,7 +3,7 @@ title: Управление зонами DNS в службе DNS Azure с пом
 description: Зонами DNS можно управлять с помощью Azure Powershell. В этой статье описывается, как обновлять, удалять и создавать зоны DNS в службе DNS Azure.
 services: dns
 documentationcenter: na
-author: asudbring
+author: rohinkoul
 manager: timlt
 ms.assetid: a67992ab-8166-4052-9b28-554c5a39e60c
 ms.service: dns
@@ -12,13 +12,13 @@ ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/19/2018
-ms.author: allensu
-ms.openlocfilehash: 7a838f10d44f3be0af79bba5d303467884159cbf
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.author: rohink
+ms.openlocfilehash: 0120501aab7f0a63721126bfb5b3d04d9deb42fb
+ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74211698"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76936798"
 ---
 # <a name="how-to-manage-dns-zones-using-powershell"></a>Как управлять зонами DNS с помощью PowerShell
 
@@ -26,7 +26,7 @@ ms.locfileid: "74211698"
 > * [Портал](dns-operations-dnszones-portal.md)
 > * [PowerShell](dns-operations-dnszones.md)
 > * [Классический Azure CLI](dns-operations-dnszones-cli-nodejs.md)
-> * [Интерфейс командной строки Azure](dns-operations-dnszones-cli.md)
+> * [Azure CLI](dns-operations-dnszones-cli.md)
 
 В этой статье описывается, как управлять зонами DNS с помощью Azure PowerShell. Зонами DNS также можно управлять с помощью кроссплатформенного [интерфейса командной строки Azure](dns-operations-dnszones-cli.md) или портала Azure.
 
@@ -125,7 +125,7 @@ Set-AzureRmDnsZone -Zone $zone
 Зоны DNS можно удалить с помощью командлета `Remove-AzureRmDnsZone`.
 
 > [!NOTE]
-> При удалении зоны DNS также удаляются все записи DNS в этой зоне. Эту операцию нельзя отменить. Если зона DNS используется, то после ее удаления произойдет сбой служб, которые ее используют.
+> При удалении зоны DNS также удаляются все записи DNS в этой зоне. Отменить эту операцию невозможно. Если зона DNS используется, то после ее удаления произойдет сбой служб, которые ее используют.
 >
 >Сведения о защите от случайного зоны удаления см. в разделе [How to protect DNS zones and records](dns-protect-zones-recordsets.md) (Как защитить зоны и записи DNS).
 
@@ -168,7 +168,7 @@ Get-AzureRmDnsZone -Name contoso.com -ResourceGroupName MyAzureResourceGroup | R
 
 Дополнительные сведения об элементах `-Confirm` и `$ConfirmPreference` см. в статье о [привилегированных переменных](/powershell/module/microsoft.powershell.core/about/about_preference_variables).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте, как [управлять наборами записей и записями](dns-operations-recordsets.md) в зоне DNS.
 <br>

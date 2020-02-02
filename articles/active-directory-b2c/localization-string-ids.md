@@ -7,15 +7,15 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
-ms.date: 09/10/2018
+ms.date: 01/31/2020
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: da1390de4e2eb0624032dc490416e7b6e5d61baa
-ms.sourcegitcommit: 0f54f1b067f588d50f787fbfac50854a3a64fff7
+ms.openlocfilehash: 349932073394a967da58bf521449d22a48c1f91d
+ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "67846840"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76931718"
 ---
 # <a name="localization-string-ids"></a>Идентификаторы строк локализации
 
@@ -27,25 +27,25 @@ ms.locfileid: "67846840"
 
 Следующие идентификаторы используются для определения содержимого с идентификатором `api.signuporsignin`.
 
-| id | Значение по умолчанию |
+| ID | Значение по умолчанию |
 | -- | ------------- |
 | **local_intro_email** | Войти, используя имеющуюся учетную запись |
-| **logonIdentifier_email** | Адрес электронной почты |
+| **logonIdentifier_email** | Электронная почта |
 | **requiredField_email** | Введите свой адрес электронной почты |
 | **invalid_email** | Введите действительный адрес электронной почты |
 | **email_pattern** | ^[a-zA-Z0-9.!#$%&’' *+/=?^_\`{\|}~-]+@[a-zA-Z0-9-]+(?:\\.[a-zA-Z0-9-]+)* $ |
 | **local_intro_username** | Войти, используя свое имя пользователя |
 | **logonIdentifier_username** | Имя пользователя |
-| **requiredField_username** | Введите свое имя пользователя. |
+| **requiredField_username** | Введите свое имя пользователя |
 | **password** | Пароль |
 | **requiredField_password** | Введите пароль |
 | **invalid_password** | Введенный пароль не соответствует ожидаемому формату. |
 | **forgotpassword_link** | Забыли пароль? |
-| **createaccount_intro** | У вас нет учетной записи? |
+| **createaccount_intro** | Нет учетной записи? |
 | **createaccount_link** | Зарегистрируйтесь сейчас |
 | **divider_title** | ИЛИ |
 | **cancel_message** | Пользователь забыл свой пароль |
-| **button_signin** | Войти |
+| **button_signin** | Вход |
 | **social_intro** | Войти, используя учетную запись социальной сети |
   **remember_me** |Оставаться в системе|
 | **unknown_error** | Возникли проблемы со входом в систему. Повторите попытку позже. |
@@ -79,9 +79,9 @@ ms.locfileid: "67846840"
 <LocalizedString ElementType="ClaimsProvider" StringId="FacebookExchange">فيس بوك</LocalizedString>
 ```
 
-## <a name="sign-up-or-sign-in-error-messages"></a>Сообщения об ошибках при входе или регистрации
+### <a name="sign-up-or-sign-in-error-messages"></a>Сообщения об ошибках при входе или регистрации
 
-| id | Значение по умолчанию |
+| ID | Значение по умолчанию |
 | -- | ------------- |
 | **UserMessageIfInvalidPassword** | Неправильный пароль. |
 | **UserMessageIfClaimsPrincipalDoesNotExist** | Нам не удается найти вашу учетную запись. |
@@ -95,10 +95,10 @@ ms.locfileid: "67846840"
 
 Ниже приведены идентификаторы для определения содержимого с идентификатором `api.localaccountsignup` или любого определения содержимого, которое начинается с `api.selfasserted`, например `api.selfasserted.profileupdate` и `api.localaccountpasswordreset`.
 
-| id | Значение по умолчанию |
+| ID | Значение по умолчанию |
 | -- | ------------- |
 | **ver_sent** | Код проверки отправлен на следующий адрес: |
-| **ver_but_default** | Значение по умолчанию |
+| **ver_but_default** | По умолчанию |
 | **cancel_message** | Пользователь отменил ввод самостоятельно подтверждаемых данных |
 | **preloader_alt** | Подождите |
 | **ver_but_send** | Отправить код проверки |
@@ -115,7 +115,7 @@ ms.locfileid: "67846840"
 | **error_requiredFieldMissing** | Отсутствует обязательное поле. Заполните все обязательные поля и повторите попытку. |
 | **initial_intro** | Укажите следующие сведения. |
 | **ver_but_resend** | Отправить новый код |
-| **button_continue** | Создание |
+| **button_continue** | Create |
 | **error_passwordEntryMismatch** | Пароли в полях не совпадают. Введите одинаковый пароль в оба поля и повторите попытку. |
 | **ver_incorrect_format** | Неверный формат. |
 | **ver_but_edit** | Изменить адрес электронной почты |
@@ -125,16 +125,16 @@ ms.locfileid: "67846840"
 | **day** | День |
 | **ver_fail_throttled** | Отправлено слишком много запросов на проверку этого адреса электронной почты. Повторите попытку позже. |
 | **helplink_text** | Что это такое? |
-| **ver_fail_retry** | Этот код неправильный. Попробуйте еще раз. |
+| **ver_fail_retry** | Этот код неправильный. Попробуйте позже. |
 | **alert_title** | Отмена ввода своих данных |
 | **required_field** | Эта информация обязательна. |
 | **alert_message** | Вы действительно хотите отменить ввод своих данных? |
 | **ver_intro_msg** | Проверка не требуется. Нажмите кнопку "Отправить". |
 | **ver_input** | Код проверки |
 
-## <a name="sign-up-and-self-asserted-pages-error-messages"></a>Сообщения об ошибках на страницах входа и самоподтверждения
+### <a name="sign-up-and-self-asserted-pages-error-messages"></a>Сообщения об ошибках на страницах входа и самоподтверждения
 
-| id | Значение по умолчанию |
+| ID | Значение по умолчанию |
 | -- | ------------- |
 | **UserMessageIfClaimsPrincipalAlreadyExists** | Пользователь с указанным идентификатором уже существует. Выберите другой идентификатор. |
 | **UserMessageIfClaimNotVerified** | Утверждение не проверено: {0} |
@@ -157,7 +157,7 @@ ms.locfileid: "67846840"
 
 Ниже указаны идентификаторы, используемые для определения содержимого с идентификатором `api.phonefactor`.
 
-| id | Значение по умолчанию |
+| ID | Значение по умолчанию |
 | -- | ------------- |
 | **button_verify** | Позвонить мне |
 | **country_code_label** | Код страны |
@@ -171,7 +171,7 @@ ms.locfileid: "67846840"
 | **invalid_code** | Введите полученный код из 6 цифр |
 | **button_cancel** | Отмена |
 | **local_number_input_placeholder_text** | Номер телефона |
-| **button_retry** | Повтор |
+| **button_retry** | Повторить попытку |
 | **alternative_text** | У меня нет с собой телефона |
 | **intro_phone_p** | У нас записаны ваши номера. Выберите номер, по которому мы можем позвонить для проверки подлинности. |
 | **intro_phone** | У нас записан ваш номер. Мы позвоним по нему для проверки подлинности. |
@@ -190,7 +190,7 @@ ms.locfileid: "67846840"
 | **number_label** | Номер телефона |
 | **error_tryagain** | Указанный номер телефона занят или недоступен. Проверьте номер и повторите попытку. |
 | **error_incorrect_code** | Введенный код проверки не совпадает с нашим. Повторите попытку или запросите новый код. |
-| **countryList** | {\"ПО УМОЛЧАНИЮ\":\"страна/регион\",\"AF\":\"Афганистан\",\"AX\":\"Аландские острова\",\"AL\":\"Албания\",\"DZ\":\"Алжир\",\"AS\":\"Американское Самоа\",\"AD\":\"Андорра\",\"AO\":\"Ангола\",\"AI\":\"Ангилья\",\"AQ\":\"Антарктида\",\"AG\":\"Антигуа и Барбуда\",\"AR\":\"Аргентина\",\"AM\":\"Армения\",\"AW\":\"Аруба\",\"AU\":\"Австралия\",\"AT\":\"Австрия\",\"AZ\":\"Азербайджан\",\"BS\":\"Багамы\",\"BH\":\"Бахрейн\",\"BD\":\"Бангладеш\",\"BB\":\"Барбадос\",\"BY\":\"Беларусь\",\"BE\":\"Бельгия\",\"BZ\":\"Белиз\",\"BJ\":\"Бенин\",\"BM\":\"Бермудские острова\",\"BT\":\"Бутан\",\"BO\":\"Боливия\",\"BQ\":\"Бонайре\",\"BA\":\"Босния и Герцеговина\",\"BW\":\"Ботсвана\",\"BV\":\"Остров Буве\",\"BR\":\"Бразилия\",\"IO\":\"Британская территория в Индийском океане\",\"VG\":\"Британские Виргинские Острова\",\"BN\":\"Бруней\",\"BG\":\"Болгария\",\"BF\":\"Буркина-Фасо\",\"BI\":\"Бурунди\",\"CV\":\"Кабо-Верде\",\"KH\":\"Камбоджа\",\"CM\":\"Камерун\",\"CA\":\"Канада\",\"KY\":\"острова Кайман\",\"CF\":\"Центральная Африканская Республика\",\"TD\":\"Чад\",\"CL\":\"Чили\",\"CN\":\"Китай\",\"CX\":\"остров Рождества\",\"CC\":\"Кокосовые острова (Килинг)\",\"CO\":\"Колумбия\",\"KM\":\"Коморские Острова\",\"CG\":\"Конго\",\"CD\":\"Конго (ДРК)\",\"CK\":\"острова Кука\",\"CR\":\"Коста-Рика\",\"CI\":\"Кот-д’Ивуар\",\"HR\":\"Хорватия\",\"CU\":\"Куба\",\"CW\":\"Кюрасао\",\"CY\":\"Кипр\",\"CZ\":\"Чешская Республика\",\"DK\":\"Дания\",\"DJ\":\"Джибути\",\"DM\":\"Доминика\",\"DO\":\"Доминиканская Республика\",\"EC\":\"Эквадор\",\"EG\":\"Египет\",\"SV\":\"Сальвадор\",\"GQ\":\"Экваториальная Гвинея\",\"ER\":\"Эритрея\",\"EE\":\"Эстония\",\"ET\":\"Эфиопия\",\"FK\":\"Фолклендские острова\",\"FO\":\"Фарерские острова\",\"FJ\":\"Фиджи\",\"FI\":\"Финляндия\",\"FR\":\"Франция\",\"GF\":\"Французская Гвиана\",\"PF\":\"Французская Полинезия\",\"TF\":\"Французские Южные Территории\",\"GA\":\"Габон\",\"GM\":\"Гамбия\",\"GE\":\"Грузия\",\"DE\":\"Германия\",\"GH\":\"Гана\",\"GI\":\"Гибралтар\",\"GR\":\"Греция\",\"GL\":\"Гренландия\",\"GD\":\"Гренада\",\"GP\":\"Гваделупа\",\"GU\":\"Гуам\",\"GT\":\"Гватемала\",\"GG\":\"Гернси\",\"GN\":\"Гвинея\",\"GW\":\"Гвинея-Бисау\",\"GY\":\"Гайана\",\"HT\":\"Гаити\",\"HM\":\"остров Херд и острова МакДональд\",\"HN\":\"Гондурас\",\"HK\":\"Гонконг (САР)\",\"HU\":\"Венгрия\",\"IS\":\"Исландия\",\"IN\":\"Индия\",\"ID\":\"Индонезия\",\"IR\":\"Иран\",\"IQ\":\"Ирак\",\"IE\":\"Ирландия\",\"IM\":\"остров Мэн\",\"IL\":\"Израиль\",\"IT\":\"Италия\",\"JM\":\"Ямайка\",\"JP\":\"Япония\",\"JE\":\"Джерси\",\"JO\":\"Иордания\",\"KZ\":\"Казахстан\",\"KE\":\"Кения\",\"KI\":\"Кирибати\",\"KR\":\"Корея\",\"KW\":\"Кувейт\",\"KG\":\"Кыргызстан\",\"LA\":\"Лаос\",\"LV\":\"Латвия\",\"LB\":\"Ливан\",\"LS\":\"Лесото\",\"LR\":\"Либерия\",\"LY\":\"Ливия\",\"LI\":\"Лихтенштейн\",\"LT\":\"Литва\",\"LU\":\"Люксембург\",\"MO\":\"Макао, САР\",\"MK\":\"Северная Македония\",\"MG\":\"Мадагаскар\",\"MW\":\"Малави\",\"MY\":\"Малайзия\",\"MV\":\"Мальдивы\",\"ML\":\"Мали\",\"MT\":\"Мальта\",\"MH\":\"Маршалловы острова\",\"MQ\":\"Мартиника\",\"MR\":\"Мавритания\",\"MU\":\"Маврикий\",\"YT\":\"Майотта\",\"MX\":\"Мексика\",\"FM\":\"Микронезия\",\"MD\":\"Молдова\",\"MC\":\"Монако\",\"MN\":\"Монголия\",\"ME\":\"Черногория\",\"MS\":\"Монтсеррат\",\"MA\":\"Марокко\",\"MZ\":\"Мозамбик\",\"MM\":\"Мьянма\",\"NA\":\"Намибия\",\"NR\":\"Науру\",\"NP\":\"Непал\",\"NL\":\"Нидерланды\",\"NC\":\"Новая Каледония\",\"NZ\":\"Новая Зеландия\",\"NI\":\"Никарагуа\",\"NE\":\"Нигер\",\"NG\":\"Нигерия\",\"NU\":\"Ниуэ\",\"NF\":\"остров Норфолк\",\"KP\":\"Северная Корея\",\"MP\":\"Северные Марианские острова\",\"NO\":\"Норвегия\",\"OM\":\"Оман\",\"PK\":\"Пакистан\",\"PW\":\"Палау\",\"PS\":\"Палестинская национальная администрация\",\"PA\":\"Панама\",\"PG\":\"Папуа-Новая Гвинея\",\"PY\":\"Парагвай\",\"PE\":\"Перу\",\"PH\":\"Филиппины\",\"PN\":\"о. Питкэрн\",\"PL\":\"Польша\",\"PT\":\"Португалия\",\"PR\":\"Пуэрто-Рико\",\"QA\":\"Катар\",\"RE\":\"Реюньон\",\"RO\":\"Румыния\",\"RU\":\"Россия\",\"RW\":\"Руанда\",\"BL\":\"Сен-Бартелеми\",\"KN\":\"Сент-Китс и Невис\",\"LC\":\"Сент-Люсия\",\"MF\":\"Сен-Мартен\",\"PM\":\"Сен-Пьер и Микелон\",\"VC\":\"Сент-Винсент и Гренадины\",\"WS\":\"Самоа\",\"SM\":\"Сан-Марино\",\"ST\":\"Сан-Томе и Принсипи\",\"SA\":\"Саудовская Аравия\",\"SN\":\"Сенегал\",\"RS\":\"Сербия\",\"SC\":\"Сейшельские Острова\",\"SL\":\"Сьерра-Леоне\",\"SG\":\"Сингапур\",\"SX\":\"Синт-Мартен\",\"SK\":\"Словакия\",\"SI\":\"Словения\",\"SB\":\"Соломоновы Острова\",\"SO\":\"Сомали\",\"ZA\":\"Южная Африка\",\"GS\":\"Южная Георгия и Южные Сандвичевы Острова\",\"SS\":\"Южный Судан\",\"ES\":\"Испания\",\"LK\":\"Шри-Ланка\",\"SH\":\"Острова Святой Елены, Вознесения и Тристан-да-Кунья\",\"SD\":\"Судан\",\"SR\":\"Суринам\",\"SJ\":\"Шпицберген\",\"SZ\":\"Свазиленд\",\"SE\":\"Швеция\",\"CH\":\"Швейцария\",\"SY\":\"Сирия\",\"TW\":\"Тайвань\",\"TJ\":\"Таджикистан\",\"TZ\":\"Танзания\",\"TH\":\"Таиланд\",\"TL\":\"Тимор-Лешти\",\"TG\":\"Того\",\"TK\":\"Токелау\",\"TO\":\"Тонга\",\"TT\":\"Тринидад и Тобаго\",\"TN\":\"Тунис\",\"TR\":\"Турция\",\"TM\":\"Туркменистан\",\"TC\":\"Острова Теркс и Кайкос\",\"TV\":\"Тувалу\",\"UM\":\"Внешние малые острова США\",\"VI\":\"Виргинские острова США\",\"UG\":\"Уганда\",\"UA\":\"Украина\",\"AE\":\"ОАЭ\",\"GB\":\"Великобритания\",\"US\":\"США\",\"UY\":\"Уругвай\",\"UZ\":\"Узбекистан\",\"VU\":\"Вануату\",\"VA\":\"Ватикан\",\"VE\":\"Венесуэла\",\"VN\":\"Вьетнам\",\"WF\":\"Уоллис и Футуна\",\"YE\":\"Йемен\",\"ZM\":\"Замбия\",\"ZW\":\"Зимбабве\"} |
+| **countryList** | {\"DEFAULT\":\"Country/Region\",\"AF\":\"Afghanistan\",\"AX\":\"Åland Islands\",\"AL\":\"Albania\",\"DZ\":\"Algeria\",\"AS\":\"American Samoa\",\"AD\":\"Andorra\",\"AO\":\"Angola\",\"AI\":\"Anguilla\",\"AQ\":\"Antarctica\",\"AG\":\"Antigua and Barbuda\",\"AR\":\"Argentina\",\"AM\":\"Armenia\",\"AW\":\"Aruba\",\"AU\":\"Australia\",\"AT\":\"Austria\",\"AZ\":\"Azerbaijan\",\"BS\":\"Bahamas\",\"BH\":\"Bahrain\",\"BD\":\"Bangladesh\",\"BB\":\"Barbados\",\"BY\":\"Belarus\",\"BE\":\"Belgium\",\"BZ\":\"Belize\",\"BJ\":\"Benin\",\"BM\":\"Bermuda\",\"BT\":\"Bhutan\",\"BO\":\"Bolivia\",\"BQ\":\"Bonaire\",\"BA\":\"Bosnia and Herzegovina\",\"BW\":\"Botswana\",\"BV\":\"Bouvet Island\",\"BR\":\"Brazil\",\"IO\":\"British Indian Ocean Territory\",\"VG\":\"British Virgin Islands\",\"BN\":\"Brunei\",\"BG\":\"Bulgaria\",\"BF\":\"Burkina Faso\",\"BI\":\"Burundi\",\"CV\":\"Cabo Verde\",\"KH\":\"Cambodia\",\"CM\":\"Cameroon\",\"CA\":\"Canada\",\"KY\":\"Cayman Islands\",\"CF\":\"Central African Republic\",\"TD\":\"Chad\",\"CL\":\"Chile\",\"CN\":\"China\",\"CX\":\"Christmas Island\",\"CC\":\"Cocos (Keeling) Islands\",\"CO\":\"Colombia\",\"KM\":\"Comoros\",\"CG\":\"Congo\",\"CD\":\"Congo (DRC)\",\"CK\":\"Cook Islands\",\"CR\":\"Costa Rica\",\"CI\":\"Côte d’Ivoire\",\"HR\":\"Croatia\",\"CU\":\"Cuba\",\"CW\":\"Curaçao\",\"CY\":\"Cyprus\",\"CZ\":\"Czech Republic\",\"DK\":\"Denmark\",\"DJ\":\"Djibouti\",\"DM\":\"Dominica\",\"DO\":\"Dominican Republic\",\"EC\":\"Ecuador\",\"EG\":\"Egypt\",\"SV\":\"El Salvador\",\"GQ\":\"Equatorial Guinea\",\"ER\":\"Eritrea\",\"EE\":\"Estonia\",\"ET\":\"Ethiopia\",\"FK\":\"Falkland Islands\",\"FO\":\"Faroe Islands\",\"FJ\":\"Fiji\",\"FI\":\"Finland\",\"FR\":\"France\",\"GF\":\"French Guiana\",\"PF\":\"French Polynesia\",\"TF\":\"French Southern Territories\",\"GA\":\"Gabon\",\"GM\":\"Gambia\",\"GE\":\"Georgia\",\"DE\":\"Germany\",\"GH\":\"Ghana\",\"GI\":\"Gibraltar\",\"GR\":\"Greece\",\"GL\":\"Greenland\",\"GD\":\"Grenada\",\"GP\":\"Guadeloupe\",\"GU\":\"Guam\",\"GT\":\"Guatemala\",\"GG\":\"Guernsey\",\"GN\":\"Guinea\",\"GW\":\"Guinea-Bissau\",\"GY\":\"Guyana\",\"HT\":\"Haiti\",\"HM\":\"Heard Island and McDonald Islands\",\"HN\":\"Honduras\",\"HK\":\"Hong Kong SAR\",\"HU\":\"Hungary\",\"IS\":\"Iceland\",\"IN\":\"India\",\"ID\":\"Indonesia\",\"IR\":\"Iran\",\"IQ\":\"Iraq\",\"IE\":\"Ireland\",\"IM\":\"Isle of Man\",\"IL\":\"Israel\",\"IT\":\"Italy\",\"JM\":\"Jamaica\",\"JP\":\"Japan\",\"JE\":\"Jersey\",\"JO\":\"Jordan\",\"KZ\":\"Kazakhstan\",\"KE\":\"Kenya\",\"KI\":\"Kiribati\",\"KR\":\"Korea\",\"KW\":\"Kuwait\",\"KG\":\"Kyrgyzstan\",\"LA\":\"Laos\",\"LV\":\"Latvia\",\"LB\":\"Lebanon\",\"LS\":\"Lesotho\",\"LR\":\"Liberia\",\"LY\":\"Libya\",\"LI\":\"Liechtenstein\",\"LT\":\"Lithuania\",\"LU\":\"Luxembourg\",\"MO\":\"Macao SAR\",\"MK\":\"North Macedonia\",\"MG\":\"Madagascar\",\"MW\":\"Malawi\",\"MY\":\"Malaysia\",\"MV\":\"Maldives\",\"ML\":\"Mali\",\"MT\":\"Malta\",\"MH\":\"Marshall Islands\",\"MQ\":\"Martinique\",\"MR\":\"Mauritania\",\"MU\":\"Mauritius\",\"YT\":\"Mayotte\",\"MX\":\"Mexico\",\"FM\":\"Micronesia\",\"MD\":\"Moldova\",\"MC\":\"Monaco\",\"MN\":\"Mongolia\",\"ME\":\"Montenegro\",\"MS\":\"Montserrat\",\"MA\":\"Morocco\",\"MZ\":\"Mozambique\",\"MM\":\"Myanmar\",\"NA\":\"Namibia\",\"NR\":\"Nauru\",\"NP\":\"Nepal\",\"NL\":\"Netherlands\",\"NC\":\"New Caledonia\",\"NZ\":\"New Zealand\",\"NI\":\"Nicaragua\",\"NE\":\"Niger\",\"NG\":\"Nigeria\",\"NU\":\"Niue\",\"NF\":\"Norfolk Island\",\"KP\":\"North Korea\",\"MP\":\"Northern Mariana Islands\",\"NO\":\"Norway\",\"OM\":\"Oman\",\"PK\":\"Pakistan\",\"PW\":\"Palau\",\"PS\":\"Palestinian Authority\",\"PA\":\"Panama\",\"PG\":\"Papua New Guinea\",\"PY\":\"Paraguay\",\"PE\":\"Peru\",\"PH\":\"Philippines\",\"PN\":\"Pitcairn Islands\",\"PL\":\"Poland\",\"PT\":\"Portugal\",\"PR\":\"Puerto Rico\",\"QA\":\"Qatar\",\"RE\":\"Réunion\",\"RO\":\"Romania\",\"RU\":\"Russia\",\"RW\":\"Rwanda\",\"BL\":\"Saint Barthélemy\",\"KN\":\"Saint Kitts and Nevis\",\"LC\":\"Saint Lucia\",\"MF\":\"Saint Martin\",\"PM\":\"Saint Pierre and Miquelon\",\"VC\":\"Saint Vincent and the Grenadines\",\"WS\":\"Samoa\",\"SM\":\"San Marino\",\"ST\":\"São Tomé and Príncipe\",\"SA\":\"Saudi Arabia\",\"SN\":\"Senegal\",\"RS\":\"Serbia\",\"SC\":\"Seychelles\",\"SL\":\"Sierra Leone\",\"SG\":\"Singapore\",\"SX\":\"Sint Maarten\",\"SK\":\"Slovakia\",\"SI\":\"Slovenia\",\"SB\":\"Solomon Islands\",\"SO\":\"Somalia\",\"ZA\":\"South Africa\",\"GS\":\"South Georgia and South Sandwich Islands\",\"SS\":\"South Sudan\",\"ES\":\"Spain\",\"LK\":\"Sri Lanka\",\"SH\":\"St Helena, Ascension, Tristan da Cunha\",\"SD\":\"Sudan\",\"SR\":\"Suriname\",\"SJ\":\"Svalbard\",\"SZ\":\"Swaziland\",\"SE\":\"Sweden\",\"CH\":\"Switzerland\",\"SY\":\"Syria\",\"TW\":\"Taiwan\",\"TJ\":\"Tajikistan\",\"TZ\":\"Tanzania\",\"TH\":\"Thailand\",\"TL\":\"Timor-Leste\",\"TG\":\"Togo\",\"TK\":\"Tokelau\",\"TO\":\"Tonga\",\"TT\":\"Trinidad and Tobago\",\"TN\":\"Tunisia\",\"TR\":\"Turkey\",\"TM\":\"Turkmenistan\",\"TC\":\"Turks and Caicos Islands\",\"TV\":\"Tuvalu\",\"UM\":\"U.S. Outlying Islands\",\"VI\":\"U.S. Virgin Islands\",\"UG\":\"Uganda\",\"UA\":\"Ukraine\",\"AE\":\"United Arab Emirates\",\"GB\":\"United Kingdom\",\"US\":\"United States\",\"UY\":\"Uruguay\",\"UZ\":\"Uzbekistan\",\"VU\":\"Vanuatu\",\"VA\":\"Vatican City\",\"VE\":\"Venezuela\",\"VN\":\"Vietnam\",\"WF\":\"Wallis and Futuna\",\"YE\":\"Yemen\",\"ZM\":\"Zambia\",\"ZW\":\"Zimbabwe\"} |
 | **error_448** | Указанный номер телефона недоступен. |
 | **error_449** | Пользователь превысил количество повторных попыток. |
 | **verification_code_input_placeholder_text** | Код проверки |
@@ -202,6 +202,29 @@ ms.locfileid: "67846840"
 В следующем примере показано использование некоторых элементов пользовательского интерфейса на странице проверки многофакторной идентификации:
 
 ![Элементы пользовательского интерфейса на странице регистрации для проверки адреса электронной почты](./media/localization-string-ids/localization-mfa2.png)
+
+## <a name="verification-display-control-user-interface-elements"></a>Элементы пользовательского интерфейса элемента управления отображением проверки
+
+Ниже приведены идентификаторы для [элемента управления отображением проверки](display-control-verification.md) .
+
+| ID | Значение по умолчанию |
+| -- | ------------- |
+|verification_control_but_change_claims |Change |
+|verification_control_fail_send_code |Не удалось отправить код. Повторите попытку позже. |
+|verification_control_fail_verify_code |Не удалось проверить код. Повторите попытку позже. |
+|verification_control_but_send_code |Отправить код |
+|verification_control_but_send_new_code |Отправить новый код |
+|verification_control_but_verify_code |Проверить код |
+
+### <a name="verification-display-control-error-messages"></a>Сообщения об ошибках контрольного представления проверки
+
+| ID | Значение по умолчанию |
+| -- | ------------- |
+|усермессажеифмаксретряттемптед |При проверке подлинности в течение одного пароля превышено максимальное число попыток |
+|усермессажеифсессиондоеснотексист |Срок действия сеанса проверки пароля истек |
+|усермессажеифсессионконфликт |Конфликт одного сеанса проверки пароля |
+|усермессажеифинвалидкоде |Неправильный пароль, предоставленный для проверки |
+
 
 
 

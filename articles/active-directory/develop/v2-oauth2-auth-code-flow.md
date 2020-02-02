@@ -13,16 +13,16 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 11/19/2019
+ms.date: 01/31/2020
 ms.author: ryanwi
 ms.reviewer: hirsin
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: 367f6253f228e963edb7b178f8b25da259a5e2c7
-ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
+ms.openlocfilehash: 031890b389e78c4ca01e6d6ae52430db865ede2f
+ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76700572"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76931060"
 ---
 # <a name="microsoft-identity-platform-and-oauth-20-authorization-code-flow"></a>Поток кода авторизации для платформы Microsoft Identity и OAuth 2,0
 
@@ -45,7 +45,7 @@ ms.locfileid: "76700572"
 
 ## <a name="request-an-authorization-code"></a>Запрос кода авторизации
 
-Поток кода авторизации начинается с того, что клиент направляет пользователя к конечной точке `/authorize` . В этом запросе клиент указывает разрешения, которые ему требуется получить от пользователя:
+Поток кода авторизации начинается с того, что клиент направляет пользователя к конечной точке `/authorize` . В этом запросе клиент запрашивает `openid`, `offline_access`и `https://graph.microsoft.com/mail.read `разрешения от пользователя.  Некоторые разрешения ограничены администратором, например запись данных в каталог организации с помощью `Directory.ReadWrite.All`. Если приложение запрашивает доступ к одному из этих разрешений от пользователя организации, то пользователь получает сообщение об ошибке, сообщающее, что у него нет прав на согласие с разрешениями вашего приложения. Чтобы запросить доступ к областям, ограниченным администратором, необходимо запросить их непосредственно у администратора компании.  Дополнительные сведения см. в статье [разрешения, ограниченные администратором](v2-permissions-and-consent.md#admin-restricted-permissions).
 
 ```
 // Line breaks for legibility only
@@ -55,13 +55,13 @@ client_id=6731de76-14a6-49ae-97bc-6eba6914391e
 &response_type=code
 &redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F
 &response_mode=query
-&scope=openid%20offline_access%20https%3A%2F%2Fgraph.microsoft.com%2Fuser.read
+&scope=openid%20offline_access%20https%3A%2F%2Fgraph.microsoft.com%2Fmail.read
 &state=12345
 ```
 
 > [!TIP]
 > Чтобы выполнить этот запрос, щелкните ссылку ниже! После входа браузер будет перенаправлен по адресу `https://localhost/myapp/`, при этом в адресной строке будет указано `code`.
-> <a href="https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=6731de76-14a6-49ae-97bc-6eba6914391e&response_type=code&redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F&response_mode=query&scope=openid%20offline_access%20https%3A%2F%2Fgraph.microsoft.com%2Fuser.read&state=12345" target="_blank">https://login.microsoftonline.com/common/oauth2/v2.0/authorize...</a>;
+> <a href="https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=6731de76-14a6-49ae-97bc-6eba6914391e&response_type=code&redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F&response_mode=query&scope=openid%20offline_access%20https%3A%2F%2Fgraph.microsoft.com%2Fmail.read&state=12345" target="_blank">https://login.microsoftonline.com/common/oauth2/v2.0/authorize...</a>;
 
 | Параметр    | Обязательный/необязательный | Description |
 |--------------|-------------|--------------|
@@ -140,7 +140,7 @@ Host: https://login.microsoftonline.com
 Content-Type: application/x-www-form-urlencoded
 
 client_id=6731de76-14a6-49ae-97bc-6eba6914391e
-&scope=https%3A%2F%2Fgraph.microsoft.com%2Fuser.read
+&scope=https%3A%2F%2Fgraph.microsoft.com%2Fmail.read
 &code=OAAABAAAAiL9Kn2Z27UubvWFPbm0gLWQJVzCTE9UkP3pSx1aXxUjq3n8b2JRLk4OxVXr...
 &redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F
 &grant_type=authorization_code
@@ -170,7 +170,7 @@ client_id=6731de76-14a6-49ae-97bc-6eba6914391e
     "access_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Ik5HVEZ2ZEstZnl0aEV1Q...",
     "token_type": "Bearer",
     "expires_in": 3599,
-    "scope": "https%3A%2F%2Fgraph.microsoft.com%2Fuser.read",
+    "scope": "https%3A%2F%2Fgraph.microsoft.com%2Fmail.read",
     "refresh_token": "AwABAAAAvPM1KaPlrEqdFSBzjqfTGAMxZGUTdM0t4B4...",
     "id_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJub25lIn0.eyJhdWQiOiIyZDRkMTFhMi1mODE0LTQ2YTctOD...",
 }
@@ -253,7 +253,7 @@ Host: https://login.microsoftonline.com
 Content-Type: application/x-www-form-urlencoded
 
 client_id=6731de76-14a6-49ae-97bc-6eba6914391e
-&scope=https%3A%2F%2Fgraph.microsoft.com%2Fuser.read
+&scope=https%3A%2F%2Fgraph.microsoft.com%2Fmail.read
 &refresh_token=OAAABAAAAiL9Kn2Z27UubvWFPbm0gLWQJVzCTE9UkP3pSx1aXxUjq...
 &grant_type=refresh_token
 &client_secret=JqQX2PNo9bpM0uEihUPzyrh      // NOTE: Only required for web apps
@@ -281,7 +281,7 @@ client_id=6731de76-14a6-49ae-97bc-6eba6914391e
     "access_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Ik5HVEZ2ZEstZnl0aEV1Q...",
     "token_type": "Bearer",
     "expires_in": 3599,
-    "scope": "https%3A%2F%2Fgraph.microsoft.com%2Fuser.read",
+    "scope": "https%3A%2F%2Fgraph.microsoft.com%2Fmail.read",
     "refresh_token": "AwABAAAAvPM1KaPlrEqdFSBzjqfTGAMxZGUTdM0t4B4...",
     "id_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJub25lIn0.eyJhdWQiOiIyZDRkMTFhMi1mODE0LTQ2YTctOD...",
 }

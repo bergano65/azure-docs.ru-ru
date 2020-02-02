@@ -4,22 +4,22 @@ description: Экспорт данных из приложения IoT Central A
 services: iot-central
 author: viv-liu
 ms.author: viviali
-ms.date: 12/06/2019
+ms.date: 01/30/2019
 ms.topic: conceptual
 ms.service: iot-central
 manager: corywink
-ms.openlocfilehash: 1aac5af916e414178676a1caf42fead41109de68
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.openlocfilehash: 612db9963b02e905c3a48d61a4f7a7ed6f832fba
+ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74974467"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76939019"
 ---
 # <a name="export-your-azure-iot-central-data-preview-features"></a>Экспорт данных IoT Central Azure (Предварительная версия компонентов)
 
 [!INCLUDE [iot-central-pnp-original](../../../includes/iot-central-pnp-original-note.md)]
 
-*Этот раздел предназначен для администраторов.*
+*Эта статья предназначена для администраторов.*
 
 В этой статье описывается, как использовать функцию непрерывного экспорта данных в Azure IoT Central для экспорта данных в **концентраторы событий Azure**, **служебную шину Azure**или экземпляры **хранилища BLOB-объектов Azure** . Данные экспортируются в формате JSON и могут включать данные телеметрии, сведения об устройстве и сведения о шаблонах устройств. Используйте экспортированные данные для:
 
@@ -31,7 +31,7 @@ ms.locfileid: "74974467"
 
 ## <a name="prerequisites"></a>Технические условия
 
-Вы должны быть администратором в своем приложении IoT Central.
+Необходимо быть администратором в IoT Central приложении или иметь разрешения на экспорт данных.
 
 ## <a name="set-up-export-destination"></a>Настройка места назначения экспорта
 
@@ -78,7 +78,7 @@ ms.locfileid: "74974467"
 2. На левой панели выберите **Экспорт данных**.
 
     > [!Note]
-    > Если вы не видите элемент Экспорт данных в левой области, вы не являетесь администратором в приложении. Обратитесь к администратору, чтобы настроить экспорт данных.
+    > Если вы не видите элемент Экспорт данных в левой области, у вас нет разрешений на настройку экспорта данных в приложении. Обратитесь к администратору, чтобы настроить экспорт данных.
 
 3. Нажмите кнопку **+ создать** в правом верхнем углу. Выберите в качестве места назначения для экспорта один из **концентраторов событий Azure**, **служебную шину Azure**или **хранилище BLOB-объектов Azure** . Максимальное число экспортов на приложение равно пяти.
 
@@ -104,7 +104,7 @@ ms.locfileid: "74974467"
 
 7. В разделе **данные для экспорта**выберите типы данных для экспорта, задав для параметра Тип значение **вкл**.
 
-8. Чтобы включить непрерывный экспорт данных, убедитесь, **что включен режим** **экспорта данных** . Щелкните **Сохранить**.
+8. Чтобы включить непрерывный экспорт данных, убедитесь, что **включен** переключатель включить **.** Щелкните **Сохранить**.
 
 9. Через несколько минут данные отобразятся в выбранном месте назначения.
 
@@ -189,15 +189,16 @@ ms.locfileid: "74974467"
 
 ## <a name="devices"></a>Устройства
 
-Каждое сообщение или запись в моментальном снимке представляет одно или несколько изменений устройства и его свойств с момента последнего экспортированного сообщения. А именно:
+Каждое сообщение или запись в моментальном снимке представляет одно или несколько изменений устройства, свойства устройства и облака с момента последнего экспортированного сообщения. В том числе:
 
-- идентификатор (`@id`) устройства в IoT Central;
-- имя (`name`) устройства;
-- идентификатор устройства (`deviceId`) из [Службы подготовки устройств](../core/howto-connect-nodejs.md?toc=/azure/iot-central/preview/toc.json&bc=/azure/iot-central/preview/breadcrumb/toc.json);
-- сведения о шаблоне устройства;
+- идентификатор (`id`) устройства в IoT Central;
+- имя (`displayName`) устройства;
+- Идентификатор шаблона устройства в `instanceOf`
+- Флаг `simulated`, значение true, если устройство является имитацией устройства
+- Флаг `provisioned`, значение true, если устройство подготовлено
+- Флаг `approved`, значение true, если устройство утверждено для отправки данных
 - Значения свойств
-
-Шаблон устройства, к которому принадлежит каждое устройство, представлен `instanceOf`. Чтобы получить имя и дополнительные сведения о шаблоне устройства, обязательно экспортируйте данные шаблона устройства.
+- `properties`, включая значения свойств устройства и облака
 
 Удаленные устройства не экспортируются. В настоящее время в сообщениях экспорта нет никаких индикаторов касательно удаленных устройств.
 
@@ -210,46 +211,41 @@ ms.locfileid: "74974467"
 ```json
 {
   "body":{
-    "@id":"<id>",
-    "@type":"Device",
-    "displayName":"Airbox - 266d30aedn5",
-    "data":{
-      "$cloudProperties":{
-        "Color":"blue"
-      },
-      "EnvironmentalSensor":{
-        "thsensormodel":{
-          "reported":{
-            "value":"A1",
-            "$lastUpdatedTimestamp":"2019-10-02T18:14:49.3820326Z"
-          }
-        },
-        "pm25sensormodel":{
-          "reported":{
-            "value":"P1",
-            "$lastUpdatedTimestamp":"2019-10-02T18:14:49.3820326Z"
-          }
+    "id": "<device Id>",
+    "etag": "<etag>",
+    "displayName": "Sensor 1",
+    "instanceOf": "<device template Id>",
+    "simulated": false,
+    "provisioned": true,
+    "approved": true,
+    "properties": {
+        "sensorComponent": {
+            "setTemp": "30",
+            "fwVersion": "2.0.1",
+            "status": { "first": "first", "second": "second" },
+            "$metadata": {
+                "setTemp": {
+                    "desiredValue": "30",
+                    "desiredVersion": 3,
+                    "desiredTimestamp": "2020-02-01T17:15:08.9284049Z",
+                    "ackVersion": 3
+                },
+                "fwVersion": { "ackVersion": 3 },
+                "status": {
+                    "desiredValue": {
+                        "first": "first",
+                        "second": "second"
+                    },
+                    "desiredVersion": 2,
+                    "desiredTimestamp": "2020-02-01T17:15:08.9284049Z",
+                    "ackVersion": 2
+                }
+            },
+            
         }
-      },
-      "urn_azureiot_DeviceManagement_DeviceInformation":{
-        "totalStorage":{
-          "reported":{
-            "value":3088.1959855710156,
-            "$lastUpdatedTimestamp":"2019-10-02T18:14:49.3820326Z"
-          }
-        },
-        "totalMemory":{
-          "reported":{
-            "value":16005.703586477555,
-            "$lastUpdatedTimestamp":"2019-10-02T18:14:49.3820326Z"
-          }
-        }
-      }
     },
-    "instanceOf":"<templateId>",
-    "deviceId":"<deviceId>",
-    "simulated":true
-  },
+    "installDate": { "installDate": "2020-02-01" }
+},
   "annotations":{
     "iotcentral-message-source":"devices",
     "x-opt-partition-key":"<partitionKey>",
@@ -259,13 +255,324 @@ ms.locfileid: "74974467"
   },
   "partitionKey":"<partitionKey>",
   "sequenceNumber":39740,
-  "enqueuedTimeUtc":"2019-10-02T18:14:49.3820326Z",
+  "enqueuedTimeUtc":"2020-02-01T18:14:49.3820326Z",
   "offset":"<offset>"
 }
 ```
 
 Это пример моментального снимка, содержащего устройства и свойства данных в хранилище BLOB-объектов. Экспортируемые файлы содержат одну строку для каждой записи.
 
+```json
+{
+  "id": "<device Id>",
+  "etag": "<etag>",
+  "displayName": "Sensor 1",
+  "instanceOf": "<device template Id>",
+  "simulated": false,
+  "provisioned": true,
+  "approved": true,
+  "properties": {
+      "sensorComponent": {
+          "setTemp": "30",
+          "fwVersion": "2.0.1",
+          "status": { "first": "first", "second": "second" },
+          "$metadata": {
+              "setTemp": {
+                  "desiredValue": "30",
+                  "desiredVersion": 3,
+                  "desiredTimestamp": "2020-02-01T17:15:08.9284049Z",
+                  "ackVersion": 3
+              },
+              "fwVersion": { "ackVersion": 3 },
+              "status": {
+                  "desiredValue": {
+                      "first": "first",
+                      "second": "second"
+                  },
+                  "desiredVersion": 2,
+                  "desiredTimestamp": "2020-02-01T17:15:08.9284049Z",
+                  "ackVersion": 2
+              }
+          },
+          
+      }
+  },
+  "installDate": { "installDate": "2020-02-01" }
+}
+```
+
+## <a name="device-templates"></a>Шаблоны устройств
+
+Каждое сообщение или запись моментального снимка представляет одно или несколько изменений шаблона опубликованного устройства с момента последнего экспортированного сообщения. Данные, отправляемые в каждое сообщение или запись, включают:
+
+- `id` шаблона устройства, соответствующего `instanceOf` приведенного выше потока устройств
+- версию (`displayName`) шаблона устройства;
+- Устройство `capabilityModel` включая его `interfaces`, а также определения телеметрии, свойств и команд
+- определения `cloudProperties`
+- Переопределения и начальные значения, встроенные с `capabilityModel`
+
+Удаленные шаблоны устройств не экспортируются. В настоящее время в сообщениях экспорта нет никаких индикаторов касательно удаленных шаблонов устройств.
+
+Для концентраторов событий и служебной шины сообщения, содержащие данные шаблона устройства, отправляются в концентратор событий или в очередь или раздел служебной шины практически в реальном времени, как показано в IoT Central. 
+
+Для хранилища BLOB-объектов новый моментальный снимок, содержащий все изменения с момента последнего записанного, экспортируется один раз в минуту.
+
+Это пример сообщения о шаблонах устройств в концентраторе событий или в очереди или разделе служебной шины:
+
+```json
+{
+  "body":{
+      "id": "<device template id>",
+      "etag": "<etag>",
+      "types": ["DeviceModel"],
+      "displayName": "Sensor template",
+      "capabilityModel": {
+          "@id": "<capability model id>",
+          "@type": ["CapabilityModel"],
+          "contents": [],
+          "implements": [
+              {
+                  "@id": "<component Id>",
+                  "@type": ["InterfaceInstance"],
+                  "name": "sensorComponent",
+                  "schema": {
+                      "@id": "<interface Id>",
+                      "@type": ["Interface"],
+                      "displayName": "Sensor interface",
+                      "contents": [
+                          {
+                              "@id": "<id>",
+                              "@type": ["Telemetry"],
+                              "displayName": "Humidity",
+                              "name": "humidity",
+                              "schema": "double"
+                          },
+                          {
+                              "@id": "<id>",
+                              "@type": ["Telemetry", "SemanticType/Event"],
+                              "displayName": "Error event",
+                              "name": "error",
+                              "schema": "integer"
+                          },
+                          {
+                              "@id": "<id>",
+                              "@type": ["Property"],
+                              "displayName": "Set temperature",
+                              "name": "setTemp",
+                              "writable": true,
+                              "schema": "integer",
+                              "unit": "Units/Temperature/fahrenheit",
+                              "initialValue": "30"
+                          },
+                          {
+                              "@id": "<id>",
+                              "@type": ["Property"],
+                              "displayName": "Firmware version read only",
+                              "name": "fwversion",
+                              "schema": "string"
+                          },
+                          {
+                              "@id": "<id>",
+                              "@type": ["Property"],
+                              "displayName": "Display status",
+                              "name": "status",
+                              "writable": true,
+                              "schema": {
+                                  "@id": "urn:testInterface:status:obj:ka8iw8wka:1",
+                                  "@type": ["Object"]
+                              }
+                          },
+                          {
+                              "@id": "<id>",
+                              "@type": ["Command"],
+                              "commandType": "synchronous",
+                              "request": {
+                                  "@id": "<id>",
+                                  "@type": ["SchemaField"],
+                                  "displayName": "Configuration",
+                                  "name": "config",
+                                  "schema": "string"
+                              },
+                              "response": {
+                                  "@id": "<id>",
+                                  "@type": ["SchemaField"],
+                                  "displayName": "Response",
+                                  "name": "response",
+                                  "schema": "string"
+                              },
+                              "displayName": "Configure sensor",
+                              "name": "sensorConfig"
+                          }
+                      ]
+                  }
+              }
+          ],
+          "displayName": "Sensor capability model"
+      },
+      "solutionModel": {
+          "@id": "<id>",
+          "@type": ["SolutionModel"],
+          "cloudProperties": [
+              {
+                  "@id": "<id>",
+                  "@type": ["CloudProperty"],
+                  "displayName": "Install date",
+                  "name": "installDate",
+                  "schema": "dateTime",
+                  "valueDetail": {
+                      "@id": "<id>",
+                      "@type": ["ValueDetail/DateTimeValueDetail"]
+                  }
+              }
+          ]
+      }
+  },
+    "annotations":{
+      "iotcentral-message-source":"deviceTemplates",
+      "x-opt-partition-key":"<partitionKey>",
+      "x-opt-sequence-number":25315,
+      "x-opt-offset":"<offset>",
+      "x-opt-enqueued-time":1539274985085
+    },
+    "partitionKey":"<partitionKey>",
+    "sequenceNumber":25315,
+    "enqueuedTimeUtc":"2019-10-02T16:23:05.085Z",
+    "offset":"<offset>"
+  }
+}
+```
+
+Это пример моментального снимка, содержащего устройства и свойства данных в хранилище BLOB-объектов. Экспортируемые файлы содержат одну строку для каждой записи.
+
+```json
+{
+      "id": "<device template id>",
+      "etag": "<etag>",
+      "types": ["DeviceModel"],
+      "displayName": "Sensor template",
+      "capabilityModel": {
+          "@id": "<capability model id>",
+          "@type": ["CapabilityModel"],
+          "contents": [],
+          "implements": [
+              {
+                  "@id": "<component Id>",
+                  "@type": ["InterfaceInstance"],
+                  "name": "Sensor component",
+                  "schema": {
+                      "@id": "<interface Id>",
+                      "@type": ["Interface"],
+                      "displayName": "Sensor interface",
+                      "contents": [
+                          {
+                              "@id": "<id>",
+                              "@type": ["Telemetry"],
+                              "displayName": "Humidity",
+                              "name": "humidity",
+                              "schema": "double"
+                          },
+                          {
+                              "@id": "<id>",
+                              "@type": ["Telemetry", "SemanticType/Event"],
+                              "displayName": "Error event",
+                              "name": "error",
+                              "schema": "integer"
+                          },
+                          {
+                              "@id": "<id>",
+                              "@type": ["Property"],
+                              "displayName": "Set temperature",
+                              "name": "setTemp",
+                              "writable": true,
+                              "schema": "integer",
+                              "unit": "Units/Temperature/fahrenheit",
+                              "initialValue": "30"
+                          },
+                          {
+                              "@id": "<id>",
+                              "@type": ["Property"],
+                              "displayName": "Firmware version read only",
+                              "name": "fwversion",
+                              "schema": "string"
+                          },
+                          {
+                              "@id": "<id>",
+                              "@type": ["Property"],
+                              "displayName": "Display status",
+                              "name": "status",
+                              "writable": true,
+                              "schema": {
+                                  "@id": "urn:testInterface:status:obj:ka8iw8wka:1",
+                                  "@type": ["Object"]
+                              }
+                          },
+                          {
+                              "@id": "<id>",
+                              "@type": ["Command"],
+                              "commandType": "synchronous",
+                              "request": {
+                                  "@id": "<id>",
+                                  "@type": ["SchemaField"],
+                                  "displayName": "Configuration",
+                                  "name": "config",
+                                  "schema": "string"
+                              },
+                              "response": {
+                                  "@id": "<id>",
+                                  "@type": ["SchemaField"],
+                                  "displayName": "Response",
+                                  "name": "response",
+                                  "schema": "string"
+                              },
+                              "displayName": "Configure sensor",
+                              "name": "sensorconfig"
+                          }
+                      ]
+                  }
+              }
+          ],
+          "displayName": "Sensor capability model"
+      },
+      "solutionModel": {
+          "@id": "<id>",
+          "@type": ["SolutionModel"],
+          "cloudProperties": [
+              {
+                  "@id": "<id>",
+                  "@type": ["CloudProperty"],
+                  "displayName": "Install date",
+                  "name": "installDate",
+                  "schema": "dateTime",
+                  "valueDetail": {
+                      "@id": "<id>",
+                      "@type": ["ValueDetail/DateTimeValueDetail"]
+                  }
+              }
+          ]
+      }
+  }
+```
+## <a name="data-format-change-notice"></a>Уведомление об изменении формата данных
+
+> [!Note]
+> Это изменение не влияет на формат данных потока телеметрии. Затрагиваются только потоки данных для устройств и шаблонов устройств.
+
+При наличии в предварительной версии приложения экспорта данных с включенными потоками *устройств* и *шаблонов устройств* необходимо будет обновить экспорт на **30 июня 2020**. Это относится к экспортам в хранилище BLOB-объектов Azure, концентраторам событий Azure и служебной шине Azure.
+
+Начиная с 3 февраля 2020, все новые операции экспорта в приложениях с включенными устройствами и шаблонами устройств будут иметь формат данных, описанный выше. Все экспорты, созданные до этого, будут оставаться в старом формате до 30 июня 2020, после чего эти экспорты будут автоматически перенесены в новый формат данных. Новый формат данных соответствует [устройству](https://docs.microsoft.com/rest/api/iotcentral/devices/get), [свойству устройства](https://docs.microsoft.com/rest/api/iotcentral/devices/getproperties), [свойству облака устройства](https://docs.microsoft.com/rest/api/iotcentral/devices/getcloudproperties) и объектам [шаблона устройства](https://docs.microsoft.com/rest/api/iotcentral/devicetemplates/get) в общедоступном API IOT Central. 
+ 
+Для **устройств**существенными различиями между старым форматом данных и новым форматом данных являются:
+- `@id` для устройства удалено, `deviceId` переименовывается в `id` 
+- добавлен флаг `provisioned` для описания состояния подготовки устройства.
+- добавлен флаг `approved` для описания состояния утверждения устройства.
+- `properties` включая свойства устройства и облака, сопоставляет сущности в общедоступном API
+
+Для **шаблонов устройств**существенными различиями между старым форматом данных и новым форматом данных являются:
+
+- `@id` для шаблона устройства переименовывается в `id`
+- `@type` для шаблона устройства переименовывается в `types`, а теперь является массивом
+
+### <a name="devices-format-deprecated-as-of-3-february-2020"></a>Устройства (формат не рекомендуется к 3 февраля 2020)
 ```json
 {
   "@id":"<id-value>",
@@ -310,172 +617,7 @@ ms.locfileid: "74974467"
 }
 ```
 
-## <a name="device-templates"></a>Шаблоны устройств
-
-Каждое сообщение или запись моментального снимка представляет одно или несколько изменений шаблона устройства с момента последнего экспортированного сообщения. Данные, отправляемые в каждое сообщение или запись, включают:
-
-- `@id` шаблона устройства, соответствующего `instanceOf` приведенного выше потока устройств
-- версию (`name`) шаблона устройства;
-- версию (`version`) шаблона устройства;
-- Устройство `capabilityModel` включая его `interfaces`, а также определения телеметрии, свойств и команд
-- определения `cloudProperties`
-- Переопределения и начальные значения, встроенные с `capabilityModel`
-
-Удаленные шаблоны устройств не экспортируются. В настоящее время в сообщениях экспорта нет никаких индикаторов касательно удаленных шаблонов устройств.
-
-Для концентраторов событий и служебной шины сообщения, содержащие данные шаблона устройства, отправляются в концентратор событий или в очередь или раздел служебной шины практически в реальном времени, как показано в IoT Central. 
-
-Для хранилища BLOB-объектов новый моментальный снимок, содержащий все изменения с момента последнего записанного, экспортируется один раз в минуту.
-
-Это пример сообщения о шаблонах устройств в концентраторе событий или в очереди или разделе служебной шины:
-
-```json
-{
-  "body":{
-    "@id":"<template-id>",
-    "@type":"DeviceModelDefinition",
-    "displayName":"Airbox",
-    "capabilityModel":{
-      "@id":"<id>",
-      "@type":"CapabilityModel",
-      "implements":[
-        {
-          "@id":"<id>",
-          "@type":"InterfaceInstance",
-          "name":"EnvironmentalSensor",
-          "schema":{
-            "@id":"<id>",
-            "@type":"Interface",
-            "comment":"Requires temperature and humidity sensors.",
-            "description":"Provides functionality to report temperature, humidity. Provides telemetry, commands and read-write properties",
-            "displayName":"Environmental Sensor",
-            "contents":[
-              {
-                "@id":"<id>",
-                "@type":"Telemetry",
-                "description":"Current temperature on the device",
-                "displayName":"Temperature",
-                "name":"temp",
-                "schema":"double",
-                "unit":"Units/Temperature/celsius",
-                "valueDetail":{
-                  "@id":"<id>",
-                  "@type":"ValueDetail/NumberValueDetail",
-                  "minValue":{
-                    "@value":"50"
-                  }
-                },
-                "visualizationDetail":{
-                  "@id":"<id>",
-                  "@type":"VisualizationDetail"
-                }
-              },
-              {
-                "@id":"<id>",
-                "@type":"Telemetry",
-                "description":"Current humidity on the device",
-                "displayName":"Humidity",
-                "name":"humid",
-                "schema":"integer"
-              },
-              {
-                "@id":"<id>",
-                "@type":"Telemetry",
-                "description":"Current PM2.5 on the device",
-                "displayName":"PM2.5",
-                "name":"pm25",
-                "schema":"integer"
-              },
-              {
-                "@id":"<id>",
-                "@type":"Property",
-                "description":"T&H Sensor Model Name",
-                "displayName":"T&H Sensor Model",
-                "name":"thsensormodel",
-                "schema":"string"
-              },
-              {
-                "@id":"<id>",
-                "@type":"Property",
-                "description":"PM2.5 Sensor Model Name",
-                "displayName":"PM2.5 Sensor Model",
-                "name":"pm25sensormodel",
-                "schema":"string"
-              }
-            ]
-          }
-        },
-        {
-          "@id":"<id>",
-          "@type":"InterfaceInstance",
-          "name":"urn_azureiot_DeviceManagement_DeviceInformation",
-          "schema":{
-            "@id":"<id>",
-            "@type":"Interface",
-            "displayName":"Device information",
-            "contents":[
-              {
-                "@id":"<id>",
-                "@type":"Property",
-                "comment":"Total available storage on the device in kilobytes. Ex. 20480000 kilobytes.",
-                "displayName":"Total storage",
-                "name":"totalStorage",
-                "displayUnit":"kilobytes",
-                "schema":"long"
-              },
-              {
-                "@id":"<id>",
-                "@type":"Property",
-                "comment":"Total available memory on the device in kilobytes. Ex. 256000 kilobytes.",
-                "displayName":"Total memory",
-                "name":"totalMemory",
-                "displayUnit":"kilobytes",
-                "schema":"long"
-              }
-            ]
-          }
-        }
-      ],
-      "displayName":"AAEONAirbox52"
-    },
-    "solutionModel":{
-      "@id":"<id>",
-      "@type":"SolutionModel",
-      "cloudProperties":[
-        {
-          "@id":"<id>",
-          "@type":"CloudProperty",
-          "displayName":"Color",
-          "name":"Color",
-          "schema":"string",
-          "valueDetail":{
-            "@id":"<id>",
-            "@type":"ValueDetail/StringValueDetail"
-          },
-          "visualizationDetail":{
-            "@id":"<id>",
-            "@type":"VisualizationDetail"
-          }
-        }
-      ]
-    },
-    "annotations":{
-      "iotcentral-message-source":"deviceTemplates",
-      "x-opt-partition-key":"<partitionKey>",
-      "x-opt-sequence-number":25315,
-      "x-opt-offset":"<offset>",
-      "x-opt-enqueued-time":1539274985085
-    },
-    "partitionKey":"<partitionKey>",
-    "sequenceNumber":25315,
-    "enqueuedTimeUtc":"2019-10-02T16:23:05.085Z",
-    "offset":"<offset>"
-  }
-}
-```
-
-Это пример моментального снимка, содержащего устройства и свойства данных в хранилище BLOB-объектов. Экспортируемые файлы содержат одну строку для каждой записи.
-
+### <a name="device-templates-format-deprecated-as-of-3-february-2020"></a>Шаблоны устройств (формат не рекомендуется к 3 февраля 2020)
 ```json
 {
   "@id":"<template-id>",
@@ -607,7 +749,6 @@ ms.locfileid: "74974467"
   }
 }
 ```
-
 ## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы узнали, как экспортировать данные в концентраторы событий Azure, служебную шину Azure и хранилище BLOB-объектов Azure, перейдите к следующему шагу:

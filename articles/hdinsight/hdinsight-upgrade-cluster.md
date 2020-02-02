@@ -1,28 +1,29 @@
 ---
-title: Обновление кластера HDInsight до более новой версии в Azure
-description: Ознакомьтесь с рекомендациями по обновлению кластера Azure HDInsight до более новой версии.
-author: omidm1
-ms.author: omidm
+title: Перенос кластера в более новую версию
+titleSuffix: Azure HDInsight
+description: Ознакомьтесь с рекомендациями по переносу кластера Azure HDInsight в более новую версию.
+author: hrasheed-msft
+ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: hdinsightactive
-ms.date: 12/06/2019
-ms.openlocfilehash: 1a1d4a71786ebb1e68f59084086b3256a1c1ea40
-ms.sourcegitcommit: 5b9287976617f51d7ff9f8693c30f468b47c2141
+ms.date: 01/31/2020
+ms.openlocfilehash: 95892bba1b3152dda718a4af3c5f45072054fdae
+ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2019
-ms.locfileid: "74951162"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76935489"
 ---
-# <a name="upgrade-hdinsight-cluster-to-a-newer-version"></a>Обновление кластера HDInsight до более новой версии
+# <a name="migrate-hdinsight-cluster-to-a-newer-version"></a>Перенос кластера HDInsight в более новую версию
 
-Чтобы воспользоваться преимуществами новых возможностей HDInsight, мы рекомендуем обновить кластеры HDInsight до последней версии. Выполните следующие инструкции, чтобы обновить версию кластера HDInsight.
+Чтобы воспользоваться новейшими функциями HDInsight, мы рекомендуем регулярно выполнять миграцию кластеров HDInsight в последнюю версию. HDInsight не поддерживает обновления на месте, когда существующий кластер обновляется до более новой версии компонента. Необходимо создать новый кластер с нужным компонентом и версией платформы, а затем перенести приложения для использования нового кластера. Чтобы перенести версии кластера HDInsight, следуйте приведенным ниже рекомендациям.
 
 > [!NOTE]  
 > См. дополнительные сведения о [поддерживаемых версиях компонентов HDInsight](hdinsight-component-versioning.md#supported-hdinsight-versions).
 
-## <a name="upgrade-tasks"></a>Задачи обновления
+## <a name="migration-tasks"></a>Задачи миграции
 
 Рабочий процесс для обновления кластера HDInsight выглядит так.
 ](./media/hdinsight-upgrade-cluster/upgrade-workflow-diagram.png) схемы рабочего процесса обновления ![HDInsight
@@ -40,9 +41,21 @@ ms.locfileid: "74951162"
 1. Импортируйте все временные данные из резервной копии.
 1. Запустите задания и продолжите обработку с помощью нового кластера.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="workload-specific-guidance"></a>Руководство по конкретной рабочей нагрузке
+
+Следующие документы содержат рекомендации по переносу конкретных рабочих нагрузок.
+
+* [Перенос HBase](/hbase/apache-hbase-migrate-new-version.md)
+* [Миграция Kafka](/kafka/migrate-versions.md)
+* [Миграция Hive или интерактивного запроса](/interactive-query/apache-hive-migrate-workloads.md)
+
+## <a name="backup-and-restore"></a>Резервное копирование и восстановление
+
+Дополнительные сведения о резервном копировании и восстановлении базы данных см. в статье [Восстановление базы данных SQL Azure с помощью автоматических резервных копий базы данных](../sql-database/sql-database-recovery-using-backups.md).
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Узнайте, как создавать кластеры HDInsight под управлением Linux](hdinsight-hadoop-provision-linux-clusters.md)
 * [Подключитесь к HDInsight с помощью протокола SSH](hdinsight-hadoop-linux-use-ssh-unix.md).
-* [Управление кластерами HDInsight с помощью веб-интерфейса Ambari](hdinsight-hadoop-manage-ambari.md)
+* [Управление кластерами HDInsight с помощью веб-интерфейса Ambari](hdinsight-hadoop-manage-ambari.md) (для кластера Linux)
 * [Заметки о выпуске HDInsight](./hdinsight-version-release.md)

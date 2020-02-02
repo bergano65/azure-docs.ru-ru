@@ -11,15 +11,15 @@ ms.author: larryfr
 author: Blackmist
 ms.date: 11/06/2019
 ms.custom: seodec18
-ms.openlocfilehash: d43e04e0ef347ec46a8aad12aac380f68106fc2f
-ms.sourcegitcommit: ce4a99b493f8cf2d2fd4e29d9ba92f5f942a754c
+ms.openlocfilehash: aba613911328b1272ebb07eeae633932cb4a442f
+ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/28/2019
-ms.locfileid: "75541612"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76935357"
 ---
 # <a name="manage-access-to-an-azure-machine-learning-workspace"></a>Управление доступом к рабочей области Машинное обучение Azure
-[!INCLUDE [aml-applies-to-enterprise-sku](../../includes/aml-applies-to-enterprise-sku.md)]
+[!INCLUDE [aml-applies-to-basic-enterprise-sku](../../includes/aml-applies-to-basic-enterprise-sku.md)]
 
 Из этой статьи вы узнаете, как управлять доступом к рабочей области Машинное обучение Azure. [Управление доступом на основе ролей (RBAC)](/azure/role-based-access-control/overview) используется для управления доступом к ресурсам Azure. Пользователям в Azure Active Directory назначаются определенные роли, которые предоставляют доступ к ресурсам. Azure предоставляет встроенные роли и возможность создания пользовательских ролей.
 

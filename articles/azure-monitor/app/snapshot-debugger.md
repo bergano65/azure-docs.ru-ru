@@ -7,16 +7,16 @@ ms.topic: conceptual
 author: mrbullwinkle
 ms.author: mbullwin
 ms.date: 10/23/2019
-ms.reviewer: brahmnes
-ms.openlocfilehash: 681190a23fd09402ae96c328b7d98044baf3444e
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.reviewer: cweining
+ms.openlocfilehash: 44b4a7bb5910f7f2d89a9f76e21ccfcacda667fb
+ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75406390"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76932574"
 ---
 # <a name="debug-snapshots-on-exceptions-in-net-apps"></a>Отладочные моментальные снимки для исключений в приложениях .NET
-При возникновении исключения, можно автоматически собирать отладочный моментальный снимок из работающего веб-приложения. Моментальный снимок отображает состояние исходного кода и переменных в момент порождения этого исключения. Отладчик моментальных снимков (предварительная версия) в [Azure Application Insights](../../azure-monitor/app/app-insights-overview.md) отслеживает телеметрию исключений, поступающую из веб-приложения. Он собирает моментальные снимки для наиболее частых исключений, чтобы предоставить вам необходимые сведения для диагностики проблем в рабочей среде. Включите в приложение [пакет NuGet сборщика моментальных снимков](https://www.nuget.org/packages/Microsoft.ApplicationInsights.SnapshotCollector) и при необходимости настройте параметры коллекции в [ApplicationInsights. config](../../azure-monitor/app/configuration-with-applicationinsights-config.md). Моментальные снимки отображаются на [исключениях](../../azure-monitor/app/asp-net-exceptions.md) на портале Application Insights.
+При возникновении исключения, можно автоматически собирать отладочный моментальный снимок из работающего веб-приложения. Моментальный снимок отображает состояние исходного кода и переменных в момент порождения этого исключения. Snapshot Debugger в [Azure Application Insights](../../azure-monitor/app/app-insights-overview.md) отслеживает данные телеметрии исключений из веб-приложения. Он собирает моментальные снимки для наиболее частых исключений, чтобы предоставить вам необходимые сведения для диагностики проблем в рабочей среде. Включите в приложение [пакет NuGet сборщика моментальных снимков](https://www.nuget.org/packages/Microsoft.ApplicationInsights.SnapshotCollector) и при необходимости настройте параметры коллекции в [ApplicationInsights. config](../../azure-monitor/app/configuration-with-applicationinsights-config.md). Моментальные снимки отображаются на [исключениях](../../azure-monitor/app/asp-net-exceptions.md) на портале Application Insights.
 
 Вы можете просмотреть отладочные моментальные снимки на портале, чтобы изучить стек вызовов и проверить значения переменных в каждом кадре стека вызовов. Чтобы получить более широкие возможности отладки с помощью исходного кода, откройте моментальные снимки с помощью Visual Studio 2019 Enterprise. В Visual Studio можно также [настроить точки прикрепления для интерактивного создания моментальных снимков](https://aka.ms/snappoint) без ожидания исключения.
 
@@ -33,7 +33,7 @@ ms.locfileid: "75406390"
 * [Облачные службы Azure](snapshot-debugger-vm.md?toc=/azure/azure-monitor/toc.json) под управлением ОС семейства 4 или более поздней версии
 * [Службы Service Fabric Azure](snapshot-debugger-vm.md?toc=/azure/azure-monitor/toc.json) , работающие под Windows Server 2012 R2 или более поздней версии
 * [Виртуальные машины Azure и масштабируемые наборы виртуальных машин](snapshot-debugger-vm.md?toc=/azure/azure-monitor/toc.json) под Windows Server 2012 R2 или более поздней версии
-* [Локальные виртуальные или физические компьютеры](snapshot-debugger-vm.md?toc=/azure/azure-monitor/toc.json) под управлением Windows Server 2012 R2 или более поздней версии
+* [Локальные виртуальные или физические компьютеры](snapshot-debugger-vm.md?toc=/azure/azure-monitor/toc.json) под управлением Windows Server 2012 R2 или более поздней версии или Windows 8.1 или более поздней версии.
 
 > [!NOTE]
 > Клиентские приложения (например, WPF, Windows Forms или UWP) не поддерживаются.

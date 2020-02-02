@@ -3,21 +3,21 @@ title: Представление трафика в диспетчере тра�
 description: В этом обзоре вы узнаете, как работает представление трафика диспетчера трафика.
 services: traffic-manager
 documentationcenter: traffic-manager
-author: asudbring
+author: rohinkoul
 ms.service: traffic-manager
 ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: ''
 ms.workload: infrastructure
 ms.date: 03/16/2018
-ms.author: allensu
+ms.author: rohink
 ms.custom: ''
-ms.openlocfilehash: 1cdad5873ea0f6d2fab129aef7be012ea11e8a60
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.openlocfilehash: d5a03fde564b14baee97f50fa63fd58bf83694b7
+ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74023244"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76938353"
 ---
 # <a name="traffic-manager-traffic-view"></a>Представление трафика в диспетчере трафика
 
@@ -90,7 +90,7 @@ ms.locfileid: "74023244"
 
 * [Как работает выставление счетов Представление трафика?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#how-does-traffic-view-billing-work)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте о том, [как работает диспетчер трафика](traffic-manager-overview.md)
 - Узнайте больше о [методах маршрутизации трафика](traffic-manager-routing-methods.md) , поддерживаемых в диспетчере трафика.

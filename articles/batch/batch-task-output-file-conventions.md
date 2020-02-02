@@ -1,6 +1,6 @@
 ---
-title: Сохранение выходных данных заданий и задач в службе хранилища Azure с помощью библиотеки соглашений об именовании файлов для .NET — пакетная служба Azure | Документы Майкрософт
-description: Узнайте, как использовать библиотеку соглашений для пакетных файлов Azure для .NET для сохранения выходных данных задач и заданий пакетной службы в службе хранилища Azure и просматривать сохраненные выходные данные на портале Azure.
+title: Сохранение выходных данных в службе хранилища Azure с помощью библиотеки соглашений об именовании файлов .NET — Пакетная служба Azure
+description: Узнайте, как использовать библиотеку соглашений о пакетных файлах Azure для .NET, чтобы сохранить выходные данные задания пакетной службы & в службе хранилища Azure, а также просмотреть эти выходные данные в портал Azure.
 services: batch
 documentationcenter: .net
 author: ju-shim
@@ -14,12 +14,12 @@ ms.workload: big-compute
 ms.date: 11/14/2018
 ms.author: jushiman
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 306407252a6f5bc4071947b6aafa2d50bccc97a8
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: 8b57ab7168b331734d7811e04284db56bc782f3f
+ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76842739"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76935282"
 ---
 # <a name="persist-job-and-task-data-to-azure-storage-with-the-batch-file-conventions-library-for-net"></a>Сохранение данных заданий и задач в службе хранилища Azure с помощью библиотеки соглашений о пакетных файлах для .NET
 

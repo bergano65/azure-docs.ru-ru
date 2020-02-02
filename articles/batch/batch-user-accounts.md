@@ -1,6 +1,6 @@
 ---
-title: Выполнение задач с учетными записями пользователей — пакетная служба Azure | Документация Майкрософт
-description: Настройка учетных записей пользователей для выполнения задач в пакетной службе Azure.
+title: Выполнение задач с учетными записями пользователей в пакетной службе Azure
+description: Полезно иметь возможность настроить учетную запись пользователя, под которой должна выполняться задача. Сведения о типах учетных записей пользователей и их настройке.
 services: batch
 author: ju-shim
 manager: gwallace
@@ -14,12 +14,12 @@ ms.workload: big-compute
 ms.date: 11/18/2019
 ms.author: jushiman
 ms.custom: seodec18
-ms.openlocfilehash: d4975935c872f059dde6b08bcd7a4f06540c2dfd
-ms.sourcegitcommit: dbcc4569fde1bebb9df0a3ab6d4d3ff7f806d486
+ms.openlocfilehash: 01342c8fcd0d2d3c603762b06350a9fcf7c12d03
+ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76029603"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76937964"
 ---
 > [!NOTE] 
 > Учетные записи пользователей, описанные в этой статье, отличаются от учетных записей пользователей, используемых для протокол удаленного рабочего стола (RDP) или Secure Shell (SSH) по соображениям безопасности. 

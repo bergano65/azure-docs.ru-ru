@@ -2,13 +2,13 @@
 title: Новые возможности Azure Site Recovery
 description: Содержит сводку новых функций и последних обновлений в службе Azure Site Recovery.
 ms.topic: conceptual
-ms.date: 01/07/2020
-ms.openlocfilehash: ecd42c624cf1fe62c8041a0b8798585c8870cabc
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.date: 01/31/2020
+ms.openlocfilehash: d6aa04586c9c087a736c7e1b10b8c21328a63cab
+ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "76896037"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76934937"
 ---
 # <a name="whats-new-in-site-recovery"></a>Новые возможности в Site Recovery
 
@@ -36,6 +36,18 @@ ms.locfileid: "76896037"
 
 ## <a name="updates-january-2020"></a>Обновления (Январь 2020)
 
+### <a name="update-rollup-44"></a>Накопительный пакет обновления 44
+[Накопительный пакет обновления 44](https://support.microsoft.com/help/4538187/update-rollup-44-for-azure-site-recovery) предоставляет следующие обновления.
+
+**Update** | **Сведения**
+--- | ---
+**Проблемы с исправлениями и улучшениями** | Ряд обновлений для Site Recovery агентов и поставщиков (как описано в свертке).
+
+### <a name="azure-vmware-disaster-recovery"></a>Аварийное восстановление Azure VMware
+
+Виртуальные машины Azure теперь поддерживают виртуальные машины для шифрования неактивных компьютеров с ключами, управляемыми клиентом. [Подробнее](azure-to-azure-how-to-enable-replication-cmk-disks.md).
+
+
 ### <a name="update-rollup-43"></a>Накопительный пакет обновления 43
 
 [Накопительный пакет обновления 43](https://support.microsoft.com/help/4537047/update-rollup-43-for-azure-site-recovery) предоставляет следующие обновления.
@@ -58,7 +70,7 @@ ms.locfileid: "76896037"
 **Проблемы с исправлениями и улучшениями** | Ряд исправлений и улучшений (как описано в свертке).
 
 
-## <a name="azure-vm-disaster-recovery"></a>Аварийное восстановление виртуальной машины Azure
+### <a name="azure-vm-disaster-recovery"></a>Аварийное восстановление виртуальной машины Azure
 
 Новые функции аварийного восстановления виртуальных машин Azure приведены в таблице.
 

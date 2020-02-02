@@ -3,7 +3,7 @@ title: Маршрутизация трафика для обеспечения �
 description: Пример сценария Azure PowerShell для маршрутизации трафика для обеспечения высокого уровня доступности приложений.
 services: traffic-manager
 documentationcenter: traffic-manager
-author: asudbring
+author: rohinkoul
 manager: kumudD
 editor: ''
 tags: azure-infrastructure
@@ -14,13 +14,13 @@ ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: traffic-manager
 ms.date: 04/26/2018
-ms.author: allensu
-ms.openlocfilehash: bd81ef459d4b3a60d5da3dff9fff4119392ac8cd
-ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
+ms.author: rohink
+ms.openlocfilehash: 3f448683dbb210ab196e27cfd98a376429d03aec
+ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74014641"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76934738"
 ---
 # <a name="route-traffic-for-high-availability-of-applications-using-azure-powershell"></a>Маршрутизация трафика для обеспечения высокого уровня доступности приложений с помощью Azure PowerShell
 
@@ -49,7 +49,7 @@ Remove-AzResourceGroup -Name myResourceGroup2
 
 Для создания группы ресурсов, веб-приложения, профиля диспетчера трафика и всех связанных ресурсов этот скрипт использует следующие команды. Для каждой команды в таблице приведены ссылки на соответствующую документацию.
 
-| Команда | Примечания |
+| Get-Help | Примечания |
 |---|---|
 | [New-AzResourceGroup](/powershell/module/az.resources/new-azresourcegroup)  | Создает группу ресурсов, в которой хранятся все ресурсы. |
 | [New-AzAppServicePlan](/powershell/module/az.websites/new-azappserviceplan) | Создает план службы приложений. Это как ферма сервера для веб-приложения Azure. |
@@ -58,7 +58,7 @@ Remove-AzResourceGroup -Name myResourceGroup2
 | [New-AzTrafficManagerProfile](/powershell/module/az.trafficmanager/new-aztrafficmanagerprofile) | Создает профиль диспетчера трафика Azure. |
 | [New-AzTrafficManagerEndpoint](/powershell/module/az.trafficmanager/new-aztrafficmanagerendpoint) | Добавление конечной точки в профиль диспетчера трафика Azure. |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о Azure PowerShell см. в [документации по Azure PowerShell](https://docs.microsoft.com/powershell/azure/overview).
 

@@ -8,12 +8,12 @@ ms.author: luisca
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: 4f0975aceeb55c8f184ebe4e6a44d819b4a8bf38
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: 9e1f62dcdb122726fc1c08b7bea4e4c214ce7906
+ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76837866"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76933367"
 ---
 # <a name="built-in-cognitive-skills-for-text-and-image-processing-during-indexing-azure-cognitive-search"></a>Встроенные профессиональные навыки для обработки текста и изображений во время индексирования (Когнитивный поиск Azure)
 
@@ -31,6 +31,7 @@ ms.locfileid: "76837866"
 
 | Навык | Description |
 |-------|-------------|
+|[Microsoft. Skills. Text. Кустоментитилукупскилл](cognitive-search-skill-custom-entity-lookup.md)| Ищет текст из пользовательского списка слов и фраз, определяемого пользователем.|
 | [Microsoft.Skills.Text.KeyPhraseSkill](cognitive-search-skill-keyphrases.md) | Этот навык использует предварительно обученную модель для выявления важных фраз в зависимости от расположения терминов, лингвистических правил, близости к другим терминам и того, насколько необычным является термин в исходных данных. |
 | [Microsoft.Skills.Text.LanguageDetectionSkill](cognitive-search-skill-language-detection.md)  | Этот навык использует предварительно обученную модель, чтобы определить используемый язык (один идентификатор языка на документ). Если в одних сегментах текста используется несколько языков, выводится код основного используемого языка.|
 | [Microsoft.Skills.Text.MergeSkill](cognitive-search-skill-textmerger.md) | Объединяет текст из коллекции полей в одном поле.  |

@@ -5,15 +5,15 @@ services: automation
 ms.service: automation
 author: mgoedtel
 ms.author: magoedte
-ms.date: 12/03/2019
+ms.date: 01/31/2020
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 65759b32889f9a99b0322823bb8a4924788e8c09
-ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
+ms.openlocfilehash: e300bc0f29808215673407d21b65fe329e50ad45
+ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74786475"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76930425"
 ---
 # <a name="manage-modules-in-azure-automation"></a>Управление модулями в службе автоматизации Azure
 
@@ -42,7 +42,7 @@ $moduleVersion = <ModuleVersion>
 New-AzAutomationModule -AutomationAccountName <AutomationAccountName> -ResourceGroupName <ResourceGroupName> -Name $moduleName -ContentLinkUri "https://www.powershellgallery.com/api/v2/package/$moduleName/$moduleVersion"
 ```
 
-### <a name="azure-portal"></a>портала Azure
+### <a name="azure-portal"></a>Портал Azure
 
 В портал Azure перейдите к учетной записи службы автоматизации и выберите **модули** в разделе **Общие ресурсы**. Щелкните **+ Добавить модуль**. Выберите **ZIP** -файл, содержащий модуль, и нажмите кнопку **ОК** , чтобы начать импорт процесса.
 
@@ -60,11 +60,11 @@ New-AzAutomationModule -AutomationAccountName <AutomationAccountName> -ResourceG
 
 ## <a name="delete-modules"></a>Удаление модулей
 
-Если у вас возникли проблемы с модулем или необходимо выполнить откат к предыдущей версии модуля, его можно удалить из учетной записи службы автоматизации. Нельзя удалить исходную версию [модулей по умолчанию](#default-modules) , которые импортируются при создании учетной записи службы автоматизации. Если удаляемый модуль является более новой версией одного из установленных [модулей по умолчанию](#default-modules) , она будет восстановлена до версии, установленной вместе с учетной записью службы автоматизации. В противном случае все модули, удаляемые из учетной записи службы автоматизации, будут удалены.
+Если у вас возникли проблемы с модулем или необходимо выполнить откат к предыдущей версии модуля, его можно удалить из учетной записи службы автоматизации. Нельзя удалить исходную версию [модулей по умолчанию](#default-modules) , которые импортируются при создании учетной записи службы автоматизации. Если удаляемый модуль является новой версией одного из установленных [модулей по умолчанию](#default-modules) , она будет восстановлена до версии, установленной вместе с учетной записью службы автоматизации. В противном случае все модули, удаляемые из учетной записи службы автоматизации, будут удалены.
 
-### <a name="azure-portal"></a>портала Azure
+### <a name="azure-portal"></a>Портал Azure
 
-В портал Azure перейдите к учетной записи службы автоматизации и выберите **модули** в разделе **Общие ресурсы**. Выберите модуль, который требуется удалить. На странице **модуль** клЦикк **Удалить**. Если этот модуль является одним из [модулей по умолчанию](#default-modules), он будет выполнен откат к версии, которая существовала при создании учетной записи службы автоматизации.
+В портал Azure перейдите к учетной записи службы автоматизации и выберите **модули** в разделе **Общие ресурсы**. Выберите модуль, который требуется удалить. На странице **модуль** выберите **Удалить**. Если этот модуль является одним из [модулей по умолчанию](#default-modules), он будет выполнен откат к версии, которая существовала при создании учетной записи службы автоматизации.
 
 ### <a name="powershell"></a>PowerShell
 
@@ -79,10 +79,10 @@ Remove-AzureRmAutomationModule -Name <moduleName> -AutomationAccountName <automa
 Ниже приведен список командлетов во внутреннем модуле `Orchestrator.AssetManagement.Cmdlets`, который импортируется в каждую учетную запись службы автоматизации. Эти командлеты доступны в модулях Runbook и конфигурациях DSC и позволяют взаимодействовать с ресурсами в вашей учетной записи службы автоматизации. Кроме того, внутренние командлеты позволяют извлекать секреты из зашифрованных значений **переменных** , **учетных данных**и полей зашифрованного **соединения** . Командлеты Azure PowerShell не могут получить эти секреты. При использовании этих командлетов не требуется неявное подключение к Azure, например использование учетной записи запуска от имени для проверки подлинности в Azure.
 
 >[!NOTE]
->Эти внутренние командлеты недоступны в гибридной рабочей роли Runbook. они доступны только из модулей Runbook, работающих в Azure. Используйте соответствующие модули [AzureRM. Automation](https://docs.microsoft.com/powershell/module/AzureRM.Automation/?view=azurermps-6.13.0) или [AZ для модулей](../az-modules.md) Runbook, выполняющихся непосредственно на компьютере, или для ресурсов в вашей среде. 
+>Эти внутренние командлеты доступны в гибридной рабочей роли Runbook Windows, они недоступны в гибридной рабочей роли Runbook Linux. Используйте соответствующие модули [AzureRM. Automation](https://docs.microsoft.com/powershell/module/AzureRM.Automation/?view=azurermps-6.13.0) или [AZ для модулей](../az-modules.md) Runbook, выполняющихся непосредственно на компьютере, или для ресурсов в вашей среде. 
 >
 
-|Name|Описание|
+|Имя|Description|
 |---|---|
 |Get-AutomationCertificate|`Get-AutomationCertificate [-Name] <string> [<CommonParameters>]`|
 |Get-AutomationConnection|`Get-AutomationConnection [-Name] <string> [-DoNotDecrypt] [<CommonParameters>]` |
@@ -265,12 +265,12 @@ myModule
 | AzureRM.Storage | 1.0.3 |
 | компутерманажементдск | 5.0.0.0 |
 | гпрегистриполиципарсер | 0,2 |
-| Microsoft. PowerShell. Core | 0 |
-| Microsoft. PowerShell. Diagnostics |  |
-| Microsoft. PowerShell. Management |  |
-| Microsoft. PowerShell. Security |  |
-| Microsoft. PowerShell. Utility |  |
-| Microsoft. WSMan. Management |  |
+| Microsoft.PowerShell.Core | 0 |
+| Microsoft.PowerShell.Diagnostics |  |
+| Microsoft.PowerShell.Management |  |
+| Microsoft.PowerShell.Security |  |
+| Microsoft.PowerShell.Utility |  |
+| Microsoft.WSMan.Management |  |
 | Orchestrator. Ассетманажемент. командлеты | 1 |
 | псдскресаурцес | 2.9.0.0 |
 | секуритиполицидск | 2.1.0.0 |

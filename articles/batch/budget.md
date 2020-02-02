@@ -1,6 +1,6 @@
 ---
 title: Анализ затрат и бюджет — Пакетная служба Azure
-description: Узнайте, как получить анализ затрат и задать бюджет для рабочей нагрузки пакетной службы.
+description: Узнайте, как получить анализ затрат и задать бюджет для базовых ресурсов вычислений и лицензий на программное обеспечение, используемых для выполнения рабочих нагрузок пакетной службы.
 services: batch
 author: ju-shim
 manager: gwallace
@@ -10,12 +10,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: big-compute
 ms.date: 07/19/2019
 ms.author: jushiman
-ms.openlocfilehash: 7707d966049e9eced1add1104441af8fee356ef0
-ms.sourcegitcommit: dbcc4569fde1bebb9df0a3ab6d4d3ff7f806d486
+ms.openlocfilehash: 0cd17271d041b41f9f71c7861e29ab8116c74710
+ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76029571"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76930190"
 ---
 # <a name="cost-analysis-and-budgets-for-azure-batch"></a>Анализ затрат и бюджеты для пакетной службы Azure
 

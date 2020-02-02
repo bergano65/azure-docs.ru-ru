@@ -12,12 +12,12 @@ ms.workload: na
 ms.topic: article
 ms.date: 01/07/2020
 ms.author: juliako
-ms.openlocfilehash: 88effd58e807d39e5915aa41425ecf2e8ca8e3cc
-ms.sourcegitcommit: f53cd24ca41e878b411d7787bd8aa911da4bc4ec
+ms.openlocfilehash: f1387273f9736fea70682177d5d48dc2f141bbad
+ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75832307"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76933861"
 ---
 # <a name="azure-media-services-video-indexer-release-notes"></a>Заметки о выпуске индексатора видео служб мультимедиа Azure
 
@@ -29,6 +29,24 @@ ms.locfileid: "75832307"
 * Известные проблемы
 * Исправления ошибок
 * Нерекомендуемые функции.
+
+## <a name="january-2020"></a>Январь 2020 г.
+ 
+### <a name="custom-language-support-for-additional-languages"></a>Поддержка пользовательского языка для дополнительных языков
+
+Индексатор видео теперь поддерживает пользовательские языковые модели для `ar-SY`, `en-UK`и `en-AU` (только API).
+ 
+### <a name="delete-account-timeframe-action-update"></a>Обновление действия временных рамок для удаления учетной записи
+
+Действие "удалить учетную запись" теперь удаляет учетную запись в течение 90 дней, а не 48 часов.
+ 
+### <a name="new-video-indexer-github-repository"></a>Репозиторий нового индексатора видео GitHub
+
+Новый индексатор видео GitHub с различными проектами, руководства по началу работы и примеры кода теперь доступны: https://github.com/Azure-Samples/media-services-video-indexer
+ 
+### <a name="swagger-update"></a>Обновление Swagger
+
+Унифицированная **Проверка подлинности** и **операции** индексатора видео в одной [OpenAPIной спецификации индексатора видео (Swagger)](https://api-portal.videoindexer.ai/docs/services/Operations/export?DocumentFormat=OpenApiJson). Девелперс может найти API на [портале разработчика индексатора видео](https://api-portal.videoindexer.ai/).
 
 ## <a name="december-2019"></a>Декабрь 2019 г.
 

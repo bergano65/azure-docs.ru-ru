@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 1/24/2020
 ms.author: mlearned
-ms.openlocfilehash: a477c2011ff3c6cf1987ed80ef5c19c26abc40f0
-ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
+ms.openlocfilehash: 934dfdb43d6d2e4ccc346b728f0ac4f5febea327
+ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76713327"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76932596"
 ---
 # <a name="create-a-private-azure-kubernetes-service-cluster-preview"></a>Создание частного кластера службы Kubernetes Azure (Предварительная версия)
 
@@ -131,7 +131,7 @@ az aks create \
 * Чтобы использовать настраиваемый DNS-сервер, разверните сервер AD с DNS для пересылки в этот IP-168.63.129.16.
 
 ## <a name="limitations"></a>Ограничения 
-* Зоны доступности в настоящее время не поддерживаются
+* Зоны доступности в настоящее время поддерживаются только для регионов "Восточная часть США 2" и "Западная часть США 2".
 * [Ограничения службы частной связи Azure][private-link-service] применяются к частным кластерам, частным конечным точкам Azure и конечным точкам службы виртуальной сети, которые в настоящее время не поддерживаются в одной виртуальной сети.
 * Нет поддержки виртуальных узлов в частном кластере для прокрутки закрытых экземпляров контейнеров Azure (ACI) в частной виртуальной сети Azure.
 * Без поддержки интеграции Azure DevOps из Box с частными кластерами

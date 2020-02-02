@@ -10,13 +10,13 @@ ms.topic: conceptual
 author: stevestein
 ms.author: sstein
 ms.reviewer: sashan, moslake, carlrab
-ms.date: 01/23/2020
-ms.openlocfilehash: fab24d55509ab315775437ca343e35fc90174f63
-ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
+ms.date: 01/30/2020
+ms.openlocfilehash: 09cc9e1475616700aa77cdf92fd7ca808cd4290c
+ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76715101"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76937838"
 ---
 # <a name="azure-sql-database-service-tiers"></a>Уровни служб в Базе данных SQL Azure
 
@@ -53,7 +53,7 @@ ms.locfileid: "76715101"
 |**OLTP в памяти** | | Н/Д | Н/Д | Доступно |
 |**Реплики только для чтения**| | 0 встроенная <br> 0-4. Использование [георепликации](sql-database-active-geo-replication.md) | 0-4 встроенные | 1 встроенный, включается в цену <br> 0-4. Использование [георепликации](sql-database-active-geo-replication.md) |
 |**Цены и выставление счетов** | Отдельная база данных | [Виртуальное ядро, зарезервированное хранилище и хранилище резервных копий](https://azure.microsoft.com/pricing/details/sql-database/single/) начисляются. <br/>В операциях ввода-вывода не начислена. | [Виртуальное ядро для каждой реплики и используемого хранилища](https://azure.microsoft.com/pricing/details/sql-database/single/) начисляются. <br/>Число операций ввода-вывода еще не оплачено. | [Виртуальное ядро, зарезервированное хранилище и хранилище резервных копий](https://azure.microsoft.com/pricing/details/sql-database/single/) начисляются. <br/>В операциях ввода-вывода не начислена. |
-|| Управляемый экземпляр | [Виртуальное ядро и зарезервированное хранилище](https://azure.microsoft.com/pricing/details/sql-database/managed/) начислены. <br/>В операциях ввода-вывода не начислена.<br/>Хранилище резервных копий еще не заряжено. | Н/Д | [Виртуальное ядро и зарезервированное хранилище](https://azure.microsoft.com/pricing/details/sql-database/managed/) начислены. <br/>В операциях ввода-вывода не начислена.<br/>Хранилище резервных копий еще не заряжено. | 
+|| Управляемый экземпляр | [Виртуальное ядро, зарезервированное хранилище и хранилище резервных копий](https://azure.microsoft.com/pricing/details/sql-database/managed/) начислены. <br/>Не оплачено операций ввода-вывода| Н/Д | [Виртуальное ядро, зарезервированное хранилище и хранилище резервных копий](https://azure.microsoft.com/pricing/details/sql-database/managed/) начислены. <br/>В операциях ввода-вывода не начислена.| 
 |**Модели скидок**| | [Зарезервированные экземпляры](sql-database-reserved-capacity.md)<br/>[Преимущество гибридного использования Azure](sql-database-azure-hybrid-benefit.md) (недоступно в подписках на разработку и тестирование)<br/>Подписки на [разработку и тестирование](https://azure.microsoft.com/offers/ms-azr-0148p/) [с оплатой по мере использования и по мере](https://azure.microsoft.com/offers/ms-azr-0023p/) использования| [Преимущество гибридного использования Azure](sql-database-azure-hybrid-benefit.md) (недоступно в подписках на разработку и тестирование)<br/>Подписки на [разработку и тестирование](https://azure.microsoft.com/offers/ms-azr-0148p/) [с оплатой по мере использования и по мере](https://azure.microsoft.com/offers/ms-azr-0023p/) использования| [Зарезервированные экземпляры](sql-database-reserved-capacity.md)<br/>[Преимущество гибридного использования Azure](sql-database-azure-hybrid-benefit.md) (недоступно в подписках на разработку и тестирование)<br/>Подписки на [разработку и тестирование](https://azure.microsoft.com/offers/ms-azr-0148p/) [с оплатой по мере использования и по мере](https://azure.microsoft.com/offers/ms-azr-0023p/) использования|
 
 Дополнительные сведения см. в описании подробных различий между уровнями служб в [одной базе данных (Виртуальное ядро)](sql-database-vcore-resource-limits-single-databases.md), [отдельными пулами баз данных (Виртуальное ядро)](sql-database-dtu-resource-limits-single-databases.md), [единственной базой данных (DTU)](sql-database-dtu-resource-limits-single-databases.md), [отдельными пулами баз данных (DTU)](sql-database-dtu-resource-limits-single-databases.md)и [управляемый экземпляр](sql-database-managed-instance-resource-limits.md) страницами.

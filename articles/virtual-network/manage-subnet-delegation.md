@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 11/06/2019
 ms.author: kumud
-ms.openlocfilehash: 6eab9ac7cf4547cb7fe3e736c16c3c0bd5f5bd9d
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: d7fbb4c6f30754569b0aeea60f10d4a10e792ba7
+ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75425887"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76933924"
 ---
 # <a name="add-or-remove-a-subnet-delegation"></a>Добавление или удаление делегирования подсети
 
@@ -40,7 +40,7 @@ ms.locfileid: "75425887"
     | ------- | ----- |
     | Имя | Введите *myVirtualNetwork*. |
     | Пространство адресов | Введите *10.0.0.0/16*. |
-    | Subscription | Выберите свою подписку.|
+    | Подписка | Выберите свою подписку.|
     | Группа ресурсов | Выберите **Создать**, а затем введите *myResourceGroup* и нажмите кнопку **ОК**. |
     | Расположение | Выберите **EastUS**.|
     | Имя подсети | Введите *mySubnet*. |
@@ -116,8 +116,8 @@ ms.locfileid: "75425887"
 ```azurecli-interactive
   az network vnet subnet update \
   --resource-group myResourceGroup \
-  --name mySubnet
-  --vnet-name myVnet
+  --name mySubnet \
+  --vnet-name myVnet \
   --delegations Microsoft.DBforPostgreSQL/serversv2
 ```
 
@@ -127,7 +127,7 @@ ms.locfileid: "75425887"
   az network vnet subnet show \
   --resource-group myResourceGroup \
   --name mySubnet \
-  --vnet-name myVnet
+  --vnet-name myVnet \
   --query delegations
 ```
 
@@ -154,9 +154,9 @@ ms.locfileid: "75425887"
 
 ```azurecli-interactive
   az network vnet subnet update \
-  --resource-group myResourceGroup
-  --name mySubnet
-  --vnet-name myVnet
+  --resource-group myResourceGroup \
+  --name mySubnet \
+  --vnet-name myVnet \
   --remove delegations
 ```
 Чтобы проверить, было ли делегирование удалено, используйте команду [AZ Network vnet подсеть показывать](https://docs.microsoft.com/cli/azure/network/vnet/subnet?view=azure-cli-latest#az-network-vnet-subnet-show). Убедитесь, что служба удалена из подсети в свойстве **ServiceName**:
@@ -165,7 +165,7 @@ ms.locfileid: "75425887"
   az network vnet show \
   --resource-group myResourceGroup \
   --name mySubnet \
-  --vnet-name myVnet
+  --vnet-name myVnet \
   --query delegations
 ```
 Выходные данные команды являются пустой скобкой:

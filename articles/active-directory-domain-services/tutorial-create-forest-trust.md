@@ -10,12 +10,12 @@ ms.workload: identity
 ms.topic: conceptual
 ms.date: 11/19/2019
 ms.author: iainfou
-ms.openlocfilehash: bd0ec46d224e68f92b5d042826633d1efc7c336e
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 3637a11724c1f0bab049077c5abbd817e168bd44
+ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75425434"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76931230"
 ---
 # <a name="tutorial-create-an-outbound-forest-trust-to-an-on-premises-domain-in-azure-active-directory-domain-services-preview"></a>Руководство. Создание исходящего доверия лесов для локального домена в доменных службах Azure Active Directory (Предварительная версия)
 
@@ -23,7 +23,7 @@ ms.locfileid: "75425434"
 
 ![Схема доверия лесов из AD DS Azure к локальной AD DS](./media/concepts-resource-forest/resource-forest-trust-relationship.png)
 
-В этом руководстве описано следующее.
+В этом учебнике описаны следующие действия.
 
 > [!div class="checklist"]
 > * Настройка DNS в локальной среде AD DS для поддержки подключения AD DS Azure
@@ -45,7 +45,7 @@ ms.locfileid: "75425434"
     * Если потребуется, [создайте и настройте экземпляр доменных служб Azure Active Directory][create-azure-ad-ds-instance-advanced].
     
     > [!IMPORTANT]
-    > Убедитесь, что вы создаете управляемый домен Azure AD DS с помощью леса *ресурсов* . Параметр по умолчанию создает *Пользовательский* лес. Только леса ресурсов могут создавать отношения доверия с локальными AD DS средами.
+    > Убедитесь, что вы создаете управляемый домен Azure AD DS с помощью леса *ресурсов* . Параметр по умолчанию создает *Пользовательский* лес. Только леса ресурсов могут создавать отношения доверия с локальными AD DS средами. Также необходимо использовать как минимум *Корпоративный* SKU для управляемого домена. При необходимости [измените номер SKU для управляемого домена Azure AD DS][howto-change-sku].
 
 ## <a name="sign-in-to-the-azure-portal"></a>Вход на портал Azure
 
@@ -188,7 +188,7 @@ ms.locfileid: "75425434"
 1. Выберите *филесерверакцесс* в списке **группы или имена пользователей** . В списке **разрешения для филесерверакцесс** выберите *Разрешить* для разрешений **изменение** и **запись** , а затем нажмите кнопку **ОК**.
 1. Перейдите на вкладку **общий доступ** , а затем выберите **Расширенный общий доступ...**
 1. Выберите **общий доступ к этой папке**, а затем введите запоминающее имя общей папки в **имени общего ресурса** , например *кроссфорестшаре*.
-1. Выберите **Разрешения**. В списке **разрешения для всех пользователей** выберите **Разрешить** для разрешения **изменение** .
+1. Выберите **разрешения**. В списке **разрешения для всех пользователей** выберите **Разрешить** для разрешения **изменение** .
 1. Нажмите кнопку **ОК** два раза, а затем **закройте**.
 
 #### <a name="validate-cross-forest-authentication-to-a-resource"></a>Проверка проверки подлинности между лесами для ресурса
@@ -204,7 +204,7 @@ ms.locfileid: "75425434"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-В этом руководстве вы узнали, как выполнять следующие задачи:
+В этом руководстве вы узнали, как выполнять следующие задачи.
 
 > [!div class="checklist"]
 > * Настройка DNS в локальной среде AD DS для поддержки подключения AD DS Azure
@@ -220,3 +220,4 @@ ms.locfileid: "75425434"
 [create-azure-ad-tenant]: ../active-directory/fundamentals/sign-up-organization.md
 [associate-azure-ad-tenant]: ../active-directory/fundamentals/active-directory-how-subscriptions-associated-directory.md
 [create-azure-ad-ds-instance-advanced]: tutorial-create-instance-advanced.md
+[howto-change-sku]: change-sku.md

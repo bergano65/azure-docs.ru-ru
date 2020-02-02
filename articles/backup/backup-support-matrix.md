@@ -3,12 +3,12 @@ title: Таблица поддержки Azure Backup
 description: В этой статье предлагается сводка параметров и ограничений поддержки для службы Azure Backup.
 ms.topic: conceptual
 ms.date: 02/17/2019
-ms.openlocfilehash: c424b905f44d6fd3a80a08ef925df4d0a06dd7d8
-ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
+ms.openlocfilehash: 37347e6febdfc3500c218238606fc96463da631c
+ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76705383"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76936249"
 ---
 # <a name="support-matrix-for-azure-backup"></a>Матрица поддержки для Azure Backup
 
@@ -19,6 +19,8 @@ ms.locfileid: "76705383"
 - Матрица поддержки для [резервного копирования виртуальной машины Azure](backup-support-matrix-iaas.md)
 - Таблица поддержки для резервного копирования с помощью [System Center Data Protection Manager (DPM)/Microsoft Azure Backup Server (MABS)](backup-support-matrix-mabs-dpm.md)
 - Таблица поддержки для резервного копирования с помощью [агента службы восстановления Microsoft Azure (MARS)](backup-support-matrix-mars-agent.md)
+
+[!INCLUDE [azure-lighthouse-supported-service](../../includes/azure-lighthouse-supported-service.md)]
 
 ## <a name="vault-support"></a>Поддержка хранилища
 

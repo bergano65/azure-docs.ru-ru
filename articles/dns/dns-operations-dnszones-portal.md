@@ -3,7 +3,7 @@ title: Управление зонами DNS в службе DNS Azure — по
 description: Зонами DNS можно управлять с помощью портала Azure. В этой статье описывается, как обновлять, удалять и создавать зоны DNS в службе DNS Azure.
 services: dns
 documentationcenter: na
-author: asudbring
+author: rohinkoul
 manager: timlt
 ms.service: dns
 ms.devlang: na
@@ -11,13 +11,13 @@ ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 05/18/2017
-ms.author: allensu
-ms.openlocfilehash: 4e6b5dc200f49b34d8f808e5587b173197b9da8f
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.author: rohink
+ms.openlocfilehash: 002f210048c18c6dd99dfb5981bacce8666ee563
+ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75437314"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76936788"
 ---
 # <a name="how-to-manage-dns-zones-in-the-azure-portal"></a>Как управлять зонами DNS с помощью портала Azure
 
@@ -39,12 +39,12 @@ ms.locfileid: "75437314"
 4. В колонке **Создание зоны DNS** введите следующие значения, а затем щелкните **Создать**.
 
 
-   | **Параметр** | **Value** | **Сведения** |
+   | **Параметр** | **Значение** | **Сведения** |
    |---|---|---|
-   |**Название**|contoso.com|Имя зоны DNS.|
-   |**подписка**|[Ваша подписка]|Выберите подписку для создания зоны DNS.|
-   |**группа ресурсов**|**Создать:** contosoDNSRG|Создайте группу ресурсов. Имя группы ресурсов должно быть уникальным в пределах выбранной подписки. Дополнительные сведения о группах ресурсов см. в разделе [Группы ресурсов](../azure-resource-manager/management/overview.md?toc=%2fazure%2fdns%2ftoc.json#resource-groups) статьи "Общие сведения об Azure Resource Manager".|
-   |**Местоположение**|Западная часть США||
+   |**имя**;|contoso.com|Имя зоны DNS.|
+   |**Подписка**|[Ваша подписка]|Выберите подписку для создания зоны DNS.|
+   |**Группа ресурсов**|**Создать:** contosoDNSRG|Создайте группу ресурсов. Имя группы ресурсов должно быть уникальным в пределах выбранной подписки. Дополнительные сведения о группах ресурсов см. в разделе [Группы ресурсов](../azure-resource-manager/management/overview.md?toc=%2fazure%2fdns%2ftoc.json#resource-groups) статьи "Общие сведения об Azure Resource Manager".|
+   |**Расположение**|Западная часть США||
 
 > [!NOTE]
 > Этот параметр относится к расположению группы ресурсов и никак не влияет на расположение зоны DNS. Расположение зоны DNS всегда является "глобальным" и не отображается.

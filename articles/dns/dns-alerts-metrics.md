@@ -3,7 +3,7 @@ title: Метрики и оповещения — Azure DNS
 description: По этой схеме обучения приступайте к работе с Azure DNS метриками и оповещениями.
 services: dns
 documentationcenter: na
-author: asudbring
+author: rohinkoul
 manager: kumudD
 ms.service: dns
 ms.devlang: na
@@ -11,13 +11,13 @@ ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 04/17/2018
-ms.author: allensu
-ms.openlocfilehash: dc4d7de3d235fcdaf4a7f681065ba6e2857eb2ce
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.author: rohink
+ms.openlocfilehash: 42acbc0d32b3ce5de4befcf112b68f611ad70542
+ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74212397"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76937459"
 ---
 # <a name="azure-dns-metrics-and-alerts"></a>Метрики и оповещения Azure DNS
 Azure DNS является службой размещения доменов DNS, осуществляющей разрешение имен на базе инфраструктуры Microsoft Azure. В этой статье описываются метрики и оповещения службы Azure DNS.
@@ -64,5 +64,5 @@ Azure DNS предоставляет клиентам метрики, позво
 ## <a name="alerts-in-azure-dns"></a>Оповещения Azure DNS
 Azure Monitor предоставляет возможность создания оповещений о доступных значениях метрик. Метрики DNS доступны в новой конфигурации "Оповещения". Как подробно описывается в [документации по оповещениям в Azure Monitor](../monitoring-and-diagnostics/monitor-alerts-unified-usage.md), зону DNS можно выбрать как ресурс, выбрать тип сигнала "Метрика" и настроить логику оповещений, а также другие параметры, такие как **срок** и **частота**. Детализацию можно углубить, определив [группу действий](../azure-monitor/platform/action-groups.md), которые будут выполняться при удовлетворении условия оповещения. При этом оповещение будет выдаваться в соответствии с выбранными действиями. Дополнительные сведения о настройке оповещений для метрик Azure Monitor см. в статье [Создание и просмотр оповещений, а также управление ими с помощью Azure Monitor](../monitoring-and-diagnostics/monitor-alerts-unified-usage.md). 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - Дополнительные сведения по [Azure DNS](dns-overview.md).

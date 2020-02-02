@@ -8,12 +8,12 @@ ms.service: storage
 ms.subservice: common
 ms.topic: conceptual
 ms.reviewer: yzheng
-ms.openlocfilehash: 6bf391f22843991bf224539b82037c0e29251e7b
-ms.sourcegitcommit: 2a2af81e79a47510e7dea2efb9a8efb616da41f0
+ms.openlocfilehash: fdc98991134e0857d24575d22962a52e43266cbe
+ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76260959"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76939239"
 ---
 # <a name="manage-the-azure-blob-storage-lifecycle"></a>Управление жизненным циклом хранилища BLOB-объектов Azure
 
@@ -287,7 +287,7 @@ $policy = Set-AzStorageAccountManagementPolicy -ResourceGroupName $rgname -Stora
 
 Фильтры ограничивают действие правила определенным подмножеством BLOB-объектов в учетной записи хранения. Если определено несколько фильтров, для всех фильтров применяется логическая операция `AND`.
 
-Доступны следующие фильтры:
+Фильтры включают:
 
 | Имя фильтра | Тип фильтра | Примечания | Обязательный |
 |-------------|-------------|-------|-------------|
@@ -348,9 +348,9 @@ $policy = Set-AzStorageAccountManagementPolicy -ResourceGroupName $rgname -Stora
 }
 ```
 
-### <a name="archive-data-at-ingest"></a>Архивация данных при поступлении
+### <a name="archive-data-after-ingest"></a>Архивировать данные после приема
 
-Некоторые данные хранятся в облаке почти без использования. Следующая политика жизненного цикла настраивается для архивации данных после их приема. В этом примере выполняется перевод блочных BLOB-объектов в учетной записи хранения в контейнере `archivecontainer` в архивный уровень. Переход выполняется с помощью больших двоичных объектов за 0 дней после последнего изменения:
+Некоторые данные хранятся в облаке почти без использования. Следующая политика жизненного цикла настроена для архивации данных вскоре после приема. В этом примере выполняется перевод блочных BLOB-объектов в учетной записи хранения в контейнере `archivecontainer` в архивный уровень. Переход выполняется с помощью больших двоичных объектов за 0 дней после последнего изменения:
 
 > [!NOTE] 
 > Рекомендуется передать большие двоичные объекты непосредственно на уровне архива, чтобы повысить эффективность. Вы можете использовать заголовок x-MS-ACE-Tier для [PutBlob](https://docs.microsoft.com/rest/api/storageservices/put-blob) или [PutBlockList](https://docs.microsoft.com/rest/api/storageservices/put-block-list) с оставшейся версией 2018-11-09 и более поздней или нашей последней клиентской библиотекой хранилища BLOB-объектов. 
