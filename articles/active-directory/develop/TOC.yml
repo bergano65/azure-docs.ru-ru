@@ -740,18 +740,18 @@
   items:
     - name: Глоссарий
       href: developer-glossary.md
-    - name: Стратегия развития Azure
-      href: 'https://azure.microsoft.com/roadmap/?category=security-identity'
+    - name: Видео
+      href: identity-videos.md
     - name: Блог по Azure AD
       href: 'https://cloudblogs.microsoft.com/enterprisemobility/?product=azure-active-directory'
     - name: 'Платформа удостоверений Майкрософт: блог для разработчиков'
       href: 'https://developer.microsoft.com/en-us/identity/blogs/'
+    - name: Стратегия развития Azure
+      href: 'https://azure.microsoft.com/roadmap/?category=security-identity'
     - name: Выполнение входа с помощью учетной записи Майкрософт
       href: 'https://azure.microsoft.com/develop/identity/signin/'
+    - name: Управляемые удостоверения для ресурсов Azure
+      href: 'https://docs.microsoft.com/azure/active-directory/managed-service-identity/overview'
     - name: Получение справки
       displayName: 'support, help options'
       href: developer-support-help-options.md
-    - name: Управляемые удостоверения для ресурсов Azure
-      href: 'https://docs.microsoft.com/azure/active-directory/managed-service-identity/overview'
-    - name: Видео по платформе удостоверений Майкрософт
-      href: identity-videos.md
