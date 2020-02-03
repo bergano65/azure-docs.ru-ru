@@ -1,37 +1,36 @@
 ---
-title: Обновление скрипта развертывания шаблона Visual Studio для использования Az Powershell
-description: Обновление скрипта развертывания шаблона Visual Studio из AzureRM в Az Powershell
+title: Обновление скрипта развертывания шаблона Visual Studio для использования команды AZ PowerShell
+description: Обновление скрипта развертывания шаблона Visual Studio с AzureRM на AZ PowerShell
 author: cweining
-ms.topic: quickstart
-ms.date: 09/27/2019
+ms.topic: conceptual
+ms.date: 01/31/2020
 ms.author: cweining
-ms.openlocfilehash: c34cde5593b48c301826be3dd2641dc2490ee88d
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
-ms.translationtype: HT
+ms.openlocfilehash: 357e0289f3237ed32b0801280316225ba5530282
+ms.sourcegitcommit: 42517355cc32890b1686de996c7913c98634e348
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75455478"
+ms.lasthandoff: 02/02/2020
+ms.locfileid: "76963875"
 ---
-# <a name="updating-the-visual-studio-template-deployment-script-to-use-az-powershell"></a>Обновление скрипта развертывания шаблона Visual Studio для использования Az Powershell
+# <a name="update-visual-studio-template-deployment-script-to-use-az-powershell-module"></a>Обновите скрипт развертывания шаблона Visual Studio, чтобы использовать команду AZ PowerShell Module
 
-Visual Studio 16,4 поддерживает использование Az PowerShell в скрипте развертывания шаблона. Visual Studio не устанавливает Az PowerShell и не обновляет автоматически скрипт развертывания в проекте группы ресурсов. Для использования более новой версии Az PowerShell необходимо выполнить следующие четыре действия:
-1. удаление AzureRM PowerShell;
-1. установка Az Powershell;
-1. обновление до Visual Studio 16,4;
+Visual Studio 16,4 поддерживает использование модуля AZ PowerShell в скрипте развертывания шаблона. Однако Visual Studio не устанавливает этот модуль автоматически. Чтобы использовать модуль AZ, необходимо выполнить четыре шага:
+
+1. [Удаление модуля AzureRM](/powershell/azure/uninstall-az-ps#uninstall-the-azurerm-module)
+1. [Установка AZ Module](/powershell/azure/install-az-ps)
+1. Обновление Visual Studio до версии 16.4
 1. (Обновите скрипт развертывания в проекте.)
 
-## <a name="uninstall-azurerm-powershell"></a>удаление AzureRM PowerShell;
-(Чтобы удалить AzureRM PowerShell, выполните следующие [инструкции](https://docs.microsoft.com/powershell/azure/uninstall-az-ps?view=azps-2.7.0#uninstall-the-azurerm-module).)
-
-## <a name="install-az-powershell"></a>установка Az Powershell;
-(Чтобы установить Az PowerShell, выполните следующие [инструкции](https://docs.microsoft.com/powershell/azure/install-az-ps?view=azps-2.7.0).)
-
 ## <a name="update-visual-studio-to-164"></a>Обновление Visual Studio до версии 16.4
-Обновите до Visual Studio 16,4, когда обновление будет доступно. Во время обновления убедитесь, что компонент Azure PowerShell не установлен. Поскольку вы установили Az Powershell через галерею, вам не нужна версия AzureRM Powershell, устанавливаемая в Visual Studio.
 
-Если вы уже обновили до версии 16,4 и компонент Azure PowerShell был установлен, его можно удалить, запустив Visual Studio Installer и отменив этот компонент в рабочей нагрузке Azure или на странице отдельных компонентов.
+Обновите установку Visual Studio до версии 16,4 или более поздней. Во время обновления убедитесь, что компонент Azure PowerShell не установлен. Так как вы установили модуль AZ через коллекцию, вам не нужно переустанавливать модуль AzureRM.
+
+Если вы уже обновили до 16,4 и компонент Azure PowerShell был установлен, его можно удалить, запустив Visual Studio Installer. Не выбирайте компонент Azure PowerShell в рабочей нагрузке Azure или на странице отдельные компоненты.
 
 ## <a name="update-the-deployment-script-in-your-project"></a>Обновление скрипта развертывания в проекте
-Замените все вхождения строки "AzureRm" на "Az" в скрипте развертывания. Чтобы увидеть изменения, обратитесь к исправлениям в этом [gist](https://gist.github.com/cweining/d2da2479418ea403499c4306dcf4f619). Дополнительные сведения об обновлении скриптов для Az PowerShell см. в этой [Документации](https://docs.microsoft.com/powershell/azure/migrate-from-azurerm-to-az?view=azps-2.5.0).
 
+Замените все вхождения строки "AzureRm" на "Az" в скрипте развертывания. Чтобы увидеть изменения, обратитесь к исправлениям в этом [gist](https://gist.github.com/cweining/d2da2479418ea403499c4306dcf4f619). Дополнительные сведения об обновлении скриптов для модуля AZ см. в разделе [миграция Azure PowerShell из AzureRM в AZ](/powershell/azure/migrate-from-azurerm-to-az).
 
+## <a name="next-steps"></a>Дальнейшие действия
+
+Дополнительные сведения об использовании проекта Visual Studio см. в статье [Создание и развертывание проектов групп ресурсов Azure с помощью Visual Studio](create-visual-studio-deployment-project.md).

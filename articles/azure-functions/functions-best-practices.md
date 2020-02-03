@@ -5,12 +5,12 @@ ms.assetid: 9058fb2f-8a93-4036-a921-97a0772f503c
 ms.topic: conceptual
 ms.date: 12/17/2019
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 19674cb024bd9b9c9ea9f510080e30614fad8b60
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: f808ff2a88a86df25b555f94257168e2d176e7f8
+ms.sourcegitcommit: 42517355cc32890b1686de996c7913c98634e348
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75433293"
+ms.lasthandoff: 02/02/2020
+ms.locfileid: "76963668"
 ---
 # <a name="optimize-the-performance-and-reliability-of-azure-functions"></a>Оптимизация производительности и надежности Функций Azure
 
@@ -74,7 +74,9 @@ ms.locfileid: "75433293"
 
 ### <a name="avoid-sharing-storage-accounts"></a>Избегайте совместного использования учетных записей хранения
 
-При создании приложения-функции необходимо связать его с учетной записью хранения. Подключение к учетной записи хранения сохраняется в [параметре приложения AzureWebJobsStorage](./functions-app-settings.md#azurewebjobsstorage). Чтобы повысить производительность, используйте отдельную учетную запись хранения для каждого приложения-функции. Это особенно важно, если у вас есть Устойчивые функции или функции, активируемые концентратором событий, которые создают большой объем транзакций хранилища. Если логика приложения взаимодействует с хранилищем Azure напрямую (с помощью пакета SDK хранилища) или с помощью одной из привязок к хранилищу, следует использовать выделенную учетную запись хранения. Например, если у вас есть функция, активируемая концентратором событий, которая записывает данные в хранилище BLOB-объектов, используйте две учетные записи хранения&mdash;одну для приложения-функции, а другую для больших двоичных объектов, хранимых функцией.
+При создании приложения-функции необходимо связать его с учетной записью хранения. Подключение к учетной записи хранения сохраняется в [параметре приложения AzureWebJobsStorage](./functions-app-settings.md#azurewebjobsstorage). 
+
+[!INCLUDE [functions-shared-storage](../../includes/functions-shared-storage.md)]
 
 ### <a name="dont-mix-test-and-production-code-in-the-same-function-app"></a>Не используйте тестовый и рабочий код в одном приложении-функции
 

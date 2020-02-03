@@ -11,15 +11,15 @@ ms.service: virtual-machines-linux
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
-ms.date: 04/25/2019
+ms.date: 01/31/2020
 ms.author: sukumari
 ms.reviewer: azmetadata
-ms.openlocfilehash: 5b3f3eea4d23d84d684648d19fb67258d1ea2050
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: 0e04f7e190ef22fb5c2b288e478cac5ffaf89141
+ms.sourcegitcommit: 42517355cc32890b1686de996c7913c98634e348
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "76907003"
+ms.lasthandoff: 02/02/2020
+ms.locfileid: "76962515"
 ---
 # <a name="azure-instance-metadata-service"></a>Служба метаданных экземпляров Azure
 
@@ -748,7 +748,7 @@ Department:IT;Environment:Test;Role:WebRole
 **Запрос**
 
 ```bash
-curl -H Metadata:true "http://169.254.169.254/metadata/instance/compute/tagsList?api-version=2019-06-04&format=text"
+curl -H Metadata:true "http://169.254.169.254/metadata/instance/compute/tagsList?api-version=2019-06-04&format=json"
 ```
 
 **Ответ**
@@ -1054,7 +1054,7 @@ Puppet | https://github.com/keirans/azuremetadata
 8. Как можно получить поддержку для службы?
    * Чтобы получить поддержку для службы, сообщите о проблеме с виртуальной машиной на портале Azure, указав, что не смогли получить ответ метаданных после многих попыток.
 9. Почему я получаю запрос о превышении интервала ожидания вызова службы?
-   * Вызовы метаданных должны быть сделаны с основного IP-адреса, назначенного сетевой карте виртуальной машины. Кроме того, если вы изменили маршруты, то должен быть маршрут для адреса 169.254.0.0/16 из вашей сетевой карты.
+   * Вызовы метаданных должны выполняться с основного IP-адреса, назначенного первичной сетевой карте виртуальной машины. Кроме того, если вы изменили маршруты, необходимо указать маршрут для 169.254.0.0/16-адреса из сетевой карты.
 10. Теги в наборе масштабирования виртуальных машин обновлены. Почему они не отображаются в экземплярах, в отличие от виртуальных машин?
     * В настоящее время теги ScaleSets отображаются только в виртуальной машине при перезагрузке, переименовании или замене диска экземпляра.
 

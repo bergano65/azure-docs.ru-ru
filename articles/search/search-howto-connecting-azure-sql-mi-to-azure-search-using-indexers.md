@@ -8,12 +8,12 @@ ms.author: victliu
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: 0f91775e0175b4b4af9b57fa96e389c3a2a22564
-ms.sourcegitcommit: 12a26f6682bfd1e264268b5d866547358728cd9a
+ms.openlocfilehash: 65e483fd772e20daa73b465ea17dfa6ecde42233
+ms.sourcegitcommit: 42517355cc32890b1686de996c7913c98634e348
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75863127"
+ms.lasthandoff: 02/02/2020
+ms.locfileid: "76964895"
 ---
 # <a name="configure-a-connection-from-an-azure-cognitive-search-indexer-to-sql-managed-instance"></a>Настройка подключения из индексатора Когнитивный поиск Azure к SQL Управляемый экземпляр
 
@@ -35,11 +35,14 @@ ms.locfileid: "75863127"
    ![Правило безопасности для входящего трафика NSG](media/search-howto-connecting-azure-sql-mi-to-azure-search-using-indexers/nsg-rule.png "Правило безопасности для входящего трафика NSG")
 
 > [!NOTE]
-> Вы можете указать более широкие возможности входящего доступа к управляемому экземпляру SQL, заменив текущее правило (`public_endpoint_inbound`) на 2 правила:
+> Индексаторы по-прежнему потребует настройки SQL Управляемый экземпляр с общедоступной конечной точкой для чтения данных.
+> Однако можно ограничить входящий доступ к этой общедоступной конечной точке, заменив текущее правило (`public_endpoint_inbound`) на следующие 2 правила:
 >
-> * Разрешение входящего доступа из [тега службы](https://docs.microsoft.com/azure/virtual-network/service-tags-overview#available-service-tags) `AzureCognitiveSearch` ("Source" = `AzureCognitiveSearch`)
+> * Разрешение входящего доступа из [тега службы](https://docs.microsoft.com/azure/virtual-network/service-tags-overview#available-service-tags) `AzureCognitiveSearch` ("Source" = `AzureCognitiveSearch`, "Name" = `cognitive_search_inbound`)
 >
-> * Разрешение входящего доступа с IP-адреса службы поиска, которую можно получить с помощью проверки связи с полным доменным именем (например, `<your-search-service-name>.search.windows.net`). ("Источник" = `IP address`)
+> * Разрешение входящего доступа с IP-адреса службы поиска, которую можно получить с помощью проверки связи с полным доменным именем (например, `<your-search-service-name>.search.windows.net`). ("SOURCE" = `IP address`, "NAME" = `search_service_inbound`)
+>
+> Для каждого из этих двух правил установите «PORT» = `3342`, «PROTOCOL» = `TCP`, «DESTINATION» = `Any`, «ACTION» = `Allow`
 
 ## <a name="get-public-endpoint-connection-string"></a>Получение строки подключения общедоступной конечной точки
 Убедитесь, что используется строка подключения для **общедоступной конечной точки** (порт 3342, а не порт 1433).

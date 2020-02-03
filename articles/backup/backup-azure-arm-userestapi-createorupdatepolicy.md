@@ -4,33 +4,18 @@ description: В этой статье вы узнаете, как создава
 ms.topic: conceptual
 ms.date: 08/21/2018
 ms.assetid: 5ffc4115-0ae5-4b85-a18c-8a942f6d4870
-ms.openlocfilehash: a086fc9c8be22f177d7fb1205e3545ddc52f5c83
-ms.sourcegitcommit: 428fded8754fa58f20908487a81e2f278f75b5d0
+ms.openlocfilehash: 0718ebc3612f53f1c2cc279096dd92de69bb5ef6
+ms.sourcegitcommit: 42517355cc32890b1686de996c7913c98634e348
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2019
-ms.locfileid: "74554886"
+ms.lasthandoff: 02/02/2020
+ms.locfileid: "76963858"
 ---
 # <a name="create-azure-recovery-services-backup-policies-using-rest-api"></a>Создание политик резервного копирования Служб восстановления Azure с помощью REST API
 
 Шаги по созданию политики резервного копирования для хранилища Служб восстановления Azure описаны в [документе о политике REST API](/rest/api/backup/protectionpolicies/createorupdate). Мы используем этот документ в качестве ссылки для создания политики для резервной копии виртуальной машины Azure.
 
-## <a name="backup-policy-essentials"></a>Основные компоненты политики резервного копирования
-
-- Политика резервного копирования создается в каждом хранилище.
-- Политику резервного копирования можно создать для резервного копирования следующих рабочих нагрузок
-  - Виртуальная машина Azure
-  - SQL на виртуальной машине Azure
-  - Общая папка Azure
-- Политики могут назначаться нескольким ресурсам. Политику резервного копирования виртуальной машины Azure можно использовать для защиты нескольких виртуальных машин Azure.
-- Политика состоит из двух компонентов
-  - Расписание. Когда следует создать резервную копию
-  - Хранение. Как долго следует хранить каждую резервную копию.
-- Расписание может определяться как ежедневное или еженедельное с настройкой определенного момента времени.
-- Период хранения можно определить для ежедневных, еженедельных, ежемесячных и ежегодных точек резервного копирования.
-- "Еженедельно" относиться к резервному копированию в определенный день недели, "Ежемесячно" — к резервному копированию в определенный день месяца, а "Ежегодно" — к резервному копированию в определенный день года.
-- Период хранения для ежемесячных и ежегодных точек резервного копирования называется LongTermRetention.
-- При создании хранилища также создается политика для резервных копий виртуальных машин Azure с именем "DefaultPolicy", которую можно использовать для резервного копирования виртуальных машин Azure.
+## <a name="create-or-update-a-policy"></a>Создание или обновление политики
 
 Для создания или обновления политики Azure Backup используйте следующую операцию *PUT*.
 
@@ -44,7 +29,7 @@ PUT https://management.azure.com/Subscriptions/{subscriptionId}/resourceGroups/{
 
 Например, чтобы создать политику для восстановления диска из резервной копии виртуальной машины Azure, выполните компоненты текста запроса.
 
-|Name  |Обязательно для заполнения  |Тип  |Описание  |
+|Имя  |Обязательно для заполнения  |Тип  |Description  |
 |---------|---------|---------|---------|
 |properties     |   Да      |  ProtectionPolicy:[AzureIaaSVMProtectionPolicy](/rest/api/backup/protectionpolicies/createorupdate#azureiaasvmprotectionpolicy)      | Свойства ProtectionPolicyResource        |
 |tags     |         | Объекты        |  Теги ресурсов       |
@@ -152,7 +137,7 @@ PUT https://management.azure.com/Subscriptions/{subscriptionId}/resourceGroups/{
 
 Он возвращает два ответа: 202 (принято) при создании другой операции, а затем 200 (ОК) после завершения этой операции.
 
-|Name  |Тип  |Описание  |
+|Имя  |Тип  |Description  |
 |---------|---------|---------|
 |200 ОК     |    [ProtectionPolicyResource](/rest/api/backup/protectionpolicies/createorupdate#protectionpolicyresource)     |  ОК       |
 |202 — принято     |         |     Принято    |
@@ -179,7 +164,7 @@ Location: https://management.azure.com/Subscriptions/00000000-0000-0000-0000-000
 X-Powered-By: ASP.NET
 ```
 
-Отследите итоговую операцию, используя заголовки location или Azure-AsyncOperation с помощью простой команды *GET*.
+Затем отследите итоговую операцию, используя заголовок location или Azure-AsyncOperation с помощью простой команды *GET*.
 
 ```http
 GET https://management.azure.com/Subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/SwaggerTestRg/providers/Microsoft.RecoveryServices/vaults/testVault/backupPolicies/testPolicy1/operationResults/00000000-0000-0000-0000-000000000000?api-version=2019-05-13

@@ -8,12 +8,12 @@ ms.date: 05/20/2019
 author: rboucher
 ms.author: robb
 ms.subservice: metrics
-ms.openlocfilehash: 5d38786d3c7b852d3a9b65cd366eed68ebbb01e3
-ms.sourcegitcommit: 276c1c79b814ecc9d6c1997d92a93d07aed06b84
+ms.openlocfilehash: dcf5276393400be864e738d89bc5713f5aac242b
+ms.sourcegitcommit: 42517355cc32890b1686de996c7913c98634e348
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76152958"
+ms.lasthandoff: 02/02/2020
+ms.locfileid: "76963484"
 ---
 # <a name="azure-monitor-platform-metrics-exportable-via-diagnostic-settings"></a>Azure Monitor экспортировать метрики платформы через параметры диагностики
 
@@ -24,6 +24,19 @@ Azure Monitor предоставляет [метрики платформы](dat
 2. Использование [метрик REST API](https://docs.microsoft.com/rest/api/monitor/metrics/list)
 
 Из-за тонкостей в Azure Monitor серверной части не все метрики могут быть экспортированы с помощью параметров диагностики. В таблице ниже перечислены параметры, которые можно и нельзя экспортировать с помощью параметров диагностики.
+
+Таблица содержит следующие столбцы. 
+- Экспортировать с помощью параметров диагностики? 
+- ResourceType 
+- Метрика 
+- метрикдисплайнаме
+- Единица 
+- AggregationType
+
+
+> [!NOTE]
+> В таблице ниже может быть горизонтальная полоса прокрутки внизу. Если вы считаете, что данные отсутствуют, убедитесь, что полоса прокрутки находится слева.  
+
 
 Экспортировать с помощью параметров диагностики? | ResourceType | Метрика | метрикдисплайнаме | Единица | AggregationType
 |----|-----|------|----|----|-----|
@@ -435,7 +448,7 @@ Azure Monitor предоставляет [метрики платформы](dat
 Да | Microsoft.CognitiveServices/accounts | TotalTransactions | Всего транзакций | Количество | Итого
 Да | Microsoft.Compute/virtualMachines | Использованные кредиты ЦП | Использованные кредиты ЦП | Количество | Среднее
 Да | Microsoft.Compute/virtualMachines | Оставшиеся кредиты ЦП | Оставшиеся кредиты ЦП | Количество | Среднее
-Да | Microsoft.Compute/virtualMachines | Длина очереди диска данных | Глубина очереди диска данных (Предварительная версия) | Количество | Среднее
+Да | Microsoft.Compute/virtualMachines | Глубина очереди диска данных | Глубина очереди диска данных (Предварительная версия) | Количество | Среднее
 Да | Microsoft.Compute/virtualMachines | Скорость чтения с диска данных (байт/с) | Скорость чтения с диска данных (байт/с) (предварительная версия) | Число/с | Среднее
 Да | Microsoft.Compute/virtualMachines | Операций чтения с диска данных/с | Скорость чтения с диска данных (операций/с) (предварительная версия) | Число/с | Среднее
 Да | Microsoft.Compute/virtualMachines | Скорость записи на диск данных (байт/с) | Скорость записи на диск данных (байт/с) (предварительная версия) | Число/с | Среднее
@@ -450,7 +463,7 @@ Azure Monitor предоставляет [метрики платформы](dat
 Да | Microsoft.Compute/virtualMachines | Всего сети | Всего сети | Байты | Итого
 Да | Microsoft.Compute/virtualMachines | Сеть (исходящий трафик) | Оплата за сеть (не рекомендуется) | Байты | Итого
 Да | Microsoft.Compute/virtualMachines | Общее количество сетевых исходящих | Общее количество сетевых исходящих | Байты | Итого
-Да | Microsoft.Compute/virtualMachines | Длина очереди диска ОС | Глубина очереди диска ОС (Предварительная версия) | Количество | Среднее
+Да | Microsoft.Compute/virtualMachines | Глубина очереди диска ОС | Глубина очереди диска ОС (Предварительная версия) | Количество | Среднее
 Да | Microsoft.Compute/virtualMachines | Скорость чтения с диска ОС (байт/с) | Скорость чтения с диска ОС (байт/с) (предварительная версия) | Число/с | Среднее
 Да | Microsoft.Compute/virtualMachines | Операций чтения с диска ОС в секунду | Скорость чтения с диска ОС (операций/с) (предварительная версия) | Число/с | Среднее
 Да | Microsoft.Compute/virtualMachines | Скорость записи на диск ОС (байт/с) | Скорость записи на диск ОС (байт/с) (предварительная версия) | Число/с | Среднее
@@ -474,7 +487,7 @@ Azure Monitor предоставляет [метрики платформы](dat
 Да | Microsoft.Compute/virtualMachines | Промах чтения кэша на диске ОС Premium | Промах чтения кэша диска ОС Premium (Предварительная версия) | Процент | Среднее
 Да | Microsoft.Compute/virtualMachineScaleSets | Использованные кредиты ЦП | Использованные кредиты ЦП | Количество | Среднее
 Да | Microsoft.Compute/virtualMachineScaleSets | Оставшиеся кредиты ЦП | Оставшиеся кредиты ЦП | Количество | Среднее
-Да | Microsoft.Compute/virtualMachineScaleSets | Длина очереди диска данных | Глубина очереди диска данных (Предварительная версия) | Количество | Среднее
+Да | Microsoft.Compute/virtualMachineScaleSets | Глубина очереди диска данных | Глубина очереди диска данных (Предварительная версия) | Количество | Среднее
 Да | Microsoft.Compute/virtualMachineScaleSets | Скорость чтения с диска данных (байт/с) | Скорость чтения с диска данных (байт/с) (предварительная версия) | Число/с | Среднее
 Да | Microsoft.Compute/virtualMachineScaleSets | Операций чтения с диска данных/с | Скорость чтения с диска данных (операций/с) (предварительная версия) | Число/с | Среднее
 Да | Microsoft.Compute/virtualMachineScaleSets | Скорость записи на диск данных (байт/с) | Скорость записи на диск данных (байт/с) (предварительная версия) | Число/с | Среднее
@@ -489,7 +502,7 @@ Azure Monitor предоставляет [метрики платформы](dat
 Да | Microsoft.Compute/virtualMachineScaleSets | Всего сети | Всего сети | Байты | Итого
 Да | Microsoft.Compute/virtualMachineScaleSets | Сеть (исходящий трафик) | Оплата за сеть (не рекомендуется) | Байты | Итого
 Да | Microsoft.Compute/virtualMachineScaleSets | Общее количество сетевых исходящих | Общее количество сетевых исходящих | Байты | Итого
-Да | Microsoft.Compute/virtualMachineScaleSets | Длина очереди диска ОС | Глубина очереди диска ОС (Предварительная версия) | Количество | Среднее
+Да | Microsoft.Compute/virtualMachineScaleSets | Глубина очереди диска ОС | Глубина очереди диска ОС (Предварительная версия) | Количество | Среднее
 Да | Microsoft.Compute/virtualMachineScaleSets | Скорость чтения с диска ОС (байт/с) | Скорость чтения с диска ОС (байт/с) (предварительная версия) | Число/с | Среднее
 Да | Microsoft.Compute/virtualMachineScaleSets | Операций чтения с диска ОС в секунду | Скорость чтения с диска ОС (операций/с) (предварительная версия) | Число/с | Среднее
 Да | Microsoft.Compute/virtualMachineScaleSets | Скорость записи на диск ОС (байт/с) | Скорость записи на диск ОС (байт/с) (предварительная версия) | Число/с | Среднее
@@ -513,7 +526,7 @@ Azure Monitor предоставляет [метрики платформы](dat
 Да | Microsoft.Compute/virtualMachineScaleSets | Промах чтения кэша на диске ОС Premium | Промах чтения кэша диска ОС Premium (Предварительная версия) | Процент | Среднее
 Да | Microsoft.Compute/virtualMachineScaleSets/virtualMachines | Использованные кредиты ЦП | Использованные кредиты ЦП | Количество | Среднее
 Да | Microsoft.Compute/virtualMachineScaleSets/virtualMachines | Оставшиеся кредиты ЦП | Оставшиеся кредиты ЦП | Количество | Среднее
-Да | Microsoft.Compute/virtualMachineScaleSets/virtualMachines | Длина очереди диска данных | Глубина очереди диска данных (Предварительная версия) | Количество | Среднее
+Да | Microsoft.Compute/virtualMachineScaleSets/virtualMachines | Глубина очереди диска данных | Глубина очереди диска данных (Предварительная версия) | Количество | Среднее
 Да | Microsoft.Compute/virtualMachineScaleSets/virtualMachines | Скорость чтения с диска данных (байт/с) | Скорость чтения с диска данных (байт/с) (предварительная версия) | Число/с | Среднее
 Да | Microsoft.Compute/virtualMachineScaleSets/virtualMachines | Операций чтения с диска данных/с | Скорость чтения с диска данных (операций/с) (предварительная версия) | Число/с | Среднее
 Да | Microsoft.Compute/virtualMachineScaleSets/virtualMachines | Скорость записи на диск данных (байт/с) | Скорость записи на диск данных (байт/с) (предварительная версия) | Число/с | Среднее
@@ -528,7 +541,7 @@ Azure Monitor предоставляет [метрики платформы](dat
 Да | Microsoft.Compute/virtualMachineScaleSets/virtualMachines | Всего сети | Всего сети | Байты | Итого
 Да | Microsoft.Compute/virtualMachineScaleSets/virtualMachines | Сеть (исходящий трафик) | Оплата за сеть (не рекомендуется) | Байты | Итого
 Да | Microsoft.Compute/virtualMachineScaleSets/virtualMachines | Общее количество сетевых исходящих | Общее количество сетевых исходящих | Байты | Итого
-Да | Microsoft.Compute/virtualMachineScaleSets/virtualMachines | Длина очереди диска ОС | Глубина очереди диска ОС (Предварительная версия) | Количество | Среднее
+Да | Microsoft.Compute/virtualMachineScaleSets/virtualMachines | Глубина очереди диска ОС | Глубина очереди диска ОС (Предварительная версия) | Количество | Среднее
 Да | Microsoft.Compute/virtualMachineScaleSets/virtualMachines | Скорость чтения с диска ОС (байт/с) | Скорость чтения с диска ОС (байт/с) (предварительная версия) | Число/с | Среднее
 Да | Microsoft.Compute/virtualMachineScaleSets/virtualMachines | Операций чтения с диска ОС в секунду | Скорость чтения с диска ОС (операций/с) (предварительная версия) | Число/с | Среднее
 Да | Microsoft.Compute/virtualMachineScaleSets/virtualMachines | Скорость записи на диск ОС (байт/с) | Скорость записи на диск ОС (байт/с) (предварительная версия) | Число/с | Среднее
@@ -752,7 +765,7 @@ Azure Monitor предоставляет [метрики платформы](dat
 Да | Microsoft.DocumentDB/databaseAccounts | TotalRequests | Общее количество запросов | Количество | Количество
 Да | Microsoft.DocumentDB/databaseAccounts | TotalRequestUnits | Общее количество единиц запросов | Количество | Итого
 Нет | Microsoft. Ентерприсекновледжеграф/Services | FailureCount | Число сбоев | Количество | Количество
-Нет | Microsoft. Ентерприсекновледжеграф/Services | SuccessCount | Подсчет успешных событий | Количество | Количество
+Нет | Microsoft. Ентерприсекновледжеграф/Services | сукцесскаунт | Число успешных выполнений | Количество | Количество
 Нет | Microsoft. Ентерприсекновледжеграф/Services | сукцесслатенци | Задержка успешного выполнения | MilliSeconds | Среднее
 Нет | Microsoft. Ентерприсекновледжеграф/Services | трансактионкаунт | Число транзакций | Количество | Количество
 Да | Microsoft. EventGrid/Domains | DeadLetteredCount | Dead Lettered Events (Невостребованные события) | Количество | Итого

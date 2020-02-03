@@ -51,7 +51,7 @@
       href: service-fabric-mesh-storing-state.md
     - name: Секреты
       href: service-fabric-mesh-secrets-overview.md
-- name: Руководства
+- name: Практические руководства
   items:
     - name: Настройка среды разработки
       href: service-fabric-mesh-howto-setup-developer-environment-sdk.md
@@ -71,9 +71,11 @@
       href: service-fabric-mesh-howto-deploy-app-sfreliable-disk-volume.md
     - name: Управление секретами
       href: service-fabric-mesh-howto-manage-secrets.md
+    - name: Перемещение приложения в другой регион Azure
+      href: move-across-regions.md
     - name: Поиск примеров
       href: service-fabric-mesh-howto-find-samples.md
-- name: Справочные материалы
+- name: Справочник
   items:
     - name: Интерфейсы REST API поставщика ресурсов службы "Сетка Service Fabric"
       href: /rest/api/servicefabric/sfmeshrp-index

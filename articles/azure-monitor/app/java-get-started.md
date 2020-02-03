@@ -1,5 +1,5 @@
 ---
-title: Анализ веб-приложений Java с помощью Azure Application Insights
+title: Краткое руководство. анализ веб-приложений Java с помощью Azure Application Insights
 description: 'Сведения о мониторинге производительности веб-приложений Java с помощью Application Insights. '
 ms.service: azure-monitor
 ms.subservice: application-insights
@@ -7,39 +7,40 @@ ms.topic: conceptual
 author: lgayhardt
 ms.author: lagayhar
 ms.date: 05/24/2019
-ms.openlocfilehash: 0686cea590ca26096b443dba21b05dc3335c7add
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: abc16f8e1fdc6b81634b926eeb287e5d03efdc40
+ms.sourcegitcommit: 42517355cc32890b1686de996c7913c98634e348
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74927255"
+ms.lasthandoff: 02/02/2020
+ms.locfileid: "76963688"
 ---
-# <a name="get-started-with-application-insights-in-a-java-web-project"></a>Начните работать с Application Insights в веб-проекте Java
+# <a name="quickstart-get-started-with-application-insights-in-a-java-web-project"></a>Краткое руководство. Начало работы с Application Insights в веб-проекте Java
 
-[Application Insights](https://azure.microsoft.com/services/application-insights/) — это расширяемая служба аналитики для разработчиков веб-ресурсов, позволяющая оценивать производительность и использование работающего приложения. Используйте его для [автоматического инструментирования запросов, мониторинга зависимостей и сбора счетчиков производительности](auto-collect-dependencies.md#java), диагностики проблем производительности и исключений, а также для [написания кода][api] , который позволяет отслеживать действия пользователей с приложением. 
+В этом кратком руководстве вы используете Application Insights для автоматического инструментирования запросов, мониторинга зависимостей и сбора счетчиков производительности, диагностики проблем производительности и исключений, а также для написания кода, который позволяет отслеживать действия пользователей с приложением.
 
-![Снимок экрана: обзор с примером данных](./media/java-get-started/overview-graphs.png)
+Application Insights — это расширяемая служба аналитики для веб-разработчиков, которая помогает понять производительность и использование приложения в реальном времени. Надстройка Application Insights поддерживает приложения Java, работающие под управлением Linux, Unix или Windows.
 
-Надстройка Application Insights поддерживает приложения Java, работающие под управлением Linux, Unix или Windows.
+## <a name="prerequisites"></a>Технические условия
 
-Вам необходимы:
+* Учетная запись Azure с активной подпиской. [Создайте учетную запись бесплатно](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio).
+* Работающее приложение Java.
 
-* Java 7 или более поздней версии
-* подписка на [Microsoft Azure](https://azure.microsoft.com/).
+## <a name="get-an-application-insights-instrumentation-key"></a>Получение ключа инструментирования Application Insights
 
-## <a name="1-get-an-application-insights-instrumentation-key"></a>1. Получение ключа инструментирования Application Insights
-1. Войдите на [портал Microsoft Azure](https://portal.azure.com).
-2. Создайте ресурс Application Insights. Задайте тип приложения: веб-приложение Java.
+1. Войдите на [портал Azure](https://portal.azure.com/).
+2. В портал Azure создайте ресурс Application Insights. Задайте тип приложения: веб-приложение Java.
 
 3. Найдите ключ инструментирования нового ресурса. Далее будет необходимо вставить его в проект кода.
 
     ![В обзоре нового ресурса щелкните "Свойства" и скопируйте ключ инструментирования](./media/java-get-started/instrumentation-key-001.png)
 
-## <a name="2-add-the-application-insights-sdk-for-java-to-your-project"></a>2. Добавление пакета SDK Application Insights для Java в проект
-*Выберите подходящий метод для проекта.*
+## <a name="add-the-application-insights-sdk-for-java-to-your-project"></a>Добавление в проект пакета SDK Application Insights для Java
 
-#### <a name="if-youre-using-maven-a-namemaven-setup-"></a>Если вы используете Maven<a name="maven-setup" />
-Если проект уже настроен для сборки с использованием Maven, добавьте следующий код в файл pom.xml.
+*Выберите тип проекта.*
+
+# <a name="maventabmaven"></a>[Maven](#tab/maven)
+
+Если проект уже настроен на использование Maven для сборки, объедините приведенный ниже код в файл *POM. XML* .
 
 Затем обновите зависимости проекта, чтобы скачать двоичные файлы.
 
@@ -55,8 +56,9 @@ ms.locfileid: "74927255"
     </dependencies>
 ```
 
-#### <a name="if-youre-using-gradle-a-namegradle-setup-"></a>Если вы используете Gradle<a name="gradle-setup" />
-Если проект уже настроен для сборки с использованием Gradle, добавьте следующий фрагмент кода в файл build.gradle.
+# <a name="gradletabgradle"></a>[Gradle](#tab/gradle)
+
+Если проект уже настроен на использование Gradle для сборки, объедините приведенный ниже код в файл *Build. Gradle* .
 
 Затем обновите зависимости проекта, чтобы скачать двоичные файлы.
 
@@ -68,8 +70,11 @@ ms.locfileid: "74927255"
     }
 ```
 
-#### <a name="otherwise-if-you-are-manually-managing-dependencies-"></a>Если вы вручную управляете зависимостями
+# <a name="other-typestabother"></a>[Другие типы](#tab/other)
+
 Скачайте [последнюю версию](https://github.com/Microsoft/ApplicationInsights-Java/releases/latest) и скопируйте необходимые файлы в проект, заменив все предыдущие версии.
+
+---
 
 ### <a name="questions"></a>Вопросы
 * *Какова связь между компонентами `-web-auto`, `-web` и `-core`?*
@@ -78,15 +83,15 @@ ms.locfileid: "74927255"
   * `applicationinsights-core` предоставляет только простой API, например, если приложение не основано на сервлета.
   
 * *Как обновить пакет SDK до последней версии?*
-  * Если вы используете Gradle или Maven
+  * Если вы используете Gradle или Maven...
     * Обновите файл сборки, чтобы указать последнюю версию.
-  * Если вы вручную управляете зависимостями
+  * Если вы управляете зависимостями вручную...
     * Загрузите последнюю версию [пакета SDK Application Insights для Java](https://github.com/Microsoft/ApplicationInsights-Java/releases/latest) и установите ее вместо более старых версий. Изменения описаны в статье [Заметки о выпуске пакета SDK](https://github.com/Microsoft/ApplicationInsights-Java#release-notes).
 
-## <a name="3-add-an-applicationinsightsxml-file"></a>3. Добавление файла ApplicationInsights. XML
-Добавьте ApplicationInsights.xml в папку ресурсов проекта или проверьте, добавлен ли этот файл в путь класса развертывания проекта. Скопируйте в него следующий код XML.
+## <a name="add-an-applicationinsightsxml-file"></a>Добавление файла *ApplicationInsights. XML*
+Добавьте *ApplicationInsights. XML* в папку ресурсов проекта или убедитесь, что она добавлена в путь к классу развертывания проекта. Скопируйте в него следующий код XML.
 
-Замените ключ инструментирования на полученный в портале Azure.
+Замените ключ инструментирования на тот, который был получен из портал Azure.
 
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
@@ -115,18 +120,18 @@ ms.locfileid: "74927255"
 </ApplicationInsights>
 ```
 
-При необходимости файл конфигурации может находиться в любом месте, доступном для приложения.  Системное свойство `-Dapplicationinsights.configurationDirectory` указывает на каталог, содержащий файл ApplicationInsights.xml. Например, файл конфигурации, расположенный в каталоге `E:\myconfigs\appinsights\ApplicationInsights.xml`, будет настроен со свойством `-Dapplicationinsights.configurationDirectory="E:\myconfigs\appinsights"`.
+При необходимости файл конфигурации может находиться в любом расположении, доступном для приложения.  Системное свойство `-Dapplicationinsights.configurationDirectory` указывает каталог, содержащий *ApplicationInsights. XML*. Например, файл конфигурации, расположенный в каталоге `E:\myconfigs\appinsights\ApplicationInsights.xml`, будет настроен со свойством `-Dapplicationinsights.configurationDirectory="E:\myconfigs\appinsights"`.
 
 * Ключ инструментирования пересылается вместе с каждым элементом телеметрии; служба Application Insights отобразит его в ресурсе.
 * Компонент HTTP-запросов является необязательным. Он автоматически передает на портал телеметрию о запросах и значения времени ответа.
-* Корреляция события является дополнением к компоненту HTTP-запросов. Это дополнение назначает идентификатор для каждого запроса, полученного сервером, и добавляет его в качестве свойства каждого элемента телеметрии в форме "Операция.ИД". Благодаря этому можно выделить данные телеметрии, связанные с каждым из запросов, путем установки фильтра [Поиск по журналу диагностики][diagnostic].
+* Корреляция события является дополнением к компоненту HTTP-запросов. Он назначает идентификатор каждому запросу, полученному сервером. Затем этот идентификатор добавляется в качестве свойства для каждого элемента телеметрии в качестве свойства "Operation.Id". Благодаря этому можно выделить данные телеметрии, связанные с каждым из запросов, путем установки фильтра [Поиск по журналу диагностики][diagnostic].
 
 ### <a name="alternative-ways-to-set-the-instrumentation-key"></a>Другие способы задать ключ инструментирования
 Пакет SDK Application Insights ищет ключ в следующем порядке:
 
 1. Системное свойство:-DAPPINSIGHTS_INSTRUMENTATIONKEY = your_ikey
 2. Переменная среды: APPINSIGHTS_INSTRUMENTATIONKEY
-3. Файл конфигурации: ApplicationInsights.xml
+3. Файл конфигурации: *ApplicationInsights. XML*
 
 Вы также можете [задать его в коде](../../azure-monitor/app/api-custom-events-metrics.md#ikey):
 
@@ -139,14 +144,14 @@ ms.locfileid: "74927255"
     }
 ```
 
-## <a name="4-add-agent"></a>4. Добавление агента
+## <a name="add-agent"></a>Добавить агент
 
 [Установите агент Java](java-agent.md) для отслеживания исходящих вызовов HTTP, запросов JDBC, ведения журнала приложений и лучшего именования операций.
 
-## <a name="5-run-your-application"></a>5. Запуск приложения
+## <a name="run-your-application"></a>Запуск приложения
 Запустите приложение в режиме отладки на компьютере разработки или опубликуйте его на своем сервере.
 
-## <a name="6-view-your-telemetry-in-application-insights"></a>6. Просмотр данных телеметрии в Application Insights
+## <a name="view-your-telemetry-in-application-insights"></a>Просмотр данных телеметрии в Application Insights
 Вернитесь к ресурсу Application Insights на [портале Microsoft Azure](https://portal.azure.com).
 
 В колонке обзора появятся данные HTTP-запросов. (Если данные отсутствуют, подождите несколько секунд и нажмите кнопку обновления).
@@ -191,7 +196,7 @@ ms.locfileid: "74927255"
 
 ## <a name="azure-app-service-config-spring-boot"></a>Конфигурация службы приложений Azure (пружинная загрузка)
 
-Приложения с пружинной загрузкой, запущенные в Windows, нуждаются в дополнительной настройке для запуска в службах приложений Azure. Измените **файл Web. config** и добавьте следующее:
+Приложения с пружинной загрузкой, запущенные в Windows, нуждаются в дополнительной настройке для запуска в службах приложений Azure. Измените **файл Web. config** и добавьте следующую конфигурацию:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -230,7 +235,7 @@ ms.locfileid: "74927255"
 ![Снимок экрана: панель метрик с выбранным байтовым частным байтом процесса](./media/java-get-started/011-perf-counters.png)
 
 ### <a name="customize-performance-counter-collection"></a>Настройка сбора данных счетчиками производительности
-Чтобы отключить сбор данных стандартным набором счетчиков производительности, добавьте следующий фрагмент кода в корневой узел файла ApplicationInsights.xml:
+Чтобы отключить сбор данных о стандартном наборе счетчиков производительности, добавьте следующий код в корневой узел файла *ApplicationInsights. XML* :
 
 ```XML
     <PerformanceCounters>

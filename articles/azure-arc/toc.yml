@@ -5,14 +5,14 @@
   items:
     - name: Что собой представляет Azure Arc для серверов?
       href: ./servers/overview.md
-- name: Краткие руководства
+- name: Подключение к Azure Arc
   expanded: true
   items:
-    - name: Подключение компьютеров к Azure с помощью Azure Arc для серверов на портале
+    - name: Подключение компьютеров к Azure Arc на портале Azure
       href: ./servers/quickstart-onboard-portal.md
-    - name: Подключение виртуальных машин в большом масштабе с помощью Azure Arc для серверов с помощью PowerShell
+    - name: Подключение компьютеров в большом масштабе с помощью субъекта-службы
       href: ./servers/quickstart-onboard-powershell.md
-- name: Справочные материалы
+- name: Справочник
   items:
     - name: Интерфейс CLI агента подключенного компьютера Azure
       href: ./servers/azcmagent-reference.md

@@ -5,13 +5,13 @@ services: logic-apps
 ms.suite: integration
 ms.reviewer: klam, logicappspm
 ms.topic: conceptual
-ms.date: 08/23/2019
-ms.openlocfilehash: f1fd776f903b4f5b4f315147f460143c7843fdc9
-ms.sourcegitcommit: 2f8ff235b1456ccfd527e07d55149e0c0f0647cc
+ms.date: 02/03/2020
+ms.openlocfilehash: 87798c93bbc1098daea2f7258a3af3e26bb4bb93
+ms.sourcegitcommit: 85d52b799621d35d7df32c2cb1e339071c619bb3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75689076"
+ms.lasthandoff: 02/03/2020
+ms.locfileid: "76966101"
 ---
 # <a name="reference-guide-to-using-functions-in-expressions-for-azure-logic-apps-and-power-automate"></a>Справочное руководство по использованию функций в выражениях для Azure Logic Apps и автоматизации Powering
 
@@ -250,7 +250,7 @@ ms.locfileid: "75689076"
 | [multipartBody](../logic-apps/workflow-definition-language-functions-reference.md#multipartBody) | Возвращает текст указанной части выходных данных действия, которые состоят из нескольких частей. |
 | [outputs](../logic-apps/workflow-definition-language-functions-reference.md#outputs) | Возвращает результат действия во время выполнения. |
 | [parameters](../logic-apps/workflow-definition-language-functions-reference.md#parameters) | Возвращает значение для параметра, описанного в определении рабочего процесса. |
-| [result](../logic-apps/workflow-definition-language-functions-reference.md#result) | Возврат входных и выходных данных из всех действий в заданном действии с областью действия, таких как `For_each`, `Until`и `Scope`. |
+| [результат](../logic-apps/workflow-definition-language-functions-reference.md#result) | Возврат входных и выходных данных из всех действий в заданном действии с областью действия, таких как `For_each`, `Until`и `Scope`. |
 | [trigger](../logic-apps/workflow-definition-language-functions-reference.md#trigger) | Возвращает выходные данные триггера во время выполнения или значения из других пар "имя — значение" JSON. См. разделы [triggerOutputs](#triggerOutputs) и [triggerBody](../logic-apps/workflow-definition-language-functions-reference.md#triggerBody). |
 | [triggerBody](../logic-apps/workflow-definition-language-functions-reference.md#triggerBody) | Возвращает выходные данные `body` триггера во время выполнения. См. раздел [trigger](../logic-apps/workflow-definition-language-functions-reference.md#trigger). |
 | [triggerFormDataValue](../logic-apps/workflow-definition-language-functions-reference.md#triggerFormDataValue) | Возвращает одно значение, соответствующее имени ключа, из выходных данных *form-data* или *form-encoded* триггера. |
@@ -2032,7 +2032,7 @@ formatNumber(<number>, <format>, <locale>?)
 Предположим, что нужно отформатировать число `1234567890`. В этом примере этот номер форматируется как строка "1 234 567 890,00".
 
 ```
-formatNumber(1234567890, "{0:0,0.00}", "en-us")
+formatNumber(1234567890, '{0:0,0.00}', 'en-us')
 ```
 
 \* Пример 2 "
@@ -2040,7 +2040,7 @@ formatNumber(1234567890, "{0:0,0.00}", "en-us")
 Предположим, что нужно отформатировать число `1234567890`. В этом примере число форматируется как строка "1.234.567.890, 00".
 
 ```
-formatNumber(1234567890, "{0:0,0.00}", "is-is")
+formatNumber(1234567890, '{0:0,0.00}', 'is-is')
 ```
 
 *Пример 3*
@@ -2048,7 +2048,7 @@ formatNumber(1234567890, "{0:0,0.00}", "is-is")
 Предположим, что нужно отформатировать число `17.35`. В этом примере число форматируется как строка "$17,35".
 
 ```
-formatNumber(17.36, "{0:C2}")
+formatNumber(17.36, 'C2')
 ```
 
 *Пример 4*
@@ -2056,7 +2056,7 @@ formatNumber(17.36, "{0:C2}")
 Предположим, что нужно отформатировать число `17.35`. В этом примере число форматируется как строка «17, 35 kr».
 
 ```
-formatNumber(17.36, "{0:C2}", "is-is")
+formatNumber(17.36, 'C2', 'is-is')
 ```
 
 <a name="getFutureTime"></a>
@@ -3383,7 +3383,7 @@ result('<scopedActionName>')
 
 | Возвращаемое значение | Тип | Description |
 | ------------ | ---- | ----------- |
-| массив <> *объектов* | Array - объект | Массив, содержащий массивы входов и выходов из каждого действия, которое отображается в указанном действии с областью действия. |
+| массив <> *объектов* | Array, объект | Массив, содержащий массивы входов и выходов из каждого действия, которое отображается в указанном действии с областью действия. |
 ||||
 
 *Пример*

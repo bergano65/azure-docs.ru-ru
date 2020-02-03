@@ -9,12 +9,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 11/21/2019
 ms.author: cynthn
-ms.openlocfilehash: 6172b5da60037051517a43b1b3b8b91b50ab2aac
-ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
+ms.openlocfilehash: e2eb77bfd000ecaa3bad5fd3c5792d1aa3a81964
+ms.sourcegitcommit: 42517355cc32890b1686de996c7913c98634e348
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75895887"
+ms.lasthandoff: 02/02/2020
+ms.locfileid: "76964878"
 ---
 # <a name="preview-control-updates-with-maintenance-control-and-the-azure-cli"></a>Предварительная версия: Управление обновлениями с помощью управления обслуживанием и Azure CLI
 
@@ -31,13 +31,13 @@ ms.locfileid: "75895887"
 > [!IMPORTANT]
 > Управление обслуживанием в настоящее время находится в общедоступной предварительной версии.
 > Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для использования рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
-> 
+>
 
 ## <a name="limitations"></a>Ограничения
 
 - Виртуальные машины должны находиться на [выделенном узле](./linux/dedicated-hosts.md)или быть созданы с использованием [ИЗОЛИРОВАННОГО размера виртуальной машины](./linux/isolation.md).
 - Через 35 дней будет автоматически применено обновление.
-- Пользователь должен иметь доступ **владельца ресурса** .
+- Пользователь должен иметь доступ к **участнику ресурсов** .
 
 
 ## <a name="install-the-maintenance-extension"></a>Установка расширения обслуживания
@@ -151,6 +151,23 @@ az maintenance assignment list \
 
 Используйте `az maintenance update list`, чтобы узнать, есть ли ожидающие обновления. Обновление — подписка на идентификатор подписки, содержащей виртуальную машину.
 
+Если обновления отсутствуют, команда возвратит сообщение об ошибке, которое будет содержать текст: `Resource not found...StatusCode: 404`.
+
+При наличии обновлений будет возвращено только одно из них, даже если ожидается несколько обновлений. Данные для этого обновления будут возвращены в объект:
+
+```text
+[
+  {
+    "impactDurationInSec": 9,
+    "impactType": "Freeze",
+    "maintenanceScope": "Host",
+    "notBefore": "2020-03-03T07:23:04.905538+00:00",
+    "resourceId": "/subscriptions/9120c5ff-e78e-4bd0-b29f-75c19cadd078/resourcegroups/DemoRG/providers/Microsoft.Compute/hostGroups/demoHostGroup/hosts/myHost",
+    "status": "Pending"
+  }
+]
+  ```
+
 ### <a name="isolated-vm"></a>Изолированная виртуальная машина
 
 Проверьте наличие ожидающих обновлений для изолированной виртуальной машины. В этом примере выходные данные форматируются в виде таблицы для удобства чтения.
@@ -166,7 +183,7 @@ az maintenance update list \
 
 ### <a name="dedicated-host"></a>Выделенный узел
 
-Проверка наличия ожидающих обновлений для выделенного узла. В этом примере выходные данные форматируются в виде таблицы для удобства чтения. Замените значения для ресурсов собственными.
+Проверка наличия ожидающих обновлений для выделенного узла (АДХ). В этом примере выходные данные форматируются в виде таблицы для удобства чтения. Замените значения для ресурсов собственными.
 
 ```azurecli-interactive
 az maintenance update list \
@@ -182,7 +199,7 @@ az maintenance update list \
 
 ## <a name="apply-updates"></a>Применение обновлений
 
-Используйте `az maintenance apply update` для применения ожидающих обновлений.
+Используйте `az maintenance apply update` для применения ожидающих обновлений. При успешном выполнении эта команда вернет JSON, содержащий сведения об обновлении.
 
 ### <a name="isolated-vm"></a>Изолированная виртуальная машина
 
@@ -191,7 +208,7 @@ az maintenance update list \
 ```azurecli-interactive
 az maintenance applyupdate create \
    --subscription 1111abcd-1a11-1a2b-1a12-123456789abc \
-   -g myMaintenanceRG\
+   --resource-group myMaintenanceRG \
    --resource-name myVM \
    --resource-type virtualMachines \
    --provider-name Microsoft.Compute
@@ -205,7 +222,7 @@ az maintenance applyupdate create \
 ```azurecli-interactive
 az maintenance applyupdate create \
    --subscription 1111abcd-1a11-1a2b-1a12-123456789abc \
-   -g myHostResourceGroup \
+   --resource-group myHostResourceGroup \
    --resource-name myHost \
    --resource-type hosts \
    --provider-name Microsoft.Compute \
@@ -217,9 +234,9 @@ az maintenance applyupdate create \
 
 Ход выполнения обновлений можно проверить с помощью `az maintenance applyupdate get`. 
 
-### <a name="isolated-vm"></a>Изолированная виртуальная машина
+Можно использовать `default` в качестве имени обновления, чтобы просмотреть результаты последнего обновления, или заменить `myUpdateName` именем обновления, которое было возвращено при выполнении `az maintenance applyupdate create`.
 
-Замените `myUpdateName` именем обновления, которое было возвращено при выполнении `az maintenance applyupdate create`.
+### <a name="isolated-vm"></a>Изолированная виртуальная машина
 
 ```azurecli-interactive
 az maintenance applyupdate get \
@@ -227,7 +244,7 @@ az maintenance applyupdate get \
    --resource-name myVM \
    --resource-type virtualMachines \
    --provider-name Microsoft.Compute \
-   --apply-update-name myUpdateName 
+   --apply-update-name default 
 ```
 
 ### <a name="dedicated-host"></a>Выделенный узел
@@ -241,7 +258,7 @@ az maintenance applyupdate get \
    --provider-name Microsoft.Compute \
    --resource-parent-name myHostGroup \ 
    --resource-parent-type hostGroups \
-   --apply-update-name default \
+   --apply-update-name myUpdateName \
    --query "{LastUpdate:lastUpdateTime, Name:name, ResourceGroup:resourceGroup, Status:status}" \
    --output table
 ```

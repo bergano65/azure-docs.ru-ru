@@ -11,16 +11,19 @@ ms.workload: big-data
 ms.topic: conceptual
 ms.date: 01/31/2020
 ms.custom: seodec18
-ms.openlocfilehash: 079cfcee543cf1ce36c4a1394479a622b3658789
-ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
+ms.openlocfilehash: cf5f89197798f95dced5bfd8817f1df050297048
+ms.sourcegitcommit: 42517355cc32890b1686de996c7913c98634e348
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76935126"
+ms.lasthandoff: 02/02/2020
+ms.locfileid: "76962005"
 ---
 # <a name="manage-ga-reference-data-for-an-azure-time-series-insights-environment-using-c"></a>Управление эталонными данными на основе общедоступной версии для среды службы "аналитика временных рядов Azure" с помощьюC#
 
 В этой статье показано, как C#объединить, [MSAL.NET](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet)и Azure Active Directory, чтобы программные запросы API были предоставлены в общедоступной [Управление данными API](https://docs.microsoft.com/rest/api/time-series-insights/ga-reference-data-api)Azure Time Series Insights.
+
+> [!TIP]
+> Просмотрите общедоступные примеры C# кода на [https://github.com/Azure-Samples/Azure-Time-Series-Insights](https://github.com/Azure-Samples/Azure-Time-Series-Insights/tree/master/csharp-tsi-ga-sample).
 
 ## <a name="summary"></a>Сводка
 
@@ -52,9 +55,6 @@ ms.locfileid: "76935126"
 1. Измените приведенный ниже пример кода, заменив каждый **#PLACEHOLDER #** на соответствующий идентификатор среды.
 
 1. Запустите `dotnet run` в корневом каталоге проекта. При появлении запроса используйте профиль пользователя для входа в Azure. 
-
-> [!TIP]
-> * Просмотрите другие примеры C# кода в общедоступной версии на [https://github.com/Azure-Samples/Azure-Time-Series-Insights](https://github.com/Azure-Samples/Azure-Time-Series-Insights/tree/master/csharp-tsi-ga-sample).
 
 ## <a name="project-dependencies"></a>Зависимости проектов
 

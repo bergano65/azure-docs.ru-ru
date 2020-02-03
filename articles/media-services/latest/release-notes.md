@@ -11,12 +11,12 @@ ms.workload: na
 ms.topic: article
 ms.date: 12/13/2019
 ms.author: juliako
-ms.openlocfilehash: e7770a3faef0ccf7ca0f5b8c56f98007b8d89436
-ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
+ms.openlocfilehash: 52d8dda8b543e5bdf3ca88ae3784df65be3a2ba1
+ms.sourcegitcommit: 42517355cc32890b1686de996c7913c98634e348
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76719846"
+ms.lasthandoff: 02/02/2020
+ms.locfileid: "76962949"
 ---
 # <a name="azure-media-services-v3-release-notes"></a>Заметки о выпуске Служб мультимедиа Azure версии 3
 
@@ -36,6 +36,13 @@ ms.locfileid: "76719846"
 
 Дополнительные сведения см. в статье [Руководство по миграции из версии 2 в версию 3 Служб мультимедиа](migrate-from-v2-to-v3.md#known-issues).
 
+## <a name="january-2020"></a>Январь 2020 г.
+
+### <a name="improvements-in-media-processors"></a>Усовершенствования в обработчиках мультимедиа
+
+- Улучшенная поддержка чередующихся источников в средстве анализа видео — такое содержимое теперь переключается правильно, прежде чем отправлять его механизмам вывода.
+- При создании эскизов с "лучшим" кодировщик теперь выполняет поиск в течение 30 секунд, чтобы выбрать кадр, который не является монохромным.
+ 
 ## <a name="november-2019"></a>Ноябрь 2019 г.
 
 ### <a name="live-transcription-preview"></a>Предварительная версия разговора в реальном времени

@@ -753,3 +753,5 @@
       href: developer-support-help-options.md
     - name: Управляемые удостоверения для ресурсов Azure
       href: 'https://docs.microsoft.com/azure/active-directory/managed-service-identity/overview'
+    - name: Видео по платформе удостоверений Майкрософт
+      href: identity-videos.md

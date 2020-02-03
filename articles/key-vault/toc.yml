@@ -118,6 +118,8 @@
       href: event-grid-logicapps.md
     - name: Интеграция со службой "Поиск Azure"
       href: azure-policy.md
+    - name: Интеграция со службой "Приватный канал Azure" (предварительная версия)
+      href: private-link-service.md
     - name: Ведение журнала Azure Key Vault
       href: key-vault-logging.md
     - name: Доступ за брандмауэрами

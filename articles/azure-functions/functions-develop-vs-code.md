@@ -3,12 +3,12 @@ title: Разрабатывайте функции Azure с помощью Visua
 description: Узнайте, как разрабатывать и тестировать функции Azure с помощью расширения "функции Azure" для Visual Studio Code.
 ms.topic: conceptual
 ms.date: 08/21/2019
-ms.openlocfilehash: 59c350b267583a2bccfdd66996aa6c1f97954218
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: 7e533d5826d429a716ad1592d75159782ed43fa7
+ms.sourcegitcommit: 42517355cc32890b1686de996c7913c98634e348
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76845396"
+ms.lasthandoff: 02/02/2020
+ms.locfileid: "76964025"
 ---
 # <a name="develop-azure-functions-by-using-visual-studio-code"></a>Разрабатывайте функции Azure с помощью Visual Studio Code
 
@@ -79,6 +79,8 @@ ms.locfileid: "76845396"
 
     ![Шаблон функции, активируемой HTTP, в Visual Studio Code](./media/functions-develop-vs-code/new-function-full.png)
 
+### <a name="generated-project-files"></a>Созданные файлы проекта
+
 Шаблон проекта создает проект на выбранном языке и устанавливает необходимые зависимости. Для любого языка в новом проекте есть следующие файлы:
 
 * **host.json**: позволяет настроить узел Функций. Эти параметры применяются при локальном запуске функций и при их запуске в Azure. Дополнительные сведения см. в [справочной статье о host.json](functions-host-json.md).
@@ -87,6 +89,30 @@ ms.locfileid: "76845396"
 
     >[!IMPORTANT]
     >Так как файл Local. Settings. JSON может содержать секреты, его необходимо исключить из системы управления версиями проекта.
+
+В зависимости от языка создаются следующие файлы:
+
+# <a name="ctabcsharp"></a>[C\#](#tab/csharp)
+
+* [Файл библиотеки классов HttpExample.CS](functions-dotnet-class-library.md#functions-class-library-project) , реализующий функцию.
+
+# <a name="javascripttabnodejs"></a>[JavaScript](#tab/nodejs)
+
+* Файл Package. JSON в корневой папке.
+
+* Папка Хттпексампле, содержащая [файл определения Function. JSON](functions-reference-node.md#folder-structure) и [файл index. js](functions-reference-node.md#exporting-a-function)— файл node. js, содержащий код функции.
+
+<!-- # [PowerShell](#tab/powershell)
+
+* An HttpExample folder that contains the [function.json definition file](functions-reference-python.md#programming-model) and the run.ps1 file, which contains the function code.
+ 
+# [Python](#tab/python)
+    
+* A project-level requirements.txt file that lists packages required by Functions.
+    
+* An HttpExample folder that contains the [function.json definition file](functions-reference-python.md#programming-model) and the \_\_init\_\_.py file, which contains the function code.
+     -->
+---
 
 На этом этапе можно добавить входные и выходные привязки к функции, [изменив файл function. JSON](#add-a-function-to-your-project) или [добавив параметр в функцию библиотеки C# классов](#add-a-function-to-your-project).
 

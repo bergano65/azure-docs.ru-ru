@@ -1,32 +1,25 @@
 ---
 title: Изменение группы доступности виртуальных машин
-description: Узнайте, как изменить группу доступности для виртуальных машин, используя Azure PowerShell и модель развертывания с помощью Resource Manager.
-keywords: ''
-services: virtual-machines-windows
-documentationcenter: ''
+description: Узнайте, как изменить группу доступности для виртуальной машины с помощью Azure PowerShell.
+ms.service: virtual-machines
 author: cynthn
-manager: gwallace
-editor: ''
-tags: azure-resource-manager
-ms.service: virtual-machines-windows
-ms.workload: infrastructure-services
-ms.tgt_pltfrm: vm-windows
 ms.topic: article
-ms.date: 02/12/2019
+ms.date: 01/31/2020
 ms.author: cynthn
-ms.openlocfilehash: 7d03d684edfded1450043b943fc188c7aa07dc16
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.openlocfilehash: 092dafff6622d3402322eb96d0fe4215e52e16b5
+ms.sourcegitcommit: 42517355cc32890b1686de996c7913c98634e348
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74039572"
+ms.lasthandoff: 02/02/2020
+ms.locfileid: "76964929"
 ---
-# <a name="change-the-availability-set-for-a-windows-vm"></a>Изменение группы доступности для виртуальной машины Windows
+# <a name="change-the-availability-set-for-a-vm"></a>Изменение группы доступности для виртуальной машины
 Ниже приведены инструкции по изменению группы доступности виртуальной машины с помощью Azure PowerShell. Виртуальную машину можно добавить в группу доступности только при ее создании. Чтобы изменить группу доступности, необходимо удалить и повторно создать виртуальную машину. 
+
+Эта статья относится к виртуальным машинам Linux и Windows.
 
 Последнее тестирование этой статьи выполнялось 12.02.2019 г. с помощью [Azure Cloud Shell](https://shell.azure.com/powershell) и [модуля Az PowerShell](https://docs.microsoft.com/powershell/azure/install-az-ps) версии 1.2.0.
 
- 
 
 ## <a name="change-the-availability-set"></a>Изменение группы доступности 
 
@@ -61,12 +54,13 @@ ms.locfileid: "74039572"
 # Remove the original VM
     Remove-AzVM -ResourceGroupName $resourceGroup -Name $vmName    
 
-# Create the basic configuration for the replacement VM
+# Create the basic configuration for the replacement VM. 
     $newVM = New-AzVMConfig `
        -VMName $originalVM.Name `
        -VMSize $originalVM.HardwareProfile.VmSize `
        -AvailabilitySetId $availSet.Id
-  
+ 
+# For a Linux VM, change the last parameter from -Windows to -Linux 
     Set-AzVMOSDisk `
        -VM $newVM -CreateOption Attach `
        -ManagedDiskId $originalVM.StorageProfile.OsDisk.ManagedDisk.Id `
@@ -108,7 +102,7 @@ ms.locfileid: "74039572"
        -DisableBginfoExtension
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Увеличьте емкость хранилища для виртуальной машины, добавив дополнительный [диск данных](attach-managed-disk-portal.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
 

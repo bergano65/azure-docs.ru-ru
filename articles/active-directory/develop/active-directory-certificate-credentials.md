@@ -14,12 +14,12 @@ ms.date: 12/18/2019
 ms.author: ryanwi
 ms.reviewer: nacanuma, jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: 15fa6b9c7b9c84cd17b67c53dd65acd54ea63910
-ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
+ms.openlocfilehash: 7b42676fa387914bc4825e2850b3d2f032827a79
+ms.sourcegitcommit: 42517355cc32890b1686de996c7913c98634e348
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76699229"
+ms.lasthandoff: 02/02/2020
+ms.locfileid: "76962124"
 ---
 # <a name="microsoft-identity-platform-application-authentication-certificate-credentials"></a>Учетные данные сертификата проверки подлинности приложения платформы Microsoft Identity
 
@@ -130,6 +130,6 @@ Gh95kHCOEGq5E_ArMBbDXhwKR577scxYaoJ1P{a lot of characters here}KKJDEg"
 ## <a name="code-sample"></a>Пример кода
 
 > [!NOTE]
-> Необходимо вычислить заголовок X5T, используя хэш сертификата, и преобразовать его в строку Base64. В C# этом случае будет выглядеть примерно так: `System.Convert.ToBase64String(cert.GetCertHash());`
+> Необходимо вычислить заголовок X5T, преобразовав его в базовую строку 64, используя хэш сертификата. Код для выполнения этой C# задачи: `System.Convert.ToBase64String(cert.GetCertHash());`
 
 Пример кода для проверки подлинности [на платформе Microsoft Identity в приложениях управляющей программы с сертификатами](https://github.com/Azure-Samples/active-directory-dotnet-daemon-certificate-credential) показывает, как приложение использует собственные учетные данные для аутентификации. В не также показано, как [создать самозаверяющий сертификат](https://github.com/Azure-Samples/active-directory-dotnet-daemon-certificate-credential#create-a-self-signed-certificate) с помощью команды PowerShell `New-SelfSignedCertificate`. Можно также воспользоваться преимуществами [сценариев создания приложений](https://github.com/Azure-Samples/active-directory-dotnet-daemon-certificate-credential/blob/master/AppCreationScripts/AppCreationScripts.md) для создания сертификатов, вычисления отпечатков и т. д.

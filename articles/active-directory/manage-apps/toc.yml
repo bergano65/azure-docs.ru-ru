@@ -151,8 +151,8 @@
               href: methods-for-assigning-users-and-groups.md
             - name: Назначение приложения пользователю
               href: assign-user-or-group-access-portal.md
-            - name: Создание рабочих областей в Моих приложениях (предварительная версия)
-              href: access-panel-workspaces.md
+            - name: Создание коллекций в разделе "Мои приложения"
+              href: access-panel-collections.md
             - name: Использование самостоятельного доступа к приложениям
               href: access-panel-manage-self-service-access.md
             - name: Способы удаления доступа пользователя к приложению

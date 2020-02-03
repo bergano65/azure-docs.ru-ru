@@ -7,12 +7,12 @@ author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.date: 09/11/2019
-ms.openlocfilehash: ae5cfcfcd394aab644b35ac66aafa213dc49dd42
-ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
+ms.openlocfilehash: ae05a0d0866c38c2414bacb638fa90936bb6dc15
+ms.sourcegitcommit: 42517355cc32890b1686de996c7913c98634e348
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75895385"
+ms.lasthandoff: 02/02/2020
+ms.locfileid: "76964623"
 ---
 # <a name="apache-ambari-heartbeat-issues-in-azure-hdinsight"></a>Проблемы пульса Apache Ambari в Azure HDInsight
 
@@ -82,6 +82,21 @@ ms.locfileid: "75895385"
     ```
 
     Если службы контроллера отработки отказа не запущены, вероятно, это связано с тем, что служба hdinsight-Agent не может запустить контроллер отработки отказа. Проверьте журнал hdinsight-Agent в файле `/var/log/hdinsight-agent/hdinsight-agent.out`.
+
+## <a name="scenario-heartbeat-lost-for-ambari"></a>Сценарий: потеря пульса для Ambari
+
+### <a name="issue"></a>Проблема
+
+Агент пульса Ambari был потерян.
+
+### <a name="cause"></a>Причина
+
+Журналы OMS вызывают высокую загрузку ЦП.
+
+### <a name="resolution"></a>Разрешение
+
+* Отключите ведение журнала OMS с помощью модуля PowerShell [Disable-аздинсигхтоператионсманажементсуите](https://docs.microsoft.com/powershell/module/az.hdinsight/disable-azhdinsightoperationsmanagementsuite?view=azps-2.8.0) . 
+* Удаление файла журнала `mdsd.warn`
 
 ---
 

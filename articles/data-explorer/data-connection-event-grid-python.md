@@ -7,17 +7,17 @@ ms.reviewer: orspodek
 ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 10/07/2019
-ms.openlocfilehash: 16f944146cf97666fd9866607ff436a49d5fb031
-ms.sourcegitcommit: 3d4917ed58603ab59d1902c5d8388b954147fe50
+ms.openlocfilehash: 9cf65edc3bdd5f675ba1972501139b9ecebcfafd
+ms.sourcegitcommit: 42517355cc32890b1686de996c7913c98634e348
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74667718"
+ms.lasthandoff: 02/02/2020
+ms.locfileid: "76964402"
 ---
 # <a name="create-an-event-grid-data-connection-for-azure-data-explorer-by-using-python"></a>Создание подключения к данным в сетке событий для Azure обозреватель данных с помощью Python
 
 > [!div class="op_single_selector"]
-> * [Microsoft Azure](ingest-data-event-grid.md)
+> * [Портал](ingest-data-event-grid.md)
 > * [C#](data-connection-event-grid-csharp.md)
 > * [Python](data-connection-event-grid-python.md)
 > * [Шаблон Azure Resource Manager](data-connection-event-grid-resource-manager.md)
@@ -27,9 +27,9 @@ ms.locfileid: "74667718"
 ## <a name="prerequisites"></a>Технические условия
 
 * Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/) Azure, прежде чем начинать работу.
-* Создание [кластера и базы данных](create-cluster-database-csharp.md)
-* Создание [сопоставления таблиц и столбцов](net-standard-ingest-data.md#create-a-table-on-your-test-cluster)
-* Задание [политик базы данных и таблиц](database-table-policies-csharp.md) (необязательно)
+* Создание [кластера и базы данных](create-cluster-database-python.md)
+* Создание [сопоставления таблиц и столбцов](python-ingest-data.md#create-a-table-on-your-cluster)
+* Задание [политик базы данных и таблиц](database-table-policies-python.md) (необязательно)
 * Создайте [учетную запись хранения с подпиской службы "Сетка событий](ingest-data-event-grid.md#create-an-event-grid-subscription-in-your-storage-account)".
 
 [!INCLUDE [data-explorer-data-connection-install-package-python](../../includes/data-explorer-data-connection-install-package-python.md)]
@@ -60,20 +60,20 @@ credentials = ServicePrincipalCredentials(
     )
 kusto_management_client = KustoManagementClient(credentials, subscription_id)
 
-resource_group_name = "testrg";
+resource_group_name = "testrg"
 #The cluster and database that are created as part of the Prerequisites
-cluster_name = "mykustocluster";
-database_name = "mykustodatabase";
-data_connection_name = "myeventhubconnect";
+cluster_name = "mykustocluster"
+database_name = "mykustodatabase"
+data_connection_name = "myeventhubconnect"
 #The event hub and storage account that are created as part of the Prerequisites
 event_hub_resource_id = "/subscriptions/xxxxxxxx-xxxxx-xxxx-xxxx-xxxxxxxxx/resourceGroups/xxxxxx/providers/Microsoft.EventHub/namespaces/xxxxxx/eventhubs/xxxxxx"
 storage_account_resource_id = "/subscriptions/xxxxxxxx-xxxxx-xxxx-xxxx-xxxxxxxxx/resourceGroups/xxxxxx/providers/Microsoft.Storage/storageAccounts/xxxxxx"
-consumer_group = "$Default";
-location = "Central US";
+consumer_group = "$Default"
+location = "Central US"
 #The table and column mapping that are created as part of the Prerequisites
-table_name = "StormEvents";
-mapping_rule_name = "StormEvents_CSV_Mapping";
-data_format = "csv";
+table_name = "StormEvents"
+mapping_rule_name = "StormEvents_CSV_Mapping"
+data_format = "csv"
 
 #Returns an instance of LROPoller, check https://docs.microsoft.com/python/api/msrest/msrest.polling.lropoller?view=azure-python
 poller = kusto_management_client.data_connections.create_or_update(resource_group_name=resource_group_name, cluster_name=cluster_name, database_name=database_name, data_connection_name=data_connection_name,
@@ -90,7 +90,7 @@ poller = kusto_management_client.data_connections.create_or_update(resource_grou
 | cluster_name | *mykustocluster* | Имя кластера.|
 | database_name | *mykustodatabase* | Имя целевой базы данных в кластере.|
 | data_connection_name | *мевенсубконнект* | Требуемое имя подключения к данным.|
-| table_name | *стормевентс* | Имя целевой таблицы в целевой базе данных.|
+| имя_таблицы | *стормевентс* | Имя целевой таблицы в целевой базе данных.|
 | mapping_rule_name | *StormEvents_CSV_Mapping* | Имя сопоставления столбцов, связанного с целевой таблицей.|
 | data_format | *-* | Формат данных сообщения.|
 | event_hub_resource_id | *Идентификатор ресурса* | Идентификатор ресурса концентратора событий, в котором сетка событий настроена для отправки событий. |

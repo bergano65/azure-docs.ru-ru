@@ -7,14 +7,14 @@ ms.service: virtual-machines
 ms.topic: article
 ms.tgt_pltfrm: vm
 ms.workload: infrastructure-services
-ms.date: 12/06/2019
+ms.date: 01/31/2020
 ms.author: cynthn
-ms.openlocfilehash: 7ca98723511cc7297b462747d4e1e12ca9bd38c2
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.openlocfilehash: fc9cebd24b67e2991e89384e93479beafa889a7a
+ms.sourcegitcommit: 42517355cc32890b1686de996c7913c98634e348
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75979017"
+ms.lasthandoff: 02/02/2020
+ms.locfileid: "76964861"
 ---
 # <a name="preview-control-updates-with-maintenance-control-and-azure-powershell"></a>Предварительный просмотр: Управление обновлениями с помощью управления обслуживанием и Azure PowerShell
 
@@ -37,7 +37,7 @@ ms.locfileid: "75979017"
 
 - Виртуальные машины должны находиться на [выделенном узле](./linux/dedicated-hosts.md)или быть созданы с использованием [ИЗОЛИРОВАННОГО размера виртуальной машины](./linux/isolation.md).
 - Через 35 дней будет автоматически применено обновление.
-- Пользователь должен иметь доступ **владельца ресурса** .
+- Пользователь должен иметь доступ к **участнику ресурсов** .
 
 
 ## <a name="enable-the-powershell-module"></a>Включение модуля PowerShell
@@ -131,7 +131,19 @@ New-AzConfigurationAssignment `
 
 Чтобы узнать, есть ли ожидающие обновления, используйте [Get-азмаинтенанцеупдате](https://docs.microsoft.com/powershell/module/az.maintenance/get-azmaintenanceupdate) . Используйте `-subscription`, чтобы указать подписку Azure виртуальной машины, если она отличается от той, с которой вы выполнили вход.
 
-Если обновления отсутствуют, команда возвратит сообщение об ошибке: `Resource not found...StatusCode: 404`.
+Если обновления для отображения отсутствуют, эта команда возвратит значение Nothing. В противном случае он вернет объект Псапплюпдате:
+
+```json
+{
+   "maintenanceScope": "Host",
+   "impactType": "Freeze",
+   "status": "Pending",
+   "impactDurationInSec": 9,
+   "notBefore": "2020-02-21T16:47:44.8728029Z",
+   "properties": {
+      "resourceId": "/subscriptions/39c6cced-4d6c-4dd5-af86-57499cd3f846/resourcegroups/Ignite2019/providers/Microsoft.Compute/virtualMachines/MCDemo3"
+} 
+```
 
 ### <a name="isolated-vm"></a>Изолированная виртуальная машина
 
@@ -144,6 +156,7 @@ Get-AzMaintenanceUpdate `
   -ResourceType VirtualMachines `
   -ProviderName Microsoft.Compute | Format-Table
 ```
+
 
 ### <a name="dedicated-host"></a>Выделенный узел
 
@@ -158,6 +171,7 @@ Get-AzMaintenanceUpdate `
    -ResourceParentType hostGroups `
    -ProviderName Microsoft.Compute | Format-Table
 ```
+
 
 ## <a name="apply-updates"></a>Применение обновлений
 
@@ -174,6 +188,8 @@ New-AzApplyUpdate `
    -ResourceType VirtualMachines `
    -ProviderName Microsoft.Compute
 ```
+
+При успешном выполнении эта команда возвратит объект `PSApplyUpdate`. Для проверки состояния обновления можно использовать атрибут Name в команде `Get-AzApplyUpdate`. См. раздел [Проверка состояния обновления](#check-update-status).
 
 ### <a name="dedicated-host"></a>Выделенный узел
 
@@ -192,7 +208,16 @@ New-AzApplyUpdate `
 ## <a name="check-update-status"></a>Проверить состояние обновления
 Чтобы проверить состояние обновления, используйте команду [Get-азапплюпдате](https://docs.microsoft.com/powershell/module/az.maintenance/get-azapplyupdate) . Команды, показанные ниже, показывают состояние последнего обновления с помощью `default` для параметра `-ApplyUpdateName`. Можно заменить имя обновления (возвращаемое командой [New-азапплюпдате](https://docs.microsoft.com/powershell/module/az.maintenance/new-azapplyupdate) ), чтобы получить состояние конкретного обновления.
 
-Если нет обновлений для отображения, команда возвратит сообщение об ошибке: `Resource not found...StatusCode: 404`.
+```text
+Status         : Completed
+ResourceId     : /subscriptions/12ae7457-4a34-465c-94c1-17c058c2bd25/resourcegroups/TestShantS/providers/Microsoft.Comp
+ute/virtualMachines/DXT-test-04-iso
+LastUpdateTime : 1/1/2020 12:00:00 AM
+Id             : /subscriptions/12ae7457-4a34-465c-94c1-17c058c2bd25/resourcegroups/TestShantS/providers/Microsoft.Comp
+ute/virtualMachines/DXT-test-04-iso/providers/Microsoft.Maintenance/applyUpdates/default
+Name           : default
+Type           : Microsoft.Maintenance/applyUpdates
+```
 
 ### <a name="isolated-vm"></a>Изолированная виртуальная машина
 
@@ -219,7 +244,7 @@ Get-AzApplyUpdate `
    -ResourceParentName myHostGroup `
    -ResourceParentType hostGroups `
    -ProviderName Microsoft.Compute `
-   -ApplyUpdateName default
+   -ApplyUpdateName myUpdateName
 ```
 
 ## <a name="remove-a-maintenance-configuration"></a>Удаление конфигурации обслуживания

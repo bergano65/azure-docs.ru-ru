@@ -330,16 +330,13 @@
     - name: Монитор
       items:
         - name: Мониторинг приложений логики
-          href: logic-apps-monitor-your-logic-apps.md
+          href: monitor-logic-apps.md
         - name: Мониторинг приложений логики с помощью журналов Azure Monitor
-          href: logic-apps-monitor-your-logic-apps-oms.md
+          href: monitor-logic-apps-log-analytics.md
         - name: Мониторинг сообщений B2B с помощью журналов Azure Monitor
-          href: logic-apps-monitor-b2b-message.md
-          items:
-            - name: Отслеживание сообщений B2B с помощью журналов Azure Monitor
-              href: logic-apps-track-b2b-messages-omsportal.md
-            - name: Создание запросов сообщений B2B с помощью журналов Azure Monitor
-              href: logic-apps-track-b2b-messages-omsportal-query-filter-control-number.md
+          href: monitor-b2b-messages-log-analytics.md
+        - name: 'Создание, мониторинг и отслеживание запросов'
+          href: create-monitoring-tracking-queries.md
     - name: 'Примеры, сценарии и пошаговые руководства'
       href: logic-apps-examples-and-scenarios.md
       items:

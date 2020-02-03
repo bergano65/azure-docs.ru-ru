@@ -6,13 +6,13 @@ ms.author: lugoldbe
 ms.reviewer: orspodek
 ms.service: data-explorer
 ms.topic: conceptual
-ms.date: 10/23/2019
-ms.openlocfilehash: e22621083a44555cb3eda615c610f673cd841ec1
-ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
+ms.date: 02/03/2020
+ms.openlocfilehash: 0711484c4fff24c5dcd3c18effce596a92bc30c3
+ms.sourcegitcommit: 42517355cc32890b1686de996c7913c98634e348
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73581837"
+ms.lasthandoff: 02/02/2020
+ms.locfileid: "76964521"
 ---
 # <a name="end-to-end-blob-ingestion-into-azure-data-explorer-through-c"></a>Прием сквозного большого двоичного объекта в Azure обозреватель данных с помощьюC#
 
@@ -25,7 +25,7 @@ Azure Data Explorer — это быстрая и масштабируемая �
 
 Вы узнаете, как программным способом создать группу ресурсов, учетную запись хранения и контейнер, концентратор событий и кластер Azure обозреватель данных и базу данных. Вы также узнаете, как программно настроить обозреватель данных Azure для приема данных из новой учетной записи хранения.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/) Azure, прежде чем начинать работу.
 
@@ -41,11 +41,11 @@ Azure Data Explorer — это быстрая и масштабируемая �
 
 [!INCLUDE [data-explorer-e2e-event-grid-resource-template](../../includes/data-explorer-e2e-event-grid-resource-template.md)]
 
-## <a name="code-example"></a>Примеры кода 
+## <a name="code-example"></a>Пример кода 
 
 В следующем примере кода вы получите пошаговый процесс, который приводит к приему данных в Azure обозреватель данных. 
 
-Сначала создайте группу ресурсов. Вы также создадите ресурсы Azure, такие как учетная запись хранения и контейнер, концентратор событий и кластер Azure обозреватель данных и база данных. Затем вы создадите подписку службы "Сетка событий Azure" вместе с сопоставлением таблиц и столбцов в базе данных Azure обозреватель данных. Наконец, создайте подключение к данным, чтобы настроить обозреватель данных Azure для приема данных из новой учетной записи хранения. 
+Сначала создайте группу ресурсов. Вы также создадите ресурсы Azure, такие как учетная запись хранения и контейнер, концентратор событий и кластер Azure обозреватель данных и база данных, и добавьте участников. Затем вы создадите подписку службы "Сетка событий Azure" вместе с сопоставлением таблиц и столбцов в базе данных Azure обозреватель данных. Наконец, создайте подключение к данным, чтобы настроить обозреватель данных Azure для приема данных из новой учетной записи хранения. 
 
 ```csharp
 var tenantId = "xxxxxxxx-xxxxx-xxxx-xxxx-xxxxxxxxx";//Directory (tenant) ID
@@ -69,6 +69,16 @@ string kustoTableName = "Events";
 string kustoColumnMappingName = "Events_CSV_Mapping";
 string kustoDataConnectionName = deploymentName + "kustoeventgridconnection";
 
+//principals
+string principalIdForCluster = "xxxxxxxx-xxxxx-xxxx-xxxx-xxxxxxxxx";//Application ID
+string roleForClusterPrincipal = "AllDatabasesAdmin";
+string tenantIdForClusterPrincipal = tenantId;
+string principalTypeForCluster = "App";
+string principalIdForDatabase = "xxxxxxxx@xxxxxxxx.com";//User Email
+string roleForDatabasePrincipal = "Admin";
+string tenantIdForDatabasePrincipal = tenantId;
+string principalTypeForDatabase = "User";
+
 var serviceCreds = await ApplicationTokenProvider.LoginSilentAsync(tenantId, clientId, clientSecret);
 var resourceManagementClient = new ResourceManagementClient(serviceCreds);
 Console.WriteLine("Step 1: Create a new resource group in your Azure subscription to manage all the resources for using Azure Data Explorer.");
@@ -77,8 +87,23 @@ await resourceManagementClient.ResourceGroups.CreateOrUpdateAsync(resourceGroupN
     new ResourceGroup() { Location = locationSmallCase });
 
 Console.WriteLine(
-    "Step 2: Create a Blob Storage, a container in the Storage account, an Event Hub, an Azure Data Explorer cluster, and database by using an Azure Resource Manager template.");
-var parameters = $"{{\"eventHubNamespaceName\":{{\"value\":\"{eventHubNamespaceName}\"}},\"eventHubName\":{{\"value\":\"{eventHubName}\"}},\"storageAccountName\":{{\"value\":\"{storageAccountName}\"}},\"containerName\":{{\"value\":\"{storageContainerName}\"}},\"kustoClusterName\":{{\"value\":\"{kustoClusterName}\"}},\"kustoDatabaseName\":{{\"value\":\"{kustoDatabaseName}\"}}}}";
+    "Step 2: Create a Blob Storage, a container in the Storage account, an Event Hub, an Azure Data Explorer cluster, database, and add principals by using an Azure Resource Manager template.");
+var parameters = new Dictionary<string, Dictionary<string, object>>();
+parameters["eventHubNamespaceName"] = new Dictionary<string, object>(capacity: 1) {{"value", eventHubNamespaceName}};
+parameters["eventHubName"] = new Dictionary<string, object>(capacity: 1) {{"value", eventHubName }};
+parameters["storageAccountName"] = new Dictionary<string, object>(capacity: 1) {{"value", storageAccountName }};
+parameters["containerName"] = new Dictionary<string, object>(capacity: 1) {{"value", storageContainerName }};
+parameters["kustoClusterName"] = new Dictionary<string, object>(capacity: 1) {{"value", kustoClusterName }};
+parameters["kustoDatabaseName"] = new Dictionary<string, object>(capacity: 1) {{"value", kustoDatabaseName }};
+parameters["principalIdForCluster"] = new Dictionary<string, object>(capacity: 1) {{"value", principalIdForCluster }};
+parameters["roleForClusterPrincipal"] = new Dictionary<string, object>(capacity: 1) {{"value", roleForClusterPrincipal }};
+parameters["tenantIdForClusterPrincipal"] = new Dictionary<string, object>(capacity: 1) {{"value", tenantIdForClusterPrincipal }};
+parameters["principalTypeForCluster"] = new Dictionary<string, object>(capacity: 1) {{"value", principalTypeForCluster }};
+parameters["principalIdForDatabase"] = new Dictionary<string, object>(capacity: 1) {{"value", principalIdForDatabase }};
+parameters["roleForDatabasePrincipal"] = new Dictionary<string, object>(capacity: 1) {{"value", roleForDatabasePrincipal }};
+parameters["tenantIdForDatabasePrincipal"] = new Dictionary<string, object>(capacity: 1) {{"value", tenantIdForDatabasePrincipal }};
+parameters["principalTypeForDatabase"] = new Dictionary<string, object>(capacity: 1) {{"value", principalTypeForDatabase }};
+            
 string template = File.ReadAllText(azureResourceTemplatePath, Encoding.UTF8);
 await resourceManagementClient.Deployments.CreateOrUpdateAsync(resourceGroupName, deploymentName,
     new Deployment(new DeploymentProperties(DeploymentMode.Incremental, template: template,

@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 01/16/2020
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: 4cef4e09038288e4609f37c4e33f225bd79113be
-ms.sourcegitcommit: d29e7d0235dc9650ac2b6f2ff78a3625c491bbbf
+ms.openlocfilehash: 93f645c41780d5ad5a342a04fc909d5c253fdaf3
+ms.sourcegitcommit: 42517355cc32890b1686de996c7913c98634e348
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76166652"
+ms.lasthandoff: 02/02/2020
+ms.locfileid: "76964743"
 ---
 ## <a name="mfa"></a>Открытие страницы MFA
 
@@ -29,10 +29,3 @@ ms.locfileid: "76166652"
 2. Нажмите кнопку **Включить**.
 
    ![Выберите](./media/vpn-gateway-vwan-openvpn-azure-ad-mfa/mfa2.jpg)
-
-## <a name="enableauth"></a>Включить проверку подлинности
-
-1. Перейдите в раздел **Azure Active Directory-> корпоративные приложения — > все приложения**.
-2. На странице **корпоративные приложения — все приложения** выберите **VPN-подключение Azure**.
-
-   ![Идентификатор каталога](./media/vpn-gateway-vwan-openvpn-azure-ad-mfa/user1.jpg)
