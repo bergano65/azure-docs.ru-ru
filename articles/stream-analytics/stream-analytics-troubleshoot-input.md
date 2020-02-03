@@ -137,7 +137,7 @@ FROM data
 
 Создайте отдельные группы потребителей для запросов, в которых три или более наборов входных данных подключены к одной группе потребителей Центров событий. Для этого нужно создать дополнительные наборы входных данных Stream Analytics.
 
-## <a name="get-help"></a>Справка
+## <a name="get-help"></a>Получить справку
 
 За дополнительной помощью обращайтесь на наш [форум Azure Stream Analytics](https://social.msdn.microsoft.com/Forums/azure/home?forum=AzureStreamAnalytics).
 

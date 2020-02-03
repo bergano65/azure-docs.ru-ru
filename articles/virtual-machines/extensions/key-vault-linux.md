@@ -70,14 +70,14 @@ ms.locfileid: "76721308"
 | Имя | Значение и пример | Тип данных |
 | ---- | ---- | ---- |
 | версия_API | 2019-07-01 | Дата |
-| publisher | Microsoft.Azure.KeyVault | string |
-| type | кэйваултфорлинукс | string |
-| typeHandlerVersion | 1.0 | int |
-| pollingIntervalInS | 3600 | string |
-| certificateStoreName | MY | string |
+| publisher | Microsoft.Azure.KeyVault | строка |
+| type | кэйваултфорлинукс | строка |
+| typeHandlerVersion | 1.0 | INT |
+| pollingIntervalInS | 3600 | строка |
+| certificateStoreName | MY | строка |
 | линконреневал | false | Логическое |
-| certificateStoreLocation  | LocalMachine | string |
-| рекуирединитиалсинк | true | Логическое |
+| certificateStoreLocation  | LocalMachine | строка |
+| рекуирединитиалсинк | Да | Логическое |
 | observedCertificates  | ["https://myvault.vault.azure.net/secrets/mycertificate"] | массив строк
 
 
@@ -193,7 +193,7 @@ Azure CLI можно использовать для развертывания 
 
 ## <a name="troubleshoot-and-support"></a>Устранение неполадок и поддержка
 
-### <a name="troubleshoot"></a>Устранение неполадок
+### <a name="troubleshoot"></a>Диагностика
 
 Данные о состоянии развертываний расширения можно получить на портале Azure, а также с помощью Azure PowerShell. Чтобы просмотреть состояние развертывания расширений для определенной виртуальной машины, выполните следующую команду в Azure PowerShell.
 
@@ -202,7 +202,7 @@ Azure CLI можно использовать для развертывания 
 Get-AzVMExtension -VMName <vmName> -ResourceGroupname <resource group name>
 ```
 
-## <a name="azure-cli"></a>Интерфейс командной строки Azure
+## <a name="azure-cli"></a>Azure CLI
 ```azurecli
  az vm get-instance-view --resource-group <resource group name> --name  <vmName> --query "instanceView.extensions"
 ```

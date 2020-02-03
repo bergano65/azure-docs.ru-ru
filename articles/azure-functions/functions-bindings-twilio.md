@@ -323,7 +323,7 @@ public static CreateMessageOptions Run(
 
 ---
 
-## <a name="configuration"></a>Настройка
+## <a name="configuration"></a>Конфигурация
 
 В следующей таблице описываются свойства конфигурации привязки, которые задаются в файле *function.json* и атрибуте `TwilioSms`.
 

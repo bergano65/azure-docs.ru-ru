@@ -198,8 +198,8 @@ LUIS предоставляет данные из опубликованной [
 
 |Домен|Объект данных|Тип данных|Расположение данных|Значение|
 |--|--|--|--|--|
-|Энергогенерация.|Блокировка с намерением|String|intents[0].intent|"<b>Utilities</b>.ShowNext"|
-|Связь|Блокировка с намерением|String|intents[1].intent|<b>Communication</b>.StartOver"|
+|Техническое оборудование|Блокировка с намерением|String|intents[0].intent|"<b>Utilities</b>.ShowNext"|
+|Обмен данными|Блокировка с намерением|String|intents[1].intent|<b>Communication</b>.StartOver"|
 ||Блокировка с намерением|String|intents[2].intent|"None"|
 
 

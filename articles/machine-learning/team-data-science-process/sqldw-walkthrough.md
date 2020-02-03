@@ -711,7 +711,7 @@ ms.locfileid: "76718452"
 
 ![вывод гистограммы][3]
 
-Azure и
+и
 
     pd.Series(trip_dist_bin_id).value_counts().plot(kind='line')
 

@@ -42,7 +42,7 @@ ms.locfileid: "76714807"
 <sup>1</sup> технология развертывания, требующая [синхронизации триггеров вручную](#trigger-syncing).  
 <sup>2</sup> редактирование на портале включено только для триггеров HTTP и таймера для функций в Linux, использующих Premium и выделенные планы.
 
-## <a name="key-concepts"></a>Ключевые понятия
+## <a name="key-concepts"></a>Основные понятия
 
 Некоторые ключевые понятия важны для понимания работы развертываний в функциях Azure.
 
@@ -173,7 +173,7 @@ URL-адрес внешнего пакета можно использовать
 
 >__Когда его использовать:__ Портал — хороший способ начать работу с функциями Azure. Для более интенсивной работы по разработке рекомендуется использовать одно из следующих клиентских средств:
 >
->* [Код Visual Studio](functions-create-first-function-vs-code.md)
+>* [Visual Studio Code](functions-create-first-function-vs-code.md)
 >* [Azure Functions Core Tools (Командная строка)](functions-run-local.md)
 >* [Visual Studio](functions-create-your-first-function-visual-studio.md)
 

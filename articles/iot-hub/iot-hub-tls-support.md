@@ -60,7 +60,7 @@ ms.locfileid: "76722893"
 
 * Восточная часть США
 * Центрально-южная часть США
-* Западная часть США 2
+* западная часть США 2
 
 > [!NOTE]
 > После отработки отказа свойство `minTlsVersion` центра Интернета вещей останется эффективным в географической области после отработки отказа.
@@ -84,7 +84,7 @@ ms.locfileid: "76722893"
 | Python   | Да               | [Ссылка](https://aka.ms/Tls_Python_SDK_IoT) |
 | C#       | Да               | [Ссылка](https://aka.ms/Tls_CSharp_SDK_IoT) |
 | Java     | Да               | [Ссылка](https://aka.ms/Tls_Java_SDK_IoT) |
-| NodeJs   | Да               | [Ссылка](https://aka.ms/Tls_Node_SDK_IoT) |
+| Node.js   | Да               | [Ссылка](https://aka.ms/Tls_Node_SDK_IoT) |
 
 
 ### <a name="use-tls-12-in-your-iot-edge-setup"></a>Использование TLS 1,2 в программе установки IoT Edge

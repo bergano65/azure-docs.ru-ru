@@ -82,7 +82,7 @@ ms.locfileid: "76711661"
 ```
 Скопируйте обновленный текст из шага 3 в текст запроса и задайте для заголовка "Content-Type" значение "Application/JSON" в заголовках запроса. 
 
-   ![Запрос на размещение](media/skip-out-of-scope-deletions/skip-05.png)
+   ![запрос PUT](media/skip-out-of-scope-deletions/skip-05.png)
 
 Щелкните "выполнить запрос". 
 

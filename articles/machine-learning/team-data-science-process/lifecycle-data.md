@@ -63,7 +63,7 @@ ms.locfileid: "76720509"
    * выполняющий потоковую передачу или работающий в режиме реального времени; 
    * гибридный. 
 
-## <a name="artifacts"></a>Artifacts
+## <a name="artifacts"></a>Артефакты
 Ниже представлены некоторые примеры конечных результатов для этого этапа:
 
    * [Отчет о качестве данных](https://github.com/Azure/Azure-TDSP-ProjectTemplate/blob/master/Docs/Data_Report/DataSummaryReport.md). Этот отчет включает сводную информацию о данных, связи каждого атрибута с целевым объектом, ранжирование переменных и т. д. Инструмент [IDEAR](https://github.com/Azure/Azure-TDSP-Utilities/blob/master/DataScienceUtilities/DataReport-Utils) как часть TDSP может быстро создавать такой отчет по любому набору табличных данных, например CSV-файлу или реляционной таблице. 

@@ -37,7 +37,7 @@ ms.locfileid: "76716133"
 
 Дополнительные сведения о [конечной точке прогнозирования v3](luis-migration-api-v3.md).
 
-### <a name="rest-apis"></a>API-интерфейсы REST
+### <a name="rest-apis"></a>Интерфейсы REST API
 
 Интерфейсы API для конечных точек создания и прогнозирования доступны в API-интерфейсах:
 
@@ -48,7 +48,7 @@ ms.locfileid: "76716133"
 
 ### <a name="language-based-sdks"></a>Пакеты SDK на основе языка
 
-|Язык |Справочная документация|Пакет|Примеры|Быстрое начало работы|
+|Язык |Справочная документация|Пакет|Примеры|Краткие руководства|
 |--|--|--|--|--|
 |C#|[Разработка](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.language.luis.authoring?view=azure-dotnet)</br>[Прогнозирование](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.language.luis.runtime?view=azure-dotnet)|[Создание NuGet](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Language.LUIS.Authoring/)<br>[Прогнозирование NuGet](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime/)|[Примеры пакета SDK для .NET](https://github.com/Azure-Samples/cognitive-services-dotnet-sdk-samples/tree/master/LUIS)|[Создание приложения и управление им](sdk-authoring.md?pivots=programming-language-csharp)<br>[Конечная точка прогнозирования запросов](sdk-query-prediction-endpoint.md)|
 |Go|[Создание и прогнозирование](https://godoc.org/github.com/Azure/azure-sdk-for-go/services/cognitiveservices/v2.0/luis)|[Пакет SDK](https://github.com/Azure/azure-sdk-for-go/tree/master/services/cognitiveservices/v2.0/luis)|[Разработка](https://github.com/Azure-Samples/cognitive-services-language-understanding/tree/master/documentation-samples/quickstarts/change-model/go)<br>[Прогнозирование](https://github.com/Azure-Samples/cognitive-services-language-understanding/tree/master/documentation-samples/quickstarts/analyze-text/go)|[Создание и прогнозирование с помощью функции "ОСТАВШАЯся"](luis-get-started-get-intent-from-rest.md)|

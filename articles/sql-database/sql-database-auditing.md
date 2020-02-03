@@ -16,7 +16,7 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 01/24/2020
 ms.locfileid: "76719812"
 ---
-# <a name="get-started-with-sql-database-auditing"></a>Начало работы с аудитом базы данных SQL
+# <a name="get-started-with-sql-database-auditing"></a>Приступая к работе с аудитом базы данных SQL
 
 Аудит для [базы данных SQL](sql-database-technical-overview.md) Azure и [хранилища данных SQL](../sql-data-warehouse/sql-data-warehouse-overview-what-is.md) отслеживает события базы данных и записывает их в журнал аудита в учетной записи хранения Azure, log Analytics рабочей области или концентраторах событий. Аудит также дает следующие возможности:
 
@@ -253,7 +253,7 @@ ms.locfileid: "76719812"
     > Параметр Разрешить защищенные добавочные большие двоичные объекты записи в настоящее время доступен и виден только в следующих регионах:
     > - Восточная часть США
     > - Центрально-южная часть США
-    > - Западная часть США 2
+    > - западная часть США 2
 
 
 ## <a id="subheading-7"></a>Управление SQL Serverом Azure и аудитом базы данных с помощью Azure PowerShell

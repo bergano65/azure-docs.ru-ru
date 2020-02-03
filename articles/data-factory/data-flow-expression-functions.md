@@ -78,7 +78,8 @@ ___
 * ``toString(byName('Bogus Column'))``
 * ``toString(byName('Bogus Column', 'DeriveStream'))``
 ___
-### <code>byPosition</code><br/><br/>
+### <code>byPosition</code>
+<code><b>byPosition(<i>&lt;position&gt;</i> : integer) => any</b></code><br/><br/>
 Выбирает значение столбца по относительному положению (1 на основе) в потоке. Если расположение выходит за пределы допустимого диапазона, возвращается значение NULL. Возвращаемое значение должно быть преобразовано с помощью одной из функций преобразования типов (TO_DATE, TO_STRING...) Вычисленные входные данные не поддерживаются, но можно использовать подстановки параметров * ``toString(byPosition(1))``
 * ``toDecimal(byPosition(2), 10, 2)``
 * ``toBoolean(byName(4))``
@@ -405,7 +406,10 @@ ___
 ___
 ### <code>millisecond</code>
 <code><b>millisecond(<i>&lt;value1&gt;</i> : timestamp, [<i>&lt;value2&gt;</i> : string]) => integer</b></code><br/><br/>
-Возвращает значение миллисекунды для даты. Вы можете передать дополнительный часовой пояс в формате GMT, PST, UTC, "Острова Кайман". По умолчанию используется локальный часовой пояс. Сведения о доступных форматах см. в разделе Симпледатеформат Java. https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html * ``millisecond(toTimestamp('2009-07-30 12:58:59.871', 'yyyy-MM-dd HH:mm:ss.SSS')) -> 871`` @ no__t-2 @ no__t-3<br/><br/>
+Возвращает значение миллисекунды для даты. Вы можете передать дополнительный часовой пояс в формате GMT, PST, UTC, "Острова Кайман". По умолчанию используется локальный часовой пояс. Сведения о доступных форматах см. в разделе Симпледатеформат Java. https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html * ``millisecond(toTimestamp('2009-07-30 12:58:59.871', 'yyyy-MM-dd HH:mm:ss.SSS')) -> 871``
+___
+### <code>milliseconds</code>
+<code><b>milliseconds(<i>&lt;value1&gt;</i> : integer) => long</b></code><br/><br/>
 Длительность * ``milliseconds(2) -> 2L``
 ___
 ### <code>minus</code>в миллисекундах 
@@ -417,7 +421,8 @@ ___
 * ``toTimestamp('2019-02-03 05:19:28.871', 'yyyy-MM-dd HH:mm:ss.SSS') + (days(1) + hours(2) - seconds(10)) -> toTimestamp('2019-02-04 07:19:18.871', 'yyyy-MM-dd HH:mm:ss.SSS')``
 * ``toTimestamp('2019-02-03 05:21:34.851', 'yyyy-MM-dd HH:mm:ss.SSS') - toTimestamp('2019-02-03 05:21:36.923', 'yyyy-MM-dd HH:mm:ss.SSS') -> -2072``
 ___
-### <code>minute</code><br/><br/>
+### <code>minute</code>
+<code><b>minute(<i>&lt;value1&gt;</i> : timestamp, [<i>&lt;value2&gt;</i> : string]) => integer</b></code><br/><br/>
 Возвращает значение минуты метки времени. Вы можете передать дополнительный часовой пояс в формате GMT, PST, UTC, "Острова Кайман". По умолчанию используется локальный часовой пояс. Сведения о доступных форматах см. в разделе Симпледатеформат Java. https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html * ``minute(toTimestamp('2009-07-30 12:58:59')) -> 58``
 * ``minute(toTimestamp('2009-07-30 12:58:59'), 'PST') -> 58``
 ___
@@ -436,7 +441,10 @@ ___
 ___
 ### <code>monthsBetween</code>
 <code><b>monthsBetween(<i>&lt;from date/timestamp&gt;</i> : datetime, <i>&lt;to date/timestamp&gt;</i> : datetime, [<i>&lt;roundoff&gt;</i> : boolean], [<i>&lt;time zone&gt;</i> : string]) => double</b></code><br/><br/>
-Возвращает число месяцев между двумя датами. Вычисление можно округлить. Можно передать дополнительный часовой пояс в формате "GMT", "PST", "UTC", "America/Кайман". По умолчанию используется локальный часовой пояс. Сведения о доступных форматах см. в разделе Симпледатеформат Java. https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html * ``monthsBetween(toTimestamp('1997-02-28 10:30:00'), toDate('1996-10-30')) -> 3.94959677`` @ no__t-2 @ no__t-3<br/><br/>
+Возвращает число месяцев между двумя датами. Вычисление можно округлить. Можно передать дополнительный часовой пояс в формате "GMT", "PST", "UTC", "America/Кайман". По умолчанию используется локальный часовой пояс. Сведения о доступных форматах см. в разделе Симпледатеформат Java. https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html * ``monthsBetween(toTimestamp('1997-02-28 10:30:00'), toDate('1996-10-30')) -> 3.94959677``
+___
+### <code>multiply</code>
+<code><b>multiply(<i>&lt;value1&gt;</i> : any, <i>&lt;value2&gt;</i> : any) => any</b></code><br/><br/>
 Умножает пару чисел. То же, что и оператор * * ``multiply(20, 10) -> 200``
 * ``20 * 10 -> 200``
 ___
@@ -558,7 +566,10 @@ ___
 ___
 ### <code>second</code>
 <code><b>second(<i>&lt;value1&gt;</i> : timestamp, [<i>&lt;value2&gt;</i> : string]) => integer</b></code><br/><br/>
-Возвращает второе значение даты. Вы можете передать дополнительный часовой пояс в формате GMT, PST, UTC, "Острова Кайман". По умолчанию используется локальный часовой пояс. Сведения о доступных форматах см. в разделе Симпледатеформат Java. https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html * ``second(toTimestamp('2009-07-30 12:58:59')) -> 59`` @ no__t-2 @ no__t-3<br/><br/>
+Возвращает второе значение даты. Вы можете передать дополнительный часовой пояс в формате GMT, PST, UTC, "Острова Кайман". По умолчанию используется локальный часовой пояс. Сведения о доступных форматах см. в разделе Симпледатеформат Java. https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html * ``second(toTimestamp('2009-07-30 12:58:59')) -> 59``
+___
+### <code>seconds</code>
+<code><b>seconds(<i>&lt;value1&gt;</i> : integer) => long</b></code><br/><br/>
 Длительность (в миллисекундах) * ``seconds(2) -> 2000L``
 ___
 ### <code>sha1</code>в секунду 
@@ -586,7 +597,8 @@ ___
 * ``isNull(slice([10, 20, 30, 40], 2)[20]) -> true``
 * ``slice(['a', 'b', 'c', 'd'], 8) -> []``
 ___
-### <code>sort</code><br/><br/>
+### <code>sort</code>
+<code><b>sort(<i>&lt;value1&gt;</i> : array, <i>&lt;value2&gt;</i> : binaryfunction) => array</b></code><br/><br/>
 Сортирует массив с помощью предоставленной функции предиката. Функция Sort принимает ссылку на два последовательных элемента в функции выражения, как #item1 и #item2 * ``sort([4, 8, 2, 3], compare(#item1, #item2)) -> [2, 3, 4, 8]``
 * ``sort(['a3', 'b2', 'c1'], iif(right(#item1, 1) >= right(#item2, 1), 1, -1)) -> ['c1', 'b2', 'a3']``
 ___
@@ -604,7 +616,8 @@ ___
 * ``isNull(split('bojjus, guchus, dumbo', ', ')[20]) -> true``
 * ``split('bojjusguchusdumbo', ',') -> ['bojjusguchusdumbo']``
 ___
-### <code>sqrt</code><br/><br/>
+### <code>sqrt</code>
+<code><b>sqrt(<i>&lt;value1&gt;</i> : number) => double</b></code><br/><br/>
 Вычисляет квадратный корень из числа * ``sqrt(9) -> 3``
 ___
 ### <code>startsWith</code>

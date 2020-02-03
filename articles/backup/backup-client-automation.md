@@ -14,7 +14,7 @@ ms.locfileid: "76710860"
 
 В этой статье описано, как использовать PowerShell для настройки службы архивации Azure на сервере Windows Server или клиенте Windows, а также для управления резервным копированием и восстановлением данных.
 
-## <a name="install-azure-powershell"></a>Установка Azure PowerShell
+## <a name="install-azure-powershell"></a>Установите Azure PowerShell
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
@@ -111,7 +111,7 @@ MARSAgentInstaller.exe /?
 
 Доступны следующие параметры.
 
-| Вариант | Сведения | По умолчанию |
+| Параметр | Сведения | По умолчанию |
 | --- | --- | --- |
 | /q |Позволяет выполнить тихую установку. |- |
 | /p:"расположение" |Путь к папке установки для агента архивации Azure. |C:\Program Files\Microsoft Azure Recovery Services Agent |
@@ -223,7 +223,7 @@ Server properties updated successfully
 >
 >
 
-## <a name="back-up-files-and-folders"></a>Создание резервных копий файлов и папок
+## <a name="back-up-files-and-folders"></a>Резервное копирование файлов и папок
 
 Для управления всеми резервными копиями с серверов и рабочих станций Windows, которые имеются в службе резервного копирования Azure, применяется соответствующая политика. Политика состоит из трех частей:
 
@@ -411,7 +411,7 @@ PolicyState     : Valid
 $sched = New-OBSchedule -DaysOfWeek Sunday,Monday,Tuesday,Wednesday,Thursday,Friday,Saturday -TimesOfDay 2:00
 ```
 
-### <a name="retention"></a>Хранение
+### <a name="retention"></a>Сохранение
 
 ```powershell
 $rtn = New-OBRetentionPolicy -RetentionDays 32 -RetentionWeeklyPolicy -RetentionWeeks 13 -WeekDaysOfWeek Sunday -WeekTimesOfDay 2:00  -RetentionMonthlyPolicy -RetentionMonths 13 -MonthDaysOfMonth 1 -MonthTimesOfDay 2:00

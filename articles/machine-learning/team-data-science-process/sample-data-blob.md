@@ -53,7 +53,7 @@ ms.locfileid: "76720288"
         #directly ready from file on disk
         dataframe_blobdata = pd.read_csv(LOCALFILE)
 
-3. Уменьшить выборку данных с помощью `random.choice``numpy`:
+3. Уменьшить выборку данных с помощью `numpy``random.choice`:
    
         # A 1 percent sample
         sample_ratio = 0.01 

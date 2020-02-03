@@ -33,7 +33,7 @@ ms.locfileid: "76717818"
 
 Общий обзор работы сред в Машинное обучение Azure см. в статье [что такое среды машинного обучения](concept-environments.md).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 * [Пакет SDK для машинное обучение Azure для Python](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py)
 * [Рабочая область машинное обучение Azure](how-to-manage-workspace.md)

@@ -120,7 +120,7 @@ ms.locfileid: "76717679"
 
 8. Чтобы завершить классификацию и назначить столбцам базы данных новые метаданные (метки) классификации, щелкните элемент **Сохранить** в меню в верхней части окна.
 
-   ![Сохранить](./media/sql-data-discovery-and-classification/10_data_classification_save.png)
+   ![Сохранять](./media/sql-data-discovery-and-classification/10_data_classification_save.png)
 
 ## <a id="subheading-3"></a>Аудит доступа к конфиденциальным данным
 

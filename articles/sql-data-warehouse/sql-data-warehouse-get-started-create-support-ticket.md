@@ -21,7 +21,7 @@ ms.locfileid: "76717839"
 # <a name="how-to-create-a-support-ticket-for-sql-data-warehouse"></a>Создание запроса в службу поддержки для хранилища данных SQL
 Если у вас возникли проблемы с хранилищем данных SQL, создайте запрос в службу поддержки, чтобы Группа поддержки разработчиков могла вам помочь.
 
-## <a name="create-a-support-ticket"></a>Создайте запрос в службу поддержки
+## <a name="create-a-support-ticket"></a>Создание запроса в службу поддержки
 1. Откройте [портал Azure](https://portal.azure.com/).
 2. На начальном экране выберите вкладку **Справка и поддержка**.
    
@@ -31,7 +31,7 @@ ms.locfileid: "76717839"
    Выберите свой [план поддержки Azure](https://azure.microsoft.com/support/plans/?WT.mc_id=Support_Plan_510979/).
    
    * Поддержка по **вопросам, связанным с выставлением счетов, квотами и управлением подпиской**, доступна на всех уровнях.
-   * Поддержка **устранения неисправностей** предоставляется в рамках поддержки [разработчиков](https://azure.microsoft.com/support/plans/developer/), [Standard](https://azure.microsoft.com/support/plans/standard/), [Professional Direct](https://azure.microsoft.com/support/plans/prodirect/)или [Premier](https://azure.microsoft.com/support/plans/premier/) . Проблемы устранения неисправностей — это возникающие при использовании Azure проблемы, относительно которых имеются обоснованные предположения, что их причиной стала корпорация Майкрософт.
+   * Поддержка **устранения неисправностей** предоставляется в рамках поддержки [разработчиков](https://azure.microsoft.com/support/plans/developer/), [Standard](https://azure.microsoft.com/support/plans/standard/), [Professional Direct](https://azure.microsoft.com/support/plans/prodirect/)или [Premier](https://azure.microsoft.com/support/plans/premier/) . Проблемы характера «замена или ремонт» — это возникающие при использовании Azure проблемы, относительно которых имеются обоснованные предположения, что их причиной стала корпорация Майкрософт.
    * Службы обучения и **консультационные услуги** для **разработчиков** доступны на уровнях поддержки [Professional Direct](https://azure.microsoft.com/support/plans/prodirect/) и [Premier](https://azure.microsoft.com/support/plans/premier/) . 
      
      Если у вас есть план поддержки Premier, вы также можете сообщить о проблемах, связанных с хранилищем данных SQL, на [портале Microsoft Premier Online](https://premier.microsoft.com/). Дополнительные сведения о различных планах поддержки, включая область, время отклика, цены и т. д., см. в статье [планы поддержки Azure](https://azure.microsoft.com/support/plans/?WT.mc_id=Support_Plan_510979/) .  Часто задаваемые вопросы о поддержке Azure см. в статье [часто задаваемые](https://azure.microsoft.com/support/faq/)вопросы о поддержке Azure.  

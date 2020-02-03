@@ -31,11 +31,11 @@ ms.locfileid: "76714452"
 ## <a name="scale-a-cache"></a>Масштабирование кэша
 Для масштабирования кэша [перейдите к нему](cache-configure.md#configure-azure-cache-for-redis-settings) на [портале Azure](https://portal.azure.com) и в **меню ресурсов** выберите **Масштаб**.
 
-![Масштаб](./media/cache-how-to-scale/redis-cache-scale-menu.png)
+![Масштабирование](./media/cache-how-to-scale/redis-cache-scale-menu.png)
 
 Выберите нужную ценовую категорию в колонке **Выберите ценовую категорию** и нажмите кнопку **Выбрать**.
 
-![Уровень цен][redis-cache-pricing-tier-blade]
+![Ценовая категория][redis-cache-pricing-tier-blade]
 
 
 Вы можете выполнить масштабирование до другой ценовой категории со следующими ограничениями.

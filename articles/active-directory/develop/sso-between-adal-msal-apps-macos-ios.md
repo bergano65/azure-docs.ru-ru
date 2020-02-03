@@ -52,8 +52,8 @@ MSAL и ADAL используют разные идентификаторы уч
 | Идентификатор учетной записи                | MSAL                                                         | ADAL 2.7. x      | Старая версия ADAL (до ADAL 2.7. x) |
 | --------------------------------- | ------------------------------------------------------------ | --------------- | ------------------------------ |
 | отображаемый Идентификатор            | `username`                                                   | `userId`        | `userId`                       |
-| уникальный неотображаемый идентификатор | `identifier`                                                 | `homeAccountId` | Н/Д                            |
-| Идентификатор учетной записи не известен               | Запрос всех учетных записей с помощью `allAccounts:` API в `MSALPublicClientApplication` | Н/Д             | Н/Д                            |
+| уникальный неотображаемый идентификатор | `identifier`                                                 | `homeAccountId` | Недоступно                            |
+| Идентификатор учетной записи не известен               | Запрос всех учетных записей с помощью `allAccounts:` API в `MSALPublicClientApplication` | Недоступно             | Недоступно                            |
 
 Это `MSALAccount` интерфейс, предоставляющий эти идентификаторы:
 
@@ -207,7 +207,7 @@ Returns account for for the given username (received from an account object retu
                               error:(NSError * __autoreleasing *)error;
 ```
 
-Пример.
+Пример:
 
 Objective-C.
 

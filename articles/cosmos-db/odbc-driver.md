@@ -239,7 +239,7 @@ Invalid use of schema or catalog for OLE DB provider "MSDASQL" for linked server
 
 1. Теперь с помощью Power BI можно создавать визуальные элементы. Для этого щелкните вкладку "Отчет" ![вкладка "Отчет" в Power BI Desktop](./media/odbc-driver/odbc-driver-report-tab.png), выберите **Новый визуальный объект** и настройте элемент. Дополнительные сведения о создании визуализаций в Power BI Desktop см. в статье [Типы визуализаций в Power BI](https://powerbi.microsoft.com/documentation/powerbi-service-visualization-types-for-reports-and-q-and-a/).
 
-## <a name="troubleshooting"></a>Устранение неисправностей
+## <a name="troubleshooting"></a>Устранение неполадок
 
 Если появляется следующая ошибка, убедитесь, что значения параметров **Узел** и **Ключ доступа**, скопированные на портале Azure на [шаге 2](#connect), правильные, и повторите попытку. Чтобы скопировать значения без ошибок, нажмите кнопки копирования справа от значений параметров **Узел** и **Ключ доступа** на портале Azure.
 

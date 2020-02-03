@@ -1453,7 +1453,7 @@ BoostedTreeClassificationFileLoc = modelDir + "GradientBoostingTreeClassificatio
 
 BoostedTreeRegressionFileLoc = modelDir + "GradientBoostingTreeRegression_2016-05-0316_52_18.827237"
 
-## <a name="whats-next"></a>Что дальше?
+## <a name="whats-next"></a>Дальнейшие действия
 После создания моделей регрессии и классификации с помощью Spark MlLib необходимо ознакомиться с процессом оценки и анализа этих моделей.
 
 **Использование модели**. Дополнительные сведения об оценке и анализе моделей классификации и регрессии, созданных в этой статье см. в статье [Оценка моделей машинного обучения, созданных с помощью Spark](spark-model-consumption.md).

@@ -17,7 +17,7 @@ ms.locfileid: "76722566"
 
 Показаны следующие функции:
 
-|Manifest|Возможности|
+|Manifest|Компоненты|
 |---|---|
 |[Манифест приложения](#application-manifest)| [Переопределение переменных среды](service-fabric-get-started-containers.md#configure-and-set-environment-variables), [настройка сопоставления порта контейнера с узлом](service-fabric-get-started-containers.md#configure-container-port-to-host-port-mapping-and-container-to-container-discovery), [настройка проверки подлинности в реестре контейнеров](service-fabric-get-started-containers.md#configure-container-repository-authentication), [управление ресурсами](service-fabric-resource-governance.md), [установка режима изоляции](service-fabric-get-started-containers.md#configure-isolation-mode), [указание образов контейнеров конкретной сборки ОС](service-fabric-get-started-containers.md#specify-os-build-specific-container-images)| 
 |[Манифест службы FrontEndService](#frontendservice-service-manifest)| [Настройка переменных среды](service-fabric-get-started-containers.md#configure-and-set-environment-variables), [настройка конечной точки](service-fabric-get-started-containers.md#configure-communication), передача команд в контейнер, [импорт сертификата в контейнер](service-fabric-securing-containers.md)| 

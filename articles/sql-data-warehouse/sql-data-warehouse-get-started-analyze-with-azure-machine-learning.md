@@ -34,7 +34,7 @@ ms.locfileid: "76721291"
 > 
 > 
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 Для пошагового изучения этого учебника потребуется следующее:
 
 * Хранилище данных SQL, в которое предварительно загружены демонстрационные данные AdventureWorksDW. Чтобы сделать это, ознакомьтесь со статьей [Создание хранилища данных SQL Azure](create-data-warehouse-portal.md) и выберите загрузку демонстрационных данных. Если хранилище данных уже существует, но не содержит демонстрационные данные, вы можете [загрузить их вручную](sql-data-warehouse-load-sample-databases.md).
@@ -83,7 +83,7 @@ FROM [dbo].[vTargetMail]
 1. Перетащите модуль **Выбор столбцов в наборе** данных в разделе **Преобразование данных < манипуляции** с холстом. Подключите этот модуль к модулю **Импорт данных** .
 2. В области "Свойства" щелкните **Launch column selector** (Запустить средство выбора столбцов), чтобы указать столбцы, которые вы хотите удалить.
 
-   ![Столбцы проекта](media/sql-data-warehouse-get-started-analyze-with-azure-machine-learning/img4-projectcolumns-new.png)
+   ![Прогнозирование столбцов](media/sql-data-warehouse-get-started-analyze-with-azure-machine-learning/img4-projectcolumns-new.png)
 3. Исключите два столбца: CustomerAlternateKey и GeographyKey.
 
    ![Удаление ненужных столбцов](media/sql-data-warehouse-get-started-analyze-with-azure-machine-learning/img5-columnselector-new.png)

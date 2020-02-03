@@ -58,7 +58,7 @@ ms.locfileid: "76718016"
 ## <a name="update-notifications"></a>Уведомления об обновлениях
 Подпишитесь на [обновления служб лаборатории](https://azure.microsoft.com/updates/?product=lab-services) , чтобы следить за новыми функциями служб лаборатории.
 
-## <a name="general"></a>Общие
+## <a name="general"></a>Общие сведения
 ### <a name="what-if-my-question-isnt-answered-here"></a>Мне не удалось найти ответ на свой вопрос. Что делать?
 Если ваш вопрос не указан здесь, сообщите нам о том, что мы можем помочь вам найти ответ.
 

@@ -32,7 +32,7 @@ ms.locfileid: "76718554"
 Чтобы изменить записную книжку Jupyter для Spark 1.6 для использования в кластере HDInsight Spark 2.0, замените файл кода Python [этим файлом](https://github.com/Azure/Azure-MachineLearning-DataScience/blob/master/Misc/Spark/Python/Spark2.0_ConsumeRFCV_NYCReg.py). Этот код показывает, как использовать модели, созданные в Spark 2.0.
 
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 1. Для работы с этим пошаговым руководством требуется учетная запись Azure и кластер Spark 1.6 или Spark 2.0 HDInsight. См. статью [Общие сведения об обработке и анализе данных с помощью платформы Spark в Azure HDInsight](spark-overview.md) для получения инструкций по выполнению этих требований. В этой статье также содержится описание используемых здесь данных о поездках в такси по Нью-Йорку за 2013 г., и инструкции по выполнению кода из записной книжки Jupyter в кластере Spark. 
 2. Создайте модели машинного обучения, которые будут оцениваться здесь, выполнив анализ [данных и моделирование с помощью Spark](spark-data-exploration-modeling.md) для кластера Spark 1,6 или записных книжек Spark 2,0. 
@@ -586,6 +586,6 @@ BoostedTreeRegressionFileLoc: GradientBoostingTreeRegression_2016-05-0317_23_56.
 
 ![Конструктор Logic Apps](./media/spark-model-consumption/spark-logica-app-client.png)
 
-## <a name="whats-next"></a>Что дальше?
+## <a name="whats-next"></a>Дальнейшие действия
 **Перекрестная проверка и перебор гиперпараметров**. Сведения об обучении моделей с помощью перекрестной проверки и перебора гиперпараметров см. в статье [Расширенное исследование и моделирование данных с помощью Spark](spark-advanced-data-exploration-modeling.md).
 

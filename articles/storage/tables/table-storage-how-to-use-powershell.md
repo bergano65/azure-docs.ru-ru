@@ -46,7 +46,7 @@ ms.locfileid: "76721478"
 Install-Module AzTable
 ```
 
-## <a name="sign-in-to-azure"></a>Войдите в Azure
+## <a name="sign-in-to-azure"></a>Вход в Azure
 
 Войдите в подписку Azure с помощью команды `Add-AzAccount` и следуйте инструкциям на экране.
 

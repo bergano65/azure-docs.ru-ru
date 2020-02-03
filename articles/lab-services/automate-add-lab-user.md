@@ -132,7 +132,7 @@ $userObjectId = (Get-AzureRmADUser -UserPrincipalName ‘email@company.com').Id
 
 Можно также использовать командлеты PowerShell Azure Active Directory, включающие [Get-MsolUser](/powershell/module/msonline/get-msoluser?view=azureadps-1.0), [Get-MsolGroup](/powershell/module/msonline/get-msolgroup?view=azureadps-1.0)и [Get-MsolServicePrincipal](/powershell/module/msonline/get-msolserviceprincipal?view=azureadps-1.0).
 
-### <a name="scope"></a>Область действия
+### <a name="scope"></a>Область
 Область указывает ресурс или группу ресурсов, к которым должно применяться назначение ролей. Для ресурсов область имеет вид: `/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/{provider-namespace}/{resource-type}/{resource-name}`. В шаблоне используется функция `subscription().subscriptionId` для заполнения `subscription-id` части и функции `resourceGroup().name` шаблона для заполнения части `resource-group-name`. Использование этих функций означает, что лаборатория, которой назначается роль, должна существовать в текущей подписке и той же группе ресурсов, в которую выполняется развертывание шаблона. Последняя часть, `resource-name`, — это имя лаборатории. Это значение получается через параметр шаблона в этом примере. 
 
 Область роли в шаблоне: 
