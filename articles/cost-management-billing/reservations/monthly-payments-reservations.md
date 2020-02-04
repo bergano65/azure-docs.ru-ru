@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 11/01/2019
 ms.author: banders
 ms.openlocfilehash: cf9bb7f3b9661d5957ad569fce7112fe16659761
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
-ms.translationtype: MT
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
+ms.lasthandoff: 01/31/2020
 ms.locfileid: "75995953"
 ---
 # <a name="purchase-reservations-with-monthly-payments"></a>Приобретение резервирований с ежемесячными платежами
@@ -24,7 +24,7 @@ ms.locfileid: "75995953"
 Ежемесячные платежи возможны для таких ресурсов:
 
 - Виртуальные машины
-- Служба хранилища Azure
+- Хранилище Azure
 - База данных SQL
 - Хранилище данных SQL
 - Cosmos DB

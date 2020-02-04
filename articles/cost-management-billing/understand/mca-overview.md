@@ -1,5 +1,5 @@
 ---
-title: Начало работы с выставлением счетов за соглашение клиента Майкрософт — Azure
+title: Начало работы с выставлением счетов в рамках Клиентского соглашения Майкрософт в Azure
 description: Общие сведения об учетной записи выставления счетов по клиентскому соглашению Майкрософт
 author: bandersmsft
 manager: amberbhargava
@@ -11,10 +11,10 @@ ms.workload: na
 ms.date: 09/10/2019
 ms.author: banders
 ms.openlocfilehash: 7d26c98ae8e5b9b95038a4a775134282703fa7c6
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
-ms.translationtype: MT
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
+ms.lasthandoff: 01/31/2020
 ms.locfileid: "75995121"
 ---
 # <a name="get-started-with-your-microsoft-customer-agreement-billing-account"></a>Начало работы с учетной записью выставления счетов клиентского соглашения Майкрософт
@@ -81,7 +81,7 @@ ms.locfileid: "75995121"
 ## <a name="check-access-to-a-microsoft-customer-agreement"></a>Проверка доступа к Клиентскому соглашению Майкрософт
 [!INCLUDE [billing-check-mca](../../../includes/billing-check-mca.md)]
 
-## <a name="need-help-contact-support"></a>Нужна помощь? Обратитесь в службу поддержки.
+## <a name="need-help-contact-support"></a>Требуется помощь? Обратитесь в службу поддержки.
 
 Если вам нужна помощь, [обратитесь в службу поддержки](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade), которая поможет быстро устранить проблему.
 

@@ -13,10 +13,10 @@ ms.date: 03/01/2018
 ms.author: banders
 ROBOTS: NOINDEX
 ms.openlocfilehash: 111b95ddcff3667fa3f1e7df694af1d38887710f
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
-ms.translationtype: MT
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
+ms.lasthandoff: 01/31/2020
 ms.locfileid: "75990025"
 ---
 # <a name="why-is-my-azure-for-students-subscription-disabled-and-how-do-i-reactivate-it"></a>Почему подписка "Azure для учащихся" отключена и как активировать ее повторно?
@@ -40,9 +40,9 @@ ms.locfileid: "75990025"
 
 Таблица содержит следующие столбцы:
 
-* **Имя службы:** служба, которая использует средства со счета Azure.
-* **Ресурс службы:** единицы измерения, используемые службой.
-* **Потрачено:** объем кредита (долл. США), затраченный на службу.
+* **Service Name** (Имя службы): служба, которая использует средства со счета Azure.
+* **Service Resource** (Ресурс службы): единицы измерения, используемые службой.
+* **Spend** (Расходы): объем кредита (долл. США), затраченный на службу.
 
 ## <a name="your-credit-has-expired"></a>Истек срок действия кредита
 
@@ -52,6 +52,6 @@ ms.locfileid: "75990025"
 
 Если вы случайно отменили подписку "Azure для учащихся", ее можно повторно активировать, обратившись в службу [поддержки Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade). После повторной активации у вас останется доступ к оставшимся средствам на счете и бесплатным службам на протяжении 12 месяцев с даты регистрации.
 
-## <a name="need-help-contact-us"></a>Нужна помощь? Связаться с нами.
+## <a name="need-help-contact-us"></a>Требуется помощь? Свяжитесь с нами.
 
 Если у вас есть вопросы или вам нужна помощь, [создайте запрос в службу поддержки](https://go.microsoft.com/fwlink/?linkid=2083458).

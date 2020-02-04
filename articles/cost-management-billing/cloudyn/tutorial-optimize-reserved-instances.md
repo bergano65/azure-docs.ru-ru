@@ -1,7 +1,6 @@
 ---
 title: Руководство по оптимизации затрат на зарезервированный экземпляр с помощью Cloudyn в Azure
 description: В этом руководстве вы узнаете, как оптимизировать затраты на использование зарезервированных экземпляров Azure и Amazon Web Services (AWS).
-services: cost-management
 keywords: ''
 author: bandersmsft
 ms.author: banders
@@ -9,13 +8,13 @@ ms.date: 05/20/2019
 ms.topic: tutorial
 ms.service: cost-management-billing
 ms.custom: seodec18
-manager: benshy
-ms.openlocfilehash: c1afad7cb36916777b2f6cefa40b9bd1ddc465a2
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.reviewer: benshy
+ms.openlocfilehash: 9b0dbc31f3789cb0033a531ad6c5395d3cfb8bcc
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75983759"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76769945"
 ---
 <!-- Intent: As a cloud-consuming administrator, I need to ensure that my reserved instances are optimized for cost and usage
 -->
@@ -38,7 +37,7 @@ ms.locfileid: "75983759"
 
 Если у вас еще нет подписки Azure, то прежде чем начинать работу, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 - Необходимо иметь учетную запись Azure.
 - У вас должна быть пробная регистрация либо платная подписка на службу Cloudyn.
@@ -71,7 +70,7 @@ ms.locfileid: "75983759"
 
 ## <a name="benefits-of-ris"></a>Преимущества зарезервированных экземпляров
 
-Каждая покупка зарезервированного экземпляра применяется к виртуальной машине определенного размера и местоположения. Например, D2s\_v3 в расположении "Запад США", как показано на следующем рисунке:
+Каждая покупка зарезервированного экземпляра применяется к виртуальной машине определенного размера и местоположения. Например, D2s\_v3 в расположении "западная часть США", как показано на следующем рисунке:
 
 ![Сведения о зарезервированном экземпляре Azure](./media/tutorial-optimize-reserved-instances/azure02.png)
 

@@ -12,10 +12,10 @@ ms.workload: na
 ms.date: 11/22/2019
 ms.author: banders
 ms.openlocfilehash: 3cbc4ab4f0e2ad18c7d1d430ed5501e23b5f5f4d
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
+ms.lasthandoff: 01/31/2020
 ms.locfileid: "75983729"
 ---
 # <a name="tutorial-review-your-microsoft-customer-agreement-invoice"></a>Руководство. Просмотр счета в рамках Клиентского соглашения Майкрософт
@@ -37,7 +37,7 @@ ms.locfileid: "75983729"
 
 Необходимо иметь доступ к Клиентскому соглашению Майкрософт. Вы должны иметь роль Владельца профиля выставления счетов, Участника, Читателя или Менеджера счетов, чтобы смотреть сведения о выставлении счетов и использовании. Дополнительные сведения о ролях выставления счетов для Клиентского соглашения Майкрософт см. в разделе [Billing profile roles and tasks](../manage/understand-mca-roles.md#billing-profile-roles-and-tasks) (Роли и задачи профиля выставления счетов).
 
-Срок службы должен составлять более 30 дней с момента подписки на Azure. Azure выставляет счет в конце периода выставления счетов.
+Срок службы должен составлять более 30 дней с момента подписки на Azure. Azure выставляет счет только в конце периода выставления счетов.
 
 ## <a name="sign-in-to-azure"></a>Вход в Azure
 

@@ -16,10 +16,10 @@ ms.topic: conceptual
 ms.date: 06/15/2018
 ms.author: banders
 ms.openlocfilehash: 034df0de027a50c61e5a7cab3d1e829446002c86
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
-ms.translationtype: MT
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
+ms.lasthandoff: 01/31/2020
 ms.locfileid: "75993600"
 ---
 # <a name="sign-up-for-an-office-365-subscription-with-your-azure-account"></a>Регистрация для подписки Office 365 с помощью учетной записи Azure
@@ -70,6 +70,6 @@ ms.locfileid: "75993600"
 
     ![Снимок экрана, на котором показана роль каталога "Администратор выставления счетов" на портале Azure](./media/azure-account-for-office-365-subscription/billing-directoryrole-limited.png)
 
-## <a name="need-help-contact-us"></a>Нужна помощь? Связаться с нами.
+## <a name="need-help-contact-us"></a>Требуется помощь? Свяжитесь с нами.
 
 Если у вас есть вопросы или вам нужна помощь, [создайте запрос в службу поддержки](https://go.microsoft.com/fwlink/?linkid=2083458).

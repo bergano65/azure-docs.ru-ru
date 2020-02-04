@@ -1,21 +1,20 @@
 ---
 title: Регистрация соглашения Enterprise Azure в Cloudyn | Документы Майкрософт
 description: В этом кратком руководстве описывается процесс регистрации, который необходимо пройти для создания пробной подписки Cloudyn и входа на портал Cloudyn.
-services: cost-management
 keywords: ''
 author: bandersmsft
 ms.author: banders
-ms.date: 05/20/2019
+ms.date: 01/24/2020
 ms.topic: quickstart
 ms.custom: seodec18
 ms.service: cost-management-billing
-manager: benshy
-ms.openlocfilehash: 1a8754f0b35fd5ec662feecf8777efd8593fa659
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.reviewer: benshy
+ms.openlocfilehash: dcb4a04ced1d36a6d0717b9a65150faacc702cc5
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75982942"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76769972"
 ---
 # <a name="register-an-azure-enterprise-agreement-and-view-cost-data"></a>Регистрация соглашения Azure Enterprise и просмотр данных о затратах
 

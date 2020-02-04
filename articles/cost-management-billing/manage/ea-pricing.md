@@ -13,10 +13,10 @@ ms.date: 09/30/2019
 ms.author: banders
 ms.custom: seodec18
 ms.openlocfilehash: 14346ceda9574d18050108e585d5ff4cdb133e31
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
-ms.translationtype: MT
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
+ms.lasthandoff: 01/31/2020
 ms.locfileid: "75992027"
 ---
 # <a name="view-and-download-your-organizations-azure-pricing"></a>Просмотр и скачивание сведений о ценах для вашей организации
@@ -36,7 +36,7 @@ ms.locfileid: "75992027"
 
    ![Снимок экрана с пунктом "Использование+расходы" в разделе "Выставление счетов"](./media/ea-pricing/ea-pricing-usage-charges-nav.png)
 
-1. Выберите ![снимок экрана, на котором отображается портал Azure Поиск](./media/ea-pricing/download-icon.png) **скачивания** в месяц.
+1. Выберите ![Снимок экрана с поиском на портале Azure](./media/ea-pricing/download-icon.png) **Скачать** возле месяца.
 
 1. В разделе **Прейскурант** выберите **Скачать CSV-файл**.
 

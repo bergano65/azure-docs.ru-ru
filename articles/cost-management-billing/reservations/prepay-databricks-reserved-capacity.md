@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 10/01/2019
 ms.author: banders
 ms.openlocfilehash: bb3aa7970f993ec5e0ceb50d10cc0907ed225c2f
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
-ms.translationtype: MT
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
+ms.lasthandoff: 01/31/2020
 ms.locfileid: "75995875"
 ---
 # <a name="optimize-azure-databricks-costs-with-a-pre-purchase"></a>Оптимизация затрат на Azure Databricks с помощью предварительного приобретения
@@ -41,8 +41,8 @@ ms.locfileid: "75995875"
 
 Планы Databricks можно приобрести на [портале Azure](https://portal.azure.com/#blade/Microsoft_Azure_Reservations/CreateBlade/referrer/documentation/filters/%7B%22reservedResourceType%22%3A%22Databricks%22%7D). Чтобы приобрести резервную мощность, необходимо иметь роль "Владелец" по крайней мере для одной подписки Enterprise.
 
-- Необходимо быть в роли владельца по крайней мере для одного Соглашение Enterprise (номера предложения: MS-AZR-0017P или MS-AZR-0148P) или соглашения с клиентами Майкрософт или отдельной подписки с оплатой по мере использования (номера предложений: MS-AZR-0003P или MS-AZR-0023P).
-- Для подписок EA параметр Добавить зарезервированные экземпляры должен быть включен на портале EA. Если этот параметр отключен, необходимо быть администратором EA для подписки.
+- Необходимо иметь роль "Владелец" по крайней мере для одного Соглашения Enterprise (номера предложений: MS-AZR-0017P или MS-AZR-0148P) или Клиентского соглашения Майкрософт либо отдельную подписку с оплатой по мере использования (номера предложений: MS-AZR-0003P или MS-AZR 0023P).
+- Для подписок с Соглашением Enterprise параметр "Добавить зарезервированные экземпляры" следует включить на портале EA. Если этот параметр отключен, необходимо быть администратором подписки EA.
 - Для подписок с соглашением Enterprise параметр **Добавить зарезервированные экземпляры** следует включить на [портале EA](https://ea.azure.com/). Или, если этот параметр отключен, необходимо быть администратором подписки EA.
 
 **Для покупки:**
@@ -71,7 +71,7 @@ ms.locfileid: "75995875"
 
 Отмена и обмен не поддерживаются для планов предварительной покупки Databricks. Все покупки являются окончательными.
 
-## <a name="need-help-contact-us"></a>Нужна помощь? Связаться с нами.
+## <a name="need-help-contact-us"></a>Требуется помощь? Свяжитесь с нами.
 
 Если у вас есть вопросы или вам нужна помощь, [создайте запрос в службу поддержки](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest).
 

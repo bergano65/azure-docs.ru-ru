@@ -16,10 +16,10 @@ ms.topic: conceptual
 ms.date: 06/15/2018
 ms.author: banders
 ms.openlocfilehash: 553cc7fd27571ebc925e33f824060c023664a369
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
-ms.translationtype: MT
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
+ms.lasthandoff: 01/31/2020
 ms.locfileid: "75991780"
 ---
 # <a name="export-and-view-your-top-level-subscription-information"></a>Экспорт и просмотр данных верхнего уровня из подписки
@@ -28,9 +28,9 @@ ms.locfileid: "75991780"
 [!INCLUDE [gdpr-dsr-and-stp-note](../../../includes/gdpr-dsr-and-stp-note.md)]
 
 Загруженный JSON-файл содержит следующие сведения:
-- адрес электронной почты, связанный с учетной записью (параметр Email);
-- глобальный уникальный идентификатор, связанный с учетной записью выставления счетов (параметр Puid);
-- список подписок в учетной записи, перечисленных за идентификаторами (параметр SubscriptionIds).
+- Адрес электронной почты: адрес электронной почты, связанный с учетной записью.
+- Puid: глобальный уникальный идентификатор, связанный с учетной записью выставления счетов;
+- SubscriptionIds: список подписок в учетной записи, перечисленных за идентификаторами.
 
 ### <a name="subscriptionsjson-sample"></a>Пример файла subscriptions.json
 

@@ -12,10 +12,10 @@ ms.topic: conceptual
 ms.date: 07/22/2019
 ms.author: banders
 ms.openlocfilehash: 6ae55e0075883de08af516b71089f00353975b34
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
-ms.translationtype: MT
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
+ms.lasthandoff: 01/31/2020
 ms.locfileid: "75992846"
 ---
 # <a name="add-update-or-remove-a-credit-card-for-azure"></a>Добавление, обновление или удаление кредитной карты для Azure
@@ -130,7 +130,7 @@ ms.locfileid: "75992846"
 
 1. Выберите существующую карту или добавьте новую.
 
-## <a name="troubleshooting"></a>Устранение неисправностей
+## <a name="troubleshooting"></a>Устранение неполадок
 Мы не поддерживаем виртуальные или предоплатные карты. Если при добавлении или изменении данных действительной кредитной карты возникают ошибки, запустите браузер в конфиденциальном режиме.
 
 ## <a name="frequently-asked-questions"></a>Часто задаваемые вопросы
@@ -163,7 +163,7 @@ ms.locfileid: "75992846"
 ## <a name="check-access-to-a-microsoft-customer-agreement"></a>Проверка доступа к Клиентскому соглашению Майкрософт
 [!INCLUDE [billing-check-mca](../../../includes/billing-check-mca.md)]
 
-## <a name="need-help-contact-us"></a>Нужна помощь? Связаться с нами.
+## <a name="need-help-contact-us"></a>Требуется помощь? Свяжитесь с нами.
 
 Если у вас есть вопросы или вам нужна помощь, [создайте запрос в службу поддержки](https://go.microsoft.com/fwlink/?linkid=2083458).
 

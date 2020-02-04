@@ -1,5 +1,5 @@
 ---
-title: Задачи EA в соглашении клиента Майкрософт — Azure
+title: Выполнение задач по Соглашению Enterprise в рамках Клиентского соглашения Майкрософт (Azure)
 description: Из этой статьи вы узнаете, как выполнять задачи для Соглашения Enterprise в новой учетной записи выставления счетов.
 author: amberbhargava
 manager: amberb
@@ -13,10 +13,10 @@ ms.workload: na
 ms.date: 01/02/2020
 ms.author: banders
 ms.openlocfilehash: 0cdf95b8d91938d6b9b4de413bc5d5dcb8caa2f4
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
-ms.translationtype: MT
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
+ms.lasthandoff: 01/31/2020
 ms.locfileid: "75991247"
 ---
 # <a name="complete-enterprise-agreement-tasks-in-your-billing-account-for-a-microsoft-customer-agreement"></a>Выполнение задач для Соглашения Enterprise в учетной записи выставления счетов для Клиентского соглашения Майкрософт
@@ -88,7 +88,7 @@ ms.locfileid: "75991247"
 
 Создайте раздел счетов, чтобы распределить расходы по конкретным потребностям, аналогично отделам в соглашении о регистрации для Соглашения Enterprise. Вы можете создать новый раздел счетов на портале Azure. Подробнее о создании разделов счетов для упорядочения затрат см. [здесь](mca-section-invoice.md).
 
-### <a name="create-a-new-account"></a>Создание новой учетной записи
+### <a name="create-a-new-account"></a>Создание учетной записи
 
 Присвойте пользователям роли создателей подписки Azure в разделах счета, чтобы предоставить им разрешение на создание подписки Azure, что аналогично учетным записям в соглашении о регистрации для Соглашения Enterprise. Подробные сведения о назначении ролей см. в разделе [Управление ролями выставления счетов на портале Azure](understand-mca-roles.md#manage-billing-roles-in-the-azure-portal).
 
@@ -132,7 +132,7 @@ ms.locfileid: "75991247"
 
 **Владелец подписки Azure** — вам назначается роль владельца подписки Azure для раздела счетов, который создан для вашего отдела из Соглашения Enterprise. Если ваша учетная запись не принадлежит конкретному отделу, вы получаете роль создателя подписок Azure в разделе счетов с названием Default invoice section (Раздел счетов по умолчанию). Эта роль позволяет создавать подписки Azure для раздела счетов.
 
-### <a name="create-an-azure-subscription"></a>Создание подписки Azure
+### <a name="create-an-azure-subscription"></a>Создание подписки Azure.
 
 Вы можете создать новую подписку Azure для раздела счетов на портале Azure. Подробные сведения см. в статье [Create an additional Azure subscription for Microsoft Customer Agreement](create-subscription.md) (Создание дополнительной подписки для клиентского соглашения Майкрософт)
 
@@ -144,7 +144,7 @@ ms.locfileid: "75991247"
 
 Вы можете просмотреть расходы для подписки либо на [странице подписок](https://portal.azure.com/#blade/Microsoft_Azure_Billing/SubscriptionsBlade), либо в анализе затрат в Azure. Дополнительные сведения об анализе затрат в Azure приведены в статье [Краткое руководство. Изучение и анализ затрат с помощью функции анализа затрат](../costs/quick-acm-cost-analysis.md).
 
-## <a name="need-help-contact-support"></a>Нужна помощь? Обращение в службу поддержки
+## <a name="need-help-contact-support"></a>Требуется помощь? Обращение в службу поддержки
 
 Если вам нужна помощь, [обратитесь в службу поддержки](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade), которая поможет быстро устранить проблему.
 

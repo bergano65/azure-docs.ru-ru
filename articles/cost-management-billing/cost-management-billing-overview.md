@@ -4,17 +4,16 @@ description: Функции "Управления затратами" и "Выс
 keywords: ''
 author: bandersmsft
 ms.author: banders
-ms.date: 11/20/2019
+ms.date: 01/24/2020
 ms.topic: overview
 ms.service: cost-management-billing
-manager: dougeby
 ms.custom: ''
-ms.openlocfilehash: cadff1d83a8b47a540efe9b74ffaf6de171138b3
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.openlocfilehash: 1c6f03663a7487e814272c6296f6e7862c65c806
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75982792"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76769887"
 ---
 # <a name="what-is-azure-cost-management-and-billing"></a>Что собой представляет "Управление затратами и выставление счетов Azure"?
 
@@ -44,7 +43,7 @@ ms.locfileid: "75982792"
 |Область  |Определение  |
 |---------|---------|
 |учетная запись выставления счетов;     | Представляет одного владельца (администратора учетной записи) для одной или нескольких подписок Azure. Администратор учетной записи имеет право выполнять различные задачи выставления счетов, такие как создание подписок, просмотр счетов или изменение счетов для подписок.  |
-|Subscription     |  Представляет группирование ресурсов Azure. Счет создается в области резервирования подписки. Она имеет собственные методы оплаты, которые используются для оплаты счета.|
+|Подписка     |  Представляет группирование ресурсов Azure. Счет создается в области резервирования подписки. Она имеет собственные методы оплаты, которые используются для оплаты счета.|
 
 
 #### <a name="enterprise-agreement"></a>Соглашение Enterprise

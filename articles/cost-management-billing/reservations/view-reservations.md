@@ -13,10 +13,10 @@ ms.workload: na
 ms.date: 10/01/2019
 ms.author: banders
 ms.openlocfilehash: 26d130023a4ed7b4131af3963ae7afdb33e79bd7
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
-ms.translationtype: MT
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
+ms.lasthandoff: 01/31/2020
 ms.locfileid: "75995186"
 ---
 # <a name="view-azure-reservations-in-the-azure-portal"></a>Просмотр резервирований Azure на портале Azure
@@ -85,6 +85,6 @@ ms.locfileid: "75995186"
 - [Общие сведения об использовании зарезервированных экземпляров Azure с Соглашением о регистрации Enterprise](understand-reserved-instance-usage-ea.md)
 - [Продажа Microsoft Azure Reserved VM Instances](https://docs.microsoft.com/partner-center/azure-reservations)
 
-## <a name="need-help-contact-us"></a>Нужна помощь? Связаться с нами
+## <a name="need-help-contact-us"></a>Требуется помощь? Свяжитесь с нами
 
 Если у вас есть вопросы или вам нужна помощь, [создайте запрос в службу поддержки](https://go.microsoft.com/fwlink/?linkid=2083458).

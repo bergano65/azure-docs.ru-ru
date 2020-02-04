@@ -1,21 +1,20 @@
 ---
 title: Подключение учетной записи Amazon Web Services к службе "Cloudyn в Azure" | Документы Майкрософт
 description: Подключение учетной записи Amazon Web Services для просмотра затрат и использования данных в отчетах Cloudyn.
-services: cost-management
 keywords: ''
 author: bandersmsft
 ms.author: banders
-ms.date: 05/21/2019
+ms.date: 01/24/2020
 ms.topic: conceptual
 ms.service: cost-management-billing
-manager: benshy
+ms.reviewer: benshy
 ms.custom: seodec18
-ms.openlocfilehash: b64d54df43b27abb51210995f2426e23690fa2d3
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
-ms.translationtype: MT
+ms.openlocfilehash: dcb4c30fe485559834791fa567856bc78cff067e
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75994887"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76770332"
 ---
 # <a name="connect-an-amazon-web-services-account"></a>Подключение учетной записи Amazon Web Services
 
@@ -45,11 +44,11 @@ ms.locfileid: "75994887"
 1. Войдите в консоль AWS по ссылке https://console.aws.amazon.com/iam/home и выберите **Roles** (Роли).
 2. Щелкните **Create Role** (Создать роль) и выберите **Another AWS account** (Другая учетная запись AWS).
 3. В поле **Account ID** (Идентификатор учетной записи) вставьте `432263259397`. Этот идентификатор учетной записи является учетной записью сборщика данных Cloudyn, назначенной AWS службе Cloudyn. Используйте показанный идентификатор учетной записи.
-4. Рядом с пунктом **Options** (Параметры) выберите **Require external ID** (Требовать внешний идентификатор). Вставьте уникальное значение, которое было скопировано ранее из поля **External ID** (Внешний идентификатор), в Cloudyn. Затем щелкните **Next: Permissions** (Далее: разрешения).  
+4. Рядом с пунктом **Options** (Параметры) выберите **Require external ID** (Требовать внешний идентификатор). Вставьте уникальное значение, которое было скопировано ранее из поля **External ID** (Внешний идентификатор), в Cloudyn. Выберите **Next: разрешения**.  
     ![Вставьте внешний идентификатор из Cloudyn на странице создания роли](./media/connect-aws-account/create-role01.png)
 5. В разделе **Attach permissions policies** (Подключение политик разрешений) в поле поиска фильтра **Policy type** (Тип политики) введите `ReadOnlyAccess`, выберите **ReadOnlyAccess**, а затем щелкните **Next: Review** (Далее: отзыв).  
     ![Выберите в списке имен политик доступа политику только для чтения](./media/connect-aws-account/readonlyaccess.png)
-6. На странице отзывов проверьте выбранные параметры и укажите **имя роли**. Например, *Azure-Cost-упр*. Введите **Описание роли**. Например, _Назначение ролей для Cloudyn_, затем щелкните **Create role** (Создать роль).
+6. На странице отзывов проверьте выбранные параметры и укажите **имя роли**. Например, *Azure-Cost-Mgt*. Введите **описание роли**. Например, _Назначение ролей для Cloudyn_, затем щелкните **Create role** (Создать роль).
 7. В списке **Roles** (Роли) выберите роль и скопируйте значение **Role ARN** (Роль ARN) на странице сводки. Используйте значение имени ресурса Amazon (ARN) роли при регистрации настройки в Cloudyn.  
     ![Скопируйте ARN роли на странице сводки](./media/connect-aws-account/role-arn.png)
 

@@ -1,21 +1,20 @@
 ---
 title: Руководство. Просмотр сведений о потреблении и затратах в службе Cloudyn в Azure | Документы Майкрософт
 description: В рамках этого руководства вы просмотрите сведения о потреблении и затратах для отслеживания тенденций, выявления неэффективного использования и создания оповещений.
-services: cost-management
 keywords: ''
 author: bandersmsft
 ms.author: banders
-ms.date: 05/20/2019
+ms.date: 01/24/2020
 ms.topic: tutorial
 ms.service: cost-management-billing
 ms.custom: seodec18
-manager: benshy
-ms.openlocfilehash: 1489c447513d2a470c75c909faf4ecccb6df5b17
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.reviewer: benshy
+ms.openlocfilehash: a2d4525b0b29feb230f5496196a84e651e651e52
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75983589"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76774045"
 ---
 <!-- Intent: As a cloud-consuming user, I need to view usage and costs for my cloud resources and services.
 -->
@@ -26,7 +25,7 @@ ms.locfileid: "75983589"
 
 Служба "Управление затратами Azure" предоставляет те же возможности, что и Cloudyn. Служба "Управление затратами Azure" является собственным решением Azure по управлению затратами. Она позволяет анализировать затраты, создавать бюджеты и управлять ими, экспортировать данные, а также просматривать рекомендации и реагировать на них с целью экономии средств. Дополнительные сведения см. в статье [Управление затратами Azure](../cost-management-billing-overview.md).
 
-В этом руководстве описано следующее.
+В этом руководстве описано следующее:
 
 > [!div class="checklist"]
 > * Отслеживание тенденций использования и затрат
@@ -36,7 +35,7 @@ ms.locfileid: "75983589"
 
 Если у вас еще нет подписки Azure, то прежде чем начинать работу, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 - Необходимо иметь учетную запись Azure.
 - У вас должна быть пробная регистрация либо платная подписка на службу Cloudyn.

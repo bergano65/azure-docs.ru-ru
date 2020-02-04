@@ -14,10 +14,10 @@ ms.workload: na
 ms.date: 08/12/2019
 ms.author: v-miegge
 ms.openlocfilehash: e13a55143e554a55a2902fc2350f6fde6a8afb09
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
-ms.translationtype: MT
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
+ms.lasthandoff: 01/31/2020
 ms.locfileid: "75989297"
 ---
 # <a name="troubleshoot-azure-sign-up"></a>Устранение неполадок при регистрации в Azure
@@ -32,7 +32,7 @@ ms.locfileid: "75989297"
 
 Чтобы устранить любые ошибки, выберите проблему, с которой вы столкнулись при попытке зарегистрироваться в Azure.
 
-### <a name="error-we-cannot-proceed-with-sign-up-due-to-an-issue-with-your-account-please-contact-billing-support"></a>Ошибка. *не удается продолжить регистрацию из-за проблемы с вашей учетной записью. Обратитесь в службу поддержки по вопросам выставления счетов.*
+### <a name="error-we-cannot-proceed-with-sign-up-due-to-an-issue-with-your-account-please-contact-billing-support"></a>Ошибка: *Невозможно продолжить регистрацию из-за проблемы с вашей учетной записью. Обратитесь в службу поддержки по вопросам выставления счетов.*
 
 Устранить проблему можно так:
 
@@ -109,7 +109,7 @@ ms.locfileid: "75989297"
 
 Чтобы создать подписку Azure с открытой лицензией, вам потребуется действующий ключ OSA, с которым связан как минимум один соответствующий маркер Azure с открытой лицензией. Если у вас нет ключа OSA, свяжитесь с любым из партнеров корпорации Майкрософт, которые перечислены на странице [Партнеры Майкрософт](https://pinpoint.microsoft.com/).
 
-### <a name="error-you-are-not-eligible-for-an-azure-subscription"></a>Ошибка: *вы не имеете права на подписку Azure*
+### <a name="error-you-are-not-eligible-for-an-azure-subscription"></a>Ошибка: *Вы не имеете права на подписку Azure*
 
 Чтобы устранить эту проблему, проверьте правильность следующих элементов:
 
@@ -117,7 +117,7 @@ ms.locfileid: "75989297"
 - Информация о кредитной карте правильная.
 - У вас нет учетной записи Майкрософт с такими же сведениями.
 
-### <a name="error-your-current-account-type-is-not-supported"></a>Ошибка: *текущий тип учетной записи не поддерживается*
+### <a name="error-your-current-account-type-is-not-supported"></a>Ошибка: *Текущий тип учетной записи не поддерживается*
 
 Эта проблема может возникнуть, если учетная запись зарегистрирована в [неуправляемом каталоге Azure AD](../../active-directory/users-groups-roles/directory-self-service-signup.md), а не в каталоге Azure AD вашей организации.
 

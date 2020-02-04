@@ -13,10 +13,10 @@ ms.workload: na
 ms.date: 09/30/2019
 ms.author: banders
 ms.openlocfilehash: f3d0c123fcbd16f3a4125ad74f0502863b6ce6d1
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
-ms.translationtype: MT
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
+ms.lasthandoff: 01/31/2020
 ms.locfileid: "75995264"
 ---
 # <a name="azure-software-plan-discount"></a>Скидка на план программного обеспечения Azure
@@ -143,7 +143,7 @@ ms.locfileid: "75995264"
 |SLES с 3–4 виртуальными ЦП |0c3ebb4c-db7d-4125-b45a-0534764d4bda|1,92308|D4s_v3|
 |SLES с 5+ виртуальными ЦП |7b349b65-d906-42e5-833f-b2af38513468|2,30769| D8s_v3|
 
-## <a name="need-help-contact-us"></a>Нужна помощь? Связаться с нами
+## <a name="need-help-contact-us"></a>Требуется помощь? Свяжитесь с нами
 
 Если у вас есть вопросы или вам нужна помощь, [создайте запрос в службу поддержки](https://go.microsoft.com/fwlink/?linkid=2083458).
 

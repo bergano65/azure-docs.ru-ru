@@ -1,5 +1,5 @@
 ---
-title: Скидки плана резервирования Red Hat — Azure
+title: Скидки на план резервирования Red Hat в Azure
 description: Узнайте, как скидки на план Red Hat применяются к программному обеспечению Red Hat на виртуальных машинах.
 services: billing
 documentationcenter: ''
@@ -14,10 +14,10 @@ ms.workload: na
 ms.date: 09/30/2019
 ms.author: cwatson
 ms.openlocfilehash: 280764d3b9185abd1d8112f641007a7dc1861b34
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
-ms.translationtype: MT
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
+ms.lasthandoff: 01/31/2020
 ms.locfileid: "75995329"
 ---
 # <a name="understand-how-the-red-hat-linux-enterprise-software-reservation-plan-discount-is-applied-for-azure"></a>Общие сведения о применении скидок на план резервирования программного обеспечения Red Hat Linux Enterprise в Azure
@@ -88,7 +88,7 @@ ms.locfileid: "75995329"
 |Лицензия на виртуальную машину 1-4 виртуальных ЦП |4d902611-eed7-4060-a33e-3c7fdbac6406|1|D4s_v3|
 |Лицензия на виртуальную машину 5+ виртуальных ЦП|6dfb482b-23ea-487f-810c-e66360f025de|2.333333333|D8s_v3|
 
-### <a name="red-hat-enterprise-linux-with-ha"></a>Red Hat Enterprise Linux с высокой доступностью
+### <a name="red-hat-enterprise-linux-with-ha"></a>Red Hat Enterprise Linux с высоким уровнем доступности
 
 Имена на портале Azure Marketplace:
 
@@ -97,7 +97,7 @@ ms.locfileid: "75995329"
 |Лицензия на виртуальную машину 1-4 виртуальных ЦП|e9711132-d9d9-450c-8203-25cfc4bce8de|1|D4s_v3|
 |Лицензия на виртуальную машину 5+ виртуальных ЦП|93954aa4-b55f-4b7b-844d-a119d6bf3c4e|2|D8s_v3|
 
-### <a name="rhel-for-sap-business-applications"></a>RHEL for SAP Business Applications
+### <a name="rhel-for-sap-business-applications"></a>RHEL для протокола SAP бизнес-приложения
 
 Имена на портале Azure Marketplace:
 
@@ -126,7 +126,7 @@ ms.locfileid: "75995329"
 |Лицензия на виртуальную машину 96 виртуальных ЦП|8b2e5cb8-0362-4cbf-a30a-115e8d6dbc49|2.166666667||
 |Лицензия на виртуальную машину 128 виртуальных ЦП|9b198a68-974a-47a7-9013-49169ac0f2e9|2.166666667| M128ms|
 
-### <a name="rhel-for-sap-hana"></a>RHEL for SAP HANA
+### <a name="rhel-for-sap-hana"></a>RHEL для пакета SAP HANA
 
 Имена на портале Azure Marketplace:
 
@@ -165,6 +165,6 @@ ms.locfileid: "75995329"
 - [Общие сведения об использовании резервирования Azure для подписки с оплатой по мере использования](understand-reserved-instance-usage.md)
 - [Общие сведения об использовании зарезервированных экземпляров Azure с Соглашением о регистрации Enterprise](understand-reserved-instance-usage-ea.md)
 
-## <a name="need-help-contact-us"></a>Нужна помощь? Связаться с нами
+## <a name="need-help-contact-us"></a>Требуется помощь? Свяжитесь с нами
 
 Если у вас есть вопросы или вам нужна помощь, [создайте запрос в службу поддержки](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest).

@@ -12,10 +12,10 @@ ms.workload: na
 ms.date: 10/01/2019
 ms.author: banders
 ms.openlocfilehash: 992e46cd8f10ff3c434f34a9f90c777870f3ada4
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
-ms.translationtype: MT
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
+ms.lasthandoff: 01/31/2020
 ms.locfileid: "75995823"
 ---
 # <a name="apis-for-azure-reservation-automation"></a>API-интерфейсы для автоматизации резервирования Azure
@@ -38,7 +38,7 @@ ms.locfileid: "75995823"
 PUT https://management.azure.com/providers/Microsoft.Capacity/reservationOrders/<GUID>?api-version=2019-04-01
 ```
 
-Текст запроса:
+Тело запроса:
 
 ```
 {
@@ -108,7 +108,7 @@ PUT https://management.azure.com/providers/Microsoft.Capacity/reservationOrders/
 
 Чтобы программно изменить область, используйте API [обновления резервирования](/rest/api/reserved-vm-instances/reservation/update).
 
-## <a name="learn-more"></a>Подробнее…
+## <a name="learn-more"></a>Дополнительные сведения
 
 - [Общие сведения об Azure Reserved VM Instances](save-compute-costs-reservations.md)
 - [Сведения о применении скидки к зарезервированному экземпляру виртуальной машины Azure](../manage/understand-vm-reservation-charges.md)

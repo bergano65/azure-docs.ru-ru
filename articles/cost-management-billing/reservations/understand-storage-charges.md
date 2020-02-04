@@ -7,10 +7,10 @@ ms.topic: conceptual
 ms.date: 11/05/2019
 ms.author: tamram
 ms.openlocfilehash: 40fba61b173979fb9362de73a87d6192aac9941d
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
-ms.translationtype: MT
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
+ms.lasthandoff: 01/31/2020
 ms.locfileid: "75995316"
 ---
 # <a name="understand-how-the-reservation-discount-is-applied-to-azure-storage"></a>Общие сведения о применении скидки на резервирование в службе хранилища Azure
@@ -47,7 +47,7 @@ ms.locfileid: "75995316"
 
 Предположим, что в течение заданного часа в период резервирования использовано 101 ТБ емкости хранилища. Скидка на резервирование применяется к 100 ТБ данных, а оставшийся 1 ТБ оплачиваются по тарифам с оплатой по мере использования за этот час. Если в течение следующего часа ваш объем использования изменится на 100 ТБ, то все данные о потреблении покрываются резервированием.
 
-## <a name="need-help-contact-us"></a>Нужна помощь? Связаться с нами
+## <a name="need-help-contact-us"></a>Требуется помощь? Свяжитесь с нами
 
 Если у вас есть вопросы или вам нужна помощь, [создайте запрос в службу поддержки](https://go.microsoft.com/fwlink/?linkid=2083458).
 

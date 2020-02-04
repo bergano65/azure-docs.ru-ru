@@ -1,21 +1,20 @@
 ---
 title: Руководство. Назначение доступа в службе Cloudyn в Azure | Документы Майкрософт
 description: В рамках этого руководства вы узнаете, как назначать доступ к данным службы Cloudyn с помощью учетных записей пользователей, определяя уровни доступа к сущностям.
-services: cost-management
 keywords: ''
 author: bandersmsft
 ms.author: banders
-ms.date: 05/20/2019
+ms.date: 01/24/2020
 ms.topic: tutorial
 ms.service: cost-management-billing
 ms.custom: seodec18
-manager: benshy
-ms.openlocfilehash: 412b296ed13c7708ed1a79f39ff08c3c1c559d19
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.reviewer: benshy
+ms.openlocfilehash: b93dfd7699ab2f1e2851b4d1f7e6d4c721186a2e
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75983529"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76774010"
 ---
 # <a name="tutorial-assign-access-to-cloudyn-data"></a>Руководство. Назначение доступа к данным Cloudyn
 
@@ -35,7 +34,7 @@ ms.locfileid: "75983529"
 
 Если у вас еще нет подписки Azure, то прежде чем начинать работу, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 - Необходимо иметь учетную запись Azure.
 - У вас должна быть пробная регистрация либо платная подписка на службу Cloudyn.

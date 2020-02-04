@@ -17,10 +17,10 @@ ms.date: 12/02/2018
 ms.author: banders
 ms.custom: seodec18
 ms.openlocfilehash: 9f78675878bd7a36e27ec1bdce0f3e38540d6039
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
-ms.translationtype: MT
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
+ms.lasthandoff: 01/31/2020
 ms.locfileid: "75991442"
 ---
 # <a name="manage-access-to-billing-information-for-azure"></a>Управление доступом к данным для выставления счетов в Azure
@@ -114,6 +114,6 @@ ms.locfileid: "75991442"
 - Пользователи с другими ролями, такими как владелец или участник, получают доступ не только к счетам, но и к службам Azure. Сведения об управлении этими ролями см. в статье [Управление доступом с помощью RBAC и портала Azure](../../role-based-access-control/role-assignments-portal.md).
 - Дополнительные сведения о ролях см. в статье [Встроенные роли для ресурсов Azure](../../role-based-access-control/built-in-roles.md).
 
-## <a name="need-help-contact-us"></a>Нужна помощь? Связаться с нами.
+## <a name="need-help-contact-us"></a>Требуется помощь? Свяжитесь с нами.
 
 Если у вас есть вопросы или вам нужна помощь, [создайте запрос в службу поддержки](https://go.microsoft.com/fwlink/?linkid=2083458).

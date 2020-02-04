@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.service: cost-management-billing
 manager: boalcsva
 ms.openlocfilehash: 8680a575872053f4b575db70ec649b6c1669b961
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
-ms.translationtype: MT
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
+ms.lasthandoff: 01/31/2020
 ms.locfileid: "75992144"
 ---
 # <a name="azure-enterprise-rest-apis"></a>REST API Azure Enterprise
@@ -81,9 +81,9 @@ ms.locfileid: "75992144"
 
 Когда вы используете API-интерфейс, отображаются коды состояния ответа. Эти коды описаны в приведенной ниже таблице.
 
-| Код состояния отклика | Сообщение | Description |
+| Код состояния отклика | Сообщение | Описание |
 | --- | --- | --- |
-| 200 | ОК | Без ошибок |
+| 200 | OK | Без ошибок |
 | 401 | Не авторизовано | Ключ API не найден, недопустимый формат, срок действия истек и т. д. |
 | 404 | Рекомендации недоступны | Не найдена конечная точка отчетов |
 | 400 | Ошибка запроса | Недопустимые параметры — диапазоны дат, числа EA и т. д. |
@@ -127,10 +127,10 @@ eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6ImpoeXA2UU9DWlZmY1pmdmhDVGR1OFdxeTJ5
 | Год | Год | Год |   |
 | Продукт | BillableItemName | Продукт |   |
 | Идентификатор средства измерения | ResourceGuid | Значение MeterId |   |
-| "Категория измерения"; | Служба | MeterCategory | Это позволяет найти службы. Относится к службам, имеющим несколько ServiceType. Например, виртуальные машины. |
-| "Подкатегория измерения"; | ServiceType | MeterSubCategory | Предоставляет второй уровень детализации для службы. Например, виртуальная машина A1 (не Windows).  |
+| Категория средства измерения | Служба | MeterCategory | Это позволяет найти службы. Относится к службам, имеющим несколько ServiceType. Например, виртуальные машины. |
+| Подкатегория средства измерения | ServiceType | MeterSubCategory | Предоставляет второй уровень детализации для службы. Например, виртуальная машина A1 (не Windows).  |
 | Регион средства измерения | ServiceRegion | MeterRegion | Третий уровень детализации, необходимый для службы. Позволяет найти контекст региона ResourceGUID. |
-| "Название измерения"; | ServiceResource | MeterName | Имя службы. |
+| Имя средства измерения | ServiceResource | MeterName | Имя службы. |
 | Потребленный объем | ResourceQtyConsumed | ConsumedQuantity |   |
 | ResourceRate | ResourceRate | ResourceRate |   |
 | ExtendedCost | ExtendedCost | ExtendedCost |   |
@@ -144,7 +144,7 @@ eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6ImpoeXA2UU9DWlZmY1pmdmhDVGR1OFdxeTJ5
 | Идентификатор службы хранилища   | OrderNumber | StoreServiceIdentifier   |   |
 | Название отдела | DepartmentName | DepartmentName |   |
 | Центр затрат | CostCenter | CostCenter |   |
-| Единица измерения | UnitOfMeasure | UnitOfMeasure | Примеры значений: часы, ГБ, события, Push-уведомления, единица, часы по единицам, МБ, ежедневные единицы |
+| Единица измерения | UnitOfMeasure | UnitOfMeasure | Примеры значений: часы, ГБ, события, push-уведомления, единица, часы по единицам, МБ, ежедневные единицы |
 | ResourceGroup | ResourceGroup | ResourceGroup |   |
 
 #### <a name="azure-marketplace-report"></a>Отчет Azure Marketplace
@@ -169,7 +169,7 @@ eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6ImpoeXA2UU9DWlZmY1pmdmhDVGR1OFdxeTJ5
 | ExtendedCost | ExtendedCost | ExtendedCost |
 | Единица измерения | UnitOfMeasure | UnitOfMeasure |
 | Идентификатор экземпляра | InstanceId | InstanceId |
-| Дополнительная информация | AdditionalInfo | AdditionalInfo |
+| Дополнительные сведения | AdditionalInfo | AdditionalInfo |
 | Теги | Теги | Теги |
 | Номер заказа | OrderNumber | OrderNumber |
 | Название отдела | DepartmentNames | DepartmentName |

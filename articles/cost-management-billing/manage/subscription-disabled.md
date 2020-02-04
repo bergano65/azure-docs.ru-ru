@@ -13,10 +13,10 @@ ms.topic: conceptual
 ms.date: 07/01/2019
 ms.author: banders
 ms.openlocfilehash: be5c8cac1b0b7f926f97206ec27bf6fbc9914c91
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
-ms.translationtype: MT
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
+ms.lasthandoff: 01/31/2020
 ms.locfileid: "75989921"
 ---
 # <a name="reactivate-a-disabled-azure-subscription"></a>Повторная активация отключенной подписки Azure
@@ -57,7 +57,7 @@ ms.locfileid: "75989921"
 
 Для повторной активации подписок других типов [обратитесь в службу поддержки](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade).
 
-## <a name="need-help-contact-us"></a>Нужна помощь? Связаться с нами.
+## <a name="need-help-contact-us"></a>Требуется помощь? Свяжитесь с нами.
 
 Если у вас есть вопросы или вам нужна помощь, [создайте запрос в службу поддержки](https://go.microsoft.com/fwlink/?linkid=2083458).
 

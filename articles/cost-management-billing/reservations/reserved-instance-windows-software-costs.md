@@ -12,10 +12,10 @@ ms.workload: na
 ms.date: 11/14/2019
 ms.author: banders
 ms.openlocfilehash: 7807129061328d1c6d563b9058987388e84c6e4c
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
-ms.translationtype: MT
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
+ms.lasthandoff: 01/31/2020
 ms.locfileid: "75995693"
 ---
 # <a name="software-costs-not-included-with-azure-reserved-vm-instances"></a>Затраты на программное обеспечение, которые не включены в стоимость экземпляров Azure Reserved Virtual Machine Instances
@@ -75,6 +75,6 @@ ms.locfileid: "75995693"
 - [Общие сведения об использовании резервирования Azure для подписки с оплатой по мере использования](understand-reserved-instance-usage.md)
 - [Общие сведения об использовании зарезервированных экземпляров Azure с Соглашением о регистрации Enterprise](understand-reserved-instance-usage-ea.md)
 
-## <a name="need-help-contact-us"></a>Нужна помощь? Связаться с нами
+## <a name="need-help-contact-us"></a>Требуется помощь? Свяжитесь с нами
 
 Если у вас есть вопросы или вам нужна помощь, [создайте запрос в службу поддержки](https://go.microsoft.com/fwlink/?linkid=2083458).

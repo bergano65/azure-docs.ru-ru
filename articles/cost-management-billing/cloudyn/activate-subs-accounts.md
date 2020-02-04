@@ -1,21 +1,20 @@
 ---
 title: Активация подписок и учетных записей Azure | Документация Майкрософт
 description: Сведения о предоставлении доступа к новым и имеющимся учетным записям с использованием API Azure Resource Manager и устранении распространенных проблем с учетными записями.
-services: cost-management
 keywords: ''
 author: bandersmsft
 ms.author: banders
-ms.date: 09/19/2019
+ms.date: 01/24/2020
 ms.topic: quickstart
 ms.service: cost-management-billing
-manager: vitavor
+ms.reviewer: vitavor
 ms.custom: secdec18
-ms.openlocfilehash: a3d40e478d1fbb4a789124b72b73268db37540ab
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.openlocfilehash: 6b788df15b14f8e2e0b394cf7002a1c8236d2c67
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75983132"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76770506"
 ---
 # <a name="activate-azure-subscriptions-and-accounts-with-cloudyn"></a>Активация подписок и учетных записей Azure с помощью Cloudyn
 

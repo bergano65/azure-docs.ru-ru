@@ -13,16 +13,16 @@ ms.topic: conceptual
 ms.date: 09/26/2019
 ms.author: andalmia
 ms.openlocfilehash: 741e7cf0869e36b5788d0a883a4e982caf041512
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
-ms.translationtype: MT
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
+ms.lasthandoff: 01/31/2020
 ms.locfileid: "75995940"
 ---
 # <a name="azure-subscription-states"></a>Состояния подписки Azure
 В этой статье описываются различные состояния, которые может иметь подписка Azure. Вы увидите, что эти состояния отображаются как "Status" (Статус) под колонками подписки.
 
-| Состояние подписки | Description |
+| Состояние подписки | Описание |
 |-------------| ----------------|
 | **Активно** | Ваша подписка Azure активна. Эту подписку можно использовать для развертывания новых ресурсов и управления существующими.|
 | **Просрочено** | Для вашей подписки Azure есть неоплаченный платеж. Ваша подписка все еще активна, но неуплата взносов может привести к ее отключению. [Устранение проблемы с задолженностью по подписке Azure.](https://docs.microsoft.com/azure/billing/billing-azure-subscription-past-due-balance) |

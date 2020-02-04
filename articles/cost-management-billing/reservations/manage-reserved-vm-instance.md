@@ -11,10 +11,10 @@ ms.workload: na
 ms.date: 08/06/2019
 ms.author: banders
 ms.openlocfilehash: cc24c176b5b61210d68d2dcb244d63f15402928b
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
-ms.translationtype: MT
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
+ms.lasthandoff: 01/31/2020
 ms.locfileid: "75994055"
 ---
 # <a name="manage-reservations-for-azure-resources"></a>Управление резервированиями для ресурсов Azure
@@ -28,7 +28,7 @@ ms.locfileid: "75994055"
 
 ## <a name="reservation-order-and-reservation"></a>Заказ на резервирование и резервирование
 
-При покупке резервирования создаются два объекта: **Порядок резервирования** и **резервирование**.
+При покупке резервирования создаются два объекта: **заказ на резервирование** и **резервирование**.
 
 В момент покупки в заказе на резервирование содержится одно резервирование. При разделении, объединении, частичном возмещении или обмене создаются резервирования в **заказе на резервирование**.
 
@@ -157,7 +157,7 @@ ms.locfileid: "75994055"
 - Рассмотрите возможность обмена неиспользуемого объема ресурсов. Дополнительные сведения см. в разделе [Отмена и обмен](#cancel-exchange-or-refund-reservations).
 
 
-## <a name="need-help-contact-us"></a>Нужна помощь? Связаться с нами.
+## <a name="need-help-contact-us"></a>Требуется помощь? Свяжитесь с нами.
 
 Если у вас есть вопросы или вам нужна помощь, [создайте запрос в службу поддержки](https://go.microsoft.com/fwlink/?linkid=2083458).
 

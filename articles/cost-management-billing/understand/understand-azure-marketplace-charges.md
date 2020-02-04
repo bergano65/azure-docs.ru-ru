@@ -13,10 +13,10 @@ ms.date: 10/01/2019
 ms.author: banders
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: f94b79e03cf97275ec4dacf17e097e1678e81d10
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
-ms.translationtype: MT
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
+ms.lasthandoff: 01/31/2020
 ms.locfileid: "75989427"
 ---
 # <a name="understand-your-azure-external-services-charges"></a>Основная информация о расходах на внешние службы в Azure
@@ -57,7 +57,7 @@ You can view a list of the external services that are on each subscription withi
 1. Войдите на [портал Azure](https://portal.azure.com).
 1. Выполните поиск по фразе **Управление затратами + выставление счетов**.
 1. В меню слева выберите **Счета**.
-1. Перейдите на вкладку **Azure Marketplace и резервирования** .  ![изображение вкладки "Azure Marketplace и резервирования"](./media/understand-azure-marketplace-charges/invoice-tabs.png)
+1. Щёлкните вкладку **Azure Marketplace и резервирования**.  ![Изображение вкладки "Azure Marketplace и резервирования"](./media/understand-azure-marketplace-charges/invoice-tabs.png)
 1. В раскрывающемся списке подписки выберите подписку, содержащую внешние службы, для которых требуется просмотреть счета.
 
 ## <a name="external-spending-for-ea-customers"></a>Внешние расходы для клиентов с соглашением Enterprise
@@ -111,7 +111,7 @@ You can view a list of the external services that are on each subscription withi
 ## <a name="check-billing-account-type"></a>Проверка типа учетной записи выставления счетов
 [!INCLUDE [billing-check-account-type](../../../includes/billing-check-mca.md)]
 
-## <a name="need-help-contact-us"></a>Нужна помощь? Связаться с нами.
+## <a name="need-help-contact-us"></a>Требуется помощь? Свяжитесь с нами.
 
 Если у вас есть вопросы или вам нужна помощь, [создайте запрос в службу поддержки](https://go.microsoft.com/fwlink/?linkid=2083458).
 

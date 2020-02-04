@@ -17,10 +17,10 @@ ms.date: 05/11/2018
 ms.author: banders
 ms.custom: seodec18
 ms.openlocfilehash: 1573a5d5d9b537b208b2f6d6aea29b9738ddad3e
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
-ms.translationtype: MT
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
+ms.lasthandoff: 01/31/2020
 ms.locfileid: "75988114"
 ---
 # <a name="no-subscriptions-found-sign-in-error-for-azure-portal-or-azure-account-center"></a>Ошибка "Подписки не найдены" при попытке входа на портал Azure или в Центр управления учетной записью Azure
@@ -37,7 +37,7 @@ ms.locfileid: "75988114"
 
 ## <a name="solution"></a>Решение
 
-### <a name="scenario-1-error-message-is-received-in-the-azure-portalhttpsportalazurecom"></a>Сценарий 1. Сообщение об ошибке получено на [портале Azure](https://portal.azure.com)
+### <a name="scenario-1-error-message-is-received-in-the-azure-portalhttpsportalazurecom"></a>Сценарий 1. Сообщение об ошибке получено на [портале Azure](https://portal.azure.com)
 
 Чтобы устранить эту проблему:
 
@@ -46,7 +46,7 @@ ms.locfileid: "75988114"
   ![Выберите каталог в верхней правой части портала Azure](./media/no-subscriptions-found/directory-switch.png)
 * Если вы выбрали надлежащий каталог Azure, но по-прежнему получаете сообщение об ошибке, [назначьте учетной записи роль владельца](../../role-based-access-control/role-assignments-portal.md).
 
-### <a name="scenario-2-error-message-is-received-in-the-azure-account-centerhttpsaccountwindowsazurecomsubscriptions"></a>Сценарий 2. Сообщение об ошибке получено в [Центре управления учетной записью Azure](https://account.windowsazure.com/Subscriptions)
+### <a name="scenario-2-error-message-is-received-in-the-azure-account-centerhttpsaccountwindowsazurecomsubscriptions"></a>Сценарий 2. Сообщение об ошибке получено в [Центре управления учетной записью Azure](https://account.windowsazure.com/Subscriptions)
 
 Убедитесь, что используете учетную запись администратора учетной записи. Чтобы проверить, кто является администратором учетной записи, сделайте следующее:
 
@@ -54,6 +54,6 @@ ms.locfileid: "75988114"
 1. Выберите подписку, которую требуется проверить, а затем просмотрите раздел **Параметры**.
 1. Выберите **Свойства**. Администратор учетной записи подписки отобразится в поле **Администратор учетной записи** .  
 
-## <a name="need-help-contact-us"></a>Нужна помощь? Связаться с нами.
+## <a name="need-help-contact-us"></a>Требуется помощь? Свяжитесь с нами.
 
 Если у вас есть вопросы или вам нужна помощь, [создайте запрос в службу поддержки](https://go.microsoft.com/fwlink/?linkid=2083458).

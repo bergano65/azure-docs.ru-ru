@@ -9,10 +9,10 @@ ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 11/03/2019
 ms.openlocfilehash: 88ab9c475d417bc935cf5d2d67f1678794fb74d1
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
-ms.translationtype: MT
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
+ms.lasthandoff: 01/31/2020
 ms.locfileid: "75995628"
 ---
 # <a name="understand-how-the-reservation-discount-is-applied-to-azure-data-explorer"></a>Общие сведения о применении скидки на резервирование в Azure Data Explorer
@@ -36,7 +36,7 @@ ms.locfileid: "75995628"
 ## <a name="examples"></a>Примеры
 
 В следующих примерах показано применение скидки на зарезервированную емкость Azure Data Explorer в зависимости от количества приобретенных вами единиц наценки и времени их работы.
-Например, для размера кластера подсистемы: **2 D11_v2 виртуальных машин**, общий расход по запросу составляет четыре единицы обозреватель данных метра разметки для Azure в час. 
+Например, для кластера модуля, содержащего **2 виртуальные машины D11_v2**, общие затраты по запросу соответствуют расходам на четыре единицы наценки Azure Data Explorer в час. 
 
 **Сценарий 1** 
 
@@ -58,7 +58,7 @@ ms.locfileid: "75995628"
 
 Чтобы больше узнать о применении резервирований Azure и просмотреть отчеты о начислении платы за использование, ознакомьтесь со статьей [Получение сведений о затратах на резервирование и использовании по Соглашениям Enterprise](understand-reserved-instance-usage-ea.md).
 
-## <a name="need-help-contact-us"></a>Нужна помощь? Связаться с нами
+## <a name="need-help-contact-us"></a>Требуется помощь? Свяжитесь с нами
 
 Если у вас есть вопросы или вам нужна помощь, [создайте запрос в службу поддержки](https://go.microsoft.com/fwlink/?linkid=2083458).
 
