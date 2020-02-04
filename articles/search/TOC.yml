@@ -389,6 +389,8 @@
               href: cognitive-search-predefined-skills.md
             - name: Условная логика
               href: cognitive-search-skill-conditional.md
+            - name: Поиск настраиваемой сущности
+              href: cognitive-search-skill-custom-entity-lookup.md
             - name: Извлечение документа
               href: cognitive-search-skill-document-extraction.md
             - name: Распознавание сущностей

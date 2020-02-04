@@ -138,6 +138,8 @@
       href: custom-disaster-recovery.md
     - name: Устранение неполадок
       href: troubleshoot-errors.md
+    - name: Включение журналов диагностики для раздела
+      href: enable-diagnostic-logs-topic.md
 - name: Справочник
   items:
     - name: Azure CLI

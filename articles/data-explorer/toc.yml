@@ -174,12 +174,28 @@
               href: manage-cluster-vertical-scaling.md
             - name: Проверка работоспособности кластера
               href: check-cluster-health.md
+            - name: Добавление субъекта кластера
+              items:
+                - name: 'C#'
+                  href: cluster-principal-csharp.md
+                - name: Python
+                  href: cluster-principal-python.md
+                - name: Шаблон Azure Resource Manager
+                  href: cluster-principal-resource-manager.md
         - name: База данных
           items:
             - name: Базы данных подписчиков
               href: follower.md
             - name: Управление разрешениями базы данных
               href: manage-database-permissions.md
+            - name: Добавление субъекта базы данных
+              items:
+                - name: 'C#'
+                  href: database-principal-csharp.md
+                - name: Python
+                  href: database-principal-python.md
+                - name: Шаблон Azure Resource Manager
+                  href: database-principal-resource-manager.md
             - name: Политики
               items:
                 - name: 'C#'

@@ -142,6 +142,8 @@
           href: how-to-manage-workspace.md
         - name: Использование Azure CLI
           href: how-to-manage-workspace-cli.md
+        - name: Использование REST
+          href: how-to-manage-rest.md
         - name: Использование шаблона Resource Manager
           displayName: arm
           href: how-to-create-workspace-template.md
@@ -194,6 +196,9 @@
         - name: Создание наборов данных с метками
           displayName: 'data, labels, torchvision'
           href: how-to-use-labeled-dataset.md
+        - name: DevOps для приема данных
+          displayName: 'data, ingestion, devops'
+          href: how-to-cicd-data-ingestion.md
     - name: Обучение моделей
       items:
         - name: Использование конструктора

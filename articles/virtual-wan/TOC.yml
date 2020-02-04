@@ -47,6 +47,7 @@
     - name: "Настройка аутентификации Azure\_AD для VPN пользователя в нескольких приложениях (предварительная версия)"
       href: openvpn-azure-ad-tenant-multi-app.md
     - name: Настройка автоматизации (участники Виртуальной глобальной сети)
+    - name: Скачивание глобальных профилей VPN и профилей VPN на основе концентраторов
       href: virtual-wan-configure-automation-providers.md
     - name: Настройка маршрутизации
       items:

@@ -52,7 +52,7 @@
           href: node-quota.md
         - name: Обслуживание и обновления
           href: cloudsimple-maintenance-updates.md
-        - name: Вопросы и ответы
+        - name: ВОПРОСЫ И ОТВЕТЫ
           href: cloudsimple-faq.md
     - name: Учебники
       items:
@@ -112,7 +112,7 @@
               href: azure-create-vm.md
             - name: Управление виртуальными машинами CloudSimple в Azure
               href: azure-manage-vm.md
-    - name: Руководства
+    - name: Практические руководства
       items:
         - name: Защита среды
           href: private-cloud-secure.md
@@ -136,6 +136,8 @@
               href: on-premises-dns-setup.md
             - name: "Настройка VPN-подключений \"сеть\_— сеть\" с высоким уровнем доступности"
               href: high-availability-vpn-connection.md
+            - name: Настройка DNS частного облака в локальной среде
+              href: private-cloud-dns-forwarding.md
         - name: Платформа VMware
           items:
             - name: Обучение модели разрешений частного облака

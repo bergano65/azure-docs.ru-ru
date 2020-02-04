@@ -38,8 +38,12 @@
           href: ./ag/application-gateway-crs-rulegroups-rules.md
         - name: Общие сведения о настраиваемых правилах
           href: ./ag/custom-waf-rules-overview.md
+        - name: Географическое согласование настраиваемых правил
+          href: ./ag/geomatch-custom-rules.md
         - name: Предельный размер запросов и списки исключений
           href: ./ag/application-gateway-waf-configuration.md
+        - name: Общие сведения о политике WAF
+          href: ./ag/policy-overview.md
     - name: Front Door
       items:
         - name: Настраиваемые правила
