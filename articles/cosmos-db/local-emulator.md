@@ -6,12 +6,12 @@ ms.topic: tutorial
 author: markjbrown
 ms.author: mjbrown
 ms.date: 07/26/2019
-ms.openlocfilehash: bcab5f76b95939b0a9a4232eab2bcf8b2a5fd40b
-ms.sourcegitcommit: a9b1f7d5111cb07e3462973eb607ff1e512bc407
+ms.openlocfilehash: 3e51db98403b507c1c34ee455cfe218ea52c529b
+ms.sourcegitcommit: b5d646969d7b665539beb18ed0dc6df87b7ba83d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76309988"
+ms.lasthandoff: 01/26/2020
+ms.locfileid: "76760578"
 ---
 # <a name="use-the-azure-cosmos-emulator-for-local-development-and-testing"></a>Использование эмулятора Azure Cosmos для разработки и тестирования в локальной среде
 
@@ -181,7 +181,7 @@ table.Execute(TableOperation.Insert(new DynamicTableEntity("partitionKey", "rowK
 
 Запустите эмулятор из командной строки с правами администратора, указав параметр /EnableGremlinEndpoint. В качестве альтернативы можно также задать переменную среды `AZURE_COSMOS_EMULATOR_GREMLIN_ENDPOINT=true`.
 
-* [Установите apache-tinkerpop-gremlin-console-3.3.4](https://tinkerpop.apache.org/downloads.html)
+* [Установите apache-tinkerpop-gremlin-console-3.3.4.](https://archive.apache.org/dist/tinkerpop/3.3.4)
 
 * В обозревателе данных эмулятора создайте базу данных db1 и коллекцию coll1, указав параметр /name для ключа раздела
 

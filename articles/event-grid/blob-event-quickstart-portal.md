@@ -9,12 +9,12 @@ ms.date: 11/05/2019
 ms.topic: quickstart
 ms.service: event-grid
 ms.custom: seodec18
-ms.openlocfilehash: 1aa8c9ff26b85f5af8095ad1cff062b224abff83
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.openlocfilehash: 2daf17ccef1bca363fe92f71a332fbfa78637135
+ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75982183"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76844788"
 ---
 # <a name="quickstart-route-blob-storage-events-to-web-endpoint-with-the-azure-portal"></a>Краткое руководство. Отправка событий хранилища BLOB-объектов в конечную веб-точку с помощью портала Azure
 
@@ -41,6 +41,9 @@ ms.locfileid: "75982183"
 1. Чтобы подписаться на события, создайте учетную запись хранения общего назначения версии 2 или учетную запись хранения BLOB-объектов. Дополнительные сведения см. в разделе [Создание учетной записи хранения](../storage/common/storage-account-create.md).
 
    ![Начальные шаги](./media/blob-event-quickstart-portal/provide-blob-values.png)
+
+>[!NOTE]
+> Интеграцию событий поддерживают только учетные записи хранения типа **StorageV2 (версия 2, общего назначения)** и **BlobStorage**. **Хранилище (версия 1, общего назначения)** *не* поддерживает интеграцию со службой "Сетка событий".
 
 ## <a name="create-a-message-endpoint"></a>Создание конечной точки сообщения
 

@@ -1,24 +1,17 @@
 ---
-title: Краткое руководство по добавлению флагов функций в Spring Boot — Конфигурация приложений Azure | Документация Майкрософт
-description: Краткое руководство по добавлению флагов функций в приложения Spring Boot и управлению ими в Конфигурации приложений Azure
-services: azure-app-configuration
-documentationcenter: ''
+title: Краткое руководство по добавлению флагов функций в Spring Boot с помощью Конфигурации приложений Azure
+description: Добавление флагов функций в приложения Spring Boot и управление ими с помощью Конфигурации приложений Azure
 author: lisaguthrie
-editor: ''
-ms.assetid: ''
 ms.service: azure-app-configuration
-ms.devlang: csharp
 ms.topic: quickstart
-ms.tgt_pltfrm: Spring Boot
-ms.workload: tbd
-ms.date: 1/9/2019
+ms.date: 01/21/2020
 ms.author: lcozzens
-ms.openlocfilehash: 3e82354116969b01743700485b5c2dd75b4887e4
-ms.sourcegitcommit: a9b1f7d5111cb07e3462973eb607ff1e512bc407
+ms.openlocfilehash: 4438851ef7ea015060926075f46822de877b85b3
+ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76310073"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76766440"
 ---
 # <a name="quickstart-add-feature-flags-to-a-spring-boot-app"></a>Краткое руководство. Добавление флагов функций в приложение Spring Boot
 
@@ -32,15 +25,16 @@ ms.locfileid: "76310073"
 - Поддерживаемый [пакет SDK для комплекта разработчика Java](https://docs.microsoft.com/java/azure/jdk) версии 8.
 - [Apache Maven](https://maven.apache.org/download.cgi) версии 3.0 или более поздней.
 
-## <a name="create-an-app-configuration-store"></a>Создание хранилища Конфигурации приложений
+## <a name="create-an-app-configuration-instance"></a>Создание экземпляра Конфигурации приложений
 
 [!INCLUDE [azure-app-configuration-create](../../includes/azure-app-configuration-create.md)]
 
-6. Выберите **Feature Manager** (Диспетчер функций)  >  **+ Создать**, чтобы добавить следующие флаги функций.
+6. Выберите **Диспетчер компонентов** >  **+Добавить**, чтобы добавить флаг функции `Beta`.
 
-    | Клавиши | Штат |
-    |---|---|
-    | Бета-версия | Выкл. |
+    > [!div class="mx-imgBorder"]
+    > ![Включение флага функции с именем Beta](media/add-beta-feature-flag.png)
+
+    Не определяйте `label` сейчас.
 
 ## <a name="create-a-spring-boot-app"></a>Создание приложения Spring Boot
 
@@ -52,27 +46,27 @@ ms.locfileid: "76310073"
 
    - Выберите в соответствующих полях **Maven Project** (Проект Maven) и **Java**.
    - Выберите **Spring Boot** не ниже версии 2.0.
-   - Заполните поля **Group** (Группа) и **Artifact** (Артефакт) для приложения.
+   - Заполните поля **Group** (Группа) и **Artifact** (Артефакт) для приложения.  Для этой статьи используется `com.example` и `demo`.
    - Добавление зависимости **Spring Web**.
 
 3. После указания предыдущих параметров выберите **Создать проект**. При появлении запроса скачайте проект на локальный компьютер.
 
 ## <a name="add-feature-management"></a>Добавление управления функциями
 
-1. После извлечения файлов в локальной системе простое приложение Spring Boot можно редактировать. Найдите файл *pom.xml* в корневой папке приложения.
+1. После извлечения файлов в локальной системе приложение Spring Boot можно редактировать. Найдите *pom.xml* в корневой папке приложения.
 
-2. Откройте файл *pom.xml* в текстовом редакторе и добавьте начальное приложение Spring Cloud Azure Config и управление функциями в список `<dependencies>`.
+1. Откройте файл *pom.xml* в текстовом редакторе и добавьте следующие строки в список `<dependencies>`:
 
     ```xml
     <dependency>
         <groupId>com.microsoft.azure</groupId>
         <artifactId>spring-cloud-starter-azure-appconfiguration-config</artifactId>
-        <version>1.1.0</version>
+        <version>1.2.1</version>
     </dependency>
     <dependency>
         <groupId>com.microsoft.azure</groupId>
         <artifactId>spring-cloud-azure-feature-management-web</artifactId>
-        <version>1.1.0</version>
+        <version>1.2.1</version>
     </dependency>
     <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -81,35 +75,48 @@ ms.locfileid: "76310073"
     ```
 
 > [!Note]
-> Существует библиотека управления функциями вне обозревателя интернета, которая не зависит от spring-web (веб-сайта). Смотрите дополнительные [Документы](https://github.com/microsoft/spring-cloud-azure/tree/master/spring-cloud-azure-feature-management) для ознакомления с отличиями. Кроме того, если конфигурация приложений не используется, см. [Объявление флага функции](https://github.com/microsoft/spring-cloud-azure/tree/master/spring-cloud-azure-feature-management#feature-flag-declaration).
+> Существует библиотека управления функциями вне обозревателя интернета, которая не зависит от spring-web (веб-сайта). Сведения о различиях см. в [документации GitHub](https://github.com/microsoft/spring-cloud-azure/tree/master/spring-cloud-azure-feature-management).
 
 ## <a name="connect-to-an-app-configuration-store"></a>Подключение к хранилищу Конфигурации приложений
 
-1. Откройте _bootstrap.properties_ в каталоге _ресурсов_ приложения. Если _bootstrap.properties_ не существует, создайте его. Добавьте следующую строку в файл.
+1. Перейдите в каталог `resources` приложения и откройте `bootstrap.properties`.  Если файл не существует, создайте его. Добавьте следующую строку в файл.
 
     ```properties
     spring.cloud.azure.appconfiguration.stores[0].name= ${APP_CONFIGURATION_CONNECTION_STRING}
     ```
 
-1. На портале конфигурации приложения для хранилища конфигураций перейдите к разделу "Ключи доступа". Выберите вкладку "Ключи только для чтения". На данной вкладке скопируйте значение одной из строк подключения и добавьте его в качестве новой переменной среды с именем переменной `APP_CONFIGURATION_CONNECTION_STRING`.
+1. На портале Конфигурации приложения для хранилища конфигураций выберите `Access keys` на боковой панели. Выберите вкладку "Ключи только для чтения". Скопируйте значение основной строки подключения.
+
+1. Добавьте основную строку подключения как переменную среды, используя имя переменной `APP_CONFIGURATION_CONNECTION_STRING`.
 
 1. Откройте основной файл приложения Java и добавьте `@EnableConfigurationProperties`, чтобы включить эту функцию.
 
     ```java
+    package com.example.demo;
+
+    import org.springframework.boot.SpringApplication;
+    import org.springframework.boot.context.properties.ConfigurationProperties;
     import org.springframework.boot.context.properties.EnableConfigurationProperties;
+    import org.springframework.boot.autoconfigure.SpringBootApplication;
 
     @SpringBootApplication
     @EnableConfigurationProperties(MessageProperties.class)
     public class DemoApplication {
+
         public static void main(String[] args) {
             SpringApplication.run(DemoApplication.class, args);
         }
     }
     ```
-
-1. Создайте файл Java с именем *MessageProperties.java* в каталоге пакета приложения. Добавьте следующие строки.
+1. Создайте файл Java с именем *MessageProperties.java* в каталоге пакета приложения.
 
     ```java
+    package com.example.demo;
+
+    import org.springframework.boot.context.properties.ConfigurationProperties;
+    import org.springframework.context.annotation.Configuration;
+
+    @Configuration
     @ConfigurationProperties(prefix = "config")
     public class MessageProperties {
         private String message;
@@ -124,11 +131,22 @@ ms.locfileid: "76310073"
     }
     ```
 
-1. Создайте файл Java с именем *HelloController.java* в каталоге пакета приложения. Добавьте следующие строки.
+1. Создайте файл Java с именем *HelloController.java* в каталоге пакета приложения. 
 
     ```java
+    package com.example.demo;
+
+    import org.springframework.boot.context.properties.ConfigurationProperties;
+    import org.springframework.stereotype.Controller;
+    import org.springframework.ui.Model;
+
+    import com.microsoft.azure.spring.cloud.feature.manager.FeatureManager;
+    import org.springframework.web.bind.annotation.GetMapping;
+
+
     @Controller
     @ConfigurationProperties("controller")
+
     public class HelloController {
 
         private FeatureManager featureManager;
@@ -139,13 +157,13 @@ ms.locfileid: "76310073"
 
         @GetMapping("/welcome")
         public String mainWithParam(Model model) {
-            model.addAttribute("Beta", featureManager.isEnabled("Beta"));
+            model.addAttribute("Beta", featureManager.isEnabledAsync("Beta"));
             return "welcome";
         }
     }
     ```
 
-1. Создайте файл HTML с именем *welcome.html* в каталоге шаблонов приложения. Добавьте следующие строки.
+1. Создайте файл HTML с именем *welcome.html* в каталоге шаблонов приложения.
 
     ```html
     <!DOCTYPE html>
@@ -202,7 +220,7 @@ ms.locfileid: "76310073"
 
     ```
 
-1. Создайте папку с именем "CSS" под статическим элементом и внутри нее – новый CSS файл с именем *main.css*. Добавьте следующие строки.
+6. Создайте папку с именем "CSS" в `static` и внутри нее — новый CSS файл с именем *main.css*.
 
     ```css
     html {
@@ -237,24 +255,24 @@ ms.locfileid: "76310073"
 
 ## <a name="build-and-run-the-app-locally"></a>Создание и запуск приложения локально
 
-1. Создайте приложение Spring Boot с помощью Maven и запустите его, например, следующим образом:
+1. Создайте приложение Spring Boot с помощью Maven и запустите его.
 
     ```shell
     mvn clean package
     mvn spring-boot:run
     ```
 
-2. Откройте окно браузера и перейдите по адресу `https://localhost:8080`, который является URL-адресом по умолчанию для веб-приложения, размещенного локально.
+1. Откройте окно браузера и перейдите по стандартному URL-адресу для веб-приложения, размещенного локально: `https://localhost:8080`.
 
     ![Краткое руководство. Запуск приложения, размещенного локально](./media/quickstarts/spring-boot-feature-flag-local-before.png)
 
-3. На портале конфигурации приложений выберите **Feature Manager** (Диспетчер функций) и измените состояние ключа **Beta** на **On** (Включен).
+1. На портале конфигурации приложений выберите **Feature Manager** (Диспетчер функций) и измените состояние ключа **Beta** на **On** (Включен).
 
     | Клавиши | Штат |
     |---|---|
     | Бета-версия | С |
 
-4. Обновите страницу браузера, чтобы просмотреть новые параметры конфигурации.
+1. Обновите страницу браузера, чтобы просмотреть новые параметры конфигурации.
 
     ![Краткое руководство. Запуск приложения, размещенного локально](./media/quickstarts/spring-boot-feature-flag-local-after.png)
 
