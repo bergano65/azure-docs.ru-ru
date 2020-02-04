@@ -1,6 +1,6 @@
 ---
 title: Основные сведения об обмене сообщениями через служебную шину Azure | Документация Майкрософт
-description: Описание обмена сообщениями через служебную шину.
+description: В этой статье представлены общие сведения о Служебной шине Azure, полностью управляемом интеграционном брокере сообщений корпоративного типа.
 services: service-bus-messaging
 documentationcenter: ''
 author: axisc
@@ -11,12 +11,12 @@ ms.topic: overview
 ms.date: 11/04/2019
 ms.custom: mvc
 ms.author: aschhab
-ms.openlocfilehash: 12d4bada4f84098f1559ea7b59fbbd35e0801347
-ms.sourcegitcommit: c31dbf646682c0f9d731f8df8cfd43d36a041f85
+ms.openlocfilehash: 49a54491c36ef29209d1a53094cc5baf57057557
+ms.sourcegitcommit: b5d646969d7b665539beb18ed0dc6df87b7ba83d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2019
-ms.locfileid: "74561602"
+ms.lasthandoff: 01/26/2020
+ms.locfileid: "76759386"
 ---
 # <a name="what-is-azure-service-bus"></a>Что такое служебная шина Azure?
 
@@ -81,7 +81,7 @@ ms.locfileid: "74561602"
 
 Пакетная обработка на стороне клиента позволяет клиенту очереди или раздела отложить отправку сообщения на определенный период времени. Если в течение этого времени клиент будет отправлять дополнительные сообщения, они будут переданы в одном пакете. Дополнительные сведения см. в разделе [Пакетная обработка на стороне клиента](service-bus-performance-improvements.md#client-side-batching).
 
-### <a name="transactions"></a>Транзакции
+### <a name="transactions"></a>Transactions
 
 Транзакция объединяет две или несколько операций в *область выполнения*. Служебная шина поддерживает операции группирования относительно одной сущности обмена сообщениями в области одной транзакции. К таким сущностям сообщений может относиться очередь, тема или подписка. Дополнительные сведения см. в статье [Обзор обработки транзакций в служебной шине](service-bus-transactions.md).
 
@@ -106,7 +106,7 @@ ms.locfileid: "74561602"
 
 Если происходит авария на уровне региона или центра обработки данных Azure, геоизбыточное аварийное восстановление позволяет продолжать обработку данных, переключившись на другой регион и (или) центр обработки данных. Дополнительные сведения см. в разделе [Географическое аварийное восстановление в служебной шине Azure](service-bus-geo-dr.md).
 
-### <a name="security"></a>Безопасность
+### <a name="security"></a>безопасность
 
 Служебная шина поддерживает стандартные протоколы [AMQP 1.0](service-bus-amqp-overview.md) и [HTTP/REST](/rest/api/servicebus/).
 
@@ -124,7 +124,7 @@ ms.locfileid: "74561602"
 * [Dynamics 365](https://dynamics.microsoft.com)
 * [Azure Stream Analytics](https://azure.microsoft.com/services/stream-analytics/)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Сведения о начале работы с обменом сообщениями через служебную шину см. в следующих статьях:
 

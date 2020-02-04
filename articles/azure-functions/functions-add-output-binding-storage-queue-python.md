@@ -1,97 +1,293 @@
 ---
 title: Добавление привязки очереди службы хранилища Azure к функции Python
-description: Узнайте, как добавлять выходные привязки очереди службы хранилища Azure к функции Python.
-ms.date: 10/02/2019
+description: Интеграция очереди службы хранилища Azure с функцией Python с использованием выходной привязки.
+ms.date: 01/15/2020
 ms.topic: quickstart
-ms.openlocfilehash: f2db0f470c4205919343e3838a4f73b05bf71fb0
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: 14a381d13da052fd67679ed17bbb6b6711f7a0e6
+ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74928866"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76715373"
 ---
 # <a name="add-an-azure-storage-queue-binding-to-your-python-function"></a>Добавление привязки очереди службы хранилища Azure к функции Python
 
-[!INCLUDE [functions-add-storage-binding-intro](../../includes/functions-add-storage-binding-intro.md)]
-
-В этой статье приведены сведения об интеграции функции, которая была создана в [предыдущей статье](functions-create-first-function-python.md), с помощью очереди службы хранилища Azure. Выходная привязка, которая была добавлена в эту функцию, записывает в сообщение очереди данные HTTP-запроса.
-
-Большинство привязок требуют сохраненную строку подключения, которая будет использоваться Функциями Azure для доступа к привязанным службам. Чтобы упростить это подключение, вам следует использовать учетную запись хранения, созданную в приложении-функции. Подключение к этой учетной записи уже хранится в параметрах приложения под названием `AzureWebJobsStorage`.  
+В этой статье вы узнаете, как интегрировать очередь службы хранилища Azure с функцией и учетной записью хранения, созданной в кратком руководстве [Создание функции Python, активируемой HTTP](functions-create-first-function-python.md). Чтобы реализовать такую интеграцию, используется *выходная привязка*, которая записывает в сообщение очереди данные из HTTP-запроса. Выполнение шагов из этой статьи не влечет за собой никаких дополнительных затрат, помимо нескольких центов США, потраченных при выполнении предыдущего краткого руководства.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Перед началом работы с этой статьей следует завершить все шаги из статьи [Создание функции, активируемой HTTP, в Azure](functions-create-first-function-python.md).
+- Выполните краткое руководство [Создание функции Python, активируемой HTTP](functions-create-first-function-python.md). Если вы уже удалили ресурсы по окончании работы по этой статье, выполните шаги еще раз, чтобы повторно создать приложение-функцию в Azure, но оставьте ресурсы.
 
-[!INCLUDE [functions-cloud-shell-note](../../includes/functions-cloud-shell-note.md)]
+## <a name="retrieve-the-azure-storage-connection-string"></a>Получение строки подключения к службе хранилища Azure
 
-## <a name="download-the-function-app-settings"></a>Загрузка параметров приложения-функции
+Когда в предыдущей статье вы создавали приложение-функцию, вы также создали учетную запись хранения в Azure. Строка подключения данной учетной записи надежно хранится в параметрах приложения в Azure. Скачав параметр в файл *local.settings.json*, вы можете использовать это подключение для записи данных в очередь службы хранилища в той же учетной записи при локальном запуске функции. 
 
-[!INCLUDE [functions-app-settings-download-cli](../../includes/functions-app-settings-download-local-cli.md)]
+1. В корневом каталоге проекта выполните следующую команду, заменив `<app_name>` именем приложения-функции из предыдущего краткого руководства. Эта команда перезапишет все существующие значения в файле.
 
-## <a name="enable-extension-bundles"></a>Включение пакетов расширений
+    ```
+    func azure functionapp fetch-app-settings <app_name>
+    ```
+    
+1. Откройте файл *local.settings.json* и найдите значение `AzureWebJobsStorage`, которое является строкой подключения к учетной записи хранения. В других разделах этой статьи вы будете использовать имя `AzureWebJobsStorage` и строку подключения.
 
-[!INCLUDE [functions-extension-bundles](../../includes/functions-extension-bundles.md)]
+> [!IMPORTANT]
+> Файл *local.settings.json* содержит секреты, скачанные из Azure, поэтому всегда исключайте этот файл из системы управления версиями. Файл *.gitignore*, созданный с помощью локального проекта функций, по умолчанию исключает файл.
 
-Теперь вы можете добавить выходную привязку службы хранилища в проект.
+## <a name="add-an-output-binding-to-functionjson"></a>Добавление выходной привязки в файл function.json
 
-## <a name="add-an-output-binding"></a>Добавление выходной привязки
+У функции может быть только один триггер, но у нее может быть несколько входных и выходных привязок, которые позволяют подключаться к другим службам и ресурсам Azure без написания пользовательского кода интеграции. Эти привязки объявляются в файле *function.json* в папке функции в соответствии с языком, который используется для функции.
 
-В службе "Функции" для каждого типа привязок требуется `direction`, `type` и уникальное `name`, которое определяется в файле function.json. Способ определения этих атрибутов зависит от языка приложения-функции.
+В предыдущем кратком руководстве файл *function.json* в папке *HttpExample* содержит две привязки в коллекции `bindings`:
 
-[!INCLUDE [functions-add-output-binding-json](../../includes/functions-add-output-binding-json.md)]
-
-## <a name="add-code-that-uses-the-output-binding"></a>Добавление кода, который использует выходную привязку
-
-[!INCLUDE [functions-add-output-binding-python](../../includes/functions-add-output-binding-python.md)]
-
-После использования выходной привязки вам для проверки подлинности, получения ссылки на очередь или записи данных больше не потребуется код пакета SDK службы хранилища Azure. Вместо вас эти задачи будут выполнены выходной привязкой очереди и средой выполнения функции.
-
-## <a name="run-the-function-locally"></a>Локальное выполнение функции
-
-Как и прежде, чтобы локально запустить среду выполнения функции, используйте следующую команду.
-
-```bash
-func host start
+```json
+{
+  "scriptFile": "__init__.py",
+  "bindings": [
+    {
+      "authLevel": "function",
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "req",
+      "methods": [
+        "get",
+        "post"
+      ]
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "$return"
+    }
+  ]
+}
 ```
 
-> [!NOTE]  
-> Так как пакеты расширений включены в файл host.json, во время запуска вместе с другими расширениями привязки Майкрософт было также загружено и установлено [расширение привязки службы хранилища](functions-bindings-storage-blob.md#packages---functions-2x-and-higher).
+У каждой привязки есть по крайней мере такие параметры, как тип, направление и имя. В примере выше у первой привязки тип `httpTrigger` и направление `in`. Для направления `in` `name` указывает имя входного параметра, который отправляется в функцию, когда ее вызывает триггер.
 
-Скопируйте URL-адрес функции `HttpTrigger` из выходных данных среды выполнения и вставьте его в адресную строку браузера. Добавьте строку запроса `?name=<yourname>` в этот URL-адрес и выполните запрос. В веб-браузере должен появиться ответ, который соответствует ответу из предыдущей статьи.
+Вторая привязка относится к типу `http` с направлением `out`. В этом случае специальный параметр `name` `$return` указывает, что эта привязка использует возвращаемое значение функции, а не предоставляет входной параметр.
 
-На этот раз в хранилище очередей выходная привязка также создает очередь с именем `outqueue` и с помощью этой же строки добавляет сообщение.
+Чтобы записать в очередь службы хранилища Azure данные из этой функции, добавьте привязку `out` типа `queue` с именем `msg`, как показано в коде ниже:
 
-Затем Azure CLI следует использовать для просмотра новой очереди и проверки добавленного сообщения. Кроме того, очередь можно просматривать с помощью [Обозревателя службы хранилища Microsoft Azure][Azure Storage Explorer] или на [портале Azure](https://portal.azure.com).
-
-[!INCLUDE [functions-storage-account-set-cli](../../includes/functions-storage-account-set-cli.md)]
-
-[!INCLUDE [functions-query-storage-cli](../../includes/functions-query-storage-cli.md)]
-
-### <a name="redeploy-the-project"></a>Повторное развертывание проекта 
-
-Чтобы обновить опубликованное приложение, используйте команду [`func azure functionapp publish`](functions-run-local.md#project-file-deployment) Core Tools для развертывания кода проекта в Azure. В этом примере следует заменить `<APP_NAME>` именем приложения.
-
-```command
-func azure functionapp publish <APP_NAME> --build remote
+```json
+{
+  "scriptFile": "__init__.py",
+  "bindings": [
+    {
+      "authLevel": "function",
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "req",
+      "methods": [
+        "get",
+        "post"
+      ]
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "$return"
+    },
+    {
+      "type": "queue",
+      "direction": "out",
+      "name": "msg",
+      "queueName": "outqueue",
+      "connection": "AzureWebJobsStorage"
+    }
+  ]
+}
 ```
 
-Чтобы проверить развернутую функцию, вы можете снова использовать cURL в веб-браузере. Как и раньше, добавьте строку запроса `&name=<yourname>` к URL-адресу, как показано в следующем примере.
+В этом случае `msg` передается функции в качестве выходного аргумента. Для типа `queue` необходимо также указать имя очереди в `queueName` и указать *имя* подключения к службе хранилища Azure (из *local.settings.json*) в `connection`.
 
-```bash
-curl https://myfunctionapp.azurewebsites.net/api/httptrigger?code=cCr8sAxfBiow548FBDLS1....&name=<yourname>
+Дополнительные сведения о привязках см. в статье [Azure Functions triggers and bindings](functions-triggers-bindings.md) (Основные понятия триггеров и привязок в Функциях Azure) и в разделе о [конфигурации выходных данных очереди](functions-bindings-storage-queue.md#output---configuration).
+
+## <a name="add-code-to-use-the-output-binding"></a>Добавление кода для использования выходной привязки
+
+С помощью привязки очереди, указываемой в файле *function.json*, теперь можно обновлять функцию, чтобы она получала выходной параметр `msg` и записывала сообщения в очередь.
+
+Обновите *HttpExample\\\_\_init\_\_.py* в соответствии с кодом ниже, добавив параметр `msg` в определение функции и `msg.set(name)` для оператора `if name:`.
+
+```python
+import logging
+
+import azure.functions as func
+
+
+def main(req: func.HttpRequest, msg: func.Out[func.QueueMessage]) -> str:
+
+    name = req.params.get('name')
+    if not name:
+        try:
+            req_body = req.get_json()
+        except ValueError:
+            pass
+        else:
+            name = req_body.get('name')
+
+    if name:
+        msg.set(name)
+        return func.HttpResponse(f"Hello {name}!")
+    else:
+        return func.HttpResponse(
+            "Please pass a name on the query string or in the request body",
+            status_code=400
+        )
 ```
 
-Чтобы убедиться, что выходная привязка снова создает новое сообщение в очереди, как и ожидалось, можно [проверить сообщение очереди службы хранилища](#query-the-storage-queue).
+Параметр `msg` — это экземпляр [`azure.functions.InputStream class`](/python/api/azure-functions/azure.functions.httprequest). Его метод `set` записывает строковое сообщение в очередь. В этом случае имя передается функции в строке запроса URL-адреса.
 
-[!INCLUDE [functions-cleanup-resources](../../includes/functions-cleanup-resources.md)]
+Обратите внимание, что *не* нужно писать код для проверки подлинности, получения ссылки на очередь или записи данных. Все эти задачи интеграции удобно осуществляются в среде выполнения Функций Azure и с использованием выходной привязки очереди.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="run-and-test-the-function-locally"></a>Локальные запуск и проверка функции
 
-Вы обновили функцию, активируемую HTTP, которую теперь можно использовать для записи данных в очередь службы хранилища. Чтобы получить дополнительные сведения о разработке Функций Azure с помощью Python, обратитесь к статьям [Справочник разработчика Python. Функции Azure](functions-reference-python.md) и [Основные понятия триггеров и привязок в Функциях Azure](functions-triggers-bindings.md). Полные примеры проектов Функций в Python см. в [этой статье](/samples/browse/?products=azure-functions&languages=python). Дополнительные сведения о ценообразовании см. на [странице цен на Функции](https://azure.microsoft.com/pricing/details/functions/) и в статье [Estimating Consumption plan costs](functions-consumption-costs.md) (Оценка стоимости плана потребления).
+1. В терминале или командной строке перейдите в папку проекта функций *LocalFunctionProj*.
 
-Затем для мониторинга приложения-функции следует включить Application Insights.
+1. Запустите хост-приложение среды выполнения Функций Azure, выполнив следующую команду:
+
+    ```
+    func host start
+    ```
+
+1. Когда запуск завершится и вы увидите URL-адрес конечной точки `HttpExample`, скопируйте его в браузер и добавьте строку запроса `?name=<your-name>`, сформировав полный URL-адрес, например `http://localhost:7071/api/HttpExample?name=Guido`. В браузере должно отобразиться сообщение, например `Hello Guido`, как в предыдущей статье.
+
+    Если конечная точка `HttpExample` не отображается, закройте узел, используя клавиши **Ctrl**+**C**, и проверьте выходные данные на наличие ошибок. Например, узел не активирует конечную точку, если в *function.json* есть ошибка. Убедитесь также, что `func host start` выполняется из папки проекта функций, а не из папки *HttpExample*.
+
+1. Когда все будет готово, завершите работу узла, нажав клавиши **Ctrl**+**C**.
+
+> [!TIP]
+> Во время запуска узел скачивает и устанавливает [расширение привязки хранилища](functions-bindings-storage-blob.md#packages---functions-2x-and-higher) и другие расширения привязки Майкрософт. Эта установка происходит, потому что расширения привязки включены по умолчанию в файле *host.json* со следующими свойствами:
+>
+> ```json
+> {
+>     "version": "2.0",
+>     "extensionBundle": {
+>         "id": "Microsoft.Azure.Functions.ExtensionBundle",
+>         "version": "[1.*, 2.0.0)"
+>     }
+> }
+> ```
+>
+> Если возникнут ошибки, связанные с расширениями привязки, убедитесь, что указанные выше свойства есть в файле *host.json*.
+
+## <a name="view-the-message-in-the-azure-storage-queue"></a>Просмотр сообщения в очереди службы хранилища Azure
+
+Когда функция создает HTTP-ответ для веб-браузера, она также вызывает `msg.set(name)`, который записывает сообщение в очередь службы хранилища Azure с именем `outqueue`, как указано в привязке очереди. Очередь можно просмотреть на [портале Azure](../storage/queues/storage-quickstart-queues-portal.md) или в [Обозревателе службы хранилища Azure](https://storageexplorer.com/). Очередь также можно просмотреть в интерфейсе командной строки Azure. Для этого выполните приведенные ниже шаги.
+
+1. Откройте файл *local.setting.json* проекта функций и скопируйте значение строки подключения. В окне терминала или командной строки выполните следующую команду, чтобы создать переменную среды с именем `AZURE_STORAGE_CONNECTION_STRING`. Вставьте конкретную строку подключения вместо `<connection_string>`. (Эта переменная среды означает, что вам не нужно указывать строку подключения для каждой последующей команды с помощью аргумента `--connection-string`.)
+
+    # <a name="bashtabbash"></a>[bash](#tab/bash)
+    
+    ```bash
+    AZURE_STORAGE_CONNECTION_STRING="<connection_string>"
+    ```
+    
+    # <a name="powershelltabpowershell"></a>[PowerShell](#tab/powershell)
+    
+    ```powershell
+    $env:AZURE_STORAGE_CONNECTION_STRING = "<connection_string>"
+    ```
+    
+    # <a name="cmdtabcmd"></a>[Cmd](#tab/cmd)
+    
+    ```cmd
+    set AZURE_STORAGE_CONNECTION_STRING="<connection_string>"
+    ```
+    
+    ---
+    
+1. (Дополнительно) Команду [`az storage queue list`](/cli/azure/storage/queue#az-storage-queue-list) можно использовать для просмотра очередей службы хранилища в учетной записи. В выходных данных этой команды должна быть очередь с именем `outqueue`, созданная при написании функцией первого сообщения в этой очереди.
+    
+    # <a name="bashtabbash"></a>[bash](#tab/bash)
+    
+    ```bash
+    az storage queue list --output tsv
+    ```
+    
+    # <a name="powershelltabpowershell"></a>[PowerShell](#tab/powershell)
+    
+    ```powershell
+    az storage queue list --output tsv
+    ```
+    
+    # <a name="cmdtabcmd"></a>[Cmd](#tab/cmd)
+    
+    ```cmd
+    az storage queue list --output tsv
+    ```
+    
+    ---
+
+
+1. Используйте команду [`az storage message peek`](/cli/azure/storage/message#az-storage-message-peek), чтобы просматривать сообщения в этой очереди. Необходимо указывать первое имя, использованное ранее при проверке функции. Команда получает первое сообщение в очереди в [кодировке Base64](functions-bindings-storage-queue.md#encoding), поэтому необходимо также декодировать сообщение, чтобы просмотреть его в виде текста.
+
+    # <a name="bashtabbash"></a>[bash](#tab/bash)
+    
+    ```bash
+    echo `echo $(az storage message peek --queue-name outqueue -o tsv --query '[].{Message:content}') | base64 --decode`
+    ```
+    
+    # <a name="powershelltabpowershell"></a>[PowerShell](#tab/powershell)
+    
+    ```powershell
+    [System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String($(az storage message peek --queue-name outqueue -o tsv --query '[].{Message:content}')))
+    ```
+    
+    # <a name="cmdtabcmd"></a>[Cmd](#tab/cmd)
+    
+    Коллекцию сообщений требуется разыменовать и раскодировать из base64, поэтому запустите PowerShell и выполните соответствующую команду PowerShell.
+
+    ---
+    
+## <a name="redeploy-the-project-to-azure"></a>Повторное развертывание проекта в Azure
+
+Теперь, когда вы протестировали функцию локально и убедились, что она записала сообщение в очередь службы хранилища Azure, можно повторно развернуть проект, чтобы обновить конечную точку, работающую в Azure.
+
+1. В папке *LocalFunctionsProj* используйте команду [`func azure functionapp publish`](functions-run-local.md#project-file-deployment), чтобы повторно развернуть проект, заменив `<app_name>` именем приложения.
+
+    ```
+    func azure functionapp publish <app_name>
+    ```
+    
+1. Как и в предыдущем кратком руководстве, используйте браузер или cURL для проверки повторно развернутой функции.
+
+    # <a name="browsertabbrowser"></a>[Браузер](#tab/browser)
+    
+    Скопируйте полный URL-адрес вызова **Invoke url**, показанный в выходных данных команды publish, в адресную строку браузера, добавив параметр запроса `&name=Azure`. В браузере должны отображаться выходные данные, аналогичные данным при локальном запуске функции.
+
+    ![Выходные данные функции, выполняемой в Azure в браузере](./media/functions-create-first-function-python/function-test-cloud-browser.png)
+
+    # <a name="curltabcurl"></a>[curl](#tab/curl)
+    
+    Запустите [cURL](https://curl.haxx.se/), используя **Invoke url** и добавив параметр `&name=Azure`. Результатом выполнения этой команды должен быть текст "Hello Azure".
+    
+    ![Выходные данные функции, выполненной в Azure в cURL](./media/functions-create-first-function-python/function-test-cloud-curl.png)
+
+    --- 
+
+1. Проверьте очередь службы хранилища еще раз, как описано в предыдущем разделе, чтобы убедиться, что в ней содержится новое сообщение, записанное в очередь.
+
+    Если вы используете интерфейс командной строки Azure для проверки очереди, команда `az storage message peek` покажет только первое сообщение в очереди. Чтобы смоделировать обработку сообщений, используйте вместо нее команду `az storage message get` с теми же аргументами. Команда `get` возвратит сообщение и удалит его из очереди. Эту команду можно повторять до тех пор, пока очередь не будет пуста (и команда не выдаст ошибку).
+
+## <a name="clean-up-resources"></a>Очистка ресурсов
+
+После перехода к следующему шагу, [Включение интеграции с Application Insights](functions-monitoring.md#manually-connect-an-app-insights-resource), вам потребуется сохранить все ресурсы, чтобы использовать их в будущем.
+
+В противном случае используйте следующую команду, чтобы удалить группу ресурсов и все содержащиеся в ней ресурсы и избежать дополнительных расходов.
+
+```azurecli
+az group delete --name AzureFunctionsQuickstart-rg
+```
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Включение интеграции с Application Insights](functions-monitoring.md#manually-connect-an-app-insights-resource)
+> [Включение интеграции Application Insights с приложением Функций Azure](functions-monitoring.md#manually-connect-an-app-insights-resource)
 
-[Azure Storage Explorer]: https://storageexplorer.com/
+Другие ресурсы:
+
+- [Примеры полных проектов Функций на Python](/samples/browse/?products=azure-functions&languages=python).
+- [Azure Functions Python Developer Guide](functions-reference-python.md) (Справочник по Функциям Azure для разработчика Python)
+- [Azure Functions triggers and bindings](functions-triggers-bindings.md) (Основные понятия триггеров и привязок в Функциях Azure)
+- [Страница цен на Функции Azure](https://azure.microsoft.com/pricing/details/functions/)
+- Статья [Estimating Consumption plan costs](functions-consumption-costs.md) (Оценка затрат на план потребления).

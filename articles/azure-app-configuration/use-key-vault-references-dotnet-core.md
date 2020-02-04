@@ -11,17 +11,17 @@ ms.service: azure-app-configuration
 ms.workload: tbd
 ms.devlang: csharp
 ms.topic: tutorial
-ms.date: 10/07/2019
+ms.date: 01/21/2020
 ms.author: lcozzens
 ms.custom: mvc
-ms.openlocfilehash: 992cface653bf3fe52afc7efa3f17573fcf91399
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: b35c23e6dd88af01391bf7f01a7e736a1a744fff
+ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73469647"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76714429"
 ---
-# <a name="tutorial-use-key-vault-references-in-an-aspnet-core-app"></a>Руководство по использованию ссылок Key Vault в приложении ASP.NET Core
+# <a name="tutorial-use-key-vault-references-in-an-aspnet-core-app"></a>Руководство. использованию ссылок Key Vault в приложении ASP.NET Core
 
 В этом учебнике вы узнаете, как использовать службу "Конфигурация приложений Azure" с Azure Key Vault. Конфигурация приложений Azure и Key Vault — это дополняющие службы, которые используются параллельно в большинстве развертываний приложений.
 
@@ -35,7 +35,7 @@ ms.locfileid: "73469647"
 
 Вы можете выполнять шаги в этом учебнике с помощью любого редактора кода. Например, [Visual Studio Code](https://code.visualstudio.com/) — это кроссплатформенный редактор кода, доступный для операционных систем Windows, macOS и Linux.
 
-Из этого руководства вы узнаете, как выполнять следующие задачи:
+В этом руководстве описано следующее:
 
 > [!div class="checklist"]
 > * создание ключа службы "Конфигурация приложений Azure", который ссылается на значение, хранящееся в Key Vault;
@@ -61,7 +61,7 @@ ms.locfileid: "73469647"
     - В поле **Имя Key Vault** укажите уникальное имя. Для работы с этим учебником введите **Contoso-vault2**.
     - В раскрывающемся списке **Регион** выберите расположение.
 1. Для других свойств раздела **создания Key Vault** оставьте значения по умолчанию.
-1. Нажмите кнопку **Создать**.
+1. Нажмите кнопку **создания**.
 
 На этом этапе доступ к этому новому хранилищу может получать только учетная запись Azure.
 
@@ -75,14 +75,14 @@ ms.locfileid: "73469647"
 1. Выберите **Создать или импортировать**.
 1. В области **Создание секрета** выберите следующие значения:
     - **Параметры отправки.** Введите **Вручную**.
-    - **Имя.** Введите **Message**.
+    - **Name** (Имя). Введите **Message**.
     - **Value** (Значение): Введите **Hello from Key Vault**.
 1. Для других свойств раздела **Создание секрета** оставьте значения по умолчанию.
-1. Нажмите кнопку **Создать**.
+1. Нажмите кнопку **создания**.
 
 ## <a name="add-a-key-vault-reference-to-app-configuration"></a>Добавление ссылки на Key Vault в службу "Конфигурация приложений Azure"
 
-1. Войдите на [портале Azure](https://portal.azure.com). Щелкните **Все ресурсы** и выберите экземпляр хранилища "Конфигурация приложений Azure", который вы создали по инструкциям из краткого руководства.
+1. Войдите на [портал Azure](https://portal.azure.com). Щелкните **Все ресурсы** и выберите экземпляр хранилища "Конфигурация приложений Azure", который вы создали по инструкциям из краткого руководства.
 
 1. Выберите **Обозреватель конфигураций**.
 
@@ -119,30 +119,62 @@ ms.locfileid: "73469647"
 
 1. Выполните следующую команду, чтобы предоставить субъекту-службе доступ к хранилищу ключей:
 
-    ```
+    ```cmd
     az keyvault set-policy -n <your-unique-keyvault-name> --spn <clientId-of-your-service-principal> --secret-permissions delete get list set --key-permissions create decrypt delete encrypt get list unwrapKey wrapKey
     ```
 
-1. Добавьте секреты для *clientId* и *clientSecret* в диспетчер секретов. Это средство для хранения конфиденциальных данных, добавленных в файл *CSPROJ* при прохождении руководства [Краткое руководство. Создание приложения ASP.NET Core с помощью службы "Конфигурация приложений Azure"](./quickstart-aspnet-core-app.md). Эти команды должны выполняться в том же каталоге, что и файл *CSPROJ*.
+1. Добавьте переменные среды для хранения значений *clientId*, *clientSecret* и *tenantId*.
 
-    ```
-    dotnet user-secrets set ConnectionStrings:KeyVaultClientId <clientId-of-your-service-principal>
-    dotnet user-secrets set ConnectionStrings:KeyVaultClientSecret <clientSecret-of-your-service-principal>
+    #### <a name="windows-command-prompttabcmd"></a>[Командная строка Windows](#tab/cmd)
+
+    ```cmd
+    setx AZURE_CLIENT_ID <clientId-of-your-service-principal>
+    setx AZURE_CLIENT_SECRET <clientSecret-of-your-service-principal>
+    setx AZURE_TENANT_ID <tenantId-of-your-service-principal>
     ```
 
-> [!NOTE]
-> Эти учетные данные Key Vault используются только в вашем приложении. Приложение выполняет проверку подлинности непосредственно в Key Vault с использованием этих учетных данных. Они никогда не передаются в службу настройки приложений.
+    #### <a name="powershelltabpowershell"></a>[PowerShell](#tab/powershell)
+
+    ```PowerShell
+    $Env:AZURE_CLIENT_ID = <clientId-of-your-service-principal>
+    $Env:AZURE_CLIENT_SECRET = <clientSecret-of-your-service-principal>
+    $Env:AZURE_TENANT_ID = <tenantId-of-your-service-principal>
+    ```
+
+    #### <a name="bashtabbash"></a>[Bash](#tab/bash)
+
+    ```bash
+    export AZURE_CLIENT_ID = <clientId-of-your-service-principal>
+    export AZURE_CLIENT_SECRET = <clientSecret-of-your-service-principal>
+    export AZURE_TENANT_ID = <tenantId-of-your-service-principal>
+    ```
+
+    ---
+
+    > [!NOTE]
+    > Эти учетные данные Key Vault используются только в вашем приложении. Приложение выполняет проверку подлинности непосредственно в Key Vault с использованием этих учетных данных. Они никогда не передаются в службу настройки приложений.
+
+1. Перезапустите терминал, чтобы загрузить эти новые переменные среды.
 
 ## <a name="update-your-code-to-use-a-key-vault-reference"></a>Обновление кода для использования ссылки Key Vault
+
+1. Добавьте ссылку на необходимые пакеты NuGet, выполнив следующую команду.
+
+    ```dotnetcli
+    dotnet add package Microsoft.Azure.KeyVault
+    dotnet add package Azure.Identity
+    ```
 
 1. Откройте файл *Program.cs* и добавьте ссылки на приведенные ниже необходимые пакеты.
 
     ```csharp
     using Microsoft.Azure.KeyVault;
-    using Microsoft.IdentityModel.Clients.ActiveDirectory;
+    using Azure.Identity;
     ```
 
 1. Обновите метод `CreateWebHostBuilder`, чтобы использовать службу "Конфигурация приложений", путем вызова метода `config.AddAzureAppConfiguration`. Добавьте параметр `UseAzureKeyVault`, чтобы передать в Key Vault новую ссылку `KeyVaultClient`.
+
+    #### <a name="net-core-2xtabcore2x"></a>[.NET Core 2.x](#tab/core2x).
 
     ```csharp
     public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
@@ -151,18 +183,38 @@ ms.locfileid: "73469647"
             {
                 var settings = config.Build();
 
-                KeyVaultClient kvClient = new KeyVaultClient(async (authority, resource, scope) =>
+                config.AddAzureAppConfiguration(options =>
                 {
-                    var adCredential = new ClientCredential(settings["ConnectionStrings:KeyVaultClientId"], settings["ConnectionStrings:KeyVaultClientSecret"]);
-                    var authenticationContext = new AuthenticationContext(authority, null);
-                    return (await authenticationContext.AcquireTokenAsync(resource, adCredential)).AccessToken;
-                });
-
-                config.AddAzureAppConfiguration(options => {
                     options.Connect(settings["ConnectionStrings:AppConfig"])
-                            .UseAzureKeyVault(kvClient); });
+                            .ConfigureKeyVault(kv =>
+                            {
+                                kv.SetCredential(new DefaultAzureCredential());
+                            });
+                });
             })
             .UseStartup<Startup>();
+    ```
+
+    #### <a name="net-core-3xtabcore3x"></a>[.NET Core 3.x](#tab/core3x).
+
+    ```csharp
+        public static IHostBuilder CreateHostBuilder(string[] args) =>
+            Host.CreateDefaultBuilder(args)
+            .ConfigureWebHostDefaults(webBuilder =>
+            webBuilder.ConfigureAppConfiguration((hostingContext, config) =>
+            {
+                var settings = config.Build();
+
+                config.AddAzureAppConfiguration(options =>
+                {
+                    options.Connect(settings["ConnectionStrings:AppConfig"])
+                            .ConfigureKeyVault(kv =>
+                            {
+                                kv.SetCredential(new DefaultAzureCredential());
+                            });
+                });
+            })
+            .UseStartup<Startup>());
     ```
 
 1. При инициализации подключения к службе "Конфигурация приложений Azure" вы передали ссылку `KeyVaultClient` в метод `UseAzureKeyVault`. После инициализации можно получить доступ к значениям ссылок на Key Vault так же, как и к значениям обычных ключей "Конфигурация приложений Azure".
@@ -179,7 +231,7 @@ ms.locfileid: "73469647"
         }
         h1 {
             color: @Configuration["TestApp:Settings:FontColor"];
-            font-size: @Configuration["TestApp:Settings:FontSize"];
+            font-size: @Configuration["TestApp:Settings:FontSize"]px;
         }
     </style>
 
@@ -211,7 +263,7 @@ ms.locfileid: "73469647"
 
 [!INCLUDE [azure-app-configuration-cleanup](../../includes/azure-app-configuration-cleanup.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом учебнике вы создали ключ службы "Конфигурация приложений Azure", который ссылается на значение, хранящееся в Key Vault. Чтобы узнать, как добавить удостоверение службы, управляемое Azure, которое упрощает доступ к службе "Конфигурация приложения Azure" и Key Vault, перейдите к следующему учебнику.
 

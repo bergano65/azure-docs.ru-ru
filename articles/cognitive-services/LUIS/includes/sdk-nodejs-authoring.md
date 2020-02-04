@@ -8,14 +8,14 @@ ms.service: cognitive-services
 ms.subservice: luis
 ms.topic: include
 ms.custom: include file
-ms.date: 01/14/2020
+ms.date: 01/23/2020
 ms.author: diberry
-ms.openlocfilehash: 65611dfb171008deab9d1d6cb15f0470fcbc2753
-ms.sourcegitcommit: d29e7d0235dc9650ac2b6f2ff78a3625c491bbbf
+ms.openlocfilehash: 58ee74f7b01738e67f9fddd39eb4eee59cdb65b6
+ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76170421"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76774227"
 ---
 С помощью клиентской библиотеки для разработки Распознавания речи (LUIS) для Node.js можно выполнить приведенные ниже задачи.
 
@@ -25,7 +25,7 @@ ms.locfileid: "76170421"
 * Обучать и публиковать приложения.
 * Удаление приложения
 
-[Справочная документация](https://docs.microsoft.com/javascript/api/@azure/cognitiveservices-luis-authoring/?view=azure-node-latest) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/cognitiveservices/cognitiveservices-luis-authoring) | [Пакет для разработки (NPM)](https://www.npmjs.com/package/azure-cognitiveservices-luis-authoring) | [Образцы кода](https://github.com/Azure-Samples/cognitive-services-quickstart-code/blob/master/javascript/LUIS/luis_authoring_quickstart.js)
+[Справочная документация](https://docs.microsoft.com/javascript/api/@azure/cognitiveservices-luis-authoring/?view=azure-node-latest) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/cognitiveservices/cognitiveservices-luis-authoring) | [Пакет для разработки (NPM)](https://www.npmjs.com/package/@azure/cognitiveservices-luis-authoring), [Пакет среды выполнения (NPM)](https://www.npmjs.com/package/@azure/cognitiveservices-luis-runtime) | [Примеры](https://github.com/Azure-Samples/cognitive-services-quickstart-code/blob/master/javascript/LUIS/luis_authoring_quickstart.js)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -125,7 +125,7 @@ npm install @azure/cognitiveservices-luis-authoring @azure/ms-rest-js
 
 ## <a name="authenticate-the-client"></a>Аутентификация клиента
 
-Теперь создайте объект [CognitiveServicesCredentials]() с помощью ключа и используйте его со своей конечной точкой, чтобы создать объект [LUISAuthoringClient]().
+Теперь создайте объект [CognitiveServicesCredentials](https://docs.microsoft.com/javascript/api/@azure/ms-rest-js/apikeycredentials?view=azure-node-latest) с помощью ключа и используйте его со своей конечной точкой, чтобы создать объект [LUISAuthoringClient](https://docs.microsoft.com/javascript/api/@azure/cognitiveservices-luis-authoring/luisauthoringclient?view=azure-node-latest).
 
 [!code-javascript[Create LUIS client object](~/cognitive-services-quickstart-code/javascript/LUIS/luis_authoring_quickstart.js?name=AuthoringCreateClient)]
 

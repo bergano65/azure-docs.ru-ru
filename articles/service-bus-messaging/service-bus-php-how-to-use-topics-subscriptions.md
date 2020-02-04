@@ -1,6 +1,6 @@
 ---
-title: Краткое руководство. Как использовать разделы Служебной шины с PHP
-description: Краткое руководство. Узнайте, как использовать разделы служебной шины с PHP в Azure.
+title: Использование разделов Служебной шины Azure с PHP
+description: В этом руководстве вы узнаете, как использовать разделы и подписки Служебной шины Azure из приложения PHP.
 services: service-bus-messaging
 documentationcenter: php
 author: axisc
@@ -12,14 +12,14 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: PHP
 ms.topic: quickstart
-ms.date: 11/05/2019
+ms.date: 01/24/2020
 ms.author: aschhab
-ms.openlocfilehash: b55d3c93f9926b7446dadf069b37a878caa81e15
-ms.sourcegitcommit: bc7725874a1502aa4c069fc1804f1f249f4fa5f7
+ms.openlocfilehash: 92f25f4bdac4942478c93f717c81eadd2c2f5b4a
+ms.sourcegitcommit: b5d646969d7b665539beb18ed0dc6df87b7ba83d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73721655"
+ms.lasthandoff: 01/26/2020
+ms.locfileid: "76760680"
 ---
 # <a name="quickstart-how-to-use-service-bus-topics-and-subscriptions-with-php"></a>Краткое руководство. Как использовать разделы и подписки служебной шины с PHP
 
@@ -363,7 +363,7 @@ $serviceBusRestProxy->deleteSubscription("mytopic", "mysubscription");
 > [!NOTE]
 > Вы можете управлять ресурсами служебной шины с помощью [обозревателя служебной шины](https://github.com/paolosalvatori/ServiceBusExplorer/). Обозреватель служебной шины позволяет без труда подключаться к пространству имен служебной шины и управлять сущностями обмена сообщениями. Средство предоставляет дополнительные возможности, например функции импорта и экспорта или возможность проверять разделы, очереди, подписки, службы ретрансляции, центры уведомлений и концентраторы событий. 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 См. сведения об [очередях, разделах и подписках][Queues, topics, and subscriptions].
 
 [BrokeredMessage]: /dotnet/api/microsoft.servicebus.messaging.brokeredmessage

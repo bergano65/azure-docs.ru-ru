@@ -1,19 +1,19 @@
 ---
 title: Работа с API таблиц Azure Cosmos DB с использованием пакета SDK для .NET Standard
 description: Узнайте, как хранить и запрашивать структурированные данные в учетной записи API таблиц Azure Cosmos DB
-author: wmengmsft
-ms.author: wmeng
+author: sakash279
+ms.author: akshanka
 ms.service: cosmos-db
 ms.subservice: cosmosdb-table
 ms.devlang: dotnet
 ms.topic: sample
 ms.date: 12/03/2019
-ms.openlocfilehash: b3497df8acdb2e7d184dba54e93506146d842348
-ms.sourcegitcommit: a9b1f7d5111cb07e3462973eb607ff1e512bc407
+ms.openlocfilehash: f4d6e1bb0d5db0dbfc30e14abc58321bce8d0baf
+ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76314391"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76770720"
 ---
 # <a name="get-started-with-azure-cosmos-db-table-api-and-azure-table-storage-using-the-net-sdk"></a>Начало работы с API таблиц Azure Cosmos DB и хранилищем таблиц Azure с помощью пакета SDK для .NET
 
@@ -178,6 +178,12 @@ public static async Task<CloudTable> CreateTableAsync(string tableName)
     Console.WriteLine();
     return table;
 }
+```
+
+Если вы получаете ошибку исключения 503 Service Unavailable (Служба недоступна), то возможно, что требуемые порты для прямого подключения блокируются брандмауэром. Чтобы устранить эту проблему, откройте необходимые порты или используйте подключение в режиме шлюза, как показано в следующем коде:
+
+```csharp
+tableClient.TableClientConfiguration.UseRestExecutorForCosmosEndpoint = true;
 ```
 
 ## <a name="define-the-entity"></a>Определение сущности 

@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.custom: mvc
 ms.date: 03/14/2019
 ms.author: robinsh
-ms.openlocfilehash: b48c43f90be3f43b05dcb4028c774836ffd196b7
-ms.sourcegitcommit: 05cdbb71b621c4dcc2ae2d92ca8c20f216ec9bc4
+ms.openlocfilehash: a1b6adc37d78e3fa73d7ae70237d678af6b9dc99
+ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76045973"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76769471"
 ---
 # <a name="quickstart-enable-ssh-and-rdp-over-an-iot-hub-device-stream-by-using-a-c-proxy-application-preview"></a>Краткое руководство. Подключение по протоколу SSH и RDP через поток устройств центра Интернета вещей с помощью прокси-приложения C# (предварительная версия)
 
@@ -47,11 +47,11 @@ ms.locfileid: "76045973"
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 * Предварительная версия потоков устройств сейчас поддерживается только в центрах Интернета вещей, созданных в следующих регионах:
 
-  * Центральный регион США
+  * Центральная часть США
   * Центральная часть США (EUAP)
   * Юго-Восточная Азия
   * Северная Европа
@@ -72,7 +72,7 @@ ms.locfileid: "76045973"
    az extension add --name azure-cli-iot-ext
    ```
 
-* [Загрузите пример проекта C#](https://github.com/Azure-Samples/azure-iot-samples-csharp/archive/master.zip), а также извлеките ZIP-архив.
+* [Скачайте примеры Azure IoT на C#](https://github.com/Azure-Samples/azure-iot-samples-csharp/archive/master.zip) и извлеките ZIP-архив.
 
 * Необходима действительная учетная запись пользователя и учетные данные на устройстве (Windows или Linux) для проверки подлинности пользователя.
 

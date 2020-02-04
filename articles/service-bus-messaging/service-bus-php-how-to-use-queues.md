@@ -1,6 +1,6 @@
 ---
-title: Краткое руководство. Как использовать очереди служебной шины с PHP
-description: Краткое руководство. Узнайте, как использовать очереди служебной шины в Azure. Примеры кода написаны на PHP.
+title: Как использовать очереди Служебной шины Azure с PHP
+description: В этом руководстве показано, как создавать приложения PHP для отправки и получения сообщений через очередь Служебной шины.
 services: service-bus-messaging
 documentationcenter: php
 author: axisc
@@ -12,14 +12,14 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: PHP
 ms.topic: quickstart
-ms.date: 11/05/2019
+ms.date: 01/24/2020
 ms.author: aschhab
-ms.openlocfilehash: d576c269f4178c7543327c6b75f46f5487d7a205
-ms.sourcegitcommit: bc7725874a1502aa4c069fc1804f1f249f4fa5f7
+ms.openlocfilehash: fcb735d81cac587c75a133ad582f2a839551dcfa
+ms.sourcegitcommit: b5d646969d7b665539beb18ed0dc6df87b7ba83d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73719188"
+ms.lasthandoff: 01/26/2020
+ms.locfileid: "76760697"
 ---
 # <a name="quickstart-how-to-use-service-bus-queues-with-php"></a>Краткое руководство. Как использовать очереди служебной шины с PHP
 [!INCLUDE [service-bus-selector-queues](../../includes/service-bus-selector-queues.md)]
@@ -226,7 +226,7 @@ catch(ServiceException $e){
 > [!NOTE]
 > Вы можете управлять ресурсами служебной шины с помощью [обозревателя служебной шины](https://github.com/paolosalvatori/ServiceBusExplorer/). Обозреватель служебной шины позволяет без труда подключаться к пространству имен служебной шины и управлять сущностями обмена сообщениями. Средство предоставляет дополнительные возможности, например функции импорта и экспорта или возможность проверять разделы, очереди, подписки, службы ретрансляции, центры уведомлений и концентраторы событий. 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Вы ознакомились с основами использования очередей служебной шины. Дополнительные сведения см. в статье [Очереди, разделы и подписки служебной шины][Queues, topics, and subscriptions].
 
 Дополнительные сведения также доступны в [Центре разработчика PHP](https://azure.microsoft.com/develop/php/).

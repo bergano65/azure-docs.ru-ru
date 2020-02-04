@@ -8,12 +8,12 @@ ms.author: rgarcia
 ms.date: 02/24/2019
 ms.topic: overview
 ms.service: azure-spatial-anchors
-ms.openlocfilehash: ac7fefd8ecabd40070b422c169befe64c08f12a8
-ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
+ms.openlocfilehash: 563e2da8eba228636b05db2112739fdead4a4aa3
+ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74277078"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76844893"
 ---
 # <a name="frequently-asked-questions-about-azure-spatial-anchors"></a>Часто задаваемые вопросы о службе "Пространственные привязки Azure"
 
@@ -112,6 +112,7 @@ ms.locfileid: "74277078"
 **Ответ.** Разработчики могут создавать приложения для службы "Пространственные привязки Azure" с помощью знакомых средств и платформ для своего устройства:
 
 - Unity для HoloLens, iOS и Android;
+- Xamarin на платформе iOS и Android
 - Swift или Objective-C для iOS;
 - Java или Android NDK для Android;
 - C++/WinRT для HoloLens.

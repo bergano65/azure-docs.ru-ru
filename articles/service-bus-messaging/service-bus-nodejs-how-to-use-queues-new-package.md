@@ -1,6 +1,6 @@
 ---
-title: Краткое руководство. Использование очередей azure/service-bus в Node.js
-description: Краткое руководство. Сведения о том, как использовать очереди служебной шины в Azure в приложении Node.js с помощью пакета azure/service-bus.
+title: Использование очередей azure/service-bus в Node.js
+description: Узнаете, как написать программу Node.js для отправки и получения сообщений через очередь служебной шины с помощью нового пакета @azure/service-bus.
 services: service-bus-messaging
 documentationcenter: nodejs
 author: axisc
@@ -11,14 +11,14 @@ ms.workload: tbd
 ms.tgt_pltfrm: na
 ms.devlang: nodejs
 ms.topic: quickstart
-ms.date: 11/05/2019
+ms.date: 01/27/2020
 ms.author: aschhab
-ms.openlocfilehash: 9901ccd6bb1abf27bb1141c618d0bfde167b9cc3
-ms.sourcegitcommit: bc7725874a1502aa4c069fc1804f1f249f4fa5f7
+ms.openlocfilehash: 9db359d8331859e3eebf345d91fe5dc6e66c0d4c
+ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73721687"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76774575"
 ---
 # <a name="quickstart-how-to-use-service-bus-queues-with-nodejs-and-the-azureservice-bus-package"></a>Краткое руководство. Использование очередей служебной шины в Azure с помощью Node.js и пакета azure/service-bus
 > [!div class="op_multi_selector" title1="Язык программирования" title2="Пакет Node.js"]
@@ -134,7 +134,7 @@ npm install @azure/service-bus
 > [!NOTE]
 > Вы можете управлять ресурсами служебной шины с помощью [обозревателя служебной шины](https://github.com/paolosalvatori/ServiceBusExplorer/). Обозреватель служебной шины позволяет без труда подключаться к пространству имен служебной шины и управлять сущностями обмена сообщениями. Средство предоставляет дополнительные возможности, например функции импорта и экспорта или возможность проверять разделы, очереди, подписки, службы ретрансляции, центры уведомлений и концентраторы событий. 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Для получения дополнительных сведений ознакомьтесь со следующими ресурсами:
 - [Очереди, разделы и подписки](service-bus-queues-topics-subscriptions.md)
 - Просмотрите другие [примеры Node.js для служебной шины на сайте GitHub](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/servicebus/service-bus/samples/javascript).

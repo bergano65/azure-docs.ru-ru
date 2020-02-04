@@ -12,15 +12,15 @@ ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.topic: tutorial
-ms.date: 01/16/2020
+ms.date: 01/22/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a9be353e6a030708ea0b9939689d8669506d3b80
-ms.sourcegitcommit: 7221918fbe5385ceccf39dff9dd5a3817a0bd807
+ms.openlocfilehash: 6a920e58f1ffd4c3e3e9769bf6346100a8677b90
+ms.sourcegitcommit: b5d646969d7b665539beb18ed0dc6df87b7ba83d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/21/2020
-ms.locfileid: "76289039"
+ms.lasthandoff: 01/26/2020
+ms.locfileid: "76760064"
 ---
 # <a name="tutorial-integrate-azure-ad-single-sign-on-sso-with-netsuite"></a>Руководство. Интеграция единого входа Azure AD с NetSuite
 
@@ -98,8 +98,12 @@ NetSuite поддерживает следующие технологии:
     | `https://<Account ID>.na1.sandbox.NetSuite.com/saml2/acs`|
     | `https://<Account ID>.na2.sandbox.NetSuite.com/saml2/acs`|
 
-    > [!NOTE]
-    > Приведенные выше URL-адреса используются только для примера. Замените их фактическим URL-адресом ответа. Чтобы получить это значение, обратитесь в [службу поддержки клиентов NetSuite](http://www.netsuite.com/portal/services/support-services/suitesupport.shtml). Кроме того, вы можете изучить допустимые форматы в разделе **Базовая конфигурация SAML** на портале Azure.
+    * Вы получите значение **<`Account ID`>** в разделе конфигурации Netsuite, описанное далее в руководстве на шаге 8 раздела "Конфигурация Netsuite". В этом случае вы обнаружите точный домен (например, system.na0.netsuite.com).
+
+        ![Настройка единого входа](./media/NetSuite-tutorial/domain-value.png)
+
+        > [!NOTE]
+        > Приведенные выше URL-адреса используются только для примера. Замените их фактическим URL-адресом ответа. Чтобы получить это значение, обратитесь в [службу поддержки клиентов NetSuite](http://www.netsuite.com/portal/services/support-services/suitesupport.shtml). Кроме того, вы можете изучить допустимые форматы в разделе **Базовая конфигурация SAML** на портале Azure.
 
 1. Приложение NetSuite ожидает проверочные утверждения SAML в определенном формате, который требует добавить настраиваемые сопоставления атрибутов в конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию.
 
@@ -204,7 +208,7 @@ NetSuite поддерживает следующие технологии:
 
     b. На панели **Company Information** (Сведения о компании) в правом столбце скопируйте **Account ID** (Идентификатор учетной записи).
 
-    c. Вставьте **идентификатор учетной записи**, который вы скопировали из учетной записи NetSuite, в поле **Значение атрибута** в Azure AD. 
+    c. Вставьте **идентификатор учетной записи**, который вы скопировали из учетной записи NetSuite, в поле **Значение атрибута** в Azure AD.
 
 10. Прежде чем пользователи смогут выполнять единый вход в NetSuite, необходимо назначить им соответствующие разрешения в NetSuite. Чтобы назначить эти разрешения, сделайте следующее:
 

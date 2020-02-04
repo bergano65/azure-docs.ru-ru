@@ -1,12 +1,9 @@
 ---
-title: Учебник по регистрации потока сетевого трафика на виртуальную машину и с нее с помощью портала Azure
-titleSuffix: Azure Network Watcher
+title: Руководство по регистрации потока сетевого трафика на виртуальную машину и с нее с помощью портала Azure | Документация Майкрософт
 description: Дополнительные сведения о регистрации потока сетевого трафика на виртуальную машину и обратно с помощью функции журналов потока NSG службы "Наблюдатель за сетями".
 services: network-watcher
 documentationcenter: na
-author: KumudD
-manager: twooley
-editor: ''
+author: damendo
 tags: azure-resource-manager
 Customer intent: I need to log the network traffic to and from a VM so I can analyze it for anomalies.
 ms.assetid: 01606cbf-d70b-40ad-bc1d-f03bb642e0af
@@ -16,16 +13,23 @@ ms.topic: tutorial
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 04/30/2018
-ms.author: kumud
+ms.author: damendo
 ms.custom: mvc
-ms.openlocfilehash: 7f4466b6f6de5028db8b62389c9d5ddbdafc9d62
-ms.sourcegitcommit: d9ec6e731e7508d02850c9e05d98d26c4b6f13e6
+ms.openlocfilehash: c295e6c8ffea564e157545c4662cbe7e1841edae
+ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/20/2020
-ms.locfileid: "76280991"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76841018"
 ---
 # <a name="tutorial-log-network-traffic-to-and-from-a-virtual-machine-using-the-azure-portal"></a>Руководство. Регистрация потока входящего и исходящего сетевого трафика виртуальной машины с помощью портала Azure
+
+> [!div class="op_single_selector"]
+> - [Портал Azure](network-watcher-nsg-flow-logging-portal.md)
+> - [PowerShell](network-watcher-nsg-flow-logging-powershell.md)
+> - [Azure CLI](network-watcher-nsg-flow-logging-cli.md)
+> - [REST API](network-watcher-nsg-flow-logging-rest.md)
+> - [Azure Resource Manager](network-watcher-nsg-flow-logging-azure-resource-manager.md)
 
 Группа безопасности сети (NSG) позволяет выполнять фильтрацию входящего и исходящего трафика на виртуальную машину и с нее. Вы можете регистрировать сетевой трафик, проходящий через NSG, с помощью функции журналов потока NSG службы "Наблюдатель за сетями". В этом руководстве описано следующее:
 
@@ -93,7 +97,10 @@ ms.locfileid: "76280991"
     | Расположение       | Выберите **Восточная часть США**.                                           |
     | Группа ресурсов | Щелкните **Use existing** (Использовать существующую), а затем выберите **myResourceGroup**. |
 
-    Учетная запись хранения должна находиться в том же регионе, что и NSG. Создание учетной записи хранения может занять примерно минуту. Выполняйте последующие шаги только после создания учетной записи хранения.     
+    Создание учетной записи хранения может занять примерно минуту. Выполняйте последующие шаги только после создания учетной записи хранения. Если вы использовали имеющуюся учетную запись хранения, а не создали новую, убедитесь, что выбрали учетную запись, для которой установлен параметр **Все сети** (по умолчанию) в области **Брандмауэры и виртуальные сети** раздела **Settings** (Параметры). Во любом случае учетная запись хранения находиться в том же регионе, что и NSG.
+
+    > [!NOTE]
+    > Хотя поставщики Microsoft.Insight и Microsoft.Network в настоящее время поддерживаются как доверенные службы Майкрософт Службой хранилища Azure, журналы потоков NSG еще подключены не полностью. Чтобы включить ведение журнала потоков NSG, по-прежнему нужно выбрать **Все сети**, пока эта функция не будет подключена полностью. 
 4. В верхнем левом углу портала выберите **Все службы**. В текстовом поле **Фильтр** введите *Наблюдатель за сетями*. Когда в результатах поиска появится **Наблюдатель за сетями**, выберите его.
 5. В разделе **Журналы** выберите **Журналы последовательностей NSG**, как показано на следующем изображении.
 
@@ -107,8 +114,9 @@ ms.locfileid: "76280991"
 
 9. Выберите учетную запись хранения, созданную во время выполнения шага 3.
    > [!NOTE]
-   > Журналы потоков NSG не используются для учетной записи хранения в таких случаях:
-   > * В учетной записи хранения включено [иерархическое пространство имен](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-namespace).
+   > Журналы потоков NSG не работают с учетными записями хранения в таких случаях:
+   > * В учетных записях хранения включен брандмауэр.
+   > * В учетных записях хранения включено [иерархическое пространство имен](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-namespace).
 1. В верхнем левом углу портала выберите **Все службы**. В текстовом поле **Фильтр** введите *Наблюдатель за сетями*. Когда в результатах поиска появится **Наблюдатель за сетями**, выберите его.
 10. Задайте в разделе **Хранение (дни)** значение 5, а затем выберите **Save** (Сохранить).
 
@@ -120,7 +128,7 @@ ms.locfileid: "76280991"
    ![Скачивание журналов потоков](./media/network-watcher-nsg-flow-logging-portal/download-flow-logs.png)
 
 3. Выберите учетную запись хранения, настроенную на шаге 2 в разделе о [включении журнала потоков NSG](#enable-nsg-flow-log).
-4. В разделе **Служба BLOB-объектов** выберите **Контейнеры**, а затем —контейнер **insights-logs-networksecuritygroupflowevent**.
+4. В разделе **Служба BLOB-объектов** выберите **BLOB-объекты**, а затем —контейнер **insights-logs-networksecuritygroupflowevent**.
 5. В контейнере перейдите к иерархии папок и найдите файл PT1H.json, как показано на следующем изображении. Файлы журналов записываются в иерархию папок, которая соответствует следующему соглашению об именовании: https://{storageAccountName}.blob.core.windows.net/insights-logs-networksecuritygroupflowevent/resourceId=/SUBSCRIPTIONS/{subscriptionID}/RESOURCEGROUPS/{resourceGroupName}/PROVIDERS/MICROSOFT.NETWORK/NETWORKSECURITYGROUPS/{nsgName}/y={year}/m={month}/d={day}/h={hour}/m=00/macAddress={macAddress}/PT1H.json
 
    ![Журнал потока](./media/network-watcher-nsg-flow-logging-portal/log-file.png)
@@ -220,4 +228,4 @@ ms.locfileid: "76280991"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-В этом руководстве вы узнали, как включить ведение журнала NSG для потока NSG. Вы также узнали, как скачать и просмотреть данные, записанные в файл. Необработанные данные в JSON-файле могут быть сложными для понимания. Чтобы визуализировать данные, можно использовать [аналитику трафика](traffic-analytics.md) службы "Наблюдатель за сетями", Microsoft [PowerBI](network-watcher-visualize-nsg-flow-logs-power-bi.md) и другие средства.
+В этом руководстве вы узнали, как включить ведение журнала NSG для потока NSG. Вы также узнали, как скачать и просмотреть данные, записанные в файл. Необработанные данные в JSON-файле могут быть сложными для понимания. Чтобы визуализировать данные журналов потока, можно использовать [Аналитику трафика Azure](traffic-analytics.md), [Microsoft Power BI](network-watcher-visualize-nsg-flow-logs-power-bi.md) и другие средства. Вы можете испытать альтернативные методы включения журналов потоков NSG, такие как [PowerShell](network-watcher-nsg-flow-logging-powershell.md), [Azur CLI](network-watcher-nsg-flow-logging-cli.md), [REST API](network-watcher-nsg-flow-logging-rest.md) и [шаблоны ARM](network-watcher-nsg-flow-logging-azure-resource-manager.md).

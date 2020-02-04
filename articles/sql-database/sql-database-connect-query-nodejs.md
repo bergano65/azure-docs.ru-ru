@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Создание запросов к базе данных SQL Azure с помощью Node.js
+title: Использование Node.js для передачи запроса в базу данных
 description: Как с помощью Node.js создать программу, которая подключается к базе данных SQL Azure, и запрашивать из нее данные с использованием инструкций T-SQL
 services: sql-database
 ms.service: sql-database
@@ -11,51 +11,52 @@ ms.author: sstein
 ms.reviewer: v-masebo
 ms.date: 03/25/2019
 ms.custom: seo-javascript-september2019, seo-javascript-october2019
-ms.openlocfilehash: 064baf0215a2eaf7b90b78716b87606990b8fd21
-ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
+ms.openlocfilehash: c0da38a41bf613237ea3b164d70e4729a7284ca7
+ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74279262"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76768601"
 ---
 # <a name="quickstart-use-nodejs-to-query-an-azure-sql-database"></a>Краткое руководство. Использование Node.js для создания запросов к базе данных SQL Azure
 
-В этом кратком руководстве показано, как использовать [Node.js](https://nodejs.org) для подключения к базе данных SQL Azure. Затем можно запросить данные с использованием инструкций T-SQL.
+В этом кратком руководстве вы будете использовать Node.js для подключения к базе данных SQL Azure, а затем выполните запрос данных с помощью инструкций T-SQL.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Для выполнения этого примера понадобится следующее:
+- Учетная запись Azure с активной подпиской. [Создайте учетную запись бесплатно](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio).
+- [База данных SQL Azure](sql-database-single-database-get-started.md)
+- Программное обеспечение, связанное с [Node.js](https://nodejs.org)
 
-- База данных SQL Azure. Для создания и настройки базы данных в службе "База данных SQL Azure" можно использовать одно из этих кратких руководств.
+  # <a name="macostabmacos"></a>[macOS](#tab/macos)
 
-  || Отдельная база данных | Управляемый экземпляр |
-  |:--- |:--- |:---|
-  | Создание| [Портал](sql-database-single-database-get-started.md) | [Портал](sql-database-managed-instance-get-started.md) |
-  || [CLI](scripts/sql-database-create-and-configure-database-cli.md) | [CLI](https://medium.com/azure-sqldb-managed-instance/working-with-sql-managed-instance-using-azure-cli-611795fe0b44) |
-  || [PowerShell](scripts/sql-database-create-and-configure-database-powershell.md) | [PowerShell](scripts/sql-database-create-configure-managed-instance-powershell.md) |
-  | Настройка | [Правило брандмауэра для IP-адресов на уровне сервера](sql-database-server-level-firewall-rule.md)| [Подключение из виртуальной машины](sql-database-managed-instance-configure-vm.md)|
-  |||[Подключение "точка — сеть"](sql-database-managed-instance-configure-p2s.md)
-  |Загрузка данных|База данных Adventure Works, загруженная для краткого руководства|[Восстановление базы данных Wide World Importers](sql-database-managed-instance-get-started-restore.md)
-  |||Восстановление или импорт Adventure Works из файла [BACPAC](sql-database-import.md), размещенного на [GitHub](https://github.com/Microsoft/sql-server-samples/tree/master/samples/databases/adventure-works)|
-  |||
+  Установите Homebrew и Node.js, затем установите драйвер ODBC и SQLCMD, выполнив шаги **1.2** и **1.3** в разделе [Создание приложений Node.js с помощью SQL Server в macOS](https://www.microsoft.com/sql-server/developer-get-started/node/mac/).
 
-  > [!IMPORTANT]
-  > Скрипты в этой статье предназначены для использования базы данных Adventure Works. Используя управляемый экземпляр, необходимо импортировать базу данных Adventure Works в базу данных экземпляра или изменить скрипты в этой статье для использования базы данных Wide World Importers.
+  # <a name="ubuntutabubuntu"></a>[Ubuntu](#tab/ubuntu)
 
+  Установите Node.js, затем установите драйвер ODBC и SQLCMD, выполнив шаги **1.2** и **1.3** в разделе [Создание приложений Node.js с помощью SQL Server в Ubuntu](https://www.microsoft.com/sql-server/developer-get-started/node/ubuntu/).
 
-- Связанное с Node.js программное обеспечение для используемой операционной системы:
+  # <a name="windowstabwindows"></a>[Windows](#tab/windows)
 
-  - **Mac OS.** Установите Homebrew и Node.js, а затем драйвер ODBC и SQLCMD. Ознакомьтесь с шагами 1.2 и 1.3 в [этом руководстве](https://www.microsoft.com/sql-server/developer-get-started/node/mac/).
-  
-  - **Ubuntu.** Установите Node.js, а затем драйвер ODBC и SQLCMD. Ознакомьтесь с шагами 1.2 и 1.3 в [этом руководстве](https://www.microsoft.com/sql-server/developer-get-started/node/ubuntu/).
-  
-  - **Windows.** Установите Chocolatey и Node.js, а затем драйвер ODBC и SQLCMD. Ознакомьтесь с шагами 1.2 и 1.3 в [этом руководстве](https://www.microsoft.com/sql-server/developer-get-started/node/windows/).
+  Установите Chocolatey и Node.js, затем установите драйвер ODBC и SQLCMD, выполнив шаги **1.2** и **1.3** в разделе [Создание приложений Node.js с помощью SQL Server в Windows](https://www.microsoft.com/sql-server/developer-get-started/node/windows/).
+
+  ---
+
+> [!IMPORTANT]
+> Скрипты в этой статье предназначены для использования базы данных **Adventure Works**.
+
+> [!NOTE]
+> Вы также можете использовать управляемый экземпляр SQL Azure.
+>
+> Для создания и настройки используйте [портал Azure](sql-database-managed-instance-get-started.md), [PowerShell](scripts/sql-database-create-configure-managed-instance-powershell.md), или [CLI](https://medium.com/azure-sqldb-managed-instance/working-with-sql-managed-instance-using-azure-cli-611795fe0b44), затем установите подключение к [локальному серверу](sql-database-managed-instance-configure-p2s.md) или [виртуальной машине](sql-database-managed-instance-configure-vm.md).
+>
+> Для загрузки данных см. [Quickstart: Import a BACPAC file to a database in Azure SQL Database](sql-database-import.md) (Краткое руководство. Импорт BACPAC-файла в базу данных с помощью Azure SQL Database), а также сведения о файле [Adventure Works](https://github.com/Microsoft/sql-server-samples/tree/master/samples/databases/adventure-works) или [Краткое руководство. Восстановление базы данных в Управляемый экземпляр](sql-database-managed-instance-get-started-restore.md).
 
 ## <a name="get-sql-server-connection-information"></a>Получение сведений о подключении к SQL Server
 
 Получите сведения, необходимые для подключения к базе данных SQL Azure. Для дальнейших действий вам понадобится полное имя сервера или имя узла, имя базы данных и данные для входа.
 
-1. Войдите на [портале Azure](https://portal.azure.com/).
+1. Войдите на [портал Azure](https://portal.azure.com/).
 
 2. Перейдите на страницу **Базы данных SQL** или **Управляемые экземпляры SQL**.
 
@@ -74,7 +75,7 @@ ms.locfileid: "74279262"
 
 1. Создайте файл *sqltest.js* в предпочитаемом текстовом редакторе.
 
-1. Замените содержимое файла приведенным ниже кодом. Затем добавьте соответствующие данные сервера, базы данных, пользователя и пароля.
+1. Замените содержимое файла приведенным ниже кодом. Затем добавьте соответствующие значения для сервера, базы данных, пользователя и пароля.
 
     ```js
     const { Connection, Request } = require("tedious");
@@ -147,7 +148,7 @@ ms.locfileid: "74279262"
 
 1. Убедитесь, что возвращены первые 20 строк, и закройте окно приложения.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Microsoft Node.js Driver for SQL Server](/sql/connect/node-js/node-js-driver-for-sql-server) (Microsoft Node.js Driver для SQL Server)
 

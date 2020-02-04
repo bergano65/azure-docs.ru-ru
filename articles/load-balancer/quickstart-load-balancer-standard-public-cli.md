@@ -1,5 +1,5 @@
 ---
-title: Быстрое начало. Создание общедоступной подсистемы Load Balancer (цен. категория "Стандартный") с помощью Azure CLI
+title: Краткое руководство. Создание общедоступного Load Balancer с помощью Azure CLI
 titleSuffix: Azure Load Balancer
 description: В рамках этого краткого руководства вы узнаете, как создать общедоступную подсистему балансировки нагрузки с помощью Azure CLI
 services: load-balancer
@@ -7,7 +7,7 @@ documentationcenter: na
 author: asudbring
 manager: twooley
 tags: azure-resource-manager
-Customer intent: I want to create a Standard Load balancer so that I can load balance internet traffic to VMs.
+Customer intent: I want to create a Load balancer so that I can load balance internet traffic to VMs.
 ms.assetid: a8bcdd88-f94c-4537-8143-c710eaa86818
 ms.service: load-balancer
 ms.devlang: na
@@ -17,16 +17,16 @@ ms.workload: infrastructure-services
 ms.date: 01/25/2019
 ms.author: allensu
 ms.custom: mvc
-ms.openlocfilehash: 30f2fa7537ed481c25940a2ed67c99c58a7a80ed
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: 8ef24630d255876c45d9cbc072fc989288f2ac5f
+ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74214791"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76837312"
 ---
 # <a name="quickstart-create-a-standard-load-balancer-to-load-balance-vms-using-azure-cli"></a>Краткое руководство. Создание Load Balancer (цен. категория "Стандартный") с помощью Azure CLI для распределения нагрузки между виртуальными машинами
 
-В этом кратком руководстве объясняется процесс создания подсистемы балансировки нагрузки уровня "Стандартный". Чтобы протестировать подсистему балансировки нагрузки, мы развернем две виртуальные машины с установленным сервером Ubuntu для распределения между ними нагрузки веб-приложения.
+В этом кратком руководстве объясняется процесс создания общедоступного Load Balancer. Чтобы протестировать подсистему балансировки нагрузки, мы развернем две виртуальные машины с установленным сервером Ubuntu для распределения между ними нагрузки веб-приложения.
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)] 
 
@@ -44,13 +44,21 @@ ms.locfileid: "74214791"
     --location eastus
 ```
 
-## <a name="create-a-public-standard-ip-address"></a>Создание общедоступного стандартного IP-адреса
+## <a name="create-a-public-ip-address"></a>Создание общедоступного IP-адреса
 
-Для доступа к веб-приложению через Интернет подсистеме балансировки нагрузки требуется общедоступный IP-адрес. Подсистема балансировки нагрузки уровня "Стандартный" поддерживает только стандартные общедоступные IP-адреса. Создайте стандартный общедоступный IP-адрес с именем [myPublicIP](https://docs.microsoft.com/cli/azure/network/public-ip) в группе *myResourceGroupSLB* с помощью команды *az network public-ip create*.
+Для доступа к веб-приложению через Интернет подсистеме балансировки нагрузки требуется общедоступный IP-адрес. Создайте избыточный в пределах стандартной зоны общедоступный IP-адрес с именем [myPublicIP](https://docs.microsoft.com/cli/azure/network/public-ip) в группе *myResourceGroupSLB* с помощью команды *az network public-ip create*.
 
 ```azurecli-interactive
   az network public-ip create --resource-group myResourceGroupSLB --name myPublicIP --sku standard
 ```
+
+Создайте зональный общедоступный IP-адрес в зоне доступности 1, используя приведенные ниже сведения.
+
+```azurecli-interactive
+  az network public-ip create --resource-group myResourceGroupSLB --name myPublicIP --sku standard --zone 1
+```
+
+ Для создания базового общедоступного IP-адреса используйте ```--sku basic```. Базовый адрес не поддерживает зоны доступности. Для производственных рабочих нагрузок корпорация Майкрософт рекомендует использовать номера SKU ценовой категории "Стандартный".
 
 ## <a name="create-azure-load-balancer"></a>Создание Azure Load Balancer
 
@@ -62,7 +70,7 @@ ms.locfileid: "74214791"
 
 ### <a name="create-the-load-balancer"></a>Создание подсистемы балансировки нагрузки
 
-С помощью команды [az network lb create](https://docs.microsoft.com/cli/azure/network/lb?view=azure-cli-latest) создайте общедоступную подсистему балансировки нагрузки Azure Load Balancer **myLoadBalancer** с интерфейсным пулом **myFrontEnd** и внутренним пулом **myBackEndPool**, связанным с общедоступным IP-адресом **myPublicIP**, созданным на предыдущем шаге.
+С помощью команды [az network lb create](https://docs.microsoft.com/cli/azure/network/lb?view=azure-cli-latest) создайте общедоступную подсистему балансировки нагрузки Azure Load Balancer **myLoadBalancer** с интерфейсным пулом **myFrontEnd** и внутренним пулом **myBackEndPool**, связанным с общедоступным IP-адресом **myPublicIP**, созданным на предыдущем шаге. Для создания базового общедоступного IP-адреса используйте ```--sku basic```. Для производственных рабочих нагрузок корпорация Майкрософт рекомендует использовать номера SKU ценовой категории "Стандартный".
 
 ```azurecli-interactive
   az network lb create \
@@ -182,20 +190,11 @@ ms.locfileid: "74214791"
 
 ```
 
-
 ## <a name="create-backend-servers"></a>Создание внутренних серверов
 
 В этом примере описано, как создать три виртуальные машины, которые будут использоваться в качестве внутренних серверов для подсистемы балансировки нагрузки. Чтобы проверить, успешно ли создана подсистема балансировки нагрузки, установите NGINX на виртуальных машинах.
 
-### <a name="create-an-availability-set"></a>Создание группы доступности
-
-Создайте группу доступности с помощью команды [az vm availabilityset create](/cli/azure/network/nic).
-
- ```azurecli-interactive
-  az vm availability-set create \
-    --resource-group myResourceGroupSLB \
-    --name myAvailabilitySet
-```
+Если вы создаете базовый Load Balancer с базовым общедоступным IP-адресом, вам потребуется создать группу доступности с помощью команды [az vm availabilityset create](/cli/azure/network/nic), чтобы добавить в нее виртуальные машины. Для стандартных Load Balancer этот дополнительный шаг не требуется. Корпорация Майкрософт рекомендует использовать ценовую категорию "Стандартный".
 
 ### <a name="create-three-virtual-machines"></a>Создание трех виртуальных машин
 
@@ -300,9 +299,7 @@ runcmd:
 ```azurecli-interactive 
   az group delete --name myResourceGroupSLB
 ```
-## <a name="next-step"></a>Дальнейшие действия
-Из этого краткого руководства вы узнали, как создать подсистему балансировки нагрузки в службе Azure Load Balancer (ценовая категория "Стандартный"), подключить к ней виртуальные машины, настроить правило трафика подсистемы балансировки нагрузки, зонд работоспособности, а также протестировать подсистему балансировки нагрузки. Чтобы узнать больше об Azure Load Balancer, ознакомьтесь с другими руководствами по этой службе.
+## <a name="next-steps"></a>Дальнейшие действия
+Из этого краткого руководства вы узнали, как создать Load Balancer (цен. категория "Стандартный"), подключить к ней виртуальные машины, настроить правило трафика Load Balancer, пробу работоспособности, а также протестировать Load Balancer. Дополнительные сведения о Azure Load Balancer см. в руководстве [Распределение нагрузки виртуальных машин в пределах зон доступности с помощью Load Balancer уровня "Стандартный" и портала Azure](tutorial-load-balancer-standard-public-zone-redundant-portal.md).
 
-> [!div class="nextstepaction"]
-> [Руководства по Azure Load Balancer](tutorial-load-balancer-standard-public-zone-redundant-portal.md)
-
+Дополнительные сведения см. в статье [Standard Load Balancer and Availability Zones](load-balancer-standard-availability-zones.md) (Azure Load Balancer ценовой категории "Стандартный" и зоны доступности).

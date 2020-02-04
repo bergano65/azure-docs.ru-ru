@@ -1,5 +1,5 @@
 ---
-title: Отправка запросов с помощью R в Службах машинного обучения
+title: Отправка запросов к базе данных с помощью сценария R в Службах машинного обучения (предварительная версия)
 titleSuffix: Azure SQL Database Machine Learning Services (preview)
 description: В этой статье показано, как с помощью сценария R в Службах машинного обучения службы "База данных SQL Azure" подключиться к базе данных SQL Azure и отправлять к ней запросы, используя инструкции Transact-SQL.
 services: sql-database
@@ -13,64 +13,39 @@ ms.author: garye
 ms.reviewer: davidph, carlrab
 manager: cgronlun
 ms.date: 05/29/2019
-ms.openlocfilehash: a54b538247f81ea3bb0ea70a2af374158bd9e2ff
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.openlocfilehash: 7103afc29e4021d950d9a3634b190f4439ecfe8d
+ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73826970"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76768514"
 ---
 # <a name="quickstart-use-r-with-machine-learning-services-to-query-an-azure-sql-database-preview"></a>Краткое руководство. Отправка запросов к базе данных SQL Azure с помощью сценария R в Службах машинного обучения (предварительная версия)
 
-В этом кратком руководстве показано, как использовать [R](https://www.r-project.org/) и Службы машинного обучения для подключения к Базе данных SQL Azure, а затем с помощью инструкций Transact-SQL выполнить запрос данных. Службы машинного обучения — это функция Базы данных SQL Azure, которая используется для выполнения скриптов R в базе данных. Дополнительные сведения см. в разделе [Azure SQL Database Machine Learning Services with R (preview)](sql-database-machine-learning-services-overview.md) (Службы машинного обучения (с поддержкой R) в Базе данных SQL Azure (предварительная версия)).
+В этом кратком руководстве вы используете R и Службы машинного обучения, чтобы подключиться к Базе данных SQL Azure, а затем с помощью инструкций T-SQL выполнить запрос данных.
 
 [!INCLUDE[ml-preview-note](../../includes/sql-database-ml-preview-note.md)]
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Ниже указаны требования для работы с этим кратким руководством.
+- Учетная запись Azure с активной подпиской. [Создайте учетную запись бесплатно](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio).
+- [База данных SQL Azure](sql-database-single-database-get-started.md)
+- [Службы машинного обучения](sql-database-machine-learning-services-overview.md) (с поддержкой R) включены. [Зарегистрируйтесь, чтобы получить предварительную версию](sql-database-machine-learning-services-overview.md#signup).
+- [SQL Server Management Studio](/sql/ssms/sql-server-management-studio-ssms) (SSMS).
 
-- База данных SQL Azure. Для создания и настройки базы данных в службе "База данных SQL Azure" можно использовать одно из этих кратких руководств.
+> [!IMPORTANT]
+> Скрипты в этой статье предназначены для использования базы данных **Adventure Works**.
 
-<!-- Managed instance is not supported during the preview
-  || Single database | Managed instance |
-  |:--- |:--- |:---|
-  | Create| [Portal](sql-database-single-database-get-started.md) | [Portal](sql-database-managed-instance-get-started.md) |
-  || [CLI](scripts/sql-database-create-and-configure-database-cli.md) | [CLI](https://medium.com/azure-sqldb-managed-instance/working-with-sql-managed-instance-using-azure-cli-611795fe0b44) |
-  || [PowerShell](scripts/sql-database-create-and-configure-database-powershell.md) | [PowerShell](scripts/sql-database-create-configure-managed-instance-powershell.md) |
-  | Configure | [Server-level IP firewall rule](sql-database-server-level-firewall-rule.md) | [Connectivity from a VM](sql-database-managed-instance-configure-vm.md) |
-  ||| [Connectivity from on-site](sql-database-managed-instance-configure-p2s.md) |
-  | Load data | Adventure Works loaded per quickstart | [Restore Wide World Importers](sql-database-managed-instance-get-started-restore.md) |
-  ||| Restore or import Adventure Works from [BACPAC](sql-database-import.md) file from [GitHub](https://github.com/Microsoft/sql-server-samples/tree/master/samples/databases/adventure-works) |
-  |||
--->
+> [!NOTE]
+> Во время общедоступной предварительной версии корпорация Майкрософт подключит вас и включит машинное обучение для имеющейся или новой базы данных, однако в настоящее время параметр развертывания управляемого экземпляра не поддерживается.
 
-  || Отдельная база данных |
-  |:--- |:--- |
-  | Создание| [Портал](sql-database-single-database-get-started.md) |
-  || [ИНТЕРФЕЙС КОМАНДНОЙ СТРОКИ](scripts/sql-database-create-and-configure-database-cli.md) |
-  || [PowerShell](scripts/sql-database-create-and-configure-database-powershell.md) |
-  | Настройка | [Правило брандмауэра для IP-адресов на уровне сервера](sql-database-server-level-firewall-rule.md) |
-  | Загрузка данных | База данных Adventure Works, загруженная для краткого руководства |
-  |||
-
-  > [!NOTE]
-  > На этапе предварительной версии Служб обучения машины в Базе данных SQL Azure с помощью R развертывание управляемого экземпляра не поддерживается.
-
-<!-- Managed instance is not supported during the preview
-  > [!IMPORTANT]
-  > The scripts in this article are written to use the Adventure Works database. With a managed instance, you must either import the Adventure Works database into an instance database or modify the scripts in this article to use the Wide World Importers database.
--->
-
-- Службы машинного обучения (с поддержкой R) включены. Во время использования общедоступной предварительной версии корпорация Майкрософт подключит вас и включит машинное обучение для имеющейся или новой базы данных. Выполните шаги, приведенные в разделе [Sign up for the preview](sql-database-machine-learning-services-overview.md#signup) (Регистрация для получения предварительной версии).
-
-- Последняя версия [SQL Server Management Studio](https://docs.microsoft.com/sql/ssms/sql-server-management-studio-ssms) (SSMS). Вы можете выполнять сценарии R с помощью других инструментов управления базами данных или выполнения запросов, но в этом кратком руководстве вы будете использовать SSMS.
+Службы машинного обучения с поддержкой R — это функция базы данных SQL Azure, которая используется для выполнения скриптов R в базе данных. Дополнительные сведения см. [The R Project for Statistical Computing](https://www.r-project.org/) (Проект R для статических вычислений)
 
 ## <a name="get-sql-server-connection-information"></a>Получение сведений о подключении к SQL Server
 
 Получите сведения, необходимые для подключения к базе данных SQL Azure. Для дальнейших действий вам понадобится полное имя сервера или имя узла, имя базы данных и данные для входа.
 
-1. Войдите на [портале Azure](https://portal.azure.com/).
+1. Войдите на [портал Azure](https://portal.azure.com/).
 
 2. Перейдите на страницу **Базы данных SQL** или **Управляемые экземпляры SQL**.
 
@@ -84,7 +59,7 @@ ms.locfileid: "73826970"
 
 1. Передайте полный сценарий R в хранимую процедуру [sp_execute_external_script](https://docs.microsoft.com/sql/relational-databases/system-stored-procedures/sp-execute-external-script-transact-sql).
 
-   Для этого используется аргумент `@script`. Все внутри аргумента `@script` должно быть допустимым кодом R.
+   Сценарий передается с помощью аргумента `@script`. Все, что находится внутри аргумента `@script`, должно быть допустимым кодом R.
    
    >[!IMPORTANT]
    >Данный пример кода использует данные AdventureWorksLT, которые можно выбрать в качестве источника при создании базы данных. Если в вашей базе данных содержатся другие данные, используйте таблицы из собственной базы данных в запросе SELECT. 
@@ -105,7 +80,7 @@ ms.locfileid: "73826970"
 
 1. В окне **Сообщения**  убедитесь, что возвращены первые 20 строк с продуктами из категории.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Проектирование первой базы данных SQL Azure](sql-database-design-first-database.md)
 - [Machine Learning Services (with R) in Azure SQL Database (preview)](sql-database-machine-learning-services-overview.md) (Службы машинного обучения (с использованием R) в Базе данных SQL Azure (предварительная версия))

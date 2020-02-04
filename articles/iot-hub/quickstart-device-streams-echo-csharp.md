@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.custom: mvc
 ms.date: 03/14/2019
 ms.author: robinsh
-ms.openlocfilehash: 14139d56a9a733a284d0ec49cabcb3ff7ce67fce
-ms.sourcegitcommit: a22cb7e641c6187315f0c6de9eb3734895d31b9d
+ms.openlocfilehash: ee709919f550a8b9afaf56e5e071522a494348ac
+ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74084294"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76773808"
 ---
 # <a name="quickstart-communicate-to-a-device-application-in-c-via-iot-hub-device-streams-preview"></a>Краткое руководство. Обмен данными с приложением устройства с помощью C# и потоков устройств Центра Интернета вещей (предварительная версия)
 
@@ -31,7 +31,7 @@ ms.locfileid: "74084294"
 ## <a name="prerequisites"></a>Предварительные требования
 
 * Предварительная версия потоков устройств сейчас поддерживается только в центрах Интернета вещей, созданных в следующих регионах:
-  * Центральный регион США
+  * Центральная часть США
   * Центральная часть США (EUAP)
   * Северная Европа
   * Юго-Восточная Азия
@@ -50,7 +50,7 @@ ms.locfileid: "74084294"
     az extension add --name azure-cli-iot-ext
     ```
 
-* [Скачайте пример проекта C#](https://github.com/Azure-Samples/azure-iot-samples-csharp/archive/master.zip) по ссылке и извлеките ZIP-архив. Он понадобится на стороне устройства и на стороне службы.
+* [Скачайте примеры Azure IoT на C#](https://github.com/Azure-Samples/azure-iot-samples-csharp/archive/master.zip) и извлеките ZIP-архив. Он понадобится на стороне устройства и на стороне службы.
 
 ## <a name="create-an-iot-hub"></a>Создание Центра Интернета вещей
 
@@ -169,7 +169,7 @@ dotnet run {DeviceConnectionString}
 
 [!INCLUDE [iot-hub-quickstarts-clean-up-resources-device-streams](../../includes/iot-hub-quickstarts-clean-up-resources-device-streams.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом кратком руководстве вы настроили центр Интернета вещей, зарегистрировали устройство, установили поток устройств между приложением C# на стороне устройства и службы и использовали поток для обмена данными между приложениями.
 

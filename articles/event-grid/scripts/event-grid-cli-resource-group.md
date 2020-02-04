@@ -1,22 +1,22 @@
 ---
 title: Пример скрипта Azure CLI. Подписка на события группы ресурсов | Документация Майкрософт
-description: Пример скрипта Azure CLI. Подписка на события группы ресурсов
+description: В этой статье приведен пример сценария Azure CLI, который показывает, как подписываться на события Сетки событий для группы ресурсов.
 services: event-grid
 documentationcenter: na
-author: tfitzmac
+author: spelluru
 ms.service: event-grid
 ms.devlang: azurecli
 ms.topic: sample
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 11/02/2018
-ms.author: tomfitz
-ms.openlocfilehash: 7bc07ec294e341c7f96c60fd2c9916b0c6b9f215
-ms.sourcegitcommit: f0c2758fb8ccfaba76ce0b17833ca019a8a09d46
+ms.date: 01/23/2020
+ms.author: spelluru
+ms.openlocfilehash: ff5f317bafd5c59ea4bba8bb6a23b60881cd218f
+ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "51035849"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76720805"
 ---
 # <a name="subscribe-to-events-for-a-resource-group-with-azure-cli"></a>Создание подписки на события, связанные с группой ресурсов, с использованием Azure CLI
 
@@ -45,7 +45,7 @@ ms.locfileid: "51035849"
 | [az eventgrid event-subscription create](https://docs.microsoft.com/cli/azure/eventgrid/event-subscription#az-eventgrid-event-subscription-create) | создание подписки в службе "Сетка событий"; |
 | [az eventgrid event-subscription create](/cli/azure/ext/eventgrid/eventgrid/event-subscription#ext-eventgrid-az-eventgrid-event-subscription-create) — версия расширения | создание подписки в службе "Сетка событий"; |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения см. в разделе [Запрос к подпискам службы "Сетка событий Azure"](../query-event-subscriptions.md).
 * Дополнительные сведения об Azure CLI см. в [документации по Azure CLI](https://docs.microsoft.com/cli/azure).

@@ -9,14 +9,14 @@ ms.topic: tutorial
 ms.date: 01/02/2019
 ms.author: mbaldwin
 ms.custom: mvc
-ms.openlocfilehash: fbda2f645308e30a6f408335b7a1b37095522921
-ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
+ms.openlocfilehash: 5082ed06b4ce5baf3869fc035654be3c7a45f29f
+ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2019
-ms.locfileid: "71003316"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76845292"
 ---
-# <a name="tutorial-use-azure-key-vault-with-a-windows-virtual-machine-in-net"></a>Руководство по Использование Azure Key Vault с виртуальной машиной Windows в .NET
+# <a name="tutorial-use-azure-key-vault-with-a-windows-virtual-machine-in-net"></a>Руководство. Использование Azure Key Vault с виртуальной машиной Windows в .NET
 
 Azure Key Vault помогает защитить секреты, такие как ключи API, строки подключения к базам данных, необходимые для доступа к приложениям, службам и ИТ-ресурсам.
 
@@ -40,7 +40,7 @@ Azure Key Vault помогает защитить секреты, такие к�
 ## <a name="prerequisites"></a>Предварительные требования
 
 Для Windows, Mac и Linux:
-  * [Git](https://git-scm.com/downloads)
+  * [Git](https://git-scm.com/downloads);
   * Для этого руководства требуется запустить Azure CLI локально. Необходимо установить Azure CLI версии 2.0.4 или более поздней. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо установить или обновить CLI, ознакомьтесь со статьей [Установка Azure CLI 2.0](https://review.docs.microsoft.com/cli/azure/install-azure-cli).
 
 ## <a name="about-managed-service-identity"></a>Основные сведения об MSI
@@ -146,7 +146,7 @@ az keyvault set-policy --name '<YourKeyVaultName>' --object-id <VMSystemAssigned
 
 ### <a name="create-and-run-a-sample-net-app"></a>Создание и запуск примера приложения .NET
 
-Откройте окно командной строки.
+Откройте командную строку.
 
 Вы можете вывести Hello World на консоль, выполнив следующие команды.
 
@@ -181,10 +181,11 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 ```
 
-Измените файл класса, чтобы он содержал код в следующем двухэтапном процессе.
+Измените файл класса, чтобы он содержал код, приведенный в следующем трехэтапном процессе.
 
 1. Получение токена из локальной конечной точки MSI на виртуальной машине. При этом также извлекается токен из Azure AD.
-1. Передача токена в хранилище ключей и получение секрета. 
+2. Передача токена в хранилище ключей и получение секрета. 
+3. Добавление имени хранилища и имени секрета в запрос.
 
 ```csharp
  class Program
@@ -205,9 +206,10 @@ using Newtonsoft.Json.Linq;
             WebResponse response = request.GetResponse();
             return ParseWebResponse(response, "access_token");
         }
-
+        
         static string FetchSecretValueFromKeyVault(string token)
         {
+            //Step 3: Add the vault name and secret name to the request.
             WebRequest kvRequest = WebRequest.Create("https://<YourVaultName>.vault.azure.net/secrets/<YourSecretName>?api-version=2016-10-01");
             kvRequest.Headers.Add("Authorization", "Bearer "+  token);
             WebResponse kvResponse = kvRequest.GetResponse();
@@ -237,7 +239,7 @@ using Newtonsoft.Json.Linq;
 
 Удалите виртуальную машину и хранилище ключей, если они больше не нужны.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Справочник по REST API для Azure Key Vault](https://docs.microsoft.com/rest/api/keyvault/)

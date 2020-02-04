@@ -6,12 +6,12 @@ ms.author: mbaldwin
 ms.date: 10/20/2019
 ms.service: key-vault
 ms.topic: quickstart
-ms.openlocfilehash: e06c8d5373f8740e8091daae242a4f7af6c0ea4a
-ms.sourcegitcommit: d614a9fc1cc044ff8ba898297aad638858504efa
+ms.openlocfilehash: 0cde8b48e7bd1d1daa8f14dcded87001fb898fa7
+ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74995870"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76769220"
 ---
 # <a name="quickstart-azure-key-vault-client-library-for-java"></a>Краткое руководство. Клиентская библиотека Azure Key Vault для Java
 
@@ -22,7 +22,7 @@ ms.locfileid: "74995870"
 - Повысьте уровень безопасности и увеличьте контроль над ключами и паролями.
 - Создавайте и импортируйте ключи шифрования за считаные минуты.
 - Сократите время задержки с помощью масштабирования в облаке и глобального резервирования.
-- Упрощение и автоматизация задач, связанных с SSL- и TLS-сертификатами.
+- Упрощение и автоматизация задач, связанных с TLS- и SSL-сертификатами.
 - Используйте модули HSM, отвечающие стандартам FIPS 140-2 уровня 2.
 
 [Исходный код](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/keyvault) | [Справочная документация по API](https://azure.github.io/azure-sdk-for-java) | [Документация по продукту](index.yml) | [Примеры](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/keyvault/azure-security-keyvault-secrets/src/samples/java/com/azure/security/keyvault/secrets)
@@ -248,7 +248,7 @@ az group delete -g "myResourceGroup"
 Remove-AzResourceGroup -Name "myResourceGroup"
 ```
 
-## <a name="sample-code"></a>Пример кода
+## <a name="sample-code"></a>Образец кода
 
 ```java
 package com.keyvault.quickstart;
@@ -309,7 +309,7 @@ public class App {
 }
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом кратком руководстве вы создали хранилище ключей, сохранили в нем секрет и извлекли его. Дополнительные сведения о Key Vault и его интеграции в приложения см. в следующих статьях.
 

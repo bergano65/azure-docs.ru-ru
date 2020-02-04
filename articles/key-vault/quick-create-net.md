@@ -6,12 +6,12 @@ ms.author: mbaldwin
 ms.date: 05/20/2019
 ms.service: key-vault
 ms.topic: quickstart
-ms.openlocfilehash: 3322a9f2a7e09ee76c0fff94a2747c791ecf4804
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.openlocfilehash: dfe5a9a8b5503bb078cfd633a1f29774613b42b6
+ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74975386"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76769206"
 ---
 # <a name="quickstart-azure-key-vault-client-library-for-net-sdk-v4"></a>Краткое руководство. Использование клиентской библиотеки Azure Key Vault для .NET (пакет SDK версии 4)
 
@@ -22,7 +22,7 @@ ms.locfileid: "74975386"
 - Повысьте уровень безопасности и увеличьте контроль над ключами и паролями.
 - Создавайте и импортируйте ключи шифрования за считаные минуты.
 - Сократите время задержки с помощью масштабирования в облаке и глобального резервирования.
-- Упрощение и автоматизация задач, связанных с SSL- и TLS-сертификатами.
+- Упрощение и автоматизация задач, связанных с TLS- и SSL-сертификатами.
 - Используйте модули HSM, отвечающие стандартам FIPS 140-2 уровня 2.
 
 [Справочная документация по API](/dotnet/api/azure.security.keyvault.secrets?view=azure-dotnet) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/keyvault) | [Пакет (NuGet)](https://www.nuget.org/packages/Azure.Security.KeyVault.Secrets/).
@@ -205,7 +205,7 @@ az group delete -g "myResourceGroup"
 Remove-AzResourceGroup -Name "myResourceGroup"
 ```
 
-## <a name="sample-code"></a>Пример кода
+## <a name="sample-code"></a>Образец кода
 
 ```csharp
 using System;
@@ -257,11 +257,11 @@ namespace key_vault_console_app
 ```
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом кратком руководстве вы создали хранилище ключей, сохранили в нем секрет и извлекли его. Полный текст консольного приложения доступен [на сайте GitHub](https://github.com/Azure-Samples/key-vault-dotnet-core-quickstart/tree/master/key-vault-console-app).
 
-Чтобы получить дополнительные сведения о Key Vault и его интеграции в приложения, ознакомьтесь с перечисленными ниже статьями.
+Дополнительные сведения о Key Vault и его интеграции в приложения см. в следующих статьях.
 
 - [Проверка подлинности с взаимодействием между службами в Azure Key Vault с помощью .NET](service-to-service-authentication.md)
 - [Обзор Azure Key Vault](key-vault-overview.md)

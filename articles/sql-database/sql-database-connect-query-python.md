@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Использование Python для отправки запросов
+title: Использование Python для создания запросов к базе данных
 description: В этой статье показано, как использовать Python для создания программы, которая подключается к базе данных SQL Azure, и создавать к ней запросы с помощью инструкций Transact-SQL.
 services: sql-database
 ms.service: sql-database
@@ -11,50 +11,62 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 03/25/2019
-ms.openlocfilehash: 42d5b500a48e427aad2372710597e0266b2e80aa
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.openlocfilehash: e82f8feae0096202e48a58296dd2e9d21bb61885
+ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73826999"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76768576"
 ---
 # <a name="quickstart-use-python-to-query-an-azure-sql-database"></a>Краткое руководство. Использование Python для создания запросов к базе данных SQL Azure
 
- В этой статье показано, как использовать [Python](https://python.org) для подключения к базе данных SQL Azure, а затем с помощью инструкций Transact-SQL выполнить запрос данных. Дополнительные сведения о пакете SDK см. в [справочной документации](https://docs.microsoft.com/python/api/overview/azure/sql). См. также [репозиторий pyodbc](https://github.com/mkleehammer/pyodbc/wiki/) на GitHub и [пример pyodbc](https://github.com/mkleehammer/pyodbc/wiki/Getting-started).
+В этом кратком руководстве вы будете использовать Python для подключения к базе данных SQL Azure, а затем выполните запрос данных с помощью инструкций T-SQL.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Ниже указаны требования для работы с этим кратким руководством.
+- Учетная запись Azure с активной подпиской. [Создайте учетную запись бесплатно](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio).
+- [База данных SQL Azure](sql-database-single-database-get-started.md)
+- [Python](https://python.org/downloads) 3 и связанное с ним программное обеспечение
 
-- База данных SQL Azure. Для создания и настройки базы данных в службе "База данных SQL Azure" можно использовать одно из этих кратких руководств.
+  # <a name="macostabmacos"></a>[macOS](#tab/macos)
 
-  || Отдельная база данных | Управляемый экземпляр |
-  |:--- |:--- |:---|
-  | Создание| [Портал](sql-database-single-database-get-started.md) | [Портал](sql-database-managed-instance-get-started.md) |
-  || [CLI](scripts/sql-database-create-and-configure-database-cli.md) | [CLI](https://medium.com/azure-sqldb-managed-instance/working-with-sql-managed-instance-using-azure-cli-611795fe0b44) |
-  || [PowerShell](scripts/sql-database-create-and-configure-database-powershell.md) | [PowerShell](scripts/sql-database-create-configure-managed-instance-powershell.md) |
-  | Настройка | [Правило брандмауэра для IP-адресов на уровне сервера](sql-database-server-level-firewall-rule.md)| [Подключение из виртуальной машины](sql-database-managed-instance-configure-vm.md)|
-  |||[Подключение "точка — сеть"](sql-database-managed-instance-configure-p2s.md)
-  |Загрузка данных|База данных Adventure Works, загруженная для краткого руководства|[Восстановление базы данных Wide World Importers](sql-database-managed-instance-get-started-restore.md)
-  |||Восстановление или импорт Adventure Works из файла [BACPAC](sql-database-import.md), размещенного на [GitHub](https://github.com/Microsoft/sql-server-samples/tree/master/samples/databases/adventure-works)|
-  |||
+  Для установки Homebrew и Python, драйвера ODBC и SQLCMD, а также драйвера Python для SQL Server используйте шаги **1.2**, **1.3** и **2.1** в [create Python apps using SQL Server on macOS](https://www.microsoft.com/sql-server/developer-get-started/python/mac/) (Создание приложений Python с помощью SQL Server на MacOS).
 
-  > [!IMPORTANT]
-  > Скрипты в этой статье предназначены для использования базы данных Adventure Works. Используя управляемый экземпляр, необходимо импортировать базу данных Adventure Works в базу данных экземпляра или изменить скрипты в этой статье для использования базы данных Wide World Importers.
-  
-- Python и связанное программное обеспечение для используемой операционной системы:
-  
-  - **macOS**. Установите Homebrew, Python, драйвер ODBC и SQLCMD, а затем драйвер Python для SQL Server. См. шаги в разделе 1.2, 1.3 и 2.1 в статье о [создании приложений Python с помощью SQL Server в macOS](https://www.microsoft.com/sql-server/developer-get-started/python/mac/). Дополнительные сведения см. в разделе об [установке драйвера Microsoft ODBC в Linux и macOS](https://docs.microsoft.com/sql/connect/odbc/linux-mac/installing-the-microsoft-odbc-driver-for-sql-server).
+  Дополнительные сведения см. в статье [Installing the Microsoft ODBC Driver for SQL Server on Linux and macOS](/sql/connect/odbc/linux-mac/installing-the-microsoft-odbc-driver-for-sql-server) (Установка драйвера ODBC для SQL Server на Linux и macOS).
 
-  - **Ubuntu**: Установите Python и другие необходимые пакеты с помощью `sudo apt-get install python python-pip gcc g++ build-essential`. Скачайте и установите драйвер ODBC, SQLCMD и драйвер Python для SQL Server. Инструкции см. в разделе о [настройке среды разработки для разработки на Python с помощью pyodbc](/sql/connect/python/pyodbc/step-1-configure-development-environment-for-pyodbc-python-development#linux).
+  # <a name="ubuntutabubuntu"></a>[Ubuntu](#tab/ubuntu)
 
-  - **Windows**: Установите Python, драйвер ODBC, SQLCMD и драйвер Python для SQL Server. Инструкции см. в разделе о [настройке среды разработки для разработки на Python с помощью pyodbc](/sql/connect/python/pyodbc/step-1-configure-development-environment-for-pyodbc-python-development#windows).
+  Используйте `sudo apt-get install python python-pip gcc g++ build-essential`, чтобы установить Python и другие необходимые пакеты.
+
+  Чтобы установить драйвер ODBC, SQLCMD и драйвер Python для SQL Server, см. статью [Step 1: Configure development environment for pyodbc Python development](/sql/connect/python/pyodbc/step-1-configure-development-environment-for-pyodbc-python-development#linux) (Шаг 1. Настройка среды разработки для использования pyodbc в Python).
+
+  Дополнительные сведения см. в статье [Installing the Microsoft ODBC Driver for SQL Server on Linux and macOS](/sql/connect/odbc/linux-mac/installing-the-microsoft-odbc-driver-for-sql-server) (Установка драйвера ODBC для SQL Server на Linux и macOS).
+
+  # <a name="windowstabwindows"></a>[Windows](#tab/windows)
+
+  Чтобы установить Python, драйвер ODBC, SQLCMD и драйвер Python для SQL Server, см. статью [Step 1: Configure development environment for pyodbc Python development](/sql/connect/python/pyodbc/step-1-configure-development-environment-for-pyodbc-python-development#windows) (Шаг 1. Настройка среды разработки для использования pyodbc в Python).
+
+  Дополнительные сведения см. в статье [Microsoft ODBC Driver for SQL Server](/sql/connect/odbc/microsoft-odbc-driver-for-sql-server) (Драйвер ODBC Microsoft для SQL Server).
+
+---
+
+> [!IMPORTANT]
+> Скрипты в этой статье предназначены для использования базы данных **Adventure Works**.
+
+> [!NOTE]
+> Вы также можете использовать управляемый экземпляр SQL Azure.
+>
+> Для создания и настройки используйте [портал Azure](sql-database-managed-instance-get-started.md), [PowerShell](scripts/sql-database-create-configure-managed-instance-powershell.md), или [CLI](https://medium.com/azure-sqldb-managed-instance/working-with-sql-managed-instance-using-azure-cli-611795fe0b44), затем установите подключение к [локальному серверу](sql-database-managed-instance-configure-p2s.md) или [виртуальной машине](sql-database-managed-instance-configure-vm.md).
+>
+> Для загрузки данных см. [Quickstart: Import a BACPAC file to a database in Azure SQL Database](sql-database-import.md) (Краткое руководство. Импорт BACPAC-файла в базу данных с помощью Azure SQL Database), а также сведения о файле [Adventure Works](https://github.com/Microsoft/sql-server-samples/tree/master/samples/databases/adventure-works) или [Краткое руководство. Восстановление базы данных в Управляемый экземпляр](sql-database-managed-instance-get-started-restore.md).
+
+Для дальнейшего изучения Python и базы данных SQL Azure см. [Библиотеки Базы данных SQL Azure для Python](/python/api/overview/azure/sql), репозитория [репозиторий pyodbc](https://github.com/mkleehammer/pyodbc/wiki/) и [выборку pyodbc](https://github.com/mkleehammer/pyodbc/wiki/Getting-started).
 
 ## <a name="get-sql-server-connection-information"></a>Получение сведений о подключении к SQL Server
 
 Получите сведения, необходимые для подключения к базе данных SQL Azure. Для дальнейших действий вам понадобится полное имя сервера или имя узла, имя базы данных и данные для входа.
 
-1. Войдите на [портале Azure](https://portal.azure.com/).
+1. Войдите на [портал Azure](https://portal.azure.com/).
 
 2. Перейдите на страницу **Базы данных SQL** или **Управляемые экземпляры SQL**.
 
@@ -96,7 +108,7 @@ ms.locfileid: "73826999"
 
 1. Убедитесь, что возвращены первые 20 строк с продуктами из категории, и закройте командное окно.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Проектирование первой базы данных SQL Azure](sql-database-design-first-database.md)
 - [Сведения о драйверах Microsoft Python для SQL Server](https://docs.microsoft.com/sql/connect/python/python-driver-for-sql-server/)

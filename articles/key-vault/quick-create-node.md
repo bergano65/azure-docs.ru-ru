@@ -6,12 +6,12 @@ ms.author: mbaldwin
 ms.date: 10/20/2019
 ms.service: key-vault
 ms.topic: quickstart
-ms.openlocfilehash: e36e3ae9ce2e8ca116921de428b4dcc09b37afb6
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.openlocfilehash: a59ba62df546c60c4086829eec355d3e69b69363
+ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74978583"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76773738"
 ---
 # <a name="quickstart-azure-key-vault-client-library-for-nodejs-v4"></a>Краткое руководство. Использование клиентской библиотеки Azure Key Vault для Node.js (версии 4)
 
@@ -22,7 +22,7 @@ ms.locfileid: "74978583"
 - Повысьте уровень безопасности и увеличьте контроль над ключами и паролями.
 - Создавайте и импортируйте ключи шифрования за считаные минуты.
 - Сократите время задержки с помощью масштабирования в облаке и глобального резервирования.
-- Упрощение и автоматизация задач, связанных с SSL- и TLS-сертификатами.
+- Упрощение и автоматизация задач, связанных с TLS- и SSL-сертификатами.
 - Используйте модули HSM, отвечающие стандартам FIPS 140-2 уровня 2.
 
 [Справочная документация по API](/javascript/api/overview/azure/key-vault?view=azure-node-latest) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/keyvault) | [Пакет (npm)](https://www.npmjs.com/package/@azure/keyvault-secrets).
@@ -198,7 +198,7 @@ az group delete -g "myResourceGroup"
 Remove-AzResourceGroup -Name "myResourceGroup"
 ```
 
-## <a name="sample-code"></a>Пример кода
+## <a name="sample-code"></a>Образец кода
 
 ```javascript
 const { DefaultAzureCredential } = require("@azure/identity");
@@ -255,7 +255,7 @@ main()
 
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом кратком руководстве вы создали хранилище ключей, сохранили в нем секрет и извлекли его. Дополнительные сведения о Key Vault и его интеграции в приложения см. в следующих статьях.
 

@@ -8,33 +8,34 @@ ms.custom: seo-java-august2019
 ms.devlang: java
 ms.topic: quickstart
 ms.date: 05/06/2019
-ms.openlocfilehash: 269eb1fe744a31f1f4501c5790e06c1a5e06bab6
-ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
+ms.openlocfilehash: 566bf606b275b8e2c1f456600b46b1d7304d2ce7
+ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74767897"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76769028"
 ---
 # <a name="quickstart-use-java-to-connect-to-and-query-data-in-azure-database-for-postgresql---single-server"></a>Краткое руководство. Подключение к службе "База данных Azure для PostgreSQL — отдельный сервер" и выполнение запроса данных с помощью Java
-В этом кратком руководстве объясняется, как подключиться к базе данных Azure для PostgreSQL с помощью приложения Java. Здесь также показано, как использовать инструкции SQL для запроса, вставки, обновления и удаления данных в базе данных. В этой статье предполагается, что у вас уже есть опыт разработки на Java и вы только начали работу с Базой данных Azure для PostgreSQL.
+
+В этом кратком руководстве вы узнаете, как подключиться к Базе данных Azure для PostgreSQL с помощью приложения Java. Здесь также показано, как использовать инструкции SQL для запроса, вставки, обновления и удаления данных в базе данных. В этой статье предполагается, что у вас уже есть опыт разработки на Java и вы только начали работу с Базой данных Azure для PostgreSQL.
 
 ## <a name="prerequisites"></a>Предварительные требования
-В качестве отправной точки в этом кратком руководстве используются ресурсы, созданные в соответствии со следующими материалами:
-- [Создание базы данных с помощью портала](quickstart-create-server-database-portal.md)
-- [Создание базы данных с помощью Azure CLI](quickstart-create-server-database-azure-cli.md)
 
-Также вам потребуется:
-- скачать [драйвер JDBC для PostgreSQL](https://jdbc.postgresql.org/download.html), который соответствует версии Java и Java Development Kit;
-- включить JAR-файл PostgreSQL JDBC (например, postgresql-42.1.1.jar) в путь к классу приложения. Дополнительные сведения см. на [странице по настройке пути к классу](https://jdbc.postgresql.org/documentation/head/classpath.html).
+- Учетная запись Azure с активной подпиской. [Создайте учетную запись бесплатно](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio).
+
+- Завершение [краткого руководства по созданию сервера службы "База данных Azure для PostgreSQL" на портале Azure](quickstart-create-server-database-portal.md) или [по созданию службы "База данных Azure для PostgreSQL" с помощью Azure CLI](quickstart-create-server-database-azure-cli.md).
+
+- [Драйвер JDBC для PostgreSQL](https://jdbc.postgresql.org/download.html) соответствует версии Java и пакета SDK для Java.
+- [Сведения о пути к классу](https://jdbc.postgresql.org/documentation/head/classpath.html) — включение JAR-файла PostgreSQL JDBC (например, postgresql-42.1.1.jar) в путь к классу приложения.
 
 ## <a name="get-connection-information"></a>Получение сведений о подключении
 Получите сведения, необходимые для подключения к базе данных Azure.для PostgreSQL. Вам потребуется полное имя сервера и учетные данные для входа.
 
-1. Войдите на [портал Azure](https://portal.azure.com/).
-2. В меню слева на портале Azure выберите **Все ресурсы** и выполните поиск по имени созданного сервера (например, **mydemoserver**).
-3. Выберите имя сервера.
-4. Запишите **имя сервера** и **имя для входа администратора сервера** с панели сервера **Обзор**. Если вы забыли свой пароль, можно также сбросить пароль с помощью этой панели.
- ![Имя сервера службы "База данных Azure для PostgreSQL"](./media/connect-java/azure-database-postgresql-server-name.png)
+1. На **портале Azure** найдите и выберите созданный вами сервер (например, [mydemoserver](https://portal.azure.com/)).
+
+1. Запишите **имя сервера** и **имя для входа администратора** с панели сервера **Обзор**. Если вы забыли свой пароль, можно также сбросить пароль с помощью этой панели.
+
+    ![Строка подключения Базы данных Azure для PostgreSQL](./media/connect-java/server-details-azure-database-postgresql.png)
 
 ## <a name="connect-create-table-and-insert-data"></a>Подключение, создание таблицы и вставка данных
 Используйте указанный ниже код для подключения и загрузки информации в базу данных с помощью функции с инструкцией SQL **INSERT**. Методы [getConnection()](https://www.postgresql.org/docs/7.4/static/jdbc-use.html), [createStatement()](https://jdbc.postgresql.org/documentation/head/query.html) и [executeQuery()](https://jdbc.postgresql.org/documentation/head/query.html) используются для подключения к базе данных, удаления и создания таблицы. Объект [prepareStatement](https://jdbc.postgresql.org/documentation/head/query.html) используется для создания команд вставки, а методы setString() и setInt() — для привязки значений параметров. Метод [executeUpdate()](https://jdbc.postgresql.org/documentation/head/update.html) запускает команду для каждого набора параметров. 
@@ -136,7 +137,7 @@ public class CreateTableInsertRows {
 }
 ```
 
-## <a name="read-data"></a>Считывание данных
+## <a name="read-data"></a>Чтение данных
 Используйте указанный ниже код с инструкцией SQL **SELECT** для чтения данных. Методы [getConnection()](https://www.postgresql.org/docs/7.4/static/jdbc-use.html), [createStatement()](https://jdbc.postgresql.org/documentation/head/query.html) и [executeQuery()](https://jdbc.postgresql.org/documentation/head/query.html) используются для подключения к базе данных, создания и выполнения инструкции SELECT. Результаты обрабатываются с помощью объекта [ResultSet](https://www.postgresql.org/docs/7.4/static/jdbc-query.html). 
 
 Замените значения параметров host, database, user и password значениями, указанными при создании сервера и базы данных.
@@ -383,6 +384,6 @@ public class DeleteTable {
 }
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 > [!div class="nextstepaction"]
 > [Перенос базы данных с помощью экспорта и импорта](./howto-migrate-using-export-and-import.md)

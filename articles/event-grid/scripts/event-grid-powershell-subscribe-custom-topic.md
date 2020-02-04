@@ -1,23 +1,22 @@
 ---
 title: Пример скрипта Azure PowerShell. Подписка на события пользовательского раздела | Документация Майкрософт
-description: Пример скрипта Azure PowerShell. Подписка на события пользовательского раздела
+description: В этой статье приведен пример скрипта Azure PowerShell, в котором показано, как подписаться на события Сетки событий для пользовательского раздела.
 services: event-grid
 documentationcenter: na
-author: tfitzmac
-manager: timlt
+author: spelluru
 ms.service: event-grid
 ms.devlang: powershell
 ms.topic: sample
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 12/10/2018
-ms.author: tomfitz
-ms.openlocfilehash: f16a02cd110397b1ef6bb3aa00ea12c44e4b9563
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.date: 01/23/2020
+ms.author: spelluru
+ms.openlocfilehash: 1c3b158a2608d63fae6eea38c7263d0614519a5e
+ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "66117136"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76721529"
 ---
 # <a name="subscribe-to-events-for-a-custom-topic-with-powershell"></a>Создание подписки на события, связанные с пользовательским разделом, с использованием PowerShell
 
@@ -43,11 +42,11 @@ ms.locfileid: "66117136"
 
 Чтобы создать подписку на события, в скрипте используются указанные ниже команды. Для каждой команды в таблице приведены ссылки на соответствующую документацию.
 
-| Команда | Примечания |
+| Get-Help | Примечания |
 |---|---|
 | [New-AzEventGridSubscription](https://docs.microsoft.com/powershell/module/az.eventgrid/new-azeventgridsubscription) | создание подписки в службе "Сетка событий"; |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Общие сведения об управляемых приложениях Azure см. в [этой статье](../overview.md).
 * Дополнительные сведения см. в [документации по Azure PowerShell](https://docs.microsoft.com/powershell/azure/get-started-azureps).

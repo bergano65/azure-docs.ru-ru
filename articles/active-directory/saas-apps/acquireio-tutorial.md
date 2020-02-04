@@ -1,5 +1,5 @@
 ---
-title: Руководство по интеграции единого входа Azure Active Directory с AcquireIO | Документация Майкрософт
+title: Руководство. интеграции единого входа Azure Active Directory с AcquireIO | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в приложение AcquireIO.
 services: active-directory
 documentationCenter: na
@@ -16,14 +16,14 @@ ms.topic: tutorial
 ms.date: 10/14/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 17cc6df651a82b416e670ee5ca5683c428eac6b5
-ms.sourcegitcommit: b4f201a633775fee96c7e13e176946f6e0e5dd85
+ms.openlocfilehash: 01bcc3678485119afae1d567d97eff9dcebe6b95
+ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72596268"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76714625"
 ---
-# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-acquireio"></a>Руководство по интеграции единого входа Azure Active Directory с AcquireIO
+# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-acquireio"></a>Руководство. интеграции единого входа Azure Active Directory с AcquireIO
 
 В этом руководстве описано, как интегрировать AcquireIO с Azure Active Directory (Azure AD). Интеграция AcquireIO с Azure AD обеспечивает следующие возможности.
 
@@ -35,9 +35,9 @@ ms.locfileid: "72596268"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы приступить к работе, потребуется следующее:
+Чтобы приступить к работе, потребуется следующее.
 
-* подписка Azure AD Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
+* Подписка Azure AD. Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
 * подписка AcquireIO с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -68,7 +68,7 @@ ms.locfileid: "72596268"
     * **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить пользователю B.Simon использовать единый вход Azure AD.
 1. **[Настройка единого входа в AcquireIO](#configure-acquireio-sso)** необходима, чтобы настроить параметры единого входа на стороне приложения.
     * **[Создание тестового пользователя AcquireIO](#create-acquireio-test-user)** нужно для того, чтобы в AcquireIO существовал пользователь B.Simon, связанный с одноименным пользователем в Azure AD.
-1. **[Проверка единого входа](#test-sso)** необходима, чтобы убедиться в корректной работе конфигурации.
+1. **[Проверка единого входа](#test-sso)** позволяет убедиться в правильности конфигурации.
 
 ## <a name="configure-azure-ad-sso"></a>Настройка единого входа Azure AD
 
@@ -78,7 +78,7 @@ ms.locfileid: "72596268"
 1. На странице **Выбрать метод единого входа** выберите **SAML**.
 1. На странице **Настройка единого входа с помощью SAML** щелкните значок "Изменить" (значок пера), чтобы открыть диалоговое окно **Базовая конфигурация SAML** и изменить параметры.
 
-   ![Правка базовой конфигурации SAML](common/edit-urls.png)
+   ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
 1. На странице **Базовая конфигурация SAML** введите значения следующих полей.
 
@@ -111,7 +111,7 @@ ms.locfileid: "72596268"
 
 В этом разделе описано, как включить единый вход в Azure для пользователя B.Simon, предоставив этому пользователю доступ к AcquireIO.
 
-1. На портале Azure выберите **Корпоративные приложения**, а затем —**Все приложения**.
+1. На портале Azure выберите **Корпоративные приложения**, а затем — **Все приложения**.
 1. Из списка приложений выберите **AcquireIO**.
 1. На странице "Обзор" приложения найдите раздел **Управление** и выберите **Пользователи и группы**.
 
@@ -149,7 +149,7 @@ ms.locfileid: "72596268"
 
     ![Конфигурация AcquireIO](./media/acquireio-tutorial/config03.png)
 
-    a. Щелкните **Copy** (Копировать), чтобы скопировать URL-адрес ответа для своего экземпляра, и вставьте его в текстовое поле **URL-адрес ответа** в разделе **Базовая конфигурация SAML** на портале Azure.
+    а. Щелкните **Copy** (Копировать), чтобы скопировать URL-адрес ответа для своего экземпляра, и вставьте его в текстовое поле **URL-адрес ответа** в разделе **Базовая конфигурация SAML** на портале Azure.
 
     b. В текстовое поле **Login URL** (URL-адрес входа) вставьте **URL-адрес входа**, скопированный на портале Azure.
 
@@ -173,11 +173,11 @@ ms.locfileid: "72596268"
 
     ![Конфигурация AcquireIO](./media/acquireio-tutorial/config05.png)
 
-    a. В текстовое поле **Name** (Имя) введите имя пользователя, например **B.Simon**.
+    а. В текстовое поле **Name** (Имя) введите имя пользователя, например **B.Simon**.
 
     b. В текстовое поле **Email** (Адрес электронной почты) введите адрес электронной почты пользователя, например **B.simon@contoso.com** .
 
-    c. Нажмите кнопку **Submit**(Отправить).
+    c. Щелкните **Отправить**.
 
 ## <a name="test-sso"></a>Проверка единого входа 
 
@@ -187,9 +187,9 @@ ms.locfileid: "72596268"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

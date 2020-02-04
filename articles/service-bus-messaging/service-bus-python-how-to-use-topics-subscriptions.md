@@ -1,10 +1,9 @@
 ---
 title: Краткое руководство. Использование разделов и подписок Служебной шины Azure с Python
-description: Узнайте, как использовать разделы и подписки служебной шины Azure в Python.
+description: В этой статье вы узнаете, как создать раздел Служебной шины Azure, подписку, как отправить сообщения в раздел и получить сообщения из подписки.
 services: service-bus-messaging
 documentationcenter: python
 author: axisc
-manager: timlt
 editor: spelluru
 ms.assetid: c4f1d76c-7567-4b33-9193-3788f82934e4
 ms.service: service-bus-messaging
@@ -12,14 +11,14 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: python
 ms.topic: quickstart
-ms.date: 11/05/2019
+ms.date: 01/27/2020
 ms.author: aschhab
-ms.openlocfilehash: 94a49b31139947c6323ab391b78ecd03ee911e0a
-ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
+ms.openlocfilehash: 03e22c4c179850e5140015c0abc2d89f16d4b624
+ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73748504"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76774543"
 ---
 # <a name="quickstart-use-service-bus-topics-and-subscriptions-with-python"></a>Краткое руководство. Использование разделов и подписок Служебной шины с Python
 
@@ -34,7 +33,7 @@ ms.locfileid: "73748504"
 - Удаление разделов и подписок
 
 ## <a name="prerequisites"></a>Предварительные требования
-- Подписка Azure. Вы можете активировать [преимущества подписчика Visual Studio или MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A85619ABF) либо зарегистрироваться для получения [бесплатной учетной записи](https://azure.microsoft.com/free/?WT.mc_id=A85619ABF).
+- Подписка Azure. Вы можете активировать [преимущества подписчика Visual Studio или MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A85619ABF) или зарегистрироваться для получения [бесплатной учетной записи](https://azure.microsoft.com/free/?WT.mc_id=A85619ABF).
 - Пространство имен Служебной шины Azure, созданное с помощью инструкций в [руководстве по созданию раздела и подписок Служебной шины с помощью портала Azure](service-bus-quickstart-topics-subscriptions-portal.md). Скопируйте имя пространства имен, имя ключа общего доступа и значение первичного ключа из экрана **Политики общего доступа**. Эти данные понадобятся далее в этой статье. 
 - Python 3.4x или более поздней версии с установленным пакетом [Azure SDK для Python][Azure Python package]. Дополнительные сведения см. в [руководстве по установке Python](/azure/python/python-sdk-azure-install).
 
@@ -187,7 +186,7 @@ bus_service.delete_subscription('mytopic', 'HighMessages')
 > [!TIP]
 > Вы можете управлять ресурсами служебной шины с помощью [обозревателя служебной шины](https://github.com/paolosalvatori/ServiceBusExplorer/). Обозреватель Служебной шины позволяет без труда подключаться к пространству имен Служебной шины и управлять сущностями обмена сообщениями. Средство предоставляет дополнительные возможности, например функции импорта и экспорта и возможность проверять разделы, очереди, подписки, службы ретрансляции, центры уведомлений и концентраторы событий. 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Вы узнали основные сведения о разделах Служебной шины. Для получения дополнительных сведений используйте следующие ссылки:
 

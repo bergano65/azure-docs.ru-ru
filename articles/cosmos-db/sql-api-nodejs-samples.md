@@ -7,12 +7,12 @@ ms.subservice: cosmosdb-sql
 ms.topic: sample
 ms.date: 08/23/2019
 ms.author: dech
-ms.openlocfilehash: d79ac0e368ad824f6ceaea7bbcba151ecec72336
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: 4ac3d74cb76a936cc88261a2fedf16764e8ae52f
+ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74220152"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76718299"
 ---
 # <a name="nodejs-examples-to-manage-data-in-azure-cosmos-db"></a>Примеры Node.js для управления данными в Azure Cosmos DB
 
@@ -71,7 +71,7 @@ ms.locfileid: "74220152"
 
 ## <a name="item-examples"></a>Примеры элементов
 
-В файле [ItemManagement](https://github.com/Azure/azure-cosmos-js/tree/master/samples/ItemManagement) показано, как выполнять операции CRUD с элементом. Чтобы узнать больше о документах Azure Cosmos перед выполнением приведенных ниже примеров, ознакомьтесь с тематической статьей [Работа с базами данных, контейнерами и элементами](databases-containers-items.md). 
+В файле [ItemManagement](https://github.com/Azure/azure-cosmos-js/blob/master/samples/ItemManagement.ts) показано, как выполнять операции CRUD с элементом. Чтобы узнать больше о документах Azure Cosmos перед выполнением приведенных ниже примеров, ознакомьтесь с тематической статьей [Работа с базами данных, контейнерами и элементами](databases-containers-items.md). 
 
 | Задача | Справочник по API |
 | --- | --- |
@@ -98,7 +98,7 @@ ms.locfileid: "74220152"
 
 ## <a name="server-side-programming-examples"></a>Примеры программирования на стороне сервера
 
-С помощью файла [app.js](https://github.com/Azure/azure-cosmos-js/blob/master/samples/ServerSideScripts/app.js) в проекте [ServerSideScripts](https://github.com/Azure/azure-cosmos-js/tree/master/samples/ServerSideScripts) вы узнаете, как выполнять следующие задачи. Чтобы узнать больше о программировании на стороне сервера в Azure Cosmos DB перед выполнением приведенных ниже примеров, ознакомьтесь с тематической статьей [Хранимые процедуры, триггеры и определяемые пользователем функции](stored-procedures-triggers-udfs.md). 
+С помощью файла [index.ts](https://github.com/Azure/azure-cosmos-js/blob/master/samples/ServerSideScripts/index.ts) в проекте [ServerSideScripts](https://github.com/Azure/azure-cosmos-js/tree/master/samples/ServerSideScripts) вы узнаете, как выполнять следующие задачи. Чтобы узнать больше о программировании на стороне сервера в Azure Cosmos DB перед выполнением приведенных ниже примеров, ознакомьтесь с тематической статьей [Хранимые процедуры, триггеры и определяемые пользователем функции](stored-procedures-triggers-udfs.md). 
 
 | Задача | Справочник по API |
 | --- | --- |

@@ -1,5 +1,5 @@
 ---
-title: Руководство по Модерация содержимого Facebook с помощью Content Moderator
+title: Руководство. Модерация содержимого Facebook с помощью Content Moderator
 titleSuffix: Azure Cognitive Services
 description: Из этого руководства вы узнаете, как использовать Content Moderator на основе машинного обучения для модерации комментариев и записей на Facebook.
 services: cognitive-services
@@ -8,16 +8,16 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: content-moderator
 ms.topic: tutorial
-ms.date: 10/24/2019
+ms.date: 01/27/2020
 ms.author: pafarley
-ms.openlocfilehash: 5aa4cc24484a4ba1da608da9676ade492db35b6c
-ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
+ms.openlocfilehash: 9f25c845302d62e3bc9e230b4a6f8f2669f4ac35
+ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72936008"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76774269"
 ---
-# <a name="tutorial-moderate-facebook-posts-and-commands-with-azure-content-moderator"></a>Руководство по Модерация записей и команд Facebook с помощью Azure Content Moderator
+# <a name="tutorial-moderate-facebook-posts-and-commands-with-azure-content-moderator"></a>Руководство. Модерация записей и команд Facebook с помощью Azure Content Moderator
 
 Из этого руководства вы узнаете, как использовать Azure Content Moderator для модерации комментариев и записей на странице Facebook. Facebook будет отправлять содержимое, опубликованное посетителями, в службу Content Moderator. Затем рабочие процессы Content Moderator будут публиковать это содержимое или создавать проверки в инструменте проверки. Это будет зависеть от пороговых значений и оценки содержимого. Действующий пример этого сценария см. в демо-ролике [Keeping “wolves” out of your platform](https://channel9.msdn.com/Events/Build/2017/T6033) (Не подпускайте "волков" к своей платформе).
 
@@ -28,14 +28,14 @@ ms.locfileid: "72936008"
 > * создание приложения-функции Azure, которое ожидает передачи событий HTTP из Content Moderator и Facebook.
 > * связывание страницы Facebook и Content Moderator с помощью приложения Facebook.
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 Каждый из компонентов данного сценария отображен на этой схеме.
 
 ![Схема получения информации Content Moderator из Facebook с помощью FBListener и ее отправки с помощью CMListener](images/tutorial-facebook-moderation.png)
 
 > [!IMPORTANT]
-> В 2018 году компания Facebook внедрила более строгий предварительный анализ приложений Facebook. Вы не сможете выполнить инструкции в этом учебнике, если ваше приложение не было проверено и одобрено командой проверяющих специалистов Facebook.
+> В 2018 году компания Facebook внедрила более строгую политику предварительного анализа приложений Facebook. Вы не сможете выполнить инструкции в этом учебнике, если ваше приложение не было проверено и одобрено командой проверяющих специалистов Facebook.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -144,7 +144,7 @@ ms.locfileid: "72936008"
         2. [среда Postman](https://github.com/MicrosoftContentModerator/samples-fbPageModeration/blob/master/FB%20Page%20Access%20Token%20Environment.postman_environment.json).       
     3. Обновите следующие переменные среды.
     
-        | Ключ | Значение   | 
+        | Клавиши | Значение   | 
         | -------------------- |-------------|
         | appId   | Вставьте идентификатор приложения Facebook.  | 
         | appSecret | Вставьте секрет приложения Facebook. | 
@@ -157,7 +157,7 @@ ms.locfileid: "72936008"
 
 Решение отправляет все изображения и тексты, опубликованные на странице Facebook, в Content Moderator. При этом вызываются рабочие процессы, которые были заданы ранее. Содержимое, которое не соответствует критериям, определенным в рабочих процессах, передается на проверку в инструменте проверки. Остальное содержимое публикуется автоматически.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом руководстве вы настроили программу, которая анализирует изображения товаров и присваивает им теги с типами товаров, а затем передает изображения команде проверки для принятия обоснованных решений по модерации содержимого. Теперь переходите к подробному изучению модерации изображений.
 

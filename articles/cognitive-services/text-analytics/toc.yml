@@ -14,10 +14,8 @@
   items:
     - name: Клиентская библиотека
       items:
-        - name: "Анализ текста с помощью предварительной версии\_3.0"
+        - name: Анализ текста с использованием клиентской библиотеки
           href: quickstarts/text-analytics-sdk.md
-        - name: "Анализ текста с помощью версии\_2"
-          href: quickstarts/text-analytics-sdk-v2.md
     - name: REST API
       items:
         - name: Использование Java

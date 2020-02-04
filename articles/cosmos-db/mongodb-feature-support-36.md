@@ -4,15 +4,15 @@ description: Узнайте о поддержке возможностей и с
 ms.service: cosmos-db
 ms.subservice: cosmosdb-mongo
 ms.topic: overview
-ms.date: 10/16/2019
+ms.date: 01/15/2020
 author: sivethe
 ms.author: sivethe
-ms.openlocfilehash: a48fb82402cd4719cb210ec2dab55b3a0f7883ea
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: a32affab45ab99a89113644bb08c4f2b57d69018
+ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75441636"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76721019"
 ---
 # <a name="azure-cosmos-dbs-api-for-mongodb-36-version-supported-features-and-syntax"></a>API Azure Cosmos DB для MongoDB (версии 3.6) — поддержка возможностей и синтаксиса
 
@@ -22,7 +22,7 @@ Azure Cosmos DB — это глобально распределенная мн
 
 ## <a name="protocol-support"></a>Поддержка протоколов
 
-API Azure Cosmos DB для MongoDB совместим с сервером MongoDB версии **3.6** по умолчанию для новых учетных записей. Ниже перечислены поддерживаемые операторы, а также ограничения и исключения. Любой драйвер клиента, который распознает эти протоколы, должен иметь возможность подключения к API Azure Cosmos DB для MongoDB.
+API Azure Cosmos DB для MongoDB совместим с сервером MongoDB версии **3.6** по умолчанию для новых учетных записей. Ниже перечислены поддерживаемые операторы, а также ограничения и исключения. Любой драйвер клиента, который распознает эти протоколы, должен иметь возможность подключения к API Azure Cosmos DB для MongoDB. Обратите внимание, что при использовании API Azure Cosmos DB для учетных записей MongoDB, учетные записи версии 3.6 будет иметь конечную точку в формате `*.mongo.cosmos.azure.com`, в то время как в версии 3.2 конечная точка будет иметь формат `*.documents.azure.com`.
 
 ## <a name="query-language-support"></a>Поддержка языка запросов
 
@@ -34,43 +34,77 @@ API Azure Cosmos DB для MongoDB поддерживает приведенны
 
 ### <a name="query-and-write-operation-commands"></a>Команды для запросов и записи
 
-- удалить
-- поиск
-- findAndModify
-- getLastError
-- getMore
-- insert
-- обновить
+|Get-Help  |Поддерживается |
+|---------|---------|
+|удалить | Да |
+|поиск | Да     |
+|findAndModify | Да  |
+|getLastError|   Да |
+|getMore  |  Да  |
+|getPrevError | нет  |
+|insert  |   Да  |
+|parallelCollectionScan  | Да   |
+|resetError |   нет  |
+|обновить  |   Да  |
+|[Потоки изменений](mongodb-change-streams.md)  |  Да  |
+|GridFS |   Да  |
 
 ### <a name="authentication-commands"></a>Команды для аутентификации
 
-- logout
-- authenticate
-- getnonce
+|Get-Help  |Поддерживается |
+|---------|---------|
+|authenticate    |   Да      |
+|logout    |      Да   |
+|getnonce   |    Да     |
+
 
 ### <a name="administration-commands"></a>Команды для администрирования
 
-- dropDatabase
-- listDatabases
-- listCollections
-- drop
-- create
-- filemd5
-- createIndexes
-- listIndexes
-- dropIndexes
-- connectionStatus
-- reIndex
-- killCursors
+|Get-Help  |Поддерживается |
+|---------|---------|
+|Коллекции с ограниченным набором   |   нет      |
+|cloneCollectionAsCapped     |   нет      |
+|collMod     |   нет      |
+|collMod: expireAfterSeconds   |   нет      |
+|convertToCapped   |  нет       |
+|copydb     |  нет       |
+|create   |    Да     |
+|createIndexes     |  Да       |
+|currentOp     |  Да       |
+|drop     |   Да      |
+|dropDatabase     |  Да       |
+|dropIndexes     |   Да      |
+|filemd5    |   Да      |
+|killCursors    |  Да       |
+|killOp     |   нет      |
+|listCollections     |  Да       |
+|listDatabases     |  Да       |
+|listIndexes     |  Да       |
+|reIndex     |    Да     |
+|renameCollection     |    нет     |
+|connectionStatus    |     нет    |
 
 ### <a name="diagnostics-commands"></a>Команды для диагностики
 
-- buildInfo
-- collStats
-- dbStats
-- hostInfo
-- listDatabases
-- whatsmyuri
+|Get-Help  |Поддерживается |
+|---------|---------|
+|buildInfo       |   Да      |
+|collStats    |  Да       |
+|connPoolStats     |  нет       |
+|connectionStatus     |  нет       |
+|dataSize     |   нет      |
+|dbHash    |    нет     |
+|dbStats     |   Да      |
+|explain     | нет        |
+|explain: executionStats     |     нет    |
+|features     |    нет     |
+|hostInfo     |   нет      |
+|listDatabases       |   Да      |
+|listCommands     |  нет       |
+|профилировщик     |  нет       |
+|serverStatus     |  нет       |
+|top     |    нет     |
+|whatsmyuri     |   Да      |
 
 <a name="aggregation-pipeline"/>
 
@@ -78,252 +112,433 @@ API Azure Cosmos DB для MongoDB поддерживает приведенны
 
 ### <a name="aggregation-commands"></a>Команды статистической обработки
 
-- статистическое выражение
-- count
-- distinct
+|Get-Help  |Поддерживается |
+|---------|---------|
+|статистическое выражение |   Да  |
+|count     |   Да  |
+|distinct  | Да |
+|mapReduce | нет |
 
 ### <a name="aggregation-stages"></a>Этапы статистической обработки
 
-- $project
-- $match
-- $limit
-- $skip
-- $unwind
-- $group
-- $sample
-- $sort
-- $lookup
-- $out
-- $count
-- $addFields
-- $redact
-- $replaceRoot
+|Get-Help  |Поддерживается |
+|---------|---------|
+|$collStats |нет|
+|$project   |Да|
+|$match |Да|
+|$redact|   Да|
+|$limit |Да|
+|$skip  |Да|
+|$unwind|   Да|
+|$group |   Да|
+|$sample|       Да|
+|$sort  |Да|
+|$geoNear|  нет|
+|$lookup    |   Да|
+|$out       |Да|
+|$indexStats|       нет|
+|$facet |нет|
+|$bucket|   нет|
+|$bucketAuto|   нет|
+|$sortByCount|  Да|
+|$addFields |Да|
+|$replaceRoot|  Да|
+|$count |Да|
+|$currentOp|    нет|
+|$listLocalSessions |нет|
+|$listSessions  |нет|
+|$graphLookup   |нет|
 
-### <a name="aggregation-expressions"></a>Статистические выражения
+### <a name="boolean-expressions"></a>Логические выражения
 
-#### <a name="boolean-expressions"></a>Логические выражения
+|Get-Help  |Поддерживается |
+|---------|---------|
+|$and| Да|
+|$or|Да|
+|$not|Да|
 
-- $and
-- $or
-- $not
+### <a name="set-expressions"></a>Выражения для наборов
 
-#### <a name="set-expressions"></a>Выражения для наборов
+|Get-Help  |Поддерживается |
+|---------|---------|
+| $setEquals | Да|
+|$setIntersection|Да|
+| $setUnion|Да|
+| $setDifference|Да|
+| $setIsSubset|Да|
+| $anyElementTrue|Да|
+| $allElementsTrue|Да|
 
-- $setEquals
-- $setIntersection
-- $setUnion
-- $setDifference
-- $setIsSubset
-- $anyElementTrue
-- $allElementsTrue
+### <a name="comparison-expressions"></a>Выражения сравнения
 
-#### <a name="comparison-expressions"></a>Выражения сравнения
+|Get-Help  |Поддерживается |
+|---------|---------|
+|$cmp     |  Да       |
+|$eq|   Да| 
+|$gt |  Да| 
+|$gte|  Да| 
+|$lt    |Да|
+|$lte|  Да| 
+|$ne    |   Да| 
+|$in    |   Да| 
+|$nin   |   Да| 
 
-- $cmp
-- $eq
-- $gt
-- $gte
-- $lt
-- $lte
-- $ne
+### <a name="arithmetic-expressions"></a>Арифметические выражения
 
-#### <a name="arithmetic-expressions"></a>Арифметические выражения
+|Get-Help  |Поддерживается |
+|---------|---------|
+|$abs |  Да       |
+| $add |  Да       |
+| $ceil |  Да       |
+| $divide |  Да       |
+| $exp |  Да       |
+| $floor |  Да       |
+| $ln |  Да       |
+| $log |  Да       |
+| $log10 |  Да       |
+| $mod |  Да       |
+| $multiply |  Да       |
+| $pow |  Да       |
+| $sqrt |  Да       |
+| $subtract |  Да       |
+| $trunc |  Да       |
 
-- $abs
-- $add
-- $ceil
-- $divide
-- $exp
-- $floor
-- $ln
-- $log
-- $log10
-- $mod
-- $multiply
-- $pow
-- $sqrt
-- $subtract
-- $trunc
+### <a name="string-expressions"></a>Строковые выражения
 
-#### <a name="string-expressions"></a>Строковые выражения
+|Get-Help  |Поддерживается |
+|---------|---------|
+|$concat |  Да       |
+| $indexOfBytes|  Да       |
+| $indexOfCP|  Да       |
+| $split|  Да       |
+| $strLenBytes|  Да       |
+| $strLenCP|  Да       |
+| $strcasecmp|  Да       |
+| $substr|  Да       |
+| $substrBytes|  Да       |
+| $substrCP|  Да       |
+| $toLower|  Да       |
+| $toUpper|  Да       |
 
-- $concat
-- $indexOfBytes
-- $indexOfCP
-- $split
-- $strLenBytes
-- $strLenCP
-- $strcasecmp
-- $substr
-- $substrBytes
-- $substrCP
-- $toLower
-- $toUpper
+### <a name="text-search-operator"></a>Оператор поиска в тексте
 
-#### <a name="array-expressions"></a>Выражения для массивов
+|Get-Help  |Поддерживается |
+|---------|---------|
+| $meta | нет|
 
-- $arrayElemAt
-- $concatArrays
-- $filter
-- $indexOfArray
-- $isArray
-- $range
-- $reverseArray
-- $size
-- $slice
-- $in
+### <a name="array-expressions"></a>Выражения для массивов
 
-#### <a name="date-expressions"></a>Выражения для дат
+|Get-Help  |Поддерживается |
+|---------|---------|
+|$arrayElemAt   |   Да|
+|$arrayToObject|    Да|
+|$concatArrays  |   Да|
+|$filter    |   Да|
+|$indexOfArray  |Да|
+|$isArray   |   Да|
+|$objectToArray |Да|
+|$range |Да|
+|$reverseArray  |   Да|
+|$reduce|   Да|
+|$size  |   Да|
+|$slice |   Да|
+|$zip   |   Да|
+|$in    |   Да|
 
-- $dayOfYear
-- $dayOfMonth
-- $dayOfWeek
-- $year
-- $month
-- $week
-- $hour
-- $minute
-- $second
-- $millisecond
-- $isoDayOfWeek
-- $isoWeek
+### <a name="variable-operators"></a>Операторы переменных
 
-#### <a name="conditional-expressions"></a>Условные выражения
+|Get-Help  |Поддерживается |
+|---------|---------|
+|$map   |нет|
+|$let   |Да|
 
-- $cond
-- $ifNull
+### <a name="system-variables"></a>Системные переменные
 
-## <a name="aggregation-accumulators"></a>Операторы накопления статистической обработки
+|Get-Help  |Поддерживается |
+|---------|---------|
+|$$CURRENT| Да|
+|$$DESCEND|     Да|
+|$$KEEP     |Да|
+|$$PRUNE    |   Да|
+|$$REMOVE   |Да|
+|$$ROOT     |Да|
 
-Cosmos DB поддерживает все накопители MongoDB версии 3.6, кроме:
+### <a name="literal-operator"></a>Литеральный оператор
 
-- $stdDevPop
-- $stdDevSamp
+|Get-Help  |Поддерживается |
+|---------|---------|
+|$literal   |Да|
+
+### <a name="date-expressions"></a>Выражения для дат
+
+|Get-Help  |Поддерживается |
+|---------|---------|
+|$dayOfYear |Да    |
+|$dayOfMonth|   Да |
+|$dayOfWeek |Да    |
+|$year  |Да    |
+|$month |Да|   
+|$week  |Да    |
+|$hour  |Да    |
+|$minute|   Да|    
+|$second    |Да    |
+|$millisecond|  Да|    
+|$dateToString  |Да    |
+|$isoDayOfWeek  |Да    |
+|$isoWeek   |Да    |
+|$dateFromParts|    нет| 
+|$dateToParts   |нет |
+|$dateFromString|   нет|
+|$isoWeekYear   |Да    |
+
+### <a name="conditional-expressions"></a>Условные выражения
+
+|Get-Help  |Поддерживается |
+|---------|---------|
+| $cond| Да|
+| $ifNull| Да|
+| $switch |Да|
+
+### <a name="data-type-operator"></a>Оператор типа данных
+
+|Get-Help  |Поддерживается |
+|---------|---------|
+| $type| Да|
+
+### <a name="accumulator-expressions"></a>Выражения аккумулятора
+
+|Get-Help  |Поддерживается |
+|---------|---------|
+|$sum   |Да    |
+|$avg   |Да    |
+|$first|    Да|
+|$last  |Да    |
+|$max   |Да    |
+|$min   |Да    |
+|$push| Да|
+|$addToSet| Да|
+|$stdDevPop|    нет  |
+|$stdDevSamp|   нет|
+
+### <a name="merge-operator"></a>Оператор объединения
+
+|Get-Help  |Поддерживается |
+|---------|---------|
+| $mergeObjects | Да|
+
+## <a name="data-types"></a>Типы данных
+
+|Get-Help  |Поддерживается |
+|---------|---------|
+|Double |Да    |
+|String |Да    |
+|Объект |Да    |
+|Array  |Да    |
+|Binary Data    |Да|   
+|ObjectId   |Да    |
+|Логическое    |Да    |
+|Дата   |Да    |
+|NULL   |Да    |
+|32-разрядное целое число (цч)   |Да    |
+|Отметка времени  |Да    |
+|64-разрядное целое число (длинное)  |Да    |
+|MinKey |Да    |
+|MaxKey |Да    |
+|Decimal128 |Да|   
+|Регулярное выражение |Да|
+|JavaScript |Да|
+|JavaScript (с инструкциями SCOPE)|   Да |
+|Не определено.  |Да    |
+
+## <a name="indexes-and-index-properties"></a>Индексы и свойства индекса
+
+### <a name="indexes"></a>Индексы
+
+|Get-Help  |Поддерживается |
+|---------|---------|
+|Индекс одного поля |Да    |
+|Составной индекс |Да    |
+|Многоключевой индекс |Да    |
+|Текстовый индекс |нет|
+|2dsphere   |Да    |
+|Двухмерный индекс   |нет |
+|Хэшированный индекс   | Да|
+
+### <a name="index-properties"></a>Свойства индекса
+
+|Get-Help  |Поддерживается |
+|---------|---------|
+|Срок жизни|   Да |
+|Уникальная идентификация |Да|
+|Частично|   нет|
+|Без учета регистра   |нет|
+|разреженные; |нет |
+|Историческая справка|    Да |
 
 ## <a name="operators"></a>Операторы
 
-Ниже представлен список поддерживаемых операторов с примерами их использования. Изучите пример документа, используемый в приведенных ниже запросах.
+### <a name="logical-operators"></a>Логические операторы
 
-```json
-{
-  "Volcano Name": "Rainier",
-  "Country": "United States",
-  "Region": "US-Washington",
-  "Location": {
-    "type": "Point",
-    "coordinates": [
-      -121.758,
-      46.87
-    ]
-  },
-  "Elevation": 4392,
-  "Type": "Stratovolcano",
-  "Status": "Dendrochronology",
-  "Last Known Eruption": "Last known eruption from 1800-1899, inclusive"
-}
-```
+|Get-Help  |Поддерживается |
+|---------|---------|
+|$or    |   Да|
+|$and   |   Да|
+|$not   |   Да|
+|$nor   |   Да| 
 
-Оператор | Пример |
---- | --- |
-$eq | `{ "Volcano Name": { $eq: "Rainier" } }` |  | -
-$gt | `{ "Elevation": { $gt: 4000 } }` |  | -
-$gte | `{ "Elevation": { $gte: 4392 } }` |  | -
-$lt | `{ "Elevation": { $lt: 5000 } }` |  | -
-$lte | `{ "Elevation": { $lte: 5000 } }` | | -
-$ne | `{ "Elevation": { $ne: 1 } }` |  | -
-$in | `{ "Volcano Name": { $in: ["St. Helens", "Rainier", "Glacier Peak"] } }` |  | -
-$nin | `{ "Volcano Name": { $nin: ["Lassen Peak", "Hood", "Baker"] } }` | | -
-$or | `{ $or: [ { Elevation: { $lt: 4000 } }, { "Volcano Name": "Rainier" } ] }` |  | -
-$and | `{ $and: [ { Elevation: { $gt: 4000 } }, { "Volcano Name": "Rainier" } ] }` |  | -
-$not | `{ "Elevation": { $not: { $gt: 5000 } } }`|  | -
-$nor | `{ $nor: [ { "Elevation": { $lt: 4000 } }, { "Volcano Name": "Baker" } ] }` |  | -
-$exists | `{ "Status": { $exists: true } }`|  | -
-$type | `{ "Status": { $type: "string" } }`|  | -
-$mod | `{ "Elevation": { $mod: [ 4, 0 ] } }` |  | -
-$regex | `{ "Volcano Name": { $regex: "^Rain"} }`|  | -
+### <a name="element-operators"></a>Операторы элементов
 
-### <a name="notes"></a>Примечания
+|Get-Help  |Поддерживается |
+|---------|---------|
+|$exists|   Да|
+|$type  |   Да|
+
+### <a name="evaluation-query-operators"></a>Операторы запросов вычисления
+
+|Get-Help  |Поддерживается |
+|---------|---------|
+|$expr  |   нет|
+|$jsonSchema    |   нет|
+|$mod   |   Да|
+|$regex |   Да|
+|$text  | Нет (не поддерживается. Вместо этого используйте $regex.)| 
+|$where |нет| 
 
 В запросах $regex выражения, привязанные слева, поддерживают поиск по индексу. Но если добавить модификатор i (отключение учета регистра) и m (многостроковое выражение), коллекция будет проверяться во всех выражениях.
-Если есть необходимость включить $ или |, желательно создать два (или более) запроса regex.
-Например, исходный запрос вида ```find({x:{$regex: /^abc$/})``` следует изменить следующим образом: ```find({x:{$regex: /^abc/, x:{$regex:/^abc$/}})```.
-Тогда первая часть будет использовать индекс, чтобы ограничить поиск только теми документами, имя которых начинается со стороки ^abc, а вторая часть будет проверять соответствие строк.
-Оператор вертикальной черты | действует как функция or. Например, запрос ```find({x:{$regex: /^abc|^def/})``` отбирает документы, в которых значение поля x начинается со строк abc или def. Чтобы использовать индекс, мы рекомендуем разбивать запрос на два разных запроса, соединенных оператором $or, вот так: ```find( {$or : [{x: $regex: /^abc/}, {$regex: /^def/}] })```.
+
+Если есть необходимость включить $ или |, желательно создать два (или более) запроса regex. Например, исходный запрос вида ```find({x:{$regex: /^abc$/})``` следует изменить следующим образом:
+
+```find({x:{$regex: /^abc/, x:{$regex:/^abc$/}})```.
+
+Тогда первая часть будет использовать индекс, чтобы ограничить поиск только теми документами, имя которых начинается со стороки ^abc, а вторая часть будет проверять соответствие строк. Оператор вертикальной черты | действует как функция or. Например, запрос ```find({x:{$regex: /^abc|^def/})``` отбирает документы, в которых значение поля x начинается со строк abc или def. Чтобы использовать индекс, мы рекомендуем разбивать запрос на два разных запроса, соединенных оператором $or, вот так: ```find( {$or : [{x: $regex: /^abc/}, {$regex: /^def/}] })```.
+
+### <a name="array-operators"></a>Операторы массива
+
+|Get-Help  |Поддерживается | 
+|---------|---------|
+| $all | Да| 
+| $elemMatch | Да| 
+| $size | Да | 
+
+### <a name="comment-operator"></a>Оператор комментариев
+
+|Get-Help  |Поддерживается | 
+|---------|---------|
+$comment |Да| 
+
+### <a name="projection-operators"></a>Операторы проецирования
+
+|Get-Help  |Поддерживается |
+|---------|---------|
+|$elemMatch |Да|
+|$meta| нет|
+|$slice | Да|
 
 ### <a name="update-operators"></a>Обновление операторов
 
 #### <a name="field-update-operators"></a>Операторы обновления полей
 
-- $inc
-- $mul
-- $rename
-- $setOnInsert
-- $set
-- $ не задано
-- $min
-- $max
-- $currentDate
+|Get-Help  |Поддерживается |
+|---------|---------|
+|$inc   |   Да|
+|$mul   |   Да|
+|$rename    |   Да|
+|$setOnInsert|  Да|
+|$set   |Да|
+|$ не задано| Да|
+|$min   |Да|
+|$max   |Да|
+|$currentDate   | Да|
 
 #### <a name="array-update-operators"></a>Операторы обновления массивов
 
-- $addToSet
-- $pop
-- $pullAll
-- $pull
-- $pushAll
-- $push
-- $each
-- $slice
-- $sort
-- $position
+|Get-Help  |Поддерживается |
+|---------|---------|
+|$  |Да|
+|$[]|   Да|
+|$[<identifier>]|   Да|
+|$addToSet  |Да|
+|$pop   |Да|
+|$pullAll|  Да|
+|$pull  |Да|
+|$push  |Да|
+|$pushAll| Да|
+
+
+#### <a name="update-modifiers"></a>Модификаторы обновления
+
+|Get-Help  |Поддерживается |
+|---------|---------|
+|$each  |   Да|
+|$slice |Да|
+|$sort  |Да|
+|$position  |Да|
 
 #### <a name="bitwise-update-operator"></a>Оператор побитового обновления
 
-- $bit
+|Get-Help  |Поддерживается |
+|---------|---------|
+| $bit  |   Да|    
+|$bitsAllSet    |   нет|
+|$bitsAnySet    |   нет|
+|$bitsAllClear  |нет|
+|$bitsAnyClear  |нет|
 
 ### <a name="geospatial-operators"></a>Геопространственные операторы
 
-Оператор | Пример | |
---- | --- | --- |
-$geoWithin | ```{ "Location.coordinates": { $geoWithin: { $centerSphere: [ [ -121, 46 ], 5 ] } } }``` | Да |
-$geoIntersects |  ```{ "Location.coordinates": { $geoIntersects: { $geometry: { type: "Polygon", coordinates: [ [ [ -121.9, 46.7 ], [ -121.5, 46.7 ], [ -121.5, 46.9 ], [ -121.9, 46.9 ], [ -121.9, 46.7 ] ] ] } } } }``` | Да |
-$near | ```{ "Location.coordinates": { $near: { $geometry: { type: "Polygon", coordinates: [ [ [ -121.9, 46.7 ], [ -121.5, 46.7 ], [ -121.5, 46.9 ], [ -121.9, 46.9 ], [ -121.9, 46.7 ] ] ] } } } }``` | Да |
-$nearSphere | ```{ "Location.coordinates": { $nearSphere : [ -121, 46  ], $maxDistance: 0.50 } }``` | Да |
-$geometry | ```{ "Location.coordinates": { $geoWithin: { $geometry: { type: "Polygon", coordinates: [ [ [ -121.9, 46.7 ], [ -121.5, 46.7 ], [ -121.5, 46.9 ], [ -121.9, 46.9 ], [ -121.9, 46.7 ] ] ] } } } }``` | Да |
-$minDistance | ```{ "Location.coordinates": { $nearSphere : { $geometry: {type: "Point", coordinates: [ -121, 46 ]}, $minDistance: 1000, $maxDistance: 1000000 } } }``` | Да |
-$maxDistance | ```{ "Location.coordinates": { $nearSphere : [ -121, 46  ], $maxDistance: 0.50 } }``` | Да |
-$center | ```{ "Location.coordinates": { $geoWithin: { $center: [ [-121, 46], 1 ] } } }``` | Да |
-$centerSphere | ```{ "Location.coordinates": { $geoWithin: { $centerSphere: [ [ -121, 46 ], 5 ] } } }``` | Да |
-$box | ```{ "Location.coordinates": { $geoWithin: { $box:  [ [ 0, 0 ], [ -122, 47 ] ] } } }``` | Да |
-$polygon | ```{ "Location.coordinates": { $near: { $geometry: { type: "Polygon", coordinates: [ [ [ -121.9, 46.7 ], [ -121.5, 46.7 ], [ -121.5, 46.9 ], [ -121.9, 46.9 ], [ -121.9, 46.7 ] ] ] } } } }``` | Да |
+Оператор | Поддерживается| 
+--- | --- |
+$geoWithin | Да |
+$geoIntersects | Да | 
+$near |  Да |
+$nearSphere |  Да |
+$geometry |  Да |
+$minDistance | Да |
+$maxDistance | Да |
+$center | Да |
+$centerSphere | Да |
+$box | Да |
+$polygon |  Да |
 
-## <a name="sort-operations"></a>Сортировать операции
+## <a name="cursor-methods"></a>Методы курсора
+
+|Get-Help  |Поддерживается |
+|---------|---------|
+|cursor.batchSize() |   Да|
+|cursor.close() |Да|
+|cursor.isClosed()|     Да|
+|cursor.collation()|    нет|
+|cursor.comment()   |Да|
+|cursor.count() |Да|
+|cursor.explain()|  нет|
+|cursor.forEach()   |Да|
+|cursor.hasNext()   |Да|
+|cursor.hint()  |Да|
+|cursor.isExhausted()|  Да|
+|cursor.itcount()   |Да|
+|cursor.limit() |Да|
+|cursor.map()   |Да|
+|cursor.maxScan()   |Да|
+|cursor.maxTimeMS()|    Да|
+|cursor.max()   |Да|
+|cursor.min()   |Да|
+|cursor.next()| Да|
+|cursor.noCursorTimeout()   |нет|
+|cursor.objsLeftInBatch()   |Да|
+|cursor.pretty()|   Да|
+|cursor.readConcern()|  Да|
+|cursor.readPref()      |Да|
+|cursor.returnKey() |нет|
+|cursor.showRecordId()| нет|
+|cursor.size()  |Nes|
+|cursor.skip()  |Да|
+|cursor.sort()  |   Да|
+|cursor.tailable()| нет|
+|cursor.toArray()   |Да|
+
+## <a name="sort-operations"></a>Сортирование операций
 
 При использовании операции `findOneAndUpdate` поддерживается сортировка операций по одному полю, а по нескольким полям — нет.
-
-## <a name="additional-operators"></a>Дополнительные операторы
-
-Оператор | Пример | Примечания
---- | --- | --- |
-$all | ```{ "Location.coordinates": { $all: [-121.758, 46.87] } }``` |
-$elemMatch | ```{ "Location.coordinates": { $elemMatch: {  $lt: 0 } } }``` |  
-$size | ```{ "Location.coordinates": { $size: 2 } }``` |
-$comment |  ```{ "Location.coordinates": { $elemMatch: {  $lt: 0 } }, $comment: "Negative values"}``` |
-$text |  | Не поддерживается. Вместо этого используйте $regex
-
-## <a name="unsupported-operators"></a>Неподдерживаемые операторы
-
-Операторы ```$where``` и ```$eval``` не поддерживаются в Azure Cosmos DB.
-
-### <a name="methods"></a>Методы
-
-Поддерживаются следующие методы:
-
-#### <a name="cursor-methods"></a>Методы курсора
-
-Метод | Пример | Примечания
---- | --- | --- |
-cursor.sort() | ```cursor.sort({ "Elevation": -1 })``` | Документы без ключа сортировки не возвращаются
 
 ## <a name="unique-indexes"></a>Уникальные индексы
 

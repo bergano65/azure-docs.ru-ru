@@ -6,12 +6,12 @@ author: msangapu-msft
 ms.topic: tutorial
 ms.date: 04/29/2019
 ms.author: msangapu
-ms.openlocfilehash: 555a60579c11a7ecb9b39753c5e4b35e801edeb1
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 531dc62cacc044187c7800dd8abcdad282c4e633
+ms.sourcegitcommit: b5d646969d7b665539beb18ed0dc6df87b7ba83d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75422158"
+ms.lasthandoff: 01/26/2020
+ms.locfileid: "76759949"
 ---
 # <a name="tutorial-create-a-multi-container-preview-app-in-web-app-for-containers"></a>Руководство. Создание многоконтейнерного приложения (предварительная версия) на платформе Azure "Веб-приложение для контейнеров"
 
@@ -20,7 +20,7 @@ ms.locfileid: "75422158"
 
 Платформа [Веб-приложение для контейнеров](app-service-linux-intro.md) предоставляет гибкие возможности для использования образов Docker. В этом руководстве объясняется, как создать многоконтейнерное приложение с помощью WordPress и MySQL. Примеры из этого руководства вы будете выполнять в Cloud Shell, но эти команды также можно выполнить на локальном компьютере с помощью программы командной строки [Azure CLI](/cli/azure/install-azure-cli) (версии 2.0.32 или более поздней).
 
-В этом руководстве описано следующее.
+В этом руководстве описано следующее:
 
 > [!div class="checklist"]
 > * преобразование конфигурации Docker Compose для работы на платформе "Веб-приложение для контейнеров";
@@ -32,13 +32,13 @@ ms.locfileid: "75422158"
 
 [!INCLUDE [Free trial note](../../../includes/quickstarts-free-trial-note.md)]
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Для изучения этого учебника требуется опыт работы с [Docker Compose](https://docs.docker.com/compose/).
 
 ## <a name="download-the-sample"></a>Скачивание примера приложения
 
-При работе с этим руководством вы будете использовать файл из [Docker Compose](https://docs.docker.com/compose/wordpress/#define-the-project), но измените его, добавив данные о базе данных Azure для MySQL, постоянном хранилище и Redis. Файл конфигурации можно найти в [репозитории примеров для Azure](https://github.com/Azure-Samples/multicontainerwordpress). Поддерживаемые параметры конфигурации см. в разделе [Docker Compose options](configure-custom-container.md#docker-compose-options) (Параметры Docker Compose).
+При работе с этим руководством вы будете использовать файл из [Docker Compose](https://docs.docker.com/compose/wordpress/#define-the-project), но измените его, добавив сведения о Базе данных Azure для MySQL, постоянном хранилище и Redis. Файл конфигурации можно найти в [репозитории примеров для Azure](https://github.com/Azure-Samples/multicontainerwordpress). Поддерживаемые параметры конфигурации см. в разделе [Docker Compose options](configure-custom-container.md#docker-compose-options) (Параметры Docker Compose).
 
 [!code-yml[Main](../../../azure-app-service-multi-container/docker-compose-wordpress.yml)]
 

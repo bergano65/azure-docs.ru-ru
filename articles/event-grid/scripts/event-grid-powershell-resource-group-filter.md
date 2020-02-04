@@ -1,6 +1,6 @@
 ---
 title: Подписка на события группы ресурсов в Azure PowerShell
-description: Пример скрипта Сетки событий Azure и Azure PowerShell. Подписка на события группы ресурсов и фильтрация по ресурсу
+description: В этой статье приведен пример сценария Azure PowerShell, который показывает, как подписываться на события Сетки событий для группы ресурсов, и как фильтровать ресурсы.
 services: event-grid
 documentationcenter: na
 author: spelluru
@@ -9,14 +9,14 @@ ms.devlang: powershell
 ms.topic: sample
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 10/22/2019
+ms.date: 01/23/2020
 ms.author: spelluru
-ms.openlocfilehash: 222bf6fb9297afda038b38d3fb528711ad03a3ca
-ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
+ms.openlocfilehash: 5d41bfec5978d1baf38eaf1608f50375170d9929
+ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72790729"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76720611"
 ---
 # <a name="subscribe-to-events-for-a-resource-group-and-filter-for-a-resource-with-powershell"></a>Подписка на события группы ресурсов и фильтрация по ресурсу с использованием PowerShell
 
@@ -42,11 +42,11 @@ ms.locfileid: "72790729"
 
 Чтобы создать подписку на события, в скрипте используются указанные ниже команды. Для каждой команды в таблице приведены ссылки на соответствующую документацию.
 
-| Команда | Примечания |
+| Get-Help | Примечания |
 |---|---|
 | [New-AzEventGridSubscription](https://docs.microsoft.com/powershell/module/az.eventgrid/new-azeventgridsubscription) | создание подписки в службе "Сетка событий"; |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Общие сведения об управляемых приложениях Azure см. в [этой статье](../overview.md).
 * Дополнительные сведения см. в [документации по Azure PowerShell](https://docs.microsoft.com/powershell/azure/get-started-azureps).

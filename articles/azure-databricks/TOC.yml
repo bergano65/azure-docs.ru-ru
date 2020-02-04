@@ -1150,6 +1150,9 @@
             - name: Анализ проблем с производительностью пользовательского интерфейса
               href: /azure/databricks/kb/cloud/har-log-analysis
               maintainContext: true
+            - name: Задания в рабочей области не выполняются
+              href: /azure/databricks/kb/cloud/azure-vnet-jobs-not-progressing
+              maintainContext: true
         - name: Кластеры
           items:
             - name: Вычисление количества ядер в кластере
@@ -1248,6 +1251,9 @@
               maintainContext: true
             - name: Не удается считать файлы в WASB
               href: /azure/databricks/kb/data-sources/wasb-check-blob-types
+              maintainContext: true
+            - name: Оптимизация производительности операций чтения из источников данных JDBC
+              href: /azure/databricks/kb/data-sources/jdbc-optimize-read
               maintainContext: true
         - name: Файловая система Databricks
           items:

@@ -83,6 +83,8 @@
           href: ../networking/connectivty-interoperability-data-plane.md?toc=%2fazure%2fvirtual-network%2ftoc.json
     - name: Возможность подключения нескольких сетей
       href: ../expressroute/cross-network-connectivity.md?toc=%2fazure%2fvirtual-network%2ftoc.json
+    - name: Классическое развертывание
+      href: 'https://docs.microsoft.com/previous-versions/azure/virtual-network/virtual-network-ip-addresses-overview-classic'
 - name: Практические руководства
   items:
     - name: План
@@ -317,6 +319,8 @@
           href: what-is-ip-address-168-63-129-16.md
         - name: Устранение неполадок с подключением виртуальной машины Azure
           href: troubleshoot-vm-connectivity.md
+    - name: Классическое развертывание
+      href: 'https://docs.microsoft.com/previous-versions/azure/virtual-network/create-virtual-network-classic'
 - name: Справочник
   items:
     - name: Azure CLI

@@ -1,29 +1,29 @@
 ---
-title: Краткое руководство. Создание Load Balancer ценовой категории "Стандартный" с помощью Azure PowerShell
+title: Краткое руководство. Создание Load Balancer с помощью Azure PowerShell
 titleSuffix: Azure Load Balancer
-description: Из этого краткого руководства вы узнаете, как с помощью Azure PowerShell создать Load Balancer уровня "Стандартный".
+description: Из этого краткого руководства вы узнаете, как создать Load Balancer с помощью Azure PowerShell
 services: load-balancer
 documentationcenter: na
 author: asudbring
 manager: twooley
-Customer intent: I want to create a Standard Load balancer so that I can load balance internet traffic to VMs.
+Customer intent: I want to create a Load balancer so that I can load balance internet traffic to VMs.
 ms.assetid: ''
 ms.service: load-balancer
 ms.devlang: na
 ms.topic: quickstart
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 05/07/2019
+ms.date: 01/27/2020
 ms.author: allensu
 ms:custom: seodec18
-ms.openlocfilehash: 21488fbc8a5a9354db74d5b93719d100bce8878c
-ms.sourcegitcommit: 05cdbb71b621c4dcc2ae2d92ca8c20f216ec9bc4
+ms.openlocfilehash: 50a7854688164383bff08bfe55d356fe32239812
+ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76045667"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76846517"
 ---
-# <a name="quickstart-create-a-standard-load-balancer-using-azure-powershell"></a>Краткое руководство. Создание Load Balancer ценовой категории "Стандартный" с помощью Azure PowerShell
+# <a name="quickstart-create-a-load-balancer-using-azure-powershell"></a>Краткое руководство. Создание Load Balancer с помощью Azure PowerShell
 
 Из этого краткого руководства вы узнаете, как с помощью Azure PowerShell создать Load Balancer уровня "Стандартный" Чтобы проверить работу подсистемы балансировки нагрузки, вы развернете три виртуальные машины Windows Server и распределите между ними нагрузку веб-приложения. См. дополнительные сведения о [Load Balancer уровня "Стандартный"](load-balancer-standard-overview.md).
 
@@ -45,7 +45,7 @@ New-AzResourceGroup -Name $rgName -Location $location
 
 ## <a name="create-a-public-ip-address"></a>Создание общедоступного IP-адреса
 
-Для доступа к приложению через Интернет требуется общедоступный IP-адрес для балансировщика нагрузки. Создайте общедоступный IP-адрес с помощью командлета [New-AzPublicIpAddress](/powershell/module/az.network/new-azpublicipaddress). В следующем примере создается общедоступный IP-адрес с именем *myPublicIP* в группе ресурсов *myResourceGroupSLB*.
+Для доступа к приложению через Интернет требуется общедоступный IP-адрес для балансировщика нагрузки. Создайте общедоступный IP-адрес с помощью командлета [New-AzPublicIpAddress](/powershell/module/az.network/new-azpublicipaddress). В следующем примере создается избыточный в пределах зоны общедоступный IP-адрес *myPublicIP* в группе ресурсов *myResourceGroupSLB*.
 
 ```azurepowershell
 $publicIp = New-AzPublicIpAddress `
@@ -56,11 +56,25 @@ $publicIp = New-AzPublicIpAddress `
  -SKU Standard
 ```
 
-## <a name="create-standard-load-balancer"></a>Создание Load Balancer уровня "Стандартный"
+Создайте зональный общедоступный IP-адрес в зоне доступности 1, используя приведенные ниже сведения.
+
+```azurepowershell
+$publicIp = New-AzPublicIpAddress `
+ -ResourceGroupName $rgName `
+ -Name 'myPublicIP' `
+ -Location $location `
+ -AllocationMethod static `
+ -SKU Standard
+ -zone 1
+```
+
+Для создания базового общедоступного IP-адреса используйте ```-SKU Basic```. Для производственных рабочих нагрузок компания Майкрософт рекомендует использовать цен. категорию "Стандартный".
+
+## <a name="create-load-balancer"></a>Создание балансировщика нагрузки
 
 В рамках этого раздела вы настроите интерфейсный IP-адрес и серверный пул IP-адресов подсистемы балансировки нагрузки, а затем создадите Load Balancer (цен. категория "Стандартный").
 
-### <a name="create-front-end-ip"></a>Создание интерфейсного IP-адреса
+### <a name="create-frontend-ip"></a>Создание интерфейсного IP-адреса
 
 Создайте интерфейсный IP-адрес с помощью командлета [New-AzLoadBalancerFrontendIpConfig](/powershell/module/az.network/new-azloadbalancerfrontendipconfig). В следующем примере создается конфигурация с именем *myFrontEnd* для интерфейсного IP-адреса и к ней подключается адрес *myPublicIP*:
 
@@ -146,6 +160,8 @@ $lb = New-AzLoadBalancer `
   -InboundNatRule $natrule1,$natrule2,$natrule3
 ```
 
+Для создания Load Balancer уровня "Базовый" используйте ```-SKU Basic```. Для производственных рабочих нагрузок компания Майкрософт рекомендует использовать цен. категорию "Стандартный".
+
 ## <a name="create-network-resources"></a>Создание сетевых ресурсов
 Прежде чем развертывать виртуальные машины и тестировать подсистему балансировки нагрузки, создайте вспомогательные ресурсы, то есть виртуальную сеть и виртуальные сетевые адаптеры. 
 
@@ -195,6 +211,9 @@ $RdpPublicIP_3 = New-AzPublicIpAddress `
   -AllocationMethod static
 
 ```
+
+Для создания базовых общедоступных IP-адресов используйте ```-SKU Basic```. Для производственных рабочих нагрузок компания Майкрософт рекомендует использовать цен. категорию "Стандартный".
+
 ### <a name="create-network-security-group"></a>Создание группы безопасности сети
 Создайте группу безопасности сети для определения входящих подключений к виртуальной сети.
 
@@ -356,7 +375,6 @@ Remove-AzResourceGroup -Name myResourceGroupSLB
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Из этого краткого руководства вы узнали, как создать подсистему балансировки нагрузки в службе Azure Load Balancer (цен. категории "Стандартный"), подключить к ней виртуальные машины, настроить правило трафика подсистемы балансировки нагрузки, зонд работоспособности, а также протестировать подсистему балансировки нагрузки. Чтобы узнать больше об Azure Load Balancer, ознакомьтесь с другими руководствами по этой службе.
+Из этого краткого руководства вы узнали, как создать Load Balancer (цен. категория "Стандартный"), подключить к ней виртуальные машины, настроить правило трафика Load Balancer, пробу работоспособности, а также протестировать Load Balancer. Дополнительные сведения о Azure Load Balancer см. в руководстве [Распределение нагрузки виртуальных машин в пределах зон доступности с помощью Load Balancer уровня "Стандартный" и портала Azure](tutorial-load-balancer-standard-public-zone-redundant-portal.md).
 
-> [!div class="nextstepaction"]
-> [Руководства по Azure Load Balancer](tutorial-load-balancer-basic-internal-portal.md)
+Дополнительные сведения см. в статье [Standard Load Balancer and Availability Zones](load-balancer-standard-availability-zones.md) (Azure Load Balancer ценовой категории "Стандартный" и зоны доступности).

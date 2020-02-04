@@ -6,12 +6,12 @@ ms.author: mbaldwin
 ms.date: 10/20/2019
 ms.service: key-vault
 ms.topic: quickstart
-ms.openlocfilehash: a514dbce91a98bd51e51b1724d631bc224b2f33a
-ms.sourcegitcommit: ce4a99b493f8cf2d2fd4e29d9ba92f5f942a754c
+ms.openlocfilehash: b76441c8b11032d3713d7679acfc7f350533b76b
+ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/28/2019
-ms.locfileid: "75527932"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76769194"
 ---
 # <a name="quickstart-azure-key-vault-client-library-for-python"></a>Краткое руководство. Использование клиентской библиотеки Azure Key Vault для Python
 
@@ -22,12 +22,12 @@ ms.locfileid: "75527932"
 - Повысьте уровень безопасности и увеличьте контроль над ключами и паролями.
 - Создавайте и импортируйте ключи шифрования за считаные минуты.
 - Сократите время задержки с помощью масштабирования в облаке и глобального резервирования.
-- Упрощение и автоматизация задач, связанных с SSL- и TLS-сертификатами.
+- Упрощение и автоматизация задач, связанных с TLS- и SSL-сертификатами.
 - Используйте модули HSM, отвечающие стандартам FIPS 140-2 уровня 2.
 
 [Справочная документация по API](/python/api/overview/azure/key-vault?view=azure-python) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/keyvault) | [Пакет (Python Package Index)](https://pypi.org/project/azure-keyvault/)
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 - Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 - Python 2.7, Python 3.5.3 или более поздней версии.

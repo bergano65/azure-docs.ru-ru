@@ -1,5 +1,5 @@
 ---
-title: Использование Java для отправки запросов
+title: Использование Java для выполнения запросов к базе данных
 description: В этой статье показано, как с помощью Java создать программу, которая подключается к базе данных SQL Azure, и запрашивать из нее данные с использованием инструкций T-SQL.
 services: sql-database
 ms.service: sql-database
@@ -11,49 +11,52 @@ ms.author: andrela
 ms.reviewer: v-masebo
 ms.date: 03/25/2019
 ms.custom: seo-java-july2019. seo-java-august2019
-ms.openlocfilehash: 6d4d9353e29a29b0cd6db7575e49a00a213355d3
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.openlocfilehash: 034f92ca3b7552373ae69148d09d58d3a5dd166a
+ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73827043"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76768643"
 ---
-# <a name="quickstart-use-java-to-connect-to-and-query-an-azure-sql-database"></a>Краткое руководство. Использование Java для подключения и создания запросов к базе данных SQL Azure
+# <a name="quickstart-use-java-to-query-an-azure-sql-database"></a>Краткое руководство. Использование Java для создания запросов к базе данных SQL Azure
 
-В этой статье показано, как подключаться к базе данных SQL Azure с помощью [Java](/sql/connect/jdbc/microsoft-jdbc-driver-for-sql-server). Затем можно запросить данные с использованием инструкций T-SQL.
+В этом кратком руководстве вы будете использовать Java для подключения к базе данных SQL Azure, а затем выполните запрос данных с помощью инструкций T-SQL.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Для выполнения этого примера понадобится следующее:
+- Учетная запись Azure с активной подпиской. [Создайте учетную запись бесплатно](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio).
+- [База данных SQL Azure](sql-database-single-database-get-started.md)
+- Программное обеспечение, связанное с [Java](/sql/connect/jdbc/microsoft-jdbc-driver-for-sql-server)
 
-- База данных SQL Azure. Для создания и настройки базы данных в службе "База данных SQL Azure" можно использовать одно из этих кратких руководств.
+  # <a name="macostabmacos"></a>[macOS](#tab/macos)
 
-  || Отдельная база данных | Управляемый экземпляр |
-  |:--- |:--- |:---|
-  | Создание| [Портал](sql-database-single-database-get-started.md) | [Портал](sql-database-managed-instance-get-started.md) |
-  || [CLI](scripts/sql-database-create-and-configure-database-cli.md) | [CLI](https://medium.com/azure-sqldb-managed-instance/working-with-sql-managed-instance-using-azure-cli-611795fe0b44) |
-  || [PowerShell](scripts/sql-database-create-and-configure-database-powershell.md) | [PowerShell](scripts/sql-database-create-configure-managed-instance-powershell.md) |
-  | Настройка | [Правило брандмауэра для IP-адресов на уровне сервера](sql-database-server-level-firewall-rule.md)| [Подключение из виртуальной машины](sql-database-managed-instance-configure-vm.md)|
-  |||[Подключение "точка — сеть"](sql-database-managed-instance-configure-p2s.md)
-  |Загрузка данных|База данных Adventure Works, загруженная для краткого руководства|[Восстановление базы данных Wide World Importers](sql-database-managed-instance-get-started-restore.md)
-  |||Восстановление или импорт Adventure Works из файла [BACPAC](sql-database-import.md), размещенного на [GitHub](https://github.com/Microsoft/sql-server-samples/tree/master/samples/databases/adventure-works)|
-  
-  > [!IMPORTANT]
-  > Скрипты в этой статье предназначены для использования базы данных Adventure Works. Используя управляемый экземпляр, необходимо импортировать базу данных Adventure Works в базу данных экземпляра или изменить скрипты в этой статье для использования базы данных Wide World Importers.
+  Установите Homebrew и Java, а затем Maven, выполнив действия **1.2** и **1.3** статьи [Create Java apps using SQL Server on macOS](https://www.microsoft.com/sql-server/developer-get-started/java/mac/) (Создание приложений Java с помощью SQL Server в macOS).
 
-- Установленное связанное с Java программное обеспечение для используемой операционной системы:
+  # <a name="ubuntutabubuntu"></a>[Ubuntu](#tab/ubuntu)
 
-  - **MacOS.** Установите Homebrew и Java, а затем Maven. Ознакомьтесь с шагами 1.2 и 1.3 в [этом руководстве](https://www.microsoft.com/sql-server/developer-get-started/java/mac/).
+  Установите Java, комплект SDK для Java, а затем Maven, выполнив действия **1.2**, **1.3** и **1.4** статьи [Create Java apps using SQL Server on Ubuntu](https://www.microsoft.com/sql-server/developer-get-started/java/ubuntu/) (Создание приложений Java с помощью SQL Server на Ubuntu).
 
-  - **Ubuntu.** Установите Java, пакет JDK и Maven. Ознакомьтесь с шагами 1.2, 1.3 и 1.4 в [этом руководстве](https://www.microsoft.com/sql-server/developer-get-started/java/ubuntu/).
+  # <a name="windowstabwindows"></a>[Windows](#tab/windows)
 
-  - **Windows.** Установите Java и Maven. Ознакомьтесь с шагами 1.2 и 1.3 в [этом руководстве](https://www.microsoft.com/sql-server/developer-get-started/java/windows/).
+  Установите Java, а затем Maven, выполнив действия **1.2** и **1.3** статьи [Create Java apps using SQL Server on Windows](https://www.microsoft.com/sql-server/developer-get-started/java/windows/) (Создание приложений Java с помощью SQL Server на Windows).
+
+  ---
+
+> [!IMPORTANT]
+> Скрипты в этой статье предназначены для использования базы данных **Adventure Works**.
+
+> [!NOTE]
+> Вы также можете использовать управляемый экземпляр SQL Azure.
+>
+> Для создания и настройки используйте [портал Azure](sql-database-managed-instance-get-started.md), [PowerShell](scripts/sql-database-create-configure-managed-instance-powershell.md), или [CLI](https://medium.com/azure-sqldb-managed-instance/working-with-sql-managed-instance-using-azure-cli-611795fe0b44), затем установите подключение к [локальному серверу](sql-database-managed-instance-configure-p2s.md) или [виртуальной машине](sql-database-managed-instance-configure-vm.md).
+>
+> Для загрузки данных см. [Quickstart: Import a BACPAC file to a database in Azure SQL Database](sql-database-import.md) (Краткое руководство. Импорт BACPAC-файла в базу данных с помощью Azure SQL Database), а также сведения о файле [Adventure Works](https://github.com/Microsoft/sql-server-samples/tree/master/samples/databases/adventure-works) или [Краткое руководство. Восстановление базы данных в Управляемый экземпляр](sql-database-managed-instance-get-started-restore.md).
 
 ## <a name="get-sql-server-connection-information"></a>Получение сведений о подключении к SQL Server
 
 Получите сведения, необходимые для подключения к базе данных SQL Azure. Для дальнейших действий вам понадобится полное имя сервера или имя узла, имя базы данных и данные для входа.
 
-1. Войдите на [портале Azure](https://portal.azure.com/).
+1. Войдите на [портал Azure](https://portal.azure.com/).
 
 2. Выберите **Базы данных SQL** или перейдите на страницу **Управляемые экземпляры SQL**.
 
@@ -165,10 +168,10 @@ ms.locfileid: "73827043"
 
 1. Убедитесь, что возвращены первые 20 строк, и закройте окно приложения.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Проектирование первой базы данных SQL Azure](sql-database-design-first-database.md)  
 
-- [Microsoft JDBC Driver для SQL Server](https://github.com/microsoft/mssql-jdbc)  
+- [Драйвер Microsoft JDBC для SQL Server](https://github.com/microsoft/mssql-jdbc)  
 
 - [Сообщите о проблеме или задайте вопросы](https://github.com/microsoft/mssql-jdbc/issues)  

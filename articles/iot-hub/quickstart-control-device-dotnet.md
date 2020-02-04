@@ -10,12 +10,12 @@ ms.devlang: csharp
 ms.topic: quickstart
 ms.custom: mvc
 ms.date: 06/21/2019
-ms.openlocfilehash: a106699f4e3148eba85acc913e6f97be6ce9be66
-ms.sourcegitcommit: 12de9c927bc63868168056c39ccaa16d44cdc646
+ms.openlocfilehash: bffba0ce5481250a696cdf4ec0aed6b59620bfe9
+ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72515092"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76773831"
 ---
 # <a name="quickstart-control-a-device-connected-to-an-iot-hub-net"></a>Краткое руководство. Управление подключенным к центру Интернета вещей устройством (.NET)
 
@@ -51,7 +51,7 @@ dotnet --version
 az extension add --name azure-cli-iot-ext
 ```
 
-Если вы это еще не сделали, загрузите пример проекта C# по адресу https://github.com/Azure-Samples/azure-iot-samples-csharp/archive/master.zip и извлеките ZIP-архив.
+Если вы это еще не сделали, скачайте примеры Azure IoT на C# по ссылке https://github.com/Azure-Samples/azure-iot-samples-csharp/archive/master.zip и извлеките ZIP-архив.
 
 ## <a name="create-an-iot-hub"></a>Создание Центра Интернета вещей
 
@@ -167,7 +167,7 @@ az iot hub show-connection-string --policy-name service --name {YourIoTHubName} 
 
 [!INCLUDE [iot-hub-quickstarts-clean-up-resources](../../includes/iot-hub-quickstarts-clean-up-resources.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В рамках этого краткого руководства вы вызвали прямой метод на устройстве из внутреннего приложения, а также ответили на этот вызов в приложении имитированного устройства.
 

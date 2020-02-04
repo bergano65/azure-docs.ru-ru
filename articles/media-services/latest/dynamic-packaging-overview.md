@@ -12,14 +12,14 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: overview
-ms.date: 10/17/2019
+ms.date: 01/23/2020
 ms.author: juliako
-ms.openlocfilehash: 05a515d5f74569ff8d0fa8aec68eb681dc79d2fc
-ms.sourcegitcommit: 5b073caafebaf80dc1774b66483136ac342f7808
+ms.openlocfilehash: 3984f33cd97ada9b3d5301e45fe3506966880848
+ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75779609"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76719676"
 ---
 # <a name="dynamic-packaging-in-media-services-v3"></a>Динамическая упаковка в Службах мультимедиа версии 3
 
@@ -29,18 +29,7 @@ ms.locfileid: "75779609"
 
 ## <a name="a-iddelivery-protocolsto-prepare-your-source-files-for-delivery"></a><a id="delivery-protocols"/>Подготовка исходных файлов к доставке
 
-Чтобы воспользоваться преимуществами динамической упаковки, вам необходимо [кодировать](encoding-concept.md) свой мезонинный (исходный) файл в набор файлов MP4 (ISO Base Media 14496-12) с несколькими битрейтами. Вам нужен набор [Asset](assets-concept.md) с зашифрованными MP4 файлами и конфигурационными файлами потоковой передачи, необходимыми для динамической пакетной обработки мультимедийных служб. Из этого набора файлов MP4 вы можете использовать динамическую упаковку для передачи видео по следующим протоколам потоковой передачи мультимедиа:
-
-|Протокол|Пример|
-|---|---|
-|HLS V4 |`https://amsv3account-usw22.streaming.media.azure.net/21b17732-0112-4d76-b526-763dcd843449/ignite.ism/manifest(format=m3u8-aapl)`|
-|HLS V3 |`https://amsv3account-usw22.streaming.media.azure.net/21b17732-0112-4d76-b526-763dcd843449/ignite.ism/manifest(format=m3u8-aapl-v3)`|
-|HLS CMAF| `https://amsv3account-usw22.streaming.media.azure.net/21b17732-0112-4d76-b526-763dcd843449/ignite.ism/manifest(format=m3u8-cmaf)`|
-|MPEG-DASH CSF| `https://amsv3account-usw22.streaming.media.azure.net/21b17732-0112-4d76-b526-763dcd843449/ignite.ism/manifest(format=mpd-time-csf)` |
-|MPEG-DASH CMAF|`https://amsv3account-usw22.streaming.media.azure.net/21b17732-0112-4d76-b526-763dcd843449/ignite.ism/manifest(format=mpd-time-cmaf)` |
-|Smooth Streaming| `https://amsv3account-usw22.streaming.media.azure.net/21b17732-0112-4d76-b526-763dcd843449/ignite.ism/manifest`|
-
-Если вы планируете защитить содержимое с помощью динамического шифрования Media Services, см. раздел [Потоковые протоколы и типы шифрования](content-protection-overview.md#streaming-protocols-and-encryption-types).
+Чтобы воспользоваться преимуществами динамической упаковки, вам необходимо [кодировать](encoding-concept.md) свой мезонинный (исходный) файл в набор файлов MP4 (ISO Base Media 14496-12) с несколькими битрейтами. Вам нужен набор [Asset](assets-concept.md) с зашифрованными MP4 файлами и конфигурационными файлами потоковой передачи, необходимыми для динамической пакетной обработки мультимедийных служб. Из этого набора файлов MP4 вы можете использовать динамическую упаковку для передачи видео по протоколам потоковой передачи мультимедиа, как описано далее.
 
 > [!TIP]
 > Один из способов получить MP4 и потоковые файлы конфигурации заключается в [кодировании вашего мезонинного файла с помощью Media Services](#encode-to-adaptive-bitrate-mp4s). 
@@ -48,6 +37,36 @@ ms.locfileid: "75779609"
 Чтобы видео в закодированном ресурсе стали доступны для воспроизведения в клиентах, необходимо создать [указатель потоковой передачи](streaming-locators-concept.md) и сформировать URL-адреса потоковой передачи. Затем, в зависимости от формата, указанного в манифесте клиента потоковой передачи (HLS, MPEG DASH или Smooth Streaming), вы получаете поток по выбранному протоколу.
 
 В результате вы сможете хранить и оплачивать файлы только в одном формате, а службы мультимедиа выполнят сборку и будут обслуживать соответствующий ответ на основе запросов клиента.
+
+Если вы планируете защитить содержимое с помощью динамического шифрования Media Services, см. раздел [Потоковые протоколы и типы шифрования](content-protection-overview.md#streaming-protocols-and-encryption-types).
+
+### <a name="hls-protocol"></a>Протокол HLS
+
+Клиент потоковой передачи может указать следующие форматы HLS:
+
+|Протокол|Пример|
+|---|---|
+|HLS V4 |`https://amsv3account-usw22.streaming.media.azure.net/21b17732-0112-4d76-b526-763dcd843449/ignite.ism/manifest(format=m3u8-aapl)`||
+|HLS V3 |`https://amsv3account-usw22.streaming.media.azure.net/21b17732-0112-4d76-b526-763dcd843449/ignite.ism/manifest(format=m3u8-aapl-v3)`||
+|HLS CMAF| `https://amsv3account-usw22.streaming.media.azure.net/21b17732-0112-4d76-b526-763dcd843449/ignite.ism/manifest(format=m3u8-cmaf)`||
+
+### <a name="mpeg-dash-protocol"></a>Протокол MPEG-DASH
+
+Клиент потоковой передачи может указать следующие форматы MPEG-DASH:
+
+|Протокол|Пример|
+|---|---|
+|MPEG-DASH CSF| `https://amsv3account-usw22.streaming.media.azure.net/21b17732-0112-4d76-b526-763dcd843449/ignite.ism/manifest(format=mpd-time-csf)` ||
+|MPEG-DASH CMAF|`https://amsv3account-usw22.streaming.media.azure.net/21b17732-0112-4d76-b526-763dcd843449/ignite.ism/manifest(format=mpd-time-cmaf)` ||
+
+### <a name="smooth-streaming-protocol"></a>Протокол Smooth Streaming
+
+Клиент потоковой передачи может указать следующие форматы Smooth Streaming:
+
+|Протокол|Примечания и примеры| 
+|---|---|
+|Smooth Streaming| `https://amsv3account-usw22.streaming.media.azure.net/21b17732-0112-4d76-b526-763dcd843449/ignite.ism/manifest`||
+|Smooth Streaming 2.0 (устаревший манифест)|По умолчанию формат манифеста Smooth Streaming содержит тег повтора (r-tag). Однако некоторые проигрыватели не поддерживают `r-tag`. Клиенты с этими проигрывателями могут использовать формат, который отключает r-tag.<br/><br/>`https://amsv3account-usw22.streaming.media.azure.net/21b17732-0112-4d76-b526-763dcd843449/ignite.ism/manifest(format=fmp4-v20)`|
 
 ## <a name="on-demand-streaming-workflow"></a>Рабочий процесс для потокового воспроизведения по запросу
 

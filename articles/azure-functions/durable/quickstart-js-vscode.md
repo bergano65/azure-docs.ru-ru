@@ -5,12 +5,12 @@ author: ColbyTresness
 ms.topic: quickstart
 ms.date: 11/07/2018
 ms.reviewer: azfuncdf, cotresne
-ms.openlocfilehash: 94ba2830824c4a918e9451a9fc5140d422110370
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: b0a1d1a9305f6de2a072ee1ded310d8de174436b
+ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74231313"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76845727"
 ---
 # <a name="create-your-first-durable-function-in-javascript"></a>Создание устойчивой функции с помощью JavaScript
 
@@ -24,7 +24,7 @@ ms.locfileid: "74231313"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Для работы с этим руководством:
+Для работы с этим руководством сделайте следующее:
 
 * Установите [Visual Studio Code](https://code.visualstudio.com/download).
 
@@ -38,7 +38,31 @@ ms.locfileid: "74231313"
 
 [!INCLUDE [functions-install-vs-code-extension](../../../includes/functions-install-vs-code-extension.md)]
 
-[!INCLUDE [functions-create-function-app-vs-code](../../../includes/functions-create-function-app-vs-code.md)]
+## <a name="create-an-azure-functions-project"></a>Создание локального проекта 
+
+В этом разделе вы используете Visual Studio Code. чтобы создать локальный проект Функций Azure. 
+
+1. В Visual Studio Code нажмите клавишу F1, чтобы открыть палитру команд. В палитре команд найдите и щелкните `Azure Functions: Create new project...`.
+
+1. Выберите расположение для рабочей области проекта и нажмите кнопку **Выбрать**.
+
+    > [!NOTE]
+    > Рассматриваемые в этой статье шаги выполняются вне рабочей области. В этом случае не нужно указывать папку проекта, которая является частью рабочей области.
+
+1. Следуя инструкциям, введите следующие сведения для выбранного языка:
+
+    | prompt | Значение | Описание |
+    | ------ | ----- | ----------- |
+    | Select a language for your function app project (Выберите язык для проекта приложения-функции) | JavaScript | Создание локального проекта службы "Функции" для Node.js |
+    | Выбор версии | Функции Azure версии 2 | Этот параметр отображается, только если вы еще не установили Core Tools. В этом случае Core Tools устанавливается при первом запуске приложения. |
+    | Select a template for your project's first function (Выберите шаблон для первой функции вашего проекта) | Триггер HTTP | Создание функции, активируемой HTTP, в новом приложении-функции. |
+    | Provide a function name (Укажите имя функции) | HTTPTrigger | Нажмите клавишу "ВВОД", чтобы использовать имя по умолчанию. |
+    | Уровень авторизации | Компонент | Уровень авторизации `function` требует предоставления ключа доступа при вызове конечной точки HTTP функции. Это усложняет доступ к незащищенной конечной точке. Дополнительные сведения см. [Ключи авторизации](../functions-bindings-http-webhook.md#authorization-keys).  |
+    | Select how you would like to open your project (Выберите, как вы хотели бы открыть свой проект) | Добавление в рабочую область | Создает приложение-функцию в текущей рабочей области. |
+
+При необходимости Visual Studio Code устанавливает Azure Functions Core Tools. Он также создаст проект приложения-функции в новой рабочей области. Проект будет содержать файлы конфигурации [host.json](../functions-host-json.md) и [local.settings.json](../functions-run-local.md#local-settings-file). Он также создает папку HttpExample, содержащую файл определения [function.json](../functions-reference-node.md#folder-structure), файл [index.js](../functions-reference-node.md#exporting-a-function) и файл Node.js, содержащий код функции.
+
+В корневой папке также создается файл package.json.
 
 ## <a name="install-the-durable-functions-npm-package"></a>Установка пакета npm для расширения "Устойчивые функции"
 
@@ -153,7 +177,7 @@ ms.locfileid: "74231313"
 
 2. Вставьте этот URL-адрес HTTP-запроса в адресную строку браузера. При использовании опубликованного приложения ответ состояния должен быть таким же, как и ранее.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Вы создали и опубликовали приложение устойчивой функции JavaScript с помощью Visual Studio Code.
 

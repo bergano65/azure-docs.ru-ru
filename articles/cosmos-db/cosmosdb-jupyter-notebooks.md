@@ -6,14 +6,14 @@ ms.topic: overview
 ms.date: 09/22/2019
 author: markjbrown
 ms.author: mjbrown
-ms.openlocfilehash: 5c6d7ae458c30d462c599042e254f4243daf474c
-ms.sourcegitcommit: 2a2af81e79a47510e7dea2efb9a8efb616da41f0
+ms.openlocfilehash: 5b320485001d6cbc457d39ef193ed8c57f7161df
+ms.sourcegitcommit: b5d646969d7b665539beb18ed0dc6df87b7ba83d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76260877"
+ms.lasthandoff: 01/26/2020
+ms.locfileid: "76760289"
 ---
-# <a name="built-in-jupyter-notebooks-support-in-azure-cosmos-db"></a>Встроенная поддержка записных книжек Jupyter в Azure Cosmos DB
+# <a name="built-in-jupyter-notebooks-support-in-azure-cosmos-db-preview"></a>Встроенная поддержка записных книжек Jupyter в Azure Cosmos DB (предварительная версия)
 
 Записная книжка Jupyter — это веб-приложение с открытым исходным кодом, которое позволяет создавать и совместно использовать документы, содержащие код в реальном времени, уравнения, визуализации и текстовое описание. Azure Cosmos DB поддерживает встроенные записные книжки Jupyter для всех интерфейсов API, например Cassandra, MongoDB, SQL, Gremlin и таблицы. Встроенная поддержка записных книжек для всех API-интерфейсов Azure Cosmos DB и моделей данных позволяет выполнять запросы интерактивно. Записные книжки Jupyter работают в учетных записях Cosmos Azure и позволяют разработчикам выполнять исследование, очистку, преобразования данных, численное моделирование, статистическое моделирование, визуализацию данных и машинное обучение.
 

@@ -7,12 +7,12 @@ ms.service: internet-analyzer
 ms.topic: quickstart
 ms.date: 10/16/2019
 ms.author: mebeatty
-ms.openlocfilehash: 44d570746a54154a2f8d3c7a200c761a59b7422b
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 6a781e767393f35a1ec22f195ba787e3018d8d1e
+ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73488110"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76713102"
 ---
 # <a name="measure-custom-endpoints-to-evaluate-in-your-internet-analyzer-tests"></a>Измерение пользовательских конечных точек для оценки в тестах Анализатора Интернета 
 
@@ -22,7 +22,7 @@ ms.locfileid: "73488110"
 > Эта общедоступная предварительная версия предоставляется без соглашения об уровне обслуживания и не должна использоваться для производственных рабочих нагрузок. Некоторые функции могут не поддерживаться, иметь ограничения и быть доступными не во всех расположениях Azure. См. [дополнительные условия использования для предварительных версий Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 >
 
-## <a name="before-you-begin"></a>Перед началом работы
+## <a name="before-you-begin"></a>Перед началом
 
 Настройте ресурс Анализатора Интернета и выберите параметр "Пользовательская конечная точка". Анализатор Интернета предполагает, что ваша пользовательская конечная точка доступна в Интернете. Дополнительные сведения см. в разделе о [создании ресурса Анализатора Интернета](internet-analyzer-create-test-portal.md).
 
@@ -33,7 +33,7 @@ ms.locfileid: "73488110"
 2. В пользовательском веб-приложении разверните тестовое изображение в общедоступном пути. Путь должен работать по протоколу HTTPS. 
 3. Скопируйте полный URL-адрес пользовательской конечной точки (например, https://contoso.com/test/trans.gif) в поле пользовательской конечной точки во время создания теста).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Вопросы и ответы об Анализаторе Интернета](internet-analyzer-faq.md)
 

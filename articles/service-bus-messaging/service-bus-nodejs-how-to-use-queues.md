@@ -1,6 +1,6 @@
 ---
 title: Использование очередей Служебной шины Azure в Node.js с помощью пакета azure-sb
-description: Краткое руководство. Узнайте, как использовать очереди служебной шины в Azure в приложении Node.js.
+description: Узнайте, как создать приложения Node.js для отправки и получения сообщений через очередь Служебной шины Azure с помощью пакета azure-sb.
 services: service-bus-messaging
 documentationcenter: nodejs
 author: axisc
@@ -12,15 +12,15 @@ ms.workload: tbd
 ms.tgt_pltfrm: na
 ms.devlang: nodejs
 ms.topic: quickstart
-ms.date: 11/05/2019
+ms.date: 01/27/2020
 ms.author: aschhab
 ms.custom: seo-javascript-september2019, seo-javascript-october2019
-ms.openlocfilehash: 5fa74bdc632154e361fc4d95ed602e4b4d39a198
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: fee7ff6ffbd18cf514ce1bfda81aca727ed362c3
+ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75462186"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76773512"
 ---
 # <a name="quickstart-use-service-bus-queues-in-azure-with-nodejs-and-the-azure-sb-package"></a>Краткое руководство. Использование очередей служебной шины в Azure с помощью Node.js и пакета azure-sb
 
@@ -32,7 +32,7 @@ ms.locfileid: "75462186"
 
 Пакет [azure-sb](https://www.npmjs.com/package/azure-sb) работает с [интерфейсами REST API служебной шины](/rest/api/servicebus/service-bus-runtime-rest). Вы можете ускорить работу с помощью нового пакета [@azure/service-bus](https://www.npmjs.com/package/@azure/service-bus), который использует более быстрый [протокол AMQP 1.0](service-bus-amqp-overview.md). Дополнительные сведения о новом пакете см. в статье [об использовании очередей служебной шины с Node. js и пакетом @azure/service-bus](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-nodejs-how-to-use-queues-new-package). Далее в этой статье описывается работа с пакетом [azure](https://www.npmjs.com/package/azure).
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 - Подписка Azure. Для работы с этим учебником требуется учетная запись Azure. Вы можете активировать [преимущества подписчика MSDN](https://azure.microsoft.com/pricing/member-offers/credit-for-visual-studio-subscribers/?WT.mc_id=A85619ABF) или зарегистрироваться для получения [бесплатной учетной записи](https://azure.microsoft.com/free/?WT.mc_id=A85619ABF).
 - Если у вас нет подходящей очереди служебной шины, [создайте ее с помощью портала Azure](service-bus-quickstart-portal.md).
     1. Ознакомьтесь с **общими сведениями** об **очередях** Служебной шины. 

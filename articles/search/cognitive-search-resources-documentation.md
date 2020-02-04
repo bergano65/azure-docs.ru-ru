@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: quickstart
 ms.date: 11/04/2019
-ms.openlocfilehash: cf0332909e053a0875d41a00d15f196b193ba15e
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: e73e69f90b1228154d7f209c54c6b52cc03d5eb4
+ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73466717"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76837796"
 ---
 # <a name="documentation-resources-for-ai-enrichment-in-azure-cognitive-search"></a>Ресурсы документации для обогащения данных с помощью ИИ в Когнитивном поиске Azure
 
@@ -23,7 +23,7 @@ ms.locfileid: "73466717"
 
 ## <a name="getting-started"></a>Начало работы
 + [Общие сведения об ИИ в Когнитивном поиске Azure](cognitive-search-concept-intro.md)
-+ [Краткое руководство Создание когнитивного набора навыков на портале Azure](cognitive-search-quickstart-blob.md)
++ [Краткое руководство. Создание когнитивного набора навыков на портале Azure](cognitive-search-quickstart-blob.md)
 + [Руководство. Обогащенное индексирование с помощью ИИ](cognitive-search-tutorial-blob.md)
 + [Пример. Создание пользовательского навыка для обогащения ИИ](cognitive-search-create-custom-skill-example.md)
 
@@ -36,13 +36,14 @@ ms.locfileid: "73466717"
 + [How to add a custom skill to a cognitive search pipeline](cognitive-search-custom-skill-interface.md) (Добавление пользовательского навыка в конвейер когнитивного поиска)
 + [Советы по устранению неполадок](cognitive-search-concept-troubleshooting.md)
 
-## <a name="reference"></a>Справочные материалы
+## <a name="reference"></a>Справочник
 
 + [Встроенные навыки](cognitive-search-predefined-skills.md)
   + [Microsoft.Skills.Text.KeyPhraseExtractionSkill](cognitive-search-skill-keyphrases.md)
   + [Microsoft.Skills.Text.LanguageDetectionSkill](cognitive-search-skill-language-detection.md)
   + [Microsoft.Skills.Text.EntityRecognitionSkill](cognitive-search-skill-entity-recognition.md)
   + [Microsoft.Skills.Text.MergeSkill](cognitive-search-skill-textmerger.md)
+  + [Microsoft.Skills.Text.PIIDetectionSkill](cognitive-search-skill-pii-detection.md)
   + [Microsoft.Skills.Text.SplitSkill](cognitive-search-skill-textsplit.md)
   + [Microsoft.Skills.Text.SentimentSkill](cognitive-search-skill-sentiment.md)
   + [Microsoft.Skills.Text.TranslationSkill](cognitive-search-skill-text-translation.md)
@@ -62,7 +63,7 @@ ms.locfileid: "73466717"
   + [Создание набора навыков (api-version=2019-05-06)](https://docs.microsoft.com/rest/api/searchservice/create-skillset)
   + [Создание индексатора (api-version=2019-05-06)](https://docs.microsoft.com/rest/api/searchservice/create-indexer)
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 + [Azure Search Service REST](https://docs.microsoft.com/rest/api/searchservice/) (Руководство по REST Службы поиска Azure)
 + [Indexers in Azure Cognitive Search](search-indexer-overview.md) (Индексаторы в службе "Когнитивный поиск Azure")

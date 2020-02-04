@@ -15,13 +15,12 @@ ms.date: 11/26/2019
 ms.author: hahamil
 ms.reviwer: brandwe
 ms.custom: aaddev, identityplatformtop40
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: b4c4c9bc025e8fd506b298ed676674899e318481
-ms.sourcegitcommit: 2f8ff235b1456ccfd527e07d55149e0c0f0647cc
+ms.openlocfilehash: d851e23e8f6915c7d52565f18eff4a73bd96c9c0
+ms.sourcegitcommit: b5d646969d7b665539beb18ed0dc6df87b7ba83d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75689345"
+ms.lasthandoff: 01/26/2020
+ms.locfileid: "76758841"
 ---
 # <a name="tutorial-sign-in-users-and-call-the-microsoft-graph-from-an-android-application"></a>Руководство. Вход пользователей и вызов Microsoft Graph из приложения Android 
 
@@ -59,7 +58,7 @@ ms.locfileid: "75689345"
 
  MSAL автоматически обновляет маркеры, обеспечивает единый вход для других приложений на устройстве, а также управляет учетными записями.
 
-### <a name="prerequisites"></a>предварительные требования
+### <a name="prerequisites"></a>Предварительные требования
 
 * Для работы с этим учебником требуется Android Studio версии 3.5 или более новой.
 
@@ -86,7 +85,7 @@ ms.locfileid: "75689345"
 6. В разделе **Хэш подписи** на странице **Настройка приложения Android** щелкните **Generating a development Signature Hash** (Создания хэша подписи для разработки) и скопируйте команду KeyTool для использования с вашей платформой.
 
    > [!Note]
-   > KeyTool. exe устанавливается как часть пакета средств разработки Java (JDK). Необходимо также установить средство OpenSSL для выполнения команды KeyTool.
+   > KeyTool. exe устанавливается как часть пакета средств разработки Java (JDK). Необходимо также установить средство OpenSSL для выполнения команды KeyTool. Дополнительные сведения см. в [документации Android по созданию ключа](https://developer.android.com/studio/publish/app-signing#generate-key). 
 
 7. Введите **хэш подписи**, созданный с помощью KeyTool.
 8. Щелкните `Configure` и сохраните **конфигурацию MSAL**, отображаемую на странице **Настройка Android**, чтобы указать ее при последующей настройке приложения.  Нажмите кнопку **Done**(Готово).
@@ -156,8 +155,11 @@ ms.locfileid: "75689345"
         jcenter()
     }  
     dependencies{
-        implementation 'com.microsoft.identity.client:msal:1.0.+'
+        implementation 'com.microsoft.identity.client:msal:1.2.+'
         implementation 'com.microsoft.graph:microsoft-graph:1.5.+'
+    }
+    packagingOptions{
+        exclude("META-INF/jersey-module-version") 
     }
     ```
     [Подробнее о пакете средства разработки Microsoft Graph](https://github.com/microsoftgraph/msgraph-sdk-java/)
@@ -191,7 +193,7 @@ import com.microsoft.identity.client.exception.*;
 ## <a name="instantiate-publicclientapplication"></a>Создание экземпляра PublicClientApplication
 #### <a name="initialize-variables"></a>Инициализация переменных 
 ```java
-private final static String[] SCOPES = {"User.Read"};
+private final static String[] SCOPES = {"File.Read"};
 /* Azure AD v2 Configs */
 final static String AUTHORITY = "https://login.microsoftonline.com/common";
 private ISingleAccountPublicClientApplication mSingleAccountApp;

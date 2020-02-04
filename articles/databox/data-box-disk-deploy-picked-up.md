@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 09/19/2019
 ms.author: alkohli
 ms.localizationpriority: high
-ms.openlocfilehash: d0acc2d92c564f89f4777ccb243c7255e47c9105
-ms.sourcegitcommit: 38b11501526a7997cfe1c7980d57e772b1f3169b
+ms.openlocfilehash: eb9231a84295240c20e34bfad56f406317c107da
+ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76514125"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76845481"
 ---
 ::: zone target="chromeless"
 
@@ -155,10 +155,28 @@ ms.locfileid: "76514125"
 
    Если у вас возникнут какие-либо проблемы, пожалуйста, свяжитесь с операционным отделом Data Box (Азия) по адресу adbo@microsoft.com. Укажите имя задания в заголовке субъекта и обнаруженной ошибке.
 
-3. Передайте курьеру. 
+3. Передайте курьеру.
 
+### <a name="in-self-managedtabin-selfmanaged"></a>[Cамостоятельное управление](#tab/in-selfmanaged)
+
+Если вы используете Диск Data Box в Японии, Сингапуре, Корее и Западной Европе и выбрали параметр самостоятельного управления отгрузкой во время создания заказа, следуйте этим инструкциям. 
+
+1. Перейдите к колонке **Обзор** для заказа на портале Azure. Выполните инструкции, отображаемые при выборе параметра **Расписание вывоза**. Вы увидите код авторизации, который используется во время доставки заказа.
+
+2. Отправьте сообщение электронной почты сотрудникам Azure Data Box Operations, используя следующий шаблон, когда будете готовы вернуть устройство.
+
+    ```
+    To: adbops@microsoft.com
+    Subject: Request for Azure Data Box Disk drop-off for order: ‘orderName’
+    Body: 
+     a. Order name
+     b. Contact name of the person dropping off. You will need to display a Government approved ID during the drop off.
+    ```
+3. Сотрудники Azure Data Box Operations помогут вам расположить доставленное оборудование в центре обработки данных Azure.
 
 ::: zone target="docs"
+
+---
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -2,14 +2,14 @@
 title: Оценка виртуальных машин Hyper-V для миграции в Azure с помощью службы "Миграция Azure" | Документация Майкрософт
 description: В этой статье описывается, как оценивать локальные виртуальные машины Hyper-V для миграции в Azure с помощью службы "Миграция Azure".
 ms.topic: tutorial
-ms.date: 01/01/2020
+ms.date: 01/23/2020
 ms.custom: mvc
-ms.openlocfilehash: f36b0fbae01b25e604222c76d41ac21c0a7ae5a9
-ms.sourcegitcommit: dbcc4569fde1bebb9df0a3ab6d4d3ff7f806d486
+ms.openlocfilehash: e4c505d74ff3bebc21f696b1c4b894afcdaa9974
+ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76029027"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76845513"
 ---
 # <a name="assess-hyper-v-vms-with-azure-migrate-server-assessment"></a>Оценка виртуальных машин Hyper-V с помощью средства "Оценка сервера" службы "Миграция Azure"
 
@@ -31,10 +31,10 @@ ms.locfileid: "76029027"
 > [!NOTE]
 > В руководствах показан простейший путь развертывания сценария, использование которого позволяет быстро настроить проверку концепции. В руководствах по возможности используются параметры по умолчанию и показаны не все возможные параметры и пути. Для получения подробных инструкций ознакомьтесь со статьями с инструкциями.
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/pricing/free-trial/), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/pricing/free-trial/), прежде чем начинать работу.
 
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 - [Завершите](tutorial-prepare-hyper-v.md) работу с первым руководством в этой серии. Если этого не сделать, инструкции в этом руководстве не будут работать.
 - В первом руководстве вы должны были выполнить следующие действия.
@@ -64,7 +64,7 @@ ms.locfileid: "76029027"
     Азия  | Юго-Восточная Азия
     Европа | Северная или Западная Европа
     United Kingdom |  Южная часть Соединенного Королевства или западная часть Соединенного Королевства
-    United States | Восточная часть США, западная часть США 2 или центрально-западная часть США
+    США | Восточная часть США, западная часть США 2 или центрально-западная часть США
 
     - Регион проекта используется только для хранения метаданных, полученных из локальных виртуальных машин.
     - При миграции виртуальных машин можно выбрать другой целевой регион Azure. Для целевого объекта миграции поддерживаются все регионы Azure.
@@ -138,7 +138,7 @@ ms.locfileid: "76029027"
 2. В меню **Choose Import Type** (Выбор типа импорта) щелкните **Copy the virtual machine (create a new unique ID)** (Копировать виртуальную машину (создать уникальный идентификатор)). Затем нажмите кнопку **Далее**.
 3. В меню **Choose Destination** (Выбор назначения) оставьте параметр по умолчанию. Щелкните **Далее**.
 4. В меню **Storage Folders** (Папки хранилища) оставьте значение по умолчанию. Щелкните **Далее**.
-5. В поле **Choose Network** (Выбор сети) укажите виртуальный коммутатор, который будет использоваться виртуальной машиной. Ему требуется подключение к Интернету для отправки данных в Azure.
+5. В поле **Choose Network** (Выбор сети) укажите виртуальный коммутатор, который будет использоваться виртуальной машиной. Ему требуется подключение к Интернету для отправки данных в Azure. [Узнайте больше о](https://docs.microsoft.com/windows-server/virtualization/hyper-v/get-started/create-a-virtual-switch-for-hyper-v-virtual-machines) создании виртуального коммутатора.
 6. Просмотрите информацию на странице **Summary** (Сводка). Нажмите кнопку **Готово**.
 7. В диспетчере Hyper-V в разделе **Virtual Machines** (Виртуальные машины) запустите виртуальную машину.
 
@@ -194,7 +194,7 @@ ms.locfileid: "76029027"
 Enable-WSManCredSSP -Role Client -DelegateComputer HyperVHost1.contoso.com HyperVHost2.contoso.com -Force
 ```
 
-Пример: ` Enable-WSManCredSSP -Role Client -DelegateComputer HyperVHost1.contoso.com HyperVHost2.contoso.com -Force `
+Например, ` Enable-WSManCredSSP -Role Client -DelegateComputer HyperVHost1.contoso.com HyperVHost2.contoso.com -Force `.
 
 #### <a name="option-2"></a>Вариант 2
 

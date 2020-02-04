@@ -7,14 +7,14 @@ author: alinamstanciu
 manager: bertvanhoof
 ms.service: digital-twins
 ms.topic: include
-ms.date: 01/06/2020
+ms.date: 01/23/2020
 ms.custom: include file
-ms.openlocfilehash: a6adbe095b3ed486be8eb2e2611db5a40162d5dd
-ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
+ms.openlocfilehash: a1576e4a97af5de0b936c662de636aae542a19b5
+ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75895517"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76749002"
 ---
 >[!NOTE]
 >В этом разделе приводятся инструкции по [регистрации приложения Azure AD](https://docs.microsoft.com/azure/active-directory/develop/quickstart-register-app).
@@ -33,9 +33,18 @@ ms.locfileid: "75895517"
 
 1. Чтобы убедиться, что [приложение зарегистрировано как **общедоступный клиент**](https://docs.microsoft.com/azure/active-directory/develop/scenario-desktop-app-registration), откройте область **Аутентификация** для регистрации приложения и прокрутите вниз в этой области. В разделе **Тип клиента по умолчанию** выберите **Да** для параметра **Treat application as a public client** (Рассматривать приложение как общедоступный клиент), а затем нажмите кнопку **Сохранить**.
 
-    Установите флажок **Маркеры доступа**, чтобы включить параметр **oauth2AllowImplicitFlow** в файле Manifest.json.
+    1. **URI перенаправления** должны соответствовать адресу, указанному в запросе аутентификации.
 
-    [![Параметр конфигурации общедоступного клиента](./media/digital-twins-permissions/aad-configure-public-client.png)](./media/digital-twins-permissions/aad-configure-public-client.png#lightbox)
+        * Для приложений, размещенных в локальной среде разработки, выберите **Public client (mobile & desktop)** (Общедоступный клиент (мобильный и классический)). Убедитесь, что для параметра **Тип клиента по умолчанию** установлено значение "Да".
+        * Для одностраничных приложений, размещенных в Службе приложений Azure, выберите **Веб**.
+
+        Выберите **Общедоступный клиент (мобильный и классический)** и введите `http://localhost:8080/`.
+
+        [![Настройка URI перенаправления](./media/digital-twins-permissions/aad-app-configure-redirect-uris.png)](./media/digital-twins-permissions/aad-app-configure-redirect-uris.png#lightbox)
+
+    1. Установите флажок **Маркеры доступа**, чтобы настроить параметр **oauth2AllowImplicitFlow** на значение `true` в файле JSON **манифеста** ресурса.
+
+        [![Параметр конфигурации общедоступного клиента](./media/digital-twins-permissions/aad-configure-public-client.png)](./media/digital-twins-permissions/aad-configure-public-client.png#lightbox)
 
 1.  Откройте область **Обзор** зарегистрированного приложения и скопируйте значения следующих сущностей во временный файл. Эти значения будут использоваться для настройки примера приложения в следующих разделах.
 
