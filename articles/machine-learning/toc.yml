@@ -284,7 +284,7 @@
         - name: Запись метрик для учебных запусков
           href: how-to-track-experiments.md
         - name: Отслеживание экспериментов с помощью потока ML
-          displayName: 'log, monitor, metrics'
+          displayName: 'log, monitor, metrics, Databricks'
           href: how-to-use-mlflow.md
         - name: Визуализация выполняется с помощью TensorBoard
           displayName: 'log, monitor, metrics'

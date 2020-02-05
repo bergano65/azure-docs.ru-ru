@@ -15,12 +15,12 @@ ms.date: 12/02/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5fc68626959daaccb5ddc05ce6148c5948052d41
-ms.sourcegitcommit: ec2eacbe5d3ac7878515092290722c41143f151d
+ms.openlocfilehash: cd013b44454cc0283ef84d6a978b15400eca8786
+ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75549386"
+ms.lasthandoff: 02/05/2020
+ms.locfileid: "77022500"
 ---
 # <a name="understand-the-azure-ad-schema"></a>Общие сведения о схеме Azure AD
 Объект в Azure Active Directory (Azure AD), как и любой каталог, представляет собой программную конструкцию высокого уровня данных, представляющую такие вещи, как пользователи, группы и контакты. При создании нового пользователя или контакта в Azure AD создается новый экземпляр этого объекта. Эти экземпляры можно отличить в зависимости от их свойств.
@@ -72,7 +72,7 @@ ms.locfileid: "75549386"
 1.  Перейдите в [проводник Graph](https://developer.microsoft.com/graph/graph-explorer).
 1.  Войдите с помощью учетной записи глобального администратора.
 1.  В левой части экрана выберите **изменить разрешения** и убедитесь, что параметр **Directory. ReadWrite. ALL** *имеет значение.*
-1.  Выполните запрос https://graph.microsoft.com/beta/serviceprincipals/. Этот запрос возвращает список субъектов-служб.
+1.  Выполните запрос https://graph.microsoft.com/beta/serviceprincipals/? $filter = StartsWith (DisplayName, ' Active '). Этот запрос возвращает отфильтрованный список субъектов-служб.
 1.  Найдите `"appDisplayName": "Active Directory to Azure Active Directory Provisioning"` и запишите значение для `"id"`.
     ```
     "value": [
@@ -240,7 +240,7 @@ ms.locfileid: "75549386"
     ```
 1. Теперь выполните запрос `https://graph.microsoft.com/beta/serviceprincipals/{Service Principal Id}/synchronization/jobs/{AD2AAD Provisioning id}/schema`.
  
-    Пример: https://graph.microsoft.com/beta/serviceprincipals/653c0018-51f4-4736-a3a3-94da5dcb6862/synchronization/jobs/AD2AADProvisioning.e9287a7367e444c88dc67a531c36d8ec/schema
+    Например, https://graph.microsoft.com/beta/serviceprincipals/653c0018-51f4-4736-a3a3-94da5dcb6862/synchronization/jobs/AD2AADProvisioning.e9287a7367e444c88dc67a531c36d8ec/schema.
 
    Замените `{Service Principal Id}` и `{AD2ADD Provisioning Id}` своими значениями.
 

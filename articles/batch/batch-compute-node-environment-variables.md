@@ -2,21 +2,21 @@
 title: Переменные среды выполнения задач — Пакетная служба Azure | Документация Майкрософт
 description: Руководство по переменным среды выполнения задач и Справочник по пакетной аналитике Azure.
 services: batch
-author: ju-shim
-manager: gwallace
+author: LauraBrenner
+manager: evansma
 ms.assetid: ''
 ms.service: batch
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: big-compute
 ms.date: 09/12/2019
-ms.author: jushiman
-ms.openlocfilehash: fd3c8ac9e65f7f77be070e1d1d108490e61eb248
-ms.sourcegitcommit: dbcc4569fde1bebb9df0a3ab6d4d3ff7f806d486
+ms.author: labrenne
+ms.openlocfilehash: b6a9e21157884c86577b498671e4cfd0bc6068cd
+ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76027187"
+ms.lasthandoff: 02/05/2020
+ms.locfileid: "77020205"
 ---
 # <a name="azure-batch-runtime-environment-variables"></a>Переменные среды среды выполнения пакетной службы Azure
 

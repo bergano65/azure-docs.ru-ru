@@ -6,15 +6,15 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: conceptual
-ms.date: 09/16/2019
+ms.date: 02/04/2020
 ms.author: tamram
 ms.reviewer: cbrooks
-ms.openlocfilehash: 8efbf2107104f31bcfc5e4e5669dbed1835a034b
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: f9889f58ead8d1dd35ceb50fa100b2b466cbe7cf
+ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75457410"
+ms.lasthandoff: 02/05/2020
+ms.locfileid: "77022398"
 ---
 # <a name="configure-advanced-threat-protection-for-azure-storage"></a>Настройка расширенной защиты от угроз для службы хранилища Azure
 
@@ -29,7 +29,7 @@ ms.locfileid: "75457410"
 
 ## <a name="set-up-advanced-threat-protection"></a>Настройка расширенной защиты от угроз
 
-По умолчанию для вашей учетной записи хранения включена расширенная защита от угроз. Расширенную защиту от угроз можно настроить любым из нескольких способов, описанных в следующих разделах.
+Расширенную защиту от угроз можно настроить любым из нескольких способов, описанных в следующих разделах.
 
 ### <a name="portaltabazure-portal"></a>[Портал](#tab/azure-portal)
 

@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 11/19/2019
 ms.author: allensu
-ms.openlocfilehash: ddccd02e7157792d942309ae4f74933322f246f9
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: 5c50186692438be5d0922cd329c28e665310e5c2
+ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74225378"
+ms.lasthandoff: 02/05/2020
+ms.locfileid: "77023537"
 ---
 # <a name="configure-the-distribution-mode-for-azure-load-balancer"></a>Настройка режима распределения для Azure Load Balancer
 
@@ -32,7 +32,7 @@ ms.locfileid: "74225378"
 * **Исходный IP-адрес**
 * **Исходный порт**
 * **Конечный IP-адрес**
-* **Конечный порт**
+* **Порт назначения**
 * **Тип протокола**
 
 Хэш используется для отображения трафика на доступные серверы. Алгоритм обеспечивает прикрепление только в рамках транспортного сеанса. Пакеты, находящиеся в одном сеансе, направляются в один и тот же IP-адрес центра обработки данных за конечную точку с балансировкой нагрузки. Когда клиент запускает новый сеанс из того же исходного IP-адреса, исходный порт изменяется и вызывает переход трафика в другую конечную точку центра обработки данных.
@@ -59,7 +59,7 @@ ms.locfileid: "74225378"
 
 ## <a name="configure-source-ip-affinity-settings"></a>Настройка параметров соответствия исходному IP-адресу
 
-### <a name="azure-portal"></a>портале Azure
+### <a name="azure-portal"></a>Портал Azure
 
 Можно изменить конфигурацию режима распределения, изменив правило балансировки нагрузки на портале.
 
@@ -156,7 +156,7 @@ Set-AzureLoadBalancedEndpoint -ServiceName MyService -LBSetName LBSet1 -Protocol
 
 Чтобы изменить существующую конфигурацию развертывания, используйте классическую модель развертывания Azure. Добавьте заголовок `x-ms-version` и задайте значение версии 2014-09-01 или более поздней.
 
-#### <a name="request"></a>Request
+#### <a name="request"></a>Запрос
 
     POST https://management.core.windows.net/<subscription-id>/services/hostedservices/<cloudservice-name>/deployments/<deployment-name>?comp=UpdateLbSet   x-ms-version: 2014-09-01
     Content-Type: application/xml
@@ -191,8 +191,8 @@ Set-AzureLoadBalancedEndpoint -ServiceName MyService -LBSetName LBSet1 -Protocol
     x-ms-request-id: 9c7bda3e67c621a6b57096323069f7af
     Date: Thu, 16 Oct 2014 22:49:21 GMT
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Обзор внутренней подсистемы балансировки нагрузки](load-balancer-internal-overview.md)
-* [Создание балансировщика нагрузки для Интернета в Resource Manager с помощью PowerShell](load-balancer-get-started-internet-arm-ps.md)
+* [Создание балансировщика нагрузки для Интернета в Resource Manager с помощью PowerShell](quickstart-create-standard-load-balancer-powershell.md)
 * [Настройка параметров времени ожидания простоя TCP для подсистемы балансировки нагрузки](load-balancer-tcp-idle-timeout.md)

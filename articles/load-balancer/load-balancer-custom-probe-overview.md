@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/17/2019
 ms.author: allensu
-ms.openlocfilehash: ffb9480508366b223e49f173df3dc76cb711116d
-ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
+ms.openlocfilehash: 5aa75de694d05ce31becc6996aca419dff256a3f
+ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76769173"
+ms.lasthandoff: 02/05/2020
+ms.locfileid: "77023554"
 ---
 # <a name="load-balancer-health-probes"></a>Пробы работоспособности Load Balancer
 
@@ -257,6 +257,6 @@ UDP не требует соединения, поэтому состояние 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте больше об [Azure Load Balancer уровня "Стандартный"](load-balancer-standard-overview.md).
-- [Краткое руководство. Создание общедоступной подсистемы балансировки нагрузки с помощью Azure PowerShell](load-balancer-get-started-internet-arm-ps.md)
+- [Краткое руководство. Создание общедоступной подсистемы балансировки нагрузки с помощью Azure PowerShell](quickstart-create-standard-load-balancer-powershell.md)
 - [Load Balancer Probes - Get](https://docs.microsoft.com/rest/api/load-balancer/loadbalancerprobes/) (Получение проб работоспособности Load Balancer)
 - Запросите новые возможности пробы работоспособности на [платформе Uservoice для Load Balancer](https://aka.ms/lbuservoice).

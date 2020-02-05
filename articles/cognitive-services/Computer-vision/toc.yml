@@ -117,7 +117,7 @@
       href: concept-recognizing-text.md
     - name: Обнаружение содержимого для взрослых
       href: concept-detecting-adult-content.md
-- name: Руководства
+- name: Практические руководства
   items:
     - name: Вызов API компьютерного зрения
       href: Vision-API-How-to-Topics/HowToCallVisionAPI.md
@@ -135,11 +135,9 @@
         - name: Использование экземпляров контейнеров
           href: deploy-computer-vision-on-container-instances.md
           displayName: 'container instances, container, containers, images'
-    - name: Использование подключенной службы "Компьютерное зрение"
-      href: vs-computer-vision-connected-service.md
     - name: Анализ видео в реальном времени
       href: Vision-API-How-to-Topics/HowtoAnalyzeVideo_Vision.md
-- name: Справочные материалы
+- name: Справочник
   items:
     - name: Azure CLI
       href: 'https://docs.microsoft.com/cli/azure/cognitiveservices?view=azure-cli-latest#az_cognitiveservices_list'
@@ -171,7 +169,7 @@
           href: Tutorials/CSharpTutorial.md
         - name: Другие примеры использования Компьютерного зрения
           href: 'https://azure.microsoft.com/resources/samples/?service=cognitive-services&term=vision'
-    - name: Вопросы и ответы
+    - name: ВОПРОСЫ И ОТВЕТЫ
       href: FAQ.md
     - name: Классификация категорий
       href: Category-Taxonomy.md
@@ -187,5 +185,5 @@
       href: 'https://azure.microsoft.com/updates/?product=cognitive-services'
     - name: Доступность по регионам
       href: 'https://azure.microsoft.com/global-infrastructure/services/?products=cognitive-services'
-    - name: Соответствие требованиям
+    - name: Соответствие нормативным требованиям
       href: 'https://azure.microsoft.com/support/legal/cognitive-services-compliance-and-privacy/'

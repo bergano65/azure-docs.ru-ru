@@ -16,12 +16,12 @@ ms.workload: infrastructure-services
 ms.date: 11/15/2018
 ms.author: kumud
 ms.reviewer: anavin
-ms.openlocfilehash: 6c539121914418f5373b333e9493e24f7769fa5b
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.openlocfilehash: 61df13e78dc7115d4f4d45ab18b9ffdae107dc96
+ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75978980"
+ms.lasthandoff: 02/05/2020
+ms.locfileid: "77023265"
 ---
 # <a name="create-a-virtual-network-peering---different-deployment-models-same-subscription"></a>Создание пиринга виртуальных сетей с разными моделями развертывания в одной подписке
 
@@ -262,4 +262,4 @@ ms.locfileid: "75978980"
 
 - Внимательно ознакомьтесь с важными [ограничениями и особенностями работы пиринга виртуальных сетей](virtual-network-manage-peering.md#requirements-and-constraints), прежде чем создавать пиринг виртуальных сетей для рабочей среды.
 - Узнайте о [параметрах пиринга виртуальных сетей](virtual-network-manage-peering.md#create-a-peering).
-- Узнайте, как [создать звездообразную топологию сети](/azure/architecture/reference-architectures/hybrid-networking/hub-spoke?toc=%2fazure%2fvirtual-network%2ftoc.json#vnet-peering) с помощью пиринга виртуальных сетей.
+- Узнайте, как [создать звездообразную топологию сети](/azure/architecture/reference-architectures/hybrid-networking/hub-spoke#virtual-network-peering) с помощью пиринга виртуальных сетей.

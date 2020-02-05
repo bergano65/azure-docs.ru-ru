@@ -9,12 +9,13 @@ ms.devlang: rest-api
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: cd2e34be7ef55c4ee6d18c6db6010134a7d935d1
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.custom: fasttrack-edit
+ms.openlocfilehash: 1c2bac06f2526260fb290b63e5aa559a1e2337b4
+ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "76895958"
+ms.lasthandoff: 02/05/2020
+ms.locfileid: "77020630"
 ---
 # <a name="how-to-index-documents-in-azure-blob-storage-with-azure-cognitive-search"></a>Индексирование документов в хранилище BLOB-объектов Azure с помощью Azure Когнитивный поиск
 
@@ -136,7 +137,7 @@ ms.locfileid: "76895958"
 > [!NOTE]
 > Azure Когнитивный поиск ограничивает объем извлекаемого текста в зависимости от ценовой категории: 32 000 символов для уровня Free, 64 000 для Basic, 4 000 000 для Standard, 8 000 000 для Standard S2 и 16 000 000 для уровня Standard S3. Предупреждение об усеченных документах отобразится в возвращенном состоянии индексатора.  
 
-* В большом двоичном объекте определяемые пользователем свойства метаданных извлекаются без изменений.
+* В большом двоичном объекте определяемые пользователем свойства метаданных извлекаются без изменений. Обратите внимание, что для этого требуется, чтобы поле было определено в индексе с тем же именем, что и ключ метаданных большого двоичного объекта. Например, если у большого двоичного объекта есть ключ метаданных `Sensitivity` со значением `High`, необходимо определить поле с именем `Sensitivity` в индексе поиска, которое будет заполнено значением `High`.
 * Стандартные свойства метаданных большого двоичного объекта извлекаются в указанные ниже поля.
 
   * **metadata\_storage\_name** (Edm.String) — имя файла большого двоичного объекта. Например, для большого двоичного объекта /my-container/my-folder/subfolder/resume.pdf значение этого поля — `resume.pdf`.

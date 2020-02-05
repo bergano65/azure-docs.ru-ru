@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/05/2019
 ms.author: kumud
-ms.openlocfilehash: abfd96eae38bf7c0ad145c2c262efc044b741cea
-ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
+ms.openlocfilehash: 176cd9b0bf72a123bc644ebc27ee0e091aa54e97
+ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76936717"
+ms.lasthandoff: 02/05/2020
+ms.locfileid: "77024625"
 ---
 # <a name="ip-address-types-and-allocation-methods-in-azure"></a>Типы IP-адресов и методы распределения в Azure
 
@@ -33,7 +33,7 @@ ms.locfileid: "76936717"
 > В Azure предлагаются две модели развертывания для создания ресурсов и работы с ними: [модель Resource Manager и классическая модель](../azure-resource-manager/management/deployment-models.md?toc=%2fazure%2fvirtual-network%2ftoc.json).  В этой статье описывается использование модели развертывания c помощью Resource Manager. Для большинства новых развертываний мы рекомендуем использовать эту модель вместо [классической](virtual-network-ip-addresses-overview-classic.md).
 > 
 
-Если вы знакомы с классической моделью развертывания, ознакомьтесь с [различиями в IP-адресации для классической модели развертывания и модели Resource Manager](/previous-versions/azure/virtual-network-ip-addresses-overview-classic.md#differences-between-resource-manager-and-classic-deployments).
+Если вы знакомы с классической моделью развертывания, ознакомьтесь с [различиями в IP-адресации для классической модели развертывания и модели Resource Manager](/previous-versions/azure/virtual-network/virtual-network-ip-addresses-overview-classic#differences-between-resource-manager-and-classic-deployments).
 
 ## <a name="public-ip-addresses"></a>Общедоступные IP-адреса
 
