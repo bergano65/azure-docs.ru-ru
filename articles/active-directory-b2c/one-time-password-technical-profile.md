@@ -8,15 +8,15 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
-ms.date: 12/10/2019
+ms.date: 02/03/2020
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: c50edb03fe849c70596c0bfb3cdc2dafa15f136f
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: dab35fbcd221af9f4eb587b8c98a8ff85aeef59f
+ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75480207"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76982795"
 ---
 # <a name="define-a-one-time-password-technical-profile-in-an-azure-ad-b2c-custom-policy"></a>Определение технического профиля с одноразовым паролем в Azure AD B2C настраиваемой политике
 
@@ -77,6 +77,7 @@ Web.TPEngine.Providers.OneTimePasswordProtocolProvider, Web.TPEngine, Version=1.
 | коделенгс | Нет | Длина кода. Значение по умолчанию — `6`. |
 | CharacterSet | Нет | Кодировка для кода, отформатированная для использования в регулярном выражении. Например, `a-z0-9A-Z`. Значение по умолчанию — `0-9`. Кодировка должна содержать не менее 10 различных символов в указанном наборе. |
 | нумретряттемптс | Нет | Число попыток проверки, прежде чем код будет считаться недопустимым. Значение по умолчанию — `5`. |
+| Операция | Да | Операция, которая выполняется. Возможные значения: `GenerateCode`или `VerifyCode`. |
 | реусесамекоде | Нет | Должно ли быть задано дублирование кода, а не создание нового кода, если срок действия данного кода не истек и он по-прежнему действителен. Значение по умолчанию — `false`. |
 
 ### <a name="returning-error-message"></a>Возвращаемое сообщение об ошибке

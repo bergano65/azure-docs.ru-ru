@@ -8,16 +8,16 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: philmea
-ms.openlocfilehash: b5875d0672fc187920883abe208ad30c4d2b1051
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: 77b95806c2040e7950e1133fcc4c7bc5e0e2ab53
+ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "76898549"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76989609"
 ---
 # <a name="azure-maps-weather-coverage"></a>Azure Maps покрытие погоды
 
-В этой статье содержатся сведения о покрытии Azure Maps [служб погоды](https://aka.ms/AzureMapsWeatherService). Azure Maps службы данных о погоде могут возвращать такие сведения, как лепестковые плитки, текущие условия погоды, прогнозы погоды и погода на маршруте.
+В этой статье содержатся сведения о покрытии Azure Maps [служб погоды](https://aka.ms/AzureMapsWeatherService). Azure Mapsные службы данных о погоде возвращают такие сведения, как лепестковые плитки, текущие условия погоды, прогнозы погоды и погода на маршруте.
 
 Azure Maps не имеет одинакового уровня информации и точности для всех стран и регионов.
 

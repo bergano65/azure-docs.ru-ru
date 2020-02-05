@@ -13,14 +13,14 @@ ms.service: virtual-machines-windows
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
-ms.date: 01/10/2020
+ms.date: 02/03/2020
 ms.author: radeltch
-ms.openlocfilehash: c2d6e3e42c581c255f207af4a5008e2d09c50a7d
-ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
+ms.openlocfilehash: 1a413ce55604ef8b5c3219e8de466fcc23d41bac
+ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75887127"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76990947"
 ---
 # <a name="high-availability-for-sap-netweaver-on-azure-vms-on-suse-linux-enterprise-server-with-azure-netapp-files-for-sap-applications"></a>Высокий уровень доступности SAP NetWeaver на виртуальных машинах Azure на SUSE Linux Enterprise Server с Azure NetApp Files для приложений SAP
 
@@ -341,7 +341,7 @@ SAP NetWeaver требует общее хранилище для каталог
    </code></pre>
 
    > [!NOTE]
-   > Не используйте тире в именах узлов своего кластера. Иначе кластер не будет работать. Это известное ограничение, и SUSE работает над его устранением. Решение будет выпущено как исправление пакета sap-suse-cloud-connector.
+   > Известная проблема с использованием тире в именах узлов исправлена в версии **3.1.1** пакета **SAP-SUSE-Cluster-Connector**. Убедитесь, что используется как минимум версия 3.1.1 пакета SAP-SUSE-Cluster-Connector, если в имени узла используются узлы кластера с тире. Иначе кластер не будет работать. 
 
    Убедитесь, что вы установили новую версию соединителя кластера SAP SUSE. Старая версия называется sap_suse_cluster_connector, а новая — **sap-suse-cluster-connector**.
 

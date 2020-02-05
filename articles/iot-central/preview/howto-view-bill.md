@@ -3,19 +3,21 @@ title: Управляйте своим счетом и преобразуйте 
 description: Как администратор, вы узнаете, как управлять счетом и переходить от плана бесплатного ценообразования к стандартному тарифному плану в приложении Azure IoT Central.
 author: v-krghan
 ms.author: v-krghan
-ms.date: 07/26/2019
+ms.date: 12/09/2019
 ms.topic: conceptual
 ms.service: iot-central
 services: iot-central
 manager: philmea
-ms.openlocfilehash: e45109842a081b437c20de81321bf70f909efa2a
+ms.openlocfilehash: adc7b59eebf513042667c0c585c05307aeab07b2
 ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 02/04/2020
-ms.locfileid: "76982375"
+ms.locfileid: "76990889"
 ---
-# <a name="view-your-bill-in-iot-central-application"></a>Просмотр вашего счета в IoT Central приложении
+# <a name="manage-your-bill-in-an-iot-central-application"></a>Управление счетами в IoT Central приложении
+
+[!INCLUDE [iot-central-pnp-original](../../../includes/iot-central-pnp-original-note.md)]
 
 В этой статье описывается, как администратор может управлять вашим счетом в IoT Central приложении Azure в разделе Администрирование. Вы узнаете, как можно переместить приложение из плана бесплатного ценообразования в стандартный тарифный план, а также как обновить или понизить план цен.
 
@@ -31,11 +33,11 @@ ms.locfileid: "76982375"
 
 1. Перейдите на страницу " **цены** " в разделе " **Администрирование** ".
 
-    ![Состояние бесплатной пробной версии](media/howto-administer/freetrialbilling.png)
+    ![Состояние бесплатной пробной версии](media/howto-view-bill/freetrialbilling.png)
 
 1. Выберите **преобразовать в платный план**.
 
-    ![Преобразование бесплатной пробной версии](media/howto-administer/convert.png)
+    ![Преобразование бесплатной пробной версии](media/howto-view-bill/convert.png)
 
 1. Выберите подходящую Azure Active Directory, а затем подписку Azure, которая будет использоваться для приложения, которое использует платный план.
 
@@ -52,7 +54,7 @@ ms.locfileid: "76982375"
 
 1. Перейдите на страницу " **цены** " в разделе " **Администрирование** ".
 
-    ![Состояние бесплатной пробной версии](media/howto-administer/pricing.png)
+    ![Состояние бесплатной пробной версии](media/howto-view-bill/pricing.png)
 
 1. Выберите **план** и нажмите кнопку **сохранить** для обновления или перехода на более раннюю версию.
 
@@ -62,7 +64,6 @@ ms.locfileid: "76982375"
 
 Чтобы просмотреть счет, перейдите на страницу " **цены** " в разделе " **Администрирование** ". На новой вкладке откроется страница с ценами Azure, на которой можно просмотреть счет для каждого приложения Azure IoT Central.
 
-
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Теперь, когда вы узнали, как просматривать счет в IoT Central приложении Azure, рекомендуем следующий шаг — узнать о [настройке пользовательского интерфейса приложения](howto-customize-ui.md) в Azure IOT Central.
+Теперь, когда вы узнали, как управлять счетами в IoT Central приложении Azure, рекомендуем следующий шаг — узнать о [настройке пользовательского интерфейса приложения](howto-customize-ui.md) в Azure IOT Central.

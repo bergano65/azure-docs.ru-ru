@@ -9,12 +9,12 @@ ms.author: mbullwin
 ms.date: 01/17/2020
 ms.reviewer: vitalyg
 ms.custom: fasttrack-edit
-ms.openlocfilehash: c851978ea1b5af3006f1835f022c30aa7e7128f7
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: 9fda3bb0188a2030572ee686ff5a942aca61ea36
+ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "76899074"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76989983"
 ---
 # <a name="sampling-in-application-insights"></a>Выборка в Application Insights
 
@@ -347,12 +347,13 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env, Telemetr
 
 ### <a name="configuring-fixed-rate-sampling-for-opencensus-python-applications"></a>Настройка выборки с фиксированной частотой для приложений Python Опенценсус
 
-1. Выполните инструментирование приложения с помощью последних средств [экспорта опенценсус Azure Monitor](../../azure-monitor/app/opencensus-python.md).
+Выполните инструментирование приложения с помощью последних средств [экспорта опенценсус Azure Monitor](../../azure-monitor/app/opencensus-python.md).
 
 > [!NOTE]
-> Выборка с фиксированной частотой доступна только при использовании средства экспорта трассировки. Это означает, что входящие и исходящие запросы являются единственными типами телеметрии, в которых можно настроить выборку.
+> Выборка с фиксированной частотой недоступна для программы экспорта метрик. Это означает, что пользовательские метрики являются единственными типами телеметрии, в которых невозможно настроить выборку. Средство экспорта метрик будет отсылать все данные телеметрии, которые он отслеживает.
 
-2. Вы можете указать `sampler` как часть конфигурации `Tracer`. Если не указан явный образец, по умолчанию будет использоваться `ProbabilitySampler`. По умолчанию `ProbabilitySampler` будет использовать частоту 1/10000, то есть все запросы 10000 будут отправляться в Application Insights. Чтобы указать свою частоту выборки, см. ниже.
+#### <a name="fixed-rate-sampling-for-tracing"></a>Выборка с фиксированной частотой для трассировки ####
+Вы можете указать `sampler` как часть конфигурации `Tracer`. Если не указан явный образец, по умолчанию будет использоваться `ProbabilitySampler`. По умолчанию `ProbabilitySampler` будет использовать частоту 1/10000, то есть все запросы 10000 будут отправляться в Application Insights. Чтобы указать свою частоту выборки, см. ниже.
 
 Чтобы указать частоту выборки, убедитесь, что в `Tracer` указана выборка с частотой дискретизации от 0,0 до 1,0 включительно. Частота выборки 1,0 представляет 100%, то есть все запросы будут отправляться как данные телеметрии для Application Insights.
 
@@ -362,6 +363,16 @@ tracer = Tracer(
         instrumentation_key='00000000-0000-0000-0000-000000000000',
     ),
     sampler=ProbabilitySampler(1.0),
+)
+```
+
+#### <a name="fixed-rate-sampling-for-logs"></a>Выборка с фиксированной частотой для журналов ####
+Можно настроить выборку с фиксированной частотой для `AzureLogHandler`, изменив `logging_sampling_rate` необязательный аргумент. Если аргумент не указан, будет использоваться частота выборки, равная 1,0. Частота выборки 1,0 представляет 100%, то есть все запросы будут отправляться как данные телеметрии для Application Insights.
+
+```python
+exporter = metrics_exporter.new_metrics_exporter(
+    instrumentation_key='00000000-0000-0000-0000-000000000000',
+    logging_sampling_rate=0.5,
 )
 ```
 

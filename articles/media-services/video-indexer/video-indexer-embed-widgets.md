@@ -8,14 +8,14 @@ manager: femila
 ms.service: media-services
 ms.subservice: video-indexer
 ms.topic: article
-ms.date: 07/29/2019
+ms.date: 02/03/2020
 ms.author: juliako
-ms.openlocfilehash: b9fb15fc9f3dc51a0df40a4ccb738a97d4558dff
-ms.sourcegitcommit: 87781a4207c25c4831421c7309c03fce5fb5793f
+ms.openlocfilehash: ed3e2cf9830e3776886e662fd27f43f76728d6b2
+ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76545897"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76988725"
 ---
 # <a name="embed-video-indexer-widgets-in-your-applications"></a>Внедрение графических мини-приложений индексатора видео в приложения
 
@@ -86,9 +86,9 @@ ms.locfileid: "76545897"
     
 Чтобы получить содержимое мини-приложения для анализа данных, выполните одно из следующих действий.<br/>
 - API [мини-приложения Get Insights](https://api-portal.videoindexer.ai/docs/services/operations/operations/Get-Video-Insights-Widget?&pattern=widget) .<br/>
-- [Маркер доступа для получения видео](https://api-portal.videoindexer.ai/docs/services/authorization/operations/Get-Video-Access-Token?). Добавьте его в качестве параметра запроса к URL-адресу. Укажите этот URL-адрес в качестве значения **src** для IFRAME, как показано выше.
+- [Маркер доступа для получения видео](https://api-portal.videoindexer.ai/docs/services/Operations/operations/Get-Video-Access-Token?). Добавьте его в качестве параметра запроса к URL-адресу. Укажите этот URL-адрес в качестве значения **src** для IFRAME, как показано выше.
 
-Чтобы предоставить возможности изменения аналитических сведений во внедренном мини-приложении, необходимо передать маркер доступа, включающий разрешения на редактирование. Используйте [мини-приложение Get Insights](https://api-portal.videoindexer.ai/docs/services/operations/operations/Get-Video-Insights-Widget?&pattern=widget) или [Получите маркер доступа к видео](https://api-portal.videoindexer.ai/docs/services/authorization/operations/Get-Video-Access-Token?) с помощью `&allowEdit=true`. 
+Чтобы предоставить возможности изменения аналитических сведений во внедренном мини-приложении, необходимо передать маркер доступа, включающий разрешения на редактирование. Используйте [мини-приложение Get Insights](https://api-portal.videoindexer.ai/docs/services/operations/operations/Get-Video-Insights-Widget?&pattern=widget) или [Получите маркер доступа к видео](https://api-portal.videoindexer.ai/docs/services/operations/operations/Get-Video-Access-Token?) с помощью `&allowEdit=true`. 
 
 ## <a name="widgets-interaction"></a>Взаимодействие с мини-приложениями
 
@@ -262,8 +262,25 @@ URL-адрес внедрения будет выглядеть так:
 
 Если вы хотите отключить субтитры, можно передать значение параметра `captions` как `false`.
 
-#### <a name="autoplay"></a>Автозапуск
+#### <a name="autoplay"></a>Автозапуска
 По умолчанию проигрыватель начнет воспроизведение видео. Вы можете отказаться от передачи `&autoplay=false` к предыдущему URL-адресу внедрения.
+
+## <a name="code-samples"></a>Примеры кода
+
+См. репозиторий с [примерами кода](https://github.com/Azure-Samples/media-services-video-indexer/tree/master/Widgets) , который содержит примеры для API индексатора видео и мини-приложений:
+
+| Файл или папка                       | Description                                |
+|-----------------------------------|--------------------------------------------|
+| `azure-media-player`              | Загрузка видео индексатора видео в пользовательском Проигрыватель мультимедиа Azure                        |
+| `azure-media-player-vi-insights`  | Внедрение "VI Insights" с помощью пользовательского Проигрыватель мультимедиа Azure                             |
+| `control-vi-embedded-player`      | Внедрение проигрывателя VI и управление им извне                                    |
+| `custom-index-location`           | Внедрение "VI Insights" из пользовательского внешнего расположения (может быть клиентом большого двоичного объекта)     |
+| `embed-both-insights`             | Базовое использование "VI Insights" и "проигрыватель" и "аналитика"                            |
+| `embed-insights-with-AMP`         | Внедрить мини-приложение VI Insights с настраиваемым Проигрыватель мультимедиа Azure                      |
+| `customize-the-widgets`           | Внедрение мини-приложений VI с настраиваемыми параметрами                                     |
+| `embed-both-widgets`              | Внедрите проигрыватель VI и аналитические сведения и обмен данными между ними                      |
+| `url-generator`                   | Создает URL-адрес настраиваемого внедрения widget на основе заданных пользователем параметров             |
+| `html5-player`                    | Внедрение "VI Insights" с видеопроигрывателем по умолчанию HTML5                            |
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

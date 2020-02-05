@@ -4,12 +4,12 @@ description: Отслеживайте Azure Backup рабочие нагрузк
 ms.topic: conceptual
 ms.date: 06/04/2019
 ms.assetid: 01169af5-7eb0-4cb0-bbdb-c58ac71bf48b
-ms.openlocfilehash: 983939a905c6c096f2e8e3007bd40cbbe9088395
-ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
+ms.openlocfilehash: 4ff51080d675c53e53397a070c1f6f1766aa9e85
+ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/02/2020
-ms.locfileid: "75611702"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76989592"
 ---
 # <a name="monitor-at-scale-by-using-azure-monitor"></a>Мониторинг в масштабе с помощью Azure Monitor
 
@@ -21,54 +21,6 @@ Azure Backup предоставляет [встроенные возможнос
 - Если вы хотите просмотреть сведения из локального компонента, например System Center Data Protection Manager в Azure, который не отображается в [**заданиях архивации**](backup-azure-monitoring-built-in-monitor.md#backup-jobs-in-recovery-services-vault) или [**оповещениях архивации**](backup-azure-monitoring-built-in-monitor.md#backup-alerts-in-recovery-services-vault) .
 
 ## <a name="using-log-analytics-workspace"></a>Использование рабочей области Log Analytics
-
-> [!NOTE]
-> Данные из резервных копий виртуальных машин Azure, агент Azure Backup, Data Protection Manager System Center, резервное копирование SQL в виртуальных машинах Azure и резервные копии файлов Azure создаются в рабочей области Log Analytics с помощью параметров диагностики. Поддержка Microsoft Azure Backup Server (MABS) будет добавлена в ближайшее время
-
-Для мониторинга и отчета в масштабе требуются возможности двух служб Azure. *Параметры диагностики* отправляют данные из нескольких Azure Resource Manager ресурсов в другой ресурс. *Log Analytics* создает настраиваемые оповещения, в которых можно использовать группы действий для определения других каналов уведомлений.
-
-В следующих разделах подробно описано, как использовать Log Analytics для мониторинга Azure Backup в масштабе.
-
-### <a name="configure-diagnostic-settings"></a>Настройка параметров диагностики
-
-Azure Resource Manager ресурсы, такие как хранилище служб восстановления, записывают сведения о запланированных операциях и активируемых пользователем операциях в виде диагностических данных.
-
-В разделе Мониторинг выберите **параметры диагностики** и укажите целевой объект для диагностических данных хранилища служб восстановления.
-
-![Параметр диагностики для хранилища служб восстановления, нацеливание на Log Analytics](media/backup-azure-monitoring-laworkspace/rs-vault-diagnostic-setting.png)
-
-Вы можете выбрать рабочую область Log Analytics из другой подписки. Чтобы отслеживать хранилища в рамках одной подписки в одном месте, выберите одну и ту же рабочую область Log Analytics для нескольких хранилищ служб восстановления. Чтобы настроить канал для всех сведений, связанных с Azure Backup, в рабочую область Log Analytics, выберите **AzureDiagnostics** в появившемся переключателе и выберите событие **установите azurebackupreport** .
-
-> [!IMPORTANT]
-> После завершения настройки необходимо подождать 24 часа, чтобы начальная отправка данных завершилась. После первоначальной отправки данных все события помещаются, как описано далее в этой статье, в [разделе Frequency](#diagnostic-data-update-frequency).
-
-### <a name="deploy-a-solution-to-the-log-analytics-workspace"></a>Развертывание решения в рабочей области Log Analytics
-
-> [!IMPORTANT]
-> Мы выпустили обновленный [шаблон](https://azure.microsoft.com/resources/templates/101-backup-la-reporting/) с несколькими представлениями для мониторинга на основе La и создания отчетов в Azure Backup. Обратите внимание, что пользователи, которые использовали [предыдущее решение](https://azure.microsoft.com/resources/templates/101-backup-oms-monitoring/) , продолжают видеть их в рабочих областях даже после развертывания нового решения. Однако старое решение может предоставить неточные результаты из-за незначительных изменений схемы. Поэтому пользователям необходимо развернуть новый шаблон.
-
-После того как данные находятся в Log Analytics рабочей области, [разверните шаблон GitHub](https://azure.microsoft.com/resources/templates/101-backup-la-reporting/) , чтобы log Analytics визуализировать данные. Чтобы правильно определить рабочую область, убедитесь, что ей назначена та же группа ресурсов, имя рабочей области и расположение рабочей области. Затем установите этот шаблон в рабочей области.
-
-### <a name="view-azure-backup-data-by-using-log-analytics"></a>Просмотр Azure Backup данных с помощью Log Analytics
-
-- **Azure Monitor**. в разделе **Insights** выберите **Дополнительно** и выберите соответствующую рабочую область.
-- **Log Analytics рабочие области**: выберите соответствующую рабочую область, а затем в разделе **Общие**выберите **Сводная сводка по рабочей области**.
-
-![Плитки Log Analytics мониторинг и отчеты](media/backup-azure-monitoring-laworkspace/la-azurebackup-overview-dashboard.png)
-
-При выборе любого из плиток обзора можно просмотреть дополнительные сведения. Вот некоторые из отчетов, которые вы увидите:
-
-- Задания резервного копирования, не относящиеся к журналу
-
-   ![Log Analytics графиков для заданий резервного копирования](media/backup-azure-monitoring-laworkspace/la-azurebackup-backupjobsnonlog.png)
-
-- Оповещения из резервной копии ресурсов Azure
-
-   ![Диаграмма Log Analytics для заданий восстановления](media/backup-azure-monitoring-laworkspace/la-azurebackup-alertsazure.png)
-
-Аналогичным образом, щелкнув другие плитки, вы сможете просматривать отчеты о заданиях восстановления, облачном хранилище, элементах архивации, оповещениях из резервной копии локальных ресурсов и заданиях резервного копирования журналов.
-
-Эти графы предоставляются с помощью шаблона. При необходимости можно изменить графы или добавить дополнительные диаграммы.
 
 ### <a name="create-alerts-by-using-log-analytics"></a>Создание предупреждений с помощью Log Analytics
 
@@ -110,90 +62,65 @@ Azure Resource Manager ресурсы, такие как хранилище сл
 - Все успешные задания резервного копирования
 
     ````Kusto
-    AzureDiagnostics
-    | where Category == "AzureBackupReport"
-    | where SchemaVersion_s == "V2"
-    | where OperationName == "Job" and JobOperation_s == "Backup"
-    | where JobStatus_s == "Completed"
+    AddonAzureBackupJobs
+| where JobOperation=="Backup"
+| where JobStatus=="Completed"
     ````
 
 - Все задания резервного копирования, завершившиеся сбоем
 
     ````Kusto
-    AzureDiagnostics
-    | where Category == "AzureBackupReport"
-    | where SchemaVersion_s == "V2"
-    | where OperationName == "Job" and JobOperation_s == "Backup"
-    | where JobStatus_s == "Failed"
+    AddonAzureBackupJobs
+| where JobOperation=="Backup"
+| where JobStatus=="Failed"
     ````
 
 - Все успешные задания резервного копирования виртуальных машин Azure
 
     ````Kusto
-    AzureDiagnostics
-    | where Category == "AzureBackupReport"
-    | where SchemaVersion_s == "V2"
-    | extend JobOperationSubType_s = columnifexists("JobOperationSubType_s", "")
-    | where OperationName == "Job" and JobOperation_s == "Backup" and JobStatus_s == "Completed" and JobOperationSubType_s != "Log" and JobOperationSubType_s != "Recovery point_Log"
-    | join kind=inner
-    (
-        AzureDiagnostics
-        | where Category == "AzureBackupReport"
-        | where OperationName == "BackupItem"
-        | where SchemaVersion_s == "V2"
-        | where BackupItemType_s == "VM" and BackupManagementType_s == "IaaSVM"
-        | distinct BackupItemUniqueId_s, BackupItemFriendlyName_s
-        | project BackupItemUniqueId_s , BackupItemFriendlyName_s
-    )
-    on BackupItemUniqueId_s
-    | extend Vault= Resource
-    | project-away Resource
+    AddonAzureBackupJobs
+| where JobOperation=="Backup"
+| where JobStatus=="Completed"
+| join kind=inner
+(
+    CoreAzureBackup
+    | where OperationName == "BackupItem"
+    | where BackupItemType=="VM" and BackupManagementType=="IaaSVM"
+    | distinct BackupItemUniqueId, BackupItemFriendlyName
+)
+on BackupItemUniqueId
     ````
 
 - Все успешные задания резервного копирования журналов SQL
 
     ````Kusto
-    AzureDiagnostics
-    | where Category == "AzureBackupReport"
-    | where SchemaVersion_s == "V2"
-    | extend JobOperationSubType_s = columnifexists("JobOperationSubType_s", "")
-    | where OperationName == "Job" and JobOperation_s == "Backup" and JobStatus_s == "Completed" and JobOperationSubType_s == "Log"
-    | join kind=inner
-    (
-        AzureDiagnostics
-        | where Category == "AzureBackupReport"
-        | where OperationName == "BackupItem"
-        | where SchemaVersion_s == "V2"
-        | where BackupItemType_s == "SQLDataBase" and BackupManagementType_s == "AzureWorkload"
-        | distinct BackupItemUniqueId_s, BackupItemFriendlyName_s
-        | project BackupItemUniqueId_s , BackupItemFriendlyName_s
-    )
-    on BackupItemUniqueId_s
-    | extend Vault= Resource
-    | project-away Resource
+    AddonAzureBackupJobs
+| where JobOperation=="Backup" and JobOperationSubType=="Log"
+| where JobStatus=="Completed"
+| join kind=inner
+(
+    CoreAzureBackup
+    | where OperationName == "BackupItem"
+    | where BackupItemType=="SQLDataBase" and BackupManagementType=="AzureWorkload"
+    | distinct BackupItemUniqueId, BackupItemFriendlyName
+)
+on BackupItemUniqueId
     ````
 
 - Все успешные задания агента Azure Backup
 
     ````Kusto
-    AzureDiagnostics
-    | where Category == "AzureBackupReport"
-    | where SchemaVersion_s == "V2"
-    | extend JobOperationSubType_s = columnifexists("JobOperationSubType_s", "")
-    | where OperationName == "Job" and JobOperation_s == "Backup" and JobStatus_s == "Completed" and JobOperationSubType_s != "Log" and JobOperationSubType_s != "Recovery point_Log"
-    | join kind=inner
-    (
-        AzureDiagnostics
-        | where Category == "AzureBackupReport"
-        | where OperationName == "BackupItem"
-        | where SchemaVersion_s == "V2"
-        | where BackupItemType_s == "FileFolder" and BackupManagementType_s == "MAB"
-        | distinct BackupItemUniqueId_s, BackupItemFriendlyName_s
-        | project BackupItemUniqueId_s , BackupItemFriendlyName_s
-    )
-    on BackupItemUniqueId_s
-    | extend Vault= Resource
-    | project-away Resource
+    AddonAzureBackupJobs
+| where JobOperation=="Backup"
+| where JobStatus=="Completed"
+| join kind=inner
+(
+    CoreAzureBackup
+    | where OperationName == "BackupItem"
+    | where BackupItemType=="FileFolder" and BackupManagementType=="MAB"
+    | distinct BackupItemUniqueId, BackupItemFriendlyName
+)
+on BackupItemUniqueId
     ````
 
 ### <a name="diagnostic-data-update-frequency"></a>Частота обновления диагностических данных
@@ -236,7 +163,7 @@ Azure Resource Manager ресурсы, такие как хранилище сл
 
 Вы можете просматривать все оповещения, созданные на основе журналов действий и Log Analytics рабочих областей в Azure Monitor. Просто откройте панель **оповещения** слева.
 
-Хотя вы можете получать уведомления с помощью журналов действий, мы настоятельно рекомендуем использовать Log Analytics, а не журналы действий для мониторинга в масштабе. Вот причины для этого.
+Хотя вы можете получать уведомления с помощью журналов действий, мы настоятельно рекомендуем использовать Log Analytics, а не журналы действий для мониторинга в масштабе. Вот почему:
 
 - **Ограниченные сценарии**: уведомления с помощью журналов действий применяются только к резервным КОПИЯМ виртуальных машин Azure. Уведомления должны быть настроены для каждого хранилища служб восстановления.
 - **Определение соответствия**: запланированное действие резервного копирования не соответствует последнему определению журналов действий. Вместо этого он выполняет согласование с [журналами ресурсов](https://docs.microsoft.com/azure/azure-monitor/platform/resource-logs-collect-workspace#what-you-can-do-with-platform-logs-in-a-workspace). Такое выравнивание приводит к непредвиденным последствиям при изменении данных, передаваемых по каналу журнала действий.

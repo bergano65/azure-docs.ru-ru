@@ -9,14 +9,14 @@ manager: cshankar
 ms.devlang: csharp
 ms.workload: big-data
 ms.topic: conceptual
-ms.date: 01/31/2020
+ms.date: 02/03/2020
 ms.custom: seodec18
-ms.openlocfilehash: c1c4f139dedc9be11a5f19730221ccec77139200
-ms.sourcegitcommit: 42517355cc32890b1686de996c7913c98634e348
+ms.openlocfilehash: 9f7819974e3548baf5e10f0bf9a2d656d9412beb
+ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2020
-ms.locfileid: "76962022"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76987977"
 ---
 # <a name="query-data-from-the-azure-time-series-insights-ga-environment-using-c"></a>Запрос данных из общедоступной среды службы "аналитика временных рядов Azure" с помощьюC#
 
@@ -50,13 +50,9 @@ ms.locfileid: "76962022"
 Перед компиляцией и запуском примера кода выполните следующие шаги.
 
 1. Подготавливает общедоступную среду службы " [аналитика временных рядов Azure](https://docs.microsoft.com/azure/time-series-insights/time-series-insights-get-started) ".
-
 1. Настройте среду службы "аналитика временных рядов Azure" для Azure Active Directory, как описано в статье [Проверка подлинности и авторизация](time-series-insights-authentication-and-authorization.md). 
-
 1. Установите необходимые зависимости проекта.
-
 1. Измените приведенный ниже пример кода, заменив каждый **#DUMMY #** на соответствующий идентификатор среды.
-
 1. Выполните код в Visual Studio.
 
 ## <a name="project-dependencies"></a>Зависимости проектов
@@ -70,7 +66,9 @@ ms.locfileid: "76962022"
 * Пакет [Microsoft. IdentityModel. Clients. ActiveDirectory](https://www.nuget.org/packages/Microsoft.IdentityModel.Clients.ActiveDirectory/) -3.13.9.
 * [Newtonsoft. JSON](https://www.nuget.org/packages/Newtonsoft.Json) — пакет 9.0.1.
 
-Добавьте пакеты с помощью [NuGet 2.12 +](https://www.nuget.org/):
+Скачайте пакеты в Visual Studio 2019, выбрав параметр **build** > **Build Solution** .
+
+Кроме того, добавьте пакеты с помощью [NuGet 2.12 +](https://www.nuget.org/):
 
 * `dotnet add package Newtonsoft.Json --version 9.0.1`
 * `dotnet add package Microsoft.IdentityModel.Clients.ActiveDirectory --version 3.13.9`

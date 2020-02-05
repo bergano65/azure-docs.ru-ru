@@ -6,14 +6,14 @@ ms.author: mamccrea
 ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
-ms.date: 01/11/2019
+ms.date: 02/2/2020
 ms.custom: seodec18
-ms.openlocfilehash: cf6b94418516f681bf6c782fe02f3434faa5374e
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: e58e36b3caa5a5ecd137cb9cb61dad7ddb95ff3a
+ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75426277"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76986994"
 ---
 # <a name="azure-stream-analytics-output-to-azure-cosmos-db"></a>Выходные данные Azure Stream Analytics в Azure Cosmos DB  
 Azure Stream Analytics могут ориентироваться [Azure Cosmos DB](https://azure.microsoft.com/services/documentdb/) для выходных данных JSON, что позволяет архивировать данные и запросы с низкой задержкой для неструктурированных данных JSON. В этом документе представлены некоторые рекомендации по реализации данной конфигурации.
@@ -97,7 +97,7 @@ Azure Cosmos DB автоматически масштабирует секции
 
 В 1,2 Stream Analytics более интеллектуальные в использовании 100 процента доступной пропускной способности в Azure Cosmos DB с очень малой повторной отправкой от регулирования или ограничения частоты. Это обеспечивает более эффективное взаимодействие с другими рабочими нагрузками, такими как запросы, выполняющиеся в контейнере. Если вы хотите узнать, как Stream Analytics масштабируется с Azure Cosmos DB в качестве приемника для 1 000 10 000 сообщений в секунду, попробуйте использовать [Этот пример проекта Azure](https://github.com/Azure-Samples/streaming-at-scale/tree/master/eventhubs-streamanalytics-cosmosdb).
 
-Пропускная способность выходных данных Azure Cosmos DB идентична 1,0 и 1,1. Поскольку 1,2 в настоящее время не является значением по умолчанию, можно [задать уровень совместимости](https://docs.microsoft.com/azure/stream-analytics/stream-analytics-compatibility-level) для Stream Analytics задания с помощью портала или с помощью [задания создания Stream Analytics REST API вызов](https://docs.microsoft.com/rest/api/streamanalytics/stream-analytics-job). *Настоятельно рекомендуется* использовать уровень совместимости 1,2 в Stream Analytics с Azure Cosmos DB.
+Пропускная способность выходных данных Azure Cosmos DB идентична 1,0 и 1,1. *Настоятельно рекомендуется* использовать уровень совместимости 1,2 в Stream Analytics с Azure Cosmos DB.
 
 ## <a name="azure-cosmos-db-settings-for-json-output"></a>Параметры Azure Cosmos DB для выходных данных JSON
 
@@ -108,7 +108,7 @@ Azure Cosmos DB автоматически масштабирует секции
 |Поле           | Description|
 |-------------   | -------------|
 |Псевдоним выходных данных    | Псевдоним для ссылки на эти выходные данные в запросе Stream Analytics.|
-|Subscription    | Подписка Azure.|
+|Подписка    | Подписка Azure.|
 |Идентификатор учетной записи      | Имя или универсальный код ресурса (URI) конечной точки учетной записи Azure Cosmos DB.|
 |Ключ учетной записи     | Общедоступный ключ доступа к учетной записи Azure Cosmos DB.|
 |База данных        | Имя базы данных Azure Cosmos DB.|

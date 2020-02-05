@@ -8,15 +8,15 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
-ms.date: 12/10/2019
+ms.date: 01/29/2020
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 2e2a3dbf0ce3be28a78f04eb5bb1c369aeff1441
-ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
+ms.openlocfilehash: ad6b84323ac49713506bc61bd0051421e0234a94
+ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76773439"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76982285"
 ---
 # <a name="technicalprofiles"></a>TechnicalProfiles
 
@@ -84,7 +84,7 @@ ms.locfileid: "76773439"
 | Элемент | Вхождения | Description |
 | ------- | ----------- | ----------- |
 | Домен | 0:1 | Доменное имя технического профиля. Например, если в техническом профиле указан поставщик удостоверений Facebook, доменное имя будет иметь значение Facebook.com. |
-| DisplayName | 0:1 | Имя технического профиля, отображаемое для пользователей. |
+| DisplayName | 1:1 | Имя технического профиля, отображаемое для пользователей. |
 | Description | 0:1 | Описание технического профиля, отображаемое для пользователей. |
 | Протокол | 0:1 | Протокол, используемый для взаимодействия с другой стороной. |
 | Метаданные | 0:1 | Коллекция пар "ключ-значение", которые используются в протоколе взаимодействия с конечной точкой во время транзакции. |

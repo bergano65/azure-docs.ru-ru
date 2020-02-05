@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 12/11/2019
-ms.openlocfilehash: 9a6fa62384615f60da88bb41da8ad3538d34e62a
-ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
+ms.openlocfilehash: b330b6176ba9cadc85fad81876caf2583021d503
+ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75754110"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76988640"
 ---
 # <a name="introduction-to-knowledge-stores-in-azure-cognitive-search"></a>Общие сведения о хранилищах знаний в Когнитивном поиске Azure
 
@@ -133,147 +133,11 @@ ms.locfileid: "75754110"
 
 ## <a name="api-reference"></a>Справочные материалы по API
 
-Этот раздел представляет собой версию справочного документа [Создание набора навыков (REST API)](https://docs.microsoft.com/rest/api/searchservice/create-skillset) , измененную для включения определения `knowledgeStore`. 
+REST API версия `2019-05-06-Preview` предоставляет хранилище знаний через дополнительные определения в навыков. Дополнительные сведения о вызове API см. в [статье Создание хранилища знаний с помощью инструкции POST](knowledge-store-create-rest.md) .
 
-### <a name="example---knowledgestore-embedded-in-a-skillset"></a>Пример — Кновледжесторе, внедренный в набор навыков
++ [Создание набора квалификационных навыков (api-version=2019-05-06-Preview)](https://docs.microsoft.com/rest/api/searchservice/2019-05-06-preview/create-skillset) 
++ [Обновление набора навыков (API-Version = 2019 – 05 -06-Preview)](https://docs.microsoft.com/rest/api/searchservice/2019-05-06-preview/update-skillset) 
 
-В следующем примере показано `knowledgeStore` в нижней части определения набора навыков. 
-
-* Используйте **POST** или **WHERE** для формирования запроса.
-* Используйте `api-version=2019-05-06-Preview` версию REST API для доступа к функциональным возможностям магазина базы знаний. 
-
-```http
-POST https://[servicename].search.windows.net/skillsets?api-version=2019-05-06-Preview
-api-key: [admin key]
-Content-Type: application/json
-```
-
-Тело запроса — это документ JSON, который определяет набор навыков, включающий `knowledgeStore`.
-
-```json
-{
-  "name": "my-skillset-name",
-  "description": "Extract organization entities and generate a positive-negative sentiment score from each document.",
-  "skills":
-  [
-    {
-      "@odata.type": "#Microsoft.Skills.Text.EntityRecognitionSkill",
-      "categories": [ "Organization" ],
-      "defaultLanguageCode": "en",
-      "inputs": [
-        {
-          "name": "text",
-          "source": "/document/content"
-        }
-      ],
-      "outputs": [
-        {
-          "name": "organizations",
-          "targetName": "organizations"
-        }
-      ]
-    },
-    {
-      "@odata.type": "#Microsoft.Skills.Text.SentimentSkill",
-      "inputs": [
-        {
-          "name": "text",
-          "source": "/document/content"
-        }
-      ],
-      "outputs": [
-        {
-          "name": "score",
-          "targetName": "mySentiment"
-        }
-      ]
-    },
-  ],
-  "cognitiveServices": 
-    {
-    "@odata.type": "#Microsoft.Azure.Search.CognitiveServicesByKey",
-    "description": "mycogsvcs resource in West US 2",
-    "key": "<YOUR-COGNITIVE-SERVICES-KEY>"
-    },
-    "knowledgeStore": { 
-        "storageConnectionString": "<YOUR-AZURE-STORAGE-ACCOUNT-CONNECTION-STRING>", 
-        "projections": [ 
-            { 
-                "tables": [  
-                { "tableName": "Organizations", "generatedKeyName": "OrganizationId", "source": "/document/organizations*"}, 
-                { "tableName": "Sentiment", "generatedKeyName": "SentimentId", "source": "/document/mySentiment"}
-                ], 
-                "objects": [ ], 
-                "files": [  ]       
-            }    
-        ]     
-    } 
-}
-```
-
-### <a name="request-body-syntax"></a>Синтаксис текста запроса  
-
-В следующем JSON указывается `knowledgeStore`, который является частью [`skillset`](https://docs.microsoft.com/rest/api/searchservice/create-skillset), который вызывается `indexer` (не показано). Если вы уже знакомы с обогащением искусственного интеллекта, набор навыков определяет композицию обогащенного документа. Набор навыков должен содержать по крайней мере один навык, который, скорее всего, является навыком формирователя, если вы модулируете структуры данных.
-
-Ниже описан синтаксис полезных данных запроса.
-
-```json
-{   
-    "name" : "Required for POST, optional for PUT requests which sets the name on the URI",  
-    "description" : "Optional. Anything you want, or null",  
-    "skills" : "Required. An array of skills. Each skill has an odata.type, name, input and output parameters",
-    "cognitiveServices": "A key to Cognitive Services, used for billing.",
-    "knowledgeStore": { 
-        "storageConnectionString": "<YOUR-AZURE-STORAGE-ACCOUNT-CONNECTION-STRING>", 
-        "projections": [ 
-            { 
-                "tables": [ 
-                    { "tableName": "<NAME>", "generatedKeyName": "<FIELD-NAME>", "source": "<DOCUMENT-PATH>" },
-                    { "tableName": "<NAME>", "generatedKeyName": "<FIELD-NAME>", "source": "<DOCUMENT-PATH>" },
-                    . . .
-                ], 
-                "objects": [ 
-                    {
-                    "storageContainer": "<BLOB-CONTAINER-NAME>", 
-                    "source": "<DOCUMENT-PATH>", 
-                    }
-                ], 
-                "files": [ 
-                    {
-                    "storageContainer": "<BLOB-CONTAINER-NAME>",
-                    "source": "/document/normalized_images/*"
-                    }
-                ]  
-            },
-            {
-                "tables": [ ],
-                "objects": [ ],
-                "files":  [ ]
-            }  
-        ]     
-    } 
-}
-```
-
-У `knowledgeStore` есть два свойства: `storageConnectionString` учетной записи хранения Azure и `projections`, определяющие физическое хранилище. Вы можете использовать любую учетную запись хранения, но экономично использовать службы в том же регионе.
-
-Коллекция `projections` содержит объекты проекции. Каждый объект проекции должен иметь `tables`, `objects`, `files` (по одному каждому из них), которые либо указаны, либо имеют значение null. В приведенном выше синтаксисе показаны два объекта, один полностью заданный и другой полностью null. В объекте проекции, когда он выражается в хранилище, все связи между данными, если они обнаружены, сохраняются. 
-
-Создайте столько объектов проекции, сколько требуется для поддержки изоляции и конкретных сценариев (например, структуры данных, используемые для исследования, и те, которые необходимы в рабочей нагрузке для обработки и анализа данных). Можно получить изоляцию и настройку для конкретных сценариев, установив `source` и `storageContainer` или `table` различные значения в объекте. Дополнительные сведения и примеры см. [в разделе Работа с проекциями в хранилище знаний](knowledge-store-projection-overview.md).
-
-|Свойство      | Применяется к | Description|  
-|--------------|------------|------------|  
-|`storageConnectionString`| `knowledgeStore` | Обязательный элемент. В следующем формате: `DefaultEndpointsProtocol=https;AccountName=<ACCOUNT-NAME>;AccountKey=<ACCOUNT-KEY>;EndpointSuffix=core.windows.net`|  
-|`projections`| `knowledgeStore` | Обязательный элемент. Коллекция объектов свойств, состоящая из `tables`, `objects`, `files` и их соответствующих свойств. Неиспользуемые проекции могут иметь значение null.|  
-|`source`| Все проекции| Путь к узлу дерева обогащения, который является корнем проекции. Этот узел является выходным результатом любого опыта в наборе навыков. Пути начинаются с `/document/`, представляющих расширенный документ, но могут быть расширены для `/document/content/` или для узлов в дереве документов. Примеры: `/document/countries/*` (все страны) или `/document/countries/*/states/*` (все Штаты во всех странах). Дополнительные сведения о путях документов см. в разделе [концепции и композиция набора навыков](cognitive-search-working-with-skillsets.md).|
-|`tableName`| `tables`| Таблица, создаваемая в хранилище таблиц Azure. |
-|`storageContainer`| `objects`, `files`| Имя контейнера, создаваемого в хранилище BLOB-объектов Azure. |
-|`generatedKeyName`| `tables`| Столбец, созданный в таблице, который однозначно определяет документ. Конвейер обогащения заполняет этот столбец сгенерированными значениями.|
-
-
-### <a name="response"></a>Ответ  
-
- При успешном выполнении запроса возвращается код состояния 201 (создан). По умолчанию текст ответа содержит объект JSON для созданного определения набора данных. Помните, что хранилище знаний не создается до тех пор, пока не будет вызван индексатор, который ссылается на этот набор навыков.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

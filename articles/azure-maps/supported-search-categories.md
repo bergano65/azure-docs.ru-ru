@@ -8,16 +8,16 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: ''
-ms.openlocfilehash: de44d07b5ebc6a898e3c098f16e553e9d4a46150
-ms.sourcegitcommit: f9601bbccddfccddb6f577d6febf7b2b12988911
+ms.openlocfilehash: 9dbcae6e3947576a7d2bc204c2a3a6fb2e95953d
+ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2020
-ms.locfileid: "75910416"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76988298"
 ---
 # <a name="azure-maps-supported-categories"></a>Поддерживаемые категории в Azure Maps
 
-При выполнении [поиска категорий](https://docs.microsoft.com/rest/api/maps/search/getsearchpoicategory) для точек интереса поддерживается более сотни категорий. Ниже приведен список кодов категорий для имен поддерживаемых категорий. Коды категорий создаются для категорий верхнего уровня. Для всех подкатегорий используется один и тот же код категории. Обратите внимание на то, что этот список категорий может быть изменен при выпуске новых данных.
+При выполнении [поиска категорий](https://docs.microsoft.com/rest/api/maps/search/getsearchpoicategory) для точек интереса поддерживается более сотни категорий. Ниже приведен список кодов категорий для имен поддерживаемых категорий. Коды категорий создаются для категорий верхнего уровня. Для всех подкатегорий используется один и тот же код категории. Список категорий может быть изменен новыми выпусками данных.
 
 <br/>
 

@@ -8,15 +8,15 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
-ms.date: 09/10/2018
+ms.date: 02/03/2020
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: dcebcc3e2021938f3fd3bde236ef08e4f26b8a97
-ms.sourcegitcommit: 5b9287976617f51d7ff9f8693c30f468b47c2141
+ms.openlocfilehash: f0d6d74271cc4ff0be4a653b389cc70ad5c56ef9
+ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2019
-ms.locfileid: "74949897"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76983084"
 ---
 # <a name="boolean-claims-transformations"></a>Преобразования логических утверждений
 
@@ -28,10 +28,10 @@ ms.locfileid: "74949897"
 
 Выполняет операцию AND для двух логических элементов InputClaim и задает элемент OutputClaim с результатом операции.
 
-| Элемент  | TransformationClaimType  | Тип данных  | Заметки |
+| Элемент  | TransformationClaimType  | Тип данных  | Примечания |
 |-------| ------------------------ | ---------- | ----- |
-| inputClaim | inputClaim1 | Логическое | Первый оцениваемый элемент ClaimType. |
-| inputClaim | inputClaim2  | Логическое | Второй оцениваемый элемент ClaimType. |
+| InputClaim | inputClaim1 | Логическое | Первый оцениваемый элемент ClaimType. |
+| InputClaim | inputClaim2  | Логическое | Второй оцениваемый элемент ClaimType. |
 |outputClaim | outputClaim | Логическое | Элементы ClaimType, создаваемые после вызова этого преобразования утверждений (true или false). |
 
 В следующем преобразовании утверждений показано, как выполнять операцию AND для двух логических элементов ClaimType: `isEmailNotExist` и `isSocialAccount`. Для исходящего утверждения `presentEmailSelfAsserted` присваивается значение `true`, если значения обоих входящих утверждений — `true`. На шаге оркестрации можно использовать необходимое условие для предварительной настройки страницы самоподтверждения, только если электронная почта учетной записи социальной сети пуста.
@@ -61,7 +61,7 @@ ms.locfileid: "74949897"
 
 Проверяет, равны ли логические значения двух утверждений, и создает исключение, если это не так.
 
-| Элемент | TransformationClaimType  | Тип данных  | Заметки |
+| Элемент | TransformationClaimType  | Тип данных  | Примечания |
 | ---- | ------------------------ | ---------- | ----- |
 | InputClaim | InputClaim | Логическое | Элемент ClaimType, который необходимо подтвердить. |
 | InputParameter |valueToCompareTo | Логическое | Значение для сравнения (true или false). |
@@ -112,15 +112,53 @@ ms.locfileid: "74949897"
 - Входящие утверждения:
     - **inputClaim**: false.
     - **valueToCompareTo**: true.
-- Результат: возникла ошибка
+- Результат: возникла ошибка.
+
+## <a name="comparebooleanclaimtovalue"></a>компаребулеанклаимтовалуе
+
+Проверяет, что логическое значение утверждений равно `true` или `false`и возвращает результат сжатия. 
+
+| Элемент | TransformationClaimType  | Тип данных  | Примечания |
+| ---- | ------------------------ | ---------- | ----- |
+| InputClaim | InputClaim | Логическое | Элемент ClaimType, который необходимо подтвердить. |
+| InputParameter |valueToCompareTo | Логическое | Значение для сравнения (true или false). |
+| outputClaim | InputClaim | Логическое | ClaimType, который создается после вызова ClaimsTransformation. |
+
+
+В следующем преобразовании утверждений показано, как проверить значение логического элемента ClaimType на основе значения `true`. Если значение параметра `IsAgeOver21Years`, равное `true`, преобразование утверждений возвращает `true`, в противном случае `false`.
+
+```XML
+<ClaimsTransformation Id="AssertAccountEnabled" TransformationMethod="CompareBooleanClaimToValue">
+  <InputClaims>
+    <InputClaim ClaimTypeReferenceId="IsAgeOver21Years" TransformationClaimType="inputClaim" />
+  </InputClaims>
+  <InputParameters>
+    <InputParameter Id="valueToCompareTo" DataType="boolean" Value="true" />
+  </InputParameters>
+  <OutputClaims>
+      <OutputClaim  ClaimTypeReferenceId="accountEnabled" TransformationClaimType="compareResult"/>
+  </OutputClaims>
+</ClaimsTransformation>
+```
+
+### <a name="example"></a>Пример
+
+- Входящие утверждения:
+    - **inputClaim**: false.
+- Входные параметры:
+    - **valueToCompareTo**: true.
+- Исходящие утверждения:
+    - **компарересулт**: false 
+
+
 
 ## <a name="notclaims"></a>NotClaims
 
 Выполняет операцию Not для логического элемента inputClaim и задает элемент outputClaim с результатом операции.
 
-| Элемент | TransformationClaimType | Тип данных | Заметки |
+| Элемент | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
-| inputClaim | InputClaim | Логическое | Обрабатываемое утверждение. |
+| InputClaim | InputClaim | Логическое | Обрабатываемое утверждение. |
 | outputClaim | outputClaim | Логическое | Элементы ClaimType, создаваемые после вызова данного ClaimsTransformation (true или false). |
 
 Это преобразование утверждений используется для выполнения логического отрицания утверждения.
@@ -146,10 +184,10 @@ ms.locfileid: "74949897"
 
 Вычисляет значение Or для двух логических элементов InputClaim и задает элемент outputClaim с результатом операции.
 
-| Элемент | TransformationClaimType | Тип данных | Заметки |
+| Элемент | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
-| inputClaim | inputClaim1 | Логическое | Первый оцениваемый элемент ClaimType. |
-| inputClaim | inputClaim2 | Логическое | Второй оцениваемый элемент ClaimType. |
+| InputClaim | inputClaim1 | Логическое | Первый оцениваемый элемент ClaimType. |
+| InputClaim | inputClaim2 | Логическое | Второй оцениваемый элемент ClaimType. |
 | outputClaim | outputClaim | Логическое | Элементы ClaimType, создаваемые после вызова ClaimsTransformation (true или false). |
 
 В следующем преобразовании утверждений показано, как выполнять операцию `Or` для двух логических элементов ClaimType. На шаге оркестрации можно использовать необходимое условие для предварительной настройки страницы самоподтверждения, если значение одного из утверждений — `true`.
@@ -174,4 +212,3 @@ ms.locfileid: "74949897"
     - **inputClaim2**: false.
 - Исходящие утверждения:
     - **outputClaim**: true.
-

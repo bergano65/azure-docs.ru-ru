@@ -4,12 +4,12 @@ description: Содержит сводку параметров поддержк
 ms.topic: conceptual
 ms.date: 01/28/2020
 ms.author: raynew
-ms.openlocfilehash: 5c29b80f30b024d34ec4e8f65e51b59fc70e8f93
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: 81939292885e33ec6397eb4a437bef63b4ad0787
+ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76846559"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76990731"
 ---
 # <a name="azure-migrate-support-matrix"></a>Матрица поддержки службы "миграция Azure"
 
@@ -67,7 +67,7 @@ ms.locfileid: "76846559"
 --- | --- | ---
 Создание проекта службы "Миграция Azure" | Учетная запись Azure должна иметь разрешения на создание проекта. | Настройка для [VMware](tutorial-prepare-vmware.md#assign-permissions-to-create-project), [Hyper-V](tutorial-prepare-hyper-v.md#assign-permissions-to-create-project)или [физических серверов](tutorial-prepare-physical.md#assign-permissions-to-create-project).
 Регистрация устройства "миграция Azure" | Служба "миграция Azure" использует упрощенное [устройство для переноса Azure](migrate-appliance.md) , чтобы оценить виртуальные машины VMware с помощью службы "миграция Azure", а также запустить [миграцию](server-migrate-overview.md) виртуальных машин VMware без агента с помощью миграции миграций сервера Azure. Это устройство обнаруживает виртуальные машины и инициирует отправку метаданных и данных производительности виртуальной машины в службу "Миграция Azure".<br/><br/> Во время регистрации служба "Миграция Azure" создает два приложения Azure Active Directory (Azure AD), которые однозначно идентифицируют устройство. Ей требуются разрешения на создание этих приложений.<br/><br/> — Первое приложение взаимодействует с конечными точками службы "Миграция Azure".<br/><br/> — Второе приложение обращается к Azure Key Vault, созданному во время регистрации, для хранения информации приложения Azure AD и параметров конфигурации устройства. | Настройка для [VMware](tutorial-prepare-vmware.md#assign-permissions-to-register-the-appliance), [Hyper-V](tutorial-prepare-hyper-v.md#assign-permissions-to-register-the-appliance)или [физических серверов](tutorial-prepare-physical.md#assign-permissions-to-register-the-appliance).
-Создание хранилища ключей для миграции без агента VMware | Чтобы перенести виртуальные машины VMware с миграцией Azure миграция сервера без агента, служба "миграция Azure" создает Key Vault для управления ключами доступа к учетной записи хранения репликации в подписке. Чтобы создать хранилище, необходимо задать разрешения (владельца или участника и администратора доступа пользователей) в группе ресурсов, в которой находится проект службы "миграция Azure". | [Настройка](tutorial-prepare-vmware.md#assign-role-assignment-permissions) разрешений.
+Создание хранилища ключей для миграции без агента VMware | Чтобы перенести виртуальные машины VMware с миграцией Azure миграция сервера без агента, служба "миграция Azure" создает Key Vault для управления ключами доступа к учетной записи хранения репликации в подписке. Чтобы создать хранилище, необходимо задать разрешения (владельца или участника и администратора доступа пользователей) в группе ресурсов, в которой находится проект службы "миграция Azure". | [Настройка](tutorial-prepare-vmware.md#assign-permissions-to-create-a-key-vault) разрешений.
 
 ## <a name="supported-geographies"></a>Поддерживаемые географические регионы
 

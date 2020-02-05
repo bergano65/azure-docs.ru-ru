@@ -8,12 +8,12 @@ ms.author: dobett
 ms.date: 08/23/2019
 ms.topic: conceptual
 manager: philmea
-ms.openlocfilehash: 0e49a5c8edd074c71d5972ee8d9c2e81f9c512ea
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 22ed36c3c55d55ab9a733c2a0552f0ac3dcce1f5
+ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75453970"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76987680"
 ---
 # <a name="create-and-manage-an-azure-iot-central-application-from-the-csp-portal"></a>Создание приложения IoT Central Azure и управление им на портале CSP
 
@@ -39,9 +39,11 @@ Azure IoT Central отображается как служба, доступна
 
 ![Страница создания приложения для CSP](media/howto-create-application-csp/image4-1.png)
 
-## <a name="payment-plan"></a>План оплаты
+![Страница создания приложения для сведений о выставлении счетов CSP](media/howto-create-application-csp/image4-2.png)
 
-Поставщик CSP может создавать только приложения с оплатой по мере использования. Чтобы продемонстрировать Azure IoT Central клиенту, отдельно создайте пробную версию приложения. Дополнительные сведения о пробных версиях приложений и версий с оплатой по мере использования см. [на странице с ценами на Azure IoT Central](https://azure.microsoft.com/pricing/details/iot-central/).
+## <a name="pricing-plan"></a>Ценовой план
+
+В качестве CSP можно создавать только приложения, использующие стандартный тарифный план. Чтобы продемонстрировать IoT Central Azure клиенту, вы можете создать приложение, которое будет использовать тарифный план бесплатно по отдельности. Дополнительные сведения о тарифных планах "бесплатный" и "Стандартный" см. на [странице цен на IOT Central Azure](https://azure.microsoft.com/pricing/details/iot-central/).
 
 ## <a name="application-name"></a>Имя приложения
 
@@ -89,7 +91,7 @@ URL-адрес приложения будет создан автоматиче
 
 | Шаблон приложения | Description |
 | -------------------- | ----------- |
-| Устаревшее приложение   | Создает пустое приложение, в которое необходимо добавить собственные шаблоны устройств и сами устройства. |
+| Приложение прежних версий   | Создает пустое приложение, в которое необходимо добавить собственные шаблоны устройств и сами устройства. |
 
 
 ## <a name="next-steps"></a>Дальнейшие действия

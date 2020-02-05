@@ -9,12 +9,12 @@ ms.author: magoedte
 ms.date: 11/25/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: a5885df67464095061d9a95aa59010a1629fb8f8
-ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
+ms.openlocfilehash: d5adc94061cd656b0654fba6609d36ecfd38c75d
+ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76930350"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76988045"
 ---
 # <a name="troubleshoot-hybrid-runbook-workers"></a>Устранение неполадок с гибридными рабочими ролями Runbook
 
@@ -22,7 +22,7 @@ ms.locfileid: "76930350"
 
 ## <a name="general"></a>Общие
 
-Гибридная рабочая роль Runbook зависит от агента, который используется для взаимодействия с учетной записью автоматизации для регистрации рабочей роли, получения заданий runbook и сообщения о состоянии. Для Windows это агент Log Analytics для Windows (также называемый Microsoft Monitoring Agent (MMA)). Для Linux это Log Analytics агент для Linux.
+Гибридная рабочая роль Runbook зависит от агента, который используется для взаимодействия с учетной записью автоматизации для регистрации рабочей роли, получения заданий runbook и сообщения о состоянии. Для Windows это агент Log Analytics для Windows, который также называется Microsoft Monitoring Agent (MMA). Для Linux это Log Analytics агент для Linux.
 
 ### <a name="runbook-execution-fails"></a>Сценарий: происходит сбой выполнения модуля Runbook
 
@@ -34,11 +34,11 @@ ms.locfileid: "76930350"
 "The job action 'Activate' cannot be run, because the process stopped unexpectedly. The job action was attempted three times."
 ```
 
-Модуль Runbook приостанавливается сразу после третьей попытки выполнения. Существуют условия, которые могут помешать выполнению модуля Runbook. Связанное сообщение об ошибке может не включать дополнительные сведения.
+Работа модуля Runbook будет приостановлена вскоре после попыток выполнить три раза. Существуют условия, которые могут помешать выполнению модуля Runbook. Связанное сообщение об ошибке может не включать дополнительные сведения.
 
 #### <a name="cause"></a>Причина
 
-Вот возможные причины:
+Возможны следующие причины.
 
 * Модули Runbook не могут выполнить аутентификацию с помощью локальных ресурсов.
 
@@ -52,7 +52,7 @@ ms.locfileid: "76930350"
 
 Проверьте, имеет ли компьютер исходящий доступ к *.azure-automation.net на порту 443.
 
-Компьютеры, на которых работает гибридная Рабочая роль Runbook, должны соответствовать минимальным требованиям к оборудованию, прежде чем рабочий процесс будет настроен для размещения этой функции. Модули Runbook и фоновые процессы, которые они используют, могут привести к чрезмерному использованию системы и вызвать задержки заданий или истечения времени ожидания задания Runbook.
+Компьютеры, на которых работает гибридная Рабочая роль Runbook, должны соответствовать минимальным требованиям к оборудованию, прежде чем рабочий процесс будет настроен для размещения этой функции. Модули Runbook и фоновый процесс, которые они используют, могут привести к чрезмерному использованию системы и вызвать задержки заданий или истечения времени ожидания задания Runbook.
 
 Убедитесь, что компьютер, предназначенный для выполнения гибридной рабочей роли Runbook, соответствует минимальным требованиям к оборудованию. Если требования выполнены, отследите использование ЦП и памяти, чтобы определить корреляцию между производительностью процессов гибридной рабочей роли Runbook и Windows. Любой недостаток памяти или ЦП может указывать на необходимость обновления ресурсов. Вы также можете выбрать другой вычислительный ресурс, который соответствует минимальным требованиям и масштабируется в соответствии с требованиями рабочей нагрузки.
 
@@ -72,7 +72,6 @@ At line:3 char:1
     + CategoryInfo          : CloseError: (:) [Connect-AzureRmAccount], ArgumentException
     + FullyQualifiedErrorId : Microsoft.Azure.Commands.Profile.ConnectAzureRmAccountCommand
 ```
-
 #### <a name="cause"></a>Причина
 
 Эта ошибка возникает при попытке использовать [учетную запись запуска от имени](../manage-runas-account.md) в модуле Runbook, который выполняется в гибридной рабочей роли Runbook, в которой отсутствует сертификат учетной записи запуска от имени. У гибридных рабочих ролей Runbook по умолчанию отсутствует локальный ресурс сертификата, который требуется для правильной работы учетной записи запуска от имени.
@@ -80,41 +79,6 @@ At line:3 char:1
 #### <a name="resolution"></a>Разрешение
 
 Если Гибридная Рабочая роль Runbook является виртуальной машиной Azure, вместо нее можно использовать [управляемые удостоверения для ресурсов Azure](../automation-hrw-run-runbooks.md#managed-identities-for-azure-resources) . Этот сценарий упрощает проверку подлинности, позволяя выполнять проверку подлинности в ресурсах Azure с помощью управляемого удостоверения виртуальной машины Azure, а не учетной записи запуска от имени. Если гибридная рабочая роль Runbook установлена на локальном компьютере, необходимо установить сертификат учетной записи запуска от имени на этом компьютере. Чтобы узнать, как установить сертификат, ознакомьтесь с инструкциями по запуску модуля Runbook PowerShell Export-RunAsCertificateToHybridWorker в [запущенных модулях Runbook в гибридной рабочей роли Runbook](../automation-hrw-run-runbooks.md).
-
-## <a name="linux"></a>Linux
-
-Гибридная Рабочая роль Runbook Linux зависит от [агента log Analytics для Linux](../../azure-monitor/platform/log-analytics-agent.md) , чтобы взаимодействовать с учетной записью службы автоматизации для регистрации рабочего процесса, получения заданий Runbook и состояния отчета. Если при регистрации рабочей роли произошла ошибка, это могло произойти по следующим причинам:
-
-### <a name="oms-agent-not-running"></a>Сценарий: агент Log Analytics для Linux не работает
-
-#### <a name="issue"></a>Проблема
-
-Агент Log Analytics для Linux не работает
-
-#### <a name="cause"></a>Причина
-
-Если агент не работает, он не сможет взаимодействовать с службой автоматизации Azure с помощью гибридной рабочей роли Runbook Linux. Агент может не работать по разным причинам.
-
-#### <a name="resolution"></a>Разрешение
-
- Проверьте, запущен ли агент, выполнив следующую команду: `ps -ef | grep python`. Вы увидите выходные данные, похожие на следующие; это процессы python, запущенные от имени учетной записи **nxautomation**. Если решения "Управление обновлениями" и "Служба автоматизации Azure" не включены, ни один из следующих процессов не будет запущен.
-
-```bash
-nxautom+   8567      1  0 14:45 ?        00:00:00 python /opt/microsoft/omsconfig/modules/nxOMSAutomationWorker/DSCResources/MSFT_nxOMSAutomationWorkerResource/automationworker/worker/main.py /var/opt/microsoft/omsagent/state/automationworker/oms.conf rworkspace:<workspaceId> <Linux hybrid worker version>
-nxautom+   8593      1  0 14:45 ?        00:00:02 python /opt/microsoft/omsconfig/modules/nxOMSAutomationWorker/DSCResources/MSFT_nxOMSAutomationWorkerResource/automationworker/worker/hybridworker.py /var/opt/microsoft/omsagent/state/automationworker/worker.conf managed rworkspace:<workspaceId> rversion:<Linux hybrid worker version>
-nxautom+   8595      1  0 14:45 ?        00:00:02 python /opt/microsoft/omsconfig/modules/nxOMSAutomationWorker/DSCResources/MSFT_nxOMSAutomationWorkerResource/automationworker/worker/hybridworker.py /var/opt/microsoft/omsagent/<workspaceId>/state/automationworker/diy/worker.conf managed rworkspace:<workspaceId> rversion:<Linux hybrid worker version>
-```
-
-Ниже перечислены процессы, запущенные для гибридной рабочей роли Runbook Linux. Все они находятся в каталоге `/var/opt/microsoft/omsagent/state/automationworker/`.
-
-
-* **oms.conf** — это значение представляет собой процесс диспетчера рабочих ролей. Он запускается непосредственно из DSC.
-
-* **worker.conf** — это процесс автоматически зарегистрированной рабочей роли, запускаемый диспетчером рабочих ролей. Этот процесс используется в решении "Управление обновлениями" и незаметен для пользователя. Если решение "Управление обновлениями" не включено на компьютере, этот процесс будет отсутствовать.
-
-* **diy/worker.conf** — это процесс гибридной рабочей роли DIY. Процесс гибридной рабочей роли DIY используется для выполнения модулей Runbook пользователя в гибридной рабочей роли Runbook. Он отличается от автоматического зарегистрированного гибридного рабочего процесса в основных деталях, в которых используется другая конфигурация. Этот процесс отсутствует, если решение службы автоматизации Azure отключено, а Гибридная Рабочая роль DIY Linux не зарегистрирована.
-
-Если агент не запущен, выполните следующую команду, чтобы запустить службу: `sudo /opt/microsoft/omsagent/bin/service_control restart`.
 
 ### <a name="error-403-on-registration"></a>Сценарий: Ошибка 403 во время регистрации гибридной рабочей роли Runbook
 
@@ -142,6 +106,41 @@ nxautom+   8595      1  0 14:45 ?        00:00:02 python /opt/microsoft/omsconfi
 Рабочая область Log Analytics и учетная запись службы автоматизации должны находиться в связанном регионе. Список поддерживаемых регионов см. в разделе [сопоставления рабочей области службы автоматизации Azure и log Analytics](../how-to/region-mappings.md).
 
 Также может потребоваться обновить дату и часовой пояс компьютера. При выборе настраиваемого диапазона времени убедитесь, что диапазон находится в формате UTC, который может отличаться от местного часового пояса.
+
+## <a name="linux"></a>Linux
+
+Гибридная Рабочая роль Runbook Linux зависит от [агента log Analytics для Linux](../../azure-monitor/platform/log-analytics-agent.md) , чтобы взаимодействовать с учетной записью службы автоматизации для регистрации рабочего процесса, получения заданий Runbook и состояния отчета. Если при регистрации рабочей роли произошла ошибка, это могло произойти по следующим причинам:
+
+### <a name="oms-agent-not-running"></a>Сценарий: агент Log Analytics для Linux не работает
+
+#### <a name="issue"></a>Проблема
+
+Агент Log Analytics для Linux не работает
+
+#### <a name="cause"></a>Причина
+
+Если агент не работает, он не сможет взаимодействовать с службой автоматизации Azure с помощью гибридной рабочей роли Runbook Linux. Возможно, агент не работает по разным причинам.
+
+#### <a name="resolution"></a>Разрешение
+
+ Проверьте, запущен ли агент, выполнив следующую команду: `ps -ef | grep python`. Вы увидите выходные данные, похожие на следующие; это процессы python, запущенные от имени учетной записи **nxautomation**. Если решения "Управление обновлениями" и "Служба автоматизации Azure" не включены, ни один из следующих процессов не будет запущен.
+
+```bash
+nxautom+   8567      1  0 14:45 ?        00:00:00 python /opt/microsoft/omsconfig/modules/nxOMSAutomationWorker/DSCResources/MSFT_nxOMSAutomationWorkerResource/automationworker/worker/main.py /var/opt/microsoft/omsagent/state/automationworker/oms.conf rworkspace:<workspaceId> <Linux hybrid worker version>
+nxautom+   8593      1  0 14:45 ?        00:00:02 python /opt/microsoft/omsconfig/modules/nxOMSAutomationWorker/DSCResources/MSFT_nxOMSAutomationWorkerResource/automationworker/worker/hybridworker.py /var/opt/microsoft/omsagent/state/automationworker/worker.conf managed rworkspace:<workspaceId> rversion:<Linux hybrid worker version>
+nxautom+   8595      1  0 14:45 ?        00:00:02 python /opt/microsoft/omsconfig/modules/nxOMSAutomationWorker/DSCResources/MSFT_nxOMSAutomationWorkerResource/automationworker/worker/hybridworker.py /var/opt/microsoft/omsagent/<workspaceId>/state/automationworker/diy/worker.conf managed rworkspace:<workspaceId> rversion:<Linux hybrid worker version>
+```
+
+Ниже перечислены процессы, запущенные для гибридной рабочей роли Runbook Linux. Все они находятся в каталоге `/var/opt/microsoft/omsagent/state/automationworker/`.
+
+
+* **OMS. conf** — процесс диспетчера рабочих ролей. Он запускается непосредственно из DSC.
+
+* **Worker. conf** — автоматический зарегистрированный гибридный рабочий процесс, запущенный диспетчером рабочих ролей. Этот процесс используется в решении "Управление обновлениями" и незаметен для пользователя. Если решение "Управление обновлениями" не включено на компьютере, этот процесс будет отсутствовать.
+
+* **DIY/Worker. conf** — рабочий процесс гибридного рабочего процесса DIY. Процесс гибридной рабочей роли DIY используется для выполнения модулей Runbook пользователя в гибридной рабочей роли Runbook. Он отличается от автоматического зарегистрированного гибридного рабочего процесса в основных деталях, в которых используется другая конфигурация. Этот процесс отсутствует, если решение службы автоматизации Azure отключено, а Гибридная Рабочая роль DIY Linux не зарегистрирована.
+
+Если агент не запущен, выполните следующую команду, чтобы запустить службу: `sudo /opt/microsoft/omsagent/bin/service_control restart`.
 
 ### <a name="class-does-not-exist"></a>Сценарий: указанный класс не существует
 
@@ -181,7 +180,7 @@ wget https://raw.githubusercontent.com/Microsoft/OMS-Agent-for-Linux/master/inst
 
 #### <a name="resolution"></a>Разрешение
 
-Журналы сохраняются локально в каждом гибридном компоненте Worker по адресу C:\ProgramData\Microsoft\System Center\Orchestrator\7.2\SMA\Sandboxes. Вы можете проверить, есть ли какие-либо события предупреждений или ошибок в журнале событий **Application and Services логс\микрософт-сма\оператионс** и **Application and Services Logs\Operations Manager** , которые указывают на подключение или другую неполадку, влияющую на адаптации роли к службе автоматизации Azure или к проблемам при нормальных операциях. Дополнительные сведения об устранении неполадок, связанных с агентом Log Analytics, см. [в статье Устранение неполадок с агентом log Analytics Windows](../../azure-monitor/platform/agent-windows-troubleshoot.md).
+Журналы сохраняются локально в каждом гибридном компоненте Worker по адресу C:\ProgramData\Microsoft\System Center\Orchestrator\7.2\SMA\Sandboxes. Вы можете проверить наличие предупреждений или ошибок в журнале событий **Application and Services логс\микрософт-сма\оператионс** и **Application and Services Logs\Operations Manager** , которые указывают на подключение или другую неполадку, влияющую на адаптации роли к службе автоматизации Azure или к проблемам при нормальных операциях. Дополнительные сведения об устранении неполадок, связанных с агентом Log Analytics, см. [в статье Устранение неполадок с агентом log Analytics Windows](../../azure-monitor/platform/agent-windows-troubleshoot.md).
 
 [Выходные данные Runbook и сообщения](../automation-runbook-output-and-messages.md) отправляются в службу автоматизации Azure из гибридных рабочих ролей точно так же, как задания Runbook, которые выполняются в облаке. Потоки Verbose и Progress можно активировать точно так же, как и для других модулей Runbook.
 

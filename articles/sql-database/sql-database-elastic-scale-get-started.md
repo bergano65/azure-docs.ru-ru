@@ -11,12 +11,12 @@ author: anumjs
 ms.author: anjangsh
 ms.reviewer: sstein
 ms.date: 01/25/2019
-ms.openlocfilehash: b5c323bf3d5ff55c2c30961003e8c456cbe39c82
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.openlocfilehash: 4577f611287a27366b1168e07565861c16fe0e38
+ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73823657"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76987028"
 ---
 # <a name="get-started-with-elastic-database-tools"></a>Начало работы с инструментами эластичных баз данных
 
@@ -24,7 +24,7 @@ ms.locfileid: "73823657"
 
 ## <a name="elastic-database-tools-for-java"></a>Инструменты эластичных баз данных для Java
 
-### <a name="prerequisites"></a>Предварительные требования
+### <a name="prerequisites"></a>Технические условия
 
 * Java Developer Kit (JDK) версии 1.8 или более поздней
 * [Maven](https://maven.apache.org/download.cgi)
@@ -70,7 +70,7 @@ ms.locfileid: "73823657"
 
 ## <a name="elastic-database-tools-for-net"></a>Инструменты эластичных баз данных для .NET
 
-### <a name="prerequisites"></a>Предварительные требования
+### <a name="prerequisites"></a>Технические условия
 
 * Visual Studio 2012 или более поздней версии с C#. Загрузите бесплатную версию на странице [Загрузок Visual Studio](https://www.visualstudio.com/downloads/download-visual-studio-vs.aspx).
 * NuGet 2.7 или более поздней версии. Сведения о получении последней версии см. в разделе [Установка NuGet](https://docs.nuget.org/docs/start-here/installing-nuget).
@@ -81,13 +81,13 @@ ms.locfileid: "73823657"
 
 Чтобы загрузить и запустить демонстрационное приложение, выполните следующие действия. 
 
-1. Скачайте образец [Elastic DB Tools for Azure SQL — Getting Started](https://code.msdn.microsoft.com/windowsapps/Elastic-Scale-with-Azure-a80d8dc6) (Инструменты эластичной базы данных SQL Azure — приступая к работе) с сайта MSDN. Распакуйте пример в выбранное расположение.
+1. Скачайте [Пример инструментов эластичной базы данных для SQL Azure начало работы](https://github.com/Azure/elastic-db-tools). Распакуйте пример в выбранное расположение.
 
 2. Чтобы создать проект, откройте решение *ElasticScaleStarterKit.sln* из каталога *C#* .
 
 3. В решении для примера проекта откройте файл *app.config*. Следуйте приведенным там указаниям, чтобы добавить имя сервера Базы данных SQL Azure и учетные данные (имя пользователя и пароль).
 
-4. Создайте и запустите приложение. После соответствующего запроса разрешите Visual Studio восстановить пакеты NuGet решения. В результате из NuGet скачивается последняя версия клиентской библиотеки эластичной базы данных.
+4. Выполните сборку и запустите приложение. После соответствующего запроса разрешите Visual Studio восстановить пакеты NuGet решения. В результате из NuGet скачивается последняя версия клиентской библиотеки эластичной базы данных.
 
 5. Попробуйте устанавливать различные значения параметров, чтобы более подробно исследовать возможности клиентской библиотеки. Обратите внимание на то, какие действия выполняет приложение, отслеживая выводимые им в консоль сообщения, и ознакомьтесь с отвечающим за эти действия программным кодом.
    
@@ -114,7 +114,7 @@ ms.locfileid: "73823657"
 
 * **Объединение имеющихся сегментов.** Объединение сегментов также выполняется с помощью инструмента разбиения и объединения. Дополнительные сведения см. в статье [Перемещение данных между масштабируемыми облачными базами данных](sql-database-elastic-scale-overview-split-and-merge.md).   
 
-## <a name="cost"></a>Стоимость
+## <a name="cost"></a>Затраты
 
 Библиотека инструментов эластичных баз данных предоставляется бесплатно. При использовании инструментов эластичных баз данных не взимаются какие-либо дополнительные платежи, помимо оплаты за работу на платформе Azure. 
 
@@ -127,7 +127,7 @@ ms.locfileid: "73823657"
 Дополнительные сведения об инструментах эластичных баз данных см. в приведенных ниже статьях.
 
 * Примеры кода: 
-  * Инструменты эластичных баз данных ([.NET](https://code.msdn.microsoft.com/Elastic-Scale-with-Azure-a80d8dc6?SRC=VSIDE), [Java](https://search.maven.org/#search%7Cga%7C1%7Ca%3A%22azure-elasticdb-tools%22))
+  * Инструменты эластичных баз данных ([.NET](https://github.com/Azure/elastic-db-tools), [Java](https://search.maven.org/#search%7Cga%7C1%7Ca%3A%22azure-elasticdb-tools%22))
   * [Elastic DB Tools for Azure SQL - Entity Framework Integration](https://code.msdn.microsoft.com/Elastic-Scale-with-Azure-bae904ba?SRC=VSIDE) (Инструменты эластичных баз данных SQL Azure — интеграция с Entity Framework)
   * [Эластичность сегментов в Центре сценариев](https://gallery.technet.microsoft.com/scriptcenter/Elastic-Scale-Shard-c9530cbe)
 * Блог: [объявление, касающееся эластичного масштабирования](https://azure.microsoft.com/blog/20../../introducing-elastic-scale-preview-for-azure-sql-database/)

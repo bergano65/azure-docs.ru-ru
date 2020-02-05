@@ -12,12 +12,12 @@ ms.workload: ''
 ms.topic: article
 ms.date: 01/30/2020
 ms.author: juliako
-ms.openlocfilehash: 91a09df83c8ba474d3124c3322f4e3dd5eb7367c
-ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
+ms.openlocfilehash: 1d28fc37b98493322b9e201ac899b7911dd1d705
+ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76934694"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76988351"
 ---
 # <a name="analyze-video-and-audio-files-with-azure-media-services"></a>Анализ видео и звуковых файлов с помощью служб мультимедиа Azure
 
@@ -30,7 +30,7 @@ ms.locfileid: "76934694"
 
 ## <a name="compliance-privacy-and-security"></a>Соответствие требованиям, конфиденциальность и безопасность
 
-В качестве важного напоминания вы должны соблюдать все применимые законы в использовании индексатора видео, и вы не можете использовать индексатор видео или любую другую службу Azure, которая нарушает права других пользователей или может быть опасной для других. Перед отправкой любых видеороликов, включая любые биометрические данные, в службу индексатора видео для обработки и хранения данных необходимо иметь все необходимые права, включая все возможные разрешения, от отдельных пользователей в видео. Чтобы узнать о соответствии требованиям, конфиденциальности и безопасности в индексаторе видео, [терминах Microsoft Cognitive Services](https://azure.microsoft.com/support/legal/cognitive-services-compliance-and-privacy/). Для обязательств Майкрософт по конфиденциальности и обработки данных ознакомьтесь с заявлением [о конфиденциальности](https://privacy.microsoft.com/PrivacyStatement)корпорации Майкрософт, [условиями веб-служб ("OST")](https://www.microsoft.com/licensing/product-licensing/products) и [дополнением к обработке данных](https://www.microsoftvolumelicensing.com/DocumentSearch.aspx?Mode=3&DocumentTypeId=67) ("DPA"). Дополнительные сведения о конфиденциальности, включая хранение, удаление и уничтожение данных, доступны в OST-файлах и [здесь](../video-indexer/faq.md). С помощью индексатора видео вы соглашаетесь с соблюдением условий Cognitive Services, OST, DPA и заявления о конфиденциальности.
+В качестве важного напоминания вы должны соблюдать все применимые законы в использовании индексатора видео, и вы не можете использовать индексатор видео или любую другую службу Azure, которая нарушает права других пользователей или может быть опасной для других. Перед отправкой любых видеороликов, включая любые биометрические данные, в службу индексатора видео для обработки и хранения данных необходимо иметь все необходимые права, включая все возможные разрешения, от отдельных пользователей в видео. Чтобы узнать о соответствии требованиям, конфиденциальности и безопасности в индексаторе видео, [терминах Microsoft Cognitive Services](https://azure.microsoft.com/support/legal/cognitive-services-compliance-and-privacy/). Для обязательств Майкрософт по конфиденциальности и обработки данных ознакомьтесь с заявлением [о конфиденциальности](https://privacy.microsoft.com/PrivacyStatement)корпорации Майкрософт, [условиями веб-служб](https://www.microsoft.com/licensing/product-licensing/products) ("OST") и [дополнением к обработке данных](https://www.microsoftvolumelicensing.com/DocumentSearch.aspx?Mode=3&DocumentTypeId=67) ("DPA"). Дополнительные сведения о конфиденциальности, включая хранение, удаление и уничтожение данных, доступны в OST-файлах и [здесь](../video-indexer/faq.md). С помощью индексатора видео вы соглашаетесь с соблюдением условий Cognitive Services, OST, DPA и заявления о конфиденциальности.
 
 ## <a name="built-in-presets"></a>Встроенные предустановки
 

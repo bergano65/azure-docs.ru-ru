@@ -3,12 +3,12 @@ title: Изменение параметров кластера Azure Service Fa
 description: В этой статье описываются параметры структуры и политики обновления структур, которые можно настраивать.
 ms.topic: reference
 ms.date: 08/30/2019
-ms.openlocfilehash: 284e8ad566192f027d466ad08d66c2fc5265381d
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: f42cfd1b41ab463c3c3042987b5d0a0b3b00f67e
+ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "76905204"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76986195"
 ---
 # <a name="customize-service-fabric-cluster-settings"></a>Настройка параметров кластера Service Fabric
 В этой статье описываются различные параметры структуры для кластера Service Fabric, которые вы можете настроить. Для кластеров, размещенных в Azure, можно настроить параметры на [портале Azure](https://portal.azure.com) или использовать шаблон Azure Resource Manager. Дополнительные сведения см. в статье об [обновлении конфигурации кластера в Azure](service-fabric-cluster-config-upgrade-azure.md). Чтобы настроить параметры для автономных кластеров, обновите файл *ClusterConfig.json* и обновите конфигурацию в своем кластере. Дополнительные сведения см. в статье об [обновлении конфигурации автономного кластера](service-fabric-cluster-config-upgrade-windows-server.md).
@@ -831,7 +831,7 @@ ms.locfileid: "76905204"
 | **Параметр** | **Допустимые значения** | **Политика обновления** | **Рекомендация или краткое описание** |
 | --- | --- | --- | --- |
 |ContainerNetworkName|Строка, значение по умолчанию — ""| Статические |Сетевое имя для использования при настройке сети контейнера.|
-|ContainerNetworkSetup|Логическое значение, по умолчанию — false| Статические |Указывает, нужно ли настраивать сеть контейнера.|
+|ContainerNetworkSetup|bool, Default — FALSE (Linux), значение по умолчанию — TRUE (Windows)| Статические |Указывает, нужно ли настраивать сеть контейнера.|
 |FabricDataRoot |String | Не разрешено |Корневой каталог данных Service Fabric. По умолчанию для Azure это d:\svcfab. |
 |FabricLogRoot |String | Не разрешено |Корневой каталог журналов Service Fabric. В нем хранятся журналы и трассировки Service Fabric. |
 |NodesToBeRemoved|Строка, значение по умолчанию — ""| Динамические |Узлы, которые должны быть удалены в процессе обновления конфигурации. (Только для автономных развертываний)|

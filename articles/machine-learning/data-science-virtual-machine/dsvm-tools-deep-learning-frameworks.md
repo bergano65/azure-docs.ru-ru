@@ -10,12 +10,12 @@ author: lobrien
 ms.author: laobri
 ms.topic: conceptual
 ms.date: 12/12/2019
-ms.openlocfilehash: 65bc11282726d9e66dbed8fa1fbb75fc1b89c1d1
-ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
+ms.openlocfilehash: 3dfb2c201138a65379aa509ce1bf10894ab6819b
+ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/02/2020
-ms.locfileid: "75615506"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76984716"
 ---
 # <a name="deep-learning-and-ai-frameworks-for-the-azure-data-science-vm"></a>Платформы глубокого обучения и искусственного интеллекта для виртуальной машины Azure для обработки и анализа данных
 Платформы глубокого обучения в DSVM перечислены ниже.
@@ -57,7 +57,7 @@ ms.locfileid: "75615506"
 | Как запустить      | Откройте командную строку (в Windows) или терминал (в Linux), а затем запустите _NVIDIA-SMI_. |
 
 
-## <a name="horovodhttpsgithubcomuberhorovod"></a>[хоровод](https://github.com/uber/horovod)
+## <a name="horovodhttpsgithubcomuberhorovod"></a>[Horovod](https://github.com/uber/horovod)
 
 |    |           |
 | ------------- | ------------- |
@@ -92,7 +92,7 @@ ms.locfileid: "75615506"
 | Настройка и установка на DSVM  | MXNet устанавливается в `C:\dsvm\tools\mxnet` в Windows и `/dsvm/tools/mxnet` в Ubuntu. Привязки Python устанавливаются в Python 3,6 в [Windows 2016](dsvm-tools-languages.md#python-windows-server-2016-edition) и в Python 3,5 в [Linux](./dsvm-tools-languages.md#python-linux-edition)) привязки R также входят в DSVM Ubuntu. |
 | Как запустить      | Терминал: активируйте правильную среду conda, а затем запустите `import mxnet`. <br/>Jupyter: подключитесь к [Jupyter](provision-vm.md#access-the-dsvm) или [JupyterHub](dsvm-ubuntu-intro.md#how-to-access-the-ubuntu-data-science-virtual-machine), а затем откройте каталог `mxnet` для примеров. |
 
-## <a name="mxnet-model-serverhttpsgithubcomawslabsmxnet-model-serverquick-start"></a>[Сервер моделей MXNet](https://github.com/awslabs/mxnet-model-server#quick-start)
+## <a name="mxnet-model-serverhttpsgithubcomawslabsmxnet-model-serverquick-start"></a>[Сервер модели MXNet](https://github.com/awslabs/mxnet-model-server#quick-start)
 
 |    |           |
 | ------------- | ------------- |
@@ -107,7 +107,7 @@ ms.locfileid: "75615506"
 | ------------- | ------------- |
 | Поддерживаемые версии |  |
 | Поддерживаемые выпуски DSVM      | Windows и Linux   |
-| Для чего она нужна? | Средство NVIDIA для выполнения запросов активности GPU |
+| Для чего? | Средство NVIDIA для выполнения запросов активности GPU |
 | Настройка и установка на DSVM  | `nvidia-smi` находится в системном пути. |
 | Как запустить      | На виртуальной машине **с графическим процессором**откройте командную строку (в Windows) или терминал (в Linux), а затем запустите `nvidia-smi`. |
 
@@ -115,7 +115,7 @@ ms.locfileid: "75615506"
 
 |    |           |
 | ------------- | ------------- |
-| Поддерживаемые версии | 1.2.0 |
+| Поддерживаемые версии | 1.2.0 (Ubuntu 16,04, Windows 2016, Windows 2019), 1.4.0 (Ubuntu 18,04) |
 | Поддерживаемые выпуски DSVM      | Linux |
 | Настройка и установка на DSVM  | Устанавливается в [Python 3,5](dsvm-tools-languages.md#python-linux-edition). Включены образцы записных книжек Jupyter, а примеры находятся в папке/dsvm/Samples/pytorch. |
 | Как запустить      | Терминал: активируйте правильную среду, а затем запустите Python.<br/>* [JupyterHub](dsvm-ubuntu-intro.md#how-to-access-the-ubuntu-data-science-virtual-machine): Connect, а затем откройте каталог PyTorch для примеров.  |
@@ -124,7 +124,7 @@ ms.locfileid: "75615506"
 
 |    |           |
 | ------------- | ------------- |
-| Поддерживаемые версии | 1.13 |
+| Поддерживаемые версии | 1,13 |
 | Поддерживаемые выпуски DSVM      | Windows, Linux |
 | Настройка и установка на DSVM  | Устанавливается в Python 3,5 в [Linux](dsvm-tools-languages.md#python-linux-edition) и Python 3,6 в [Windows 2016](dsvm-tools-languages.md#python-windows-server-2016-edition) |
 | Как запустить      | Терминал: активируйте правильную среду, а затем запустите Python. <br/> * Jupyter: подключитесь к [Jupyter](provision-vm.md) или [JupyterHub](dsvm-ubuntu-intro.md#how-to-access-the-ubuntu-data-science-virtual-machine), а затем откройте каталог TensorFlow для примеров.   |
@@ -133,7 +133,7 @@ ms.locfileid: "75615506"
 
 |    |           |
 | ------------- | ------------- |
-| Поддерживаемые версии | 1.12 |
+| Поддерживаемые версии | 1,12 |
 | Поддерживаемые выпуски DSVM      | Linux |
 | Настройка и установка на DSVM  | tensorflow_model_server доступен в окне терминала. |
 | Как запустить      |  Примеры можно найти в [Интернете](https://www.tensorflow.org/serving/).   |

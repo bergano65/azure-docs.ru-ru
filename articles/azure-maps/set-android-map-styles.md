@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: philmea
-ms.openlocfilehash: fe0aa662234166249433634ccb45d1931d176319
-ms.sourcegitcommit: f9601bbccddfccddb6f577d6febf7b2b12988911
+ms.openlocfilehash: 4adb38148acc0c18ac73709efbe7628ca9497897
+ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2020
-ms.locfileid: "75910488"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76988963"
 ---
 # <a name="set-map-style-using-azure-maps-android-sdk"></a>Задание стиля схемы с помощью Azure Maps пакет SDK для Android
 
@@ -59,7 +59,7 @@ grayscale_dark стиля ![](./media/set-android-map-styles/grayscale-dark.png)
 
 ## <a name="set-map-style-in-the-activity-class"></a>Задание стиля схемы в классе действия
 
-Стиль схемы можно задать в классе действия. Скопируйте следующий фрагмент кода в метод **OnCreate ()** класса `MainActivity.java`. Будет задан стиль отображения **satellite_road_labels**.
+Стиль схемы можно задать в классе действия. Скопируйте следующий фрагмент кода в метод **OnCreate ()** класса `MainActivity.java`. Этот код установит стиль отображения **satellite_road_labels**.
 
 ```Java
 mapControl.onReady(map -> {
