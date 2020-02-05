@@ -3,12 +3,12 @@ title: Поставщики ресурсов по службам Azure
 description: Выводит список всех пространств имен поставщиков ресурсов для Azure Resource Manager и отображает службу Azure для этого пространства имен.
 ms.topic: conceptual
 ms.date: 11/11/2019
-ms.openlocfilehash: cdf56c5c84f8837538c2f59b34c3bcf4265d78cb
-ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
+ms.openlocfilehash: d16c5fe148f8b6c907c897963e72cb84bc9ae2d5
+ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75644313"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76984376"
 ---
 # <a name="resource-providers-for-azure-services"></a>Поставщики ресурсов для служб Azure
 
@@ -32,7 +32,7 @@ ms.locfileid: "75644313"
 | Microsoft.AzureActiveDirectory | [Azure Active Directory B2C](../../active-directory-b2c/index.yml) |
 | Microsoft.AzureStack | ядро |
 | Microsoft.Batch | [Пакетная служба](../../batch/index.yml) |
-| Microsoft.Billing | [Выставление счетов](/azure/billing/) |
+| Microsoft.Billing | [Управление затратами и выставление счетов](/azure/billing/) |
 | Microsoft.BingMaps | [Карты Bing](https://docs.microsoft.com/BingMaps/#pivot=main&panel=BingMapsAPI) |
 | Microsoft.Blockchain | [Служба Блокчейн Azure](/azure/blockchain/workbench/) |
 | Microsoft.Blueprint | [Проекты Azure](/azure/governance/blueprints/) |
@@ -130,7 +130,7 @@ ms.locfileid: "75644313"
 | Microsoft.Scheduler | [Планировщик](/azure/scheduler/) |
 | Microsoft.Search | [Поиск Azure](../../search/index.yml) |
 | Microsoft.Security | [Центр безопасности](../../security-center/index.yml) |
-| Microsoft. Секуритинсигхтс | [Azure Sentinel](/azure/sentinel/) |
+| Microsoft. Секуритинсигхтс | [Sentinel Azure](/azure/sentinel/) |
 | Microsoft. Сериалконсоле | [Последовательная консоль Azure](../../virtual-machines/troubleshooting/serial-console-windows.md) |
 | Microsoft.ServiceBus | [Служебная шина](/azure/service-bus/) |
 | Microsoft.ServiceFabric | [Service Fabric](../../service-fabric/index.yml) |

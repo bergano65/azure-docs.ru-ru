@@ -7,15 +7,15 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
-ms.date: 09/10/2018
+ms.date: 01/29/2020
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 5a20f40c893c36823906d5cecadd9be21b8a4fd2
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: 0bda94344a22f39daf104e7b95e33723187c4aa1
+ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76836020"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76983016"
 ---
 # <a name="claimsproviders"></a>ClaimsProviders
 
@@ -52,7 +52,7 @@ ms.locfileid: "76836020"
 | Элемент | Вхождения | Description |
 | ------- | ---------- | ----------- |
 | Домен | 0:1 | Строка, содержащая имя домена для поставщика утверждений. Например, если в техническом профиле указан поставщик удостоверений Facebook, доменное имя будет иметь значение Facebook.com. Если не переопределен технический профиль, это доменное имя используется для всех технических профилей, определенных в поставщике утверждений. Имя домена также можно использовать в **domain_hint**. Дополнительные сведения см. в разделе **Перенаправление операции входа в поставщик социальных сетей** статьи [Настройка прямого входа в систему с помощью Azure Active Directory B2C](direct-signin.md). |
-| DisplayName | 1:1 | Строка с именем технического профиля, отображаемым для пользователей. |
+| DisplayName | 1:1 | Строка, содержащая имя поставщика утверждений. |
 | [Технические профили](technicalprofiles.md) | 0:1 | Набор технических профилей поддерживается поставщиком утверждений. |
 
 **Поставщика утверждений** организует связь технических профилей с поставщиком утверждений. В следующем примере показано поставщика утверждений Azure Active Directory с техническими профилями Azure Active Directory.

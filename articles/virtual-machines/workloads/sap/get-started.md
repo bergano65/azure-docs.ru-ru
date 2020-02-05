@@ -13,15 +13,15 @@ ms.service: virtual-machines-linux
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
-ms.date: 01/28/2020
+ms.date: 02/03/2020
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 3c609c659d99ce6eca0326a5a14cbbb67099e686
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: 42df2d24aad1465a200203e648feb97d4e96fd18
+ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76840474"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76989830"
 ---
 # <a name="use-azure-to-host-and-run-sap-workload-scenarios"></a>Использование Azure для размещения и запуска сценариев рабочей нагрузки SAP
 
@@ -121,6 +121,7 @@ ms.locfileid: "76840474"
 
 ## <a name="change-log"></a>Журнал изменений
 
+- 02/03/2020: измените [высокий уровень доступности SAP NW на виртуальных машинах Azure в SLES для приложений SAP](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/high-availability-guide-suse) и [высокий уровень доступности для SAP NW на виртуальных машинах Azure в SLES с использовании для приложений SAP](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/high-availability-guide-suse-netapp-files) , чтобы удалить предупреждение об использовании тире в именах узлов кластеров в SLES
 - 01/28/2020: изменение [высокого уровня доступности SAP HANA на виртуальных машинах Azure в RHEL](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/sap-hana-high-availability-rhel) для согласования времени ожидания ресурсов кластера SAP HANA с рекомендациями по времени ожидания Red Hat
 - 01/17/2020: измените в [группах размещения Azure с учетом расположения, чтобы обеспечить оптимальную задержку в сети с приложениями SAP](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/sap-proximity-placement-scenarios) , чтобы изменить раздел перемещения существующих виртуальных машин в группу размещения с учетом расположения.
 - 01/17/2020: измените [конфигурации рабочей нагрузки SAP с зоны доступности Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/sap-ha-availability-zones) , чтобы она указывала на процедуру, которая автоматизирует измерения задержки между зоны доступности

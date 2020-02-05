@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: timlt
 ms.custom: codepen
-ms.openlocfilehash: 53e207e33c56455642edc9dcfcf328f5ca87945f
-ms.sourcegitcommit: f9601bbccddfccddb6f577d6febf7b2b12988911
+ms.openlocfilehash: 359f2b42ca6f56087be53a5aeb328fe43a478d63
+ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2020
-ms.locfileid: "75910980"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76988294"
 ---
 # <a name="show-directions-from-a-to-b"></a>Отображение направлений от точки А до точки Б
 
@@ -27,7 +27,7 @@ ms.locfileid: "75910980"
 <iframe height='500' scrolling='no' title='Отображение направлений от точки А до точки Б на карте (модуль службы)' src='//codepen.io/azuremaps/embed/RBZbep/?height=265&theme-id=0&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>Просмотрите фрагмент кода <a href='https://codepen.io/azuremaps/pen/RBZbep/'>Отображение направлений от точки А до точки Б на карте (модуль службы)</a> для службы Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) на сайте <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
-В приведенном выше коде первый блок кода конструирует объект Map и устанавливает механизм проверки подлинности для использования маркера доступа. См. инструкции по [созданию карты](./map-create.md).
+В приведенном выше коде первый блок конструирует объект Map и устанавливает механизм проверки подлинности для использования маркера доступа. См. инструкции по [созданию карты](./map-create.md).
 
 Во втором блоке кода создается `TokenCredential` для проверки подлинности HTTP-запросов к Azure Maps с маркером доступа. Затем он передает `TokenCredential` `atlas.service.MapsURL.newPipeline()` и создает экземпляр [конвейера](https://docs.microsoft.com/javascript/api/azure-maps-rest/atlas.service.pipeline?view=azure-maps-typescript-latest) . `routeURL` представляет собой URL-адрес для операций [маршрута](https://docs.microsoft.com/rest/api/maps/route) Azure Maps.
 
@@ -35,15 +35,15 @@ ms.locfileid: "75910980"
 
 Четвертый блок кода создает объекты начальной и конечной [точек](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.data.point?view=azure-iot-typescript-latest) и добавляет их в объект DataSource.
 
-Линия является [компонентом](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.data.feature?view=azure-iot-typescript-latest) класса LineString. [LineLayer](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.layer.linelayer?view=azure-iot-typescript-latest) отвечает за отображение линейных объектов в оболочке [DataSource](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.source.datasource?view=azure-iot-typescript-latest) в качестве линий на карте. Четвертый блок кода позволяет создать и добавить на карту слой линий. Ознакомьтесь со свойствами слоя линий в разделе о классе [LinestringLayerOptions](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.linelayeroptions?view=azure-iot-typescript-latest).
+Линия — это [функция](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.data.feature?view=azure-iot-typescript-latest) для LineString. [LineLayer](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.layer.linelayer?view=azure-iot-typescript-latest) отвечает за отображение линейных объектов в оболочке [DataSource](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.source.datasource?view=azure-iot-typescript-latest) в качестве линий на карте. Четвертый блок кода позволяет создать и добавить на карту слой линий. Ознакомьтесь со свойствами слоя линий в разделе о классе [LinestringLayerOptions](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.linelayeroptions?view=azure-iot-typescript-latest).
 
-В [слое символов](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.layer.symbollayer?view=azure-iot-typescript-latest) данные на основе точек в оболочке [DataSource](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.source.datasource?view=azure-iot-typescript-latest) преобразовываются для просмотра в качестве символов на карте с помощью текста или значков. Пятый блок кода создает и добавляет на карту слой символов.
+[Слой символов](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.layer.symbollayer?view=azure-iot-typescript-latest) использует текст или значки для визуализации данных на основе точек, инкапсулированных в [источнике](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.source.datasource?view=azure-iot-typescript-latest)данных. Текст или значки отображаются в виде символов на карте. Пятый блок кода создает и добавляет на карту слой символов.
 
 Шестой блок кода запрашивает службу маршрутизации Azure Maps, которая является частью [модуля службы](how-to-use-services-module.md). Метод [калкулатераутедиректионс](https://docs.microsoft.com/javascript/api/azure-maps-rest/atlas.service.routeurl?view=azure-iot-typescript-latest#methods) в RouteUrl используется для получения маршрута между начальной и конечной точками. После этого коллекция функций геоjson из ответа извлекается с помощью метода `geojson.getFeatures()` и добавляется в источник данных. После этого ответ отображается в виде маршрута на карте. Дополнительные сведения о добавлении линии на карту см. [здесь](map-add-line-layer.md).
 
 Последний блок кода задает границы сопоставлений с помощью свойства [сеткамера](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest#setcamera-cameraoptions---cameraboundsoptions---animationoptions-) на карте.
 
-Запрос маршрута, источник данных, слой символов и линий, а также границы камеры создаются и задаются в [прослушивателе событий](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest#events) карты. Таким образом, результаты отображаются после полной загрузки карты.
+Запрос маршрута, источник данных, символ, уровни линии и границы камеры создаются и задаются в [прослушивателе событий](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest#events)на карте. Эта структура кода гарантирует, что результаты будут отображаться только после полной загрузки схемы.
 
 ## <a name="query-the-route-via-fetch-api"></a>Отправка запроса через API FETCH
 
@@ -64,7 +64,7 @@ ms.locfileid: "75910980"
 
 Последний блок кода использует [API выборки](https://fetch.spec.whatwg.org/) для выполнения запроса поиска в [Azure Maps API маршрута](https://docs.microsoft.com/rest/api/maps/route/getroutedirections). Затем выполняется синтаксический анализ ответа. Если ответ был успешным, сведения широты и долготы используются для создания массива с линией, соединяющей эти точки. Затем данные строки добавляются в источник данных для отрисовки маршрута на карте. См. инструкции по [добавлению линий на карту](map-add-line-layer.md).
 
-Запрос маршрута, источник данных, слой символов и линий, а также границы камеры создаются и задаются в [прослушивателе событий](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest#events) карты. Таким образом, результаты отображаются после полной загрузки карты.
+Запрос маршрута, источник данных, символ, уровни линии и границы камеры создаются и задаются в [прослушивателе событий](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest#events)на карте. Опять же, мы хотим убедиться, что результаты отображаются после полной загрузки карт.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

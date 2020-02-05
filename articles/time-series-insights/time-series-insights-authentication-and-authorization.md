@@ -10,14 +10,14 @@ ms.reviewer: v-mamcge, jasonh, kfile
 ms.devlang: csharp
 ms.workload: big-data
 ms.topic: conceptual
-ms.date: 12/09/2019
+ms.date: 02/03/2020
 ms.custom: seodec18
-ms.openlocfilehash: 960eb9b48a158358a076202db0d435feb918a6c8
-ms.sourcegitcommit: 12a26f6682bfd1e264268b5d866547358728cd9a
+ms.openlocfilehash: ff5f7a80e2dcedb1795bae14ee9140c2842303a5
+ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75863484"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76984602"
 ---
 # <a name="authentication-and-authorization-for-azure-time-series-insights-api"></a>Проверка подлинности и авторизация для API Azure Time Series Insights
 
@@ -70,7 +70,7 @@ ms.locfileid: "75863484"
 
    [![Поиск приложения в диалоговом окне "Выбор пользователя"](media/authentication-and-authorization/time-series-insights-data-access-policies-select-user.png)](media/authentication-and-authorization/time-series-insights-data-access-policies-select-user.png#lightbox)
 
-1. Выберите роль. Выберите **читатель** , чтобы запросить данные или **участника** для запроса данных и изменения ссылочных данных. Нажмите кнопку **ОК**.
+1. Выберите роль. Выберите **читатель** , чтобы запросить данные или **участника** для запроса данных и изменения ссылочных данных. Щелкните **ОК**.
 
    [![Выбор читателя или участника в диалоговом окне "Выбор роли пользователя"](media/authentication-and-authorization/time-series-insights-data-access-policies-select-role.png)](media/authentication-and-authorization/time-series-insights-data-access-policies-select-role.png#lightbox)
 
@@ -93,7 +93,7 @@ ms.locfileid: "75863484"
 
    1. Затем маркер безопасности можно передать в заголовок `Authorization`, когда приложение вызывает API Time Series Insights.
 
-* Кроме того, разработчики могут использовать проверку подлинности с помощью MSAL. Дополнительные сведения см. в статье [Миграция в MSAL](https://docs.microsoft.com/azure/active-directory/develop/msal-net-migration) . 
+* Кроме того, разработчики могут использовать проверку подлинности с помощью MSAL. Дополнительные сведения см. в статье о [переходе на MSAL](https://docs.microsoft.com/azure/active-directory/develop/msal-net-migration) и об управлении общедоступными [справочными данными для среды C# Azure Time Series Insights](time-series-insights-manage-reference-data-csharp.md) . 
 
 ## <a name="common-headers-and-parameters"></a>Общие заголовки и параметры
 

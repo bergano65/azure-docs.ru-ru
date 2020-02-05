@@ -8,14 +8,14 @@ manager: femila
 ms.service: media-services
 ms.subservice: video-indexer
 ms.topic: article
-ms.date: 05/15/2019
+ms.date: 02/03/2020
 ms.author: juliako
-ms.openlocfilehash: 4da437fecf0529194d72b2d403302ff81055ec0f
-ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
+ms.openlocfilehash: 8b6d160f71bfe8b2e5c447296d511b54ce6542c8
+ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74892691"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76989779"
 ---
 # <a name="tutorial-use-the-video-indexer-api"></a>Руководство. Использование API Индексатора видео
 
@@ -86,7 +86,7 @@ ms.locfileid: "74892691"
 
 * Получите идентификатор учетной записи с помощью программных средств на **портале разработка Индексатора видео**.
 
-    Используйте API [Get accounts](https://api-portal.videoindexer.ai/docs/services/authorization/operations/Get-Accounts?).
+    Используйте API [получения учетной записи](https://api-portal.videoindexer.ai/docs/services/Operations/operations/Get-Account?) .
 
     > [!TIP]
     > Вы можете создать маркеры доступа для учетных записей, определив `generateAccessTokens=true`.
@@ -207,11 +207,13 @@ Debug.WriteLine(playerWidgetLink);
 
 ```
 
-## <a name="see-also"></a>Дополнительные материалы
+## <a name="see-also"></a>См. также
 
 - [Общие сведения об Индексаторе видео](video-indexer-overview.md)
 - [Регионы](https://azure.microsoft.com/global-infrastructure/services/?products=cognitive-services)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-[Анализ сведений о возвращаемом содержимом JSON](video-indexer-output-json-v2.md).
+- [Просмотр сведений о выходных данных JSON](video-indexer-output-json-v2.md)
+- Ознакомьтесь с [примером кода](https://github.com/Azure-Samples/media-services-video-indexer/tree/master/API) , который демонстрирует важные аспекты отправки и индексирования видео. Следуя коду будет, вы получите хорошее представление об использовании нашего API для базовых функций. Обязательно ознакомьтесь со встроенными комментариями и обратите внимание на рекомендации.
+

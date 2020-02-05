@@ -4,15 +4,15 @@ description: В этой статье описывается, как подкл�
 ms.service: azure-monitor
 ms.subservice: logs
 ms.topic: conceptual
-author: JYOTHIRMAISURI
+author: nolavime
 ms.author: v-jysur
 ms.date: 05/24/2018
-ms.openlocfilehash: 4dbc830ea106dee7ef21a28eb3aee63c94680be2
-ms.sourcegitcommit: 2c59a05cb3975bede8134bc23e27db5e1f4eaa45
+ms.openlocfilehash: a4b8e1ca245d90018647577f338ed0833cbaf324
+ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/05/2020
-ms.locfileid: "75664856"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76990289"
 ---
 # <a name="connect-itsm-productsservices-with-it-service-management-connector"></a>Подключение продуктов и служб ITSM с помощью соединителя управления ИТ-службами
 В этой статье описывается, как настроить в Log Analytics связь между продуктами или службами ITSM и соединителем управления ИТ-службами (ITSM), чтобы централизованно управлять рабочими элементами ITSM. Дополнительные сведения об ITSMC см. в [этом обзоре](../../azure-monitor/platform/itsmc-overview.md).
@@ -195,7 +195,7 @@ ms.locfileid: "75664856"
     - [Настройка OAuth для версии Geneva](https://docs.servicenow.com/bundle/geneva-servicenow-platform/page/administer/security/task/t_SettingUpOAuth.html)
 
 
-- Установить пользовательское приложение (ServiceNow) для интеграции Microsoft Log Analytics. [Узнайте больше](https://store.servicenow.com/sn_appstore_store.do#!/store/application/ab0265b2dbd53200d36cdc50cf961980/1.0.1 ).
+- Установить пользовательское приложение (ServiceNow) для интеграции Microsoft Log Analytics. [Подробнее](https://store.servicenow.com/sn_appstore_store.do#!/store/application/ab0265b2dbd53200d36cdc50cf961980/1.0.1 ).
 - Создать роль пользователя для интеграции в установленном приложении для пользователя. Дополнительные сведения о создании роли пользователя для интеграции см. [здесь](#create-integration-user-role-in-servicenow-app).
 
 ### <a name="connection-procedure"></a>**Процедура подключения**

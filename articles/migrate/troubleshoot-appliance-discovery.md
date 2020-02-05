@@ -6,12 +6,12 @@ ms.manager: abhemraj
 ms.author: hamusa
 ms.topic: troubleshooting
 ms.date: 01/02/2020
-ms.openlocfilehash: 3f3604205d4aedffdda128ec4a6b895786245e56
-ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
+ms.openlocfilehash: e8d0f446442db6eeb0aec38efcc69bdf09c9b56f
+ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76772033"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76990714"
 ---
 # <a name="troubleshoot-the-azure-migrate-appliance-and-discovery"></a>Устранение неполадок с устройством и обнаружением службы "миграция Azure"
 
@@ -39,14 +39,7 @@ ms.locfileid: "76772033"
 Это может произойти, если компьютер устройства находится за прокси-сервером.
 
 - Убедитесь, что вы предоставляете учетные данные для авторизации, если они требуются прокси-серверу.
-- Если вы используете прокси-сервер брандмауэра на основе URL-адресов для управления исходящими подключениями, добавьте эти URL-адреса в список разрешений:
-
-    - [URL-адреса для оценки VMware](https://docs.microsoft.com/azure/migrate/migrate-support-matrix-vmware)
-    - [URL-адреса для оценки Hyper-V](https://docs.microsoft.com/azure/migrate/migrate-support-matrix-hyper-v)
-    - [URL-адреса для миграции без агента VMware](https://docs.microsoft.com/azure/migrate/migrate-support-matrix-vmware)
-    - [URL-адреса для миграции на основе агента VMware](https://docs.microsoft.com/azure/migrate/migrate-support-matrix-vmware)
-    - [URL-адреса для миграции Hyper-V](https://docs.microsoft.com/azure/migrate/migrate-support-matrix-hyper-v)
-
+- Если вы используете прокси-сервер брандмауэра на основе URL-адресов для управления исходящими подключениями, добавьте [эти URL-адреса](migrate-appliance.md#url-access) в список разрешений.
 - Если вы используете перехватчик прокси-сервера для подключения к Интернету, импортируйте сертификат прокси-сервера на виртуальную машину устройства, выполнив [следующие действия](https://docs.microsoft.com/azure/migrate/concepts-collector).
 
 ##  <a name="datetime-synchronization-error"></a>Ошибка синхронизации даты и времени

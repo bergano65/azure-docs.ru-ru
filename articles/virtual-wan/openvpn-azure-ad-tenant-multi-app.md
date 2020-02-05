@@ -7,12 +7,12 @@ ms.service: virtual-wan
 ms.topic: conceptual
 ms.date: 1/10/2020
 ms.author: alzam
-ms.openlocfilehash: b390b5f8b00f61994db820a3af7bce26a3e0a30d
-ms.sourcegitcommit: 014e916305e0225512f040543366711e466a9495
+ms.openlocfilehash: 90244b9dcf30c2ef01d4e57c9d8e35fa1d71f434
+ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75934977"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76985651"
 ---
 # <a name="create-an-azure-active-directory-tenant-for-p2s-openvpn-protocol-connections"></a>Создание клиента Azure Active Directory для подключений по протоколу P2S Опенвпн
 
@@ -27,7 +27,7 @@ ms.locfileid: "75934977"
 Создайте клиент Azure AD, выполнив действия, описанные в статье [Создание нового клиента](../active-directory/fundamentals/active-directory-access-create-new-tenant.md) :
 
 * Название организации
-* Первоначальное доменное имя
+* Исходное доменное имя
 
 Пример:
 
@@ -127,7 +127,7 @@ ms.locfileid: "75934977"
 
 ## <a name="enable-authentication"></a>5. Назначение пользователей для приложений
 
-1. В разделе Azure AD, **корпоративные приложения**выберите только что зарегистрированное приложение и щелкните **свойства**. Убедитесь, что **требуется назначение пользователей?** значение **Да**. Нажмите кнопку **Сохранить**
+1. В разделе Azure AD, **корпоративные приложения**выберите только что зарегистрированное приложение и щелкните **свойства**. Убедитесь, что **требуется назначение пользователей?** значение **Да**. Щелкните **Сохранить**.
 
     ![VPN Azure](./media/openvpn-azure-ad-tenant-multi-app/user2.png)
 
@@ -154,114 +154,116 @@ ms.locfileid: "75934977"
 
    ```powershell
    $aadConfig = New-AzVpnServerConfiguration -ResourceGroupName <ResourceGroup> -Name newAADConfig -VpnProtocol OpenVPN -VpnAuthenticationType AAD -AadTenant $aadTenant -AadIssuer $aadIssuer -AadAudience $aadAudience -Location westcentralus
-> [!NOTE]
-> Do not use the Azure VPN client's application ID in the commands above as it will grant all users access to the VPN gateway. Use the ID of the application(s) you registered.
-
-## <a name="hub"></a>7. Edit hub assignment
-
-1. Navigate to the **Hubs** blade under the virtual WAN.
-2. Select the hub that you want to associate the vpn server configuration to and click the ellipsis (...).
-
-   ![new site](media/virtual-wan-point-to-site-azure-ad/p2s4.jpg)
-3. Click **Edit virtual hub**.
-4. Check the **Include point-to-site gateway** check box and pick the **Gateway scale unit** that you want.
-
-   ![new site](media/virtual-wan-point-to-site-azure-ad/p2s2.jpg)
-5. Enter the **Address pool** from which the VPN clients will be assigned IP addresses.
-6. Click **Confirm**.
-7. The operation will can take up to 30 minutes to complete.
-
-## <a name="device"></a>8. Download VPN profile
-
-Use the VPN profile to configure your clients.
-
-1. On the page for your virtual WAN, click **User VPN configurations**.
-2. At the top of the  page, click **Download user VPN config**.
-3. Once the file has finished creating, you can click the link to download it.
-4. Use the profile file to configure the VPN clients.
-
-4. Extract the downloaded zip file.
-
-5. Browse to the unzipped “AzureVPN” folder.
-
-6. Make a note of the location of the “azurevpnconfig.xml” file. The azurevpnconfig.xml contains the setting for the VPN connection and can be imported directly into the Azure VPN Client application. You can also distribute this file to all the users that need to connect via e-mail or other means. The user will need valid Azure AD credentials to connect successfully.
-## Configure user VPN clients
-
-To connect, you need to download the Azure VPN Client (Preview) and import the VPN client profile that was downloaded in the previous steps on every computer that wants to connect to the VNet.
+   ```
 
 > [!NOTE]
-> Azure AD authentication is supported only for OpenVPN® protocol connections.
+> Не используйте идентификатор приложения клиента VPN Azure в командах выше, так как он предоставит всем пользователям доступ к VPN-шлюзу. Используйте идентификатор зарегистрированного приложения.
+
+## <a name="hub"></a>7. изменение назначения концентратора
+
+1. Перейдите в колонку **Hubs** (Концентраторы) в виртуальной глобальной сети.
+2. Выберите концентратор, с которым вы хотите связать конфигурацию vpn-сервера, и нажмите кнопку с многоточием (...).
+
+   ![новый сайт](media/virtual-wan-point-to-site-azure-ad/p2s4.jpg)
+3. Нажмите **Изменение виртуального концентратора**.
+4. Установите флажок **Включить шлюз "точка — сеть"** и выберите нужную **единицу масштабирования шлюза**.
+
+   ![новый сайт](media/virtual-wan-point-to-site-azure-ad/p2s2.jpg)
+5. Введите **пул адресов**, с которого VPN клиентам будут назначаться IP адреса.
+6. Щелкните **Confirm** (Подтвердить).
+7. Выполнение операции может занять до 30 минут.
+
+## <a name="device"></a>8. скачивание профиля VPN
+
+Используйте профиль VPN для настройки клиентов.
+
+1. На странице Виртуальной глобальной сети щелкните **Конфигурация VPN пользователя**.
+2. В верхней части страницы щелкните **Загрузить конфигурацию пользователя VPN**.
+3. После завершения создания файла вы можете скачать его, щелкнув ссылку.
+4. Используйте файл профиля для настройки VPN-клиента.
+
+4. Извлеките скачанный ZIP-файл.
+
+5. Перейдите к распакованной папке "AzureVPN".
+
+6. Запишите расположение файла "азуревпнконфиг. XML". Азуревпнконфиг. XML содержит параметр для VPN-подключения и может быть импортирован непосредственно в клиентское приложение VPN Azure. Этот файл также можно передать всем пользователям, которым требуется подключение по электронной почте или другим средствам. Для успешного подключения пользователю понадобятся действительные учетные данные Azure AD.
+## <a name="configure-user-vpn-clients"></a>Настройка VPN-клиентов пользователя
+
+Для подключения необходимо скачать VPN-клиент Azure (Предварительная версия) и импортировать профиль VPN-клиента, скачанный на предыдущих шагах на каждый компьютер, который нужно подключить к виртуальной сети.
+
+> [!NOTE]
+> Проверка подлинности Azure AD поддерживается только для подключений по протоколу OpenVPN®.
 >
 
-#### To download the Azure VPN client
+#### <a name="to-download-the-azure-vpn-client"></a>Загрузка VPN-клиента Azure
 
-Use this [link](https://www.microsoft.com/p/azure-vpn-client-preview/9np355qt2sqb?rtc=1&activetab=pivot:overviewtab) to download the Azure VPN Client (Preview).
+Используйте эту [ссылку](https://www.microsoft.com/p/azure-vpn-client-preview/9np355qt2sqb?rtc=1&activetab=pivot:overviewtab), чтобы скачать VPN-клиент Azure (Предварительная версия).
 
-#### <a name="import"></a>To import a client profile
+#### <a name="import"></a>Импорт профиля клиента
 
-1. On the page, select **Import**.
+1. На странице выберите **Import** (Импорт).
 
-    ![import](./media/virtual-wan-point-to-site-azure-ad/import/import1.jpg)
+    ![импорт](./media/virtual-wan-point-to-site-azure-ad/import/import1.jpg)
 
-2. Browse to the profile xml file and select it. With the file selected, select **Open**.
+2. Перейдите к XML-файлу профиля и выберите его. Выбрав файл, выберите **Open** (Открыть).
 
-    ![import](./media/virtual-wan-point-to-site-azure-ad/import/import2.jpg)
+    ![импорт](./media/virtual-wan-point-to-site-azure-ad/import/import2.jpg)
 
-3. Specify the name of the profile and select **Save**.
+3. Укажите имя профиля и выберите **Save** (Сохранить).
 
-    ![import](./media/virtual-wan-point-to-site-azure-ad/import/import3.jpg)
+    ![импорт](./media/virtual-wan-point-to-site-azure-ad/import/import3.jpg)
 
-4. Select **Connect** to connect to the VPN.
+4. Выберите **Connect** (Подключиться), чтобы подключиться к VPN.
 
-    ![import](./media/virtual-wan-point-to-site-azure-ad/import/import4.jpg)
+    ![импорт](./media/virtual-wan-point-to-site-azure-ad/import/import4.jpg)
 
-5. Once connected, the icon will turn green and say **Connected**.
+5. После подключения значок станет зеленым и выдаст **Connected** (Подключено).
 
-    ![import](./media/virtual-wan-point-to-site-azure-ad/import/import5.jpg)
+    ![импорт](./media/virtual-wan-point-to-site-azure-ad/import/import5.jpg)
 
-#### <a name="delete"></a>To delete a client profile
+#### <a name="delete"></a>Удаление профиля клиента
 
-1. Select the ellipsis (...) next to the client profile that you want to delete. Then, select **Remove**.
+1. Нажмите кнопку с многоточием (...) рядом с удаляемым профилем клиента. Затем щелкните **Remove** (Удалить).
 
-    ![delete](./media/virtual-wan-point-to-site-azure-ad/delete/delete1.jpg)
+    ![удалить](./media/virtual-wan-point-to-site-azure-ad/delete/delete1.jpg)
 
-2. Select **Remove** to delete.
+2. Выберите **Remove** (Удалить), чтобы выполнить удаление.
 
-    ![delete](./media/virtual-wan-point-to-site-azure-ad/delete/delete2.jpg)
+    ![удалить](./media/virtual-wan-point-to-site-azure-ad/delete/delete2.jpg)
 
-#### <a name="diagnose"></a>Diagnose connection issues
+#### <a name="diagnose"></a>Diagnose connection issues (Диагностика проблем с подключением)
 
-1. To diagnose connection issues, you can use the **Diagnose** tool. Select the ellipsis (...) next to the VPN connection that you want to diagnose to reveal the menu. Then select **Diagnose**.
+1. Для диагностики проблем с подключением можно использовать средство **Diagnose** (Диагностика). Нажмите кнопку с многоточием (...) рядом с VPN-подключением, которое нужно диагностировать, чтобы открыть меню. Затем выберите **Diagnose** (Диагностика).
 
-    ![diagnose](./media/virtual-wan-point-to-site-azure-ad/diagnose/diagnose1.jpg)
+    ![диагностика](./media/virtual-wan-point-to-site-azure-ad/diagnose/diagnose1.jpg)
 
-2. On the **Connection Properties** page, select **Run Diagnosis**.
+2. На странице **Connection Properties** (Свойства подключения) выберите **Run Diagnosis** (Выполнить диагностику).
 
-    ![diagnose](./media/virtual-wan-point-to-site-azure-ad/diagnose/diagnose2.jpg)
+    ![диагностика](./media/virtual-wan-point-to-site-azure-ad/diagnose/diagnose2.jpg)
 
-3. Sign in with your credentials.
+3. Войдите с помощью своих учетных данных.
 
-    ![diagnose](./media/virtual-wan-point-to-site-azure-ad/diagnose/diagnose3.jpg)
+    ![диагностика](./media/virtual-wan-point-to-site-azure-ad/diagnose/diagnose3.jpg)
 
-4. View the diagnosis results.
+4. Просмотр результатов диагностики.
 
-    ![diagnose](./media/virtual-wan-point-to-site-azure-ad/diagnose/diagnose4.jpg)
+    ![диагностика](./media/virtual-wan-point-to-site-azure-ad/diagnose/diagnose4.jpg)
 
-## <a name="viewwan"></a>View your virtual WAN
+## <a name="viewwan"></a>Просмотр виртуальной глобальной сети
 
-1. Navigate to the virtual WAN.
-2. On the Overview page, each point on the map represents a hub. Hover over any point to view the hub health summary.
-3. In the Hubs and connections section, you can view hub status, site, region, VPN connection status, and bytes in and out.
+1. Перейдите к виртуальной глобальной сети.
+2. На странице обзора каждая точка на карте представляет собой концентратор. Наведите курсор на любую точку, чтобы просмотреть сводку о работоспособности концентратора.
+3. В разделе концентраторов и подключений можно просмотреть сведения о состоянии концентратора, сайте, регионе, состоянии VPN-подключения, приеме и передаче байтов.
 
-## <a name="viewhealth"></a>View your resource health
+## <a name="viewhealth"></a>Просмотр состояния работоспособности ресурса
 
-1. Navigate to your WAN.
-2. On your WAN page, in the **SUPPORT + Troubleshooting** section, click **Health** and view your resource.
+1. Перейдите к своей глобальной сети.
+2. На странице глобальной сети в разделе **Поддержка и устранение неполадок** щелкните **Работоспособность** и просмотрите сведения о своем ресурсе.
 
 
-## <a name="cleanup"></a>Clean up resources
+## <a name="cleanup"></a>Очистка ресурсов
 
-When you no longer need these resources, you can use [Remove-AzureRmResourceGroup](/powershell/module/azurerm.resources/remove-azurermresourcegroup) to remove the resource group and all of the resources it contains. Replace "myResourceGroup" with the name of your resource group and run the following PowerShell command:
+Вы можете удалить ненужную группу ресурсов и все содержащиеся в ней ресурсы с помощью командлета [Remove-AzureRmResourceGroup](/powershell/module/azurerm.resources/remove-azurermresourcegroup). Замените myResourceGroup на имя вашей группы ресурсов и выполните следующую команду PowerShell:
 
 ```azurepowershell-interactive
 Remove-AzureRmResourceGroup -Name myResourceGroup -Force

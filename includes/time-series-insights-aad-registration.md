@@ -8,13 +8,13 @@ ms.service: time-series-insights
 author: deepakpalled
 ms.author: dpalled
 manager: cshankar
-ms.date: 12/06/2019
-ms.openlocfilehash: 4d32980e825f12c76b5c8bf8df0673fa82065751
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.date: 02/03/2020
+ms.openlocfilehash: 5be6e7937a6e1f710b8e2576a9058963413fb6c2
+ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75460420"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76984595"
 ---
 1. На [портале Azure](https://ms.portal.azure.com/) последовательно выберите **Azure Active Directory** > **Регистрация приложений** > **Новая регистрация**.
 
@@ -34,18 +34,30 @@ ms.locfileid: "75460420"
 
 1. В колонке **Аутентификация** указаны важные параметры конфигурации аутентификации. 
 
+    1. Добавьте **URI перенаправления** и настройте **маркеры доступа** , выбрав **+ Добавить платформу**.
+
+    1. Определите, является ли приложение **общедоступным клиентом** или нет, выбрав **Да** или **нет**.
+
+    1. Проверьте, какие учетные записи и клиенты поддерживаются.
+
+    [![настроить неявное предоставление](media/time-series-insights-aad-registration/active-directory-auth-blade.png)](media/time-series-insights-aad-registration/active-directory-auth-blade.png#lightbox)
+
+1. После выбора нужной платформы настройте **URI перенаправления** и **маркеры доступа** на боковой панели справа от пользовательского интерфейса.
+
     1. **URI перенаправления** должны соответствовать адресу, указанному в запросе аутентификации.
 
-        * Для приложений, размещенных в локальной среде разработки, выберите **Public client (mobile & desktop)** (Общедоступный клиент (мобильный и классический)). Убедитесь, что для параметра **Тип клиента по умолчанию** установлено значение "Да".
-        * Для одностраничных приложений, размещенных в Службе приложений Azure, выберите **Веб**.
+        * Для приложений, размещенных в локальной среде разработки, выберите **Public client (mobile & desktop)** (Общедоступный клиент (мобильный и классический)). Не забудьте установить значение **Да**для параметра **общедоступный клиент** .
+        * Для одностраничных приложений, размещенных в службе приложений Azure, выберите **веб**.
+
+    1. Определите, подходит ли **URL-адрес выхода** .
 
     1. Включите неявный поток предоставления разрешений, проверив **маркеры доступа** или **маркеры идентификации**.
 
-   [![создать URI перенаправления и настроить неявное предоставление](media/time-series-insights-aad-registration/active-directory-auth-blade.png)](media/time-series-insights-aad-registration/active-directory-auth-blade.png#lightbox)
+    [![создать URI перенаправления](media/time-series-insights-aad-registration/active-directory-auth-redirect-uri.png)](media/time-series-insights-aad-registration/active-directory-auth-redirect-uri.png#lightbox)
 
-   Выберите команду **Сохранить**.
+    Щелкните **настроить**, а затем **сохранить**.
 
-1. Щелкните **Сертификаты и секреты** и **Создать секрет клиента**, чтобы создать пароль приложения, который клиент сможет использовать для подтверждения подлинности.
+1. Выберите **сертификаты & секреты** , а затем **новый секрет клиента** , чтобы создать пароль приложения, который ваше клиентское приложение может использовать для подтверждения его подлинности.
 
    [![Создание секрета клиента](media/time-series-insights-aad-registration/active-directory-application-keys-save.png)](media/time-series-insights-aad-registration/active-directory-application-keys-save.png#lightbox)
 

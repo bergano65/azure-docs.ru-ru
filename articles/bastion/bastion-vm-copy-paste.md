@@ -1,18 +1,18 @@
 ---
-title: 'Копирование и вставка в виртуальную машину и из нее: Azure бастиона | Документация Майкрософт'
+title: 'Копирование и вставка в виртуальную машину и из нее: Azure бастиона'
 description: Из этой статьи вы узнаете, как копировать и вставлять в виртуальную машину Azure и из нее с помощью бастиона.
 services: bastion
 author: cherylmc
 ms.service: bastion
 ms.topic: conceptual
-ms.date: 10/15/2019
+ms.date: 02/03/2020
 ms.author: cherylmc
-ms.openlocfilehash: ed8d52a4932271020dfb2a010392b312fa38703b
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 0aaf816cdfe7d42fd345eb4f010cf47b1615f462
+ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73519352"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76989541"
 ---
 # <a name="copy-and-paste-to-a-virtual-machine-azure-bastion"></a>Копирование и вставка на виртуальную машину: Azure бастиона
 
@@ -33,11 +33,11 @@ ms.locfileid: "73519352"
 
    ![Палитра инструментов](./media/bastion-vm-manage/left.png)
 
-   ![Буфер обмена](./media/bastion-vm-manage/clipboard.png)
+   ![буфер обмена](./media/bastion-vm-manage/clipboard.png)
 1. Как правило, скопированный текст автоматически отображается в палитре «бастиона Copy Вклеить». Если текст отсутствует, вставьте текст в текстовое поле палитры.
 1. После того как текст появится в текстовой области, его можно вставить в удаленный сеанс.
 
-   ![Авить](./media/bastion-vm-manage/local.png)
+   ![авить](./media/bastion-vm-manage/local.png)
 
 ## <a name="from"></a>Копирование из удаленного сеанса
 
@@ -48,11 +48,11 @@ ms.locfileid: "73519352"
    ![Палитра инструментов](./media/bastion-vm-manage/remote.png)
 1. Во время удаленного сеанса откройте палитру средств доступа к буферу обмена бастиона, выбрав две стрелки. Стрелки расположены в левом центре сеанса.
 
-   ![Буфер обмена](./media/bastion-vm-manage/clipboard2.png)
+   ![буфер обмена](./media/bastion-vm-manage/clipboard2.png)
 1. Как правило, скопированный текст автоматически отображается в палитре «бастиона Copy Вклеить». Если текст отсутствует, вставьте текст в текстовое поле палитры.
 1. После того как текст появится в текстовой области, его можно вставить на локальное устройство.
 
-   ![Авить](./media/bastion-vm-manage/local2.png)
+   ![авить](./media/bastion-vm-manage/local2.png)
  
 ## <a name="next-steps"></a>Дальнейшие действия
 

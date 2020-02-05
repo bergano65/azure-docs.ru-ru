@@ -8,15 +8,15 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
-ms.date: 08/27/2019
+ms.date: 02/03/2020
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 639277177bf63e659e5b0ea804eca5e20f956831
-ms.sourcegitcommit: 5b9287976617f51d7ff9f8693c30f468b47c2141
+ms.openlocfilehash: 98d9730168764f0ba683a246f9ac224c13d3bf31
+ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2019
-ms.locfileid: "74948902"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76982812"
 ---
 # <a name="general-claims-transformations"></a>Преобразования общих утверждений
 
@@ -24,13 +24,42 @@ ms.locfileid: "74948902"
 
 В этой статье приведены примеры использования общих преобразований утверждений схемы инфраструктуры процедур идентификации в Azure Active Directory B2C (Azure AD B2C). Дополнительные сведения см. в статье о [преобразовании утверждений](claimstransformations.md).
 
+## <a name="copyclaim"></a>копиклаим
+
+Копировать значение утверждения в другое. Оба утверждения должны относиться к одному типу.
+
+| Элемент | TransformationClaimType | Тип данных | Примечания |
+| ---- | ----------------------- | --------- | ----- |
+| InputClaim | InputClaim | String, int | Тип утверждения, который необходимо скопировать. |
+| outputClaim | outputClaim | String, int | ClaimType, который создается после вызова ClaimsTransformation. |
+
+Используйте это преобразование утверждений для копирования значения из строки или числового утверждения в другое утверждение. В следующем примере значение утверждения Екстерналемаил копируется в утверждение по электронной почте.
+
+```XML
+<ClaimsTransformation Id="CopyEmailAddress" TransformationMethod="CopyClaim"> 
+  <InputClaims>
+    <InputClaim ClaimTypeReferenceId="externalEmail" TransformationClaimType="inputClaim"/>
+  </InputClaims>
+  <OutputClaims>
+    <OutputClaim ClaimTypeReferenceId="email" TransformationClaimType="outputClaim"/>
+  </OutputClaims>         
+</ClaimsTransformation>
+```
+
+### <a name="example"></a>Пример
+
+- Входящие утверждения:
+    - **inputClaim**: bob@contoso.com.
+- Исходящие утверждения:
+    - **outputClaim**: bob@contoso.com. 
+
 ## <a name="doesclaimexist"></a>DoesClaimExist
 
 Проверяет, существует ли **inputClaim**, и устанавливает для элемента **outputClaim** значение true или false соответственно.
 
-| Элемент | TransformationClaimType | Тип данных | Заметки |
+| Элемент | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
-| inputClaim | InputClaim |Любой | Входящее утверждение, существование которого необходимо проверить. |
+| InputClaim | InputClaim |Любой | Входящее утверждение, существование которого необходимо проверить. |
 | outputClaim | outputClaim | Логическое | ClaimType, который создается после вызова ClaimsTransformation. |
 
 Используйте это преобразование, чтобы проверить, существует ли утверждение или содержит ли оно какое-либо значение. Возвращается логическое значение, указывающее, существует ли утверждение. В следующем примере проверяется, существует ли адрес электронной почты.
@@ -57,11 +86,11 @@ ms.locfileid: "74948902"
 
 Хэширует предоставленный обычный текст, используя случайное значение и секрет. Используется алгоритм хэширования SHA-256.
 
-| Элемент | TransformationClaimType | Тип данных | Заметки |
+| Элемент | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
-| inputClaim | plaintext | string | Входящее утверждение для шифрования |
-| inputClaim | salt | string | Параметр salt. Вы можете создать случайное значение, используя преобразование утверждений `CreateRandomString`. |
-| InputParameter | randomizerSecret | string | Указывает на существующий **ключ политики**Azure AD B2C. Чтобы создать новый ключ политики, в Azure AD B2C клиенте в разделе **Управление**выберите инфраструктура процедур **идентификации**. Выберите **ключи политики** , чтобы просмотреть ключи, доступные в вашем клиенте. Выберите **Добавить**. В пункте **Параметры** выберите **Manual** (Вручную). Укажите имя (префикс *B2C_1A_* может быть добавлен автоматически.). В текстовом поле **секрет** введите любой секрет, который вы хотите использовать, например 1234567890. Для параметра **Использование ключа** выберите **Подпись**. Нажмите кнопку **Создать**. |
+| InputClaim | plaintext | string | Входящее утверждение для шифрования |
+| InputClaim | salt | string | Параметр salt. Вы можете создать случайное значение, используя преобразование утверждений `CreateRandomString`. |
+| InputParameter | randomizerSecret | string | Указывает на существующий **ключ политики**Azure AD B2C. Чтобы создать новый ключ политики, в Azure AD B2C клиенте в разделе **Управление**выберите инфраструктура процедур **идентификации**. Выберите **ключи политики** , чтобы просмотреть ключи, доступные в вашем клиенте. Выберите **Добавить**. В пункте **Параметры** выберите **Manual** (Вручную). Укажите имя (префикс *B2C_1A_* может быть добавлен автоматически.). В текстовом поле **секрет** введите любой секрет, который вы хотите использовать, например 1234567890. Для параметра **Использование ключа** выберите **Подпись**. Щелкните **Создать**. |
 | outputClaim | hash | string | Параметр ClaimType, который создается после вызова этого преобразования утверждений. Утверждение, настроенное в inputClaim `plaintext`. |
 
 ```XML

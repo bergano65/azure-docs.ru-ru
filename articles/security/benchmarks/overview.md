@@ -8,14 +8,14 @@ ms.topic: conceptual
 ms.date: 12/16/2019
 ms.author: mbaldwin
 ms.custom: security-baselines
-ms.openlocfilehash: 2d12fa85fbc134ba2578795619db89f4a5058b26
-ms.sourcegitcommit: 014e916305e0225512f040543366711e466a9495
+ms.openlocfilehash: de6bbb81b04b93cce8ab7ddaf1d983cb7e4a700d
+ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75934762"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76990595"
 ---
-# <a name="overview-of-azure-security-controls"></a>Общие сведения об элементах управления безопасностью в Azure
+# <a name="overview-of-azure-security-controls"></a>Обзор элементов управления безопасностью Azure
 
 В тестовом проходе системы безопасности Azure содержатся рекомендации, которые помогут повысить безопасность приложений и данных в Azure.
 
@@ -51,4 +51,5 @@ ms.locfileid: "75934762"
 ## <a name="next-steps"></a>Следующие шаги
 
 - См. первый контроль безопасности: [Сетевая безопасность](security-control-network-security.md)
+- Ознакомление с [обзором производительности системы безопасности Azure](introduction.md)
 - Скачайте [электронную таблицу Excel для системы безопасности Azure](https://github.com/MicrosoftDocs/SecurityBenchmarks/tree/master/spreadsheets) версии 1

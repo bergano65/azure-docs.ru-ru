@@ -3,12 +3,12 @@ title: Матрица поддержки для агента MARS
 description: В этой статье приводится сводка Azure Backup поддержки при резервном копировании компьютеров, на которых выполняется агент Службы восстановления Microsoft Azure (MARS).
 ms.date: 08/30/2019
 ms.topic: conceptual
-ms.openlocfilehash: 27ad81c42a079485d8eab95bb1250cba41e8fb5b
-ms.sourcegitcommit: d9ec6e731e7508d02850c9e05d98d26c4b6f13e6
+ms.openlocfilehash: a87d778bff5a52f4251d83e401028c9949713e33
+ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/20/2020
-ms.locfileid: "76281280"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76988079"
 ---
 # <a name="support-matrix-for-backup-with-the-microsoft-azure-recovery-services-mars-agent"></a>Матрица поддержки для резервного копирования с помощью агента Служб восстановления Microsoft Azure (MARS)
 
@@ -95,8 +95,6 @@ Windows 7 (Максимальная, Корпоративная, Pro, Дома�
 Windows Server 2016 (Standard, Datacenter и Essentials) | Да | Да | — .NET 4,5 <br> — Windows PowerShell <br> — Последний совместимый распространяемый пакет Microsoft VC + + <br> — Консоль управления Microsoft (MMC) 3,0
 Windows Server 2012 R2 (Standard, Datacenter, Foundation и Essentials) | Да | Да | — .NET 4,5 <br> — Windows PowerShell <br> — Последний совместимый распространяемый пакет Microsoft VC + + <br> — Консоль управления Microsoft (MMC) 3,0
 Windows Server 2012 (Standard, Datacenter, Foundation) | Да | Да |— .NET 4,5 <br> Windows PowerShell <br> — Последний совместимый распространяемый пакет Microsoft VC + + <br> — Консоль управления Microsoft (MMC) 3,0 <br> — Обслуживание образов развертывания и управление ими (DISM. exe)
-Windows Server 2008 R2 (Standard, Enterprise, Datacenter, Foundation) | Да | Да | — .NET 3,5, .NET 4,5 <br> Windows PowerShell <br> -Совместимый распространяемый пакет Microsoft VC + + <br> — Консоль управления Microsoft (MMC) 3,0 <br> — Обслуживание образов развертывания и управление ими (DISM. exe)
-Windows Server 2008 с пакетом обновления 2 (Standard, Datacenter, Foundation) | Да | Нет | — .NET 3,5, .NET 4,5 <br> — Windows PowerShell <br> -Совместимый распространяемый пакет Microsoft VC + + <br> — Консоль управления Microsoft (MMC) 3,0 <br> — Обслуживание образов развертывания и управление ими (DISM. exe) <br> — Виртуальный сервер 2005, базовый + KB KB948515
 Windows Storage Server 2016/2012 R2/2012 (стандартная, Рабочая группа) | Да | Нет | — .NET 4,5 <br> — Windows PowerShell <br> — Последний совместимый распространяемый пакет Microsoft VC + + <br> — Консоль управления Microsoft (MMC) 3,0
 Windows Server 2019 (Standard, Datacenter и Essentials); | Да | Да | — .NET 4,5 <br> — Windows PowerShell <br> — Последний совместимый распространяемый пакет Microsoft VC + + <br> — Консоль управления Microsoft (MMC) 3,0
 

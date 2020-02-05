@@ -8,15 +8,15 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
-ms.date: 09/10/2018
+ms.date: 02/03/2020
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: fbbd7b4bdddf2b58e66cb1203414b5a63eec2f27
-ms.sourcegitcommit: 5b9287976617f51d7ff9f8693c30f468b47c2141
+ms.openlocfilehash: 8f91db91eff3320691a5979d9453bf515ccd59a2
+ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2019
-ms.locfileid: "74951009"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76982302"
 ---
 # <a name="stringcollection-claims-transformations"></a>Преобразования утверждений StringCollection
 
@@ -28,11 +28,11 @@ ms.locfileid: "74951009"
 
 Добавляет строковое утверждение в новое утверждение stringCollection.
 
-| Элемент | TransformationClaimType | Тип данных | Заметки |
+| Элемент | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
-| inputClaim | item | string | Тип ClaimType, добавляемый к исходящему утверждению. |
-| inputClaim | collection | StringCollection | [Необязательно.] Если указано, преобразование утверждений копирует элементы из данной коллекции и добавляет элемент в конец исходящего утверждения коллекции. |
-| outputClaim | collection | StringCollection | Типы ClaimType, создаваемые после вызова этого преобразования ClaimsTransformation. |
+| InputClaim | item | string | Тип ClaimType, добавляемый к исходящему утверждению. |
+| InputClaim | коллекция | stringCollection | [Необязательно.] Если указано, преобразование утверждений копирует элементы из данной коллекции и добавляет элемент в конец исходящего утверждения коллекции. |
+| outputClaim | коллекция | stringCollection | Типы ClaimType, создаваемые после вызова этого преобразования ClaimsTransformation. |
 
 Используйте это преобразование утверждений, чтобы добавить строку в новый или существующий элемент stringCollection. Оно обычно используется в техническом профиле **AAD-UserWriteUsingAlternativeSecurityId**. Перед созданием новой учетной записи социальной сети преобразование утверждений **CreateOtherMailsFromEmail** считывает ClaimType и добавляет значение в элемент ClaimType **otherMails**.
 
@@ -62,11 +62,11 @@ ms.locfileid: "74951009"
 
 Добавляет строковый параметр в новое утверждение stringCollection.
 
-| Элемент | TransformationClaimType | Тип данных | Заметки |
+| Элемент | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
-| inputClaim | collection | StringCollection | [Необязательно.] Если указано, преобразование утверждений копирует элементы из данной коллекции и добавляет элемент в конец исходящего утверждения коллекции. |
+| InputClaim | коллекция | stringCollection | [Необязательно.] Если указано, преобразование утверждений копирует элементы из данной коллекции и добавляет элемент в конец исходящего утверждения коллекции. |
 | InputParameter | item | string | Значение, добавляемое к исходящему утверждению. |
-| outputClaim | collection | StringCollection | Параметр ClaimTypes, который будет создан после вызова этого ClaimsTransformation. |
+| outputClaim | коллекция | stringCollection | Параметр ClaimTypes, который будет создан после вызова этого ClaimsTransformation. |
 
 Используйте это преобразование утверждений, чтобы добавить строковое значение в новый или существующий элемент stringCollection. В следующем примере постоянный адрес электронной почты (admin@contoso.com) добавляется в утверждение **otherMails**.
 
@@ -97,9 +97,9 @@ ms.locfileid: "74951009"
 
 Получает первый элемент из предоставленной коллекции строк.
 
-| Элемент | TransformationClaimType | Тип данных | Заметки |
+| Элемент | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
-| inputClaim | collection | StringCollection | Параметр ClaimTypes, используемый в преобразовании утверждений для получения элемента. |
+| InputClaim | коллекция | stringCollection | Параметр ClaimTypes, используемый в преобразовании утверждений для получения элемента. |
 | outputClaim | extractedItem | string | Типы ClaimType, создаваемые после вызова этого преобразования ClaimsTransformation. Первый элемент в коллекции. |
 
 В следующем примере считывается утверждение **otherMails** и возвращается первый элемент в утверждение **email**.
@@ -121,4 +121,42 @@ ms.locfileid: "74951009"
   - **collection**: ["someone@outlook.com", "someone@contoso.com"].
 - Исходящие утверждения:
   - **extractedItem**: "someone@outlook.com".
+
+
+## <a name="stringcollectioncontains"></a>стрингколлектионконтаинс
+
+Проверяет, содержит ли тип утверждения StringCollection элемент
+
+| Элемент | TransformationClaimType | Тип данных | Примечания |
+| ---- | ----------------------- | --------- | ----- |
+| InputClaim | InputClaim | stringCollection | Тип утверждения, для которого выполняется поиск. |
+|InputParameter|item|string|Искомое значение.|
+|InputParameter|ignoreCase|string|Указывает, следует ли в этом сравнении игнорировать регистр сравниваемых строк.|
+| outputClaim | outputClaim | Логическое | ClaimType, который создается после вызова ClaimsTransformation. Логический индикатор, если коллекция содержит такую строку |
+
+В следующем примере проверяется, содержит ли тип утверждения `roles` stringCollection значение **Admin**.
+
+```XML
+<ClaimsTransformation Id="IsAdmin" TransformationMethod="StringCollectionContains">
+  <InputClaims>
+    <InputClaim ClaimTypeReferenceId="roles" TransformationClaimType="inputClaim"/>
+  </InputClaims>
+  <InputParameters>
+    <InputParameter  Id="item" DataType="string" Value="Admin"/>
+    <InputParameter  Id="ignoreCase" DataType="string" Value="true"/>
+  </InputParameters>
+  <OutputClaims>
+    <OutputClaim ClaimTypeReferenceId="isAdmin" TransformationClaimType="outputClaim"/>
+  </OutputClaims>         
+</ClaimsTransformation>
+```
+
+- Входящие утверждения:
+    - **inputClaim**: ["читатель", "author", "admin"]
+- Входные параметры:
+    - **элемент**: "admin"
+    - **ignoreCase**: "true"
+- Исходящие утверждения:
+    - **outputClaim**: "true"
+
 

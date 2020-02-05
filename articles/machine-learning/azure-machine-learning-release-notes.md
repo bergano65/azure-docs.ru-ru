@@ -10,12 +10,12 @@ ms.author: jmartens
 author: j-martens
 ms.date: 01/21/2020
 ms.custom: seodec18
-ms.openlocfilehash: 07ef3858cc6a514ed60a9d25046dc4ff9566fa31
-ms.sourcegitcommit: 87781a4207c25c4831421c7309c03fce5fb5793f
+ms.openlocfilehash: 963572e19be71bf572357aadeee443696210a262
+ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76546356"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76984971"
 ---
 # <a name="azure-machine-learning-release-notes"></a>Заметки о выпуске Машинное обучение Azure
 
@@ -1236,7 +1236,7 @@ ms.locfileid: "76546356"
 
 ### <a name="azure-machine-learning-data-prep-sdk-v112"></a>Машинное обучение Azure пакета SDK для подготовки данных версии 1.1.2
 
-Примечание. пакет SDK для средства подготовки данных для Python больше не будет устанавливать `numpy` и `pandas` пакеты. См. статью [обновленные инструкции по установке](https://aka.ms/aml-data-prep-installation).
+Примечание. пакет SDK для средства подготовки данных для Python больше не будет устанавливать `numpy` и `pandas` пакеты. См. статью [обновленные инструкции по установке](https://github.com/Microsoft/AMLDataPrepDocs).
 
 + **Новые функции**
   + Теперь можно использовать преобразование «Сведение».

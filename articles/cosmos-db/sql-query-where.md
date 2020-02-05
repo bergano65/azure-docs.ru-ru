@@ -1,21 +1,21 @@
 ---
 title: Предложение WHERE в Azure Cosmos DB
 description: Дополнительные сведения о предложении SQL WHERE для Azure Cosmos DB
-author: markjbrown
+author: timsander1
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 06/10/2019
-ms.author: mjbrown
-ms.openlocfilehash: cd5643d8be06afcd43c5bfe38d6f5e9caa6f906e
-ms.sourcegitcommit: 1d0b37e2e32aad35cc012ba36200389e65b75c21
+ms.date: 02/03/2020
+ms.author: tisande
+ms.openlocfilehash: 31653b598f0f3a79bf7f9c09231b1d111f167a16
+ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72326641"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76982235"
 ---
 # <a name="where-clause-in-azure-cosmos-db"></a>Предложение WHERE в Azure Cosmos DB
 
-Необязательное предложение WHERE (`WHERE <filter_condition>`) указывает условия, которым должны соответствовать исходные элементы JSON, чтобы запрос включал их в результаты. Элемент JSON должен оценивать указанные условия до `true`, чтобы считаться результатом. Слой индекса использует предложение WHERE для определения наименьшего подмножества исходных элементов, которые могут быть частью результата.
+Необязательное предложение WHERE (`WHERE <filter_condition>`) указывает условия, которым должны соответствовать исходные элементы JSON, чтобы запрос включал их в результаты. Элемент JSON должен оценивать указанные условия для `true`, чтобы считаться результатом. Слой индекса использует предложение WHERE для определения наименьшего подмножества исходных элементов, которые могут быть частью результата.
   
 ## <a name="syntax"></a>Синтаксис
   
@@ -36,13 +36,13 @@ WHERE <filter_condition>
    Выражение, представляющее вычисляемое значение. Дополнительные сведения см. в разделе [скалярные выражения](sql-query-scalar-expressions.md) .  
   
 
-## <a name="remarks"></a>Примечания
+## <a name="remarks"></a>Remarks
   
   Чтобы вернуть документ, выражение, указанное в качестве условия фильтра, должно иметь значение true. Только логическое значение true соответствует условию. Все остальные значения, например undefined, Null, false, число, массив, объект, не подходят. 
 
 ## <a name="examples"></a>Примеры
 
-Следующий запрос запрашивает элементы, содержащие свойство `id` со значением `AndersenFamily`. Он исключает любой элемент, у которого нет свойства `id` или значение которого не соответствует `AndersenFamily`.
+Следующий запрос запрашивает элементы, содержащие свойство `id`, значение которого равно `AndersenFamily`. Он исключает любой элемент, не имеющий свойства `id` или, значение которого не совпадает с `AndersenFamily`.
 
 ```sql
     SELECT f.address
@@ -50,7 +50,7 @@ WHERE <filter_condition>
     WHERE f.id = "AndersenFamily"
 ```
 
-Получаются такие результаты:
+Результаты:
 
 ```json
     [{
@@ -74,7 +74,7 @@ WHERE <filter_condition>
 |Побитовые    | \|, &, ^, <<, >>, >>> (сдвиг вправо с заполнением нулями) |
 |Логические    | AND, OR, NOT      |
 |Сравнение | =, !=, &lt;, &gt;, &lt;=, &gt;=, <> |
-|Строка     |  \|\| (объединение) |
+|String     |  \|\| (объединение) |
 
 В следующих запросах используются бинарные операторы:
 
@@ -104,10 +104,10 @@ WHERE <filter_condition>
     WHERE (-c.grade = -5)  -- matching grades == 5
 ```
 
-В запросах также можно использовать ссылки на свойства. Например, `SELECT * FROM Families f WHERE f.isRegistered` возвращает элемент JSON, содержащий свойство `isRegistered` со значением, равным `true`. Любое другое значение, например `false`, `null`, `Undefined`, `<number>`, `<string>`, `<object>` или `<array>`, исключает элемент из результата. 
+В запросах также можно использовать ссылки на свойства. Например, `SELECT * FROM Families f WHERE f.isRegistered` Возвращает элемент JSON, содержащий свойство `isRegistered` со значением, равным `true`. Любое другое значение, например `false`, `null`, `Undefined`, `<number>`, `<string>`, `<object>`или `<array>`, исключает элемент из результата.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - [Начало работы](sql-query-getting-started.md)
-- [Примеры .NET для Azure Cosmos DB](https://github.com/Azure/azure-cosmos-dotnet-v3)
+- [Ключевое слово IN](sql-query-keywords.md#in)
 - [Предложение FROM](sql-query-from.md)

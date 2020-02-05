@@ -3,21 +3,21 @@ title: Модуль средств рисования | Карты Microsoft Azu
 description: Из этой статьи вы узнаете, как задать данные параметров рисования с помощью веб-пакета SDK для карт Microsoft Azure.
 author: walsehgal
 ms.author: v-musehg
-ms.date: 09/04/2019
+ms.date: 01/29/2020
 ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: philmea
-ms.openlocfilehash: 2f23d4d7962fc4a01ac2f9d20dc834bcd2f08be5
-ms.sourcegitcommit: f9601bbccddfccddb6f577d6febf7b2b12988911
+ms.openlocfilehash: 6c64820cdfa03e833bfd2fbad3ba7489170b14e5
+ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2020
-ms.locfileid: "75910589"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76988929"
 ---
 # <a name="use-the-drawing-tools-module"></a>Использование модуля средств рисования
 
-Веб-пакет SDK Azure Maps предоставляет *модуль средств рисования*. Этот модуль упрощает Рисование и изменение фигур на карте с помощью устройства ввода, такого как сенсорный экран с указателем мыши. Основной класс этого модуля — [Диспетчер рисунков](https://docs.microsoft.com/javascript/api/azure-maps-drawing-tools/atlas.drawing.drawingmanager?view=azure-node-latest#setoptions-drawingmanageroptions-) , который предоставляет все возможности, необходимые для рисования и редактирования фигур на карте. Диспетчер рисунков можно использовать напрямую и интегрировать с пользовательским ИНТЕРФЕЙСом панели инструментов или воспользоваться встроенным классом [панели инструментов рисования](https://docs.microsoft.com/javascript/api/azure-maps-drawing-tools/atlas.control.drawingtoolbar?view=azure-node-latest) . 
+Веб-пакет SDK Azure Maps предоставляет *модуль средств рисования*. Этот модуль упрощает Рисование и изменение фигур на карте с помощью устройства ввода, такого как мышь или сенсорный экран. Основным классом этого модуля является [Диспетчер рисунков](https://docs.microsoft.com/javascript/api/azure-maps-drawing-tools/atlas.drawing.drawingmanager?view=azure-node-latest#setoptions-drawingmanageroptions-). Диспетчер рисунков предоставляет все возможности, необходимые для рисования и редактирования фигур на карте. Его можно использовать напрямую и интегрировать с настраиваемым пользовательским ИНТЕРФЕЙСом панели инструментов. Можно также использовать встроенный класс [панели инструментов рисования](https://docs.microsoft.com/javascript/api/azure-maps-drawing-tools/atlas.control.drawingtoolbar?view=azure-node-latest) . 
 
 ## <a name="loading-the-drawing-tools-module-in-a-webpage"></a>Загрузка модуля средств рисования на веб-страницу
 
@@ -30,7 +30,7 @@ ms.locfileid: "75910589"
         <script src="https://atlas.microsoft.com/sdk/javascript/drawing/0.1/atlas-drawing.min.js"></script>
         ```
 
-    - Также можно загрузить модуль средств рисования для исходного кода веб-пакета SDK Azure Maps с помощью пакета [Azure-Maps-Drawing-Tools](https://www.npmjs.com/package/azure-maps-drawing-tools) NPM, а затем разместить его в приложении. Этот пакет также включает определения TypeScript. Выполните эту команду:
+    - Также можно загрузить модуль средств рисования для исходного кода веб-пакета SDK Azure Maps с помощью пакета [Azure-Maps-Drawing-Tools](https://www.npmjs.com/package/azure-maps-drawing-tools) NPM, а затем разместить его в приложении. Этот пакет также включает определения TypeScript. Используйте следующую команду:
     
         > **NPM. Установка Azure-Maps-Drawing-Tools**
     
@@ -43,7 +43,7 @@ ms.locfileid: "75910589"
 
 ## <a name="use-the-drawing-manager-directly"></a>Использование диспетчера рисунков напрямую
 
-Теперь, когда модуль средств рисования загружен в приложение, можно использовать [Диспетчер рисунков](https://docs.microsoft.com/javascript/api/azure-maps-drawing-tools/atlas.drawing.drawingmanager?view=azure-node-latest#setoptions-drawingmanageroptions-) для включения возможностей рисования и редактирования на карте. Можно указать параметры для диспетчера рисунков при его создании или использовать функцию `drawingManager.setOptions()`.
+После загрузки модуля инструменты рисования в приложение можно включить возможности рисования и редактирования с помощью [диспетчера рисунков](https://docs.microsoft.com/javascript/api/azure-maps-drawing-tools/atlas.drawing.drawingmanager?view=azure-node-latest#setoptions-drawingmanageroptions-). Можно указать параметры для диспетчера рисунков при его создании или использовать функцию `drawingManager.setOptions()`.
 
 ### <a name="set-the-drawing-mode"></a>Установка режима рисования
 
@@ -83,7 +83,7 @@ drawingManager = new atlas.drawing.DrawingManager(map,{
 });
 ```
 
-Ниже приведен пример кода, реализующий функциональность, которая позволяет свободно рисовать многоугольник на карте, удерживая нажатой левую кнопку мыши и перетащив ее. 
+ Этот пример кода реализует функции рисования многоугольника на карте. Просто удерживайте левую кнопку мыши и перетащите ее вокруг, свободно.
 
 <br/>
 

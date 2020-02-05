@@ -8,12 +8,12 @@ ms.author: dobett
 ms.date: 08/23/2019
 ms.topic: conceptual
 manager: philmea
-ms.openlocfilehash: 1051ea91378cc2e2facec7e34f6d303297b91ce8
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: f7d31966241e352583ee4338faff8aae7e1a09c6
+ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75454062"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76990255"
 ---
 # <a name="manage-iot-central-from-azure-cli"></a>Управление IoT Central из Azure CLI
 
@@ -23,7 +23,7 @@ ms.locfileid: "75454062"
 
 ## <a name="prerequisites"></a>Технические условия
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 [!INCLUDE [cloud-shell-try-it.md](../../../includes/cloud-shell-try-it.md)]
 
@@ -44,7 +44,7 @@ az group create --location "East US" \
 az iotcentral app create \
   --resource-group "MyIoTCentralResourceGroup" \
   --name "myiotcentralapp" --subdomain "mysubdomain" \
-  --sku S1 --template "iotc-demo@1.0.0" \
+  --sku ST1 --template "iotc-demo@1.0.0" \
   --display-name "My Custom Display Name"
 ```
 
@@ -56,7 +56,7 @@ az iotcentral app create \
 | location          | По умолчанию эта команда использует расположение из группы ресурсов. В настоящее время можно создать IoT Centralное приложение в **США**, **Австралии**, **Азиатско-Тихоокеанский регион**или в **странах Европы** . |
 | name              | Имя приложения на портале Azure. |
 | поддомен         | Поддомен в URL-адресе приложения. В примере URL-адрес приложения — https://mysubdomain.azureiotcentral.com. |
-| sku               | В настоящее время единственное значение — **S1** (уровень "Стандартный"). Ознакомьтесь с разделом [Цены на Azure IoT Central](https://azure.microsoft.com/pricing/details/iot-central/). |
+| sku               | В настоящее время можно использовать либо **ST1** , либо **ST2**. Ознакомьтесь с разделом [Цены на Azure IoT Central](https://azure.microsoft.com/pricing/details/iot-central/). |
 | шаблон          | Шаблон приложения для использования. Дополнительные сведения приведены в таблице ниже. |
 | display-name      | Имя приложения, отображаемое на пользовательском интерфейсе. |
 

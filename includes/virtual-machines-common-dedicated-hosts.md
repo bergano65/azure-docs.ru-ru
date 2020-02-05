@@ -8,17 +8,17 @@ ms.topic: include
 ms.date: 07/26/2019
 ms.author: cynthn
 ms.custom: include file
-ms.openlocfilehash: 207f5180db8a589ed4a68741ac18180370d21788
-ms.sourcegitcommit: f53cd24ca41e878b411d7787bd8aa911da4bc4ec
+ms.openlocfilehash: 934a4fdf7cabb89c4b98c7800252cb24d4e23abf
+ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75833898"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "77013691"
 ---
 ## <a name="limitations"></a>Ограничения
 
 - Масштабируемые наборы виртуальных машин в настоящее время не поддерживаются на выделенных узлах.
-- Поддерживаются следующие серии виртуальных машин: DSv3 и ESv3. 
+- Поддерживаются следующие серии виртуальных машин: DSv3, ESv3 и серия fsv2. 
 
 ## <a name="benefits"></a>Преимущества 
 
@@ -73,7 +73,7 @@ ms.locfileid: "75833898"
 **Управление обслуживанием** предоставляет клиентам возможность пропускать регулярные обновления платформы, запланированные на их отдельных узлах, а затем применять их во время выбора в течение интервала в течение 35 дней.
 
 > [!NOTE]
->  Управление обслуживанием в настоящее время находится на ограниченном этапе предварительной версии и требует процесса адаптации. Примените этот предварительный просмотр, отправив [опрос предварительного утверждения](https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR6lJf7DwiQxNmz51ksQvxV9UNUM3UllWUjBMTFZQUFhHUDI0VTBPQlJFNS4u).
+>  Управление обслуживанием в настоящее время находится в общедоступной предварительной версии. Дополнительные сведения см. в разделе **Управление обновлениями с помощью управления обслуживанием с использованием [интерфейса командной строки](https://docs.microsoft.com/azure/virtual-machines/maintenance-control-cli?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json) или [PowerShell](https://docs.microsoft.com/azure/virtual-machines/maintenance-control-powershell?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json)** .
 
 ## <a name="capacity-considerations"></a>Рекомендации по емкости
 

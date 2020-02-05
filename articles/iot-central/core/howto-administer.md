@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: iot-central
 services: iot-central
 manager: peterpr
-ms.openlocfilehash: 4c729d2502464df021df4d03e989d489b2d1ecea
-ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
+ms.openlocfilehash: 89c4dd294cbbf0953545e1055e32adfc5f7cce28
+ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72954595"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76990799"
 ---
 # <a name="manage-your-iot-central-application"></a>Управление приложением IoT Central
 
@@ -40,9 +40,9 @@ ms.locfileid: "72954595"
 
 ## <a name="copy-an-application"></a>Копирование приложения
 
-Можно создать копию любого приложения без экземпляров устройства, журнала данных устройства и данных пользователя. Копия — это приложение с оплатой по мере использования, за которое взимается плата. Таким образом, нельзя создать бесплатную пробную версию приложения.
+Можно создать копию любого приложения без экземпляров устройства, журнала данных устройства и данных пользователя. В копии используется стандартный тарифный план, за который взимается плата. Вы не можете создать приложение, которое использует тарифный план для бесплатного использования таким образом.
 
-Выберите **Копировать**. В диалоговом окне введите сведения для нового приложения с оплатой по мере использования. Затем выберите **Копировать** , чтобы подтвердить продолжение работы. Дополнительные сведения о полях в этой форме см. в руководстве [Создание приложения Azure IoT Central](quick-deploy-iot-central.md).
+Выберите **Копировать**. В диалоговом окне введите сведения о новом приложении. Затем выберите **Копировать** , чтобы подтвердить продолжение работы. Дополнительные сведения о полях в этой форме см. в руководстве [Создание приложения Azure IoT Central](quick-deploy-iot-central.md).
 
 ![Страница "Параметры приложения"](media/howto-administer/appcopy2.png)
 
@@ -71,13 +71,13 @@ ms.locfileid: "72954595"
 
 Дополнительные сведения см. в следующих репозиториях и пакетах GitHub:
 
-| Язык | Репозиторий | Package |
+| Язык | Хранилище | Пакет |
 | ---------| ---------- | ------- |
 | Узел | [https://github.com/Azure/azure-sdk-for-node](https://github.com/Azure/azure-sdk-for-node) | [https://www.npmjs.com/package/azure-arm-iotcentral](https://www.npmjs.com/package/azure-arm-iotcentral)
 | Python |[https://github.com/Azure/azure-sdk-for-python](https://github.com/Azure/azure-sdk-for-python) | [https://pypi.org/project/azure-mgmt-iotcentral](https://pypi.org/project/azure-mgmt-iotcentral)
 | C# | [https://github.com/Azure/azure-sdk-for-net](https://github.com/Azure/azure-sdk-for-net) | [https://www.nuget.org/packages/Microsoft.Azure.Management.IotCentral](https://www.nuget.org/packages/Microsoft.Azure.Management.IotCentral)
 | Ruby | [https://github.com/Azure/azure-sdk-for-ruby](https://github.com/Azure/azure-sdk-for-ruby) | [https://rubygems.org/gems/azure_mgmt_iot_central](https://rubygems.org/gems/azure_mgmt_iot_central)
-| Java: | [https://github.com/Azure/azure-sdk-for-java](https://github.com/Azure/azure-sdk-for-java) | [https://search.maven.org/search?q=a:azure-mgmt-iotcentral](https://search.maven.org/search?q=a:azure-mgmt-iotcentral)
+| Java | [https://github.com/Azure/azure-sdk-for-java](https://github.com/Azure/azure-sdk-for-java) | [https://search.maven.org/search?q=a:azure-mgmt-iotcentral](https://search.maven.org/search?q=a:azure-mgmt-iotcentral)
 | Go | [https://github.com/Azure/azure-sdk-for-go](https://github.com/Azure/azure-sdk-for-go) | [https://github.com/Azure/azure-sdk-for-go](https://github.com/Azure/azure-sdk-for-go)
 
 ## <a name="next-steps"></a>Дальнейшие действия

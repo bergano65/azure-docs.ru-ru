@@ -14,12 +14,12 @@ ms.author: curtand
 ms.reviewer: krbain
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7547608e227ca6b8d57bc1d4384ccdee181d9970
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 7b5d74c7c599f31694a68e7582a6447af8471508
+ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75430851"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76984954"
 ---
 # <a name="azure-active-directory-cmdlets-for-configuring-group-settings"></a>Настройка параметров групп с помощью командлетов Azure Active Directory
 
@@ -178,9 +178,9 @@ ms.locfileid: "75430851"
    ```powershell
    $Setting = $template.CreateDirectorySetting()
    ```  
-4. Затем обновите параметр Алловаддгуестс
+4. Затем обновите параметр Алловтоаддгуестс
    ```powershell
-   $Setting["AllowAddGuests"] = $False
+   $Setting["AllowToAddGuests"] = $False
    ```  
 5. Затем примените параметр:
   
@@ -234,7 +234,7 @@ ms.locfileid: "75430851"
    AllowGuestsToAccessGroups     True
    GuestUsageGuidelinesUrl
    GroupCreationAllowedGroupId
-   AllowAddGuests              True
+   AllowToAddGuests              True
    UsageGuidelinesUrl            https://guideline.example.com
    ClassificationList
    EnableGroupCreation           True
@@ -271,7 +271,7 @@ ms.locfileid: "75430851"
 
 4. Установите требуемое значение для параметра.
    ```powershell
-   $SettingCopy["AllowAddGuests"]=$False
+   $SettingCopy["AllowToAddGuests"]=$False
    ```
 5. Получите идентификатор группы, к которой нужно применить этот параметр:
    ```powershell
@@ -297,7 +297,7 @@ ms.locfileid: "75430851"
    ```
 3. Обновите настройку группы по мере необходимости, например
    ```powershell
-   $Setting["AllowAddGuests"] = $True
+   $Setting["AllowToAddGuests"] = $True
    ```
 4. Затем получите идентификатор параметра для этой конкретной группы:
    ```powershell

@@ -9,12 +9,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 11/21/2019
 ms.author: cynthn
-ms.openlocfilehash: e2eb77bfd000ecaa3bad5fd3c5792d1aa3a81964
-ms.sourcegitcommit: 42517355cc32890b1686de996c7913c98634e348
+ms.openlocfilehash: 13e4923bc5d49843710c9df4523992f541f1d343
+ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2020
-ms.locfileid: "76964878"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76988028"
 ---
 # <a name="preview-control-updates-with-maintenance-control-and-the-azure-cli"></a>Предварительная версия: Управление обновлениями с помощью управления обслуживанием и Azure CLI
 
@@ -183,7 +183,7 @@ az maintenance update list \
 
 ### <a name="dedicated-host"></a>Выделенный узел
 
-Проверка наличия ожидающих обновлений для выделенного узла (АДХ). В этом примере выходные данные форматируются в виде таблицы для удобства чтения. Замените значения для ресурсов собственными.
+Проверка наличия ожидающих обновлений для выделенного узла. В этом примере выходные данные форматируются в виде таблицы для удобства чтения. Замените значения для ресурсов собственными.
 
 ```azurecli-interactive
 az maintenance update list \

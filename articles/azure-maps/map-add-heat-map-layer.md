@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: ''
 ms.custom: codepen
-ms.openlocfilehash: 98c8db4e4b866879a437d1ffad6668cbae42fcdf
-ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
+ms.openlocfilehash: d52d808813078c2aca7de59aa626e83f96221720
+ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76933584"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76986246"
 ---
 # <a name="add-a-heat-map-layer"></a>Добавление слоя тепловой карты
 
@@ -49,7 +49,7 @@ map.sources.add(datasource);
 //Load a dataset of points, in this case earthquake data from the USGS.
 datasource.importDataFromUrl('https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geojson');
 
-//Create a heatmap and add it to the map.
+//Create a heat map and add it to the map.
 map.layers.add(new atlas.layer.HeatMapLayer(datasource, null, {
   radius: 10,
   opacity: 0.8
@@ -108,13 +108,11 @@ map.layers.add(new atlas.layer.HeatMapLayer(datasource, null, {
 
 > [!TIP]
 > При включении кластеризации в источнике данных точки, близкие друг к другу, группируются в виде кластеризованной точки. Количество точек в каждом кластере можно использовать как выражение веса для тепловой карт. Это может значительно сократить количество отображаемых точек. Число точек в кластере хранится в свойстве `point_count` функции Point: 
-
 > ```JavaScript
 > var layer = new atlas.layer.HeatMapLayer(datasource, null, {
 >    weight: ['get', 'point_count']
 > });
 > ```
-
 > Если радиус кластеризации составляет всего несколько пикселей, то в отрисовке будет отображаться небольшое визуальное различие. Большая часть радиуса группирует несколько точек в каждый кластер и повышает производительность тепловой карты.
 
 ## <a name="next-steps"></a>Дальнейшие действия

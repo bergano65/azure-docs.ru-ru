@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: philmea
-ms.openlocfilehash: 4bf13477bfee39b5be39715374592811e8f8cc89
-ms.sourcegitcommit: f9601bbccddfccddb6f577d6febf7b2b12988911
+ms.openlocfilehash: bcf100236d4a2a707a007a24e9e51105cc9ca0ac
+ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2020
-ms.locfileid: "75911025"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76991397"
 ---
 # <a name="weather-services-in-azure-maps"></a>Службы погоды в Azure Maps
 
@@ -21,13 +21,13 @@ ms.locfileid: "75911025"
 
 ## <a name="unit-types"></a>Типы единиц
 
-Некоторые API-интерфейсы службы погоды позволяют пользователю указать, должны ли данные возвращаться в метрике или в германской единицах. Возвращаемый ответ для этих API также будет включать в себя единицах UnitType, числовое значение, которое можно использовать для перевода единиц измерения. Чтобы интерпретировать эти значения, см. таблицу ниже.
+Некоторые API-интерфейсы службы погоды позволяют пользователю указать, должны ли данные возвращаться в метрике или в германской единицах. Возвращаемые ответы для этих API включают единицах UnitType и числовое значение, которое можно использовать для переводов единиц. Чтобы интерпретировать эти значения, см. таблицу ниже.
 
 |Единицах UnitType|Description         |
 |--------|--------------------|
 |0       |футах                |
 |1       |ражают              |
-|2       |км               |
+|2       |километров               |
 |3       |миллиметр          |
 |4       |сантиметр          |
 |5       |хода               |
@@ -45,14 +45,14 @@ ms.locfileid: "75911025"
 |17      |Цельсия             |
 |18      |Фаренгейта          |
 |19      |Кельвина              |
-|20      |percent             |
+|20      |абсолютно             |
 |21      |FLOAT               |
 |22      |integer             |
 
 
 ## <a name="weather-icons"></a>Значки погоды
 
-Некоторые API службы погоды возвращают коды значков (Иконкоде) в ответе — числовое значение, которое можно использовать для определения значка. Не следует напрямую связываться с этими изображениями из приложений, URL-адреса могут и изменяться.
+Некоторые API службы погоды возвращают `iconCode` в ответе. `iconCode` является числовым значением, используемым для определения значка. Не следует напрямую связываться с этими изображениями из приложений, URL-адреса могут и изменяться.
 
 | Номер значка |Значок| День | Ночной | Текст |
 |-------------|:----:|-----|-------|------|
@@ -62,7 +62,7 @@ ms.locfileid: "75911025"
 | 4           |![](./media/weather-services-concepts/intermittent-clouds.png)         | Да |  Нет    | Временные облака|
 | 5           |![](./media/weather-services-concepts/hazy-sunshine.png)               | Да |  Нет    | Хази солнца |
 | 6           |![](./media/weather-services-concepts/mostly-cloudy.png)               | Да |  Нет    | В основном это облачная|
-| 7           |![](./media/weather-services-concepts/cloudy-i.png)                     | Да |  Да   | облачно |
+| 7           |![](./media/weather-services-concepts/cloudy-i.png)                     | Да |  Да   | Облачно |
 | 8           |![](./media/weather-services-concepts/dreary-overcast.png)             | Да |  Да   | Дреари (Оверкаст)|
 | 11           |![](./media/weather-services-concepts/fog-i.png)                       | Да |  Да   | Туман|
 | 12           |![](./media/weather-services-concepts/showers-i.png)                   | Да |  Да   | Ливни|
@@ -77,7 +77,7 @@ ms.locfileid: "75911025"
 | 21           |![](./media/weather-services-concepts/partly-sunny-flurries.png)       | Да |  Нет    | Частично Sunny с Флурриес|
 | 22           |![](./media/weather-services-concepts/snow-i.png)                      | Да |  Да   | Снег|
 | 23           |![](./media/weather-services-concepts/mostly-cloudy-snow.png)          | Да |  Нет    | В основном облачное с снег|
-| 24           |![](./media/weather-services-concepts/ice-i.png)                       | Да |  Да   | Айс (Ice) |
+| 24           |![](./media/weather-services-concepts/ice-i.png)                       | Да |  Да   | Ice |
 | 25           |![](./media/weather-services-concepts/sleet-i.png)                     | Да |  Да   | слит|
 | 26           |![](./media/weather-services-concepts/freezing-rain.png)              | Да |  Да   | Замораживание дождя|
 | 29           |![](./media/weather-services-concepts/rain-snow.png)                  | Да |  Да   | Дождя и снег|
@@ -100,7 +100,7 @@ ms.locfileid: "75911025"
 
 ## <a name="radar-and-satellite-imagery-color-scale"></a>Цветовая шкала лепестковых и вспомогательных изображений
 
-С помощью [Get-API плитки карты v2](https://aka.ms/AzureMapsWeatherTiles) пользователи могут запрашивать последние лепестковые и инфракрасные спутниковые изображения. Сведения о том, как интерпретировать цвета, используемые для лепестковых и вспомогательных плиток, см. в разделе ниже.
+С помощью [Get-API плитки карты v2](https://aka.ms/AzureMapsWeatherTiles) пользователи могут запрашивать последние лепестковые и инфракрасные спутниковые изображения. Ниже приведены сведения о том, как интерпретировать цвета, используемые для лепестковых и вспомогательных плиток.
 
 ### <a name="radar-images"></a>Лепестковые изображения
 

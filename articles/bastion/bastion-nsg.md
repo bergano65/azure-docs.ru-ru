@@ -1,18 +1,18 @@
 ---
-title: Работа с виртуальными машинами и группы безопасности сети в Azure бастиона | Документация Майкрософт
+title: Работа с виртуальными машинами и группы безопасности сети в Azure бастиона
 description: В этой статье описывается, как внедрить NSG Access с помощью Azure бастиона
 services: bastion
 author: ashjain
 ms.service: bastion
 ms.topic: conceptual
-ms.date: 10/16/2019
+ms.date: 02/03/2020
 ms.author: ashishj
-ms.openlocfilehash: 8fb48b3dbe0d727f92bd2e0fec91ac2dbf33338b
-ms.sourcegitcommit: 87781a4207c25c4831421c7309c03fce5fb5793f
+ms.openlocfilehash: 622333f58fb7ddf66fdf5be51e961a3005294afe
+ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76547631"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76989473"
 ---
 # <a name="working-with-nsg-access-and-azure-bastion"></a>Работа с NSG Access и Azure бастиона
 

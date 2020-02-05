@@ -7,15 +7,15 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
-ms.date: 09/10/2018
+ms.date: 01/31/2020
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 5737a53d3eca0da440f178f9fd34adf5e968dd62
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: b49c873112358db4fec2992ef3d2d61161e8b373
+ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76840185"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76982421"
 ---
 # <a name="trustframeworkpolicy"></a>TrustFrameworkPolicy
 
@@ -45,7 +45,7 @@ ms.locfileid: "76840185"
 | TenantId | Да | Уникальный идентификатор арендатора, к которому относится эта политика. |
 | PolicyId | Да | Уникальный идентификатор политики. Этот идентификатор должен начинаться с префикса *B2C_1A_* |
 | PublicPolicyUri | Да | Универсальный код ресурса (URI) для политики, который является сочетанием идентификатора арендатора и идентификатора политики. |
-| DeploymentMode | Нет | Возможные значения: `Production`, `Debugging` или `Development`. Значение по умолчанию — `Production`. Это свойство используется при отладке политики. Дополнительные сведения см. в статье о [сборе журналов](troubleshoot-with-application-insights.md). |
+| DeploymentMode | Нет | Возможные значения: `Production`или `Development`. Значение по умолчанию — `Production`. Это свойство используется при отладке политики. Дополнительные сведения см. в статье о [сборе журналов](troubleshoot-with-application-insights.md). |
 | UserJourneyRecorderEndpoint | Нет | Конечная точка, которая используется, когда для **DeploymentMode** задано значение `Development`. Значение должно быть равно `urn:journeyrecorder:applicationinsights`. Дополнительные сведения см. в статье о [сборе журналов](troubleshoot-with-application-insights.md). |
 
 

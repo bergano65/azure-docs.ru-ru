@@ -5,14 +5,14 @@ services: bastion
 author: cherylmc
 ms.service: bastion
 ms.topic: conceptual
-ms.date: 10/14/2019
+ms.date: 02/03/2020
 ms.author: cherylmc
-ms.openlocfilehash: 446784155cf6f72cfaa80523ed3913eacc7e5cfc
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 4f513aaf113ef4bd6e75e5c4b31e0f0252d45f10
+ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73513137"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76988096"
 ---
 # <a name="connect-to-a-virtual-machine-scale-set-using-azure-bastion"></a>Подключение к масштабируемому набору виртуальных машин с помощью Azure бастиона
 
@@ -26,7 +26,7 @@ ms.locfileid: "73513137"
 
 1. Откройте [портал Azure](https://portal.azure.com). Перейдите к масштабируемому набору виртуальных машин, к которому необходимо подключиться.
 
-   ![Осуществляется](./media/bastion-connect-vm-scale-set/1.png)
+   ![осуществляется](./media/bastion-connect-vm-scale-set/1.png)
 2. Перейдите к экземпляру масштабируемого набора виртуальных машин, к которому необходимо подключиться, и нажмите кнопку **подключить**. При использовании RDP-подключения масштабируемый набор виртуальных машин должен быть масштабируемым набором виртуальных машин Windows.
 
    ![масштабируемый набор виртуальных машин](./media/bastion-connect-vm-scale-set/2.png)
@@ -35,7 +35,7 @@ ms.locfileid: "73513137"
    ![Вкладка бастиона](./media/bastion-connect-vm-scale-set/3.png)
 4. На вкладке бастиона введите имя пользователя и пароль для масштабируемого набора виртуальных машин, а затем нажмите кнопку **подключить**.
 
-   ![Соединиться](./media/bastion-connect-vm-scale-set/4.png)
+   ![подключение](./media/bastion-connect-vm-scale-set/4.png)
 5. Подключение RDP к этой виртуальной машине через бастиона будет открываться непосредственно в портал Azure (через HTML5) с помощью порта 443 и службы бастиона.
 
 ## <a name="next-steps"></a>Дальнейшие действия
