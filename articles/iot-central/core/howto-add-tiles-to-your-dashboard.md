@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: iot-central
 services: iot-central
 manager: philmea
-ms.openlocfilehash: b13349ae4293f6377429e9dc72b6c2cb43f92348
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 35965f238ed5b7768dd174788453838c917adb32
+ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75435114"
+ms.lasthandoff: 02/05/2020
+ms.locfileid: "77023231"
 ---
 # <a name="configure-the-application-dashboard"></a>Настройка панели мониторинга приложения
 
@@ -47,7 +47,6 @@ ms.locfileid: "75435114"
 
 > [!div class="mx-imgBorder"]
 > ![вкладку "панель мониторинга" с отображаемыми параметрами и свойствами плитки](media/howto-add-tiles-to-your-dashboard/settings-and-properties.png)
-
 
 ## <a name="edit-tiles"></a>Изменить плитки
 
@@ -87,4 +86,4 @@ ms.locfileid: "75435114"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Теперь, когда вы узнали, как настроить панель мониторинга приложений Azure IoT Central по умолчанию, вы можете [узнать, как подготавливать и отправлять изображения](howto-prepare-images.md).
+Теперь, когда вы узнали, как настроить панель мониторинга приложений Azure IoT Central по умолчанию, вы можете [узнать, как создать личную панель мониторинга](howto-create-personal-dashboards.md).

@@ -1,17 +1,17 @@
 ---
 title: Действия GitHub & службы Azure Kubernetes
 services: azure-dev-spaces
-ms.date: 11/04/2019
+ms.date: 02/04/2020
 ms.topic: conceptual
 description: Проверка и проверка изменений в запросе на вытягивание непосредственно в службе Kubernetes Azure с помощью действий GitHub и Azure Dev Spaces
 keywords: DOCKER, Kubernetes, Azure, AKS, служба Kubernetes Azure, контейнеры, действия GitHub, Helm, сеть службы, маршрутизация в сети службы, kubectl, K8S
 manager: gwallace
-ms.openlocfilehash: 7d96726e829154847744d9aec07a9cb0938f75de
-ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
+ms.openlocfilehash: 35050d0c9d1e6062866747dc8544d03574a8d8fe
+ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75771127"
+ms.lasthandoff: 02/05/2020
+ms.locfileid: "77026104"
 ---
 # <a name="github-actions--azure-kubernetes-service-preview"></a>Действия GitHub & службы Azure Kubernetes (Предварительная версия)
 
@@ -58,7 +58,6 @@ az ad sp create-for-rbac --sdk-auth --skip-assignment
 
 Сохраните выходные данные JSON, так как они используются на более позднем шаге.
 
-
 Чтобы отобразить *идентификатор* кластера AKS, используйте команду [AZ AKS Показать][az-aks-show] .
 
 ```cmd
@@ -93,7 +92,6 @@ az role assignment create --assignee <ClientId>  --scope <ACRId> --role AcrPush
 1. *CLUSTER_NAME*: имя кластера AKS, в данном примере — *мякс*.
 1. *CONTAINER_REGISTRY*: *LOGINSERVER* для записи контроля доступа.
 1. *Узел*. узел для пространства разработки, который принимает форму *< MASTER_SPACE >. < APP_NAME >. < HOST_SUFFIX*>, в этом примере — *dev.bikesharingweb.fedcab0987.EUS.azds.IO*.
-1. *HOST_SUFFIX*: суффикс узла для пространства разработки, который в данном примере — *fedcab0987.EUS.azds.IO*.
 1. *IMAGE_PULL_SECRET*— имя секрета, который вы хотите использовать, например " *демонстрационный секрет*".
 1. *MASTER_SPACE*: имя родительского пространства разработки, которое в данном примере — *dev*.
 1. *REGISTRY_USERNAME*: *ClientID* из выходных данных JSON для создания субъекта-службы.
@@ -101,6 +99,8 @@ az role assignment create --assignee <ClientId>  --scope <ACRId> --role AcrPush
 
 > [!NOTE]
 > Все эти секреты используются действием GitHub и настраиваются в [. GitHub/Workflows/Bikes. yml][github-action-yaml].
+
+Кроме того, если необходимо обновить основное пространство после слияния запроса на вытягивание, добавьте *GATEWAY_HOST* секрет, который принимает форму *< MASTER_SPACE >. GATEWAY. < HOST_SUFFIX >* , в этом примере — *dev.Gateway.fedcab0987.EUS.azds.IO*. После объединения изменений в главную ветвь в вилке выполняется другое действие для перестроения и запуска всего приложения в основном пространстве разработки. В этом примере основное пространство — *dev*. Это действие настраивается в [. GitHub/Workflows/bikesharing. yml][github-action-bikesharing-yaml].
 
 ## <a name="create-a-new-branch-for-code-changes"></a>Создание новой ветви для изменения кода
 

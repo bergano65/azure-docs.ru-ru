@@ -15,12 +15,12 @@ ms.author: billmath
 search.appverid:
 - MET150
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 165bd93f2d35425965df9358c8d85f79ce557d66
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: d3a76b06c08d670cfb3ab0757e8c46dac0988c5f
+ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76833370"
+ms.lasthandoff: 02/05/2020
+ms.locfileid: "77025186"
 ---
 # <a name="implement-password-hash-synchronization-with-azure-ad-connect-sync"></a>Реализация синхронизации хэшированных паролей в службе синхронизации Azure AD Connect
 В этой статье содержатся сведения о том, как синхронизировать пароли пользователей локального экземпляра службы Active Directory (AD) и облачного экземпляра службы Azure Active Directory (Azure AD).
@@ -124,7 +124,7 @@ Azure AD поддерживает отдельную политику срока
 > [!NOTE]
 > Эта функция доступна в общедоступной предварительной версии прямо сейчас.
 
-#### <a name="public-preview-of-synchronizing-temporary-passwords-and-force-password-reset-on-next-logon"></a>Общедоступная Предварительная версия синхронизации временных паролей и "принудительный сброс пароля при следующем входе"
+#### <a name="public-preview-of-synchronizing-temporary-passwords-and-force-password-change-on-next-logon"></a>Общедоступная Предварительная версия синхронизации временных паролей и "принудительное изменение пароля при следующем входе"
 
 Обычно пользователю приходится менять свой пароль при первом входе в систему, особенно после сброса пароля администратора.  Он обычно называется "временным" паролем и завершается установкой флага "Требовать смену пароля при следующем входе в систему" для объекта пользователя в Active Directory (AD).
   

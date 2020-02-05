@@ -1,6 +1,6 @@
 ---
-title: Удаление узлов для решения VMware с помощью Клаудсимпле — Azure
-description: Сведения об удалении узлов из VMWare с помощью развертывания Клаудсимпле
+title: Удаление узлов для решений VMware (AVS) — Azure
+description: Сведения об удалении узлов из VMWare с помощью развертывания AVS
 author: sharaths-cs
 ms.author: dikamath
 ms.date: 08/05/2019
@@ -8,45 +8,45 @@ ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: 122e0636f54e066ae86ed2d19cefe5863b026293
-ms.sourcegitcommit: 47b00a15ef112c8b513046c668a33e20fd3b3119
+ms.openlocfilehash: 30d128d6bd2f2e1e2705a7b742f02d11fd947a03
+ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69972818"
+ms.lasthandoff: 02/05/2020
+ms.locfileid: "77024744"
 ---
-# <a name="delete-nodes-from-azure-vmware-solution-by-cloudsimple"></a>Удаление узлов из решения VMware Azure с помощью Клаудсимпле
+# <a name="delete-nodes-from-azure-vmware-solution-by-avs"></a>Удаление узлов из решения VMware для Azure с помощью AVS
 
-Узлы Клаудсимпле измеряются после их создания.  Чтобы отключить отслеживание узлов, необходимо удалить узлы.  Вы удаляете узлы, которые не используются из портал Azure.
+Узлы AVS измеряются после их создания. Чтобы отключить отслеживание узлов, необходимо удалить узлы. Вы удаляете узлы, которые не используются из портал Azure.
 
 ## <a name="before-you-begin"></a>Перед началом работы
 
 Узел можно удалить только при следующих условиях:
 
-* Частное облако, созданное с помощью узлов, удаляется.  Сведения об удалении частного облака см. в статье [Удаление решения VMware для Azure с помощью клаудсимпле](delete-private-cloud.md).
-* Узел был удален из частного облака путем сжатия частного облака.  Сведения о сжатии частного облака см. в статье [Сжатие решения VMware для Azure с помощью Клаудсимпле Private Cloud](shrink-private-cloud.md).
+* Будет удалено частное облако AVS, созданное с помощью узлов. Сведения об удалении частного облака AVS см. в статье [Удаление решения VMware для Azure с помощью частного облака](delete-private-cloud.md).
+* Узел удален из частного облака AVS путем сжатия частного облака AVS. Сведения о сжатии частного облака AVS см. в статье [Сжатие решения VMware для Azure с помощью частного облака AVS](shrink-private-cloud.md).
 
 ## <a name="sign-in-to-azure"></a>Войдите в Azure
 
 Войдите на портал Azure по адресу [https://portal.azure.com](https://portal.azure.com).
 
-## <a name="delete-cloudsimple-node"></a>Удалить узел Клаудсимпле
+## <a name="delete-avs-node"></a>Удалить узел AVS
 
 1. Выбор пункта **Все службы**.
 
-2. Выполните поиск **узлов клаудсимпле**.
+2. Поиск **узлов AVS**.
 
-   ![Поиск узлов Клаудсимпле](media/create-cloudsimple-node-search.png)
+   ![Поиск узлов AVS](media/create-cloudsimple-node-search.png)
 
-3. Выберите **узлы клаудсимпле**.
+3. Выберите **узлы AVS**.
 
-4. Выберите узлы, которые не принадлежат частному облаку для удаления.  В столбце **имя частного облака** отображается имя частного облака, к которому принадлежит узел.  Если узел не используется частным облаком, значение будет пустым. 
+4. Для удаления выберите узлы, которые не принадлежат частному облаку AVS. В столбце **имя частного облака AVS** отображается имя частного облака AVS, к которому принадлежит узел. Если узел не используется частным облаком AVS, значение будет пустым. 
 
-    ![Выбор узлов Клаудсимпле](media/select-delete-cloudsimple-node.png)
+    ![Выбор узлов AVS](media/select-delete-cloudsimple-node.png)
 
 > [!NOTE]
-> Удалить можно только узлы, которые не являются частью частного облака.
+> Удалить можно только узлы, которые не входят в частное облако AVS.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-* Сведения о [частном облаке](cloudsimple-private-cloud.md)
+* Дополнительные сведения о [частном облаке AVS](cloudsimple-private-cloud.md)

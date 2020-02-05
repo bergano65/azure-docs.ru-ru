@@ -2,18 +2,18 @@
 title: Использование коллекции общих образов для создания пользовательского пула (пакетная служба Azure) | Документация Майкрософт
 description: Создайте пул пакетной службы с помощью коллекции общих образов для подготовки пользовательских образов к вычисленным узлам, содержащим программное обеспечение и данные, необходимые для вашего приложения. Пользовательские образы представляют собой эффективный способ настройки вычислительных узлов для выполнения рабочих нагрузок пакетной службы.
 services: batch
-author: ju-shim
-manager: gwallace
+author: LauraBrenner
+manager: evansma
 ms.service: batch
 ms.topic: article
 ms.date: 08/28/2019
-ms.author: jushiman
-ms.openlocfilehash: a933d0656bb4c22e848a663757f4e5e3fa276c61
-ms.sourcegitcommit: dbcc4569fde1bebb9df0a3ab6d4d3ff7f806d486
+ms.author: labrenne
+ms.openlocfilehash: 2cff6a0e48fc7bf58a642f509fcda6b114e002ef
+ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76029648"
+ms.lasthandoff: 02/05/2020
+ms.locfileid: "77022942"
 ---
 # <a name="use-the-shared-image-gallery-to-create-a-custom-pool"></a>Создание пользовательского пула с помощью коллекции общих образов
 
@@ -138,7 +138,7 @@ private static void CreateBatchPool(BatchClient batchClient, VirtualMachineConfi
 1. Выберите **Пулы** , а затем — **Добавить** , чтобы создать новый пул.
 1. В разделе **тип образа** выберите **Коллекция общих образов**.
 1. Выполните остальные разделы со сведениями об управляемом образе.
-1. Нажмите кнопку **ОК**.
+1. Щелкните **ОК**.
 
 ![Создайте пул из общего образа с помощью портала.](media/batch-sig-images/create-custom-pool.png)
 

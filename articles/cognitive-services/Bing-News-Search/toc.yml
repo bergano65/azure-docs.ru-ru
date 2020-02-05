@@ -10,7 +10,7 @@
       maintainContext: true
 - name: Краткие руководства
   items:
-    - name: "REST\_API"
+    - name: REST API
       items:
         - name: 'Использование C#'
           href: csharp.md
@@ -36,7 +36,7 @@
           href: news-sdk-python-quickstart.md
         - name: Использование Java
           href: news-sdk-java-quickstart.md
-- name: Руководства
+- name: Учебники
   items:
     - name: Создание одностраничного веб-приложения
       href: tutorial-bing-news-search-single-page-app.md
@@ -44,7 +44,7 @@
   items:
     - name: Примеры кода
       href: 'https://azure.microsoft.com/resources/samples/?sort=0&service=cognitive-services&term=Bing+News+Search'
-- name: Инструкции
+- name: Практические руководства
   items:
     - name: Обработка выделения совпадений
       href: ../Bing-Web-Search/hit-highlighting.md
@@ -56,17 +56,13 @@
       href: ../bing-web-search/resize-and-crop-thumbnails.md
     - name: Обновление API с версии 5 до версии 7
       href: bing-news-upgrade-guide-v5-to-v7.md
-    - name: Работа с Visual Studio
-      items:
-        - name: Использование подключенной службы "Поиск новостей Bing"
-          href: vs-bing-news-search-connected-service.md
 - name: Основные понятия
   items:
     - name: Отправка поисковых запросов
       href: concepts/send-search-queries.md
     - name: Поиск новостей
       href: concepts/search-for-news.md
-- name: Справочные материалы
+- name: Справочник
   items:
     - name: API Поиска новостей Bing версии 7
       href: 'https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-news-api-v7-reference'
@@ -111,5 +107,5 @@
       href: language-support.md
     - name: Аналитика для API Поиска новостей Bing
       href: bing-news-stats.md
-    - name: Соответствие требованиям
+    - name: Соответствие нормативным требованиям
       href: 'https://azure.microsoft.com/support/legal/cognitive-services-compliance-and-privacy/'

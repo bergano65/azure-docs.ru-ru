@@ -101,8 +101,6 @@
           href: ea-portal-vm-reservations.md
         - name: Устранение неполадок с доступом к порталу Azure EA
           href: ea-portal-troubleshoot.md
-        - name: Задачи EA в клиентском соглашении Майкрософт
-          href: mca-enterprise-operations.md
 - name: Диагностика
   items:
     - name: Подписки не найдены
