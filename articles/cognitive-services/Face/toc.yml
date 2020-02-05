@@ -79,8 +79,6 @@
           href: face-resource-container-config.md
         - name: Использование экземпляров контейнеров
           href: Face-API-How-to-Topics/deploy-face-container-on-container-instances.md
-    - name: Использование подключенной службы "Распознавание лиц"
-      href: vs-face-connected-service.md
 - name: Справочник
   items:
     - name: API Распознавания лиц

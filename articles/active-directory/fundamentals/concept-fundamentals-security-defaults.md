@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: rogoya
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 589d8219681304242585c9fed33a4e3d364909ec
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.openlocfilehash: fbb6170aa54c286a5a2d8353c1dd951859fdf8a0
+ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75978906"
+ms.lasthandoff: 02/05/2020
+ms.locfileid: "77024591"
 ---
 # <a name="what-are-security-defaults"></a>Что такое параметры безопасности по умолчанию?
 
@@ -94,6 +94,8 @@ ms.locfileid: "75978906"
 После включения параметров безопасности по умолчанию в клиенте любой пользователь, обращающийся к портал Azure, Azure PowerShell или Azure CLI потребуется выполнить дополнительную проверку подлинности. Эта политика применяется ко всем пользователям, обращающимся к Azure Resource Manager, будь это администратор или пользователь. 
 
 Если пользователь не зарегистрирован для многофакторной проверки подлинности, для продолжения пользователю потребуется зарегистрироваться с помощью Microsoft Authenticator приложения. Не будет указан 14-дневный период регистрации многофакторной проверки подлинности.
+
+До 2017 клиентов Exchange Online по умолчанию включена современная проверка подлинности. Чтобы избежать возможности цикла входа во время проверки подлинности в этих клиентах, необходимо [включить современную проверку подлинности](https://docs.microsoft.com/exchange/clients-and-mobile-in-exchange-online/enable-or-disable-modern-authentication-in-exchange-online).
 
 > [!NOTE]
 > Учетная запись синхронизации Azure AD Connect исключается из параметров безопасности по умолчанию и не будет выдавать запрос на регистрацию или выполнение многофакторной проверки подлинности. Организациям не следует использовать эту учетную запись в других целях.

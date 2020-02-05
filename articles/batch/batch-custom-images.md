@@ -2,18 +2,18 @@
 title: Предоставление пользовательского пула из управляемого образа в пакетной службе Azure | Документация Майкрософт
 description: Создайте пул пакетной службы на основе ресурса управляемого образа, чтобы подготавливать в расчетные узлы с программным обеспечением и данными для вашего приложения.
 services: batch
-author: ju-shim
-manager: gwallace
+author: LauraBrenner
+manager: evansma
 ms.service: batch
 ms.topic: article
 ms.date: 09/16/2019
-ms.author: jushiman
-ms.openlocfilehash: 3c7aafb5cfdd2e0127aa9969b904976cb93db614
-ms.sourcegitcommit: dbcc4569fde1bebb9df0a3ab6d4d3ff7f806d486
+ms.author: labrenne
+ms.openlocfilehash: 1ef6be2ba9364203dceba54ab51325c05dbbbe41
+ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76029753"
+ms.lasthandoff: 02/05/2020
+ms.locfileid: "77020154"
 ---
 # <a name="use-a-managed-image-to-create-a-pool-of-virtual-machines"></a>Использование управляемого образа для создания пула виртуальных машин
 

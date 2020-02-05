@@ -2,8 +2,8 @@
 title: Использование виртуальных машин Azure с интенсивным использованием вычислительных ресурсов с пакетной службой
 description: Как использовать преимущества размеров виртуальных машин HPC и GPU в пулах пакетной службы Azure. Узнайте о зависимостях ОС и ознакомьтесь с несколькими примерами сценариев.
 documentationcenter: ''
-author: ju-shim
-manager: gwallace
+author: LauraBrenner
+manager: evansma
 editor: ''
 ms.assetid: ''
 ms.service: batch
@@ -11,13 +11,13 @@ ms.workload: big-compute
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 12/17/2018
-ms.author: jushiman
-ms.openlocfilehash: 1fb490c6db5115edf32ff2562e43cf1084e0a6c8
-ms.sourcegitcommit: dbcc4569fde1bebb9df0a3ab6d4d3ff7f806d486
+ms.author: labrenne
+ms.openlocfilehash: 17cd9db1e86a66630d3b93c8295915933abb1ec2
+ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76026798"
+ms.lasthandoff: 02/05/2020
+ms.locfileid: "77023605"
 ---
 # <a name="use-rdma-or-gpu-instances-in-batch-pools"></a>Использование экземпляров RDMA или GPU в пулах пакетной службы
 

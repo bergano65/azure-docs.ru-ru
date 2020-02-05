@@ -7,12 +7,12 @@ ms.service: storage
 ms.topic: conceptual
 ms.date: 11/01/2019
 ms.author: normesta
-ms.openlocfilehash: de57776ea3bcc7486c5c26182c7e2a65e643d81c
-ms.sourcegitcommit: 12a26f6682bfd1e264268b5d866547358728cd9a
+ms.openlocfilehash: 7f43f69ebdac05b8f99739ea6b51453671b9a70a
+ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75863008"
+ms.lasthandoff: 02/05/2020
+ms.locfileid: "77024557"
 ---
 # <a name="integrate-azure-data-lake-storage-with-azure-services"></a>Интеграция Azure Data Lake Storage со службами Azure
 
@@ -34,7 +34,7 @@ ms.locfileid: "75863008"
 |Data Box|  [Использование Azure Data Box для переноса данных из локального хранилища HDFS в службу хранилища Azure](data-lake-storage-migrate-on-premises-hdfs-cluster.md)|
 |HDInsight | [Использование Azure Data Lake Storage Gen2 с кластерами Azure HDInsight](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-use-data-lake-storage-gen2?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)<br>[Использование интерфейса командной строки HDFS с Data Lake Storage 2-го поколения](data-lake-storage-use-hdfs-data-lake-storage.md) <br>[Руководство. Извлечение, преобразование и загрузка данных с помощью Apache Hive в Azure HDInsight](data-lake-storage-tutorial-extract-transform-load-hive.md) |
 |Центр Интернета вещей | [Использование маршрутизации сообщений центра Интернета вещей для отправки сообщений с устройства в облако в разные конечные точки](https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-messages-d2c)|
-|Power BI|  [Анализ данных в Data Lake Storage 2-го поколения с помощью Power BI](data-lake-storage-use-power-bi.md) |
+|Power BI|  [Анализ данных в Data Lake Storage 2-го поколения с помощью Power BI](https://docs.microsoft.com/power-query/connectors/datalakestorage) |
 |Хранилище данных SQL | [Использование с хранилищем данных SQL Azure](https://docs.microsoft.com/azure/sql-database/sql-database-vnet-service-endpoint-rule-overview?toc=%2fazure%2fstorage%2fblobs%2ftoc.json#azure-sql-data-warehouse-polybase)|
 |SQL Server Integration Services (SSIS). | [Диспетчер подключений службы хранилища Azure](https://docs.microsoft.com/sql/integration-services/connection-manager/azure-storage-connection-manager?view=sql-server-2017)|
 

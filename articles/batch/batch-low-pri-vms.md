@@ -3,7 +3,7 @@ title: Выполнение рабочих нагрузок на экономи�
 description: Узнайте, как подготовить низкоприоритетные виртуальные машины для сокращения затрат на рабочие нагрузки пакетной службы Azure.
 services: batch
 author: mscurrell
-manager: gwallace
+manager: evansma
 ms.assetid: dc6ba151-1718-468a-b455-2da549225ab2
 ms.service: batch
 ms.topic: article
@@ -11,12 +11,12 @@ ms.workload: na
 ms.date: 12/05/2019
 ms.author: markscu
 ms.custom: seodec18
-ms.openlocfilehash: 39d332a6d069a4e9fac8545f4d08a986c8984c9b
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: dfd79bc9cfd8e897cdbb18127deaf8da4922ef3a
+ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74926286"
+ms.lasthandoff: 02/05/2020
+ms.locfileid: "77023724"
 ---
 # <a name="use-low-priority-vms-with-batch"></a>Использование низкоприоритетных виртуальных машин в пакетной службе
 

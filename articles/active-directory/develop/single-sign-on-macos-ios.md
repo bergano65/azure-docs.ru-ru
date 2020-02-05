@@ -13,16 +13,16 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 08/28/2019
+ms.date: 02/03/2020
 ms.author: twhitney
 ms.reviewer: ''
 ms.custom: aaddev
-ms.openlocfilehash: ecc55c0d41f552d2c29fe5c964a7c40ab9e382ba
-ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
+ms.openlocfilehash: bfc656911abf3349e03543e6bb668db977422738
+ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76701388"
+ms.lasthandoff: 02/05/2020
+ms.locfileid: "77022636"
 ---
 # <a name="how-to-configure-sso-on-macos-and-ios"></a>Как настроить единый вход для macOS и iOS
 
@@ -71,7 +71,9 @@ MSAL поддерживает общий доступ SSO через групп�
 
 Способ, которым платформа Microsoft Identity сообщает приложениям, использующим одинаковый идентификатор приложения, определяется их **URI перенаправления**. Каждое приложение может иметь несколько кодов URI перенаправления, зарегистрированных на портале подключения. Каждое приложение в наборе получит уникальный код URI перенаправления. Пример.
 
-URI перенаправления APP1: `msauth.com.contoso.mytestapp1://auth`ный URI перенаправления: `msauth.com.contoso.mytestapp2://auth` App3 URI перенаправления: `msauth.com.contoso.mytestapp3://auth`
+URI перенаправления App1: `msauth.com.contoso.mytestapp1://auth`  
+URI перенаправления App2: `msauth.com.contoso.mytestapp2://auth`  
+URI перенаправления App3: `msauth.com.contoso.mytestapp3://auth`  
 
 > [!IMPORTANT]
 > Формат URI перенаправления должен быть совместим с форматом, поддерживаемым MSAL, который описан в статье [требования к формату URI перенаправления MSAL](redirect-uris-ios.md#msal-redirect-uri-format-requirements).
@@ -96,6 +98,18 @@ URI перенаправления APP1: `msauth.com.contoso.mytestapp1://auth`�
 </plist>
 ```
 
+#### <a name="add-a-new-keychain-group"></a>Добавить новую группу цепочки ключей
+
+Добавьте новую группу цепочки ключей в **возможности**проекта. Группа цепочки ключей должна быть:
+* `com.microsoft.adalcache` в iOS 
+* `com.microsoft.identity.universalstorage` в macOS.
+
+![Пример цепочки ключей](media/single-sign-on-macos-ios/keychain-example.png)
+
+Дополнительные сведения см. в разделе [цепочки ключей](howto-v2-keychain-objc.md).
+
+## <a name="configure-the-application-object"></a>Настройка объекта приложения
+
 После включения назначений цепочки ключей в каждом из приложений и готовности к использованию единого входа настройте `MSALPublicClientApplication` с группой доступа к цепочке ключей, как показано в следующем примере:
 
 Objective-C.
@@ -113,16 +127,14 @@ Swift:
 ```swift
 let config = MSALPublicClientApplicationConfig(clientId: "<my-client-id>")
 config.cacheConfig.keychainSharingGroup = "my.keychain.group"
-        
+
 do {
-    let application = try MSALPublicClientApplication(configuration: config)
-  // continue on with application          
+   let application = try MSALPublicClientApplication(configuration: config)
+  // continue on with application
 } catch let error as NSError {
   // handle error here
-}       
+}
 ```
-
-
 
 > [!WARNING]
 > При совместном использовании цепочки ключей в приложениях любое приложение может удалять пользователей или даже все маркеры в приложении.
@@ -206,7 +218,7 @@ func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>)
         MSALPublicClientApplication.handleMSALResponse(url, sourceApplication: sourceApp)
     }
 ```
-    
+
 ## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения см. в [Потоки проверки подлинности и сценарии приложений](authentication-flows-app-scenarios.md)

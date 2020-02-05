@@ -1,6 +1,6 @@
 ---
-title: Решение VMware для Azure, Клаудсимпле — Настройка DNS и DHCP для частного облака
-description: Описание настройки DNS и DHCP для приложений и рабочих нагрузок, работающих в среде частного облака Клаудсимпле.
+title: Решения Azure VMware (AVS). Настройка службы DNS и DHCP для частного облака AVS
+description: Описание настройки DNS и DHCP для приложений и рабочих нагрузок, работающих в среде частного облака AVS.
 author: sharaths-cs
 ms.author: b-shsury
 ms.date: 08/16/2019
@@ -8,16 +8,16 @@ ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: ef1266b783034cf18dc2b3ea4be5ebc01bc12c70
-ms.sourcegitcommit: 5bbe87cf121bf99184cc9840c7a07385f0d128ae
+ms.openlocfilehash: f2a5cae868f2d8f3689f05dd9d466715ab2008a3
+ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76121868"
+ms.lasthandoff: 02/05/2020
+ms.locfileid: "77024693"
 ---
-# <a name="set-up-dns-and-dhcp-applications-and-workloads-in-your-cloudsimple-private-cloud"></a>Настройка приложений и рабочих нагрузок DNS и DHCP в частном облаке Клаудсимпле
+# <a name="set-up-dns-and-dhcp-applications-and-workloads-in-your-avs-private-cloud"></a>Настройка приложений и рабочих нагрузок DNS и DHCP в частном облаке AVS
 
-Приложениям и рабочим нагрузкам, выполняемым в среде частного облака, требуется разрешение имен и службы DHCP для назначения адресов и поиска по IP-адресам.  Для предоставления этих служб требуется правильная инфраструктура DHCP и DNS.  Вы можете настроить виртуальную машину для предоставления этих служб в среде частного облака.  
+Приложениям и рабочим нагрузкам, выполняемым в среде частного облака AVS, требуется разрешение имен и службы DHCP для назначения адресов подстановки и IP-адреса. Для предоставления этих служб требуется правильная инфраструктура DHCP и DNS. Вы можете настроить виртуальную машину для предоставления этих служб в среде частного облака AVS. 
 
 ## <a name="prerequisites"></a>Технические условия
 
@@ -27,7 +27,7 @@ ms.locfileid: "76121868"
 
 ## <a name="linux-based-dns-server-setup"></a>Установка DNS-сервера на основе Linux
 
-Linux предлагает различные пакеты для настройки DNS-серверов.  Ниже приведен [Пример настройки из дигиталоцеан](https://www.digitalocean.com/community/tutorials/how-to-configure-bind-as-a-private-network-dns-server-on-ubuntu-18-04) с инструкциями по настройке DNS-сервера BIND с открытым исходным кодом.
+Linux предлагает различные пакеты для настройки DNS-серверов. Ниже приведен [Пример настройки из дигиталоцеан](https://www.digitalocean.com/community/tutorials/how-to-configure-bind-as-a-private-network-dns-server-on-ubuntu-18-04) с инструкциями по настройке DNS-сервера BIND с открытым исходным кодом.
 
 ## <a name="windows-based-setup"></a>Установка на основе Windows
 

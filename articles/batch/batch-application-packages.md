@@ -3,8 +3,8 @@ title: Установка пакетов приложений на вычисл�
 description: Пакеты приложений пакетной службы Azure позволяют легко управлять несколькими приложениями и их версиями для установки на вычислительные узлы пакетной службы.
 services: batch
 documentationcenter: .net
-author: ju-shim
-manager: gwallace
+author: LauraBrenner
+manager: evansma
 editor: ''
 ms.assetid: 3b6044b7-5f65-4a27-9d43-71e1863d16cf
 ms.service: batch
@@ -12,14 +12,14 @@ ms.topic: article
 ms.tgt_pltfrm: ''
 ms.workload: big-compute
 ms.date: 04/26/2019
-ms.author: jushiman
+ms.author: labrenne
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: dc136a0359c73b164eb1e175092a97f2fde4bdfa
-ms.sourcegitcommit: dbcc4569fde1bebb9df0a3ab6d4d3ff7f806d486
+ms.openlocfilehash: 6cad3b3b01a98462e37a4b4b96ba02a1b61a5f62
+ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76029794"
+ms.lasthandoff: 02/05/2020
+ms.locfileid: "77025934"
 ---
 # <a name="deploy-applications-to-compute-nodes-with-batch-application-packages"></a>Развертывание приложений на вычислительных узлах с помощью пакетов приложений пакетной службы
 

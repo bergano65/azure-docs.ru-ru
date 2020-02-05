@@ -348,6 +348,9 @@
           displayName: 'migrate, b2clogin, owin'
     - name: Служба автоматизации
       items:
+        - name: Azure Monitor
+          href: azure-monitor.md
+          displayName: 'log, logs, logging, usage, events'
         - name: Экспорт отчета об использовании
           href: view-usage-reports.md
         - name: Управление учетными записями

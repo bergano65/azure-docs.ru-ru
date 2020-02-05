@@ -1,6 +1,6 @@
 ---
-title: Решение VMware для Azure от Клаудсимпле — Настройка источников удостоверений vCenter в частном облаке
-description: Описание настройки частного облака vCenter для проверки подлинности с помощью Active Directory для администраторов VMware для доступа к vCenter
+title: Решения Azure VMware (AVS). Настройка источников удостоверений vCenter в частном облаке AVS
+description: В этой статье описывается настройка частного облака AVS для аутентификации с помощью Active Directory для администраторов VMware для доступа к vCenter.
 author: sharaths-cs
 ms.author: b-shsury
 ms.date: 08/15/2019
@@ -8,27 +8,27 @@ ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: eeced5205b836a15a43fbccfb8c6cb60b4bec29f
-ms.sourcegitcommit: 87781a4207c25c4831421c7309c03fce5fb5793f
+ms.openlocfilehash: ad4a7b2bc67b7d50d9e9a5f8337a09dbe77366ea
+ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76542871"
+ms.lasthandoff: 02/05/2020
+ms.locfileid: "77014221"
 ---
 # <a name="set-up-vcenter-identity-sources-to-use-active-directory"></a>Настройка источников удостоверений vCenter для использования Active Directory
 
 ## <a name="about-vmware-vcenter-identity-sources"></a>Сведения об источниках удостоверений VMware vCenter
 
-VMware vCenter поддерживает различные источники удостоверений для проверки подлинности пользователей, обращающихся к vCenter.  Вы можете настроить для Клаудсимпле частного облака vCenter проверку подлинности с помощью Active Directory, чтобы ваши администраторы VMware могли получить доступ к vCenter. После завершения установки пользователь **клаудовнер** может добавить пользователей из источника удостоверений в vCenter.  
+VMware vCenter поддерживает различные источники удостоверений для проверки подлинности пользователей, обращающихся к vCenter. Для работы с сервером vCenter частного облака AVS можно настроить проверку подлинности с помощью Active Directory для администраторов VMware. После завершения установки пользователь **клаудовнер** может добавить пользователей из источника удостоверений в vCenter. 
 
 Вы можете настроить Active Directory домена и контроллеров домена одним из следующих способов.
 
 * Active Directory контроллеры домена и домена, работающих в локальной среде
 * Active Directory контроллеров домена и домена, работающих в Azure в качестве виртуальных машин в подписке Azure;
-* Новые Active Directory домены и контроллеры домена, работающие в частном облаке
+* Новые Active Directory домена и контроллеров домена, работающих в частном облаке AVS
 * Служба Azure Active Directory
 
-В этом учебнике объясняются задачи настройки Active Directory контроллеров домена и домена, работающих локально или в качестве виртуальных машин в подписках.  Если вы хотите использовать Azure AD в качестве источника удостоверения, обратитесь к статье [Использование Azure AD в качестве поставщика удостоверений для vCenter в Клаудсимпле частном облаке](azure-ad.md) для получения подробных инструкций по настройке источника удостоверений.
+В этом учебнике объясняются задачи настройки Active Directory контроллеров домена и домена, работающих локально или в качестве виртуальных машин в подписках. Если вы хотите использовать Azure AD в качестве источника удостоверения, см. Дополнительные инструкции по настройке источника удостоверений с [помощью Azure AD в качестве поставщика удостоверений для vCenter в частном облаке AVS](azure-ad.md) .
 
 Прежде чем [добавлять источник удостоверений](#add-an-identity-source-on-vcenter), необходимо временно [эскалировать свои привилегии vCenter](escalate-private-cloud-privileges.md).
 
@@ -39,21 +39,21 @@ VMware vCenter поддерживает различные источники у
 ## <a name="identity-source-options"></a>Параметры источника удостоверений
 
 * [Добавление локального Active Directory в качестве источника удостоверений единого входа](#add-on-premises-active-directory-as-a-single-sign-on-identity-source)
-* [Настройка новых Active Directory в частном облаке](#set-up-new-active-directory-on-a-private-cloud)
+* [Настройка новых Active Directory в частном облаке AVS](#set-up-new-active-directory-on-an-avs-private-cloud)
 * [Настройка Active Directory в Azure](#set-up-active-directory-on-azure)
 
 ## <a name="add-on-premises-active-directory-as-a-single-sign-on-identity-source"></a>Добавление локального Active Directory в качестве источника удостоверений единого входа
 
 Чтобы настроить локальный Active Directory как источник удостоверений единого входа, вам потребуется:
 
-* [VPN-подключение типа "сеть — сеть](vpn-gateway.md#set-up-a-site-to-site-vpn-gateway) " из локального центра обработки данных к частному облаку.
+* [VPN-подключение типа "сеть — сеть](vpn-gateway.md#set-up-a-site-to-site-vpn-gateway) " из локального центра обработки данных к частному облаку AVS.
 * IP-адрес локального DNS-сервера добавлен в vCenter и контроллер служб платформы (PSC).
 
 При настройке домена Active Directory используйте сведения из следующей таблицы.
 
 | **Параметр** | **Описание** |
 |------------|-----------------|
-| **Название** | Имя источника удостоверений. |
+| **имя**; | Имя источника удостоверений. |
 | **Базовое DN для пользователей** | Базовое различающееся имя для пользователей. |
 | **Имя домена** | FDQN домена, например example.com. В этом текстовом поле не следует указывать IP-адрес. |
 | **Псевдоним домена** | NetBIOS-имя домена. Если используются проверки подлинности SSPI, добавьте NetBIOS-имя домена Active Directory в качестве псевдонима источника удостоверений. |
@@ -69,9 +69,9 @@ VMware vCenter поддерживает различные источники у
 > [!TIP]
 > Дополнительные сведения об источниках удостоверений единого входа можно найти на [странице документации по VMware](https://docs.vmware.com/en/VMware-vSphere/6.5/com.vmware.psc.doc/GUID-B23B1360-8838-4FF2-B074-71643C4CB040.html).
 
-## <a name="set-up-new-active-directory-on-a-private-cloud"></a>Настройка новых Active Directory в частном облаке
+## <a name="set-up-new-active-directory-on-an-avs-private-cloud"></a>Настройка новых Active Directory в частном облаке AVS
 
-Вы можете настроить новый домен Active Directory в частном облаке и использовать его в качестве источника удостоверений для единого входа.  Домен Active Directory может быть частью существующего Active Directory леса или можно настроить как независимый лес.
+Вы можете настроить новый домен Active Directory в частном облаке AVS и использовать его в качестве источника удостоверений для единого входа. Домен Active Directory может быть частью существующего Active Directory леса или можно настроить как независимый лес.
 
 ### <a name="new-active-directory-forest-and-domain"></a>Новый Active Directory лес и домен
 
@@ -100,15 +100,15 @@ VMware vCenter поддерживает различные источники у
 
 ## <a name="set-up-active-directory-on-azure"></a>Настройка Active Directory в Azure
 
-Active Directory, выполняемые в Azure, похожи на Active Directory, работающие в локальной среде.  Чтобы настроить Active Directory, выполняющиеся в Azure как источник удостоверений единого входа в vCenter, сервер vCenter и контроллер PSC должны иметь сетевое подключение к виртуальной сети Azure, в которой работают службы Active Directory.  Это подключение можно установить с помощью [подключения к виртуальной сети Azure с помощью ExpressRoute](azure-expressroute-connection.md) из виртуальной сети Azure, в которой службы Active Directory работают в Клаудсимпле частном облаке.
+Active Directory, выполняемые в Azure, похожи на Active Directory, работающие в локальной среде. Чтобы настроить Active Directory, выполняющиеся в Azure как источник удостоверений единого входа в vCenter, сервер vCenter и контроллер PSC должны иметь сетевое подключение к виртуальной сети Azure, в которой работают службы Active Directory. Это подключение можно установить с помощью [подключения к виртуальной сети Azure с помощью ExpressRoute](azure-expressroute-connection.md) из виртуальной сети Azure, в которой службы Active Directory работают в частном облаке AVS.
 
-После установки сетевого подключения выполните действия, описанные в разделе [Добавление локального Active Directory как источника удостоверений единого входа](#add-on-premises-active-directory-as-a-single-sign-on-identity-source) , чтобы добавить его в качестве источника удостоверений.  
+После установки сетевого подключения выполните действия, описанные в разделе [Добавление локального Active Directory как источника удостоверений единого входа](#add-on-premises-active-directory-as-a-single-sign-on-identity-source) , чтобы добавить его в качестве источника удостоверений. 
 
 ## <a name="add-an-identity-source-on-vcenter"></a>Добавление источника удостоверений в vCenter
 
-1. [Эскалировать привилегии](escalate-private-cloud-privileges.md) в частном облаке.
+1. [Эскалировать привилегии](escalate-private-cloud-privileges.md) в частном облаке AVS.
 
-2. Войдите в vCenter для частного облака.
+2. Войдите в vCenter для частного облака AVS.
 
 3. Выберите **домашняя > администрирование**.
 

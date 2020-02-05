@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 11/04/2019
 ms.author: sasolank
-ms.openlocfilehash: 4e4d4c69eb51e0058d3b6b561b5167051079bf89
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 129f407dd66b32ea097daf4ed9110ffbba23660c
+ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75442703"
+ms.lasthandoff: 02/05/2020
+ms.locfileid: "77017605"
 ---
 # <a name="integrate-api-management-in-an-internal-vnet-with-application-gateway"></a>Интеграция службы управления API во внутреннюю сеть со шлюзом приложений
 
@@ -185,6 +185,9 @@ $apimService = New-AzApiManagement -ResourceGroupName $resGroupName -Location $l
 Когда завершится выполнение предыдущей команды, выполните инструкции из раздела [DNS Configuration ](api-management-using-with-internal-vnet.md#apim-dns-configuration) (Настройка DNS) для доступа к службе управления API во внутренней виртуальной сети. Этот шаг может занять более получаса.
 
 ## <a name="set-up-a-custom-domain-name-in-api-management"></a>Настройка пользовательского доменного имени в службе управления API
+
+> [!IMPORTANT]
+> [Новый портал разработчика](api-management-howto-developer-portal.md) также требует включения подключения к конечной точке управления управления API в дополнение к следующим шагам.
 
 ### <a name="step-1"></a>Шаг 1
 

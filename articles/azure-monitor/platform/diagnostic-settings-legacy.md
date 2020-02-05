@@ -6,13 +6,13 @@ ms.service: azure-monitor
 ms.subservice: logs
 ms.topic: conceptual
 ms.author: bwren
-ms.date: 01/21/2020
-ms.openlocfilehash: dff4901f1488406ed1259d1411a6b05b949382cb
-ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
+ms.date: 02/04/2020
+ms.openlocfilehash: fcdcef5d63163b24fe5de0f547dc2dde00cd674f
+ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76715848"
+ms.lasthandoff: 02/05/2020
+ms.locfileid: "77016261"
 ---
 # <a name="update-to-azure-activity-log-collection-and-export"></a>Обновление коллекции журналов действий Azure и экспорт
 [Журнал действий Azure](platform-logs-overview.md) — это [Журнал платформы](platform-logs-overview.md) , который позволяет получить представление о событиях уровня подписки, произошедших в Azure. Метод отправки записей журнала действий в [концентратор событий или в учетную запись хранения](activity-log-export.md) или в [log Analytics рабочую область](activity-log-collect.md) изменился для использования [параметров диагностики](diagnostic-settings.md). В этой статье описывается различие между методами и способы очистки устаревших параметров в процессе подготовки для изменения параметров диагностики.
@@ -53,6 +53,9 @@ ms.locfileid: "76715848"
 - Authorization_d
 - Claims_d
 - Properties_d
+
+> [!IMPORTANT]
+> В некоторых случаях значения в этих столбцах могут быть в верхнем регистре. При наличии запроса, содержащего эти столбцы, следует использовать [оператор = ~](https://docs.microsoft.com/azure/kusto/query/datatypes-string-operators) для сравнения без учета регистра.
 
 ## <a name="work-with-legacy-settings"></a>Работа с устаревшими параметрами
 Устаревшие настройки для сбора журнала действий будут продолжать работать, если вы не решите заменить параметром диагностики. Используйте следующий метод, чтобы управлять профилем журнала для подписки.

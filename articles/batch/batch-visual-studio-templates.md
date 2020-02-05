@@ -3,8 +3,8 @@ title: Создание решений с помощью шаблонов Visual
 description: Узнайте, как шаблоны проектов Visual Studio помогут реализовать и выполнить ресурсоемкие рабочие нагрузки в пакетной службе Azure.
 services: batch
 documentationcenter: .net
-author: ju-shim
-manager: gwallace
+author: LauraBrenner
+manager: evansma
 editor: ''
 ms.assetid: 5e041ae2-25af-4882-a79e-3aa63c4bfb20
 ms.service: batch
@@ -12,14 +12,14 @@ ms.topic: article
 ms.tgt_pltfrm: ''
 ms.workload: big-compute
 ms.date: 02/27/2017
-ms.author: jushiman
+ms.author: labrenne
 ms.custom: seodec18
-ms.openlocfilehash: a8cbc630be684371d8dc7917870d581c9a072db5
-ms.sourcegitcommit: dbcc4569fde1bebb9df0a3ab6d4d3ff7f806d486
+ms.openlocfilehash: a71dbd1b38ff58ccf1eb7a4d50daad5b24922e2f
+ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76029583"
+ms.lasthandoff: 02/05/2020
+ms.locfileid: "77022755"
 ---
 # <a name="use-visual-studio-project-templates-to-jump-start-batch-solutions"></a>Использование шаблонов проектов Visual Studio для быстрого начала работы с решениями пакетной службы
 

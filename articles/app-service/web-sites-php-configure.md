@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 04/11/2018
 ms.author: msangapu
 ms.custom: seodec18
-ms.openlocfilehash: 2d35c31e23da7addcf0b4c341c6925f258d5c232
-ms.sourcegitcommit: 48b7a50fc2d19c7382916cb2f591507b1c784ee5
+ms.openlocfilehash: c73fb55e485d0c92d27eac2ac197a81337b9d5e1
+ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74688264"
+ms.lasthandoff: 02/05/2020
+ms.locfileid: "77016805"
 ---
 # <a name="configure-php-in-azure-app-service"></a>Настройка PHP в службе приложений Azure
 
@@ -27,7 +27,7 @@ ms.locfileid: "74688264"
 
 Версии PHP 7.0 и PHP 7.2 также доступны, но не включены по умолчанию. Чтобы обновить версию PHP, выполните следующие действия.
 
-### <a name="azure-portal"></a>портала Azure
+### <a name="azure-portal"></a>Портал Azure
 
 1. Перейдите к приложению в [портал Azure](https://portal.azure.com) и прокрутите страницу **конфигурации** .
 
@@ -35,21 +35,7 @@ ms.locfileid: "74688264"
 
 3. Нажмите кнопку **сохранить** в верхней части колонки **Общие параметры** .
 
-### <a name="azure-powershell-windows"></a>Azure PowerShell (только для Windows)
-
-[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
-
-1. Запустите Azure PowerShell и войдите в свою учетную запись.
-
-        PS C:\> Connect-AzAccount
-2. Укажите версию PHP для приложения.
-
-        PS C:\> Set-AzureWebsite -PhpVersion {5.6 | 7.0 | 7.2} -Name {app-name}
-3. После этого версия PHP будет установлена. Можно подтвердить эти параметры.
-
-        PS C:\> Get-AzureWebsite -Name {app-name} | findstr PhpVersion
-
-### <a name="azure-cli"></a>Azure CLI 
+### <a name="azure-cli"></a>Интерфейс командной строки Azure 
 
 Для использования интерфейса командной строки Azure на компьютер требуется [установить Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
 
@@ -154,7 +140,7 @@ ms.locfileid: "74688264"
 > [Здесь](https://feedback.azure.com/forums/169385-web-apps-formerly-websites/suggestions/6477437-first-class-support-for-composer-and-pip)вы можете отдать свой голос за первоклассную поддержку Composer в службе приложений!
 >
 
-1. На [портале Azure](https://portal.azure.com) в колонке вашего приложения PHP щелкните **Инструменты**  >  **Расширения**.
+1. На [портале Azure](https://portal.azure.com) в колонке вашего приложения PHP щелкните **Инструменты** > **Расширения**.
 
     ![Колонка параметров портала Azure для включения автоматизации Composer в Azure](./media/web-sites-php-configure/composer-extension-settings.png)
 2. Щелкните **Добавить**, а затем — **Composer**.

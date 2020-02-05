@@ -4,12 +4,12 @@ description: Из этой статьи вы узнаете, как устран
 ms.reviewer: srinathv
 ms.topic: troubleshooting
 ms.date: 08/30/2019
-ms.openlocfilehash: 6baf878a1afac011997800b78f059e254e3f2a06
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: 9dbb76b3c0bb6c0ff1f4fb51fbf4846b74a3a1f3
+ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76845534"
+ms.lasthandoff: 02/05/2020
+ms.locfileid: "77019101"
 ---
 # <a name="troubleshooting-backup-failures-on-azure-virtual-machines"></a>Устранение ошибок резервного копирования на виртуальных машинах Azure
 
@@ -278,6 +278,6 @@ REG ADD "HKLM\SOFTWARE\Microsoft\BcdrAgentPersistentKeys" /v CalculateSnapshotTi
 Для работы резервного копирования службы архивации на виртуальной машине IaaS DHCP должна быть включена для учетной записи гостя. Если вам нужен статический частный IP-адрес, настройте его с помощью портала Azure или PowerShell. Убедитесь, что параметр DHCP для виртуальной машины включен.
 Дополнительные сведения о том, как настроить статический IP-адрес с помощью PowerShell см. раздели:
 
-* [Добавление статического внутреннего IP-адреса для существующей виртуальной машины](/previous-versions/azure/virtual-network/virtual-networks-reserved-private-ip.md#how-to-add-a-static-internal-ip-to-an-existing-vm)
+* [Добавление статического внутреннего IP-адреса для существующей виртуальной машины](/previous-versions/azure/virtual-network/virtual-networks-reserved-private-ip#how-to-add-a-static-internal-ip-to-an-existing-vm)
 * [Изменение метода распределения для частного IP-адреса, назначенного сетевому интерфейсу](../virtual-network/virtual-networks-static-private-ip-arm-ps.md#change-the-allocation-method-for-a-private-ip-address-assigned-to-a-network-interface)
 

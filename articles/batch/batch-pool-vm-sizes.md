@@ -3,8 +3,8 @@ title: Выбор размеров виртуальных машин для пу
 description: Выбор доступных размеров виртуальной машины для вычислительных узлов в пулах пакетной службы Azure
 services: batch
 documentationcenter: ''
-author: ju-shim
-manager: gwallace
+author: LauraBrenner
+manager: evansma
 editor: ''
 ms.assetid: ''
 ms.service: batch
@@ -12,14 +12,14 @@ ms.workload: ''
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 09/12/2019
-ms.author: jushiman
+ms.author: labrenne
 ms.custom: seodec18
-ms.openlocfilehash: 34ab09f7d8d47804992b8ef6864bfea60d1c9b4d
-ms.sourcegitcommit: dbcc4569fde1bebb9df0a3ab6d4d3ff7f806d486
+ms.openlocfilehash: be19de19dab92bc40ca5529ad578e033a98929cd
+ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76026606"
+ms.lasthandoff: 02/05/2020
+ms.locfileid: "77023571"
 ---
 # <a name="choose-a-vm-size-for-compute-nodes-in-an-azure-batch-pool"></a>Выбор размера виртуальной машины для вычислительных узлов в пуле пакетной службы Azure
 

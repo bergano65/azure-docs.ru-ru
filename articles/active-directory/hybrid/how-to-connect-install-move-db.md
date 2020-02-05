@@ -1,5 +1,5 @@
 ---
-title: Перемещение базы данных Azure AD Connect с SQL Server Express на SQL Server | Документация Майкрософт
+title: Перемещение базы данных Azure AD Connect с SQL Server Express на SQL Server | Документы Майкрософт
 description: В этом документе описано, как переместить базу данных Azure AD Connect с локального сервера SQL Server Express на удаленный сервер SQL Server.
 services: active-directory
 author: billmath
@@ -11,12 +11,12 @@ ms.date: 04/29/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7ae0e87fddabee9f42cbb5506dce4cd7a5f4f082
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 742bc307c90ad58b83b7d4c92f9546b87c163c3b
+ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64918854"
+ms.lasthandoff: 02/05/2020
+ms.locfileid: "77019287"
 ---
 # <a name="move-azure-ad-connect-database-from-sql-server-express-to-sql-server"></a>Перемещение базы данных Azure AD Connect с SQL Server Express на SQL Server 
 
@@ -31,26 +31,26 @@ ms.locfileid: "64918854"
 Выполните следующие действия, чтобы переместить базу данных Azure AD Connect на удаленный сервер SQL Server.
 
 1. На сервере Azure AD Connect перейдите в раздел **Службы** и остановите службу **Microsoft Azure AD Sync**.
-2. Найдите папку **%Program Files%\Microsoft Azure AD Sync/Data/** и скопируйте файлы **ADSync.mdf** и **ADSync_log.ldf** на удаленный сервер SQL Server.
+2. Откройте папку **%ProgramFiles%\Microsoft Azure AD синк\дата** и скопируйте файлы **ADSync. mdf** и **ADSync_log. ldf** на удаленный SQL Server.
 3. Перезапустите службу **Microsoft Azure AD Sync** на сервере Azure AD Connect.
 4. Удалите базу данных Azure AD Connect, последовательно выбрав "Панель управления" > "Программы" > "Программы и компоненты".  Выберите Microsoft Azure AD Connect и нажмите кнопку "Удалить" вверху.
 5. На удаленном сервере SQL Server откройте SQL Server Management Studio.
 6. Правой кнопкой мыши щелкните элемент "Базы данных" и выберите пункт "Вложить".
-7. На экране **Присоединение баз данных** щелкните **Добавить** и перейдите к файлу ADSync.mdf.  Последовательно выберите **ОК**.
-   ![Присоединение базы данных](media/how-to-connect-install-move-db/move2.png)
+7. На экране **Присоединение баз данных** щелкните **Добавить** и перейдите к файлу ADSync.mdf.  Нажмите кнопку **ОК**.
+   ![присоединение базы данных](media/how-to-connect-install-move-db/move2.png)
 
 8. После присоединения базы данных вернитесь на сервер Azure AD Connect и установите базу данных Azure AD Connect.
 9. По завершении установки MSI мастер Azure AD Connect запускается с настройкой режима Express. Закройте экран, щелкнув значок "Выход".
    ![Добро пожаловать!](./media/how-to-connect-install-move-db/db1.png)
-10. Запустите новую командную строку или сеанс PowerShell. Перейдите к папке \<диска > \Program files\Microsoft Azure AD Connect. Выполните команду \AzureADConnect.exe /useexistingdatabase, чтобы запустить мастер Azure AD Connect в режиме установки "Использовать существующую базу данных".
+10. Запустите новую командную строку или сеанс PowerShell. Перейдите в папку \<диск > \Program files\Microsoft Azure AD Connect. Выполните команду \AzureADConnect.exe /useexistingdatabase, чтобы запустить мастер Azure AD Connect в режиме установки "Использовать существующую базу данных".
     ![PowerShell](./media/how-to-connect-install-move-db/db2.png)
 11. Появится экран приветствия Azure AD Connect. После принятия условий лицензии и заявления о конфиденциальности, щелкните **Продолжить**.
     ![Добро пожаловать!](./media/how-to-connect-install-move-db/db3.png)
-12. На экране **Установить требующиеся компоненты** включен параметр **Использовать существующий SQL Server**. Укажите имя сервера SQL, на котором размещена база данных ADSync. Если экземпляр ядра SQL, используемый для размещения базы данных, не является экземпляром по умолчанию сервера SQL, необходимо указать ядро SQL и имя экземпляра. Кроме того, если просмотр SQL не включен, также необходимо указать номер порта экземпляра ядра SQL. Пример:         
+12. На экране **Установить требующиеся компоненты** включен параметр **Использовать существующий SQL Server**. Укажите имя сервера SQL, на котором размещена база данных ADSync. Если экземпляр ядра SQL, используемый для размещения базы данных, не является экземпляром по умолчанию сервера SQL, необходимо указать ядро SQL и имя экземпляра. Кроме того, если просмотр SQL не включен, также необходимо указать номер порта экземпляра ядра SQL. Пример.         
     ![Добро пожаловать!](./media/how-to-connect-install-move-db/db4.png)           
 
 13. На экране **Подключение к Azure AD** необходимо предоставить учетные данные глобального администратора для каталога Azure AD. Рекомендуется использовать учетную запись в домене onmicrosoft.com по умолчанию. Эта учетная запись используется только для создания учетной записи службы в Azure AD и не используется после завершения работы мастера.
-    ![Подключение](./media/how-to-connect-install-move-db/db5.png)
+    ![Подключить](./media/how-to-connect-install-move-db/db5.png)
  
 14. На экране **Подключить каталоги** имеющийся лес AD, настроенный для синхронизации каталогов, помечен красным значком с крестиком. Для синхронизации изменений из локального леса AD необходима учетная запись AD DS. Мастер Azure AD Connect не может извлечь учетные данные учетной записи AD DS, хранимые в базе данных ADSync, так как они зашифрованы и могут быть расшифрованы только предыдущим сервером Azure AD Connect. Щелкните **Изменить учетные данные**, чтобы указать учетную запись AD DS для леса AD.
     ![Directories](./media/how-to-connect-install-move-db/db6.png)
@@ -60,7 +60,7 @@ ms.locfileid: "64918854"
     ![Добро пожаловать!](./media/how-to-connect-install-move-db/db7.png)
  
  
-16. После предоставления учетных данных красный значок с крестиком заменяется зеленым значком с галочкой. Нажмите кнопку **Далее**.
+16. После предоставления учетных данных красный значок с крестиком заменяется зеленым значком с галочкой. Щелкните **Далее**.
     ![Добро пожаловать!](./media/how-to-connect-install-move-db/db8.png)
  
  

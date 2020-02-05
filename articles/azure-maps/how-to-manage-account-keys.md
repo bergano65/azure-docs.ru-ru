@@ -1,25 +1,25 @@
 ---
-title: Управление учетной записью Azure Maps на портале Azure | Карты Microsoft Azure
+title: Управление учетной записью Azure Maps в портал Azure | Карты Microsoft Azure
 description: В этой статье вы узнаете, как использовать портал Azure для управления учетной записью Microsoft Azure Maps.
 author: walsehgal
 ms.author: v-musehg
-ms.date: 02/14/2019
+ms.date: 01/27/2020
 ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: timlt
-ms.openlocfilehash: 92c76780473372c3e2ef87cdf4da0f21a22d9ac6
-ms.sourcegitcommit: f9601bbccddfccddb6f577d6febf7b2b12988911
+ms.openlocfilehash: a983eab03e948d092af652962d75211eb8ee3e7b
+ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2020
-ms.locfileid: "75911503"
+ms.lasthandoff: 02/05/2020
+ms.locfileid: "77025611"
 ---
 # <a name="manage-your-azure-maps-account"></a>Управление учетной записью Azure Maps
 
 Вы можете управлять учетной записью Azure Maps с помощью портала Azure. Если у вас есть учетная запись, вы можете реализовать API-интерфейсы на своем веб-сайте или в мобильном приложении.
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 ## <a name="create-a-new-account"></a>Создание новой учетной записи
 
@@ -31,13 +31,13 @@ ms.locfileid: "75911503"
 
 4. Введите сведения о новой учетной записи.
 
-![Введите Azure Maps сведения об учетной записи в портал Azure](./media/how-to-manage-account-keys/new-account-portal.png)
+[![ввести Azure Maps сведения об учетной записи в портал Azure](./media/how-to-manage-account-keys/new-account-portal.png)](./media/how-to-manage-account-keys/new-account-portal.png#lightbox)
 
 ## <a name="delete-an-account"></a>Удаление учетной записи
 
 Вы можете удалить учетную запись с портала Azure. Перейдите на страницу сведений об учетной записи и щелкните **Удалить**.
 
-![Удалите учетную запись Azure Maps в портал Azure](./media/how-to-manage-account-keys/account-delete-portal.png)
+[![удалить учетную запись Azure Maps в портал Azure](./media/how-to-manage-account-keys/account-delete-portal.png)](./media/how-to-manage-account-keys/account-delete-portal.png#lightbox)
 
 Откроется страница подтверждения. Вы можете подтвердить удаление вашей учетной записи, введя ее имя.
 

@@ -16,6 +16,8 @@
           href: create-private-endpoint-powershell.md
     - name: Создание службы "Приватный канал"
       items:
+        - name: Портал Azure
+          href: create-private-link-service-portal.md
         - name: Azure PowerShell
           href: create-private-link-service-powershell.md
         - name: Azure CLI
@@ -30,7 +32,7 @@
   items:
     - name: Частное подключение к учетной записи хранения
       href: create-private-endpoint-storage-portal.md
-    - name: Частное подключение к учетной записи Cosmos DB
+    - name: "Частное подключение к учетной записи Cosmos\_DB"
       href: create-private-endpoint-cosmosdb-portal.md
     - name: Отключение сетевых политик для частной конечной точки
       href: disable-private-endpoint-network-policy.md
@@ -38,7 +40,7 @@
       href: disable-private-link-service-network-policy.md
     - name: Управление частными конечными точками
       href: manage-private-endpoint.md
-- name: Справочные материалы
+- name: Справочник
   items:
     - name: Azure CLI
       href: /cli/azure/network
@@ -76,5 +78,5 @@
       href: 'https://azure.microsoft.com/pricing/calculator/'
     - name: Stack Overflow
       href: 'https://stackoverflow.com/questions/tagged/azure-virtual-network'
-    - name: Часто задаваемые вопросы
+    - name: ВОПРОСЫ И ОТВЕТЫ
       href: private-link-faq.md

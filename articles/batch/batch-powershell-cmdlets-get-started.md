@@ -3,8 +3,8 @@ title: Приступая к работе с модулем PowerShell для п
 description: Краткое описание командлетов Azure PowerShell, используемых для управления ресурсами пакетной службы.
 services: batch
 documentationcenter: ''
-author: ju-shim
-manager: gwallace
+author: LauraBrenner
+manager: evansma
 editor: ''
 ms.assetid: ''
 ms.service: batch
@@ -13,14 +13,14 @@ ms.topic: conceptual
 ms.tgt_pltfrm: powershell
 ms.workload: big-compute
 ms.date: 01/15/2019
-ms.author: jushiman
+ms.author: labrenne
 ms.custom: seodec18
-ms.openlocfilehash: 48b728d0e5b710f3adaa576f012bdbd19effc20a
-ms.sourcegitcommit: dbcc4569fde1bebb9df0a3ab6d4d3ff7f806d486
+ms.openlocfilehash: 26691ca6b9d078ef18ac852c67fa2ac88dff2722
+ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76026594"
+ms.lasthandoff: 02/05/2020
+ms.locfileid: "77023010"
 ---
 # <a name="manage-batch-resources-with-powershell-cmdlets"></a>Управление ресурсами пакетной службы с помощью командлетов PowerShell
 

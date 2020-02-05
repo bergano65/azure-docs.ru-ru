@@ -7,13 +7,13 @@ manager: bertvanhoof
 ms.service: digital-twins
 services: digital-twins
 ms.topic: conceptual
-ms.date: 01/10/2020
-ms.openlocfilehash: 42b697babe2bc004663c80e6e2f71f90ba1e5e5b
-ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
+ms.date: 02/03/2020
+ms.openlocfilehash: 377639d7a88478308709743ab842db71028686ed
+ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76765397"
+ms.lasthandoff: 02/05/2020
+ms.locfileid: "77023316"
 ---
 # <a name="how-to-configure-postman-for-azure-digital-twins"></a>Настройка Postman для Azure Digital Twins
 
@@ -33,45 +33,15 @@ ms.locfileid: "76765397"
 
 ## <a name="configure-azure-active-directory-to-use-the-oauth-20-implicit-grant-flow"></a>Настройка Azure Active Directory для использования потока неявного предоставления разрешений OAuth 2.0
 
-Настройте приложение Azure AD на использование потока неявного предоставления разрешений OAuth 2.0.
-
-1. Откройте область **Разрешения API** для регистрации приложения. Нажмите кнопку **Add a permission** (Добавить разрешение). В области **Запрос разрешений API** щелкните вкладку **Интерфейсы API, используемые моей организацией**, а затем выполните поиск по запросу
-    
-    1. `Azure Digital Twins`. Выберите API **Azure Digital Twins**.
-
-        [![Поиск API или Azure Digital Twins](../../includes/media/digital-twins-permissions/aad-aap-search-api-dt.png)](../../includes/media/digital-twins-permissions/aad-aap-search-api-dt.png#lightbox)
-
-    1. Кроме того, можно выполнить поиск `Azure Smart Spaces Service`. Выберите API **Azure Smart Spaces Service**.
-
-        [![Поиск API для Azure Smart Spaces](../../includes/media/digital-twins-permissions/aad-app-search-api.png)](../../includes/media/digital-twins-permissions/aad-app-search-api.png#lightbox)
-
-    > [!IMPORTANT]
-    > Имя и идентификатор API Azure AD, которые будут отображаться, зависят от вашего клиента:
-    > * Для тестовых клиентов и учетных записей клиентов следует искать `Azure Digital Twins`.
-    > * Для других учетных записей Майкрософт следует искать `Azure Smart Spaces Service`.
-
-1. Выбранный API появится как **Azure Digital Twins** в той же области **Запрос разрешений API**. Выберите раскрывающийся список **Read (1)** (Чтение (1)), а затем установите флажок **Read.Write**. Нажмите кнопку **Add permissions** (Добавить разрешения).
-
-    [![добавить разрешения API для Azure Digital двойников](../../includes/media/digital-twins-permissions/aad-app-req-permissions.png)](../../includes/media/digital-twins-permissions/aad-app-req-permissions.png#lightbox)
-
-1. В зависимости от параметров вашей организации вам может потребоваться предпринять дополнительные шаги для предоставления доступа администратора к этому API. Для получения дополнительной информации обратитесь к администратору. Как только доступ администратора будет утвержден, столбец **ADMIN CONSENT REQUIRED** (Требуется согласие администратора) в области **Разрешения API** будет отображать примерно следующее для интерфейсов API:
-
-    [![настроить утверждение согласия администратора](../../includes/media/digital-twins-permissions/aad-app-admin-consent.png)](../../includes/media/digital-twins-permissions/aad-app-admin-consent.png#lightbox)
-
-1. Настройте второй **URI перенаправления** для `https://www.getpostman.com/oauth2/callback`.
+1. Выполните действия, описанные в [кратком руководстве](quickstart-view-occupancy-dotnet.md#set-permissions-for-your-app) , чтобы создать и настроить приложение Azure Active Directory. Кроме того, можно повторно использовать существующую регистрацию приложения.
 
     [![настроить новый URI перенаправления POST](media/how-to-configure-postman/authentication-redirect-uri.png)](media/how-to-configure-postman/authentication-redirect-uri.png#lightbox)
 
-1. Чтобы убедиться, что [приложение зарегистрировано как **общедоступный клиент**](https://docs.microsoft.com/azure/active-directory/develop/scenario-desktop-app-registration), откройте область **Аутентификация** для регистрации приложения и прокрутите вниз в этой области. В разделе **Тип клиента по умолчанию** выберите **Да** для параметра **Treat application as a public client** (Рассматривать приложение как общедоступный клиент), а затем нажмите кнопку **Сохранить**.
+1. Теперь добавьте **URI перенаправления** для `https://www.getpostman.com/oauth2/callback`.
 
-    Установите флажок **Маркеры доступа**, чтобы включить параметр **oauth2AllowImplicitFlow** в файле Manifest.json.
+1. Установите флажок **неявное предоставление** > **маркеров доступа** , чтобы разрешить использование потока неявного предоставления OAuth 2,0. Выберите **Настройка**, а затем **сохранить**.
 
-    [![Параметр конфигурации общедоступного клиента](../../includes/media/digital-twins-permissions/aad-configure-public-client.png)](../../includes/media/digital-twins-permissions/aad-configure-public-client.png#lightbox)
-
-1. Скопируйте и сохраните **идентификатор приложения** Azure AD. Он используется в последующих шагах.
-
-   [![Идентификатор приложения Azure Active Directory](../../includes/media/digital-twins-permissions/aad-app-reg-app-id.png)](../../includes/media//digital-twins-permissions/aad-app-reg-app-id.png#lightbox)
-
+1. Скопируйте **идентификатор клиента** приложения Azure Active Directory.
 
 ## <a name="obtain-an-oauth-20-token"></a>Получение маркера OAuth 2.0
 
@@ -91,15 +61,13 @@ ms.locfileid: "76765397"
 
 1. Скачайте приложение, перейдя по адресу [www.getpostman.com](https://www.getpostman.com/).
 
-1. Откройте приложение Postman и в раскрывающемся списке "New" (Новый) щелкните "Create New" (Создать новый) и выберите "Request" (Запрос). Введите имя запроса. Выберите коллекцию или папку для сохранения, а затем нажмите кнопку Сохранить. 
-
 1. Мы хотим сделать запрос GET. Перейдите на вкладку **авторизация** , выберите OAuth 2,0 и щелкните **получить новый маркер доступа**.
 
     | Поле  | Значение |
     |---------|---------|
     | Тип предоставления разрешения | `Implicit` |
     | URL-адрес обратного вызова | `https://www.getpostman.com/oauth2/callback` |
-    | URL-адрес аутентификации | Используйте **URL-адрес авторизации** из **шага 2** . |
+    | URL-адрес аутентификации | Используйте **URL-адрес авторизации** из **шага 1** . |
     | Идентификатор клиента | Используйте **идентификатор приложения** для Azure Active Directoryного приложения, созданного или повторно используемого из предыдущего раздела. |
     | Область действия | Не указывайте |
     | Состояние | Не указывайте |

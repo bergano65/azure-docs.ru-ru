@@ -3,12 +3,12 @@ title: Поддержка миграции VMware в службе "миграц�
 description: Сведения о поддержке миграции виртуальных машин VMware в Azure Migration.
 ms.topic: conceptual
 ms.date: 01/07/2020
-ms.openlocfilehash: 6593d4de6823f15f570ab8922d76cbe84fb0e348
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: e5a2f40611f6b358a8b5ff1dfb99cadebae4fab6
+ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "76901543"
+ms.lasthandoff: 02/05/2020
+ms.locfileid: "77014000"
 ---
 # <a name="support-matrix-for-vmware-migration"></a>Матрица поддержки для миграции VMware
 
@@ -123,7 +123,7 @@ Appliance | Исходящие подключения через порт 443 д
 
 - Узнайте о [требованиях к устройству репликации](migrate-replication-appliance.md#appliance-requirements) для VMware.
 - На устройстве должна быть установлена MySQL. Сведения о [вариантах установки](migrate-replication-appliance.md#mysql-installation).
-- Сведения о [URL-адресах](migrate-replication-appliance.md#url-access) и [портах]() , к которым требуется доступ устройству репликации.
+- Сведения о [URL-адресах](migrate-replication-appliance.md#url-access) и [портах](migrate-replication-appliance.md#port-access) , к которым требуется доступ устройству репликации.
 
 ## <a name="agent-based-ports"></a>Порты на основе агентов
 

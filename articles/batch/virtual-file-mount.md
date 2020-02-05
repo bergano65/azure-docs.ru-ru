@@ -3,20 +3,20 @@ title: Подключение виртуальной файловой систе
 description: Узнайте, как подключить виртуальную файловую систему к пулу пакетной службы.
 services: batch
 documentationcenter: ''
-author: ju-shim
-manager: gwallace
+author: LauraBrenner
+manager: evansma
 ms.service: batch
 ms.workload: big-compute
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 08/13/2019
-ms.author: jushiman
-ms.openlocfilehash: eab8e509e4978de50968bc1d960ee34d46bc73b0
-ms.sourcegitcommit: dbcc4569fde1bebb9df0a3ab6d4d3ff7f806d486
+ms.author: labrenne
+ms.openlocfilehash: a22117505dff35f9b92e3dd3c91dc8540557b218
+ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76029138"
+ms.lasthandoff: 02/05/2020
+ms.locfileid: "77023044"
 ---
 # <a name="mount-a-virtual-file-system-on-a-batch-pool"></a>Подключение виртуальной файловой системы в пуле пакетной службы
 
@@ -114,7 +114,7 @@ new PoolAddParameter
 }
 ```
 
-### <a name="network-file-system"></a>NFS
+### <a name="network-file-system"></a>Сетевая файловая система
 
 Сетевые файловые системы (NFS) также могут быть подключены к узлам пула, что позволяет узлам пакетной службы Azure легко получать доступ к традиционным файловым системам. Это может быть один сервер NFS, развернутый в облаке, или локальный сервер NFS, доступ к которому осуществляется через виртуальную сеть. Кроме того, воспользуйтесь преимуществами распределенного в памяти кэша [Авере вфкст](../avere-vfxt/avere-vfxt-overview.md) , который обеспечивает бесперебойное подключение к локальному хранилищу, считывание данных по запросу в свой кэш и обеспечивает высокую производительность и масштабируемость облачных кластерных узлов.
 

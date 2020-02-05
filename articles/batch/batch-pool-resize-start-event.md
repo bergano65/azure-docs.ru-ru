@@ -2,21 +2,21 @@
 title: Событие начала изменения размера пула пакетной службы Azure
 description: Справочник по событию начала изменения размера пула пакетной службы. Пример показывает тело события начала изменения размера пула для изменения размера пула с 0 до 2 узлов с изменением размера вручную.
 services: batch
-author: ju-shim
-manager: gwallace
+author: LauraBrenner
+manager: evansma
 ms.assetid: ''
 ms.service: batch
 ms.topic: article
 ms.tgt_pltfrm: ''
 ms.workload: big-compute
 ms.date: 04/20/2017
-ms.author: jushiman
-ms.openlocfilehash: 8e2df1c2264392ab79e2dcbb7e58977f341b14d9
-ms.sourcegitcommit: dbcc4569fde1bebb9df0a3ab6d4d3ff7f806d486
+ms.author: labrenne
+ms.openlocfilehash: 1866e51da30fe5ed148d019c8720755e99757df7
+ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76026630"
+ms.lasthandoff: 02/05/2020
+ms.locfileid: "77023588"
 ---
 # <a name="pool-resize-start-event"></a>Событие начала изменения размера пула
 

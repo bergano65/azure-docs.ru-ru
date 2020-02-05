@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 09/27/2019
 ms.author: zarhoads
-ms.openlocfilehash: 9633975f53b3e398537067b17a870f621d9a7435
-ms.sourcegitcommit: 05cdbb71b621c4dcc2ae2d92ca8c20f216ec9bc4
+ms.openlocfilehash: 03daafd383810a5e6cf086ca8e546981b06fa6eb
+ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76045051"
+ms.lasthandoff: 02/05/2020
+ms.locfileid: "77025713"
 ---
 # <a name="use-a-standard-sku-load-balancer-in-azure-kubernetes-service-aks"></a>Использование балансировщика нагрузки "Стандартный" в службе Kubernetes Azure (AKS)
 
@@ -22,11 +22,11 @@ ms.locfileid: "76045051"
 
 В этой статье предполагается, что основное понимание Kubernetes и Azure Load Balancer концепций. Дополнительные сведения см. в разделе [Основные понятия Kubernetes Core для службы Kubernetes Azure (AKS)][kubernetes-concepts] и [что Azure Load Balancer?][azure-lb].
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
-Если вы решили установить и использовать CLI локально, для работы с этой статьей требуется Azure CLI версии 2.0.74 или более поздней. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0][install-azure-cli].
+Если вы решили установить и использовать CLI локально, для работы с этой статьей требуется Azure CLI версии 2.0.81 или более поздней. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0][install-azure-cli].
 
 ## <a name="before-you-begin"></a>Перед началом работы
 
@@ -162,9 +162,14 @@ az aks create \
     --load-balancer-outbound-ip-prefixes <publicIpPrefixId1>,<publicIpPrefixId2>
 ```
 
-## <a name="show-the-outbound-rule-for-your-load-balancer"></a>Отображение правила исходящего трафика для балансировщика нагрузки
+## <a name="configure-outbound-ports-and-idle-timeout"></a>Настройка исходящих портов и времени ожидания простоя
 
-Чтобы отобразить правило исходящего трафика, созданное в подсистеме балансировки нагрузки, используйте команду [AZ Network фунтов исходящего трафика-Rule][az-network-lb-outbound-rule-list] и укажите группу ресурсов узла кластера AKS:
+> [!WARNING]
+> Следующий раздел предназначен для расширенных сценариев более масштабных сетей или для устранения проблем нехватки SNAT с конфигурациями по умолчанию. Чтобы поддерживать работоспособные кластеры, необходимо иметь точную инвентаризацию доступной квоты для виртуальных машин и IP-адресов перед изменением значения по умолчанию *аллокатедаутбаундпортс* или *идлетимеаутинминутес* .
+> 
+> Изменение значений для *аллокатедаутбаундпортс* и *идлетимеаутинминутес* может значительно изменить поведение исходящего правила для балансировщика нагрузки. Перед обновлением этих значений проверьте [Load Balancer правила][azure-lb-outbound-rules-overview]исходящих подключений, [Исходящие правила подсистемы балансировки нагрузки][azure-lb-outbound-rules]и [Исходящие подключения в Azure][azure-lb-outbound-connections] , чтобы полностью оценить влияние изменений.
+
+Для [SNAT][azure-lb-outbound-connections]используются исходящие выделенные порты и их время ожидания простоя. По умолчанию балансировщик нагрузки " *стандартный* " использует [Автоматическое назначение количества исходящих портов на основе размера серверного пула][azure-lb-outbound-preallocatedports] и 30-минутное время ожидания простоя для каждого порта. Чтобы просмотреть эти значения, используйте команду [AZ Network фунтов исходящие-Rules][az-network-lb-outbound-rule-list] , чтобы отобразить правило исходящего трафика для балансировщика нагрузки:
 
 ```azurecli-interactive
 NODE_RG=$(az aks show --resource-group myResourceGroup --name myAKSCluster --query nodeResourceGroup -o tsv)
@@ -179,7 +184,46 @@ AllocatedOutboundPorts    EnableTcpReset    IdleTimeoutInMinutes    Name        
 0                         True              30                      aksOutboundRule  All         Succeeded            MC_myResourceGroup_myAKSCluster_eastus  
 ```
 
-В примере выходных данных *аллокатедаутбаундпортс* имеет значение 0. Значение параметра *аллокатедаутбаундпортс* означает, что распределение портов SNAT возвращается к автоматическому назначению на основе размера внутреннего пула. Дополнительные сведения см. в разделе [Load Balancer правила исходящих][azure-lb-outbound-rules] [подключений и исходящие подключения в Azure][azure-lb-outbound-connections] .
+В выходных данных примера показано значение по умолчанию для *аллокатедаутбаундпортс* и *идлетимеаутинминутес*. Значение 0 для *аллокатедаутбаундпортс* задает количество исходящих портов, использующих автоматическое назначение количества исходящих портов на основе размера внутреннего пула. Например, если кластер содержит 50 или менее узлов, выделяются 1024 портов для каждого узла.
+
+Рассмотрите возможность изменения параметра *аллокатедаутбаундпортс* или *идлетимеаутинминутес* , если вы хотите настроить нехватку SNAT на основе указанной выше конфигурации по умолчанию. Каждый дополнительный IP-адрес обеспечивает 64 000 дополнительных портов для выделения, однако Load Balancer (цен. категория "Стандартный") Azure не увеличивает число портов автоматически на узел при добавлении дополнительных IP-адресов. Эти значения можно изменить, задав параметры *балансировки нагрузки-исходящие-порты* и *балансировки нагрузки — время ожидания простоя* . Пример.
+
+```azurecli-interactive
+az aks update \
+    --resource-group myResourceGroup \
+    --name myAKSCluster \
+    --load-balancer-outbound-ports 0 \
+    --load-balancer-idle-timeout 30
+```
+
+> [!IMPORTANT]
+> Необходимо [рассчитать требуемую квоту][calculate-required-quota] перед настройкой *аллокатедаутбаундпортс* , чтобы избежать проблем с подключением или масштабированием. Значение, указанное для *аллокатедаутбаундпортс* , также должно быть кратным 8.
+
+Кроме того, при создании кластера можно использовать параметры *балансировки нагрузки-исходящих портов* и *балансировщика нагрузки — время ожидания* , но необходимо также указать *подсистемы балансировки нагрузки-Managed-исходящий-IP-Count*, *Load-* IP-и (или) *балансировки нагрузки-исходящего трафика* .  Пример.
+
+```azurecli-interactive
+az aks create \
+    --resource-group myResourceGroup \
+    --name myAKSCluster \
+    --vm-set-type VirtualMachineScaleSets \
+    --node-count 1 \
+    --load-balancer-sku standard \
+    --generate-ssh-keys \
+    --load-balancer-managed-outbound-ip-count 2 \
+    --load-balancer-outbound-ports 0 \
+    --load-balancer-idle-timeout 30
+```
+
+При изменении параметров по умолчанию для подсистемы *балансировки нагрузки — исходящих портов* и *подсистемы балансировки нагрузки-истечения времени ожидания* , это влияет на поведение профиля подсистемы балансировки нагрузки, что влияет на весь кластер.
+
+### <a name="required-quota-for-customizing-allocatedoutboundports"></a>Требуемая квота для настройки Аллокатедаутбаундпортс
+Необходимо иметь достаточное количество исходящих IP-адресов на основе числа виртуальных машин узлов и требуемых выделенных исходящих портов. Чтобы проверить наличие достаточного количества исходящих IP-адресов, используйте следующую формулу: 
+ 
+*аутбаундипс* \* 64 000 \> *нодевмс* \* *десиредаллокатедаутбаундпортс*.
+ 
+Например, если у вас есть 3 *нодевмс*и 50 000 *десиредаллокатедаутбаундпортс*, необходимо иметь по крайней мере 3 *аутбаундипс*. Рекомендуется включать дополнительный объем исходящих IP-адресов, помимо того, что вам нужно. Кроме того, при расчете исходящих IP-адресов необходимо учитывать автоматическое масштабирование кластера и возможность обновления пула узлов. Для автомасштабирования кластера Проверьте текущее число узлов и максимальное количество узлов и используйте более высокое значение. Для обновления учетная запись для дополнительного узла виртуальной машины для каждого пула узлов, который допускает обновление.
+ 
+Если для параметра *идлетимеаутинминутес* задано значение, отличное от 30 минут, определите, сколько времени для рабочих нагрузок потребуется исходящее подключение. Также рассмотрите значение времени ожидания по умолчанию для подсистемы балансировки нагрузки уровня " *стандартный* ", используемой за пределами AKS, — 4 минуты. Значение *идлетимеаутинминутес* , которое более точно отражает вашу конкретную рабочую нагрузку AKS, может помочь уменьшить нехватку SNAT, вызванное присоединением подключений, которые больше не используются.
 
 ## <a name="restrict-access-to-specific-ip-ranges"></a>Ограничение доступа к определенным диапазонам IP-адресов
 
@@ -239,9 +283,12 @@ spec:
 [azure-lb-comparison]: ../load-balancer/concepts-limitations.md#skus
 [azure-lb-outbound-rules]: ../load-balancer/load-balancer-outbound-rules-overview.md#snatports
 [azure-lb-outbound-connections]: ../load-balancer/load-balancer-outbound-connections.md#snat
+[azure-lb-outbound-preallocatedports]: ../load-balancer/load-balancer-outbound-connections.md#preallocatedports
+[azure-lb-outbound-rules-overview]: ../load-balancer/load-balancer-outbound-rules-overview.md
 [install-azure-cli]: /cli/azure/install-azure-cli
 [internal-lb-yaml]: internal-lb.md#create-an-internal-load-balancer
 [kubernetes-concepts]: concepts-clusters-workloads.md
 [use-kubenet]: configure-kubenet.md
 [az-extension-add]: /cli/azure/extension#az-extension-add
 [az-extension-update]: /cli/azure/extension#az-extension-update
+[calculate-required-quota]: #required-quota-for-customizing-allocatedoutboundports

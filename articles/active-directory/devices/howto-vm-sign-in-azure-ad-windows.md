@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 42d1fde92e9315e8df3f65b2ab91ced74b377c0a
-ms.sourcegitcommit: 7221918fbe5385ceccf39dff9dd5a3817a0bd807
+ms.openlocfilehash: 70fe718884796ac127be38c375003dd728089be8
+ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/21/2020
-ms.locfileid: "76293459"
+ms.lasthandoff: 02/05/2020
+ms.locfileid: "77016040"
 ---
 # <a name="sign-in-to-windows-virtual-machine-in-azure-using-azure-active-directory-authentication-preview"></a>Вход в виртуальную машину Windows в Azure с помощью проверки подлинности Azure Active Directory (Предварительная версия)
 
@@ -239,9 +239,9 @@ az role assignment create \
 
    | Команда для запуска | Ожидаемые выходные данные |
    | --- | --- |
-   | Перелистывание метаданных: true "http://169.254.169.254/metadata/instance?api-version=2017-08-01" | Правильные сведения о виртуальной машине Azure |
-   | Перелистывание метаданных: true "http://169.254.169.254/metadata/identity/info?api-version=2018-02-01" | Допустимый идентификатор клиента, связанный с подпиской Azure |
-   | Перелистывание метаданных: true "http://169.254.169.254/metadata/identity/oauth2/token?resource=urn:ms-drs:enterpriseregistration.windows.net&api-version=2018-02-01" | Допустимый маркер доступа, выданный Azure Active Directory для управляемого удостоверения, назначенного этой виртуальной машине |
+   | `curl -H @{"Metadata"="true"} "http://169.254.169.254/metadata/instance?api-version=2017-08-01"` | Правильные сведения о виртуальной машине Azure |
+   | `curl -H @{"Metadata"="true"} "http://169.254.169.254/metadata/identity/info?api-version=2018-02-01"` | Допустимый идентификатор клиента, связанный с подпиской Azure |
+   | `curl -H @{"Metadata"="true"} "http://169.254.169.254/metadata/identity/oauth2/token?resource=urn:ms-drs:enterpriseregistration.windows.net&api-version=2018-02-01"` | Допустимый маркер доступа, выданный Azure Active Directory для управляемого удостоверения, назначенного этой виртуальной машине |
 
    > [!NOTE]
    > Маркер доступа можно декодировать с помощью такого средства, как [http://calebb.net/](http://calebb.net/). Проверьте, что идентификатор AppID в маркере доступа соответствует управляемому удостоверению, назначенному виртуальной машине.

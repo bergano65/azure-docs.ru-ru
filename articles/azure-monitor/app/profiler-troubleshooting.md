@@ -8,14 +8,19 @@ author: cweining
 ms.author: cweining
 ms.date: 08/06/2018
 ms.reviewer: mbullwin
-ms.openlocfilehash: a9817205a419e2b61af66dba16d09620e2c1dec9
-ms.sourcegitcommit: a9b1f7d5111cb07e3462973eb607ff1e512bc407
+ms.openlocfilehash: 2bac317d6a3a5c6895a3cea4dae22694b603cabf
+ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76310872"
+ms.lasthandoff: 02/05/2020
+ms.locfileid: "77024030"
 ---
 # <a name="troubleshoot-problems-enabling-or-viewing-application-insights-profiler"></a>Устранение неполадок по включению и просмотру Application Insights Profiler
+
+## <a name="active-issues"></a>Активные проблемы
+
+* Профилирование для приложений ASP.NET Core 3. x пока не поддерживается.
+  * Если у вас должен быть профайлер, обходной путь заключается в использовании [Application Insights Profiler для ASP.NET Core](https://github.com/microsoft/ApplicationInsights-Profiler-AspNetCore). Профилировщик помечен для Linux, но он также работает с приложениями .NET Core 3.0 и Windows. Дополнительные сведения см. в разделе [Поддерживаемые версии](https://github.com/microsoft/ApplicationInsights-Profiler-AspNetCore#supported-versions).
 
 ## <a id="troubleshooting"></a>Общие действия по устранению неполадок
 

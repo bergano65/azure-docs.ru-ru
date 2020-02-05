@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/24/2018
 ms.author: damaerte
-ms.openlocfilehash: 5af73e166f3caa4997851ae4b17d8377550bf40a
-ms.sourcegitcommit: 39da2d9675c3a2ac54ddc164da4568cf341ddecf
+ms.openlocfilehash: db1e2d09c1a75401a8ca24859e9b2d5da9f54b72
+ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73961554"
+ms.lasthandoff: 02/05/2020
+ms.locfileid: "77024285"
 ---
 # <a name="troubleshooting--limitations-of-azure-cloud-shell"></a>Устранение неполадок и ограничения в Azure Cloud Shell
 
@@ -36,8 +36,8 @@ ms.locfileid: "73961554"
 
 ### <a name="disabling-cloud-shell-in-a-locked-down-network-environment"></a>Отключение Cloud Shell в заблокированной среде сети
 
-- **Сведения**. Администраторам может потребоваться отключить доступ к Cloud Shell для своих пользователей. Cloud Shell использует доступ к домену `ux.console.azure.com`, который можно запретить, заключив любой доступ к Cloud Shell EntryPoint, включая portal.azure.com, shell.azure.com, Visual Studio Code расширение учетной записи Azure и docs.microsoft.com.
-- **Решение**. Ограничение доступа к `ux.console.azure.com` через параметры сети к вашей среде. Значок Cloud Shell по-прежнему будет присутствовать на сайте portal.azure.com, но подключение к службе не произойдет.
+- **Сведения**. Администраторам может потребоваться отключить доступ к Cloud Shell для своих пользователей. Cloud Shell использует доступ к домену `ux.console.azure.com`, который можно запретить, заключив любой доступ к Cloud Shell EntryPoint, включая portal.azure.com, shell.azure.com, Visual Studio Code расширение учетной записи Azure и docs.microsoft.com. В облаке правительства США точка входа `ux.console.azure.us`а; нет соответствующего shell.azure.us.
+- **Решение**. Ограничьте доступ к `ux.console.azure.com` или `ux.console.azure.us` с помощью сетевых параметров в своей среде. Значок Cloud Shell по-прежнему будет существовать в портал Azure, но не будет успешно подключаться к службе.
 
 ### <a name="storage-dialog---error-403-requestdisallowedbypolicy"></a>Диалоговое окно службы хранилища. Ошибка: 403 RequestDisallowedByPolicy
 
@@ -117,7 +117,7 @@ Cloud Shell поддерживает последние версии следу�
 
 [!INCLUDE [copy-paste](../../includes/cloud-shell-copy-paste.md)]
 
-### <a name="usage-limits"></a>Ограничения использования
+### <a name="usage-limits"></a>Ограничения на использование
 
 Cloud Shell предназначен для интерактивного использования. В результате любые длительные неинтерактивные сеансы завершаются без предупреждения.
 
@@ -163,7 +163,7 @@ Azure Cloud Shell серьезно относится к личным данны
 
 [!INCLUDE [GDPR-related guidance](../../includes/gdpr-intro-sentence.md)]
 
-### <a name="export"></a>экспорт.
+### <a name="export"></a>Экспортировать
 Чтобы **экспортировать** пользовательские настройки, сохраненные Cloud Shell, такие как предпочитаемая оболочка, размер и тип шрифта, выполните следующие команды.
 
 1. [![](https://shell.azure.com/images/launchcloudshell.png "Launch Azure Cloud Shell")](https://shell.azure.com)
@@ -176,7 +176,7 @@ Bash:
   curl https://management.azure.com/providers/Microsoft.Portal/usersettings/cloudconsole?api-version=2017-12-01-preview -H Authorization:"$token" -s | jq
   ```
 
-PowerShell:
+PowerShell.
 
   ```powershell
   $token= ((Invoke-WebRequest -Uri "$env:MSI_ENDPOINT`?resource=https://management.core.windows.net/" -Headers @{Metadata='true'}).content |  ConvertFrom-Json).access_token
@@ -199,7 +199,7 @@ Bash:
   curl -X DELETE https://management.azure.com/providers/Microsoft.Portal/usersettings/cloudconsole?api-version=2017-12-01-preview -H Authorization:"$token"
   ```
 
-PowerShell:
+PowerShell.
 
   ```powershell
   $token= ((Invoke-WebRequest -Uri "$env:MSI_ENDPOINT`?resource=https://management.core.windows.net/" -Headers @{Metadata='true'}).content |  ConvertFrom-Json).access_token
