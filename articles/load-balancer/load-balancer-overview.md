@@ -14,16 +14,16 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 1/14/2020
 ms.author: allensu
-ms.openlocfilehash: 186e8ee232fc8e0500f55404b65e00d7af696230
-ms.sourcegitcommit: b5d646969d7b665539beb18ed0dc6df87b7ba83d
+ms.openlocfilehash: 376741005f0755d01c95baad8d3a3d33e9952933
+ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2020
-ms.locfileid: "76760935"
+ms.lasthandoff: 02/05/2020
+ms.locfileid: "77023911"
 ---
 # <a name="what-is-azure-load-balancer"></a>Что такое Azure Load Balancer?
 
-*Балансировка нагрузки* обозначает процесс равномерного распределения нагрузки (входящего сетевого трафика) в группе серверных ресурсов или серверов. Azure предоставляет [несколько технологий балансировки нагрузки](https://docs.microsoft.com/azure/architecture/guide/technology-choices/load-balancing-overview), из которых вы можете выбрать наиболее подходящую для конкретных задач. В этом документе описывается Azure Load Balancer.
+*Балансировка нагрузки* обозначает процесс равномерного распределения нагрузки (входящего сетевого трафика) в группе серверных ресурсов или серверов. 
 
 Служба Azure Load Balancer работает на уровне 4 модели OSI (Open Systems Interconnection). Она служит единственной точкой взаимодействия с клиентами. Load Balancer распределяет входящие потоки, поступающие на внешний интерфейс подсистемы балансировки нагрузки, в экземпляры серверных пулов. Эти потоки соответствуют настроенным правилам балансировки нагрузки и пробам работоспособности. В серверный пул могут входить Виртуальные машины Azure или экземпляры масштабируемого набора виртуальных машин.
 
@@ -38,6 +38,11 @@ ms.locfileid: "76760935"
 *Рисунок. Балансировка многоуровневых приложений с помощью общедоступных и внутренних Load Balancer*
 
 Дополнительные сведения об отдельных компонентах Load Balancer см. в разделе [Load Balancer components and limitations](./concepts-limitations.md) (Компоненты и ограничения Azure Load Balancer)
+
+>[!NOTE]
+> Azure предоставляет набор полностью управляемых решений балансировки нагрузки для пользовательских сценариев. Если вам нужна высокая производительность, низкая задержка, балансировка нагрузки уровня 4, см. статью [Что такое Azure Load Balancer](../load-balancer/load-balancer-overview.md). Если вам нужна глобальная балансировка нагрузки DNS, ознакомьтесь со статьей [Что такое диспетчер трафика](../traffic-manager/traffic-manager-overview.md). В комплексных сценариях может быть целесообразно объединить эти решения.
+>
+> Сравнение параметров балансировки нагрузки Azure см. в статье [Overview of load-balancing options in Azure](https://docs.microsoft.com/azure/architecture/guide/technology-choices/load-balancing-overview) (Общие сведения о параметрах балансировки нагрузки в Azure).
 
 ## <a name="why-use-azure-load-balancer"></a>Зачем нужен Azure Load Balancer?
 C помощью Load Balancer (цен. категория "Стандартный") можно масштабировать приложения и создавать службы с высоким уровнем доступности. Load Balancer поддерживает сценарии как входящих так и исходящих подключений. Load Balancer обеспечивает низкую задержку и высокую пропускную способность, а также увеличение масштаба до миллионов потоков для всех приложений, которые используют протоколы TCP и UDP.

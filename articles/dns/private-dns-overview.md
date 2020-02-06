@@ -2,17 +2,17 @@
 title: Что собой представляет Частная зона DNS
 description: В этой статье приведен обзор службы размещения частных DNS в Microsoft Azure.
 services: dns
-author: asudbring
+author: rohinkoul
 ms.service: dns
 ms.topic: overview
 ms.date: 6/12/2019
-ms.author: allensu
-ms.openlocfilehash: 2e457dcccfd89d2dcf94a0cc3728cfee9bb1a611
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.author: rohink
+ms.openlocfilehash: 97b266398b3ea46d09b04524dad34922f21b1a95
+ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74210649"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76939290"
 ---
 # <a name="what-is-azure-private-dns"></a>Что собой представляет Частная зона DNS
 
@@ -55,7 +55,7 @@ Azure DNS предоставляет следующие возможности.
 
 * **Обратный просмотр DNS поддерживается в пределах виртуальной сети.** Обратный просмотр DNS для частных IP-адресов в виртуальной сети, присвоенных частной зоне, возвращает полное доменное имя с именем узла или записи, а также имя зоны в качестве суффикса.
 
-## <a name="other-considerations"></a>Дополнительные рекомендации
+## <a name="other-considerations"></a>Другие замечания
 
 Azure DNS имеет следующие ограничения.
 
@@ -68,7 +68,7 @@ Azure DNS имеет следующие ограничения.
 
 Дополнительные сведения см. на странице [цены на Azure DNS](https://azure.microsoft.com/pricing/details/dns/).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Узнайте, как создать частную зону в Azure DNS с помощью [Azure PowerShell](./private-dns-getstarted-powershell.md) или [интерфейса командной строки Azure](./private-dns-getstarted-cli.md).
 

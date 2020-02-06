@@ -4,16 +4,16 @@ description: В этой статье описываются интерфейс�
 keywords: ''
 author: bandersmsft
 ms.author: banders
-ms.date: 01/02/2020
+ms.date: 02/04/2020
 ms.topic: conceptual
 ms.service: cost-management-billing
 manager: boalcsva
-ms.openlocfilehash: 8680a575872053f4b575db70ec649b6c1669b961
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: f126b5cb52061c851f3ae6572cba0c3583087066
+ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "75992144"
+ms.lasthandoff: 02/05/2020
+ms.locfileid: "77023367"
 ---
 # <a name="azure-enterprise-rest-apis"></a>REST API Azure Enterprise
 

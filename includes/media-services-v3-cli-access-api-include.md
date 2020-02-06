@@ -1,6 +1,6 @@
 ---
-title: включение файла
-description: включение файла
+title: включить файл
+description: включить файл
 services: media-services
 author: Juliako
 ms.service: media-services
@@ -8,18 +8,24 @@ ms.topic: include
 ms.date: 05/01/2019
 ms.author: juliako
 ms.custom: include file
-ms.openlocfilehash: b0f93f950b55052ea8d8b31538c47226413dc82a
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.openlocfilehash: 58e9156091702718dccd75eb4a57e5b6d8c1f073
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67185378"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76896341"
 ---
 ## <a name="access-the-media-services-api"></a>Доступ к API Служб мультимедиа.
 
 Чтобы подключиться к API Служб мультимедиа Azure, необходимо настроить аутентификацию субъекта-службы Azure AD. Следующая команда создает приложение Azure AD и подключает субъект-службу к учетной записи. Возвращаемые значения используются для настройки приложения.
 
 Перед запуском сценария можно заменить `amsaccount` и `amsResourceGroup` именами, выбранными при создании этих ресурсов. `amsaccount` — имя учетной записи Служб мультимедиа Azure, к которой нужно присоединить субъект-службу.
+
+Если у вас есть доступ к нескольким подпискам, сначала сделайте активной подписку, в которой была создана учетная запись Служб мультимедиа.
+
+```azurecli
+az account set --subscription subscriptionId
+```
 
 Приведенная ниже команда возвращает выходные данные `json`:
 

@@ -11,12 +11,12 @@ ms.workload: infrastructure
 ms.date: 1/3/2020
 ms.author: ushan
 ms.custom: devops
-ms.openlocfilehash: 8fda8e3079084ad917ad5a7fcfc4f80a622e2d82
-ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
+ms.openlocfilehash: bb7c773d02c5da5c115af79cd9e90c78e71eb6bf
+ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2020
-ms.locfileid: "76277237"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76988334"
 ---
 # <a name="tutorial-deploy-your-app-to-linux-virtual-machines-in-azure-using-azure-devops-services-and-azure-pipelines"></a>Руководство. Развертывание приложения на виртуальных машинах Linux в Azure с помощью Azure DevOps Services и Azure Pipelines
 
@@ -86,7 +86,7 @@ https://github.com/azure-devops/fabrikam-node
 
 - Для развертывания приложений на основе Java Spring Boot и Spring Cloud создайте в Azure виртуальную машину Linux, используя [этот шаблон](https://azuremarketplace.microsoft.com/marketplace/apps/azul.azul-zulu8-ubuntu-1804), который включает среду выполнения на основе OpenJDK с полной поддержкой.
 - Для развертывания сервлетов Java на сервере Tomcat создайте виртуальную машину Linux, используя Java 8 и [этот шаблон](https://azuremarketplace.microsoft.com/marketplace/apps/azul.azul-zulu8-ubuntu-1804), и [настройте Tomcat 9.x в качестве службы](https://tomcat.apache.org/tomcat-9.0-doc/setup.html).
-- Для развертывания приложения на базе Java EE используйте шаблон Azure, чтобы создать [виртуальную машину Linux с Java и WebSphere 9.x](https://azuremarketplace.microsoft.com/marketplace/apps/midvision.websphere-application-server-nde-90), [виртуальную машину Linux с Java и WebLogic 12.x](https://azuremarketplace.microsoft.com/marketplace/apps/Oracle.OracleWebLogicServer12cEnterprise) или [виртуальную машину Linux с Java и WildFly/JBoss 14](https://azuremarketplace.microsoft.com/marketplace/apps/azul.azul-zulu8-ubuntu-1804). 
+- Для развертывания приложения на базе Java EE используйте шаблон Azure, чтобы создать [виртуальную машину Linux с Java и WebSphere 9.x](https://azuremarketplace.microsoft.com/marketplace/apps/midvision.websphere-application-server-nde-90), [виртуальную машину Linux с Java и WebLogic 12.x](https://azuremarketplace.microsoft.com/marketplace/apps/oracle.20191009-arm-oraclelinux-wls-admin) или [виртуальную машину Linux с Java и WildFly/JBoss 14](https://azuremarketplace.microsoft.com/marketplace/apps/azul.azul-zulu8-ubuntu-1804). 
 
 #### <a name="javascripttabjava-script"></a>[JavaScript](#tab/java-script)
 

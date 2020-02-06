@@ -9,12 +9,12 @@ ms.service: key-vault
 ms.topic: tutorial
 ms.date: 10/25/2019
 ms.author: mbaldwin
-ms.openlocfilehash: 77bc092c7d44e559562699d9177c2bd168f7dea0
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.openlocfilehash: 5c959dc7fa36fb41307d286b1e7d0b475d5b56c6
+ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75981595"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76988470"
 ---
 # <a name="receive-and-respond-to-key-vault-notifications-with-azure-event-grid-preview"></a>Получение уведомлений хранилища ключей и реагирование на них с помощью Сетки событий Azure (предварительная версия)
 
@@ -22,9 +22,9 @@ ms.locfileid: "75981595"
 
 В этом руководстве показано, как получать уведомления Key Vault через Сетку событий Azure и как реагировать на изменения состояния с помощью службы автоматизации Azure.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
-- Подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+- Подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 - Хранилище ключей в подписке Azure. Вы можете быстро создать хранилище ключей, выполнив действия, описанные в статье [Краткое руководство. Настройка и получение секрета из Azure Key Vault с помощью Azure CLI](quick-create-cli.md).
 
 ## <a name="concepts"></a>Основные понятия
@@ -120,8 +120,6 @@ write-Error "No input data found."
 
 Создайте подписку Сетки событий на [портале Azure](https://portal.azure.com).
 
-1.  Откройте [портал Azure](https://portal.azure.com/?Microsoft_Azure_KeyVault_ShowEvents=true&Microsoft_Azure_EventGrid_publisherPreview=true).
-
 1.  Перейдите в хранилище ключей и выберите вкладку **События**. Если вы не видите ее, убедитесь, что вы используете [предварительную версию портала](https://ms.portal.azure.com/?Microsoft_Azure_KeyVault_ShowEvents=true&Microsoft_Azure_EventGrid_publisherPreview=true).
 
     ![Вкладка "События" на портале Azure](media/image7.png)
@@ -142,7 +140,7 @@ write-Error "No input data found."
 
 1.  Выберите **Подтвердить выбор** в области контекста.
 
-1.  Нажмите кнопку **Создать**.
+1.  Нажмите кнопку **создания**.
 
     ![Создание подписки на события](media/image8.png)
 

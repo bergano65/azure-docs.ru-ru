@@ -1,19 +1,19 @@
 ---
 title: Взаимодействие с устройством IoT Plug and Play (предварительная версия), подключенным к решению Интернета вещей Azure | Документация Майкрософт
 description: Подключение к устройству IoT Plug and Play (предварительная версия), подключенному к решению Интернета вещей Azure, а также взаимодействие с ним с помощью C# (.NET).
-author: baanders
-ms.author: baanders
+author: dominicbetts
+ms.author: dobett
 ms.date: 12/30/2019
 ms.topic: quickstart
 ms.service: iot-pnp
 services: iot-pnp
 ms.custom: mvc
-ms.openlocfilehash: 9e8bc6c4ad7ed852ddaae2e193b91887fcd92e47
-ms.sourcegitcommit: ec2eacbe5d3ac7878515092290722c41143f151d
+ms.openlocfilehash: 0953f68839217c1c75eb86f8399ce023f3863ab4
+ms.sourcegitcommit: 42517355cc32890b1686de996c7913c98634e348
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75550780"
+ms.lasthandoff: 02/02/2020
+ms.locfileid: "76963977"
 ---
 # <a name="quickstart-interact-with-an-iot-plug-and-play-preview-device-thats-connected-to-your-solution-c"></a>Краткое руководство. Взаимодействие с устройством IoT Plug and Play (предварительная версия), подключенным к решению (C#)
 
@@ -21,7 +21,7 @@ ms.locfileid: "75550780"
 
 Предварительная версия IoT Plug and Play упрощает Интернет вещей, позволяя взаимодействовать с возможностями устройства без знаний базовой реализации устройства. В этом кратком руководстве показано, как подключиться к устройству IoT Plug and Play, подключенному к решению, а также управлять им с помощью C# (.NET).
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Для выполнения инструкций, приведенных в этом кратком руководстве, необходимо установить .NET Core (2.x.x или 3.x.x) на компьютере для разработки. Вы можете скачать предпочтительную версию пакета SDK для .NET Core для нескольких платформ по [этой ссылке](https://dotnet.microsoft.com/download/dotnet-core/).
 

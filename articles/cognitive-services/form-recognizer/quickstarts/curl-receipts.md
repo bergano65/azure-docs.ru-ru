@@ -9,21 +9,18 @@ ms.subservice: forms-recognizer
 ms.topic: quickstart
 ms.date: 01/27/2020
 ms.author: pafarley
-ms.openlocfilehash: 8b0e7d717ed5c06600adf261f7ce5b44f572adf9
-ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
+ms.openlocfilehash: 6e9eddbec3cdc46c04f9c9ae78f937e20bfa8270
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76774258"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76901983"
 ---
 # <a name="quickstart-extract-receipt-data-using-the-form-recognizer-rest-api-with-curl"></a>Краткое руководство. Извлечение данных квитанции с помощью REST API Распознавателя документов и cURL
 
 В этом кратком руководстве вы используете REST API Распознавателя документов Azure и cURL для извлечения и определения соответствующей информации из квитанций США.
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
-
-> [!IMPORTANT]
-> В этом кратком руководстве используется API Распознавателя документов версии 2.0. Если ваша подписка не находится в регионе `West US 2` или `West Europe`, необходимо использовать API версии 1.0. Следуйте инструкциям [краткого руководства для версии 1.0](./curl-train-extract-v1.md).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
