@@ -13,24 +13,24 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 10/10/2019
 ms.author: damendo
-ms.openlocfilehash: 1cc3664ff8472a6b5a73fa89588611f59ac27e6a
-ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
+ms.openlocfilehash: de644e49d998ad260532078de5c93c482cbc6fbc
+ms.sourcegitcommit: f0f73c51441aeb04a5c21a6e3205b7f520f8b0e1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76720276"
+ms.lasthandoff: 02/05/2020
+ms.locfileid: "77029497"
 ---
 # <a name="frequently-asked-questions-faq-about-azure-network-watcher"></a>Часто задаваемые вопросы о наблюдателе за сетями Azure
 Служба [наблюдателя за сетями Azure](https://docs.microsoft.com/azure/network-watcher/network-watcher-monitoring-overview) предоставляет набор средств для мониторинга, диагностики, просмотра метрик и включения или отключения журналов для ресурсов в виртуальной сети Azure. В этой статье содержатся ответы на часто задаваемые вопросы о службе.
 
-## <a name="general"></a>Общие сведения
+## <a name="general"></a>Общие
 
 ### <a name="what-is-network-watcher"></a>Что такое наблюдатель за сетями?
 Наблюдатель за сетями предназначен для отслеживания и восстановления работоспособности сети компонентов IaaS (инфраструктура как услуга), включая виртуальные машины, виртуальные сети, шлюзы приложений, подсистемы балансировки нагрузки и другие ресурсы в виртуальной сети Azure. Это решение не является решением для мониторинга инфраструктуры PaaS (платформа как услуга) или получения веб-или мобильной аналитики.
 
 ### <a name="what-tools-does-network-watcher-provide"></a>Какие средства предоставляет наблюдатель за сетями?
 Наблюдатель за сетями предоставляет три основных набора возможностей
-* Наблюдение
+* Мониторинг
   * [Представление топологии](https://docs.microsoft.com/azure/network-watcher/view-network-topology) показывает ресурсы в виртуальной сети и связи между ними.
   * [Монитор подключений](https://docs.microsoft.com/azure/network-watcher/connection-monitor) позволяет отслеживать подключение и задержку между виртуальной машиной и другим сетевым ресурсом.
   * [Монитор производительности сети](https://docs.microsoft.com/azure/azure-monitor/insights/network-performance-monitor) позволяет отслеживать подключение и задержки между архитектурой гибридных сетей, каналами Expressroute и конечными точками службы или приложения.  
@@ -54,17 +54,29 @@ ms.locfileid: "76720276"
 ### <a name="which-regions-is-network-watcher-supportedavailable-in"></a>Какие регионы поддерживаются или доступны в наблюдателе за сетями?
 Последнюю версию региональной доступности можно просмотреть на [странице доступности службы Azure](https://azure.microsoft.com/global-infrastructure/services/?products=network-watcher) .
 
-### <a name="what-are-resource-limits-on-network-watcher"></a>Что такое ограничения ресурсов для наблюдателя за сетями?
-Все ограничения см. на странице " [ограничения службы](https://docs.microsoft.com/azure/azure-resource-manager/management/azure-subscription-service-limits#network-watcher-limits) ".  
+### <a name="which-permissions-are-needed-to-use-network-watcher"></a>Какие разрешения необходимы для использования наблюдателя за сетями?
+См. список [разрешений RBAC, необходимых для использования наблюдателя за сетями](https://docs.microsoft.com/azure/network-watcher/required-rbac-permissions). Для развертывания ресурсов требуются разрешения участника на NetworkWatcherRG (см. ниже).
 
-### <a name="why-is-only-one-instance-of-network-watcher-allowed-per-region"></a>Почему для региона разрешен только один экземпляр наблюдателя за сетями?
-Наблюдатель за сетями должен быть включен один раз для подписки, чтобы ее функции работали, это не ограничение службы.
+### <a name="how-do-i-enable-network-watcher"></a>Как включить Наблюдатель за сетями?
+Служба наблюдателя за сетями [включена автоматически](https://azure.microsoft.com/updates/azure-network-watcher-will-be-enabled-by-default-for-subscriptions-containing-virtual-networks/) для каждой подписки.
+
+### <a name="what-is-the-network-watcher-deployment-model"></a>Что такое модель развертывания наблюдателя за сетями?
+Родительский ресурс наблюдателя за сетями развертывается с уникальным экземпляром в каждом регионе. Формат имени: NetworkWatcher_RegionName. Пример: NetworkWatcher_centralus является ресурсом наблюдателя за сетями для региона "Центральная американская".
+
+### <a name="what-is-the-networkwatcherrg"></a>Что такое NetworkWatcherRG?
+Ресурсы наблюдателя за сетями находятся в скрытой группе ресурсов **NetworkWatcherRG** , которая создается автоматически. Например, ресурс журналов потоков NSG является дочерним ресурсом наблюдателя за сетями и включен в NetworkWatcherRG.
 
 ### <a name="why-do-i-need-to-install-the-network-watcher-extension"></a>Зачем нужно устанавливать расширение наблюдателя за сетями? 
 Расширение наблюдателя за сетями требуется для любой функции, требующей создания или перехвата трафика от виртуальной машины. 
 
 ### <a name="which-features-require-the-network-watcher-extension"></a>Какие функции требуются для расширения наблюдателя за сетями?
-Для записи пакетов, устранения неполадок подключения и монитора подключения требуется наличие расширения наблюдателя за сетями.
+Функции записи пакетов, устранения неполадок подключения и монитора подключения требуют наличия расширения наблюдателя за сетями.
+
+### <a name="what-are-resource-limits-on-network-watcher"></a>Что такое ограничения ресурсов для наблюдателя за сетями?
+Все ограничения см. на странице " [ограничения службы](https://docs.microsoft.com/azure/azure-resource-manager/management/azure-subscription-service-limits#network-watcher-limits) ".  
+
+### <a name="why-is-only-one-instance-of-network-watcher-allowed-per-region"></a>Почему для региона разрешен только один экземпляр наблюдателя за сетями?
+Наблюдатель за сетями должен быть включен один раз для подписки, чтобы ее функции работали, это не ограничение службы.
 
 ## <a name="nsg-flow-logs"></a>Журналы потоков NSG
 
@@ -85,11 +97,11 @@ ms.locfileid: "76720276"
 
 ### <a name="how-do-i-use-nsg-flow-logs-with-a-storage-account-behind-a-service-endpoint"></a>Разделы справки использовать журналы потоков NSG с учетной записью хранения, расположенной за конечной точкой службы?
 
-Журналы потоков NSG компантибле с конечными точками службы, не требуя дополнительной настройки. Ознакомьтесь с [руководством по включению конечных точек службы](https://docs.microsoft.com/azure/virtual-network/tutorial-restrict-network-access-to-resources#enable-a-service-endpoint) в виртуальной сети.
+Журналы потоков NSG совместимы с конечными точками службы, не требуя дополнительной настройки. Ознакомьтесь с [руководством по включению конечных точек службы](https://docs.microsoft.com/azure/virtual-network/tutorial-restrict-network-access-to-resources#enable-a-service-endpoint) в виртуальной сети.
 
 
 ### <a name="what-is-the-difference-between-flow-logs-versions-1--2"></a>В чем разница между журналами потоков версии 1 & 2?
 Журналы потоков версии 2 представляют концепцию *состояния потока* & хранят сведения о передаваемых байтах и пакетах. [Дополнительные сведения](https://docs.microsoft.com/azure/network-watcher/network-watcher-nsg-flow-logging-overview#log-file).
 
-## <a name="next-steps"></a>Next Steps
+## <a name="next-steps"></a>Следующие шаги
  - Перейдите к нашей [странице с обзором документации](https://docs.microsoft.com/azure/network-watcher/) по некоторым руководствам, чтобы приступить к работе с наблюдателем за сетями.

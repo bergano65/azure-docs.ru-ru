@@ -8,12 +8,12 @@ ms.date: 01/24/2019
 ms.topic: conceptual
 ms.service: automation
 manager: carmonm
-ms.openlocfilehash: 71344f954990952856f031829f13273e062b62c5
-ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
+ms.openlocfilehash: 65006b8357db44c3e1b8f8d9e819615b5dd9db6e
+ms.sourcegitcommit: f0f73c51441aeb04a5c21a6e3205b7f520f8b0e1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76933166"
+ms.lasthandoff: 02/05/2020
+ms.locfileid: "77031754"
 ---
 # <a name="troubleshoot-errors-with-runbooks"></a>Устранение ошибок c помощью модулей Runbook
 
@@ -56,7 +56,7 @@ Run Login-AzureRMAccount to login.
 * Различные версии модулей AzureRM.
 * Вы пытаетесь получить доступ к ресурсам в отдельной подписке.
 
-### <a name="resolution"></a>Разрешение
+### <a name="resolution"></a>Решение
 
 Если эта ошибка возникает после обновления одного модуля AzureRM, следует обновить все модули AzureRM до одной версии.
 
@@ -106,7 +106,7 @@ The subscription named <subscription name> cannot be found.
 
 * пользователь Azure Active Directory, который пытается получить информацию о подписке, не имеет прав администратора для этой подписки.
 
-### <a name="resolution"></a>Разрешение
+### <a name="resolution"></a>Решение
 
 Чтобы определить, что аутентификация в Azure пройдена и доступ к требуемой подписке получен, сделайте следующее.
 
@@ -140,7 +140,7 @@ Add-AzureAccount: AADSTS50079: Strong authentication enrollment (proof-up) is re
 
 Если в учетной записи Azure активирована многофакторная проверка подлинности, применять учетную запись пользователя Azure Active Directory для аутентификации в Azure нельзя. Вместо этого при проверке подлинности в Azure используйте сертификат или субъект-службу.
 
-### <a name="resolution"></a>Разрешение
+### <a name="resolution"></a>Решение
 
 Чтобы использовать сертификат с командлетами классической модели развертывания Azure, см. статью [Создание и Добавление сертификата для управления службами Azure](https://blogs.technet.com/b/orchestrator/archive/2014/04/11/managing-azure-services-with-the-microsoft-azure-automation-preview-service.aspx). Чтобы использовать субъект-службу с командлетами Azure Resource Manager, ознакомьтесь с [разпортал Azure](../../active-directory/develop/howto-create-service-principal-portal.md) и выполните [проверку подлинности субъекта-службы с помощью Azure Resource Manager](../../active-directory/develop/howto-authenticate-service-principal-powershell.md).
 
@@ -166,7 +166,7 @@ At line:16 char:1
 
 Эта ошибка возникла вследствие одновременного использования командлетов AzureRM и Az в модуле runbook. Она возникает при импортировании `Az` перед импортированием `AzureRM`.
 
-### <a name="resolution"></a>Разрешение
+### <a name="resolution"></a>Решение
 
 Командлеты AZ и AzureRM нельзя импортировать и использовать в одном модуле Runbook. Дополнительные сведения о командлетах az в службе автоматизации Azure см. в разделе [Поддержка модуля az в службе автоматизации Azure](../az-modules.md).
 
@@ -184,7 +184,7 @@ Exception: A task was canceled.
 
 Это ошибка может быть вызвана использованием устаревших модулей Azure.
 
-### <a name="resolution"></a>Разрешение
+### <a name="resolution"></a>Решение
 
 Эту ошибку можно устранить, обновив модули Azure до последней версии.
 
@@ -200,7 +200,7 @@ Exception: A task was canceled.
 
 При запуске модуля runbook используется неправильный контекст.
 
-### <a name="resolution"></a>Разрешение
+### <a name="resolution"></a>Решение
 
 При работе с несколькими подписками контекст подписки может быть потерян при вызове модулей runbook. Чтобы убедиться, что контекст подписки передан модулям runbook, добавьте параметр `AzureRmContext` в командлет и передайте ему контекст. Также рекомендуется использовать командлет `Disable-AzureRmContextAutosave` с областью **Процесс**, чтобы удостовериться, что учетные данные используются только для текущего модуля runbook.
 
@@ -248,7 +248,7 @@ The term 'Connect-AzureRmAccount' is not recognized as the name of a cmdlet, fun
 * Модуль, содержащий командлет, не импортируется в учетную запись службы автоматизации.
 * Модуль, содержащий командлет, импортирован, но устарел.
 
-### <a name="resolution"></a>Разрешение
+### <a name="resolution"></a>Решение
 
 Эту ошибку можно устранить, выполнив одну из следующих задач:
 
@@ -280,7 +280,7 @@ The job was tried three times but it failed
 
 * Слишком много данных об исключениях. Модуль Runbook попытался записать слишком много данных об исключении в поток вывода.
 
-### <a name="resolution"></a>Разрешение
+### <a name="resolution"></a>Решение
 
 * Ограничение памяти, сетевые сокеты. Предлагаемые способы работы в рамках ограничения памяти: разделение рабочей нагрузки между несколькими модулями Runbook, обработка меньшего объема данных в памяти, предотвращение записи ненужных результатов из модулей Runbook и определение того, сколько контрольных точек записывается в рабочий процесс PowerShell модулей Runbook. Используйте метод Clear, например `$myVar.clear`, чтобы очистить переменные и использовать `[GC]::Collect` для немедленного выполнения сборки мусора. Эти действия уменьшают объем памяти, занимаемой модулем runbook во время выполнения.
 
@@ -310,7 +310,7 @@ No certificate was found in the certificate store with thumbprint
 
 Эта ошибка возникает, если указано недопустимое имя ресурса учетных данных. Ошибка также может возникнуть, если имя пользователя и пароль, которые вы ввели для настройки ресурса учетных данных службы автоматизации, указаны неправильно.
 
-### <a name="resolution"></a>Разрешение
+### <a name="resolution"></a>Решение
 
 Чтобы определить источник проблемы, необходимо выполнить следующие действия.
 
@@ -363,9 +363,9 @@ Object reference not set to an instance of an object
 
 ### <a name="cause"></a>Причина
 
-Существует известная ситуация, когда Start-AzureRmAutomationRunbook неправильно обрабатывает выходной поток, если он содержит объекты.
+Существует известная ошибка, при которой Start-AzureRmAutomationRunbook неправильно обрабатывает выходной поток, если он содержит объекты.
 
-### <a name="resolution"></a>Разрешение
+### <a name="resolution"></a>Решение
 
 Чтобы устранить эту проблему, рекомендуется реализовать логику опроса и получить выходные данные с помощью командлета [Get-азурермаутоматионжобаутпут](/powershell/module/azurerm.automation/get-azurermautomationjoboutput) . Эта логика показана в следующем примере.
 
@@ -407,7 +407,7 @@ Cannot convert the <ParameterType> value of type Deserialized <ParameterType> to
 
 Когда runbook является рабочим процессом PowerShell, он хранит сложные объекты в десериализированном формате, чтобы сохранить состояние модуля при приостановке рабочего процесса.
 
-### <a name="resolution"></a>Разрешение
+### <a name="resolution"></a>Решение
 
 При использовании одного из трех следующих способов проблема будет устранена.
 
@@ -429,7 +429,7 @@ The quota for the monthly total job run time has been reached for this subscript
 
 Эта ошибка возникает, когда время выполнения задания превышает квоту для учетной записи в 500 бесплатных минут. Эта квота применяется ко всем типам задач на выполнение заданий. К этим типам задач может относиться тестирование задания, запуск задания на портале Azure, выполнение задания с помощью веб-перехватчиков, а также планирование задания с помощью портала Azure или центра обработки данных. Дополнительные сведения см. на странице [цен на службу автоматизации](https://azure.microsoft.com/pricing/details/automation/).
 
-### <a name="resolution"></a>Разрешение
+### <a name="resolution"></a>Решение
 
 Если на обработку задач вам требуется более 500 минут в месяц, выберите для подписки уровень "Базовый" вместо уровня "Бесплатный". Это можно сделать так.
 
@@ -452,7 +452,7 @@ The quota for the monthly total job run time has been reached for this subscript
 
 Эта ошибка возникает, когда модулю PowerShell не удается найти командлет, который используется в runbook. Такая ошибка возникает, когда в учетной записи отсутствует модуль, содержащий командлет, когда возникает конфликт имен с именем модуля runbook, а также когда командлет существует и в другом модуле, а службе автоматизации Azure не удается разрешить имя.
 
-### <a name="resolution"></a>Разрешение
+### <a name="resolution"></a>Решение
 
 Эту проблему можно устранить одним из следующих способов.
 
@@ -477,7 +477,7 @@ The job was evicted and subsequently reached a Stopped state. The job cannot con
 
 Модуль Runbook выполнялся в течение 3-часового лимита, разрешенного долево в песочнице Azure.
 
-### <a name="resolution"></a>Разрешение
+### <a name="resolution"></a>Решение
 
 Одно из рекомендуемых решений — запустить runbook в [гибридной рабочей роли Runbook](../automation-hrw-run-runbooks.md).
 
@@ -505,7 +505,7 @@ The job was evicted and subsequently reached a Stopped state. The job cannot con
 
 Вызываемый веб-перехватчик отключен, или срок его действия истек.
 
-### <a name="resolution"></a>Разрешение
+### <a name="resolution"></a>Решение
 
 если веб-перехватчик отключен, его можно повторно включить на портале Azure. Когда истек срок действия веб-перехватчика, его необходимо удалить или создать заново. Если срок действия еще не истек, можно только [обновить веб-перехватчик](../automation-webhooks.md#renew-webhook).
 
@@ -523,12 +523,12 @@ The job was evicted and subsequently reached a Stopped state. The job cannot con
 
 эта ошибка может возникать при извлечении выходных данных задания из модуля Runbook, обладающего множеством [подробных потоков](../automation-runbook-output-and-messages.md#verbose-stream).
 
-### <a name="resolution"></a>Разрешение
+### <a name="resolution"></a>Решение
 
 Эту проблему можно решить двумя способами:
 
 * изменить модуль Runbook и сократить число создаваемых потоков заданий;
-* уменьшите количество потоков, полученных при выполнении командлета. Для этого можно указать командлету `Get-AzureRmAutomationJobOutput` параметр `-Stream Output`, чтобы получить только потоки вывода. 
+* уменьшите количество потоков, полученных при выполнении командлета. Для этого можно указать командлету `-Stream Output` параметр `Get-AzureRmAutomationJobOutput`, чтобы получить только потоки вывода. 
 
 ## <a name="cannot-invoke-method"></a>Сценарий: сбой задания PowerShell с ошибкой: не удается вызвать метод
 
@@ -544,7 +544,7 @@ Exception was thrown - Cannot invoke method. Method invocation is supported only
 
 Эта ошибка может возникать при запуске задания PowerShell в модуле Runbook, работающем в Azure. Это может произойти из-за того, что модули Runbook, запущенные в песочнице Azure, могут не работать в [полном языковом режиме](/powershell/module/microsoft.powershell.core/about/about_language_modes).
 
-### <a name="resolution"></a>Разрешение
+### <a name="resolution"></a>Решение
 
 Эту проблему можно решить двумя способами:
 
@@ -552,6 +552,22 @@ Exception was thrown - Cannot invoke method. Method invocation is supported only
 * Если в модуле Runbook есть это сообщение об ошибке, запустите его в гибридной рабочей роли Runbook.
 
 Дополнительные сведения об этом поведении и других возможностях модулей Runbook службы автоматизации Azure см. в разделе [поведение модуля Runbook](../automation-runbook-execution.md#runbook-behavior).
+
+## <a name="scenario-linux-hybrid-runbook-worker-receives-a-prompt-for-a-password-when-signing-a-runbook"></a>Сценарий: Гибридная Рабочая роль Runbook Linux получает запрос на ввод пароля при подписании модуля Runbook
+
+### <a name="issue"></a>Проблема
+
+При выполнении команды **sudo** для гибридной рабочей роли Runbook Linux получается непредвиденный запрос на ввод пароля.
+
+### <a name="cause"></a>Причина
+
+Учетная запись нксаутоматионусер для агента Log Analytics для Linux неправильно настроена в файле "Sudo". Гибридной рабочей роли Runbook требуется соответствующая настройка разрешений учетной записи и других данных, чтобы она могла подписывать модули Runbook в рабочей роли Runbook для Linux.
+
+### <a name="resolution"></a>Решение
+
+* Убедитесь, что Гибридная Рабочая роль Runbook имеет исполняемый файл GnuPG (GPG) на компьютере.
+
+* Проверьте конфигурацию учетной записи нксаутоматионусер в файле "Sudo". См. раздел [Запуск модулей Runbook в гибридной рабочей роли Runbook](../automation-hrw-run-runbooks.md) .
 
 ## <a name="other"></a>Моя проблема не указана выше
 
@@ -608,7 +624,7 @@ Exception was thrown - Cannot invoke method. Method invocation is supported only
 * [Запуск модуля Runbook в службе автоматизации Azure](https://docs.microsoft.com/azure/automation/automation-starting-a-runbook)
 * [Выполнение Runbook в службе автоматизации Azure](https://docs.microsoft.com/azure/automation/automation-runbook-execution)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Если вы не видите своего варианта проблемы или вам не удается ее устранить, дополнительные сведения можно получить, посетив один из следующих каналов.
 

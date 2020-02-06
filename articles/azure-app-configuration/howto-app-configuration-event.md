@@ -5,27 +5,26 @@ description: Из этого руководства вы узнаете, как 
 services: azure-app-configuration
 documentationcenter: ''
 author: jimmyca
-manager: yegu
 editor: ''
 ms.assetid: ''
 ms.service: azure-app-configuration
 ms.devlang: csharp
 ms.topic: tutorial
 ms.date: 05/30/2019
-ms.author: yegu
+ms.author: lcozzens
 ms.custom: mvc
-ms.openlocfilehash: 4943a64f72191981fc1b655c431cab00f180e503
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 2a80f931f2060d421483b9e26940985091c9bb5c
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75433692"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76899695"
 ---
 # <a name="quickstart-route-azure-app-configuration-events-to-a-web-endpoint-with-azure-cli"></a>Краткое руководство. Направляйте события Конфигурации приложений Azure в конечную веб-точку с помощью Azure CLI
 
 Из этого краткого руководства вы узнаете, как настроить подписки на события Конфигурации приложений Azure для отправки событий изменения значения ключа в конечную веб-точку. Пользователи Конфигурации приложений Azure могут подписаться на события, которые создаются при изменении значений ключа. Эти события могут активировать веб-перехватчики, Функции Azure, очереди службы хранилища Azure или любой другой обработчик событий, который поддерживается Сеткой событий Azure. Как правило, события отправляются на конечную точку, которая обрабатывает данные событий и выполняет соответствующие действия. Но в этой статье для простоты события отправляются в веб-приложение, которое собирает и отображает сообщения.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 - Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/). При желании вы также можете использовать Azure Cloud Shell.
 

@@ -9,12 +9,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: conceptual
 ms.date: 10/28/2019
-ms.openlocfilehash: 68f4eb4fbad2a571e078cb9aedcfd56c80ffe054
-ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
+ms.openlocfilehash: 8c3e377faef4e18bff01fd7001751d1f1e347b8d
+ms.sourcegitcommit: f0f73c51441aeb04a5c21a6e3205b7f520f8b0e1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75747872"
+ms.lasthandoff: 02/05/2020
+ms.locfileid: "77030882"
 ---
 # <a name="availability-and-reliability-of-apache-hadoop-clusters-in-hdinsight"></a>Доступность и надежность кластеров Apache Hadoop в HDInsight
 
@@ -64,7 +64,7 @@ ms.locfileid: "75747872"
 
 Доступ через общедоступный шлюз ограничен портами 443 (HTTPS), 22 и 23.
 
-|Port |Description |
+|Порт |Описание |
 |---|---|
 |443|Используется для доступа к Ambari и другим веб-ИНТЕРФЕЙСам или интерфейсам API RESTFUL, размещенным на головных узлах.|
 |22|Используется для доступа к основному головному узлу или пограничному узлу с помощью SSH.|
@@ -97,7 +97,7 @@ curl -u admin:$password "https://$clusterName.azurehdinsight.net/api/v1/clusters
 
 Подключиться к узлам, которые недоступны напрямую через Интернет, можно с помощью следующих методов.
 
-|Метод |Description |
+|Метод |Описание |
 |---|---|
 |SSH|после подключения к головному узлу с помощью SSH можно затем использовать SSH с головного узла для подключения к другим узлам в кластере. Дополнительные сведения см. в статье [Подключение к HDInsight (Hadoop) с помощью SSH](hdinsight-hadoop-linux-use-ssh-unix.md).|
 |Туннель SSH|Если необходимо получить доступ к веб-службе, размещенной на одном из узлов, которые не доступны в Интернете, необходимо использовать туннель SSH. Дополнительные сведения см. в статье [Использование туннелирования SSH для доступа к веб-интерфейсу Ambari, JobHistory, NameNode, Oozie и другим веб-интерфейсам](hdinsight-linux-ambari-ssh-tunnel.md).|
@@ -119,7 +119,7 @@ curl -u admin:$password "https://$clusterName.azurehdinsight.net/api/v1/clusters
 
 Следующие оповещения помогают отслеживать доступность кластера.
 
-| Имя предупреждения                               | Description                                                                                                                                                                                  |
+| Имя оповещения                               | Описание                                                                                                                                                                                  |
 |------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Состояние мониторинга метрики                    | Это предупреждение указывает состояние процесса монитора метрик, определяемое сценарием состояния монитора.                                                                                   |
 | Пульс агента Ambari                   | Это оповещение активируется, если сервер потерял связь с агентом.                                                                                                                        |
@@ -270,13 +270,13 @@ curl -u admin:PASSWORD https://CLUSTERNAME.azurehdinsight.net/api/v1/clusters/CL
 
 * **Портал Azure.** При создании кластера можно задать размер для узлов этого кластера:
 
-    ![Изображение мастера создания кластера с выбором размера узла](./media/hdinsight-high-availability-linux/hdinsight-headnodesize.png)
+    ![Изображение мастера создания кластера с выбором размера узла](./media/hdinsight-high-availability-linux/azure-portal-cluster-configuration-pricing-hadoop.png)
 
 * **Azure CLI**. при использовании команды [`az hdinsight create`](https://docs.microsoft.com/cli/azure/hdinsight?view=azure-cli-latest#az-hdinsight-create) можно задать размер головного, рабочего и ZooKeeper узлов, используя параметры `--headnode-size`, `--workernode-size`и `--zookeepernode-size`.
 
 * **Azure PowerShell**. при использовании командлета [New-аздинсигхтклустер](https://docs.microsoft.com/powershell/module/az.hdinsight/new-azhdinsightcluster) можно задать размер головного, рабочего и ZooKeeper узлов с помощью параметров `-HeadNodeSize`, `-WorkerNodeSize`и `-ZookeeperNodeSize`.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения об элементах, обсуждаемых в этой статье, см. в следующих статьях:
 

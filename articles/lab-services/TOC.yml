@@ -152,6 +152,8 @@
           href: deploy-nested-template-environments.md
         - name: Использование управляемых удостоверений Azure для развертывания сред
           href: use-managed-identities-environments.md
+        - name: Оповещения безопасности для сред
+          href: environment-security-alerts.md
     - name: Управление шаблонами для повторного использования
       items:
         - name: Пользовательские образы и формулы

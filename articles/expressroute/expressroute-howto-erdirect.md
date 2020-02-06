@@ -7,12 +7,12 @@ ms.service: expressroute
 ms.topic: conceptual
 ms.date: 01/22/2020
 ms.author: jaredro
-ms.openlocfilehash: c5cb8366465d5983823184c87eb54fad6aaffbd0
-ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
+ms.openlocfilehash: 2722a852b1119ef619bc414bce5cb3a8ff6f8f00
+ms.sourcegitcommit: f0f73c51441aeb04a5c21a6e3205b7f520f8b0e1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76705927"
+ms.lasthandoff: 02/05/2020
+ms.locfileid: "77031618"
 ---
 # <a name="how-to-configure-expressroute-direct"></a>Настройка Direct для ExpressRoute
 
@@ -27,7 +27,13 @@ ExpressRoute Direct дает возможность подключения не�
 
    Select-AzSubscription -Subscription "<SubscriptionID or SubscriptionName>"
    ```
-2. Выведите список всех расположений, где поддерживается ExpressRoute Direct.
+   
+2. Повторно зарегистрируйте подписку в Microsoft. Network, чтобы получить доступ к API-интерфейсам експрессраутепортслокатион и експрессраутепорт.
+
+   ```powershell
+   Register-AzResourceProvider -ProviderNameSpace "Microsoft.Network"
+   ```   
+3. Выведите список всех расположений, где поддерживается ExpressRoute Direct.
   
    ```powershell
    Get-AzExpressRoutePortsLocation
@@ -60,7 +66,7 @@ ExpressRoute Direct дает возможность подключения не�
    Contact             : support@equinix.com
    AvailableBandwidths : []
    ```
-3. Определение, имеет ли место в приведенном выше списке доступную пропускную способность
+4. Определение, имеет ли место в приведенном выше списке доступную пропускную способность
 
    ```powershell
    Get-AzExpressRoutePortsLocation -LocationName "Equinix-San-Jose-SV1"
@@ -82,7 +88,7 @@ ExpressRoute Direct дает возможность подключения не�
                           }
                         ]
    ```
-4. Создание ресурса ExpressRoute Direct на основе выбранного выше расположения
+5. Создание ресурса ExpressRoute Direct на основе выбранного выше расположения
 
    ExpressRoute Direct поддерживает инкапсуляцию как QinQ, так и Dot1Q. Если выбран QinQ, каждому каналу ExpressRoute динамически назначается S-тег и каналы будут уникальными в пределах ресурса ExpressRoute Direct. Каждый C-тег в канале должен быть уникальным в пределах канала, но не для всего ExpressRoute Direct.  
 
@@ -269,6 +275,6 @@ ExpressRoute Direct дает возможность подключения не�
   GatewayManagerEtag     
   ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения см. в разделе [About ExpressRoute Direct](expressroute-erdirect-about.md) (Общие сведения о подключении ExpressRoute Direct).

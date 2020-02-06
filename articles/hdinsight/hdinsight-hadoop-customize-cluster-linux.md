@@ -7,12 +7,12 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 10/03/2019
-ms.openlocfilehash: 555596ba1040fcbd5c9131869fd275d749e0d734
-ms.sourcegitcommit: 014e916305e0225512f040543366711e466a9495
+ms.openlocfilehash: 0930bbcfff41a667f08f5dfc5744c16476ddd8a1
+ms.sourcegitcommit: f0f73c51441aeb04a5c21a6e3205b7f520f8b0e1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75934025"
+ms.lasthandoff: 02/05/2020
+ms.locfileid: "77031460"
 ---
 # <a name="customize-azure-hdinsight-clusters-by-using-script-actions"></a>Настройка кластеров Azure HDInsight с помощью действий сценария
 
@@ -147,7 +147,7 @@ ms.locfileid: "75934025"
 | Имя | Скрипт |
 | --- | --- |
 | добавление учетной записи хранения Azure; |`https://hdiconfigactions.blob.core.windows.net/linuxaddstorageaccountv01/add-storage-account-v01.sh`. Ознакомьтесь со статьей [Добавление дополнительных учетных записей хранения в HDInsight](hdinsight-hadoop-add-storage.md). |
-| Установка Hue |`https://hdiconfigactions.blob.core.windows.net/linuxhueconfigactionv02/install-hue-uber-v02.sh`. Ознакомьтесь со статьей [Установка и использование Hue на кластерах HDInsight Hadoop](hdinsight-hadoop-hue-linux.md). |
+| установка Hue; |`https://hdiconfigactions.blob.core.windows.net/linuxhueconfigactionv02/install-hue-uber-v02.sh`. Ознакомьтесь со статьей [Установка и использование Hue на кластерах HDInsight Hadoop](hdinsight-hadoop-hue-linux.md). |
 | Предварительная загрузка библиотек Hive |`https://hdiconfigactions.blob.core.windows.net/linuxsetupcustomhivelibsv01/setup-customhivelibs-v01.sh`. Ознакомьтесь со статьей [Добавление пользовательских библиотек Apache Hive при создании кластера HDInsight](hdinsight-hadoop-add-hive-libraries.md). |
 
 ## <a name="use-a-script-action-during-cluster-creation"></a>Использование действия сценария при создании кластера
@@ -156,9 +156,9 @@ ms.locfileid: "75934025"
 
 ### <a name="use-a-script-action-during-cluster-creation-from-the-azure-portal"></a>Использование действия сценария при создании кластера с портала Azure
 
-1. Начните создавать кластер, как описано в статье [Создание кластеров под управлением Linux в HDInsight с помощью портал Azure](hdinsight-hadoop-create-linux-clusters-portal.md). Во время создания кластера вы приступите к шагу 6, **действиям скрипта**. Перейдите к **Необязательному** >  **+ отправить новый**.
+1. Начните создавать кластер, как описано в статье [Создание кластеров под управлением Linux в HDInsight с помощью портал Azure](hdinsight-hadoop-create-linux-clusters-portal.md). На вкладке **Настройка и цены** выберите **+ Добавить действие скрипта**.
 
-    ![Действие сценария кластера портал Azure](./media/hdinsight-hadoop-customize-cluster-linux/azure-portal-cluster-classic-script-action.png)
+    ![Действие сценария кластера портал Azure](./media/hdinsight-hadoop-customize-cluster-linux/azure-portal-cluster-configuration-scriptaction.png)
 
 1. Используйте запись __Выберите сценарий__, чтобы выбрать готовый сценарий. Чтобы использовать настраиваемый сценарий, выберите __Настраиваемый__. Затем укажите __имя__ и __универсальный код ресурса (URI) Bash-сценария__ своего сценария.
 
@@ -180,9 +180,9 @@ ms.locfileid: "75934025"
 
     ![Действия нескольких скриптов HDInsight](./media/hdinsight-hadoop-customize-cluster-linux/multiple-scripts-actions.png)
 
-    Завершив добавление скриптов, нажмите кнопку __выбрать__ , а затем кнопку __Далее__ , чтобы перейти к разделу __Сводка кластера__ .
+    По завершении добавления скриптов вы вернетесь на вкладку **Настройка и цены** .
 
-1. Чтобы создать кластер, в разделе __Сводка по кластерам__ нажмите __Создать__.
+1. Выполните оставшиеся шаги по созданию кластера, как обычно.
 
 ### <a name="use-a-script-action-from-azure-resource-manager-templates"></a>Использование действия сценария на основе шаблонов Azure Resource Manager
 
@@ -415,7 +415,7 @@ ms.locfileid: "75934025"
 
 3. **Примеры.** Корпорация Майкрософт и другие компании могут предоставлять примеры использования популярных настраиваемых компонентов в кластерах HDInsight. Эти примеры представляются без поддержки.
 
-## <a name="troubleshooting"></a>Устранение неисправностей
+## <a name="troubleshooting"></a>Диагностика
 
 Вы можете использовать веб-интерфейс Ambari для просмотра сведений, регистрируемых действиями сценариев. Если при создании кластера произошел сбой скрипта, вы можете просмотреть журналы в учетной записи хранения по умолчанию, связанной с кластером. Этот раздел содержит сведения о том, как получить журналы обоими этими способами.
 
@@ -429,7 +429,7 @@ ms.locfileid: "75934025"
 
     ![Веб-панель Ambari с выбранной записью ops](./media/hdinsight-hadoop-customize-cluster-linux/hdi-apache-ambari-nav.png)
 
-3. Найдите записи, для которых в столбце **Операции** указано **run\_customscriptaction**. Такие записи создаются при выполнении действий сценариев.
+3. Найдите записи, для которых в столбце **Операции\_ указано** run**customscriptaction**. Такие записи создаются при выполнении действий сценариев.
 
     ![Операции с действиями сценария Apache Ambari](./media/hdinsight-hadoop-customize-cluster-linux/ambari-script-action.png)
 
@@ -495,7 +495,7 @@ sudo pip install azure-storage==0.20.0
 
 Если кластер создан до 15 марта 2016 г., в журнале действий сценариев могут отсутствовать записи. При изменении размера кластера сценарии фиксируются в журнале действий сценариев.
 
-Имеются два исключения:
+Из этого правила существуют два исключения.
 
 * Кластер создан до 1 сентября 2015 г. Это дата добавления действий сценариев. Если кластер был создан раньше, действия сценариев не могли использоваться при его создании.
 
@@ -503,7 +503,7 @@ sudo pip install azure-storage==0.20.0
 
     Из-за конфликта имен имеющихся сценариев в этом кластере не будут выполняться новые действия сценариев. Имена сценариев, указанные при создании кластера, должны быть уникальными. Имеющиеся сценарии выполняются при изменении размера.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Разработка действий сценариев с помощью HDInsight](hdinsight-hadoop-script-actions-linux.md)
 * [Добавление дополнительных учетных записей хранения Azure в HDInsight](hdinsight-hadoop-add-storage.md)

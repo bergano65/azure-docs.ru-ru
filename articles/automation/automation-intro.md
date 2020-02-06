@@ -7,12 +7,12 @@ keywords: azure automation, DSC, powershell, desired state configuration, update
 ms.date: 10/18/2018
 ms.custom: mvc
 ms.topic: overview
-ms.openlocfilehash: 3037f96464b0902ca3923bdaea2bddff39c47733
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 3359d99d7e20bbced8950171fa34592fd2612500
+ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75421945"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76930401"
 ---
 # <a name="an-introduction-to-azure-automation"></a>Общие сведения о службе автоматизации Azure
 
@@ -75,6 +75,8 @@ ms.locfileid: "75421945"
 * **Мониторинг**. Отслеживайте на компьютерах изменения, которые приводят к проблемам, устраняйте их или передавайте для решения в системы управления.
 * **Защита**. Помещайте в карантин виртуальные машины, для которых сработали предупреждения системы безопасности. Настройте требования к гостевым системам.
 * **Управление**. Настройте для команд управление доступом на основе ролей. Восстанавливайте неиспользуемые ресурсы.
+
+[!INCLUDE [azure-lighthouse-supported-service](../../includes/azure-lighthouse-supported-service.md)]
 
 ## <a name="pricing-for-automation"></a>Цены на службу автоматизации
 

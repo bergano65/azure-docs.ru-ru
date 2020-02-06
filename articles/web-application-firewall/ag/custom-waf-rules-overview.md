@@ -7,12 +7,12 @@ author: vhorne
 ms.service: web-application-firewall
 ms.date: 01/30/2020
 ms.author: victorh
-ms.openlocfilehash: 9d9deca0365e13a0a8ad7404a476b05d0afef077
-ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
+ms.openlocfilehash: 072c7bd5b5b292ca4f0e53c59fcb7e9771331a94
+ms.sourcegitcommit: f0f73c51441aeb04a5c21a6e3205b7f520f8b0e1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76934998"
+ms.lasthandoff: 02/05/2020
+ms.locfileid: "77031737"
 ---
 # <a name="custom-rules-for-web-application-firewall-v2-on-azure-application-gateway"></a>Настраиваемые правила для брандмауэра веб-приложения версии 2 в шлюзе приложений Azure
 
@@ -127,13 +127,13 @@ $BlockRule = New-AzApplicationGatewayFirewallCustomRule `
 - Ипматч используется только в том случае, если переменная match имеет *ремотеаддр*
 - Equals — входные данные совпадают с Матчвалуе
 - Содержит
-- LessThan;
+- LessThan
 - GreaterThan
-- LessThanOrEqual;
-- GreaterThanOrEqual;
+- LessThanOrEqual
+- GreaterThanOrEqual
 - BeginsWith
 - EndsWith
-- Регулярное выражение
+- Regex
 - Геосоответствие (Предварительная версия)
 
 ### <a name="negate-condition-optional"></a>Условие отрицания [необязательно]
@@ -165,6 +165,6 @@ $BlockRule = New-AzApplicationGatewayFirewallCustomRule `
 
 Настраиваемые правила позволяют создавать специализированные правила в соответствии с потребностями приложений и политик безопасности. Доступ к веб-приложениям можно ограничить по странам или регионам. Дополнительные сведения см. в разделе [геосоответствие настраиваемых правил (Предварительная версия)](geomatch-custom-rules.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 После получения сведений о настраиваемых правилах [Создайте собственные настраиваемые правила](create-custom-waf-rules.md).

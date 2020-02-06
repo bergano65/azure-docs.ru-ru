@@ -1,20 +1,15 @@
 ---
-title: Краткое руководство. Распознавание речи, намерений и сущностей в службе "Речь" с помощью Python
-titleSuffix: Azure Cognitive Services
-description: TBD
-services: cognitive-services
-author: erhopf
-manager: nitinme
+author: IEvangelist
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: include
-ms.date: 10/28/2019
-ms.author: erhopf
-ms.openlocfilehash: 649f3897b023504bd936c9d1d371454487ce21d1
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.date: 01/27/2020
+ms.author: dapine
+ms.openlocfilehash: 01f6e6392f41a4b160cc38f1d080ae85648d61a4
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75468077"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76900519"
 ---
 Если вы предпочитаете сразу перейти к работе, просмотрите или скачайте все <a href="https://aka.ms/speech/github-python">образцы для пакета SDK службы "Речь" для Python</a> на сайте GitHub. В противном случае ознакомьтесь с инструкциями.

@@ -10,22 +10,22 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 10/31/2019
 ms.author: chlound
-ms.openlocfilehash: 837d62784a56ad0f17471cca5a660819d4a83e12
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: 9ca2ea6a45bdf37f15f2ab4fd9c685f11f6d7f64
+ms.sourcegitcommit: f0f73c51441aeb04a5c21a6e3205b7f520f8b0e1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74926762"
+ms.lasthandoff: 02/05/2020
+ms.locfileid: "77031498"
 ---
 # <a name="use-azure-key-vault-secrets-in-pipeline-activities"></a>Использование секретов Azure Key Vault в действиях конвейера
 
 Можно сохранить учетные данные или секретные значения в Azure Key Vault и использовать их во время выполнения конвейера для передачи в действия.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Эта функция основана на управляемом удостоверении фабрики данных.  Узнайте, как это работает из [управляемого удостоверения для фабрики данных](https://docs.microsoft.com/azure/data-factory/data-factory-service-identity) и убедитесь, что фабрика данных имеет одну связь.
 
-## <a name="steps"></a>Действия
+## <a name="steps"></a>Шаги
 
 1. Откройте свойства фабрики данных и скопируйте значение идентификатора приложения управляемого удостоверения.
 
@@ -47,12 +47,12 @@ ms.locfileid: "74926762"
 
 4. В конвейере фабрики данных добавьте новое веб-действие и настройте его следующим образом.  
 
-    |Свойство  |Value  |
+    |Свойство  |Значение  |
     |---------|---------|
-    |Безопасный вывод     |Да         |
+    |Безопасный вывод     |Истина         |
     |URL-адрес     |[Значение URI секрета]? API-Version = 7.0         |
-    |Метод     |ПОЛУЧЕНИЕ         |
-    |Authentication     |MSI         |
+    |Метод     |GET         |
+    |Аутентификация     |MSI         |
     |Ресурс        |https://vault.azure.net       |
 
     ![Веб-действие](media/how-to-use-azure-key-vault-secrets-pipeline-activities/webactivity.png)
@@ -63,10 +63,10 @@ ms.locfileid: "74926762"
     > [!CAUTION]
     > Задайте для параметра безопасный вывод значение true, чтобы предотвратить запись секретного значения в обычный текст.  Для всех дальнейших действий, использующих это значение, параметр Secure input должен иметь значение true.
 
-5. Чтобы использовать значение в другом действии, используйте следующее выражение кода **@activity("Web"). Output. Value)** .
+5. Чтобы использовать значение в другом действии, используйте следующее выражение кода **@activity("Web"). Output. Value**.
 
     ![Выражение кода](media/how-to-use-azure-key-vault-secrets-pipeline-activities/usewebactivity.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Сведения об использовании Azure Key Vault для хранения учетных данных для хранилищ данных и вычислений см. [в разделе Хранение учетных данных в Azure Key Vault](https://docs.microsoft.com/azure/data-factory/store-credentials-in-key-vault)

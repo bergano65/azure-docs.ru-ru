@@ -2,7 +2,7 @@
 title: Краткое руководство. Создание профиля для обеспечения высокого уровня доступности приложений с помощью Azure PowerShell — диспетчер трафика Azure
 description: В этом кратком руководстве описано, как создать профиль диспетчера трафика для сборки высокодоступного веб-приложения.
 services: traffic-manager
-author: asudbring
+author: rohinkoul
 mnager: twooley
 Customer intent: As an IT admin, I want to direct user traffic to ensure high availability of web applications.
 ms.service: traffic-manager
@@ -11,13 +11,13 @@ ms.topic: quickstart
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/04/2019
-ms.author: allensu
-ms.openlocfilehash: 01749c2bd9091449e11e4dd30e88d2fe7d0df78b
-ms.sourcegitcommit: 8cf199fbb3d7f36478a54700740eb2e9edb823e8
+ms.author: rohink
+ms.openlocfilehash: 0ab7392b4fa6e248d51392706fedaed156344a99
+ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74483750"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76934823"
 ---
 # <a name="quickstart-create-a-traffic-manager-profile-for-a-highly-available-web-application-using-azure-powershell"></a>Краткое руководство. Создание профиля диспетчера трафика для высокодоступного веб-приложения с помощью Azure PowerShell
 
@@ -155,7 +155,7 @@ Get-AzTrafficManagerProfile -Name $mytrafficmanagerprofile `
 Remove-AzResourceGroup -Name MyResourceGroup
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом кратком руководстве вы создали профиль диспетчера трафика, который обеспечивает высокий уровень доступности веб-приложения. Дополнительные сведения о маршрутизации трафика см. в руководствах по диспетчеру трафика.
 

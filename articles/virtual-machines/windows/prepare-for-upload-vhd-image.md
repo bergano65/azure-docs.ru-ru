@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: troubleshooting
 ms.date: 05/11/2019
 ms.author: genli
-ms.openlocfilehash: 6a9385a49e85806464e8f9ccf11d9232fae42435
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 933f0c52cf0d65c7dca480971589c0d0f2ebabf0
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75461130"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76906774"
 ---
 # <a name="prepare-a-windows-vhd-or-vhdx-to-upload-to-azure"></a>Подготовка диска VHD или VHDX для Windows к отправке в Azure
 
@@ -33,6 +33,22 @@ ms.locfileid: "75461130"
 > Инструкции, приведенные в этой статье, относятся к:
 >1. 64-разрядная версия операционных систем Windows Server 2008 R2 и более поздних версий. Сведения о выполнении 32-разрядной операционной системы в Azure см. [в статье поддержка 32-разрядных операционных систем на виртуальных машинах Azure](https://support.microsoft.com/help/4021388/support-for-32-bit-operating-systems-in-azure-virtual-machines).
 >2. Если для миграции рабочей нагрузки будет использоваться какое-либо средство аварийного восстановления, например Azure Site Recovery или Azure Migration, этот процесс все еще необходимо выполнить и затем приступать к гостевой ОС, чтобы подготовить образ перед миграцией.
+
+## <a name="system-file-checker-sfc-command"></a>Команда средства проверки системных файлов (SFC)
+
+### <a name="run-windows-system-file-checker-utility-run-sfc-scannow-on-os-prior-to-generalization-step-of-creating-customer-os-image"></a>Запуск программы проверки системных файлов Windows (запуск SFC/Scannow) в ОС перед обобщением создание образа ОС клиента
+
+Команда средства проверки системных файлов (SFC) используется для проверки и замены системных файлов Windows.
+
+Чтобы выполнить команду SFC, выполните следующие действия.
+
+1. Откройте командную строку с повышенными привилегиями с правами администратора.
+1. Введите `sfc /scannow` и нажмите клавишу **Ввод**.
+
+    ![Средство проверки системных файлов](media/prepare-for-upload-vhd-image/system-file-checker.png)
+
+
+После завершения проверки SFC попытайтесь установить обновления Windows и перезагрузить компьютер.
 
 ## <a name="convert-the-virtual-disk-to-a-fixed-size-and-to-vhd"></a>Преобразование виртуального диска в фиксированный размер и на виртуальный жесткий диск
 
@@ -156,7 +172,7 @@ Get-Service -Name RemoteRegistry | Where-Object { $_.StartType -ne 'Automatic' }
 Убедитесь, что для удаленного доступа правильно настроены следующие параметры:
 
 >[!NOTE] 
->При запуске `Set-ItemProperty -Path 'HKLM:\SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services -Name <object name> -Value <value>`может появиться сообщение об ошибке. Это сообщение можно игнорировать. Это означает только то, что домен не помещает эту конфигурацию через объект групповая политика.
+>При запуске `Set-ItemProperty -Path 'HKLM:\SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services -Name <object name> -Value <value>`может появиться сообщение об ошибке. Это сообщение можно спокойно проигнорировать. Это означает только то, что домен не помещает эту конфигурацию через объект групповая политика.
 
 1. Включите протокол удаленного рабочего стола (RDP):
    
@@ -361,7 +377,7 @@ Get-Service -Name RemoteRegistry | Where-Object { $_.StartType -ne 'Automatic' }
 ### <a name="install-windows-updates"></a>Установка обновлений Windows
 В идеале следует обновлять компьютер на *уровне обновления*. Если это невозможно, убедитесь, что установлены следующие обновления. Чтобы получить последние обновления, см. страницы журнала центра обновления Windows: [Windows 10 и Windows server 2019](https://support.microsoft.com/help/4000825), [Windows 8.1 и Windows Server 2012 R2](https://support.microsoft.com/help/4009470) и Windows [7 SP1 и Windows Server 2008 R2 с пакетом обновления 1 (SP1)](https://support.microsoft.com/help/4009469).
 
-| Компонент               | Двоичные данные         | Windows 7 SP1, Windows Server 2008 R2 SP1 | Windows 8, Windows Server 2012               | Windows 8.1, Windows Server 2012 R2 | Windows 10 v1607, Windows Server 2016 v1607 | Windows 10 версии 1703    | Windows 10 v1709, Windows Server 2016 v1709 | Windows 10 v1803, Windows Server 2016 v1803 |
+| Компонент               | Двоичные данные         | Windows 7 SP1, Windows Server 2008 R2 SP1 | Windows 8, Windows Server 2012               | Windows 8.1, Windows Server 2012 R2 | Windows 10 v1607, Windows Server 2016 v1607 | Windows 10 v1703    | Windows 10 v1709, Windows Server 2016 v1709 | Windows 10 v1803, Windows Server 2016 v1803 |
 |-------------------------|----------------|-------------------------------------------|---------------------------------------------|------------------------------------|---------------------------------------------------------|----------------------------|-------------------------------------------------|-------------------------------------------------|
 | Хранилище                 | disk.sys       | 6.1.7601.23403 — KB3125574                | 6.2.9200.17638 / 6.2.9200.21757 — KB3137061 | 6.3.9600.18203 — KB3137061         | -                                                       | -                          | -                                               | -                                               |
 |                         | storport.sys   | 6.1.7601.23403 — KB3125574                | 6.2.9200.17188 / 6.2.9200.21306 — KB3018489 | 6.3.9600.18573 — KB4022726         | 10.0.14393.1358 — KB4022715                             | 10.0.15063.332             | -                                               | -                                               |
@@ -429,7 +445,7 @@ Get-Service -Name RemoteRegistry | Where-Object { $_.StartType -ne 'Automatic' }
 
     ![Средство SysPrep](media/prepare-for-upload-vhd-image/syspre.png)
 1. В разделе **Параметры завершения работы** выберите **Завершение работы**.
-1. Нажмите кнопку **ОК**.
+1. Щелкните **ОК**.
 1. После завершения работы программы Sysprep завершите работу виртуальной машины. Не используйте **перезагрузку** для завершения работы виртуальной машины.
 
 Теперь диск VHD можно отправлять. Дополнительные сведения о том, как создать виртуальную машину на основе обобщенного диска, см. в разделе [Отправка обобщенного виртуального жесткого диска и его использование для создания новой виртуальной машины в Azure](sa-upload-generalized.md).

@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 11/14/2019
-ms.openlocfilehash: 33b000d0ca5cdd4af2ed57c5db6e71ae5a1e4c58
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: 144d51d08a61526ec0f183a63e1fdf5658136293
+ms.sourcegitcommit: f0f73c51441aeb04a5c21a6e3205b7f520f8b0e1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74215843"
+ms.lasthandoff: 02/05/2020
+ms.locfileid: "77030980"
 ---
 # <a name="optimize-apache-hive-queries-in-azure-hdinsight"></a>Оптимизация запросов Apache в Hive в Azure HDInsight
 
@@ -29,11 +29,11 @@ ms.locfileid: "74215843"
 
 * Во время создания кластера можно указать количество рабочих узлов при помощи портала Azure, Azure PowerShell или интерфейса командной строки.  Дополнительные сведения см. в статье [Создание кластеров Hadoop в HDInsight](hdinsight-hadoop-provision-linux-clusters.md). На следующем снимке экрана показана рабочая конфигурация узла на портале Azure:
   
-    ![Узлы размера кластера портал Azure](./media/hdinsight-hadoop-optimize-hive-query/azure-portal-cluster-configuration-pricing-hadoop.png "scaleout_1")
+    ![Узлы размера кластера портал Azure](./media/hdinsight-hadoop-optimize-hive-query/azure-portal-cluster-configuration.png "scaleout_1")
 
 * После создания кластера можно также изменить количество рабочих узлов, чтобы масштабировать кластер без необходимости его повторного создания.
 
-    ![Размер кластера портал Azure Scale](./media/hdinsight-hadoop-optimize-hive-query/hdinsight-scaleout-2.png "scaleout_2")
+    ![Размер кластера портал Azure Scale](./media/hdinsight-hadoop-optimize-hive-query/azure-portal-settings-nodes.png "scaleout_2")
 
 Дополнительные сведения о масштабировании HDInsight см. в статье [Масштабирование кластеров HDInsight](hdinsight-scaling-best-practices.md).
 
@@ -122,7 +122,7 @@ STORED AS TEXTFILE;
 
 ## <a name="use-the-orcfile-format"></a>Использование формата ORC-файлов
 
-Hive поддерживает различные форматы. Например,
+Hive поддерживает различные форматы. Например:
 
 * **Текст**: формат файла по умолчанию работает с большинством сценариев.
 * **Avro**: хорошо подходит для сценариев взаимодействия.
@@ -148,7 +148,7 @@ PARTITIONED BY(L_SHIPDATE STRING)
 STORED AS ORC;
 ```
 
-Далее необходимо выполнить вставку данных в таблицу ORC из промежуточной таблицы. Например,
+Далее необходимо выполнить вставку данных в таблицу ORC из промежуточной таблицы. Например:
 
 ```sql
 INSERT INTO TABLE lineitem_orc
@@ -193,9 +193,9 @@ set hive.vectorized.execution.enabled = true;
 * **Оптимизация объединений** — это оптимизация выполнения запросов Hive с целью повышения эффективности объединений и сокращения действия пользователя. Для получения дополнительных сведений обратитесь к разделу [Оптимизация объединений](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+JoinOptimization#LanguageManualJoinOptimization-JoinOptimization).
 * **Увеличение модулей сжатия.**
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Следующие шаги
 
-В этой статье вы узнали некоторые распространенные методы оптимизации запросов Hive. Для получения дополнительных сведений ознакомьтесь со следующими статьями:
+В этой статье вы узнали некоторые распространенные методы оптимизации запросов Hive. Дополнительные сведения см. в следующих статьях:
 
 * [Использование Apache Hive в HDInsight](hadoop/hdinsight-use-hive.md)
 * [Анализ данных о задержке рейсов с помощью интерактивного запроса в HDInsight](/azure/hdinsight/interactive-query/interactive-query-tutorial-analyze-flight-data)

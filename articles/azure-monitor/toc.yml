@@ -14,11 +14,11 @@
       href: learn/quick-monitor-azure-resource.md
     - name: Мониторинг виртуальных машин
       items:
-        - name: Сбор данных виртуальных машин Azure
+        - name: Виртуальные машины Azure
           href: learn/quick-collect-azurevm.md
-        - name: "Сбор данных\_— компьютер Linux"
+        - name: Компьютер Linux
           href: learn/quick-collect-linux-computer.md
-        - name: "Сбор данных\_— компьютер Windows"
+        - name: Компьютер Windows
           href: learn/quick-collect-windows-computer.md
     - name: Мониторинг приложений
       items:
@@ -439,6 +439,8 @@
               href: app/configuration-with-applicationinsights-config.md
             - name: Корреляция пользовательских источников данных
               href: app/custom-data-correlation.md
+            - name: Строки подключения
+              href: app/sdk-connection-string.md
             - name: Специальные разделы
               items:
                 - name: Углубленная диагностика для веб-приложений и служб
@@ -535,23 +537,18 @@
               href: 'faq.md#agents'
             - name: Расширение службы "Диагностика Azure"
               items:
-                - name: Обзор
-                  href: platform/diagnostics-extension-overview.md
-                - name: Сбор журналов
-                  href: platform/azure-storage-iis-table.md
                 - name: Windows
+                  displayname: diagnostics extension
                   items:
-                    - name: Журнал версий
-                      href: platform/diagnostics-extension-schema.md
-                    - name: схема
-                      href: platform/diagnostics-extension-schema-1dot3.md
-                    - name: Отправка в службу хранилища Azure
-                      href: platform/diagnostics-extension-to-storage.md
-                    - name: Отправка в Application Insights
-                      href: platform/diagnostics-extension-to-application-insights.md
-                    - name: Отправка в Центры событий
-                      href: platform/diagnostics-extension-stream-event-hubs.md
-                    - name: Отправка данных в Azure Monitor в качестве пользовательских метрик
+                    - name: Обзор
+                      href: platform/diagnostics-extension-overview.md
+                    - name: Установка и настройка.
+                      items:
+                        - name: PowerShell
+                          href: ../virtual-machines/extensions/diagnostics-windows.md?toc=/azure/azure-monitor/toc.json
+                        - name: Шаблон Resource Manager
+                          href: ../virtual-machines/extensions/diagnostics-template.md?toc=/azure/azure-monitor/toc.json
+                    - name: Отправка данных в Azure Monitor в качестве метрик
                       items:
                         - name: Виртуальная машина
                           href: platform/collect-custom-metrics-guestos-resource-manager-vm.md
@@ -561,17 +558,28 @@
                           href: platform/collect-custom-metrics-guestos-vm-classic.md
                         - name: облачная служба
                           href: platform/collect-custom-metrics-guestos-vm-cloud-service-classic.md
+                    - name: Отправка в Центры событий
+                      href: platform/diagnostics-extension-stream-event-hubs.md
+                    - name: Отправка данных в журналы
+                      href: platform/azure-storage-iis-table.md
+                    - name: Отправка в службу хранилища Azure
+                      href: platform/diagnostics-extension-to-storage.md
+                    - name: Отправка в Application Insights
+                      href: platform/diagnostics-extension-to-application-insights.md
+                    - name: Журнал версий
+                      href: platform/diagnostics-extension-schema.md
                     - name: Формат JSON Lines для журналов ресурсов
                       href: platform/diagnostic-logs-append-blobs.md
                     - name: Устранение неполадок
                       href: platform/diagnostics-extension-troubleshooting.md
                 - name: Linux
+                  displayname: diagnostics extension
                   items:
-                    - name: Использование с виртуальными машинами
-                      href: ../virtual-machines/extensions/diagnostics-linux.md
-                    - name: Пользовательские метрики с использованием Telegraf
+                    - name: Обзор
+                      href: ../virtual-machines/extensions/diagnostics-linux.md?toc=/azure/azure-monitor/toc.json
+                    - name: Сбор метрик с помощью Telegraf
                       href: platform/collect-custom-metrics-linux-telegraf.md
-            - name: Агенты службы анализа журналов
+            - name: Агент Log Analytics
               items:
                 - name: Обзор
                   href: platform/log-analytics-agent.md
@@ -589,6 +597,28 @@
                   href: platform/agent-manage.md
                 - name: Работоспособность агентов
                   href: insights/solution-agenthealth.md
+                - name: Источники данных
+                  items:
+                    - name: Обзор
+                      href: platform/agent-data-sources.md
+                    - name: События Windows
+                      href: platform/data-sources-windows-events.md
+                    - name: Настраиваемые данные JSON
+                      href: platform/data-sources-json.md
+                    - name: Сбор данных о производительности из CollectD
+                      href: platform/data-sources-collectd.md
+                    - name: Системный журнал
+                      href: platform/data-sources-syslog.md
+                    - name: Счетчики производительности
+                      href: platform/data-sources-performance-counters.md
+                    - name: Производительность приложений Linux
+                      href: platform/data-sources-linux-applications.md
+                    - name: Журналы IIS
+                      href: platform/data-sources-iis-logs.md
+                    - name: Пользовательские журналы
+                      href: platform/data-sources-custom-logs.md
+                    - name: Пользовательские поля
+                      href: platform/custom-fields.md
             - name: Диагностика
               items:
                 - name: Расширение службы анализа журналов для виртуальной машины
@@ -600,28 +630,6 @@
                 - name: Агент службы анализа журналов для Linux
                   displayname: 'troubleshoot, troubleshooting'
                   href: platform/agent-linux-troubleshoot.md
-        - name: Источники данных в агенте
-          items:
-            - name: Обзор
-              href: platform/agent-data-sources.md
-            - name: События Windows
-              href: platform/data-sources-windows-events.md
-            - name: Настраиваемые данные JSON
-              href: platform/data-sources-json.md
-            - name: Сбор данных о производительности из CollectD
-              href: platform/data-sources-collectd.md
-            - name: Системный журнал
-              href: platform/data-sources-syslog.md
-            - name: Счетчики производительности
-              href: platform/data-sources-performance-counters.md
-            - name: Производительность приложений Linux
-              href: platform/data-sources-linux-applications.md
-            - name: Журналы IIS
-              href: platform/data-sources-iis-logs.md
-            - name: Пользовательские журналы
-              href: platform/data-sources-custom-logs.md
-            - name: Пользовательские поля
-              href: platform/custom-fields.md
         - name: Azure Monitor для виртуальных машин
           items:
             - name: Обзор
@@ -660,14 +668,16 @@
               href: insights/vminsights-dependency-agent-maintenance.md
             - name: Отключение мониторинга
               href: insights/vminsights-optout.md
-        - name: Решение "Емкость и производительность"
-          href: insights/capacity-performance.md
-        - name: Решение "Аналитика в VMware"
-          href: insights/vmware.md
-        - name: Решение Wire Data
-          href: insights/wire-data.md
-        - name: Решение "Сопоставление служб"
-          href: insights/service-map.md
+        - name: Решения
+          items:
+            - name: Решение "Емкость и производительность"
+              href: insights/capacity-performance.md
+            - name: Решение "Аналитика в VMware"
+              href: insights/vmware.md
+            - name: Решение Wire Data
+              href: insights/wire-data.md
+            - name: Решение "Сопоставление служб"
+              href: insights/service-map.md
         - name: Группы компьютеров
           href: platform/computer-groups.md
     - name: Мониторинг контейнеров
@@ -1125,6 +1135,10 @@
   items:
     - name: Ограничения службы
       href: service-limits.md
+    - name: Расширение системы диагностики
+      items:
+        - name: схема
+          href: platform/diagnostics-extension-schema-1dot3.md
     - name: Application Insights
       items:
         - name: Автоматический сбор зависимостей

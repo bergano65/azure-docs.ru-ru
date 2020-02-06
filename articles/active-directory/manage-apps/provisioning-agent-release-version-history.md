@@ -1,5 +1,5 @@
 ---
-title: 'Azure AD Connect агент подготовки: История выпусков версий | Документация Майкрософт'
+title: 'Azure AD Connect агент подготовки: журнал выпусков версий | Документация Майкрософт'
 description: В этой статье перечислены все выпуски агента подготовки Azure AD Connect и описаны новые функции и исправлены проблемы.
 services: active-directory
 documentationcenter: ''
@@ -12,27 +12,38 @@ ms.devlang: na
 ms.topic: reference
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 04/05/2019
+ms.date: 02/04/2020
 ms.subservice: app-mgmt
 ms.author: chmutali
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2ce9549765f6a912b3e95f99d11da20347b82ad8
-ms.sourcegitcommit: e9936171586b8d04b67457789ae7d530ec8deebe
+ms.openlocfilehash: cac9eac2d17fa0a4f1db487d4c7f8beb67de24a9
+ms.sourcegitcommit: f0f73c51441aeb04a5c21a6e3205b7f520f8b0e1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71326468"
+ms.lasthandoff: 02/05/2020
+ms.locfileid: "77030690"
 ---
-# <a name="azure-ad-connect-provisioning-agent-version-release-history"></a>Azure AD Connect агент подготовки: Журнал выпуска версий
+# <a name="azure-ad-connect-provisioning-agent-version-release-history"></a>Агент подготовки Azure AD Connect: журнал выпусков версий
 В этой статье перечислены версии и возможности выпущенного агента подготовки Azure Active Directory Connect. Команда Azure AD регулярно обновляет агент подготовки с помощью новых функций и функций. Агент подготовки обновляется автоматически при выпуске новой версии. 
 
 Мы рекомендуем включить автоматическое обновление для агентов, чтобы обеспечить наличие новейших компонентов и исправлений ошибок. Корпорация Майкрософт предоставляет прямую поддержку последней версии агента и одной версии.
+
+## <a name="11960"></a>1.1.96.0
+
+### <a name="release-status"></a>Состояние выпуска
+
+4 декабря 2019 г., выпущено для загрузки
+
+### <a name="new-features-and-improvements"></a>Новые функции и внесенные улучшения
+
+* Включает поддержку [Azure AD Connect подготовки облака](../cloud-provisioning/what-is-cloud-provisioning.md) для синхронизации данных пользователей, контактов и групп из локальной Active Directory в Azure AD.
+
 
 ## <a name="11670"></a>1.1.67.0
 
 ### <a name="release-status"></a>Состояние выпуска
 
-9 сентября 2019 г.: Выпущено для автоматического обновления
+9 сентября 2019 г., выпущена для автоматического обновления
 
 ### <a name="new-features-and-improvements"></a>Новые функции и внесенные улучшения
 
@@ -49,7 +60,7 @@ ms.locfileid: "71326468"
 
 ### <a name="release-status"></a>Состояние выпуска
 
-23 января 2019 г.: выпущена версия для скачивания.
+23 января 2019 г., выпущенный для загрузки
 
 ### <a name="new-features-and-improvements"></a>Новые функции и внесенные улучшения
 

@@ -3,12 +3,12 @@ title: Azure Monitor установки для динамических данн
 description: В этой статье описывается, как настроить представление журналов контейнеров (stdout/stderr) и событий в режиме реального времени без использования kubectl с Azure Monitor для контейнеров.
 ms.topic: conceptual
 ms.date: 10/16/2019
-ms.openlocfilehash: 5a3d020132e3c93eab7fec46d1ffe45d00b5ed43
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 1ca52384e5ce657e4fedeb42e3304449a2d6be11
+ms.sourcegitcommit: f0f73c51441aeb04a5c21a6e3205b7f520f8b0e1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75404705"
+ms.lasthandoff: 02/05/2020
+ms.locfileid: "77030696"
 ---
 # <a name="how-to-setup-the-live-data-preview-feature"></a>Настройка функции "Интерактивные данные (Предварительная версия)"
 
@@ -101,7 +101,7 @@ ms.locfileid: "75404705"
 Дополнительные сведения о настройке расширенной безопасности в Kubernetes см. в [документации по Kubernetes](https://kubernetes.io/docs/reference/access-authn-authz/rbac/). 
 
 >[!NOTE]
->Если вы создаете новый кластер с поддержкой RBAC, см. статью [интеграция Azure Active Directory со службой Kubernetes Azure](../../aks/azure-ad-integration.md) и выполните действия по настройке проверки подлинности Azure AD. В ходе действий по созданию клиентского приложения в этом разделе будут показаны два URL-адреса перенаправления, которые необходимо создать для Azure Monitor для контейнеров. 
+>Если вы создаете новый кластер с поддержкой RBAC, см. статью [интеграция Azure Active Directory со службой Kubernetes Azure](../../aks/azure-ad-integration.md) и выполните действия по настройке проверки подлинности Azure AD. В ходе действий по созданию клиентского приложения в этом разделе приводится описание двух URL-адресов перенаправления, которые необходимо создать для Azure Monitor для контейнеров, соответствующих указанным в шаге 3 ниже.
 
 ### <a name="client-registration-reconfiguration"></a>Перенастройка регистрации клиента
 
@@ -131,6 +131,6 @@ ms.locfileid: "75404705"
 
 Дополнительные сведения о настройке **клустерролебиндинг**кластера AKS см. в разделе [Создание привязки RBAC](../../aks/azure-ad-integration-cli.md#create-rbac-binding).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Теперь, когда вы настроили проверку подлинности, вы можете просматривать в кластере [метрики](container-insights-livedata-metrics.md), [развертывания](container-insights-livedata-deployments.md), [события и журналы](container-insights-livedata-overview.md) в реальном времени.

@@ -1,22 +1,22 @@
 ---
-title: Руководство по созданию записи псевдонима Azure DNS для ссылки на общедоступный IP-адрес Azure
+title: Руководство. созданию записи псевдонима Azure DNS для ссылки на общедоступный IP-адрес Azure
 description: В этом руководстве описывается процесс создания записи псевдонима Azure DNS для ссылки на общедоступный IP-адрес Azure.
 services: dns
-author: asudbring
+author: rohinkoul
 ms.service: dns
 ms.topic: tutorial
 ms.date: 9/25/2018
-ms.author: allensu
-ms.openlocfilehash: 81dfbe5f46116d263c4a04d6178437a2c8bc1185
-ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
+ms.author: rohink
+ms.openlocfilehash: d601d19a786613f674f7b941becc5e97d84e6fce
+ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74072131"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76939264"
 ---
-# <a name="tutorial-configure-an-alias-record-to-refer-to-an-azure-public-ip-address"></a>Руководство по записи псевдонима для ссылки на общедоступный IP-адрес Azure 
+# <a name="tutorial-configure-an-alias-record-to-refer-to-an-azure-public-ip-address"></a>Руководство. записи псевдонима для ссылки на общедоступный IP-адрес Azure 
 
-Из этого руководства вы узнаете, как выполнять следующие задачи:
+В этом руководстве описано следующее:
 
 > [!div class="checklist"]
 > * Создание сетевой инфраструктуры.
@@ -89,7 +89,7 @@ ms.locfileid: "74072131"
 Если ресурсы, созданные для этого руководства, больше не нужны, удалите группу ресурсов **RG-DNS-Alias-pip**.
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом руководстве вы создали запись псевдонима для ссылки на общедоступный IP-адрес Azure. Чтобы узнать об Azure DNS и веб-приложениях, перейдите к руководству для веб-приложений.
 

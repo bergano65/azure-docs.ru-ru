@@ -4,12 +4,12 @@ description: Развертывание и настройка сети конс�
 ms.date: 01/08/2020
 ms.topic: article
 ms.reviewer: v-umha
-ms.openlocfilehash: 93f78f2c8bc32a2012e5635e0daec10b8c51d167
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: 5aed420295fd17cf4e7b26c86e8b84c4687e6545
+ms.sourcegitcommit: f0f73c51441aeb04a5c21a6e3205b7f520f8b0e1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "76901634"
+ms.lasthandoff: 02/05/2020
+ms.locfileid: "77029917"
 ---
 # <a name="hyperledger-fabric-consortium-on-azure-kubernetes-service-aks"></a>Microsoft Kubernetes Service Fabric Consortium в службе Azure (AKS)
 
@@ -143,7 +143,6 @@ SWITCH_TO_AKS_CLUSTER() { az aks get-credentials --resource-group $1 --name $2 -
 ORDERER_AKS_SUBSCRIPTION=<ordererAKSClusterSubscriptionID>
 ORDERER_AKS_RESOURCE_GROUP=<ordererAKSClusterResourceGroup>
 ORDERER_AKS_NAME=<ordererAKSClusterName>
-ORDERER_DNS_ZONE=
 ORDERER_DNS_ZONE=$(az aks show --resource-group $ORDERER_AKS_RESOURCE_GROUP --name $ORDERER_AKS_NAME --subscription $ORDERER_AKS_SUBSCRIPTION -o json | jq .addonProfiles.httpApplicationRouting.config.HTTPApplicationRoutingZoneName | tr -d '"')
 ORDERER_END_POINT="orderer1.$ORDERER_DNS_ZONE:443"
 CHANNEL_NAME=<channelName>
@@ -238,7 +237,7 @@ PEER_NODE_NAME="peer<peer#>"
 
 Чтобы помочь клиентам начать работу с собственными командами в ХЛФ Network на AKS. Предоставляется пример приложения, в котором для выполнения операций ХЛФ используется Fabric NodeJS SDK. Эти команды предназначены для создания нового удостоверения пользователя и установки собственного чаинкоде.
 
-### <a name="before-you-begin"></a>Перед началом работы
+### <a name="before-you-begin"></a>Перед началом
 
 Выполните следующие команды для первоначальной настройки приложения:
 

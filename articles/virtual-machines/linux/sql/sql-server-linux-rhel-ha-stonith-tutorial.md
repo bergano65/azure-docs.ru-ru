@@ -8,12 +8,12 @@ author: VanMSFT
 ms.author: vanto
 ms.reviewer: jroth
 ms.date: 01/27/2020
-ms.openlocfilehash: e48f41f1e13346f551f1d83f462de697631d1b9a
-ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
+ms.openlocfilehash: 3f5f51c944cab84c00e29b2f72433a726ed70d33
+ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76775900"
+ms.lasthandoff: 02/05/2020
+ms.locfileid: "77024353"
 ---
 # <a name="tutorial-configure-availability-groups-for-sql-server-on-rhel-virtual-machines-in-azure"></a>Руководство. Настройка групп доступности для SQL Server на виртуальных машинах RHEL в Azure 
 
@@ -782,7 +782,7 @@ SELECT DB_NAME(database_id) AS 'database', synchronization_state_desc FROM sys.d
 
 ## <a name="create-availability-group-resources-in-the-pacemaker-cluster"></a>Создание ресурсов группы доступности в кластере Pacemaker
 
-Мы будем следовать руководству по [созданию ресурсов группы доступности в кластере Pacemaker](/sql/linux/sql-server-linux-create-availability-group]#create-the-availability-group-resources-in-the-pacemaker-cluster-external-only).
+Мы будем следовать руководству по [созданию ресурсов группы доступности в кластере Pacemaker](/sql/linux/sql-server-linux-create-availability-group#create-the-availability-group-resources-in-the-pacemaker-cluster-external-only).
 
 ### <a name="create-the-ag-cluster-resource"></a>Создание кластерного ресурса группы доступности
 
