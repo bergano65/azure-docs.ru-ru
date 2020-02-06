@@ -26,6 +26,10 @@
       items:
         - name: Создание приложения для цифрового центра дистрибуции
           href: tutorial-iot-central-digital-distribution-center-pnp.md
+    - name: Микроцентр исполнения заказов
+      items:
+        - name: Создание приложения для микроцентра выполнения заказов
+          href: tutorial-micro-fulfillment-center-pnp.md
 - name: Основные понятия
   items:
     - name: Архитектура шаблона приложения для интеллектуальной логистики
@@ -39,7 +43,7 @@
     - name: Архитектура шаблона приложения для микроцентра исполнения заказов
       href: architecture-micro-fulfillment-center-pnp.md
     - name: Соединение
-      href: ../preview/overview-iot-central-get-connected.md?toc=/azure/iot-central/retail/toc.json&bc=/azure/iot-central/retail/breadcrumb/toc.json
+      href: ../core/concepts-get-connected.md?toc=/azure/iot-central/retail/toc.json&bc=/azure/iot-central/retail/breadcrumb/toc.json
     - name: Что представляют собой шаблоны приложений?
       href: ../core/concepts-app-templates.md?toc=/azure/iot-central/retail/toc.json&bc=/azure/iot-central/retail/breadcrumb/toc.json
 - name: Практические руководства
@@ -47,47 +51,47 @@
     - name: Подключение устройств
       items:
         - name: Подготовка и подключение MXChip IoT DevKit
-          href: ../preview/howto-connect-devkit.md?toc=/azure/iot-central/retail/toc.json&bc=/azure/iot-central/retail/breadcrumb/toc.json
+          href: ../core/howto-connect-devkit.md?toc=/azure/iot-central/retail/toc.json&bc=/azure/iot-central/retail/breadcrumb/toc.json
         - name: Подготовка и подключение Rigado Cascade 500
-          href: ../preview/howto-connect-rigado-cascade-500.md?toc=/azure/iot-central/retail/toc.json&bc=/azure/iot-central/retail/breadcrumb/toc.json
+          href: ../core/howto-connect-rigado-cascade-500.md?toc=/azure/iot-central/retail/toc.json&bc=/azure/iot-central/retail/breadcrumb/toc.json
         - name: Подготовка и подключение устройства RuuviTag
-          href: ../preview/howto-connect-ruuvi.md?toc=/azure/iot-central/retail/toc.json&bc=/azure/iot-central/retail/breadcrumb/toc.json
+          href: ../core/howto-connect-ruuvi.md?toc=/azure/iot-central/retail/toc.json&bc=/azure/iot-central/retail/breadcrumb/toc.json
         - name: "Мониторинг подключения устройств с помощью Azure\_CLI"
-          href: ../preview/howto-monitor-devices-azure-cli.md?toc=/azure/iot-central/retail/toc.json&bc=/azure/iot-central/retail/breadcrumb/toc.json
+          href: ../core/howto-monitor-devices-azure-cli.md?toc=/azure/iot-central/retail/toc.json&bc=/azure/iot-central/retail/breadcrumb/toc.json
     - name: Управление устройствами
       items:
         - name: Управление устройствами
-          href: ../preview/howto-manage-devices.md?toc=/azure/iot-central/retail/toc.json&bc=/azure/iot-central/retail/breadcrumb/toc.json
+          href: ../core/howto-manage-devices.md?toc=/azure/iot-central/retail/toc.json&bc=/azure/iot-central/retail/breadcrumb/toc.json
         - name: Выполнение задания
           href: ../core/howto-run-a-job.md?toc=/azure/iot-central/retail/toc.json&bc=/azure/iot-central/retail/breadcrumb/toc.json
         - name: Создание версии шаблона устройства
-          href: ../preview/howto-version-device-template.md?toc=/azure/iot-central/retail/toc.json&bc=/azure/iot-central/retail/breadcrumb/toc.json
+          href: ../core/howto-version-device-template.md?toc=/azure/iot-central/retail/toc.json&bc=/azure/iot-central/retail/breadcrumb/toc.json
     - name: Мониторинг и аналитика
       items:
         - name: Анализ данных устройства
-          href: ../preview/howto-create-analytics.md?toc=/azure/iot-central/retail/toc.json&bc=/azure/iot-central/retail/breadcrumb/toc.json
+          href: ../core/howto-create-analytics.md?toc=/azure/iot-central/retail/toc.json&bc=/azure/iot-central/retail/breadcrumb/toc.json
         - name: Создание действий веб-перехватчиков на основе правил
-          href: ../preview/howto-create-webhooks.md?toc=/azure/iot-central/retail/toc.json&bc=/azure/iot-central/retail/breadcrumb/toc.json
+          href: ../core/howto-create-webhooks.md?toc=/azure/iot-central/retail/toc.json&bc=/azure/iot-central/retail/breadcrumb/toc.json
     - name: Действия и расширяемость
       items:
         - name: Настройка экспорта непрерывных данных
-          href: ../preview/howto-export-data.md?toc=/azure/iot-central/retail/toc.json&bc=/azure/iot-central/retail/breadcrumb/toc.json
+          href: ../core/howto-export-data.md?toc=/azure/iot-central/retail/toc.json&bc=/azure/iot-central/retail/breadcrumb/toc.json
         - name: Создание настраиваемых правил
-          href: ../preview/howto-create-custom-rules.md?toc=/azure/iot-central/retail/toc.json&bc=/azure/iot-central/retail/breadcrumb/toc.json
+          href: ../core/howto-create-custom-rules.md?toc=/azure/iot-central/retail/toc.json&bc=/azure/iot-central/retail/breadcrumb/toc.json
         - name: Создание пользовательских решений аналитики с помощью Databricks
-          href: ../preview/howto-create-custom-analytics.md?toc=/azure/iot-central/retail/toc.json&bc=/azure/iot-central/retail/breadcrumb/toc.json
+          href: ../core/howto-create-custom-analytics.md?toc=/azure/iot-central/retail/toc.json&bc=/azure/iot-central/retail/breadcrumb/toc.json
     - name: Администрирование
       items:
         - name: Изменение параметров приложения
-          href: ../preview/howto-administer.md?toc=/azure/iot-central/retail/toc.json&bc=/azure/iot-central/retail/breadcrumb/toc.json
+          href: ../core/howto-administer.md?toc=/azure/iot-central/retail/toc.json&bc=/azure/iot-central/retail/breadcrumb/toc.json
         - name: Экспорт приложения
-          href: ../preview/howto-use-app-templates.md?toc=/azure/iot-central/retail/toc.json&bc=/azure/iot-central/retail/breadcrumb/toc.json
+          href: ../core/howto-use-app-templates.md?toc=/azure/iot-central/retail/toc.json&bc=/azure/iot-central/retail/breadcrumb/toc.json
         - name: управление пользователями и ролями;
-          href: ../preview/howto-manage-users-roles.md?toc=/azure/iot-central/retail/toc.json&bc=/azure/iot-central/retail/breadcrumb/toc.json
+          href: ../core/howto-manage-users-roles.md?toc=/azure/iot-central/retail/toc.json&bc=/azure/iot-central/retail/breadcrumb/toc.json
         - name: Управление счетом
-          href: ../preview/howto-view-bill.md?toc=/azure/iot-central/retail/toc.json&bc=/azure/iot-central/retail/breadcrumb/toc.json
+          href: ../core/howto-view-bill.md?toc=/azure/iot-central/retail/toc.json&bc=/azure/iot-central/retail/breadcrumb/toc.json
         - name: Настройка пользовательского интерфейса приложения
-          href: ../preview/howto-customize-ui.md?toc=/azure/iot-central/retail/toc.json&bc=/azure/iot-central/retail/breadcrumb/toc.json
+          href: ../core/howto-customize-ui.md?toc=/azure/iot-central/retail/toc.json&bc=/azure/iot-central/retail/breadcrumb/toc.json
         - name: Добавление плиток на панель мониторинга
           href: ../core/howto-add-tiles-to-your-dashboard.md?toc=/azure/iot-central/retail/toc.json&bc=/azure/iot-central/retail/breadcrumb/toc.json
         - name: Управление с помощью портала Azure

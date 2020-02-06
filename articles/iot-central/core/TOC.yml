@@ -9,134 +9,132 @@
 - name: Краткие руководства
   expanded: true
   items:
-    - name: Создание приложения
+    - name: 1. Создание приложения
       href: quick-deploy-iot-central.md
+    - name: 2. Добавление имитированного устройства
+      href: quick-create-pnp-device.md
+    - name: 3. Настройка правила и действий
+      href: quick-configure-rules.md
+    - name: 4. Мониторинг устройств
+      href: quick-monitor-devices.md
 - name: Учебники
   items:
-    - name: 1. Определение нового типа устройства
-      href: tutorial-define-device-type.md
-    - name: 2. Настройка правил
-      href: tutorial-configure-rules.md
-    - name: 3. Настройка представления оператора
-      href: tutorial-customize-operator.md
-    - name: 4. Мониторинг устройств
-      href: tutorial-monitor-devices.md
-    - name: 5. Добавление устройства
-      href: tutorial-add-device.md
+    - name: Подключение
+      items:
+        - name: Подключение устройства Plug and Play (предварительная версия)
+          href: tutorial-connect-pnp-device.md
+        - name: Создание шаблона для устройства шлюза
+          href: tutorial-define-gateway-device-type.md
+        - name: "Подключение устройства IoT\_Edge"
+          href: tutorial-add-edge-as-leaf-device.md
+    - name: Сохранение доступа
+      items:
+        - name: Создание группы устройств
+          href: tutorial-use-device-groups.md
+    - name: Преобразование
+      items:
+        - name: Создание правила
+          href: tutorial-create-telemetry-rules.md
+        - name: Использование REST API
+          href: 'https://docs.microsoft.com/learn/modules/manage-iot-central-apps-with-rest-api/'
 - name: Основные понятия
   items:
     - name: Architecture
       href: concepts-architecture.md
-    - name: Соединение
-      href: concepts-connectivity.md
     - name: Что представляют собой шаблоны приложений?
       href: concepts-app-templates.md
+    - name: Подключение
+      href: concepts-get-connected.md
+    - name: Подключение устройств IoT Edge
+      href: concepts-iot-edge.md
 - name: Практические руководства
   items:
-    - name: Подключение устройств
-      items:
-        - name: Подготовка и подключение приложения Node.js (универсальное приложение)
-          href: howto-connect-nodejs.md
-        - name: Подготовка и подключение MXChip IoT DevKit
-          href: howto-connect-devkit.md
-        - name: Подготовка и подключение Raspberry Pi (Python)
-          href: howto-connect-raspberry-pi-python.md
-        - name: 'Подготовка и подключение Raspberry Pi (C#)'
-          href: howto-connect-raspberry-pi-csharp.md
-        - name: Подготовка и подключение устройства с Windows IoT Базовая
-          href: howto-connect-windowsiotcore.md
-        - name: Подготовка и подключение устройства SensorTile.box
-          href: howto-connect-sensortile.md
-        - name: Мониторинг подключения устройств с помощью командной строки
-          href: howto-use-iotc-explorer.md
-    - name: Управление устройствами
+    - name: Подключение
       items:
         - name: Настройка шаблона устройства
           href: howto-set-up-template.md
-        - name: Управление устройствами
-          href: howto-manage-devices.md
-        - name: Выполнение задания
-          href: howto-run-a-job.md
-        - name: Использование наборов устройств
-          href: howto-use-device-sets.md
-        - name: Создание версии шаблона устройства
-          href: howto-version-device-template.md
-    - name: Мониторинг и аналитика
-      items:
-        - name: Создание правила телеметрии
-          href: howto-create-telemetry-rules.md
-        - name: Создание правила события
-          href: howto-create-event-rules.md
-        - name: Анализ данных устройства
-          href: howto-create-analytics.md
-    - name: Действия и расширяемость
-      items:
-        - name: Группирование нескольких действий на основе правил
-          href: howto-use-action-groups.md
-        - name: Создание действий веб-перехватчика на основе правил
-          href: howto-create-webhooks.md
-        - name: Создание рабочих процессов в Microsoft Flow
-          href: howto-add-microsoft-flow.md
-        - name: Создание рабочих процессов в Azure Logic Apps
-          href: howto-build-azure-logic-apps.md
-        - name: Активация Функций Azure
-          href: howto-trigger-azure-functions.md
-        - name: Экспорт данных
-          items:
-            - name: Экспорт в службы "Центры событий" и "Служебная шина"
-              href: howto-export-data-event-hubs-service-bus.md
-            - name: Экспорт в хранилище BLOB-объектов
-              href: howto-export-data-blob-storage.md
-        - name: Создание настраиваемых правил
-          href: howto-create-custom-rules.md
-        - name: Создание настраиваемой функции аналитики
-          href: howto-create-custom-analytics.md
-        - name: Визуализация данных в Power BI
-          href: howto-connect-powerbi.md
+        - name: Подготовка и подключение MXChip IoT DevKit
+          href: howto-connect-devkit.md
+        - name: Подготовка и подключение устройства RuuviTag
+          href: howto-connect-ruuvi.md
+        - name: Подготовка и подключение Rigado Cascade 500
+          href: howto-connect-rigado-cascade-500.md
         - name: Подключение других облаков Интернета вещей
           href: howto-build-iotc-device-bridge.md
+    - name: Сохранение доступа
+      items:
+        - name: "Мониторинг подключения устройств с помощью Azure\_CLI"
+          href: howto-monitor-devices-azure-cli.md
+        - name: Создание версии шаблона устройства
+          href: howto-version-device-template.md
+        - name: Управление устройствами
+          href: howto-manage-devices.md
+        - name: Настройка правил
+          href: howto-configure-rules.md
+        - name: Анализ данных устройства
+          href: howto-create-analytics.md
+        - name: Добавление плиток на панель мониторинга
+          href: howto-add-tiles-to-your-dashboard.md
+        - name: Создание собственных панелей мониторинга Azure IoT Central
+          href: howto-create-personal-dashboards.md
+        - name: Выполнение задания
+          href: howto-run-a-job.md
+        - name: Создание версии шаблона устройства
+          href: howto-version-device-template.md
+    - name: Преобразование
+      items:
+        - name: Настройка экспорта непрерывных данных
+          href: howto-export-data.md
+        - name: Создание действий веб-перехватчиков на основе правил
+          href: howto-create-webhooks.md
+        - name: Подключение групп действий Azure Monitor на основе правил
+          href: howto-use-action-groups.md
+        - name: Создание настраиваемых правил
+          href: howto-create-custom-rules.md
+        - name: Создание пользовательских решений аналитики с помощью Databricks
+          href: howto-create-custom-analytics.md
     - name: Администрирование
       items:
         - name: Управление приложением
-          href: howto-administer.md
-        - name: управление пользователями и ролями;
-          href: howto-manage-users-roles.md
-        - name: Просмотр счетов
-          href: howto-view-bill.md
-        - name: Настройка пользовательского интерфейса приложения
-          href: howto-customize-ui.md
-        - name: Подготовка и передача изображения
-          href: howto-prepare-images.md
-        - name: Добавление плиток на панель мониторинга
-          href: howto-add-tiles-to-your-dashboard.md
-        - name: Использование плиток панелей мониторинга
-          href: howto-use-tiles.md
-        - name: Использование шаблонов приложений
-          href: howto-use-app-templates.md
-        - name: Управление с помощью портала Azure
-          href: howto-manage-iot-central-from-portal.md
-        - name: Управление с помощью Azure CLI
-          href: howto-manage-iot-central-from-cli.md
-        - name: Управление с помощью Azure PowerShell
-          href: howto-manage-iot-central-from-powershell.md
-        - name: Создание и администрирование приложения на правах поставщика облачных решений
-          href: howto-create-and-manage-applications-csp.md
-    - name: Персонализация
-      items:
-        - name: Создание собственных панелей мониторинга Azure IoT Central
-          href: howto-create-personal-dashboards.md
-        - name: Управление своими настройками
-          href: howto-manage-preferences.md
-        - name: Переключение чата в реальном времени
-          href: howto-show-hide-chat.md
+          items:
+            - name: Изменение параметров приложения
+              href: howto-administer.md
+            - name: управление пользователями и ролями;
+              href: howto-manage-users-roles.md
+            - name: Управление счетом
+              href: howto-view-bill.md
+            - name: Настройка пользовательского интерфейса приложения
+              href: howto-customize-ui.md
+            - name: Экспорт приложения
+              href: howto-use-app-templates.md
+        - name: Управление с помощью других решений
+          items:
+            - name: Управление с помощью портала Azure
+              href: howto-manage-iot-central-from-portal.md
+            - name: Управление с помощью Azure CLI
+              href: howto-manage-iot-central-from-cli.md
+            - name: Управление с помощью Azure PowerShell
+              href: howto-manage-iot-central-from-powershell.md
+            - name: Управление с портала CSP
+              href: howto-create-and-manage-applications-csp.md
+        - name: Настройка приложения
+          items:
+            - name: Управление личными настройками
+              href: howto-manage-preferences.md
+            - name: Переключение чата в реальном времени
+              href: howto-show-hide-chat.md
 - name: Сопутствующие материалы
   items:
-    - name: Решения
+    - name: Отраслевые шаблоны приложений
       items:
-        - name: IoT Central
-          href: 'https://docs.microsoft.com/microsoft-iot-central/'
-        - name: Акселераторы решений для Интернета вещей
-          href: /azure/iot-accelerators
+        - name: Розничная торговля
+          href: ../retail/overview-iot-central-retail-pnp.md
+        - name: Энергетика
+          href: ../energy/overview-iot-central-energy.md
+        - name: Государственные организации
+          href: ../government/overview-iot-central-government.md
+        - name: Здравоохранение
+          href: ../healthcare/overview-iot-central-healthcare.md
     - name: Службы платформы
       items:
         - name: Центр Интернета вещей
@@ -161,6 +159,8 @@
   items:
     - name: Возможности получения поддержки и справки
       href: /azure/iot-fundamentals/iot-support-help
+    - name: REST API
+      href: 'https://docs.microsoft.com/rest/api/iotcentral/'
     - name: Запросы данных клиентов
       href: iot-central-customer-data-requests.md
     - name: Поддерживаемые браузеры

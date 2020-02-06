@@ -331,6 +331,8 @@
                   href: application-proxy-configure-single-sign-on-on-premises-apps.md
             - name: Пошаговые руководства по публикации
               items:
+                - name: Интеграция с прокси приложения на сервере NDES
+                  href: active-directory-app-proxy-protect-ndes.md
                 - name: Интеграция с доменными службами Azure AD
                   href: /azure/active-directory-domain-services/deploy-azure-app-proxy?context=azure/active-directory/manage-apps/context/manage-apps-context
                 - name: Интеграция с Power BI

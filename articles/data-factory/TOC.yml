@@ -164,8 +164,6 @@
               href: concepts-data-flow-overview.md
             - name: Режим отладки
               href: concepts-data-flow-debug-mode.md
-            - name: Обработка JSON
-              href: concepts-data-flow-json.md
             - name: Смещение схемы
               href: concepts-data-flow-schema-drift.md
             - name: Шаблоны столбцов
