@@ -1,8 +1,7 @@
----
 layout: HubPage
 hide_bc: true
 title: Документация по Microsoft Azure
-description: Узнайте, как создавать мощные приложения и управлять ими с помощью облачных служб Microsoft Azure. Получение документации, примеров кода, руководств и пр.
+description: Узнайте, как создавать мощные приложения и управлять ими с помощью облачных служб Microsoft Azure. Получите документацию, примеры кода, руководства и пр.
 ms.topic: hub-page
 featureFlags:
 - clicktale
@@ -276,7 +275,7 @@ ms.locfileid: "76294207"
                                                     </li>
                                                     <li>
                                                         <a class="barLink" href="/azure/devops-project/">
-                                                            <img src="https://docs.microsoft.com/media/logos/logo_vs-team-services.svg" alt=""> Azure DevOps Projects </a>
+                                                            <img src="https://docs.microsoft.com/media/logos/logo_vs-team-services.svg" alt=""> Azure DevOps Проекты</a>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -1034,11 +1033,11 @@ ms.locfileid: "76294207"
                                         <li>
                                             <a href="/azure/devops-project">
                                                 <img src="media/index/logo_vs-team-services.svg" alt="" />
-                                                <p>Azure DevOps Projects</p>
+                                                <p>Azure DevOps Проекты</p>
                                             </a>
                                         </li>
                                     </ul>
-                                    <h3>Удостоверение</h3>
+                                    <h3>Идентификация</h3>
                                     <ul>
                                         <li>
                                             <a href="/azure/active-directory/">
@@ -1670,7 +1669,7 @@ ms.locfileid: "76294207"
                                             </a>
                                         </li>
                                     </ul>
-                                    <h3>безопасность</h3>
+                                    <h3>Безопасность</h3>
                                     <ul>
                                         <li>
                                             <a href="/azure/security/">
@@ -2252,7 +2251,7 @@ ms.locfileid: "76294207"
                         </ul>
                     </li>
                     <li>
-                        <a href="#analytics">Analytics</a>
+                        <a href="#analytics">Аналитика</a>
                         <ul id="analytics" class="cardsA">
                             <li>
                                 <a href="/azure/sql-data-warehouse/">
@@ -3507,7 +3506,7 @@ ms.locfileid: "76294207"
                                                 </div>
                                                 <div class="cardText">
                                                     <h3>Visual Studio Code</h3>
-                                                    <p>Visual Studio Code — это простой, но мощный редактор для работы с исходным кодом, который работает на настольном компьютере и доступен для Windows, macOS и Linux.</p>
+                                                    <p>Visual Studio Code — это простой, но мощный редактор для работы с исходным кодом, доступен для Windows, macOS и Linux.</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -4295,7 +4294,7 @@ ms.locfileid: "76294207"
                                                 </div>
                                                 <div class="cardText">
                                                     <h3>Сетка событий Azure</h3>
-                                                    <p>Надежная крупномасштабная доставка событий</p>
+                                                    <p>Надежная доставка событий с возможностью масштабирования</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -5285,7 +5284,7 @@ ms.locfileid: "76294207"
                                                 </div>
                                                 <div class="cardText">
                                                     <h3>Azure Kinect DK</h3>
-                                                    <p>Создавайте приложения с помощью гибкого и чувствительного устройства</p>
+                                                    <p>Создавайте приложения для гибкого и чувствительного устройства</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -5601,7 +5600,7 @@ ms.locfileid: "76294207"
                                                     <h3>Защита от атак DDoS Azure</h3>
                                                     <p>Защита приложения от распределенных атак типа "отказ в обслуживании" (DDoS)</p>
                                                 </div>
-                                            </div>
+                                          </div>
                                         </div>
                                     </div>
                                 </a>
@@ -5617,7 +5616,7 @@ ms.locfileid: "76294207"
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>Наблюдатель за сетями</h3>
+                                                    <h3>Сетевой наблюдатель</h3>
                                                     <p>Решение для диагностики и мониторинга производительности сети</p>
                                                 </div>
                                             </div>
