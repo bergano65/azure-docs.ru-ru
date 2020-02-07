@@ -2,7 +2,7 @@
 title: Создание паролей приложений на странице сведений о безопасности (Предварительная версия) — Azure AD
 description: Создавайте автоматически созданные пароли (пароли приложений) для использования с любым приложением, не являющимся браузером, или любым приложением, которое не поддерживает двухфакторную проверку подлинности в вашей организации. Пароли приложений используются отдельно от обычных паролей. Их можно настроить на странице сведений для защиты.
 services: active-directory
-author: eross-msft
+author: curtand
 manager: daveba
 ms.reviewer: sahenry
 ms.service: active-directory
@@ -10,13 +10,13 @@ ms.workload: identity
 ms.subservice: user-help
 ms.topic: conceptual
 ms.date: 02/13/2018
-ms.author: lizross
-ms.openlocfilehash: d4076e379755518421ef79eca542ebdc99294a11
-ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
+ms.author: curtand
+ms.openlocfilehash: 787fa67ee77997fd1f9967db3abdbfc83d4ffad2
+ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76704897"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77064076"
 ---
 # <a name="create-app-passwords-from-the-security-info-preview-page"></a>Создание паролей приложений на странице сведений о безопасности (Предварительная версия)
 

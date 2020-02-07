@@ -8,12 +8,12 @@ author: nikmd23
 ms.author: nimolnar
 ms.date: 04/29/2019
 ms.reviewer: mbullwin
-ms.openlocfilehash: 6fe43eb5963f2918f41ad15f1904f883b5e9c298
-ms.sourcegitcommit: 1bd2207c69a0c45076848a094292735faa012d22
+ms.openlocfilehash: e774690fae2314b8db6e14f19a67c7ae1ce3a203
+ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72678299"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77064280"
 ---
 # <a name="dependency-auto-collection"></a>Автоматический сбор зависимостей
 
@@ -24,7 +24,7 @@ ms.locfileid: "72678299"
 | Платформы приложений| Версии |
 | ------------------------|----------|
 | Веб-формы ASP.NET | 4.5+ |
-| ASP.NET MVC | 4+ |
+| ASP.NET MVC 3 | 4+ |
 | ASP.NET WebAPI | 4.5+ |
 | ASP.NET Core | 1.1+ |
 | <b>Библиотеки обмена данными</b> |
@@ -35,7 +35,7 @@ ms.locfileid: "72678299"
 | <b>Клиенты хранилища</b>|  |
 | ADO.NET | 4.5+ |
 
-## <a name="java"></a>Java:
+## <a name="java"></a>Java
 | Серверы приложений | Версии |
 |-------------|----------|
 | [Tomcat](https://tomcat.apache.org/) | 7, 8 | 
@@ -82,12 +82,13 @@ ms.locfileid: "72678299"
 
 | Библиотеки обмена данными | Версии |
 | ------------------------|----------|
-| [XMLHttpRequest](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest) | Все |
+| [XMLHttpRequest](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest) | All |
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - Настройка отслеживания зависимостей для платформы [.NET](../../azure-monitor/app/asp-net-dependencies.md).
 - Настройка отслеживания зависимостей для [Java](../../azure-monitor/app/java-agent.md).
+- Настройка пользовательского отслеживания зависимостей для [Опенценсус Python](../../azure-monitor/app/opencensus-python-dependency.md).
 - [Создание телеметрии настраиваемых зависимостей](../../azure-monitor/app/api-custom-events-metrics.md#trackdependency)
 - В [этой статье](../../azure-monitor/app/data-model.md) представлены типы данных и модель данных для Application Insights.
 - Ознакомление с [платформами](../../azure-monitor/app/platforms.md), поддерживаемыми Application Insights.

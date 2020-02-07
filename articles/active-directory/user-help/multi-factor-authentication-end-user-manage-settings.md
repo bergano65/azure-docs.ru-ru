@@ -2,7 +2,7 @@
 title: Изменение метода и параметров двухфакторной проверки подлинности в Azure AD
 description: Узнайте, как изменить метод проверки безопасности и параметры для рабочей или учебной учетной записи на странице "дополнительная проверка безопасности".
 services: active-directory
-author: eross-msft
+author: curtand
 manager: daveba
 ms.reviewer: richagi
 ms.assetid: d3372d9a-9ad1-4609-bdcf-2c4ca9679a3b
@@ -11,13 +11,13 @@ ms.service: active-directory
 ms.subservice: user-help
 ms.topic: conceptual
 ms.date: 08/06/2019
-ms.author: lizross
-ms.openlocfilehash: e48834800f1fe3d34c13a87cfb3d8ef00c9e6bff
-ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
+ms.author: curtand
+ms.openlocfilehash: 457608af9a5ffc06a778e900363bc8138fcb4e99
+ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76705281"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77062597"
 ---
 # <a name="change-your-two-factor-verification-method-and-settings"></a>Изменение метода и параметров двухфакторной проверки подлинности
 

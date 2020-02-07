@@ -11,13 +11,13 @@ ms.author: sawinark
 ms.reviewer: douglasl
 manager: mflasko
 ms.custom: seo-lt-2019
-ms.date: 12/23/2019
-ms.openlocfilehash: 48d4df5684c84e195810439912dd610f5af364d4
-ms.sourcegitcommit: 42517355cc32890b1686de996c7913c98634e348
+ms.date: 02/06/2020
+ms.openlocfilehash: b20a615691d95c04574e2909f69b5a83a97f9d14
+ms.sourcegitcommit: 57669c5ae1abdb6bac3b1e816ea822e3dbf5b3e1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2020
-ms.locfileid: "76964487"
+ms.lasthandoff: 02/06/2020
+ms.locfileid: "77048956"
 ---
 # <a name="configure-self-hosted-ir-as-a-proxy-for-azure-ssis-ir-in-adf"></a>Настройка самостоятельно размещенного IR в качестве прокси-сервера для Azure-SSIS IR в ADF
 
@@ -35,7 +35,7 @@ ms.locfileid: "76964487"
 
 Наконец, необходимо скачать и установить последнюю версию локальной среды IR, а также дополнительные драйверы и среду выполнения на локальном компьютере или виртуальной машине Azure, как показано ниже.
 - Скачайте и установите последнюю версию самостоятельно размещенного IR [отсюда.](https://www.microsoft.com/download/details.aspx?id=39717)
-- Если вы используете соединители OLEDB в пакетах, скачайте и установите соответствующие драйверы OLEDB на том же компьютере, где установлена локальная среда IR, если это еще не сделано.  Если вы используете более раннюю версию драйвера OLEDB для SQL Server (SQLNCLI), можно загрузить 64-разрядную версию [отсюда](https://www.microsoft.com/download/details.aspx?id=50402).  Если вы используете последнюю версию драйвера OLEDB для SQL Server (MSOLEDBSQL), вы можете скачать 64-разрядную версию [отсюда](https://www.microsoft.com/download/details.aspx?id=56730).  Если вы используете драйверы OLEDB для других систем баз данных, таких как PostgreSQL, MySQL, Oracle и т. д., можно загрузить 64-разрядную версию с соответствующих веб-сайтов.
+- Если вы используете соединители OLEDB в пакетах, скачайте и установите соответствующие драйверы OLEDB на том же компьютере, где установлена локальная среда IR, если это еще не сделано.  Если вы используете более раннюю версию драйвера OLEDB для SQL Server (SQLNCLI), можно загрузить 64-разрядную версию [отсюда.](https://www.microsoft.com/download/details.aspx?id=50402)  Если вы используете последнюю версию драйвера OLEDB для SQL Server (МСОЛЕДБСКЛ), вы можете скачать 64-разрядную версию [отсюда.](https://www.microsoft.com/download/details.aspx?id=56730)  Если вы используете драйверы OLEDB для других систем баз данных, таких как PostgreSQL, MySQL, Oracle и т. д., можно загрузить 64-разрядную версию с соответствующих веб-сайтов.
 - Скачайте и установите среду C++ выполнения Visual (VC) на том же компьютере, где установлена автономная среда IR, если вы еще не сделали этого.  Загрузить 64-разрядную версию можно [здесь](https://www.microsoft.com/download/details.aspx?id=40784).
 
 ## <a name="prepare-azure-blob-storage-linked-service-for-staging"></a>Подготовка связанной службы хранилища BLOB-объектов Azure для промежуточного хранения
@@ -66,7 +66,7 @@ ms.locfileid: "76964487"
 
    1. В поле **промежуточный путь**укажите контейнер больших двоичных объектов в выбранной учетной записи хранилища BLOB-объектов Azure или оставьте пустым, чтобы использовать по умолчанию для промежуточного хранения.
 
-   1. Выберите **Continue** (Продолжить).
+   1. Выберите **Продолжить**.
 
    ![Дополнительные параметры с локальным IR](./media/tutorial-create-azure-ssis-runtime-portal/advanced-settings-shir.png)
 
@@ -106,7 +106,7 @@ Start-AzDataFactoryV2IntegrationRuntime -ResourceGroupName $ResourceGroupName `
 
 ## <a name="enable-ssis-packages-to-connect-by-proxy"></a>Включение пакетов служб SSIS для подключения с помощью прокси-сервера
 
-Используя последнюю версию SSDT с расширениями проектов SSIS для Visual Studio, которую можно скачать [отсюда](https://marketplace.visualstudio.com/items?itemName=SSIS.SqlServerIntegrationServicesProjects) или как автономный установщик, который можно скачать [отсюда](https://docs.microsoft.com/sql/ssdt/download-sql-server-data-tools-ssdt?view=sql-server-2017#ssdt-for-vs-2017-standalone-installer), можно найти новое свойство **ConnectByProxy**, добавленное в OLEDB/ Диспетчеры соединений с неструктурированными файлами.  
+Используя последнюю версию SSDT с расширениями проектов SSIS для Visual Studio, которую можно скачать [отсюда или в](https://marketplace.visualstudio.com/items?itemName=SSIS.SqlServerIntegrationServicesProjects) виде автономного [установщика, который](https://docs.microsoft.com/sql/ssdt/download-sql-server-data-tools-ssdt?view=sql-server-2017#ssdt-for-vs-2017-standalone-installer)можно скачать отсюда, можно найти новое свойство **Коннектбипрокси** , добавленное в диспетчере соединений OLEDB и неструктурированных файлов.  
 
 При проектировании новых пакетов, содержащих задачи потока данных с источниками OLEDB и плоских файлов для доступа к базам данных и файлам в локальной среде, это свойство можно включить, задав для него **значение true** на панели свойства соответствующих диспетчеров соединений.
 
@@ -149,7 +149,7 @@ Start-AzDataFactoryV2IntegrationRuntime -ResourceGroupName $ResourceGroupName `
 
 ## <a name="current-limitations"></a>Текущие ограничения
 
-- В настоящее время поддерживаются только задачи потока данных с диспетчерами соединений ODBC, OLEDB и неструктурированных файлов, а также источники ODBC/OLEDB/неструктурированных файлов. 
+- В настоящее время поддерживаются только задачи потока данных с диспетчерами соединений ODBC, OLEDB и неструктурированных файлов, а также источники ODBC/OLEDB/неструктурированных файлов или назначение OLEDB. 
 - В настоящее время поддерживаются только связанные службы хранилища BLOB-объектов Azure с **ключом учетной записи**/**URI SAS**/проверки подлинности **субъекта-службы** .
 
 ## <a name="next-steps"></a>Дальнейшие действия

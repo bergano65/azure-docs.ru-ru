@@ -10,17 +10,17 @@ ms.workload: identity
 ms.topic: conceptual
 ms.author: marsma
 ms.subservice: B2C
-ms.date: 02/03/2020
-ms.openlocfilehash: 108c9c1112327a3fcadeff4c4074f31f976a4e3d
-ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
+ms.date: 02/05/2020
+ms.openlocfilehash: b701449e8cfb7a379522ee6ccb93f5569bd703d8
+ms.sourcegitcommit: 57669c5ae1abdb6bac3b1e816ea822e3dbf5b3e1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2020
-ms.locfileid: "77026761"
+ms.lasthandoff: 02/06/2020
+ms.locfileid: "77046026"
 ---
 # <a name="monitor-azure-ad-b2c-with-azure-monitor"></a>Мониторинг Azure AD B2C с помощью Azure Monitor
 
-Используйте Azure Monitor для маршрутизации событий действий по использованию Azure Active Directory B2C (Azure AD B2C) с различными решениями для мониторинга. Вы можете хранить журналы для долгосрочного использования или интегрировать их со сторонними средствами управления сведениями о безопасности и событиями (SIEM) для получения ценных сведений о среде.
+Используйте Azure Monitor для маршрутизации Azure Active Directory B2C (Azure AD B2C) для входа и [аудита](view-audit-logs.md) в различные решения мониторинга. Вы можете хранить журналы для долгосрочного использования или интегрировать их со сторонними средствами управления сведениями о безопасности и событиями (SIEM) для получения ценных сведений о среде.
 
 События журнала можно направить в:
 
@@ -30,7 +30,7 @@ ms.locfileid: "77026761"
 
 ![Azure Monitor](./media/azure-monitor/azure-monitor-flow.png)
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы выполнить действия, описанные в этой статье, необходимо развернуть шаблон Azure Resource Manager с помощью модуля Azure PowerShell.
 

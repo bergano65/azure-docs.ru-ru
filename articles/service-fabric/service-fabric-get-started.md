@@ -3,14 +3,14 @@ title: Настройка среды разработки Windows
 description: Установите среду выполнения, пакет SDK и инструменты и создайте локальный кластер разработки. После завершения установки вы сможете создавать приложения на базе Windows.
 author: peterpogorski
 ms.topic: conceptual
-ms.date: 01/28/2020
+ms.date: 02/05/2020
 ms.custom: sfrev
-ms.openlocfilehash: 70a819636b786cedce5bbd0abd0d2594738cbfb9
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: 6768f45e61880370295ce7725e553828e66f3d39
+ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "76904113"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77062121"
 ---
 # <a name="prepare-your-development-environment-on-windows"></a>Настройка среды разработки для Windows
 
@@ -23,7 +23,7 @@ ms.locfileid: "76904113"
 
 Чтобы создать и запустить [приложения Service Fabric Azure][1] на компьютере разработки Windows, установите среду выполнения Service Fabric, пакет SDK и средства. Вам также нужно [включить выполнение сценариев Windows PowerShell](#enable-powershell-script-execution), включенных в пакет SDK.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 ### <a name="supported-operating-system-versions"></a>Поддерживаемые версии операционных систем
 
@@ -31,9 +31,9 @@ ms.locfileid: "76904113"
 
 * Windows 7
 * Windows 8 и Windows 8.1;
-* Windows Server 2012 R2
-* Windows Server 2016
-* Windows 10
+* Windows Server 2012 R2
+* Windows Server 2016
+* Windows 10
 
 > [!NOTE]
 > Поддержка Windows 7:
@@ -68,8 +68,8 @@ ms.locfileid: "76904113"
 
 Текущие версии:
 
-* Service Fabric SDK и средства 4.0.464
-* 7\.0.464 среды выполнения Service Fabric
+* Service Fabric SDK и средства 4.0.466
+* 7\.0.466 среды выполнения Service Fabric
 
 Список поддерживаемых версий см. в статье [Поддерживаемые версии Service Fabric](service-fabric-versions.md).
 

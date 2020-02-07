@@ -8,15 +8,15 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
-ms.date: 12/18/2019
+ms.date: 02/05/2020
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 3d9316f42c8d0ac5b44cda2e484ca4c92110813d
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 2bda00924015bf5abc616b7c346eacfeda53c2ed
+ms.sourcegitcommit: 57669c5ae1abdb6bac3b1e816ea822e3dbf5b3e1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75479154"
+ms.lasthandoff: 02/06/2020
+ms.locfileid: "77045942"
 ---
 # <a name="custom-email-verification-in-azure-active-directory-b2c"></a>Настраиваемая проверка электронной почты в Azure Active Directory B2C
 
@@ -389,6 +389,36 @@ ms.locfileid: "75479154"
     </TechnicalProfile>
   </TechnicalProfiles>
 </ClaimsProvider>
+```
+
+## <a name="optional-localize-your-email"></a>Используемых Локализация электронной почты
+
+Чтобы локализовать сообщение электронной почты, необходимо отправить локализованные строки в SendGrid или ваш поставщик электронной почты. Например, чтобы локализовать тему сообщения электронной почты, текст, сообщение кода или подпись сообщения электронной почты. Для этого можно использовать преобразование утверждений [жетлокализедстрингстрансформатион](string-transformations.md) , чтобы скопировать локализованные строки в типы утверждений. В преобразовании «`GenerateSendGridRequestBody` утверждения», которая создает полезные данные JSON, использует входные утверждения, содержащие локализованные строки.
+
+1. В политике определите следующие строковые утверждения: subject, Message, Кодеинтро и Signature.
+1. Определите преобразование [жетлокализедстрингстрансформатион](string-transformations.md) Claims, чтобы заменить локализованные строковые значения на утверждения из шага 1.
+1. Измените преобразование утверждений `GenerateSendGridRequestBody`, чтобы использовать входные утверждения со следующим фрагментом XML.
+1. Обновите шаблон Сендгринд, чтобы использовать динамические параметры вместо всех строк, которые будут локализованы Azure AD B2C.
+
+```XML
+<ClaimsTransformation Id="GenerateSendGridRequestBody" TransformationMethod="GenerateJson">
+  <InputClaims>
+    <InputClaim ClaimTypeReferenceId="email" TransformationClaimType="personalizations.0.to.0.email" />
+    <InputClaim ClaimTypeReferenceId="subject" TransformationClaimType="personalizations.0.dynamic_template_data.subject" />
+    <InputClaim ClaimTypeReferenceId="otp" TransformationClaimType="personalizations.0.dynamic_template_data.otp" />
+    <InputClaim ClaimTypeReferenceId="email" TransformationClaimType="personalizations.0.dynamic_template_data.email" />
+    <InputClaim ClaimTypeReferenceId="message" TransformationClaimType="personalizations.0.dynamic_template_data.message" />
+    <InputClaim ClaimTypeReferenceId="codeIntro" TransformationClaimType="personalizations.0.dynamic_template_data.codeIntro" />
+    <InputClaim ClaimTypeReferenceId="signature" TransformationClaimType="personalizations.0.dynamic_template_data.signature" />
+  </InputClaims>
+  <InputParameters>
+    <InputParameter Id="template_id" DataType="string" Value="d-1234567890" />
+    <InputParameter Id="from.email" DataType="string" Value="my_email@mydomain.com" />
+  </InputParameters>
+  <OutputClaims>
+    <OutputClaim ClaimTypeReferenceId="sendGridReqBody" TransformationClaimType="outputClaim" />
+  </OutputClaims>
+</ClaimsTransformation>
 ```
 
 ## <a name="next-steps"></a>Дальнейшие действия

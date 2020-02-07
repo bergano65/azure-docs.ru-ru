@@ -12,18 +12,18 @@ ms.date: 05/08/2019
 ms.author: mimart
 ms.reviewer: arvinh,luleon
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2c4547bddeea8b67bd3377124b1c299662fea3e6
-ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
+ms.openlocfilehash: dfe4aeb17f482cc9d4126efc6d65d3f7d173536b
+ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74274167"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77063549"
 ---
 # <a name="configure-linked-sign-on"></a>Настройка связанного единого входа
 
 При добавлении коллекции или веб-приложения не из коллекции можно использовать один из вариантов единого входа, [связанный с входом](what-is-single-sign-on.md). Выберите этот параметр, чтобы добавить ссылку на приложение на панели доступа Azure AD в вашей организации или на портале Office 365. Этот метод можно использовать для добавления ссылок на пользовательские веб-приложения, которые в настоящее время используют службы федерации Active Directory (AD FS) (или другую службу федерации) вместо Azure AD для проверки подлинности. Еще он позволяет просто добавить глубокие ссылки на определенные страницы SharePoint или другие веб-сайты. Они появятся на панели доступа пользователя.
 
-## <a name="before-you-begin"></a>Перед началом работы
+## <a name="before-you-begin"></a>Перед началом
 
 Если приложение еще не добавлено в клиент Azure AD, ознакомьтесь со статьей о [добавлении приложения из коллекции](add-gallery-app.md) или [добавлении приложения не из коллекции](add-non-gallery-app.md).
 
@@ -47,7 +47,7 @@ ms.locfileid: "74274167"
 
 1. Щелкните **Сохранить**.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Assign users and groups to an application in Azure Active Directory](methods-for-assigning-users-and-groups.md) (Назначение пользователей и групп для приложения в Azure Active Directory)
-- [Managing user account provisioning for enterprise apps in the Azure portal](configure-automatic-user-provisioning-portal.md) (Управление подготовкой учетных записей пользователей для корпоративных приложений на портале Azure)
+- [Managing user account provisioning for enterprise apps in the Azure portal](../app-provisioning/configure-automatic-user-provisioning-portal.md) (Управление подготовкой учетных записей пользователей для корпоративных приложений на портале Azure)

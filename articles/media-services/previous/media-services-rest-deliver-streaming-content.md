@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/20/2019
 ms.author: juliako
-ms.openlocfilehash: 8e3c2b7f4087f0f47466eff47b22c59dad19892e
-ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
+ms.openlocfilehash: 787336f00a83d9403e3069754787743b9be6c5b1
+ms.sourcegitcommit: 57669c5ae1abdb6bac3b1e816ea822e3dbf5b3e1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76774941"
+ms.lasthandoff: 02/06/2020
+ms.locfileid: "77050004"
 ---
 # <a name="publish-azure-media-services-content-using-rest"></a>Публикация содержимого служб мультимедиа Azure с помощью REST 
 > [!div class="op_single_selector"]
@@ -33,7 +33,7 @@ ms.locfileid: "76774941"
 
 Можно также использовать указатель потоковой передачи OnDemand, чтобы формировать URL-адреса, указывающие на MP4-файлы для последовательного скачивания.  
 
-В этой статье показано, как создать указатель потоковой передачи OnDemand, чтобы опубликовать ресурс-контейнер и сформировать URL-адреса потоковой передачи Smooth, MPEG DASH и HLS. В нем также показывается, как создать URL-адреса последовательного скачивания.
+В этой статье показано, как создать указатель потоковой передачи OnDemand, чтобы опубликовать ресурс-контейнер и сформировать URL-адреса потоковой передачи Smooth, MPEG DASH и HLS. В нем также показано, как создавать URL-адреса последовательного скачивания.
 
 В [этих](#types) разделах показаны типы перечисления, значения которых используются в вызовах REST.   
 
@@ -190,10 +190,10 @@ URL: **Путь** + имя MP4-файла ресурса
 ## <a name="media-services-learning-paths"></a>Схемы обучения работе со службами мультимедиа
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Отправить отзыв
+## <a name="provide-feedback"></a>Отзывы
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 [Обзор REST API операций служб мультимедиа](media-services-rest-how-to-use.md)
 
 [Настройка политики доставки для ресурса-контейнера](media-services-rest-configure-asset-delivery-policy.md)

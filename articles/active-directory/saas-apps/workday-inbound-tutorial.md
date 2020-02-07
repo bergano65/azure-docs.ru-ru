@@ -15,12 +15,12 @@ ms.workload: identity
 ms.date: 05/16/2019
 ms.author: chmutali
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 94fc50bf238a74b7d8b45625d88b2d23d7dd1a13
-ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
+ms.openlocfilehash: a7e5dc9c177dbddda8bf229ec7949f53b70e616c
+ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/02/2020
-ms.locfileid: "75613774"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77064312"
 ---
 # <a name="tutorial-configure-workday-for-automatic-user-provisioning"></a>Руководство по настройке Workday для автоматической подготовки пользователей
 
@@ -28,7 +28,7 @@ ms.locfileid: "75613774"
 
 ## <a name="overview"></a>Обзор
 
-Для подготовки учетных записей пользователей [служба подготовки пользователей Azure Active Directory](../manage-apps/user-provisioning.md) интегрируется с [API отдела кадров Workday](https://community.workday.com/sites/default/files/file-hosting/productionapi/Human_Resources/v21.1/Get_Workers.html). Azure AD использует это подключение для включения следующих рабочих процессов подготовки пользователей:
+Для подготовки учетных записей пользователей [служба подготовки пользователей Azure Active Directory](../app-provisioning/user-provisioning.md) интегрируется с [API отдела кадров Workday](https://community.workday.com/sites/default/files/file-hosting/productionapi/Human_Resources/v21.1/Get_Workers.html). Azure AD использует это подключение для включения следующих рабочих процессов подготовки пользователей:
 
 * **Подготовка пользователей в Active Directory** — подготовка выбранных групп пользователей из Workday в одном или нескольких доменах Active Directory.
 
@@ -40,13 +40,13 @@ ms.locfileid: "75613774"
 
 Рабочие процессы подготовки пользователей Workday, поддерживаемые службой подготовки пользователей Azure AD, позволяют автоматизировать следующие сценарии работы отдела кадров и управления жизненным циклом удостоверений.
 
-* **Наем новых сотрудников.** При добавлении нового сотрудника в Workday учетная запись пользователя автоматически создается в Active Directory, Azure Active Directory и при необходимости в Office 365, а также в [других приложениях SaaS, поддерживаемых Azure AD](../manage-apps/user-provisioning.md), с обратной записью адреса электронной почты в Workday.
+* **Наем новых сотрудников.** При добавлении нового сотрудника в Workday учетная запись пользователя автоматически создается в Active Directory, Azure Active Directory и при необходимости в Office 365, а также в [других приложениях SaaS, поддерживаемых Azure AD](../app-provisioning/user-provisioning.md), с обратной записью адреса электронной почты в Workday.
 
-* **Обновления атрибута и профиля сотрудника**. При обновлении записи сотрудника в Workday (например, имени, должности или руководителя) его учетная запись пользователя будет автоматически обновлена в Active Directory, Azure Active Directory и при необходимости в Office 365 и [других приложениях SaaS, поддерживаемых Azure AD](../manage-apps/user-provisioning.md).
+* **Обновления атрибута и профиля сотрудника**. При обновлении записи сотрудника в Workday (например, имени, должности или руководителя) его учетная запись пользователя будет автоматически обновлена в Active Directory, Azure Active Directory и при необходимости в Office 365 и [других приложениях SaaS, поддерживаемых Azure AD](../app-provisioning/user-provisioning.md).
 
-* **Увольнения сотрудников**. При увольнении сотрудника в Workday его учетная запись пользователя будет автоматически отключена в Active Directory, Azure Active Directory и при необходимости в Office 365 и [других приложениях SaaS, поддерживаемых Azure AD](../manage-apps/user-provisioning.md).
+* **Увольнения сотрудников**. При увольнении сотрудника в Workday его учетная запись пользователя будет автоматически отключена в Active Directory, Azure Active Directory и при необходимости в Office 365 и [других приложениях SaaS, поддерживаемых Azure AD](../app-provisioning/user-provisioning.md).
 
-* **Повторные наймы сотрудников**. При повторном поступлении сотрудника на работу в Workday его старая учетная запись может быть автоматически активирована повторно или повторно подготовлена (в зависимости от вашего желания) в Active Directory, Azure Active Directory и при необходимости в Office 365 и [других приложениях SaaS, поддерживаемых Azure AD](../manage-apps/user-provisioning.md).
+* **Повторные наймы сотрудников**. При повторном поступлении сотрудника на работу в Workday его старая учетная запись может быть автоматически активирована повторно или повторно подготовлена (в зависимости от вашего желания) в Active Directory, Azure Active Directory и при необходимости в Office 365 и [других приложениях SaaS, поддерживаемых Azure AD](../app-provisioning/user-provisioning.md).
 
 ### <a name="who-is-this-user-provisioning-solution-best-suited-for"></a>Кому это решение подготовки пользователей подходит лучше всего?
 
@@ -93,7 +93,7 @@ ms.locfileid: "75613774"
 * [Интеграция с несколькими доменами Active Directory](#integrating-with-multiple-active-directory-domains).
 * [Планирование трансформации и сопоставления атрибутов пользователей Workday и Active Directory](#planning-workday-to-active-directory-user-attribute-mapping-and-transformations).
 
-### <a name="prerequisites"></a>Технические условия
+### <a name="prerequisites"></a>предварительные требования
 
 Сценарий, описанный в этом учебнике, предполагает, что у вас уже имеется:
 
@@ -120,7 +120,7 @@ ms.locfileid: "75613774"
 > Стандартное приложение Workday используется для настройки единого входа между Workday и Azure Active Directory.
 
 Воспользуйтесь приведенной ниже схемой принятия решений, чтобы определить, какие приложения подготовки Workday подходят для вашего сценария.
-    ![Блок-схема принятия решений](./media/workday-inbound-tutorial/wday_app_flowchart.png "Блок-схема решений")
+    ![Блок-схема принятия решений](./media/workday-inbound-tutorial/wday_app_flowchart.png "Блок-схема принятия решений")
 
 Используйте оглавление, чтобы перейти к соответствующему разделу этого руководства.
 
@@ -502,7 +502,7 @@ ms.locfileid: "75613774"
    > При первой настройке приложения подготовки необходимо проверить сопоставления атрибутов и выражения, чтобы получить желаемый результат. Корпорация Майкрософт рекомендует использовать фильтры области действия в разделе **Область исходного объекта** для проверки сопоставлений с несколькими тестовыми пользователями из Workday. После проверки работоспособности сопоставлений можно либо удалить фильтр, либо постепенно расширять его, добавляя больше пользователей.
 
    > [!CAUTION] 
-   > Поведение подсистемы подготовки по умолчанию заключается в том, чтобы отключить или удалить пользователей, которые выходят за пределы области. Это может быть нежелательно при интеграции Workday с AD. Чтобы переопределить это поведение по умолчанию, см. статью [пропуск удаления учетных записей пользователей, которые выходят за пределы области](../manage-apps/skip-out-of-scope-deletions.md)
+   > Поведение подсистемы подготовки по умолчанию заключается в том, чтобы отключить или удалить пользователей, которые выходят за пределы области. Это может быть нежелательно при интеграции Workday с AD. Чтобы переопределить это поведение по умолчанию, см. статью [пропуск удаления учетных записей пользователей, которые выходят за пределы области](../app-provisioning/skip-out-of-scope-deletions.md)
   
 1. В поле **Действия с целевыми объектами** можно в глобальном масштабе отфильтровать, какие действия доступны для выполнения в Active Directory. Самыми распространенными являются **создание** и **обновление**.
 
@@ -516,7 +516,7 @@ ms.locfileid: "75613774"
 
          * **Константа** — записывает статическое постоянное строковое значение в атрибут AD.
 
-         * **Выражение** — позволяет записывать пользовательское значение в атрибут AD на основании одного или нескольких атрибутов Workday. [Дополнительные сведения см. в статье о выражениях](../manage-apps/functions-for-customizing-application-data.md).
+         * **Выражение** — позволяет записывать пользовательское значение в атрибут AD на основании одного или нескольких атрибутов Workday. [Дополнительные сведения см. в статье о выражениях](../app-provisioning/functions-for-customizing-application-data.md).
 
       * **Исходный атрибут** — атрибут пользователя из Workday. Если нужный вам атрибут отсутствует, см. раздел [Настройка списка атрибутов пользователя Workday](#customizing-the-list-of-workday-user-attributes).
 
@@ -543,9 +543,9 @@ ms.locfileid: "75613774"
 
 * Выражение, которое сопоставляется с атрибутом *parentDistinguishedName*, используется для подготовки пользователей для разных подразделений на основе одного или нескольких исходных атрибутов Workday. В этом примере пользователи помещаются в разные подразделения в зависимости от города, в котором они находятся.
 
-* Атрибут *userPrincipalName* в Active Directory создается с использованием функции дедупликации [SelectUniqueValue](../manage-apps/functions-for-customizing-application-data.md#selectuniquevalue), которая проверяет наличие созданного значения в целевом домене AD и задает его только в том случае, если оно уникально.  
+* Атрибут *userPrincipalName* в Active Directory создается с использованием функции дедупликации [SelectUniqueValue](../app-provisioning/functions-for-customizing-application-data.md#selectuniquevalue), которая проверяет наличие созданного значения в целевом домене AD и задает его только в том случае, если оно уникально.  
 
-* [Документацию о написании выражений см. здесь](../manage-apps/functions-for-customizing-application-data.md). В этот раздел входят примеры, демонстрирующие удаление специальных символов.
+* [Документацию о написании выражений см. здесь](../app-provisioning/functions-for-customizing-application-data.md). В этот раздел входят примеры, демонстрирующие удаление специальных символов.
 
 | АТРИБУТ WORKDAY | АТРИБУТ ACTIVE DIRECTORY |  ИДЕНТИФИКАТОР СОПОСТАВЛЕНИЯ? | СОЗДАНИЕ ИЛИ ОБНОВЛЕНИЕ |
 | ---------- | ---------- | ---------- | ---------- |
@@ -653,7 +653,7 @@ ms.locfileid: "75613774"
 
       * **Константа** — записывает статическое постоянное строковое значение в атрибут AD.
 
-      * **Выражение** — позволяет записывать пользовательское значение в атрибут AD на основании одного или нескольких атрибутов Workday. [Дополнительные сведения см. в статье о выражениях](../manage-apps/functions-for-customizing-application-data.md).
+      * **Выражение** — позволяет записывать пользовательское значение в атрибут AD на основании одного или нескольких атрибутов Workday. [Дополнительные сведения см. в статье о выражениях](../app-provisioning/functions-for-customizing-application-data.md).
 
    * **Исходный атрибут** — атрибут пользователя из Workday. Если нужный вам атрибут отсутствует, см. раздел [Настройка списка атрибутов пользователя Workday](#customizing-the-list-of-workday-user-attributes).
 
@@ -747,7 +747,7 @@ ms.locfileid: "75613774"
 
    ![Портал Azure](./media/workday-inbound-tutorial/wd_3.png)
 
-## <a name="frequently-asked-questions-faq"></a>Часто задаваемые вопросы
+## <a name="frequently-asked-questions-faq"></a>Вопросы и ответы
 
 * **Вопросы о возможностях решения**
   * [Как решение устанавливает пароль для новой учетной записи пользователя в Active Directory при обработке найма нового сотрудника из Workday?](#when-processing-a-new-hire-from-workday-how-does-the-solution-set-the-password-for-the-new-user-account-in-active-directory)
@@ -984,7 +984,7 @@ ms.locfileid: "75613774"
      | ----------------- | -------------------- |
      | PreferredFirstName | wd:Worker/wd:Worker_Data/wd:Personal_Data/wd:Name_Data/wd:Preferred_Name_Data/wd:Name_Detail_Data/wd:First_Name/text() |
      | PreferredLastName | wd:Worker/wd:Worker_Data/wd:Personal_Data/wd:Name_Data/wd:Preferred_Name_Data/wd:Name_Detail_Data/wd:Last_Name/text() |
-     | Компания | wd:Worker/wd:Worker_Data/wd:Organization_Data/wd:Worker_Organization_Data[wd:Organization_Data/wd:Organization_Type_Reference/wd:ID[@wd:type='Organization_Type_ID']='Company']/wd:Organization_Reference/@wd:Descriptor |
+     | Company | wd:Worker/wd:Worker_Data/wd:Organization_Data/wd:Worker_Organization_Data[wd:Organization_Data/wd:Organization_Type_Reference/wd:ID[@wd:type='Organization_Type_ID']='Company']/wd:Organization_Reference/@wd:Descriptor |
      | SupervisoryOrganization | wd:Worker/wd:Worker_Data/wd:Organization_Data/wd:Worker_Organization_Data/wd:Organization_Data[wd:Organization_Type_Reference/wd:ID[@wd:type='Organization_Type_ID']='Supervisory']/wd:Organization_Name/text() |
   
    Согласуйте с командой Workday, допустимо ли приведенное выше выражение API для конфигурации клиента Workday. При необходимости эти выражения можно отредактировать, как описано в разделе [Настройка списка атрибутов пользователя Workday](#customizing-the-list-of-workday-user-attributes).
@@ -1023,9 +1023,9 @@ ms.locfileid: "75613774"
     )
      ```
     См. также
-  * [Синтаксис функции Switch](../manage-apps/functions-for-customizing-application-data.md#switch)
-  * [Синтаксис функции Join](../manage-apps/functions-for-customizing-application-data.md#join)
-  * [Синтаксис функции Append](../manage-apps/functions-for-customizing-application-data.md#append)
+  * [Синтаксис функции Switch](../app-provisioning/functions-for-customizing-application-data.md#switch)
+  * [Синтаксис функции Join](../app-provisioning/functions-for-customizing-application-data.md#join)
+  * [Синтаксис функции Append](../app-provisioning/functions-for-customizing-application-data.md#append)
 
 #### <a name="how-can-i-use-selectuniquevalue-to-generate-unique-values-for-samaccountname-attribute"></a>Как использовать SelectUniqueValue для создания уникальных значений атрибута samAccountName?
 
@@ -1043,17 +1043,17 @@ SelectUniqueValue(
 
 См. также
 
-* [Синтаксис функции Mid](../manage-apps/functions-for-customizing-application-data.md#mid)
-* [Синтаксис функции Replace](../manage-apps/functions-for-customizing-application-data.md#replace)
-* [Синтаксис функции SelectUniqueValue](../manage-apps/functions-for-customizing-application-data.md#selectuniquevalue)
+* [Синтаксис функции Mid](../app-provisioning/functions-for-customizing-application-data.md#mid)
+* [Синтаксис функции Replace](../app-provisioning/functions-for-customizing-application-data.md#replace)
+* [Синтаксис функции SelectUniqueValue](../app-provisioning/functions-for-customizing-application-data.md#selectuniquevalue)
 
 #### <a name="how-do-i-remove-characters-with-diacritics-and-convert-them-into-normal-english-alphabets"></a>Как удалить символы с диакритическими знаками и преобразовать их в обычный английский алфавит?
 
-Используйте функцию [NormalizeDiacritics](../manage-apps/functions-for-customizing-application-data.md#normalizediacritics), чтобы удалить специальные символы в имени и фамилии пользователя при создании адреса электронной почты или значения CN для пользователя.
+Используйте функцию [NormalizeDiacritics](../app-provisioning/functions-for-customizing-application-data.md#normalizediacritics), чтобы удалить специальные символы в имени и фамилии пользователя при создании адреса электронной почты или значения CN для пользователя.
 
 ## <a name="troubleshooting-tips"></a>Советы по устранению неполадок
 
-В этом разделе приведены рекомендации по устранению неполадок подготовки, возникающих во время интеграции Workday, с помощью журналов аудита Azure AD и журналов средства просмотра событий Windows Server. Он основан на общих действиях по устранению неполадок и концепциях, полученных в этом [учебнике: создание отчетов об автоматической подготовке учетных записей пользователей](../manage-apps/check-status-user-account-provisioning.md)
+В этом разделе приведены рекомендации по устранению неполадок подготовки, возникающих во время интеграции Workday, с помощью журналов аудита Azure AD и журналов средства просмотра событий Windows Server. Он основан на общих действиях по устранению неполадок и концепциях, полученных в этом [учебнике: создание отчетов об автоматической подготовке учетных записей пользователей](../app-provisioning/check-status-user-account-provisioning.md)
 
 В этом разделе описываются следующие аспекты устранения неполадок:
 
@@ -1209,7 +1209,7 @@ SelectUniqueValue(
 |#|Сценарий ошибки |Возможные причины|Рекомендуемое решение|
 |--|---|---|---|
 |1.| Сбой операции экспорта в журнале аудита с сообщением *об ошибке: оператионсеррор-свцерр: произошла ошибка операции. Для службы каталогов не настроена старшая ссылка. Поэтому служба каталогов не может выдавать ссылки на объекты, находящиеся за пределами этого леса.* | Эта ошибка обычно появляется, если подразделение *контейнера Active Directory* установлено неправильно или есть проблемы с сопоставлением выражений, используемым для *parentDistinguishedName*. | Проверьте параметр подразделения *контейнера Active Directory* на наличие опечаток. Если вы используете атрибут *parentDistinguishedName* в сопоставлении атрибутов, убедитесь, что он всегда соответствует известному контейнеру в домене AD. Проверьте событие *экспорта* в журналах аудита, чтобы увидеть созданное значение. |
-|2.| Сбой операции экспорта в журнале аудита с кодом ошибки: *системфоркроссдомаинидентитиманажементбадреспонсе* и сообщение *об ошибке: констраинтвиолатион-атрерр: недопустимое значение в запросе. Значение атрибута не находится в допустимом диапазоне значений. \ Nсведения об ошибке: CONSTRAINT_ATT_TYPE-Company*. | Хотя эта ошибка относится только к атрибуту *company*, она может возникнуть и для других атрибутов, таких как *CN*. Эта ошибка появляется из-за принудительного ограничения схемы AD. По умолчанию такие атрибуты, как *company* и *CN* в AD, имеют верхний предел длины в 64 знака. Если длина значения из Workday превышает 64 знака, вы увидите это сообщение об ошибке. | Проверьте событие *экспорта* в журналах аудита, чтобы увидеть значение атрибута, указанное в сообщении об ошибке. Попробуйте обрезать значение, полученное из Workday, с помощью функции [Mid](../manage-apps/functions-for-customizing-application-data.md#mid), или изменить сопоставления на атрибут AD, который не имеет аналогичных ограничений длины.  |
+|2.| Сбой операции экспорта в журнале аудита с кодом ошибки: *системфоркроссдомаинидентитиманажементбадреспонсе* и сообщение *об ошибке: констраинтвиолатион-атрерр: недопустимое значение в запросе. Значение атрибута не находится в допустимом диапазоне значений. \ Nсведения об ошибке: CONSTRAINT_ATT_TYPE-Company*. | Хотя эта ошибка относится только к атрибуту *company*, она может возникнуть и для других атрибутов, таких как *CN*. Эта ошибка появляется из-за принудительного ограничения схемы AD. По умолчанию такие атрибуты, как *company* и *CN* в AD, имеют верхний предел длины в 64 знака. Если длина значения из Workday превышает 64 знака, вы увидите это сообщение об ошибке. | Проверьте событие *экспорта* в журналах аудита, чтобы увидеть значение атрибута, указанное в сообщении об ошибке. Попробуйте обрезать значение, полученное из Workday, с помощью функции [Mid](../app-provisioning/functions-for-customizing-application-data.md#mid), или изменить сопоставления на атрибут AD, который не имеет аналогичных ограничений длины.  |
 
 #### <a name="ad-user-account-update-errors"></a>Ошибки обновления учетной записи пользователя AD
 
@@ -1348,7 +1348,7 @@ SelectUniqueValue(
 
 ### <a name="exporting-and-importing-your-configuration"></a>Экспорт и импорт конфигурации
 
-См. статью [Экспорт и импорт конфигурации подготовки](../manage-apps/export-import-provisioning-configuration.md) .
+См. статью [Экспорт и импорт конфигурации подготовки](../app-provisioning/export-import-provisioning-configuration.md) .
 
 ## <a name="managing-personal-data"></a>Управление персональными данными
 
@@ -1362,7 +1362,7 @@ SelectUniqueValue(
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Сведения о просмотре журналов и получении отчетов о действиях по подготовке](../manage-apps/check-status-user-account-provisioning.md)
+* [Сведения о просмотре журналов и получении отчетов о действиях по подготовке](../app-provisioning/check-status-user-account-provisioning.md)
 * [Узнайте, как настроить единый вход Azure Active Directory в Workday](workday-tutorial.md).
 * [Узнайте, как интегрировать другие приложения SaaS с Azure Active Directory](tutorial-list.md).
 * [Сведения об использовании API Microsoft Graph для управления конфигурациями подготовки](https://developer.microsoft.com/graph/docs/api-reference/beta/resources/synchronization-overview)

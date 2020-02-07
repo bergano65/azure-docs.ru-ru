@@ -10,12 +10,12 @@ ms.reviewer: jmartens
 author: cartacioS
 ms.author: sacartac
 ms.date: 11/04/2019
-ms.openlocfilehash: 778b369e08ff6b0c6e4075c5a8d3d2a234bde70e
-ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
+ms.openlocfilehash: 012300c95fd1edd135b97f52ed3702ce3e7ef0bd
+ms.sourcegitcommit: 57669c5ae1abdb6bac3b1e816ea822e3dbf5b3e1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75894888"
+ms.lasthandoff: 02/06/2020
+ms.locfileid: "77048972"
 ---
 # <a name="what-is-automated-machine-learning"></a>Что такое автоматическое машинное обучение?
 
@@ -95,11 +95,11 @@ ms.locfileid: "75894888"
 
 ### <a name="advanced-preprocessing-optional-featurization"></a>Расширенная Предварительная обработка: необязательный Добавление признаков
 
-Также доступны дополнительные расширенные предварительные действия и добавление признаков, такие как снятие данных, кодировка и преобразования. [Узнайте больше о том, что входит в добавление признаков](how-to-create-portal-experiments.md#preprocess). Включить этот параметр с помощью:
+Также доступны дополнительные расширенные предварительные действия и добавление признаков, такие как снятие данных, кодировка и преобразования. [Узнайте больше о том, что входит в добавление признаков](how-to-create-portal-experiments.md#featurization). Включить этот параметр с помощью:
 
-+ Машинное обучение Azure Studio: выбор параметра **View Добавление признаков Settings (просмотреть параметры** ) в разделе **Run Configuration (выполнение конфигурации** ) [с этими шагами](how-to-create-portal-experiments.md).
++ Машинное обучение Azure Studio: включение **автоматического Добавление признаков** в разделе **Просмотр дополнительной настройки** [с помощью этих шагов](how-to-create-portal-experiments.md#create-and-run-experiment).
 
-+ Пакет SDK для Python: указание `"feauturization": auto' / 'off' / FeaturizationConfig` для [класса`AutoMLConfig`](/python/api/azureml-train-automl-client/azureml.train.automl.automlconfig.automlconfig).
++ Пакет SDK для Python: указание `"feauturization": 'auto' / 'off' / 'FeaturizationConfig'` для [класса`AutoMLConfig`](/python/api/azureml-train-automl-client/azureml.train.automl.automlconfig.automlconfig). 
 
 ## <a name="prevent-over-fitting"></a>Запретить перегонка
 
@@ -141,9 +141,9 @@ ms.locfileid: "75894888"
 
 | Модель | Точность обучения | Точность теста |
 |-------|----------------|---------------|
-| A | 99,9 % | 95% |
+| Объект | 99,9 % | 95% |
 | B | 87% | 87% |
-| C | 99,9 % | 45 % |
+| C | 99,9 % | 45% |
 
 Учитывая модель **а**, Существует распространенное заблуждение, которое, если точность тестирования невидимых данных ниже, чем точность обучения, модель чрезмерно замещается. Однако точность тестирования всегда должна быть меньше, чем точность обучения, а различие в сравнении с более точным соответствием сводится к *тому, насколько* это менее точно. 
 

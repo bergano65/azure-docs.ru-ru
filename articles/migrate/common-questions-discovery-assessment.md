@@ -3,12 +3,12 @@ title: 'Распространенные вопросы: обнаружение,
 description: Получите ответы на часто задаваемые вопросы об обнаружении, оценке и анализе зависимостей в службе "миграция Azure".
 ms.topic: conceptual
 ms.date: 12/29/2019
-ms.openlocfilehash: 0132563072ed04a52e4937da7a8df69196f1a91f
-ms.sourcegitcommit: 38b11501526a7997cfe1c7980d57e772b1f3169b
+ms.openlocfilehash: 201d67c38e9583de16cb6075cc1c4bf826c204fd
+ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76513292"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77059493"
 ---
 # <a name="common-questions-about-discovery-assessment-and-dependency-analysis"></a>Распространенные вопросы об обнаружении, оценке и анализе зависимостей
 
@@ -16,6 +16,8 @@ ms.locfileid: "76513292"
 
 - [Общие вопросы](resources-faq.md) о службе "миграция Azure".
 - [Вопросы](common-questions-appliance.md) об устройстве миграции Azure.
+- [Вопросы](common-questions-server-migration.md) о миграции сервера.
+
 
 
 ## <a name="how-many-vms-can-i-discover-with-an-appliance"></a>Сколько виртуальных машин можно обнаружить с помощью устройства?
@@ -89,7 +91,7 @@ ms.locfileid: "76513292"
 
 ## <a name="can-i-use-an-existing-workspace"></a>Можно ли использовать имеющуюся рабочую область?
 
-Да, можно подключить существующую рабочую область к проекту миграции и использовать ее для визуализации зависимостей. [Узнайте больше](concepts-dependency-visualization.md#how-does-it-work).
+Да, можно подключить существующую рабочую область к проекту миграции и использовать ее для визуализации зависимостей. [Дополнительные сведения](concepts-dependency-visualization.md#how-does-it-work)
 
 ## <a name="can-i-export-the-dependency-visualization-report"></a>Можно ли экспортировать отчет о визуализации зависимостей?
 

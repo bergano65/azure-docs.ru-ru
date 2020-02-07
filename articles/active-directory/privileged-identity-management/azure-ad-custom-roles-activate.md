@@ -1,5 +1,5 @@
 ---
-title: Активация настраиваемой роли AAD через Privileged Identity Management (PIM) | Документация Майкрософт
+title: Активация настраиваемой роли Azure AD — управление привилегированными пользователями (PIM)
 description: Сведения о том, как активировать настраиваемую роль AAD через Privileged Identity Management (PIM)
 services: active-directory
 documentationcenter: ''
@@ -16,12 +16,12 @@ ms.date: 08/06/2019
 ms.author: curtand
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 06ceb2d2c98c3f9b6b184b98ddaadea610d525d2
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: f2c096f41acd5852423205b0b185c8e1a8533c55
+ms.sourcegitcommit: 57669c5ae1abdb6bac3b1e816ea822e3dbf5b3e1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "76896554"
+ms.lasthandoff: 02/06/2020
+ms.locfileid: "77048137"
 ---
 # <a name="activate-an-azure-ad-custom-role-in-privileged-identity-management"></a>Активация настраиваемой роли AAD через Privileged Identity Management
 

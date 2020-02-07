@@ -7,12 +7,12 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 11/01/2019
-ms.openlocfilehash: 1e115c59cab4c340f927da516b5f937abf42e985
-ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
+ms.openlocfilehash: 55cddf5317938dea353517cde7260a1aa531d1df
+ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73839657"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77061264"
 ---
 # <a name="use-azure-storage-with-azure-hdinsight-clusters"></a>Использование службы хранилища Azure с кластерами Azure HDInsight
 
@@ -29,7 +29,7 @@ ms.locfileid: "73839657"
 |----------------------|--------------------|-----------------------------|------------------------|
 | StorageV2 (учетная запись общего назначения версии 2)  | BLOB-объект     | Standard                    | Горячий, крутой, архивный\*   |
 | Хранилище (общего назначения v1)   | BLOB-объект     | Standard                    | Недоступно                    |
-| блобстораже                    | BLOB-объект     | Standard                    | Горячий, крутой, архивный\*   |
+| BlobStorage                    | BLOB-объект     | Standard                    | Горячий, крутой, архивный\*   |
 
 Применяемый по умолчанию контейнер больших двоичных объектов не рекомендуется использовать для хранения бизнес-данных. Чтобы сократить затраты на хранение, контейнер больших двоичных объектов по умолчанию рекомендуется удалять после каждого использования. Контейнер по умолчанию содержит журналы приложений и системный журнал. Обязательно извлеките эти журналы перед удалением контейнера.
 
@@ -122,7 +122,7 @@ LOCATION 'wasbs:///example/data/';
 LOCATION '/example/data/';
 ```
 
-## <a name="identify-storage-path-from-abmari"></a>Указание пути к хранилищу из Абмари
+## <a name="identify-storage-path-from-ambari"></a>Указание пути к хранилищу из Ambari
 
 * Чтобы указать полный путь к настроенному хранилищу по умолчанию, перейдите по адресу:
 
@@ -146,10 +146,10 @@ LOCATION '/example/data/';
 
 Корпорация Майкрософт предоставляет следующие средства для работы с хранилищем Azure:
 
-| Средство | Linux | OS X | Windows |
+| Инструмент | Linux | OS X | Windows |
 | --- |:---:|:---:|:---:|
-| [портал Azure](../storage/blobs/storage-quickstart-blobs-portal.md) |✔ |✔ |✔ |
-| [Интерфейс командной строки Azure](../storage/blobs/storage-quickstart-blobs-cli.md) |✔ |✔ |✔ |
+| [Портал Azure](../storage/blobs/storage-quickstart-blobs-portal.md) |✔ |✔ |✔ |
+| [Azure CLI](../storage/blobs/storage-quickstart-blobs-cli.md) |✔ |✔ |✔ |
 | [Azure PowerShell](../storage/blobs/storage-quickstart-blobs-powershell.md) | | |✔ |
 | [AzCopy](../storage/common/storage-use-azcopy-v10.md) |✔ | |✔ |
 
@@ -158,13 +158,13 @@ LOCATION '/example/data/';
 При создании кластера HDInsight укажите учетную запись хранения Azure, которую необходимо с ним связать. Помимо этой учетной записи хранения в процессе создания или после создания кластера можно добавить дополнительные учетные записи хранения из той же или других подписок Azure. Инструкции по добавлению дополнительных учетных записей хранения см. в статье [Создание кластеров Hadoop в HDInsight](hdinsight-hadoop-provision-linux-clusters.md).
 
 > [!WARNING]  
-> Использование дополнительной учетной записи хранения, местоположение которой отличается от местоположения кластера HDInsight, не поддерживается.
+> Использование дополнительной учетной записи хранения, расположение которой отличается от расположения кластера HDInsight, не поддерживается.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 Из этой статьи вы узнали, как использовать HDFS-совместимую службу хранилища Azure с HDInsight. Это позволяет создавать масштабируемые, долгосрочные решения для получения данных архивирования, а также использовать HDInsight для разблокирования информации внутри хранимых структурированных и неструктурированных данных.
 
-Дополнительные сведения можно найти в разделе
+Дополнительные сведения см. в разделе:
 
 * [Приступая к работе с Azure HDInsight](hadoop/apache-hadoop-linux-tutorial-get-started.md)
 * [Начало работы с Azure Data Lake Storage](../data-lake-store/data-lake-store-get-started-portal.md)

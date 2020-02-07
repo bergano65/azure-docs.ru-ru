@@ -12,18 +12,18 @@ ms.date: 02/18/2019
 ms.author: ryanwi
 ms.custom: aaddev
 ms.reviewer: luleon, hirsin, paulgarn
-ms.openlocfilehash: 630d178a4f1a802d5c98b570544822e4f4013a5a
-ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
+ms.openlocfilehash: 648338f2ba57ad1c460c1c5b4a8d9a2ee91ebb1b
+ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76697019"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77063719"
 ---
 # <a name="debug-saml-based-single-sign-on-to-applications-in-azure-active-directory"></a>Отладка единого входа на основе SAML в приложениях в Azure Active Directory
 
 Узнайте, как найти и устранить проблемы с [единым входом](../manage-apps/what-is-single-sign-on.md) для приложений в Azure Active Directory (Azure AD) с поддержкой [языка разметки заявлений системы безопасности (SAML) 2.0](https://en.wikipedia.org/wiki/Security_Assertion_Markup_Language). 
 
-## <a name="before-you-begin"></a>Перед началом работы
+## <a name="before-you-begin"></a>Перед началом
 
 Мы рекомендуем установить [расширение защищенного входа в мои приложения](../user-help/my-apps-portal-end-user-troubleshoot.md#im-having-trouble-installing-the-my-apps-secure-sign-in-extension). Это расширение браузера упрощает сбор данных запроса SAML и ответа SAML, необходимых для разрешения проблем с единым входом. Если вы не можете установить расширение, ознакомьтесь с этой статьей, которая описывает решение проблем при наличии или отсутствии этого расширения.
 
@@ -101,4 +101,4 @@ ms.locfileid: "76697019"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Теперь, когда единый вход работает в вашем приложении, вы можете [автоматизировать подготовку пользователей и отменить подготовку к приложениям SaaS](../manage-apps/user-provisioning.md) или начать [работу с условным доступом](../conditional-access/app-based-conditional-access.md).
+Теперь, когда единый вход работает в вашем приложении, вы можете [автоматизировать подготовку пользователей и отменить подготовку к приложениям SaaS](../app-provisioning/user-provisioning.md) или начать [работу с условным доступом](../conditional-access/app-based-conditional-access.md).

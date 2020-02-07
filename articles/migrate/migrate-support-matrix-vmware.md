@@ -3,12 +3,12 @@ title: Поддержка оценки VMware в службе "миграция 
 description: Узнайте о поддержке Azure для оценки VMware.
 ms.topic: conceptual
 ms.date: 01/08/2020
-ms.openlocfilehash: 8ed20ecd37eacdcb771db7c166ff8fc22b96cb89
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: 2fab94b66e09d3923e481326b3650f1beb621dc4
+ms.sourcegitcommit: 57669c5ae1abdb6bac3b1e816ea822e3dbf5b3e1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76846176"
+ms.lasthandoff: 02/06/2020
+ms.locfileid: "77048768"
 ---
 # <a name="support-matrix-for-vmware-assessment"></a>Матрица поддержки для оценки VMware 
 
@@ -88,15 +88,15 @@ Appliance | Входящие подключения через TCP-порт 3389
 
 ## <a name="agentless-dependency-visualization"></a>Визуализация зависимостей без агента
 
-Сейчас этот вариант доступен в предварительной версии. [Подробнее](how-to-create-group-machine-dependencies-agentless.md). Требования приведены в следующей таблице.
+Сейчас этот вариант доступен в предварительной версии. [Дополнительные сведения](how-to-create-group-machine-dependencies-agentless.md) Требования приведены в следующей таблице.
 
 **Требование** | **Сведения**
 --- | ---
 **Deployment** | Перед развертыванием визуализации зависимостей необходимо иметь проект службы "миграция Azure" на месте с добавлением в проект средства оценки Azure: Server. Визуализация зависимостей развертывается после настройки устройства миграции Azure для обнаружения локальных компьютеров.
 **Поддержка виртуальных машин** | Сейчас поддерживается только для виртуальных машин VMware.
-**Виртуальные машины Windows** | Windows Server 2016<br/> Windows Server 2012 R2<br/> Windows Server 2012<br/> Windows Server 2008 R2 (64-разрядная версия)
+**Виртуальные машины Windows** | Windows Server 2016<br/> Windows Server 2012 R2<br/> Windows Server 2012<br/> Windows Server 2008 R2 (64-разрядная версия)
 **Виртуальные машины Linux** | Red Hat Enterprise Linux 7, 6, 5<br/> Ubuntu Linux 14,04, 16,04<br/> Debian 7, 8.<br/> Oracle Linux 6, 7<br/> CentOS 5, 6, 7.
-**Учетная запись Windows** |  Для визуализации требуется учетная запись пользователя с гостевым доступом.
+**Учетная запись Windows** |  Визуализации требуется учетная запись локального пользователя или администратора домена.
 **Учетная запись Linux** | Визуализации требуется учетная запись пользователя с правами root.<br/><br/> Кроме того, учетной записи пользователя требуются следующие разрешения для файлов/бин/нетстат и/бин/ЛС: CAP_DAC_READ_SEARCH и CAP_SYS_PTRACE.
 **Агенты виртуальной машины** | На виртуальных машинах не требуется агент.
 **Средства VMware** | Средства VMware должны быть установлены и запускаться на виртуальных машинах, которые необходимо проанализировать.
