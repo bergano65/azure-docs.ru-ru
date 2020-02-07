@@ -8,15 +8,15 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 09/13/2019
+ms.date: 02/06/2020
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 8a222aa63387f7c57f8896b013f71f0c1bf40b2e
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: 2f7bf9fea1b1e15d1ca24686a84e272dd60ceaf5
+ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76849621"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77061596"
 ---
 # <a name="set-up-sign-in-for-multi-tenant-azure-active-directory-using-custom-policies-in-azure-active-directory-b2c"></a>Настройка входа для мультитенантного Azure Active Directory с помощью пользовательских политик в Azure Active Directory B2C
 
@@ -24,7 +24,7 @@ ms.locfileid: "76849621"
 
 В этой статье описывается настройка входа для пользователей с помощью мультитенантной конечной точки Azure Active Directory (Azure AD) с использованием [пользовательских политик](custom-policy-overview.md) в Azure Active Directory B2C. Это позволяет пользователям из нескольких клиентов Azure AD входить в систему, используя Azure AD B2C, без необходимости настройки поставщика удостоверений для каждого клиента. Однако гостевые пользователи любого из этих тенантов **не смогут** войти в систему. Для этого необходимо [отдельно настроить каждый клиент](identity-provider-azure-ad-single-tenant-custom.md).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 Выполните шаги, описанные в статье [Начало работы с настраиваемыми политиками в Azure Active Directory B2C](custom-policy-get-started.md).
 
@@ -62,7 +62,20 @@ ms.locfileid: "76849621"
 1. Введите **имя** ключа политики. Например, `AADAppSecret`.  Префикс `B2C_1A_` автоматически добавляется к имени ключа при его создании, поэтому ссылка в XML-файле в следующем разделе будет *B2C_1A_AADAppSecret*.
 1. В качестве **секрета**введите секрет клиента, записанный ранее.
 1. Для параметра **Использование ключа** выберите `Signature`.
-1. Нажмите кнопку **создания**.
+1. Нажмите кнопку **Создать**.
+
+## <a name="configuring-optional-claims"></a>Настройка необязательных утверждений
+
+Если вы хотите получить `family_name` и `given_name` утверждения из Azure AD, можно настроить дополнительные утверждения для приложения в пользовательском интерфейсе портал Azure или манифесте приложения. Дополнительные сведения см. в статье [предоставление дополнительных утверждений для приложения Azure AD](../active-directory/develop/active-directory-optional-claims.md).
+
+1. Войдите на [портал Azure](https://portal.azure.com). Найдите и выберите **Azure Active Directory**.
+1. В разделе **Управление** выберите **Регистрация приложений**.
+1. В списке выберите приложение, для которого нужно настроить необязательные утверждения.
+1. В разделе **Управление** выберите **Конфигурация токена (Предварительная версия)** .
+1. Выберите **добавить необязательное утверждение**.
+1. Выберите тип токена, который требуется настроить.
+1. Выберите необязательные утверждения для добавления.
+1. Нажмите кнопку **Добавить**.
 
 ## <a name="add-a-claims-provider"></a>Добавление поставщика утверждений
 
@@ -134,7 +147,7 @@ ms.locfileid: "76849621"
 
 Вам необходимо обновить список допустимых издателей маркеров и предоставить доступ только определенному списку пользователей клиента Azure AD, которые могут выполнить вход в систему.
 
-Чтобы получить эти значения, просмотрите метаданные обнаружения OpenID Connect Connect для каждого клиента Azure AD, из которого будут входить пользователи. Формат URL-адреса метаданных аналогичен `https://login.microsoftonline.com/your-tenant/v2.0/.well-known/openid-configuration`, где `your-tenant` — это имя клиента Azure AD. Пример.
+Чтобы получить эти значения, просмотрите метаданные обнаружения OpenID Connect Connect для каждого клиента Azure AD, из которого будут входить пользователи. Формат URL-адреса метаданных аналогичен `https://login.microsoftonline.com/your-tenant/v2.0/.well-known/openid-configuration`, где `your-tenant` — это имя клиента Azure AD. Пример:
 
 `https://login.microsoftonline.com/fabrikam.onmicrosoft.com/v2.0/.well-known/openid-configuration`
 

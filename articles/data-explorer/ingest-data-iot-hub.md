@@ -7,14 +7,14 @@ ms.reviewer: tzgitlin
 ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 01/08/2020
-ms.openlocfilehash: 1052ef799949550ddaf492b8aa5b77ab9526d092
-ms.sourcegitcommit: 5b073caafebaf80dc1774b66483136ac342f7808
+ms.openlocfilehash: 93c0b3e27156655acee24d424cd890b48bb8e4e7
+ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75780289"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77064994"
 ---
-# <a name="ingest-data-from-iot-hub-into-azure-data-explorer-preview"></a>Прием данных из центра Интернета вещей в обозреватель данных Azure (Предварительная версия)
+# <a name="ingest-data-from-iot-hub-into-azure-data-explorer"></a>Прием данных из центра Интернета вещей в Azure обозреватель данных 
 
 > [!div class="op_single_selector"]
 > * [Портал](ingest-data-iot-hub.md)
@@ -24,7 +24,7 @@ ms.locfileid: "75780289"
 
 Обозреватель данных Azure — это быстрая и высокомасштабируемая служба для изучения данных журналов и телеметрии. Azure обозреватель данных обеспечивает прием (загрузку данных) из центра Интернета вещей, платформы потоковой передачи больших данных и службы приема Интернета вещей.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 * Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/) Azure, прежде чем начинать работу.
 * Создайте [тестовый кластер и базу данных](create-cluster-database-portal.md) с именем базы данных *TestDB*.
@@ -95,7 +95,7 @@ ms.locfileid: "75780289"
 
      **Параметр** | **Рекомендуемое значение** | **Описание поля**
     |---|---|---|
-    | Таблицы | *TestTable* | Таблица, созданная в **TestDB**. |
+    | Таблица | *TestTable* | Таблица, созданная в **TestDB**. |
     | Формат данных | *JSON* | Поддерживаются форматы Avro, CSV, JSON, многострочные JSON, ПСВ, СОХСВ, СКСВ, TSV, ТСВЕ и TXT. |
     | Сопоставление столбцов | *TestMapping* | [Сопоставление](/azure/kusto/management/mappings) , созданное в **TestDB**, которое сопоставляет входящие данные JSON с именами столбцов и типами данных **TestDB**. Требуется для JSON, многострочного JSON и AVRO, а для других форматов — необязательно.|
     | | |

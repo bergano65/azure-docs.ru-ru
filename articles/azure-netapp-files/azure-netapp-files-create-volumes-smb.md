@@ -12,20 +12,20 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 01/10/2020
+ms.date: 02/05/2020
 ms.author: b-juche
-ms.openlocfilehash: 6b1946cdaebd01a0742f9ce2b2efb5054ac9d2a8
-ms.sourcegitcommit: 12a26f6682bfd1e264268b5d866547358728cd9a
+ms.openlocfilehash: c65da771dd483b3a79785d4bec2b89cbeefca5c4
+ms.sourcegitcommit: 57669c5ae1abdb6bac3b1e816ea822e3dbf5b3e1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75867433"
+ms.lasthandoff: 02/06/2020
+ms.locfileid: "77049887"
 ---
 # <a name="create-an-smb-volume-for-azure-netapp-files"></a>Создание тома SMB для Azure NetApp Files
 
 Azure NetApp Files поддерживает тома NFS и SMBv3. Потребление емкости тома зависит от подготовленной емкости пула. В этой статье показано, как создать том SMBv3. Если вы хотите создать том NFS, см. раздел [Создание тома NFS для Azure NetApp Files](azure-netapp-files-create-volumes.md). 
 
-## <a name="before-you-begin"></a>Перед началом работы 
+## <a name="before-you-begin"></a>Перед началом 
 Перед началом необходимо настроить пул емкости.   
 [Настройка пула емкости](azure-netapp-files-set-up-capacity-pool.md)   
 Подсеть должна быть делегирована службе Azure NetApp Files.  
@@ -40,12 +40,12 @@ Azure NetApp Files поддерживает тома NFS и SMBv3. Потреб�
 * На соответствующем сервере Windows Active Directory (AD) должны быть открыты правильные порты.  
     Ниже приведены необходимые порты. 
 
-    |     Служба           |     Port     |     Протокол     |
+    |     Служба           |     Порт     |     Протокол     |
     |-----------------------|--------------|------------------|
     |    Веб-службы Active Directory    |    9389      |    TCP           |
     |    DNS                |    53        |    TCP           |
     |    DNS                |    53        |    UDP           |
-    |    ICMPv4             |    Н/Д       |    Эхо-ответ    |
+    |    ICMPv4             |    Недоступно       |    Эхо-ответ    |
     |    Kerberos           |    464       |    TCP           |
     |    Kerberos           |    464       |    UDP           |
     |    Kerberos           |    88        |    TCP           |
@@ -73,6 +73,8 @@ Azure NetApp Files поддерживает тома NFS и SMBv3. Потреб�
     Если у вас есть контроллеры домена, недоступные через делегированную подсеть Azure NetApp Files, можно отправить запрос на поддержку Azure, чтобы изменить область с **глобального** (по умолчанию) на **сайт**.  Azure NetApp Files должны обмениваться данными только с контроллерами домена на сайте, где находится Azure NetApp Files адресное пространство делегированной подсети.
 
     См. раздел [проектирование топологии сайтов](https://docs.microsoft.com/windows-server/identity/ad-ds/plan/designing-the-site-topology) о сайтах и СЛУЖБАХ Active Directory. 
+    
+Дополнительные сведения об Active Directory см. в разделе [вопросы и ответы по SMB](https://docs.microsoft.com/azure/azure-netapp-files/azure-netapp-files-faqs#smb-faqs) Azure NetApp Files. 
 
 ## <a name="create-an-active-directory-connection"></a>Создание подключения Active Directory
 

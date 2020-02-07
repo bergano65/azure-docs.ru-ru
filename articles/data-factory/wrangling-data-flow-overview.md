@@ -7,12 +7,12 @@ ms.reviewer: gamal
 ms.service: data-factory
 ms.topic: conceptual
 ms.date: 11/01/2019
-ms.openlocfilehash: 56c2d96e6e4a5900770aaefcabb424eddb1cbde6
-ms.sourcegitcommit: 85e7fccf814269c9816b540e4539645ddc153e6e
+ms.openlocfilehash: 8f91ed926c733b211443805722b6817b1ce005b6
+ms.sourcegitcommit: 57669c5ae1abdb6bac3b1e816ea822e3dbf5b3e1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74531377"
+ms.lasthandoff: 02/06/2020
+ms.locfileid: "77048359"
 ---
 # <a name="what-are-wrangling-data-flows"></a>Что такое потоки данных структурирование?
 
@@ -24,7 +24,7 @@ ms.locfileid: "74531377"
 
 Потоки данных структурирование особенно полезны для инженеров по работе с данными или "интеграторов данных".
 
-## <a name="use-cases"></a>Примеры использования
+## <a name="use-cases"></a>Варианты использования
 
 ### <a name="fast-interactive-data-exploration-and-preparation"></a>Быстрое исследование и подготовка данных в интерактивном режиме
 
@@ -42,11 +42,11 @@ ms.locfileid: "74531377"
 
 | Соединитель | Формат данных | Authentication type (Тип проверки подлинности) |
 | -- | -- | --|
-| [Хранилище BLOB-объектов Azure](connector-azure-blob-storage.md) | - | Ключ учетной записи |
-| [Хранилище Azure Data Lake Gen1](connector-azure-data-lake-store.md) | - | Субъект-служба |
-| [Хранилище Azure Data Lake Storage 2-го поколения](connector-azure-data-lake-storage.md) | - | Ключ учетной записи, субъект-служба |
-| [база данных SQL Azure;](connector-azure-sql-database.md) | - | Аутентификация SQL |
-| [Azure синапсе Analytics](connector-azure-sql-data-warehouse.md) | - | Аутентификация SQL |
+| [Хранилище BLOB-объектов Azure](connector-azure-blob-storage.md) | CSV, Parquet | Ключ учетной записи |
+| [Хранилище Azure Data Lake Gen1](connector-azure-data-lake-store.md) | CSV | Субъект-служба |
+| [Azure Data Lake Storage 2-го поколения](connector-azure-data-lake-storage.md) | CSV, Parquet | Ключ учетной записи, субъект-служба |
+| [База данных SQL Azure](connector-azure-sql-database.md) | - | Проверка подлинности SQL |
+| [Azure синапсе Analytics](connector-azure-sql-data-warehouse.md) | - | Проверка подлинности SQL |
 
 ## <a name="the-mashup-editor"></a>Редактор гибридных приложений
 

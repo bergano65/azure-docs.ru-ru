@@ -14,19 +14,19 @@ ms.topic: article
 ms.date: 01/06/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f11258457e60ea3458b0ede1fe00f042041bcb1a
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: 969a2fb5444ae8ece2aa302c04a5bbb85dcca917
+ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76841256"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77057725"
 ---
 # <a name="tutorial-configure-g-suite-for-automatic-user-provisioning"></a>Руководство по настройке G Suite для автоматической подготовки пользователей
 
 Цель этого руководства — продемонстрировать шаги, которые необходимо выполнить в G Suite и Azure Active Directory (Azure AD), чтобы настроить Azure AD для автоматической инициализации и отзыва пользователей и (или) групп в G Suite.
 
 > [!NOTE]
-> В этом руководстве рассматривается соединитель, созданный на базе службы подготовки пользователей Azure AD. Подробные сведения о том, что делает эта служба, как она работает, и часто задаваемые вопросы см. в статье [Автоматическая подготовка пользователей и ее отзыв для приложений SaaS в Azure Active Directory](../manage-apps/user-provisioning.md).
+> В этом руководстве рассматривается соединитель, созданный на базе службы подготовки пользователей Azure AD. Подробные сведения о том, что делает эта служба, как она работает, и часто задаваемые вопросы см. в статье [Автоматическая подготовка пользователей и ее отзыв для приложений SaaS в Azure Active Directory](../app-provisioning/user-provisioning.md).
 
 > [!NOTE]
 > Соединитель G Suite был недавно обновлен в 2019 октября. В соединитель G Suite внесены следующие изменения:
@@ -34,7 +34,7 @@ ms.locfileid: "76841256"
 > - Обновлены имена целевых атрибутов G Suite в соответствии с определенным [здесь](https://developers.google.com/admin-sdk/directory).
 > - Обновлены сопоставления атрибутов по умолчанию.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с G Suite, вам потребуется:
 
@@ -181,7 +181,7 @@ Azure Active Directory использует концепцию, называем
 
     ![Атрибуты группы G Suite](media/google-apps-provisioning-tutorial/groupattributes.png)
 
-1. Чтобы настроить фильтры области, ознакомьтесь со следующими инструкциями, предоставленными в [руководстве по фильтрам области](../manage-apps/define-conditional-rules-for-provisioning-user-accounts.md).
+1. Чтобы настроить фильтры области, ознакомьтесь со следующими инструкциями, предоставленными в [руководстве по фильтрам области](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 1. Чтобы включить службу подготовки Azure AD для G Suite, измените значение параметра **состояние подготовки** на **включено** в разделе **Параметры** .
 
@@ -200,20 +200,20 @@ Azure Active Directory использует концепцию, называем
 > [!NOTE]
 > Если у пользователей уже есть Персональная учетная запись или пользователь, использующий адрес электронной почты пользователя Azure AD, это может привести к возникновению проблемы, которую можно разрешить с помощью средства Google, прежде чем выполнять синхронизацию каталога.
 
-Дополнительные сведения о чтении журналов подготовки Azure AD см. в руководстве по [отчетам об автоматической подготовке учетных записей](../manage-apps/check-status-user-account-provisioning.md).
+Дополнительные сведения о чтении журналов подготовки Azure AD см. в руководстве по [отчетам об автоматической подготовке учетных записей](../app-provisioning/check-status-user-account-provisioning.md).
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-* [Управление подготовкой учетных записей пользователей для корпоративных приложений](../manage-apps/configure-automatic-user-provisioning-portal.md)
+* [Управление подготовкой учетных записей пользователей для корпоративных приложений](../app-provisioning/configure-automatic-user-provisioning-portal.md)
 * [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
 
-## <a name="common-issues"></a>Типичные проблемы
+## <a name="common-issues"></a>Распространенные проблемы
 * Ошибки авторизации могут возникать, если учетная запись, используемая для установления соединения, не предназначена для администратора в Гсуите. Убедитесь, что учетная запись, используемая для авторизации доступа, имеет разрешения администратора для **всех доменов** , с которыми необходимо подготовить пользователей. 
 * Azure AD поддерживает отключение пользователей в Гсуите, чтобы они не могли получить доступ к приложению, но не удаляют пользователей в Гсуите.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Сведения о просмотре журналов и получении отчетов о действиях по подготовке](../manage-apps/check-status-user-account-provisioning.md)
+* [Сведения о просмотре журналов и получении отчетов о действиях по подготовке](../app-provisioning/check-status-user-account-provisioning.md)
 
 <!--Image references-->
 

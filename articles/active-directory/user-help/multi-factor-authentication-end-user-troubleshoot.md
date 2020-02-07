@@ -2,7 +2,7 @@
 title: Распространенные проблемы & решения с проверкой подлинности учетной записи — Azure AD
 description: Узнайте о потенциальных проблемах и решениях для некоторых из наиболее распространенных проблем с двухфакторной проверкой подлинности и вашей рабочей или учебной учетной записи.
 services: active-directory
-author: eross-msft
+author: curtand
 manager: daveba
 ms.assetid: 8f3aef42-7f66-4656-a7cd-d25a971cb9eb
 ms.workload: identity
@@ -10,14 +10,14 @@ ms.service: active-directory
 ms.subservice: user-help
 ms.topic: conceptual
 ms.date: 10/28/2019
-ms.author: lizross
+ms.author: curtand
 ms.reviewer: kexia
-ms.openlocfilehash: 498c150706cd62168b7c45b1bcf36ad6c3a8b63b
-ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
+ms.openlocfilehash: 3f44884f54278f7b4d07a265604f4a256d66e8a8
+ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76705213"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77062546"
 ---
 # <a name="common-problems-and-solutions-with-two-factor-verification-and-your-work-or-school-account"></a>Распространенные проблемы и решения с двухфакторной проверкой и рабочей или учебной учетной записью
 

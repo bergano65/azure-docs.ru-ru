@@ -11,12 +11,12 @@ ms.workload: na
 ms.topic: article
 ms.date: 12/13/2019
 ms.author: juliako
-ms.openlocfilehash: 52d8dda8b543e5bdf3ca88ae3784df65be3a2ba1
-ms.sourcegitcommit: 42517355cc32890b1686de996c7913c98634e348
+ms.openlocfilehash: b3d5e1f814a8eb083ab01623051f1b5b3723a9f1
+ms.sourcegitcommit: 57669c5ae1abdb6bac3b1e816ea822e3dbf5b3e1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2020
-ms.locfileid: "76962949"
+ms.lasthandoff: 02/06/2020
+ms.locfileid: "77049633"
 ---
 # <a name="azure-media-services-v3-release-notes"></a>Заметки о выпуске Служб мультимедиа Azure версии 3
 
@@ -54,7 +54,7 @@ ms.locfileid: "76962949"
 > [!NOTE]
 > Сейчас запись в реальном времени доступна только в качестве функции предварительной версии в регионе "Западная часть США 2". В настоящее время он поддерживает транскрипцию слов на английском языке (EN-US).
 
-### <a name="content-protection"></a>Система защиты содержимого
+### <a name="content-protection"></a>Защита содержимого
 
 Функция *предотвращения воспроизведения токенов* , выпущенная в ограниченных регионах назад в сентябре, теперь доступна во всех регионах.
 Теперь пользователи служб мультимедиа могут задать ограничение на количество раз, которое один и тот же маркер может использоваться для запроса ключа или лицензии. Дополнительные сведения см. в разделе [Предотвращение воспроизведения маркеров](content-protection-overview.md#token-replay-prevention).
@@ -90,7 +90,7 @@ ms.locfileid: "76962949"
 
 #### <a name="deprecation-of-media-processors"></a>Устаревшие обработчики мультимедиа
 
-Мы объявляем объявление о нерекомендуемых *Azure Media indexer* и *Azure Media indexer 2 Preview*. Сведения о датах выбытия см. в разделе об [устаревших компонентах](../previous/legacy-components.md) . [Индексатор видео служб мультимедиа Azure](https://docs.microsoft.com/azure/media-services/video-indexer/) заменяет эти устаревшие обработчики мультимедиа.
+Мы объявляем объявление о нерекомендуемых *Azure Media indexer* и *Azure Media indexer 2 Preview*. Даты выбытия см. в разделе [устаревшие компоненты](../previous/legacy-components.md) . [Индексатор видео служб мультимедиа Azure](https://docs.microsoft.com/azure/media-services/video-indexer/) заменяет эти устаревшие обработчики мультимедиа.
 
 Дополнительные сведения см. в статье [Миграция с Azure Media indexer и Azure Media indexer 2 в индексатор видео служб мультимедиа Azure](../previous/migrate-indexer-v1-v2.md).
 
@@ -114,7 +114,7 @@ ms.locfileid: "76962949"
  
 ## <a name="july-2019"></a>Июль 2019 г.
 
-### <a name="content-protection"></a>Система защиты содержимого
+### <a name="content-protection"></a>Защита содержимого
 
 Если потоковая передача содержимого, защищенного с помощью ограничения маркера, конечным пользователям необходимо получить маркер, который отправляется как часть запроса на доставку ключа. Функция *предотвращения воспроизведения маркеров* позволяет клиентам служб мультимедиа устанавливать ограничения на то, сколько раз один и тот же маркер можно использовать для запроса ключа или лицензии. Дополнительные сведения см. в разделе [Предотвращение воспроизведения маркеров](content-protection-overview.md#token-replay-prevention).
 
@@ -126,7 +126,7 @@ ms.locfileid: "76962949"
 
 Теперь можно обрезать или подрезать видео при кодировании с помощью [задания](https://docs.microsoft.com/rest/api/media/jobs). 
 
-Эта функция работает с любым [преобразованием](https://docs.microsoft.com/rest/api/media/transforms), построенным с помощью предустановок [BuiltInStandardEncoderPreset](https://docs.microsoft.com/rest/api/media/transforms/createorupdate#builtinstandardencoderpreset) или [StandardEncoderPreset](https://docs.microsoft.com/rest/api/media/transforms/createorupdate#standardencoderpreset). 
+Эта функция работает с любым [преобразованием](https://docs.microsoft.com/rest/api/media/transforms) , построенным с помощью предустановок [буилтинстандарденкодерпресет](https://docs.microsoft.com/rest/api/media/transforms/createorupdate#builtinstandardencoderpreset) или [стандарденкодерпресет](https://docs.microsoft.com/rest/api/media/transforms/createorupdate#standardencoderpreset) . 
 
 См. примеры:
 
@@ -320,7 +320,7 @@ ms.locfileid: "76962949"
 
 ## <a name="may-2018---preview"></a>Май 2018 г. Предварительная версия
 
-### <a name="net-sdk"></a>SDK .NET
+### <a name="net-sdk"></a>Пакет SDK для .NET
 
 В пакете SDK для .NET имеются следующие возможности.
 
