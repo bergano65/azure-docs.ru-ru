@@ -252,9 +252,13 @@
           href: backup-azure-backup-cloud-as-tape.md
     - name: Резервное копирование в автономном режиме
       items:
-        - name: Настройка автономного резервного копирования
+        - name: Обзор
+          href: offline-backup-overview.md
+        - name: Автономное резервное копирование с помощью Azure Data Box
+          href: offline-backup-azure-data-box.md
+        - name: Автономное резервное копирование с помощью импорта и экспорта (MARS)
           href: backup-azure-backup-import-export.md
-        - name: Автономное резервное копирование с помощью DPM и Azure Backup Server
+        - name: Автономное резервное копирование с помощью импорта и экспорта (DPM/MABS)
           href: backup-azure-backup-server-import-export-.md
     - name: Мониторинг и оповещения
       items:
