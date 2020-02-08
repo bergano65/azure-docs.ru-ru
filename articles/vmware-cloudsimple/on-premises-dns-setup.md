@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: eadedcea7e6010cf93d118b3781630053609d29f
-ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
+ms.openlocfilehash: 12c4362ae1b075af132d5971f4fe0461c9d91733
+ms.sourcegitcommit: cfbea479cc065c6343e10c8b5f09424e9809092e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2020
-ms.locfileid: "77019610"
+ms.lasthandoff: 02/08/2020
+ms.locfileid: "77083082"
 ---
 # <a name="configure-dns-for-name-resolution-for-avs-private-cloud-vcenter-access-from-on-premises-workstations"></a>Настройка DNS для разрешения имен для доступа к закрытому облаку AVS из локальных рабочих станций
 
@@ -32,10 +32,10 @@ ms.locfileid: "77019610"
 
 Используйте любой из этих параметров для конфигурации DNS.
 
-* [Создайте зону на DNS-сервере для *. AVS.io](#create-a-zone-on-a-microsoft-windows-dns-server)
-* [Создайте сервер условной пересылки на локальном DNS-сервере, чтобы разрешить *. AVS.io](#create-a-conditional-forwarder)
+* [Создание зоны на DNS-сервере для *. cloudsimple.io](#create-a-zone-on-a-microsoft-windows-dns-server)
+* [Создание сервера условной пересылки на локальном DNS-сервере для разрешения *. cloudsimple.io](#create-a-conditional-forwarder)
 
-## <a name="create-a-zone-on-the-dns-server-for-avsio"></a>Создайте зону на DNS-сервере для *. AVS.io
+## <a name="create-a-zone-on-the-dns-server-for-cloudsimpleio"></a>Создание зоны на DNS-сервере для *. cloudsimple.io
 
 Вы можете настроить зону в качестве зоны-заглушки и указать DNS-серверы в частном облаке для разрешения имен. В этом разделе приводятся сведения об использовании привязки DNS-сервера или DNS-сервера Microsoft Windows.
 
@@ -78,7 +78,7 @@ zone "az.cloudsimple.io"
 
 ## <a name="create-a-conditional-forwarder"></a>Создание сервера условной пересылки
 
-Сервер условной пересылки перенаправляет все запросы разрешения DNS-имен на указанный серверу. При такой настройке любой запрос на *. AVS.io перенаправляется на DNS-серверы, расположенные в частном облаке AVS. В следующих примерах показано, как настроить серверы пересылки на различных типах DNS-серверов.
+Сервер условной пересылки перенаправляет все запросы разрешения DNS-имен на указанный серверу. При такой настройке любой запрос к *. cloudsimple.io перенаправляется на DNS-серверы, расположенные в частном облаке AVS. В следующих примерах показано, как настроить серверы пересылки на различных типах DNS-серверов.
 
 ### <a name="create-a-conditional-forwarder-on-a-bind-dns-server"></a>Создание сервера условной пересылки на DNS-сервере привязки
 

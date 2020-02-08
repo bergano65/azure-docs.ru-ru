@@ -11,12 +11,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 01/04/2019
-ms.openlocfilehash: 4198b3a9213ed535c6649c50a20f2ff957d60c94
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.openlocfilehash: 1653a904875964d86864c59c718603a6dacdcbda
+ms.sourcegitcommit: cfbea479cc065c6343e10c8b5f09424e9809092e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73823487"
+ms.lasthandoff: 02/08/2020
+ms.locfileid: "77087191"
 ---
 # <a name="elastic-database-client-library-with-entity-framework"></a>Использование клиентской библиотеки эластичных баз данных с Entity Framework
 
@@ -27,8 +27,8 @@ ms.locfileid: "73823487"
 Как загрузить код для этой статьи
 
 * Требуется Visual Studio 2012 или более поздней версии. 
-* Скачайте образец [Средства для эластичной базы данных SQL Azure — интеграция с Entity Framework](https://code.msdn.microsoft.com/windowsapps/Elastic-Scale-with-Azure-bae904ba) на сайте MSDN. Распакуйте образец в выбранную папку.
-* Запустите Visual Studio. 
+* Скачайте [пример интеграции инструментов эластичной базы данных для Azure SQL-Entity Framework](https://github.com/Azure/elastic-db-tools/). Распакуйте образец в выбранную папку.
+* Запустите среду Visual Studio. 
 * Откройте Visual Studio, выберите "Файл" -> "Открыть проект или решение". 
 * В диалоговом окне **Открытие проекта** перейдите к скачанному образцу и выберите **EntityFrameworkCodeFirst.sln**, чтобы его открыть. 
 
@@ -133,7 +133,7 @@ public DbSet<Blog> Blogs { get; set; }
   * Сопоставление создает открытое подключение к сегменту, в котором содержится шардлет, соответствующий заданному ключу сегментирования.
   * Это открытое подключение передается обратно в конструктор базового класса DbContext, чтобы EF использовал его вместо автоматического создания нового подключения. Так подключение помечается клиентским API-интерфейсом эластичной базы данных, что гарантирует согласованность данных при выполнении операций по управлению сопоставлением сегментов.
 
-Используйте в коде новый конструктор для подкласса DbContext вместо конструктора по умолчанию. Пример: 
+Используйте в коде новый конструктор для подкласса DbContext вместо конструктора по умолчанию. Например: 
 
 ```csharp
 // Create and save a new blog.

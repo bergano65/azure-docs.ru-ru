@@ -3,22 +3,22 @@ title: Использование веб-браузеров (MSAL.NET) | Слу�
 titleSuffix: Microsoft identity platform
 description: Ознакомьтесь с конкретными соображениями при использовании Xamarin Android с библиотекой проверки подлинности Майкрософт для .NET (MSAL.NET).
 services: active-directory
-author: TylerMSFT
+author: mmacy
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
 ms.workload: identity
 ms.date: 07/16/2019
-ms.author: twhitney
+ms.author: marsma
 ms.reviewer: saeeda
 ms.custom: aaddev
-ms.openlocfilehash: b0b0ac05e54619af0b1dd4a68918a89681f845bd
-ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
+ms.openlocfilehash: ed1f47ae99f6346a932d0fe94be7586dc25a672f
+ms.sourcegitcommit: cfbea479cc065c6343e10c8b5f09424e9809092e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76695081"
+ms.lasthandoff: 02/08/2020
+ms.locfileid: "77084599"
 ---
 # <a name="using-web-browsers-msalnet"></a>Использование веб-браузеров (MSAL.NET)
 
@@ -43,17 +43,17 @@ MSAL.NET является библиотекой с несколькими пл�
 
 Как правило, рекомендуется использовать платформу по умолчанию, и обычно это системный браузер. Обозреватель системы лучше запомнить пользователей, выполнивших вход. Если необходимо изменить это поведение, используйте `WithUseEmbeddedWebView(bool)`
 
-### <a name="at-a-glance"></a>Краткие сведения
+### <a name="at-a-glance"></a>Вкратце
 
 | FRAMEWORK        | Внедренный | Система | По умолчанию |
 | ------------- |-------------| -----| ----- |
 | Классическая платформа .NET     | Да | Да ^ | Внедренный |
-| .NET Core     | Нет | Да ^ | Система |
-| .NET Standard | Нет | Да ^ | Система |
-| UWP | Да | Нет | Внедренный |
+| .NET Core     | нет | Да ^ | Система |
+| .NET Standard | нет | Да ^ | Система |
+| UWP | Да | нет | Внедренный |
 | Xamarin.Android | Да | Да  | Система |
 | Xamarin.iOS | Да | Да  | Система |
-| Xamarin.Mac| Да | Нет | Внедренный |
+| Xamarin. Mac| Да | нет | Внедренный |
 
 Для ^ требуется "http://localhost" URI перенаправления
 

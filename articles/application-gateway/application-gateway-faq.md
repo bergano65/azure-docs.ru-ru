@@ -7,12 +7,12 @@ ms.service: application-gateway
 ms.topic: article
 ms.date: 08/31/2019
 ms.author: victorh
-ms.openlocfilehash: 9d47986df9b9cbc6b8519aa0466b3434d6216e72
-ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
+ms.openlocfilehash: f2f2e02cdb5698d7569e5be177d54ca4dcb0ae02
+ms.sourcegitcommit: cfbea479cc065c6343e10c8b5f09424e9809092e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76986008"
+ms.lasthandoff: 02/08/2020
+ms.locfileid: "77086536"
 ---
 # <a name="frequently-asked-questions-about-application-gateway"></a>Часто задаваемые вопросы о шлюзе приложений
 
@@ -20,7 +20,7 @@ ms.locfileid: "76986008"
 
 Ниже приведены часто задаваемые вопросы о шлюзе приложений Azure.
 
-## <a name="general"></a>Общие
+## <a name="general"></a>Общие сведения
 
 ### <a name="what-is-application-gateway"></a>Что такое шлюз приложений?
 
@@ -108,7 +108,7 @@ ms.locfileid: "76986008"
 
 Нет. Шлюз приложений не поддерживает такие протоколы электронной почты, как SMTP, IMAP и POP3. 
 
-## <a name="performance"></a>Ориентированное на производительность
+## <a name="performance"></a>Производительность
 
 ### <a name="how-does-application-gateway-support-high-availability-and-scalability"></a>Каким образом Шлюз приложений поддерживает высокий уровень доступности и масштабируемость?
 
@@ -134,9 +134,9 @@ SKU шлюза приложений версии 1 поддерживает сц
 
 ### <a name="can-i-change-instance-size-from-medium-to-large-without-disruption"></a>Можно ли изменить размер экземпляра со среднего на большой без прерывания?
 
-Да. Azure распределяет экземпляры между доменами обновления и сбоя, чтобы гарантировать, что экземпляры не будут завершаться сбоем одновременно. Шлюз приложений поддерживает масштабирование путем добавления нескольких экземпляров одного шлюза для распределения нагрузки.
+Да.
 
-## <a name="configuration"></a>Настройка
+## <a name="configuration"></a>Конфигурация
 
 ### <a name="is-application-gateway-always-deployed-in-a-virtual-network"></a>Всегда ли Шлюз приложений развертывается в виртуальной сети?
 
@@ -322,7 +322,7 @@ SKU шлюза приложений версии 1 поддерживает сц
 
 ### <a name="does-waf-support-ddos-protection"></a>Поддерживает ли WAF защиту от атак DDoS?
 
-Да. Вы можете включить защиту от атак DDoS в виртуальной сети, в которой развертывается шлюз приложения. Таким образом действие службы Защиты от атак DDoS Azure распространится и на виртуальный IP-адрес (VIP) шлюза приложения.
+Да. Защиту от атак DDoS можно включить в виртуальной сети, в которой развернут шлюз приложений. Этот параметр гарантирует, что служба защиты Azure от атак DDoS также защищает виртуальный IP-адрес шлюза приложений (VIP).
 
 ### <a name="is-there-guidance-available-to-migrate-from-the-v1-sku-to-the-v2-sku"></a>Доступны ли рекомендации для перехода с SKU версии v1 на SKU v2?
 

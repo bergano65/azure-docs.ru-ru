@@ -11,12 +11,12 @@ author: jpe316
 ms.reviewer: larryfr
 ms.date: 12/27/2019
 ms.custom: seoapril2019
-ms.openlocfilehash: 3b3b83719da4c1c19706845fa4cb1dc75712d145
-ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
+ms.openlocfilehash: bbb0992eaeef7892e5940130131ac139a339b47d
+ms.sourcegitcommit: cfbea479cc065c6343e10c8b5f09424e9809092e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76932381"
+ms.lasthandoff: 02/08/2020
+ms.locfileid: "77083239"
 ---
 # <a name="deploy-models-with-azure-machine-learning"></a>Развертывание моделей с помощью Машинное обучение Azure
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -32,7 +32,7 @@ ms.locfileid: "76932381"
 
 Дополнительные сведения об основных понятиях, связанных с рабочим процессом развертывания, см. в разделе [Управление моделями, их развертывание и мониторинг с помощью машинное обучение Azure](concept-model-management-and-deployment.md).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 - Рабочая область машинного обучения Azure. Дополнительные сведения см. в статье [создание машинное обучение Azure рабочей области](how-to-manage-workspace.md).
 
@@ -172,22 +172,22 @@ ms.locfileid: "76932381"
 
 Пример E2E, в котором показано, как использовать несколько моделей за одну контейнерную конечную точку, см. в [этом примере](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/deployment/deploy-multi-model) .
 
-## <a name="prepare-to-deploy"></a>Подготовка к развертыванию
+## <a name="prepare-deployment-artifacts"></a>Подготовка артефактов развертывания
 
-Для развертывания модели вам потребуются следующие элементы:
+Для развертывания модели необходимо следующее:
 
-* **Скрипт записи**. Этот скрипт принимает запросы, оценивает запросы с помощью модели и возвращает результаты.
+* **Скрипт записи & зависимости исходного кода**. Этот скрипт принимает запросы, оценивает запросы с помощью модели и возвращает результаты.
 
     > [!IMPORTANT]
     > * Сценарий записи зависит от модели. Он должен понимать формат данных входящего запроса, формат данных, ожидаемых моделью, и формат данных, возвращаемых клиентам.
     >
     >   Если данные запроса имеют формат, непригодный для использования в вашей модели, скрипт может преобразовать его в допустимый формат. Он также может преобразовать ответ перед его возвратом клиенту.
     >
-    > * Пакет SDK для Машинное обучение Azure не предоставляет веб-службам и IoT Edgeным развертываниям доступ к хранилищу данных или наборам DataSet. Если развернутой модели требуется доступ к данным, хранящимся за пределами развертывания, например данных в учетной записи хранения Azure, необходимо разработать собственное решение с кодом, используя соответствующий пакет SDK. Например, [пакет SDK для службы хранилища Azure для Python](https://github.com/Azure/azure-storage-python).
+    > * Веб-службы и развертывания IoT Edge не могут получить доступ к хранилищам данных или наборам данных рабочей области. Если развернутой службе требуется доступ к данным, хранящимся за пределами развертывания, например данных в учетной записи хранения Azure, необходимо разработать собственное решение с кодом, используя соответствующий пакет SDK. Например, [пакет SDK для службы хранилища Azure для Python](https://github.com/Azure/azure-storage-python).
     >
     >   Альтернативой, который может работать в вашем сценарии, является [Прогнозирование пакетной обработки](how-to-use-parallel-run-step.md), предоставляющее доступ к хранилищам данных во время оценки.
 
-* **Зависимости**, такие как вспомогательные скрипты или пакеты Python или Conda, необходимые для запуска сценария записи или модели.
+* **Среда вывода**. Базовый образ с зависимостями установленных пакетов, необходимых для запуска модели.
 
 * **Конфигурация развертывания** для целевого объекта вычислений, в котором развернута модель. Эта конфигурация описывает такие вещи, как память и требования к ЦП, необходимые для запуска модели.
 
@@ -215,7 +215,7 @@ AZUREML_MODEL_DIR — это переменная среды, созданная
 
 В следующей таблице описано значение AZUREML_MODEL_DIR в зависимости от числа развернутых моделей:
 
-| Развертывание. | Значение переменной среды |
+| Развертывание | Значение переменной среды |
 | ----- | ----- |
 | Одна модель | Путь к папке, содержащей модель. |
 | Несколько моделей | Путь к папке, содержащей все модели. Модели расположены по имени и версии в этой папке (`$MODEL_NAME/$VERSION`) |
@@ -485,7 +485,7 @@ def run(request):
 > pip install azureml-contrib-services
 > ```
 
-### <a name="2-define-your-inferenceconfig"></a>2. Определение Инференцеконфиг
+### <a name="2-define-your-inference-environment"></a>2. Определение среды вывода
 
 Конфигурация вывода описывает, как настроить модель для выполнения прогнозов. Эта конфигурация не является частью сценария записи. Он ссылается на скрипт записи и используется для размещения всех ресурсов, необходимых для развертывания. Он используется позже при развертывании модели.
 
@@ -538,8 +538,8 @@ az ml model deploy -n myservice -m mymodel:1 --ic inferenceconfig.json
 
 | Целевой объект вычисления | Пример конфигурации развертывания |
 | ----- | ----- |
-| Местного уровня | `deployment_config = LocalWebservice.deploy_configuration(port=8890)` |
-| Служба "Экземпляры контейнеров Azure" | `deployment_config = AciWebservice.deploy_configuration(cpu_cores = 1, memory_gb = 1)` |
+| Local | `deployment_config = LocalWebservice.deploy_configuration(port=8890)` |
+| Экземпляры контейнеров Azure | `deployment_config = AciWebservice.deploy_configuration(cpu_cores = 1, memory_gb = 1)` |
 | Служба Azure Kubernetes | `deployment_config = AksWebservice.deploy_configuration(cpu_cores = 1, memory_gb = 1)` |
 
 Классы для локальных объектов, экземпляров контейнеров Azure и веб-служб AKS можно импортировать из `azureml.core.webservice`:
@@ -547,41 +547,6 @@ az ml model deploy -n myservice -m mymodel:1 --ic inferenceconfig.json
 ```python
 from azureml.core.webservice import AciWebservice, AksWebservice, LocalWebservice
 ```
-
-#### <a name="profiling"></a>Профилирование.
-
-Перед развертыванием модели в качестве службы может потребоваться ее профилирование для определения оптимальных требований к ЦП и памяти. Для профилирования модели можно использовать либо пакет SDK, либо интерфейс командной строки. В следующих примерах показано, как профилировать модель с помощью пакета SDK.
-
-> [!IMPORTANT]
-> При использовании профилирования предоставленная конфигурация вывода не может ссылаться на среду Машинное обучение Azure. Вместо этого определите зависимости программного обеспечения с помощью параметра `conda_file` объекта `InferenceConfig`.
-
-```python
-import json
-test_data = json.dumps({'data': [
-    [1,2,3,4,5,6,7,8,9,10]
-]})
-
-profile = Model.profile(ws, "profilemymodel", [model], inference_config, test_data)
-profile.wait_for_profiling(True)
-profiling_results = profile.get_results()
-print(profiling_results)
-```
-
-Этот код отображает результат, аналогичный приведенному ниже:
-
-```python
-{'cpu': 1.0, 'memoryInGB': 0.5}
-```
-
-Результаты профилирования модели создаются как объект `Run`.
-
-Дополнительные сведения об использовании профилирования из CLI см. в разделе [AZ ML Model Profile](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/model?view=azure-cli-latest#ext-azure-cli-ml-az-ml-model-profile).
-
-Дополнительные сведения см. в следующих документах:
-
-* [моделпрофиле](https://docs.microsoft.com/python/api/azureml-core/azureml.core.profile.modelprofile?view=azure-ml-py)
-* [профиль ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.model.model?view=azure-ml-py#profile-workspace--profile-name--models--inference-config--input-data-)
-* [Схема файла конфигурации вывода](reference-azure-machine-learning-cli.md#inference-configuration-schema)
 
 ## <a name="deploy-to-target"></a>Развертывание в целевом объекте
 
@@ -977,7 +942,7 @@ package = Model.package(ws, [model], inference_config)
 package.wait_for_creation(show_output=True)
 ```
 
-После создания пакета можно использовать `package.pull()` для извлечения образа в локальную среду DOCKER. Выходные данные этой команды будут отображать имя изображения. Пример. 
+После создания пакета можно использовать `package.pull()` для извлечения образа в локальную среду DOCKER. Выходные данные этой команды будут отображать имя изображения. Пример: 
 
 `Status: Downloaded newer image for myworkspacef78fd10.azurecr.io/package:20190822181338`. 
 

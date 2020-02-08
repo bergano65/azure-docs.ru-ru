@@ -11,19 +11,19 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 2/7/2019
+ms.date: 2/7/2020
 ms.author: mimart
 ms.reviewer: arvinh
 ms.custom: aaddev;it-pro;seohack1
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 55b31dec0531add8e8c3b40bd9cc3e031ef30000
-ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
+ms.openlocfilehash: b5a74e03a5b166af85c809725c2c8b9a13b7e4f4
+ms.sourcegitcommit: cfbea479cc065c6343e10c8b5f09424e9809092e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77066386"
+ms.lasthandoff: 02/08/2020
+ms.locfileid: "77085452"
 ---
-# <a name="build-a-scim-endpoint-and-configure-user-provisioning-with-azure-active-directory-azure-ad"></a>Создание конечной точки SCIM и Настройка подготовки пользователей с помощью Azure Active Directory (Azure AD)
+# <a name="develop-a-scim-endpoint-and-configure-user-provisioning-with-azure-active-directory-azure-ad"></a>Разработка конечной точки SCIM и Настройка подготовки пользователей с помощью Azure Active Directory (Azure AD)
 
 Как разработчик приложения вы можете использовать систему для API управления пользовательским удостоверением (SCIM), чтобы включить автоматическую подготовку пользователей и групп между приложением и Azure AD. В этой статье описывается, как создать конечную точку SCIM и интегрировать ее со службой подготовки Azure AD. Спецификация SCIM предоставляет общую схему пользователя для подготовки. При использовании в сочетании со стандартами Федерации, такими как SAML или OpenID Connect Connect, SCIM предоставляет администраторам комплексное решение на основе стандартов для управления доступом.
 
@@ -722,6 +722,34 @@ SCIM — это стандартизированное определение д
 
 *HTTP/1.1 204 без содержимого*
 
+### <a name="security-requirements"></a>Требования безопасности
+**Версии протокола TLS**
+
+Единственные допустимые версии протокола TLS — TLS 1,2 и TLS 1,3. Другие версии TLS не разрешены. Ни одна из версий SSL не разрешена. 
+- Ключи RSA должны составлять не менее 2 048 бит.
+- Ключи ECC должны иметь по крайней мере 256 бит, созданных с помощью утвержденной эллиптической кривой.
+
+
+**Длина ключей**
+
+Все службы должны использовать сертификаты X. 509, созданные с использованием криптографических ключей достаточной длины, то есть:
+
+**Комплекты шифров**
+
+Все службы должны быть настроены для использования следующих комплектов шифров в указанном ниже порядке. Обратите внимание, что если у вас есть только сертификат RSA, установленные наборы шифров ECDSA не оказывают никакого влияния. </br>
+
+Минимальная строка наборов шифров TLS 1,2:
+
+- TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256
+- TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384
+- TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
+- TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+- TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256
+- TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384
+- TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256
+- TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384
+
+
 ## <a name="step-3-build-a-scim-endpoint"></a>Шаг 3. Создание конечной точки SCIM
 
 Создав веб-службу SCIM, которая взаимодействует с Azure Active Directory, можно включить автоматическую подготовку пользователей для практически любого приложения или хранилища удостоверений.
@@ -814,10 +842,6 @@ SCIM — это стандартизированное определение д
 ```csharp
  private static void Main(string[] arguments)
  {
- // Microsoft.SystemForCrossDomainIdentityManagement.IMonitor, 
- // Microsoft.SystemForCrossDomainIdentityManagement.IProvider and 
- // Microsoft.SystemForCrossDomainIdentityManagement.Service are all defined in 
- // Microsoft.SystemForCrossDomainIdentityManagement.Service.dll.  
 
  Microsoft.SystemForCrossDomainIdentityManagement.IMonitor monitor = 
    new DevelopersMonitor();
@@ -907,10 +931,6 @@ netsh http add sslcert ipport=0.0.0.0:443 certhash=0000000000003ed9cd0c315bbb6dc
 ```csharp
  public class Startup
  {
- // Microsoft.SystemForCrossDomainIdentityManagement.IWebApplicationStarter, 
- // Microsoft.SystemForCrossDomainIdentityManagement.IMonitor and  
- // Microsoft.SystemForCrossDomainIdentityManagement.Service are all defined in 
- // Microsoft.SystemForCrossDomainIdentityManagement.Service.dll.  
 
  Microsoft.SystemForCrossDomainIdentityManagement.IWebApplicationStarter starter;
 

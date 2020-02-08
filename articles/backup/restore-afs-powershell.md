@@ -3,18 +3,21 @@ title: Восстановление файлов Azure с помощью PowerSh
 description: Из этой статьи вы узнаете, как восстановить файлы Azure с помощью службы Azure Backup и PowerShell.
 ms.topic: conceptual
 ms.date: 1/27/2020
-ms.openlocfilehash: c1c116033dbf44e6e1f332195a18c7dfdbcd6c71
-ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
+ms.openlocfilehash: 99aeaa6173bb5336e6e1719a9fc0df0c668374e2
+ms.sourcegitcommit: cfbea479cc065c6343e10c8b5f09424e9809092e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76776343"
+ms.lasthandoff: 02/08/2020
+ms.locfileid: "77086825"
 ---
 # <a name="restore-azure-files-with-powershell"></a>Восстановление файлов Azure с помощью PowerShell
 
 В этой статье объясняется, как восстановить всю общую папку или отдельные файлы из точки восстановления, созданной службой [Azure Backup](backup-overview.md) с помощью Azure PowerShell.
 
 Можно восстановить весь файловый ресурс или отдельные файлы в общей папке. Можно выполнить восстановление в исходное расположение или в другое расположение.
+
+> [!WARNING]
+> Убедитесь, что версия PS обновлена до минимальной версии для "az. RecoveryServices 2.6.0" для резервных копий AFS. Дополнительные сведения см. в [разделе](backup-azure-afs-automation.md#important-notice---backup-item-identification-for-afs-backups) , описывающем требования к этому изменению.
 
 ## <a name="fetch-recovery-points"></a>Получение точек восстановления
 
