@@ -4,8 +4,6 @@
   items:
     - name: Общие сведения об Azure Monitor
       href: overview.md
-    - name: Изменения в терминологии
-      href: terminology.md
     - name: ВОПРОСЫ И ОТВЕТЫ
       href: faq.md
     - name: Новые возможности
@@ -1141,6 +1139,8 @@
       items:
         - name: схема
           href: platform/diagnostics-extension-schema-1dot3.md
+    - name: Изменения в терминологии
+      href: terminology.md
     - name: Application Insights
       items:
         - name: Автоматический сбор зависимостей

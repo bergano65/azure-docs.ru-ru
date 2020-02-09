@@ -463,6 +463,8 @@
                       href: saas-multitenantdb-schema-management.md
                     - name: 'Извлечение, преобразование и загрузка для анализа'
                       href: saas-multitenantdb-tenant-analytics.md
+        - name: Запрос на увеличение квоты
+          href: quota-increase-request.md
 - name: базы данных SQL;
   items:
     - name: Документация по базам данных SQL
