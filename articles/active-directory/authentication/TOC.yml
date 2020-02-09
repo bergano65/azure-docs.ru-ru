@@ -53,7 +53,7 @@
           href: concept-mfa-data-residency.md
         - name: MFA для Office 365
           href: 'https://docs.microsoft.com/office365/admin/security-and-compliance/set-up-multi-factor-authentication?view=o365-worldwide'
-        - name: 'MFA: вопросы и ответы'
+        - name: MFA: вопросы и ответы
           href: multi-factor-authentication-faq.md
     - name: Защита паролей Azure AD
       items:
@@ -123,7 +123,7 @@
               href: howto-password-ban-bad-on-premises-operations.md
             - name: Мониторинг защиты паролем Azure AD
               href: howto-password-ban-bad-on-premises-monitor.md
-            - name: "Устранение неполадок с функцией защиты паролем Azure\_AD"
+            - name: Устранение неполадок с функцией защиты паролем Azure AD
               href: howto-password-ban-bad-on-premises-troubleshoot.md
             - name: Часто задаваемые вопросы
               href: howto-password-ban-bad-on-premises-faq.md
@@ -160,7 +160,7 @@
           href: howto-sspr-reporting.md
         - name: Отчеты службы "Многофакторная идентификация Azure"
           href: howto-mfa-reporting.md
-        - name: сбор данных
+        - name: Сбор данных
           href: howto-mfa-reporting-datacollection.md
     - name: Сервер MFA
       items:
@@ -206,9 +206,9 @@
       items:
         - name: Устранение неполадок с SSPR
           href: active-directory-passwords-troubleshoot.md
-        - name: 'SSPR: часто задаваемые вопросы'
+        - name: SSPR: часто задаваемые вопросы
           href: active-directory-passwords-faq.md
-        - name: 'MFA: вопросы и ответы'
+        - name: MFA: вопросы и ответы
           href: multi-factor-authentication-faq.md
         - name: Расширение NPS
           href: howto-mfa-nps-extension-errors.md
