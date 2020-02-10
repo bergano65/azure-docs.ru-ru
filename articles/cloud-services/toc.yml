@@ -137,8 +137,6 @@
               href: /visualstudio/azure/vs-azure-tools-intellitrace-debug-published-cloud-services?toc=/azure/cloud-services/toc.json
         - name: Сбой выделения ресурсов для облачной службы
           href: cloud-services-allocation-failures.md
-        - name: "Приложения не поддерживают TLS\_1.2"
-          href: applications-dont-support-TLS-1-2.md
         - name: Распространенные причины перезапуска ролей облачной службы
           href: cloud-services-troubleshoot-common-issues-which-cause-roles-recycle.md
         - name: "Приложение не поддерживает TLS\_1.2"
