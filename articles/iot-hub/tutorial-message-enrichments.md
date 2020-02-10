@@ -7,12 +7,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 12/20/2019
 ms.author: robinsh
-ms.openlocfilehash: 2c2ac5d3de37a1a89ebd63b89666f164444e0a63
-ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
+ms.openlocfilehash: d16954760d1f2bf11ec5575f912ee32810696590
+ms.sourcegitcommit: 9add86fb5cc19edf0b8cd2f42aeea5772511810c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76773781"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77108223"
 ---
 # <a name="tutorial-use-azure-iot-hub-message-enrichments"></a>Учебник. Использование дополнений сообщений в центре Интернета вещей Azure
 
@@ -35,10 +35,13 @@ ms.locfileid: "76773781"
 > * Запустите приложение, которое имитирует устройство IoT, отправляющее сообщения в центр.
 > * Просмотрите результаты и убедитесь, что обогащения сообщений работают правильно.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
-* У вас должна быть подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+* У вас должна быть подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 * Установить [Visual Studio](https://www.visualstudio.com/).
+
+* Убедитесь, что в брандмауэре открыт порт 8883. Пример устройства в этом руководстве использует протокол MQTT, который обменивается данными через порт 8883. Этот порт может быть заблокирован в некоторых корпоративных и образовательных сетевых средах. Дополнительные сведения и способы решения этой проблемы см. [в статье подключение к центру Интернета вещей (MQTT)](iot-hub-mqtt-support.md#connecting-to-iot-hub).
+
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
@@ -255,7 +258,7 @@ az iot hub route create \
 
 2. Добавьте эти значения в список для конечной точки Контососторажеендпоинтенричед.
 
-   | Ключ | Значение | Конечная точка (раскрывающийся список) |
+   | Клавиши | Значение | Конечная точка (раскрывающийся список) |
    | ---- | ----- | -------------------------|
    | myIotHub | $iothubname | Азуресторажеконтаинерс > Контососторажеендпоинтенричед |
    | девицелокатион | $twin. Tags. Location | Азуресторажеконтаинерс > Контососторажеендпоинтенричед |

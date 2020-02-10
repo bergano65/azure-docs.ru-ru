@@ -9,12 +9,12 @@ services: iot-hub
 ms.devlang: nodejs
 ms.topic: conceptual
 ms.date: 08/16/2019
-ms.openlocfilehash: 124af71e458e103392c554a9c86d679f691df5b9
-ms.sourcegitcommit: aaa82f3797d548c324f375b5aad5d54cb03c7288
+ms.openlocfilehash: 5053935f52153f0cd6ff2f05c5153732f5bda945
+ms.sourcegitcommit: 9add86fb5cc19edf0b8cd2f42aeea5772511810c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70147644"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77110842"
 ---
 # <a name="schedule-and-broadcast-jobs-nodejs"></a>Планирование и вещание заданий (Node. js)
 
@@ -30,7 +30,7 @@ ms.locfileid: "70147644"
 
 Дополнительные сведения о каждой из этих возможностей см. в следующих статьях:
 
-* Двойник устройства и свойства: [Начало работы с двойниковами устройств](iot-hub-node-node-twin-getstarted.md) и [учебником: Использование свойств двойникаа устройства](tutorial-device-twins.md)
+* Двойники устройств и свойства: [Начало работы с двойниками устройств](iot-hub-node-node-twin-getstarted.md) и [Руководство. Настройка устройств из внутренней службы](tutorial-device-twins.md).
 
 * Прямые методы: [Руководство разработчика для центра Интернета вещей. прямые методы](iot-hub-devguide-direct-methods.md) и [учебник. прямые методы](quickstart-control-device-node.md)
 
@@ -48,11 +48,13 @@ ms.locfileid: "70147644"
 
 * **scheduleJobService.js**, которое вызывает прямой метод в приложении имитации устройства и обновляет требуемые свойства двойника устройства с помощью задания.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * Node. js версии 10.0. x или более поздней. [Подготовка среды разработки](https://github.com/Azure/azure-iot-sdk-node/tree/master/doc/node-devbox-setup.md) . описывает, как установить Node. js для этого руководства в Windows или Linux.
 
 * Активная учетная запись Azure. Если ее нет, можно создать [бесплатную учетную запись](https://azure.microsoft.com/pricing/free-trial/) всего за несколько минут.
+
+* Убедитесь, что в брандмауэре открыт порт 8883. В примере для устройства в этой статье используется протокол MQTT, который обменивается данными через порт 8883. Этот порт может быть заблокирован в некоторых корпоративных и образовательных сетевых средах. Дополнительные сведения и способы решения этой проблемы см. [в статье подключение к центру Интернета вещей (MQTT)](iot-hub-mqtt-support.md#connecting-to-iot-hub).
 
 ## <a name="create-an-iot-hub"></a>Создание Центра Интернета вещей
 
@@ -89,7 +91,7 @@ ms.locfileid: "70147644"
     var Protocol = require('azure-iot-device-mqtt').Mqtt;
     ```
 
-5. Добавьте переменную **connectionString**, чтобы создать с ее помощью экземпляр **клиента**. Замените значение `{yourDeviceConnectionString}` заполнителя строкой подключения устройства, скопированным ранее.
+5. Добавьте переменную **connectionString**, чтобы создать с ее помощью экземпляр **клиента**. Замените значение заполнителя `{yourDeviceConnectionString}` строкой подключения устройства, скопированным ранее.
 
     ```javascript
     var connectionString = '{yourDeviceConnectionString}';
@@ -166,7 +168,7 @@ ms.locfileid: "70147644"
     var JobClient = require('azure-iothub').JobClient;
     ```
 
-5. Добавьте следующие объявления переменных. Замените значение заполнителя значением, скопированным в [поле получение строки подключения центра Интернета вещей.](#get-the-iot-hub-connection-string) `{iothubconnectionstring}` Если вы зарегистрировали устройство, отличное от **myDeviceId**, не забудьте изменить его в условии запроса.
+5. Добавьте следующие объявления переменных. Замените значение заполнителя `{iothubconnectionstring}` значением, скопированным в [поле получение строки подключения центра Интернета вещей](#get-the-iot-hub-connection-string). Если вы зарегистрировали устройство, отличное от **myDeviceId**, не забудьте изменить его в условии запроса.
 
     ```javascript
     var connectionString = '{iothubconnectionstring}';
@@ -291,10 +293,10 @@ ms.locfileid: "70147644"
 
    ![Запуск приложения виртуального устройства](./media/iot-hub-node-node-schedule-jobs/schedule-job-service.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом учебнике описано использование задания для планирования прямого метода на устройстве и обновления свойств двойника устройства.
 
-Чтобы продолжить знакомство с центром Интернета вещей и шаблонами управления устройствами, такими как удаленный через обновление встроенного [по Air, см. раздел учебник. Как обновить](tutorial-firmware-update.md)встроенное по.
+Чтобы продолжить знакомство с центром Интернета вещей и шаблонами управления устройствами, такими как удаленный через обновление встроенного по Air, см. раздел [учебник. как выполнить обновление встроенного по](tutorial-firmware-update.md).
 
-Чтобы продолжить знакомство с центром Интернета вещей, см. статью Приступая к [работе с Azure IOT Edge](../iot-edge/tutorial-simulate-device-linux.md).
+Чтобы продолжить знакомство с центром Интернета вещей, см. статью [Приступая к работе с Azure IOT Edge](../iot-edge/tutorial-simulate-device-linux.md).

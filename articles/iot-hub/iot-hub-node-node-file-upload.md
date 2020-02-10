@@ -9,12 +9,12 @@ services: iot-hub
 ms.devlang: nodejs
 ms.topic: conceptual
 ms.date: 06/28/2017
-ms.openlocfilehash: 8747111921df494b8d5618dc8d6ece99fa821e47
-ms.sourcegitcommit: aaa82f3797d548c324f375b5aad5d54cb03c7288
+ms.openlocfilehash: db3da5ff2d7e8b6fa493f5338fac93df0d1a7fe2
+ms.sourcegitcommit: 9add86fb5cc19edf0b8cd2f42aeea5772511810c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70147628"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77110899"
 ---
 # <a name="upload-files-from-your-device-to-the-cloud-with-iot-hub-nodejs"></a>Передача файлов с устройства в облако с помощью центра Интернета вещей (Node. js)
 
@@ -44,11 +44,13 @@ ms.locfileid: "70147628"
 > [!NOTE]
 > Существуют пакеты SDK для устройств Azure IoT, обеспечивающие поддержку многих платформ устройств и языков (включая C, .NET, JavaScript, Python и Java) в Центре Интернета вещей. Пошаговые инструкции по подключению устройства к центру Интернета вещей Azure см. в [центре разработчика IoT Azure].
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * Node. js версии 10.0. x или более поздней. [Подготовка среды разработки](https://github.com/Azure/azure-iot-sdk-node/tree/master/doc/node-devbox-setup.md) . описывает, как установить Node. js для этого руководства в Windows или Linux.
 
 * Активная учетная запись Azure. Если ее нет, можно создать [бесплатную учетную запись](https://azure.microsoft.com/pricing/free-trial/) всего за несколько минут.
+
+* Убедитесь, что в брандмауэре открыт порт 8883. В примере для устройства в этой статье используется протокол MQTT, который обменивается данными через порт 8883. Этот порт может быть заблокирован в некоторых корпоративных и образовательных сетевых средах. Дополнительные сведения и способы решения этой проблемы см. [в статье подключение к центру Интернета вещей (MQTT)](iot-hub-mqtt-support.md#connecting-to-iot-hub).
 
 [!INCLUDE [iot-hub-associate-storage](../../includes/iot-hub-associate-storage.md)]
 
@@ -119,7 +121,7 @@ ms.locfileid: "70147628"
 
 ## <a name="get-the-iot-hub-connection-string"></a>Получение строки подключения для центра Интернета вещей
 
-В этой статье вы создадите серверную службу для получения уведомлений об отправке файлов из центра Интернета вещей, созданного при отправке данных [телеметрии с устройства в центр Интернета вещей](quickstart-send-telemetry-node.md). Для получения уведомлений об отправке файлов службе требуется разрешение на **Подключение к службе** . По умолчанию каждый центр Интернета вещей создается с помощью политики общего доступа с именем **Service** , предоставляющей это разрешение.
+В этой статье вы создадите серверную службу для получения уведомлений об отправке файлов из центра Интернета вещей, созданного при [отправке данных телеметрии с устройства в центр Интернета вещей](quickstart-send-telemetry-node.md). Для получения уведомлений об отправке файлов службе требуется разрешение на **Подключение к службе** . По умолчанию каждый центр Интернета вещей создается с помощью политики общего доступа с именем **Service** , предоставляющей это разрешение.
 
 [!INCLUDE [iot-hub-include-find-service-connection-string](../../includes/iot-hub-include-find-service-connection-string.md)]
 
@@ -151,7 +153,7 @@ ms.locfileid: "70147628"
     var Client = require('azure-iothub').Client;
     ```
 
-5. Добавьте переменную `iothubconnectionstring`, чтобы создать с ее помощью экземпляр **клиента**.  Замените значение заполнителя строкой подключения центра Интернета вещей, скопированным ранее в [поле получение строки подключения для центра Интернета вещей:](#get-the-iot-hub-connection-string) `{iothubconnectionstring}`
+5. Добавьте переменную `iothubconnectionstring`, чтобы создать с ее помощью экземпляр **клиента**.  Замените значение заполнителя `{iothubconnectionstring}` строкой подключения центра Интернета вещей, скопированным ранее в [поле получение строки подключения для центра Интернета вещей](#get-the-iot-hub-connection-string):
 
     ```javascript
     var connectionString = '{iothubconnectionstring}';
@@ -218,7 +220,7 @@ node SimulatedDevice.js
 
 ![Отправленный файл](./media/iot-hub-node-node-file-upload/uploaded-file.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом руководство показано, как использовать возможности передачи файлов Центра Интернета вещей, чтобы упростить передачу файлов из устройств. Изучение функций и сценариев Центра Интернета вещей можно продолжить в следующих руководствах:
 

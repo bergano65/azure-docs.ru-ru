@@ -9,12 +9,12 @@ ms.devlang: csharp
 ms.topic: conceptual
 ms.date: 08/20/2019
 ms.author: robinsh
-ms.openlocfilehash: 79e65671613364f5cc05153d90cfdcd5959a279f
-ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
+ms.openlocfilehash: 3b37d7e049e7daabbbb4fe1a7b49feb654e8accc
+ms.sourcegitcommit: 9add86fb5cc19edf0b8cd2f42aeea5772511810c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76939327"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77110258"
 ---
 # <a name="get-started-with-device-management-net"></a>Начало работы с управлением устройствами (.NET)
 
@@ -34,11 +34,13 @@ ms.locfileid: "76939327"
 
 * **TriggerReboot**. Это приложение вызывает прямой метод в приложении имитации устройства, отображает ответ и отображает обновленные сообщаемые свойства.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 * приведенному.
 
 * Активная учетная запись Azure. Если ее нет, можно создать [бесплатную учетную запись](https://azure.microsoft.com/pricing/free-trial/) всего за несколько минут.
+
+* Убедитесь, что в брандмауэре открыт порт 8883. В примере для устройства в этой статье используется протокол MQTT, который обменивается данными через порт 8883. Этот порт может быть заблокирован в некоторых корпоративных и образовательных сетевых средах. Дополнительные сведения и способы решения этой проблемы см. [в статье подключение к центру Интернета вещей (MQTT)](iot-hub-mqtt-support.md#connecting-to-iot-hub).
 
 ## <a name="create-an-iot-hub"></a>Создание Центра Интернета вещей
 
@@ -62,7 +64,7 @@ ms.locfileid: "76939327"
 
 1. В окне **Создание нового проекта**найдите и выберите шаблон проекта **консольное приложение (.NET Framework)** , а затем нажмите кнопку **Далее**.
 
-1. В окне **Настройка нового проекта**назовите проект *TriggerReboot*и выберите .NET Framework версии 4.5.1 или более поздней. Щелкните **Создать**.
+1. В окне **Настройка нового проекта**назовите проект *TriggerReboot*и выберите .NET Framework версии 4.5.1 или более поздней. Нажмите кнопку **Создать**.
 
     ![Новый проект классического приложения Windows на языке Visual C#](./media/iot-hub-csharp-csharp-device-management-get-started/create-trigger-reboot-configure.png)
 
@@ -145,7 +147,7 @@ ms.locfileid: "76939327"
 
 1. В уже созданном решении TriggerReboot в Visual Studio выберите **файл** > **Новый** > **проект**. В окне **Создание нового проекта**найдите и выберите шаблон проекта **консольное приложение (.NET Framework)** , а затем нажмите кнопку **Далее**.
 
-1. В окне **Настройка нового проекта**назовите проект *SimulateManagedDevice*, а для **решения**выберите **Добавить в решение**. Щелкните **Создать**.
+1. В окне **Настройка нового проекта**назовите проект *SimulateManagedDevice*, а для **решения**выберите **Добавить в решение**. Нажмите кнопку **Создать**.
 
     ![Присвойте проекту имя и добавьте его в решение.](./media/iot-hub-csharp-csharp-device-management-get-started/configure-device-app.png)
 

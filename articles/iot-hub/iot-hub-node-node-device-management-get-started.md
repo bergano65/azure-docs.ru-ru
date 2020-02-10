@@ -8,12 +8,12 @@ ms.service: iot-hub
 services: iot-hub
 ms.topic: conceptual
 ms.date: 08/20/2019
-ms.openlocfilehash: 98ec53d384186968d69c3f84cdfa12fbdbe92b71
-ms.sourcegitcommit: aaa82f3797d548c324f375b5aad5d54cb03c7288
+ms.openlocfilehash: 5b2e4c03347020b5d5fc67927165403f06854e0b
+ms.sourcegitcommit: 9add86fb5cc19edf0b8cd2f42aeea5772511810c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70147452"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77110919"
 ---
 # <a name="get-started-with-device-management-nodejs"></a>Начало работы с управлением устройствами (Node. js)
 
@@ -33,11 +33,13 @@ ms.locfileid: "70147452"
 
 * **dmpatterns_getstarted_service.js**, которое вызывает прямой метод в приложении для имитации устройства, выводит ответ и отображает обновленные сообщаемые свойства.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * Node. js версии 10.0. x или более поздней. [Подготовка среды разработки](https://github.com/Azure/azure-iot-sdk-node/tree/master/doc/node-devbox-setup.md) . описывает, как установить Node. js для этого руководства в Windows или Linux.
 
 * Активная учетная запись Azure. Если ее нет, можно создать [бесплатную учетную запись](https://azure.microsoft.com/pricing/free-trial/) всего за несколько минут.
+
+* Убедитесь, что в брандмауэре открыт порт 8883. В примере для устройства в этой статье используется протокол MQTT, который обменивается данными через порт 8883. Этот порт может быть заблокирован в некоторых корпоративных и образовательных сетевых средах. Дополнительные сведения и способы решения этой проблемы см. [в статье подключение к центру Интернета вещей (MQTT)](iot-hub-mqtt-support.md#connecting-to-iot-hub).
 
 ## <a name="create-an-iot-hub"></a>Создание Центра Интернета вещей
 
@@ -80,7 +82,7 @@ ms.locfileid: "70147452"
     var Protocol = require('azure-iot-device-mqtt').Mqtt;
     ```
 
-5. Добавьте переменную **connectionString**, чтобы создать с ее помощью экземпляр **клиента**.  Замените значение заполнителя строкой подключения устройства, скопированной ранее в окне [Регистрация нового устройства в центре Интернета вещей.](#register-a-new-device-in-the-iot-hub) `{yourdeviceconnectionstring}`  
+5. Добавьте переменную **connectionString**, чтобы создать с ее помощью экземпляр **клиента**.  Замените значение заполнителя `{yourdeviceconnectionstring}` строкой подключения устройства, скопированным ранее в окне [Регистрация нового устройства в центре Интернета вещей](#register-a-new-device-in-the-iot-hub).  
 
     ```javascript
     var connectionString = '{yourdeviceconnectionstring}';
@@ -180,7 +182,7 @@ ms.locfileid: "70147452"
     var Client = require('azure-iothub').Client;
     ```
 
-5. Добавьте следующие объявления переменных и замените `{iothubconnectionstring}` значение заполнителя строкой подключения центра Интернета вещей, скопированным ранее в поле [Получение строки подключения для центра Интернета вещей](#get-the-iot-hub-connection-string):
+5. Добавьте следующие объявления переменных и замените значение заполнителя `{iothubconnectionstring}` строкой подключения центра Интернета вещей, скопированным ранее в поле [Получение строки подключения для центра Интернета вещей](#get-the-iot-hub-connection-string):
 
     ```javascript
     var connectionString = '{iothubconnectionstring}';

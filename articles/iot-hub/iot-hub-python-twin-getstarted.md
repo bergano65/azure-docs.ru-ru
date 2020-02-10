@@ -8,12 +8,12 @@ ms.devlang: python
 ms.topic: conceptual
 ms.date: 08/26/2019
 ms.author: robinsh
-ms.openlocfilehash: 0fc23a63ba9c54896212f0a3f398b33514fbb5f1
-ms.sourcegitcommit: 428fded8754fa58f20908487a81e2f278f75b5d0
+ms.openlocfilehash: a6210c4672042801350e56ef6c8e8a2c02420a81
+ms.sourcegitcommit: 9add86fb5cc19edf0b8cd2f42aeea5772511810c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2019
-ms.locfileid: "74555344"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77110391"
 ---
 # <a name="get-started-with-device-twins-python"></a>Начало работы с двойниками устройств (Python)
 
@@ -27,11 +27,13 @@ ms.locfileid: "74555344"
 
 [!INCLUDE [iot-hub-include-python-sdk-note](../../includes/iot-hub-include-python-sdk-note.md)]
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 [!INCLUDE [iot-hub-include-python-installation-notes](../../includes/iot-hub-include-python-installation-notes.md)]
 
-## <a name="create-an-iot-hub"></a>Создание центра IoT
+* Убедитесь, что в брандмауэре открыт порт 8883. В примере для устройства в этой статье используется протокол MQTT, который обменивается данными через порт 8883. Этот порт может быть заблокирован в некоторых корпоративных и образовательных сетевых средах. Дополнительные сведения и способы решения этой проблемы см. [в статье подключение к центру Интернета вещей (MQTT)](iot-hub-mqtt-support.md#connecting-to-iot-hub).
+
+## <a name="create-an-iot-hub"></a>Создание Центра Интернета вещей
 
 [!INCLUDE [iot-hub-include-create-hub](../../includes/iot-hub-include-create-hub.md)]
 

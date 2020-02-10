@@ -2,13 +2,13 @@
 title: Кнопка "Развертывание в Azure"
 description: Используйте кнопку для развертывания шаблонов Azure Resource Manager из репозитория GitHub.
 ms.topic: conceptual
-ms.date: 02/05/2020
-ms.openlocfilehash: cf22203b843f4483f495b6eba9a522267c010a79
-ms.sourcegitcommit: 57669c5ae1abdb6bac3b1e816ea822e3dbf5b3e1
+ms.date: 02/07/2020
+ms.openlocfilehash: 88436eac970b252d7b0bc7bccee4131e06e9e0cf
+ms.sourcegitcommit: 9add86fb5cc19edf0b8cd2f42aeea5772511810c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2020
-ms.locfileid: "77050594"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77109049"
 ---
 # <a name="use-a-deployment-button-to-deploy-templates-from-github-repository"></a>Использование кнопки развертывания для развертывания шаблонов из репозитория GitHub
 
@@ -62,7 +62,15 @@ https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.github
 
 ## <a name="create-deploy-to-azure-button"></a>Кнопка "создать развертывание в Azure"
 
-Наконец, разместите ссылку и изображение вместе. Этот HTML-код можно добавить в файл README.md в репозитории GitHub или на веб-странице.
+Наконец, разместите ссылку и изображение вместе.
+
+Чтобы добавить кнопку с Markdown в файл README.md в репозитории GitHub или на веб-странице, используйте:
+
+```markdown
+[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-storage-account-create%2Fazuredeploy.json)
+```
+
+Для HTML используйте:
 
 ```html
 <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-storage-account-create%2Fazuredeploy.json" target="_blank">
@@ -73,10 +81,8 @@ https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.github
 ## <a name="deploy-the-template"></a>Развертывание шаблона
 
 Чтобы протестировать полное решение, нажмите следующую кнопку:
-<br><br>
-<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-storage-account-create%2Fazuredeploy.json" target="_blank">
-  <img src="https://aka.ms/deploytoazurebutton"/>
-</a>
+
+[![Развертывание в Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-storage-account-create%2Fazuredeploy.json)
 
 На портале отображается панель, с помощью которой можно легко указать значения параметров. Параметры предварительно заполняются значениями по умолчанию из шаблона.
 

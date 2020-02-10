@@ -8,12 +8,12 @@ ms.devlang: python
 ms.topic: conceptual
 ms.date: 07/30/2019
 ms.author: robinsh
-ms.openlocfilehash: 6dfbcc7a3e76842546326742d801c913451855f3
-ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
+ms.openlocfilehash: f1c0c046c40ff8edbc33c5e93e4207d9fe2fc67a
+ms.sourcegitcommit: 9add86fb5cc19edf0b8cd2f42aeea5772511810c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2019
-ms.locfileid: "71001125"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77110749"
 ---
 # <a name="upload-files-from-your-device-to-the-cloud-with-iot-hub-python"></a>Передача файлов с устройства в облако с помощью центра Интернета вещей (Python)
 
@@ -39,9 +39,11 @@ ms.locfileid: "71001125"
 > [!NOTE]
 > В этом руководством используется устаревший пакет SDK для Python v1, так как функция отправки файлов еще не реализована в новом пакете SDK v2.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 [!INCLUDE [iot-hub-include-python-installation-notes](../../includes/iot-hub-include-python-installation-notes.md)]
+
+* Убедитесь, что в брандмауэре открыт порт 8883. В примере для устройства в этой статье используется протокол MQTT, который обменивается данными через порт 8883. Этот порт может быть заблокирован в некоторых корпоративных и образовательных сетевых средах. Дополнительные сведения и способы решения этой проблемы см. [в статье подключение к центру Интернета вещей (MQTT)](iot-hub-mqtt-support.md#connecting-to-iot-hub).
 
 [!INCLUDE [iot-hub-associate-storage](../../includes/iot-hub-associate-storage.md)]
 
@@ -146,7 +148,7 @@ ms.locfileid: "71001125"
 
     ![Отправленный файл](./media/iot-hub-python-python-file-upload/2.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом руководство показано, как использовать возможности передачи файлов Центра Интернета вещей, чтобы упростить передачу файлов из устройств. Изучение функций и сценариев Центра Интернета вещей можно продолжить в следующих руководствах:
 
