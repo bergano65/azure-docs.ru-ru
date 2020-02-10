@@ -8,12 +8,14 @@
       href: whats-new.md
 - name: Краткие руководства
   items:
-    - name: Создание базы знаний
-      href: quickstarts/create-publish-knowledge-base.md
-    - name: Добавление вопросов с использованием метаданных
-      href: quickstarts/add-question-metadata-portal.md
-    - name: Получение ответа с помощью Postman или cURL
-      href: Quickstarts/get-answer-from-knowledge-base-using-url-tool.md
+    - name: С использованием портала QnA Maker
+      items:
+        - name: 1. Создание базы знаний
+          href: quickstarts/create-publish-knowledge-base.md
+        - name: 2. Добавление вопросов с использованием метаданных
+          href: quickstarts/add-question-metadata-portal.md
+        - name: 3. Получение ответа с помощью Postman или cURL
+          href: Quickstarts/get-answer-from-knowledge-base-using-url-tool.md
     - name: Тестирование с помощью пакетного файла
       href: Quickstarts/batch-testing.md
     - name: С помощью REST API
@@ -61,8 +63,6 @@
     - name: Создание базы знаний и ответ на вопрос
       displayName: 'curl, publish, chit-chat, chit chat'
       href: Tutorials/create-publish-query-in-portal.md
-    - name: 'Создание базы знаний и ответ на вопрос с использованием C#'
-      href: Tutorials/create-publish-answer.md
     - name: Создание бота QnA Maker
       href: Tutorials/create-qna-bot.md
 - name: Основные понятия

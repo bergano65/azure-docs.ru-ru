@@ -15,10 +15,10 @@ ms.workload: billing
 ms.date: 10/01/2019
 ms.author: banders
 ms.openlocfilehash: e183a622910c7690b566537311661789253efbfb
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
-ms.translationtype: MT
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
+ms.lasthandoff: 01/31/2020
 ms.locfileid: "75992729"
 ---
 # <a name="manage-costs-with-azure-budgets"></a>Управление затратами с помощью API управления бюджетом Azure
@@ -135,7 +135,7 @@ Logic Apps помогает создавать, планировать и авт
 3.  Выберите **New step** (Новый шаг) > **Добавить действие**.
 
     ![Элементы "Новый шаг" > "Добавить действие" на портале Azure](./media/cost-management-budget-scenario/billing-cost-management-budget-scenario-05.png)
-4.  Выполните поиск по запросу "анализ JSON" в поле поиска **Logic Apps конструктора** , чтобы найти и выбрать [действие](https://docs.microsoft.com/azure/logic-apps/logic-apps-overview#logic-app-concepts) **данные — анализ операции JSON** .
+4.  Выполните поиск по запросу "анализ JSON" в поле поиска **конструктора Logic Apps**, чтобы найти и выбрать [действие](https://docs.microsoft.com/azure/logic-apps/logic-apps-overview#logic-app-concepts) **Data Operations - Parse JSON** (Операции с данными — анализ JSON).
 
     ![Добавление действия анализа JSON в приложении логики на портале Azure](./media/cost-management-budget-scenario/billing-cost-management-budget-scenario-06.png)
 5.  Введите Payload в качестве имени **содержимого** для полезных данных Parse JSON или используйте тег Body из динамического содержимого.
@@ -276,7 +276,7 @@ Logic Apps помогает создавать, планировать и авт
 4.  Добавьте и проверьте следующее:
     - имя группы действий;
     - короткое имя;
-    - Subscription
+    - Подписка
     - Группа ресурсов
 
     ![Добавление группы действий в приложении логики на портале Azure](./media/cost-management-budget-scenario/billing-cost-management-budget-scenario-26.png)

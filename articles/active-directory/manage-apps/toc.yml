@@ -72,6 +72,8 @@
               href: howto-saml-token-encryption.md
             - name: Порталы пользователей
               href: end-user-experiences.md
+    - name: Видимость облачных приложений и управление ими
+      href: cloud-app-security.md
     - name: Прокси приложения для локальных приложений
       items:
         - name: Прокси приложения

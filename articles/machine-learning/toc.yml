@@ -25,6 +25,9 @@
         - name: Создание эксперимента автоматизированного машинного обучения
           displayName: 'automl, automated, auto ml, portal, ui'
           href: tutorial-first-experiment-automated-ml.md
+        - name: Прогнозирование спроса с помощью автоматизированного машинного обучения (данные о прокате велосипедов)
+          displayName: 'automl, automated, auto ml, portal, ui'
+          href: tutorial-automated-ml-forecast.md
     - name: Пакет SDK для Python
       items:
         - name: Создание первого эксперимента машинного обучения

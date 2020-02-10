@@ -7,12 +7,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 10/12/2018
 ms.author: robinsh
-ms.openlocfilehash: e1559dbab2503ded957b17c0cc6a61a06c53fffc
-ms.sourcegitcommit: 9add86fb5cc19edf0b8cd2f42aeea5772511810c
+ms.openlocfilehash: 694697be85b61ad2d59a0a4be1ced3581873cb77
+ms.sourcegitcommit: 323c3f2e518caed5ca4dd31151e5dee95b8a1578
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/09/2020
-ms.locfileid: "77110729"
+ms.lasthandoff: 02/10/2020
+ms.locfileid: "77111751"
 ---
 # <a name="communicate-with-your-iot-hub-using-the-mqtt-protocol"></a>Взаимодействие с Центром Интернета вещей с помощью протокола MQTT
 
@@ -73,11 +73,11 @@ device_client = IoTHubDeviceClient.create_from_connection_string(deviceConnectio
 
 |Язык  |Интервал проверки активности по умолчанию  |Настраивается  |
 |---------|---------|---------|
-|Node.js     |   180 секунд      |     нет    |
-|Java     |    230 секунд     |     нет    |
+|Node.js     |   180 секунд      |     Нет    |
+|Java     |    230 секунд     |     Нет    |
 |C     | 240 секунд |  [Да](https://github.com/Azure/azure-iot-sdk-c/blob/master/doc/Iothub_sdk_options.md#mqtt-transport)   |
 |C#     | 300 секунд |  [Да](https://github.com/Azure/azure-iot-sdk-csharp/blob/master/iothub/device/src/Transport/Mqtt/MqttTransportSettings.cs#L89)   |
-|Python (v2)   | 60 секунд |  нет   |
+|Python (v2)   | 60 секунд |  Нет   |
 
 В следующей [спецификации MQTT](http://docs.oasis-open.org/mqtt/mqtt/v3.1.1/os/mqtt-v3.1.1-os.html#_Toc398718081)интервал проверки связи для поддержания активности в центре интернета вещей 1,5 раз превышает значение срока поддержания клиента. Однако центр Интернета вещей ограничивает максимальное время ожидания на стороне сервера до 29,45 минут (1767 секунд), так как все службы Azure привязаны к времени ожидания простоя TCP в подсистеме балансировки нагрузки Azure, что составляет 29,45 минут. 
 
@@ -175,7 +175,7 @@ device_client = IoTHubDeviceClient.create_from_connection_string(deviceConnectio
 
 • LinuxConsoleVS2019: содержит тот же код, но в проекте VS2019, предназначенном для WSL (подсистему Windows Linux). Этот проект позволяет выполнять отладку кода, выполняемого на Linux, пошагово в Visual Studio.
 
-**Для mosquito_pub:**
+**Для mosquitto_pub:**
 
 • Эта папка содержит две команды, которые используются с mosquitto_pub служебной программой, предоставляемой Mosquitto.org.
 
@@ -287,7 +287,7 @@ client.connect(iot_hub_name+".azure-devices.net", port=8883)
 
 ## <a name="sending-device-to-cloud-messages"></a>Отправка сообщений из устройства в облако
 
-После успешного подключения устройство может отправлять сообщения в Центр Интернета вещей, используя `devices/{device_id}/messages/events/` или `devices/{device_id}/messages/events/{property_bag}` в качестве значения параметра **Имя раздела**. Элемент `{property_bag}` позволяет устройству отправлять сообщения с дополнительными свойствами в формате URL-адреса. Пример:
+После успешного подключения устройство может отправлять сообщения в Центр Интернета вещей, используя `devices/{device_id}/messages/events/` или `devices/{device_id}/messages/events/{property_bag}` в качестве значения параметра **Имя раздела**. Элемент `{property_bag}` позволяет устройству отправлять сообщения с дополнительными свойствами в формате URL-адреса. Например:
 
 ```text
 RFC 2396-encoded(<PropertyName1>)=RFC 2396-encoded(<PropertyValue1>)&RFC 2396-encoded(<PropertyName2>)=RFC 2396-encoded(<PropertyValue2>)…
@@ -340,7 +340,7 @@ RFC 2396-encoded(<PropertyName1>)=RFC 2396-encoded(<PropertyValue1>)&RFC 2396-en
 
 Возможны следующие коды состояний:
 
-|Состояние | Description |
+|Состояние | Описание |
 | ----- | ----------- |
 | 204 | Успех (содержимое не возвращается) |
 | 429 | Слишком много запросов (регулируется) в соответствии с [регулированием центра Интернета вещей](iot-hub-devguide-quotas-throttling.md) |
@@ -360,7 +360,7 @@ RFC 2396-encoded(<PropertyName1>)=RFC 2396-encoded(<PropertyValue1>)&RFC 2396-en
 
 3. Затем служба отправляет ответное сообщение, содержащее новое значение ETag для коллекции сообщаемых свойств в разделе `$iothub/twin/res/{status}/?$rid={request id}`. В этом ответном сообщении используется то же значение **request ID**, что и в запросе.
 
-Текст запроса содержит документ JSON, в котором имеются новые значения для переданных свойств. Каждый элемент документа JSON обновляет или добавляет соответствующий компонент в документе двойника устройства. Если элементу задано значение `null`, то этот компонент удаляется из содержащего его объекта. Пример:
+Текст запроса содержит документ JSON, в котором имеются новые значения для переданных свойств. Каждый элемент документа JSON обновляет или добавляет соответствующий компонент в документе двойника устройства. Если элементу задано значение `null`, то этот компонент удаляется из содержащего его объекта. Например:
 
 ```json
 {
@@ -371,9 +371,9 @@ RFC 2396-encoded(<PropertyName1>)=RFC 2396-encoded(<PropertyValue1>)&RFC 2396-en
 
 Возможны следующие коды состояний:
 
-|Состояние | Description |
+|Состояние | Описание |
 | ----- | ----------- |
-| 200 | Успешно |
+| 200 | Выполнено |
 | 400 | Недопустимый запрос. Неправильно сформированный JSON. |
 | 429 | Слишком много запросов (регулируется) в соответствии с [регулированием центра Интернета вещей](iot-hub-devguide-quotas-throttling.md) |
 | 5** | ошибки сервера; |
@@ -398,7 +398,7 @@ client.publish("$iothub/twin/PATCH/properties/reported/?$rid=" +
 
 ## <a name="receiving-desired-properties-update-notifications"></a>Получение уведомлений об обновлении требуемых свойств
 
-При подключении устройства Центр Интернета вещей отправляет уведомления в раздел `$iothub/twin/PATCH/properties/desired/?$version={new version}`, в котором находится содержимое обновления, выполненного серверной частью решения. Пример:
+При подключении устройства Центр Интернета вещей отправляет уведомления в раздел `$iothub/twin/PATCH/properties/desired/?$version={new version}`, в котором находится содержимое обновления, выполненного серверной частью решения. Например:
 
 ```json
 {
@@ -427,7 +427,7 @@ client.publish("$iothub/twin/PATCH/properties/reported/?$rid=" +
 
 Конечно, если вам нужно настроить поведение протокола MQTT на стороне облака, следует ознакомиться с [шлюзом протокола Интернета вещей Azure](iot-hub-protocol-gateway.md). Это программное обеспечение позволяет развернуть шлюз протокола с высокой производительностью, который взаимодействует непосредственно с Центром Интернета вещей. Шлюз протокола Azure IoT позволяет настроить протокол устройства для уже существующих развертываний MQTT или других настраиваемых протоколов. Однако при этом подходе необходимо запустить настраиваемый шлюз протокола и управлять им.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о протоколе MQTT см. в [документации по MQTT](https://mqtt.org/documentation).
 

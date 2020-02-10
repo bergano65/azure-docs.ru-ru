@@ -7,12 +7,12 @@ ms.reviewer: gabilehner
 ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 11/07/2019
-ms.openlocfilehash: eb0b5ea960aa7bc9158791d1fc9fa0986e7d99e6
-ms.sourcegitcommit: d9ec6e731e7508d02850c9e05d98d26c4b6f13e6
+ms.openlocfilehash: 20b667ae345e468bcd3db25d85b7c9de561af4bc
+ms.sourcegitcommit: 323c3f2e518caed5ca4dd31151e5dee95b8a1578
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/20/2020
-ms.locfileid: "76281348"
+ms.lasthandoff: 02/10/2020
+ms.locfileid: "77111479"
 ---
 # <a name="use-follower-database-to-attach-databases-in-azure-data-explorer"></a>Использование базы данных следующих служб для присоединения баз данных в Azure обозреватель данных
 
@@ -26,7 +26,7 @@ ms.locfileid: "76281348"
 * Один кластер может следовать за базами данных из нескольких серверов-заполнителей. 
 * Кластер может содержать как базы данных, так и лидерическую базу данных
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 1. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 1. [Создайте кластер и базу данных](/azure/data-explorer/create-cluster-database-portal) для лидера и последующих результатов.
@@ -61,7 +61,7 @@ var followerResourceGroupName = "followerResouceGroup";
 var leaderResourceGroup = "leaderResouceGroup";
 var leaderClusterName = "leader";
 var followerClusterName = "follower";
-var attachedDatabaseConfigurationName = "adc";
+var attachedDatabaseConfigurationName = "uniqueNameForAttachedDatabaseConfiguration";
 var databaseName = "db"; // Can be specific database name or * for all databases
 var defaultPrincipalsModificationKind = "Union"; 
 var location = "North Central US";
@@ -113,7 +113,7 @@ follower_resource_group_name = "followerResouceGroup"
 leader_resouce_group_name = "leaderResouceGroup"
 follower_cluster_name = "follower"
 leader_cluster_name = "leader"
-attached_database_Configuration_name = "adc"
+attached_database_Configuration_name = "uniqueNameForAttachedDatabaseConfiguration"
 database_name  = "db" # Can be specific database name or * for all databases
 default_principals_modification_kind  = "Union"
 location = "North Central US"
@@ -180,7 +180,7 @@ poller = kusto_management_client.attached_database_configurations.create_or_upda
     "variables": {},
     "resources": [
         {
-            "name": "[concat(parameters('followerClusterName'), '/', parameters('attachedDatabaseConfigurationsName'))]",
+            "name": "[parameters('attachedDatabaseConfigurationsName')]",
             "type": "Microsoft.Kusto/clusters/attachedDatabaseConfigurations",
             "apiVersion": "2019-09-07",
             "location": "[parameters('location')]",
@@ -206,8 +206,8 @@ poller = kusto_management_client.attached_database_configurations.create_or_upda
 
 |**Параметр**  |**Описание**  |
 |---------|---------|
-|Имя кластера следов     |  Имя кластера последов.  |
-|Имя конфигурации присоединенной базы данных    |    Имя объекта конфигурации присоединенной базы данных. Имя должно быть уникальным на уровне кластера.     |
+|Имя кластера следов     |  Имя кластера последов. Это кластер, на котором будет развернут этот шаблон.  |
+|Имя конфигурации присоединенной базы данных    |    Имя объекта конфигурации присоединенной базы данных. Имя может быть любой строкой, если оно уникально на уровне кластера.     |
 |Имя базы данных     |      Имя базы данных, которая будет следовать. Если вы хотите следовать всем базам данных лидера, используйте "*".   |
 |Идентификатор ресурса кластера лидера    |   Идентификатор ресурса для кластера лидера.      |
 |Тип изменения участников по умолчанию    |   Тип изменения субъекта по умолчанию. Может быть `Union`, `Replace` или `None`. Дополнительные сведения об изменении типа субъекта по умолчанию см. в разделе [команда управления типа изменения основного сервера](/azure/kusto/management/cluster-follower?branch=master#alter-follower-database-principals-modification-kind).      |
@@ -250,7 +250,7 @@ var resourceManagementClient = new KustoManagementClient(serviceCreds){
 var followerResourceGroupName = "testrg";
 //The cluster and database that are created as part of the prerequisites
 var followerClusterName = "follower";
-var attachedDatabaseConfigurationsName = "adc";
+var attachedDatabaseConfigurationsName = "uniqueName";
 
 resourceManagementClient.AttachedDatabaseConfigurations.Delete(followerResourceGroupName, followerClusterName, attachedDatabaseConfigurationsName);
 ```
@@ -278,7 +278,7 @@ var followerClusterName = "follower";
 //The cluster and database that are created as part of the Prerequisites
 var followerDatabaseDefinition = new FollowerDatabaseDefinition()
     {
-        AttachedDatabaseConfigurationName = "adc",
+        AttachedDatabaseConfigurationName = "uniqueName",
         ClusterResourceId = $"/subscriptions/{followerSubscriptionId}/resourceGroups/{followerResourceGroupName}/providers/Microsoft.Kusto/Clusters/{followerClusterName}"
     };
 
@@ -312,7 +312,7 @@ kusto_management_client = KustoManagementClient(credentials, follower_subscripti
 
 follower_resource_group_name = "followerResouceGroup"
 follower_cluster_name = "follower"
-attached_database_configurationName = "adc"
+attached_database_configurationName = "uniqueName"
 
 #Returns an instance of LROPoller, see https://docs.microsoft.com/python/api/msrest/msrest.polling.lropoller?view=azure-python
 poller = kusto_management_client.attached_database_configurations.delete(follower_resource_group_name, follower_cluster_name, attached_database_configurationName)
@@ -348,7 +348,7 @@ follower_resource_group_name = "followerResourceGroup"
 leader_resource_group_name = "leaderResourceGroup"
 follower_cluster_name = "follower"
 leader_cluster_name = "leader"
-attached_database_configuration_name = "adc"
+attached_database_configuration_name = "uniqueName"
 location = "North Central US"
 cluster_resource_id = "/subscriptions/" + follower_subscription_id + "/resourceGroups/" + follower_resource_group_name + "/providers/Microsoft.Kusto/Clusters/" + follower_cluster_name
 
@@ -388,6 +388,6 @@ poller = kusto_management_client.clusters.detach_follower_databases(resource_gro
 * Невозможно удалить кластер с базой данных, присоединенной к другому кластеру, прежде чем отсоединить его.
 * Невозможно прикрепить к кластеру, присоединенному к исполнению или выполнительу базы данных. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Сведения о конфигурации кластера ниже см. в разделе [управляющие команды для управления кластером последующих действий](/azure/kusto/management/cluster-follower).

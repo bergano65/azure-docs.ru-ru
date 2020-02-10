@@ -12,12 +12,12 @@ metadata:
   author: msmimart
   ms.author: mimart
   manager: celested
-  ms.openlocfilehash: 7ebb44ec1f3483b9bf3f29ddb6dc7a73266b8cea
-  ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+  ms.openlocfilehash: 3bea7dda1cf44548ea924ffa84fb922410242f27
+  ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 12/25/2019
-  ms.locfileid: "75443363"
+  ms.lasthandoff: 02/07/2020
+  ms.locfileid: "77063478"
 landingContent:
 - title: Сведения об управлении приложениями
   linkLists:
@@ -51,24 +51,18 @@ landingContent:
   linkLists:
   - linkListType: overview
     links:
-    - text: Что собой представляет автоматическая подготовка пользователей?
-      url: user-provisioning.md
-    - text: Описание процесса подготовки
-      url: how-provisioning-works.md
+    - text: Что собой представляет подготовка приложения?
+      url: /azure/active-directory/app-provisioning/user-provisioning?context=azure/active-directory/manage-apps/context/manage-apps-context
   - linkListType: tutorial
     links:
     - text: Руководства по подготовке приложений SaaS
       url: /azure/active-directory/saas-apps/
   - linkListType: how-to-guide
     links:
-    - text: Создаете приложение? Автоматическая подготовка с помощью SCIM
-      url: use-scim-to-provision-users-and-groups.md
-    - text: Добавляете приложение из коллекции? Настройка процесса подготовки для приложения
-      url: configure-automatic-user-provisioning-portal.md
-    - text: Настройка сопоставлений атрибутов
-      url: customize-application-attributes.md
-    - text: Использование фильтров области
-      url: define-conditional-rules-for-provisioning-user-accounts.md
+    - text: Создаете приложение? Подготовка с помощью SCIM (документация по подготовке приложений)
+      url: /azure/active-directory/app-provisioning/use-scim-to-provision-users-and-groups
+    - text: Добавляете приложение из коллекции? Настройка процесса подготовки (документация по подготовке приложений)
+      url: /azure/active-directory/app-provisioning/configure-automatic-user-provisioning-portal
 - title: Публикация локальных приложений с помощью Application Proxy
   linkLists:
   - linkListType: overview

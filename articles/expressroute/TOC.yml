@@ -28,7 +28,7 @@
           href: expressroute-locations.md
     - name: О шлюзах виртуальных сетей
       href: expressroute-about-virtual-network-gateways.md
-    - name: предварительные требования
+    - name: Предварительные требования
       href: expressroute-prerequisites.md
     - name: Рабочие процессы
       href: expressroute-workflows.md
@@ -228,6 +228,8 @@
       href: ../azure-resource-manager/management/azure-subscription-service-limits.md?toc=%2fazure%2fexpressroute%2ftoc.json
     - name: ExpressRoute для поставщиков облачных решений (CSP)
       href: expressroute-for-cloud-solution-providers.md
+    - name: Разработка API перекрестных подключений для партнеров
+      href: cross-connections-api-development.md
     - name: Видео
       href: 'https://azure.microsoft.com/documentation/videos/index/?services=expressroute'
       items:

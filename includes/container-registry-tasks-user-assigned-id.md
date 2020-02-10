@@ -1,6 +1,6 @@
 ---
-title: включение файла
-description: включение файла
+title: включить файл
+description: включить файл
 services: container-registry
 author: dlepow
 ms.service: container-registry
@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 07/12/2019
 ms.author: danlep
 ms.custom: include file
-ms.openlocfilehash: 0e2acb346fad87e0c1c7fd7de1389d8fc86206d0
-ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
+ms.openlocfilehash: ceda7bd6bd165df1eece555c6ce8a9a6c863b2c1
+ms.sourcegitcommit: 323c3f2e518caed5ca4dd31151e5dee95b8a1578
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68642115"
+ms.lasthandoff: 02/10/2020
+ms.locfileid: "77112353"
 ---
 ### <a name="create-a-user-assigned-identity"></a>Создание назначаемого пользователем удостоверения
 
@@ -23,13 +23,13 @@ ms.locfileid: "68642115"
 az identity create --resource-group myResourceGroup --name myACRTasksId
 ```
 
-Чтобы настроить определяемое пользователем удостоверение в следующих шагах, используйте команду [AZ Identity показывать][az-identity-show] , чтобы сохранить идентификатор ресурса, идентификатор субъекта-службы и идентификатор клиента в переменных.
+Чтобы настроить назначенное пользователем удостоверение в следующих шагах, используйте команду [AZ Identity][az-identity-show] , чтобы сохранить идентификатор ресурса, идентификатор субъекта и идентификатор клиента в переменных.
 
 ```azurecli
 # Get resource ID of the user-assigned identity
 resourceID=$(az identity show --resource-group myResourceGroup --name myACRTasksId --query id --output tsv)
 
-# Get service principal ID of the user-assigned identity
+# Get principal ID of the task's user-assigned identity
 principalID=$(az identity show --resource-group myResourceGroup --name myACRTasksId --query principalId --output tsv)
 
 # Get client ID of the user-assigned identity
