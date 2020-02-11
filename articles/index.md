@@ -292,7 +292,7 @@ ms.locfileid: "77026019"
                                                 <ul class="noBullet">
                                                     <li>
                                                         <a class="barLink" href="/learn/modules/tour-azure-portal/">
-                                                            <img src="https://docs.microsoft.com/learn/achievements/tour-azure-services-and-features.svg" alt=""> Обзор служб и функций Azure </a>
+                                                            <img src="https://docs.microsoft.com/media/logos/logo_vs-team-services.svg" alt=""> Azure DevOps Projects </a>
                                                     </li>
                                                     <li>
                                                         <a class="barLink" href="/learn/modules/principles-cloud-computing/">
@@ -1039,7 +1039,7 @@ ms.locfileid: "77026019"
                                         <li>
                                             <a href="/azure/devops-project">
                                                 <img src="media/index/logo_vs-team-services.svg" alt="" />
-                                                <p>Azure DevOps Проекты</p>
+                                                <p>Azure DevOps Projects</p>
                                             </a>
                                         </li>
                                     </ul>
@@ -3531,7 +3531,7 @@ ms.locfileid: "77026019"
                                                 </div>
                                                 <div class="cardText">
                                                     <h3>Visual Studio Code</h3>
-                                                    <p>Visual Studio Code — это простой, но мощный редактор для работы с исходным кодом, доступен для Windows, macOS и Linux.</p>
+                                                    <p>Visual Studio Code — это простой, но мощный настольный редактор для работы с исходным кодом, доступный для Windows, macOS и Linux.</p>
 
                                                 </div>
                                             </div>
@@ -4320,7 +4320,7 @@ ms.locfileid: "77026019"
                                                 </div>
                                                 <div class="cardText">
                                                     <h3>Сетка событий Azure</h3>
-                                                    <p>Надежная доставка событий с возможностью масштабирования</p>
+                                                    <p>Надежная доставка событий в огромном масштабе</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -5310,7 +5310,7 @@ ms.locfileid: "77026019"
                                                 </div>
                                                 <div class="cardText">
                                                     <h3>Azure Kinect DK</h3>
-                                                    <p>Создавайте приложения для гибкого и чувствительного устройства</p>
+                                                    <p>Многофункциональное сенсорное устройство для разработки</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -5642,7 +5642,7 @@ ms.locfileid: "77026019"
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>Сетевой наблюдатель</h3>
+                                                    <h3>Наблюдатель за сетями</h3>
                                                     <p>Решение для диагностики и мониторинга производительности сети</p>
                                                 </div>
                                             </div>
