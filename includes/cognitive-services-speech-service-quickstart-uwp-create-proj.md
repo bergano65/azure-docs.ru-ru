@@ -2,14 +2,14 @@
 author: erhopf
 ms.service: cognitive-services
 ms.topic: include
-ms.date: 08/19/2019
+ms.date: 02/10/2020
 ms.author: erhopf
-ms.openlocfilehash: 64c93e5c8e139dbdcfd3faad3a9ac4328fb01972
-ms.sourcegitcommit: 1d0b37e2e32aad35cc012ba36200389e65b75c21
+ms.openlocfilehash: d3e2fa082184ce8de7685d03803360045b89c911
+ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72391760"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77119772"
 ---
 Чтобы создать проект Visual Studio для разработки универсальной платформы Windows (UWP), необходимо настроить параметры разработки Visual Studio, создать проект, выбрать целевую архитектуру, настроить запись звука и установить пакет SDK службы "Речь".
 
@@ -17,7 +17,7 @@ ms.locfileid: "72391760"
 
 Для начала убедитесь, что вы правильно настроили Visual Studio для разработки UWP:
 
-1. Откройте Visual Studio 2019 для отображения окна **запуска**.
+1. Откройте Visual Studio 2019 для отображения окна **Запуск**.
 
    ![Окно запуска Visual Studio](../articles/cognitive-services/Speech-Service/media/sdk/vs-enable-uwp-start-window.png)
 
@@ -43,7 +43,7 @@ ms.locfileid: "72391760"
 
 1. Найдите и выберите **Пустое приложение (универсальные приложения Windows)** . Убедитесь, что выбрана версия C# этого типа проекта (в отличие от Visual Basic).
 
-1. Выберите **Далее**, чтобы отобразить экран **Настроить новый проект**. 
+1. Выберите **Далее**, чтобы отобразить экран **Настроить новый проект**.
 
    ![Настройка нового проекта Visual Studio](../articles/cognitive-services/Speech-Service/media/sdk/vs-enable-uwp-configure-your-new-project.png)
 
@@ -59,7 +59,7 @@ ms.locfileid: "72391760"
 
 1. В поле **Целевая версия** (первый раскрывающийся список) выберите значение, идентичное значению в поле **Минимальная версия** или более позднюю версию.
 
-1. Нажмите кнопку **ОК**. Вы возвращаетесь в интегрированную среду разработки Visual Studio. Проект создан и отображается в области **Обозреватель решений**.
+1. Щелкните **ОК**. Вы возвращаетесь в интегрированную среду разработки Visual Studio. Проект создан и отображается в области **Обозреватель решений**.
 
    ![Проект helloworld Visual Studio](../articles/cognitive-services/Speech-Service/media/sdk/vs-enable-uwp-helloworld.png)
 
@@ -88,7 +88,7 @@ ms.locfileid: "72391760"
 
 1. В **Обозревателе решений** правой кнопкой мыши щелкните решение и выберите пункт **Manage NuGet Packages for Solution** (Управление пакетами NuGet для решения) для перехода в окно **NuGet — решение**.
 
-1. Щелкните **Обзор**.
+1. Нажмите кнопку **Обзор**.
 
    ![Снимок экрана диалогового окна "Управление пакетами для решения"](../articles/cognitive-services/Speech-Service/media/sdk/vs-enable-uwp-nuget-solution-browse.png)
 
@@ -100,8 +100,8 @@ ms.locfileid: "72391760"
 
 1. В области "Состояние пакета" рядом с результатами поиска выберите проект **helloworld**.
 
-1. Щелкните **Установить**.
+1. Выберите пункт **Установить**.
 
 1. В диалоговом окне **Просмотр изменений** нажмите **ОК**.
 
-1. В диалоговом окне **Принятие условий лицензионного соглашения** просмотрите лицензию, а затем выберите **Я принимаю**. Начнется установка пакета, и после завершения установки в области **Output** (вывод) отобразится сообщение следующего вида: `Successfully installed 'Microsoft.CognitiveServices.Speech 1.7.0' to helloworld`.
+1. В диалоговом окне **Принятие условий лицензионного соглашения** просмотрите лицензию, а затем выберите **Я принимаю**. Начнется установка пакета, и после завершения установки в области **Output** (вывод) отобразится сообщение следующего вида: `Successfully installed 'Microsoft.CognitiveServices.Speech 1.9.0' to helloworld`.
