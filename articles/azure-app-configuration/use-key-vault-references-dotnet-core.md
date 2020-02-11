@@ -195,7 +195,7 @@ ms.locfileid: "76714429"
             .UseStartup<Startup>();
     ```
 
-    #### <a name="net-core-3xtabcore3x"></a>[.NET Core 3.x](#tab/core3x).
+    #### <a name="net-core-3xtabcore3x"></a>[.NET Core 3.x](#tab/core3x).
 
     ```csharp
         public static IHostBuilder CreateHostBuilder(string[] args) =>

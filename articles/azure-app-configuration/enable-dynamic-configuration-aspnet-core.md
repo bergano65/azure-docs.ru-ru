@@ -81,7 +81,7 @@ ASP.NET Core имеет подключаемую систему конфигур
             .UseStartup<Startup>();
     ```
 
-    #### <a name="net-core-3xtabcore3x"></a>[.NET Core 3.x](#tab/core3x).
+    #### <a name="net-core-3xtabcore3x"></a>[.NET Core 3.x](#tab/core3x).
 
     ```csharp
     public static IHostBuilder CreateHostBuilder(string[] args) =>
@@ -134,7 +134,7 @@ ASP.NET Core имеет подключаемую систему конфигур
     }
     ```
 
-    #### <a name="net-core-3xtabcore3x"></a>[.NET Core 3.x](#tab/core3x).
+    #### <a name="net-core-3xtabcore3x"></a>[.NET Core 3.x](#tab/core3x).
 
     ```csharp
     public void ConfigureServices(IServiceCollection services)
@@ -165,7 +165,7 @@ ASP.NET Core имеет подключаемую систему конфигур
     }
     ```
 
-    #### <a name="net-core-3xtabcore3x"></a>[.NET Core 3.x](#tab/core3x).
+    #### <a name="net-core-3xtabcore3x"></a>[.NET Core 3.x](#tab/core3x).
 
     ```csharp
     public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -240,7 +240,7 @@ ASP.NET Core имеет подключаемую систему конфигур
     }
     ```
 
-    #### <a name="net-core-3xtabcore3x"></a>[.NET Core 3.x](#tab/core3x).
+    #### <a name="net-core-3xtabcore3x"></a>[.NET Core 3.x](#tab/core3x).
 
     ```csharp
     public class HomeController : Controller
