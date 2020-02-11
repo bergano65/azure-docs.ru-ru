@@ -3,22 +3,22 @@ title: Передача пользовательского состояния в
 titleSuffix: Microsoft identity platform
 description: Узнайте, как передать значение параметра настраиваемого состояния в запросе на проверку подлинности с помощью библиотеки проверки подлинности Майкрософт для JavaScript (MSAL. js).
 services: active-directory
-author: TylerMSFT
+author: mmacy
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
 ms.workload: identity
 ms.date: 01/16/2020
-ms.author: twhitney
+ms.author: marsma
 ms.reviewer: saeeda
 ms.custom: aaddev
-ms.openlocfilehash: be2dd887358aa00c87a4b5668a99c425d83b59dc
-ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
+ms.openlocfilehash: 1c05956f83ad3a6491627be8916fac2c8be2b7ff
+ms.sourcegitcommit: cfbea479cc065c6343e10c8b5f09424e9809092e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76696033"
+ms.lasthandoff: 02/08/2020
+ms.locfileid: "77084931"
 ---
 # <a name="pass-custom-state-in-authentication-requests-using-msaljs"></a>Передача пользовательского состояния в запросах проверки подлинности с помощью MSAL. js
 
@@ -51,7 +51,7 @@ export type AuthenticationParameters = {
 > Пропуск кэша следует использовать только в тех случаях, когда известно, что в данный момент кэшированные данные не содержат актуальных сведений.
 > Например средство администрирования, добавляющее к пользователю роли, которым необходимо получить новый маркер с обновленными ролями.
 
-Пример.
+Пример:
 
 ```javascript
 let loginRequest = {

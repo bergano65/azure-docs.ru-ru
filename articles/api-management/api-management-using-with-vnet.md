@@ -10,14 +10,14 @@ ms.service: api-management
 ms.workload: mobile
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.date: 02/03/2020
+ms.date: 02/05/2020
 ms.author: apimpm
-ms.openlocfilehash: 59839df1e67c5ea7f18df373ad0530a2ea740209
-ms.sourcegitcommit: f0f73c51441aeb04a5c21a6e3205b7f520f8b0e1
+ms.openlocfilehash: c5a1aaac0edea1e5ab2e6cdf35f91f61eed23db5
+ms.sourcegitcommit: 57669c5ae1abdb6bac3b1e816ea822e3dbf5b3e1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2020
-ms.locfileid: "77030903"
+ms.lasthandoff: 02/06/2020
+ms.locfileid: "77047483"
 ---
 # <a name="how-to-use-azure-api-management-with-virtual-networks"></a>Как использовать управление API Azure с виртуальными сетями
 Виртуальные сети Azure позволяют размещать любые ресурсы Azure в сети, недоступной из Интернета, доступом к которой управляете вы сами. Эти сети можно подключать к локальным сетям с помощью различных технологий VPN. Начать изучение виртуальных сетей Azure лучше всего со статьи [Обзор виртуальной сети](../virtual-network/virtual-networks-overview.md).
@@ -31,7 +31,7 @@ ms.locfileid: "77030903"
 
 [!INCLUDE [premium-dev.md](../../includes/api-management-availability-premium-dev.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы выполнить действия, описанные в этой статье, необходимо следующее.
 
@@ -136,7 +136,7 @@ ms.locfileid: "77030903"
 
     | Среда Azure | Конечные точки                                                                                                                                                                                                                                                                                                                                                              |
     |-------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-    | Azure Public      | <ul><li>prod.warmpath.msftcloudes.com;</li><li>shoebox2.metrics.nsatc.net;</li><li>prod3.metrics.nsatc.net.</li><li>prod3-black.prod3.metrics.nsatc.net;</li><li>prod3-red.prod3.metrics.nsatc.net.</li><li>prod.warm.ingestion.msftcloudes.com</li><li>`azure region`.warm.ingestion.msftcloudes.com где `East US 2` является eastus2.warm.ingestion.msftcloudes.com</li></ul> |
+    | Azure Public      | <ul><li>gcs.prod.monitoring.core.windows.net (**новое**)</li><li>prod.warmpath.msftcloudes.com (**не рекомендуется к использованию**)</li><li>shoebox2.metrics.nsatc.net;</li><li>prod3.metrics.nsatc.net.</li><li>prod3-black.prod3.metrics.nsatc.net;</li><li>prod3-red.prod3.metrics.nsatc.net.</li><li>prod.warm.ingestion.msftcloudes.com</li><li>`azure region`.warm.ingestion.msftcloudes.com где `East US 2` является eastus2.warm.ingestion.msftcloudes.com</li></ul> |
     | Azure для государственных организаций  | <ul><li>fairfax.warmpath.usgovcloudapi.net;</li><li>shoebox2.metrics.nsatc.net;</li><li>prod3.metrics.nsatc.net.</li></ul>                                                                                                                                                                                                                                                |
     | Azure China 21Vianet     | <ul><li>mooncake.warmpath.chinacloudapi.cn;</li><li>shoebox2.metrics.nsatc.net;</li><li>prod3.metrics.nsatc.net.</li></ul>                                                                                                                                                                                                                                                |
 
@@ -202,10 +202,10 @@ IP-адреса делятся на **среду Azure**. При разреше�
 | Azure Public| Республика Корея, центральный регион| 40.82.157.167|
 | Azure Public| западная часть Соединенного Королевства| 51.137.136.0|
 | Azure Public| Западная Япония| 40.81.185.8|
-| Azure Public| Центрально-северная часть США| 40.81.47.216|
+| Azure Public| Центрально-северная часть США| 40.81.47.216|
 | Azure Public| южная часть Соединенного Королевства| 51.145.56.125|
 | Azure Public| Западная Индия| 40.81.89.24|
-| Azure Public| Восток США| 52.224.186.99|
+| Azure Public| Восточная часть США| 52.224.186.99|
 | Azure Public| Западная Европа| 51.145.179.78|
 | Azure Public| Восточная Япония| 52.140.238.179|
 | Azure Public| Центральная Франция| 40.66.60.111|
@@ -217,7 +217,7 @@ IP-адреса делятся на **среду Azure**. При разреше�
 | Azure Public| Центральная Канада| 52.139.20.34|
 | Azure Public| Республика Корея, южный регион| 40.80.232.185|
 | Azure Public| Центральная Индия| 13.71.49.1|
-| Azure Public| Запад США| 13.64.39.16|
+| Azure Public| западная часть США| 13.64.39.16|
 | Azure Public| Юго-Восточная часть Австралии| 20.40.160.107|
 | Azure Public| Центральная Австралия| 20.37.52.67|
 | Azure Public| Южная Индия| 20.44.33.246|

@@ -1,5 +1,6 @@
 ---
-title: Выбор правильного метода аутентификации для гибридного решения для идентификации Azure AD | Документация Майкрософт
+title: Проверка подлинности для решений гибридной идентификации Azure AD
+titleSuffix: Active Directory
 description: Это руководство поможет руководителям, директорам по ИТ, руководителям по информационной безопасности, старшим архитекторам по идентификации, корпоративным архитекторам и руководителям отделов безопасности и ИТ-отделов, ответственным за выбор метода аутентификации для своего гибридного решения для идентификации Azure AD в средних и крупных организациях.
 keywords: ''
 author: martincoetzer
@@ -9,12 +10,12 @@ ms.topic: article
 ms.service: security
 ms.subservice: security-fundamentals
 ms.workload: identity
-ms.openlocfilehash: 2865ce640389c0250f14a53088a94aff15ddf1c8
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: f32980b736232449d24de8721f354d9ca5dd03ab
+ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75460685"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77064433"
 ---
 # <a name="choose-the-right-authentication-method-for-your-azure-active-directory-hybrid-identity-solution"></a>Выбор правильного метода аутентификации для гибридного решения для идентификации Azure Active Directory
 
@@ -173,10 +174,10 @@ Azure AD поддерживает следующие методы аутенти
 
 |Рассматриваемый вопрос|Синхронизация хэша паролей и простой единый вход|Сквозная аутентификация и простой единый вход|Федерация с AD FS|
 |:-----|:-----|:-----|:-----|
-|Где происходит аутентификация?|В облаке|В облаке после безопасного обмена данными проверки пароля с локальным агентом аутентификации|Локальная среда|
-|Каковы требования к локальному серверу помимо системы подготовки (Azure AD Connect)?|Нет|Один сервер для каждого дополнительного агента аутентификации|Не менее двух серверов AD FS<br><br>Не менее двух WAP-серверов в сети периметра|
-|Каковы локальные требования к доступу к Интернету и сетевым подключениям помимо системы подготовки?|Нет|[Исходящий доступ к Интернету](../../active-directory/hybrid/how-to-connect-pta-quick-start.md) с серверов, где работают агенты аутентификации|[Входящий доступ к Интернету](https://docs.microsoft.com/windows-server/identity/ad-fs/overview/ad-fs-requirements) к WAP-серверам в сети периметра<br><br>Входящий сетевой доступ к серверам AD FS с WAP-серверов в сети периметра<br><br>Балансировка сетевой нагрузки|
-|Существует ли требование к SSL-сертификату?|Нет|Нет|Да|
+|Где происходит аутентификация?|В облаке|В облаке после безопасного обмена данными проверки пароля с локальным агентом аутентификации|В локальной среде|
+|Каковы требования к локальному серверу помимо системы подготовки (Azure AD Connect)?|None|Один сервер для каждого дополнительного агента аутентификации|Не менее двух серверов AD FS<br><br>Не менее двух WAP-серверов в сети периметра|
+|Каковы локальные требования к доступу к Интернету и сетевым подключениям помимо системы подготовки?|None|[Исходящий доступ к Интернету](../../active-directory/hybrid/how-to-connect-pta-quick-start.md) с серверов, где работают агенты аутентификации|[Входящий доступ к Интернету](https://docs.microsoft.com/windows-server/identity/ad-fs/overview/ad-fs-requirements) к WAP-серверам в сети периметра<br><br>Входящий сетевой доступ к серверам AD FS с WAP-серверов в сети периметра<br><br>Балансировка сетевой нагрузки|
+|Существует ли требование к SSL-сертификату?|нет|нет|Да|
 |Имеется ли решение для мониторинга работоспособности?|Не требуется|Состояние агента, предоставляемое [Центром администрирования Azure Active Directory](../../active-directory/hybrid/tshoot-connect-pass-through-authentication.md)|[Azure AD Connect Health](../../active-directory/hybrid/how-to-connect-health-adfs.md)|
 |Пользователи получают единый вход в облачные ресурсы с присоединенных к домену устройств в корпоративной сети?|Да, с [простым единым входом](../../active-directory/hybrid/how-to-connect-sso.md)|Да, с [простым единым входом](../../active-directory/hybrid/how-to-connect-sso.md)|Да|
 |Какие типы входа поддерживаются?|UserPrincipalName и пароль<br><br>Встроенная проверка подлинности Windows с помощью [простого единого входа](../../active-directory/hybrid/how-to-connect-sso.md)<br><br>[Альтернативный идентификатор входа](../../active-directory/hybrid/how-to-connect-install-custom.md)|UserPrincipalName и пароль<br><br>Встроенная проверка подлинности Windows с помощью [простого единого входа](../../active-directory/hybrid/how-to-connect-sso.md)<br><br>[Альтернативный идентификатор входа](../../active-directory/hybrid/how-to-connect-pta-faq.md)|UserPrincipalName и пароль<br><br>sAMAccountName и пароль<br><br>Встроенная проверка подлинности Windows<br><br>[Аутентификация с использованием сертификатов и смарт-карт](https://docs.microsoft.com/windows-server/identity/ad-fs/operations/configure-user-certificate-authentication)<br><br>[Альтернативный идентификатор входа](https://docs.microsoft.com/windows-server/identity/ad-fs/operations/configuring-alternate-login-id)|

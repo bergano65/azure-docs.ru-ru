@@ -9,14 +9,14 @@ ms.topic: tutorial
 ms.date: 09/05/2018
 ms.author: mbaldwin
 ms.custom: mvc
-ms.openlocfilehash: 52791719e518f6a6b1a4178d8b9a010f1db14fc4
-ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
+ms.openlocfilehash: 4078f2a005dcd324fa9c1d31cdca4b1f8337eecd
+ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2019
-ms.locfileid: "71003859"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76988385"
 ---
-# <a name="tutorial-use-azure-key-vault-with-a-windows-virtual-machine-in-python"></a>Руководство по Использование Azure Key Vault с виртуальной машиной Windows на языке Python
+# <a name="tutorial-use-azure-key-vault-with-a-windows-virtual-machine-in-python"></a>Руководство. Использование Azure Key Vault с виртуальной машиной Windows на языке Python
 
 Azure Key Vault помогает защитить секреты, такие как ключи API, строки подключения к базам данных, необходимые для доступа к приложениям, службам и ИТ-ресурсам.
 
@@ -39,7 +39,7 @@ Azure Key Vault помогает защитить секреты, такие к�
 ## <a name="prerequisites"></a>Предварительные требования
 
 Для Windows, Mac и Linux:
-  * [Git](https://git-scm.com/downloads)
+  * [Git](https://git-scm.com/downloads);
   * Для этого руководства требуется запустить Azure CLI локально. Необходимо установить Azure CLI версии 2.0.4 или более поздней. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо установить или обновить CLI, ознакомьтесь со статьей [Установка Azure CLI 2.0](https://review.docs.microsoft.com/cli/azure/install-azure-cli).
 
 ## <a name="about-managed-service-identity"></a>Основные сведения об MSI
@@ -136,7 +136,7 @@ az keyvault set-policy --name '<YourKeyVaultName>' --object-id <VMSystemAssigned
 
 ## <a name="create-and-run-a-sample-python-app"></a>Создание и запуск примера приложения Python
 
-В следующем разделе приведен пример файла с именем *Sample.py*. Он использует библиотеку [requests](http://docs.python-requests.org/en/master/) для выполнения вызовов HTTP GET.
+В следующем разделе приведен пример файла с именем *Sample.py*. Он использует библиотеку [requests](https://2.python-requests.org/en/master/) для выполнения вызовов HTTP GET.
 
 ## <a name="edit-samplepy"></a>Редактирование файла Sample.py
 
@@ -179,7 +179,7 @@ python Sample.py
 
 Удалите виртуальную машину и хранилище ключей, если они больше не нужны.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Справочник по REST API для Azure Key Vault](https://docs.microsoft.com/rest/api/keyvault/)

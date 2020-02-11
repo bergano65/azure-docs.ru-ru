@@ -16,12 +16,12 @@ ms.workload: infrastructure-services
 ms.date: 02/03/2020
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 42df2d24aad1465a200203e648feb97d4e96fd18
-ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
+ms.openlocfilehash: 8e5ea4bba693a6785dae4075da7b13154593bb4c
+ms.sourcegitcommit: cfbea479cc065c6343e10c8b5f09424e9809092e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76989830"
+ms.lasthandoff: 02/08/2020
+ms.locfileid: "77087367"
 ---
 # <a name="use-azure-to-host-and-run-sap-workload-scenarios"></a>Использование Azure для размещения и запуска сценариев рабочей нагрузки SAP
 
@@ -121,6 +121,7 @@ ms.locfileid: "76989830"
 
 ## <a name="change-log"></a>Журнал изменений
 
+- 02/07/2020: изменение [подключения к общедоступной конечной точке для виртуальных машин с помощью Azure Standard ilB в сценариях SAP Ha](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/high-availability-guide-standard-load-balancer-outbound-connections) для обновления примера снимка экрана NSG
 - 02/03/2020: измените [высокий уровень доступности SAP NW на виртуальных машинах Azure в SLES для приложений SAP](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/high-availability-guide-suse) и [высокий уровень доступности для SAP NW на виртуальных машинах Azure в SLES с использовании для приложений SAP](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/high-availability-guide-suse-netapp-files) , чтобы удалить предупреждение об использовании тире в именах узлов кластеров в SLES
 - 01/28/2020: изменение [высокого уровня доступности SAP HANA на виртуальных машинах Azure в RHEL](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/sap-hana-high-availability-rhel) для согласования времени ожидания ресурсов кластера SAP HANA с рекомендациями по времени ожидания Red Hat
 - 01/17/2020: измените в [группах размещения Azure с учетом расположения, чтобы обеспечить оптимальную задержку в сети с приложениями SAP](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/sap-proximity-placement-scenarios) , чтобы изменить раздел перемещения существующих виртуальных машин в группу размещения с учетом расположения.

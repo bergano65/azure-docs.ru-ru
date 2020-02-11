@@ -7,14 +7,14 @@ manager: bertvanhoof
 ms.service: digital-twins
 services: digital-twins
 ms.topic: conceptual
-ms.date: 12/12/2019
+ms.date: 02/07/2020
 ms.custom: seodec18
-ms.openlocfilehash: 7eeaadc80a97a96e6effdfc9e5cc76c201998f3f
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 1c83ca0abfd17db873bec62f0a0d052703862a45
+ms.sourcegitcommit: 9add86fb5cc19edf0b8cd2f42aeea5772511810c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75438064"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77110406"
 ---
 # <a name="create-and-manage-role-assignments-in-azure-digital-twins"></a>Создание назначений ролей и управление ими в Azure Digital Twins
 
@@ -36,7 +36,7 @@ ms.locfileid: "75438064"
 
 В таблице ниже описывается каждый атрибут.
 
-| attribute | Имя | Обязательно для заполнения | Тип | Description |
+| attribute | Имя | Обязательно | Тип | Description |
 | --- | --- | --- | --- | --- |
 | roleId | Идентификатор определения роли | Да | String | Уникальный идентификатор необходимого назначения ролей. Поиск определения ролей и их идентификаторов с помощью запроса API или проверки таблицы ниже. |
 | objectId | Идентификаторы объектов | Да | String | Идентификатор Azure Active Directory, идентификатор объекта субъекта-службы или доменное имя. Чему или кому назначается роль. Назначение ролей должно быть отформатировано в соответствии со связанным типом. Для objectIdType `DomainName` свойство objectId должно начинаться со знака `“@”`. |
@@ -94,7 +94,7 @@ Get-AzADServicePrincipal -ApplicationId <ApplicationId>
 
 Пользователь с ролью **Администратор** может затем назначить роль администратора пространства для пользователя, создав аутентифицированный запрос HTTP POST в URL-адресе.
 
-```plaintext
+```URL
 YOUR_MANAGEMENT_API_URL/roleassignments
 ```
 
@@ -116,7 +116,7 @@ YOUR_MANAGEMENT_API_URL/roleassignments
 
 Чтобы получить список всех доступных ролей (определений ролей), создайте аутентифицированный запрос HTTP GET.
 
-```plaintext
+```URL
 YOUR_MANAGEMENT_API_URL/system/roles
 ```
 
@@ -157,16 +157,16 @@ YOUR_MANAGEMENT_API_URL/system/roles
 
 Чтобы проверить конкретное назначение ролей, создайте аутентифицированный запрос HTTP GET.
 
-```plaintext
+```URL
 YOUR_MANAGEMENT_API_URL/roleassignments/check?userId=YOUR_USER_ID&path=YOUR_PATH&accessType=YOUR_ACCESS_TYPE&resourceType=YOUR_RESOURCE_TYPE
 ```
 
 | **Значение параметра** | **Обязательно** |  **Тип** |  **Описание** |
 | --- | --- | --- | --- |
-| YOUR_USER_ID |  Да | String |   Свойство objectId для objectIdType идентификатора пользователя. |
-| YOUR_PATH | Да | String |   Выбранный путь для проверки доступа. |
-| YOUR_ACCESS_TYPE |  Да | String |   *Чтение*, *Создание*, *Обновление*или *Удаление* |
-| YOUR_RESOURCE_TYPE | Да | String |  *Device*, *девицеблобметадата*, *девицеекстендедпроперти*, *екстендедпропертикэй*, *ExtendedType*, *Endpoint*, *хранилище ключей*, *Match*, *онтологи*, *отчет*, *определения роли*, *датчик*, *сенсорекстендедпроперти*, *пространство*, *SpaceBlobMetadata*, *SpaceExtendedProperty*, *SpaceResource*, *SpaceRoleAssignment*, *система*,  *Уердефинедфунктион*, *User*, *усерблобметадата*или *усерекстендедпроперти* |
+| YOUR_USER_ID |  True | String |   Свойство objectId для objectIdType идентификатора пользователя. |
+| YOUR_PATH | True | String |   Выбранный путь для проверки доступа. |
+| YOUR_ACCESS_TYPE |  True | String |   *Чтение*, *Создание*, *Обновление*или *Удаление* |
+| YOUR_RESOURCE_TYPE | True | String |  *Device*, *девицеблобметадата*, *девицеекстендедпроперти*, *екстендедпропертикэй*, *ExtendedType*, *Endpoint*, *хранилище ключей*, *Match*, *онтологи*, *отчет*, *определения роли*, *датчик*, *сенсорекстендедпроперти*, *пространство*, *SpaceBlobMetadata*, *SpaceExtendedProperty*, *SpaceResource*, *SpaceRoleAssignment*, *система*,  *Уердефинедфунктион*, *User*, *усерблобметадата*или *усерекстендедпроперти* |
 
 Успешный запрос возвращает логическое значение `true` или `false` для указания того, назначен ли тип доступа пользователю для данного пути и ресурса.
 
@@ -174,7 +174,7 @@ YOUR_MANAGEMENT_API_URL/roleassignments/check?userId=YOUR_USER_ID&path=YOUR_PATH
 
 Чтобы узнать все назначения ролей для пути, создайте аутентифицированный запрос HTTP GET.
 
-```plaintext
+```URL
 YOUR_MANAGEMENT_API_URL/roleassignments?path=YOUR_PATH
 ```
 
@@ -200,7 +200,7 @@ YOUR_MANAGEMENT_API_URL/roleassignments?path=YOUR_PATH
 
 Чтобы отозвать разрешение у получателя, удалите назначение роли, выполнив запрос HTTP DELETE с проверкой подлинности:
 
-```plaintext
+```URL
 YOUR_MANAGEMENT_API_URL/roleassignments/YOUR_ROLE_ASSIGNMENT_ID
 ```
 
@@ -214,7 +214,7 @@ YOUR_MANAGEMENT_API_URL/roleassignments/YOUR_ROLE_ASSIGNMENT_ID
 
 Чтобы создать назначение ролей, сделайте аутентифицированный запрос HTTP POST в URL-адресе.
 
-```plaintext
+```URL
 YOUR_MANAGEMENT_API_URL/roleassignments
 ```
 
@@ -236,7 +236,7 @@ YOUR_MANAGEMENT_API_URL/roleassignments
 "d92c7823-6e65-41d4-aaaa-f5b32e3f01b9"
 ```
 
-## <a name="configuration-examples"></a>Примеры конфигураций
+## <a name="configuration-examples"></a>Примеры конфигурации
 
 Следующие примеры демонстрируют, как настроить текст JSON в нескольких распространенных сценариях назначения ролей.
 

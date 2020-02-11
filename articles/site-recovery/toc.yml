@@ -437,7 +437,7 @@
       href: vmware-azure-disaster-recovery-powershell.md
     - name: Настройка аварийного восстановления виртуальных машин Hyper-V в Azure с помощью PowerShell
       href: hyper-v-azure-powershell-resource-manager.md
-    - name: Настройка аварийного восстановления виртуальных машин Hyper-V (с использованием VMM) в Azure с помощью PowerShell
+    - name: Настройка аварийного восстановления виртуальных машин Hyper-V (с использованием VMM) с помощью PowerShell
       href: hyper-v-vmm-powershell-resource-manager.md
     - name: Добавление модулей runbook службы автоматизации в планы восстановления
       href: site-recovery-runbook-automation.md

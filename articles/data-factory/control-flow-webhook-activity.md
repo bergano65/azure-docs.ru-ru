@@ -11,12 +11,12 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 03/25/2019
-ms.openlocfilehash: b2f7c35e6ddb3c6ed0a3032d7ea6d4c53043c17b
-ms.sourcegitcommit: 5a8c65d7420daee9667660d560be9d77fa93e9c9
+ms.openlocfilehash: 70c67a99274eaedc5592c7b90b1ef80a3a17acf8
+ms.sourcegitcommit: 9add86fb5cc19edf0b8cd2f42aeea5772511810c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74122911"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77110001"
 ---
 # <a name="webhook-activity-in-azure-data-factory"></a>Действие веб-перехватчика в фабрике данных Azure
 Действие веб-перехватчика можно использовать для управления выполнением конвейеров с помощью пользовательского кода. С помощью действия веб-перехватчика клиенты могут вызвать конечную точку и передать URL-адрес обратного вызова. Перед переходом к следующему действию конвейер выполняет ожидание вызова метода callback.
@@ -53,17 +53,63 @@ ms.locfileid: "74122911"
 
 
 
-Свойство | ОПИСАНИЕ | Допустимые значения | обязательные
+Свойство | Description | Допустимые значения | Обязательно
 -------- | ----------- | -------------- | --------
-Имя | Имя действия веб-перехватчика | Строка, | Yes |
-type | Необходимо задать для **веб-перехватчика**. | Строка, | Yes |
-метод | Метод REST API для целевой конечной точки. | Строка. Поддерживаемые типы: "POST" | Yes |
-url | Целевая конечная точка и путь | Строка (или выражение с типом результата "строка"). | Yes |
-headers | Заголовки, которые отправляются в запрос. Например, чтобы задать язык и тип запроса: "Headers": {"Accept-Language": "en-US", "Content-Type": "Application/JSON"}. | Строка (или выражение с типом результата "строка") | Да, требуется заголовок Content-type. "headers":{ "Content-Type":"application/json"} |
-body | Представляет полезные данные, отправляемые конечной точке. | Допустимый формат JSON (или выражение с типом resultType для JSON). Просмотрите схему полезных данных запроса в разделе [Схема полезных данных запроса](https://nam06.safelinks.protection.outlook.com/?url=https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fazure%2Fdata-factory%2Fcontrol-flow-web-activity%23request-payload-schema&amp;data=02%7C01%7Cshlo%40microsoft.com%7Cde517eae4e7f4f2c408d08d6b167f6b1%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C636891457414397501&amp;sdata=ljUZv5csQQux2TT3JtTU9ZU8e1uViRzuX5DSNYkL0uE%3D&amp;reserved=0). | Yes |
-Аутентификация | Метод проверки подлинности, используемый для вызова конечной точки. Поддерживаются следующие типы: "базовый" или "ClientCertificate". Дополнительные сведения см. в разделе [Проверка подлинности](https://nam06.safelinks.protection.outlook.com/?url=https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fazure%2Fdata-factory%2Fcontrol-flow-web-activity%23authentication&amp;data=02%7C01%7Cshlo%40microsoft.com%7Cde517eae4e7f4f2c408d08d6b167f6b1%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C636891457414397501&amp;sdata=GdA1%2Fh2pAD%2BSyWJHSW%2BSKucqoAXux%2F4L5Jgndd3YziM%3D&amp;reserved=0). Если проверка подлинности не требуется, исключите это свойство. | Строка (или выражение с типом результата "строка") | Нет |
-timeout | Время, в течение которого действие будет ожидать &#39;вызова&#39; каллбаккури. Время, в течение которого действие будет ожидать вызова "Каллбаккури". Значение по умолчанию — 10mins ("00:10:00"). Формат — TimeSpan, т. е. чч: мм: СС. | Строка, | Нет |
-Отчет о состоянии при обратном вызове | Разрешает пользователю сообщать о неудачном состоянии действия веб-перехватчика, которое помечает действие как неудачное | Логическое значение. | Нет |
+name | Имя действия веб-перехватчика | String | Да |
+type | Необходимо задать для **веб-перехватчика**. | String | Да |
+method | Метод REST API для целевой конечной точки. | Строка. Поддерживаемые типы: "POST" | Да |
+url | Целевая конечная точка и путь | Строка (или выражение с типом результата "строка"). | Да |
+Заголовки | Заголовки, которые отправляются в запрос. Например, чтобы задать язык и тип запроса: "Headers": {"Accept-Language": "en-US", "Content-Type": "Application/JSON"}. | Строка (или выражение с типом результата "строка") | Да, требуется заголовок Content-type. "headers":{ "Content-Type":"application/json"} |
+текст | Представляет полезные данные, отправляемые конечной точке. | Допустимый формат JSON (или выражение с типом resultType для JSON). Просмотрите схему полезных данных запроса в разделе [Схема полезных данных запроса](https://nam06.safelinks.protection.outlook.com/?url=https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fazure%2Fdata-factory%2Fcontrol-flow-web-activity%23request-payload-schema&amp;data=02%7C01%7Cshlo%40microsoft.com%7Cde517eae4e7f4f2c408d08d6b167f6b1%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C636891457414397501&amp;sdata=ljUZv5csQQux2TT3JtTU9ZU8e1uViRzuX5DSNYkL0uE%3D&amp;reserved=0). | Да |
+проверка подлинности | Метод проверки подлинности, используемый для вызова конечной точки. Поддерживаются следующие типы: "базовый" или "ClientCertificate". Дополнительные сведения см. в разделе [Проверка подлинности](https://nam06.safelinks.protection.outlook.com/?url=https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fazure%2Fdata-factory%2Fcontrol-flow-web-activity%23authentication&amp;data=02%7C01%7Cshlo%40microsoft.com%7Cde517eae4e7f4f2c408d08d6b167f6b1%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C636891457414397501&amp;sdata=GdA1%2Fh2pAD%2BSyWJHSW%2BSKucqoAXux%2F4L5Jgndd3YziM%3D&amp;reserved=0). Если проверка подлинности не требуется, исключите это свойство. | Строка (или выражение с типом результата "строка") | нет |
+timeout | Время, в течение которого действие будет ожидать &#39;вызова&#39; каллбаккури. Время, в течение которого действие будет ожидать вызова "Каллбаккури". Значение по умолчанию — 10mins ("00:10:00"). Формат — TimeSpan, т. е. чч: мм: СС. | String | нет |
+Отчет о состоянии при обратном вызове | Разрешает пользователю сообщать о неудачном состоянии действия веб-перехватчика, которое помечает действие как неудачное | Логическое | нет |
+
+## <a name="authentication"></a>Аутентификация
+
+Ниже приведены поддерживаемые типы проверки подлинности в действии веб-перехватчика.
+
+### <a name="none"></a>None
+
+Если проверка подлинности не требуется, не включайте свойство authentication.
+
+### <a name="basic"></a>Basic
+
+Укажите имя пользователя и пароль для использования с обычной проверкой подлинности.
+
+```json
+"authentication":{
+   "type":"Basic",
+   "username":"****",
+   "password":"****"
+}
+```
+
+### <a name="client-certificate"></a>Сертификат клиента
+
+Укажите содержимое в кодировке base64 PFX-файла и пароль.
+
+```json
+"authentication":{
+   "type":"ClientCertificate",
+   "pfx":"****",
+   "password":"****"
+}
+```
+
+### <a name="managed-identity"></a>Управляемое удостоверение
+
+Укажите URI ресурса, для которого маркер доступа будет запрошен с помощью управляемого удостоверения для фабрики данных. Для вызова API управления ресурсами Azure используйте `https://management.azure.com/`. Дополнительные сведения об управляемых удостоверениях для ресурсов Azure см. в статье [Что такое управляемые удостоверения для ресурсов Azure?](/azure/active-directory/managed-identities-azure-resources/overview)
+
+```json
+"authentication": {
+    "type": "MSI",
+    "resource": "https://management.azure.com/"
+}
+```
+
+> [!NOTE]
+> Если для фабрики данных настроен репозиторий Git, необходимо сохранить учетные данные в Azure Key Vault, чтобы использовать проверку подлинности "базовый" или "сертификат клиента". В службе "Фабрика данных Azure" не хранятся пароли в Git.
 
 ## <a name="additional-notes"></a>Дополнительные замечания
 
@@ -92,7 +138,7 @@ timeout | Время, в течение которого действие буд
 
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Ознакомьтесь с другими действиями потока управления, которые поддерживаются фабрикой данных:
 

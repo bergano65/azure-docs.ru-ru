@@ -3,22 +3,22 @@ title: Создание экземпляра общедоступного кли
 titleSuffix: Microsoft identity platform
 description: Узнайте, как создать общедоступное клиентское приложение с параметрами конфигурации с помощью библиотеки проверки подлинности Microsoft для .NET (MSAL.NET).
 services: active-directory
-author: TylerMSFT
+author: mmacy
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
 ms.workload: identity
 ms.date: 04/30/2019
-ms.author: twhitney
+ms.author: marsma
 ms.reviewer: saeeda
 ms.custom: aaddev
-ms.openlocfilehash: c07ffb77a838a91bd7eed4b9e40b39050450981c
-ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
+ms.openlocfilehash: 1dd06e139f931bbf8554f05f05c5d9b9ccf200e8
+ms.sourcegitcommit: cfbea479cc065c6343e10c8b5f09424e9809092e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76695506"
+ms.lasthandoff: 02/08/2020
+ms.locfileid: "77083595"
 ---
 # <a name="instantiate-a-public-client-application-with-configuration-options-using-msalnet"></a>Создание экземпляра общедоступного клиентского приложения с параметрами конфигурации с помощью MSAL.NET
 

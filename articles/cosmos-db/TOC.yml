@@ -494,6 +494,8 @@
           href: javascript-query-api.md
     - name: Оптимизация затрат на Azure Cosmos DB
       items:
+        - name: Планирование затрат и управление ими
+          href: plan-manage-costs.md
         - name: Модель ценообразования
           href: how-pricing-works.md
         - name: Совокупная стоимость владения
@@ -1047,6 +1049,9 @@
           href: 'https://github.com/hdinsight/hdinsight-storm-examples/blob/master/IotExample/README.md'
         - name: Использование начального приложения Spring Boot
           href: /java/azure/spring-framework/configure-spring-boot-starter-java-app-with-cosmos-db
+          maintainContext: true
+        - name: Руководство для разработчиков Spring Data
+          href: /java/azure/spring-framework/how-to-guides-spring-data-cosmosdb
           maintainContext: true
         - name: Драйвер ODBC
           href: odbc-driver.md

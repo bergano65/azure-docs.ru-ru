@@ -7,12 +7,12 @@ ms.reviewer: mblythe
 ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 07/10/2019
-ms.openlocfilehash: ba21ec6ba82ac4984d3c51fc46f88de2cd56b2b2
-ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
+ms.openlocfilehash: 83902ea5a3e73603311a0c469126ed603d0ebd16
+ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68933690"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77064875"
 ---
 # <a name="use-a-jupyter-notebook-and-kqlmagic-extension-to-analyze-data-in-azure-data-explorer"></a>Использование расширения Jupyter Notebook и Кклмагик для анализа данных в Azure обозреватель данных
 
@@ -79,7 +79,7 @@ StormEvents
 
 ### <a name="customize-the-chart-colors"></a>Настройка цветов диаграммы
 
-Если вам не нравится палитра цветов по умолчанию, настройте цвета диаграммы, используя параметры палитры. Доступные палитры можно найти здесь: [Kqlmagic — palette features](https://mybinder.org/v2/gh/Microsoft/jupyter-Kqlmagic/master?filepath=notebooks%2FColorYourCharts.ipynb) (Функции палитры Kqlmagic)
+Если вам не нравится палитра цветов по умолчанию, настройте цвета диаграммы, используя параметры палитры. Доступные палитры можно найти здесь: [Выбор палитры цветов для результата в диаграмме запроса Magic ККЛ](https://mybinder.org/v2/gh/Microsoft/jupyter-Kqlmagic/master?filepath=notebooks%2FColorYourCharts.ipynb)
 
 1. Для списка палитр:
 
@@ -100,7 +100,7 @@ StormEvents
 
 ## <a name="parameterize-a-query-with-python"></a>Параметризация запроса с помощью Python
 
-Магическая команда KQL позволяет выполнять простой обмен между языком запросов Kusto и Python. Чтобы получить дополнительные сведения, обратитесь к разделу [Kqlmagic — parametrization features](https://mybinder.org/v2/gh/Microsoft/jupyter-Kqlmagic/master?filepath=notebooks%2FParametrizeYourQuery.ipynb) (Функции параметризации Kqlmagic)
+Магическая команда KQL позволяет выполнять простой обмен между языком запросов Kusto и Python. Дополнительные сведения: [параметризация запроса Magic ККЛ с помощью Python](https://mybinder.org/v2/gh/Microsoft/jupyter-Kqlmagic/master?filepath=notebooks%2FParametrizeYourQuery.ipynb)
 
 ### <a name="use-a-python-variable-in-your-kql-query"></a>Использование переменной Python в запросе KQL
 
@@ -168,9 +168,9 @@ df.head(10)
     ```
 
 > [!TIP]
-> Для получения сведений обо всех доступных конфигурациях `%config KQLmagic`используйте. Для устранения неполадок и записи ошибок Kusto, таких как проблемы подключения и неправильные запросы, используйте`%config Kqlmagic.short_errors=False`
+> Чтобы получить сведения обо всех доступных конфигурациях, используйте `%config Kqlmagic`. Для устранения неполадок и записи ошибок Kusto, таких как проблемы подключения и неправильные запросы, используйте `%config Kqlmagic.short_errors=False`
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Выполните команду help, чтобы изучить следующие примеры записных книжек, которые содержат все поддерживаемые функции.
 - [Kqlmagic Quick Start](https://mybinder.org/v2/gh/Microsoft/jupyter-Kqlmagic/master?filepath=notebooks%2FQuickStart.ipynb) (Краткое руководство по Kqlmagic) 

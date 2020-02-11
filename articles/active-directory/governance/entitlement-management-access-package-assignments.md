@@ -16,12 +16,12 @@ ms.date: 10/15/2019
 ms.author: ajburnle
 ms.reviewer: ''
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0501da153567f3b95804d8a8a6576d8cf199762c
-ms.sourcegitcommit: 428fded8754fa58f20908487a81e2f278f75b5d0
+ms.openlocfilehash: d5a2107974cd63c0d02aaeb555430453c39990bd
+ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2019
-ms.locfileid: "74553990"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77120428"
 ---
 # <a name="view-add-and-remove-assignments-for-an-access-package-in-azure-ad-entitlement-management"></a>Просмотр, Добавление и удаление назначений для пакета Access в управлении назначением Azure AD
 
@@ -48,6 +48,10 @@ ms.locfileid: "74553990"
 1. Чтобы просмотреть просроченные назначения, щелкните состояние фильтра и выберите **срок действия истек**.
 
 1. Чтобы скачать CSV-файл отфильтрованного списка, нажмите кнопку **скачать**.
+
+### <a name="viewing-assignments-programmatically"></a>Просмотр назначений программными средствами
+
+Назначения в пакете Access также можно получить с помощью Microsoft Graph.  Пользователь в соответствующей роли с приложением с делегированным `EntitlementManagement.ReadWrite.All` разрешением может вызвать API для [перечисления акцесспаккажеассигнментс](https://docs.microsoft.com/graph/api/accesspackageassignment-list?view=graph-rest-beta).
 
 ## <a name="directly-assign-a-user"></a>Непосредственное назначение пользователя
 
@@ -76,6 +80,10 @@ ms.locfileid: "74553990"
 1. Нажмите кнопку **Добавить** , чтобы напрямую назначить выбранных пользователей пакету доступа.
 
     Через несколько секунд нажмите кнопку " **Обновить** ", чтобы увидеть пользователей в списке назначений.
+
+### <a name="directly-assigning-users-programmatically"></a>Прямое назначение пользователей программным способом
+
+Можно также напрямую назначить пользователя пакету доступа с помощью Microsoft Graph.  Пользователь в соответствующей роли с приложением с делегированным `EntitlementManagement.ReadWrite.All` разрешением может вызвать API для [создания акцесспаккажеассигнментрекуест](https://docs.microsoft.com/graph/api/accesspackageassignmentrequest-post?view=graph-rest-beta).
 
 ## <a name="remove-an-assignment"></a>Удаление назначения
 

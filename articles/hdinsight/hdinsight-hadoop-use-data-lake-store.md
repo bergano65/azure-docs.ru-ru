@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: 309af904f0dbfc0664c4341803cb6a4dc8a2c8a4
-ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
+ms.openlocfilehash: 23c292a950deea262ee063b4141b07a4f64f9f84
+ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73839282"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77061334"
 ---
 # <a name="use-data-lake-storage-gen1-with-azure-hdinsight-clusters"></a>Использование Data Lake Storage 1-го поколения с кластерами Azure HDInsight
 
@@ -42,12 +42,12 @@ ms.locfileid: "73839282"
 
 | Тип кластера HDInsight | Использование Data Lake Storage 1-го поколения как хранилища по умолчанию | Использование Data Lake Storage 1-го поколения как дополнительного хранилища| Примечания |
 |------------------------|------------------------------------|---------------------------------------|------|
-| HDInsight версии 4,0 | Нет | Нет |ADLS 1-го поколения не поддерживается в HDInsight 4,0 |
+| HDInsight версии 4,0 | нет | нет |ADLS 1-го поколения не поддерживается в HDInsight 4,0 |
 | HDInsight версии 3.6 | Да | Да | За исключением HBase|
 | HDInsight версии 3.5 | Да | Да | За исключением HBase|
-| HDInsight версия 3.4 | Нет | Да | |
-| HDInsight версии 3.3 | Нет | Нет | |
-| HDInsight версии 3.2 | Нет | Да | |
+| HDInsight версия 3.4 | нет | Да | |
+| HDInsight версии 3.3 | нет | нет | |
+| HDInsight версии 3.2 | нет | Да | |
 | Storm | | |Data Lake Storage 1-го поколения можно использовать для записи данных из топологии Storm. Data Lake Storage также может использоваться для хранения эталонных данных, которые затем можно будет считать с помощью топологии Storm.|
 
 > [!WARNING]  
@@ -108,13 +108,13 @@ New-AzResourceGroupDeployment `
 
 ## <a name="use-data-lake-storage-gen1-as-additional-storage"></a>Использование Data Lake Storage 1-го поколения как дополнительного хранилища
 
-Data Lake Storage 1-го поколения можно использовать в качестве дополнительного хранилища кластера. В таких случаях хранилищем кластера по умолчанию может быть Azure Storage Blob или учетная запись Data Lake Storage. Если вы запускаете задания HDInsight для данных, хранящихся в Data Lake Storage в качестве дополнительного хранилища, необходимо использовать полный путь к файлам. Например:
+Data Lake Storage 1-го поколения можно использовать в качестве дополнительного хранилища кластера. В таких случаях хранилищем кластера по умолчанию может быть Azure Storage Blob или учетная запись Data Lake Storage. Если вы запускаете задания HDInsight для данных, хранящихся в Data Lake Storage в качестве дополнительного хранилища, необходимо использовать полный путь к файлам. Пример:
 
     adl://mydatalakestore.azuredatalakestore.net/<file_path>
 
 Обратите внимание, что в этом URL-адресе нет **cluster_root_path**. Это связано с тем, что Data Lake Storage не является хранилищем по умолчанию в данном случае, поэтому достаточно указать путь к файлам.
 
-Чтобы использовать Data Lake Storage 1-го поколения как дополнительное хранилище, достаточно предоставить субъекту-службе доступ к расположениям, в которых хранятся файлы.  Например:
+Чтобы использовать Data Lake Storage 1-го поколения как дополнительное хранилище, достаточно предоставить субъекту-службе доступ к расположениям, в которых хранятся файлы.  Пример:
 
     adl://mydatalakestore.azuredatalakestore.net/<file_path>
 
@@ -210,7 +210,7 @@ LOCATION 'adl:///example/data/';
 LOCATION '/example/data/';
 ```
 
-## <a name="identify-storage-path-from-abmari"></a>Указание пути к хранилищу из Абмари
+## <a name="identify-storage-path-from-ambari"></a>Указание пути к хранилищу из Ambari
 
 Чтобы указать полный путь к настроенному хранилищу по умолчанию, перейдите к **HDFS** > **configs** и введите `fs.defaultFS` в поле ввода фильтра.
 
@@ -301,7 +301,7 @@ Invoke-AzResourceAction `
 
 Из этой статьи вы узнали, как использовать HDFS-совместимую службу Azure Data Lake Storage 1-го поколения с HDInsight. Это позволяет создавать масштабируемые, долгосрочные решения для получения данных архивирования, а также использовать HDInsight для разблокирования информации внутри хранимых структурированных и неструктурированных данных.
 
-Дополнительные сведения можно найти в разделе
+Дополнительные сведения см. в разделе:
 
 * [Приступая к работе с Azure HDInsight](hadoop/apache-hadoop-linux-tutorial-get-started.md)
 * [Краткое руководство по установке кластеров в HDInsight](../storage/data-lake-storage/quickstart-create-connect-hdi-cluster.md)

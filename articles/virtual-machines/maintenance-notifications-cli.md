@@ -1,20 +1,18 @@
 ---
-title: Получение уведомлений об обслуживании для виртуальных машин Azure с помощью интерфейса командной строки
+title: Получение уведомлений об обслуживании с помощью интерфейса командной строки
 description: Просмотрите уведомления об обслуживании для виртуальных машин, работающих в Azure, и запустите самостоятельное обслуживание с помощью Azure CLI.
-services: virtual-machines
 author: shants123
-tags: azure-service-management,azure-resource-manager
 ms.service: virtual-machines
 ms.workload: infrastructure-services
 ms.topic: article
 ms.date: 11/19/2019
 ms.author: shants
-ms.openlocfilehash: 3c75adc2bf5974c1bce9f05306342068396ae62b
-ms.sourcegitcommit: 85e7fccf814269c9816b540e4539645ddc153e6e
+ms.openlocfilehash: 5750d7cc6219714849aaf3e47b23708b54eefab1
+ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74535864"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77115724"
 ---
 # <a name="handling-planned-maintenance-notifications-using-the-azure-cli"></a>Обработка уведомлений о плановом обслуживании с помощью Azure CLI
 

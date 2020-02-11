@@ -3,12 +3,12 @@ title: Обзор Azure Resource Graph
 description: Узнайте, как служба Azure Resource Graph позволяет выполнять сложные запросы ресурсов в нужном масштабе в подписках и клиентах.
 ms.date: 10/21/2019
 ms.topic: overview
-ms.openlocfilehash: 301543075d587079af0f53b6200890a75bfbb768
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.openlocfilehash: 1e84de19d35f0c5f5d7975c8a94d5164100013e4
+ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75965977"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76936519"
 ---
 # <a name="what-is-azure-resource-graph"></a>Что такое Azure Resource Graph?
 
@@ -25,7 +25,7 @@ Azure Resource Graph — это служба в Azure, призванная р�
 > Azure Resource Graph обеспечивает работу панели поиска портала Azure, новой возможности обзора "Все ресурсы", а также _отличия визуальных элементов_[Изменение журнала](../policy/how-to/determine-non-compliance.md#change-history-preview) политики Azure
 > . Этот компонент предназначен для клиентов, которым нужно управлять масштабными средами.
 
-[!INCLUDE [service-provider-management-toolkit](../../../includes/azure-lighthouse-supported-service.md)]
+[!INCLUDE [azure-lighthouse-supported-service](../../../includes/azure-lighthouse-supported-service.md)]
 
 ## <a name="how-does-resource-graph-complement-azure-resource-manager"></a>Как Azure Resource Graph дополняет Azure Resource Manager
 

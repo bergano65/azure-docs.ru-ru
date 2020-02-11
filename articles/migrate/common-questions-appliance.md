@@ -3,12 +3,12 @@ title: Часто задаваемые вопросы об устройстве 
 description: Получите ответы на часто задаваемые вопросы об устройстве миграции Azure
 ms.topic: conceptual
 ms.date: 11/21/2019
-ms.openlocfilehash: c9727287160f996059e9c1fb2d1fb5aec5900ab5
-ms.sourcegitcommit: 7221918fbe5385ceccf39dff9dd5a3817a0bd807
+ms.openlocfilehash: de9583b7983dda904e06ea258ecb0d202644586b
+ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/21/2020
-ms.locfileid: "76292338"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77064705"
 ---
 # <a name="azure-migrate-appliance-common-questions"></a>Устройство для миграции Azure: распространенные вопросы
 
@@ -16,6 +16,7 @@ ms.locfileid: "76292338"
 
 - [Общие вопросы](resources-faq.md) о службе "миграция Azure".
 - [Вопросы](common-questions-discovery-assessment.md) об обнаружении, оценке и визуализации зависимостей.
+- [Вопросы](common-questions-server-migration.md) о миграции сервера.
 
 
 ## <a name="what-is-the-azure-migrate-appliance"></a>Что такое устройство миграции Azure?

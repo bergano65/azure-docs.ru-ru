@@ -14,12 +14,12 @@ ms.subservice: users-groups-roles
 ms.custom: it-pro
 ms.reviewer: martincoetzer; MarkMorow
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c5f36e82c2ff95800a058f56f9cc6b80ddf02dbf
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.openlocfilehash: 1c46facb2d43137175730bf04fea0efec9c1ecbd
+ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75967712"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77063855"
 ---
 # <a name="securing-privileged-access-for-hybrid-and-cloud-deployments-in-azure-ad"></a>Защита привилегированного доступа для гибридных и облачных развертываний в Azure AD
 
@@ -298,7 +298,7 @@ Azure AD PIM входит в состав Azure AD Premium P2 и EMS E5. Эти 
 
 #### <a name="implement-user-provisioning-for-connected-apps"></a>Реализация подготовки пользователей для подключенных приложений
 
-Служба Azure AD предоставляет возможность автоматизировать процесс создания, обслуживания и удаления удостоверений пользователей в облачных приложениях (SaaS), таких как Dropbox, Salesforce, ServiceNow и другие. Дополнительные сведения см. в статье [Автоматическая подготовка пользователей и ее отзыв для приложений SaaS в Azure Active Directory](../manage-apps/user-provisioning.md).
+Служба Azure AD предоставляет возможность автоматизировать процесс создания, обслуживания и удаления удостоверений пользователей в облачных приложениях (SaaS), таких как Dropbox, Salesforce, ServiceNow и другие. Дополнительные сведения см. в статье [Автоматическая подготовка пользователей и ее отзыв для приложений SaaS в Azure Active Directory](../app-provisioning/user-provisioning.md).
 
 #### <a name="integrate-information-protection"></a>Интеграция Information Protection
 

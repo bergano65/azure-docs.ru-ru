@@ -1,5 +1,5 @@
 ---
-title: Руководство по Создание приложения Flask для перевода, синтеза и анализа текста. API Перевода текстов
+title: Руководство. Создание приложения Flask для перевода, синтеза и анализа текста. API Перевода текстов
 titleSuffix: Azure Cognitive Services
 description: В этом руководстве описано, как создать веб-приложение на основе Flask для перевода текста, анализа тональности и синтеза речи на основе переведенного текста.
 services: cognitive-services
@@ -10,14 +10,14 @@ ms.subservice: translator-text
 ms.topic: tutorial
 ms.date: 12/09/2019
 ms.author: swmachan
-ms.openlocfilehash: 5e19e4247e58135c6a9bb7c6cc327cb566d294df
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.openlocfilehash: 0075862e198ce67cc7367efe94d624ad18e6eb3b
+ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74978464"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76984173"
 ---
-# <a name="tutorial-build-a-flask-app-with-azure-cognitive-services"></a>Руководство по Создание приложения Flask в Azure Cognitive Services
+# <a name="tutorial-build-a-flask-app-with-azure-cognitive-services"></a>Руководство. Создание приложения Flask в Azure Cognitive Services
 
 В этом руководстве описано, как создать веб-приложение Flask, которое использует Azure Cognitive Services для перевода текста, анализа тональности и синтеза речи на основе переведенного текста. Здесь описаны код Python и маршруты Flask, которые потребуются нашему приложению, а также приведены сведения о создании кода HTML и JavaScript, которые собирают приложение воедино. Если вы столкнетесь с проблемами, сообщите нам об этом с помощью расположенной ниже кнопки обратной связи.
 
@@ -61,7 +61,7 @@ Flask — это микроплатформа для создания веб-п
 Как упоминалось ранее, в этом руководстве вам потребуются три ключа подписки. Это означает, что в учетной записи Azure следует создать ресурсы для следующих служб:
 * Перевод текстов
 * Анализ текста
-* Службы распознавания речи
+* Службы "Речь"
 
 В руководстве по [созданию учетной записи Cognitive Services на портале Azure](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) приведены пошаговые инструкции по созданию ресурсов.
 
@@ -103,7 +103,7 @@ Flask — это микроплатформа для создания веб-п
 
 2. Команды для активации виртуального окружения будут разными в зависимости от платформы или оболочки:   
 
-   | платформа | Оболочка | Команда |
+   | Платформа | Оболочка | Get-Help |
    |----------|-------|---------|
    | Mac OS и Linux | bash/zsh | `source venv/bin/activate` |
    | Windows | bash | `source venv/Scripts/activate` |
@@ -128,7 +128,7 @@ Flask — это микроплатформа для создания веб-п
    ```
 
 > [!NOTE]
-> Если вам нужны дополнительные сведения, воспользуйтесь статьей [Requests: HTTP for Humans](http://docs.python-requests.org/en/master/) (Модуль Requests: HTTP с человеческим лицом).
+> Если вам нужны дополнительные сведения, воспользуйтесь статьей [Requests: HTTP for Humans](https://2.python-requests.org/en/master/) (Модуль Requests: HTTP с человеческим лицом).
 
 ### <a name="install-and-configure-flask"></a>Установка и настройка Flask
 
@@ -476,7 +476,7 @@ flask run
 
 [API Анализа текста](https://docs.microsoft.com/azure/cognitive-services/text-analytics/overview) позволяет выполнять анализ тональности, извлекать из текста ключевые фразы и определять исходный язык. В этом приложении мы применим анализ тональности для предоставленного текста и определим, является ли он положительным, негативным или нейтральным. API возвращает числовую оценку в диапазоне от 0 до 1. Оценки, близкие к 1, указывают на позитивную тональность, а оценки, близкие к 0, — на негативную.
 
-В этом разделе мы выполним следующие действия:
+В этом разделе мы сделаем следующее:
 
 * напишем код Python, который вызывает API Анализа текста для анализа тональности и возвращает ответ;
 * создадим маршрут Flask для вызова этого кода Python;
@@ -959,7 +959,7 @@ flask run
 
 Исходный код этого проекта доступен на [GitHub](https://github.com/MicrosoftTranslator/Text-Translation-API-V3-Flask-App-Tutorial).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Справочник по API перевода текстов](https://docs.microsoft.com/azure/cognitive-services/Translator/reference/v3-0-reference)
 * [Справочник по API анализа текста](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics.V2.0/operations/56f30ceeeda5650db055a3c7)

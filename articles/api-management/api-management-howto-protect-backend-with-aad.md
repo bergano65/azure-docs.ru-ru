@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 05/21/2019
 ms.author: apimpm
-ms.openlocfilehash: 771257df12ee29c2bc8d32672c8e8b7d039a96ba
-ms.sourcegitcommit: 5bbe87cf121bf99184cc9840c7a07385f0d128ae
+ms.openlocfilehash: cbcd3d27da3aff66e1dc6758af8a573666c0bbbe
+ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76120815"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77121397"
 ---
 # <a name="protect-an-api-by-using-oauth-20-with-azure-active-directory-and-api-management"></a>Защита API с помощью протокола OAuth 2.0 и службы управления API в Azure Active Directory
 
@@ -27,7 +27,7 @@ ms.locfileid: "76120815"
 > [!NOTE]
 > Эта функция доступна на уровнях **Developer**, **Standard** и **Premium** интерфейса управления API.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 Чтобы выполнить шаги в этой статье, необходимо иметь следующее:
 * Экземпляр управления API.
 * Публикуемый API, использующий экземпляр управления API (APIM).
@@ -47,7 +47,7 @@ ms.locfileid: "76120815"
 
 Первым шагом в защите API в Azure Active Directory является регистрация приложения в Azure Active Directory, которое представляет API. 
 
-1. Перейдите в [портал Azure](https://portal.azure.com) , чтобы зарегистрировать приложение. Найдите и выберите **регистрации API**.
+1. Перейдите в [портал Azure](https://portal.azure.com) , чтобы зарегистрировать приложение. Найдите и выберите **Регистрация приложений**.
 
 1. Выберите **Новая регистрация**. 
 

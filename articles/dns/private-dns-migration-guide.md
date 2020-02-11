@@ -3,17 +3,17 @@ title: Перенос устаревших частных зон Azure DNS на 
 titleSuffix: Azure DNS
 description: Это руководство предоставляет пошаговые инструкции по переносу устаревших частных зон DNS на последнюю модель ресурсов
 services: dns
-author: asudbring
+author: rohinkoul
 ms.service: dns
 ms.topic: tutorial
 ms.date: 06/18/2019
-ms.author: allensu
-ms.openlocfilehash: 3beac014ee69120df518e0358a5fdbef5818f7cf
-ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
+ms.author: rohink
+ms.openlocfilehash: d29885104d6f39a17b5bdeb786cda8f56f58d987
+ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74076727"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76939351"
 ---
 # <a name="migrating-legacy-azure-dns-private-zones-to-new-resource-model"></a>Перенос устаревших частных зон Azure DNS на новую модель ресурсов
 
@@ -55,7 +55,7 @@ install-script PrivateDnsMigrationScript
 >[!IMPORTANT]
 >Скрипт миграции не должен запускаться в Azure Cloud Shell, а должен выполняться на виртуальной машине или на локальном компьютере, подключенном к Интернету.
 
-## <a name="running-the-script"></a>Запуск сценария
+## <a name="running-the-script"></a>Запуск скрипта
 
 Выполните следующую команду, чтобы запустить сценарий:
 
@@ -63,7 +63,7 @@ install-script PrivateDnsMigrationScript
 PrivateDnsMigrationScript.ps1
 ```
 
-![Запуск сценария](./media/private-dns-migration-guide/running-migration-script.png)
+![Запуск скрипта](./media/private-dns-migration-guide/running-migration-script.png)
 
 ### <a name="enter-the-subscription-id-and-sign-in-to-azure"></a>Ввод идентификатора подписки и вход в Azure
 
@@ -116,7 +116,7 @@ PrivateDnsMigrationScript.ps1
 
 Если необходимо получить дополнительную помощь в процессе переноса или по какой-либо причине перечисленные выше шаги не помогли, создайте запрос в службу поддержки. Приложите файл расшифровку, созданный с помощью сценария PowerShell, к вашему запросу в службу поддержки.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Узнайте, как создать частную зону в Azure DNS с помощью [Azure PowerShell](./private-dns-getstarted-powershell.md) или [интерфейса командной строки Azure](./private-dns-getstarted-cli.md).
 

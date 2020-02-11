@@ -1,20 +1,19 @@
 ---
 title: 'Мониторинг: журналы Azure Monitor для Apache Ambari & — Azure HDInsight'
 description: Узнайте, как использовать журналы Ambari и Azure Monitor для мониторинга работоспособности и доступности кластера.
-keywords: мониторинг, ambari, мониторинг, log Analytics, оповещение, доступность, работоспособность
 author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: hdinsightactive
-ms.date: 11/25/2019
-ms.openlocfilehash: a21610fefcfe1632dffbfd8e055497476f7e59c1
-ms.sourcegitcommit: 48b7a50fc2d19c7382916cb2f591507b1c784ee5
+ms.date: 02/06/2020
+ms.openlocfilehash: 383366fa3e436c79bed28a7c47f1e9daa5f0d9de
+ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74687821"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77060186"
 ---
 # <a name="how-to-monitor-cluster-availability-with-apache-ambari-and-azure-monitor-logs"></a>Как отслеживать доступность кластера с помощью Apache Ambari и журналов Azure Monitor
 
@@ -24,7 +23,7 @@ ms.locfileid: "74687821"
 
 ## <a name="ambari"></a>Ambari
 
-### <a name="dashboard"></a>панель мониторинга
+### <a name="dashboard"></a>Панель мониторинга
 
 Доступ к панели мониторинга Ambari можно получить, перейдя по ссылке **Ambari** в разделе **панели мониторинга кластера** в обзоре HDInsight в портал Azure, как показано ниже. Кроме того, доступ к нему можно получить, перейдя к `https://CLUSTERNAME.azurehdinsight.net` в браузере, где ИМЯ_КЛАСТЕРА — это имя кластера.
 
@@ -58,7 +57,7 @@ Ambari также предлагает несколько настраиваем
 
 Ambari предлагает множество стандартных предупреждений, относящихся к доступности, в том числе:
 
-| Имя оповещения                        | Описание   |
+| Имя предупреждения                        | Description   |
 |---|---|
 | Сводка по работоспособности узла           | Это предупреждение уровня обслуживания активируется при наличии неработоспособных узлов с данным|
 | Работоспособность высокой доступности NameNode | Это предупреждение уровня обслуживания активируется, если не запущены активные NameNode или резервные NameNode.|
@@ -96,9 +95,9 @@ Ambari предлагает множество стандартных преду
 
 ### <a name="enable-hdinsight-azure-monitor-logs-integration"></a>Включение интеграции журналов Azure Monitor HDInsight
 
-На портале на странице ресурсов кластера HDInsight выберите **Operations Management Suite**. Затем выберите **включить** и выберите рабочую область log Analytics в раскрывающемся списке.
+На портале на странице ресурсов кластера HDInsight выберите **Azure Monitor**. Затем выберите **включить** и выберите рабочую область log Analytics в раскрывающемся списке.
 
-![HDInsight Operations Management Suite](media/hdinsight-cluster-availability/hdi-portal-oms-enable.png)
+![HDInsight Operations Management Suite](media/hdinsight-cluster-availability/azure-portal-monitoring.png)
 
 ### <a name="query-metrics-and-logs-tables"></a>Таблицы метрик и журналов запросов
 
@@ -108,7 +107,7 @@ Ambari предлагает множество стандартных преду
 
 В журнале перечислены некоторые примеры запросов, например:
 
-| Имя запроса                      | Описание                                                               |
+| Имя запроса                      | Description                                                               |
 |---------------------------------|---------------------------------------------------------------------------|
 | Доступность компьютеров сегодня    | Диаграмма количество компьютеров, отправляющих журналы, каждый час                     |
 | Вывод списка пульсов                 | Перечислить все пакеты пульса компьютера за последний час                           |

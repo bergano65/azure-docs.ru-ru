@@ -7,12 +7,12 @@ ms.service: expressroute
 ms.topic: conceptual
 ms.date: 11/05/2019
 ms.author: sukishen
-ms.openlocfilehash: 39535a895dd0ec4a851f0576acf8696ae99e3259
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: e61e0477e6687dd54713deea03e2b42774edf0bc
+ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75454218"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77059748"
 ---
 # <a name="about-azure-networking-msp-partners"></a>Сведения о партнерах по сети MSP Azure
 
@@ -43,11 +43,13 @@ Azure Networking MSP — это специализированный набор 
 |[Телекоммуникации маккуарие](https://macquariecloudservices.com/azure-managed-services/)|[Маккуарие облачных служб: 2 — семинар по персоналу](https://azuremarketplace.microsoft.com/en-us/marketplace/consulting-services/macquariecloudservices.clear_for_takeoff_consulting_service)||[SD-установка Virtual ребро с помощью Маккуарие Cloud](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/macquariecloudservices.nanaged_network_services?tab=Overview)|||
 |[Облачные службы oncore]( https://www.oncore.cloud/services/ue-for-expressroute/)||[Универсаледже для Azure ExpressRoute](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/oncore_cloud_services-4944214.universaledge_for_expressroute?tab=Overview)||||
 |[орикском]( https://www.orixcom.com/cloud-solutions/)|||[Орикском SD-WAN](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/orixcom.orixcom_sd_wan?tab=Overview)|||
+|[SoftBank]( https://www.softbank.jp/biz/nw/nwp/cloud_access/direct_access_for_az/)|[Служба консалтинга в сети Azure: 1 — Wkная Оценка](https://azuremarketplace.microsoft.com/en-us/marketplace/consulting-services/sbmpn.softbank_nw_msp_service_azure); [Служба оценки Azure: 1Week](https://azuremarketplace.microsoft.com/en-us/marketplace/consulting-services/sbmpn.softbank_msp_service_azure_01?tab=Overview&pub_source=email&pub_status=success)|||||
 |[тктс](https://www.tatacommunications-ts.com/index.php)|[Миграция Azure: Оценка за 3 недели](https://azuremarketplace.microsoft.com/en-us/marketplace/consulting-services/tcs.azure_migration_assessment)|||||
-|[вандис](https://www.vandis.com/microsoft-azure-practice/)||[Вандис Managed ExpressRoute](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/vandis.vandis_managed_expressroute?tab=Overview)|[Вандис управляемый вван на базе Fortinet](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/vandis.vandis_managed_vwan_powered_by_fortinet?tab=Overview); [Вандис Managed вван на базе Palo Alto Networks](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/vandis.vandis_managed_vwan_powered_by_palo_alto_networks?tab=Overview)|||
+|[Tata связь](https://www.tatacommunications.com/about/our-alliances/microsoft-alliance/)||[Управляемый Azure ExpressRoute](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/tata_communications.managed_expressroute?tab=Overview)|[Управляемая Виртуальная глобальная сеть](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/tata_communications.managed_azure_vwan_for_sdwan?tab=Overview)|||
 |[Бдительным ИТ](https://vigilant.it/manage-cloud-service/)|[Проверка работоспособности Azure: 5-дневная оценка](https://azuremarketplace.microsoft.com/en-us/marketplace/consulting-services/vigilant-it.ahc01)|[ExpressRoute: реализация на 5 дней](https://azuremarketplace.microsoft.com/en-us/marketplace/consulting-services/vigilant-it.erd01)|||
+|[вандис](https://www.vandis.com/microsoft-azure-practice/)||[Вандис Managed ExpressRoute](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/vandis.vandis_managed_expressroute?tab=Overview)|[Вандис управляемый вван на базе Fortinet](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/vandis.vandis_managed_vwan_powered_by_fortinet?tab=Overview); [Вандис Managed вван на базе Palo Alto Networks](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/vandis.vandis_managed_vwan_powered_by_palo_alto_networks?tab=Overview)|
 
-В Azure Marketplace предлагаются новые управляемые службы безопасности и управляемые службы MEC из следующих партнеров по сетям MSP Azure: [Амдокс](https://www.amdocs.com/);  [Соразвиваться](https://www.coevolve.com/services/azure-networking-services/);  [Доступ IX](https://www.ixreach.com/services/sdn-cloud-connect/);  В [облаке](https://intercloud.com/partners/microsoft-azure/);  [Кинкс](https://www.kinx.net/service/cloud/?lang=en); [Orange](https://www.megaport.com/services/microsoft-expressroute/);  [Омниклаудс](https://omniclouds.com/services/);  [Сежонг телекоммуникации](https://www.sejongtelecom.net/en/pages/service/cloud_ms);  [Softbank "](https://www.softbank.jp/biz/cloud/microsoft/azure/);  [Tata связь](https://www.tatacommunications.com/about/our-alliances/microsoft-alliance/);  [Tech Махиндра](https://networkservices.techmahindra.com/pages/default.aspx)
+В Azure Marketplace предлагаются новые управляемые службы безопасности и управляемые службы MEC из следующих партнеров по сетям MSP Azure: [Амдокс](https://www.amdocs.com/); [CenturyLink](https://www.centurylink.com/business/networking/cloud-connectivity.html);  [Соразвиваться](https://www.coevolve.com/services/azure-networking-services/);  [Доступ IX](https://www.ixreach.com/services/sdn-cloud-connect/);  В [облаке](https://intercloud.com/partners/microsoft-azure/);  [Кинкс](https://www.kinx.net/service/cloud/?lang=en); [Orange](https://www.megaport.com/services/microsoft-expressroute/);  [Омниклаудс](https://omniclouds.com/services/);  [Сежонг телекоммуникации](https://www.sejongtelecom.net/en/pages/service/cloud_ms);  [Tech Махиндра](https://networkservices.techmahindra.com/pages/default.aspx)
 
 ## <a name="expressroute"></a>Партнеры ExpressRoute
 

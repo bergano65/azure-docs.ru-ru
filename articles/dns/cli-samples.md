@@ -2,17 +2,17 @@
 title: Примеры Azure CLI для DNS — Azure DNS
 description: В этом примере используйте Azure CLI для создания зон и записей DNS в Azure DNS.
 services: dns
-author: asudbring
+author: rohinkoul
 ms.service: dns
 ms.topic: sample
 ms.date: 09/20/2019
-ms.author: allensu
-ms.openlocfilehash: 334f2bb6c217692a4c0123e7415dc4b03bd28ae2
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.author: rohink
+ms.openlocfilehash: d5fdeaeb9060794af2168f072a174b49b9c9d3d9
+ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74212478"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76937691"
 ---
 # <a name="azure-cli-examples-for-azure-dns"></a>Примеры Azure CLI для Azure DNS
 

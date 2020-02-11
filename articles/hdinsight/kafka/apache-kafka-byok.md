@@ -7,12 +7,12 @@ ms.reviewer: hrasheed
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 01/27/2020
-ms.openlocfilehash: 72fd23e4283925b91d749fef0afac4e87e93405c
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: cba8a4fd64b948d7a3e443426ca1f779af68a3fe
+ms.sourcegitcommit: 57669c5ae1abdb6bac3b1e816ea822e3dbf5b3e1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76841686"
+ms.lasthandoff: 02/06/2020
+ms.locfileid: "77048978"
 ---
 # <a name="bring-your-own-key-for-apache-kafka-on-azure-hdinsight"></a>Создание собственного ключа для Apache Kafka в Azure HDInsight
 
@@ -95,9 +95,13 @@ HDInsight поддерживает только Azure Key Vault. Если у в�
 
 ## <a name="create-hdinsight-cluster"></a>Создание кластера HDInsight
 
-Теперь можно создать кластер HDInsight. BYOK может применяться только к новым кластерам во время создания кластера. Шифрование невозможно удалить из кластеров BYOK, кроме того, BYOK нельзя добавить в имеющиеся кластеры.
+Теперь можно создать кластер HDInsight. На вкладке **Основные сведения** выберите **Kafka** для **типа кластера**.
 
-![Шифрование дисков Kafka на портале Azure](./media/apache-kafka-byok/azure-portal-cluster-security-networking-kafka.png)
+![портал Azure выбор типа Kafka](./media/apache-kafka-byok/azure-portal-cluster-basics-type-kafka.png)
+
+BYOK может применяться только к новым кластерам во время создания кластера. Шифрование невозможно удалить из кластеров BYOK, кроме того, BYOK нельзя добавить в имеющиеся кластеры.
+
+![Шифрование дисков Kafka на портале Azure](./media/apache-kafka-byok/azure-portal-cluster-security-networking-kafka-byok.png)
 
 Во время создания кластера укажите полный URL-адрес ключа, включая версию ключа. Например, `https://contoso-kv.vault.azure.net/keys/kafkaClusterKey/46ab702136bc4b229f8b10e8c2997fa4`. Кроме того, необходимо назначить кластеру управляемое удостоверение и указать URI ключа. Полные сведения о создании кластера см. [в разделе Создание кластеров Apache Hadoop с помощью портал Azure](./apache-kafka-get-started.md)
 

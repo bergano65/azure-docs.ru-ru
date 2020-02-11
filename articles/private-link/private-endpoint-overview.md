@@ -7,12 +7,12 @@ ms.service: private-link
 ms.topic: conceptual
 ms.date: 01/09/2020
 ms.author: allensu
-ms.openlocfilehash: cbb5882950636e281d311bf0536acf5b92cf11ea
-ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
+ms.openlocfilehash: dd73f42aaa0d0bd1884892143d96446935a401a5
+ms.sourcegitcommit: 57669c5ae1abdb6bac3b1e816ea822e3dbf5b3e1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2020
-ms.locfileid: "77018607"
+ms.lasthandoff: 02/06/2020
+ms.locfileid: "77048442"
 ---
 # <a name="what-is-azure-private-endpoint"></a>Что такое частная конечная точка Azure?
 
@@ -54,7 +54,7 @@ ms.locfileid: "77018607"
 |---------|---------|---------|
 |**Служба частной связи** (собственная служба)   |  Microsoft. Network/Привателинксервицес       | empty |
 |**База данных SQL Azure** | Microsoft.Sql/servers    |  SQL Server (sqlServer)        |
-|**Хранилище данных SQL Azure** | Microsoft.Sql/servers    |  SQL Server (sqlServer)        |
+|**Azure синапсе Analytics** | Microsoft.Sql/servers    |  SQL Server (sqlServer)        |
 |**Хранилище Azure**  | Microsoft.Storage/storageAccounts    |  Большой двоичный объект (BLOB-объект, blob_secondary)<BR> Таблица (таблица, table_secondary)<BR> Очередь (очередь, queue_secondary)<BR> Файл (файл, file_secondary)<BR> Интернет (веб, web_secondary)        |
 |**Azure Data Lake Storage 2-го поколения**  | Microsoft.Storage/storageAccounts    |  Большой двоичный объект (BLOB-объект, blob_secondary)<BR> Data Lake файловой системы Gen2 (DFS, dfs_secondary)       |
 |**Azure Cosmos DB** | Microsoft. Азурекосмосдб/databaseAccounts | SQL, MongoDB, Cassandra, Gremlin, Table|
@@ -115,7 +115,7 @@ ms.locfileid: "77018607"
 |Azure Cosmos DB (Microsoft. Азурекосмосдб/databaseAccounts)|MongoDB |privatelink.mongo.cosmos.azure.com|
 |Azure Cosmos DB (Microsoft. Азурекосмосдб/databaseAccounts)|Cassandra|privatelink.cassandra.cosmos.azure.com|
 |Azure Cosmos DB (Microsoft. Азурекосмосдб/databaseAccounts)|Gremlin |privatelink.gremlin.cosmos.azure.com|
-|Azure Cosmos DB (Microsoft. Азурекосмосдб/databaseAccounts)|Таблицы|privatelink.table.cosmos.azure.com|
+|Azure Cosmos DB (Microsoft. Азурекосмосдб/databaseAccounts)|Таблица|privatelink.table.cosmos.azure.com|
 |База данных Azure для PostgreSQL — один сервер (Microsoft. Дбфорпостгрескл/Servers)|постгресклсервер|privatelink.postgres.database.azure.com|
 |База данных Azure для MySQL (Microsoft. Дбформискл/Servers)|mysqlServer|privatelink.mysql.database.azure.com|
 |База данных Azure для MariaDB (Microsoft. Дбформариадб/Servers)|мариадбсервер|privatelink.mariadb.database.azure.com|

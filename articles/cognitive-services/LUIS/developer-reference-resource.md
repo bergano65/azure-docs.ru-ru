@@ -1,25 +1,18 @@
 ---
 title: Ресурсы для разработчиков — Language Understanding
-titleSuffix: Azure Cognitive Services
-description: У разработчиков есть как интерфейсы API, так и пакеты SDK для Language Understanding.
-services: cognitive-services
-author: diberry
-manager: nitinme
-ms.service: cognitive-services
-ms.subservice: language-understanding
-ms.topic: conceptual
-ms.date: 01/22/2020
-ms.author: diberry
-ms.openlocfilehash: 2f351ac570080c83e78697bbca94340bb96cbcf7
-ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
+description: Пакеты SDK, API-интерфейсы RESTFUL, CLI, помогают разрабатывать приложения Language Understanding (LUIS) на языке программирования. Управляйте ресурсами Azure и прогнозами LUIS.
+ms.topic: reference
+ms.date: 02/09/2020
+ms.openlocfilehash: ed869b7022e43b8ecf8c1f05bb3c6f0919076818
+ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76716133"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77119976"
 ---
-# <a name="developer-resources-for-language-understanding"></a>Ресурсы для разработчиков Language Understanding
+# <a name="sdk-rest-and-cli-developer-resources-for-language-understanding-luis"></a>Ресурсы для разработчиков SDK, RESTFUL и CLI для Language Understanding (LUIS)
 
-Разработчики могут использовать интерфейсы API и пакеты SDK для Language Understanding.
+Пакеты SDK, API-интерфейсы RESTFUL, CLI, помогают разрабатывать приложения Language Understanding (LUIS) на языке программирования. Управляйте ресурсами Azure и прогнозами LUIS. 
 
 ## <a name="azure-resource-management"></a>Управление ресурсами Azure
 
@@ -31,11 +24,17 @@ ms.locfileid: "76716133"
 
 * [Azure RM PowerShell](https://docs.microsoft.com/powershell/module/azurerm.cognitiveservices/?view=azurermps-4.4.1#cognitive_services)
 
+
 ## <a name="language-understanding-authoring-and-prediction-requests"></a>Language Understanding создания и прогнозирования запросов
 
-Доступ к Language Understandingной службе осуществляется из ресурса Azure, который необходимо создать. Существует два ресурса: ресурсы конечной точки создания и прогнозирования. Оба этих ресурса позволяют управлять ресурсами LUIS.
+Доступ к Language Understandingной службе осуществляется из ресурса Azure, который необходимо создать. Существует два ресурса:
+
+* Используйте ресурс **разработки** для обучения, чтобы создавать, изменять, обучать и публиковать их.
+* Используйте **Прогноз** для среды выполнения для отправки текста пользователя и получения прогноза.
 
 Дополнительные сведения о [конечной точке прогнозирования v3](luis-migration-api-v3.md).
+
+Используйте [Cognitive Services пример кода](https://github.com/Azure-Samples/cognitive-services-quickstart-code) для изучения и использования наиболее распространенных задач.
 
 ### <a name="rest-apis"></a>Интерфейсы REST API
 
@@ -77,7 +76,7 @@ Language Understanding предоставляет возможность упр�
 * [Luis CLI](https://github.com/microsoft/botbuilder-tools/blob/master/packages/LUIS) . создание приложений Luis.AI и управление ими
 * [Диспетчеризация](https://github.com/microsoft/botbuilder-tools/blob/master/packages/Dispatch)— Управление родительскими и дочерними приложениями
 * [Луисжен](https://github.com/microsoft/botbuilder-tools/blob/master/packages/LUISGen) — автоматическое создание резервных C#классов/типескрипт для целей и сущностей Luis.
-* [Эмулятор Bot](https://github.com/Microsoft/BotFramework-Emulator/releases) — классическое приложение, позволяющее Bot-разработчикам тестировать и отлаживать программы-роботы, созданные с помощью пакета SDK для Bot Framework.
+* [Эмулятор Bot Framework](https://github.com/Microsoft/BotFramework-Emulator/releases) — классическое приложение, позволяющее Bot-разработчикам тестировать и отлаживать программы-роботы, созданные с помощью пакета SDK для Bot Framework.
 
 
 ## <a name="next-steps"></a>Дальнейшие действия

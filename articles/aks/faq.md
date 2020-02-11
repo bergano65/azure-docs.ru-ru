@@ -6,12 +6,12 @@ ms.service: container-service
 ms.topic: conceptual
 ms.date: 10/02/2019
 ms.author: mlearned
-ms.openlocfilehash: 58b372e1f80386c4e02339f67f4c5aeaa686a662
-ms.sourcegitcommit: 87781a4207c25c4831421c7309c03fce5fb5793f
+ms.openlocfilehash: c2103952503a0a184fb970cd8d2326cc2764a223
+ms.sourcegitcommit: cfbea479cc065c6343e10c8b5f09424e9809092e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76549229"
+ms.lasthandoff: 02/08/2020
+ms.locfileid: "77086498"
 ---
 # <a name="frequently-asked-questions-about-azure-kubernetes-service-aks"></a>Вопросы и ответы о Службе Azure Kubernetes (AKS)
 
@@ -97,8 +97,6 @@ AKS поддерживает следующие [контроллеры допу
 - *MutatingAdmissionWebhook*
 - *ValidatingAdmissionWebhook*
 - *ResourceQuota*
-- *DenyEscalatingExec*
-- *AlwaysPullImages*
 
 Сейчас вы не можете изменить список контроллеров допусков в AKS.
 
@@ -122,7 +120,7 @@ AKS поддерживает следующие [контроллеры допу
 
 В AKS можно задать значение `maxPods` при создании кластера с помощью шаблонов Azure CLI и Azure Resource Manager. Однако для Кубенет и Azure CNI требуется *минимальное значение* (проверка во время создания):
 
-| Работа в сети | Минимальные | Максимальная |
+| Сеть | Минимальные | Максимальная |
 | -- | :--: | :--: |
 | Azure CNI | 30 | 250 |
 | кубенет | 30 | 110 |

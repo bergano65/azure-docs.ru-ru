@@ -9,12 +9,12 @@ ms.date: 01/30/2017
 ms.author: tamram
 ms.reviewer: seguler
 ms.subservice: common
-ms.openlocfilehash: 88f713c5695e2453edc58d072899aa417f0514af
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 6554385a879b054153dcb808c3dff4b60c136458
+ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65147038"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77120860"
 ---
 # <a name="using-the-azure-classic-cli-with-azure-storage"></a>Использование классического интерфейса Azure CLI со службой хранилища Azure
 
@@ -27,7 +27,7 @@ ms.locfileid: "65147038"
 В этом руководстве предполагается, что вам знакомы основные понятия службы хранилища Azure. Руководство предоставляет несколько сценариев для демонстрации использования классического интерфейса командной строки Azure со службой хранилища Azure. Перед выполнением каждого сценария необходимо обновить переменные сценария в зависимости от конфигурации.
 
 > [!NOTE]
-> Руководство содержит команды классического интерфейса Azure CLI и примеры скриптов для классических учетных записей хранения. Перечень команд классического интерфейса Azure CLI для учетных записей хранения Resource Manager см. в разделе [Использование интерфейса командной строки Azure для Mac, Linux и Windows со службой управления ресурсами Azure](../../virtual-machines/azure-cli-arm-commands.md#azure-storage-commands-to-manage-your-storage-objects).
+> Руководство содержит команды классического интерфейса Azure CLI и примеры скриптов для классических учетных записей хранения. Перечень команд классического интерфейса Azure CLI для учетных записей хранения Resource Manager см. в разделе [Использование интерфейса командной строки Azure для Mac, Linux и Windows со службой управления ресурсами Azure](../../virtual-machines/azure-cli-arm-commands.md#storage-objects).
 >
 >
 
@@ -187,14 +187,14 @@ azure storage blob delete mycontainer myBlockBlob2
 azure storage share create myshare
 ```
 
-### <a name="create-a-directory"></a>создать каталог;
+### <a name="create-a-directory"></a>Создание каталога
 Каталог обеспечивает дополнительную иерархическую структуру для общей папки Azure. В следующем примере в общей папке создается каталог с именем **myDir** .
 
 ```azurecli
 azure storage directory create myshare myDir
 ```
 
-Обратите внимание, что путь к каталогу может включать несколько уровней, *например* **a/b**. Однако необходимо убедиться в наличии всех родительских каталогов. Например, для пути **a/b** вам потребуется сначала создать каталог **a**, а затем — каталог **b**.
+Обратите внимание, что путь к каталогу может включать несколько уровней, *например***a/b**. Однако необходимо убедиться в наличии всех родительских каталогов. Например, для пути **a/b** вам потребуется сначала создать каталог **a**, а затем — каталог **b**.
 
 ### <a name="upload-a-local-file-to-directory"></a>Отправка локального файла в каталог
 В следующем примере выполняется передача файла из **~/temp/samplefile.txt** в каталог **myDir**. Отредактируйте путь к файлу, чтобы он соответствовал пути к существующему файлу на локальном компьютере:
@@ -229,11 +229,11 @@ azure storage file copy start --source-container srcctn --source-blob hello2.txt
     --dest-path hellodir/hello2copy.txt --connection-string $srcConnectionString --dest-connection-string $destConnectionString
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Next Steps
 
 Справочник по командам классического интерфейса CLI для работы с ресурсами службы хранилища можно найти здесь:
 
-* [Команды классического интерфейса Azure CLI в режиме Resource Manager](../../virtual-machines/azure-cli-arm-commands.md#azure-storage-commands-to-manage-your-storage-objects)
+* [Команды классического интерфейса Azure CLI в режиме Resource Manager](../../virtual-machines/azure-cli-arm-commands.md#storage-objects)
 * [Команды классического интерфейса Azure CLI в режиме управления службами Azure](../../cli-install-nodejs.md)
 
 Кроме того, вы можете применить последнюю версию [Azure CLI](../storage-azure-cli.md) для модели развертывания с помощью Resource Manager.

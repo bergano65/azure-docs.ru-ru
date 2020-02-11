@@ -9,12 +9,12 @@ ms.devlang: csharp
 ms.topic: conceptual
 ms.date: 04/03/2019
 ms.author: robinsh
-ms.openlocfilehash: 99acd43128bedcf3dba470f84c0a406861d77e2d
-ms.sourcegitcommit: aaa82f3797d548c324f375b5aad5d54cb03c7288
+ms.openlocfilehash: 7805b9b3f000b2bc2e45272ab9ff469d5711e581
+ms.sourcegitcommit: 9add86fb5cc19edf0b8cd2f42aeea5772511810c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70147793"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77110196"
 ---
 # <a name="send-messages-from-the-cloud-to-your-device-with-iot-hub-net"></a>Отправка сообщений из облака на устройство с помощью Центра Интернета вещей (.NET)
 
@@ -44,11 +44,13 @@ ms.locfileid: "70147793"
 > В центре Интернета вещей предусмотрена поддержка пакетов SDK для многих платформ устройств и языков, включая C, Java, Python и JavaScript, с помощью [пакетов SDK для устройств Azure IOT](iot-hub-devguide-sdks.md). Пошаговые инструкции по связыванию устройства с кодом из этого руководства, а также по подключению к Центру Интернета вещей Azure см. в [руководстве разработчика для Центра Интернета вещей](iot-hub-devguide.md).
 >
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * Visual Studio
 
 * Активная учетная запись Azure. Если ее нет, можно создать [бесплатную учетную запись](https://azure.microsoft.com/pricing/free-trial/) всего за несколько минут.
+
+* Убедитесь, что в брандмауэре открыт порт 8883. В примере для устройства в этой статье используется протокол MQTT, который обменивается данными через порт 8883. Этот порт может быть заблокирован в некоторых корпоративных и образовательных сетевых средах. Дополнительные сведения и способы решения этой проблемы см. [в статье подключение к центру Интернета вещей (MQTT)](iot-hub-mqtt-support.md#connecting-to-iot-hub).
 
 ## <a name="receive-messages-in-the-device-app"></a>Получение сообщений в приложении для устройства
 
@@ -113,7 +115,7 @@ ms.locfileid: "70147793"
 
    На этом шаге выполняется скачивание, установка и Добавление ссылки на [пакет SDK для службы Azure IOT](https://www.nuget.org/packages/Microsoft.Azure.Devices/).
 
-1. Добавьте следующую `using` инструкцию в начало файла **Program.CS** .
+1. Добавьте следующую инструкцию `using` в начало файла **Program.CS** .
 
    ``` csharp
    using Microsoft.Azure.Devices;
@@ -153,7 +155,7 @@ ms.locfileid: "70147793"
 
 1. В обозревателе решений щелкните правой кнопкой мыши решение и выберите команду **задать запускаемые проекты**.
 
-1. В меню **стандартные свойства** > **Запуск проекта**выберите **Несколько запускаемых проектов**, а затем выберите действие при **запуске** для **ReadDeviceToCloudMessages**, **SimulatedDevice**и **SendCloudToDevice.** . Нажмите кнопку **ОК** , чтобы сохранить изменения.
+1. В окне **Общие свойства** > **запускаемый проект**выберите **Несколько запускаемых проектов**, а затем выберите действие при **запуске** для **ReadDeviceToCloudMessages**, **SimulatedDevice**и **SendCloudToDevice**. Нажмите кнопку **ОК** , чтобы сохранить изменения.
 
 1. Нажмите клавишу **F5**. Должны запуститься все три приложения. Выберите окна **SendCloudToDevice** и нажмите клавишу **ВВОД**. Приложение для устройства должно получить сообщение.
 
@@ -190,13 +192,13 @@ ms.locfileid: "70147793"
 
     Обратите внимание, что шаблон получения здесь аналогичен шаблону, использовавшемуся для получения сообщений из облака на устройство из приложения устройства.
 
-1. Добавьте следующую строку в метод **Main** , прямо после `serviceClient = ServiceClient.CreateFromConnectionString(connectionString)`.
+1. Добавьте следующую строку в метод **Main** сразу после `serviceClient = ServiceClient.CreateFromConnectionString(connectionString)`.
 
    ``` csharp
    ReceiveFeedbackAsync();
    ```
 
-1. Чтобы запросить подтверждение доставки сообщения из облака на устройство, необходимо указать свойство в методе **SendCloudToDeviceMessageAsync** . Добавьте следующую строку сразу после `var commandMessage = new Message(...);` строки.
+1. Чтобы запросить подтверждение доставки сообщения из облака на устройство, необходимо указать свойство в методе **SendCloudToDeviceMessageAsync** . Добавьте следующую строку сразу после строки `var commandMessage = new Message(...);`.
 
    ``` csharp
    commandMessage.Ack = DeliveryAcknowledgement.Full;
@@ -210,7 +212,7 @@ ms.locfileid: "70147793"
 > Для простоты в этом руководстве не реализована политика повтора. В рабочем коде следует реализовать политики повтора, такие как экспоненциальная задержка, как предлагается при [обработке временных сбоев](/azure/architecture/best-practices/transient-faults).
 >
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом руководстве вы научились отправлять и получать сообщения из облака на устройство.
 

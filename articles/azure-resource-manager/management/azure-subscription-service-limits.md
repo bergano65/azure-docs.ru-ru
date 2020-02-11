@@ -4,14 +4,14 @@ description: В этой статье приводится перечень на
 tags: billing
 ms.topic: conceptual
 ms.date: 01/30/2020
-ms.openlocfilehash: c5714dd30be4d557086667a74fff2ff8117e2a2b
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: b209bc3e60f50ac363d3426d6c87f206b016d711
+ms.sourcegitcommit: cfbea479cc065c6343e10c8b5f09424e9809092e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "76901428"
+ms.lasthandoff: 02/08/2020
+ms.locfileid: "77087426"
 ---
-# <a name="azure-subscription-and-service-limits-quotas-and-constraints"></a>Подписка Azure и лимиты службы, квоты и ограничения
+# <a name="azure-subscription-and-service-limits-quotas-and-constraints"></a>Подписка Azure, границы, квоты и ограничения службы
 
 В этом документе указаны некоторые из наиболее распространенных ограничений Microsoft Azure, которые иногда называются квотами. Этот документ на текущий момент охватывает не все службы Azure. Со временем список будет развернут и обновлен, чтобы охватить больше служб.
 
@@ -71,6 +71,7 @@ ms.locfileid: "76901428"
 * [Фабрика данных](#data-factory-limits)
 * [Аналитика озера данных](#data-lake-analytics-limits)
 * [Data Lake Store](#data-lake-store-limits)
+* [Общий ресурс данных](#data-share-limits)
 * [Database Migration Service](#database-migration-service-limits)
 * [Сетка событий](#event-grid-limits)
 * [Центры событий](#event-hubs-limits)
@@ -98,7 +99,7 @@ ms.locfileid: "76901428"
   * [Виртуальная сеть](#networking-limits)
   * [Виртуальная глобальная сеть](#virtual-wan-limits)
 * [Центры уведомлений](#notification-hubs-limits)
-* [Группа ресурсов](#resource-group-limits)
+* [группа ресурсов](#resource-group-limits)
 * [Контроль доступа на основе ролей](#role-based-access-control-limits)
 * [Планировщик](#scheduler-limits)
 * [Служебная шина](#service-bus-limits)
@@ -108,7 +109,7 @@ ms.locfileid: "76901428"
 * [Память](#storage-limits)
 * [StorSimple System](#storsimple-system-limits)
 * [Stream Analytics](#stream-analytics-limits)
-* [Подписка](#subscription-limits)
+* [подписка](#subscription-limits)
 * [Виртуальные машины](#virtual-machines-limits)
 * [Масштабируемые наборы виртуальных машин](#virtual-machine-scale-sets-limits)
 
@@ -193,7 +194,7 @@ ms.locfileid: "76901428"
 
 [!INCLUDE [network-watcher-limits](../../../includes/network-watcher-limits.md)]
 
-#### <a name="private-link-limits"></a>Ограничения для частных ссылок
+#### <a name="private-link-limits"></a>Ограничения для Приватного канала
 
 [!INCLUDE [private-link-limits](../../../includes/private-link-limits.md)]
 
@@ -347,7 +348,7 @@ ms.locfileid: "76901428"
 
 ### <a name="azure-monitor-limits"></a>Ограничения Azure Monitor
 
-#### <a name="alerts"></a>Оповещения
+#### <a name="alerts"></a>видны узлы
 
 [!INCLUDE [monitoring-limits](../../../includes/azure-monitor-limits-alerts.md)]
 
@@ -404,6 +405,10 @@ ms.locfileid: "76901428"
 ### <a name="data-lake-store-limits"></a>Ограничения Data Lake Store
 
 [!INCLUDE [azure-data-lake-store-limits](../../../includes/azure-data-lake-store-limits.md)]
+
+### <a name="data-share-limits"></a>Ограничения общего ресурса данных
+
+[!INCLUDE [azure-data-share-limits](../../../includes/azure-data-share-limits.md)]
 
 ### <a name="database-migration-service-limits"></a>Ограничения Database Migration Service
 
@@ -481,7 +486,7 @@ ms.locfileid: "76901428"
 
 Ограничения для хранилища данных SQL см. в статье [ограничения ресурсов хранилища данных](../../sql-data-warehouse/sql-data-warehouse-service-capacity-limits.md)SQL.
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 * [Общие сведения об ограничениях и росте Azure](https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/)
 * [Размеры виртуальных машин и облачных служб для Azure](../../virtual-machines/linux/sizes.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)

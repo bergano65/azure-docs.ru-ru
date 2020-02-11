@@ -2,19 +2,19 @@
 title: Руководство. Создание пользовательских записей Azure DNS для веб-приложения
 description: В этом руководстве описано создание записей DNS личного домена для веб-приложения с помощью Azure DNS.
 services: dns
-author: asudbring
+author: rohinkoul
 ms.service: dns
 ms.topic: tutorial
 ms.date: 3/11/2019
-ms.author: allensu
-ms.openlocfilehash: e0a0129f45e5e7612b6ecd79475a49822b42ba19
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.author: rohink
+ms.openlocfilehash: 8722a52a097f7f830287d125a4e56e9bbcb9f932
+ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74211202"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76939100"
 ---
-# <a name="tutorial-create-dns-records-in-a-custom-domain-for-a-web-app"></a>Руководство по Создание записей DNS для веб-приложения в личном домене 
+# <a name="tutorial-create-dns-records-in-a-custom-domain-for-a-web-app"></a>Руководство. Создание записей DNS для веб-приложения в личном домене 
 
 Службу Azure DNS можно использовать для размещения пользовательского домена для веб-приложений. Например, создается веб-приложение Azure и необходимо, чтобы пользователи получали к нему доступ, используя веб-сайт contoso.com или www\.contoso.com как полное доменное имя (FQDN).
 
@@ -29,7 +29,7 @@ ms.locfileid: "74211202"
 
 Помните, что если создать запись A для веб-приложения в Azure, ее необходимо обновить вручную, если основной IP-адрес веб-приложения изменится.
 
-Из этого руководства вы узнаете, как выполнять следующие задачи:
+В этом руководстве описано следующее:
 
 > [!div class="checklist"]
 > * Создание записи A и TXT для пользовательского домена
@@ -175,7 +175,7 @@ set-AzWebApp `
 > [!NOTE]
 > Убедитесь, что вы добавили префикс `http://`, иначе браузер может попытаться предсказать ваш URL-адрес.
 
-Вы должны увидеть ту же страницу для обоих URL-адресов. Например:
+Вы должны увидеть ту же страницу для обоих URL-адресов. Пример:
 
 ![Служба приложений в Contoso](media/dns-web-sites-custom-domain/contoso-app-svc.png)
 
@@ -184,7 +184,7 @@ set-AzWebApp `
 
 Если ресурсы, созданные в этом руководстве, больше не нужны, можно удалить группу ресурсов **myresourcegroup**.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте, как создать частные зоны Azure DNS.
 

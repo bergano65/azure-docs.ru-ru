@@ -4,6 +4,8 @@
   items:
     - name: Введение
       href: iot-introduction.md
+    - name: Выбор правильного решения Интернета вещей
+      href: iot-solution-options.md
     - name: Службы и технологии безопасности служб Azure IoT
       href: iot-services-and-technologies.md
     - name: Возможности получения поддержки и справки

@@ -6,12 +6,12 @@ ms.service: azure-migrate
 ms.topic: conceptual
 ms.date: 11/21/2019
 ms.author: snehaa
-ms.openlocfilehash: a9d008406e59c66a8b742194e2e2d388c778ac9e
-ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
+ms.openlocfilehash: baf01c0a0d5c6154305f7137c24deb0365b5e812
+ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76989354"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77062104"
 ---
 # <a name="azure-migrate-common-questions"></a>Служба "миграция Azure": распространенные вопросы
 
@@ -23,7 +23,7 @@ ms.locfileid: "76989354"
 
 ## <a name="what-is-azure-migrate"></a>Что представляет собой служба "Миграция Azure"?
 
-Служба "миграция Azure" предоставляет центральный концентратор для наблюдения за обнаружением, оценкой и миграцией локальных приложений и рабочих нагрузок, а также виртуальных машин частного или общедоступного облака в Azure. Эта служба предоставляет инструменты для оценки и миграции, а также предложения сторонних независимых поставщиков программного обеспечения (ISV). [Подробнее](migrate-services-overview.md).
+Служба "миграция Azure" предоставляет центральный концентратор для наблюдения за обнаружением, оценкой и миграцией локальных приложений и рабочих нагрузок, а также виртуальных машин частного или общедоступного облака в Azure. Эта служба предоставляет инструменты для оценки и миграции, а также предложения сторонних независимых поставщиков программного обеспечения (ISV). [Дополнительные сведения](migrate-services-overview.md)
 
 
 ## <a name="what-can-i-do-with-azure-migrate"></a>Что можно сделать с помощью службы "миграция Azure"?
@@ -67,9 +67,7 @@ ms.locfileid: "76989354"
 [Узнайте, как](how-to-delete-project.md) удалить проект. 
 
 
-## <a name="do-machines-retain-domain-identity-after-migration"></a>Сохранили ли компьютеры удостоверения домена после миграции?
 
-Если доменные службы [интегрированы в Azure](https://docs.microsoft.com/azure/architecture/reference-architectures/identity/), то членство в домене и удостоверение компьютера в домене сохраняются после миграции. 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 Ознакомьтесь с [обзором службы "миграция Azure](migrate-services-overview.md)".

@@ -12,10 +12,10 @@ ms.topic: conceptual
 ms.date: 09/10/2019
 ms.author: banders
 ms.openlocfilehash: aff5e1e707980c9a63988c22653fa5fba0fc236b
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
-ms.translationtype: MT
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
+ms.lasthandoff: 01/31/2020
 ms.locfileid: "75996044"
 ---
 # <a name="open-banking-psd2-and-strong-customer-authentication-sca-for-azure-customers"></a>Откройте банковские службы (PSD2) и надежную проверку подлинности клиентов (SCA) для клиентов Azure
@@ -48,7 +48,7 @@ ms.locfileid: "75996044"
 
 1. Войдите на [портал Azure](https://portal.azure.com/) в качестве администратора учетной записи.
 2. Выполните поиск по фразе **Управление затратами + выставление счетов**.
-3. На странице **Управление затратами и** **Общие сведения о** выставлении счетов проверьте столбец состояние в сетке **Мои подписки** .
+3. На странице **Управление затратами + выставление счетов** **Обзор** просмотрите столбец состояния в сетке **Мои подписки**.
 4. Если состояние подписки — **Просрочено**, щелкните **Покрытие задолженности**. Во время процесса будет предложено выполнить многофакторную проверку подлинности.
 
 ### <a name="settle-outstanding-charges-for-marketplace-and-reservation-purchases"></a>Проведение невыполненных платежей в Marketplace и зарезервированных покупках

@@ -14,6 +14,8 @@
           href: common-questions-appliance.md
         - name: 'Вопросы об обнаружении, оценке и визуализации зависимостей'
           href: common-questions-discovery-assessment.md
+        - name: Вопросы о переносе сервера
+          href: common-questions-server-migration.md
 - name: Учебники
   items:
     - name: Оценка и перенос виртуальных машин VMware

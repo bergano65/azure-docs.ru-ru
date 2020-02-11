@@ -3,22 +3,22 @@ title: Рекомендации по браузеру системы Xamarin And
 titleSuffix: Microsoft identity platform
 description: Ознакомьтесь с конкретными соображениями при использовании системных браузеров Xamarin Android с библиотекой проверки подлинности Майкрософт для .NET (MSAL.NET).
 services: active-directory
-author: TylerMSFT
+author: mmacy
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
 ms.workload: identity
 ms.date: 10/30/2019
-ms.author: twhitney
+ms.author: marsma
 ms.reviewer: saeeda
 ms.custom: aaddev
-ms.openlocfilehash: 9346a4d5eaabb2af490afc13d5785a8f8233e53f
-ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
+ms.openlocfilehash: c144c6dd090669ca16c03050cbb8b59ff0cc224f
+ms.sourcegitcommit: cfbea479cc065c6343e10c8b5f09424e9809092e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76695061"
+ms.lasthandoff: 02/08/2020
+ms.locfileid: "77084585"
 ---
 #  <a name="xamarin-android-system-browser-considerations-with-msalnet"></a>Рекомендации по браузеру системы Xamarin Android с MSAL.NET
 
@@ -30,7 +30,7 @@ ms.locfileid: "76695061"
 
 | Браузеры с поддержкой пользовательских вкладок | Имя пакета |
 |------| ------- |
-|Chrome | com.android.chrome|
+|Chrome | com. Android. Chrome|
 |Microsoft Edge | com. Microsoft. еммкс|
 |Firefox | org. Mozilla. Firefox|
 |екосиа | com. екосиа. Android|
@@ -51,7 +51,7 @@ ms.locfileid: "76695061"
 ## <a name="devices-and-browsers-tested"></a>Тестируемые устройства и браузеры
 В следующей таблице перечислены проверенные устройства и браузеры.
 
-| | &ast; браузера     |  Результат  | 
+| | браузер&ast;     |  Результат  | 
 | ------------- |:-------------:|:-----:|
 | Huawei/один + | &ast; Chrome | Успех|
 | Huawei/один + | Пограничные&ast; | Успех|
@@ -62,7 +62,7 @@ ms.locfileid: "76695061"
 | Huawei/один + | Opera | Успех|
 | Huawei | операмини | Успех|
 | Huawei/один + | Браузер | Успех|
-| Один + | Maxthon | Успех|
+| Один + | макссон | Успех|
 | Huawei/один + | дуккдуккго | Проверка подлинности отменена пользователем|
 | Huawei/один + | Браузер UC | Проверка подлинности отменена пользователем|
 | Один + | долфин | Проверка подлинности отменена пользователем|

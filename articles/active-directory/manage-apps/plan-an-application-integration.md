@@ -15,12 +15,12 @@ ms.date: 07/16/2018
 ms.author: mimart
 ms.reviewer: asteen
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1291db8cd895a1104183ae2b5388eb6a23305874
-ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
+ms.openlocfilehash: 89b16a8479f8975d101b8a4e26dcb1885d9730bd
+ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72895936"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77063386"
 ---
 # <a name="integrating-azure-active-directory-with-applications-getting-started-guide"></a>Руководство по интеграции Azure Active Directory с приложениями
 
@@ -85,8 +85,8 @@ ms.locfileid: "72895936"
 В следующих статьях описываются способы управления доступом к приложениям после интеграции с Azure AD с помощью соединителей Azure AD и Azure AD.
 
 * [Управление доступом к приложениям с помощью Azure AD.](what-is-access-management.md)
-* [Автоматическая подготовка пользователей и ее отзыв для приложений SaaS в Azure Active Directory.](user-provisioning.md)
-* [Назначение пользователей для приложения](../active-directory-applications-guiding-developers-assigning-users.md)
+* [Автоматическая подготовка пользователей и ее отзыв для приложений SaaS в Azure Active Directory.](../app-provisioning/user-provisioning.md)
+* [Назначение пользователей приложения](../active-directory-applications-guiding-developers-assigning-users.md)
 * [Назначение групп для приложения](../active-directory-applications-guiding-developers-assigning-groups.md)
 * [Совместное использование учетных записей.](../active-directory-sharing-accounts.md)
 
@@ -95,7 +95,7 @@ ms.locfileid: "72895936"
 
 Чтобы скачать план развертывания на портале Azure, сделайте следующее.
 
-1. Войдите на [портале Azure](https://portal.azure.com).
+1. Войдите на [портал Azure](https://portal.azure.com).
 2. Выберите **Корпоративные приложения** | **Выбор приложения** | **План развертывания**.
 
 Оставьте отзыв о планах развертывания, приняв участие в этом [опросе](https://aka.ms/DeploymentPlanFeedback).

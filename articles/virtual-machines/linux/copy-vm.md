@@ -14,12 +14,12 @@ ms.devlang: azurecli
 ms.topic: article
 ms.date: 10/17/2018
 ms.author: cynthn
-ms.openlocfilehash: a6a8b766efdc781df1fea29da81dc48090875ad7
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.openlocfilehash: 4612d15dd5d3ab6e814f09210d5ff3991fef0328
+ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74036576"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77121876"
 ---
 # <a name="create-a-copy-of-a-linux-vm-by-using-azure-cli-and-managed-disks"></a>Создание копии виртуальной машины Linux в Azure с помощью Azure CLI и Управляемых дисков
 
@@ -27,7 +27,7 @@ ms.locfileid: "74036576"
 
 Кроме того, можно [передать VHD и создать виртуальную машину на его основе](upload-vhd.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>предварительные требования
 
 -   Установка [Azure CLI](/cli/azure/install-az-cli2).
 
@@ -50,7 +50,7 @@ az vm deallocate \
 
 Чтобы скопировать виртуальную машину, необходимо создать копию ее виртуального жесткого диска. Этот процесс позволяет создать специализированный виртуальный жесткий диск (VHD) в качестве управляемого диска, содержащего такие же конфигурацию и параметры, как у исходной виртуальной машины.
 
-Дополнительные сведения об управляемых дисках Azure см. в [этой статье](../windows/managed-disks-overview.md). 
+Дополнительные сведения об Управляемых дисках Azure см. в [обзоре Управляемых дисков Azure](../windows/managed-disks-overview.md). 
 
 1.  Получите список виртуальных машин и имен их дисков ОС, выполнив команду [az vm list](/cli/azure/vm#az-vm-list). В следующем примере создается список виртуальных машин, входящих в группу ресурсов *myResourceGroup*.
     
@@ -131,6 +131,6 @@ az vm create --resource-group myResourceGroup \
     --attach-os-disk myCopiedDisk
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-Чтобы узнать, как управлять виртуальной машиной с помощью Azure CLI, прочитайте статью [Команды Azure CLI в режиме Resource Manager](../azure-cli-arm-commands.md).
+Сведения об использовании [общей коллекции образов](shared-images.md) для управления образами виртуальных машин.

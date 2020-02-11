@@ -12,14 +12,14 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 01/03/2020
+ms.date: 02/05/2020
 ms.author: b-juche
-ms.openlocfilehash: 9559f1d52f87314670162482e10714dad13be5bb
-ms.sourcegitcommit: 05cdbb71b621c4dcc2ae2d92ca8c20f216ec9bc4
+ms.openlocfilehash: aaa7e5e65ced2a9899bef5a811ee74be42a8548f
+ms.sourcegitcommit: 57669c5ae1abdb6bac3b1e816ea822e3dbf5b3e1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76046156"
+ms.lasthandoff: 02/06/2020
+ms.locfileid: "77048816"
 ---
 # <a name="faqs-about-azure-netapp-files"></a>Часто задаваемые вопросы о Azure NetApp Files
 
@@ -131,7 +131,9 @@ Azure NetApp Files поддерживает NFSv3 и Нфсв 4.1. Вы може
 
 ### <a name="how-many-active-directory-connections-are-supported"></a>Сколько Active Directory подключений поддерживается?
 
-В настоящее время Azure NetApp Files поддерживает только одно Active Directoryное подключение для каждой учетной записи NetApp, для каждой подписки и в каждом регионе. подключение не используется совместно в учетных записях NetApp.
+Azure NetApp Files не поддерживает множественные подключения Active Directory (AD) в одном *регионе*, даже если подключения к Active Directory находятся в разных учетных записях NetApp. Однако в одной *подписке*можно использовать несколько подключений AD, если они находятся в разных регионах. Если требуется несколько подключений AD в одном регионе, для этого можно использовать отдельные подписки. 
+
+Подключение AD настраивается для каждой учетной записи NetApp; подключение Active Directory доступно только через учетную запись NetApp, в которой он создан.
 
 ### <a name="does-azure-netapp-files-support-azure-active-directory"></a>Поддерживает ли Azure NetApp Files Azure Active Directory? 
 

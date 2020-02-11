@@ -3,18 +3,18 @@ title: Подключение к серверу IBM MQ
 description: Отправка и получение сообщений с помощью Azure или локального сервера IBM MQ и Azure Logic Apps
 services: logic-apps
 ms.suite: integration
-author: valrobb
-ms.author: valthom
-ms.reviewer: chrishou, logicappspm
+author: ChristopherHouser
+ms.author: chrishou
+ms.reviewer: valthom, logicappspm
 ms.topic: article
 ms.date: 06/19/2019
 tags: connectors
-ms.openlocfilehash: ef9e91b526055ece58ce283572deb98cff951653
-ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
+ms.openlocfilehash: 489f53a4f4c1c0d5bd782f42a9daf73217234793
+ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74789573"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77118056"
 ---
 # <a name="connect-to-an-ibm-mq-server-from-azure-logic-apps"></a>Подключение к серверу IBM MQ с Azure Logic Apps
 
@@ -28,7 +28,7 @@ ms.locfileid: "74789573"
 - Получение пакета сообщений и удаление сообщений с сервера IBM MQ
 - Отправка одного сообщения на сервер IBM MQ
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 * Если вы используете локальный сервер MQ, [установите локальный шлюз данных](../logic-apps/logic-apps-gateway-install.md) на сервере в сети. На сервере, на котором установлен локальный шлюз данных, также должен быть установлен .NET Framework 4,6, чтобы соединитель MQ работал. Кроме того, необходимо создать ресурс в Azure для локального шлюза данных. Дополнительные сведения см. [в разделе Настройка подключения к шлюзу данных](../logic-apps/logic-apps-gateway-connection.md).
 

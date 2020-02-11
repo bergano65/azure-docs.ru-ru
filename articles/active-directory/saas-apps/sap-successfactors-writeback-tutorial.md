@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 12/06/2019
 ms.author: chmutali
-ms.openlocfilehash: 84ab5da993541012fd2199a30d03f5c69e88bf2c
-ms.sourcegitcommit: ce4a99b493f8cf2d2fd4e29d9ba92f5f942a754c
+ms.openlocfilehash: 2de0cdd32428884170f549afacdbd52c3a10c93f
+ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/28/2019
-ms.locfileid: "75530040"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77060054"
 ---
 # <a name="tutorial-configure-attribute-writeback-from-azure-ad-to-sap-successfactors-preview"></a>Руководство. Настройка обратной записи атрибутов из Azure AD в SAP SuccessFactors (Предварительная версия)
 Цель этого руководства — продемонстрировать шаги, которые необходимо выполнить для обратной записи атрибутов из Azure AD в SuccessFactors Employee Central. Единственным атрибутом, который в настоящее время поддерживается для обратной записи, является атрибут email. 
@@ -183,8 +183,8 @@ ms.locfileid: "75530040"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Сведения о просмотре журналов и получении отчетов о действиях по подготовке](../manage-apps/check-status-user-account-provisioning.md)
+* [Сведения о просмотре журналов и получении отчетов о действиях по подготовке](../app-provisioning/check-status-user-account-provisioning.md)
 * [Узнайте, как настроить единый вход между SuccessFactors и Azure Active Directory](successfactors-tutorial.md)
 * [Узнайте, как интегрировать другие приложения SaaS с Azure Active Directory](tutorial-list.md).
-* [Узнайте, как экспортировать и импортировать конфигурации подготовки.](../manage-apps/export-import-provisioning-configuration.md)
+* [Узнайте, как экспортировать и импортировать конфигурации подготовки.](../app-provisioning/export-import-provisioning-configuration.md)
 

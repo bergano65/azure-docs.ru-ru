@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 11/21/2019
-ms.openlocfilehash: 35c050a17219b80348857494ad41f834d3a60c85
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: b7036b305b4b1041fced3be68024be29d49a4990
+ms.sourcegitcommit: cfbea479cc065c6343e10c8b5f09424e9809092e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75397304"
+ms.lasthandoff: 02/08/2020
+ms.locfileid: "77086865"
 ---
 # <a name="how-to-troubleshoot-issues-with-the-log-analytics-agent-for-linux"></a>Устранение неполадок с агентом Log Analytics для Linux 
 
@@ -28,7 +28,7 @@ ms.locfileid: "75397304"
 
 ## <a name="important-log-locations-and-log-collector-tool"></a>Расположение важных журналов и сборщик журналируемых данных
 
- Файлы | путь
+ Файл | путь
  ---- | -----
  Файл журнала агента Log Analytics для Linux | `/var/opt/microsoft/omsagent/<workspace id>/log/omsagent.log`
  Файл журнала конфигурации агента Log Analytics | `/var/opt/microsoft/omsconfig/omsconfig.log`
@@ -153,7 +153,7 @@ Success sending oms.syslog.authpriv.info x 1 in 0.91s
 * При подключении указан недопустимый прокси-сервер.
 * Azure Monitor и конечные точки службы автоматизации Azure не список разрешений в вашем центре обработки данных 
 
-### <a name="resolution"></a>Разрешение
+### <a name="resolution"></a>Решение
 1. Повторно подключитесь Azure Monitor с агентом Log Analytics для Linux с помощью следующей команды с параметром `-v` Enabled. Он позволяет получить подробные выходные данные агента, подключающегося к серверу через прокси-сервер, для Azure Monitor. 
 `/opt/microsoft/omsagent/bin/omsadmin.sh -w <Workspace ID> -s <Workspace Key> -p <Proxy Conf> -v`
 
@@ -174,7 +174,7 @@ Success sending oms.syslog.authpriv.info x 1 in 0.91s
 * На сервере Linux установлены неправильные время и дата. 
 * Используется недопустимый идентификатор или ключ рабочей области.
 
-### <a name="resolution"></a>Разрешение
+### <a name="resolution"></a>Решение
 
 1. Проверьте время на своем сервере Linux с помощью команды. Если время отличается от текущего на 15 минут, подключение завершится сбоем. Чтобы исправить это, обновите дату и (или) часовой пояс на сервере Linux. 
 2. Убедитесь, что установлена последняя версия агента Log Analytics для Linux.  В последней версии вы получаете уведомления, если разница во времени приводит к сбою подключения.
@@ -218,7 +218,7 @@ Success sending oms.syslog.authpriv.info x 1 in 0.91s
 - Подключение к Azure Monitor заблокировано
 - Выполняется резервное копирование данных агента Log Analytics для Linux
 
-### <a name="resolution"></a>Разрешение
+### <a name="resolution"></a>Решение
 1. Проверьте, успешно ли Azure Monitor подключение, проверив, существует ли следующий файл: `/etc/opt/microsoft/omsagent/<workspace id>/conf/omsadmin.conf`
 2. Повторно подключитесь, используя инструкции командной строки `omsadmin.sh`
 3. Если используется прокси-сервер, см. описанные выше шаги по разрешению прокси-сервера.
@@ -235,7 +235,7 @@ Success sending oms.syslog.authpriv.info x 1 in 0.91s
 * Системный журнал не перенаправляется на сервер Linux должным образом.
 * Количество сообщений, перенаправленных за одну секунду, слишком большое, и агент Log Analytics для Linux в базовой конфигурации не может их обработать.
 
-### <a name="resolution"></a>Разрешение
+### <a name="resolution"></a>Решение
 * Убедитесь, что в рабочей области Log Analytics для системного журнала предоставлены все средства и правильно настроены уровни ведения журнала. Изучите статью о [настройке сбора системного журнала на портале Azure](../../azure-monitor/platform/data-sources-syslog.md#configure-syslog-in-the-azure-portal).
 * Настройте получение перенаправленных сообщений в управляющих программах обмена сообщениями системных журналов (`rsyslog`, `syslog-ng`).
 * Отключите блокировку сообщений в параметрах брандмауэра на сервере системного журнала.
@@ -248,7 +248,7 @@ Success sending oms.syslog.authpriv.info x 1 in 0.91s
 ### <a name="probable-causes"></a>Возможные причины
 Это сообщение означает, что диагностическое расширение Linux (LAD) устанавливается параллельно с расширением Log Analytics для виртуальной машины Linux и системный журнал с omsagent используют один и тот же порт.
 
-### <a name="resolution"></a>Разрешение
+### <a name="resolution"></a>Решение
 1. Войдите с правами привилегированного пользователя и выполните следующие команды (обратите внимание, что значение 25224 указано только для примера и в вашей среде LAD может использовать другой порт):
 
     ```
@@ -270,7 +270,7 @@ Success sending oms.syslog.authpriv.info x 1 in 0.91s
 * Установлено диагностическое расширение для Linux
 * Диагностическое расширение для Linux было установлено, а затем удалено, но вы по-прежнему получаете сообщение об ошибке со сведениями о том, что omsagent используется mdsd и не может быть удален.
 
-### <a name="resolution"></a>Разрешение
+### <a name="resolution"></a>Решение
 1. Удалите диагностическое расширение Linux (LAD).
 2. Удалите файлы диагностического расширения Linux с компьютера, если они есть в расположениях `/var/lib/waagent/Microsoft.Azure.Diagnostics.LinuxDiagnostic-<version>/` и `/var/opt/microsoft/omsagent/LAD/`.
 
@@ -280,7 +280,7 @@ Success sending oms.syslog.authpriv.info x 1 in 0.91s
 * У пользователя omsagent нет разрешений на чтение данных из файла журнала Nagios.
 * Источник и фильтр Nagios не раскомментированы в файле omsagent.conf.
 
-### <a name="resolution"></a>Разрешение
+### <a name="resolution"></a>Решение
 1. Предоставьте пользователю omsagent право на чтение из файла Nagios, выполнив эти [инструкции](https://github.com/Microsoft/OMS-Agent-for-Linux/blob/master/docs/OMS-Agent-for-Linux.md#nagios-alerts).
 2. В файле общей конфигурации агента Log Analytics, в области кода `/etc/opt/microsoft/omsagent/<workspace id>/conf/omsagent.conf` убедитесь, что **обе** строки источника и фильтра Nagios раскомментированы.
 
@@ -308,7 +308,7 @@ Success sending oms.syslog.authpriv.info x 1 in 0.91s
 * Выполняется резервное копирование данных агента Log Analytics
 * Журналы DSC *Текущая конфигурация не существует. Выполните команду Start-DscConfiguration с параметром-path, чтобы указать файл конфигурации и сначала создать текущую конфигурацию.* в файл журнала `omsconfig.log`, но в журнале нет записей об операциях `PerformRequiredConfigurationChecks`.
 
-### <a name="resolution"></a>Разрешение
+### <a name="resolution"></a>Решение
 1. Установите все зависимости, например пакет auditd.
 2. Убедитесь, что подключение к Azure Monitor выполнено успешно, проверив, существует ли следующий файл: `/etc/opt/microsoft/omsagent/<workspace id>/conf/omsadmin.conf`.  Если подключение не удалось установить, повторите попытку, используя [инструкции](https://github.com/Microsoft/OMS-Agent-for-Linux/blob/master/docs/OMS-Agent-for-Linux.md#onboarding-using-the-command-line) для команды omsadmin.sh.
 4. Если используется прокси-сервер, выполните описанные выше действия по устранению неполадок для прокси-сервера.
@@ -373,7 +373,7 @@ Success sending oms.syslog.authpriv.info x 1 in 0.91s
 * Агент Log Analytics для Linux не применяет последнюю конфигурацию
 * Не применены изменения настроек, внесенные на портале
 
-### <a name="resolution"></a>Разрешение
+### <a name="resolution"></a>Решение
 **Background:** `omsconfig` — это агент log Analytics Agent для Linux, который выполняет поиск новой конфигурации на стороне портала каждые пять минут. Найденная конфигурация переносится в файлы конфигурации агента Log Analytics для Linux в следующем расположении: /etc/opt/microsoft/omsagent/conf/omsagent.conf.
 
 * Иногда агент Log Analytics для Linux не может установить связь со службой конфигурации портала, в результате чего последние изменения не применяются.
@@ -392,13 +392,13 @@ Success sending oms.syslog.authpriv.info x 1 in 0.91s
  * `[DATETIME] [error]: file not accessible by omsagent.`
 * Известная проблема состояния гонки исправлена в агенте Log Analytics для Linux версии 1.1.0-217.
 
-### <a name="resolution"></a>Разрешение
+### <a name="resolution"></a>Решение
 1. Убедитесь, что подключение к Azure Monitor выполнено успешно, проверив, существует ли следующий файл: `/etc/opt/microsoft/omsagent/<workspace id>/conf/omsadmin.conf`. Если его нет, выполните одно из следующих действий:  
 
   1. Повторите попытку подключения, используя [инструкции](https://github.com/Microsoft/OMS-Agent-for-Linux/blob/master/docs/OMS-Agent-for-Linux.md#onboarding-using-the-command-line) для команды omsadmin.sh.
   2. Убедитесь, что в разделе **Дополнительные параметры** на портале Azure установлен флажок **Apply the following configuration to my Linux Servers** (Применить следующую конфигурацию к моим серверам Linux).  
 
-2. Убедитесь, что агент `omsconfig` может взаимодействовать с Azure Monitor, выполнив следующую команду `sudo su omsagent -c 'python /opt/microsoft/omsconfig/Scripts/GetDscConfiguration.py'`.  Эта команда возвращает конфигурацию, которую агент получает от портала, в том числе параметры системного журнала, счетчиков производительности Linux и пользовательских журналов. Если выполнить эту команду не удается, используйте команду `sudo su omsagent -c 'python /opt/microsoft/omsconfig/Scripts/PerformRequiredConfigurationChecks.py`. Эта команда заставляет агент omsconfig взаимодействовать с Azure Monitor и получать последнюю конфигурацию.
+2. Убедитесь, что агент `omsconfig` может взаимодействовать с Azure Monitor, выполнив следующую команду `sudo su omsagent -c 'python /opt/microsoft/omsconfig/Scripts/GetDscConfiguration.py'`.  Эта команда возвращает конфигурацию, которую агент получает от портала, в том числе параметры системного журнала, счетчиков производительности Linux и пользовательских журналов. Если выполнить эту команду не удается, используйте команду `sudo su omsagent -c 'python /opt/microsoft/omsconfig/Scripts/PerformRequiredConfigurationChecks.py'`. Эта команда заставляет агент omsconfig взаимодействовать с Azure Monitor и получать последнюю конфигурацию.
 
 **Базовая информация.** Вместо привилегированного пользователя (`root`) для выполнения агента Log Analytics для Linux используется имя пользователя `omsagent`. В большинстве случаев этому пользователю необходимо предоставить явное разрешение на чтение определенных файлов. Чтобы предоставить разрешения пользователю `omsagent`, выполните следующие команды:
 
@@ -413,7 +413,7 @@ Success sending oms.syslog.authpriv.info x 1 in 0.91s
 ```
 sudo sh ./omsagent-*.universal.x64.sh --purge
 ```
-или
+либо
 
 ```
 sudo sh ./onboard_agent.sh --purge
@@ -427,7 +427,7 @@ sudo sh ./onboard_agent.sh --purge
 * Агент log Analytics удален из операционной системы.
 * Служба агента Log Analytics не работает, отключена или не настроена.
 
-### <a name="resolution"></a>Разрешение 
+### <a name="resolution"></a>Решение 
 Выполните описанные ниже действия, чтобы устранить проблему.
 1. Удалите расширение с помощью портала Azure.
 2. Установите агент в соответствии с [этими инструкциями](../../azure-monitor/learn/quick-collect-linux-computer.md).
@@ -441,7 +441,7 @@ sudo sh ./onboard_agent.sh --purge
 
 Устарели пакеты агента Log Analytics на узле.
 
-### <a name="resolution"></a>Разрешение 
+### <a name="resolution"></a>Решение 
 Выполните описанные ниже действия, чтобы устранить проблему.
 
 1. Проверьте наличие новой версии на [этой странице](https://github.com/Microsoft/OMS-Agent-for-Linux/releases/).

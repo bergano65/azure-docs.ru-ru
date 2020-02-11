@@ -3,12 +3,12 @@ title: Поставщики ресурсов по службам Azure
 description: Выводит список всех пространств имен поставщиков ресурсов для Azure Resource Manager и отображает службу Azure для этого пространства имен.
 ms.topic: conceptual
 ms.date: 11/11/2019
-ms.openlocfilehash: d16c5fe148f8b6c907c897963e72cb84bc9ae2d5
-ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
+ms.openlocfilehash: 64c1d3c6f30a4f817abbea5001852df3eeeb9327
+ms.sourcegitcommit: 9add86fb5cc19edf0b8cd2f42aeea5772511810c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76984376"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77109353"
 ---
 # <a name="resource-providers-for-azure-services"></a>Поставщики ресурсов для служб Azure
 
@@ -19,18 +19,18 @@ ms.locfileid: "76984376"
 | Пространство имен поставщика ресурсов | Служба Azure |
 | --------------------------- | ------------- |
 | Microsoft.AAD | [Доменные службы Azure Active Directory](../../active-directory-domain-services/index.yml) |
-| Microsoft.Addons | ядро |
+| Microsoft.Addons | core |
 | Microsoft.ADHybridHealthService | [Azure Active Directory](/azure/active-directory/) |
 | Microsoft.Advisor | [Помощник по Azure](../../advisor/index.yml) |
 | Microsoft.AlertsManagement | [Azure Monitor](../../azure-monitor/index.yml) |
 | Microsoft.AnalysisServices | [Azure Analysis Services](/azure/analysis-services/) |
 | Microsoft.ApiManagement | [Управление API](../../api-management/index.yml) |
-| Microsoft. Аппконфигуратион | ядро |
+| Microsoft. Аппконфигуратион | core |
 | Microsoft.Attestation | Служба аттестации Azure |
 | Microsoft.Authorization | [Azure Resource Manager](../index.yml) |
 | Microsoft.Automation | [Служба автоматизации](../../automation/index.yml) |
 | Microsoft.AzureActiveDirectory | [Azure Active Directory B2C](../../active-directory-b2c/index.yml) |
-| Microsoft.AzureStack | ядро |
+| Microsoft.AzureStack | core |
 | Microsoft.Batch | [Пакетная служба](../../batch/index.yml) |
 | Microsoft.Billing | [Управление затратами и выставление счетов](/azure/billing/) |
 | Microsoft.BingMaps | [Карты Bing](https://docs.microsoft.com/BingMaps/#pivot=main&panel=BingMapsAPI) |
@@ -38,7 +38,7 @@ ms.locfileid: "76984376"
 | Microsoft.Blueprint | [Проекты Azure](/azure/governance/blueprints/) |
 | Microsoft.BotService | [Служба Azure Bot](/azure/bot-service/) |
 | Microsoft.Cache | [Кэш Azure для Redis](/azure/azure-cache-for-redis/) |
-| Microsoft.Capacity | ядро |
+| Microsoft.Capacity | core |
 | Microsoft.Cdn | [Сеть доставки содержимого](../../cdn/index.yml) |
 | Microsoft.CertificateRegistration | [Сертификаты службы приложений](../../app-service/configure-ssl-certificate.md#import-an-app-service-certificate) |
 | Microsoft. Чанжеаналисис | [Azure Monitor](../../azure-monitor/index.yml) |
@@ -48,7 +48,7 @@ ms.locfileid: "76984376"
 | Microsoft.ClassicStorage | Хранилище классической модели развертывания |
 | Microsoft. Классиксубскриптион | Классическая модель развертывания |
 | Microsoft.CognitiveServices | [Cognitive Services](/azure/cognitive-services/) |
-| Microsoft.Commerce | ядро |
+| Microsoft.Commerce | core |
 | Microsoft.Compute; | [Виртуальные машины](/azure/virtual-machines/)<br />[Наборы для масштабирования виртуальных машин](/azure/virtual-machine-scale-sets/) |
 | Microsoft.Consumption | [Управление затратами](/azure/cost-management/) |
 | Microsoft.ContainerInstance | [Экземпляры контейнеров](/azure/container-instances/) |
@@ -104,9 +104,9 @@ ms.locfileid: "76984376"
 | Microsoft. ManagedServices | [Azure Lighthouse](/azure/lighthouse/) |
 | Microsoft.Management | [Группы управления](/azure/governance/management-groups/) |
 | Microsoft.Maps | [Azure Maps](../../azure-maps/index.yml) |
-| Microsoft.Marketplace | ядро |
-| Microsoft.MarketplaceApps | ядро |
-| Microsoft.MarketplaceOrdering | ядро |
+| Microsoft.Marketplace | core |
+| Microsoft.MarketplaceApps | core |
+| Microsoft.MarketplaceOrdering | core |
 | Microsoft.Media | [Службы мультимедиа](../../media-services/index.yml) |
 | Microsoft.Migrate | [Служба "миграция Azure"](../../migrate/migrate-overview.md) |
 | Microsoft. Микседреалити | [Пространственные привязки Azure.](/azure/spatial-anchors/) |
@@ -124,9 +124,9 @@ ms.locfileid: "76984376"
 | Microsoft.RecoveryServices | [Site Recovery](../../site-recovery/index.yml) |
 | Microsoft.Relay | [Azure Relay](../../service-bus-relay/relay-what-is-it.md) |
 | Microsoft.ResourceGraph | [Граф ресурсов Azure](/azure/governance/resource-graph/) |
-| Microsoft.ResourceHealth | ядро |
+| Microsoft.ResourceHealth | [Служба "Работоспособность служб Azure"](../../service-health/index.yml)|
 | Microsoft.Resources | [Azure Resource Manager](../index.yml) |
-| Microsoft.SaaS | ядро |
+| Microsoft.SaaS | core |
 | Microsoft.Scheduler | [Планировщик](/azure/scheduler/) |
 | Microsoft.Search | [Поиск Azure](../../search/index.yml) |
 | Microsoft.Security | [Центр безопасности](../../security-center/index.yml) |
@@ -145,8 +145,8 @@ ms.locfileid: "76984376"
 | Microsoft.StorageSync | [Память](../../storage/index.yml) |
 | Microsoft.StorSimple | [StorSimple](/azure/storsimple/) |
 | Microsoft.StreamAnalytics | [Stream Analytics](../../stream-analytics/index.yml) |
-| Microsoft.Subscription | ядро |
-| microsoft.support | ядро |
+| Microsoft.Subscription | core |
+| microsoft.support | core |
 | Microsoft.TimeSeriesInsights | [Аналитика временных рядов](../../time-series-insights/index.yml) |
 | Microsoft.VirtualMachineImages | [Построитель образов Azure](../../virtual-machines/linux/image-builder-overview.md) |
 | microsoft.visualstudio | [Azure DevOps](/azure/devops/?view=azure-devops) |

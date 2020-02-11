@@ -47,6 +47,8 @@
             - name: Отключение Azure Monitor для контейнеров
               href: ../azure-monitor/insights/container-insights-optout-openshift.md
               maintainContext: true
+    - name: Запуск привилегированных контейнеров в кластере Azure Red Hat OpenShift
+      href: howto-run-privileged-containers.md
 - name: Справочник
   items:
     - name: Интерфейс командной строки Azure Red Hat OpenShift

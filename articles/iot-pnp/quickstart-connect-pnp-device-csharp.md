@@ -1,19 +1,19 @@
 ---
 title: Подключение примера устройства IoT Plug and Play (предварительная версия) к Центру Интернета вещей | Документация Майкрософт
 description: Создайте и запустите пример кода устройства IoT Plug and Play (предварительная версия), который подключается к Центру Интернета вещей, с помощью C# (.NET). С помощью обозревателя Интернета вещей Azure просматривайте сведения, отправленные устройством в центр.
-author: baanders
-ms.author: baanders
+author: dominicbetts
+ms.author: dobett
 ms.date: 12/27/2019
 ms.topic: quickstart
 ms.service: iot-pnp
 services: iot-pnp
 ms.custom: mvc
-ms.openlocfilehash: b32fc103b4ed4d7058c8af42ffa126ee5527f45a
-ms.sourcegitcommit: ec2eacbe5d3ac7878515092290722c41143f151d
+ms.openlocfilehash: b86f58a1b6b9e3a952861dbe7dbeef4dfe06a644
+ms.sourcegitcommit: 42517355cc32890b1686de996c7913c98634e348
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75550871"
+ms.lasthandoff: 02/02/2020
+ms.locfileid: "76964842"
 ---
 # <a name="quickstart-connect-a-sample-iot-plug-and-play-preview-device-application-to-iot-hub-c"></a>Краткое руководство. Подключение примера приложения IoT Plug and Play (предварительная версия) к Центру Интернета вещей (с использованием C#)
 
@@ -23,7 +23,7 @@ ms.locfileid: "75550871"
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Для выполнения инструкций, приведенных в этом кратком руководстве, необходимо установить .NET Core 2.2 на компьютере для разработки. Вы можете скачать версию пакета SDK для .NET Core 2.2 для нескольких платформ по [этой ссылке](https://dotnet.microsoft.com/download/dotnet-core/2.2).
 

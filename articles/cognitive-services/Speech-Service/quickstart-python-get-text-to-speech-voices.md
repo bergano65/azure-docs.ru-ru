@@ -1,31 +1,29 @@
 ---
-title: Краткое руководство. Перечисление голосовых моделей для преобразований текста в речь с помощью Python — служба "Речь"
+title: Перечисление голосовых моделей для преобразований текста в речь с помощью Python — служба "Речь"
 titleSuffix: Azure Cognitive Services
-description: В этом кратком руководстве вы узнаете, как получить полный список стандартных и нейронных голосовых моделей для региона или конечной точки с использованием Python. Список возвращается как JSON, а доступность голосовой модели зависит от региона.
+description: В этой статье описано, как получить полный список стандартных и нейронных голосовых моделей для региона или конечной точки с использованием Python. Список возвращается как JSON, а доступность голосовой модели зависит от региона.
 services: cognitive-services
-author: erhopf
+author: IEvangelist
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
-ms.topic: quickstart
-ms.date: 12/09/2019
-ms.author: erhopf
-ms.openlocfilehash: c645d01dd37fd370911019446c99c76c9da6221c
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
-ms.translationtype: HT
+ms.topic: how-to
+ms.date: 02/10/2020
+ms.author: dapine
+ms.openlocfilehash: 51fe6cea80e097f34432ab8dc7293c758bd8d720
+ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74975981"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77119810"
 ---
-# <a name="quickstart-get-the-list-of-text-to-speech-voices-using-python"></a>Краткое руководство. Получение списка голосовых моделей для преобразований текста в речь с использованием Python
+# <a name="get-the-list-of-text-to-speech-voices-using-python"></a>Получение списка голосовых моделей для преобразований текста в речь с использованием Python
 
-В этом кратком руководстве вы узнаете, как получить полный список стандартных и нейронных голосовых моделей для региона или конечной точки с использованием Python. Список возвращается как JSON, а доступность голосовой модели зависит от региона. Список поддерживаемых регионов см. в разделе [Регионы](regions.md).
+В этой статье описано, как получить полный список стандартных и нейронных голосовых моделей для региона или конечной точки с использованием Python. Список возвращается как JSON, а доступность голосовой модели зависит от региона. Список поддерживаемых регионов см. в разделе [Регионы](regions.md).
 
-Для этого краткого руководства требуется [учетная запись Azure Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) с ресурсом службы "Речь". Если у вас нет учетной записи, можно использовать [бесплатную пробную версию](get-started.md), чтобы получить ключ подписки.
+Для выполнения инструкций из этой статьи требуется [учетная запись Azure Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) и ресурс службы "Речь". Если у вас нет учетной записи, можно использовать [бесплатную пробную версию](get-started.md), чтобы получить ключ подписки.
 
 ## <a name="prerequisites"></a>Предварительные требования
-
-Для работы с этим кратким руководством вам понадобится:
 
 * Python 2.7.x или 3.x;
 * [Visual Studio](https://visualstudio.microsoft.com/downloads/), [Visual Studio Code](https://code.visualstudio.com/download) или любой другой редактор кода;
@@ -129,12 +127,12 @@ python get-voices.py
 
 Удалите из исходного кода примера приложения все конфиденциальные сведения, например ключи подписки.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Ознакомиться с примерами на Python на сайте GitHub](https://github.com/Azure-Samples/Cognitive-Speech-TTS/tree/master/Samples-Http/Python)
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 * [Справочник по API преобразования текста в речь](https://docs.microsoft.com/azure/cognitive-services/speech-service/rest-apis)
 * [Создание настраиваемого голоса](how-to-customize-voice-font.md)

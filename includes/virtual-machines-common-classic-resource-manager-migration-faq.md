@@ -2,18 +2,18 @@
 title: включить файл
 description: включить файл
 services: virtual-machines
-author: singhkays
+author: tanmaygore
 ms.service: virtual-machines
 ms.topic: include
-ms.date: 05/18/2018
-ms.author: kasing
+ms.date: 02/06/2020
+ms.author: tagore
 ms.custom: include file
-ms.openlocfilehash: a7a3c6edbbeca96a90f8003fda1b92fc8bf99fec
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.openlocfilehash: c923dfed24253ce2e3551c13a457f19d155a1e40
+ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76021016"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77068446"
 ---
 ## <a name="does-this-migration-plan-affect-any-of-my-existing-services-or-applications-that-run-on-azure-virtual-machines"></a>Влияет ли этот план миграции на существующие службы или приложения, которые выполняются на виртуальных машинах Azure? 
 
@@ -37,7 +37,7 @@ ms.locfileid: "76021016"
 
 ## <a name="can-i-roll-back-my-migration-if-the-commit-operation-fails"></a>Можно ли откатить миграцию при сбое фиксации? 
 
-Прервать миграцию при сбое фиксации нельзя. Все операции миграции, включая фиксацию, являются идемпотентными. Поэтому рекомендуется повторить операцию спустя некоторое время. Если ошибка все равно возникает, отправьте запрос в службу поддержки или создайте запись с тегом ClassicIaaSMigration на нашем [форуме о виртуальных машинах](https://social.msdn.microsoft.com/Forums/azure/home?forum=WAVirtualMachinesforWindows).
+Прервать миграцию при сбое фиксации нельзя. Все операции миграции, включая фиксацию, являются идемпотентными. Поэтому рекомендуется повторить операцию спустя некоторое время. Если вы по-прежнему сталкиваетесь с ошибкой, создайте запрос в службу поддержки или создайте сообщение на форуме по адресу [Microsoft Q & a](https://docs.microsoft.com/answers/index.html).
 
 ## <a name="do-i-have-to-buy-another-express-route-circuit-if-i-have-to-use-iaas-under-resource-manager"></a>Нужно ли приобретать еще один канал ExpressRoute, если нужно использовать ресурсы IaaS в модели Resource Manager? 
 
@@ -49,7 +49,7 @@ ms.locfileid: "76021016"
 
 ## <a name="i-backed-up-my-classic-vms-in-a-vault-can-i-migrate-my-vms-from-classic-mode-to-resource-manager-mode-and-protect-them-in-a-recovery-services-vault"></a>Резервные копии классических виртуальных машин находятся в хранилище. Можно ли переключить виртуальные машины из классического режима в режим Resource Manager и защитить их в хранилище служб восстановления?
 
-<a name="vault">При</a> переключении виртуальной машины из классического режима в режим Resource Manager резервные копии, сделанные до переноса, не переносятся в перемещенную виртуальную машину Resource Manager. Тем не менее, если вы хотите хранить резервные копии классических виртуальных машин, выполните указанные ниже действия до переноса. 
+При перемещении виртуальной машины из классической модели в режим диспетчер ресурсов, резервные копии, созданные до миграции, не будут перенесены на только что перемещенную виртуальную машину диспетчер ресурсов. Тем не менее, если вы хотите хранить резервные копии классических виртуальных машин, выполните указанные ниже действия до переноса. 
 
 1. В хранилище служб восстановления на вкладке **Защищенные элементы** выберите нужную виртуальную машину. 
 2. Щелкните "Остановить защиту". *Снимите* флажок **Удаление связанных архивируемых данных**.

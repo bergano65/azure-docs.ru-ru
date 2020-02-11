@@ -8,12 +8,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 01/30/2020
 ms.author: jlian
-ms.openlocfilehash: ed1abe3565805810a6a3fe383e1ddfa209950469
-ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
+ms.openlocfilehash: bed6736fda0c1815964f9017adb1e6fffa9335d9
+ms.sourcegitcommit: 9add86fb5cc19edf0b8cd2f42aeea5772511810c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76935374"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77110673"
 ---
 # <a name="monitor-diagnose-and-troubleshoot-disconnects-with-azure-iot-hub"></a>Мониторинг, диагностика и устранение неполадок при отсоединении с центром Интернета вещей Azure
 
@@ -101,6 +101,8 @@ ms.locfileid: "76935374"
 * Если у вас есть доступ к проблемным устройствам физически или удаленно (например, через SSH), выполните инструкции в [руководстве по устранению неполадок на стороне устройства](https://github.com/Azure/azure-iot-sdk-node/wiki/Troubleshooting-Guide-Devices), чтобы устранить неполадки.
 
 * Убедитесь, что ваши устройства **включены**. На портале Azure выберите "Центр Интернета вещей > Устройства IoT".
+
+* Если устройство использует протокол MQTT, убедитесь, что порт 8883 открыт. Дополнительные сведения см. [в статье подключение к центру Интернета вещей (MQTT)](iot-hub-mqtt-support.md#connecting-to-iot-hub).
 
 * Получите помощь на форуме [Центра Интернета вещей Azure](https://social.msdn.microsoft.com/Forums/azure/home?forum=azureiothub), [Stack Overflow](https://stackoverflow.com/questions/tagged/azure-iot-hub) или от [службы поддержки Azure](https://azure.microsoft.com/support/options/).
 

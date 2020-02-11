@@ -3,29 +3,29 @@ title: Инициализация клиентских приложений MSAL
 titleSuffix: Microsoft identity platform
 description: Узнайте, как инициализировать общедоступные клиентские и конфиденциальные клиентские приложения с помощью библиотеки проверки подлинности Майкрософт для .NET (MSAL.NET).
 services: active-directory
-author: TylerMSFT
+author: mmacy
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
 ms.workload: identity
 ms.date: 04/12/2019
-ms.author: twhitney
+ms.author: marsma
 ms.reviewer: saeeda
 ms.custom: aaddev
-ms.openlocfilehash: 31af3691e9f55eb4263b5976c2dc82c029cbc3a0
-ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
+ms.openlocfilehash: 57ce6ab31421cd4016f7e204eeabce82f2f7e6a7
+ms.sourcegitcommit: cfbea479cc065c6343e10c8b5f09424e9809092e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76695557"
+ms.lasthandoff: 02/08/2020
+ms.locfileid: "77083988"
 ---
 # <a name="initialize-client-applications-using-msalnet"></a>Инициализация клиентских приложений с помощью MSAL.NET
 В этой статье описывается инициализация общедоступного клиента и конфиденциальных клиентских приложений с помощью библиотеки проверки подлинности Майкрософт для .NET (MSAL.NET).  Дополнительные сведения о типах клиентских приложений и параметрах конфигурации приложений см. в [обзоре](msal-client-applications.md).
 
 При использовании MSAL.NET 3. x рекомендуемым способом создания экземпляра приложения является использование построителей приложений: `PublicClientApplicationBuilder` и `ConfidentialClientApplicationBuilder`. Они предлагают мощный механизм настройки приложения либо из кода, либо из файла конфигурации, либо путем смешивания обоих подходов.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 Перед инициализацией приложения необходимо сначала [зарегистрировать его](quickstart-register-app.md) , чтобы приложение можно было интегрировать с платформой Microsoft Identity.  После регистрации может потребоваться следующая информация (которую можно найти в портал Azure):
 
 - Идентификатор клиента (строка, представляющая GUID)
@@ -103,10 +103,10 @@ IConfidentialClientApplication app = ConfidentialClientApplicationBuilder.Create
 |`.WithB2CAuthority(string)` | Задает центр по умолчанию приложения как центр Azure AD B2C.|
 |`.WithClientId(string)` | Переопределяет идентификатор клиента.|
 |`.WithComponent(string)` | Задает имя библиотеки с помощью MSAL.NET (по причинам телеметрии). |
-|`.WithDebugLoggingCallback()` | При вызове приложение вызывает `Debug.Write` просто включить трассировку отладки. Дополнительные сведения см. в статье, посвященной [ведению журналов](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/wiki/logging).|
+|`.WithDebugLoggingCallback()` | При вызове приложение вызывает `Debug.Write` просто включить трассировку отладки. Дополнительные сведения см. в разделе [ведение журнала](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/wiki/logging) .|
 |`.WithExtraQueryParameters(IDictionary<string,string> eqp)` | Задайте дополнительные параметры запроса уровня приложения, которые будут отправляться во все запросы проверки подлинности. Это может быть переопределяемым на каждом уровне метода получения маркера (с тем же `.WithExtraQueryParameters pattern`).|
 |`.WithHttpClientFactory(IMsalHttpClientFactory httpClientFactory)` | Включает расширенные сценарии, такие как настройка для HTTP-прокси, или принудительное MSAL для использования определенного HttpClient (например, в ASP.NET Core веб-приложений и API).|
-|`.WithLogging()` | При вызове приложение вызывает обратный вызов с трассировкой отладки. Дополнительные сведения см. в статье, посвященной [ведению журналов](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/wiki/logging).|
+|`.WithLogging()` | При вызове приложение вызывает обратный вызов с трассировкой отладки. Дополнительные сведения см. в разделе [ведение журнала](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/wiki/logging) .|
 |`.WithRedirectUri(string redirectUri)` | Переопределяет URI перенаправления по умолчанию. В случае общедоступных клиентских приложений это будет полезно для сценариев, использующих брокер.|
 |`.WithTelemetry(TelemetryCallback telemetryCallback)` | Задает делегат, используемый для отправки данных телеметрии.|
 |`.WithTenantId(string tenantId)` | Переопределяет идентификатор клиента или описание клиента.|

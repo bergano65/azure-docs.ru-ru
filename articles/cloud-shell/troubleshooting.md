@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/24/2018
 ms.author: damaerte
-ms.openlocfilehash: db1e2d09c1a75401a8ca24859e9b2d5da9f54b72
-ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
+ms.openlocfilehash: 1d244d7b62fcfefeec6f628f473274ae982bf4d8
+ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2020
-ms.locfileid: "77024285"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77120226"
 ---
 # <a name="troubleshooting--limitations-of-azure-cloud-shell"></a>Устранение неполадок и ограничения в Azure Cloud Shell
 
@@ -28,6 +28,11 @@ ms.locfileid: "77024285"
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 ## <a name="general-troubleshooting"></a>Общие действия по устранению неполадок
+
+### <a name="error-running-azuread-cmdlets-in-powershell"></a>Ошибка при выполнении командлетов AzureAD в PowerShell
+
+- **Сведения**: при запуске командлетов AzureAD, таких как `Get-AzureADUser`, в Cloud Shell может появиться сообщение об ошибке: `You must call the Connect-AzureAD cmdlet before calling any other cmdlets`. 
+- **Решение**. выполните командлет `Connect-AzureAD`. Ранее Cloud Shell автоматически выполнял этот командлет во время запуска PowerShell. Чтобы ускорить время начала, командлет больше не будет выполняться автоматически. Вы можете восстановить предыдущее поведение, добавив `Connect-AzureAD` в файл $PROFILE в PowerShell.
 
 ### <a name="early-timeouts-in-firefox"></a>Преждевременное истечение времени ожидания в FireFox
 
@@ -117,7 +122,7 @@ Cloud Shell поддерживает последние версии следу�
 
 [!INCLUDE [copy-paste](../../includes/cloud-shell-copy-paste.md)]
 
-### <a name="usage-limits"></a>Ограничения на использование
+### <a name="usage-limits"></a>Ограничения использования
 
 Cloud Shell предназначен для интерактивного использования. В результате любые длительные неинтерактивные сеансы завершаются без предупреждения.
 
@@ -163,7 +168,7 @@ Azure Cloud Shell серьезно относится к личным данны
 
 [!INCLUDE [GDPR-related guidance](../../includes/gdpr-intro-sentence.md)]
 
-### <a name="export"></a>Экспортировать
+### <a name="export"></a>Экспорт
 Чтобы **экспортировать** пользовательские настройки, сохраненные Cloud Shell, такие как предпочитаемая оболочка, размер и тип шрифта, выполните следующие команды.
 
 1. [![](https://shell.azure.com/images/launchcloudshell.png "Launch Azure Cloud Shell")](https://shell.azure.com)
@@ -183,7 +188,7 @@ PowerShell.
   ((Invoke-WebRequest -Uri https://management.azure.com/providers/Microsoft.Portal/usersettings/cloudconsole?api-version=2017-12-01-preview -Headers @{Authorization = "Bearer $token"}).Content | ConvertFrom-Json).properties | Format-List
 ```
 
-### <a name="delete"></a>Удалить
+### <a name="delete"></a>DELETE
 Чтобы **удалить** пользовательские настройки, сохраненные Cloud Shell, такие как предпочитаемая оболочка, размер и тип шрифта, выполните следующие команды. При следующем запуске Cloud Shell вам будет предложено еще раз выставить файловый ресурс. 
 
 >[!Note]

@@ -4,17 +4,17 @@ description: Служба хранилища Azure защищает данные
 services: storage
 author: tamram
 ms.service: storage
-ms.date: 01/10/2020
+ms.date: 02/05/2020
 ms.topic: conceptual
 ms.author: tamram
 ms.reviewer: cbrooks
 ms.subservice: common
-ms.openlocfilehash: abb9325510b52672027338314e02466f2d28e701
-ms.sourcegitcommit: b5106424cd7531c7084a4ac6657c4d67a05f7068
+ms.openlocfilehash: 86d6a63601036abdde4ee7ae73114566d749feca
+ms.sourcegitcommit: cfbea479cc065c6343e10c8b5f09424e9809092e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75942204"
+ms.lasthandoff: 02/08/2020
+ms.locfileid: "77082833"
 ---
 # <a name="azure-storage-encryption-for-data-at-rest"></a>Шифрование неактивных данных в службе хранилища Azure
 
@@ -46,10 +46,10 @@ ms.locfileid: "75942204"
 |                                        |    Ключи, управляемые корпорацией Майкрософт                             |    Ключи, управляемые клиентом                                                                                                                        |    Ключи, предоставляемые клиентом                                                          |
 |----------------------------------------|-------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------|
 |    Операции шифрования и расшифровки    |    Azure                                              |    Azure                                                                                                                                        |    Azure                                                                         |
-|    Поддерживаемые службы хранилища Azure    |    Все                                                |    Хранилище BLOB-объектов, файлы Azure<sup>1, 2</sup>                                                                                                               |    Хранилище BLOB-объектов                                                                  |
-|    Хранилище ключей                         |    Хранилище ключей (Майкрософт)    |    Azure Key Vault.                                                                                                                              |    Azure Key Vault или любое другое хранилище ключей                                                                 |
-|    Ответственность за смену ключей         |    Майкрософт                                          |    Customer                                                                                                                                     |    Customer                                                                      |
-|    Использование ключа                           |    Майкрософт                                          |    Портал Azure, REST API поставщика ресурсов хранилища, библиотеки управления хранилищем Azure, PowerShell, CLI        |    REST API хранилища Azure (хранилище BLOB-объектов), клиентские библиотеки службы хранилища Azure    |
+|    Поддерживаемые службы хранилища Azure    |    All                                                |    Хранилище BLOB-объектов, файлы Azure<sup>1, 2</sup>                                                                                                               |    Хранилище BLOB-объектов                                                                  |
+|    Хранилище ключей                         |    Хранилище ключей (Майкрософт)    |    Azure Key Vault                                                                                                                              |    Azure Key Vault или любое другое хранилище ключей                                                                 |
+|    Ответственность за смену ключей         |    Microsoft                                          |    Customer                                                                                                                                     |    Customer                                                                      |
+|    Использование ключа                           |    Microsoft                                          |    Портал Azure, REST API поставщика ресурсов хранилища, библиотеки управления хранилищем Azure, PowerShell, CLI        |    REST API хранилища Azure (хранилище BLOB-объектов), клиентские библиотеки службы хранилища Azure    |
 |    Доступ к ключам                          |    Только Майкрософт                                     |    Майкрософт, клиент                                                                                                                    |    Только клиент                                                                 |
 
 <sup>1</sup> сведения о создании учетной записи, поддерживающей использование управляемых клиентом ключей с хранилищем очередей, см. в разделе [Создание учетной записи, которая поддерживает управляемые клиентом ключи для очередей](account-encryption-key-create.md?toc=%2fazure%2fstorage%2fqueues%2ftoc.json).<br />
@@ -166,7 +166,7 @@ ms.locfileid: "75942204"
 - [Получение большого двоичного объекта](/rest/api/storageservices/get-blob)
 - [Получение свойств большого двоичного объекта](/rest/api/storageservices/get-blob-properties)
 - [Получение метаданных BLOB-объекта](/rest/api/storageservices/get-blob-metadata)
-- [Моментальный снимок BLOB-объекта](/rest/api/storageservices/snapshot-blob)
+- [Большой двоичный объект моментальных снимков](/rest/api/storageservices/snapshot-blob)
 
 ### <a name="rotate-customer-provided-keys"></a>Поворачивайте ключи, предоставленные клиентом
 

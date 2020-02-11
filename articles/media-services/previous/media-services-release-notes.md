@@ -13,12 +13,12 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 10/01/2019
 ms.author: juliako
-ms.openlocfilehash: 5b1daab724d979206983ee758760790967abc06d
-ms.sourcegitcommit: 38b11501526a7997cfe1c7980d57e772b1f3169b
+ms.openlocfilehash: 310b3778a43c74db30940368d35c39c99f64a28c
+ms.sourcegitcommit: 57669c5ae1abdb6bac3b1e816ea822e3dbf5b3e1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76513428"
+ms.lasthandoff: 02/06/2020
+ms.locfileid: "77049987"
 ---
 # <a name="azure-media-services-release-notes"></a>Заметки о выпуске служб мультимедиа Azure
 
@@ -60,7 +60,7 @@ ms.locfileid: "76513428"
 
 ### <a name="deprecation-of-media-processors"></a>Устаревшие обработчики мультимедиа
 
-Мы сообщаем о прекращении использования *Windows Azure Media Encoder* (Ваме) и обработчиков мультимедиа *кодировщика мультимедиа Azure* (\ Media Encoder), которые выпускают с 1 марта 2020.
+Мы сообщаем о прекращении использования *Windows Azure Media Encoder* (Ваме) и обработчиков мультимедиа *кодировщика мультимедиа Azure* (\ \ Media Encoder). Сведения о датах выбытия см. в разделе об [устаревших компонентах](legacy-components.md) .
 
 Дополнительные сведения см. в статье [Миграция Ваме в Media Encoder Standard](https://go.microsoft.com/fwlink/?LinkId=2101334) и [перенос в Media Encoder Standard](https://go.microsoft.com/fwlink/?LinkId=2101335).
 
@@ -205,10 +205,10 @@ ms.locfileid: "76513428"
 
  Примерно через 12 месяцев после выпуска Media Encoder Standard кодировщик мультимедиа будет считаться устаревшим.
 
-### <a name="azure-sdk-for-php"></a>Пакет Azure SDK для PHP
+### <a name="azure-sdk-for-php"></a>Пакет SDK для Azure для PHP
 Команда SDK Azure опубликовала новый выпуск пакета [SDK Azure для PHP](https://github.com/Azure/azure-sdk-for-php), содержащий обновления и новые функции для служб мультимедиа. В частности, пакет SDK служб мультимедиа для PHP теперь поддерживает новые функции [защиты содержимого](media-services-content-protection-overview.md). Это функции динамического шифрования с использованием AES и DRM (PlayReady и Widevine) с ограничением по токену или без него. Кроме того, этот пакет поддерживает масштабирование [единиц кодирования](media-services-dotnet-encoding-units.md).
 
-Дополнительные сведения см. здесь:
+Дополнительные сведения см. в разделе:
 
 * Следующие [примеры кода](https://github.com/Azure/azure-sdk-for-php/tree/master/examples/MediaServices) помогут вам быстро приступить к работе:
   * **vodworkflow_aes.php.** PHP-файл, показывающий, как использовать динамическое шифрование c помощью алгоритма AES-128 и службы доставки ключей. Он основан на примере кода .NET, подробно описанном в статье [Использование динамического шифрования AES-128 и службы доставки ключей](media-services-protect-with-aes128.md).
@@ -247,7 +247,7 @@ ms.locfileid: "76513428"
 Дополнительную информацию см. в [этом блоге](https://azure.microsoft.com/blog/azure-media-services-release-dynamic-manifest-composition-remove-hls-audio-only-track-and-hls-i-frame-track-support/).
 
 ## <a id="august_changes_15"></a>Выпуск: август 2015 г.
-* Сейчас доступны пакет SDK служб мультимедиа для выпуска Java версии 0.8.0 и новые примеры. Дополнительные сведения см. здесь:
+* Сейчас доступны пакет SDK служб мультимедиа для выпуска Java версии 0.8.0 и новые примеры. Дополнительные сведения см. в разделе:
     
 * В Проигрыватель мультимедиа Azure была добавлена поддержка нескольких аудиопотоков. Дополнительные сведения см. в [этой записи блога](https://azure.microsoft.com/blog/2015/08/13/azure-media-player-update-with-multi-audio-stream-support/).
 
@@ -561,7 +561,7 @@ REST API служб мультимедиа обновлены до версии 
 
 * Widevine — это служба, которая предоставляется компанией Google Inc. и подпадает под условия предоставления услуг и политику конфиденциальности Google Inc.
 
-## <a name="provide-feedback"></a>Отправить отзыв
+## <a name="provide-feedback"></a>Отзывы
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 
 <!-- Anchors. -->

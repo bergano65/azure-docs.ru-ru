@@ -11,12 +11,12 @@ ms.date: 04/17/2018
 ms.author: jrasnick
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 8e9ab9dddad35708b58d32802452789adf84a19e
-ms.sourcegitcommit: b5d646969d7b665539beb18ed0dc6df87b7ba83d
+ms.openlocfilehash: 5eeb1c25264c36909774ec689b7410765881c8e2
+ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2020
-ms.locfileid: "76759471"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77064739"
 ---
 # <a name="secure-a-database-in-sql-data-warehouse"></a>Защита базы данных в хранилище данных SQL
 > [!div class="op_single_selector"]
@@ -40,7 +40,7 @@ Azure синапсе использует правила брандмауэра 
 
 Подключения к хранилищу данных SQL шифруются по умолчанию.  Изменение параметров подключения для отключения шифрования игнорируется.
 
-## <a name="authentication"></a>Проверка подлинности
+## <a name="authentication"></a>Аутентификация
 В процессе аутентификации предлагается подтвердить личность пользователя при подключении к базе данных. Сейчас хранилище данных SQL поддерживает аутентификацию SQL Server с использованием имени пользователя и пароля, а также Azure Active Directory. 
 
 При создании логического сервера для базы данных вы указали имя для входа "Администратор сервера" и пароль. Используя эти учетные данные, можно выполнить проверку подлинности SQL Server для любой базы данных на этом сервере в качестве владельца базы данных (или dbo).

@@ -7,6 +7,8 @@
 - name: Краткие руководства
   expanded: true
   items:
+    - name: Монитор подключений (предварительная версия)
+      href: connection-monitor-2-preview.md
     - name: Диагностика проблем с фильтрацией трафика виртуальной машины с помощью портала
       href: diagnose-vm-network-traffic-filtering-problem.md
     - name: Диагностика проблем с фильтрацией трафика виртуальной машины с помощью PowerShell

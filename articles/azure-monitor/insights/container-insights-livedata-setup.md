@@ -3,12 +3,12 @@ title: Azure Monitor установки для динамических данн
 description: В этой статье описывается, как настроить представление журналов контейнеров (stdout/stderr) и событий в режиме реального времени без использования kubectl с Azure Monitor для контейнеров.
 ms.topic: conceptual
 ms.date: 10/16/2019
-ms.openlocfilehash: 1ca52384e5ce657e4fedeb42e3304449a2d6be11
-ms.sourcegitcommit: f0f73c51441aeb04a5c21a6e3205b7f520f8b0e1
+ms.openlocfilehash: cf42eea99e437a76bb437b23f6eaffae1f1f3bc6
+ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2020
-ms.locfileid: "77030696"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77063770"
 ---
 # <a name="how-to-setup-the-live-data-preview-feature"></a>Настройка функции "Интерактивные данные (Предварительная версия)"
 
@@ -114,7 +114,7 @@ ms.locfileid: "77030696"
     >[!NOTE]
     >Если вы используете эту функцию в Azure для Китая, то первым базовым URL-адресом должно быть `https://afd.hosting.azureportal.chinaloudapi.cn/monitoring/Content/iframe/infrainsights.app/web/base-libs/auth/auth.html`, а второе значение базового URL-адреса должно быть `https://monitoring.hosting.azureportal.chinaloudapi.cn/monitoring/Content/iframe/infrainsights.app/web/base-libs/auth/auth.html`. 
     
-4. После регистрации URL-адресов перенаправления в разделе **Дополнительные параметры**выберите параметры **маркеры доступа** и **маркеры идентификации** , а затем сохраните изменения.
+4. После регистрации URL-адресов перенаправления в разделе **неявное предоставление**выберите параметры **маркеры доступа** и **маркеры идентификации** , а затем сохраните изменения.
 
 >[!NOTE]
 >Настройка проверки подлинности с помощью Azure Active Directory для единого входа может быть выполнена только во время первоначального развертывания нового кластера AKS. Настроить единый вход для кластера AKS, который уже развернут, невозможно.
@@ -131,6 +131,6 @@ ms.locfileid: "77030696"
 
 Дополнительные сведения о настройке **клустерролебиндинг**кластера AKS см. в разделе [Создание привязки RBAC](../../aks/azure-ad-integration-cli.md#create-rbac-binding).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы настроили проверку подлинности, вы можете просматривать в кластере [метрики](container-insights-livedata-metrics.md), [развертывания](container-insights-livedata-deployments.md), [события и журналы](container-insights-livedata-overview.md) в реальном времени.

@@ -1,5 +1,5 @@
 ---
-title: Учебник. Настройка бета-версии Zscaler для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
+title: Руководство. Настройка бета-версии Zscaler для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
 description: Узнайте, как настроить Azure Active Directory для автоматической инициализации и отзыва учетных записей пользователей в бета-версии Zscaler.
 services: active-directory
 documentationcenter: ''
@@ -15,14 +15,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/27/2019
 ms.author: jeedes
-ms.openlocfilehash: d5ca1efb607160447bdbca59522c8ac72bc7eeb3
-ms.sourcegitcommit: f5cc71cbb9969c681a991aa4a39f1120571a6c2e
+ms.openlocfilehash: 505cd7a3350c937885f0f03268ef326a4f784258
+ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68515521"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77062751"
 ---
-# <a name="tutorial-configure-zscaler-beta-for-automatic-user-provisioning"></a>Учебник. Настройка бета-версии Zscaler для автоматической подготовки пользователей
+# <a name="tutorial-configure-zscaler-beta-for-automatic-user-provisioning"></a>Руководство. Настройка бета-версии Zscaler для автоматической подготовки пользователей
 
 Цель этого руководства — продемонстрировать шаги, которые необходимо выполнить в Zscaler Beta и Azure Active Directory (Azure AD), чтобы настроить Azure AD для автоматической инициализации и отзыва пользователей и/или групп в Zscaler Beta.
 
@@ -105,7 +105,7 @@ ms.locfileid: "68515521"
 
 5. В разделе **учетные данные администратора** введите **URL-адрес клиента** и **маркер секрета** вашей учетной записи Zscaler Beta, как описано в шаге 6.
 
-6. Чтобы получить **URL-адрес** и **маркер секрета**клиента, перейдите в раздел **Администрирование > Параметры проверки** подлинности в пользовательском интерфейсе портала Zscaler Beta и щелкните **SAML** в разделе **тип проверки**подлинности.
+6. Чтобы получить **URL-адрес** и **маркер секрета**клиента, перейдите в раздел **Администрирование > Параметры проверки подлинности** в пользовательском интерфейсе портала Zscaler Beta и щелкните **SAML** в разделе **тип проверки подлинности**.
 
     ![Подготовка бета-версии Zscaler](./media/zscaler-beta-provisioning-tutorial/secret-token-1.png)
 
@@ -123,13 +123,13 @@ ms.locfileid: "68515521"
 
     ![Подготовка бета-версии Zscaler](./media/zscaler-beta-provisioning-tutorial/notification.png)
 
-9. Нажмите кнопку **Сохранить**.
+9. Выберите команду **Сохранить**.
 
 10. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory пользователей с Zscaler Beta**.
 
     ![Подготовка бета-версии Zscaler](./media/zscaler-beta-provisioning-tutorial/user-mappings.png)
 
-11. Ознакомьтесь с атрибутами пользователей, которые синхронизированы из Azure AD, с Zscaler Beta в разделе **сопоставление атрибутов** . Атрибуты, выбранные как свойства Matching, используются для сопоставления учетных записей пользователей в Zscaler Beta для операций обновления. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
+11. Ознакомьтесь с атрибутами пользователей, которые синхронизированы из Azure AD, с Zscaler Beta в разделе **сопоставление атрибутов** . Атрибуты, выбранные как свойства **Matching** , используются для сопоставления учетных записей пользователей в Zscaler Beta для операций обновления. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
 
     ![Подготовка бета-версии Zscaler](./media/zscaler-beta-provisioning-tutorial/user-attribute-mappings.png)
 
@@ -137,7 +137,7 @@ ms.locfileid: "68515521"
 
     ![Подготовка бета-версии Zscaler](./media/zscaler-beta-provisioning-tutorial/group-mappings.png)
 
-13. В разделе **сопоставление атрибутов** Проверьте атрибуты группы, которые синхронизированы из Azure AD в Zscaler Beta. Атрибуты, выбранные как свойства Matching, используются для сопоставления групп в Zscaler Beta для операций обновления. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
+13. В разделе **сопоставление атрибутов** Проверьте атрибуты группы, которые синхронизированы из Azure AD в Zscaler Beta. Атрибуты, выбранные как свойства **Matching** , используются для сопоставления групп в Zscaler Beta для операций обновления. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
 
     ![Подготовка бета-версии Zscaler](./media/zscaler-beta-provisioning-tutorial/group-attribute-mappings.png)
 
@@ -161,10 +161,10 @@ ms.locfileid: "68515521"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-* [Управление подготовкой учетных записей пользователей для корпоративных приложений](../manage-apps/configure-automatic-user-provisioning-portal.md)
+* [Управление подготовкой учетных записей пользователей для корпоративных приложений](../app-provisioning/configure-automatic-user-provisioning-portal.md)
 * [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Сведения о просмотре журналов и получении отчетов о действиях по подготовке](../active-directory-saas-provisioning-reporting.md)
 

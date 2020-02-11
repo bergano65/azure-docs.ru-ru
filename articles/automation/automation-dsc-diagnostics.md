@@ -9,12 +9,12 @@ ms.author: magoedte
 ms.date: 11/06/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 9fa84b5e87581fad4a7ada5fda074429409d2f8f
-ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
+ms.openlocfilehash: bbc9048452c5361306dd05e712090543bb1066ce
+ms.sourcegitcommit: 323c3f2e518caed5ca4dd31151e5dee95b8a1578
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74850352"
+ms.lasthandoff: 02/10/2020
+ms.locfileid: "77111533"
 ---
 # <a name="forward-azure-automation-state-configuration-reporting-data-to-azure-monitor-logs"></a>Пересылка данных отчетов о настройке состояния службы автоматизации Azure в журналы Azure Monitor
 
@@ -31,7 +31,7 @@ ms.locfileid: "74850352"
 
 [!INCLUDE [azure-monitor-log-analytics-rebrand](../../includes/azure-monitor-log-analytics-rebrand.md)]
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы начать отправку отчетов о конфигурации состояния автоматизации в журналы Azure Monitor, вам потребуется:
 
@@ -74,21 +74,24 @@ Set-AzDiagnosticSetting -ResourceId <AutomationResourceId> -WorkspaceId <Workspa
 
 ## <a name="view-the-state-configuration-logs"></a>Просмотр журналов State Configuration
 
-После настройки интеграции с журналами Azure Monitor для данных конфигурации состояния службы автоматизации в колонке **узлы DSC** учетной записи службы автоматизации появится кнопка **поиска по журналам** . Нажмите кнопку **Поиск по журналам**, чтобы просмотреть журналы для данных узла DSC.
+После настройки интеграции с журналами Azure Monitor для данных конфигурации состояния службы автоматизации их можно просмотреть, выбрав **журналы** в разделе **мониторинг** в левой области страницы Конфигурация состояния (DSC).  
 
-![Кнопка поиска по журналам](media/automation-dsc-diagnostics/log-search-button.png)
+![Журналы](media/automation-dsc-diagnostics/automation-dsc-logs-toc-item.png)
 
-Откроется колонка **Поиск по журналам**, и для каждого узла State Configuration отобразятся данные операции **DscNodeStatusData**. Для каждого [ресурса DSC](/powershell/scripting/dsc/resources/resources), вызванного в конфигурации такого узла, отобразятся данные операции **DscResourceStatusData**.
+Откроется колонка **Поиск по журналам**, и для каждого узла State Configuration отобразятся данные операции **DscNodeStatusData**. Для каждого **ресурса DSC**, вызванного в конфигурации такого узла, отобразятся данные операции [DscResourceStatusData](/powershell/scripting/dsc/resources/resources).
 
 Для операции **DscResourceStatusData** отображаются сведения об ошибках при сбое в работе любых ресурсов DSC.
 
 Щелкните каждую операцию в списке, чтобы просмотреть сведения о ней.
 
-Можно также просмотреть журналы, выполнив поиск в журналах Azure Monitor.
-См. статью [Поиск данных по журналам](../log-analytics/log-analytics-log-searches.md).
-Введите следующий запрос, чтобы найти журналы State Configuration: `Type=AzureDiagnostics ResourceProvider='MICROSOFT.AUTOMATION' Category='DscNodeStatus'`.
+Можно также просмотреть журналы, выполнив поиск в журналах Azure Monitor. См. статью [Поиск данных по журналам](https://docs.microsoft.com/azure/azure-monitor/log-query/log-query-overview). Введите следующий запрос, чтобы найти журналы конфигурации состояния.
 
-Можно сузить запрос, использовав имя операции. Например: `Type=AzureDiagnostics ResourceProvider='MICROSOFT.AUTOMATION' Category='DscNodeStatus' OperationName='DscNodeStatusData'`
+```
+AzureDiagnostics
+| where Category == 'DscNodeStatus' 
+| where OperationName contains 'DSCNodeStatusData'
+| where ResultType != 'Compliant'
+```
 
 ### <a name="send-an-email-when-a-state-configuration-compliance-check-fails"></a>Отправка сообщения электронной почты при сбое проверки соответствия State Configuration
 
@@ -128,13 +131,13 @@ Set-AzDiagnosticSetting -ResourceId <AutomationResourceId> -WorkspaceId <Workspa
 
 | Свойство | Описание |
 | --- | --- |
-| TimeGenerated |Дата и время запуска проверки соответствия. |
+| Время создания |Дата и время запуска проверки соответствия. |
 | OperationName |DscNodeStatusData |
 | ResultType |Подтверждено ли соответствие узла. |
 | NodeName_s |Имя управляемого узла. |
 | NodeComplianceStatus_s |Подтверждено ли соответствие узла. |
 | DscReportStatus |Успешно ли прошла проверка соответствия. |
-| ConfigurationMode | Применение конфигурации к узлу. Возможные значения: __ApplyOnly__, __ApplyandMonitior__ и __ApplyandAutoCorrect__. <ul><li>__ApplyOnly__ — DSC применяет конфигурацию и не выполняет дальнейшие действия, пока новая конфигурация не будет отправлена в целевой узел или получена с сервера. После первоначального применения новой конфигурации DSC не проверяет наличие отклонений от ранее настроенного состояния. Перед вступлением в силу __ApplyOnly__ DSC пытается применить конфигурацию, пока это не будет успешно реализовано. </li><li> __ApplyAndMonitor__ — значение по умолчанию. LCM применяет любую новую конфигурацию. Если после начального применения новой конфигурации состояние целевого узла отклоняется от требуемого, DSC сообщает о расхождении в журналах. Перед вступлением в силу __ApplyAndMonitor__ DSC пытается применить конфигурацию, пока это не будет успешно реализовано.</li><li>__ApplyAndAutoCorrect__ — DSC применяет любые новые конфигурации. Если после начального применения новой конфигурации состояние целевого узла отклоняется от требуемого, DSC сообщает о расхождении в журналах, а затем повторно применяет текущую конфигурацию.</li></ul> |
+| ConfigurationMode | Применение конфигурации к узлу. Возможные значения: __ApplyOnly__, __ApplyandMonitior__ и __ApplyandAutoCorrect__. <ul><li>__ApplyOnly__ — DSC применяет конфигурацию и не выполняет дальнейшие действия, пока новая конфигурация не будет отправлена в целевой узел или получена с сервера. После первого применения новой конфигурации DSC не проверяет наличие отклонений от настроенного ранее состояния. Перед вступлением в силу __ApplyOnly__ DSC пытается применить конфигурацию, пока это не будет успешно реализовано. </li><li> __ApplyAndMonitor__ — значение по умолчанию. LCM применяет все новые конфигурации. Если после начального применения новой конфигурации состояние целевого узла отклоняется от требуемого, DSC сообщает о расхождении в журналах. Перед вступлением в силу __ApplyAndMonitor__ DSC пытается применить конфигурацию, пока это не будет успешно реализовано.</li><li>__ApplyAndAutoCorrect__: DSC применяет все новые конфигурации. Если после начального применения новой конфигурации состояние целевого узла отклоняется от требуемого, DSC сообщает о расхождении в журналах, а затем повторно применяет текущую конфигурацию.</li></ul> |
 | HostName_s | Имя управляемого узла. |
 | IPAddress | Адрес IPv4 управляемого узла. |
 | Категория | DscNodeStatus |
@@ -148,18 +151,18 @@ Set-AzDiagnosticSetting -ResourceId <AutomationResourceId> -WorkspaceId <Workspa
 | NumberOfResources_d |Количество ресурсов DSC, которые вызывались в примененной к узлу конфигурации. |
 | SourceSystem | Как Azure Monitor журналы собирают данные. Всегда имеет значение *Azure* для системы диагностики Azure. |
 | ResourceId |Указывает учетную запись службы автоматизации Azure. |
-| ResultDescription | Описание для этой операции. |
+| ResultDescription | Описание этой операции. |
 | SubscriptionId | Идентификатор подписки Azure (GUID) для учетной записи службы автоматизации. |
 | ResourceGroup | Имя группы ресурсов для учетной записи службы автоматизации. |
 | ResourceProvider | MICROSOFT.AUTOMATION |
 | ResourceType | AUTOMATIONACCOUNTS |
-| CorrelationId |Идентификатор GUID для корреляции отчета о соответствии. |
+| CorrelationId |Идентификатор GUID, который является ИДЕНТИФИКАТОРом корреляции отчета о соответствии. |
 
 ### <a name="dscresourcestatusdata"></a>DscResourceStatusData
 
 | Свойство | Описание |
 | --- | --- |
-| TimeGenerated |Дата и время запуска проверки соответствия. |
+| Время создания |Дата и время запуска проверки соответствия. |
 | OperationName |DscResourceStatusData|
 | ResultType |Подтверждено ли соответствие ресурса. |
 | NodeName_s |Имя управляемого узла. |
@@ -179,14 +182,14 @@ Set-AzDiagnosticSetting -ResourceId <AutomationResourceId> -WorkspaceId <Workspa
 | DscResourceDuration_d |Период выполнения ресурса DSC в секундах. |
 | SourceSystem | Как Azure Monitor журналы собирают данные. Всегда имеет значение *Azure* для системы диагностики Azure. |
 | ResourceId |Указывает учетную запись службы автоматизации Azure. |
-| ResultDescription | Описание для этой операции. |
+| ResultDescription | Описание этой операции. |
 | SubscriptionId | Идентификатор подписки Azure (GUID) для учетной записи службы автоматизации. |
 | ResourceGroup | Имя группы ресурсов для учетной записи службы автоматизации. |
 | ResourceProvider | MICROSOFT.AUTOMATION |
 | ResourceType | AUTOMATIONACCOUNTS |
-| CorrelationId |Идентификатор GUID для корреляции отчета о соответствии. |
+| CorrelationId |Идентификатор GUID, который является ИДЕНТИФИКАТОРом корреляции отчета о соответствии. |
 
-## <a name="summary"></a>Резюме
+## <a name="summary"></a>Сводка
 
 Отправляя данные конфигурации состояния автоматизации в журналы Azure Monitor, вы сможете получить более подробные сведения о состоянии узлов конфигурации состояния автоматизации, выполнив следующие действия.
 
@@ -195,7 +198,7 @@ Set-AzDiagnosticSetting -ResourceId <AutomationResourceId> -WorkspaceId <Workspa
 
 Журналы Azure Monitor обеспечивают более высокую оперативную видимость данных конфигурации состояния службы автоматизации и позволяют быстрее решать инциденты.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Общие сведения см. в статье с [обзором "Настройка состояния службы автоматизации Azure"](automation-dsc-overview.md).
 - Чтобы приступить к работе со службой "Настройка состояния службы автоматизации Azure", см. сведения в [этой статье](automation-dsc-getting-started.md).

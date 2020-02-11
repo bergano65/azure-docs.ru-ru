@@ -9,12 +9,12 @@ services: iot-hub
 ms.devlang: java
 ms.topic: conceptual
 ms.date: 08/16/2019
-ms.openlocfilehash: bbb78dcd36ec986cefc1d57e01396f285a6b30dd
-ms.sourcegitcommit: 19a821fc95da830437873d9d8e6626ffc5e0e9d6
+ms.openlocfilehash: 9227192b2f7c554943fb3716ba1d1066f814c447
+ms.sourcegitcommit: 9add86fb5cc19edf0b8cd2f42aeea5772511810c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70161951"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77110319"
 ---
 # <a name="schedule-and-broadcast-jobs-java"></a>Планирование и трансляция заданий (Java)
 
@@ -30,9 +30,9 @@ ms.locfileid: "70161951"
 
 Дополнительные сведения об этих возможностях см. в указанных ниже статьях.
 
-* Двойник устройства и свойства: [Начало работы с двойниками устройств](iot-hub-java-java-twin-getstarted.md)
+* Информация о двойниках устройств и их свойствах представлена в статье [Get started with device twins (Java)](iot-hub-java-java-twin-getstarted.md) (Приступая к работе с двойниками устройств).
 
-* Прямые методы: [Руководство разработчика для центра Интернета вещей. прямые методы](iot-hub-devguide-direct-methods.md) и [Учебник: Использование прямых методов](quickstart-control-device-java.md)
+* Прямые методы: [Общие сведения о прямых методах и информация о вызове этих методов из Центра Интернета вещей](iot-hub-devguide-direct-methods.md) и [Использование прямых методов (Java)](quickstart-control-device-java.md).
 
 [!INCLUDE [iot-hub-basic](../../includes/iot-hub-basic-whole.md)]
 
@@ -51,13 +51,15 @@ ms.locfileid: "70161951"
 > [!NOTE]
 > Статья [Общие сведения о пакетах SDK для Azure IoT и их использование](iot-hub-devguide-sdks.md) содержит сведения о разных пакетах SDK для Интернета вещей Azure, с помощью которых можно создать приложения для устройств и внутренние приложения.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
-* [Пакет SDK для Java SE 8](https://docs.microsoft.com/java/azure/jdk/?view=azure-java-stable). Обязательно выберите **Java 8** в разделе **долгосрочная поддержка** , чтобы скачать файлы для JDK 8.
+* [Пакет SDK для Java SE 8](https://docs.microsoft.com/java/azure/jdk/?view=azure-java-stable). Щелкните ссылку **Java 8** в разделе **Долгосрочная поддержка**, чтобы скачать все необходимое для работы с JDK 8.
 
 * [Maven 3](https://maven.apache.org/download.cgi)
 
 * Активная учетная запись Azure. Если ее нет, можно создать [бесплатную учетную запись](https://azure.microsoft.com/pricing/free-trial/) всего за несколько минут.
+
+* Убедитесь, что в брандмауэре открыт порт 8883. В примере для устройства в этой статье используется протокол MQTT, который обменивается данными через порт 8883. Этот порт может быть заблокирован в некоторых корпоративных и образовательных сетевых средах. Дополнительные сведения и способы решения этой проблемы см. [в статье подключение к центру Интернета вещей (MQTT)](iot-hub-mqtt-support.md#connecting-to-iot-hub).
 
 ## <a name="create-an-iot-hub"></a>Создание Центра Интернета вещей
 
@@ -149,7 +151,7 @@ ms.locfileid: "70161951"
     import java.util.UUID;
     ```
 
-9. Добавьте в класс **App** . Замените `{youriothubconnectionstring}` строкой подключения к центру Интернета вещей, скопированной ранее в [поле получение строки подключения для центра Интернета вещей](#get-the-iot-hub-connection-string):
+9. Добавьте в класс **App** . Замените `{youriothubconnectionstring}` строкой подключения центра Интернета вещей, скопированной ранее в [поле получение строки подключения для центра Интернета вещей](#get-the-iot-hub-connection-string):
 
     ```java
     public static final String iotHubConnectionString = "{youriothubconnectionstring}";
@@ -303,13 +305,13 @@ ms.locfileid: "70161951"
 
 В этом разделе вы создадите консольное приложение Java, которое обрабатывает требуемые свойства, отправленные из Центр Интернета вещей реализует непосредственный вызов методов.
 
-1. В папке **IOT-Java-Schedule-Jobs** создайте проект Maven с именем имитация **устройства** , выполнив в командной строке следующую команду. Обратите внимание, что это одна длинная команда.
+1. В папке **IOT-Java-Schedule-Jobs** создайте проект Maven с именем **имитация устройства** , выполнив в командной строке следующую команду. Обратите внимание, что это одна длинная команда.
 
    ```cmd/sh
    mvn archetype:generate -DgroupId=com.mycompany.app -DartifactId=simulated-device -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
    ```
 
-2. В командной строке перейдите в папку имитация **устройства** .
+2. В командной строке перейдите в папку **имитация устройства** .
 
 3. В текстовом редакторе откройте файл **POM. XML** в папке **имитации устройства** и добавьте следующие зависимости в узел **зависимости** . Эта зависимость позволит вам использовать в приложении пакет **iot-device-client** для обмена данными с Центром Интернета вещей:
 
@@ -367,7 +369,7 @@ ms.locfileid: "70161951"
     import java.util.Scanner;
     ```
 
-9. Добавьте в класс **App** . Замените `{yourdeviceconnectionstring}` строкой подключения устройства, скопированной ранее в разделе [Регистрация нового устройства в центре Интернета вещей](#register-a-new-device-in-the-iot-hub) :
+9. Добавьте в класс **App** . Замените `{yourdeviceconnectionstring}` строкой подключения устройства, скопированным ранее в разделе [Регистрация нового устройства в центре Интернета вещей](#register-a-new-device-in-the-iot-hub) :
 
     ```java
     private static String connString = "{yourdeviceconnectionstring}";
@@ -481,7 +483,7 @@ ms.locfileid: "70161951"
 
 17. Сохраните и закройте файл **Simulated-device\src\main\java\com\mycompany\app\app.Java.** .
 
-18. Создайте приложение **simulated-device** и исправьте все ошибки. В командной строке перейдите в папку имитируемed **-Device** и выполните следующую команду:
+18. Создайте приложение **simulated-device** и исправьте все ошибки. В командной строке перейдите в папку **имитируемed-Device** и выполните следующую команду:
 
     ```cmd/sh
     mvn clean package -DskipTests
@@ -511,7 +513,7 @@ ms.locfileid: "70161951"
 
    ![Клиент устройства реагирует на изменения](./media/iot-hub-java-java-schedule-jobs/device-app-2.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом учебнике описано использование задания для планирования прямого метода на устройстве и обновления свойств двойника устройства.
 

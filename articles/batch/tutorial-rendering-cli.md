@@ -2,19 +2,19 @@
 title: Отрисовка сцены в облаке с помощью пакетной службы Azure
 description: Руководство. Отрисовка сцены Autodesk 3ds Max с Arnold с помощью пакетной службы рендеринга и интерфейса командной строки Azure
 services: batch
-author: ju-shim
-manager: gwallace
+author: LauraBrenner
+manager: evansma
 ms.service: batch
 ms.topic: tutorial
 ms.date: 12/11/2018
-ms.author: jushiman
+ms.author: labrenne
 ms.custom: mvc
-ms.openlocfilehash: e63bd26ec226cfeba1c11570b085fd88570fbb2d
-ms.sourcegitcommit: dbcc4569fde1bebb9df0a3ab6d4d3ff7f806d486
+ms.openlocfilehash: 12205fd04b015ac3cfe32765779808b636f53946
+ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76029193"
+ms.lasthandoff: 02/05/2020
+ms.locfileid: "77023078"
 ---
 # <a name="tutorial-render-a-scene-with-azure-batch"></a>Руководство. Отрисовка сцены с помощью пакетной службы Azure 
 
@@ -29,7 +29,7 @@ ms.locfileid: "76029193"
 
 В этом руководстве вы выполните рендеринг сцены 3ds Max с помощью пакетной службы Azure и отрисовщика трассировки лучей [Arnold](https://www.autodesk.com/products/arnold/overview). Пул пакетной службы использует образ Azure Marketplace с предварительно установленными графиками и визуализацией приложений, предоставляющие лицензирование с оплатой по мере использования.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Вам потребуется подписка с оплатой по мере использования или другой вариант приобретения Azure для использования приложениями для рендеринга в пакетной службе Azure по принципу оплаты по мере использования. **Лицензирование с оплатой за использование не поддерживается, если использовать бесплатное предложение Azure, которое предоставляет денежной кредит.**
 

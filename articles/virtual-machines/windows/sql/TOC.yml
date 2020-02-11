@@ -16,7 +16,7 @@
   items:
     - name: Рекомендации
       items:
-        - name: Рекомендации по оптимизации производительности
+        - name: Оптимальные методы повышения производительности
           href: virtual-machines-windows-sql-performance.md
         - name: Вопросы безопасности
           href: virtual-machines-windows-sql-security.md
@@ -54,7 +54,7 @@
               href: virtual-machines-windows-sql-automated-patching.md
             - name: Настройка интеграции с Azure Key Vault
               href: virtual-machines-windows-ps-sql-keyvault.md
-- name: Руководства
+- name: Практические руководства
   items:
     - name: Создание виртуальной машины SQL
       items:
@@ -97,11 +97,13 @@
               href: virtual-machines-windows-sql-availability-group-quickstart-template.md
             - name: Различные регионы
               href: virtual-machines-windows-portal-sql-availability-group-dr.md
+            - name: Независимые от домена (рабочая группа)
+              href: virtual-machines-windows-sql-workgroup-availability-group.md
             - name: Настройка вручную
               items:
                 - name: Предварительные требования
                   href: virtual-machines-windows-portal-sql-availability-group-prereq.md
-                - name: Руководство
+                - name: Учебник
                   href: virtual-machines-windows-portal-sql-availability-group-tutorial.md
                 - name: "Подсистема балансировки нагрузки\_— портал Azure"
                   href: virtual-machines-windows-portal-sql-alwayson-int-listener.md
@@ -113,7 +115,7 @@
               href: virtual-machines-windows-portal-sql-create-failover-cluster.md
             - name: Использование общей папки (цен. категория "Премиум")
               href: virtual-machines-windows-portal-sql-create-failover-cluster-premium-file-share.md
-- name: Справочные материалы
+- name: Справочник
   items:
     - name: Azure PowerShell
       href: /powershell/azure/overview
@@ -127,7 +129,7 @@
       href: /rest/api/
 - name: Ресурсы
   items:
-    - name: Часто задаваемые вопросы
+    - name: ВОПРОСЫ И ОТВЕТЫ
       href: virtual-machines-windows-sql-server-iaas-faq.md
     - name: Цены
       href: virtual-machines-windows-sql-server-pricing-guidance.md

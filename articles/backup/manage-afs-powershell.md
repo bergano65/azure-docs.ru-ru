@@ -3,16 +3,19 @@ title: Управление резервными копиями файловых
 description: Узнайте, как использовать PowerShell для управления и мониторинга файловых ресурсов Azure, созданных службой Azure Backup.
 ms.topic: conceptual
 ms.date: 1/27/2020
-ms.openlocfilehash: 9004e16c4b7c6ee704460d744612bafcd32831b9
-ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
+ms.openlocfilehash: a9dc421db740963fc5cd11e868eb383694376ce1
+ms.sourcegitcommit: cfbea479cc065c6343e10c8b5f09424e9809092e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76776421"
+ms.lasthandoff: 02/08/2020
+ms.locfileid: "77083164"
 ---
 # <a name="manage-azure-file-share-backups-with-powershell"></a>Управление резервными копиями файловых ресурсов Azure с помощью PowerShell
 
 В этой статье описывается, как использовать Azure PowerShell для управления и мониторинга файловых ресурсов Azure, резервное копирование которых выполняется службой Azure Backup.
+
+> [!WARNING]
+> Убедитесь, что версия PS обновлена до минимальной версии для "az. RecoveryServices 2.6.0" для резервных копий AFS. Дополнительные сведения см. в [разделе](backup-azure-afs-automation.md#important-notice---backup-item-identification-for-afs-backups) , описывающем требования к этому изменению.
 
 ## <a name="modify-the-protection-policy"></a>Изменение политики защиты
 

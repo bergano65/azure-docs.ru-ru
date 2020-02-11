@@ -2,17 +2,17 @@
 title: Краткое руководство. Создание частной зоны Azure DNS с помощью Azure PowerShell
 description: В этой статье описано, как создать и проверить частную зону и запись DNS в Azure DNS. Это пошаговое руководство по созданию первой частной зоны DNS и записи DNS, а также управлению ими с помощью PowerShell.
 services: dns
-author: asudbring
+author: rohinkoul
 ms.service: dns
 ms.topic: quickstart
 ms.date: 10/05/2019
-ms.author: allensu
-ms.openlocfilehash: 5532eb9897de2f746b194fb6bd496548e989b994
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.author: rohink
+ms.openlocfilehash: 0db53bcd6516bd52e2796deaa49fe0dd582e0588
+ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74210817"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76939387"
 ---
 # <a name="quickstart-create-an-azure-private-dns-zone-using-azure-powershell"></a>Краткое руководство. Создание частной зоны Azure DNS с помощью Azure PowerShell
 
@@ -22,10 +22,10 @@ ms.locfileid: "74210817"
 
 Зона DNS используется для размещения DNS-записей определенного домена. Чтобы разместить свой домен в Azure DNS, необходимо создать зону DNS для этого доменного имени. Каждая запись DNS для вашего домена создается внутри этой зоны DNS. Чтобы опубликовать частную зону DNS в виртуальной сети, укажите список виртуальных сетей, которые могут разрешать записи в зоне.  Они называются *связанными* виртуальными сетями. Когда автоматическая регистрация включена, Azure DNS также обновляет записи зоны при каждом создании виртуальной машины, изменении ее IP-адреса или удалении.
 
-В этой статье раскрываются следующие темы:
+Вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
-> * Создание частной зоны DNS.
+> * Создание частной зоны DNS
 > * Создание тестовых виртуальных машин
 > * Создание дополнительной записи DNS
 > * Проверка частной зоны
@@ -205,7 +205,7 @@ Get-AzPrivateDnsRecordSet -ZoneName private.contoso.com -ResourceGroupName MyAzu
 Remove-AzResourceGroup -Name MyAzureResourceGroup
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Сценарии применения частных зон DNS Azure](private-dns-scenarios.md)
