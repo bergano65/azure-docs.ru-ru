@@ -10,14 +10,14 @@ ms.service: cloud-services
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: tbd
-ms.date: 01/24/2020
+ms.date: 02/07/2020
 ms.author: raiye
-ms.openlocfilehash: a38685ba4cca4df2c2ae1a52e46626072135408d
-ms.sourcegitcommit: 57669c5ae1abdb6bac3b1e816ea822e3dbf5b3e1
+ms.openlocfilehash: cca79946c0537b75335eb2e64ae1fa429f2c8d18
+ms.sourcegitcommit: cfbea479cc065c6343e10c8b5f09424e9809092e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2020
-ms.locfileid: "77049873"
+ms.lasthandoff: 02/08/2020
+ms.locfileid: "77087232"
 ---
 # <a name="azure-guest-os"></a>Гостевая ОС Azure
 В следующей таблице приведены обновления Microsoft Security Response Center (MSRC) для гостевой ОС Azure. Выполните поиск по этой статье, чтобы определить, применяется ли какое-либо конкретное обновление к используемой гостевой ОС. Обновления всегда переносятся для определенного [семейства][family-explain] , в котором они были представлены.
@@ -42,9 +42,9 @@ ms.locfileid: "77049873"
 |  Rel 20-01  |  [4494174]  |  Микрокод v4  | [6,15] | 29 августа 2019 г. |
 |  Rel 20-01  |  [4532947]  |  Безопасность Windows  | [6,15] | 14 января 2020 г. |
 |  Rel 20-01  |  [4534273]  |  лку  | [6,15] | 14 января 2020 г. |
-|  Rel 20-01  |  [4530734]  |  Без безопасности  | [2,94] | 10 декабря 2019 г. |
+|  Rel 20-01  |  [4530734]  |  Ежемесячное сведение  | [2,94] | 10 декабря 2019 г. |
 |  Rel 20-01  |  [4530691]  |  Ежемесячное сведение   | [3,81] | 10 декабря 2019 г. |
-|  Rel 20-01  |  [4530702]  |  Без безопасности  | [4,74] | 10 декабря 2019 г. |
+|  Rel 20-01  |  [4530702]  |  Ежемесячное сведение  | [4,74] | 10 декабря 2019 г. |
 
 [4532960]: https://support.microsoft.com/kb/4532960
 [4534251]: https://support.microsoft.com/kb/4534251

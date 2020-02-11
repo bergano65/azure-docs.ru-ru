@@ -1,3 +1,4 @@
+---
 layout: HubPage
 hide_bc: true
 title: Документация по Microsoft Azure
@@ -275,7 +276,7 @@ ms.locfileid: "77026019"
                                                     </li>
                                                     <li>
                                                         <a class="barLink" href="/azure/devops-project/">
-                                                            <img src="https://docs.microsoft.com/media/logos/logo_vs-team-services.svg" alt=""> Azure DevOps Проекты</a>
+                                                            <img src="https://docs.microsoft.com/media/logos/logo_vs-team-services.svg" alt=""> Azure DevOps Projects </a>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -292,7 +293,7 @@ ms.locfileid: "77026019"
                                                 <ul class="noBullet">
                                                     <li>
                                                         <a class="barLink" href="/learn/modules/tour-azure-portal/">
-                                                            <img src="https://docs.microsoft.com/media/logos/logo_vs-team-services.svg" alt=""> Azure DevOps Projects </a>
+                                                            <img src="https://docs.microsoft.com/learn/achievements/tour-azure-services-and-features.svg" alt=""> Обзор служб и функций Azure </a>
                                                     </li>
                                                     <li>
                                                         <a class="barLink" href="/learn/modules/principles-cloud-computing/">
@@ -2257,7 +2258,7 @@ ms.locfileid: "77026019"
                         </ul>
                     </li>
                     <li>
-                        <a href="#analytics">Аналитика</a>
+                        <a href="#analytics">Analytics</a>
                         <ul id="analytics" class="cardsA">
                             <li>
                                 <a href="/azure/sql-data-warehouse/">
@@ -3532,7 +3533,6 @@ ms.locfileid: "77026019"
                                                 <div class="cardText">
                                                     <h3>Visual Studio Code</h3>
                                                     <p>Visual Studio Code — это простой, но мощный настольный редактор для работы с исходным кодом, доступный для Windows, macOS и Linux.</p>
-
                                                 </div>
                                             </div>
                                         </div>
@@ -4320,7 +4320,7 @@ ms.locfileid: "77026019"
                                                 </div>
                                                 <div class="cardText">
                                                     <h3>Сетка событий Azure</h3>
-                                                    <p>Надежная доставка событий в огромном масштабе</p>
+                                                    <p>Надежная крупномасштабная доставка событий</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -5310,7 +5310,7 @@ ms.locfileid: "77026019"
                                                 </div>
                                                 <div class="cardText">
                                                     <h3>Azure Kinect DK</h3>
-                                                    <p>Многофункциональное сенсорное устройство для разработки</p>
+                                                    <p>Создавайте приложения с помощью гибкого и чувствительного устройства</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -5626,7 +5626,7 @@ ms.locfileid: "77026019"
                                                     <h3>Защита от атак DDoS Azure</h3>
                                                     <p>Защита приложения от распределенных атак типа "отказ в обслуживании" (DDoS)</p>
                                                 </div>
-                                          </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </a>
