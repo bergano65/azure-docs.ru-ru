@@ -63,7 +63,7 @@ dotnet new mvc --no-https
 > [!IMPORTANT]
 > `CreateHostBuilder` заменяет `CreateWebHostBuilder` в .NET Core 3.0.  Выберите правильный синтаксис в зависимости от среды.
 
-#### <a name="net-core-2xtabcore2x"></a>[.NET Core 2.x](#tab/core2x).
+#### <a name="net-core-2xtabcore2x"></a>[.NET Core 2.x](#tab/core2x)
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk.Web">
@@ -81,7 +81,7 @@ dotnet new mvc --no-https
 </Project>
 ```
 
-#### <a name="net-core-3xtabcore3x"></a>[.NET Core 3.x](#tab/core3x).
+#### <a name="net-core-3xtabcore3x"></a>[.NET Core 3.x](#tab/core3x)
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk.Web">
@@ -139,7 +139,7 @@ dotnet new mvc --no-https
     > [!IMPORTANT]
     > `CreateHostBuilder` заменяет `CreateWebHostBuilder` в .NET Core 3.0.  Выберите правильный синтаксис в зависимости от среды.
 
-    #### <a name="net-core-2xtabcore2x"></a>[.NET Core 2.x](#tab/core2x).
+    #### <a name="net-core-2xtabcore2x"></a>[.NET Core 2.x](#tab/core2x)
 
     ```csharp
     public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
@@ -152,7 +152,7 @@ dotnet new mvc --no-https
             .UseStartup<Startup>();
     ```
 
-    #### <a name="net-core-3xtabcore3x"></a>[.NET Core 3.x](#tab/core3x).
+    #### <a name="net-core-3xtabcore3x"></a>[.NET Core 3.x](#tab/core3x)
 
     ```csharp
     public static IHostBuilder CreateHostBuilder(string[] args) =>
