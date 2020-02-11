@@ -3,19 +3,19 @@ title: Распознавание целей распознавания речи
 titleSuffix: Azure Cognitive Services
 description: В этом руководство вы узнаете, как распознать способы распознавания речи с помощью речевого пакета SDK C#для.
 services: cognitive-services
-author: wolfma61
+author: IEvangelist
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 08/28/2019
-ms.author: wolfma
-ms.openlocfilehash: 554a7cbd79dbb6e1306686600474f727c99defed
-ms.sourcegitcommit: 5aefc96fd34c141275af31874700edbb829436bb
+ms.date: 02/10/2020
+ms.author: dapine
+ms.openlocfilehash: 5d3c77c307739f9014010a592aa496a1cc83b333
+ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74805898"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77120038"
 ---
 # <a name="how-to-recognize-intents-from-speech-using-the-speech-sdk-for-c"></a>Распознавание целей распознавания речи с помощью речевого пакета SDK дляC#
 
@@ -35,7 +35,7 @@ ms.locfileid: "74805898"
 > - распознать речь из файла;
 > - использовать асинхронное непрерывное распознавание при определенном событии.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 Прежде чем приступить к работе с этим руководством, убедитесь, что у вас есть следующие элементы:
 
@@ -48,7 +48,7 @@ ms.locfileid: "74805898"
 
 В LUIS используется три типа ключей:
 
-| Тип ключа  | Цель                                               |
+| Тип ключа  | Назначение                                               |
 | --------- | ----------------------------------------------------- |
 | Разработка | Позволяет программно создавать и изменять приложения LUIS. |
 | Ключ для начала работы   | Позволяет тестировать приложение LUIS только с помощью текста   |
@@ -91,12 +91,15 @@ ms.locfileid: "74805898"
 
    [!code-csharp[Top-level declarations](~/samples-cognitive-services-speech-sdk/samples/csharp/sharedcontent/console/intent_recognition_samples.cs#toplevel)]
 
-1. Добавьте приведенный ниже код в предоставленный метод `Main()`.
+1. Замените указанный метод `Main()` на следующий асинхронный эквивалент:
 
    ```csharp
-   RecognizeIntentAsync().Wait();
-   Console.WriteLine("Please press Enter to continue.");
-   Console.ReadLine();
+   public static async Task Main()
+   {
+       await RecognizeIntentAsync();
+       Console.WriteLine("Please press Enter to continue.");
+       Console.ReadLine();
+   }
    ```
 
 1. Создайте пустой асинхронный метод `RecognizeIntentAsync()`, как показано ниже.
@@ -113,7 +116,7 @@ ms.locfileid: "74805898"
 
 1. В методе необходимо заменить заполнители на ключ подписки LUIS, регион и идентификатор приложения следующим образом.
 
-   | Placeholder | Заменить на |
+   | Заполнитель | Заменить на |
    | ----------- | ------------ |
    | `YourLanguageUnderstandingSubscriptionKey` | Ключ конечной точки LUIS. Опять же, вы должны получить с панели мониторинга Azure этот элемент, а не "стартовый ключ". Его можно найти на странице приложения **Keys and Endpoints** (Ключи и конечные точки) в разделе **Manage** (Управление) на [портале LUIS](https://www.luis.ai/home). |
    | `YourLanguageUnderstandingServiceRegion` | Короткий идентификатор региона, в котором находится подписка LUIS, например `westus` для западной части США. См. статью [Регионы и конечные точки службы "Речь"](regions.md). |
@@ -138,7 +141,7 @@ ms.locfileid: "74805898"
 
 Для добавления намерений нужно обеспечить три аргумента. Модель LUIS (которая была создана с именем `model`), имя намерения и его идентификатор. Разница между идентификатором и именем приведена в следующей таблице.
 
-| `AddIntent()`&nbsp;аргумент | Цель |
+| `AddIntent()`&nbsp;аргумент | Назначение |
 | --------------------------- | ------- |
 | `intentName` | Имя намерения, определенного в приложении LUIS. Это значение должно совпадать с именем намерения LUIS. |
 | `intentID` | Идентификатор, присвоенный намерению, распознанному пакетом SDK для службы "Речь". Это значение может быть любым. Оно не обязательно должно соответствовать имени намерения, определенному в приложении LUIS. Для обработки нескольких намерений может использоваться один код, как и один идентификатор используется для всех намерений. |
@@ -173,7 +176,7 @@ result.Properties.GetProperty(PropertyId.LanguageUnderstandingServiceResponse_Js
 
 ## <a name="specify-recognition-language"></a>Указание языка распознавания
 
-По умолчанию язык распознавания намерений — английский (США) (`en-us`). Чтобы распознавать намерения на других языках, свойству `SpeechRecognitionLanguage` необходимо присвоить код языкового стандарта. Например, добавьте `config.SpeechRecognitionLanguage = "de-de";` в наше приложение перед созданием распознавателя для распознавания целей на немецком языке. Дополнительные сведения см. в статье [Поддерживаемые языки](language-support.md#speech-to-text).
+По умолчанию язык распознавания намерений — английский (США) (`en-us`). Чтобы распознавать намерения на других языках, свойству `SpeechRecognitionLanguage` необходимо присвоить код языкового стандарта. Например, добавьте `config.SpeechRecognitionLanguage = "de-de";` в наше приложение перед созданием распознавателя для распознавания целей на немецком языке. Дополнительные сведения см. в разделе [Поддержка языков Luis](../LUIS/luis-language-support.md#languages-supported).
 
 ## <a name="continuous-recognition-from-a-file"></a>Непрерывное распознавание из файла
 

@@ -14,12 +14,12 @@ ms.workload: iaas-sql-server
 ms.date: 11/13/2019
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: f16cb95a42bf201aa7d75a3393917c58f51fbb07
-ms.sourcegitcommit: 5bbe87cf121bf99184cc9840c7a07385f0d128ae
+ms.openlocfilehash: 148ded0eba61221a2bdf0b8a50392da47a4c5f20
+ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76122446"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77122491"
 ---
 # <a name="register-a-sql-server-virtual-machine-in-azure-with-the-sql-vm-resource-provider"></a>Регистрация SQL Server виртуальной машины в Azure с помощью поставщика ресурсов виртуальной машины SQL
 
@@ -57,7 +57,7 @@ ms.locfileid: "76122446"
 <iframe src="https://channel9.msdn.com/Shows/Data-Exposed/Benefit-from-SQL-VM-Resource-Provider-when-self-installing-SQL-Server-on-Azure/player" width="960" height="540" allowFullScreen frameBorder="0" title="Преимущества от поставщика ресурсов виртуальной машины SQL при самостоятельной установке SQL Server в Azure — видео Microsoft Channel 9"></iframe>
 
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы зарегистрировать виртуальную машину SQL Server с поставщиком ресурсов, вам потребуется: 
 
@@ -161,20 +161,20 @@ Register-AzResourceProvider -ProviderNamespace Microsoft.SqlVirtualMachine
 
 Если расширение IaaS для SQL уже установлено на виртуальной машине вручную, можно зарегистрировать SQL Server виртуальную машину в полном режиме без перезапуска службы SQL Server. **Однако если расширение IaaS SQL не установлено, регистрация в полном режиме установит расширение SQL IaaS в полном режиме и перезапустите службу SQL Server. Будьте внимательны.**
 
-Ниже приведен фрагмент кода для регистрации в поставщике ресурсов виртуальной машины SQL в полном режиме. Чтобы зарегистрироваться в режиме полного управления, используйте следующую команду PowerShell:
+
+Чтобы зарегистрировать виртуальную машину SQL Server напрямую в полном режиме (и, возможно, перезапустить службу SQL Server), используйте следующую команду PowerShell: 
 
   ```powershell-interactive
   # Get the existing  Compute VM
   $vm = Get-AzVM -Name <vm_name> -ResourceGroupName <resource_group_name>
         
   # Register with SQL VM resource provider in full mode
-  Update-AzSqlVM -Name $vm.Name -ResourceGroupName $vm.ResourceGroupName -SqlManagementType Full
+  New-AzSqlVM -Name $vm.Name -ResourceGroupName $vm.ResourceGroupName -SqlManagementType Full
   ```
-
 
 ### <a name="noagent-management-mode"></a>Режим управления "без агента" 
 
-SQL Server 2008 и 2008 R2, установленные на Windows Server 2008, можно зарегистрировать в поставщике ресурсов виртуальной машины SQL в режиме "без [агента](#management-modes)". Этот параметр обеспечивает соответствие требованиям и позволяет отслеживать SQL Serverную виртуальную машину в портал Azure с ограниченными функциональными возможностями.
+SQL Server 2008 и 2008 R2, установленные на Windows Server 2008 (_не R2_), можно зарегистрировать в поставщике ресурсов ВИРТУАЛЬНОЙ машины SQL в режиме "без [агента](#management-modes)". Этот параметр обеспечивает соответствие требованиям и позволяет отслеживать SQL Serverную виртуальную машину в портал Azure с ограниченными функциональными возможностями.
 
 Укажите `AHUB` или `PAYG` в качестве **скллиценсетипе**, а также либо `SQL2008-WS2008`, либо `SQL2008R2-WS2008` в качестве **склимажеоффер**. 
 
@@ -183,17 +183,37 @@ SQL Server 2008 и 2008 R2, установленные на Windows Server 2008,
 
 # <a name="az-clitabbash"></a>[Azure CLI](#tab/bash)
 
-Регистрация SQL Server виртуальной машины в режиме агента с помощью AZ CLI: 
+Зарегистрируйте виртуальную машину SQL Server 2008 в режиме "без агента" с помощью AZ CLI: 
 
   ```azurecli-interactive
    az sql vm create -n sqlvm -g myresourcegroup -l eastus |
    --license-type PAYG --sql-mgmt-type NoAgent 
    --image-sku Enterprise --image-offer SQL2008-WS2008R2
  ```
+ 
+ 
+Зарегистрируйте виртуальную машину SQL Server 2008 R2 в режиме агента с помощью AZ CLI: 
+
+  ```azurecli-interactive
+   az sql vm create -n sqlvm -g myresourcegroup -l eastus |
+   --license-type PAYG --sql-mgmt-type NoAgent 
+   --image-sku Enterprise --image-offer SQL2008R2-WS2008R2
+ ```
 
 # <a name="powershelltabpowershell"></a>[PowerShell](#tab/powershell)
 
-Регистрация SQL Server виртуальной машины в режиме "без агента" с помощью PowerShell: 
+Регистрация виртуальной машины SQL Server 2008 в режиме "без агента" с помощью PowerShell: 
+
+
+  ```powershell-interactive
+  # Get the existing compute VM
+  $vm = Get-AzVM -Name <vm_name> -ResourceGroupName <resource_group_name>
+          
+  New-AzSqlVM -Name $vm.Name -ResourceGroupName $vm.ResourceGroupName -Location $vm.Location `
+    -LicenseType PAYG -SqlManagementType NoAgent -Sku Standard -Offer SQL2008-WS2008
+  ```
+  
+  Регистрация виртуальной машины SQL Server 2008 R2 в режиме "без агента" с помощью PowerShell: 
 
 
   ```powershell-interactive
@@ -252,10 +272,9 @@ SQL Server виртуальные машины, на которых устано
   ```powershell-interactive
   # Get the existing  Compute VM
   $vm = Get-AzVM -Name <vm_name> -ResourceGroupName <resource_group_name>
-
-  # Update to full mode
-  New-AzSqlVM -Name $vm.Name -ResourceGroupName $vm.ResourceGroupName -Location $vm.Location `
-     -LicenseType PAYG -SqlManagementType Full
+        
+  # Register with SQL VM resource provider in full mode
+  Update-AzSqlVM -Name $vm.Name -ResourceGroupName $vm.ResourceGroupName -SqlManagementType Full
   ```
 
 ---
@@ -434,7 +453,7 @@ Remove-AzSqlVM -ResourceGroupName <resource_group_name> -Name <VM_name>
 Да. Регистрация SQL Server экземпляра на виртуальной машине Azure с помощью поставщика ресурсов виртуальной машины SQL не ограничена, если вы участвуете в конфигурации группы доступности Always On.
 
 **Каковы затраты на регистрацию в поставщике ресурсов виртуальной машины SQL или обновление до полного режима управления?**
-Нет подходящих вариантов. Не взимается плата, связанная с регистрацией в поставщике ресурсов виртуальной машины SQL, или с использованием любого из трех режимов управления. Управление виртуальной машиной SQL Server с помощью поставщика ресурсов полностью бесплатное. 
+Нет. Не взимается плата, связанная с регистрацией в поставщике ресурсов виртуальной машины SQL, или с использованием любого из трех режимов управления. Управление виртуальной машиной SQL Server с помощью поставщика ресурсов полностью бесплатное. 
 
 **Каково влияние на производительность при использовании различных режимов управления?**
 При использовании *операторов* «а» и « *упрощенная* управляемость» не возникает никаких последствий. При использовании режима *полной* управляемости из двух служб, установленных в ОС, возможны минимальные последствия. Их можно отслеживать с помощью диспетчера задач и просматривать во встроенной консоли служб Windows. 

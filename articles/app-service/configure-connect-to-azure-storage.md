@@ -5,12 +5,12 @@ author: msangapu-msft
 ms.topic: article
 ms.date: 7/01/2019
 ms.author: msangapu
-ms.openlocfilehash: c5543470f790d00158297cb7c3f0c06c5fc05e14
-ms.sourcegitcommit: 12a26f6682bfd1e264268b5d866547358728cd9a
+ms.openlocfilehash: 64ef4dfe81e6415f1285a74962e2123507715119
+ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75866985"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77120671"
 ---
 # <a name="configure-azure-files-in-a-windows-container-on-app-service"></a>Настройка файлов Azure в контейнере Windows в службе приложений
 
@@ -20,7 +20,7 @@ ms.locfileid: "75866985"
 
 В этом руководство показано, как получить доступ к службе хранилища Azure в контейнерах Windows. Поддерживаются только общие папки службы [файлов Azure](https://docs.microsoft.com/azure/storage/files/storage-how-to-use-files-cli) и [файлы Premium](https://docs.microsoft.com/azure/storage/files/storage-how-to-create-premium-fileshare) . В этом пошаговом окне вы используете общие папки службы файлов Azure. Преимущества включают защищенное содержимое, его переносимость, доступ к нескольким приложениям и несколько методов для передачи.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 - [Azure CLI](/cli/azure/install-azure-cli) (2.0.46 или более поздней версии).
 - [Существующее приложение контейнера Windows в службе приложений Azure](https://docs.microsoft.com/azure/app-service/app-service-web-get-started-windows-container)
@@ -38,6 +38,7 @@ ms.locfileid: "75866985"
 - В настоящее время служба хранилища Azure в контейнерах Windows **не поддерживается** для использования собственных сценариев работы с кодом в планах службы приложений Windows.
 - Служба хранилища Azure в контейнерах Windows **не поддерживает** использование конфигурации **брандмауэра хранилища** из-за ограничений инфраструктуры.
 - Служба хранилища Azure в контейнерах Windows позволяет указать **до пяти** точек подключения для каждого приложения.
+- Служба хранилища Azure, подключенная к приложению, недоступна через конечные точки FTP или FTPs службы приложений. Используйте [Обозреватель службы хранилища Azure](https://azure.microsoft.com/features/storage-explorer/).
 - Плата за хранилище Azure взимается отдельно и **не включается** в веб-приложение. Дополнительные сведения о [ценах на службу хранилища Azure](https://azure.microsoft.com/pricing/details/storage).
 
 ## <a name="link-storage-to-your-web-app-preview"></a>Связывание хранилища с веб-приложением (предварительная версия)

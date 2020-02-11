@@ -15,12 +15,12 @@ ms.date: 12/10/2019
 ms.author: mimart
 ms.reviewer: arvinh
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b24ad492f622fa9a3e494c7ead724fb3980f6668
-ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
+ms.openlocfilehash: 1c3c0aea6ecaccc972702a8c87e4d127c71c75d6
+ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77066854"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77121369"
 ---
 # <a name="how-provisioning-works"></a>Описание процесса подготовки
 
@@ -86,6 +86,8 @@ ms.locfileid: "77066854"
 ### <a name="b2b-guest-users"></a>Пользователи B2B (гости)
 
 Службу подготовки пользователей Azure AD можно использовать для подготовки пользователей B2B (или гостей) в Azure AD к приложениям SaaS. Тем не менее, чтобы пользователи B2B могли входить в приложение SaaS с помощью Azure AD, в приложении SaaS должна быть настроена возможность единого входа на основе SAML. Дополнительные сведения о настройке приложений SaaS для поддержки входа пользователей B2B см. в разделе [Настройка приложений SaaS для службы совместной работы B2B](../b2b/configure-saas-apps.md).
+
+Обратите внимание, что параметр userPrincipalName для гостевого пользователя часто хранится в виде псевдонима # EXT #@domain.com. Если атрибут userPrincipalName включен в сопоставления атрибутов как исходный атрибут, #EXT # удаляется из userPrincipalName. Если требуется наличие #EXT #, замените userPrincipalName на ОригиналусерпринЦипалнаме в качестве исходного атрибута. 
 
 ## <a name="provisioning-cycles-initial-and-incremental"></a>Циклы подготовки: Начальная и добавочная
 

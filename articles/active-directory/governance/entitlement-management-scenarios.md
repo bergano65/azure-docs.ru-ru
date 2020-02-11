@@ -16,12 +16,12 @@ ms.date: 10/28/2019
 ms.author: ajburnle
 ms.reviewer: mwahl
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d780e6e11d2c067261f6862e1678ef5de0aaa9bb
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: f40ed05391c36f820940d5351373ecd8f9492b17
+ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75422502"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77120141"
 ---
 # <a name="common-scenarios-in-azure-ad-entitlement-management"></a>Распространенные сценарии в управлении назначениями Azure AD
 
@@ -150,6 +150,10 @@ ms.locfileid: "75422502"
 
 1. [Просмотр пакетов доступа для пользователя](entitlement-management-reports.md#view-access-packages-for-a-user)
 1. [Просмотр назначений ресурсов для пользователя](entitlement-management-reports.md#view-resource-assignments-for-a-user)
+
+## <a name="programmatic-administration"></a>Программное администрирование
+
+Вы также можете управлять пакетами доступа, каталогами, политиками, запросами и назначениями с помощью Microsoft Graph.  Пользователь в соответствующей роли с приложением с делегированным `EntitlementManagement.ReadWrite.All` разрешением может вызвать [API управления](https://docs.microsoft.com/graph/api/resources/entitlementmanagement-root?view=graph-rest-beta)назначением.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

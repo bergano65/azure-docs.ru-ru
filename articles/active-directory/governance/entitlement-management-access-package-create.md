@@ -16,12 +16,12 @@ ms.date: 10/15/2019
 ms.author: ajburnle
 ms.reviewer: ''
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 68d34046a16787ca1c6790880592fb30667ff2dc
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 7c858a17d4574e6e45283df7c1276cd303f25297
+ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75422695"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77120484"
 ---
 # <a name="create-a-new-access-package-in-azure-ad-entitlement-management"></a>Создание нового пакета Access в управлении назначением Azure AD
 
@@ -107,7 +107,7 @@ ms.locfileid: "75422695"
 
 1. Щелкните **Далее**.
 
-## <a name="requests"></a>Запросы
+## <a name="requests"></a>Requests
 
 На вкладке **запросы** Создайте первую политику, чтобы указать, кто может запрашивать пакет доступа, а также параметры утверждения. Позднее можно создать дополнительные политики запросов, чтобы разрешить дополнительным группам пользователей запрашивать пакет доступа с помощью собственных параметров утверждения.
 
@@ -131,7 +131,18 @@ ms.locfileid: "75422695"
 
     Новый пакет Access появится в списке пакетов доступа.
 
+## <a name="creating-an-access-package-programmatically"></a>Программное создание пакета Access
+
+Пакет Access также можно создать с помощью Microsoft Graph.  Пользователь в соответствующей роли с приложением с делегированным `EntitlementManagement.ReadWrite.All` разрешением может вызывать API для
+
+1. [Перечислите акцесспаккажересаурцес в каталоге](https://docs.microsoft.com/graph/api/accesspackagecatalog-list-accesspackageresources?view=graph-rest-beta) и [Создайте акцесспаккажересаурцерекуест](https://docs.microsoft.com/graph/api/accesspackageresourcerequest-post?view=graph-rest-beta) для всех ресурсов, которые еще не находятся в каталоге.
+1. [Перечислите акцесспаккажересаурцеролес](https://docs.microsoft.com/graph/api/accesspackagecatalog-list-accesspackageresourceroles?view=graph-rest-beta) каждого Акцесспаккажересаурце в акцесспаккажекаталог. Этот список ролей будет использоваться для выбора роли при последующем создании Акцесспаккажересаурцеролескопе.
+1. [Создайте акцесспаккаже](https://docs.microsoft.com/graph/api/accesspackage-post?view=graph-rest-beta).
+1. [Создайте акцесспаккажеассигнментполици](https://docs.microsoft.com/graph/api/accesspackageassignmentpolicy-post?view=graph-rest-beta).
+1. [Создайте акцесспаккажересаурцеролескопе](https://docs.microsoft.com/graph/api/accesspackage-post-accesspackageresourcerolescopes?view=graph-rest-beta) для каждой роли ресурса, необходимой для пакета доступа.
+
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - [Ссылка на общий доступ для запроса пакета Access](entitlement-management-access-package-settings.md)
 - [Изменение ролей ресурсов для пакета Access](entitlement-management-access-package-resources.md)
+- [Напрямую назначить пользователя пакету доступа](entitlement-management-access-package-assignments.md)

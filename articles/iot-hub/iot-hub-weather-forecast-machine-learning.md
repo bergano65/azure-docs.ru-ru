@@ -8,18 +8,18 @@ ms.service: iot-hub
 services: iot-hub
 ms.topic: conceptual
 ms.tgt_pltfrm: arduino
-ms.date: 04/11/2018
+ms.date: 02/10/2020
 ms.author: robinsh
-ms.openlocfilehash: d26ccd47ada4f1f1fd87f315e05f822bb2463114
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.openlocfilehash: b71b86c14c55c312ef420a4d8517140fdded4072
+ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74976185"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77122167"
 ---
 # <a name="weather-forecast-using-the-sensor-data-from-your-iot-hub-in-azure-machine-learning"></a>Прогнозирование погоды в машинном обучении Azure с помощью данных от датчиков Центра Интернета вещей
 
-![Сквозная схема](media/iot-hub-get-started-e2e-diagram/6.png)
+![Комплексная схема](media/iot-hub-get-started-e2e-diagram/6.png)
 
 [!INCLUDE [iot-hub-get-started-note](../../includes/iot-hub-get-started-note.md)]
 
@@ -32,7 +32,7 @@ ms.locfileid: "74976185"
 ## <a name="what-you-do"></a>Что нужно сделать
 
 - Развернем модель прогнозирования погоды как веб-службу.
-- Добавить группу потребителей, чтобы обеспечить доступ к данным в Центре Интернета вещей.
+- добавим группу потребителей, чтобы обеспечить доступ к данным в Центре Интернета вещей;
 - Создадим задание Stream Analytics и настроим его на выполнение следующих задач:
   - получение данных о температуре и влажности от Центра Интернета вещей;
   - вызов веб-службы для получения оценки вероятности дождя;
@@ -49,24 +49,77 @@ ms.locfileid: "74976185"
 
 ## <a name="deploy-the-weather-prediction-model-as-a-web-service"></a>Развертывание модели прогнозирования погоды как веб-службы
 
+В этом разделе вы получаете модель прогнозирования погоды из библиотеки Azure искусственного интеллекта. Затем в модель добавляется модуль R-Script для очистки данных о температуре и влажности. Наконец, вы развертываете модель в качестве прогнозной веб-службы.
+
+### <a name="get-the-weather-prediction-model"></a>Получение модели прогнозирования погоды
+
+В этом разделе вы получаете модель прогнозирования погоды из Коллекция решений ИИ Azure и открываете ее в Машинное обучение Azure Studio (классической).
+
 1. Откройте [страницу модели прогнозирования погоды](https://gallery.cortanaintelligence.com/Experiment/Weather-prediction-model-1).
-1. Щелкните **Открыть в студии** в студия машинного обучения Microsoft Azure (классическая модель).
-   ![Открытая страница модели прогнозирования погоды в коллекции Cortana Intelligence](media/iot-hub-weather-forecast-machine-learning/2_weather-prediction-model-in-cortana-intelligence-gallery.png)
-1. Щелкните **Run** (Запуск), чтобы проверить действия модели. Выполнение этого шага может занять до 2 минут.
-   ![открыть модель прогнозирования погоды в Машинное обучение Azure Studio (классической)](media/iot-hub-weather-forecast-machine-learning/3_open-weather-prediction-model-in-azure-machine-learning-studio.png)
-1. Щелкните действие **SET UP WEB SERVICE** (Настроить веб-службу)  > **Predictive Web Service** (Прогнозная веб-служба).
-   ![развертывание модели прогнозирования погоды в Машинное обучение Azure Studio (классическая модель)](media/iot-hub-weather-forecast-machine-learning/4-deploy-weather-prediction-model-in-azure-machine-learning-studio.png)
-1. На схеме перетащите модуль **Web service input** (Вход веб-службы) куда-нибудь поближе к модулю **Score Model** (Оценка модели).
-1. Соедините между собой модули **Web service input** (Вход веб-службы) и **Score Model** (Оценка модели).
-   ![подключить два модуля в Машинное обучение Azure Studio (классическая модель)](media/iot-hub-weather-forecast-machine-learning/13_connect-modules-azure-machine-learning-studio.png)
+
+   ![Откройте страницу прогнозной модели погоды в Коллекция решений ИИ Azure](media/iot-hub-weather-forecast-machine-learning/weather-prediction-model-in-azure-ai-gallery.png)
+
+1. Щелкните **Открыть в студии (классическая модель)** для открытия модели в студия машинного обучения Microsoft Azure (классической).
+
+   ![Открытие модели прогнозирования погоды в Машинное обучение Azure Studio (классическая модель)](media/iot-hub-weather-forecast-machine-learning/open-ml-studio.png)
+
+### <a name="add-an-r-script-module-to-clean-temperature-and-humidity-data"></a>Добавление модуля R-Script для очистки данных о температуре и влажности
+
+Для правильной работы модели данные температуры и влажности должны быть преобразованы в числовые данные. В этом разделе вы добавите модуль R-script в модель прогнозирования погоды, которая удаляет все строки, имеющие значения данных для температуры или влажности, которые не могут быть преобразованы в числовые значения.
+
+1. В левой части окна Машинное обучение Azure Studio щелкните стрелку, чтобы развернуть панель Инструменты. В поле поиска введите "выполнить". Выберите модуль **выполнить сценарий R** .
+
+   ![Выбор модуля выполнения скрипта R](media/iot-hub-weather-forecast-machine-learning/select-r-script-module.png)
+
+1. Перетащите модуль **выполнить сценарий r** рядом с модулем **Очистка недостающих данных** и существующий модуль **выполнить сценарий r** на диаграмме. Удалите подключение между модулями " **Очистка отсутствующих данных** " и " **выполнение скрипта R** ", а затем подключите входные и выходные данные нового модуля, как показано ниже.
+
+   ![Добавить модуль выполнения скрипта R](media/iot-hub-weather-forecast-machine-learning/add-r-script-module.png)
+
+1. Выберите новый модуль **выполнить сценарий R** , чтобы открыть его окно свойств. Скопируйте следующий код и вставьте его в поле **Скрипт R** .
+
+   ```r
+   # Map 1-based optional input ports to variables
+   data <- maml.mapInputPort(1) # class: data.frame
+
+   data$temperature <- as.numeric(as.character(data$temperature))
+   data$humidity <- as.numeric(as.character(data$humidity))
+
+   completedata <- data[complete.cases(data), ]
+
+   maml.mapOutputPort('completedata')
+
+   ```
+
+   По завершении окно свойств должно выглядеть следующим образом:
+
+   ![Добавление кода для выполнения модуля скрипта R](media/iot-hub-weather-forecast-machine-learning/add-code-to-module.png)
+
+### <a name="deploy-predictive-web-service"></a>Развертывание прогнозной веб-службы
+
+В этом разделе вы проверите модель, настроите прогнозную веб-службу на основе модели, а затем развернете веб-службу.
+
+1. Щелкните **Run** (Запуск), чтобы проверить действия модели. Выполнение этого шага может занять несколько минут.
+
+   ![Запустите эксперимент, чтобы проверить шаги.](media/iot-hub-weather-forecast-machine-learning/run-experiment.png)
+
+1. Щелкните действие **SET UP WEB SERVICE** (Настроить веб-службу)  > **Predictive Web Service** (Прогнозная веб-служба). Откроется схема прогнозного эксперимента.
+
+   ![Развертывание модели прогнозирования погоды в Машинное обучение Azure Studio (классическая модель)](media/iot-hub-weather-forecast-machine-learning/predictive-experiment.png)
+
+1. На диаграмме прогнозного эксперимента удалите соединение между модулем **входные данные веб-службы** и **набором данных о погоде** вверху. Затем перетащите модуль **входные данные веб-службы** рядом с модулем **Оценка модели** и подключите его, как показано ниже.
+
+   ![Подключение двух модулей в Машинное обучение Azure Studio (классическая модель)](media/iot-hub-weather-forecast-machine-learning/13_connect-modules-azure-machine-learning-studio.png)
+
 1. Щелкните **RUN** (Запуск), чтобы проверить действия модели.
+
 1. Щелкните **DEPLOY WEB SERVICE** (Развернуть веб-службу), чтобы преобразовать эту модель в веб-службу.
+
 1. На панели мониторинга модели скачайте **Excel 2010 or earlier workbook** (Книга Excel 2010 или более ранних версий) для действия **REQUEST/RESPONSE** (Запрос — ответ).
 
    > [!Note]
-   > Обязательно используйте именно **Excel 2010 or earlier workbook** (Книга Excel 2010 или более ранних версий), даже если на вашем компьютере установлена более поздняя версия Excel.
+   > Обязательно загрузите **книгу excel 2010 или более раннюю** версию, даже если на компьютере запущена более поздняя версия Excel.
 
-   ![Скачивание книги Excel для конечной точки REQUEST RESPONSE ("запрос — ответ")](media/iot-hub-weather-forecast-machine-learning/5_download-endpoint-app-excel-for-request-response.png)
+   ![Скачивание книги Excel для конечной точки REQUEST RESPONSE ("запрос — ответ")](media/iot-hub-weather-forecast-machine-learning/download-workbook.png)
 
 1. Откройте эту книгу Excel и запишите параметры **WEB SERVICE URL** (URL веб-службы) и **ACCESS KEY** (Ключ доступа).
 
@@ -89,7 +142,7 @@ ms.locfileid: "74976185"
 
    ![Создание задания Stream Analytics в Azure](media/iot-hub-weather-forecast-machine-learning/7_create-stream-analytics-job-azure.png)
 
-1. Щелкните **Create**(Создать).
+1. Нажмите кнопку **Создать**.
 
 ### <a name="add-an-input-to-the-stream-analytics-job"></a>Добавление входных данных в задание Stream Analytics
 
@@ -105,7 +158,7 @@ ms.locfileid: "74976185"
 
    ![Добавление входных данных в задание Stream Analytics в Azure](media/iot-hub-weather-forecast-machine-learning/8_add-input-stream-analytics-job-azure.png)
 
-1. Щелкните **Create**(Создать).
+1. Нажмите кнопку **Создать**.
 
 ### <a name="add-an-output-to-the-stream-analytics-job"></a>Добавление выходных данных в задание Stream Analytics
 
@@ -124,7 +177,7 @@ ms.locfileid: "74976185"
 
    ![Добавление выходных данных в задание Stream Analytics в Azure](media/iot-hub-weather-forecast-machine-learning/9_add-output-stream-analytics-job-azure.png)
 
-1. Щелкните **Create**(Создать).
+1. Нажмите кнопку **Создать**.
 
 ### <a name="add-a-function-to-the-stream-analytics-job-to-call-the-web-service-you-deployed"></a>Добавление в задание Stream Analytics функции для вызова развернутой веб-службы
 
@@ -143,7 +196,7 @@ ms.locfileid: "74976185"
 
    ![Добавление функции в задание Stream Analytics в Azure](media/iot-hub-weather-forecast-machine-learning/10_add-function-stream-analytics-job-azure.png)
 
-1. Щелкните **Create**(Создать).
+1. Нажмите кнопку **Создать**.
 
 ### <a name="configure-the-query-of-the-stream-analytics-job"></a>Настройка запроса задания Stream Analytics
 
@@ -163,7 +216,7 @@ ms.locfileid: "74976185"
 
    Замените значение `[YourOutputAlias]` значением псевдонима выходных данных задания.
 
-1. В нижней части страницы нажмите кнопку **Save**.
+1. Выберите команду **Сохранить**.
 
 ### <a name="run-the-stream-analytics-job"></a>Выполнение задания Stream Analytics
 
@@ -180,11 +233,11 @@ ms.locfileid: "74976185"
 1. Войдите в учетную запись Azure.
 1. Выберите свою подписку.
 1. Щелкните подписку Azure > **Учетные записи хранения** > учетная запись хранения > **Контейнеры больших двоичных объектов** и выберите нужный контейнер.
-1. Откройте CSV-файл, чтобы увидеть результат. Последний столбец содержит прогнозируемую вероятность дождя.
+1. Скачайте CSV-файл, чтобы увидеть результат. Последний столбец содержит прогнозируемую вероятность дождя.
 
-   ![Получение прогноза погоды с помощью машинного обучения Azure](media/iot-hub-weather-forecast-machine-learning/12_get-weather-forecast-result-azure-machine-learning.png)
+   ![Получение прогноза погоды с помощью машинного обучения Azure](media/iot-hub-weather-forecast-machine-learning/weather-forecast-result.png)
 
-## <a name="summary"></a>Резюме
+## <a name="summary"></a>Сводка
 
 Итак, вы успешно применили машинное обучение Azure, чтобы прогнозировать вероятность дождя на основе данных о температуре и влажности, которые получает Центр Интернета вещей.
 

@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 12/13/2019
 ms.author: spelluru
-ms.openlocfilehash: e615170952ea2987639a0bfc269ad5a1692e1e59
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 68a27a325a0ef02c6eeea9867a21ba0e24ab5321
+ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75480805"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77117134"
 ---
 # <a name="enable-automatic-shutdown-of-vms-on-disconnect"></a>Включить автоматическое завершение работы виртуальных машин при отключении
 В этой статье показано, как включить или отключить автоматическое завершение работы виртуальных машин **Windows 10** Lab (шаблон или учащийся) после отключения подключения к удаленному рабочему столу. Вы также можете указать, как долго виртуальные машины должны ожидать повторного подключения пользователя перед автоматическим завершением работы.
@@ -34,6 +34,9 @@ ms.locfileid: "75480805"
 Этот параметр можно настроить на странице **Параметры** , как показано на следующем рисунке. 
 
 ![Настройка после создания лаборатории](../media/how-to-enable-shutdown-disconnect/configure-lab-automatic-shutdown.png)
+
+> [!WARNING]
+> Если завершить работу операционной системы Windows (ОС) на виртуальной машине перед отключением сеанса RDP с виртуальной машиной, функция автоматического завершения работы не будет работать должным образом.  
 
 ## <a name="next-steps"></a>Дальнейшие действия
 См. следующие статьи:

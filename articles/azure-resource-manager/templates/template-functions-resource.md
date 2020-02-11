@@ -2,13 +2,13 @@
 title: Функции шаблонов — ресурсы
 description: Описывает функции, используемые в шаблоне Azure Resource Manager для получения значений ресурсов.
 ms.topic: conceptual
-ms.date: 01/20/2020
-ms.openlocfilehash: cfcc9ff3af33fe9de813d8a31b7d102f00725ce4
-ms.sourcegitcommit: 57669c5ae1abdb6bac3b1e816ea822e3dbf5b3e1
+ms.date: 02/10/2020
+ms.openlocfilehash: cc8976b714549f7442e22b341b34e81d717c8742
+ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2020
-ms.locfileid: "77048806"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77120539"
 ---
 # <a name="resource-functions-for-azure-resource-manager-templates"></a>Функции для работы с ресурсами в шаблонах Azure Resource Manager
 
@@ -752,14 +752,14 @@ resourceGroup()
 resourceId([subscriptionId], [resourceGroupName], resourceType, resourceName1, [resourceName2], ...)
 ```
 
-Возвращает уникальный идентификатор ресурса. Используйте эту функцию в том случае, когда имя ресурса является неоднозначным или не было предоставлено в пределах того же шаблона.
+Возвращает уникальный идентификатор ресурса. Используйте эту функцию в том случае, когда имя ресурса является неоднозначным или не было предоставлено в пределах того же шаблона. Формат возвращаемого идентификатора зависит от того, происходит ли развертывание в области действия группы ресурсов, подписки, группы управления или клиента.
 
 ### <a name="parameters"></a>Параметры
 
 | Параметр | Обязательно | Тип | Description |
 |:--- |:--- |:--- |:--- |
 | subscriptionId |нет |строка (в формате GUID) |Значение по умолчанию — текущая подписка. Укажите это значение, если нужно получить ресурс из другой подписки. |
-| имя_группы_ресурсов |нет |строка |Значение по умолчанию — текущая группа ресурсов. Укажите это значение, если нужно получить ресурс из другой группы ресурсов. |
+| имя_группы_ресурсов |нет |строка |Значение по умолчанию — текущая группа ресурсов. Укажите это значение, если нужно получить ресурс из другой группы ресурсов. Это значение предоставляется только при развертывании в области группы ресурсов. |
 | тип_ресурса |Да |строка |Тип ресурса, включая пространство имен поставщика ресурсов. |
 | имя_ресурса1 |Да |строка |Имя ресурса. |
 | имя_ресурса2 |нет |строка |Сегмент имени следующего ресурса, если это необходимо. |
@@ -768,7 +768,7 @@ resourceId([subscriptionId], [resourceGroupName], resourceType, resourceName1, [
 
 ### <a name="return-value"></a>Возвращаемое значение
 
-Идентификатор ресурса возвращается в следующем формате:
+При развертывании шаблона в области группы ресурсов идентификатор ресурса возвращается в следующем формате:
 
 ```json
 /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
@@ -778,6 +778,12 @@ resourceId([subscriptionId], [resourceGroupName], resourceType, resourceName1, [
 
 ```json
 /subscriptions/{subscriptionId}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
+```
+
+При использовании в развертывании на [уровне группы управления](deploy-to-management-group.md) или на уровне клиента идентификатор ресурса возвращается в следующем формате:
+
+```json
+/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
 ```
 
 Чтобы получить идентификатор в других форматах, см.:

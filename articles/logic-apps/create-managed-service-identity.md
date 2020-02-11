@@ -5,68 +5,85 @@ services: logic-apps
 ms.suite: integration
 ms.reviewer: klam, logicappspm
 ms.topic: article
-ms.date: 10/21/2019
-ms.openlocfilehash: 714faa43f34de965055ceba80de08972dd4192ac
-ms.sourcegitcommit: 12a26f6682bfd1e264268b5d866547358728cd9a
+ms.date: 02/10/2020
+ms.openlocfilehash: 82710a66cdf7874c745070e49b2c7aff7bc8816d
+ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75861206"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77117371"
 ---
 # <a name="authenticate-access-to-azure-resources-by-using-managed-identities-in-azure-logic-apps"></a>Проверка подлинности доступа к ресурсам Azure с помощью управляемых удостоверений в Azure Logic Apps
 
-Для доступа к ресурсам в других клиентах Azure Active Directory (Azure AD) и проверки подлинности удостоверения без входа в приложение логики можно использовать [управляемое системой удостоверение](../active-directory/managed-identities-azure-resources/overview.md) (прежнее название — управляемое удостоверение службы или MSI), а не учетные данные или секреты. Azure управляет этим удостоверением за вас и помогает защитить учетные данные, потому что вам не нужно предоставлять или сменять секреты. В этой статье показано, как настроить и использовать управляемое системой удостоверение в приложении логики. В настоящее время управляемые удостоверения работают только с [конкретными встроенными триггерами и действиями, а](../logic-apps/logic-apps-securing-a-logic-app.md#add-authentication-to-outbound-calls)не с управляемыми соединителями или соединениями.
+Для доступа к ресурсам в других клиентах Azure Active Directory (Azure AD) и проверки подлинности удостоверения без входа в приложение логики может использовать [управляемое удостоверение](../active-directory/managed-identities-azure-resources/overview.md) (прежнее управляемое удостоверение службы или MSI), а не учетные данные или секреты. Azure управляет этим удостоверением за вас и помогает защитить учетные данные, потому что вам не нужно предоставлять или сменять секреты.
 
-Дополнительные сведения см. в следующих статьях:
+Azure Logic Apps поддерживает управляемые удостоверения, [*назначенные системой*](../active-directory/managed-identities-azure-resources/overview.md) и [*назначенные пользователю*](../active-directory/managed-identities-azure-resources/overview.md) . Приложение логики может использовать либо назначенное системой удостоверение, либо *единое* пользовательское удостоверение, которое можно совместно использовать в группе приложений логики, но не в обоих случаях. Сейчас только [определенные встроенные триггеры и действия](../logic-apps/logic-apps-securing-a-logic-app.md#add-authentication-outbound) поддерживают управляемые удостоверения, а не управляемые соединители или соединения, например:
+
+* HTTP
+* Функции Azure
+* Cлужба управления Azure API
+* Службы приложений Azure
+
+В этой статье показано, как настроить оба типа управляемых удостоверений для приложения логики. Дополнительные сведения см. в следующих статьях:
 
 * [Триггеры и действия, поддерживающие управляемые удостоверения](../logic-apps/logic-apps-securing-a-logic-app.md#add-authentication-outbound)
-* [Службы Azure, поддерживающие аутентификацию Azure AD с управляемыми удостоверениями](../active-directory/managed-identities-azure-resources/services-support-managed-identities.md#azure-services-that-support-azure-ad-authentication)
 * [Поддерживаемые типы проверки подлинности для исходящих вызовов](../logic-apps/logic-apps-securing-a-logic-app.md#add-authentication-outbound)
 * [Ограничения управляемых удостоверений для приложений логики](../logic-apps/logic-apps-limits-and-config.md#managed-identity)
+* [Службы Azure, поддерживающие аутентификацию Azure AD с управляемыми удостоверениями](../active-directory/managed-identities-azure-resources/services-support-managed-identities.md#azure-services-that-support-azure-ad-authentication)
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
-* Подписка Azure. Если у вас еще ее нет, [зарегистрируйтесь для получения бесплатной учетной записи Azure](https://azure.microsoft.com/free/). Управляемое удостоверение и целевой ресурс Azure, для которых требуется доступ к одной и той же подписке Azure.
+* Подписка Azure. Если у вас нет ее, вы можете [зарегистрироваться для получения бесплатной учетной записи Azure](https://azure.microsoft.com/free/). Управляемое удостоверение и целевой ресурс Azure, для которых требуется доступ, должны использовать одну и ту же подписку Azure.
 
-* [Разрешения администратора Azure AD](../active-directory/users-groups-roles/directory-assign-admin-roles.md) , которые могут назначать роли управляемым удостоверениям в том же клиенте Azure AD, что и целевой ресурс. Чтобы предоставить управляемому удостоверению доступ к ресурсу Azure, необходимо добавить роль для этого удостоверения в целевом ресурсе.
+* Чтобы предоставить управляемому удостоверению доступ к ресурсу Azure, необходимо добавить роль в целевой ресурс для этого удостоверения. Чтобы добавить роли, необходимы [разрешения администратора Azure AD](../active-directory/users-groups-roles/directory-assign-admin-roles.md) , которые могут назначать роли удостоверениям в соответствующем клиенте Azure AD.
 
-* Целевой ресурс Azure, к которому требуется получить доступ
+* Целевой ресурс Azure, к которому требуется получить доступ. В этом ресурсе вы добавите роль для управляемого удостоверения, которая помогает приложению логики подлинности получить доступ к целевому ресурсу.
 
-* Приложение логики, которое использует [триггеры и действия, поддерживающие управляемые удостоверения](../logic-apps/logic-apps-securing-a-logic-app.md#add-authentication-outbound)
+* Приложение логики, в котором вы хотите использовать [триггер или действия, поддерживающие управляемые удостоверения](../logic-apps/logic-apps-securing-a-logic-app.md#add-authentication-outbound)
+
+## <a name="enable-managed-identity"></a>Включение управляемого удостоверения
+
+Чтобы настроить управляемое удостоверение, которое вы хотите использовать, перейдите по ссылке для этого удостоверения:
+
+* [Удостоверение, назначенное системой](#system-assigned)
+* [Удостоверение, назначенное пользователем](#user-assigned)
 
 <a name="system-assigned"></a>
 
-## <a name="enable-system-assigned-identity"></a>Включить назначенное системой удостоверение
+### <a name="enable-system-assigned-identity"></a>Включить назначенное системой удостоверение
 
-В отличие от назначенных пользователем удостоверений не требуется вручную создавать назначенные системой удостоверения. Чтобы настроить удостоверение, назначенное системой для приложения логики, можно использовать следующие параметры.
+В отличие от назначенных пользователем удостоверений не требуется вручную создавать назначенные системой удостоверения. Чтобы настроить для приложения логики удостоверение, назначенное системой, можно использовать следующие параметры.
 
 * [Портал Azure](#azure-portal-system-logic-app)
 * [Шаблоны диспетчера ресурсов Azure](#template-system-logic-app)
 
 <a name="azure-portal-system-logic-app"></a>
 
-### <a name="enable-system-assigned-identity-in-azure-portal"></a>Включение назначенного системой удостоверения в портал Azure
+#### <a name="enable-system-assigned-identity-in-azure-portal"></a>Включение назначенного системой удостоверения в портал Azure
 
 1. На [портале Azure](https://portal.azure.com) откройте приложение логики в конструкторе приложений логики.
 
-1. В меню приложения логики в разделе **Параметры**выберите **удостоверение** > **системой назначено**. В **разделе Состояние**выберите ** > ** **сохранить** > **Да**.
+1. В меню приложения логики в разделе **Параметры** выберите **Идентификатор**. Выберите > , **назначенные системой** , **на** > **сохранить**. Когда Azure запросит подтверждение, выберите **Да**.
 
-   ![Включить назначенное системой удостоверение](./media/create-managed-service-identity/turn-on-system-assigned-identity.png)
+   ![Включить назначенное системой удостоверение](./media/create-managed-service-identity/enable-system-assigned-identity.png)
+
+   > [!NOTE]
+   > Если вы получаете сообщение об ошибке, которое может иметь только одно управляемое удостоверение, приложение логики уже связано с назначенным пользователем удостоверением. Прежде чем можно будет добавить назначенное системой удостоверение, необходимо сначала *Удалить* назначенное ему удостоверение из приложения логики.
 
    Теперь приложение логики может использовать назначенное системой удостоверение, зарегистрированное в Azure Active Directory и представленное ИДЕНТИФИКАТОРом объекта.
 
-   ![Идентификатор объекта для назначенного системой удостоверения](./media/create-managed-service-identity/object-id.png)
+   ![Идентификатор объекта для назначенного системой удостоверения](./media/create-managed-service-identity/object-id-system-assigned-identity.png)
 
    | Свойство | Значение | Description |
    |----------|-------|-------------|
    | **Идентификатор объекта** | <*identity-resource-ID*> | Глобальный уникальный идентификатор (GUID), представляющий назначенное системой удостоверение для приложения логики в клиенте Azure AD. |
    ||||
 
-1. Теперь выполните [действия, которые придают удостоверению доступ к ресурсу](#access-other-resources).
+1. Теперь выполните [действия, которые предоставляют удостоверению доступ к ресурсу](#access-other-resources) далее в этом разделе.
 
 <a name="template-system-logic-app"></a>
 
-### <a name="enable-system-assigned-identity-in-azure-resource-manager-template"></a>Включение назначенного системой удостоверения в шаблоне Azure Resource Manager
+#### <a name="enable-system-assigned-identity-in-azure-resource-manager-template"></a>Включение назначенного системой удостоверения в шаблоне Azure Resource Manager
 
 Чтобы автоматизировать создание и развертывание ресурсов Azure, таких как приложения логики, можно использовать [шаблоны Azure Resource Manager](../logic-apps/logic-apps-azure-resource-manager-templates-overview.md). Чтобы включить управляемое системой удостоверение для приложения логики в шаблоне, добавьте объект `identity` и свойство дочернего элемента `type` в определение ресурса приложения логики в шаблоне, например:
 
@@ -103,17 +120,189 @@ ms.locfileid: "75861206"
 }
 ```
 
-| Property (JSON) | Значение | Description |
+| Свойство (JSON) | Значение | Description |
 |-----------------|-------|-------------|
 | `principalId` | <*ИД субъекта*> | Глобальный уникальный идентификатор (GUID) объекта субъекта-службы для управляемого удостоверения, представляющего ваше приложение логики в клиенте Azure AD. Этот идентификатор GUID иногда отображается как "идентификатор объекта" или `objectID`. |
 | `tenantId` | <*ИД клиента Azure AD*> | Глобальный уникальный идентификатор (GUID), представляющий клиент Azure AD, в который теперь входит приложение логики. В клиенте Azure AD субъект-служба имеет то же имя, что и экземпляр приложения логики. |
+||||
+
+<a name="user-assigned"></a>
+
+### <a name="enable-user-assigned-identity"></a>Включить назначенное пользователем удостоверение
+
+Чтобы настроить управляемое пользователем удостоверение для приложения логики, необходимо сначала создать это удостоверение в отдельном автономном ресурсе Azure. Ниже приведены параметры, которые можно использовать.
+
+* [Портал Azure](#azure-portal-user-identity)
+* [Шаблоны диспетчера ресурсов Azure](#template-user-identity)
+* Azure PowerShell
+  * [Создать удостоверение, назначенное пользователем](../active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-powershell.md)
+  * [Добавить назначение ролей](../active-directory/managed-identities-azure-resources/howto-assign-access-powershell.md)
+* Azure CLI
+  * [Создать удостоверение, назначенное пользователем](../active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-cli.md)
+  * [Добавить назначение ролей](../active-directory/managed-identities-azure-resources/howto-assign-access-cli.md)
+* REST API Azure
+  * [Создать удостоверение, назначенное пользователем](../active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-rest.md)
+  * [Добавить назначение ролей](../role-based-access-control/role-assignments-rest.md)
+
+<a name="azure-portal-user-identity"></a>
+
+#### <a name="create-user-assigned-identity-in-the-azure-portal"></a>Создание назначенного пользователем удостоверения в портал Azure
+
+1. В [портал Azure](https://portal.azure.com)в поле поиска на любой странице введите `managed identities`и выберите **управляемые удостоверения**.
+
+   ![Найдите и выберите "управляемые удостоверения".](./media/create-managed-service-identity/find-select-managed-identities.png)
+
+1. В разделе **управляемые удостоверения**выберите **Добавить**.
+
+   ![Добавить новое управляемое удостоверение](./media/create-managed-service-identity/add-user-assigned-identity.png)
+
+1. Укажите сведения об управляемом удостоверении, а затем выберите **создать**, например:
+
+   ![Создание управляемого удостоверения, назначенного пользователем](./media/create-managed-service-identity/create-user-assigned-identity.png)
+
+   | Свойство | Обязательно | Значение | Description |
+   |----------|----------|-------|-------------|
+   | **Имя ресурса** | Да | <" *назначено пользователем-Identity-Name* "> | Имя, присваиваемое пользователю удостоверение. В этом примере используется "Fabrikam-User-Assigned-Identity". |
+   | **подписка** | Да | <*Azure-subscription-name*> | Имя подписки Azure, которую нужно использовать. |
+   | **группа ресурсов** | Да | <*имя_группы_ресурсов_Azure*> | Имя используемой группы ресурсов. Создайте новую группу или выберите существующую. В этом примере создается новая группа с именем "Fabrikam-Managed-identitys-RG". |
+   | **Местоположение** | Да | <*Azure-region*> | Регион Azure, в котором хранятся сведения о ресурсе. В этом примере используется регион "Западная часть США". |
+   |||||
+
+   Теперь можно добавить назначенное пользователем удостоверение в приложение логики. В приложение логики нельзя добавить больше одного назначенного пользователем удостоверения.
+
+1. В портал Azure найдите и откройте приложение логики в конструкторе приложений логики.
+
+1. В меню приложения логики в разделе **Параметры**выберите **удостоверение**, а затем выберите **назначенный пользователем** > **Добавить**.
+
+   ![Добавление управляемого удостоверения, назначенного пользователем](./media/create-managed-service-identity/add-user-assigned-identity-logic-app.png)
+
+1. В области **Добавить назначенное пользователем управляемое удостоверение** в списке **Подписка** выберите подписку Azure, если она еще не выбрана. В списке, где показаны *все* управляемые удостоверения в этой подписке, найдите и выберите нужное удостоверение, назначенное пользователем. Чтобы отфильтровать список, в поле " **назначенные пользователем управляемые удостоверения** " введите имя удостоверения или группы ресурсов. Когда все будет готово, нажмите кнопку **Добавить**.
+
+   ![Выберите назначаемое пользователем удостоверение](./media/create-managed-service-identity/select-user-assigned-identity.png)
+
+   > [!NOTE]
+   > Если вы получаете сообщение об ошибке, которое может иметь только одно управляемое удостоверение, приложение логики уже связано с назначенным системой удостоверением. Перед добавлением удостоверения, назначенного пользователем, необходимо сначала отключить назначенное системой удостоверение для приложения логики.
+
+   Теперь приложение логики связано с управляемым удостоверением, назначенным пользователем.
+
+   ![Сопоставление с удостоверением, назначенным пользователем](./media/create-managed-service-identity/added-user-assigned-identity.png)
+
+1. Теперь выполните [действия, которые предоставляют удостоверению доступ к ресурсу](#access-other-resources) далее в этом разделе.
+
+<a name="template-user-identity"></a>
+
+#### <a name="create-user-assigned-identity-in-an-azure-resource-manager-template"></a>Создание назначенного пользователем удостоверения в шаблоне Azure Resource Manager
+
+Чтобы автоматизировать создание и развертывание ресурсов Azure, таких как приложения логики, можно использовать [шаблоны Azure Resource Manager](../logic-apps/logic-apps-azure-resource-manager-templates-overview.md), которые поддерживают [для проверки подлинности назначенные пользователем удостоверения](../active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-arm.md). В разделе `resources` шаблона для определения ресурса приложения логики требуются следующие элементы:
+
+* Объект `identity` со свойством `type`, для которого задано значение `UserAssigned`
+
+* Дочерний объект `userAssignedIdentities`, указывающий идентификатор ресурса удостоверения, который является другим дочерним объектом, имеющим свойства `principalId` и `clientId`
+
+В этом примере показано определение ресурса приложения логики для запроса HTTP-размещения и включает непараметризованный `identity` объект. Ответ на запрос размещения и последующие операции GET также имеют следующий объект `identity`:
+
+```json
+{
+   "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+   "contentVersion": "1.0.0.0",
+   "parameters": {<template-parameters>},
+   "resources": [
+      {
+         "apiVersion": "2016-06-01",
+         "type": "Microsoft.logic/workflows",
+         "name": "[variables('logicappName')]",
+         "location": "[resourceGroup().location]",
+         "identity": {
+            "type": "UserAssigned",
+            "userAssignedIdentities": {
+               "/subscriptions/<Azure-subscription-ID>/resourceGroups/<Azure-resource-group-name>/providers/Microsoft.ManagedIdentity/userAssignedIdentities/<user-assigned-identity-name>": {
+                  "principalId": "<principal-ID>",
+                  "clientId": "<client-ID>"
+               }
+            }
+         },
+         "properties": {
+            "definition": {<logic-app-workflow-definition>}
+         },
+         "parameters": {},
+         "dependsOn": []
+      },
+   ],
+   "outputs": {}
+}
+```
+
+| Свойство (JSON) | Значение | Description |
+|-----------------|-------|-------------|
+| `principalId` | <*ИД субъекта*> | Глобальный уникальный идентификатор (GUID) для назначаемого пользователем управляемого удостоверения в клиенте Azure AD |
+| `clientId` | <*ИД клиента*> | Глобальный уникальный идентификатор (GUID) для нового удостоверения приложения логики, используемого для вызовов во время выполнения |
+||||
+
+Если шаблон также включает определение ресурса управляемого удостоверения, можно параметризовать объект `identity`. В этом примере показано, как дочерний объект `userAssignedIdentities` ссылается на переменную `userAssignedIdentity`, определенную в разделе `variables` шаблона. Эта переменная ссылается на идентификатор ресурса для назначенного пользователю удостоверения.
+
+```json
+{
+   "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+   "contentVersion": "1.0.0.0",
+   "parameters": {
+      "Template_LogicAppName": {
+         "type": "string"
+      },
+      "Template_UserAssignedIdentityName": {
+         "type": "securestring"
+      }
+   },
+   "variables": {
+      "logicAppName": "[parameters(`Template_LogicAppName')]",
+      "userAssignedIdentityName": "[parameters('Template_UserAssignedIdentityName')]"
+   },
+   "resources": [
+      {
+         "apiVersion": "2016-06-01",
+         "type": "Microsoft.logic/workflows",
+         "name": "[variables('logicAppName')]",
+         "location": "[resourceGroup().location]",
+         "identity": {
+            "type": "UserAssigned",
+            "userAssignedIdentities": {
+               "[resourceId('Microsoft.ManagedIdentity/userAssignedIdentities/', variables('userAssignedIdentityName'))]": {}
+            }
+         },
+         "properties": {
+            "definition": {<logic-app-workflow-definition>}
+         },
+         "parameters": {},
+         "dependsOn": [
+            "[resourceId('Microsoft.ManagedIdentity/userAssignedIdentities/', variables('userAssignedIdentityName'))]"
+         ]
+      },
+      {
+         "apiVersion": "2018-11-30",
+         "type": "Microsoft.ManagedIdentity/userAssignedIdentities",
+         "name": "[parameters('Template_UserAssignedIdentityName')]",
+         "location": "[resourceGroup().location]",
+         "properties": {
+            "tenantId": "<tenant-ID>",
+            "principalId": "<principal-ID>",
+            "clientId": "<client-ID>"
+         }
+      }
+  ]
+}
+```
+
+| Свойство (JSON) | Значение | Description |
+|-----------------|-------|-------------|
+| `tenantId` | <*ИД клиента Azure AD*> | Глобальный уникальный идентификатор (GUID), представляющий клиент Azure AD, в котором теперь пользовательское удостоверение является членом. В клиенте Azure AD субъект-служба имеет то же имя, что и имя удостоверения, назначенное пользователем. |
+| `principalId` | <*ИД субъекта*> | Глобальный уникальный идентификатор (GUID) для назначаемого пользователем управляемого удостоверения в клиенте Azure AD |
+| `clientId` | <*ИД клиента*> | Глобальный уникальный идентификатор (GUID) для нового удостоверения приложения логики, используемого для вызовов во время выполнения |
 ||||
 
 <a name="access-other-resources"></a>
 
 ## <a name="give-identity-access-to-resources"></a>Предоставление удостоверениям доступа к ресурсам
 
-Прежде чем использовать управляемое удостоверение, назначенное системой для приложения логики для проверки подлинности, предоставьте этому удостоверению доступ к ресурсу Azure, где вы планируете использовать удостоверение. Чтобы выполнить эту задачу, назначьте удостоверение соответствующей роли в целевом ресурсе Azure. Ниже приведены параметры, которые можно использовать.
+Прежде чем использовать управляемое удостоверение приложения логики для проверки подлинности, настройте доступ для этого удостоверения в ресурсе Azure, где вы планируете использовать удостоверение. Чтобы выполнить эту задачу, назначьте удостоверение соответствующей роли в целевом ресурсе Azure. Ниже приведены параметры, которые можно использовать.
 
 * [Портал Azure](#azure-portal-assign-access)
 * [Шаблон Azure Resource Manager](../role-based-access-control/role-assignments-template.md)
@@ -136,23 +325,39 @@ ms.locfileid: "75861206"
 
 1. В разделе **Добавление назначения ролей**выберите **роль** , которая предоставит удостоверению необходимый доступ к целевому ресурсу.
 
-   В этом примере для удостоверения требуется [роль, которая может получить доступ к большому двоичному объекту в контейнере службы хранилища Azure](../storage/common/storage-auth-aad.md#assign-rbac-roles-for-access-rights):
+   В этом примере для удостоверения требуется [роль, которая может получить доступ к большому двоичному объекту в контейнере службы хранилища Azure](../storage/common/storage-auth-aad.md#assign-rbac-roles-for-access-rights).
 
-   ![Выберите роль "участник данных BLOB-объектов хранилища"](./media/create-managed-service-identity/assign-role.png)
+   ![Выберите роль "участник данных BLOB-объектов хранилища"](./media/create-managed-service-identity/select-role-for-identity.png)
 
-1. В поле **Назначить доступ** выберите **Пользователь, группа или субъект-служба Azure AD**.
+1. Выполните следующие действия для управляемого удостоверения:
 
-   ![Выбор доступа для удостоверения, назначенного системой](./media/create-managed-service-identity/assign-access-system.png)
+   * **Удостоверение, назначенное системой**
 
-1. В поле **выбрать** найдите и выберите свое приложение логики.
+     1. В поле **назначить доступ к** выберите **приложение логики**. Когда отобразится свойство **Подписка** , выберите подписку Azure, связанную с вашим удостоверением.
 
-   ![Выбор приложения логики для назначенного системой удостоверения](./media/create-managed-service-identity/add-permissions-select-logic-app.png)
+        ![Выбор доступа для удостоверения, назначенного системой](./media/create-managed-service-identity/assign-access-system.png)
+
+     1. В поле **выбрать** выберите приложение логики из списка. Если список слишком длинный, используйте поле **выбора** для фильтрации списка.
+
+        ![Выбор приложения логики для назначенного системой удостоверения](./media/create-managed-service-identity/add-permissions-select-logic-app.png)
+
+   * **Удостоверение, назначенное пользователем**
+
+     1. В поле **назначить доступ к** выберите значение **управляемое удостоверение, назначенное пользователем**. Когда отобразится свойство **Подписка** , выберите подписку Azure, связанную с вашим удостоверением.
+
+        ![Выберите доступ для назначенного пользователю удостоверения.](./media/create-managed-service-identity/assign-access-user.png)
+
+     1. В поле **выбрать** выберите удостоверение из списка. Если список слишком длинный, используйте поле **выбора** для фильтрации списка.
+
+        ![Выбор назначенного пользователем удостоверения](./media/create-managed-service-identity/add-permissions-select-user-assigned-identity.png)
 
 1. Когда все будет готово, нажмите кнопку **Сохранить**.
 
-   В списке назначения ролей целевого ресурса теперь отображается выбранное управляемое удостоверение и роль.
+   В списке назначения ролей целевого ресурса теперь отображается выбранное управляемое удостоверение и роль. В этом примере показано, как можно использовать назначенное системой удостоверение для одного приложения логики и назначенное пользователем удостоверение для группы других приложений логики.
 
    ![В целевой ресурс добавлены управляемые удостоверения и роли](./media/create-managed-service-identity/added-roles-for-identities.png)
+
+   Для получения дополнительных сведений [назначьте управляемому удостоверению доступ к ресурсу с помощью портал Azure](../active-directory/managed-identities-azure-resources/howto-assign-access-portal.md).
 
 1. Теперь выполните [действия по проверке подлинности доступа с помощью удостоверения](#authenticate-access-with-identity) в триггере или действии, поддерживающем управляемые удостоверения.
 
@@ -173,12 +378,12 @@ ms.locfileid: "75861206"
 
    Например, триггер или действие HTTP могут использовать назначенное системой удостоверение, включенное для приложения логики. Как правило, триггер или действие HTTP используют эти свойства для указания ресурса или сущности, к которым требуется получить доступ.
 
-   | Свойство | Обязательно для заполнения | Description |
+   | Свойство | Обязательно | Description |
    |----------|----------|-------------|
    | **Метод** | Да | Метод HTTP, используемый операцией, которую необходимо выполнить |
    | **URI** | Да | URL-адрес конечной точки для доступа к целевому ресурсу или сущности Azure. Синтаксис URI обычно включает [идентификатор ресурса](../active-directory/managed-identities-azure-resources/services-support-managed-identities.md#azure-services-that-support-azure-ad-authentication) для ресурса или службы Azure. |
-   | **Заголовки** | Нет | Любые значения заголовка, которые требуется включить в исходящий запрос, например тип содержимого |
-   | **Запросы** | Нет | Любые параметры запроса, которые требуется включить в запрос, например параметр для определенной операции или версия API для операции, которую требуется выполнить. |
+   | **Заголовки** | нет | Любые значения заголовка, которые требуется включить в исходящий запрос, например тип содержимого |
+   | **Запросы** | нет | Любые параметры запроса, которые требуется включить в запрос, например параметр для определенной операции или версия API для операции, которую требуется выполнить. |
    | **Аутентификация** | Да | Тип проверки подлинности, используемый для проверки подлинности доступа к целевому ресурсу или сущности |
    ||||
 
@@ -189,72 +394,82 @@ ms.locfileid: "75861206"
 
    Чтобы запустить [операцию создания BLOB-объекта моментальных снимков](https://docs.microsoft.com/rest/api/storageservices/snapshot-blob), в действии HTTP указываются следующие свойства:
 
-   | Свойство | Обязательно для заполнения | Пример значения | Description |
+   | Свойство | Обязательно | Пример значения | Description |
    |----------|----------|---------------|-------------|
    | **Метод** | Да | `PUT`| Метод HTTP, используемый операцией BLOB-объекта моментального снимка |
    | **URI** | Да | `https://{storage-account-name}.blob.core.windows.net/{blob-container-name}/{folder-name-if-any}/{blob-file-name-with-extension}` | Идентификатор ресурса для файла хранилища BLOB-объектов Azure в глобальной (общедоступной) среде Azure, которая использует этот синтаксис. |
    | **Заголовки** | Да, для службы хранилища Azure | `x-ms-blob-type` = `BlockBlob` <p>`x-ms-version` = `2019-02-02` | Значения заголовков `x-ms-blob-type` и `x-ms-version`, необходимые для операций службы хранилища Azure. <p><p>**Важно**. в исходящем триггере HTTP и запросах действий для службы хранилища Azure для заголовка требуется свойство `x-ms-version` и версия API для операции, которую требуется выполнить. <p>Дополнительные сведения см. в следующих статьях: <p><p>- [заголовков запроса — BLOB-объект моментальных снимков](https://docs.microsoft.com/rest/api/storageservices/snapshot-blob#request) <br>- [Управление версиями для служб хранилища Azure](https://docs.microsoft.com/rest/api/storageservices/versioning-for-the-azure-storage-services#specifying-service-versions-in-requests) |
    | **Запросы** | Да, для этой операции | `comp` = `snapshot` | Имя параметра запроса и значение для операции моментального снимка большого двоичного объекта. |
-   | **Аутентификация** | Да | `Managed Identity` | Тип проверки подлинности, используемый для проверки подлинности доступа к большому двоичному объекту Azure |
    |||||
 
    Ниже приведен пример действия HTTP, в котором показаны все эти значения свойств.
 
    ![Добавление действия HTTP для доступа к ресурсу Azure](./media/create-managed-service-identity/http-action-example.png)
 
-   Дополнительные сведения обо всех доступных операциях REST API Azure см. в [справочнике по azure REST API](https://docs.microsoft.com/rest/api/azure/).
+1. Теперь добавьте свойство **authentication** в действие HTTP. В списке **Добавить новый параметр** выберите **Проверка подлинности**.
 
-1. В списке **Проверка подлинности** выберите **Управляемое удостоверение**. Если свойство [ **Проверка подлинности** поддерживается](logic-apps-securing-a-logic-app.md#add-authentication-outbound) , но скрыто, откройте список **Добавить новый параметр** и выберите **Проверка подлинности**.
+   ![Добавление свойства "Authentication" в действие HTTP](./media/create-managed-service-identity/add-authentication-property.png)
 
    > [!NOTE]
-   > Не все триггеры и действия позволяют выбрать тип проверки подлинности. Дополнительные сведения см. [в разделе Добавление проверки подлинности для исходящих вызовов](logic-apps-securing-a-logic-app.md#add-authentication-outbound).
+   > Не все триггеры и действия поддерживают добавление типа проверки подлинности. Дополнительные сведения см. [в разделе Добавление проверки подлинности для исходящих вызовов](../logic-apps/logic-apps-securing-a-logic-app.md#add-authentication-outbound).
 
-   ![В свойстве "Проверка подлинности" выберите "управляемое удостоверение".](./media/create-managed-service-identity/select-managed-identity.png)
+1. В списке **тип проверки подлинности** выберите **управляемое удостоверение**.
 
-1. После выбора **управляемого удостоверения**для некоторых триггеров и действий отображается свойство **аудитория** . Если свойство **аудитория** поддерживается, но скрыто, откройте список **Добавить новый параметр** и выберите **аудитория**.
+   ![В качестве "проверки подлинности" выберите "управляемое удостоверение".](./media/create-managed-service-identity/select-managed-identity.png)
 
-1. Убедитесь, что в качестве значения **аудитории** задан идентификатор ресурса для целевого ресурса или службы. В противном случае по умолчанию свойство **аудитория** использует идентификатор ресурса `https://management.azure.com/`, который является идентификатором ресурса для Azure Resource Manager.
+1. В списке управляемое удостоверение выберите доступные параметры в зависимости от вашего сценария.
+
+   * Если вы настроили назначенное системой удостоверение, выберите **система назначено управляемое удостоверение** , если оно еще не выбрано.
+
+     ![Выберите пункт "управляемое удостоверение, назначенное системой".](./media/create-managed-service-identity/select-system-assigned-identity-for-action.png)
+
+   * Если вы настроили назначенное пользователем удостоверение, выберите это удостоверение, если оно еще не выбрано.
+
+     ![Выберите удостоверение, назначенное пользователем](./media/create-managed-service-identity/select-user-assigned-identity-for-action.png)
+
+   В этом примере сохраняется **управляемое удостоверение, назначенное системой**.
+
+1. Для некоторых триггеров и действий также отображается свойство **аудитория** для задания идентификатора целевого ресурса. Задайте для свойства **аудиторию** [идентификатор ресурса для целевого ресурса или службы](../active-directory/managed-identities-azure-resources/services-support-managed-identities.md#azure-services-that-support-azure-ad-authentication). В противном случае по умолчанию свойство **аудитория** использует идентификатор ресурса `https://management.azure.com/`, который является идентификатором ресурса для Azure Resource Manager.
 
    > [!IMPORTANT]
    > Убедитесь, что целевой идентификатор ресурса *точно соответствует* значению, которое требуется Azure Active Directory (AD), включая все обязательные символы косой черты. Например, для идентификатора ресурса для всех учетных записей хранилища BLOB-объектов Azure требуется завершающая косая черта. Однако для идентификатора ресурса конкретной учетной записи хранения не требуется завершающая косая черта. Проверьте [идентификаторы ресурсов для служб Azure, которые поддерживают Azure AD](../active-directory/managed-identities-azure-resources/services-support-managed-identities.md#azure-services-that-support-azure-ad-authentication).
 
    В этом примере свойству **аудитории** присваивается значение `https://storage.azure.com/`, чтобы маркеры доступа, используемые для проверки подлинности, были допустимы для всех учетных записей хранения. Однако можно также указать URL-адрес корневой службы `https://fabrikamstorageaccount.blob.core.windows.net`для конкретной учетной записи хранения.
 
-   ![Укажите идентификатор целевого ресурса в свойстве "аудитория"](./media/create-managed-service-identity/specify-audience-url-target-resource.png)
+   ![Задать для свойства "аудитория" идентификатор целевого ресурса](./media/create-managed-service-identity/specify-audience-url-target-resource.png)
 
    Дополнительные сведения об авторизации доступа с помощью Azure AD для службы хранилища Azure см. в следующих разделах:
 
    * [Авторизация доступа к BLOB-объектам и очередям Azure с помощью Azure Active Directory](../storage/common/storage-auth-aad.md)
    * [Авторизация доступа к службе хранилища Azure с помощью Azure Active Directory](https://docs.microsoft.com/rest/api/storageservices/authorize-with-azure-active-directory#use-oauth-access-tokens-for-authentication)
 
+1. Продолжайте создавать приложения логики нужным образом.
+
 <a name="remove-identity"></a>
 
-## <a name="remove-system-assigned-identity"></a>Удалить назначенное системой удостоверение
+## <a name="disable-managed-identity"></a>Отключить управляемое удостоверение
 
-Чтобы не использовать назначенное системой удостоверение для приложения логики, доступны следующие варианты:
+Чтобы не использовать управляемое удостоверение для приложения логики, доступны следующие варианты:
 
 * [Портал Azure](#azure-portal-disable)
 * [Шаблоны диспетчера ресурсов Azure](#template-disable)
-* [Azure PowerShell](https://docs.microsoft.com/powershell/module/az.resources/remove-azroleassignment)
-* [Azure CLI](https://docs.microsoft.com/cli/azure/role/assignment?view=azure-cli-latest#az-role-assignment-delete)
+* Azure PowerShell
+  * [Удалить назначение роли](../role-based-access-control/role-assignments-powershell.md)
+  * [Удаление назначенного пользователем удостоверения](../active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-powershell.md)
+* Azure CLI
+  * [Удалить назначение роли](../role-based-access-control/role-assignments-cli.md)
+  * [Удаление назначенного пользователем удостоверения](../active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-cli.md)
+* REST API Azure
+  * [Удалить назначение роли](../role-based-access-control/role-assignments-rest.md)
+  * [Удаление назначенного пользователем удостоверения](../active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-rest.md)
 
 Если вы удалите приложение логики, Azure автоматически удалит управляемое удостоверение из Azure AD.
 
 <a name="azure-portal-disable"></a>
 
-### <a name="remove-system-assigned-identity-in-the-azure-portal"></a>Удаление назначенного системой удостоверения в портал Azure
+### <a name="disable-managed-identity-in-the-azure-portal"></a>Отключение управляемого удостоверения в портал Azure
 
-В портал Azure удалите назначенное системой удостоверение [из приложения логики](#disable-identity-logic-app) и получите доступ к этому [ресурсу из целевого ресурса](#disable-identity-target-resource).
-
-<a name="disable-identity-logic-app"></a>
-
-#### <a name="remove-system-assigned-identity-from-logic-app"></a>Удалить назначенное системой удостоверение из приложения логики
-
-1. На [портале Azure](https://portal.azure.com) откройте приложение логики в конструкторе приложений логики.
-
-1. В меню приложения логики в разделе **Параметры**выберите **удостоверение** > **системой назначено**. В разделе **состояние**выберите **выкл** . > **сохранить** > **Да**.
-
-   ![Запретить с использованием назначенного системой удостоверения](./media/create-managed-service-identity/turn-off-system-assigned-identity.png)
+В портал Azure сначала удалите доступ удостоверения к [целевому ресурсу](#disable-identity-target-resource). Затем выключите назначенное системой удостоверение или удалите удостоверение, назначенное пользователем из [приложения логики](#disable-identity-logic-app).
 
 <a name="disable-identity-target-resource"></a>
 
@@ -271,11 +486,29 @@ ms.locfileid: "75861206"
 
 Управляемое удостоверение теперь удалено и больше не имеет доступа к целевому ресурсу.
 
+<a name="disable-identity-logic-app"></a>
+
+#### <a name="disable-managed-identity-on-logic-app"></a>Отключить управляемое удостоверение в приложении логики
+
+1. На [портале Azure](https://portal.azure.com) откройте приложение логики в конструкторе приложений логики.
+
+1. В меню приложения логики в разделе **Параметры**выберите **удостоверение**, а затем выполните действия для своего удостоверения.
+
+   * Выберите > , **назначенные системой** , **на** > **сохранить**. Когда Azure запросит подтверждение, выберите **Да**.
+
+     ![Отключить назначенное системой удостоверение](./media/create-managed-service-identity/disable-system-assigned-identity.png)
+
+   * Выберите **назначенное пользователем** и управляемое удостоверение, а затем щелкните **Удалить**. Когда Azure запросит подтверждение, выберите **Да**.
+
+     ![Удаление назначенного пользователю удостоверения](./media/create-managed-service-identity/remove-user-assigned-identity.png)
+
+Управляемое удостоверение теперь отключено в приложении логики.
+
 <a name="template-disable"></a>
 
 ### <a name="disable-managed-identity-in-azure-resource-manager-template"></a>Отключение управляемого удостоверения в шаблоне Azure Resource Manager
 
-Если вы включили управляемое системой удостоверение приложения логики с помощью шаблона Azure Resource Manager, установите для дочернего свойства `type` объекта `identity` значение `None`. Это действие также удаляет идентификатор участника для управляемого системой удостоверения из Azure AD.
+Если вы создали управляемое удостоверение приложения логики с помощью шаблона Azure Resource Manager, установите для дочернего свойства `type` объекта `identity` значение `None`. Для управляемого системой удостоверения это действие также удаляет идентификатор субъекта из Azure AD.
 
 ```json
 "identity": {

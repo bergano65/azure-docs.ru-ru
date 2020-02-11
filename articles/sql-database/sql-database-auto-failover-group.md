@@ -10,13 +10,13 @@ ms.topic: conceptual
 author: anosov1960
 ms.author: sashan
 ms.reviewer: mathoma, carlrab
-ms.date: 1/05/2020
-ms.openlocfilehash: 9b838edea4b5f47fe57305c593944ef5fa93a63c
-ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
+ms.date: 2/10/2020
+ms.openlocfilehash: 6d87d3373711d12df3f2cced26ef35ae951ad41e
+ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76768662"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77116193"
 ---
 # <a name="use-auto-failover-groups-to-enable-transparent-and-coordinated-failover-of-multiple-databases"></a>Использование групп автоматической отработки отказа для включения прозрачной и согласованной отработки отказа в нескольких базах данных
 
@@ -242,7 +242,7 @@ ms.locfileid: "76768662"
 Группу отработки отказа можно создать между управляемыми экземплярами в двух разных подписках. При использовании API PowerShell можно сделать это, указав параметр `PartnerSubscriptionId` для вторичного экземпляра. При использовании REST API каждый идентификатор экземпляра, включаемый в параметр `properties.managedInstancePairs`, может иметь собственное значение subscriptionID.
   
 > [!IMPORTANT]
-> Портал Azure не поддерживает группы отработки отказа в разных подписках.
+> Портал Azure не поддерживает создание групп отработки отказа в разных подписках. Кроме того, для существующих групп отработки отказа в разных подписках или группах ресурсов отработка отказа не может быть инициирована вручную с помощью портала из основного экземпляра. Запустите его из экземпляра Geo-Secondary.
 
 ### <a name="managing-failover-to-secondary-instance"></a>Управление отработкой отказа на экземпляр-получатель
 

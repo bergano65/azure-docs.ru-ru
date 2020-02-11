@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 12/10/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 11a5e92ccf1104f36b3f2b045f9922158b1f7330
-ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
+ms.openlocfilehash: d7d8a7881c00427023e5f174461b3d8b24d83444
+ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77064150"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77121442"
 ---
 # <a name="tutorial-configure-workplace-by-facebook-for-automatic-user-provisioning"></a>Руководство по настройке Workplace by Facebook для автоматической подготовки пользователей
 
@@ -43,7 +43,9 @@ ms.locfileid: "77064150"
 
 https://portal.azure.com/?Microsoft_AAD_IAM_userProvisioningEnableCredentialsOverride=true
 
- 
+#### <a name="how-can-i-tell-if-my-application-has-been-migrated"></a>Как узнать, перенесено ли приложение? 
+При переносе приложения баннер в разделе авторизации, посвященной отправкой изменений, будет удален, а поле Секретный токен будет заменено синей кнопкой авторизовать. 
+
 #### <a name="the-admin-credentials-section-is-greyed-out-on-my-application-and-i-cant-save-why"></a>Раздел учетные данные администратора неактивен в моем приложении и не может быть сохранен. Почему?
 Мы заблокировали раздел учетные данные администратора для существующих клиентов рабочей области. Когда клиент будет перенесен в новое приложение рабочей области, вы сможете снова обновить раздел учетных данных администратора. Если вы не можете подождать, можно использовать приведенный выше URL-адрес для изменения приложения. 
 
