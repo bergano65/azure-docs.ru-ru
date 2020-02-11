@@ -255,8 +255,6 @@
         - name: Настройка локальных кодировщиков для использования с облачными кодировщиками
           href: media-services-live-encoders-overview.md
           items:
-            - name: Кодировщик FMLE
-              href: media-services-configure-fmle-live-encoder.md
             - name: "Кодировщик Haivision\_KB"
               href: media-services-configure-kb-live-encoder.md
             - name: Кодировщик NewTek TriCaster

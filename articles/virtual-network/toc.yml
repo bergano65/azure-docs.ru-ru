@@ -35,118 +35,91 @@
       href: policy-samples.md
 - name: Основные понятия
   items:
-    - name: Группы безопасности
-      href: security-overview.md
-    - name: Маршрутизация
-      href: virtual-networks-udr-overview.md
-    - name: Теги служб
-      href: service-tags-overview.md
-    - name: Конечные точки служб
-      href: virtual-network-service-endpoints-overview.md
-    - name: Политики конечной точки службы
-      href: virtual-network-service-endpoint-policies-overview.md
-    - name: Пиринг
-      href: virtual-network-peering-overview.md
-    - name: TAP виртуальной сети
-      href: virtual-network-tap-overview.md
-    - name: Виртуальная сеть для служб Azure
-      href: virtual-network-for-azure-services.md
-    - name: Работа с контейнерами в сети
-      href: container-networking-overview.md
-    - name: Сетевые политики Kubernetes
-      href: kubernetes-network-policies.md
     - name: Непрерывность бизнес-процессов
       href: virtual-network-disaster-recovery-guidance.md
-    - name: Назначение IP-адресов
-      href: virtual-network-ip-addresses-overview-arm.md
-    - name: Префикс общедоступного IP-адреса
-      href: public-ip-address-prefix.md
-    - name: IPv6 для виртуальной сети Azure
-      href: ipv6-overview.md
-    - name: Префикс общедоступного IP версии 6
-      href: ipv6-public-ip-address-prefix.md
-    - name: Защита от атак DDoS
-      href: ddos-protection-overview.md
-    - name: Расширение подсети
-      href: subnet-extension.md
-    - name: Делегирование подсети
-      href: subnet-delegation-overview.md
-    - name: Взаимодействие компонентов при подключении к серверной части
+    - name: Соединение
       items:
-        - name: Вводная часть и сведения о настройке теста
-          href: ../networking/connectivty-interoperability-preface.md?toc=%2fazure%2fvirtual-network%2ftoc.json
-        - name: Параметры конфигурации для настройки теста
-          href: ../networking/connectivty-interoperability-configuration.md?toc=%2fazure%2fvirtual-network%2ftoc.json
-        - name: Анализ на уровне управления
-          href: ../networking/connectivty-interoperability-control-plane.md?toc=%2fazure%2fvirtual-network%2ftoc.json
-        - name: Анализ на уровне данных
-          href: ../networking/connectivty-interoperability-data-plane.md?toc=%2fazure%2fvirtual-network%2ftoc.json
-    - name: Возможность подключения нескольких сетей
-      href: ../expressroute/cross-network-connectivity.md?toc=%2fazure%2fvirtual-network%2ftoc.json
+        - name: Взаимодействие компонентов при подключении к серверной части
+          items:
+            - name: Вводная часть и сведения о настройке теста
+              href: ../networking/connectivty-interoperability-preface.md?toc=%2fazure%2fvirtual-network%2ftoc.json
+            - name: Параметры конфигурации для настройки теста
+              href: ../networking/connectivty-interoperability-configuration.md?toc=%2fazure%2fvirtual-network%2ftoc.json
+            - name: Анализ на уровне управления
+              href: ../networking/connectivty-interoperability-control-plane.md?toc=%2fazure%2fvirtual-network%2ftoc.json
+            - name: Анализ на уровне данных
+              href: ../networking/connectivty-interoperability-data-plane.md?toc=%2fazure%2fvirtual-network%2ftoc.json
+        - name: Работа с контейнерами в сети
+          href: container-networking-overview.md
+        - name: Возможность подключения нескольких сетей
+          href: ../expressroute/cross-network-connectivity.md?toc=%2fazure%2fvirtual-network%2ftoc.json
+        - name: Пиринг
+          href: virtual-network-peering-overview.md
+        - name: Виртуальная сеть для служб Azure
+          href: virtual-network-for-azure-services.md
+    - name: Службы IP
+      items:
+        - name: Назначение IP-адресов
+          href: virtual-network-ip-addresses-overview-arm.md
+        - name: Префикс общедоступного IP-адреса
+          href: public-ip-address-prefix.md
+        - name: IPv6 для виртуальной сети Azure
+          href: ipv6-overview.md
+        - name: Префикс общедоступного IP версии 6
+          href: ipv6-public-ip-address-prefix.md
+    - name: безопасность
+      items:
+        - name: Защита от атак DDoS
+          href: ddos-protection-overview.md
+        - name: Сетевые политики Kubernetes
+          href: kubernetes-network-policies.md
+        - name: Маршрутизация
+          href: virtual-networks-udr-overview.md
+        - name: Группы безопасности
+          href: security-overview.md
+        - name: Теги служб
+          href: service-tags-overview.md
+        - name: Конечные точки служб
+          href: virtual-network-service-endpoints-overview.md
+        - name: Политики конечной точки службы
+          href: virtual-network-service-endpoint-policies-overview.md
+        - name: TAP виртуальной сети
+          href: virtual-network-tap-overview.md
+    - name: Подсети
+      items:
+        - name: Расширение подсети
+          href: subnet-extension.md
+        - name: Делегирование подсети
+          href: subnet-delegation-overview.md
     - name: Классическое развертывание
       href: 'https://docs.microsoft.com/previous-versions/azure/virtual-network/virtual-network-ip-addresses-overview-classic'
 - name: Практические руководства
   items:
-    - name: План
+    - name: Планирование и настройка
       items:
         - name: Виртуальные сети
           href: virtual-network-vnet-plan-design-arm.md
-        - name: Настройка производительности TCP/IP для виртуальных машин Azure
-          href: virtual-network-tcpip-performance-tuning.md
-    - name: Развертывание
+        - name: Разрешение имен для виртуальных машин и облачных служб
+          href: virtual-networks-name-resolution-for-vms-and-role-instances.md
+        - name: Использование динамического DNS с собственным DNS-сервером
+          href: virtual-networks-name-resolution-ddns.md
+        - name: Оптимизация пропускной способности сети
+          href: virtual-network-optimize-network-bandwidth.md
+        - name: Просмотр и изменение имен узлов
+          href: virtual-networks-viewing-and-modifying-hostnames.md
+        - name: Журналы
+          href: virtual-network-nsg-manage-log.md
+    - name: Соединение
       items:
-        - name: IPv6 для виртуальной сети
-          items:
-            - name: Общедоступная подсистема балансировки нагрузки
-              items:
-                - name: Azure PowerShell
-                  href: virtual-network-ipv4-ipv6-dual-stack-powershell.md
-                - name: Azure CLI
-                  href: virtual-network-ipv4-ipv6-dual-stack-cli.md
-                - name: Шаблон Resource Manager
-                  href: ipv6-configure-template-json.md
-            - name: Добавление подключения по IPv6 в приложение с поддержкой IPv4
-              items:
-                - name: Azure PowerShell
-                  href: ipv6-add-to-existing-vnet-powershell.md
-                - name: Azure CLI
-                  href: ipv6-add-to-existing-vnet-cli.md
-            - name: Общедоступная версия Load Balancer (цен. категория "Стандартный")
-              items:
-                - name: Azure PowerShell
-                  href: virtual-network-ipv4-ipv6-dual-stack-standard-load-balancer-powershell.md
-                - name: Azure CLI
-                  href: virtual-network-ipv4-ipv6-dual-stack-standard-load-balancer-cli.md
-                - name: Шаблон Resource Manager
-                  href: ipv6-configure-standard-load-balancer-template-json.md
-            - name: Внутренняя версия Load Balancer (цен. категория "Стандартный")
-              href: ipv6-dual-stack-standard-internal-load-balancer-powershell.md
-            - name: Использование масштабируемого набора виртуальных машин с IPv6
-              href: ipv6-virtual-machine-scale-set.md
-        - name: Группы безопасности сети
-          items:
-            - name: Azure PowerShell
-              href: tutorial-filter-network-traffic-powershell.md
-            - name: Azure CLI
-              href: tutorial-filter-network-traffic-cli.md
-        - name: Таблицы маршрутов
-          items:
-            - name: Azure PowerShell
-              href: tutorial-create-route-table-powershell.md
-            - name: Azure CLI
-              href: tutorial-create-route-table-cli.md
-            - name: Ansible
-              href: /azure/ansible/ansible-create-configure-route-table
-              maintainContext: true
-        - name: Конечные точки служб
-          items:
-            - name: Azure PowerShell
-              href: tutorial-restrict-network-access-to-resources-powershell.md
-            - name: Azure CLI
-              href: tutorial-restrict-network-access-to-resources-cli.md
-        - name: 'Политики конечной точки службы: портал'
-          href: virtual-network-service-endpoint-policies-portal.md
-        - name: Пиринг между виртуальными сетями
+        - name: Управление сетевыми картами
+          href: virtual-network-network-interface.md
+        - name: Управление виртуальной сетью
+          href: manage-virtual-network.md
+        - name: Управление подсетями
+          href: virtual-network-manage-subnet.md
+        - name: Управление делегированием подсети
+          href: manage-subnet-delegation.md
+        - name: Создание пиринга виртуальных сетей
           items:
             - name: Одна модель развертывания — одна подписка
               items:
@@ -160,59 +133,8 @@
               href: create-peering-different-deployment-models.md
             - name: Разные модели развертывания — разные подписки
               href: create-peering-different-deployment-models-subscriptions.md
-        - name: TAP виртуальной сети
-          items:
-            - name: Azure CLI
-              href: tutorial-tap-virtual-network-cli.md
-        - name: Работа с контейнерами в сети
-          href: deploy-container-networking.md
-        - name: Виртуальные машины
-          items:
-            - name: Создание виртуальной машины (статический общедоступный IP-адрес)
-              items:
-                - name: Портал Azure
-                  href: virtual-network-deploy-static-pip-arm-portal.md
-                - name: Azure PowerShell
-                  href: virtual-network-deploy-static-pip-arm-ps.md
-                - name: Azure CLI
-                  href: virtual-network-deploy-static-pip-arm-cli.md
-            - name: Добавление общедоступного IP-адреса к существующей виртуальной машине
-              href: associate-public-ip-address-vm.md
-            - name: Отмена связи общедоступного IP-адреса с виртуальной машиной
-              href: remove-public-ip-address-vm.md
-            - name: Создание виртуальной машины (статический частный IP-адрес)
-              items:
-                - name: Портал Azure
-                  href: virtual-networks-static-private-ip-arm-pportal.md
-                - name: Azure PowerShell
-                  href: virtual-networks-static-private-ip-arm-ps.md
-                - name: Azure CLI
-                  href: virtual-networks-static-private-ip-arm-cli.md
-            - name: Создание виртуальной машины (несколько сетевых интерфейсов)
-              items:
-                - name: Azure PowerShell
-                  href: ../virtual-machines/windows/multiple-nics.md?toc=%2fazure%2fvirtual-network%2ftoc.json
-                - name: Azure CLI
-                  href: ../virtual-machines/linux/multiple-nics.md?toc=%2fazure%2fvirtual-network%2ftoc.json
-            - name: Создание виртуальной машины. Несколько IP-адресов
-              items:
-                - name: Портал Azure
-                  href: virtual-network-multiple-ip-addresses-portal.md
-                - name: Azure PowerShell
-                  href: virtual-network-multiple-ip-addresses-powershell.md
-                - name: Azure CLI
-                  href: virtual-network-multiple-ip-addresses-cli.md
-            - name: Создание виртуальной машины. Ускоренная сеть
-              items:
-                - name: Azure PowerShell
-                  href: create-vm-accelerated-networking-powershell.md
-                - name: Azure CLI
-                  href: create-vm-accelerated-networking-cli.md
-                  items:
-                    - name: Установка набора DPDK
-                      href: setup-dpdk.md
-            - name: Пропускная способность сети для виртуальной машины
-              href: virtual-machine-network-throughput.md
+        - name: Управление пирингом виртуальных сетей
+          href: virtual-network-manage-peering.md
         - name: Сценарии подключения
           items:
             - name: Настройка подключения между виртуальными сетями
@@ -225,58 +147,140 @@
               href: ../expressroute/expressroute-howto-linkvnet-portal-resource-manager.md?toc=%2fazure%2fvirtual-network%2ftoc.json
             - name: Архитектура высокодоступной гибридной сети
               href: ../guidance/guidance-hybrid-network-expressroute-vpn-failover.md?toc=%2fazure%2fvirtual-network%2ftoc.json
+        - name: Настройка TAP виртуальной сети
+          href: tutorial-tap-virtual-network-cli.md
+        - name: Развертывание контейнеров в сети
+          href: deploy-container-networking.md
+    - name: Службы IP
+      items:
+        - name: IPv6 для виртуальной сети
+          items:
+            - name: Добавление подключения по IPv6 в приложение с поддержкой IPv4
+              items:
+                - name: Azure PowerShell
+                  href: ipv6-add-to-existing-vnet-powershell.md
+                - name: Azure CLI
+                  href: ipv6-add-to-existing-vnet-cli.md
+            - name: Общедоступная подсистема балансировки нагрузки
+              items:
+                - name: Azure PowerShell
+                  href: virtual-network-ipv4-ipv6-dual-stack-powershell.md
+                - name: Azure CLI
+                  href: virtual-network-ipv4-ipv6-dual-stack-cli.md
+                - name: Шаблон Resource Manager
+                  href: ipv6-configure-template-json.md
+            - name: Общедоступная версия Load Balancer (цен. категория "Стандартный")
+              items:
+                - name: Azure PowerShell
+                  href: virtual-network-ipv4-ipv6-dual-stack-standard-load-balancer-powershell.md
+                - name: Azure CLI
+                  href: virtual-network-ipv4-ipv6-dual-stack-standard-load-balancer-cli.md
+                - name: Шаблон Resource Manager
+                  href: ipv6-configure-standard-load-balancer-template-json.md
+            - name: Внутренняя версия Load Balancer (цен. категория "Стандартный")
+              href: ipv6-dual-stack-standard-internal-load-balancer-powershell.md
+            - name: Использование масштабируемого набора виртуальных машин с IPv6
+              href: ipv6-virtual-machine-scale-set.md
+            - name: Префикс общедоступного IP версии 6
+              href: ipv6-reserve-public-ip-address-prefix.md
+        - name: Назначение IP-адресов
+          items:
+            - name: Управление общедоступными IP-адресами
+              href: virtual-network-public-ip-address.md
+            - name: Управление префиксами общедоступных IP-адресов
+              href: manage-public-ip-address-prefix.md
+            - name: Создание и удаление IP-адресов в сетевых картах
+              href: virtual-network-network-interface-addresses.md
+    - name: безопасность
+      items:
+        - name: Управление защитой от атак DDoS
+          href: manage-ddos-protection.md
+        - name: Управление группами безопасности сети
+          href: manage-network-security-group.md
+        - name: Подключение партнеров к стандарту Защиты от атак DDoS
+          href: ddos-protection-partner-onboarding.md
+        - name: Фильтрация сетевого трафика с помощью групп безопасности сети
+          items:
+            - name: Azure PowerShell
+              href: tutorial-filter-network-traffic-powershell.md
+            - name: Azure CLI
+              href: tutorial-filter-network-traffic-cli.md
+        - name: Маршрутизация трафика с помощью NVA
+          items:
+            - name: Azure PowerShell
+              href: tutorial-create-route-table-powershell.md
+            - name: Azure CLI
+              href: tutorial-create-route-table-cli.md
+            - name: Ansible
+              href: /azure/ansible/ansible-create-configure-route-table
+              maintainContext: true
+        - name: Управление таблицами маршрутов
+          href: manage-route-table.md
+        - name: Использование конечных точек служб
+          items:
+            - name: Azure PowerShell
+              href: tutorial-restrict-network-access-to-resources-powershell.md
+            - name: Azure CLI
+              href: tutorial-restrict-network-access-to-resources-cli.md
+        - name: Создание политик для конечных точек служб с помощью портала
+          href: virtual-network-service-endpoint-policies-portal.md
         - name: Сценарии обеспечения безопасности
           items:
             - name: Защита сетей с использованием виртуальных устройств
               href: virtual-network-scenario-udr-gw-nva.md
             - name: Сеть периметра между Azure и Интернетом
               href: ../guidance/guidance-iaas-ra-secure-vnet-dmz.md?toc=%2fazure%2fvirtual-network%2ftoc.json
-    - name: Configure
+    - name: Сеть виртуальной машины
       items:
-        - name: Разрешение имен для виртуальных машин и облачных служб
-          href: virtual-networks-name-resolution-for-vms-and-role-instances.md
-        - name: Использование динамического DNS с собственным DNS-сервером
-          href: virtual-networks-name-resolution-ddns.md
-        - name: Оптимизация пропускной способности сети
-          href: virtual-network-optimize-network-bandwidth.md
-        - name: Просмотр и изменение имен узлов
-          href: virtual-networks-viewing-and-modifying-hostnames.md
-    - name: Управление
-      items:
-        - name: Виртуальные сети
-          href: manage-virtual-network.md
+        - name: Создание виртуальной машины (статический общедоступный IP-адрес)
           items:
-            - name: Подсети
-              href: virtual-network-manage-subnet.md
-            - name: Делегирование подсети
-              href: manage-subnet-delegation.md
-            - name: Пиринг
-              href: virtual-network-manage-peering.md
-            - name: Защита от атак DDoS
-              href: manage-ddos-protection.md
-            - name: Подключение партнеров к стандарту Защиты от атак DDoS
-              href: ddos-protection-partner-onboarding.md
-        - name: Группы безопасности сети
-          href: manage-network-security-group.md
+            - name: Портал Azure
+              href: virtual-network-deploy-static-pip-arm-portal.md
+            - name: Azure PowerShell
+              href: virtual-network-deploy-static-pip-arm-ps.md
+            - name: Azure CLI
+              href: virtual-network-deploy-static-pip-arm-cli.md
+            - name: Добавление общедоступного IP-адреса к существующей виртуальной машине
+              href: associate-public-ip-address-vm.md
+            - name: Отмена связи общедоступного IP-адреса с виртуальной машиной
+              href: remove-public-ip-address-vm.md
+        - name: Создание виртуальной машины (статический частный IP-адрес)
           items:
-            - name: Журналы
-              href: virtual-network-nsg-manage-log.md
-        - name: Таблицы маршрутов
-          href: manage-route-table.md
-        - name: Сетевые подключения виртуальных машин
+            - name: Портал Azure
+              href: virtual-networks-static-private-ip-arm-pportal.md
+            - name: Azure PowerShell
+              href: virtual-networks-static-private-ip-arm-ps.md
+            - name: Azure CLI
+              href: virtual-networks-static-private-ip-arm-cli.md
+        - name: Создание виртуальной машины (несколько IP-адресов)
           items:
-            - name: Создание и удаление сетевых интерфейсов
-              href: virtual-network-network-interface.md
+            - name: Портал Azure
+              href: virtual-network-multiple-ip-addresses-portal.md
+            - name: Azure PowerShell
+              href: virtual-network-multiple-ip-addresses-powershell.md
+            - name: Azure CLI
+              href: virtual-network-multiple-ip-addresses-cli.md
             - name: Добавление и удаление сетевых интерфейсов
               href: virtual-network-network-interface-vm.md
-            - name: Создание и удаление IP-адресов
-              href: virtual-network-network-interface-addresses.md
-        - name: Общедоступные IP-адреса
-          href: virtual-network-public-ip-address.md
-        - name: Префикс общедоступного IP-адреса
-          href: manage-public-ip-address-prefix.md
-        - name: Префикс общедоступного IP версии 6
-          href: ipv6-reserve-public-ip-address-prefix.md
+            - name: Создание виртуальной машины (несколько сетевых карт)
+              items:
+                - name: Azure PowerShell
+                  href: ../virtual-machines/windows/multiple-nics.md?toc=%2fazure%2fvirtual-network%2ftoc.json
+                - name: Azure CLI
+                  href: ../virtual-machines/linux/multiple-nics.md?toc=%2fazure%2fvirtual-network%2ftoc.json
+        - name: Создание виртуальной машины (ускоренная сеть)
+          items:
+            - name: Azure PowerShell
+              href: create-vm-accelerated-networking-powershell.md
+            - name: Azure CLI
+              href: create-vm-accelerated-networking-cli.md
+              items:
+                - name: Установка набора DPDK
+                  href: setup-dpdk.md
+        - name: Настройка производительности TCP/IP для виртуальных машин Azure
+          href: virtual-network-tcpip-performance-tuning.md
+        - name: Пропускная способность сети для виртуальной машины
+          href: virtual-machine-network-throughput.md
     - name: Перемещение между регионами
       items:
         - name: "Группы безопасности сети\_— портал"
@@ -291,34 +295,6 @@
           href: move-across-regions-publicip-portal.md
         - name: "Общедоступные IP-адреса\_— PowerShell"
           href: move-across-regions-publicip-powershell.md
-    - name: Диагностика
-      items:
-        - name: Устранение неполадок с пирингом виртуальной сети
-          href: virtual-network-troubleshoot-peering-issues.md
-        - name: Настройка и проверка VPN-подключений и подключений между виртуальными сетями
-          href: virtual-network-configure-vnet-connections.md
-        - name: Группы безопасности сети
-          href: diagnose-network-traffic-filter-problem.md
-        - name: Маршруты
-          href: diagnose-network-routing-problem.md
-        - name: Тестирование пропускной способности
-          href: virtual-network-bandwidth-testing.md
-        - name: Проверка задержки сети виртуальной машины
-          href: virtual-network-test-latency.md
-        - name: Не удается удалить виртуальные сети
-          href: virtual-network-troubleshoot-cannot-delete-vnet.md
-        - name: Проблемы с подключением между виртуальными машинами
-          href: virtual-network-troubleshoot-connectivity-problem-between-vms.md
-        - name: Настройка записи типа PTR для проверки заголовка SMTP
-          href: create-ptr-for-smtp-service.md
-        - name: Контрольный список по устранению неполадок с виртуальными модулями
-          href: virtual-network-troubleshoot-nva.md
-        - name: Устранение неполадок исходящих подключений по протоколу SMTP
-          href: troubleshoot-outbound-smtp-connectivity.md
-        - name: Сведения об IP-адресе 168.63.129.16
-          href: what-is-ip-address-168-63-129-16.md
-        - name: Устранение неполадок с подключением виртуальной машины Azure
-          href: troubleshoot-vm-connectivity.md
     - name: Классическое развертывание
       href: 'https://docs.microsoft.com/previous-versions/azure/virtual-network/create-virtual-network-classic'
 - name: Справочник

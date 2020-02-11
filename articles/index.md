@@ -2,7 +2,7 @@
 layout: HubPage
 hide_bc: true
 title: Документация по Microsoft Azure
-description: Узнайте, как создавать мощные приложения и управлять ими с помощью облачных служб Microsoft Azure. Получение документации, примеров кода, руководств и пр.
+description: Узнайте, как создавать мощные приложения и управлять ими с помощью облачных служб Microsoft Azure. Получите документацию, примеры кода, руководства и пр.
 ms.topic: hub-page
 featureFlags:
 - clicktale
@@ -1044,7 +1044,7 @@ ms.locfileid: "77026019"
                                             </a>
                                         </li>
                                     </ul>
-                                    <h3>Удостоверение</h3>
+                                    <h3>Идентификация</h3>
                                     <ul>
                                         <li>
                                             <a href="/azure/active-directory/">
@@ -1676,7 +1676,7 @@ ms.locfileid: "77026019"
                                             </a>
                                         </li>
                                     </ul>
-                                    <h3>безопасность</h3>
+                                    <h3>Безопасность</h3>
                                     <ul>
                                         <li>
                                             <a href="/azure/security/">
@@ -3532,7 +3532,7 @@ ms.locfileid: "77026019"
                                                 </div>
                                                 <div class="cardText">
                                                     <h3>Visual Studio Code</h3>
-                                                    <p>Visual Studio Code — это простой, но мощный редактор для работы с исходным кодом, который работает на настольном компьютере и доступен для Windows, macOS и Linux.</p>
+                                                    <p>Visual Studio Code — это простой, но мощный настольный редактор для работы с исходным кодом, доступный для Windows, macOS и Linux.</p>
                                                 </div>
                                             </div>
                                         </div>

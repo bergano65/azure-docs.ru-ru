@@ -70,6 +70,8 @@
       items:
         - name: Частный пиринг
           href: designing-for-disaster-recovery-with-expressroute-privatepeering.md
+        - name: Использование VPN в качестве канала для резервного копирования
+          href: use-s2s-vpn-as-backup-for-expressroute-privatepeering.md
 - name: Практические руководства
   items:
     - name: Создание и изменение канала

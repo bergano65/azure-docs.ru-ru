@@ -42,9 +42,9 @@
       href: openvpn-azure-ad-tenant.md
     - name: Включение многофакторной идентификации для VPN пользователя
       href: openvpn-azure-ad-mfa.md
-    - name: Настройка аутентификации Azure AD для VPN пользователя (предварительная версия)
+    - name: "Настройка аутентификации Azure\_AD для VPN пользователя"
       href: virtual-wan-point-to-site-azure-ad.md
-    - name: "Настройка аутентификации Azure\_AD для VPN пользователя в нескольких приложениях (предварительная версия)"
+    - name: "Настройка аутентификации Azure\_AD для VPN пользователя в нескольких приложениях"
       href: openvpn-azure-ad-tenant-multi-app.md
     - name: Настройка автоматизации (участники Виртуальной глобальной сети)
       href: virtual-wan-configure-automation-providers.md

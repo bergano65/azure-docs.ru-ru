@@ -346,6 +346,8 @@
               href: ./spark/apache-azure-spark-history-server.md
             - name: Включение кэширования с помощью службы кэша операций ввода-вывода
               href: ./spark/apache-spark-improve-performance-iocache.md
+            - name: Управление зависимостями JAR
+              href: ./spark/manage-jar-dependency.md
             - name: Использование записных книжек с Apache Spark
               items:
                 - name: Использование локальной записной книжки Jupyter
