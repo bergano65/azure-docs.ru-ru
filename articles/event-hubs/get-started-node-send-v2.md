@@ -1,47 +1,53 @@
 ---
-title: Отправка и получение событий с помощью Node.js (Центры событий Azure)
-description: В статье описано, как создать приложение Node.js, которое отправляет сообщения в Центры событий Azure.
+title: Отправка и получение событий через Центры событий Azure с помощью Node.js (последняя версия)
+description: В статье описано, как создать приложение Node.js, которое отправляет события или получает их из службы "Центры событий Azure" с помощью последнего пакета azure/event-hubs версии 5.
 services: event-hubs
 author: spelluru
 ms.service: event-hubs
 ms.workload: core
-ms.topic: article
-ms.date: 01/09/2020
+ms.topic: quickstart
+ms.date: 01/30/2020
 ms.author: spelluru
-ms.openlocfilehash: d4810c325acc42d5aa665002654cb01154cdc6bb
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
-ms.translationtype: MT
+ms.openlocfilehash: b523e4a7b463564cbfeb407c91b7bb05317f8166
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75981615"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76906370"
 ---
-# <a name="send-events-to-or-receive-events-from-azure-event-hubs-using-nodejs"></a>Отправка и получение событий через Центры событий Azure с помощью Node.js
+# <a name="send-events-to-or-receive-events-from-event-hubs-by-using-nodejs--azureevent-hubs-version-5"></a>Отправка событий или получение событий из концентраторов событий с помощью Node.js (azure/event-hubs версии 5)
 
-Центры событий Azure — это платформа потоковой передачи больших данных и служба приема событий, принимающая и обрабатывающая миллионы событий в секунду. Служба "Центры событий" может обрабатывать и сохранять события и данные, в том числе телеметрические, созданные распределенным программным обеспечением и устройствами. Данные, отправляемые в концентратор событий, можно преобразовывать и сохранять с помощью любого поставщика аналитики в режиме реального времени, а также с помощью адаптеров пакетной обработки или хранения. Подробный обзор Центров событий см. в статьях [Что такое Центры событий Azure?](event-hubs-about.md) и [Обзор функций Центров событий](event-hubs-features.md).
+Центры событий Azure — это платформа потоковой передачи больших данных и служба приема событий, принимающая и обрабатывающая миллионы событий в секунду. Центры событий могут обрабатывать и сохранять события, данные и телеметрию, созданные распределенным программным обеспечением и устройствами. Данные, отправляемые в концентратор событий, можно преобразовывать и сохранять с помощью любого поставщика аналитики в режиме реального времени, а также с помощью адаптеров пакетной обработки или хранения. Дополнительные сведения см. в статье [Центры событий Azure — платформа потоковой передачи больших данных и служба приема событий](event-hubs-about.md) и [Features and terminology in Azure Event Hubs](event-hubs-features.md) (Функции и терминология в Центрах событий Azure).
 
-В этом руководстве описано, как создавать приложения Node.js для отправки и получения событий через концентратор событий.
+В этом кратком руководстве описано, как создать приложения Node.js, которые отправляют или получают события через концентратор событий.
 
 > [!IMPORTANT]
-> В этом кратком руководстве используется версия 5 пакета SDK скриптов Java для концентраторов событий Azure. Краткое руководство, в котором используется старая версия пакета SDK для сценариев Java, см. в [этой статье](event-hubs-node-get-started-send.md). Если вы используете версию 2 пакета SDK, рекомендуется перенести код в последнюю версию. Дополнительные сведения см. в разделе [руководств по миграции](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/eventhub/event-hubs/migrationguide.md).
+> В рамках этого краткого руководства используется версия 5 пакета SDK Центров событий Azure для JavaScript. Сведения об использовании пакета SDK для JavaScript версии 2 см. [Краткое руководство. Отправка и получение событий через Центры событий Azure с помощью Node.js](event-hubs-node-get-started-send.md). 
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
-Для работы с данным руководством вам потребуется:
+Для работы с данным руководством необходимо следующее:
 
-- Активная учетная запись Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio), прежде чем начинать работу.
-- Node.js версии 8.x или более поздней. Скачайте последнюю версию LTS с сайта [https://nodejs.org](https://nodejs.org).
-- Visual Studio Code (рекомендуется) или любой другой интерфейс IDE.
-- **Создайте пространство имен Центров событий и концентратор событий**. Первым шагом является использование [портала Azure](https://portal.azure.com) для создания пространства имен типа Центров событий и получение учетных данных управления, необходимых приложению для взаимодействия с концентратором событий. Чтобы создать пространство имен и концентратор событий, выполните процедуру, описанную в [этой статье](event-hubs-create.md), а затем перейдите к следующим шагам в этом руководстве. Затем получите строку подключения для пространства имен концентратора событий, следуя инструкциям из статьи: [Получение строки подключения](event-hubs-get-connection-string.md#get-connection-string-from-the-portal). Строка подключения понадобится нам позже.
+- Подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio), прежде чем начать работу.  
+- Node.js 8.x или более поздней версии. Скачайте последнюю версию [долгосрочной поддержки (LTS)](https://nodejs.org).  
+- Visual Studio Code (рекомендовано) или любая другая интегрированная среда разработки (IDE).  
+- Активное пространство имен Центров событий и концентратор событий. Чтобы создать их, выполните приведенные ниже действия. 
 
+   1. Создайте на [портале Azure](https://portal.azure.com) пространство имен типа *Центров событий* и получите учетные данные для управления, необходимые приложению для взаимодействия с концентратором событий. 
+   1. Чтобы создать пространство имен и концентратор событий, следуйте инструкциям в статье [Краткое руководство. Создание концентратора событий с помощью портала Azure](event-hubs-create.md).
+   1. Продолжайте, выполнив инструкции в этом кратком руководстве. 
+   1. Чтобы получить строку подключения для пространства имен концентратора событий, следуйте инструкциям в разделе [Get connection string from the portal](event-hubs-get-connection-string.md#get-connection-string-from-the-portal) (Получение строки подключения на портале). Запишите строку подключения для дальнейшего использования в этом руководстве.
 
-### <a name="install-npm-packages"></a>Установка пакетов npm
-Чтобы установить [пакет npm для Центров событий](https://www.npmjs.com/package/@azure/event-hubs), откройте командную строку, где `npm` сохранен в переменной окружения path, перейдите в папку, в которой вы хотите сохранить примеры, и выполните эту команду.
+### <a name="install-the-npm-package"></a>Установка пакета npm
+Чтобы установить [Пакет Node Package Manager (npm) для Центров событий](https://www.npmjs.com/package/@azure/event-hubs), откройте командную строку, в пути которой сохранен *npm*, перейдите в папку, в которой вы хотите сохранить примеры, и выполните эту команду.
 
 ```shell
 npm install @azure/event-hubs
 ```
 
-Для принимающей стороны необходимо установить два дополнительных пакета. В этом кратком руководстве вы будете использовать хранилище BLOB-объектов Azure для сохранения контрольных точек, чтобы программа не читала уже прочитанные события. Он создает контрольные точки для полученных сообщений с регулярными интервалами в большом двоичном объекте. Благодаря такому подходу позже можно легко продолжить получать сообщения с того места, где вы остановились.
+Для принимающей стороны необходимо установить еще два пакета. В этом кратком руководстве вы используете хранилище BLOB-объектов Azure для сохранения контрольных точек, чтобы программа не читала уже прочитанные события. Оно регулярно выполняет фиксацию метаданных для полученных сообщений в большом двоичном объекте. Благодаря такому подходу позже можно легко продолжить получать сообщения с того места, где вы остановились.
+
+Выполните следующие команды:
 
 ```shell
 npm install @azure/storage-blob
@@ -53,10 +59,10 @@ npm install @azure/eventhubs-checkpointstore-blob
 
 ## <a name="send-events"></a>Отправка событий
 
-Из этого раздела вы узнаете, как создать приложение Node.js, которое отправляет события в концентратор событий.
+В этом разделе вы создадите приложение Node.js, которое отправляет события в концентратор событий.
 
 1. Откройте редактор, например [Visual Studio Code](https://code.visualstudio.com).
-2. Создайте файл с именем `send.js` и вставьте в него следующий код.
+1. Создайте файл с именем *send.js* и вставьте в него следующий код.
 
     ```javascript
     const { EventHubProducerClient } = require("@azure/event-hubs");
@@ -66,19 +72,19 @@ npm install @azure/eventhubs-checkpointstore-blob
 
     async function main() {
 
-      // create a producer client to send messages to the event hub
+      // Create a producer client to send messages to the event hub.
       const producer = new EventHubProducerClient(connectionString, eventHubName);
 
-      // prepare a batch of three events
+      // Prepare a batch of three events.
       const batch = await producer.createBatch();
       batch.tryAdd({ body: "First event" });
       batch.tryAdd({ body: "Second event" });
       batch.tryAdd({ body: "Third event" });    
 
-      // send the batch to the event hub
+      // Send the batch to the event hub.
       await producer.sendBatch(batch);
 
-      // close the producer client
+      // Close the producer client.
       await producer.close();
 
       console.log("A batch of three events have been sent to the event hub");
@@ -88,34 +94,37 @@ npm install @azure/eventhubs-checkpointstore-blob
       console.log("Error occurred: ", err);
     });
     ```
-3. Не забудьте заменить **строку подключения** и значения **имени концентратора событий** в коде.
-5. Выполните команду `node send.js`, чтобы выполнить этот файл. В концентратор событий будет отправлен пакет из трех событий.
-6. В портал Azure можно проверить, что концентратор событий получил сообщения. Переключитесь в представление **сообщений** в разделе **метрики** . Обновите страницу, чтобы обновить диаграмму. На отображение полученных сообщений может уйти несколько секунд.
+1. Используйте в коде реальные значения, чтобы заменить следующее:
+    * `EVENT HUBS NAMESPACE CONNECTION STRING` 
+    * `EVENT HUB NAME`
+1. запустите `node send.js`, чтобы выполнить этот файл. Эта команда отправляет в концентратор событий пакет из трех событий.
+1. Проверьте получение сообщения концентратором событий на портале Azure. В разделе**Метрики** переключитесь на представление **Сообщения**. Обновите страницу, чтобы обновить диаграмму. На отображение полученных сообщений может уйти несколько секунд.
 
-    [![убедиться, что концентратор событий получил сообщения](./media/getstarted-dotnet-standard-send-v2/verify-messages-portal.png)](./media/getstarted-dotnet-standard-send-v2/verify-messages-portal.png#lightbox)
+    [![Проверка получения сообщения концентратором событий](./media/getstarted-dotnet-standard-send-v2/verify-messages-portal.png)](./media/getstarted-dotnet-standard-send-v2/verify-messages-portal.png#lightbox)
 
     > [!NOTE]
-    > Полный исходный код с дополнительными информационными комментариями см. в [этом файле на сайте GitHub](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/eventhub/event-hubs/samples/javascript/sendEvents.js) .
+    > Полный исходный код, включая дополнительные информационные комментарии, можно найти на странице [GitHub sendEvents.js](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/eventhub/event-hubs/samples/javascript/sendEvents.js).
 
 Поздравляем! Вы отправили события в концентратор событий.
 
 
 ## <a name="receive-events"></a>Получение событий
-В этом разделе показано, как получить события из концентратора событий с помощью хранилища контрольных точек BLOB-объектов Azure в приложении Node. js. Он регулярно фиксирует метаданные для полученных сообщений в Azure Storage Blob. Благодаря такому подходу позже можно легко продолжить получать сообщения с того места, где вы остановились.
+В этом разделе вы получаете события из концентратора событий с помощью хранилища контрольных точек хранилища BLOB-объектов Azure в приложении Node.js. Оно регулярно создает контрольные точки метаданных для полученных сообщений в Azure Storage blob. Благодаря такому подходу позже можно легко продолжить получать сообщения с того места, где вы остановились.
 
-### <a name="create-an-azure-storage-and-a-blob-container"></a>Создание хранилища Azure и контейнера больших двоичных объектов
-Выполните следующие действия, чтобы создать учетную запись хранения Azure в контейнере BLOB-объектов.
+### <a name="create-an-azure-storage-account-and-a-blob-container"></a>Создание учетной записи хранения Azure и контейнера больших двоичных объектов
+Для создания учетной записи хранения Azure и контейнера больших двоичных объектов в ней, выполните действия в следующих ресурсах.
 
-1. [Создайте учетную запись хранения Azure](../storage/common/storage-account-create.md?tabs=azure-portal)
-2. [Создание контейнера больших двоичных объектов](../storage/blobs/storage-quickstart-blobs-portal.md#create-a-container)
-3. [Получение строки подключения к учетной записи хранения](../storage/common/storage-configure-connection-string.md?#view-and-copy-a-connection-string)
+1. [Create an Azure Storage account](../storage/common/storage-account-create.md?tabs=azure-portal) (Создание учетной записи хранения Azure)  
+2. [Создание контейнера](../storage/blobs/storage-quickstart-blobs-portal.md#create-a-container)  
+3. [Получение строки подключения к учетной записи хранения](../storage/common/storage-configure-connection-string.md?#view-and-copy-a-connection-string).
 
-    Запишите строку подключения и имя контейнера. Они будут использоваться в коде получения.
+Обязательно запишите строку подключения и имя контейнера для последующего использования в коде получения.
 
 ### <a name="write-code-to-receive-events"></a>Написание кода для получения событий
 
 1. Откройте редактор, например [Visual Studio Code](https://code.visualstudio.com).
-2. Создайте файл с именем `receive.js` и вставьте в него следующий код. Дополнительные сведения см. в комментариях к коду.
+1. Создайте файл с именем *receive.js* и вставьте в него следующий код.
+
     ```javascript
     const { EventHubConsumerClient } = require("@azure/event-hubs");
     const { ContainerClient } = require("@azure/storage-blob");    
@@ -128,20 +137,20 @@ npm install @azure/eventhubs-checkpointstore-blob
     const containerName = "BLOB CONTAINER NAME";
 
     async function main() {
-      // create a blob container client and a blob checkpoint store using the client
+      // Create a blob container client and a blob checkpoint store using the client.
       const containerClient = new ContainerClient(storageConnectionString, containerName);
       const checkpointStore = new BlobCheckpointStore(containerClient);
 
-      // create a consumer client for the event hub by specifying the checkpoint store
+      // Create a consumer client for the event hub by specifying the checkpoint store.
       const consumerClient = new EventHubConsumerClient(consumerGroup, connectionString, eventHubName, checkpointStore);
 
-      // subscribe for the events and specify handlers for processing the events and errors.
+      // Subscribe to the events, and specify handlers for processing the events and errors.
       const subscription = consumerClient.subscribe({
           processEvents: async (events, context) => {
             for (const event of events) {
               console.log(`Received event: '${event.body}' from partition: '${context.partitionId}' and consumer group: '${context.consumerGroup}'`);
             }
-            // update the checkpoint
+            // Update the checkpoint.
             await context.updateCheckpoint(events[events.length - 1]);
           },
 
@@ -151,7 +160,7 @@ npm install @azure/eventhubs-checkpointstore-blob
         }
       );
 
-      // after 30 seconds, stop processing
+      // After 30 seconds, stop processing.
       await new Promise((resolve) => {
         setTimeout(async () => {
           await subscription.close();
@@ -165,20 +174,20 @@ npm install @azure/eventhubs-checkpointstore-blob
       console.log("Error occurred: ", err);
     });    
     ```
-3. Не забудьте указать в коде **следующие значения** :
-    - Строка подключения к пространству имен концентраторов событий
-    - Имя концентратора событий
-    - Строка подключения к учетной записи хранения Azure
-    - Имя контейнера больших двоичных объектов
-5. Затем в окне командной строки выполните команду `node receive.js`, которая запускает этот файл. В окне должны отобразиться сообщения о полученных событиях.
+1. Используйте в коде реальные значения, чтобы заменить следующие значения:
+    - `EVENT HUBS NAMESPACE CONNECTION STRING`
+    - `EVENT HUB NAME`
+    - `AZURE STORAGE CONNECTION STRING`
+    - `BLOB CONTAINER NAME`
+1. В окне командной строки выполните команду `node receive.js`, которая запускает этот файл. Сообщения о полученных событиях должны отображаться в окне.
 
     > [!NOTE]
-    > Полный исходный код с дополнительными информационными комментариями см. в [этом файле на сайте GitHub](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/eventhub/eventhubs-checkpointstore-blob/samples/receiveEventsUsingCheckpointStore.js).
+    > Полный исходный код, включая дополнительные информационные комментарии, можно найти на странице [GitHub receiveEventsUsingCheckpointStore](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/eventhub/eventhubs-checkpointstore-blob/samples/receiveEventsUsingCheckpointStore.js).
 
-Поздравляем! Теперь вы получили события из концентратора событий. Программа-получатель получит события из всех разделов группы потребителей по умолчанию в концентраторе событий.
+Поздравляем! Теперь вы получили события из вашего концентратора событий. Программа-получатель получит события из всех разделов группы потребителей по умолчанию в указанном центре событий.
 
 ## <a name="next-steps"></a>Дальнейшие действия
-Ознакомьтесь с этими примерами на сайте GitHub:
+Ознакомьтесь с примерами в GitHub:
 
 - [Примеры JavaScript](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/eventhub/event-hubs/samples/javascript)
 - [Примеры TypeScript](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/eventhub/event-hubs/samples/typescript)
