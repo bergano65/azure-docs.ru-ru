@@ -49,7 +49,7 @@ Get-Module -ListAvailable AzureAD*
    Uninstall-Module AzureAD 
    Install-Module AzureADPreview 
    ```
-- Если в результатах отображается только модуль AzureADPreview, но вы получили сообщение о том, что у вас установлена более поздняя версия, выполните следующие команды для обновления модуля. 
+- Если в результатах отображается только модуль AzureADPreview, но вы получили сообщение о том, что существует более поздняя версия, выполните следующие команды для обновления модуля. 
 
    ```powershell 
    Uninstall-Module AzureADPreview 
@@ -82,7 +82,7 @@ Connect-AzureAD -TenantDomain "<Tenant_Domain_Name>"
    ```
 2. Команда отправляет приглашение на указанный адрес электронной почты. Проверьте результат. Он должен выглядеть примерно следующим образом.
 
-   ![Выходные данные PowerShell с запросами, ожидающими подтверждения пользователя](media/quickstart-invite-powershell/powershell-azureadmsinvitation-result.png)
+   ![Выходные данные PowerShell с запросом, ожидающим подтверждения пользователя](media/quickstart-invite-powershell/powershell-azureadmsinvitation-result.png)
 
 ## <a name="verify-the-user-exists-in-the-directory"></a>Проверка существования пользователя в каталоге
 
