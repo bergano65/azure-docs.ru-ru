@@ -1,44 +1,36 @@
 ---
 title: Регионы публикации & конечные точки — LUIS
-titleSuffix: Azure Cognitive Services
 description: Регион, указанный в портал Azure, совпадает с областью, в которой будет опубликовано приложение LUIS, а для этого же региона создается URL-адрес конечной точки.
-services: cognitive-services
-author: diberry
-manager: nitinme
-ms.custom: seodec18
-ms.service: cognitive-services
-ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 11/19/2019
-ms.author: diberry
-ms.openlocfilehash: 4f8e5d1c5ac3b0383fee5a901d2bb34edab8dae2
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: 77fd901790582983d75735ac8b66d59c741ced9e
+ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74225492"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77151944"
 ---
 # <a name="authoring-and-publishing-regions-and-the-associated-keys"></a>Регионы создания и публикации и связанные ключи
 
-Соответствующие порталы LUIS поддерживают три области разработки. Чтобы опубликовать приложение LUIS в несколько регионов, требуется по меньшей мере один ключ для каждого региона. 
+Соответствующие порталы LUIS поддерживают три области разработки. Чтобы опубликовать приложение LUIS в несколько регионов, требуется по меньшей мере один ключ для каждого региона.
 
 <a name="luis-website"></a>
 
 ## <a name="luis-authoring-regions"></a>LUIS области разработки
-На основе региона существует три LUIS портала для создания порталов. Разработку и публикацию следует выполнять в одном регионе. 
+На основе региона существует три LUIS портала для создания порталов. Разработку и публикацию следует выполнять в одном регионе.
 
 |LUIS|Регион разработки|Имя региона Azure|
 |--|--|--|
-|[www.luis.ai][www.luis.ai] <br>[preview.luis.ai](https://preview.luis.ai)|Данные учреждений<br>не Европа<br>не Австралия| `westus`|
+|[www.luis.ai][www.luis.ai] <br>[preview.luis.ai](https://preview.luis.ai)|США<br>не Европа<br>не Австралия| `westus`|
 |[au.luis.ai][au.luis.ai] <br>[preview.au.luis.ai](https://preview.au.luis.ai)|Австралия| `australiaeast`|
 |[eu.luis.ai][eu.luis.ai] <br>[preview.eu.luis.ai](https://preview.eu.luis.ai)|Европа|`westeurope`|
 
-Области разработки имеют [парные регионы отработки отказа](https://docs.microsoft.com/azure/best-practices-availability-paired-regions). 
+Области разработки имеют [парные регионы отработки отказа](https://docs.microsoft.com/azure/best-practices-availability-paired-regions).
 
 <a name="regions-and-azure-resources"></a>
 
 ## <a name="publishing-regions-and-azure-resources"></a>Регионы публикации и ресурсы Azure
-Приложения можно публиковать во всех регионах, которые связаны с ресурсами LUIS, добавленными на портале LUIS. Например, для приложения, созданного на [www.Luis.AI][www.luis.ai], при создании ресурса Luis или службы в **westus** и [добавлении его в приложение в качестве ресурса](luis-how-to-azure-subscription.md)приложение публикуется в этом регионе. 
+Приложения можно публиковать во всех регионах, которые связаны с ресурсами LUIS, добавленными на портале LUIS. Например, для приложения, созданного на [www.Luis.AI][www.luis.ai], при создании ресурса Luis или службы в **westus** и [добавлении его в приложение в качестве ресурса](luis-how-to-azure-subscription.md)приложение публикуется в этом регионе.
 
 ## <a name="public-apps"></a>Общедоступные приложения
 Общедоступное приложение можно публиковать во всех регионах, чтобы пользователь с ключом ресурса LUIS для определенного региона смог получить доступ к приложению в том регионе, который связан с ключом ресурса.
@@ -47,9 +39,9 @@ ms.locfileid: "74225492"
 
 ## <a name="publishing-regions-are-tied-to-authoring-regions"></a>Регионы публикации привязаны к областям разработки
 
-Приложение региона разработки можно публиковать только в соответствующий регион публикации. Если приложение находится в неправильном регионе разработки, экспортируйте его, а затем импортируйте в правильный регион разработки для региона публикации. 
+Приложение региона разработки можно публиковать только в соответствующий регион публикации. Если приложение находится в неправильном регионе разработки, экспортируйте его, а затем импортируйте в правильный регион разработки для региона публикации.
 
-Приложения LUIS, созданные в https://www.luis.ai, могут быть опубликованы во всех конечных точках, за исключением [европейских](#publishing-to-europe) и [австралийских](#publishing-to-australia) регионов. 
+Приложения LUIS, созданные в https://www.luis.ai, могут быть опубликованы во всех конечных точках, за исключением [европейских](#publishing-to-europe) и [австралийских](#publishing-to-australia) регионов.
 
 ## <a name="publishing-to-europe"></a>Публикация в Европе
 
@@ -59,9 +51,9 @@ ms.locfileid: "74225492"
 
  Глобальный регион | Регион разработки API и разработки веб-сайта| Регион публикации и запроса<br>`API region name`   |  Формат URL-адреса конечной точки   |
 |-----|------|------|------|
-| [Европа](#publishing-to-europe)| `westeurope`<br>[eu.luis.ai][eu.luis.ai]| Центральная Франция<br>`francecentral`     | https://francecentral.api.cognitive.microsoft.com/luis/v2.0/apps/YOUR-APP-ID?subscription-key=YOUR-SUBSCRIPTION-KEY   | 
-| [Европа](#publishing-to-europe)| `westeurope`<br>[eu.luis.ai][eu.luis.ai]| Северная Европа<br>`northeurope`     | https://northeurope.api.cognitive.microsoft.com/luis/v2.0/apps/YOUR-APP-ID?subscription-key=YOUR-SUBSCRIPTION-KEY   | 
-| [Европа](#publishing-to-europe) | `westeurope`<br>[eu.luis.ai][eu.luis.ai]| Западная Европа<br>`westeurope`    |  https://westeurope.api.cognitive.microsoft.com/luis/v2.0/apps/YOUR-APP-ID?subscription-key=YOUR-SUBSCRIPTION-KEY   | 
+| [Европа](#publishing-to-europe)| `westeurope`<br>[eu.luis.ai][eu.luis.ai]| Центральная Франция<br>`francecentral`     | https://francecentral.api.cognitive.microsoft.com/luis/v2.0/apps/YOUR-APP-ID?subscription-key=YOUR-SUBSCRIPTION-KEY   |
+| [Европа](#publishing-to-europe)| `westeurope`<br>[eu.luis.ai][eu.luis.ai]| Северная Европа<br>`northeurope`     | https://northeurope.api.cognitive.microsoft.com/luis/v2.0/apps/YOUR-APP-ID?subscription-key=YOUR-SUBSCRIPTION-KEY   |
+| [Европа](#publishing-to-europe) | `westeurope`<br>[eu.luis.ai][eu.luis.ai]| Западная Европа<br>`westeurope`    |  https://westeurope.api.cognitive.microsoft.com/luis/v2.0/apps/YOUR-APP-ID?subscription-key=YOUR-SUBSCRIPTION-KEY   |
 | [Европа](#publishing-to-europe) | `westeurope`<br>[eu.luis.ai][eu.luis.ai]| южная часть Соединенного Королевства<br>`uksouth`    |  https://uksouth.api.cognitive.microsoft.com/luis/v2.0/apps/YOUR-APP-ID?subscription-key=YOUR-SUBSCRIPTION-KEY   |
 
 ## <a name="publishing-to-australia"></a>Публикация в Австралии
@@ -76,7 +68,7 @@ ms.locfileid: "74225492"
 
 ## <a name="publishing-to-other-regions"></a>Публикация в других регионах
 
-Для публикации в других регионах вы создаете приложения LUIS только в [https://www.luis.ai](https://www.luis.ai) . 
+Для публикации в других регионах вы создаете приложения LUIS только в [https://www.luis.ai](https://www.luis.ai) .
 
 ## <a name="other-publishing-regions"></a>Другие регионы публикации
 
@@ -90,40 +82,27 @@ ms.locfileid: "74225492"
 | Азия | `westus`<br>[www.luis.ai][www.luis.ai]| Республика Корея, центральный регион<br>`koreacentral`     |   https://koreacentral.api.cognitive.microsoft.com/luis/v2.0/apps/YOUR-APP-ID?subscription-key=YOUR-SUBSCRIPTION-KEY   |
 | Азия | `westus`<br>[www.luis.ai][www.luis.ai]| Юго-Восточная Азия<br>`southeastasia`     |   https://southeastasia.api.cognitive.microsoft.com/luis/v2.0/apps/YOUR-APP-ID?subscription-key=YOUR-SUBSCRIPTION-KEY   |
 | Северная Америка |`westus`<br>[www.luis.ai][www.luis.ai] | Центральная Канада<br>`canadacentral`     |   https://canadacentral.api.cognitive.microsoft.com/luis/v2.0/apps/YOUR-APP-ID?subscription-key=YOUR-SUBSCRIPTION-KEY   |
-| Северная Америка |`westus`<br>[www.luis.ai][www.luis.ai] | Central US<br>`centralus`     |   https://centralus.api.cognitive.microsoft.com/luis/v2.0/apps/YOUR-APP-ID?subscription-key=YOUR-SUBSCRIPTION-KEY   |
+| Северная Америка |`westus`<br>[www.luis.ai][www.luis.ai] | Центральная часть США<br>`centralus`     |   https://centralus.api.cognitive.microsoft.com/luis/v2.0/apps/YOUR-APP-ID?subscription-key=YOUR-SUBSCRIPTION-KEY   |
 | Северная Америка |`westus`<br>[www.luis.ai][www.luis.ai] | Восточная часть США<br>`eastus`      |  https://eastus.api.cognitive.microsoft.com/luis/v2.0/apps/YOUR-APP-ID?subscription-key=YOUR-SUBSCRIPTION-KEY   |
 | Северная Америка | `westus`<br>[www.luis.ai][www.luis.ai] | восточная часть США 2<br>`eastus2`     |  https://eastus2.api.cognitive.microsoft.com/luis/v2.0/apps/YOUR-APP-ID?subscription-key=YOUR-SUBSCRIPTION-KEY   |
-| Северная Америка | `westus`<br>[www.luis.ai][www.luis.ai] | Центрально-северная часть США<br>`northcentralus`  |  https://northcentralus.api.cognitive.microsoft.com/luis/v2.0/apps/YOUR-APP-ID?subscription-key=YOUR-SUBSCRIPTION-KEY   | 
-| Северная Америка | `westus`<br>[www.luis.ai][www.luis.ai] | Центрально-южная часть США<br>`southcentralus`  |  https://southcentralus.api.cognitive.microsoft.com/luis/v2.0/apps/YOUR-APP-ID?subscription-key=YOUR-SUBSCRIPTION-KEY   | 
+| Северная Америка | `westus`<br>[www.luis.ai][www.luis.ai] | Центрально-северная часть США<br>`northcentralus`  |  https://northcentralus.api.cognitive.microsoft.com/luis/v2.0/apps/YOUR-APP-ID?subscription-key=YOUR-SUBSCRIPTION-KEY   |
+| Северная Америка | `westus`<br>[www.luis.ai][www.luis.ai] | Центрально-южная часть США<br>`southcentralus`  |  https://southcentralus.api.cognitive.microsoft.com/luis/v2.0/apps/YOUR-APP-ID?subscription-key=YOUR-SUBSCRIPTION-KEY   |
 | Северная Америка |`westus`<br>[www.luis.ai][www.luis.ai] | центрально-западная часть США<br>`westcentralus`    |  https://westcentralus.api.cognitive.microsoft.com/luis/v2.0/apps/YOUR-APP-ID?subscription-key=YOUR-SUBSCRIPTION-KEY   |
 | Северная Америка | `westus`<br>[www.luis.ai][www.luis.ai] | западная часть США<br>`westus`  |   https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/YOUR-APP-ID?subscription-key=YOUR-SUBSCRIPTION-KEY  |
 | Северная Америка |`westus`<br>[www.luis.ai][www.luis.ai] | западная часть США 2<br>`westus2`    |  https://westus2.api.cognitive.microsoft.com/luis/v2.0/apps/YOUR-APP-ID?subscription-key=YOUR-SUBSCRIPTION-KEY  |
 | Южная Америка | `westus`<br>[www.luis.ai][www.luis.ai] | Южная Бразилия<br>`brazilsouth`    |  https://brazilsouth.api.cognitive.microsoft.com/luis/v2.0/apps/YOUR-APP-ID?subscription-key=YOUR-SUBSCRIPTION-KEY   |
 
-## <a name="endpoints"></a>конечные точки;
+## <a name="endpoints"></a>Конечные точки
 
-В настоящее время у LUIS есть 2 конечных точки: одна для разработки, а другая — для анализа прогнозов запросов.
-
-|Назначение|URL-адрес|
-|--|--|
-|Разработка|`https://{region}.api.cognitive.microsoft.com/luis/api/v2.0/apps/{appID}/`|
-|Анализ текста (прогнозирование запроса)|`https://{region}.api.cognitive.microsoft.com/luis/v2.0/apps/{appId}?q={q}[&timezoneOffset][&verbose][&spellCheck][&staging][&bing-spell-check-subscription-key][&log]`|
-
-В следующей таблице описаны параметры, обозначенные фигурными скобками `{}` в предыдущей таблице.
-
-|Параметр|Назначение|
-|--|--|
-|region|Регион Azure: для разработки и публикации используются разные регионы|
-|appID|Идентификатор приложения LUIS на панели мониторинга, используемый в маршруте URL-адреса|
-|q|Текст фразы, отправляемый из клиентского приложения, такого как чат-бот|
+Узнайте больше о [конечных точках создания и прогнозирования](developer-reference-resource.md).
 
 ## <a name="failover-regions"></a>Регионы отработки отказа
 
 Каждый регион имеет дополнительный регион для отработки отказа. При отработки отказа Европы в Европе и Австралии происходит сбой в Австралии.
 
-Области разработки имеют [парные регионы отработки отказа](https://docs.microsoft.com/azure/best-practices-availability-paired-regions). 
+Области разработки имеют [парные регионы отработки отказа](https://docs.microsoft.com/azure/best-practices-availability-paired-regions).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Справочник по предварительно созданным сущностям](./luis-reference-prebuilt-entities.md)

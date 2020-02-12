@@ -1,6 +1,6 @@
 ---
 title: Управление и мониторинг — обзор
-description: Общие сведения о мониторинге использования ресурсов, действиях журналов и запросов, рекомендации и защите данных (резервное копирование и восстановление) в хранилище данных SQL Azure.
+description: Общие сведения о мониторинге использования ресурсов, журналах и запросах, рекомендациях и защите данных (резервное копирование и восстановление) с помощью пула SQL.
 services: sql-data-warehouse
 author: kevinvngo
 manager: craigg
@@ -11,16 +11,16 @@ ms.date: 08/27/2018
 ms.author: kevin
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 54dbf7bcac92f7536d4e4579045c474914264935
-ms.sourcegitcommit: b5d646969d7b665539beb18ed0dc6df87b7ba83d
+ms.openlocfilehash: 31a12a60fc6f02a935ff98278e69d1ed2dd68ce5
+ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2020
-ms.locfileid: "76760748"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77153270"
 ---
-# <a name="manageability-and-monitoring-with-azure-sql-data-warehouse"></a>Управляемость и мониторинг в Хранилище данных SQL Azure
+# <a name="manageability-and-monitoring-with-sql-pool"></a>Управляемость и мониторинг с помощью пула SQL
 
-Посмотрите, что может помочь вам в мониторинге хранилища данных SQL и управлении им. Следующие статьи содержат способы оптимизации производительности и использования хранилища данных.
+SQL Analytics позволяет подготавливать хранилище данных через пул SQL. Приведенные ниже статьи помогут вам управлять хранилищем данных и отслеживать его. Кроме того, вы узнаете о способах оптимизации использования и производительности хранилища данных.
 
 ## <a name="overview"></a>Обзор
 
@@ -33,4 +33,4 @@ ms.locfileid: "76760748"
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
-Практические руководства см. в статье [Мониторинг рабочей нагрузки с помощью динамических административных представлений](sql-data-warehouse-manage-monitor.md).
+Практические руководства см. в разделе [мониторинг и Настройка пула SQL](sql-data-warehouse-manage-monitor.md).

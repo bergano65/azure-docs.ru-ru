@@ -6,15 +6,15 @@ services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
 ms.topic: reference
-author: xiaoharper
-ms.author: zhanxia
+author: likebupt
+ms.author: keli19
 ms.date: 10/22/2019
-ms.openlocfilehash: 30d1ba89f6a18ed3400868e6d9a5d17ceef5de04
-ms.sourcegitcommit: 87781a4207c25c4831421c7309c03fce5fb5793f
+ms.openlocfilehash: 8206a88695c89d04eabe89e79a5aff8469cc6862
+ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76546815"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77152437"
 ---
 # <a name="convert-to-csv-module"></a>Преобразовать в модуль CSV
 
@@ -26,7 +26,7 @@ ms.locfileid: "76546815"
 
 Формат CSV, который означает «значения с разделителями-запятыми», — это формат файла, используемый многими внешними инструментами машинного обучения. CSV — это распространенный формат обмена данными при работе с такими языками с открытым кодом, как R или Python.
 
-Даже если большая часть работы выполняется в Машинное обучение Azure, иногда может оказаться удобным преобразовать набор данных в CSV-файл для использования во внешних инструментах. Пример.
+Даже если большая часть работы выполняется в Машинное обучение Azure, иногда может оказаться удобным преобразовать набор данных в CSV-файл для использования во внешних инструментах. Пример:
 
 + Скачайте CSV-файл, чтобы открыть его в Excel, или импортируйте его в реляционную базу данных.  
 + Сохраните CSV-файл в облачном хранилище и подключитесь к нему из Power BI, чтобы создать визуализации.  

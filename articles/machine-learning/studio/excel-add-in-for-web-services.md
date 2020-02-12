@@ -7,15 +7,15 @@ ms.service: machine-learning
 ms.subservice: studio
 ms.topic: conceptual
 author: xiaoharper
-ms.author: amlstudiodocs
+ms.author: zhanxia
 ms.custom: seodec18
 ms.date: 02/01/2018
-ms.openlocfilehash: b27e1c498aab3cc6c14eaa8a5851c9262535e95a
-ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
+ms.openlocfilehash: f7b5ca7112a6fb79586dc66b385e8015fe10e0b0
+ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73837786"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77153457"
 ---
 # <a name="excel-add-in-for-azure-machine-learning-studio-classic-web-services"></a>Надстройка Excel для веб-служб Машинное обучение Azure Studio (классическая модель)
 Excel упрощает непосредственный вызов веб-служб без необходимости написания какого-либо кода.

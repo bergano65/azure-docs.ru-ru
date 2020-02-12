@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm
 ms.workload: infrastructure-services
 ms.date: 02/10/2020
 ms.author: alsin
-ms.openlocfilehash: 8eea568217dc5f47c45433e5fdd755682e322b2f
-ms.sourcegitcommit: f718b98dfe37fc6599d3a2de3d70c168e29d5156
-ms.translationtype: HT
+ms.openlocfilehash: 779bb88d15ea6c52f4399f17223b89916e22653d
+ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77134051"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77153865"
 ---
 # <a name="azure-serial-console"></a>Последовательная консоль Azure
 
@@ -66,37 +66,6 @@ ms.locfileid: "77134051"
   1. В разделе **Поддержка и устранение неполадок** выберите **серийная консоль**. Откроется новая область с последовательной консолью, и запустится подключение.
 
      ![Последовательная консоль масштабируемого набора виртуальных машин Linux](./media/virtual-machines-serial-console/vmss-start-console.gif)
-
-## <a name="serial-console-rbac-role"></a>Роль RBAC последовательной консоли
-Как упоминалось выше, для последовательной консоли требуется участник ВМ или более высокий доступ к ВИРТУАЛЬНОЙ машине или масштабируемому набору виртуальных машин. Если вы не хотите предоставлять участнику ВМ пользователю, но при этом хотите разрешить пользователю доступ к последовательной консоли, вы можете сделать это с помощью следующей роли:
-
-```
-{
-  "Name": "Serial Console Role",
-  "IsCustom": true,
-  "Description": "Role for Serial Console Users that provides significantly reduced access than VM Contributor",
-  "Actions": [
-      "Microsoft.Compute/virtualMachines/*/write",
-      "Microsoft.Compute/virtualMachines/*/read",
-      "Microsoft.Storage/storageAccounts/*"
-  ],
-  "NotActions": [],
-  "DataActions": [],
-  "NotDataActions": [],
-  "AssignableScopes": [
-    "/subscriptions/<subscriptionId>"
-  ]
-}
-```
-
-### <a name="to-create-and-use-the-role"></a>Чтобы создать и использовать роль, сделайте следующее:
-*   Сохраните JSON-код в известном месте, например `~/serialconsolerole.json`.
-*   Используйте следующую команду AZ CLI, чтобы создать определение роли: `az role definition create --role-definition serialconsolerole.json -o=json`
-*   Если необходимо обновить роль, используйте следующую команду: `az role definition update --role-definition serialconsolerole.json -o=json`
-*   Роль будет отображаться в системе управления доступом (IAM) на портале (для распространения может потребоваться несколько минут)
-*   Вы можете добавить пользователей в виртуальную машину и учетную запись хранения диагностики загрузки с ролью настраиваемой роли.
-    *   Обратите внимание, что пользователю должна быть предоставлена пользовательская роль на виртуальной машине *и* в учетной записи хранения диагностики загрузки.
-
 
 ## <a name="advanced-uses-for-serial-console"></a>Расширенное использование последовательной консоли
 Помимо доступа через консоль к виртуальной машине, вы также можете использовать последовательную консоль Azure для следующих действий:

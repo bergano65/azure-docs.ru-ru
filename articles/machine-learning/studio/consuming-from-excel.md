@@ -7,15 +7,15 @@ ms.service: machine-learning
 ms.subservice: studio
 ms.topic: conceptual
 author: xiaoharper
-ms.author: amlstudiodocs
+ms.author: zhanxia
 ms.custom: seodec18
 ms.date: 02/01/2018
-ms.openlocfilehash: e32e3ddd99efe1d389b65f7a4134633a40b29a9a
-ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
+ms.openlocfilehash: 2e95c4bfbe7342e251e6d845fd4acfed6ff6109a
+ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73839722"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77150108"
 ---
 # <a name="consuming-an-azure-machine-learning-studio-classic-web-service-from-excel"></a>Использование веб-службы Машинное обучение Azure Studio (классической) из Excel
 
@@ -25,7 +25,7 @@ ms.locfileid: "73839722"
 
 
 
-## <a name="steps"></a>Действия
+## <a name="steps"></a>Шаги
 Опубликуйте веб-службу. [Учебник 3. Развертывание модели кредитных рисков](tutorial-part3-credit-risk-deploy.md) объясняет, как это сделать. В настоящее время функция книги Excel поддерживается только для служб обработки запросов и ответов с один выходом (то есть с одной меткой оценки). 
 
 После создания веб-службы щелкните раздел **ВЕБ-СЛУЖБЫ** в левой части студии, а затем выберите веб-службу, которую нужно использовать в Excel.
@@ -61,7 +61,7 @@ ms.locfileid: "73839722"
 ## <a name="sharing-your-workbook"></a>Предоставление общего доступа к книге
 Для выполнения макросов в электронную таблицу должен входить ключ API. Это означает, что общий доступ к книге нужно предоставлять только тем организациям и людям, которым вы доверяете.
 
-## <a name="automatic-updates"></a>автоматические обновления,
+## <a name="automatic-updates"></a>Автоматическое обновление
 Служба RRS вызывается в двух следующих случаях:
 
 1. когда впервые встречается строка, содержащая значения во всех столбцах **ПАРАМЕТРЫ**

@@ -27,6 +27,9 @@
         - name: Разработка
           tocHref: /azure/active-directory/develop/
           topicHref: /azure/active-directory/develop/
+        - name: "Azure\_AD для разработчиков"
+          tocHref: /azure/active-directory/azuread-dev/
+          topicHref: /azure/active-directory/azuread-dev/
         - name: Управление привилегированными пользователями (PIM)
           tocHref: /azure/active-directory/privileged-identity-management/
           topicHref: /azure/active-directory/privileged-identity-management/

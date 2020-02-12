@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: article
 ms.date: 02/06/2020
 ms.author: tagore
-ms.openlocfilehash: 0c145c84f9dea3b6212bb6c608eb1a4eb586ff60
-ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
+ms.openlocfilehash: 802d97e2c9b64fd9d8caeaf479af3f4aec356607
+ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77056824"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77153134"
 ---
 # <a name="migrate-iaas-resources-from-classic-to-azure-resource-manager-by-using-powershell"></a>Перенос ресурсов IaaS из классической модели в Azure Resource Manager с помощью PowerShell
 Ниже последовательно описано, как использовать команды Azure PowerShell для переноса ресурсов IaaS из классической модели развертывания в модель развертывания с помощью Azure Resource Manager.
@@ -125,7 +125,7 @@ ms.locfileid: "77056824"
 <br>
 
 ## <a name="step-5-have-enough-resource-manager-vm-vcpus"></a>Шаг 5. достаточно диспетчер ресурсов виртуальной машины виртуальных ЦП
-Убедитесь, что у вас достаточно Azure Resource Manager виртуальной машины виртуальных ЦП в регионе Azure текущего развертывания или виртуальной сети. Чтобы проверить текущее количество виртуальных ЦП в Azure Resource Manager, используйте приведенную ниже команду PowerShell. Чтобы узнать больше о квотах на виртуальные ЦП, см. соответствующий раздел статьи [Подписка Azure, границы, квоты и ограничения службы](../../azure-resource-manager/management/azure-subscription-service-limits.md#limits-and-azure-resource-manager).
+Убедитесь, что у вас достаточно Azure Resource Manager виртуальной машины виртуальных ЦП в регионе Azure текущего развертывания или виртуальной сети. Чтобы проверить текущее количество виртуальных ЦП в Azure Resource Manager, используйте приведенную ниже команду PowerShell. Чтобы узнать больше о квотах на виртуальные ЦП, см. соответствующий раздел статьи [Подписка Azure, границы, квоты и ограничения службы](../../azure-resource-manager/management/azure-subscription-service-limits.md#managing-limits).
 
 В этом примере проверяется доступность в регионе **Западная часть США**. Замените регион в примере своим собственным значением.
 

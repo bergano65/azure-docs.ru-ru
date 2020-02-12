@@ -7,15 +7,15 @@ ms.service: machine-learning
 ms.subservice: studio
 ms.topic: conceptual
 author: xiaoharper
-ms.author: amlstudiodocs
+ms.author: zhanxia
 ms.custom: seodec18, previous-title='Dedicated capacity for batch execution service jobs - Azure Machine Learning Studio (classic) | Microsoft Docs'
 ms.date: 04/19/2017
-ms.openlocfilehash: ad3ae99b04d5386172c9598f35cbe7d64fddcd36
-ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
+ms.openlocfilehash: c1a7f44539d07761814f5cb3d7074c9428423154
+ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73837709"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77153542"
 ---
 # <a name="azure-batch-service-for-azure-machine-learning-studio-classic-jobs"></a>Пакетная служба Azure для заданий Машинное обучение Azure Studio (классическая модель)
 
@@ -111,4 +111,4 @@ https://ussouthcentral.services.azureml.net/subscriptions/80c77c7674ba4c8c82294c
 
 | **Используйте обработку, выполняемую пулом пакетной службы в таких случаях**    | **Используйте классическую пакетную обработку в таких случаях**  |
 |---|---|
-|Необходимо выполнить большое число заданий.<br>или<br/>Необходимо запускать задания немедленно.<br/>или<br/>Требуется гарантированная пропускная способность. Например, за определенное время вам нужно выполнить ряд заданий, и вы хотите масштабировать требуемые вычислительные ресурсы.    | Вы выполняете несколько заданий.<br/>и<br/> Вам не нужно немедленно запускать эти задания. |
+|Необходимо выполнить большое число заданий.<br>либо<br/>Необходимо запускать задания немедленно.<br/>либо<br/>Требуется гарантированная пропускная способность. Например, за определенное время вам нужно выполнить ряд заданий, и вы хотите масштабировать требуемые вычислительные ресурсы.    | Вы выполняете несколько заданий.<br/>And<br/> Вам не нужно немедленно запускать эти задания. |
