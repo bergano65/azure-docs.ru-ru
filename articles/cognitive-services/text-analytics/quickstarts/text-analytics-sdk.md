@@ -1,7 +1,7 @@
 ---
 title: Краткое руководство. Клиентская библиотека Анализа текста версии 3 | Документация Майкрософт
 titleSuffix: Azure Cognitive Services
-description: В этом кратком руководстве описывается, как определить язык с помощью API Анализа текста из Azure Cognitive Services.
+description: Используйте это краткое руководство для подключения приложений к API Анализа текста в Azure Cognitive Services.
 services: cognitive-services
 author: aahill
 manager: nitinme
@@ -10,46 +10,79 @@ ms.subservice: text-analytics
 ms.topic: quickstart
 ms.date: 01/23/2020
 ms.author: aahi
-zone_pivot_groups: programming-languages-set-ten
-ms.openlocfilehash: 89680ad61296cd225bb87d2d6b46259586304da2
-ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
+zone_pivot_groups: programming-languages-text-analytics
+ms.openlocfilehash: 87cf5f226a8b2d1efcc0ee967d84f6e0002cb03d
+ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76774109"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76987929"
 ---
-# <a name="quickstart-use-the-text-analytics-client-library-v3"></a>Краткое руководство. Использование клиентской библиотеки Анализа текста версии 3
+# <a name="quickstart-use-the-text-analytics-client-library"></a>Краткое руководство. Использование клиентской библиотеки Анализа текста
 
 Начните работу с клиентской библиотекой Анализа текста. Выполните приведенные здесь действия, чтобы установить пакет и протестировать пример кода для выполнения базовых задач.
 
-Используйте клиентскую библиотеку Анализа текста версии `3.0-preview` для выполнения следующих действий.
+Используйте клиентскую библиотеку Анализа текста для выполнения следующих действий:
 
-* Анализ тональности (общедоступная предварительная версия)
+* Анализ мнений
 * Определение языка
-* Распознавание именованных сущностей (общедоступная предварительная версия)
+* Распознавание сущностей
 * Извлечение ключевой фразы
 
 ::: zone pivot="programming-language-csharp"
 
-[!INCLUDE [C# quickstart](../includes/quickstarts/v3/csharp.md)]
+> [!IMPORTANT]
+> * Последняя предварительная версия API Анализа текста — `3.0-preview`, которая включает в себя общедоступную предварительную версию улучшенных функций [анализа тональности](../how-tos/text-analytics-how-to-sentiment-analysis.md#sentiment-analysis-versions-and-features) и [распознавания именованных сущностей (NER)](../how-tos/text-analytics-how-to-entity-linking.md#named-entity-recognition-versions-and-features). Последняя стабильная версия — `2.1`.
+>    * Обязательно следуйте указаниям по используемой версии.
+> * В коде, приведенном в этой статье, для простоты используются синхронные методы и незащищенное хранилище учетных данных. Для рабочих сценариев рекомендуется использовать пакетные асинхронные методы для повышения производительности и масштабируемости. См. справочную документацию ниже.
+
+[!INCLUDE [C# quickstart](../includes/quickstarts/csharp-sdk.md)]
 
 ::: zone-end
 
 ::: zone pivot="programming-language-python"
 
-[!INCLUDE [Python quickstart](../includes/quickstarts/v3/python-sdk.md)]
+> [!IMPORTANT]
+> * Последняя предварительная версия API Анализа текста — `3.0-preview`, которая включает в себя общедоступную предварительную версию улучшенных функций [анализа тональности](../how-tos/text-analytics-how-to-sentiment-analysis.md#sentiment-analysis-versions-and-features) и [распознавания именованных сущностей (NER)](../how-tos/text-analytics-how-to-entity-linking.md#named-entity-recognition-versions-and-features). Последняя стабильная версия — `2.1`.
+>    * Обязательно следуйте указаниям по используемой версии.
+> * В коде, приведенном в этой статье, для простоты используются синхронные методы и незащищенное хранилище учетных данных. Для рабочих сценариев рекомендуется использовать пакетные асинхронные методы для повышения производительности и масштабируемости. См. справочную документацию ниже. 
+
+[!INCLUDE [Python quickstart](../includes/quickstarts/python-sdk.md)]
 
 ::: zone-end
 
 ::: zone pivot="programming-language-java"
 
-[!INCLUDE [Java quickstart](../includes/quickstarts/v3/java-sdk.md)]
+> [!IMPORTANT]
+> * В этом кратком руководстве используется только версия `3.0-preview` клиентской библиотеки Анализа текста, которая включает в себя общедоступную предварительную версию улучшенных функций [анализа тональности](../how-tos/text-analytics-how-to-sentiment-analysis.md#sentiment-analysis-versions-and-features) и [распознавания именованных сущностей (NER)](../how-tos/text-analytics-how-to-entity-linking.md#named-entity-recognition-versions-and-features).
+>    * Обязательно следуйте указаниям по используемой версии.
+> * В коде, приведенном в этой статье, для простоты используются синхронные методы и незащищенное хранилище учетных данных. Для рабочих сценариев рекомендуется использовать пакетные асинхронные методы для повышения производительности и масштабируемости. См. справочную документацию ниже.
+
+[!INCLUDE [Java quickstart](../includes/quickstarts/java-sdk.md)]
 
 ::: zone-end
 
-::: zone pivot="programming-language-nodejs"
+::: zone pivot="programming-language-javascript"
 
-[!INCLUDE [NodeJS quickstart](../includes/quickstarts/v3/nodejs-sdk.md)]
+> [!IMPORTANT]
+> * Последняя предварительная версия API Анализа текста — `3.0-preview`, которая включает в себя общедоступную предварительную версию улучшенных функций [анализа тональности](../how-tos/text-analytics-how-to-sentiment-analysis.md#sentiment-analysis-versions-and-features) и [распознавания именованных сущностей (NER)](../how-tos/text-analytics-how-to-entity-linking.md#named-entity-recognition-versions-and-features). Последняя стабильная версия — `2.1`.
+>    * Обязательно следуйте указаниям по используемой версии.
+> * В коде, приведенном в этой статье, для простоты используются синхронные методы и незащищенное хранилище учетных данных. Для рабочих сценариев рекомендуется использовать пакетные асинхронные методы для повышения производительности и масштабируемости. См. справочную документацию ниже.
+
+[!INCLUDE [NodeJS quickstart](../includes/quickstarts/nodejs-sdk.md)]
+
+::: zone-end
+
+::: zone pivot="programming-language-other"
+
+## <a name="additional-language-support"></a>Поддержка дополнительных возможностей языка
+
+Если вы щелкнули эту вкладку, вы, вероятно, не увидели краткого руководства для предпочитаемого языка программирования. Не беспокойтесь, у нас есть дополнительные краткие руководства. Используйте таблицу, чтобы найти правильный пример для своего языка программирования.
+
+| Язык | Доступная версия | 
+|----------|------------------------|
+| Ruby     | [Версия 2.1](ruby-sdk.md)          | 
+| Go       | [Версия 2.1](go-sdk.md)          | 
 
 ::: zone-end
 

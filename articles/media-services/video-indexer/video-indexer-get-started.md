@@ -8,14 +8,14 @@ manager: femila
 ms.service: media-services
 ms.subservice: video-indexer
 ms.topic: tutorial
-ms.date: 01/13/2020
+ms.date: 02/03/2020
 ms.author: juliako
-ms.openlocfilehash: 3a5ddf5bd4614b68e97e7616173a3e0640007530
-ms.sourcegitcommit: b5106424cd7531c7084a4ac6657c4d67a05f7068
+ms.openlocfilehash: 1f3d442ea7cf6d95427aaa9c072410119e2735af
+ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75941562"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76989813"
 ---
 # <a name="quickstart-how-to-sign-up-and-upload-your-first-video"></a>Краткое руководство. Как зарегистрироваться и отправить видео
 
@@ -49,15 +49,17 @@ ms.locfileid: "75941562"
 
     Когда Индексатор видео завершит анализ, вы получите уведомление, содержащее ссылку на ваше видео и краткое описание того, что в нем обнаружено. Например, люди, разделы, распознавание текста.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="see-also"></a>См. также раздел
 
 Дополнительные сведения см. в разделе [Upload and index videos](upload-index-videos.md) (Отправка и индексирование видео).
 
 После отправки и индексирования видео можно использовать веб-сайт [Индексатора видео](video-indexer-view-edit.md) или [портал разработчика Индексатора видео](video-indexer-use-apis.md), чтобы просмотреть аналитические сведения о видео. 
 
-## <a name="see-also"></a>См. также раздел
+[Начало использования API](video-indexer-use-apis.md)
 
-[Общие сведения об Индексаторе видео](video-indexer-overview.md)
+## <a name="next-steps"></a>Дальнейшие действия
 
-[Начало использования API](video-indexer-use-apis.md).
+Подробные сведения можно получить на нашем [вводном практическом занятии](https://github.com/Azure-Samples/media-services-video-indexer/blob/master/IntroToVideoIndexer.md). 
+
+В конце семинара вы получите четкое представление о типе информации, которую можно извлечь из видео и аудио. Вы сможете лучше описать возможности, связанные с анализом содержимого, представить средства ИИ для видео в Azure и продемонстрировать несколько сценариев в Индексаторе видео.
 

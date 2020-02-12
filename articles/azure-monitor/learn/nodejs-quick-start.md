@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство по мониторингу Node.js с помощью Azure Monitor Application Insights
+title: Краткое руководство. Мониторинг Node.js с помощью Azure Monitor Application Insights
 description: В этой статье предоставляются инструкции для быстрой настройки мониторинга веб-приложения Node.js с помощью Azure Monitor Application Insights.
 ms.service: azure-monitor
 ms.subservice: application-insights
@@ -8,38 +8,31 @@ author: mrbullwinkle
 ms.author: mbullwin
 ms.date: 07/12/2019
 ms.custom: mvc, seo-javascript-september2019, seo-javascript-october2019
-ms.openlocfilehash: 1f42dd50ee70d42b5209e186b8af63c820a9a85e
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: a6d6d70336badeaa86c9982dfa977ea389ed5402
+ms.sourcegitcommit: 42517355cc32890b1686de996c7913c98634e348
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75398778"
+ms.lasthandoff: 02/02/2020
+ms.locfileid: "76963535"
 ---
 # <a name="quickstart-start-monitoring-your-nodejs-web-application-with-azure-application-insights"></a>Краткое руководство. Начало мониторинга веб-приложения Node.js с помощью Application Insights в Azure
 
-С помощью этого краткого руководства вы сможете добавить пакет SDK Application Insights версии 0.22 для Node.js в имеющееся веб-приложение Node.js.
+В этом кратком руководстве вы добавите пакет SDK Application Insights версии 0.22 для Node.js в имеющееся веб-приложение Node.js.
 
-С помощью Azure Application Insights можно легко отслеживать доступность, производительность и использование своего веб-приложения. Вы также можете быстро идентифицировать и диагностировать ошибки в приложении, не дожидаясь, пока пользователь сообщит о них. С помощью пакета SDK выпуска 0.20 можно отслеживать общие пакеты сторонних разработчиков, включая MongoDB, MySQL и Redis.
+С помощью Azure Application Insights можно легко отслеживать доступность, производительность и использование своего веб-приложения. Вы также можете быстро идентифицировать и диагностировать в нем ошибки, не дожидаясь, пока пользователь сообщит о них. С помощью пакета SDK выпуска 0.20 можно отслеживать общие пакеты сторонних разработчиков, включая MongoDB, MySQL и Redis.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
-Для работы с этим кратким руководством сделайте следующее:
-
-- Подписка Azure и веб-приложение Node.js.
-
-Если у вас нет веб-приложения Node.js, его можно создать, следуя руководству [Создание веб-приложений Node.js в Azure](https://docs.microsoft.com/azure/app-service/app-service-web-get-started-nodejs).
-
-Если у вас еще нет подписки Azure, создайте [бесплатную](https://azure.microsoft.com/free/) учетную запись Azure, прежде чем начинать работу.
-
-## <a name="sign-in-to-the-azure-portal"></a>Вход на портал Azure
-
-Войдите на [портал Azure](https://portal.azure.com/).
+* Учетная запись Azure с активной подпиской. [Создайте учетную запись](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio) бесплатно.
+* Работающее приложение Node.js.
 
 ## <a name="enable-application-insights"></a>Включение Application Insights
 
 В Application Insights можно собирать данные телеметрии из любого подключенного к Интернету приложения, независимо от того, работает оно локально или в облаке. Чтобы просмотреть эти данные, сделайте следующее.
 
-1. Последовательно выберите **Создать ресурс** > **Средства разработчика** > **Application Insights**.
+1. Войдите на [портал Azure](https://portal.azure.com/).
+
+2. Последовательно выберите **Создать ресурс** > **Средства разработчика** > **Application Insights**.
 
    ![Добавление ресурса Application Insights](./media/nodejs-quick-start/azure-app-insights-create-resource.png)
 
@@ -48,15 +41,15 @@ ms.locfileid: "75398778"
 
    Откроется страница с параметрами, на которой нужно заполнить все поля в соответствии с приведенной ниже таблицей. 
 
-    | Настройки        | Значение           | Description  |
+    | Настройки        | Значение           | Описание  |
    | ------------- |:-------------|:-----|
-   | **Название**      | Глобально уникальное значение | Имя, идентифицирующее отслеживаемое приложение |
-   | **Группа ресурсов**     | myResourceGroup      | Имя новой группы ресурсов для размещения данных App Insights. Создайте новую группу ресурсов или выберите существующую. |
-   | **Местоположение** | Восточная часть США | Выберите ближайшее расположение или расположение вблизи места размещения приложения |
+   | **имя**;      | Глобально уникальное значение | Имя, идентифицирующее отслеживаемое приложение |
+   | **Группа ресурсов**     | myResourceGroup      | Имя новой группы ресурсов для размещения данных AppInsights. Создайте новую группу ресурсов или выберите существующую. |
+   | **Расположение** | Восточная часть США | Выберите ближайшее расположение или расположение вблизи места размещения приложения |
 
-2. Нажмите кнопку **Создать**.
+3. Нажмите кнопку **создания**.
 
-## <a name="configure-app-insights-sdk"></a>Настройка пакета SDK App Insights
+## <a name="configure-appinsights-sdk"></a>Настройка пакета SDK AppInsights
 
 1. Выберите **Обзор** и скопируйте **ключ инструментирования** приложения.
 
@@ -68,7 +61,7 @@ ms.locfileid: "75398778"
    npm install applicationinsights --save
    ```
 
-3. Измените первый JS-файл приложения и добавьте две следующие строки в самую верхнюю часть своего скрипта. Если вы используете [приложение быстрого запуска Node.js](https://docs.microsoft.com/azure/app-service/app-service-web-get-started-nodejs), необходимо изменить файл index.js. Замените &lt;instrumentation_key&gt; ключом инструментирования для приложения. 
+3. Измените первый файл *.js* приложения и добавьте две следующие строки в самую верхнюю часть своего скрипта. Если вы используете [приложение быстрого запуска Node.js](https://docs.microsoft.com/azure/app-service/app-service-web-get-started-nodejs), необходимо изменить файл *index.js*. Замените `<instrumentation_key>` ключом инструментирования для приложения. 
 
    ```JavaScript
    const appInsights = require('applicationinsights');
@@ -90,7 +83,7 @@ ms.locfileid: "75398778"
 
    ![Схема приложений Application Insights](./media/nodejs-quick-start/azure-app-insights-application-map.png)
 
-3. Щелкните значок **аналитики приложений**, ![значок схемы приложений](./media/nodejs-quick-start/azure-app-insights-analytics-icon.png), **Просмотр в службе Analytics**.  Откроется окно **Application Insights Analytics** (Application Insights — аналитика), которое предоставляет полнофункциональный язык запросов для анализа всех данных, собранных Application Insights. В этом случае создается запрос, который преобразовывает число запросов для просмотра в виде диаграммы. Вы можете записывать собственные запросы для анализа других данных.
+3. Щелкните значок **аналитики приложений**, ![значок схемы приложений](./media/nodejs-quick-start/azure-app-insights-analytics-icon.png), **Просмотр в службе Analytics**.  Это действие открывает окно **Application Insights Analytics** (Application Insights — аналитика), которое предоставляет полнофункциональный язык запросов для анализа всех данных, собранных Application Insights. В этом случае создается запрос, который преобразовывает число запросов для просмотра в виде диаграммы. Вы можете записывать собственные запросы для анализа других данных.
 
    ![Аналитические графики Application Insights](./media/nodejs-quick-start/azure-app-insights-analytics-queries.png)
 
@@ -124,7 +117,7 @@ ms.locfileid: "75398778"
 
    ![График метрик Application Insights Server](./media/nodejs-quick-start/azure-app-insights-server-metrics.png)
 
-Дополнительные сведения о мониторинге Node.js см. в статье [Мониторинг служб и приложений Node.js с помощью Application Insights](../../azure-monitor/app/nodejs.md).
+Дополнительные сведения о мониторинге Node.js см. в статье [Monitor your Node.js services and apps with Application Insights](../../azure-monitor/app/nodejs.md) (Мониторинг служб и приложений Node.js с помощью AppInsights).
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 

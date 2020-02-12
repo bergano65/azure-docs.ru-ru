@@ -7,14 +7,14 @@ ms.service: machine-learning
 ms.subservice: studio
 ms.topic: conceptual
 author: xiaoharper
-ms.author: amlstudiodocs
+ms.author: zhanxia
 ms.date: 10/27/2016
-ms.openlocfilehash: 3cc659bf633c74dab785b696cafb364974926aec
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 8dd120731ca7eeb98fafe230b79ac50668cdc4e8
+ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75432222"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77152743"
 ---
 # <a name="application-lifecycle-management-in-azure-machine-learning-studio-classic"></a>Управление жизненным циклом приложений в Машинное обучение Azure Studio (классическая модель)
 Машинное обучение Azure Studio (классическая модель) — это инструмент для разработки экспериментов машинного обучения, которые поддерживаются в облачной платформе Azure. Это решение позволяет объединить в рамках одной платформы возможности Visual Studio IDE и масштабируемой облачной службы. Вы можете использовать стандартные методики управления жизненным циклом приложений (ALM) с управлением версиями различных ресурсов для автоматического выполнения и развертывания в Машинное обучение Azure Studio (классическая модель). В этой статье рассматриваются некоторые возможности и подходы.

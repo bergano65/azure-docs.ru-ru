@@ -6,24 +6,37 @@ author: diberry
 manager: nitinme
 ms.service: cognitive-services
 ms.topic: include
-ms.date: 11/20/2019
+ms.date: 01/31/2020
 ms.author: diberry
-ms.openlocfilehash: 4e2fb81b19694136896b1dee07c3bd74c63fc01b
-ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
+ms.openlocfilehash: 1bd7a2bb6d3393aca397686a2817f1dcd5f89a38
+ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74414485"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76987808"
 ---
 ## <a name="prerequisites"></a>Предварительные требования
 
 * [JDK SE](https://aka.ms/azure-jdks) (комплект разработчика Java, выпуск "Стандартный");
 * [Visual Studio Code](https://code.visualstudio.com/) или привычный вам редактор кода;
-* Идентификатор общедоступного приложения: `df67dcdb-c37d-46af-88e1-8b97951ca1c2`
+* Идентификатор общедоступного приложения: `df67dcdb-c37d-46af-88e1-8b97951ca1c2`.
 
-## <a name="get-luis-key"></a>Получение ключа LUIS
+## <a name="create-luis-runtime-key-for-predictions"></a>Создание ключа среды выполнения LUIS для прогнозирования
 
-[!INCLUDE [Use authoring key for endpoint](../includes/get-key-quickstart.md)]
+1. Войдите на [портал Azure](https://portal.azure.com).
+1. Щелкните [Создать **Распознавание речи**](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesLUISAllInOne).
+1. Введите все необходимые параметры для ключа **среды выполнения**:
+
+    |Параметр|Значение|
+    |--|--|
+    |Имя|Требуемое имя (от 2 до 64 символов)|
+    |Подписка|Выберите соответствующую подписку|
+    |Расположение|Выберите доступное поблизости расположение|
+    |Ценовая категория|`F0` — минимальная ценовая категория|
+    |Группа ресурсов|Выберите доступную группу ресурсов|
+
+1. Щелкните **Создать** и дождитесь создания ресурса. После создания перейдите на страницу ресурсов.
+1. Получите настроенные `endpoint` и `key`.
 
 ## <a name="get-intent-programmatically"></a>Получение намерения программным способом
 
@@ -33,7 +46,7 @@ ms.locfileid: "74414485"
 
     * [commons-logging-1.2.jar](https://raw.githubusercontent.com/Azure-Samples/cognitive-services-language-understanding/master/documentation-samples/quickstarts/analyze-text/java/lib/commons-logging-1.2.jar);
     * [httpclient-4.5.3.jar](https://raw.githubusercontent.com/Azure-Samples/cognitive-services-language-understanding/master/documentation-samples/quickstarts/analyze-text/java/lib/httpclient-4.5.3.jar);
-    * [httpcore-4.4.6.jar](https://raw.githubusercontent.com/Azure-Samples/cognitive-services-language-understanding/master/documentation-samples/quickstarts/analyze-text/java/lib/httpcore-4.4.6.jar)
+    * [httpcore-4.4.6.jar](https://raw.githubusercontent.com/Azure-Samples/cognitive-services-language-understanding/master/documentation-samples/quickstarts/analyze-text/java/lib/httpcore-4.4.6.jar).
 
 1. Скопируйте следующий код для создания класса в файл с именем `Predict.java`:
 
@@ -47,70 +60,72 @@ ms.locfileid: "74414485"
     import org.apache.http.client.utils.URIBuilder;
     import org.apache.http.impl.client.HttpClients;
     import org.apache.http.util.EntityUtils;
-    
+
     public class Predict {
-    
-        public static void main(String[] args) 
+
+        public static void main(String[] args)
         {
             HttpClient httpclient = HttpClients.createDefault();
-    
+
             try
             {
-    
+
                 // The ID of a public sample LUIS app that recognizes intents for turning on and off lights
                 String AppId = "df67dcdb-c37d-46af-88e1-8b97951ca1c2";
-                
-                // Add your endpoint key 
+
+                // Add your prediction Runtime key
                 String Key = "YOUR-KEY";
-    
-                // Add your endpoint, example is westus.api.cognitive.microsoft.com
+
+                // Add your endpoint, example is your-resource-name.api.cognitive.microsoft.com
                 String Endpoint = "YOUR-ENDPOINT";
-    
+
                 String Utterance = "turn on all lights";
-    
+
                 // Begin endpoint URL string building
                 URIBuilder endpointURLbuilder = new URIBuilder("https://" + Endpoint + "/luis/prediction/v3.0/apps/" + AppId + "/slots/production/predict?");
-    
+
                 // query string params
                 endpointURLbuilder.setParameter("query", Utterance);
                 endpointURLbuilder.setParameter("subscription-key", Key);
                 endpointURLbuilder.setParameter("show-all-intents", "true");
                 endpointURLbuilder.setParameter("verbose", "true");
-    
+
                 // create URL from string
                 URI endpointURL = endpointURLbuilder.build();
-    
+
                 // create HTTP object from URL
                 HttpGet request = new HttpGet(endpointURL);
-    
+
                 // access LUIS endpoint - analyze text
                 HttpResponse response = httpclient.execute(request);
-    
+
                 // get response
                 HttpEntity entity = response.getEntity();
-    
-    
-                if (entity != null) 
+
+
+                if (entity != null)
                 {
                     System.out.println(EntityUtils.toString(entity));
                 }
             }
-    
+
             catch (Exception e)
             {
                 System.out.println(e.getMessage());
             }
-        }   
-    }    
+        }
+    }
     ```
 
-1. Замените следующие значения:
+1. Замените значения `YOUR-KEY` и `YOUR-ENDPOINT` собственным ключом и конечной точкой **среды выполнения** прогнозирования.
 
-    * `YOUR-KEY` на ключ для начала работы.
-    * `YOUR-ENDPOINT` на конечную точку. Например, `westus2.api.cognitive.microsoft.com`.
+    |Сведения|Назначение|
+    |--|--|
+    |`YOUR-KEY`|Ваш ключ (32 символа) **среды выполнения** прогнозирования.|
+    |`YOUR-ENDPOINT`| Конечная точка URL-адреса прогнозирования. Например, `replace-with-your-resource-name.api.cognitive.microsoft.com`.|
 
 
-1. Скомпилируйте программу Java из командной строки: 
+1. Скомпилируйте программу Java из командной строки:
 
     ```console
     javac -cp ":lib/*" Predict.java
@@ -128,7 +143,7 @@ ms.locfileid: "74414485"
     {'query': 'turn on all lights', 'prediction': {'topIntent': 'HomeAutomation.TurnOn', 'intents': {'HomeAutomation.TurnOn': {'score': 0.5375382}, 'None': {'score': 0.08687421}, 'HomeAutomation.TurnOff': {'score': 0.0207554}}, 'entities': {'HomeAutomation.Operation': ['on'], '$instance': {'HomeAutomation.Operation': [{'type': 'HomeAutomation.Operation', 'text': 'on', 'startIndex': 5, 'length': 2, 'score': 0.724984169, 'modelTypeId': -1, 'modelType': 'Unknown', 'recognitionSources': ['model']}]}}}}
     ```
 
-    Ответ JSON, отформатированный для удобочитаемости: 
+    Ответ JSON, отформатированный для удобочитаемости:
 
     ```JSON
     {
@@ -171,15 +186,11 @@ ms.locfileid: "74414485"
     }
     ```
 
-## <a name="luis-keys"></a>Ключи LUIS
-
-[!INCLUDE [Use authoring key for endpoint](../includes/starter-key-explanation.md)]
-
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-По завершении работы с этим кратким руководством удалите файл из файловой системы. 
+По завершении работы с этим кратким руководством удалите файл из файловой системы.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Добавление высказываний и обучение на Java](../get-started-get-model-rest-apis.md)

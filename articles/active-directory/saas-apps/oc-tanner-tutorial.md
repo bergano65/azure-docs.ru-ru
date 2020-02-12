@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с O.C. Tanner — AppreciateHub | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с O.C. Tanner — AppreciateHub | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и O.C. Tanner — AppreciateHub.
 services: active-directory
 documentationCenter: na
@@ -11,35 +11,32 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
-ms.date: 03/27/2019
+ms.date: 01/28/2020
 ms.author: jeedes
-ms.openlocfilehash: 8814dc9ba94ca7fa56a2225c71895520467bf05f
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 768756e013a4301ea11f5f9478178bdad46f9d67
+ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67095821"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76984053"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-oc-tanner---appreciatehub"></a>Руководство по Интеграция Azure Active Directory с O.C. Tanner — AppreciateHub
+# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-oc-tanner---appreciatehub"></a>Руководство. Интеграция единого входа Azure Active Directory с O.C. Tanner — AppreciateHub
 
-В этом руководстве вы узнаете, как интегрировать O.C. Tanner — AppreciateHub с Azure Active Directory (Azure AD).
-Интеграция O.C. Tanner — AppreciateHub с Azure AD обеспечивает следующие преимущества.
+В этом руководстве вы узнаете, как интегрировать O.C. Tanner — AppreciateHub с Azure Active Directory (Azure AD). После интеграции O.C. Tanner — AppreciateHub с Azure AD, вы сможете:
 
-* С помощью Azure AD вы можете контролировать доступ к O.C. Tanner — AppreciateHub.
-* Вы можете включить автоматический вход пользователей (единый вход) в O.C. Tanner — AppreciateHub под учетной записью Azure AD.
-* Вы можете управлять учетными записями централизованно на портале Azure.
+* Контролировать с помощью Azure AD доступ к O.C. Tanner — AppreciateHub.
+* Разрешить автоматический вход пользователей в O.C. Tanner — AppreciateHub под учетными записями Azure AD.
+* Централизованное управление учетными записями через портал Azure.
 
-Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
+Чтобы узнать больше об интеграции приложений SaaS с Azure AD, прочитайте статью [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы настроить интеграцию Azure AD с O.C. Tanner — AppreciateHub, вам потребуется:
+Чтобы приступить к работе, потребуется следующее.
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
-* O.C. подписка Tanner — AppreciateHub с поддержкой единого входа.
+* Подписка Azure AD. Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
+* O.C. подписка Tanner — AppreciateHub с поддержкой единого входа (SSO).
 
 ## <a name="scenario-description"></a>Описание сценария
 
@@ -47,147 +44,91 @@ ms.locfileid: "67095821"
 
 * O.C. Tanner — AppreciateHub поддерживает единый вход, инициированный **поставщиком удостоверений**.
 
+* После настройки O.C. Tanner — AppreciateHub можно применять элементы управления сеансами, которые защищают от хищения и несанкционированного доступа к конфиденциальным данным вашей организации в режиме реального времени. Элементы управления сеансом являются расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app).
+
 ## <a name="adding-oc-tanner---appreciatehub-from-the-gallery"></a>Добавление O.C. Tanner — AppreciateHub из коллекции
 
 Чтобы настроить интеграцию O.C. Tanner — AppreciateHub с Azure AD, необходимо добавить O.C. Tanner — AppreciateHub из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить O.C. Tanner — AppreciateHub из коллекции, выполните следующие действия:**
+1. Войдите на [портал Azure](https://portal.azure.com) с помощью личной учетной записи Майкрософт либо рабочей или учебной учетной записи.
+1. В области навигации слева выберите службу **Azure Active Directory**.
+1. Перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
+1. Чтобы добавить новое приложение, выберите **Новое приложение**.
+1. В разделе **Добавление из коллекции** введите **O.C. Tanner — AppreciateHub** в списке результатов.
+1. Выберите **O.C. Tanner — AppreciateHub** в области результатов и добавьте это приложение. Подождите несколько секунд, пока приложение не будет добавлено в ваш клиент.
 
-1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
+## <a name="configure-and-test-azure-ad-single-sign-on-for-oc-tanner---appreciatehub"></a>Настройка и проверка единого входа Azure AD для O.C. Tanner — AppreciateHub
 
-    ![Кнопка Azure Active Directory](common/select-azuread.png)
+Настройка и проверка единого входа Azure AD в O.C. Tanner — AppreciateHub с использованием тестового пользователя **B.Simon**. Чтобы обеспечить работу единого входа, необходимо установить связь между пользователем Azure AD и соответствующим пользователем в O.C. Tanner — AppreciateHub.
 
-2. Перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
+Для настройки и проверки единого входа Azure AD в O.C. Tanner — AppreciateHub выполните действия в следующих стандартных блоках:
 
-    ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
+1. **[Настройка единого входа Azure AD](#configure-azure-ad-sso)** необходима, чтобы пользователи могли использовать эту функцию.
+    * **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD с помощью пользователя B.Simon.
+    * **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить пользователю B.Simon использовать единый вход Azure AD.
+1. **[Настройка единого входа в O.C. Tanner — AppreciateHub](#configure-oc-tanner---appreciatehub-sso)** необходима, чтобы настроить параметры единого входа на стороне приложения.
+    * **[Создание тестового пользователя в O.C. Tanner — AppreciateHub](#create-oc-tanner---appreciatehub-test-user)** требуется для создания пользователя B.Simon в O.C. Tanner — AppreciateHub, связанного с соответствующим представлением в Azure AD.
+1. **[Проверка единого входа](#test-sso)** позволяет убедиться в правильности конфигурации.
 
-3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
+## <a name="configure-azure-ad-sso"></a>Настройка единого входа Azure AD
 
-    ![Кнопка "Создать приложение"](common/add-new-app.png)
+Выполните следующие действия, чтобы включить единый вход Azure AD на портале Azure.
 
-4. В поле поиска введите **O.C. Tanner — AppreciateHub**, выберите **O.C. Tanner — AppreciateHub** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
+1. На [портале Azure](https://portal.azure.com/) на странице интеграции с приложением **O.C. Tanner — AppreciateHub** найдите раздел **Управление** и выберите **Единый вход**.
+1. На странице **Выбрать метод единого входа** выберите **SAML**.
+1. На странице **Настройка единого входа с помощью SAML** щелкните значок "Изменить" (значок пера), чтобы открыть диалоговое окно **Базовая конфигурация SAML** и изменить параметры.
 
-     ![O.C. Tanner — AppreciateHub в списке результатов](common/search-new-app.png)
+   ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
-## <a name="configure-and-test-azure-ad-single-sign-on"></a>Настройка и проверка единого входа в Azure AD
+1. В разделе **Базовая конфигурация SAML** не нужно выполнять никаких действий, так как приложение уже предварительно интегрировано с Azure.
 
-В этом разделе описана настройка и проверка единого входа Azure AD в приложение O.C. Tanner — AppreciateHub с использованием тестового пользователя **Britta Simon**.
-Для обеспечения работы единого входа необходимо установить связь между пользователем Azure AD и соответствующим пользователем в O.C. Необходимо установить связь Tanner — AppreciateHub.
-
-Чтобы настроить и проверить единый вход Azure AD в O.C. Tanner — AppreciateHub, вам потребуется выполнить действия в следующих стандартных блоках:
-
-1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
-2. **[Настройка единого входа в O.C. Tanner — AppreciateHub](#configure-oc-tanner---appreciatehub-single-sign-on)** необходима, чтобы настроить параметры единого входа на стороне приложения.
-3. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
-4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
-5. **[Создание тестового пользователя в O.C. Tanner — AppreciateHub](#create-oc-tanner---appreciatehub-test-user)** требуется для создания пользователя Britta Simon в O.C. Tanner — AppreciateHub, связанного с соответствующим представлением в Azure AD.
-6. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы проверить работу конфигурации.
-
-### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
-
-В этом разделе описано включение единого входа Azure AD на портале Azure.
-
-Чтобы настроить единый вход Azure AD в O.C. Tanner — AppreciateHub, выполните следующие действия.
-
-1. На [портале Azure](https://portal.azure.com/) на странице интеграции с приложением **O.C. Tanner — AppreciateHub**выберите**Единый вход**.
-
-    ![Ссылка "Настройка единого входа"](common/select-sso.png)
-
-2. В диалоговом окне **Выбрать метод единого входа** выберите режим **SAML/WS-Fed**, чтобы включить единый вход.
-
-    ![Режим выбора единого входа](common/select-saml-option.png)
-
-3. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
-
-    ![Правка базовой конфигурации SAML](common/edit-urls.png)
-
-4. Если у вас есть **файл метаданных поставщика служб**, выполните следующие действия в разделе **Базовая конфигурация SAML**:
-
-    >[!NOTE]
-    >Вы можете скачать **файл метаданных поставщика услуг** на [этой странице](https://fed.appreciatehub.com/fed/sp/metadata).
-
-    a. Щелкните **Отправить файл метаданных**.
-
-    ![Передача файла метаданных](common/upload-metadata.png)
-
-    b. Щелкните **значок папки**, выберите файл метаданных и нажмите кнопку **Отправить**.
-
-    ![Выбор файла метаданных](common/browse-upload-metadata.png)
-
-    c. После успешной передачи файла метаданных значения **Идентификатор** и **URL-адрес ответа** в разделе "Базовая конфигурация SAML" заполнятся автоматически.
-
-     ![O.C. Tanner — AppreciateHub. Сведения о домене и URL-адресах единого входа](common/idp-intiated.png)
-
-    > [!Note]
-    > Если поля **Идентификатор** и **URL-адрес ответа** автоматически не заполняются, введите эти значения вручную в соответствии с поставленной задачей. Обратитесь в [службу поддержки клиентов O.C. Tanner — AppreciateHub](mailto:sso@octanner.com), чтобы получить эти значения. Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
-
-5. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Скачать**, чтобы скачать нужный вам **XML метаданных федерации**, и сохраните его на компьютере.
+1. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Скачать**, чтобы скачать нужный вам **XML метаданных федерации**, и сохраните его на компьютере.
 
     ![Ссылка для скачивания сертификата](common/metadataxml.png)
 
-6. Требуемый URL-адрес можно скопировать из раздела **Настройка O.C. Tanner — AppreciateHub**.
+1. Требуемый URL-адрес можно скопировать из раздела **Настройка O.C. Tanner — AppreciateHub**.
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
     b. Идентификатор Azure AD
 
     c. URL-адрес выхода.
 
-### <a name="configure-oc-tanner---appreciatehub-single-sign-on"></a>Настройка единого входа в O.C. Tanner — AppreciateHub
+### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
-Чтобы настроить единый вход на стороне приложения **O.C. Tanner — AppreciateHub**, нужно отправить скачанный **XML-файл метаданных федерации** и соответствующие URL-адреса, скопированные на портале Azure, [группе поддержки O.C. службе поддержки О.С. Tanner — AppreciateHub](mailto:sso@octanner.com). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+В этом разделе описано, как на портале Azure создать тестового пользователя с именем B.Simon.
 
-### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD 
-
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
-
-1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
-
-    ![Ссылки "Пользователи и группы" и "Все пользователи"](common/users.png)
-
-2. В верхней части экрана выберите **Новый пользователь**.
-
-    ![Кнопка "Новый пользователь"](common/new-user.png)
-
-3. В разделе свойств пользователя сделайте следующее:
-
-    ![Диалоговое окно "Пользователь"](common/user-properties.png)
-
-    а. В поле **Имя** введите **BrittaSimon**.
-  
-    b. В поле **Имя пользователя** введите BrittaSimon@contoso.com.
-
-    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
-
-    d. Нажмите кнопку **Создать**.
+1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
+1. В верхней части экрана выберите **Новый пользователь**.
+1. В разделе **Свойства пользователя** выполните следующие действия.
+   1. В поле **Имя** введите `B.Simon`.  
+   1. В поле **Имя пользователя** введите username@companydomain.extension. Например, `B.Simon@contoso.com`.
+   1. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
+   1. Нажмите кнопку **Создать**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
-В этом разделе описано, как разрешить пользователю Britta Simon использовать единый вход Azure путем предоставления доступа к O.C. Tanner — AppreciateHub.
+В этом разделе описано, как предоставить пользователю B.Simon доступ к O.C., чтобы он мог использовать единый вход Azure. Tanner — AppreciateHub.
 
-1. На портале Azure выберите **Корпоративные приложения**, **Все приложения**, а затем — **O.C. Tanner — AppreciateHub**.
+1. На портале Azure выберите **Корпоративные приложения**, а затем — **Все приложения**.
+1. В списке приложений выберите **O.C. Tanner — AppreciateHub**.
+1. На странице "Обзор" приложения найдите раздел **Управление** и выберите **Пользователи и группы**.
 
-    ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
+   ![Ссылка "Пользователи и группы"](common/users-groups-blade.png)
 
-2. В списке приложений выберите **O.C. Tanner — AppreciateHub**.
+1. Выберите **Добавить пользователя**, а в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
 
-    ![Ссылка на O.C. Tanner — AppreciateHub в списке "Приложения"](common/all-applications.png)
+    ![Ссылка "Добавить пользователя"](common/add-assign-user.png)
 
-3. В меню слева выберите **Пользователи и группы**.
+1. В диалоговом окне **Пользователи и группы** выберите **B.Simon** в списке пользователей, а затем в нижней части экрана нажмите кнопку **Выбрать**.
+1. Если ожидается, что в утверждении SAML будет получено какое-либо значение роли, то в диалоговом окне **Выбор роли** нужно выбрать соответствующую роль для пользователя из списка и затем нажать кнопку **Выбрать**, расположенную в нижней части экрана.
+1. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
 
-    ![Ссылка "Пользователи и группы"](common/users-groups-blade.png)
+## <a name="configure-oc-tanner---appreciatehub-sso"></a>Настройка единого входа в O.C. Tanner — AppreciateHub SSO
 
-4. Нажмите кнопку **Добавить пользователя**, а затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
-
-    ![Область "Добавление назначения"](common/add-assign-user.png)
-
-5. В диалоговом окне **Пользователи и группы** из списка пользователей выберите **Britta Simon**, а затем в верхней части экрана нажмите кнопку **Выбрать**.
-
-6. Если ожидается, что в утверждении SAML будет получено какое-либо значение роли, то в диалоговом окне **Выбор ролей** нужно выбрать соответствующую роль для пользователя из списка и затем нажать кнопку **Выбрать**, расположенную в нижней части экрана.
-
-7. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
+Чтобы настроить единый вход на стороне приложения **O.C. Tanner — AppreciateHub**, нужно отправить скачанный **XML-файл метаданных федерации** и соответствующие URL-адреса, скопированные на портале Azure, [группе поддержки O.C. службе поддержки О.С. Tanner — AppreciateHub](mailto:sso@octanner.com). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 ### <a name="create-oc-tanner---appreciatehub-test-user"></a>Создание тестового пользователя в O.C. Tanner — AppreciateHub
 
@@ -197,7 +138,7 @@ ms.locfileid: "67095821"
 
 Попросите [службу поддержки O.C. Tanner — AppreciateHub](mailto:sso@octanner.com) создать пользователя, у которого значение атрибута nameID совпадает с именем пользователя Britta Simon в Azure AD.
 
-### <a name="test-single-sign-on"></a>Проверка единого входа 
+## <a name="test-sso"></a>Проверка единого входа
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
@@ -209,4 +150,10 @@ ms.locfileid: "67095821"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+
+- [Пробное использование O.C. Tanner — AppreciateHub с Azure AD](https://aad.portal.azure.com/)
+
+- [Что такое управление сеансами в Microsoft Cloud App Security?](https://docs.microsoft.com/cloud-app-security/proxy-intro-aad)
+
+- [Protect apps with Microsoft Cloud App Security Conditional Access App Control (Защита приложений с помощью функции управления настройками условного доступа для приложений в Microsoft Cloud App Security)](https://docs.microsoft.com/cloud-app-security/proxy-intro-aad)

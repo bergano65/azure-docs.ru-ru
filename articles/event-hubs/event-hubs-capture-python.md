@@ -13,23 +13,23 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: quickstart
 ms.custom: seodec18
-ms.date: 01/08/2020
+ms.date: 01/15/2020
 ms.author: shvija
-ms.openlocfilehash: e81871e27c04f8a43f678110d7f44cc9c3be149c
-ms.sourcegitcommit: b5106424cd7531c7084a4ac6657c4d67a05f7068
+ms.openlocfilehash: c6c27a269abfd6fbf29ec7bbb0980d764abaa242
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75940758"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76904507"
 ---
-# <a name="quickstart-event-hubs-capture-walkthrough-python"></a>Краткое руководство. Пошаговое руководство. Использование функции "Сбор" в службе "Центры событий" с Python
+# <a name="quickstart-event-hubs-capture-walkthrough-python-azure-eventhub-version-1"></a>Краткое руководство. Пошаговое руководство. Использование функции "Сбор" в службе "Центры событий" с Python (azure-eventhub версии 1)
 
 Сбор — это функция Центров событий Azure. Она позволяет автоматически передавать потоковые данные из концентратора событий в выбранную учетную запись хранилища BLOB-объектов Azure. Эта возможность упрощает пакетную обработку данных потоковой передачи в режиме реального времени. В этой статье мы расскажем, как использовать функцию "Сбор" в Центрах событий с Python. Дополнительные сведения о функции "Сбор" в Центрах событий см. в [этой статье][Overview of Event Hubs Capture].
 
 В этом пошаговом руководстве для демонстрации функции "Сбор" используется [пакет SDK Azure для Python](https://azure.microsoft.com/develop/python/). Программа *sender.py* отправляет имитацию телеметрии среды в Центры событий в формате JSON. Концентратор событий использует функцию "Сбор" для записи этих данных в хранилище BLOB-объектов отдельными пакетами. Приложение *capturereader.py* считывает эти большие двоичные объекты, создает файл для добавления данных по каждому устройству и записывает данные в *CSV-файлы*.
 
-> [!IMPORTANT]
-> В рамках этого краткого руководства используется версия 1 пакета SDK Центров событий Azure для Python. Если вы не знакомы с Центрами событий Azure, используйте пакет SDK для Python версии 5. Краткое руководство по использованию пакета SDK для Python версии 5 см. [здесь](get-started-capture-python-v2.md). Чтобы перенести существующий код с версии 1 на версию 5, ознакомьтесь с [этим руководством по миграции](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/eventhub/azure-eventhub/migration_guide.md).
+> [!WARNING]
+> Для этого краткого руководства используется версия 1 пакета SDK Центров событий Azure для Python. Рекомендуем [перенести](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/eventhub/azure-eventhub/migration_guide.md) код в [версию 5 пакета SDK для Python](get-started-capture-python-v2.md).
 
 В этом пошаговом руководстве описаны следующие операции: 
 
@@ -39,7 +39,7 @@ ms.locfileid: "75940758"
 > * Отправьте данные в концентратор событий с помощью скрипта Python.
 > * Прочитайте и обработайте файлы, полученные от функции "Сбор" службы "Центры событий", с помощью другого скрипта Python.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 - Python 3.4 или более поздней версии, для которого установлено и обновлено `pip`.
   

@@ -10,14 +10,14 @@ ms.workload: identity
 ms.topic: quickstart
 ms.date: 09/10/2018
 ms.author: ajburnle
-ms.custom: it-pro, seodec18
+ms.custom: fasttrack-edit
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6ef577f5d086b22779392cd6d8b5d43a340f7329
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: de205beaf9800c2061cc41343b4153bd0e2b5dc7
+ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75423098"
+ms.lasthandoff: 02/05/2020
+ms.locfileid: "77024608"
 ---
 # <a name="quickstart-create-a-new-tenant-in-azure-active-directory"></a>Краткое руководство. Создание клиента в Azure Active Directory
 С помощью портала Azure Active Directory (Azure AD) можно выполнять все административные задачи, включая создание клиента для своей организации. 
@@ -31,7 +31,7 @@ ms.locfileid: "75423098"
 
 ### <a name="to-create-a-new-tenant"></a>Создание клиента
 
-1. Войдите на [портал Azure](https://portal.azure.com/) своей организации, используя учетную запись глобального администратора.
+1. Войдите на [портал Azure](https://portal.azure.com/) своей организации.
 
 1. В меню портала Azure выберите **Создать ресурс**.  
 
@@ -51,13 +51,14 @@ ms.locfileid: "75423098"
 
     - Оставьте значение _США_ в поле **Страна или регион**.
 
-1. Нажмите кнопку **Создать**.
+1. Нажмите кнопку **создания**.
 
 Будет создан клиент с доменом contoso.onmicrosoft.com.
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 Если вы не собираетесь использовать это приложение в дальнейшем, можно удалить клиент, выполнив следующие действия.
 
+- Войдите в каталог, который нужно удалить, с помощью фильтра **Каталог и подписка** на портале Azure и при необходимости переключитесь на целевой каталог.
 - Выберите **Azure Active Directory**, а затем на странице **Contoso — обзор** выберите **Удалить каталог**.
 
     Клиент и связанные с ним данные будут удалены.

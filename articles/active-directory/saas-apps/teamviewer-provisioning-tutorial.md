@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/27/2020
 ms.author: Zhchia
-ms.openlocfilehash: ba7afb506a21df7fc2fe4cc4b7194549b6efde83
-ms.sourcegitcommit: 57669c5ae1abdb6bac3b1e816ea822e3dbf5b3e1
+ms.openlocfilehash: 0602757fad0eb4424e10fb0c1cf0272826ed0024
+ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2020
-ms.locfileid: "77050568"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77150703"
 ---
 # <a name="tutorial-configure-teamviewer-for-automatic-user-provisioning"></a>Руководство. Настройка TeamViewer для автоматической подготовки пользователей
 
@@ -40,7 +40,8 @@ ms.locfileid: "77050568"
 
 * [Клиент Azure AD;](https://docs.microsoft.com/azure/active-directory/develop/quickstart-create-new-tenant) 
 * Учетная запись пользователя в Azure AD с [разрешением](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles) на настройку подготовки (например, администратор приложений, администратор облачных приложений, владелец приложения или глобальный администратор). 
-* Учетная запись TeamViewer с разрешениями администратора.
+* Действительная [Лицензия тензорные](https://www.teamviewer.com/de/teamviewer-tensor/) для TeamViewer.
+* Доступен допустимый настраиваемый идентификатор из конфигурации [единого входа](https://community.teamviewer.com/t5/Knowledge-Base/Single-Sign-On-with-Azure-Active-Directory/ta-p/60209#toc-hId--473669723) .
 
 ## <a name="step-1-plan-your-provisioning-deployment"></a>Шаг 1. Планирование развертывания подготовки
 1. Узнайте [, как работает служба подготовки](https://docs.microsoft.com/azure/active-directory/manage-apps/user-provisioning).
@@ -49,7 +50,7 @@ ms.locfileid: "77050568"
 
 ## <a name="step-2-configure-teamviewer-to-support-provisioning-with-azure-ad"></a>Шаг 2. Настройка TeamViewer для поддержки подготовки с помощью Azure AD
 
-1. Войдите в консоль администрирования приложения TeamViewer. Перейдите к разделу **изменение профиля**.
+1. Войдите в [консоль управления TeamViewer](https://login.teamviewer.com). Перейдите к разделу **изменение профиля**.
 
     ![Консоль администрирования TeamViewer](./media/teamviewer-provisioning-tutorial/admin.png)
 

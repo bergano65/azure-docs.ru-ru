@@ -12,15 +12,15 @@ ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.topic: tutorial
-ms.date: 12/23/2019
+ms.date: 01/31/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9f67a5b5513ad5d8a07551b2a9f5605fc32a9bf6
-ms.sourcegitcommit: 5925df3bcc362c8463b76af3f57c254148ac63e3
+ms.openlocfilehash: 6c80963976783321d05fc6f32bb24daed36fa105
+ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75561853"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76985563"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-slack"></a>Руководство. интеграции единого входа Azure Active Directory со Slack
 
@@ -32,11 +32,11 @@ ms.locfileid: "75561853"
 
 Чтобы узнать больше об интеграции приложений SaaS с Azure AD, прочитайте статью [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы приступить к работе, потребуется следующее:
+Чтобы приступить к работе, потребуется следующее.
 
-* подписка Azure AD; Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
+* Подписка Azure AD. Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
 * Подписка Slack с поддержкой единого входа (SSO).
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -46,6 +46,7 @@ ms.locfileid: "75561853"
 * Slack поддерживает единый вход, инициированный **поставщиком услуг**.
 * Slack поддерживает **JIT**-подготовку пользователей.
 * Slack поддерживает [**автоматическую** подготовку пользователей](https://docs.microsoft.com/azure/active-directory/saas-apps/slack-provisioning-tutorial).
+* После настройки Slack можете применить функцию управления сеансом, которая защищает от хищения конфиденциальных данных вашей организации и несанкционированного доступа к ним в реальном времени. Управление сеансом является расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-aad).
 
 > [!NOTE]
 > Идентификатор этого приложения — фиксированное строковое значение, поэтому в одном клиенте можно настроить только один экземпляр.
@@ -72,7 +73,7 @@ ms.locfileid: "75561853"
     * **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить пользователю B.Simon использовать единый вход Azure AD.
 1. **[Настройка единого входа в Slack](#configure-slack-sso)** необходима, чтобы настроить параметры единого входа на стороне приложения.
     * **[Создание тестового пользователя Slack](#create-slack-test-user)** требуется для того, чтобы в Slack существовал пользователь B. Simon, связанный с одноименным пользователем в Azure AD.
-1. **[Проверка единого входа](#test-sso)** необходима, чтобы убедиться в корректной работе конфигурации.
+1. **[Проверка единого входа](#test-sso)** позволяет убедиться в правильности конфигурации.
 
 ### <a name="configure-azure-ad-sso"></a>Настройка единого входа Azure AD
 
@@ -82,7 +83,7 @@ ms.locfileid: "75561853"
 1. На странице **Выбрать метод единого входа** выберите **SAML**.
 1. На странице **Настройка единого входа с помощью SAML** щелкните значок "Изменить" (значок пера), чтобы открыть диалоговое окно **Базовая конфигурация SAML** и изменить параметры.
 
-   ![Правка базовой конфигурации SAML](common/edit-urls.png)
+   ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
 1. На странице **Базовая конфигурация SAML** введите значения следующих полей.
 
@@ -95,7 +96,7 @@ ms.locfileid: "75561853"
 
 1. Приложение Slack ожидает проверочные утверждения SAML в определенном формате, который требует добавить настраиваемые сопоставления атрибутов в конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию.
 
-    ![image](common/edit-attribute.png)
+    ![Изображение](common/edit-attribute.png)
 
 1. В дополнение к описанному выше приложение Slack ожидает несколько дополнительных атрибутов в ответе SAML, как показано ниже. Эти атрибуты также заранее заполнены, но вы можете изменить их в соответствии со своими требованиями. Если у пользователей нет адреса электронной почты, сопоставьте **emailaddress** с **user.userprincipalname**.
 
@@ -128,7 +129,7 @@ ms.locfileid: "75561853"
 
 В этом разделе описано, как предоставить пользователю B. Simon доступ к Slack, чтобы он мог использовать единый вход Azure.
 
-1. На портале Azure выберите **Корпоративные приложения**, а затем —**Все приложения**.
+1. На портале Azure выберите **Корпоративные приложения**, а затем — **Все приложения**.
 1. В списке приложений выберите **Slack**.
 1. На странице "Обзор" приложения найдите раздел **Управление** и выберите **Пользователи и группы**.
 
@@ -186,10 +187,12 @@ ms.locfileid: "75561853"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 
 - [Попробуйте использовать Slack с Azure AD](https://aad.portal.azure.com/)
+
+- [Что такое управление сеансами в Microsoft Cloud App Security?](https://docs.microsoft.com/cloud-app-security/proxy-intro-aad)

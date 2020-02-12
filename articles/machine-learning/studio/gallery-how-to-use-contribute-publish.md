@@ -7,15 +7,15 @@ ms.service: machine-learning
 ms.subservice: studio
 ms.topic: conceptual
 author: xiaoharper
-ms.author: amlstudiodocs
+ms.author: zhanxia
 ms.custom: previous-author=heatherbshapiro, previous-ms.author=hshapiro
 ms.date: 01/11/2019
-ms.openlocfilehash: 492f6ed2775004c6fb013c6a9ead602cb3d2cea0
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 5049bdfdc84df16c4b8070decf47fd2d726d7777
+ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75427558"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77153032"
 ---
 # <a name="share-and-discover-resources-in-the-azure-ai-gallery"></a>Поиск и публикация ресурсов в коллекции решений ИИ Azure
 
@@ -24,7 +24,7 @@ ms.locfileid: "75427558"
 
 ## <a name="what-can-i-find-in-the-gallery"></a>Ресурсы, содержащиеся в коллекции
 
-Коллекции решений ИИ Azure содержит ряд ресурсов, предоставленных корпорацией Майкрософт и членами сообщества по обработке и анализу данных. К ним относятся:
+Коллекции решений ИИ Azure содержит ряд ресурсов, предоставленных корпорацией Майкрософт и членами сообщества по обработке и анализу данных. К ним относятся следующие объекты.
 
 * **Эксперименты** — коллекция содержит множество экспериментов, разработанных в машинное обучение Azure Studio (классическая модель). К ним относятся как эксперименты, демонстрирующие конкретный метод машинного обучения, так и готовые решения для сложных задач машинного обучения.
 * **Руководства.** В коллекции доступен ряд руководств, описывающих технологии и основные понятия машинного обучения, а также передовые методы для решения различных задач машинного обучения.
@@ -121,7 +121,7 @@ ms.locfileid: "75427558"
 * имя эксперимента;
 * сводка или описание;
 * Теги
-* Изображение
+* Образ —
 * параметр видимости (**Public** (Общедоступный) или **Unlisted** (Вне списка)).
 
 Эксперимент можно также удалить из коллекции.
@@ -199,6 +199,6 @@ ms.locfileid: "75427558"
 
 Мы хотим, чтобы Коллекция развивалась нашими пользователями и для наших пользователей. Вставьте значок справа от сообщения, чтобы дать нам знать, что вам нравится или не нравится в Коллекции.  
 
-![Обратная связь](./media/gallery-how-to-use-contribute-publish/feedback.png)
+![Отзывы](./media/gallery-how-to-use-contribute-publish/feedback.png)
 
 **[ПЕРЕЙТИ В КОЛЛЕКЦИЮ >>](https://gallery.azure.ai)**

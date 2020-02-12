@@ -8,29 +8,30 @@ ms.custom: mvc, seo-javascript-september2019, seo-javascript-october2019
 ms.devlang: nodejs
 ms.topic: quickstart
 ms.date: 12/02/2019
-ms.openlocfilehash: 6773b5d4635089d0977dfa0699549ad22e00aead
-ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
+ms.openlocfilehash: 96590faae26892771ce27c539bb6e71c84b65b10
+ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74770736"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76938946"
 ---
 # <a name="quickstart-use-nodejs-to-connect-and-query-data-in-azure-database-for-mysql"></a>Краткое руководство. Подключение и запрос данных с помощью Node.js в Базе данных Azure для MySQL
-В этом кратком руководстве описывается, как подключиться к базе данных Azure для MySQL при помощи [Node.js](https://nodejs.org/) на платформе Windows, Ubuntu Linux или Mac. Здесь также показано, как использовать инструкции SQL для запроса, вставки, обновления и удаления данных в базе данных. В этой статье предполагается, что у вас уже есть опыт разработки на языке Node.js и вы только начали работу с базой данных Azure для MySQL.
+
+Из этого краткого руководства вы узнаете, как подключиться к Базе данных Azure для MySQL с использованием Node.js. Также вы узнаете, как использовать инструкции SQL для запроса, вставки, обновления и удаления данных в базе данных на платформах Windows, Mac и Ubuntu Linux. 
+
+В этой статье предполагается, что у вас уже есть опыт разработки на Node.js и вы только начали работу со службой "База данных Azure для MySQL".
 
 ## <a name="prerequisites"></a>Предварительные требования
-В качестве отправной точки в этом кратком руководстве используются ресурсы, созданные в соответствии со следующими материалами:
-- [Create an Azure Database for MySQL server using Azure portal](./quickstart-create-mysql-server-database-using-azure-portal.md) (Создание базы данных Azure для сервера MySQL с помощью портала Azure)
-- [Create an Azure Database for MySQL server using Azure CLI](./quickstart-create-mysql-server-database-using-azure-cli.md) (Создание сервера базы данных Azure для MySQL с помощью Azure CLI)
 
-Также вам потребуется:
-- установить среду выполнения [Node.js](https://nodejs.org);
-- установить пакет [mysql](https://www.npmjs.com/package/mysql) для подключения к MySQL из приложения Node.js. 
+- Учетная запись Azure с активной подпиской. [Создайте учетную запись](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio) бесплатно.
+- Сервер Базы данных Azure для MySQL. Создайте сервер Базы данных Azure для MySQL с помощью [портала Azure](quickstart-create-mysql-server-database-using-azure-portal.md) или [Azure CLI](quickstart-create-mysql-server-database-using-azure-cli.md).
 
 ## <a name="install-nodejs-and-the-mysql-connector"></a>Установка Node.js и соединителя MySQL
-В зависимости от используемой платформы выполните инструкции в соответствующем разделе, чтобы установить Node.js. Используйте NPM, чтобы установить пакет mysql и его зависимости в папку проекта.
+
+В зависимости от используемой платформы выполните инструкции из соответствующего раздела, чтобы установить [Node.js](https://nodejs.org). Используйте npm, чтобы установить пакет [mysql](https://www.npmjs.com/package/mysql) и его зависимости в папку проекта.
 
 ### <a name="windows"></a>**Windows**
+
 1. Войдите на [страницу скачиваемых файлов Node.js](https://nodejs.org/en/download/) и выберите нужный установщик Windows.
 2. Создайте папку локального проекта, например `nodejsmysql`. 
 3. Откройте командную строку и перейдите в папку проекта, например в `cd c:\nodejsmysql\`.
@@ -45,6 +46,7 @@ ms.locfileid: "74770736"
 5. Проверьте установку, просмотрев текст вывода `npm list`. Номера версии могут отличаться, когда будут выпущены новые обновления.
 
 ### <a name="linux-ubuntu"></a>**Linux (Ubuntu)**
+
 1. Чтобы установить **Node.js** и **NPM** (диспетчер пакетов для Node.js), выполните следующую команду:
 
    ```bash
@@ -62,6 +64,7 @@ ms.locfileid: "74770736"
 3. Проверьте установку, просмотрев текст вывода npm list. Номера версии могут отличаться, когда будут выпущены новые обновления.
 
 ### <a name="mac-os"></a>**Mac OS**
+
 1. Чтобы установить **brew** (простой в использовании диспетчер пакетов для Mac OS X) и **Node.js**, выполните следующую команду:
 
    ```bash
@@ -80,6 +83,7 @@ ms.locfileid: "74770736"
 3. Проверьте установку, просмотрев текст вывода `npm list`. Номера версии могут отличаться, когда будут выпущены новые обновления.
 
 ## <a name="get-connection-information"></a>Получение сведений о подключении
+
 Получите сведения о подключении, необходимые для подключения к базе данных Azure.для MySQL. Вам потребуется полное имя сервера и учетные данные для входа.
 
 1. Войдите на [портал Azure](https://portal.azure.com/).
@@ -89,12 +93,14 @@ ms.locfileid: "74770736"
  ![Имя сервера базы данных Azure для MySQL](./media/connect-nodejs/server-name-azure-database-mysql.png)
 
 ## <a name="running-the-javascript-code-in-nodejs"></a>Выполнение кода JavaScript в Node.js
+
 1. Вставьте код JavaScript в текстовые файлы и сохраните их в папку проекта с расширением файла JS, например C:\nodejsmysql\createtable.js или /home/username/nodejsmysql/createtable.js.
 2. Откройте командную строку или оболочку Bash и перейдите в папку проекта `cd nodejsmysql`.
 3. Чтобы запустить приложение, введите команду Node, указав после нее имя файла, например `node createtable.js`.
 4. В Windows, если приложение Node не указано в переменной среды PATH, может потребоваться указать полный путь, чтобы запустить приложение Node, например `"C:\Program Files\nodejs\node.exe" createtable.js`.
 
 ## <a name="connect-create-table-and-insert-data"></a>Подключение, создание таблицы и вставка данных
+
 Используйте приведенный ниже код для подключения и загрузки данных с помощью инструкций SQL **CREATE TABLE** и **INSERT INTO**.
 
 Метод [mysql.createConnection()](https://github.com/mysqljs/mysql#establishing-connections) используется для обмена данными с сервером MySQL. Функция [connect()](https://github.com/mysqljs/mysql#establishing-connections) используется для подключения к серверу. Функция [query()](https://github.com/mysqljs/mysql#performing-queries) используется для выполнения SQL-запроса к базе данных MySQL. 
@@ -162,6 +168,7 @@ function queryDatabase(){
 ```
 
 ## <a name="read-data"></a>Чтение данных
+
 Используйте указанный ниже код с инструкцией SQL **SELECT** для подключения и чтения данных. 
 
 Метод [mysql.createConnection()](https://github.com/mysqljs/mysql#establishing-connections) используется для обмена данными с сервером MySQL. Метод [connect()](https://github.com/mysqljs/mysql#establishing-connections) используется для подключения к серверу. Метод [query()](https://github.com/mysqljs/mysql#performing-queries) используется для выполнения SQL-запроса к базе данных MySQL. Массив результатов используется для хранения результатов запроса.
@@ -214,6 +221,7 @@ function readData(){
 ```
 
 ## <a name="update-data"></a>Обновление данных
+
 Используйте указанный ниже код с инструкцией SQL **UPDATE** для подключения и чтения данных. 
 
 Метод [mysql.createConnection()](https://github.com/mysqljs/mysql#establishing-connections) используется для обмена данными с сервером MySQL. Метод [connect()](https://github.com/mysqljs/mysql#establishing-connections) используется для подключения к серверу. Метод [query()](https://github.com/mysqljs/mysql#performing-queries) используется для выполнения SQL-запроса к базе данных MySQL. 
@@ -262,6 +270,7 @@ function updateData(){
 ```
 
 ## <a name="delete-data"></a>Удаление данных
+
 Используйте следующий код с инструкцией SQL **DELETE** для подключения и чтения данных. 
 
 Метод [mysql.createConnection()](https://github.com/mysqljs/mysql#establishing-connections) используется для обмена данными с сервером MySQL. Метод [connect()](https://github.com/mysqljs/mysql#establishing-connections) используется для подключения к серверу. Метод [query()](https://github.com/mysqljs/mysql#performing-queries) используется для выполнения SQL-запроса к базе данных MySQL. 
@@ -309,6 +318,7 @@ function deleteData(){
 };
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
+
 > [!div class="nextstepaction"]
 > [Перенос базы данных с помощью экспорта и импорта](./concepts-migrate-import-export.md)

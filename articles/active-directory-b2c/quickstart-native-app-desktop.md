@@ -12,12 +12,12 @@ ms.custom: mvc
 ms.date: 09/12/2019
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 01adebbab1e39e2de5603be4c95335a5fe40ef06
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: f36b705d590f34a79aefe14355f25f7639562d2a
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76841412"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76908978"
 ---
 # <a name="quickstart-set-up-sign-in-for-a-desktop-app-using-azure-active-directory-b2c"></a>Краткое руководство. Настройка входа в классическое приложение с помощью Azure Active Directory B2C
 
@@ -29,7 +29,7 @@ Azure Active Directory (Azure AD) B2C обеспечивает управлен�
 
 - [Visual Studio 2019](https://www.visualstudio.com/downloads/) с рабочей нагрузкой **ASP.NET и веб-разработка**.
 - Учетная запись социальных сетей Facebook, Google или Майкрософт.
-- [Загрузите ZIP-файл](https://github.com/Azure-Samples/active-directory-b2c-dotnet-desktop/archive/master.zip) или клонируйте пример приложения с GitHub.
+- [Скачайте ZIP-файл](https://github.com/Azure-Samples/active-directory-b2c-dotnet-desktop/archive/msalv3.zip) или клонируйте репозиторий [Azure-Samples/active-directory-b2c-dotnet-desktop](https://github.com/Azure-Samples/active-directory-b2c-dotnet-desktop) на сайте GitHub.
 
     ```
     git clone https://github.com/Azure-Samples/active-directory-b2c-dotnet-desktop.git

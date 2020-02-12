@@ -2,7 +2,7 @@
 title: Диспетчер трафика Azure | Документация Майкрософт
 description: В статье представлен обзор диспетчера трафика Azure. Узнайте, подходит ли он для балансировки нагрузки трафика пользователя для вашего приложения.
 services: traffic-manager
-author: asudbring
+author: rohinkoul
 manager: twooley
 ms.service: traffic-manager
 customer intent: As an IT admin, I want to learn about Traffic Manager and what I can use it for.
@@ -11,13 +11,13 @@ ms.topic: overview
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 11/23/2019
-ms.author: allensu
-ms.openlocfilehash: 48ce72104c4cc08fc26777aa7111b705c57317f5
-ms.sourcegitcommit: 4c831e768bb43e232de9738b363063590faa0472
+ms.author: rohink
+ms.openlocfilehash: c8f604c042aee8b1af30af9da5a43ed2cd79f214
+ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74420281"
+ms.lasthandoff: 02/05/2020
+ms.locfileid: "77014391"
 ---
 # <a name="what-is-traffic-manager"></a>Что такое диспетчер трафика
 Диспетчер трафика Azure — это подсистема балансировки нагрузки трафика на основе DNS, которая позволяет оптимально распределять трафик между службами во всех регионах Azure, обеспечивая высокий уровень доступности и скорости реагирования.
@@ -28,7 +28,8 @@ ms.locfileid: "74420281"
 > Azure предоставляет набор полностью управляемых решений балансировки нагрузки для пользовательских сценариев. Если вам необходима обработка подключений по протоколу TLS (разгрузка SSL) или обработка прикладного уровня HTTP- или HTTPS-запросов, ознакомьтесь со статьей [Обзор шлюза приложений](../application-gateway/application-gateway-introduction.md). Если вам нужна региональная балансировка нагрузки, ознакомьтесь с [Load Balancer](../load-balancer/load-balancer-overview.md). В комплексных сценариях может быть целесообразно объединить эти решения.
 >
 > Сравнение параметров балансировки нагрузки Azure см. в статье [Overview of load-balancing options in Azure](https://docs.microsoft.com/azure/architecture/guide/technology-choices/load-balancing-overview) (Общие сведения о параметрах балансировки нагрузки в Azure).
-В диспетчере трафика предлагаются приведенные ниже функции.
+
+В Диспетчере трафика предлагаются приведенные ниже функции.
 
 ## <a name="increase-application-availability"></a>Повышение уровня доступности приложения
 
@@ -55,7 +56,7 @@ ms.locfileid: "74420281"
 Сведения о ценах см. на [странице с ценами на диспетчер трафика](https://azure.microsoft.com/pricing/details/traffic-manager/).
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте, как [создать профиль диспетчера трафика](traffic-manager-create-profile.md).
 - Узнайте больше о том, [как работает диспетчер трафика](traffic-manager-how-it-works.md).

@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-video-search
 ms.topic: tutorial
-ms.date: 12/09/2019
+ms.date: 02/03/2020
 ms.author: aahi
-ms.openlocfilehash: 7c8485a5521709452217fb4ab1832b6a42cce9ce
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: fb989825ed27cc83c14c36e6394e37ae2db2c12a
+ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75382469"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76988266"
 ---
 # <a name="tutorial-single-page-video-search-app"></a>Руководство. Одностраничное приложение для поиска видео
 API Bing для поиска видео позволяет выполнять поиск в Интернете и получать результаты видео, относящиеся к поисковому запросу. В этом руководстве мы создаем одностраничное веб-приложение, использующее API Bing для поиска в Интернете для отображения результатов поиска прямо на странице. Приложение включает в себя компоненты HTML, CSS и JavaScript.
@@ -100,7 +100,7 @@ function getSubscriptionKey() {
 
 HTML-форма включает элементы со следующими именами:
 
-|Элемент|Description|
+|Элемент|Описание|
 |-|-|
 | `where` | Раскрывающееся меню для выбора рынка (расположения и языка), который используется для поиска. |
 | `query` | Текстовое поле для ввода условий поиска. |
@@ -120,7 +120,7 @@ function bingSearchOptions(form) {
 
     var options = [];
     options.push("mkt=" + form.where.value);
-    options.push("SafeSearch=" + (form.safe.checked ? "strict" : "off"));
+    options.push("SafeSearch=" + (form.safe.checked ? "strict" : "moderate"));
 
     if (form.when.value.length) options.push("freshness=" + form.when.value);
     var what = [];
@@ -138,7 +138,7 @@ function bingSearchOptions(form) {
 }
 ```
 
-Например, параметр `SafeSearch` в реальном вызове API может иметь значение `strict`, `moderate` или `off`, при этом `moderate` является значением по умолчанию. Тем не менее в форме используется флажок, который имеет только два состояния. Код JavaScript преобразует это значение в `strict` или `off` (`moderate` не используется).
+Например, параметр `SafeSearch` в реальном вызове API может иметь значение `strict` или `moderate`, при этом `moderate` является значением по умолчанию.
 
 ## <a name="performing-the-request"></a>Выполнение запроса
 Учитывая запрос, строку параметров и ключ API, функция `BingWebSearch` использует объект `XMLHttpRequest`, чтобы сделать запрос к конечной точке поиска Bing. Вы можете использовать указанную ниже глобальную конечную точку или конечную точку [пользовательского поддомена](../../cognitive-services/cognitive-services-custom-subdomains.md), отображаемого на портале Azure для вашего ресурса.
@@ -308,7 +308,7 @@ function renderSearchResults(results) {
 
 API Bing для поиска новостей возвращает до четырех различных видов связанных результатов, каждый в своем собственном объекте верхнего уровня. К ним относятся:
 
-|Тип связи|Description|
+|Тип связи|Описание|
 |-|-|
 |`pivotSuggestions`|Запросы, которые заменяют сводное слово в исходном поиске другим. Например, если вы ищете "красные цветы", сводным словом может быть "красные", а сводным предложением может быть "желтые цветы".|
 |`queryExpansions`|Запросы, которые сужают исходный поиск, добавляя больше условий. Например, если вы ищете "Microsoft Surface", расширением запроса может быть "Microsoft Surface Pro".|
@@ -332,7 +332,7 @@ searchItemRenderers = {
 ```
 Функция-обработчик может принимать следующие параметры:
 
-|Параметр|Description|
+|Параметр|Описание|
 |-|-|
 |`item`| Объект JavaScript, содержащий свойства элемента, такие как URL-адрес и его описание.|
 |`index`| Индекс элемента результата в коллекции.|

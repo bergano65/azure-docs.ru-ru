@@ -11,12 +11,12 @@ ms.date: 12/05/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b83f634e9f5954e7a465761b117b6ee32f843aa2
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 47806fe9c5c97c1f5a9c26d4ca38fb46bdf4057c
+ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75425084"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76931402"
 ---
 # <a name="pilot-cloud-provisioning-for-an-existing-synced-ad-forest"></a>Пилотная подготовка облака для существующего синхронизированного леса AD 
 
@@ -35,7 +35,7 @@ ms.locfileid: "75425084"
 
 4. Это расширенный сценарий. Следите за тем, чтобы в точности выполнять действия, описанные в этом учебнике.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 Для работы с этим учебником требуется следующее:
 - Тестовая среда со службой синхронизации Azure AD Connect версии 1.4.32.0 или более поздней.
 - Подразделение или группа, которые находятся в области синхронизации и могут использоваться в пилотной среде. Мы советуем начинать с небольшого набора объектов.
@@ -68,6 +68,7 @@ ms.locfileid: "75425084"
 
     **Имя.** Присвойте правилу понятное имя.<br>
     **Описание.** Введите информативное описание.<br> 
+    
     **Connected System** (Подключенная система). Выберите соединитель AD, для которого записывается пользовательское правило синхронизации.<br>
     **Connected System Object Type** (Тип объекта подключенной системы). Пользователь<br>
     **Metaverse Object Type** (Тип объекта метавселенной). Модель Person<br>

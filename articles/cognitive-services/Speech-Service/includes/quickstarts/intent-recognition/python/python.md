@@ -1,28 +1,24 @@
 ---
-title: Краткое руководство. Распознавание речи, намерений и сущностей в службе "Речь" с помощью Python
-titleSuffix: Azure Cognitive Services
-services: cognitive-services
-author: erhopf
-manager: nitinme
+author: IEvangelist
 ms.service: cognitive-services
 ms.subservice: speech-service
-ms.date: 01/02/2020
+ms.date: 01/27/2020
 ms.topic: include
-ms.author: erhopf
+ms.author: dapine
 zone_pivot_groups: programming-languages-set-two
-ms.openlocfilehash: f2a46b8a0868aaa1097dd7f1ae738a2a3e06e3b8
-ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
+ms.openlocfilehash: 9bc514c32d97958d8ab154dc2c5533747f380e86
+ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75772867"
+ms.lasthandoff: 01/31/2020
+ms.locfileid: "76900627"
 ---
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Необходимые условия:
 
-* Если это ваш первый проект Python, воспользуйтесь этим руководством, чтобы <a href="~/articles/cognitive-services/Speech-Service/quickstarts/create-project.md" target="_blank">создать пустой пример проекта</a>.
-* <a href="~/articles/cognitive-services/Speech-Service/quickstarts/setup-platform.md" target="_blank">Установите пакет SDK для службы "Речь" для среды разработки</a>.
+* Если это ваш первый проект Python, воспользуйтесь этим руководством, чтобы <a href="~/articles/cognitive-services/Speech-Service/quickstarts/create-project.md" target="_blank">создать пустой пример проекта <span class="docon docon-navigate-external x-hidden-focus"></span></a>.
+* <a href="~/articles/cognitive-services/Speech-Service/quickstarts/setup-platform.md" target="_blank">Установите пакет SDK службы "Речь" для среды разработки <span class="docon docon-navigate-external x-hidden-focus"></span></a>.
 
 ## <a name="create-a-luis-app-for-intent-recognition"></a>Создание приложения LUIS для распознавания намерений
 
@@ -65,7 +61,7 @@ ms.locfileid: "75772867"
 
 ## <a name="add-a-languageunderstandingmodel-and-intents"></a>Добавление модели LanguageUnderstandingModel и намерений
 
-Необходимо сопоставить объект `LanguageUnderstandingModel` с распознавателем намерений и добавить намерения, которые необходимо распознать. Мы будем использовать намерения из предварительно созданной предметной области для системы домашней автоматики. 
+Необходимо сопоставить объект `LanguageUnderstandingModel` с распознавателем намерений и добавить намерения, которые необходимо распознать. Мы будем использовать намерения из предварительно созданной предметной области для системы домашней автоматики.
 
 Вставьте приведенный ниже код под строкой вашего `IntentRecognizer`. Обязательно замените `"YourLanguageUnderstandingAppId"` идентификатором приложения LUIS. 
 
@@ -90,7 +86,7 @@ ms.locfileid: "75772867"
 
 ## <a name="check-your-code"></a>Проверка кода
 
-На этом этапе код должен выглядеть так:  
+На этом этапе код должен выглядеть так:
 
 > [!NOTE]
 > Мы добавили несколько комментариев к этой версии.
