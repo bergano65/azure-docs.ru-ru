@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.subservice: domain-services
 ms.workload: identity
 ms.topic: troubleshooting
-ms.date: 09/19/2019
+ms.date: 02/10/2020
 ms.author: iainfou
-ms.openlocfilehash: 96aa463441c9e0f21e2ef1aa27c566b94e1e5f4f
-ms.sourcegitcommit: 55f7fc8fe5f6d874d5e886cb014e2070f49f3b94
+ms.openlocfilehash: 22d1b6e2344256b52cfdbc48720a680a770a4216
+ms.sourcegitcommit: f718b98dfe37fc6599d3a2de3d70c168e29d5156
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71257870"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77132165"
 ---
 # <a name="troubleshoot-secure-ldap-connectivity-issues-to-an-azure-active-directory-domain-services-managed-domain"></a>Устранение проблем с защищенным подключением LDAP к управляемому домену доменных служб Azure Active Directory
 
@@ -39,7 +39,7 @@ ms.locfileid: "71257870"
 * Для внешних подключений группа безопасности сети должна включать правило, разрешающее трафик через TCP-порт 636 из Интернета.
     * Если вы можете подключиться к управляемому домену AD DS Azure с помощью защищенного протокола LDAP из ресурсов, непосредственно подключенных к виртуальной сети, но не с внешними подключениями, убедитесь, что [создано правило группы безопасности сети, разрешающее безопасный трафик LDAP][ldaps-nsg].
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если у вас по-прежнему возникают проблемы, отправьте [запрос в службу поддержки Azure][azure-support] для получения дополнительных сведений об устранении неполадок.
 

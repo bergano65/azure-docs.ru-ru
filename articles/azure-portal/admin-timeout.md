@@ -5,24 +5,24 @@ services: azure-portal
 keywords: параметры, время ожидания
 author: mgblythe
 ms.author: mblythe
-ms.date: 12/19/2019
+ms.date: 02/10/2020
 ms.topic: conceptual
 ms.service: azure-portal
 manager: mtillman
-ms.openlocfilehash: 87de67eec9171825a1ebff9ab60782fea8836039
-ms.sourcegitcommit: a9b1f7d5111cb07e3462973eb607ff1e512bc407
+ms.openlocfilehash: 950580048f0496fd8436901938a5b6768c61bab6
+ms.sourcegitcommit: f718b98dfe37fc6599d3a2de3d70c168e29d5156
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76310804"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77132080"
 ---
 # <a name="set-directory-level-inactivity-timeout"></a>Задание времени ожидания бездействия на уровне каталога
 
-Настройка времени ожидания при неактивном доступе помогает защитить ресурсы от несанкционированного доступа, если пользователи забывают защитить их рабочую станцию. Когда пользователь бездействует в течение определенного времени, его сеанс портал Azure автоматически выйдет из сеанса. Администраторы могут принудительно применить максимальное время простоя до выхода из сеанса. Параметр времени ожидания неактивности применяется на уровне каталога. Дополнительные сведения о каталогах см. в разделе Общие сведения о [службах домен Active Directory Services](/windows-server/identity/ad-ds/get-started/virtual-dc/active-directory-domain-services-overview).
+Настройка времени ожидания при неактивном доступе помогает защитить ресурсы от несанкционированного доступа, если пользователи забывают защитить их рабочую станцию. Когда пользователь бездействует в течение определенного времени, его сеанс портал Azure автоматически выйдет из сеанса. Администраторы в [роли глобального администратора](../active-directory/users-groups-roles/directory-assign-admin-roles.md#global-administrator--company-administrator) могут принудительно применить максимальное время простоя до выхода из сеанса. Параметр времени ожидания неактивности применяется на уровне каталога. Дополнительные сведения о каталогах см. в разделе Общие сведения о [службах домен Active Directory Services](/windows-server/identity/ad-ds/get-started/virtual-dc/active-directory-domain-services-overview).
 
 ## <a name="configure-the-inactive-timeout-setting"></a>Настройка параметра времени ожидания неактивности
 
-Если вы являетесь администратором и хотите применить параметр времени ожидания простоя для всех пользователей портал Azure, выполните следующие действия.
+Если вы являетесь глобальным администратором и хотите применить параметр времени ожидания простоя для всех пользователей портал Azure, выполните следующие действия.
 
 1. Войдите на [портал Azure](https://portal.azure.com).
 2. Выберите **Параметры** в заголовке глобальной страницы.

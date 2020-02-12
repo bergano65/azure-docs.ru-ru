@@ -1,6 +1,6 @@
 ---
-title: Список запретить назначения для ресурсов Azure с помощью Azure PowerShell | Документация Майкрософт
-description: Узнайте, как получить список пользователей, групп, субъектов-служб и управляемых удостоверений, которые было отказано в доступе к действиям конкретный ресурс Azure в определенной области, с помощью Azure PowerShell.
+title: Список запрещенных назначений для ресурсов Azure с Azure PowerShell
+description: Узнайте, как получить список пользователей, групп, субъектов-служб и управляемых удостоверений, которым запрещен доступ к определенным действиям ресурсов Azure в определенных областях с помощью Azure PowerShell.
 services: active-directory
 documentationcenter: ''
 author: rolyon
@@ -13,32 +13,32 @@ ms.workload: identity
 ms.date: 06/12/2019
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: c1ea26fdb4d60262f89ea6ab0f87220a08c01e68
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 5ba18b89bd37dbd55350321c503e37ab0590ab87
+ms.sourcegitcommit: b95983c3735233d2163ef2a81d19a67376bfaf15
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67110489"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77137392"
 ---
-# <a name="list-deny-assignments-for-azure-resources-using-azure-powershell"></a>Список запретить назначения для ресурсов Azure с помощью Azure PowerShell
+# <a name="list-deny-assignments-for-azure-resources-using-azure-powershell"></a>Список запрещенных назначений для ресурсов Azure с помощью Azure PowerShell
 
-[Запрещающие назначения](deny-assignments.md) блокируют выполнение определенных действий ресурсов Azure пользователями, даже если назначение роли предоставляет им доступ. В этой статье описывается, как получить список запрещать сбое с помощью Azure PowerShell.
+[Запрещающие назначения](deny-assignments.md) блокируют выполнение определенных действий ресурсов Azure пользователями, даже если назначение роли предоставляет им доступ. В этой статье описывается, как вывести список запрещенных назначений с помощью Azure PowerShell.
 
 > [!NOTE]
-> Невозможно непосредственно создать свои собственные запретить назначения. Сведения о том, как запретить назначения создаются, см. в разделе [запретить назначения](deny-assignments.md).
+> Вы не можете напрямую создавать собственные назначения Deny. Дополнительные сведения о создании назначений Deny см. в разделе [Deny назначений](deny-assignments.md).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
-Чтобы получить сведения о назначении deny, необходимо иметь:
+Чтобы получить сведения о назначении Deny, необходимо следующее:
 
-- `Microsoft.Authorization/denyAssignments/read` разрешение, которое включается в большинстве [встроенных ролей ресурсов Azure](built-in-roles.md)
+- `Microsoft.Authorization/denyAssignments/read` разрешение, которое входит в большинство [встроенных ролей для ресурсов Azure](built-in-roles.md) .
 - [PowerShell в Azure Cloud Shell](/azure/cloud-shell/overview) или [Azure PowerShell](/powershell/azure/install-az-ps)
 
-## <a name="list-deny-assignments"></a>Список запретить назначения
+## <a name="list-deny-assignments"></a>Отображение списка запрещенных назначений
 
-### <a name="list-all-deny-assignments"></a>Список всех запретить назначения
+### <a name="list-all-deny-assignments"></a>Перечислить все назначения Deny
 
-Чтобы получить список, все запрещающие назначения для текущей подписки, используйте [Get-AzDenyAssignment](/powershell/module/az.resources/get-azdenyassignment).
+Чтобы получить список всех отклонения назначений для текущей подписки, используйте [Get-азденяссигнмент](/powershell/module/az.resources/get-azdenyassignment).
 
 ```azurepowershell
 Get-AzDenyAssignment
@@ -90,9 +90,9 @@ ExcludePrincipals       : {
 IsSystemProtected       : True
 ```
 
-### <a name="list-deny-assignments-at-a-resource-group-scope"></a>Список запретить назначений в пределах группы ресурсов
+### <a name="list-deny-assignments-at-a-resource-group-scope"></a>Список запретов назначений в области группы ресурсов
 
-Чтобы получить список, все запрещающие назначений в пределах группы ресурсов, используйте [Get-AzDenyAssignment](/powershell/module/az.resources/get-azdenyassignment).
+Чтобы получить список всех запрещенных назначений в области группы ресурсов, используйте [Get-азденяссигнмент](/powershell/module/az.resources/get-azdenyassignment).
 
 ```azurepowershell
 Get-AzDenyAssignment -ResourceGroupName <resource_group_name>
@@ -111,9 +111,9 @@ Principals         : {
                      }
 ```
 
-### <a name="list-deny-assignments-at-a-subscription-scope"></a>Список запретить назначения в области подписки
+### <a name="list-deny-assignments-at-a-subscription-scope"></a>Список запретов назначений в области действия подписки
 
-Чтобы получить список, все запрещающие назначения в области подписки, используйте [Get-AzDenyAssignment](/powershell/module/az.resources/get-azdenyassignment). Чтобы получить идентификатор подписки, его можно найти в **подписок** колонки на портале Azure, или вы можете использовать [Get-AzSubscription](/powershell/module/Az.Accounts/Get-AzSubscription).
+Чтобы получить список всех запрещенных назначений в области действия подписки, используйте [Get-азденяссигнмент](/powershell/module/az.resources/get-azdenyassignment). Чтобы получить идентификатор подписки, его можно найти в колонке **подписки** в портал Azure или воспользоваться [Get-азсубскриптион](/powershell/module/Az.Accounts/Get-AzSubscription).
 
 ```azurepowershell
 Get-AzDenyAssignment -Scope /subscriptions/<subscription_id>
@@ -126,5 +126,5 @@ PS C:\> Get-AzDenyAssignment -Scope /subscriptions/11111111-1111-1111-1111-11111
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - [Запрет назначений для ресурсов Azure](deny-assignments.md)
-- [Список запретить назначения для ресурсов Azure с помощью портала Azure](deny-assignments-portal.md)
+- [Список запрещенных назначений для ресурсов Azure с помощью портал Azure](deny-assignments-portal.md)
 - [Вывод списка запретов назначений для ресурсов Azure с помощью REST API](deny-assignments-rest.md)

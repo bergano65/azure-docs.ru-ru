@@ -12,14 +12,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
-ms.date: 1/14/2020
+ms.date: 02/10/2020
 ms.author: alsin
-ms.openlocfilehash: afda502bcd89423ecdd008c0297c85dd8a5b61fb
-ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
+ms.openlocfilehash: b0ef6030b1b460d118a255ede3c46719616fe3b0
+ms.sourcegitcommit: f718b98dfe37fc6599d3a2de3d70c168e29d5156
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76989847"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77133834"
 ---
 # <a name="red-hat-enterprise-linux-bring-your-own-subscription-gold-images-in-azure"></a>Red Hat Enterprise Linux образы Gold собственных подписок в Azure
 
@@ -177,7 +177,7 @@ ms.locfileid: "76989847"
 
 Шифрование дисков Azure не поддерживается в [пользовательских образах Red Hat](/linux/redhat-create-upload-vhd). Дополнительные требования к ADE и предварительные требования описаны в статье [Шифрование дисков Azure для виртуальных машин Linux](../../linux/disk-encryption-overview.md#additional-vm-requirements).
 
-Действия по применению шифрования дисков Azure доступны в [сценариях шифрования дисков Azure на виртуальных машинах Linux](../../linux/disk-encryption-linux.md) и связанных статьях.  
+Действия по применению шифрования дисков Azure доступны в [сценариях шифрования дисков Azure на виртуальных машинах Linux](../../linux/disk-encryption-linux.md) и связанных статьях.
 
 ## <a name="additional-information"></a>Дополнительные сведения
 
@@ -186,7 +186,7 @@ ms.locfileid: "76989847"
     ```
     "Offer with PublisherId: redhat, OfferId: rhel-byos, PlanId: rhel-lvm75 is private and can not be purchased by subscriptionId: GUID"
     ```
-    
+
     В этом случае обратитесь в корпорацию Майкрософт или к Red Hat, чтобы включить подписку.
 
 - Если вы изменяете моментальный снимок из образа RHEL BYOS и пытаетесь опубликовать этот пользовательский образ в [коллекции общих образов](https://docs.microsoft.com/azure/virtual-machines/linux/shared-image-galleries), необходимо предоставить сведения о плане, соответствующие исходному источнику моментального снимка. Например, команда может выглядеть следующим образом:

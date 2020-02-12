@@ -9,8 +9,8 @@
   items:
     - name: Включение самостоятельного сброса пароля
       href: tutorial-enable-sspr.md
-    - name: Включение MFA для приложений
-      href: tutorial-mfa-applications.md
+    - name: Включение Многофакторной идентификации Azure
+      href: tutorial-enable-azure-mfa.md
     - name: Интеграция SSPR с локальной средой
       href: tutorial-enable-writeback.md
     - name: Интеграция службы защиты идентификации Azure AD

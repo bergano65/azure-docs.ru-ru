@@ -250,7 +250,7 @@
       href: ../../virtual-machine-scale-sets/overview.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
     - name: Автоматизация инфраструктуры
       href: infrastructure-automation.md
-    - name: безопасность
+    - name: Безопасность
       items:
         - name: Безопасность и политика
           href: security-policy.md
@@ -581,8 +581,6 @@
               href: disks-benchmarks.md
         - name: Обнаружение неприсоединенных дисков
           href: find-unattached-disks.md
-        - name: Использование хранилища файлов
-          href: ../../storage/files/storage-files-quick-create-use-windows.md
         - name: Часто задаваемые вопросы о дисках
           href: faq-for-disks.md
     - name: Управление сетями

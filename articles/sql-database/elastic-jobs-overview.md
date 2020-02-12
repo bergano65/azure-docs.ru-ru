@@ -11,12 +11,12 @@ author: srinia
 ms.author: srinia
 ms.reviewer: sstein
 ms.date: 12/18/2018
-ms.openlocfilehash: 283b4004f34372104eb083496400772884f5965e
-ms.sourcegitcommit: 4c831e768bb43e232de9738b363063590faa0472
+ms.openlocfilehash: 633c3ffc8e266087c88116a15c43469727a9a50d
+ms.sourcegitcommit: f718b98dfe37fc6599d3a2de3d70c168e29d5156
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74420376"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77133645"
 ---
 # <a name="create-configure-and-manage-elastic-jobs"></a>Создание, настройка и управление заданиями обработки эластичных баз данных
 
@@ -57,7 +57,7 @@ ms.locfileid: "74420376"
 
 ![Учетные данные заданий обработки эластичных баз данных](media/elastic-jobs-overview/job-credentials.png)
 
-## <a name="security-best-practices"></a>Рекомендации по обеспечению безопасности
+## <a name="security-best-practices"></a>Лучшие методики обеспечения безопасности
 
 Несколько рекомендаций по оптимальной работе с заданиями обработки эластичных баз данных
 
@@ -88,7 +88,7 @@ ms.locfileid: "74420376"
 
 
 ```sql
-IF NOT EXIST (some_object)
+IF NOT EXISTS (some_object)
     -- Create the object
     -- If it exists, drop the object before recreating it.
 ```
@@ -97,7 +97,7 @@ IF NOT EXIST (some_object)
 
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Создание заданий обработки эластичных баз данных и управление ими с помощью PowerShell](elastic-jobs-powershell.md)
 - [Use Transact-SQL (T-SQL) to create and manage Elastic Database Jobs](elastic-jobs-tsql.md) (Создание заданий обработки эластичных БД и управление ими с использованием Transact-SQL (T-SQL))

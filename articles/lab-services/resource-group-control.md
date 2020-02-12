@@ -12,12 +12,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/03/2019
 ms.author: spelluru
-ms.openlocfilehash: b6f51dee948d9e4d9e3f8594f9f7e60fb11b7057
-ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
+ms.openlocfilehash: 29816d158cf1428727b7ff17bcc2c347f402dedf
+ms.sourcegitcommit: f718b98dfe37fc6599d3a2de3d70c168e29d5156
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75647345"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77134533"
 ---
 # <a name="specify-a-resource-group-for-lab-virtual-machines-in-azure-devtest-labs"></a>Выбор группы ресурсов для виртуальных машин лаборатории в Azure DevTest Labs
 
@@ -31,7 +31,7 @@ ms.locfileid: "75647345"
 С помощью этой функции можно использовать сценарий, чтобы указать новую или существующую группу ресурсов в подписке Azure для всех виртуальных машин лаборатории. В настоящее время Azure DevTest Labs поддерживает эту функцию через API.
 
 > [!NOTE]
-> Все ограничения подписки применяются при создании лабораторий в DevTest Labs. Представьте себе лабораторию в качестве любого другого ресурса в вашей подписке. В случае с группами ресурсов ограничение составляет [980 групп ресурсов на подписку](../azure-resource-manager/management/azure-subscription-service-limits.md#subscription-limits---azure-resource-manager). 
+> Все ограничения подписки применяются при создании лабораторий в DevTest Labs. Представьте себе лабораторию в качестве любого другого ресурса в вашей подписке. В случае с группами ресурсов ограничение составляет [980 групп ресурсов на подписку](../azure-resource-manager/management/azure-subscription-service-limits.md#subscription-limits). 
 
 ## <a name="use-azure-portal"></a>Использование портала Azure
 Выполните следующие действия, чтобы указать группу ресурсов для всех виртуальных машин, созданных в лаборатории. 

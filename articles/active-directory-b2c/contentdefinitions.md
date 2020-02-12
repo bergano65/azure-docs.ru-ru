@@ -10,12 +10,12 @@ ms.topic: reference
 ms.date: 09/10/2018
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 50e17fae88f16d7579997b3b356638777ec3163a
-ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
-ms.translationtype: MT
+ms.openlocfilehash: 3a940c7676a59ed85d5cf16c76f72a12ce0026d5
+ms.sourcegitcommit: b95983c3735233d2163ef2a81d19a67376bfaf15
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2020
-ms.locfileid: "77014289"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77136269"
 ---
 # <a name="contentdefinitions"></a>ContentDefinitions
 
@@ -61,7 +61,7 @@ ms.locfileid: "77014289"
 
 Элемент **ContentDefinition** содержит следующий атрибут:
 
-| attribute | Обязательно для заполнения | Description |
+| attribute | Обязательно | Description |
 | --------- | -------- | ----------- |
 | Идентификатор | Да | Идентификатор определения содержимого. Значение указано в разделе **Идентификаторы определения содержимого** далее на этой странице. |
 
@@ -77,7 +77,7 @@ ms.locfileid: "77014289"
 
 ### <a name="datauri"></a>DataUri
 
-Элемент **DataUri** используется для указания идентификатора страницы. В Azure AD B2C идентификатор страницы используется для загрузки и запуска элементов пользовательского интерфейса и JavaScript на стороне клиента. Формат значения — `urn:com:microsoft:aad:b2c:elements:page-name:version`.  В следующей таблице перечислены идентификаторы страниц, которые можно использовать.
+Элемент **DataUri** используется для указания идентификатора страницы. В Azure AD B2C идентификатор страницы используется для загрузки и запуска элементов пользовательского интерфейса и JavaScript на стороне клиента. Формат значения — `urn:com:microsoft:aad:b2c:elements:page-name:version`.  В следующей таблице перечислены значения и описания идентификаторов страниц, которые можно использовать.
 
 | Значение |   Description |
 | ----- | ----------- |
@@ -99,7 +99,7 @@ ms.locfileid: "77014289"
 
 Элемент **LocalizedResourcesReferences** содержит следующие атрибуты:
 
-| attribute | Обязательно для заполнения | Description |
+| attribute | Обязательно | Description |
 | --------- | -------- | ----------- |
 | Язык | Да | Строка, содержащая поддерживаемый язык для политики согласно стандарту RFC 5646 "Tags for Identifying Languages" (Теги для идентификации языков). |
 | LocalizedResourcesReferenceId | Да | Идентификатор элемента **LocalizedResources**. |

@@ -5,12 +5,12 @@ author: uhabiba04
 ms.topic: article
 ms.date: 11/04/2019
 ms.author: v-umha
-ms.openlocfilehash: 0c03394c48c936f9faef85e9f4933893aaa67090
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 62e5b363f8008380a61e24c0549573a30ecaeb73
+ms.sourcegitcommit: f718b98dfe37fc6599d3a2de3d70c168e29d5156
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75482430"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77131855"
 ---
 # <a name="imagery-partner-integration"></a>Интеграция с партнерскими решениями для получения снимков
 
@@ -40,7 +40,7 @@ ms.locfileid: "75482430"
 
 API-интерфейсы содержат техническую документацию по Swagger. Дополнительные сведения об API и соответствующих запросах или ответах см. в разделе [Swagger](https://aka.ms/FarmBeatsDatahubSwagger).
 
-## <a name="authentication"></a>Проверка подлинности
+## <a name="authentication"></a>Аутентификация
 
 Фармбеатс использует [Active Directory](https://docs.microsoft.com/azure/app-service/overview-authentication-authorization) Microsoft Azure (Azure AD). Служба приложений Azure предоставляет встроенную поддержку проверки подлинности и авторизации. 
 
@@ -492,4 +492,4 @@ JSON является стандартным форматом данных, не
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения об интеграции на основе REST API см. в разделе [REST API](references-for-azure-farmbeats.md#rest-api).
+Дополнительные сведения об интеграции на основе REST API см. в разделе [REST API](rest-api-in-azure-farmbeats.md).

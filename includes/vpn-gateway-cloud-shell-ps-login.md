@@ -1,25 +1,23 @@
 ---
-title: включение файла
-description: включение файла
+title: включить файл
+description: включить файл
 services: vpn-gateway
 author: cherylmc
 ms.service: vpn-gateway
 ms.topic: include
-ms.date: 02/01/2019
+ms.date: 02/10/2020
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: deabef0c2c3540e515fe72a161710c95a20fa86f
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.openlocfilehash: 50ce8530aca40eed07741f35be1a57bbd7cc1868
+ms.sourcegitcommit: f718b98dfe37fc6599d3a2de3d70c168e29d5156
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67185150"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77133604"
 ---
 Откройте консоль PowerShell с повышенными привилегиями.
 
-
-
-Если вы используете Azure PowerShell локально, подключитесь к своей учетной записи Azure. Командлет *Connect-AzAccount* запросит учетные данные. После проверки подлинности он загрузит параметры учетной записи, чтобы они были доступны в Azure PowerShell. Если вы не запускаете PowerShell локально, а вместо этого используете пробную версию Azure Cloud Shell в браузере, можете пропустить этот шаг. Вы автоматически подключитесь к учетной записи Azure.
+Если вы используете Azure PowerShell локально, подключитесь к своей учетной записи Azure. Командлет *Connect-AzAccount* запросит учетные данные. После проверки подлинности он загрузит параметры учетной записи, чтобы они были доступны в Azure PowerShell. Если вместо этого используется Azure Cloud Shell, не нужно выполнять команду *Connect-азаккаунт*. Azure Cloud Shell автоматически подключается к учетной записи Azure.
 
 ```azurepowershell
 Connect-AzAccount

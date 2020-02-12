@@ -15,24 +15,26 @@ ms.topic: article
 ms.date: 03/14/2019
 ms.author: juliako
 ms.reviewer: cenkdin;anilmur
-ms.openlocfilehash: be3c75680599c07a3cebe3dcf0436884958e1706
-ms.sourcegitcommit: de47a27defce58b10ef998e8991a2294175d2098
+ms.openlocfilehash: 1d9d63aa6b3da1b8d8389722bd5af0eeed585d03
+ms.sourcegitcommit: f718b98dfe37fc6599d3a2de3d70c168e29d5156
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "69016668"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77134977"
 ---
 # <a name="use-the-wirecast-encoder-to-send-a-single-bitrate-live-stream"></a>Использование кодировщика Wirecast для отправки односкоростного обновляющегося потока 
 > [!div class="op_single_selector"]
 > * [Wirecast](media-services-configure-wirecast-live-encoder.md)
 > * [Tricaster](media-services-configure-tricaster-live-encoder.md)
-> * [FMLE](media-services-configure-fmle-live-encoder.md)
 >
 >
 
-В этой статье показано, как настроить динамический кодировщик [Telestream Wirecast](https://www.telestream.net/wirecast/overview.htm) для отправки односкоростного потока в каналы AMS, которые выполняют кодирование в режиме реального времени.  Дополнительные сведения можно найти в разделе [Работа с каналами, выполняющими кодирование в реальном времени с помощью служб мультимедиа Azure](media-services-manage-live-encoder-enabled-channels.md).
+В этой статье показано, как настроить динамический кодировщик [Telestream Wirecast](https://www.telestream.net/wirecast/overview.htm) для отправки односкоростного потока в каналы AMS, которые выполняют кодирование в режиме реального времени. Дополнительные сведения можно найти в разделе [Работа с каналами, выполняющими кодирование в реальном времени с помощью служб мультимедиа Azure](media-services-manage-live-encoder-enabled-channels.md).
 
 В этом учебнике показано, как управлять службами мультимедиа Azure (AMS) с помощью Обозревателя служб мультимедиа Azure. Это средство запускается только на компьютерах с ОС Windows. Если вы используете Mac или Linux, воспользуйтесь классическим порталом Azure для создания [каналов](media-services-portal-creating-live-encoder-enabled-channel.md#create-a-channel) и [программ](media-services-portal-creating-live-encoder-enabled-channel.md).
+
+> [!NOTE]
+> Кодировщики должны поддерживать TLS 1,2 при использовании протоколов РТМПС. Используйте Wirecast версии 13.0.2 или выше из-за требования TLS 1,2.
 
 ## <a name="prerequisites"></a>предварительные требования
 * [Создайте учетную запись служб мультимедиа Azure](media-services-portal-create-account.md).
@@ -45,7 +47,7 @@ ms.locfileid: "69016668"
 * Для получения необходимой пропускной способности рекомендуется удвоить скорость потоковой передачи. Это требование не является обязательным, но оно поможет уменьшить влияние перегрузки сети на пропускную способность.
 * При использовании программных кодировщиков закройте все ненужные программы.
 
-## <a name="create-a-channel"></a>Создать канал
+## <a name="create-a-channel"></a>Создание канала
 1. В средстве AMSE откройте вкладку **Live** (Передача) и щелкните правой кнопкой мыши в области канала. Выберите **Создать канал...** в меню.
 
     ![Wirecast](./media/media-services-wirecast-live-encoder/media-services-wirecast1.png)
@@ -107,7 +109,7 @@ ms.locfileid: "69016668"
    * Кодировщик: MainConcept H.264
    * Кадров в секунду: 30
    * Средняя скорость: 5000 кбит/сек (это значение можно изменить в зависимости от ограничений сети)
-   * Профиль: Основной
+   * Профиль: основной
    * Ключевой кадр: каждые 60 кадров
 
      **Звук:**

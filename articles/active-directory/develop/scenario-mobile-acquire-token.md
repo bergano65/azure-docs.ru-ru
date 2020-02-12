@@ -1,7 +1,7 @@
 ---
 title: Получение маркера для вызова веб-API (мобильные приложения) | Службы
 titleSuffix: Microsoft identity platform
-description: Узнайте, как создать мобильное приложение, вызывающее веб-API (получение маркера для приложения).
+description: Узнайте, как создать мобильное приложение, вызывающее веб-API. (Получите маркер для приложения.)
 services: active-directory
 documentationcenter: dev-center-name
 author: jmprieur
@@ -16,34 +16,34 @@ ms.date: 05/07/2019
 ms.author: jmprieur
 ms.reviwer: brandwe
 ms.custom: aaddev
-ms.openlocfilehash: 2a86e8352958524bc51b185712d6b60ec347b98e
-ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
+ms.openlocfilehash: 9427235f47a31da75426559a4285634ab2837577
+ms.sourcegitcommit: f718b98dfe37fc6599d3a2de3d70c168e29d5156
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76702102"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77132460"
 ---
-# <a name="mobile-app-that-calls-web-apis---get-a-token"></a>Мобильное приложение, вызывающее веб-API — получение токена
+# <a name="get-a-token-for-a-mobile-app-that-calls-web-apis"></a>Получение маркера для мобильного приложения, вызывающего веб-API
 
-Прежде чем начать вызов защищенных веб-API, приложению потребуется маркер доступа. В этой статье описывается процесс получения маркера с помощью библиотеки проверки подлинности Майкрософт (MSAL).
+Прежде чем приложение сможет вызывать защищенные веб-API, ему нужен маркер доступа. В этой статье описывается процесс получения маркера с помощью библиотеки проверки подлинности Майкрософт (MSAL).
 
-## <a name="scopes-to-request"></a>Области для запроса
+## <a name="define-a-scope"></a>Определение области
 
 При запросе маркера необходимо определить область. Область определяет, к каким данным имеет доступ приложение.  
 
-Самый простой подход заключается в объединении требуемого `App ID URI` веб-API с областью `.default`. Это указывает платформе удостоверений Майкрософт, что приложению требуются все области, установленные на портале.
+Самый простой способ определить область — объединить требуемый `App ID URI` веб-API с областью `.default`. Это определение указывает платформе удостоверений Майкрософт, что приложению требуются все области, заданные на портале.
 
-#### <a name="android"></a>Android
+### <a name="android"></a>Android
 ```Java
 String[] SCOPES = {"https://graph.microsoft.com/.default"};
 ```
 
-#### <a name="ios"></a>iOS
+### <a name="ios"></a>iOS
 ```swift
 let scopes = ["https://graph.microsoft.com/.default"]
 ```
 
-#### <a name="xamarin"></a>Xamarin
+### <a name="xamarin"></a>Xamarin
 ```csharp 
 var scopes = new [] {"https://graph.microsoft.com/.default"};
 ```
@@ -52,7 +52,7 @@ var scopes = new [] {"https://graph.microsoft.com/.default"};
 
 ### <a name="acquire-tokens-via-msal"></a>Получение маркеров через MSAL
 
-MSAL позволяет приложениям получать маркеры автоматически и интерактивно. Просто вызовите эти методы и MSAL возвращает маркер доступа для запрошенных областей. Правильный шаблон — выполнить автоматический запрос и вернуться к интерактивному запросу.
+MSAL позволяет приложениям получать маркеры автоматически и интерактивно. При вызове `AcquireTokenSilent()` или `AcquireTokenInteractive()`MSAL возвращает маркер доступа для запрошенных областей. Правильный шаблон заключается в том, чтобы выполнить автоматический запрос, а затем вернуться к интерактивному запросу.
 
 #### <a name="android"></a>Android
 
@@ -80,15 +80,13 @@ sampleApp.getAccounts(new PublicClientApplication.AccountsLoadedCallback() {
 [...]
 
 // No accounts found. Interactively request a token.
-// TODO: Create an interactive callback to catch successful or failed request.
+// TODO: Create an interactive callback to catch successful or failed requests.
 sampleApp.acquireToken(getActivity(), SCOPES, getAuthInteractiveCallback());        
 ```
 
 #### <a name="ios"></a>iOS
 
-**Сначала попытайтесь получить маркер автоматически:**
-
-Objective-C.
+Сначала попытайтесь получить маркер автоматически:
 
 ```objc
 
@@ -119,8 +117,6 @@ MSALSilentTokenParameters *silentParams = [[MSALSilentTokenParameters alloc] ini
 }];
 ```
  
-Swift:
-
 ```swift
 
 let scopes = ["https://graph.microsoft.com/.default"]
@@ -152,9 +148,7 @@ application.acquireTokenSilent(with: silentParameters) { (result, error) in
 }
 ```
 
-**Затем, если MSAL возвращает `MSALErrorInteractionRequired`, попробуйте получить маркеры в интерактивном режиме:**
-
-Objective-C.
+Если MSAL возвращает `MSALErrorInteractionRequired`, попробуйте получить маркеры в интерактивном режиме:
 
 ```objc
 UIViewController *viewController = ...; // Pass a reference to the view controller that should be used when getting a token interactively
@@ -172,8 +166,6 @@ MSALInteractiveTokenParameters *interactiveParams = [[MSALInteractiveTokenParame
 }];
 ```
 
-Swift:
-
 ```swift
 let viewController = ... // Pass a reference to the view controller that should be used when getting a token interactively
 let webviewParameters = MSALWebviewParameters(parentViewController: viewController)
@@ -190,14 +182,14 @@ application.acquireToken(with: interactiveParameters, completionBlock: { (result
 })
 ```
 
-MSAL для iOS и macOS поддерживает различные модификаторы при получении маркера в интерактивном или автоматическом режиме.
-* [Общие параметры при получении токена](https://azuread.github.io/microsoft-authentication-library-for-objc/Classes/MSALTokenParameters.html#/Configuration%20parameters)
-* [Параметры для получения интерактивного маркера](https://azuread.github.io/microsoft-authentication-library-for-objc/Classes/MSALInteractiveTokenParameters.html#/Configuring%20MSALInteractiveTokenParameters)
+MSAL для iOS и macOS поддерживает различные модификаторы для интерактивного или автоматического получения маркера:
+* [Общие параметры для получения маркера](https://azuread.github.io/microsoft-authentication-library-for-objc/Classes/MSALTokenParameters.html#/Configuration%20parameters)
+* [Параметры для получения интерактивного токена](https://azuread.github.io/microsoft-authentication-library-for-objc/Classes/MSALInteractiveTokenParameters.html#/Configuring%20MSALInteractiveTokenParameters)
 * [Параметры для получения автоматического токена](https://azuread.github.io/microsoft-authentication-library-for-objc/Classes/MSALSilentTokenParameters.html)
 
 #### <a name="xamarin"></a>Xamarin
 
-В следующем примере показан минимальный код для интерактивного получения маркера для чтения профиля пользователя с Microsoft Graph.
+В следующем примере показан минимальный код для интерактивного получения маркера. В примере для чтения профиля пользователя используется Microsoft Graph.
 
 ```csharp
 string[] scopes = new string[] {"user.read"};
@@ -218,29 +210,45 @@ catch(MsalUiRequiredException)
 
 #### <a name="mandatory-parameters-in-msalnet"></a>Обязательные параметры в MSAL.NET
 
-`AcquireTokenInteractive` имеет только один обязательный параметр ``scopes``, который содержит перечисление строк, определяющих области, для которых требуется маркер. Если маркер предназначен для Microsoft Graph, необходимые области можно найти в справочнике по API для каждого API Microsoft Graph в разделе "разрешения". Например, чтобы получить [список контактов пользователя](https://developer.microsoft.com/graph/docs/api-reference/v1.0/api/user_list_contacts), необходимо будет использовать область "пользователь. чтение", "Contacts. Read". См. также [Microsoft Graph ссылки на разрешения](https://developer.microsoft.com/graph/docs/concepts/permissions_reference).
+`AcquireTokenInteractive` имеет только один обязательный параметр: `scopes`. Параметр `scopes` перечисляет строки, определяющие области, для которых требуется токен. Если маркер предназначен для Microsoft Graph, необходимые области можно найти в справочнике по API для каждого Microsoft Graph API. В справочной документации перейдите к разделу "разрешения". 
 
-Если вы не указали его при создании приложения на Android, необходимо также указать родительское действие (с помощью `.WithParentActivityOrWindow`, см. ниже), чтобы токен был возвращен к родительскому действию после взаимодействия. Если не указать его, при вызове `.ExecuteAsync()`будет создано исключение.
+Например, чтобы получить [список контактов пользователя](https://developer.microsoft.com/graph/docs/api-reference/v1.0/api/user_list_contacts), используйте область "пользователь. чтение", "Контакты. чтение". Дополнительные сведения см. в разделе [Справочник по разрешениям Microsoft Graph](https://developer.microsoft.com/graph/docs/concepts/permissions_reference).
+
+В Android можно указать родительские действия при создании приложения с помощью `PublicClientApplicationBuilder`. Если вы не укажете родительские действия в это время, позже его можно будет указать с помощью `.WithParentActivityOrWindow`, как описано в следующем разделе. При указании родительского действия маркер возвращается к родительскому действию после взаимодействия. Если вы не укажете его, то `.ExecuteAsync()` вызов создаст исключение.
 
 #### <a name="specific-optional-parameters-in-msalnet"></a>Определенные необязательные параметры в MSAL.NET
 
+В следующих разделах описываются необязательные параметры в MSAL.NET. 
+
 ##### <a name="withprompt"></a>виспромпт
 
-`WithPrompt()` используется для управления взаимодействием с пользователем путем указания запроса
+Параметр `WithPrompt()` управляет взаимодействием с пользователем, указывая запрос.
 
 <img src="https://user-images.githubusercontent.com/13203188/53438042-3fb85700-39ff-11e9-9a9e-1ff9874197b3.png" width="25%" />
 
 Класс определяет следующие константы:
 
-- ``SelectAccount``: принудительно выдаст STS диалоговое окно выбора учетной записи, содержащее учетные записи, для которых у пользователя есть сеанс. Этот параметр полезен в тех случаях, когда разработчики приложений хотят позволить пользователю выбирать из разных удостоверений. Этот параметр позволяет MSAL отправить ``prompt=select_account`` поставщику удостоверений. Этот параметр используется по умолчанию, и он обеспечивает оптимальную работу на основе доступных сведений (учетной записи, присутствия сеанса для пользователя и т. д.). ...). Не изменяйте его, если у вас нет веских причин.
-- ``Consent``: позволяет разработчику приложения принудительно запрашивать согласие пользователя, даже если было предоставлено согласие. В этом случае MSAL отправляет `prompt=consent` поставщику удостоверений. Этот параметр можно использовать в некоторых приложениях безопасности, в которых Управление организацией требует, чтобы пользователь предвидит диалоговое окно согласия при каждом использовании приложения.
-- ``ForceLogin``: позволяет разработчику приложения предоставлять пользователю запрос на ввод учетных данных, даже если он не нужен. Этот параметр может быть полезен в случае сбоя при получении маркера, чтобы пользователь мог повторно выполнить вход. В этом случае MSAL отправляет `prompt=login` поставщику удостоверений. Опять же, мы видели, что он использовался в некоторых приложениях, ориентированных на безопасность, где управление Организацией требует, чтобы пользователь повторно вошел в систему при каждом доступе к определенным частям приложения.
-- ``Never`` (только для .NET 4,5 и WinRT) не запрашивает пользователя, а вместо этого будет пытаться использовать файл cookie, хранящийся в скрытом внедренном веб-представлении (см. раздел веб-представления в MSAL.NET). Использование этого параметра может завершиться ошибкой, и в этом случае `AcquireTokenInteractive` выдаст исключение, чтобы уведомить о необходимости взаимодействия пользовательского интерфейса, и необходимо использовать другой параметр `Prompt`.
-- ``NoPrompt``: не отправляет никаких запросов поставщику удостоверений. Этот параметр полезен только для Azure AD B2C редактирования политик профилей (см. раздел [особенности B2C](https://aka.ms/msal-net-b2c-specificities)).
+- `SelectAccount` заставляет службу маркеров безопасности (STS) представлять диалоговое окно выбора учетной записи. Диалоговое окно содержит учетные записи, для которых у пользователя есть сеанс. Этот параметр можно использовать, если вы хотите разрешить пользователю выбирать между разными удостоверениями. Этот параметр позволяет MSAL отправить `prompt=select_account` поставщику удостоверений. 
+    
+    По умолчанию используется константа `SelectAccount`, и она эффективно обеспечивает оптимальное взаимодействие на основе доступных данных. Доступные сведения могут включать учетную запись, присутствие сеанса для пользователя и т. д. Не изменяйте это значение по умолчанию, если у вас нет веских причин для этого.
+- `Consent` позволяет запросить согласие пользователя, даже если было предоставлено согласие. В этом случае MSAL отправляет `prompt=consent` поставщику удостоверений. 
+
+    Вы можете использовать `Consent`ную константу в приложениях, ориентированных на безопасность, где управление Организацией требует, чтобы пользователи могли видеть диалоговое окно согласия при каждом использовании приложения.
+- `ForceLogin` позволяет службе предлагать пользователю ввести учетные данные, даже если запрос не требуется. 
+
+    Этот параметр может быть полезен в случае сбоя при получении маркера и необходимости повторного входа пользователя. В этом случае MSAL отправляет `prompt=login` поставщику удостоверений. Этот параметр может потребоваться использовать в приложениях, ориентированных на безопасность, где управление Организацией требует от пользователя входа при каждом доступе к конкретным частям приложения.
+- `Never` предназначен только для .NET 4,5 и среда выполнения Windows (WinRT). Эта константа не будет запрашивать пользователя, но будет пытаться использовать файл cookie, хранящийся в скрытом внедренном веб-представлении. Дополнительные сведения см. [в разделе Использование веб-браузеров с MSAL.NET](https://docs.microsoft.com/azure/active-directory/develop/msal-net-web-browsers).
+
+    В случае сбоя этого параметра `AcquireTokenInteractive` создает исключение, уведомляющее о необходимости взаимодействия с ИП. Затем необходимо использовать другой параметр `Prompt`.
+- `NoPrompt` не отправляет запрос поставщику удостоверений. 
+
+    Этот параметр полезен только для политик редактирования профилей в Azure Active Directory B2C. Дополнительные сведения см. в разделе [особенности B2C](https://aka.ms/msal-net-b2c-specificities).
 
 ##### <a name="withextrascopetoconsent"></a>висекстраскопетоконсент
 
-Этот модификатор используется в расширенном сценарии, где пользователь должен заранее согласиться с несколькими ресурсами (и вы не хотите использовать добавочное согласие, которое обычно используется с MSAL.NET/платформой Microsoft Identity Platform v 2.0). Дополнительные сведения см. в разделе [как получить согласие пользователя на получение нескольких ресурсов](scenario-desktop-production.md#have-the-user-consent-upfront-for-several-resources).
+Используйте модификатор `WithExtraScopeToConsent` в расширенном сценарии, в котором пользователь должен предоставить предварительное согласие на несколько ресурсов. Этот модификатор можно использовать, если вы не хотите использовать добавочное согласие, которое обычно используется с MSAL.NET или Microsoft Identity Platform 2,0. Дополнительные сведения см. [в разделе предварительное согласие пользователя на наличие нескольких ресурсов](scenario-desktop-production.md#have-the-user-consent-upfront-for-several-resources).
+
+Ниже приведен пример кода. 
 
 ```csharp
 var result = await app.AcquireTokenInteractive(scopesForCustomerApi)
@@ -250,15 +258,18 @@ var result = await app.AcquireTokenInteractive(scopesForCustomerApi)
 
 ##### <a name="other-optional-parameters"></a>Другие необязательные параметры
 
-Дополнительные сведения о других необязательных параметрах `AcquireTokenInteractive` см. в справочной документации по [аккуиретокенинтерактивепараметербуилдер](/dotnet/api/microsoft.identity.client.acquiretokeninteractiveparameterbuilder?view=azure-dotnet-preview#methods) .
+Дополнительные сведения о других необязательных параметрах для `AcquireTokenInteractive`см. в [справочной документации по аккуиретокенинтерактивепараметербуилдер](/dotnet/api/microsoft.identity.client.acquiretokeninteractiveparameterbuilder?view=azure-dotnet-preview#methods).
 
 ### <a name="acquire-tokens-via-the-protocol"></a>Получение маркеров через протокол
 
-Мы не советуем использовать протокол напрямую. В этом случае приложение не будет поддерживать некоторые возможности единого входа (SSO), управления устройствами и условного доступа.
+Мы не рекомендуем напрямую использовать протокол для получения маркеров. В этом случае приложение не будет поддерживать некоторые сценарии, использующие единый вход (SSO), Управление устройствами и условный доступ.
 
-При использовании протокола для получения маркеров для мобильных приложений необходимо выполнить два запроса: получение кода авторизации и его обмен для маркера.
+При использовании протокола для получения маркеров для мобильных приложений выполните два запроса: 
 
-#### <a name="get-authorization-code"></a>Получение кода авторизации
+* Получите код авторизации.
+* Обмен кодом для маркера.
+
+#### <a name="get-an-authorization-code"></a>Получение кода авторизации
 
 ```Text
 https://login.microsoftonline.com/{tenant}/oauth2/v2.0/authorize?
@@ -270,7 +281,7 @@ client_id=<CLIENT_ID>
 &state=12345
 ```
 
-#### <a name="get-access-and-refresh-token"></a>Получение маркера доступа и обновления
+#### <a name="get-access-and-refresh-the-token"></a>Получение доступа и обновление токена
 
 ```Text
 POST /{tenant}/oauth2/v2.0/token HTTP/1.1

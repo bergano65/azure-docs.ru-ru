@@ -1,5 +1,5 @@
 ---
-title: Добавление и удаление назначений ролей для внешних гостевых пользователей с помощью Azure RBAC и портал Azure
+title: Добавление и удаление назначений ролей для внешних пользователей с RBAC и портал Azure
 description: Узнайте, как предоставить доступ к ресурсам Azure для пользователей, внешних по отношению к Организации, с помощью управления доступом на основе ролей (RBAC) Azure.
 services: active-directory
 documentationcenter: ''
@@ -16,18 +16,18 @@ ms.date: 11/25/2019
 ms.author: rolyon
 ms.reviewer: skwan
 ms.custom: it-pro
-ms.openlocfilehash: db43a3cce27da5f40986968b6573bfd58a1d3cb7
-ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
+ms.openlocfilehash: 1c440b85f792ac5bb1336f4d20f930aafc38ad7d
+ms.sourcegitcommit: b95983c3735233d2163ef2a81d19a67376bfaf15
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74707885"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77138375"
 ---
 # <a name="add-or-remove-role-assignments-for-external-guest-users-using-azure-rbac-and-the-azure-portal"></a>Добавление и удаление назначений ролей для внешних гостевых пользователей с помощью Azure RBAC и портал Azure
 
 [Управление доступом на основе ролей (RBAC) в Azure](overview.md) обеспечивает улучшенное управление безопасностью для крупных организаций, а также для малых и средних предприятий, работающих с внешними участниками совместной работы, поставщиками или в сети, которым требуется доступ к конкретным ресурсам в вашей среде, но не обязательно ко всей инфраструктуре или всем областям, связанным с выставлением счетов. Вы можете использовать возможности [Azure Active Directory B2B](../active-directory/b2b/what-is-b2b.md) для совместной работы с внешними гостевыми пользователями. Вы можете использовать RBAC, чтобы предоставить только те разрешения, которые необходимы гостевым пользователям в вашей среде.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 Для добавления или удаления назначений ролей необходимо иметь следующее:
 
@@ -155,7 +155,7 @@ ms.locfileid: "74707885"
 
    ![Удалить назначение роли](./media/role-assignments-external-users/remove-role-assignment-select.png)
 
-1. Нажмите кнопку **Удалить**.
+1. Щелкните **Удалить**.
 
    ![Сообщение об удалении назначения роли](./media/role-assignments-external-users/remove-role-assignment.png)
 
@@ -165,13 +165,13 @@ ms.locfileid: "74707885"
 
 1. Щелкните гостевой пользователь, которого хотите удалить.
 
-1. Нажмите кнопку **Delete**(Удалить).
+1. Щелкните **Удалить**.
 
    ![Удаление гостевого пользователя](./media/role-assignments-external-users/delete-guest-user.png)
 
 1. В появившемся сообщении об удалении нажмите кнопку **Да**.
 
-## <a name="troubleshoot"></a>Устранение неполадок
+## <a name="troubleshoot"></a>Диагностика
 
 ### <a name="guest-user-cannot-browse-the-directory"></a>Гостевой пользователь не может просматривать каталог
 

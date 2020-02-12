@@ -3,13 +3,13 @@ title: Ограничения и квоты подписки Azure
 description: В этой статье приводится перечень наиболее распространенных ограничений, относящихся к подписке Azure и различным службам, квот и границ. Эта статья содержит сведения о том, как увеличить пределы и максимальное значение.
 tags: billing
 ms.topic: conceptual
-ms.date: 01/30/2020
-ms.openlocfilehash: b209bc3e60f50ac363d3426d6c87f206b016d711
-ms.sourcegitcommit: cfbea479cc065c6343e10c8b5f09424e9809092e
-ms.translationtype: MT
+ms.date: 02/10/2020
+ms.openlocfilehash: 0891a18c782d4d60970ccba8efa7c9bfc98f19df
+ms.sourcegitcommit: f718b98dfe37fc6599d3a2de3d70c168e29d5156
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2020
-ms.locfileid: "77087426"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77133695"
 ---
 # <a name="azure-subscription-and-service-limits-quotas-and-constraints"></a>Подписка Azure, границы, квоты и ограничения службы
 
@@ -28,8 +28,6 @@ ms.locfileid: "77087426"
 ## <a name="limits-and-azure-resource-manager"></a>Ограничения и Azure Resource Manager
 
 Несколько ресурсов Azure можно объединить в одну группу ресурсов Azure. При использовании групп ресурсов ограничения, которые однажды были глобальными, становятся управляемыми на региональном уровне с Azure Resource Manager. Дополнительные сведения о группах ресурсов Azure см. в разделе [Azure Resource Manager обзор](overview.md).
-
-В следующем списке ограничений в новой таблице отражены все различия в ограничениях при использовании Azure Resource Manager. Например, таблица **ограничивается подпиской** на подписку, а **Azure Resource Manager** таблицей. Если ограничение применяется к обоим сценариям, оно отображается только в первой таблице. Если не указано иное, ограничения глобальны во всех областях.
 
 > [!NOTE]
 > Квоты для ресурсов в группах ресурсов Azure доступны для каждого региона, а не для подписки, так как квоты на управление службами. В качестве примера используем квоты виртуальных процессоров. Чтобы запросить увеличение квоты с поддержкой виртуальных ЦП, необходимо решить, сколько виртуальных ЦП вы хотите использовать в разных регионах. Затем вы выполните Специальный запрос квоты виртуальных ЦП для группы ресурсов Azure для нужных вам объемов и регионов. Если вам нужно использовать 30 виртуальных ЦП в Западной Европе для запуска приложения, вы запрашиваете 30 виртуальных ЦП в Западной Европе. Квота виртуальных ЦП не увеличивается в любом другом регионе. в Западной Европе есть 30-виртуальных цпная квота.
@@ -115,13 +113,7 @@ ms.locfileid: "77087426"
 
 ### <a name="subscription-limits"></a>Ограничения подписки
 
-#### <a name="subscription-limits---azure-service-management-classic-deployment-model"></a>Ограничения подписки — Управление службами Azure (классическая модель развертывания)
-
-[!INCLUDE [azure-subscription-limits](../../../includes/azure-subscription-limits.md)]
-
-#### <a name="subscription-limits---azure-resource-manager"></a>Ограничения подписки — Azure Resource Manager
-
-При использовании Azure Resource Manager и групп ресурсов Azure действуют следующие ограничения. Ограничения, которые не были изменены Azure Resource Manager, отсутствуют в списке. Эти ограничения приведены в предыдущей таблице.
+При использовании Azure Resource Manager и групп ресурсов Azure действуют следующие ограничения.
 
 Сведения об ограничениях на операции записи и чтения API Resource Manager см. в разделе [Регулирование запросов Resource Manager](request-limits-and-throttling.md).
 
@@ -485,6 +477,12 @@ ms.locfileid: "77087426"
 ### <a name="sql-data-warehouse-limits"></a>Ограничения хранилища данных SQL
 
 Ограничения для хранилища данных SQL см. в статье [ограничения ресурсов хранилища данных](../../sql-data-warehouse/sql-data-warehouse-service-capacity-limits.md)SQL.
+
+### <a name="classic-deployment-model-limits"></a>Ограничения классической модели развертывания
+
+Если вместо модели развертывания Azure Resource Manager используется классическая модель развертывания, применяются следующие ограничения.
+
+[!INCLUDE [azure-subscription-limits](../../../includes/azure-subscription-limits.md)]
 
 ## <a name="see-also"></a>См. также раздел
 
