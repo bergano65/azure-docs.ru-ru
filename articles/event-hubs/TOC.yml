@@ -32,7 +32,7 @@
           href: get-started-java-send-v2.md
         - name: Python (azure-eventhub версии 5)
           href: get-started-python-send-v2.md
-        - name: Node.js (azure/event-hubs версии 5)
+        - name: JavaScript (azure/event-hubs версии 5)
           href: get-started-node-send-v2.md
         - name: Go
           href: event-hubs-go-get-started-send.md
@@ -40,14 +40,28 @@
           href: event-hubs-c-getstarted-send.md
         - name: Apache Storm (только получение)
           href: event-hubs-storm-getstarted-receive.md
+    - name: События отправки и получения (старые версии и пакеты)
+      items:
+        - name: .NET Core (Microsoft.Azure.EventHubs)
+          href: event-hubs-dotnet-standard-getstarted-send.md
+        - name: Java (azure-eventhubs)
+          href: event-hubs-java-get-started-send.md
+        - name: Python (azure-eventhub версии 1)
+          href: event-hubs-python-get-started-send.md
+        - name: "JavaScript (azure/event-hubs версии\_2)"
+          href: event-hubs-node-get-started-send.md
+        - name: .NET Framework (Microsoft.Azure.EventHubs)
+          href: event-hubs-dotnet-framework-getstarted-send.md
     - name: Сбор событий
       items:
         - name: Использование портала Azure для включения функции "Сбор" в Центрах событий
           href: event-hubs-capture-enable-through-portal.md
         - name: Использование шаблона Resource Manager для включения функции "Сбор" в Центрах событий
           href: event-hubs-resource-manager-namespace-event-hub-enable-capture.md
-        - name: Запись данных концентраторов событий с помощью Python (azure-eventhub версии 5)
+        - name: "Чтение данных концентраторов событий с помощью Python (azure-eventhub версии\_5)"
           href: get-started-capture-python-v2.md
+        - name: Чтение данных концентраторов событий с помощью Python (azure-eventhub версии 1)
+          href: event-hubs-capture-python.md
     - name: Потоковая передача данных в Центры событий для Apache Kafka
       href: event-hubs-quickstart-kafka-enabled-event-hubs.md
     - name: Создание кластера ценовой категории "Выделенный"
@@ -81,7 +95,7 @@
       items:
         - name: Геоизбыточное аварийное восстановление и георепликация
           href: event-hubs-geo-dr.md
-    - name: безопасность
+    - name: Безопасность
       items:
         - name: Авторизация
           items:
@@ -126,20 +140,6 @@
               href: 'https://github.com/Azure/azure-sdk-for-java/blob/master/sdk/eventhubs/azure-messaging-eventhubs/README.md'
             - name: .NET (Microsoft.Azure.EventHubs)
               href: event-hubs-programming-guide.md
-        - name: Чтение данных концентраторов событий с помощью Python (azure-eventhub версии 1)
-          href: event-hubs-capture-python.md
-        - name: События отправки и получения (старые версии и пакеты)
-          items:
-            - name: .NET Core (Microsoft.Azure.EventHubs)
-              href: event-hubs-dotnet-standard-getstarted-send.md
-            - name: Java (azure-eventhubs)
-              href: event-hubs-java-get-started-send.md
-            - name: Python (azure-eventhub версии 1)
-              href: event-hubs-python-get-started-send.md
-            - name: Node.js (azure/event-hubs версии 2)
-              href: event-hubs-node-get-started-send.md
-            - name: .NET Framework (Microsoft.Azure.EventHubs)
-              href: event-hubs-dotnet-framework-getstarted-send.md
     - name: Обработка данных
       items:
         - name: Обработка данных с помощью Azure Stream Analytics
@@ -234,7 +234,7 @@
               href: /python/api/azure-eventhub/?view=azure-python
         - name: Библиотека управления
           href: /python/api/overview/azure/event-hub?view=azure-python
-    - name: Node.js
+    - name: JavaScript
       items:
         - name: Миграция с azure/eventhubs версии 2 на версию 5
           href: 'https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/eventhub/event-hubs/migrationguide.md'

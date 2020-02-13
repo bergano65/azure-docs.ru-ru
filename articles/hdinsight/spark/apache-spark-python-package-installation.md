@@ -7,12 +7,12 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 11/19/2019
-ms.openlocfilehash: 109ac20d8a3d3dc87b4a83165c0e6c24808c1340
-ms.sourcegitcommit: ce4a99b493f8cf2d2fd4e29d9ba92f5f942a754c
+ms.openlocfilehash: 6342e6a75c8397712e028874b4d727bf3d6f5ff4
+ms.sourcegitcommit: cfbea479cc065c6343e10c8b5f09424e9809092e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/28/2019
-ms.locfileid: "75529649"
+ms.lasthandoff: 02/08/2020
+ms.locfileid: "77087122"
 ---
 # <a name="safely-manage-python-environment-on-azure-hdinsight-using-script-action"></a>Безопасное управление средой Python в Azure HDInsight с помощью действия скрипта
 
@@ -22,7 +22,7 @@ ms.locfileid: "75529649"
 
 В HDInsight имеется две встроенные установки Python в кластере Spark, Anaconda Python 2,7 и Python 3,5. В некоторых случаях клиентам необходимо настроить среду Python, например установить внешние пакеты Python или другую версию Python. В этой статье мы покажем лучшую методику безопасного управления окружениями Python в кластере [Apache Spark](https://spark.apache.org/) в HDInsight.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Подписка Azure. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/documentation/videos/get-azure-free-trial-for-testing-hadoop-in-hdinsight/).
 
@@ -43,15 +43,15 @@ ms.locfileid: "75529649"
 > [!IMPORTANT]
 > Компоненты, поставляемые с кластером HDInsight, полностью поддерживаются. Служба поддержки Майкрософт помогает выявлять и устранять проблемы, связанные с этими компонентами.
 >
-> Настраиваемые компоненты получают ограниченную коммерчески оправданную поддержку, способствующую дальнейшей диагностике проблемы. Служба поддержки Майкрософт может устранить проблему ИЛИ вас могут попросить обратиться к специалистам по технологиям с открытым исходным кодом, используя доступные каналы связи. Можно использовать ряд сайтов сообществ, например [форум MSDN по HDInsight](https://social.msdn.microsoft.com/Forums/azure/home?forum=hdinsight) или [https://stackoverflow.com](https://stackoverflow.com). Кроме того, в проектах Apache есть сайты проектов на [https://apache.org](https://apache.org), например [Hadoop](https://hadoop.apache.org/).
+> Настраиваемые компоненты получают ограниченную коммерчески оправданную поддержку, способствующую дальнейшей диагностике проблемы. Служба поддержки Майкрософт может устранить проблему ИЛИ вас могут попросить обратиться к специалистам по технологиям с открытым исходным кодом, используя доступные каналы связи. Вы можете использовать сайты сообществ, например: [форум MSDN по HDInsight](https://social.msdn.microsoft.com/Forums/azure/home?forum=hdinsight), [https://stackoverflow.com](https://stackoverflow.com). Кроме того, для проектов Apache есть соответствующие сайты ([https://apache.org](https://apache.org)), например [Hadoop](https://hadoop.apache.org/).
 
 ## <a name="understand-default-python-installation"></a>Общие сведения об установке Python по умолчанию
 
 Кластер HDInsight Spark создается с установкой Anaconda. В кластере есть две установки Python, Anaconda Python 2,7 и Python 3,5. В таблице ниже показаны параметры Python по умолчанию для Spark, Livy и Jupyter.
 
-| |Python 2.7;|Python 3.5|
+| |Python 2,7|Python 3.5|
 |----|----|----|
-|путь|/уср/бин/анаконда/бин|/usr/bin/anaconda/envs/py35/bin|
+|Path|/уср/бин/анаконда/бин|/usr/bin/anaconda/envs/py35/bin|
 |Spark|Значение по умолчанию — 2,7|Н/Д|
 |Livy|Значение по умолчанию — 2,7|Н/Д|
 |Jupyter|Ядро PySpark|Ядро PySpark3|
@@ -122,19 +122,19 @@ ms.locfileid: "75529649"
 
 ## <a name="known-issue"></a>Известная проблема
 
-Существует известная ошибка для Anaconda версии 4.7.11 и 4.7.12. Если вы видите, что действия сценария зависает на `"Collecting package metadata (repodata.json): ...working..."` и при сбое `"Python script has been killed due to timeout after waiting 3600 secs"`. Вы можете скачать [этот скрипт](https://gregorysfixes.blob.core.windows.net/public/fix-conda.sh) и запустить его как действия сценария на всех узлах, чтобы устранить проблему.
+Существует известная ошибка для Anaconda версии 4.7.11, 4.7.12 и 4.8.0. Если вы видите, что действия сценария зависает на `"Collecting package metadata (repodata.json): ...working..."` и при сбое `"Python script has been killed due to timeout after waiting 3600 secs"`. Вы можете скачать [этот скрипт](https://gregorysfixes.blob.core.windows.net/public/fix-conda.sh) и запустить его как действия сценария на всех узлах, чтобы устранить проблему.
 
 Чтобы проверить версию Anaconda, можно установить SSH-подключение к узлу заголовка кластера и запустить `/usr/bin/anaconda/bin/conda --v`.
 
 ## <a name="seealso"></a> См. также
 
-* [Обзор: Apache Spark в Azure HDInsight](apache-spark-overview.md)
+* [Обзор: Spark в Azure HDInsight](apache-spark-overview.md)
 
 ### <a name="scenarios"></a>Сценарии
 
-* [Использование Apache Spark со средствами бизнес-аналитики. Выполнение интерактивного анализа данных с использованием Spark в HDInsight с помощью средств бизнес-аналитики](apache-spark-use-bi-tools.md)
-* [Apache Spark и Машинное обучение. Анализ температуры в здании на основе данных системы кондиционирования с помощью Spark в HDInsight](apache-spark-ipython-notebook-machine-learning.md)
-* [Apache Spark и Машинное обучение. Прогнозирование результатов проверки пищевых продуктов с помощью Spark в HDInsight](apache-spark-machine-learning-mllib-ipython.md)
+* [Руководство. Анализ данных Apache Spark с использованием Power BI в HDInsight](apache-spark-use-bi-tools.md)
+* [Использование Apache Spark MLlib для Создание приложения машинного обучения Apache Spark в HDInsight](apache-spark-ipython-notebook-machine-learning.md)
+* [Использование Apache Spark MLlib для создания приложения машинного обучения и анализа набора данных](apache-spark-machine-learning-mllib-ipython.md)
 * [Анализ журналов веб-сайтов с помощью Apache Spark в HDInsight](apache-spark-custom-library-website-log-analysis.md)
 
 ### <a name="create-and-run-applications"></a>Создание и запуск приложений

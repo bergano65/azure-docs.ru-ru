@@ -38,7 +38,7 @@ ms.locfileid: "68380750"
 Жизненный цикл партнера Управляется основной или приглашающей организацией.  | Жизненный пользователя Управляется самостоятельно или приложением.
 Политика безопасности и соответствие требованиям За управление отвечает основная или приглашающая организация (например, с использованием [политик условного доступа](https://docs.microsoft.com/azure/active-directory/b2b/conditional-access)).  | Политика безопасности и соответствие требованиям Управляется приложением.
 Фирменная символика Используется торговая марка основной или приглашающей организации.  |    Фирменная символика Управляется приложением. Как правило, используется торговая марка продукта с изображением фирменной символики организации на фоне.
-Дополнительные сведения: [Запись блога](https://blogs.technet.microsoft.com/enterprisemobility/2017/02/01/azure-ad-b2b-new-updates-make-cross-business-collab-easy/), [документация](what-is-b2b.md)  | Дополнительные сведения: [страница продукта](https://azure.microsoft.com/services/active-directory-b2c/), [документация](https://docs.microsoft.com/azure/active-directory-b2c/).
+Дополнительные сведения: [запись блога](https://blogs.technet.microsoft.com/enterprisemobility/2017/02/01/azure-ad-b2b-new-updates-make-cross-business-collab-easy/), [документация](what-is-b2b.md)  | Дополнительные сведения: [страница продукта](https://azure.microsoft.com/services/active-directory-b2c/), [документация](https://docs.microsoft.com/azure/active-directory-b2c/).
 
 
 ### <a name="next-steps"></a>Дополнительная информация

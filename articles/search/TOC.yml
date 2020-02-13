@@ -111,7 +111,7 @@
           href: search-performance-optimization.md
         - name: Мультитенантная архитектура
           href: search-modeling-multitenant-saas-applications.md
-    - name: безопасность
+    - name: Безопасность
       items:
         - name: Общие сведения о безопасности
           href: search-security-overview.md
@@ -271,6 +271,8 @@
               href: knowledge-store-view-storage-explorer.md
             - name: Подключение с помощью Power BI
               href: knowledge-store-connect-power-bi.md
+            - name: Примеры проекции
+              href: knowledge-store-projections-examples.md
     - name: Запрос документов
       items:
         - name: Типы запросов и составление запросов

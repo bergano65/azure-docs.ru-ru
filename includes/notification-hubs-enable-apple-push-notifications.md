@@ -5,15 +5,15 @@ services: notification-hubs
 author: sethmanheim
 ms.service: notification-hubs
 ms.topic: include
-ms.date: 11/21/2019
+ms.date: 02/10/2020
 ms.author: sethm
 ms.custom: include file
-ms.openlocfilehash: b9f434f2d3c06d3db0bfda7c5853cc835ff64035
-ms.sourcegitcommit: 57669c5ae1abdb6bac3b1e816ea822e3dbf5b3e1
+ms.openlocfilehash: bf2596f5a8e287799285f97f3d1be9f3fe10f644
+ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2020
-ms.locfileid: "77047766"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77123148"
 ---
 ## <a name="generate-the-certificate-signing-request-file"></a>Создание файла запроса на подписывание сертификата
 
@@ -26,10 +26,9 @@ ms.locfileid: "77047766"
 1. Нажмите **Связка ключей**, разверните **Помощник по сертификатам**, а затем выберите **Запросить сертификат в центре сертификации**.
 
     ![Использование Keychain Access для запрашивания нового сертификата](./media/notification-hubs-enable-apple-push-notifications/notification-hubs-request-cert-from-ca.png)
-    
-> [!NOTE]
-> OS X по умолчанию выбирает первый элемент в категории, которую вы выбрали в средстве доступа к цепочке ключей. Это может вызвать проблемы, если у вас открыт раздел **сертификатов** и **центр сертификации Apple Worldwide Developer Relations** *не* указан в списке первым. Прежде чем запрашивать сертификат, обязательно перейдите к разделу **сертификатов**, а затем выберите **центр сертификации Apple Worldwide Developer Relations**.
 
+   > [!NOTE]
+   > По умолчанию при осуществлении доступа к цепочке ключей выбирается первый элемент списка. Это может вызвать проблемы, если у вас открыта категория **сертификатов** и **центр сертификации Apple Worldwide Developer Relations** не указан в списке первым. Прежде чем создавать CSR (запрос на подписывание сертификата), убедитесь, что выбран элемент, не являющийся ключом, или ключ **центра сертификации Apple Worldwide Developer Relations**.
 
 1. Заполните поля **Адрес электронной почты пользователя** и **Личное имя**, выберите **Сохранено на диск**, а затем — **Продолжить**. Оставьте поле **Адрес электронной почты ЦС** пустым, так как оно является необязательным.
 

@@ -15,7 +15,9 @@
           href: b2b-quickstart-invite-powershell.md
     - name: Учебники
       items:
-        - name: Массовое приглашение гостевых пользователей B2B
+        - name: Массовое приглашение с помощью PowerShell
+          href: bulk-invite-powershell.md
+        - name: Массовое приглашение с помощью портала (предварительная версия)
           href: tutorial-bulk-invite.md
         - name: Применение многофакторной проверки подлинности
           href: b2b-tutorial-require-mfa.md
