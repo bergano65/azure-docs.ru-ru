@@ -5,12 +5,12 @@ author: craigshoemaker
 ms.topic: reference
 ms.date: 09/04/2018
 ms.author: cshoe
-ms.openlocfilehash: 8062428ae63a572b81a5432c8b29910fe8422e24
-ms.sourcegitcommit: 87781a4207c25c4831421c7309c03fce5fb5793f
+ms.openlocfilehash: 812875be47cabdd23e6307403bb95d8d6ff174ec
+ms.sourcegitcommit: bdf31d87bddd04382effbc36e0c465235d7a2947
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76547461"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77167510"
 ---
 # <a name="event-grid-trigger-for-azure-functions"></a>Триггер службы "Сетка событий" для службы "Функции Azure"
 
@@ -224,19 +224,7 @@ def main(event: func.EventGridEvent):
 * [Триггер сетки событий, строковый параметр](#event-grid-trigger-string-parameter)
 * [Триггер сетки событий, параметр POJO](#event-grid-trigger-pojo-parameter)
 
-В следующих примерах показана привязка триггера в файле *function.json* и [функции Java](functions-reference-java.md), использующая привязку и печатающая событие; сначала событие принимается как ```String```, затем — как POJO.
-
-```json
-{
-  "bindings": [
-    {
-      "type": "eventGridTrigger",
-      "name": "eventGridEvent",
-      "direction": "in"
-    }
-  ]
-}
-```
+В следующих примерах показана привязка триггера в [Java](functions-reference-java.md) , использующая привязку и выводимое на печать событие, сначала получающая событие как `String`, а второе — как POJO.
 
 ### <a name="event-grid-trigger-string-parameter"></a>Триггер сетки событий, параметр строки
 
@@ -332,7 +320,7 @@ public static void EventGridTest([EventGridTrigger] JObject eventGridEvent, ILog
 
 ---
 
-## <a name="configuration"></a>Настройка
+## <a name="configuration"></a>Конфигурация
 
 В следующей таблице описываются свойства конфигурации привязки, которые задаются в файле *function.json*. В атрибуте `EventGridTrigger` не задаются параметры или свойства конструкции.
 
@@ -440,7 +428,7 @@ public static void EventGridTest([EventGridTrigger] JObject eventGridEvent, ILog
 
 Дополнительные сведения о создании подписок с помощью портала Azure см. в разделе [Создание и перенаправление пользовательских событий с помощью портала Azure и службы "Сетка событий"](../event-grid/custom-event-quickstart-portal.md) документации по службе "Сетка событий".
 
-### <a name="azure-cli"></a>Интерфейс командной строки Azure
+### <a name="azure-cli"></a>Azure CLI
 
 Чтобы создать подписку с помощью [Azure CLI](https://docs.microsoft.com/cli/azure/get-started-with-azure-cli?view=azure-cli-latest), используйте команду [az eventgrid event-subscription create](https://docs.microsoft.com/cli/azure/eventgrid/event-subscription?view=azure-cli-latest#az-eventgrid-event-subscription-create).
 

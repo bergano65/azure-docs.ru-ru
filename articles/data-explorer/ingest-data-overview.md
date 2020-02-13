@@ -7,12 +7,12 @@ ms.reviewer: mblythe
 ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 02/18/2019
-ms.openlocfilehash: 90387a033a43c627be4ce69a93ee37c5b959732d
-ms.sourcegitcommit: a170b69b592e6e7e5cc816dabc0246f97897cb0c
-ms.translationtype: MT
+ms.openlocfilehash: 54401d4fd8a911fc9cf5bc67d4324e84005fa752
+ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74091784"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77157250"
 ---
 # <a name="azure-data-explorer-data-ingestion"></a>Прием данных в обозревателе данных Azure
 
@@ -66,11 +66,11 @@ Kusto предоставляет клиентский пакет SDK, с пом�
 
 * [Пакет SDK для .NET](/azure/kusto/api/netfx/about-the-sdk)
 
-* [Пакет SDK для Java](/azure/kusto/api/java/kusto-java-client-library)
+* [пакет SDK для Java](/azure/kusto/api/java/kusto-java-client-library)
 
 * [Пакет SDK для Node](/azure/kusto/api/node/kusto-node-client-library)
 
-* [ИНТЕРФЕЙС REST API](/azure/kusto/api/netfx/kusto-ingest-client-rest)
+* [REST API](/azure/kusto/api/netfx/kusto-ingest-client-rest)
 
 **Методы приема данных программным образом**:
 
@@ -118,7 +118,7 @@ Kusto предоставляет клиентский пакет SDK, с пом�
 ## <a name="supported-data-formats"></a>Поддерживаемые форматы данных
 
 Для всех методов приема, отличных от приема из очереди, отформатируйте данные так, чтобы Azure Data Explorer мог их проанализировать. 
-* Поддерживаются следующие форматы данных: TXT, CSV, TSV, ТСВЕ, ПСВ, СКСВ, SOH, JSON (с разделением строк, несколько строк), Avro и Parquet. 
+* Поддерживаются следующие форматы данных: TXT, CSV, TSV, ТСВЕ, ПСВ, СКСВ, SOH, JSON (с разделением строк, несколько строк), Avro, ORC и Parquet. 
 * Поддерживает сжатие ZIP и GZIP.
 
 > [!NOTE]
@@ -136,7 +136,7 @@ Kusto предоставляет клиентский пакет SDK, с пом�
 * [Сопоставление CSV](/azure/kusto/management/mappings?branch=master#csv-mapping) (необязательно) работает со всеми форматами на базе рядов. Оно может передаваться в качестве параметра команды приема данных или быть [предварительно создано в таблице](/azure/kusto/management/tables?branch=master#create-ingestion-mapping) и вызываться из параметра команды приема.
 * [Сопоставление JSON](/azure/kusto/management/mappings?branch=master#json-mapping) (обязательно) и [сопоставление Avro](/azure/kusto/management/mappings?branch=master#avro-mapping) (обязательно) может быть выполнено с помощью параметра команды приема. Их также можно [предварительно создать в таблице](/azure/kusto/management/tables#create-ingestion-mapping) и ссылаться на них с помощью параметра команды приема.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Краткое руководство. Прием данных из концентратора событий в Azure Data Explorer](ingest-data-event-hub.md)

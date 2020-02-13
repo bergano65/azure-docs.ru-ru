@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 01/15/2020
 ms.author: oliversc
 ms.custom: seodec18
-ms.openlocfilehash: 15a118dc72ae9ffc4b6c99b0e0b527a252d3ded8
-ms.sourcegitcommit: 7221918fbe5385ceccf39dff9dd5a3817a0bd807
+ms.openlocfilehash: 235d8788b47355925d93cb3e3835d32e25c1b51f
+ms.sourcegitcommit: bdf31d87bddd04382effbc36e0c465235d7a2947
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/21/2020
-ms.locfileid: "76293595"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77168147"
 ---
 # <a name="release-notes"></a>Заметки о выпуске
 
@@ -339,7 +339,7 @@ ms.locfileid: "76293595"
 
 - Поддержка Android x86/x64.
 - Поддержка прокси-сервера. в объекте `SpeechConfig` теперь можно вызвать функцию, чтобы задать сведения о прокси-сервере (имя узла, порт, имя пользователя и пароль). Эта функция недоступна в iOS.
-- Улучшенный код ошибки и сообщения. Если распознавание возвращает ошибку, это означает, что для `Error` уже установлен набор `Reason` (в отмененное событие) или `CancellationDetails` (в результат распознавания). Отмененное событие теперь содержит два дополнительных элемента: `ErrorCode` и `ErrorDetails`. Если сервер вернул дополнительные сведения об ошибке вместе с сообщаемой ошибкой, то она будет доступна в новых элементах.
+- Улучшенный код ошибки и сообщения. Если распознавание возвращает ошибку, это означает, что для `Reason` уже установлен набор `CancellationDetails` (в отмененное событие) или `Error` (в результат распознавания). Отмененное событие теперь содержит два дополнительных элемента: `ErrorCode` и `ErrorDetails`. Если сервер вернул дополнительные сведения об ошибке вместе с сообщаемой ошибкой, то она будет доступна в новых элементах.
 
 **Улучшения**
 
@@ -467,7 +467,7 @@ ms.locfileid: "76293595"
 
 **Критические изменения**
 
-- В C# `SpeechRecognitionResult.RecognizedText` заменено на `SpeechRecognitionResult.Text`.
+- В C# `SpeechRecognitionResult.Text` заменено на `SpeechRecognitionResult.RecognizedText`.
 
 **Исправления ошибок**
 

@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 12/09/2019
 ms.author: erhopf
-ms.openlocfilehash: f5d1fff7d1343ad569fa015ebdb65d0152f04376
-ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
+ms.openlocfilehash: 26fe995f45a97a5863bfc20fd1564df89124ed88
+ms.sourcegitcommit: bdf31d87bddd04382effbc36e0c465235d7a2947
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 02/12/2020
-ms.locfileid: "77153219"
+ms.locfileid: "77168315"
 ---
 # <a name="speech-to-text-rest-api"></a>REST API преобразования речи в текст;
 
@@ -32,9 +32,18 @@ ms.locfileid: "77153219"
 
 ## <a name="regions-and-endpoints"></a>Регионы и конечные точки
 
-Для транскрибирования речи в текст с помощью REST API поддерживаются следующие регионы. Выберите конечную точку, которая соответствует региону подписки.
+Конечная точка для REST API имеет следующий формат:
 
-[!INCLUDE [](../../../includes/cognitive-services-speech-service-endpoints-speech-to-text.md)] 
+```
+https://<REGION_IDENTIFIER>.stt.speech.microsoft.com/speech/recognition/conversation/cognitiveservices/v1
+```
+
+Замените `<REGION_IDENTIFIER>` идентификатором, соответствующим региону подписки, из следующей таблицы:
+
+[!INCLUDE [](../../../includes/cognitive-services-speech-service-region-identifier.md)]
+
+> [!NOTE]
+> К URL-адресу нужно добавить параметр языка, чтобы не возникало сообщение об ошибке HTTP 4xx. Например, выбор английского языка (США) с использованием конечной точки "Западная часть США" будет выглядеть так: `https://westus.stt.speech.microsoft.com/speech/recognition/conversation/cognitiveservices/v1?language=en-US`.
 
 ## <a name="query-parameters"></a>Параметры запроса
 

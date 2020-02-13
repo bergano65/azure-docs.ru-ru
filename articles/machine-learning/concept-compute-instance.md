@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.author: sgilley
 author: sdgilley
 ms.date: 12/13/2019
-ms.openlocfilehash: f6d2da49e2659cfa69d25e3fe71351547706fd42
-ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
+ms.openlocfilehash: b65b7a9fd38b690729fafd86fe213ff56760a1bb
+ms.sourcegitcommit: bdf31d87bddd04382effbc36e0c465235d7a2947
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76984852"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77169839"
 ---
 # <a name="what-is-an-azure-machine-learning-compute-instance"></a>Что такое Машинное обучение Azure вычислительного экземпляра?
 
@@ -26,9 +26,6 @@ ms.locfileid: "76984852"
 
 Вычислительные экземпляры обычно используются в качестве сред разработки.  Их также можно использовать в качестве целевого объекта вычислений для обучения и изучения при разработке и тестировании.  Для больших задач в качестве целевого объекта вычислений лучше выбрать [машинное обучение Azureный кластер](how-to-set-up-training-targets.md#amlcompute) с возможностями масштабирования с несколькими узлами.
 
-> [!NOTE]
-> В настоящее время экземпляры вычислений доступны только для рабочих областей с регионом " **северо-центральная часть США**", " **Восток США 2**", " **северная Европа** " или " **Южная часть Соединенного Королевства**". в ближайшее время поддержка других регионов ожидается.
->Если ваша рабочая область находится в другом регионе, можно продолжить, выбрав создание и использование [Виртуальной машины записной книжки](concept-compute-instance.md#notebookvm). 
 
 ## <a name="why-use-a-compute-instance"></a>Зачем использовать вычислительный экземпляр?
 
@@ -52,7 +49,7 @@ ms.locfileid: "76984852"
 |----|:----:|
 |Драйверы|`CUDA`</br>`cuDNN`</br>`NVIDIA`</br>`Blob FUSE` |
 |Библиотека Intel MPI||
-|Интерфейс командной строки Azure ||
+|Azure CLI ||
 |Примеры Машинное обучение Azure ||
 |Машинное обучение Azure подсистему ЕДАТ ||
 |Docker||
@@ -71,7 +68,7 @@ ms.locfileid: "76984852"
 |Anaconda Python||
 |Jupyter и расширения||
 |Jupyterlab и расширения||
-|Код Visual Studio ||
+|Visual Studio Code ||
 [Пакет SDK службы "Машинное обучение Azure" для Python](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py)</br>из PyPI|`azureml-sdk[notebooks,contrib,automl,explain]`</br>`azureml-contrib-datadrift`</br>`azureml-telemetry`</br>`azureml-tensorboard`</br>`azureml-contrib-opendatasets`</br>`azureml-opendatasets`</br>`azureml-contrib-reinforcementlearning`</br>`azureml-mlflow`</br>`azureml-contrib-interpret` |
 |Другие пакеты PyPI|`jupytext`</br>`jupyterlab-git`</br>`tensorboard`</br>`nbconvert`</br>`notebook`</br>`Pillow`|
 |Пакеты Conda|`cython`</br>`numpy`</br>`ipykernel`</br>`scikit-learn`</br>`matplotlib`</br>`tqdm`</br>`joblib`</br>`nodejs`</br>`nb_conda_kernels`|
@@ -115,7 +112,7 @@ ms.locfileid: "76984852"
 
 ![Управление вычислительным экземпляром](./media/concept-compute-instance/manage-compute-instance.png)
 
-Вы можете выполнять следующие действия:
+Доступны следующие действия:
 
 * Создание вычислительного экземпляра. Укажите имя, тип виртуальной машины Azure, включая GPU (Обратите внимание, что тип виртуальной машины не может быть изменен после создания), включите или отключите доступ по протоколу SSH и настройте параметры виртуальной сети дополнительно. Кроме того, экземпляр можно создать непосредственно из интегрированных записных книжек, портал Azure, диспетчер ресурсов шаблона или пакета SDK для Машинное обучение Azure. Квоты выделенных ядер на регион, применяемые к созданию вычислительных экземпляров, объединены и совместно используются с квотой вычислительных кластеров Машинное обучение Azure.
 * Обновление вкладки "вычисленные экземпляры"
@@ -124,7 +121,7 @@ ms.locfileid: "76984852"
 
 Для каждого вычислительного экземпляра в рабочей области можно:
 
-* Доступ к Jupyter, JupyterLab, RStudio, VS Code URI на вычислительном экземпляре
+* Доступ к Jupyter, JupyterLab, RStudio на вычислительном экземпляре
 * SSH-подключение к вычислительному экземпляру. Доступ по протоколу SSH отключен по умолчанию, но его можно включить во время создания вычислительного экземпляра. Доступ по протоколу SSH осуществляется с помощью механизма открытого и закрытого ключей. На вкладке приводятся подробные сведения о SSH-подключении, такие как адрес, имя пользователя и номер порта.
 * Получение сведений о конкретном вычислительном экземпляре, таком как IP-адрес и регион.
 

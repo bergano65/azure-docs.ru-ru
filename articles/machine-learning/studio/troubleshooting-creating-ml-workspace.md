@@ -6,16 +6,16 @@ services: machine-learning
 ms.service: machine-learning
 ms.subservice: studio
 ms.topic: conceptual
-author: xiaoharper
-ms.author: zhanxia
+author: likebupt
+ms.author: keli19
 ms.custom: previous-author=heatherbshapiro, previous-ms.author=hshapiro
 ms.date: 03/20/2017
-ms.openlocfilehash: a4385d88912e7c4d391baa8f5bc50be1e07f4fa7
-ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
+ms.openlocfilehash: ba792c225c9875bbad50e3fb460c84ed012ce615
+ms.sourcegitcommit: bdf31d87bddd04382effbc36e0c465235d7a2947
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 02/12/2020
-ms.locfileid: "77152794"
+ms.locfileid: "77169102"
 ---
 # <a name="troubleshooting-guide-create-and-connect-to-an-azure-machine-learning-studio-classic-workspace"></a>Руководство по устранению неполадок. Создание рабочей области Машинное обучение Azure Studio (классическая модель) и подключение к ней
 В этом разделе приведены решения для некоторых часто встречающихся проблем при настройке рабочих областей Машинное обучение Azure Studio (классическая модель).

@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 04/16/2019
 ms.author: mlearned
-ms.openlocfilehash: 5b99d76ef20c288d6ae0bd33e1e2b6a75a359d3a
-ms.sourcegitcommit: bafb70af41ad1326adf3b7f8db50493e20a64926
+ms.openlocfilehash: 520557c80bf2630a359188dd86ec0987e0d5326b
+ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "67616270"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77158151"
 ---
 # <a name="integrate-azure-active-directory-with-azure-kubernetes-service-using-the-azure-cli"></a>Интеграция Azure Active Directory со службой Azure Kubernetes с помощью Azure CLI
 
@@ -26,7 +26,7 @@ ms.locfileid: "67616270"
 
 - Azure Active Directory можно включить только при создании нового кластера с поддержкой RBAC. Вы не можете включить эту службу в существующем кластере AKS.
 
-## <a name="before-you-begin"></a>Перед началом работы
+## <a name="before-you-begin"></a>Перед началом
 
 Требуется Azure CLI версии 2.0.61 или более поздней. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0][install-azure-cli].
 
@@ -40,7 +40,7 @@ aksname="myakscluster"
 
 Кластеры AKS проходят аутентификацию Azure AD с помощью OpenID Connect. OpenID Connect представляет собой уровень идентификации на основе протокола OAuth 2.0. Дополнительные сведения о OpenID Connect Connect см. в [документации по Open ID Connect][open-id-connect].
 
-Внутри кластера Kubernetes проверка подлинности на основе маркера веб-перехватчика используется для проверки маркеров проверки подлинности. Настройка такой проверка подлинности и ее управление являются частью кластера AKS. Дополнительные сведения о проверке подлинности маркеров веб-перехватчика см. в [документации по проверке подлинности веб][kubernetes-webhook]-перехватчика.
+Внутри кластера Kubernetes проверка подлинности на основе маркера веб-перехватчика используется для проверки маркеров проверки подлинности. Настройка такой проверка подлинности и ее управление являются частью кластера AKS. Дополнительные сведения о проверке подлинности маркеров веб-перехватчика см. в [документации по проверке подлинности веб-перехватчика][kubernetes-webhook].
 
 > [!NOTE]
 > При настройке Azure AD для аутентификации AKS настраиваются два приложения Azure AD. Эту операцию должен выполнять администратор клиента Azure.
@@ -77,8 +77,8 @@ serverApplicationSecret=$(az ad sp credential reset \
 
 Azure AD требуются разрешения для выполнения следующих действий:
 
-* Чтение данных каталога
-* Вход и чтение профиля пользователя
+* Прочитать данные каталога
+* Вход в систему и чтение профиля пользователя.
 
 Назначьте эти разрешения с помощью команды [AZ AD App Permission Add][az-ad-app-permission-add] :
 
@@ -197,7 +197,7 @@ kubectl apply -f basic-azure-ad-binding.yaml
 
 ## <a name="access-cluster-with-azure-ad"></a>Доступ к кластеру с помощью Azure AD
 
-Теперь давайте протестируем интеграцию аутентификации Azure AD для кластера AKS. Задайте для контекста конфигурации использование обычных учетных данных пользователя. `kubectl` Этот контекст передает все запросы проверки подлинности обратно через Azure AD.
+Теперь давайте протестируем интеграцию аутентификации Azure AD для кластера AKS. Задайте для контекста конфигурации `kubectl` использование обычных учетных данных пользователя. Этот контекст передает все запросы проверки подлинности обратно через Azure AD.
 
 ```azurecli-interactive
 az aks get-credentials --resource-group myResourceGroup --name $aksname --overwrite-existing
@@ -209,7 +209,7 @@ az aks get-credentials --resource-group myResourceGroup --name $aksname --overwr
 kubectl get pods --all-namespaces
 ```
 
-Вы получаете запрос на вход для аутентификации с помощью учетных данных Azure AD с помощью веб-браузера. После успешной проверки подлинности `kubectl` команда отображает модули Pod в кластере AKS, как показано в следующем примере выходных данных:
+Вы получаете запрос на вход для аутентификации с помощью учетных данных Azure AD с помощью веб-браузера. После успешной проверки подлинности команда `kubectl` отображает модули Pod в кластере AKS, как показано в следующем примере выходных данных:
 
 ```console
 $ kubectl get pods --all-namespaces
@@ -228,7 +228,7 @@ kube-system   metrics-server-7b97f9cd9-btxzz          1/1     Running   0       
 kube-system   tunnelfront-6ff887cffb-xkfmq            1/1     Running   0          23h
 ```
 
-Токен проверки подлинности `kubectl` , полученный для, кэшируется. После истечения срока действия маркера или повторного создания файла конфигурации Kubernetes будет предложено только выполнить вход.
+Токен проверки подлинности, полученный для `kubectl`, кэшируется. После истечения срока действия маркера или повторного создания файла конфигурации Kubernetes будет предложено только выполнить вход.
 
 Если вы видите сообщение об ошибке авторизации после успешного входа с помощью веб-браузера, как показано в следующем примере выходных данных, проверьте следующие возможные проблемы.
 
@@ -238,9 +238,9 @@ error: You must be logged in to the server (Unauthorized)
 
 * Вы определили соответствующий идентификатор объекта или имя участника-пользователя в зависимости от того, находится ли учетная запись пользователя в том же клиенте Azure AD или нет.
 * Пользователь не может быть членом более чем 200 групп.
-* Секрет, определенный в регистрации приложения для сервера, соответствует значению, заданному с помощью`--aad-server-app-secret`
+* Секрет, определенный в регистрации приложения для сервера, совпадает со значением, настроенным с помощью `--aad-server-app-secret`
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Полный сценарий, содержащий команды, приведенные в этой статье, см. в разделе [сценарий интеграции Azure AD в репозитории примеров AKS][complete-script].
 
@@ -260,7 +260,7 @@ error: You must be logged in to the server (Unauthorized)
 [az-aks-create]: /cli/azure/aks?view=azure-cli-latest#az-aks-create
 [az-aks-get-credentials]: /cli/azure/aks?view=azure-cli-latest#az-aks-get-credentials
 [az-group-create]: /cli/azure/group#az-group-create
-[open-id-connect]:../active-directory/develop/v1-protocols-openid-connect-code.md
+[open-id-connect]:../active-directory/develop/v2-protocols-oidc.md
 [az-ad-user-show]: /cli/azure/ad/user#az-ad-user-show
 [az-ad-app-create]: /cli/azure/ad/app#az-ad-app-create
 [az-ad-app-update]: /cli/azure/ad/app#az-ad-app-update

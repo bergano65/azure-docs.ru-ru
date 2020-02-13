@@ -8,12 +8,12 @@ ms.author: pmorgan
 ms.date: 05/28/2019
 ms.topic: conceptual
 ms.service: azure-spatial-anchors
-ms.openlocfilehash: 6149fa631633d05399568bd1ec797c5ee47d29a4
-ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
-ms.translationtype: HT
+ms.openlocfilehash: 3de84e2d814acfca67bc722243a90fa41f6536e1
+ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
+ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 02/12/2020
-ms.locfileid: "77152607"
+ms.locfileid: "77161687"
 ---
 # <a name="authentication-and-authorization-to-azure-spatial-anchors"></a>Проверка подлинности и авторизация для пространственных привязок Azure
 
@@ -92,7 +92,7 @@ configuration.AccountKey(LR"(MyAccountKey)");
 
 ## <a name="azure-ad-user-authentication"></a>Проверка подлинности пользователей Azure AD
 
-Для приложений, предназначенных для Azure Active Directory пользователей, рекомендуемым подходом является использование маркера Azure AD для пользователя, который можно получить с помощью библиотеки ADAL, как описано в следующей документации: [https://docs.microsoft.com/azure/active-directory/develop/v1-overview](../../active-directory/develop/v1-overview.md); выполните действия, описанные в разделе "быстрое начало", в том числе:
+Для приложений, предназначенных для Azure Active Directory пользователей, рекомендуемым подходом является использование маркера Azure AD для пользователя, который можно получить с помощью [библиотеки MSAL](../../active-directory/develop/msal-overview.md). Выполните действия, описанные в [кратком руководстве регистрация приложения](../../active-directory/develop/quickstart-register-app.md), в том числе:
 
 1. Конфигурация в портал Azure
     1.  Зарегистрируйте приложение в Azure AD в качестве **собственного приложения**. В процессе регистрации необходимо определить, должно ли приложение работать в нескольких клиентах, и предоставить URL-адреса перенаправления для приложения.
@@ -118,7 +118,7 @@ configuration.AccountKey(LR"(MyAccountKey)");
         3.  Если приложение поддерживает **все учетная запись Майкрософт пользователей**, замените это значение на **Common** .
     3.  В запросе маркера задайте **ресурсу** значение "https://sts.mixedreality.azure.com". Этот "ресурс" указывает Azure AD на то, что приложение запрашивает маркер для службы пространственных привязок Azure.
 
-В результате приложение должно иметь возможность получить из ADAL маркера Azure AD. Вы можете задать маркер Azure AD в качестве **authenticationToken** для объекта конфигурации сеанса облака.
+В результате приложение должно иметь возможность получить из MSAL маркера Azure AD. Вы можете задать маркер Azure AD в качестве **authenticationToken** для объекта конфигурации сеанса облака.
 
 # <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
@@ -168,7 +168,7 @@ configuration.AuthenticationToken(LR"(MyAuthenticationToken)");
 
 Предполагается, что приложение использует собственный механизм (например: учетная запись Майкрософт, PlayFab, Facebook, идентификатор Google, пользовательское имя пользователя и пароль и т. д.) для проверки подлинности во внутренней службе. После проверки подлинности пользователей в серверной службе эта служба может получить маркер Azure AD, обмениваться маркером доступа для пространственных привязок Azure и вернуть ее обратно в клиентское приложение.
 
-Маркер доступа Azure AD извлекается с помощью библиотеки ADAL, как описано в следующей документации: [https://docs.microsoft.com/azure/active-directory/develop/v1-overview](../../active-directory/develop/v1-overview.md); выполните действия, описанные в разделе "быстрое начало", в том числе:
+Маркер доступа Azure AD извлекается с помощью [библиотеки MSAL](../../active-directory/develop/msal-overview.md). Выполните действия, описанные в [кратком руководстве регистрация приложения](../../active-directory/develop/quickstart-register-app.md), в том числе:
 
 1.  Конфигурация в портал Azure:
     1.  Регистрация приложения в Azure AD:

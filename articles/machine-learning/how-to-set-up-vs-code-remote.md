@@ -9,26 +9,23 @@ ms.topic: conceptual
 ms.author: jmartens
 author: j-martens
 ms.date: 12/09/2019
-ms.openlocfilehash: f5607c5d41a028a20a4658a67a7ce487a75f0d7c
-ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
+ms.openlocfilehash: 1999d29db21f820fbcdbca08f2258b657673be3e
+ms.sourcegitcommit: bdf31d87bddd04382effbc36e0c465235d7a2947
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76990357"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77169756"
 ---
 # <a name="debug-interactively-on-an-azure-machine-learning-compute-instance-with-vs-code-remote"></a>Отладка в интерактивном режиме на Машинное обучение Azure вычислительного экземпляра с VS Code удаленно
 
 В этой статье вы узнаете, как настроить Visual Studio Code удаленно на Машинное обучение Azure вычислительного экземпляра, чтобы можно было выполнять **интерактивную отладку кода** из VS Code. 
-
-> [!NOTE]
-> Экземпляры вычислений доступны только для рабочих областей с регионом " **северо-центральная часть США**", " **Восток США 2**", " **северная Европа** " или " **Южная часть Соединенного Королевства**" с поддержкой других регионов в ближайшее время.
 
 + [Вычислительный экземпляр машинное обучение Azure](concept-compute-instance.md) — это полностью управляемая облачная Рабочая станция для специалистов по обработке и анализу данных, которая предоставляет ИТ-администраторам возможности управления и готовности предприятия. 
 
 
 + [Visual Studio Code удаленный](https://code.visualstudio.com/docs/remote/remote-overview) Разработка позволяет использовать контейнер, удаленный компьютер или подсистему Windows для Linux (WSL) в качестве полнофункциональной среды разработки. 
 
-## <a name="prerequisite"></a>Необходимое условие  
+## <a name="prerequisite"></a>Предварительные требования  
 
 На платформах Windows необходимо [установить клиент SSH, совместимый с OpenSSH](https://code.visualstudio.com/docs/remote/troubleshooting#_installing-a-supported-ssh-client) , если он еще не существует. 
 
@@ -91,9 +88,9 @@ Host azmlci1
 
 |Поле|Description|
 |----|---------|
-|Хост|Использование любой краткой формы для вычислительного экземпляра |
+|Узел|Использование любой краткой формы для вычислительного экземпляра |
 |HostName|Это IP-адрес вычислительного экземпляра |
-|Port|Это порт, показанный в диалоговом окне SSH выше |
+|Порт|Это порт, показанный в диалоговом окне SSH выше |
 |Пользователь|Необходимо `azureuser` |
 |идентитифиле|Должен указывать на файл, в который был сохранен закрытый ключ |
 

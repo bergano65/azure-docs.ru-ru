@@ -14,12 +14,12 @@ ms.workload: identity
 ms.date: 08/20/2019
 ms.author: negoe
 ms.custom: aaddev
-ms.openlocfilehash: 290b0073ea6736141bca035f82f7aa37bdf364ef
-ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
+ms.openlocfilehash: d5d48a2fc7aca184cf8b6e7761584a8800ca5151
+ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76701932"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77160072"
 ---
 # <a name="single-page-application-acquire-a-token-to-call-an-api"></a>Одностраничное приложение: получение маркера для вызова API
 
@@ -42,7 +42,7 @@ ms.locfileid: "76701932"
 
 ## <a name="acquire-a-token-with-a-pop-up-window"></a>Получение маркера с помощью всплывающего окна
 
-### <a name="javascript"></a>JavaScript
+# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
 
 Следующий код сочетает ранее описанный шаблон с методами для всплывающего окна:
 
@@ -69,7 +69,7 @@ userAgentApplication.acquireTokenSilent(accessTokenRequest).then(function(access
 });
 ```
 
-### <a name="angular"></a>Angular
+# <a name="angulartabangular"></a>[Angular](#tab/angular)
 
 MSAL угловая оболочка предоставляет перехватчик HTTP, который автоматически получает маркеры доступа и прикрепляет их к HTTP-запросам к API.
 
@@ -111,9 +111,11 @@ ngOnDestroy() {
 
 Кроме того, можно явно получить токены с помощью методов получения маркера, как описано в разделе Основная библиотека MSAL. js.
 
+---
+
 ## <a name="acquire-a-token-with-a-redirect"></a>Получение маркера с перенаправлением
 
-### <a name="javascript"></a>JavaScript
+# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
 
 Следующий шаблон описан ранее, но показан с помощью метода Redirect для получения маркеров в интерактивном режиме. Вам потребуется зарегистрировать обратный вызов перенаправления, как упоминалось ранее.
 
@@ -142,6 +144,7 @@ userAgentApplication.acquireTokenSilent(accessTokenRequest).then(function(access
 ```
 
 ## <a name="request-optional-claims"></a>Запрос необязательных утверждений
+
 Необязательные утверждения можно использовать в следующих целях:
 
 - Включите дополнительные утверждения в токены для вашего приложения.
@@ -150,7 +153,6 @@ userAgentApplication.acquireTokenSilent(accessTokenRequest).then(function(access
 
 Чтобы запросить необязательные утверждения в `IdToken`, можно отправить объект утверждений переведенные в поле `claimsRequest` класса `AuthenticationParameters.ts`.
 
-### <a name="javascript"></a>JavaScript
 ```javascript
 "optionalClaims":  
    {
@@ -168,12 +170,14 @@ var request = {
 
 myMSALObj.acquireTokenPopup(request);
 ```
+
 Дополнительные сведения см. в разделе [необязательные утверждения](active-directory-optional-claims.md).
 
-
-### <a name="angular"></a>Angular
+# <a name="angulartabangular"></a>[Angular](#tab/angular)
 
 Этот код аналогичен описанному выше.
+
+---
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

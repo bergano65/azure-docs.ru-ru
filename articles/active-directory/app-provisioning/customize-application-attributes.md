@@ -14,12 +14,12 @@ ms.topic: conceptual
 ms.date: 04/03/2019
 ms.author: mimart
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5406d301f6487753bc13b291db6d22eaedbf67b7
-ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
+ms.openlocfilehash: cf1515bcf2223ae730a47f7105d51206ba638cd7
+ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77066815"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77161619"
 ---
 # <a name="customizing-user-provisioning-attribute-mappings-for-saas-applications-in-azure-active-directory"></a>Настройка сопоставления атрибутов подготовки пользователей для приложений SaaS в Azure Active Directory
 
@@ -143,7 +143,7 @@ SCIM RFC определяет основную схему пользовател
    4. Выберите **изменить список атрибутов для AppName**.
    5. В нижней части списка атрибутов введите сведения о настраиваемом атрибуте в предоставленных полях. Затем выберите **Добавить атрибут**.
 
-Для приложений SCIM имя атрибута должно соответствовать шаблону, показанному в примере ниже. "Кустомекстенсионнаме" и "CustomAttribute" можно настроить в соответствии с требованиями приложения, например: urn: IETF: params: scim: schemas: Extension: 2.0: Кустомекстенсионнаме: CustomAttribute
+Для приложений SCIM имя атрибута должно соответствовать шаблону, показанному в примере ниже. "Кустомекстенсионнаме" и "CustomAttribute" можно настроить в соответствии с требованиями приложения, например: urn: IETF: params: scim: schemas: Extension: 2.0: Кустомекстенсионнаме: CustomAttribute или URN: IETF: params: scim: schemas: Extension: Кустомекстенсионнаме: 2.0: User. Кустоматтрибутенаме: значение
 
 Эти инструкции применимы только к приложениям с поддержкой SCIM. Такие приложения, как ServiceNow и Salesforce, не интегрированы с Azure AD с помощью SCIM, поэтому они не нуждаются в определенном пространстве имен при добавлении настраиваемого атрибута.
 

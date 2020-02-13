@@ -13,21 +13,21 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/18/2019
 ms.author: juliako
-ms.openlocfilehash: ecb704253597bf4eb5672fe924a0dafc4c1b3fd1
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: b53fca292630ef988ee1357ea50adc4d7b7e9be5
+ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64726547"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77162885"
 ---
 # <a name="use-azure-ad-authentication-to-access-azure-media-services-api-with-net"></a>Использование аутентификации Azure AD для доступа к API служб мультимедиа Azure с помощью .NET
 
 > [!NOTE]
-> В Cлужбы мультимедиа версии 2 больше не добавляются новые компоненты или функциональные возможности. <br/>Ознакомьтесь с новейшей версией Служб мультимедиа — [версией 3](https://docs.microsoft.com/azure/media-services/latest/). Кроме того, см. в разделе [руководство по миграции из версии 2 версии 3](../latest/migrate-from-v2-to-v3.md)
+> В Cлужбы мультимедиа версии 2 больше не добавляются новые компоненты или функциональные возможности. <br/>Ознакомьтесь с новейшей версией Служб мультимедиа — [версией 3](https://docs.microsoft.com/azure/media-services/latest/). См. также [руководство по миграции из v2 в версии 3](../latest/migrate-from-v2-to-v3.md) .
 
 Начиная с windowsazure.mediaservices 4.0.0.4, службы мультимедиа Azure поддерживают аутентификацию на основе Azure Active Directory (Azure AD). В этом разделе показано, как использовать аутентификацию Azure AD для доступа к API служб мультимедиа Azure (AMS) с помощью Microsoft .NET.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 - Учетная запись Azure. Дополнительные сведения см. на странице с [бесплатной пробной версией Azure](https://azure.microsoft.com/pricing/free-trial/). 
 - Учетная запись служб мультимедиа. Дополнительные сведения см. в статье [Создание учетной записи служб мультимедиа Azure с помощью портала Azure](media-services-portal-create-account.md).
@@ -48,7 +48,7 @@ ms.locfileid: "64726547"
 
 Например, не требуется указывать центр Azure AD, универсальный код ресурса (URI) для ресурса служб мультимедиа или сведения о собственном приложении Azure AD. Это хорошо известные значения, которые уже настроены с помощью класса поставщика маркеров доступа Azure AD. 
 
-Если вы не используете пакет SDK служб мультимедиа Azure для .NET, мы рекомендуем использовать [библиотеки аутентификации Azure AD](../../active-directory/develop/active-directory-authentication-libraries.md). Чтобы получить значения параметров, необходимых для использования библиотеки аутентификации Azure AD, ознакомьтесь с разделом [Приступая к работе с аутентификацией Azure AD с помощью портала Azure](media-services-portal-get-started-with-aad.md).
+Если вы не используете пакет SDK служб мультимедиа Azure для .NET, мы рекомендуем использовать [библиотеки аутентификации Azure AD](../../active-directory/azuread-dev/active-directory-authentication-libraries.md). Чтобы получить значения параметров, необходимых для использования библиотеки аутентификации Azure AD, ознакомьтесь с разделом [Приступая к работе с аутентификацией Azure AD с помощью портала Azure](media-services-portal-get-started-with-aad.md).
 
 Кроме того, вы можете заменить реализацию по умолчанию **AzureAdTokenProvider** собственной реализацией.
 
@@ -125,7 +125,7 @@ ms.locfileid: "64726547"
     }
 
 >[!NOTE]
->Если возникнет исключение "Удаленный сервер возвратил ошибку: 401 — Не санкционировано", ознакомьтесь с разделом [Управление доступом](media-services-use-aad-auth-to-access-ams-api.md#access-control) обзора доступа к API Служб мультимедиа Azure с помощью аутентификации Azure AD.
+>Если возникнет исключение "Удаленный сервер возвратил ошибку: 401 - Не санкционировано", ознакомьтесь с разделом [Управление доступом](media-services-use-aad-auth-to-access-ams-api.md#access-control) обзора доступа к API служб мультимедиа Azure с помощью аутентификации Azure AD.
 
 ## <a name="use-service-principal-authentication"></a>Использование аутентификации субъекта-службы
     

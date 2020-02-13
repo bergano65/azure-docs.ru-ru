@@ -5,12 +5,12 @@ author: craigshoemaker
 ms.topic: reference
 ms.date: 11/21/2017
 ms.author: cshoe
-ms.openlocfilehash: 11f5c07305fa9192097dbcb1386c13707c0d46f7
-ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
+ms.openlocfilehash: 25f3cb6f03e3a3c581d8977168e572554b5e0cc7
+ms.sourcegitcommit: bdf31d87bddd04382effbc36e0c465235d7a2947
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76711135"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77168122"
 ---
 # <a name="azure-functions-http-triggers-and-bindings"></a>Триггеры и привязки HTTP в службе "Функции Azure"
 
@@ -256,28 +256,7 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
 * [Чтение параметра из маршрута](#read-parameter-from-a-route)
 * [Чтение текста POJO из запроса POST](#read-pojo-body-from-a-post-request)
 
-В следующем примере показана привязка триггера HTTP в файле *function.json* и соответствующие [функции JavaScript](functions-reference-java.md), которые используют привязку. 
-
-Ниже показан файл *function.json*.
-
-```json
-{
-    "disabled": false,    
-    "bindings": [
-        {
-            "authLevel": "anonymous",
-            "type": "httpTrigger",
-            "direction": "in",
-            "name": "req"
-        },
-        {
-            "type": "http",
-            "direction": "out",
-            "name": "res"
-        }
-    ]
-}
-```
+В следующих примерах показана привязка триггера HTTP.
 
 #### <a name="read-parameter-from-the-query-string"></a>Считывание параметра из строки запроса
 

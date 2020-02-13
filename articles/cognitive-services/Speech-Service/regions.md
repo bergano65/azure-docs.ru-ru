@@ -11,18 +11,20 @@ ms.topic: conceptual
 ms.date: 11/05/2019
 ms.author: panosper
 ms.custom: seodec18
-ms.openlocfilehash: 409ce8b904997f2ab75f70b2138ec5b1e70a0e69
-ms.sourcegitcommit: 6c01e4f82e19f9e423c3aaeaf801a29a517e97a0
+ms.openlocfilehash: f1379202fc59e9cca7a3543be201f8ebff276bef
+ms.sourcegitcommit: bdf31d87bddd04382effbc36e0c465235d7a2947
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74816647"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77168359"
 ---
 # <a name="speech-service-supported-regions"></a>Регионы, поддерживаемые речевыми службами
 
 Служба "Речь" позволяет приложению преобразовывать звук в текст, а также выполнять перевод речи и преобразование текста в речь. Служба доступна в нескольких регионах с использованием уникальных конечных точек для REST API и пакета SDK службы "Речь".
 
-Вам нужно использовать конечную точку, которая соответствует региону для вашей подписки.
+Портал речевого ввода для выполнения пользовательских конфигураций для работы с речью для всех регионов доступен здесь: https://speech.microsoft.com
+
+Для вызовов службы речи убедитесь, что вызов соответствует региону для вашей подписки.
 
 ## <a name="speech-sdk"></a>Пакет SDK для службы "Речь"
 
@@ -30,28 +32,13 @@ ms.locfileid: "74816647"
 
 ### <a name="speech-to-text-text-to-speech-and-translation"></a>Преобразование речи в текст, преобразования текста в речь и перевода
 
-Речевой пакет SDK доступен в этих регионах для **распознавания речи**, преобразования **текста в речь**и **перевода**:
+Портал настройки речи доступен здесь: https://speech.microsoft.com
 
-| Регион           | Параметр пакета SDK для службы "Речь" | Портал настройки распознавания речи    |
-| ---------------- | -------------------- | ------------------------------ |
-| Западная часть США          | `westus`             | https://westus.cris.ai         |
-| Западная часть США 2        | `westus2`            | https://westus2.cris.ai        |
-| Восточная часть США          | `eastus`             | https://eastus.cris.ai         |
-| Восточная часть США 2        | `eastus2`            | https://eastus2.cris.ai        |
-| Центральная часть США       | `centralus`          | https://centralus.cris.ai      |
-| Центрально-северная часть США | `northcentralus`     | https://northcentralus.cris.ai |
-| Центрально-южная часть США | `southcentralus`     | https://southcentralus.cris.ai |
-| Центральная Индия    | `centralindia`       | https://centralindia.cris.ai   |
-| Восточная Азия        | `eastasia`           | https://eastasia.cris.ai       |
-| Юго-Восточная Азия   | `southeastasia`      | https://southeastasia.cris.ai  |
-| Восточная Япония       | `japaneast`          | https://japaneast.cris.ai      |
-| Республика Корея, центральный регион    | `koreacentral`       | https://koreacentral.cris.ai   |
-| Восточная Австралия   | `australiaeast`      | https://australiaeast.cris.ai  |
-| Центральная Канада   | `canadacentral`      | https://canadacentral.cris.ai  |
-| Северная Европа     | `northeurope`        | https://northeurope.cris.ai    |
-| Западная Европа      | `westeurope`         | https://westeurope.cris.ai     |
-| Южная часть Соединенного Королевства         | `uksouth`            | https://uksouth.cris.ai        |
-| Центральная Франция   | `francecentral`      | https://francecentral.cris.ai  |
+Служба распознавания речи доступна в этих регионах для **распознавания речи**, преобразования **текста в речь**и **перевода**:
+
+[!INCLUDE [](../../../includes/cognitive-services-speech-service-region-identifier.md)]
+
+Если используется [речевой пакет SDK](speech-sdk.md), регионы задаются с помощью **идентификатора региона** (например, в качестве параметра для `SpeechConfig.FromSubscription`). Убедитесь, что регион соответствует региону подписки.
 
 ### <a name="intent-recognition"></a>Распознавание намерений
 
@@ -65,11 +52,11 @@ ms.locfileid: "74816647"
 | Европа        | Северная Европа     | `northeurope`        |
 | Европа        | Западная Европа      | `westeurope`         |
 | Северная Америка | Восточная часть США          | `eastus`             |
-| Северная Америка | Восточная часть США 2        | `eastus2`            |
+| Северная Америка | восточная часть США 2        | `eastus2`            |
 | Северная Америка | Центрально-южная часть США | `southcentralus`     |
-| Северная Америка | Центрально-западная часть США  | `westcentralus`      |
-| Северная Америка | Западная часть США          | `westus`             |
-| Северная Америка | Западная часть США 2        | `westus2`            |
+| Северная Америка | центрально-западная часть США  | `westcentralus`      |
+| Северная Америка | западная часть США          | `westus`             |
+| Северная Америка | западная часть США 2        | `westus2`            |
 | Южная Америка | Южная Бразилия     | `brazilsouth`        |
 
 Это подмножество поддерживаемых регионов для публикации [службы распознавания речи (LUIS)](/azure/cognitive-services/luis/luis-reference-regions).
@@ -80,15 +67,15 @@ ms.locfileid: "74816647"
 
 | Регион         | Параметр пакета SDK для службы "Речь" |
 | -------------- | -------------------- |
-| Западная часть США        | `westus`             |
-| Западная часть США 2      | `westus2`            |
+| западная часть США        | `westus`             |
+| западная часть США 2      | `westus2`            |
 | Восточная часть США        | `eastus`             |
-| Восточная часть США 2      | `eastus2`            |
+| восточная часть США 2      | `eastus2`            |
 | Западная Европа    | `westeurope`         |
 | Северная Европа   | `northeurope`        |
 | Юго-Восточная Азия | `southeastasia`      |
 
-## <a name="rest-apis"></a>API-интерфейсы REST
+## <a name="rest-apis"></a>Интерфейсы REST API
 
 Служба "Речь" также предоставляет конечные точки REST для запросов распознавания речи в текст и преобразования текста в речь.
 
@@ -96,7 +83,18 @@ ms.locfileid: "74816647"
 
 Справочную документацию по голосовым документам см. [в разделе REST API преобразования речи в текст](rest-speech-to-text.md).
 
-[!INCLUDE [](../../../includes/cognitive-services-speech-service-endpoints-speech-to-text.md)]
+Конечная точка для REST API имеет следующий формат:
+
+```
+https://<REGION_IDENTIFIER>.stt.speech.microsoft.com/speech/recognition/conversation/cognitiveservices/v1
+```
+
+Замените `<REGION_IDENTIFIER>` идентификатором, соответствующим региону подписки, из следующей таблицы:
+
+[!INCLUDE [](../../../includes/cognitive-services-speech-service-region-identifier.md)]
+
+> [!NOTE]
+> К URL-адресу нужно добавить параметр языка, чтобы не возникало сообщение об ошибке HTTP 4xx. Например, выбор английского языка (США) с использованием конечной точки "Западная часть США" будет выглядеть так: `https://westus.stt.speech.microsoft.com/speech/recognition/conversation/cognitiveservices/v1?language=en-US`.
 
 ### <a name="text-to-speech"></a>Преобразование текста в речь
 

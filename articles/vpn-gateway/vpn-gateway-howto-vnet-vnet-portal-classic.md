@@ -8,12 +8,12 @@ ms.service: vpn-gateway
 ms.topic: article
 ms.date: 01/09/2020
 ms.author: cherylmc
-ms.openlocfilehash: ca24cbdd9541456cbaa3f384587fee17d47f5ca2
-ms.sourcegitcommit: 12a26f6682bfd1e264268b5d866547358728cd9a
+ms.openlocfilehash: ddcc7fcc14c7958e8c0d012c2395ad2b6c422f4f
+ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75864117"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77157913"
 ---
 # <a name="configure-a-vnet-to-vnet-connection-classic"></a>Настройка подключения между виртуальными сетями (классическая модель)
 
@@ -33,7 +33,7 @@ ms.locfileid: "75864117"
 
 ![Схема подключения между виртуальными сетями](./media/vpn-gateway-howto-vnet-vnet-portal-classic/v2vclassic.png)
 
-[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
+
 
 ## <a name="about-vnet-to-vnet-connections"></a>О подключениях "виртуальная сеть — виртуальная сеть"
 
@@ -61,7 +61,7 @@ ms.locfileid: "75864117"
 
 См. дополнительные сведения в разделе с [часто задаваемыми вопросами о подключениях типа "виртуальная сеть — виртуальная сеть"](#faq) в конце этой статьи.
 
-### <a name="before-you-begin"></a>Перед началом работы
+### <a name="before-you-begin"></a>Перед началом
 
 Перед началом упражнения скачайте и установите последнюю версию командлетов PowerShell для управления службами Azure. Подробнее: [Установка и настройка Azure PowerShell](/powershell/azure/overview). Мы используем портал для большинства операций, но для создания подключений между виртуальными сетями нужно использовать PowerShell. Создать соединения с помощью портала Azure невозможно.
 
@@ -76,7 +76,7 @@ ms.locfileid: "75864117"
 | Виртуальная сеть | Пространство адресов | Регион | Подключается к сайту локальной сети |
 |:--- |:--- |:--- |:--- |
 | TestVNet1 |TestVNet1<br>(10.11.0.0/16)<br>(10.12.0.0/16) |Восточная часть США |VNet4Local<br>(10.41.0.0/16)<br>(10.42.0.0/16) |
-| TestVNet4 |TestVNet4<br>(10.41.0.0/16)<br>(10.42.0.0/16) |Западная часть США |VNet1Local<br>(10.11.0.0/16)<br>(10.12.0.0/16) |
+| TestVNet4 |TestVNet4<br>(10.41.0.0/16)<br>(10.42.0.0/16) |западная часть США |VNet1Local<br>(10.11.0.0/16)<br>(10.12.0.0/16) |
 
 ## <a name="vnetvalues"></a>Шаг 2. Создание виртуальных сетей
 
@@ -138,7 +138,7 @@ ms.locfileid: "75864117"
 | Виртуальная сеть | Пространство адресов | Регион | Подключается к сайту локальной сети |
 |:--- |:--- |:--- |:--- |
 | TestVNet1 |TestVNet1<br>(10.11.0.0/16)<br>(10.12.0.0/16) |Восточная часть США |VNet4Local<br>(10.41.0.0/16)<br>(10.42.0.0/16) |
-| TestVNet4 |TestVNet4<br>(10.41.0.0/16)<br>(10.42.0.0/16) |Западная часть США |VNet1Local<br>(10.11.0.0/16)<br>(10.12.0.0/16) |
+| TestVNet4 |TestVNet4<br>(10.41.0.0/16)<br>(10.42.0.0/16) |западная часть США |VNet1Local<br>(10.11.0.0/16)<br>(10.12.0.0/16) |
 
 1. Найдите TestVNet1 на портале Azure. В разделе **VPN-подключения** щелкните **Шлюз**.
 

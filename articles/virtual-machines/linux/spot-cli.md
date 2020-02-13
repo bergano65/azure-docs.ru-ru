@@ -12,14 +12,14 @@ ms.workload: infrastructure-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 11/20/2019
+ms.date: 02/11/2020
 ms.author: cynthn
-ms.openlocfilehash: 0635be14937a3688792f65208dcb9d482b9e6d44
-ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
+ms.openlocfilehash: 110e935671ab1d640b2ff3dc26c203b262e999fe
+ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74781999"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77163098"
 ---
 # <a name="preview-deploy-spot-vms-using-the-azure-cli"></a>Предварительная версия: развертывание плашечных виртуальных машин с помощью Azure CLI
 
@@ -35,10 +35,10 @@ ms.locfileid: "74781999"
 > Экземпляры смесевых цветов в настоящее время доступны в общедоступной предварительной версии.
 > Эта предварительная версия не рекомендуется для рабочих нагрузок в рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 >
-> На ранних этапах общедоступной предварительной версии экземпляры смесевых цветов будут иметь фиксированную цену, поэтому на основе цен не будет никаких вытеснения.
 
 
-## <a name="install-azure-cli"></a>Установка командной строки Azure
+
+## <a name="install-azure-cli"></a>Установка Azure CLI
 
 Чтобы создать плашечные виртуальные машины, необходимо запустить Azure CLI версии 2.0.74 или более поздней. Чтобы узнать версию, выполните команду **az --version**. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI](/cli/azure/install-azure-cli). 
 

@@ -8,15 +8,15 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
-ms.date: 02/10/2020
+ms.date: 02/11/2020
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 724736bedd81ea45d7472a615fa22cde6916f21c
-ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
-ms.translationtype: HT
+ms.openlocfilehash: 3e5fb1ebb763cc5ecd7dfe8724347c03a487bc13
+ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
+ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 02/12/2020
-ms.locfileid: "77148867"
+ms.locfileid: "77157879"
 ---
 # <a name="contentdefinitions"></a>ContentDefinitions
 
@@ -84,11 +84,11 @@ ms.locfileid: "77148867"
 | `globalexception` | Отображает страницу ошибки при обнаружении исключения или ошибки. |
 | `providerselection` | Отображает список поставщиков удостоверений, которые пользователи могут выбирать во время входа. |
 | `unifiedssp` | Отображает форму для входа в локальную учетную запись (на основе адреса электронной почты или имени пользователя). Это значение также предоставляет функцию "Оставаться в системе" и ссылку "Забыли пароль?" . |
-| `unifiedssp` | Отображает форму для входа в локальную учетную запись (на основе адреса электронной почты или имени пользователя). |
+| `unifiedssd` | Отображает форму для входа в локальную учетную запись (на основе адреса электронной почты или имени пользователя). |
 | `multifactor` | Проверяет номера телефонов с помощью SMS-сообщения или голосового вызова во время регистрации или входа. |
 | `selfasserted` | Отображает форму, которая позволяет пользователям создать или обновить свой профиль. |
 
-## <a name="select-a-page-layout"></a>Выберите макет страницы
+### <a name="select-a-page-layout"></a>Выберите макет страницы
 
 [Код на стороне клиента JavaScript](javascript-samples.md) можно включить путем вставки `contract` между `elements` и типом страницы. Например, `urn:com:microsoft:aad:b2c:elements:contract:page-name:version`.
 
@@ -126,6 +126,29 @@ ms.locfileid: "77148867"
 | `urn:com:microsoft:aad:b2c:elements:unifiedssp:1.0.0` | `urn:com:microsoft:aad:b2c:elements:contract:unifiedssp:1.2.0` |
 | `urn:com:microsoft:aad:b2c:elements:unifiedssp:1.1.0` | `urn:com:microsoft:aad:b2c:elements:contract:unifiedssp:1.2.0` |
 
+
+### <a name="metadata"></a>Метаданные
+
+Элемент **Metadata** содержит следующие элементы.
+
+| Элемент | Вхождения | Description |
+| ------- | ----------- | ----------- |
+| Элемент | 0:n | Метаданные, относящиеся к определению содержимого. |
+
+Элемент **Item** из элемента **Metadata** содержит следующие атрибуты:
+
+| attribute | Обязательно | Description |
+| --------- | -------- | ----------- |
+| Клавиши | Да | Ключ метаданных.  |
+
+#### <a name="metadata-keys"></a>Ключи метаданных
+
+Определение содержимого поддерживает следующие элементы метаданных: 
+
+| Клавиши | Обязательно | Description |
+| --------- | -------- | ----------- |
+| DisplayName | нет | Строка, содержащая имя определения содержимого. |
+
 ### <a name="localizedresourcesreferences"></a>LocalizedResourcesReferences
 
 Элемент **LocalizedResourcesReferences** содержит следующие элементы:
@@ -134,7 +157,7 @@ ms.locfileid: "77148867"
 | ------- | ----------- | ----------- |
 | LocalizedResourcesReference | 1:n | Список ссылок на локализованные ресурсы для определения содержимого. |
 
-Элемент **LocalizedResourcesReferences** содержит следующие атрибуты:
+Элемент **локализедресаурцесреференце** содержит следующие атрибуты:
 
 | attribute | Обязательно | Description |
 | --------- | -------- | ----------- |

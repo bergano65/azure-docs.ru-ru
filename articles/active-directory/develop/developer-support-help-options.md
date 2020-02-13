@@ -13,12 +13,12 @@ ms.date: 05/23/2019
 ms.author: ryanwi
 ms.reviewer: jmprieur, saeeda
 ms.custom: aaddev
-ms.openlocfilehash: e85a768d8e4f11ca3637bc8f0b394cfb1ea9744a
-ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
+ms.openlocfilehash: 89bf49fb44d8575b251a0b33698bc4ce8425cc2b
+ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76697478"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77160973"
 ---
 # <a name="support-and-help-options-for-developers"></a>Возможности получения поддержки и справки для разработчиков
 
@@ -47,7 +47,7 @@ ms.locfileid: "76697478"
 
 ## <a name="use-the-development-support-tools"></a>Использование средств технической поддержки для разработки
 
-| Средство  | Description  |
+| Инструмент  | Description  |
 |---------|---------|
 | [jwt.ms](https://jwt.ms) | Вставьте идентификатор или маркер доступа, чтобы декодировать имена и значения утверждений. |
 | [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer)| Средство для выполнения запросов и получения ответов по API Microsoft Graph. |
@@ -79,8 +79,8 @@ Stack Overflow — это идеальное место для вопросов
 
 Список библиотек и их репозиториев GitHub см. в следующих статьях:
 
-* Библиотеки и репозитории GitHub [ADAL](active-directory-authentication-libraries.md).
-* [MSAL.NET](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet) [MSAL. js](https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-angularjs/README.md), [MSAL. Android](https://github.com/AzureAD/microsoft-authentication-library-for-android)и библиотеки [MSAL. obj_c](https://github.com/AzureAD/microsoft-authentication-library-for-objc) и репозитории GitHub
+* Библиотеки [библиотеки проверки Подлинности Azure Active Directory (ADAL)](../azuread-dev/active-directory-authentication-libraries.md) и репозитории GitHub
+* Библиотеки [проверки подлинности Microsoft (MSAL)](reference-v2-libraries.md) и репозитории GitHub
 
 ## <a name="open-a-support-request"></a>Подача запроса в службу поддержки
 
