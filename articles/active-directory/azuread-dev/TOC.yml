@@ -176,6 +176,8 @@
   items:
     - name: Глоссарий
       href: ../develop/developer-glossary.md?toc=/azure/active-directory/azuread-dev/toc.json&bc=/azure/active-directory/azuread-dev/breadcrumb/toc.json
+    - name: Видео
+      href: videos.md
     - name: Стратегия развития Azure
       href: 'https://azure.microsoft.com/roadmap/?category=security-identity'
     - name: Блог по Azure AD

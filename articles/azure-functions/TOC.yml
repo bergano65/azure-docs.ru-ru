@@ -327,7 +327,15 @@
     - name: Триггеры и привязки
       items:
         - name: Хранилище BLOB-объектов
-          href: functions-bindings-storage-blob.md
+          items:
+            - name: Обзор
+              href: functions-bindings-storage-blob.md
+            - name: Триггер
+              href: functions-bindings-storage-blob-trigger.md
+            - name: Входные данные
+              href: functions-bindings-storage-blob-input.md
+            - name: Выходные данные
+              href: functions-bindings-storage-blob-output.md
         - name: Azure Cosmos DB
           items:
             - name: Функции 1.x
