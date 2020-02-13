@@ -2,15 +2,15 @@
 title: Краткое руководство. Получение ответа из базы знаний в QnA Maker с помощью REST (Python)
 description: В этом кратком руководстве по Python для REST описывается, как программным способом получить ответ из базы знаний.
 ms.topic: quickstart
-ms.date: 01/28/2020
+ms.date: 02/08/2020
 ROBOTS: NOINDEX,NOFOLLOW
 ms.custom: RESTCHANGE-20200128
-ms.openlocfilehash: f439a492e2e63e3f99f80004b387d9cfc415e4b0
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: 7fe1ed140c53f93f2bd00847c5652906de998147
+ms.sourcegitcommit: 9add86fb5cc19edf0b8cd2f42aeea5772511810c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76842960"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77109699"
 ---
 # <a name="quickstart-get-answers-to-a-question-from-a-knowledge-base-with-python"></a>Краткое руководство. Получение ответов на вопрос из базы знаний с помощью Python
 

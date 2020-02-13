@@ -7,16 +7,16 @@ ms.service: active-directory
 ms.subservice: domain-services
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 10/30/2019
+ms.date: 02/10/2020
 ms.author: iainfou
-ms.openlocfilehash: 3a1d99ad282190c61f652179dd08a810c9444064
-ms.sourcegitcommit: 8cf199fbb3d7f36478a54700740eb2e9edb823e8
+ms.openlocfilehash: deca7477c79fd2952bb57c0194202c382cd5279d
+ms.sourcegitcommit: f718b98dfe37fc6599d3a2de3d70c168e29d5156
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74481173"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77132216"
 ---
-# <a name="tutorial-enable-password-synchronization-in-azure-active-directory-domain-services-for-hybrid-environments"></a>Руководство по Включению синхронизации паролей в Доменных службах Azure Active Directory для гибридных сред
+# <a name="tutorial-enable-password-synchronization-in-azure-active-directory-domain-services-for-hybrid-environments"></a>Руководство. Включению синхронизации паролей в Доменных службах Azure Active Directory для гибридных сред
 
 В гибридных средах клиента Azure Active Directory (Azure AD) можно настроить для синхронизации с локальной средой Доменных служб Active Directory (AD DS) с помощью Azure AD Connect. По умолчанию Azure AD Connect не синхронизирует устаревшие хэши паролей NT LAN Manager (NTLM) и Kerberos, необходимые для Доменных служб Azure Active Directory (Azure AD DS).
 
@@ -97,7 +97,7 @@ Azure AD Connect можно настроить для синхронизаци�
 
     В зависимости от размера каталога с точки зрения количества учетных записей и групп, синхронизация устаревших хэшей паролей с Azure AD может занять некоторое время. После синхронизации с Azure AD пароли синхронизируются с управляемым доменом Azure AD DS.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из этого руководства вы узнали следующее:
 

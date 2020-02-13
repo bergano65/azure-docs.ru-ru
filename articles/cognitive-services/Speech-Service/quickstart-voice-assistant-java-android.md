@@ -3,19 +3,19 @@ title: Краткое руководство. Пользовательский �
 titleSuffix: Azure Cognitive Services
 description: Узнайте, как создать приложение голосового помощника в Java на Android с помощью пакета SDK службы "Речь"
 services: cognitive-services
-author: trrwilson
+author: IEvangelist
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: quickstart
-ms.date: 12/09/2019
-ms.author: travisw
-ms.openlocfilehash: 70031513d6f120e539e80d6befad4bf9320fb9c4
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.date: 02/10/2020
+ms.author: dapine
+ms.openlocfilehash: d4f84bad6139210dcff3d3f3726d8b7a17d92a5b
+ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74975964"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77119725"
 ---
 # <a name="quickstart-create-a-voice-assistant-in-java-on-android-by-using-the-speech-sdk"></a>Краткое руководство. Создание голосового помощника в Java на Android с помощью пакета SDK службы "Речь"
 
@@ -260,7 +260,7 @@ ms.locfileid: "74975964"
 
     * Замените `YourSpeechSubscriptionKey` ключом своей подписки.
 
-    * Замените `YourServiceRegion` [регионом](regions.md), связанным с вашей подпиской. Канал Direct Line Speech сейчас поддерживается только в ряде регионов службы "Речь". Дополнительные сведения см. в разделе [Регионы](regions.md#voice-assistants).
+    * Замените `YourServiceRegion`[регионом](regions.md), связанным с вашей подпиской. Канал Direct Line Speech сейчас поддерживается только в ряде регионов службы "Речь". Дополнительные сведения см. в разделе [Регионы](regions.md#voice-assistants).
 
 ## <a name="build-and-run-the-app"></a>Создание и запуск приложения
 
@@ -278,12 +278,12 @@ ms.locfileid: "74975964"
 
 ![Снимок экрана приложения Android](media/sdk/qs-java-android-assistant-completed-turn.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Создание и развертывание простого бота](https://docs.microsoft.com/azure/bot-service/bot-builder-tutorial-basic-deploy?view=azure-bot-service-4.0)
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 - [Сведения о голосовых помощниках](voice-assistants.md)
 - [Try the Speech service for free](get-started.md) (Бесплатное использование службы "Речь")
 - [Пользовательские ключевые слова](speech-devices-sdk-create-kws.md)

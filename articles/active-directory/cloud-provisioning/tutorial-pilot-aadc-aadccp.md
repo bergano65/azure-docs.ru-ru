@@ -11,12 +11,12 @@ ms.date: 12/05/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 47806fe9c5c97c1f5a9c26d4ca38fb46bdf4057c
-ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
+ms.openlocfilehash: f47f55252c6274360f200a4bce0ed0b739e3d8a3
+ms.sourcegitcommit: bdf31d87bddd04382effbc36e0c465235d7a2947
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76931402"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77166572"
 ---
 # <a name="pilot-cloud-provisioning-for-an-existing-synced-ad-forest"></a>Пилотная подготовка облака для существующего синхронизированного леса AD 
 
@@ -67,8 +67,7 @@ ms.locfileid: "76931402"
  3. На странице **Описание** задайте следующие параметры и щелкните **Далее**.
 
     **Имя.** Присвойте правилу понятное имя.<br>
-    **Описание.** Введите информативное описание.<br> 
-    
+    **Описание.** Введите информативное описание.<br>
     **Connected System** (Подключенная система). Выберите соединитель AD, для которого записывается пользовательское правило синхронизации.<br>
     **Connected System Object Type** (Тип объекта подключенной системы). Пользователь<br>
     **Metaverse Object Type** (Тип объекта метавселенной). Модель Person<br>

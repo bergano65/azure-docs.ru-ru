@@ -7,12 +7,12 @@ ms.service: dns
 ms.topic: tutorial
 ms.date: 9/25/2018
 ms.author: rohink
-ms.openlocfilehash: d601d19a786613f674f7b941becc5e97d84e6fce
-ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
+ms.openlocfilehash: d4517314742f3ec8e9968d20745ffb697d96f324
+ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76939264"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77149938"
 ---
 # <a name="tutorial-configure-an-alias-record-to-refer-to-an-azure-public-ip-address"></a>Руководство. записи псевдонима для ссылки на общедоступный IP-адрес Azure 
 
@@ -36,7 +36,7 @@ ms.locfileid: "76939264"
 
 ## <a name="create-the-network-infrastructure"></a>Создание сетевой инфраструктуры
 Сначала создайте виртуальную сеть и подсеть для размещения веб-серверов.
-1. Войдите на портал Azure по адресу https://portal.azure.com.
+1. Войдите на портал Azure по адресу [https://portal.azure.com](https://portal.azure.com).
 2. На портале слева вверху выберите **Создать ресурс**. В поле поиска введите *группа ресурсов* и создайте группу ресурсов с именем **RG-DNS-Alias-pip**.
 3. Щелкните **Создать ресурс** > **Сети** > **Виртуальная сеть**.
 4. Создайте виртуальную сеть с именем **VNet-Server**. Поместите ее в группу ресурсов **RG-DNS-Alias-pip** и присвойте этой подсети имя **SN-Web**.

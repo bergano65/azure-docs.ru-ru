@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/22/2019
 ms.author: banders
-ms.openlocfilehash: 3cbc4ab4f0e2ad18c7d1d430ed5501e23b5f5f4d
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: 961eef939684b1bfb4ebe1840ff87e7bd836f205
+ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "75983729"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77121778"
 ---
 # <a name="tutorial-review-your-microsoft-customer-agreement-invoice"></a>Руководство. Просмотр счета в рамках Клиентского соглашения Майкрософт
 
@@ -41,7 +41,7 @@ ms.locfileid: "75983729"
 
 ## <a name="sign-in-to-azure"></a>Вход в Azure
 
-- Войдите на портал Azure по адресу https://portal.azure.com.
+- Войдите на портал Azure по адресу [https://portal.azure.com](https://portal.azure.com).
 
 ## <a name="check-access-to-a-microsoft-customer-agreement"></a>Проверка доступа к Клиентскому соглашению Майкрософт
 

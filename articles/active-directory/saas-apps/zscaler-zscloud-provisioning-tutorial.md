@@ -1,5 +1,5 @@
 ---
-title: Руководство по Настройка Zscaler ZSCloud для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
+title: Руководство. Настройка Zscaler ZSCloud для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
 description: Узнайте, как настроить Azure Active Directory для автоматической подготовки и отзыва учетных записей пользователей в Zscaler ZSCloud.
 services: active-directory
 documentationcenter: ''
@@ -15,14 +15,14 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/27/2019
 ms.author: jeedes
-ms.openlocfilehash: 34d3a7fb299ba143eee01b6b7184f1c566d41aba
-ms.sourcegitcommit: f5cc71cbb9969c681a991aa4a39f1120571a6c2e
+ms.openlocfilehash: af9d4aa15a4ff2784d2e1ca1334d9c24a8d12251
+ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68515455"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77062682"
 ---
-# <a name="tutorial-configure-zscaler-zscloud-for-automatic-user-provisioning"></a>Руководство по Настройка Zscaler ZSCloud для автоматической подготовки пользователей
+# <a name="tutorial-configure-zscaler-zscloud-for-automatic-user-provisioning"></a>Руководство. Настройка Zscaler ZSCloud для автоматической подготовки пользователей
 
 Узнайте, как настроить Azure Active Directory (Azure AD) для автоматической подготовки и отзыва учетных записей пользователей и (или) групп в Zscaler ZSCloud.
 
@@ -98,7 +98,7 @@ ms.locfileid: "68515455"
 
 5. В разделе **Учетные данные администратора** введите **URL-адрес клиента** и **Секретный токен** учетной записи Zscaler ZSCloud, как описано в следующем шаге.
 
-6. Чтобы получить **URL-адрес клиента** и **Секретный токен**, на портале Zscaler ZSCloud откройте меню **Администрирование**  > **Параметры проверки подлинности** и в разделе **Тип проверки подлинности** выберите **SAML**.
+6. Чтобы получить **URL-адрес клиента** и **Секретный токен**, на портале Zscaler ZSCloud откройте меню **Администрирование** > **Параметры проверки подлинности** и в разделе **Тип проверки подлинности** выберите **SAML**.
 
     ![Настройки аутентификации в Zscaler ZSCloud](./media/zscaler-zscloud-provisioning-tutorial/secrettoken1.png)
 
@@ -154,10 +154,10 @@ ms.locfileid: "68515455"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-* [Управление подготовкой учетных записей пользователей для корпоративных приложений](../manage-apps/configure-automatic-user-provisioning-portal.md)
+* [Управление подготовкой учетных записей пользователей для корпоративных приложений](../app-provisioning/configure-automatic-user-provisioning-portal.md)
 * [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Сведения о просмотре журналов и получении отчетов о действиях по подготовке](../active-directory-saas-provisioning-reporting.md)
 

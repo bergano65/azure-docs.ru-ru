@@ -2,16 +2,16 @@
 author: erhopf
 ms.service: cognitive-services
 ms.topic: include
-ms.date: 08/21/2019
+ms.date: 02/10/2020
 ms.author: erhopf
-ms.openlocfilehash: 942636a6ff6dcfe74a04a66d67a4490224b4538e
-ms.sourcegitcommit: 1d0b37e2e32aad35cc012ba36200389e65b75c21
+ms.openlocfilehash: 2f9e02af0652108fe10e4b73e7bb43c48451ca77
+ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72391761"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77123176"
 ---
-Чтобы создать проект Visual Studio для разработки рабочего стола C++ необходимо настроить параметры разработки Visual Studio, создать проект, выбрать целевую архитектуру и установить пакет SDK службы "Речь". 
+Чтобы создать проект Visual Studio для разработки рабочего стола C++ необходимо настроить параметры разработки Visual Studio, создать проект, выбрать целевую архитектуру и установить пакет SDK службы "Речь".
 
 ### <a name="set-up-visual-studio-development-options"></a>Настройка параметров разработки Visual Studio
 
@@ -19,7 +19,7 @@ ms.locfileid: "72391761"
 
 1. Откройте Visual Studio 2019 для отображения окна **Запуск**.
 
-   ![Окно запуска Visual Studio](../articles/cognitive-services/Speech-Service/media/sdk/vs-start-window.png) 
+   ![Окно запуска Visual Studio](../articles/cognitive-services/Speech-Service/media/sdk/vs-start-window.png)
 
 1. Выберите **Продолжить без кода** для перехода в интегрированную среду разработки Visual Studio.
 
@@ -61,7 +61,7 @@ ms.locfileid: "72391761"
 
 1. В **Обозревателе решений** правой кнопкой мыши щелкните решение и выберите пункт **Manage NuGet Packages for Solution** (Управление пакетами NuGet для решения) для перехода в окно **NuGet — решение**.
 
-1. Щелкните **Обзор**.
+1. Нажмите кнопку **Обзор**.
 
    ![Вкладка NuGet — вкладка «решение», Visual Studio](../articles/cognitive-services/Speech-Service/media/sdk/qs-cpp-windows-03-manage-nuget-packages.png)
 
@@ -71,10 +71,10 @@ ms.locfileid: "72391761"
 
    ![Установка пакета Microsoft.CognitiveServices.Speech C++ Visual Studio](../articles/cognitive-services/Speech-Service/media/sdk/qs-cpp-windows-04-nuget-install-1.0.0.png)
 
-1. В области состояния пакета рядом с результатами поиска выберите проект **helloworld**.
+1. В области "Состояние пакета" рядом с результатами поиска выберите проект **helloworld**.
 
-1. Щелкните **Установить**.
+1. Выберите пункт **Установить**.
 
 1. В диалоговом окне **Просмотр изменений** нажмите **ОК**.
 
-1. В диалоговом окне **Принятие условий лицензионного соглашения** просмотрите лицензию, а затем выберите **Я принимаю**. Начнется установка пакета, и после завершения установки в области **Output** (вывод) отобразится сообщение следующего вида: `Successfully installed 'Microsoft.CognitiveServices.Speech 1.7.0' to helloworld`. 
+1. В диалоговом окне **Принятие условий лицензионного соглашения** просмотрите лицензию, а затем выберите **Я принимаю**. Начнется установка пакета, и после завершения установки в области **Output** (вывод) отобразится сообщение следующего вида: `Successfully installed 'Microsoft.CognitiveServices.Speech 1.9.0' to helloworld`.
