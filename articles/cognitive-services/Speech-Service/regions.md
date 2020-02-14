@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 11/05/2019
 ms.author: panosper
 ms.custom: seodec18
-ms.openlocfilehash: f1379202fc59e9cca7a3543be201f8ebff276bef
-ms.sourcegitcommit: bdf31d87bddd04382effbc36e0c465235d7a2947
+ms.openlocfilehash: f1f425a6e3c66a72c7632cfea16d78ea6cc0d319
+ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77168359"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77201158"
 ---
 # <a name="speech-service-supported-regions"></a>Регионы, поддерживаемые речевыми службами
 
@@ -51,11 +51,11 @@ ms.locfileid: "77168359"
 | Австралия     | Восточная Австралия   | `australiaeast`      |
 | Европа        | Северная Европа     | `northeurope`        |
 | Европа        | Западная Европа      | `westeurope`         |
-| Северная Америка | Восточная часть США          | `eastus`             |
+| Северная Америка | Восток США          | `eastus`             |
 | Северная Америка | восточная часть США 2        | `eastus2`            |
 | Северная Америка | Центрально-южная часть США | `southcentralus`     |
 | Северная Америка | центрально-западная часть США  | `westcentralus`      |
-| Северная Америка | западная часть США          | `westus`             |
+| Северная Америка | Запад США          | `westus`             |
 | Северная Америка | западная часть США 2        | `westus2`            |
 | Южная Америка | Южная Бразилия     | `brazilsouth`        |
 
@@ -67,9 +67,9 @@ ms.locfileid: "77168359"
 
 | Регион         | Параметр пакета SDK для службы "Речь" |
 | -------------- | -------------------- |
-| западная часть США        | `westus`             |
+| Запад США        | `westus`             |
 | западная часть США 2      | `westus2`            |
-| Восточная часть США        | `eastus`             |
+| Восток США        | `eastus`             |
 | восточная часть США 2      | `eastus2`            |
 | Западная Европа    | `westeurope`         |
 | Северная Европа   | `northeurope`        |

@@ -7,12 +7,12 @@ ms.date: 11/19/2019
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: 12aa78d0ba7c9300fc012958660e2282e91568aa
-ms.sourcegitcommit: 38b11501526a7997cfe1c7980d57e772b1f3169b
+ms.openlocfilehash: a8ee1e07dafac46467aa26f89b609cd499346974
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76510827"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77186578"
 ---
 # <a name="configure-an-iot-edge-device-to-communicate-through-a-proxy-server"></a>Настройка устройства IoT Edge для обмена данными через прокси-сервер
 
@@ -22,7 +22,7 @@ ms.locfileid: "76510827"
 
 1. **Установите среду выполнения IoT Edge на устройстве.**
 
-   IoT Edge сценарии установки запрашивают пакеты и файлы из Интернета, поэтому устройство должно взаимодействовать через прокси-сервер для выполнения этих запросов. Подробные инструкции см. в разделе [Установка среды выполнения с помощью прокси-сервера](#install-the-runtime-through-a-proxy) этой статьи. Для устройств Windows сценарий установки также предоставляет возможность [автономной установки](how-to-install-iot-edge-windows.md#offline-installation) .
+   IoT Edge сценарии установки запрашивают пакеты и файлы из Интернета, поэтому устройство должно взаимодействовать через прокси-сервер для выполнения этих запросов. Подробные инструкции см. в разделе [Установка среды выполнения с помощью прокси-сервера](#install-the-runtime-through-a-proxy) этой статьи. Для устройств Windows сценарий установки также предоставляет возможность [автономной установки](how-to-install-iot-edge-windows.md#offline-or-specific-version-installation) .
 
    Этот шаг выполняется на IoT Edge устройстве при его первой настройке. При обновлении среды выполнения IoT Edge также требуются те же подключения.
 
@@ -82,7 +82,7 @@ URL-адрес прокси-сервера имеет такой формат: *
    . {Invoke-WebRequest -proxy <proxy URL> -useb aka.ms/iotedge-win} | Invoke-Expression; Initialize-IoTEdge
    ```
 
-Если для прокси-сервера применяются сложные учетные данные, которые невозможно добавить в URL-адрес, используйте параметр `-ProxyCredential` в `-InvokeWebRequestParameters`. Например,
+Если для прокси-сервера применяются сложные учетные данные, которые невозможно добавить в URL-адрес, используйте параметр `-ProxyCredential` в `-InvokeWebRequestParameters`. Пример:
 
 ```powershell
 $proxyCredential = (Get-Credential).GetNetworkCredential()
@@ -268,7 +268,7 @@ Restart-Service iotedge
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о ролях см. в статье о [среде выполнения IoT Edge](iot-edge-runtime.md).
 

@@ -8,12 +8,12 @@ ms.service: vpn-gateway
 ms.topic: conceptual
 ms.date: 01/09/2020
 ms.author: cherylmc
-ms.openlocfilehash: 495fa3837681fb2a78d86e6c34d4b4888b1e37f4
-ms.sourcegitcommit: 12a26f6682bfd1e264268b5d866547358728cd9a
+ms.openlocfilehash: e7283f5e28edc6f7beaad3a2743aa155f6ea6e14
+ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75863688"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77198655"
 ---
 # <a name="delete-a-virtual-network-gateway-using-powershell-classic"></a>Удаление шлюза виртуальной сети с помощью PowerShell (классическая модель)
 
@@ -29,15 +29,22 @@ ms.locfileid: "75863688"
 
 ### <a name="1-install-the-latest-powershell-cmdlets"></a>1. Установите последние командлеты PowerShell.
 
-Скачайте и установите последнюю версию командлетов PowerShell для управления службами Azure. Подробнее: [Установка и настройка Azure PowerShell](/powershell/azure/overview).
+[!INCLUDE [vpn-gateway-classic-powershell](../../includes/vpn-gateway-powershell-classic-locally.md)]
 
-### <a name="2-connect-to-your-azure-account"></a>2. Подключитесь к учетной записи Azure. 
+### <a name="2-connect-to-your-azure-account"></a>2. Подключитесь к учетной записи Azure.
 
 Откройте консоль PowerShell с повышенными правами и подключитесь к своей учетной записи. Для подключения используйте следующий пример кода:
 
-```powershell
-Add-AzureAccount
-```
+1. Откройте консоль PowerShell с повышенными правами. Чтобы переключиться на управление службами, используйте следующую команду:
+
+   ```powershell
+   azure config mode asm
+   ```
+2. Подключитесь к учетной записи. Для подключения используйте следующий пример кода:
+
+   ```powershell
+   Add-AzureAccount
+   ```
 
 ## <a name="export"></a>Шаг 2. Экспорт и просмотр файла конфигурации сети
 
@@ -85,7 +92,7 @@ Status : Successful
  </Gateway>
 ```
 
-Пример:
+Пример.
 
 ```
 <Gateway>
@@ -141,7 +148,7 @@ Status : Successful
  </Gateway>
 ```
 
-Пример:
+Пример.
 
 ```
 <Gateway>
@@ -164,7 +171,7 @@ Status : Successful
  </Subnets>
 ```
 
-Пример:
+Пример.
 
 ```
 <Subnets>

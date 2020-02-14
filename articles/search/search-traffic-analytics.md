@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 12/11/2019
-ms.openlocfilehash: 53fd02856a805f8bb5d7261cc9e6e32861b2b4fd
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 84e60b0a942bad94d8e36eb20b5be8e3f55af80a
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75426994"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77190947"
 ---
 # <a name="implement-search-traffic-analytics-in-azure-cognitive-search"></a>Реализация аналитики трафика поиска в Azure Когнитивный поиск
 
@@ -106,7 +106,7 @@ ms.locfileid: "75426994"
 **SearchServiceName**: (String) имя службы поиска **SearchId**: (GUID) уникальный идентификатор поискового запроса (в ответе на поиск). индекс службы поиска **IndexName**: (String) для запроса **куеритермс**: (String) Поиск слов, вводимых пользователем **ресулткаунт**: (int) количество документов, которые были возвращены (в ответе на поиск). имя профиля оценки (в строке **).**
 
 > [!NOTE]
-> Получите число запросов, создаваемых пользователем, добавив $count=true в поисковый запрос. Дополнительные сведения см. [здесь](https://docs.microsoft.com/rest/api/searchservice/search-documents#request).
+> Получите число запросов, создаваемых пользователем, добавив $count=true в поисковый запрос. Дополнительные сведения см. [здесь](/rest/api/searchservice/search-documents#counttrue--false).
 >
 
 > [!NOTE]
@@ -194,7 +194,7 @@ ms.locfileid: "75426994"
 
 ![Power BI панели мониторинга для Когнитивный поиск Azure](./media/search-traffic-analytics/azuresearch-powerbi-dashboard.png "Power BI панели мониторинга для Когнитивный поиск Azure")
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Выполните инструментирование приложения поиска для получения детальных и полезных сведений о службе поиска.
 
 Вы можете узнать больше об [Application Insights](https://docs.microsoft.com/azure/azure-monitor/app/app-insights-overview) и перейти на [страницу цен](https://azure.microsoft.com/pricing/details/application-insights/), чтобы получить дополнительные сведения о соответствующих уровнях служб.

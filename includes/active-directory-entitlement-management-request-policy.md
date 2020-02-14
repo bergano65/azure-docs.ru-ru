@@ -1,6 +1,6 @@
 ---
-title: включение файла
-description: включение файла
+title: включить файл
+description: включить файл
 services: active-directory
 author: msaburnley
 ms.service: active-directory
@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 11/11/2019
 ms.author: ajburnle
 ms.custom: include file
-ms.openlocfilehash: d89240467d5ea5172d04c8eb187fe85d1b702723
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.openlocfilehash: c73a62b2d5feeae42a5ea35c88073dd5fcc0d78c
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74981386"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77192480"
 ---
 ## <a name="for-users-in-your-directory"></a>Для пользователей в вашем каталоге
 
@@ -25,7 +25,7 @@ ms.locfileid: "74981386"
 
     ![Доступ к пакету — запросы для пользователей в вашем каталоге](./media/active-directory-entitlement-management-request-policy/for-users-in-your-directory.png)
 
-1. Выберите один из следующих вариантов:
+1. Выберите один из следующих вариантов.
 
     |  |  |
     | --- | --- |
@@ -60,7 +60,7 @@ ms.locfileid: "74981386"
 
     ![Доступ к пакету — запросы для пользователей, не наступающих в вашем каталоге](./media/active-directory-entitlement-management-request-policy/for-users-not-in-your-directory.png)
 
-1. Выберите один из следующих вариантов:
+1. Выберите один из следующих вариантов.
 
     |  |  |
     | --- | --- |
@@ -198,7 +198,7 @@ ms.locfileid: "74981386"
 
 ## <a name="enable-requests"></a>Включить запросы
 
-1. Если требуется, чтобы пакет Access стал немедленно доступен для пользователей в политике запросов, нажмите кнопку **Да** , чтобы включить.
+1. Если требуется, чтобы пакет Access был немедленно доступен для пользователей в политике запросов, установите переключатель включить в положение **Да**.
 
     Вы всегда можете включить его в будущем после завершения создания пакета Access.
 
@@ -206,4 +206,4 @@ ms.locfileid: "74981386"
 
     ![Доступ к пакету — политика-включить параметр политики](./media/active-directory-entitlement-management-request-policy/enable-requests.png)
 
-1. Щелкните **Далее**.
+1. Нажмите кнопку **Далее**.

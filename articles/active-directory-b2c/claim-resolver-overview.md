@@ -8,15 +8,15 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
-ms.date: 01/25/2019
+ms.date: 02/13/2020
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: bc8dbfd315702f666d6b811e855d6bcd99df938e
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: e3a80628e5729813e1d405e58ecb623925b63076
+ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76836054"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77193385"
 ---
 # <a name="about-claim-resolvers-in-azure-active-directory-b2c-custom-policies"></a>Арбитры утверждений в пользовательских политиках Azure Active Directory B2C
 
@@ -46,16 +46,16 @@ ms.locfileid: "76836054"
 
 ### <a name="culture"></a>Язык и региональные параметры
 
-| Утверждение | Description | Пример |
+| Утверждение | Описание | Пример |
 | ----- | ----------- | --------|
 | {Culture:LanguageName} | Двухбуквенный код ISO для языка. | en |
 | {Culture:LCID}   | Код языка (локаль). | 1033 |
-| {Culture:RegionName} | Двухбуквенный код ISO для региона. | США |
+| {Culture:RegionName} | Двухбуквенный код ISO для региона. | US |
 | {Culture:RFC5646} | Код языка RFC5646. | ru-RU |
 
 ### <a name="policy"></a>Политика
 
-| Утверждение | Description | Пример |
+| Утверждение | Описание | Пример |
 | ----- | ----------- | --------|
 | {Policy:PolicyId} | Имя политики проверяющей стороны. | B2C_1A_signup_signin |
 | {Policy:RelyingPartyTenantId} | Идентификатор клиента для политики проверяющей стороны. | your-tenant.onmicrosoft.com |
@@ -64,7 +64,7 @@ ms.locfileid: "76836054"
 
 ### <a name="openid-connect"></a>OpenID Connect
 
-| Утверждение | Description | Пример |
+| Утверждение | Описание | Пример |
 | ----- | ----------- | --------|
 | {OIDC:AuthenticationContextReferences} |Параметр `acr_values` строки запроса. | Н/Д |
 | {OIDC:ClientId} |Параметр `client_id` строки запроса. | 00000000-0000-0000-0000-000000000000 |
@@ -78,12 +78,12 @@ ms.locfileid: "76836054"
 
 ### <a name="context"></a>Контекст
 
-| Утверждение | Description | Пример |
+| Утверждение | Описание | Пример |
 | ----- | ----------- | --------|
 | {Context:BuildNumber} | Версия инфраструктури процедур идентификации (номер сборки).  | 1.0.507.0 |
 | {Context:CorrelationId} | Идентификатор корреляции.  | 00000000-0000-0000-0000-000000000000 |
 | {Context:DateTimeInUtc} |Дата и время в формате UTC.  | 10/10/2018 12:00:00 |
-| {Context:DeploymentMode} |Режим развертывания политики.  | Производство |
+| {Context:DeploymentMode} |Режим развертывания политики.  | Рабочие |
 | {Context:IPAddress} | IP-адрес пользователя. | 11.111.111.11 |
 
 
@@ -91,18 +91,40 @@ ms.locfileid: "76836054"
 
 Любое имя параметра, включенное в запрос OIDC или OAuth2, можно сопоставить с утверждением в пути взаимодействия пользователя. Например, запрос из приложения может включать в себя параметр строки запроса с именем `app_session`, `loyalty_number` или любую пользовательскую строку запроса.
 
-| Утверждение | Description | Пример |
+| Утверждение | Описание | Пример |
 | ----- | ----------------------- | --------|
 | {OAUTH-KV:campaignId} | Параметр строки запроса. | Гавайи |
 | {OAUTH-KV:app_session} | Параметр строки запроса. | A3C5R |
-| {OAUTH-KV:loyalty_number} | Параметр строки запроса. | 1 234 |
+| {OAUTH-KV:loyalty_number} | Параметр строки запроса. | 1234 |
 | {OAUTH-KV:any custom query string} | Параметр строки запроса. | Н/Д |
 
 ### <a name="oauth2"></a>OAuth2
 
-| Утверждение | Description | Пример |
+| Утверждение | Описание | Пример |
 | ----- | ----------------------- | --------|
 | {oauth2:access_token} | Маркер доступа. | Н/Д |
+
+## <a name="using-claim-resolvers"></a>Использование арбитров утверждений 
+
+Вы можете использовать арбитры утверждений со следующими элементами: 
+
+| Элемент | Элемент | Настройки |
+| ----- | ----------------------- | --------|
+|Технический профиль Application Insights |`InputClaim` | |
+|[Azure Active Directory](active-directory-technical-profile.md) технический профиль| `InputClaim`, `OutputClaim`| 1, 2|
+|Технический профиль [OAuth2](oauth2-technical-profile.md)| `InputClaim`, `OutputClaim`| 1, 2|
+|Технический профиль [OpenID Connect Connect](openid-connect-technical-profile.md)| `InputClaim`, `OutputClaim`| 1, 2|
+|Технический профиль [преобразования утверждений](claims-transformation-technical-profile.md)| `InputClaim`, `OutputClaim`| 1, 2|
+|Технический профиль [поставщика RESTful](restful-technical-profile.md)| `InputClaim`| 1, 2|
+|Технический профиль [SAML2](saml-technical-profile.md)| `OutputClaim`| 1, 2|
+|[Самостоятельно утвержденный](self-asserted-technical-profile.md) технический профиль| `InputClaim`, `OutputClaim`| 1, 2|
+|[контентдефинитион](contentdefinitions.md)| `LoadUri`| |
+|[контентдефинитионпараметерс](relyingparty.md#contentdefinitionparameters)| `Parameter` | |
+|Технический профиль [релингпарти](relyingparty.md#technicalprofile)| `OutputClaim`| 2 |
+
+Параметры: 
+1. Метаданные `IncludeClaimResolvingInClaimsHandling` должны иметь значение `true`
+1. Для атрибута input или Output Claims `AlwaysUseDefaultValue` необходимо задать значение `true`
 
 ## <a name="how-to-use-claim-resolvers"></a>Как использовать арбитры утверждений
 

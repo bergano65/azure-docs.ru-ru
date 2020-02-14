@@ -13,12 +13,12 @@ ms.date: 10/10/2018
 ms.author: curtand
 ms.reviewer: jairoc
 ms.custom: user-help, seo-update-azuread-jan
-ms.openlocfilehash: d29168f154c80eb2c66d0316f773375325ded67f
-ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
+ms.openlocfilehash: 2484de4e554d16ba049d206981a44654ede28a3f
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77062189"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77190027"
 ---
 # <a name="possible-fixes-for-the-you-cant-get-there-from-here-error-message"></a>Возможные исправления для сообщения об ошибке "не удается получить отсюда"
 
@@ -29,7 +29,7 @@ ms.locfileid: "77062189"
 
 ![Сообщение об ошибке, связанное с поддержкой браузера](media/user-help-device-remediation/browser-version.png)
 
-Чтобы устранить эту проблему, необходимо установить и запустить поддерживаемый браузер в зависимости от операционной системы. Если вы используете Windows 10, поддерживаемые браузеры включают Microsoft Edge, Internet Explorer и Google Chrome. Если вы используете другую операционную систему, вы можете проверить полный список [поддерживаемых браузеров](../conditional-access/technical-reference.md#supported-browsers).
+Чтобы устранить эту проблему, необходимо установить и запустить поддерживаемый браузер в зависимости от операционной системы. Если вы используете Windows 10, поддерживаемые браузеры включают Microsoft Edge, Internet Explorer и Google Chrome. Если вы используете другую операционную систему, вы можете проверить полный список [поддерживаемых браузеров](../conditional-access/concept-conditional-access-conditions.md#supported-browsers).
 
 ## <a name="make-sure-youre-using-a-supported-operating-system"></a>Проверка использования поддерживаемой операционной системы
 Убедитесь, что вы используете поддерживаемую версию операционной системы, в частности:
@@ -67,7 +67,7 @@ ms.locfileid: "77062189"
 
 - **Зарегистрировать личное устройство для работы.** Регистрация персонального устройства (в роли которого может выступать телефон или планшет) в сети организации. После регистрации устройства с него можно получать доступ к ограниченным ресурсам организации. Дополнительные сведения и пошаговые инструкции см. в статье [Регистрация персонального устройства в сети организации](user-help-register-device-on-network.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 - [Что такое портал MyApps?](active-directory-saas-access-panel-introduction.md)
 
 - [Вход с использованием телефона вместо ввода пароля](user-help-auth-app-sign-in.md)

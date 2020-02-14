@@ -8,15 +8,15 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
-ms.date: 09/10/2018
+ms.date: 02/13/2020
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: bf06fe7d4e529eb04b156a2d61011198a6fe0978
-ms.sourcegitcommit: 5b9287976617f51d7ff9f8693c30f468b47c2141
+ms.openlocfilehash: fbc1d59ac401adedcf897d0c16edb6904c89acc3
+ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2019
-ms.locfileid: "74949429"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77193449"
 ---
 # <a name="define-a-claims-transformation-technical-profile-in-an-azure-active-directory-b2c-custom-policy"></a>Определение технического профиля преобразования утверждений в пользовательской политике в Azure Active Directory B2C
 
@@ -26,7 +26,7 @@ ms.locfileid: "74949429"
 
 ## <a name="protocol"></a>Протокол
 
-Для атрибута **Name** элемента **Protocol** необходимо задать значение `Proprietary`. Атрибут **handler** должен содержать полное имя сборки обработчика протокола, которое используется Azure AD B2C: `Web.TPEngine.Providers.ClaimsTransformationProtocolProvider, Web.TPEngine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null`.
+Атрибуту **Name** элемента **Protocol** необходимо присвоить значение `Proprietary`. Атрибут **handler** должен содержать полное имя сборки обработчика протокола, которое используется Azure AD B2C: `Web.TPEngine.Providers.ClaimsTransformationProtocolProvider, Web.TPEngine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null`.
 
 В следующем примере показан технический профиль для преобразования утверждений:
 
@@ -99,6 +99,12 @@ TransformationClaimType="collection" />
   </OrchestrationSteps>
 </UserJourney>
 ```
+
+## <a name="metadata"></a>Метаданные
+
+| Атрибут | Обязательно | Описание |
+| --------- | -------- | ----------- |
+| инклудеклаимресолвингинклаимшандлинг  | Нет | Для входных и выходных утверждений указывает, включено ли [разрешение утверждений](claim-resolver-overview.md) в технический профиль. Возможные значения: `true`или `false` (по умолчанию). Если вы хотите использовать сопоставитель утверждений в техническом профиле, задайте для этого параметра значение `true`. |
 
 ## <a name="use-a-validation-technical-profile"></a>Использование технического профиля проверки
 

@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 02/11/2020
 ms.author: spelluru
-ms.openlocfilehash: 78c20c72d0e344d993878f6e06ccc94f42048606
-ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
-ms.translationtype: HT
+ms.openlocfilehash: 1d399ffec2cd702dcfa39310803bc780b85bfde1
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77162333"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77187461"
 ---
 # <a name="send-events-to-or-receive-events-from-azure-event-hubs-using-net-core-microsoftazureeventhubs"></a>Отправка событий или получение событий из концентраторов событий Azure с помощью .NET Core (Microsoft. Azure. EventHubs)
 В этом кратком руководстве показано, как отправлять события и получать события из концентратора событий с помощью библиотеки **Microsoft. Azure. EventHubs** .NET Core.
@@ -26,7 +26,7 @@ ms.locfileid: "77162333"
 > [!WARNING]
 > В этом кратком руководстве используется старый пакет **Microsoft. Azure. EventHubs** . Краткое руководство, в котором используется последняя библиотека **Azure. Messaging. EventHubs** , см. в статье [Отправка и получение событий с помощью библиотеки Azure. Messaging. EventHubs](get-started-dotnet-standard-send-v2.md). Чтобы переместить приложение из старой библиотеки в новую, ознакомьтесь с [руководством по миграции из Microsoft. Azure. EventHubs в Azure. Messaging. EventHubs](https://github.com/Azure/azure-sdk-for-net/blob/master/sdk/eventhub/Azure.Messaging.EventHubs/migration-guide-from-v4.md).
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 Если вы не знакомы с концентраторами событий Azure, ознакомьтесь с [обзором концентраторов событий](event-hubs-about.md) , прежде чем выполнять инструкции из этого руководства. 
 
 Для работы с данным руководством необходимо следующее:
@@ -368,9 +368,12 @@ ms.locfileid: "77162333"
 4. Запустите программу и убедитесь в отсутствии ошибок.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Ознакомьтесь со следующими статьями:
 
+- [Примеры управления доступом на основе ролей (RBAC)](https://github.com/Azure/azure-event-hubs/tree/master/samples/DotNet/Microsoft.Azure.EventHubs/Rbac). 
+    
+    В этих примерах используется старая библиотека **Microsoft. Azure. EventHubs** , но вы можете легко обновить ее, используя последнюю библиотеку **Azure. Messaging. EventHubs** . Чтобы переместить пример из старой библиотеки в новую, ознакомьтесь с [руководством по миграции из Microsoft. Azure. EventHubs в Azure. Messaging. EventHubs](https://github.com/Azure/azure-sdk-for-net/blob/master/sdk/eventhub/Azure.Messaging.EventHubs/migration-guide-from-v4.md).)
 - [EventProcessorHost](event-hubs-event-processor-host.md)
 - [Функции и терминология в Центрах событий Azure](event-hubs-features.md)
 - [Часто задаваемые вопросы о Центрах событий](event-hubs-faq.md)

@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 05/21/2019
 ms.author: apimpm
-ms.openlocfilehash: 213e5523c0c99309c3244e19a406a7b82297188f
-ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
-ms.translationtype: HT
+ms.openlocfilehash: 8b396b782c1254b3229aeeb8e51b61cc744d6318
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77161806"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77190365"
 ---
 # <a name="protect-an-api-by-using-oauth-20-with-azure-active-directory-and-api-management"></a>Защита API с помощью протокола OAuth 2.0 и службы управления API в Azure Active Directory
 
@@ -27,7 +27,7 @@ ms.locfileid: "77161806"
 > [!NOTE]
 > Эта функция доступна на уровнях **Developer**, **Standard** и **Premium** интерфейса управления API.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 Чтобы выполнить шаги в этой статье, необходимо иметь следующее:
 * Экземпляр управления API.
 * Публикуемый API, использующий экземпляр управления API (APIM).
@@ -71,7 +71,7 @@ ms.locfileid: "77161806"
 
 Каждое клиентское приложение, вызывающее API, должно быть также зарегистрировано в Azure Active Directory. В этом примере клиентское приложение является консолью разработчика на портале разработчика управления API. Ниже показано, как зарегистрировать другое приложение в Azure Active Directory для представления консоли разработчика.
 
-1. Перейдите в [портал Azure](https://portal.azure.com) , чтобы зарегистрировать приложение. Найдите и выберите **регистрации API**.
+1. Перейдите в [портал Azure](https://portal.azure.com) , чтобы зарегистрировать приложение. Найдите и выберите **Регистрация приложений**.
 
 1. Выберите **Новая регистрация**.
 
@@ -97,7 +97,7 @@ ms.locfileid: "77161806"
 
 Теперь, когда зарегистрированы два приложения для представления API и консоли разработчика, необходимо предоставить разрешения, позволяющие клиентскому приложению вызывать серверное приложение.  
 
-1. Перейдите в [портал Azure](https://portal.azure.com) , чтобы предоставить разрешения для клиентского приложения. Найдите и выберите **регистрации API**.
+1. Перейдите в [портал Azure](https://portal.azure.com) , чтобы предоставить разрешения для клиентского приложения. Найдите и выберите **Регистрация приложений**.
 
 1. Выберите свое клиентское приложение. Затем в списке страниц приложения выберите **разрешения API**.
 
@@ -147,7 +147,7 @@ ms.locfileid: "77161806"
 
 1. Далее в качестве типа предоставления кода авторизации указан **redirect_url**. Запишите этот URL-адрес.
 
-1. Нажмите кнопку **Создать**.
+1. Выберите **Создать**.
 
 1. Вернитесь к клиентскому приложению и выберите **Проверка подлинности**.
 
@@ -161,11 +161,11 @@ ms.locfileid: "77161806"
 
 2. Выберите API, который нужно защитить. Например, можно использовать `Echo API`.
 
-3. Перейдите в меню **Параметры**.
+3. Перейдите в **Параметры**.
 
 4. В разделе **безопасности** выберите **OAuth 2.0**, а также настроенный ранее сервер OAuth 2.0. 
 
-5. Щелкните **Сохранить**.
+5. Нажмите кнопку **Сохранить**.
 
 ## <a name="successfully-call-the-api-from-the-developer-portal"></a>Удачный вызов API с портала разработчика
 
@@ -202,7 +202,7 @@ ms.locfileid: "77161806"
     <openid-config url="https://login.microsoftonline.com/{aad-tenant}/.well-known/openid-configuration" />
     <required-claims>
         <claim name="aud">
-            <value>{Application ID URI of backend-app}</value>
+            <value>{Application ID of backend-app}</value>
         </claim>
     </required-claims>
 </validate-jwt>
@@ -214,7 +214,7 @@ ms.locfileid: "77161806"
 
 В этом руководстве мы использовали консоль разработчика в APIM как пример клиентского приложения для вызова `Echo API`, защищенного OAuth 2.0. Чтобы узнать больше о том, как создать приложение и реализовать OAuth 2.0, изучите [примеры кода Azure Active Directory](../active-directory/develop/sample-v2-code.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * Узнайте больше об [Azure Active Directory и OAuth 2.0](../active-directory/develop/authentication-scenarios.md).
 * См. другие [видео](https://azure.microsoft.com/documentation/videos/index/?services=api-management) об управлении API.
 * Другие способы защиты внутренней серверной службы см. в разделе [Взаимная проверка подлинности на основе сертификата](api-management-howto-mutual-certificates.md).

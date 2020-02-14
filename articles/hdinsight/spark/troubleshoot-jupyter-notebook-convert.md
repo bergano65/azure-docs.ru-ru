@@ -7,12 +7,12 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: troubleshooting
 ms.date: 02/11/2020
-ms.openlocfilehash: 03b23d86bca10077ede43f3b4e5a6c5fa6f5dd28
-ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
-ms.translationtype: HT
+ms.openlocfilehash: 61e7cd8d37108b8f4eea88c4f6b6b2a8cdbfd605
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77165466"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77186805"
 ---
 # <a name="unable-to-create-jupyter-notebook-in-azure-hdinsight"></a>Не удалось создать записную книжку Jupyter в Azure HDInsight
 
@@ -52,11 +52,11 @@ Cannot convert notebook to v5 because that version doesn't exist
 
     Сохраните изменения, введя **CTRL + X**, **Y**, **введите**.
 
-1. В веб-браузере перейдите к `https://CLUSTERNAME.azurehdinsight.net`, где `CLUSTERNAME` — имя кластера.
+1. В веб-браузере перейдите к `https://CLUSTERNAME.azurehdinsight.net/#/main/services/JUPYTER`, где `CLUSTERNAME` — имя кластера.
 
-1. Выберите **Jupyter** и перезапустите службу.
+1. Перезапустите службу Jupyter.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Если вы не видите своего варианта проблемы или вам не удается ее устранить, дополнительные сведения можно получить, посетив один из следующих каналов.
 

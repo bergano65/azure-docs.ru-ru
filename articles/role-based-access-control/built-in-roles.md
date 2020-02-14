@@ -11,16 +11,16 @@ ms.devlang: ''
 ms.topic: reference
 ms.tgt_pltfrm: ''
 ms.workload: identity
-ms.date: 01/17/2020
+ms.date: 02/13/2020
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.custom: it-pro
-ms.openlocfilehash: 04a3af7c85a361878e37cf3ee210e8a5c9f3cd30
-ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
+ms.openlocfilehash: 9858f7ac25f2063e62dce0322f1859a0a7fcf83b
+ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77121976"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77198672"
 ---
 # <a name="built-in-roles-for-azure-resources"></a>Встроенные роли для ресурсов Azure
 
@@ -34,7 +34,7 @@ ms.locfileid: "77121976"
 
 
 > [!div class="mx-tableFixed"]
-> | Встроенные роли | Description | Идентификатор |
+> | Встроенные роли | Описание | Id |
 > | --- | --- | --- |
 > | [Владелец](#owner) | Позволяет управлять всем, в том числе доступом к ресурсам. | 8e3af657-a8ff-443c-a75c-2fe8c4bcb635 |
 > | [Участник](#contributor) | Позволяет управлять всем, кроме предоставления доступа к ресурсам. | b24988ac-6180-42a0-ab88-20f7382dd24c |
@@ -184,7 +184,7 @@ ms.locfileid: "77121976"
 > | **NotDataActions** |  |
 > | *Нет* |  |
 
-## <a name="contributor"></a>Участник
+## <a name="contributor"></a>Contributor
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
@@ -422,7 +422,8 @@ ms.locfileid: "77121976"
 > | **Id** | ae349356-3a1b-4a5e-921d-050484c6347e |
 > | **Действия** |  |
 > | Microsoft.Authorization/*/read | Чтение ролей и назначений ролей |
-> | Microsoft.Insights/alertRules/* | Создание правил оповещения и управление ими |
+> | Microsoft.Insights/alertRules/* | Создание классических правил генерации оповещений и управление ими |
+> | Microsoft. Insights/Метрикалертс/* | Создание новых правил генерации оповещений и управление ими |
 > | Microsoft.Insights/components/* | Создание компонентов Insights и управление ими |
 > | Microsoft.Insights/webtests/* | Создание веб-тестов и управление ими |
 > | Microsoft.ResourceHealth/availabilityStatuses/read | Возвращает состояния доступности для всех ресурсов в указанной области. |
@@ -3220,7 +3221,7 @@ ms.locfileid: "77121976"
 > | **NotDataActions** |  |
 > | *Нет* |  |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Сопоставить поставщик ресурсов со службой](../azure-resource-manager/management/azure-services-resource-providers.md)
 - [Пользовательские роли для ресурсов Azure](custom-roles.md)

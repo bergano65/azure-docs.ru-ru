@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/22/2017
 ms.author: damendo
-ms.openlocfilehash: b091c501fb565fb267c40f686dc037e41f3c90ee
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: 77812a3765a027152c957f6dbb7c9b3811a2278f
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76845128"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77191175"
 ---
 # <a name="create-an-azure-network-watcher-instance"></a>Создание экземпляра Наблюдателя за сетями Azure
 
@@ -27,7 +27,7 @@ ms.locfileid: "76845128"
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 ## <a name="network-watcher-is-automatically-enabled"></a>Наблюдатель за сетями включается автоматически
-При создании или обновлении виртуальной сети в подписке Наблюдатель за сетями включается автоматически в регионе вашей виртуальной сети. Автоматическое включение Наблюдателя за сетями не повлияет на ваши ресурсы, и за него не взимается дополнительная плата.
+При создании или обновлении виртуальной сети в подписке Наблюдатель за сетями включается автоматически в регионе вашей виртуальной сети. Автоматическое включение Наблюдателя за сетями не влияет на ваши ресурсы, и за него не взимается дополнительная плата.
 
 #### <a name="opt-out-of-network-watcher-automatic-enablement"></a>Отказ от автоматического включения Наблюдателя за сетями
 Если вы хотите отказаться от автоматического включения Наблюдателя за сетями, выполните такие команды.
@@ -107,7 +107,7 @@ armclient put "https://management.azure.com/subscriptions/${subscriptionId}/reso
 
 Перейдите на вкладку Обзор, если она еще не установлена. В раскрывающемся списке выберите подписку, для которой нужно отключить наблюдатель за сетями.
 Разверните список регионов для выбранной подписки, щелкнув стрелку. Для любого из этих данных используйте три точки справа для доступа к контекстному меню.
-Щелкните "отключить наблюдатель за сетями", чтобы начать отключение. Вам будет предложено подтвердить этот шаг. Нажмите кнопку Да, чтобы продолжить.
+Щелкните "отключить наблюдатель за сетями", чтобы начать отключение. Вам будет предложено подтвердить этот шаг. Чтобы продолжить, нажмите кнопку Да.
 На портале это необходимо сделать отдельно для каждого региона в каждой подписке.
 
 
@@ -121,7 +121,7 @@ New-AzNetworkWatcher -Name NetworkWatcher_westcentralus -ResourceGroup NetworkWa
 Remove-AzNetworkWatcher -Name NetworkWatcher_westcentralus -ResourceGroup NetworkWatcherRG
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Теперь, имея экземпляр Наблюдателя за сетями, узнайте о его возможностях:
 
@@ -132,5 +132,3 @@ Remove-AzNetworkWatcher -Name NetworkWatcher_westcentralus -ResourceGroup Networ
 * [Представление группы безопасности](network-watcher-security-group-view-overview.md)
 * [Ведение журнала потоков NSG](network-watcher-nsg-flow-logging-overview.md)
 * [Устранение неполадок шлюза виртуальной сети](network-watcher-troubleshoot-overview.md)
-
-Создав экземпляр Наблюдателя за сетями, вы можете включить захват пакетов на виртуальных машинах. Сведения об этом см. в статье [Использование записи пакетов для упреждающего мониторинга сети с помощью оповещений и функций Azure](network-watcher-alert-triggered-packet-capture.md).

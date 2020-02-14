@@ -3,12 +3,12 @@ title: Справочник разработчика C# по функциям Az
 description: Узнайте, как разрабатывать Функции Azure с помощью C#.
 ms.topic: reference
 ms.date: 09/12/2018
-ms.openlocfilehash: 89b3ae927b14454ac3f58fb510626e315842240f
-ms.sourcegitcommit: f34165bdfd27982bdae836d79b7290831a518f12
+ms.openlocfilehash: cfa53fe2defca768196af595c1d088d41bc60f71
+ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/13/2020
-ms.locfileid: "75921044"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77198383"
 ---
 # <a name="azure-functions-c-developer-reference"></a>Справочник разработчика C# по функциям Azure
 
@@ -29,7 +29,7 @@ ms.locfileid: "75921044"
 
 | Версия среды выполнения функций | Максимальная версия .NET |
 | ---- | ---- |
-| Функции 3. x | .NET Core 3.1 |
+| Функции 3. x | .NET Core 3,1 |
 | Функции 2.x | .NET Core 2.2 |
 | Функции 1.x | .NET Framework 4.6 |
 
@@ -204,7 +204,7 @@ Visual Studio выполняет проекты Функций с помощью
 
 ## <a name="supported-types-for-bindings"></a>Поддерживаемые типы для привязок
 
-Все привязки поддерживают определенные типы. Например, атрибут триггера большого двоичного объекта можно применить к строковому параметру, параметру POCO, параметру `CloudBlockBlob` или любому из нескольких других поддерживаемых типов. В [справочной статье о привязках для больших двоичных объектов](functions-bindings-storage-blob.md#trigger---usage) содержится список всех поддерживаемых типов параметров. Дополнительные сведения см. в статье о [триггерах и привязках](functions-triggers-bindings.md) и в [справочной документации по каждому типу привязки](functions-triggers-bindings.md#next-steps).
+Все привязки поддерживают определенные типы. Например, атрибут триггера большого двоичного объекта можно применить к строковому параметру, параметру POCO, параметру `CloudBlockBlob` или любому из нескольких других поддерживаемых типов. В [справочной статье о привязках для больших двоичных объектов](functions-bindings-storage-blob-trigger.md#usage) содержится список всех поддерживаемых типов параметров. Дополнительные сведения см. в статье о [триггерах и привязках](functions-triggers-bindings.md) и в [справочной документации по каждому типу привязки](functions-triggers-bindings.md#next-steps).
 
 [!INCLUDE [HTTP client best practices](../../includes/functions-http-client-best-practices.md)]
 
@@ -236,7 +236,7 @@ public static class ICollectorExample
 }
 ```
 
-## <a name="logging"></a>Ведение журнала
+## <a name="logging"></a>Logging
 
 Для записи выходных данных в потоковые журналы в C# включите аргумент с типом [ILogger](https://docs.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger). Мы рекомендуем использовать имя `log`, как показано в следующем примере:  
 
@@ -255,7 +255,7 @@ public static class SimpleExample
 
 Не используйте `Console.Write` в Функциях Azure. Дополнительные сведения см. в разделе [Запись журналов в функциях C#](functions-monitoring.md#write-logs-in-c-functions) статьи **Мониторинг Функций Azure**.
 
-## <a name="async"></a>Асинхронный режим
+## <a name="async"></a>Async
 
 Чтобы сделать функцию [асинхронной](https://docs.microsoft.com/dotnet/csharp/programming-guide/concepts/async/), используйте ключевое слово `async` и верните объект `Task`.
 
@@ -353,7 +353,7 @@ public static class EnvironmentVariablesExample
 
 ### <a name="single-attribute-example"></a>Пример с одним атрибутом
 
-В следующем примере кода создается [выходная привязка большого двоичного объекта службы хранилища](functions-bindings-storage-blob.md#output) с путем к большому двоичному объекту, определенному во время выполнения, а затем записывается строка в большой двоичный объект.
+В следующем примере кода создается [выходная привязка большого двоичного объекта службы хранилища](functions-bindings-storage-blob-output.md) с путем к большому двоичному объекту, определенному во время выполнения, а затем записывается строка в большой двоичный объект.
 
 ```cs
 public static class IBinderExample
@@ -378,7 +378,7 @@ public static class IBinderExample
 
 ### <a name="multiple-attribute-example"></a>Пример с несколькими атрибутами
 
-В предыдущем примере код получает параметр приложения для строки подключения основной учетной записи хранения приложения-функции (т. е. `AzureWebJobsStorage`). Вы можете указать пользовательский параметр приложения, который следует использовать для учетной записи хранения. Для этого добавьте [StorageAccountAttribute](https://github.com/Azure/azure-webjobs-sdk/blob/master/src/Microsoft.Azure.WebJobs/StorageAccountAttribute.cs) и передайте массив атрибутов в `BindAsync<T>()`. Используйте параметр `Binder`, а не `IBinder`.  Пример.
+В предыдущем примере код получает параметр приложения для строки подключения основной учетной записи хранения приложения-функции (т. е. `AzureWebJobsStorage`). Вы можете указать пользовательский параметр приложения, который следует использовать для учетной записи хранения. Для этого добавьте [StorageAccountAttribute](https://github.com/Azure/azure-webjobs-sdk/blob/master/src/Microsoft.Azure.WebJobs/StorageAccountAttribute.cs) и передайте массив атрибутов в `BindAsync<T>()`. Используйте параметр `Binder`, а не `IBinder`.  Например:
 
 ```cs
 public static class IBinderExampleMultipleAttributes
@@ -407,7 +407,7 @@ public static class IBinderExampleMultipleAttributes
 
 [!INCLUDE [Supported triggers and bindings](../../includes/functions-bindings.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [Дополнительные сведения о триггерах и привязках](functions-triggers-bindings.md)

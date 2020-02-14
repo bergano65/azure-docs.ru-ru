@@ -9,12 +9,12 @@ ms.subservice: azure-sentinel
 ms.topic: conceptual
 ms.date: 09/23/2019
 ms.author: rkarlin
-ms.openlocfilehash: 8d8f960d8cf1310ec0a380e75bdaa714408e2cac
-ms.sourcegitcommit: 5925df3bcc362c8463b76af3f57c254148ac63e3
+ms.openlocfilehash: 4c75d1870ca3b966acdd658c91c0af8fd7465bfb
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75563672"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77190877"
 ---
 # <a name="connect-data-from-azure-security-center"></a>Подключение данных из центра безопасности Azure
 
@@ -24,13 +24,12 @@ ms.locfileid: "75563672"
 
 Azure Sentinel позволяет подключать оповещения из [центра безопасности Azure](../security-center/security-center-intro.md) и выполнять их потоковую передачу в Azure Sentinel. 
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
-- Если вы хотите экспортировать оповещения из центра безопасности Azure, вы должны быть участником подписки, в которой выполняется потоковая передача журналов.
+- Чтобы экспортировать оповещения из центра безопасности Azure, необходимо иметь роль "читатель безопасности" в подписке на журналы, которые вы выполняете в вашем потоке.
 
 - В подписке должен быть установлен [уровень "Стандартный" центра безопасности Azure](../security-center/security-center-pricing.md) . Если нет, [обновите подписку до уровня "Стандартный](https://azure.microsoft.com/pricing/details/security-center/)".
 
-- Для подключения к каждой подписке, которую вы хотите подключить, необходимо войти в систему с правами глобального администратора или администратора безопасности.
 
 
 ## <a name="connect-to-azure-security-center"></a>Подключение к центру безопасности Azure
@@ -45,7 +44,7 @@ Azure Sentinel позволяет подключать оповещения из
 
 4. Чтобы использовать соответствующую схему в Log Analytics для оповещений центра безопасности Azure, выполните поиск по запросу **секуритялерт**.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 В этом документе вы узнали, как подключить центр безопасности Azure к Azure Sentinel. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
 - Узнайте, как [отслеживать свои данные и потенциальные угрозы](quickstart-get-visibility.md).
 - Узнайте, как приступить к [обнаружению угроз с помощью Azure Sentinel](tutorial-detect-threats-built-in.md).

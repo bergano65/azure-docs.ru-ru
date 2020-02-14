@@ -5,13 +5,13 @@ author: mamccrea
 ms.author: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
-ms.date: 02/03/2020
-ms.openlocfilehash: e1eb852b7cf7aea887dea429e19b0a3b1ac5805a
-ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
+ms.date: 02/14/2020
+ms.openlocfilehash: 14b04f7d6068863c79c7060d29b58232be1f40cb
+ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76989864"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77201804"
 ---
 # <a name="compatibility-level-for-azure-stream-analytics-jobs"></a>Уровень совместимости заданий Azure Stream Analytics
 
@@ -52,6 +52,10 @@ ms.locfileid: "76989864"
 ## <a name="compatibility-level-12"></a>Уровень совместимости 1,2
 
 На уровне совместимости 1,2 появились следующие основные изменения:
+
+###  <a name="amqp-messaging-protocol"></a>Протокол обмена сообщениями AMQP
+
+**уровень 1,2**. Azure Stream Analytics использует протокол обмена сообщениями [протокола расширенных очередей сообщений (AMQP)](../service-bus-messaging/service-bus-amqp-overview.md) для записи в очереди и разделы служебной шины. AMQP позволяет создавать кроссплатформенные гибридные приложения, использующие протокол открытого стандарта.
 
 ### <a name="geospatial-functions"></a>Геопространственные функции
 

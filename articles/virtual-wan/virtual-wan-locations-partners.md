@@ -1,19 +1,19 @@
 ---
-title: Расположения партнеров Виртуальной глобальной сети Azure | Документация Майкрософт
+title: Партнеры и расположения виртуальной глобальной сети Azure | Документация Майкрософт
 description: Эта статья содержит список партнеров и узлов виртуальной глобальной сети Azure.
 services: virtual-wan
 author: cherylmc
 ms.service: virtual-wan
 ms.topic: conceptual
-ms.date: 11/11/2019
+ms.date: 02/12/2020
 ms.author: cherylmc
-Customer intent: As someone with a networking background, I want to connect find a Virtual WAN partner
-ms.openlocfilehash: afa808c95c88184fb531e858fbfe6d102a6f1f08
-ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
-ms.translationtype: HT
+Customer intent: As someone with a networking background, I want to find a Virtual WAN partner
+ms.openlocfilehash: 68379fd2334e517df4011c05bb32543f7ce4a173
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77157165"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77190407"
 ---
 # <a name="virtual-wan-partners-and-virtual-hub-locations"></a>Расположения партнеров и виртуального концентратора Виртуальной глобальной сети
 
@@ -34,7 +34,7 @@ ms.locfileid: "77157165"
 * Автоматическая загрузка информации о подключении Azure.
 * Конфигурация локального устройства ветви. 
 
-Некоторые партнеры по подключению могут расширить автоматизацию, включив в нее создание виртуального концентратора виртуальной сети Azure и VPN-шлюз. Если вы хотите узнать больше об автоматизации, см. статью [Настройка автоматизации Виртуальной глобальной сети для партнеров Виртуальной глобальной сети (предварительная версия)](virtual-wan-configure-automation-providers.md).
+Некоторые партнеры по подключению могут расширить автоматизацию, включив в нее создание виртуального концентратора виртуальной сети Azure и VPN-шлюз. Если вы хотите получить дополнительные сведения об автоматизации, см. статью [рекомендации по автоматизации для виртуальных сетей WAN](virtual-wan-configure-automation-providers.md).
 
 ## <a name="partners"></a>Подключение через партнеров
 
@@ -46,8 +46,8 @@ ms.locfileid: "77157165"
 
 [!INCLUDE [regions](../../includes/virtual-wan-regions-include.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Дополнительные сведения о Виртуальной глобальной сети см. в статье [Часто задаваемые вопросы по виртуальным глобальным сетям (предварительная версия)](virtual-wan-faq.md).
 
-* Дополнительные сведения о том, как автоматизировать подключение к Виртуальной глобальной сети Azure, см. в статье [Настройка автоматизации Виртуальной глобальной сети для партнеров Виртуальной глобальной сети (предварительная версия)](virtual-wan-configure-automation-providers.md).
+* Дополнительные сведения об автоматизации подключения к виртуальной глобальной сети Azure см. в статье [рекомендации по автоматизации для виртуальных сетей WAN](virtual-wan-configure-automation-providers.md).

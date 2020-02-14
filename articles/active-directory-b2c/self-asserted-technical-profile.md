@@ -8,15 +8,15 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
-ms.date: 02/04/2020
+ms.date: 02/13/2020
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: b6c70e1a5c7e5b81157c09a794ff75e276a20d1f
-ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
+ms.openlocfilehash: a16fb1184de5b545b3ef527b1a66ffb7b68d1ef4
+ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76982744"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77197924"
 ---
 # <a name="define-a-self-asserted-technical-profile-in-an-azure-active-directory-b2c-custom-policy"></a>Определение самоподтвержденного технического профиля в настраиваемой политике Azure Active Directory B2C
 
@@ -187,7 +187,7 @@ ms.locfileid: "76982744"
 
 ## <a name="metadata"></a>Метаданные
 
-| attribute | Обязательно для заполнения | Description |
+| Атрибут | Обязательно | Описание |
 | --------- | -------- | ----------- |
 | setting.operatingMode | Нет | Для страницы входа в систему это свойство управляет поведением поля имени пользователя, таким как проверка входных данных и вывод сообщений об ошибках. Ожидаемые значения: `Username` или `Email`. |
 | алловженератионофклаимсвиснуллвалуес| Нет| Разрешить создание утверждения со значением NULL. Например, в случае, если пользователь не выберет флажок.|
@@ -199,6 +199,8 @@ ms.locfileid: "76982744"
 | setting.showContinueButton | Нет | Отображает кнопку "Продолжить". Возможные значения: `true` (по умолчанию) или `false`. |
 | setting.showSignupLink | Нет | Отображает кнопку "Регистрация". Возможные значения: `true` (по умолчанию) или `false`. |
 | задание. Форготпассвордлинклокатион| Нет| Отображает ссылку Забыли пароль. Возможные значения: `AfterInput` (по умолчанию). ссылка отображается в нижней части страницы или `None` удаляет ссылку "Забыли пароль".| 
+| инклудеклаимресолвингинклаимшандлинг  | Нет | Для входных и выходных утверждений указывает, включено ли [разрешение утверждений](claim-resolver-overview.md) в технический профиль. Возможные значения: `true`или `false` (по умолчанию). Если вы хотите использовать сопоставитель утверждений в техническом профиле, задайте для этого параметра значение `true`. |
+
 ## <a name="cryptographic-keys"></a>Криптографические ключи
 
 Элемент **CryptographicKeys** не используется.
