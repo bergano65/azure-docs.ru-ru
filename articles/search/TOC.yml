@@ -105,9 +105,9 @@
           href: search-sku-tier.md
         - name: Ограничения службы
           href: search-limits-quotas-capacity.md
-        - name: Масштабирование секций и реплик
+        - name: Настройка емкости
           href: search-capacity-planning.md
-        - name: 'Развертывание: стратегии и рекомендации'
+        - name: Масштабирование для производительности
           href: search-performance-optimization.md
         - name: Мультитенантная архитектура
           href: search-modeling-multitenant-saas-applications.md
