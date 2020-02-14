@@ -9,12 +9,12 @@ manager: rkarlin
 ms.topic: conceptual
 ms.date: 09/04/2019
 ms.author: mbaldwin
-ms.openlocfilehash: 00753d885985e2734f0d87fdad9f219f44277d5a
-ms.sourcegitcommit: 7c2dba9bd9ef700b1ea4799260f0ad7ee919ff3b
+ms.openlocfilehash: 300acaf4a9d2a11ef107e19df99452c909257d54
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71828345"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77190568"
 ---
 # <a name="security-controls-for-linux-virtual-machines"></a>Элементы управления безопасностью для Виртуальные машины Linux
 
@@ -39,22 +39,22 @@ ms.locfileid: "71828345"
 | Ведение журнала и аудит в плоскости управления и управления| Да |  |
 | Ведение журнала и аудит в плоскости данных | Нет |  |
 
-## <a name="identity"></a>идентификации
+## <a name="identity"></a>Тождество
 
 | Управление безопасностью | Да/нет | Примечания|
 |---|---|--|
-| Проверка подлинности| Да |  |
-| Authorization| Да |  |
+| Аутентификация| Да |  |
+| Авторизация| Да |  |
 
 ## <a name="data-protection"></a>Защита данных
 
 | Управление безопасностью | Да/нет | Примечания |
 |---|---|--|
-| Шифрование неактивных на стороне сервера: Ключи, управляемые корпорацией Майкрософт | Да | См. раздел [Шифрование дисков Azure для виртуальных машин Linux](disk-encryption-overview.md). |
+| Шифрование неактивных на стороне сервера: ключи, управляемые корпорацией Майкрософт | Да | См. раздел [Шифрование дисков Azure для виртуальных машин Linux](disk-encryption-overview.md). |
 | Шифрование при передаче (например, шифрование ExpressRoute, Шифрование виртуальной сети и шифрование виртуальной сети)| Да | Виртуальные машины Azure поддерживают шифрование [ExpressRoute](/azure/expressroute) и виртуальной сети. См. раздел [Шифрование транзитного пути в виртуальных машинах](/azure/security/security-azure-encryption-overview#in-transit-encryption-in-vms). |
 | Шифрование неактивных на стороне сервера: ключи, управляемые клиентом (BYOK) | Да | Ключи, управляемые клиентом, являются поддерживаемым сценарием шифрования Azure. см. раздел [Общие сведения о шифровании Azure](/azure/security/security-azure-encryption-overview#in-transit-encryption-in-vms).|
 | Шифрование на уровне столбцов (службы данных Azure)| Н/Д | |
-| Вызовы API в зашифрованном виде| Да | Через HTTPS и SSL. |
+| Вызовы API в зашифрованном виде| Да | Через HTTPS и TLS. |
 
 ## <a name="configuration-management"></a>Управление конфигурацией
 

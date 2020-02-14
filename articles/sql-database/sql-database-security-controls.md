@@ -8,12 +8,12 @@ ms.service: load-balancer
 ms.topic: conceptual
 ms.date: 09/04/2019
 ms.author: mbaldwin
-ms.openlocfilehash: 58070cab1221b9d9585784d82cf1a48afcedb8af
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.openlocfilehash: ce7f3eafa57cbd993be98f4a2da3d89cb312f9b7
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73802829"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77190695"
 ---
 # <a name="security-controls-for-azure-sql-database"></a>Элементы управления безопасностью для базы данных SQL Azure
 
@@ -28,7 +28,7 @@ ms.locfileid: "73802829"
 | Управление безопасностью | Да/нет | Примечания |
 |---|---|--|
 | Поддержка конечных точек службы| Да | Применяется только к [одной базе данных](sql-database-single-index.yml) . |
-| Поддержка внедрения виртуальных сетей в Azure| Да | Применяется только к [управляемому экземпляру](sql-database-managed-instance.md). |
+| Поддержка внедрения виртуальных сетей в Azure| Да | Применяется только к [управляемому экземпляру](sql-database-managed-instance.md) . |
 | Поддержка сетевой изоляции и брандмауэра| Да | Брандмауэр на уровне базы данных и на уровне сервера. Сетевая изоляция предназначена только для [управляемого экземпляра](sql-database-managed-instance.md) . |
 | Поддержка принудительного туннелирования| Да | [Управляемый экземпляр](sql-database-managed-instance.md) через VPN [ExpressRoute](../expressroute/index.yml) . |
 
@@ -40,12 +40,12 @@ ms.locfileid: "73802829"
 | Мониторинг и аудит в плоскости управления и управления| Да | Да для некоторых событий |
 | Ведение журнала и аудит в плоскости данных | Да | С помощью [аудита SQL](sql-database-auditing.md) |
 
-## <a name="identity"></a>Удостоверение
+## <a name="identity"></a>Тождество
 
 | Управление безопасностью | Да/нет | Примечания|
 |---|---|--|
 | Аутентификация| Да | Azure Active Directory (Azure AD) |
-| Авторизация| Да | None |
+| Авторизация| Да | Нет |
 
 ## <a name="data-protection"></a>Защита данных
 
@@ -55,13 +55,13 @@ ms.locfileid: "73802829"
 | Шифрование при передаче:<ul><li>Шифрование Azure ExpressRoute</li><li>Шифрование в виртуальной сети</li><li>Шифрование между виртуальными сетями</ul>| Да | С использованием HTTPS. |
 | Обработка ключей шифрования, например CMK или BYOK| Да | Предлагаются как управляемая службами, так и управляемая клиентом обработка ключей. Последнее предлагается через [Azure Key Vault](../key-vault/index.yml). |
 | Шифрование на уровне столбцов, предоставляемое службами данных Azure| Да | С помощью [Always encrypted](sql-database-always-encrypted.md). |
-| Зашифрованные вызовы API| Да | Использование HTTPS/SSL. |
+| Зашифрованные вызовы API| Да | Использование HTTPS/TLS. |
 
 ## <a name="configuration-management"></a>Управление конфигурацией
 
 | Управление безопасностью | Да/нет | Примечания|
 |---|---|--|
-| Поддержка управления конфигурацией, например управление версиями конфигурации| Нет  | None |
+| Поддержка управления конфигурацией, например управление версиями конфигурации| Нет  | Нет |
 
 ## <a name="additional-security-controls-for-sql-database"></a>Дополнительные средства управления безопасностью для базы данных SQL
 
@@ -71,6 +71,6 @@ ms.locfileid: "73802829"
 | Превентивные: обнаружение и классификация данных  | Да | См. раздел [база данных SQL Azure и обнаружение данных хранилища данных sql & Классификация](sql-database-data-discovery-and-classification.md). |
 | Обнаружение: обнаружение угроз | Да | См. [Дополнительные сведения о расширенной защите от угроз для базы данных SQL Azure](sql-database-threat-detection-overview.md). |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Дополнительные сведения о [встроенных средствах управления безопасностью в службах Azure](../security/fundamentals/security-controls.md).

@@ -7,18 +7,18 @@ ms.topic: conceptual
 ms.date: 11/20/2019
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: a9b545d71f21138c0374cf199ce10dc2dc246afb
-ms.sourcegitcommit: c32050b936e0ac9db136b05d4d696e92fefdf068
+ms.openlocfilehash: d94237d2cfeb814b2e15d43c9f8863a76c0bcd11
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75732150"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77190670"
 ---
 # <a name="enable-and-create-large-file-shares"></a>Включение и создание больших файловых ресурсов
 
-Изначально стандартные общие файловые ресурсы можно масштабировать только до 5 тиб. Теперь с большими файловыми ресурсами можно масштабировать до 100 тиб. Вы можете включить это масштабирование в существующих учетных записях хранения для существующих файловых ресурсов. По умолчанию масштабируемые файловые ресурсы уровня "Премиум" масштабируются до 100 тиб.
+При включении больших файловых ресурсов в учетной записи хранения файловые ресурсы могут масштабироваться до 100 тиб. Вы можете включить это масштабирование в существующих учетных записях хранения для существующих файловых ресурсов.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 - Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 - Если вы планируете использовать Azure CLI, [установите последнюю версию](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
@@ -26,10 +26,10 @@ ms.locfileid: "75732150"
 
 ## <a name="restrictions"></a>Ограничения
 
-Сейчас для учетных записей с поддержкой больших файловых ресурсов можно использовать только LRS или ZRS. Нельзя использовать ГЗРС, GRS или RA-GRS.
+Сейчас можно использовать только локально избыточное хранилище (LRS) или хранилище, избыточное в виде зоны (ZRS), в учетных записях с поддержкой больших файловых ресурсов. Нельзя использовать хранилище, избыточное в геопоясе (ГЗРС), геоизбыточное хранилище (GRS) или геоизбыточное хранилище с доступом для чтения (RA-GRS).
 Включение больших файловых ресурсов в учетной записи является необратимым процессом. После включения учетной записи вы не сможете преобразовать ее в ГЗРС, GRS или RA-GRS.
 
-## <a name="create-a-new-storage-account"></a>Создание новой учетной записи хранения
+## <a name="create-a-new-storage-account"></a>Создать новую учетную запись хранения
 
 ### <a name="portal"></a>Портал
 
@@ -49,19 +49,19 @@ ms.locfileid: "75732150"
 
    |Поле  |Значение  |
    |---------|---------|
-   |Модель развертывания     |Диспетчер ресурсов         |
-   |Ориентированное на производительность     |Стандартный         |
+   |Модель развертывания     |Resource Manager         |
+   |Производительность     |Стандартный         |
    |Тип учетной записи     |StorageV2 (учетная запись общего назначения версии 2)         |
-   |Уровень доступа     |Горячий         |
+   |Уровень доступа     |Высокий         |
 
 1. Выберите **Дополнительно**, а затем нажмите кнопку **Enabled (включено** ) справа от **больших файловых ресурсов**.
 1. Выберите **Просмотр и создание**, чтобы просмотреть настройки учетной записи хранения и создать учетную запись.
 
     ![Снимок экрана с переключателем "включено" в новой учетной записи хранения в портал Azure](media/storage-files-how-to-create-large-file-share/large-file-shares-advanced-enable.png)
 
-1. Нажмите кнопку **Создать**.
+1. Выберите **Создать**.
 
-### <a name="cli"></a>Интерфейс командной строки
+### <a name="cli"></a>CLI
 
 Сначала [установите последнюю версию Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest) , чтобы можно было включить большие файловые ресурсы.
 
@@ -100,7 +100,7 @@ New-AzStorageAccount -ResourceGroupName <yourResourceGroup> -Name <yourStorageAc
 
 Если вы получаете сообщение об ошибке "большие файловые ресурсы еще недоступны для этой учетной записи", ваш регион может находиться в процессе развертывания. Если у вас есть срочные потребности в больших файловых ресурсах, обратитесь в службу поддержки.
 
-### <a name="cli"></a>Интерфейс командной строки
+### <a name="cli"></a>CLI
 
 Чтобы включить большие файловые ресурсы в существующей учетной записи, используйте следующую команду. Замените `<yourStorageAccountName>` и `<yourResourceGroup>` своими сведениями.
 
@@ -130,7 +130,7 @@ Set-AzStorageAccount -ResourceGroupName <yourResourceGroup> -Name <yourStorageAc
 
 ![портал Azure пользовательского интерфейса, отображающего поля имени и квоты](media/storage-files-how-to-create-large-file-share/large-file-shares-create-share.png)
 
-### <a name="cli"></a>Интерфейс командной строки
+### <a name="cli"></a>CLI
 
 Чтобы создать большой файловый ресурс, используйте следующую команду. Замените `<yourStorageAccountName>`, `<yourStorageAccountKey>`и `<yourFileShareName>` информацией.
 
@@ -163,7 +163,7 @@ New-AzStorageShare -Name $shareName -Context $ctx
 
 ![Пользовательский интерфейс портал Azure с квотой существующих файловых ресурсов](media/storage-files-how-to-create-large-file-share/update-large-file-share-quota.png)
 
-### <a name="cli"></a>Интерфейс командной строки
+### <a name="cli"></a>CLI
 
 Чтобы задать для квоты максимальный размер, используйте следующую команду. Замените `<yourStorageAccountName>`, `<yourStorageAccountKey>`и `<yourFileShareName>` информацией.
 
@@ -185,7 +185,7 @@ $ctx = New-AzStorageContext -StorageAccountName $storageAccountName -StorageAcco
 Set-AzStorageShareQuota -ShareName $shareName -Context $ctx -Quota 102400
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Подключить и подключить общую папку в Windows](storage-how-to-use-files-windows.md)
 * [Подключение и монтирование файлового ресурса в Linux](storage-how-to-use-files-linux.md)

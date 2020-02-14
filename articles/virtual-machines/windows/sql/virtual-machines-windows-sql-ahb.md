@@ -14,20 +14,21 @@ ms.workload: iaas-sql-server
 ms.date: 11/13/2019
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: 00262b48b8fa2fd1292554155e8ec8e933d886e6
-ms.sourcegitcommit: 2f8ff235b1456ccfd527e07d55149e0c0f0647cc
+ms.openlocfilehash: 502d1fe599accb29ccc99c9e527f8d1c8e1d52b8
+ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75690910"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77201834"
 ---
 # <a name="change-the-license-model-for-a-sql-server-virtual-machine-in-azure"></a>Изменение модели лицензирования для SQL Server виртуальной машины в Azure
 В этой статье описывается, как изменить модель лицензии для SQL Server виртуальной машины в Azure с помощью нового поставщика ресурсов виртуальной машины SQL ( **Microsoft. склвиртуалмачине**).
 
-Существует две модели лицензирования для виртуальной машины, на которой размещена SQL Server: оплата по мере использования и Преимущество гибридного использования Azure. Вы можете изменить модель лицензии SQL Server виртуальной машины с помощью портал Azure, Azure CLI или PowerShell. 
+Существует три модели лицензирования для виртуальной машины, на которой размещена SQL Server: оплата по мере использования, Преимущество гибридного использования Azure и аварийное восстановление (DR). Вы можете изменить модель лицензии SQL Server виртуальной машины с помощью портал Azure, Azure CLI или PowerShell. 
 
-Модель с оплатой по мере использования означает, что стоимость использования виртуальной машины Azure в секунду включает стоимость лицензии на SQL Server.
-[Преимущество гибридного использования Azure](https://azure.microsoft.com/pricing/hybrid-benefit/) позволяет использовать собственную лицензию SQL Server с виртуальной машиной, на которой выполняется SQL Server. 
+- Модель с **оплатой по мере** использования означает, что стоимость использования виртуальной машины Azure в секунду включает стоимость лицензии на SQL Server.
+- [Преимущество гибридного использования Azure](https://azure.microsoft.com/pricing/hybrid-benefit/) позволяет использовать собственную лицензию SQL Server с виртуальной машиной, на которой выполняется SQL Server. 
+- Тип лицензии на **Аварийное восстановление** используется для [бесплатной реплики](virtual-machines-windows-sql-high-availability-dr.md#free-dr-replica-in-azure) аварийного восстановления в Azure. 
 
 Преимущество гибридного использования Azure позволяет использовать лицензии SQL Server с Software Assurance ("квалифицированная лицензия") на виртуальных машинах Azure. С Преимущество гибридного использования Azure клиенты не наставляются с оплатой за использование лицензии на SQL Server на виртуальной машине. Но они по-прежнему должны платить за стоимость базового облачного вычислений (то есть базового тарифа), хранилища и резервных копий. Кроме того, они должны платить за ввод-вывод, связанный с использованием служб (как применимо).
 
@@ -41,7 +42,7 @@ ms.locfileid: "75690910"
 
 Тип лицензии SQL Server задается при подготовке виртуальной машины. Его можно изменить в любое время. Переключение между моделями лицензий не приводит к простою, не перезапускает виртуальную машину или службу SQL Server, не добавляет никаких дополнительных затрат и вступает в силу немедленно. На самом деле, активация Преимущество гибридного использования Azure *сокращает* затраты.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Изменение модели лицензирования SQL Server виртуальной машины имеет следующие требования. 
 
@@ -50,7 +51,7 @@ ms.locfileid: "75690910"
 - [Software Assurance](https://www.microsoft.com/licensing/licensing-programs/software-assurance-default) является обязательным требованием для использования [преимущество гибридного использования Azure](https://azure.microsoft.com/pricing/hybrid-benefit/). 
 
 
-## <a name="change-the-license-for-vms-already-registered-with-the-resource-provider"></a>Изменение лицензии для виртуальных машин, уже зарегистрированных в поставщике ресурсов 
+## <a name="vms-already-registered-with-the-resource-provider"></a>Виртуальные машины, уже зарегистрированные в поставщике ресурсов 
 
 # <a name="portaltabazure-portal"></a>[Портал](#tab/azure-portal)
 
@@ -70,7 +71,8 @@ ms.locfileid: "75690910"
 
 Для изменения модели лицензии можно использовать Azure CLI.  
 
-Следующий фрагмент кода переключает модель лицензии с оплатой по мере использования на собственную лицензию (или с помощью Преимущество гибридного использования Azure):
+
+**Преимущество гибридного использования Azure**
 
 ```azurecli-interactive
 # Switch your SQL Server VM license from pay-as-you-go to bring-your-own
@@ -79,7 +81,7 @@ ms.locfileid: "75690910"
 az sql vm update -n <VMName> -g <ResourceGroupName> --license-type AHUB
 ```
 
-В следующем фрагменте кода переключается модель лицензирования с оплатой по мере использования: 
+**Оплата по мере**использования: 
 
 ```azurecli-interactive
 # Switch your SQL Server VM license from bring-your-own to pay-as-you-go
@@ -88,34 +90,51 @@ az sql vm update -n <VMName> -g <ResourceGroupName> --license-type AHUB
 az sql vm update -n <VMName> -g <ResourceGroupName> --license-type PAYG
 ```
 
+**Аварийное восстановление (DR)**
+
+```azurecli-interactive
+# Switch your SQL Server VM license from bring-your-own to pay-as-you-go
+# example: az sql vm update -n AHBTest -g AHBTest --license-type DR
+
+az sql vm update -n <VMName> -g <ResourceGroupName> --license-type DR
+```
+
 # <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
+
 Для изменения модели лицензирования можно использовать PowerShell.
 
-Следующий фрагмент кода переключает модель лицензии с оплатой по мере использования на собственную лицензию (или с помощью Преимущество гибридного использования Azure):
+**Преимущество гибридного использования Azure**
 
 ```powershell-interactive
 # Switch your SQL Server VM license from pay-as-you-go to bring-your-own
 Update-AzSqlVM -ResourceGroupName <resource_group_name> -Name <VM_name> -LicenseType AHUB
 ```
 
-В следующем фрагменте кода переключается модель лицензирования с оплатой по мере использования:
+**Оплата по мере использования**
 
 ```powershell-interactive
 # Switch your SQL Server VM license from bring-your-own to pay-as-you-go
 Update-AzSqlVM -ResourceGroupName <resource_group_name> -Name <VM_name> -LicenseType PAYG
 ```
 
+**Аварийное восстановление** 
+
+```powershell-interactive
+# Switch your SQL Server VM license from bring-your-own to pay-as-you-go
+Update-AzSqlVM -ResourceGroupName <resource_group_name> -Name <VM_name> -LicenseType DR
+```
+
 ---
 
-## <a name="change-the-license-for-vms-not-registered-with-the-resource-provider"></a>Изменение лицензии для виртуальных машин, не зарегистрированных в поставщике ресурсов
+## <a name="vms-not-registered-with-the-resource-provider"></a>Виртуальные машины, не зарегистрированные в поставщике ресурсов
 
-Если вы подготовили SQL Serverную виртуальную машину с помощью образов Azure Marketplace с оплатой по мере использования, тип лицензии SQL Server будет иметь вид "Оплата по мере". Если вы подготовили SQL Serverную виртуальную машину с помощью собственного образа лицензии из Azure Marketplace, тип лицензии будет AHUB. Все SQL Server виртуальные машины, подготовленные по умолчанию (с оплатой по мере использования) или собственные образы Azure Marketplace с собственной лицензией, будут автоматически зарегистрированы в поставщике ресурсов виртуальной машины SQL, чтобы они могли изменить [тип лицензии](#change-the-license-for-vms-already-registered-with-the-resource-provider).
+Если вы подготовили SQL Serverную виртуальную машину с помощью образов Azure Marketplace с оплатой по мере использования, тип лицензии SQL Server будет иметь вид "Оплата по мере". Если вы подготовили SQL Serverную виртуальную машину с помощью собственного образа лицензии из Azure Marketplace, тип лицензии будет AHUB. Все SQL Server виртуальные машины, подготовленные по умолчанию (с оплатой по мере использования) или собственные образы Azure Marketplace с собственной лицензией, будут автоматически зарегистрированы в поставщике ресурсов виртуальной машины SQL, чтобы они могли изменить [тип лицензии](#vms-already-registered-with-the-resource-provider).
 
 Вы можете самостоятельно установить SQL Server на виртуальной машине Azure с помощью Преимущество гибридного использования Azure. Необходимо [зарегистрировать эти виртуальные машины с помощью поставщика ресурсов виртуальной машины SQL](virtual-machines-windows-sql-register-with-resource-provider.md) , установив для лицензии SQL Server значение преимущество гибридного использования Azure, чтобы указать преимущество гибридного использования Azureное использование в соответствии с условиями продукта Майкрософт.
 
 Тип лицензии SQL Server виртуальной машины можно изменить как "Оплата по мере использования" или "Преимущество гибридного использования Azure только в том случае, если SQL Server виртуальная машина зарегистрирована в поставщике ресурсов виртуальной машины SQL.
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>Примечания
 
 - Клиенты поставщика облачных решений Azure (CSP) могут использовать Преимущество гибридного использования Azure, сначала Развертывая виртуальную машину с оплатой по мере использования, а затем преобразуя ее в собственную лицензию, если у них есть активная программа Software Assurance.
 - Если удалить ресурс виртуальной машины SQL Server, вы вернетесь к жестко запрограммированному параметру лицензии образа. 
@@ -149,7 +168,7 @@ Update-AzSqlVM -ResourceGroupName <resource_group_name> -Name <VM_name> -License
 Эта ошибка возникает на виртуальных машинах, имеющих более одного сетевого адаптера. Удалите одну из сетевых карт перед изменением модели лицензирования. Хотя сетевую карту можно добавить обратно в виртуальную машину после изменения модели лицензирования, операции в портал Azure, такие как автоматическое резервное копирование и установка исправлений, больше не будут поддерживаться. 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения см. в следующих статьях: 
 

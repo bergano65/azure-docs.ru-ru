@@ -10,12 +10,12 @@ ms.reviewer: jmartens
 author: cartacioS
 ms.author: sacartac
 ms.date: 11/04/2019
-ms.openlocfilehash: 012300c95fd1edd135b97f52ed3702ce3e7ef0bd
-ms.sourcegitcommit: 57669c5ae1abdb6bac3b1e816ea822e3dbf5b3e1
+ms.openlocfilehash: f7a2e78ed2b1de770f7a60f1312e069dc1757cb6
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2020
-ms.locfileid: "77048972"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77191204"
 ---
 # <a name="what-is-automated-machine-learning"></a>Что такое автоматическое машинное обучение?
 
@@ -83,7 +83,7 @@ ms.locfileid: "77048972"
 
 В каждом автоматическом эксперименте машинного обучения данные автоматически масштабируются или нормализованы, что способствует эффективному выполнению алгоритмов.  Во время обучения модели для каждой модели будет применен один из следующих методов масштабирования или нормализации.
 
-|Масштабирование&nbsp;&&nbsp;нормализация| Description |
+|Масштабирование&nbsp;&&nbsp;нормализация| Описание |
 | ------------- | ------------- |
 | [стандардскалевраппер](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html)  | Стандартизация функций путем удаления среднего и масштабирования в дисперсию единиц  |
 | [минмаксскалар](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.MinMaxScaler.html)  | Преобразует функции путем масштабирования каждой функции по минимальному и максимальному столбцам.  |
@@ -141,7 +141,7 @@ ms.locfileid: "77048972"
 
 | Модель | Точность обучения | Точность теста |
 |-------|----------------|---------------|
-| Объект | 99,9 % | 95% |
+| А | 99,9 % | 95% |
 | B | 87% | 87% |
 | C | 99,9 % | 45% |
 
@@ -193,7 +193,7 @@ ms.locfileid: "77048972"
 
 Кроме того, автоматические запуски ML автоматически создают следующие диаграммы, которые помогут понять правильность классификаций модели и определить модели, потенциально влияющие на несбалансированные данные.
 
-Диаграмма| Description
+Диаграмма| Описание
 ---|---
 [Матрица путаницы](how-to-understand-automated-ml.md#confusion-matrix)| Оценивает правильно классифицированные метки относительно фактических меток данных. 
 [Точность и отзыв](how-to-understand-automated-ml.md#precision-recall-chart)| Оценивает отношение правильных меток относительно соотношения найденных экземпляров меток данных 
@@ -215,14 +215,14 @@ ms.locfileid: "77048972"
 
 Автоматизированный язык ML также доступен в других решениях Майкрософт, таких как:
 
-|Интеграции|Description|
+|Интеграции|Описание|
 |------------|-----------|
-|[ML.NET](https://docs.microsoft.com/dotnet/machine-learning/automl-overview)|Автоматическое выделение и обучение моделей в приложениях .NET с использованием Visual Studio и Visual Studio Code с помощью ML.NET автоматизированного ML (Предварительная версия).|
+|[ML.NET](https://docs.microsoft.com/dotnet/machine-learning/automl-overview)|Автоматическое выделение и обучение моделей в приложениях .NET с помощью Visual Studio и Visual Studio Code с помощью ML.NET автоматизированного ML.|
 |[HDInsight](../hdinsight/spark/apache-spark-run-machine-learning-automl.md)|Параллельное развертывание автоматизированных заданий обучения ML в Spark в кластерах HDInsight.|
-|[Power BI](https://docs.microsoft.com/power-bi/service-machine-learning-automated)|Вызывайте модели машинного обучения непосредственно в Power BI (Предварительная версия).|
+|[Power BI](https://docs.microsoft.com/power-bi/service-machine-learning-automated)|Вызывайте модели машинного обучения непосредственно в Power BI.|
 |[SQL Server](https://cloudblogs.microsoft.com/sqlserver/2019/01/09/how-to-automate-machine-learning-on-sql-server-2019-big-data-clusters/)|Создавайте новые модели машинного обучения для данных в кластерах больших данных SQL Server 2019.|
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 См. примеры и научитесь создавать модели с помощью автоматизированного машинного обучения.
 

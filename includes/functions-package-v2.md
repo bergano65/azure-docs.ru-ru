@@ -1,27 +1,26 @@
 ---
-title: включение файла
-description: включение файла
+title: включить файл
+description: включить файл
 services: functions
-author: ggailey777
+author: craigshoemaker
 manager: gwallace
 ms.service: azure-functions
 ms.topic: include
-ms.date: 09/04/2018
-ms.author: glenga
+ms.date: 01/28/2020
+ms.author: cshoe
 ms.custom: include file
-ms.openlocfilehash: 81971a1c56a51e0c110337fb645f0b84bb5d20b8
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: 2eb82eb8b4a64cbbfef91539f46ba084aa73f207
+ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74914917"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77205703"
 ---
-В следующей таблице указано как добавить поддержку для этой привязки в каждой среде разработки.
+Добавьте поддержку в предпочтительной среде разработки, используя следующие методы.
 
-| Среда разработки               | Добавление поддержки  |
-|----------------------|----------------|
-|Локальная разработка – библиотека классов C#       | [Установка пакета](../articles/azure-functions/functions-bindings-register.md#vs) |
-|Локальная разработка — скрипт C#, JavaScript, F#, Java и Python |[Регистрация расширения](../articles/azure-functions/functions-bindings-register.md#extension-bundles)         |
-|Разработка на портале| Установка при добавлении выходной привязки    |
-
-Дополнительные сведения об обновлении существующих расширений привязки на портале, не переиздавая проект приложения-функции, см. раздел [Обновление расширений](../articles/azure-functions/install-update-binding-extensions-manual.md).
+| Среда разработки  | Тип приложения      | Добавление поддержки |
+|--------------------------|-----------------------|----------------|
+| Visual Studio            | Библиотека классов C#      | [Установка пакета NuGet](../articles/azure-functions/functions-bindings-register.md#vs) |
+| Visual Studio Code       | На основе [основных средств](../articles/azure-functions/functions-run-local.md) | [Регистрация пакета расширений](../articles/azure-functions/functions-bindings-register.md#extension-bundles)<br><br>Рекомендуется установить [расширение инструментов Azure](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-node-azure-pack) . |
+| Любой другой редактор или интегрированная среда разработки     | На основе [основных средств](../articles/azure-functions/functions-run-local.md) | [Регистрация пакета расширений](../articles/azure-functions/functions-bindings-register.md#extension-bundles) |
+| Портал Azure             | Только в сети на портале | Устанавливает при добавлении привязки<br /><br /> См. статью [Обновление расширений](../articles/azure-functions/install-update-binding-extensions-manual.md) для обновления существующих расширений привязки без повторной публикации приложения функции. |

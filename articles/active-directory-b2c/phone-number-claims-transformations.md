@@ -8,15 +8,15 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 12/17/2019
+ms.date: 02/12/2020
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: c43e3386886456eed0c58fefd0fb1212795db66c
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 38763f414b1e5373af79d2501850a44e8e813451
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75480168"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77185474"
 ---
 # <a name="define-phone-number-claims-transformations-in-azure-ad-b2c"></a>Определение преобразований заявок на телефонный номер в Azure AD B2C
 
@@ -33,7 +33,7 @@ ms.locfileid: "75480168"
 | Элемент | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
 | InputClaim | InputClaim | string | Утверждение строкового типа, из которого осуществляется преобразование. |
-| outputClaim | outputClaim | string | Результат преобразования утверждений. |
+| outputClaim | outputClaim | phoneNumber | Результат преобразования утверждений. |
 
 Преобразование « **конвертстрингтофоненумберклаим** Claims» всегда выполняется из [технического профиля проверки](validation-technical-profile.md) , который вызывается [самостоятельно подтвержденным техническим профилем](self-asserted-technical-profile.md) или [элементом управления отображением](display-controls.md). Метаданные технического профиля с самоподтверждением **усермессажеифклаимстрансформатионинвалидфоненумбер** контролирует сообщение об ошибке, представленное пользователю.
 

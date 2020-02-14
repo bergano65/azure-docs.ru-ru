@@ -5,12 +5,12 @@ author: sebastianburckhardt
 ms.topic: conceptual
 ms.date: 10/06/2019
 ms.author: azfuncdf
-ms.openlocfilehash: 750ccbfa885b4679dfa61240b49ea9ec86a46d51
-ms.sourcegitcommit: 5bbe87cf121bf99184cc9840c7a07385f0d128ae
+ms.openlocfilehash: 01e07eaee705634b03cc4462c4058e290daa8bc2
+ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76120647"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77198502"
 ---
 # <a name="developers-guide-to-durable-entities-in-net"></a>Рекомендации разработчика по устойчивым сущностям в .NET
 
@@ -203,7 +203,7 @@ public class Counter : ICounter
 
 ### <a name="example-client-signals-entity-through-interface"></a>Пример. Клиент оповещает сущность через интерфейс
 
-Клиентский код может использовать `SignalEntityAsync<TEntityInterface>` для отправки сигналов в сущности, реализующие `TEntityInterface`. Пример.
+Клиентский код может использовать `SignalEntityAsync<TEntityInterface>` для отправки сигналов в сущности, реализующие `TEntityInterface`. Например:
 
 ```csharp
 [FunctionName("DeleteCounter")]
@@ -371,7 +371,7 @@ public static Task Run([EntityTrigger] IDurableEntityContext ctx)
 
 В отличие от обычных функций, методы классов сущностей не имеют прямого доступа к входным и выходным привязкам. Вместо этого данные привязки должны быть записаны в объявлении функции точки входа, а затем переданы в метод `DispatchAsync<T>`. Любые объекты, передаваемые в `DispatchAsync<T>`, будут автоматически переданы в конструктор класса сущностей в виде аргумента.
 
-В следующем примере показано, как можно сделать ссылку `CloudBlobContainer` из [входной привязки BLOB-объекта](../functions-bindings-storage-blob.md#input) доступной для сущности на основе класса.
+В следующем примере показано, как можно сделать ссылку `CloudBlobContainer` из [входной привязки BLOB-объекта](../functions-bindings-storage-blob-input.md) доступной для сущности на основе класса.
 
 ```csharp
 public class BlobBackedEntity
@@ -507,7 +507,7 @@ public static void Counter([EntityTrigger] IDurableEntityContext ctx)
 * `SignalEntity(EntityId, operation, input)`: отправляет одностороннее сообщение в сущность.
 * `CreateNewOrchestration(orchestratorFunctionName, input)`: запускает новое согласование.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [Сведения о концепциях сущностей](durable-functions-entities.md)

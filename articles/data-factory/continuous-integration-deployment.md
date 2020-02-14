@@ -10,13 +10,13 @@ ms.author: daperlov
 ms.reviewer: maghan
 manager: jroth
 ms.topic: conceptual
-ms.date: 08/14/2019
-ms.openlocfilehash: f1b15688004d23e8a568695b565b5b34d7b466d6
-ms.sourcegitcommit: 9add86fb5cc19edf0b8cd2f42aeea5772511810c
+ms.date: 02/12/2020
+ms.openlocfilehash: 7c9f22d27351b0f57c5a0158821f347073ae60b4
+ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/09/2020
-ms.locfileid: "77110185"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77187812"
 ---
 # <a name="continuous-integration-and-delivery-in-azure-data-factory"></a>Непрерывная интеграция и доставка в фабрике данных Azure
 
@@ -114,11 +114,11 @@ ms.locfileid: "77110185"
 
     ![Представление "этап"](media/continuous-integration-deployment/continuous-integration-image14.png)
 
-    b.  Создайте новое задание. Найдите **Развертывание группы ресурсов Azure**и нажмите кнопку **Добавить**.
+    б.  Создайте новое задание. Найдите **Развертывание группы ресурсов Azure**и нажмите кнопку **Добавить**.
 
-    c.  В задаче развертывание выберите подписку, группу ресурсов и расположение для целевой фабрики данных. При необходимости укажите учетные данные.
+    в.  В задаче развертывание выберите подписку, группу ресурсов и расположение для целевой фабрики данных. При необходимости укажите учетные данные.
 
-    d.  В списке **действие** выберите **создать или обновить группу ресурсов**.
+    .  В списке **действие** выберите **создать или обновить группу ресурсов**.
 
     д)  Нажмите кнопку с многоточием ( **...** ) рядом с полем **шаблон** . Найдите шаблон Azure Resource Manager, созданный с помощью **шаблона Импорт ARM** , в разделе [Создание диспетчер ресурсов шаблона для каждого окружения](continuous-integration-deployment.md#create-a-resource-manager-template-for-each-environment) этой статьи. Найдите этот файл в папке <FactoryName> ветви adf_publish.
 
@@ -138,6 +138,9 @@ ms.locfileid: "77110185"
 1. Чтобы запустить выпуск, выберите **создать выпуск**.
 
    ![Выбор создания выпуска](media/continuous-integration-deployment/continuous-integration-image10.png)
+
+> [!IMPORTANT]
+> В сценариях CI/CD тип среды выполнения интеграции (IR) в разных средах должен быть одинаковым. Например, если в среде разработки есть локальная среда IR, то такой же тип IR также должен быть автономным в других средах, таких как тестовая и Рабочая. Аналогично, при совместном использовании сред выполнения интеграции на нескольких этапах необходимо настроить среды выполнения интеграции как связанные автономные размещения во всех средах, таких как разработка, тестирование и производство.
 
 ### <a name="get-secrets-from-azure-key-vault"></a>Получение секретов от Azure Key Vault
 
@@ -184,11 +187,11 @@ ms.locfileid: "77110185"
 
 При попытке обновления активных триггеров развертывание может завершиться сбоем. Чтобы обновить активные триггеры, необходимо вручную закрыть их, а затем перезапустить после развертывания. Это можно сделать с помощью задачи Azure PowerShell:
 
-1.  На вкладке **задачи** выпуска добавьте **Azure PowerShell** задачу.
+1.  На вкладке **задачи** выпуска добавьте **Azure PowerShell** задачу. Выберите задачу версия 4. *. 
 
-1.  Выберите **Azure Resource Manager** в качестве типа подключения, а затем выберите свою подписку.
+1.  Выберите подписку, в которой находится ваша фабрика.
 
-1.  Выберите **встроенный скрипт** в качестве типа скрипта, а затем укажите код. Следующий код останавливает триггеры:
+1.  Выберите **путь к файлу скрипта** в качестве типа скрипта. Для этого необходимо сохранить сценарий PowerShell в репозитории. Для отключения триггеров можно использовать следующий сценарий PowerShell:
 
     ```powershell
     $triggersADF = Get-AzDataFactoryV2Trigger -DataFactoryName $DataFactoryName -ResourceGroupName $ResourceGroupName
@@ -196,21 +199,28 @@ ms.locfileid: "77110185"
     $triggersADF | ForEach-Object { Stop-AzDataFactoryV2Trigger -ResourceGroupName $ResourceGroupName -DataFactoryName $DataFactoryName -Name $_.name -Force }
     ```
 
-    ![Задача Azure PowerShell](media/continuous-integration-deployment/continuous-integration-image11.png)
-
 Вы можете выполнить аналогичные действия (с помощью функции `Start-AzDataFactoryV2Trigger`), чтобы перезапустить триггеры после развертывания.
 
-> [!IMPORTANT]
-> В сценариях CI/CD тип среды выполнения интеграции (IR) в разных средах должен быть одинаковым. Например, если в среде разработки есть локальная среда IR, то такой же тип IR также должен быть автономным в других средах, таких как тестовая и Рабочая. Аналогично, при совместном использовании сред выполнения интеграции на нескольких этапах необходимо настроить среды выполнения интеграции как связанные автономные размещения во всех средах, таких как разработка, тестирование и производство.
+### <a name="sample-pre--and-post-deployment-script"></a>Пример скрипта, выполняемого до и после развертывания
 
-#### <a name="sample-pre--and-post-deployment-script"></a>Пример скрипта, выполняемого до и после развертывания
+Следующий пример скрипта можно использовать для завершения триггеров перед развертыванием и их перезапуска. Скрипт также содержит код для удаления ресурсов. Сохраните скрипт в репозитории Azure DevOps Git и сослаться на него с помощью Azure PowerShell задачи, используя версию 4. *.
 
-В следующем примере скрипта показано, как отключить триггеры перед развертыванием и перезапустить их позже. Скрипт также содержит код для удаления ресурсов. Чтобы установить последнюю версию Azure PowerShell, ознакомьтесь со статьей [Установка Azure PowerShell в ОС Windows с помощью PowerShellGet](https://docs.microsoft.com/powershell/azure/install-az-ps).
+При выполнении скрипта, выполняемого перед развертыванием, в поле **аргументы скрипта** необходимо указать вариант следующих параметров.
+
+`-armTemplate "$(System.DefaultWorkingDirectory)/<your-arm-template-location>" -ResourceGroupName <your-resource-group-name> -DataFactoryName <your-data-factory-name>  -predeployment $true -deleteDeployment $false`
+
+
+При выполнении скрипта, выполняемого после развертывания, в поле **аргументы скрипта** необходимо указать вариант следующих параметров.
+
+`-armTemplate "$(System.DefaultWorkingDirectory)/<your-arm-template-location>" -ResourceGroupName <your-resource-group-name> -DataFactoryName <your-data-factory-name>  -predeployment $false -deleteDeployment $true`
+
+    ![Azure PowerShell task](media/continuous-integration-deployment/continuous-integration-image11.png)
+
+Ниже приведен скрипт, который можно использовать для выполнения до и после развертывания. Учетные записи для удаленных ресурсов и ссылок на ресурсы.
 
 ```powershell
 param
 (
-    [parameter(Mandatory = $false)] [String] $rootFolder,
     [parameter(Mandatory = $false)] [String] $armTemplate,
     [parameter(Mandatory = $false)] [String] $ResourceGroupName,
     [parameter(Mandatory = $false)] [String] $DataFactoryName,
