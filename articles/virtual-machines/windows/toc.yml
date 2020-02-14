@@ -242,6 +242,8 @@
           href: disk-scalability-targets.md
         - name: Резервное копирование и аварийное восстановление дисков
           href: backup-and-disaster-recovery-for-azure-iaas-disks.md
+        - name: Общие диски
+          href: disks-shared.md
         - name: Временные диски ОС
           href: ephemeral-os-disks.md
     - name: Сеть
@@ -547,6 +549,8 @@
           href: detach-disk.md
         - name: Развертывание дисков с помощью шаблона
           href: using-managed-disks-template-deployments.md
+        - name: Включение общих дисков
+          href: disks-shared-enable.md
         - name: "Отправка VHD на диск\_— PowerShell"
           href: disks-upload-vhd-to-managed-disk-powershell.md
         - name: Изменение размера диска

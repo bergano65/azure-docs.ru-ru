@@ -517,7 +517,7 @@
           href: optimize-dev-test.md
         - name: Оптимизация затрат за счет резервной мощности
           href: cosmos-db-reserved-capacity.md
-    - name: безопасность
+    - name: Безопасность
       items:
         - name: Обзор
           href: database-security.md
@@ -554,6 +554,8 @@
           href: cassandra-introduction.md
         - name: Поддержка коммуникационного протокола
           href: cassandra-support.md
+        - name: Эластичное масштабирование
+          href: manage-scale-cassandra.md
         - name: Краткие руководства
           items:
             - name: .NET
@@ -965,7 +967,7 @@
           href: how-to-write-javascript-query-api.md
         - name: 'Использование хранимых процедур, триггеров и определяемых пользователем функций'
           href: how-to-use-stored-procedures-triggers-udfs.md
-    - name: безопасность
+    - name: Безопасность
       items:
         - name: Настройка брандмауэра IP-адресов
           href: how-to-configure-firewall.md
@@ -1071,6 +1073,8 @@
           href: migrate-cosmosdb-data.md
         - name: Перенос данных со связью "один к нескольким"
           href: migrate-relational-to-cosmos-db-sql-api.md
+        - name: Миграция из Couchbase в API SQL
+          href: couchbase-cosmos-migration.md
     - name: Библиотека массового исполнителя
       items:
         - name: Общие сведения о библиотеке массового исполнителя

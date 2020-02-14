@@ -23,8 +23,6 @@
           href: b2b-tutorial-require-mfa.md
     - name: Примеры
       items:
-        - name: Пример самостоятельной регистрации на портале
-          href: self-service-portal.md
         - name: Примеры кода и сценариев Azure PowerShell
           href: code-samples.md
     - name: Основные понятия
@@ -50,6 +48,8 @@
           href: conditional-access.md
         - name: B2B для гибридных организаций
           href: hybrid-organizations.md
+        - name: Самостоятельная регистрация
+          href: self-service-portal.md
         - name: Текущие ограничения
           href: current-limitations.md
     - name: Практические руководства

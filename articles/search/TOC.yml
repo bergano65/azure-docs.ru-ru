@@ -313,14 +313,20 @@
           href: search-pagination-page-layout.md
         - name: Настройка релевантности (профили повышения)
           href: index-add-scoring-profiles.md
-    - name: Управление и мониторинг
+    - name: Управление службой
       items:
-        - name: Администрирование портала
+        - name: Портал
           href: search-manage.md
-        - name: Администрирование PowerShell
+        - name: PowerShell
           href: search-manage-powershell.md
-        - name: Отслеживание действий и ведение журнала
+    - name: Мониторинг и ведение журналов
+      items:
+        - name: Основные сведения
           href: search-monitor-usage.md
+        - name: Мониторинг действий запросов
+          href: search-monitor-queries.md
+        - name: Ведение журнала диагностики
+          href: search-monitor-logs.md
         - name: Поиск в аналитике трафика
           href: search-traffic-analytics.md
     - name: Диагностика

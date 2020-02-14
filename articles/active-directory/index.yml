@@ -12,12 +12,12 @@ metadata:
   ms.author: mtillman
   manager: daveba
   ms.date: 07/27/2019
-  ms.openlocfilehash: 1ce670f2783eb12db307eac42974667dd809de9d
-  ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
+  ms.openlocfilehash: e11e0edf214d3362784285cc24ee209855383119
+  ms.sourcegitcommit: bdf31d87bddd04382effbc36e0c465235d7a2947
   ms.translationtype: HT
   ms.contentlocale: ru-RU
   ms.lasthandoff: 02/12/2020
-  ms.locfileid: "77159307"
+  ms.locfileid: "77166165"
 highlightedContent:
   items:
   - title: Что такое Azure AD?
@@ -70,15 +70,15 @@ conceptualContent:
       text: Подробнее
   - title: Аутентификация
     links:
-    - url: ./authentication/concept-mfa-howitworks.md
+    - url: ./authentication/overview-authentication.md
       itemType: concept
-      text: Принцип работы. Многофакторная идентификация Azure
-    - url: ./authentication/concept-sspr-howitworks.md
-      itemType: concept
-      text: Самостоятельный сброс пароля в Azure AD
-    - url: ./authentication/concept-password-ban-bad.md
-      itemType: concept
-      text: Защита паролей Azure AD
+      text: Что такое аутентификация Azure AD?
+    - url: ./authentication/tutorial-enable-sspr.md
+      itemType: tutorial
+      text: Включение самостоятельного сброса пароля
+    - url: ./authentication/tutorial-enable-azure-mfa.md
+      itemType: tutorial
+      text: Включение Многофакторной идентификации Azure
     footerLink:
       url: ./authentication/index.yml
       text: Подробнее
