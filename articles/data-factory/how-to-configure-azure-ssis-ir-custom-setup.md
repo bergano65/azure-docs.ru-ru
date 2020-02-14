@@ -11,13 +11,13 @@ ms.author: sawinark
 manager: mflasko
 ms.reviewer: douglasl
 ms.custom: seo-lt-2019
-ms.date: 12/23/2019
-ms.openlocfilehash: ccf7ba2fd27dabdb090be87c5438ad68471996da
-ms.sourcegitcommit: f0dfcdd6e9de64d5513adf3dd4fe62b26db15e8b
-ms.translationtype: MT
+ms.date: 02/01/2020
+ms.openlocfilehash: e85ef22542fc162648dbfc637892cf7e580c6aac
+ms.sourcegitcommit: 42517355cc32890b1686de996c7913c98634e348
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/26/2019
-ms.locfileid: "75497064"
+ms.lasthandoff: 02/02/2020
+ms.locfileid: "76964555"
 ---
 # <a name="customize-setup-for-the-azure-ssis-integration-runtime"></a>Пользовательская установка для среды выполнения интеграции Azure–SSIS
 
@@ -48,7 +48,7 @@ ms.locfileid: "75497064"
 
 - Драйвер ODBC для IBM iSeries Access не поддерживается в Azure-SSIS IR. Вы можете столкнуться с ошибками установки во время пользовательской установки. Обратитесь за помощью в службу поддержки IBM.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
@@ -131,19 +131,66 @@ ms.locfileid: "75497064"
 
    ![Дополнительные параметры с пользовательскими установками](./media/tutorial-create-azure-ssis-runtime-portal/advanced-settings-custom.png)
 
-   При подготовке или повторной настройке Azure-SSIS IR с помощью PowerShell можно добавить или удалить пользовательские настройки, выполнив командлет `Set-AzDataFactoryV2IntegrationRuntime` перед началом Azure-SSIS IR.
+1. При подготовке или повторной настройке Azure-SSIS IR с помощью PowerShell можно добавить или удалить пользовательские настройки, выполнив командлет `Set-AzDataFactoryV2IntegrationRuntime` перед началом Azure-SSIS IR.
    
-   Для стандартных пользовательских настроек можно предоставить универсальный код ресурса (URI) SAS контейнера в качестве значения параметра `SetupScriptContainerSasUri`. Пример.
-
    ```powershell
-   Set-AzDataFactoryV2IntegrationRuntime -DataFactoryName $MyDataFactoryName `
-                                         -Name $MyAzureSsisIrName `
-                                         -ResourceGroupName $MyResourceGroupName `
-                                         -SetupScriptContainerSasUri $MySetupScriptContainerSasUri
+   $ResourceGroupName = "[your Azure resource group name]"
+   $DataFactoryName = "[your data factory name]"
+   $AzureSSISName = "[your Azure-SSIS IR name]"
+   # Custom setup info: Standard/express custom setups
+   $SetupScriptContainerSasUri = "" # OPTIONAL to provide a SAS URI of blob container for standard custom setup where your script and its associated files are stored
+   $ExpressCustomSetup = "[RunCmdkey|SetEnvironmentVariable|SentryOne.TaskFactory|oh22is.SQLPhonetics.NET|oh22is.HEDDA.IO or leave it empty]" # OPTIONAL to configure an express custom setup without script
 
-   Start-AzDataFactoryV2IntegrationRuntime -DataFactoryName $MyDataFactoryName `
-                                           -Name $MyAzureSsisIrName `
-                                           -ResourceGroupName $MyResourceGroupName
+   # Add custom setup parameters if you use standard/express custom setups
+   if(![string]::IsNullOrEmpty($SetupScriptContainerSasUri))
+   {
+       Set-AzDataFactoryV2IntegrationRuntime -ResourceGroupName $ResourceGroupName `
+           -DataFactoryName $DataFactoryName `
+           -Name $AzureSSISName `
+           -SetupScriptContainerSasUri $SetupScriptContainerSasUri
+   }
+   if(![string]::IsNullOrEmpty($ExpressCustomSetup))
+   {
+       if($ExpressCustomSetup -eq "RunCmdkey")
+       {
+           $addCmdkeyArgument = "YourFileShareServerName or YourAzureStorageAccountName.file.core.windows.net"
+           $userCmdkeyArgument = "YourDomainName\YourUsername or azure\YourAzureStorageAccountName"
+           $passCmdkeyArgument = New-Object Microsoft.Azure.Management.DataFactory.Models.SecureString("YourPassword or YourAccessKey")
+           $setup = New-Object Microsoft.Azure.Management.DataFactory.Models.CmdkeySetup($addCmdkeyArgument, $userCmdkeyArgument, $passCmdkeyArgument)
+       }
+       if($ExpressCustomSetup -eq "SetEnvironmentVariable")
+       {
+           $variableName = "YourVariableName"
+           $variableValue = "YourVariableValue"
+           $setup = New-Object Microsoft.Azure.Management.DataFactory.Models.EnvironmentVariableSetup($variableName, $variableValue)
+       }
+       if($ExpressCustomSetup -eq "SentryOne.TaskFactory")
+       {
+           $licenseKey = New-Object Microsoft.Azure.Management.DataFactory.Models.SecureString("YourLicenseKey")
+           $setup = New-Object Microsoft.Azure.Management.DataFactory.Models.ComponentSetup($ExpressCustomSetup, $licenseKey)
+       }
+       if($ExpressCustomSetup -eq "oh22is.SQLPhonetics.NET")
+       {
+           $licenseKey = New-Object Microsoft.Azure.Management.DataFactory.Models.SecureString("YourLicenseKey")
+           $setup = New-Object Microsoft.Azure.Management.DataFactory.Models.ComponentSetup($ExpressCustomSetup, $licenseKey)
+       }
+       if($ExpressCustomSetup -eq "oh22is.HEDDA.IO")
+       {
+           $setup = New-Object Microsoft.Azure.Management.DataFactory.Models.ComponentSetup($ExpressCustomSetup)
+       }
+       # Create an array of one or more express custom setups
+       $setups = New-Object System.Collections.ArrayList
+       $setups.Add($setup)
+
+       Set-AzDataFactoryV2IntegrationRuntime -ResourceGroupName $ResourceGroupName `
+           -DataFactoryName $DataFactoryName `
+           -Name $AzureSSISName `
+           -ExpressCustomSetup $setups
+   }
+   Start-AzDataFactoryV2IntegrationRuntime -ResourceGroupName $ResourceGroupName `
+       -DataFactoryName $DataFactoryName `
+       -Name $AzureSSISName `
+       -Force
    ```
    
    После завершения стандартной пользовательской установки и запуска Azure-SSIS IR можно найти стандартные выходные данные `main.cmd` и других журналов выполнения в папке `main.cmd.log` контейнера хранилища.
@@ -174,7 +221,7 @@ ms.locfileid: "75497064"
 
       1. Папка `BCP`, которая содержит файл пользовательской установки для установки служебных программ командной строки SQL Server (`MsSqlCmdLnUtils.msi`), включая программу массового копирования (`bcp`), на каждом узле Azure SSIS IR.
 
-      1. Папка `EXCEL`, содержащая пользовательский сценарий установки (`main.cmd`) для установки C# сборок и библиотек, которые можно использовать в задачах скриптов для динамического чтения и записи файлов Excel на каждом узле Azure-SSIS IR. Сначала скачайте `ExcelDataReader.dll` [отсюда и `DocumentFormat.OpenXml.dll` отсюда, а затем](https://www.nuget.org/packages/ExcelDataReader/) отправьте их вместе с `main.cmd` в контейнер. [](https://www.nuget.org/packages/DocumentFormat.OpenXml/) Кроме того, если вы просто хотите использовать стандартный диспетчер соединений, источник или назначение, то необходимый распространяемый пакет Access уже предварительно установлен на Azure-SSIS IR, поэтому пользовательская настройка не требуется.
+      1. Папка `EXCEL`, содержащая пользовательский сценарий установки (`main.cmd`) для установки C# сборок и библиотек, которые можно использовать в задачах скриптов для динамического чтения и записи файлов Excel на каждом узле Azure-SSIS IR. Сначала скачайте файл `ExcelDataReader.dll` [отсюда](https://www.nuget.org/packages/ExcelDataReader/), а файл `DocumentFormat.OpenXml.dll` — [отсюда](https://www.nuget.org/packages/DocumentFormat.OpenXml/), а затем отправьте их вместе с файлом `main.cmd` в контейнер. Кроме того, если вы просто хотите использовать стандартный диспетчер соединений, источник или назначение, то необходимый распространяемый пакет Access уже предварительно установлен на Azure-SSIS IR, поэтому пользовательская настройка не требуется.
       
       1. Папка `MYSQL ODBC`, которая содержит настраиваемый сценарий установки (`main.cmd`) для установки драйверов ODBC MySQL в каждом узле Azure-SSIS IR. Эта программа установки позволяет подключиться к серверу MySQL с помощью диспетчера соединений ODBC, источника и назначения. Сначала скачайте последние 64-разрядные и 32-разрядные версии установщиков драйверов ODBC для MySQL, например `mysql-connector-odbc-8.0.13-winx64.msi` и `mysql-connector-odbc-8.0.13-win32.msi`-из [MySQL](https://dev.mysql.com/downloads/connector/odbc/), а затем отправьте их вместе с `main.cmd` в контейнер.
 
