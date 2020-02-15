@@ -9,16 +9,16 @@ ms.service: azure-maps
 services: azure-maps
 manager: ''
 ms.custom: codepen
-ms.openlocfilehash: cfdf7dfd4c16f70065e338f8983d2124d3f6f0ef
-ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
+ms.openlocfilehash: 69bf41f9d88081b9a416b9bee91e8650a84f12c7
+ms.sourcegitcommit: 2823677304c10763c21bcb047df90f86339e476a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76933217"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77209721"
 ---
 # <a name="add-an-image-layer-to-a-map"></a>Добавление слоя изображений на карту
 
-В этой статье показано, как можно наложить изображение на фиксированный набор координат на карте. Ниже приведены некоторые примеры типов изображений, часто наложенных на карты:
+В этой статье показано, как наложить изображение на фиксированный набор координат. Ниже приведено несколько примеров различных типов изображений, которые могут быть наложены на карты:
 
 * Образы, полученные из дроны
 * Создание флурпланс
@@ -62,9 +62,9 @@ map.layers.add(new atlas.layer.ImageLayer({
 
 ## <a name="import-a-kml-file-as-ground-overlay"></a>Импортировать файл КМЛ как наложение заземления
 
-В следующем примере показано, как наложить сведения о наложения КМЛ на слой изображения на карте. Наложение заземления КМЛ предоставляет координаты Севера, Юг, Восток и Запад, а также поворот по часовой стрелке, в то время как слой изображения ожидает координаты для каждого угла изображения. Наложение заземления КМЛ в этом примере относится к Чартрес Каседрал и является источником из [некоммерческого](https://commons.wikimedia.org/wiki/File:Chartres.svg/overlay.kml).
+В этом образце показано, как добавить сведения о наложении КМЛ на землю в виде слоя изображения на карте. Наложение заземления КМЛ предоставляет координаты Севера, Юг, Восток и Запад и поворот по часовой стрелке. Но уровень изображения ожидает координаты для каждого угла изображения. Наложение заземления КМЛ в этом примере предназначено для Чартрес Каседрал, а источник — из [некоммерческого](https://commons.wikimedia.org/wiki/File:Chartres.svg/overlay.kml).
 
-В следующем коде используется статическая функция `getCoordinatesFromEdges` класса [имажелайер](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.layer.imagelayer?view=azure-iot-typescript-latest) . Он вычисляет четыре угла изображения: от Севера, Южной, Восточной и Западной, а также от информации о повороте от наложения КМЛ.
+В коде используется статическая функция `getCoordinatesFromEdges` из класса [имажелайер](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.layer.imagelayer?view=azure-iot-typescript-latest) . Он вычисляет четыре угла изображения, используя сведения о севере, Южной, Восточной, Западной и повороте наложения заземления КМЛ.
 
 <br/>
 
@@ -80,7 +80,7 @@ map.layers.add(new atlas.layer.ImageLayer({
 <iframe height='700' scrolling='no' title='Параметры слоя изображений' src='//codepen.io/azuremaps/embed/RqOGzx/?height=700&theme-id=0&default-tab=result' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>Просмотрите фрагмент кода с <a href='https://codepen.io/azuremaps/pen/RqOGzx/'>параметрами слоя изображений</a>, опубликованный для Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) на сайте <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о классах и методах, которые используются в этой статье:
 

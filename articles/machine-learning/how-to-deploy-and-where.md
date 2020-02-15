@@ -11,12 +11,12 @@ author: jpe316
 ms.reviewer: larryfr
 ms.date: 12/27/2019
 ms.custom: seoapril2019
-ms.openlocfilehash: bbb0992eaeef7892e5940130131ac139a339b47d
-ms.sourcegitcommit: cfbea479cc065c6343e10c8b5f09424e9809092e
+ms.openlocfilehash: fa73cb690fafb67f75abafab1b0dd27ffa0b8e32
+ms.sourcegitcommit: 2823677304c10763c21bcb047df90f86339e476a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2020
-ms.locfileid: "77083239"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77210505"
 ---
 # <a name="deploy-models-with-azure-machine-learning"></a>Развертывание моделей с помощью Машинное обучение Azure
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -32,7 +32,7 @@ ms.locfileid: "77083239"
 
 Дополнительные сведения об основных понятиях, связанных с рабочим процессом развертывания, см. в разделе [Управление моделями, их развертывание и мониторинг с помощью машинное обучение Azure](concept-model-management-and-deployment.md).
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 - Рабочая область машинного обучения Azure. Дополнительные сведения см. в статье [создание машинное обучение Azure рабочей области](how-to-manage-workspace.md).
 
@@ -585,6 +585,20 @@ az ml model deploy -m mymodel:1 --ic inferenceconfig.json --dc deploymentconfig.
 
 Дополнительные сведения см. в документации по [AZ ml для развертывания модели](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/model?view=azure-cli-latest#ext-azure-cli-ml-az-ml-model-deploy) .
 
+### <a name="understanding-service-state"></a>Основные сведения о состоянии службы
+
+Во время развертывания модели изменение состояния службы может отображаться, пока оно полностью развернуто.
+
+В следующей таблице описаны различные состояния службы.
+
+| Состояние WebService | Описание | Конечное состояние?
+| ----- | ----- | ----- |
+| Переход | Служба находится в процессе развертывания. | Нет |
+| Неработоспособен | Служба была развернута, но сейчас недоступна.  | Нет |
+| Непланируемый | В настоящее время служба не может быть развернута из-за нехватки ресурсов. | Нет |
+| Ошибка | Не удалось выполнить развертывание службы из-за ошибки или сбоя. | Да |
+| Исправна | Служба работоспособна, и доступна конечная точка. | Да |
+
 ### <a id="notebookvm"></a>Веб-служба вычислительных экземпляров (разработка и тестирование)
 
 См. раздел [развертывание модели для машинное обучение Azure вычислительного экземпляра](how-to-deploy-local-container-notebook-vm.md).
@@ -942,7 +956,7 @@ package = Model.package(ws, [model], inference_config)
 package.wait_for_creation(show_output=True)
 ```
 
-После создания пакета можно использовать `package.pull()` для извлечения образа в локальную среду DOCKER. Выходные данные этой команды будут отображать имя изображения. Пример: 
+После создания пакета можно использовать `package.pull()` для извлечения образа в локальную среду DOCKER. Выходные данные этой команды будут отображать имя изображения. Например: 
 
 `Status: Downloaded newer image for myworkspacef78fd10.azurecr.io/package:20190822181338`. 
 
@@ -1055,7 +1069,7 @@ docker kill mycontainer
 
 Дополнительные сведения см. в документации по [WebService. Delete ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice(class)?view=azure-ml-py#delete--) и [model. Delete ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.model.model?view=azure-ml-py#delete--).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Развертывание модели с помощью пользовательского образа DOCKER](how-to-deploy-custom-docker-image.md)
 * [Устранение неполадок развертывания](how-to-troubleshoot-deployment.md)

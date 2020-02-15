@@ -11,12 +11,12 @@ ms.topic: reference
 ms.date: 02/13/2020
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: e3a80628e5729813e1d405e58ecb623925b63076
-ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
+ms.openlocfilehash: 1734b063530f9e8a8f0429111c4c39d628bfad4e
+ms.sourcegitcommit: 79cbd20a86cd6f516acc3912d973aef7bf8c66e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2020
-ms.locfileid: "77193385"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77251776"
 ---
 # <a name="about-claim-resolvers-in-azure-active-directory-b2c-custom-policies"></a>Арбитры утверждений в пользовательских политиках Azure Active Directory B2C
 
@@ -123,16 +123,16 @@ ms.locfileid: "77193385"
 |Технический профиль [релингпарти](relyingparty.md#technicalprofile)| `OutputClaim`| 2 |
 
 Параметры: 
-1. Метаданные `IncludeClaimResolvingInClaimsHandling` должны иметь значение `true`
-1. Для атрибута input или Output Claims `AlwaysUseDefaultValue` необходимо задать значение `true`
+1. Для метаданных `IncludeClaimResolvingInClaimsHandling` должно быть задано значение `true`.
+1. `AlwaysUseDefaultValue` атрибута входящих или исходящих утверждений должен быть установлен в значение `true`.
 
-## <a name="how-to-use-claim-resolvers"></a>Как использовать арбитры утверждений
+## <a name="claim-resolvers-samples"></a>Примеры арбитров утверждений
 
 ### <a name="restful-technical-profile"></a>Технический профиль REST
 
 В техническом профиле [REST](restful-technical-profile.md) вам может потребоваться отправить язык пользователя, имя политики, область резервирования и идентификатор клиента. На основе этих утверждений REST API может запускать пользовательскую бизнес-логику и при необходимости вызвать локализованное сообщение об ошибке.
 
-Следующий пример демонстрирует технический профиль RESTful:
+В следующем примере показан технический профиль RESTFUL с использованием этого сценария:
 
 ```XML
 <TechnicalProfile Id="REST">
@@ -142,12 +142,13 @@ ms.locfileid: "77193385"
     <Item Key="ServiceUrl">https://your-app.azurewebsites.net/api/identity</Item>
     <Item Key="AuthenticationType">None</Item>
     <Item Key="SendClaimsIn">Body</Item>
+    <Item Key="IncludeClaimResolvingInClaimsHandling">true</Item>
   </Metadata>
   <InputClaims>
-    <InputClaim ClaimTypeReferenceId="userLanguage" DefaultValue="{Culture:LCID}" />
-    <InputClaim ClaimTypeReferenceId="policyName" DefaultValue="{Policy:PolicyId}" />
-    <InputClaim ClaimTypeReferenceId="scope" DefaultValue="{OIDC:scope}" />
-    <InputClaim ClaimTypeReferenceId="clientId" DefaultValue="{OIDC:ClientId}" />
+    <InputClaim ClaimTypeReferenceId="userLanguage" DefaultValue="{Culture:LCID}" AlwaysUseDefaultValue="true" />
+    <InputClaim ClaimTypeReferenceId="policyName" DefaultValue="{Policy:PolicyId}" AlwaysUseDefaultValue="true" />
+    <InputClaim ClaimTypeReferenceId="scope" DefaultValue="{OIDC:scope}" AlwaysUseDefaultValue="true" />
+    <InputClaim ClaimTypeReferenceId="clientId" DefaultValue="{OIDC:ClientId}" AlwaysUseDefaultValue="true" />
   </InputClaims>
   <UseTechnicalProfileForSessionManagement ReferenceId="SM-Noop" />
 </TechnicalProfile>
@@ -159,9 +160,9 @@ ms.locfileid: "77193385"
 
 ### <a name="dynamic-ui-customization"></a>Настройка динамического пользовательского интерфейса
 
-Azure AD B2C позволяет передавать параметры строки запроса в конечные точки определения содержимого HTML, чтобы вы могли динамически отображать содержимое страницы. Например, можно изменить фоновое изображение страницы регистрации или входа в Azure AD B2C на основе пользовательского параметра, передаваемого из веб-приложения или мобильного приложения. Дополнительные сведения см. в статье [Azure Active Directory B2C: настройка пользовательского интерфейса с динамическим содержимым, используя пользовательские политики](custom-policy-ui-customization-dynamic.md). Вы также можете локализовать свою HTML-страницу на основе параметра языка или изменить содержимое на основе идентификатора клиента.
+Azure AD B2C позволяет передавать параметры строки запроса конечным точкам определения содержимого HTML для динамического отображения содержимого страницы. Например, это позволяет изменять фоновое изображение на Azure AD B2C странице регистрации или входа в систему на основе настраиваемого параметра, передаваемого из веб-приложения или с помощью мобильных приложений. Дополнительные сведения см. в статье [Azure Active Directory B2C: настройка пользовательского интерфейса с динамическим содержимым, используя пользовательские политики](custom-policy-ui-customization-dynamic.md). Вы также можете локализовать свою HTML-страницу на основе параметра языка или изменить содержимое на основе идентификатора клиента.
 
-В следующем примере в строке запроса передается параметр с именем **campaignId** со значением `hawaii`, кодом **языка**`en-US` и **приложением**, представляющим идентификатор клиента.
+Следующий пример передает параметр строки запроса с именем **campaignId** со значением `hawaii`, кодом **языка** `en-US`и **приложением** , представляющим идентификатор клиента:
 
 ```XML
 <UserJourneyBehaviors>
@@ -173,10 +174,21 @@ Azure AD B2C позволяет передавать параметры стро
 </UserJourneyBehaviors>
 ```
 
-В результате Azure AD B2C отправляет выше перечисленные параметры на страницу содержимого HTML.
+В результате Azure AD B2C отправляет приведенные выше параметры на страницу содержимого HTML:
 
 ```
 /selfAsserted.aspx?campaignId=hawaii&language=en-US&app=0239a9cc-309c-4d41-87f1-31288feb2e82
+```
+
+### <a name="content-definition"></a>Определение содержимого
+
+В `LoadUri`[контентдефинитион](contentdefinitions.md) можно отправить арбитры утверждений для извлечения содержимого из разных мест в зависимости от используемых параметров. 
+
+```XML
+<ContentDefinition Id="api.signuporsignin">
+  <LoadUri>https://contoso.blob.core.windows.net/{Culture:LanguageName}/myHTML/unified.html</LoadUri>
+  ...
+</ContentDefinition>
 ```
 
 ### <a name="application-insights-technical-profile"></a>Технический профиль Application Insights
@@ -195,4 +207,29 @@ Azure AD B2C позволяет передавать параметры стро
     <InputClaim ClaimTypeReferenceId="AppId" PartnerClaimType="{property:App}" DefaultValue="{OIDC:ClientId}" />
   </InputClaims>
 </TechnicalProfile>
+```
+
+### <a name="relying-party-policy"></a>Политика проверяющей стороны
+
+В техническом профиле политики [проверяющей](relyingparty.md) стороны может ПОТРЕБОВАТЬСЯ отправить идентификатор клиента или идентификатор корреляции в приложение проверяющей стороны в JWT. 
+
+```XML
+<RelyingParty>
+    <DefaultUserJourney ReferenceId="SignUpOrSignIn" />
+    <TechnicalProfile Id="PolicyProfile">
+      <DisplayName>PolicyProfile</DisplayName>
+      <Protocol Name="OpenIdConnect" />
+      <OutputClaims>
+        <OutputClaim ClaimTypeReferenceId="displayName" />
+        <OutputClaim ClaimTypeReferenceId="givenName" />
+        <OutputClaim ClaimTypeReferenceId="surname" />
+        <OutputClaim ClaimTypeReferenceId="email" />
+        <OutputClaim ClaimTypeReferenceId="objectId" PartnerClaimType="sub"/>
+        <OutputClaim ClaimTypeReferenceId="identityProvider" />
+        <OutputClaim ClaimTypeReferenceId="tenantId" AlwaysUseDefaultValue="true" DefaultValue="{Policy:TenantObjectId}" />
+        <OutputClaim ClaimTypeReferenceId="correlationId" AlwaysUseDefaultValue="true" DefaultValue="{Context:CorrelationId}" />
+      </OutputClaims>
+      <SubjectNamingInfo ClaimType="sub" />
+    </TechnicalProfile>
+  </RelyingParty>
 ```

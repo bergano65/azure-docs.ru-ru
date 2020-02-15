@@ -3,12 +3,12 @@ title: Режимы развертывания
 description: В этой статье описывается, как с помощью Azure Resource Manager задать полный или пошаговый режим развертывания.
 ms.topic: conceptual
 ms.date: 01/17/2020
-ms.openlocfilehash: e53b8c58bf0919e64079e62c687b76ada1db7ff0
-ms.sourcegitcommit: 2a2af81e79a47510e7dea2efb9a8efb616da41f0
+ms.openlocfilehash: 9cc0e8eb20a0375a98906524d4d598ccb473d2a8
+ms.sourcegitcommit: 2823677304c10763c21bcb047df90f86339e476a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76261030"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77207593"
 ---
 # <a name="azure-resource-manager-deployment-modes"></a>Режимы развертывания в Azure Resource Manager
 
@@ -24,7 +24,7 @@ ms.locfileid: "76261030"
 
 Если шаблон содержит ресурс, который не развернут, так как [условие](conditional-resource-deployment.md) принимает значение false, результат зависит от того, какая версия REST API используется для развертывания шаблона. Если вы используете более раннюю версию, чем 2019-05-10, ресурс **не удаляется**. В 2019-05-10 или более поздней версии ресурс **удаляется**. Последние версии Azure PowerShell и Azure CLI удаляют ресурс.
 
-Будьте внимательны при использовании полного режима с [циклами копирования](create-multiple-instances.md). Все ресурсы, не указанные в шаблоне после разрешения цикла копирования, удаляются.
+Будьте внимательны при использовании полного режима с [циклами копирования](copy-resources.md). Все ресурсы, не указанные в шаблоне после разрешения цикла копирования, удаляются.
 
 Если развернуть в [шаблоне несколько групп ресурсов](cross-resource-group-deployment.md), то ресурсы в группе ресурсов, указанной в операции развертывания, могут быть удалены. Ресурсы во вторичных группах ресурсов не удаляются.
 
@@ -119,7 +119,7 @@ az group deployment create \
 ]
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Сведения о создании шаблонов Resource Manager см. в статье [Создание шаблонов диспетчера ресурсов Azure](template-syntax.md).
 * Сведения о развертывании ресурсов см. в статье [Развертывание ресурсов с использованием шаблонов Resource Manager и Azure PowerShell](deploy-powershell.md).
