@@ -8,15 +8,15 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 02/12/2020
+ms.date: 02/14/2020
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 38763f414b1e5373af79d2501850a44e8e813451
-ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
+ms.openlocfilehash: c5beef98f03c52ca022a7ab8047d3b392755c0bf
+ms.sourcegitcommit: 0eb0673e7dd9ca21525001a1cab6ad1c54f2e929
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2020
-ms.locfileid: "77185474"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77212193"
 ---
 # <a name="define-phone-number-claims-transformations-in-azure-ad-b2c"></a>Определение преобразований заявок на телефонный номер в Azure AD B2C
 
@@ -32,7 +32,8 @@ ms.locfileid: "77185474"
 
 | Элемент | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
-| InputClaim | InputClaim | string | Утверждение строкового типа, из которого осуществляется преобразование. |
+| InputClaim | фоненумберстринг | string |  Строковое утверждение для номера телефона. Номер телефона должен быть в международном формате, заканчиваться ведущим символом "+" и кодом страны. Если предоставлено `country` входящего утверждения, номер телефона указывается в локальном формате (без кода страны). |
+| InputClaim | country | string | Используемых Строковое утверждение для кода страны номера телефона в формате ISO3166 (код страны из двух букв ISO-3166). |
 | outputClaim | outputClaim | phoneNumber | Результат преобразования утверждений. |
 
 Преобразование « **конвертстрингтофоненумберклаим** Claims» всегда выполняется из [технического профиля проверки](validation-technical-profile.md) , который вызывается [самостоятельно подтвержденным техническим профилем](self-asserted-technical-profile.md) или [элементом управления отображением](display-controls.md). Метаданные технического профиля с самоподтверждением **усермессажеифклаимстрансформатионинвалидфоненумбер** контролирует сообщение об ошибке, представленное пользователю.
@@ -44,7 +45,8 @@ ms.locfileid: "77185474"
 ```XML
 <ClaimsTransformation Id="ConvertStringToPhoneNumber" TransformationMethod="ConvertStringToPhoneNumberClaim">
   <InputClaims>
-    <InputClaim ClaimTypeReferenceId="phoneString" TransformationClaimType="inputClaim" />
+    <InputClaim ClaimTypeReferenceId="phoneString" TransformationClaimType="phoneNumberString" />
+    <InputClaim ClaimTypeReferenceId="countryCode" TransformationClaimType="country" />
   </InputClaims>
   <OutputClaims>
     <OutputClaim ClaimTypeReferenceId="phoneNumber" TransformationClaimType="outputClaim" />
@@ -63,11 +65,19 @@ ms.locfileid: "77185474"
 </TechnicalProfile>
 ```
 
-### <a name="example"></a>Пример
+### <a name="example-1"></a>Пример 1
 
 - Входящие утверждения:
-  - **inputClaim**: + 1 (123) 456-7890
+  - **фоненумберстринг**: 045 456-7890
+  - **страна**: DK
 - Исходящие утверждения:
+  - **outputClaim**: + 450546148120
+
+### <a name="example-2"></a>Пример 2
+
+- Входящие утверждения:
+  - **фоненумберстринг**: + 1 (123) 456-7890
+- Исходящие утверждения: 
   - **outputClaim**: + 11234567890
 
 ## <a name="getnationalnumberandcountrycodefromphonenumberstring"></a>жетнатионалнумберандкаунтрикодефромфоненумберстринг

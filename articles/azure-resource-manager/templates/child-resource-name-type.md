@@ -3,12 +3,12 @@ title: Дочерние ресурсы в шаблонах
 description: Описывает, как задать имя и тип для дочерних ресурсов в шаблоне Azure Resource Manager.
 ms.topic: conceptual
 ms.date: 08/26/2019
-ms.openlocfilehash: 7d8a7a39bab3340b6f5c9e66d54b7398fa70ee3e
-ms.sourcegitcommit: 5bbe87cf121bf99184cc9840c7a07385f0d128ae
+ms.openlocfilehash: 6de2b476fe19a057a62e4a54963dd8fde0d11579
+ms.sourcegitcommit: 2823677304c10763c21bcb047df90f86339e476a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76122021"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77207899"
 ---
 # <a name="set-name-and-type-for-child-resources"></a>Задать имя и тип для дочерних ресурсов
 
@@ -27,7 +27,7 @@ ms.locfileid: "76122021"
 ]
 ```
 
-В следующем примере показан дочерний ресурс за пределами родительского ресурса. Этот подход можно использовать, если родительский ресурс не развертывается в том же шаблоне или если требуется использовать [Copy](create-multiple-instances.md) для создания более чем одного дочернего ресурса.
+В следующем примере показан дочерний ресурс за пределами родительского ресурса. Этот подход можно использовать, если родительский ресурс не развертывается в том же шаблоне или если требуется использовать [Copy](copy-resources.md) для создания более чем одного дочернего ресурса.
 
 ```json
 "resources": [
@@ -130,7 +130,7 @@ ms.locfileid: "76122021"
 ]
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Сведения о создании шаблонов диспетчера ресурсов Azure см. в статье о [создании шаблонов](template-syntax.md).
 

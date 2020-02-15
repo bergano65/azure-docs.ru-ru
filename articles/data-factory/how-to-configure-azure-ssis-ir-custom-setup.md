@@ -11,13 +11,13 @@ ms.author: sawinark
 manager: mflasko
 ms.reviewer: douglasl
 ms.custom: seo-lt-2019
-ms.date: 02/01/2020
-ms.openlocfilehash: c4502cc4a808b4a44f70c1f96fe38fd0ddeebdee
-ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
+ms.date: 02/14/2020
+ms.openlocfilehash: 9c084564fec3faf59317fe9e05f3e850a38454d6
+ms.sourcegitcommit: 79cbd20a86cd6f516acc3912d973aef7bf8c66e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2020
-ms.locfileid: "77187713"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77251980"
 ---
 # <a name="customize-the-setup-for-an-azure-ssis-integration-runtime"></a>Настройка настройки для Azure-SSIS Integration Runtime
 
@@ -46,7 +46,7 @@ ms.locfileid: "77187713"
 
 - Драйвер ODBC для IBM iSeries Access не поддерживается на Azure-SSIS IR. Вы можете столкнуться с ошибками установки во время пользовательской установки. Если вы сделаете это, обратитесь за помощью в службу поддержки IBM.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
@@ -74,15 +74,15 @@ ms.locfileid: "77187713"
 
       ![Подключение к службе хранилища Azure](media/how-to-configure-azure-ssis-ir-custom-setup/custom-setup-image1.png)
 
-   b. Установите флажок **использовать имя и ключ учетной записи хранения**, а затем нажмите кнопку **Далее**.
+   б. Установите флажок **использовать имя и ключ учетной записи хранения**, а затем нажмите кнопку **Далее**.
 
       ![Использование имени и ключа учетной записи хранения](media/how-to-configure-azure-ssis-ir-custom-setup/custom-setup-image2.png)
 
-   c. Введите имя и ключ учетной записи хранения Azure, нажмите кнопку **Далее**, а затем выберите **подключить**.
+   в. Введите имя и ключ учетной записи хранения Azure, нажмите кнопку **Далее**, а затем выберите **подключить**.
 
       ![Укажите имя и ключ учетной записи хранения](media/how-to-configure-azure-ssis-ir-custom-setup/custom-setup-image3.png)
 
-   d. В подключенной учетной записи хранения Azure щелкните правой кнопкой мыши **контейнеры больших двоичных объектов**, выберите **создать контейнер больших двоичных объектов**и назовите новый контейнер.
+   . В подключенной учетной записи хранения Azure щелкните правой кнопкой мыши **контейнеры больших двоичных объектов**, выберите **создать контейнер больших двоичных объектов**и назовите новый контейнер.
 
       ![Создание контейнера BLOB-объектов](media/how-to-configure-azure-ssis-ir-custom-setup/custom-setup-image4.png)
 
@@ -121,8 +121,12 @@ ms.locfileid: "77187713"
 
      * При выборе **OH22'S Хедда. Компонент ввода-вывода** можно установить [Хедда. ](https://hedda.io/ssis-component/)Компонент качества или очистки данных ввода-вывода из oh22 на Azure-SSIS IR после приобретения службы. Текущая интегрированная версия — **1.0.13**.
 
-      * Если вы выберете компонент **oh22's SQLPhonetics.NET** , можно установить компонент качества и сопоставления данных [SQLPhonetics.NET](https://sqlphonetics.oh22.is/sqlphonetics-net-for-microsoft-ssis/) из oh22 на Azure-SSIS IR, введя лицензионный ключ продукта, который вы приобрели в поле **лицензионный ключ** . Текущая интегрированная версия — **1.0.43**.
-   
+     * Если вы выберете компонент **oh22's SQLPhonetics.NET** , можно установить компонент качества и сопоставления данных [SQLPhonetics.NET](https://sqlphonetics.oh22.is/sqlphonetics-net-for-microsoft-ssis/) из oh22 на Azure-SSIS IR, введя лицензионный ключ продукта, который вы приобрели в поле **лицензионный ключ** . Текущая интегрированная версия — **1.0.43**.
+
+     * Если вы выбрали компонент **Кингсвайсофт Integration Toolkit для служб** SSIS, можно установить набор соединителей [SSIS Integration Toolkit](https://www.kingswaysoft.com/products/ssis-integration-toolkit-for-microsoft-dynamics-365) для приложений CRM/ERP/Marketing/Collaboration, таких как Microsoft Dynamics, SharePoint, Project Server, Oracle/Salesforce Marketing Cloud и т. п. из кингсвайсофт на Azure-SSIS IR, введя лицензионный ключ продукта, который вы приобрели в поле **лицензионный ключ** . Текущая интегрированная версия — **2019,2**.
+
+     * При выборе компонента **пакета производительности SSIS кингсвайсофт** можно установить набор компонентов [пакета производительности SSIS](https://www.kingswaysoft.com/products/ssis-productivity-pack) из кингсвайсофт на Azure-SSIS IR, введя лицензионный ключ продукта, который вы приобрели в поле **лицензионный ключ** . Текущая интегрированная версия — **10,0**.
+
    Добавленные Экспресс пользовательские настройки будут отображаться в разделе **Дополнительные параметры** . Чтобы удалить их, установите соответствующие флажки и нажмите кнопку **Удалить**.
 
    ![Дополнительные параметры с пользовательскими установками](./media/tutorial-create-azure-ssis-runtime-portal/advanced-settings-custom.png)
@@ -197,15 +201,15 @@ ms.locfileid: "77187713"
 
       ![Подключение к хранилищу Azure с помощью подписанного URL-адреса](media/how-to-configure-azure-ssis-ir-custom-setup/custom-setup-image9.png)
 
-   b. Выберите **использовать URI SAS** , а затем в поле **универсальный код** ресурса (URI) введите следующий URI SAS:
+   б. Выберите **использовать URI SAS** , а затем в поле **универсальный код** ресурса (URI) введите следующий URI SAS:
 
       `https://ssisazurefileshare.blob.core.windows.net/publicpreview?sp=rl&st=2018-04-08T14%3A10%3A00Z&se=2020-04-10T14%3A10%3A00Z&sv=2017-04-17&sig=mFxBSnaYoIlMmWfxu9iMlgKIvydn85moOnOch6%2F%2BheE%3D&sr=c`
 
       ![Предоставление подписанного URL-адреса для контейнера](media/how-to-configure-azure-ssis-ir-custom-setup/custom-setup-image10.png)
 
-   c. Нажмите кнопку **Далее**, а затем выберите **подключить**.
+   в. Нажмите кнопку **Далее**, а затем выберите **подключить**.
 
-   d. В левой области выберите подключенный контейнер **публикпревиев** , а затем дважды щелкните папку *кустомсетупскрипт* . Внутри этой папки находятся следующие элементы:
+   . В левой области выберите подключенный контейнер **публикпревиев** , а затем дважды щелкните папку *кустомсетупскрипт* . Внутри этой папки находятся следующие элементы:
 
       * *Пример* папки, которая содержит выборочную установку для установки базовой задачи на каждом узле Azure-SSIS IR. Задача не делает ничего, только несколько секунд находится в спящем режиме. Папка также содержит папку *gacutil* , все содержимое которой (*gacutil. exe*, *gacutil. exe. config*и *1033 \ гакутлрк. dll*) можно скопировать в контейнер.
 
@@ -273,7 +277,7 @@ ms.locfileid: "77187713"
    
       При настройке или повторной настройке Azure-SSIS IR с помощью PowerShell выполните командлет `Set-AzDataFactoryV2IntegrationRuntime` с URI SAS контейнера в качестве значения параметра `SetupScriptContainerSasUri`.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Настройка выпуска Enterprise Azure-SSIS Integration Runtime](how-to-configure-azure-ssis-ir-enterprise-edition.md)
 - [Разработка платных или лицензированных пользовательских компонентов для Azure-SSIS Integration Runtime](how-to-develop-azure-ssis-ir-licensed-components.md)

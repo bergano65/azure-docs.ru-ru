@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 02/13/2020
 ms.author: rogarana
 ms.custom: include file
-ms.openlocfilehash: 1bdb4e40d7e173dcb2368f2f0cf645581647f6ee
-ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
+ms.openlocfilehash: 09e5a6c5eee21e5432c4cf96a63fd2337307954a
+ms.sourcegitcommit: 2823677304c10763c21bcb047df90f86339e476a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2020
-ms.locfileid: "77202207"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77211401"
 ---
 Общие диски Azure (Предварительная версия) — это новая функция для управляемых дисков Azure, которая позволяет подключить управляемый диск Azure к нескольким виртуальным машинам одновременно. Присоединение управляемого диска к нескольким виртуальным машинам позволяет либо развернуть новые или перенести существующие кластерные приложения в Azure.
 
@@ -55,7 +55,7 @@ ms.locfileid: "77202207"
 
 На следующей схеме показан пример приложения кластеризованной базы данных с двумя узлами, которое использует параметр SCSI PR для включения отработки отказа с одного узла на другой.
 
-![Шаред-диск-упдатед-тво-Ноде-клустер-диаграм. png](media/virtual-machines-disks-shared-disks/shared-disk-updated-two-node-cluster-diagram.png)
+![Кластер с двумя узлами. Приложение, работающее в кластере, обрабатывает доступ к диску](media/virtual-machines-disks-shared-disks/shared-disk-updated-two-node-cluster-diagram.png)
 
 Процесс выглядит следующим образом:
 
@@ -68,7 +68,7 @@ ms.locfileid: "77202207"
 
 На следующей схеме показана еще одна общая кластеризованная Рабочая нагрузка, состоящая из нескольких узлов, считывающих данные с диска для выполнения параллельных процессов, таких как обучение моделей машинного обучения.
 
-![Шаред-диск-упдатед-Мачине-леарнинг-траинер-модел. png](media/virtual-machines-disks-shared-disks/shared-disk-updated-machine-learning-trainer-model.png)
+![Кластер виртуальных машин с четырьмя узлами. Каждый узел регистрирует намерение для записи, приложение принимает монопольное резервирование для правильной работы записи результатов.](media/virtual-machines-disks-shared-disks/shared-disk-updated-machine-learning-trainer-model.png)
 
 Процесс выглядит следующим образом:
 
