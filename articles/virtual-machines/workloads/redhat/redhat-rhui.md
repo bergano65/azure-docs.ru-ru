@@ -11,12 +11,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 02/10/2020
 ms.author: alsin
-ms.openlocfilehash: e4213e67d9d752f3fc6450236b41e8bbf61f9957
-ms.sourcegitcommit: bdf31d87bddd04382effbc36e0c465235d7a2947
+ms.openlocfilehash: dc4762cbda5ad2877d2d69953d2514dea17c8b46
+ms.sourcegitcommit: f97f086936f2c53f439e12ccace066fca53e8dc3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77169301"
+ms.lasthandoff: 02/15/2020
+ms.locfileid: "77368903"
 ---
 # <a name="red-hat-update-infrastructure-for-on-demand-red-hat-enterprise-linux-vms-in-azure"></a>Red Hat Update Infrastructure для предоставляемых по запросу виртуальных машин Red Hat Enterprise Linux в Azure
  [Red Hat Update Infrastructure](https://access.redhat.com/products/red-hat-update-infrastructure) (RHUI) позволяет поставщикам облачных служб (например, Azure) создавать зеркальные копии размещенного с помощью Red Hat содержимого репозитория, создавать пользовательские репозитории с содержимым для Azure и предоставлять пользовательским виртуальным машинам доступ к этому содержимому.
@@ -27,6 +27,10 @@ ms.locfileid: "77169301"
 
 Сведения о политиках поддержки Red Hat для всех версий RHEL можно найти на странице [о жизненных циклах выпусков Red Hat Enterprise Linux](https://access.redhat.com/support/policy/updates/errata).
 
+> [!IMPORTANT]
+> RHUI предназначен только для образов с оплатой по мере использования (ПАЙГО). Для пользовательских и Золотой образов, также известных как собственные подписки (BYOS), необходимо подключить систему к RHSM или спутнику для получения обновлений. Дополнительные сведения см. в [статье Red Hat](https://access.redhat.com/solutions/253273) .
+
+
 ## <a name="important-information-about-azure-rhui"></a>Важные сведения об Azure RHUI
 
 * Azure RHUI — это инфраструктура обновления, которая поддерживает все виртуальные машины RHEL PAYG, созданные в Azure. Это не позволит вам зарегистрировать виртуальные машины PAYG RHEL с помощью диспетчера подписки или вспомогательного или другого источника обновлений, но это приведет к непрямой двойной оплате с помощью виртуальной машины PAYG. Дополнительные сведения см. в следующей точке.
@@ -35,6 +39,7 @@ ms.locfileid: "77169301"
 * Образы RHEL (SAP PAYG) в Azure (RHEL for SAP, RHEL for SAP HANA и RHEL for SAP Business Applications) подключаются к выделенным каналам RHUI, которые остаются на определенной версии RHEL с дополнительным номером, что требуется для сертификации SAP.
 
 * Доступ к размещенной в Azure инфраструктуре RHUI могут получать виртуальные машины с IP-адресами в рамках [диапазонов IP-адресов центра обработки данных Azure](https://www.microsoft.com/download/details.aspx?id=41653). Если весь трафик виртуальной машины перенаправляется через локальную сетевую инфраструктуру, может потребоваться настройка определяемых пользователем маршрутов, чтобы виртуальные машины RHEL (PAYG) могли получить доступ к инфраструктуре RHUI в Azure. В этом случае необходимо добавить определяемые пользователем маршруты для _всех_ IP-адресов RHUI.
+
 
 ## <a name="image-update-behavior"></a>Поведение при обновлении изображения
 
