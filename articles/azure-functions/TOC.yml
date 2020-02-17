@@ -345,7 +345,13 @@
               href: functions-bindings-cosmosdb-v2.md
               displayName: Azure Cosmos DB
         - name: Сетка событий Azure
-          href: functions-bindings-event-grid.md
+          items:
+            - name: Обзор
+              href: functions-bindings-event-grid.md
+            - name: Триггер
+              href: functions-bindings-event-grid-trigger.md
+            - name: Выходные данные
+              href: functions-bindings-event-grid-output.md
         - name: Центры событий
           href: functions-bindings-event-hubs.md
         - name: Центр Интернета вещей
