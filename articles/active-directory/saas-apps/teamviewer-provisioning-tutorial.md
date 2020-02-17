@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/27/2020
 ms.author: Zhchia
-ms.openlocfilehash: 0602757fad0eb4424e10fb0c1cf0272826ed0024
-ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
+ms.openlocfilehash: dc33cf9249a5b804ef46e75ff1822eaa5c6f9d6a
+ms.sourcegitcommit: f97f086936f2c53f439e12ccace066fca53e8dc3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77150703"
+ms.lasthandoff: 02/15/2020
+ms.locfileid: "77366434"
 ---
 # <a name="tutorial-configure-teamviewer-for-automatic-user-provisioning"></a>Руководство. Настройка TeamViewer для автоматической подготовки пользователей
 
@@ -34,7 +34,7 @@ ms.locfileid: "77150703"
 > * Синхронизация атрибутов пользователей между Azure AD и TeamViewer
 > * [Единый вход](https://docs.microsoft.com/azure/active-directory/saas-apps/teamviewer-tutorial) в TeamViewer (рекомендуется)
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 В сценарии, описанном в этом руководстве, предполагается, что у вас уже имеется:
 
@@ -101,7 +101,7 @@ ms.locfileid: "77150703"
 
     ![Вкладка "подготовка"](common/provisioning-automatic.png)
 
-5. В разделе **учетные данные администратора** введите учетные данные администратора TeamViewer и имя пользователя. Нажмите кнопку **проверить подключение** , чтобы убедиться, что Azure AD может подключиться к TeamViewer. В случае сбоя подключения убедитесь, что у учетной записи TeamViewer есть разрешения администратора, и повторите попытку.
+5. В разделе **учетные данные администратора** введите `ttps://webapi.teamviewer.com/scim/v2` в поле **URL-адрес домика** и введите созданный ранее маркер скрипта в **секретном токене**. Нажмите кнопку **проверить подключение** , чтобы убедиться, что Azure AD может подключиться к TeamViewer. В случае сбоя подключения убедитесь, что у учетной записи TeamViewer есть разрешения администратора, и повторите попытку.
 
     ![Подготовка](./media/teamViewer-provisioning-tutorial/provisioning.png)
 
@@ -109,17 +109,17 @@ ms.locfileid: "77150703"
 
     ![Почтовое уведомление](common/provisioning-notification-email.png)
 
-7. Щелкните **Сохранить**.
+7. Нажмите кнопку **Сохранить**.
 
 8. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory пользователей с TeamViewer**.
 
 9. Проверьте атрибуты пользователя, которые синхронизированы из Azure AD в TeamViewer в разделе **сопоставление атрибутов** . Атрибуты, выбранные как свойства **Matching** , используются для сопоставления учетных записей пользователей в TeamViewer для операций обновления. Если вы решили изменить [соответствующий целевой атрибут](https://docs.microsoft.com/azure/active-directory/manage-apps/customize-application-attributes), необходимо убедиться, что API TeamViewer поддерживает фильтрацию пользователей на основе этого атрибута. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
 
-   |attribute|Тип|
+   |Атрибут|Тип|
    |---|---|
    |userName|String|
    |displayName|String|
-   |active|Логическое|
+   |активно|Логическое|
 
 10. Чтобы настроить фильтры области, ознакомьтесь со следующими инструкциями, предоставленными в [руководстве по фильтрам области](../manage-apps/define-conditional-rules-for-provisioning-user-accounts.md).
 
@@ -149,6 +149,6 @@ ms.locfileid: "77150703"
 * [Управление подготовкой учетных записей пользователей для корпоративных приложений](../manage-apps/configure-automatic-user-provisioning-portal.md)
 * [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Сведения о просмотре журналов и получении отчетов о действиях по подготовке](../manage-apps/check-status-user-account-provisioning.md)

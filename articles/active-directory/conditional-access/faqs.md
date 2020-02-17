@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: baa44481c4641f69ead5335298316c837062d2c0
-ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
+ms.openlocfilehash: 6842338bd27e4bea3436f0b249380ab773d60de6
+ms.sourcegitcommit: f97f086936f2c53f439e12ccace066fca53e8dc3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2020
-ms.locfileid: "77186054"
+ms.lasthandoff: 02/15/2020
+ms.locfileid: "77368092"
 ---
 # <a name="azure-active-directory-conditional-access-faqs"></a>Azure Active Directory часто задаваемые вопросы о условном доступе
 
@@ -40,7 +40,7 @@ ms.locfileid: "77186054"
 
 Политики условного доступа применяются ко всем учетным записям пользователей. Это относится и к учетным записям пользователей, которые используются как учетные записи служб. Часто учетная запись службы, которая запускается автоматически, не может удовлетворять требованиям политики условного доступа. Например, может потребоваться многофакторная проверка подлинности. Учетные записи служб можно исключить из политики с помощью параметров управления политиками условного доступа. 
 
-## <a name="are-graph-apis-available-for-configuring-conditional-access-policies"></a>Доступны ли API Graph для настройки политик условного доступа?
+## <a name="are-microsoft-graph-apis-available-for-configuring-conditional-access-policies"></a>Доступны Microsoft Graph API для настройки политик условного доступа?
 
 В настоящее время нет. 
 

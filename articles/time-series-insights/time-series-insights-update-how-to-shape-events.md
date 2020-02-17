@@ -8,14 +8,14 @@ ms.workload: big-data
 ms.service: time-series-insights
 services: time-series-insights
 ms.topic: conceptual
-ms.date: 12/16/2019
+ms.date: 02/14/2020
 ms.custom: seodec18
-ms.openlocfilehash: fd744e6283b00b0dfdd50805cb628f5bc40ab8d6
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: e814d9be4a0db2852bd9e21f3d3c1d54a45bd268
+ms.sourcegitcommit: f97f086936f2c53f439e12ccace066fca53e8dc3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76846139"
+ms.lasthandoff: 02/15/2020
+ms.locfileid: "77368643"
 ---
 # <a name="shape-events-with-azure-time-series-insights-preview"></a>Формирование событий с помощью предварительной версии службы "Аналитика временных рядов Azure"
 
@@ -117,7 +117,7 @@ ms.locfileid: "76846139"
 
 Предварительная версия службы "Аналитика временных рядов" объединяет таблицу (после преобразования в плоскую структуру) во время запроса. В таблице содержатся дополнительные столбцы, такие как **Тип**. В следующем примере показано, как можно [сформировать](./time-series-insights-send-events.md#supported-json-shapes) данные телеметрии.
 
-| deviceId  | Тип | L1 | L2 | TIMESTAMP | Частота series_Flow ft3/с | series_Engineная давление psi |
+| deviceId  | Тип | L1 | L2 | timestamp | Частота series_Flow ft3/с | series_Engineная давление psi |
 | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
 | `FXXX` | Default_Type | Имитирующее устройство | Система аккумулятора | 2018-01-17T01:17:00Z |   1.0172575712203979 |    34.7 |
 | `FXXX` | Default_Type | Имитирующее устройство |   Система аккумулятора |    2018-01-17T01:17:00Z | 2.445906400680542 |  49.2 |
@@ -134,7 +134,7 @@ ms.locfileid: "76846139"
 > Поля экземпляров не хранятся в телеметрии. Они хранятся с метаданными в модели временных рядов.
 > В приведенной выше таблице приводится представление запроса.
 
-### <a name="example-2"></a>Пример 2:
+### <a name="example-2"></a>Пример 2.
 
 Рассмотрим следующий код JSON:
 
@@ -154,6 +154,6 @@ ms.locfileid: "76846139"
 > В случаях, когда в одной полезной нагрузке события имеются дублирующиеся свойства из-за преобразования или другого механизма, сохраняется последнее значение свойства, овервриттинг все предыдущие значения.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Чтобы приложить эти рекомендации, ознакомьтесь с [синтаксисом запроса предварительной версии службы "аналитика временных рядов Azure](./time-series-insights-query-data-csharp.md)". Дополнительные сведения о синтаксисе запросов для предварительной версии "аналитика временных рядов" REST API для доступа к данным.

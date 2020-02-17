@@ -12,12 +12,12 @@ ms.date: 12/27/2019
 ms.author: mimart
 ms.reviewer: phsignor
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 528aff73b931776ef9a6542437db271bb214c7fb
-ms.sourcegitcommit: 7221918fbe5385ceccf39dff9dd5a3817a0bd807
+ms.openlocfilehash: 0451fe18629a572c9b49f14924bfa50293f42a2b
+ms.sourcegitcommit: f97f086936f2c53f439e12ccace066fca53e8dc3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/21/2020
-ms.locfileid: "76290705"
+ms.lasthandoff: 02/15/2020
+ms.locfileid: "77367851"
 ---
 # <a name="managing-consent-to-applications-and-evaluating-consent-requests"></a>Управление согласия для приложений и оценка запросов на согласие
 
@@ -100,7 +100,7 @@ ms.locfileid: "76290705"
 
 ### <a name="granting-consent-on-behalf-of-a-specific-user"></a>Предоставление согласия от имени определенного пользователя
 
-Вместо предоставления согласия для всей организации администратор может также использовать [API Graph Azure AD](https://docs.microsoft.com/azure/active-directory/develop/active-directory-graph-api) , чтобы предоставить согласие на делегированные разрешения от имени одного пользователя. Для этого отправьте запрос `POST`, чтобы создать сущность [OAuth2PermissionGrant](https://docs.microsoft.com/previous-versions/azure/ad/graph/api/entity-and-complex-type-reference#oauth2permissiongrant-entity) , где `consentType` имеет значение "Principal", а `principalId` — идентификатор объекта для пользователя от имени, которому предоставляется согласие.
+Вместо предоставления согласия для всей организации администратор может также использовать [API Graph Microsft](https://docs.microsoft.com/graph/use-the-api) , чтобы предоставить согласие на делегированные разрешения от имени одного пользователя. Дополнительные сведения см. [в разделе Получение доступа от имени пользователя](https://docs.microsoft.com/graph/auth-v2-user).
 
 ## <a name="limiting-user-access-to-applications"></a>Ограничение доступа пользователей к приложениям
 
@@ -108,7 +108,7 @@ ms.locfileid: "76290705"
 
 Более широкий обзор, в том числе способы решения дополнительных сложных сценариев, см. в статье [Использование Azure AD для управления доступом к приложениям](what-is-access-management.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 [Пять шагов по защите инфраструктуры удостоверений](https://docs.microsoft.com/azure/security/fundamentals/steps-secure-identity#before-you-begin-protect-privileged-accounts-with-mfa)
 

@@ -7,18 +7,18 @@ ms.service: virtual-desktop
 ms.topic: troubleshooting
 ms.date: 01/08/2020
 ms.author: helohr
-ms.openlocfilehash: 12b5b6ce84ad36d14a393b54745e530779d4ca95
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.openlocfilehash: 438c391febc28a716c681aa81b3f42c155b720eb
+ms.sourcegitcommit: f97f086936f2c53f439e12ccace066fca53e8dc3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75965740"
+ms.lasthandoff: 02/15/2020
+ms.locfileid: "77367209"
 ---
 # <a name="tenant-and-host-pool-creation"></a>Создание пула узлов и клиента
 
 В этой статье рассматриваются проблемы во время первоначальной настройки клиента виртуальных рабочих столов Windows и соответствующей инфраструктуры пула узлов сеансов.
 
-## <a name="provide-feedback"></a>Отправить отзыв
+## <a name="provide-feedback"></a>Отзывы
 
 Посетите [техническое сообщество Виртуального рабочего стола Windows](https://techcommunity.microsoft.com/t5/Windows-Virtual-Desktop/bd-p/WindowsVirtualDesktop), чтобы обсудить службу "Виртуальный рабочий стол Windows" с группой разработчиков и активными членами сообщества.
 
@@ -53,7 +53,7 @@ ms.locfileid: "75965740"
 
 **Причина:** Пользователю, выполнившего вход, не назначена роль Тенанткреатор в своих Azure Active Directory.
 
-**Исправление:** Следуйте инструкциям в статье [назначение роли приложения тенанткреатор пользователю в клиенте Azure Active Directory](https://docs.microsoft.com/azure/virtual-desktop/tenant-setup-azure-active-directory#assign-the-tenantcreator-application-role). После выполнения инструкций Вы получите пользователя, назначенного роли Тенанткреатор.
+**Исправление:** Следуйте инструкциям в статье [назначение роли приложения тенанткреатор пользователю в клиенте Azure Active Directory](tenant-setup-azure-active-directory.md#assign-the-tenantcreator-application-role). После выполнения инструкций Вы получите пользователя, назначенного роли Тенанткреатор.
 
 ![Снимок экрана с назначенной ролью Тенанткреатор.](media/TenantCreatorRoleAssigned.png)
 
@@ -113,9 +113,9 @@ ms.locfileid: "75965740"
 
 Выполните эти инструкции, чтобы устранить неудачные развертывания шаблонов Azure Resource Manager и PowerShell DSC.
 
-1. Просмотрите ошибки в развертывании, используя [Просмотр операций развертывания с Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-deployment-operations).
-2. Если в развертывании нет ошибок, просмотрите ошибки в журнале действий, используя [Просмотр журналов действий для аудита действий с ресурсами](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-audit).
-3. После определения ошибки используйте сообщение об ошибке и ресурсы в статье [Устранение распространенных ошибок развертывания Azure с Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-common-deployment-errors) для решения проблемы.
+1. Просмотрите ошибки в развертывании, используя [Просмотр операций развертывания с Azure Resource Manager](../azure-resource-manager/resource-manager-deployment-operations.md).
+2. Если в развертывании нет ошибок, просмотрите ошибки в журнале действий, используя [Просмотр журналов действий для аудита действий с ресурсами](../azure-resource-manager/resource-group-audit.md).
+3. После определения ошибки используйте сообщение об ошибке и ресурсы в статье [Устранение распространенных ошибок развертывания Azure с Azure Resource Manager](../azure-resource-manager/resource-manager-common-deployment-errors.md) для решения проблемы.
 4. Удалите все ресурсы, созданные во время предыдущего развертывания, и повторите попытку развертывания шаблона.
 
 ### <a name="error-your-deployment-failedhostnamejoindomain"></a>Ошибка: сбой развертывания....\<имя узла >/жоиндомаин
@@ -371,7 +371,7 @@ New-RdsRoleAssignment -TenantName <Windows Virtual Desktop tenant name> -RoleDef
 - ИссервицепринЦипал: **true**
 - Aadtenantid и: идентификатор клиента Azure AD созданного субъекта-службы.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Общие сведения об устранении неполадок с виртуальным рабочим столом Windows и сведениями о эскалации см. в разделе [Обзор устранения неполадок, обратная связь и поддержка](troubleshoot-set-up-overview.md).
 - Сведения об устранении неполадок при настройке виртуальной машины в виртуальном рабочем столе Windows см. в разделе [Конфигурация виртуальной машины узла сеанса](troubleshoot-vm-configuration.md).

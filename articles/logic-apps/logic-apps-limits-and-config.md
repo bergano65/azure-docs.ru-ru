@@ -6,12 +6,12 @@ ms.suite: integration
 ms.reviewer: klam, logicappspm
 ms.topic: article
 ms.date: 02/10/2020
-ms.openlocfilehash: 348c393a623f0059eec011faf823f9b5131508f3
-ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
+ms.openlocfilehash: f0c38590b667894dd65d212124ef1d26c7918ff7
+ms.sourcegitcommit: f97f086936f2c53f439e12ccace066fca53e8dc3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77122129"
+ms.lasthandoff: 02/15/2020
+ms.locfileid: "77366423"
 ---
 # <a name="limits-and-configuration-information-for-azure-logic-apps"></a>Ограничения и сведения о конфигурации для Azure Logic Apps
 
@@ -89,7 +89,7 @@ ms.locfileid: "77122129"
 | Элементы массива foreach | 100 000 | Это ограничение описывает максимальное число элементов массива, которые может обработать цикл For each. <p><p>Для фильтрации больших массивов можно использовать [действие запроса](logic-apps-perform-data-operations.md#filter-array-action). |
 | Параллелизм foreach | 20 — это предел по умолчанию, если управление параллелизмом отключено. Значение по умолчанию можно изменить на значение в пределах от 1 до 50 включительно. | Это ограничение является максимальным количеством итераций цикла For each, которые могут выполняться одновременно или в параллельном режиме. <p><p>Чтобы изменить ограничение по умолчанию на любое значение в диапазоне от 1 до 50 включительно, см. раздел об [Изменении параллелизма цикла Foreach](../logic-apps/logic-apps-workflow-actions-triggers.md#change-for-each-concurrency) или [Последовательном запуске циклов Foreach](../logic-apps/logic-apps-workflow-actions-triggers.md#sequential-for-each). |
 | Элементы SplitOn | -100 000 без параллелизма триггеров <p><p>-100 с параллелизмом триггеров | Для триггеров, возвращающих массив, можно указать выражение для обработки, которое использует свойство SplitOn, [разделяющее или выполняющее по отдельности элементы массива на нескольких экземплярах рабочего процесса](../logic-apps/logic-apps-workflow-actions-triggers.md#split-on-debatch), вместо цикла For each. Это выражение ссылается на массив, который будет использоваться для создания и запуска экземпляра рабочего процесса для каждого элемента массива. <p><p>**Примечание**. Если параметр Concurrency включен, ограничение SplitOn сокращается до 100 элементов. |
-| Максимальное количество итераций | 5 000 | |
+| Максимальное количество итераций | -По умолчанию: 60 <p><p>— Максимум: 5 000 | |
 ||||
 
 <a name="throughput-limits"></a>

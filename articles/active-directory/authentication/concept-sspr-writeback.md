@@ -11,12 +11,12 @@ author: iainfoulds
 manager: daveba
 ms.reviewer: sahenry
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c92048d2fce4a098da1e707ec8f7d75479d563f1
-ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
+ms.openlocfilehash: aa66299753ab11dcad280361cb5fb6f0c31ef242
+ms.sourcegitcommit: f97f086936f2c53f439e12ccace066fca53e8dc3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77161585"
+ms.lasthandoff: 02/15/2020
+ms.locfileid: "77368177"
 ---
 # <a name="what-is-password-writeback"></a>Что такое компонент обратной записи паролей?
 
@@ -158,14 +158,14 @@ ms.locfileid: "77161585"
 Обратная запись паролей *не осуществляется* во всех следующих ситуациях:
 
 * **Неподдерживаемые операции пользователей:**
-   * Все операции сброса пароля пользователя с помощью PowerShell версии 1, PowerShell версии 2 или API Graph Azure AD.
+   * Любой конечный пользователь, устанавливающий собственный пароль с помощью PowerShell версии 1, версии 2 или API Microsoft Graph
 * **Неподдерживаемые операции администрирования:**
-   * все операции сброса пароля пользователя, инициируемые администратором с помощью PowerShell версии 1, PowerShell версии 2 или API Graph Azure AD.
+   * Любые сброс пароля конечного пользователя, инициированный администратором, из PowerShell версии 1, версии 2 или API Microsoft Graph
    * Любые сброс пароля конечного пользователя, инициированный администратором, из [центра администрирования Microsoft 365](https://admin.microsoft.com)
 
 > [!WARNING]
-> Используйте флажок "пользователь должен сменить пароль при следующем входе в систему" в локальных Active Directory средствах администрирования, таких как Active Directory пользователи и компьютеры, или центр администрирования Active Directory поддерживается в качестве предварительной версии функции Azure AD Connect. Дополнительные сведения см. в статье [Реализация синхронизации хэшей паролей с Azure AD Connect синхронизацией](../hybrid/how-to-connect-password-hash-synchronization.md#public-preview-of-synchronizing-temporary-passwords-and-force-password-change-on-next-logon).
+> Используйте флажок "пользователь должен сменить пароль при следующем входе в систему" в локальных Active Directory средствах администрирования, таких как Active Directory пользователи и компьютеры, или центр администрирования Active Directory поддерживается в качестве предварительной версии функции Azure AD Connect. Дополнительные сведения см. в статье [Реализация синхронизации хэшей паролей с Azure AD Connect синхронизацией](../hybrid/how-to-connect-password-hash-synchronization.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Включите обратную запись паролей с помощью руководства [Руководство. Включение компонента обратной записи паролей](tutorial-enable-writeback.md).

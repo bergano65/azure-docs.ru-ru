@@ -9,12 +9,12 @@ manager: ''
 ms.topic: conceptual
 ms.date: 02/12/2020
 ms.author: spelluru
-ms.openlocfilehash: dd95bde74b77686c0971c41a8c3f262f73107b61
-ms.sourcegitcommit: bdf31d87bddd04382effbc36e0c465235d7a2947
+ms.openlocfilehash: c5418f8c5e759ad0e5c388e0925fa724fe148797
+ms.sourcegitcommit: f97f086936f2c53f439e12ccace066fca53e8dc3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77169224"
+ms.lasthandoff: 02/15/2020
+ms.locfileid: "77368534"
 ---
 # <a name="authenticate-a-managed-identity-with-azure-active-directory-to-access-event-hubs-resources"></a>Проверка подлинности управляемого удостоверения с Azure Active Directory для доступа к ресурсам концентраторов событий
 Концентраторы событий Azure поддерживают проверку подлинности Azure Active Directory (Azure AD) с помощью [управляемых удостоверений для ресурсов Azure](../active-directory/managed-identities-azure-resources/overview.md). Управляемые удостоверения для ресурсов Azure могут авторизовать доступ к ресурсам концентраторов событий с помощью учетных данных Azure AD из приложений, работающих на виртуальных машинах Azure, приложений-функций, масштабируемых наборов виртуальных машин и других служб. Используя управляемые удостоверения для ресурсов Azure вместе с проверкой подлинности Azure AD, можно избежать хранения учетных данных в приложениях, выполняемых в облаке.
@@ -65,7 +65,7 @@ ms.locfileid: "77169224"
 4.  На странице **Добавление назначения ролей** выберите роли концентраторов событий, которые требуется назначить. Затем найдите удостоверение службы, зарегистрированное для назначения роли.
     
     ![Страница добавления назначения ролей](./media/authenticate-managed-identity/add-role-assignment-page.png)
-5.  Щелкните **Сохранить**. Удостоверение, которому назначена роль RBAC, будет отображаться в списке под этой ролью. Например, на следующем рисунке показано, что удостоверение службы имеет владельца данных концентраторов событий.
+5.  Нажмите кнопку **Сохранить**. Удостоверение, которому назначена роль RBAC, будет отображаться в списке под этой ролью. Например, на следующем рисунке показано, что удостоверение службы имеет владельца данных концентраторов событий.
     
     ![Удостоверение, назначенное роли](./media/authenticate-managed-identity/role-assigned.png)
 
@@ -137,6 +137,9 @@ var ehClient = EventHubClient.CreateWithManagedIdentity(new Uri($"sb://{EventHub
 ```
 ---
 
+## <a name="event-hubs-for-kafka"></a>Центры событий для Kafka
+Apache Kafka приложения можно использовать для отправки и получения сообщений из концентраторов событий Azure с помощью управляемого удостоверения OAuth. См. Следующий пример на сайте GitHub: [концентраторы событий для Kafka — отправка и получение сообщений с помощью управляемого удостоверения OAuth](https://github.com/Azure/azure-event-hubs-for-kafka/tree/master/tutorials/oauth/java/managedidentity).
+
 ## <a name="samples"></a>Примеры
 - [Примеры Microsoft. Azure. EventHubs](https://github.com/Azure/azure-event-hubs/tree/master/samples/DotNet/Microsoft.Azure.EventHubs/Rbac). 
     
@@ -144,9 +147,10 @@ var ehClient = EventHubClient.CreateWithManagedIdentity(new Uri($"sb://{EventHub
 - [Примеры Azure. Messaging. EventHubs](https://github.com/Azure/azure-event-hubs/tree/master/samples/DotNet/Azure.Messaging.EventHubs/ManagedIdentityWebApp)
 
     Этот пример обновлен для использования последней библиотеки **Azure. Messaging. EventHubs** .
+- [Концентраторы событий для Kafka — отправка и получение сообщений с помощью управляемого удостоверения OAuth](https://github.com/Azure/azure-event-hubs-for-kafka/tree/master/tutorials/oauth/java/managedidentity)
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 - Сведения об управляемых удостоверениях для ресурсов Azure см. в следующей статье: [что такое управляемые удостоверения для ресурсов Azure?](../active-directory/managed-identities-azure-resources/overview.md)
 - См. следующие статьи:
     - [Проверка подлинности запросов к концентраторам событий Azure из приложения с помощью Azure Active Directory](authenticate-application.md)

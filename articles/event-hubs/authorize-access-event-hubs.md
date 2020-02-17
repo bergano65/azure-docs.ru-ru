@@ -6,19 +6,25 @@ ms.service: event-hubs
 documentationcenter: ''
 author: spelluru
 ms.topic: conceptual
-ms.date: 08/22/2019
+ms.date: 02/12/2020
 ms.author: spelluru
-ms.openlocfilehash: b5a037eaf310aa28c76d831dc9fe56eefaddbe56
-ms.sourcegitcommit: 5a8c65d7420daee9667660d560be9d77fa93e9c9
+ms.openlocfilehash: d4304abf0ca089fbbea86f12cd03dea836db612e
+ms.sourcegitcommit: f97f086936f2c53f439e12ccace066fca53e8dc3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74123463"
+ms.lasthandoff: 02/15/2020
+ms.locfileid: "77368352"
 ---
 # <a name="authorize-access-to-azure-event-hubs"></a>Авторизация доступа к службе "Центры событий Azure"
 Каждый раз при публикации или использовании событий или данных из концентратора событий клиент пытается получить доступ к ресурсам концентраторов событий. Каждый запрос к защищенному ресурсу должен быть разрешен, чтобы служба могла обеспечить наличие у клиента необходимых разрешений для публикации и использования данных. 
 
 Концентраторы событий Azure предлагают следующие варианты авторизации доступа к защищенным ресурсам.
+
+- Azure Active Directory
+- Подписанный URL-адрес
+
+> [!NOTE]
+> Эта статья относится как к концентраторам событий, так и к сценариям [Apache Kafka](event-hubs-for-kafka-ecosystem-overview.md) . 
 
 ## <a name="azure-active-directory"></a>Azure Active Directory
 Интеграция Azure Active Directory (Azure AD) для ресурсов концентраторов событий обеспечивает управление доступом на основе ролей (RBAC) для точного управления доступом клиента к ресурсам. Управление доступом на основе ролей (RBAC) можно использовать для предоставления разрешений субъекту безопасности, который может быть пользователем, группой или субъектом-службой приложения. Проверка подлинности субъекта безопасности в Azure AD возвращает маркер OAuth 2,0. Токен можно использовать для авторизации запроса на доступ к ресурсу концентраторов событий.
@@ -37,9 +43,9 @@ ms.locfileid: "74123463"
 
 Дополнительные сведения об авторизации с помощью SAS см. [в статье авторизация доступа к ресурсам концентраторов событий с помощью](authorize-access-shared-access-signature.md)подписанных URL.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Следующие шаги
 - Ознакомьтесь с [примерами RBAC](https://github.com/Azure/azure-event-hubs/tree/master/samples/DotNet/Microsoft.Azure.EventHubs/Rbac) , опубликованными в нашем репозитории GitHub. 
-- Ознакомьтесь со следующими статьями:
+- См. следующие статьи:
     - [Проверка подлинности запросов к концентраторам событий Azure из приложения с помощью Azure Active Directory](authenticate-application.md)
     - [Проверка подлинности управляемого удостоверения с Azure Active Directory для доступа к ресурсам концентраторов событий](authenticate-managed-identity.md)
     - [Проверка подлинности запросов к концентраторам событий Azure с помощью подписанных URL](authenticate-shared-access-signature.md)

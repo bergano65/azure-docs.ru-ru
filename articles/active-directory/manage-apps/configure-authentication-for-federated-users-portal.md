@@ -15,12 +15,12 @@ ms.date: 04/08/2019
 ms.author: mimart
 ms.custom: seoapril2019
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1300ecff416962bda4da800c5eff134951658846
-ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
+ms.openlocfilehash: 600cd3f3ad8826b52648b51beb8c66a382766b80
+ms.sourcegitcommit: f97f086936f2c53f439e12ccace066fca53e8dc3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77159171"
+ms.lasthandoff: 02/15/2020
+ms.locfileid: "77367880"
 ---
 # <a name="configure-azure-active-directory-sign-in-behavior-for-an-application-by-using-a-home-realm-discovery-policy"></a>Настройка поведения при входе в Azure Active Directory для приложения с помощью политики обнаружения домашней области
 
@@ -100,9 +100,7 @@ ms.locfileid: "77159171"
 
 В любой момент времени для субъекта-службы может быть активна только одна политика обнаружения домашней области.  
 
-Для создания политики обнаружения домашней области и управления ею вы можете использовать либо непосредственно API Graph Microsoft Azure Active Directory, либо командлеты PowerShell для Azure Active Directory.
-
-API Graph, который позволяет управлять политикой, описан в статье [Operations on policy](https://msdn.microsoft.com/library/azure/ad/graph/api/policy-operations) (Операции с политикой) на сайте MSDN.
+Для создания политики обнаружения домашней области и управления ею можно использовать командлеты PowerShell Azure Active Directory.
 
 Ниже приведен пример определения политики обнаружения домашней области.
     
@@ -152,7 +150,7 @@ API Graph, который позволяет управлять политико
 - получение списка приложений, для которых настроена политика.
 
 
-### <a name="prerequisites"></a>предварительные требования
+### <a name="prerequisites"></a>Предварительные требования
 В примерах ниже создаются, обновляются, связываются и удаляются политики для субъектов-служб приложения в Azure AD.
 
 1.  Чтобы начать, скачайте последнюю предварительную версию командлетов PowerShell для Azure AD. 
@@ -209,7 +207,7 @@ Get-AzureADPolicy
 #### <a name="step-2-locate-the-service-principal-to-which-to-assign-the-policy"></a>Шаг 2. Поиск субъекта-службы для назначения политики  
 Чтобы назначить политику субъектам-службам, необходимо знать их идентификаторы **ObjectID**. Существует несколько способов получения идентификатора **ObjectID** субъектов-служб.    
 
-Можно использовать портал или отправить запрос к [Microsoft Graph](https://msdn.microsoft.com/Library/Azure/Ad/Graph/api/entity-and-complex-type-reference#serviceprincipal-entity). Можно также открыть [Graph Explorer Tool](https://developer.microsoft.com/graph/graph-explorer) и войти в учетную запись Azure AD, чтобы просмотреть список всех субъектов-служб в своей организации. 
+Можно использовать портал или отправить запрос к [Microsoft Graph](https://docs.microsoft.com/graph/api/resources/serviceprincipal?view=graph-rest-beta). Можно также открыть [Graph Explorer Tool](https://developer.microsoft.com/graph/graph-explorer) и войти в учетную запись Azure AD, чтобы просмотреть список всех субъектов-служб в своей организации. 
 
 Так как вы используете PowerShell, вы можете использовать следующий командлет, чтобы получить список субъектов-служб и их идентификаторов.
 
@@ -268,7 +266,7 @@ Remove-AzureADApplicationPolicy -id <ObjectId of the Service Principal>  -Policy
 ``` powershell
 Get-AzureADPolicyAppliedObject -id <ObjectId of the Policy>
 ```
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 - Дополнительные сведения о принципах работы аутентификации в Azure AD см. в статье [Сценарии аутентификации в Azure Active Directory](../develop/authentication-scenarios.md).
 - Дополнительные сведения о единый вход пользователей см. в статье [единый вход в приложения в Azure Active Directory](what-is-single-sign-on.md).
 - Обзор всего содержимого, связанного с разработчиками, см. на веб- [платформе Microsoft Identity](../develop/v2-overview.md) .

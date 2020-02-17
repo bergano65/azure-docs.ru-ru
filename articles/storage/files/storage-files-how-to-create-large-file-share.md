@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 11/20/2019
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: d94237d2cfeb814b2e15d43c9f8863a76c0bcd11
-ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
+ms.openlocfilehash: 94a376c01229de20e6a1264da3f29532becefa8a
+ms.sourcegitcommit: f97f086936f2c53f439e12ccace066fca53e8dc3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2020
-ms.locfileid: "77190670"
+ms.lasthandoff: 02/15/2020
+ms.locfileid: "77368665"
 ---
 # <a name="enable-and-create-large-file-shares"></a>Включение и создание больших файловых ресурсов
 
@@ -43,7 +43,7 @@ ms.locfileid: "77190670"
     ![Снимок экрана, на котором показано, как создавать группу ресурсов на портале](media/storage-files-how-to-create-large-file-share/create-large-file-share.png)
 
 1. Далее введите имя своей учетной записи хранения. Это имя должно быть уникальным в пределах Azure. Имя также должно иметь длину от 3 до 24 символов и может содержать только цифры и строчные буквы.
-1. Выберите расположение учетной записи хранения и убедитесь, что это [один из регионов, поддерживаемых большими файловыми ресурсами](storage-files-planning.md#regional-availability).
+1. Выберите расположение для своей учетной записи хранения и убедитесь, что это [одна из поддерживаемых репликаций для больших файловых ресурсов](storage-files-planning.md#regional-availability).
 1. Настройте репликацию на **локально избыточное хранилище** или **хранилище, избыточное**в виде зоны.
 1. Оставьте значения по умолчанию для этих полей:
 

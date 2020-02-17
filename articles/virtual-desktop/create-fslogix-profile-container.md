@@ -7,12 +7,12 @@ ms.service: virtual-desktop
 ms.topic: conceptual
 ms.date: 11/25/2019
 ms.author: helohr
-ms.openlocfilehash: 1e26d61e0b1ec50e7a3831970af1fd8fad7fed99
-ms.sourcegitcommit: 8cf199fbb3d7f36478a54700740eb2e9edb823e8
+ms.openlocfilehash: 4c5b31c54bf4926caaa1bd793229bdfbb22af2a2
+ms.sourcegitcommit: f97f086936f2c53f439e12ccace066fca53e8dc3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74483658"
+ms.lasthandoff: 02/15/2020
+ms.locfileid: "77368914"
 ---
 # <a name="create-an-fslogix-profile-container-for-a-host-pool-using-azure-netapp-files"></a>Создание контейнера профиля Фслогикс для пула узлов с помощью Azure NetApp Files
 
@@ -32,19 +32,19 @@ ms.locfileid: "74483658"
 >[!NOTE]
 >Если вы ищете сравнительные материалы о различных вариантах хранения контейнера профиля Фслогикс в Azure, см. статью [Параметры хранилища для контейнеров профилей фслогикс](store-fslogix-profile.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Перед созданием контейнера профиля Фслогикс для пула узлов необходимо выполнить следующие действия.
 
 - Настройка и настройка виртуального рабочего стола Windows
 - Подготавливает пул узлов виртуальных рабочих столов Windows
-- [Включение подписки на Azure NetApp Files](https://docs.microsoft.com/azure/azure-netapp-files/azure-netapp-files-register)
+- [Включение подписки на Azure NetApp Files](../azure-netapp-files/azure-netapp-files-register.md)
 
 ## <a name="set-up-your-azure-netapp-files-account"></a>Настройка учетной записи Azure NetApp Files
 
 Чтобы приступить к работе, необходимо настроить учетную запись Azure NetApp Files.
 
-1. Войдите на [портале Azure](https://portal.azure.com). Убедитесь, что у вашей учетной записи есть права участника или администратора.
+1. Войдите на [портал Azure](https://portal.azure.com). Убедитесь, что у вашей учетной записи есть права участника или администратора.
 
 2. Щелкните **значок Azure Cloud Shell** справа от панели поиска, чтобы открыть Azure Cloud Shell.
 
@@ -166,7 +166,7 @@ ms.locfileid: "74483658"
 
 5. Установите флажок, чтобы **я принимаю условия лицензии**.
 
-6. Щелкните **Установить**.
+6. Нажмите кнопку **Установить**.
 
 7. Перейдите в раздел **C:\\Program files\\фслогикс\\Apps** , чтобы убедиться, что агент установлен.
 
@@ -189,7 +189,7 @@ ms.locfileid: "74483658"
 
 1. Откройте **интегрированную среду сценариев PowerShell** от имени администратора и войдите на виртуальный рабочий стол Windows.
 
-2. Выполните следующие командлеты.
+2. Выполните следующие командлеты:
 
    ```powershell
    Import-Module Microsoft.RdInfra.RdPowershell
@@ -230,6 +230,6 @@ ms.locfileid: "74483658"
 
    ![Снимок экрана содержимого папки в пути подключения. Внутри — это один VHD-файл с именем "Profile_ssbb".](media/mount-path-folder.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Следующие шаги
 
 Для настройки общего ресурса профиля пользователя можно использовать контейнеры профилей Фслогикс. Сведения о создании общих папок профилей пользователей с помощью новых контейнеров см. в статье [Создание контейнера профилей для пула узлов с использованием общей папки](create-host-pools-user-profile.md).
