@@ -13,12 +13,12 @@ ms.author: mimart
 ms.reviewer: dhanyahk
 ms.custom: it-pro, seo-update-azuread-jan
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a4e2e25189b35f7d17ef42536aa7cd86ac92ec82
-ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
+ms.openlocfilehash: 5ff7cda6a593b1517ad711a56f73d29a14345baf
+ms.sourcegitcommit: f97f086936f2c53f439e12ccace066fca53e8dc3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2020
-ms.locfileid: "77185865"
+ms.lasthandoff: 02/15/2020
+ms.locfileid: "77368016"
 ---
 # <a name="archive-for-whats-new-in-azure-active-directory"></a>Архивировать для новых возможностей Azure Active Directory?
 
@@ -107,7 +107,7 @@ ms.locfileid: "77185865"
 
 В июле 2019 мы добавили 18 новых приложений с поддержкой Федерации в коллекцию приложений:
 
-[Унжербоекк Software](https://docs.microsoft.com/azure/active-directory/saas-apps/ungerboeck-software-tutorial), [яркий шаблон омничаннел Contact Center](https://docs.microsoft.com/azure/active-directory/saas-apps/bright-pattern-omnichannel-contact-center-tutorial), [Нелли](https://docs.microsoft.com/azure/active-directory/saas-apps/clever-nelly-tutorial), [Аккуиреио](https://docs.microsoft.com/azure/active-directory/saas-apps/acquireio-tutorial), [Луоп](https://www.looop.co/schedule-a-demo/), [продуктбоард](https://docs.microsoft.com/azure/active-directory/saas-apps/productboard-tutorial), [Microsoft Azure SSO Access для есидекс соответствия Office™](https://docs.microsoft.com/azure/active-directory/manage-apps/what-is-single-sign-on#password-based-sso), [устанавливать ориентиры](https://docs.microsoft.com/azure/active-directory/saas-apps/hype-tutorial), [abstract](https://docs.microsoft.com/azure/active-directory/saas-apps/abstract-tutorial), [](https://docs.microsoft.com/azure/active-directory/saas-apps/ascentis-tutorial), [флипснакк](https://www.flipsnack.com/accounts/sign-in-sso.html), [Вандера](https://docs.microsoft.com/azure/active-directory/saas-apps/wandera-tutorial), [TwineSocial](https://twinesocial.com/), [Kallidus](https://docs.microsoft.com/azure/active-directory/saas-apps/kallidus-tutorial), [HyperAnna](https://docs.microsoft.com/azure/active-directory/saas-apps/hyperanna-tutorial), [PharmID WasteWitness](https://www.pharmid.com/), [i2B Connect](https://www.i2b-online.com/sign-up-to-use-i2b-connect-here-sso-access/) [, JFrog](https://docs.microsoft.com/azure/active-directory/saas-apps/jfrog-artifactory-tutorial) .
+[Унжербоекк Software](https://docs.microsoft.com/azure/active-directory/saas-apps/ungerboeck-software-tutorial), [яркий шаблон омничаннел Contact Center](https://docs.microsoft.com/azure/active-directory/saas-apps/bright-pattern-omnichannel-contact-center-tutorial), [Нелли](https://docs.microsoft.com/azure/active-directory/saas-apps/clever-nelly-tutorial), [Аккуиреио](https://docs.microsoft.com/azure/active-directory/saas-apps/acquireio-tutorial), [Луоп](https://www.looop.co/schedule-a-demo/), [продуктбоард](https://docs.microsoft.com/azure/active-directory/saas-apps/productboard-tutorial), [Microsoft Azure SSO Access для есидекс соответствия Office™](https://docs.microsoft.com/azure/active-directory/manage-apps/what-is-single-sign-on#password-based-sso), [устанавливать ориентиры](https://docs.microsoft.com/azure/active-directory/saas-apps/hype-tutorial), [abstract](https://docs.microsoft.com/azure/active-directory/saas-apps/abstract-tutorial), [Ascentis](https://docs.microsoft.com/azure/active-directory/saas-apps/ascentis-tutorial), [флипснакк](https://www.flipsnack.com/accounts/sign-in-sso.html), [Вандера](https://docs.microsoft.com/azure/active-directory/saas-apps/wandera-tutorial), [TwineSocial](https://twinesocial.com/), [Kallidus](https://docs.microsoft.com/azure/active-directory/saas-apps/kallidus-tutorial), [HyperAnna](https://docs.microsoft.com/azure/active-directory/saas-apps/hyperanna-tutorial), [PharmID WasteWitness](https://www.pharmid.com/), [i2B Connect](https://www.i2b-online.com/sign-up-to-use-i2b-connect-here-sso-access/) [, JFrog](https://docs.microsoft.com/azure/active-directory/saas-apps/jfrog-artifactory-tutorial) .
 
 Дополнительные сведения об этих приложениях см. в статье [Интеграция приложений SaaS с Azure Active Directory](https://aka.ms/appstutorial). Дополнительные сведения о том, как добавить приложение в коллекцию приложений Azure AD см. в [этой статье](https://aka.ms/azureadapprequest).
 
@@ -1698,7 +1698,7 @@ Azure AD Connect находится в процессе переноса сис�
 **Категория службы:** Отчеты  
 **Возможности продукта:** мониторинг и создание отчетов
  
-С появлением поля **Клиентское приложение** в журналах действий входа клиенты теперь могут видеть, какие пользователи применяют устаревшие способы аутентификации. Клиенты смогут получить доступ к этим данным с помощью API MS Graph для входов или журналов действий входа на портале Azure AD. Там же можно использовать элемент управления **Клиентское приложение** для фильтрации устаревших способов аутентификации. Дополнительные сведения см. в документации.
+С появлением поля **Клиентское приложение** в журналах действий входа клиенты теперь могут видеть, какие пользователи применяют устаревшие способы аутентификации. Клиенты смогут получить доступ к этим сведениям с помощью Microsoft Graph API входа или с помощью журналов действий входа на портале Azure AD, где можно использовать **клиентское приложение** для фильтрации по устаревшим проверкам подлинности. Дополнительные сведения см. в документации.
 
 ---
 
@@ -2092,7 +2092,7 @@ Transport Layer Security (TLS) — это протокол, обеспечива
 **Категория службы:** Отчеты  
 **Возможности продукта:** мониторинг и создание отчетов
  
-Журналы действий Azure AD, в том числе журналы входа и аудита, теперь доступны через MS Graph. Мы предоставили через MS Graph две конечных точки для доступа к этим журналам. Ознакомьтесь с [документацией](https://docs.microsoft.com/azure/active-directory/active-directory-reporting-api-getting-started-azure-portal) по программному доступу к API отчетов Azure AD. 
+Журналы действий Azure AD, которые включают в себя входы и журналы аудита, теперь доступны через API Microsoft Graph. Мы предоставляли две конечные точки через API Microsoft Graph для доступа к этим журналам. Ознакомьтесь с [документацией](https://docs.microsoft.com/azure/active-directory/active-directory-reporting-api-getting-started-azure-portal) по программному доступу к API отчетов Azure AD. 
 
 ---
  
@@ -2596,7 +2596,7 @@ Azure AD отправляет уведомление о сертификатах
 **Категория службы:** Отчеты  
 **Возможности продукта:** мониторинг и создание отчетов
 
-Прислушиваясь к предложениям клиентов предоставить ролям без прав администратора доступ к журналам действий Azure AD, мы предоставили пользователям, которым назначена роль "Читатель отчетов", доступ к действиям, связанным с входом и аудитом, на портале Azure, а также с помощью наших API Graph. 
+В рамках отзывов клиентов о том, чтобы предоставить ролям без прав администратора доступ к журналам действий Azure AD, мы включили возможность для пользователей, которые находятся в роли "читатель отчетов", получать доступ к действиям входа и аудиту в портал Azure, а также использовать Microsoft Graph API. 
 
 Дополнительные сведения об использовании этих отчетов см. в статье [Отчеты Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-reporting-azure-portal). 
 
