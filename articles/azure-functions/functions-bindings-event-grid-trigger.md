@@ -307,7 +307,7 @@ public static void EventGridTest([EventGridTrigger] JObject eventGridEvent, ILog
 
 В следующей таблице описываются свойства конфигурации привязки, которые задаются в файле *function.json*. В атрибуте `EventGridTrigger` не задаются параметры или свойства конструкции.
 
-|свойство function.json |Description|
+|свойство function.json |Описание|
 |---------|---------|
 | **type** | Обязательное. Необходимо задать значение `eventGridTrigger`. |
 | **direction** | Обязательное. Необходимо задать значение `in`. |
@@ -568,6 +568,6 @@ http://{functionappname}.azurewebsites.net/admin/host/systemkeys/eventgridextens
 
 ![Пример журналов функций триггера службы "Сетка событий"](media/functions-bindings-event-grid/eg-output.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Отправка события сетки событий](./functions-bindings-event-grid-trigger.md)

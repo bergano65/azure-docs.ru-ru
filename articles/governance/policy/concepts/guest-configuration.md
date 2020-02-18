@@ -3,12 +3,12 @@ title: Изучение аудита содержимого виртуальны
 description: Узнайте, как политика Azure использует агент гостевой конфигурации для аудита параметров в виртуальных машинах.
 ms.date: 11/04/2019
 ms.topic: conceptual
-ms.openlocfilehash: 128baa0df1d3e555fe9629005529710202e1bbf6
-ms.sourcegitcommit: bdf31d87bddd04382effbc36e0c465235d7a2947
+ms.openlocfilehash: 73f986774fc13ac8c69cd800c977c909b591a74c
+ms.sourcegitcommit: f255f869c1dc451fd71e0cab340af629a1b5fb6b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77169524"
+ms.lasthandoff: 02/16/2020
+ms.locfileid: "77369742"
 ---
 # <a name="understand-azure-policys-guest-configuration"></a>Общие сведения о гостевой конфигурации службы "Политика Azure"
 
@@ -185,10 +185,11 @@ egrep -B $linesToIncludeBeforeMatch -A $linesToIncludeAfterMatch 'DSCEngine|DSCM
 
 Источник для политики встроенных инициатив настройки гостевой конфигурации доступен в следующих расположениях:
 
+- [Встроенные определения политик — конфигурация гостя](../samples/built-in-policies.md#guest-configuration)
 - [Встроенные инициативы — конфигурация гостя](../samples/built-in-initiatives.md#guest-configuration)
-- [Репозиторий с примерами политик Azure](https://github.com/Azure/azure-policy/tree/master/built-in-policies/policySetDefinitions/Guest Configuration)
+- [Репозиторий с примерами политик Azure](https://github.com/Azure/azure-policy/tree/master/built-in-policies/policySetDefinitions/Guest%20Configuration)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Просмотрите примеры в [примерах политики Azure](../samples/index.md).
 - Изучите статью о [структуре определения Политики Azure](definition-structure.md).

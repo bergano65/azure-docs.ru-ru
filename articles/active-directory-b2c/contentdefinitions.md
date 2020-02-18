@@ -8,15 +8,15 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
-ms.date: 02/11/2020
+ms.date: 02/16/2020
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 3e5fb1ebb763cc5ecd7dfe8724347c03a487bc13
-ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
+ms.openlocfilehash: c759b7f0467ddb961f44f27c2d2f18ed24d2cfca
+ms.sourcegitcommit: ef568f562fbb05b4bd023fe2454f9da931adf39a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77157879"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77372795"
 ---
 # <a name="contentdefinitions"></a>ContentDefinitions
 
@@ -82,7 +82,7 @@ ms.locfileid: "77157879"
 | Идентификатор страницы | Description |
 | ----- | ----------- |
 | `globalexception` | Отображает страницу ошибки при обнаружении исключения или ошибки. |
-| `providerselection` | Отображает список поставщиков удостоверений, которые пользователи могут выбирать во время входа. |
+| `providerselection`, `idpselection` | Отображает список поставщиков удостоверений, которые пользователи могут выбирать во время входа.  |
 | `unifiedssp` | Отображает форму для входа в локальную учетную запись (на основе адреса электронной почты или имени пользователя). Это значение также предоставляет функцию "Оставаться в системе" и ссылку "Забыли пароль?" . |
 | `unifiedssd` | Отображает форму для входа в локальную учетную запись (на основе адреса электронной почты или имени пользователя). |
 | `multifactor` | Проверяет номера телефонов с помощью SMS-сообщения или голосового вызова во время регистрации или входа. |

@@ -57,6 +57,6 @@ ms.locfileid: "77368184"
 > [!NOTE]
 > Возможность подготавливать ссылочные атрибуты из локальной службы AD, например **ManagedBy** или **DN/distinguishedName**, сейчас не поддерживается. Эту функцию можно запросить на [голоса пользователя](https://feedback.azure.com/forums/169401-azure-active-directory). 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Определение пользователей, которые находятся в области подготовки](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md)

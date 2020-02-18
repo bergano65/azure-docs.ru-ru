@@ -11,12 +11,12 @@ author: MayMSFT
 ms.reviewer: nibaccam
 ms.date: 01/15/2020
 ms.custom: seodec18
-ms.openlocfilehash: 6867862c130bf6f0b7cc34098064f6ce6eec282b
-ms.sourcegitcommit: 87781a4207c25c4831421c7309c03fce5fb5793f
+ms.openlocfilehash: 6d68599af644e5bb03fc850a880b07c6a4d262a9
+ms.sourcegitcommit: f255f869c1dc451fd71e0cab340af629a1b5fb6b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76543501"
+ms.lasthandoff: 02/16/2020
+ms.locfileid: "77370481"
 ---
 # <a name="access-data-in-azure-storage-services"></a>Доступ к данным в службах хранилища Azure
 [!INCLUDE [aml-applies-to-basic-enterprise-sku](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -25,7 +25,7 @@ ms.locfileid: "76543501"
 
 Хранилища данных можно создавать из [этих решений службы хранилища Azure](#matrix). Для неподдерживаемых решений для хранения данных и для сохранения затрат на исходящие данные во время экспериментов машинного обучения рекомендуется [переместить данные](#move) в поддерживаемые решения службы хранилища Azure. 
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 Что вам понадобится:
 - Подписка Azure. Если у вас еще нет подписки Azure, создайте бесплатную учетную запись Azure, прежде чем начинать работу. Попробуйте [бесплатную или платную версию машинное обучение Azure](https://aka.ms/AMLFree).
 
@@ -58,7 +58,7 @@ ms.locfileid: "76543501"
 База данных SQL Azure&nbsp;&nbsp;| Проверка подлинности SQL <br>Субъект-служба| ✓ | ✓ | ✓ |✓
 Azure&nbsp;PostgreSQL | Проверка подлинности SQL| ✓ | ✓ | ✓ |✓
 &nbsp;базы данных Azure&nbsp;для&nbsp;MySQL | Проверка подлинности SQL|  | ✓ | ✓ |✓
-Кирпичи&nbsp;файловая&nbsp;система| без аутентификации; | | ✓ | ✓ |✓ 
+Кирпичи&nbsp;файловая&nbsp;система| Нет проверки подлинности | | ✓ | ✓ |✓ 
 
 \* поддерживается только для локальных целевых сценариев вычислений
 
@@ -80,7 +80,7 @@ Azure&nbsp;PostgreSQL | Проверка подлинности SQL| ✓ | ✓ |
 <br>
 Однако для Azure Data Lake Storage 1 и 2 хранилищ данных эта проверка происходит позже, когда вызываются методы доступа к данным, такие как [`from_files()`](https://docs.microsoft.com/python/api/azureml-core/azureml.data.dataset_factory.filedatasetfactory?view=azure-ml-py) или [`from_delimited_files()`](https://docs.microsoft.com/python/api/azureml-core/azureml.data.dataset_factory.tabulardatasetfactory?view=azure-ml-py#from-parquet-files-path--validate-true--include-path-false--set-column-types-none--partition-format-none-) . 
 
-### <a name="python-sdk"></a>Пакет Python SDK
+### <a name="python-sdk"></a>Пакет SDK для Python
 
 Все методы Register относятся к классу [`Datastore`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.datastore(class)?view=azure-ml-py) и имеют форму `register_azure_*`.
 
@@ -113,7 +113,7 @@ blob_datastore = Datastore.register_azure_blob_container(workspace=ws,
                                                          account_key=account_key)
 ```
 
-#### <a name="file-share"></a>Файловый ресурс
+#### <a name="file-share"></a>Общая папка
 
 Чтобы зарегистрировать общую папку Azure в качестве хранилища данных, используйте [`register_azure_file_share()`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.datastore(class)?view=azure-ml-py#register-azure-file-share-workspace--datastore-name--file-share-name--account-name--sas-token-none--account-key-none--protocol-none--endpoint-none--overwrite-false--create-if-not-exists-false--skip-validation-false-). 
 
@@ -134,7 +134,7 @@ file_datastore = Datastore.register_azure_file_share(workspace=ws,
 
 #### <a name="azure-data-lake-storage-generation-2"></a>Поколение Azure Data Lake Storage 2
 
-Для хранилища данных Azure Data Lake Storage Generation 2 (ADLS Gen 2) используйте [register_azure_data_lake_gen2 ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.datastore.datastore?view=azure-ml-py#register-azure-data-lake-gen2-workspace--datastore-name--filesystem--account-name--tenant-id--client-id--client-secret--resource-url-none--authority-url-none--protocol-none--endpoint-none--overwrite-false-) , чтобы зарегистрировать хранилище учетные данные, подключенное к хранилищу Azure Data Lake 2 с разрешениями субъекта-службы. Узнайте больше об [управлении доступом, настроенном для ADLS Gen 2](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-access-control). 
+Для хранилища данных Azure Data Lake Storage Generation 2 (ADLS Gen 2) используйте [register_azure_data_lake_gen2 ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.datastore.datastore?view=azure-ml-py#register-azure-data-lake-gen2-workspace--datastore-name--filesystem--account-name--tenant-id--client-id--client-secret--resource-url-none--authority-url-none--protocol-none--endpoint-none--overwrite-false-) , чтобы зарегистрировать хранилище учетные данные, подключенное к хранилищу Azure Data Lake 2 с [разрешениями субъекта-службы](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal). Узнайте больше об [управлении доступом, настроенном для ADLS Gen 2](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-access-control). 
 
 Следующий код создает и регистрирует хранилище данных `adlsgen2_datastore_name` в рабочей области `ws`. Это хранилище данных обращается к файловой системе `test` в учетной записи хранения `account_name`, используя предоставленные учетные данные субъекта-службы.
 
@@ -259,7 +259,7 @@ run_config.source_directory_data_store = "workspaceblobstore"
 
 Машинное обучение Azure предоставляет несколько способов использования моделей для оценки. Некоторые из этих методов не предоставляют доступ к хранилищам данных. Используйте следующую таблицу, чтобы понять, какие методы позволяют получать доступ к хранилищам данных во время оценки.
 
-| Метод | Доступ к хранилищу данных | Description |
+| Метод | Доступ к хранилищу данных | Описание |
 | ----- | :-----: | ----- |
 | [Прогнозирование пакетной службы](how-to-use-parallel-run-step.md) | ✔ | Асинхронное создание прогнозов на больших объемах данных. |
 | [Веб-служба](how-to-deploy-and-where.md) | &nbsp; | Развертывание моделей в качестве веб-службы. |
@@ -275,7 +275,7 @@ run_config.source_directory_data_store = "workspaceblobstore"
 
 Фабрика данных Azure обеспечивает эффективную и устойчивую пересылку данных с более чем 80 предварительно подготовленных соединителей без дополнительных затрат. К этим соединителям относятся службы данных Azure, локальные источники данных, Amazon S3 и Redshift и Google BigQuery.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Создание набора данных машинного обучения Azure](how-to-create-register-datasets.md)
 * [Обучение модели](how-to-train-ml-models.md)

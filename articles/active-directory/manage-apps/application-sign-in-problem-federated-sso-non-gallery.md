@@ -272,5 +272,5 @@ Azure AD не удалось определить запрос SAML в пара�
 
 Чтобы узнать, как настроить утверждения атрибута SAML, отправляемые в приложение, ознакомьтесь с разделом [Сопоставление утверждений в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-claims-mapping).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 [Требования к протоколу SAML единого входа в Azure](https://docs.microsoft.com/azure/active-directory/develop/active-directory-single-sign-on-protocol-reference)

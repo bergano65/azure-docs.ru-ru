@@ -85,7 +85,7 @@ sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule require
 Ниже приведен список функций Kafka, которые еще не поддерживаются:
 
 *   идемпотентный производитель;
-*   Transaction
+*   транзакция:
 *   Сжатие
 *   хранение на основе размера;
 *   сжатие журнала;
@@ -93,7 +93,7 @@ sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule require
 *   поддержка API HTTP Kafka;
 *   потоки Kafka.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой статье приведены ознакомительные сведения о Центрах событий для компонента Kafka. Дополнительные сведения см. по следующим ссылкам:
 

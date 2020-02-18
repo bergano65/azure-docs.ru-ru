@@ -108,7 +108,7 @@ ms.locfileid: "77367851"
 
 Более широкий обзор, в том числе способы решения дополнительных сложных сценариев, см. в статье [Использование Azure AD для управления доступом к приложениям](what-is-access-management.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Пять шагов по защите инфраструктуры удостоверений](https://docs.microsoft.com/azure/security/fundamentals/steps-secure-identity#before-you-begin-protect-privileged-accounts-with-mfa)
 

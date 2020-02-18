@@ -36,7 +36,7 @@ ms.locfileid: "77365157"
 
 Для работы с триггером и привязками требуется ссылка на соответствующий пакет. Пакет NuGet используется для библиотек классов .NET, в то время как расширение объединяет все остальные типы приложений.
 
-| Язык                                        | Добавить по...                                   | Remarks 
+| Язык                                        | Добавить по...                                   | Примечания 
 |-------------------------------------------------|---------------------------------------------|-------------|
 | C#                                              | Установка [Пакет NuGet], версия 3. x | |
 | C#Script, Java, JavaScript, Python, PowerShell | Регистрация [Пакет расширений]          | [Расширение "инструменты Azure](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-node-azure-pack) " рекомендуется использовать с Visual Studio Code. |
@@ -52,6 +52,6 @@ ms.locfileid: "77365157"
 
 Функции 1. x автоматически имеют ссылку на пакет NuGet [Microsoft. Azure. веб-задания](https://www.nuget.org/packages/Microsoft.Azure.WebJobs) , версия 2. x.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * [Выполнение функции при диспетчеризации события сетки событий](./functions-bindings-event-grid-trigger.md)
 * [Отправка события сетки событий](./functions-bindings-event-grid-trigger.md)

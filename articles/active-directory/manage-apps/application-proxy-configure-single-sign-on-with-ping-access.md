@@ -113,12 +113,12 @@ Azure Active Directory прокси приложения (Azure AD) взаимо
 
    ![Отображает экран входа на основе заголовка и PingAccess](./media/application-proxy-configure-single-sign-on-with-ping-access/sso-header.png)
 
-1. Нажмите кнопку **Сохранить**.
+1. Щелкните **Сохранить**.
 
 Затем убедитесь, что для URL-адреса перенаправления задан внешний URL-адрес:
 
 1. На боковой панели **центра администрирования Azure Active Directory** выберите **Azure Active Directory** > **Регистрация приложений**. Откроется список приложений.
-1. Выберите свое приложение.
+1. Выберите приложение.
 1. Щелкните ссылку рядом с **URI перенаправления**, в которых отображается количество URI перенаправления, настроенных для веб-клиентов и общедоступных. Откроется страница **\<имя приложения >-Authentication (проверка подлинности)** .
 1. Убедитесь, что внешний URL-адрес, назначенный приложению ранее, находится в списке **URI перенаправления** . Если это не так, добавьте внешний URL-адрес, используя тип URI перенаправления в **Интернете**, и нажмите кнопку **сохранить**.
 
@@ -146,7 +146,7 @@ Azure Active Directory прокси приложения (Azure AD) взаимо
 Чтобы получить эти сведения, сделайте следующее:
 
 1. На боковой панели **центра администрирования Azure Active Directory** выберите **Azure Active Directory** > **Регистрация приложений**. Откроется список приложений.
-1. Выберите свое приложение. Откроется страница **Регистрация приложений** приложения.
+1. Выберите приложение. Откроется страница **Регистрация приложений** приложения.
 
    ![Обзор регистрации для приложения](./media/application-proxy-configure-single-sign-on-with-ping-access/registration-overview-for-an-application.png)
 
@@ -165,10 +165,10 @@ Azure Active Directory прокси приложения (Azure AD) взаимо
 
 1. Войдите на [портал Azure Active Directory](https://aad.portal.azure.com/) в качестве администратора приложения.
 1. Выберите **Azure Active Directory** > **Регистрация приложений**. Откроется список приложений.
-1. Выберите свое приложение.
+1. Выберите приложение.
 1. На боковой панели страницы **Регистрация приложений** приложения выберите **Манифест**. Появится код JSON манифеста для регистрации приложения.
 1. Найдите поле `acceptMappedClaims` и измените значение на `True`.
-1. Нажмите кнопку **Сохранить**.
+1. Щелкните **Сохранить**.
 
 ### <a name="use-of-optional-claims-optional"></a>Использование необязательных утверждений (необязательно)
 
@@ -201,7 +201,7 @@ Azure Active Directory прокси приложения (Azure AD) взаимо
 >
 > Определение политики и назначение можно выполнять с помощью PowerShell или Microsoft Graph. Если вы делаете это в PowerShell, то, возможно, потребуется сначала использовать `New-AzureADPolicy` и назначить его приложению с `Add-AzureADServicePrincipalPolicy`. Дополнительные сведения см. в разделе [Назначение политики сопоставления утверждений](../develop/active-directory-claims-mapping.md#claims-mapping-policy-assignment).
 
-Пример.
+Пример
 ```powershell
 $pol = New-AzureADPolicy -Definition @('{"ClaimsMappingPolicy":{"Version":1,"IncludeBasicClaimSet":"true", "ClaimsSchema": [{"Source":"user","ID":"employeeid","JwtClaimType":"employeeid"}]}}') -DisplayName "AdditionalClaims" -Type "ClaimsMappingPolicy"
 
@@ -226,7 +226,7 @@ Add-AzureADServicePrincipalPolicy -Id "<<The object Id of the Enterprise Applica
 
 После выполнения всех этих действий приложение должно быть работает. Чтобы протестировать его, откройте браузер и перейдите по внешнему URL-адресу, созданному при публикации приложения в Azure. Войдите с помощью тестовой учетной записи, назначенной приложению.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Настройка PingAccess для Azure AD для защиты приложений, опубликованных с помощью Microsoft Azure AD прокси приложения](https://support.pingidentity.com/s/document-item?bundleId=pingaccess-52&topicId=agents/azure/pa_c_PAAzureSolutionOverview.html)
 - [Единый вход в приложениях в Azure Active Directory](what-is-single-sign-on.md)

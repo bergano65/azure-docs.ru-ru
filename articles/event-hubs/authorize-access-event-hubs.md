@@ -43,7 +43,7 @@ ms.locfileid: "77368352"
 
 Дополнительные сведения об авторизации с помощью SAS см. [в статье авторизация доступа к ресурсам концентраторов событий с помощью](authorize-access-shared-access-signature.md)подписанных URL.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - Ознакомьтесь с [примерами RBAC](https://github.com/Azure/azure-event-hubs/tree/master/samples/DotNet/Microsoft.Azure.EventHubs/Rbac) , опубликованными в нашем репозитории GitHub. 
 - См. следующие статьи:
     - [Проверка подлинности запросов к концентраторам событий Azure из приложения с помощью Azure Active Directory](authenticate-application.md)

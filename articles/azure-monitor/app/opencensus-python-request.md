@@ -131,7 +131,7 @@ ms.locfileid: "77368250"
     config = Configurator(settings=settings)
     ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Схема сопоставления приложений](../../azure-monitor/app/app-map.md)
 * [Доступность](../../azure-monitor/app/monitor-web-app-availability.md)

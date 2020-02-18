@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/15/2020
 ms.author: Zhchia
-ms.openlocfilehash: de60b4ea1b09998e84bab4d204e3c8c3bc8779a4
-ms.sourcegitcommit: 57669c5ae1abdb6bac3b1e816ea822e3dbf5b3e1
+ms.openlocfilehash: fe1260982edc877c049716bd74f1bb3e90d33b0f
+ms.sourcegitcommit: f255f869c1dc451fd71e0cab340af629a1b5fb6b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2020
-ms.locfileid: "77050451"
+ms.lasthandoff: 02/16/2020
+ms.locfileid: "77370524"
 ---
 # <a name="tutorial-configure-azure-databricks-scim-connector-for-automatic-user-provisioning"></a>Руководство. Azure Databricks Настройка соединителя SCIM для автоматической подготовки пользователей
 
@@ -34,7 +34,7 @@ ms.locfileid: "77050451"
 > * Синхронизация атрибутов пользователей между Azure AD и Azure Databricks соединителем SCIM
 > * Подготавливайте группы и членство в группах в соединителе Azure Databricks SCIM
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 В сценарии, описанном в этом руководстве, предполагается, что у вас уже имеется:
 
@@ -96,7 +96,7 @@ ms.locfileid: "77050451"
 
     ![Вкладка "подготовка"](common/provisioning-automatic.png)
 
-5. В разделе **учетные данные администратора** введите учетные данные администратора Azure Databricks scim Connector и имя пользователя. Нажмите кнопку **проверить подключение** , чтобы убедиться, что Azure AD может подключиться к соединителю Azure Databricks scim. В случае сбоя подключения убедитесь, что у учетной записи соединителя Azure Databricks SCIM есть разрешения администратора, и повторите попытку.
+5. В разделе **учетные данные администратора** введите значение КОНЕЧНОЙ точки scim в поле **URL-адрес клиента**. URL-адрес клиента должен быть в формате `https://<region>.azuredatabricks.net/api/2.0/preview/scim`, где находится **регион** в URL-адресе домашней страницы Azure Databricks. Например, конечная точка SCIM для **westus** региона будет `https://westus.azuredatabricks.net/api/2.0/preview/scim`. Введите значение токена, полученное ранее в **маркере секрета**. Нажмите кнопку **проверить подключение** , чтобы убедиться, что Azure AD может подключиться к соединителю Azure Databricks scim. В случае сбоя подключения убедитесь, что у учетной записи соединителя Azure Databricks SCIM есть разрешения администратора, и повторите попытку.
 
     ![Подготовка](./media/azure-databricks-scim-provisioning-connector-provisioning-tutorial/provisioning.png)
 
@@ -104,26 +104,26 @@ ms.locfileid: "77050451"
 
     ![Почтовое уведомление](common/provisioning-notification-email.png)
 
-7. Щелкните **Сохранить**.
+7. Нажмите кнопку **Сохранить**.
 
 8. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory пользователей с Azure DATABRICKS соединителем scim**.
 
 9. Ознакомьтесь с атрибутами пользователей, которые синхронизированы из Azure AD, с Azure Databricks соединителем SCIM в разделе **сопоставление атрибутов** . Атрибуты, выбранные как свойства **Matching** , используются для сопоставления учетных записей пользователей в Azure Databricks соединителе scim для операций обновления. Если вы решили изменить [соответствующий целевой атрибут](https://docs.microsoft.com/azure/active-directory/manage-apps/customize-application-attributes), необходимо убедиться, что API СОЕДИНИТЕЛЯ Azure Databricks scim поддерживает фильтрацию пользователей на основе этого атрибута. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
 
-   |attribute|Тип|
+   |Атрибут|Тип|
    |---|---|
    |userName|String|
    |displayName|String|
-   |active|Логическое|
+   |активно|Логическое|
 
 10. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory группы для Azure Databricks соединителя scim**.
 
 11. Проверьте атрибуты группы, которые синхронизированы из Azure AD, чтобы Azure Databricks соединитель SCIM в разделе **сопоставления атрибутов** . Атрибуты, выбранные как свойства **Matching** , используются для сопоставления групп в Azure Databricks соединителе scim для операций обновления. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
 
-     |attribute|Тип|
+     |Атрибут|Тип|
      |---|---|
      |displayName|String|
-     |members|Справочник|
+     |члены|Ссылки|
 
 11. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory группы для Azure Databricks соединителя scim**.
 
@@ -157,6 +157,6 @@ ms.locfileid: "77050451"
 * [Управление подготовкой учетных записей пользователей для корпоративных приложений](../manage-apps/configure-automatic-user-provisioning-portal.md)
 * [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Сведения о просмотре журналов и получении отчетов о действиях по подготовке](../manage-apps/check-status-user-account-provisioning.md)

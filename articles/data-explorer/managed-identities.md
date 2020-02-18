@@ -7,16 +7,16 @@ ms.reviewer: orspodek
 ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 01/06/2020
-ms.openlocfilehash: 3b0bb62de4a96a45d607e05b32a87feec692e4d4
-ms.sourcegitcommit: 02160a2c64a5b8cb2fb661a087db5c2b4815ec04
+ms.openlocfilehash: e76ae2e072bb780ac9788902e9157db871e4f09d
+ms.sourcegitcommit: ef568f562fbb05b4bd023fe2454f9da931adf39a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75725979"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77373376"
 ---
 # <a name="configure-managed-identities-for-your-azure-data-explorer-cluster"></a>Настройка управляемых удостоверений для кластера Azure обозреватель данных
 
-[Управляемое удостоверение из Azure Active Directory](/azure/active-directory/managed-identities-azure-resources/overview) позволяет кластеру легко получать доступ к другим ресурсам, защищенным AAD, таким как Azure Key Vault. Удостоверение управляется платформой Azure и не требует предоставления или смены секретов. В этой статье показано, как создать управляемое удостоверение для кластеров Azure обозреватель данных. 
+[Управляемое удостоверение из Azure Active Directory](/azure/active-directory/managed-identities-azure-resources/overview) позволяет кластеру легко получать доступ к другим ресурсам, защищенным AAD, таким как Azure Key Vault. Удостоверение управляется платформой Azure и не требует предоставления или смены секретов. В этой статье показано, как создать управляемое удостоверение для кластеров Azure обозреватель данных. Конфигурация управляемого удостоверения в настоящее время поддерживается только для [включения управляемых клиентом ключей для кластера](/azure/data-explorer/security#customer-managed-keys-with-azure-key-vault).
 
 > [!Note]
 > Управляемые удостоверения для Azure обозреватель данных не будут работать должным образом, если приложение переносится между подписками или клиентами. Приложению потребуется получить новое удостоверение, которое можно сделать, отключив и повторно включив функцию с помощью [удаления удостоверения](#remove-an-identity). Кроме того, для использования нового удостоверения необходимо обновить политики доступа к нижестоящим ресурсам.
@@ -92,7 +92,7 @@ ms.locfileid: "75725979"
 }    
 ```
 
-Пример.
+Пример:
 
 ```json
 {

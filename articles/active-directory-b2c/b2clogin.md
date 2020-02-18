@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 12/04/2019
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 5c9054daea76675ed621caf1630c509b16743f4e
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: aa1e6d8705cf4aed975ed0940087f243a06a9019
+ms.sourcegitcommit: ef568f562fbb05b4bd023fe2454f9da931adf39a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76836348"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77372692"
 ---
 # <a name="set-redirect-urls-to-b2clogincom-for-azure-active-directory-b2c"></a>Установка b2clogin.com в качестве URL-адреса перенаправления для Azure Active Directory B2C
 
@@ -46,7 +46,7 @@ ms.locfileid: "76836348"
 
 * Измените URL-адрес перенаправления в приложениях поставщика удостоверений, чтобы он ссылался на *b2clogin.com*.
 * Обновите приложения Azure AD B2C, чтобы использовать *b2clogin.com* в своих потоках пользователей и ссылках на конечные точки маркеров.
-* Обновите все **Разрешенные источники** , определенные в параметрах CORS для [настройки пользовательского интерфейса](custom-policy-ui-customization-dynamic.md).
+* Обновите все **Разрешенные источники** , определенные в параметрах CORS для [настройки пользовательского интерфейса](custom-policy-ui-customization.md).
 
 ## <a name="change-identity-provider-redirect-urls"></a>Изменение URL-адресов перенаправления поставщика удостоверений
 
@@ -58,7 +58,7 @@ ms.locfileid: "76836348"
 https://{your-tenant-name}.b2clogin.com/{your-tenant-id}/oauth2/authresp
 ```
 
-Второй вариант использует доменное имя клиента в виде `your-tenant-name.onmicrosoft.com`. Пример.
+Второй вариант использует доменное имя клиента в виде `your-tenant-name.onmicrosoft.com`. Пример:
 
 ```
 https://{your-tenant-name}.b2clogin.com/{your-tenant-name}.onmicrosoft.com/oauth2/authresp

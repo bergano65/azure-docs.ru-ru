@@ -72,7 +72,7 @@ Azure предоставляет следующие встроенные рол�
 - [Концентраторы событий для примеров Kafka-OAuth](https://github.com/Azure/azure-event-hubs-for-kafka/tree/master/tutorials/oauth). 
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - Сведения о назначении встроенной роли RBAC субъекту безопасности см. в статье [Проверка подлинности доступа к ресурсам концентраторов событий с помощью Azure Active Directory](authenticate-application.md).
 - Узнайте [, как создавать пользовательские роли с помощью RBAC](https://github.com/Azure/azure-event-hubs/tree/master/samples/DotNet/Microsoft.Azure.EventHubs/Rbac/CustomRole).
 - Узнайте [, как использовать Azure Active Directory с EH](https://github.com/Azure/azure-event-hubs/tree/master/samples/DotNet/Microsoft.Azure.EventHubs/Rbac/AzureEventHubsSDK)

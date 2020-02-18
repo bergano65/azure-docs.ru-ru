@@ -543,7 +543,7 @@ $rule3 = New-AzApplicationGatewayFirewallCustomRule `
   }
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 После создания настраиваемых правил можно узнать, как просматривать журналы WAF. Дополнительные сведения см. в разделе [Журналы диагностики](../../application-gateway/application-gateway-diagnostics.md#diagnostic-logging).
 

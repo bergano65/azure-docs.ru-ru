@@ -61,14 +61,14 @@ SCIM — это стандартизированное определение д
 
 | Пользователь Azure Active Directory | "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User" |
 | --- | --- |
-| IsSoftDeleted |активно |
+| IsSoftDeleted |active |
 |department|urn: IETF: params: scim: схемы: расширение: Enterprise: 2.0: пользователь: Отдел|
 | displayName |displayName |
 |employeeId|urn: IETF: params: scim: схемы: расширение: Enterprise: 2.0: пользователь: Емплойинумбер|
 | Facsimile-TelephoneNumber |phoneNumbers[type eq "fax"].value |
 | givenName |name.givenName |
 | jobTitle |title |
-| почта |emails[type eq "work"].value |
+| mail |emails[type eq "work"].value |
 | mailNickname |externalId |
 | manager |urn: IETF: params: scim: схемы: расширение: Enterprise: 2.0: пользователь: менеджер |
 | mobile |phoneNumbers[type eq "mobile"].value |
@@ -86,9 +86,9 @@ SCIM — это стандартизированное определение д
 | Группа Azure Active Directory | urn: IETF: params: scim: схемы: Core: 2.0: Group |
 | --- | --- |
 | displayName |displayName |
-| почта |emails[type eq "work"].value |
+| mail |emails[type eq "work"].value |
 | mailNickname |displayName |
-| члены |члены |
+| members |members |
 | objectId |externalId |
 | proxyAddresses |emails[type eq "other"].Value |
 
@@ -509,7 +509,7 @@ SCIM — это стандартизированное определение д
 * Обновление запроса исправления группы должно привести к возникновению в ответе *HTTP 204 без содержимого* . Не рекомендуется возвращать текст со списком всех членов.
 * Не требуется поддерживать возврат всех членов группы.
 
-#### <a name="create-group"></a>Создать группу
+#### <a name="create-group"></a>Создание группы
 
 ##### <a name="request-7"></a>Получения
 
@@ -839,7 +839,7 @@ SCIM — это стандартизированное определение д
 * DigiCert;
 * GeoTrust;
 * GlobalSign;
-* Go Daddy
+* Go Daddy;
 * VeriSign;
 * WoSign.
 

@@ -150,7 +150,7 @@ ms.locfileid: "77367880"
 - получение списка приложений, для которых настроена политика.
 
 
-### <a name="prerequisites"></a>Предварительные требования
+### <a name="prerequisites"></a>предварительные требования
 В примерах ниже создаются, обновляются, связываются и удаляются политики для субъектов-служб приложения в Azure AD.
 
 1.  Чтобы начать, скачайте последнюю предварительную версию командлетов PowerShell для Azure AD. 
@@ -266,7 +266,7 @@ Remove-AzureADApplicationPolicy -id <ObjectId of the Service Principal>  -Policy
 ``` powershell
 Get-AzureADPolicyAppliedObject -id <ObjectId of the Policy>
 ```
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - Дополнительные сведения о принципах работы аутентификации в Azure AD см. в статье [Сценарии аутентификации в Azure Active Directory](../develop/authentication-scenarios.md).
 - Дополнительные сведения о единый вход пользователей см. в статье [единый вход в приложения в Azure Active Directory](what-is-single-sign-on.md).
 - Обзор всего содержимого, связанного с разработчиками, см. на веб- [платформе Microsoft Identity](../develop/v2-overview.md) .

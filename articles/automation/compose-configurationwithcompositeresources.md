@@ -6,18 +6,18 @@ services: automation
 ms.subservice: dsc
 ms.date: 08/21/2018
 ms.topic: conceptual
-ms.openlocfilehash: 2c6d9aa13c8c320dc46f6634f3a60e0c1730c710
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: e5083ec55ee0a57cd7defd466f5baf1704336320
+ms.sourcegitcommit: f255f869c1dc451fd71e0cab340af629a1b5fb6b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75418732"
+ms.lasthandoff: 02/16/2020
+ms.locfileid: "77370668"
 ---
 # <a name="composing-dsc-configurations-in-azure-automation-state-configuration-dsc-using-composite-resources"></a>Составление конфигураций DSC в службе "Настройка состояния службы автоматизации Azure" с помощью составных ресурсов
 
 Если для управления ресурсом необходимо более одной конфигурации требуемого состояния (DSC), лучше всего прибегнуть к [составным ресурсам](/powershell/scripting/dsc/resources/authoringresourcecomposite). Составной ресурс — это вложенная и параметризованная конфигурация, используемая как ресурс DSC в другой конфигурации. Таким образом можно формировать сложные конфигурации, создавая базовые составные ресурсы (параметризованные конфигурации) и управляя ими по отдельности.
 
-Служба автоматизации Azure позволяет [импортировать и компилировать составные ресурсы](automation-dsc-compile.md#compiling-configurations-in-azure-automation-that-contain-composite-resources).
+Служба автоматизации Azure позволяет [импортировать и компилировать составные ресурсы](automation-dsc-compile.md).
 После импорта составных ресурсов в учетную запись службы автоматизации вы можете использовать интерфейс **Составление конфигурации** на странице **Настройка состояния (DSC)** .
 
 ## <a name="composing-a-configuration-from-composite-resources"></a>Создание конфигурации с помощью составных ресурсов
@@ -39,7 +39,7 @@ ms.locfileid: "75418732"
 
 После успешного завершения компиляции новая конфигурация отображается на вкладке **скомпилированные конфигурации** . После отображения на этой вкладке ее можно назначить управляемому узлу, выполнив действия, описанные в разделе [перераспределение узла с другой конфигурацией узла](automation-dsc-getting-started.md#reassigning-a-node-to-a-different-node-configuration).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Чтобы приступить к работе со службой "Настройка состояния службы автоматизации Azure", см. сведения в [этой статье](automation-dsc-getting-started.md).
 - Дополнительные сведения о подключении узлов см. в статье [Подключение компьютеров для управления с помощью Azure Automation DSC](automation-dsc-onboarding.md).

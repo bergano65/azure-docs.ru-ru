@@ -103,7 +103,7 @@ ms.locfileid: "77368122"
 ## <a name="can-i-make-guest-users-visible-in-the-exchange-global-address-list"></a>Можно ли сделать так, чтобы гостевые пользователи отображались в глобальном списке адресов Exchange?
 Да. По умолчанию гостевые объекты не отображаются в списке глобальных адресов вашей организации, но их можно сделать видимыми с помощью Azure Active Directory PowerShell. Дополнительные сведения см. в разделе **Can I make guest objects visible in the global address list?** (Можно ли сделать так, чтобы гостевые пользователи отображались в глобальном списке адресов?) статьи [Manage guest access in Office 365 Groups](https://docs.microsoft.com/office365/admin/create-groups/manage-guest-access-in-groups?redirectSourcePath=%252fen-us%252farticle%252fmanage-guest-access-in-office-365-groups-9de497a9-2f5c-43d6-ae18-767f2e6fe6e0&view=o365-worldwide#add-guests-to-the-global-address-list) (Управление гостевым доступом в Группах Office 365). 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Что такое служба совместной работы Azure AD B2B?](what-is-b2b.md)
 * [Основные сведения о токенах пользователей в службе совместной работы Azure Active Directory B2B](user-token.md)

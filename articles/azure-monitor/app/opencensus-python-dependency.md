@@ -166,7 +166,7 @@ from opencensus.trace import config_integration
 config_integration.trace_integrations(['sqlalchemy'])
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Схема сопоставления приложений](../../azure-monitor/app/app-map.md)
 * [Доступность](../../azure-monitor/app/monitor-web-app-availability.md)

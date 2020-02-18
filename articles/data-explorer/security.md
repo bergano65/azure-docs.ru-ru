@@ -7,12 +7,12 @@ ms.reviewer: orspodek
 ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 01/06/2020
-ms.openlocfilehash: 5f3bceb8398f9837f6f8eaa390def41456daf08d
-ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
+ms.openlocfilehash: 786950011f10e25d6bcb72061212c1878e79d45a
+ms.sourcegitcommit: ef568f562fbb05b4bd023fe2454f9da931adf39a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2020
-ms.locfileid: "76271594"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77373354"
 ---
 # <a name="secure-azure-data-explorer-clusters-in-azure"></a>Защита кластеров Azure обозреватель данных в Azure
 
@@ -24,7 +24,7 @@ ms.locfileid: "76271594"
 
 Эта проблема решается в Azure Active Directory (Azure AD) управляемые удостоверения для ресурсов Azure. Функция предоставляет службам Azure автоматически управляемое удостоверение в Azure AD. Удостоверение можно использовать для проверки подлинности в любой службе, которая поддерживает проверку подлинности Azure AD, включая Key Vault, при этом не сохраняя каких-либо учетных данных в коде. Дополнительные сведения об этой службе см. на странице Обзор [управляемых удостоверений для ресурсов Azure](/azure/active-directory/managed-identities-azure-resources/overview) .
 
-## <a name="data-encryption"></a>шифрование данных;
+## <a name="data-encryption"></a>Шифрование данных
 
 ### <a name="azure-disk-encryption"></a>Шифрование дисков Azure
 
@@ -34,10 +34,10 @@ ms.locfileid: "76271594"
 
 По умолчанию данные шифруются с помощью ключей, управляемых корпорацией Майкрософт. Для дополнительного управления ключами шифрования можно предоставить ключи, управляемые клиентом, для шифрования данных. Вы можете управлять шифрованием данных на уровне хранилища с помощью собственных ключей. Ключ, управляемый клиентом, используется для защиты и контроля доступа к корневому ключу шифрования, который используется для шифрования и расшифровки всех данных. Ключи, управляемые клиентом, обеспечивают большую гибкость при создании, повороте, отключении и отмене контроля доступа. Кроме того, можно выполнять аудит ключей шифрования, используемых для защиты данных.
 
-Используйте Azure Key Vault для хранения ключей, управляемых клиентом. Вы можете создавать собственные ключи и сохранять их в хранилище ключей, а также использовать Azure Key Vault API для создания ключей. Кластер Azure обозреватель данных и Azure Key Vault должны находиться в одном регионе, но могут находиться в разных подписках. Дополнительные сведения о Azure Key Vault см. в разделе [что такое Azure Key Vault?](/azure/key-vault/key-vault-overview). Подробное описание ключей, управляемых клиентом, см. в разделе [ключи, управляемые клиентом, с помощью Azure Key Vault](/azure/storage/common/storage-service-encryption)
+Используйте Azure Key Vault для хранения ключей, управляемых клиентом. Вы можете создавать собственные ключи и сохранять их в хранилище ключей, а также использовать Azure Key Vault API для создания ключей. Кластер Azure обозреватель данных и Azure Key Vault должны находиться в одном регионе, но могут находиться в разных подписках. Дополнительные сведения о Azure Key Vault см. в разделе [что такое Azure Key Vault?](/azure/key-vault/key-vault-overview). Подробное описание ключей, управляемых клиентом, см. в разделе [управляемые клиентом ключи с помощью Azure Key Vault](/azure/storage/common/storage-service-encryption). Настройка ключей, управляемых клиентом, в кластере Azure обозреватель данных [C#](/azure/data-explorer/customer-managed-keys-csharp) с помощью или [шаблона Azure Resource Manager](/azure/data-explorer/customer-managed-keys-resource-manager)
 
 > [!Note]
-> Управляемые клиентом ключи используют управляемые удостоверения для ресурсов Azure, функции Azure Active Directory (Azure AD). Чтобы настроить ключи, управляемые клиентом, в портал Azure необходимо настроить управляемое удостоверение **SystemAssigned** в кластере.
+> Управляемые клиентом ключи используют управляемые удостоверения для ресурсов Azure, функции Azure Active Directory (Azure AD). Чтобы настроить ключи, управляемые клиентом, в портал Azure необходимо настроить управляемое удостоверение **SystemAssigned** в кластере, как описано в разделах [Настройка управляемых удостоверений для кластера Azure обозреватель данных](/azure/data-explorer/managed-identities).
 
 #### <a name="store-customer-managed-keys-in-azure-key-vault"></a>Хранение ключей, управляемых клиентом, в Azure Key Vault
 
@@ -54,14 +54,14 @@ ms.locfileid: "76271594"
 > [!Note]
 > Когда обозреватель данных Azure определяет, что доступ к ключу, управляемому клиентом, отменяется, он автоматически приостанавливает кластер для удаления всех кэшированных данных. После возврата доступа к ключу необходимо возобновить работу кластера вручную.
 
-## <a name="role-based-access-control"></a>Контроль доступа на основе ролей
+## <a name="role-based-access-control"></a>Управление доступом на основе ролей
 
 С помощью [управления доступом на основе ролей (RBAC)](/azure/role-based-access-control/overview)можно разделить обязанности внутри группы и предоставить только необходимый доступ пользователям кластера. Вместо того чтобы предоставлять всем неограниченным разрешениям доступ к кластеру, можно разрешить только определенные действия. Вы можете настроить [Контроль доступа для баз данных](/azure/data-explorer/manage-database-permissions) в [портал Azure](/azure/role-based-access-control/role-assignments-portal)с помощью [Azure CLI](/azure/role-based-access-control/role-assignments-cli)или [Azure PowerShell](/azure/role-based-access-control/role-assignments-powershell).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Настройка управляемых удостоверений для кластера Azure обозреватель данных](managed-identities.md)
 * [Защитите свой кластер в Azure обозреватель данных-Portal](manage-cluster-security.md) , включив шифрование неактивных компонентов.
+* [Настройка управляемых удостоверений для кластера Azure обозреватель данных](managed-identities.md)
 * [Настройка ключей, управляемых клиентом, с помощью шаблона Azure Resource Manager](customer-managed-keys-resource-manager.md)
 * [Настройка ключей, управляемых клиентом, с помощьюC#](customer-managed-keys-csharp.md)
 

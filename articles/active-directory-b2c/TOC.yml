@@ -177,8 +177,6 @@
             - name: Настройка пользовательского интерфейса
               href: custom-policy-ui-customization.md
               displayName: 'ux, input, cors, html, css'
-            - name: Настройка динамического содержимого в пользовательском интерфейсе
-              href: custom-policy-ui-customization-dynamic.md
             - name: Настраиваемый адрес электронной почты
               href: custom-email.md
               displayName: verification
