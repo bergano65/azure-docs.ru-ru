@@ -49,7 +49,7 @@ Get-Module -ListAvailable AzureAD*
    Uninstall-Module AzureAD 
    Install-Module AzureADPreview 
    ```
-- Если в результатах отображается только модуль AzureADPreview, но вы получили сообщение о том, что существует более поздняя версия, выполните следующие команды для обновления модуля. 
+- Если в результатах отображается только модуль AzureADPreview, но вы получили сообщение о том, что существует более поздняя версия, выполните следующие команды для обновления модуля.
 
    ```powershell 
    Uninstall-Module AzureADPreview 
